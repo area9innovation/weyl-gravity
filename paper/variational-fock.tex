@@ -261,10 +261,24 @@ quantity is bounded below, which is why the two-invariant argument is needed.
 canonical coordinates is generically the finite group $\Z_2\times\Z_2$
 \cite{companion}; abstractly it is contained in the maximal compact
 $U(1)^2$ of $SO(2,\C)^2$.
-(iii) The theorem gives the finite-dimensional Kempf--Ness-type picture
-concretely: the Gram map $C\mapsto CC^{\dg}$ measures the distance of a coset
-element from the unitary locus, and \eqref{eq:xformula} shows how the two
-rapidities $(a,b)$ add in quadrature with the PU rapidity $r$.
+(iii) The theorem admits a geometric recognition.  $\mathcal F(S)=2\|\mu(S)\|^2$
+with $\mu$ the Cartan projection of $\Sp(4,\C)$, and $\mu(S_+)=(r,r)$ lies on
+the $C_2$ chamber wall.  Although the stabilizer itself is not
+$\theta$-compatible, it embeds in the compatible subgroup
+$SL(2,\C)\times SL(2,\C)$ of mode-preserving symplectics, whose orbit through
+the basepoint is a totally geodesic $\mathbb H^3\times\mathbb H^3$ inside the
+symmetric space $X=\Sp(4,\C)/\Sp(2)$; the Gram data $(\tau_j,n_j)$ are polar
+coordinates on the two hyperbolic factors.  Since $B$ is trace-orthogonal to
+all mode-preserving Hermitian directions, the $S_+$-geodesic leaves this
+orbit orthogonally, and Theorem~\ref{thm:mindist} becomes the nearest-point
+(orthogonal projection) theorem for convex totally geodesic subsets of an
+NPC space --- including the equality set, by uniqueness of the projection
+foot.  The closed form \eqref{eq:xformula} is the corresponding Pythagorean
+law: hyperbolic ($\arccosh(\cosh r\cosh b)$, the hypotenuse law of a totally
+geodesic $\mathbb H^2$) in $b$, flat in $a$.  Numerical tests confirm the
+general principle: for any Hermitian Hamiltonian $\xi$ orthogonal to the
+mode-preserving directions, $\|\mu(e^{\xi}C)\|\ge\|\mu(e^{\xi})\|$ on the
+stabilizer coset, while generic non-orthogonal $\xi$ violate it.
 \end{remark}
 
 \section{The free fourth-order field}\label{sec:field}

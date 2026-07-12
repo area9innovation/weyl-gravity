@@ -110,3 +110,44 @@ operator on the covariant Fock space (Hilbert scale + disjointness).
 | B: fidelity, ⟨N⟩ closed forms, √3/2 and 1/3 limits | PROVED_SYMBOLICALLY + 25-digit quadrature |
 | B: disjointness in all d ≥ 1 | PROVED (given standard von Neumann ITP criterion) |
 | B: Hilbert-scale corollary (H¹⊕H⁻¹) | PROVED (from r(k) identity) |
+
+## A′. Geometric recognition: the theorem IS a Cartan projection theorem
+
+(Added after session-2 commit; numerics in this section's claims run 2026-07-12.)
+
+Identifications, all verified:
+- `F(S) = 2‖μ(S)‖²` where μ = Cartan projection of Sp(4,ℂ) (log-singular-value
+  vector in the closed C₂ Weyl chamber); `μ(S₊) = (r, r)` sits ON the chamber
+  wall x₁ = x₂.
+- The stabilizer H = SO(2,ℂ)² is NOT θ-compatible in the canonical
+  coordinates (H∩K = ℤ₂², not maximal compact) — so the theorem is NOT bare
+  Mostow/Kempf–Ness for H. The fix: H embeds in the θ-compatible supergroup
+  C = SL(2,ℂ)×SL(2,ℂ) (block-diagonal symplectics), whose orbit through the
+  basepoint is the totally geodesic H³×H³ ⊂ X = Sp(4,ℂ)/Sp(2) (dim 10, rank 2).
+  The Gram data (τⱼ, nⱼ) are exactly polar coordinates on the two H³ factors.
+- The Bender–Mannheim direction B is trace-orthogonal to ALL block-diagonal
+  Hermitian Hamiltonians (tr(B·m) = 0) ⇒ the S₊-geodesic leaves the orbit
+  H³×H³ orthogonally at the basepoint ⇒ by the NPC projection theorem
+  (unique nearest point on a convex totally geodesic subset), the basepoint
+  is the unique foot ⇒ minimality over C ⊃ H AND the equality set
+  {C : CC† = I} in one stroke.
+- The closed form is the Pythagorean law of the symmetric space: at worst
+  alignment the configuration sweeps a totally geodesic H²×ℝ, and
+  x₁,₂ = arccosh(cosh r cosh b) ± a is the HYPERBOLIC Pythagoras
+  (hypotenuse law of H²) in b combined with the flat Pythagoras in a.
+
+Generalization (numerically confirmed, proof = the NPC argument above):
+for ANY ξ ∈ p with ξ ⊥ p∩c (c = block-diagonal subalgebra), and all C in the
+stabilizer coset: ‖μ(e^ξ C)‖ ≥ ‖μ(e^ξ)‖, equality iff C unitary. Random
+off-diagonal ξ: 4/4 hold to 1e-8; random ξ with block-diagonal components:
+4/4 FAIL — orthogonality is exactly the right hypothesis. So the PU
+minimum-distortion theorem is the instance ξ = (r/2)B of:
+
+  **Orthogonal-projection principle for Cartan projections.** G reductive,
+  C ⊂ G a θ-compatible reductive subgroup, ξ ∈ p orthogonal to p ∩ Lie(C).
+  Then for every c ∈ C: ‖μ(e^ξ c)‖ ≥ ‖μ(e^ξ)‖, equality iff c ∈ K.
+
+The PU-specific content reduces to: (i) Stab(J,G₀′) ⊂ C; (ii) tr(B·m) = 0;
+(iii) the exact H²×ℝ value formula. Elevates the variational theorem from a
+PU statement to an instance of NPC/Cartan geometry; candidate standalone
+math-phys note.
