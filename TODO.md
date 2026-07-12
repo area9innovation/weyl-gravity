@@ -89,14 +89,22 @@ holds only open items.
       positive δ^{−1/2} path-independent, Krein exceptional path
       α = 2/7 δ^{−3/2}; Jordan-chain lemma: κ ≠ per-block sign
       (verify_perfect_square.py PS-A..H).
-    - NEXT: (a) SECOND-order field obstructions (positive form:
-      even-ghost composite shells — the field analogue of 3:1);
-      (b) constructive κ₀: δ→0 limit of (−1)^{N_ghost} in the regulated
-      Krein algebra (exchange/nilpotent structure); (c) basis-
-      independent uniformity statement (fixed limit states) for the
-      scaling table; (d) order-4 kernel projection AT ω₁ = 5ω₂;
-      (e) draft paper 5 (outline + all step 1–4 results);
-      (f) Einstein–Weyl cubic vertices.
+    - DONE (step 5): exact two-field rewriting verified (ℒ = −∂U∂V +
+      (λ²/2)U²V², O(1,1) form); **constructive κ₀ = U↔V exact symmetry,
+      nonlinear in (φ,ψ): (φ,ψ) → ((1/λ)log(ψ/λ) − φ, ψ)**; sector
+      swap (1,0)↔(0,1) consistent with PS-H; linearization about null
+      background = exact □² Jordan pair (□v = 0, □u = λ²v); Legendre
+      warning: do second-order source in two-field frame
+      (verify_two_field.py TF1–TF7).
+    - NEXT: (a) Outcome A/B: on-shell second-order positive source at
+      1+2→2+2 in the TWO-FIELD frame (quartic contact term = U²V²,
+      no Legendre corrections); (b) relation of exact U↔V κ₀ to the
+      regulated (−1)^{N_ghost} (confluent limit); (c) confluent-state
+      matrix elements of R₁ (basis-independent δ→0 uniformity);
+      (d) order-4 kernel projection AT ω₁ = 5ω₂; (e) paper 5 draft
+      (now includes: three-mechanism oscillator story, spectral
+      breaking, PS first-order inversion, boundary symmetry
+      enhancement, exact κ₀); (f) EW cubic vertices.
 15. [ ] Paper 2 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness
