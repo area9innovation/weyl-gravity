@@ -136,6 +136,18 @@ def main():
     ok &= good
     print(f"[{'OK ' if good else 'FAIL'}] first variation d/dt F = 8 tr(eta xi): worst rel err {worst:.2e}")
 
+    # 4) normalization dictionary: F(g) = 2 |mu(g)|^2 ;  F(e^xi) = |2 xi|_F^2 ;
+    #    min sqrt(F) = |2 xi|_F ;  min |mu| = |2 xi|_F / sqrt(2)
+    for _ in range(4):
+        xi = sum(rng.normal() * m for m in CP) * 0.3 + sum(rng.normal() * m for m in OD) * 0.5
+        S = expm(xi)
+        F = F_of(S)
+        mu2 = sum(x ** 2 for x in np.log(np.linalg.eigvalsh(S.conj().T @ S))[2:])  # chamber half
+        n2xi = 4 * np.linalg.norm(xi) ** 2
+        good = abs(F - 2 * mu2) < 1e-8 * max(1, F) and abs(F - n2xi) < 1e-8 * max(1, F)
+        ok &= good
+        print(f"[{'OK ' if good else 'FAIL'}] dictionary: F={F:.6f}  2|mu|^2={2*mu2:.6f}  |2xi|^2={n2xi:.6f}")
+
     print("\nALL PASS" if ok else "\nSOME CHECKS FAILED")
     return ok
 

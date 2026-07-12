@@ -182,3 +182,25 @@ math-phys note.
 6. **Compactness phrasing.** H∩K ≅ ℤ₂² refers to the ambient maximal
    compact fixed by the physical inner product; abstractly ℂ^× has maximal
    compact U(1) — the obstruction belongs to the embedding, not the group.
+
+## A‴. Final referee-proof pass (paper 2 v4)
+
+- **Normalization dictionary boxed** (eq. dictionary): F(g) = 2‖μ(g)‖²,
+  F(e^ξ) = 4d_X(o,e^ξo)² = ‖2ξ‖²_F; explicit relations min√F = ‖2ξ‖_F,
+  min‖μ‖ = ‖2ξ‖_F/√2; first-variation coefficient 8 consistency noted.
+  Theorem statements were already in √F form (correct); dictionary added
+  as regression check (numeric/cartan_checks.py, passes).
+- **Hull stratified**: C_θ(H) = C₁×C₂ with C_j = SL(2,ℂ) (ω_j≠1) /
+  SO(2,ℂ) (ω_j=1); new remark on discontinuous symmetry enhancement at
+  alignment: hull ∩ K jumps SU(2)→U(1), physical H_j∩K jumps ℤ₂→U(1) —
+  property of the embedding, not the abstract group.
+- **n-mode normal-space proof made structural**: blockwise trace pairing
+  shows 𝔠_n∩𝔭 = {ξ_ij = 0, i≠j} and orthocomplement = {ξ_ii = 0};
+  dimension identity n(2n+1) = 3n + 2n(n−1) demoted to a check.
+- **Kempf–Ness repositioned**: Mostow/Cartan geometry supplies the theorem
+  (totally geodesic convex orbit + normal geodesics); KN described as a
+  related variational perspective, not the source.
+- **Architecture**: abstract and intro now lead with the hierarchy
+  normal-coset principle ⟹ Sp(2n,ℂ) inter-mode theorem (principal general
+  result) ⟹ exact ℍ²×ℝ formula (integrable n=2 content); PU = the fully
+  integrable model. Still integrated as paper 2.
