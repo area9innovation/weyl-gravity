@@ -75,7 +75,7 @@ a nondegenerate one needs the full anti-diagonal nonzero and is indefinite
    `{±1}×{±1} ≅ ℤ₂×ℤ₂`** for generic parameters — the U(1) directions cannot
    be made unitary in coordinates where S′₊ is Hermitian (the two mode
    normalizations required are incompatible, since ω₁/ω₂ ≠ 1). Sharpened
-   during paper drafting (paper/main.tex, Prop. 3.7); supersedes the looser
+   during paper drafting (paper/symplectic-diagonalization.tex, Prop. 3.7); supersedes the looser
    "real angles = unitary" phrasing used earlier.
 
 4. **The polar-factor uniqueness claim is FALSE as stated** (I3; spec §11).
@@ -200,7 +200,7 @@ with Mathematica remains open.
    diagonalizer itself is unique, and the polar factor is constant exactly on
    the cosets of the unitary stabilizer subgroup, which in the canonical
    coordinates is generically the finite group `ℤ₂×ℤ₂` (I3, sharpened in
-   paper/main.tex Prop. 3.7).
+   paper/symplectic-diagonalization.tex Prop. 3.7).
 8. **Exact stabilizer of the positive normal form?** `SO(2,ℂ) × SO(2,ℂ)`
    (complex rotation per mode) for `ω₁ ≠ ω₂`; abstract maximal compact
    `U(1)×U(1)`, unitary part in canonical coordinates generically `ℤ₂×ℤ₂`
