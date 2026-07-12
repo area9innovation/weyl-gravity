@@ -9,10 +9,16 @@ holds only open items.
 1. [ ] Freeze all four papers + create tags (each is already referenced
    in its own Verification paragraph): `paper1-v1.1`, `paper2-v1.2`,
    `paper3-v1.2`, `paper4-v1.0`.
-2. [ ] Repo/companion identifiability (raised by referees of papers 1,
-   3, 4): the repository is PRIVATE. Decide: (a) make the companions +
-   verification code public and cite immutable versions, or (b)
-   reproduce the load-bearing lemmas in appendices. Needs Asger.
+2. [ ] Extract `physics/symplectic-reconstruction/` into a standalone
+   shareable repo (deferred by Asger, 2026-07-12: "we will move it
+   later"). Plan: intended for sharing directly with Mannheim, Bateman,
+   et al. DO NOT share the monorepo link — `area9innovation/
+   bp2transformer` is private, contains all unrelated company work,
+   and (per project memory) a Hetzner token elsewhere in the tree.
+   The symplectic-reconstruction directory itself scanned clean of
+   secrets (2026-07-12). Extraction also resolves the referees'
+   citable-artifact requirement (papers 1, 3, 4); create the paper
+   tags in the new repo.
 3. [ ] Before submission (all papers): replace "companion paper, 2026"
    citations with arXiv IDs once public, check "to appear" references
    (ABHT in paper 3). (Author metadata DONE: GPT-5.6.sol + Claude
