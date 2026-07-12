@@ -13,9 +13,11 @@ holds only open items.
    3, 4): the repository is PRIVATE. Decide: (a) make the companions +
    verification code public and cite immutable versions, or (b)
    reproduce the load-bearing lemmas in appendices. Needs Asger.
-3. [ ] Before submission (all papers): author metadata (title pages are
-   blank), replace "companion paper, 2026" citations with arXiv IDs
-   once public, check "to appear" references (ABHT in paper 3).
+3. [ ] Before submission (all papers): replace "companion paper, 2026"
+   citations with arXiv IDs once public, check "to appear" references
+   (ABHT in paper 3). (Author metadata DONE: GPT-5.6.sol + Claude
+   Fable 5 as authors with role footnotes; Asger as commissioning /
+   corresponding human — all five papers.)
 
 ## Known weak spots (not yet raised by referees)
 
