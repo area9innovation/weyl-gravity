@@ -5,10 +5,11 @@ oscillator, the fourth-order scalar field, and quadratic gravity. Started
 from the audit spec in `../Symplectic Reconstruction.md`; grew into four
 papers, a Lean formalization, and a machine-checked verification pipeline.
 
-## The four papers (`paper/`)
+## The papers (`paper/`)
 
 | # | File | Title | Status |
 |---|------|-------|--------|
+| 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series) | draft (17 pp.) |
 | 1 | `symplectic-diagonalization.tex` / `.pdf` | **Canonical Positive Symplectic Diagonalization of the Pais–Uhlenbeck Oscillator** | frozen, tag `paper1-v1.0` (13 pp.) |
 | 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.1` (12 pp.) |
 | 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.1` (10 pp.) |
@@ -114,7 +115,7 @@ cd symbolic && python3 verify_gravity_completion.py  # paper 4, G8–G9
 cd symbolic && python3 verify_gravity_spectral.py    # paper 4, G10–G12
 cd numeric  && python3 regression.py && python3 distortion_scan.py && python3 cartan_checks.py
 cd lean     && lake exe cache get && lake build    # zero sorry
-cd paper    && pdflatex symplectic-diagonalization.tex; pdflatex variational-fock.tex; pdflatex fourth-order-vacuum.tex; pdflatex fourth-order-gravity.tex
+cd paper    && pdflatex symplectic-diagonalization.tex; pdflatex variational-fock.tex; pdflatex fourth-order-vacuum.tex; pdflatex fourth-order-gravity.tex; pdflatex ghosts-geometry-reality.tex
 ```
 
 Release tags: `paper1-v1.0`, `paper2-v1.1`, `paper3-v1.1`. Before submission: fill author

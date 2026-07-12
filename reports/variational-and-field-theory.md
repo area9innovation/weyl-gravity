@@ -783,3 +783,26 @@ trivialization); discussion "three levels" + boxed revised central
 conclusion; verification identifiers (tag paper2-v1.2 at freeze).
 Cascade: paper-4 field-level remark qualified accordingly; paper 3
 already auxiliary-scoped from its own pass.
+
+## Paper 0 drafted (2026-07-12): expository introduction
+
+`paper/ghosts-geometry-reality.tex` — **Ghosts, Geometry, and Reality in
+Fourth-Order Quantum Theories: A guided introduction to the
+Pais–Uhlenbeck oscillator, Krein quantization, and higher-derivative
+gravity** (17 pp., compiles clean, zero overfull). Audience: knows some
+math/physics, not expert. Based on Asger's draft, rendered to the series
+house style with: full bibliography (Ostrogradsky/Woodard, PU, BM,
+BT, SGH/Mostafazadeh, Stelle, Radzikowski/BF/HW, Maldacena, Lü–Pope,
+DJW, Kubo–Kuntz, + Papers I–IV as companions); TikZ Figure 1 =
+one-page visual summary of complex covariance → two real forms → two
+completions (with "same complex correlators" bridge and Jordan-boundary
+annotations); TikZ Figure 2 = four-paper dependency diagram; TOC.
+All formulas cross-checked against the POST-referee-round papers: spec
+Q = rℤ, Gram–Cartan μ(S₊) = (r,r) with F = 2‖μ‖², H∩K = ℤ₂², hull
+generically SL(2,ℂ)², ε action sign in the covariance and its confluent
+−εθδ′ limit, BT = action-sign reversal, V log σ + H with σ log σ
+remainder and V(x,x) = ε/16π², pointed Dyson transport (ψ = ρ⁻¹φ,
+per-mode overlap 1) vs auxiliary identity embedding (√3/2, 1/3),
+helicity stratification 2Γ_PU ⊕ 2Γ₋ ⊕ Γ₋, Schur no-hybrid, conformal
+count 4+2+0 = 6, PU metric-constancy safe (real minimizers). README
+gains the paper-0 row.
