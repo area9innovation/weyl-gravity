@@ -82,13 +82,21 @@ holds only open items.
       one-Jordan-leg vanishing, Jordan-PAIR coupling, threshold
       factorization m₁²(m₁−2m₂)(m₁+2m₂). "Expanding hierarchy" (not
       dense) wording adopted.
-    - NEXT: (a) perfect-square regulated first-order 𝔬₊ in full mode
-      language (transported vertex, δ→0 divergence of R₁, collinear
-      limit — the λ_K structure now gives the on-shell coefficients);
-      (b) Krein-side 𝔬_K with BT κ₀ conventions; (c) order-4 kernel
-      projection AT ω₁ = 5ω₂ only; (d) draft paper 5 (10-section
-      outline; four frozen theorems + spectral-breaking section);
-      (e) Einstein–Weyl cubic vertices.
+    - DONE (step 4, perfect square first order, both completions):
+      even-ghost selection rule ⇒ 𝔬₊^(1) = 0 IDENTICALLY (even above
+      threshold); 𝔬_K^(1) ∝ λ_K ≠ 0 above threshold (real ghost decay);
+      scaling: massive confluence both δ^{−3/2}; massless Jordan paths:
+      positive δ^{−1/2} path-independent, Krein exceptional path
+      α = 2/7 δ^{−3/2}; Jordan-chain lemma: κ ≠ per-block sign
+      (verify_perfect_square.py PS-A..H).
+    - NEXT: (a) SECOND-order field obstructions (positive form:
+      even-ghost composite shells — the field analogue of 3:1);
+      (b) constructive κ₀: δ→0 limit of (−1)^{N_ghost} in the regulated
+      Krein algebra (exchange/nilpotent structure); (c) basis-
+      independent uniformity statement (fixed limit states) for the
+      scaling table; (d) order-4 kernel projection AT ω₁ = 5ω₂;
+      (e) draft paper 5 (outline + all step 1–4 results);
+      (f) Einstein–Weyl cubic vertices.
 15. [ ] Paper 2 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness

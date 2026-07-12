@@ -946,3 +946,61 @@ genuine spectral breaking in excited resonant multiplets. Opposite
 tendency for the perfect-square interaction (massless & one-Jordan-leg
 amplitudes vanish; pairs couple) — the clearest indication yet of why
 Krein/ghost-parity survives where the positive completion fails.
+
+## Interaction-deformation, step 4 (2026-07-13): regulated perfect square
+
+Coupled positive+Krein computation in the finite-mode model (1+1D triple
+k = 3 ← 2+1, both branches, exact mode algebra; the transported field
+mode φ'(k) = (i/√(2δ))[(a₂+a₂†)/√ω₂ + (a₁−a₁†)/√ω₁] derived from
+ρ₀zρ₀⁻¹ and verified against the paper-3 spectral Wightman; σ = √δ is
+k-independent). verify_perfect_square.py PS-A..H ALL PASS.
+
+**Headline: the first-order answers INVERT the naive expectations.**
+1. **Even-ghost selection rule (PS-B)**: v†−v is supported on even-
+   ghost-count monomials only (the transported reality factor η^{ghost}
+   makes odd-ghost coefficients Hermitian-symmetric) — the exact field
+   analogue of the oscillator's v†−v ⊃ {y³, yp²} rule.
+2. **𝔬₊^(1) = 0 IDENTICALLY (PS-C/D)** — below AND above the m₁ = 2m₂
+   threshold: the only openable shells (1→22) are odd-ghost, where
+   v†−v vanishes; even-ghost shells (2→22, 11→2) are kinematically
+   closed for all m₁ > m₂. The team's "possibly nonzero above
+   threshold" resolves to NO at first order.
+3. **𝔬_K^(1) (PS-E)**: zero below threshold; NONZERO on the open 1→22
+   shell above it, exactly λ_K(m₁²,m₂²,m₂²)×(leg factors) — continuous
+   turn-on ∝ m₁²(m₁²−4m₂²). Physics: a really-decaying ghost has no
+   conserved parity; the Krein/parity structure is protected only where
+   λ_K = 0 (threshold and the massless perfect-square point).
+4. **Scaling table (PS-F/G)**:
+   - massive confluence (m > 0, δ→0): |R₁| ~ |K₁| ~ δ^{−3/2} — both
+     completions lose uniformity (matches the oscillator).
+   - massless Jordan paths m₂² = αδ: positive R₁ ~ δ^{−1/2} with
+     PATH-INDEPENDENT power (α = 1 and the collinear-exceptional
+     α = 2/7 both −0.50) — the selection rule removes the dangerous
+     odd-ghost near-shell term from R₁; the Krein near-shell term is
+     δ^{−1/2} generic but δ^{−3/2} on α = 2/7 (path-dependent).
+   - λ_K suppression is what tames the massless limit relative to the
+     massive one (δ^{−1/2} vs δ^{−3/2}).
+   - CAVEAT for the paper: the 1/√δ-per-leg normalization is intrinsic
+     to the split (partial-fraction) mode basis, which itself
+     degenerates at δ = 0; a basis-independent uniformity statement
+     (matrix elements between fixed limit states) is the required
+     sharpening — flagged, not yet done.
+5. **Jordan-chain lemma (PS-H)**: any chain-preserving κ with
+   [κ,H_J] = 0, κ² = 1 is ±identity — ghost parity cannot be a
+   per-block sign (u→u, v→−v fails, as the team warned); it must act
+   across the doubled O(1,1) structure. The constructive κ₀ derivation
+   from the regulated Krein algebra (δ→0 limit of (−1)^{N_ghost})
+   remains next.
+
+Refined comparison table (first order, split perfect square):
+              | positive           | Krein
+  sub-thresh  | 𝔬 = 0, R₁ finite   | 𝔬 = 0, K₁ finite
+  above thresh| 𝔬 = 0 (selection!) | 𝔬 ∝ λ_K ≠ 0 (real decay)
+  massive conf| R₁ ~ δ^{−3/2}      | K₁ ~ δ^{−3/2}
+  massless    | R₁ ~ δ^{−1/2} unif | K₁ ~ δ^{−1/2}, exc. path δ^{−3/2}
+The distinction the series predicts must therefore sit at SECOND order
+(where oscillator experience says the positive form hits on-shell
+obstructions from even-ghost composites — the analogue of 3:1) and in
+the exact massless parity structure (λ_K = 0 kills the Krein
+obstruction there while the paired-Jordan vertex preserves parity).
+Next: second-order field obstructions; constructive κ₀; paper 5.
