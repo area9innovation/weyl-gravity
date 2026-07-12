@@ -151,3 +151,34 @@ The PU-specific content reduces to: (i) Stab(J,G₀′) ⊂ C; (ii) tr(B·m) = 0
 (iii) the exact H²×ℝ value formula. Elevates the variational theorem from a
 PU statement to an instance of NPC/Cartan geometry; candidate standalone
 math-phys note.
+
+## A″. Referee-pass strengthenings (integrated into paper 2 §2.3)
+
+1. **Iff theorem.** The projection principle is now bidirectional
+   (Thm. 2.9 in paper 2): e minimizes c ↦ ‖μ(e^ξc)‖ on C ⟺ ξ ⊥ 𝔠∩𝔭, via
+   the exact first-variation identity d/dt F(e^ξe^{tη})|₀ = 8⟨η,ξ⟩
+   (verified numerically to 1e-7 rel., mixed ξ; numeric/cartan_checks.py).
+   argmin stated as C∩K. The 4/4+4/4 numerical test is thereby replaced by
+   a proof and demoted to a regression check.
+2. **Canonical hull (new Prop.).** C_θ(H) := smallest closed group ⊇ H ∪ θ(H)
+   EQUALS SL(2,ℂ)×SL(2,ℂ) for ω₁,ω₂ ≠ 1: proof via
+   [X_j, X_j†] = (ω_j²−ω_j⁻²)diag(1,−1) ≠ 0 and a 6-dim real-span count;
+   machine-checked Lie-closure dims: 6 (generic), 2 at ω_j = 1
+   (where θ(H_j) = H_j). So the compatible supergroup is not a choice but
+   the minimal θ-stable subgroup forced by the physical stabilizer.
+3. **Naming/claims discipline.** Renamed to "orthogonal Cartan-norm
+   projection principle" — it controls ‖μ‖, not the vector-valued Cartan
+   projection; the scalar inequality is flagged as classical
+   (Mostow self-adjoint groups, Ann. Math. 62 (1955); Kempf–Ness). The
+   novel content: twisted stabilizer + canonical hull + exact H²×ℝ formula
+   + n-mode theorem.
+4. **Normalization fixed.** μ(S) := chamber-ordered log-spectrum of S†S
+   (2× log-singular values), ⟨ξ,η⟩ = tr(ξη); then F = 2‖μ‖², μ(S₊) = (r,r).
+5. **Sp(2n,ℂ) theorem (new).** C_n = ∏ⁿSL(2,ℂ) mode-preserving, positive
+   part (ℍ³)ⁿ; (𝔠_n∩𝔭)^⊥ = inter-mode Hermitian symplectic couplings; for
+   every inter-mode ξ: min = ‖2ξ‖_F, argmin = C_n∩K. Portability to general
+   quadratic PT systems is now a theorem, with the inter-mode condition
+   both sufficient AND necessary (by the iff).
+6. **Compactness phrasing.** H∩K ≅ ℤ₂² refers to the ambient maximal
+   compact fixed by the physical inner product; abstractly ℂ^× has maximal
+   compact U(1) — the obstruction belongs to the embedding, not the group.
