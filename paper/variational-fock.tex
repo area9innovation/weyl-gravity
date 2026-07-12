@@ -44,7 +44,13 @@ stabilizer coset, on which the induced Hilbert-space metric is constantly the
 Bender--Mannheim $\eta=e^{-Q}$.  The proof is elementary and exact: at
 worst-case stabilizer alignment the log-eigenvalues of $S^{\dg}S$ are
 $\arccosh(\cosh r\cosh b)\pm a$ in the Gram rapidities $(a,b)$ of the
-stabilizer factor.  We then quantize the free fourth-order field modewise and
+stabilizer factor.  Geometrically, the theorem is an instance of an
+orthogonal-projection principle for Cartan projections: the stabilizer,
+itself not $\theta$-compatible, embeds in the mode-preserving
+$SL(2,\C)^2$, whose positive part is a totally geodesic
+$\mathbb H^3\times\mathbb H^3$ to which the Bender--Mannheim direction is
+orthogonal, and the closed form is the resulting mixed hyperbolic/flat
+Pythagorean law.  We then quantize the free fourth-order field modewise and
 compute the Bender--Mannheim ground state exactly: it is a normalizable real
 Gaussian for every mode, but its fidelity with the two-field Fock vacuum
 tends to the universal constant $\sqrt3/2$ at large momentum, and its
@@ -88,7 +94,13 @@ $\mathcal F(S)=d(I,S^{\dg}S)^2=\|\log(S^{\dg}S)\|_F^2$
 (Theorem~\ref{thm:mindist}), so that the Bender--Mannheim metric is selected
 by a minimum-distortion principle: it is the least-distorting complex
 canonical transformation converting the PU Hamiltonian to its positive
-normal form.
+normal form.  We then identify the geometry behind the theorem
+(Section~\ref{ssec:cartan}): it is an orthogonal-projection statement for
+Cartan projections along the positive part of a $\dg$-closed subgroup
+(Theorem~\ref{thm:projection}), applied to the mode-preserving
+$SL(2,\C)^2\supset\Stab(J,G_0')$; the stabilizer itself fails
+$\theta$-compatibility, which is why the classical Mostow--Kempf--Ness
+theory does not apply to it directly.
 
 \emph{Second}, for the free fourth-order field
 $(\Box+m_1^2)(\Box+m_2^2)\phi=0$ each spatial momentum $k$ contributes a PU
@@ -261,24 +273,128 @@ quantity is bounded below, which is why the two-invariant argument is needed.
 canonical coordinates is generically the finite group $\Z_2\times\Z_2$
 \cite{companion}; abstractly it is contained in the maximal compact
 $U(1)^2$ of $SO(2,\C)^2$.
-(iii) The theorem admits a geometric recognition.  $\mathcal F(S)=2\|\mu(S)\|^2$
-with $\mu$ the Cartan projection of $\Sp(4,\C)$, and $\mu(S_+)=(r,r)$ lies on
-the $C_2$ chamber wall.  Although the stabilizer itself is not
-$\theta$-compatible, it embeds in the compatible subgroup
-$SL(2,\C)\times SL(2,\C)$ of mode-preserving symplectics, whose orbit through
-the basepoint is a totally geodesic $\mathbb H^3\times\mathbb H^3$ inside the
-symmetric space $X=\Sp(4,\C)/\Sp(2)$; the Gram data $(\tau_j,n_j)$ are polar
-coordinates on the two hyperbolic factors.  Since $B$ is trace-orthogonal to
-all mode-preserving Hermitian directions, the $S_+$-geodesic leaves this
-orbit orthogonally, and Theorem~\ref{thm:mindist} becomes the nearest-point
-(orthogonal projection) theorem for convex totally geodesic subsets of an
-NPC space --- including the equality set, by uniqueness of the projection
-foot.  The closed form \eqref{eq:xformula} is the corresponding Pythagorean
-law: hyperbolic ($\arccosh(\cosh r\cosh b)$, the hypotenuse law of a totally
-geodesic $\mathbb H^2$) in $b$, flat in $a$.  Numerical tests confirm the
-general principle: for any Hermitian Hamiltonian $\xi$ orthogonal to the
-mode-preserving directions, $\|\mu(e^{\xi}C)\|\ge\|\mu(e^{\xi})\|$ on the
-stabilizer coset, while generic non-orthogonal $\xi$ violate it.
+(iii) The theorem is an instance of a general orthogonal-projection principle
+for Cartan projections, proved in the next subsection; the elementary proof
+above remains valuable because it yields the exact value
+\eqref{eq:xformula}, which the geometric argument does not.
+\end{remark}
+
+\subsection{Geometric recognition: an orthogonal-projection principle for
+Cartan projections}\label{ssec:cartan}
+
+Write $\mu(S)$ for the Cartan projection of $S\in\Sp(4,\C)$: the vector
+$(x_1,x_2)$, $x_1\ge x_2\ge0$, of log-singular values in the closed Weyl
+chamber of type $C_2$.  Then $\mathcal F(S)=2\|\mu(S)\|^2$, and
+$\mu(S_+)=(r,r)$ lies \emph{on the chamber wall} $x_1=x_2$.
+Theorem~\ref{thm:mindist} is thus a minimization of the Cartan-projection
+norm along a coset of the stabilizer.  It is \emph{not} an application of
+the classical Mostow--Kempf--Ness theory \cite{Mostow1955,KempfNess1979} to
+$H=\Stab(J,G_0')$, because $H$ is not $\theta$-compatible: it is not closed
+under the adjoint, and its unitary part is generically the finite group
+$\Z_2\times\Z_2$ rather than a maximal compact subgroup \cite{companion}.
+The correct recognition passes through a compatible supergroup.
+
+Let $\mathbb P$ denote the cone of positive-definite Hermitian matrices with
+the affine-invariant metric, a nonpositively curved (NPC) space in which
+$t\mapsto d(\gamma(t),x)^2$ is strictly convex along nonconstant geodesics
+\cite{Bhatia2007,BridsonHaefliger}.
+
+\begin{lemma}\label{lem:totgeo}
+Let $\mathcal C\subset GL(n,\C)$ be a closed subgroup, closed under
+conjugate transpose, and let
+$\mathbb P_{\mathcal C}=\mathcal C\cap\mathbb P$ be its set of
+positive elements.  Then $\mathbb P_{\mathcal C}$ is a geodesically closed
+(hence convex) subset of $\mathbb P$, and
+$\mathbb P_{\mathcal C}=\{cc^{\dg}:c\in\mathcal C\}$.
+\end{lemma}
+
+\begin{proof}
+For $A,B\in\mathbb P_{\mathcal C}$ the geodesic is
+$t\mapsto A^{1/2}\big(A^{-1/2}BA^{-1/2}\big)^{t}A^{1/2}$
+\cite{Bhatia2007}.  Since $\mathcal C$ is a closed group closed under $\dg$, it contains,
+with each positive $A$, the one-parameter group $A^{t}=e^{t\log A}$
+(the closure of $\{A^{n}\}_{n\in\Z}$ in $GL(n,\C)$ contains a
+one-parameter subgroup through $A$; equivalently, $\mathcal C$ is a real
+algebraic-by-closure group and $\log A\in\mathrm{Lie}\,\mathcal C$),
+in particular $A^{\pm1/2}$, hence contains the positive matrix
+$M=A^{-1/2}BA^{-1/2}$ and its powers $M^{t}$, hence the whole geodesic,
+which consists of positive elements of $\mathcal C$.  For the last claim:
+$cc^{\dg}\in\mathbb P_{\mathcal C}$ for $c\in\mathcal C$, and conversely
+$A=(A^{1/2})(A^{1/2})^{\dg}$ with $A^{1/2}\in\mathcal C$.
+\end{proof}
+
+\begin{theorem}[Projection principle]\label{thm:projection}
+Let $\mathcal C\subset GL(n,\C)$ be a closed subgroup, closed under
+conjugate transpose, and let $\xi=\xi^{\dg}$ satisfy the orthogonality
+\begin{equation}\label{eq:orth}
+\tr(\xi\,\eta)=0
+\qquad\text{for every Hermitian }\eta\text{ with }e^{t\eta}\in\mathcal C .
+\end{equation}
+Then for every $c\in\mathcal C$,
+\begin{equation}
+\big\|\log\big((e^{\xi}c)^{\dg}(e^{\xi}c)\big)\big\|_F
+\ \ge\
+\|2\xi\|_F ,
+\end{equation}
+with equality if and only if $c$ is unitary.
+\end{theorem}
+
+\begin{proof}
+By congruence invariance of the affine metric,
+$d\big(I,(e^{\xi}c)^{\dg}e^{\xi}c\big)
+=d\big(I,c^{\dg}e^{2\xi}c\big)
+=d\big((cc^{\dg})^{-1},e^{2\xi}\big)$,
+and $(cc^{\dg})^{-1}\in\mathbb P_{\mathcal C}$ by Lemma~\ref{lem:totgeo}.
+It therefore suffices to show that $I$ is the unique minimizer of
+$h(M)=d(M,e^{2\xi})^2$ on $\mathbb P_{\mathcal C}$.  Every point of
+$\mathbb P_{\mathcal C}$ is joined to $I$ by a geodesic
+$t\mapsto e^{2t\eta}$ inside $\mathbb P_{\mathcal C}$
+(Lemma~\ref{lem:totgeo} with $A=I$), along which $h$ is strictly convex
+unless constant; and the first variation at $t=0$ is
+$-2\langle\gamma'(0),\exp_I^{-1}(e^{2\xi})\rangle\propto-\tr(\eta\,\xi)=0$
+by \eqref{eq:orth}.  Hence $t=0$ is the unique minimum along every such
+geodesic, so $I$ is the unique minimizer on $\mathbb P_{\mathcal C}$, with
+value $d(I,e^{2\xi})^2=\|2\xi\|_F^2$.  Equality therefore forces
+$(cc^{\dg})^{-1}=I$, i.e.\ $c$ unitary; the converse is immediate.
+\end{proof}
+
+\begin{corollary}[Second proof of Theorem~\ref{thm:mindist}]
+\label{cor:secondproof}
+Take $\mathcal C=SL(2,\C)\times SL(2,\C)$, the mode-preserving
+(block-diagonal) symplectic subgroup, which is closed under $\dg$ and
+contains $\Stab(J,G_0')$; its positive part
+$\mathbb P_{\mathcal C}\cong\mathbb H^3\times\mathbb H^3$ is totally
+geodesic, and the Gram data $(\tau_j,n_j)$ of
+Lemma~\ref{lem:invariants} are polar coordinates on the two hyperbolic
+factors.  The Bender--Mannheim direction $\xi=\tfrac r2 B$ is
+block-off-diagonal, hence trace-orthogonal to every mode-preserving
+Hermitian direction, so \eqref{eq:orth} holds and
+Theorem~\ref{thm:projection} gives
+$\mathcal F(S_+C)\ge\mathcal F(S_+)$ with equality iff $C$ is unitary ---
+for every $C$ in the larger group $\mathcal C$, a fortiori on the
+stabilizer.
+\end{corollary}
+
+\begin{remark}\label{rem:pythagoras}
+(i) The closed form \eqref{eq:xformula} is the Pythagorean law of the
+ambient symmetric space: the worst-alignment configurations sweep a totally
+geodesic $\mathbb H^2\times\R$, on which
+$\arccosh(\cosh r\cosh b)$ is the hyperbolic hypotenuse law (legs $r$ and
+$b$ meeting at a right angle in $\mathbb H^2$) while $a$ adds by flat
+Pythagoras in the $\R$ factor.
+(ii) The hypothesis \eqref{eq:orth} is sharp, not decorative: in numerical
+tests, random Hermitian Hamiltonian directions $\xi$ orthogonal to the
+mode-preserving block satisfy the conclusion exactly, while generic $\xi$
+with nonzero block-diagonal components violate it.
+(iii) The twist that makes the recognition nontrivial is that the physically
+natural group --- the stabilizer of the diagonalization problem --- fails
+$\theta$-compatibility, so the classical theory does not see it directly;
+minimality is inherited from its compatible hull $\mathcal C$.  We expect
+the same mechanism to drive the general quadratic case: whenever the
+stabilizer of a positive normal form sits inside a mode-preserving
+$\dg$-closed subgroup to which the diagonalizer direction is
+trace-orthogonal, Theorem~\ref{thm:projection} selects the positive
+diagonalizer variationally.
 \end{remark}
 
 \section{The free fourth-order field}\label{sec:field}
@@ -453,11 +569,13 @@ Theorem~\ref{thm:mindist} upgrades the uniqueness theorem of
 \cite{companion}: the Bender--Mannheim metric is not merely the unique
 positive point of the diagonalizer coset but its unique distortion minimizer,
 with the exact excess $4[a^2+\arccosh^2(\cosh r\cosh b)]-4r^2$ in the Gram
-rapidities of the stabilizer.  The result is a concrete, fully explicit
-instance of the Kempf--Ness/Mostow picture --- minimal-norm points on
-complexified orbits are unitary-locus points --- but the proof is elementary
-and yields the minimizing value in closed form, which the abstract theory
-does not.
+rapidities of the stabilizer.  Section~\ref{ssec:cartan} shows this is an
+instance of a projection principle for Cartan projections along
+$\dg$-closed subgroups --- close in spirit to Kempf--Ness/Mostow
+\cite{KempfNess1979,Mostow1955}, but applied through a compatible hull
+because the stabilizer itself is not $\theta$-compatible --- while the
+elementary proof supplies the minimizing value in closed form, which the
+abstract theory does not.
 
 \paragraph{The two geometries, again.}
 The field-theoretic analysis separates two statements that are easily
@@ -475,9 +593,11 @@ featureless.
 
 \paragraph{Outlook.}
 Three natural continuations: (i) extend the minimum-distortion theorem to
-general semisimple quadratic PT Hamiltonians, where the stabilizer is a
-product of $SO(2,\C)$ factors and the same Gram-rapidity reduction should
-apply mode-pair by mode-pair; (ii) determine whether the disjointness
+general semisimple quadratic PT Hamiltonians via
+Theorem~\ref{thm:projection}: the stabilizer is a product of $SO(2,\C)$
+factors inside a mode-preserving $\dg$-closed subgroup, and the only
+model-dependent input is the trace-orthogonality of the diagonalizer
+direction to that subgroup; (ii) determine whether the disjointness
 survives interactions in low dimensions, where the free-theory obstruction
 is only the universal $1/3$ per mode (a wave-function renormalization of the
 modewise map, $\rho_k\to\rho_k Z_k$ with $Z_k$ unitary, cannot change class
@@ -503,6 +623,22 @@ Phys.\ Rev.\ D \textbf{78} (2008) 025022.
 \bibitem{Bhatia2007}
 R.~Bhatia, \emph{Positive Definite Matrices}, Princeton University Press,
 2007.
+
+\bibitem{Mostow1955}
+G.~D.~Mostow,
+\emph{Some new decomposition theorems for semi-simple groups},
+Mem.\ Amer.\ Math.\ Soc.\ \textbf{14} (1955) 31.
+
+\bibitem{KempfNess1979}
+G.~Kempf and L.~Ness,
+\emph{The length of vectors in representation spaces},
+in: Algebraic Geometry, Lecture Notes in Math.\ \textbf{732}, Springer,
+1979, 233.
+
+\bibitem{BridsonHaefliger}
+M.~R.~Bridson and A.~Haefliger,
+\emph{Metric Spaces of Non-Positive Curvature},
+Springer, 1999.
 
 \bibitem{vN1939}
 J.~von Neumann,
