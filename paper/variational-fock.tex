@@ -227,8 +227,9 @@ $\cosh\tau_1\cosh\tau_2\pm\sinh\tau_1\sinh\tau_2=\cosh(\tau_1\pm\tau_2)$,
 \]
 whence
 $\cosh x_{1,2}=c\alpha\beta\pm\sqrt{(\alpha^2-1)(c^2\beta^2-1)}
-=\cosh(\varphi\pm a)$ with $\cosh\varphi=c\beta$.  Both hyperbolic identities
-are verified symbolically.  Finally
+=\cosh(\varphi\pm a)$ with $\cosh\varphi=c\beta$, by the hyperbolic
+addition formulas (elementary identities; also machine-checked in the
+repository as verification evidence).  Finally
 $\cosh\varphi(b)-\cosh r=\cosh r(\cosh b-1)\ge0$ gives $\varphi(b)\ge r$ with
 equality iff $b=0$.
 \end{proof}
@@ -313,7 +314,11 @@ and the three minimands used below are related by
 In particular $\min\sqrt{\mathcal F}=\|2\xi\|_F$,
 $\min\|\mu\|=\|2\xi\|_F/\sqrt2$, and the first-variation coefficient $8$ in
 \eqref{eq:firstvar} below is consistent with
-$\mathcal F(e^{\xi})=4\|\xi\|_F^2$.  With these conventions
+$\mathcal F(e^{\xi})=4\|\xi\|_F^2$.  Throughout, $K$ denotes the
+maximal compact subgroup determined by the physical inner product:
+$K=\Sp(4,\C)\cap U(4)\cong\Sp(2)$ (the compact symplectic group, written
+$USp(4)$ in part of the literature), and in the $n$-mode setting
+$K=\Sp(2n,\C)\cap U(2n)\cong\Sp(n)$.  With these conventions
 $\mu(S_+)=(r,r)$, which lies \emph{on the chamber wall} $x_1=x_2$ of type
 $C_2$.
 
@@ -346,8 +351,9 @@ P\rangle$ \cite{Bhatia2007,BridsonHaefliger}.
 Let $\mathcal C\subset GL(n,\C)$ be a closed subgroup, closed under
 conjugate transpose, and let
 $\mathbb P_{\mathcal C}=\mathcal C\cap\mathbb P$ be its set of
-positive elements.  Then $\mathbb P_{\mathcal C}$ is a geodesically closed
-(hence convex) subset of $\mathbb P$, and
+positive elements.  Then $\mathbb P_{\mathcal C}$ is a topologically closed,
+geodesically closed (hence convex) subset of $\mathbb P$ --- so it admits
+unique metric projection from any point of $\mathbb P$ --- and
 $\mathbb P_{\mathcal C}=\{cc^{\dg}:c\in\mathcal C\}$.
 \end{lemma}
 
@@ -364,6 +370,10 @@ positive matrix $M=A^{-1/2}BA^{-1/2}$ and its powers $M^{t}$, hence the
 whole geodesic, which consists of positive elements of $\mathcal C$.  For
 the last claim: $cc^{\dg}\in\mathbb P_{\mathcal C}$ for $c\in\mathcal C$,
 and conversely $A=(A^{1/2})(A^{1/2})^{\dg}$ with $A^{1/2}\in\mathcal C$.
+Topological closedness of $\mathbb P_{\mathcal C}=\mathcal C\cap\mathbb P$
+in $\mathbb P$ is immediate from closedness of $\mathcal C$ in $GL(n,\C)$;
+unique metric projection onto closed convex subsets is standard in NPC
+spaces \cite{BridsonHaefliger}.
 \end{proof}
 
 \begin{theorem}[Orthogonal Cartan-norm projection principle]
@@ -405,7 +415,8 @@ e\ \text{minimizes}\ c\mapsto
 \begin{proof}
 By congruence invariance of the affine metric,
 $d\big(I,(e^{\xi}c)^{\dg}e^{\xi}c\big)=d\big((cc^{\dg})^{-1},e^{2\xi}\big)$,
-and $(cc^{\dg})^{-1}$ ranges over $\mathbb P_{\mathcal C}$
+and $(cc^{\dg})^{-1}=dd^{\dg}$ with $d=c^{-\dg}\in\mathcal C$, so it
+ranges over $\mathbb P_{\mathcal C}$ as $c$ ranges over $\mathcal C$
 (Lemma~\ref{lem:totgeo}).  For (a), take $c=e^{t\eta}$: then
 $(cc^{\dg})^{-1}=e^{-2t\eta}$ is a geodesic through $I$ with velocity
 $-2\eta$, and the NPC first-variation formula gives
@@ -460,20 +471,28 @@ $X_1,X_1^{\dg},[X_1,X_1^{\dg}]$ and their $i$-multiples is six-dimensional,
 hence equals $\mathfrak{sl}(2,\C)$; likewise on mode $2$ with $\w_1$.  The
 generated group is then the connected $SL(2,\C)$ on each generic mode.  At
 $\w_j=1$ one has $X_j^{\dg}=-X_j$, so $\theta(\mathfrak h_j)=\mathfrak h_j$
-and the closure is $\mathfrak{so}(2,\C)$ itself.  (The Lie-closure
-dimensions $6$ and $2$ are verified computationally in the repository.)
+and the closure is $\mathfrak{so}(2,\C)$ itself.
 \end{proof}
 
-\begin{remark}[Symmetry enhancement at alignment]\label{rem:enhancement}
-The stratification of Proposition~\ref{prop:hull} is mirrored by a
-discontinuous jump of the unitary loci.  For the hull,
-$C_j\cap K\cong SU(2)$ on the generic stratum and $U(1)$ at $\w_j=1$; for
-the physical stabilizer, $H_j\cap K$ is the discrete $\Z_2$ generically and
-jumps to the continuous $U(1)$ at alignment.  The equality locus of
-Theorem~\ref{thm:mindist} enlarges accordingly.  This enhancement is a
-property of the physical embedding (the twist), not of the abstract groups,
-and marks the parameter values at which the twisted and compatible pictures
-coincide.
+\noindent
+(As regression evidence, not as part of the proof: the Lie-closure
+dimensions $6$ and $2$ are also confirmed computationally in the
+repository.)
+
+\begin{remark}[Alignment: hull contraction versus physical enhancement]
+\label{rem:enhancement}
+The stratification of Proposition~\ref{prop:hull} is mirrored by two
+distinct discontinuities at $\w_j=1$, which must not be conflated.  For the
+\emph{hull}, the compact locus contracts, $C_j\cap K:\ SU(2)\to U(1)$,
+because the hull itself shrinks from $SL(2,\C)$ to $SO(2,\C)$; accordingly,
+for minimization over the hull the equality locus \emph{changes} from
+$SU(2)$-type to $U(1)$-type.  For the \emph{physical stabilizer} the
+unitary locus is enhanced, $H_j\cap K:\ \Z_2\to U(1)$, and it is only for
+the variational problem restricted to $H$ that the equality locus of
+Theorem~\ref{thm:mindist} \emph{enlarges} at alignment.  The enhancement is
+a property of the physical embedding (the twist), not of the abstract
+groups, and marks the parameter values at which the twisted and compatible
+pictures coincide.
 \end{remark}
 
 \begin{corollary}[Second proof of Theorem~\ref{thm:mindist}]
@@ -485,9 +504,15 @@ geodesic in $\mathbb P$, the Gram data $(\tau_j,n_j)$ of
 Lemma~\ref{lem:invariants} being polar coordinates on the two hyperbolic
 factors; and with $\xi=\tfrac r2B$, which is block-off-diagonal and hence
 orthogonal to $\mathfrak c_{\mathfrak p}$ (the per-mode traceless Hermitian
-blocks).  This yields $\mathcal F(S_+c)\ge\mathcal F(S_+)$ with
-$\operatorname{arg\,min}=\mathcal C\cap K$, for every $c$ in the hull ---
-a fortiori on $H$, where the minimizers are $H\cap K$.
+blocks).  This yields $\mathcal F(S_+c)\ge\mathcal F(S_+)$ for every $c$ in the
+hull, with the two equality records kept separate:
+\begin{equation}
+\operatorname*{arg\,min}_{c\in\mathcal C}\mathcal F(S_+c)=\mathcal C\cap K,
+\qquad
+\operatorname*{arg\,min}_{h\in H}\mathcal F(S_+h)=H\cap K ,
+\end{equation}
+the second following from the first because $e\in H\subset\mathcal C$
+realizes the unrestricted minimum.
 \end{corollary}
 
 \begin{remark}\label{rem:pythagoras}
@@ -559,7 +584,11 @@ any application is thus reduced to a single check: that the positive
 diagonalizer direction is inter-mode for the chosen splitting, i.e.,
 trace-orthogonal to $\mathfrak c_{n,\mathfrak p}$ --- and by
 Theorem~\ref{thm:projection}(c) this check is not only sufficient but
-necessary.
+necessary.  We emphasize that the canonical-hull computation of
+Proposition~\ref{prop:hull} is proved here for the two-mode PU stabilizer;
+for a general $n$-mode system the containment of the physical stabilizer in
+$\mathcal C_n$, and the structure of its compatible hull across mixed
+exceptional strata, are hypotheses to be verified per system.
 
 \section{The free fourth-order field}\label{sec:field}
 
@@ -640,9 +669,10 @@ substitution.  The fidelity is the standard two-Gaussian determinant formula;
 the occupations follow from covariance algebra,
 $\langle N_j\rangle=\tfrac12 c_j^{\top}\Sigma c_j$ with
 $\Sigma$ the covariance of $|\psi_0|^2$ and $c_j$ the coefficient vectors of
-$a_j\psi_0$.  All steps are verified symbolically, and the fidelity is
-confirmed by 25-digit quadrature.  The limits follow with
-$\w_1/\w_2\to1$.
+$a_j\psi_0$.  The limits follow with $\w_1/\w_2\to1$.
+(Independent symbolic verification of each step, and a 25-digit quadrature
+check of the fidelity, are recorded in the repository as verification
+evidence.)
 \end{proof}
 
 \begin{remark}
