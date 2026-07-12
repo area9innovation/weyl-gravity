@@ -370,3 +370,47 @@ log-coefficient normalizations (1/(8π²) log ρ = 1/(16π²) log ρ²) displaye
 together once in the Hadamard theorem.
 
 Re-frozen: paper1-v1.0, paper2-v1.1, paper3-v1.1.
+
+## Paper 4, first calculation: gravitational reduction (2026-07-12)
+
+`symbolic/gravity_engine.py` (O(ε²) perturbation engine, flat background,
+mostly-minus, mode k along z) + `symbolic/verify_gravity_reduction.py`
+(G1–G7, ALL PASS). Model: L = √−g[c₁R + αR_μν² + βR²], α = −3β
+(scalar-free Einstein–Weyl); healthy-graviton convention c₁ = −1;
+M² = c₁/α > 0 for α < 0.
+
+**Results:**
+1. TT (helicity ±2): L_TT = (α/4)(Ä+k²A)² − (c₁/4)(Ȧ²−k²A²) — perfect
+   square + Einstein; EOM (∂²+k²)(∂²+k²+M²)A = 0: EXACT PU block per
+   polarization, γ_k = α/2 < 0 (= BT perfect-square sign; massless branch
+   healthy, massive ghost), mass pair (m₁, m₂) = (M, 0). Trilogy applies
+   verbatim per polarization.
+2. Vector (helicity ±1): gauge-invariant w = k·h_tx + ∂_t h_xz;
+   L_V = (α/4)(ẇ²−k²w²) − (c₁/4)w²: SINGLE second-order massive mode,
+   ghost-signed. The massless PU partner is pure diffeomorphism gauge —
+   REMOVED by the quotient. **PU pairing is broken by gauge reduction
+   outside helicity ±2.**
+3. Scalar (helicity 0): h_tt auxiliary; at α = −3β single massive ghost
+   mode (effective kinetic 3c₁/4 < 0, β-independent); generic (α, β):
+   fourth order, scalaron m₀² = −c₁/(2(α+3β)) — decouples iff α = −3β ✓.
+4. Mode count: 4 (TT pairs) + 2 + 1 = 7 = 2 + 5 ✓.
+5. Polarization-enhanced stabilizer: normal-form stabilizer Lie-algebra
+   dim jumps 4 → 16 for one vs two identical PU blocks (numeric
+   null-space computation); SO(2)-helicity covariance + Schur ⇒ covariant
+   metric S₊ ⊗ I_pol.
+
+**Structural consequence for the paper-4 master theorem:** the conjecture
+"PT diagonalization commutes with gravitational symplectic reduction"
+FAILS in its naive form — it holds exactly on the helicity-±2 blocks. The
+massive helicity ±1, 0 polarizations survive reduction as UNPAIRED
+ghost-signed second-order oscillators with no BM mixing partner: their
+completion is the bare dichotomy (positive norm + unbounded-below energy,
+or Krein norm + positive energy). Imposing the spectral condition forces
+Krein signature on helicities ±1, 0 EVEN IN THE SPLIT PHASE. Hence, unlike
+the scalar theory, split Einstein–Weyl gravity is necessarily Krein on the
+lower helicities for all Δ > 0; the positive pseudo-Hermitian phase is a
+property of the TT sector only. Master-theorem item 2 must be restated
+accordingly ("TT-positive phase"), and the critical surface remains the
+locus where the TT sector too becomes Jordan (flat space: c₁ → 0, pure
+Weyl; then conformal gauge enhancement in the lower helicities — to be
+analyzed).
