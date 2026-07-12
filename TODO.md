@@ -2,6 +2,52 @@
 
 Working list. Move items to DONE with commit hash when closed.
 
+## Paper 3 referee round (major revision, 2026-07-12) — APPLIED; residuals
+
+Referee claims verified in symbolic/verify_paper3_referee.py (R1–R5, ALL
+PASS): sign chain (confluent = +∂_{m²}W = −δ′; §5 def was −∂ —
+inconsistent; BT = action-sign reversal); Hadamard remainder has
++Σρ²logρ/(64π²) term (NOT smooth); fidelity formula reproduces UV
+(Σ−Σ̄)²/12k⁴; IR: N_rel ~ (m₁+m₂)m₁m₂/(6k³) vs massless anchor →
+∫k^{d−1}N_rel diverges d≤3 (referee constant exact); Cartan μ=(r,r) is
+the GRAM convention (=2μ_std), the only one consistent with F=2‖μ‖².
+
+1. [x] Bridge: three-level statement (split / massive resonance / doubly
+   massless); BT identification only at m=0 up to action-sign reversal.
+2. [x] Fix §5 W_mm = +∂_{m²}W_m; carry explicit ε through; explicit
+   action in Conventions.
+3. [x] Hadamard: V₁₂ log σ₊ + H₁₂, smooth V₁₂, diagonal 1/(16π²);
+   flat display log + O(ρ²logρ²) + C^∞.
+4. [x] Parametrix: full log coefficient; "provides the local microlocal
+   input", not "perturbation theory available".
+5. [x] Sector theorem → UV hierarchy; □² anchor needs separate IR theorem
+   ((1−f) is UV-only; N_rel IR-divergent d≤3).
+6. [x] Resonance regularity: separate m>0 resonance / m=0 corner / UV
+   local / global.
+7. [x] Cartan convention: declare Gram μ = log spec(S†S) = 2μ_std;
+   Lemma noframe: symplectic frame.
+8. [x] Decoupling thm (v): drop "or ≤ f(‖μ‖)"; only no-coercive-lower-
+   bound claimed.
+9. [x] "Pure beam splitter" → complexified beam-splitter generator (Levi
+   of vacuum-line parabolic).
+10. [x] "No map G/K→G/P_Ω" → q_Ω does not factor through q_K; P_Ω =
+    Siegel parabolic.
+11. [x] Cartan-projection theorem incorporated accurately (non-θ-
+    compatible stabilizer, SL(2,ℂ)² hull, C₂ wall, escape within one
+    vacuum-ray fiber).
+12. [x] Metric-independence: display ω_{ρ′}(A) = w₀^{1/2}w₀^{−1/2}ω_ρ(A)
+    cancellation; specify domain/admissible/unbounded W.
+13. [x] GNS disjointness: explicit common auxiliary real CCR algebra.
+14. [x] "Krein completion is the only one" → canonical nondegenerate
+    spectral completion; PT-Jordan realizations not classified.
+15. [x] Define "universal" (universal selected complex covariance).
+16. [x] Sector expansion wording (matched Σ; mass pair up to interchange).
+17. [x] Quadratic-gravity ¶ → helicity-stratified version citing paper 4.
+18. [x] Action + algebra before EOM; complex covariance / involution /
+    completion triple.
+19. [x] WF proof sharpened; "fourth-order microlocal spectrum condition".
+20. [x] Artifact identifiers (same pattern as paper 4).
+
 ## Paper 4 referee round 2 — APPLIED (see DONE); residual items
 
 - [ ] Repo/companion identifiability (referee pt 11, remainder): repo is
@@ -104,7 +150,7 @@ Script side:
 
 ## Housekeeping
 
-- [ ] paper4 freeze + tag paper4-v1.0 after referee rounds conclude.
+- [ ] paper4 freeze + tag paper4-v1.0; paper3 re-freeze + tag paper3-v1.2 (referenced in its Verification paragraph) — after referee rounds conclude.
 - [ ] Before submission (all papers): author metadata, "to appear"
   references, companion arXiv IDs once public.
 

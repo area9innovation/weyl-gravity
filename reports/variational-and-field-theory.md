@@ -642,3 +642,58 @@ All twelve referee points applied:
     necessary tests" + explicit non-claims.
 
 Now 14 pp., compiles clean. TODO.md tracks residual items.
+
+## Paper 3 referee pass (2026-07-12) — major revision applied
+
+Referee claims first machine-verified in symbolic/verify_paper3_referee.py
+(R1–R5, ALL PASS):
+- R1 sign chain: confluent limit of the divided difference is
+  +∂_{m²}W_m = −(1+iωt)e^{−iωt}/(4ω³) = −δ′(p²−m²); the paper's §6
+  definition W_mm = −∂_{m²}W_m was internally inconsistent with its own
+  eq. (Wspectral)/(Wmode). BT's +δ′₁(p²) is the action-sign REVERSAL of
+  our confluent covariance at m=0.
+- R2 Hadamard remainder: divided difference = (1/8π²)logρ +
+  (Σ/64π²)ρ²logρ + ... — the remainder is NOT smooth ("log + smooth" was
+  false for nonzero masses). Exact coefficient +Σ/(64π²) pinned.
+- R3 the 2×2 Gaussian overlap formula reproduces the verified UV
+  expansion (Σ−Σ̄)²/12k⁴ (self-check).
+- R4 IR obstruction of the □² anchor: N_rel(k) ~ (m₁+m₂)m₁m₂/(6k³) as
+  k→0 (referee's constant EXACT), so ∫k^{d−1}N_rel diverges precisely
+  for d≤3; 1−f ≤ 1 always IR-converges, exposing the (1−f) criterion as
+  UV-only, not global Shale.
+- R5 Cartan convention: singular values of S₊ are e^{±r/2} → μ_std =
+  (r/2,r/2); the papers' μ(S₊)=(r,r) is the Gram convention
+  μ = log spec(S†S) = 2μ_std — the only one consistent with F = 2‖μ‖².
+
+All 20 points applied to fourth-order-vacuum.tex (now 13 pp., clean):
+bridge restructured as three statements (split / massive BT-type
+resonance / doubly-massless with action-sign reversal, explicit ε);
+explicit action S = (ε/2)∫φ(□+m₁²)(□+m₂²)φ with ε=+1 and the complex
+covariance / involution / completion hierarchy in Conventions; W_mm
+sign fixed; Hadamard theorem in V₁₂logσ₊+H₁₂ form with universal
+DIAGONAL value 1/(16π²) and machine-verified Σρ²logρ/(64π²) remainder;
+parametrix = "local microlocal input", HW/BF adaptation flagged as
+genuine further step; sector theorem → UV hierarchy with common IR
+regular class + new Remark (□² anchor is an open IR question, exact
+N_rel asymptotic displayed); four resonance boundaries separated (m>0
+resonance vs m=0 corner vs UV local vs global); decoupling (v) reduced
+to no-coercive-lower-bound (upper envelopes exist); "pure beam
+splitter" → complexified beam-splitter generator (e^{−Q′/2} nonunitary);
+q_Ω does not factor through q_K (Siegel parabolic named); Gram–Cartan
+convention declared (synchronized with F = 2‖μ‖²), noframe lemma on
+symplectic frames with the 2log s ≥ log ρ(M²) chain; Cartan-projection
+theorem incorporated (non-θ-compatible stabilizer, SL(2,ℂ)² hull, C₂
+wall) + new wall-escape remark (escape along the wall within one
+vacuum-ray fibre); metric-independence proof displays the
+w₀^{1/2}w₀^{−1/2} cancellation with admissibility/domain spec;
+disjointness on the explicit common auxiliary CCR algebra (standard
+involution; PT rotation is the genuinely complex step); "Krein is the
+only one" → canonical nondegenerate spectral completion, PT-Jordan
+realizations (BM 0804.4190, title+arXiv added) not classified;
+"universal" defined (universal selected complex covariance);
+matched-Σ wording + pair-up-to-interchange; quadratic-gravity ¶ replaced
+with the helicity-stratified statement citing companion4 (added to bib);
+WF proof sharpened (boundary-value form, V₁₂(x,x)≠0, no directions
+removed; "fourth-order microlocal spectrum condition" naming);
+verification artifact identifiers (scripts, versions, tag paper3-v1.2
+to be created at freeze).
