@@ -1,0 +1,792 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\w}{\omega}
+\newcommand{\dg}{\dagger}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\ob}{\mathfrak o}
+\newcommand{\kerad}{\Pi_{\ker\ad_{h_0}}}
+
+\title{Interaction Obstructions and Resonant Breakdown\\
+of the Positive Pais--Uhlenbeck Metric}
+\author{GPT-5.6.sol\thanks{OpenAI model.  Contributed the research
+programme, the mathematical direction, and the referee analyses.}
+\and
+Claude Fable 5\thanks{Anthropic model.  Contributed the derivations, the
+machine verification (SymPy, high-precision numerics, Lean~4), and the
+manuscripts.  The project was commissioned and directed by Asger Alstrup
+Palm (\texttt{asger@area9.dk}), who initiated the questions, orchestrated
+the collaboration between the models, and serves as the corresponding
+human contact, but claims no technical contribution.}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The free unequal-frequency Pais--Uhlenbeck (PU) oscillator admits a
+canonical positive pseudo-Hermitian metric, geometrically selected and
+classified in a companion series.  This paper asks what happens to that
+metric --- and to its Krein/ghost-parity alternative --- when an
+interaction is switched on.  For the oscillator with the cubic vertex
+inherited from a real $z^3$ interaction we construct the metric
+deformation explicitly through third order and prove: the deformation
+exists for generic frequencies; at the internal resonance
+$\w_1=3\w_2$ it is obstructed at second order by an exact on-shell
+conversion operator, and sufficiently excited resonant multiplets then
+acquire complex-conjugate energy pairs at $O(\zeta^2)$ --- genuine
+spectral PT-breaking, which excludes \emph{every} positive invariant
+metric where it persists; at $\w_1=\tfrac32\w_2$ a third-order
+obstruction appears; a transfer-lattice selection rule organizes the
+resonance hierarchy; and the deformation coefficients diverge
+geometrically, $R_n=O(\epsilon^{-3n/2})$, toward the Jordan boundary.
+For the perfect-square field theory
+$-\tfrac12\int(\Box\phi+\lambda(\partial\phi)^2)^2$, regulated by a mass
+splitting, the cubic vertex is exactly the K\"all\'en polynomial
+$\tfrac12\lambda_{\mathrm K}(p_1^2,p_2^2,p_3^2)$; an even-ghost
+selection rule protects the positive metric at first order even above
+the ghost-decay threshold, while the sectorwise ghost parity is
+obstructed there by the real decay.  At second order the momentum
+continuum turns the oscillator's isolated resonances into generic
+scattering shells: the branch-changing process $H+L\to L+L$ obstructs
+the pointed-sector positive metric, with the exact value
+$401\sqrt6/39424$ at a rational kinematic point, hence on an open
+subset of the shell.  An exact two-field rewriting,
+$U=e^{\lambda\phi}$, $V=(\psi/\lambda)e^{-\lambda\phi}$, converts the
+theory into $-\partial U\!\cdot\!\partial V+\tfrac{\lambda^2}2U^2V^2$
+and exhibits the hidden ghost parity as the exact nonlinear involution
+$U\leftrightarrow V$, which exchanges two oppositely oriented null
+vacuum sectors and generates the $\Box^2$ Jordan dynamics about either
+of them; the regulated branch parity has no bounded confluent limit in
+one sector but converges on the doubled space to this exchange.  All
+finite-dimensional and modewise identities are machine-verified.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}\label{sec:intro}
+
+A companion series \cite{paperI,paperII,paperIII,paperIV} analyzed the
+\emph{free} fourth-order theories --- the PU oscillator, the fourth-order
+scalar field, and linearized quadratic gravity --- and established a
+three-level structure: one complex spectral covariance, several real
+forms (involutions), and several completions.  The positive
+pseudo-Hermitian completion of Bender and Mannheim
+\cite{BM2008PRL,BM2008PRD} and the Krein/ghost-parity completion of
+Bateman and Turok \cite{BT2026} are real forms of one free theory,
+distinguished at Jordan degenerations.
+
+This paper begins the interacting classification.  The organizing
+object is the \emph{deformation problem} for the canonical positive
+metric: given the free Dyson map $\rho_0$ with
+$h_0=\rho_0H_0\rho_0^{-1}$ Hermitian, and a perturbation
+$H_\zeta=H_0+\zeta V$, when does a deformed map
+$\rho_\zeta=\exp[-\tfrac12(\zeta R_1+\zeta^2R_2+\cdots)]\rho_0$ keep
+$h_\zeta=\rho_\zeta H_\zeta\rho_\zeta^{-1}$ Hermitian?  Order by order
+this is a cohomological question: the order-$n$ equation is
+$[h_0,R_n]=S_n$ with a source built from lower orders, solvable iff the
+kernel projection $\kerad S_n$ --- the \emph{obstruction class} ---
+vanishes.  A parallel problem governs the Krein side: deform the ghost
+parity $\kappa_0$ so that $[\kappa_\zeta,H_\zeta]=0$,
+$\kappa_\zeta^2=1$.
+
+\paragraph{Results (oscillator).}
+For the unequal-frequency PU oscillator with the cubic vertex
+$V=-iy^3$ inherited from a real $z^3$ interaction:
+\begin{enumerate}
+\item the first-order deformation exists for all $\w_1>\w_2>0$, with an
+explicit Weyl-ordered cubic $R_1$ (Section~\ref{sec:first});
+\item the second-order deformation exists for generic (nonresonant)
+frequencies, with the assembled $h_\zeta$ Hermitian through
+$O(\zeta^2)$ (Section~\ref{sec:second});
+\item at the internal $3{:}1$ resonance $\w_1=3\w_2$ the second-order
+class is nonzero and exactly
+$\ob_+^{(2)}=\tfrac{27\sqrt3}{320\w_2^4}\,(a_1a_2^{\dg3}-a_1^{\dg}a_2^3)$,
+the on-shell $1\leftrightarrow3$ conversion, unremovable by any
+first-order freedom (Section~\ref{sec:threeone});
+\item the obstruction is spectral, not merely metric: the
+$E=27\w_2$ resonant multiplet develops a complex-conjugate energy pair
+at $O(\zeta^2)$, verified both in degenerate perturbation theory and by
+exact diagonalization of the truncated Hamiltonian; the broken-PT
+region has width $|\w_1-3\w_2|=O(\zeta^2)$
+(Section~\ref{sec:spectral});
+\item a third-order obstruction appears at $\w_1=\tfrac32\w_2$; a
+transfer-lattice and degree-parity selection rule organizes the
+candidate loci, and the verified pattern is that the coprime ratio
+$p{:}q$ first obstructs at order $p+q-2$ when the mode-2 transfer $p$
+is odd (Section~\ref{sec:selection});
+\item toward the Jordan boundary $\epsilon=\tfrac12(\w_1-\w_2)\to0$ the
+deformation diverges geometrically, $R_n=O(\epsilon^{-3n/2})$
+(Section~\ref{sec:jordanscaling}).
+\end{enumerate}
+
+\paragraph{Results (perfect-square field theory).}
+For the interacting theory
+$S=-\tfrac12\int(\Box\phi+\lambda(\partial\phi)^2)^2$, regulated by a
+mass splitting $\delta=m_1^2-m_2^2>0$:
+\begin{enumerate}
+\setcounter{enumi}{6}
+\item the symmetrized cubic vertex is exactly
+$\tfrac12\lambda_{\mathrm K}(p_1^2,p_2^2,p_3^2)$, the K\"all\'en
+polynomial; it vanishes on three massless shells and on one generalized
+Jordan leg, and couples Jordan modes in pairs
+(Section~\ref{sec:kallen});
+\item at first order an \emph{even-ghost selection rule} makes the
+positive obstruction vanish identically --- below and above the
+ghost-decay threshold $m_1=2m_2$ --- while the sectorwise ghost parity
+$(-1)^{N_{\mathrm{ghost}}}$ is obstructed above threshold by the real
+decay, with class proportional to
+$\lambda_{\mathrm K}(m_1^2,m_2^2,m_2^2)=m_1^2(m_1^2-4m_2^2)$
+(Section~\ref{sec:firstfield});
+\item at second order the momentum continuum makes the resonances
+generic: the branch-changing scattering $H+L\to L+L$ is exactly energy
+conserving at open sets of momenta for \emph{every} split mass pair,
+and the positive obstruction is nonzero there --- with the exact value
+$401\sqrt6/39424$ at the rational center-of-mass point
+$m_H=\tfrac32m_L$ (Section~\ref{sec:sector});
+\item the theory admits an exact two-field rewriting
+$\mathcal L=-\partial U\!\cdot\!\partial V+\tfrac{\lambda^2}2U^2V^2$
+with $U=e^{\lambda\phi}$, $V=(\psi/\lambda)e^{-\lambda\phi}$; the
+hidden ghost parity is the exact nonlinear involution
+$U\leftrightarrow V$, which exchanges the two null vacuum branches and
+generates the $\Box^2$ Jordan dynamics about either of them
+(Section~\ref{sec:twofield});
+\item the regulated branch parity has no bounded confluent limit inside
+one Jordan sector, but converges, on the doubling by the oppositely
+oriented sector, to the exact sector-exchange involution
+(Section~\ref{sec:confluent}).
+\end{enumerate}
+
+\paragraph{The central statement.}
+\begin{quote}
+\emph{Positive pseudo-Hermitian metrics can be deformed locally away
+from resonances, but interactions generate cohomological obstructions
+whenever branch-changing processes become exactly energy conserving.
+In finite systems these occur on isolated rational resonance loci and
+can produce complex spectra.  In field theory the momentum continuum
+makes the corresponding scattering shells generic.  The exact massless
+perfect-square theory nevertheless possesses a nonperturbative doubled
+involution --- not as a parity within either pointed Jordan sector, but
+as an exchange between two oppositely oriented sectors.}
+\end{quote}
+
+\paragraph{Bookkeeping.}
+Two expansion parameters must not be conflated.  The \emph{deformation
+order} is counted by a formal parameter $\zeta$:
+$H(\zeta)=H_0+\zeta H_3+\zeta^2H_4$, defining $R_1,R_2,\dots$ and the
+obstruction orders.  The perfect-square coupling $\lambda$ is a fixed
+parameter: in the two-field frame the Jordan quadratic structure and
+the vertex coefficients carry $g=\lambda^2$, while the nonlinear field
+map itself depends on $\lambda$.  In the oscillator sections
+$\zeta$ multiplies the cubic vertex and coincides with the coupling.
+
+\paragraph{Verification.}
+Every finite-dimensional, modewise, and distributional identity in this
+paper is machine-verified: the first-order theory and second-order
+recursion (checks ID1--ID10), selection rules and third order
+(SR1--SR3, O3a--O3e), spectral PT-breaking and the K\"all\'en vertex
+(PT1--PT4, PS1--PS2 of \texttt{verify\_pt\_breaking.py}), the
+first-order field theory (PS-A--PS-H), the two-field rewriting and
+exact involution (TF1--TF7), the sectorwise second-order obstruction
+(SO1--SO7), and the exact kinematic point and confluent parity
+(HX1--HX3), in the repository accompanying the series (SymPy 1.14.0,
+NumPy 2.4.4, Python 3.14; release tag \texttt{paper5-v1.0} fixes the
+commit).  Appendix~\ref{app:checks} maps checks to theorems.
+Operator-domain statements (unbounded cubic interactions, formal
+perturbation series) are flagged where they occur.
+
+\paragraph{Conventions.}
+Oscillator conventions follow \cite{paperI,paperII}: normalized
+coordinates $V=(x,y,p,q)$, mode 1 $=(x,p)$ at frequency $\w_1$, mode 2
+$=(y,q)$ at $\w_2$, positive normal form
+$h_0=\tfrac12[\w_1\w_2p^2+(\w_1/\w_2)x^2+(\w_2/\w_1)q^2+\w_1\w_2y^2]$,
+rapidity $r=\log\frac{\w_1+\w_2}{\w_1-\w_2}$,
+$c=\cosh\tfrac r2=\w_1/\sigma$, $s=\sinh\tfrac r2=\w_2/\sigma$,
+$\sigma=\sqrt{\w_1^2-\w_2^2}$.  All operator computations use exact
+Weyl-symbol Moyal calculus (finite for polynomials; commutators with
+the quadratic $h_0$ reduce to $i\times$ Poisson bracket; cubic--cubic
+commutators include the $\Lambda^3$ term).
+
+\section{The deformation complex}\label{sec:complex}
+
+\begin{definition}[Deformation problem and obstruction classes]
+Let $\rho_0$ be the canonical free Dyson map,
+$h_0=\rho_0H_0\rho_0^{-1}=h_0^{\dg}$, and let
+$v=\rho_0V\rho_0^{-1}$ be the transported vertex.  Seek
+$\rho_\zeta=\exp[-\tfrac12\sum_n\zeta^nR_n]\rho_0$ with
+$R_n=R_n^{\dg}$ such that
+$h_\zeta=\rho_\zeta H_\zeta\rho_\zeta^{-1}$ is Hermitian order by
+order.  The first two equations are
+\begin{equation}\label{eq:defeq}
+[h_0,R_1]=v^{\dg}-v,
+\qquad
+[h_0,R_2]=(v_2^{\dg}-v_2)+\tfrac12[R_1,\,v+v^{\dg}],
+\end{equation}
+where $v_2$ is the transported $O(\zeta^2)$ vertex when present.  With
+$h_0=\sum_EE\,P_E$, the equation $[h_0,R]=S$ has a Hermitian solution
+iff $P_ESP_E=0$ for every $E$; the obstruction class is
+$\ob_+ = \kerad S$, and the solution is
+$R=\sum_{E\neq E'}P_ESP_{E'}/(E-E')$ plus an arbitrary Hermitian
+element of the commutant.  The parallel Krein problem deforms the ghost
+parity: $[H_0,K_1]=[\kappa_0,V]$, $\{\kappa_0,K_1\}=0$, with
+$\ob_K=\Pi_{\ker\ad_{H_0}}[\kappa_0,V]$.
+\end{definition}
+
+Anti-Hermitian (unitary) components of the generator are free and do
+not affect the Hermiticity conditions; additions to $R_n$ from the
+commutant of $h_0$ are the usual metric ambiguity.  ``Gauge
+independence'' of an obstruction class means invariance under both.
+
+\section{The cubic PU oscillator at first order}\label{sec:first}
+
+The real interaction $z^3$ continues, under the PU rotation $z=iy$, to
+$V=-iy^3$.  The transported vertex is $v=-i(cy+isp)^3$ (the free Dyson
+map acts by $\rho_0y\rho_0^{-1}=cy+isp$), whence
+\begin{equation}
+v^{\dg}-v=2ic\,(c^2y^3-3s^2yp^2).
+\end{equation}
+
+\begin{theorem}[First-order deformation]\label{thm:first}
+For every $\w_1>\w_2>0$ the first-order equation is solved by the
+Hermitian Weyl-ordered cubic
+\begin{equation}
+R_1=\mathcal W\!\left[
+\frac{2c^3}{\w_1\w_2}qy^2
++\frac{4c^3}{3\w_1^3\w_2}q^3
+-\frac{6cs^2(2\w_1^2-\w_2^2)}{\w_1\w_2(4\w_1^2-\w_2^2)}p^2q
++\frac{12cs^2\w_1}{\w_2(4\w_1^2-\w_2^2)}pxy
+-\frac{12cs^2\w_1}{\w_2^3(4\w_1^2-\w_2^2)}qx^2
+\right],
+\end{equation}
+with no singular denominator in the physical region
+($4\w_1^2-\w_2^2>0$); the equivalent Hermitian interaction is
+$h_1=\tfrac12(v+v^{\dg})=s(3c^2y^2p-s^2p^3)$.  Near the Jordan
+boundary, $c\sim s\sim\sqrt\w/(2\sqrt\epsilon)$ and
+$R_1=O(\epsilon^{-3/2})$, against the logarithmic divergence of the
+free generator $Q_0$.
+\end{theorem}
+
+\section{Second order: generic existence}\label{sec:second}
+
+\begin{theorem}[Generic second-order deformation]\label{thm:secondgen}
+For incommensurate frequencies the second-order obstruction
+$\ob_+^{(2)}=\kerad\tfrac12[R_1,v+v^{\dg}]$ vanishes; the solved $R_2$
+is Hermitian, and the assembled
+$h_\zeta=e^{-X/2}\star(h_0+\zeta v)\star e^{X/2}$,
+$X=\zeta R_1+\zeta^2R_2$, is Hermitian through $O(\zeta^2)$ ---
+verified end to end in exact Moyal calculus, including the
+$\tfrac18[[h_0,R_1],R_1]$ term and the $\Lambda^3$ contribution that
+pure Poisson-bracket reasoning would miss.  $R_2$ carries the
+resonance denominators $(\w_1-\w_2)$ and $(\w_1-3\w_2)$; no others can
+vanish for $\w_1>\w_2>0$.
+\end{theorem}
+
+\section{The exact $3{:}1$ obstruction}\label{sec:threeone}
+
+\begin{theorem}[Second-order obstruction at $3{:}1$]\label{thm:threeone}
+At $\w_1=3\w_2$ the first-order deformation still exists, but the
+second-order class is nonzero and exact:
+\begin{equation}
+\ob_+^{(2)}
+=\frac{27\sqrt3}{320\,\w_2^4}
+\left(a_1a_2^{\dg3}-a_1^{\dg}a_2^3\right),
+\end{equation}
+the anti-Hermitian on-shell conversion of one mode-1 quantum into three
+mode-2 quanta ($\w_1=3\w_2$ makes the process exactly energy
+conserving).  The class is gauge independent: it is unchanged under
+$R_1\to R_1+\{N_1,N_2,N_1N_2\}$-type commutant additions, under
+additions of the on-shell quintic kernel operators to $R_2$, and under
+anti-Hermitian first-order generators ---
+$\kerad[G,v+v^{\dg}]=\kerad[v-v^{\dg},G]=0$ for all such $G$.
+\end{theorem}
+
+There is therefore no analytic second-order deformation of the
+canonical positive metric at $3{:}1$, within the Weyl-algebra class,
+continuously connected to the free metric.  The physical meaning: the
+interaction contains a process that is exactly on shell, and changing
+the metric cannot rotate it away.
+
+\section{Spectral PT-breaking}\label{sec:spectral}
+
+The obstruction is not an artifact of the deformation scheme: it enters
+the spectrum.
+
+\begin{theorem}[Complex pair in the $E=27\w_2$ multiplet]
+\label{thm:complexpair}
+At $\w_1=3\w_2$ (set $\w_2=1$), the second-order degenerate
+perturbation matrix on the ten-dimensional shell
+$\{|j,27-3j\rangle\}_{j=0}^9$ is real tridiagonal with antisymmetric
+off-diagonal $K_{j,j+1}=-\tfrac{27\sqrt3}{640}\sqrt{(j{+}1)n(n{-}1)(n{-}2)}$,
+$n=27-3j$, and explicit diagonal shifts.  Its spectrum consists of
+eight real eigenvalues and one complex-conjugate pair
+\begin{equation}
+\kappa_\pm=2.44880738219938\pm0.224586593808125\,i .
+\end{equation}
+The pair is genuinely spectral: exact diagonalization of the truncated
+$h_0+\zeta v$ at $\zeta=0.02$ exhibits it with
+$\operatorname{Im}E=\pm0.2246\,\zeta^2$ to $0.5\%$, stable across
+cutoffs.  The lowest resonant doublet $\{|1,0\rangle,|0,3\rangle\}$
+remains real: a nonzero metric obstruction does not automatically break
+the lowest pair.
+\end{theorem}
+
+\begin{corollary}[Strength of the conclusion]
+Wherever the complex pair persists in the interacting spectrum, no
+positive-definite invariant metric exists --- analytic in $\zeta$ or
+not --- since a positive metric would make $h_\zeta$ similar to a
+self-adjoint operator.  (The statement is perturbative-spectral: the
+cubic interaction is unbounded and an operator-theoretic
+analytic-family argument would be needed for the untruncated theory.)
+\end{corollary}
+
+\begin{proposition}[Broken-PT tongues]
+Detuning $\delta_r=\w_1-3\w_2$ adds $j\,\delta_r$ to the shell
+diagonal; the spectrum is complex for
+$|\delta_r|<\delta_c=38.4151\ldots\times\zeta^2$ (exactly linear in
+$\zeta^2$; the constant is multiplet-specific).  An order-$n$ resonance
+correspondingly produces an $O(\zeta^n)$ tongue.
+\end{proposition}
+
+\section{Third order and the selection rules}\label{sec:selection}
+
+\begin{theorem}[Transfer-lattice selection rule]\label{thm:selection}
+Grade monomials by energy transfer
+$(\Delta n_1,\Delta n_2)$, so $[h_0,M]=[(\Delta n_1)\w_1
++(\Delta n_2)\w_2]\,M$.  Order-$n$ objects have transfers in the
+$n$-fold sumset of the vertex transfer set, total degree $\le n+2$
+(each commutator reduces degree by at least two), and degree parity
+$\equiv n\bmod2$.  The order-$n$ obstruction is therefore supported on
+the finite candidate sets: $\{2{:}1\}$ at order 1, $\{3{:}1\}$ at
+order 2, $\{3{:}2,\,2{:}1,\,4{:}1\}$ at order 3, with $5{:}1$ first
+reachable at order 4.  The lattice gives candidates; coefficients
+decide.
+\end{theorem}
+
+\begin{theorem}[Third order]\label{thm:third}
+At generic frequencies the third-order obstruction vanishes and $R_3$
+is Hermitian with odd total degrees $\le5$ (confirming the parity
+rule).  At $\w_1=\tfrac32\w_2$ the class is nonzero and exact,
+\begin{equation}
+\ob_+^{(3)}
+=-\frac{117\sqrt{30}}{1120}\,i\,
+\big(a_1^2a_2^{\dg3}+a_1^{\dg2}a_2^3\big),
+\end{equation}
+the on-shell $2\leftrightarrow3$ conversion ($2\w_1=3\w_2$), gauge
+independent in the sense of Theorem~\ref{thm:threeone}.  The candidates
+$2{:}1$ (orders 1 and 3) and $4{:}1$ (order 3) have vanishing
+coefficients.
+\end{theorem}
+
+\begin{conjecture}[Resonance hierarchy]\label{conj:hierarchy}
+The coprime ratio $\w_1/\w_2=p{:}q$ first obstructs at order $p+q-2$
+when the mode-2 transfer $p$ is odd.  (Verified: $3{:}1$ at order 2,
+$3{:}2$ at order 3.  Predicted: $5{:}1$ at order 4, $5{:}3$ at
+order 6.  Every obstruction found so far carries odd mode-2 transfer;
+the mechanism excluding even transfers is open.)  The resonance set is
+an expanding hierarchy, not (so far) a dense set.
+\end{conjecture}
+
+\section{The Jordan divergence hierarchy}\label{sec:jordanscaling}
+
+\begin{theorem}[Geometric divergence]\label{thm:jordanscaling}
+Near the Jordan boundary $\w_{1,2}=\w\pm\epsilon$,
+\begin{equation}
+Q_0=O(\log\epsilon^{-1}),\qquad
+R_1=O(\epsilon^{-3/2}),\qquad
+R_2=O(\epsilon^{-3}),\qquad
+R_3=O(\epsilon^{-9/2}),
+\end{equation}
+the last three measured as clean decade exponents ($-1.50$, $-3.00$,
+$-4.49$); the second order shows \emph{no} small-denominator
+enhancement from $\w_1-\w_2$ (those source components are suppressed).
+\end{theorem}
+
+\begin{conjecture}
+$R_n=O(\epsilon^{-3n/2})$, so the deformation's radius of convergence
+in $\zeta$ collapses as $\zeta_c\sim\epsilon^{3/2}$ toward the Jordan
+boundary.  (Fixed-order scaling is established; a norm bound on the
+coefficients would upgrade this to a theorem.)
+\end{conjecture}
+
+\section{The perfect-square vertex}\label{sec:kallen}
+
+The interacting theory is
+$S=-\tfrac12\int(\Box\phi+\lambda(\partial\phi)^2)^2$
+\cite{BT2026}, with cubic vertex $V_3\propto\Box\phi(\partial\phi)^2$
+and quartic $V_4\propto\tfrac12(\partial\phi)^4$.
+
+\begin{proposition}[K\"all\'en form]\label{prop:kallen}
+On $p_1+p_2+p_3=0$ the symmetrized cubic vertex is exactly
+\begin{equation}
+\mathcal V_3
+=p_1^2(p_2\!\cdot\!p_3)+p_2^2(p_1\!\cdot\!p_3)+p_3^2(p_1\!\cdot\!p_2)
+=\tfrac12\lambda_{\mathrm K}(p_1^2,p_2^2,p_3^2),
+\end{equation}
+with $\lambda_{\mathrm K}(x,y,z)=x^2+y^2+z^2-2xy-2xz-2yz$.
+Consequently: $\mathcal V_3$ vanishes on three ordinary massless
+shells; it vanishes with one generalized Jordan leg
+($\nabla\lambda_{\mathrm K}|_0=0$); it can be nonzero with two
+(Hessian entries $2$, $-2$): \emph{the cubic vertex couples the Jordan
+sector in pairs}.  On the regulated decay channel,
+$\lambda_{\mathrm K}(m_1^2,m_2^2,m_2^2)=m_1^2(m_1-2m_2)(m_1+2m_2)$:
+the vertex vanishes exactly at the threshold $m_1=2m_2$ and turns on
+continuously above it.
+\end{proposition}
+
+\section{First order in the regulated field theory}\label{sec:firstfield}
+
+Regulate by $P_\delta=(\Box+m_1^2)(\Box+m_2^2)$,
+$\delta=m_1^2-m_2^2>0$.  In the mode expansion every leg is on its
+branch shell, so on the kernel of $\ad_{h_0}$ the full four-momentum is
+conserved and the vertex coefficient is
+$\tfrac12\lambda_{\mathrm K}$ of the branch masses.  The transported
+field mode, derived from the free Dyson transport and verified against
+the spectral Wightman function of \cite{paperIII}, is
+\begin{equation}
+\phi'(k)=\frac{i}{\sqrt{2\delta}}
+\left[\frac{a_2+a_2^{\dg}}{\sqrt{\w_2}}
++\frac{a_1-a_1^{\dg}}{\sqrt{\w_1}}\right],
+\qquad
+\sigma=\sqrt{\w_1^2-\w_2^2}=\sqrt\delta\ \text{($k$-independent)}.
+\end{equation}
+
+\begin{theorem}[First-order protection and Krein decay obstruction]
+\label{thm:firstfield}
+(i) \emph{Even-ghost selection rule}: the transported reality factors
+make $v^{\dg}-v$ vanish on every odd-ghost-count monomial.  Even-ghost
+shells ($2\to22$, $11\to2$, \dots) are kinematically closed for all
+$m_1>m_2>0$.  Hence $\ob_+^{(1)}=0$ identically --- below \emph{and}
+above the decay threshold.
+(ii) The sectorwise ghost parity $\kappa_0=(-1)^{N_{\mathrm{ghost}}}$
+has $\ob_K^{(1)}=0$ below threshold, and above it a nonzero class
+supported on the open $1\to22$ shell, equal there to
+$\lambda_{\mathrm K}(m_1^2,m_2^2,m_2^2)$ times the leg normalizations:
+a really decaying ghost has no conserved sectorwise parity, and the
+protection is exactly coextensive with $\lambda_{\mathrm K}=0$
+(threshold and massless point).
+(iii) Scaling: at massive confluence both $R_1$ and $K_1$ diverge as
+$\delta^{-3/2}$; on massless Jordan paths $m_2^2=\alpha\delta$ the
+positive $R_1$ scales as $\delta^{-1/2}$ with path-independent power
+(the selection rule removes the dangerous collinear term), while the
+Krein $K_1$ is $\delta^{-1/2}$ generically and $\delta^{-3/2}$ on the
+exceptional path $\alpha=2/7$.  (These are split-basis statements; the
+basis itself degenerates at $\delta=0$, and a basis-independent
+formulation on confluent states is deferred.)
+\end{theorem}
+
+\section{The exact two-field rewriting}\label{sec:twofield}
+
+\begin{theorem}[Two-field form and exact involution]\label{thm:twofield}
+Introducing the auxiliary field $\psi$ and the exact nonlinear change
+of variables $U=e^{\lambda\phi}$,
+$V=(\psi/\lambda)e^{-\lambda\phi}$ (unit pointwise Jacobian),
+\begin{equation}
+\mathcal L
+=-\partial_\mu U\,\partial^\mu V+\frac{\lambda^2}{2}U^2V^2
+=-\tfrac12(\partial X)^2+\tfrac12(\partial Y)^2
++\frac{\lambda^2}{8}(X^2-Y^2)^2,
+\end{equation}
+with $X,Y=(U\pm V)/\sqrt2$: the interaction is built from the
+$O(1,1)$ invariant.  The exchange $U\leftrightarrow V$ is an exact
+symmetry; in the original variables it is the nonlinear involution
+\begin{equation}
+\kappa_0:\ (\phi,\psi)\ \longmapsto\
+\Big(\tfrac1\lambda\log\tfrac{\psi}{\lambda}-\phi,\ \psi\Big),
+\end{equation}
+invisible at any finite perturbative order in $(\phi,\psi)$ ---
+geometrically, the transition map between the two charts
+$\phi_A=\tfrac1\lambda\log U$ and $\phi_B=\tfrac1\lambda\log V$ on the
+extended configuration space.
+\end{theorem}
+
+\begin{proposition}[Null sectors and interaction-generated Jordan
+dynamics]\label{prop:sectors}
+The vacuum manifold is $UV=0$: two null branches.  The perturbative
+vacuum $(U,V)=(1,0)$ is a nonzero null background;
+$\kappa_0$ maps it to $(0,1)$ --- it exchanges pointed sectors and is
+not a particle parity within either.  Expanding about $(1,0)$:
+\begin{equation}
+\mathcal L^{(2)}=-\partial u\,\partial v+\tfrac{g}2v^2,\quad
+\mathcal L^{(3)}=g\,uv^2,\quad
+\mathcal L^{(4)}=\tfrac{g}2u^2v^2,\qquad g=\lambda^2,
+\end{equation}
+with equations $\Box v=0$, $\Box u=gv$: the exact $\Box^2$ Jordan pair,
+the off-diagonal supplied by the interaction coupling.  About $(0,1)$
+the mirror expansion has $u\leftrightarrow v$: the oppositely oriented
+chain.  A chain-preserving involution commuting with a single Jordan
+block is $\pm I$ (companion lemma), so the exchange structure is the
+only possible realization of ghost parity --- as the exact
+$\kappa_0$ indeed exhibits.  The interactions in this frame are pure
+potentials: $H_{\mathrm{int}}=-L_{\mathrm{int}}$ exactly, with no
+Ostrogradsky--Legendre corrections (in the $(\phi,\psi)$ frame the
+quartic contains time derivatives and the canonical
+second-order vertex differs from $-L_4$).
+\end{proposition}
+
+\section{The sectorwise second-order obstruction}\label{sec:sector}
+
+Regulate the sector-$A$ theory by
+$\mathcal L_0=-\partial u\partial v-\mu^2uv+\tfrac g2v^2
++\tfrac\epsilon2u^2$ (masses $m_\pm^2=\mu^2\pm\sqrt{\epsilon g}$; the
+regulator necessarily breaks $\kappa_0$), quantize in the positive
+frame via the branch eigenvectors ($v=\rho_bu$ on branch $b$,
+$\rho_\pm=\mp\delta/2$), and use the exact matrix-element form of the
+second-order source:
+\begin{equation}\label{eq:sourceME}
+\langle\mathrm{out}|\,\mathcal S^{(2)}_+\,|\mathrm{in}\rangle
+=\langle v_2^{\dg}-v_2\rangle
++\sum_n\frac{\langle\mathrm{out}|v_1^{\dg}|n\rangle
+\langle n|v_1^{\dg}|\mathrm{in}\rangle
+-\langle\mathrm{out}|v_1|n\rangle\langle n|v_1|\mathrm{in}\rangle}
+{E-E_n},
+\end{equation}
+which follows from
+$(v^{\dg}-v)(v+v^{\dg})+(v+v^{\dg})(v^{\dg}-v)=2(v^{\dg}v^{\dg}-vv)$.
+
+\begin{theorem}[Generic sectorwise obstruction]\label{thm:sector}
+For the branch-changing scattering $H+L\to L+L$ --- kinematically open
+at suitable momenta for \emph{every} $m_1>m_2$ --- the source element
+\eqref{eq:sourceME} is nonzero.  At the rational center-of-mass point
+$m_H=\tfrac32m_L$ (both incoming particles at rest, outgoing momenta
+$\pm\tfrac34m_L$, all shell conditions exactly satisfied) its exact
+value is
+\begin{equation}
+\boxed{\ \mathcal M_{\mathrm{obs}}=\frac{401\sqrt6}{39424}\ }
+\end{equation}
+(with $m_L=4$ in lattice units), the quartic contact piece vanishing
+exactly.  Since the source is analytic on the nonsingular part of the
+shell, the obstruction is nonzero on an open subset: \emph{the
+second-order positive deformation of the pointed sector is generically
+obstructed}.  The computation is truncation-complete (tree-level
+exchange: the $s,t,u$ channels close on the momentum set; verified by
+cutoff independence) and reproduced at three independent tuned
+kinematic points.
+\end{theorem}
+
+\begin{remark}[Oscillator versus field theory]
+\begin{center}
+\begin{tabular}{c|c}
+PU oscillator & field theory\\
+\hline
+discrete energy spectrum & continuous momentum spectrum\\
+isolated rational resonance & generic scattering shell\\
+$3{:}1$ first appears at order 2 & $H+L\to L+L$ appears at order 2\\
+finite resonant multiplet & continuum of degenerate in/out states
+\end{tabular}
+\end{center}
+The continuum turns the oscillator's discrete resonance obstruction
+into a generic scattering-shell obstruction.  The exact doubled
+$\kappa_0$ does not cure it: it maps the obstructed sector-$A$
+construction to the (equally obstructed) mirror sector-$B$
+construction.
+\end{remark}
+
+\begin{remark}[Strength of the field-theory statement]
+Theorem~\ref{thm:sector} establishes a perturbative cohomological
+obstruction: there is no analytic second-order deformation of the
+canonical positive metric, in the specified regulated Fock
+representation and operator class, for a pointed sector.  Unlike the
+oscillator case (Theorem~\ref{thm:complexpair}), we have not yet
+exhibited complex spectra here; the analogous upgrades would be complex
+finite-volume levels, non-real resonance poles, or failure of
+pseudo-unitarity of the pointed-sector $S$-matrix.  The distinction ---
+analytic metric obstruction versus absolute nonexistence of all
+positive metrics --- is maintained throughout.
+\end{remark}
+
+\section{The confluent parity theorem}\label{sec:confluent}
+
+\begin{theorem}[Confluent limit of the regulated parity]
+\label{thm:confluent}
+Let $P_\delta b_\pm=\pm b_\pm$ be the regulated branch ghost parity and
+$c=(b_++b_-)/2$, $d=(b_+-b_-)/\delta$ the confluent Jordan basis.  Then
+\begin{equation}
+P_\delta=
+\begin{pmatrix}0&\delta/2\\ 2/\delta&0\end{pmatrix}
+\quad\text{in the }(c,d)\text{ basis:}
+\end{equation}
+$P_\delta^2=1$ but $P_\delta$ has no bounded limit as $\delta\to0$ ---
+the regulated ghost parity cannot converge as a chain-preserving parity
+inside one Jordan sector.  On the doubled space with the
+\emph{oppositely oriented} confluent identification in the mirror
+sector ($c_B=(b_+-b_-)/2$, $d_B=(b_++b_-)/\delta$), the cross parity
+$b_\pm^A\leftrightarrow\pm b_\pm^B$ equals, exactly and
+$\delta$-independently, the sector exchange
+$(c_A,d_A)\leftrightarrow(c_B,d_B)$.  The regulated branch parity thus
+converges, after doubling by the oppositely oriented Jordan sector, to
+the exact involution $U\leftrightarrow V$.
+\end{theorem}
+
+This connects the split Krein algebra directly to the exact nonlinear
+symmetry, and explains the earlier observations from one statement: the
+sectorwise $(-1)^{N_{\mathrm{ghost}}}$ is broken by real decay and has
+no confluent limit, while the exact parity survives --- on the doubled
+state space.
+
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{The phase picture.}
+Away from resonances the positive pseudo-Hermitian metric deforms
+locally, at first and second order, with explicit generators.  The
+failures are structural, not accidental: (i) on-shell branch-changing
+processes produce gauge-independent cohomological obstructions ---
+isolated rational loci for the oscillator, generic scattering shells in
+the field theory; (ii) at the oscillator resonances the obstruction is
+spectral, producing complex-conjugate pairs in excited multiplets and
+$O(\zeta^2)$ broken-PT tongues; (iii) independent of resonances, the
+deformation loses uniformity toward Jordan degeneration,
+$R_n=O(\epsilon^{-3n/2})$.  The Krein side is not simply the survivor:
+its sectorwise parity is broken by real ghost decay above threshold.
+What survives is subtler --- an exact, nonperturbative, sector-exchanging
+involution of the massless perfect-square theory, which the confluent
+parity theorem identifies as the $\delta\to0$ limit of the regulated
+branch parity on the doubled state space.
+
+\paragraph{Symmetry enhancement at the boundary.}
+The massless perfect-square point is not the continuous limit of the
+split theory with parameters set to zero: the K\"all\'en vertex
+degenerates there, the dangerous cubic amplitudes vanish, the doubled
+$O(1,1)$ structure emerges, and the Jordan dynamics is generated by the
+interaction about its own null vacua.  This mirrors the conformal
+boundary of the gravity companion \cite{paperIV}, where a Weyl gauge
+symmetry emerges at a singular locus and the boundary theory must be
+quotiented and completed differently.
+
+\paragraph{Superselection (open).}
+Whether the two pointed sectors admit cat-like parity vacua
+$|0_\pm\rangle=(|0_A\rangle\pm|0_B\rangle)/\sqrt2$, or are superselected
+in infinite volume (spontaneously broken $\kappa_0$ in each pointed
+completion), requires finite-volume overlap and zero-mode analysis:
+the vacuum manifold is null, the kinetic form indefinite, and the
+original chart contains only one branch.  The present results are
+stated so as not to depend on the resolution.
+
+\paragraph{Predictions and next steps.}
+The hierarchy conjecture predicts a $5{:}1$ obstruction at fourth order
+(an $O(\zeta^4)$ tongue); only the kernel projection at
+$\w_1=5\w_2$ is needed to test it.  For the field theory, the
+basis-independent confluent-state evaluation of $R_1$ will decide
+whether the $\delta^{-1/2}$ split-basis divergence is physical.  The
+gravitational extension --- the cubic Einstein--Weyl vertices $hhM$,
+$hMM$, $MMM$ against the covariant real forms of \cite{paperIV} --- is
+the natural target after that; the present results sharpen its
+expected shape: pointed positive completions obstructed by
+ghost-branch-changing graviton processes, with any surviving structure
+living on a doubled completion.
+
+\begin{thebibliography}{12}
+
+\bibitem{BM2008PRL}
+C.~M.~Bender and P.~D.~Mannheim,
+\emph{No-ghost theorem for the fourth-order derivative Pais--Uhlenbeck
+oscillator model},
+Phys.\ Rev.\ Lett.\ \textbf{100} (2008) 110402.
+
+\bibitem{BM2008PRD}
+C.~M.~Bender and P.~D.~Mannheim,
+\emph{Exactly solvable PT-symmetric Hamiltonian having no Hermitian
+counterpart},
+Phys.\ Rev.\ D \textbf{78} (2008) 025022, arXiv:0804.4190.
+
+\bibitem{BT2026}
+S.~Bateman and N.~Turok,
+\emph{Escape from Ostrogradsky via hidden ghost parity},
+arXiv:2607.00096.
+
+\bibitem{Mostafazadeh2005}
+A.~Mostafazadeh,
+\emph{Metric operator in pseudo-Hermitian quantum mechanics and the
+imaginary cubic potential},
+J.\ Phys.\ A \textbf{39} (2006) 10171, arXiv:quant-ph/0508195.
+
+\bibitem{paperI}
+\emph{Canonical positive symplectic diagonalization of the
+Pais--Uhlenbeck oscillator}, companion paper (Paper~I) and verification
+repository, 2026.
+
+\bibitem{paperII}
+\emph{The Pais--Uhlenbeck metric as a minimum-distortion principle, and
+the representation problem for the fourth-order field}, companion paper
+(Paper~II), 2026.
+
+\bibitem{paperIII}
+\emph{The universal vacuum of the fourth-order scalar field: metric
+orbits, Fock sectors, and the Krein boundary}, companion paper
+(Paper~III), 2026.
+
+\bibitem{paperIV}
+\emph{Gauge reduction and the completion problem in fourth-order
+gravity: PU pairing, covariant real forms, and the conformal Jordan
+boundary}, companion paper (Paper~IV), 2026.
+
+\bibitem{Kato}
+T.~Kato,
+\emph{Perturbation Theory for Linear Operators},
+Springer, 1966.
+
+\bibitem{Heiss2012}
+W.~D.~Heiss,
+\emph{The physics of exceptional points},
+J.\ Phys.\ A \textbf{45} (2012) 444016.
+
+\end{thebibliography}
+
+\appendix
+
+\section{Verification checks and the theorems they support}
+\label{app:checks}
+
+Scripts (directory \texttt{symbolic/} of the repository), each printing
+\texttt{ALL PASS}:
+
+\begin{center}
+\small
+\begin{tabular}{l l}
+\hline
+Check & Supports\\
+\hline
+ID1--ID5 (\texttt{verify\_interaction\_deformation.py}) &
+Theorem~\ref{thm:first}\\
+ID6--ID8 & Theorem~\ref{thm:secondgen}\\
+ID9a--b & Theorem~\ref{thm:threeone}\\
+ID10 & Theorem~\ref{thm:jordanscaling} ($R_2$)\\
+SR1--SR3 (\texttt{verify\_interaction\_order3.py}) &
+Theorem~\ref{thm:selection}\\
+O3a--O3d & Theorem~\ref{thm:third}\\
+O3e & Theorem~\ref{thm:jordanscaling} ($R_3$)\\
+PT1--PT3 (\texttt{verify\_pt\_breaking.py}) &
+Theorem~\ref{thm:complexpair}\\
+PT4 & broken-PT tongues\\
+PS1--PS2 & Proposition~\ref{prop:kallen}\\
+PS-A--PS-G (\texttt{verify\_perfect\_square.py}) &
+Theorem~\ref{thm:firstfield}\\
+PS-H & Jordan-chain lemma used in
+Proposition~\ref{prop:sectors}\\
+TF1--TF7 (\texttt{verify\_two\_field.py}) &
+Theorem~\ref{thm:twofield}, Proposition~\ref{prop:sectors}\\
+SO1--SO7 (\texttt{verify\_sector\_obstruction.py}) &
+Theorem~\ref{thm:sector} (numerics)\\
+HX1 (\texttt{verify\_hardening.py}) &
+Theorem~\ref{thm:sector} (exact value)\\
+HX2--HX3 & Theorem~\ref{thm:confluent}\\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

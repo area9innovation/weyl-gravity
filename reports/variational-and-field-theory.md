@@ -1095,3 +1095,39 @@ parity on H_A⊕H_B (confluent limit of (−1)^{N_ghost} as off-diagonal
 map — team's prediction), (ii) confluent-state R₁ matrix elements,
 (iii) 5:1 fourth-order projection, (iv) superselection question
 (cat states |0_A⟩±|0_B⟩).
+
+## Interaction-deformation, step 7 (2026-07-13): hardening + PAPER 5 DRAFT
+
+Theorem hardening (verify_hardening.py HX1–HX3 ALL PASS):
+- HX1 **exact obstruction value**: at the rational CM point m_L = 4,
+  m_H = 6 = (3/2)m_L, H(0)+L(0) → L(3)+L(−3) (E = 10 exactly on shell):
+  𝓜_obs = 401√6/39424 exactly, contact = 0 exactly ⇒ by analyticity the
+  obstruction is nonzero on an OPEN SUBSET of the branch-changing shell
+  (theorem-strength genericity).
+- HX2 confluent parity, single sector: P_δ = [[0, δ/2],[2/δ, 0]] in the
+  (c,d) basis — P² = 1 but NO bounded δ→0 limit (algebraic version of
+  the PS-H no-go, exactly the team's matrix).
+- HX3 doubled space: with OPPOSITELY oriented confluent identification
+  in sector B, the cross parity b±^A ↔ ±b±^B equals the δ-INDEPENDENT
+  sector exchange (c_A,d_A)↔(c_B,d_B) exactly ⇒ the regulated branch
+  parity converges on the doubled space to the exact U↔V involution.
+  CONFLUENT PARITY THEOREM proved.
+
+**PAPER 5 DRAFTED**: paper/interaction-obstructions.tex (12 pp., clean)
+— "Interaction Obstructions and Resonant Breakdown of the Positive
+Pais–Uhlenbeck Metric". Structure: deformation complex (with ζ vs λ
+bookkeeping fixed) → oscillator first/second order → exact 3:1
+obstruction → spectral PT-breaking (with the right-strength corollary:
+complex pair excludes ALL positive metrics where it persists;
+perturbative qualifications stated) → third order + transfer-lattice
+selection rules + hierarchy conjecture (p+q−2 for odd p; expanding
+hierarchy, not dense) → Jordan divergence hierarchy (theorem at fixed
+order + conjecture for λ_c) → Källén vertex → first-order field
+protection + Krein decay obstruction → exact two-field rewriting +
+nonlinear κ₀ + interaction-generated Jordan sectors → sectorwise
+second-order obstruction with the EXACT value 401√6/39424 and the
+oscillator-vs-continuum table → confluent parity theorem → discussion
+(boundary symmetry enhancement mirroring gravity's Weyl; superselection
+open and stated conditionally; 5:1 and EW-vertex predictions).
+Appendix maps all check IDs to theorems. Authors block as the series.
+Tag paper5-v1.0 at freeze.

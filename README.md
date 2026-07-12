@@ -13,7 +13,8 @@ papers, a Lean formalization, and a machine-checked verification pipeline.
 | 1 | `symplectic-diagonalization.tex` / `.pdf` | **Canonical Positive Symplectic Diagonalization of the Pais–Uhlenbeck Oscillator** | frozen, tag `paper1-v1.0` (13 pp.) |
 | 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.1` (12 pp.) |
 | 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.1` (10 pp.) |
-| 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | draft (8 pp.) |
+| 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | draft (14 pp.) |
+| 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions and Resonant Breakdown of the Positive Pais–Uhlenbeck Metric** | draft (12 pp.) |
 
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.

@@ -102,15 +102,16 @@ holds only open items.
       exchange piece nonzero at three tuned kinematics; truncation-
       complete). Compatible with exact κ (sector exchange, not
       in-sector parity). verify_sector_obstruction.py SO1–SO7.
-    - NEXT: (a) regulated parity on H_A⊕H_B: confluent limit of
-      (−1)^{N_ghost} as an off-diagonal sector map (team prediction);
-      superselection / cat-state question; (b) confluent-state R₁
-      matrix elements (basis-independent δ→0); (c) order-4 kernel
-      projection AT ω₁ = 5ω₂; (d) PAPER 5 DRAFT — the arc is complete:
-      oscillator hierarchy → spectral breaking → field first-order
-      protection → generic second-order sector obstruction → exact
-      doubled-space κ → interaction-generated Jordan boundary;
-      (e) EW cubic vertices.
+    - DONE (step 7): hardening — EXACT obstruction 401√6/39424 at the
+      rational CM point (open-subset genericity); CONFLUENT PARITY
+      THEOREM (P_δ unbounded in one sector; δ-independent sector
+      exchange on the oppositely-oriented doubling). **PAPER 5 DRAFTED**
+      (interaction-obstructions.tex, 12 pp.).
+    - NEXT (additions, not prerequisites): (a) 5:1 order-4 kernel
+      projection (tests hierarchy conjecture); (b) vacuum-overlap /
+      superselection analysis (finite-volume ⟨0_A|0_B⟩, zero modes);
+      (c) confluent-state R₁ matrix elements; (d) referee pass on
+      paper 5 when the team is ready; (e) EW cubic vertices (paper 6?).
 15. [ ] Paper 2 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness
