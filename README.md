@@ -2,8 +2,10 @@
 
 Verification project and paper series on the PT-symmetric Pais–Uhlenbeck
 oscillator, the fourth-order scalar field, and quadratic gravity. Started
-from the audit spec in `../Symplectic Reconstruction.md`; grew into four
-papers, a Lean formalization, and a machine-checked verification pipeline.
+from the audit spec in `../Symplectic Reconstruction.md`; grew into six
+papers (an expository introduction, four technical papers on the free
+theories, and an interacting-deformation paper), a Lean formalization,
+and a machine-checked verification pipeline.
 
 ## The papers (`paper/`)
 
@@ -90,6 +92,20 @@ Symbolic (SymPy):
 - `verify_gravity_spectral.py` — paper-4 G10–G12: helicity kernels with
   symplectic residues, covariant projector reassembly, Weyl-correlator
   M-regularity, sectorwise conformal limits + cond(N) divergence.
+- `verify_paper1_referee.py`, `verify_paper2_referee.py`,
+  `verify_paper3_referee.py` — referee-round claim verification
+  (spectrum of Q, normalization proposition; pointed-unitary identity;
+  bridge signs, Hadamard remainder, IR anchor, Cartan convention).
+- `verify_interaction_deformation.py` (ID1–ID10),
+  `verify_interaction_order3.py` (SR/O3), `verify_pt_breaking.py`
+  (PT/PS), `verify_perfect_square.py` (PS-A–H), `verify_two_field.py`
+  (TF1–TF7), `verify_sector_obstruction.py` (SO1–SO7),
+  `verify_hardening.py` (HX1–HX3) — paper-5 interaction-deformation
+  program: cubic PU deformation through third order, 3:1/3:2
+  obstructions, spectral PT-breaking, selection rules, perfect-square
+  field theory, exact two-field rewriting and sector-exchange κ₀,
+  sectorwise second-order obstruction (exact value 401√6/39424),
+  confluent parity theorem.
 
 Numeric (mpmath/numpy):
 - `regression.py` — paper-1 regression, 4 parameter triples at 50–80 digits.
@@ -116,7 +132,8 @@ cd symbolic && python3 verify_gravity_completion.py  # paper 4, G8–G9
 cd symbolic && python3 verify_gravity_spectral.py    # paper 4, G10–G12
 cd numeric  && python3 regression.py && python3 distortion_scan.py && python3 cartan_checks.py
 cd lean     && lake exe cache get && lake build    # zero sorry
-cd paper    && pdflatex symplectic-diagonalization.tex; pdflatex variational-fock.tex; pdflatex fourth-order-vacuum.tex; pdflatex fourth-order-gravity.tex; pdflatex ghosts-geometry-reality.tex
+cd symbolic && for f in verify_interaction_deformation verify_interaction_order3 verify_pt_breaking verify_perfect_square verify_two_field verify_sector_obstruction verify_hardening; do python3 $f.py; done   # paper 5
+cd paper    && for f in symplectic-diagonalization variational-fock fourth-order-vacuum fourth-order-gravity ghosts-geometry-reality interaction-obstructions; do pdflatex $f.tex; done
 ```
 
 Release tags: `paper1-v1.0`, `paper2-v1.1`, `paper3-v1.1`. Before submission: fill author
