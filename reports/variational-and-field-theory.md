@@ -204,3 +204,50 @@ math-phys note.
   normal-coset principle ⟹ Sp(2n,ℂ) inter-mode theorem (principal general
   result) ⟹ exact ℍ²×ℝ formula (integrable n=2 content); PU = the fully
   integrable model. Still integrated as paper 2.
+
+## B′. Paper-3 proposal audit (2026-07-12, third session)
+
+All checks in `symbolic/verify_paper3_audit.py` (P1–P7, ALL PASS). The
+proposed obstruction-and-reconstruction arc survives in shape but its
+central quantitative claims are corrected:
+
+**Refuted / corrected:**
+1. `tr β†β ≥ 2ω₂²/Δ` with equality at S₊ — REFUTED in both natural frames:
+   - canonical frame: Q′ = r(x′y′+p′q′) = r(a₁a₂† + a₁†a₂) is a PURE BEAM
+     SPLITTER: [Q′, N] = 0, Q′|0_can⟩ = 0, cost exactly 0 (P1);
+   - physical two-field frame: exact cost is paper 2's ⟨N⟩ → 1/3 (P2).
+   The identification "tr β†β = Σ sinh²(μ/2)" is frame-invalid; moreover NO
+   frame tames the singular values (μ_phys ≈ (r,r) numerically, P7): the
+   occupation is a vacuum-ray functional, not a Cartan-norm functional.
+   Obstruction rate: Θ(VΛ^d), not Θ(VΛ^{d+2}).
+2. Δ-superselection — REFUTED: in common physical PT variables,
+   1 − f(k) = (Σ−Σ̄)²/(12k⁴) + O(k⁻⁶), Σ = m₁²+m₂² (P3). The leading label
+   is Σ, sums converge for d < 4: ONE universal dressed sector in d ≤ 3.
+3. "Dressed sector runs to infinite distance as Δ→0" — REFUTED: the
+   selected vacuum is analytic across Δ = 0 (1−f ~ ε⁴, P5) and the
+   occupation limits commute (⟨N⟩ ≡ 1/3 at Δ = 0 for every k). The
+   resonant singularity is purely dynamical (metric operator, similarity,
+   Jordan excited spectrum), not representational.
+
+**New results (stronger than the proposal):**
+4. ORBIT CONSTANCY (P6): ℓ_jᵀX_j = −iℓ_jᵀ — the physical annihilator
+   covectors are eigenvectors of the stabilizer generators, so
+   ℓᵀC(θ)⁻¹ = e^{iθ}ℓᵀ for complex θ: the selected physical state is
+   IDENTICAL for every metric in the Gaussian orbit; and since any
+   W = f(N₁,N₂) > 0 also fixes the vacuum ray, the PT vacuum is
+   metric-independent over the ENTIRE positive-metric family.
+   ⇒ Universal Fock no-go for free: every admissible metric gives the same
+   modewise cost ⟨N⟩(k) → 1/3, Σ_k = ∞ in every d ≥ 1. No minimization
+   needed — computation (b)'s answer is "constant", stronger than
+   "minimized at S₊".
+5. UNIVERSAL ANCHOR (P4): the selected vacuum of □²φ = 0 (m₁ = m₂ = 0) is
+   regular and every massive selected representation is quasi-equivalent
+   to it in d ≤ 3 (1−f = Σ²/(12k⁴)). Candidate synthesis with
+   Bateman–Turok: their Krein quantization vs the Δ→0 selected vacuum —
+   same sector? (open, computable).
+
+**Corrected paper-3 arc:** frame-decoupling theorem (beam splitter /
+1/3 / no-frame-tames) → universal no-go via orbit constancy (Θ(VΛ^d)) →
+one universal UV-dressed sector anchored at the □² vacuum (d < 4
+criticality) → resonant boundary: vacuum-sector analytic, dynamics
+Jordan-singular → quadratic-gravity application.
