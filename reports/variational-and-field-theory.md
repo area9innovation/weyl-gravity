@@ -251,3 +251,46 @@ central quantitative claims are corrected:
 one universal UV-dressed sector anchored at the □² vacuum (d < 4
 criticality) → resonant boundary: vacuum-sector analytic, dynamics
 Jordan-singular → quadratic-gravity application.
+
+## B″. Bridge theorem and sector hierarchy (paper-3 core, 2026-07-12)
+
+**Bridge theorem (P8, outcome 1 — same quasifree state).** The physical
+Wightman function of the selected (Bender–Mannheim) vacuum, computed as
+W(t) = S₊e^{tA₀'}ΓS₊ᵀ pulled back to the physical field variable z = iy, is
+EXACTLY the spectral Wightman function of the fourth-order field:
+```
+Δ > 0:   W_zz(t) = [e^{−iω₁t}/(2ω₁) − e^{−iω₂t}/(2ω₂)] / Δ
+Δ = 0:   W_zz(t) = −(1 + iωt) e^{−iωt} / (4ω³)
+```
+— pure positive frequencies with ghost partial-fraction weights; the Δ = 0
+limit equals Bateman–Turok's per-mode W̃(p) = θ(p⁰)δ′₁(p²)
+(arXiv:2607.00096, eq. 5, mode expansion C3 with null pairing
+[a₁,a₂†] = [a₂,a₁†] ≠ 0) up to the overall action-sign convention
+(S_BT = −½∫(□φ+λ(∂φ)²)²; the theory-independent commutator parts differ by
+the same sign — our commutator is the classical +½-normalized confluent PU
+Green-difference i(sin ωt − ωt cos ωt)/(2ω³), verified).
+
+Consequently: **Bender–Mannheim metric selection and the Bateman–Turok
+spectral condition pick the SAME quasifree state, for every Δ ≥ 0.** The
+two quantizations differ only in the completion: positive η-inner product
+(available for Δ > 0) versus Krein space with ghost parity (necessary at
+Δ = 0, where the state remains analytic but the metric and the
+diagonalizability of the dynamics fail — paper 1's Jordan theorem).
+The user's conjectured refinement is thus PROVED at the free level:
+"the selected and Krein quantizations share the resonant vacuum
+covariance, differing in inner-product completion and treatment of Jordan
+excitations."
+
+**Complete UV sector hierarchy (P9).** With Σ = m₁²+m₂², Π = m₁²m₂²:
+```
+1 − f = (Σ−Σ̄)²/(12k⁴) + O(k⁻⁶)          generic
+1 − f|_{Σ=Σ̄} = (29/576)(δ²−δ̄²)²/k⁸ + …   δ = Δ/2;  (δ²−δ̄²) ∝ (Π̄−Π)
+```
+No k⁻⁶ term. Sector labels: none (d ≤ 3), Σ (4 ≤ d < 8), full mass pair
+(Σ,Π) (d ≥ 8). The classification TERMINATES (two invariants determine the
+pair) — the provisional d ≥ 8 threshold is now a theorem with coefficient
+29/576.
+
+**Remaining before paper-3 draft:** the microlocal/Hadamard audit (§6 of
+the proposal): fourth-order short-distance wavefront structure of W_zz and
+local composites. The Δ>0 closed form above is the natural starting point.

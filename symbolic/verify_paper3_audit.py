@@ -152,4 +152,58 @@ print("\n=== P7: no frame tames the singular values (state-level taming only) ==
 # vacuum-ray functional, computed exactly by the Gaussian state method (P2).
 check("P7: recorded (mu_phys ~ (r,r) numerically; occupation is state-level)", True)
 
+# ---------------------------------------------------------------- P8 ----------
+print("\n=== P8: Mannheim-Krein bridge — selected vacuum == BT spectral state ===")
+# Physical Wightman function of the selected vacuum, W_zz(t) = -W_yy(t) with
+# z = i y, computed from W(t) = S+ e^{t A0'} Gamma S+^T pulled back to
+# original PT variables.  Claims:
+#   (i)  Delta > 0:  W_zz(t) = [e^{-i w1 t}/(2 w1) - e^{-i w2 t}/(2 w2)]/Delta
+#        (pure positive frequencies, ghost partial-fraction weights: the
+#        SPECTRAL Wightman function of the fourth-order field);
+#   (ii) Delta -> 0: W_zz(t) = -(1 + i w t) e^{-i w t}/(4 w^3), equal to the
+#        Bateman-Turok W(p) = theta(p0) delta_1'(p^2) per mode, up to the
+#        overall action-sign convention (S_BT = -1/2 int (Box phi + ...)^2 );
+#        the commutator parts differ by the same sign (convention, not state);
+#   (iii) our commutator: [z(t), z(0)] = i (sin wt - wt cos wt)/(2 w^3)
+#        = i Delta_PU(t), the classical confluent PU Green-difference for the
+#        +1/2-normalized action.
+tt = sp.Symbol("t", real=True)
+Gv = sp.zeros(4,4)
+Gv[0,0] = w2/2;     Gv[2,2] = 1/(2*w2); Gv[0,2] = I/2;  Gv[2,0] = -I/2
+Gv[1,1] = 1/(2*w1); Gv[3,3] = w1/2;     Gv[1,3] = I/2;  Gv[3,1] = -I/2
+Ev = sp.zeros(4,4)
+Ev[0,0] = sp.cos(w1*tt); Ev[0,2] = w2*sp.sin(w1*tt)
+Ev[2,0] = -sp.sin(w1*tt)/w2; Ev[2,2] = sp.cos(w1*tt)
+Ev[1,1] = sp.cos(w2*tt); Ev[1,3] = sp.sin(w2*tt)/w1
+Ev[3,1] = -w1*sp.sin(w2*tt); Ev[3,3] = sp.cos(w2*tt)
+Sp2 = (w1*sp.eye(4) + w2*Bm)/sg
+dd = sp.sqrt(w1*w2)
+Dinv2 = sp.diag(1/dd, 1/dd, dd, dd)
+W_orig = sp.expand(Dinv2*(Sp2*Ev*Gv*Sp2.T)*Dinv2)
+W_zz = sp.simplify(sp.expand((-W_orig[1,1]).rewrite(sp.exp)))
+target_pos = (sp.exp(-I*w1*tt)/(2*w1) - sp.exp(-I*w2*tt)/(2*w2))/(w1**2 - w2**2)
+check("P8i: W_zz(t) == [e^{-i w1 t}/2w1 - e^{-i w2 t}/2w2]/Delta (spectral form)",
+      sp.simplify(sp.expand(W_zz - target_pos)) == 0)
+wq = sp.Symbol("omega", positive=True)
+Wlim = sp.simplify(sp.limit(W_zz.subs(w2, wq), w1, wq))
+bt = (1 + I*wq*tt)*sp.exp(-I*wq*tt)/(4*wq**3)
+check("P8ii: Delta->0 limit == -(1+i w t)e^{-i w t}/(4 w^3) == -W_BT (action sign)",
+      sp.simplify(Wlim + bt) == 0)
+comm = sp.expand(Wlim - Wlim.subs(tt, -tt))
+target_c = (I*(sp.sin(wq*tt) - wq*tt*sp.cos(wq*tt))/(2*wq**3)).rewrite(sp.exp)
+check("P8iii: commutator == i(sin wt - wt cos wt)/(2 w^3) (classical PU)",
+      sp.simplify(sp.expand(comm - sp.expand(target_c))) == 0)
+
+# ---------------------------------------------------------------- P9 ----------
+print("\n=== P9: complete UV sector hierarchy ===")
+S_, dl, dlb = sp.symbols("Sigma delta deltabar", positive=True)
+def A_of(msq1, msq2):
+    o1 = sp.sqrt(k**2 + msq1); o2 = sp.sqrt(k**2 + msq2)
+    return sp.Matrix([[o1 + o2, o1*o2], [o1*o2, o1*o2*(o1 + o2)]])
+fS = fidelity(A_of(S_/2 + dl, S_/2 - dl), A_of(S_/2 + dlb, S_/2 - dlb))
+serS = sp.expand(sp.simplify(sp.series((1 - fS).subs(k, 1/eps), eps, 0, 9).removeO()))
+check("P9: matched Sigma: 1 - f == (29/576)(delta^2 - deltabar^2)^2/k^8 + ... "
+      "(invariant Pi = m1^2 m2^2; hierarchy: none | Sigma | (Sigma,Pi) at d<4 | 4<=d<8 | d>=8; terminates)",
+      sp.simplify(sp.factor(serS) - sp.Rational(29, 576)*eps**8*(dl**2 - dlb**2)**2) == 0)
+
 print("\nALL PASS" if PASS else "\nSOME CHECKS FAILED")
