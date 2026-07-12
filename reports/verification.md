@@ -69,8 +69,14 @@ a nondegenerate one needs the full anti-diagonal nonzero and is indefinite
 3. **The stabilizer is NOT exactly U(1)×U(1)** (I2; spec §11 asked to check).
    Over ℂ, `Stab(J, G₀′) = SO(2,ℂ) × SO(2,ℂ)` (one complex rotation angle per
    normal mode; F1 commutant is exactly 4-dimensional for `ω₁ ≠ ω₂`).
-   `U(1)×U(1)` is precisely its **unitary subgroup** (real angles); imaginary
-   angles give non-unitary hyperbolic elements.
+   Abstractly `SO(2,ℂ)² ≅ (ℂ^×)²` has maximal compact subgroup `U(1)×U(1)`;
+   however, **in the canonical coordinates (where S′₊ is Hermitian) the
+   unitary elements of the stabilizer form only the finite group
+   `{±1}×{±1} ≅ ℤ₂×ℤ₂`** for generic parameters — the U(1) directions cannot
+   be made unitary in coordinates where S′₊ is Hermitian (the two mode
+   normalizations required are incompatible, since ω₁/ω₂ ≠ 1). Sharpened
+   during paper drafting (paper/main.tex, Prop. 3.7); supersedes the looser
+   "real angles = unitary" phrasing used earlier.
 
 4. **The polar-factor uniqueness claim is FALSE as stated** (I3; spec §11).
    Explicit counterexample: `C(θ₁ = i/3, θ₂ = 0)` is admissible
@@ -78,11 +84,12 @@ a nondegenerate one needs the full anti-diagonal nonzero and is indefinite
    **Strongest correct uniqueness theorem:**
    *There is exactly one Hermitian positive-definite admissible diagonalizer,
    namely `S′₊ = e^{iK′/2}`. The positive polar factor of a general admissible
-   diagonalizer `S′₊C` equals `S′₊` iff `C` is unitary; hence the polar factor
-   is constant exactly on the coset `S′₊·U(1)²`, and the set of polar factors
-   is a 2-real-parameter family parametrized by the hyperbolic directions of
-   the stabilizer* — the finite-dimensional shadow of the `W`-freedom in the
-   metric classification (Verification H).
+   diagonalizer `S′₊C` equals `S′₊` iff `C` is unitary; in the canonical
+   coordinates the unitary stabilizer elements are generically only
+   `{±I per mode} ≅ ℤ₂×ℤ₂`, so the polar factor varies over a
+   2-complex-parameter family and is constant only on those finite cosets* —
+   the finite-dimensional shadow of the `W`-freedom in the metric
+   classification (Verification H). (Sharpened during paper drafting.)
 
 5. **The candidate spectrum `{e^r, e^r, e^{−r}, e^{−r}}` of `M_obs = S†S` holds
    only after the canonical rescaling** (J2). In the original coordinates
@@ -113,10 +120,12 @@ a nondegenerate one needs the full anti-diagonal nonzero and is indefinite
   algebraically (free algebra, G3-style). The statement that `[W, h] = 0` for
   the PU h forces `W = f(N₁, N₂)` uses the spectral theorem for the two
   commuting number operators — standard, but analytic, hence listed here.
-* Genericity: all uniqueness statements assume `ω₁ ≠ ω₂` (and `γω₁ω₂ ≠ 1`
-  only where explicitly flagged in F5's linear solve; the conclusion `C = ±I`
-  was cross-checked numerically at `γω₁ω₂ = 2, 15, 210, ≈1` with no extra
-  solutions found).
+* Genericity: all uniqueness statements assume `ω₁ ≠ ω₂`. The F5 linear
+  solve flagged `γω₁ω₂ ≠ 1`-type cases, but a modulus argument (paper,
+  Thm. 3.6) closes them: `ω₂²·s̄ = −s` forces `|s|(ω₂²−1) = 0` and the
+  exceptional values cannot occur for both modes at once since `ω₁ > ω₂`;
+  uniqueness of the positive diagonalizer is UNCONDITIONAL for
+  `γ > 0, ω₁ > ω₂ > 0`. (Also cross-checked numerically.)
 
 ---
 
@@ -124,8 +133,9 @@ a nondegenerate one needs the full anti-diagonal nonzero and is indefinite
 
 * **"The positive polar factor of every admissible diagonalizer is the same"**
   — disproved with an explicit counterexample; replacement theorem in §2.4.
-* **"Stab(J, G₀) = U(1)×U(1)"** — false over ℂ; it is `SO(2,ℂ)²`, with
-  `U(1)²` as its unitary subgroup (§2.3).
+* **"Stab(J, G₀) = U(1)×U(1)"** — false over ℂ; it is `SO(2,ℂ)²`, whose
+  maximal compact subgroup is abstractly `U(1)²` but whose unitary part in
+  the canonical coordinates is generically only `ℤ₂×ℤ₂` (§2.3).
 * **"S is Hermitian positive"** in the original variables — false unless
   `γω₁ω₂ = 1`; true after the canonical rescaling (§2.1–2.2).
 * No other candidate formula failed: G, the characteristic polynomial, α, β,
@@ -188,9 +198,13 @@ with Mathematica remains open.
 7. **Is the positive polar factor unique?** As a property of *all* admissible
    diagonalizers — **no** (counterexample). The Hermitian-positive admissible
    diagonalizer itself is unique, and the polar factor is constant exactly on
-   its `U(1)²` coset (I3).
+   the cosets of the unitary stabilizer subgroup, which in the canonical
+   coordinates is generically the finite group `ℤ₂×ℤ₂` (I3, sharpened in
+   paper/main.tex Prop. 3.7).
 8. **Exact stabilizer of the positive normal form?** `SO(2,ℂ) × SO(2,ℂ)`
-   (complex rotation per mode) for `ω₁ ≠ ω₂`; unitary subgroup `U(1)×U(1)` (F3, I2).
+   (complex rotation per mode) for `ω₁ ≠ ω₂`; abstract maximal compact
+   `U(1)×U(1)`, unitary part in canonical coordinates generically `ℤ₂×ℤ₂`
+   (F3, I2, paper Prop. 3.7).
 9. **Is the observable-space distance exactly 2r?** Yes, in the canonical
    (rescaled) coordinates, with `⟨U,V⟩ = tr(G⁻¹UG⁻¹V)` unnormalized:
    `d(I, M_obs) = 2r = 2 log((ω₁+ω₂)/(ω₁−ω₂))` (J3), diverging as

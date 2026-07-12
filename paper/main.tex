@@ -1,0 +1,989 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\w}{\omega}
+\newcommand{\Sp}{\mathrm{Sp}}
+\newcommand{\Stab}{\mathrm{Stab}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Mobs}{M_{\mathrm{obs}}}
+\newcommand{\dg}{\dagger}
+
+\title{Canonical Positive Symplectic Diagonalization\\ of the Pais--Uhlenbeck Oscillator}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove that the unequal-frequency PT-symmetric Pais--Uhlenbeck oscillator
+admits a canonical positive complex-symplectic diagonalization, and that the
+metaplectic logarithm of the unique Hermitian positive-definite diagonalizer
+is exactly the Bender--Mannheim generator $Q=\alpha pq+\beta xy$.  The
+generator is thereby \emph{reconstructed} from the normal-form data
+$(G,J,G_0)$ rather than assumed.  We determine the full solution family of the
+diagonalization problem: its stabilizer is $SO(2,\C)\times SO(2,\C)$, of which
+only a finite subgroup is unitary in the canonical coordinates, so the
+positive polar factor is not an invariant of the problem, while the Hermitian
+positive-definite diagonalizer is unique.  We classify all positive metric
+operators compatible with pseudo-Hermiticity, compute the observable-space
+metric spectrum $\{e^{r},e^{r},e^{-r},e^{-r}\}$ with
+$r=\log\frac{\w_1+\w_2}{\w_1-\w_2}$, and show that its affine-invariant
+distance from the identity is exactly $2r$.  In the equal-frequency limit this
+distance diverges logarithmically, and we prove that the limiting Jordan block
+admits no positive-definite invariant Hermitian form.  All finite-dimensional
+algebraic identities appearing in this paper have been independently verified
+symbolically, numerically, and by machine-checked Lean~4 proofs.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+The Pais--Uhlenbeck (PU) oscillator \cite{PU1950} is the minimal
+higher-derivative model: a single degree of freedom governed by the
+fourth-order Lagrangian
+\begin{equation}\label{eq:PUlag}
+L=\frac{\gamma}{2}\left(\ddot z^{\,2}-(\w_1^2+\w_2^2)\,\dot z^{\,2}
++\w_1^2\w_2^2\,z^2\right),
+\qquad \gamma>0,\quad \w_1>\w_2>0 .
+\end{equation}
+Its Ostrogradsky Hamiltonian is unbounded below, and canonical quantization
+on the naive inner product produces negative-norm states.  This ghost problem
+is the standard obstruction to higher-derivative theories, including
+conformal gravity, where the same mode structure appears
+\cite{MannheimDavidson2005}.
+
+Bender and Mannheim \cite{BM2008PRL,BM2008PRD} observed that the Ostrogradsky
+Hamiltonian, continued to a PT-symmetric operator $H_{\mathrm{PT}}$, has real
+positive spectrum, and that an operator $Q=\alpha pq+\beta xy$ with explicit
+coefficients intertwines $H_{\mathrm{PT}}$ with a manifestly positive
+two-oscillator Hamiltonian: $e^{-Q/2}H_{\mathrm{PT}}\,e^{Q/2}$ is Hermitian,
+and $\eta=e^{-Q}$ is a positive metric restoring unitarity.  Their derivation
+proceeds by an operator ansatz whose coefficients are fixed by demanding that
+the transformed Hamiltonian be Hermitian.  Related constructions eliminate
+the PU ghost by complex canonical transformations \cite{Dector2009} or by an
+alternative Hamiltonian formulation \cite{Mostafazadeh2010PU}; the general
+framework of pseudo-Hermitian quantum mechanics is due to Scholtz, Geyer and
+Hahne \cite{SGH1992} and Mostafazadeh \cite{Mostafazadeh2002,Mostafazadeh2010}.
+
+This paper treats the problem as one of \emph{finite-dimensional symplectic
+geometry} and proves the following.
+
+\begin{enumerate}
+\item The PT Hamiltonian is a complex quadratic form
+$H_{\mathrm{PT}}=\tfrac12 V^{\top}GV$ with a complex-symmetric (not Hermitian)
+matrix $G$, and the diagonalization problem
+\begin{equation}\label{eq:problem}
+S^{\top}JS=J,\qquad S^{\top}GS=G_0
+\end{equation}
+with $G_0$ the positive two-oscillator normal form, has an explicit solution
+family.
+
+\item After a canonical symplectic normalization (Section~\ref{sec:diag}),
+the problem \eqref{eq:problem} has a \emph{unique} Hermitian positive-definite
+solution $S_+\in \Sp(4,\C)$.  Uniqueness requires no genericity assumption
+beyond $\w_1>\w_2>0$.
+
+\item The metaplectic logarithm of $S_+$ is exactly the Bender--Mannheim
+generator: the quadratic operator $\widehat Q$ with
+$e^{-\widehat Q/2}\,V\,e^{\widehat Q/2}=S_+V$ is
+$\widehat Q=\alpha pq+\beta xy$ with the Bender--Mannheim coefficients.  The
+generator is thus reconstructed from $(G,J,G_0)$ and positivity alone
+(Section~\ref{sec:reconstruction}); no ansatz enters.
+
+\item The stabilizer of the normal form is $SO(2,\C)\times SO(2,\C)$
+(Section~\ref{sec:diag}).  Only a finite subgroup of it is unitary in the
+canonical coordinates, and consequently the positive polar factor of a
+general solution of \eqref{eq:problem} is \emph{not} unique; the correct
+uniqueness statement concerns the Hermitian positive-definite solution.
+
+\item All positive metric operators $\eta'$ compatible with
+pseudo-Hermiticity of $H_{\mathrm{PT}}$ form the family
+$\eta'=\rho^{\dg}W\rho$ with $W>0$ commuting with the diagonalized
+Hamiltonian; positive metrics are not unique
+(Section~\ref{sec:pseudo}).
+
+\item The observable-space metric $\Mobs=S_+^{\dg}S_+$ has spectrum
+$\{e^{r},e^{r},e^{-r},e^{-r}\}$ with
+$r=\log\frac{\w_1+\w_2}{\w_1-\w_2}$, and its affine-invariant distance from
+the identity is exactly
+\begin{equation}
+d(I,\Mobs)=2r=2\log\frac{\w_1+\w_2}{\w_1-\w_2}
+\end{equation}
+(Section~\ref{sec:geometry}).  For $\w_{1,2}=\w\pm\epsilon$ one has
+$r=\log(\w/\epsilon)$ exactly, so the equal-frequency exceptional point lies
+at infinite affine-invariant distance, and no scalar renormalization of
+$\Mobs$ has a finite positive nondegenerate limit.
+
+\item At the exceptional point the flow develops a Jordan block, and we prove
+that a Jordan block admits no positive-definite invariant Hermitian form:
+nondegenerate invariant forms are indefinite and positive-semidefinite ones
+are degenerate (Section~\ref{sec:jordan}).
+\end{enumerate}
+
+Throughout, we distinguish the observable-space (phase-space) geometry of the
+$4\times4$ matrices from the Hilbert-space geometry of the unbounded metric
+operator $\eta=e^{-Q}$; the two are related by the metaplectic representation
+but must not be identified (Remark~\ref{rem:twospaces}).
+
+\paragraph{Verification.}
+All finite-dimensional algebraic identities appearing in this paper have been
+independently verified symbolically (SymPy), numerically (50--80 significant
+digits, including a near-degenerate frequency pair), and---for the identities
+$K^2=-r^2I$, $S^{\top}JS=J$, $\det S=1$, $S^{\top}GS=G_0$, and the complete
+Jordan-block obstruction of Section~\ref{sec:jordan}---by machine-checked
+Lean~4 proofs against Mathlib, with no unproved placeholders.  The
+accompanying repository contains the complete verification pipeline.
+Operator-theoretic statements about the unbounded metric $\eta$ are made at
+the formal algebraic level on the oscillator domain and are flagged as such.
+
+\section{Quadratic Hamiltonian formulation}\label{sec:setup}
+
+\subsection{Conventions}
+
+We collect the canonical operators in the column vector $V=(x,y,p,q)^{\top}$
+with
+\begin{equation}
+[x,p]=i,\qquad [y,q]=i,
+\end{equation}
+all other basic commutators vanishing; equivalently $[V_a,V_b]=iJ_{ab}$ with
+the symplectic matrix
+\begin{equation}
+J=\begin{pmatrix}0&0&1&0\\0&0&0&1\\-1&0&0&0\\0&-1&0&0\end{pmatrix},
+\qquad J^{\top}=-J,\qquad J^2=-I .
+\end{equation}
+A quadratic Hamiltonian $H=\tfrac12V^{\top}GV$ with $G=G^{\top}$ generates the
+linear flow $\dot V=AV$, $A=JG$.  The same formulas define the classical
+theory with $\{V_a,V_b\}=J_{ab}$; all matrix identities below are
+representation-independent.
+
+\subsection{The PT Hamiltonian}
+
+Introducing the Ostrogradsky variables $x=\dot z$ and their momenta, the
+Lagrangian \eqref{eq:PUlag} gives
+$H_{\mathrm{PU}}=p^2/(2\gamma)+p_z x
++\tfrac{\gamma}{2}(\w_1^2+\w_2^2)x^2-\tfrac{\gamma}{2}\w_1^2\w_2^2 z^2$,
+whose $-z^2$ term encodes the Ostrogradsky instability.  The PT reformulation
+\cite{BM2008PRL,BM2008PRD} substitutes $z=iy$, $p_z=-iq$ (preserving
+$[y,q]=i$) and yields
+\begin{equation}\label{eq:HPT}
+H_{\mathrm{PT}}
+=\frac{p^2}{2\gamma}-iqx
++\frac{\gamma}{2}(\w_1^2+\w_2^2)x^2
++\frac{\gamma}{2}\w_1^2\w_2^2\,y^2
+=\frac12 V^{\top}GV,
+\end{equation}
+\begin{equation}\label{eq:G}
+G=\begin{pmatrix}
+\gamma(\w_1^2+\w_2^2)&0&0&-i\\
+0&\gamma\w_1^2\w_2^2&0&0\\
+0&0&\gamma^{-1}&0\\
+-i&0&0&0
+\end{pmatrix},
+\end{equation}
+where the cross term uses $[x,q]=0$, so no ordering ambiguity arises.  The
+matrix $G$ is complex symmetric but not Hermitian: $H_{\mathrm{PT}}$ is
+PT-symmetric, not Hermitian.
+
+\begin{proposition}\label{prop:spectrum}
+The flow matrix $A=JG$ has characteristic polynomial
+\begin{equation}
+\det(\lambda I-A)=(\lambda^2+\w_1^2)(\lambda^2+\w_2^2),
+\end{equation}
+computed directly from the determinant.  For $\w_1\neq\w_2$ the eigenvalues
+$\pm i\w_1,\pm i\w_2$ are distinct and purely imaginary.
+\end{proposition}
+
+The target normal form is the positive two-oscillator Hamiltonian
+\begin{equation}\label{eq:G0}
+\widetilde H=\frac{p^2}{2\gamma}+\frac{q^2}{2\gamma\w_1^2}
++\frac{\gamma\w_1^2}{2}x^2+\frac{\gamma\w_1^2\w_2^2}{2}y^2
+=\frac12V^{\top}G_0V,
+\qquad
+G_0=\diag\!\left(\gamma\w_1^2,\ \gamma\w_1^2\w_2^2,\ \gamma^{-1},\
+(\gamma\w_1^2)^{-1}\right),
+\end{equation}
+whose modes $(x,p)$ and $(y,q)$ oscillate with frequencies $\w_1$ and $\w_2$
+respectively.  Since $G$ is complex, the classical Williamson theorem
+\cite{Williamson1936} for real positive forms does not apply; the content of
+Sections~\ref{sec:diag}--\ref{sec:reconstruction} is a positive symplectic
+normal form over $\C$ for this PT class, together with a uniqueness theorem.
+
+\section{Canonical positive symplectic diagonalization}\label{sec:diag}
+
+\subsection{The parameters}
+
+Throughout, set
+\begin{equation}\label{eq:r}
+r=\log\frac{\w_1+\w_2}{\w_1-\w_2}>0,
+\qquad
+\sigma=\sqrt{\w_1^2-\w_2^2}>0 .
+\end{equation}
+Exponentiating $r/2$ gives the hyperbolic values used repeatedly below:
+\begin{equation}\label{eq:hyp}
+\cosh\frac r2=\frac{\w_1}{\sigma},\qquad
+\sinh\frac r2=\frac{\w_2}{\sigma},\qquad
+\cosh r=\frac{\w_1^2+\w_2^2}{\w_1^2-\w_2^2},\qquad
+\sinh r=\frac{2\w_1\w_2}{\w_1^2-\w_2^2}.
+\end{equation}
+
+\subsection{Canonical normalization}\label{ssec:normalization}
+
+For $d_x,d_y>0$ the diagonal matrix
+$D=\diag(d_x,d_y,d_x^{-1},d_y^{-1})$ satisfies $D^{\top}JD=J$: it is a real
+canonical rescaling.  We normalize the coordinates by
+\begin{equation}\label{eq:normalization}
+V'=DV,\qquad d_xd_y=\gamma\w_1\w_2,
+\end{equation}
+and write $G'=D^{-\top}GD^{-1}$, $G_0'=D^{-\top}G_0D^{-1}$ for the quadratic
+forms in the normalized coordinates.  Only the product $d_xd_y$ is fixed;
+every statement below is invariant under the residual split
+$d_x/d_y$, which acts by conjugation with a positive diagonal symplectic
+matrix.  For the symmetric choice $d_x=d_y=\sqrt{\gamma\w_1\w_2}$,
+\begin{equation}\label{eq:Gprime}
+G'=\begin{pmatrix}
+\frac{\w_1^2+\w_2^2}{\w_1\w_2}&0&0&-i\\[2pt]
+0&\w_1\w_2&0&0\\
+0&0&\w_1\w_2&0\\
+-i&0&0&0
+\end{pmatrix},
+\qquad
+G_0'=\diag\!\left(t,\ \w_1\w_2,\ \w_1\w_2,\ t^{-1}\right),
+\qquad t=\frac{\w_1}{\w_2} .
+\end{equation}
+Both $G'$ and $G_0'$ are block diagonal with respect to the planes
+$\Pi_{xq}=\mathrm{span}\{x,q\}$ and $\Pi_{yp}=\mathrm{span}\{y,p\}$.
+
+The reason for the condition $d_xd_y=\gamma\w_1\w_2$ is
+Proposition~\ref{prop:hermiticity} below: it is exactly the normalization
+that renders the diagonalizer Hermitian.
+
+\subsection{Existence}
+
+\begin{definition}\label{def:B}
+Let $B\in M_4(\C)$ be given, in the ordering $(x,y,p,q)$, by
+\begin{equation}
+B=\begin{pmatrix}0&0&0&i\\0&0&i&0\\0&-i&0&0\\-i&0&0&0\end{pmatrix},
+\qquad B^{\dg}=B,\qquad B^2=I,
+\end{equation}
+a Hermitian involution with two-dimensional eigenspaces
+$\ker(B\mp I)$, and set
+\begin{equation}\label{eq:Splus}
+S_+=\cosh\frac r2\, I+\sinh\frac r2\, B
+=\exp\!\Big(\frac r2 B\Big)
+=\frac{tI+B}{\sqrt{t^2-1}} .
+\end{equation}
+\end{definition}
+
+The last equality follows from \eqref{eq:hyp}.  Since $B$ is a Hermitian
+involution, $S_+$ is Hermitian with spectrum
+$\{e^{r/2},e^{r/2},e^{-r/2},e^{-r/2}\}$; in particular $S_+>0$ and
+$\det S_+=1$.
+
+\begin{theorem}[Existence]\label{thm:existence}
+The matrix $S_+$ of \eqref{eq:Splus} satisfies
+\begin{equation}
+S_+^{\top}JS_+=J,
+\qquad
+S_+^{\top}G'S_+=G_0' .
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+$B^{\top}J=-JB$ by inspection, so $B$ is $J$-Hamiltonian and
+$e^{(r/2)B}$ is symplectic:
+$S_+^{\top}JS_+
+=(\cosh^2\tfrac r2-\sinh^2\tfrac r2)J
++\cosh\tfrac r2\sinh\tfrac r2\,(B^{\top}J+JB)=J$,
+using $B^{\top}JB=-JB^2=-J$.
+
+For the congruence, note that $S_+$ preserves the splitting
+$\Pi_{xq}\oplus\Pi_{yp}$, acting on each plane (in the bases $(x,q)$ and
+$(y,p)$, with $c=\cosh\tfrac r2$, $s=\sinh\tfrac r2$) by
+$\left(\begin{smallmatrix}c&is\\-is&c\end{smallmatrix}\right)$, while by
+\eqref{eq:Gprime} $G'$ restricts to
+$\left(\begin{smallmatrix}t+t^{-1}&-i\\-i&0\end{smallmatrix}\right)$ on
+$\Pi_{xq}$ and to $\w_1\w_2\,I_2$ on $\Pi_{yp}$.  On $\Pi_{yp}$,
+$\left(\begin{smallmatrix}c&-is\\is&c\end{smallmatrix}\right)
+\left(\begin{smallmatrix}c&is\\-is&c\end{smallmatrix}\right)
+=(c^2-s^2)I_2=I_2$, matching $G_0'|_{\Pi_{yp}}=\w_1\w_2 I_2$.  On
+$\Pi_{xq}$, using $c=\w_1/\sigma$, $s=\w_2/\sigma$,
+\[
+\begin{pmatrix}c&-is\\is&c\end{pmatrix}
+\begin{pmatrix}t+t^{-1}&-i\\-i&0\end{pmatrix}
+\begin{pmatrix}c&is\\-is&c\end{pmatrix}
+=\begin{pmatrix}(t+t^{-1})c^2-2cs& i\big((t+t^{-1})cs-c^2-s^2\big)\\[2pt]
+-i\big((t+t^{-1})cs-c^2-s^2\big)&-(t+t^{-1})s^2+2cs\end{pmatrix}
+=\begin{pmatrix}t&0\\0&t^{-1}\end{pmatrix},
+\]
+where the off-diagonal entries vanish because
+$(t+t^{-1})cs=(\w_1^2+\w_2^2)/\sigma^2=c^2+s^2$, and the diagonal entries
+reduce to $\w_1/\w_2$ and $\w_2/\w_1$ by direct simplification.  This is
+$G_0'$ restricted to the two planes.
+\end{proof}
+
+Undoing the normalization, $S=D^{-1}S_+D$ solves the original problem
+$S^{\top}JS=J$, $S^{\top}GS=G_0$; the congruence, symplecticity and
+$\det S=1$ in the original coordinates are among the Lean-verified
+statements.  The flow relation $S^{-1}AS=A_0=JG_0$ follows from the
+congruence by $JS^{\top}=S^{-1}J$.
+
+\begin{proposition}[Hermiticity requires the normalization]
+\label{prop:hermiticity}
+Let $D=\diag(d_x,d_y,d_x^{-1},d_y^{-1})$ with $d_x,d_y>0$ and let
+$S=D^{-1}S_+D$ be the induced diagonalizer of $(G,J,G_0)$.  Then $S$ is
+Hermitian if and only if $d_xd_y=\gamma\w_1\w_2$.  In particular the
+diagonalizer is \emph{not} Hermitian in the original coordinates unless
+$\gamma\w_1\w_2=1$.
+\end{proposition}
+
+\begin{proof}
+Conjugating $B$ by $D$ scales the entries $B_{xq},B_{yp}$ by
+$d_xd_y/(\gamma\w_1\w_2)$ relative to the normalized form and the entries
+$B_{py},B_{qx}$ by the inverse factor; Hermiticity of the conjugated
+involution, hence of $S$, holds iff the factor is $1$.
+\end{proof}
+
+\subsection{The solution family and uniqueness}
+
+We now determine \emph{all} solutions of the diagonalization problem in the
+normalized coordinates.  Write $A_0'=JG_0'$ and let
+$P_1,P_2$ be the coordinate projections onto the modes $(x,p)$ and $(y,q)$
+of $G_0'$, and
+\begin{equation}
+X_1=\frac{P_1A_0'P_1}{\w_1},\qquad
+X_2=\frac{P_2A_0'P_2}{\w_2},\qquad
+X_j^2=-P_j .
+\end{equation}
+Explicitly $X_1$ acts on $(x,p)$ by
+$\left(\begin{smallmatrix}0&\w_2\\-\w_2^{-1}&0\end{smallmatrix}\right)$ and
+$X_2$ on $(y,q)$ by
+$\left(\begin{smallmatrix}0&\w_1^{-1}\\-\w_1&0\end{smallmatrix}\right)$.
+
+\begin{lemma}[Stabilizer]\label{lem:stabilizer}
+For $\w_1\neq\w_2$,
+\begin{equation}
+\Stab(J,G_0')
+=\{C:\ C^{\top}JC=J,\ C^{\top}G_0'C=G_0'\}
+=\big\{C(\theta_1,\theta_2)
+=\textstyle\sum_{j=1,2}\big(\cos\theta_j\,P_j+\sin\theta_j\,X_j\big)
+:\ \theta_j\in\C\big\}
+\ \cong\ SO(2,\C)\times SO(2,\C).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+($\supseteq$)\; On each mode, $X_j^{\top}J+JX_j=0$ and
+$X_j^{\top}G_0'+G_0'X_j=0$ by inspection, and $X_j^2=-P_j$, so for
+$C_j=\cos\theta_j P_j+\sin\theta_j X_j$ both quadratic forms are preserved:
+$C_j^{\top}QC_j=(\cos^2\theta_j+\sin^2\theta_j)Q=Q$ on the mode, for
+$Q\in\{J,G_0'\}$.
+
+($\subseteq$)\; If $C$ preserves both forms then, using
+$C^{-\top}=JCJ^{-1}$ from symplecticity,
+$A_0'C=JG_0'C=JC^{-\top}G_0'=CJG_0'=CA_0'$: $C$ commutes with $A_0'$.  Since
+$A_0'$ has the four distinct eigenvalues $\pm i\w_1,\pm i\w_2$
+(Proposition~\ref{prop:spectrum}), its commutant is the span of
+$\{P_1,X_1,P_2,X_2\}$.  Writing $C=\sum_j(a_jP_j+b_jX_j)$, the condition
+$C^{\top}JC=J$ restricts on each mode to $a_j^2+b_j^2=1$, which is the
+$SO(2,\C)$ relation; $C^{\top}G_0'C=G_0'$ is then automatic as in
+($\supseteq$).
+\end{proof}
+
+Consequently the full solution family of \eqref{eq:problem} in normalized
+coordinates is the coset
+\begin{equation}\label{eq:family}
+\{S:\ S^{\top}JS=J,\ S^{\top}G'S=G_0'\}
+= S_+\cdot\Stab(J,G_0') .
+\end{equation}
+(If $S$ is any solution, $C=S_+^{-1}S$ preserves both forms.)
+
+\begin{theorem}[Uniqueness]\label{thm:uniqueness}
+For every $\gamma>0$ and $\w_1>\w_2>0$, the matrix $S_+$ is the unique
+Hermitian positive-definite solution of
+$S^{\top}JS=J$, $S^{\top}G'S=G_0'$.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:family} any solution is $S_+C(\theta_1,\theta_2)$.  Writing out
+the $16$ entries of $S_+C$ ($c=\cosh\tfrac r2,\ s=\sinh\tfrac r2$), the
+Hermiticity conditions $(S_+C)^{\dg}=S_+C$ include, from the entry pairs
+$(x,p)/(p,x)$ and $(y,q)/(q,y)$,
+\begin{equation}\label{eq:herm}
+\w_2^2\sin\theta_1=-\overline{\sin\theta_1},
+\qquad
+\sin\theta_2=-\w_1^2\,\overline{\sin\theta_2} .
+\end{equation}
+Taking absolute values, $\w_2^2\,|\sin\theta_1|=|\sin\theta_1|$ and
+$|\sin\theta_2|=\w_1^2\,|\sin\theta_2|$; hence $\sin\theta_1=0$ unless
+$\w_2=1$ and $\sin\theta_2=0$ unless $\w_1=1$, and these two exceptional
+cases cannot occur simultaneously since $\w_1>\w_2$.  If $\w_2=1$, the
+$(y,q)$ condition still gives $\sin\theta_2=0$, and the entry pair
+$(x,y)/(y,x)$ gives
+$\w_1\w_2\sin\theta_2=-\overline{\sin\theta_1}$, forcing $\sin\theta_1=0$ as
+well; the case $\w_1=1$ is symmetric.  So in all cases
+$\sin\theta_1=\sin\theta_2=0$, whence $\cos^2\theta_j=1$ and
+$C=\varepsilon_1P_1+\varepsilon_2P_2$ with $\varepsilon_j=\pm1$.  The entry
+pair $(x,q)/(q,x)$ gives
+$\cos\theta_2=\overline{\cos\theta_1}$, i.e.\
+$\varepsilon_1=\varepsilon_2$, so $C=\pm I$.  Finally $S_+(-I)=-S_+<0$ is
+excluded by positivity, leaving $C=I$.
+\end{proof}
+
+\begin{proposition}[Polar factors are not invariant]\label{prop:polar}
+Let $S=S_+C$ with $C\in\Stab(J,G_0')$, and let $S=PU$ be its polar
+decomposition ($P>0$, $U$ unitary).  Then $P=S_+$ if and only if $C$ is
+unitary.  In the normalized coordinates the unitary elements of
+$\Stab(J,G_0')$ form, for $\w_1,\w_2\neq1$, the finite group
+$\{\pm P_1\pm P_2\}\cong\mathbb{Z}_2\times\mathbb{Z}_2$.  Consequently the
+positive polar factor varies over a two-complex-parameter family as $C$
+ranges over the stabilizer: it is not an invariant of the diagonalization
+problem.
+\end{proposition}
+
+\begin{proof}
+If $C$ is unitary, $S_+C$ is already a polar decomposition, and by its
+uniqueness $P=S_+$.  Conversely $P=S_+$ forces $U=S_+^{-1}S=C$ unitary.  For
+the second claim, $C(\theta)$ restricted to mode $1$ is
+$\left(\begin{smallmatrix}a&b\w_2\\-b/\w_2&a\end{smallmatrix}\right)$ with
+$a^2+b^2=1$; unitarity requires
+$|a|^2+|b|^2\w_2^{\mp2}=1$ for both signs, hence $b=0$ for $\w_2\neq1$, and
+then $|a|=1$ with $a^2=1$, i.e.\ $a=\pm1$; likewise on mode $2$.  An explicit
+non-unitary example is $C(i\tau,0)$, $\tau\in\R\setminus\{0\}$, for which
+$(S_+C)^{\dg}(S_+C)\neq S_+^2$.
+\end{proof}
+
+\begin{remark}
+The stabilizer is $SO(2,\C)^2\cong(\C^{\times})^2$ as an abstract group,
+whose maximal compact subgroup is $U(1)^2$; but its unitary part in the
+canonical coordinates is generically only $\mathbb{Z}_2^2$, because the
+$U(1)$ directions of the two $SO(2,\C)$ factors cannot be made
+simultaneously unitary in coordinates where $S_+$ is Hermitian.  The apparent
+condition ``$\w_j=1$'' in the proofs above is an artifact of the residual
+split freedom $d_x/d_y$ of \eqref{eq:normalization}, which can move but not
+remove the exceptional values; Theorem~\ref{thm:uniqueness} holds for all
+parameters.
+\end{remark}
+
+\section{Reconstruction of the Bender--Mannheim generator}
+\label{sec:reconstruction}
+
+We now derive the generator from $S_+$; at no point is the form of $Q$
+assumed.
+
+\subsection{Quadratic generators and the metaplectic dictionary}
+
+For a symmetric matrix $M=M^{\top}\in M_4(\C)$ let
+$\widehat Q=\tfrac12V^{\top}MV$ and $K=JM$.  From $[V_a,V_b]=iJ_{ab}$,
+\begin{equation}\label{eq:commutator}
+[\widehat Q,V]
+=\tfrac12 M_{bc}\big(V_b[V_c,V_a]+[V_b,V_a]V_c\big)_{a}
+=-\,iKV ,
+\end{equation}
+componentwise on the column vector $V$; the sign is fixed by the convention
+$[x,p]=+i$.  Since $\mathrm{ad}_{\widehat Q}$ acts linearly on $V$, the
+Baker--Campbell--Hausdorff series sums exactly:
+\begin{equation}\label{eq:conjugation}
+e^{-\widehat Q/2}\,V\,e^{\widehat Q/2}=e^{iK/2}\,V ,
+\qquad
+e^{\widehat Q/2}\,V\,e^{-\widehat Q/2}=e^{-iK/2}\,V .
+\end{equation}
+Thus quadratic operators implement one-parameter symplectic groups: this is
+the (formal) metaplectic dictionary $\widehat Q\leftrightarrow K=JM$ between
+quadratic generators and the Lie algebra $\mathfrak{sp}(4,\C)$
+\cite{Folland}.
+
+\subsection{The logarithm of $S_+$}
+
+By Definition~\ref{def:B}, $S_+=e^{(r/2)B}$, and since $B$ is an involution
+this is the exact logarithm delivered by the spectral calculus:
+\begin{equation}
+\log S_+=\frac r2\,B .
+\end{equation}
+To realize $S_+=e^{iK'/2}$ in the dictionary \eqref{eq:conjugation} we need
+$iK'/2=\log S_+$, i.e.
+\begin{equation}
+K'=-\,irB,
+\qquad
+M'=J^{-1}K'=-JK'
+=r\begin{pmatrix}0&1&0&0\\1&0&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}
+\quad\text{(normalized coordinates)},
+\end{equation}
+which is symmetric, as required.  Pulling back along the normalization
+\eqref{eq:normalization}, $M=D^{\top}M'D$ depends only on the product
+$d_xd_y=\gamma\w_1\w_2$ and equals
+\begin{equation}
+M=\begin{pmatrix}
+0&\beta&0&0\\ \beta&0&0&0\\ 0&0&0&\alpha\\ 0&0&\alpha&0
+\end{pmatrix},
+\qquad
+\alpha=\frac{r}{\gamma\w_1\w_2},
+\qquad
+\beta=r\,\gamma\w_1\w_2=\alpha\gamma^2\w_1^2\w_2^2 .
+\end{equation}
+
+\begin{theorem}[Reconstruction]\label{thm:reconstruction}
+The quadratic operator associated with the metaplectic logarithm of the
+unique Hermitian positive-definite diagonalizer is
+\begin{equation}
+Q=\tfrac12V^{\top}MV=\alpha\,pq+\beta\,xy,
+\qquad
+\alpha=\frac{1}{\gamma\w_1\w_2}\log\frac{\w_1+\w_2}{\w_1-\w_2},
+\qquad
+\beta=\alpha\gamma^2\w_1^2\w_2^2 ,
+\end{equation}
+i.e.\ exactly the Bender--Mannheim generator \cite{BM2008PRD}, with
+$r=\sqrt{\alpha\beta}$ (positive root, since $\alpha,\beta>0$ for
+$\w_1>\w_2>0$).  Moreover $K=JM$ satisfies $K^2=-r^2I$, so the exponential
+closes in the first two powers of $K$,
+\begin{equation}
+S=e^{iK/2}=\cosh\frac r2\,I+i\,\frac{\sinh\frac r2}{r}\,K ,
+\end{equation}
+and $e^{-Q/2}H_{\mathrm{PT}}\,e^{Q/2}
+=\tfrac12V^{\top}(S^{\top}GS)V=\tfrac12V^{\top}G_0V=\widetilde H$
+is the positive two-oscillator Hamiltonian \eqref{eq:G0}.
+\end{theorem}
+
+\begin{proof}
+The pullback computation above gives $M$, hence $Q$; the identities
+$K^2=-r^2I$ and $S^{\top}GS=G_0$ are verified directly (and are
+machine-checked); the last display combines \eqref{eq:conjugation} with the
+congruence.
+\end{proof}
+
+The logical order of the construction is therefore
+\begin{equation}
+(G,\ J,\ G_0)\ \Longrightarrow\ S_+\ \text{(existence and uniqueness)}
+\ \Longrightarrow\ Q\ \text{(metaplectic logarithm)} ,
+\end{equation}
+with positivity of $S_+$ (after the canonical normalization
+\eqref{eq:normalization}) as the only selection principle.  Beyond
+$H_{\mathrm{PT}}$ itself, the inputs are the choice of the target normal form
+$G_0$ and the positivity requirement; nothing else.
+
+\section{Pseudo-Hermiticity and metric classification}\label{sec:pseudo}
+
+In this section, operator identities are formal-algebraic: they hold on the
+common invariant domain of finite linear combinations of the
+$\widetilde H$-oscillator eigenstates, on which all operators below act;
+$Q$ is essentially self-adjoint there but $e^{\pm Q/2}$ are unbounded, and we
+make no claims about closures or operator-theoretic similarity.  The
+finite-dimensional identities backing each step are exact and verified.
+
+Since $\alpha,\beta\in\R$ and $[p,q]=[x,y]=0$, the generator satisfies
+$Q^{\dg}=Q$; set
+\begin{equation}
+\rho=e^{-Q/2}=\rho^{\dg},
+\qquad
+\eta=\rho^{\dg}\rho=e^{-Q} .
+\end{equation}
+
+\begin{proposition}[Pseudo-Hermiticity]\label{prop:pseudo}
+Formally, $H_{\mathrm{PT}}^{\dg}\,\eta=\eta\,H_{\mathrm{PT}}$.  At the matrix
+level this is equivalent to the exact identity
+\begin{equation}\label{eq:matrixpseudo}
+(S^2)^{\top}\,G\,S^2=\overline G ,
+\end{equation}
+which holds for $S=e^{iK/2}$.
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:conjugation} with parameter doubled,
+$e^{-Q}Ve^{Q}=S^2V$, so
+$\eta H_{\mathrm{PT}}\eta^{-1}=\tfrac12V^{\top}\!\big((S^2)^{\top}GS^2\big)V$.
+Since $x,y,p,q$ are Hermitian and $G$ is symmetric,
+$H_{\mathrm{PT}}^{\dg}=\tfrac12V^{\top}\overline GV$.  The claim is then
+\eqref{eq:matrixpseudo}, verified exactly.  Equivalently: with
+$h=\rho H_{\mathrm{PT}}\rho^{-1}=\widetilde H$ Hermitian
+(Theorem~\ref{thm:reconstruction}) and $\rho^{\dg}=\rho$, the free-algebra
+identity $\rho\,(h^{\dg}-h)\,\rho
+=H_{\mathrm{PT}}^{\dg}\eta-\eta H_{\mathrm{PT}}$ gives the statement.
+\end{proof}
+
+\begin{theorem}[Classification of positive metrics]\label{thm:metrics}
+Let $h=\rho H_{\mathrm{PT}}\rho^{-1}=\widetilde H$.  The map
+$W\mapsto\eta'=\rho^{\dg}W\rho$ is a bijection from
+\begin{equation}
+\{W>0 \text{ invertible},\ [W,h]=0\}
+\quad\text{onto}\quad
+\{\eta'>0 \text{ invertible},\
+H_{\mathrm{PT}}^{\dg}\eta'=\eta'H_{\mathrm{PT}}\},
+\end{equation}
+with inverse $\eta'\mapsto W=\rho^{-\dg}\eta'\rho^{-1}$, again at the formal
+level.  In particular positive metrics are \emph{not} unique: $W=I$ gives the
+canonical $\eta=e^{-Q}$, and any positive invertible function
+$W=f(N_1,N_2)$ of the two commuting number operators of $\widetilde H$ gives
+another metric.  For $\w_1/\w_2$ irrational the commutant of $h$ is generated
+by $N_1,N_2$, so this family is exhaustive.
+\end{theorem}
+
+\begin{proof}
+With $\rho^{\dg}=\rho$ and $H_{\mathrm{PT}}=\rho^{-1}h\rho$,
+$H_{\mathrm{PT}}^{\dg}=\rho\,h\,\rho^{-1}$ (using $h^{\dg}=h$), a two-line
+computation gives
+$H_{\mathrm{PT}}^{\dg}\eta'-\eta'H_{\mathrm{PT}}=\rho\,[h,W]\,\rho$
+for $\eta'=\rho W\rho$: the intertwining relation holds iff $[W,h]=0$.
+Positivity and invertibility transfer both ways because congruence by the
+invertible $\rho$ preserves them, and the two maps are mutually inverse by
+construction.
+\end{proof}
+
+Uniqueness of the metric therefore requires a selection principle beyond
+positivity and pseudo-Hermiticity.  The results of Section~\ref{sec:diag}
+identify one: within the symplectic-Gaussian class, demanding that the metric
+arise from a Hermitian positive-definite \emph{symplectic} diagonalizer
+selects $\eta=e^{-Q}$ uniquely (Theorem~\ref{thm:uniqueness}); the residual
+$W$-freedom of Theorem~\ref{thm:metrics} is the Hilbert-space counterpart of
+the stabilizer freedom \eqref{eq:family}, and the non-invariance of the polar
+factor (Proposition~\ref{prop:polar}) is its finite-dimensional shadow.
+
+\section{Geometry of the positive metric cone}\label{sec:geometry}
+
+\subsection{The observable-space metric}
+
+\begin{definition}
+The observable-space metric of the diagonalization is
+$\Mobs=S_+^{\dg}S_+\in M_4(\C)$, a positive-definite Hermitian matrix on the
+normalized phase-space coordinates.
+\end{definition}
+
+Since $S_+$ is Hermitian, $\Mobs=S_+^2=e^{rB}=\cosh r\,I+\sinh r\,B$, and $B$
+is an involution with two-dimensional eigenspaces, so with
+\eqref{eq:hyp}:
+
+\begin{theorem}\label{thm:spectrum}
+$\operatorname{spec}\Mobs=\{e^{r},e^{r},e^{-r},e^{-r}\}$, i.e.
+\begin{equation}
+\Mobs=e^{r}\,\Pi_++e^{-r}\,\Pi_-,
+\qquad \Pi_\pm=\tfrac12(I\pm B) .
+\end{equation}
+This holds in the canonically normalized coordinates
+\eqref{eq:normalization}; in the original coordinates $S^{\dg}S$ has a
+different, $\gamma$-dependent spectrum.
+\end{theorem}
+
+On the cone of positive-definite Hermitian matrices we use the
+affine-invariant Riemannian metric
+$\langle U,V\rangle_G=\tr(G^{-1}UG^{-1}V)$ (no normalization factor), whose
+geodesic distance from the identity is $d(I,M)=\|\log M\|_F$
+\cite{Bhatia2007}.
+
+\begin{theorem}[Distance]\label{thm:distance}
+\begin{equation}
+d(I,\Mobs)=\|\log \Mobs\|_F=\|rB\|_F=2r
+=2\log\frac{\w_1+\w_2}{\w_1-\w_2} .
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+$\log\Mobs=rB$ by the spectral calculus, and
+$\|rB\|_F=r\sqrt{\tr B^{\dg}B}=r\sqrt{\tr I}=2r$.
+\end{proof}
+
+\begin{remark}[Observable space versus Hilbert space]\label{rem:twospaces}
+$\Mobs=S_+^{\dg}S_+$ and $\eta=e^{-Q}$ must not be identified as operators.
+$\Mobs$ is a $4\times4$ matrix acting on phase-space labels: it measures how
+the canonical coordinates are deformed by the diagonalization, and its
+spectrum $\{e^{\pm r}\}$ is the squeezing content of $S_+$.  The metric
+$\eta=e^{-Q}$ is an unbounded positive operator on Hilbert space with purely
+continuous spectrum $(0,\infty)$ (the spectrum of $Q$ is $\R$, since $Q$ is
+unitarily equivalent to a generator of dilations).  They are related, not
+equal: $\rho=e^{-Q/2}$ is the formal metaplectic implementer of $S_+$ via
+\eqref{eq:conjugation}, and $\eta=\rho^{\dg}\rho$ is the Hilbert-space
+pullback of the standard inner product along $\rho$, while
+$\Mobs=S_+^{\dg}S_+$ is the finite-dimensional pullback along $S_+$.  The
+quantity that passes between the two levels is the rapidity $r$.
+\end{remark}
+
+\subsection{The equal-frequency limit}
+
+Let $\w_1=\w+\epsilon$, $\w_2=\w-\epsilon$ with $0<\epsilon<\w$.  Then
+\eqref{eq:r} gives, \emph{exactly},
+\begin{equation}
+r=\log\frac{2\w}{2\epsilon}=\log\frac{\w}{\epsilon},
+\qquad
+d(I,\Mobs)=2\log\frac{\w}{\epsilon}\ \xrightarrow[\epsilon\to0^+]{}\ \infty .
+\end{equation}
+Moreover $\sigma^2=4\w\epsilon$ and \eqref{eq:hyp} give the exact spectral
+form
+\begin{equation}
+S_+=\sqrt{\frac{\w}{\epsilon}}\;\Pi_+
++\sqrt{\frac{\epsilon}{\w}}\;\Pi_- ,
+\end{equation}
+so the diagonalizer diverges like $\epsilon^{-1/2}$ while collapsing onto the
+rank-two spectral projector $\Pi_+$; the similarity transformation
+degenerates precisely at the exceptional point $\w_1=\w_2$, where
+Proposition~\ref{prop:spectrum} shows the flow eigenvalues merge and $A$
+acquires Jordan blocks.
+
+\begin{proposition}[No scalar renormalization]\label{prop:noscalar}
+For every function $c(\epsilon)>0$, the spectrum of $c\,\Mobs$ is
+$\{c\,\w/\epsilon\ (\times2),\ c\,\epsilon/\w\ (\times2)\}$, with condition
+number $(\w/\epsilon)^2\to\infty$.  Hence $c\,\Mobs$ has no finite,
+positive-definite, nondegenerate limit as $\epsilon\to0^+$: keeping the top
+eigenvalue finite forces the bottom one to zero.
+\end{proposition}
+
+The exceptional point of the PU oscillator therefore lies at infinite
+affine-invariant distance from the identity in the metric cone, and the
+divergence rate is universal: $d=2\log(\w/\epsilon)$ with no
+model-dependent prefactor.  This is the geometric expression of the known
+breakdown of the Bender--Mannheim construction at equal frequencies, where
+$\alpha,\beta\to\infty$ \cite{BM2008PRD}.
+
+\section{The Jordan obstruction}\label{sec:jordan}
+
+At $\w_1=\w_2$ the flow is no longer diagonalizable, and the question becomes
+whether \emph{any} positive metric can exist for the limiting dynamics.  The
+following finite-dimensional theorem, applied to each Jordan chain, answers
+it negatively.  Parts (1)--(3) for $n=2$ are fully machine-checked in Lean.
+
+\begin{theorem}[Jordan no-go]\label{thm:jordan}
+Let $\w\in\R$ and
+$H_J=\left(\begin{smallmatrix}\w&1\\0&\w\end{smallmatrix}\right)$, and let
+$\eta=\eta^{\dg}\in M_2(\C)$ satisfy the invariance relation
+$H_J^{\dg}\eta=\eta H_J$.  Then
+\begin{equation}
+\eta=\begin{pmatrix}0&b\\ b&d\end{pmatrix},\qquad b,d\in\R ,
+\end{equation}
+and consequently:
+\begin{enumerate}
+\item no positive-definite invariant Hermitian form exists
+($\eta_{11}=\langle e_1,\eta e_1\rangle=0$);
+\item every positive-semidefinite invariant form is degenerate
+($\det\eta=-b^2\ge0$ forces $b=0$);
+\item every nondegenerate invariant form is indefinite: for $b\neq0$ and
+$\varepsilon=(1+|d|)^{-1}$ the vectors $x_\pm=(1,\pm\varepsilon b)^{\top}$
+satisfy $\langle x_+,\eta x_+\rangle>0>\langle x_-,\eta x_-\rangle$.
+\end{enumerate}
+For the $n\times n$ Jordan block, every invariant Hermitian form is
+anti-triangular Hankel---constant on anti-diagonals and vanishing above the
+main anti-diagonal---so $\eta_{11}=0$ and the same trichotomy holds for all
+$n\ge2$.
+\end{theorem}
+
+\begin{proof}
+Writing $H_J=\w I+N$ with $N$ the nilpotent shift and $\w$ real, invariance
+reduces to $N^{\top}\eta=\eta N$, i.e.\
+$\eta_{j-1,k}=\eta_{j,k-1}$ with the boundary convention $\eta_{0,k}=0$:
+$\eta$ is Hankel with $\eta_{1,k}=0$ for $k\le n-1$.  For $n=2$ this gives
+$\eta_{11}=0$ and $\eta_{12}=\eta_{21}$, which with Hermiticity makes
+$b=\eta_{12}$ real.  (1) follows from $\eta_{11}=0$; (2) from
+$\det\eta=-b^2$ together with positive semidefiniteness of the principal
+minors; (3) from
+$\langle x_\pm,\eta x_\pm\rangle=\varepsilon b^2(\pm2+\varepsilon d)$ and
+$\varepsilon|d|<1$.  The general-$n$ statement follows from the Hankel
+structure and $\langle e_1,\eta e_1\rangle=\eta_{11}=0$.
+\end{proof}
+
+This is consistent with the general theory of invariant Hermitian forms for
+matrices with Jordan structure \cite{GLR2005} and with the physics of
+exceptional points \cite{Kato,Heiss2012}: at $\w_1=\w_2$ the PU oscillator
+admits no positive nondegenerate invariant metric, degenerate or indefinite
+forms being the only invariant structures.  Together with
+Proposition~\ref{prop:noscalar}, the equal-frequency limit is seen from
+inside the metric cone as a boundary point at infinite distance, and from the
+limiting dynamics as an empty cone.
+
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{Relation to Bender--Mannheim.}
+The operator $Q$, its coefficients $\alpha,\beta$, and the positive
+Hamiltonian $\widetilde H$ agree exactly with
+\cite{BM2008PRL,BM2008PRD}.  What is added here is, first, the logical
+inversion: $Q$ is not an ansatz whose coefficients are fixed by demanding
+Hermiticity of the transformed Hamiltonian, but the metaplectic logarithm of
+a diagonalizer that is unique once positivity and the symplectic structure
+are imposed (Theorems~\ref{thm:uniqueness} and~\ref{thm:reconstruction}).
+Second, the precise positivity statement: the diagonalizer is Hermitian
+positive only after the canonical normalization $d_xd_y=\gamma\w_1\w_2$
+(Proposition~\ref{prop:hermiticity}), a point that is easy to miss when
+working with the operator form alone.  Third, the solution family, its
+stabilizer $SO(2,\C)^2$, and the non-invariance of the polar factor
+(Proposition~\ref{prop:polar}) delimit exactly how much of the construction
+is canonical.
+
+\paragraph{Relation to complex canonical transformations and metric
+non-uniqueness.}
+D\'ector, Morales-T\'ecotl, Urrutia and Vergara \cite{Dector2009} remove the
+PU ghost by a complex canonical transformation to two ordinary oscillators,
+and Mostafazadeh \cite{Mostafazadeh2010PU} by an alternative Hamiltonian
+formulation; the transformation $S_+$ belongs to the same circle of ideas at
+the level of existence.  The classification of
+Theorem~\ref{thm:metrics} is the PU instance of the general non-uniqueness
+of metric operators in pseudo-Hermitian quantum mechanics
+\cite{SGH1992,Mostafazadeh2010}; see \cite{Znojil2025} for a recent
+discussion of the physical consequences of metric freedom, and
+\cite{FringFrith2017,Fring2023} for the time-dependent Dyson-map
+\cite{Dyson1956} setting in which such maps are studied dynamically.  The
+contribution of Sections~\ref{sec:diag}--\ref{sec:pseudo} is to make both the
+freedom (the stabilizer, the $W$-family) and the canonical choice (unique
+positive symplectic diagonalizer) exact and finite-dimensional for this
+model.
+
+\paragraph{Geometric interpretation.}
+The affine-invariant distance $2r=2\log\frac{\w_1+\w_2}{\w_1-\w_2}$ is an
+intrinsic measure of how non-Hermitian the PU oscillator is: it is the
+geodesic length, in the natural geometry of the positive cone
+\cite{Bhatia2007}, separating the canonical observable-space metric from the
+identity, and it depends only on the frequency ratio.  Its exact logarithmic
+divergence, the $\epsilon^{-1/2}$ collapse of $S_+$ onto a rank-two
+projector, and the emptiness of the invariant positive cone at the Jordan
+point (Theorem~\ref{thm:jordan}) give the equal-frequency exceptional point a
+complete geometric characterization at the quadratic level.
+
+\paragraph{Possible extensions.}
+The construction used only the data $(G,J,G_0)$ and positivity, and every
+step---normal form, stabilizer, logarithm, metric cone---is available for any
+finite set of PT-paired modes.  The mode structure of fourth-order field
+theories, where each spatial momentum contributes a PU pair with
+$\epsilon(k)$ playing the role of the frequency splitting, suggests a
+possible extension; we do not pursue it here.
+
+\paragraph{Verification companion.}
+All finite-dimensional algebraic identities appearing in this paper have been
+independently verified symbolically, numerically, and by machine-checked
+Lean proofs.  The accompanying repository contains the complete verification
+pipeline: a symbolic audit of every identity (including the derivations of
+\eqref{eq:commutator} and \eqref{eq:matrixpseudo}), a high-precision
+numerical regression suite covering generic and near-degenerate frequencies,
+and a Lean~4 development (Mathlib) in which $K^2=-r^2I$, $S^{\top}JS=J$,
+$\det S=1$, the congruence $S^{\top}GS=G_0$, and
+Theorem~\ref{thm:jordan}(1)--(3) are formalized without unproved
+placeholders.  We do not claim formal verification of the operator-theoretic
+statements of Section~\ref{sec:pseudo}, which remain at the standard
+formal-algebraic level.
+
+\begin{thebibliography}{99}
+
+\bibitem{PU1950}
+A.~Pais and G.~E.~Uhlenbeck,
+\emph{On field theories with non-localized action},
+Phys.\ Rev.\ \textbf{79} (1950) 145.
+
+\bibitem{BenderBoettcher}
+C.~M.~Bender and S.~Boettcher,
+\emph{Real spectra in non-Hermitian Hamiltonians having PT symmetry},
+Phys.\ Rev.\ Lett.\ \textbf{80} (1998) 5243.
+
+\bibitem{BM2008PRL}
+C.~M.~Bender and P.~D.~Mannheim,
+\emph{No-ghost theorem for the fourth-order derivative Pais--Uhlenbeck
+oscillator model},
+Phys.\ Rev.\ Lett.\ \textbf{100} (2008) 110402.
+
+\bibitem{BM2008PRD}
+C.~M.~Bender and P.~D.~Mannheim,
+\emph{Exactly solvable PT-symmetric Hamiltonian having no Hermitian
+counterpart},
+Phys.\ Rev.\ D \textbf{78} (2008) 025022.
+
+\bibitem{MannheimDavidson2005}
+P.~D.~Mannheim and A.~Davidson,
+\emph{Dirac quantization of the Pais--Uhlenbeck fourth order oscillator},
+Phys.\ Rev.\ A \textbf{71} (2005) 042110.
+
+\bibitem{SGH1992}
+F.~G.~Scholtz, H.~B.~Geyer and F.~J.~W.~Hahne,
+\emph{Quasi-Hermitian operators in quantum mechanics and the variational
+principle},
+Ann.\ Phys.\ \textbf{213} (1992) 74.
+
+\bibitem{Mostafazadeh2002}
+A.~Mostafazadeh,
+\emph{Pseudo-Hermiticity versus PT symmetry: The necessary condition for the
+reality of the spectrum of a non-Hermitian Hamiltonian},
+J.\ Math.\ Phys.\ \textbf{43} (2002) 205.
+
+\bibitem{Mostafazadeh2010}
+A.~Mostafazadeh,
+\emph{Pseudo-Hermitian representation of quantum mechanics},
+Int.\ J.\ Geom.\ Meth.\ Mod.\ Phys.\ \textbf{7} (2010) 1191.
+
+\bibitem{Mostafazadeh2010PU}
+A.~Mostafazadeh,
+\emph{A Hamiltonian formulation of the Pais--Uhlenbeck oscillator that yields
+a stable and unitary quantum system},
+Phys.\ Lett.\ A \textbf{375} (2010) 93.
+
+\bibitem{Dector2009}
+A.~D\'ector, H.~A.~Morales-T\'ecotl, L.~F.~Urrutia and J.~D.~Vergara,
+\emph{An alternative canonical approach to the ghost problem in a complexified
+extension of the Pais--Uhlenbeck oscillator},
+SIGMA \textbf{5} (2009) 053.
+
+\bibitem{Smilga2009}
+A.~V.~Smilga,
+\emph{Comments on the dynamics of the Pais--Uhlenbeck oscillator},
+SIGMA \textbf{5} (2009) 017.
+
+\bibitem{Dyson1956}
+F.~J.~Dyson,
+\emph{General theory of spin-wave interactions},
+Phys.\ Rev.\ \textbf{102} (1956) 1217.
+
+\bibitem{FringFrith2017}
+A.~Fring and T.~Frith,
+\emph{Mending the broken PT-regime via an explicit time-dependent Dyson map},
+Phys.\ Lett.\ A \textbf{381} (2017) 2318.
+
+\bibitem{Fring2023}
+A.~Fring,
+\emph{An introduction to PT-symmetric quantum mechanics---time-dependent
+systems},
+J.\ Phys.: Conf.\ Ser.\ \textbf{2448} (2023) 012002.
+
+\bibitem{Znojil2025}
+M.~Znojil,
+\emph{Mutual compatibility/incompatibility of quasi-Hermitian quantum
+observables},
+arXiv:2505.00791 (2025).
+
+\bibitem{Williamson1936}
+J.~Williamson,
+\emph{On the algebraic problem concerning the normal forms of linear
+dynamical systems},
+Amer.\ J.\ Math.\ \textbf{58} (1936) 141.
+
+\bibitem{Bhatia2007}
+R.~Bhatia,
+\emph{Positive Definite Matrices},
+Princeton University Press, 2007.
+
+\bibitem{GLR2005}
+I.~Gohberg, P.~Lancaster and L.~Rodman,
+\emph{Indefinite Linear Algebra and Applications},
+Birkh\"auser, 2005.
+
+\bibitem{Kato}
+T.~Kato,
+\emph{Perturbation Theory for Linear Operators},
+Springer, 1966.
+
+\bibitem{Heiss2012}
+W.~D.~Heiss,
+\emph{The physics of exceptional points},
+J.\ Phys.\ A \textbf{45} (2012) 444016.
+
+\bibitem{Folland}
+G.~B.~Folland,
+\emph{Harmonic Analysis in Phase Space},
+Princeton University Press, 1989.
+
+\end{thebibliography}
+
+\end{document}
