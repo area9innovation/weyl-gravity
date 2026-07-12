@@ -546,3 +546,45 @@ reality vs cubic Weyl vertices; gravitational ghost parity
 Gauge/BRST ghosts vs higher-derivative ghost branch distinguished in the
 introduction. Every theorem carries its G-check provenance via the
 Verification paragraph.
+
+## Paper 4 referee pass 1 (2026-07-12) — six repairs applied
+
+1. **Gauge-invariant quotient**: Definition (Invariant observable algebra)
+   𝔄_inv added in §2; all uniqueness/continuation claims restated on
+   𝔄_inv; potential kernels W⁺_h explicitly "modulo pure-gauge
+   bi-distributions, used as computational representatives". Abstract and
+   master theorem tightened accordingly.
+2. **Schur/Krein wording contradiction resolved**: the Krein form's
+   indefiniteness lives BETWEEN irreps, never inside the massive
+   multiplet: ℋ_1p = ℋ_{0,+2} ⊕ ℋ_{M,−5}, signature (+,+;−,−,−,−,−);
+   "invariant indefinite form on each irrep" removed.
+3. **Schematic kernel replaced by exact formulation**: reassembly theorem
+   now states the equivalence class [W̃⁺_h] ∈ 𝒟′(Sym²⊗Sym²)/{pure-gauge}
+   with the exact representative (𝒩/M²)θ(p⁰)[Π^{(2,M)}δ(p²−M²) −
+   Π^{(2,0)}(p;n)δ(p²)], frame-independence of the class noted, plus the
+   frame-free curvature-kernel formulation.
+4. **Scalar conformal limit regular only after quotienting**: new Remark —
+   raw W⁺_S ~ 1/c₁ diverges; the convergent object is the presymplectic
+   family (Γ_{c₁},Ω_{c₁}) → (Γ₀/ker Ω₀, Ω̄₀) with the induced functional
+   on 𝔄_inv; observable algebra changes rank at the boundary (treated as
+   a feature).
+5. **Verification claim restricted**: "all statements machine-verified" →
+   finite-dimensional/variational/symplectic/tensor-algebraic/modewise-
+   distributional identities machine-verified; representation-theoretic
+   and microlocal conclusions from analytic arguments. WF equality (not
+   just ⊆) proved: Weyl principal symbol nonvanishing on physical spin-2
+   polarizations over the characteristic set.
+6. **Exact asymptotic replaces numerical conditioning**: termination
+   theorem now rests on r(k,M) = log((√(k²+M²)+k)²/M²) ~ log(4k²/M²) → ∞
+   + Jordan no-positive-form obstruction; cond(N) = e^r(1+o(1)) ~ 4k²/M²;
+   numerics demoted to regression check. New script check G12d′:
+   cond(N)/e^r → 1 (ratios 1.31, 1.023, 1.0025, 1.0002) — ALL PASS.
+
+Also: field-level hierarchy remark (modewise real-form change → positive
+one-particle Hermitian structure → quasifree GNS representation;
+η = e^{−πD_tot} is formal shorthand on a common algebraic domain, NOT a
+global operator on naïve Fock space — consistent with paper-2/3
+disjointness); master theorem replaced by the corrected referee text
+verbatim; discussion terminology: "Bateman–Turok-type Krein real form /
+gravitational extension", since BT quantize the scalar perfect-square
+theory, not this field. Now 10 pp., compiles clean.

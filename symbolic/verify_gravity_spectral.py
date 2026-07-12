@@ -355,4 +355,18 @@ check(f"G12d: cond(N) diverges as M -> 0 (split normal modes coalesce): "
       "functional and the Krein form continue",
       all(conds[i+1] > 2*conds[i] for i in range(len(conds)-1)))
 
+# d': exact asymptotic — cond(N) = e^r (1 + o(1)) with the paper-1 split
+# rapidity e^r = (w1+w2)/(w1-w2) = (sqrt(k^2+M^2)+k)^2 / M^2 ~ 4k^2/M^2.
+# The numerical sequence above is the regression check of this exact law.
+def exp_r(Mv, kv=1.0):
+    w1v = np.sqrt(kv**2 + Mv**2); w2v = kv
+    return (w1v + w2v)**2 / Mv**2
+
+ratios = [cond_of_N(Mv)/exp_r(Mv) for Mv in (1.0, 0.3, 0.1, 0.03)]
+check(f"G12d': cond(N)/e^r -> 1 (exact divergence law e^r = "
+      f"(sqrt(k^2+M^2)+k)^2/M^2 ~ 4k^2/M^2): ratios "
+      f"{[f'{q:.4f}' for q in ratios]}",
+      all(abs(ratios[i+1]-1) < abs(ratios[i]-1) for i in range(len(ratios)-1))
+      and abs(ratios[-1] - 1) < 0.01)
+
 print("\nALL PASS" if PASS else "\nSOME CHECKS FAILED")

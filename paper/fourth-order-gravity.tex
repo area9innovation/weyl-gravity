@@ -33,26 +33,33 @@ PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary}
 \begin{abstract}
 We classify the quantizations of free scalar-free Einstein--Weyl gravity,
 $\mathcal L=\sqrt{-g}\,(c_1R+\alpha R_{\mu\nu}^2+\beta R^2)$ with
-$\alpha=-3\beta$, around flat space.  The reduced theory possesses one
-Poincar\'e-covariant complex spectral quasifree functional; among
-translation-invariant, quasifree, mode-local completions compatible with
-the reduced symplectic form, the spectral condition, and massive-spin-$2$
-covariance, there are exactly two equivalence classes in the split phase:
-a positive pseudo-Hermitian completion with uniformly rotated massive
-reality, and a Krein completion with standard gravitational reality.  No
+$\alpha=-3\beta$, around flat space.  The algebra of linear
+gauge-invariant observables carries a unique Poincar\'e-covariant complex
+spectral quasifree functional; among translation-invariant, quasifree,
+mode-local completions compatible with the reduced symplectic form, the
+spectral condition, and massive-spin-$2$ covariance, there are exactly two
+equivalence classes in the split phase: a positive pseudo-Hermitian
+completion in which the full massive spin-$2$ multiplet has uniformly
+rotated reality, and a Krein completion with standard gravitational
+reality, in which the massive spin-$2$ irrep carries a uniform negative
+sign relative to the positive massless graviton sector.  No
 helicity-hybrid completion is Lorentz covariant, the two classes have
 identical complex gauge-invariant correlation functions, and only the
 Krein class continues through the conformal Jordan boundary $c_1\to0$,
-where the positive class terminates.  The mechanism is a stratification:
-diffeomorphism reduction preserves the Pais--Uhlenbeck (PU) pairing of the
-fourth-order dynamics exactly in the helicity-$\pm2$ sector, while the
-massive helicity-$\pm1,0$ polarizations survive as unpaired ghost
-oscillators subject to a completion trilemma --- positivity, the spectral
-condition, and standard reality: any two, never all three.  On the
-conformal locus the transverse-traceless sector becomes a $\Box^2$ Jordan
-block per polarization, the vector modes become ordinary massless ghosts,
-and the scalar mode becomes Weyl-gauge, giving the conformal count of six.
-All statements are machine-verified.
+where the positive class terminates and the induced functional on the
+gauge-invariant quotient has a regular distributional limit.  The
+mechanism is a stratification: diffeomorphism reduction preserves the
+Pais--Uhlenbeck (PU) pairing of the fourth-order dynamics exactly in the
+helicity-$\pm2$ sector, while the massive helicity-$\pm1,0$ polarizations
+survive as unpaired ghost oscillators subject to a completion trilemma ---
+positivity, the spectral condition, and standard reality: any two, never
+all three.  On the conformal locus the transverse-traceless sector becomes
+a $\Box^2$ Jordan block per polarization, the vector modes become ordinary
+massless ghosts, and the scalar mode enters the kernel of the presymplectic
+form and is removed by the emergent Weyl gauge symmetry, giving the
+conformal count of six.  All finite-dimensional, variational, symplectic,
+tensor-algebraic, and modewise distributional identities are independently
+machine-verified.
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
@@ -121,12 +128,13 @@ lower-helicity structures assemble.
 
 \item \emph{Spectral bridge} (Section~\ref{sec:kernel}).  The reduced
 spectral kernel, with residues fixed by the reduced symplectic form,
-reassembles into the covariant massive spin-$2$ projector with a single
-normalization $\mathcal N=4/c_1$ and uniform ghost sign; the massless
-shell couples only to TT.  The complex kernel is identical in both real
-forms.  Together with item 3 this closes the bridge at the gravitational
-level: \emph{the two covariant completions share the full gravitational
-vacuum functional}.
+reassembles --- modulo pure-gauge bi-distributions --- into the covariant
+massive spin-$2$ projector with a single normalization $\mathcal N=4/c_1$
+and uniform ghost sign; the massless shell couples only to TT.  The
+complex kernel is identical in both real forms.  Together with item 3 this
+closes the bridge at the gravitational level: \emph{the two covariant
+completions induce the same vacuum functional on the gauge-invariant
+observable algebra}.
 
 \item \emph{Gauge-invariant correlator} (Section~\ref{sec:weyl}).  The
 linearized Weyl correlator is gauge independent, and the Weyl map
@@ -139,12 +147,16 @@ the curvature correlator as its differentiated descendant.
 $c_1\to0$ at fixed $\alpha$: the TT divided difference converges
 distributionally to the $\Box^2$ Jordan kernel; the vector modes have a
 smooth massless-ghost limit with fixed commutator normalization; the
-scalar mode becomes Weyl-gauge (the transformation
-$\delta h_{\mu\nu}=2\sigma\eta_{\mu\nu}$ is a symmetry exactly at
-$c_1=0$), giving the conformal count $4+2+0=6$.  The split normal-mode
-decomposition underlying the positive completion degenerates explicitly
-($\operatorname{cond}\to\infty$): the positive real form terminates, the
-Krein form and the spectral functional continue.
+scalar direction enters the kernel of the presymplectic form and becomes
+Weyl-gauge (the transformation $\delta h_{\mu\nu}=2\sigma\eta_{\mu\nu}$
+is a symmetry exactly at $c_1=0$), giving the conformal count $4+2+0=6$.
+The limit is regular for the functional \emph{induced on the common
+gauge-invariant algebra after quotienting the emergent Weyl-null
+direction} --- the observable algebra changes rank at the boundary.  The
+split rapidity of the TT normal-mode decomposition underlying the positive
+completion diverges exactly, $e^{r}=(\sqrt{k^2+M^2}+k)^2/M^2\sim4k^2/M^2$:
+the positive real form terminates, the Krein form and the spectral
+functional continue.
 \end{enumerate}
 
 The classification is summarized by the master theorem of
@@ -155,12 +167,19 @@ higher-derivative spin-$2$ ghost branch, which concerns the completion of
 the physical excitations.
 
 \paragraph{Verification.}
-Every identity in this paper is machine-verified: the second variation and
-sector reduction (checks G1--G7), the trilemma and real-form
-classification (G8), the covariance computations (G9), the spectral kernel
-and covariant reassembly (G10), the Weyl-correlator cancellations (G11),
-and the sectorwise conformal limits (G12), in the verification repository
-of \cite{companion1}.  Numerical checks corroborate the degenerations.
+All finite-dimensional, variational, symplectic, tensor-algebraic, and
+modewise distributional identities in this paper are independently
+machine-verified: the second variation and sector reduction (checks
+G1--G7), the trilemma and real-form classification (G8), the covariance
+computations (G9), the spectral kernel and covariant reassembly (G10), the
+Weyl-correlator cancellations (G11), and the sectorwise conformal limits
+including the exact divergence law of the split decomposition (G12), in
+the verification repository of \cite{companion1}.  The
+representation-theoretic and microlocal conclusions --- existence of the
+Hilbert/Krein completions, Poincar\'e covariance as a representation
+statement, and wavefront-set equality --- follow from the analytic
+arguments given in the text and the companion papers, not from the
+symbolic engine.
 
 \paragraph{Conventions.}
 Signature $(+,-,-,-)$; curvature conventions fixed so that the healthy
@@ -216,6 +235,18 @@ tuning.  (iii) Mode count: $2\times2+2+1=7=2+5$, and the stratification
 \eqref{eq:strat} holds: PU pairing survives reduction exactly in helicity
 $\pm2$.
 \end{theorem}
+
+\begin{definition}[Invariant observable algebra]\label{def:Ainv}
+$\mathfrak A_{\mathrm{inv}}$ denotes the algebra of linear gauge-invariant
+observables of the linearized theory --- equivalently, the field algebra
+of the reduced phase space \eqref{eq:strat} --- with, at $c_1=0$, the
+additional quotient by the kernel of the presymplectic form (the emergent
+Weyl-null direction of Section~\ref{sec:conformal}).  All uniqueness and
+continuation statements in this paper are statements about states and
+kernels on $\mathfrak A_{\mathrm{inv}}$; potential-field kernels
+$W^+_h$ are determined only modulo pure-gauge bi-distributions and are
+used as computational representatives.
+\end{definition}
 
 \begin{remark}[Polarization-enhanced stabilizer]
 For the doubled TT block the normal-form stabilizer Lie algebra jumps from
@@ -284,9 +315,19 @@ polarization oscillators is $SO(3)$-invariant; hence
 $\eta_{\mathrm{mass}}=e^{-\pi D_{\mathrm{tot}}}$ defines a covariant
 uniform-positive pseudo-Hermitian completion with uniformly rotated
 massive reality (the massive multiplet is $\dd$-anti-Hermitian; $i$ times
-the multiplet is observable).  (ii) The uniform Krein completion with
-standard gravitational reality is covariant (invariant indefinite form on
-each irrep).  (iii) Assembly: the quarter-turn applied to the ghost normal
+the multiplet is observable).  (ii) The Krein completion with standard
+gravitational reality is covariant, and by Theorem~\ref{thm:nohybrid} its
+indefiniteness lives \emph{between} irreps, never inside the massive
+multiplet: the invariant form on the massive spin-$2$ one-particle irrep
+is definite, and the Krein structure is
+\begin{equation}
+\mathcal H_{\mathrm{1p}}
+=\mathcal H_{0,+2}\ \oplus\ \mathcal H_{M,-5},
+\qquad\text{signature } (+,+;\,-,-,-,-,-),
+\end{equation}
+the direct sum of the positive massless graviton sector and the massive
+spin-$2$ irrep carrying uniform negative sign.  (iii) Assembly: the
+quarter-turn applied to the ghost normal
 mode of the TT PU pair is an admissible positive diagonalizer
 ($T'^{\top}JT'=J$ and $T'^{\top}G_{\mathrm{PU}}T'$ real positive
 definite), hence lies in the solution family $S_+\cdot\mathrm{Stab}$ of
@@ -301,6 +342,22 @@ Theorem~\ref{thm:trilemma}(iv), the $W$-freedom of \cite{companion1})
 produce representatives \emph{within} these classes, not additional
 physical classes: by orbit constancy the vacuum ray, and hence the
 quasifree functional, is unchanged.
+
+\begin{remark}[Field-level meaning of the positive class]\label{rem:field}
+At field level the positive completion is constructed in the order:
+(1) modewise complex-symplectic real-form change
+(Theorem~\ref{thm:trilemma}); (2) positive one-particle Hermitian
+structure on the polarization spaces (Theorems~\ref{thm:nohybrid},
+\ref{thm:tworeal}); (3) the corresponding quasifree (GNS)
+representation.  The metric-operator notation
+$\eta=e^{-\pi D_{\mathrm{tot}}}$ is formal shorthand valid on a common
+algebraic domain; it is \emph{not} asserted to be a globally defined
+invertible operator on the na\"ive Fock space --- indeed, by the
+disjointness theorems of \cite{companion2,companion3}, the positive
+quasifree representation of the field theory is disjoint from the na\"ive
+Fock representation, and the representation is defined by step (3), not by
+conjugating inside a pre-existing Hilbert space.
+\end{remark}
 
 \section{The reduced spectral kernel and the bridge}\label{sec:kernel}
 
@@ -337,18 +394,34 @@ where the complex-basis vector invariant is
 $\tilde w=-ik\,h_{tx}-iE\,h_{xz}$.  These match the reduced residue ratios
 $1:M^2:\tfrac13$ of Theorem~\ref{thm:kernel} exactly, with the single
 overall normalization $\mathcal N=4/c_1$ and uniform ghost sign: the five
-massive residues assemble into one $SO(3)$-invariant projector,
+massive residues assemble into one $SO(3)$-invariant projector.
+Consequently the potential kernel, as an equivalence class
 \begin{equation}
+[\widetilde W^+_h]\ \in\
+\mathcal D'(\mathrm{Sym}^2\otimes\mathrm{Sym}^2)\big/
+\{\text{pure-gauge bi-distributions}\},
+\end{equation}
+has the exact representative
+\begin{equation}\label{eq:exactkernel}
 \widetilde W^+_{\mu\nu\rho\sigma}(p)
 =\frac{\mathcal N}{M^2}\,\theta(p^0)\left[
-\Pi^{(2,M)}_{\mu\nu\rho\sigma}\,\delta(p^2-M^2)
--\Pi^{\mathrm{TT}}_{\mu\nu\rho\sigma}\,\delta(p^2)
-\right]+\text{gauge terms},
+\Pi^{(2,M)}_{\mu\nu\rho\sigma}(p)\,\delta(p^2-M^2)
+-\Pi^{(2,0)}_{\mu\nu\rho\sigma}(p;n)\,\delta(p^2)
+\right],
+\qquad \mathcal N=\frac{4}{c_1},
 \end{equation}
-with the massless shell coupling only to TT (the vector and
-scalar invariants contract to zero with the massless polarizations); the
-$1/M^2$ prefactor is the PU divided-difference normalization
+where $\Pi^{(2,0)}(p;n)$ is the massless spin-$2$ projector in any
+reference frame $n$; the class $[\widetilde W^+_h]$ is
+frame-independent because changing $n$ changes $\Pi^{(2,0)}$ by a
+pure-gauge kernel.  The massless shell couples only to TT (the vector and
+scalar invariants contract to zero with the massless polarizations), and
+the $1/M^2$ prefactor is the PU divided-difference normalization
 $1/(\gamma M^2)$ of Theorem~\ref{thm:kernel} in covariant form.
+Equivalently and frame-freely: the exact curvature kernel
+$\widetilde{\mathcal W}^+_{CC}=\mathcal D_C\widetilde W^+_h\mathcal
+D_C^{\top}$ of Section~\ref{sec:weyl} contains no gauge terms and no
+singular projector pieces, and determines the state on
+$\mathfrak A_{\mathrm{inv}}$.
 \end{theorem}
 
 \begin{theorem}[Real-form independence; the gravitational bridge]
@@ -360,8 +433,9 @@ $\langle(i\tilde w)(t)\,(i\tilde w)(0)\rangle
 =e^{-i\Omega t}/(2\mu\Omega)$, and for the TT pairs the statement is the
 orbit constancy and spectral identification of
 \cite{companion3}.  Hence the positive pseudo-Hermitian and Krein
-completions of scalar-free Einstein--Weyl gravity share the full
-gravitational vacuum functional; they differ in involution and completion
+completions of scalar-free Einstein--Weyl gravity induce the same complex
+quasifree functional on the gauge-invariant observable algebra
+$\mathfrak A_{\mathrm{inv}}$; they differ in involution and completion
 only.
 \end{theorem}
 
@@ -381,14 +455,30 @@ that of $\Pi_0$ (all $P\to\eta$): every $p_\mu p_\nu/M^2$ and $/M^4$ term
 of the massive projector is annihilated --- the curvature kernel is
 $M$-regular, and the five massive helicities enter only through the
 $SO(3)$-invariant flat projector; (iii) both real forms give the same
-complex curvature functional (Theorem~\ref{thm:bridge4}); (iv) the
-wavefront directions are the standard positive-frequency Hadamard set
-$\mathcal C^+$ with tensor polarization constraints; the fourth-order
-logarithmic singularity belongs to the potential kernel,
-$W_h^+\sim\log\rho$, while $\mathcal W^+_{CC}\sim\partial^4\log\rho$ is
-its differentiated descendant.  Contact terms (momentum-space polynomials)
-are separated from the nonlocal two-point distribution.
+complex curvature functional (Theorem~\ref{thm:bridge4}); (iv)
+$\WF(\mathcal W^+)=\mathcal C^+$, the standard positive-frequency Hadamard
+set with tensor polarization constraints.  The fourth-order logarithmic
+singularity belongs to the potential kernel, $W_h^+\sim\log\rho$, while
+$\mathcal W^+_{CC}\sim\partial^4\log\rho$ is its differentiated
+descendant.  Contact terms (momentum-space polynomials) are separated from
+the nonlocal two-point distribution.
 \end{theorem}
+
+\begin{proof}[Proof of (iv)]
+Since $\mathcal W^+=\mathcal D_C W^+_h\mathcal D_C^\top$ with $\mathcal
+D_C$ a differential operator, $\WF(\mathcal W^+)\subseteq\WF(W^+_h)
+=\mathcal C^+$ \cite{companion3}.  For the reverse inclusion, the
+principal symbol of $\mathcal D_C$ at a covector
+$(p;-p)\in\mathcal C^+$ is the quadratic-in-$p$ linearized-Weyl symbol
+$\sigma_C(p)$, which is nonvanishing on the physical spin-$2$
+polarization subspace over the characteristic set: on the massive shell
+$\sigma_C(p)\Pi^{(2,M)}\sigma_C(p)^\top$ has the nonzero full contraction
+of Theorem~\ref{thm:weyl}(ii), and on the massless shell $\sigma_C$ is
+nonzero on TT polarizations (the linearized Weyl tensor of a TT wave does
+not vanish).  Hence no direction of $\mathcal C^+$ carried by $W^+_h$ on
+physical polarizations is annihilated at symbol level, and
+$\WF(\mathcal W^+)=\mathcal C^+$.
+\end{proof}
 
 \section{The conformal Jordan boundary}\label{sec:conformal}
 
@@ -406,9 +496,28 @@ ghost modes, not Jordan partners.
 (iii) Scalar: the kinetic normalization $3c_1/4\to0$, and the Weyl
 transformation $\delta_\sigma h_{\mu\nu}=2\sigma\eta_{\mu\nu}$ is a gauge
 symmetry of the scalar-free action exactly at $c_1=0$ (and not for
-$c_1\neq0$): the scalar direction becomes Weyl-null/gauge.
+$c_1\neq0$): the scalar direction enters the kernel of the presymplectic
+form and is removed by the emergent Weyl gauge symmetry.
 The conformal count is $4+2+0=6$.
 \end{theorem}
+
+\begin{remark}[Regularity holds on the quotient, not before it]
+\label{rem:quotient}
+The raw scalar kernel $W^+_S=e^{-i\Omega t}/(2\mu_S\Omega)$ with
+$\mu_S=3c_1/2$ diverges like $1/c_1$: the full reduced-coordinate kernel
+of the split phase has \emph{no} regular limit.  What converges is the
+family of presymplectic phase spaces
+\begin{equation}
+(\Gamma_{c_1},\Omega_{c_1})\ \longrightarrow\
+(\Gamma_0/\ker\Omega_0,\ \bar\Omega_0),
+\end{equation}
+together with the induced functional on the common gauge-invariant algebra
+(Definition~\ref{def:Ainv}): the divergent direction is exactly the one
+that enters $\ker\Omega_0$ and is quotiented by the emergent Weyl
+symmetry.  The observable algebra changes rank at the boundary; the
+regular-limit statement of Theorem~\ref{thm:master} refers to the
+functional on $\mathfrak A_{\mathrm{inv}}$ after this quotient.
+\end{remark}
 
 \begin{center}
 \begin{tabular}{c|c|c|c}
@@ -421,62 +530,98 @@ $c_1=0$ & $\Box^2$ Jordan & massless ghost & Weyl gauge/null
 
 \begin{theorem}[Termination of the positive real form]\label{thm:term}
 The uniform positive completion is built on the split normal-mode
-decomposition of the TT PU pairs; as $M\to0$ that decomposition
-degenerates explicitly (the symplectic normal transformation has condition
-number growing without bound; numerically $7.6\to47.5\to403\to4447$ for
-$M=1\to0.03$ at $k=1$), consistent with the Jordan obstruction of
-\cite{companion1}: no positive-definite invariant form exists at the
-boundary.  The spectral functional and the Krein real form continue
-distributionally through $c_1=0$.
+decomposition of the TT PU pairs, whose rapidity is
+\begin{equation}
+r(k,M)=\log\frac{(\w_1+\w_2)^2}{\w_1^2-\w_2^2}
+=\log\frac{\big(\sqrt{k^2+M^2}+k\big)^2}{M^2}
+=\log\frac{4k^2}{M^2}+O\!\left(\frac{M^2}{k^2}\right).
+\end{equation}
+As $M\to0$ at fixed $k$, $r\to\infty$ and the symplectic normal-mode
+transformation degenerates exactly as
+$\operatorname{cond}(N)=e^{r}\,(1+o(1))\sim4k^2/M^2$; at the boundary
+the dynamical map is a Jordan block and, by the Jordan obstruction of
+\cite{companion1}, no positive-definite invariant form exists.  The
+positive real form therefore has no invariant positive continuation
+through $c_1=0$; the spectral functional and the Krein real form continue
+distributionally.  (Numerically, $\operatorname{cond}(N)
+=7.6,\,47.5,\,403,\,4447$ at $M=1,\,0.3,\,0.1,\,0.03$, $k=1$, with
+$\operatorname{cond}(N)/e^{r}\to1$; this serves as a regression check of
+the exact law, not as the proof.)
 \end{theorem}
 
 \section{The master theorem}\label{sec:master}
 
 \begin{theorem}[Classification]\label{thm:master}
-Consider free scalar-free Einstein--Weyl gravity around flat space, and
-the class of translation-invariant, quasifree, mode-local completions
-compatible with the reduced symplectic form, the spectral condition, and
-massive-spin-$2$ covariance.  Then:
-\begin{quote}
-The reduced field possesses a unique Poincar\'e-covariant complex spectral
-quasifree functional.  In the split phase ($c_1\neq0$) it admits exactly
-two inequivalent covariant real forms: a positive pseudo-Hermitian form
-with uniformly rotated massive reality, and a Krein form with standard
-gravitational reality.  No helicity-hybrid form is covariant.  The two
-forms have identical complex gauge-invariant correlation functions.
-Stabilizer choices produce representatives within these classes, not
-additional physical classes.  At the conformal locus ($c_1=0$) the
-functional has a regular distributional limit, while the positive form
-terminates and the Krein form continues to a theory containing TT Jordan
-modes, massless vector ghosts, and a Weyl-null scalar sector.
-\end{quote}
+Consider free scalar-free Einstein--Weyl gravity linearized about
+Minkowski space.  Let $\mathfrak A_{\mathrm{inv}}$ be the algebra of
+linear gauge-invariant observables, equivalently the reduced field
+algebra, with the additional Weyl-null quotient imposed at $c_1=0$
+(Definition~\ref{def:Ainv}).  Within the class of translation-invariant,
+quasifree, mode-local constructions compatible with the reduced symplectic
+form, the spectral condition, and the Poincar\'e action on the physical
+polarization spaces, the following hold.
+
+For $c_1\neq0$, the reduced complex theory determines a unique
+Poincar\'e-covariant spectral quasifree functional on
+$\mathfrak A_{\mathrm{inv}}$.  It admits exactly two inequivalent
+covariant real-form completions, modulo symplectic stabilizers commuting
+with the dynamics:
+\begin{enumerate}
+\item a positive pseudo-Hermitian completion in which the full massive
+spin-$2$ multiplet has uniformly rotated reality; and
+\item a Krein completion in which the gravitational field retains its
+standard reality and the massive spin-$2$ one-particle irrep carries
+uniform negative sign relative to the positive massless graviton sector.
+\end{enumerate}
+No completion assigning different signatures or real structures to
+different helicities of the massive spin-$2$ irrep is Poincar\'e
+covariant.  The two admissible real forms induce the same complex
+quasifree functional, and hence the same complex correlation functions on
+$\mathfrak A_{\mathrm{inv}}$; they differ only in involution and
+completion.
+
+As $c_1\to0$, the induced functional on the gauge-invariant quotient has
+a regular distributional limit.  The transverse-traceless sector becomes a
+pair of $\Box^2$ Jordan systems, the vector sector becomes two ordinary
+second-order massless ghost modes, and the scalar sector enters the kernel
+of the presymplectic form and is removed by the emergent Weyl gauge
+symmetry.  The positive real form has no invariant positive-definite
+continuation through this boundary, whereas the Krein real form continues
+to the resulting Jordan theory.
 \end{theorem}
 
 \begin{proof}
-Uniqueness of the functional: Theorems~\ref{thm:kernel},
-\ref{thm:reassembly} (residues forced by the reduced symplectic form and
-covariance).  Two real forms and no hybrid:
+Uniqueness of the functional on $\mathfrak A_{\mathrm{inv}}$:
+Theorems~\ref{thm:kernel}, \ref{thm:reassembly} (residues forced by the
+reduced symplectic form and covariance; the potential representative is
+fixed exactly modulo pure-gauge kernels by \eqref{eq:exactkernel}).  Two
+real forms and no hybrid:
 Theorems~\ref{thm:trilemma}--\ref{thm:tworeal} and \ref{thm:nohybrid}.
 Identity of complex correlators: Theorems~\ref{thm:bridge4},
 \ref{thm:weyl}.  Stabilizer statement: orbit constancy
 \cite{companion3} with the enlarged stabilizers of
 Section~\ref{sec:reduction}.  Boundary: Theorems~\ref{thm:conformal},
-\ref{thm:term}.
+\ref{thm:term} and Remark~\ref{rem:quotient}.
 \end{proof}
 
 \section{Discussion}\label{sec:discussion}
 
 \paragraph{Relation to the two programs.}
 The theorem places the positive-PT quantization \cite{BM2008PRD,
-Mannheim2021} and the Krein quantization \cite{BT2026} on the two sides of
+Mannheim2021} and the Krein quantization on the two sides of
 a mathematically controlled classification: they are the two covariant
 real forms of one reduced complex spectral theory, agreeing on every
 complex gauge-invariant correlation function, and distinguished by which
 member of the trilemma they sacrifice --- standard gravitational reality
-(positive form) or positivity of the norm (Krein form).  The conformal
-locus is one-sided: only the Krein form crosses it.  In this precise sense
-Mannheim's construction is a split-phase real form and Bateman--Turok's is
-its resonant continuation.
+(positive form) or positivity of the norm (Krein form).  A terminological
+caution: Bateman and Turok \cite{BT2026} quantize the scalar
+perfect-square theory, not this gravitational field; the second class is
+therefore a \emph{Bateman--Turok-type Krein real form} --- the
+gravitational extension of their construction --- rather than their
+construction itself.  The conformal locus is one-sided: only the Krein
+class crosses it.  In this precise sense Mannheim's construction is a
+split-phase real form and the Bateman--Turok-type Krein form is its
+resonant continuation.
 
 \paragraph{Boundary truncation is a third, distinct construction.}
 Maldacena's boundary-condition selection of the Einstein branch from
