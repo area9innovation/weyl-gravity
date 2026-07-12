@@ -414,3 +414,53 @@ accordingly ("TT-positive phase"), and the critical surface remains the
 locus where the TT sector too becomes Jordan (flat space: c₁ → 0, pure
 Weyl; then conformal gauge enhancement in the lower helicities — to be
 analyzed).
+
+## Paper 4, G8/G9: completion classification and covariance (2026-07-12)
+
+`symbolic/verify_gravity_completion.py` — ALL PASS.
+
+**G8 (unpaired-ghost completion theorem):**
+- Quarter-turn dictionary verified in the trilogy formalism: D = (qp+pq)/2
+  has K_D = diag(1,−1); ρ = e^{−πD/2} implements q → iq, p → −ip;
+  ρH₋ρ⁻¹ = H₊ (matrix congruence + symplecticity checked);
+  η = e^{−πD} > 0 formally.
+- Physical adjoint: q‡ = −q, p‡ = −p — standard reality broken; iq is the
+  observable. Three-way incompatibility recorded: for an unpaired ghost,
+  {positivity, spectral condition, standard reality} — pick two.
+- Classification: {T ∈ Sp(2,ℂ): TA₊T⁻¹ = −A₊} = T₀·SO(2,ℂ),
+  T₀ = diag(i,−i): all real-form changes H₋ → H₊ form one quarter-turn
+  coset of the mode stabilizer.
+
+**G9 (massive spin-2 covariance) — decides the headline:**
+- (a) Schur: invariant symmetric forms on the 5-dim spin-2 irrep of SO(3)
+  are exactly ℝ·I (machine-solved commutant): any covariant Hermitian form
+  has UNIFORM signature. The hybrid (+,+,−,−,−) explicitly violates
+  invariance. ⇒ **the sectorwise TT-positive/lower-Krein completion is NOT
+  Lorentz covariant.**
+- (b) The total quarter-turn generator D_tot = Σ_pol(qp+pq)/2 is
+  SO(3)-invariant ([J_i, K_Dtot] = 0): a covariant uniform-positive
+  pseudo-Hermitian completion of the massive multiplet EXISTS, with
+  uniformly rotated reality (the massive field is ‡-anti-Hermitian; i×field
+  observable).
+- (c) Assembly: the quarter-turn on the ghost NORMAL MODE of the TT PU
+  pair is itself an admissible positive diagonalizer (T′ᵀJT′ = J and
+  T′ᵀG_PU T′ real positive-definite, verified numerically with the gravity
+  sign γ = −1) ⇒ it lies in the paper-1 family S₊·Stab ⇒ by paper-3 orbit
+  constancy it defines the SAME vacuum functional as the Bender–Mannheim
+  metric. TT-BM and lower-helicity quarter-turns assemble consistently.
+
+**Headline classification theorem (paper 4):**
+1. Gauge reduction stratifies: PU pairs survive at helicity ±2 only;
+   massive ±1, 0 are unpaired ghosts.
+2. Unpaired ghosts: positivity + spectral + standard reality — choose two.
+3. Covariance forbids mixed signature on the massive multiplet: the hybrid
+   completion dies.
+4. Exactly two covariant completions remain: uniform-positive
+   pseudo-Hermitian with rotated massive reality (Mannheim-extended via
+   quarter-turns), and uniform Krein with standard reality (Bateman–Turok).
+5. Both are completions of the same complex spectral vacuum functional
+   (orbit constancy + paper 3): they are different real forms of one
+   reduced complex spectral theory.
+
+Queued: G10 (helicity-resolved spectral kernel), G11 (linearized-Weyl
+gauge-invariant correlator), G12 (conformal limit c₁ → 0, sectorwise).
