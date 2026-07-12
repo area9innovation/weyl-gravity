@@ -294,3 +294,28 @@ pair) — the provisional d ≥ 8 threshold is now a theorem with coefficient
 **Remaining before paper-3 draft:** the microlocal/Hadamard audit (§6 of
 the proposal): fourth-order short-distance wavefront structure of W_zz and
 local composites. The Δ>0 closed form above is the natural starting point.
+
+## B‴. Hadamard audit + paper 3 draft (2026-07-12)
+
+Hadamard/microlocal audit (`symbolic/verify_hadamard.py`, 14 checks, ALL
+PASS), outcome favorable exactly as conjectured:
+- H1: spectral momentum form + confluent −∂_{m²} identity;
+- H2: bisolution (both branches + Jordan mode);
+- H3: commutator = fourth-order E_P, normalization E‴(0) = 1;
+- H4: 1/ρ² mass-independent (cancels); log ρ coefficient of W₁₂⁺ EXACTLY
+  1/(8π²) (1/(16π²) for log ρ²), mass-independent hence nonzero;
+  confluent identical; IR scale change = smooth constant;
+- H5 (new): split-field structure W_{φ₁φ₁} = +W⁺_{m₁}/Δ,
+  W_{φ₂φ₂} = −W⁺_{m₂}/Δ, cross = 0 — the selected vacuum restricted to
+  the local partial-fraction fields is (±)KG-Hadamard: Krein signature
+  intrinsic, local singularity standard;
+- H6: WF(W₁₂⁺) = 𝒞⁺ (recorded argument: forward-cone support ⊆; nonzero
+  log coefficient ⇒ equality); difference theorem recorded.
+
+Paper 3 drafted: `paper/fourth-order-vacuum.tex` (9 pp., compiles clean):
+"The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits,
+Fock Sectors, and the Krein Boundary". Arc: three-geometries separation /
+parabolic decoupling → orbit constancy + universal Fock obstruction →
+universal dressed sector + terminating hierarchy → spectral bridge to
+Bateman–Turok → fourth-order Hadamard theorem (+ ±Hadamard split) →
+discussion with quadratic gravity as outlook only.

@@ -1,0 +1,628 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\w}{\omega}
+\newcommand{\Sp}{\mathrm{Sp}}
+\newcommand{\dg}{\dagger}
+\newcommand{\WF}{\operatorname{WF}}
+\newcommand{\tr}{\operatorname{tr}}
+
+\title{The Universal Vacuum of the Fourth-Order Scalar Field:\\
+Metric Orbits, Fock Sectors, and the Krein Boundary}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For the free fourth-order scalar field
+$(\Box+m_1^2)(\Box+m_2^2)\phi=0$ we separate three structures that are
+commonly conflated: the geometry of positive metric operators, the geometry
+of vacuum states, and the geometry of the dynamics.  Modewise, the
+Bender--Mannheim generator is a pure beam splitter in canonical
+normal-form coordinates --- it carries divergent Cartan distortion while
+creating no quanta there --- and no symplectic frame tames its singular
+values: particle content is a vacuum-ray functional, not a Cartan-norm
+functional.  The entire family of admissible positive metrics fixes the
+physical vacuum ray, so the vacuum state is metric-independent; it carries
+exactly $1/3$ of a quantum per ultraviolet mode pair relative to the
+two-field Fock vacuum, and its GNS representation is disjoint from the
+latter in every spatial dimension --- an obstruction no choice of metric
+can cure.  All nondegenerate selected vacua lie in one universal
+ultraviolet-dressed Fock sector for $d\le3$, anchored by the $\Box^2$
+vacuum, with a terminating sector hierarchy labeled by $m_1^2+m_2^2$ for
+$4\le d<8$ and by the full mass pair for $d\ge8$.  The selected vacuum's
+Wightman function is exactly the spectral two-point function of the
+fourth-order operator for every mass splitting, and its equal-mass limit
+coincides with the Krein-space vacuum of Bateman and Turok: metric
+selection and the spectral condition determine the same quasifree state,
+the two quantizations differing only in the completion.  Finally the
+selected state is Hadamard in the natural fourth-order sense: its
+wavefront set is the standard positive-frequency Hadamard set, with a
+logarithmic short-distance singularity of universal coefficient
+$1/(16\pi^2)$ for $\log\rho^2$, and its restriction to the local
+partial-fraction fields is $(\pm)$Klein--Gordon--Hadamard.  All identities
+are machine-verified.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+The Pais--Uhlenbeck (PU) oscillator and its field-theoretic parent, the
+free fourth-order scalar
+\begin{equation}\label{eq:eom}
+(\Box+m_1^2)(\Box+m_2^2)\,\phi=0,\qquad m_1>m_2\ge0,
+\end{equation}
+admit two apparently different resolutions of the Ostrogradsky ghost
+problem.  In the PT-symmetric approach of Bender and Mannheim
+\cite{BM2008PRL,BM2008PRD}, each mode carries a positive metric operator
+$\eta=e^{-Q}$ that renders the dynamics unitary on a Hilbert space; in the
+Krein-space approach, recently developed for the pure fourth-order theory
+$\Box^2\phi=0$ by Bateman and Turok \cite{BT2026}, the state space is
+indefinite and probabilities are controlled by a hidden ghost-parity
+symmetry.  Two companion papers \cite{companion1,companion2} analyzed the
+modewise PT construction as finite-dimensional symplectic geometry: the
+positive metric is unique up to a stabilizer orbit, is selected
+variationally by minimum Cartan distortion, and the modewise theory is
+exactly solvable in all the respects used below.
+
+This paper carries that analysis to the field theory, where three
+different geometries are in play and must not be conflated:
+\begin{equation}\label{eq:threegeom}
+\text{metric geometry}\ \neq\ \text{vacuum geometry}\ \neq\
+\text{dynamical geometry}.
+\end{equation}
+The metric geometry is the symmetric-space geometry of positive operators,
+$G/K$ for $G=\Sp(2n,\C)$, where the Cartan projection $\mu$ measures
+nonunitarity \cite{companion2}.  The vacuum geometry is the geometry of
+Gaussian vacuum rays, which is governed by a different quotient: the
+stabilizer $P_\Omega=\{g:\hat g\,\Omega\in\C^\times\Omega\}$ of the
+vacuum line is a parabolic-type subgroup, and vacuum rays live in
+$G/P_\Omega$.  The dynamical geometry is the spectral structure of the
+Hamiltonian, which degenerates (Jordan blocks) exactly at the resonant
+point $m_1=m_2$ \cite{companion1}.  Our results, in brief:
+
+\begin{enumerate}
+\item \emph{Parabolic decoupling} (Section~\ref{sec:decoupling}).  In
+canonical normal-form coordinates the Bender--Mannheim generator is a pure
+beam splitter, $Q'=r\,(a_1a_2^{\dg}+a_1^{\dg}a_2)$: it lies in the
+complexified number-preserving (Levi) algebra of $P_\Omega$, fixes the
+canonical vacuum exactly, and yet has Cartan projection $(r,r)$ with
+$r=\log\frac{\w_1+\w_2}{\w_1-\w_2}\to\infty$ in the ultraviolet.
+Moreover no symplectic frame tames the singular values.  Hence there is
+no inequality of the form $\text{vacuum excitation}\ge f(\|\mu\|)$:
+Cartan distortion does not control particle content.
+
+\item \emph{Orbit constancy and a universal obstruction}
+(Section~\ref{sec:obstruction}).  The physical annihilator covectors are
+eigenvectors of the stabilizer generators, so the entire admissible
+metric family --- the Gaussian orbit and all $W=f(N_1,N_2)>0$ ---
+fixes the physical vacuum ray.  The vacuum state is therefore
+metric-independent.  Its occupation relative to the two-field Fock vacuum
+is exactly
+\begin{equation}\label{eq:N}
+\langle N\rangle(k)
+=\frac{\w_2(\w_1^2+\w_2^2)}{2\w_1(\w_1^2+\w_1\w_2+\w_2^2)}
+\ \xrightarrow[k\to\infty]{}\ \frac13 ,
+\end{equation}
+a universal constant; the total relative quanta scale as
+$\Theta(V\Lambda^d)$ and the representations are disjoint in every
+spatial dimension.  No choice of metric can cure this.
+
+\item \emph{One universal dressed sector; terminating hierarchy}
+(Section~\ref{sec:sectors}).  Selected vacua of different mass pairs
+satisfy, in common field variables,
+\begin{equation}\label{eq:sector}
+1-f(k)=\frac{(\Sigma-\bar\Sigma)^2}{12\,k^4}+O(k^{-6}),
+\qquad \Sigma=m_1^2+m_2^2 ,
+\end{equation}
+with no $k^{-6}$ term and next obstruction
+$\tfrac{29}{576}\,(\delta^2-\bar\delta^2)^2k^{-8}$,
+$\delta=\tfrac12(m_1^2-m_2^2)$.  Hence: one universal sector for
+$d\le3$, anchored by the $\Box^2$ vacuum; sectors labeled by $\Sigma$
+for $4\le d<8$; by the full mass pair for $d\ge8$; and the
+classification terminates.
+
+\item \emph{The spectral bridge} (Section~\ref{sec:bridge}).  The
+selected vacuum's Wightman function is exactly the spectral two-point
+function of \eqref{eq:eom},
+\begin{equation}\label{eq:Wspectral}
+\widetilde W^+_{12}(p)
+=\theta(p^0)\,
+\frac{\delta(p^2-m_1^2)-\delta(p^2-m_2^2)}{m_1^2-m_2^2},
+\qquad
+\widetilde W^+_{mm}(p)=-\theta(p^0)\,\delta'(p^2-m^2),
+\end{equation}
+for all $\Delta=m_1^2-m_2^2\ge0$; the confluent case is the Krein vacuum
+of \cite{BT2026}.  Metric selection and the spectral condition determine
+the same quasifree state; the quantizations differ only in the
+completion --- positive $\eta$-inner product where it exists
+($\Delta>0$), Krein space with ghost parity where it must ($\Delta=0$).
+The state is analytic across the resonant boundary while the metric and
+diagonalizability fail there.
+
+\item \emph{Fourth-order Hadamard property} (Section~\ref{sec:hadamard}).
+$W^+_{12}$ is a bisolution with the correct fourth-order commutator, its
+wavefront set is the standard positive-frequency Hadamard set
+$\mathcal C^+$, and its short-distance singularity is logarithmic with
+universal coefficient: the $1/\rho^2$ singularity of the Klein--Gordon
+factors is mass-independent and cancels, leaving
+\begin{equation}
+W^+_{12}(x)=\frac{1}{8\pi^2}\log\rho+\text{(smooth)},
+\end{equation}
+i.e.\ coefficient $1/(16\pi^2)$ for $\log\rho^2$.  Its restrictions to
+the local partial-fraction fields are exactly $(\pm)$Klein--Gordon
+Hadamard functions.  Wick powers and perturbation theory can be based on
+the fourth-order parametrix
+$H_P=(H_{m_1}-H_{m_2})/(m_1^2-m_2^2)$.
+\end{enumerate}
+
+Together these give the corrected physical picture: \emph{the universal
+selected vacuum is a fourth-order Hadamard quasifree functional; its
+apparently infinite particle content relative to the split two-field
+vacuum reflects inequivalent complex structures, not pathological local
+ultraviolet singularities} --- and the Krein formulation is not the
+remnant of a divergent positive theory but a different completion of the
+same, analytically continued vacuum.
+
+\paragraph{Verification.}
+Every identity below --- the beam-splitter identity, the occupation
+\eqref{eq:N}, the eigenvector/constancy lemma, the sector expansions with
+their exact coefficients, the Wightman functions and their confluent
+limits, the commutator normalizations, and the logarithmic coefficient ---
+is machine-verified symbolically, with independent numerical checks; the
+scripts accompany the repository of \cite{companion1,companion2}.
+
+\paragraph{Conventions.}
+Modewise notation follows \cite{companion1,companion2}: for spatial
+momentum $k$, the mode is a PU pair with
+$\w_i(k)=\sqrt{k^2+m_i^2}$, canonical variables $V=(x,y,p,q)$ related to
+the field variable by $z=iy$ (the PT rotation), normalized coordinates
+with $d_xd_y=\w_1\w_2$, rapidity $r(k)=\log\frac{\w_1+\w_2}{\w_1-\w_2}
+=\log\frac{(\w_1+\w_2)^2}{\Delta}$, selected diagonalizer
+$S_+=e^{(r/2)B}$ and metric $\eta=e^{-Q}$, $Q=\alpha pq+\beta xy$.  We
+write $\Delta=m_1^2-m_2^2$, $\Sigma=m_1^2+m_2^2$, $\Pi=m_1^2m_2^2$.
+
+\section{Metric geometry versus vacuum geometry}\label{sec:decoupling}
+
+\subsection{The beam-splitter identity}
+
+In the canonically normalized coordinates the mode annihilation operators
+of the auxiliary canonical vacuum are $a'_j$ with
+$x'=(a'_1+a'^{\dg}_1)/\sqrt2$, etc.  A one-line computation (different
+modes commute, so no ordering terms arise) gives the exact operator
+identity
+\begin{equation}\label{eq:beamsplitter}
+Q'=r\,(x'y'+p'q')=r\,\big(a'_1a'^{\dg}_2+a'^{\dg}_1a'_2\big).
+\end{equation}
+Thus $Q'$ is a pure beam splitter: $[Q',N_{\mathrm{tot}}]=0$ and
+$Q'\,\Omega_{\mathrm{can}}=0$, so
+\begin{equation}
+e^{-Q'/2}\,\Omega_{\mathrm{can}}=\Omega_{\mathrm{can}}
+\qquad\text{exactly},
+\end{equation}
+even though the Cartan projection of the implemented symplectic map is
+$\mu(S_+)=(r,r)$ with $r(k)\sim2\log k\to\infty$.  Equivalently: $Q'$
+lies in the complexified number-preserving algebra, the Levi component of
+the parabolic-type stabilizer $P_\Omega$ of the vacuum line, on which the
+Cartan norm is unbounded.
+
+\subsection{No frame tames the map; the occupation is a state functional}
+
+One might hope that a frequency-adapted symplectic frame $T_\w$ (the one
+whose canonical vacuum is the physical two-field vacuum) turns the
+divergent Cartan data into bounded physical squeezing.  It does not:
+numerically, $\mu(T_\w^{-1}S_+T_\w)\approx(r,r)$ as well --- the Dyson map
+is genuinely non-unitary, with unbounded distortion, in every frame.  What
+is bounded is the \emph{state}: the selected vacuum, computed exactly in
+\cite{companion2} as the Gaussian ground state of the PT mode Hamiltonian,
+has occupation \eqref{eq:N} relative to the two-field vacuum, saturating
+at $1/3$.  The two statements are compatible because particle content
+depends on the transformation only through the vacuum ray it produces ---
+a $G/P_\Omega$ datum --- while $\mu$ is a $G/K$ datum, and the projection
+$G/K\to G/P_\Omega$ collapses the noncompact Levi directions.
+
+\begin{theorem}[Parabolic decoupling]\label{thm:decoupling}
+For $G=\Sp(2n,\C)$ acting metaplectically on Fock space:
+(i) positive-metric geometry is governed by $G/K$ and its Cartan
+projection; (ii) Gaussian vacuum rays are governed by $G/P_\Omega$;
+(iii) the Cartan norm is unbounded on $P_\Omega$ (already on its Levi
+component); consequently (iv) no bound of the form
+$\langle N\rangle\ge f(\|\mu\|)$ or $\le f(\|\mu\|)$ holds in general.
+The PU family realizes the extreme case: divergent $\mu=(r,r)$ with
+identically vanishing canonical-frame excitation, and bounded physical
+excitation \eqref{eq:N} with divergent physical-frame $\mu$.
+\end{theorem}
+
+The proof of (iii) is the identity \eqref{eq:beamsplitter} together with
+$\mu(e^{(r/2)B})=(r,r)$; (iv) follows from the two exhibited extremes.
+This corrects a natural but false expectation --- used, e.g., to estimate
+Bogoliubov costs by $\sinh^2$ of Cartan coordinates --- and it is the
+conceptual reason the theorems below must be formulated at the level of
+states.
+
+\section{Orbit constancy and the universal Fock obstruction}
+\label{sec:obstruction}
+
+\begin{lemma}[Eigenvector lemma]\label{lem:eigen}
+Let $\ell_j$ be the physical annihilator covectors (the two-field vacuum
+modes) and $X_j$ the stabilizer generators of \cite{companion2}.  Then
+\begin{equation}
+\ell_j^{\top}X_j=-i\,\ell_j^{\top},
+\qquad\text{hence}\qquad
+\ell_j^{\top}C(\theta_1,\theta_2)^{-1}=e^{i\theta_j}\,\ell_j^{\top}
+\quad(\theta_j\in\C).
+\end{equation}
+\end{lemma}
+
+\begin{theorem}[Metric-independence of the vacuum]\label{thm:constancy}
+The selected physical vacuum state is the same for every admissible
+positive metric: (i) on the Gaussian orbit $\eta_C$,
+$C\in SO(2,\C)^2$, the annihilation conditions defining the vacuum are
+unchanged by Lemma~\ref{lem:eigen}; (ii) the metaplectic implementers of
+the stabilizer are of the form
+$\exp[\theta_1(N_1+\tfrac12)+\theta_2(N_2+\tfrac12)]$ and act on the
+vacuum ray by scalars; (iii) for the full metric family
+$\eta'=\rho^{\dg}W\rho$ with $W=f(N_1,N_2)>0$ \cite{companion1}, $W^{\pm1/2}$
+also fixes the vacuum ray.  Hence $[\Omega_{\eta}]=[\Omega_{\eta_+}]$ for
+every admissible $\eta$.
+\end{theorem}
+
+The theorem asserts constancy of the vacuum \emph{ray}; metric changes do
+alter the physical inner product and may alter representatives of
+observables, but any quantity determined by the fixed vector relative to
+the fixed two-field reference --- in particular the occupation
+\eqref{eq:N} and the fidelity below --- is metric-independent.
+
+\begin{theorem}[Universal Fock obstruction]\label{thm:nogo}
+For every admissible positive metric, in a volume $V$ with cutoff
+$\Lambda$: the relative quanta obey
+$N(\Lambda)\sim C_d\,V\Lambda^d$ with $C_d>0$; the vacuum fidelity obeys
+$|\langle\Omega_{2\text{-field}}|\Omega_{\mathrm{PU}}\rangle|^2
+\le e^{-cV\Lambda^d}$ (per-mode fidelity $\to\sqrt3/2$
+\cite{companion2}); and in the thermodynamic/continuum limit the GNS
+representations are disjoint, in every spatial dimension $d\ge1$.
+Metric ambiguity cannot cure the inequivalence.
+\end{theorem}
+
+\begin{proof}
+Combine Theorem~\ref{thm:constancy} with the exact modewise data
+\eqref{eq:N} and the von Neumann infinite-tensor-product criterion, as in
+\cite{companion2}.
+\end{proof}
+
+\section{The universal dressed sector}\label{sec:sectors}
+
+Comparisons between selected vacua of different mass pairs are made in
+common physical variables ($\gamma=1$ PU variables per mode; the
+normalization map contributes only $O(k^{-2})$).  The exact modewise
+Gaussian of \cite{companion2} gives, for pairs $(m_1,m_2)$ and
+$(\bar m_1,\bar m_2)$, the fidelity expansion \eqref{eq:sector}; at
+matched $\Sigma$ the expansion continues
+\begin{equation}\label{eq:sector8}
+1-f(k)\Big|_{\Sigma=\bar\Sigma}
+=\frac{29}{576}\,\frac{(\delta^2-\bar\delta^2)^2}{k^{8}}+O(k^{-10}),
+\qquad \delta^2-\bar\delta^2=\bar\Pi-\Pi ,
+\end{equation}
+with \emph{no} $k^{-6}$ term.
+
+\begin{theorem}[Sector classification]\label{thm:sectors}
+Let $d$ be the spatial dimension.  Relative Hilbert--Schmidt convergence
+$\int^\Lambda k^{d-1}(1-f(k))\,dk<\infty$ holds iff the first nonvanishing
+invariant difference is compatible with $d$:
+\begin{center}
+\begin{tabular}{c|c}
+spatial dimension & UV sector invariant of selected vacua\\
+\hline
+$d\le3$ & none (one universal sector)\\
+$4\le d<8$ & $\Sigma=m_1^2+m_2^2$\\
+$d\ge8$ & $(\Sigma,\Pi)$, i.e.\ the full mass pair
+\end{tabular}
+\end{center}
+The hierarchy terminates: two symmetric invariants determine the pair.
+In $d\le3$ the universal sector is anchored by the $\Box^2$ selected
+vacuum ($m_1=m_2=0$; modewise Gaussian $A=(2k,k^2;k^2,2k^3)$), relative to
+which $1-f=\Sigma^2/(12k^4)+\dots$; all massive selected vacua are
+quasi-equivalent to it and to each other, while remaining collectively
+disjoint from the naive two-field sector by Theorem~\ref{thm:nogo}.
+\end{theorem}
+
+Two limits deserve emphasis.  First, the resonant limit is
+\emph{regular} at the vacuum level: the selected Gaussian is analytic in
+$\Delta$ across $\Delta=0$ ($1-f\sim\varepsilon^4$ for
+$m_{1,2}=m\pm\varepsilon$), and the occupation limits commute
+($\langle N\rangle\equiv\tfrac13$ at $\Delta=0$ for every $k$).  Second,
+what does degenerate as $\Delta\to0$ is the metric operator
+($\alpha,\beta\to\infty$), the similarity transformation
+($S_+\sim\Delta^{-1/2}$), and the diagonalizability of the dynamics
+(Jordan blocks; no positive invariant form \cite{companion1}).  The
+resonant transition is a failure of \emph{dynamical} and \emph{metric}
+geometry, not of vacuum geometry --- the third strand of
+\eqref{eq:threegeom}.
+
+\section{The spectral bridge to the Krein quantization}\label{sec:bridge}
+
+The physical Wightman function of the selected vacuum follows from the
+exactly solvable mode: with
+$\widetilde V=S_+V$ evolving under the diagonalized Hamiltonian,
+$W(t)=S_+e^{tA_0}\Gamma S_+^{\top}$ pulled back to the field variable
+$z=iy$ gives, exactly,
+\begin{equation}\label{eq:Wmode}
+W_{zz}(t)
+=\frac{1}{\Delta}
+\left[\frac{e^{-i\w_1t}}{2\w_1}-\frac{e^{-i\w_2t}}{2\w_2}\right],
+\qquad
+W_{zz}(t)\Big|_{\Delta\to0}
+=-\,\frac{(1+i\w t)\,e^{-i\w t}}{4\w^3}.
+\end{equation}
+Both expressions contain only positive frequencies; the first is the
+momentum-space spectral function \eqref{eq:Wspectral}, the second its
+confluent ($\delta'$) limit.  The commutator parts reproduce the classical
+fourth-order Green-function difference
+$E_P=[\sin\w_2t/\w_2-\sin\w_1t/\w_1]/\Delta$ with the normalization
+$E_P(0)=E_P'(0)=E_P''(0)=0$, $E_P'''(0)=1$, and confluent limit
+$(\sin\w t-\w t\cos\w t)/(2\w^3)$.
+
+\begin{theorem}[Bridge theorem]\label{thm:bridge}
+For every $\Delta\ge0$ the Bender--Mannheim selected vacuum is the
+spectral quasifree state of the fourth-order field: its two-point function
+is \eqref{eq:Wspectral}.  In particular its $\Delta=0$ limit coincides,
+up to the overall action-sign convention, with the Krein-space vacuum of
+Bateman and Turok \cite{BT2026} (their
+$\widetilde W(p)=\theta(p^0)\delta_1'(p^2)$, realized by the Jordan mode
+doublet $e^{-ipx}$, $(1+2i|p|t)e^{-ipx}$ with null pairing
+$[a_1,a_2^{\dg}]=[a_2,a_1^{\dg}]\ne0$).  Metric selection and the spectral
+condition therefore determine the same state; the two quantizations differ
+only in the completion of the field algebra representation: a positive
+$\eta$-inner product for $\Delta>0$, a Krein space with ghost parity at
+$\Delta=0$.
+\end{theorem}
+
+\begin{proof}
+The first statement is the computation \eqref{eq:Wmode} (machine-verified,
+including the commutator normalization which fixes the action-sign
+convention: the residual overall sign relative to \cite{BT2026} is exactly
+the sign of their perfect-square action).  Quasifree states are determined
+by their two-point functions, so equality of \eqref{eq:Wmode} with the
+Bateman--Turok mode Wightman function --- both equal to
+$(1+i\w t)e^{-i\w t}/(4\w^3)$ in matched conventions --- identifies the
+states.
+\end{proof}
+
+\begin{remark}
+(i) The theorem upgrades the resonant-boundary picture: the Krein
+formulation is not the residue of a positive theory destroyed by an
+ultraviolet particle catastrophe (Section~\ref{sec:decoupling} shows no
+such catastrophe exists); it is a different completion of the
+\emph{same}, analytically continued vacuum functional, adapted to Jordan
+dynamics.  (ii) At $\Delta>0$ the completion ambiguity is invisible in
+expectation values but material for which operators are Hermitian; at
+$\Delta=0$ positivity is unavailable (no positive invariant metric,
+\cite{companion1}) and the Krein completion is the only one.  (iii) What
+remains genuinely open at the resonant point is the treatment of the
+generalized (Jordan) excitations, where the two completions differ by
+construction; ghost parity governs precisely that sector \cite{BT2026}.
+\end{remark}
+
+\section{Hadamard structure of the selected vacuum}\label{sec:hadamard}
+
+Let $W^+_m$ denote the Minkowski Klein--Gordon positive-frequency
+two-point function and define the divided difference and its confluent
+limit
+\begin{equation}
+W^+_{12}=\frac{W^+_{m_1}-W^+_{m_2}}{m_1^2-m_2^2},
+\qquad
+W^+_{mm}=-\,\partial_{m^2}W^+_m
+\quad(\text{up to the sign convention of \eqref{eq:Wspectral}}),
+\end{equation}
+which by Theorem~\ref{thm:bridge} are the selected two-point functions.
+
+\begin{theorem}[Fourth-order Hadamard property]\label{thm:hadamard}
+Let $P=(\Box+m_1^2)(\Box+m_2^2)$, $d=3$ spatial dimensions.  Then:
+\begin{enumerate}
+\item $P_xW^+_{12}=P_yW^+_{12}=0$, and
+$W^+_{12}(x,y)-W^+_{12}(y,x)=iE_P(x,y)$ with
+$E_P=(E_{m_1}-E_{m_2})/\Delta$ the fourth-order commutator function;
+\item $\WF(W^+_{12})=\mathcal C^+$, the standard positive-frequency
+Hadamard wavefront set; the multiplicity of the characteristic polynomial
+changes the order of the light-cone singularity, not its wavefront
+directions;
+\item the short-distance singularity is logarithmic:
+with $W_m^+(x)=\frac{1}{4\pi^2}\frac{mK_1(m\rho)}{\rho}$,
+$\rho^2=-x^2+i0x^0$, the mass-independent $\frac{1}{4\pi^2\rho^2}$ term
+cancels in the divided difference and
+\begin{equation}
+W^+_{12}(x)=\frac{1}{8\pi^2}\log\rho+\text{(smooth)},
+\end{equation}
+the coefficient being universal (mass-independent) and nonzero; the
+confluent case has the identical coefficient;
+\item in the doubly massless case $P=\Box^2$ the infrared extension of
+$\theta(p^0)\delta'(p^2)$ requires a scale; different admissible scales
+change $W$ by a smooth constant, affecting neither the wavefront set nor
+the local Hadamard property --- the bridge of Theorem~\ref{thm:bridge}
+presumes matched extension conventions;
+\item any two fourth-order spectral Hadamard functionals with the same
+commutator differ by a smooth bisolution; the fourth-order parametrix
+$H_P=(H_{m_1}-H_{m_2})/\Delta$ (confluently $\partial_{m^2}H_m$) has
+$W^+_{12}-H_P$ smooth, so Wick powers $:\!\phi^n\!:_{H_P}$ and covariant
+perturbation theory are available.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+(1) is verified exactly modewise (both branches and the confluent Jordan
+mode), with the Green normalization $E_P'''(0)=1$.  For (2), the
+momentum-space form \eqref{eq:Wspectral} is a distribution supported on
+the mass shells inside the closed forward cone, giving
+$\WF\subseteq\mathcal C^+$ by the standard conic-support argument;
+alternatively, divided differences and $\partial_{m^2}$ of the smooth
+family $m^2\mapsto W^+_m$ preserve the Hadamard wavefront bound.
+Equality follows because the coefficient in (3) is nonzero and the
+on-shell $\delta/\delta'$ content is nonvanishing on the cone.  (3) is
+the Bessel expansion
+$mK_1(m\rho)/\rho=\rho^{-2}+\tfrac{m^2}{2}\log(m\rho/2)+\dots$: the
+$\rho^{-2}$ terms cancel and the $\log\rho$ coefficient of the divided
+difference is $\big[\tfrac{m_1^2}{2}-\tfrac{m_2^2}{2}\big]/\Delta\cdot
+\tfrac{1}{4\pi^2}=\tfrac{1}{8\pi^2}$ (machine-verified, as is the
+confluent case).  (4) is the observation that the scale enters only
+through $\log(\mu\rho)$, so a change of scale adds
+$\log(\mu/\bar\mu)/(8\pi^2)$, a constant.  (5) follows from (1)--(3) by
+the usual difference argument: the difference of two such functionals is
+a bisolution with vanishing antisymmetric part and empty wavefront set.
+\end{proof}
+
+\begin{proposition}[$(\pm)$Hadamard split structure]\label{prop:split}
+Let $\phi_1=(\Box+m_2^2)\phi/(m_2^2-m_1^2)$ and
+$\phi_2=(\Box+m_1^2)\phi/(m_1^2-m_2^2)$ be the local partial-fraction
+fields.  In the selected vacuum, exactly,
+\begin{equation}
+W_{\phi_1\phi_1}=+\frac{W^+_{m_1}}{\Delta},
+\qquad
+W_{\phi_2\phi_2}=-\frac{W^+_{m_2}}{\Delta},
+\qquad
+W_{\phi_1\phi_2}=0 .
+\end{equation}
+\end{proposition}
+
+The ghost branch carries a \emph{negative} Klein--Gordon--Hadamard
+two-point function: the Krein signature is intrinsic to the selected
+state, while its local singularity structure is standard on both
+branches.  This makes the summary statement precise:
+
+\begin{quote}
+\emph{The universal selected vacuum is a fourth-order Hadamard quasifree
+functional.  Its apparent infinite particle content relative to the split
+two-field vacuum reflects inequivalent complex structures --- the
+positive-positive versus positive-negative pairing of the two branches
+--- not pathological local ultraviolet singularities.}
+\end{quote}
+
+The logarithmic singularity is the expected one for a dimension-zero
+field in four spacetime dimensions and is milder than the Klein--Gordon
+$1/\sigma$; local Wick composites exist, and derivative observables (in
+particular the stress tensor) require the usual local subtractions
+relative to $H_P$, with no evident ultraviolet obstruction.  A systematic
+treatment along the lines of \cite{Radzikowski,BrunettiFredenhagen,
+HollandsWald} for the fourth-order operator is now well-posed.
+
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{What the three geometries settle.}
+The separation \eqref{eq:threegeom} resolves several tensions in the
+literature at once.  The divergent rapidity $r(k)\sim2\log k$ is real,
+but it is metric geometry: it makes the phase-space (observable) metric a
+Sobolev pair $H^1\oplus H^{-1}$ \cite{companion2} and the Dyson operator
+unboundedly non-unitary in every frame --- yet it creates no quanta,
+because it acts inside the vacuum-line stabilizer.  The physical
+inequivalence to the naive two-field Fock space is vacuum geometry: an
+$O(1)$-per-mode, metric-independent statement
+(Theorems~\ref{thm:constancy},~\ref{thm:nogo}).  The resonant
+$\Delta\to0$ singularity is dynamical geometry: Jordan blocks and the
+death of the positive metric, with the vacuum analytic throughout
+(Theorem~\ref{thm:sectors} ff.).  Conflating any two of these produces
+false conclusions --- e.g.\ ultraviolet particle catastrophes
+($\Lambda^{d+2}$ scalings) or mass-splitting superselection sectors, both
+of which are refuted by the exact computations here.
+
+\paragraph{Relation to Bender--Mannheim and Bateman--Turok.}
+Theorem~\ref{thm:bridge} shows the two programs select the same state,
+from opposite directions: positivity of the inner product modewise
+(Bender--Mannheim), spectral positivity of the energy covariantly
+(Bateman--Turok).  The difference is the completion, and the difference
+matters exactly where the completions are forced apart: at the resonant
+point, where positivity fails (the Jordan no-go of \cite{companion1}) and
+ghost parity takes over the excitation sector.  A sharp remaining
+question is the representation-theoretic status of the generalized Jordan
+excitations at $\Delta=0$: the vacuum sector is common, the one-particle
+completions are not, and the interacting perfect-square theory of
+\cite{BT2026} lives precisely there.
+
+\paragraph{Toward quadratic gravity.}
+Applied polarization by polarization, the free-field statements transfer
+to the scalar and spin-two PU branches of quadratic gravity in its
+conformally flat and linearized regimes: the physical vacuum is
+spectral, fourth-order Hadamard, metric-independent, and not a state in
+the naive two-field (graviton plus ghost) Fock space; PT-based unitarity
+claims should accordingly be phrased in the dressed representation, and
+interacting constructions must fix the representation before the
+perturbative expansion.  We leave the interacting analysis, the
+stress-tensor subtractions relative to $H_P$, and curved backgrounds to
+future work.
+
+\begin{thebibliography}{12}
+
+\bibitem{BM2008PRL}
+C.~M.~Bender and P.~D.~Mannheim,
+Phys.\ Rev.\ Lett.\ \textbf{100} (2008) 110402.
+
+\bibitem{BM2008PRD}
+C.~M.~Bender and P.~D.~Mannheim,
+Phys.\ Rev.\ D \textbf{78} (2008) 025022.
+
+\bibitem{BT2026}
+S.~Bateman and N.~Turok,
+\emph{Escape from Ostrogradsky via hidden ghost parity},
+arXiv:2607.00096.
+
+\bibitem{companion1}
+\emph{Canonical positive symplectic diagonalization of the Pais--Uhlenbeck
+oscillator}, companion paper and verification repository, 2026.
+
+\bibitem{companion2}
+\emph{The Pais--Uhlenbeck metric as a minimum-distortion principle, and
+the representation problem for the fourth-order field}, companion paper,
+2026.
+
+\bibitem{Mostafazadeh2010}
+A.~Mostafazadeh,
+Int.\ J.\ Geom.\ Meth.\ Mod.\ Phys.\ \textbf{7} (2010) 1191.
+
+\bibitem{vN1939}
+J.~von Neumann,
+Compos.\ Math.\ \textbf{6} (1939) 1.
+
+\bibitem{Radzikowski}
+M.~J.~Radzikowski,
+\emph{Micro-local approach to the Hadamard condition in quantum field
+theory on curved space-time},
+Commun.\ Math.\ Phys.\ \textbf{179} (1996) 529.
+
+\bibitem{BrunettiFredenhagen}
+R.~Brunetti and K.~Fredenhagen,
+\emph{Microlocal analysis and interacting quantum field theories},
+Commun.\ Math.\ Phys.\ \textbf{208} (2000) 623.
+
+\bibitem{HollandsWald}
+S.~Hollands and R.~M.~Wald,
+\emph{Local Wick polynomials and time ordered products of quantum fields
+in curved spacetime},
+Commun.\ Math.\ Phys.\ \textbf{223} (2001) 289.
+
+\bibitem{Holdom}
+B.~Holdom,
+Nucl.\ Phys.\ B \textbf{1000} (2024) 116696;
+Nucl.\ Phys.\ B \textbf{1008} (2024) 116472.
+
+\bibitem{ABHT}
+M.~Anderson, S.~Bateman, F.~Herzog and N.~Turok,
+\emph{Renormalization of a four-derivative theory} and
+\emph{Conformally flat limit of quadratic gravity}, 2026, to appear.
+
+\end{thebibliography}
+
+\end{document}
