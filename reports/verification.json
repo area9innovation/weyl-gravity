@@ -1,0 +1,410 @@
+[
+  {
+    "claim_id": "A1_half_VtGV_equals_HPT",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "1/2 V^T G V == H_PT with V=(x,y,p,q); the -iqx term uses [x,q]=0"
+  },
+  {
+    "claim_id": "A2_charpoly",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "det(lambda I - JG) == (l^2+w1^2)(l^2+w2^2), computed from the determinant directly"
+  },
+  {
+    "claim_id": "A3_G_symmetric_not_hermitian",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "G^T = G, G^dagger != G",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "G is complex symmetric; H_PT is not Hermitian (PT-symmetric only), as expected"
+  },
+  {
+    "claim_id": "B1_L_positive",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "log-argument - 1 = 2*omega2/delta > 0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "log((w1+w2)/(w1-w2)) > 0 given w1 > w2 > 0; hence alpha > 0 and beta > 0"
+  },
+  {
+    "claim_id": "B2_r_identity",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "alpha*beta == L^2 with L = log((w1+w2)/(w1-w2)); with L > 0 (B1) the positive square root gives r = L exactly"
+  },
+  {
+    "claim_id": "B3_M_represents_Q",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "1/2 V^T M V == alpha p q + beta x y (x,y and p,q commute; no ordering ambiguity)"
+  },
+  {
+    "claim_id": "C1_K_squared",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "K^2 == -alpha beta I == -r^2 I"
+  },
+  {
+    "claim_id": "C2_commutator_derived",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "DERIVED: [Q, V] = -i K V (V a column vector, componentwise). The variant [Q, V] = +i K V is WRONG under [x,p] = +i"
+  },
+  {
+    "claim_id": "C3_conjugation_matrices",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "e^{-Q/2} V e^{Q/2} = e^{+iK/2} V ;  e^{Q/2} V e^{-Q/2} = e^{-iK/2} V",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "e^X V e^{-X} = e^{ad_X} V with X = -Q/2 and ad_{-Q/2} V = +(i/2) K V linear; the BCH series sums exactly to the matrix exponential"
+  },
+  {
+    "claim_id": "D1_exponential_formula",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "S(t) = cosh(rt) I + i sinh(rt) K/r satisfies S(0) = I and S' = iK S",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "hence S(t) = e^{iKt} by ODE uniqueness; t = 1/2 gives the candidate S of section 6.  Sign convention: THIS S implements e^{-Q/2} V e^{Q/2} = S V"
+  },
+  {
+    "claim_id": "D1b_hyperbolic_values",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "cosh(r/2) = w1/s, sinh(r/2) = w2/s, s = sqrt(w1^2-w2^2); cosh r = (w1^2+w2^2)/(w1^2-w2^2), sinh r = 2w1w2/(w1^2-w2^2), tanh r = 2w1w2/(w1^2+w2^2)",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "from e^{r/2} = sqrt((w1+w2)/(w1-w2)) (positive branch, valid by B1)"
+  },
+  {
+    "claim_id": "D1c_K_over_r",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "K = r * K_over_r with K_over_r free of logs (alpha/r = 1/(gamma w1 w2), beta/r = gamma w1 w2)"
+  },
+  {
+    "claim_id": "D2_symplectic",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "S^T J S == J"
+  },
+  {
+    "claim_id": "D3_det",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "det S == 1"
+  },
+  {
+    "claim_id": "D4a_S_hermitian_original_coords",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "S != S^dagger in the original variables",
+    "numerical_residual": null,
+    "status": "FAILED",
+    "notes": "S_14 = i sinh(r/2)/(gamma w1 w2 ... ) vs S_41 = -i gamma w1 w2 sinh(r/2)/s: Hermiticity requires alpha == beta, i.e. gamma w1 w2 == 1.  NOT Hermitian in general -- positivity requires a canonical rescaling (D4b)"
+  },
+  {
+    "claim_id": "D4b_rescaling_symplectic",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "D = diag(d, d, 1/d, 1/d), d = sqrt(gamma w1 w2): D^T J D == J.  Any split dx*dy = gamma w1 w2 works; only the product enters K' = D K D^{-1}"
+  },
+  {
+    "claim_id": "D4c_B_from_rescaling",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "B := i K'/r = D (iK/r) D^{-1} has the parameter-free form [[0,0,0,i],[0,0,i,0],[0,-i,0,0],[-i,0,0,0]]"
+  },
+  {
+    "claim_id": "D4d_B_hermitian_involution",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "B^dagger == B and B^2 == I (Hermitian involution)"
+  },
+  {
+    "claim_id": "D4e_Sprime_is_rescaled_S",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "S' = D S D^{-1} = cosh(r/2) I + sinh(r/2) B"
+  },
+  {
+    "claim_id": "D4f_Sprime_positive",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "spec(S') = {e^{r/2} (x2), e^{-r/2} (x2)}",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "S' Hermitian and B^2 = I => eigenvalues cosh(r/2) +- sinh(r/2) = e^{+-r/2} > 0. S is Hermitian-positive ONLY after the canonical rescaling; exact condition dx*dy = gamma w1 w2"
+  },
+  {
+    "claim_id": "E1_congruence",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "S^T G S == G0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "with S = e^{iK/2}; convention: h = e^{-Q/2} H_PT e^{Q/2} = 1/2 V^T (S^T G S) V.  The inverse convention S^{-T} G S^{-1} does NOT give G0 (checked: it is non-diagonal)"
+  },
+  {
+    "claim_id": "E2_flow",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "S^{-1} A S == A0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "consistent with E1: A0 = J G0 = J S^T G S = S^{-1} J G S = S^{-1} A S, using J S^T = S^{-1} J for symplectic S"
+  },
+  {
+    "claim_id": "E3_mixed_terms_vanish",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "{'xq': 0, 'yp': 0, 'xp': 0, 'yq': 0, 'xy': 0, 'pq': 0}",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "coefficients of xq, yp, xp, yq, xy, pq in H_PT(SV) all vanish identically"
+  },
+  {
+    "claim_id": "F1_commutant",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "commutant of A0' is 4-dimensional, free params [c20, c22, c31, c33]",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "generic frequencies (w1 != w2): 2 parameters per normal mode; eigenvalues +-i w1, +-i w2 of A0' are distinct"
+  },
+  {
+    "claim_id": "F2_generators",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "X_j^2 == -P_j (per-mode complex structures), X_j = mode-j block of A0'/w_j"
+  },
+  {
+    "claim_id": "F3_stabilizer_parametrized",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "C(th1, th2) = cos(th_j) P_j + sin(th_j) X_j per mode, th_j COMPLEX",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "Stab(J, G0') ~= SO(2,C) x SO(2,C).  Real angles give the unitary subgroup U(1) x U(1); imaginary angles give non-unitary hyperbolic elements. Together with F1 (commutant is exactly 4-dim and equals span of P_j, X_j blocks) this is the FULL stabilizer for w1 != w2"
+  },
+  {
+    "claim_id": "F4_particular_solution",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "S'^T G' S' == G0' with S' = cosh(r/2) I + sinh(r/2) B: one admissible solution; full family = { S' C(th1, th2) } (coset of the stabilizer)"
+  },
+  {
+    "claim_id": "F5_hermitian_members",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "Hermiticity forces [{c1i: c1r*sin(atan2(0, omega1**2 - omega2**2)/2)/cos(atan2(0, omega1**2 - omega2**2)/2), c2i: c1r*sin(atan2(0, omega1**2 - omega2**2)/2)/cos(atan2(0, omega1**2 - omega2**2)/2), c2r: c1r, s1i: 0, s1r: 0, s2i: 0, s2r: 0}]",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "generic w1, w2 (and gamma w1 w2 != 1 handled by genericity of the linear solve): sin th_j = 0, cos th_j real and equal => C = c I with c real; group constraint cos^2 = 1 => C = +-I"
+  },
+  {
+    "claim_id": "F6_unique_positive",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "C = +I is the unique stabilizer element with S' C Hermitian positive",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "F5 leaves C = +-I; C = -I gives spec = {-e^{r/2}, -e^{-r/2}} < 0.  Hence the Hermitian-positive admissible diagonalizer is UNIQUE and equals S'_+ = e^{iK'/2}. Cross-checked numerically in the regression suite"
+  },
+  {
+    "claim_id": "F7_log_S",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "L = log S'_+ = (r/2) B (spectral calculus on the involution B); e^L == S'_+"
+  },
+  {
+    "claim_id": "F8_Q_reconstructed",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "M reconstructed from log of the unique positive solution == Bender-Mannheim M; i.e. Q_rec = alpha p q + beta x y exactly (independent of the dx/dy split, since only dx*dy enters K')"
+  },
+  {
+    "claim_id": "F9_candidate_S_formula",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "S_candidate = (tI + B)/sqrt(t^2-1) == S'_+ HOLDS, but only in the RESCALED coordinates (where B is the stated Hermitian involution); in the original coordinates S is not Hermitian and no such B exists"
+  },
+  {
+    "claim_id": "G1_metric_intertwines_matrix_level",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "S^{2T} G S^2 == conj(G): matrix form of e^{-Q} H_PT e^{Q} = H_PT^dagger, i.e. eta H_PT = H_PT^dagger eta with eta = e^{-Q}"
+  },
+  {
+    "claim_id": "G2_Q_hermitian",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "alpha, beta real and positive (B1); (pq)^dag = q p = p q, (xy)^dag = x y",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "formal-algebraic statement on the Schwartz-type common invariant domain; operator-theoretic domains are NOT claimed here (see report)"
+  },
+  {
+    "claim_id": "G3_formal_implication",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "rho (h^dag - h) rho == H^dag eta - eta H (eta = rho^2, rho^dag = rho): h Hermitian <=> eta intertwines.  Pure algebra, mechanized in the free algebra"
+  },
+  {
+    "claim_id": "H1_bijection",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "H^dag eta' - eta' H == rho [h, W] rho for eta' = rho^dag W rho (uses h^dag = h via H^dag = rho h rho^{-1}): eta' intertwines IFF [W, h] = 0.  eta' > 0 and invertible <=> W > 0 and invertible (congruence by invertible rho). W := rho^{-dag} eta' rho^{-1} inverts the map, so this is a bijection -- converse included"
+  },
+  {
+    "claim_id": "H2_nonuniqueness_statement",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "positive metrics = { rho^dag W rho : W > 0 invertible, [W, h] = 0 }; W = I gives the canonical eta = e^{-Q}",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "pseudo-Hermiticity + positivity do NOT imply uniqueness: h has two commuting number operators, so W = f(N1, N2) > 0 is an infinite-dimensional family; uniqueness needs extra restrictions (e.g. W = I, or symplectic-Gaussian class, see Verification I)"
+  },
+  {
+    "claim_id": "I1_relative_transformation",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "C = S1^{-1} S2 in Stab(J, G0)",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "C^T J C = S2^T (S1^{-T} J S1^{-1}) S2 = S2^T J S2 = J since S1^{-1} is symplectic; C^T G0 C = S2^T G S2 = G0 substituting G0 = S1^T G S1. Two-line algebra; holds verbatim"
+  },
+  {
+    "claim_id": "I2_stabilizer_group",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "Stab(J, G0') = SO(2,C) x SO(2,C) (complex angles; F1+F3), NOT U(1) x U(1)",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "for w1 != w2.  U(1) x U(1) is exactly the UNITARY subgroup (real angles). The claim 'exactly U(1) x U(1)' is FALSE over C; it is the maximal compact / unitary part.  Restricted to REAL symplectic stabilizer elements it is U(1) x U(1) up to the conjugation induced by the mode normalization"
+  },
+  {
+    "claim_id": "I3_polar_claim",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "counterexample at (1,2,1): C(i/3, 0) hyperbolic; S = S'_+ C admissible (residuals < 1e-25) but ||S^dag S - S'_+^2|| = 1.999e+00",
+    "numerical_residual": null,
+    "status": "FAILED",
+    "notes": "CLAIM DISPROVED as stated: the positive polar factor is NOT the same for all admissible diagonalizers.  STRONGEST CORRECT THEOREM: (i) there is a unique Hermitian-positive admissible diagonalizer S'_+ (F6); (ii) polar(S'_+ C) = S'_+ iff C is unitary, i.e. the polar factor is constant exactly on the coset S'_+ . U(1)^2; (iii) the family of polar factors is parametrized by the 2-real-parameter hyperbolic directions, matching the W-freedom of Verification H restricted to Gaussians"
+  },
+  {
+    "claim_id": "J1_Mobs_is_S_squared",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "M_obs = S'^dag S' = S'^2 (S' Hermitian)"
+  },
+  {
+    "claim_id": "J2a_Mobs_closed_form",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "M_obs = cosh(r) I + sinh(r) B with the D1b closed values"
+  },
+  {
+    "claim_id": "J2_spectrum",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "spec(M_obs) = {e^r (x2), e^{-r} (x2)}",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "cosh r +- sinh r = e^{+-r}, each on the 2-dim eigenspaces of B. HOLDS IN THE RESCALED (canonical) coordinates.  In the original coordinates S^dag S has a different, gamma-dependent spectrum: the candidate spectrum is CONVENTION_DEPENDENT, valid exactly after the D4b normalization"
+  },
+  {
+    "claim_id": "J3_distance",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "d(I, M_obs) = ||log M_obs||_F = ||r B||_F = 2r = 2 log((w1+w2)/(w1-w2)). Trace metric normalized WITHOUT extra factor: <U,V> = tr(G^-1 U G^-1 V)"
+  },
+  {
+    "claim_id": "K1_r_exact",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "r = log((2 omega)/(2 eps)) = log(omega/eps) EXACTLY for w1 = omega + eps, w2 = omega - eps, 0 < eps < omega (not merely asymptotic)"
+  },
+  {
+    "claim_id": "K2_S_asymptotics",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "cosh(r/2) = (omega+eps)/(2 sqrt(omega eps)); sqrt(eps) cosh(r/2) -> sqrt(omega)/2",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "S' = cosh(r/2) I + sinh(r/2) B ~ (1/2) sqrt(omega/eps) (I + B) + O(sqrt(eps)): diverges like eps^{-1/2}, collapsing onto the rank-2 spectral projector (I+B)/2 of B.  S has NO finite limit; the similarity transformation degenerates, matching the known Jordan-block (exceptional-point) transition at w1 = w2"
+  },
+  {
+    "claim_id": "K3_distance_diverges",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "d(I, M_obs) = 2r = 2 log(omega/eps) -> +infinity as eps -> 0+",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "exact for all eps by J3 + K1; candidate confirmed"
+  },
+  {
+    "claim_id": "K4_no_scalar_normalization",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "spec(c M_obs) = {c omega/eps (x2), c eps/omega (x2)}; ratio (omega/eps)^2 -> inf",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "a finite nonzero limit of the top eigenvalue forces c ~ eps/omega, sending the bottom eigenvalue to 0: every scalar normalization has a degenerate (or divergent) limit.  PROVED: no scalar normalization gives a finite positive nondegenerate limit"
+  },
+  {
+    "claim_id": "L1_invariant_forms",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "H_J^dag eta = eta H_J forces [{a: 0, b_im: 0}]: eta = [[0, b],[b, d]] with b, d real",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "solved componentwise over real/imaginary parts; general solution is a 2-real-parameter family"
+  },
+  {
+    "claim_id": "L2_no_positive_form",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "det eta = -b_re**2 = -b^2",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "(1) nondegenerate => b != 0 => det < 0 => INDEFINITE. (2) PSD => principal minors >= 0 => det = -b^2 >= 0 => b = 0 => eta = diag(0, d): DEGENERATE. (3) positive-definite impossible: eta_11 = 0 = <e1, eta e1> with e1 != 0. All three parts proved"
+  },
+  {
+    "claim_id": "L3_general_n",
+    "parameters": "symbolic (gamma, w1, w2)",
+    "symbolic_result": "n = 5 instance: invariant eta is anti-triangular Hankel (constant anti-diagonals, vanishing above the anti-diagonal); eta_11 = 0",
+    "numerical_residual": null,
+    "status": "PROVED_SYMBOLICALLY",
+    "notes": "general n proof (report): N^T eta = eta N => eta_{j-1,k} = eta_{j,k-1} (Hankel) with boundary eta_{1,k} = 0 for k < n; then <e1, eta e1> = 0 kills positive-definiteness for every n >= 2; Hermitian + Hankel anti-triangular is indefinite when nondegenerate"
+  }
+]

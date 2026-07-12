@@ -1,0 +1,90 @@
+% Paper-ready theorem statements for the symplectic reconstruction of the
+% Pais--Uhlenbeck PT metric.  Each theorem cites its verification artifact:
+% [S] = symbolic/verify_sympy.py claim id, [L] = Lean theorem, [N] = numeric.
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\w}{\omega}
+\begin{document}
+
+\section*{Setting}
+$V=(x,y,p,q)^\top$, $[x,p]=[y,q]=i$, $J=\begin{psmallmatrix}0&I_2\\-I_2&0\end{psmallmatrix}$,
+$H_{PT}=\tfrac12 V^\top G V$ with the Pais--Uhlenbeck $G$; $\gamma>0$,
+$\w_1>\w_2>0$, $r=\log\frac{\w_1+\w_2}{\w_1-\w_2}$, $\sigma=\sqrt{\w_1^2-\w_2^2}$,
+$\alpha=r/(\gamma\w_1\w_2)$, $\beta=\alpha\gamma^2\w_1^2\w_2^2$,
+$Q=\alpha pq+\beta xy$, $K=JM$, $M$ the quadratic matrix of $Q$.
+
+\begin{theorem}[Convention; derived]\label{thm:conv}
+$[Q,V]=-iKV$ componentwise, and
+$e^{-Q/2}Ve^{Q/2}=SV$ with
+$S=e^{iK/2}=\cosh(r/2)\,I+i\,\sinh(r/2)\,K/r$.
+{\rm [S: C2, C3, D1; L: \texttt{K\_sq}]}
+\end{theorem}
+
+\begin{theorem}[Diagonalization]\label{thm:diag}
+$S^\top JS=J$, $\det S=1$, and $S^\top GS=G_0=
+\operatorname{diag}(\gamma\w_1^2,\gamma\w_1^2\w_2^2,\gamma^{-1},(\gamma\w_1^2)^{-1})$,
+with flow relation $S^{-1}(JG)S=JG_0$. The hyperbolic values are exact:
+$\cosh(r/2)=\w_1/\sigma$, $\sinh(r/2)=\w_2/\sigma$.
+{\rm [S: D2, D3, E1--E3, D1b; L: \texttt{S\_symplectic}, \texttt{S\_det}, \texttt{S\_congruence}]}
+\end{theorem}
+
+\begin{theorem}[Positivity requires a canonical rescaling]\label{thm:resc}
+$S\ne S^\dagger$ unless $\gamma\w_1\w_2=1$. For the symplectic rescaling
+$D=\operatorname{diag}(d_x,d_y,d_x^{-1},d_y^{-1})$, $S'=DSD^{-1}$ is Hermitian
+positive iff $d_xd_y=\gamma\w_1\w_2$; then $S'=\cosh(r/2)I+\sinh(r/2)B$ with a
+parameter-free Hermitian involution $B$ and $\operatorname{spec}S'=\{e^{\pm r/2}\}$,
+and $S'=(tI+B)/\sqrt{t^2-1}$, $t=\w_1/\w_2$.
+{\rm [S: D4a--D4f, F9]}
+\end{theorem}
+
+\begin{theorem}[Reconstruction without assuming $Q$]\label{thm:recon}
+Among all complex matrices with $S^\top JS=J$ and $S^\top G'S=G_0'$ (rescaled
+coordinates), the solution set is the coset $S'_+\cdot\mathrm{Stab}(J,G_0')$,
+there is a unique Hermitian positive-definite solution $S'_+$, and
+$\log S'_+=(r/2)B$ reconstructs exactly $Q=\alpha pq+\beta xy$.
+{\rm [S: F1--F8; N: uniqueness cross-check at four parameter points]}
+\end{theorem}
+
+\begin{theorem}[Stabilizer; corrected]\label{thm:stab}
+For $\w_1\ne\w_2$, $\mathrm{Stab}(J,G_0)\cong SO(2,\mathbb C)\times SO(2,\mathbb C)$
+(one complex rotation angle per mode); its unitary subgroup is $U(1)\times U(1)$.
+The positive polar factor of an admissible diagonalizer $S'_+C$ equals $S'_+$
+iff $C$ is unitary; hence it is constant exactly on the coset $S'_+\,U(1)^2$
+and \emph{not} unique over the full solution family.
+{\rm [S: F3, I2, I3 (explicit counterexample)]}
+\end{theorem}
+
+\begin{theorem}[Pseudo-Hermiticity and metric family]\label{thm:metric}
+At the formal algebraic level, $Q^\dagger=Q$, $\eta=e^{-Q}$ satisfies
+$H_{PT}^\dagger\eta=\eta H_{PT}$ (matrix form: $S^{2\top}GS^2=\overline G$),
+and $\eta'\mapsto W=\rho^{-\dagger}\eta'\rho^{-1}$ is a bijection between
+positive invertible intertwining metrics and $\{W>0:[W,h]=0\}$; $W=I$ gives
+$\eta$. Positivity and pseudo-Hermiticity do not imply uniqueness.
+{\rm [S: G1--G3, H1, H2]}
+\end{theorem}
+
+\begin{theorem}[Metric geometry and equal-frequency limit]\label{thm:geom}
+In the rescaled coordinates, $M_{\mathrm{obs}}=S'^\dagger S'=S'^2$ has spectrum
+$\{e^r,e^r,e^{-r},e^{-r}\}$ and affine-invariant distance
+$d(I,M_{\mathrm{obs}})=\|\log M_{\mathrm{obs}}\|_F=2r$. For
+$\w_{1,2}=\w\pm\epsilon$: $r=\log(\w/\epsilon)$ exactly, $S'$ diverges as
+$\tfrac12\sqrt{\w/\epsilon}\,(I+B)$, and no scalar normalization of
+$M_{\mathrm{obs}}$ has a finite positive nondegenerate limit.
+{\rm [S: J1--J3, K1--K4]}
+\end{theorem}
+
+\begin{theorem}[Jordan-block obstruction; Lean-formalized]\label{thm:jordan}
+For $H_J=\begin{psmallmatrix}\w&1\\0&\w\end{psmallmatrix}$, $\w\in\mathbb R$,
+every Hermitian solution of $H_J^\dagger\eta=\eta H_J$ has the form
+$\eta=\begin{psmallmatrix}0&b\\ b&d\end{psmallmatrix}$, $b,d\in\mathbb R$;
+consequently no positive-definite invariant form exists, every PSD invariant
+form is degenerate, and every nondegenerate one is indefinite. For the
+$n\times n$ block the invariant forms are anti-triangular Hankel with
+$\eta_{11}=0$, so the same trichotomy holds for all $n\ge2$.
+{\rm [L: \texttt{invariant\_form}, \texttt{no\_posdef}, \texttt{psd\_degenerate},
+\texttt{nondegenerate\_indefinite}; S: L1--L3]}
+\end{theorem}
+
+\end{document}
