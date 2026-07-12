@@ -74,14 +74,21 @@ holds only open items.
       2:1, 4:1 escape (odd-mode-2-transfer rule, mechanism open);
       R₃ = O(ε⁻⁹ᐟ²). Refined conjecture: p:q first obstructs at order
       p+q−2 for odd p.
-    - NEXT: (a) perfect-square vertex □φ(∂φ)² first-order 𝔬₊ with
-      split-mass regulator (kinematic protection noted in report;
-      compute δ→0 divergence + collinear □-factor question);
-      (b) Krein-side 𝔬_K (fix κ₀ conventions first); (c) order-4
-      kernel projection AT ω₁ = 5ω₂ only (not full R₄); (d) draft
-      paper 5 "Interaction Obstructions and Resonant Breakdown of the
-      Positive PU Metric" (team's 10-section outline; freeze the four
-      second-order theorems as core); (e) Einstein–Weyl cubic vertices.
+    - DONE (step 3): spectral PT-breaking VERIFIED at 3:1 (E=27ω₂
+      shell: κ± = 2.4488 ± 0.2246i, 13 digits; exact diagonalization
+      confirms pair in truncated spectrum ⇒ no positive metric exists
+      there at all); lowest doublet real; tongue δ_c = 38.4151λ²;
+      perfect-square vertex = ½λ_K(p₁²,p₂²,p₃²) with massless &
+      one-Jordan-leg vanishing, Jordan-PAIR coupling, threshold
+      factorization m₁²(m₁−2m₂)(m₁+2m₂). "Expanding hierarchy" (not
+      dense) wording adopted.
+    - NEXT: (a) perfect-square regulated first-order 𝔬₊ in full mode
+      language (transported vertex, δ→0 divergence of R₁, collinear
+      limit — the λ_K structure now gives the on-shell coefficients);
+      (b) Krein-side 𝔬_K with BT κ₀ conventions; (c) order-4 kernel
+      projection AT ω₁ = 5ω₂ only; (d) draft paper 5 (10-section
+      outline; four frozen theorems + spectral-breaking section);
+      (e) Einstein–Weyl cubic vertices.
 15. [ ] Paper 2 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness

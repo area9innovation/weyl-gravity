@@ -897,3 +897,52 @@ collinear obstruction distributionally. Then the parallel Krein 𝔬_K with
 κ₀ fixed. Paper 5 drafting (their title: "Interaction Obstructions and
 Resonant Breakdown of the Positive Pais–Uhlenbeck Metric") once the
 perfect-square first-order results are in.
+
+## Interaction-deformation, step 3 (2026-07-13): spectral PT-breaking + PS vertex
+
+Team's degenerate-PT results ALL VERIFIED + independently cross-checked
+(verify_pt_breaking.py, ALL PASS):
+
+**Spectral PT-breaking at 3:1 (PT1–PT4).**
+- E = 27ω₂ shell (10 states |j,27−3j⟩): second-order effective matrix is
+  real tridiagonal; their closed forms for the antisymmetric off-diagonal
+  K_{j,j+1} = −(27√3/640)√((j+1)n(n−1)(n−2)) and the diagonal
+  D(n₁,n₂) = (633n₁²−1836n₁n₂−285n₁+3969n₂²+3051n₂+818)/26880 confirmed
+  entrywise to 1e−8.
+- Spectrum: 8 real + one complex pair κ± = 2.448807382199 ±
+  0.224586593808i — matches the team to 13 digits. Lowest doublet
+  {|1,0⟩,|0,3⟩} stays REAL (diagonal shifts dominate): metric obstruction
+  ≠ automatic breaking of the lowest pair.
+- **Beyond formal PT**: exact diagonalization of the truncated h₀+λv at
+  λ = 0.02 (two cutoffs) exhibits the complex pair IN the spectrum:
+  Im = ±0.2246λ² to 0.5%, Re−27 = 2.4488λ² to 5 digits. ⇒ genuine
+  perturbative PT-breaking: wherever the pair persists, NO
+  positive-definite invariant metric exists (analytic or otherwise) —
+  the strong spectral conclusion, modulo the stated operator-theoretic
+  qualifications (formal PT, unbounded cubic).
+- **Tongue law**: detuned shell pencil diag(jδ) + λ²K goes complex for
+  |δ| < δ_c = 38.4151·λ² — exactly linear in λ² (multiplet constant).
+  (Fixed a bracket-initialization bug in my first search that saturated
+  at the initial guess.) Order-n resonance ⇒ O(λⁿ) tongue.
+
+**Perfect-square vertex (PS1–PS2).**
+- Symmetrized cubic vertex of □φ(∂φ)² == ½λ_K(p₁²,p₂²,p₃²) identically
+  (Källén polynomial), verified with explicit 4-vectors.
+- Selection rules: λ_K(0,0,0) = 0 (no on-shell massless 3-amplitude);
+  ∇λ_K|₀ = 0 (one generalized Jordan leg → zero); Hessian = (2,−2) ≠ 0
+  (Jordan legs couple in PAIRS — the ghost-parity-compatible structure);
+  threshold factorization λ_K(m₁²,m₂²,m₂²) = m₁²(m₁−2m₂)(m₁+2m₂):
+  the regulated 1→2 channel closes below m₁ = 2m₂ and the vertex
+  vanishes AT threshold.
+
+Wording correction adopted (team §5): the resonance set is an EXPANDING
+HIERARCHY, not (yet) dense — density would require general p:q loci,
+a separate selection-rule question.
+
+Three-mechanism picture now machine-verified end to end: (i) Jordan
+scaling R_n ~ ε^{−3n/2} (λ_c ~ ε^{3/2} conjecture), (ii) cohomological
+obstructions at interior resonances (3:1 order 2; 3:2 order 3), (iii)
+genuine spectral breaking in excited resonant multiplets. Opposite
+tendency for the perfect-square interaction (massless & one-Jordan-leg
+amplitudes vanish; pairs couple) — the clearest indication yet of why
+Krein/ghost-parity survives where the positive completion fails.
