@@ -1131,3 +1131,62 @@ oscillator-vs-continuum table → confluent parity theorem → discussion
 open and stated conditionally; 5:1 and EW-vertex predictions).
 Appendix maps all check IDs to theorems. Authors block as the series.
 Tag paper5-v1.0 at freeze.
+
+## Paper 5 referee pass + paper 0 revision (2026-07-13)
+
+**Paper 5 referee round (major revision applied).** Concrete errors
+verified first:
+- I.1 CONFIRMED: confluent matrix was the row-convention transpose;
+  column convention P_δ = [[0, 2/δ],[δ/2, 0]] (P c = (δ/2)d,
+  P d = (2/δ)c) — HX2/HX3 fixed, unboundedness/doubling conclusions
+  unchanged.
+- I.2 CONFIRMED: branch ratio is ρ± = ∓δ/(2g) (nullspace check); my
+  computations used g = 1 so numerics stand; convention now explicit.
+- I.3 CONFIRMED: 3:2 obstruction scales exactly as ω₂^{−13/2}
+  (ratio 2^{−13/2} between (6,4) and (3,2), exact) — dimensional
+  factor now stated.
+New certificates: **PT proposition** (𝒜 = Π∘K antiunitary, [𝒜,h_ζ] = 0,
+machine-verified — "PT breaking" now formally defined); **exact Sturm
+certificate** for the complex pair (tridiagonal ⇒ rational char poly;
+exact count: 8 real roots ⇒ exactly one complex pair; 30-digit
+enclosure); **exact R₁ Jordan asymptotics** (leading Laurent
+coefficients extracted: theorem for R₁; R₂/R₃ demoted to Computational
+Proposition per referee).
+All major revisions applied: new title "Interaction Obstructions,
+Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order
+Theories"; abstract → 4 results with inherited qualifications;
+chart-vs-global distinction for U↔V (exact symmetry of the EXTENDED
+theory; transition map singular at ψ = 0); "constant zero-action
+stationary backgrounds" wording; confluent theorem → "linearization of
+the exchange"; sector genericity narrowed to nonempty-open-subset with
+the exact point (no per-mass-pair claim); full normalization
+conventions for 401√6/39424; truncation completeness now a LEMMA with
+the surviving-spectator proof; finite-volume formulation of the kernel
+projection stated (Remark); gauge independence at 3:1 restated with
+the resonant quartic R₁-additions (already verified in ID9b) and the
+R₂-additions clarified as third-order; tongue = effective-multiplet
+statement + o(ζ²); O(ζⁿ) tongue = expectation, not proposition;
+Källén Jordan-leg claim → "second-order zero of the polynomial vertex
+factor"; six appendices with actual derivations (Moyal recursion,
+3:1 projection + gauge independence, shell matrix + charpoly, transfer
+lattice, field conventions + source formula + truncation proof,
+doubled parity); check-classification table (exact-symbolic /
+exact-rational / numeric). Authorship kept per Asger (non-traditional
+publication). 13 pp. clean.
+
+**Paper 0 revised per the team's specification**: abstract gains the
+paper-V paragraph (their wording); intro reframed as Stage 1 (free) /
+Stage 2 (interaction stability) with the machine-balance sentence; §3
+gains the three-level distinction + "solved locally / paper V
+determines where it survives" box; NEW §14 "When interactions are
+switched on" with five subsections (deformation equation with lay
+explanation, oscillator resonances + spectral breaking with the
+two-level caution, continuum mechanism, second-order timing via
+Källén/even-ghost, mirror Jordan sectors + confluent parity) +
+mechanism diagram (Figure 2) + terminology paragraph; gravity section
+gains "What Paper V predicts" (no failure claim — machinery +
+predictions only); §17 gains Paper V row + the program paragraph +
+Paper-V node in the dependency figure; open questions updated (field
+complex energies, superselection, EW vertices); conclusion → five-level
+hierarchy + "which completion survives the allowed interactions?".
+22 pp. (grew ~29%, within the spec's 25–35%), clean.

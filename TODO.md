@@ -107,11 +107,16 @@ holds only open items.
       THEOREM (P_δ unbounded in one sector; δ-independent sector
       exchange on the oppositely-oriented doubling). **PAPER 5 DRAFTED**
       (interaction-obstructions.tex, 12 pp.).
-    - NEXT (additions, not prerequisites): (a) 5:1 order-4 kernel
-      projection (tests hierarchy conjecture); (b) vacuum-overlap /
-      superselection analysis (finite-volume ⟨0_A|0_B⟩, zero modes);
-      (c) confluent-state R₁ matrix elements; (d) referee pass on
-      paper 5 when the team is ready; (e) EW cubic vertices (paper 6?).
+    - DONE (step 8): paper-5 referee pass applied (matrix convention,
+      ρ±=∓δ/(2g), ω₂^{−13/2} scale, PT proposition, exact Sturm
+      certificate, narrowed genericity, truncation lemma, chart
+      distinction, six derivation appendices, new title); paper 0
+      revised per team spec (new §14 interactions section, diagram,
+      terminology, five-level conclusion; 22 pp.).
+    - NEXT: (a) 5:1 order-4 kernel projection; (b) vacuum-overlap /
+      superselection analysis; (c) confluent-state R₁ matrix elements;
+      (d) field-theory spectral question (complex finite-volume
+      levels?); (e) EW cubic vertices (paper 6).
 15. [ ] Paper 2 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness

@@ -14,11 +14,14 @@ HX1  EXACT obstruction value.  At the clean center-of-mass point
      of the shell: the theorem-strength genericity statement.
 HX2  Confluent parity, single sector.  With P_delta b_pm = +- b_pm and
      the confluent Jordan basis c = (b+ + b-)/2, d = (b+ - b-)/delta:
-         P_delta = [[0, delta/2], [2/delta, 0]]
-     in the (c, d) basis (P c = (delta/2) d, P d = (2/delta) c);
+     P c = (delta/2) d and P d = (2/delta) c, i.e. in the standard
+     COLUMN-vector convention on the ordered basis (c, d)
+         P_delta = [[0, 2/delta], [delta/2, 0]];
      P^2 = 1 but NO bounded limit as delta -> 0: the regulated ghost
      parity cannot converge as a chain-preserving parity inside one
      Jordan sector (algebraic version of the PS-H no-go).
+     (Referee correction adopted: the earlier display was the row-
+     convention transpose.)
 HX3  Confluent parity, doubled space.  With the OPPOSITELY oriented
      confluent identification in sector B (c_B = (b+ - b-)/2,
      d_B = (b+ + b-)/delta), the cross parity b_pm^A <-> +- b_pm^B is
@@ -111,23 +114,25 @@ check("HX1: exact rational kinematic point (m_L, m_H) = (4, 6), "
 
 # ------------------------------- HX2 -----------------------------------------
 d = sp.Symbol("delta", positive=True)
-S = sp.Matrix([[sp.Rational(1, 2), sp.Rational(1, 2)], [1/d, -1/d]])
+# change-of-basis matrix: COLUMNS are the new basis vectors (c, d) in
+# branch coordinates; operator matrix in the new basis is C^{-1} P C
+C = sp.Matrix([[sp.Rational(1, 2), 1/d], [sp.Rational(1, 2), -1/d]])
 P = sp.diag(1, -1)
-P_conf = sp.simplify(S*P*S.inv())
-check("HX2: P_delta in the confluent basis is [[0, delta/2], "
-      "[2/delta, 0]] with P^2 = 1 and no bounded delta -> 0 limit "
-      "(no chain-preserving confluent parity in one sector)",
-      P_conf == sp.Matrix([[0, d/2], [2/d, 0]])
+P_conf = sp.simplify(C.inv()*P*C)
+check("HX2: P_delta in the confluent (c, d) basis, COLUMN convention, "
+      "is [[0, 2/delta], [delta/2, 0]] (P c = (delta/2) d, "
+      "P d = (2/delta) c) with P^2 = 1 and no bounded delta -> 0 limit",
+      P_conf == sp.Matrix([[0, 2/d], [d/2, 0]])
       and sp.simplify(P_conf*P_conf - sp.eye(2)) == sp.zeros(2, 2))
 
 # ------------------------------- HX3 -----------------------------------------
-SA = S
-SB = sp.Matrix([[sp.Rational(1, 2), -sp.Rational(1, 2)], [1/d, 1/d]])
+CA = C
+CB = sp.Matrix([[sp.Rational(1, 2), 1/d], [-sp.Rational(1, 2), 1/d]])
 kb = sp.zeros(4, 4)
 kb[0:2, 2:4] = sp.diag(1, -1)
 kb[2:4, 0:2] = sp.diag(1, -1)
-T = sp.diag(SA, SB)
-kc = sp.simplify(T*kb*T.inv())
+T = sp.diag(CA, CB)
+kc = sp.simplify(T.inv()*kb*T)
 X = sp.zeros(4, 4); X[0, 2] = X[1, 3] = X[2, 0] = X[3, 1] = 1
 check("HX3: with oppositely oriented confluent identification in sector "
       "B, the cross parity equals the delta-INDEPENDENT sector exchange "

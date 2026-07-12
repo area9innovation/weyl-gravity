@@ -3,7 +3,7 @@
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{xcolor}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning,shapes.misc}
+\usetikzlibrary{arrows.meta,positioning,shapes.misc,calc}
 \usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -54,7 +54,7 @@ oscillator, the simplest fourth-order system, can be converted into two
 positive oscillators by a nonunitary similarity transformation and
 quantized with a positive inner product; more recently, Bateman and
 Turok developed a different treatment of the resonant massless theory
-using a Krein space and a hidden ghost-parity symmetry.  The four
+using a Krein space and a hidden ghost-parity symmetry.  The five
 technical papers introduced here do not replace those constructions.
 They explain their mathematical status, classify their ambiguities,
 identify the geometry that selects the Bender--Mannheim metric, connect
@@ -67,7 +67,18 @@ Krein descriptions can agree on complex correlation functions while
 disagreeing about which fields are real, which operators are Hermitian,
 and how probabilities are represented.  At resonance the positive
 diagonalizing metric terminates, but the vacuum covariance can remain
-regular and continue into a Jordan theory.
+regular and continue into a Jordan theory.  Extending the free
+classification to interactions, a fifth paper formulates a deformation
+problem for the positive metric and the Krein involution.  The positive
+Pais--Uhlenbeck metric deforms perturbatively at generic frequencies,
+but exact energy-conserving conversion processes generate obstruction
+classes.  In the oscillator these occur on isolated rational resonance
+loci and can produce complex-conjugate spectral pairs; in the field
+theory, continuous momentum makes the corresponding branch-changing
+scattering shells generic.  The massless perfect-square theory
+nevertheless possesses an exact nonlinear two-sector involution, showing
+that failure of a positive pointed-sector completion does not imply
+absence of a doubled Krein-type structure.
 \end{abstract}
 
 \tableofcontents
@@ -117,16 +128,28 @@ The classical theorem of Ostrogradsky \cite{Ostrogradsky} explains why
 the Hamiltonian obtained from a nondegenerate higher-derivative
 Lagrangian is generically unbounded in its canonical momenta (see
 \cite{Woodard} for a modern review).  But that theorem does not by itself
-answer every quantum question.  In particular, it does not determine:
-\begin{itemize}
-\item which complex contour or real form should be used;
-\item which inner product defines probabilities;
-\item which variables are physical observables;
-\item whether the spectrum can be made positive;
-\item whether a modewise construction extends to a field theory;
-\item or what happens when two frequencies coincide.
-\end{itemize}
-These distinctions are central to everything that follows.
+answer every quantum question.  The questions divide into two stages.
+
+\emph{Stage 1 --- the free theory.}  Can the Hamiltonian be
+diagonalized?  Can a positive inner product be found?  Which variables
+count as real?  What happens at the Jordan limit where two frequencies
+coincide?
+
+\emph{Stage 2 --- interaction stability.}  Can the inner product be
+deformed when interactions are added?  Can ghost parity remain
+conserved when particles convert into one another?  Do
+energy-conserving processes obstruct the deformation?  Does an exact
+doubled symmetry survive even if each individual sector fails?
+
+Solving the free Hamiltonian does not settle the interacting ghost
+problem.  A free ghost resolution is analogous to balancing a machine
+while its parts move independently; interactions test whether the
+balance survives when the parts exchange energy.  Both stages are
+central to everything that follows: Sections~\ref{sec:why}--%
+\ref{sec:hadamard} treat the free theory,
+Section~\ref{sec:interactions} the interacting one, and
+Sections~\ref{sec:gravity}--\ref{sec:conformal} the gravitational
+application.
 
 \section{The Pais--Uhlenbeck oscillator as a microscope}\label{sec:pu}
 
@@ -195,6 +218,15 @@ norms and a positive spectrum.  Thus an important version of the ghost
 problem was already solved:
 \keybox{The free unequal-frequency Pais--Uhlenbeck oscillator admits a
 positive-metric quantization.}
+Three levels must nevertheless be distinguished, and the series
+addresses each in turn: the \emph{free spectral solution} (the free
+oscillator maps to a positive two-oscillator Hamiltonian);
+\emph{perturbative interaction stability} (the metric can be deformed
+away from on-shell resonances); and \emph{global interacting viability}
+(energy-conserving conversion processes may obstruct the deformation
+and, in finite resonant systems, produce complex spectra).  In short:
+\keybox{The free ghost problem was solved locally; Paper~V determines
+where that solution survives interaction.}
 
 What remained unclear was the mathematical status of the construction.
 Why does the particular operator $Q$ appear?  Is it an ansatz or a
@@ -663,6 +695,225 @@ singularity: the vacuum can be globally unusual in its real form or
 representation, yet locally well behaved in the microlocal sense required
 for renormalized observables \cite{BrunettiFredenhagen,HollandsWald}.
 
+\section{When interactions are switched on}\label{sec:interactions}
+
+Everything so far concerns free theories.  The fifth paper of the
+series \cite{paperV} asks the next question: can the free positive or
+Krein structure be continuously deformed when nonlinear processes are
+switched on?  The answer has four parts: generically yes at low
+perturbative order away from resonances; no on specific
+energy-conserving conversion channels; in field theory such channels
+become generic because momentum is continuous; and an exact doubled
+sector-exchange symmetry can survive even though positive
+pointed-sector metrics fail.  Figure~\ref{fig:interactions} summarizes
+the mechanism.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  box/.style={draw, rounded corners, align=center, inner sep=5pt,
+              font=\small},
+  arr/.style={-{Stealth}, thick},
+  lab/.style={font=\scriptsize\itshape}]
+\node[box, fill=blue!6] (free) {free split theory};
+\node[box, fill=green!8, right=18mm of free] (pos)
+  {positive normal form};
+\node[box, fill=orange!8, below=10mm of free] (conv)
+  {on-shell conversion\\ process};
+\node[box, fill=red!10, below=10mm of pos] (obst)
+  {obstruction};
+\node[box, below left=9mm and -14mm of conv, text width=40mm]
+  (osc) {\textbf{finite oscillator:}\\ isolated rational resonances};
+\node[box, below right=9mm and -14mm of obst, text width=40mm]
+  (fld) {\textbf{field theory:}\\ generic scattering shells};
+\node[box, fill=violet!8, below=42mm of $(conv)!0.5!(obst)$,
+      text width=72mm]
+  (dbl) {\textbf{massless perfect-square boundary:}\\
+         doubled mirror Jordan sectors with exact exchange};
+\draw[arr] (free) -- (pos) node[midway, above, lab]{positive metric};
+\draw[arr] (free) -- (conv) node[midway, left, lab]{interaction};
+\draw[arr] (pos) -- (obst) node[midway, right, lab]{metric deformation};
+\draw[arr] (conv) -- (obst);
+\draw[arr] (conv) -- (osc);
+\draw[arr] (obst) -- (fld);
+\draw[arr] (osc.south) -- (dbl.north west);
+\draw[arr] (fld.south) -- (dbl.north east);
+\end{tikzpicture}
+\caption{The interaction mechanism of \cite{paperV}: metric deformation
+meets on-shell conversion; isolated resonances in the oscillator become
+generic scattering shells in the field theory; at the massless boundary
+a doubled exchange structure survives.}
+\label{fig:interactions}
+\end{figure}
+
+\subsection{Deforming the positive metric}
+
+Perturb the free theory, $H_\zeta=H_0+\zeta V$, and recall the free
+Dyson map with $\rho_0H_0\rho_0^{-1}=h_0=h_0^{\dg}$.  One seeks a
+corrected map
+\begin{equation}
+\rho_\zeta=e^{-\frac12(\zeta R_1+\zeta^2R_2+\cdots)}\rho_0,
+\end{equation}
+keeping the transformed Hamiltonian Hermitian order by order.  At first
+order,
+\begin{equation}
+[h_0,R_1]=v^{\dg}-v,
+\qquad v=\rho_0V\rho_0^{-1}.
+\end{equation}
+The interaction introduces a new ``bad'' non-Hermitian part, and the
+correction $R_1$ asks whether the measuring geometry can be adjusted to
+absorb it.  The key principle is simple: a correction can remove terms
+that move states between \emph{different} energies; it cannot remove a
+term that acts entirely among states with exactly the \emph{same}
+energy.  When two states have different energies, the metric can
+distinguish them; when they have exactly equal energy, the interaction
+is resonant and cannot be rotated away.  Technically, the obstruction is
+the energy-conserving part of the source,
+\begin{equation}
+\mathfrak o_+=\Pi_{\ker\operatorname{ad}_{h_0}}S ,
+\end{equation}
+the projection onto processes satisfying exact free-energy
+conservation.
+
+\subsection{A finite oscillator fails only at special resonances}
+
+For the cubic PU interaction at generic unequal frequencies, the
+positive metric can be corrected through the computed orders --- the
+explicit generators exist and the transformed Hamiltonian is Hermitian.
+But at
+\begin{equation}
+\w_1=3\w_2,
+\end{equation}
+one high-frequency quantum can convert into three low-frequency quanta
+without changing the total energy, and the second-order correction is
+obstructed by exactly that conversion operator,
+$a_1a_2^{\dg3}-a_1^{\dg}a_2^3$.  At $2\w_1=3\w_2$ a third-order
+obstruction appears.  Imagine two musical notes: usually they are
+unrelated, but if one note has exactly three times the frequency of the
+other, one vibration can split into three without changing the total
+energy --- at that point the interaction is perfectly synchronized with
+the system.
+
+The $3{:}1$ obstruction is more than a failure of one formula.
+Sufficiently excited resonant multiplets develop complex-conjugate
+energies, $E_\pm=E_R\pm i\Gamma$, at second order --- certified exactly
+in \cite{paperV}.  Where the complex pair persists, no positive-definite
+invariant metric can make the Hamiltonian equivalent to an ordinary
+self-adjoint one.  Two levels of conclusion must not be merged: this
+complex-spectrum statement is established in the verified resonant
+oscillator setting; the field-theory result below is presently a
+perturbative metric obstruction, not yet a demonstrated complex
+spectrum.
+
+\subsection{The momentum continuum turns exceptional resonances into
+ordinary scattering}
+
+For an oscillator, the frequencies are fixed numbers and exact
+resonances require special ratios.  For a field,
+$E_a(k)=\sqrt{k^2+m_a^2}$, and momenta vary continuously: one can
+satisfy
+\begin{equation}
+E_H(k_1)+E_L(k_2)=E_L(k_3)+E_L(k_4)
+\end{equation}
+together with momentum conservation on open sets of scattering data,
+for \emph{any} split masses.  The key process is the branch-changing
+scattering $H+L\to L+L$.  Paper~V shows that the second-order
+positive-metric source is nonzero on an open part of this shell: the
+continuum turns the oscillator's isolated resonance obstruction into a
+generic scattering-shell obstruction.  In a small mechanical system,
+resonance requires the machine to be tuned to a special ratio; in a
+field, particles can change their momentum, and even if their masses
+are not specially tuned, their motion can supply the exact energy
+match.
+
+The canonical positive completion therefore remains meaningful locally
+and perturbatively away from resonant processes, but it cannot
+generally be deformed into a positive pointed-sector metric once
+branch-changing scattering becomes exactly energy conserving.  One
+qualification is essential: this establishes that \emph{no analytic
+deformation of the canonical metric} exists there --- not that no
+conceivable positive completion of any kind exists.  For the oscillator
+with certified complex energies the stronger conclusion is available;
+for the field theory the perturbative statement is what is proved.
+
+\subsection{Why the obstruction waits until second order}
+
+The perfect-square cubic vertex is exactly the K\"all\'en polynomial,
+$\mathcal V_3=\tfrac12\lambda_{\mathrm K}(p_1^2,p_2^2,p_3^2)$
+(Section~\ref{sec:hadamard} notation).  It vanishes for three ordinary
+massless legs and has a second-order zero at the confluent massless
+point; and the transported reality factors eliminate the first-order
+positive obstruction on the physically open decay channel.  So the
+positive metric survives the first test.  But at second order, two
+cubic interactions combine into a branch-changing $2\to2$ process, and
+the obstruction appears: a single interaction event is too constrained
+to cause the problem, while two interaction events in sequence can
+convert the particles while preserving total energy --- and that is
+where the positive geometry fails.
+
+\subsection{A different structure survives: two mirror Jordan sectors}
+
+The perfect-square theory admits an exact rewriting.  Introducing an
+auxiliary field and the nonlinear change of variables
+$U=e^{\lambda\phi}$, $V=(\psi/\lambda)e^{-\lambda\phi}$,
+\begin{equation}
+\mathcal L=-\partial_\mu U\,\partial^\mu V
++\frac{\lambda^2}{2}U^2V^2 .
+\end{equation}
+The constant zero-potential stationary backgrounds form two branches,
+$(U_0,0)$ and $(0,V_0)$, and the exact exchange $U\leftrightarrow V$
+maps one branch to the other.  Around $(1,0)$ the linearized equations
+are $\Box v=0$, $\Box u=\lambda^2v$ --- a Jordan chain generated by the
+interaction itself; around $(0,1)$ the chain has the opposite
+orientation.  The complete theory thus has two mirror valleys: choosing
+one valley gives one orientation of the Jordan system, and the exact
+symmetry does not rearrange particles inside that valley --- it carries
+the entire valley to its mirror.
+
+Three distinctions matter here.  The exact symmetry belongs globally to
+the \emph{extended} $(U,V)$ theory; its expression in the original
+$(\phi,\psi)$ variables is a chart-transition map, singular at the
+chosen perturbative vacuum; and it is not a ghost-number sign inside
+one Fock sector.  It may ultimately form part of an antiunitary
+CPT-like structure, but what is proved is a linear sector exchange, not
+a quantum CPT theorem.
+
+Finally, the ordinary split-theory ghost parity becomes singular at the
+merge.  In the confluent Jordan basis $c=(b_++b_-)/2$,
+$d=(b_+-b_-)/\delta$, the branch parity becomes
+\begin{equation}
+P_\delta=
+\begin{pmatrix}0&2/\delta\\ \delta/2&0\end{pmatrix},
+\qquad P_\delta^2=1,
+\end{equation}
+with no bounded limit on a single Jordan chain: as the two particle
+types merge, the old rule ``one is even and one is odd'' becomes
+infinitely badly conditioned.  The only finite remnant is to exchange
+the entire Jordan system with its mirror copy: after doubling by the
+oppositely oriented sector, the singular parity becomes a finite sector
+exchange --- the linearization of the exact $U\leftrightarrow V$
+symmetry around the two mirror backgrounds.
+
+\paragraph{Terminology.}
+\emph{Positive pseudo-Hermitian metric}: a positive inner product
+obtained by changing the adjoint through a Dyson map.
+\emph{Metric deformation}: an order-by-order correction of that inner
+product after an interaction is introduced.
+\emph{Obstruction}: the energy-conserving part of the unwanted
+non-Hermitian interaction that cannot be generated by a metric
+correction.
+\emph{Pointed sector}: a quantum construction built around one selected
+vacuum background.
+\emph{Doubled theory}: a completion containing both mirror Jordan
+sectors.
+\emph{Sector-exchange involution}: the exact map exchanging the two
+mirror backgrounds and reversing the Jordan-chain orientation.
+\emph{Spectral breaking}: the appearance of complex-conjugate energy
+levels, which excludes a positive invariant metric where the complex
+spectrum persists.  ``Ghost parity'' is used only with a qualifier:
+split branch-number parity, the exact $U\leftrightarrow V$ exchange, or
+a (future) antiunitary CPT-like operation are different objects.
+
 \section{Why gravity is not merely five copies of the oscillator}
 \label{sec:gravity}
 
@@ -754,6 +1005,21 @@ space, as in \cite{Maldacena}, and the richer phase diagram at nonzero
 cosmological constant \cite{LuPope,DeserWaldron}, are related but
 distinct stories.)
 
+\paragraph{What Paper V predicts for interacting gravity.}
+The interaction results of Section~\ref{sec:interactions} have not yet
+been carried out for gravity, but they supply the machinery and the
+expected shape.  The massive spin-$2$ multiplet can participate in
+branch-changing processes such as $h+h\leftrightarrow M$,
+$h+M\leftrightarrow h+h$, and $M+M\leftrightarrow h+M$, depending on
+kinematics and the cubic vertices.  The natural test is: construct the
+free positive real form of the massive spin-$2$ sector; transport the
+cubic Einstein--Weyl vertices; project their anti-Hermitian parts onto
+energy-conserving scattering shells; test whether the positive metric
+deformation is obstructed; and search for any doubled or CPT-compatible
+completion.  Interacting gravity has \emph{not} been shown to fail;
+what Paper~V supplies is the obstruction machinery, and it makes
+branch-changing gravitational scattering the natural next calculation.
+
 \section{What was already solved, and what is new}\label{sec:new}
 
 It is important not to claim that earlier work failed to solve anything.
@@ -781,7 +1047,29 @@ confluent limit, and its fourth-order Hadamard structure.
 covariance change the classification in gravity: the helicity
 stratification, the exclusion of covariant hybrid completions, and the
 conformal Jordan boundary.
+\item[Paper V \cite{paperV}] tests which free completions survive
+interactions: the deformation and obstruction theory of
+Section~\ref{sec:interactions} --- generic deformability, resonance
+obstructions, spectral complexification, the generic continuum shell
+obstruction, and the exact doubled sector-exchange symmetry.
 \end{description}
+
+In one paragraph: the five papers develop a progression from free
+classification to interacting obstruction theory.  The first two derive
+and geometrically characterize the canonical positive Pais--Uhlenbeck
+metric.  The third separates this metric from the universal complex
+vacuum covariance and follows the theory to its Jordan boundary.  The
+fourth determines how gauge reduction and Lorentz covariance modify the
+classification in quadratic gravity.  The fifth asks whether the free
+completions survive interactions: the positive metric deforms away from
+resonances but is obstructed by exactly energy-conserving
+branch-changing processes --- on isolated rational loci in the
+oscillator and on generic scattering shells in the field theory ---
+while at the massless perfect-square boundary an exact doubled exchange
+survives between two oppositely oriented Jordan sectors.  The resulting
+question is no longer simply whether a ghost can be assigned positive
+norm, but which real form and completion remain compatible with the
+actual interactions of the theory.
 
 \begin{figure}[t]
 \centering
@@ -817,8 +1105,15 @@ conformal Jordan boundary.
 \draw[arr] (p2) -- (p4) node[lab, right]{Cartan geometry};
 \draw[arr] (p1.south east) -- (p4.north west)
   node[lab, sloped, above, pos=0.7]{PU blocks};
+\node[pap, fill=red!5, below=12mm of $(p3)!0.5!(p4)$] (p5)
+  {\textbf{Paper V} \cite{paperV}\\
+   interactions: deformation complex;\\
+   resonance obstructions, PT breaking;\\
+   generic shells; doubled exchange};
+\draw[arr] (p3) -- (p5) node[lab, left]{modewise metric};
+\draw[arr] (p4) -- (p5) node[lab, right]{next: EW vertices};
 \end{tikzpicture}
-\caption{Dependency structure of the four technical papers.}
+\caption{Dependency structure of the five technical papers.}
 \label{fig:dependency}
 \end{figure}
 
@@ -832,26 +1127,30 @@ Jordan degeneration.}
 
 \section{What remains open}\label{sec:open}
 
-The papers concern free or linearized theories.  They do not yet prove
-that an interacting fourth-order gravitational theory is unitary.
-Interactions raise new questions.
+The first interaction-level answers are now in
+(Section~\ref{sec:interactions}), but they sharpen rather than exhaust
+the open questions.
 
-For the positive completion: Is the rotated reality condition preserved
-by cubic and higher vertices?  Does the interacting Hamiltonian remain
-pseudo-Hermitian?  Can a common physical domain be defined?  Does
-renormalization preserve the metric structure?  (See \cite{QQG2024} for a
-recent PT-based proposal at the interacting level.)
+For the positive completion: the deformation exists away from
+resonances, but does any nonanalytic or differently pointed positive
+completion evade the shell obstruction?  Does the field theory, like
+the oscillator, develop complex energies (complex finite-volume levels
+or non-real resonance poles)?  Does renormalization preserve the metric
+structure?  (See \cite{QQG2024} for a recent PT-based proposal at the
+interacting level.)
 
-For the Krein completion: Does ghost parity commute with the interaction?
-Is it compatible with BRST symmetry?  Does it survive quantum anomalies
-and renormalization?  Can a consistent probability interpretation be
-maintained for scattering states?
+For the doubled structure: can the exact sector exchange be implemented
+as an operator on a quantum completion?  Are the two pointed sectors
+superselected in infinite volume, or do parity vacua
+$(|0_A\rangle\pm|0_B\rangle)/\sqrt2$ exist?  Can a probability
+interpretation be built on the doubled space, and is the exchange part
+of an antiunitary CPT-like operation?
 
-For gravity: Does the real-form classification survive on curved
-backgrounds?  How does the picture change with a cosmological constant
-\cite{LuPope,DeserWaldron}?  What happens at partially massless or
-critical points?  Can the gauge-invariant curvature algebra support an
-interacting construction?
+For gravity: do the cubic Einstein--Weyl vertices obstruct the positive
+real form of the massive spin-$2$ sector through branch-changing
+scattering, as Paper~V's machinery predicts is testable?  Does the
+real-form classification survive on curved backgrounds and at nonzero
+cosmological constant \cite{LuPope,DeserWaldron}?
 
 These are no longer vague versions of ``does the ghost go away?''  They
 are concrete algebraic and analytic tests.
@@ -863,31 +1162,47 @@ classical stability, spectral boundedness, norm positivity, field
 reality, vacuum covariance, representation theory, gauge reduction, and
 Jordan degeneration.
 
+The results now form a five-level hierarchy:
+\keybox{1. The free complex spectral theory can be identified.\\
+2. Its positive and Krein real forms can be classified.\\
+3. The canonical positive metric is geometrically selected.\\
+4. Interactions test the deformability of these real forms.\\
+5. On-shell conversion processes generate genuine obstructions.}
 The PU oscillator shows that a Hamiltonian that appears ghostlike in one
-real form may possess a positive pseudo-Hermitian completion in another.
-The minimum-distortion theorem explains why the Bender--Mannheim metric
-is geometrically canonical.  The field theory shows that the metric may
-become singular while the complex vacuum covariance remains regular.
-Krein quantization supplies a natural standard-reality completion at the
-Jordan boundary.  Gravity adds gauge symmetry and Lorentz covariance,
-which remove some pairings and force the massive spin-$2$ multiplet to be
-treated as a whole.
+real form may possess a positive pseudo-Hermitian completion in another;
+the minimum-distortion theorem explains why the Bender--Mannheim metric
+is geometrically canonical; the free field theory shows that the metric
+may become singular while the complex vacuum covariance remains regular;
+and gravity adds gauge symmetry and Lorentz covariance, which remove
+some pairings and force the massive spin-$2$ multiplet to be treated as
+a whole.
+
+The interaction results complete the picture: the positive
+pseudo-Hermitian construction is a valid local resolution of the free
+and nonresonant weakly interacting theory.  It is not generically
+stable under exactly energy-conserving branch-changing processes.  In
+field theory, the momentum continuum makes such processes far more
+common than in a finite oscillator.  At the massless perfect-square
+boundary, the surviving structure is instead an exact exchange between
+two oppositely oriented Jordan sectors.
 
 The resulting view is neither that higher-derivative ghosts are
 automatically harmless nor that they automatically invalidate a theory.
-It is that the correct question is more structured:
-\keybox{Which complex dynamics, real form, involution, observable
-algebra, and completion are being used?}
-Once those ingredients are separated, the existing positive and
-indefinite constructions cease to look like unrelated tricks.  They
-become different parts of one geometric and representation-theoretic
+The refined question is:
+\keybox{Not ``Can the ghost be removed?''\ but ``Which completion
+survives the allowed interactions?''}
+Once the ingredients --- complex dynamics, real form, involution,
+observable algebra, completion, and now interaction stability --- are
+separated, the existing positive and indefinite constructions cease to
+look like unrelated tricks.  They become different parts of one
+geometric, representation-theoretic, and deformation-theoretic
 framework.
 
 \paragraph{Verification.}
 Every finite-dimensional, variational, symplectic, and modewise
 distributional identity quoted in this introduction is machine-verified
 in the repository accompanying the series
-\cite{paperI,paperII,paperIII,paperIV} (symbolic SymPy audits,
+\cite{paperI,paperII,paperIII,paperIV,paperV} (symbolic SymPy audits,
 high-precision numerical regression, and a Lean~4 formalization of the
 paper-I core with zero unproved placeholders); the technical papers state
 precisely which of their conclusions are analytic rather than
@@ -974,6 +1289,10 @@ orbits, Fock sectors, and the Krein boundary}, companion paper
 \emph{Gauge reduction and the completion problem in fourth-order gravity:
 PU pairing, covariant real forms, and the conformal Jordan boundary},
 companion paper (Paper~IV), 2026.
+
+\bibitem{paperV}
+\emph{Interaction obstructions, resonant PT breaking, and doubled Jordan
+symmetry in fourth-order theories}, companion paper (Paper~V), 2026.
 
 \bibitem{Folland}
 G.~B.~Folland,
