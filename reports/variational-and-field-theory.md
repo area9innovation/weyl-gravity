@@ -806,3 +806,47 @@ per-mode overlap 1) vs auxiliary identity embedding (√3/2, 1/3),
 helicity stratification 2Γ_PU ⊕ 2Γ₋ ⊕ Γ₋, Schur no-hybrid, conformal
 count 4+2+0 = 6, PU metric-constancy safe (real minimizers). README
 gains the paper-0 row.
+
+## Interaction-deformation program, step 1 (2026-07-13)
+
+New direction from the other team: deform the two real forms under
+interaction; obstruction classes 𝔬₊(V) = Π_ker ad_{h₀}(v†−v) (positive
+form) and 𝔬_K(V) = Π_ker ad_{H₀}[κ₀,V] (Krein form). They supplied the
+first-order theory for the cubic PU vertex V = −iy³.
+
+**Their first-order claims: ALL VERIFIED** (verify_interaction_
+deformation.py, ID1–ID5, exact Weyl/Moyal calculus): transported vertex
+v = −i(cy+isp)³ with v†−v = 2ic(c²y³−3s²yp²); their explicit Weyl-ordered
+R₁ (eq 5.1) solves [h₀,R₁] = v†−v exactly for all ω₁>ω₂>0 (denominator
+4ω₁²−ω₂² safe); equivalent Hermitian interaction s(3c²y²p−s²p³); scalings
+c~s~√ω/(2√ε), R₁ = O(ε^{−3/2}) vs Q₀ = O(log ε⁻¹).
+
+**Second order COMPUTED (new, ID6–ID10):**
+1. Generic (incommensurate) frequencies: 𝔬₊^(2) = Π_ker(½[R₁,v+v†]) = 0.
+   R₂ exists, Hermitian; END-TO-END check: h_λ = e^{−X/2}⋆(h₀+λv)⋆e^{X/2}
+   with X = λR₁+λ²R₂ is Hermitian through O(λ²) (validates their eq 8.1,
+   including the ⅛[[h₀,R₁],R₁] term and the Λ³ Moyal constant).
+2. R₂ carries resonance denominators (ω₁−ω₂) AND (ω₁−3ω₂): an INTERIOR
+   3:1 resonance locus, invisible at first order.
+3. **AT ω₁ = 3ω₂ the positive form is OBSTRUCTED at second order**:
+   𝔬₊^(2) = 27√3/(320ω₂⁴)·(a₁a₂†³ − a₁†a₂³) exactly — the on-shell
+   1-quantum ↔ 3-quanta conversion vertex. UNREMOVABLE by any first-order
+   freedom (checked: Π_ker([G, v+v†]) = Π_ker([v−v†, G]) = 0 for the
+   on-shell quartet K± and all quadratic invariants N₁,N₂,N²-type).
+   Physics: perturbative PT-breaking (complex eigenvalue pairs) at the
+   internal resonance — the ghost branch acquires a decay-like channel
+   that no metric can hide.
+4. ε-scaling: R₂ = O(ε^{−3}) (measured −2.94, −3.00 per decade) — the
+   naive (ε^{−3/2})² with NO small-denominator enhancement from ω₁−ω₂
+   (those source components are suppressed). Geometric hierarchy
+   R_n ~ ε^{−3n/2} ⇒ conjectured deformation radius of convergence
+   λ_c ~ ε^{3/2} → 0 at the Jordan boundary. Refines the team's
+   hypothesis: the positive form deforms generically but (a) fails on a
+   dense-in-frequency-ratio set of interior resonance loci as order
+   grows (ω₁ = 3ω₂ at n=2; expect ω₁ = 5ω₂, 5ω₂→? at higher orders),
+   and (b) has vanishing convergence radius at resonance.
+
+Next per the team's program: first-order obstruction for the
+perfect-square vertex □φ(∂φ)² (mass-regulated split, transport, 𝔬₊ and
+𝔬_K, remove splitting); then the Einstein–Weyl cubic vertices. The Krein
+side needs the κ₀ conventions fixed first.

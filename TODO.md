@@ -59,9 +59,18 @@ holds only open items.
 
 ## Research continuations (from the papers' own outlooks)
 
-14. [ ] Paper 4 interaction diagnostic: [P_ghost, S_int] = 0 at cubic
-    order for the gravitational Krein form; rotated-reality
-    compatibility with cubic Weyl vertices for the positive form.
+14. [~] Interaction-deformation program (other team's direction,
+    2026-07-13, ACTIVE — see reports entry + verify_interaction_
+    deformation.py ID1–ID10 ALL PASS):
+    - DONE: cubic PU first order verified (their R₁ exact); second
+      order computed: generic unobstructed w/ end-to-end O(λ²)
+      Hermiticity; **obstruction 27√3/(320ω₂⁴)(a₁a₂†³−a₁†a₂³) at
+      ω₁ = 3ω₂, unremovable**; R₂ = O(ε⁻³) ⇒ R_n ~ ε^{−3n/2},
+      λ_c ~ ε^{3/2} conjecture.
+    - NEXT: (a) third order at generic ω (test ω₁ = 5ω₂ locus + ε⁻⁹ᐟ²);
+      (b) perfect-square vertex □φ(∂φ)² first-order 𝔬₊ with mass
+      regulator; (c) Krein-side 𝔬_K (fix κ₀ conventions first);
+      (d) Einstein–Weyl cubic vertices (hhM, hMM, MMM).
 15. [ ] Paper 2 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness
