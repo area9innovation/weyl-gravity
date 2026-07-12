@@ -370,9 +370,18 @@ X_2=\frac{P_2A_0'P_2}{\w_2},\qquad
 X_j^2=-P_j .
 \end{equation}
 Explicitly $X_1$ acts on $(x,p)$ by
-$\left(\begin{smallmatrix}0&\w_2\\-\w_2^{-1}&0\end{smallmatrix}\right)$ and
-$X_2$ on $(y,q)$ by
-$\left(\begin{smallmatrix}0&\w_1^{-1}\\-\w_1&0\end{smallmatrix}\right)$.
+$\left(\begin{smallmatrix}0&\lambda_1\\-\lambda_1^{-1}&0\end{smallmatrix}\right)$
+and $X_2$ on $(y,q)$ by
+$\left(\begin{smallmatrix}0&\lambda_2^{-1}\\-\lambda_2&0\end{smallmatrix}\right)$,
+where $\lambda_1,\lambda_2>0$ are the \emph{dimensionless mode-aspect
+parameters} of the chosen canonical coordinates: with $\hbar=1$ and the
+symmetric split $d_x=d_y$ they take the values $\lambda_1=\w_2$,
+$\lambda_2=\w_1$ in normalized units, and a residual split $d_x/d_y$
+rescales them individually while preserving the split-invariant ratio
+$\lambda_1/\lambda_2=\w_2/\w_1<1$.  All exceptional conditions below are
+alignments $\lambda_j=1$ of a mode aspect with the canonical split ---
+comparisons of dimensionless quantities, not of frequencies with the
+number $1$.
 
 \begin{lemma}[Stabilizer]\label{lem:stabilizer}
 For $\w_1\neq\w_2$,
@@ -428,14 +437,15 @@ $(x,p)/(p,x)$ and $(y,q)/(q,y)$,
 \qquad
 \sin\theta_2=-\w_1^2\,\overline{\sin\theta_2} .
 \end{equation}
-Taking absolute values, $\w_2^2\,|\sin\theta_1|=|\sin\theta_1|$ and
-$|\sin\theta_2|=\w_1^2\,|\sin\theta_2|$; hence $\sin\theta_1=0$ unless
-$\w_2=1$ and $\sin\theta_2=0$ unless $\w_1=1$, and these two exceptional
-cases cannot occur simultaneously since $\w_1>\w_2$.  If $\w_2=1$, the
-$(y,q)$ condition still gives $\sin\theta_2=0$, and the entry pair
+Taking absolute values, $\lambda_1^2\,|\sin\theta_1|=|\sin\theta_1|$ and
+$|\sin\theta_2|=\lambda_2^2\,|\sin\theta_2|$; hence $\sin\theta_1=0$ unless
+$\lambda_1=1$ and $\sin\theta_2=0$ unless $\lambda_2=1$, and these two
+exceptional alignments cannot occur simultaneously since
+$\lambda_1/\lambda_2=\w_2/\w_1<1$ is split-invariant.  If $\lambda_1=1$,
+the $(y,q)$ condition still gives $\sin\theta_2=0$, and the entry pair
 $(x,y)/(y,x)$ gives
-$\w_1\w_2\sin\theta_2=-\overline{\sin\theta_1}$, forcing $\sin\theta_1=0$ as
-well; the case $\w_1=1$ is symmetric.  So in all cases
+$\lambda_1\lambda_2\sin\theta_2=-\overline{\sin\theta_1}$, forcing
+$\sin\theta_1=0$ as well; the case $\lambda_2=1$ is symmetric.  So in all cases
 $\sin\theta_1=\sin\theta_2=0$, whence $\cos^2\theta_j=1$ and
 $C=\varepsilon_1P_1+\varepsilon_2P_2$ with $\varepsilon_j=\pm1$.  The entry
 pair $(x,q)/(q,x)$ gives
@@ -448,7 +458,7 @@ excluded by positivity, leaving $C=I$.
 Let $S=S_+C$ with $C\in\Stab(J,G_0')$, and let $S=PU$ be its polar
 decomposition ($P>0$, $U$ unitary).  Then $P=S_+$ if and only if $C$ is
 unitary.  In the normalized coordinates the unitary elements of
-$\Stab(J,G_0')$ form, for $\w_1,\w_2\neq1$, the finite group
+$\Stab(J,G_0')$ form, for $\lambda_1,\lambda_2\neq1$, the finite group
 $\{\pm P_1\pm P_2\}\cong\mathbb{Z}_2\times\mathbb{Z}_2$.  Consequently the
 positive polar factor varies over a two-complex-parameter family as $C$
 ranges over the stabilizer: it is not an invariant of the diagonalization
@@ -459,9 +469,9 @@ problem.
 If $C$ is unitary, $S_+C$ is already a polar decomposition, and by its
 uniqueness $P=S_+$.  Conversely $P=S_+$ forces $U=S_+^{-1}S=C$ unitary.  For
 the second claim, $C(\theta)$ restricted to mode $1$ is
-$\left(\begin{smallmatrix}a&b\w_2\\-b/\w_2&a\end{smallmatrix}\right)$ with
-$a^2+b^2=1$; unitarity requires
-$|a|^2+|b|^2\w_2^{\mp2}=1$ for both signs, hence $b=0$ for $\w_2\neq1$, and
+$\left(\begin{smallmatrix}a&b\lambda_1\\-b/\lambda_1&a\end{smallmatrix}\right)$
+with $a^2+b^2=1$; unitarity requires
+$|a|^2+|b|^2\w_2^{\mp2}=1$ for both signs, hence $b=0$ for $\lambda_1\neq1$, and
 then $|a|=1$ with $a^2=1$, i.e.\ $a=\pm1$; likewise on mode $2$.  An explicit
 non-unitary example is $C(i\tau,0)$, $\tau\in\R\setminus\{0\}$, for which
 $(S_+C)^{\dg}(S_+C)\neq S_+^2$.
@@ -473,10 +483,10 @@ whose maximal compact subgroup is $U(1)^2$; but its unitary part in the
 canonical coordinates is generically only $\mathbb{Z}_2^2$, because the
 $U(1)$ directions of the two $SO(2,\C)$ factors cannot be made
 simultaneously unitary in coordinates where $S_+$ is Hermitian.  The apparent
-condition ``$\w_j=1$'' in the proofs above is an artifact of the residual
+alignment ``$\lambda_j=1$'' in the proofs above depends on the residual
 split freedom $d_x/d_y$ of \eqref{eq:normalization}, which can move but not
-remove the exceptional values; Theorem~\ref{thm:uniqueness} holds for all
-parameters.
+remove the exceptional locus (the ratio $\lambda_1/\lambda_2$ is
+split-invariant); Theorem~\ref{thm:uniqueness} holds for all parameters.
 \end{remark}
 
 \section{Reconstruction of the Bender--Mannheim generator}

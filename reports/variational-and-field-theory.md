@@ -340,3 +340,33 @@ discussion with quadratic gravity as outlook only.
   (P10 in verify_paper3_audit.py, numeric corroboration).
 - Sector table endpoints: logarithmic obstruction at d = 4 and d = 8
   stated explicitly.
+
+## Trilogy repair pass (2026-07-12, post-freeze; tags v1.1)
+
+**Paper 2 — theorem-level repair (real error, caught by reviewer pass):**
+the totally-geodesic lemma's hypothesis "closed + †-stable" was
+insufficient — counterexample: the discrete group {Aⁿ}, A = diag(2, ½) ∈
+Sp(2,ℝ), is closed and self-adjoint with all elements positive but
+A^{1/2} ∉ 𝒞, 𝔠_𝔭 = 0, and ξ = −(3/4)log A violates the projection theorem
+(c = A beats c = e). Repair: new Definition (compatible subgroup) requiring
+the global Cartan decomposition 𝒞 = K_𝒞 exp 𝔠_𝔭, with the counterexample
+recorded in-text; lemma restated (ℙ_𝒞 = exp 𝔠_𝔭) and proof rewritten
+(polar uniqueness + Ad_{K_𝒞}-invariance for the Gram set). Theorem
+hypothesis updated; unused "for every c ∈ 𝒞" removed from part (a).
+All applications unaffected: SL(2,ℂ)², ∏SL(2,ℂ), SO(2,ℂ) are connected
+†-stable reductive, hence compatible (noted in-text).
+
+**Paper 1 — dimensionless aspect parameters:** λ₁, λ₂ > 0 defined as the
+mode-aspect parameters of the canonical coordinates (λ₁ = ω₂, λ₂ = ω₁ in
+normalized units for the symmetric split; ratio λ₁/λ₂ = ω₂/ω₁ < 1 is
+split-invariant). All exceptional conditions rewritten as alignments
+λ_j = 1 — no dimensionful quantity is compared with 1. Same in paper 2's
+stratified hull and enhancement remark.
+
+**Paper 3 — vocabulary propagation:** "vacuum state" → "vacuum
+functional/ray" wherever the involution/completion is in play; discussion
+"not a state in" → "not normal to the naive Fock representation"; both
+log-coefficient normalizations (1/(8π²) log ρ = 1/(16π²) log ρ²) displayed
+together once in the Hadamard theorem.
+
+Re-frozen: paper1-v1.0, paper2-v1.1, paper3-v1.1.
