@@ -2,6 +2,38 @@
 
 Working list. Move items to DONE with commit hash when closed.
 
+## Paper 1 referee round (major revision, 2026-07-12) — APPLIED
+
+Referee's two concrete errors verified in
+symbolic/verify_paper1_referee.py (S1–S3, ALL PASS), then all 16 points
+applied:
+- spec Q = rℤ pure point (beam splitter, Schwinger SU(2) sectors), NOT
+  continuous ℝ/"dilation generator"; spec(e^{−Q}) = {e^{−rn}}∪{0}. New
+  Prop (Spectrum of Q); rem:twospaces fixed; algebraic Fock domain
+  F_alg declared invariant and used as the common core.
+- Prop 3.2 was misstated (D=I: (S₊ᵀGS₊)₁₁ = 21 ≠ 9 — not a diagonalizer
+  at all). NOTE: referee's own Version A also fails (D⁻¹S₊D with the
+  product condition is a diagonalizer of the ORIGINAL problem but NOT
+  Hermitian); correct object is the TRANSPORTED solution
+  S(D) = D S_orig D⁻¹ = cI + sB(D), which solves the D-transformed
+  problem for every D and is Hermitian iff d_xd_y = γω₁ω₂ (S3a–d).
+- Uniqueness stated relative to fixed data + Remark (intrinsic vs
+  canonical); proof displays in λ₁, λ₂ only.
+- Unitary part: generic ℤ₂², exceptional λ_j=1 U(1), never full U(1)²
+  (invariant: λ₁/λ₂ ≠ 1; H∩K not maximal compact in H).
+- New §6 subsection: Cartan-coset theorem (Gram convention μ = log
+  spec(S†S) = 2μ_std declared; F = 2‖μ‖²; C₂ wall; non-θ-compatible;
+  SL(2,ℂ)² hull; escape to infinity).
+- Metric classification narrowed to algebraic positive metric forms on
+  F_alg; Gaussian stabilizer freedom ⊊ full commutant (Gaussian shadow);
+  rational-ratio degeneracy caveat.
+- "Complexified metaplectic" terminology fixed; flow→Jordan lemma
+  (H = iA) + one-line η^{1/2}Hη^{−1/2} proof; "empty cone" →
+  nondegenerate positive-definite cone; equal-frequency PT realizations
+  (BM 0804.4190) excluded from scope, not refuted; γ<0 transport remark
+  (gravity companion); verification artifact identifiers (tag
+  paper1-v1.1 at freeze).
+
 ## Paper 3 referee round (major revision, 2026-07-12) — APPLIED; residuals
 
 Referee claims verified in symbolic/verify_paper3_referee.py (R1–R5, ALL
@@ -150,7 +182,7 @@ Script side:
 
 ## Housekeeping
 
-- [ ] paper4 freeze + tag paper4-v1.0; paper3 re-freeze + tag paper3-v1.2 (referenced in its Verification paragraph) — after referee rounds conclude.
+- [ ] Freeze + tags after referee rounds conclude: paper1-v1.1, paper3-v1.2, paper4-v1.0 (all referenced in the papers' Verification paragraphs).
 - [ ] Before submission (all papers): author metadata, "to appear"
   references, companion arXiv IDs once public.
 

@@ -697,3 +697,47 @@ WF proof sharpened (boundary-value form, V₁₂(x,x)≠0, no directions
 removed; "fourth-order microlocal spectrum condition" naming);
 verification artifact identifiers (scripts, versions, tag paper3-v1.2
 to be created at freeze).
+
+## Paper 1 referee pass (2026-07-12) — major revision applied
+
+Referee's two concrete errors machine-verified first
+(symbolic/verify_paper1_referee.py, S1–S3, ALL PASS):
+- S1: spec Q = rℤ, pure point, infinite multiplicities (Q′ =
+  r(a₁a₂†+a₁†a₂) commutes with N_tot; every fixed-N sector is Schwinger
+  SU(2) 2J_x with spectrum exactly {−N,...,N step 2}, checked N ≤ 25);
+  spec(e^{−Q}) = {e^{−rn}}∪{0}. The paper's "purely continuous spectrum
+  (0,∞), Q unitarily equivalent to a dilation generator" was FALSE.
+- S2: Prop 3.2 counterexample confirmed: γ=1, ω₁=3, ω₂=2, D=I gives
+  (S₊ᵀGS₊)₁₁ = 21 ≠ 9 — S₊ is not a diagonalizer of the original
+  problem at all.
+- S3: the referee's own Version-A repair is ALSO wrong (D⁻¹S₊D with
+  d_xd_y = γω₁ω₂ satisfies the original congruence but is NOT
+  Hermitian — Hermiticity of that matrix needs d_xd_y = 1). The correct
+  proposition, machine-verified: S_orig = D₀⁻¹S₊D₀ depends only on the
+  product and solves the original problem (S3a/b); the TRANSPORTED
+  canonical solution S(D) = D S_orig D⁻¹ = cI + sB(D) solves the
+  D-transformed problem for EVERY D (S3c) and is Hermitian iff
+  d_xd_y = γω₁ω₂ (S3d).
+
+All 16 points applied to symplectic-diagonalization.tex (now 17 pp.,
+clean): new Prop (Spectrum of Q) + corrected rem:twospaces + invariant
+algebraic Fock domain F_alg as common core; corrected Prop
+(Hermiticity requires the normalization) with the transported
+formulation and the three-conditions caveat (solution / Hermitian /
+normalized are distinct); uniqueness relative to fixed data + Remark
+(intrinsic uniqueness vs coordinate-free equivalence class); eq:herm
+and polar proof in λ₁, λ₂; unitary-part remark (generic ℤ₂²,
+exceptional U(1), never U(1)²; H∩K not maximal compact — the invariant
+statement); new §6.2 Cartan-coset theorem with declared Gram convention
+(μ(S₊) = (r,r) = 2μ_std, singular values e^{±r/2}), F = 2‖μ‖², C₂
+wall, non-Kempf–Ness caveat, SL(2,ℂ)² hull, wall-escape reading of the
+equal-frequency limit; metric theorem narrowed to algebraic positive
+metric forms on F_alg with rational/irrational commutant care;
+Gaussian-shadow paragraph (stabilizer ⊊ commutant); complexified-
+metaplectic terminology; flow→Jordan lemma (H = iA on the +iω
+generalized eigenspace) + one-line η^{1/2}Hη^{−1/2} diagonalizability
+proof; "empty cone" qualified to nondegenerate positive-definite;
+Jordan-PT-realization scope remark (BM 0804.4190 arXiv id added); γ<0
+transport paragraph citing the gravity companion (new bibitem);
+verification artifact identifiers incl. Lean declaration names and tag
+paper1-v1.1 (to create at freeze).
