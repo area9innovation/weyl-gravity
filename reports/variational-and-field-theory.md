@@ -521,3 +521,28 @@ reality / Krein with standard gravitational reality); no covariant hybrid;
 identical complex gauge-invariant correlators; regular distributional
 conformal limit at which the positive form terminates and the Krein form
 continues (TT Jordan + massless vectors + Weyl-null scalar).
+
+## Paper 4 drafted (2026-07-12)
+
+`paper/fourth-order-gravity.tex` — **Gauge Reduction and the Completion
+Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the
+Conformal Jordan Boundary** (8 pp., compiles clean).
+
+Logical order as directed: reduction (§2, G1–G7) → completion trilemma
+(§3, G8) → covariance classification (§4, G9) → spectral bridge (§5, G10)
+→ gauge-invariant correlator (§6, G11) → conformal boundary (§7, G12) →
+master theorem (§8) → discussion. Abstract leads with: one complex
+spectral theory, exactly two covariant real-form completions in the split
+phase, no covariant helicity hybrid, only the Krein completion continuing
+through the conformal Jordan boundary.
+
+Framing discipline maintained: classification + covariance obstruction,
+NOT "gravity is solved"; Maldacena boundary truncation placed as a third,
+distinct construction (removes a branch of the solution algebra vs
+changes the inner-product structure); interaction question (rotated
+reality vs cubic Weyl vertices; gravitational ghost parity
+[P_ghost, S_int] = 0) stated as sharp outlook, explicitly not computed;
+Λ ≠ 0 (critical gravity, partial masslessness) flagged as outside scope.
+Gauge/BRST ghosts vs higher-derivative ghost branch distinguished in the
+introduction. Every theorem carries its G-check provenance via the
+Verification paragraph.

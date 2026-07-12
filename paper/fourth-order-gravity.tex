@@ -1,0 +1,563 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\w}{\omega}
+\newcommand{\Sp}{\mathrm{Sp}}
+\newcommand{\dg}{\dagger}
+\newcommand{\dd}{\ddagger}
+\newcommand{\WF}{\operatorname{WF}}
+
+\title{Gauge Reduction and the Completion Problem in Fourth-Order Gravity:\\
+PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We classify the quantizations of free scalar-free Einstein--Weyl gravity,
+$\mathcal L=\sqrt{-g}\,(c_1R+\alpha R_{\mu\nu}^2+\beta R^2)$ with
+$\alpha=-3\beta$, around flat space.  The reduced theory possesses one
+Poincar\'e-covariant complex spectral quasifree functional; among
+translation-invariant, quasifree, mode-local completions compatible with
+the reduced symplectic form, the spectral condition, and massive-spin-$2$
+covariance, there are exactly two equivalence classes in the split phase:
+a positive pseudo-Hermitian completion with uniformly rotated massive
+reality, and a Krein completion with standard gravitational reality.  No
+helicity-hybrid completion is Lorentz covariant, the two classes have
+identical complex gauge-invariant correlation functions, and only the
+Krein class continues through the conformal Jordan boundary $c_1\to0$,
+where the positive class terminates.  The mechanism is a stratification:
+diffeomorphism reduction preserves the Pais--Uhlenbeck (PU) pairing of the
+fourth-order dynamics exactly in the helicity-$\pm2$ sector, while the
+massive helicity-$\pm1,0$ polarizations survive as unpaired ghost
+oscillators subject to a completion trilemma --- positivity, the spectral
+condition, and standard reality: any two, never all three.  On the
+conformal locus the transverse-traceless sector becomes a $\Box^2$ Jordan
+block per polarization, the vector modes become ordinary massless ghosts,
+and the scalar mode becomes Weyl-gauge, giving the conformal count of six.
+All statements are machine-verified.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+Fourth-order gravity has two well-developed responses to the Ostrogradsky
+ghost.  In the PT-symmetric program of Bender and Mannheim
+\cite{BM2008PRD,Mannheim2021}, a positive metric operator renders each
+Pais--Uhlenbeck (PU) mode pair unitary on a Hilbert space; in the
+Krein-space program, developed for the pure fourth-order scalar by Bateman
+and Turok \cite{BT2026}, the state space is indefinite and probabilities
+are controlled by ghost parity.  A companion series
+\cite{companion1,companion2,companion3} analyzed the scalar case
+exhaustively: the positive metric is canonically reconstructed and
+variationally selected; particle content decouples from metric geometry;
+and the two programs determine the \emph{same} complex spectral vacuum
+functional, differing only in the real form --- the involution and
+completion --- placed upon it.
+
+Gravity poses a question the scalar theory cannot: the completion must be
+chosen \emph{jointly} for all polarizations of a gauge theory, subject to
+diffeomorphism reduction and Lorentz covariance.  This paper answers it
+for linearized scalar-free Einstein--Weyl gravity.  The logic runs
+\begin{equation*}
+\text{reduction}\ \rightarrow\ \text{completion trilemma}\ \rightarrow\
+\text{covariance classification}\ \rightarrow\ \text{spectral bridge}\
+\rightarrow\ \text{gauge-invariant correlator}\ \rightarrow\
+\text{conformal boundary},
+\end{equation*}
+and the results are:
+
+\begin{enumerate}
+\item \emph{Reduction stratifies} (Section~\ref{sec:reduction}).  At fixed
+spatial momentum the physical phase space is
+\begin{equation}\label{eq:strat}
+\Gamma_{\mathrm{phys}}(k)\ \cong\
+2\,\Gamma_{\mathrm{PU}}(0,M)\ \oplus\ 2\,\Gamma_-(M)\ \oplus\ \Gamma_-(M),
+\qquad M^2=c_1/\alpha:
+\end{equation}
+the two transverse-traceless (TT) polarizations are exact PU pairs
+(massless plus massive branch, in the perfect-square-plus-Einstein form
+with $\gamma=\alpha/2$); the massive helicity-$\pm1$ and $0$ modes are
+\emph{unpaired} second-order ghost oscillators, because their massless
+partners lie entirely in the diffeomorphism orbit.  PU pairing survives
+gauge reduction exactly in helicity $\pm2$.
+
+\item \emph{Completion trilemma} (Section~\ref{sec:trilemma}).  An
+unpaired ghost oscillator admits a quarter-turn positive completion
+($q\mapsto iq$, $p\mapsto-ip$, $\eta=e^{-\pi D}$, $D=\tfrac12(qp+pq)$)
+whose physical adjoint flips the sign of the original variables.  The
+three desiderata --- positive norm, positive energy (spectral condition),
+and standard gravitational reality --- can be satisfied two at a time,
+never all three.  All complex-symplectic real-form changes taking $H_-$ to
+$H_+$ form a single quarter-turn coset $T_0\cdot SO(2,\C)$.
+
+\item \emph{Covariance classification} (Section~\ref{sec:covariance}).
+The five massive polarizations form one spin-$2$ irrep of the massive
+little group; by Schur, any invariant Hermitian form on it is a multiple
+of the identity, so its signature is uniform: \emph{no helicity-hybrid
+completion is covariant}.  The total quarter-turn generator is
+$SO(3)$-invariant, so a covariant uniform-positive completion exists; and
+the quarter-turn on the ghost normal mode of the TT PU pair is itself an
+admissible positive diagonalizer, hence lies in the metric family of
+\cite{companion1} and, by orbit constancy \cite{companion3}, defines the
+same vacuum functional as the Bender--Mannheim metric: the TT and
+lower-helicity structures assemble.
+
+\item \emph{Spectral bridge} (Section~\ref{sec:kernel}).  The reduced
+spectral kernel, with residues fixed by the reduced symplectic form,
+reassembles into the covariant massive spin-$2$ projector with a single
+normalization $\mathcal N=4/c_1$ and uniform ghost sign; the massless
+shell couples only to TT.  The complex kernel is identical in both real
+forms.  Together with item 3 this closes the bridge at the gravitational
+level: \emph{the two covariant completions share the full gravitational
+vacuum functional}.
+
+\item \emph{Gauge-invariant correlator} (Section~\ref{sec:weyl}).  The
+linearized Weyl correlator is gauge independent, and the Weyl map
+annihilates every $p_\mu p_\nu/M^2$ term of the massive projector: the
+curvature kernel is $M$-regular and covariant, with Hadamard wavefront
+directions; the fourth-order logarithm of the potential kernel appears in
+the curvature correlator as its differentiated descendant.
+
+\item \emph{Conformal Jordan boundary} (Section~\ref{sec:conformal}).  As
+$c_1\to0$ at fixed $\alpha$: the TT divided difference converges
+distributionally to the $\Box^2$ Jordan kernel; the vector modes have a
+smooth massless-ghost limit with fixed commutator normalization; the
+scalar mode becomes Weyl-gauge (the transformation
+$\delta h_{\mu\nu}=2\sigma\eta_{\mu\nu}$ is a symmetry exactly at
+$c_1=0$), giving the conformal count $4+2+0=6$.  The split normal-mode
+decomposition underlying the positive completion degenerates explicitly
+($\operatorname{cond}\to\infty$): the positive real form terminates, the
+Krein form and the spectral functional continue.
+\end{enumerate}
+
+The classification is summarized by the master theorem of
+Section~\ref{sec:master}.  Throughout, gauge (Faddeev--Popov/BRST) ghosts
+--- which encode the diffeomorphism quotient and are handled here by
+explicit symplectic reduction --- are sharply distinguished from the
+higher-derivative spin-$2$ ghost branch, which concerns the completion of
+the physical excitations.
+
+\paragraph{Verification.}
+Every identity in this paper is machine-verified: the second variation and
+sector reduction (checks G1--G7), the trilemma and real-form
+classification (G8), the covariance computations (G9), the spectral kernel
+and covariant reassembly (G10), the Weyl-correlator cancellations (G11),
+and the sectorwise conformal limits (G12), in the verification repository
+of \cite{companion1}.  Numerical checks corroborate the degenerations.
+
+\paragraph{Conventions.}
+Signature $(+,-,-,-)$; curvature conventions fixed so that the healthy
+Einstein normalization is $c_1=-1$ (checked on the graviton kinetic term);
+$\alpha=-3\beta$ (scalar-free tuning); $M^2=c_1/\alpha>0$ for $\alpha<0$;
+modes $h_{\mu\nu}\sim A(t)\cos kz+B(t)\sin kz$ at spatial momentum $k$
+along $z$; $\w_1=\sqrt{k^2+M^2}$, $\w_2=k$.  PU data follow
+\cite{companion1,companion2}: a PU pair with parameter $\gamma$ has
+Lagrangian $\tfrac{\gamma}{2}(\ddot z^2-(\w_1^2+\w_2^2)\dot
+z^2+\w_1^2\w_2^2z^2)$ and commutator normalization $E'''(0)=1/\gamma$.
+
+\section{Reduction: the helicity stratification}\label{sec:reduction}
+
+The second variation of
+$\mathcal L=\sqrt{-g}(c_1R+\alpha R_{\mu\nu}^2+\beta R^2)$ about flat
+space is computed exactly, sector by sector under the rotation group about
+$k$; diffeomorphism invariance of each sector Lagrangian is verified (the
+gauge variation is a total derivative).
+
+\begin{theorem}[TT sector: exact PU blocks]\label{thm:tt}
+For each of the two TT polarizations the mode Lagrangian is
+\begin{equation}\label{eq:LTT}
+L_{\mathrm{TT}}
+=\frac{\alpha}{4}\big(\ddot A+k^2A\big)^2
+-\frac{c_1}{4}\big(\dot A^2-k^2A^2\big)+\frac{d}{dt}(\cdots),
+\end{equation}
+a perfect square plus Einstein term, with Euler--Lagrange equation
+$(\partial_t^2+k^2)(\partial_t^2+k^2+M^2)A=0$, $M^2=c_1/\alpha$: an exact
+PU block with mass pair $(M,0)$ and normalization $\gamma=\alpha/2$.  The
+sign $\gamma<0$ (for $c_1=-1$, $\alpha<0$) is the perfect-square
+convention of \cite{BT2026} and renders the \emph{massless} branch healthy
+and the massive spin-$2$ branch the ghost, as required by the flat-space
+spectrum of quadratic gravity \cite{Stelle}.
+\end{theorem}
+
+\begin{theorem}[Lower helicities: PU pairing broken by gauge]
+\label{thm:lower}
+(i) Vector sector: with the gauge-invariant $w=k\,h_{tx}+\partial_t
+h_{xz}$ (one per transverse direction),
+\begin{equation}
+L_V=\frac{\alpha}{4}\big(\dot w^2-k^2w^2\big)-\frac{c_1}{4}w^2
++\frac{d}{dt}(\cdots):
+\end{equation}
+a single second-order massive mode, $\ddot w+(k^2+M^2)w=0$, with
+ghost-signed kinetic normalization $\mu_V=\alpha/2$; the massless PU
+partner is pure diffeomorphism gauge and is removed by the quotient.
+(ii) Scalar sector: $h_{tt}$ is auxiliary; at $\alpha=-3\beta$ the reduced
+dynamics is the single massive mode $\ddot p+(k^2+M^2)p=0$ with effective
+kinetic normalization $\mu_S=3c_1/2$ (ghost-signed, $\beta$-independent);
+for generic couplings the sector is fourth order with scalaron mass
+$m_0^2=-c_1/(2(\alpha+3\beta))$, decoupling exactly at the scalar-free
+tuning.  (iii) Mode count: $2\times2+2+1=7=2+5$, and the stratification
+\eqref{eq:strat} holds: PU pairing survives reduction exactly in helicity
+$\pm2$.
+\end{theorem}
+
+\begin{remark}[Polarization-enhanced stabilizer]
+For the doubled TT block the normal-form stabilizer Lie algebra jumps from
+$\dim_\R 4$ (one PU pair; $so(2,\C)^2$ \cite{companion1}) to $\dim_\R16$
+(computed by null-space methods): frequency degeneracy across
+polarizations enlarges the metric ambiguity.  $SO(2)$ helicity covariance
+and Schur reduce the covariant TT metric to $S_+\otimes I_2$, the unique
+helicity-covariant minimum-distortion positive PU diagonalizer
+\cite{companion2}.
+\end{remark}
+
+\section{The completion trilemma}\label{sec:trilemma}
+
+Each unpaired ghost oscillator, $H_-=-\tfrac12(p^2+\Omega^2q^2)$, poses
+the completion problem in miniature.
+
+\begin{theorem}[Unpaired-ghost completion]\label{thm:trilemma}
+Let $D=\tfrac12(qp+pq)$ and $\rho=e^{-\frac{\pi}{2}D}$.  Then:
+(i) $\rho q\rho^{-1}=iq$, $\rho p\rho^{-1}=-ip$, and
+$\rho H_-\rho^{-1}=+\tfrac12(p^2+\Omega^2q^2)$;
+$\eta=\rho^{\dg}\rho=e^{-\pi D}$ is formally positive.
+(ii) The physical adjoint is $q^{\dd}=\eta^{-1}q^{\dg}\eta=-q$,
+$p^{\dd}=-p$: the original amplitude is $\dd$-anti-Hermitian; $iq$ is the
+observable.  (iii) Trilemma: positive norm, positive energy, and standard
+reality can be realized two at a time, never all three ---
+\begin{center}
+\begin{tabular}{c|c|c|c}
+completion & positive norm & positive energy & standard reality\\
+\hline
+ordinary Hilbert & \checkmark & $\times$ & \checkmark\\
+Krein & $\times$ & \checkmark & \checkmark\\
+quarter-turn (PT contour) & \checkmark & \checkmark & $\times$
+\end{tabular}
+\end{center}
+(for the first row, $p^2+\Omega^2q^2$ built from a self-adjoint canonical
+pair has positive unbounded spectrum, so $H_-$ is unbounded below).
+(iv) Classification: all complex-symplectic real-form changes taking $H_-$
+to $H_+$ form the single coset
+$\{T\in\Sp(2,\C):TA_+T^{-1}=-A_+\}=T_0\cdot SO(2,\C)$,
+$T_0=\operatorname{diag}(i,-i)$.
+\end{theorem}
+
+An unpaired gravitational ghost therefore cannot simultaneously satisfy
+positivity, the spectral condition, and the standard real structure.  The
+choice among the three completions is exactly a choice of real form.
+
+\section{Covariance classification}\label{sec:covariance}
+
+Sectorwise choices are constrained globally: the massive helicities
+$(\pm2,\pm1,0)$ form one irreducible spin-$2$ multiplet of the massive
+little group.
+
+\begin{theorem}[No covariant hybrid]\label{thm:nohybrid}
+The space of $SO(3)$-invariant Hermitian forms on the five-dimensional
+spin-$2$ irrep is one-dimensional, $\eta_{\mathrm{mass}}=cI_5$ (computed
+by solving the commutant equations).  Hence any covariant Hermitian form
+has uniform signature, and the helicity-hybrid assignment
+$(+,+,-,-,-)$ --- TT-positive with lower-helicity Krein --- violates
+invariance explicitly and is not Lorentz covariant.
+\end{theorem}
+
+\begin{theorem}[Two covariant real forms]\label{thm:tworeal}
+(i) The total quarter-turn generator
+$D_{\mathrm{tot}}=\sum_{a=1}^{5}\tfrac12(q_ap_a+p_aq_a)$ over the massive
+polarization oscillators is $SO(3)$-invariant; hence
+$\eta_{\mathrm{mass}}=e^{-\pi D_{\mathrm{tot}}}$ defines a covariant
+uniform-positive pseudo-Hermitian completion with uniformly rotated
+massive reality (the massive multiplet is $\dd$-anti-Hermitian; $i$ times
+the multiplet is observable).  (ii) The uniform Krein completion with
+standard gravitational reality is covariant (invariant indefinite form on
+each irrep).  (iii) Assembly: the quarter-turn applied to the ghost normal
+mode of the TT PU pair is an admissible positive diagonalizer
+($T'^{\top}JT'=J$ and $T'^{\top}G_{\mathrm{PU}}T'$ real positive
+definite), hence lies in the solution family $S_+\cdot\mathrm{Stab}$ of
+\cite{companion1}; by orbit constancy \cite{companion3} it defines the
+same vacuum functional as the Bender--Mannheim metric.  The TT and
+lower-helicity structures of the positive class are mutually consistent.
+\end{theorem}
+
+Stabilizer choices (the enlarged TT stabilizer of
+Section~\ref{sec:reduction}, the $SO(2,\C)$ freedom of
+Theorem~\ref{thm:trilemma}(iv), the $W$-freedom of \cite{companion1})
+produce representatives \emph{within} these classes, not additional
+physical classes: by orbit constancy the vacuum ray, and hence the
+quasifree functional, is unchanged.
+
+\section{The reduced spectral kernel and the bridge}\label{sec:kernel}
+
+\begin{theorem}[Helicity kernel with symplectic residues]\label{thm:kernel}
+The reduced spectral (positive-frequency) kernel is
+\begin{align}
+W^+_{\mathrm{TT}}(t)
+&=\frac{1}{\gamma M^2}
+\left[\frac{e^{-i\w_1t}}{2\w_1}-\frac{e^{-i\w_2t}}{2\w_2}\right],
+\qquad \gamma=\frac{\alpha}{2},\\
+W^+_{V}(t)=\frac{e^{-i\Omega t}}{2\mu_V\Omega},
+\quad
+W^+_{S}(t)&=\frac{e^{-i\Omega t}}{2\mu_S\Omega},
+\qquad
+\Omega=\sqrt{k^2+M^2},\quad \mu_V=\frac{\alpha}{2},\ \mu_S=\frac{3c_1}{2},
+\end{align}
+each a bisolution with the commutator fixed by the reduced symplectic
+form ($E'''(0)=1/\gamma$ for TT; $E'(0)=-1/\mu$ for the second-order
+modes; the residues are \emph{derived}, not assumed from propagator
+guesses).
+\end{theorem}
+
+\begin{theorem}[Covariant reassembly]\label{thm:reassembly}
+Let $\Pi^{(2,M)}_{\mu\nu\rho\sigma}
+=\tfrac12(P_{\mu\rho}P_{\nu\sigma}+P_{\mu\sigma}P_{\nu\rho})
+-\tfrac13P_{\mu\nu}P_{\rho\sigma}$, $P_{\mu\nu}=\eta_{\mu\nu}-p_\mu
+p_\nu/M^2$, on the massive shell.  The gauge-invariant contractions are
+\begin{equation}
+\Pi_{xy,xy}=\tfrac12,\qquad
+c\,\Pi\,\bar c\big|_{w}=\frac{(E^2-k^2)^2}{2M^2}=\frac{M^2}{2},\qquad
+\Pi\big|_{(h_{xx}+h_{yy})/2}=\tfrac16 ,
+\end{equation}
+where the complex-basis vector invariant is
+$\tilde w=-ik\,h_{tx}-iE\,h_{xz}$.  These match the reduced residue ratios
+$1:M^2:\tfrac13$ of Theorem~\ref{thm:kernel} exactly, with the single
+overall normalization $\mathcal N=4/c_1$ and uniform ghost sign: the five
+massive residues assemble into one $SO(3)$-invariant projector,
+\begin{equation}
+\widetilde W^+_{\mu\nu\rho\sigma}(p)
+=\frac{\mathcal N}{M^2}\,\theta(p^0)\left[
+\Pi^{(2,M)}_{\mu\nu\rho\sigma}\,\delta(p^2-M^2)
+-\Pi^{\mathrm{TT}}_{\mu\nu\rho\sigma}\,\delta(p^2)
+\right]+\text{gauge terms},
+\end{equation}
+with the massless shell coupling only to TT (the vector and
+scalar invariants contract to zero with the massless polarizations); the
+$1/M^2$ prefactor is the PU divided-difference normalization
+$1/(\gamma M^2)$ of Theorem~\ref{thm:kernel} in covariant form.
+\end{theorem}
+
+\begin{theorem}[Real-form independence; the gravitational bridge]
+\label{thm:bridge4}
+The complex spectral kernel is identical in the two covariant real forms:
+for each unpaired ghost the quarter-turn completion's physical Wightman
+function equals the Krein spectral value,
+$\langle(i\tilde w)(t)\,(i\tilde w)(0)\rangle
+=e^{-i\Omega t}/(2\mu\Omega)$, and for the TT pairs the statement is the
+orbit constancy and spectral identification of
+\cite{companion3}.  Hence the positive pseudo-Hermitian and Krein
+completions of scalar-free Einstein--Weyl gravity share the full
+gravitational vacuum functional; they differ in involution and completion
+only.
+\end{theorem}
+
+\section{The gauge-invariant Weyl correlator}\label{sec:weyl}
+
+Curvature observables remove both gauge dependence and projector
+singularities.
+
+\begin{theorem}[Weyl correlator]\label{thm:weyl}
+Let $C^{(1)}[h]$ be the linearized Weyl tensor (traceless; validated
+symbolically) and $\mathcal
+W^+=\mathcal D_C\,W^+_h\,\mathcal D_C^{\top}$ the induced curvature
+kernel.  Then: (i) the linearized Riemann map annihilates pure gauge
+$h=p\otimes\xi+\xi\otimes p$ identically, so $\mathcal W^+$ is gauge
+independent; (ii) the full Weyl--Weyl contraction of $\Pi^{(2,M)}$ equals
+that of $\Pi_0$ (all $P\to\eta$): every $p_\mu p_\nu/M^2$ and $/M^4$ term
+of the massive projector is annihilated --- the curvature kernel is
+$M$-regular, and the five massive helicities enter only through the
+$SO(3)$-invariant flat projector; (iii) both real forms give the same
+complex curvature functional (Theorem~\ref{thm:bridge4}); (iv) the
+wavefront directions are the standard positive-frequency Hadamard set
+$\mathcal C^+$ with tensor polarization constraints; the fourth-order
+logarithmic singularity belongs to the potential kernel,
+$W_h^+\sim\log\rho$, while $\mathcal W^+_{CC}\sim\partial^4\log\rho$ is
+its differentiated descendant.  Contact terms (momentum-space polynomials)
+are separated from the nonlocal two-point distribution.
+\end{theorem}
+
+\section{The conformal Jordan boundary}\label{sec:conformal}
+
+Take $c_1\to0$ at fixed $\alpha$ (so $M^2\to0$) \emph{before} imposing any
+completion.
+
+\begin{theorem}[Sectorwise conformal limit]\label{thm:conformal}
+(i) TT: distributionally,
+$[\delta(p^2-M^2)-\delta(p^2)]/M^2\to-\delta'(p^2)$; per polarization the
+kernel converges to the $\Box^2$ Jordan kernel
+$-(1+ikt)e^{-ikt}/(4k^3)$ (four TT configuration modes).
+(ii) Vector: $\delta(p^2-M^2)\to\delta(p^2)$ smoothly with \emph{fixed}
+commutator normalization $\mu_V=\alpha/2$: ordinary second-order massless
+ghost modes, not Jordan partners.
+(iii) Scalar: the kinetic normalization $3c_1/4\to0$, and the Weyl
+transformation $\delta_\sigma h_{\mu\nu}=2\sigma\eta_{\mu\nu}$ is a gauge
+symmetry of the scalar-free action exactly at $c_1=0$ (and not for
+$c_1\neq0$): the scalar direction becomes Weyl-null/gauge.
+The conformal count is $4+2+0=6$.
+\end{theorem}
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+ & $\pm2$ & $\pm1$ & $0$\\
+\hline
+$c_1\neq0$ & PU pair & massive ghost & massive ghost\\
+$c_1=0$ & $\Box^2$ Jordan & massless ghost & Weyl gauge/null
+\end{tabular}
+\end{center}
+
+\begin{theorem}[Termination of the positive real form]\label{thm:term}
+The uniform positive completion is built on the split normal-mode
+decomposition of the TT PU pairs; as $M\to0$ that decomposition
+degenerates explicitly (the symplectic normal transformation has condition
+number growing without bound; numerically $7.6\to47.5\to403\to4447$ for
+$M=1\to0.03$ at $k=1$), consistent with the Jordan obstruction of
+\cite{companion1}: no positive-definite invariant form exists at the
+boundary.  The spectral functional and the Krein real form continue
+distributionally through $c_1=0$.
+\end{theorem}
+
+\section{The master theorem}\label{sec:master}
+
+\begin{theorem}[Classification]\label{thm:master}
+Consider free scalar-free Einstein--Weyl gravity around flat space, and
+the class of translation-invariant, quasifree, mode-local completions
+compatible with the reduced symplectic form, the spectral condition, and
+massive-spin-$2$ covariance.  Then:
+\begin{quote}
+The reduced field possesses a unique Poincar\'e-covariant complex spectral
+quasifree functional.  In the split phase ($c_1\neq0$) it admits exactly
+two inequivalent covariant real forms: a positive pseudo-Hermitian form
+with uniformly rotated massive reality, and a Krein form with standard
+gravitational reality.  No helicity-hybrid form is covariant.  The two
+forms have identical complex gauge-invariant correlation functions.
+Stabilizer choices produce representatives within these classes, not
+additional physical classes.  At the conformal locus ($c_1=0$) the
+functional has a regular distributional limit, while the positive form
+terminates and the Krein form continues to a theory containing TT Jordan
+modes, massless vector ghosts, and a Weyl-null scalar sector.
+\end{quote}
+\end{theorem}
+
+\begin{proof}
+Uniqueness of the functional: Theorems~\ref{thm:kernel},
+\ref{thm:reassembly} (residues forced by the reduced symplectic form and
+covariance).  Two real forms and no hybrid:
+Theorems~\ref{thm:trilemma}--\ref{thm:tworeal} and \ref{thm:nohybrid}.
+Identity of complex correlators: Theorems~\ref{thm:bridge4},
+\ref{thm:weyl}.  Stabilizer statement: orbit constancy
+\cite{companion3} with the enlarged stabilizers of
+Section~\ref{sec:reduction}.  Boundary: Theorems~\ref{thm:conformal},
+\ref{thm:term}.
+\end{proof}
+
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{Relation to the two programs.}
+The theorem places the positive-PT quantization \cite{BM2008PRD,
+Mannheim2021} and the Krein quantization \cite{BT2026} on the two sides of
+a mathematically controlled classification: they are the two covariant
+real forms of one reduced complex spectral theory, agreeing on every
+complex gauge-invariant correlation function, and distinguished by which
+member of the trilemma they sacrifice --- standard gravitational reality
+(positive form) or positivity of the norm (Krein form).  The conformal
+locus is one-sided: only the Krein form crosses it.  In this precise sense
+Mannheim's construction is a split-phase real form and Bateman--Turok's is
+its resonant continuation.
+
+\paragraph{Boundary truncation is a third, distinct construction.}
+Maldacena's boundary-condition selection of the Einstein branch from
+conformal gravity \cite{Maldacena} removes one branch of the solution
+algebra, $\ker(L_1L_2)\to\ker L_1$; the completions classified here retain
+the full fourth-order solution algebra and change its inner-product
+structure.  The two mechanisms answer the ghost problem differently and
+should not be identified; on Einstein backgrounds with $\Lambda\neq0$ the
+critical locus shifts \cite{LuPope} and pure conformal gravity contains a
+partially massless sector \cite{DeserWaldron}, so the flat-space phase
+diagram above is the $\Lambda\to0$ slice of a richer picture we do not
+analyze here.
+
+\paragraph{Interaction diagnostic (outlook).}
+The free classification fixes the arena for the interacting question: for
+the positive real form, whether the rotated massive reality is compatible
+with the cubic Weyl vertices; for the Krein form, whether a gravitational
+ghost parity commutes with the interaction and with BRST symmetry, as its
+scalar analogue does in the perfect-square theory \cite{BT2026}.  Both are
+sharp, computable questions --- the natural first test is
+$[\mathcal P_{\mathrm{ghost}},S_{\mathrm{int}}]=0$ at cubic order --- and
+they decide whether either real form supports an interacting unitarity
+statement.  We have not performed these computations; the free theorem is
+neutral on the outcome.
+
+\begin{thebibliography}{12}
+
+\bibitem{Stelle}
+K.~S.~Stelle,
+Phys.\ Rev.\ D \textbf{16} (1977) 953.
+
+\bibitem{BM2008PRD}
+C.~M.~Bender and P.~D.~Mannheim,
+Phys.\ Rev.\ D \textbf{78} (2008) 025022.
+
+\bibitem{Mannheim2021}
+P.~D.~Mannheim,
+\emph{Solution to the ghost problem in higher-derivative gravity},
+arXiv:2109.12743.
+
+\bibitem{BT2026}
+S.~Bateman and N.~Turok,
+\emph{Escape from Ostrogradsky via hidden ghost parity},
+arXiv:2607.00096.
+
+\bibitem{companion1}
+\emph{Canonical positive symplectic diagonalization of the Pais--Uhlenbeck
+oscillator}, companion paper and verification repository, 2026.
+
+\bibitem{companion2}
+\emph{The Pais--Uhlenbeck metric as a minimum-distortion principle, and
+the representation problem for the fourth-order field}, companion paper,
+2026.
+
+\bibitem{companion3}
+\emph{The universal vacuum of the fourth-order scalar field: metric
+orbits, Fock sectors, and the Krein boundary}, companion paper, 2026.
+
+\bibitem{LuPope}
+H.~L\"u and C.~N.~Pope,
+\emph{Critical gravity in four dimensions},
+Phys.\ Rev.\ Lett.\ \textbf{106} (2011) 181302, arXiv:1101.1971.
+
+\bibitem{Maldacena}
+J.~Maldacena,
+\emph{Einstein gravity from conformal gravity},
+arXiv:1105.5632.
+
+\bibitem{DeserWaldron}
+S.~Deser, E.~Joung and A.~Waldron,
+\emph{Partial masslessness and conformal gravity},
+J.\ Phys.\ A \textbf{46} (2013) 214019, arXiv:1208.1307.
+
+\bibitem{Holdom}
+B.~Holdom,
+Nucl.\ Phys.\ B \textbf{1000} (2024) 116696.
+
+\bibitem{Riegert}
+R.~J.~Riegert,
+Phys.\ Lett.\ B \textbf{134} (1984) 56.
+
+\end{thebibliography}
+
+\end{document}

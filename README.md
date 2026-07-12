@@ -1,17 +1,18 @@
 # Symplectic Reconstruction of the Pais–Uhlenbeck PT Metric
 
 Verification project and paper series on the PT-symmetric Pais–Uhlenbeck
-oscillator and the fourth-order scalar field. Started from the audit spec in
-`../Symplectic Reconstruction.md`; grew into three papers, a Lean
-formalization, and a machine-checked verification pipeline.
+oscillator, the fourth-order scalar field, and quadratic gravity. Started
+from the audit spec in `../Symplectic Reconstruction.md`; grew into four
+papers, a Lean formalization, and a machine-checked verification pipeline.
 
-## The three papers (`paper/`)
+## The four papers (`paper/`)
 
 | # | File | Title | Status |
 |---|------|-------|--------|
-| 1 | `main.tex` / `main.pdf` | **Canonical Positive Symplectic Diagonalization of the Pais–Uhlenbeck Oscillator** | complete (13 pp.) |
-| 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.0` (11 pp.) |
-| 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.0` (9 pp.) |
+| 1 | `main.tex` / `main.pdf` | **Canonical Positive Symplectic Diagonalization of the Pais–Uhlenbeck Oscillator** | frozen, tag `paper1-v1.0` (13 pp.) |
+| 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.1` (12 pp.) |
+| 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.1` (10 pp.) |
+| 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | draft (8 pp.) |
 
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.
@@ -43,6 +44,21 @@ same quasifree functional, different completion; fourth-order Hadamard
 theorem (WF = 𝒞⁺, log ρ singularity with universal coefficient 1/(8π²),
 ±KG-Hadamard split structure).
 
+**Paper 4** (the gravity lift): classification and covariance-obstruction
+theorem for free scalar-free Einstein–Weyl gravity (α = −3β).
+Diffeomorphism reduction stratifies the phase space — PU pairing survives
+exactly at helicity ±2 (γ = α/2, masses (M,0), M² = c₁/α); helicities
+±1, 0 are *unpaired* massive ghosts subject to a completion trilemma
+(positive norm / positive energy / standard reality: any two). Schur ⇒ no
+covariant helicity-hybrid completion; exactly two covariant real forms
+(positive pseudo-Hermitian with uniformly rotated massive reality, Krein
+with standard gravitational reality) sharing one complex spectral quasifree
+functional (covariant projector reassembly ½ : M²/2 : 1/6, 𝒩 = 4/c₁);
+M-regular gauge-invariant Weyl correlator (DΠ^{(2,M)}D = DΠ₀D); conformal
+boundary c₁ → 0 sectorwise (TT → □² Jordan, vectors → massless ghosts,
+scalar → Weyl-null; count 4+2+0 = 6) at which the positive form terminates
+(cond(N) → ∞) and only the Krein form continues.
+
 ## Reports (`reports/`)
 
 - `verification.md` — paper-1 audit report: confirmed / corrected /
@@ -63,6 +79,15 @@ Symbolic (SymPy):
 - `verify_hadamard.py` — Hadamard audit (H1–H6): bisolution, commutator
   normalization, log-coefficient 1/(8π²), IR smoothness, ±Hadamard split.
 - `verify_wolfram.wl` — independent Wolfram rail (not run: no Mathematica).
+- `gravity_engine.py` — O(ε²) second variation of √−g(c₁R + αR²_μν + βR²)
+  around flat space, per helicity sector (shared engine for G-checks).
+- `verify_gravity_reduction.py` — paper-4 G1–G7: TT PU blocks, vector/scalar
+  unpaired ghosts, scalaron decoupling, mode count, stabilizer 4→16.
+- `verify_gravity_completion.py` — paper-4 G8–G9: quarter-turn trilemma,
+  T₀·SO(2,ℂ) real-form coset, Schur no-hybrid, covariant D_tot, TT assembly.
+- `verify_gravity_spectral.py` — paper-4 G10–G12: helicity kernels with
+  symplectic residues, covariant projector reassembly, Weyl-correlator
+  M-regularity, sectorwise conformal limits + cond(N) divergence.
 
 Numeric (mpmath/numpy):
 - `regression.py` — paper-1 regression, 4 parameter triples at 50–80 digits.
@@ -84,11 +109,14 @@ cd symbolic && python3 verify_sympy.py             # paper 1 (~4 min)
 cd symbolic && python3 verify_variational_fock.py  # paper 2
 cd symbolic && python3 verify_paper3_audit.py      # paper 3
 cd symbolic && python3 verify_hadamard.py          # paper 3, Hadamard
+cd symbolic && python3 verify_gravity_reduction.py   # paper 4, G1–G7
+cd symbolic && python3 verify_gravity_completion.py  # paper 4, G8–G9
+cd symbolic && python3 verify_gravity_spectral.py    # paper 4, G10–G12
 cd numeric  && python3 regression.py && python3 distortion_scan.py && python3 cartan_checks.py
 cd lean     && lake exe cache get && lake build    # zero sorry
-cd paper    && pdflatex main.tex; pdflatex variational-fock.tex; pdflatex fourth-order-vacuum.tex
+cd paper    && pdflatex main.tex; pdflatex variational-fock.tex; pdflatex fourth-order-vacuum.tex; pdflatex fourth-order-gravity.tex
 ```
 
-Release tags: `paper2-v1.0`, `paper3-v1.0`. Before submission: fill author
+Release tags: `paper1-v1.0`, `paper2-v1.1`, `paper3-v1.1`. Before submission: fill author
 metadata (title pages are blank), check the "to appear" references, match
 IR-extension conventions noted in paper 3's bridge theorem.
