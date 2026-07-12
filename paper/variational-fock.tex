@@ -1,0 +1,505 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\w}{\omega}
+\newcommand{\Sp}{\mathrm{Sp}}
+\newcommand{\Stab}{\mathrm{Stab}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\dg}{\dagger}
+\newcommand{\arccosh}{\operatorname{arccosh}}
+
+\title{The Pais--Uhlenbeck Metric as a Minimum-Distortion Principle,\\
+and the Representation Problem for the Fourth-Order Field}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For the unequal-frequency PT-symmetric Pais--Uhlenbeck oscillator, the
+admissible complex-symplectic diagonalizers form a coset
+$S_+\,SO(2,\C)^2$ of the unique Hermitian positive-definite diagonalizer
+$S_+$.  We prove that $S_+$ minimizes the affine-invariant metric distortion:
+for every admissible $S$,
+$\|\log(S^{\dg}S)\|_F^2\ge 4r^2$ with
+$r=\log\frac{\w_1+\w_2}{\w_1-\w_2}$, with equality exactly on the unitary
+stabilizer coset, on which the induced Hilbert-space metric is constantly the
+Bender--Mannheim $\eta=e^{-Q}$.  The proof is elementary and exact: at
+worst-case stabilizer alignment the log-eigenvalues of $S^{\dg}S$ are
+$\arccosh(\cosh r\cosh b)\pm a$ in the Gram rapidities $(a,b)$ of the
+stabilizer factor.  We then quantize the free fourth-order field modewise and
+compute the Bender--Mannheim ground state exactly: it is a normalizable real
+Gaussian for every mode, but its fidelity with the two-field Fock vacuum
+tends to the universal constant $\sqrt3/2$ at large momentum, and its
+relative particle content to $1/3$ per mode pair.  Consequently the physical
+(PT) and naive Fock representations of the free fourth-order field are
+disjoint in every spatial dimension, although each mode is unitarily
+equivalent: PT unitarization is exact modewise and changes the
+field-theoretic representation.  All identities are machine-verified.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+This paper continues the symplectic analysis of the PT-symmetric
+Pais--Uhlenbeck (PU) oscillator begun in \cite{companion}, whose results and
+conventions we use freely: $V=(x,y,p,q)^{\top}$, $[V_a,V_b]=iJ_{ab}$,
+$H_{\mathrm{PT}}=\tfrac12V^{\top}GV$ with the PU matrix $G$, positive normal
+form $G_0$, rapidity
+\begin{equation}
+r=\log\frac{\w_1+\w_2}{\w_1-\w_2},\qquad \w_1>\w_2>0,
+\end{equation}
+and, after the canonical normalization $d_xd_y=\gamma\w_1\w_2$, the unique
+Hermitian positive-definite diagonalizer
+\begin{equation}
+S_+=\cosh\tfrac r2\,I+\sinh\tfrac r2\,B\in\Sp(4,\C),
+\qquad
+S_+^{\top}G'S_+=G_0',\qquad S_+^{\top}JS_+=J,
+\end{equation}
+with $B$ a fixed Hermitian involution.  The full solution family of the
+diagonalization problem is the coset $S_+\,\Stab(J,G_0')$ with
+$\Stab(J,G_0')\cong SO(2,\C)\times SO(2,\C)$, and the metaplectic logarithm
+of $S_+$ is the Bender--Mannheim generator $Q=\alpha pq+\beta xy$
+\cite{BM2008PRL,BM2008PRD,companion}.
+
+Two questions are addressed here.
+
+\emph{First}, uniqueness of the positive diagonalizer does not by itself
+distinguish $S_+$ variationally: one may ask whether $S_+$ \emph{minimizes} a
+natural functional over all admissible diagonalizers.  We prove that it
+minimizes the affine-invariant distortion
+$\mathcal F(S)=d(I,S^{\dg}S)^2=\|\log(S^{\dg}S)\|_F^2$
+(Theorem~\ref{thm:mindist}), so that the Bender--Mannheim metric is selected
+by a minimum-distortion principle: it is the least-distorting complex
+canonical transformation converting the PU Hamiltonian to its positive
+normal form.
+
+\emph{Second}, for the free fourth-order field
+$(\Box+m_1^2)(\Box+m_2^2)\phi=0$ each spatial momentum $k$ contributes a PU
+pair with $\w_i(k)=\sqrt{k^2+m_i^2}$, and the modewise construction
+applies with rapidity
+\begin{equation}\label{eq:rk}
+r(k)=\log\frac{\big(\w_1(k)+\w_2(k)\big)^2}{m_1^2-m_2^2}
+=2\log|k|+O(1)\qquad(m_1>m_2).
+\end{equation}
+One might expect from \eqref{eq:rk} that the modewise transformation carries
+unboundedly growing squeezing and fails Fock implementability
+``dramatically''.  The exact computation shows something sharper and more
+structured (Theorems~\ref{thm:groundstate}--\ref{thm:disjoint}): the PT
+ground state exists as a normalizable Gaussian for \emph{every} mode, its
+mismatch with the free two-field vacuum saturates at \emph{universal
+constants} --- fidelity $\sqrt3/2$ and relative occupation $1/3$ per mode
+pair at large $k$ --- and therefore the physical and naive representations
+are disjoint in every spatial dimension $d\ge1$, with vacuum overlap decaying
+like $e^{-c V\Lambda^d}$ under a cutoff.  The divergence of $r(k)$ itself is
+a statement about the observable-space (phase-space) metric, which we
+separate cleanly (Corollary~\ref{cor:scale}): its eigenvalues
+$e^{\pm r(k)}\asymp(1+k^2)^{\pm1}$ make the phase-space metric an
+$H^1\oplus H^{-1}$-type Sobolev pair, unboundedly inequivalent to the
+standard norm, while the state-level mismatch remains $O(1)$ per mode.
+
+\paragraph{Verification.}
+As in \cite{companion}, every finite-dimensional identity in this paper ---
+the invariant formulas, the closed-form log-eigenvalues, the PT ground-state
+Gaussian, the eigenvalue equation, the fidelity and occupation formulas, and
+the limits $\sqrt3/2$ and $1/3$ --- is machine-verified symbolically, with
+independent numerical checks (global optimization for
+Theorem~\ref{thm:mindist}; high-precision quadrature for
+Theorem~\ref{thm:groundstate}).  The scripts accompany the verification
+repository of \cite{companion}.
+
+\section{The minimum-distortion theorem}\label{sec:mindist}
+
+Work in the canonically normalized coordinates of \cite{companion}; all
+adjoints refer to them.  The stabilizer is parametrized by two complex
+angles,
+\begin{equation}
+C(\theta_1,\theta_2)=\sum_{j=1,2}\big(\cos\theta_j\,P_j+\sin\theta_j\,X_j\big),
+\qquad X_j^2=-P_j ,
+\end{equation}
+with $P_j$ the projections onto the modes of $G_0'$ and $X_j$ the per-mode
+complex structures; every admissible diagonalizer is $S=S_+C$.
+
+\begin{definition}
+For an admissible $S$ let
+$\mathcal F(S)=\|\log(S^{\dg}S)\|_F^2$, the squared affine-invariant distance
+of the observable-space metric $S^{\dg}S$ from the identity
+\cite{Bhatia2007}.  For a stabilizer element $C=C_1\oplus C_2$ (blocks on the
+two modes) define its \emph{Gram rapidities} $\tau_j\ge0$ by
+\begin{equation}
+W_j=C_jC_j^{\dg},\qquad \det W_j=1,\qquad
+\cosh\tau_j=\tfrac12\tr W_j ,
+\end{equation}
+and set $a=\tfrac12(\tau_1+\tau_2)$, $b=\tfrac12(\tau_1-\tau_2)$.
+\end{definition}
+
+Note $\tau_1=\tau_2=0$ iff $W_1=W_2=I$ iff $C$ is unitary.  Since
+$P=S^{\dg}S=C^{\dg}S_+^2C$ is Hermitian positive \emph{and} symplectic, its
+eigenvalues form reciprocal pairs $e^{\pm x_1},e^{\pm x_2}$ with
+$x_i\ge0$, and $\mathcal F(S)=2(x_1^2+x_2^2)$.
+
+\begin{lemma}[Invariants]\label{lem:invariants}
+Write $W=CC^{\dg}=W_1\oplus W_2$, $c=\cosh r$, $s=\sinh r$.  Decomposing
+$W_j=\cosh\tau_j\,I+\sinh\tau_j\,(n_j\!\cdot\!\sigma)$ with real unit vectors
+$n_j$, and letting $\chi\in[-1,1]$ denote the alignment
+$n_1\!\cdot\!\tilde n_2$ (where $\tilde n_2$ is $n_2$ with its $\sigma_2$
+component reflected),
+\begin{align}
+\cosh x_1+\cosh x_2 &= c\,(\cosh\tau_1+\cosh\tau_2), \label{eq:T}\\
+\cosh x_1\cosh x_2 &= \tfrac12\Big[(2c^2-s^2)\cosh\tau_1\cosh\tau_2
++s^2\big(1+\sinh\tau_1\sinh\tau_2\,\chi\big)\Big]. \label{eq:Pi}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+$\tr P=\tr(e^{rB}W)=c\,\tr W+s\,\tr(BW)$, and $\tr(BW)=0$ because $B$ is
+off-diagonal and $W$ diagonal with respect to the mode splitting; this gives
+\eqref{eq:T}.  For \eqref{eq:Pi}, expand
+$\tr P^2=c^2\tr W^2+s^2\tr\big((BW)^2\big)$ (the cross terms again vanish
+blockwise); the off-diagonal blocks of $B$ equal $-\sigma_2$, and the $2\times2$
+identity $\sigma_2M\sigma_2=(\det M)\,M^{-\top}$ reduces
+$\tr\big((BW)^2\big)=2\tr(\overline{W_2}^{\,-1}W_1)
+=4\big[\cosh\tau_1\cosh\tau_2-\sinh\tau_1\sinh\tau_2\,\chi\big]$.
+Converting $(\tr P,\tr P^2)$ to the symmetric functions of
+$\cosh x_i$ yields \eqref{eq:Pi}.  (Both matrix identities are verified
+against random stabilizer elements in the repository.)
+\end{proof}
+
+\begin{lemma}[Worst alignment; closed form]\label{lem:closedform}
+At $\chi=-1$ the system \eqref{eq:T}--\eqref{eq:Pi} is solved exactly by
+\begin{equation}\label{eq:xformula}
+x_{1,2}=\varphi(b)\pm a,
+\qquad
+\varphi(b)=\arccosh\big(\cosh r\,\cosh b\big)\ \ge\ r .
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+With $\alpha=\cosh a$, $\beta=\cosh b$ one finds from
+\eqref{eq:T}--\eqref{eq:Pi} at $\chi=-1$, using
+$\cosh\tau_1\cosh\tau_2\pm\sinh\tau_1\sinh\tau_2=\cosh(\tau_1\pm\tau_2)$,
+\[
+\cosh x_1+\cosh x_2=2c\,\alpha\beta,
+\qquad
+\cosh x_1\cosh x_2=\alpha^2+c^2\beta^2-1 ,
+\]
+whence
+$\cosh x_{1,2}=c\alpha\beta\pm\sqrt{(\alpha^2-1)(c^2\beta^2-1)}
+=\cosh(\varphi\pm a)$ with $\cosh\varphi=c\beta$.  Both hyperbolic identities
+are verified symbolically.  Finally
+$\cosh\varphi(b)-\cosh r=\cosh r(\cosh b-1)\ge0$ gives $\varphi(b)\ge r$ with
+equality iff $b=0$.
+\end{proof}
+
+\begin{lemma}[Alignment monotonicity]\label{lem:monotone}
+At fixed $\cosh x_1+\cosh x_2$, the quantity $x_1^2+x_2^2$ is nondecreasing
+in $\cosh x_1\cosh x_2$; and \eqref{eq:Pi} is nondecreasing in $\chi$.
+\end{lemma}
+
+\begin{proof}
+Parametrize $\cosh x_{1,2}=T/2\pm w$, $w\ge0$; the product decreases in $w$,
+and
+$\frac{d}{dw}(x_1^2+x_2^2)=2\big(\frac{x_1}{\sinh x_1}-\frac{x_2}{\sinh x_2}\big)
+\le0$
+because $x/\sinh x$ is strictly decreasing and $x_1\ge x_2$.  The second
+statement is the sign of the coefficient
+$s^2\sinh\tau_1\sinh\tau_2/2\ge0$ in \eqref{eq:Pi}.
+\end{proof}
+
+\begin{theorem}[Minimum distortion]\label{thm:mindist}
+For every admissible diagonalizer $S=S_+C$,
+\begin{equation}
+\mathcal F(S)\ \ge\
+4\Big[a^2+\arccosh^2\big(\cosh r\cosh b\big)\Big]\ \ge\ 4r^2=\mathcal F(S_+),
+\end{equation}
+with overall equality if and only if $C$ is unitary.  All minimizers share
+the polar factor $S_+$, hence the same Hilbert-space metric
+$\eta=e^{-Q}$: the Bender--Mannheim metric is the unique metric of any
+minimum-distortion diagonalizer,
+\begin{equation}
+S_+\in\operatorname*{arg\,min}_{S^{\top}JS=J,\ S^{\top}G'S=G_0'}
+d\big(I,S^{\dg}S\big),
+\qquad
+Q=-2\log\big(\text{polar factor of any minimizer}\big)\big|_{\text{metaplectic}} .
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{lem:monotone}, lowering $\chi$ to $-1$ at fixed Gram rapidities
+does not increase $x_1^2+x_2^2$; by Lemma~\ref{lem:closedform} the value there
+is $\mathcal F=2\big[(\varphi+a)^2+(\varphi-a)^2\big]=4(\varphi^2+a^2)$;
+and $\varphi(b)\ge r$.  Equality in the chain
+forces $a=0$ and $b=0$, i.e.\ $\tau_1=\tau_2=0$, i.e.\ $C$ unitary; the
+converse is immediate since then $S^{\dg}S$ is unitarily conjugate to
+$S_+^2$.  If $C$ is unitary, $S_+C=S_+\cdot C$ is already a polar
+decomposition, so the polar factor is $S_+$ and the metaplectic implementer
+factorizes as $\rho'=U_C\,e^{-Q/2}$ with $U_C$ unitary, giving
+$\eta'=\rho'^{\dg}\rho'=e^{-Q}$ for every minimizer.
+\end{proof}
+
+\begin{remark}
+(i) The individual log-eigenvalues do \emph{not} satisfy $x_i\ge r$: numerical
+scans show $\min_i x_i<r$ on open regions of the stabilizer; only the joint
+quantity is bounded below, which is why the two-invariant argument is needed.
+(ii) The equality set is the unitary part of the stabilizer, which in the
+canonical coordinates is generically the finite group $\Z_2\times\Z_2$
+\cite{companion}; abstractly it is contained in the maximal compact
+$U(1)^2$ of $SO(2,\C)^2$.
+(iii) The theorem gives the finite-dimensional Kempf--Ness-type picture
+concretely: the Gram map $C\mapsto CC^{\dg}$ measures the distance of a coset
+element from the unitary locus, and \eqref{eq:xformula} shows how the two
+rapidities $(a,b)$ add in quadrature with the PU rapidity $r$.
+\end{remark}
+
+\section{The free fourth-order field}\label{sec:field}
+
+\subsection{Modewise data and the phase-space Hilbert scale}
+
+For $(\Box+m_1^2)(\Box+m_2^2)\phi=0$, each spatial momentum $k$ carries a PU
+pair with $\w_i(k)=\sqrt{k^2+m_i^2}$ and $m_1>m_2>0$.  Since
+$(\w_1-\w_2)(\w_1+\w_2)=m_1^2-m_2^2$ identically, the rapidity obeys
+\eqref{eq:rk} \emph{exactly}, interpolating between
+$r(0)=\log\frac{m_1+m_2}{m_1-m_2}$ and $r(k)=2\log|k|+O(1)$.
+
+\begin{corollary}[Phase-space Hilbert scale]\label{cor:scale}
+In the canonically normalized modewise coordinates, the observable-space
+metric $M_{\mathrm{obs}}(k)=S_+(k)^{\dg}S_+(k)$ has eigenvalues
+$e^{\pm r(k)}$ with
+\begin{equation}
+e^{r(k)}=\frac{\big(\w_1(k)+\w_2(k)\big)^2}{m_1^2-m_2^2}
+\asymp 1+k^2 ,
+\qquad
+e^{-r(k)}\asymp(1+k^2)^{-1} .
+\end{equation}
+On the spectral subspaces $\Pi_\pm(k)$ of $B$ the induced one-particle
+phase-space norm is therefore equivalent to an $H^1\oplus H^{-1}$ Sobolev
+pair (up to the constant $m_1^2-m_2^2$ and bounded factors): it is not
+uniformly equivalent to the standard norm, and no scalar renormalization
+makes it so.
+\end{corollary}
+
+This is the precise content of the observation that the modewise metric
+``blows up in the UV''.  It concerns the classical (phase-space) metric.
+The quantum state-level comparison is finer, and is computed next.
+
+\subsection{The PT ground state, exactly}
+
+Fix a mode and work in the normalized coordinates $(x,y)$ with
+$\w_1>\w_2>0$.  The positive Hamiltonian $\widetilde H'$ has ground state
+$\phi_0\propto e^{-\frac12(x^2/\w_2+\w_1y^2)}$.  The PT Hamiltonian in these
+coordinates is the differential operator
+\begin{equation}
+H_{\mathrm{PT}}'=\tfrac12\Big[\tfrac{\w_1^2+\w_2^2}{\w_1\w_2}\,x^2
++\w_1\w_2\,y^2-\w_1\w_2\,\partial_x^2\Big]-x\,\partial_y .
+\end{equation}
+
+\begin{theorem}[PT ground state]\label{thm:groundstate}
+The unique Gaussian solution of the modewise annihilation equations
+$\big(\ell_j^{\top}S_+^{-1}V\big)\psi_0=0$ is
+\begin{equation}
+\psi_0(x,y)\ \propto\
+\exp\!\Big[-\tfrac12\Big(\tfrac{\w_1+\w_2}{\w_1\w_2}\,x^2
++2xy+(\w_1+\w_2)\,y^2\Big)\Big],
+\end{equation}
+a \emph{real} Gaussian with
+$\det(\mathrm{quadratic\ form})=\frac{\w_1^2+\w_1\w_2+\w_2^2}{\w_1\w_2}>0$:
+normalizable for all $\w_1>\w_2>0$, and
+$H_{\mathrm{PT}}'\psi_0=\tfrac{\w_1+\w_2}{2}\,\psi_0$.  Its fidelity with the
+two-oscillator vacuum and its occupation relative to it are exactly
+\begin{align}
+f(\w_1,\w_2)&=\big|\langle\hat\phi_0|\hat\psi_0\rangle\big|^2
+=\frac{4\w_1\sqrt{\w_1^2+\w_1\w_2+\w_2^2}}{4\w_1^2+3\w_1\w_2+\w_2^2},\\[2pt]
+\langle N\rangle(\w_1,\w_2)
+&=\langle\hat\psi_0|(N_1+N_2)|\hat\psi_0\rangle
+=\frac{\w_2(\w_1^2+\w_2^2)}{2\w_1(\w_1^2+\w_1\w_2+\w_2^2)},
+\qquad \langle N_1\rangle=\langle N_2\rangle .
+\end{align}
+In particular, along the field dispersion $\w_i=\w_i(k)$,
+\begin{equation}\label{eq:universal}
+\lim_{|k|\to\infty}f=\frac{\sqrt3}{2}\approx0.866,
+\qquad
+\lim_{|k|\to\infty}\langle N\rangle=\frac13 ,
+\end{equation}
+universal constants independent of $m_1,m_2,\gamma$.
+\end{theorem}
+
+\begin{proof}
+Solving the two first-order equations for a Gaussian ansatz gives the stated
+quadratic form (one solution); the eigenvalue equation is a direct
+substitution.  The fidelity is the standard two-Gaussian determinant formula;
+the occupations follow from covariance algebra,
+$\langle N_j\rangle=\tfrac12 c_j^{\top}\Sigma c_j$ with
+$\Sigma$ the covariance of $|\psi_0|^2$ and $c_j$ the coefficient vectors of
+$a_j\psi_0$.  All steps are verified symbolically, and the fidelity is
+confirmed by 25-digit quadrature.  The limits follow with
+$\w_1/\w_2\to1$.
+\end{proof}
+
+\begin{remark}
+Two features deserve emphasis.  (i) $\psi_0$ is a smooth, normalizable
+Gaussian even as $\w_1\to\w_2$: the exceptional-point pathology
+(divergence of $S_+$, Jordan structure) lives in the similarity
+transformation and the excited spectrum, not in the ground state itself.
+(ii) A naive Bogoliubov estimate would assign the modewise map a squeezing
+$\sim\sinh^2\!\big(r(k)/2\big)\sim k^2$ and hence a violently divergent
+particle content per mode.  The exact result \eqref{eq:universal} is
+$O(1)$: the diverging rapidity $r(k)$ is carried almost entirely by
+directions that do not create quanta.  The naive estimate fails because
+$\rho=e^{-Q/2}$ is not $*$-preserving on the original Fock structure ---
+the transformed ``annihilators'' $\rho a_j\rho^{-1}$ do not satisfy the
+unitary Bogoliubov normalization ($\alpha\alpha^{\dg}-\beta\beta^{\dg}
+=\cosh r\ne1$) --- so Shale--Stinespring-type criteria cannot be applied to
+$\rho$ directly.  Comparing the two \emph{states}, both of which live in the
+same $L^2$, avoids this trap entirely.
+\end{remark}
+
+\subsection{Disjointness of the representations}
+
+\begin{theorem}[Representation change]\label{thm:disjoint}
+Let $m_1>m_2>0$, $d\ge1$, and consider the free fourth-order field in a box
+of volume $V$ with momentum cutoff $\Lambda$, with
+$\Psi_{\mathrm{PT}}=\bigotimes_k\hat\psi_0(k)$ the modewise PT ground state
+and $\Omega=\bigotimes_k\hat\phi_0(k)$ the free two-field Fock vacuum.  Then:
+\begin{enumerate}
+\item the vacuum overlap satisfies
+$\big|\langle\Omega|\Psi_{\mathrm{PT}}\rangle\big|^2
+=\prod_k f(k)\le e^{-c\,V\Lambda^d}$ for some $c>0$ depending only on
+$m_1/m_2$ and $d$ (since $f(k)\to\sqrt3/2<1$);
+\item the relative particle density diverges in the UV:
+$\frac1V\langle N_{\mathrm{tot}}\rangle
+=\int^{\Lambda}\!\frac{d^dk}{(2\pi)^d}\,\langle N\rangle(k)
+\sim\frac13\int^{\Lambda}\!\frac{d^dk}{(2\pi)^d}=\infty$ as
+$\Lambda\to\infty$, in \emph{every} dimension $d\ge1$;
+\item in the thermodynamic/continuum limit the incomplete-tensor-product
+classes of $\Psi_{\mathrm{PT}}$ and $\Omega$ differ
+($\sum_k(1-|\langle\hat\psi_0|\hat\phi_0\rangle|)=\infty$), so the GNS
+representations of the CCR algebra built on the two states are disjoint: no
+density matrix in the Fock representation of the free pair
+$(m_1,m_2)$ reproduces the PT vacuum, and vice versa.
+\end{enumerate}
+Each mode, by contrast, is unitarily equivalent: the modewise Dyson maps
+$\rho_k=e^{-Q_k/2}$ define unitaries between the mode Hilbert spaces
+equipped with the physical ($\eta_k$) and standard inner products.
+\end{theorem}
+
+\begin{proof}
+(1) and (2) are immediate from Theorem~\ref{thm:groundstate}: $f(k)$ and
+$\langle N\rangle(k)$ are continuous in $k$ with the universal limits
+\eqref{eq:universal}, so beyond some $k_*(m_1/m_2)$ one has, e.g.,
+$f(k)\le0.9$ and $\langle N\rangle(k)\ge0.3$.  (3) is von Neumann's
+equivalence criterion for incomplete tensor products \cite{vN1939} applied
+to the two product vectors, combined with purity: inequivalent pure product
+states generate disjoint representations.  The modewise statement is the
+finite-dimensional similarity of \cite{BM2008PRD,companion}.
+\end{proof}
+
+\begin{remark}[What this does and does not say]\label{rem:meaning}
+The theorem does not say the PT quantization of the fourth-order field is
+inconsistent.  The physical Hilbert space, defined as the completion of the
+modewise-unitarized theory, is naturally identified with the Fock space of
+the free pair $(m_1,m_2)$; on it the dynamics is unitary, exactly as argued
+by Bender and Mannheim modewise.  What fails is the \emph{global} equivalence
+between this physical representation and the naive covariant Fock
+representation in which the fourth-order propagator and perturbation theory
+are usually written: the two are different, mutually singular
+representations of the same field algebra, with an $O(1)$ discrepancy per UV
+mode --- not a discrepancy that decays with $k$, and not one confined to the
+exceptional locus $m_1=m_2$.  Any interacting construction therefore has to
+choose a representation first; formal manipulations that mix them (e.g.,
+inserting $\eta=e^{-Q}$ as if it were a bounded operator on the covariant
+Fock space) are not supported: by Corollary~\ref{cor:scale} the metric is
+unbounded with unbounded inverse, defining a Hilbert scale rather than an
+equivalent norm, and by Theorem~\ref{thm:disjoint} its formal
+infinite-mode product annihilates the covariant vacuum's representation
+class entirely.  This sharpens, for the free theory, the sense in which
+PT-based unitarity claims for quadratic gravity
+\cite{QQG2024} require an explicit domain-and-completion construction.
+\end{remark}
+
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{The variational principle.}
+Theorem~\ref{thm:mindist} upgrades the uniqueness theorem of
+\cite{companion}: the Bender--Mannheim metric is not merely the unique
+positive point of the diagonalizer coset but its unique distortion minimizer,
+with the exact excess $4[a^2+\arccosh^2(\cosh r\cosh b)]-4r^2$ in the Gram
+rapidities of the stabilizer.  The result is a concrete, fully explicit
+instance of the Kempf--Ness/Mostow picture --- minimal-norm points on
+complexified orbits are unitary-locus points --- but the proof is elementary
+and yields the minimizing value in closed form, which the abstract theory
+does not.
+
+\paragraph{The two geometries, again.}
+The field-theoretic analysis separates two statements that are easily
+conflated.  The \emph{phase-space} metric degenerates in the UV exactly as
+the rapidity formula \eqref{eq:rk} dictates ($e^{\pm r(k)}\asymp k^{\pm2}$, a
+Sobolev pair $H^1\oplus H^{-1}$); this is a statement about observables.
+The \emph{state-space} mismatch saturates at universal constants
+($\sqrt3/2$, $1/3$); this is a statement about representations, and it is
+what controls implementability.  Both are exact consequences of the same
+modewise data.  The constants are universal because the UV limit
+$\w_1/\w_2\to1$ erases all mass and coupling dependence --- remarkably, the
+same limit in which the finite-dimensional theory degenerates (the
+exceptional point) is the limit in which the ground-state data become
+featureless.
+
+\paragraph{Outlook.}
+Three natural continuations: (i) extend the minimum-distortion theorem to
+general semisimple quadratic PT Hamiltonians, where the stabilizer is a
+product of $SO(2,\C)$ factors and the same Gram-rapidity reduction should
+apply mode-pair by mode-pair; (ii) determine whether the disjointness
+survives interactions in low dimensions, where the free-theory obstruction
+is only the universal $1/3$ per mode (a wave-function renormalization of the
+modewise map, $\rho_k\to\rho_k Z_k$ with $Z_k$ unitary, cannot change class
+(3), but a $k$-dependent redefinition of the mode split might); and (iii)
+make contact with the Krein-space formulation of indefinite-metric QFT,
+where the covariant representation lives, to phrase the representation
+choice intrinsically.  We leave these to future work.
+
+\begin{thebibliography}{9}
+
+\bibitem{companion}
+\emph{Canonical positive symplectic diagonalization of the Pais--Uhlenbeck
+oscillator}, companion paper and verification repository, 2026.
+
+\bibitem{BM2008PRL}
+C.~M.~Bender and P.~D.~Mannheim,
+Phys.\ Rev.\ Lett.\ \textbf{100} (2008) 110402.
+
+\bibitem{BM2008PRD}
+C.~M.~Bender and P.~D.~Mannheim,
+Phys.\ Rev.\ D \textbf{78} (2008) 025022.
+
+\bibitem{Bhatia2007}
+R.~Bhatia, \emph{Positive Definite Matrices}, Princeton University Press,
+2007.
+
+\bibitem{vN1939}
+J.~von Neumann,
+\emph{On infinite direct products},
+Compos.\ Math.\ \textbf{6} (1939) 1.
+
+\bibitem{QQG2024}
+J.~Kubo and J.~Kuntz,
+\emph{Unitarity through PT symmetry in quantum quadratic gravity},
+arXiv:2410.08278.
+
+\end{thebibliography}
+
+\end{document}
