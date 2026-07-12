@@ -319,3 +319,24 @@ parabolic decoupling → orbit constancy + universal Fock obstruction →
 universal dressed sector + terminating hierarchy → spectral bridge to
 Bateman–Turok → fourth-order Hadamard theorem (+ ±Hadamard split) →
 discussion with quadratic gravity as outlook only.
+
+## Paper 3 freeze pass (2026-07-12)
+
+- G/K → G/P_Ω "projection" replaced by the correspondence
+  G/K ← G → G/P_Ω (no such map exists: K ≅ Sp(n) ⊄ P_Ω,
+  K∩P_Ω ≅ U(n)); theorem renamed "Cartan–parabolic decoupling", restated
+  via the two quotient maps q_K, q_Ω with the fibre statement and the PU
+  collapse q_Ω(S₊H) = {[Ω_PT]}.
+- "Same quasifree state" → "same quasifree two-point functional" (bridge
+  theorem restated with matched action sign + IR extension, completions
+  named; no positivity asserted w.r.t. a common involution); ghost branch
+  reworded to "KG-Hadamard distribution with negative Krein signature".
+- Resonant limit split into three regularities (distributional /
+  representation / dynamical-metric) with the boxed conclusion:
+  resonance is not a vacuum singularity; it is a metric and dynamical
+  singularity.
+- "No frame tames μ" upgraded from numerics to an analytic lemma:
+  σ_max(T⁻¹S₊T) ≥ ρ(S₊) = e^{r/2} ⇒ ‖μ‖_∞ ≥ r in every invertible frame
+  (P10 in verify_paper3_audit.py, numeric corroboration).
+- Sector table endpoints: logarithmic obstruction at d = 4 and d = 8
+  stated explicitly.

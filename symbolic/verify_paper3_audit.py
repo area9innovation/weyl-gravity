@@ -206,4 +206,25 @@ check("P9: matched Sigma: 1 - f == (29/576)(delta^2 - deltabar^2)^2/k^8 + ... "
       "(invariant Pi = m1^2 m2^2; hierarchy: none | Sigma | (Sigma,Pi) at d<4 | 4<=d<8 | d>=8; terminates)",
       sp.simplify(sp.factor(serS) - sp.Rational(29, 576)*eps**8*(dl**2 - dlb**2)**2) == 0)
 
+# ---------------------------------------------------------------- P10 ---------
+print("\n=== P10: no-frame lemma (analytic): sigma_max >= spectral radius ===")
+# For any invertible T: ||mu(T^-1 S+ T)||_inf >= log rho(S+^2) = r, since the
+# largest singular value dominates the spectral radius and similarity
+# preserves spec(S+) = {e^{+-r/2}}. Numeric corroboration with random frames:
+import numpy as np
+rng2 = np.random.default_rng(12)
+ok10 = True
+for _ in range(6):
+    W1v, W2v = 3.0, 1.2
+    rv = np.log((W1v+W2v)/(W1v-W2v))
+    Bn = np.zeros((4,4),complex); Bn[0,3]=1j; Bn[1,2]=1j; Bn[2,1]=-1j; Bn[3,0]=-1j
+    Sn = np.cosh(rv/2)*np.eye(4) + np.sinh(rv/2)*Bn
+    T = rng2.normal(size=(4,4)) + 1j*rng2.normal(size=(4,4))
+    if abs(np.linalg.det(T)) < 1e-3: continue
+    Sh = np.linalg.inv(T) @ Sn @ T
+    mu_max = float(np.max(np.log(np.linalg.eigvalsh(Sh.conj().T @ Sh))))
+    ok10 &= mu_max >= rv - 1e-9
+check("P10: ||mu(T^-1 S+ T)||_inf >= r for random invertible frames "
+      "(analytic proof: sigma_max >= spectral radius)", ok10)
+
 print("\nALL PASS" if PASS else "\nSOME CHECKS FAILED")

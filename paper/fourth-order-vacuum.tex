@@ -51,8 +51,10 @@ $4\le d<8$ and by the full mass pair for $d\ge8$.  The selected vacuum's
 Wightman function is exactly the spectral two-point function of the
 fourth-order operator for every mass splitting, and its equal-mass limit
 coincides with the Krein-space vacuum of Bateman and Turok: metric
-selection and the spectral condition determine the same quasifree state,
-the two quantizations differing only in the completion.  Finally the
+selection and the spectral condition determine the same quasifree vacuum
+functional (after matching the action sign and infrared extension), the
+two quantizations differing only in the completion --- positive
+pseudo-Hermitian for split masses, Krein/Jordan at resonance.  Finally the
 selected state is Hadamard in the natural fourth-order sense: its
 wavefront set is the standard positive-frequency Hadamard set, with a
 logarithmic short-distance singularity of universal coefficient
@@ -93,12 +95,17 @@ nonunitarity \cite{companion2}.  The vacuum geometry is the geometry of
 Gaussian vacuum rays, which is governed by a different quotient: the
 stabilizer $P_\Omega=\{g:\hat g\,\Omega\in\C^\times\Omega\}$ of the
 vacuum line is a parabolic-type subgroup, and vacuum rays live in
-$G/P_\Omega$.  The dynamical geometry is the spectral structure of the
+$G/P_\Omega$.  There is no map $G/K\to G/P_\Omega$ (the compact
+$K\cong\Sp(n)$ does not preserve the vacuum ray; only $K\cap
+P_\Omega\cong U(n)$ does); the correct geometry is the correspondence
+$G/K\leftarrow G\rightarrow G/P_\Omega$ of two inequivalent quotient
+maps.  The dynamical geometry is the spectral structure of the
 Hamiltonian, which degenerates (Jordan blocks) exactly at the resonant
 point $m_1=m_2$ \cite{companion1}.  Our results, in brief:
 
 \begin{enumerate}
-\item \emph{Parabolic decoupling} (Section~\ref{sec:decoupling}).  In
+\item \emph{Cartan--parabolic decoupling}
+(Section~\ref{sec:decoupling}).  In
 canonical normal-form coordinates the Bender--Mannheim generator is a pure
 beam splitter, $Q'=r\,(a_1a_2^{\dg}+a_1^{\dg}a_2)$: it lies in the
 complexified number-preserving (Levi) algebra of $P_\Omega$, fixes the
@@ -150,8 +157,8 @@ function of \eqref{eq:eom},
 \end{equation}
 for all $\Delta=m_1^2-m_2^2\ge0$; the confluent case is the Krein vacuum
 of \cite{BT2026}.  Metric selection and the spectral condition determine
-the same quasifree state; the quantizations differ only in the
-completion --- positive $\eta$-inner product where it exists
+the same quasifree vacuum functional; the quantizations differ only in
+the completion --- positive $\eta$-inner product where it exists
 ($\Delta>0$), Krein space with ghost parity where it must ($\Delta=0$).
 The state is analytic across the resonant boundary while the metric and
 diagonalizability fail there.
@@ -226,35 +233,56 @@ Cartan norm is unbounded.
 
 One might hope that a frequency-adapted symplectic frame $T_\w$ (the one
 whose canonical vacuum is the physical two-field vacuum) turns the
-divergent Cartan data into bounded physical squeezing.  It does not:
-numerically, $\mu(T_\w^{-1}S_+T_\w)\approx(r,r)$ as well --- the Dyson map
-is genuinely non-unitary, with unbounded distortion, in every frame.  What
-is bounded is the \emph{state}: the selected vacuum, computed exactly in
-\cite{companion2} as the Gaussian ground state of the PT mode Hamiltonian,
-has occupation \eqref{eq:N} relative to the two-field vacuum, saturating
-at $1/3$.  The two statements are compatible because particle content
-depends on the transformation only through the vacuum ray it produces ---
-a $G/P_\Omega$ datum --- while $\mu$ is a $G/K$ datum, and the projection
-$G/K\to G/P_\Omega$ collapses the noncompact Levi directions.
+divergent Cartan data into bounded physical squeezing.  It cannot:
 
-\begin{theorem}[Parabolic decoupling]\label{thm:decoupling}
-For $G=\Sp(2n,\C)$ acting metaplectically on Fock space:
-(i) positive-metric geometry is governed by $G/K$ and its Cartan
-projection; (ii) Gaussian vacuum rays are governed by $G/P_\Omega$;
-(iii) the Cartan norm is unbounded on $P_\Omega$ (already on its Levi
-component); consequently (iv) no bound of the form
+\begin{lemma}[No frame tames the map]\label{lem:noframe}
+For every invertible frame $T$,
+\begin{equation}
+\big\|\mu\big(T^{-1}S_+T\big)\big\|_\infty
+\ \ge\ \log\varrho\big((T^{-1}S_+T)^2\big)=\log\varrho(S_+^2)=r ,
+\end{equation}
+where $\varrho$ is the spectral radius: the largest singular value of any
+matrix dominates its spectral radius, and similarity preserves the
+spectrum of the positive $S_+$, which is $\{e^{\pm r/2}\}$.  Hence
+$\|\mu(T_\w^{-1}S_+T_\w)\|\to\infty$ in the ultraviolet for every choice
+of frames $T_\w$.  (Numerically the physical-frame Cartan data are in
+fact close to $(r,r)$; the lemma is what the theorems below use.)
+\end{lemma}
+
+What is bounded is the \emph{state}: the selected vacuum, computed exactly
+in \cite{companion2} as the Gaussian ground state of the PT mode
+Hamiltonian, has occupation \eqref{eq:N} relative to the two-field vacuum,
+saturating at $1/3$.  The two statements are compatible because particle
+content depends on the transformation only through the vacuum ray it
+produces --- a $G/P_\Omega$ datum --- while $\mu$ is a $G/K$ datum, and
+the two are inequivalent quotients of $G$.
+
+\begin{theorem}[Cartan--parabolic decoupling]\label{thm:decoupling}
+Let $G=\Sp(2n,\C)$ act metaplectically on Fock space, and let
+$q_K:G\to G/K$ and $q_\Omega:G\to G/P_\Omega$,
+$q_\Omega(g)=[\hat g\,\Omega]$, be the two quotient maps.  Then:
+(i) positive-metric geometry is a function of $q_K$ (the Cartan
+projection); (ii) Gaussian vacuum rays are a function of $q_\Omega$;
+(iii) there is no map $G/K\to G/P_\Omega$ intertwining them, since
+$K\not\subseteq P_\Omega$ ($K\cap P_\Omega\cong U(n)\subsetneq
+K\cong\Sp(n)$); (iv) the Cartan norm is unbounded on $P_\Omega$ (already
+on its Levi component), so fibres of $q_\Omega$ contain elements of
+arbitrarily large Cartan norm; consequently (v) no bound of the form
 $\langle N\rangle\ge f(\|\mu\|)$ or $\le f(\|\mu\|)$ holds in general.
-The PU family realizes the extreme case: divergent $\mu=(r,r)$ with
-identically vanishing canonical-frame excitation, and bounded physical
-excitation \eqref{eq:N} with divergent physical-frame $\mu$.
+The PU metric orbit realizes the extreme case:
+$q_\Omega(S_+H)=\{[\Omega_{\mathrm{PT}}]\}$ is a single vacuum ray
+(Theorem~\ref{thm:constancy}), while $q_K(S_+H)$ is unbounded, with
+$\mu(S_+)=(r,r)$ divergent in the ultraviolet yet identically vanishing
+canonical-frame excitation, and bounded physical excitation \eqref{eq:N}
+despite Lemma~\ref{lem:noframe}.
 \end{theorem}
 
-The proof of (iii) is the identity \eqref{eq:beamsplitter} together with
-$\mu(e^{(r/2)B})=(r,r)$; (iv) follows from the two exhibited extremes.
-This corrects a natural but false expectation --- used, e.g., to estimate
+The proof of (iv) is the identity \eqref{eq:beamsplitter} together with
+$\mu(e^{(r/2)B})=(r,r)$; (v) follows from the exhibited extremes.  This
+corrects a natural but false expectation --- used, e.g., to estimate
 Bogoliubov costs by $\sinh^2$ of Cartan coordinates --- and it is the
 conceptual reason the theorems below must be formulated at the level of
-states.
+vacuum functionals.
 
 \section{Orbit constancy and the universal Fock obstruction}
 \label{sec:obstruction}
@@ -335,6 +363,11 @@ $d\ge8$ & $(\Sigma,\Pi)$, i.e.\ the full mass pair
 \end{tabular}
 \end{center}
 The hierarchy terminates: two symmetric invariants determine the pair.
+At the critical dimensions the obstruction is logarithmic rather than
+power-law: at $d=4$ (respectively $d=8$) the divergent sum for
+$\Sigma\neq\bar\Sigma$ (respectively $\Pi\neq\bar\Pi$ at matched
+$\Sigma$) grows as $\log\Lambda$, so the critical dimensions belong to
+the labeled regimes as indicated.
 In $d\le3$ the universal sector is anchored by the $\Box^2$ selected
 vacuum ($m_1=m_2=0$; modewise Gaussian $A=(2k,k^2;k^2,2k^3)$), relative to
 which $1-f=\Sigma^2/(12k^4)+\dots$; all massive selected vacua are
@@ -342,18 +375,25 @@ quasi-equivalent to it and to each other, while remaining collectively
 disjoint from the naive two-field sector by Theorem~\ref{thm:nogo}.
 \end{theorem}
 
-Two limits deserve emphasis.  First, the resonant limit is
-\emph{regular} at the vacuum level: the selected Gaussian is analytic in
-$\Delta$ across $\Delta=0$ ($1-f\sim\varepsilon^4$ for
-$m_{1,2}=m\pm\varepsilon$), and the occupation limits commute
-($\langle N\rangle\equiv\tfrac13$ at $\Delta=0$ for every $k$).  Second,
-what does degenerate as $\Delta\to0$ is the metric operator
-($\alpha,\beta\to\infty$), the similarity transformation
-($S_+\sim\Delta^{-1/2}$), and the diagonalizability of the dynamics
-(Jordan blocks; no positive invariant form \cite{companion1}).  The
-resonant transition is a failure of \emph{dynamical} and \emph{metric}
-geometry, not of vacuum geometry --- the third strand of
-\eqref{eq:threegeom}.
+At the resonant boundary three kinds of regularity must be
+distinguished.
+\emph{Distributional regularity}: the selected two-point functional is
+analytic in $\Delta$ across $\Delta=0$ (modewise, $1-f\sim\varepsilon^4$
+for $m_{1,2}=m\pm\varepsilon$; the Wightman functions of
+Section~\ref{sec:bridge} converge smoothly), and the occupation limits
+commute ($\langle N\rangle\equiv\tfrac13$ at $\Delta=0$ for every $k$).
+\emph{Representation regularity}: for $d\le3$ the resonant vacuum lies in
+the same dressed Fock sector as every nondegenerate selected vacuum
+(Theorem~\ref{thm:sectors}).
+\emph{Dynamical and metric singularity}: as $\Delta\to0$ the metric
+operator degenerates ($\alpha,\beta\to\infty$), the similarity
+transformation diverges ($S_+\sim\Delta^{-1/2}$), and the dynamics becomes
+nondiagonalizable (Jordan blocks; no positive invariant form
+\cite{companion1}).  In summary,
+\begin{equation}
+\boxed{\ \text{resonance is not a vacuum singularity; it is a metric and
+dynamical singularity.}\ }
+\end{equation}
 
 \section{The spectral bridge to the Krein quantization}\label{sec:bridge}
 
@@ -379,29 +419,31 @@ $E_P(0)=E_P'(0)=E_P''(0)=0$, $E_P'''(0)=1$, and confluent limit
 $(\sin\w t-\w t\cos\w t)/(2\w^3)$.
 
 \begin{theorem}[Bridge theorem]\label{thm:bridge}
-For every $\Delta\ge0$ the Bender--Mannheim selected vacuum is the
-spectral quasifree state of the fourth-order field: its two-point function
-is \eqref{eq:Wspectral}.  In particular its $\Delta=0$ limit coincides,
-up to the overall action-sign convention, with the Krein-space vacuum of
-Bateman and Turok \cite{BT2026} (their
-$\widetilde W(p)=\theta(p^0)\delta_1'(p^2)$, realized by the Jordan mode
-doublet $e^{-ipx}$, $(1+2i|p|t)e^{-ipx}$ with null pairing
-$[a_1,a_2^{\dg}]=[a_2,a_1^{\dg}]\ne0$).  Metric selection and the spectral
-condition therefore determine the same state; the two quantizations differ
-only in the completion of the field algebra representation: a positive
-$\eta$-inner product for $\Delta>0$, a Krein space with ghost parity at
-$\Delta=0$.
+The selected PU quantization and the Bateman--Turok spectral quantization
+determine the same quasifree two-point functional for all $\Delta\ge0$,
+after matching the overall action sign and (in the doubly massless case)
+the infrared extension: the selected vacuum's two-point distribution is
+\eqref{eq:Wspectral}, whose $\Delta=0$ limit is the Bateman--Turok
+$\widetilde W(p)=\theta(p^0)\delta_1'(p^2)$ \cite{BT2026}, realized there
+by the Jordan mode doublet $e^{-ipx}$, $(1+2i|p|t)e^{-ipx}$ with null
+pairing $[a_1,a_2^{\dg}]=[a_2,a_1^{\dg}]\ne0$.  For $\Delta>0$ this
+functional is realized through a positive pseudo-Hermitian completion
+($\eta$-inner product); at $\Delta=0$ it is realized through the resonant
+Krein/Jordan completion with ghost parity.  We do not assert positivity
+with respect to a common involution: ``vacuum functional'' refers to the
+normalized quasifree functional determined by the two-point distribution
+on the fixed field algebra.
 \end{theorem}
 
 \begin{proof}
 The first statement is the computation \eqref{eq:Wmode} (machine-verified,
 including the commutator normalization which fixes the action-sign
 convention: the residual overall sign relative to \cite{BT2026} is exactly
-the sign of their perfect-square action).  Quasifree states are determined
-by their two-point functions, so equality of \eqref{eq:Wmode} with the
-Bateman--Turok mode Wightman function --- both equal to
+the sign of their perfect-square action).  Quasifree functionals are determined
+by their two-point distributions, so equality of \eqref{eq:Wmode} with
+the Bateman--Turok mode Wightman function --- both equal to
 $(1+i\w t)e^{-i\w t}/(4\w^3)$ in matched conventions --- identifies the
-states.
+functionals.
 \end{proof}
 
 \begin{remark}
@@ -499,10 +541,11 @@ W_{\phi_1\phi_2}=0 .
 \end{equation}
 \end{proposition}
 
-The ghost branch carries a \emph{negative} Klein--Gordon--Hadamard
-two-point function: the Krein signature is intrinsic to the selected
-state, while its local singularity structure is standard on both
-branches.  This makes the summary statement precise:
+The ghost branch carries a Klein--Gordon--Hadamard \emph{distribution
+with negative Krein signature} --- not a positive KG state under the
+ordinary KG $*$-structure: the Krein signature is intrinsic to the
+selected functional, while its local singularity structure is standard on
+both branches.  This makes the summary statement precise:
 
 \begin{quote}
 \emph{The universal selected vacuum is a fourth-order Hadamard quasifree
