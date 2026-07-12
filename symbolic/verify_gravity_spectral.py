@@ -141,8 +141,24 @@ r_S_red = 1/mu_S
 rat = [sp.simplify(r_V_red/r_TT_red), sp.simplify((r_S_red/r_TT_red).subs(c1, alpha*M**2))]
 check("G10c4: reduced residue ratios (V/TT, S/TT) == (M^2, 1/3) "
       "== projector ratios ((M^2/2)/(1/2), (1/6)/(1/2)): "
-      "single overall normalization N = 4/c1, uniform ghost sign (covariant)",
+      "single overall coefficient, uniform ghost sign (covariant)",
       sp.simplify(rat[0] - M**2) == 0 and sp.simplify(rat[1] - sp.Rational(1, 3)) == 0)
+
+# ABSOLUTE coefficient (referee round 2): the FULL covariant coefficient is
+# C = 4/c1 with NO residual 1/M^2 (equivalently C = (4/alpha)/M^2), because
+# alpha*M^2 = c1 makes the TT prefactor 1/(gamma M^2) = 2/(alpha M^2) = 2/c1
+# M-independent.  Check C * (projector contraction) == reduced prefactor,
+# sector by sector, exactly:
+C_full = 4/c1
+onshell = {c1: alpha*M**2}
+ok_TT = sp.simplify((C_full*sp.Rational(1, 2) - r_TT_red).subs(onshell)) == 0
+ok_V = sp.simplify((C_full*(M**2/2) - r_V_red).subs(onshell)) == 0
+ok_S = sp.simplify((C_full*sp.Rational(1, 6) - r_S_red).subs(onshell)) == 0
+check("G10c6: FULL covariant coefficient C = 4/c1 (no extra 1/M^2): "
+      "C*(1/2) = 1/(gamma M^2), C*(M^2/2) = 1/mu_V, C*(1/6) = 1/mu_S, "
+      "all exact under c1 = alpha M^2  [a spurious C/M^2 would give "
+      "~ M^{-2} delta'(p^2) and destroy the conformal limit]",
+      ok_TT and ok_V and ok_S)
 
 # massless shell couples only to TT: w and O_S vanish on massless polarizations
 # massless TT polarizations have only xy and xx-yy components:
@@ -279,6 +295,24 @@ check("G11c: full Weyl-Weyl contraction of Pi equals that of Pi0 "
 check("G11d: recorded: WF directions Hadamard C+; W_h ~ log rho while "
       "W_CC ~ d^4 log rho (differentiated descendant)", True)
 
+# G11e: massless-shell Weyl principal symbol nonvanishing on TT polarization
+# (supports WF EQUALITY, not just inclusion): the linearized Weyl tensor of a
+# massless TT plane wave h_xy is nonzero (e.g. C_{txty} = k^2/2 h_xy on the
+# null shell p = (k,0,0,k)).
+p_null_lo = sp.Matrix([k, 0, 0, -k])
+h_TT = sp.zeros(4, 4)
+h_TT[1, 2] = h_TT[2, 1] = sp.Symbol("hxy")
+C_null = weyl(h_TT, p_null_lo)
+nonzero_TT = any(sp.simplify(v) != 0 for v in C_null.values())
+# and, control: the same map kills a null pure-gauge perturbation exactly
+hg_null = sp.Matrix(4, 4, lambda a, b: p_null_lo[a]*xi[b] + p_null_lo[b]*xi[a])
+C_gauge = weyl(hg_null, p_null_lo)
+gauge_killed = all(sp.simplify(v) == 0 for v in C_gauge.values())
+check("G11e: Weyl principal symbol NONZERO on massless TT polarization "
+      "(sigma_C != 0 on the null shell) while killing null pure gauge: "
+      "WF equality, not just inclusion, on the massless branch",
+      nonzero_TT and gauge_killed)
+
 # ---------------------------------------------------------------- G12 ---------
 print("\n=== G12: conformal limit (alpha fixed, c1 -> 0) ===")
 # a: TT confluence with M-parametrization
@@ -288,6 +322,23 @@ target_conf = -(1 + I*k*t)*sp.exp(-I*k*t)/(4*k**3)
 check("G12a: TT divided difference -> -(1+ikt)e^{-ikt}/(4k^3) "
       "(= -d/dm^2 shell: Box^2 Jordan block per polarization)",
       sp.simplify(sp.expand((lim_TT - target_conf).rewrite(sp.exp))) == 0)
+
+# a': the PHYSICAL TT kernel carries the 1/gamma prefactor (referee round 2):
+# W_TT = (1/gamma) * divided difference -> -(1+ikt)e^{-ikt}/(4 gamma k^3);
+# the covariant coefficient version agrees: C*Pi_xy,xy*[shells] with
+# C = 4/c1 = 4/(alpha M^2) -> -(4/alpha) delta'(p^2) contribution, i.e.
+# (2/alpha) * (unit Jordan kernel) = (1/gamma) * (unit Jordan kernel).
+gamma_sym = alpha/2
+lim_phys = sp.simplify(sp.limit(W_A_g1/gamma_sym, M, 0))
+target_phys = -(1 + I*k*t)*sp.exp(-I*k*t)/(4*gamma_sym*k**3)
+ok_phys = sp.simplify(sp.expand((lim_phys - target_phys).rewrite(sp.exp))) == 0
+# covariant route: C*(1/2)*divided-difference, C = 4/(alpha M^2)
+lim_cov = sp.simplify(sp.limit((4/(alpha*M**2))*sp.Rational(1, 2)
+                               * (M**2*W_A_g1), M, 0))
+ok_cov = sp.simplify(sp.expand((lim_cov - target_phys).rewrite(sp.exp))) == 0
+check("G12a': physical TT Jordan kernel = -(1+ikt)e^{-ikt}/(4 gamma k^3) "
+      "(1/gamma prefactor mandatory at fixed alpha); covariant C = 4/c1 "
+      "route gives the same limit", ok_phys and ok_cov)
 
 # b: vector smooth massless limit at fixed mu_V = alpha/2
 W_w_lim = sp.limit(W_w, M, 0)

@@ -588,3 +588,57 @@ disjointness); master theorem replaced by the corrected referee text
 verbatim; discussion terminology: "Bateman–Turok-type Krein real form /
 gravitational extension", since BT quantize the scalar perfect-square
 theory, not this field. Now 10 pp., compiles clean.
+
+## Paper 4 referee pass 2 (2026-07-12) — major revision applied
+
+**Referee caught a genuine normalization error** (their pt 1): the exact
+kernel display had (𝒩/M²) with 𝒩 = 4/c₁ — one factor 1/M² too many,
+which would have destroyed the conformal limit (~M⁻² δ′(p²)). Since
+αM² = c₁, the TT prefactor 1/(γM²) = 2/c₁ is M-independent; the FULL
+covariant coefficient is C = 4/c₁ (equivalently (4/α)/M²). New check
+G10c6 pins the absolute coefficient sector-by-sector. Also their pt 2:
+the physical TT Jordan kernel is −(1+ikt)e^{−ikt}/(4γk³) — the 1/γ was
+missing; new check G12a′ verifies both the physical and covariant routes.
+New check G11e: Weyl principal symbol nonzero on massless TT while
+killing null pure gauge. All three scripts ALL PASS.
+
+All twelve referee points applied:
+1. Kernel coefficient corrected everywhere (abstract, intro, reassembly
+   theorem with absolute-normalization display, conformal section).
+2. 1/γ in TT Jordan kernel (theorem now displays W⁺_TT,0 with 1/(4γk³)).
+3. Formal category: Definition (complex dynamical algebra (V_ℂ,σ,U);
+   real form κ; completion; equivalence via U-equivariant symplectic
+   automorphisms) + Remark (states vs covariances: same complex bilinear
+   covariance, NOT same positive state on one *-algebra).
+4. Cartan-projection theorem integrated: new §5 (F = 2‖μ‖², μ(S₊)=(r,r)
+   on C₂ wall; NOT plain Kempf–Ness — H∩K = ℤ₂×ℤ₂, proof via
+   θ-compatible hull SL(2,ℂ)²); intro item; discussion paragraph
+   ("geometric picture"); termination = escape to infinity ‖μ(S₊)‖→∞.
+5. Induced-representation lemma (Wigner): shell superselection,
+   fiber-form correspondence, two equivariant involution classes on the
+   real-type spin-2 irrep, D_tot as equivariant bundle map; wired into
+   no-hybrid + two-real-forms theorems.
+6. Comparison maps at the boundary: Definition (curvature-generated
+   𝒪_reg, ι_{c₁}, ω_{c₁}∘ι_{c₁} → ω₀∘ι₀); master theorem claims
+   convergence ONLY on the regular subalgebra.
+7. Boundary nuance: "no continuation as nondegenerate positive-definite
+   invariant metric"; PT-Jordan realization (BM arXiv:0804.4190, new ref;
+   also fixed BM2008PRD → PRL 100 110402, the PRD 78 025022 WAS
+   0804.4190) is a distinct singular completion, not a continuation.
+8. Microlocal proof expanded: divided difference lowers singular order
+   (log ρ, coefficient 1/(8π²) ≠ 0 per companion 3) but removes no
+   directions; Dencker polarization-set framing; σ_C injective on
+   physical polarizations (G11c/G11e).
+9. "For every fixed k > 0"; zero-mode remark (ℝ³ test functions /
+   compact-section caveat); cond norm = Euclidean operator 2-norm.
+10. Abstract rescoped: "We classify translation-invariant, quasifree,
+    mode-local real-form completions ... subject to ...".
+11. Verification paragraph: directory, script names, exact runner,
+    SymPy 1.14.0 / NumPy 2.4.4 / Python 3.14, tag paper4-v1.0 (to be
+    created at freeze); new Appendix A mapping G1–G12d′ to theorems.
+    RESIDUAL: repo privacy — decide public release vs lemma appendix.
+12. "spectral-support-positive" for the kernel; scalar "coefficient of
+    ṗ² = μ_S/2 = 3c₁/4"; interaction outlook "provide the first
+    necessary tests" + explicit non-claims.
+
+Now 14 pp., compiles clean. TODO.md tracks residual items.
