@@ -464,3 +464,60 @@ analyzed).
 
 Queued: G10 (helicity-resolved spectral kernel), G11 (linearized-Weyl
 gauge-invariant correlator), G12 (conformal limit c₁ → 0, sectorwise).
+
+## Paper 4, G10–G12: spectral kernel, Weyl correlator, conformal limit (2026-07-12)
+
+`symbolic/verify_gravity_spectral.py` — ALL PASS.
+
+**G10 (full reduced spectral kernel):**
+- TT: W_A = (1/(γM²))[e^{−iω₁t}/2ω₁ − e^{−iω₂t}/2ω₂], γ = α/2: bisolution
+  + commutator with E‴(0) = +1/γ (verified from Ostrogradsky brackets).
+- Vector/scalar single-shell kernels with residues fixed by the reduced
+  symplectic forms (μ_V = α/2, μ_S = 3c₁/2); commutator E′(0) = −1/μ.
+- **Covariant reassembly**: with Π^{(2,M)} built from P = η − pp/M²:
+  Π_{xy,xy} = ½;  (cΠc̄)_w = (E²−k²)²/2M² = M²/2  (the complex-basis
+  gauge invariant is w̃ = −ik h_tx − iE h_xz);  O_S-contraction = 1/6.
+  These match the reduced residue ratios 1 : M² : 1/3 EXACTLY with a single
+  overall normalization 𝒩 = 4/c₁ — uniform ghost sign: the five massive
+  helicities assemble into one SO(3)-invariant projector at correlator
+  level (the correlator-side counterpart of G9a). Massless shell couples
+  only to TT.
+- Real-form independence: the quarter-turn completion's physical Wightman
+  for an unpaired ghost equals the Krein spectral value (i² flip): the
+  complex W⁺ is completion-independent. With G9c this closes the bridge:
+  the full gravitational vacuum functionals of the two covariant real
+  forms coincide.
+
+**G11 (linearized Weyl correlator):**
+- Linearized Riemann annihilates pure gauge (momentum space, symbolic p);
+  linearized Weyl traceless (coefficient validation).
+- **Projector-singularity cancellation**: the full Weyl–Weyl contraction of
+  Π^{(2,M)} equals that of Π₀ (all P → η): every 1/M², 1/M⁴ term of the
+  massive projector is annihilated by the Weyl map — the curvature kernel
+  is M-regular and covariant. Recorded: WF directions Hadamard 𝒞⁺;
+  W_h ~ log ρ while W_CC ~ ∂⁴log ρ.
+
+**G12 (conformal limit, α fixed, c₁ → 0):**
+- TT: divided difference → −(1+ikt)e^{−ikt}/(4k³) = −∂_{m²} shell: □²
+  Jordan per polarization (4 TT configuration modes).
+- Vector: smooth massless limit e^{−ikt}/(αk) with FIXED normalization
+  μ_V = α/2: ordinary massless ghost, not Jordan.
+- Scalar: kinetic ∝ c₁ → 0 (null), and δh = 2ση is machine-verified to be
+  a gauge symmetry of the α = −3β action exactly at c₁ = 0 (and NOT at
+  c₁ ≠ 0): the scalar sector is Weyl-gauge on the conformal locus.
+  Count: 4 + 2 + 0 = 6 = flat conformal gravity ✓.
+- Completion limit: cond(N) of the split normal-mode decomposition grows
+  7.6 → 47.5 → 403 → 4447 as M = 1 → 0.03: the uniform positive
+  quarter-turn completion (which requires the split) terminates at the
+  conformal locus, explicitly, not just by citing the Jordan no-go; the
+  spectral functional and the Krein form continue distributionally.
+
+**The paper-4 master theorem is now fully supported** (scope: translation-
+invariant quasifree mode-local completions compatible with the reduced
+symplectic form, the spectral condition, and massive-spin-2 covariance):
+one reduced complex spectral quasifree functional; two covariant real
+forms in the split phase (positive pseudo-Hermitian with rotated massive
+reality / Krein with standard gravitational reality); no covariant hybrid;
+identical complex gauge-invariant correlators; regular distributional
+conformal limit at which the positive form terminates and the Krein form
+continues (TT Jordan + massless vectors + Weyl-null scalar).
