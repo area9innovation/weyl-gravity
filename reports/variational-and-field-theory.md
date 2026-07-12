@@ -850,3 +850,50 @@ Next per the team's program: first-order obstruction for the
 perfect-square vertex □φ(∂φ)² (mass-regulated split, transport, 𝔬₊ and
 𝔬_K, remove splitting); then the Einstein–Weyl cubic vertices. The Krein
 side needs the κ₀ conventions fixed first.
+
+## Interaction-deformation, step 2 (2026-07-13): selection rules + order 3
+
+Per the team's revised order of attack (their parity correction accepted:
+5:1 tests at order 4, not 3). verify_interaction_order3.py, ALL PASS:
+
+**Selection-rule theorem (SR1–SR3).** Order-n objects have transfers in
+the n-fold sumset of the vertex transfer set (ad_{h₀}-grading is additive
+under star products), total degree ≤ n+2 (each commutator reduces degree
+by ≥ 2), degree parity ≡ n mod 2. Candidate interior loci: order 1 {2:1},
+order 2 {3:1}, order 3 {3:2, 2:1, 4:1}, order 4 ∋ 5:1. The lattice gives
+candidates; coefficients decide.
+
+**Third-order audit (O3a–O3e).**
+- Generic: obstruction vanishes; R₃ exists, Hermitian, odd degrees {1,5}
+  ≤ 5 (parity rule confirmed).
+- **NEW OBSTRUCTION at ω₁/ω₂ = 3:2** (order 3):
+  𝔬₊^(3) = −(117√30/1120)·i·(a₁²a₂†³ + a₁†²a₂³) — the on-shell
+  2-quanta ↔ 3-quanta conversion (2ω₁ = 3ω₂). Gauge-independent
+  (unchanged under R₁ + {N₁,N₂,N₁N₂} and R₂ + on-shell quintic kernel
+  operators).
+- 2:1 (order 1 AND 3) and 4:1 (order 3) escape with vanishing
+  coefficients — every obstruction found so far carries ODD mode-2
+  transfer; mechanism open (flagged for paper 5 §8).
+- R₃ = O(ε^{−9/2}) (measured +4.488/decade at 10⁻²→10⁻³): third data
+  point of R_n = O(ε^{−3n/2}).
+
+**Refined hierarchy conjecture** (replaces "(2k+1):1 at order 2k"):
+the coprime ratio ω₁/ω₂ = p:q first obstructs at order p+q−2 when the
+mode-2 transfer p is odd. Verified: 3:1 → order 2, 3:2 → order 3.
+Predicts: 5:1 → order 4 (the targeted kernel-projection test), 5:3 →
+order 6.
+
+**Next (per team priority): the perfect-square benchmark.** Opening
+kinematic observation, to be developed: with the split-mass regulator
+(m₁² − m₂² = δ small, so m₁ < 2m₂), the 1→2 decay channels
+ω₁(k₁) = ω₂(k₂) + ω₂(k₃) are kinematically CLOSED and 0→3 is closed for
+any positive masses — the first-order obstruction 𝔬₊^(1) vanishes
+identically for the regulated theory by kinematics alone. The content
+is therefore in (a) the δ→0 divergence rate of the off-shell R₁
+coefficients (the collinear massless limit, where 1→2 becomes on-shell
+on the measure-zero collinear set) and (b) whether the □φ factor of the
+vertex — which vanishes on the massless branch shell — kills the
+collinear obstruction distributionally. Then the parallel Krein 𝔬_K with
+κ₀ fixed. Paper 5 drafting (their title: "Interaction Obstructions and
+Resonant Breakdown of the Positive Pais–Uhlenbeck Metric") once the
+perfect-square first-order results are in.

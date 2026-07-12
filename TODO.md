@@ -67,10 +67,21 @@ holds only open items.
       Hermiticity; **obstruction 27√3/(320ω₂⁴)(a₁a₂†³−a₁†a₂³) at
       ω₁ = 3ω₂, unremovable**; R₂ = O(ε⁻³) ⇒ R_n ~ ε^{−3n/2},
       λ_c ~ ε^{3/2} conjecture.
-    - NEXT: (a) third order at generic ω (test ω₁ = 5ω₂ locus + ε⁻⁹ᐟ²);
-      (b) perfect-square vertex □φ(∂φ)² first-order 𝔬₊ with mass
-      regulator; (c) Krein-side 𝔬_K (fix κ₀ conventions first);
-      (d) Einstein–Weyl cubic vertices (hhM, hMM, MMM).
+    - DONE (step 2): selection-rule lattice theorem (candidates =
+      transfers with |d₁|+|d₂| ≤ n+2, parity n mod 2); third-order
+      audit: generic clean, R₃ odd/Hermitian, **NEW obstruction at
+      3:2, order 3: −(117√30/1120)i(a₁²a₂†³+a₁†²a₂³), gauge-indep**;
+      2:1, 4:1 escape (odd-mode-2-transfer rule, mechanism open);
+      R₃ = O(ε⁻⁹ᐟ²). Refined conjecture: p:q first obstructs at order
+      p+q−2 for odd p.
+    - NEXT: (a) perfect-square vertex □φ(∂φ)² first-order 𝔬₊ with
+      split-mass regulator (kinematic protection noted in report;
+      compute δ→0 divergence + collinear □-factor question);
+      (b) Krein-side 𝔬_K (fix κ₀ conventions first); (c) order-4
+      kernel projection AT ω₁ = 5ω₂ only (not full R₄); (d) draft
+      paper 5 "Interaction Obstructions and Resonant Breakdown of the
+      Positive PU Metric" (team's 10-section outline; freeze the four
+      second-order theorems as core); (e) Einstein–Weyl cubic vertices.
 15. [ ] Paper 2 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness
