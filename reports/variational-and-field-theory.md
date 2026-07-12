@@ -741,3 +741,45 @@ Jordan-PT-realization scope remark (BM 0804.4190 arXiv id added); γ<0
 transport paragraph citing the gravity companion (new bibitem);
 verification artifact identifiers incl. Lean declaration names and tag
 paper1-v1.1 (to create at freeze).
+
+## Paper 2 referee pass (final round, 2026-07-12) — field section corrected
+
+**The referee's decisive objection is CORRECT and machine-verified**
+(symbolic/verify_paper2_referee.py, T1–T3 ALL PASS): the PT ground state
+is exactly the Dyson pullback, ψ₀ = ρ⁻¹φ₀ (T1: transporting the
+normal-form vacuum's annihilation covectors by ρ⁻¹Vρ = S₊⁻¹V reproduces
+the paper's PT Gaussian [[(ω₁+ω₂)/(ω₁ω₂),1],[1,ω₁+ω₂]] exactly). Hence
+U_k = ρ_k is a POINTED η-unitary (Uψ = φ, per-mode pointed overlap ≡ 1,
+physical occupation ⟨ρ⁻¹Nρ⟩_η = ⟨N⟩_φ = 0), the pointed infinite tensor
+product exists with no von Neumann obstruction, and the physical PT
+completion is GLOBALLY unitarily equivalent to the positive normal-form
+Fock completion. The paper's "physical (PT) and naive Fock
+representations are disjoint" was FALSE as a physical statement: the
+√3/2 fidelity, 1/3 occupation, and product disjointness are quantities
+of the AUXILIARY identity embedding (both Gaussians as vectors of one
+standard L², standard involution, canonical variables identified by the
+identity map). The obstruction is identity-embedding vs
+Dyson-transported involution — an involution-level mismatch, exactly the
+three-level structure (covariance ≠ involution ≠ completion) of the
+later companions. Also verified: T2 worst-alignment log-eigenvalue pair
+is {φ(b)+a, |φ(b)−a|} (displayed φ−a goes negative for a > φ(b); F
+unaffected); T3 exact overlap coefficient log(2/√3)·vol(B_d)/(2π)^d
+replaces the loose e^{−cVΛ^d}.
+
+All revisions applied (now 14 pp., clean): abstract/intro reframed; new
+Proposition (pointed unitary equivalence of the physical completions);
+theorem renamed "Auxiliary identity-embedding obstruction" with
+conclusions respecified (auxiliary algebra, identity map, not the
+physical completion) + exact asymptotics + (k,−k) real-field convention;
+"identity-embedding Gaussian fidelity" / "auxiliary standard-Fock
+occupation" terminology; ψ₀ = ρ⁻¹φ₀ added to the ground-state theorem;
+rem:meaning rewritten (the old "naturally identified with Fock space"
+vs "globally disjoint" contradiction resolved); |φ−a| in lem:closedform;
+cor:secondproof on the stratified hull; thm:nmode split into finite-dim
+theorem + *-compatibility corollary (matrix unitarity ≠ quantum
+unitarity; PU minimizers real, hence safe); cor:scale restricted to the
+normalized mode bundle (invariant Sobolev claim withdrawn pending fixed
+trivialization); discussion "three levels" + boxed revised central
+conclusion; verification identifiers (tag paper2-v1.2 at freeze).
+Cascade: paper-4 field-level remark qualified accordingly; paper 3
+already auxiliary-scoped from its own pass.

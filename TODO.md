@@ -2,6 +2,37 @@
 
 Working list. Move items to DONE with commit hash when closed.
 
+## Paper 2 referee round (final; major revision of field section) — APPLIED
+
+Decisive claim verified in symbolic/verify_paper2_referee.py (T1–T3, ALL
+PASS): ψ₀ = ρ⁻¹φ₀ EXACTLY at the Gaussian level (transported annihilators
+of the normal-form vacuum reproduce the paper's PT Gaussian) ⇒ ρ_k is a
+POINTED η-unitary (per-mode overlap ≡ 1, physical occupation ≡ 0) ⇒
+pointed infinite tensor product exists ⇒ physical PT completion GLOBALLY
+unitarily equivalent to normal-form Fock completion. The √3/2 / 1/3 /
+disjointness are AUXILIARY identity-embedding quantities (same L², same
+standard involution, identity map on canonical variables). Also: worst-
+alignment pair needs |φ(b)−a| (fails for a > φ(b)); exact overlap
+asymptotic coefficient log(2/√3)·vol(B_d)/(2π)^d.
+
+Applied: abstract + intro reframed (pointed equivalence vs auxiliary
+obstruction; obstruction = identity embedding vs Dyson-transported
+involution); lem:closedform absolute value; cor:secondproof stratified
+hull; thm:nmode ends at finite-dim statement + new Corollary
+(*-compatibility hypothesis; PU case safe — real minimizers); cor:scale
+normalized-bundle qualification (invariant Sobolev claim withdrawn);
+thm:groundstate gains ψ₀ = ρ⁻¹φ₀ + renamed "identity-embedding Gaussian
+fidelity" / "auxiliary standard-Fock occupation"; NEW Prop (pointed
+unitary equivalence of physical completions); thm:disjoint renamed
+"Auxiliary identity-embedding obstruction" with respecified conclusions +
+exact overlap asymptotics + (k,−k) convention; rem:meaning rewritten
+(contradiction resolved; three-level alignment); discussion "three
+levels" + boxed revised central conclusion; verification identifiers
+(tag paper2-v1.2 at freeze). CASCADE: paper 4 rem:field qualified
+("under the identity embedding...; Dyson-transported completions
+pointed-unitarily equivalent"). Paper 3's obstruction was already
+auxiliary-scoped in its own referee pass — consistent.
+
 ## Paper 1 referee round (major revision, 2026-07-12) — APPLIED
 
 Referee's two concrete errors verified in
@@ -182,7 +213,7 @@ Script side:
 
 ## Housekeeping
 
-- [ ] Freeze + tags after referee rounds conclude: paper1-v1.1, paper3-v1.2, paper4-v1.0 (all referenced in the papers' Verification paragraphs).
+- [ ] Freeze + tags after referee rounds conclude: paper1-v1.1, paper2-v1.2, paper3-v1.2, paper4-v1.0 (all referenced in the papers' Verification paragraphs).
 - [ ] Before submission (all papers): author metadata, "to appear"
   references, companion arXiv IDs once public.
 

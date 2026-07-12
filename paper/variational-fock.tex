@@ -42,26 +42,35 @@ $\|\log(S^{\dg}S)\|_F^2\ge 4r^2$ with
 $r=\log\frac{\w_1+\w_2}{\w_1-\w_2}$, with equality exactly on the unitary
 stabilizer coset, on which the induced Hilbert-space metric is constantly the
 Bender--Mannheim $\eta=e^{-Q}$.  The proof is elementary and exact: at
-worst-case stabilizer alignment the log-eigenvalues of $S^{\dg}S$ are
-$\arccosh(\cosh r\cosh b)\pm a$ in the Gram rapidities $(a,b)$ of the
+worst-case stabilizer alignment the log-eigenvalue pair of $S^{\dg}S$ is
+$\{\arccosh(\cosh r\cosh b)+a,\ |\arccosh(\cosh r\cosh b)-a|\}$ in the
+Gram rapidities $(a,b)$ of the
 stabilizer factor.  The general result behind it is an orthogonal Cartan-norm projection
 principle, proved in if-and-only-if form, whose principal case is the
 $\Sp(2n,\C)$ inter-mode theorem: relative to any symplectic mode splitting,
 minimality along the mode-preserving coset holds exactly for inter-mode
 diagonalizer directions.  The Pais--Uhlenbeck oscillator is the fully
 integrable $n=2$ model: the physical stabilizer, itself not
-$\theta$-stable, has canonical compatible hull exactly the mode-preserving
-$SL(2,\C)^2$ (totally geodesic $\mathbb H^3\times\mathbb H^3$), the
+$\theta$-stable, has canonical compatible hull the mode-preserving
+$SL(2,\C)^2$ (totally geodesic $\mathbb H^3\times\mathbb H^3$;
+generically, with the alignment stratification made explicit), the
 Bender--Mannheim direction is inter-mode, and the closed form above is the
-resulting mixed hyperbolic/flat Pythagorean law.  We then quantize the free fourth-order field modewise and
-compute the Bender--Mannheim ground state exactly: it is a normalizable real
-Gaussian for every mode, but its fidelity with the two-field Fock vacuum
-tends to the universal constant $\sqrt3/2$ at large momentum, and its
-relative particle content to $1/3$ per mode pair.  Consequently the physical
-(PT) and naive Fock representations of the free fourth-order field are
-disjoint in every spatial dimension, although each mode is unitarily
-equivalent: PT unitarization is exact modewise and changes the
-field-theoretic representation.  All identities are machine-verified.
+resulting mixed hyperbolic/flat Pythagorean law.  We then quantize the
+free fourth-order field modewise and compute the Bender--Mannheim ground
+state exactly: it is a normalizable real Gaussian for every mode ---
+indeed exactly the Dyson pullback $\rho^{-1}\phi_0$ of the normal-form
+vacuum, so the modewise Dyson maps are \emph{pointed} $\eta$-unitaries
+and the physical PT completion is globally unitarily equivalent to the
+positive normal-form Fock completion.  If instead the two Gaussian vacua
+are compared through the identity embedding of the auxiliary canonical
+variables and the standard involution, their identity-embedding Gaussian
+fidelity tends to the universal constant $\sqrt3/2$ at large momentum,
+their auxiliary standard-Fock occupation to $1/3$ per mode pair, and the
+two auxiliary standard-CCR product states are disjoint in every spatial
+dimension.  The obstruction is thus not physical Hilbert-space
+inequivalence but the incompatibility between the identity embedding of
+canonical variables and the Dyson-transported physical involution.  All
+identities are machine-verified.
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
@@ -127,28 +136,53 @@ r(k)=\log\frac{\big(\w_1(k)+\w_2(k)\big)^2}{m_1^2-m_2^2}
 One might expect from \eqref{eq:rk} that the modewise transformation carries
 unboundedly growing squeezing and fails Fock implementability
 ``dramatically''.  The exact computation shows something sharper and more
-structured (Theorems~\ref{thm:groundstate}--\ref{thm:disjoint}): the PT
-ground state exists as a normalizable Gaussian for \emph{every} mode, its
-mismatch with the free two-field vacuum saturates at \emph{universal
-constants} --- fidelity $\sqrt3/2$ and relative occupation $1/3$ per mode
-pair at large $k$ --- and therefore the physical and naive representations
-are disjoint in every spatial dimension $d\ge1$, with vacuum overlap decaying
-like $e^{-c V\Lambda^d}$ under a cutoff.  The divergence of $r(k)$ itself is
+structured (Theorems~\ref{thm:groundstate}--\ref{thm:disjoint} and
+Proposition~\ref{prop:pointed}): the PT
+ground state exists as a normalizable Gaussian for \emph{every} mode, and
+it is exactly the Dyson pullback $\psi_0=\rho^{-1}\phi_0$ of the
+normal-form vacuum.  Two comparisons must then be sharply distinguished.
+\emph{Physical completion}: the modewise Dyson maps are pointed
+$\eta$-unitaries, their pointed infinite tensor product exists, and the
+physical PT completion is globally unitarily equivalent to the positive
+normal-form Fock completion (Proposition~\ref{prop:pointed}).
+\emph{Auxiliary identity embedding}: if instead both Gaussian vacua are
+regarded as vectors of one standard $L^2$ space, with the auxiliary
+canonical variables identified by the identity map and the standard
+involution retained, their mismatch saturates at \emph{universal
+constants} --- identity-embedding fidelity $\sqrt3/2$ and auxiliary
+standard-Fock occupation $1/3$ per mode pair at large $k$ --- and the two
+auxiliary standard-CCR product states are disjoint in every spatial
+dimension $d\ge1$, with overlap
+$|\langle\Omega,\Psi\rangle|^2
+=\exp[-(\log\tfrac{2}{\sqrt3})\,
+\tfrac{\operatorname{vol}(B_d)}{(2\pi)^d}V\Lambda^d\,(1+o(1))]$ under a
+cutoff.  The obstruction is the incompatibility of the identity embedding
+with the Dyson-transported involution, not physical Hilbert-space
+inequivalence.  The divergence of $r(k)$ itself is
 a statement about the observable-space (phase-space) metric, which we
-separate cleanly (Corollary~\ref{cor:scale}): its eigenvalues
-$e^{\pm r(k)}\asymp(1+k^2)^{\pm1}$ make the phase-space metric an
-$H^1\oplus H^{-1}$-type Sobolev pair, unboundedly inequivalent to the
-standard norm, while the state-level mismatch remains $O(1)$ per mode.
+separate cleanly (Corollary~\ref{cor:scale}): in the canonically
+normalized mode bundle its eigenvalues
+$e^{\pm r(k)}\asymp(1+k^2)^{\pm1}$ give the two spectral directions
+relative weights of orders $+2$ and $-2$ --- a Sobolev-pair structure
+relative to that trivialization --- while the state-level mismatch
+remains $O(1)$ per mode.
 
 \paragraph{Verification.}
 As in \cite{companion}, every finite-dimensional identity in this paper ---
-the invariant formulas, the closed-form log-eigenvalues, the PT ground-state
-Gaussian, the eigenvalue equation, the fidelity and occupation formulas, and
+the invariant formulas, the closed-form log-eigenvalues (including the
+absolute-value form of \eqref{eq:xformula}), the PT ground-state
+Gaussian and its Dyson-pullback identity \eqref{eq:pullback}, the
+eigenvalue equation, the fidelity and occupation formulas, and
 the limits $\sqrt3/2$ and $1/3$ --- is machine-verified symbolically, with
 independent numerical checks (global optimization for
 Theorem~\ref{thm:mindist}; high-precision quadrature for
-Theorem~\ref{thm:groundstate}).  The scripts accompany the verification
-repository of \cite{companion}.
+Theorem~\ref{thm:groundstate}).  The artifact is the directory
+\texttt{physics/symplectic-reconstruction} of the repository of
+\cite{companion} (scripts \texttt{symbolic/verify\_variational\_fock.py},
+\texttt{symbolic/verify\_paper2\_referee.py},
+\texttt{numeric/distortion\_scan.py}, \texttt{numeric/cartan\_checks.py};
+SymPy 1.14.0, Python 3.14; the release tag \texttt{paper2-v1.2} fixes the
+commit).
 
 \section{The minimum-distortion theorem}\label{sec:mindist}
 
@@ -212,11 +246,17 @@ random stabilizer elements in the repository.)
 
 \begin{lemma}[Worst alignment; closed form]\label{lem:closedform}
 At $\chi=-1$ the system \eqref{eq:T}--\eqref{eq:Pi} is solved exactly by
+the unordered nonnegative pair
 \begin{equation}\label{eq:xformula}
-x_{1,2}=\varphi(b)\pm a,
+\{x_1,x_2\}=\big\{\varphi(b)+a,\ \big|\varphi(b)-a\big|\big\},
 \qquad
-\varphi(b)=\arccosh\big(\cosh r\,\cosh b\big)\ \ge\ r .
+\varphi(b)=\arccosh\big(\cosh r\,\cosh b\big)\ \ge\ r
 \end{equation}
+(the absolute value is required: for $a>\varphi(b)$ the signed expression
+$\varphi-a$ is negative, while the $x_i$ are defined as nonnegative
+log-eigenvalue exponents; equivalently
+$\cosh x_{1,2}=\cosh(\varphi\pm a)$ with the principal nonnegative
+$\arccosh$).
 \end{lemma}
 
 \begin{proof}
@@ -232,7 +272,8 @@ whence
 $\cosh x_{1,2}=c\alpha\beta\pm\sqrt{(\alpha^2-1)(c^2\beta^2-1)}
 =\cosh(\varphi\pm a)$ with $\cosh\varphi=c\beta$, by the hyperbolic
 addition formulas (elementary identities; also machine-checked in the
-repository as verification evidence).  Finally
+repository as verification evidence); since $\cosh$ is even, the
+nonnegative exponents are $\varphi+a$ and $|\varphi-a|$.  Finally
 $\cosh\varphi(b)-\cosh r=\cosh r(\cosh b-1)\ge0$ gives $\varphi(b)\ge r$ with
 equality iff $b=0$.
 \end{proof}
@@ -531,13 +572,16 @@ pictures coincide.
 
 \begin{corollary}[Second proof of Theorem~\ref{thm:mindist}]
 \label{cor:secondproof}
-Apply Theorem~\ref{thm:projection}(b) with
-$\mathcal C=C_\theta(H)=SL(2,\C)^2$ --- connected, $\dg$-stable and
-reductive, hence compatible --- whose positive part
-$\mathbb P_{\mathcal C}\cong\mathbb H^3\times\mathbb H^3$ is totally
+Apply Theorem~\ref{thm:projection}(b) with $\mathcal C$ the stratified
+compatible hull $C_\theta(H)$ of Proposition~\ref{prop:hull}: on the
+generic stratum $\mathcal C=SL(2,\C)^2$ --- connected, $\dg$-stable and
+reductive, hence compatible --- and at alignment one or both factors
+reduce to $SO(2,\C)$; orthogonality of $\xi$ holds on every stratum
+because $\xi$ is block-off-diagonal.  On the generic stratum the positive
+part $\mathbb P_{\mathcal C}\cong\mathbb H^3\times\mathbb H^3$ is totally
 geodesic in $\mathbb P$, the Gram data $(\tau_j,n_j)$ of
 Lemma~\ref{lem:invariants} being polar coordinates on the two hyperbolic
-factors; and with $\xi=\tfrac r2B$, which is block-off-diagonal and hence
+factors; take $\xi=\tfrac r2B$, which is block-off-diagonal and hence
 orthogonal to $\mathfrak c_{\mathfrak p}$ (the per-mode traceless Hermitian
 blocks).  This yields $\mathcal F(S_+c)\ge\mathcal F(S_+)$ for every $c$ in the
 hull, with the two equality records kept separate:
@@ -590,8 +634,7 @@ inter-mode $\xi=\xi^{\dg}$,
 and for any quadratic PT Hamiltonian whose positive normal-form
 diagonalizer is $e^{\xi}$ with inter-mode $\xi$, and whose stabilizer is
 contained in $\mathcal C_n$, the positive diagonalizer is the unique
-minimum-distortion diagonalizer up to unitary stabilizer elements, and all
-minimizers define the same Hilbert-space metric.
+minimum-distortion diagonalizer up to matrix-unitary stabilizer elements.
 \end{theorem}
 
 \begin{proof}
@@ -608,10 +651,35 @@ vanishes: the normal space is exactly the inter-mode couplings, whose
 paired off-diagonal blocks $\xi_{ji}$ are determined from $\xi_{ij}$ by the
 Hermitian and symplectic conditions.  The dimension identity
 $n(2n+1)=3n+2n(n-1)$ is then a check, not a step.  Everything else is
-Theorem~\ref{thm:projection} applied to $\mathcal C_n$, plus the
-polar-factor argument of Theorem~\ref{thm:mindist} for the metric
-statement.
+Theorem~\ref{thm:projection} applied to $\mathcal C_n$.
 \end{proof}
+
+The theorem ends deliberately at the finite-dimensional Gram-matrix
+statement.  Matrix unitarity is not automatically quantum unitarity: a
+unitary operator implementing $UVU^{-1}=CV$ in quadrature coordinates
+($V=V^{\dg}$) must send self-adjoint canonical variables to self-adjoint
+canonical variables, which requires $C$ to preserve the physical real
+structure, not merely $C^{\dg}C=I$ --- a generic element of
+$\Sp(2n,\C)\cap U(2n)$ has complex coefficients and defines no
+$*$-automorphism of the real CCR algebra.  The Hilbert-space conclusion
+therefore needs an explicit hypothesis:
+
+\begin{corollary}[Hilbert-metric constancy under $*$-compatibility]
+\label{cor:starcompat}
+In the setting of Theorem~\ref{thm:nmode}, assume in addition that every
+minimizer $C\in\mathcal C_n\cap K$ arising from the physical stabilizer
+preserves the selected CCR real structure (i.e.\ is real in quadrature
+coordinates, hence metaplectically implemented by a genuine unitary).
+Then all minimizers define the same Hilbert-space metric, by the
+polar-factor argument of Theorem~\ref{thm:mindist}.  For the PU
+oscillator this hypothesis holds: the unitary stabilizer elements in the
+canonical coordinates are the real sign matrices
+$\{\pm P_1\pm P_2\}\cong\Z_2^2$ generically, and ordinary real rotations
+at alignment \cite{companion}, so the PU metric-constancy conclusion of
+Theorem~\ref{thm:mindist} is unaffected.  For a general $n$-mode system
+the hypothesis is to be verified per system, alongside the containment
+of the stabilizer in $\mathcal C_n$.
+\end{corollary}
 
 For the PU oscillator, $n=2$ and $\xi=\tfrac r2B$ is inter-mode; the
 Bender--Mannheim metric is the case in point.  The model-dependent input in
@@ -645,11 +713,17 @@ e^{r(k)}=\frac{\big(\w_1(k)+\w_2(k)\big)^2}{m_1^2-m_2^2}
 \qquad
 e^{-r(k)}\asymp(1+k^2)^{-1} .
 \end{equation}
-On the spectral subspaces $\Pi_\pm(k)$ of $B$ the induced one-particle
-phase-space norm is therefore equivalent to an $H^1\oplus H^{-1}$ Sobolev
-pair (up to the constant $m_1^2-m_2^2$ and bounded factors): it is not
-uniformly equivalent to the standard norm, and no scalar renormalization
-makes it so.
+On the spectral subspaces $\Pi_\pm(k)$ of $B$, \emph{in the canonically
+normalized mode bundle}, the two spectral directions therefore carry
+relative weights of orders $+2$ and $-2$: the induced norm is not
+uniformly equivalent to the standard one, and no scalar renormalization
+makes it so.  We emphasize that this is a statement relative to the
+$k$-dependent normalized trivialization
+($d_x(k)d_y(k)=\gamma\w_1(k)\w_2(k)$); an invariant Sobolev
+classification of the \emph{original} field variables would require the
+pullback $D(k)^{\dg}M_{\mathrm{obs}}(k)D(k)$ in a fixed Fourier-space
+trivialization, since part of the weight may be carried by the
+normalization itself.  We use only the normalized-bundle statement below.
 \end{corollary}
 
 This is the precise content of the observation that the modewise metric
@@ -678,8 +752,19 @@ $\big(\ell_j^{\top}S_+^{-1}V\big)\psi_0=0$ is
 a \emph{real} Gaussian with
 $\det(\mathrm{quadratic\ form})=\frac{\w_1^2+\w_1\w_2+\w_2^2}{\w_1\w_2}>0$:
 normalizable for all $\w_1>\w_2>0$, and
-$H_{\mathrm{PT}}'\psi_0=\tfrac{\w_1+\w_2}{2}\,\psi_0$.  Its fidelity with the
-two-oscillator vacuum and its occupation relative to it are exactly
+$H_{\mathrm{PT}}'\psi_0=\tfrac{\w_1+\w_2}{2}\,\psi_0$.  Moreover
+$\psi_0$ is exactly the Dyson pullback of the normal-form vacuum,
+\begin{equation}\label{eq:pullback}
+\psi_0=\rho^{-1}\phi_0
+\qquad(\text{up to normalization};\ \rho=e^{-Q/2}),
+\end{equation}
+since $\rho^{-1}V\rho=S_+^{-1}V$ transports the annihilation conditions
+of $\phi_0$ into those defining $\psi_0$ (machine-verified at the
+Gaussian level).  Its \emph{identity-embedding Gaussian fidelity} with
+the two-oscillator vacuum --- both wavefunctions normalized in the same
+auxiliary standard $L^2$ norm, canonical variables identified by the
+identity map --- and its \emph{auxiliary standard-Fock occupation}
+relative to it are exactly
 \begin{align}
 f(\w_1,\w_2)&=\big|\langle\hat\phi_0|\hat\psi_0\rangle\big|^2
 =\frac{4\w_1\sqrt{\w_1^2+\w_1\w_2+\w_2^2}}{4\w_1^2+3\w_1\w_2+\w_2^2},\\[2pt]
@@ -724,71 +809,135 @@ $\rho=e^{-Q/2}$ is not $*$-preserving on the original Fock structure ---
 the transformed ``annihilators'' $\rho a_j\rho^{-1}$ do not satisfy the
 unitary Bogoliubov normalization ($\alpha\alpha^{\dg}-\beta\beta^{\dg}
 =\cosh r\ne1$) --- so Shale--Stinespring-type criteria cannot be applied to
-$\rho$ directly.  Comparing the two \emph{states}, both of which live in the
-same $L^2$, avoids this trap entirely.
+$\rho$ directly.  Comparing the two \emph{states} as vectors of the same
+auxiliary $L^2$ avoids this trap --- at the price, made explicit below,
+that the comparison is then the auxiliary identity-embedding one, not the
+physical $\eta$-completion.
 \end{remark}
 
-\subsection{Disjointness of the representations}
+\subsection{The physical completion: pointed unitary equivalence}
 
-\begin{theorem}[Representation change]\label{thm:disjoint}
-Let $m_1>m_2>0$, $d\ge1$, and consider the free fourth-order field in a box
-of volume $V$ with momentum cutoff $\Lambda$, with
-$\Psi_{\mathrm{PT}}=\bigotimes_k\hat\psi_0(k)$ the modewise PT ground state
-and $\Omega=\bigotimes_k\hat\phi_0(k)$ the free two-field Fock vacuum.  Then:
+\begin{proposition}[Pointed unitary equivalence of the physical
+completions]\label{prop:pointed}
+Equip the mode space with the physical inner product
+$\langle u,v\rangle_{\eta_k}=\langle u,\eta_kv\rangle_{\mathrm{std}}$.
+Then $U_k:=\rho_k$ is unitary from the PT mode space to the standard mode
+space by construction, and by \eqref{eq:pullback} it is \emph{pointed}:
+\begin{equation}
+U_k\psi_k=\phi_k,
+\qquad
+\langle\phi_k,U_k\psi_k\rangle=1
+\quad\text{for every mode }k .
+\end{equation}
+Consequently the pointed infinite tensor product
+$U=\bigotimes_kU_k$ exists with no von Neumann obstruction and maps
+$\bigotimes_k\psi_k\mapsto\bigotimes_k\phi_k$: \emph{with the
+$\eta$-inner product and the Dyson-transported observable algebra
+$A_{\mathrm{std}}=\rho A_{\mathrm{PT}}\rho^{-1}$, the physical PT
+completion of the free fourth-order field is globally unitarily
+equivalent to the positive normal-form Fock completion},
+\begin{equation}
+\omega_{\mathrm{PT}}(A_{\mathrm{PT}})
+=\frac{\langle\psi,\eta A_{\mathrm{PT}}\psi\rangle_{\mathrm{std}}}
+       {\langle\psi,\eta\psi\rangle_{\mathrm{std}}}
+=\langle\phi,A_{\mathrm{std}}\phi\rangle_{\mathrm{std}} .
+\end{equation}
+In particular the physical expectation of the transported number
+observable vanishes:
+$\langle\rho^{-1}N\rho\rangle_{\eta}=\langle\phi,N\phi\rangle=0$.  The
+unboundedness of $\rho$ relative to the standard norm
+(Corollary~\ref{cor:scale}) is real but does not obstruct this
+equivalence.
+\end{proposition}
+
+The $\sqrt3/2$ and $1/3$ of Theorem~\ref{thm:groundstate} are therefore
+\emph{not} the physical overlap and particle content of the PT vacuum;
+they quantify the mismatch of two auxiliary Gaussian complex structures
+when the canonical variables are identified by the identity map.  That
+mismatch is itself an exact and structured obstruction:
+
+\subsection{The auxiliary identity-embedding obstruction}
+
+\begin{theorem}[Auxiliary identity-embedding obstruction]
+\label{thm:disjoint}
+Let $m_1>m_2>0$, $d\ge1$, and consider the free fourth-order field in a
+box of volume $V$ with momentum cutoff $\Lambda$.  Regard the normalized
+wavefunctions $\hat\psi_0(k)$ and $\hat\phi_0(k)$ as vectors of one
+auxiliary Schr\"odinger representation --- same standard $L^2$ inner
+product, same standard CCR involution, canonical variables identified by
+the identity map --- and let
+$\Psi_{\mathrm{aux}}=\bigotimes_k\hat\psi_0(k)$,
+$\Omega_{\mathrm{aux}}=\bigotimes_k\hat\phi_0(k)$ be the two auxiliary
+product states.  Then (independent modes labelled by the $(k,-k)$ pairs
+of the real field; a different mode convention changes the prefactor
+below by a fixed factor):
 \begin{enumerate}
-\item the vacuum overlap satisfies
-$\big|\langle\Omega|\Psi_{\mathrm{PT}}\rangle\big|^2
-=\prod_k f(k)\le e^{-c\,V\Lambda^d}$ for some $c>0$ depending only on
-$m_1/m_2$ and $d$ (since $f(k)\to\sqrt3/2<1$);
-\item the relative particle density diverges in the UV:
+\item the auxiliary overlap has the exact leading asymptotics
+\begin{equation}
+-\log\big|\langle\Omega_{\mathrm{aux}}|\Psi_{\mathrm{aux}}\rangle\big|^2
+=\Big[\log\tfrac{2}{\sqrt3}\Big]\,
+\frac{\operatorname{vol}(B_d)}{(2\pi)^d}\,V\Lambda^d
++o\big(V\Lambda^d\big),
+\end{equation}
+with universal leading coefficient (since $f(k)\to\sqrt3/2$ and
+$-\tfrac1V\log|\langle\Omega,\Psi\rangle|^2
+=-\int_{|k|\le\Lambda}\tfrac{d^dk}{(2\pi)^d}\log f(k)$);
+\item the auxiliary standard-Fock occupation density diverges in the UV:
 $\frac1V\langle N_{\mathrm{tot}}\rangle
 =\int^{\Lambda}\!\frac{d^dk}{(2\pi)^d}\,\langle N\rangle(k)
-\sim\frac13\int^{\Lambda}\!\frac{d^dk}{(2\pi)^d}=\infty$ as
+\sim\frac13\int^{\Lambda}\!\frac{d^dk}{(2\pi)^d}\to\infty$ as
 $\Lambda\to\infty$, in \emph{every} dimension $d\ge1$;
 \item in the thermodynamic/continuum limit the incomplete-tensor-product
-classes of $\Psi_{\mathrm{PT}}$ and $\Omega$ differ
-($\sum_k(1-|\langle\hat\psi_0|\hat\phi_0\rangle|)=\infty$), so the GNS
-representations of the CCR algebra built on the two states are disjoint: no
-density matrix in the Fock representation of the free pair
-$(m_1,m_2)$ reproduces the PT vacuum, and vice versa.
+classes of $\Psi_{\mathrm{aux}}$ and $\Omega_{\mathrm{aux}}$ differ
+($\sum_k(1-|\langle\hat\psi_0|\hat\phi_0\rangle|)=\infty$), so the
+standard-$L^2$ Gaussian state defined by the PT eigenfunction is
+disjoint from the standard two-field vacuum state \emph{under the
+identity embedding of the auxiliary canonical variables}: no density
+matrix in the auxiliary Fock representation reproduces it, and vice
+versa.
 \end{enumerate}
-Each mode, by contrast, is unitarily equivalent: the modewise Dyson maps
-$\rho_k=e^{-Q_k/2}$ define unitaries between the mode Hilbert spaces
-equipped with the physical ($\eta_k$) and standard inner products.
+This theorem compares two vector states on one fixed auxiliary standard
+CCR algebra.  It does \emph{not} compare the physical $\eta$-completion
+with the transported normal-form completion --- those are equivalent by
+Proposition~\ref{prop:pointed} --- and its conclusion may not be called
+disjointness of the physical PT representation.
 \end{theorem}
 
 \begin{proof}
 (1) and (2) are immediate from Theorem~\ref{thm:groundstate}: $f(k)$ and
 $\langle N\rangle(k)$ are continuous in $k$ with the universal limits
-\eqref{eq:universal}, so beyond some $k_*(m_1/m_2)$ one has, e.g.,
-$f(k)\le0.9$ and $\langle N\rangle(k)\ge0.3$.  (3) is von Neumann's
+\eqref{eq:universal}; the Riemann-sum limit of $-\log f$ gives the stated
+coefficient.  (3) is von Neumann's
 equivalence criterion for incomplete tensor products \cite{vN1939} applied
 to the two product vectors, combined with purity: inequivalent pure product
-states generate disjoint representations.  The modewise statement is the
-finite-dimensional similarity of \cite{BM2008PRD,companion}.
+states generate disjoint representations.
 \end{proof}
 
 \begin{remark}[What this does and does not say]\label{rem:meaning}
-The theorem does not say the PT quantization of the fourth-order field is
-inconsistent.  The physical Hilbert space, defined as the completion of the
-modewise-unitarized theory, is naturally identified with the Fock space of
-the free pair $(m_1,m_2)$; on it the dynamics is unitary, exactly as argued
-by Bender and Mannheim modewise.  What fails is the \emph{global} equivalence
-between this physical representation and the naive covariant Fock
-representation in which the fourth-order propagator and perturbation theory
-are usually written: the two are different, mutually singular
-representations of the same field algebra, with an $O(1)$ discrepancy per UV
-mode --- not a discrepancy that decays with $k$, and not one confined to the
-exceptional locus $m_1=m_2$.  Any interacting construction therefore has to
-choose a representation first; formal manipulations that mix them (e.g.,
-inserting $\eta=e^{-Q}$ as if it were a bounded operator on the covariant
-Fock space) are not supported: by Corollary~\ref{cor:scale} the metric is
-unbounded with unbounded inverse, defining a Hilbert scale rather than an
-equivalent norm, and by Theorem~\ref{thm:disjoint} its formal
-infinite-mode product annihilates the covariant vacuum's representation
-class entirely.  This sharpens, for the free theory, the sense in which
-PT-based unitarity claims for quadratic gravity
-\cite{QQG2024} require an explicit domain-and-completion construction.
+The two results together resolve what would otherwise be a contradiction.
+The physical Hilbert space, defined as the completion of the
+modewise-unitarized theory, is naturally identified with the Fock space
+of the free pair $(m_1,m_2)$, globally and unitarily
+(Proposition~\ref{prop:pointed}); on it the dynamics is unitary, exactly
+as argued by Bender and Mannheim modewise --- and this equivalence is
+\emph{pointed}, with per-mode overlap exactly one.  What fails is
+something different: the identity embedding of the auxiliary canonical
+variables does not extend to a normal equivalence of the two auxiliary
+quasifree states (Theorem~\ref{thm:disjoint}), with an $O(1)$ discrepancy
+per UV mode.  The obstruction is the incompatibility between the
+\emph{identity embedding of canonical variables} and the
+\emph{Dyson-transported physical involution} --- an involution-level
+mismatch, not a Hilbert-space inequivalence, in line with the three-level
+distinction (complex canonical dynamics $\neq$ real form/involution
+$\neq$ Hilbert completion) developed for the field theory in the
+companion papers.  Practical consequences survive in sharpened form: any
+interacting construction must declare which embedding of the canonical
+variables it uses; formal manipulations that insert $\eta=e^{-Q}$ as if
+it were a bounded operator on the covariant Fock space are unsupported
+(by Corollary~\ref{cor:scale} the metric is unbounded with unbounded
+inverse); and PT-based unitarity claims for quadratic gravity
+\cite{QQG2024} require an explicit statement of involution and
+completion, not only of the modewise similarity.
 \end{remark}
 
 \section{Discussion}\label{sec:discussion}
@@ -808,14 +957,31 @@ minimizing value in closed form, which the abstract theory does not.  The
 $n$-mode version (Theorem~\ref{thm:nmode}) makes the portability to
 general quadratic PT systems a theorem rather than a claim.
 
-\paragraph{The two geometries, again.}
-The field-theoretic analysis separates two statements that are easily
+\paragraph{The three levels, again.}
+The field-theoretic analysis separates three statements that are easily
 conflated.  The \emph{phase-space} metric degenerates in the UV exactly as
-the rapidity formula \eqref{eq:rk} dictates ($e^{\pm r(k)}\asymp k^{\pm2}$, a
-Sobolev pair $H^1\oplus H^{-1}$); this is a statement about observables.
-The \emph{state-space} mismatch saturates at universal constants
-($\sqrt3/2$, $1/3$); this is a statement about representations, and it is
-what controls implementability.  Both are exact consequences of the same
+the rapidity formula \eqref{eq:rk} dictates ($e^{\pm r(k)}\asymp
+k^{\pm2}$ in the normalized mode bundle); this is a statement about
+observables.  The \emph{physical completion} is globally unitarily
+equivalent to the normal-form Fock completion, by a pointed unitary with
+per-mode overlap one (Proposition~\ref{prop:pointed}); this is a
+statement about Hilbert completions.  The \emph{auxiliary
+identity-embedding} mismatch saturates at universal constants
+($\sqrt3/2$, $1/3$) and its product states are disjoint
+(Theorem~\ref{thm:disjoint}); this is a statement about the
+incompatibility of the identity embedding with the Dyson-transported
+involution.  The revised central conclusion is therefore:
+\begin{quote}
+\emph{The Dyson map gives an exact pointed unitary equivalence between
+the physical PT completion and the positive normal-form Fock completion.
+However, if the two Gaussian vacua are compared through the identity
+embedding of the auxiliary canonical variables and the standard
+involution, their standard-CCR product states are disjoint, with
+universal ultraviolet fidelity and occupation defects.}
+\end{quote}
+This aligns with the three-level structure --- complex canonical dynamics
+$\neq$ real form/involution $\neq$ Hilbert completion --- used in the
+companion papers.  All quantities are exact consequences of the same
 modewise data.  The constants are universal because the UV limit
 $\w_1/\w_2\to1$ erases all mass and coupling dependence --- remarkably, the
 same limit in which the finite-dimensional theory degenerates (the
@@ -827,8 +993,9 @@ Three natural continuations: (i) sharpen Theorem~\ref{thm:nmode} into a
 classification: for which quadratic PT Hamiltonians is the positive
 diagonalizer direction inter-mode for some canonical splitting
 (by Theorem~\ref{thm:projection}(c) this is necessary and sufficient), and
-what replaces the selection principle when it fails; (ii) determine whether the disjointness
-survives interactions in low dimensions, where the free-theory obstruction
+what replaces the selection principle when it fails; (ii) determine
+whether the auxiliary identity-embedding obstruction
+survives interactions in low dimensions, where the free-theory defect
 is only the universal $1/3$ per mode (a wave-function renormalization of the
 modewise map, $\rho_k\to\rho_k Z_k$ with $Z_k$ unitary, cannot change class
 (3), but a $k$-dependent redefinition of the mode split might); and (iii)
