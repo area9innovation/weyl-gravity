@@ -1227,3 +1227,104 @@ obstruction as "open scattering-shell subset (not every kinematic
 point)", confluent result as the "linear bridge" to the independently
 exact nonlinear exchange with the no-stronger-identification note.
 Both papers compile clean (13 pp. / 22 pp.).
+
+## 2026-07-13 — Doubled/Krein verification, literature repositioning, 5:1 confirmed, freeze tags
+
+Team direction (two messages): (1) verify the "doubled theory" program
+— mirror-adjoint relation, paired optical theorem, Ward identity —
+plus the O(1,1)/rapidity structure; (2) mid-flight literature audit:
+the O(1,1) embedding, exchange-as-ghost-parity/charge-conjugation,
+quantum embedding R, Krein Born rule are all Bateman–Turok
+(arXiv:2607.00096) — reposition papers 5/0 accordingly; the genuinely
+new items are the obstruction complex, the exact 3:1/3:2/(5:1)
+classes, the certified spectral pair, the shell obstruction, the
+confluent bridge, and the SEPARATION of the two completions.
+
+### verify_doubled_theory.py (DQ1–DQ9, ALL PASS, ~3 min)
+
+- DQ1–DQ2: hyperbolic-polar form U=√r e^χ, V=√r e^−χ:
+  ℒ = −(1/4r)(∂r)² + r(∂χ)² + (g/2)r², Jacobian det −1, field-space
+  metric det −1; Noether current j = V∂U − U∂V = 2r∂χ conserved
+  on-shell exactly; exchange flips j.
+- DQ3–DQ6 (structural): H_B = WH_A†W† ⇒ conserved off-diagonal
+  pairing; pure-sector and complex-E states η-null; graph theorem
+  BOTH directions (positive invariant half of the doubled space ⇔
+  pointed positive metric — doubling cannot evade the obstruction);
+  finite-time interaction-picture S_B(t)†WS_A(t) = W EXACT whenever
+  [W,H0] = 0 (so the "paired optical theorem" is a representation of
+  Krein pseudo-unitarity, as the team's audit suspected).
+- DQ7 (team step 9A, the sharp finding): the mirror-adjoint relation
+  holds EXACTLY with W = ι∘(−1)^{N_ghost}: (a) H_B = H_A under the
+  naive κ identification (mirror sector = same theory in mirrored
+  frame); (b) H_A† = G H_A G term by term. So the mirror-adjoint
+  relation IS Krein pseudo-Hermiticity w.r.t. ghost parity, and the
+  doubled pairing is the two-sector unfolding of BT's κ — this
+  DEMONSTRATES the equivalence the audit asked to be demonstrated.
+- DQ8 (team step 9B + steps 3–5 of the reconciliation program,
+  pointed frame): on the exhaustively-verified degenerate shell
+  {H(0)L(0), L(3)L(−3)} at E = 10, the full 2×2 second-order on-shell
+  T satisfies GTG = T† EXACTLY in radicals while Hilbert Hermiticity
+  fails; T_B = T_A; diagonal (κ-even) block real; the ENTIRE
+  obstruction is the κ-odd block: T(out,in) = −401√6/78848 =
+  −𝓜_obs/2 (independent recomputation of HX1 from plain T elements).
+  ⇒ The obstruction is carried exactly by the κ-odd component — the
+  component BT's weak-ghost-symmetry positivity mechanism does not
+  use. Krein pseudo-unitarity and positive-metric failure coexist on
+  the SAME matrix elements.
+- DQ9 (team step 9C, classical/regulated): unregulated pointed Ward
+  ∂·j = 0 exactly (all interaction orders cancel); regulated breaking
+  EXACTLY εu(1+u) − μ²v (regulator terms only). Unit Jacobian ⇒ no
+  measure factor. Normal-ordered operator check [H,Q̂] queued.
+
+### verify_51_order4.py (FO1–FO9, ALL PASS, ~90 s, agent-built, independently re-run)
+
+Order-n sources generated programmatically from the adjoint series
+e^{−X/2}⋆(h0+ζv)⋆e^{X/2} (word generator; T4 = 11 words), validated
+by re-deriving the order-2 (27√3/320 at 3:1) and order-3
+(−117√30/1120 i at 3:2) classes exactly. At (5,1): orders 2–3 kernel
+projections VANISH, R₂,R₃ Hermitian; order 4 NONZERO exactly:
+  𝔬₊^(4) = −(203125√5/2341011456)(a₁a₂†⁵ − a₁†a₂⁵)
+         = −(13·5^{13/2}/(2¹⁶3⁶7²))(…) ≈ ∓1.94·10⁻⁴,
+the predicted 1↔5 monomial. HIERARCHY CONJECTURE (p+q−2, odd p)
+CONFIRMED at its first prediction. Scaling 𝔬₊^(4) ∝ ω₂⁻⁹ exact
+(2⁻⁹ ratio (10,2)/(5,1)), extending 𝔬₊^(n) ∝ ω₂^{−(5n−2)/2};
+gauge-independent; R₄ = O(ε⁻⁶) (measured +5.993/decade), 4th point
+of R_n = O(ε^{−3n/2}).
+
+### Paper edits
+
+Paper 5 (now 16 pp., compiles clean): abstract (iv) reattributed to
+BT + separation claim; new "Relation to prior work" intro paragraph
+(BT / standard pseudo-Hermitian–Krein–Lee-Wick lineage / what's new);
+thm:twofield marked "[adapted] BT" with attribution preamble + their
+nonperturbative U>0 caveat adopted; NEW Comp. Prop. cprop:krein
+(mirror-adjoint = Krein pseudo-Hermiticity; κ-odd localization;
+finite-time pseudo-unitarity; graph iff); NEW Comp. Prop.
+cprop:fiveone (5:1 confirmed); status ledger updated; discussion:
+"Separation of the two completions" paragraph + BT R_t/null-C
+transport as the concrete next calculation; open questions: r=0
+boundary problem in (r,χ), operator Ward; 5 new bib entries
+(Mostafazadeh math-ph/0207009, Feinberg–Znojil 2111.04216, Mannheim
+1611.02100, Liu–Modesto–Calcagni 2208.13536, Azizov–Iokhvidov).
+Paper 0 (22 pp.): rewriting attributed to BT; separation paragraph
+added to §14.
+
+### BT digest
+
+notes/bateman-turok-embedding.md — full LaTeX-source digest of
+arXiv:2607.00096 (agent; equations verbatim from the authors' TeX).
+Load-bearing caveats for the next calculation: proof of their Eq.(19)
+and the "no positively charged operators" lemma deferred to a
+companion paper ("to appear"); R defined only by adjoint action
+(R_tR_t† = 1 only); R_±∞ convergence unaddressed (secular terms);
+Krein † and tr never explicitly defined; dagger placements differ
+across (17)/(19)/(21); the O(1,1) charge is a boost-weight grading,
+not a particle/antiparticle U(1). The null-C test must be
+self-contained.
+
+### Housekeeping
+
+Freeze tags created + pushed: paper1-v1.1, paper2-v1.2, paper3-v1.2,
+paper4-v1.0, paper5-v1.0 (as referenced in each paper's Verification
+paragraph). DOI minting deferred to repo extraction (needs Asger's
+account). README/TODO updated.

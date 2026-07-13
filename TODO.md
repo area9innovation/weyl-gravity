@@ -6,9 +6,12 @@ holds only open items.
 
 ## Release / freeze
 
-1. [ ] Freeze all four papers + create tags (each is already referenced
-   in its own Verification paragraph): `paper1-v1.1`, `paper2-v1.2`,
-   `paper3-v1.2`, `paper4-v1.0`.
+1. [x] Freeze tags created and pushed 2026-07-13: `paper1-v1.1`,
+   `paper2-v1.2`, `paper3-v1.2`, `paper4-v1.0`, `paper5-v1.0` (each
+   referenced in its paper's Verification paragraph).
+1b. [ ] Mint a DOI for the archived commit (team asked for "immutable
+   commit + DOI"): needs Asger's Zenodo (or similar) account; natural
+   to do together with the repo extraction (item 2).
 2. [ ] Extract `physics/symplectic-reconstruction/` into a standalone
    shareable repo (deferred by Asger, 2026-07-12: "we will move it
    later"). Plan: intended for sharing directly with Mannheim, Bateman,
@@ -113,10 +116,44 @@ holds only open items.
       distinction, six derivation appendices, new title); paper 0
       revised per team spec (new §14 interactions section, diagram,
       terminology, five-level conclusion; 22 pp.).
-    - NEXT: (a) 5:1 order-4 kernel projection; (b) vacuum-overlap /
-      superselection analysis; (c) confluent-state R₁ matrix elements;
-      (d) field-theory spectral question (complex finite-volume
-      levels?); (e) EW cubic vertices (paper 6).
+    - DONE (step 9, 2026-07-13): doubled/Krein verification suite
+      (verify_doubled_theory.py DQ1–DQ9 ALL PASS): mirror-adjoint
+      relation H_B = WH_A†W† EXACT with W = ι∘(−1)^{N_ghost} — i.e.
+      it IS Krein pseudo-Hermiticity, the "doubled pairing" is the
+      two-sector unfolding of BT's κ; on-shell T exactly
+      Krein-pseudo-Hermitian (GTG = T†) while Hilbert-Hermiticity
+      fails; **obstruction lives entirely in the κ-odd block**
+      (T(out,in) = −401√6/78848); finite-time S_B†WS_A = W exact;
+      graph theorem both directions; O(1,1) polar form r,χ; classical
+      Ward with exact regulator breaking εu(1+u) − μ²v. Literature
+      repositioning applied to papers 5+0 (BT attribution for O(1,1)/
+      exchange/quantum embedding; new refs Mostafazadeh-nd, Feinberg–
+      Znojil, Mannheim CPT, Liu–Modesto–Calcagni, Azizov–Iokhvidov;
+      new Prop. cprop:krein + separation-of-completions discussion).
+    - DONE (step 10, 2026-07-13): **5:1 CONFIRMED at order 4**
+      (verify_51_order4.py FO1–FO9 ALL PASS): 𝔬₊^(4) =
+      −(203125√5/2341011456)(a₁a₂†⁵−a₁†a₂⁵) exactly, orders 2–3
+      vanish at 5:1, gauge-independent, ω₂^{−9} scaling (series
+      𝔬₊^(n) ∝ ω₂^{−(5n−2)/2}), R₄ = O(ε⁻⁶) (4th point of ε^{−3n/2}).
+      Hierarchy conjecture p+q−2 (odd p) now verified at 3 points.
+    - NEXT (the decisive one, team 2026-07-13): **transport the
+      obstruction through the Bateman–Turok R_t embedding** and test
+      the null-C hypothesis (obstruction ↦ null orthogonal component
+      invisible to their Born rule). BT machinery digested in
+      notes/bateman-turok-embedding.md — CAVEAT: BT's Eq.(19) proof
+      and the "no positively charged operators" lemma are deferred to
+      their companion paper ("to appear"), R_±∞ convergence
+      unaddressed, so our test must be self-contained. Steps 1–2, 6–7
+      of the team's 7-step program remain (3–5 done in the pointed
+      frame by DQ8).
+    - Then: (b) vacuum-overlap / superselection as the r = 0
+      boundary / self-adjoint-extension problem in (r,χ) coordinates
+      (singular q²/r barrier); (c) normal-ordered operator Ward
+      identity [H,Q̂] = breaking (charge's linear piece needs care);
+      (d) confluent-state R₁ matrix elements; (e) field-theory
+      spectral question (complex finite-volume levels?); (f) 5:3 at
+      order 6 + the even-mode-2-transfer exclusion mechanism; (g) EW
+      cubic vertices (paper 6, only after the probability question).
 15. [ ] Paper 2 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness

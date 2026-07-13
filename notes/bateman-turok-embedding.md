@@ -1,0 +1,270 @@
+# Digest: Bateman & Turok, "Escape from Ostrogradsky via Hidden Ghost Parity"
+
+**arXiv:2607.00096v1 [hep-th], 30 Jun 2026.** Sam Bateman (Higgs Centre, Edinburgh), Neil Turok (Higgs Centre + Perimeter). 6-page Letter. Companion long paper: [17] Bateman & Turok, *Unitarity and Positivity in Higher Derivative QFTs from Hidden Ghost Parity* (2026), **to appear** — several key proofs (notably the decomposition Eq. (19)) are deferred to it. Related: [23] Anderson, Bateman, Herzog, Turok, *Renormalization of a Four-Derivative Theory* (to appear); [25] same authors, *Conformally Flat Limit of Quadratic Gravity* (to appear).
+
+Source of this digest: full arXiv LaTeX source (`main.tex`) of v1; all equations below are verbatim, with the equation numbers as they appear in the published PDF (revtex sequential numbering (1)–(21), appendix numbering (A1)–(A2), (B1)–(B5), (C1)–(C6)).
+
+**Conventions** (their footnote 4): they follow Bogolubov–Logunov–Oksak–Todorov, *General Principles of Quantum Field Theory* [24]. Tildes denote Fourier transforms, momentum measure $d_n p \equiv d^n p/(2\pi)^n$, delta functions normalized $\delta_n(p) \equiv (2\pi)^n \delta^n(p)$. Metric signature is not stated explicitly, but the pole structure (Feynman propagator $-i/(p^2+i\epsilon)^2$ with double poles at $p^0 = \pm(|\mathbf{p}| - i\epsilon)$) and the support $\theta(x^2)$ of the commutator function (timelike $x^2>0$) fix mostly-minus, $(+,-,-,-)$, consistent with ref. [24].
+
+---
+
+## 0. What the paper claims (one paragraph)
+
+A four-derivative "perfect square" (PS) scalar QFT, $\mathcal{S}_\phi = -\tfrac12\int d^4x\,(\square\phi + \lambda(\partial\phi)^2)^2$, quantized covariantly on a **Krein space** with the spectral condition (all particle states $p^0>0$), has: (a) perturbative causality + unitarity (optical theorem) **to all orders** given the spectral property and Hermitian interaction Lagrangian; (b) **positive transition probabilities at tree level**, proven via a generalized Born rule $\mathrm{Prob}(A) = \mathrm{tr}(A^\dagger A)$ and a hidden discrete "ghost parity" symmetry that becomes manifest when the PS theory is embedded (by a nonlinear field redefinition + auxiliary field) into a two-derivative, two-field $O(1,1)$ model. The embedding is implemented quantum-mechanically by an operator-algebra homomorphism $R$ (asymptotically $R_{\pm\infty}$), under which every physical projection maps to a "weakly ghost symmetric" operator $B + C$ with $B$ ghost-even and $C$ purely negatively charged, null, and traceless against $B$.
+
+---
+
+## 1. The two-field O(1,1) action and the map to the fourth-order scalar
+
+### The fourth-order (perfect square, PS) theory
+
+Eq. (2) (`eq:PStheory`), Lorentzian action:
+
+$$\mathcal{S}_\phi = -\frac{1}{2}\int d^4x \left(\square \phi + \lambda (\partial \phi)^2\right)^2 \tag{2}$$
+
+- Single asymptotically free coupling $\lambda$; $\phi$ is dimension-zero, massless; free field equation $\square^2\phi = 0$.
+- Special case of Holdom's shift-invariant renormalizable four-derivative theories [21,22]; Holdom found the tree 2→2 cross section positive, this paper explains/generalizes that.
+- PS theory has a **positive Euclidean action** (hence a nonperturbative lattice formulation); the two-field model below does **not**.
+
+### Intermediate step (Ω form)
+
+Define $\Omega \equiv \lambda^{-1} e^{\lambda\phi}$; then
+
+$$\mathcal{S}_\Omega \equiv -\frac{1}{2\lambda^2}\int d^4x \left(\square\Omega/\Omega\right)^2 \quad \text{(unnumbered, Sec. IV)}$$
+
+### The two-field O(1,1) model
+
+Eq. (14) (`eq:UVaction`), introducing $\Upsilon$ to render the Lagrangian polynomial:
+
+$$\mathcal{S}_{1,1} = \int d^4x \left(\partial\Omega\, \partial\Upsilon + \frac12 \lambda^2\, \Omega^2 \Upsilon^2\right) \tag{14}$$
+
+with path-integral measure $\mathcal{D}\Omega\,\mathcal{D}\Upsilon$. Notes on signs/normalization:
+
+- Kinetic term is the off-diagonal $\partial\Omega\,\partial\Upsilon$ — **indefinite**. In the diagonal basis $(\Omega,\Upsilon) = (\mathcal{T}+\mathcal{X},\, \mathcal{T}-\mathcal{X})$, $\mathcal{T}$ has a positive kinetic term, $\mathcal{X}$ a negative one; $\mathcal{X}$ is the ghost.
+- The potential term enters with **the wrong sign** ("its kinetic term is indefinite and its potential has the wrong sign"): with mostly-minus conventions the interaction is a **negative quartic**. They state the perturbative expansion "exactly matches a *complex* two-derivative scalar field $\varphi$, with a *negative* quartic potential $-\frac12\lambda^2(\varphi^*\varphi)^2$, long-known to be asymptotically free" (Symanzik [26]; recent: Romatschke [27]).
+
+### The map back (nonlinear field redefinition)
+
+Integrating the kinetic term by parts and doing the **purely algebraic Gaussian path integral over $\Upsilon$** gives
+
+$$\Upsilon = \frac{\square\,\Omega}{(\lambda\Omega)^2} = \lambda^{-1} e^{-2\lambda\phi}\, \square\, e^{\lambda\phi} \quad \text{(unnumbered, Sec. IV)}$$
+
+and recovers $\mathcal{S}_\phi$ with functional measure $\mathcal{D}\Omega/\Omega \propto \mathcal{D}\phi$. So the classical dictionary is:
+
+| PS variable | O(1,1) variable |
+|---|---|
+| $\phi$ | $\Omega = \lambda^{-1} e^{\lambda\phi}$ |
+| $\lambda^{-1} e^{-2\lambda\phi}\,\square e^{\lambda\phi}$ (on the $\Upsilon$ saddle) | $\Upsilon$ |
+
+**Crucial domain mismatch** (their words, Sec. IV): "the $\phi$ and $\Omega,\Upsilon$ path integrals are **inequivalent**. The former integrates over $\Omega > 0$ whereas the latter integrates over all $\Omega$." See §6 below.
+
+---
+
+## 2. Symmetries: SO⁺(1,1) boost, exchange, "ghost parity" vs "charge conjugation"
+
+Sec. IV ("Classical ghost symmetry"). The action (14) has global symmetry
+
+$$O(1,1) \cong SO^+(1,1) \rtimes K_4, \qquad K_4 = \mathbb{Z}_2\times\mathbb{Z}_2 \text{ (Klein group)}.$$
+
+- **Continuous part** $SO^+(1,1)$: the scale transformation $(\Omega,\Upsilon) \mapsto (e^\sigma \Omega,\, e^{-\sigma}\Upsilon)$, "under which $\Omega$ and $\Upsilon$ are respectively **positively and negatively charged**. This corresponds to the **shift symmetry** of (2)" [i.e., $\phi \to \phi + \sigma/\lambda$].
+- **Noether charge**: the paper never writes the Noether charge explicitly. The charge grading is instead specified at the operator level in Appendix C: $b_\Omega(\mathbf{p})$ **and** $b_\Omega^\dagger(\mathbf{p})$ carry positive charge; $b_\Upsilon(\mathbf{p})$ **and** $b_\Upsilon^\dagger(\mathbf{p})$ carry negative charge. (Note this is a boost-weight grading, not a particle/antiparticle U(1): creation and annihilation operators of the same field carry the **same** charge.)
+- **Discrete exchange**: "One of the discrete $\mathbb{Z}_2$ subgroups is **charge conjugation** $(\Omega,\Upsilon)\mapsto(\Upsilon,\Omega)$ **which is ghost parity**." In the diagonal basis, "The symmetry $\kappa: \mathcal{X} \leftrightarrow -\mathcal{X}$, i.e., $\Omega\leftrightarrow\Upsilon$, is ghost parity." So in this paper *charge conjugation of the O(1,1) boost charge* and *ghost parity* are the same $\mathbb{Z}_2$; the name "ghost parity" is introduced earlier (Sec. I, Eq. (1) context) as physics terminology adopted from Holdom [19] for the Krein fundamental symmetry $\kappa$, and Sec. IV identifies the field-theoretic realization. (The other $\mathbb{Z}_2$ in $K_4$ is not spelled out; presumably $(\Omega,\Upsilon)\to(-\Omega,-\Upsilon)$.)
+- **Ghost parity in $\phi$ variables** — the "hidden" symmetry, Eq. (15) (`eq:HGP`):
+
+$$\phi \mapsto -\phi + \frac{1}{\lambda}\ln\left(\square\phi + \lambda(\partial\phi)^2\right) \tag{15}$$
+
+"which can be shown to be an involution **using the field equation for $\phi$**. As one can easily check, (15) is an **on-shell symmetry** of $\mathcal{S}_\phi$." (So in the PS variables ghost parity is nonlinear, nonlocal-looking, and only on-shell; it is exact and linear only in the $(\Omega,\Upsilon)$ variables.)
+
+---
+
+## 3. The quantum embedding: R, R_t, Hamiltonians, S-matrices
+
+Sec. V ("Quantum Ghost Symmetry") + Appendix C.
+
+### The homomorphism R
+
+"The classical embedding just explained induces a quantum embedding. Namely, an **operator algebra homomorphism** that acts on local fields as" Eq. (16):
+
+$$R^\dagger \Omega R = \frac{1}{\lambda} e^{\lambda\phi}, \qquad R^\dagger \Upsilon R = \frac{1}{\lambda} e^{-2\lambda\phi}\,\square\, e^{\lambda\phi} \tag{16}$$
+
+So conjugation by $R$ pulls $O(1,1)$-model fields back to composite operators of the $\phi$ theory. As a state map, $R$ sends the $\phi$-theory Krein space into the $(\Omega,\Upsilon)$ Krein space (see the vacuum relation below: $R_t \Psi_0^{(\phi)} = e^{Q_t}\Psi_0^{(\Omega\Upsilon)}$). The paper gives no more formal domain/codomain characterization than this — no statement about ranges, dense domains, or invertibility beyond $R_t R_t^\dagger = \mathbf{1}$.
+
+### Hamiltonian relation
+
+Verbatim: "In fact, the full Hamiltonians of the two field theories are related: $R^\dagger H_{1,1} R = H_\phi$ **up to a spatial boundary term**." The boundary term is not written down or characterized further anywhere in the Letter (presumably in [17]).
+
+### Time-translated homomorphism and asymptotic limits
+
+$$R_t = e^{iH^0_{\Omega\Upsilon} t}\, R\, e^{-iH^0_\phi t} \quad \text{(unnumbered, after (17))}$$
+
+"the $R$ homomorphism translated to the time $t$ using the **free** $\phi$ Hamiltonian on the right and the **free** $O(1,1)$ Hamiltonian on the left. This defines a **Bogoliubov transformation**, detailed in Appendix C, that maps the asymptotic states of the perfect square theory to those of the $O(1,1)$ model in the limits $t\to\pm\infty$." $R_{\pm\infty}$ are simply these $t\to\pm\infty$ limits; no independent construction of the limits (existence, topology of convergence) is given in the Letter.
+
+### S-matrix relation
+
+Eq. (17) (`eq:isom`):
+
+$$S_\phi = R_\infty^\dagger\, S_{\Omega\Upsilon}\, R_{-\infty} \tag{17}$$
+
+(follows "from the interaction picture"). Note dagger placement: dagger on $R_\infty$ only.
+
+### Explicit Bogoliubov data (Appendix C)
+
+Mode expansions, Eqs. (C1)–(C3):
+
+$$\Omega(x) = \int \frac{d_3\mathbf{p}}{2|\mathbf{p}|}\left(e^{-ipx} b_\Omega(\mathbf{p}) + h.c.\right) \tag{C1}$$
+$$\Upsilon(x) = \int \frac{d_3\mathbf{p}}{2|\mathbf{p}|}\left(e^{-ipx} b_\Upsilon(\mathbf{p}) + h.c.\right) \tag{C2}$$
+
+with **nonzero commutators only cross-wise**: $[b_\Omega(\mathbf{p}), b_\Upsilon^\dagger(\mathbf{q})] = [b_\Upsilon(\mathbf{p}), b_\Omega^\dagger(\mathbf{q})] = 2|\mathbf{p}|\,\delta_3(\mathbf{p}-\mathbf{q})$. So each of the $b_\Omega$, $b_\Upsilon$ oscillators is **null** by itself; the inner product pairs $\Omega$-quanta with $\Upsilon$-quanta. Charge assignments: $b_\Omega, b_\Omega^\dagger$ positive; $b_\Upsilon, b_\Upsilon^\dagger$ negative.
+
+$$\phi(x) = \int \frac{d_3\mathbf{p}}{(2|\mathbf{p}|)^3}\Big(e^{-ipx} a_1(\mathbf{p}) + e^{-ipx}\,(1 + 2i|\mathbf{p}|t)\, a_2(\mathbf{p}) + h.c.\Big) \tag{C3}$$
+
+with nonzero commutators $[a_1(\mathbf{p}), a_2^\dagger(\mathbf{q})] = [a_2(\mathbf{p}), a_1^\dagger(\mathbf{q})] = (2|\mathbf{p}|)^3\,\delta_3(\mathbf{p}-\mathbf{q})$. The $(1+2i|\mathbf{p}|t)$ factor is the secular/"growing" dipole mode of the degenerate double pole (their footnote 3: growing modes "appear to violate time translation invariance. However ... these cancel out of scattering cross sections").
+
+With $\omega_t(f,g) = \int_{x^0=t} d^3\mathbf{x}\, f \overleftrightarrow{\partial_0} g$ (symplectic form on the slice $x^0 = t$) and $p = (|\mathbf{p}|, \mathbf{p})$, Eqs. (C4)–(C5):
+
+$$R_t^\dagger\, b_\Upsilon(\mathbf{p})\, R_t = \omega_t\!\left(i e^{ipx},\, R^\dagger \Upsilon R\right) \simeq a_1(\mathbf{p}) \tag{C4}$$
+
+$$R_t^\dagger\, b_\Omega(\mathbf{p})\, R_t = \omega_t\!\left(i e^{ipx},\, R^\dagger \Omega R\right) \simeq \frac{a_2(\mathbf{p}) + 2i|\mathbf{p}|t\, a_1(\mathbf{p}) + e^{2i|\mathbf{p}|t}\, a_1^\dagger(-\mathbf{p})}{4|\mathbf{p}|^2} \tag{C5}$$
+
+where $\simeq$ means **equality up to $\mathcal{O}(\lambda)$** (i.e., these are free-theory / leading-order statements). "Thus $R_t$ is a Bogoliubov transformation and satisfies $R_t^{\phantom\dagger} R_t^\dagger = \mathbf{1}$." (Only $R_t R_t^\dagger = \mathbf{1}$ is asserted; $R_t^\dagger R_t$ is not discussed.)
+
+Note the structure of (C5): $R_t^\dagger b_\Omega R_t$ contains the **creation** operator $a_1^\dagger(-\mathbf{p})$ with an oscillating phase $e^{2i|\mathbf{p}|t}$ and a **secularly growing** term $2i|\mathbf{p}|t\,a_1(\mathbf{p})$. This is why the $t\to\pm\infty$ limits are delicate and why only the charge-neutral parts of mapped operators are claimed to have well-defined limits (see §4).
+
+### Vacuum relation
+
+$$R_t\, \Psi_0^{(\phi)} = e^{Q_t}\, \Psi_0^{(\Omega\Upsilon)}, \qquad Q_t = \frac12 \int \frac{d_3\mathbf{p}}{(2|\mathbf{p}|)^3}\left(e^{2i|\mathbf{p}|t}\, b_\Upsilon^\dagger(\mathbf{p})\, b_\Upsilon^\dagger(-\mathbf{p}) - h.c.\right) \tag{C6}$$
+
+$Q_t$ is "an anti-Hermitian, **negatively charged** squeezing operator. In a positive quantum field theory, the analogous squeezed states are orthogonal to the vacuum. However, in our case, since the $b_\Upsilon$ oscillator is null, $\langle \Psi_0^{(\Omega\Upsilon)}, R_t \Psi_0^{(\phi)}\rangle = 1$." (The squeezing is entirely in the null $b_\Upsilon$ directions — the deviation of $R_t\Psi_0^{(\phi)}$ from the O(1,1) vacuum is invisible to the inner product against neutral/positively-charged states.)
+
+---
+
+## 4. Krein-space QM: κ, generalized Born rule, weak ghost symmetry, B + C, positivity
+
+### Krein space and κ (Sec. I)
+
+Eq. (1) (`eq:Krein_decomp`): the Krein space admits an orthogonal decomposition
+
+$$\mathcal{K} = \mathcal{K}_+ \oplus \mathcal{K}_-, \tag{1}$$
+
+$\mathcal{K}_\pm$ positive/negative definite subspaces, and $\kappa\,\mathcal{K}_\pm = \pm\mathcal{K}_\pm$. "Adopting physics terminology [Holdom, ref 19], we shall call $\kappa$ **ghost parity**." $\kappa$ induces a norm topology via the positive-definite inner product $\langle\_|\kappa|\_\rangle$. "There is no preferred choice of ghost parity, however, all such norms are equivalent [20]." Key interpretive sentence: "probabilities are calculated using the **indefinite** inner product: $\kappa$ is merely a useful tool for proving their positivity."
+
+Quantization data for the PS theory (Sec. I): covariant commutator Eq. (3) $[\phi(x),\phi(y)] = i\Delta(x-y)$ with
+
+$$\Delta(x) = -\frac{1}{8\pi}\,\epsilon(x^0)\,\theta(x^2) \;\Leftrightarrow\; \tilde\Delta(p) = \epsilon(p^0)\,\delta_1'(p^2) \tag{4}$$
+
+and spectral Wightman function (drop negative-$p^0$ part of $\tilde\Delta$):
+
+$$\tilde W(p) = \theta(p^0)\,\delta_1'(p^2). \tag{5}$$
+
+"The Wightman function defines the inner product on the space of states. Since the derivative of a delta function is indefinite, so is the inner product." The O(1,1) counterpart (Sec. V, after Eq. (20)): $W^{\Omega\Upsilon}(p) = W^{\Upsilon\Omega}(p) = \theta(p^0)\,\delta_1(p^2)$, $W^{\Omega\Omega} = W^{\Upsilon\Upsilon} = 0$.
+
+### Generalized Born rule (Sec. II)
+
+In an indefinite space with null states ($\langle\Psi|\Psi\rangle = 0$) the conventional Born rule fails (can't normalize). Provided the inner product is **non-degenerate**, define projection operators $P$ with $P^2 = P = P^\dagger$ and $\sum P = \mathbf{1}$. A physical process is an operator $A$ built from these; for scattering, $A = P_{out}\, S\, P_{in}$. Eq. (6) (`eq:BornRule`):
+
+$$\mathrm{Prob}(A) = \mathrm{tr}\big(A^\dagger A\big) = \mathrm{tr}\big(S^\dagger P_{out}\, S\, P_{in}\big) \tag{6}$$
+
+The usual Born rule is recovered for pure-state density matrices $P = |\Psi\rangle\langle\Psi| / \langle\Psi|\Psi\rangle$. Kolmogorov's axioms: (i) additivity from linearity of trace; (ii) conservation of probability from (pseudo)-unitarity $S^\dagger S = \mathbf{1}$ (which holds "if the interaction Lagrangian is (pseudo)-Hermitian", given the spectral condition) with $P_{out} = \mathbf{1}$ giving $\mathrm{Prob}(A) = \mathrm{Prob}(P_{in})$; (iii) positivity is the nontrivial one, below.
+
+**Caveat (our reading, not stated explicitly in the Letter):** the paper never spells out what $\dagger$ and $\mathrm{tr}$ mean in Krein space. Everything is consistent only if $\dagger$ is the **Krein adjoint** (adjoint w.r.t. the indefinite inner product) and $\mathrm{tr}$ the trace built from the indefinite pairing (dual bases w.r.t. $\langle\cdot|\cdot\rangle$). This is what makes $\mathrm{tr}(C^\dagger C) = 0$ possible for $C \neq 0$ and what makes the positivity argument (next) nontrivial. Under the positive product $\langle\_|\kappa|\_\rangle$ the adjoint is $\kappa A^\dagger \kappa$ and the trace is $\mathrm{tr}(\kappa \cdot \kappa\,\cdot)$-related, which is exactly how Eq. (8) becomes manifestly positive.
+
+### Ghost symmetry and the positivity mechanism (Sec. II)
+
+- **Ghost symmetric**: $B = \kappa B \kappa$. "This implies that $\mathrm{Prob}(B) = \mathrm{tr}(B^\dagger \kappa B \kappa)$, which is positive since it is equivalent to a trace computed with respect to the positive definite inner product $\langle\_|\kappa|\_\rangle$." [Mechanism: for ghost-symmetric $B$, $\mathrm{tr}(B^\dagger B) = \mathrm{tr}(B^\dagger \kappa B\kappa)$, and $\kappa B^\dagger \kappa$ is the $\kappa$-adjoint $B^{\ddagger}$, so this is $\mathrm{tr}_{\kappa}(B^{\ddagger} B) \geq 0$ — a Hilbert–Schmidt norm in the auxiliary Hilbert space.]
+- **Weakly ghost symmetric**, Eq. (7) (`eq:weak_decomposition`): $A$ is weakly ghost symmetric if
+
+$$A = B + C \tag{7}$$
+
+"with $B$ ghost symmetric and $C$ **null and orthogonal to $B$**, meaning $\mathrm{tr}(C^\dagger C) = 0 = \mathrm{tr}(B^\dagger C)$." Then Eq. (8):
+
+$$\mathrm{Prob}(A) = \mathrm{tr}\big(B^\dagger \kappa B \kappa\big) \geq 0 \tag{8}$$
+
+"a sufficient condition for an indefinite QFT to admit a probabilistic interpretation. We claim that the perfect square theory (2) is just such a QFT."
+
+### How the PS theory achieves weak ghost symmetry (Sec. V) — the B + C decomposition
+
+General $n$-particle projection in the $\phi$ theory, Eq. (18):
+
+$$P_\chi^{(\phi)} = \frac{1}{n!}\int (d_4 p)^n\, \chi(p)\, \tilde W(p)\, \big|\tilde\Psi(p)\big\rangle \big\langle \tilde\Psi(p)\big| \tag{18}$$
+
+($p = (p_1,\dots,p_n)$; $\tilde W(p)$ here is the product of single-particle Wightman factors; $\chi$ a characteristic function, $\chi^2 = \chi$). Since $m$- and $n$-particle projections are orthogonal for $m \neq n$, it suffices to treat $A = P_{out}(S-1)P_{in}$ with $\chi_{in}, \chi_{out}$ supported in fixed particle-number subspaces.
+
+**Key decomposition**, Eq. (19) (`eq:P_f_decomposition`) — stated with proof deferred: "We find that [17]"
+
+$$R_t\, P_\chi^{(\phi)}\, R_t^\dagger = P_\chi^{(\Omega\Upsilon)} + Q_\chi^{(\Omega\Upsilon)} \tag{19}$$
+
+"where $P_\chi^{(\Omega\Upsilon)}$ is a **charge neutral** operator while $Q_\chi^{(\Omega\Upsilon)}$ contains **only negatively charged** operators. The charge neutral term has no dependence on $t$ and so is well defined in the limits $t\to\pm\infty$." For $n=1$, Eq. (20):
+
+$$P_\chi^{(\Omega\Upsilon)} = \int d_4 p\, \chi(p)\, \tilde W^{ij}(p)\, \big|\tilde\Psi_i(p)\big\rangle \big\langle \tilde\Psi_j(p)\big|, \qquad i,j \in \{\Omega,\Upsilon\} \tag{20}$$
+
+with $W^{\Omega\Upsilon} = W^{\Upsilon\Omega} = \theta(p^0)\delta_1(p^2)$, $W^{\Omega\Omega} = W^{\Upsilon\Upsilon} = 0$. "$P_\chi^{(\Omega\Upsilon)}$ is covariant and, most important, it is **even under ghost parity**." [Even because $\Omega \leftrightarrow \Upsilon$ swaps $i \leftrightarrow j$ and the off-diagonal Wightman matrix is symmetric.]
+
+**Nullity argument (verbatim logic):** "Since the $R_t$ homomorphism **does not yield any positively charged operators**, the negatively charged operators in $Q_\chi^{(\Omega\Upsilon)}$ cannot contribute to the trace, that is, $Q_\chi^{(\Omega\Upsilon)}$ is null and orthogonal to $P_\chi^{(\Omega\Upsilon)}$." [The trace pairs charge $+q$ with charge $-q$; if the whole image of $R_t\,\cdot\,R_t^\dagger$ contains only charge $\leq 0$ pieces, no positively-charged partner exists to pair against $Q$'s negative charge, so every trace involving $Q$ vanishes. This is the *entire* mechanism by which $C$ decouples: it is an $SO^+(1,1)$ charge selection rule, not a dynamical cancellation.]
+
+Hence a general scattering process decomposes as Eq. (21) (`eq:A_decomposition`):
+
+$$R_\infty\, A^{(\phi)}\, R_{-\infty}^\dagger = B^{(\Omega\Upsilon)} + C^{(\Omega\Upsilon)} \tag{21}$$
+
+"where $B^{(\Omega\Upsilon)}$ is ghost symmetric and $C^{(\Omega\Upsilon)}$ is orthogonal and null. Since $R_t^{\phantom\dagger} R_t^\dagger = \mathbf{1}$, the generalized Born rule yields $\mathrm{Prob}(A^{(\phi)}) > 0$ and so leads to consistent transition probabilities." [Chain: $\mathrm{Prob}(A^{(\phi)}) = \mathrm{tr}(A^{(\phi)\dagger} A^{(\phi)})$; insert $R^\dagger R$-type identities using $R_t R_t^\dagger = \mathbf{1}$ to rewrite as the trace of the mapped operator; then (7)–(8) with $B = B^{(\Omega\Upsilon)}$.]
+
+Dagger placement summary (load-bearing for the planned calculation):
+- (17): $S_\phi = R_\infty^\dagger S_{\Omega\Upsilon} R_{-\infty}$ (pull O(1,1) S-matrix back to $\phi$).
+- (19): $R_t P^{(\phi)} R_t^\dagger = \dots$ (push $\phi$ projections forward to O(1,1)).
+- (21): $R_\infty A^{(\phi)} R_{-\infty}^\dagger = B + C$ (push forward; different $R$'s on the two sides because $A$ straddles in/out).
+
+---
+
+## 5. Optical theorem / pseudo-unitarity: exactly what is claimed proven
+
+- **Causality + unitarity (optical theorem): all orders, conditional.** "Provided the interaction Lagrangian is Hermitian, the **spectral property is sufficient to ensure perturbative causality and unitarity in the form of the optical theorem** [16 = 't Hooft–Veltman, Diagrammar] (see also [17])." Abstract: "using covariant methods which ensure perturbative causality and unitarity (in the form of the optical theorem) **to all orders**." So: all-orders, but resting on the Diagrammar-style largest-time-equation argument given the spectral condition; details in the companion paper [17].
+- **Pseudo-unitarity**: $S^\dagger S = \mathbf{1}$ "if the interaction Lagrangian is (pseudo)-Hermitian" (Sec. II) — used for conservation of probability. In Krein language the theory is "pseudo-unitary, not unitary" (Sec. I).
+- **Positivity of transition probabilities: tree level only.** Abstract: "prove that **all tree level** transition probabilities are positive." Conclusions: "providing a general proof of the positivity of transition probabilities **at tree level**. The main obstacle to extending the proof to higher orders is that, like QCD, the massless theory has **collinear infrared divergences which affect asymptotic states**. These need to be carefully regulated and resummed." Supporting result: with Anderson & Herzog they "have proven that PS theory is free of **IR loop divergences**" [23]; via the optical theorem "this suggests that IR divergences due to massless external states can be consistently resummed" (suggestive, not proven).
+- The Bogoliubov relations (C4)–(C5) are explicitly leading order ($\simeq$ = up to $\mathcal{O}(\lambda)$); the Eq. (19) decomposition is asserted with proof in [17].
+- **Cross-section check** (Sec. III, App. B): the generalized Born rule reproduces Holdom's tree 2→2 result. Off-shell amplitude defined by Eq. (9): $\langle\tilde\Psi(q_1,q_2)|S-1|\tilde\Psi(p_1,p_2)\rangle = \delta_4(q_1{+}q_2{-}p_1{-}p_2)\mathcal{M}$; duality $\langle\tilde\Psi(p)|\tilde\Psi(q)\rangle \tilde W(q) = \delta_4(p-q)$; covariant projector Eq. (10); Born-rule trace Eq. (11); relation to cross section Eq. (12): $\mathrm{tr}(A^\dagger A) = \frac{1}{\mathrm{Area}}\int_{S^2} d\Omega \frac{d\sigma}{d\Omega}$; and Eq. (13):
+
+$$\frac{d\sigma}{d\Omega} = \frac{\partial^4}{\partial m_1^2\,\partial m_2^2\,\partial m_3^2\,\partial m_4^2}\left.\left(\frac{|\mathbf{p}_1|\,|\mathcal{M}|^2}{(16\pi)^2 |\mathbf{q}_1|\, s}\right)\right|_{m^2=0} = \frac{3\lambda^4}{32\pi^2 s} \tag{13}$$
+
+using $\delta'(p^2) = -(\partial/\partial m^2)\delta(p^2 - m^2)|_{m^2=0}$ with **independent masses per external leg**. Their flagged novelty: "our construction does not put the amplitude $\mathcal{M}$ on-shell, but rather the squared amplitude $|\mathcal{M}|^2$ which is differentiated before being put on-shell... **only on-shell probabilities, not amplitudes, are physically meaningful**." Feynman rules (App. B): cubic vertex $-2i\lambda(p_1^2\, p_2\!\cdot\!p_3 + \mathrm{perm.})$ (B1), quartic vertex $-4i\lambda^2(p_1\!\cdot\!p_2\; p_3\!\cdot\!p_4 + \mathrm{perm.})$ (B2); tree $\mathcal{M}$ = contact + s + t + u exchange (B3); characteristic distribution $\chi(p^\mu) \simeq \delta_1(p^\mu)/L^\mu$ (B4), CoM-frame product (B5); the $\delta_4(0) = L^0L^1L^2L^3$ spacetime volume in (11) cancels against $\chi$'s denominators leaving the transverse Area of (12).
+
+---
+
+## 6. The nonperturbative caveat (verbatim, Sec. IV)
+
+> "While the former [PS theory] has a positive Euclidean action, the latter [O(1,1) model] does not. Its kinetic term is indefinite and its potential has the wrong sign. Similarly, the $\phi$ and $\Omega,\Upsilon$ path integrals are inequivalent. **The former integrates over $\Omega > 0$ whereas the latter integrates over all $\Omega$. Although $\mathcal{S}_{1,1}$ does not define a meaningful theory, it has a well-defined perturbative expansion** [23, 25]. In fact, this exactly matches a complex two-derivative scalar field $\varphi$, with a negative quartic potential $-\frac12\lambda^2(\varphi^*\varphi)^2$, long-known to be asymptotically free [26]."
+
+So the embedding, and everything built on $R$ (Eqs. (16)–(21)), is a statement about **perturbative expansions around the free theories**, order by order. The two-field model is a scaffold: it "does not define a meaningful [nonperturbative] theory" (indefinite kinetic term, wrong-sign potential, no positive Euclidean action), and its configuration space ($\Omega \in \mathbb{R}$) differs from the image of the field redefinition ($\Omega = \lambda^{-1}e^{\lambda\phi} > 0$). The only other domain/boundary remarks in the paper: the unspecified "spatial boundary term" in $R^\dagger H_{1,1} R = H_\phi$, and the functional-measure statement $\mathcal{D}\Omega/\Omega \propto \mathcal{D}\phi$. Nonperturbative physics of PS theory itself (positive Euclidean action) is deferred to the lattice: mass gap and $\langle(\partial\phi)^2\rangle \neq 0$ generation "in a manner similar to QCD" (initial investigations with P. Morandes), dynamical breaking of scale symmetry, "PS theory may be the simplest nontrivial four dimensional scalar QFT with a continuum limit."
+
+---
+
+## 7. Odds and ends the team asked about
+
+- **Complex energies / conjugate pairs**: Not discussed. The only complex displacements are the Feynman $i\epsilon$'s: double poles at $p^0 = \pm(|\mathbf{p}| - i\epsilon)$. No complex-conjugate-pair energy eigenvalues, no discussion of PT-broken regimes.
+- **Jordan blocks**: never named, but structurally present as the degenerate double pole / dipole pair: propagator $-i/(p^2+i\epsilon)^2$; footnote 3's "growing modes"; the mode expansion (C3) with secular factor $(1 + 2i|\mathbf{p}|t)a_2(\mathbf{p})$; and the null cross-paired oscillator algebras $[a_1, a_2^\dagger] = [a_2, a_1^\dagger] \neq 0$ with $[a_i, a_i^\dagger] = 0$ (same pattern as $b_\Omega, b_\Upsilon$). The "dipole ghost" literature is cited ([2]: Flato–Fronsdal; Binegar et al.). Growing modes claimed to "cancel out of scattering cross sections" (footnote 3); mechanism visible in (C5): the charge selection rule kills the terms carrying $t$-dependence.
+- **Massless / equal-frequency limit**: the theory is *intrinsically* at the degenerate point — massless $\square^2\phi = 0$ is the equal-frequency (resonant) Pais–Uhlenbeck limit. There is no unequal-frequency deformation anywhere in the paper; no mass terms are considered (they would break the shift symmetry / scale invariance and the dimension-zero structure). The paper's whole construction (δ′ Wightman function, dipole modes, off-shell states) is tailored to the degenerate case.
+- **Interactions beyond the perfect-square form**:
+  - PS is a special case of Holdom's general shift-invariant renormalizable four-derivative scalars [21,22]; the paper's proof is stated for PS specifically.
+  - Outlook item 2: "The perfect square theory is merely the simplest of a **large class** of scalar four-derivative theories with hidden ghost parity which we expect to be quantum consistent. For example... a $N$-component, four-derivative dimensionless scalar on $\mathbb{R}\times S^{N-1}$ which embeds in a **$O(N,N)$-invariant** model of two-derivative fields" (has a large-$N$ limit for analytic strong-coupling study). "We have also studied **gauged versions**: the results will be presented elsewhere."
+  - Outlook item 4: consistency requires the discrete hidden ghost parity, **not** shift symmetry — "shift non-invariant terms... are allowed by hidden ghost parity" (relevant to the cosmology mechanism of [14]).
+- **Relation to quadratic gravity** (outlook item 1): PS theory = conformally flat limit of quadratic gravity [25]; diffeomorphism Ward identity protects the PS form under renormalization; graviton, its ghost partner and a vector mode [28] decouple in that limit; the long-wavelength classical instability of PS-as-spacetime = de Sitter scale-factor blowup, harmless in the usual cosmological sense once zero modes are handled.
+- **Coherent states vs Ostrogradsky** (App. A): displacement operator identity $e^{i\phi(f)}\phi(x)e^{-i\phi(f)} = \phi(x) + \Delta f$ (A1); $\langle f|\hat H(\phi)|f\rangle = \langle 0|\hat H(\phi + \Delta f)|0\rangle = E(\Delta f)$ (A2). Ostrogradsky lives on in **expectation values** (unbounded below via coherent states) while the **spectrum** of $\hat H$ stays non-negative — reconciled only because the inner product is indefinite. This is their resolution of the correspondence-principle tension.
+- **Asymptotic freedom**: single coupling $\lambda$, asymptotically free (matches Symanzik's negative-quartic scalar); strong coupling in the IR ⇒ expected mass gap + $\langle(\partial\phi)^2\rangle$ condensate.
+
+---
+
+## What we still don't know from the paper
+
+Deferred to the companion papers or simply absent from the Letter:
+
+1. **Proof of Eq. (19)** ($R_t P_\chi^{(\phi)} R_t^\dagger = P^{(\Omega\Upsilon)} + Q^{(\Omega\Upsilon)}$ with $Q$ purely negatively charged), and of the key lemma "the $R_t$ homomorphism does not yield any positively charged operators." Both cited to [17] (Bateman–Turok long paper, *to appear* as of v1). This lemma is exactly what the team's null-component test hinges on; we only have the statement, plus the $\mathcal{O}(\lambda^0)$ Bogoliubov data (C4)–(C5) as evidence.
+2. **Explicit construction of $R$ itself.** Eq. (16) defines $R$ only through its adjoint action on the two generators $\Omega, \Upsilon$. No closed-form expression for $R$ (e.g., as a normal-ordered exponential / squeeze-displacement kernel), no domain/codomain analysis, no statement of whether $R^\dagger R = \mathbf{1}$ (only $R_t R_t^\dagger = \mathbf{1}$), no injectivity/surjectivity discussion, no characterization of $\ker R^\dagger$ or the orthogonal complement of $\mathrm{ran}\,R$.
+3. **Existence/convergence of the limits $R_{\pm\infty}$.** Given the secular $2i|\mathbf{p}|t$ and oscillating $e^{2i|\mathbf{p}|t}$ terms in (C5) and in $Q_t$ (C6), the sense in which $R_t \to R_{\pm\infty}$ (weak limits on which domain? after smearing?) is not specified. Only the charge-neutral part is said to be $t$-independent and "well defined in the limits."
+4. **The spatial boundary term** in $R^\dagger H_{1,1} R = H_\phi$: never written down, its role never analyzed.
+5. **Definition of $\dagger$ and $\mathrm{tr}$ in Krein space.** Our identification ($\dagger$ = Krein adjoint w.r.t. the indefinite inner product; trace via the indefinite pairing) is an inference from consistency of Eqs. (6)–(8), not an explicit definition in the paper. Also unaddressed: trace-class issues, whether $\mathrm{tr}(A^\dagger A)$ converges before the finite-volume regularization of App. B, and uniqueness of the $B + C$ splitting in Eq. (7).
+6. **The explicit $\kappa$ for the interacting theory.** $\kappa$ is defined abstractly (Eq. (1)) and identified with $\Omega\leftrightarrow\Upsilon$ / $\mathcal{X}\to-\mathcal{X}$ at the field level; the paper never writes $\kappa$ as an operator on the Fock/Krein space (e.g., its action on the $b_\Omega, b_\Upsilon$ or $a_1, a_2$ oscillators), nor which particular $\kappa$ (fundamental decomposition) makes $B^{(\Omega\Upsilon)}$ ghost symmetric — only that $P^{(\Omega\Upsilon)}_\chi$ is "even under ghost parity."
+7. **The Noether charge** of $SO^+(1,1)$: no explicit charge operator $\hat Q$ or its expression in oscillators; only charge assignments of $b_\Omega, b_\Upsilon$ (both creation and annihilation of a given field carry the same sign).
+8. **All-orders positivity**: open. Obstacle = collinear IR divergences affecting asymptotic states; resummation program only sketched (IR-finiteness of loops from [23] plus optical theorem).
+9. **Higher orders of the Bogoliubov map**: (C4)–(C5) hold only up to $\mathcal{O}(\lambda)$; the interacting corrections to $R_t$'s action on oscillators are not given.
+10. **The second $\mathbb{Z}_2$** in $K_4 = \mathbb{Z}_2\times\mathbb{Z}_2$ is never identified explicitly (presumably $(\Omega,\Upsilon)\to(-\Omega,-\Upsilon)$), nor is any role assigned to it.
+11. **Whether/how the $\Omega > 0$ vs $\Omega \in \mathbb{R}$ domain mismatch feeds back into perturbation theory** (e.g., instanton/boundary contributions distinguishing the two path integrals): stated as inequivalence, not analyzed.
+12. **Uniqueness/scheme-dependence of the off-shell state construction** $\tilde\Psi(p)$ (Eq. (9) duality): the off-shell states are defined by the duality relation $\langle\tilde\Psi(p)|\tilde\Psi(q)\rangle\tilde W(q) = \delta_4(p-q)$; existence/uniqueness not discussed in the Letter.
+13. No discussion of: unequal-frequency (massive) PU deformations, complex-conjugate energy pairs, PT-symmetric quantization comparisons (Bender–Mannheim is cited [5] but not engaged), Jordan-block language, or positivity of the pseudo-Hermitian metric as an operator-deformation problem.

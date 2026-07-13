@@ -16,7 +16,7 @@ and a machine-checked verification pipeline.
 | 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.1` (12 pp.) |
 | 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.1` (10 pp.) |
 | 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | draft (14 pp.) |
-| 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions, Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order Theories** | accepted by team referee after final audit (13 pp.) |
+| 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions, Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order Theories** | frozen, tag `paper5-v1.0` (16 pp.; accepted by team referee, then extended: 5:1 confirmation, Krein separation, literature repositioning) |
 
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.
@@ -76,10 +76,19 @@ continuum makes branch-changing H+L → L+L shells generic and the
 second-order deformation is obstructed on an open shell subset (exact
 value 401√6/(39424g²) at a rational kinematic point). What survives at
 the massless boundary is the exact two-field exchange U↔V of
-ℒ = −∂U·∂V + (λ²/2)U²V² — a sector-exchanging involution between two
-oppositely oriented interaction-generated Jordan sectors, whose
-linearization is the bounded confluent limit of the regulated branch
-parity on the doubled space.
+ℒ = −∂U·∂V + (λ²/2)U²V² (the Bateman–Turok O(1,1) embedding; they
+identified the exchange as ghost parity) — a sector-exchanging
+involution between two oppositely oriented interaction-generated
+Jordan sectors, whose linearization is the bounded confluent limit of
+the regulated branch parity on the doubled space. The hierarchy
+conjecture's first prediction is confirmed: 5:1 is unobstructed through
+order 3 and obstructed at order 4 by exactly
+−(203125√5/2341011456)(a₁a₂†⁵−a₁†a₂⁵). And the two completions
+*separate* in the interacting theory: the on-shell T is exactly
+ghost-parity (Krein) pseudo-Hermitian — the obstruction lives entirely
+in the κ-odd block — so the Krein completion survives precisely the
+matrix elements on which every positive pointed metric fails, and
+cannot be a hidden positive completion.
 
 ## Reports (`reports/`)
 
@@ -124,6 +133,17 @@ Symbolic (SymPy):
   field theory, exact two-field rewriting and sector-exchange κ₀,
   sectorwise second-order obstruction (exact value 401√6/39424),
   confluent parity theorem.
+- `verify_doubled_theory.py` (DQ1–DQ9) — doubled/Krein structure:
+  O(1,1) hyperbolic-polar form and Noether current, mirror-adjoint
+  relation H_B = WH_A†W† exact with W = ι∘(−1)^{N_ghost} (= Krein
+  pseudo-Hermiticity), graph theorem (positive invariant half ⇔
+  pointed positive metric), finite-time paired pseudo-unitarity,
+  κ-odd localization of the on-shell obstruction, classical Ward
+  identity with exact regulator breaking.
+- `verify_51_order4.py` (FO1–FO9) — order-4 machinery (programmatic
+  adjoint-series word generation, re-derives orders 2–3 exactly):
+  5:1 obstruction confirmed at order 4, ω₂⁻⁹ scaling, gauge
+  independence, R₄ = O(ε⁻⁶).
 
 Numeric (mpmath/numpy):
 - `regression.py` — paper-1 regression, 4 parameter triples at 50–80 digits.
@@ -150,10 +170,13 @@ cd symbolic && python3 verify_gravity_completion.py  # paper 4, G8–G9
 cd symbolic && python3 verify_gravity_spectral.py    # paper 4, G10–G12
 cd numeric  && python3 regression.py && python3 distortion_scan.py && python3 cartan_checks.py
 cd lean     && lake exe cache get && lake build    # zero sorry
-cd symbolic && for f in verify_interaction_deformation verify_interaction_order3 verify_pt_breaking verify_perfect_square verify_two_field verify_sector_obstruction verify_hardening; do python3 $f.py; done   # paper 5
+cd symbolic && for f in verify_interaction_deformation verify_interaction_order3 verify_pt_breaking verify_perfect_square verify_two_field verify_sector_obstruction verify_hardening verify_doubled_theory verify_51_order4; do python3 $f.py; done   # paper 5
 cd paper    && for f in symplectic-diagonalization variational-fock fourth-order-vacuum fourth-order-gravity ghosts-geometry-reality interaction-obstructions; do pdflatex $f.tex; done
 ```
 
-Release tags: `paper1-v1.0`, `paper2-v1.1`, `paper3-v1.1`. Before submission: fill author
-metadata (title pages are blank), check the "to appear" references, match
-IR-extension conventions noted in paper 3's bridge theorem.
+Release tags: `paper1-v1.1`, `paper2-v1.2`, `paper3-v1.2`,
+`paper4-v1.0`, `paper5-v1.0` (current freezes; earlier: `paper1-v1.0`,
+`paper2-v1.0/v1.1`, `paper3-v1.0/v1.1`). Before submission: replace
+"companion paper" citations with arXiv IDs, check the "to appear"
+references, match IR-extension conventions noted in paper 3's bridge
+theorem, mint a DOI for the archived commit.

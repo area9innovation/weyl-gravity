@@ -59,16 +59,18 @@ perfect-square field theory the momentum continuum turns such isolated
 resonances into generic scattering shells: the branch-changing process
 $H+L\to L+L$ obstructs the analytic second-order deformation of the
 pointed-sector positive metric on an open subset of its shell, with an
-exact value at a rational kinematic point.  (iv) The exact two-field
-rewriting $U=e^{\lambda\phi}$, $V=(\psi/\lambda)e^{-\lambda\phi}$
-converts the theory into
-$-\partial U\!\cdot\!\partial V+\tfrac{\lambda^2}2U^2V^2$ and exhibits
-an exact exchange symmetry $U\leftrightarrow V$ of the extended
-two-field theory, which maps two oppositely oriented null Jordan
-sectors into one another and whose linearization is the bounded
-confluent limit of the regulated branch parity on the doubled space ---
-a structure that survives precisely where pointed positive completions
-fail.  All finite-dimensional and modewise identities are
+exact value at a rational kinematic point.  (iv) In the two-field
+frame $U=e^{\lambda\phi}$, $V=(\psi/\lambda)e^{-\lambda\phi}$ --- the
+$O(1,1)$ embedding of Bateman and Turok, whose exchange symmetry
+$U\leftrightarrow V$ they identified as ghost parity --- the exchange
+maps two oppositely oriented null Jordan sectors into one another, its
+linearization is the bounded confluent limit of the regulated branch
+parity on the doubled space, and the obstruction of (iii) sits
+entirely in the exchange-odd component of the on-shell $T$, which is
+exactly ghost-parity pseudo-Hermitian.  The Krein/ghost-parity
+structure thus survives precisely where pointed positive completions
+fail: the two completions are inequivalent in the interacting theory.
+All finite-dimensional and modewise identities are
 machine-verified; derivations of the principal results are given in the
 appendices.
 \end{abstract}
@@ -111,7 +113,10 @@ complex-conjugate pair appears in the $E=27\w_2$ multiplet at
 $O(\zeta^2)$, certified exactly (Section~\ref{sec:spectral}); a
 third-order obstruction appears at $\w_1=\tfrac32\w_2$, and a
 transfer-lattice selection rule organizes the hierarchy
-(Section~\ref{sec:selection}); the deformation diverges toward the
+(Section~\ref{sec:selection}), whose first prediction is confirmed:
+$5{:}1$ is unobstructed through order 3 and obstructed at order 4,
+exactly on the predicted monomial
+(Proposition~\ref{cprop:fiveone}); the deformation diverges toward the
 Jordan boundary, with exact leading asymptotics at first order and
 measured geometric growth beyond (Section~\ref{sec:jordanscaling}).
 
@@ -133,6 +138,35 @@ and the regulated branch parity, singular on one confluent chain,
 converges on the doubled space to the linearization of that exchange
 (Section~\ref{sec:confluent}).
 
+\paragraph{Relation to prior work.}
+The two-field $O(1,1)$ embedding, the identification of the exchange
+$U\leftrightarrow V$ as ghost parity and internal charge conjugation,
+the quantum embedding relating the two-field and fourth-order
+Hamiltonians and $S$-matrices, and a Krein-space Born rule with
+positivity through weak ghost symmetry are all due to Bateman and
+Turok \cite{BT2026}; none of that structure is claimed here.
+Likewise standard are: complex eigenvalues of pseudo-Hermitian
+operators occurring in conjugate pairs with matching Jordan data
+\cite{Mostafazadeh2002nd}, the forced indefiniteness of any compatible
+metric in their presence \cite{FeinbergZnojil2021}, antilinear
+(CPT-type) symmetry as the origin of real-or-conjugate-pair spectra
+\cite{Mannheim2016}, complex-ghost-pair unitarity of Lee--Wick type
+\cite{LiuModestoCalcagni2022} (physically distinct: there the complex
+ghosts are excluded from asymptotic states), and
+positive invariant graph subspaces of block $J$-self-adjoint operators
+\cite{AzizovIokhvidov}.  What this paper adds is the
+\emph{deformation-obstruction theory of the positive pseudo-Hermitian
+metric} in the interacting theories: the obstruction complex itself,
+the exact $3{:}1$ and $3{:}2$ conversion classes and the
+transfer-lattice selection rule, the certified spectral pair and its
+broken-PT tongue, the continuum scattering-shell obstruction, the
+confluent bridge from the split branch parity to the doubled Jordan
+exchange, and the resulting separation statement: the Bateman--Turok
+Krein completion is \emph{not} equivalent to a hidden positive
+pseudo-Hermitian completion, because the latter is obstructed by
+on-shell branch-changing interactions while the former survives them
+exactly (Proposition~\ref{cprop:krein}).
+
 \paragraph{Strength of the statements.}
 Throughout we distinguish (a) \emph{analytic metric obstruction} ---
 nonexistence of an order-by-order deformation of the canonical metric
@@ -152,9 +186,13 @@ for every mass pair} (existence of the shell, which does not by itself
 imply nonvanishing of the obstruction at every point of it).  The
 status ledger is: $R_1$ Jordan scaling --- theorem; $R_2,R_3$ scaling
 --- computational propositions; $R_n\sim\epsilon^{-3n/2}$ ---
-conjecture; the $5{:}1$ obstruction --- prediction; a full-field
+conjecture; the $5{:}1$ obstruction --- computational proposition
+(confirmed at order 4, Proposition~\ref{cprop:fiveone}); a full-field
 complex spectrum --- open; the exact doubled classical involution ---
-theorem; its quantum implementation --- open.
+theorem (Bateman--Turok, restated); its quantum implementation ---
+open; the $\kappa$-odd localization of the shell obstruction ---
+computational proposition at the rational point
+(Proposition~\ref{cprop:krein}).
 
 \paragraph{Bookkeeping.}
 The deformation order is counted by a formal parameter $\zeta$:
@@ -393,10 +431,38 @@ vanishing coefficients.
 \begin{conjecture}[Resonance hierarchy]\label{conj:hierarchy}
 The coprime ratio $\w_1/\w_2=p{:}q$ first obstructs at order $p+q-2$
 when the mode-2 transfer $p$ is odd.  (Verified: $3{:}1$ at order 2,
-$3{:}2$ at order 3.  Predicted: $5{:}1$ at order 4, $5{:}3$ at
-order 6.  The mechanism excluding even mode-2 transfers is open.)  The
+$3{:}2$ at order 3, and $5{:}1$ at order 4 ---
+Proposition~\ref{cprop:fiveone}.  Predicted: $5{:}3$ at order 6.  The
+mechanism excluding even mode-2 transfers is open.)  The
 resonance set is an expanding hierarchy, not (so far) a dense set.
 \end{conjecture}
+
+\begin{cproposition}[The $5{:}1$ obstruction at fourth order]
+\label{cprop:fiveone}
+At $(\w_1,\w_2)=(5,1)$ the order-2 and order-3 kernel projections
+vanish (the selection rule makes $5{:}1$ unreachable below order 4)
+and $R_2,R_3$ exist and are Hermitian.  The fourth-order class is
+nonzero, exactly
+\begin{equation}
+\ob_+^{(4)}
+=-\frac{203125\sqrt5}{2341011456}
+\big(a_1a_2^{\dg5}-a_1^{\dg}a_2^5\big)
+=-\frac{13\cdot5^{13/2}}{2^{16}\,3^6\,7^2}
+\big(a_1a_2^{\dg5}-a_1^{\dg}a_2^5\big),
+\end{equation}
+the on-shell $1\leftrightarrow5$ conversion on the predicted monomial,
+gauge independent in the sense of Theorem~\ref{thm:threeone}.  The
+coefficient scales exactly as $\w_2^{-9}$ (ratio $2^{-9}$ between
+$(10,2)$ and $(5,1)$), extending the dimensional series
+$\ob_+^{(n)}\propto\w_2^{-(5n-2)/2}$ for $n=2,3,4$; and
+$R_4=O(\epsilon^{-6})$ toward the Jordan boundary, the fourth data
+point of $R_n=O(\epsilon^{-3n/2})$
+(Section~\ref{sec:jordanscaling}).  The order-$n$ sources are
+generated programmatically from the adjoint series of
+Appendix~\ref{app:recursion}, and the same code path re-derives the
+order-2 and order-3 classes exactly before running order 4.
+(Checks FO1--FO9, \texttt{verify\_51\_order4.py}.)
+\end{cproposition}
 
 \section{The Jordan divergence hierarchy}\label{sec:jordanscaling}
 
@@ -497,7 +563,20 @@ basis-independent formulation on confluent states is deferred.
 
 \section{The exact two-field rewriting}\label{sec:twofield}
 
-\begin{theorem}[Two-field form and exchange symmetry]\label{thm:twofield}
+The two-field form below is, up to normalization and sign conventions,
+the $O(1,1)$ embedding of Bateman and Turok \cite{BT2026}, who
+introduced the pair $(\Omega,\Upsilon)$, identified the full $O(1,1)$
+symmetry including the exchange as ghost parity and internal charge
+conjugation, and constructed the quantum embedding relating the two
+theories.  The theorem restates their embedding in our conventions;
+the content added in this section and the next two is the
+chart-transition description of the exchange, the null-Jordan-sector
+and interaction-generated Jordan statements, the location of the
+sectorwise obstruction inside this structure, and the confluent-parity
+bridge.
+
+\begin{theorem}[Two-field form and exchange symmetry
+{\cite[adapted]{BT2026}}]\label{thm:twofield}
 Introducing the auxiliary field $\psi$ and the change of variables
 $U=e^{\lambda\phi}$, $V=(\psi/\lambda)e^{-\lambda\phi}$ (unit pointwise
 Jacobian),
@@ -524,6 +603,14 @@ global symmetry of the extension, not an everywhere-defined involution
 of the original field space, and it is invisible at any finite
 perturbative order around the original vacuum.
 \end{theorem}
+
+Bateman and Turok warn, and we adopt the caveat, that the two theories
+are inequivalent beyond perturbation theory: the fourth-order path
+integral corresponds to $U>0$, while the two-field model integrates
+over all $U$ and has an indefinite kinetic form \cite{BT2026}.
+Statements about the mirror background $(0,1)$ are therefore
+statements about the extended theory; whether both null branches are
+physical sectors of one completion is open.
 
 \begin{proposition}[Null sectors and interaction-generated Jordan
 dynamics]\label{prop:sectors}
@@ -623,6 +710,44 @@ cure it: it maps the obstructed sector-$A$ construction to the mirror
 sector-$B$ construction.
 \end{remark}
 
+\begin{cproposition}[Krein consistency of the obstructed element]
+\label{cprop:krein}
+Let $G=(-1)^{N_{\mathrm{ghost}}}$ be ghost-branch number parity in the
+positive-frame Fock space, and let $\iota$ be the mode identification
+$(b,k)_B\simeq(b,k)_A$ of the mirror sector.  At the rational
+kinematic point of Theorem~\ref{thm:sector}, exactly:
+(i) $H_B=\iota H_A\iota^{-1}$ (the mirror sector is the same theory in
+the mirrored frame) and $H_A^{\dg}=GH_AG$ term by term, so the
+mirror-adjoint relation $H_B=WH_A^{\dg}W^{\dg}$ holds with
+$W=\iota\circ G$ --- i.e.\ the ``doubled pairing''
+$\eta_{\mathrm{dbl}}=\operatorname{offdiag}(W^{\dg},W)$ is precisely
+the two-sector unfolding of the ghost-parity Krein metric of
+\cite{BT2026}, not additional structure.
+(ii) On the degenerate shell $\{|H(0)L(0)\rangle,|L(3)L(-3)\rangle\}$
+(exhaustively the whole reachable shell) the second-order on-shell $T$
+satisfies $GTG=T^{\dg}$ exactly, while Hilbert Hermiticity fails: the
+parity-even (diagonal) block is real, and the entire obstruction is
+the parity-odd block,
+$T(\mathrm{out},\mathrm{in})=-401\sqrt6/78848=-\mathcal
+M_{\mathrm{obs}}/2$.
+(iii) Consequently the finite-time interaction-picture $S$ obeys
+$S_B^{\dg}WS_A=W$ identically --- Krein pseudo-unitarity is exact on
+the same matrix elements on which every positive pointed metric is
+obstructed.  A positive $H$-invariant graph subspace of the doubled
+space exists if and only if a positive pointed metric exists
+(standard $J$-self-adjoint graph argument \cite{AzizovIokhvidov},
+instantiated and machine-verified), so doubling preserves
+pseudo-unitarity but cannot evade the obstruction.
+(Checks DQ1--DQ9, \texttt{verify\_doubled\_theory.py}.)
+\end{cproposition}
+
+The obstruction is therefore carried exactly by the $\kappa$-odd
+component of the on-shell $T$ --- the component that the
+weak-ghost-symmetry positivity mechanism of \cite{BT2026} does not
+use.  Whether it maps into their null orthogonal ($C$) component under
+their asymptotic embedding is the natural next question
+(Section~\ref{sec:discussion}).
+
 \section{The confluent parity theorem}\label{sec:confluent}
 
 \begin{theorem}[Confluent limit of the regulated parity]
@@ -674,18 +799,49 @@ generated by the interaction about its own null backgrounds --- a
 boundary-emergent structure mirroring the Weyl enhancement at the
 conformal boundary of the gravity companion \cite{paperIV}.
 
+\paragraph{Separation of the two completions.}
+Proposition~\ref{cprop:krein} sharpens the free-theory picture of the
+companion series: in the interacting theory the two real forms are not
+merely distinguished at Jordan degenerations --- they \emph{separate}.
+The Krein/ghost-parity structure of \cite{BT2026} is exactly
+preserved by the interaction ($GTG=T^{\dg}$ on shell, finite-time
+pseudo-unitarity), while every analytic positive pseudo-Hermitian
+completion of the pointed sector is obstructed on an open shell
+subset.  In particular the Bateman--Turok probability construction
+cannot be secretly equivalent to an ordinary positive pseudo-Hermitian
+completion.  The sharpest open form of the reconciliation is a
+transport question: under their asymptotic embedding, physical
+operators decompose into a ghost-symmetric part and a null orthogonal
+part, and only the former contributes to their generalized Born rule
+\cite{BT2026}; since the obstruction is $\kappa$-odd
+(Proposition~\ref{cprop:krein}), the conjecture is that it is carried
+into the null component --- obstructing every positive metric while
+remaining invisible to the Krein probabilities.  Verifying this on the
+computed $H+L\to L+L$ element is the concrete next calculation.
+
 \paragraph{Open questions.}
 Whether the two pointed sectors admit parity vacua
 $(|0_A\rangle\pm|0_B\rangle)/\sqrt2$ or are superselected requires
-finite-volume overlap and zero-mode analysis; the quantum
-implementation of the exchange on a completion, and any probability
-interpretation, remain open.  The hierarchy conjecture predicts a
-$5{:}1$ obstruction at fourth order.  The gravitational extension ---
-the cubic Einstein--Weyl vertices against the covariant real forms of
-\cite{paperIV} --- is the natural next target: the machinery here makes
-branch-changing gravitational scattering the decisive calculation.  No
-CPT claim is made: the exchange is a linear sector map, not a
-constructed antiunitary CPT operator.
+finite-volume overlap and zero-mode analysis --- in the hyperbolic
+polar coordinates $r=UV$, $\chi=\tfrac12\log(U/V)$ (a coordinate
+presentation of the $O(1,1)$ model: boost $=$ $\chi$-shift, exchange
+$=$ $\chi\mapsto-\chi$, conserved current $j=V\partial U-U\partial V
+=2r\,\partial\chi$) this becomes a boundary/self-adjoint-extension
+problem at the null locus $r=0$, where the conserved charge produces a
+singular $q^2/r$ barrier.  The quantum implementation of the exchange
+on a completion, and any probability interpretation beyond
+\cite{BT2026}, remain open; so does a normal-ordered operator Ward
+identity for the internal charge (the classical identity, with its
+exact regulator breaking $\epsilon u(1+u)-\mu^2v$, is verified).  The
+hierarchy conjecture's $5{:}1$ prediction is confirmed at fourth order
+(Proposition~\ref{cprop:fiveone}); the next open case is $5{:}3$ at
+order 6, and the mechanism excluding even mode-2 transfers is open.
+The gravitational extension --- the cubic Einstein--Weyl vertices
+against the covariant real forms of \cite{paperIV} --- is the natural
+further target: the machinery here makes branch-changing gravitational
+scattering the decisive calculation.  No CPT claim is made: the
+exchange is a linear sector map, not a constructed antiunitary CPT
+operator.
 
 \begin{thebibliography}{12}
 
@@ -711,6 +867,33 @@ A.~Mostafazadeh,
 \emph{Metric operator in pseudo-Hermitian quantum mechanics and the
 imaginary cubic potential},
 J.\ Phys.\ A \textbf{39} (2006) 10171, arXiv:quant-ph/0508195.
+
+\bibitem{Mostafazadeh2002nd}
+A.~Mostafazadeh,
+\emph{Pseudo-Hermiticity for a class of nondiagonalizable
+Hamiltonians},
+J.\ Math.\ Phys.\ \textbf{43} (2002) 6343, arXiv:math-ph/0207009.
+
+\bibitem{FeinbergZnojil2021}
+J.~Feinberg and M.~Znojil,
+\emph{Which metrics are consistent with a given pseudo-Hermitian
+matrix?},
+arXiv:2111.04216.
+
+\bibitem{Mannheim2016}
+P.~D.~Mannheim,
+\emph{CPT symmetry without Hermiticity},
+arXiv:1611.02100.
+
+\bibitem{LiuModestoCalcagni2022}
+J.~Liu, L.~Modesto and G.~Calcagni,
+\emph{Quantum field theory with ghost pairs},
+arXiv:2208.13536.
+
+\bibitem{AzizovIokhvidov}
+T.~Ya.~Azizov and I.~S.~Iokhvidov,
+\emph{Linear Operators in Spaces with an Indefinite Metric},
+Wiley, 1989.
 
 \bibitem{paperI}
 \emph{Canonical positive symplectic diagonalization of the
@@ -918,6 +1101,11 @@ HX2--HX3 & Theorem~\ref{thm:confluent} & exact symbolic\\
 (new) PT proposition & Proposition~\ref{prop:pt} & exact symbolic\\
 (new) $\w_2^{-13/2}$ ratio & Theorem~\ref{thm:third} & exact symbolic\\
 (new) $R_1$ Laurent & Theorem~\ref{thm:jordanexact} & exact symbolic\\
+DQ1--DQ2, DQ9 & $O(1,1)$ polar form, current, Ward & exact symbolic\\
+DQ3--DQ6 & doubled pairing, graph, pseudo-unitarity & numeric\\
+DQ7--DQ8 & Comp.\ Prop.~\ref{cprop:krein} & exact symbolic\\
+FO1--FO9 & Comp.\ Prop.~\ref{cprop:fiveone},
+Conj.~\ref{conj:hierarchy} & exact symbolic\\
 \hline
 \end{tabular}
 \end{center}
@@ -929,6 +1117,8 @@ Scripts, in \texttt{symbolic/}, each printing \texttt{ALL PASS}:\\
 \texttt{verify\_perfect\_square.py} \quad
 \texttt{verify\_two\_field.py}\\
 \texttt{verify\_sector\_obstruction.py} \quad
-\texttt{verify\_hardening.py}
+\texttt{verify\_hardening.py} \quad
+\texttt{verify\_doubled\_theory.py} \quad
+\texttt{verify\_51\_order4.py}
 
 \end{document}
