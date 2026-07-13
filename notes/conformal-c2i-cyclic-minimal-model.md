@@ -69,17 +69,21 @@ with the parity-conjugate sequence for `W_-`.  In particular, there must be
 no additional local-ghost or nonminimal harmonic classes at physical ghost
 number and total compact degree zero.
 
-`notes/conformal-local-detour.md` now separates the theorem into its exact
-formal part and its still-open global part.  The Branson--Gover detour
-identities and the action-normalized factorization
+`notes/conformal-local-detour.md` now separates the exact smooth global BGG
+bridge from the still-open BV/BFV zero-mode transfer.  The
+Branson--Gover/Gover--Peterson/Čap deformation identities, the cylinder
+topology, and the action-normalized factorization
 
 \[
 B_{\rm lin}=C_1^\sharp C_1
 \]
 
-are fixed.  The remaining kernel statement is the all-level Lorentzian
-cylinder identification of `ker B_lin / im K` with the `E/A/L` Weyl module,
-together with removal of all local/nonminimal doublets.
+are fixed.  They prove the smooth metric-to-geometric-curvature quotient.
+They do not yet prove its restriction to the algebraic positive-energy
+`E/A/L` module or the existence of finite-mode metric potentials.  Beyond
+that algebraic-cylinder problem, the remaining statements are the placement
+and normalization of the canonical degree-three global BGG sector, removal
+of local/nonminimal rows, and the strict cyclic zero-mode transfer.
 
 ## Compact-degree-equivariant retract
 
@@ -121,14 +125,17 @@ and every nonzero total compact degree remains contractible.
 
 The auxiliary Hodge product does not establish descent of the physical
 pairing.  Once the local kernel and its nondegenerate induced form are
-identified, however, cyclicity is not an independent spectrum or norm
-calculation: a cyclic retract exists algebraically in every finite harmonic
-block.  It must be chosen simultaneously compact-degree equivariant and
-compatible with the conformal-Killing zero-mode split.  Those compatibility
-and domain conditions—not a term-by-term recomputation of the dressed
-Gram—are the remaining field-theory obligation that promotes the residual
-class Gram `I2` to the induced pairing on local-plus-global cohomology.  Even
-after that bridge closes, C2j-D identifies these as ghost-dressed
+identified, cyclicity is not an independent spectrum or norm calculation
+inside one finite harmonic block: a cyclic retract exists there
+algebraically.  It must nevertheless be chosen simultaneously
+compact-degree equivariant, compatible with the conformal-Killing zero-mode
+split, and equivariant under the noncompact generators `K^+` and `K^-`.
+The last condition does not follow by averaging because the conformal
+modules are nonunitary and need not be semisimple.  Those compatibility and
+domain conditions—not a term-by-term recomputation of the dressed Gram—are
+the remaining field-theory obligation that promotes the residual class Gram
+`I2` to the induced pairing on local-plus-global cohomology.  Even after that
+bridge closes, C2j-D identifies these as ghost-dressed
 vertex/deformation classes rather than a propagating graviton Hilbert space.
 
 ### Even-pairing convention and cyclic isometry
@@ -288,6 +295,8 @@ choice is simultaneously:
   diagonalizability hypotheses are verified;
 - local or covariant as a field-theory Green operator;
 - compatible with the conformal-Killing zero-mode split;
+- equivariant under the full noncompact `SO(4,2)` action rather than only
+  blockwise `D x SO(4)`;
 - continuous on an infinite-dimensional completed state space;
 - cyclic for the physical BV/Krein form rather than merely for the auxiliary
   positive Hodge product; or
@@ -320,10 +329,11 @@ The leading minimal BFV charge should be
 +O(c\,\Phi^3,c^2\Phi,\ldots).
 \]
 
-The two displayed terms have already been certified separately:
+The two displayed terms have strong separate evidence:
 
 - the second is the universal `so(4,2)` Chevalley--Eilenberg differential;
-- the first is the quadratic Taub moment map acting on the Weyl module.
+- the first is the quadratic oscillator moment map, matched to selected Taub
+  kernels in the finite cylinder certificate.
 
 C2i must derive their coexistence from the same transferred master action and
 fix the one-ghost/two-matter normalization to
@@ -370,17 +380,24 @@ Pontryagin combination.
 
 C2i is closed only when all of the following are available.
 
+The executable work packages and sprint order are maintained in
+`bridge/README.md`; that file is the canonical programmer handoff for these
+criteria.
+
 1. An explicit pure-Weyl local BV/BFV field and ghost complex in a stationary
    cylinder gauge.
 2. A non-overlapping split of the fifteen conformal-Killing zero modes.
-3. The harmonic-kernel calculation giving exactly the `W_+ + W_-` module and
-   no relevant extra cohomology.
-4. Verification that the local form and compact-degree operator meet the
+3. An all-level curvature intertwiner from the explicit `E/A/L` modes into
+   the geometric chiral kernel, together with a `D`- and `SO(4)`-finite
+   metric-potential construction.
+4. The full local BV harmonic-kernel calculation giving exactly the
+   `W_+ + W_-` module and no relevant extra ghost or antifield cohomology.
+5. Verification that the local form and compact-degree operator meet the
    hypotheses above, followed by construction of the resulting
-   `D`-equivariant cyclic retract and its exact HPL isometry.
-5. Derivation of the residual ghost differential and Taub coupling from the
+   full `SO(4,2)`-equivariant cyclic retract and its exact HPL isometry.
+6. Derivation of the residual ghost differential and Taub coupling from the
    transferred master action, including the `-4` ghost-vacuum shift.
-6. A spectral-sequence argument excluding higher differentials in the
+7. A spectral-sequence argument excluding higher differentials in the
    centered physical row.
 
 Only after these free/classical items close should the programme test quantum

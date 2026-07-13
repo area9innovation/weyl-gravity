@@ -14,9 +14,11 @@ There are two related statements which must not be conflated.
 
 The unit Einstein cylinder is conformally flat, so both statements apply on
 the formal domain of smooth variations for which integrations by parts and
-the Euler-density boundary term vanish.  Neither statement by itself proves
-global exactness on `R x S3`, computes the local BV cohomology, or identifies
-the globally reduced physical state space.
+the Euler-density boundary term vanish.  A separate global flat-BGG theorem,
+recorded below, now proves exactness at the metric and curvature slots for
+smooth complexified global sections.  It does not by itself prove exactness
+on the finite-energy algebraic cylinder module, construct the local BV/BFV
+zero-mode split, or identify the globally reduced physical state space.
 
 The relevant primary source is Branson and Gover,
 [The conformal deformation detour complex for the obstruction tensor](https://arxiv.org/abs/math/0605192).
@@ -25,6 +27,10 @@ self-adjoint complex in all signatures; ellipticity is asserted only in
 Riemannian signature.  The related general construction is Gover, Somberg,
 and Soucek,
 [Yang--Mills detour complexes and conformal geometry](https://arxiv.org/abs/math/0606401).
+The global bridge uses Gover and Peterson,
+[The ambient obstruction tensor and the conformal deformation complex](https://arxiv.org/abs/math/0408229),
+and Čap,
+[Overdetermined systems, conformal geometry, and the BGG complex](https://arxiv.org/abs/math/0610225).
 
 ## Operators and pairings
 
@@ -192,117 +198,163 @@ In trace-free conformal geometry the local detour sequence is therefore
 \]
 
 It is a formally self-adjoint complex.  Lorentzian signature prevents one
-from importing the Riemannian elliptic-Hodge conclusion without a separate
-hyperbolic/domain analysis.
+from importing an elliptic-Hodge decomposition on a completed function
+space, but it does not obstruct the following sheaf-theoretic argument.
 
-## What the repository certifies now
+## Global flat-BGG theorem on the cylinder
 
-The current machinery covers complementary portions of this theorem.
+On an oriented conformally flat four-manifold, the adjoint BGG deformation
+complex is
 
-1. `verify_conformal_c2a_reducibilities.py` constructs all fifteen cylinder
-   conformal-Killing Diff\(\times\)Weyl reducibilities exactly.  This checks
-   the finite kernel of \(K\), not the arbitrary local gauge map.
-2. `verify_conformal_quartic_exchange.py` constructs the full local scalar
-   gauge matrices \(K_\pm\) and two independent slices for the `s`, `t`, and
-   `u` harmonic blocks.
-3. `verify_conformal_quartic_hessian.py` derives the corresponding quadratic
-   action Hessians from the curved-cylinder reduced-Weyl action and verifies
+\[
+\Gamma(T)\xrightarrow{K_0}\Gamma(S^2_0T^*[2])
+\xrightarrow{C_1}\Gamma(\mathcal C[2])
+\xrightarrow{C_1^\sharp\star}\Gamma(S^2_0T^*[-2])
+\xrightarrow{K_0^\sharp}\Gamma(T^*[-2]).
+\]
 
-   \[
-   B_{\rm lin}K_+=0,
-   \qquad
-   K_-^T B_{\rm lin}=0
-   \]
+In particular,
 
-   exactly in those blocks.  The `t` block is genuinely Hessian-null and is
-   not inverted.
-4. `verify_conformal_detour_polynomial.py` constructs actual Euclidean
-   homogeneous-polynomial jet matrices for \(K,C_1,B_1\) at degrees two
-   through six.  It checks \(C_1K=0\), \(B_1K=0\), finite-level exactness
-   at the potential--Weyl slot, separation of all fifteen conformal-Killing
-   zero modes, and quotient dimensions `10,40,82,136,202`.  This is genuine local
-   operator data, but it does not construct the Lorentzian cylinder-harmonic
-   intertwiner or the formal-adjoint pairing.
-5. `verify_conformal_detour_action.py` supplies the complementary
-   action-derived audit.  It checks the exact frequency-adjoint
-   self-adjointness of the scalar `s,t,u` Hessians, verifies the
-   reduced-action normalization, and makes both finite scalar Ward kernels
-   explicit.
-6. `verify_gravity_spectral.py` contains an independent flat-momentum
-   linearized Weyl map and verifies its diffeomorphism kernel and
-   tracelessness.  It is not yet a curved-cylinder harmonic operator.
-7. `verify_conformal_weyl_module.py` matches the on-shell Weyl-curvature
-   character resolution to the complete `E/A/L` tower.  Character equality
-   is not a proof of exactness of the local metric detour complex.
+\[
+\boxed{C_1^\sharp\star C_1=0.}
+\]
 
-Run the fast bridge audit with
+For a locally conformally flat pseudo-Riemannian geometry this is a fine
+resolution of the flat adjoint-tractor local system.  Since
+
+\[
+M=\mathbb R\times S^3\simeq S^3
+\]
+
+is simply connected, the local system is constant with fibre
+\(\mathfrak{so}(4,2)_\mathbb C\).  Therefore
+
+\[
+H^q_{\rm def}(M)
+\cong H^q(S^3;\mathbb C)\otimes\mathfrak{so}(4,2)_\mathbb C
+=
+\begin{cases}
+\mathfrak{so}(4,2)_\mathbb C,&q=0,3,\\
+0,&q=1,2,4.
+\end{cases}
+\]
+
+The two middle vanishing statements are precisely
+
+\[
+\boxed{\ker C_1=\operatorname{im}K_0},
+\qquad
+\boxed{\ker(C_1^\sharp\star)=\operatorname{im}C_1}
+\]
+
+for unrestricted smooth complexified global sections.  This conclusion is
+global and all-level, but it is not a bounded-inverse statement on a Hilbert
+or Krein completion.
+
+## Exact Bach-to-curvature isomorphism
+
+The map \([h]\mapsto C_1h\) now gives
+
+\[
+\boxed{
+\frac{\ker B_{\rm lin}}{\operatorname{im}K_0}
+\cong
+\ker C_1^\sharp\cap\ker(C_1^\sharp\star).}
+\]
+
+The proof is algebraic once global exactness is known.  A Bach solution maps
+to both kernels because \(B_{\rm lin}=C_1^\sharp C_1\) and
+\(C_1^\sharp\star C_1=0\).  The first global exactness statement makes the
+map injective.  The second produces a global metric potential for every
+curvature in the target intersection, and \(C_1^\sharp U=0\) then makes that
+potential Bach-flat.
+
+In Lorentz signature, write \(U=U_++U_-\) with
+\(\star U_\pm=\pm iU_\pm\).  The two target equations independently imply
+\(C_1^\sharp U_+=C_1^\sharp U_-=0\).  Thus
+
+\[
+\frac{\ker B_{\rm lin}}{\operatorname{im}K_0}
+\cong \mathscr W_+^{\rm sm}\oplus\mathscr W_-^{\rm sm}.
+\]
+
+The smooth result is equivariant, but this alone controls the weight of the
+quotient class rather than the mode content of a chosen metric potential.
+A finite-energy curvature mode could in principle acquire a secular
+preimage such as `t exp(-iEt)` or an infinite harmonic expansion.  To
+restrict the theorem to the algebraic positive-energy module used by the
+residual calculation one still needs a `D`- and `SO(4)`-equivariant BGG
+homotopy, exactness in the relevant Harish--Chandra category, or an explicit
+all-level cylinder-harmonic potential.  Continuity, closed range, and
+completion remain further analytic questions.
+
+## The controlled global zero-mode pair
+
+The same theorem leaves exactly
+
+\[
+H^0_{\rm def}(M)\oplus H^3_{\rm def}(M)
+\cong
+\mathfrak{so}(4,2)_\mathbb C[0]
+\oplus\mathfrak{so}(4,2)_\mathbb C[3].
+\]
+
+The first copy is the fifteen conformal Killing fields.  The second lies on
+the dual equation side.  Its dimension, representation, and position make
+it the canonical candidate for the dual BFV/Taub constraint sector, but the
+equal-time map and normalization have not yet been proved.  This replaces an
+unspecified collection of possible global rows with one finite pair.
+
+## What the repository certifies
+
+The following rails are complementary rather than interchangeable:
+
+1. `verify_conformal_bgg_bridge.py` checks the signature-aware Hodge
+   identities, the exact flat-symbol relation `C1^sharp star C1=0`, the
+   cylinder cohomology dimensions, the chiral split, and the uniqueness and
+   degree of the bottom four-ghost scalar.  The fine-resolution theorem
+   remains a cited mathematical input.
+2. `verify_conformal_detour_polynomial.py` constructs exact Euclidean
+   homogeneous-polynomial matrices through degree six and reproduces the
+   quotient dimensions `10,40,82,136,202`.  It is an independent convention
+   and low-level regression audit, not the all-level proof.
+3. `verify_conformal_detour_action.py` checks the action normalization,
+   formal adjoints, and finite scalar Ward kernels.
+4. `verify_conformal_c2a_reducibilities.py` constructs all fifteen cylinder
+   conformal-Killing reducibilities directly.
+5. `verify_conformal_weyl_module.py` constructs the abstract algebraic
+   `E/A/L` coefficient module and its complete character.  It does not by
+   itself give the geometric curvature intertwiner or a finite-mode metric
+   potential.
+
+Run the bridge audits with
 
 ```bash
+python3 symbolic/verify_conformal_bgg_bridge.py
 python3 symbolic/verify_conformal_detour_polynomial.py
 python3 symbolic/verify_conformal_detour_action.py
 ```
 
-Their fail-closed switches reject requests for an all-level Lorentzian
-cylinder intertwiner, all harmonic sectors, or global cohomology.
+## Remaining algebraic and BV/BFV tasks
 
-## Missing executable certificate
+The main missing theorem is no longer smooth metric-to-curvature exactness.
+Three sharper bridges remain:
 
-The finite Euclidean homogeneous-polynomial jet certificate is exact at
-degrees two through six.  An all-level **Lorentzian cylinder-harmonic** certificate
-still requires new code.
+1. **Algebraic cylinder realization:** construct the all-level `E/A/L`
+   curvature intertwiner and finite-mode Bach-flat metric potentials.
+2. **BV transfer:** split the canonical
+   \(\mathfrak g[0]\oplus\mathfrak g[3]\) pair without double counting,
+   inventory every relevant ghost and antifield row, and construct a full
+   `SO(4,2)`-equivariant cyclic retract whose transferred differential is
+   strictly Chevalley--Eilenberg.
+3. **Residual BFV choice:** derive the centered four-ghost polarization and
+   complementary-degree norm from the chosen closed-universe BFV pairing.
 
-### 1. Construct the geometric middle map
+Identifying the degree-three BGG copy with the dual BFV/Taub sector and
+fixing its normalization from one equivariant component remains a valuable
+part of the second bridge, but the direct second-order Taub argument does not
+depend on that bundle-level identification.
 
-Extend the curved-cylinder perturbiner from Ricci curvature to the full
-linearized Riemann tensor and form its trace-free Weyl projection.  For every
-scalar, transverse-vector and TT harmonic block, construct
-
-\[
-C_{1,\Delta}:\mathcal H^{\rm metric}_\Delta
-\longrightarrow\mathcal H^{\rm Weyl}_\Delta.
-\]
-
-The target can be organized by the electric and magnetic spatial Weyl
-tensors, but its normalization must come from the full spacetime contraction
-in the action.
-
-### 2. Construct the exact adjoint pairing
-
-Integrate the Weyl-fibre and metric pairings over `S3`, pairing frequency
-\(+\omega\) with \(-\omega\).  This supplies the actual matrices defining
-\(C_{1,\Delta}^\sharp\); ordinary Euclidean transpose is not sufficient in
-Lorentzian component bases.
-
-### 3. Verify the block identities independently
-
-For every complete harmonic block, check
-
-\[
-C_{1,\Delta}K_\Delta=0,
-\]
-
-\[
-B_{{\rm lin},\Delta}
-=C_{1,\Delta}^\sharp C_{1,\Delta},
-\]
-
-where \(B_{{\rm lin},\Delta}\) is generated independently as the two-wave
-action Hessian.  Then verify its adjointness and both Ward kernels.  Agreement
-must include the trace/Weyl gauge direction and the generalized
-conformal-Killing `ell=|omega|=1` block.
-
-### 4. Only then compute local cohomology
-
-The operator identities establish a complex, not its global exactness.
-One must still determine
-
-\[
-\ker B_{{\rm lin},\Delta}/\operatorname{im}K_\Delta
-\]
-
-in every scalar, vector and TT block; split the fifteen reducibility zero
-modes; include local ghosts, antifields and nonminimal pairs; and build the
-compact-degree-equivariant cyclic retract required by C2h/C2i.
-
-No conclusion about the global cylinder BRST cohomology, physical pairing,
-or energy-six interaction block follows before that work is complete.
+No conclusion about the full local-plus-residual BV cohomology, physical
+pairing, or energy-six interaction block follows until that zero-mode task is
+closed.

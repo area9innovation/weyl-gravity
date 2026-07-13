@@ -632,12 +632,13 @@ def main() -> None:
         "C2h-L STATUS: EXACT EUCLIDEAN HOMOGENEOUS-POLYNOMIAL JET DETOUR "
         "MATRICES AT DEGREES 2--6, WITH THE FIFTEEN CONFORMAL-KILLING ZERO MODES "
         "SEPARATED. The 10/40/82/136/202 quotient ranks match the finite E/A/L "
-        "character counts. This is not an all-level exactness theorem and "
-        "does not construct the Lorentzian cylinder harmonic/BRST map."
+        "character counts. This finite certificate is an independent convention "
+        "audit, not the proof of the published all-level smooth BGG theorem, and "
+        "does not construct the Lorentzian cylinder BV/BFV zero-mode transfer."
     )
     if args.claim_all_levels:
         raise SystemExit(
-            "finite degrees 2--6 do not prove the all-level local detour exactness theorem"
+            "finite degrees 2--6 are not the proof of the all-level smooth BGG theorem"
         )
     if args.claim_lorentzian_eal:
         raise SystemExit(

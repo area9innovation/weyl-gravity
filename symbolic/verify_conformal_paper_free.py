@@ -18,7 +18,8 @@ import time
 import sympy as sp
 
 
-SOURCE_COMMIT = "e928f257c25099eb534eb34109dfc1dc6a3127a1"
+RESIDUAL_SOURCE_COMMIT = "e928f257c25099eb534eb34109dfc1dc6a3127a1"
+BGG_REVISION_BASE_COMMIT = "c471b99f5e3708e692b1c25238f6272c9e29b48f"
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -36,6 +37,11 @@ CERTIFICATES = (
         "local detour action normalization",
         "verify_conformal_detour_action.py",
         "C2i-D STATUS:",
+    ),
+    Certificate(
+        "global BGG bridge conventions and topology",
+        "verify_conformal_bgg_bridge.py",
+        "C2i-BGG STATUS:",
     ),
     Certificate(
         "finite polynomial detour jets",
@@ -123,6 +129,13 @@ CERTIFICATES = (
 # positive battery so a routine paper build remains concise.
 GUARDS = (
     ("detour is not an explicit cylinder C1 map", "verify_conformal_detour_action.py", ("--require-explicit-cylinder-c1",)),
+    ("BGG fine resolution is a literature theorem", "verify_conformal_bgg_bridge.py", ("--claim-machine-proof-of-bgg",)),
+    ("smooth BGG exactness is not an analytic completion theorem", "verify_conformal_bgg_bridge.py", ("--claim-completed-domain",)),
+    ("smooth BGG exactness is not algebraic mode exactness", "verify_conformal_bgg_bridge.py", ("--claim-algebraic-mode-exactness",)),
+    ("the E/A/L curvature intertwiner is still required", "verify_conformal_bgg_bridge.py", ("--claim-eal-intertwiner",)),
+    ("degree-three BGG is not yet the normalized Taub sector", "verify_conformal_bgg_bridge.py", ("--claim-taub-identification",)),
+    ("BGG exactness is not the cyclic BV/BFV transfer", "verify_conformal_bgg_bridge.py", ("--claim-completed-bv-transfer",)),
+    ("residual CE saturation is not the transferred pure-Weyl BFV pairing", "verify_conformal_bgg_bridge.py", ("--claim-pure-weyl-bfv-pairing",)),
     ("finite jets do not prove all levels", "verify_conformal_detour_polynomial.py", ("--claim-all-levels",)),
     ("finite jets do not prove Lorentzian E/A/L equivalence", "verify_conformal_detour_polynomial.py", ("--claim-lorentzian-eal",)),
     ("character equality is not local exactness", "verify_conformal_weyl_module.py", ("--claim-exact-sequence",)),
@@ -223,7 +236,8 @@ def main() -> None:
         return
 
     print("=== Free conformal paper verification ===")
-    print("scientific input commit:", SOURCE_COMMIT)
+    print("residual scientific input commit:", RESIDUAL_SOURCE_COMMIT)
+    print("BGG bridge revision base:", BGG_REVISION_BASE_COMMIT)
     print("python:", sys.version.split()[0])
     print("sympy:", sp.__version__)
     if not args.guards_only:
@@ -232,8 +246,10 @@ def main() -> None:
         run_guards(args.timeout, args.verbose)
     print(
         "CONFORMAL FREE PAPER BATTERY: ALL PASS. The exact result is the "
-        "minimal residual vertex cohomology; the local pure-Weyl BV transfer "
-        "and quantum theory remain explicitly conditional/out of scope."
+        "minimal residual vertex cohomology plus the smooth Bach-curvature "
+        "bridge; algebraic mode exactness, the local pure-Weyl BV/BFV "
+        "transfer, analytic completion, and quantum theory remain explicitly "
+        "conditional/out of scope."
     )
 
 

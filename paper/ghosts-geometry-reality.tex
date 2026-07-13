@@ -74,10 +74,15 @@ the local oscillator modes survive when the residual conformal
 transformations of the cylinder are themselves treated as gauge.  Paper~VII
 proves, for the resulting minimal residual complex, that the centered
 one-particle cohomology vanishes and that exactly two weight-four vertex
-classes survive with positive normalized representative Gram matrix,
-descending to the Weyl-square and Pontryagin directions.  The promotion of this residual result to the
-complete pure-Weyl BV complex remains conditional, and no positive graviton
-Fock space or quantum-anomaly claim is made.  Extending the free
+classes survive with positive normalized residual CE pairing,
+descending to the Weyl-square and Pontryagin directions.  A global BGG
+argument now identifies the smooth Bach quotient exactly with the two
+geometric on-shell chiral Weyl-curvature spaces.  Promotion of the residual
+result to the complete pure-Weyl BV complex nevertheless remains
+conditional on exactness in the algebraic cylinder module, a full
+equivariant cyclic BV transfer with its ghost/antifield rows, and the chosen
+residual BFV polarization.  Any analytic completion is a further problem;
+no positive graviton Fock-space or quantum-anomaly claim is made.  Extending the free
 classification to interactions, Paper~V formulates a deformation
 problem for the positive metric and the Krein involution.  The positive
 Pais--Uhlenbeck metric deforms perturbatively at generic frequencies,
@@ -205,11 +210,11 @@ time translation, as gauge, it computes the complete minimal absolute
 residual complex built on the parity-complete on-shell Weyl module.  The
 vacuum and one-particle sectors are acyclic, while the lowest two-particle
 sector contains exactly two residual classes with positive normalized
-representative Gram matrix,
+residual CE pairing,
 \begin{equation}
  H^4_{\mathrm{res,min}}
  =\operatorname{span}\{[W_+^2],[W_-^2]\},
- \qquad G_{\rm rep}=I_2.
+ \qquad G_{\rm res}=I_2.
 \end{equation}
 These are ghost-dressed vertex or deformation classes rather than
 one-particle graviton states.  Descent identifies their parity combinations
@@ -222,7 +227,7 @@ weight-four selection build on Hamada and Horata's conformal-cylinder
 construction \cite{HamadaHorataIntro,HamadaBRSTIntro}.  Paper~VII's new
 contribution is the parity-complete pure-Weyl coefficient module, the
 exhaustive absolute kernel-and-image calculation, the vanishing of the
-one-particle sector, and the exact representative pairing and
+one-particle sector, and the exact residual CE pairing and
 dynamical/topological split of the two surviving classes.
 
 Thus Papers~I--IV classify and geometrically organize the local free theory,
@@ -259,13 +264,17 @@ implementing the doubled scalar exchange remain open.
 Paper~VII proves an exact residual $SO(4,2)$ cohomology theorem once the
 parity-complete on-shell Weyl module, the centered ghost polarization, full
 residual conformal gauging, and in particular the treatment of $D$ as a
-residual gauge generator are taken as inputs.  Its identification with the
-complete local-plus-residual pure-Weyl BV cohomology is conditional on the
-all-level Lorentzian local-kernel theorem, the conformal-Killing zero-mode
-split, the absence of modifying ghost/antifield rows or higher transferred
-operations, and a compatible cyclic equivariant transfer.  It establishes
-neither a positive graviton Fock space, quantum BRST nilpotency, anomaly
-cancellation, nor interacting unitarity.
+residual gauge generator are taken as inputs.  The smooth global
+metric-to-curvature bridge is exact by the flat BGG fine resolution and the
+topology of $\R\times S^3$.  Identification with the complete
+local-plus-residual pure-Weyl BV cohomology remains conditional on three
+sharper statements: exact algebraic cylinder realization of the geometric
+curvature system and its metric potentials; a full $SO(4,2)$-equivariant
+cyclic BV transfer with no modifying ghost/antifield rows or higher
+operations; and a closed-universe residual BFV choice which induces the
+four-ghost polarization and pairing.  Any analytic completion is additional.
+It establishes neither a positive graviton Fock space, quantum BRST
+nilpotency, anomaly cancellation, nor interacting unitarity.
 
 \section{The Pais--Uhlenbeck oscillator as a microscope}\label{sec:pu}
 
@@ -1378,6 +1387,39 @@ point remains an indefinite local oscillator module.  Any positivity found
 afterwards must arise from the cohomological reduction rather than from a
 re-signing of the local modes.
 
+There is now an all-level geometric theorem for the smooth one-particle
+quotient.  In four dimensions the conformal
+deformation sequence is a flat BGG complex.  On the simply connected
+conformal cylinder it is a fine resolution of the constant adjoint-tractor
+system, so
+\begin{equation}
+ H^q_{\rm def}(\R\times S^3)
+ \cong H^q(S^3;\C)\otimes\mathfrak{so}(4,2)_\C.
+\end{equation}
+The metric and curvature slots are therefore globally exact.  Combining
+this fact with $B_{\rm lin}=C_1^\sharp C_1$ gives the smooth equivariant
+isomorphism
+\begin{equation}
+ \frac{\ker B_{\rm lin}}{\operatorname{im}K}
+ \cong
+ \ker C_1^\sharp\cap\ker(C_1^\sharp\star)
+ \cong\mathcal W_{{\rm geom},+}^{\rm sm}
+ \oplus\mathcal W_{{\rm geom},-}^{\rm sm}.
+\end{equation}
+The final identification of its algebraic positive-energy part with the
+explicit $\mathcal W_+\oplus\mathcal W_-$ module above remains a short but
+real intertwiner and mode-exactness problem
+\cite{GoverPetersonIntro,CapBGGIntro}.
+
+For a general reader, this says that every smooth gauge-inequivalent
+Bach-flat metric perturbation is represented faithfully by a geometric
+on-shell Weyl curvature.  For a specialist, it closes the global
+smooth local-kernel theorem without an elliptic argument.  It does not by
+itself show that a finite-energy curvature mode has a finite-energy metric
+potential: smooth preimages could contain secular time factors or infinite
+harmonic expansions.  Nor does it construct the BV/BFV zero-mode split or
+prove continuity on a chosen Hilbert or Krein completion.
+
 \subsection{What BRST cohomology asks}
 
 BRST theory is a systematic way to remove gauge redundancy.  One introduces
@@ -1504,22 +1546,34 @@ a $55$-dimensional middle space.  The complete result is
  \boxed{
  H^4_{\mathrm{res,min}}
  =\operatorname{span}\{[W_+^2],[W_-^2]\},
- \qquad G_{\rm rep}=I_2.}
+ \qquad G_{\rm res}=I_2.}
 \end{equation}
 The two generators are the chiral scalar primaries formed from two
 positive- or two negative-chirality Weyl curvatures.  Their normalized
-residual representative Gram matrix is positive.
+complementary-degree residual CE pairing is positive.
+
+The ghost insertion entering this pairing is not an arbitrary matrix.  The
+compact grading has dimensions $(4,7,4)$: the ket supplies the determinant
+of the four lowering-degree ghosts, the bra supplies its conjugate, and a
+middle determinant insertion saturates the seven degree-zero ghosts.  Their
+wedge is the top form on all fifteen ghost directions.  Semisimplicity makes
+the residual algebra unimodular, so the CE differential is graded skew for
+this complementary-degree pairing and the form descends to residual
+cohomology.  This proves $G_{\rm res}=I_2$ inside the selected residual
+complex.  Whether the full pure-Weyl BV/BFV transfer induces the same
+polarization and normalization is one of the remaining hypotheses.
 
 For a reader who skips the rank calculation, the physical content is:
 \keybox{After the residual conformal gauge reduction, no individual
 one-particle graviton class remains.  Two composite curvature expressions
-survive, and their normalized representatives have positive Gram matrix.}
+survive, and their normalized residual CE pairing is positive.}
 
 The scope is narrower than a positive-particle theorem.  The local
 one-particle module remains indefinite; it has disappeared rather than been
-made positive.  Moreover, $G_{\rm rep}$ is unconditionally the normalized
-residual representative Gram matrix.  Calling it a pairing on the full BV
-cohomology additionally requires the cyclic transfer discussed below.
+made positive.  Moreover, $G_{\rm res}$ is unconditionally the normalized
+pairing inside the stated residual CE complex.  Identifying it with the
+pairing transferred from the full pure-Weyl BV/BFV complex additionally
+requires the cyclic transfer discussed below.
 
 \subsection{From the two classes to familiar gravitational terms}
 
@@ -1580,43 +1634,50 @@ weight-four Weyl-square state can be written.  It is the parity-complete
 pure-Weyl calculation of the full minimal absolute residual window: the
 Cartan homotopy makes the calculation exhaustive, the vacuum and
 one-particle sectors are proved acyclic, exactly two two-particle classes
-survive, and their representative pairing and dynamical/topological
+survive, and their residual CE pairing and dynamical/topological
 decomposition are determined.
 
 \subsection{The remaining bridge}
 
-The exact theorem begins with the on-shell Weyl-curvature module as its
-coefficient space.  Its promotion to a theorem about the complete free
-pure-Weyl local-plus-residual BV complex requires additional
-field-theoretic input.
-
-In ordinary language, one must still prove that every locally
-gauge-inequivalent solution of the linearized Bach equation is represented
-exactly once by the Weyl-curvature modes used above.  The precise missing
-all-level Lorentzian cylinder identification is
+The smooth metric-to-curvature part of the bridge is no longer open.  The
+flat BGG theorem also shows that the only global cohomology left by the
+deformation complex is a controlled pair
 \begin{equation}
- \frac{\ker B_{\mathrm{lin}}}{\operatorname{im}K}
- \cong\mathcal W_+\oplus\mathcal W_-,
+ H^0_{\rm def}\oplus H^3_{\rm def}
+ \cong
+ \mathfrak{so}(4,2)_\C[0]
+ \oplus\mathfrak{so}(4,2)_\C[3].
 \end{equation}
-where $B_{\mathrm{lin}}$ is the linearized Bach operator and $K$ generates
-the local Diff$\times$Weyl transformations.  The identification must hold
-on a specified Lorentzian function space, with the conformal-Killing zero
-modes separated and the local ghost and nonminimal doublets removed.  One
-must then construct a compact-degree
-equivariant cyclic strong deformation retract, verify that the transferred
-differential is the strict residual $\mathfrak{so}(4,2)$ differential in the
-relevant window, and exclude additional spectral-sequence rows or higher
-transferred operations that could alter the centered classes.
+The degree-zero copy consists of the fifteen conformal Killing fields.  The
+degree-three copy lies on the dual equation side and has exactly the
+dimension and representation expected of a residual charge or Taub sector.
+That interpretation is a sharply defined candidate, not yet a proved BV
+identification.
 
-Formal detour identities and exact homogeneous-jet calculations through
-finite degree support this bridge but do not prove it.  Paper~VII therefore
-contains two statements of different strength:
+In ordinary language, three bridges remain.  First, the smooth curvature
+theorem must be restricted to the algebraic cylinder category: every
+$E/A/L$ curvature mode must be intertwined with the geometric system and
+must admit a finite-mode metric potential.  Second, the complete local BV
+complex must retract cyclically and $SO(4,2)$-equivariantly, with its global
+reducibilities, antifields, and possible additional rows kept explicit.
+Third, the selected closed-universe BFV reduction must be shown to induce
+the four-ghost vacuum and complementary-degree pairing used by the residual
+calculation.  Dneprov and Grigoriev's nonlinear minimal Weyl-jet BRST/BV
+model is useful comparison data, but its curvature-dependent ghost terms do
+not by themselves prove strictness of the free transfer
+\cite{DneprovGrigorievIntro}.
+
+Paper~VII therefore contains two statements of different strength:
 \begin{enumerate}
 \item an exact residual cohomology theorem for the stated on-shell Weyl
 coefficient module and centered polarization;
-\item a conditional corollary identifying that theorem with the complete
-free pure-Weyl BV cohomology.
+\item an exact smooth metric-to-geometric-curvature theorem, followed by a
+conditional corollary identifying the residual answer with the complete
+free pure-Weyl BV cohomology in the algebraic cylinder category.
 \end{enumerate}
+An extension from the algebraic positive-energy module to an infinite
+Hilbert or Krein completion also requires separate continuity and
+closed-range control.
 No claim is made here about quantum BRST nilpotency, anomaly cancellation,
 interacting unitarity, or a positive asymptotic graviton space.
 
@@ -1812,7 +1873,7 @@ charge mechanism analogous to the scalar $O(1,1)$ boundary.
 Paper~IV.  Under full residual conformal gauging it computes the complete
 minimal centered absolute complex: the vacuum and one-particle sectors
 vanish, exactly two weight-four vertex classes survive with
-$G_{\rm rep}=I_2$, and the local Euler--Lagrange quotient splits them into
+$G_{\rm res}=I_2$, and the local Euler--Lagrange quotient splits them into
 one dynamical Weyl-square direction and one topological Pontryagin
 direction.  Transfer to the complete strict-pure-Weyl BV complex remains
 conditional.
@@ -1861,8 +1922,8 @@ rather than successive versions of one question.
   {\textbf{Paper VII} \cite{paperVII}\\
    pure-Weyl cylinder; full residual\\
    $SO(4,2)$ gauging; no one-particle class;\\
-   $H^4=\langle W_+^2,W_-^2\rangle$, $G_{\rm rep}=I_2$;\\
-   full BV transfer conditional};
+   $H^4=\langle W_+^2,W_-^2\rangle$, $G_{\rm res}=I_2$;\\
+   smooth BGG bridge exact; algebraic/BFV transfer conditional};
 \draw[arr] (p4) -- (p5)
   node[font=\scriptsize\itshape, left, align=right, pos=0.58]
   {free real forms\\$\to$ deformation problem};
@@ -1935,8 +1996,11 @@ $M\to0$ limit?
 
 For residual conformal reduction: what boundary or background-independence
 principle determines whether cylinder time translation is gauge or a global
-Hamiltonian?  Can the all-level Lorentzian detour quotient and the cyclic
-zero-mode transfer be proved in the strict pure-Weyl BV complex?  Does the
+Hamiltonian?  Does the smooth BGG isomorphism restrict exactly to the
+$D$-finite $E/A/L$ module and finite-mode metric potentials?  Can the
+degree-three BGG class be identified and normalized as the dual BFV/Taub
+sector, and can the complete local complex be transferred cyclically and
+$SO(4,2)$-equivariantly without additional antifield rows?  Does the
 positive representative matrix descend to its full cohomology, and what
 survives quantum BRST anomalies or nonlinear interactions?  These questions
 belong to the Paper~VII branch and are not answered by the split-phase
@@ -2091,6 +2155,24 @@ K.-j.~Hamada,
 $\R\times S^3$},
 Phys. Rev. D \textbf{86} (2012) 124006,
 arXiv:1202.4538.
+
+\bibitem{GoverPetersonIntro}
+A.~R.~Gover and L.~J.~Peterson,
+\emph{The ambient obstruction tensor and the conformal deformation complex},
+Pacific J. Math. \textbf{226} (2006) 309--351,
+arXiv:math/0408229.
+
+\bibitem{CapBGGIntro}
+A.~\v{C}ap,
+\emph{Overdetermined systems, conformal geometry, and the BGG complex},
+in \emph{Symmetries and Overdetermined Systems of Partial Differential
+Equations}, IMA Vol. Math. Appl. \textbf{144} (Springer, 2008) 1--24,
+arXiv:math/0610225.
+
+\bibitem{DneprovGrigorievIntro}
+I.~Dneprov and M.~Grigoriev,
+\emph{Presymplectic BV--AKSZ formulation of conformal gravity},
+arXiv:2208.02933.
 
 \bibitem{SGH1992}
 F.~G.~Scholtz, H.~B.~Geyer and F.~J.~W.~Hahne,
