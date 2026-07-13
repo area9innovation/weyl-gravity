@@ -70,6 +70,66 @@ global charge of a complete parity-projected energy-six state.  See
 `symbolic/verify_conformal_taub_charge.py` and
 `symbolic/verify_conformal_taub_multiplets.py`.
 
+## C2c-I/C2c-E--C2e finite-dimensional staging
+
+Representation theory now fixes the complete *allowed* proper-conformal
+workload without pretending to know the missing dynamics.  For every stable
+energy level, the lowering charge may contain the branch families
+
+\[
+E\to E,\quad A\to E,\quad A\to A,\quad
+L\to E,\quad L\to A,\quad L\to L,
+\]
+
+with chirality preserved, multiplicity one, and parity pairing the two
+chiral copies.  Through source energy four there are seven parity-reduced
+coefficients, five uncomputed.  Through energy six there are nineteen,
+seventeen uncomputed.  Thus the two curvature seeds do not determine the
+full low-energy Taub constraint map or establish its Hamiltonian moment-map
+identity.
+
+The C2c-E reconstructed seeded kernels nevertheless pass an exact partial
+tensor/coadjoint covariance theorem.  Under the independently known compact
+oscillator generators they transform as an energy-graded `(1/2,1/2)` tensor
+under `D x SO(4)`.  The phase-adjusted raising family is the algebraic
+Condon--Shortley completion used by the certificate, not an independently
+measured physical adjoint.  This does not supply the proper-conformal
+Hamiltonian generators: converting a quadratic kernel into an orbit vector
+still requires the correctly normalized symplectic/Poisson structure.
+
+At the four-mode cancellation point, the seeded Taub-constraint map has
+
+\[
+\operatorname{rank}_{\mathbb C}D\mu_{\rm partial}=4,
+\qquad
+\operatorname{rank}_{\mathbb R}D\mu_{\rm partial}=8.
+\]
+
+It is therefore regular for this seeded map.  The real rank uses the
+ordinary coefficient slice `zbar=conj(z)`, not a certified physical
+`J_conf` real slice after global reduction.  The corresponding real tangent
+dimension is 64.  The available compact `D x SO(4)` orbit has rank seven and
+lies in the tangent, but the resulting formal count 57 is only a
+tangent-space vector quotient.  It is not a quotient-manifold or physical
+dimension.  The missing constraint equations and proper-conformal orbit
+directions can alter it.
+
+Finally, the exact conformal structure constants define a nilpotent
+universal minimal ghost algebra.  The Chevalley--Eilenberg differential,
+formal adjoint-module differential, and canonical ghost-momentum
+differential all square to zero, raise ghost number by one, and preserve
+compact-energy degree.  This algebraic C2e rail is not yet the global BRST
+operator of pure Weyl gravity: the fifteen charge operators on the complete
+state complex, their compatibility with local Diff `x` Weyl BRST, the
+ghost-number-zero cohomology, and its induced pairing are still absent.
+
+Executable certificates and detailed scope are in
+`symbolic/verify_conformal_taub_block_inventory.py`,
+`symbolic/verify_conformal_taub_equivariance.py`,
+`symbolic/verify_conformal_taub_cone.py`, and
+`symbolic/verify_conformal_global_brst.py`, with companion notes bearing the
+same subjects.
+
 Independent parity-partner probes give the same nonzero current rather than
 the opposite sign, so the conventional parity projection does not remove the
 constraint.  Independently reversed external waves give the exact conjugate

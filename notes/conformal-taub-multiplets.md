@@ -16,7 +16,9 @@ Wigner--Eckart.  This closes all four \((q_L,q_R)=(\pm\tfrac12,
 \pm\tfrac12)\) components in these two low-energy mixed blocks, including
 parity and reverse-kernel partners.
 
-It does **not** compute the full Taub moment map.  In particular, it does not
+It does **not** compute the full Taub constraint map.  It also does not prove
+the symplectic identity needed to identify the reconstructed coefficient
+kernels with Hamiltonian moment-map components.  In particular, it does not
 determine `Q[A,A]`, `Q[E,L]`, the seven compact-energy-preserving Killing
 charges, other oscillator towers, anomalous real-field bilinears, the
 quadratic zero locus, or global BRST cohomology.  The result reconstructs two
@@ -146,7 +148,7 @@ still a hardening task, not an additional independent curvature result.
 
 ## Why this is a quadratic constraint, not state deletion
 
-On the four seed coordinates, the known part of the lowering moment map is
+On the four seed coordinates, the known part of the lowering Taub constraint is
 
 \[
 \mu_-^{\rm known}
@@ -164,9 +166,9 @@ e_+=a_+=a_-=1,\qquad \ell_-={1\over\sqrt2}
 makes every reconstructed quadratic value
 \(v^\dagger M_qv\) and \(v^\dagger M_q^\dagger v\) vanish.  It is not a
 common operator kernel: generally \(M_qv\ne0\).  This is only a point on the
-**partial** quadratic cone; unknown charge blocks may still act on it.  Its
-purpose is to certify the logical distinction: nonzero mixed entries do not
-imply that either basis mode is individually excluded.
+**seeded** quadratic zero locus; unknown charge blocks may still act on it.
+Its purpose is to certify the logical distinction: nonzero mixed entries do
+not imply that either basis mode is individually excluded.
 
 ## Energy grading and global BRST
 
@@ -185,8 +187,8 @@ paper treats a broader conformal-gravity/Riegert system rather than this
 pure-Weyl reduced complex:
 [arXiv:1202.4538](https://arxiv.org/abs/1202.4538).
 
-The linearization-stability interpretation of the quadratic moment map on a
-compact Cauchy slice is consistent with the higher-curvature analysis of
+The expected linearization-stability interpretation as a quadratic moment
+map on a compact Cauchy slice is consistent with the higher-curvature analysis of
 Altas and Tekin:
 [arXiv:1705.10234](https://arxiv.org/abs/1705.10234).
 

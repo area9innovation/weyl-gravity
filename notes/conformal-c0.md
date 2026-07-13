@@ -1230,11 +1230,53 @@ coefficients are `-sqrt(10)/(5 pi)` and `sqrt(2)/(2 pi)`; the assembled
 `[D,Q_-]=-Q_-`, parity, and the reverse-curvature ordinary kernel-dagger
 relation.  They also exhibit a vector whose reconstructed quadratic
 proper-conformal values cancel between the two mixed blocks.  This is a point
-on the partial seeded-block cone, not a common operator kernel or a result
-about the complete constraint locus.
+on the seeded Taub-constraint zero locus, not a common operator kernel or a
+result about the complete constraint locus.  Its Hamiltonian moment-map
+interpretation still requires the symplectic kernel-to-generator identity.
 The remaining tower blocks, seven Killing charges, complete moment map, and
-global BRST reduction remain open.  This strengthens the reason to stop P4:
-only the full quadratic reduction can determine the admissible state space.
+global BRST reduction remain open.  C2c-I makes the missing workload exact:
+the proper-conformal lowering map admits six stable source-to-target branch
+families per chirality,
+
+```text
+E -> E,  A -> E,  A -> A,  L -> E,  L -> A,  L -> L,
+```
+
+all with multiplicity one and paired by parity.  There are seven
+parity-reduced coefficients through source energy four, of which five are
+unknown, and nineteen through energy six, of which seventeen are unknown.
+The seeded kernels satisfy exact tensor/coadjoint covariance under the
+independently known `D x SO(4)` oscillator action.  C2c-E's phase-adjusted
+raising partners are an algebraic Condon--Shortley completion, not an
+independently measured physical adjoint.  This is partial covariance, not a
+full `SO(4,2)` generator representation: the Taub kernels have not yet been
+converted to Hamiltonian vector fields using the required symplectic/Poisson
+normalization.
+
+C2d studies the exact geometry of the seeded Taub-constraint zero locus at
+the four-mode cancellation.  The differential has maximal complex
+Wirtinger rank four and real rank eight on the 36-complex-dimensional
+low-mode sum, so this point is regular for the seeded map.  The real rank
+uses the ordinary coefficient slice `zbar=conj(z)`, not a certified physical
+`J_conf` slice after global reduction.  Its real tangent dimension is 64.
+The available `D x SO(4)` oscillator orbit has real rank seven and lies
+inside that tangent, leaving a formal tangent-space vector quotient count of
+57.  This is not a quotient-manifold or physical reduced dimension: missing
+constraints and orbit directions can change it.
+
+C2e separately constructs the universal minimal conformal BRST algebra from
+the exact fifteen-generator structure constants.  Its Chevalley--Eilenberg,
+formal-adjoint, and ghost-momentum differentials are exactly nilpotent, have
+ghost-number degree `+1`, and preserve compact-energy degree.  This is an
+algebra-only staging theorem.  It supplies no charge action on pure-Weyl
+oscillator/Fock states, no combined local-plus-global BRST operator, no
+physical cohomology, and no induced pairing.
+
+These results strengthen the reason to stop P4: only the full quadratic
+reduction can determine the admissible state space.  The next critical data
+are the missing reduced charge coefficients, seven Killing kernels, the
+symplectic kernel-to-generator map, the complete equivariant moment map, and
+the low-energy global cohomology with its induced `J_conf` pairing.
 
 The deformation-theory bridge itself is now exact. For the canonical
 off-shell first-order metric correction,

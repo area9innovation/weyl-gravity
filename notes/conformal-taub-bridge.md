@@ -158,8 +158,8 @@ of the corresponding oscillator modes carry a proper-conformal Taub charge.
 They do not imply that either basis mode is individually nonintegrable.  C2b
 reconstructs every magnetic component in the two multiplicity-one mixed
 blocks and exhibits an exact cancellation among their quadratic values.  The
-test vector is a point on the partial reconstructed cone, not a common kernel
-of the charge matrices or a result about the complete constraint locus.  The
+test vector is a point on the seeded Taub-constraint zero locus, not a common
+kernel of the charge matrices or a result about the complete constraint locus.  The
 entries are not a computation of `Q[A_3,A_3]`, nor do they alone decide the
 charge of the complete parity-projected `AA` or `EL` state: that requires the
 remaining mode blocks and every term in the global charge action.  The
@@ -176,8 +176,10 @@ Classically, the expected local structure is a moment-map reduction
 P_phys = mu^(-1)(0)/SO(4,2),
 ```
 
-with fifteen quadratic components `mu_A`.  This is a nonlinear cone rather
-than the oscillator Fock space used by P4 staging.  Its quantum realization
+with fifteen quadratic components `mu_A`.  The finite oscillator kernels
+must still be matched to the symplectic generators before that moment-map
+language is a theorem.  The expected zero set is nonlinear rather than the
+oscillator Fock space used by P4 staging.  Its quantum realization
 requires the global reducibility ghosts and a BFV/BRST construction; simply
 deleting one oscillator mode or projecting a Hessian by hand would not be a
 derivation.

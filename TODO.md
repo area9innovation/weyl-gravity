@@ -403,18 +403,56 @@ holds only open items.
       36-dimensional low-mode matrices obey every `SU(2)_L x SU(2)_R` ladder
       identity, `[D,Q_-]=-Q_-`, parity, and ordinary kernel-dagger covariance,
       and reproduce the curvature seed matrices on projection.  An exact
-      cancelling superposition demonstrates a point on the partial quadratic
-      moment-map cone, not a common operator kernel or a linear state
-      exclusion.  Next: reconstruct the remaining tower
-      blocks and seven Killing charges, assemble the full fifteen-component
-      quadratic moment map, and build the energy-graded compact global BRST
-      cohomology
-      to determine whether the oscillator target survives and with what
-      pairing; only then finish s/u currents, the covariant-to-stationary Born
-      map, subtraction rails, provisional reduced `Veff` and its nine
-      coordinates.  A full-shell theorem additionally requires the other
-      reduced irreps and spectator sectors.  The flat `P_0` Jordan cokernel
-      remains a distinct wave-packet/distributional problem.
+      cancelling superposition demonstrates a point on the seeded quadratic
+      Taub-constraint zero locus, not a common operator kernel or a linear
+      state exclusion.  Its Hamiltonian moment-map interpretation still
+      requires the symplectic kernel-to-generator identity.
+
+      C2c-I now gives the exact representation-theoretic workload.  A
+      proper-conformal lowering charge can occur in six branch families per
+      chirality,
+      `E->E`, `A->E`, `A->A`, `L->E`, `L->A`, and `L->L`; every block is
+      multiplicity one and parity pairs the chiral copies.  There are seven
+      parity-reduced coefficients through source energy four (five unknown)
+      and nineteen through energy six (seventeen unknown).
+
+      C2c-E proves partial tensor/coadjoint covariance of the seeded kernels
+      under the independently known `D x SO(4)` oscillator action.  Its
+      phase-adjusted raising family is an algebraic Condon--Shortley
+      completion, not an independently measured physical adjoint.  This is
+      not full `SO(4,2)` equivariance: a bilinear charge kernel has not yet
+      been converted into its Hamiltonian generator by the required
+      symplectic/Poisson normalization.
+
+      C2d finds that the four-mode cancellation is regular for this seeded
+      Taub-constraint map only: its Wirtinger rank is four and its real rank
+      is eight in the full 36-complex-dimensional low-mode sum.  This real
+      rank uses the ordinary coefficient slice `zbar=conj(z)`, not a certified
+      globally reduced `J_conf` real slice.  The seeded real tangent has
+      dimension 64; the independently known `D x SO(4)` orbit has rank seven
+      and lies in it, leaving a merely formal tangent-space vector quotient
+      count 57.  These numbers are not dimensions of a quotient manifold or
+      the physical phase space because the other charge blocks, seven Killing
+      constraints, and proper-conformal orbit directions are absent.
+
+      C2e constructs the universal algebra-only minimal BRST complex from the
+      exact fifteen-generator conformal structure constants.  The ghost,
+      formal-adjoint, and ghost-momentum differentials are nilpotent; ghost
+      number rises by one and compact-energy degree is zero.  This does not
+      represent the charges on pure-Weyl oscillator/Fock states, combine them
+      with local Diff x Weyl BRST, compute cohomology, or induce a pairing.
+
+      Next: determine the missing reduced coefficients and seven Killing
+      kernels; fix the symplectic kernel-to-generator map; assemble and test
+      the full equivariant fifteen-component moment map; construct its exact
+      global action and local-plus-global BRST cohomology; and restrict
+      `J_conf` to the resulting classes.  Only then finish s/u currents, the
+      covariant-to-stationary Born map, subtraction rails, provisional reduced
+      `Veff`, and its nine coordinates.  Whether nonlinear/global reduction
+      leaves trivial, indefinite, or positive physical cohomology remains
+      open.  A full-shell theorem additionally requires the other reduced
+      irreps and spectator sectors.  The flat `P_0` Jordan cokernel remains a
+      distinct wave-packet/distributional problem.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
       build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
       on a truncated charge-Fock space with the squeezed vacuum;
