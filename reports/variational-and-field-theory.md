@@ -1190,3 +1190,40 @@ Paper-V node in the dependency figure; open questions updated (field
 complex energies, superselection, EW vertices); conclusion → five-level
 hierarchy + "which completion survives the allowed interactions?".
 22 pp. (grew ~29%, within the spec's 25–35%), clean.
+
+## Paper 5: ACCEPT after final audit — audit applied (2026-07-13)
+
+Referee verdict: "Accept after a final consistency and presentation
+audit" (from major revision — first paper in the series to reach accept
+on the first revision). All six audit points applied:
+1. Spectral claim localized: explicit 3-level hierarchy in the
+   corollary (exact effective-matrix pair / cutoff-stable truncations /
+   full unbounded operator OPEN); abstract carries the qualification
+   inline ("effective resonant-shell characteristic polynomial...; the
+   statement for the full unbounded operator remains open").
+2. Notation: complex conjugation renamed K → Θ with an explicit
+   disambiguation sentence (vs Krein K_n, K^(2), K_max).
+3. g-convention before the exact number + g-restored display:
+   𝓜_obs = 401√6/(39424 g²) → g=1 — the 1/g² dependence VERIFIED
+   exactly (each vertex ∝ gρ² = δ²/(4g); numerical check at
+   g ∈ {1/2, 1, 2} exact).
+4. "Generic" disambiguated: three senses defined in the Strength
+   paragraph (oscillator frequencies / open shell subset /
+   kinematically open ≠ dynamically nonzero).
+5. Status ledger added (R₁ thm; R₂,R₃ comp props; R_n conjecture;
+   5:1 prediction; field spectrum open; classical involution thm;
+   quantum implementation open) — single authoritative list in the
+   intro.
+6. Confluent wording checked: "linearization of the exchange" only,
+   nowhere upgraded.
+Referee's three-level failure taxonomy adopted as the paper's
+contribution summary: geometric (Jordan R_n divergence) /
+cohomological (on-shell conversion) / spectral (nonreal energies).
+
+Paper 0: the four permitted upgrades applied — "formally defined
+perturbative PT breaking" (antilinear symmetry constructed + commutes),
+"exactly certified in the effective resonant multiplet", field
+obstruction as "open scattering-shell subset (not every kinematic
+point)", confluent result as the "linear bridge" to the independently
+exact nonlinear exchange with the no-stronger-identification note.
+Both papers compile clean (13 pp. / 22 pp.).

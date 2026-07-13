@@ -50,9 +50,10 @@ explicit Hermitian generators through third order.  (ii) At internal
 rational resonances the deformation is obstructed by exact on-shell
 conversion operators, and at the $3{:}1$ resonance the obstruction is
 spectral: an excited resonant multiplet acquires a complex-conjugate
-energy pair at second order --- certified by an exact Sturm count of
-the effective characteristic polynomial and reproduced by direct
-diagonalization of the truncated Hamiltonian --- so that no positive
+energy pair at second order --- exact, by a Sturm count of the
+effective resonant-shell characteristic polynomial, and reproduced by
+direct diagonalization of the truncated Hamiltonian; the statement for
+the full unbounded operator remains open --- so that no positive
 invariant metric exists where the pair persists.  (iii) In the
 perfect-square field theory the momentum continuum turns such isolated
 resonances into generic scattering shells: the branch-changing process
@@ -142,7 +143,18 @@ complex pair persists, since a positive metric would make the
 Hamiltonian similar to a self-adjoint operator; the qualifications
 (formal perturbation theory, unbounded cubic interaction, truncation)
 are stated where they apply.  For the field theory only (a) is
-established here.
+established here.  ``Generic'' is likewise used in three distinct
+senses, always resolvable from context: \emph{generic oscillator
+frequencies} (outside the finite resonance-candidate set at the stated
+order), \emph{generic field obstruction} (nonzero on a nonempty open
+subset of an allowed scattering shell), and \emph{kinematically open
+for every mass pair} (existence of the shell, which does not by itself
+imply nonvanishing of the obstruction at every point of it).  The
+status ledger is: $R_1$ Jordan scaling --- theorem; $R_2,R_3$ scaling
+--- computational propositions; $R_n\sim\epsilon^{-3n/2}$ ---
+conjecture; the $5{:}1$ obstruction --- prediction; a full-field
+complex spectrum --- open; the exact doubled classical involution ---
+theorem; its quantum implementation --- open.
 
 \paragraph{Bookkeeping.}
 The deformation order is counted by a formal parameter $\zeta$:
@@ -287,21 +299,23 @@ connected to the free metric.
 \section{Resonant PT breaking}\label{sec:spectral}
 
 \begin{proposition}[The antilinear symmetry]\label{prop:pt}
-Let $\mathcal A=\Pi\circ K$, where $K$ is complex conjugation in the
-$(x,y)$-Schr\"odinger representation ($x,y\mapsto x,y$,
+Let $\mathcal A=\Pi\circ\Theta$, where $\Theta$ is complex conjugation
+in the $(x,y)$-Schr\"odinger representation ($x,y\mapsto x,y$,
 $p,q\mapsto-p,-q$, $i\mapsto-i$) and $\Pi$ the total parity
-$(x,y,p,q)\mapsto-(x,y,p,q)$.  Then $\mathcal A$ is antiunitary,
-$\mathcal A^2=1$, and
+$(x,y,p,q)\mapsto-(x,y,p,q)$.  (The symbol $\Theta$ is reserved for
+this conjugation; it is distinct from the Krein parity generators
+$K_n$, the effective spectral matrix $K^{(2)}$, and the momentum cutoff
+$K_{\max}$.)  Then $\mathcal A$ is antiunitary, $\mathcal A^2=1$, and
 \begin{equation}
 [\mathcal A,\,h_0]=0,\qquad [\mathcal A,\,v]=0,
 \qquad\text{hence}\qquad [\mathcal A,\,h_\zeta]=0
 \ \ (\zeta\in\R):
 \end{equation}
-$h_0$ is even and $K$-real; $v$ is odd under both $\Pi$ and $K$
-separately ($KvK=-v$, $\Pi v\Pi=-v$), hence invariant under their
-composition (machine-verified).  ``PT breaking'' below means the
-appearance of eigenvalues not fixed by this antilinear symmetry, i.e.\
-complex-conjugate pairs.
+$h_0$ is even and $\Theta$-real; $v$ is odd under both $\Pi$ and
+$\Theta$ separately ($\Theta v\Theta=-v$, $\Pi v\Pi=-v$), hence
+invariant under their composition (machine-verified).  ``PT breaking''
+below means the appearance of eigenvalues not fixed by this antilinear
+symmetry, i.e.\ complex-conjugate pairs.
 \end{proposition}
 
 \begin{theorem}[Certified complex pair in the $E=27\w_2$ multiplet]
@@ -328,10 +342,12 @@ resonant doublet $\{|1,0\rangle,|0,3\rangle\}$ remains real.
 \begin{corollary}
 Wherever the complex pair persists in the interacting spectrum, no
 positive-definite invariant metric exists --- analytic in $\zeta$ or
-not.  (The statement concerns the second-order effective multiplet and
-the truncated operator; extending it to the untruncated cubic operator
-requires an operator-theoretic analytic-family argument, which we do
-not supply.)
+not.  The hierarchy of claims is: (1) the complex pair in the
+second-order effective resonant-shell matrix is \emph{exact} (Sturm
+certificate); (2) its persistence in the interacting truncations is
+supported by cutoff-stable direct diagonalization; (3) an
+operator-theoretic statement for the full unbounded cubic Hamiltonian
+remains open.
 \end{corollary}
 
 \begin{proposition}[Broken-PT tongues of the effective multiplet]
@@ -562,9 +578,13 @@ rest; outgoing momenta $\pm\tfrac34m_L$; in lattice units $m_L=4$,
 $m_H=6$, momenta $\pm3$, all shell conditions exact), the source
 element \eqref{eq:sourceME} has the exact value
 \begin{equation}
-\boxed{\ \mathcal M_{\mathrm{obs}}=\frac{401\sqrt6}{39424}\ }
+\boxed{\ \mathcal M_{\mathrm{obs}}
+=\frac{401\sqrt6}{39424\,g^2}
+\ \xrightarrow{\ g=1\ }\ \frac{401\sqrt6}{39424}\ }
 \end{equation}
-with the quartic contact piece exactly zero.  The computation is
+(the $1/g^2$ dependence at fixed masses is verified exactly: each
+vertex carries $g\rho^2\propto\delta^2/g$), with the quartic contact
+piece exactly zero.  The computation is
 truncation-complete (Lemma~\ref{lem:trunc}) and the element is analytic
 in the shell data on the nonsingular part of the shell; hence
 \emph{the second-order obstruction is nonzero on a nonempty open subset
