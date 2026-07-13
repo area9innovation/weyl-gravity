@@ -139,7 +139,7 @@ contains the type-B class
 [c_{\rm W}C^2]\in H^{1,4}_{\rm anom}(s\mid d).
 \]
 
-It is useful to record a **projected type-B map**
+It is useful to record a **literature-seeded projected type-B target**
 
 \[
 \pi_B\mathfrak O_1:
@@ -148,8 +148,8 @@ It is useful to record a **projected type-B map**
 \operatorname{span}\{[c_{\rm W}C^2]\}.
 \]
 
-For a parity-preserving pure-metric quantization its literature-normalized
-matrix is
+For a parity-preserving pure-metric quantization its background-anomaly
+normalization is
 
 \[
 \boxed{
@@ -157,6 +157,9 @@ matrix is
 =\begin{pmatrix}199/30&0\end{pmatrix}.}
 \]
 
+This row is not yet a direct calculation of the quantum BV obstruction in
+the repository conventions.  C2k separates the counterterm, beta-function,
+background-trace, and BV coefficients and leaves the last one undetermined.
 The zero in the odd column is conditional on parity and on a
 parity-preserving regulator; it is not a universal cohomological theorem for
 chiral theories.  The full obstruction is not this one-row matrix.  It also
@@ -230,11 +233,14 @@ its pairing must be recomputed.
 ### C. Additional conformal fields
 
 Extra conformal matter or higher-spin fields can change the anomaly balance,
-but they also enlarge the residual coefficient module.  Tseytlin's
-zeta-regularized complete bosonic CHS tower has vanishing summed $a_s$, but
-the corresponding summed $c_s$ does **not** vanish in that calculation.
-Accordingly the tower is a candidate enlargement, not an established
-anomaly-free completion.
+but they also enlarge the residual coefficient module.  Tseytlin's 2013
+calculation records the zeta-regularized vanishing of the complete bosonic
+CHS $a_s$ sum under its stated prescription, while the $c_s$ analysis was
+prescription-dependent.  A later $S^4_q$ calculation selects the $r=-1$
+prescription and reports vanishing regularized sums of both $a_s$ and $c_s$.
+Neither free-tower result establishes anomaly cancellation in a complete
+interacting CHS theory
+([arXiv:1707.02456](https://arxiv.org/abs/1707.02456)).
 
 ## Recommended sequence
 
@@ -250,8 +256,8 @@ The three routes should not be mixed in one cohomology calculation.
    theory as a new coefficient module and recompute its centered cohomology
    and pairing.  It is the most concrete finite-field candidate, but it must
    not inherit the strict-theory two-class theorem by assumption.
-4. Keep the CHS enlargement exploratory until both regularized anomaly sums,
-   not only the type-A sum, are controlled.
+4. Keep the CHS enlargement exploratory: even a prescription for which both
+   regularized free-tower sums vanish is not an interacting anomaly theorem.
 
 Thus no route choice is hidden in C2j-D.  It supplies a common baseline and
 makes every proposed cure pay the correct cohomological price.
@@ -284,3 +290,9 @@ python3 symbolic/verify_conformal_descent_anomaly.py
 ```
 
 The fail-closed rails reject each of the broad claims above explicitly.
+
+The normalization/compensator audit and the dynamical/topological quotient
+are continued in
+[`conformal-c2k-coefficient-compensator.md`](conformal-c2k-coefficient-compensator.md)
+and
+[`conformal-c2l-dynamical-topological.md`](conformal-c2l-dynamical-topological.md).

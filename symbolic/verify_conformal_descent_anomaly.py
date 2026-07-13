@@ -18,8 +18,8 @@ at weight four.  This is the finite residual algebra behind the descent
 The script also checks the Euclidean and Lorentzian parity bases of the two
 chiral Weyl-square classes, the Riegert dressing identity, and the exact
 literature-normalization arithmetic ``199/30-1/15=197/30``.  The matrix called
-``type_b_map`` is deliberately only the *projected type-B* one-loop map, with
-``199/30`` supplied as a literature input.  It is not a machine derivation of
+``type_b_map`` is deliberately only the *projected type-B* target, with
+``199/30`` supplied as a background-anomaly literature input.  It is not a machine derivation of
 the Weyl-graviton determinant, of the Euler anomaly, or of quantum BRST
 nilpotency.
 """
@@ -65,7 +65,7 @@ def main() -> None:
     parser.add_argument(
         "--claim-complete-chs-anomaly-cancellation",
         action="store_true",
-        help="fail closed: Tseytlin's regularized a-sum vanishes, not the c-sum",
+        help="fail closed: free-tower regularized sums are not an interacting anomaly theorem",
     )
     args = parser.parse_args()
     if args.claim_full_local_bv_descent:
@@ -86,7 +86,7 @@ def main() -> None:
         )
     if args.claim_complete_chs_anomaly_cancellation:
         raise SystemExit(
-            "arXiv:1309.0785 reports a vanishing regularized a-sum but a nonvanishing c-sum"
+            "the 2017 S4_q r=-1 prescription gives vanishing regulated a and c sums, but does not prove interacting CHS anomaly cancellation"
         )
 
     # Hamada (4.8)--(4.12).  After rewriting c.d V as
@@ -171,14 +171,14 @@ def main() -> None:
         combined_beta_numerator == R(197, 30),
     )
 
-    # Project only onto the type-B anomaly coordinate [sigma C^2].  Parity
+    # Record only the target type-B anomaly coordinate [sigma C^2].  Parity
     # preservation kills the odd column.  The independent type-A Euler
     # coordinate is intentionally absent: it requires a general curved-
     # background local calculation and is not resolved by the Weyl-oscillator
     # cylinder module.
     type_b_map = sp.Matrix([[c_weyl_graviton, 0]])
     check(
-        "C2j-D5: the parity-preserving projected type-B obstruction has exact rank one",
+        "C2j-D5: the parity-preserving projected type-B target has exact rank one",
         type_b_map.rank() == 1
         and type_b_map * sp.Matrix([1, 0])
         == sp.Matrix([c_weyl_graviton])
@@ -213,7 +213,7 @@ def main() -> None:
     print("strict pure-Weyl residual class Gram: I2 (dependency on C2g)")
     print("Weyl-graviton (a,c):", (a_weyl_graviton, c_weyl_graviton))
     print("Hamada combined beta numerator:", combined_beta_numerator)
-    print("projected type-B obstruction map [even,odd]:", type_b_map)
+    print("projected type-B target [even,odd]:", type_b_map)
     print(
         "CONFORMAL C2j-D DESCENT/ANOMALY BOOKKEEPING: ALL PASS. "
         "No local one-loop determinant, Euler anomaly, quantum-master-equation "

@@ -554,8 +554,32 @@ holds only open items.
       beta-numerator arithmetic `197/30`, while Riegert dressing permits
       higher matter weights to return to total weight four and therefore
       destroys the strict pure-Weyl finite inventory.  Tseytlin's regulated
-      all-spin CHS `a` sum vanishes but the `c` sum does not, so the higher-spin
-      tower is not yet an anomaly-cancellation theorem.
+      2013 all-spin CHS `a` sum vanishes in its zeta prescription; a later
+      `S4_q` calculation selects the `r=-1` prescription and reports both
+      regulated `a` and `c` sums zero.  Neither free-tower result is an
+      interacting anomaly-cancellation theorem.
+
+      C2k separates the coefficient triangle.  For
+      `S=kappa t^-2 integral C2` and a signed counterterm numerator `k_ct`,
+      `beta_t=-rho k_ct t^3/[2 kappa (4pi)^2]`; this proves that the
+      comparison convention `1/(2t^2)` doubles Hamada's `1/t^2`
+      normalization before overall action/Wick signs are compared.  The
+      trace coefficient follows from a declared evanescent Weyl variation,
+      while the local BV/QME coefficients remain undetermined pending a
+      direct calculation.  Adjoining `s tau=c_W` makes the type-B class exact.
+      On the conformally flat cylinder `tau C2` begins cubically, but the
+      type-A WZ action has a nonzero quadratic `tau-tau` block and possible
+      `tau E4^(1)[h]` mixing, so the full compensated free complex must be
+      recomputed rather than inheriting `I2`.
+
+      C2l-P splits the exact residual pairing as
+      `I2=I1_dynamical + I1_topological`.  Chern--Weil transgression proves
+      that the parity-odd Pontryagin direction is locally variationally
+      trivial; the Euler--Lagrange quotient is the single positive `C2`
+      direction.  A theta term is locally a canonical, J-unitary boundary
+      phase but can remain globally or at boundaries.  The literature-seeded
+      type-B row has the same rank-one support, subject to C2k's unresolved
+      direct BV coefficient.
 
       Next (C2i): prove the remaining local-kernel identification
       `ker B_lin / im K = W_+ + W_-` on complete Lorentzian cylinder harmonic
