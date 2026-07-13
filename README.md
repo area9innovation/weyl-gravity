@@ -11,12 +11,12 @@ and a machine-checked verification pipeline.
 
 | # | File | Title | Status |
 |---|------|-------|--------|
-| 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series) | draft (17 pp.) |
+| 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series, incl. the interaction results) | draft (22 pp.) |
 | 1 | `symplectic-diagonalization.tex` / `.pdf` | **Canonical Positive Symplectic Diagonalization of the Pais–Uhlenbeck Oscillator** | frozen, tag `paper1-v1.0` (13 pp.) |
 | 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.1` (12 pp.) |
 | 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.1` (10 pp.) |
 | 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | draft (14 pp.) |
-| 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions and Resonant Breakdown of the Positive Pais–Uhlenbeck Metric** | draft (12 pp.) |
+| 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions, Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order Theories** | accepted by team referee after final audit (13 pp.) |
 
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.
@@ -62,6 +62,24 @@ M-regular gauge-invariant Weyl correlator (DΠ^{(2,M)}D = DΠ₀D); conformal
 boundary c₁ → 0 sectorwise (TT → □² Jordan, vectors → massless ghosts,
 scalar → Weyl-null; count 4+2+0 = 6) at which the positive form terminates
 (cond(N) → ∞) and only the Krein form continues.
+
+**Paper 5** (the interaction paper): deformation and obstruction theory
+for the interacting completions. Three levels of failure of the positive
+construction — geometric (Rₙ ~ ε^{−3n/2} toward the Jordan boundary),
+cohomological (exact on-shell conversion classes at ω₁ = 3ω₂, order 2,
+and ω₁ = (3/2)ω₂, order 3, gauge-independent, with a transfer-lattice
+selection rule), and spectral (a complex-conjugate pair in the E = 27ω₂
+multiplet, exact by Sturm certificate; formally defined PT breaking with
+𝒜 = Π∘Θ constructed). In the perfect-square field theory an even-ghost
+rule protects the positive metric at first order, but the momentum
+continuum makes branch-changing H+L → L+L shells generic and the
+second-order deformation is obstructed on an open shell subset (exact
+value 401√6/(39424g²) at a rational kinematic point). What survives at
+the massless boundary is the exact two-field exchange U↔V of
+ℒ = −∂U·∂V + (λ²/2)U²V² — a sector-exchanging involution between two
+oppositely oriented interaction-generated Jordan sectors, whose
+linearization is the bounded confluent limit of the regulated branch
+parity on the doubled space.
 
 ## Reports (`reports/`)
 
