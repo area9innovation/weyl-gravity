@@ -1539,3 +1539,56 @@ real-point G15 evaluation is now a hardening and regression test, not
 the logical foundation of the existence theorem.  G17 still records
 the explicit full-T₂ quarter-turn/adjoint transport before the final
 metric-obstruction statement is frozen in Paper 6.
+
+## 2026-07-14 — G15: the decisive certificate (MM → Mh nonzero, Ward-verified)
+
+verify_gravity_g15.py, ALL PASS (~15 min). Implementation per team
+spec: no symbolic fourth-order propagator — per channel a 10×10
+quadratic operator K(P) from the engine's two-wave coefficient, cubic
+currents J_A by basis insertion, de Donder-bordered exact solve
+[[K,Cᵀ],[C,0]][X;λ] = [−J;0], exchange = J'ᵀX, plus the exact 4-wave
+contact coefficient. Everything exact rational.
+
+**THE CERTIFICATE (G15b): A(MM→Mh) = 7881241032/5584765625 ≠ 0** at
+the interior rational point (s = 25/4 M², cosθ = 3/5) with REAL linear
+polarizations (all-y-even sector; the kinematics is planar, so odd
+sectors give symmetry zeros — the first scan combination in the even
+sector is nonzero). ⇒ **[(-1)^{N_M}, S] ≠ 0 now holds
+unconditionally** on the real shell (no Zariski-density argument
+needed).
+
+Acceptance battery:
+- G15a: all three bordered systems solve exactly (CX = 0, residuals 0).
+- G15c: total contact+exchange WARD identity exact; the contact term
+  alone is NOT gauge invariant (−596335802837691/361367187500000) —
+  only the full sum vanishes on a gauge polarization. Strongest
+  internal-consistency check of signs/combinatorics.
+- G15d: gauge-representative independence and initial-M Bose symmetry
+  exact.
+- G15e: internal-gauge independence — axial n^μX_μν = 0 instead of
+  de Donder gives the identical amplitude.
+- G15f: threshold regression (s = 4M²): A = −509784/390625 (nonzero
+  too; recorded).
+- G15g (pole/factorization, restructured after the symbolic-z solve
+  proved too heavy — the bordered-residue is PROVABLY −j₁ᵀW⁻¹j₂ by
+  degenerate perturbation theory, so the independent content is):
+  under the exact shell-preserving shift k₁ → k₁+zη, k₄ → k₄−zη,
+  η = (3,0,4i,5) (null, ⊥k₁, ⊥k₄), P(z)² = 25/4+15z hits M² at
+  z* = −7/20; then (1) the bordered kernel at z* is EXACTLY the 5 TT
+  modes; (2) SCHUR: W = TᵀK'(z*)T = w₀·G5 exactly with w₀ = −15/2
+  (24 nontrivial identities — covariance of the whole K machinery);
+  note f'(M²) = w₀/(dP²/dz) = −1/2 < 0: the massive branch's kinetic
+  residue carries the GHOST SIGN, visible in the machinery; (3) the
+  residue −j₁ᵀW⁻¹j₂ = −4551434384i/328515625 ≠ 0 and equals the
+  G14c-form contraction divided by the kinetic normalization
+  −(j₁ᵀG5⁻¹j₂)/w₀ exactly; (4) numeric pole probe: Lagrange-
+  extrapolated (z−z*)E_s from four rational nodes agrees to 1.1e−5.
+  Polynomial-in-z polarization families (no nullspace denominators)
+  were required — the sympy nullspace families degenerate at z*.
+
+Debug record: first run's certificate combination hit a PLANAR-
+KINEMATICS symmetry zero (y-reflection parity); fixed by parity-
+definite in-plane polarization construction. G16 partially covered
+(Ward, Bose, gauge); still queued: crossing, the full 250-polarization
+scan (regression rail), then G17 (quarter-turn transport of full T₂,
+𝔬₊^(2) = Π_shell(T₂†−T₂) ≠ 0) and G18 (minimal Krein block).
