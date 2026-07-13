@@ -247,13 +247,34 @@ holds only open items.
       Kubo--Kuntz flat BRST algebra into two TT Jordan blocks plus two
       ordinary vector modes.  Research ledger:
       `notes/conformal-c0.md`.
-    - NEXT (CONFORMAL C0b): reconcile Paper IV reduction,
-      Kubo--Kuntz physical BRST oscillators, and Metsaev's
-      ordinary-derivative conformal generators on the Einstein-cylinder
-      harmonic tower.  Solve for the full nondegenerate `SO(4,2)`-
-      invariant form including the helicity-1 modes.  Then test the
-      lowest complete cubic energy blocks before attempting the
-      four-point divided-difference rail.
+    - DONE (CONFORMAL C0b, 2026-07-13):
+      `verify_conformal_cylinder_form.py` reconciles Paper IV,
+      Kubo--Kuntz, Metsaev, and the exact `S^1 x S^3` Weyl-graviton
+      spectrum.  The compact cylinder Hamiltonian is diagonal, not
+      Jordan: the TT energies are `n+2` and `n+4`, while the vector
+      energy is `n+2` starting at `n=1`.  The flat Jordan generator is
+      `P_0`; cylinder time is `D`.  The three towers reproduce
+      `Z_2=(10q^2-18q^4+8q^5)/(1-q)^4` exactly.  The level-one
+      Shapovalov form of the `Delta=2` Weyl primary has eigenvalues
+      `+8 x24` and `-2 x16` after both chiralities: precisely the lower
+      TT and vector degeneracies at energy 3.  Metsaev's transverse
+      boost chain `E -> A -> L` fixes the flat six-mode form up to one
+      scale, so the vector sign is not an independent conformal choice.
+      With the energy-2 primary positive, the complete compact-energy
+      signature is `N_+=2(E-1)(E+3)` and, for `E>=4`,
+      `N_-=4(E+1)(E-2)` (`N_-(3)=16`).  The conventional radial-adjoint
+      form is therefore nondegenerate but indefinite; this does not yet
+      test a separately defined Mannheim left-right/CPT adjoint.
+    - NEXT (CONFORMAL C1): construct the lowest complete cubic
+      cylinder-energy blocks in the ordinary-derivative Weyl action.
+      Use the C0b Shapovalov signature to test `V_3^sharp=V_3`, keeping
+      all TT and vector descendants at the same compact energy.  First
+      translate the exact Einstein-subsector zeros into radial harmonics;
+      do not label a cylinder branch directly by the flat `E/L` basis.
+      Only after the conventional block is complete should a distinct
+      Mannheim left-right adjoint be tested.  Four-point divided
+      differences remain a later regression rail, not the definition of
+      conformal states.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
       build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
       on a truncated charge-Fock space with the squeezed vacuum;
