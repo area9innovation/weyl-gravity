@@ -60,7 +60,8 @@ They explain their mathematical status, classify their ambiguities,
 identify the geometry that selects the Bender--Mannheim metric, connect
 the positive and Krein descriptions through a common complex vacuum
 covariance, and determine what changes when gauge symmetry and Lorentz
-covariance are imposed in fourth-order gravity.  The resulting picture is
+covariance are imposed in fourth-order gravity.  The resulting free-theory
+picture is
 that a fourth-order theory may possess one complex spectral dynamics but
 several inequivalent real forms and completions: the positive-metric and
 Krein descriptions can agree on complex correlation functions while
@@ -74,11 +75,12 @@ Pais--Uhlenbeck metric deforms perturbatively at generic frequencies,
 but exact energy-conserving conversion processes generate obstruction
 classes.  In the oscillator these occur on isolated rational resonance
 loci and can produce complex-conjugate spectral pairs; in the field
-theory, continuous momentum makes the corresponding branch-changing
-scattering shells generic.  The massless perfect-square theory
-nevertheless possesses an exact nonlinear two-sector involution, showing
-that failure of a positive pointed-sector completion does not imply
-absence of a doubled Krein-type structure.
+theory, continuous momentum opens the corresponding branch-changing
+scattering shells, and the obstruction to the analytic positive-metric
+deformation is nonzero on a verified open shell subset.  The massless perfect-square
+theory nevertheless possesses an exact nonlinear two-sector involution,
+showing that failure of an analytic positive pointed-sector deformation
+does not imply absence of a doubled Krein-type structure.
 \end{abstract}
 
 \tableofcontents
@@ -150,6 +152,29 @@ central to everything that follows: Sections~\ref{sec:why}--%
 Section~\ref{sec:interactions} the interacting one, and
 Sections~\ref{sec:gravity}--\ref{sec:conformal} the gravitational
 application.
+
+\paragraph{Series map.}
+Paper~I reconstructs and classifies the known positive free PU
+quantization.  Paper~II proves that its canonical metric is the
+least-distorting free representative.  Paper~III separates metric,
+vacuum, representation, and Jordan data in the scalar field and identifies
+the common free complex covariance.  Paper~IV adds gauge reduction and
+Lorentz covariance in free Einstein--Weyl gravity.  Paper~V then asks the
+dynamical question left open by the first four: whether either completion
+survives interaction.  Thus ``canonical'' and ``optimal'' in Papers~I--II
+are kinematic statements about the free theory, not claims of interacting
+stability.
+
+\paragraph{Strength of the claims.}
+The free classifications are theorems in the classes stated below.  In
+Paper~V the $3{:}1$ and $3{:}2$ oscillator obstruction classes are exact,
+the $5{:}1$ fourth-order result is a computational proposition, and the
+general resonance hierarchy remains a conjecture.  For the field theory
+what is proved is an analytic metric obstruction on a nonempty open shell
+subset, not a complex spectrum or the absolute nonexistence of every
+positive completion.  A full-field complex spectrum, a quantum operator
+implementing the doubled exchange, and the interacting-gravity calculation
+remain open.
 
 \section{The Pais--Uhlenbeck oscillator as a microscope}\label{sec:pu}
 
@@ -536,6 +561,10 @@ $\Box^2$ covariance used in the Krein-space construction of Bateman and
 Turok \cite{BT2026}.  Their sign convention gives the opposite overall
 covariance to one common PU convention: the relation is an action-sign
 reversal, not a literal equality before conventions are matched.
+This bridge identifies the \emph{free complex covariance}; it does not by
+itself reconstruct Bateman and Turok's interacting $O(1,1)$ embedding,
+ghost symmetry, or indefinite-space probability rule, which are additional
+structures of their theory.
 
 \section{What is a Krein space?}\label{sec:krein}
 
@@ -668,6 +697,43 @@ This is an example of why field representation theory cannot be discussed
 without specifying the algebra, its involution, the embedding between
 descriptions, and the chosen completion.
 
+\section{The ultraviolet Fock-sector hierarchy}\label{sec:focksectors}
+
+The preceding comparison placed a selected PU vacuum beside the split
+two-field vacuum.  Paper~III also asks a different question: when do two
+\emph{selected} vacua, belonging to different mass pairs
+$(m_1,m_2)$ and $(\bar m_1,\bar m_2)$, define the same ultraviolet Fock
+sector in common field variables?  Writing
+$\Sigma=m_1^2+m_2^2$ and $\Pi=m_1^2m_2^2$, the modewise fidelity obeys
+\begin{equation}
+1-f(k)=\frac{(\Sigma-\bar\Sigma)^2}{12k^4}+O(k^{-6}).
+\end{equation}
+If $\Sigma=\bar\Sigma$, the $k^{-6}$ term also vanishes and the first
+remaining obstruction is proportional to
+$29(\Pi-\bar\Pi)^2/(576k^8)$.  Since the two symmetric invariants
+$(\Sigma,\Pi)$ determine the unordered mass pair, the ultraviolet
+classification terminates:
+\begin{center}
+\begin{tabular}{c|c}
+spatial dimension & ultraviolet sector invariant\\
+\hline
+$d\le3$ & none\\
+$4\le d<8$ & $\Sigma=m_1^2+m_2^2$\\
+$d\ge8$ & $(\Sigma,\Pi)$, the unordered mass pair
+\end{tabular}
+\end{center}
+At $d=4$ and $d=8$ the corresponding obstruction is logarithmic, so the
+endpoints belong to the higher-dimensional rows shown.
+
+This is an \emph{ultraviolet} classification, not automatically a global
+GNS-equivalence theorem.  For strictly positive masses the infrared is
+regular.  Against the doubly massless $\Box^2$ vacuum, however, the
+relative occupation behaves as $k^{-3}$ and its infrared integral
+diverges for $d\le3$.  Whether the massless anchor belongs to the same
+global sector in those dimensions therefore remains open.  This is why
+``one ultraviolet sector'' must not be strengthened to ``one global
+representation.''
+
 \section{The fourth-order vacuum is locally well behaved}
 \label{sec:hadamard}
 
@@ -702,11 +768,13 @@ series \cite{paperV} asks the next question: can the free positive or
 Krein structure be continuously deformed when nonlinear processes are
 switched on?  The answer has four parts: generically yes at low
 perturbative order away from resonances; no on specific
-energy-conserving conversion channels; in field theory such channels
-become generic because momentum is continuous; and an exact doubled
-sector-exchange symmetry can survive even though positive
-pointed-sector metrics fail.  Figure~\ref{fig:interactions} summarizes
-the mechanism.
+energy-conserving conversion channels; in field theory continuous
+momentum makes such channels kinematically available for generic split
+masses, with the obstruction verified on a nonempty open shell subset;
+and an exact doubled sector-exchange symmetry can survive even though
+the analytic deformation of the canonical positive pointed-sector
+metric fails there.  Figure~\ref{fig:interactions} summarizes the
+mechanism.
 
 \begin{figure}[t]
 \centering
@@ -725,7 +793,7 @@ the mechanism.
 \node[box, below left=9mm and -14mm of conv, text width=40mm]
   (osc) {\textbf{finite oscillator:}\\ isolated rational resonances};
 \node[box, below right=9mm and -14mm of obst, text width=40mm]
-  (fld) {\textbf{field theory:}\\ generic scattering shells};
+  (fld) {\textbf{field theory:}\\ open scattering-shell subset};
 \node[box, fill=violet!8, below=42mm of $(conv)!0.5!(obst)$,
       text width=72mm]
   (dbl) {\textbf{massless perfect-square boundary:}\\
@@ -741,8 +809,9 @@ the mechanism.
 \end{tikzpicture}
 \caption{The interaction mechanism of \cite{paperV}: metric deformation
 meets on-shell conversion; isolated resonances in the oscillator become
-generic scattering shells in the field theory; at the massless boundary
-a doubled exchange structure survives.}
+kinematically available scattering shells in the field theory, with the
+obstruction verified on a nonempty open subset; at the massless boundary a
+doubled exchange structure survives.}
 \label{fig:interactions}
 \end{figure}
 
@@ -788,7 +857,15 @@ one high-frequency quantum can convert into three low-frequency quanta
 without changing the total energy, and the second-order correction is
 obstructed by exactly that conversion operator,
 $a_1a_2^{\dg3}-a_1^{\dg}a_2^3$.  At $2\w_1=3\w_2$ a third-order
-obstruction appears.  Imagine two musical notes: usually they are
+obstruction appears.  A transfer-lattice rule organizes which conversion
+monomials can first occur at each order.  Its first new prediction has
+been confirmed computationally: at $\w_1=5\w_2$ the second- and
+third-order classes vanish, while the fourth-order class is a nonzero
+$1\leftrightarrow5$ conversion proportional to
+$a_1a_2^{\dg5}-a_1^{\dg}a_2^5$.  This confirms one prediction of the
+proposed hierarchy; the general $p{:}q$ rule remains a conjecture.
+
+Imagine two musical notes: usually they are
 unrelated, but if one note has exactly three times the frequency of the
 other, one vibration can split into three without changing the total
 energy --- at that point the interaction is perfectly synchronized with
@@ -825,8 +902,8 @@ scattering $H+L\to L+L$.  Paper~V shows that the second-order
 positive-metric source is nonzero on an open scattering-shell subset
 (exactly, at a rational kinematic point, hence on an open neighborhood
 --- not claimed at every kinematic point): the continuum turns the
-oscillator's isolated resonance obstruction into a generic
-scattering-shell obstruction.  In a small mechanical system,
+oscillator's isolated resonance obstruction into an obstruction on a
+nonempty open part of a scattering shell.  In a small mechanical system,
 resonance requires the machine to be tuned to a special ratio; in a
 field, particles can change their momentum, and even if their masses
 are not specially tuned, their motion can supply the exact energy
@@ -834,9 +911,9 @@ match.
 
 The canonical positive completion therefore remains meaningful locally
 and perturbatively away from resonant processes, but it cannot
-generally be deformed into a positive pointed-sector metric once
-branch-changing scattering becomes exactly energy conserving.  One
-qualification is essential: this establishes that \emph{no analytic
+be deformed analytically into a positive pointed-sector metric on the
+verified branch-changing shell subset.  One qualification is essential:
+this establishes that \emph{no analytic
 deformation of the canonical metric} exists there --- not that no
 conceivable positive completion of any kind exists.  For the oscillator
 with certified complex energies the stronger conclusion is available;
@@ -907,16 +984,19 @@ regulated parity converges to is the linearization of that exchange
 around the two mirror backgrounds --- no stronger identification is
 claimed.
 
-The relation between the two structures is now verified to be sharp:
-the interacting on-shell scattering matrix is \emph{exactly}
-pseudo-Hermitian with respect to ghost-branch parity --- the Krein
-structure of \cite{BT2026} survives the interaction untouched ---
-while every positive metric fails, and the failing part is exactly the
-exchange-odd component.  The two escapes from the ghost problem,
-positive metric and Krein pairing, therefore \emph{separate} in the
-interacting theory: the second is not a hidden version of the first.
+The relation between the two structures is sharp in the verified
+perturbative setting.  At the rational shell point used to certify the
+field obstruction, the complete reachable second-order on-shell matrix is
+\emph{exactly} pseudo-Hermitian with respect to ghost-branch parity, and
+its entire positive-metric obstruction lies in the parity-odd block.  On
+the same matrix elements the Krein pairing is preserved while the analytic
+deformation of the canonical pointed positive metric is obstructed.  The
+two escapes from the ghost problem therefore \emph{separate}: the Krein
+completion is not a hidden version of that positive completion.  This does
+not exclude a nonanalytic or differently pointed positive construction,
+nor does it prove a complex field-theory spectrum.
 
-\paragraph{Terminology.}
+\paragraph{Terminology.}\leavevmode\par\noindent
 \emph{Positive pseudo-Hermitian metric}: a positive inner product
 obtained by changing the adjoint through a Dyson map.
 \emph{Metric deformation}: an order-by-order correction of that inner
@@ -978,8 +1058,10 @@ modes receive the positive PU metric while the helicity-$1$ and
 helicity-$0$ ghosts are treated in a Krein space: such an assignment is
 not Lorentz covariant.
 
-The gravity paper \cite{paperIV} therefore finds exactly two covariant
-completion classes:
+Within the class analyzed in the gravity paper \cite{paperIV} --- free,
+translation-invariant, quasifree, mode-local constructions compatible
+with the reduced symplectic form, the spectral condition, and Poincar\'e
+covariance --- there are exactly two covariant completion classes:
 \begin{enumerate}
 \item a positive pseudo-Hermitian completion in which the full massive
 spin-$2$ multiplet has uniformly rotated reality;
@@ -991,6 +1073,45 @@ The two completions induce the same complex gauge-invariant covariance,
 while differing in their involution and completion.  This is the
 gravitational version of the real-form distinction of
 Figure~\ref{fig:threelevels}.
+
+\section{The gauge-invariant gravitational bridge}
+\label{sec:gravitybridge}
+
+The equality of the two complex covariances is not merely a
+polarization-by-polarization analogy.  The reduced helicity kernels have
+residues fixed by the reduced symplectic form.  Their ratios
+$1:M^2:\tfrac13$ match the gauge-invariant contractions of the massive
+spin-$2$ projector,
+\begin{equation}
+\frac12:\frac{M^2}{2}:\frac16
+\end{equation}
+so they reassemble, modulo pure-gauge bi-distributions, with one overall
+coefficient $4/c_1$.  The massless
+shell couples only to the transverse-traceless polarizations.  Thus both
+real forms determine the same complex spectral functional on the algebra
+of linear gauge-invariant observables, rather than merely agreeing in a
+chosen helicity frame.
+
+The massive projector itself contains apparently singular terms
+$p_\mu p_\nu/M^2$.  Applying the linearized Weyl-tensor map annihilates
+all of them: the Weyl--Weyl kernel is gauge independent, covariant, and
+regular as $M\to0$, with the standard positive-frequency Hadamard
+wavefront directions.  This cancellation is why the conformal limit
+below is formulated on the curvature-generated regular subalgebra.  The
+raw scalar potential kernel does not have a regular limit; the divergent
+direction becomes Weyl-null and must first be quotiented out.
+
+\paragraph{Relation to CPT language.}
+Mannheim's CPT-based positive scalar product belongs, away from the
+conformal locus, to the positive class just described, with its uniformly
+rotated massive reality \cite{Mannheim2016}.  At the Jordan boundary the
+no-go theorem excludes a time-independent, nondegenerate,
+positive-definite invariant form; it does not exclude the intrinsically
+Jordan realization of Bender and Mannheim, which uses nonstationary
+Jordan states and a degenerate pairing \cite{BM2008PRD}.  The two
+statements are therefore compatible: the theorem delimits which positive
+completion terminates, rather than declaring the equal-frequency theory
+nonexistent.
 
 \section{The conformal Jordan boundary}\label{sec:conformal}
 
@@ -1063,17 +1184,22 @@ the physical Dyson equivalence from the auxiliary identity-embedding
 obstruction.
 \item[Paper III \cite{paperIII}] separates metric geometry, vacuum
 covariance, dynamical Jordan structure, and field representation theory;
-identifies the common spectral divided-difference covariance, its
-confluent limit, and its fourth-order Hadamard structure.
+derives the terminating dimension-dependent ultraviolet sector hierarchy;
+and identifies the common spectral divided-difference covariance, its
+confluent limit, and its fourth-order Hadamard structure, with the
+doubly-massless global infrared question left open.
 \item[Paper IV \cite{paperIV}] determines how gauge reduction and Lorentz
 covariance change the classification in gravity: the helicity
-stratification, the exclusion of covariant hybrid completions, and the
-conformal Jordan boundary.
+stratification, the exclusion of covariant hybrid completions, covariant
+projector reassembly and the regular gauge-invariant Weyl correlator, and
+the conformal Jordan boundary, within the stated free quasifree class.
 \item[Paper V \cite{paperV}] tests which free completions survive
 interactions: the deformation and obstruction theory of
 Section~\ref{sec:interactions} --- generic deformability, resonance
-obstructions, spectral complexification, the generic continuum shell
-obstruction, and the exact doubled sector-exchange symmetry.
+obstructions and their transfer lattice (including the computational
+$5{:}1$ test), spectral complexification in an effective oscillator
+multiplet, the open-subset continuum shell obstruction, and the exact
+doubled sector-exchange symmetry.
 \end{description}
 
 In one paragraph: the five papers develop a progression from free
@@ -1086,7 +1212,8 @@ classification in quadratic gravity.  The fifth asks whether the free
 completions survive interactions: the positive metric deforms away from
 resonances but is obstructed by exactly energy-conserving
 branch-changing processes --- on isolated rational loci in the
-oscillator and on generic scattering shells in the field theory ---
+oscillator and on a verified nonempty open subset of a scattering shell
+in the field theory ---
 while at the massless perfect-square boundary an exact doubled exchange
 survives between two oppositely oriented Jordan sectors.  The resulting
 question is no longer simply whether a ghost can be assigned positive
@@ -1131,7 +1258,7 @@ actual interactions of the theory.
   {\textbf{Paper V} \cite{paperV}\\
    interactions: deformation complex;\\
    resonance obstructions, PT breaking;\\
-   generic shells; doubled exchange};
+   open shell subset; doubled exchange};
 \draw[arr] (p3) -- (p5) node[lab, left]{modewise metric};
 \draw[arr] (p4) -- (p5) node[lab, right]{next: EW vertices};
 \end{tikzpicture}
@@ -1199,14 +1326,17 @@ and gravity adds gauge symmetry and Lorentz covariance, which remove
 some pairings and force the massive spin-$2$ multiplet to be treated as
 a whole.
 
-The interaction results complete the picture: the positive
+The interaction results extend the picture: the positive
 pseudo-Hermitian construction is a valid local resolution of the free
-and nonresonant weakly interacting theory.  It is not generically
-stable under exactly energy-conserving branch-changing processes.  In
-field theory, the momentum continuum makes such processes far more
-common than in a finite oscillator.  At the massless perfect-square
-boundary, the surviving structure is instead an exact exchange between
-two oppositely oriented Jordan sectors.
+and, through the computed perturbative orders, nonresonant weakly
+interacting theory.  It is not generically
+stable under exactly energy-conserving branch-changing processes: in the
+field calculation the analytic deformation of the canonical pointed
+metric is obstructed on a verified nonempty open shell subset.  Continuous
+momentum makes the relevant shells kinematically available far more
+generally than in a finite oscillator.  At the massless perfect-square
+boundary, an exact exchange between two oppositely oriented Jordan sectors
+survives in the extended theory.
 
 The resulting view is neither that higher-derivative ghosts are
 automatically harmless nor that they automatically invalidate a theory.
@@ -1285,6 +1415,11 @@ Int.\ J.\ Geom.\ Meth.\ Mod.\ Phys.\ \textbf{7} (2010) 1191.
 P.~D.~Mannheim,
 \emph{Solution to the ghost problem in higher-derivative gravity},
 arXiv:2109.12743.
+
+\bibitem{Mannheim2016}
+P.~D.~Mannheim,
+\emph{CPT symmetry without Hermiticity},
+arXiv:1611.02100.
 
 \bibitem{Stelle}
 K.~S.~Stelle,

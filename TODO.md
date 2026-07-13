@@ -8,7 +8,7 @@ holds only open items.
 
 1. [x] Freeze tags created and pushed 2026-07-13. Current set (after
    the series-wide framing pass, same day): `paper1-v1.2`,
-   `paper2-v1.3`, `paper3-v1.3`, `paper4-v1.1`, `paper5-v1.0` (each
+   `paper2-v1.3`, `paper3-v1.3`, `paper4-v1.1`, `paper5-v1.1` (each
    referenced in its paper's Verification paragraph; earlier tags
    remain for history).
 1b. [ ] Mint a DOI for the archived commit (team asked for "immutable
@@ -138,16 +138,25 @@ holds only open items.
       vanish at 5:1, gauge-independent, ω₂^{−9} scaling (series
       𝔬₊^(n) ∝ ω₂^{−(5n−2)/2}), R₄ = O(ε⁻⁶) (4th point of ε^{−3n/2}).
       Hierarchy conjecture p+q−2 (odd p) now verified at 3 points.
-    - NEXT (the decisive one, team 2026-07-13): **transport the
-      obstruction through the Bateman–Turok R_t embedding** and test
-      the null-C hypothesis (obstruction ↦ null orthogonal component
-      invisible to their Born rule). BT machinery digested in
-      notes/bateman-turok-embedding.md — CAVEAT: BT's Eq.(19) proof
-      and the "no positively charged operators" lemma are deferred to
-      their companion paper ("to appear"), R_±∞ convergence
-      unaddressed, so our test must be self-contained. Steps 1–2, 6–7
-      of the team's 7-step program remain (3–5 done in the pointed
-      frame by DQ8).
+    - DONE (step 11, 2026-07-14): obstruction-to-null STAGE 1
+      (verify_obstruction_null.py ON1–ON4 ALL PASS + paper-5 Lemma
+      lem:chargenull + Comp. Prop. cprop:embedding, tag paper5-v1.1):
+      charge-null lemma self-contained (graded Krein trace, kinematic);
+      canonical Bogoliubov map to the BT charge basis; **EXACT law
+      S_UU/S_VV = εg** for the mapped vacuum's charged squeezing —
+      one-sided iff ε = 0 (massless PS point), confluent S_VV →
+      −1/(4w²) = BT (C5)–(C6); no adapted frame at split (dispersion
+      scan + charge-preserving Bogoliubov runaway). BT null-relocation
+      exact AT the boundary; O(ε/g) contamination at split = charge-
+      frame image of PS-D broken parity.
+    - NEXT (ON5, precise spec): boundary Born-trace evaluation —
+      build the mapped process operator A = Σ T_xy|x⟩⟨y| (exact DQ8
+      2×2 T) on a truncated charge-Fock space with the squeezed
+      vacuum; charge-decompose; verify the obstruction coefficient
+      never enters the NEUTRAL component B; compute τ(B†B) vs
+      τ_φ(A†A) and the ε → 0 limit → the obstruction-to-null theorem
+      (paper-5 capstone). Machinery: cross-paired Gram + graded trace
+      from ON1, map from ON2, squeezing from ON3.
     - Then: (b) vacuum-overlap / superselection as the r = 0
       boundary / self-adjoint-extension problem in (r,χ) coordinates
       (singular q²/r barrier); (c) normal-ordered operator Ward

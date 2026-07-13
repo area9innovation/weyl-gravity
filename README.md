@@ -7,23 +7,42 @@ papers (an expository introduction, four technical papers on the free
 theories, and an interacting-deformation paper), a Lean formalization,
 and a machine-checked verification pipeline.
 
+## Overview
+
+The series does not propose a new free-theory cure for the
+higher-derivative ghost. It classifies and canonically reconstructs the
+known Bender--Mannheim positive quantization, relates it to the
+Bateman--Turok Krein construction through a common **free complex spectral
+covariance**, and separates the additional choices of real form,
+involution, observable algebra, and completion. The free positive metric
+is geometrically canonical, but that kinematic optimality does not imply
+interacting stability: Paper 5 finds on-shell conversion obstructions to
+its analytic deformation, while an exact doubled Krein/ghost-parity
+structure survives at the massless perfect-square boundary and controls
+the verified on-shell matrix elements. The gravity paper adds gauge
+reduction and Lorentz covariance; its two-completion classification is
+explicitly a free, translation-invariant, quasifree, mode-local result,
+not a completed interacting theory of gravity.
+
 ## The papers (`paper/`)
 
 | # | File | Title | Status |
 |---|------|-------|--------|
-| 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series, incl. the interaction results) | draft (22 pp.) |
+| 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series, incl. the interaction results) | draft (24 pp.) |
 | 1 | `symplectic-diagonalization.tex` / `.pdf` | **Canonical Positive Symplectic Diagonalization of the Pais–Uhlenbeck Oscillator** | frozen, tag `paper1-v1.2` (17 pp.) |
 | 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.3` (14 pp.) |
 | 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.3` (13 pp.) |
 | 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | frozen, tag `paper4-v1.1` (15 pp.) |
-| 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions, Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order Theories** | frozen, tag `paper5-v1.0` (16 pp.; accepted by team referee, then extended: 5:1 confirmation, Krein separation, literature repositioning) |
+| 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions, Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order Theories** | frozen, tag `paper5-v1.1` (17 pp.; accepted by team referee, then extended: 5:1 confirmation, Krein separation, literature repositioning, charge-null lemma + regulated-embedding proposition) |
 
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.
 
 **Paper 1** (the audit paper): the Bender–Mannheim generator Q is
 *reconstructed* from the normal-form data (G, J, G₀) + positivity rather than
-assumed; unique Hermitian-positive diagonalizer; stabilizer SO(2,ℂ)²;
+assumed; unique Hermitian-positive diagonalizer; stabilizer SO(2,ℂ)²
+(unitary part generically ℤ₂² in the canonical coordinates, never the
+full U(1)²);
 corrected claims (canonical rescaling d_xd_y = γω₁ω₂, polar-factor
 non-uniqueness); metric classification η′ = ρ†Wρ; distance d(I, M_obs) = 2r;
 exact equal-frequency divergence; Lean-formalized Jordan no-go theorem.
@@ -34,13 +53,19 @@ diagonalizer coset with exact closed form arccosh(cosh r cosh b) ± a
 projection principle via the canonical compatible hull C_θ(H) = SL(2,ℂ)²
 (totally geodesic ℍ³×ℍ³), proved in iff form, with the Sp(2n,ℂ) inter-mode
 theorem. Plus the field-theory part: exact PT ground state, fidelity → √3/2,
-occupation → 1/3 per UV mode pair, disjoint representations in every d ≥ 1.
+occupation → 1/3 per UV mode pair, and disjoint auxiliary standard-CCR
+product representations under the identity embedding in every d ≥ 1;
+the physical Dyson-transported completions are instead pointed-unitarily
+equivalent.
 
 **Paper 3**: the three-geometries separation (metric ≠ vacuum ≠ dynamical);
 Cartan–parabolic decoupling (beam-splitter identity, analytic no-frame
 lemma); orbit constancy ⇒ universal Fock obstruction Θ(VΛ^d) for *all*
-positive metrics; one universal UV-dressed sector for d ≤ 3 anchored by the
-□² vacuum, terminating sector hierarchy (∅ | Σ | (Σ,Π) at d<4 | 4≤d<8 | d≥8);
+admissible positive metrics on the common auxiliary algebra; terminating
+ultraviolet sector hierarchy (no UV invariant for d ≤ 3; Σ for
+4 ≤ d < 8; the unordered mass pair (Σ,Π) for d ≥ 8). Global
+equivalence involving the doubly massless □² vacuum requires a separate
+infrared analysis and is not claimed;
 **spectral bridge theorem**: the selected vacuum's Wightman function is the
 spectral two-point functional of the fourth-order operator for all Δ ≥ 0,
 whose confluent limit is the Bateman–Turok Krein vacuum (arXiv:2607.00096) —
@@ -48,8 +73,10 @@ same quasifree functional, different completion; fourth-order Hadamard
 theorem (WF = 𝒞⁺, log ρ singularity with universal coefficient 1/(8π²),
 ±KG-Hadamard split structure).
 
-**Paper 4** (the gravity lift): classification and covariance-obstruction
-theorem for free scalar-free Einstein–Weyl gravity (α = −3β).
+**Paper 4** (the gravity lift): within translation-invariant, quasifree,
+mode-local constructions satisfying the spectral condition and Poincaré
+covariance, a classification and covariance-obstruction theorem for free
+scalar-free Einstein–Weyl gravity (α = −3β).
 Diffeomorphism reduction stratifies the phase space — PU pairing survives
 exactly at helicity ±2 (γ = α/2, masses (M,0), M² = c₁/α); helicities
 ±1, 0 are *unpaired* massive ghosts subject to a completion trilemma
@@ -65,30 +92,36 @@ scalar → Weyl-null; count 4+2+0 = 6) at which the positive form terminates
 
 **Paper 5** (the interaction paper): deformation and obstruction theory
 for the interacting completions. Three levels of failure of the positive
-construction — geometric (Rₙ ~ ε^{−3n/2} toward the Jordan boundary),
+construction — geometric (the fixed-order deformation generators become
+singular toward the Jordan boundary; the general Rₙ ~ ε^{−3n/2} law is
+conjectural),
 cohomological (exact on-shell conversion classes at ω₁ = 3ω₂, order 2,
 and ω₁ = (3/2)ω₂, order 3, gauge-independent, with a transfer-lattice
 selection rule), and spectral (a complex-conjugate pair in the E = 27ω₂
-multiplet, exact by Sturm certificate; formally defined PT breaking with
-𝒜 = Π∘Θ constructed). In the perfect-square field theory an even-ghost
+multiplet's effective resonant-shell matrix, exact by Sturm certificate;
+formally defined PT breaking with 𝒜 = Π∘Θ constructed; persistence
+for the full unbounded operator remains open). In the perfect-square field
+theory an even-ghost
 rule protects the positive metric at first order, but the momentum
 continuum makes branch-changing H+L → L+L shells generic and the
-second-order deformation is obstructed on an open shell subset (exact
-value 401√6/(39424g²) at a rational kinematic point). What survives at
+analytic deformation of the canonical pointed metric is obstructed on a
+nonempty open shell subset (exact value 401√6/(39424g²) at a rational
+kinematic point). What survives at
 the massless boundary is the exact two-field exchange U↔V of
 ℒ = −∂U·∂V + (λ²/2)U²V² (the Bateman–Turok O(1,1) embedding; they
 identified the exchange as ghost parity) — a sector-exchanging
 involution between two oppositely oriented interaction-generated
 Jordan sectors, whose linearization is the bounded confluent limit of
 the regulated branch parity on the doubled space. The hierarchy
-conjecture's first prediction is confirmed: 5:1 is unobstructed through
-order 3 and obstructed at order 4 by exactly
+conjecture's first prediction is confirmed computationally: 5:1 is
+unobstructed through order 3 and obstructed at order 4 by exactly
 −(203125√5/2341011456)(a₁a₂†⁵−a₁†a₂⁵). And the two completions
-*separate* in the interacting theory: the on-shell T is exactly
-ghost-parity (Krein) pseudo-Hermitian — the obstruction lives entirely
-in the κ-odd block — so the Krein completion survives precisely the
-matrix elements on which every positive pointed metric fails, and
-cannot be a hidden positive completion.
+*separate* in the verified perturbative setting: at the rational shell
+point the complete reachable on-shell T is exactly ghost-parity (Krein)
+pseudo-Hermitian and the obstruction lives entirely in its κ-odd block,
+while the analytic positive pointed-metric deformation is obstructed. The
+result does not exclude a nonanalytic or differently pointed positive
+completion.
 
 ## Reports (`reports/`)
 
@@ -140,6 +173,12 @@ Symbolic (SymPy):
   pointed positive metric), finite-time paired pseudo-unitarity,
   κ-odd localization of the on-shell obstruction, classical Ward
   identity with exact regulator breaking.
+- `verify_obstruction_null.py` (ON1–ON4) — obstruction-to-null program:
+  finite-particle charge-null lemma (graded Krein trace), canonical
+  Bogoliubov map of the regulated split theory onto the cross-paired
+  Bateman–Turok charge basis, exact law S_UU/S_VV = εg for the mapped
+  vacuum's charged squeezing (one-sided iff ε = 0, confluent
+  coefficient −1/(4w²) matching BT (C5)–(C6)), no-adapted-frame scans.
 - `verify_51_order4.py` (FO1–FO9) — order-4 machinery (programmatic
   adjoint-series word generation, re-derives orders 2–3 exactly):
   5:1 obstruction confirmed at order 4, ω₂⁻⁹ scaling, gauge
@@ -170,12 +209,12 @@ cd symbolic && python3 verify_gravity_completion.py  # paper 4, G8–G9
 cd symbolic && python3 verify_gravity_spectral.py    # paper 4, G10–G12
 cd numeric  && python3 regression.py && python3 distortion_scan.py && python3 cartan_checks.py
 cd lean     && lake exe cache get && lake build    # zero sorry
-cd symbolic && for f in verify_interaction_deformation verify_interaction_order3 verify_pt_breaking verify_perfect_square verify_two_field verify_sector_obstruction verify_hardening verify_doubled_theory verify_51_order4; do python3 $f.py; done   # paper 5
+cd symbolic && for f in verify_interaction_deformation verify_interaction_order3 verify_pt_breaking verify_perfect_square verify_two_field verify_sector_obstruction verify_hardening verify_doubled_theory verify_51_order4 verify_obstruction_null; do python3 $f.py; done   # paper 5
 cd paper    && for f in symplectic-diagonalization variational-fock fourth-order-vacuum fourth-order-gravity ghosts-geometry-reality interaction-obstructions; do pdflatex $f.tex; done
 ```
 
 Release tags: `paper1-v1.2`, `paper2-v1.3`, `paper3-v1.3`,
-`paper4-v1.1`, `paper5-v1.0` (current freezes; earlier tags remain for
+`paper4-v1.1`, `paper5-v1.1` (current freezes; earlier tags remain for
 history). Before submission: replace
 "companion paper" citations with arXiv IDs, check the "to appear"
 references, match IR-extension conventions noted in paper 3's bridge

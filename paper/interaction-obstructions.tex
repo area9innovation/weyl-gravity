@@ -116,7 +116,9 @@ transfer-lattice selection rule organizes the hierarchy
 (Section~\ref{sec:selection}), whose first prediction is confirmed:
 $5{:}1$ is unobstructed through order 3 and obstructed at order 4,
 exactly on the predicted monomial
-(Proposition~\ref{cprop:fiveone}); the deformation diverges toward the
+(Proposition~\ref{cprop:fiveone}) --- the hierarchy is thereby
+verified through order four at three qualitatively distinct
+resonances; the deformation diverges toward the
 Jordan boundary, with exact leading asymptotics at first order and
 measured geometric growth beyond (Section~\ref{sec:jordanscaling}).
 
@@ -207,7 +209,7 @@ multiplies the cubic vertex and coincides with the coupling.
 Every finite-dimensional, modewise, and distributional identity in this
 paper is machine-verified in the directory
 \texttt{physics/symplectic-reconstruction} of the repository
-accompanying the series (release tag \texttt{paper5-v1.0}; SymPy
+accompanying the series (release tag \texttt{paper5-v1.1}; SymPy
 1.14.0, NumPy 2.4.4, Python 3.14).  Appendix~\ref{app:checks} maps
 checks to theorems and classifies each check as exact-symbolic,
 exact-rational (Sturm/charpoly), or high-precision numerical.
@@ -817,7 +819,81 @@ part, and only the former contributes to their generalized Born rule
 (Proposition~\ref{cprop:krein}), the conjecture is that it is carried
 into the null component --- obstructing every positive metric while
 remaining invisible to the Krein probabilities.  Verifying this on the
-computed $H+L\to L+L$ element is the concrete next calculation.
+computed $H+L\to L+L$ element is the concrete next calculation; the
+lemma and the proposition below supply its verified ingredients.
+
+\paragraph{The charge-null mechanism.}
+Throughout this paragraph $\dg$ denotes the Krein adjoint and $\tau$
+the Krein trace.  The following finite-particle lemma makes the
+null-relocation mechanism self-contained (it is the statement used in
+\cite{BT2026}, whose general proof is deferred to their companion
+paper; for boost weights it is a three-line grading argument).
+
+\begin{lemma}[Charge null]\label{lem:chargenull}
+Let a Krein space carry an $SO^+(1,1)$ charge grading whose pairing
+couples charge $q$ only to charge $-q$, and suppose the Krein adjoint
+preserves charge --- as it does for boost weights, where $c$ and
+$c^{\dg}$ of one field carry the \emph{same} charge.  Then
+$\tau(A_q)=0$ for every $q\neq0$.  Consequently an operator
+$C=\sum_{q<0}C_q$ containing only strictly negative charges satisfies
+$\tau(C^{\dg}C)=0$ and $\tau(B^{\dg}C)=0$ for every neutral $B$: $C$
+is null and orthogonal to the neutral sector, and the generalized Born
+trace of a weakly ghost-symmetric process depends on its neutral part
+alone.
+\end{lemma}
+
+\begin{proof}
+Boost invariance of the trace gives
+$\tau(A_q)=\tau(\alpha_\sigma A_q)=e^{q\sigma}\tau(A_q)$ for all
+$\sigma$, hence $\tau(A_q)=0$ for $q\neq0$; equivalently, on a
+charge-graded Fock space a grading-raising operator is traceless.
+Charge preservation under the adjoint gives
+$q(C_{q}^{\dg}C_{r})=q+r<0$ and $q(B^{\dg}C_{r})=r<0$ term by term.
+\end{proof}
+
+\begin{cproposition}[Regulated embedding and its charge structure]
+\label{cprop:embedding}
+At the rational kinematic point, per momentum sector, the regulated
+split theory admits a canonical Bogoliubov map onto the cross-paired
+charge basis of a neutral reference theory
+$-\partial u\,\partial v-\tilde\mu^2uv$ (operators $c_U$, $c_V$ with
+the only nonvanishing commutators $[c_U,c_V^{\dg}]=[c_V,c_U^{\dg}]$;
+charges $q(c_U^{(\dg)})=+1$, $q(c_V^{(\dg)})=-1$, the analogue of
+Bateman--Turok's $b_\Omega,b_\Upsilon$).  The pointed vacuum maps to a
+Gaussian state whose squeezing components obey, exactly and for every
+reference dispersion,
+\begin{equation}
+\frac{S_{UU}}{S_{VV}}=\Big(\frac{\delta}{2g}\Big)^{2}g^{2}
+=\epsilon\,g ,
+\end{equation}
+i.e.\ the charge $+2$ component is sourced by the regulator
+$\tfrac\epsilon2u^2$ and the charge $-2$ component by the
+interaction-generated $\tfrac g2v^2$.  The embedding is strictly
+one-sided --- no positive charges in the vacuum image, the hypothesis
+of Lemma~\ref{lem:chargenull} for the mapped theory --- if and only if
+$\epsilon=0$: the unregulated massless perfect-square point.  There
+the confluent limit gives $S_{VV}\to-1/(4w^2)$, precisely the
+coefficient structure of the Bateman--Turok Bogoliubov data
+(their Eqs.~(C5)--(C6)).  At split masses no admissible charge frame
+removes the $+2$ component: it is invariant under the reference
+dispersion and, under the residual charge-preserving Bogoliubov
+freedom, the zero locus is reached only in a degenerate
+(confluent-type) frame.  (Checks ON1--ON4,
+\texttt{verify\_obstruction\_null.py}.)
+\end{cproposition}
+
+The proposition is the charge-frame image of the first-order result of
+Section~\ref{sec:firstfield}: real ghost decay above threshold breaks
+the sectorwise branch parity, and in the charge frame the same
+$\epsilon$ sources the charge $+2$ contamination that violates weak
+ghost symmetry.  The relocation of the $\kappa$-odd obstruction into a
+null negative-charge component is therefore exact precisely at the
+massless boundary, and holds at split masses up to charge
+contamination of relative size $\epsilon/g$.  The remaining,
+precisely-posed step --- the obstruction-to-null theorem --- is the
+boundary Born-trace evaluation: the neutral component's blindness to
+the obstruction coefficient and its $\epsilon\to0$ limit.
+Lemma~\ref{lem:chargenull} makes that step self-contained.
 
 \paragraph{Open questions.}
 Whether the two pointed sectors admit parity vacua
@@ -1106,6 +1182,8 @@ DQ3--DQ6 & doubled pairing, graph, pseudo-unitarity & numeric\\
 DQ7--DQ8 & Comp.\ Prop.~\ref{cprop:krein} & exact symbolic\\
 FO1--FO9 & Comp.\ Prop.~\ref{cprop:fiveone},
 Conj.~\ref{conj:hierarchy} & exact symbolic\\
+ON1--ON4 & Lemma~\ref{lem:chargenull},
+Comp.\ Prop.~\ref{cprop:embedding} & exact symbolic + numeric\\
 \hline
 \end{tabular}
 \end{center}
@@ -1119,6 +1197,7 @@ Scripts, in \texttt{symbolic/}, each printing \texttt{ALL PASS}:\\
 \texttt{verify\_sector\_obstruction.py} \quad
 \texttt{verify\_hardening.py} \quad
 \texttt{verify\_doubled\_theory.py} \quad
-\texttt{verify\_51\_order4.py}
+\texttt{verify\_51\_order4.py} \quad
+\texttt{verify\_obstruction\_null.py}
 
 \end{document}

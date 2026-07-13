@@ -1383,3 +1383,56 @@ III identifies the common covariance and separates real form/completion
 → IV classifies gauge/Lorentz effects in gravity → V proves
 positive-metric deformability fails on interacting on-shell channels
 while the Krein structure survives (the separation statement).
+
+## 2026-07-14 — Obstruction-to-null program, stage 1: charge-null lemma + regulated embedding
+
+Team directive: make the reconciliation self-contained (avoid BT's
+unpublished companion proof) via the charge-null lemma, compute the
+two-particle R_t image, locate the obstruction coefficient, evaluate
+the Born trace. Stage 1 done (verify_obstruction_null.py ON1–ON4,
+ALL PASS); the paper gains Lemma lem:chargenull + Comp. Prop.
+cprop:embedding (paper 5 now 17 pp., tag → paper5-v1.1).
+
+Findings:
+- ON1: charge-null lemma verified in a finite graded Krein model
+  (cross-paired pair, Gram couples q to −q): tr(A_q) = 0 for q ≠ 0,
+  Krein adjoint preserves charge, τ(C†C) = τ(B†C) = 0 for strictly
+  negative C, τ(B†B) ≥ 0 for κ-symmetric neutral B. Kinematic — holds
+  at ANY δ; the dynamical question is one-sidedness of images.
+- ON2: canonical Bogoliubov map of the regulated split theory (rational
+  point) onto the cross-paired charge basis (c_U q=+1, c_V q=−1,
+  analogue of b_Ω, b_Υ): field commutators and W Kb Wᵀ = Kc exact.
+  Each pushed branch operator mixes BOTH charges — one-sidedness can
+  only come from the vacuum + cancellation structure.
+- ON3 (the discovery): the mapped pointed vacuum is a Gaussian whose
+  charged squeezing obeys the EXACT law S_UU/S_VV = (δ/2)² = εg
+  (sympy, generic w±, Ω — reference-dispersion independent): the
+  charge +2 component is sourced by the ε-regulator, the −2 component
+  by the interaction-generated (g/2)v². One-sided ⟺ ε = 0 (the
+  unregulated massless PS point = BT's theory). Confluent limit:
+  S_VV → −1/(4w²) — exactly BT's (C5)–(C6) coefficient structure.
+  No adapted frame at split masses: dispersion scan sign-definite;
+  charge-preserving Bogoliubov freedom runs away to a degenerate
+  confluent frame (ON3d/ON3f).
+- Physics: this is the charge-frame image of PS-D (branch parity
+  broken by real ghost decay above threshold): the same ε that opens
+  real ghost decay sources the charge +2 contamination violating weak
+  ghost symmetry. BT's null-relocation of the κ-odd obstruction is
+  exact precisely at the massless boundary; at split masses it holds
+  up to O(ε/g).
+- Failed hypotheses (recorded): geometric-mean reference dispersion
+  Ω² = w₊w₋ does NOT zero S_UU (hand algebra error, caught by the
+  numerics); no dispersion does.
+
+Remaining (ON5, queued with precise spec): boundary Born-trace
+evaluation — neutral-component blindness to the obstruction
+coefficient and its ε → 0 limit on the truncated charge-Fock space
+(mapped process operator A = Σ T_xy|x⟩⟨y| with the exact DQ8 T-matrix;
+charge decomposition; τ(B†B) vs τ_φ(A†A)). Then, per team: the
+doubled/CPT branch is complete enough — next new physics is the cubic
+Einstein–Weyl obstruction (paper 6).
+
+Also this session: "verified hierarchy through order four" wording in
+paper 5's intro; checks table + scripts list updated. Parallel
+(other-team) edits to paper 0 (+229 lines) and README (Overview
+section) preserved and committed alongside.
