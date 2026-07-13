@@ -265,14 +265,35 @@ holds only open items.
       `N_-=4(E+1)(E-2)` (`N_-(3)=16`).  The conventional radial-adjoint
       form is therefore nondegenerate but indefinite; this does not yet
       test a separately defined Mannheim left-right/CPT adjoint.
+    - DONE (CONFORMAL C0c, 2026-07-13):
+      `verify_conformal_mannheim_adjoint.py` separates right kets,
+      ordinary-adjoint bras, left bras, the intertwiner `G`, and the
+      spectral `C` operator.  Every nondegenerate conserved Hermitian form
+      on a rank-two Jordan block has `det G=-c^2<0`.  Bender--Mannheim's
+      published equal-frequency overlap (their Eq. (95)) is exactly
+      congruent to `sigma_x` after the allowed generalized-vector shift,
+      and hence is the same Jordan-dual algebra as the Kubo--Kuntz cross
+      commutator.  In the universal split regulator, the positive
+      `V_delta=P C_delta=diag(delta,1/delta)` and the nontrivial spectral
+      `C_delta` both become singular; only the indefinite cross form stays
+      finite.  At the Jordan point a commuting involution is only `+-I`.
+      C0b uniqueness then implies that every fixed, standard-real,
+      full-`SO(4,2)` Hermitian extension is `c J_conf`, not a second
+      positive metric.  A distinct Mannheim proposal must therefore be
+      dynamical/time-dependent, singular, doubled, state-restricted, or a
+      genuinely modified probability functional.  The exact first-order
+      Jordan metric-deformation map and its two-real-dimensional cokernel
+      are recorded as the interface to C1.
     - NEXT (CONFORMAL C1): construct the lowest complete cubic
       cylinder-energy blocks in the ordinary-derivative Weyl action.
       Use the C0b Shapovalov signature to test `V_3^sharp=V_3`, keeping
       all TT and vector descendants at the same compact energy.  First
       translate the exact Einstein-subsector zeros into radial harmonics;
       do not label a cylinder branch directly by the flat `E/L` basis.
-      Only after the conventional block is complete should a distinct
-      Mannheim left-right adjoint be tested.  Four-point divided
+      Test both the fixed `J_conf` source and the C0c Jordan-deformation
+      cokernel.  A separate Mannheim test is meaningful only if an explicit
+      dynamical, singular, doubled, or nonquadratic prescription is supplied;
+      there is no second fixed free form to scan.  Four-point divided
       differences remain a later regression rail, not the definition of
       conformal states.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —

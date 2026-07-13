@@ -1,10 +1,11 @@
 # Conformal C0: direct free pairing before the interaction test
 
-Status: C0a and C0b are exact and machine-verified by
+Status: C0a, C0b, and C0c are exact and machine-verified by
 `symbolic/verify_conformal_free_pairing.py` and
-`symbolic/verify_conformal_cylinder_form.py`. C1 is the next active
-calculation. This note is a research ledger, not a programme-overview
-update and not yet a manuscript claim.
+`symbolic/verify_conformal_cylinder_form.py`, and
+`symbolic/verify_conformal_mannheim_adjoint.py`. C1 is the next active
+calculation. This note is a research ledger, not a programme-overview update
+and not yet a manuscript claim.
 
 ## Decision
 
@@ -345,6 +346,244 @@ adjoint must be stated explicitly and then tested against the same full
 conformal module and the interaction. Kubo--Kuntz's flat completeness
 relation and Mannheim's flat zero-norm eigenstates concern `P_0`; the
 cylinder signature concerns `D`.
+
+## C0c: Mannheim--Kubo--Kuntz adjoint comparison
+
+C0c separates four objects that coincide only in an ordinary Hermitian
+theory:
+
+```text
+right ket                  |R>,
+ordinary Dirac bra         <R|,
+left bra                   <L| = <R| G,
+spectral involution        C|R>.
+```
+
+Mannheim's general conservation equation is
+
+```text
+H^dagger G = G H,
+```
+
+which he denotes with `G=V`. This is the correct covariance equation. A
+plain commutator `[G,X]=0` is not the invariant-form condition for a
+non-Dirac-unitary representation. The primary sources used for the
+comparison are Bender--Mannheim's exact equal-frequency construction
+[arXiv:0804.4190](https://arxiv.org/abs/0804.4190), Mannheim's general
+`V`-intertwiner discussion
+[arXiv:1611.02100](https://arxiv.org/abs/1611.02100) and
+[arXiv:1708.01247](https://arxiv.org/abs/1708.01247), and the conformal-
+gravity interpretation in
+[arXiv:2109.12743](https://arxiv.org/abs/2109.12743).
+
+### The equal-frequency left-right form is forced to be indefinite
+
+For the canonical rank-two block
+
+```text
+H_0 = [[E,1],
+       [0,E]],
+```
+
+the most general Hermitian matrix satisfying `H_0^dagger G=G H_0` is
+
+```text
+G = [[0,c],
+     [c,b]],              b,c real.
+```
+
+It is nondegenerate precisely when `c != 0`, in which case
+
+```text
+det G = -c^2 < 0.
+```
+
+Thus every nondegenerate conserved Hermitian form on a genuine Jordan block
+has signature `(1,1)`. The stationary eigenvector is null. The freedom
+`r_1 -> r_1+s r_0` removes `b`; after normalization the unique form is
+`sigma_x`, up to an overall sign.
+
+This is visible directly in the published wavefunctions. In the ordered
+basis `(stationary 1, nonstationary 1a)`, Bender--Mannheim Eq. (95) gives,
+after suppressing the positive constant
+`kappa=pi/(8 gamma^2 omega^4)`,
+
+```text
+G_BM = [[0,      -kappa],
+        [-kappa, -kappa/omega]].
+```
+
+Its determinant is `-kappa^2`. The allowed shift
+
+```text
+|1a> -> |1a> - |1>/(2 omega)
+```
+
+reduces it exactly to `-kappa sigma_x`. Consequently, the displayed
+equal-frequency left-right product is conserved and nondegenerate on the
+complete initial-data space, but it is not a positive-semidefinite Hermitian
+form. A positive-semidefinite form could not pair a null vector
+nontrivially with its generalized partner.
+
+### The four objects in the Jordan basis
+
+Let `r_0=(1,0)^T` be the right eigenvector and `r_1=(0,1)^T` its generalized
+partner. With `G=sigma_x`,
+
+```text
+ordinary bras:   r_0^dagger=(1,0),  r_1^dagger=(0,1),
+left bras:       l_0=(0,1),         l_1=(1,0).
+```
+
+They obey
+
+```text
+H r_0 = E r_0,                 H r_1 = E r_1+r_0,
+l_0 H = E l_0,                 l_1 H = E l_1+l_0,
+<l_0|r_0> = <l_1|r_1> = 0,
+<l_0|r_1> = <l_1|r_0> = 1.
+```
+
+The correct completeness relation is cross-paired:
+
+```text
+I = |r_0><l_1| + |r_1><l_0|.
+```
+
+This is the finite-dimensional algebra behind Mannheim's stationary plus
+nonstationary completeness relation and Kubo--Kuntz's `h/H` cross
+commutator. It preserves evolution exactly,
+
+```text
+U(t)^dagger G U(t)=G,
+```
+
+but this pseudo-unitarity is with an indefinite form.
+
+### What becomes singular at coalescence
+
+The universal diagonalizable regulator
+
+```text
+H_delta = [[E,       1],
+           [delta^2, E]]
+```
+
+has eigenvalues `E+-delta`. With `P=sigma_x`, its spectral involution and
+positive intertwiner are
+
+```text
+C_delta = [[0,       1/delta],
+           [delta,   0]],
+
+V_delta = P C_delta = diag(delta,1/delta).
+```
+
+They satisfy
+
+```text
+C_delta^2=I,
+[C_delta,H_delta]=0,
+H_delta^dagger V_delta=V_delta H_delta,
+V_delta>0.
+```
+
+The eigenvectors `r_+-=(1,+-delta)^T` have positive `V_delta` norm
+`2 delta`, and `C_delta r_+-=+-r_+-`. Their sum and divided difference tend
+to the Jordan chain:
+
+```text
+(r_+ + r_-)/2 -> r_0,
+(r_+ - r_-)/(2 delta) -> r_1.
+```
+
+But `C_delta` diverges, and `V_delta` has eigenvalues `delta` and
+`1/delta`. Any bounded positive representative degenerates; keeping a
+nonzero determinant forces an unbounded metric. At the Jordan point the
+commutant consists of `alpha I+beta N`, and `C^2=I` leaves only
+
+```text
+C=+I or C=-I.
+```
+
+There is no finite nontrivial spectral sign which continues the two split
+branches. The finite intertwiner is instead `P=sigma_x`, the indefinite
+cross form. This exactly categorizes the statements in the primary texts:
+the unequal-frequency positive `e^{-Q}`/`V` metric becomes singular, while
+zero-norm stationary states plus generalized states retain a conserved
+left-right overlap.
+
+### Comparison with the full conformal form
+
+On the two TT Jordan blocks, Mannheim's surviving overlap and the
+Kubo--Kuntz physical cross commutator are the same form up to scale and a
+Jordan-partner shift. C0b then supplies the missing full-module statement.
+With standard reality, parity, and the full conformal action, any fixed
+Hermitian extension to the six physical modes is
+
+```text
+G_M = c J_conf.
+```
+
+In the flat `(E,A,L)` basis, conformal boosts remove the generalized-state
+self-pairing and fix
+
+```text
+G_conf = [[0,   0, I/2],
+          [0,   I,   0],
+          [I/2, 0,   0]],
+```
+
+up to the single overall coefficient. This form has signature `(4,2)` (or
+`(2,4)` after overall sign reversal). Thus the fixed, standard-covariant
+reading realizes outcome 1 of the proposed fork: the Mannheim
+equal-frequency left-right product is not a second positive Hermitian form
+on the same conformal module. It is the conventional Jordan cross pairing
+in different language.
+
+This conclusion is deliberately narrower than a verdict on Mannheim's
+entire probability proposal. A genuinely different construction could
+still use a coupling-dependent or time-dependent duality, a singular
+limiting prescription, a doubled space, a restriction of allowed states,
+or a probability functional that is not the quadratic form of a fixed
+Hermitian `G`. What is excluded is another fixed, nondegenerate, positive,
+standard-real, `SO(4,2)`-covariant Hermitian metric on the same physical
+module.
+
+### Exact interface to the interaction problem
+
+If a proposed Mannheim metric is dynamical,
+
+```text
+H(g)=H_0+gH_1+...,
+G(g)=G_0+gG_1+...,
+```
+
+then its first equation is
+
+```text
+H_0^dagger G_1-G_1 H_0 = G_0 H_1-H_1^dagger G_0.
+```
+
+For one rank-two Jordan block and Hermitian `G_1`, the image of the left
+side is
+
+```text
+[[0,    -a],
+ [a, 2 i d]].
+```
+
+Writing a general anti-Hermitian source as
+
+```text
+S = [[i s_0,  x+i y],
+     [-x+i y, i s_1]],
+```
+
+solvability requires `s_0=0` and `y=0`. The Jordan deformation complex
+therefore already has a two-real-dimensional cokernel. C1 must compute the
+actual complete conformal interaction source before drawing any dynamical
+conclusion.
 
 ## C1: test cubic blocks before four-point blocks
 
