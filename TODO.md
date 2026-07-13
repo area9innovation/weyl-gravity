@@ -28,7 +28,7 @@ holds only open items.
    citations with arXiv IDs once public, check "to appear" references
    (ABHT in paper 3). (Author metadata DONE: GPT-5.6.sol + Claude
    Fable 5 as authors with role footnotes; Asger as commissioning /
-   corresponding human — all five papers.)
+   corresponding human — all six technical papers.)
 
 ## Known weak spots (not yet raised by referees)
 
@@ -116,8 +116,8 @@ holds only open items.
       ρ±=∓δ/(2g), ω₂^{−13/2} scale, PT proposition, exact Sturm
       certificate, narrowed genericity, truncation lemma, chart
       distinction, six derivation appendices, new title); paper 0
-      revised per team spec (new §14 interactions section, diagram,
-      terminology, five-level conclusion; 22 pp.).
+      revised per team spec (new interaction section and diagram; this
+      was later superseded by the six-paper Paper-VI synthesis).
     - DONE (step 9, 2026-07-13): doubled/Krein verification suite
       (verify_doubled_theory.py DQ1–DQ9 ALL PASS): mirror-adjoint
       relation H_B = WH_A†W† EXACT with W = ι∘(−1)^{N_ghost} — i.e.
@@ -190,16 +190,20 @@ holds only open items.
       contact, internal-massless exchange, and internal-massive exchange
       all acquire +i (the last includes the compensating −1 of the
       quarter-turned massive inverse kernel).  Therefore
-      Π_shell(T₂†−T₂) = −2i A_K σ_x, with exact off-diagonal element
+      Π_shell(B₂†−B₂) = −2i A_K σ_x, with exact off-diagonal element
       −15762482064 i/5584765625 ≠ 0.  External EOM, total Ward, and
       axial/de Donder checks pass.  The result is independent of the
       first-order metric commutant: the complete connected cubic
       physical-shell block vanishes, hence
       Π_E[G,v₁+v₁†]Π_E = 0 for every [G,h₀]=0.
+      G17g now verifies the exact finite-shell identity
+      P_E[(v₂†−v₂)+1/2[R₁,v₁+v₁†]]P_E = B₂†−B₂, closing the
+      amplitude-to-deformation-cocycle bridge raised in Paper-6 review.
     - DONE (step 15, 2026-07-14): **GRAVITY G18 ALL PASS**
-      (`verify_gravity_krein.py`) under the conventional covariant class:
-      nondegenerate physical-BRST fundamental symmetry, agreement with
-      the free Krein real form, and cluster-factorizing Fock lift.  The
+      (`verify_gravity_krein.py`) on physical BRST cohomology under the
+      conventional natural-lift class: nondegenerate one-particle
+      fundamental symmetry, agreement with the free Krein real form,
+      and particle-number-diagonal cluster-multiplicative Fock lift.  The
       proper-orthochronous commutant is
       diag(ε₊,ε₋,ε_M I₅); parity/real-field compatibility equates ε₊ and
       ε₋, while the free signature fixes (+,+,−) even without that extra
@@ -210,13 +214,16 @@ holds only open items.
       The verified MMM/MMh vertices force 3q_M=2q_M=0 and hence q_M=0
       for any uniform abelian charge; the physical block also survives
       BRST cohomology and cannot be BRST-exact.
-    - NEXT-GRAVITY: Paper 6 should now state the one-M perturbiner/LSZ
-      lemma (asymptotic-eigenfield and local-invertible-field-map
-      hypotheses), followed by the G13--G18 cubic-protection,
-      second-order-obstruction, and conventional-Krein-visibility
-      theorems.  The G16 250-polarization scan remains an optional
-      regression rail; its crossing component is already exact and it
-      is no longer on the logical path.
+    - DONE (step 16, 2026-07-14): **PAPER 6 DRAFT + MAJOR-REVIEW
+      REVISION.**  The source is correctly ordered and compiles; the
+      manuscript now proves the Born--deformation identity, states the
+      regulated full cubic-shell lemma including spectators and soft-mode
+      prescription, maps covariant graphs to the stationary Born series
+      with LSZ/Bose conventions, narrows the metric/Fock/BRST scope, and
+      includes a one-command archived reproduction suite.  README and
+      Paper 0 now synthesize Paper 6.  The G16 250-polarization scan
+      remains optional regression hardening and is not on the theorem
+      path.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
       build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
       on a truncated charge-Fock space with the squeezed vacuum;
@@ -232,9 +239,10 @@ holds only open items.
     - GRAVITY RAIL STATUS: the originally proposed M→h+h test is now
       closed (zero by Einstein truncation), cubic order is protected,
       and G17 proves the second-order MM→Mh positive-metric obstruction.
-      G18 now rules out nullity for the conventional covariant
-      cluster-factorizing Krein/BRST class.  The Paper-6 write-up remains;
-      do not restart a separate doubled-scalar reconstruction before it.
+      G18 rules out nullity for the canonical natural,
+      particle-number-diagonal cluster-multiplicative lift induced on
+      physical BRST cohomology.  Paper 6 is drafted and post-review
+      revised; do not broaden its no-go beyond those explicit classes.
     - DEFERRED, not in the active queue: vacuum-overlap / superselection
       at r = 0; normal-ordered internal-charge Ward identity;
       confluent-state R₁ matrix elements; field-theory complex-spectrum

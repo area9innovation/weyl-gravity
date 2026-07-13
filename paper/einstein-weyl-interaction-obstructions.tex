@@ -23,8 +23,10 @@
 \newcommand{\Tr}{\operatorname{Tr}}
 \newcommand{\Res}{\operatorname*{Res}}
 \newcommand{\AK}{\mathcal A_K}
+\newcommand{\AKred}{\mathcal A_K^{\rm red}}
 \newcommand{\Ap}{\mathcal A_+}
 \newcommand{\PiE}{\Pi_{\ker\ad_{h_0}}}
+\newcommand{\Born}{\mathcal B}
 
 \title{Interaction Obstructions in Einstein--Weyl Gravity:\\
 Cubic Protection, Second-Order Metric Failure, and Krein Visibility}
@@ -62,18 +64,21 @@ residue $\sqrt3/8$, proving that the four-point amplitude is not
 identically zero.  A complete calculation in the original fourth-order
 theory --- including the quartic contact term, all $s,t,u$ exchanges, the
 physical adjoint, and gauge and equation-of-motion checks --- gives at an
-interior rational physical point
+interior rational physical point an exact nonzero rational certificate.
+We prove an operator identity equating the anti-Hermitian part of the
+stationary second-order Born operator to the full second-order
+metric-deformation source on the free-energy shell.  It follows that
 \begin{equation*}
-\PiE\bigl(T_{2,+}^{\dg}-T_{2,+}\bigr)
-=-\frac{15762482064\,i}{5584765625}\,\sigma_x\ne0 .
+\PiE\left[(v_2^{\dg}-v_2)
++\frac12[R_1,v_1+v_1^{\dg}]\right]\ne0 .
 \end{equation*}
-The unique Lorentz-covariant positive free metric therefore admits no
-analytic second-order deformation compatible with the interaction.
+The canonical analytic deformation based at the Paper-IV positive real
+form therefore fails at second order for the complete tree-level vertex
+content through quartic order.
 
-We then classify conventional Poincar\'e-covariant, BRST-compatible,
-cluster-factorizing Krein gradings.  Agreement with the free gravitational
-signature fixes their Fock lift to $J_F=(-1)^{N_M}$.  The gravitational
-obstruction survives BRST cohomology and is not null:
+On physical BRST cohomology, canonical second quantization of the free
+Krein symmetry gives the particle-number grading $J_F=(-1)^{N_M}$.
+The gravitational obstruction survives cohomology and is not null:
 \begin{equation*}
 \mathcal O^\sharp=\mathcal O,
 \qquad
@@ -123,8 +128,8 @@ They determine the same free complex spectral functional but different
 adjoints and probability structures.  The natural interacting question
 is therefore sharp:
 \begin{quote}
-Does either covariant free completion remain compatible with the full
-Einstein--Weyl interaction?
+Does either covariant free completion survive the tree interaction
+through quartic order?
 \end{quote}
 
 Paper~V \cite{paperV} supplied the deformation complex needed to ask the
@@ -156,8 +161,9 @@ M+M\longrightarrow M+h,
 \end{equation}
 which changes massive particle number by one.  The same process also
 separates gravity from the scalar boundary mechanism.  Covariance and
-cluster factorization fix the conventional gravitational fundamental
-symmetry to $(-1)^{N_M}$, but $\mathbb Z_2$-odd does not imply null:
+the free signature fix the one-particle symmetry; its natural
+particle-number-diagonal, cluster-multiplicative lift is $(-1)^{N_M}$.
+But $\mathbb Z_2$-odd does not imply null:
 the product of two odd operators is neutral and its quadratic trace is
 nonzero.
 
@@ -174,11 +180,12 @@ $1\leftrightarrow2$ shell.
 \item Sections~\ref{sec:factorization}--\ref{sec:full} prove the
 second-order obstruction twice: first by an independent nonzero
 Einstein-frame factorization residue, then by a complete exact physical
-four-point calculation in the original fourth-order theory.
+four-point calculation in the original fourth-order theory, joined to
+the deformation complex by Proposition~\ref{prop:bornidentity}.
 \item Sections~\ref{sec:grading}--\ref{sec:brst} prove conventional
-Krein visibility: the covariant Fock grading is unique in the stated
-class, the exact block is not null, no scalar-like abelian charge exists,
-and the block is not BRST-exact.
+Krein visibility: the canonical multiplicative Fock lift is fixed in the
+stated class, the exact block is not null, no scalar-like abelian charge
+exists, and the block is not BRST-exact on physical cohomology.
 \end{enumerate}
 
 \paragraph{Comparison with the scalar obstruction.}
@@ -206,17 +213,20 @@ operator class of \eqref{eq:defcomplex}.  It is not an absolute theorem
 against every positive metric, and no complex interacting spectrum is
 proved.  ``Krein visibility'' has the precise finite-block meaning
 $\mathcal O^\sharp\mathcal O\ne0$ and
-$\Tr(\mathcal O^\sharp\mathcal O)\ne0$ for the unique conventional
-covariant, cluster-factorizing grading.  It is a non-nullity statement,
+$\Tr(\mathcal O^\sharp\mathcal O)\ne0$ for the canonical
+particle-number-diagonal, cluster-multiplicative grading.  It is a
+non-nullity statement,
 not a claim that an indefinite trace is a positive probability.  In
 particular, the paper does not rule out an indefinite Krein dynamics;
 it rules out the naive parity/null-sector mechanism as a replacement for
 a positive interacting probability calculus.
 
 \paragraph{Verification.}
-Checks G13--G18 are exact SymPy or exact rational computations.  They are
-mapped to the analytic statements in Appendix~\ref{app:checks}.  The
-exhaustive $5^3\times2$ polarization scan proposed as G16 is not used:
+The labels G13--G18 denote entries in the machine-verification ledger of
+Appendix~\ref{app:checks}; they are not additional assumptions or
+mathematical objects.  The checks use exact SymPy or rational arithmetic.
+The exhaustive $5^3\times2$ polarization scan once proposed as G16 is
+not used:
 the factorization residue, exact real-shell certificate, crossing, Ward,
 and gauge checks already close the proof.  The scan remains optional
 regression hardening.
@@ -262,31 +272,131 @@ Hermitian form on its fiber a scalar multiple of the identity.  Rotating
 only selected helicities would violate Lorentz covariance
 \cite{paperIV}.
 
-\subsection{Finite-volume shell projection}
+\subsection{Regulated physical Fock space and shell projection}
 
-As in Paper~V, the cohomological equation is interpreted first at finite
-volume, where momenta are discrete and $h_0$ has point spectrum.  If
+As in Paper~V, the cohomological equation is first interpreted in a
+periodic spatial box.  We retain finitely many nonzero momentum modes,
+impose an ultraviolet and a finite-particle cutoff, and omit the
+massless zero mode.  Normal ordering removes vacuum contractions, and
+we work with connected transition kernels.  On this regulated physical
+Fock space $h_0$ has point spectrum with finite-rank eigenspaces.  If
 $P_E$ projects onto free energy $E$, then
 \begin{equation}\label{eq:kernelproj}
 \PiE S=\sum_E P_ESP_E,
 \end{equation}
-and $[h_0,R]=S$ has a solution only if this projection vanishes.  The
-rational physical point below can be placed on a momentum lattice after
-an overall choice of box scale.  Continuum statements mean that the
-corresponding on-shell matrix element is nonzero on an open subset of the
-real scattering shell; a distributional rigged-Fock reformulation is not
-needed for the present existence theorem.
+and $[h_0,R]=S$ has a solution only if this projection vanishes.
 
-\subsection{Amplitude convention}
+The rational point used below lies on the momentum lattice whenever
+$ML/(2\pi)$ is a multiple of $100$.  The ultraviolet cutoff may be
+chosen above every external and internal momentum occurring in the
+calculation.  We take a sequence of such boxes after establishing the
+finite-volume obstruction.  Omitting the zero mode is the infrared
+prescription; the exhibited momenta remain uniformly nonsoft along this
+sequence.  Thus neither the matrix element nor its internal denominators
+depends on a soft limiting prescription.
 
-The perturbiner returns the multilinear coefficient of the action with
-the universal Feynman $i$ stripped.  We call it the reduced tree
-amplitude.  At real momenta and real linear polarizations it is real.  A
-global action rescaling and external polarization rescalings change the
-displayed rational certificate but cannot change its nonvanishing.  All
-statements involving the precise coefficient below are therefore made in
-the conventions of Appendix~\ref{app:fourpoint}; the obstruction theorem
-itself is the invariant nonzero statement.
+\subsection{Perturbative order and the stationary Born operator}
+
+Introduce a formal coupling $\zeta$ by assigning the cubic expansion of
+the Einstein--Weyl action order $\zeta$ and its quartic expansion order
+$\zeta^2$.  After the Paper-IV free Dyson map, write
+\begin{equation}\label{eq:positiveexpansion}
+H_+(\zeta)=h_0+\zeta v_1+\zeta^2v_2+O(\zeta^3).
+\end{equation}
+The second-order metric-deformation source is
+\begin{equation}\label{eq:S2definition}
+S_2=(v_2^{\dg}-v_2)
++\frac12[R_1,v_1+v_1^{\dg}],
+\qquad [h_0,R_1]=v_1^{\dg}-v_1.
+\end{equation}
+This is the meaning of ``second order'' throughout the paper: one
+quartic vertex or two cubic vertices at tree level.
+
+Set $Q_E=1-P_E$ and define the self-adjoint reduced resolvent
+\begin{equation}\label{eq:reducedresolvent}
+G_E=Q_E(E-h_0)^{-1}Q_E.
+\end{equation}
+The stationary connected second-order Born operator on the shell is
+\begin{equation}\label{eq:Bornoperator}
+\Born_{2,+}(E)=P_E\bigl(v_2+v_1G_Ev_1\bigr)P_E.
+\end{equation}
+At finite volume no $i0$ is required.  In the continuum notation
+$G_E$ is the principal-value part of $(E-h_0+i0)^{-1}$.  The possible
+$-i\pi\delta(E-h_0)$ contribution is absent here because the regulated
+physical cubic shell is empty; Lemma~\ref{lem:fullcubicshell} below
+makes this statement on the complete Fock eigenspace, including
+spectators.
+
+\begin{proposition}[Born--deformation identity]
+\label{prop:bornidentity}
+Suppose $P_Ev_1P_E=0$ and choose the canonical off-shell solution of the
+first equation in \eqref{eq:S2definition},
+\begin{equation}\label{eq:R1spectral}
+R_1^{(0)}=\sum_{E_a\ne E_b}
+\frac{P_{E_a}(v_1^{\dg}-v_1)P_{E_b}}{E_a-E_b}.
+\end{equation}
+Then the entire second-order metric source, not only its quartic part,
+satisfies
+\begin{equation}\label{eq:bornidentity}
+\boxed{
+P_ES_2P_E
+=\Born_{2,+}(E)^{\dg}-\Born_{2,+}(E).}
+\end{equation}
+Consequently, a nonzero ordinary-adjoint anti-Hermitian Born matrix
+element on the shell is a nonzero metric-deformation cocycle.
+\end{proposition}
+
+\begin{proof}
+Write $D=v_1^{\dg}-v_1$ and $W=v_1+v_1^{\dg}$.  The spectral formula
+\eqref{eq:R1spectral} gives
+\begin{equation}
+P_ER_1^{(0)}Q_E=P_EDG_E,
+\qquad
+Q_ER_1^{(0)}P_E=-G_EDP_E.
+\end{equation}
+Since $P_Ev_1P_E=0$, insertion of $Q_E$ between the two cubic vertices
+is automatic.  Hence
+\begin{align}
+\frac12P_E[R_1^{(0)},W]P_E
+&=\frac12P_E(DG_EW+WG_ED)P_E\nonumber\\
+&=P_E(v_1^{\dg}G_Ev_1^{\dg}-v_1G_Ev_1)P_E.\label{eq:commborn}
+\end{align}
+Adding $P_E(v_2^{\dg}-v_2)P_E$ gives
+\eqref{eq:bornidentity}, because $G_E=G_E^{\dg}$.  Thus the quartic
+contact and the two-cubic exchange contribution enter with exactly the
+relative combination required by the deformation equation.
+\end{proof}
+
+\subsection{Reduced amplitude, LSZ normalization, and adjoint}
+
+The perturbiner strips the universal Feynman $i$ from the multilinear
+action coefficient; denote the result by $\AKred$.  At real momenta and
+real linear polarizations it is real.  Let $|i\rangle,|f\rangle$ be
+unit-normalized finite-volume asymptotic states.  Matching the covariant
+tree expansion to the stationary Born series gives
+\begin{equation}\label{eq:LSZmap}
+\langle f|\Born_{2,K}(E)|i\rangle
+=\AK=\eta_{\rm conv}\,\mathcal N_{fi}\,\AKred,
+\qquad \eta_{\rm conv}\in\{\pm1\},\quad \mathcal N_{fi}>0.
+\end{equation}
+After removing the overall momentum-conservation Kronecker delta,
+$\mathcal N_{fi}$ is the product of the nonzero external pole
+residues, $(2\omega L^3)^{-1/2}$ factors, polarization normalizations,
+and Bose normalizations.  At the displayed point the two incoming
+massive momenta are distinct, so their identical-particle factor is one;
+the outgoing particles have different species.  The multilinear wave
+labels already implement the vertex symmetry factors.  The real sign
+$\eta_{\rm conv}$ fixes the convention relating the interaction
+Hamiltonian to the Lagrangian Feynman rule.
+
+Equation~\eqref{eq:LSZmap} also explains why stripping the universal
+Feynman $i$ does not manufacture the obstruction: the removed factor is
+common to forward and reverse $S$-matrix elements, whereas the
+anti-Hermitian phase below comes from the three massive quarter-turns.
+Real, nonzero LSZ and normalization factors cannot change that phase or
+the nonvanishing result.  Exact rational values are quoted for
+$\AKred$; operator and trace statements use the normalized coefficient
+$\AK$.
 
 \section{The external-massive-leg phase theorem}\label{sec:phase}
 
@@ -414,6 +524,42 @@ p_3^2=(p_1+p_2)^2\ge(2M)^2,
 which cannot equal $M^2$.  Equivalently, a particle of mass $M$ cannot
 decay into two particles of the same mass.
 
+\subsection{The complete regulated cubic shell}
+
+The Born--deformation identity requires a statement about the complete
+degenerate eigenspace, not only the two states later used to display the
+four-point obstruction.
+
+\begin{lemma}[Vanishing of the regulated physical cubic shell]
+\label{lem:fullcubicshell}
+On the regulated physical Fock space of Section~\ref{sec:free}, with the
+massless zero mode omitted,
+\begin{equation}\label{eq:fullcubicshell}
+P_Ev_1P_E=P_Ev_1^{\dg}P_E=0
+\end{equation}
+for every free energy $E$.  The statement includes disconnected
+spectators: the connected cubic vertex cannot act nontrivially inside a
+degenerate many-particle shell.
+\end{lemma}
+
+\begin{proof}
+A normal-ordered cubic matrix element is an active $0\leftrightarrow3$
+or $1\leftrightarrow2$ process times Kronecker deltas for particles on
+which the vertex does not act.  Positive energy forbids
+$0\leftrightarrow3$.  It remains to classify the four physical cubic
+field contents.  The $Mhh$ amplitude is zero by
+Lemma~\ref{lem:onemassive}; $MMM$ is closed by equal-mass kinematics.
+For $MMh$, the channel $h\to MM$ would require
+$k^2=(p_1+p_2)^2\ge4M^2$, while $M\to M+h$ would require
+$p_M\cdot k=0$ for a future timelike $p_M$ and a future nonzero null
+$k$, which is impossible.  The only limiting exception is $k=0$, removed
+by the infrared prescription.  Finally, real on-shell $hhh$ kinematics
+is collinear, and the physical Einstein three-graviton amplitude
+vanishes there.  Spectators do not alter any active momentum or energy
+equation, so they multiply these zeros.  Taking the adjoint gives the
+second equality in \eqref{eq:fullcubicshell}.
+\end{proof}
+
 \begin{theorem}[Cubic protection]\label{thm:cubicprotection}
 For scalar-free Einstein--Weyl gravity about flat space, the
 Lorentz-covariant positive real form has no first-order physical on-shell
@@ -428,8 +574,8 @@ By Corollary~\ref{cor:phase}, only odd-massive cubic amplitudes can enter
 $\PiE(v_1^{\dg}-v_1)$.  The $Mhh$ amplitude vanishes by
 Lemma~\ref{lem:onemassive}; the $MMM$ amplitude has no real physical
 shell.  The remaining cubic structures carry an even number of massive
-legs.  Therefore the first-order anti-Hermitian source has zero physical
-shell projection.
+legs.  Equivalently, the stronger Lemma~\ref{lem:fullcubicshell} makes
+the complete first-order shell block vanish.
 \end{proof}
 
 This protection is structurally different from the K\"all\'en-factor
@@ -618,14 +764,17 @@ $y$-reflection selection rule; the verification therefore uses explicit
 parity-even real linear polarizations rather than interpreting symmetry
 zeros as dynamical cancellations.
 
-\begin{cproposition}[Real-shell certificate, G15]\label{cprop:g15}
+\begin{cproposition}[Exact real-shell certificate]\label{cprop:g15}
 For the real polarization tensors listed in Appendix~\ref{app:fourpoint},
 the complete reduced tree amplitude at \eqref{eq:rationalpoint} is
 \begin{equation}\label{eq:AK}
-\boxed{\AK(MM\to Mh)=\frac{7881241032}{5584765625}\ne0.}
+\boxed{\AKred(MM\to Mh)=\frac{7881241032}{5584765625}\ne0.}
 \end{equation}
-It is real, gauge independent, and nonsingular at this point.  Therefore
-it is nonzero on a nonempty open neighborhood of the real physical shell.
+It is real and nonsingular.  The complete sum passes an exact Ward test
+for a rational gauge vector, invariance under an exact rational change of
+gauge representative, and equality between axial and de Donder internal
+gauges.  Hence both $\AKred$ and its normalized Born coefficient $\AK$
+are nonzero on a physical-shell neighborhood.
 \end{cproposition}
 
 \section{Full fourth-order calculation and the metric obstruction}
@@ -692,7 +841,70 @@ quadratic kernels are recomputed and satisfy $K(-P)=K(P)$ exactly.  Thus
 the reverse process entering the physical adjoint is evaluated, not
 inferred.
 
-\subsection{Quarter-turn of the complete operator}
+\subsection{From covariant graphs to the stationary Born operator}
+
+The perturbiner is a covariant Lagrangian calculation, whereas
+Proposition~\ref{prop:bornidentity} is stated for the canonical
+stationary Born operator.  The following standard tree-level reduction
+makes their relation explicit.
+
+\begin{proposition}[Covariant--stationary matching]
+\label{prop:covariantborn}
+For physical external states at \eqref{eq:rationalpoint}, the complete
+contact-plus-exchange coefficient computed above obeys
+\begin{equation}
+\langle f|\Born_{2,K}(E)|i\rangle
+=\eta_{\rm conv}\mathcal N_{fi}\AKred=\AK\ne0,
+\end{equation}
+where $\Born_{2,K}$ is the standard-real-form version of
+\eqref{eq:Bornoperator}.  The same identity holds for the reverse
+matrix element.  No absorptive or prescription-dependent term occurs.
+\end{proposition}
+
+\begin{proof}
+Pass to a gauge-fixed canonical formulation, equivalently to the regular
+second-order auxiliary-field form on the split branch.  The stationary
+transition operator satisfies the Lippmann--Schwinger expansion
+\begin{equation}
+\Born_K(E)=V_K+V_K(E-h_0+i0)^{-1}\Born_K(E),
+\end{equation}
+whose order-$\zeta^2$ coefficient is $v_{2,K}+v_{1,K}G_Ev_{1,K}$.
+For each physical mass eigenmode, decomposing the covariant internal
+propagator as
+\begin{equation}\label{eq:oldfashioned}
+\frac{1}{(P^0)^2-\omega_\lambda^2+i0}
+=\frac{1}{2\omega_\lambda}
+\left(\frac{1}{P^0-\omega_\lambda+i0}
+-\frac{1}{P^0+\omega_\lambda-i0}\right)
+\end{equation}
+turns its two terms into the two old-fashioned time orderings and their
+$E-E_n$ denominators.  Summing the complete physical polarization
+residues gives the intermediate-state sum in $v_{1,K}G_Ev_{1,K}$,
+including the massive residue sign.  The $s,t,u$ graphs exhaust that sum
+at four points.
+
+For a derivative or constrained theory, the canonical Legendre transform
+can redistribute instantaneous and seagull terms between ``contact'' and
+``exchange.''  Their sum is invariant: the canonical quartic matrix
+element plus its instantaneous pieces is precisely the four-wave contact
+coefficient after the complementary pieces from \eqref{eq:oldfashioned}
+are included.  We therefore identify only the complete sum, not the
+individual gauge-dependent pieces, with the Born operator.  This is the
+usual equivalence of covariant and old-fashioned tree perturbation theory
+\cite{WeinbergQFT}; local mass-eigenfield changes preserve its on-shell
+matrix element by the equivalence theorem \cite{KOS}.
+
+At the rational point all three bordered internal systems are
+nonsingular, and Lemma~\ref{lem:fullcubicshell} excludes an on-shell
+cubic intermediate state.  Thus $i0$ in \eqref{eq:oldfashioned} reduces
+to the real principal-value resolvent \eqref{eq:reducedresolvent}.  The
+external pole residues, box factors, polarization norms and Bose factors
+give exactly the real nonzero multiplier in \eqref{eq:LSZmap}.  The
+separately evaluated reverse graphs give the ordinary-adjoint reverse
+matrix element with the same multiplier.
+\end{proof}
+
+\subsection{Quarter-turn and the deformation cocycle}
 
 For the contact, three external massive fields give $(-i)^3=i$.  An
 exchange through an internal massless line has endpoint phase
@@ -701,9 +913,9 @@ endpoint phase $(-i)^3(-i)^2=-i$, while the quarter-turned massive
 inverse kernel contributes $-1$, again giving $i$.  Consequently every
 piece of \eqref{eq:pieces} obeys Theorem~\ref{thm:phase}, and
 \begin{equation}\label{eq:tplus}
-\langle Mh|T_{2,+}|MM\rangle=i\AK,
+\langle Mh|\Born_{2,+}(E)|MM\rangle=i\AK,
 \qquad
-\langle MM|T_{2,+}|Mh\rangle=i\AK.
+\langle MM|\Born_{2,+}(E)|Mh\rangle=i\AK.
 \end{equation}
 
 Both states have exact free energy
@@ -711,54 +923,69 @@ Both states have exact free energy
 E_{MM}=\frac54+\frac54=\frac52
 =\frac{29}{20}+\frac{21}{20}=E_{Mh}.
 \end{equation}
-On the ordered shell basis $(|MM\rangle,|Mh\rangle)$,
+Let $P_i=|MM\rangle\langle MM|$, $P_f=|Mh\rangle\langle Mh|$, and
+$\operatorname{Off}_{if}(X)=P_fXP_i+P_iXP_f$.  On the ordered
+orthonormal basis $(|MM\rangle,|Mh\rangle)$,
 \begin{equation}\label{eq:Tblock}
-T_{2,+}=i\AK\,\sigma_x,
+\operatorname{Off}_{if}\Born_{2,+}(E)=i\AK\,\sigma_x,
 \end{equation}
 and hence
 \begin{equation}\label{eq:obstruction}
 \boxed{
-\PiE\bigl(T_{2,+}^{\dg}-T_{2,+}\bigr)
-=-2i\AK\,\sigma_x
-=-\frac{15762482064\,i}{5584765625}\,\sigma_x\ne0.}
+\operatorname{Off}_{if}(P_ES_2P_E)
+=-2i\AK\,\sigma_x\ne0.}
 \end{equation}
+In the reduced external-leg convention, the exact certificate is
+\begin{equation}\label{eq:reducedobstruction}
+(\eta_{\rm conv}\mathcal N_{fi})^{-1}
+\operatorname{Off}_{if}(P_ES_2P_E)
+=-\frac{15762482064\,i}{5584765625}\,\sigma_x.
+\end{equation}
+Equations \eqref{eq:obstruction} and \eqref{eq:reducedobstruction} now
+follow from the deformation-complex identity \eqref{eq:bornidentity},
+rather than from an external-leg phase argument alone.
 
 \subsection{First-order metric ambiguity}
 
-The solution $R_1$ of the first equation in \eqref{eq:defcomplex} is
-defined up to a Hermitian $G$ with $[G,h_0]=0$.  Such a change shifts the
-second-order source by $\tfrac12[G,v_1+v_1^{\dg}]$.  On the nonsingular
-real physical shell the complete connected cubic block is zero: $Mhh$
-vanishes by Lemma~\ref{lem:onemassive}; $MMM$ and $MMh$ have no nonsoft
-real $1\leftrightarrow2$ shell; and real $hhh$ three-point kinematics is
-collinear with zero physical helicity amplitude.  Therefore
+The solution $R_1^{(0)}$ in \eqref{eq:R1spectral} is defined up to a
+Hermitian $G$ with $[G,h_0]=0$.  Such a change shifts the second-order
+source by $\tfrac12[G,v_1+v_1^{\dg}]$.  The complete regulated
+Fock-space statement in Lemma~\ref{lem:fullcubicshell} gives
 \begin{equation}\label{eq:ambiguity}
 P_E(v_1+v_1^{\dg})P_E=0,
 \qquad
 P_E[G,v_1+v_1^{\dg}]P_E=0.
 \end{equation}
+Indeed, $[G,h_0]=0$ makes $G$ block diagonal in the $P_E$ decomposition,
+so the second equality is the commutator of $P_EGP_E$ with the first
+zero block.  Disconnected spectators and soft configurations have
+already been covered by the lemma's regulated Fock-space statement.
 The obstruction cannot be moved or canceled by choosing another analytic
 first-order metric representative.
 
 \begin{theorem}[Second-order positive-metric obstruction]
 \label{thm:positiveobstruction}
-The Lorentz-covariant positive free completion of scalar-free
-Einstein--Weyl gravity admits no analytic second-order metric deformation
-compatible with the full interaction on the physical $MM\to Mh$ shell.
-The obstruction is nonzero at \eqref{eq:rationalpoint} and on a nonempty
-open neighborhood of that point.
+The canonical analytic metric deformation based at the Paper-IV
+Lorentz-covariant positive real form admits no second-order solution for
+the complete Einstein--Weyl tree-level cubic and quartic vertex content.
+The obstruction is nonzero on the physical $MM\to Mh$ shell at
+\eqref{eq:rationalpoint} and on a nonempty open neighborhood of that
+point.
 \end{theorem}
 
 \begin{proof}
-Equation~\eqref{eq:obstruction} lies in $\ker\ad_{h_0}$ and is nonzero.
-No $R_2$ can solve $[h_0,R_2]$ equal to this source.  Equation
-\eqref{eq:ambiguity} makes the class independent of first-order
-commutant freedom.  The exact Ward, external-EOM, reverse-process, and
-internal-gauge checks show that the displayed matrix element is a reduced
-physical one.  Since it is a nonsingular real-analytic amplitude and is
-nonzero at an interior point, it remains nonzero on an open neighborhood.
+Propositions~\ref{prop:bornidentity} and \ref{prop:covariantborn} turn
+the exact four-point calculation into the nonzero source
+\eqref{eq:obstruction} in $\ker\ad_{h_0}$.  No $R_2$ can have a
+commutator with $h_0$ equal to that source.  Equation
+\eqref{eq:ambiguity} makes the class independent of the homogeneous
+first-order metric freedom.  The Ward, external-EOM, reverse-process,
+internal-gauge and LSZ arguments show that the displayed matrix element
+lies on the reduced physical shell.  Real analyticity extends its
+nonvanishing from the interior point to an open neighborhood.
 \end{proof}
-\section{Conventional covariant Krein grading}\label{sec:grading}
+\section{Conventional Krein grading on physical cohomology}
+\label{sec:grading}
 
 The positive obstruction does not by itself decide whether an indefinite
 completion can still be formulated.  The narrower question addressed
@@ -804,11 +1031,17 @@ No linear covariant grading can assign different signs within the
 massive spin-$2$ multiplet or mix the massive and massless shells.
 \end{proposition}
 
-\subsection{Cluster-factorizing Fock lift}
+\subsection{Canonical second quantization and cluster multiplicativity}
 
-Let $j(n_h,n_M)\in\{\pm1\}$ be the sign assigned to an asymptotic sector
-with $n_h$ massless and $n_M$ massive particles.  Tensor multiplicativity
-and cluster decomposition require
+We do not classify every Poincar\'e-covariant involution on a
+multiparticle Hilbert space: such an operator could act on
+momentum-dependent multiplicity spaces.  The conventional lift is the
+natural second quantization $\Gamma(J^{(1)})$.  Explicitly, we assume
+that it is diagonal in asymptotic particle labels, acts on symmetrized
+simple tensors by the tensor product of its one-particle actions, and is
+multiplicative under separated clusters.  Equivalently, its value on a
+sector is a scalar $j(n_h,n_M)\in\{\pm1\}$ depending only on particle
+numbers.  These assumptions imply
 \begin{equation}\label{eq:monoid}
 j(n_h+n'_h,n_M+n'_M)
 =j(n_h,n_M)j(n'_h,n'_M),
@@ -823,7 +1056,15 @@ its values on the two generators.  Equations \eqref{eq:epsfix} and
 Assigning independent signs to unrelated multiparticle sectors would
 violate \eqref{eq:monoid} and hence cluster factorization.
 
-At the G17 shell,
+\begin{proposition}[Canonical multiplicative Fock lift]
+\label{prop:focklift}
+Within the particle-number-diagonal, natural second-quantization class
+just specified, $J_F=(-1)^{N_M}$ is the unique lift of
+$J^{(1)}=I_2\oplus(-I_5)$.  No claim is made here about arbitrary
+momentum-dependent or non-factorizing multiparticle involutions.
+\end{proposition}
+
+At the rational physical shell,
 \begin{equation}\label{eq:statesigns}
 J_F|MM\rangle=+|MM\rangle,
 \qquad
@@ -858,14 +1099,13 @@ X^\sharp X&=-\AK^2|MM\rangle\langle MM|.
 Consequently
 \begin{equation}\label{eq:Xtrace}
 \boxed{
-\Tr(X^\sharp X)=-\AK^2
-=-\frac{62113960204480425024}{31189607086181640625}\ne0.}
+\Tr(X^\sharp X)=-\AK^2\ne0.}
 \end{equation}
 The sign is indefinite, but the operator is not null.
 
-For the complete positive-metric obstruction
+For the off-diagonal positive-metric obstruction block
 \begin{equation}
-\mathcal O=-2i\AK\sigma_x,
+\mathcal O:=\operatorname{Off}_{if}(P_ES_2P_E)=-2i\AK\sigma_x,
 \end{equation}
 one obtains
 \begin{equation}\label{eq:Osharp}
@@ -876,19 +1116,13 @@ one obtains
 \qquad
 \Tr(\mathcal O^\sharp\mathcal O)=-8\AK^2\ne0.}
 \end{equation}
-In the exact rational convention,
-\begin{equation}
--8\AK^2
-=-\frac{496911681635843400192}{31189607086181640625}.
-\end{equation}
 
 \begin{proposition}[Conventional Krein non-nullity]
 \label{prop:nonnull}
-The physical $MM\to Mh$ block and the complete G17 obstruction are
-non-null for the unique conventional covariant, cluster-factorizing
-fundamental symmetry \eqref{eq:fockgrading}.  The obstruction is
-Krein-self-adjoint, indefinite, and visible to the finite-block quadratic
-trace.
+The physical $MM\to Mh$ block and its off-diagonal metric obstruction
+are non-null for the canonical multiplicative fundamental symmetry
+\eqref{eq:fockgrading}.  The obstruction is Krein-self-adjoint,
+indefinite, and visible to the finite-block quadratic trace.
 \end{proposition}
 
 The algebraic distinction from a one-sided continuous grading is simple.
@@ -942,7 +1176,7 @@ torsion-freeness; $\gcd(2,3)=1$ eliminates finite torsion charges as well.
 
 The $MMM$ vertex has no real cubic decay shell but is a nonzero algebraic
 interaction vertex, so it already breaks massive-number parity at the
-action level.  More decisively, the real G17 process itself changes
+action level.  More decisively, the exact real-shell process changes
 $N_M$ from $2$ to $1$ and proves
 \begin{equation}\label{eq:paritybroken}
 [(-1)^{N_M},S]\ne0
@@ -954,8 +1188,9 @@ replacement.
 \section{BRST cohomology}\label{sec:brst}
 
 The higher-derivative massive branch is a physical reduced mode and must
-not be confused with Faddeev--Popov ghosts.  The external states in G17
-are TT massive polarizations and TT massless graviton polarizations.
+not be confused with Faddeev--Popov ghosts.  The external states in the
+four-point calculation are TT massive polarizations and TT massless
+graviton polarizations.
 The exact Ward identity, invariance under changes of gauge representative,
 axial/de Donder equality, and external inverse-propagator
 zeros show that the amplitude descends to reduced physical BRST
@@ -974,7 +1209,7 @@ then, under the standard decoupling assumptions,
 The matrix element \eqref{eq:obstruction} is nonzero.
 
 \begin{proposition}[BRST survival]\label{prop:brst}
-The G17 obstruction defines a nonzero operator on physical BRST
+The exact obstruction defines a nonzero operator on physical BRST
 cohomology and is not BRST-exact:
 \begin{equation}
 [\mathcal O]\ne0.
@@ -982,10 +1217,16 @@ cohomology and is not BRST-exact:
 It cannot be placed in the standard BRST-null ideal.
 \end{proposition}
 
-Appendix~\ref{app:brst} records the finite-complex algebra used in G18.
+This proposition concerns the induced operator on physical cohomology.
+We do not construct an extension of $J_F$ to the complete gauge-fixed
+Fock space of Faddeev--Popov ghosts and contractible sectors; accordingly
+we do not call $J_F$ a full-space BRST-compatible fundamental symmetry.
+
+Appendix~\ref{app:brst} records the finite-complex algebra checked by the
+verification suite.
 In a splitting into physical cohomology and a contractible doublet, the
 physical-to-physical block of $\{Q,Y\}$ vanishes for a completely general
-$Y$, while the G17 block survives unchanged.
+$Y$, while the physical obstruction block survives unchanged.
 
 \section{Master theorem}\label{sec:master}
 
@@ -999,30 +1240,30 @@ Paper~V.  Then:
 protected at first perturbative order, $\ob_+^{(1)}=0$;
 \item at second order the physical process $MM\to Mh$ generates the
 nonzero shell obstruction \eqref{eq:obstruction};
-\item hence the canonical covariant positive metric has no analytic
-second-order deformation compatible with the full interaction;
-\item a conventional Poincar\'e-covariant, real-field-compatible,
-BRST-compatible, nondegenerate and cluster-factorizing Krein grading
-agreeing with the free real form has the unique Fock lift
-$J_F=(-1)^{N_M}$;
+\item hence the canonical Paper-IV positive base metric has no analytic
+second-order deformation for the complete tree-level cubic and quartic
+Einstein--Weyl vertex content;
+\item on physical BRST cohomology, the free one-particle real form has
+the canonical particle-number-diagonal, natural and
+cluster-multiplicative lift $J_F=(-1)^{N_M}$;
 \item for this grading the obstruction is non-null,
 $\Tr(\mathcal O^\sharp\mathcal O)=-8\AK^2\ne0$, and survives physical
 BRST cohomology; and
 \item the nonzero $MMM$ and $MMh$ vertices prohibit a nontrivial uniform
 abelian charge grading analogous to the scalar $O(1,1)$ mechanism.
 \end{enumerate}
-Therefore neither an analytic deformation of the canonical positive
-metric nor the conventional massive-number null/parity mechanism
-supplies an interacting positive-probability completion of the full
-theory in the stated class.
+Thus, through second tree order, neither the canonical analytic metric
+deformation nor the conventional massive-number null mechanism supplies
+a positive-probability completion in the stated classes.
 \end{theorem}
 
 \begin{proof}
 Item 1 is Theorem~\ref{thm:cubicprotection}.  Items 2 and 3 are
 Theorem~\ref{thm:positiveobstruction}, independently supported by the
-factorization Proposition~\ref{prop:factorization}.  Item 4 is
-Proposition~\ref{prop:oneparticlegrading} together with the monoid
-argument \eqref{eq:monoid}.  Item 5 is
+factorization Proposition~\ref{prop:factorization} and the
+Born--deformation identity \eqref{eq:bornidentity}.  Item 4 is
+Propositions~\ref{prop:oneparticlegrading} and \ref{prop:focklift}.
+Item 5 is
 Propositions~\ref{prop:nonnull} and \ref{prop:brst}.  Item 6 is
 Proposition~\ref{prop:chargenogo}.
 \end{proof}
@@ -1032,14 +1273,15 @@ Proposition~\ref{prop:chargenogo}.
 The hypotheses in Theorem~\ref{thm:master} are part of the result.  The
 paper rules out:
 \begin{itemize}
-\item analytic deformation of the canonical Lorentz-covariant positive
-free metric;
+\item analytic deformation through second order of the canonical
+Paper-IV Lorentz-covariant positive base metric by the complete
+tree-level cubic and quartic vertex content;
 \item a conserved naive massive-number ghost parity;
 \item conventional covariant linear one-particle fundamental symmetries
 that agree with the free real form but differ on selected massive
 helicities;
-\item non-multiplicative independent Fock-sector signs, once cluster
-factorization is required;
+\item independent particle-number-sector signs within the natural,
+cluster-multiplicative scalar Fock-lift class;
 \item a uniform abelian continuous- or torsion-charge null mechanism
 compatible with the verified vertices; and
 \item standard BRST-exact nullity of the physical obstruction.
@@ -1051,6 +1293,10 @@ It does \emph{not} prove:
 exists;
 \item that the full interacting Hamiltonian has complex energies;
 \item that every nonlocal or non-factorizing grading fails;
+\item that no momentum-dependent Poincar\'e-covariant involution exists
+on multiparticle multiplicity spaces;
+\item that the cohomological grading $J_F$ necessarily extends to a
+fundamental symmetry on the complete gauge-fixed BRST complex;
 \item that no singular $M\to0$ or conformal-boundary completion can be
 defined;
 \item that a Maldacena-type boundary truncation of the solution algebra is
@@ -1151,6 +1397,11 @@ S.~Kamefuchi, L.~O'Raifeartaigh and A.~Salam,
 \emph{Change of variables and equivalence theorems in quantum field
 theories},
 Nucl.\ Phys.\ \textbf{28} (1961) 529--549.
+
+\bibitem{WeinbergQFT}
+S.~Weinberg,
+\emph{The Quantum Theory of Fields, Vol.~I: Foundations},
+Cambridge University Press, 1995.
 
 \bibitem{BM2008}
 C.~M.~Bender and P.~D.~Mannheim,
@@ -1420,7 +1671,7 @@ polarization convention of that test,
 Threshold is not used for the open-set claim; it guards the implementation
 against later changes.
 
-\section{Full four-point engine and G17 expressions}
+\section{Full four-point engine and deformation certificate}
 \label{app:fourpoint}
 
 \subsection{Wave algebra}
@@ -1490,7 +1741,7 @@ recomputed.  The action contains two- and four-derivative terms, and the
 independently recomputed quadratic matrices obey $K(-P)=K(P)$.  Contact,
 $s$, $t$, and $u$ pieces equal their forward values separately.  Since
 the external linear tensors are real, this is the physical reverse
-matrix element used in $T_{2,+}^{\dg}$.
+matrix element used in $\Born_{2,+}^{\dg}$.
 
 \subsection{Pole regression}
 
@@ -1522,7 +1773,8 @@ it validates the original-variable propagator machinery.
 \section{Covariant grading and Fock-lift equations}
 \label{app:grading}
 
-G18a solves the commutant rather than assuming Schur's lemma numerically.
+The exact grading check solves the commutant rather than assuming
+Schur's lemma numerically.
 At a standard massive momentum, represent the spin-$2$ fiber by symmetric
 traceless $3\times3$ tensors.  The three $SO(3)$ generators act as
 \begin{equation}
@@ -1551,6 +1803,11 @@ particle numbers.
 
 \section{BRST block and non-nullity}
 \label{app:brst}
+
+The finite verification sets the common real external normalization
+$\eta_{\rm conv}\mathcal N_{fi}$ to one and therefore uses $\AKred$ in
+place of $\AK$.  Restoring the nonzero multiplier rescales every
+quadratic trace by its square and cannot change nullity.
 
 The minimal non-null calculation uses
 \begin{equation}
@@ -1588,7 +1845,7 @@ shows
 \begin{equation}
 \bigl(QY+YQ\bigr)_{\rm phys,phys}=0.
 \end{equation}
-The upper-left physical block of the G17 obstruction is nonzero after
+The upper-left physical block of the exact obstruction is nonzero after
 embedding, so it cannot be of this exact form.  This finite matrix is not
 a replacement for gravitational BRST quantization; it records the
 universal algebraic implication used after the Ward and reduced-helicity
@@ -1600,6 +1857,30 @@ checks have established that the amplitude descends to cohomology.
 All scripts named below are in \path{symbolic/} and print
 \texttt{ALL PASS}.  Checks use SymPy exact arithmetic except for the
 explicitly labelled near-pole regression.
+
+\paragraph{Archive.}
+The engine, polarization data and manuscript sources are archived in a
+GitHub repository:
+\begin{center}
+\url{https://github.com/area9innovation/bp2transformer}.
+\end{center}
+The immutable verification snapshot and project path are
+\begin{center}
+\texttt{aeb9acaa944f53cbf29fba37476bfe888c6a1ddd}\\
+\path{physics/symplectic-reconstruction/}.
+\end{center}
+
+\paragraph{Environment.}
+The recorded versions are Python~3.14.4 and SymPy~1.14.0.  The pinned
+dependency and the SHA-256 manifest are, respectively,
+\begin{center}
+\path{symbolic/paper6-requirements.txt}\\
+\path{symbolic/paper6-verification.sha256}.
+\end{center}
+Momentum, signature, polarization, action and reduced-amplitude
+conventions are recorded in
+Appendices~\ref{app:eframe}--\ref{app:fourpoint}; they are explicit
+script inputs rather than hidden generated defaults.
 
 \begin{center}
 \footnotesize
@@ -1624,8 +1905,8 @@ G16 & crossing needed for the adjoint is included in G17; exhaustive
 $250$-polarization scan is deferred & not a theorem dependency\\
 G17a--d & exposed contact/exchanges, reverse process, EOM/Ward/gauge,
 termwise quarter-turn & \path{verify_gravity_obstruction.py}, exact\\
-G17e--f & exact shell obstruction and first-order metric-ambiguity
-independence & same script, exact\\
+G17e--g & exact shell obstruction, first-order metric-ambiguity
+independence, and Born--deformation identity & same script, exact\\
 G18a--b & one-particle commutant and cluster-factorizing Fock lift &
 \path{verify_gravity_krein.py}, exact\\
 G18c--e & non-null quadratic traces, charge no-go, and BRST block &
@@ -1637,22 +1918,21 @@ same script, exact\\
 The analytic inputs not reducible to finite symbolic identities are
 identified in the main text: the induced-representation interpretation
 of the free commutant (Paper~IV), the consistent-truncation/LSZ argument,
-real-analytic continuation on the physical shell, and the standard BRST
-decoupling statement.  The symbolic checks test every convention-sensitive
-coefficient consumed by those arguments.
+covariant--stationary tree matching, real-analytic continuation on the
+physical shell, and the standard BRST decoupling statement.  The symbolic
+checks test every convention-sensitive coefficient consumed by those
+arguments.
 
 \paragraph{Reproduction commands.}
 From the repository root for this project:
 \begin{verbatim}
-python3 symbolic/verify_gravity_completion.py
-python3 symbolic/verify_gravity_cubic.py
-python3 symbolic/verify_gravity_factorization.py
-python3 symbolic/verify_gravity_g15.py
-python3 symbolic/verify_gravity_obstruction.py
-python3 symbolic/verify_gravity_krein.py
+python3 symbolic/verify_gravity_paper6.py
 \end{verbatim}
-The full G15 script contains a slower symbolic shifted-pole step; G17
-recomputes the exact physical certificate and the checks needed by the
-master theorem in a compact import-safe four-point assembly.
+The expected terminal line is
+\texttt{PAPER VI GRAVITY SUITE: ALL PASS}.  The optional
+\texttt{--quick} flag skips the slower shifted-pole regression; the
+theorem-critical obstruction script independently recomputes the exact
+physical certificate.  Individual script outputs remain the canonical
+coefficient-level audit trail mapped in the table above.
 
 \end{document}

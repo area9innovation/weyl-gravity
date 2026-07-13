@@ -20,8 +20,8 @@
 \fbox{\parbox{0.86\linewidth}{\centering #1}}\end{center}}
 
 \title{Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories\\[4pt]
-\large A guided introduction to the Pais--Uhlenbeck oscillator, Krein
-quantization, and higher-derivative gravity}
+\large A guided introduction to positive metrics, Krein completions,
+interaction obstructions, and Einstein--Weyl gravity}
 \author{GPT-5.6.sol\thanks{OpenAI model.  Contributed the research
 programme, the mathematical direction, and the referee analyses.}
 \and
@@ -54,7 +54,7 @@ oscillator, the simplest fourth-order system, can be converted into two
 positive oscillators by a nonunitary similarity transformation and
 quantized with a positive inner product; more recently, Bateman and
 Turok developed a different treatment of the resonant massless theory
-using a Krein space and a hidden ghost-parity symmetry.  The five
+using a Krein space and a hidden ghost-parity symmetry.  The six
 technical papers introduced here do not replace those constructions.
 They explain their mathematical status, classify their ambiguities,
 identify the geometry that selects the Bender--Mannheim metric, connect
@@ -69,7 +69,7 @@ disagreeing about which fields are real, which operators are Hermitian,
 and how probabilities are represented.  At resonance the positive
 diagonalizing metric terminates, but the vacuum covariance can remain
 regular and continue into a Jordan theory.  Extending the free
-classification to interactions, a fifth paper formulates a deformation
+classification to interactions, Paper~V formulates a deformation
 problem for the positive metric and the Krein involution.  The positive
 Pais--Uhlenbeck metric deforms perturbatively at generic frequencies,
 but exact energy-conserving conversion processes generate obstruction
@@ -80,7 +80,19 @@ scattering shells, and the obstruction to the analytic positive-metric
 deformation is nonzero on a verified open shell subset.  The massless perfect-square
 theory nevertheless possesses an exact nonlinear two-sector involution,
 showing that failure of an analytic positive pointed-sector deformation
-does not imply absence of a doubled Krein-type structure.
+does not imply absence of a doubled Krein-type structure.  Paper~VI then
+applies the same deformation complex to the covariant Einstein--Weyl
+real forms of Paper~IV.  Cubic order is protected by the exact Einstein
+subsector and equal-mass kinematics, but the open process
+$M+M\to M+h$ produces a nonzero second-order shell cocycle.  The
+canonical particle-number-diagonal Krein lift does not make this block
+null, and the verified gravitational vertices forbid a uniform abelian
+charge analogue of the scalar $O(1,1)$ mechanism.  These results exclude
+neither indefinite Krein evolution nor nonanalytic, nonlocal, differently
+pointed, boundary-restricted, or nonperturbative completions.  They show
+instead that the free ghost problem and the interacting probability
+problem are distinct, and that the latter is controlled by physical
+on-shell conversion processes.
 \end{abstract}
 
 \tableofcontents
@@ -150,7 +162,7 @@ balance survives when the parts exchange energy.  Both stages are
 central to everything that follows: Sections~\ref{sec:why}--%
 \ref{sec:hadamard} treat the free theory,
 Section~\ref{sec:interactions} the interacting one, and
-Sections~\ref{sec:gravity}--\ref{sec:conformal} the gravitational
+Sections~\ref{sec:gravity}--\ref{sec:gravityinteractions} the gravitational
 application.
 
 \paragraph{Series map.}
@@ -161,9 +173,19 @@ vacuum, representation, and Jordan data in the scalar field and identifies
 the common free complex covariance.  Paper~IV adds gauge reduction and
 Lorentz covariance in free Einstein--Weyl gravity.  Paper~V then asks the
 dynamical question left open by the first four: whether either completion
-survives interaction.  Thus ``canonical'' and ``optimal'' in Papers~I--II
-are kinematic statements about the free theory, not claims of interacting
-stability.
+survives interaction.  Paper~VI combines the gravity classification of
+Paper~IV with the deformation complex of Paper~V and tests the complete
+tree-level cubic and quartic Einstein--Weyl vertex content.  Thus
+Papers~I--IV classify and geometrically organize the free theory,
+Paper~V formulates the interacting test, and Paper~VI carries it out in
+quadratic gravity.  Here
+``canonical'' and ``optimal'' in Papers~I--II are kinematic statements
+about the free theory, not claims of interacting stability.
+
+\keybox{Fourth-order theories can admit several inequivalent real-form
+completions of one complex spectral dynamics.  Free geometry determines
+which completions are available; physical interactions determine whether
+those real forms remain dynamically compatible.}
 
 \paragraph{Strength of the claims.}
 The free classifications are theorems in the classes stated below.  In
@@ -172,9 +194,15 @@ the $5{:}1$ fourth-order result is a computational proposition, and the
 general resonance hierarchy remains a conjecture.  For the field theory
 what is proved is an analytic metric obstruction on a nonempty open shell
 subset, not a complex spectrum or the absolute nonexistence of every
-positive completion.  A full-field complex spectrum, a quantum operator
-implementing the doubled exchange, and the interacting-gravity calculation
-remain open.
+positive completion.  In gravity, Paper~VI proves first-order cubic
+protection and a tree-level second-order obstruction based at the
+canonical Paper-IV positive real form; it does not prove an all-orders
+no-go, complex gravitational spectrum, or failure of every nonlocal or
+differently pointed completion.  Its Krein result concerns the natural
+particle-number-diagonal, cluster-multiplicative lift induced on physical
+BRST cohomology, not every Poincar\'e-covariant involution on a
+multiparticle space.  A full-field complex spectrum and a quantum operator
+implementing the doubled scalar exchange remain open.
 
 \section{The Pais--Uhlenbeck oscillator as a microscope}\label{sec:pu}
 
@@ -1166,20 +1194,97 @@ space, as in \cite{Maldacena}, and the richer phase diagram at nonzero
 cosmological constant \cite{LuPope,DeserWaldron}, are related but
 distinct stories.)
 
-\paragraph{What Paper V predicts for interacting gravity.}
-The interaction results of Section~\ref{sec:interactions} have not yet
-been carried out for gravity, but they supply the machinery and the
-expected shape.  The massive spin-$2$ multiplet can participate in
-branch-changing processes such as $h+h\leftrightarrow M$,
-$h+M\leftrightarrow h+h$, and $M+M\leftrightarrow h+M$, depending on
-kinematics and the cubic vertices.  The natural test is: construct the
-free positive real form of the massive spin-$2$ sector; transport the
-cubic Einstein--Weyl vertices; project their anti-Hermitian parts onto
-energy-conserving scattering shells; test whether the positive metric
-deformation is obstructed; and search for any doubled or CPT-compatible
-completion.  Interacting gravity has \emph{not} been shown to fail;
-what Paper~V supplies is the obstruction machinery, and it makes
-branch-changing gravitational scattering the natural next calculation.
+\section{Paper VI: interaction obstruction in Einstein--Weyl gravity}
+\label{sec:gravityinteractions}
+
+Paper~VI \cite{paperVI} asks the interacting question left open by the
+free gravity classification.  Scalar-free Einstein--Weyl gravity around
+flat space contains a healthy massless graviton $h$ and a ghost-signed
+massive spin-$2$ multiplet $M$.  Paper~IV found two covariant free
+real-form classes: a positive completion obtained by uniformly
+quarter-turning the complete massive multiplet, and a standard-reality
+Krein completion with uniformly negative massive signature.  Paper~V
+supplied the diagnostic.  If $\rho_0$ is the free Dyson map, an analytic
+interacting deformation must solve cohomological equations
+\begin{equation}
+[h_0,R_n]=S_n,
+\end{equation}
+so the projection of $S_n$ onto exact free-energy degeneracies must
+vanish.
+
+Gravity is protected at first order for two independent reasons.  The
+Einstein solution space is an exact nonlinear subsector of
+Einstein--Weyl gravity, so tree amplitudes with exactly one massive
+external field and otherwise massless gravitons vanish.  The remaining
+odd-massive cubic vertex $MMM$ is nonzero on complex kinematics but has
+no real equal-mass $1\leftrightarrow2$ shell.  Consequently the
+first-order positive-metric obstruction vanishes.
+
+At second order the process
+\begin{equation}
+M+M\longrightarrow M+h
+\end{equation}
+is physically open.  Paper~VI establishes its nonvanishing by two
+independent calculations.  An Einstein-frame factorization calculation
+produces a nonzero massive-pole residue.  A separate calculation in the
+original fourth-order variables includes the quartic contact term, all
+$s$-, $t$-, and $u$-channel exchanges, physical polarization and
+equation-of-motion conditions, the reverse-process adjoint, Ward
+identities, and two internal gauge representatives.  At an interior
+rational point of the real physical shell it gives a nonzero exact
+amplitude.
+
+The essential bridge is not inferred from that amplitude's phase alone.
+In a regulated stationary Fock space, define the second Born operator
+\begin{equation}
+B_{2,+}(E)=P_E\bigl(v_2+v_1Q_E(E-h_0)^{-1}Q_Ev_1\bigr)P_E .
+\end{equation}
+With the spectral solution for $R_1$, Paper~VI proves the identity
+\begin{equation}
+P_E\left[(v_2^{\dg}-v_2)
++\frac12[R_1,v_1+v_1^{\dg}]\right]P_E
+=B_{2,+}(E)^{\dg}-B_{2,+}(E).
+\label{eq:intro-born-deformation}
+\end{equation}
+The covariant contact-plus-exchange calculation matches this stationary
+Born operator after the usual propagator decomposition, external residue
+normalization, and identical-particle factors.  The calculation therefore
+evaluates the complete deformation source, not merely a phase-sensitive
+scattering amplitude.
+
+Covariance quarter-turns the complete massive multiplet.  Counting the
+massive fields at all vertices and the compensating signs of internal
+massive propagators shows that every connected diagram with $E_M$
+external massive legs acquires the total phase $(-i)^{E_M}$.  The process
+$MM\to Mh$ has $E_M=3$; its nonzero real standard-frame Born block thus
+becomes anti-Hermitian in the positive frame.  Equation
+\eqref{eq:intro-born-deformation} then gives a nonzero second-order shell
+cocycle.  Hence no analytic second-order deformation based at the
+canonical Paper-IV positive real form exists in the stated tree-level
+perturbative class on a nonempty open subset of this shell.
+
+The Krein result is different.  Agreement with the free gravitational
+signature and natural particle-number-diagonal, cluster-multiplicative
+second quantization gives the conventional lift
+\begin{equation}
+J_F=(-1)^{N_M}
+\end{equation}
+on physical BRST cohomology.  The process crosses its positive and
+negative sectors, but oddness under a $\mathbb Z_2$ grading does not imply
+nullity: the obstruction has a nonzero quadratic Krein trace.  Moreover,
+the verified nonzero $MMM$ and $MMh$ vertices force every uniform
+abelian charge on the irreducible massive multiplet, with
+neutral graviton, to be trivial.  The scalar boundary's one-sided
+$O(1,1)$ charge mechanism therefore has no direct gravitational analogue.
+
+This conclusion is deliberately limited.  Paper~VI excludes an analytic
+second-order deformation of the canonical positive free metric and a
+null interpretation under the conventional multiplicative massive-number
+grading.  It does not exclude indefinite Krein evolution, nonanalytic or
+differently pointed positive metrics, momentum-dependent or
+non-factorizing involutions, singular conformal-boundary limits, or
+boundary conditions that truncate part of the fourth-order solution
+space.
 
 \section{What was already solved, and what is new}\label{sec:new}
 
@@ -1218,9 +1323,18 @@ obstructions and their transfer lattice (including the computational
 $5{:}1$ test), spectral complexification in an effective oscillator
 multiplet, the open-subset continuum shell obstruction, and the exact
 doubled sector-exchange symmetry.
+\item[Paper VI \cite{paperVI}] combines the covariant gravity real forms
+of Paper~IV with the deformation complex of Paper~V.  It proves cubic
+protection and an external-massive-leg phase theorem, identifies
+$MM\to Mh$ as the first open odd-massive channel, derives a nonzero
+second-order Born/deformation cocycle from an exact four-point
+certificate, and shows that the canonical multiplicative massive-number
+Krein grading does not render the block null.  The verified $MMM$ and
+$MMh$ vertices also forbid a nontrivial uniform abelian
+charge mechanism analogous to the scalar $O(1,1)$ boundary.
 \end{description}
 
-In one paragraph: the five papers develop a progression from free
+In one paragraph: the six papers develop a progression from free
 classification to interacting obstruction theory.  The first two derive
 and geometrically characterize the canonical positive Pais--Uhlenbeck
 metric.  The third separates this metric from the universal complex
@@ -1233,12 +1347,16 @@ branch-changing processes --- on isolated rational loci in the
 oscillator and on a verified nonempty open subset of a scattering shell
 in the field theory ---
 while at the massless perfect-square boundary an exact doubled exchange
-survives between two oppositely oriented Jordan sectors.  The resulting
+survives between two oppositely oriented Jordan sectors.  The sixth
+returns to gravity: cubic interactions are protected, but the open
+$MM\to Mh$ process obstructs the canonical positive metric at second
+order and remains visible under the conventional multiplicative Krein
+grading.  The resulting
 question is no longer simply whether a ghost can be assigned positive
 norm, but which real form and completion remain compatible with the
 actual interactions of the theory.
 
-\begin{figure}[t]
+\begin{figure}[p]
 \centering
 \begin{tikzpicture}[
   pap/.style={draw, rounded corners, align=center, inner sep=6pt,
@@ -1272,25 +1390,40 @@ actual interactions of the theory.
 \draw[arr] (p2) -- (p4) node[lab, right]{Cartan geometry};
 \draw[arr] (p1.south east) -- (p4.north west)
   node[lab, sloped, above, pos=0.7]{PU blocks};
-\node[pap, fill=red!5, below=12mm of $(p3)!0.5!(p4)$] (p5)
+\node[pap, fill=red!5,
+      below=14mm of $(p3.south)!0.5!(p4.south)$] (p5)
   {\textbf{Paper V} \cite{paperV}\\
    interactions: deformation complex;\\
    resonance obstructions, PT breaking;\\
    open shell subset; doubled exchange};
 \draw[arr] (p3) -- (p5) node[lab, left]{modewise metric};
-\draw[arr] (p4) -- (p5) node[lab, right]{next: EW vertices};
+\node[pap, fill=orange!8, below=12mm of p5] (p6)
+  {\textbf{Paper VI} \cite{paperVI}\\
+   Einstein--Weyl interactions;\\
+   cubic protection, $MM\to Mh$;\\
+   second-order cocycle; Krein-visible};
+\draw[arr] (p4.south east)
+  to[out=-70,in=35,looseness=1.15]
+  node[font=\scriptsize\itshape, right, align=left, pos=0.48]
+  {gravity\\real forms} (p6.north east);
+\draw[arr] (p5) -- (p6) node[lab, right]{deformation complex};
 \end{tikzpicture}
-\caption{Dependency structure of the five technical papers.}
+\caption{Dependency structure of the six technical papers.  Papers
+I--III establish the oscillator and scalar geometry, Paper~IV classifies
+the covariant free gravity completions, Paper~V develops the
+interaction-obstruction framework, and Paper~VI applies that framework
+to the Einstein--Weyl interaction.}
 \label{fig:dependency}
 \end{figure}
+\clearpage
 
 The combined novelty is therefore not a new claim that one particular
 ghost Hamiltonian can be rewritten positively.  It is the statement that:
 \keybox{The known positive and Krein constructions are different
 real-form completions of a common complex spectral structure.  Their
-admissibility and continuation are controlled by symplectic geometry,
-Cartan projection, gauge reduction, Lorentz representation theory, and
-Jordan degeneration.}
+free admissibility is controlled by symplectic geometry, Cartan
+projection, gauge reduction, Lorentz representation theory, and Jordan
+degeneration; on-shell interactions test their dynamical continuation.}
 
 \section{What remains open}\label{sec:open}
 
@@ -1313,11 +1446,27 @@ $(|0_A\rangle\pm|0_B\rangle)/\sqrt2$ exist?  Can a probability
 interpretation be built on the doubled space, and is the exchange part
 of an antiunitary CPT-like operation?
 
-For gravity: do the cubic Einstein--Weyl vertices obstruct the positive
-real form of the massive spin-$2$ sector through branch-changing
-scattering, as Paper~V's machinery predicts is testable?  Does the
-real-form classification survive on curved backgrounds and at nonzero
-cosmological constant \cite{LuPope,DeserWaldron}?
+For gravity: can a nonanalytic or differently pointed positive
+completion evade the verified $MM\to Mh$ shell cocycle?  Can any nonlocal
+or nonlinear Krein probability structure beyond the conventional
+massive-number lift remain covariant?  Is the result stable under loops
+and renormalization, and how does it change with a cosmological constant,
+scalar modes, or matter
+\cite{LuPope,DeserWaldron}?
+
+For bulk versus boundary completions: can a Maldacena-type
+conformal-boundary condition remove the obstructing sector while
+preserving a satisfactory observable algebra?  Is failure of the bulk
+analytic positive metric compatible with a boundary truncation to the
+Einstein sector?  Can the cocycle be formulated directly in gauge- and
+Weyl-invariant curvature observables, and what survives in the conformal
+$M\to0$ limit?
+
+For spectral consequences: the finite oscillator obstruction can
+accompany a nonreal conjugate pair.  Does the gravitational shell
+cocycle similarly imply complex finite-volume levels, nonreal resonance
+poles, or another form of interacting PT breaking, or can an indefinite
+completion retain a real scattering spectrum?
 
 These are no longer vague versions of ``does the ghost go away?''  They
 are concrete algebraic and analytic tests.
@@ -1329,12 +1478,13 @@ classical stability, spectral boundedness, norm positivity, field
 reality, vacuum covariance, representation theory, gauge reduction, and
 Jordan degeneration.
 
-The results now form a five-level hierarchy:
-\keybox{1. The free complex spectral theory can be identified.\\
-2. Its positive and Krein real forms can be classified.\\
-3. The canonical positive metric is geometrically selected.\\
-4. Interactions test the deformability of these real forms.\\
-5. On-shell conversion processes generate genuine obstructions.}
+The results now form a six-level hierarchy:
+\keybox{1. Identify the complex spectral dynamics.\\
+2. Classify its positive and Krein real forms.\\
+3. Select the canonical positive metric geometrically.\\
+4. Determine how field representation and gauge reduction modify it.\\
+5. Formulate the interaction-deformation and obstruction problem.\\
+6. Evaluate the obstruction on physical gravitational scattering shells.}
 The PU oscillator shows that a Hamiltonian that appears ghostlike in one
 real form may possess a positive pseudo-Hermitian completion in another;
 the minimum-distortion theorem explains why the Bender--Mannheim metric
@@ -1352,11 +1502,27 @@ stable under exactly energy-conserving branch-changing processes: in the
 field calculation the analytic deformation of the canonical pointed
 metric is obstructed on a verified nonempty open shell subset.  Continuous
 momentum makes the relevant shells kinematically available far more
-generally than in a finite oscillator.  At the massless perfect-square
+generally than in a finite oscillator.  In Einstein--Weyl gravity the
+exact Einstein subsector protects cubic order, but the physical
+$MM\to Mh$ channel yields a second-order cocycle; unlike the scalar
+boundary obstruction, this block is non-null for the canonical
+massive-number Krein lift.  At the massless perfect-square
 boundary, an exact exchange between two oppositely oriented Jordan sectors
 survives in the extended theory, and the regulated charge image becomes
 one-sided.  This boundary nullity mechanism is distinct from the exact
 Krein pseudo-unitarity already present at the verified split shell.
+
+The six papers therefore show that no single free-field slogan resolves
+the ghost problem.  Positive and Krein descriptions may realize different
+real forms of one complex free spectral structure, but their continuation
+is decided by the actual interaction.  In scalar theories,
+energy-conserving conversion obstructs the canonical positive metric
+while an enhanced doubled structure can survive at a special boundary.
+In Einstein--Weyl gravity, gauge reduction and covariance first restrict
+the free choices, and $MM\to Mh$ then obstructs the analytic continuation
+of the canonical positive one.  The conventional gravitational Krein
+grading remains algebraically available but does not make that cocycle
+null.
 
 The resulting view is neither that higher-derivative ghosts are
 automatically harmless nor that they automatically invalidate a theory.
@@ -1374,7 +1540,7 @@ framework.
 Every finite-dimensional, variational, symplectic, and modewise
 distributional identity quoted in this introduction is machine-verified
 in the repository accompanying the series
-\cite{paperI,paperII,paperIII,paperIV,paperV} (symbolic SymPy audits,
+\cite{paperI,paperII,paperIII,paperIV,paperV,paperVI} (symbolic SymPy audits,
 high-precision numerical regression, and a Lean~4 formalization of the
 paper-I core with zero unproved placeholders); the technical papers state
 precisely which of their conclusions are analytic rather than
@@ -1470,6 +1636,11 @@ companion paper (Paper~IV), 2026.
 \bibitem{paperV}
 \emph{Interaction obstructions, resonant PT breaking, and doubled Jordan
 symmetry in fourth-order theories}, companion paper (Paper~V), 2026.
+
+\bibitem{paperVI}
+\emph{Interaction obstructions in Einstein--Weyl gravity: cubic
+protection, second-order metric failure, and Krein visibility},
+companion paper (Paper~VI), 2026.
 
 \bibitem{Folland}
 G.~B.~Folland,

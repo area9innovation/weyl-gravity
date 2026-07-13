@@ -2,10 +2,10 @@
 
 Verification project and paper series on the PT-symmetric Pais–Uhlenbeck
 oscillator, the fourth-order scalar field, and quadratic gravity. Started
-from the audit spec in `../Symplectic Reconstruction.md`; grew into six
+from the audit spec in `../Symplectic Reconstruction.md`; grew into seven
 papers (an expository introduction, four technical papers on the free
-theories, and an interacting-deformation paper), a Lean formalization,
-and a machine-checked verification pipeline.
+theories, and two interaction papers), a Lean formalization, and a
+machine-checked verification pipeline.
 
 ## Overview
 
@@ -20,21 +20,24 @@ interacting stability: Paper 5 finds on-shell conversion obstructions to
 its analytic deformation. At the split rational shell the same on-shell
 matrix is exactly Krein-pseudo-Hermitian; the stronger one-sided
 charge-null mechanism emerges only at the massless perfect-square
-boundary. The gravity paper adds gauge reduction and Lorentz covariance;
-its two-completion classification is explicitly a free,
-translation-invariant, quasifree, mode-local result, not a completed
-interacting theory of gravity.
+boundary. Paper 4 adds gauge reduction and Lorentz covariance and
+classifies two free Einstein--Weyl real forms. Paper 6 then tests those
+forms against the complete tree-level cubic and quartic vertex content:
+cubic order is protected, while the physical `MM -> Mh` channel gives a
+nonzero second-order deformation cocycle. The canonical
+particle-number-diagonal Krein lift does not make that block null.
 
 ## The papers (`paper/`)
 
 | # | File | Title | Status |
 |---|------|-------|--------|
-| 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series, incl. the interaction results) | draft (25 pp.) |
+| 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series, incl. the interaction results) | draft (28 pp.) |
 | 1 | `symplectic-diagonalization.tex` / `.pdf` | **Canonical Positive Symplectic Diagonalization of the Pais–Uhlenbeck Oscillator** | frozen, tag `paper1-v1.2` (17 pp.) |
 | 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.3` (14 pp.) |
 | 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.3` (13 pp.) |
 | 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | frozen, tag `paper4-v1.1` (15 pp.) |
 | 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions, Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order Theories** | frozen, tag `paper5-v1.1` (17 pp.; accepted by team referee, then extended: 5:1 confirmation, Krein separation, literature repositioning, charge-null lemma + regulated-embedding proposition) |
+| 6 | `einstein-weyl-interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions in Einstein–Weyl Gravity: Cubic Protection, Second-Order Metric Failure, and Krein Visibility** | draft, major-review revision (30 pp.) |
 
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.
@@ -128,6 +131,23 @@ S_UU/S_VV = (δ/2g)² = ε/g. One-sided charge nullity holds exactly on the
 ε = 0 confluent line; the Bateman–Turok massless point additionally has
 μ² = 0.
 
+**Paper 6** (the interacting-gravity paper): applies Paper 5's
+deformation complex to the two covariant free real forms classified in
+Paper 4. The exact Einstein consistent truncation kills all tree
+amplitudes with one massive and otherwise massless external legs, while
+equal-mass kinematics closes the remaining odd-massive cubic channel, so
+the first-order obstruction vanishes. At second order the open process
+`MM -> Mh` has a nonzero complete tree amplitude: an independent
+Einstein-frame rail gives pole residue `sqrt(3)/8`, and the original
+fourth-order perturbiner gives the exact interior-shell reduced
+certificate `7881241032/5584765625`. A Born--deformation identity now
+proves that the anti-Hermitian part of this stationary Born block is the
+full metric-deformation cocycle, including both quartic contact and
+two-cubic exchange terms. Within the explicitly stated natural,
+particle-number-diagonal, cluster-multiplicative class, the induced Krein
+grading is `(-1)^N_M`; the obstruction is non-null, survives physical
+BRST cohomology, and admits no uniform abelian charge-null analogue.
+
 ## Reports (`reports/`)
 
 - `verification.md` — paper-1 audit report: confirmed / corrected /
@@ -174,12 +194,15 @@ Symbolic (SymPy):
   quartic contact plus all exchanges, Ward/Bose/internal-gauge checks, and
   pole-factorization regression.
 - `verify_gravity_obstruction.py` — gravity G17: termwise uniform
-  quarter-turn of the full connected second-order operator, reversed-process
-  physical adjoint, shell projection, and the exact nonzero obstruction
-  `-2i A_K` including first-order metric-ambiguity independence.
+  quarter-turn of the full connected second-order Born operator,
+  reversed-process physical adjoint, shell projection, the exact nonzero
+  obstruction `-2i A_K`, first-order metric-ambiguity independence, and
+  the exact Born--deformation-source identity.
 - `verify_gravity_krein.py` — gravity G18: covariant one-particle grading
   commutant, cluster-factorizing Fock lift, exact non-null Krein quadratic
   block, continuous-charge no-go, and BRST-cohomology survival.
+- `verify_gravity_paper6.py` — one-command Paper-6 reproduction driver;
+  use `--quick` to omit only the slower G15 pole regression.
 - `verify_paper1_referee.py`, `verify_paper2_referee.py`,
   `verify_paper3_referee.py` — referee-round claim verification
   (spectrum of Q, normalization proposition; pointed-unitary identity;
@@ -236,10 +259,11 @@ cd symbolic && python3 verify_hadamard.py          # paper 3, Hadamard
 cd symbolic && python3 verify_gravity_reduction.py   # paper 4, G1–G7
 cd symbolic && python3 verify_gravity_completion.py  # paper 4, G8–G9
 cd symbolic && python3 verify_gravity_spectral.py    # paper 4, G10–G12
+cd symbolic && python3 verify_gravity_paper6.py       # paper 6, full suite
 cd numeric  && python3 regression.py && python3 distortion_scan.py && python3 cartan_checks.py
 cd lean     && lake exe cache get && lake build    # zero sorry
 cd symbolic && for f in verify_interaction_deformation verify_interaction_order3 verify_pt_breaking verify_perfect_square verify_two_field verify_sector_obstruction verify_hardening verify_doubled_theory verify_51_order4 verify_obstruction_null; do python3 $f.py; done   # paper 5
-cd paper    && for f in symplectic-diagonalization variational-fock fourth-order-vacuum fourth-order-gravity ghosts-geometry-reality interaction-obstructions; do pdflatex $f.tex; done
+cd paper    && for f in symplectic-diagonalization variational-fock fourth-order-vacuum fourth-order-gravity ghosts-geometry-reality interaction-obstructions einstein-weyl-interaction-obstructions; do pdflatex $f.tex; done
 ```
 
 Release tags: `paper1-v1.2`, `paper2-v1.3`, `paper3-v1.3`,
