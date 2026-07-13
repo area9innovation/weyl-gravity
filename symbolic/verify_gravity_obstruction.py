@@ -13,8 +13,9 @@ This script closes the step that cannot be replaced by an external-leg
 phase slogan.  It exposes the quartic contact and all s/t/u exchanges,
 transports each through M = -i Mhat, includes the sign reversal of an
 internal massive inverse kernel, constructs the physical-adjoint reverse
-matrix element, and projects T2^dagger - T2 onto the degenerate free-energy
-block.  All gravity arithmetic is exact rational arithmetic.
+matrix element, and projects the anti-Hermitian part of the stationary
+second-order Born operator onto the degenerate free-energy block.  All
+gravity arithmetic is exact rational arithmetic.
 
 Checks:
 G17a  the G15 contact plus all three exchange terms reproduces the exact
@@ -27,11 +28,14 @@ G17d  contact, massless exchange, and massive exchange all acquire the
       same +i phase.  The internal massive line's two endpoint phases are
       compensated by the -1 from its quarter-turned inverse kernel;
 G17e  the complete two-state shell block obeys
-          Pi_E (T2^dagger - T2) Pi_E
+          Pi_E (B2(E)^dagger - B2(E)) Pi_E
           = -2 i A_K sigma_x != 0;
 G17f  first-order metric-commutant freedom cannot change this projection:
       the reduced physical cubic shell block is zero, hence
       Pi_E [G, v1 + v1^dagger] Pi_E = 0 for every [G,h0] = 0.
+G17g  the complete second-order deformation source equals the
+      anti-Hermitian part of the stationary Born operator on shell:
+      P_E S2 P_E = B2(E)^dagger - B2(E), including contact and exchange.
 
 The sign in G17e follows the convention M = -i Mhat.  Reversing the
 quarter-turn convention reverses the displayed sign but not nonvanishing.
@@ -192,11 +196,12 @@ source_terms = tuple(
 expected_source_terms = tuple(
     -2*sp.I*value
     for value in (forward.contact, *forward.exchanges))
-check("G17d: quarter-turn transport of the FULL T2 is uniform: contact "
+check("G17d: quarter-turn transport of the FULL second-order Born "
+      "operator is uniform: contact "
       f"phase={phase_contact}, h-exchange phase={phase_exchange_h}, "
       f"M-exchange phase={phase_exchange_M} (including inverse-kernel "
-      f"phase {massive_inverse_kernel_phase}); T2_+ = i A_K and every "
-      "contact/exchange contribution to T2_+^dagger-T2_+ is exactly "
+      f"phase {massive_inverse_kernel_phase}); B2_+ = i A_K and every "
+      "contact/exchange contribution to B2_+^dagger-B2_+ is exactly "
       "-2i times its standard-frame value",
       phase_ok and positive_forward == sp.I*forward.total
       and source_terms == expected_source_terms)
@@ -206,9 +211,9 @@ check("G17d: quarter-turn transport of the FULL T2 is uniform: contact "
 # Basis = (|MM>, |Mh>).  Rows are final states and columns initial states.
 # Both directions have the same +i reduced matrix element before taking the
 # physical adjoint, hence the connected positive-frame block is anti-Hermitian.
-T2_plus = sp.Matrix([[0, positive_reverse],
+B2_plus = sp.Matrix([[0, positive_reverse],
                      [positive_forward, 0]])
-source = sp.simplify(T2_plus.conjugate().T - T2_plus)
+source = sp.simplify(B2_plus.conjugate().T - B2_plus)
 energy_initial = sp.simplify(k1[0] + k2[0])
 energy_final = sp.simplify(-k3[0] - k4[0])
 h0_shell = sp.diag(energy_initial, energy_final)
@@ -218,7 +223,7 @@ expected_block = sp.Matrix([[0, target], [target, 0]])
 kernel_ok = (energy_initial == energy_final == R(5, 2)
              and h0_shell*projected - projected*h0_shell == sp.zeros(2)
              and projected == expected_block)
-check("G17e: Pi_ker(ad_h0)(T2_+^dagger - T2_+) is the nonzero exact "
+check("G17e: Pi_ker(ad_h0)(B2_+^dagger - B2_+) is the nonzero exact "
       f"shell block -2 i A_K sigma_x, with matrix element {target}; "
       "there is no R2 solving [h0,R2] = source",
       kernel_ok and projected != sp.zeros(2))
@@ -240,6 +245,61 @@ check("G17f: first-order metric-commutant additions cannot move or cancel "
       "physical-shell classification, so P_E[G,v1+v1^dagger]P_E=0 for "
       "every [G,h0]=0",
       ambiguity_shift == sp.zeros(2))
+
+
+# ---------------------- Born/deformation identity --------------------------
+# Exact finite-dimensional check of the general algebra used in Paper VI.
+# The shell has two states at energy E; the two intermediate states have
+# distinct energies.  v1 has zero shell-to-shell block (cubic protection),
+# while v2 is otherwise unrestricted.  The entries are deliberately complex
+# rationals so that ordinary-adjoint bookkeeping is tested nontrivially.
+E = R(5, 2)
+energies = [E, R(7, 3), R(11, 4), E]
+h_test = sp.diag(*energies)
+P_test = sp.diag(1, 0, 0, 1)
+v1_test = sp.Matrix([
+    [0, 1 + 2*sp.I, R(3, 5), 0],
+    [R(2, 7) - sp.I, R(1, 3), 2, 1 - sp.I],
+    [3*sp.I, R(4, 9), -R(2, 5), R(5, 6) + sp.I],
+    [0, 2 + sp.I, R(7, 8) - 2*sp.I, 0],
+])
+v2_test = sp.Matrix([
+    [1, sp.I, 0, 2 - sp.I],
+    [R(1, 2), -1, 3*sp.I, 0],
+    [2, R(2, 3), sp.I, 1],
+    [R(5, 4) + sp.I, 0, -sp.I, -2],
+])
+D_test = v1_test.conjugate().T - v1_test
+W_test = v1_test + v1_test.conjugate().T
+R1_test = sp.zeros(4)
+for row in range(4):
+    for column in range(4):
+        if energies[row] != energies[column]:
+            R1_test[row, column] = (
+                D_test[row, column]
+                / (energies[row] - energies[column]))
+G_test = sp.diag(
+    0,
+    1/(E - energies[1]),
+    1/(E - energies[2]),
+    0,
+)
+S2_test = (v2_test.conjugate().T - v2_test
+           + (R1_test*W_test - W_test*R1_test)/2)
+B2_test = P_test*(v2_test + v1_test*G_test*v1_test)*P_test
+born_source_test = P_test*S2_test*P_test
+born_antihermitian_test = B2_test.conjugate().T - B2_test
+born_identity_ok = (
+    P_test*v1_test*P_test == sp.zeros(4)
+    and sp.simplify(h_test*R1_test - R1_test*h_test - D_test)
+    == sp.zeros(4)
+    and sp.simplify(born_source_test - born_antihermitian_test)
+    == sp.zeros(4)
+)
+check("G17g: exact Born/deformation identity on a two-state degenerate "
+      "shell: P_E[(v2^dagger-v2)+1/2[R1,v1+v1^dagger]]P_E "
+      "= B2(E)^dagger-B2(E), with B2=v2+v1 G_E v1",
+      born_identity_ok)
 
 
 print("\nALL PASS" if PASS else "\nSOME CHECKS FAILED")

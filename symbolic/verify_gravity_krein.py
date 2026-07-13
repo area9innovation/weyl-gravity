@@ -7,7 +7,14 @@ physically standard class specified in the manuscript:
 
   * a nondegenerate fundamental symmetry on physical BRST cohomology;
   * Poincare covariance and agreement with the free gravitational real form;
-  * tensor-multiplicative (cluster-factorizing) asymptotic Fock lift.
+  * the natural, particle-number-diagonal second quantization, acting by
+    tensor products on simple asymptotic states and multiplicatively on
+    separated clusters.
+
+It does not classify momentum-dependent involutions on multiparticle
+multiplicity spaces or construct a fundamental symmetry on the full
+gauge-fixed Faddeev--Popov complex.  J_F is the grading induced on physical
+BRST cohomology.
 
 One precision matters.  Under the proper-orthochronous Poincare group the
 massless +2 and -2 helicity representations are inequivalent and can carry
@@ -21,7 +28,8 @@ Inputs proved by earlier exact rails:
   G13/G14  the massive spin-2 irrep is uniform; Mhh vanishes; the MMM and
            MMh vertices are nonzero;
   G15/G17  the reduced physical MM -> Mh amplitude is
-           A_K = 7881241032/5584765625 and the positive-frame obstruction is
+           A_K^red = 7881241032/5584765625 and the reduced positive-frame
+           obstruction is
            -2 i A_K sigma_x, with exact Ward, EOM, reverse-process, and
            internal-gauge checks.
 
@@ -29,8 +37,9 @@ Checks:
 G18a  solve the complete one-particle commutant.  Before imposing reality it
       is diag(a_+,a_-,a_M I_5); parity/reality sets a_+=a_-, and the free
       signature uniquely selects diag(+I_2,-I_5).
-G18b  tensor multiplicativity uniquely lifts this to (-1)^N_M; in particular
-      |MM> is positive and |Mh> is negative.
+G18b  within the natural particle-number-diagonal class, tensor
+      multiplicativity uniquely lifts this to (-1)^N_M; in particular |MM>
+      is positive and |Mh> is negative.
 G18c  the exact forward block is Z2-odd but not null:
       Tr(X^sharp X) = -|t|^2 != 0.  The complete G17 obstruction block is
       likewise non-null.  Odd times odd is neutral, so no Z2 charge-null
@@ -163,8 +172,9 @@ anchors_ok = (fock_sign(0, 0) == 1
               and fock_sign(0, 1) == -1)
 sign_in = fock_sign(0, 2)       # |MM>
 sign_out = fock_sign(1, 1)      # |Mh>
-check("G18b: the unique tensor-multiplicative/cluster-factorizing Fock "
-      "lift is J_F=(-1)^N_M; |MM> has sign +1 and |Mh> has sign -1",
+check("G18b: within the natural particle-number-diagonal, "
+      "tensor-multiplicative/cluster-factorizing class, the lift is "
+      "J_F=(-1)^N_M; |MM> has sign +1 and |Mh> has sign -1",
       cluster_ok and anchors_ok and sign_in == 1 and sign_out == -1)
 
 
@@ -193,7 +203,8 @@ obstruction_trace = sp.simplify(sp.trace(obstruction_quadratic))
 z2_odd = sp.simplify(J_min*X*J_min + X) == sp.zeros(2)
 product_neutral = (sp.simplify(J_min*quadratic*J_min - quadratic)
                    == sp.zeros(2))
-check("G18c: the exact forward transition is J_F-odd but NON-NULL: "
+check("G18c: in the reduced external-leg convention, the exact forward "
+      "transition is J_F-odd but NON-NULL: "
       f"Tr(X^sharp X)={quadratic_trace}=-A_K^2 != 0; X^sharp X is "
       "J_F-even.  The full G17 obstruction is also non-null, with "
       f"Tr(O^sharp O)={obstruction_trace}",
