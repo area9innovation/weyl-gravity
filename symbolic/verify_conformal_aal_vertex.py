@@ -33,6 +33,13 @@ Fock block has ``J V - V^dagger J = 0``.  This cancellation is compatible
 with the known nonzero *complex flat-momentum* EAA amplitude: normalizable
 positive-energy cylinder modes define a different, real resonant problem.
 
+Two EAL tensor structures are exposed component-by-component as well.  The
+``eal-*`` modes evaluate the same-chirality seed E_2 A_3 -> L_5, while the
+``mixed-eal-*`` modes evaluate E_3 A_3 -> L_6 with the vector in the opposite
+chiral representation.  Forward and reverse orientations are assembled from
+the curvature action independently.  Their Clebsch--Gordan projected
+certificates live in ``verify_conformal_eal_vertex.py``.
+
 The finite scan motivates, but does not replace, an all-spin cubic protection
 proof.  No coordinate grid or floating-point approximation is used.
 """
@@ -867,10 +874,30 @@ def empty_metric_expression() -> sp.Matrix:
 # normalizable positive-energy cylinder coefficient also cancels, exposing
 # the distinction between those two kinematic problems.
 channel = sys.argv[1].lower() if len(sys.argv) > 1 else "aal"
-if channel not in {"aal", "eaa", "eaa-reverse"}:
+eal_channels = {
+    "eal-1",
+    "eal-2",
+    "eal-reverse-1",
+    "eal-reverse-2",
+}
+mixed_eal_channels = {
+    "mixed-eal-1",
+    "mixed-eal-2",
+    "mixed-eal-reverse-1",
+    "mixed-eal-reverse-2",
+}
+if channel not in {
+    "aal",
+    "eaa",
+    "eaa-reverse",
+    *eal_channels,
+    *mixed_eal_channels,
+}:
     raise SystemExit(
         "usage: verify_conformal_aal_vertex.py "
-        "[aal [J1 J2]|eaa|eaa-reverse]"
+        "[aal [J1 J2]|eaa|eaa-reverse|"
+        "eal-{1,2}|eal-reverse-{1,2}|"
+        "mixed-eal-{1,2}|mixed-eal-reverse-{1,2}]"
     )
 
 
@@ -974,6 +1001,121 @@ if channel == "aal":
             (total_spin - 1) * I,
         ),
     )
+elif channel in eal_channels:
+    # Same-chirality E_2(2,0) A_3(3/2,1/2) -> L_5(5/2,1/2).
+    # The output is one step below the maximal left SU(2) product.  Its
+    # normalized highest-weight input is the entangled Clebsch--Gordan sum
+    #
+    #   (2/sqrt(7)) |E(2,0) A(1/2,1/2)>
+    #   -sqrt(3/7)  |E(1,0) A(3/2,1/2)>.
+    #
+    # Each command evaluates one term; verify_conformal_eal_vertex.py
+    # combines them.  Reverse commands conjugate all three external waves
+    # and independently assemble the normalizable reverse representative.
+    reverse_eal = channel.startswith("eal-reverse")
+    eal_component = int(channel.rsplit("-", 1)[1])
+    if eal_component == 1:
+        E_magnetic = R(2)
+        A_left_magnetic = HALF
+    else:
+        E_magnetic = R(1)
+        A_left_magnetic = R(3, 2)
+
+    E_ambient = ambient_tensor_harmonic(1, E_magnetic, 0, 1)
+    A3_ambient = ambient_vector_harmonic(
+        1, A_left_magnetic, HALF, HALF
+    )
+    L5_ambient = ambient_tensor_harmonic(
+        R(3, 2), R(5, 2), HALF, 1
+    )
+    E_covariant = spatial_jacobian.T * E_ambient * spatial_jacobian
+    A3_covariant = spatial_jacobian.T * A3_ambient
+    L5_covariant = spatial_jacobian.T * L5_ambient * spatial_jacobian
+    wave_expressions = [
+        tensor_metric_mode(
+            E_covariant, 2, 1 / (4 * sp.sqrt(3)), reverse_eal
+        ),
+        vector_metric_mode(
+            A3_covariant, 3, 1 / (2 * sp.sqrt(15)), reverse_eal
+        ),
+        tensor_metric_mode(
+            L5_covariant, 5, 1 / (4 * sp.sqrt(10)), not reverse_eal
+        ),
+    ]
+    forward_phases = (
+        (-2 * I, -E_magnetic * I, 0),
+        (-3 * I, -A_left_magnetic * I, -HALF * I),
+        (5 * I, R(5, 2) * I, HALF * I),
+    )
+    if reverse_eal:
+        expected_phases = tuple(
+            tuple(-entry for entry in phases) for phases in forward_phases
+        )
+    else:
+        expected_phases = forward_phases
+elif channel in mixed_eal_channels:
+    # First mixed-chirality EAL family:
+    #
+    #   E_3(5/2,1/2) A_3(1/2,3/2) -> L_6(3,1).
+    #
+    # The left product is maximal.  The output is one step below the
+    # maximal right-SU(2) product, with normalized incoming projection
+    #
+    #   (1/2) |E(5/2, 1/2) A(1/2, 1/2)>
+    #   -(sqrt(3)/2) |E(5/2,-1/2) A(1/2, 3/2)>.
+    #
+    # Each command evaluates one term.  Reverse commands independently
+    # conjugate and reassemble all three external modes.
+    reverse_mixed_eal = channel.startswith("mixed-eal-reverse")
+    mixed_eal_component = int(channel.rsplit("-", 1)[1])
+    if mixed_eal_component == 1:
+        E_right_magnetic = HALF
+        A_right_magnetic = HALF
+    else:
+        E_right_magnetic = -HALF
+        A_right_magnetic = R(3, 2)
+
+    E3_ambient = ambient_tensor_harmonic(
+        R(3, 2), R(5, 2), E_right_magnetic, 1
+    )
+    A3_mixed_ambient = ambient_vector_harmonic(
+        1, HALF, A_right_magnetic, -HALF
+    )
+    L6_ambient = ambient_tensor_harmonic(2, 3, 1, 1)
+    E3_covariant = spatial_jacobian.T * E3_ambient * spatial_jacobian
+    A3_mixed_covariant = spatial_jacobian.T * A3_mixed_ambient
+    L6_covariant = spatial_jacobian.T * L6_ambient * spatial_jacobian
+    wave_expressions = [
+        tensor_metric_mode(
+            E3_covariant,
+            3,
+            1 / (4 * sp.sqrt(6)),
+            reverse_mixed_eal,
+        ),
+        vector_metric_mode(
+            A3_mixed_covariant,
+            3,
+            1 / (2 * sp.sqrt(15)),
+            reverse_mixed_eal,
+        ),
+        tensor_metric_mode(
+            L6_covariant,
+            6,
+            1 / (4 * sp.sqrt(15)),
+            not reverse_mixed_eal,
+        ),
+    ]
+    forward_phases = (
+        (-3 * I, -R(5, 2) * I, -E_right_magnetic * I),
+        (-3 * I, -HALF * I, -A_right_magnetic * I),
+        (6 * I, 3 * I, I),
+    )
+    if reverse_mixed_eal:
+        expected_phases = tuple(
+            tuple(-entry for entry in phases) for phases in forward_phases
+        )
+    else:
+        expected_phases = forward_phases
 else:
     # E_2(2,0) + A_3(1/2,3/2) -> A_5(5/2,3/2).
     # ``eaa-reverse`` conjugates all three external waves and therefore
@@ -1401,6 +1543,88 @@ elif channel in {"eaa", "eaa-reverse"}:
         "C1b-3: same-sign EAA forward/reverse block is J-self-adjoint",
         EAA_source == sp.zeros(2),
     )
+elif channel in eal_channels:
+    if eal_component == 1:
+        eal_prefactor = I * sp.sqrt(6) / (1920 * sp.pi**3)
+    else:
+        eal_prefactor = -I * sp.sqrt(2) / (640 * sp.pi**3)
+    if reverse_eal:
+        eal_prefactor = -eal_prefactor
+    expected_density = (
+        eal_prefactor
+        * radial_tangent
+        * (radial_tangent**2 - 1)
+        / (1 + radial_tangent**2) ** 2
+    )
+    primitive = (
+        -eal_prefactor
+        * radial_tangent**2
+        / (1 + radial_tangent**2) ** 2
+    )
+    check(
+        "C1b-EAL: component local density has the exact nonzero form",
+        canonical_jet_coefficient(cubic_density - expected_density) == 0,
+    )
+    check(
+        "C1b-EAL: measured component density is an exact boundary term",
+        sp.cancel(cubic_integrand - sp.diff(primitive, radial_tangent)) == 0
+        and sp.limit(primitive, radial_tangent, 0) == 0
+        and sp.limit(primitive, radial_tangent, sp.oo) == 0,
+    )
+    check(
+        "C1b-EAL: directed component coefficient vanishes separately",
+        cubic_spatial_coefficient == 0,
+    )
+elif channel in mixed_eal_channels:
+    if mixed_eal_component == 1:
+        mixed_prefactor = I * sp.sqrt(6) / (1280 * sp.pi**3)
+        mixed_polynomial = (
+            -2 * radial_tangent**4
+            + 5 * radial_tangent**2
+            - 1
+        )
+        primitive = (
+            mixed_prefactor
+            * radial_tangent**2
+            * (radial_tangent**2 - 1)
+            / (1 + radial_tangent**2) ** 4
+        )
+    else:
+        mixed_prefactor = I * sp.sqrt(2) / (1280 * sp.pi**3)
+        mixed_polynomial = (
+            -10 * radial_tangent**4
+            + radial_tangent**2
+            + 3
+        )
+        primitive = (
+            mixed_prefactor
+            * radial_tangent**2
+            * (5 * radial_tangent**2 + 3)
+            / (1 + radial_tangent**2) ** 4
+        )
+    if reverse_mixed_eal:
+        mixed_prefactor = -mixed_prefactor
+        primitive = -primitive
+    expected_density = (
+        mixed_prefactor
+        * radial_tangent
+        * mixed_polynomial
+        / (1 + radial_tangent**2) ** 4
+    )
+    check(
+        "C1b-mixed-EAL: component local density has the exact nonzero form",
+        canonical_jet_coefficient(cubic_density - expected_density) == 0,
+    )
+    check(
+        "C1b-mixed-EAL: measured component density is an exact boundary term",
+        sp.cancel(cubic_integrand - sp.diff(primitive, radial_tangent)) == 0
+        and sp.limit(primitive, radial_tangent, 0) == 0
+        and sp.limit(primitive, radial_tangent, sp.oo) == 0,
+    )
+    check(
+        "C1b-mixed-EAL: directed component coefficient vanishes separately",
+        cubic_spatial_coefficient == 0,
+    )
 else:
     check(
         "C1b-scan: higher A_J A_K L_(J+K) coefficient is exact",
@@ -1425,6 +1649,16 @@ if channel in {"eaa", "eaa-reverse"}:
     )
     print("EAA canonical Fock pairing:", EAA_pairing)
     print("EAA J-adjoint source:", EAA_source)
+elif channel in eal_channels:
+    print("EAL component:", eal_component)
+    print("EAL reverse orientation:", reverse_eal)
+    print("Measured EAL stereographic integrand:", cubic_integrand)
+    print("EAL radial primitive:", primitive)
+elif channel in mixed_eal_channels:
+    print("Mixed EAL component:", mixed_eal_component)
+    print("Mixed EAL reverse orientation:", reverse_mixed_eal)
+    print("Measured mixed-EAL stereographic integrand:", cubic_integrand)
+    print("Mixed EAL radial primitive:", primitive)
 
 
 if not PASS:

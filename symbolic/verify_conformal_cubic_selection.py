@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Exact C1c representation lemma for conformal cubic sign protection.
 
-On the Einstein cylinder the three physical one-particle towers are
+On the Einstein cylinder the three normalizable local gauge-reduced
+oscillator towers are
 
     E_J : energy 2J,   reps (J+1,J-1) + parity, positive sign;
     A_J : energy 2J+1, reps (J+1/2,J-1/2) + parity, negative sign;
@@ -18,6 +19,10 @@ as a possible opposite-sign one-to-two block.  It also verifies the universal
 total-derivative identity seen in the exact C1b density hierarchy.  The latter
 identity proves cancellation once the all-spin density formula is derived; it
 does not itself derive that formula.
+
+The representation statement is prior to the compact global conformal/Taub
+reduction and therefore does not by itself certify the final physical BRST
+state space.
 """
 
 from __future__ import annotations

@@ -310,8 +310,10 @@ holds only open items.
       multilinear perturbiner.  The allowed Gaunt overlap is
       `sqrt(6)/(3 pi)`, but the full `A_3 A_3 -> L_6` density is a radial
       boundary term and integrates to zero.  By the unique `(3,1)` reduced
-      matrix element plus parity, the complete first opposite-sign cubic
-      block at energy six vanishes.  Three higher-spin hardening channels
+      matrix element plus parity, the complete first opposite-sign oscillator
+      block at energy six vanishes.  Its promotion to the compact physical
+      BRST block remains conditional on the global conformal/Taub audit.
+      Three higher-spin hardening channels
       `(J1,J2)=(1,3/2),(3/2,3/2),(1,2)` also vanish.  With
       `S=J1+J2`, their pre-measure density is
       `D=C t[(2S-2)t^2-1]/(1+t^2)^(2S-1)`, while the measured integrand is
@@ -330,21 +332,77 @@ holds only open items.
       hierarchy is evidence, not yet an all-spin theorem.  All four measured
       constants also fit the single normalized prefactor formula recorded in
       `notes/conformal-c0.md`.
-    - IN PROGRESS (CONFORMAL C1c): the all-spin representation half is
-      proved by `verify_conformal_cubic_selection.py`.  Compact energy,
-      Fock signatures, the Einstein selection rule, and symbolic
-      `SU(2)_L x SU(2)_R` upper-triangle gaps leave
-      `A_J A_K <-> L_(J+K)` as the unique opposite-sign cubic family, with
-      equal chiralities and one reduced matrix element for each `(J,K)`.
-      The remaining work is to derive the measured C1b boundary identity
-      for arbitrary half-integer `J,K`, prove BRST/gauge/auxiliary-field
-      independence, and verify the same-sign forward/reverse reality
-      relations on every complete shell.  If that closes, assemble the first
-      complete quartic effective block at compact energy six,
-      `A_3 A_3 <-> E_2 X_4` with `X_4 in {A_4,L_4}`, including contact and
-      every second-order cubic exchange.  The flat `P_0` Jordan cokernel
-      remains a distinct wave-packet/distributional problem and must not be
-      inferred from these cylinder coefficients.
+    - IN PROGRESS (CONFORMAL C1c/P4, 2026-07-13):
+      `verify_conformal_cubic_channels.py` now gives the exact all-energy
+      resonant classification.  After Einstein selection the only families
+      are same-sign EAA, same-sign EAL, and opposite-sign AAL.  EAL has a
+      second mixed-chirality parity orbit for `J_E>=3/2`; this was absent
+      from the earlier coarse classification.  `verify_conformal_eal_vertex.py`
+      and four independent curvature runs close the first same-chirality
+      seed `E_2 A_3 <-> L_5`: its allowed derivative overlap is nonzero, but
+      its measured density is a degree-one Legendre/Jacobi polynomial and
+      both directed coefficients vanish separately.  The mixed seed
+      `E_3 A_3 -> L_6` is now closed by four further independent curvature
+      runs: its nonzero allowed overlap survives, but the projected measured
+      density is `(1-u)P_1^(1,0)` and both directions vanish separately.
+      The symbolic Jacobi rail proves that
+      every already observed AAL density integrates to zero for arbitrary
+      spin parameter and identifies EAA with the same degree-one mechanism;
+      `verify_conformal_aal_highest_harmonics.py` additionally derives and
+      certifies the closed Hamada--Horata highest-weight `q` and `q tensor q`
+      oscillator harmonics, their Clebsch--Gordan recurrences, null identities,
+      and normalization.  A bounded generic two-spin curvature attempt did
+      not finish, so deriving the generic Weyl density from those recurrences,
+      both all-spin EAL identities, BRST/complete-shell adjoint closure, and
+      the compact conformal-Killing reducibility/global-charge audit remain
+      explicit theorem obligations.  Until the last audit closes, these are
+      oscillator/mode-representative coefficients rather than asserted full
+      physical-BRST matrix elements.
+
+      The energy-six P4 staging is also exact and fail-closed.  The common
+      parity-fixed `(2,2)` target is the provisional oscillator three-channel
+      block
+      `(|A_3A_3>,|E_2A_4>,|E_2L_4>)` with `H0=6I` and
+      `J=diag(1,-1,-1)`, representing 75 of the full 2062 oscillator-shell
+      states before global conformal/Taub reduction.
+      Compact `D` uses ordinary semisimple denominators, never the flat
+      `P_0` Jordan series.  The raw full Feshbach exchange has infinite
+      self-energy tails, whereas the explicitly normal-ordered connected
+      contact-plus-one-line-exchange tree operator is finite after vacuum
+      cancellation and external-state subtraction.  The four-wave engine
+      gives `C_AA,AA=1009/(20250 pi^2)` and independently assembled
+      `C_EL,AA=C_AA,EL=1099/(43200 pi^2)`.  The latter produces the
+      contact-only source
+      `[1099/(21600 pi^2)] [[0,1],[-1,0]]`, which is an exact
+      exchange-cancellation target, not an obstruction.
+      `verify_conformal_deformation_bridge.py` now proves the exact
+      Born--deformation identity
+      `P S2 P=J_P B2-B2^dagger J_P` with
+      `B2=P[V2+V1 Q(E-H0)^(-1)Q V1]P`, and exhibits why full
+      `P V1 P=0` (not merely first-order source closure) is needed for
+      independence from homogeneous first-order metric freedom.
+      The exact scalar covariant-action Hessians are now
+      `kappa_s=131712`, `kappa_t=0`, `kappa_u=960`.  The s/u bordered gauges
+      agree.  The t Hessian is null; its nonzero slice currents pass direct
+      pure-gauge Ward probes, parity adds rather than cancels, reverse currents
+      obey the physical adjoint, and the quotient is the frequency derivative
+      of the `ell=omega=1` conformal-Killing reducibility modulo gauge.  No
+      `1/kappa_t`, ordinary t exchange, `Veff`, or obstruction is claimed.
+      C2a now constructs all 15 cylinder Diff x Weyl reducibilities, verifies
+      their `SO(4,2)` algebra/Jacobi identities, and fixes the selected
+      action-normalized Taub map exactly:
+      `Q_s=-i s C_s`, with
+      `Q_xi-[E_+^dagger,A_+]=-sqrt(5)/(5 pi)` and
+      `Q_xi+[L_-^dagger,A_-]=sqrt(10)/(5 pi)`.  These are mixed EA/LA
+      bilinears, not `Q[A_3,A_3]`; reverse and parity rails pass.  Next:
+      complete all fifteen charge matrices and the compact global
+      BRST/Taub/linearization-stability audit
+      to determine whether the oscillator target survives and with what
+      pairing; only then finish s/u currents, the covariant-to-stationary Born
+      map, subtraction rails, provisional reduced `Veff` and its nine
+      coordinates.  A full-shell theorem additionally requires the other
+      reduced irreps and spectator sectors.  The flat `P_0` Jordan cokernel
+      remains a distinct wave-packet/distributional problem.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
       build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
       on a truncated charge-Fock space with the squeezed vacuum;

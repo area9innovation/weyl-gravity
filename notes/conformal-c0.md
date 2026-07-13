@@ -1,16 +1,24 @@
 # Conformal C0: direct free pairing before the interaction test
 
 Status: C0a, C0b, C0c, the C1a shell reduction, the finite C1b cylinder
-hierarchy, and the C1c all-spin representation lemma are exact and
+hierarchy, and the C1c all-energy representation classification are exact and
 machine-verified by `symbolic/verify_conformal_free_pairing.py`,
 `symbolic/verify_conformal_cylinder_form.py`,
 `symbolic/verify_conformal_mannheim_adjoint.py`,
 `symbolic/verify_conformal_cubic_shell.py`,
-`symbolic/verify_conformal_aal_vertex.py`, and
-`symbolic/verify_conformal_cubic_selection.py`. The general radial identity,
-BRST descent, and complete same-sign adjoint check remain active. This note
-is a research ledger, not a programme-overview update and not yet a
-manuscript claim.
+`symbolic/verify_conformal_aal_vertex.py`,
+`symbolic/verify_conformal_cubic_selection.py`,
+`symbolic/verify_conformal_cubic_channels.py`,
+`symbolic/verify_conformal_jacobi_factorization.py`,
+`symbolic/verify_conformal_eal_vertex.py`, and
+`symbolic/verify_conformal_deformation_bridge.py`, with the C2a kinematic and
+selected-charge rails in
+`symbolic/verify_conformal_c2a_reducibilities.py` and
+`symbolic/verify_conformal_taub_charge.py`. The general Weyl-density
+derivation, all-spin EAA/EAL descent, BRST descent, compact global
+conformal/Taub reduction, and complete same-sign adjoint check remain active.
+This note is a research ledger, not a
+programme-overview update and not yet a manuscript claim.
 
 ## Decision
 
@@ -597,15 +605,17 @@ The exact Einstein subsector plausibly gives `A(E^n)=0` and
 translated into compact-energy harmonics rather than applied to one
 cylinder mode by name. It does not remove interactions containing the
 negative TT tower or vector descendants. The first interaction test must
-therefore be a scan of the lowest complete cubic cylinder-energy blocks,
+therefore be a scan of the lowest complete **oscillator** cubic cylinder-
+energy blocks,
 followed by
 
 ```text
 V3^sharp = V3
 ```
 
-on the complete physical cohomology block using the C0b signature, and
-then the corresponding test for any explicitly proposed Mannheim
+on the complete local gauge-reduced oscillator block using the C0b signature,
+followed by compact global BRST/Taub reduction, and then the corresponding
+test for any explicitly proposed Mannheim
 left-right adjoint. Only if cubic order is protected should the project
 assemble the second-order quartic-contact plus cubic-exchange Hamiltonian.
 
@@ -669,7 +679,7 @@ Johansson, Mogull, and Teng likewise emphasize that non-plane-wave limits
 and LSZ do not commute in general:
 [arXiv:1806.05124](https://arxiv.org/abs/1806.05124).
 
-### Complete low compact-energy shells
+### Complete low compact-energy oscillator shells
 
 Choose the overall C0b convention in which the `Delta=2` lower-TT primary is
 positive. The one-particle signatures are
@@ -682,7 +692,8 @@ positive. The one-particle signatures are
 | 5 | 64 | 72 | 136 |
 | 6 | 90 | 112 | 202 |
 
-The first complete Fock shells relevant to a cubic Hamiltonian are:
+Before the global conformal/Taub constraints are imposed, the first complete
+oscillator Fock shells relevant to a cubic Hamiltonian are:
 
 | energy | particle partitions | dimensions | full dimension |
 | ---: | --- | --- | ---: |
@@ -690,7 +701,7 @@ The first complete Fock shells relevant to a cubic Hamiltonian are:
 | 5 | `5`; `2+3` | `136`; `400` | 536 |
 | 6 | `6`; `2+4`; `3+3`; `2+2+2` | `202`; `820`; `820`; `220` | 2062 |
 
-At energy six the inherited Fock signature is `(1166,896)`. The
+At energy six the inherited oscillator-Fock signature is `(1166,896)`. The
 three-particle sector cannot simply be omitted: the cubic Hamiltonian can
 act on two particles while leaving a spectator. Here, however, its only
 energy-conserving contribution contains the energy-four block and vanishes
@@ -875,7 +886,9 @@ The local vertex is nonzero; the compact spatial coefficient cancels. Since
 the `(3,1)` reduced matrix element is unique, its highest-weight zero kills
 every magnetic component. Parity gives the conjugate `(1,3)` result. Combined
 with the C1a shell and Einstein-selection analysis, the **entire first
-opposite-sign cubic block at compact energy six vanishes**.
+opposite-sign oscillator cubic block at compact energy six vanishes**. Its
+promotion to a full compact-space BRST statement remains conditional on the
+global conformal/Taub audit.
 
 ### Higher-spin hardening
 
@@ -916,6 +929,33 @@ C_J1,J2 = 64 (2J1+1)(2J2+1)(S-1) a_J1 a_J2 l_S.
 
 This supplies the normalization target for the all-spin recurrence proof; it
 is currently an exact four-case fit, not yet a derived general coefficient.
+
+The variable
+
+```text
+u=t^2/(1+t^2)
+```
+
+exposes the common cancellation mechanism exactly. With
+`N=2(J1+J2)`, the measured AAL differential becomes
+
+```text
+I_AAL(t) dt
+ = C (1-u)^(N-3) P_1^(N-3,0)(2u-1) du.
+```
+
+It is orthogonal to the constant polynomial for the Jacobi weight
+`(1-u)^(N-3)`, or equivalently is
+
+```text
+d[-C u(1-u)^(N-2)].
+```
+
+`symbolic/verify_conformal_jacobi_factorization.py` proves this implication
+for symbolic integer `N` and verifies the four curvature-derived constants.
+This turns the integration step into an all-spin Jacobi theorem, but it does
+not yet derive the displayed Weyl density from generic Hamada--Horata
+harmonics. That recurrence/BRST step is the remaining AAL theorem gap.
 
 The cases with the same total spin but different incoming spins show that
 the cancellation is not a peculiarity of the lowest vector leg. This is
@@ -982,9 +1022,66 @@ motivates the stronger conjecture
 P_Delta V_3 P_Delta = 0
 ```
 
-on normalizable physical resonant cylinder shells. The present EAA channel
-and finite AAL hierarchy do not prove that conjecture; a complete same-sign
-shell classification is still part of C1c.
+on normalizable resonant oscillator shells before global conformal/Taub
+reduction. The present EAA channel and finite AAL hierarchy do not prove that
+conjecture; a complete same-sign shell classification and the global descent
+are still part of C1c/C2a.
+
+The first representation-allowed EAL seed is now also certificate-grade.
+For
+
+```text
+E_2 A_3 -> L_5
+```
+
+the target lies one step below the maximal left-`SU(2)` product, so the
+incoming state is the exact Clebsch--Gordan combination
+
+```text
+(2/sqrt(7)) |E(2,0) A(1/2,1/2)>
+-sqrt(3/7)  |E(1,0) A(3/2,1/2)>.
+```
+
+Its allowed derivative-Gaunt overlap is nonzero,
+`-sqrt(21)/(3 pi)`. Four independent curvature runs nevertheless give
+
+```text
+D_EAL(t)=i sqrt(42) t(t^2-1)/[2688 pi^3(1+t^2)^2]
+```
+
+and the reverse density is its exact conjugate. After the same change of
+variables,
+
+```text
+I_EAL(t) dt
+ = [i sqrt(42)/(2688 pi^3)] P_1^(0,0)(2u-1) du
+ = d[-i sqrt(42) u(1-u)/(2688 pi^3)].
+```
+
+Both directed coefficients therefore vanish separately. With
+`J_EAL=-I_2`, this again gives `V_EAL=0`, rather than a nonzero interaction
+whose source merely cancels against the metric.
+
+The genuinely distinct mixed-chirality orbit beginning at
+`E_3 A_3 -> L_6` is now closed at its first seed as well. Its exact CG
+projection is `(1/2,-sqrt(3)/2)`, its allowed derivative overlap is the
+nonzero `1/(3 pi)`, and four independent curvature runs reduce to
+
+```text
+D_mixed(t)=i sqrt(6) t(2t^2-1)/[640 pi^3(1+t^2)^3].
+```
+
+The reverse is its exact conjugate. Its measured differential is
+
+```text
+[i sqrt(6)/(640 pi^3)]
+  (1-u) P_1^(1,0)(2u-1) du
+=d[-i sqrt(6)u(1-u)^2/(640 pi^3)],
+```
+
+so both directed entries again vanish separately. This closes the first
+representative of both EAL tensor structures, but not their all-spin
+continuation.
 
 ### What C1b does and does not answer
 
@@ -1000,47 +1097,155 @@ nonstandard probability prescription exists. Kubo--Kuntz's negative
 completeness weights concern the latter, not a failure to conserve a fixed
 indefinite form.
 
-### C1c and the first quartic target
+### C1c classification and the first quartic target
 
-The representation half of the next theorem is now exact.
-`symbolic/verify_conformal_cubic_selection.py` combines the inherited Fock
-signs with the Einstein selection rule, then applies the two independent
-`SU(2)` triangle inequalities for arbitrary symbolic half-integer spins. It
-proves that every opposite-sign cubic family is forbidden except
-
-```text
-A_J A_K <-> L_(J+K),
-```
-
-with equal chiralities. Since each `SU(2)` tensor product is
-multiplicity-free, each fixed `(J,K)` channel has one reduced matrix element;
-all magnetic components are controlled by it. The input towers are the full
-C0b physical BRST-cohomology towers: `A` is precisely the helicity-one
-descendant tower, while `E` and `L` are the lower- and upper-TT towers. Thus
-the branch enumeration does not omit a separately adjustable vector or TT
-descendant. Both chiralities are included explicitly and parity exchanges
-them. An exact half-integer scan is retained as a regression test, not as the
-proof. What is not yet proved is representative-independence of the **vertex
-identity** under the full BRST complex.
-
-To complete cubic protection one must still:
-
-1. derive the displayed total-derivative density for arbitrary half-integer
-   `J,K`, including the parity-conjugate channel;
-2. prove that the identity is independent of physical BRST representative
-   and of auxiliary-field elimination/integration by parts;
-3. verify the same-sign forward/reverse reality relations on every complete
-   shell, so the full first-order source—not only its opposite-sign
-   projection—vanishes.
-
-If this closes, the first new calculation is the complete compact-energy-six
-quartic effective block. Its earliest opposite-sign two-particle mixing is
+The representation half is now exact for **all** resonant cubic families.
+`symbolic/verify_conformal_cubic_channels.py` reduces compact energy and the
+two `SU(2)` triangle rules to a finite affine-depth problem, with no energy
+cutoff. Before Einstein selection, the only allowed orientations are
 
 ```text
-A_3 A_3 (+) <-> E_2 X_4 (-),       X_4 in {A_4,L_4},
+EE -> A,  EE -> L,  EA -> A,  EA -> L,  AA -> L.
 ```
 
-and requires the quartic contact plus all second-order cubic exchanges and
-the complete degenerate multiplicity space. That is the direct conformal
-analogue of the G17 assembly, now with the unique conventional indefinite
-form rather than a split positive metric.
+The exact Einstein-subsector rule kills the first two. The survivors are
+
+```text
+EAA  (same sign; one parity orbit),
+EAL  (same sign; one orbit for J_E=1 and two for J_E>=3/2),
+AAL  (the unique opposite-sign family; one orbit).
+```
+
+Each fixed chiral product is multiplicity one. The second EAL entry is a
+distinct parity-completed tensor structure, not a Clebsch--Gordan
+multiplicity; compact `SO(4)`, parity and Bose symmetry do not relate it to
+the same-chirality coefficient. The finite scan through energy twelve is
+retained only as a regression of this all-energy proof.
+
+Consequently the finite AAL hierarchy plus its pending generic harmonic
+derivation can close the opposite-sign cubic theorem. The stronger
+conjecture `P_Delta V_3 P_Delta=0` additionally requires all-spin EAA and
+both EAL identities beyond their now-closed seeds, together with
+BRST-representative and complete-shell adjoint closure.
+
+In parallel, P4 now stages a provisional compact-energy-six oscillator tree
+block
+
+```text
+A_3 A_3 (+) <-> E_2 X_4 (-),       X_4 in {A_4,L_4}.
+```
+
+The common parity-fixed `(2,2)` reduced basis is
+
+```text
+(|A_3 A_3>, |E_2 A_4>, |E_2 L_4>),
+H0,6=6 I_3,  J_6=diag(1,-1,-1).
+```
+
+It represents 75 magnetic oscillator states with inherited signature
+`(25,50)`, not the full 2062-dimensional oscillator shell.  Neither this
+target nor `J_6` is yet the globally reduced compact-space BRST block.
+Compact cylinder `D` is semisimple on these oscillator towers, so candidate
+off-shell exchange denominators are ordinary `1/(Delta_Q-6)`; the flat
+`P_0` Jordan resolvent must not be imported into this calculation.
+
+`symbolic/verify_conformal_quartic_intermediates.py` further separates two
+operators that must not be conflated. The raw quantum Feshbach image has
+infinite affine three-particle self-energy tails and needs a regulated
+spectral sum. The connected tree contact-plus-one-line-exchange operator is
+finite after normal ordering, final target projection, vacuum cancellation
+and external-state subtraction. In the selected block it has no enumerated
+one-particle oscillator intermediate; its finite oscillator one-line
+candidates occur in
+the `AA/EA` directions, while constrained and BRST-contractible components
+must still be supplied by the gauge-bordered inverse. The only formal
+energy-six three-particle incidence is `E_2^3`; it belongs in `P_6` and its
+`LEE` current is Einstein-zero, so no zero denominator is formed.
+
+The four-wave contact engine is operational and has already produced the
+nonzero regressions
+
+```text
+C_AA,AA^(4)=1009/(20250 pi^2),
+C_EL,AA^(4)=C_AA,EL^(4)=1099/(43200 pi^2).
+```
+
+The two branch-changing directions are independent curvature assemblies.
+With `J_(AA,EL)=diag(1,-1)`, their contact-only source is
+
+```text
+[1099/(21600 pi^2)] [[0,1],[-1,0]].
+```
+
+This is the exact exchange-cancellation target, not an effective Hamiltonian
+or obstruction.
+
+The scalar internal Hessian rail is now exact at the covariant-action level:
+
+```text
+kappa_s=131712,  kappa_t=0,  kappa_u=960.
+```
+
+The s and u quotients admit two agreeing bordered gauges.  The t quotient
+does not: its Hessian is exactly zero although its local density is nonzero.
+Its raw chiral slice currents are nonzero, every directly inserted pure-gauge
+probe integrates to zero, parity partners add, and independently generated
+reverse currents obey the physical-adjoint relation.  The quotient is the
+frequency derivative of the `ell=omega=1` conformal-Killing reducibility
+modulo ordinary gauge.  No `1/kappa_t`, t exchange number, effective block,
+or obstruction is formed.  Instead, the t result exposes a blocking global
+BRST/Taub/linearization-stability audit: the proposed `AA/EA/EL` target may
+need exclusion, dressing, enlargement, or a different reduced pairing.
+
+The P4 staging rail therefore fails closed until that global audit, the s/u
+currents and their parity/reverse data, the covariant-to-stationary Born map,
+connected-tree and external-state subtractions, and all nine provisional
+reduced cokernel coordinates are present with verified artifact hashes. No
+quartic obstruction claim has been made.
+
+The first C2a component of that audit is now exact.  For a signed proper
+conformal reducibility `r_s=(i s,1,1)`, the normal metric probe obeys
+
+```text
+k_s=2 n_(mu xi_(s)nu)=-i s partial_omega(G_s r_s),
+partial_omega(G_s r_s)=2 p_s+B_s(-2 i s,1).
+```
+
+The two directly evaluated ordinary-gauge currents vanish, so the selected
+slice coefficient `C_s` equals the action-normalized mixed Euler/Bach charge
+through `Q_s=-i s C_s`.  The current data give
+
+```text
+Q_xi-[E_+^dagger,A_+]=-sqrt(5)/(5 pi),
+Q_xi+[L_-^dagger,A_-]= sqrt(10)/(5 pi).
+```
+
+These are nonzero mixed `EA/LA` Taub components, not `Q[A_3,A_3]` and not
+yet the charge of a complete parity-projected energy-six state.  Reverse and
+parity rails pass, while the other magnetic components, seven Killing
+charges, and global BRST reduction remain open.  This strengthens the reason
+to stop P4: the exceptional current is a selected Taub charge, but only the
+full fifteen-component kernel can determine the admissible state space.
+
+The deformation-theory bridge itself is now exact. For the canonical
+off-shell first-order metric correction,
+
+```text
+P S2 P = J_P B2(E)-B2(E)^dagger J_P,
+B2(E)=P[V2+V1 Q(E-H0)^(-1)Q V1]P.
+```
+
+Thus the complete stationary contact-plus-exchange `J`-anti-Hermitian block
+is exactly the metric-deformation cocycle, with the same normalization and
+subtraction convention; a stripped amplitude or contact entry is not. The
+proof and exact finite-block certificate are in
+`notes/conformal-deformation-bridge.md` and
+`symbolic/verify_conformal_deformation_bridge.py`.
+
+There is one essential qualification. The stronger condition `P V1 P=0`
+makes the second-order source independent of homogeneous first-order metric
+freedom. Vanishing only of `P(JV1-V1^dagger J)P` does not: a nonzero
+`J_P`-self-adjoint cubic shell block leaves a genuine ambiguity term. Hence
+the unresolved all-spin EAA/EAL shell identities must be closed (or treated
+jointly with the first-order freedom) before P4 can support an
+ambiguity-independent no-go.
