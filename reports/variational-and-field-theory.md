@@ -1443,3 +1443,59 @@ Also this session: "verified hierarchy through order four" wording in
 paper 5's intro; checks table + scripts list updated. Parallel
 (other-team) edits to paper 0 (+229 lines) and README (Overview
 section) preserved and committed alongside.
+
+## 2026-07-14 — Gravity program opens: G13–G14 (cubic Einstein–Weyl)
+
+Team directive: verification ladder G13–G18 toward the decisive
+deliverable (one exact, Ward-verified, nonzero MM→Mh amplitude at the
+interior rational point). Built verify_gravity_cubic.py: a multi-wave
+perturbiner engine (g = η + Σλᵢεᵢe^{ipᵢx}, wave-algebra with automatic
+multilinear truncation, exact ℚ(i) kinematics) for
+√−g(c₁R + αR²μν + βR²), α = −3β, M² = c₁/α (M = 1, c₁ = −1).
+ALL PASS (~1 min):
+
+- G13a (engine validation): on-shell 2-point coefficient vanishes for
+  TT waves on BOTH branches (p² = 0 and p² = M²), nonzero off shell.
+- G13b (Ward): gauge polarization p∨ξ on a massless leg → exact zero
+  on the MMh point and the M→hh decay point. Pipeline diff-invariant.
+- G13 (ONE-M RULE at cubic order): A₃(M,h,h) = 0 for all 5 massive
+  polarizations × 4 graviton helicity combos at the PHYSICAL decay
+  point M(rest)→hh — 20 exact zeros. Amplitude-level content of the
+  Einstein-truncation lemma (Einstein sector Bach-flat, 1303.5781;
+  non-decay analogue 1607.03497). Supports 𝔬₊^(1) = 0 in gravity.
+- G14a: A₃(MMM) ≠ 0 exactly at a rational-complex on-shell point
+  (constructed in ℚ(i): p₁ = (5/4,0,0,3/4), p₂ = (−17/32,7i/8,0,−7/32),
+  p₃ = −p₁−p₂; first basis value −378877661/4892192). The cubic
+  self-coupling exists ON SHELL — not implied by tr M³ alone.
+- G14b: A₃(MMh) ≠ 0 exactly (null leg (3,4i,0,5), polarization q⊗q
+  with q = (5,0,4,3); value 885824/867). Minimal gravitational
+  coupling of the massive eigenfield confirmed at amplitude level.
+- G14c (the qualitative decisive step): factorization residue at the
+  s-channel pole P² = M²: shared internal momentum P = pm3; second
+  vertex legs (−P, q₃, q₄) with q₄ = (−11/23, i, 11/23, 1) null ⊥ P
+  (hand-derived exact ℚ(i) solution), polarization (0,i,0,1);
+  r = A₃(MMM^a(P))·G₅⁻¹·A₃(M^b(−P)Mh) =
+  −14553151284088813/34876867280896 ≠ 0.
+  ⇒ the MM→Mh four-point is NOT identically zero (a pole residue
+  cannot be canceled by quartic contact terms) ⇒ [(-1)^{N_M}, S] ≠ 0
+  for the naive massive number parity. Krein conclusion kept
+  conditional per team (other gradings/boundary null ideals open).
+
+Engine debug note (honest record): first version failed its own G13a
+validation — the contraction routine applied metric signs to
+upper-lower contractions and the Neumann series mixed index positions;
+fixed (wt_trace vs wt_contract split), after which all validation and
+physics checks pass. The staged-validation design (2-point on-shell +
+Ward BEFORE the physics claims) caught it.
+
+NEXT: G15 — full MM→Mh at the team's interior rational point
+(p₁ = M(5/4,0,0,3/4), p₂ = M(5/4,0,0,−3/4), k = M(21/20,21/25,0,63/100),
+p₃ = M(29/20,−21/25,0,−63/100); s = 25/4 M², cosθ = 3/5; threshold
+point as regression). Needs: 4-wave quartic vertex (engine already
+truncates correctly at quartic), internal fourth-order propagator with
+gauge fixing, exchange + contact assembly. Then G16 (Ward/Bose/
+crossing + polarization scan), G17 (quarter-turn transport of the FULL
+second-order operator, 𝔬₊^(2) = Π_shell(T₂†−T₂) ≠ 0), G18 (minimal
+Krein block: probability-visible vs null). Manuscript (paper 6): the
+one-M perturbiner/LSZ lemma with the asymptotic-eigenfield and
+local-invertible-field-map hypotheses.

@@ -153,6 +153,26 @@ holds only open items.
       boundary; ε/g contamination at split is the charge-frame image
       of PS-D broken parity and is not assumed small away from the
       boundary.
+    - DONE (step 12, 2026-07-14): **GRAVITY G13–G14 ALL PASS**
+      (verify_gravity_cubic.py, multi-wave perturbiner engine, exact
+      ℚ(i) kinematics): one-M rule A₃(Mhh) = 0 at the physical decay
+      point (20 exact zeros; Einstein-truncation/Bach-flat, supports
+      gravitational 𝔬₊^(1) = 0); Ward identities exact; A₃(MMM) ≠ 0,
+      A₃(MMh) ≠ 0 exact; **factorization residue at P² = M² nonzero
+      ⇒ MM→Mh not identically zero ⇒ [(-1)^{N_M},S] ≠ 0** (naive
+      massive parity; other gradings open).
+    - NEXT-GRAVITY (G15, the decisive deliverable): full MM→Mh
+      amplitude at the interior rational point p₁ = M(5/4,0,0,3/4),
+      p₂ = M(5/4,0,0,−3/4), k = M(21/20,21/25,0,63/100),
+      p₃ = M(29/20,−21/25,0,−63/100) (s = 25/4M², cosθ = 3/5;
+      threshold point as regression): 4-wave quartic vertex + internal
+      fourth-order propagator w/ gauge fixing + exchange/contact
+      assembly, Ward-verified. Then G16 (Bose/crossing/polarization
+      scan), G17 (quarter-turn transport of FULL T₂:
+      𝔬₊^(2) = Π_shell(T₂†−T₂) ≠ 0), G18 (minimal Krein block:
+      parity violation probability-visible or null). Paper 6: one-M
+      perturbiner/LSZ lemma (asymptotic mass eigenfield + local
+      invertible field map hypotheses).
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
       build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
       on a truncated charge-Fock space with the squeezed vacuum;
