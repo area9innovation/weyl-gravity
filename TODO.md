@@ -303,16 +303,39 @@ holds only open items.
       indefinite `J_conf` cannot change its inertia and therefore cannot
       produce a positive metric even if the conservation equation is
       soluble.
-    - NEXT (CONFORMAL C1b): compute the Hamiltonian-normalized cylinder
-      coefficient `<L_6|V_3|A_3 A_3>` in the ordinary-derivative Weyl
-      action.  Use normalized `S^3` vector/tensor harmonics in the allowed
-      `(3,1)` plus parity-conjugate channel; keep metric, auxiliary tensor,
-      Stueckelberg vector, constraints, and BRST quotient; derive forward
-      and reverse entries; test `J_E V_E=V_E^dagger J_E` on the complete
-      energy-6 block; and, if nonzero, diagonalize the full degenerate block
-      and evaluate its indefinite optical-theorem weight.  A flat growing
-      mode has derivative-delta support, so divided differences are only a
-      regression rail and cannot replace this cylinder matrix element.
+    - DONE (CONFORMAL C1b, 2026-07-13):
+      `verify_conformal_aal_vertex.py` constructs the normalized
+      Hamada--Horata `S^3` vector and upper-TT harmonics and evaluates the
+      complete metric Weyl cubic coefficient with an exact curved-cylinder
+      multilinear perturbiner.  The allowed Gaunt overlap is
+      `sqrt(6)/(3 pi)`, but the full `A_3 A_3 -> L_6` density is a radial
+      boundary term and integrates to zero.  By the unique `(3,1)` reduced
+      matrix element plus parity, the complete first opposite-sign cubic
+      block at energy six vanishes.  Three higher-spin hardening channels
+      `(J1,J2)=(1,3/2),(3/2,3/2),(1,2)` also vanish.  With
+      `S=J1+J2`, their pre-measure density is
+      `D=C t[(2S-2)t^2-1]/(1+t^2)^(2S-1)`, while the measured integrand is
+      `I=2D/(1+t^2)=d[-C t^2/(1+t^2)^(2S-1)]/dt`.  The normalizable resonant
+      `E_2 A_3 -> A_5` cylinder coefficient likewise cancels; this does not
+      contradict its nonzero complex flat-momentum amplitude.  The finite
+      hierarchy is evidence, not yet an all-spin theorem.  All four measured
+      constants also fit the single normalized prefactor formula recorded in
+      `notes/conformal-c0.md`.
+    - IN PROGRESS (CONFORMAL C1c): the all-spin representation half is
+      proved by `verify_conformal_cubic_selection.py`.  Compact energy,
+      Fock signatures, the Einstein selection rule, and symbolic
+      `SU(2)_L x SU(2)_R` upper-triangle gaps leave
+      `A_J A_K <-> L_(J+K)` as the unique opposite-sign cubic family, with
+      equal chiralities and one reduced matrix element for each `(J,K)`.
+      The remaining work is to derive the measured C1b boundary identity
+      for arbitrary half-integer `J,K`, prove BRST/gauge/auxiliary-field
+      independence, and verify the same-sign forward/reverse reality
+      relations on every complete shell.  If that closes, assemble the first
+      complete quartic effective block at compact energy six,
+      `A_3 A_3 <-> E_2 X_4` with `X_4 in {A_4,L_4}`, including contact and
+      every second-order cubic exchange.  The flat `P_0` Jordan cokernel
+      remains a distinct wave-packet/distributional problem and must not be
+      inferred from these cylinder coefficients.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
       build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
       on a truncated charge-Fock space with the squeezed vacuum;

@@ -1,13 +1,16 @@
 # Conformal C0: direct free pairing before the interaction test
 
-Status: C0a, C0b, C0c, and the C1a shell reduction are exact and
-machine-verified by
-`symbolic/verify_conformal_free_pairing.py` and
-`symbolic/verify_conformal_cylinder_form.py`, and
-`symbolic/verify_conformal_mannheim_adjoint.py` and
-`symbolic/verify_conformal_cubic_shell.py`. C1b is the next active
-calculation. This note is a research ledger, not a programme-overview update
-and not yet a manuscript claim.
+Status: C0a, C0b, C0c, the C1a shell reduction, the finite C1b cylinder
+hierarchy, and the C1c all-spin representation lemma are exact and
+machine-verified by `symbolic/verify_conformal_free_pairing.py`,
+`symbolic/verify_conformal_cylinder_form.py`,
+`symbolic/verify_conformal_mannheim_adjoint.py`,
+`symbolic/verify_conformal_cubic_shell.py`,
+`symbolic/verify_conformal_aal_vertex.py`, and
+`symbolic/verify_conformal_cubic_selection.py`. The general radial identity,
+BRST descent, and complete same-sign adjoint check remain active. This note
+is a research ledger, not a programme-overview update and not yet a
+manuscript claim.
 
 ## Decision
 
@@ -733,8 +736,12 @@ zero. The radial `SO(4)` product also contains the corresponding channel:
     contains (3/2,5/2)_A5.
 ```
 
-This is the first finite cubic interaction, but it cannot be the desired
-opposite-sign obstruction.
+This proves that the vertex is not identically zero on complex flat
+kinematics, but it does **not** prove that the corresponding normalizable,
+positive-energy cylinder resonance is nonzero. C1b below finds that the
+specific `E_2 A_3 <-> A_5` cylinder coefficient is a spatial boundary term.
+The flat complex amplitude and the compact real resonance must not be
+identified.
 
 ### First unresolved opposite-sign channel
 
@@ -799,23 +806,190 @@ metric. A positive Mannheim completion must still be singular,
 nonanalytic, doubled, state-restricted, or based on a nonquadratic
 probability rule.
 
-### C1b acceptance target
+## C1b: the first opposite-sign cylinder vertex cancels
 
-Compute `v_AAL` directly on `S^3 x R` from Metsaev's ordinary-derivative
-Weyl action, with normalized transverse-vector and upper-TT tensor
-harmonics. The calculation must:
+`symbolic/verify_conformal_aal_vertex.py` now evaluates the complete metric
+Weyl vertex directly on `R x S^3`. It uses
 
-1. choose one explicit `(3,1)` (and parity-conjugate `(1,3)`) channel in
-   `Sym^2(3/2,1/2)`;
-2. include the metric, auxiliary tensor, Stueckelberg vector, constraints,
-   and the diffeomorphism plus Weyl BRST quotient;
-3. derive both forward and reverse Hamiltonian-normalized entries from the
-   action, rather than infer an adjoint from a stripped amplitude;
-4. verify `J_E V_E=V_E^dagger J_E` on the complete energy-six block;
-5. if `v_AAL` is nonzero, diagonalize the relevant full degenerate block
-   and evaluate the indefinite optical-theorem weight;
-6. if it vanishes, record cubic sign protection and advance to the first
-   quartic/contact-plus-exchange shell.
+```text
+sqrt(-g) [R_mn R^mn - R^2/3],
+```
 
-This is now the shortest direct test of the conformal interaction. Flat
-split-theory divided differences remain a regression rail only.
+which is `C^2/2` modulo the four-dimensional Euler density and an overall
+convention. The external modes are the canonically normalized radiation-
+gauge oscillators of Hamada--Horata. Their `S^3` vector and TT tensor
+harmonics are constructed from the exact Wigner-`D`/Clebsch--Gordan
+formulae, not from sampled grids.
+
+The curved-background engine expands a metric carrying three independently
+labelled waves. A multilinear wave algebra supplies the exact inverse metric,
+Christoffel symbols, Ricci tensor, determinant, and cubic coefficient. A
+two-jet in every cylinder coordinate is sufficient because the action has at
+most two derivatives per Ricci tensor. Before making a physics claim the
+engine verifies
+
+```text
+g_mr g^rn = delta_m^n
+```
+
+for every wave subset and reproduces `Ricci(S^3)=2 gamma`, `R=6`. All
+coefficients lie in an exact quadratic extension of the rational
+`t=tan(beta/2)` chart.
+
+### The energy-six coefficient
+
+For the highest-weight channel
+
+```text
+A_3(3/2,1/2) + A_3(3/2,1/2) -> L_6(3,1),
+```
+
+the normalized algebraic Gaunt overlap is nonzero:
+
+```text
+int_S3 L_6^* A_3 A_3 = sqrt(6)/(3 pi).
+```
+
+Thus representation theory and harmonic orthogonality do not explain the
+answer. The complete reduced-Weyl density is nevertheless
+
+```text
+D_336(t) = [3 sqrt(10)/(800 pi^3)]
+           t (2 t^2-1)/(1+t^2)^3.
+```
+
+After including `d beta=2 dt/(1+t^2)`, it is the exact derivative
+
+```text
+2 D_336/(1+t^2)
+  = d/dt {- [3 sqrt(10)/(800 pi^3)] t^2/(1+t^2)^3}.
+```
+
+The primitive vanishes at both `t=0` and `t=infinity`. Therefore
+
+```text
+<L_6|V_3|A_3 A_3> = 0.
+```
+
+The local vertex is nonzero; the compact spatial coefficient cancels. Since
+the `(3,1)` reduced matrix element is unique, its highest-weight zero kills
+every magnetic component. Parity gives the conjugate `(1,3)` result. Combined
+with the C1a shell and Einstein-selection analysis, the **entire first
+opposite-sign cubic block at compact energy six vanishes**.
+
+### Higher-spin hardening
+
+The same exact engine accepts arbitrary half-integer vector spins. Four
+independent AAL channels now give the following results. Here `D(t)` is the
+coordinate density before `d beta`, while `I(t)=2D(t)/(1+t^2)` is the
+measured stereographic integrand:
+
+| incoming vector spins `(J_1,J_2)` | compact process | density prefactor `C` | power `n` | integrated coefficient |
+| --- | --- | --- | ---: | ---: |
+| `(1,1)` | `A_3 A_3 -> L_6` | `3 sqrt(10)/(800 pi^3)` | 3 | 0 |
+| `(1,3/2)` | `A_3 A_4 -> L_7` | `3 sqrt(35)/(1120 pi^3)` | 4 | 0 |
+| `(3/2,3/2)` | `A_4 A_4 -> L_8` | `sqrt(70)/(448 pi^3)` | 5 | 0 |
+| `(1,2)` | `A_3 A_5 -> L_8` | `sqrt(5)/(112 pi^3)` | 5 | 0 |
+
+In every case, with `S=J_1+J_2`,
+
+```text
+D_J1,J2(t) = C t [(2S-2)t^2-1]/(1+t^2)^(2S-1),
+I_J1,J2(t) = 2 C t [(2S-2)t^2-1]/(1+t^2)^(2S)
+             = d/dt {-C t^2/(1+t^2)^(2S-1)}.
+```
+
+The four independently measured constants also obey one normalized formula.
+If the canonically normalized highest-weight vector and upper-TT radial
+prefactors are
+
+```text
+a_J = sqrt(2J)/[8 pi sqrt((2J-1)(2J+1)(2J+3))],
+l_S = sqrt(2(2S-1))/[64 pi sqrt((S+1)(2S+1))],
+```
+
+then every measured case satisfies
+
+```text
+C_J1,J2 = 64 (2J1+1)(2J2+1)(S-1) a_J1 a_J2 l_S.
+```
+
+This supplies the normalization target for the all-spin recurrence proof; it
+is currently an exact four-case fit, not yet a derived general coefficient.
+
+The cases with the same total spin but different incoming spins show that
+the cancellation is not a peculiarity of the lowest vector leg. This is
+strong evidence for an all-spin resonant AAL selection theorem, but the
+finite exact hierarchy is not being advertised as its proof.
+
+As a separate comparison, the normalizable cylinder coefficient
+`E_2 A_3 -> A_5` also has a nonzero pre-measure local density,
+
+```text
+D_EAA(t) = [sqrt(21)/(160 pi^3)]
+           t (3t^2-1)/(1+t^2)^4,
+```
+
+and its measured integrand `2D_EAA/(1+t^2)` is the derivative of
+`-sqrt(21)t^2/[160 pi^3(1+t^2)^4]`. It too integrates to zero. This does
+not contradict the nonzero complex flat-momentum EAA amplitude: the latter
+is not a real positive-energy cylinder `1 <-> 2` matrix element.
+
+### What C1b does and does not answer
+
+C1b closes the first cylinder **spectral-mixing** candidate. It does not
+evaluate the two flat-`P_0` Jordan cokernel coordinates `O_1,O_2`; C1a proves
+that those belong to a different, distributional deformation complex.
+
+Nor would conservation of the fixed `J_conf` make the theory positive. The
+standard real Weyl action canonically preserves an indefinite symplectic/
+Krein form. The remaining dynamical questions are whether opposite-sign
+degenerate blocks generate complex compact-energy pairs and whether any
+nonstandard probability prescription exists. Kubo--Kuntz's negative
+completeness weights concern the latter, not a failure to conserve a fixed
+indefinite form.
+
+### C1c and the first quartic target
+
+The representation half of the next theorem is now exact.
+`symbolic/verify_conformal_cubic_selection.py` combines the inherited Fock
+signs with the Einstein selection rule, then applies the two independent
+`SU(2)` triangle inequalities for arbitrary symbolic half-integer spins. It
+proves that every opposite-sign cubic family is forbidden except
+
+```text
+A_J A_K <-> L_(J+K),
+```
+
+with equal chiralities. Since each `SU(2)` tensor product is
+multiplicity-free, each fixed `(J,K)` channel has one reduced matrix element;
+all magnetic components are controlled by it. The input towers are the full
+C0b physical BRST-cohomology towers: `A` is precisely the helicity-one
+descendant tower, while `E` and `L` are the lower- and upper-TT towers. Thus
+the branch enumeration does not omit a separately adjustable vector or TT
+descendant. Both chiralities are included explicitly and parity exchanges
+them. An exact half-integer scan is retained as a regression test, not as the
+proof. What is not yet proved is representative-independence of the **vertex
+identity** under the full BRST complex.
+
+To complete cubic protection one must still:
+
+1. derive the displayed total-derivative density for arbitrary half-integer
+   `J,K`, including the parity-conjugate channel;
+2. prove that the identity is independent of physical BRST representative
+   and of auxiliary-field elimination/integration by parts;
+3. verify the same-sign forward/reverse reality relations on every complete
+   shell, so the full first-order source—not only its opposite-sign
+   projection—vanishes.
+
+If this closes, the first new calculation is the complete compact-energy-six
+quartic effective block. Its earliest opposite-sign two-particle mixing is
+
+```text
+A_3 A_3 (+) <-> E_2 X_4 (-),       X_4 in {A_4,L_4},
+```
+
+and requires the quartic contact plus all second-order cubic exchanges and
+the complete degenerate multiplicity space. That is the direct conformal
+analogue of the G17 assembly, now with the unique conventional indefinite
+form rather than a split positive metric.
