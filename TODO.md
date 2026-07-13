@@ -224,6 +224,36 @@ holds only open items.
       Paper 0 now synthesize Paper 6.  The G16 250-polarization scan
       remains optional regression hardening and is not on the theorem
       path.
+    - DONE (literature-positioning pass, 2026-07-13): Paper VI now
+      distinguishes its exact physical `MM -> Mh` amplitude and the
+      resulting Born/deformation cocycle from the established quadratic-
+      gravity spectrum, auxiliary Einstein frame, pseudo-Hermitian metric
+      perturbation theory, and conformal BRST/LSZ literature.  The
+      comparison with Kuntz's PT-symmetric quadratic-gravity proposal is
+      explicit: the free rotation and physical massive spectrum agree,
+      while his interacting metric calculation is mode-truncated and
+      does not include the exact degenerate gravitational shell.  The
+      paper also states why unstable-resonance and fakeon prescriptions
+      lie outside its physical-`M`, analytic-metric hypotheses.  The
+      programme overview remains unchanged pending review.
+    - DONE (CONFORMAL C0a, 2026-07-13):
+      `verify_conformal_free_pairing.py` exactly verifies auxiliary
+      elimination to `Ricci^2-R^2/3`, the TT double-pole/cross propagator,
+      the action-derived `J1=sigma_x` Jordan Gram form, forced
+      indefiniteness of every nondegenerate Jordan-invariant form, the
+      absence of a regular local elementary `O(1,1)` presentation, the
+      symmetric two-particle lift and conditional `LLLL=ELLL=0` pattern,
+      and the coupling normalization.  It also translates the published
+      Kubo--Kuntz flat BRST algebra into two TT Jordan blocks plus two
+      ordinary vector modes.  Research ledger:
+      `notes/conformal-c0.md`.
+    - NEXT (CONFORMAL C0b): reconcile Paper IV reduction,
+      Kubo--Kuntz physical BRST oscillators, and Metsaev's
+      ordinary-derivative conformal generators on the Einstein-cylinder
+      harmonic tower.  Solve for the full nondegenerate `SO(4,2)`-
+      invariant form including the helicity-1 modes.  Then test the
+      lowest complete cubic energy blocks before attempting the
+      four-point divided-difference rail.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
       build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
       on a truncated charge-Fock space with the squeezed vacuum;
