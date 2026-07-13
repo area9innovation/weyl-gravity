@@ -1,0 +1,1658 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{cproposition}[theorem]{Computational Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dg}{\dagger}
+\newcommand{\dd}{\ddagger}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\ob}{\mathfrak o}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Res}{\operatorname*{Res}}
+\newcommand{\AK}{\mathcal A_K}
+\newcommand{\Ap}{\mathcal A_+}
+\newcommand{\PiE}{\Pi_{\ker\ad_{h_0}}}
+
+\title{Interaction Obstructions in Einstein--Weyl Gravity:\\
+Cubic Protection, Second-Order Metric Failure, and Krein Visibility}
+\author{GPT-5.6.sol\thanks{OpenAI model.  Contributed the research
+programme, the mathematical direction, and the referee analyses.}
+\and
+Claude Fable 5\thanks{Anthropic model.  Contributed the derivations, the
+machine verification (SymPy and exact rational arithmetic), and the
+manuscripts.  The project was commissioned and directed by Asger Alstrup
+Palm (\texttt{asger@area9.dk}), who initiated the questions, orchestrated
+the collaboration between the models, and serves as the corresponding
+human contact, but claims no technical contribution.}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study whether the two Lorentz-covariant free completions of
+scalar-free Einstein--Weyl gravity extend to the interacting theory.  The
+positive pseudo-Hermitian completion uniformly quarter-turns the complete
+massive spin-$2$ multiplet, whereas the conventional Krein completion
+retains standard gravitational reality and assigns negative signature to
+that multiplet.  We first prove a cubic-protection theorem.  The exact
+Einstein consistent truncation implies that every tree amplitude with
+exactly one massive external field and otherwise massless gravitons
+vanishes, while the equal-mass $MMM$ vertex has no real
+$1\leftrightarrow2$ shell.  Hence the first-order positive-metric
+obstruction is zero.
+
+At second order the physical process $MM\to Mh$ is open.  In an
+independent second-order Einstein-frame formulation we compute nonzero
+on-shell $MMM$ and $MMh$ amplitudes and the exact pole-normalized massive
+residue $\sqrt3/8$, proving that the four-point amplitude is not
+identically zero.  A complete calculation in the original fourth-order
+theory --- including the quartic contact term, all $s,t,u$ exchanges, the
+physical adjoint, and gauge and equation-of-motion checks --- gives at an
+interior rational physical point
+\begin{equation*}
+\PiE\bigl(T_{2,+}^{\dg}-T_{2,+}\bigr)
+=-\frac{15762482064\,i}{5584765625}\,\sigma_x\ne0 .
+\end{equation*}
+The unique Lorentz-covariant positive free metric therefore admits no
+analytic second-order deformation compatible with the interaction.
+
+We then classify conventional Poincar\'e-covariant, BRST-compatible,
+cluster-factorizing Krein gradings.  Agreement with the free gravitational
+signature fixes their Fock lift to $J_F=(-1)^{N_M}$.  The gravitational
+obstruction survives BRST cohomology and is not null:
+\begin{equation*}
+\mathcal O^\sharp=\mathcal O,
+\qquad
+\Tr(\mathcal O^\sharp\mathcal O)=-8\AK^2\ne0 .
+\end{equation*}
+Unlike the perfect-square scalar theory, Einstein--Weyl gravity has no
+nontrivial uniform abelian charge grading capable of placing the
+obstruction in a one-sided null ideal.  The result excludes both an
+analytic continuation of the canonical positive completion and the
+conventional massive-number grading as a null-sector probability
+mechanism.  It does not exclude indefinite Krein evolution itself, nor
+nonlocal, non-factorizing, nonperturbative, or conformal-boundary
+completions.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}\label{sec:intro}
+
+Scalar-free Einstein--Weyl gravity is the simplest four-dimensional
+quadratic-curvature theory whose flat-space physical spectrum consists of
+the ordinary massless graviton and one additional massive spin-$2$
+multiplet.  In the curvature convention used here its action is
+\begin{equation}\label{eq:action}
+S[g]=\int d^4x\,\sqrt{-g}\left(
+c_1R+\alpha R_{\mu\nu}R^{\mu\nu}+\beta R^2\right),
+\qquad \alpha=-3\beta,
+\end{equation}
+with $M^2=c_1/\alpha>0$ in the split phase.  Up to the four-dimensional
+Euler density, the quadratic term is Weyl-squared.  The extra spin-$2$
+branch has the opposite kinetic sign, the familiar higher-derivative
+ghost of quadratic gravity \cite{Stelle}.
+
+Paper~IV of this series \cite{paperIV} did not choose between proposed
+interacting cures.  It classified the \emph{free} covariant completions.
+After symplectic reduction, all five massive polarizations form one
+irreducible massive spin-$2$ representation.  Covariance therefore
+allows no helicity-by-helicity compromise.  There are two real-form
+classes in the stated free, quasifree, mode-local setting:
+\begin{enumerate}
+\item a positive pseudo-Hermitian completion in which the entire massive
+multiplet has quarter-turned reality; and
+\item a Krein completion with standard gravitational reality, positive
+massless signature, and uniform negative massive signature.
+\end{enumerate}
+They determine the same free complex spectral functional but different
+adjoints and probability structures.  The natural interacting question
+is therefore sharp:
+\begin{quote}
+Does either covariant free completion remain compatible with the full
+Einstein--Weyl interaction?
+\end{quote}
+
+Paper~V \cite{paperV} supplied the deformation complex needed to ask the
+positive part of this question.  If $\rho_0$ is the free Dyson map and
+$v_n$ are the transported interaction vertices, an analytic correction
+$\rho_\zeta=\exp[-\tfrac12\sum_n\zeta^nR_n]\rho_0$ must solve
+\begin{align}\label{eq:defcomplex}
+[h_0,R_1]&=v_1^{\dg}-v_1,\nonumber\\
+[h_0,R_2]&=(v_2^{\dg}-v_2)
++\frac12[R_1,v_1+v_1^{\dg}].
+\end{align}
+On a degenerate free-energy shell the right-hand side must have zero
+projection onto $\ker\ad_{h_0}$.  That shell projection is the metric
+obstruction.  In the perfect-square scalar, first-order protection was
+followed by a second-order branch-changing obstruction; at the exact
+massless $O(1,1)$ boundary, however, the offending component could become
+one-sided in continuous charge and null in the generalized Born trace.
+
+Gravity has the same perturbative-order pattern and a different
+mechanism:
+\begin{equation}\label{eq:pattern}
+\boxed{\ob_+^{(1)}=0,\qquad \ob_+^{(2)}\ne0.}
+\end{equation}
+The cubic protection follows from the exact Einstein subsector together
+with equal-mass kinematics.  The second-order obstruction is carried by
+the physically open process
+\begin{equation}\label{eq:process}
+M+M\longrightarrow M+h,
+\end{equation}
+which changes massive particle number by one.  The same process also
+separates gravity from the scalar boundary mechanism.  Covariance and
+cluster factorization fix the conventional gravitational fundamental
+symmetry to $(-1)^{N_M}$, but $\mathbb Z_2$-odd does not imply null:
+the product of two odd operators is neutral and its quadratic trace is
+nonzero.
+
+\paragraph{Results.}
+The proof has four independent layers.
+\begin{enumerate}
+\item Section~\ref{sec:phase} proves a diagram-level phase theorem: a
+connected amplitude with $E_M$ external massive legs changes by
+$(-i)^{E_M}$ under the uniform quarter-turn, including the compensating
+sign of every internal massive propagator.
+\item Section~\ref{sec:cubic} proves cubic protection.  The Einstein
+consistent truncation kills $Mhh$, while $MMM$ has no real physical
+$1\leftrightarrow2$ shell.
+\item Sections~\ref{sec:factorization}--\ref{sec:full} prove the
+second-order obstruction twice: first by an independent nonzero
+Einstein-frame factorization residue, then by a complete exact physical
+four-point calculation in the original fourth-order theory.
+\item Sections~\ref{sec:grading}--\ref{sec:brst} prove conventional
+Krein visibility: the covariant Fock grading is unique in the stated
+class, the exact block is not null, no scalar-like abelian charge exists,
+and the block is not BRST-exact.
+\end{enumerate}
+
+\paragraph{Comparison with the scalar obstruction.}
+The parallel and the difference are summarized by
+\begin{center}
+\begin{tabular}{p{0.42\linewidth}|p{0.42\linewidth}}
+\hline
+Perfect-square scalar & Einstein--Weyl gravity\\
+\hline
+K\"all\'en zero and reality-factor protection & Einstein consistent
+truncation and equal-mass kinematics\\
+$H+L\to L+L$ & $M+M\to M+h$\\
+$O(1,1)$ one-sided null ideal at the exact boundary & no nontrivial
+uniform abelian charge grading\\
+obstruction can become probability-invisible & obstruction remains
+non-null for the conventional covariant Krein form\\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{Strength of the claims.}
+``Metric failure'' means failure of the analytic order-by-order
+deformation of the canonical covariant positive free metric in the
+operator class of \eqref{eq:defcomplex}.  It is not an absolute theorem
+against every positive metric, and no complex interacting spectrum is
+proved.  ``Krein visibility'' has the precise finite-block meaning
+$\mathcal O^\sharp\mathcal O\ne0$ and
+$\Tr(\mathcal O^\sharp\mathcal O)\ne0$ for the unique conventional
+covariant, cluster-factorizing grading.  It is a non-nullity statement,
+not a claim that an indefinite trace is a positive probability.  In
+particular, the paper does not rule out an indefinite Krein dynamics;
+it rules out the naive parity/null-sector mechanism as a replacement for
+a positive interacting probability calculus.
+
+\paragraph{Verification.}
+Checks G13--G18 are exact SymPy or exact rational computations.  They are
+mapped to the analytic statements in Appendix~\ref{app:checks}.  The
+exhaustive $5^3\times2$ polarization scan proposed as G16 is not used:
+the factorization residue, exact real-shell certificate, crossing, Ward,
+and gauge checks already close the proof.  The scan remains optional
+regression hardening.
+
+\section{Free input, conventions, and the deformation class}
+\label{sec:free}
+
+\subsection{Physical one-particle spectrum}
+
+We use signature $(+,-,-,-)$ in the main text.  Around flat space the
+reduced physical one-particle space is
+\begin{equation}\label{eq:oneparticle}
+\mathcal H_{\rm phys}^{(1)}=
+\mathcal H_{h,+2}\oplus\mathcal H_{h,-2}\oplus\mathcal H_M,
+\qquad \dim\mathcal H_M=5.
+\end{equation}
+The massless summands carry helicities $\pm2$ on $p^2=0$; the massive
+summand carries the spin-$2$ representation on $p^2=M^2$.  Paper~IV
+derives this by explicit diffeomorphism reduction rather than by a
+covariant propagator count.  Its result is a healthy massless sector and
+a uniformly ghost-signed massive sector.
+
+\subsection{Two free real forms}
+
+In the positive class the original massive mass eigenfield is
+$\dd$-anti-Hermitian.  We write the positive-frame observable as
+\begin{equation}\label{eq:quarterturn}
+\widehat M_{\mu\nu}=iM_{\mu\nu},
+\qquad M_{\mu\nu}=-i\widehat M_{\mu\nu}.
+\end{equation}
+The same quarter-turn acts on every one of the five polarizations.  The
+massless graviton retains standard reality.  In the conventional Krein
+class both fields retain standard gravitational reality, while the
+one-particle fundamental symmetry has signature
+\begin{equation}\label{eq:freesignature}
+J^{(1)}_{\rm free}=I_2\oplus(-I_5),
+\qquad \text{signature }(+,+;-,-,-,-,-).
+\end{equation}
+
+The uniformity is not optional.  Since $\mathcal H_M$ is an irreducible
+massive spin-$2$ representation, Schur's lemma makes every covariant
+Hermitian form on its fiber a scalar multiple of the identity.  Rotating
+only selected helicities would violate Lorentz covariance
+\cite{paperIV}.
+
+\subsection{Finite-volume shell projection}
+
+As in Paper~V, the cohomological equation is interpreted first at finite
+volume, where momenta are discrete and $h_0$ has point spectrum.  If
+$P_E$ projects onto free energy $E$, then
+\begin{equation}\label{eq:kernelproj}
+\PiE S=\sum_E P_ESP_E,
+\end{equation}
+and $[h_0,R]=S$ has a solution only if this projection vanishes.  The
+rational physical point below can be placed on a momentum lattice after
+an overall choice of box scale.  Continuum statements mean that the
+corresponding on-shell matrix element is nonzero on an open subset of the
+real scattering shell; a distributional rigged-Fock reformulation is not
+needed for the present existence theorem.
+
+\subsection{Amplitude convention}
+
+The perturbiner returns the multilinear coefficient of the action with
+the universal Feynman $i$ stripped.  We call it the reduced tree
+amplitude.  At real momenta and real linear polarizations it is real.  A
+global action rescaling and external polarization rescalings change the
+displayed rational certificate but cannot change its nonvanishing.  All
+statements involving the precise coefficient below are therefore made in
+the conventions of Appendix~\ref{app:fourpoint}; the obstruction theorem
+itself is the invariant nonzero statement.
+
+\section{The external-massive-leg phase theorem}\label{sec:phase}
+
+The quarter-turn phase must be transported through complete diagrams,
+not appended to an already computed external state by slogan.  Internal
+massive lines carry the compensating kinetic sign.
+
+\begin{theorem}[External-massive-leg phase]\label{thm:phase}
+Let $\mathcal D$ be a connected perturbative diagram written in
+mass-eigenfields $(h,M)$, with $E_M$ external massive legs and $I_M$
+internal massive lines.  Under \eqref{eq:quarterturn}, its complete
+reduced amplitude obeys
+\begin{equation}\label{eq:phasetheorem}
+\mathcal A_+^{(E_M)}(\mathcal D)
+=(-i)^{E_M}\mathcal A_K^{(E_M)}(\mathcal D).
+\end{equation}
+The statement includes contact terms, exchanges, and the sign of each
+massive inverse kernel.
+\end{theorem}
+
+\begin{proof}
+Let $n_v$ be the number of massive fields incident at vertex $v$.  Field
+substitution contributes
+\begin{equation}
+\prod_v(-i)^{n_v}.
+\end{equation}
+The massive quadratic form changes sign because
+$(-i)^2=-1$; hence its inverse, the internal massive propagator, also
+contributes $-1$ per internal massive line.  Every internal massive line
+is incident twice, so
+\begin{equation}
+\sum_v n_v=E_M+2I_M.
+\end{equation}
+The total factor is therefore
+\begin{equation}
+(-i)^{E_M+2I_M}(-1)^{I_M}
+=(-i)^{E_M}(-1)^{I_M}(-1)^{I_M}
+=(-i)^{E_M}.
+\end{equation}
+Massless propagators are unchanged.  Since the argument is diagramwise,
+it applies to their complete sum.  Local invertible changes between
+regular mass-eigenfield frames can redistribute contact and exchange
+terms but leave the on-shell statement unchanged.
+\end{proof}
+
+\begin{corollary}[Phase selection]\label{cor:phase}
+For a real standard-frame tree amplitude, even $E_M$ gives a real
+positive-frame coefficient and odd $E_M$ gives a purely imaginary one.
+Only odd-$E_M$ processes can contribute to the ordinary-adjoint
+anti-Hermitian shell source.
+\end{corollary}
+
+For the four-point process \eqref{eq:process}, $E_M=3$, and
+\begin{equation}\label{eq:mmmhphase}
+\mathcal A_+=i\mathcal A_K.
+\end{equation}
+The sign is tied to the convention $M=-i\widehat M$; reversing the
+quarter-turn reverses the displayed sign but not the obstruction's
+nonvanishing.
+
+\section{Cubic protection}\label{sec:cubic}
+
+There are two odd-massive cubic structures: $Mhh$ and $MMM$.  The first
+is eliminated dynamically, the second kinematically.
+
+\subsection{Einstein consistent truncation}
+
+The scalar-free equations may be written schematically as
+\begin{equation}\label{eq:ewfield}
+c_1G_{\mu\nu}+\gamma_B B_{\mu\nu}=0,
+\end{equation}
+where $B_{\mu\nu}$ is the Bach tensor and $\gamma_B$ depends on the
+normalization in \eqref{eq:action}.  Every Ricci-flat Einstein metric has
+$G_{\mu\nu}=0$ and is Bach-flat.  More generally Einstein metrics are
+Bach-flat \cite{LiuLuPope}.  Thus the nonlinear Einstein solution space
+is an exact subsector of the Einstein--Weyl equations.
+
+On the regular split branch, the higher-derivative theory admits a local
+second-order mass-eigenfield formulation in which the Einstein metric and
+the nonlinear massive spin-$2$ field are separate variables
+\cite{MagnanoSokolowski}.  Denote them by $(h,M)$ near flat space.  The
+field map is algebraic and locally invertible on this branch, and $M=0$
+is precisely the Einstein subsector.  These hypotheses are what make the
+following LSZ statement stronger than a basis-dependent observation.
+
+\begin{lemma}[One-massive-leg rule]\label{lem:onemassive}
+For asymptotic mass eigenfields on the regular split branch,
+\begin{equation}\label{eq:onemassive}
+\mathcal A_{\rm tree}(M,h,\ldots,h)=0.
+\end{equation}
+In particular $\mathcal A_3(Mhh)=0$ for every physical polarization.
+\end{lemma}
+
+\begin{proof}
+Write the massive-field equation in the second-order frame as
+\begin{equation}
+\mathcal K_M M+J_M^{(2)}[h,h]+J_M^{(3)}[h,h,h]+\cdots=0.
+\end{equation}
+For every nonlinear vacuum Einstein solution $h_{\rm E}$, the pair
+$(h_{\rm E},M=0)$ solves the full theory.  Hence the terms independent of
+$M$ vanish on the Einstein graviton shell.  Functional differentiation
+and LSZ reduction say that a physical amplitude with one external $M$
+and all remaining external legs in the Einstein subsector is zero.
+Terms generated by a local invertible change of fields are proportional
+to equations of motion or external inverse propagators and vanish under
+LSZ, the standard equivalence-theorem mechanism \cite{KOS}.
+\end{proof}
+
+The exact perturbiner check evaluates the physical decay point with the
+massive particle at rest and two back-to-back massless gravitons.  All
+$5\times4=20$ combinations of the five massive polarizations and four
+graviton-helicity choices vanish exactly.  This is a check of the
+amplitude-level content of Lemma~\ref{lem:onemassive}, not its only
+justification.
+
+\subsection{Equal-mass cubic kinematics}
+
+The $MMM$ vertex itself is nonzero at complex on-shell kinematics
+(Section~\ref{sec:factorization}).  It nevertheless has no real physical
+$1\leftrightarrow2$ shell.  If $p_3=p_1+p_2$ with future-directed
+$p_i^2=M^2$, then
+\begin{equation}
+p_3^2=(p_1+p_2)^2\ge(2M)^2,
+\end{equation}
+which cannot equal $M^2$.  Equivalently, a particle of mass $M$ cannot
+decay into two particles of the same mass.
+
+\begin{theorem}[Cubic protection]\label{thm:cubicprotection}
+For scalar-free Einstein--Weyl gravity about flat space, the
+Lorentz-covariant positive real form has no first-order physical on-shell
+metric obstruction:
+\begin{equation}\label{eq:firstzero}
+\boxed{\ob_+^{(1)}=0.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By Corollary~\ref{cor:phase}, only odd-massive cubic amplitudes can enter
+$\PiE(v_1^{\dg}-v_1)$.  The $Mhh$ amplitude vanishes by
+Lemma~\ref{lem:onemassive}; the $MMM$ amplitude has no real physical
+shell.  The remaining cubic structures carry an even number of massive
+legs.  Therefore the first-order anti-Hermitian source has zero physical
+shell projection.
+\end{proof}
+
+This protection is structurally different from the K\"all\'en-factor
+zero of Paper~V.  It is a consequence of an exact nonlinear consistent
+truncation plus massive-particle kinematics.
+
+\section{Independent Einstein-frame factorization rail}
+\label{sec:factorization}
+
+The next odd-massive process is four-point $MM\to Mh$.  Before expanding
+the original fourth-order action to quartic order, we prove independently
+that this amplitude is not identically zero.
+
+\subsection{Second-order action and convention change}
+
+This section follows the exact Einstein-frame formulation of Magnano and
+Soko\l{}owski \cite{MagnanoSokolowski}.  Its verification artifact uses
+signature $(-,+,+,+)$, only in this section and Appendix~\ref{app:eframe};
+thus a massive pole is $P^2=-M^2$.  With $M=1$ and in the notation of that
+formulation, the nonlinear massive-field Lagrangian is
+\begin{equation}\label{eq:LM}
+L_M=\frac12K(Q)+\frac{m^2}{8A}
+\left(-\tau^2+\psi_{\mu\nu}\psi^{\mu\nu}
++6A\tau-12A^2\right),
+\qquad \psi=g+\Phi .
+\end{equation}
+Here $Q^\alpha{}_{\mu\nu}=\Gamma^\alpha{}_{\mu\nu}(\psi)
+-\Gamma^\alpha{}_{\mu\nu}(g)$,
+\begin{equation}
+K(Q)=g^{\mu\nu}\left(
+Q^\alpha{}_{\mu\nu}Q^\beta{}_{\alpha\beta}
+-Q^\alpha{}_{\mu\beta}Q^\beta{}_{\nu\alpha}\right),
+\end{equation}
+$A$ is the determinant ratio and $\tau$ the corresponding trace defined
+in \cite{MagnanoSokolowski}.  The form \eqref{eq:LM} separates Einstein
+gravity from a minimally coupled nonlinear massive spin-$2$ field.
+
+For linearly traceless external fields, the determinant and inverse-
+determinant contributions to the apparent $\operatorname{tr}\Phi^3$
+potential cancel exactly:
+\begin{equation}\label{eq:potentialcancel}
+V(\Phi)=\frac{m^2}{8}\operatorname{tr}\Phi^2+O(\Phi^4).
+\end{equation}
+The nonzero $MMM$ amplitude below comes entirely from $K(Q)$.
+
+\subsection{Exact three-point amplitudes}
+
+Take all momenta incoming.  For the $MMM$ vertex use
+\begin{equation}\label{eq:mmmkin}
+P=(1,0,0,0),\qquad
+p=\left(-\frac12,0,0,\frac{i\sqrt3}{2}\right),\qquad
+q=\left(-\frac12,0,0,-\frac{i\sqrt3}{2}\right).
+\end{equation}
+Then $P+p+q=0$ and $P^2=p^2=q^2=-1$.  With normalized TT
+polarizations $(M_+,M_+,M_0)$, direct expansion of \eqref{eq:LM} gives
+\begin{equation}\label{eq:mmmvalue}
+\boxed{\mathcal A_3(M_+,M_+,M_0)=-\frac{\sqrt6}{8}.}
+\end{equation}
+
+For $MMh$, take
+\begin{equation}\label{eq:mmhkin}
+-P=(-1,0,0,0),\qquad
+r=(1,-1,-i,0),\qquad
+k=(0,1,i,0),
+\end{equation}
+so $-P+r+k=0$, $r^2=-1$, and $k^2=0$.  For the polarization choice in
+Appendix~\ref{app:eframe},
+\begin{equation}\label{eq:mmhvalue}
+\boxed{\mathcal A_3(M_+,M,h)=-\frac{\sqrt2}{8}.}
+\end{equation}
+The graviton Ward identity vanishes for an arbitrary symbolic vector
+$\xi_\mu$ under
+$\varepsilon^h_{\mu\nu}\mapsto k_{(\mu}\xi_{\nu)}$, and exchange of
+the two massive legs leaves the coefficient unchanged.
+
+\subsection{Complete massive-pole residue}
+
+Glue \eqref{eq:mmmvalue} and \eqref{eq:mmhvalue} across $P$.  A complete
+orthonormal rest-frame basis contains the polarizations
+$+,\times,0,xz,yz$.  The exact products are
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\hline
+$\lambda$ & $\mathcal A_{MMM}$ & $\mathcal A_{MMh}$ & product\\
+\hline
+$+$ & $-\sqrt6/8$ & $-\sqrt2/8$ & $\sqrt3/32$\\
+$\times$ & $0$ & $0$ & $0$\\
+$0$ & $0$ & $\sqrt6/8$ & $0$\\
+$xz$ & $0$ & $0$ & $0$\\
+$yz$ & $0$ & $i\sqrt2/4$ & $0$\\
+\hline
+\end{tabular}
+\end{center}
+Therefore the complete polarization numerator is
+\begin{equation}\label{eq:resnum}
+N=\sum_{\lambda=1}^{5}
+\mathcal A_3(M,M,M_P^\lambda)
+\mathcal A_3(M_{-P}^\lambda,M,h)
+=\frac{\sqrt3}{32}.
+\end{equation}
+The TT inverse kernel in the same action convention is
+\begin{equation}\label{eq:inversekernel}
+K_M(P)=\frac{P^2+M^2}{4}.
+\end{equation}
+Consequently
+\begin{equation}\label{eq:residue}
+\boxed{
+\Res_{P^2=-M^2}\mathcal A_4(M,M,M,h)=\frac{\sqrt3}{8}\ne0 .}
+\end{equation}
+An overall rescaling of the action rescales the displayed residue but not
+its nonvanishing.  A local quartic contact term is regular at this pole
+and cannot cancel it.
+
+\begin{proposition}[Factorization nonvanishing]\label{prop:factorization}
+The tree-level four-point amplitude tensor for $MM\to Mh$ is not
+identically zero on the relevant complexified on-shell component.
+\end{proposition}
+
+\begin{proof}
+If the rational amplitude vanished identically, every factorization
+residue would vanish.  Equation~\eqref{eq:residue} is the complete
+massive-polarization residue and is nonzero.
+\end{proof}
+
+\section{The real physical shell}\label{sec:realshell}
+
+\subsection{Open kinematics}
+
+In the center-of-mass frame, with signature $(+,-,-,-)$ restored,
+\begin{equation}\label{eq:comkin}
+|\mathbf k|=\frac{s-M^2}{2\sqrt s},
+\qquad
+E_{M,\mathrm{out}}=\frac{s+M^2}{2\sqrt s},
+\qquad s\ge4M^2.
+\end{equation}
+Thus $MM\to Mh$ is physically open on a continuum shell, unlike the
+cubic $MMM$ channel.
+
+\begin{lemma}[Complex nonvanishing and a real component]
+\label{lem:zariski}
+Fix analytic physical polarization sections on an irreducible component
+of the complexified four-point mass shell.  The nonsingular real
+$MM\to Mh$ region contains a Euclidean-open center-of-mass chart and is
+Zariski dense in the complex component containing it.  Hence a rational
+tree amplitude that vanishes on an open real subset vanishes identically
+on that component and has zero factorization residues.
+\end{lemma}
+
+\begin{proof}
+Away from exceptional polarization charts, the real physical region is
+parametrized by $s>4M^2$, $-1<\cos\theta<1$, and an azimuth.  Its real
+points contain an open set of maximal real dimension in the relevant
+algebraic component.  If $\mathcal A=P/Q$ is regular there and vanishes
+on a real open set, real analyticity makes $P$ vanish there.  The
+identity theorem, equivalently Zariski density of that real locus, makes
+$P$ vanish on the component.  Then all residues vanish, contrary to
+\eqref{eq:residue}.
+\end{proof}
+
+The next subsection supplies a stronger direct bridge: an exact nonzero
+point already on the real shell.  It makes Lemma~\ref{lem:zariski}
+logically redundant for the obstruction theorem, while retaining it as
+an independent explanation of why the complex factorization rail is
+physically relevant.
+
+\subsection{Interior rational certificate}
+
+Set $M=1$.  With $p_1,p_2$ incoming and $p_3,k$ outgoing, take
+\begin{align}\label{eq:rationalpoint}
+p_1&=\left(\frac54,0,0,\frac34\right),
+&p_2&=\left(\frac54,0,0,-\frac34\right),\nonumber\\
+p_3&=\left(\frac{29}{20},-\frac{21}{25},0,-\frac{63}{100}\right),
+&k&=\left(\frac{21}{20},\frac{21}{25},0,\frac{63}{100}\right).
+\end{align}
+Then
+\begin{equation}
+p_1+p_2=p_3+k,\qquad p_i^2=1,\qquad k^2=0,
+\end{equation}
+and
+\begin{equation}
+s=\frac{25}{4}M^2,
+\qquad \cos\theta=\frac35.
+\end{equation}
+This point is interior and noncollinear.  The planar kinematics has a
+$y$-reflection selection rule; the verification therefore uses explicit
+parity-even real linear polarizations rather than interpreting symmetry
+zeros as dynamical cancellations.
+
+\begin{cproposition}[Real-shell certificate, G15]\label{cprop:g15}
+For the real polarization tensors listed in Appendix~\ref{app:fourpoint},
+the complete reduced tree amplitude at \eqref{eq:rationalpoint} is
+\begin{equation}\label{eq:AK}
+\boxed{\AK(MM\to Mh)=\frac{7881241032}{5584765625}\ne0.}
+\end{equation}
+It is real, gauge independent, and nonsingular at this point.  Therefore
+it is nonzero on a nonempty open neighborhood of the real physical shell.
+\end{cproposition}
+
+\section{Full fourth-order calculation and the metric obstruction}
+\label{sec:full}
+
+The calculation of Proposition~\ref{cprop:g15} is performed directly in
+the original fourth-order variables of \eqref{eq:action}, independently
+of the Einstein-frame factorization rail.
+
+\subsection{Perturbiner and bordered propagator}
+
+For four plane waves,
+\begin{equation}
+g_{\mu\nu}=\eta_{\mu\nu}
++\sum_{a=1}^{4}\lambda_a\varepsilon^{(a)}_{\mu\nu}e^{ip_a\cdot x},
+\end{equation}
+the wave algebra retains only multilinear subsets of the labels and
+implements $\partial_\mu\mapsto iP_\mu$ automatically.  The coefficient
+of $\lambda_1\lambda_2\lambda_3\lambda_4$ in the action gives the exact
+quartic contact.  The same engine produces the quadratic $10\times10$
+operator $K(P)$ and cubic current $J_A$ in the symmetric-tensor basis.
+
+No symbolic closed propagator is assumed.  In each $s,t,u$ channel one
+solves the exact de Donder-bordered system
+\begin{equation}\label{eq:bordered}
+\begin{pmatrix}K(P)&C(P)^T\\ C(P)&0\end{pmatrix}
+\begin{pmatrix}X\\ \lambda\end{pmatrix}
+=\begin{pmatrix}-J^{(cd)}\\0\end{pmatrix},
+\qquad
+\mathcal A_{\rm exch}=J^{(ab)T}X,
+\end{equation}
+where
+\begin{equation}
+C_\mu(X)=P^\alpha X_{\alpha\mu}-\frac12P_\mu X^\alpha{}_\alpha.
+\end{equation}
+The exact field-equation residual and $CX$ vanish in all three channels.
+Replacing $C$ by the axial constraint $n^\mu X_{\mu\nu}=0$ leaves the
+total amplitude unchanged.
+
+\subsection{Contact and exchange decomposition}
+
+At the rational point and polarization choice, the four contributions
+are
+\begin{align}\label{eq:pieces}
+\mathcal A_{\rm contact}&=
+\frac{8364585636057}{410644531250},\nonumber\\
+\mathcal A_s&=-\frac{836906329}{45312500},\nonumber\\
+\mathcal A_t&=-\frac{5142800561}{111695312500},\nonumber\\
+\mathcal A_u&=-\frac{90855828716}{205322265625}.
+\end{align}
+Their exact sum is \eqref{eq:AK}.  The contact term alone is not gauge
+invariant.  Replacing the external graviton by
+$k_{(\mu}\xi_{\nu)}$ makes the \emph{complete} contact-plus-exchange
+sum vanish for an arbitrary exact rational test vector; shifting a
+physical representative by the same gauge tensor leaves the amplitude
+unchanged.  Initial-massive Bose exchange is exact.  The two-point
+coefficient against every symmetric-tensor basis direction vanishes for
+each external on-shell polarization, excluding equation-of-motion
+contamination.
+
+Reversing all external momenta and conjugating the real polarization
+sections reproduces the contact and each exchange separately.  The
+quadratic kernels are recomputed and satisfy $K(-P)=K(P)$ exactly.  Thus
+the reverse process entering the physical adjoint is evaluated, not
+inferred.
+
+\subsection{Quarter-turn of the complete operator}
+
+For the contact, three external massive fields give $(-i)^3=i$.  An
+exchange through an internal massless line has endpoint phase
+$(-i)^2(-i)=i$.  An exchange through an internal massive line has
+endpoint phase $(-i)^3(-i)^2=-i$, while the quarter-turned massive
+inverse kernel contributes $-1$, again giving $i$.  Consequently every
+piece of \eqref{eq:pieces} obeys Theorem~\ref{thm:phase}, and
+\begin{equation}\label{eq:tplus}
+\langle Mh|T_{2,+}|MM\rangle=i\AK,
+\qquad
+\langle MM|T_{2,+}|Mh\rangle=i\AK.
+\end{equation}
+
+Both states have exact free energy
+\begin{equation}
+E_{MM}=\frac54+\frac54=\frac52
+=\frac{29}{20}+\frac{21}{20}=E_{Mh}.
+\end{equation}
+On the ordered shell basis $(|MM\rangle,|Mh\rangle)$,
+\begin{equation}\label{eq:Tblock}
+T_{2,+}=i\AK\,\sigma_x,
+\end{equation}
+and hence
+\begin{equation}\label{eq:obstruction}
+\boxed{
+\PiE\bigl(T_{2,+}^{\dg}-T_{2,+}\bigr)
+=-2i\AK\,\sigma_x
+=-\frac{15762482064\,i}{5584765625}\,\sigma_x\ne0.}
+\end{equation}
+
+\subsection{First-order metric ambiguity}
+
+The solution $R_1$ of the first equation in \eqref{eq:defcomplex} is
+defined up to a Hermitian $G$ with $[G,h_0]=0$.  Such a change shifts the
+second-order source by $\tfrac12[G,v_1+v_1^{\dg}]$.  On the nonsingular
+real physical shell the complete connected cubic block is zero: $Mhh$
+vanishes by Lemma~\ref{lem:onemassive}; $MMM$ and $MMh$ have no nonsoft
+real $1\leftrightarrow2$ shell; and real $hhh$ three-point kinematics is
+collinear with zero physical helicity amplitude.  Therefore
+\begin{equation}\label{eq:ambiguity}
+P_E(v_1+v_1^{\dg})P_E=0,
+\qquad
+P_E[G,v_1+v_1^{\dg}]P_E=0.
+\end{equation}
+The obstruction cannot be moved or canceled by choosing another analytic
+first-order metric representative.
+
+\begin{theorem}[Second-order positive-metric obstruction]
+\label{thm:positiveobstruction}
+The Lorentz-covariant positive free completion of scalar-free
+Einstein--Weyl gravity admits no analytic second-order metric deformation
+compatible with the full interaction on the physical $MM\to Mh$ shell.
+The obstruction is nonzero at \eqref{eq:rationalpoint} and on a nonempty
+open neighborhood of that point.
+\end{theorem}
+
+\begin{proof}
+Equation~\eqref{eq:obstruction} lies in $\ker\ad_{h_0}$ and is nonzero.
+No $R_2$ can solve $[h_0,R_2]$ equal to this source.  Equation
+\eqref{eq:ambiguity} makes the class independent of first-order
+commutant freedom.  The exact Ward, external-EOM, reverse-process, and
+internal-gauge checks show that the displayed matrix element is a reduced
+physical one.  Since it is a nonsingular real-analytic amplitude and is
+nonzero at an interior point, it remains nonzero on an open neighborhood.
+\end{proof}
+\section{Conventional covariant Krein grading}\label{sec:grading}
+
+The positive obstruction does not by itself decide whether an indefinite
+completion can still be formulated.  The narrower question addressed
+here is whether the conventional gravitational Krein grading can render
+the offending block null, as a continuous one-sided charge does at the
+perfect-square scalar boundary.
+
+\subsection{One-particle commutant}
+
+Let $J^{(1)}$ be a nondegenerate Hermitian involution on the physical
+one-particle cohomology \eqref{eq:oneparticle}.  We require it to commute
+with the proper-orthochronous Poincar\'e representation and to agree with
+the free Krein real form of Paper~IV.
+
+The mass Casimir separates the massless and massive orbits, so no
+covariant endomorphism mixes $\mathcal H_h$ and $\mathcal H_M$.  On the
+massive fiber, the exact spin-$2$ $SO(3)$ commutant is one-dimensional.
+There is one precision on the massless fiber: under the
+proper-orthochronous group, helicity $+2$ and helicity $-2$ are
+inequivalent complex representations, so covariance alone permits
+separate scalars.  The complete commutant is therefore
+\begin{equation}\label{eq:commutant}
+J^{(1)}=\epsilon_+I_{+2}\oplus\epsilon_-I_{-2}
+\oplus\epsilon_MI_5,
+\qquad \epsilon_\pm,\epsilon_M\in\{\pm1\}.
+\end{equation}
+Parity, or compatibility with the real gravitational field, exchanges
+the two massless helicities and imposes $\epsilon_+=\epsilon_-$.  Even
+without adding parity to the covariance group, agreement with the free
+signature \eqref{eq:freesignature} fixes
+\begin{equation}\label{eq:epsfix}
+\epsilon_+=\epsilon_-=+1,
+\qquad \epsilon_M=-1.
+\end{equation}
+
+\begin{proposition}[One-particle grading classification]
+\label{prop:oneparticlegrading}
+Within the stated covariant class, the free real form uniquely fixes
+\begin{equation}
+J^{(1)}=I_2\oplus(-I_5).
+\end{equation}
+No linear covariant grading can assign different signs within the
+massive spin-$2$ multiplet or mix the massive and massless shells.
+\end{proposition}
+
+\subsection{Cluster-factorizing Fock lift}
+
+Let $j(n_h,n_M)\in\{\pm1\}$ be the sign assigned to an asymptotic sector
+with $n_h$ massless and $n_M$ massive particles.  Tensor multiplicativity
+and cluster decomposition require
+\begin{equation}\label{eq:monoid}
+j(n_h+n'_h,n_M+n'_M)
+=j(n_h,n_M)j(n'_h,n'_M),
+\qquad j(0,0)=1.
+\end{equation}
+A homomorphism from the free commutative monoid $\mathbb N^2$ is fixed by
+its values on the two generators.  Equations \eqref{eq:epsfix} and
+\eqref{eq:monoid} therefore give
+\begin{equation}\label{eq:fockgrading}
+\boxed{J_F=(-1)^{N_M}.}
+\end{equation}
+Assigning independent signs to unrelated multiparticle sectors would
+violate \eqref{eq:monoid} and hence cluster factorization.
+
+At the G17 shell,
+\begin{equation}\label{eq:statesigns}
+J_F|MM\rangle=+|MM\rangle,
+\qquad
+J_F|Mh\rangle=-|Mh\rangle.
+\end{equation}
+The transition crosses the two Krein signatures.
+
+\section{Krein visibility of the obstruction}\label{sec:visibility}
+
+For an operator on the positive-frame Hilbert representatives, define
+the Krein adjoint
+\begin{equation}\label{eq:sharp}
+X^\sharp=J_FX^{\dg}J_F.
+\end{equation}
+On the minimal ordered basis $(|MM\rangle,|Mh\rangle)$,
+$J_{\min}=\operatorname{diag}(1,-1)$.
+
+Consider first the forward block
+\begin{equation}\label{eq:Xforward}
+X=i\AK\,|Mh\rangle\langle MM|.
+\end{equation}
+It is $J_F$-odd:
+\begin{equation}
+J_FXJ_F=-X.
+\end{equation}
+Its Krein adjoint and quadratic product are
+\begin{align}\label{eq:Xsharp}
+X^\sharp&=-i\AK\,J_F|MM\rangle\langle Mh|J_F
+=i\AK\,|MM\rangle\langle Mh|,\nonumber\\
+X^\sharp X&=-\AK^2|MM\rangle\langle MM|.
+\end{align}
+Consequently
+\begin{equation}\label{eq:Xtrace}
+\boxed{
+\Tr(X^\sharp X)=-\AK^2
+=-\frac{62113960204480425024}{31189607086181640625}\ne0.}
+\end{equation}
+The sign is indefinite, but the operator is not null.
+
+For the complete positive-metric obstruction
+\begin{equation}
+\mathcal O=-2i\AK\sigma_x,
+\end{equation}
+one obtains
+\begin{equation}\label{eq:Osharp}
+\boxed{
+\mathcal O^\sharp=\mathcal O,
+\qquad
+\mathcal O^\sharp\mathcal O=-4\AK^2I_2,
+\qquad
+\Tr(\mathcal O^\sharp\mathcal O)=-8\AK^2\ne0.}
+\end{equation}
+In the exact rational convention,
+\begin{equation}
+-8\AK^2
+=-\frac{496911681635843400192}{31189607086181640625}.
+\end{equation}
+
+\begin{proposition}[Conventional Krein non-nullity]
+\label{prop:nonnull}
+The physical $MM\to Mh$ block and the complete G17 obstruction are
+non-null for the unique conventional covariant, cluster-factorizing
+fundamental symmetry \eqref{eq:fockgrading}.  The obstruction is
+Krein-self-adjoint, indefinite, and visible to the finite-block quadratic
+trace.
+\end{proposition}
+
+The algebraic distinction from a one-sided continuous grading is simple.
+For $\mathbb Z_2$,
+\begin{equation}
+1+1=0\pmod2.
+\end{equation}
+The adjoint of an odd operator is odd and their product is even.  Thus
+oddness supplies no charge-null lemma:
+\begin{equation}\label{eq:oddnotnull}
+\boxed{J_F\text{-odd}\ \not\Longrightarrow\ \text{null}.}
+\end{equation}
+By contrast, at the scalar $O(1,1)$ boundary a strictly one-sided
+nonzero continuous charge remains nonzero after the relevant product,
+and an invariant graded trace can kill it \cite{paperV,BT2026}.
+
+\begin{remark}[What is not ruled out]
+Equation~\eqref{eq:Osharp} does not say that a Krein-self-adjoint
+interacting Hamiltonian cannot exist.  Indeed, it displays
+Krein-self-adjointness of the minimal obstruction block.  What fails is
+the stronger proposal that the conventional massive-number grading makes
+the branch-changing component null or supplies a positive generalized
+Born contribution.  Indefinite pseudo-unitary evolution and a positive
+probability calculus are different questions.
+\end{remark}
+
+\section{No scalar-like charge-null mechanism}\label{sec:charge}
+
+Could a continuous internal charge make the obstruction one-sided?
+Poincar\'e covariance first restricts any linear
+charge on the irreducible massive fiber to one scalar $q_M$.  The free
+real graviton is neutral, $q_h=0$.  The verified nonzero interaction
+vertices impose
+\begin{equation}\label{eq:charges}
+3q_M=0\quad(MMM),
+\qquad
+2q_M+q_h=2q_M=0\quad(MMh).
+\end{equation}
+
+\begin{proposition}[Uniform abelian charge no-go]\label{prop:chargenogo}
+There is no nontrivial uniform abelian charge assignment to the physical
+massive spin-$2$ irrep, with neutral graviton, that is respected by the
+Einstein--Weyl interaction.
+\end{proposition}
+
+\begin{proof}
+Equations \eqref{eq:charges} hold in any abelian charge group.  Since
+$q_M=3q_M-2q_M$, they imply $q_M=0$.  The conclusion does not rely on
+torsion-freeness; $\gcd(2,3)=1$ eliminates finite torsion charges as well.
+\end{proof}
+
+The $MMM$ vertex has no real cubic decay shell but is a nonzero algebraic
+interaction vertex, so it already breaks massive-number parity at the
+action level.  More decisively, the real G17 process itself changes
+$N_M$ from $2$ to $1$ and proves
+\begin{equation}\label{eq:paritybroken}
+[(-1)^{N_M},S]\ne0
+\end{equation}
+on the physical scattering shell.  Therefore the ingredients used to
+prove factorization simultaneously exclude an $O(1,1)$-like charge
+replacement.
+
+\section{BRST cohomology}\label{sec:brst}
+
+The higher-derivative massive branch is a physical reduced mode and must
+not be confused with Faddeev--Popov ghosts.  The external states in G17
+are TT massive polarizations and TT massless graviton polarizations.
+The exact Ward identity, invariance under changes of gauge representative,
+axial/de Donder equality, and external inverse-propagator
+zeros show that the amplitude descends to reduced physical BRST
+cohomology.
+
+Let $Q$ denote the nilpotent BRST charge and let $|i\rangle,|f\rangle$
+be closed physical representatives.  If an operator were BRST-exact,
+\begin{equation}
+\mathcal O=\{Q,Y\},
+\end{equation}
+then, under the standard decoupling assumptions,
+\begin{equation}\label{eq:brstzero}
+\langle f|\mathcal O|i\rangle
+=\langle f|QY|i\rangle+\langle f|YQ|i\rangle=0.
+\end{equation}
+The matrix element \eqref{eq:obstruction} is nonzero.
+
+\begin{proposition}[BRST survival]\label{prop:brst}
+The G17 obstruction defines a nonzero operator on physical BRST
+cohomology and is not BRST-exact:
+\begin{equation}
+[\mathcal O]\ne0.
+\end{equation}
+It cannot be placed in the standard BRST-null ideal.
+\end{proposition}
+
+Appendix~\ref{app:brst} records the finite-complex algebra used in G18.
+In a splitting into physical cohomology and a contractible doublet, the
+physical-to-physical block of $\{Q,Y\}$ vanishes for a completely general
+$Y$, while the G17 block survives unchanged.
+
+\section{Master theorem}\label{sec:master}
+
+\begin{theorem}[Interacting completion obstruction]\label{thm:master}
+Let scalar-free Einstein--Weyl gravity \eqref{eq:action} be in its regular
+split phase about flat space.  Use the covariant free completion
+classes of Paper~IV and the analytic metric-deformation class of
+Paper~V.  Then:
+\begin{enumerate}
+\item the Lorentz-covariant positive pseudo-Hermitian completion is
+protected at first perturbative order, $\ob_+^{(1)}=0$;
+\item at second order the physical process $MM\to Mh$ generates the
+nonzero shell obstruction \eqref{eq:obstruction};
+\item hence the canonical covariant positive metric has no analytic
+second-order deformation compatible with the full interaction;
+\item a conventional Poincar\'e-covariant, real-field-compatible,
+BRST-compatible, nondegenerate and cluster-factorizing Krein grading
+agreeing with the free real form has the unique Fock lift
+$J_F=(-1)^{N_M}$;
+\item for this grading the obstruction is non-null,
+$\Tr(\mathcal O^\sharp\mathcal O)=-8\AK^2\ne0$, and survives physical
+BRST cohomology; and
+\item the nonzero $MMM$ and $MMh$ vertices prohibit a nontrivial uniform
+abelian charge grading analogous to the scalar $O(1,1)$ mechanism.
+\end{enumerate}
+Therefore neither an analytic deformation of the canonical positive
+metric nor the conventional massive-number null/parity mechanism
+supplies an interacting positive-probability completion of the full
+theory in the stated class.
+\end{theorem}
+
+\begin{proof}
+Item 1 is Theorem~\ref{thm:cubicprotection}.  Items 2 and 3 are
+Theorem~\ref{thm:positiveobstruction}, independently supported by the
+factorization Proposition~\ref{prop:factorization}.  Item 4 is
+Proposition~\ref{prop:oneparticlegrading} together with the monoid
+argument \eqref{eq:monoid}.  Item 5 is
+Propositions~\ref{prop:nonnull} and \ref{prop:brst}.  Item 6 is
+Proposition~\ref{prop:chargenogo}.
+\end{proof}
+
+\section{Scope and nonclaims}\label{sec:scope}
+
+The hypotheses in Theorem~\ref{thm:master} are part of the result.  The
+paper rules out:
+\begin{itemize}
+\item analytic deformation of the canonical Lorentz-covariant positive
+free metric;
+\item a conserved naive massive-number ghost parity;
+\item conventional covariant linear one-particle fundamental symmetries
+that agree with the free real form but differ on selected massive
+helicities;
+\item non-multiplicative independent Fock-sector signs, once cluster
+factorization is required;
+\item a uniform abelian continuous- or torsion-charge null mechanism
+compatible with the verified vertices; and
+\item standard BRST-exact nullity of the physical obstruction.
+\end{itemize}
+
+It does \emph{not} prove:
+\begin{itemize}
+\item that no nonperturbative or differently pointed positive completion
+exists;
+\item that the full interacting Hamiltonian has complex energies;
+\item that every nonlocal or non-factorizing grading fails;
+\item that no singular $M\to0$ or conformal-boundary completion can be
+defined;
+\item that a Maldacena-type boundary truncation of the solution algebra is
+inconsistent \cite{Maldacena}; or
+\item that the result extends unchanged to quadratic gravities with a
+scalaron, matter, cosmological constant, or a different background.
+\end{itemize}
+
+Any surviving null-sector construction must therefore leave the
+conventional class.  Possibilities include a grading singular at the
+conformal boundary, a nonlinear mixing of asymptotic particle sectors, a
+nonlocal observable algebra, a failure of ordinary cluster
+factorization, or boundary conditions that remove part of the
+fourth-order solution space.  These are qualitatively different from a
+straightforward gravitational lift of the Bateman--Turok mechanism.
+
+\section{Discussion}\label{sec:discussion}
+
+\subsection{The same order pattern, for different reasons}
+
+Paper~V and the present gravity calculation share the sequence
+\begin{equation}
+\text{first-order protection}\longrightarrow
+\text{second-order scattering obstruction}.
+\end{equation}
+The agreement in order should not obscure the difference in structure.
+The perfect-square scalar is protected by its special cubic kinematic
+factor and reality assignments.  Gravity is protected because the
+Einstein solution space is an exact nonlinear subsector and the remaining
+odd cubic vertex is kinematically closed.  In the scalar, an enhanced
+$O(1,1)$ charge appears exactly at the perfect-square boundary and can
+sort an obstruction into a one-sided null ideal.  In gravity, the $MMM$
+and $MMh$ interactions remove every uniform abelian charge before the
+four-point obstruction is considered.
+
+\subsection{Real forms become dynamical}
+
+At the free level a real form selects which complex solutions are called
+real and which adjoint defines observables.  The choice can appear
+kinematic.  The phase theorem makes its interacting content explicit:
+every physical process with odd external massive number crosses the two
+reality assignments and becomes anti-Hermitian in the positive frame.
+The decisive diagnostic is therefore
+\begin{equation}
+\boxed{\text{Which physical on-shell processes change the real-form
+sector?}}
+\end{equation}
+For Einstein--Weyl gravity the first answer is $MM\to Mh$.
+
+\subsection{Why the factorization and physical rails are both useful}
+
+The Einstein-frame residue \eqref{eq:residue} is compact, independent,
+and immune to cancellation by local contact terms.  It proves a genuine
+interaction before the large quartic calculation is attempted.  The
+original-variable physical point then supplies what factorization alone
+does not: an exact real-shell value, the full gauge cancellation, the
+physical adjoint, and the deformation-complex matrix element.  Agreement
+between the two rails is substantially stronger than either calculation
+in isolation.
+
+\subsection{What Krein visibility means}
+
+The negative traces in \eqref{eq:Xtrace} and \eqref{eq:Osharp} are not
+advertised as negative probabilities.  They show that the conventional
+quadratic Krein form sees the block: it is neither zero nor killed by a
+grading selection rule.  A viable interacting probability construction
+would need extra structure beyond the free fundamental symmetry.  The
+scalar boundary supplies such extra structure through a continuous
+one-sided charge; the verified Einstein--Weyl vertices do not.
+
+The immediate research problem is consequently no longer another scalar
+doubling.  It is to understand whether conformal-boundary conditions,
+changed observable algebras, or genuinely nonlocal gravitational
+structures can evade the hypotheses of Theorem~\ref{thm:master} without
+destroying covariance and factorization.
+
+\begin{thebibliography}{16}
+
+\bibitem{Stelle}
+K.~S.~Stelle,
+\emph{Renormalization of higher-derivative quantum gravity},
+Phys.\ Rev.\ D \textbf{16} (1977) 953.
+
+\bibitem{MagnanoSokolowski}
+G.~Magnano and L.~M.~Soko\l{}owski,
+\emph{Nonlinear massive spin-two field generated by higher derivative
+gravity},
+Ann.\ Phys.\ \textbf{306} (2003) 1--35,
+arXiv:gr-qc/0209022.
+
+\bibitem{LiuLuPope}
+H.-S.~Liu, H.~L\"u, C.~N.~Pope and J.~F.~V\'azquez-Poritz,
+\emph{Not conformally-Einstein metrics in conformal gravity},
+arXiv:1303.5781.
+
+\bibitem{KOS}
+S.~Kamefuchi, L.~O'Raifeartaigh and A.~Salam,
+\emph{Change of variables and equivalence theorems in quantum field
+theories},
+Nucl.\ Phys.\ \textbf{28} (1961) 529--549.
+
+\bibitem{BM2008}
+C.~M.~Bender and P.~D.~Mannheim,
+\emph{No-ghost theorem for the fourth-order derivative Pais--Uhlenbeck
+oscillator model},
+Phys.\ Rev.\ Lett.\ \textbf{100} (2008) 110402.
+
+\bibitem{BM2008PRD}
+C.~M.~Bender and P.~D.~Mannheim,
+\emph{Exactly solvable PT-symmetric Hamiltonian having no Hermitian
+counterpart},
+Phys.\ Rev.\ D \textbf{78} (2008) 025022, arXiv:0804.4190.
+
+\bibitem{BT2026}
+S.~Bateman and N.~Turok,
+\emph{Escape from Ostrogradsky via hidden ghost parity},
+arXiv:2607.00096.
+
+\bibitem{Maldacena}
+J.~Maldacena,
+\emph{Einstein gravity from conformal gravity},
+arXiv:1105.5632.
+
+\bibitem{AzizovIokhvidov}
+T.~Ya.~Azizov and I.~S.~Iokhvidov,
+\emph{Linear Operators in Spaces with an Indefinite Metric},
+Wiley, 1989.
+
+\bibitem{paperI}
+\emph{Canonical positive symplectic diagonalization of the
+Pais--Uhlenbeck oscillator}, companion paper (Paper~I), 2026.
+
+\bibitem{paperII}
+\emph{The Pais--Uhlenbeck metric as a minimum-distortion principle, and
+the representation problem for the fourth-order field}, companion paper
+(Paper~II), 2026.
+
+\bibitem{paperIII}
+\emph{The universal vacuum of the fourth-order scalar field: metric
+orbits, Fock sectors, and the Krein boundary}, companion paper
+(Paper~III), 2026.
+
+\bibitem{paperIV}
+\emph{Gauge reduction and the completion problem in fourth-order
+gravity: PU pairing, covariant real forms, and the conformal Jordan
+boundary}, companion paper (Paper~IV), 2026.
+
+\bibitem{paperV}
+\emph{Interaction obstructions, resonant PT breaking, and doubled Jordan
+symmetry in fourth-order theories}, companion paper (Paper~V), 2026.
+
+\end{thebibliography}
+
+\appendix
+
+\section{Einstein consistent truncation and LSZ}
+\label{app:truncation}
+
+This appendix spells out the hypotheses behind
+Lemma~\ref{lem:onemassive}.  For the scalar-free combination in
+\eqref{eq:action}, the field equation is the Einstein tensor plus a
+multiple of the Bach tensor.  In four dimensions the Bach tensor may be
+written
+\begin{equation}
+B_{\mu\nu}=\left(\nabla^\rho\nabla^\sigma
++\frac12R^{\rho\sigma}\right)C_{\mu\rho\nu\sigma}
+\end{equation}
+up to a convention-dependent overall sign.  It vanishes on every
+Einstein metric \cite{LiuLuPope}.  In the flat-background problem the
+relevant exact subsector is Ricci-flat vacuum Einstein gravity.
+
+On the regular branch of the Legendre transformation from Ricci-tensor
+gravity to its second-order form, introduce the Einstein metric and a
+symmetric massive field $\Phi_{\mu\nu}$.  The transformation is algebraic
+in the auxiliary variables and locally invertible wherever its determinant
+does not vanish \cite{MagnanoSokolowski}.  Linearization about the common
+flat vacuum diagonalizes the asymptotic equations into
+\begin{equation}
+\mathcal K_hh=0,
+\qquad
+\mathcal K_MM=0,
+\end{equation}
+with $p^2=0$ and $p^2=M^2$, respectively.  Thus $h$ and $M$ used in the
+main text are LSZ mass eigenfields, not arbitrary components of the
+original metric perturbation.
+
+Let $E_M[h,M]=0$ be the exact massive-field equation in this frame.  The
+consistent truncation states
+\begin{equation}\label{eq:truncapp}
+E_M[h_E,0]=0
+\end{equation}
+for every nonlinear Einstein solution $h_E$.  Expanding about flat space,
+\begin{equation}
+E_M[h,M]=\mathcal K_MM+
+\sum_{n\ge2}J_M^{(n)}[h^n]
++\sum_{r\ge1,s\ge1}J_{r,s}[M^rh^s].
+\end{equation}
+Equation \eqref{eq:truncapp} does not require each off-shell functional
+$J_M^{(n)}$ to vanish.  It requires its value on a full perturbative
+Einstein solution to cancel, including nonlinear corrections to that
+solution.  LSZ amputation removes precisely the external inverse-
+propagator and field-redefinition terms, leaving
+\begin{equation}
+\mathcal A(M,h_1,\ldots,h_n)=0
+\end{equation}
+for physical on-shell Einstein gravitons.  This is the standard
+consistent-truncation selection rule.
+
+The perturbiner supplies an explicit cubic check.  In signature
+$(+,-,-,-)$, take all momenta incoming,
+\begin{equation}
+p_M=(1,0,0,0),\qquad
+p_2=\left(-\frac12,0,0,-\frac12\right),\qquad
+p_3=\left(-\frac12,0,0,\frac12\right).
+\end{equation}
+They obey $p_M^2=1$, $p_2^2=p_3^2=0$ and sum to zero.  The exact action
+coefficient vanishes for all five massive TT polarizations and the four
+products of the two graviton helicities.  Replacing either graviton
+polarization by $p_{(\mu}\xi_{\nu)}$ also gives zero.
+
+The selection rule is tree-level and concerns external mass eigenfields.
+It does not state that the original fourth-order metric action lacks
+terms apparently linear in a chosen massive component, nor does it
+exclude loop effects, anomalies, or a singular failure of the
+mass-eigenfield map at the conformal boundary.
+
+\section{Einstein-frame cubic expansion}
+\label{app:eframe}
+
+We record enough of the independent G14 calculation to make the exact
+numbers reproducible.  This appendix uses signature $(-,+,+,+)$ and
+$M=1$.  It matches
+\path{symbolic/verify_gravity_factorization.py}.
+
+For a symmetric matrix $\Phi$, write
+\begin{equation}
+X=g^{-1}\Phi,\qquad
+t_n=\operatorname{tr}(X^n),\qquad
+A=\sqrt{\det(I+X)}.
+\end{equation}
+Through cubic order,
+\begin{align}
+A={}&1+\frac12t_1+\frac18t_1^2-\frac14t_2
++\frac1{48}t_1^3-\frac18t_1t_2+\frac16t_3+O(\Phi^4),\nonumber\\
+A^{-1}={}&1-(A-1)+(A-1)^2-(A-1)^3+O(\Phi^4).
+\end{align}
+In the potential of \eqref{eq:LM}, $\tau=4+t_1$ and the relevant
+quadratic contraction is $4+2t_1+t_2$.  Substitution gives, when
+$t_1=0$,
+\begin{equation}
+A^{-1}\left(-\tau^2+\psi_{\mu\nu}\psi^{\mu\nu}
++6A\tau-12A^2\right)=t_2+O(\Phi^4),
+\end{equation}
+with zero $t_3$ coefficient.  This is the potential cancellation
+\eqref{eq:potentialcancel}.
+
+At first order in one plane wave $(p,E)$,
+\begin{equation}
+Q^{(1)\alpha}{}_{\mu\nu}(E,p)
+=\frac{i}{2}\eta^{\alpha\beta}
+\left(p_\mu E_{\beta\nu}+p_\nu E_{\beta\mu}
+-p_\beta E_{\mu\nu}\right).
+\end{equation}
+The quadratic correction $Q^{(2)}$ comes from the inverse-$\psi$
+factor.  The cubic $MMM$ coefficient is the sum of all contractions
+$K(Q^{(1)},Q^{(2)})+K(Q^{(2)},Q^{(1)})$, with the factor $1/2$ in
+\eqref{eq:LM}.  Exact substitution of \eqref{eq:mmmkin} and normalized
+TT tensors gives \eqref{eq:mmmvalue}.
+
+For $MMh$, the script expands $g^{-1}$, $\psi^{-1}$, the connection of
+$g$, and $Q$ through the orders required for the coefficient of three
+independent wave labels.  At \eqref{eq:mmhkin}, take
+\begin{equation}
+v_r=(1,-1,0,0),\qquad e_h=(1,0,0,1),
+\qquad E_r=v_r^\flat\otimes v_r^\flat,
+\qquad H=e_h^\flat\otimes e_h^\flat.
+\end{equation}
+Together with the internal $+$ polarization at rest these tensors are
+transverse and traceless, and the coefficient is \eqref{eq:mmhvalue}.
+For
+\begin{equation}
+H^{\rm gauge}_{\mu\nu}=k_\mu\xi_\nu+k_\nu\xi_\mu
+\end{equation}
+with four independent symbolic components of $\xi$, the coefficient
+vanishes identically.
+
+Finally, the massive TT two-point coefficient for waves $(p,E)$ and
+$(-p,E)$ with $E\cdot E=1$ is
+\begin{equation}
+L_M^{(2)}=\frac{p^2+1}{4}.
+\end{equation}
+This fixes the factor of four between the polarization numerator
+$\sqrt3/32$ and pole residue $\sqrt3/8$; it is not inferred from a
+unit-residue completeness convention.
+
+\section{Polarization basis and factorization sum}
+\label{app:polarizations}
+
+At the rest momentum $P=(1,0,0,0)$ in the Einstein-frame signature,
+let $e_x,e_y,e_z$ be unit spatial vectors.  A normalized massive basis is
+\begin{align}
+E_+&=\frac1{\sqrt2}(e_xe_x-e_ye_y),
+&E_\times&=\frac1{\sqrt2}(e_xe_y+e_ye_x),\nonumber\\
+E_0&=\frac1{\sqrt6}(e_xe_x+e_ye_y-2e_ze_z),
+&E_{xz}&=\frac1{\sqrt2}(e_xe_z+e_ze_x),\nonumber\\
+&&E_{yz}&=\frac1{\sqrt2}(e_ye_z+e_ze_y).
+\end{align}
+Each is transverse, traceless, and orthonormal under the induced tensor
+inner product.  For a massive momentum $(E,0,0,p_z)$, replace $e_z$ by
+the normalized longitudinal transverse vector; the same formulas give
+the transported helicity basis.
+
+The factorization numerator is basis-independent.  In a nonorthonormal
+basis $T_a$ with Gram matrix $G_{ab}=T_a\cdot T_b$, it is
+\begin{equation}
+N=V_a(G^{-1})^{ab}U_b,
+\end{equation}
+where $V_a=\mathcal A_3(M,M,T_a)$ and
+$U_b=\mathcal A_3(T_b,M,h)$.  The orthonormal basis above reduces this
+to the sum displayed after \eqref{eq:resnum}.  All five intermediate
+states are included; the result is not one selected nonzero channel.
+
+The original fourth-order perturbiner supplies a separate complex
+factorization check at a rational-$i$ point.  It constructs an exact
+five-dimensional TT basis at the internal massive momentum, contracts
+the two cubic vectors with its Gram inverse, and obtains a nonzero
+reduced numerator.  The Einstein-frame calculation then fixes a compact
+normalized representative and the explicit inverse-kernel slope.
+
+\section{Physical-shell geometry and the rational point}
+\label{app:shell}
+
+For incoming equal masses in the center-of-mass frame,
+\begin{equation}
+p_1=(E,0,0,p),\qquad p_2=(E,0,0,-p),
+\qquad E=\frac{\sqrt s}{2},\quad
+p=\frac12\sqrt{s-4M^2}.
+\end{equation}
+Choose the outgoing graviton at scattering angle $\theta$,
+\begin{equation}
+k=(\kappa,\kappa\sin\theta,0,\kappa\cos\theta),
+\qquad
+\kappa=\frac{s-M^2}{2\sqrt s},
+\end{equation}
+and $p_3=p_1+p_2-k$.  Then $p_3^2=M^2$ and
+$p_3^0=(s+M^2)/(2\sqrt s)$.  The domain
+\begin{equation}
+s>4M^2,\qquad -1<\cos\theta<1
+\end{equation}
+is a real open chart away from forward/backward and threshold
+degeneracies.
+
+At $s=25M^2/4$ one has $E=5M/4$ and
+$\kappa=21M/20$.  Taking $\cos\theta=3/5$ and
+$\sin\theta=4/5$ gives exactly \eqref{eq:rationalpoint}.  All energy,
+momentum, and mass-shell identities are rational.  Because all spatial
+$y$ components vanish, reflection $y\mapsto-y$ is a symmetry.  An odd
+number of $y$-odd polarization tensors forces an amplitude zero.  The
+certificate uses the first nonzero all-even combination.
+
+The exact threshold regression uses two incoming massive particles at
+rest and an outgoing graviton of energy $3M/4$.  In the separate
+polarization convention of that test,
+\begin{equation}
+\mathcal A_{\rm threshold}=-\frac{509784}{390625}.
+\end{equation}
+Threshold is not used for the open-set claim; it guards the implementation
+against later changes.
+
+\section{Full four-point engine and G17 expressions}
+\label{app:fourpoint}
+
+\subsection{Wave algebra}
+
+A wave-algebra element is a dictionary from subsets of external labels
+to sparse tensor components.  Multiplication discards products in which
+a wave label repeats, so multilinear truncation is automatic.  A
+derivative acting on subset $S$ multiplies by
+\begin{equation}
+iP_{S\mu}=i\sum_{a\in S}p_{a\mu}.
+\end{equation}
+From the metric, inverse metric, determinant, Christoffel symbols, and
+Ricci tensor, the engine extracts
+\begin{equation}
+\sqrt{-g}R,\qquad
+\sqrt{-g}R_{\mu\nu}R^{\mu\nu},
+\qquad
+\sqrt{-g}R^2
+\end{equation}
+at the desired wave subset.  Before any cubic or quartic claim it checks
+that the two-point coefficient vanishes on $p^2=0$ and $p^2=M^2$, is
+nonzero off shell, and obeys cubic Ward identities.
+
+\subsection{Exact polarization tensors}
+
+For a massive momentum $p$ in the $(t,x,z)$ plane, choose two independent
+transverse in-plane vectors $v_1,v_2$.  With
+\begin{equation}
+\Pi_{\mu\nu}=\eta_{\mu\nu}-\frac{p_\mu p_\nu}{M^2},
+\end{equation}
+the parity-even TT tensor used in the certificate is
+\begin{equation}
+E_{12,\mu\nu}=v_{1\mu}v_{2\nu}+v_{2\mu}v_{1\nu}
+-\frac23(v_1\cdot v_2)\Pi_{\mu\nu}.
+\end{equation}
+The three massive external legs use the corresponding $E_{12}$ at
+$p_1,p_2,-p_3$.  For the graviton momentum direction proportional to
+$(5,4,0,3)$, use transverse vectors
+\begin{equation}
+e_1=(0,-3,0,4),\qquad e_2=(0,0,1,0),
+\end{equation}
+and the real plus tensor
+\begin{equation}
+\varepsilon_+=\frac1{25}e_1e_1-e_2e_2.
+\end{equation}
+These are the convention-fixed polarizations entering \eqref{eq:AK}.
+
+\subsection{Gauge and adjoint checks}
+
+For each exchange, the exact bordered solution obeys
+\begin{equation}
+CX=0,
+\qquad
+KX+C^T\lambda+J=0.
+\end{equation}
+The total amplitude with graviton gauge polarization is zero, while the
+contact contribution alone is
+\begin{equation}
+-\frac{596335802837691}{361367187500000}\ne0.
+\end{equation}
+This cancellation is a sensitive check of relative signs and
+combinatorics.  De Donder and axial constraints give identical physical
+totals.
+
+Under reversal $p_a\mapsto-p_a$, all contacts and cubic currents are
+recomputed.  The action contains two- and four-derivative terms, and the
+independently recomputed quadratic matrices obey $K(-P)=K(P)$.  Contact,
+$s$, $t$, and $u$ pieces equal their forward values separately.  Since
+the external linear tensors are real, this is the physical reverse
+matrix element used in $T_{2,+}^{\dg}$.
+
+\subsection{Pole regression}
+
+An exact shell-preserving complex shift
+\begin{equation}
+p_1(z)=p_1+z\eta,\qquad k(z)=k-z\eta,
+\qquad \eta=(3,0,4i,5),
+\end{equation}
+has $\eta^2=\eta\cdot p_1=\eta\cdot k=0$.  In the relevant channel
+\begin{equation}
+P(z)^2=\frac{25}{4}+15z
+\end{equation}
+hits the massive pole at $z_*=-7/20$.  The bordered kernel there has
+exactly the five TT zero modes.  If $T$ collects them and $G_5$ is their
+Gram matrix,
+\begin{equation}
+W=T^TK'(z_*)T=-\frac{15}{2}G_5
+\end{equation}
+entrywise, including 24 nontrivial identities.  The residue
+\begin{equation}
+-j_1^TW^{-1}j_2=-\frac{4551434384\,i}{328515625}\ne0
+\end{equation}
+equals the independently normalized cubic contraction divided by the
+kinetic slope.  A direct near-pole numerical probe of the actual bordered
+exchange agrees to relative error below $10^{-4}$.  This regression is
+not used to set the convention of the compact Einstein-frame residue;
+it validates the original-variable propagator machinery.
+
+\section{Covariant grading and Fock-lift equations}
+\label{app:grading}
+
+G18a solves the commutant rather than assuming Schur's lemma numerically.
+At a standard massive momentum, represent the spin-$2$ fiber by symmetric
+traceless $3\times3$ tensors.  The three $SO(3)$ generators act as
+\begin{equation}
+J_i(T)=L_iT+TL_i^T.
+\end{equation}
+Solving $[X,J_i]=0$ for a general $5\times5$ matrix gives
+$X=a_MI_5$.  On the two complex massless helicity fibers, the little-
+group rotation generator is $\operatorname{diag}(2,-2)$, whose
+commutant is diagonal.  Solving simultaneously with the mass Casimir on
+the full seven-dimensional fiber gives
+\begin{equation}
+X=\operatorname{diag}(a_+,a_-,a_MI_5).
+\end{equation}
+Hermiticity and $X^2=I$ restrict the three scalars to signs.  The
+helicity-exchange real structure sets $a_+=a_-$; the free signature fixes
+$(a_+,a_-,a_M)=(1,1,-1)$.
+
+For the Fock lift, cluster factorization is the monoid equation
+\eqref{eq:monoid}.  Iterating it gives
+\begin{equation}
+j(n_h,n_M)=j(1,0)^{n_h}j(0,1)^{n_M}=(-1)^{n_M}.
+\end{equation}
+The exact script verifies multiplicativity for all partitions in a
+finite table and the analytic monoid argument establishes it for all
+particle numbers.
+
+\section{BRST block and non-nullity}
+\label{app:brst}
+
+The minimal non-null calculation uses
+\begin{equation}
+J_{\min}=\begin{pmatrix}1&0\\0&-1\end{pmatrix},
+\qquad
+X=\begin{pmatrix}0&0\\i\AK&0\end{pmatrix}.
+\end{equation}
+Then
+\begin{equation}
+X^\sharp=J_{\min}X^{\dg}J_{\min}
+=\begin{pmatrix}0&i\AK\\0&0\end{pmatrix},
+\qquad
+X^\sharp X=\begin{pmatrix}-\AK^2&0\\0&0\end{pmatrix}.
+\end{equation}
+For $\mathcal O=-2i\AK\sigma_x$,
+\begin{equation}
+J_{\min}\mathcal O^{\dg}J_{\min}=\mathcal O,
+\qquad \mathcal O^2=-4\AK^2I.
+\end{equation}
+
+To encode the cohomology argument, take a canonical finite splitting into
+two physical representatives and one contractible doublet $u\mapsto
+v\mapsto0$.  In the ordered basis $(i,f,u,v)$,
+\begin{equation}
+Q=\begin{pmatrix}
+0&0&0&0\\
+0&0&0&0\\
+0&0&0&0\\
+0&0&1&0
+\end{pmatrix},
+\qquad Q^2=0.
+\end{equation}
+For a completely general $4\times4$ matrix $Y$, direct multiplication
+shows
+\begin{equation}
+\bigl(QY+YQ\bigr)_{\rm phys,phys}=0.
+\end{equation}
+The upper-left physical block of the G17 obstruction is nonzero after
+embedding, so it cannot be of this exact form.  This finite matrix is not
+a replacement for gravitational BRST quantization; it records the
+universal algebraic implication used after the Ward and reduced-helicity
+checks have established that the amplitude descends to cohomology.
+
+\section{Machine-verification index}
+\label{app:checks}
+
+All scripts named below are in \path{symbolic/} and print
+\texttt{ALL PASS}.  Checks use SymPy exact arithmetic except for the
+explicitly labelled near-pole regression.
+
+\begin{center}
+\footnotesize
+\begin{tabular}{p{0.11\linewidth}p{0.50\linewidth}p{0.29\linewidth}}
+\hline
+Check & Claim & Artifact/type\\
+\hline
+G13a--b & two-point on-shell validation and cubic Ward identities &
+\path{gravity_perturbiner.py}, exact\\
+G13 & $Mhh=0$ for $5\times4$ physical polarization choices &
+\path{verify_gravity_cubic.py}, exact\\
+G14a--c & nonzero original-variable $MMM$, $MMh$, and reduced massive-pole
+factorization & \path{verify_gravity_cubic.py}, exact\\
+G14d--i & potential cancellation, compact $-\sqrt6/8$ and $-\sqrt2/8$
+amplitudes, symbolic Ward identity, five-state sum, inverse kernel &
+\path{verify_gravity_factorization.py}, exact\\
+G15a--f & full physical contact+$s,t,u$, Ward, Bose, gauge, and threshold
+checks & \path{verify_gravity_g15.py}, exact\\
+G15g & shifted-pole kernel, Schur slope, residue; near-pole probe &
+same script, exact plus numerical regression\\
+G16 & crossing needed for the adjoint is included in G17; exhaustive
+$250$-polarization scan is deferred & not a theorem dependency\\
+G17a--d & exposed contact/exchanges, reverse process, EOM/Ward/gauge,
+termwise quarter-turn & \path{verify_gravity_obstruction.py}, exact\\
+G17e--f & exact shell obstruction and first-order metric-ambiguity
+independence & same script, exact\\
+G18a--b & one-particle commutant and cluster-factorizing Fock lift &
+\path{verify_gravity_krein.py}, exact\\
+G18c--e & non-null quadratic traces, charge no-go, and BRST block &
+same script, exact\\
+\hline
+\end{tabular}
+\end{center}
+
+The analytic inputs not reducible to finite symbolic identities are
+identified in the main text: the induced-representation interpretation
+of the free commutant (Paper~IV), the consistent-truncation/LSZ argument,
+real-analytic continuation on the physical shell, and the standard BRST
+decoupling statement.  The symbolic checks test every convention-sensitive
+coefficient consumed by those arguments.
+
+\paragraph{Reproduction commands.}
+From the repository root for this project:
+\begin{verbatim}
+python3 symbolic/verify_gravity_completion.py
+python3 symbolic/verify_gravity_cubic.py
+python3 symbolic/verify_gravity_factorization.py
+python3 symbolic/verify_gravity_g15.py
+python3 symbolic/verify_gravity_obstruction.py
+python3 symbolic/verify_gravity_krein.py
+\end{verbatim}
+The full G15 script contains a slower symbolic shifted-pole step; G17
+recomputes the exact physical certificate and the checks needed by the
+master theorem in a compact import-safe four-point assembly.
+
+\end{document}
