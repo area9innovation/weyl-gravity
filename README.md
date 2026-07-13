@@ -17,18 +17,19 @@ covariance**, and separates the additional choices of real form,
 involution, observable algebra, and completion. The free positive metric
 is geometrically canonical, but that kinematic optimality does not imply
 interacting stability: Paper 5 finds on-shell conversion obstructions to
-its analytic deformation, while an exact doubled Krein/ghost-parity
-structure survives at the massless perfect-square boundary and controls
-the verified on-shell matrix elements. The gravity paper adds gauge
-reduction and Lorentz covariance; its two-completion classification is
-explicitly a free, translation-invariant, quasifree, mode-local result,
-not a completed interacting theory of gravity.
+its analytic deformation. At the split rational shell the same on-shell
+matrix is exactly Krein-pseudo-Hermitian; the stronger one-sided
+charge-null mechanism emerges only at the massless perfect-square
+boundary. The gravity paper adds gauge reduction and Lorentz covariance;
+its two-completion classification is explicitly a free,
+translation-invariant, quasifree, mode-local result, not a completed
+interacting theory of gravity.
 
 ## The papers (`paper/`)
 
 | # | File | Title | Status |
 |---|------|-------|--------|
-| 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series, incl. the interaction results) | draft (24 pp.) |
+| 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series, incl. the interaction results) | draft (25 pp.) |
 | 1 | `symplectic-diagonalization.tex` / `.pdf` | **Canonical Positive Symplectic Diagonalization of the Pais–Uhlenbeck Oscillator** | frozen, tag `paper1-v1.2` (17 pp.) |
 | 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.3` (14 pp.) |
 | 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.3` (13 pp.) |
@@ -121,7 +122,11 @@ point the complete reachable on-shell T is exactly ghost-parity (Krein)
 pseudo-Hermitian and the obstruction lives entirely in its κ-odd block,
 while the analytic positive pointed-metric deformation is obstructed. The
 result does not exclude a nonanalytic or differently pointed positive
-completion.
+completion. In the cross-paired charge frame the mapped split vacuum has
+both charge directions, with the exact ratio
+S_UU/S_VV = (δ/2g)² = ε/g. One-sided charge nullity holds exactly on the
+ε = 0 confluent line; the Bateman–Turok massless point additionally has
+μ² = 0.
 
 ## Reports (`reports/`)
 
@@ -176,9 +181,10 @@ Symbolic (SymPy):
 - `verify_obstruction_null.py` (ON1–ON4) — obstruction-to-null program:
   finite-particle charge-null lemma (graded Krein trace), canonical
   Bogoliubov map of the regulated split theory onto the cross-paired
-  Bateman–Turok charge basis, exact law S_UU/S_VV = εg for the mapped
-  vacuum's charged squeezing (one-sided iff ε = 0, confluent
-  coefficient −1/(4w²) matching BT (C5)–(C6)), no-adapted-frame scans.
+  Bateman–Turok charge basis, exact law S_UU/S_VV = ε/g for the mapped
+  vacuum's charged squeezing (one-sided iff ε = 0; the BT massless point
+  also has μ² = 0), confluent coefficient −g/(4w²) (−1/(4w²) at g = 1),
+  exact reference-dispersion no-go, and residual-frame runaway evidence.
 - `verify_51_order4.py` (FO1–FO9) — order-4 machinery (programmatic
   adjoint-series word generation, re-derives orders 2–3 exactly):
   5:1 obstruction confirmed at order 4, ω₂⁻⁹ scaling, gauge

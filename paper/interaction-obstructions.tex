@@ -67,9 +67,15 @@ maps two oppositely oriented null Jordan sectors into one another, its
 linearization is the bounded confluent limit of the regulated branch
 parity on the doubled space, and the obstruction of (iii) sits
 entirely in the exchange-odd component of the on-shell $T$, which is
-exactly ghost-parity pseudo-Hermitian.  The Krein/ghost-parity
-structure thus survives precisely where pointed positive completions
-fail: the two completions are inequivalent in the interacting theory.
+exactly ghost-parity pseudo-Hermitian.  A self-contained charge-null
+lemma and regulated embedding further show that one-sided charge
+nullity is an enhanced boundary property, not a property of the split
+theory: the mapped vacuum obeys
+$S_{UU}/S_{VV}=(\delta/2g)^2=\epsilon/g$ and becomes one-sided only on
+the confluent line, with the Bateman--Turok massless theory at
+$\epsilon=\mu^2=0$.  Exact split-shell Krein pseudo-unitarity and
+boundary one-sidedness are therefore distinct; the two completions
+are inequivalent in the interacting theory.
 All finite-dimensional and modewise identities are
 machine-verified; derivations of the principal results are given in the
 appendices.
@@ -166,8 +172,12 @@ confluent bridge from the split branch parity to the doubled Jordan
 exchange, and the resulting separation statement: the Bateman--Turok
 Krein completion is \emph{not} equivalent to a hidden positive
 pseudo-Hermitian completion, because the latter is obstructed by
-on-shell branch-changing interactions while the former survives them
-exactly (Proposition~\ref{cprop:krein}).
+on-shell branch-changing interactions while the doubled Krein pairing
+remains exactly pseudo-unitary on the verified matrix elements
+(Proposition~\ref{cprop:krein}).  The stronger one-sided-charge
+condition entering the Bateman--Turok Born rule is instead a boundary
+property (Proposition~\ref{cprop:embedding}); its explicit Born-trace
+evaluation is the remaining capstone calculation.
 
 \paragraph{Strength of the statements.}
 Throughout we distinguish (a) \emph{analytic metric obstruction} ---
@@ -194,7 +204,10 @@ complex spectrum --- open; the exact doubled classical involution ---
 theorem (Bateman--Turok, restated); its quantum implementation ---
 open; the $\kappa$-odd localization of the shell obstruction ---
 computational proposition at the rational point
-(Proposition~\ref{cprop:krein}).
+(Proposition~\ref{cprop:krein}); one-sidedness of the regulated vacuum
+image --- computational proposition, exact iff $\epsilon=0$ in the
+stated charge frame (Proposition~\ref{cprop:embedding}); the boundary
+Born-trace evaluation --- open.
 
 \paragraph{Bookkeeping.}
 The deformation order is counted by a formal parameter $\zeta$:
@@ -805,15 +818,18 @@ conformal boundary of the gravity companion \cite{paperIV}.
 Proposition~\ref{cprop:krein} sharpens the free-theory picture of the
 companion series: in the interacting theory the two real forms are not
 merely distinguished at Jordan degenerations --- they \emph{separate}.
-The Krein/ghost-parity structure of \cite{BT2026} is exactly
-preserved by the interaction ($GTG=T^{\dg}$ on shell, finite-time
-pseudo-unitarity), while every analytic positive pseudo-Hermitian
-completion of the pointed sector is obstructed on an open shell
-subset.  In particular the Bateman--Turok probability construction
-cannot be secretly equivalent to an ordinary positive pseudo-Hermitian
-completion.  The sharpest open form of the reconciliation is a
-transport question: under their asymptotic embedding, physical
-operators decompose into a ghost-symmetric part and a null orthogonal
+The doubled Krein pairing is exactly preserved at the split rational
+shell ($GTG=T^{\dg}$ on shell, finite-time pseudo-unitarity), while
+every analytic positive pseudo-Hermitian completion of the pointed
+sector is obstructed on an open shell subset.  This already excludes
+identifying that Krein pairing with an ordinary positive
+pseudo-Hermitian completion.  It does \emph{not} establish the stronger
+Bateman--Turok weak-ghost-symmetry positivity mechanism at split mass:
+Proposition~\ref{cprop:embedding} shows that the regulated vacuum image
+contains both charge signs there.  The sharpest remaining form of the
+reconciliation is therefore a boundary transport question: under their
+asymptotic embedding, physical operators decompose into a
+ghost-symmetric part and a null orthogonal
 part, and only the former contributes to their generalized Born rule
 \cite{BT2026}; since the obstruction is $\kappa$-odd
 (Proposition~\ref{cprop:krein}), the conjecture is that it is carried
@@ -863,22 +879,26 @@ Bateman--Turok's $b_\Omega,b_\Upsilon$).  The pointed vacuum maps to a
 Gaussian state whose squeezing components obey, exactly and for every
 reference dispersion,
 \begin{equation}
-\frac{S_{UU}}{S_{VV}}=\Big(\frac{\delta}{2g}\Big)^{2}g^{2}
-=\epsilon\,g ,
+\frac{S_{UU}}{S_{VV}}=\Big(\frac{\delta}{2g}\Big)^{2}
+=\frac{\epsilon}{g},
+\qquad \delta^2=4\epsilon g,
 \end{equation}
 i.e.\ the charge $+2$ component is sourced by the regulator
 $\tfrac\epsilon2u^2$ and the charge $-2$ component by the
 interaction-generated $\tfrac g2v^2$.  The embedding is strictly
 one-sided --- no positive charges in the vacuum image, the hypothesis
 of Lemma~\ref{lem:chargenull} for the mapped theory --- if and only if
-$\epsilon=0$: the unregulated massless perfect-square point.  There
-the confluent limit gives $S_{VV}\to-1/(4w^2)$, precisely the
-coefficient structure of the Bateman--Turok Bogoliubov data
-(their Eqs.~(C5)--(C6)).  At split masses no admissible charge frame
-removes the $+2$ component: it is invariant under the reference
-dispersion and, under the residual charge-preserving Bogoliubov
-freedom, the zero locus is reached only in a degenerate
-(confluent-type) frame.  (Checks ON1--ON4,
+$\epsilon=0$: the $O(1,1)$-symmetric confluent line.  The massless
+Bateman--Turok theory is the point $\epsilon=\mu^2=0$ on that line.
+At confluence the matched-reference limit is
+$S_{VV}\to-g/(4w^2)$, or $-1/(4w^2)$ in the $g=1$ normalization used
+in the computation; at $\mu^2=0$, where $w=|\mathbf k|$, this is
+precisely the coefficient structure of their Eqs.~(C5)--(C6).  At
+split masses the exact ratio above rules out removing the $+2$
+component by changing the reference dispersion.  Under the residual
+charge-preserving Bogoliubov freedom, numerical solution of the
+adaptation equations runs to a degenerate (confluent-type) frame rather
+than finding a bounded adapted frame.  (Checks ON1--ON4,
 \texttt{verify\_obstruction\_null.py}.)
 \end{cproposition}
 
@@ -887,12 +907,19 @@ Section~\ref{sec:firstfield}: real ghost decay above threshold breaks
 the sectorwise branch parity, and in the charge frame the same
 $\epsilon$ sources the charge $+2$ contamination that violates weak
 ghost symmetry.  The relocation of the $\kappa$-odd obstruction into a
-null negative-charge component is therefore exact precisely at the
-massless boundary, and holds at split masses up to charge
-contamination of relative size $\epsilon/g$.  The remaining,
-precisely-posed step --- the obstruction-to-null theorem --- is the
-boundary Born-trace evaluation: the neutral component's blindness to
-the obstruction coefficient and its $\epsilon\to0$ limit.
+null negative-charge component is therefore exact on the one-sided
+confluent line, with the Bateman--Turok identification at its massless
+point, and holds at split masses with charge contamination of relative
+size $\epsilon/g$ (not assumed small away from the boundary).  The
+remaining, precisely-posed step --- the obstruction-to-null theorem ---
+is the boundary Born-trace evaluation: the neutral component's
+blindness to the obstruction coefficient and its limit along a
+specified on-shell family with $(\epsilon,\mu^2)\to(0,0)$.
+One exact rational family is
+$m_L=4s$, $m_H=6s$, $|\mathbf k_{\mathrm{out}}|=3s$,
+$\mu^2=26s^2$, $\epsilon g=100s^4$, followed by $s\to0$; the process
+operator must be transported along this family rather than held fixed
+while only the embedding is varied.
 Lemma~\ref{lem:chargenull} makes that step self-contained.
 
 \paragraph{Open questions.}
@@ -912,10 +939,14 @@ exact regulator breaking $\epsilon u(1+u)-\mu^2v$, is verified).  The
 hierarchy conjecture's $5{:}1$ prediction is confirmed at fourth order
 (Proposition~\ref{cprop:fiveone}); the next open case is $5{:}3$ at
 order 6, and the mechanism excluding even mode-2 transfers is open.
-The gravitational extension --- the cubic Einstein--Weyl vertices
-against the covariant real forms of \cite{paperIV} --- is the natural
-further target: the machinery here makes branch-changing gravitational
-scattering the decisive calculation.  No CPT claim is made: the
+These scalar questions are deferred rather than placed in the active
+queue.  After the boundary Born-trace calculation, the next target is
+the gravitational extension --- the cubic Einstein--Weyl vertices
+against the covariant real forms of \cite{paperIV}.  The natural first
+test is the physical-helicity decay $M\to h+h$: apply the uniform
+massive-spin-$2$ quarter-turn and project
+$v_3^{\dg}-v_3$ onto its real decay shell, with the Ward/BRST identities
+checked before drawing a completion-level conclusion.  No CPT claim is made: the
 exchange is a linear sector map, not a constructed antiunitary CPT
 operator.
 
@@ -1195,9 +1226,9 @@ Scripts, in \texttt{symbolic/}, each printing \texttt{ALL PASS}:\\
 \texttt{verify\_perfect\_square.py} \quad
 \texttt{verify\_two\_field.py}\\
 \texttt{verify\_sector\_obstruction.py} \quad
-\texttt{verify\_hardening.py} \quad
+\texttt{verify\_hardening.py}\\
 \texttt{verify\_doubled\_theory.py} \quad
-\texttt{verify\_51\_order4.py} \quad
+\texttt{verify\_51\_order4.py}\\
 \texttt{verify\_obstruction\_null.py}
 
 \end{document}

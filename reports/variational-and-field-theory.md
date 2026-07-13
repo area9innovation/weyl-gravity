@@ -1057,7 +1057,8 @@ Jacobians: det ∂(U,V)/∂(φ,ψ) = 1 pointwise, chart transition det = −1.
 **Main result (Outcome A).** Regulated sector-A theory ℒ₀ = −∂u∂v −
 μ²uv + (g/2)v² + (ε/2)u² (masses² = μ²±√(εg); regulator necessarily
 breaks κ — consistent with boundary-emergent parity), positive-frame
-quantization via branch eigenvectors (v = ρ_b u, ρ± = ∓δ/2) with the
+quantization via branch eigenvectors (v = ρ_b u,
+ρ± = ∓δ/(2g)) with the
 quarter-turn structure on the ghost branch; interactions H₃ = −g uv²,
 H₄ = −(g/2)u²v² are PURE POTENTIALS (Legendre trap avoided by
 construction). The exact matrix-element form of the second-order source
@@ -1405,30 +1406,36 @@ Findings:
   Each pushed branch operator mixes BOTH charges — one-sidedness can
   only come from the vacuum + cancellation structure.
 - ON3 (the discovery): the mapped pointed vacuum is a Gaussian whose
-  charged squeezing obeys the EXACT law S_UU/S_VV = (δ/2)² = εg
+  charged squeezing obeys the EXACT law
+  S_UU/S_VV = (δ/2g)² = ε/g
   (sympy, generic w±, Ω — reference-dispersion independent): the
   charge +2 component is sourced by the ε-regulator, the −2 component
-  by the interaction-generated (g/2)v². One-sided ⟺ ε = 0 (the
-  unregulated massless PS point = BT's theory). Confluent limit:
-  S_VV → −1/(4w²) — exactly BT's (C5)–(C6) coefficient structure.
-  No adapted frame at split masses: dispersion scan sign-definite;
+  by the interaction-generated (g/2)v². One-sided ⟺ ε = 0, the
+  O(1,1)-symmetric confluent line; BT's massless point additionally
+  has μ² = 0. Confluent limit: S_VV → −g/(4w²), or −1/(4w²) at
+  g = 1; at μ² = 0 this is exactly BT's (C5)–(C6) coefficient
+  structure. The exact ratio rules out an adapted reference
+  dispersion at split masses. A numerical search over the residual
   charge-preserving Bogoliubov freedom runs away to a degenerate
-  confluent frame (ON3d/ON3f).
+  confluent frame rather than finding a bounded solution (ON3d/ON3f).
 - Physics: this is the charge-frame image of PS-D (branch parity
   broken by real ghost decay above threshold): the same ε that opens
   real ghost decay sources the charge +2 contamination violating weak
   ghost symmetry. BT's null-relocation of the κ-odd obstruction is
-  exact precisely at the massless boundary; at split masses it holds
-  up to O(ε/g).
+  exact precisely at the massless boundary; at split masses it has
+  ε/g contamination, not assumed small away from the boundary.
 - Failed hypotheses (recorded): geometric-mean reference dispersion
   Ω² = w₊w₋ does NOT zero S_UU (hand algebra error, caught by the
   numerics); no dispersion does.
 
 Remaining (ON5, queued with precise spec): boundary Born-trace
 evaluation — neutral-component blindness to the obstruction
-coefficient and its ε → 0 limit on the truncated charge-Fock space
-(mapped process operator A = Σ T_xy|x⟩⟨y| with the exact DQ8 T-matrix;
-charge decomposition; τ(B†B) vs τ_φ(A†A)). Then, per team: the
+coefficient on the truncated charge-Fock space, with charge
+decomposition and τ(B†B) vs τ_φ(A†A).  Take a physical on-shell
+family to the BT point, for example m_L = 4s, m_H = 6s,
+|k_out| = 3s, μ² = 26s², εg = 100s⁴, and compute the s → 0 limit and
+first ε/g correction; do not vary only the embedding while holding
+the split DQ8 matrix fixed. Then, per team: the
 doubled/CPT branch is complete enough — next new physics is the cubic
 Einstein–Weyl obstruction (paper 6).
 

@@ -3,12 +3,13 @@
 obstruction-to-null program -- charge-null lemma + the regulated
 finite-mode Bogoliubov map to the Bateman-Turok charge basis.
 
-Goal (team 2026-07-13): show that the second-order obstruction of the
-pointed positive metric maps, under the (regulated, finite-mode)
-analogue of the BT asymptotic embedding, into the strictly
-non-neutral-charge component of the process operator, which is null
-under the invariant Krein trace -- reconciling "positive metric
-obstructed" with "Krein Born probability well-defined".
+Goal (team 2026-07-13): determine when the second-order obstruction of
+the pointed positive metric maps, under the (regulated, finite-mode)
+analogue of the BT asymptotic embedding, into a strictly one-sided
+charge component of the process operator, which is null under the
+invariant Krein trace -- reconciling "positive metric obstructed" with
+"Krein Born probability well-defined" at the boundary where
+one-sidedness actually holds.
 
 Stages in this script:
 
@@ -46,29 +47,32 @@ ON4  Charge content of the pushed-forward branch operators and of
 
 FINDINGS (established below, ALL PASS):
  -  The charged squeezing components of the mapped phi-vacuum obey the
-    EXACT law   S_UU / S_VV = (delta/2)^2 = epsilon g   (ON3g, generic
-    symbols, independent of the reference dispersion Omega): the
+    EXACT law   S_UU / S_VV = (delta/2g)^2 = epsilon/g   (ON3g,
+    generic symbols, independent of the reference dispersion Omega): the
     charge +2 component is sourced by the (epsilon/2) u^2 regulator,
     the charge -2 component by the interaction-generated (g/2) v^2.
  -  Hence the embedding is one-sided (vacuum strictly non-positively
-    charged) IFF epsilon = 0: exactly at the unregulated massless
-    perfect-square point -- Bateman-Turok's theory.  There the
-    confluent limit gives S_VV -> -1/(4 w^2), precisely the
-    coefficient structure of BT's Eqs. (C5)-(C6).
- -  At split masses NO choice within the charge-graded reference class
-    (dispersion scan ON3d + charge-preserving Bogoliubov freedom ON3f)
-    removes the charge +2 contamination: the solver runs away to a
-    degenerate (confluent-type) frame.  The contamination is intrinsic
-    and of relative size epsilon/g = (delta/2g)^2.
+    charged) IFF epsilon = 0: the O(1,1)-symmetric confluent line.
+    Bateman--Turok's massless theory is its mu^2 = 0 point.  At
+    confluence S_VV -> -g/(4 w^2), or -1/(4 w^2) at g = 1; at mu^2 = 0
+    this has precisely the coefficient structure of BT's Eqs. (C5)-(C6).
+ -  At split masses the exact ratio rules out removing the charge +2
+    component by changing the reference dispersion.  A numerical search
+    over the residual charge-preserving Bogoliubov freedom runs away to a
+    degenerate (confluent-type) frame rather than finding a bounded
+    solution.  The contamination has relative size
+    epsilon/g = (delta/2g)^2 and need not be small away from the boundary.
  -  Physics: this is the charge-frame image of the paper's earlier
     result that the sectorwise branch parity is broken by real ghost
     decay above threshold (PS-D).  BT's weak-ghost-symmetry relocation
     of the obstruction into the null negative-charge component is
     therefore exact precisely at the massless boundary; at split
-    masses it holds up to O(epsilon/g) charge contamination.  The
+    masses it has relative charge contamination epsilon/g, not assumed
+    small away from the boundary.  The
     remaining step (queued, ON5): the neutral-component blindness of
-    the Born trace to the obstruction coefficient, and its epsilon -> 0
-    limit, on the truncated charge-Fock space.
+    the Born trace to the obstruction coefficient, and its
+    (epsilon, mu^2) -> (0, 0) on-shell limit, on the truncated
+    charge-Fock space.
 """
 import numpy as np
 import sympy as sp
@@ -349,10 +353,10 @@ for k in (0.0, 3.0):
           f"min {min(vals):.4g}, max {max(vals):.4g}, "
           f"sign change: {has_zero}")
     nozero = nozero and not has_zero
-check("ON3d: NO reference dispersion alone kills the charge +2 "
+check("ON3d: the dispersion scan finds no zero of the charge +2 "
       "squeezing at the split point (S_UU sign-definite over the "
-      "scanned family) -- dispersion choice is not enough; recorded "
-      "as a finding",
+      "scanned family); the global reference-dispersion no-go is proved "
+      "symbolically by the exact Omega-independent ratio in ON3g",
       nozero)
 
 # ------------------------------ ON3f -----------------------------------------
@@ -393,22 +397,21 @@ for k in (0.0, 3.0):
           f"S' -> offdiag (degenerate frame): "
           f"{np.allclose(S, [[0, 1], [1, 0]], atol=1e-4)}")
     runaway = runaway and abs(sol[0]) > 1e3 and abs(sol[1]) > 1e3
-check("ON3f: NO proper adapted charge frame exists at the split point: "
-      "the charge-preserving Bogoliubov freedom drives (q, s) to "
-      "infinity (a degenerate/confluent frame) rather than to a bounded "
-      "solution -- the charge +-2 contamination of the mapped vacuum is "
-      "intrinsic at epsilon != 0, not a frame artifact",
+check("ON3f: numerical search over the residual charge-preserving "
+      "Bogoliubov freedom drives (q, s) to infinity (a "
+      "degenerate/confluent frame) rather than finding a bounded adapted "
+      "frame -- recorded as numerical runaway evidence",
       runaway)
 
 # ------------------------------ ON3g -----------------------------------------
 # the exact law behind the scans: the charged squeezings are locked to
 # the charge-breaking quadratic couplings,
-#     S_UU / S_VV = (delta/2)^2 / g^2 = epsilon/g            (exactly),
+#     S_UU / S_VV = (delta/2g)^2 = epsilon/g                 (exactly),
 # for EVERY reference dispersion Omega: the eps u^2/2 regulator (charge
 # +2) sources S_UU and the interaction-generated g v^2/2 (charge -2)
-# sources S_VV; the embedding is one-sided iff epsilon = 0, i.e. exactly
-# at the unregulated massless perfect-square point (BT's theory).
-wpS, wmS, OmS = sp.symbols("w_p w_m Omega", positive=True)
+# sources S_VV; the embedding is one-sided iff epsilon = 0, the
+# O(1,1)-symmetric confluent line.  The BT massless point also has mu^2 = 0.
+wpS, wmS, OmS, coupS = sp.symbols("w_p w_m Omega g", positive=True)
 dlS = wpS**2 - wmS**2                       # delta = m_+^2 - m_-^2
 # the mode normalizations 1/sqrt(2 w delta) and 1/sqrt(2 Omega) are
 # column scalings of Mb and a global scaling of Mc; both cancel in
@@ -416,9 +419,11 @@ dlS = wpS**2 - wmS**2                       # delta = m_+^2 - m_-^2
 # algebra is purely rational:
 MbS = sp.Matrix([
     [1, 1, 1, -1],
-    [-dlS/2, dlS/2, -dlS/2, -dlS/2],
+    [-dlS/(2*coupS), dlS/(2*coupS),
+     -dlS/(2*coupS), -dlS/(2*coupS)],
     [-sp.I*wpS, -sp.I*wmS, sp.I*wpS, -sp.I*wmS],
-    [dlS/2*sp.I*wpS, -dlS/2*sp.I*wmS, -dlS/2*sp.I*wpS, -dlS/2*sp.I*wmS]])
+    [dlS/(2*coupS)*sp.I*wpS, -dlS/(2*coupS)*sp.I*wmS,
+     -dlS/(2*coupS)*sp.I*wpS, -dlS/(2*coupS)*sp.I*wmS]])
 McS = sp.Matrix([
     [1, 0, 1, 0], [0, 1, 0, 1],
     [-sp.I*OmS, 0, sp.I*OmS, 0],
@@ -426,23 +431,23 @@ McS = sp.Matrix([
 WiS = MbS.LUsolve(McS)          # xb = Wi xc  (single structured solve)
 WiS = WiS.applyfunc(sp.cancel)
 alS = WiS[:2, :2]; beS = WiS[:2, 2:]
-gS = sp.Matrix([[0, -1], [-1, 0]])
-SS = (-gS.inv()*alS.LUsolve(beS)).applyfunc(
+crossS = sp.Matrix([[0, -1], [-1, 0]])
+SS = (-crossS.inv()*alS.LUsolve(beS)).applyfunc(
     lambda e: sp.cancel(sp.radsimp(e)))
 ratio = sp.simplify(SS[0, 0]/SS[1, 1])
 Svv_confluent = sp.limit(sp.simplify(SS[1, 1].subs(OmS, wpS)), wmS, wpS)
-check("ON3g: EXACT (sympy, generic w+, w-, Omega): "
-      "S_UU / S_VV = (delta/2)^2 = epsilon g "
-      "(with g = 1: = epsilon), independent of the reference "
-      f"dispersion [computed ratio - (delta/2)^2 = "
-      f"{sp.simplify(ratio - (dlS/2)**2)}]; and the confluent limit of "
+check("ON3g: EXACT (sympy, generic w+, w-, Omega, g): "
+      "S_UU / S_VV = (delta/2g)^2 = epsilon/g, independent of the "
+      f"reference dispersion [computed difference = "
+      f"{sp.simplify(ratio - (dlS/(2*coupS))**2)}]; and the confluent "
+      "limit of "
       f"S_VV at matched reference Omega = w is "
-      f"{Svv_confluent}, i.e. magnitude 1/(4 w^2) (sign conventional) "
-      "-- exactly the coefficient structure of BT's Eqs. (C5)-(C6): "
-      "the mapped vacuum becomes STRICTLY negatively charged at the "
-      "massless boundary",
-      sp.simplify(ratio - (dlS/2)**2) == 0
-      and sp.simplify(Svv_confluent + 1/(4*wpS**2)) == 0)
+      f"{Svv_confluent}; at g = 1 this is -1/(4 w^2), and at mu^2 = 0 "
+      "it has exactly the coefficient structure of BT's Eqs. (C5)-(C6). "
+      "The mapped vacuum becomes strictly negatively charged on the "
+      "confluent line",
+      sp.simplify(ratio - (dlS/(2*coupS))**2) == 0
+      and sp.simplify(Svv_confluent + coupS/(4*wpS**2)) == 0)
 
 # =============================== ON4 =========================================
 # charge content of the pushed in/out states of the obstructed process

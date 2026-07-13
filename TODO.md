@@ -143,28 +143,41 @@ holds only open items.
       lem:chargenull + Comp. Prop. cprop:embedding, tag paper5-v1.1):
       charge-null lemma self-contained (graded Krein trace, kinematic);
       canonical Bogoliubov map to the BT charge basis; **EXACT law
-      S_UU/S_VV = εg** for the mapped vacuum's charged squeezing —
-      one-sided iff ε = 0 (massless PS point), confluent S_VV →
-      −1/(4w²) = BT (C5)–(C6); no adapted frame at split (dispersion
-      scan + charge-preserving Bogoliubov runaway). BT null-relocation
-      exact AT the boundary; O(ε/g) contamination at split = charge-
-      frame image of PS-D broken parity.
+      S_UU/S_VV = (δ/2g)² = ε/g** for the mapped vacuum's charged
+      squeezing — one-sided iff ε = 0 (the O(1,1)-symmetric confluent
+      line; BT's massless point also requires μ² = 0); confluent
+      S_VV → −g/(4w²), or −1/(4w²) at g = 1, matching BT (C5)–(C6)
+      at μ² = 0. Reference-dispersion no-go is exact; the broader
+      charge-preserving-frame search runs away numerically to a
+      degenerate frame. BT null-relocation is exact at the massless
+      boundary; ε/g contamination at split is the charge-frame image
+      of PS-D broken parity and is not assumed small away from the
+      boundary.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
-      build the mapped process operator A = Σ T_xy|x⟩⟨y| (exact DQ8
-      2×2 T) on a truncated charge-Fock space with the squeezed
-      vacuum; charge-decompose; verify the obstruction coefficient
-      never enters the NEUTRAL component B; compute τ(B†B) vs
-      τ_φ(A†A) and the ε → 0 limit → the obstruction-to-null theorem
+      build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
+      on a truncated charge-Fock space with the squeezed vacuum;
+      charge-decompose; verify the obstruction coefficient never
+      enters the boundary NEUTRAL component B_0; compute τ(B_s†B_s)
+      vs τ_φ(A_s†A_s), including the first ε/g correction. Use an
+      on-shell path to the BT point, naturally m_L = 4s, m_H = 6s,
+      |k_out| = 3s, μ² = 26s², εg = 100s⁴, and prove the s → 0 limit
+      rather than varying only the embedding while holding the split
+      DQ8 matrix fixed. This yields the obstruction-to-null theorem
       (paper-5 capstone). Machinery: cross-paired Gram + graded trace
       from ON1, map from ON2, squeezing from ON3.
-    - Then: (b) vacuum-overlap / superselection as the r = 0
-      boundary / self-adjoint-extension problem in (r,χ) coordinates
-      (singular q²/r barrier); (c) normal-ordered operator Ward
-      identity [H,Q̂] = breaking (charge's linear piece needs care);
-      (d) confluent-state R₁ matrix elements; (e) field-theory
-      spectral question (complex finite-volume levels?); (f) 5:3 at
-      order 6 + the even-mode-2-transfer exclusion mechanism; (g) EW
-      cubic vertices (paper 6, only after the probability question).
+    - AFTER ON5, NEXT ACTIVE CALCULATION: cubic Einstein–Weyl
+      obstruction (paper 6). First test the physical-helicity
+      M → h+h shell at first order: derive the complete cubic vertex,
+      apply the uniform massive-spin-2 quarter-turn, and evaluate
+      Π_shell(v₃†−v₃), with Ward/BRST checks. If it vanishes, record
+      the protection mechanism before proceeding to the first allowed
+      higher-order branch-changing channel.
+    - DEFERRED, not in the active queue: vacuum-overlap / superselection
+      at r = 0; normal-ordered internal-charge Ward identity;
+      confluent-state R₁ matrix elements; field-theory complex-spectrum
+      question; 5:3 at order 6 and the even-mode-2-transfer exclusion
+      mechanism. Do not extend the doubled-scalar reconstruction before
+      the Einstein–Weyl calculation.
 15. [ ] Paper 2 outlook (i): classify quadratic PT Hamiltonians whose
     positive diagonalizer direction is inter-mode for some splitting.
 16. [ ] Λ ≠ 0 phase diagram (critical gravity / partial masslessness
