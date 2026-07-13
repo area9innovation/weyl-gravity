@@ -158,7 +158,9 @@ Symbolic (SymPy):
   symplectic residues, covariant projector reassembly, Weyl-correlator
   M-regularity, sectorwise conformal limits + cond(N) divergence.
 - `gravity_perturbiner.py` — shared exact multi-wave Einstein–Weyl
-  perturbiner used by the cubic and forthcoming four-point checks.
+  perturbiner used by the cubic and four-point checks.
+- `gravity_four_point.py` — import-safe exact four-point assembler exposing
+  the quartic contact and all three gauge-fixed exchange channels.
 - `verify_gravity_cubic.py` — gravity G13–G14 in the original
   fourth-order variables: exact multi-wave perturbiner, one-massive-leg
   cubic rule, Ward identities, nonzero `MMM`/`MMh` amplitudes and
@@ -168,6 +170,13 @@ Symbolic (SymPy):
   `A3(MMM)=-sqrt(6)/8` and `A3(MMh)=-sqrt(2)/8`, symbolic Ward identity,
   complete five-polarization residue numerator `sqrt(3)/32`, and explicit
   massive inverse-kernel normalization.
+- `verify_gravity_g15.py` — exact real-shell `MM -> Mh` certificate with
+  quartic contact plus all exchanges, Ward/Bose/internal-gauge checks, and
+  pole-factorization regression.
+- `verify_gravity_obstruction.py` — gravity G17: termwise uniform
+  quarter-turn of the full connected second-order operator, reversed-process
+  physical adjoint, shell projection, and the exact nonzero obstruction
+  `-2i A_K` including first-order metric-ambiguity independence.
 - `verify_paper1_referee.py`, `verify_paper2_referee.py`,
   `verify_paper3_referee.py` — referee-round claim verification
   (spectrum of Q, normalization proposition; pointed-unitary identity;

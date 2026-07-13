@@ -1592,3 +1592,72 @@ definite in-plane polarization construction. G16 partially covered
 (Ward, Bose, gauge); still queued: crossing, the full 250-polarization
 scan (regression rail), then G17 (quarter-turn transport of full T₂,
 𝔬₊^(2) = Π_shell(T₂†−T₂) ≠ 0) and G18 (minimal Krein block).
+
+## 2026-07-14 — G17: full-T2 Einstein–Weyl metric obstruction
+
+Added the import-safe `gravity_four_point.py` assembler and
+`verify_gravity_obstruction.py`; G17a--G17f are ALL PASS in exact
+rational arithmetic.  This closes the distinction between an
+external-leg phase argument and the actual second-order deformation
+source.
+
+At the G15 interior physical point, the standard/Krein-frame reduced
+tree operator splits exactly into
+
+    contact    =  8364585636057/410644531250
+    s exchange = -836906329/45312500
+    t exchange = -5142800561/111695312500
+    u exchange = -90855828716/205322265625
+
+and their sum is
+
+    A_K = 7881241032/5584765625 != 0.
+
+All three bordered systems have exact zero constraint and field-equation
+residuals.  Reversing every external momentum while conjugating the
+real polarization sections reproduces the contact and every exchange
+term separately, so the physical adjoint is explicit.  All four
+external linearized-EOM covectors vanish; replacing the graviton by a
+gauge polarization makes the complete amplitude zero; and axial versus
+de Donder internal gauge gives the same value.
+
+Paper IV's convention is Mhat = i M, or M = -i Mhat.  The contact has
+three external massive fields and therefore phase (-i)^3 = i.  For an
+internal massless exchange the endpoint phases give
+(-i)^2(-i) = i.  For an internal massive exchange they give
+(-i)^3(-i)^2 = -i, while the massive quadratic kernel changes sign
+under the quarter-turn and its inverse contributes -1, again giving
+i.  Thus this is a transport of the complete contact-plus-exchange
+operator, including both branches of every fourth-order propagator:
+
+    T_{2,+} = i A_K.
+
+On the shell basis (|MM>, |Mh>), both states have exact free energy
+5/2 and the reverse amplitude equals the forward one.  Hence
+
+    Pi_ker(ad h0)(T_{2,+}^dagger - T_{2,+})
+      = -2 i A_K sigma_x,
+
+with exact off-diagonal element
+
+    -15762482064 i / 5584765625 != 0.
+
+The sign reverses with the opposite quarter-turn convention; the
+nonvanishing does not.  There is no second-order R2 whose commutator
+with h0 equals this source.
+
+The first-order metric ambiguity is also harmless here.  The connected
+real cubic shell block is zero: Mhh vanishes by the exact Einstein
+truncation, MMM and MMh have no nonsoft real 1<->2 shell, and real hhh
+is the collinear helicity zero.  Therefore, for every first-order
+commutant addition [G,h0]=0,
+
+    Pi_E [G, v1 + v1^dagger] Pi_E
+      = [G_E, Pi_E(v1 + v1^dagger)Pi_E] = 0.
+
+So the nonzero G17 class cannot be moved or canceled by choosing a
+different analytic first-order metric.  Crossing, the part of G16
+needed by the adjoint, is now exact; the remaining G16 polarization
+scan is only a regression rail.  G18 is the next new physics question:
+whether any BRST-compatible Krein grading or conformal-boundary null
+ideal makes this parity-violating block probability-invisible.

@@ -174,19 +174,36 @@ holds only open items.
       MM→Mh is nonzero on a nonempty open real-shell subset.  This
       supplies the existence input for the second-order obstruction;
       the explicit real point is now a hardening certificate.
-    - NEXT-GRAVITY (G15, hardening/regression): full MM→Mh
-      amplitude at the interior rational point p₁ = M(5/4,0,0,3/4),
-      p₂ = M(5/4,0,0,−3/4), k = M(21/20,21/25,0,63/100),
-      p₃ = M(29/20,−21/25,0,−63/100) (s = 25/4M², cosθ = 3/5;
-      threshold point as regression): 4-wave quartic vertex + internal
-      fourth-order propagator w/ gauge fixing + exchange/contact
-      assembly, Ward-verified, with the complex-pole residue reproduced
-      in the appropriate channel limit. Then G16
-      (Bose/crossing/polarization scan), G17 (quarter-turn transport of FULL T₂:
-      𝔬₊^(2) = Π_shell(T₂†−T₂) ≠ 0), G18 (minimal Krein block:
-      parity violation probability-visible or null). Paper 6: one-M
-      perturbiner/LSZ lemma (asymptotic mass eigenfield + local
-      invertible field map hypotheses).
+    - DONE (step 13, 2026-07-14): **GRAVITY G15 ALL PASS** at the
+      interior rational point.  The exact contact plus all three
+      gauge-fixed exchanges gives
+      A_K(MM→Mh) = 7881241032/5584765625 ≠ 0 at
+      s = 25/4 M², cosθ = 3/5 with real polarizations.  The total Ward
+      identity, initial-M Bose symmetry, gauge-representative and
+      internal-gauge independence are exact; the threshold value is
+      −509784/390625.  The shifted massive-pole residue reproduces the
+      G14 factorization contraction with the ghost kinetic sign.
+    - DONE (step 14, 2026-07-14): **GRAVITY G17 ALL PASS**
+      (`verify_gravity_obstruction.py`).  The quartic contact and every
+      exchange channel were exposed separately; the physical-adjoint
+      reverse process agrees term by term.  Under M = −i Mhat, the
+      contact, internal-massless exchange, and internal-massive exchange
+      all acquire +i (the last includes the compensating −1 of the
+      quarter-turned massive inverse kernel).  Therefore
+      Π_shell(T₂†−T₂) = −2i A_K σ_x, with exact off-diagonal element
+      −15762482064 i/5584765625 ≠ 0.  External EOM, total Ward, and
+      axial/de Donder checks pass.  The result is independent of the
+      first-order metric commutant: the complete connected cubic
+      physical-shell block vanishes, hence
+      Π_E[G,v₁+v₁†]Π_E = 0 for every [G,h₀]=0.
+    - NEXT-GRAVITY: G16 remainder (full 250-polarization regression scan;
+      crossing needed by G17 is now exact), then G18 (minimal Krein
+      block: determine whether the parity-violating amplitude is
+      probability-visible or belongs to a more sophisticated null
+      ideal).  Paper 6: state the one-M perturbiner/LSZ lemma with its
+      asymptotic-eigenfield and local-invertible-field-map hypotheses,
+      followed by the G13--G17 cubic-protection/second-order-obstruction
+      theorem.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
       build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
       on a truncated charge-Fock space with the squeezed vacuum;
@@ -199,13 +216,11 @@ holds only open items.
       DQ8 matrix fixed. This yields the obstruction-to-null theorem
       (paper-5 capstone). Machinery: cross-paired Gram + graded trace
       from ON1, map from ON2, squeezing from ON3.
-    - AFTER ON5, NEXT ACTIVE CALCULATION: cubic Einstein–Weyl
-      obstruction (paper 6). First test the physical-helicity
-      M → h+h shell at first order: derive the complete cubic vertex,
-      apply the uniform massive-spin-2 quarter-turn, and evaluate
-      Π_shell(v₃†−v₃), with Ward/BRST checks. If it vanishes, record
-      the protection mechanism before proceeding to the first allowed
-      higher-order branch-changing channel.
+    - GRAVITY RAIL STATUS: the originally proposed M→h+h test is now
+      closed (zero by Einstein truncation), cubic order is protected,
+      and G17 proves the second-order MM→Mh positive-metric obstruction.
+      G18 and the Paper-6 write-up remain; do not restart a separate
+      doubled-scalar reconstruction before them.
     - DEFERRED, not in the active queue: vacuum-overlap / superselection
       at r = 0; normal-ordered internal-charge Ward identity;
       confluent-state R₁ matrix elements; field-theory complex-spectrum
