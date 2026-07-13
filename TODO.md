@@ -284,18 +284,35 @@ holds only open items.
       genuinely modified probability functional.  The exact first-order
       Jordan metric-deformation map and its two-real-dimensional cokernel
       are recorded as the interface to C1.
-    - NEXT (CONFORMAL C1): construct the lowest complete cubic
-      cylinder-energy blocks in the ordinary-derivative Weyl action.
-      Use the C0b Shapovalov signature to test `V_3^sharp=V_3`, keeping
-      all TT and vector descendants at the same compact energy.  First
-      translate the exact Einstein-subsector zeros into radial harmonics;
-      do not label a cylinder branch directly by the flat `E/L` basis.
-      Test both the fixed `J_conf` source and the C0c Jordan-deformation
-      cokernel.  A separate Mannheim test is meaningful only if an explicit
-      dynamical, singular, doubled, or nonquadratic prescription is supplied;
-      there is no second fixed free form to scan.  Four-point divided
-      differences remain a later regression rail, not the definition of
-      conformal states.
+    - DONE (CONFORMAL C1a, 2026-07-13):
+      `verify_conformal_cubic_shell.py` separates the two interaction
+      complexes which the initial C1 proposal conflated.  The two C0c
+      obstruction coordinates belong to the flat `P_0` Jordan block;
+      on a fixed compact-`D` shell the free Hamiltonian is scalar and the
+      entire anti-Hermitian source is the cokernel.  The exact Fock-shell
+      scan gives dimensions 137, 536, and 2062 at energies 4, 5, and 6.
+      The Einstein rule `A(E,E,X)=0` kills the complete energy-4 cubic
+      shell.  At energy 5 the only surviving block joins two negative-sign
+      sectors, and the published finite `EAA` amplitude is certified
+      nonzero at an exact complex spinor point.  At energy 6, `SO(4)` and
+      the selection rule isolate the first possible opposite-sign block as
+      `A_3 A_3 <-> L_6`; the vector alternative is representation-forbidden.
+      Kubo--Kuntz's result is also classified correctly as nonpositivity of
+      the indefinite completeness sum, not a computed nonzero
+      `J V-V^dagger J` source.  Finally, analytic deformation of the fixed
+      indefinite `J_conf` cannot change its inertia and therefore cannot
+      produce a positive metric even if the conservation equation is
+      soluble.
+    - NEXT (CONFORMAL C1b): compute the Hamiltonian-normalized cylinder
+      coefficient `<L_6|V_3|A_3 A_3>` in the ordinary-derivative Weyl
+      action.  Use normalized `S^3` vector/tensor harmonics in the allowed
+      `(3,1)` plus parity-conjugate channel; keep metric, auxiliary tensor,
+      Stueckelberg vector, constraints, and BRST quotient; derive forward
+      and reverse entries; test `J_E V_E=V_E^dagger J_E` on the complete
+      energy-6 block; and, if nonzero, diagonalize the full degenerate block
+      and evaluate its indefinite optical-theorem weight.  A flat growing
+      mode has derivative-delta support, so divided differences are only a
+      regression rail and cannot replace this cylinder matrix element.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
       build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
       on a truncated charge-Fock space with the squeezed vacuum;

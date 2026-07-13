@@ -1,9 +1,11 @@
 # Conformal C0: direct free pairing before the interaction test
 
-Status: C0a, C0b, and C0c are exact and machine-verified by
+Status: C0a, C0b, C0c, and the C1a shell reduction are exact and
+machine-verified by
 `symbolic/verify_conformal_free_pairing.py` and
 `symbolic/verify_conformal_cylinder_form.py`, and
-`symbolic/verify_conformal_mannheim_adjoint.py`. C1 is the next active
+`symbolic/verify_conformal_mannheim_adjoint.py` and
+`symbolic/verify_conformal_cubic_shell.py`. C1b is the next active
 calculation. This note is a research ledger, not a programme-overview update
 and not yet a manuscript claim.
 
@@ -612,3 +614,208 @@ and internal propagator limits can be nonuniform.
 No second oppositely oriented Jordan copy is assumed. Such a copy must be
 identified inside the actual conformal module; adding it by hand would
 enlarge the theory.
+
+## C1a: arena and lowest-shell reduction
+
+C1a corrects a second important premise before a large tensor calculation.
+The two real obstruction coordinates derived in C0c are the cokernel of the
+**flat `P_0` Jordan block**. They are not the cokernel on a fixed compact
+energy shell. If
+
+```text
+N = [[0,1],[0,0]],       J = sigma_x,
+V = [[a,b],[c,d]],
+```
+
+then
+
+```text
+S = J V - V^dagger J
+```
+
+has the flat-Jordan obstruction coordinates
+
+```text
+O_1 = -i S_11 = 2 Im(c),
+O_2 = Im(S_12) = Im tr(V).
+```
+
+These formulas are exact. But radial quantization obeys `[D,P_mu]=P_mu`
+(up to the convention for which side acts), so `P_0` changes compact energy.
+It does not act as a nilpotent endomorphism of one `D=E` eigenspace. On such
+a cylinder shell,
+
+```text
+H_0,E = E I,
+H_0,E^dagger X-X H_0,E = 0.
+```
+
+The full anti-Hermitian shell source is therefore the cylinder cokernel. One
+must choose one of two well-defined calculations:
+
+1. a compact cylinder Hamiltonian matrix, with ordinary degenerate-shell
+   projection; or
+2. a flat `P_0` Jordan calculation regulated by wave packets or finite time.
+
+One cannot insert a stripped growing-mode amplitude into the two C0c
+coordinates. Adamo, Nakach, and Tseytlin show explicitly that a flat growing
+external mode produces derivatives of the momentum-conserving delta
+function rather than an ordinary amplitude; see
+[arXiv:1805.00394](https://arxiv.org/abs/1805.00394), Eqs. (2.7)--(2.8).
+Johansson, Mogull, and Teng likewise emphasize that non-plane-wave limits
+and LSZ do not commute in general:
+[arXiv:1806.05124](https://arxiv.org/abs/1806.05124).
+
+### Complete low compact-energy shells
+
+Choose the overall C0b convention in which the `Delta=2` lower-TT primary is
+positive. The one-particle signatures are
+
+| compact energy | lower TT `+` | vector + upper TT `-` | total |
+| ---: | ---: | ---: | ---: |
+| 2 | 10 | 0 | 10 |
+| 3 | 24 | 16 | 40 |
+| 4 | 42 | 40 | 82 |
+| 5 | 64 | 72 | 136 |
+| 6 | 90 | 112 | 202 |
+
+The first complete Fock shells relevant to a cubic Hamiltonian are:
+
+| energy | particle partitions | dimensions | full dimension |
+| ---: | --- | --- | ---: |
+| 4 | `4`; `2+2` | `82`; `55` | 137 |
+| 5 | `5`; `2+3` | `136`; `400` | 536 |
+| 6 | `6`; `2+4`; `3+3`; `2+2+2` | `202`; `820`; `820`; `220` | 2062 |
+
+At energy six the inherited Fock signature is `(1166,896)`. The
+three-particle sector cannot simply be omitted: the cubic Hamiltonian can
+act on two particles while leaving a spectator. Here, however, its only
+energy-conserving contribution contains the energy-four block and vanishes
+by the selection theorem below.
+
+### Einstein selection makes energy four exactly empty
+
+The exact Einstein subsector gives the symmetric cubic selection rule
+
+```text
+A(E,E,X)=0
+```
+
+for arbitrary third physical direction `X`, after the usual equivalence-
+theorem and radial-state translation. Every energy-four one-to-two matrix
+element has two energy-two Einstein primaries and therefore vanishes.
+
+At energy five the two-particle state is either `EE` with positive sign or
+`EA` with negative sign. The one-particle state is either lower TT `E` with
+positive sign or `X=(A,L)` with negative sign. The selection theorem kills
+all blocks except
+
+```text
+X_5(-) <-> E_2(+) A_3(-).
+```
+
+Thus the first potentially nonzero cubic block connects two **equal
+negative-sign** sectors. This is not merely potential: the finite flat
+oscillatory amplitude computed in
+[arXiv:1805.00394](https://arxiv.org/abs/1805.00394), Eq. (4.5), is
+
+```text
+A_3(A_1^-,A_2^+,E_3^+) = epsilon kappa [23]^4/[12]^2.
+```
+
+At the exact complex point with common undotted spinor `(1,0)` and dotted
+spinors `(1,0)`, `(0,1)`, and `(-1,-1)`, momentum conservation is exact,
+`[12]=[23]=[31]=1`, and the stripped coefficient is `epsilon kappa`, not
+zero. The radial `SO(4)` product also contains the corresponding channel:
+
+```text
+(0,2)_E2 tensor (3/2,1/2)_A3
+    contains (3/2,5/2)_A5.
+```
+
+This is the first finite cubic interaction, but it cannot be the desired
+opposite-sign obstruction.
+
+### First unresolved opposite-sign channel
+
+At energy six the selection theorem leaves an opposite-sign possibility
+only in the `3+3` partition:
+
+```text
+A_3(-) A_3(-)  [Fock sign +]
+          <-> X_6(-).
+```
+
+The `SO(4)` harmonics sharpen `X_6`. Two energy-three vector irreps
+`(3/2,1/2)` symmetrically contain the upper-TT irrep `(3,1)`, while no
+product of the two vector chiralities contains the energy-six vector
+irreps `(3,2)` or `(2,3)`. Therefore the first unresolved coefficient is
+
+```text
+v_AAL = <L_6 | V_3 | A_3 A_3>.
+```
+
+Here `L_6` denotes the upper TT cylinder tower, not a flat growing plane
+wave. The channel is allowed by energy, `SO(4)`, Bose symmetry, and the
+Einstein selection rule. Its value is not fixed by C0a--C1a.
+
+### What the fixed-pairing test can and cannot show
+
+The finite `EAA` amplitude is compatible with fixed-pairing
+pseudo-Hermiticity. On equal-sign sectors a Hermitian forward/reverse
+block gives
+
+```text
+J V - V^dagger J = 0
+```
+
+even though `J` remains indefinite. This also clarifies the relation to
+Kubo--Kuntz. Their Eqs. (120) and (138)--(140) exhibit negative weights in
+the physical completeness sum; they do not calculate a nonzero
+`J V-V^dagger J` interaction source. Their result is a failure of an
+ordinary positive probability interpretation, not an explicit failure of
+conservation of the canonical indefinite form.
+
+An opposite-sign block can also preserve `J`, but its two directions then
+carry the compensating relative sign. In the minimal exactly degenerate
+model,
+
+```text
+J = diag(1,-1),
+V = [[0,z],[-z*,0]],
+```
+
+one has `J V=V^dagger J` while the characteristic polynomial is
+`lambda^2+|z|^2`. A nonzero `v_AAL` could therefore be probability-visible
+and could generate a complex-conjugate finite-volume pair without
+violating Krein pseudo-Hermiticity. Only the complete multiplicity block,
+including diagonal terms, can decide the spectral statement.
+
+There is a separate elementary no-go which does not require C1b. Since
+`J_conf` is already nondegenerate and indefinite, every nonsingular
+analytic Hermitian deformation `J_conf+g G_1+...` has the same inertia near
+`g=0`. Solving its conservation equation cannot turn it into a positive
+metric. A positive Mannheim completion must still be singular,
+nonanalytic, doubled, state-restricted, or based on a nonquadratic
+probability rule.
+
+### C1b acceptance target
+
+Compute `v_AAL` directly on `S^3 x R` from Metsaev's ordinary-derivative
+Weyl action, with normalized transverse-vector and upper-TT tensor
+harmonics. The calculation must:
+
+1. choose one explicit `(3,1)` (and parity-conjugate `(1,3)`) channel in
+   `Sym^2(3/2,1/2)`;
+2. include the metric, auxiliary tensor, Stueckelberg vector, constraints,
+   and the diffeomorphism plus Weyl BRST quotient;
+3. derive both forward and reverse Hamiltonian-normalized entries from the
+   action, rather than infer an adjoint from a stripped amplitude;
+4. verify `J_E V_E=V_E^dagger J_E` on the complete energy-six block;
+5. if `v_AAL` is nonzero, diagonalize the relevant full degenerate block
+   and evaluate the indefinite optical-theorem weight;
+6. if it vanishes, record cubic sign protection and advance to the first
+   quartic/contact-plus-exchange shell.
+
+This is now the shortest direct test of the conformal interaction. Flat
+split-theory divided differences remain a regression rail only.
