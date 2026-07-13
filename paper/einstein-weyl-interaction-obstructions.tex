@@ -65,6 +65,9 @@ identically zero.  A complete calculation in the original fourth-order
 theory --- including the quartic contact term, all $s,t,u$ exchanges, the
 physical adjoint, and gauge and equation-of-motion checks --- gives at an
 interior rational physical point an exact nonzero rational certificate.
+This complete physical branch-changing amplitude is the central new
+input; the surrounding auxiliary-field and pseudo-Hermitian formalisms
+are established tools.
 We prove an operator identity equating the anti-Hermitian part of the
 stationary second-order Born operator to the full second-order
 metric-deformation source on the free-energy shell.  It follows that
@@ -110,7 +113,12 @@ c_1R+\alpha R_{\mu\nu}R^{\mu\nu}+\beta R^2\right),
 with $M^2=c_1/\alpha>0$ in the split phase.  Up to the four-dimensional
 Euler density, the quadratic term is Weyl-squared.  The extra spin-$2$
 branch has the opposite kinetic sign, the familiar higher-derivative
-ghost of quadratic gravity \cite{Stelle}.
+ghost of quadratic gravity \cite{Stelle,Salvio}.  Neither this spectrum
+nor its nonlinear auxiliary-field reformulation is new: quadratic
+gravity was put in a local second-order Einstein--scalar--massive-tensor
+form by Hindawi, Ovrut, and Waldram \cite{HindawiOvrutWaldram}, and the
+scalar-free massive-tensor sector was developed in detail by Magnano and
+Soko\l{}owski \cite{MagnanoSokolowski}.
 
 Paper~IV of this series \cite{paperIV} did not choose between proposed
 interacting cures.  It classified the \emph{free} covariant completions.
@@ -132,8 +140,12 @@ Does either covariant free completion survive the tree interaction
 through quartic order?
 \end{quote}
 
-Paper~V \cite{paperV} supplied the deformation complex needed to ask the
-positive part of this question.  If $\rho_0$ is the free Dyson map and
+Paper~V \cite{paperV} supplied the deformation complex used here to ask
+the positive part of this question.  Perturbative pseudo-Hermitian
+metrics, their homogeneous ambiguities, and interacting field-theory
+constructions have a substantial prior literature
+\cite{MostafazadehMetric,BBJQFT}; we do not claim the order-by-order
+formalism itself as new.  If $\rho_0$ is the free Dyson map and
 $v_n$ are the transported interaction vertices, an analytic correction
 $\rho_\zeta=\exp[-\tfrac12\sum_n\zeta^nR_n]\rho_0$ must solve
 \begin{align}\label{eq:defcomplex}
@@ -147,6 +159,43 @@ obstruction.  In the perfect-square scalar, first-order protection was
 followed by a second-order branch-changing obstruction; at the exact
 massless $O(1,1)$ boundary, however, the offending component could become
 one-sided in continuous charge and null in the generalized Born trace.
+
+\paragraph{Prior amplitudes and the precise novelty claim.}
+The geometric premise behind the cubic selection rule is also known:
+Einstein metrics form an exact Bach-flat subsector.  Related amplitude
+work proves that Ricci-curvature deformations leave all-Einstein-graviton
+tree amplitudes unchanged and that the corresponding pure conformal
+amplitudes vanish \cite{DonaEtAl}.  Lemma~\ref{lem:onemassive} below is
+the mass-eigenfield, one-massive-leg consequence of that established
+consistent truncation, not a new discovery of the Einstein subsector.
+Conformal-gravity BRST/LSZ quantization and its indefinite scattering
+problem have likewise been studied directly \cite{KuboKuntz}, and
+conformal or mass-deformed ghost-state amplitudes are known in adjacent
+conformal and supersymmetric theories
+\cite{AdamoNakachTseytlin,JohanssonMogullTeng}.  Those works concern the
+conformal/Jordan phase or different amplitude sectors, not the regular
+split-phase process studied here.
+
+The closest comparison is Kuntz's PT-symmetric quadratic-gravity
+proposal \cite{KuntzPTGravity}.  It uses the same scalar-free quadratic
+action and, up to convention, the same complex rotation of the complete
+massive spin-$2$ field.  It constructs the free BRST physical subspace
+and solves an interacting pseudo-Hermitian metric in a mode-truncated
+Hamiltonian in which spin and momentum labels and the exact gravitational
+vertex coefficients are suppressed.  It does not evaluate a complete
+degenerate physical scattering shell.  The calculation below supplies
+precisely that missing stress test.
+
+To our knowledge, the narrow new input of this paper is the first
+complete exact calculation of the physical mass-eigenfield process
+$MM\to Mh$ in scalar-free Einstein--Weyl gravity, together with its
+independent complete massive-pole residue, and the use of that physical
+block to produce an explicit metric-deformation cocycle.  The novelty is
+the verified gravitational source, not the auxiliary formulation, the
+general deformation equations, the elementary external-leg phase count,
+or indefinite-metric algebra.  Propositions~\ref{prop:bornidentity} and
+\ref{prop:covariantborn} make the amplitude-to-cocycle step an operator
+identity rather than a phase-based inference.
 
 Gravity has the same perturbative-order pattern and a different
 mechanism:
@@ -366,6 +415,23 @@ Adding $P_E(v_2^{\dg}-v_2)P_E$ gives
 contact and the two-cubic exchange contribution enter with exactly the
 relative combination required by the deformation equation.
 \end{proof}
+
+\begin{remark}[Contact, exchange, and the logical bridge]
+The two terms in the deformation source now have a fixed diagrammatic
+meaning.  The shell projection of $v_2^{\dg}-v_2$ is the
+anti-Hermitian difference of the canonical quartic vertex, including
+the instantaneous terms generated by the Legendre transform.  Equation
+\eqref{eq:commborn} is the anti-Hermitian difference of the complete
+two-cubic intermediate-state sum.  Their sum, and only their sum, is the
+connected second-order Born block.  Thus the later four-point amplitude
+is not being substituted for $S_2$ on the basis of its external-leg
+phase: Proposition~\ref{prop:covariantborn} first identifies the complete
+covariant contact-plus-exchange calculation with \eqref{eq:Bornoperator},
+and \eqref{eq:bornidentity} then identifies its anti-Hermitian part with
+$P_ES_2P_E$.  The finite-volume principal-value prescription, external
+normalizations, identical-particle factors, and removal of disconnected
+pieces are stated separately below.
+\end{remark}
 
 \subsection{Reduced amplitude, LSZ normalization, and adjoint}
 
@@ -1305,6 +1371,17 @@ inconsistent \cite{Maldacena}; or
 scalaron, matter, cosmological constant, or a different background.
 \end{itemize}
 
+Two prominent prescriptions lie outside the assumptions for a
+particularly concrete reason.  In the unstable-resonance treatment of
+Donoghue and Menezes \cite{DonoghueMenezes}, the massive ghostlike pole
+does not belong to the asymptotic spectrum and only stable states enter
+the unitarity sum.  In the fakeon construction
+\cite{AnselmiFakeon}, the massive mode is purely virtual and amplitudes
+are defined by a nonanalytic continuation.  The present theorem instead
+puts physical $M$ states on both sides of the scattering process and
+studies an analytic metric deformation.  It therefore neither refutes
+nor subsumes either prescription.
+
 Any surviving null-sector construction must therefore leave the
 conventional class.  Possibilities include a grading singular at the
 conformal boundary, a nonlinear mixing of asymptotic particle sectors, a
@@ -1331,6 +1408,37 @@ $O(1,1)$ charge appears exactly at the perfect-square boundary and can
 sort an obstruction into a one-sided null ideal.  In gravity, the $MMM$
 and $MMh$ interactions remove every uniform abelian charge before the
 four-point obstruction is considered.
+
+\subsection{Relation to the PT-symmetric quadratic-gravity proposal}
+
+Kuntz \cite{KuntzPTGravity} starts from the same scalar-free
+Einstein--Weyl vertex content used here.  His auxiliary-field complex
+deformation makes the massless and massive free spin-$2$ sectors
+Hermitian and positive and places factors of $i$ on interactions with an
+odd number of massive fields.  At this level his rotation and
+\eqref{eq:quarterturn} are the same construction up to the sign chosen
+for the quarter-turn.  His transverse physical asymptotic space also
+retains both massless helicities and all five massive polarizations, so
+the distinction is not that the $M$ states have been removed.
+
+The difference is in the interacting test.  The displayed metric
+calculation in Ref.~\cite{KuntzPTGravity} replaces the full tensor field
+theory by a mode Hamiltonian with spin and momentum dependence suppressed
+and with schematic interaction coefficients.  It demonstrates a
+positive perturbative metric for that truncation and offers it as
+evidence for the gravitational theory, but it does not include the exact
+energy-degenerate $MM\to Mh$ block.  Proposition~\ref{prop:bornidentity}
+shows why that omission is decisive: a nonzero anti-Hermitian component
+inside a degenerate free-energy block is not divided by a free-energy
+difference and cannot be removed by an analytic $R_2$.
+
+Thus our result is a direct full-vertex stress test of that proposal, not
+a general rejection of PT-symmetric gravity.  Any extension of the
+truncated construction to the complete theory must evade
+\eqref{eq:obstruction} by leaving at least one of the present hypotheses:
+for example through a nonanalytic metric, a different free base point,
+different asymptotic states, or a prescription that excludes the massive
+mode from the physical scattering spectrum.
 
 \subsection{Real forms become dynamical}
 
@@ -1373,12 +1481,24 @@ changed observable algebras, or genuinely nonlocal gravitational
 structures can evade the hypotheses of Theorem~\ref{thm:master} without
 destroying covariance and factorization.
 
-\begin{thebibliography}{16}
+\begin{thebibliography}{99}
 
 \bibitem{Stelle}
 K.~S.~Stelle,
 \emph{Renormalization of higher-derivative quantum gravity},
 Phys.\ Rev.\ D \textbf{16} (1977) 953.
+
+\bibitem{Salvio}
+A.~Salvio,
+\emph{Quadratic gravity},
+Front.\ Phys.\ \textbf{6} (2018) 77,
+arXiv:1804.09944.
+
+\bibitem{HindawiOvrutWaldram}
+A.~Hindawi, B.~A.~Ovrut and D.~Waldram,
+\emph{Consistent spin-two coupling and quadratic gravitation},
+Phys.\ Rev.\ D \textbf{53} (1996) 5583--5596,
+arXiv:hep-th/9509142.
 
 \bibitem{MagnanoSokolowski}
 G.~Magnano and L.~M.~Soko\l{}owski,
@@ -1386,6 +1506,61 @@ G.~Magnano and L.~M.~Soko\l{}owski,
 gravity},
 Ann.\ Phys.\ \textbf{306} (2003) 1--35,
 arXiv:gr-qc/0209022.
+
+\bibitem{DonaEtAl}
+P.~Don\`a, S.~Giaccari, L.~Modesto, L.~Rachwa\l{} and Y.~Zhu,
+\emph{Scattering amplitudes in super-renormalizable gravity},
+JHEP \textbf{08} (2015) 038,
+arXiv:1506.04589.
+
+\bibitem{MostafazadehMetric}
+A.~Mostafazadeh,
+\emph{Metric operator in pseudo-Hermitian quantum mechanics and the
+imaginary cubic potential},
+J.\ Phys.\ A \textbf{39} (2006) 10171--10188,
+arXiv:quant-ph/0508195.
+
+\bibitem{BBJQFT}
+C.~M.~Bender, D.~C.~Brody and H.~F.~Jones,
+\emph{Extension of PT-symmetric quantum mechanics to quantum field
+theory with cubic interaction},
+Phys.\ Rev.\ D \textbf{70} (2004) 025001,
+arXiv:hep-th/0402183.
+
+\bibitem{KuboKuntz}
+J.~Kubo and J.~Kuntz,
+\emph{Analysis of unitarity in conformal quantum gravity},
+Class.\ Quantum Grav.\ \textbf{39} (2022) 175010,
+arXiv:2202.08298.
+
+\bibitem{KuntzPTGravity}
+J.~Kuntz,
+\emph{Unitarity through PT symmetry in quantum quadratic gravity},
+arXiv:2410.08278.
+
+\bibitem{AdamoNakachTseytlin}
+T.~Adamo, S.~Nakach and A.~A.~Tseytlin,
+\emph{Scattering of conformal higher spin fields},
+JHEP \textbf{07} (2018) 016,
+arXiv:1805.00394.
+
+\bibitem{JohanssonMogullTeng}
+H.~Johansson, G.~Mogull and F.~Teng,
+\emph{Unraveling conformal gravity amplitudes},
+JHEP \textbf{09} (2018) 080,
+arXiv:1806.05124.
+
+\bibitem{DonoghueMenezes}
+J.~F.~Donoghue and G.~Menezes,
+\emph{Unitarity, stability and loops of unstable ghosts},
+Phys.\ Rev.\ D \textbf{100} (2019) 105006,
+arXiv:1908.02416.
+
+\bibitem{AnselmiFakeon}
+D.~Anselmi,
+\emph{Fakeons and Lee--Wick models},
+JHEP \textbf{02} (2018) 141,
+arXiv:1801.00915.
 
 \bibitem{LiuLuPope}
 H.-S.~Liu, H.~L\"u, C.~N.~Pope and J.~F.~V\'azquez-Poritz,
