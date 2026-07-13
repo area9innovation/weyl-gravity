@@ -196,14 +196,27 @@ holds only open items.
       first-order metric commutant: the complete connected cubic
       physical-shell block vanishes, hence
       Π_E[G,v₁+v₁†]Π_E = 0 for every [G,h₀]=0.
-    - NEXT-GRAVITY: G16 remainder (full 250-polarization regression scan;
-      crossing needed by G17 is now exact), then G18 (minimal Krein
-      block: determine whether the parity-violating amplitude is
-      probability-visible or belongs to a more sophisticated null
-      ideal).  Paper 6: state the one-M perturbiner/LSZ lemma with its
-      asymptotic-eigenfield and local-invertible-field-map hypotheses,
-      followed by the G13--G17 cubic-protection/second-order-obstruction
-      theorem.
+    - DONE (step 15, 2026-07-14): **GRAVITY G18 ALL PASS**
+      (`verify_gravity_krein.py`) under the conventional covariant class:
+      nondegenerate physical-BRST fundamental symmetry, agreement with
+      the free Krein real form, and cluster-factorizing Fock lift.  The
+      proper-orthochronous commutant is
+      diag(ε₊,ε₋,ε_M I₅); parity/real-field compatibility equates ε₊ and
+      ε₋, while the free signature fixes (+,+,−) even without that extra
+      condition.  Tensor multiplicativity uniquely gives
+      J_F=(−1)^{N_M}.  For t=iA_K,
+      Tr(X^sharp X)=−A_K²≠0, and for the full G17 obstruction
+      Tr(O^sharp O)=−8A_K²≠0: Z₂-odd is neutral after squaring, not null.
+      The verified MMM/MMh vertices force 3q_M=2q_M=0 and hence q_M=0
+      for any uniform abelian charge; the physical block also survives
+      BRST cohomology and cannot be BRST-exact.
+    - NEXT-GRAVITY: Paper 6 should now state the one-M perturbiner/LSZ
+      lemma (asymptotic-eigenfield and local-invertible-field-map
+      hypotheses), followed by the G13--G18 cubic-protection,
+      second-order-obstruction, and conventional-Krein-visibility
+      theorems.  The G16 250-polarization scan remains an optional
+      regression rail; its crossing component is already exact and it
+      is no longer on the logical path.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
       build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
       on a truncated charge-Fock space with the squeezed vacuum;
@@ -219,8 +232,9 @@ holds only open items.
     - GRAVITY RAIL STATUS: the originally proposed M→h+h test is now
       closed (zero by Einstein truncation), cubic order is protected,
       and G17 proves the second-order MM→Mh positive-metric obstruction.
-      G18 and the Paper-6 write-up remain; do not restart a separate
-      doubled-scalar reconstruction before them.
+      G18 now rules out nullity for the conventional covariant
+      cluster-factorizing Krein/BRST class.  The Paper-6 write-up remains;
+      do not restart a separate doubled-scalar reconstruction before it.
     - DEFERRED, not in the active queue: vacuum-overlap / superselection
       at r = 0; normal-ordered internal-charge Ward identity;
       confluent-state R₁ matrix elements; field-theory complex-spectrum

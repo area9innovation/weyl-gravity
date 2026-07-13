@@ -177,6 +177,9 @@ Symbolic (SymPy):
   quarter-turn of the full connected second-order operator, reversed-process
   physical adjoint, shell projection, and the exact nonzero obstruction
   `-2i A_K` including first-order metric-ambiguity independence.
+- `verify_gravity_krein.py` — gravity G18: covariant one-particle grading
+  commutant, cluster-factorizing Fock lift, exact non-null Krein quadratic
+  block, continuous-charge no-go, and BRST-cohomology survival.
 - `verify_paper1_referee.py`, `verify_paper2_referee.py`,
   `verify_paper3_referee.py` — referee-round claim verification
   (spectrum of Q, normalization proposition; pointed-unitary identity;

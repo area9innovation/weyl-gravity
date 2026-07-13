@@ -1661,3 +1661,82 @@ needed by the adjoint, is now exact; the remaining G16 polarization
 scan is only a regression rail.  G18 is the next new physics question:
 whether any BRST-compatible Krein grading or conformal-boundary null
 ideal makes this parity-violating block probability-invisible.
+
+## 2026-07-14 — G18: conventional covariant Krein no-go
+
+Added `verify_gravity_krein.py`; G18a--G18e are ALL PASS.  The result is
+deliberately conditional on the physically standard class: the
+fundamental symmetry is nondegenerate on physical BRST cohomology,
+commutes with Poincare transformations, agrees with Paper IV's free
+Krein real form, and lifts tensor-multiplicatively to asymptotic Fock
+space as required by cluster factorization.  Nonlocal, non-factorizing,
+or conformal-boundary-singular alternatives are not classified.
+
+There is one precision relative to the initial theorem sketch.  Under
+the proper-orthochronous Poincare group alone, the massless +2 and -2
+helicity representations are inequivalent.  The exact one-particle
+commutant is therefore
+
+    diag(a_+, a_-, a_M I_5),
+
+not yet `a_h I_2 + a_M I_5`.  Parity, or compatibility with the real
+gravitational field, sets a_+=a_-.  In either formulation, agreement
+with the free signature fixes the unique physical choice
+
+    J_1 = diag(+1,+1,-1,-1,-1,-1,-1).
+
+The massive scalar block follows from the exact SO(3) spin-2 commutant,
+and the different mass Casimirs forbid h/M mixing.  A monoidal Fock
+lift is fixed by its one-particle values, hence
+
+    J_F = (-1)^{N_M}.
+
+At the G17 shell, |MM> has sign +1 and |Mh> sign -1.  With
+
+    A_K = 7881241032/5584765625,
+    t_+ = i A_K,
+    X = t_+ |Mh><MM|,
+
+the exact finite-block Krein calculation gives
+
+    X^sharp X = -A_K^2 |MM><MM|,
+    Tr(X^sharp X)
+      = -62113960204480425024/31189607086181640625 != 0.
+
+Thus the transition is Z2-odd but not null: the product of two odd
+operators is neutral.  For the complete G17 obstruction
+
+    O = -2 i A_K sigma_x,
+
+one finds O^sharp=O and
+
+    Tr(O^sharp O) = -8 A_K^2
+      = -496911681635843400192/31189607086181640625 != 0.
+
+The sign is indefinite, as expected; G18 claims non-nullity rather than
+positivity.  This is exactly where a Z2 grading differs from the
+one-sided continuous-charge mechanism at the Bateman--Turok boundary.
+
+There is no replacement uniform continuous charge.  Poincare covariance
+forces one charge q_M on the massive irrep and the free graviton is
+neutral.  The verified nonzero MMM and MMh vertices require 3q_M=0 and
+2q_M=0.  Since 3q_M-2q_M=q_M, the charge is trivial in any abelian
+group, including groups with torsion; in particular massive-number
+parity is not conserved.  The physical G17 process supplies the direct
+real-shell parity violation.
+
+Finally, a canonical BRST splitting was checked algebraically: for a
+general operator Y and a nilpotent BRST differential Q, the
+physical-to-physical block of {Q,Y} vanishes.  The nonzero G17 block is
+already expressed in reduced TT/helicity representatives and passed
+the exact Ward, EOM, gauge-representative, and internal-gauge tests, so
+it survives the physical cohomology projection and cannot be BRST-exact.
+
+Consequently the Einstein--Weyl obstruction is probability-visible in
+the precise non-null sense for the unique conventional covariant,
+cluster-factorizing continuation of the free Krein structure.  Any
+escape would have to leave that class -- for example through a
+nonlocal/non-factorizing grading, a nonlinear mixing of asymptotic
+particle sectors, or a singular conformal-boundary construction.  The
+G16 polarization scan is now only regression hardening.  The next
+logical deliverable is the Paper-6 manuscript built from G13--G18.
