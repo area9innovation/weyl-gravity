@@ -12,10 +12,10 @@ and a machine-checked verification pipeline.
 | # | File | Title | Status |
 |---|------|-------|--------|
 | 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series, incl. the interaction results) | draft (22 pp.) |
-| 1 | `symplectic-diagonalization.tex` / `.pdf` | **Canonical Positive Symplectic Diagonalization of the Pais–Uhlenbeck Oscillator** | frozen, tag `paper1-v1.0` (13 pp.) |
-| 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.1` (12 pp.) |
-| 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.1` (10 pp.) |
-| 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | draft (14 pp.) |
+| 1 | `symplectic-diagonalization.tex` / `.pdf` | **Canonical Positive Symplectic Diagonalization of the Pais–Uhlenbeck Oscillator** | frozen, tag `paper1-v1.2` (17 pp.) |
+| 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.3` (14 pp.) |
+| 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.3` (13 pp.) |
+| 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | frozen, tag `paper4-v1.1` (15 pp.) |
 | 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions, Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order Theories** | frozen, tag `paper5-v1.0` (16 pp.; accepted by team referee, then extended: 5:1 confirmation, Krein separation, literature repositioning) |
 
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
@@ -174,9 +174,9 @@ cd symbolic && for f in verify_interaction_deformation verify_interaction_order3
 cd paper    && for f in symplectic-diagonalization variational-fock fourth-order-vacuum fourth-order-gravity ghosts-geometry-reality interaction-obstructions; do pdflatex $f.tex; done
 ```
 
-Release tags: `paper1-v1.1`, `paper2-v1.2`, `paper3-v1.2`,
-`paper4-v1.0`, `paper5-v1.0` (current freezes; earlier: `paper1-v1.0`,
-`paper2-v1.0/v1.1`, `paper3-v1.0/v1.1`). Before submission: replace
+Release tags: `paper1-v1.2`, `paper2-v1.3`, `paper3-v1.3`,
+`paper4-v1.1`, `paper5-v1.0` (current freezes; earlier tags remain for
+history). Before submission: replace
 "companion paper" citations with arXiv IDs, check the "to appear"
 references, match IR-extension conventions noted in paper 3's bridge
 theorem, mint a DOI for the archived commit.

@@ -1328,3 +1328,58 @@ Freeze tags created + pushed: paper1-v1.1, paper2-v1.2, paper3-v1.2,
 paper4-v1.0, paper5-v1.0 (as referenced in each paper's Verification
 paragraph). DOI minting deferred to repo extraction (needs Asger's
 account). README/TODO updated.
+
+## 2026-07-13 — Series-wide framing pass (papers I–IV) after the literature audit
+
+Team verdict: no theorem withdrawals anywhere; framing/scope changes
+only. Applied (all four papers recompiled clean; tags bumped to
+paper1-v1.2 / paper2-v1.3 / paper3-v1.3 / paper4-v1.1, Verification
+paragraphs updated accordingly):
+
+- Paper I (17 pp.): explicit "classify and canonically reconstruct the
+  KNOWN positive free quantization" framing in the intro; new
+  "Kinematic status" discussion paragraph (free canonical status ≠
+  interacting deformability; obstruction can't be blamed on a bad
+  metric since the deformed metric is the canonical/least-distorting
+  one, cites Paper V); abstract Jordan no-go narrowed to "no
+  NONDEGENERATE positive-definite invariant Hermitian form (indefinite/
+  degenerate forms and intrinsically Jordan PT realizations remain)".
+  The rem:jordanpt narrow scoping and the prominent BM equal-frequency
+  realization were already in place.
+- Paper II (14 pp.): "free geometric optimality ≠ interacting dynamical
+  stability" distinction added to the variational-principle discussion;
+  strengthening reading made explicit (the obstruction strikes the
+  OPTIMAL free metric).
+- Paper III (13 pp.): "division of labor" paragraph — Krein
+  quantization, ghost parity, O(1,1) embedding, indefinite-space
+  positivity are BT's constructions, none claimed; novelty restated as
+  "identify the common free complex covariance + determine which data
+  (involution/algebra/completion) distinguish"; explicit caution:
+  common free covariance ⇏ identical interacting theory (completions
+  SEPARATE under interaction, Paper V); "Krein boundary" qualified as a
+  free-covariance statement (confluent covariance admits a Krein
+  completion; BT's interacting structure is additional data).
+- Paper IV (15 pp.): NEW "Relation to Mannheim's CPT program" paragraph
+  (Mannheim 1611.02100 + Mostafazadeh math-ph/0207009 added to bib):
+  (i) away from the conformal locus every massive spin-2 polarization
+  admits a positive completion but only JOINTLY with uniformly rotated
+  reality — a CPT-based positive product lies INSIDE the classified
+  class with that qualification; (ii) at the boundary cond(N) = e^r
+  diverges; (iii) the Jordan theorem excludes exactly nondegenerate
+  time-independent positive-definite invariant forms — BM's
+  equal-frequency treatment (nonstationary Jordan states, degenerate
+  pairing) is OUTSIDE the excluded class, so no contradiction, only
+  delimitation; (iv) the trilemma is the choice a CPT-based ghost-free
+  quadratic gravity must make. Also: interchangeability caveat added
+  to "Relation to the two programs" (free agreement ≠ interacting
+  interchangeability; scalar separation proven in Paper V,
+  gravitational case not computed); interaction outlook cites Paper V's
+  mechanism with the team's suggested wording.
+- All four papers now cite Paper V (companionV/companion5 bib entries).
+
+Series hierarchy now uniform: known constructions (BM positive, BT
+Krein) → I–II derive/classify/characterize the free positive metric →
+III identifies the common covariance and separates real form/completion
+→ IV classifies gauge/Lorentz effects in gravity → V proves
+positive-metric deformability fails on interacting on-shell channels
+while the Krein structure survives (the separation statement).

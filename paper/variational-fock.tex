@@ -189,7 +189,7 @@ Theorem~\ref{thm:groundstate}).  The artifact is the directory
 \cite{companion} (scripts \texttt{symbolic/verify\_variational\_fock.py},
 \texttt{symbolic/verify\_paper2\_referee.py},
 \texttt{numeric/distortion\_scan.py}, \texttt{numeric/cartan\_checks.py};
-SymPy 1.14.0, Python 3.14; the release tag \texttt{paper2-v1.2} fixes the
+SymPy 1.14.0, Python 3.14; the release tag \texttt{paper2-v1.3} fixes the
 commit).
 
 \section{The minimum-distortion theorem}\label{sec:mindist}
@@ -965,6 +965,19 @@ minimizing value in closed form, which the abstract theory does not.  The
 $n$-mode version (Theorem~\ref{thm:nmode}) makes the portability to
 general quadratic PT systems a theorem rather than a claim.
 
+A scope distinction now matters: minimum distortion is \emph{free
+geometric optimality}, not \emph{interacting dynamical stability}.
+Among admissible free positive diagonalizers the Bender--Mannheim metric
+is the geometrically least distorting; the theorem does not make it the
+most stable under interaction, uniquely physical, or guaranteed to
+survive scattering.  Indeed the companion interaction paper
+\cite{companionV} proves that the order-by-order deformation of this
+metric is obstructed at rational resonances and on open scattering
+shells.  That result sharpens rather than weakens the present one: the
+obstruction strikes the \emph{optimal} free positive metric, so the
+interacting failure cannot be dismissed as the consequence of an
+arbitrary or badly chosen metric.
+
 \paragraph{The three levels, again.}
 The field-theoretic analysis separates three statements that are easily
 conflated.  The \emph{phase-space} metric degenerates in the UV exactly as
@@ -1016,6 +1029,10 @@ choice intrinsically.  We leave these to future work.
 \bibitem{companion}
 \emph{Canonical positive symplectic diagonalization of the Pais--Uhlenbeck
 oscillator}, companion paper and verification repository, 2026.
+
+\bibitem{companionV}
+\emph{Interaction obstructions, resonant PT breaking, and doubled Jordan
+symmetry in fourth-order theories}, companion paper (Paper~V), 2026.
 
 \bibitem{BM2008PRL}
 C.~M.~Bender and P.~D.~Mannheim,

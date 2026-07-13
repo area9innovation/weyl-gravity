@@ -6,9 +6,11 @@ holds only open items.
 
 ## Release / freeze
 
-1. [x] Freeze tags created and pushed 2026-07-13: `paper1-v1.1`,
-   `paper2-v1.2`, `paper3-v1.2`, `paper4-v1.0`, `paper5-v1.0` (each
-   referenced in its paper's Verification paragraph).
+1. [x] Freeze tags created and pushed 2026-07-13. Current set (after
+   the series-wide framing pass, same day): `paper1-v1.2`,
+   `paper2-v1.3`, `paper3-v1.3`, `paper4-v1.1`, `paper5-v1.0` (each
+   referenced in its paper's Verification paragraph; earlier tags
+   remain for history).
 1b. [ ] Mint a DOI for the archived commit (team asked for "immutable
    commit + DOI"): needs Asger's Zenodo (or similar) account; natural
    to do together with the repo extraction (item 2).

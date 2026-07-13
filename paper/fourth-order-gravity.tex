@@ -215,7 +215,7 @@ of the repository accompanying the companion series
 \cite{companion1,companion2,companion3} (scripts
 \texttt{symbolic/verify\_gravity\_\{reduction,completion,spectral\}.py},
 run with \texttt{python3}; SymPy 1.14.0, NumPy 2.4.4, Python 3.14; the
-release tag \texttt{paper4-v1.0} fixes the commit).  The
+release tag \texttt{paper4-v1.1} fixes the commit).  The
 representation-theoretic and microlocal conclusions --- existence of the
 Hilbert/Krein completions, Poincar\'e covariance as a representation
 statement, and wavefront-set equality --- follow from the analytic
@@ -890,7 +890,50 @@ positive-definite limit, and any $PT$-symmetric Jordan realization at the
 boundary \cite{BM2008Jordan} is a distinct, singular completion rather
 than a continuation of the split Hilbert metric.  In this precise sense
 Mannheim's construction is a split-phase real form and the
-Bateman--Turok-type Krein form is its resonant continuation.
+Bateman--Turok-type Krein form is its resonant continuation.  One
+overreading must be excluded: agreement of the two real forms on every
+complex gauge-invariant correlation function is a \emph{free-theory}
+statement, and does not make the completions interchangeable
+descriptions of an interacting theory.  For the fourth-order scalar the
+companion interaction paper \cite{companionV} proves they separate:
+the canonical positive metric is obstructed by on-shell branch-changing
+conversion while the Krein/ghost-parity structure survives the same
+interaction exactly.  The corresponding gravitational computation has
+not been performed (see the outlook below).
+
+\paragraph{Relation to Mannheim's CPT program.}
+Mannheim has argued \cite{Mannheim2016} that time-independent
+conservation of scalar products in a non-Hermitian relativistic theory
+forces spectra that are real or occur in complex-conjugate pairs
+together with an antilinear symmetry, which complex Lorentz invariance
+identifies with CPT; the underlying equivalence of pseudo-Hermiticity,
+antilinear symmetry, and real-or-conjugate-pair spectra (with matched
+Jordan data) is Mostafazadeh's \cite{Mostafazadeh2002nd}.  None of that
+organization is claimed here; the contribution of this paper is the
+gauge-reduced helicity structure and its consequences.  Placed against
+that program, the present classification says the following.  (i) Away
+from the conformal locus every massive spin-$2$ polarization admits a
+positive completion, but only \emph{jointly}: the trilemma and the
+no-hybrid theorem force one uniform choice across the multiplet, and the
+positive choice carries uniformly rotated massive reality
+(Theorems~\ref{thm:trilemma}--\ref{thm:tworeal}).  A CPT-based positive
+scalar product in the sense of \cite{Mannheim2016} therefore lies
+\emph{inside} the classified positive real-form class --- with the
+rotated-reality qualification made explicit here.  (ii) At the conformal
+locus the positive representative escapes to infinity
+($\operatorname{cond}(N)=e^{r}(1+o(1))$, Theorem~\ref{thm:term}) and the
+TT dynamics becomes a Jordan block.  (iii) What the Jordan theorem
+excludes there is exactly the class of nondegenerate, time-independent,
+positive-definite invariant Hermitian forms making the Jordan generator
+self-adjoint --- and nothing more.  The equal-frequency treatment of
+Bender and Mannheim \cite{BM2008Jordan} uses nonstationary Jordan states
+and a degenerate pairing, i.e.\ a construction \emph{outside} the
+excluded class: there is no contradiction between the no-go and that
+realization, only a sharp delimitation.  (iv) The trilemma is then the
+precise form of the choice a CPT-based ghost-free quadratic gravity must
+make away from the boundary: rotated massive reality with a positive
+norm, or standard gravitational reality with a Krein norm --- no
+covariant hybrid exists.
 
 \paragraph{The geometric picture.}
 The Cartan formulation of Section~\ref{sec:cartan} turns the phase
@@ -927,8 +970,13 @@ $[\mathcal P_{\mathrm{ghost}},S_{\mathrm{int}}]=0$ at cubic order --- and
 they provide the first necessary tests of whether either real form
 supports an interacting unitarity statement; they do not by themselves
 settle loop anomalies, BRST cohomology, renormalization of the parity, or
-positivity of physical probabilities.  We have not performed these
-computations; the free theorem is neutral on the outcome.
+positivity of physical probabilities.  The companion interaction paper
+\cite{companionV} supplies an interaction-obstruction mechanism ---
+on-shell branch-changing conversion obstructing the deformation of the
+positive metric --- that can now be applied to the cubic Einstein--Weyl
+vertices; no interacting gravitational conclusion is assumed here.  We
+have not performed these computations; the free theorem is neutral on
+the outcome.
 
 \begin{thebibliography}{12}
 
@@ -970,6 +1018,20 @@ the representation problem for the fourth-order field}, companion paper,
 \bibitem{companion3}
 \emph{The universal vacuum of the fourth-order scalar field: metric
 orbits, Fock sectors, and the Krein boundary}, companion paper, 2026.
+
+\bibitem{companionV}
+\emph{Interaction obstructions, resonant PT breaking, and doubled Jordan
+symmetry in fourth-order theories}, companion paper (Paper~V), 2026.
+
+\bibitem{Mannheim2016}
+P.~D.~Mannheim,
+\emph{CPT symmetry without Hermiticity},
+arXiv:1611.02100.
+
+\bibitem{Mostafazadeh2002nd}
+A.~Mostafazadeh,
+\emph{Pseudo-Hermiticity for a class of nondiagonalizable Hamiltonians},
+J.\ Math.\ Phys.\ \textbf{43} (2002) 6343, arXiv:math-ph/0207009.
 
 \bibitem{LuPope}
 H.~L\"u and C.~N.~Pope,

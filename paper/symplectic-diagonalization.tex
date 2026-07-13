@@ -63,7 +63,9 @@ non-$\theta$-compatible reductive coset, with Cartan projection on the
 $C_2$ Weyl-chamber wall.  In the equal-frequency limit this
 distance diverges logarithmically --- escape to infinity in the symmetric
 space --- and we prove that the limiting Jordan block
-admits no positive-definite invariant Hermitian form.  All finite-dimensional
+admits no nondegenerate positive-definite invariant Hermitian form
+(indefinite and degenerate invariant forms, and intrinsically Jordan
+$PT$ realizations, remain available).  All finite-dimensional
 algebraic identities appearing in this paper have been independently verified
 symbolically, numerically, and by machine-checked Lean~4 proofs.
 \end{abstract}
@@ -98,7 +100,12 @@ framework of pseudo-Hermitian quantum mechanics is due to Scholtz, Geyer and
 Hahne \cite{SGH1992} and Mostafazadeh \cite{Mostafazadeh2002,Mostafazadeh2010}.
 
 This paper treats the problem as one of \emph{finite-dimensional symplectic
-geometry} and proves the following.
+geometry}.  Its object is the \emph{known} positive free quantization: the
+results below derive it canonically, classify its freedoms, and
+characterize it geometrically.  No new resolution of the ghost problem is
+claimed, and every statement is a free-theory (kinematic) statement;
+deformability under interaction is a separate question, taken up in the
+companion interaction paper \cite{companionV}.  We prove the following.
 
 \begin{enumerate}
 \item The PT Hamiltonian is a complex quadratic form
@@ -1045,6 +1052,20 @@ stabilizer $SO(2,\C)^2$, and the non-invariance of the polar factor
 (Proposition~\ref{prop:polar}) delimit exactly how much of the construction
 is canonical.
 
+\paragraph{Kinematic status.}
+The canonical status established here is kinematic: it selects the
+preferred positive metric for the free split oscillator.  It does not
+imply that this metric admits a deformation under arbitrary
+interactions: the companion interaction paper \cite{companionV} proves
+that the order-by-order deformation of precisely this canonical metric
+is obstructed at rational resonances (first at $\w_1=3\w_2$, at second
+order) and, in the field theory, on open scattering shells.  Free
+uniqueness and positivity must therefore not be read as interacting
+viability.  Conversely, the interaction obstruction cannot be attributed
+to a badly chosen metric: the metric being deformed is the canonical
+one, and by the variational theorem of \cite{companionMD} the
+least-distorting one.
+
 \paragraph{Relation to complex canonical transformations and metric
 non-uniqueness.}
 D\'ector, Morales-T\'ecotl, Urrutia and Vergara \cite{Dector2009} remove the
@@ -1131,7 +1152,7 @@ Theorem~\ref{thm:jordan}(1)--(3) are formalized without unproved
 placeholders (declarations \texttt{K\_sq}, \texttt{S\_symplectic},
 \texttt{S\_det}, \texttt{S\_congruence}, \texttt{no\_posdef},
 \texttt{psd\_degenerate}, \texttt{nondegenerate\_indefinite}); SymPy
-1.14.0, Python 3.14; the release tag \texttt{paper1-v1.1} fixes the
+1.14.0, Python 3.14; the release tag \texttt{paper1-v1.2} fixes the
 commit.  We do not claim formal verification of the operator-theoretic
 statements of Section~\ref{sec:pseudo}, which remain at the
 form-identity level on $\mathcal F_{\mathrm{alg}}$.
@@ -1164,6 +1185,10 @@ Phys.\ Rev.\ D \textbf{78} (2008) 025022, arXiv:0804.4190.
 \emph{The Pais--Uhlenbeck metric as a minimum-distortion principle, and
 the representation problem for the fourth-order field}, companion paper,
 2026.
+
+\bibitem{companionV}
+\emph{Interaction obstructions, resonant PT breaking, and doubled Jordan
+symmetry in fourth-order theories}, companion paper (Paper~V), 2026.
 
 \bibitem{companionGrav}
 \emph{Gauge reduction and the completion problem in fourth-order gravity:
