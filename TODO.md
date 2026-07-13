@@ -161,14 +161,28 @@ holds only open items.
       A₃(MMh) ≠ 0 exact; **factorization residue at P² = M² nonzero
       ⇒ MM→Mh not identically zero ⇒ [(-1)^{N_M},S] ≠ 0** (naive
       massive parity; other gradings open).
-    - NEXT-GRAVITY (G15, the decisive deliverable): full MM→Mh
+      Independent Einstein-frame rail verify_gravity_factorization.py
+      closes the factorization sum exactly: the traceless potential's
+      cubic `tr Phi^3` terms cancel; the nonlinear kinetic term gives
+      A₃(MMM)=−sqrt(6)/8, while A₃(MMh)=−sqrt(2)/8; the arbitrary-xi
+      Ward identity and massive-leg exchange symmetry vanish exactly.
+      The complete five-polarization residue numerator is sqrt(3)/32.
+      The internal TT inverse kernel is (P²+M²)/4 in the script's L_M
+      normalization, so the pole-normalized residue is sqrt(3)/8
+      (overall action normalization conventional): NONZERO.  By
+      real-analyticity/Zariski density of the physical 2→2 component,
+      MM→Mh is nonzero on a nonempty open real-shell subset.  This
+      supplies the existence input for the second-order obstruction;
+      the explicit real point is now a hardening certificate.
+    - NEXT-GRAVITY (G15, hardening/regression): full MM→Mh
       amplitude at the interior rational point p₁ = M(5/4,0,0,3/4),
       p₂ = M(5/4,0,0,−3/4), k = M(21/20,21/25,0,63/100),
       p₃ = M(29/20,−21/25,0,−63/100) (s = 25/4M², cosθ = 3/5;
       threshold point as regression): 4-wave quartic vertex + internal
       fourth-order propagator w/ gauge fixing + exchange/contact
-      assembly, Ward-verified. Then G16 (Bose/crossing/polarization
-      scan), G17 (quarter-turn transport of FULL T₂:
+      assembly, Ward-verified, with the complex-pole residue reproduced
+      in the appropriate channel limit. Then G16
+      (Bose/crossing/polarization scan), G17 (quarter-turn transport of FULL T₂:
       𝔬₊^(2) = Π_shell(T₂†−T₂) ≠ 0), G18 (minimal Krein block:
       parity violation probability-visible or null). Paper 6: one-M
       perturbiner/LSZ lemma (asymptotic mass eigenfield + local

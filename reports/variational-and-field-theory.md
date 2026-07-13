@@ -1499,3 +1499,43 @@ second-order operator, 𝔬₊^(2) = Π_shell(T₂†−T₂) ≠ 0), G18 (minim
 Krein block: probability-visible vs null). Manuscript (paper 6): the
 one-M perturbiner/LSZ lemma with the asymptotic-eigenfield and
 local-invertible-field-map hypotheses.
+
+## 2026-07-14 — Independent Einstein-frame factorization rail
+
+Added `verify_gravity_factorization.py`, an independent exact SymPy
+derivation from the Magnano–Sokołowski Einstein-frame action
+
+    L_M = K(Q)/2 + m²[-tau² + psi_mn psi^mn + 6 A tau - 12 A²]/(8 A),
+    psi = g + Phi.
+
+It closes the remaining factorization details without relying on the
+original fourth-order perturbiner:
+
+- for linearly traceless massive fields, the determinant and inverse-
+  determinant contributions to `tr Phi³` cancel: the potential is
+  quadratic plus O(Phi⁴), and the on-shell `MMM` coupling comes entirely
+  from the nonlinear kinetic term;
+- at an exact complex three-mass shell,
+  A₃(M_plus,M_plus,M_0) = −sqrt(6)/8;
+- at the matching `MMh` shell, A₃(M_plus,M,h) = −sqrt(2)/8;
+- the graviton Ward identity vanishes for an arbitrary symbolic xi_mu,
+  and exchange of the two massive legs is exact;
+- summing an orthonormal basis of all five internal massive
+  polarizations gives the nonzero reduced residue numerator sqrt(3)/32.
+
+Normalization was made explicit rather than hidden in the completeness
+sum.  In the script's L_M convention the TT two-point inverse kernel is
+
+    K_M(P) = (P² + M²)/4,
+
+so the internal pole factor multiplies the numerator by 4 and the
+pole-normalized residue is sqrt(3)/8.  An overall rescaling of the full
+action changes that displayed normalization but cannot change
+nonvanishing.  The nonzero complex pole residue proves that the four-
+point amplitude tensor is not identically zero.  Together with the
+real-analytic/Zariski-density lemma for the physical `MM -> Mh` shell,
+it is nonzero on a nonempty open real subset.  Therefore the rational
+real-point G15 evaluation is now a hardening and regression test, not
+the logical foundation of the existence theorem.  G17 still records
+the explicit full-T₂ quarter-turn/adjoint transport before the final
+metric-obstruction statement is frozen in Paper 6.

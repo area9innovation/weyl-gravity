@@ -157,6 +157,17 @@ Symbolic (SymPy):
 - `verify_gravity_spectral.py` — paper-4 G10–G12: helicity kernels with
   symplectic residues, covariant projector reassembly, Weyl-correlator
   M-regularity, sectorwise conformal limits + cond(N) divergence.
+- `gravity_perturbiner.py` — shared exact multi-wave Einstein–Weyl
+  perturbiner used by the cubic and forthcoming four-point checks.
+- `verify_gravity_cubic.py` — gravity G13–G14 in the original
+  fourth-order variables: exact multi-wave perturbiner, one-massive-leg
+  cubic rule, Ward identities, nonzero `MMM`/`MMh` amplitudes and
+  massive-pole factorization.
+- `verify_gravity_factorization.py` — independent Einstein-frame G14
+  rail: cubic-potential cancellation, exact amplitudes
+  `A3(MMM)=-sqrt(6)/8` and `A3(MMh)=-sqrt(2)/8`, symbolic Ward identity,
+  complete five-polarization residue numerator `sqrt(3)/32`, and explicit
+  massive inverse-kernel normalization.
 - `verify_paper1_referee.py`, `verify_paper2_referee.py`,
   `verify_paper3_referee.py` — referee-round claim verification
   (spectrum of Q, normalization proposition; pointed-unitary identity;
