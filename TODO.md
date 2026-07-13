@@ -316,8 +316,17 @@ holds only open items.
       `S=J1+J2`, their pre-measure density is
       `D=C t[(2S-2)t^2-1]/(1+t^2)^(2S-1)`, while the measured integrand is
       `I=2D/(1+t^2)=d[-C t^2/(1+t^2)^(2S-1)]/dt`.  The normalizable resonant
-      `E_2 A_3 -> A_5` cylinder coefficient likewise cancels; this does not
-      contradict its nonzero complex flat-momentum amplitude.  The finite
+      `E_2 A_3 -> A_5` cylinder channel is separately hardened: its normalized
+      algebraic overlap is `-1/(2 pi)`, its local Weyl density is nonzero, and
+      its measured density is an exact boundary derivative with both endpoint
+      values and a direct integral checked independently.  The conjugate
+      `A_5 -> E_2 A_3` process is assembled as a separate exact perturbiner
+      run.  Both coefficients vanish, and with the induced same-sign pairing
+      `J_EAA=-I_2` their off-diagonal block contributes exactly zero to
+      `J V-V^dagger J`.  This does not contradict the nonzero complex
+      flat-momentum amplitude.  EAA therefore realizes another exact
+      compact-cylinder boundary zero and motivates, but does not prove, the
+      stronger resonant-shell conjecture `P_Delta V_3 P_Delta=0`.  The finite
       hierarchy is evidence, not yet an all-spin theorem.  All four measured
       constants also fit the single normalized prefactor formula recorded in
       `notes/conformal-c0.md`.

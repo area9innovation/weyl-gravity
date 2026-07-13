@@ -768,9 +768,9 @@ Einstein selection rule. Its value is not fixed by C0a--C1a.
 
 ### What the fixed-pairing test can and cannot show
 
-The finite `EAA` amplitude is compatible with fixed-pairing
-pseudo-Hermiticity. On equal-sign sectors a Hermitian forward/reverse
-block gives
+The published finite **complex flat-momentum** `EAA` amplitude is compatible
+with fixed-pairing pseudo-Hermiticity. On equal-sign sectors a Hermitian
+forward/reverse block gives
 
 ```text
 J V - V^dagger J = 0
@@ -922,18 +922,69 @@ the cancellation is not a peculiarity of the lowest vector leg. This is
 strong evidence for an all-spin resonant AAL selection theorem, but the
 finite exact hierarchy is not being advertised as its proof.
 
-As a separate comparison, the normalizable cylinder coefficient
-`E_2 A_3 -> A_5` also has a nonzero pre-measure local density,
+As a separate comparison, the normalizable cylinder channel
+`E_2 A_3 -> A_5` is now certificate-grade. Its three normalized harmonics
+have the nonzero algebraic overlap
+
+```text
+int_S3 A_5^* E_2 A_3 = -1/(2 pi),
+```
+
+so this is not a Gaunt zero. The complete Weyl vertex has the nonzero
+pre-measure local density
 
 ```text
 D_EAA(t) = [sqrt(21)/(160 pi^3)]
            t (3t^2-1)/(1+t^2)^4,
 ```
 
-and its measured integrand `2D_EAA/(1+t^2)` is the derivative of
-`-sqrt(21)t^2/[160 pi^3(1+t^2)^4]`. It too integrates to zero. This does
-not contradict the nonzero complex flat-momentum EAA amplitude: the latter
-is not a real positive-energy cylinder `1 <-> 2` matrix element.
+and its measured integrand is
+
+```text
+I_EAA(t) = 2 D_EAA(t)/(1+t^2)
+         = d/dt {-sqrt(21)t^2/[160 pi^3(1+t^2)^4]}.
+```
+
+The primitive vanishes independently at `t=0` and `t=infinity`; a separate
+exact rational integral also gives zero. The reverse channel
+`A_5 -> E_2 A_3` is assembled by conjugating all three external waves in the
+curved-cylinder perturbiner, rather than inferred from the forward answer,
+and gives the same local boundary identity and zero coefficient.
+
+The one-particle `A_5` state has canonical sign `-`, while the two-particle
+state `E_2 A_3` has sign `(+) (-)=-`. With the oscillator normalizations
+already included in the external waves, their induced left-right form is
+
+```text
+J_EAA = diag(-1,-1).
+```
+
+In the ordered basis `(|E_2 A_3>,|A_5>)`, the independently checked forward
+and reverse coefficients therefore give
+
+```text
+V_EAA = [[0,0],[0,0]],
+J_EAA V_EAA - V_EAA^dagger J_EAA = 0.
+```
+
+This statement concerns the displayed off-diagonal resonant block; it does
+not assert that every same-sign cubic shell block vanishes. Nor does the
+cylinder zero contradict the nonzero complex flat-momentum EAA amplitude:
+the latter is not a normalizable real positive-energy cylinder `1 <-> 2`
+matrix element.
+
+Thus EAA realizes the first outcome of the checkpoint analysis: it is a
+second exact compact-cylinder boundary zero, not merely a nonzero coefficient
+that happens to be `J`-self-adjoint. Together with the AAL hierarchy this
+motivates the stronger conjecture
+
+```text
+P_Delta V_3 P_Delta = 0
+```
+
+on normalizable physical resonant cylinder shells. The present EAA channel
+and finite AAL hierarchy do not prove that conjecture; a complete same-sign
+shell classification is still part of C1c.
 
 ### What C1b does and does not answer
 

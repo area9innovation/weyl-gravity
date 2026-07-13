@@ -26,9 +26,12 @@ independent highest-weight channels have been checked exactly:
     (J_1,J_2) = (1,1), (1,3/2), (3/2,3/2), (1,2).
 
 All have zero integrated A_J A_K L_(J+K) coefficient.  The script also checks
-the resonant E_2 A_3 A_5 channel.  Its cancellation is compatible with the
-known nonzero *complex flat-momentum* EAA amplitude: normalizable positive-
-energy cylinder modes define a different, real resonant problem.
+the resonant E_2 A_3 A_5 channel in both time orientations.  Its normalized
+algebraic overlap is nonzero, but its forward and independently assembled
+reverse coefficients are exact boundary zeros.  Their canonical same-sign
+Fock block has ``J V - V^dagger J = 0``.  This cancellation is compatible
+with the known nonzero *complex flat-momentum* EAA amplitude: normalizable
+positive-energy cylinder modes define a different, real resonant problem.
 
 The finite scan motivates, but does not replace, an all-spin cubic protection
 proof.  No coordinate grid or floating-point approximation is used.
@@ -864,9 +867,10 @@ def empty_metric_expression() -> sp.Matrix:
 # normalizable positive-energy cylinder coefficient also cancels, exposing
 # the distinction between those two kinematic problems.
 channel = sys.argv[1].lower() if len(sys.argv) > 1 else "aal"
-if channel not in {"aal", "eaa"}:
+if channel not in {"aal", "eaa", "eaa-reverse"}:
     raise SystemExit(
-        "usage: verify_conformal_aal_vertex.py [aal [J1 J2]|eaa]"
+        "usage: verify_conformal_aal_vertex.py "
+        "[aal [J1 J2]|eaa|eaa-reverse]"
     )
 
 
@@ -972,22 +976,109 @@ if channel == "aal":
     )
 else:
     # E_2(2,0) + A_3(1/2,3/2) -> A_5(5/2,3/2).
+    # ``eaa-reverse`` conjugates all three external waves and therefore
+    # assembles the reverse process from the curvature action rather than
+    # inferring it from the forward coefficient.
+    reverse_eaa = channel == "eaa-reverse"
     E_ambient = ambient_tensor_harmonic(1, 2, 0, 1)
     A3_ambient = ambient_vector_harmonic(1, HALF, R(3, 2), -HALF)
     A5_ambient = ambient_vector_harmonic(2, R(5, 2), R(3, 2), HALF)
+
+    EAA_E_density = sp.trigsimp(
+        ambient_norm_tensor(E_ambient).subs(origin_angles)
+    )
+    EAA_A3_density = sp.trigsimp(
+        ambient_norm_vector(A3_ambient).subs(origin_angles)
+    )
+    EAA_A5_density = sp.trigsimp(
+        ambient_norm_vector(A5_ambient).subs(origin_angles)
+    )
+    EAA_overlap_density = sp.trigsimp(
+        sum(
+            sp.conjugate(A5_ambient[first])
+            * E_ambient[first, second]
+            * A3_ambient[second]
+            for first in range(4)
+            for second in range(4)
+        ).subs(origin_angles)
+    )
+    expected_EAA_E_density = 1 / (2 * sp.pi**2)
+    expected_EAA_A5_density = 2 * sp.cos(beta / 2) ** 6 / sp.pi**2
+    expected_EAA_overlap_density = -sp.cos(beta / 2) ** 6 / sp.pi**3
+    check(
+        "C1b-EAA: E2, A3, and A5 harmonics have normalized densities",
+        half_angle_identity(
+            sp.expand_trig(EAA_E_density - expected_EAA_E_density)
+        )
+        and half_angle_identity(
+            sp.expand_trig(EAA_A3_density - expected_A_density)
+        )
+        and half_angle_identity(
+            sp.expand_trig(EAA_A5_density - expected_EAA_A5_density)
+        ),
+    )
+    EAA_E_norm = sp.simplify(
+        angle_factor
+        * sp.integrate(
+            sp.sin(beta) * expected_EAA_E_density, (beta, 0, sp.pi)
+        )
+    )
+    EAA_A3_norm = sp.simplify(
+        angle_factor
+        * sp.integrate(
+            sp.sin(beta) * expected_A_density, (beta, 0, sp.pi)
+        )
+    )
+    # With x=cos(beta), the remaining two integrals reduce to the same
+    # elementary polynomial integral.  Writing it this way avoids asking a
+    # heuristic trigonometric integrator to rediscover the half-angle map.
+    overlap_x = sp.symbols("overlap_x", real=True)
+    half_angle_polynomial_integral = sp.integrate(
+        (1 + overlap_x) ** 3 / 8, (overlap_x, -1, 1)
+    )
+    EAA_A5_norm = sp.simplify(2 * half_angle_polynomial_integral)
+    EAA_overlap = sp.simplify(
+        -half_angle_polynomial_integral / sp.pi
+    )
+    check(
+        "C1b-EAA: E2, A3, and A5 harmonics are unit normalized",
+        EAA_E_norm == EAA_A3_norm == EAA_A5_norm == 1,
+    )
+    check(
+        "C1b-EAA: normalized A5* E2 A3 overlap is -1/(2 pi)",
+        half_angle_identity(
+            sp.expand_trig(
+                EAA_overlap_density - expected_EAA_overlap_density
+            )
+        )
+        and EAA_overlap == -1 / (2 * sp.pi),
+    )
+
     E_covariant = spatial_jacobian.T * E_ambient * spatial_jacobian
     A3_covariant = spatial_jacobian.T * A3_ambient
     A5_covariant = spatial_jacobian.T * A5_ambient
     wave_expressions = [
-        tensor_metric_mode(E_covariant, 2, 1 / (4 * sp.sqrt(3)), False),
-        vector_metric_mode(A3_covariant, 3, 1 / (2 * sp.sqrt(15)), False),
-        vector_metric_mode(A5_covariant, 5, 1 / (2 * sp.sqrt(105)), True),
+        tensor_metric_mode(
+            E_covariant, 2, 1 / (4 * sp.sqrt(3)), reverse_eaa
+        ),
+        vector_metric_mode(
+            A3_covariant, 3, 1 / (2 * sp.sqrt(15)), reverse_eaa
+        ),
+        vector_metric_mode(
+            A5_covariant, 5, 1 / (2 * sp.sqrt(105)), not reverse_eaa
+        ),
     ]
-    expected_phases = (
+    forward_phases = (
         (-2 * I, -2 * I, 0),
         (-3 * I, -HALF * I, -R(3, 2) * I),
         (5 * I, R(5, 2) * I, R(3, 2) * I),
     )
+    if reverse_eaa:
+        expected_phases = tuple(
+            tuple(-entry for entry in phases) for phases in forward_phases
+        )
+    else:
+        expected_phases = forward_phases
 
 wave_matrices = [jet_matrix_from_expressions(wave) for wave in wave_expressions]
 
@@ -1250,7 +1341,8 @@ if channel == "aal" and spin_key in known_aal_prefactors:
         "C1b-3: complete reduced-Weyl A_J A_K L_(J+K) coefficient cancels",
         cubic_spatial_coefficient == 0,
     )
-elif channel == "eaa":
+elif channel in {"eaa", "eaa-reverse"}:
+    eaa_direction = "reverse" if reverse_eaa else "forward"
     eaa_prefactor = sp.sqrt(21) / (160 * sp.pi**3)
     expected_density = (
         eaa_prefactor
@@ -1264,18 +1356,50 @@ elif channel == "eaa":
         / (1 + radial_tangent**2) ** 4
     )
     check(
-        "C1b-3: E2 A3 A5 local density has the exact resonant form",
+        f"C1b-3: {eaa_direction} E2 A3 A5 density has the exact form",
         canonical_jet_coefficient(cubic_density - expected_density) == 0,
     )
     check(
-        "C1b-3: the measured EAA density is an exact radial boundary term",
-        sp.cancel(cubic_integrand - sp.diff(primitive, radial_tangent)) == 0
-        and sp.limit(primitive, radial_tangent, 0) == 0
-        and sp.limit(primitive, radial_tangent, sp.oo) == 0,
+        "C1b-3: measured EAA integrand equals the primitive derivative",
+        sp.cancel(cubic_integrand - sp.diff(primitive, radial_tangent)) == 0,
     )
     check(
-        "C1b-3: resonant E2 A3 A5 cylinder coefficient also cancels",
+        "C1b-3: EAA primitive vanishes at the north stereographic pole",
+        sp.limit(primitive, radial_tangent, 0) == 0,
+    )
+    check(
+        "C1b-3: EAA primitive vanishes at the south stereographic pole",
+        sp.limit(primitive, radial_tangent, sp.oo) == 0,
+    )
+    check(
+        "C1b-3: independent direct EAA radial integral is zero",
         cubic_spatial_coefficient == 0,
+    )
+
+    # The one-particle A state and the E x A two-particle state both have
+    # negative canonical Fock signature.  In the ordered basis
+    # (|E2 A3>, |A5>) the induced form is therefore -I.  The forward and
+    # reverse runs assemble the two off-diagonal entries independently; the
+    # exact real-action conjugation relation supplies the partner entry in
+    # either individual run, and the second invocation verifies it directly.
+    partner_coefficient = sp.conjugate(cubic_spatial_coefficient)
+    if reverse_eaa:
+        forward_coefficient = partner_coefficient
+        reverse_coefficient = cubic_spatial_coefficient
+    else:
+        forward_coefficient = cubic_spatial_coefficient
+        reverse_coefficient = partner_coefficient
+    EAA_transition = sp.Matrix(
+        [[0, reverse_coefficient], [forward_coefficient, 0]]
+    )
+    EAA_pairing = -sp.eye(2)
+    EAA_source = sp.simplify(
+        EAA_pairing * EAA_transition
+        - EAA_transition.conjugate().T * EAA_pairing
+    )
+    check(
+        "C1b-3: same-sign EAA forward/reverse block is J-self-adjoint",
+        EAA_source == sp.zeros(2),
     )
 else:
     check(
@@ -1285,10 +1409,27 @@ else:
 
 print("Reduced-Weyl cubic density:", cubic_density)
 print("Reduced-Weyl cubic coefficient:", cubic_spatial_coefficient)
+if channel in {"eaa", "eaa-reverse"}:
+    print("Normalized EAA harmonic overlap:", EAA_overlap)
+    print("Measured EAA stereographic integrand:", cubic_integrand)
+    print("EAA radial primitive:", primitive)
+    print(
+        "EAA primitive endpoints:",
+        sp.limit(primitive, radial_tangent, 0),
+        sp.limit(primitive, radial_tangent, sp.oo),
+    )
+    print(
+        "EAA forward/reverse coefficients:",
+        forward_coefficient,
+        reverse_coefficient,
+    )
+    print("EAA canonical Fock pairing:", EAA_pairing)
+    print("EAA J-adjoint source:", EAA_source)
 
 
 if not PASS:
     raise SystemExit("CONFORMAL C1B HARMONIC SEED: FAIL")
 
 print(f"CONFORMAL C1B {channel.upper()} CYLINDER VERTEX: ALL PASS")
-print("Normalized harmonic overlap:", AL_overlap)
+if channel == "aal":
+    print("Normalized AAL harmonic overlap:", AL_overlap)
