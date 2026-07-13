@@ -98,8 +98,10 @@ normalized matter form to the chiral basis is
 
 This is the first concrete instance in which the relative conformal
 conditions remove all negative matter directions present in the unreduced
-shell and leave a positive candidate physical pairing.  A full BRST norm also
-contains the residual-ghost overlap.  Because a BRST differential raises
+shell and leave a positive pairing on the two weight-four scalar
+vertex/deformation candidates.  It is not a positive propagating-particle
+space: the one-particle absolute residual cohomology vanishes.  A full BRST
+norm also contains the residual-ghost overlap.  Because a BRST differential raises
 ghost number, that form pairs complementary ghost degrees rather than being
 ghost-number block diagonal.  An explicit centered ghost vacuum/insertion is
 therefore required before the displayed matter Gram can be called an

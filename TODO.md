@@ -540,6 +540,23 @@ holds only open items.
       matching the independent `E/A/L` character exactly.  These are
       formal/finite rails, not yet the all-level Lorentzian cylinder theorem.
 
+      C2j-D fixes the interpretation of the centered `I2`.  Hamada's
+      residual formulas give the exact top-degree descent
+      `[omega V4] <-> [integral V4]`; hence the two chiral Weyl-square
+      survivors are positive residual vertex/deformation classes, not a
+      propagating graviton Hilbert space.  In the parity basis they are the
+      Weyl-square coupling and the Pontryagin/theta direction (with the
+      Lorentzian `i` convention explicit).  The literature-seeded,
+      parity-preserving **projected type-B** one-loop map has rank one,
+      `(199/30,0)`.  This is not the full anomaly map: the independent
+      type-A Euler class requires a general curved-background local-BV
+      calculation.  Hamada's `-1/15` Riegert contribution gives the exact
+      beta-numerator arithmetic `197/30`, while Riegert dressing permits
+      higher matter weights to return to total weight four and therefore
+      destroys the strict pure-Weyl finite inventory.  Tseytlin's regulated
+      all-spin CHS `a` sum vanishes but the `c` sum does not, so the higher-spin
+      tower is not yet an anomaly-cancellation theorem.
+
       Next (C2i): prove the remaining local-kernel identification
       `ker B_lin / im K = W_+ + W_-` on complete Lorentzian cylinder harmonic
       blocks and eliminate all relevant local/nonminimal doublets.  Then

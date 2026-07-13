@@ -98,9 +98,10 @@ Multiplying that unit ghost overlap by the matter restriction gives
 \]
 
 This is the centered sector on which global conformal reduction removes all
-forty negative matter directions and leaves a nonzero positive candidate
-sector.  It is stronger than a sample cancellation: the complete incoming
-and outgoing global differentials at this degree have been included.
+forty negative matter directions and leaves a nonzero positive
+vertex/deformation-class sector.  It is stronger than a sample cancellation:
+the complete incoming and outgoing global differentials at this degree have
+been included.
 
 Cartan localization makes the statement exhaustive for the minimal free
 residual polarization.  The absolute residual differential obeys
@@ -132,7 +133,7 @@ H^4_{\rm residual,min}
 Thus `I2` is the complete centered cohomology of the minimal free residual
 complex, not merely the beginning of a higher-weight tower.
 
-## Interpretation
+## Interpretation: descent classes, not particle states
 
 Parity exchanges the two chiral generators.  Their even and odd combinations
 correspond, up to Lorentzian phase conventions, to the local densities
@@ -144,10 +145,20 @@ C_{\mu\nu\rho\sigma}\widetilde C^{\mu\nu\rho\sigma}.
 \]
 
 The first is the pure-Weyl action density; the second is the Pontryagin
-combination.  A later local-BV calculation must decide whether both survive
-as state classes or whether the topological combination is identified or
-removed.  The global calculation itself imposes no optional parity
-projection and retains both with positive norm.
+combination.  More precisely, the four-ghost residual vacuum is the cylinder
+representative of the top-degree ghost volume, so these classes implement the
+descent between ghost-dressed weight-four scalar operators and integrated
+conformal densities.  Their `I2` is therefore a positive pairing on two
+residual **vertex/deformation classes**, not evidence for a positive
+propagating-graviton Fock space.  There is no one-particle absolute residual
+class in this compact reduction.
+
+A later local-BV calculation must decide whether both survive as local
+classes or whether the topological combination is identified or removed.
+The global calculation itself imposes no optional parity projection and
+retains both with positive norm.  The detailed descent and the one-loop
+anomaly fork are recorded in
+[`conformal-c2j-descent-anomaly.md`](conformal-c2j-descent-anomaly.md).
 
 This result is compatible with three independent pieces of prior structure:
 
@@ -164,7 +175,9 @@ This result is compatible with three independent pieces of prior structure:
 
 None of those references alone proves the present pure-Weyl global reduction.
 Conversely, the present calculation does not establish the local quantum
-BRST or anomaly statements made in the broader Hamada model.
+BRST or anomaly statements made in the broader Hamada model.  In conventional
+one-loop normalization the pure conformal spin-two field has nonzero type-A
+and type-B coefficients; the positive residual pairing does not cancel them.
 
 ## Exact boundary of the claim
 
@@ -184,8 +197,10 @@ In particular this checkpoint does not yet prove:
 4. the corresponding statement when `D` is retained as an asymptotic or
    boundary charge rather than gauged.
 
-The next discriminating problem is C2i: construct a compact-degree-equivariant
+The next classical bridge is C2i: construct a compact-degree-equivariant
 cyclic strong deformation retract of the full pure-Weyl local BV complex and
 show that its transferred one-ghost/two-matter charge is the residual Taub
 moment map already normalized in C2f.  The quantum Diff `x` Weyl anomaly is a
-subsequent, logically separate obstruction.
+subsequent, logically separate obstruction.  C2j-D now identifies its
+projected type-B direction and keeps the strict-pure-Weyl,
+Riegert--Wess--Zumino, and enlarged-field routes separate.

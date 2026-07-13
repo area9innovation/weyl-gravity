@@ -127,7 +127,9 @@ block.  It must be chosen simultaneously compact-degree equivariant and
 compatible with the conformal-Killing zero-mode split.  Those compatibility
 and domain conditions—not a term-by-term recomputation of the dressed
 Gram—are the remaining field-theory obligation that promotes the residual
-class Gram `I2` to the induced free physical pairing.
+class Gram `I2` to the induced pairing on local-plus-global cohomology.  Even
+after that bridge closes, C2j-D identifies these as ghost-dressed
+vertex/deformation classes rather than a propagating graviton Hilbert space.
 
 ### Even-pairing convention and cyclic isometry
 
