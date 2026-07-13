@@ -12,9 +12,10 @@ machine-verified by `symbolic/verify_conformal_free_pairing.py`,
 `symbolic/verify_conformal_jacobi_factorization.py`,
 `symbolic/verify_conformal_eal_vertex.py`, and
 `symbolic/verify_conformal_deformation_bridge.py`, with the C2a kinematic and
-selected-charge rails in
+selected-charge rails and C2b mixed-multiplet reconstruction in
 `symbolic/verify_conformal_c2a_reducibilities.py` and
-`symbolic/verify_conformal_taub_charge.py`. The general Weyl-density
+`symbolic/verify_conformal_taub_charge.py`, and
+`symbolic/verify_conformal_taub_multiplets.py`. The general Weyl-density
 derivation, all-spin EAA/EAL descent, BRST descent, compact global
 conformal/Taub reduction, and complete same-sign adjoint check remain active.
 This note is a research ledger, not a
@@ -1190,9 +1191,9 @@ The s and u quotients admit two agreeing bordered gauges.  The t quotient
 does not: its Hessian is exactly zero although its local density is nonzero.
 Its raw chiral slice currents are nonzero, every directly inserted pure-gauge
 probe integrates to zero, parity partners add, and independently generated
-reverse currents obey the physical-adjoint relation.  The quotient is the
-frequency derivative of the `ell=omega=1` conformal-Killing reducibility
-modulo ordinary gauge.  No `1/kappa_t`, t exchange number, effective block,
+reverse currents obey the ordinary coefficient-kernel dagger relation.  The
+quotient is the frequency derivative of the `ell=omega=1` conformal-Killing
+reducibility modulo ordinary gauge.  No `1/kappa_t`, t exchange number, effective block,
 or obstruction is formed.  Instead, the t result exposes a blocking global
 BRST/Taub/linearization-stability audit: the proposed `AA/EA/EL` target may
 need exclusion, dressing, enlargement, or a different reduced pairing.
@@ -1222,10 +1223,18 @@ Q_xi+[L_-^dagger,A_-]= sqrt(10)/(5 pi).
 
 These are nonzero mixed `EA/LA` Taub components, not `Q[A_3,A_3]` and not
 yet the charge of a complete parity-projected energy-six state.  Reverse and
-parity rails pass, while the other magnetic components, seven Killing
-charges, and global BRST reduction remain open.  This strengthens the reason
-to stop P4: the exceptional current is a selected Taub charge, but only the
-full fifteen-component kernel can determine the admissible state space.
+parity rails pass.  C2b reconstructs all four `(1/2,1/2)` magnetic components
+in the curvature-seeded `A -> E` and `L -> A` blocks.  Their exact reduced
+coefficients are `-sqrt(10)/(5 pi)` and `sqrt(2)/(2 pi)`; the assembled
+36-dimensional low-mode kernels obey spatial tensor covariance,
+`[D,Q_-]=-Q_-`, parity, and the reverse-curvature ordinary kernel-dagger
+relation.  They also exhibit a vector whose reconstructed quadratic
+proper-conformal values cancel between the two mixed blocks.  This is a point
+on the partial seeded-block cone, not a common operator kernel or a result
+about the complete constraint locus.
+The remaining tower blocks, seven Killing charges, complete moment map, and
+global BRST reduction remain open.  This strengthens the reason to stop P4:
+only the full quadratic reduction can determine the admissible state space.
 
 The deformation-theory bridge itself is now exact. For the canonical
 off-shell first-order metric correction,

@@ -106,8 +106,9 @@ This is the first nonzero branch-changing contact datum in the common
 reduced block.  Forward and reverse seeds were assembled in separate
 four-wave curvature runs.  Their complete radial densities agree exactly,
 and both give the displayed real coefficient.  Thus the directed entries
-obey the physical real-action adjoint relation before any use of the Krein
-form.
+obey the ordinary real-action reverse-kernel relation before any use of the
+Krein form.  Calling this the physical adjoint would require the still-missing
+globally reduced pairing.
 
 On the ordered reduced basis `(AA,EL)`, the relevant induced form is
 

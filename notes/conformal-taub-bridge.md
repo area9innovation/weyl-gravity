@@ -88,8 +88,9 @@ D_i D_j Y_A=-gamma_ij Y_A,
 the eight proper conformal parameters have time dependence
 `exp(-i s time)`, `s=+/-1`, and are precisely the null parameters of the
 scalar Diff x Weyl generator.  The companion executable constructs this
-sector explicitly; the full coordinate realization of the seven Killing
-parameters and all fifteen charge matrices remain C2a work.
+sector explicitly.  C2a now also constructs the seven Killing parameters and
+verifies the complete 15-generator algebra; the nonlinear charge kernels
+remain incomplete.
 
 ## Exact current-to-charge map in the exceptional block
 
@@ -146,16 +147,22 @@ Q_xi+[L_-^dagger,A_-]= sqrt(10)/(5 pi).
 ```
 
 They are nonzero.  The independently assembled reverse entries give the
-adjoint relation, and the parity partners furnish another nonzero magnetic
-orbit rather than cancelling these components.
+ordinary coefficient-kernel dagger relation, and the parity partners furnish
+another nonzero magnetic orbit rather than cancelling these components.  A
+physical-adjoint statement awaits the globally reduced pairing.
 
 ## Consequence and remaining fork
 
-These selected mixed `EA` and `LA` oscillator directions are not jointly
-integrable as unrestricted perturbations of the fixed cylinder background.
-They are not a computation of `Q[A_3,A_3]`, nor do they alone decide the
-charge of the complete parity-projected `AA` or `EL` state: that requires all
-magnetic components and every term in the global charge action.  The
+These selected mixed `EA` and `LA` entries imply that generic superpositions
+of the corresponding oscillator modes carry a proper-conformal Taub charge.
+They do not imply that either basis mode is individually nonintegrable.  C2b
+reconstructs every magnetic component in the two multiplicity-one mixed
+blocks and exhibits an exact cancellation among their quadratic values.  The
+test vector is a point on the partial reconstructed cone, not a common kernel
+of the charge matrices or a result about the complete constraint locus.  The
+entries are not a computation of `Q[A_3,A_3]`, nor do they alone decide the
+charge of the complete parity-projected `AA` or `EL` state: that requires the
+remaining mode blocks and every term in the global charge action.  The
 calculation also does not yet distinguish among:
 
 1. exclusion of the charged pair from the nonlinear tangent cone;
@@ -175,7 +182,8 @@ requires the global reducibility ghosts and a BFV/BRST construction; simply
 deleting one oscillator mode or projecting a Hessian by hand would not be a
 derivation.
 
-The next acceptance target is therefore the full low-energy collection
+The next acceptance target is therefore the completion of the low-energy
+collection
 
 ```text
 (Q_A)_ij=integral_S3 sqrt(gamma) n_m xi_(A)n E^(2)mn[u_i,u_j],
@@ -185,3 +193,7 @@ A=1,...,15,
 followed by the charge-constrained energy-six state space and its induced
 pairing.  Until then no `1/kappa_t`, reduced `t` exchange, physical
 energy-six effective Hamiltonian, or metric obstruction is defined.
+
+The exact seeded-block reconstruction is in
+`notes/conformal-taub-multiplets.md` and
+`symbolic/verify_conformal_taub_multiplets.py`.

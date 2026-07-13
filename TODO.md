@@ -385,7 +385,8 @@ holds only open items.
       `kappa_s=131712`, `kappa_t=0`, `kappa_u=960`.  The s/u bordered gauges
       agree.  The t Hessian is null; its nonzero slice currents pass direct
       pure-gauge Ward probes, parity adds rather than cancels, reverse currents
-      obey the physical adjoint, and the quotient is the frequency derivative
+      obey the ordinary coefficient-kernel dagger relation, and the quotient
+      is the frequency derivative
       of the `ell=omega=1` conformal-Killing reducibility modulo gauge.  No
       `1/kappa_t`, ordinary t exchange, `Veff`, or obstruction is claimed.
       C2a now constructs all 15 cylinder Diff x Weyl reducibilities, verifies
@@ -395,8 +396,19 @@ holds only open items.
       `Q_xi-[E_+^dagger,A_+]=-sqrt(5)/(5 pi)` and
       `Q_xi+[L_-^dagger,A_-]=sqrt(10)/(5 pi)`.  These are mixed EA/LA
       bilinears, not `Q[A_3,A_3]`; reverse and parity rails pass.  Next:
-      complete all fifteen charge matrices and the compact global
-      BRST/Taub/linearization-stability audit
+      C2b reconstructs the complete `(1/2,1/2)` magnetic multiplets generated
+      by these two mixed seeds.  Wigner--Eckart multiplicity is one in both
+      adjacent blocks, with exact reduced coefficients
+      `R_AE=-sqrt(10)/(5 pi)` and `R_LA=sqrt(2)/(2 pi)`.  The resulting
+      36-dimensional low-mode matrices obey every `SU(2)_L x SU(2)_R` ladder
+      identity, `[D,Q_-]=-Q_-`, parity, and ordinary kernel-dagger covariance,
+      and reproduce the curvature seed matrices on projection.  An exact
+      cancelling superposition demonstrates a point on the partial quadratic
+      moment-map cone, not a common operator kernel or a linear state
+      exclusion.  Next: reconstruct the remaining tower
+      blocks and seven Killing charges, assemble the full fifteen-component
+      quadratic moment map, and build the energy-graded compact global BRST
+      cohomology
       to determine whether the oscillator target survives and with what
       pairing; only then finish s/u currents, the covariant-to-stationary Born
       map, subtraction rails, provisional reduced `Veff` and its nine

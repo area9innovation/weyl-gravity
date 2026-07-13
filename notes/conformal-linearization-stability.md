@@ -48,11 +48,27 @@ Q_{\xi_-}[E_+^\dagger,A_+]=-{\sqrt5\over5\pi},\qquad
 Q_{\xi_+}[L_-^\dagger,A_-]={\sqrt{10}\over5\pi}.
 \]
 
-This closes the Taub interpretation for those two components; it does not
-yet compute `Q[A_3,A_3]`, the other magnetic components, or the global charge
-of a complete parity-projected energy-six state.  See
+This closes the direct Taub interpretation for those two components.  C2b
+then uses their multiplicity-one `(1/2,1/2)` representations to reconstruct
+all four proper-conformal magnetic components in the adjacent `A -> E` and
+`L -> A` blocks.  The exact reduced coefficients are
+
+\[
+{\cal R}_{AE}=-{\sqrt{10}\over5\pi},\qquad
+{\cal R}_{LA}={\sqrt2\over2\pi}.
+\]
+
+The reconstructed kernels obey all abstract left/right ladder identities,
+lower compact energy by one, and reproduce the direct curvature seed,
+reverse, and parity-seed entries.  The reverse statement is an ordinary
+coefficient-kernel dagger, not yet a physical-adjoint theorem on the unknown
+globally reduced pairing.  They remain mixed entries: this does not
+compute `Q[A_3,A_3]`, `Q[E,L]`, the other mode-tower reduced elements, or the
+global charge of a complete parity-projected energy-six state.  See
 `notes/conformal-taub-bridge.md`, `notes/conformal-taub-charge.md`, and
-`symbolic/verify_conformal_taub_charge.py`.
+`notes/conformal-taub-multiplets.md`, with executable certificates
+`symbolic/verify_conformal_taub_charge.py` and
+`symbolic/verify_conformal_taub_multiplets.py`.
 
 Independent parity-partner probes give the same nonzero current rather than
 the opposite sign, so the conventional parity projection does not remove the
@@ -68,8 +84,9 @@ effective Hamiltonian, establish all of the following.
 1. Construct the complete gauge-fixed BRST complex on `R x S^3`, including
    zero modes, reducibility ghosts, auxiliary fields, and global conformal
    generators.
-2. Extend the now-exact selected proper-CK Taub identity to every conformal
-   Killing reducibility and every required low-energy mode pair.
+2. Extend the two now-complete proper-CK magnetic multiplets to every
+   required mode tower and multiplicity sector, and construct the seven
+   compact-energy-preserving Killing-charge kernels.
 3. Determine whether individual `E`, `A`, and `L` oscillator excitations
    descend to BRST cohomology or require charge-neutral, dressed, or conformal
    singlet combinations.
@@ -93,6 +110,7 @@ selected Taub-charge data
 are useful local/covariant certificates and regression rails.  They do not
 establish a physical energy-six amplitude, pseudo-unitarity violation, or
 metric-deformation obstruction.  In particular, `kappa_t=0` is never divided
-through.  The t current is an exact selected proper-conformal Taub component,
-but the full fifteen-component charge reduction and its physical-state
-kernel remain open.
+through.  The t current seeds two exactly reconstructed proper-conformal
+mixed Taub multiplets, but the remaining reduced blocks, seven Killing
+charges, full quadratic moment map, and global-BRST physical-state kernel
+remain open.

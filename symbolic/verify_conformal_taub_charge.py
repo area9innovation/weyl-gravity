@@ -40,8 +40,11 @@ Consequently, if ``C_s`` is the independently computed slice coefficient,
 This is an operator-normalized equality between the covariant cubic current
 and a bilinear Euler/Bach charge.  It is not yet the full 15-component charge
 matrix on global BRST cohomology: only the proper-CK component selected by
-the low-energy chiral seed and its parity partner are covered.  The script
-therefore has explicit fail-closed switches for the missing full reduction.
+the low-energy chiral seed and its parity partner are evaluated by direct
+curvature here.  The companion ``verify_conformal_taub_multiplets.py``
+reconstructs the associated magnetic multiplets by Wigner--Eckart, but still
+does not supply the full moment map.  This script therefore has explicit
+fail-closed switches for the missing full reduction.
 """
 
 from __future__ import annotations
@@ -272,7 +275,7 @@ def low_energy_charge_matrices() -> tuple[sp.Matrix, sp.Matrix]:
     q_plus[1, 0] = q_plus_ae  # <A_+|Q_+|E_+>
 
     check(
-        "C2a: restricted proper-CK charge matrices obey the physical adjoint relation",
+        "C2a: restricted proper-CK kernels obey the reverse-curvature ordinary dagger relation",
         q_plus == q_minus.conjugate().T,
     )
     check(
@@ -341,7 +344,9 @@ def main() -> None:
         "C2a STATUS: EXACT ACTION-NORMALIZED PROPER-CK TAUB COMPONENTS ON "
         "LOW-ENERGY OSCILLATOR REPRESENTATIVES. The equality Q_s=-i*s*C_s "
         "is fixed both locally and after S3 integration. The other CK magnetic "
-        "components, seven Killing charges, complete mode matrix, global BRST "
+        "components are not independently curvature-evaluated here; their two "
+        "seeded multiplets are reconstructed in the C2b companion. The seven "
+        "Killing charges, remaining mode blocks, full moment map, global BRST "
         "cohomology, and nonlinear state-space reduction remain open."
     )
     if args.require_full_15:

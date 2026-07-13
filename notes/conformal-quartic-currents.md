@@ -19,8 +19,9 @@ python3 symbolic/verify_conformal_quartic_currents.py \
   t negative slice --audit-only
 ```
 
-checks the stored normalization, generalized-CK, parity, and physical-adjoint
-relations without rerunning the multi-minute curvature jobs.  Omitting
+checks the stored normalization, generalized-CK, parity, and ordinary
+reverse-kernel dagger relations without rerunning the multi-minute curvature
+jobs.  The physical adjoint awaits the globally reduced pairing.  Omitting
 `--audit-only` regenerates the selected exact coefficient and checks it
 against the frozen regression data.
 

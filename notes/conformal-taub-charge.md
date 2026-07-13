@@ -134,8 +134,8 @@ Q_+=Q_{\xi_+}[L_-^\dagger,A_-].
 Thus the completed certificate identifies **mixed `EA` and `LA` bilinear
 charges**, not a diagonal `Q[A_3,A_3]` component.  This is forced by the
 actual `t`-channel routing.  Independent reverse curvature runs give the
-adjoint matrix elements, and the parity runs reproduce a second nonzero
-magnetic orbit rather than cancelling the first.
+ordinary coefficient-kernel dagger entries, and the parity runs reproduce a
+second nonzero magnetic orbit rather than cancelling the first.
 
 On the restricted ordered chiral basis
 
@@ -146,7 +146,7 @@ On the restricted ordered chiral basis
 the filled entries are
 
 \[
-Q_-^{\rm low}=
+M_-^{\rm low}=
 \frac1{5\pi}
 \begin{pmatrix}
 0&-\sqrt5&0&0\\
@@ -157,11 +157,19 @@ Q_-^{\rm low}=
 \]
 
 \[
-Q_+^{\rm low}=(Q_-^{\rm low})^\dagger.
+M_+^{\rm low}=(M_-^{\rm low})^\dagger.
 \]
 
-These matrices act on exact **oscillator representatives**.  They are not yet
+This is not yet a physical-adjoint statement.  These kernels act on exact
+**oscillator representatives**.  They are not yet
 operators on the globally reduced physical Hilbert space.
+
+The companion C2b certificate
+`symbolic/verify_conformal_taub_multiplets.py` uses multiplicity-one
+Wigner--Eckart reconstruction to generate all four proper-conformal magnetic
+components in these two adjacent mixed blocks.  See
+`notes/conformal-taub-multiplets.md`.  That reconstruction does not turn the
+two seeds into self-charges or a full moment map.
 
 ## Interpretation and fail-closed boundary
 
@@ -177,9 +185,9 @@ decide whether the external modes:
 
 The following remain mandatory before P4 can be interpreted physically:
 
-1. construct all fifteen charge matrices on the complete low-energy mode
-   space, including the seven Killing charges and every proper-CK magnetic
-   component;
+1. extend the two reconstructed mixed proper-CK multiplets to the remaining
+   mode towers and construct the seven Killing-charge kernels, diagonal
+   blocks, and any real-field anomalous bilinears;
 2. include local ghosts, reducibility ghosts and contractible sectors;
 3. compute the global BRST cohomology and the reduced energy-six pairing;
 4. decide the disposition of the `t` zero mode before forming any reduced
