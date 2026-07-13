@@ -519,18 +519,34 @@ holds only open items.
 
       C2h formulates the exact bridge criterion.  The local pure-Weyl
       contraction must be a strong deformation retract in the category of
-      compact-energy-graded complexes.  A stationary modewise Hodge
-      contraction supplies `D` equivariance once the fifteen
-      conformal-Killing zero modes are split off; the remaining hard theorem
-      is that its harmonic kernel is exactly the two-chiral Weyl module with
-      no relevant local/nonminimal ghost classes.
+      compact-energy-graded complexes.  Cyclic HPL is no longer a separate
+      norm calculation: in the repo's plus-sign convention an exact dressed
+      fixture proves `I^sharp=P`, `PI=1`, `I^sharp I=1`, and skew-adjointness
+      of the nonzero transferred differential.  A finite-dimensional cyclic
+      SDR exists algebraically once the local kernel has a nondegenerate
+      induced form.  The field-theory choice must still be made jointly
+      `D`-equivariant, zero-mode compatible, and well defined on the chosen
+      domains.
 
-      Next (C2i): construct the cyclic minimal-model bridge from the full
-      pure-Weyl BV/BFV complex.  Prove the local-cohomology theorem, cyclic
-      compatibility with the BV/Krein pairing, and that the transferred
-      one-ghost/two-matter term is the normalized Taub moment map
+      C2i-D now fixes the formal local detour input.  Branson--Gover gives the
+      self-adjoint `K -> B_lin -> K^sharp` complex on Bach-flat backgrounds;
+      on the conformally flat cylinder the reduced Weyl-squared action gives
+      the stronger action-normalized identity `B_lin=C1^sharp C1`.  Exact
+      action-derived scalar `s,t,u` blocks obey both Ward kernels and
+      frequency adjointness.  A complementary Euclidean homogeneous-jet
+      calculation separates all fifteen conformal-Killing zero modes and
+      constructs exact `K,C1,B1` matrices through the finite buffer, with
+      quotient ranks `(10,40,82,136,202)` at degrees two through six,
+      matching the independent `E/A/L` character exactly.  These are
+      formal/finite rails, not yet the all-level Lorentzian cylinder theorem.
+
+      Next (C2i): prove the remaining local-kernel identification
+      `ker B_lin / im K = W_+ + W_-` on complete Lorentzian cylinder harmonic
+      blocks and eliminate all relevant local/nonminimal doublets.  Then
+      choose the simultaneous `D`-equivariant cyclic retract and derive the
+      transferred one-ghost/two-matter term as the normalized Taub moment map
       `M_Taub=-sqrt(2)/(4pi) J K^-`, alongside the universal residual ghost
-      differential and its `-4` vacuum shift.  Then show the local/global
+      differential and its `-4` vacuum shift.  Finally show the local/global
       spectral sequence collapses in the centered row.  Only after that
       should an interaction act on the reduced classes.  Quantum survival
       separately requires an anomaly-free nilpotent Diff x Weyl BRST charge.

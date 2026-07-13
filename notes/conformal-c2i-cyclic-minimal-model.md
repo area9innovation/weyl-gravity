@@ -69,6 +69,18 @@ with the parity-conjugate sequence for `W_-`.  In particular, there must be
 no additional local-ghost or nonminimal harmonic classes at physical ghost
 number and total compact degree zero.
 
+`notes/conformal-local-detour.md` now separates the theorem into its exact
+formal part and its still-open global part.  The Branson--Gover detour
+identities and the action-normalized factorization
+
+\[
+B_{\rm lin}=C_1^\sharp C_1
+\]
+
+are fixed.  The remaining kernel statement is the all-level Lorentzian
+cylinder identification of `ker B_lin / im K` with the `E/A/L` Weyl module,
+together with removal of all local/nonminimal doublets.
+
 ## Compact-degree-equivariant retract
 
 Choose a stationary, `SO(4)`-invariant auxiliary positive product on each
@@ -105,18 +117,195 @@ identity is the ordinary residual one,
 
 and every nonzero total compact degree remains contractible.
 
-## Cyclicity obligation
+## Cyclicity collapses to a compatible choice
 
 The auxiliary Hodge product does not establish descent of the physical
-pairing.  The retract must also be compatible with the BV/Krein bilinear form
-in the cyclic-homological-perturbation sense.  At minimum, the transferred
-pairing must be well defined and the transferred differential must obey the
-required graded adjointness.  This is the input that promotes the residual
-class Gram `I2` from a coefficient calculation to the induced free physical
+pairing.  Once the local kernel and its nondegenerate induced form are
+identified, however, cyclicity is not an independent spectrum or norm
+calculation: a cyclic retract exists algebraically in every finite harmonic
+block.  It must be chosen simultaneously compact-degree equivariant and
+compatible with the conformal-Killing zero-mode split.  Those compatibility
+and domain conditions—not a term-by-term recomputation of the dressed
+Gram—are the remaining field-theory obligation that promotes the residual
+class Gram `I2` to the induced free physical pairing.
+
+### Even-pairing convention and cyclic isometry
+
+The executable certificate uses the suspended even-pairing convention. For
+an operator `A:V -> W` with nondegenerate Hermitian forms `G_V,G_W`, define
+
+\[
+A^\sharp=G_V^{-1}A^\dagger G_W.
+\]
+
+Use a normalized cyclic contraction
+
+\[
+p\jmath=I,
+\qquad
+\jmath p=I-qs-sq,
+\qquad
+s^2=s\jmath=ps=0,
+\]
+
+with
+
+\[
+q^\sharp=-q,
+\qquad
+s^\sharp=-s,
+\qquad
+\jmath^\sharp=p.
+\]
+
+Let `Q=q+Delta` be nilpotent and cyclic,
+
+\[
+\Delta^\sharp=-\Delta.
+\]
+
+For the displayed contraction convention, the Basic Perturbation Lemma uses
+the **plus-sign** formulas
+
+\[
+I=(\mathbf1+s\Delta)^{-1}\jmath,
+\qquad
+P=p(\mathbf1+\Delta s)^{-1}.
+\]
+
+The cyclic identities then give
+
+\[
+(s\Delta)^\sharp=\Delta s
+\]
+
+and hence
+
+\[
+\boxed{
+I^\sharp
+=\jmath^\sharp(\mathbf1+\Delta s)^{-1}
+=P.
+}
+\]
+
+The normalized perturbation lemma supplies
+
+\[
+PI=\mathbf1_H,
+\]
+
+so
+
+\[
+\boxed{I^\sharp I=\mathbf1_H.}
+\]
+
+Thus the dressed inclusion is an exact isometry of the reduced form, even
+though it need not equal the original choice of representatives. Writing the
+transferred differential as
+
+\[
+Q_H=P Q I,
+\]
+
+one obtains
+
+\[
+Q_H^\sharp
+=I^\sharp Q^\sharp P^\sharp
+=-P Q I
+=-Q_H.
+\]
+
+This proves preservation of the indefinite pairing. It does not turn an
+indefinite form into a positive one; positivity of the centered two-class
+sector remains the separate residual result `G=I2`.
+
+### Exact finite cyclic fixture
+
+`symbolic/verify_conformal_cyclic_hpl.py` constructs an exact
+eight-dimensional Krein complex and a four-dimensional reduced complex. A
+rational `G`-unitary rotation mixes the reduced and contractible blocks, so
+the perturbation changes the inclusion nontrivially and produces a nonzero
+transferred differential. The certificate verifies:
+
+- `j^sharp=p`, `q^sharp=-q`, and `s^sharp=-s`;
+- the normalized SDR identities and side conditions;
+- `Delta^sharp=-Delta` and `(s Delta)^sharp=Delta s`;
+- exact invertibility of the plus-sign BPL factors;
+- both dressed chain-map identities;
+- `I^sharp=P`, `P^sharp=I`, and `P I=1_H`;
+- `I^sharp I=1_H` and direct equality of the pulled-back Gram matrix;
+- nilpotency and skew-adjointness of the nonzero transferred differential;
+  and
+- as a negative control, failure of both chain-map identities when the
+  opposite BPL signs are inserted while retaining
+  `j p=I-q s-s q`.
+
+The fixture proves the algebraic statement in this explicit even-pairing
+convention. Raw BV odd symplectic conventions require the corresponding
+Koszul signs or an explicit suspension; no broader graded-sign formula is
+claimed by this certificate.
+
+### Existence theorem and its boundary
+
+There is a finite-dimensional algebraic existence result. Let `(C,G,q)` have
+a nondegenerate Hermitian form, `q^2=0`, and `q^sharp=-q`. Then
+
+\[
+(\operatorname{im}q)^\perp=\ker q,
+\qquad
+(\ker q)^\perp=\operatorname{im}q.
+\]
+
+Consequently the induced cohomology form is nondegenerate. Choose a
+nondegenerate representative space `H` inside `ker q`, let `p` be its
+`G`-orthogonal projection, and choose an isotropic complement `L` with
+
+\[
+H^\perp=\operatorname{im}q\oplus L.
+\]
+
+Then `q:L -> im q` is an isomorphism. Its inverse on `im q`, extended by
+zero, gives a normalized homotopy satisfying `s^sharp=-s`. Thus a cyclic SDR
+exists algebraically in finite dimension.
+
+If, in addition, `D` is diagonalizable, `[D,q]=0`, and the pairing makes its
+compact-degree blocks orthogonal (equivalently `D^sharp=D` in the suspended
+Hermitian convention), the same Witt construction can be performed inside
+each eigenspace.  The resulting cyclic SDR is automatically `D`-equivariant.
+Thus at any finite cylinder cutoff, compact-degree equivariance and cyclicity
+collapse to one compatible blockwise choice once the local kernel and its
+form have been identified.
+
+This theorem does **not** yet close C2i. It does not guarantee that the same
+choice is simultaneously:
+
+- compact-degree equivariant before the required `D`-adjointness and
+  diagonalizability hypotheses are verified;
+- local or covariant as a field-theory Green operator;
+- compatible with the conformal-Killing zero-mode split;
+- continuous on an infinite-dimensional completed state space;
+- cyclic for the physical BV/Krein form rather than merely for the auxiliary
+  positive Hodge product; or
+- compatible with the interacting perturbation and quantum measure.
+
+In particular, the adjoint used in the positive auxiliary Hodge Laplacian
+cannot simply be identified with the even cyclic `sharp` above. On a
+positive-definite space, a skew-adjoint operator is normal, so a nilpotent
+skew-adjoint operator must vanish. A nontrivial BRST differential can obey
+`q^sharp=-q` only for an indefinite form or after the appropriate BV degree
+shift. The auxiliary positive product may construct `p,j,s`; their cyclic
+relations must then be checked separately against the physical BV/Krein
 pairing.
 
-Failure of cyclicity would not invalidate the cohomology computation, but it
-would invalidate its probability interpretation.
+In infinite dimension, nonclosed images, zero modes, domains of unbounded
+operators, and boundary conditions can obstruct the orthogonal splitting.
+Moreover, convergence or filtration-local nilpotence of the BPL inverses is a
+separate hypothesis. C2i must therefore construct the cyclic,
+compact-degree-equivariant retract for the actual pure-Weyl BV complex rather
+than infer it solely from the finite-dimensional existence argument.
 
 ## Transferred residual charge
 
@@ -184,12 +373,12 @@ C2i is closed only when all of the following are available.
 2. A non-overlapping split of the fifteen conformal-Killing zero modes.
 3. The harmonic-kernel calculation giving exactly the `W_+ + W_-` module and
    no relevant extra cohomology.
-4. Exact or theorem-level verification of the graded strong deformation
-   retract and its `D` equivariance.
-5. Cyclic compatibility with the BV/Krein pairing.
-6. Derivation of the residual ghost differential and Taub coupling from the
+4. Verification that the local form and compact-degree operator meet the
+   hypotheses above, followed by construction of the resulting
+   `D`-equivariant cyclic retract and its exact HPL isometry.
+5. Derivation of the residual ghost differential and Taub coupling from the
    transferred master action, including the `-4` ghost-vacuum shift.
-7. A spectral-sequence argument excluding higher differentials in the
+6. A spectral-sequence argument excluding higher differentials in the
    centered physical row.
 
 Only after these free/classical items close should the programme test quantum

@@ -222,9 +222,15 @@ on-shell Weyl module plus the separated stabilizer-ghost sector, with no
 additional local-ghost or nonminimal harmonic classes in the relevant
 degrees.
 
-The positive auxiliary product proves equivariance but does not by itself
-prove compatibility with the physical BV/Krein pairing.  That is a separate
-cyclicity condition on the contraction.
+The positive auxiliary product proves equivariance but is not itself the
+physical BV/Krein adjoint.  Cyclicity nevertheless need not be a second
+spectral calculation once the local kernel and its nondegenerate induced
+form are known.  In every finite compact-degree block, a cyclic retract can
+be constructed by a Witt decomposition of the exact/contractible sector;
+`verify_conformal_cyclic_hpl.py` then proves that homological perturbation is
+an exact isometry.  The remaining obligation is to choose that cyclic
+retract simultaneously `D`-equivariant and compatible with the cylinder
+zero-mode split and field-theory domains.
 
 ## Pure-Weyl obligations
 
@@ -239,8 +245,10 @@ must construct the following objects on `R x S^3`.
    nonzero-mode complement.  The finite ghosts must not be counted twice.
 3. **Local contraction.**  Exhibit `p`, `j`, and `s` on the nonzero-mode
    quartet/contractible sectors.  Their kernels and domains must include the
-   treatment of the compact zero modes. Prove ghost factorization or compute
-   the corrected transferred `iota_D^H`.
+   treatment of the compact zero modes.  Use the finite-block cyclic
+   construction for the physical BV/Krein form, while preserving compact
+   degree. Prove ghost factorization or compute the corrected transferred
+   `iota_D^H`.
 4. **Compact-degree equivariance.**  Verify the intertwining and commutator
    identities above.  A
    stationary harmonic gauge and spectral Green operator are natural, but
@@ -324,15 +332,17 @@ the absolute complex.  The master equation then contains the moment-map
 equivariance and conformal Jacobi identities already certified on the
 residual side.
 
-The next bridge must establish four facts rather than compute another matter
-shell:
+The next bridge must establish three substantive facts rather than compute
+another matter shell:
 
 1. `H(q)` is the Fock space on the two chiral on-shell Weyl modules after the
    fifteen stabilizer modes are separated, with no additional relevant
    local or nonminimal cohomology.
-2. The Hodge retract above is compact-degree equivariant.
-3. It is cyclic enough for the BV/Krein pairing to transfer and descend.
-4. Through one residual ghost and two matter legs, the transferred charge is
+2. A retract can be chosen simultaneously compact-degree equivariant and
+   cyclic.  Cyclic existence and HPL isometry are now algebraic consequences
+   blockwise; locality, zero modes, and domains remain part of this
+   simultaneous construction.
+3. Through one residual ghost and two matter legs, the transferred charge is
    the already normalized moment-map action,
    `M_Taub = -sqrt(2)/(4*pi) J K^-`, with no unaccounted higher operation in
    that arity.
