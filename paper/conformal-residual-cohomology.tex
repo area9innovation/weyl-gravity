@@ -1,0 +1,1449 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{cproposition}[theorem]{Computational Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Field-Theoretic Hypothesis}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\g}{\mathfrak g}
+\newcommand{\W}{\mathcal W}
+\newcommand{\F}{\mathcal F}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\CS}{\operatorname{CS}}
+
+\title{Residual $SO(4,2)$ Cohomology of Free Weyl Gravity\\
+on the Conformal Cylinder:\\
+Cartan Homotopy, Weyl-Square Classes, and Their Residual Pairing}
+\author{Research-programme draft\\[-1mm]
+\small Authorship and attribution to be finalized after external review}
+\date{Draft for external review, July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Treating all fifteen cylinder conformal transformations, including compact
+time translation $D$, as residual gauge transformations, we compute a
+minimal absolute $SO(4,2)$ Chevalley--Eilenberg complex for free
+four-dimensional Weyl gravity on $\R\times S^3$.  Its coefficient module is
+the parity-complete on-shell Weyl-curvature Fock module.  The standard
+invariant one-particle form is indefinite, with cylinder signs
+$+I_E\oplus(-I_A)\oplus(-I_L)$.
+
+The key mechanism is the Cartan homotopy formula.  The residual differential
+obeys $d\iota_D+\iota_Dd=\cL_D$, so every subcomplex of nonzero total compact
+degree is contractible.  In the Hamada-centered four-ghost polarization,
+the selected absolute degree has ghost compact degree bounded below by
+$-4$, and only matter weights at most four can contribute.  The vacuum and
+one-particle sectors are acyclic, while a cutoff-complete absolute
+calculation in the lowest two-particle sector gives
+\[
+ H^4_{\mathrm{res,min}}
+ =\operatorname{span}\{[W_+^2],[W_-^2]\},
+ \qquad G_{\rm rep}=I_2.
+\]
+Here $G_{\rm rep}=I_2$ is the normalized Hermitian Gram matrix of the two residual
+representatives.  The survivors are ghost-dressed vertex or deformation
+classes, not one-particle graviton states.  Descent identifies their
+parity-even and parity-odd combinations with
+$C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}$ and
+$C_{\mu\nu\rho\sigma}\widetilde C^{\mu\nu\rho\sigma}$.  The first varies to
+the Bach equation; the second is the Pontryagin boundary direction.  After
+quotienting variationally trivial bulk functionals, the local dynamical
+deformation space is one-dimensional and has representative Gram matrix
+$I_1$.
+
+This algebraic residual theorem is exact once the on-shell Weyl module, the
+Hamada ghost polarization, and full residual conformal gauging are assumed.
+The last assumption is a physical choice: if $D$ is retained as a Hamiltonian
+or boundary charge, the contraction is not a physical quotient.  We
+separately formulate the hypotheses under which the result transfers to the
+complete free strict-pure-Weyl BV complex.  Formal detour identities and
+exact homogeneous-jet calculations through degrees two to six support that
+bridge, but the all-level Lorentzian cylinder-kernel theorem and the full
+zero-mode transfer remain open.  We claim neither a positive graviton Fock
+space nor quantum anomaly freedom.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}\label{sec:introduction}
+
+Pure conformal gravity in four dimensions is defined, up to an overall
+coupling and the Euler density, by the Weyl-square action
+\begin{equation}\label{eq:weyl-action}
+ S_W[g]=-\alpha_g\int_M d^4x\,\sqrt{-g}\,
+ C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}.
+\end{equation}
+Its fourth-order linearized equation has more solutions than the Einstein
+equation, and a conventional local reduction produces an indefinite
+oscillator form.  This familiar observation does not by itself determine the
+state space after all gauge constraints have been imposed.  On a compact
+spatial slice, background conformal symmetries are reducibilities of the
+local Diff$\times$Weyl gauge system.  Treating those residual transformations
+as gauge introduces a second, finite-dimensional reduction which is absent
+from a naive oscillator count.  It is also a substantive physical choice.
+In a Dirac or background-independence interpretation of a closed universe,
+all residual conformal transformations can be quotiented.  In a fixed
+cylinder conformal field theory, by contrast, $D$ is ordinarily the
+Hamiltonian and the conformal group acts globally.  This paper computes the
+first choice; it does not assert that strict pure-Weyl gravity uniquely
+selects it.
+
+The organizing question is therefore more basic than a sign assignment:
+before asking whether a gravitational mode has positive or negative norm,
+one must first determine whether it survives the full gauge reduction being
+imposed.  The exact answer below concerns the residual reduction; the bridge
+from that calculation to the complete local BV theory remains conditional.
+
+The present paper isolates that free classical problem on
+\begin{equation}
+ M=\R\times S^3,
+ \qquad
+ \bar g=-dt^2+d\Omega_3^2,
+\end{equation}
+with unit cylinder radius.  Three spaces must be distinguished:
+\begin{equation}\label{eq:three-levels}
+ \begin{aligned}
+ \text{local oscillator cohomology}
+ &\supseteq \text{classically integrable perturbations},\\
+ \text{classically integrable perturbations}
+ &\longrightarrow \text{residual-BRST classes}.
+ \end{aligned}
+\end{equation}
+The first contains the familiar Einstein, vector-descendant, and logarithmic
+or higher-derivative towers.  The last is obtained only after the residual
+$SO(4,2)$ constraints and their ghosts are included.  A linearized
+oscillator need not survive this final reduction.
+
+Our result is most naturally stated in the language of residual vertex
+cohomology.  The Hamada ghost polarization supplies a top-degree four-ghost
+factor of compact degree $-4$.  It pairs with scalar matter primaries of
+weight four.  The complete centered residual cohomology consists of two
+chiral Weyl-square classes, and their normalized residual representative
+Gram matrix is positive.  Their parity combinations are the dynamical
+Weyl-square density and the topological Pontryagin density.  Thus the
+positive matrix is attached to classical vertex or theory-space directions.
+It is not a positive norm on a propagating graviton Fock space; indeed, the
+one-particle residual cohomology vanishes.
+
+\paragraph{Relation to previous work.}
+The conformal deformation detour complex on obstruction-flat backgrounds
+was constructed by Branson and Gover \cite{BransonGover}; its formal
+self-adjointness and related Yang--Mills detour constructions were developed
+in \cite{GoverSombergSoucek}.  Cylinder harmonics, oscillator charges, and
+primary building blocks were developed by Hamada and Horata and by Hamada
+\cite{HamadaHorata,HamadaBuildingBlocks}.  In the broader
+conformal-mode/Riegert programme, Hamada identified the residual
+diffeomorphisms with cylinder conformal transformations
+\cite{HamadaCFT}, constructed the fifteen-generator residual BRST charge,
+used the product of four proper-conformal ghosts as the centered ghost
+vacuum, derived the scalar weight-four condition, and displayed a
+Weyl-square BRST state \cite{HamadaBRST}.  None of those ingredients is
+claimed as new here.  We use the harmonic and residual-algebra conventions,
+but we do not import the Riegert field or the quantum claims of that model.
+The Weyl-curvature module and its character are consistent with the general
+conformal higher-spin description and partition-function literature
+\cite{KuzenkoPonds,BeccariaBekaertTseytlin}.  Finally, the identification of
+$C^2$ as the unique local four-derivative self-interaction of one linear
+conformal graviton, under the assumptions stated there, is due to Boulanger
+and Henneaux \cite{BoulangerHenneaux}.
+
+The defensible new result is narrower and more concrete.  Starting with the
+parity-complete pure-Weyl coefficient module, we compute the complete
+minimal \emph{absolute} residual complex in the centered degree.  We prove
+that the vacuum and one-particle sectors vanish, that precisely two
+two-particle classes survive after the incoming-image test, and that their
+normalized Hermitian representative Gram matrix is $I_2$.  The standard
+Cartan homotopy makes the particle-number inventory exhaustive, and the
+Euler--Lagrange map splits the two positive directions into one dynamical
+and one topological class.
+
+\paragraph{Claim boundary.}
+Three statements must remain separate.
+\begin{enumerate}
+\item The \emph{algebraic residual theorem} is exact for the minimal
+absolute $SO(4,2)$ Chevalley--Eilenberg complex built on the on-shell Weyl
+module, the stated centered ghost polarization, and full residual conformal
+gauging.
+\item The identification of that algebraic answer with the complete free
+strict-pure-Weyl local-plus-residual BV cohomology is conditional.  It
+requires an all-level Lorentzian local-kernel theorem, a conformal-Killing
+zero-mode split, and a compact-degree-equivariant cyclic transfer.  The
+formal identities and finite exact tests are given here; their remaining
+field-theoretic hypotheses are displayed explicitly rather than hidden.
+\item Calling the resulting classes physical states additionally requires a
+boundary and gauge principle which makes all fifteen conformal generators,
+including $D$, gauge rather than global charges.  We call them
+\emph{candidate physical classes under full residual conformal gauging}.
+\end{enumerate}
+No statement in this paper establishes quantum BRST nilpotency, anomaly
+cancellation, interacting pseudo-unitarity, or a positive asymptotic
+particle space.
+
+The local-to-residual bridge belongs to the general subject of local BRST
+cohomology with antifields, gauge fixing, and descent
+\cite{BarnichBrandtHenneaux,BarnichHenneauxHurthSkenderis}.  Metsaev's
+ordinary-derivative BRST--BV construction gives a concrete realization of
+conformal fields and their conformal algebra on fields and antifields
+\cite{MetsaevBRSTBV}.  These works do not supply the cylinder zero-mode
+transfer used here, but they delimit what must be proved before the
+conditional bridge can be promoted to a strict pure-Weyl theorem.
+
+\section{The free local pure-Weyl complex}\label{sec:local-detour}
+
+\subsection{Gauge, curvature, and equation maps}
+
+Let $h_{\mu\nu}$ be a metric perturbation and let $(\xi^\mu,\sigma)$ be an
+infinitesimal Diff$\times$Weyl parameter.  The full linear gauge map is
+\begin{equation}\label{eq:full-K}
+ K(\xi,\sigma)_{\mu\nu}
+ =\cL_\xi\bar g_{\mu\nu}+2\sigma\bar g_{\mu\nu}
+ =2\bar\nabla_{(\mu}\xi_{\nu)}+2\sigma\bar g_{\mu\nu}.
+\end{equation}
+After quotienting the trace, it becomes the conformal Killing operator
+\begin{equation}\label{eq:K0}
+ (K_0\xi)_{\mu\nu}
+ =2\bar\nabla_{(\mu}\xi_{\nu)}
+ -\frac12\bar g_{\mu\nu}\bar\nabla\!\cdot\!\xi.
+\end{equation}
+Let
+\begin{equation}
+ C_1h=\left.\frac{d}{d\varepsilon}
+ C[\bar g+\varepsilon h]\right|_{\varepsilon=0}
+\end{equation}
+be the linearized Weyl-curvature map, and let $B_{\rm lin}$ denote the
+action-normalized linearized Bach operator.  Formal adjoints use the
+spacetime action pairing on a domain for which temporal and spatial boundary
+terms vanish.
+
+The conformal cylinder is conformally flat.  Naturality and conformal
+covariance therefore give the exact local identity
+\begin{equation}\label{eq:C1K}
+ \boxed{C_1K=0}
+\end{equation}
+for arbitrary local gauge parameters, not only for the fifteen residual
+conformal Killing parameters.
+
+\begin{proposition}[Action-normalized factorization]\label{prop:factorization}
+Use the repository normalization
+\begin{equation}\label{eq:Sred}
+ S_{\rm red}[g]=\int\sqrt{-g}
+ \left(R_{\mu\nu}R^{\mu\nu}-\frac13R^2\right)
+ =\frac12\int\sqrt{-g}\,(C^2-E_4).
+\end{equation}
+On a conformally flat background, modulo the Euler boundary term,
+\begin{equation}\label{eq:Bfactor}
+ \boxed{B_{\rm lin}=C_1^\sharp C_1.}
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:detour-identities}
+ B_{\rm lin}K=0,
+ \qquad
+ K^\sharp B_{\rm lin}=0,
+ \qquad
+ B_{\rm lin}^\sharp=B_{\rm lin}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Since $C[\bar g]=0$, the mixed second variation of \eqref{eq:Sred} is
+\begin{equation}
+ \delta_h\delta_k S_{\rm red}
+ =\langle C_1h,C_1k\rangle_{\W}.
+\end{equation}
+The definition
+$\delta S_{\rm red}=\langle h,\cE(g)\rangle$ and
+$B_{\rm lin}=D\cE|_{\bar g}$ gives
+$\langle h,B_{\rm lin}k\rangle
+=\langle C_1h,C_1k\rangle_{\W}$, proving
+\eqref{eq:Bfactor}.  Equation \eqref{eq:C1K} then gives the first detour
+identity, formal self-adjointness gives the second, and Hessian symmetry gives
+the third.
+\end{proof}
+
+The Weyl-fibre pairing in Lorentz signature is indefinite.  Thus
+$C_1^\sharp C_1$ is a formal-adjoint factorization, not a positivity
+factorization.  In trace-free conformal geometry the corresponding local
+sequence is
+\begin{equation}\label{eq:detour-sequence}
+ \Gamma(T)
+ \xrightarrow{K_0}
+ \Gamma(S^2_0T^*)
+ \xrightarrow{B_{\rm lin}}
+ \Gamma(S^2_0T^*)
+ \xrightarrow{K_0^\sharp}
+ \Gamma(T^*).
+\end{equation}
+On Bach-flat backgrounds this is the conformal deformation detour complex
+of \cite{BransonGover}.  Formal self-adjointness holds in all signatures;
+ellipticity is a Riemannian statement and is not assumed on the Lorentzian
+cylinder.
+
+\subsection{What the local identities do not yet prove}
+
+The middle local cohomology relevant to the free field is
+\begin{equation}\label{eq:local-middle}
+ \frac{\ker B_{\rm lin}}{\im K}.
+\end{equation}
+Equations \eqref{eq:C1K}--\eqref{eq:detour-identities} prove that this
+quotient is defined, but not that it is globally isomorphic to a prescribed
+normalizable cylinder module.  In particular, the implication
+\begin{equation}\label{eq:local-target}
+ \frac{\ker B_{\rm lin}}{\im K}
+ \stackrel{?}{\cong}\W_+\oplus\W_-
+\end{equation}
+requires a Lorentzian domain analysis, an explicit curvature intertwiner,
+and removal of all local ghost and nonminimal doublets.
+
+An exact finite-jet calculation gives strong evidence without promoting it
+to an all-level theorem.  On homogeneous Euclidean polynomial jets of
+degree $n=2,\ldots,6$, the matrices for $K$, $C_1$, and $B_1$ obey
+\begin{equation}
+ C_1K=0,
+ \qquad B_1K=0,
+ \qquad \ker C_1=\im K.
+\end{equation}
+The exact ranks are shown in Table~\ref{tab:detour-ranks}.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{c@{\quad}rrrrrrrr}
+\toprule
+$n$ & $\dim G_n$ & $\dim h_n$ & $\dim W_{n-2}$ & $\dim B_{n-4}$
+& $\rank K$ & $\rank C_1$ & $\rank B_1$
+& $\dim(\ker B_1/\im K)$\\
+\midrule
+2 & 90  & 100 & 10  & 0   & 90  & 10  & 0  & 10\\
+3 & 160 & 200 & 40  & 0   & 160 & 40  & 0  & 40\\
+4 & 259 & 350 & 100 & 10  & 259 & 91  & 9  & 82\\
+5 & 392 & 560 & 200 & 40  & 392 & 168 & 32 & 136\\
+6 & 564 & 840 & 350 & 100 & 564 & 276 & 74 & 202\\
+\bottomrule
+\end{tabular}
+\caption{Exact homogeneous-polynomial detour ranks.  The calculation is a
+finite Euclidean jet certificate, not the missing all-level Lorentzian
+cylinder intertwiner.}
+\label{tab:detour-ranks}
+\end{table}
+
+The quotient dimensions $(10,40,82,136,202)$ agree with the first five
+levels of the parity-complete $E/A/L$ module introduced below.  The same
+calculation separates a $15$-dimensional kernel of the low-degree gauge map,
+generated by four translations, six rotations, one dilation, and four
+special conformal transformations.  These are exact finite results.  The
+all-level version of \eqref{eq:local-target} remains the principal local
+bridge stated in Section~\ref{sec:transfer}.
+
+\subsection{A prospective Lorentzian proof route}
+
+The missing implication is global and hyperbolic, not another formal detour
+identity.  A proof must first choose its cylinder domain---for example,
+smooth finite-energy solutions with a specified frequency completion---
+because spacelike-compact, distributional, and unrestricted smooth solution
+spaces need not have the same quotient.  The natural route is then:
+\begin{enumerate}
+\item gauge-fix the linear Bach complex so that its fourth-order wave
+operator factors into normally hyperbolic second-order factors, while
+isolating the conformal-Killing zero modes;
+\item construct advanced/retarded homotopies on the nonzero-mode complex,
+using the framework of Green-hyperbolic complexes
+\cite{GreenHyperbolic};
+\item prove that $C_1$ is injective on the resulting metric quotient and
+surjective onto the chosen on-shell curvature module, with the Bianchi and
+Bach identities imposed;
+\item separate the fifteen global reducibility parameters rather than
+burying them in local exactness, as required by the general treatment of
+global reducibility modules \cite{BarnichBekaertGrigoriev}; and
+\item use the character \eqref{eq:weyl-character}, BGG structure
+\cite{CapBGG}, and the finite ranks above only as completeness checks.
+\end{enumerate}
+Ordinary-derivative BRST--BV formulations of conformal fields provide a
+concrete field/antifield language for the gauge-fixed step
+\cite{MetsaevBRSTBV}.  None of these references by itself proves the
+Lorentzian cylinder quotient \eqref{eq:local-target}; the list records a
+proof programme, not an additional premise of the exact residual theorem.
+
+\section{The on-shell Weyl module}\label{sec:weyl-module}
+
+\subsection{Character and cylinder towers}
+
+We now define the coefficient module used in the exact residual
+calculation.  A positive-chirality Weyl curvature is a conformal primary
+with labels
+\begin{equation}
+ (\Delta;j_L,j_R)=(2;2,0),
+\end{equation}
+and the opposite chirality is its parity conjugate.  The Bach equation is in
+$(4;1,1)$ and its differential identity is in
+$(5;\tfrac12,\tfrac12)$.  The resulting one-chirality character is
+\begin{equation}\label{eq:weyl-character}
+ \chi_+(q)
+ =\chi_{(2;2,0)}-\chi_{(4;1,1)}
+ +\chi_{(5;\frac12,\frac12)}
+ =\frac{5q^2-9q^4+4q^5}{(1-q)^4}.
+\end{equation}
+This is the character of the on-shell Weyl-curvature module $\W_+$.
+Character equality is not, by itself, a proof of the local metric detour
+isomorphism \eqref{eq:local-target}.
+
+On $\R\times S^3$, $\W_+$ decomposes into three multiplicity-free towers:
+\begin{align}
+ E_n^+&:\quad
+ \left(\frac{n+2}{2},\frac{n-2}{2}\right),
+ &\dim E_n&=(n+3)(n-1), &&n\ge2,\label{eq:E-tower}\\
+ A_n^+&:\quad
+ \left(\frac n2,\frac{n-2}{2}\right),
+ &\dim A_n&=(n+1)(n-1), &&n\ge3,\label{eq:A-tower}\\
+ L_n^+&:\quad
+ \left(\frac n2,\frac{n-4}{2}\right),
+ &\dim L_n&=(n+1)(n-3), &&n\ge4.\label{eq:L-tower}
+\end{align}
+The negative-chirality towers exchange $j_L$ and $j_R$.  Summing
+\eqref{eq:E-tower}--\eqref{eq:L-tower} reproduces
+\eqref{eq:weyl-character}.  For both chiralities the first levels have
+dimensions
+\begin{equation}
+ \dim\cH_2=10,
+ \quad \dim\cH_3=40,
+ \quad \dim\cH_4=82,
+ \quad \dim\cH_5=136,
+ \quad \dim\cH_6=202.
+\end{equation}
+
+The labels $E,A,L$ are cylinder oscillator labels only.  In particular,
+they should not be interpreted as three independently signable conformal
+representations.  Proper conformal transformations mix the towers.
+
+\subsection{Invariant form and exact generator action}
+
+In normalized cylinder coordinates the unique standard-real,
+parity-compatible invariant form is, up to overall convention,
+\begin{equation}\label{eq:Jconf}
+ J_{\rm conf}=+I_E\oplus(-I_A)\oplus(-I_L).
+\end{equation}
+It is nondegenerate and indefinite.  The proper conformal lowering and
+raising generators satisfy
+\begin{equation}\label{eq:J-adjoint}
+ (K^-_q)^\sharp=K^+_q,
+ \qquad X^\sharp=X\quad(X=D,SU(2)_L,SU(2)_R),
+\end{equation}
+where $X^\sharp=J_{\rm conf}^{-1}X^\dagger J_{\rm conf}$.
+
+Multiplicity one reduces each allowed lowering block to a scalar reduced
+coefficient.  With source energy $n$, the six stable families are
+\begin{align}
+ c_{EE}(n)&=\sqrt{\frac{2(n-1)(n+1)(n+3)}{n+2}},
+ &c_{AE}(n)&=\sqrt{\frac{8(n-1)}{(n-2)(n+2)}},\nonumber\\
+ c_{AA}(n)&=\sqrt{\frac{2(n-3)(n-1)(n+2)}{n-2}},
+ &c_{LE}(n)&=-\sqrt{\frac{2(n-3)}{n-2}},\label{eq:reduced-coefficients}\\
+ c_{LA}(n)&=\sqrt{\frac8{n-2}},
+ &c_{LL}(n)&=\sqrt{2(n-2)(n+1)}.\nonumber
+\end{align}
+Together with Clebsch--Gordan coefficients and \eqref{eq:J-adjoint}, these
+determine the all-level one-particle $\mathfrak{so}(4,2)$ action.
+The exact reconstruction verifies the conformal commutators on every
+interior level of a finite energy buffer; the top shell is used only as a
+buffer and is never mistaken for a finite conformal representation.
+
+The free Fock coefficient module is the bosonic second quantization
+\begin{equation}\label{eq:fock-module}
+ \F_{\W}=\operatorname{Sym}(\W_+\oplus\W_-),
+\end{equation}
+with multiplicative lift of \eqref{eq:Jconf}.  The residual generators
+preserve oscillator particle number.
+
+\section{Hamiltonian moment-map normalization}\label{sec:moment-map}
+
+The residual action is not introduced as an arbitrary matrix
+representation.  In oscillator coordinates $z$, write the symplectic form
+as
+\begin{equation}\label{eq:symplectic-form}
+ \Omega=i\,d\bar z\,J\wedge dz.
+\end{equation}
+If a conformal generator $X$ acts linearly by $\delta_Xz=K_Xz$, its
+quadratic Hamiltonian moment map is
+\begin{equation}\label{eq:moment-map}
+ \mu_X(z,\bar z)=\bar z\,M_Xz,
+ \qquad M_X=JK_X,
+ \qquad d\mu_X=\iota_{X_X}\Omega.
+\end{equation}
+The $J$-adjoint identities ensure the correct reality of $\mu_X$.
+
+In the curved-cylinder wave normalization used for the independent Taub
+calculation, comparison with the quadratic action fixes the proper-conformal
+kernel to
+\begin{equation}\label{eq:taub-normalization}
+ M_{\rm Taub}=-\frac{\sqrt2}{4\pi}\,J K^-
+\end{equation}
+up to the explicitly declared orientation and harmonic phases.  Two
+independent curvature components fix the common coefficient; it is not a
+one-entry fit.  An exact two-chirality jet through source energy four
+verifies all fifteen moment-map components and the full conformal algebra on
+interior energies two and three.
+
+The terms \emph{moment map} and \emph{Taub charge} refer to related but not
+identical constructions.  Equation \eqref{eq:moment-map} is the Hamiltonian
+moment map of the residual linear action on oscillator phase space.  A Taub
+charge is the pairing of a quadratic field-equation source with an adjoint
+zero mode; on a compact Cauchy surface it is a second-order integrability
+condition for extending a linearized perturbation to a nonlinear solution
+\cite{AltasTekinLinearization,AltasTekinTaub}.  The local zero-mode transfer
+and the chosen boundary problem are what identify the two.  The finite
+calculation leading to \eqref{eq:taub-normalization} verifies that
+identification for the tested proper-conformal kernels.  It does not prove
+that every residual constraint in the full strict pure-Weyl BV problem is a
+Taub constraint, nor that declaring all residual charges gauge is forced.
+
+This section supplies the Hamiltonian normalization of the residual action
+and its Taub interpretation.  The cohomology theorem below depends only on
+the exact module action, not on interpreting a finite moment-map jet as a
+physical quotient.
+
+\section{Residual BRST and Cartan homotopy reduction}\label{sec:cartan}
+
+\subsection{The absolute residual complex}
+
+Let
+\begin{equation}
+ \g=\mathfrak{so}(4,2)
+\end{equation}
+with compact grading
+\begin{equation}\label{eq:g-grading}
+ \g=\g_{-1}\oplus\g_0\oplus\g_{+1},
+ \qquad \dim(\g_{-1},\g_0,\g_{+1})=(4,7,4).
+\end{equation}
+Here $D$ and $\mathfrak{so}(4)$ lie in $\g_0$, while proper conformal
+lowering and raising generators lie in $\g_{-1}$ and $\g_{+1}$.
+The dual ghosts carry the opposite compact degree.
+
+For a coefficient module $V\subset\F_{\W}$, the absolute residual complex
+is
+\begin{equation}\label{eq:CE-complex}
+ C^q(V)=V\otimes\Lambda^q\g^*,
+\end{equation}
+with Chevalley--Eilenberg differential
+\begin{equation}\label{eq:CE-differential}
+ d=c^a\rho(G_a)
+ -\frac12 f^a{}_{bc}c^bc^c\iota_a.
+\end{equation}
+It raises ghost number by one and preserves the total compact degree
+\begin{equation}\label{eq:total-degree}
+ \delta=D_{\rm matter}+D_{\rm ghost}.
+\end{equation}
+
+The standard centered polarization uses the product $v$ of the four ghosts
+dual to the raising generators.  It has
+\begin{equation}\label{eq:ghost-vacuum-degree}
+ \operatorname{gh}(v)=4,
+ \qquad D_{\rm ghost}(v)=-4.
+\end{equation}
+This is the residual ghost convention used in the cylinder construction of
+\cite{HamadaBRST}.  Here it is an algebraic input.  Its derivation from the
+strict pure-Weyl local BV zero-mode split is one of the hypotheses in
+Section~\ref{sec:transfer}; the broader Riegert sector of
+\cite{HamadaBRST} is not included.
+
+\subsection{Full residual gauging is a physical assumption}\label{sec:D-gauge}
+
+Hamada's background-independence programme identifies the transformations
+which preserve the cylinder gauge with residual diffeomorphisms and imposes
+the resulting conformal charges through BRST
+\cite{HamadaCFT,HamadaBRST}.  This supplies a direct precedent for the
+complex \eqref{eq:CE-complex}.  It does not prove that every quantization of
+strict pure-Weyl gravity must use the same quotient.
+
+There are at least two distinct cylinder problems.
+\begin{enumerate}
+\item In the \emph{fully gauged residual problem}, the cylinder is a gauge
+representative of a closed generally covariant system.  All fifteen
+conformal-Killing transformations, including compact time translation, are
+generated by residual constraints.  The ghost for $D$ exists and the Cartan
+homotopy below is an allowed operation.
+\item In the \emph{fixed-background cylinder problem}, $D$ is the
+Hamiltonian and $SO(4,2)$ is a global symmetry acting on states or
+observables.  Its eigenspaces are not quotiented.  The $D$ ghost and its
+contraction cannot be used to erase nonzero energy.
+\end{enumerate}
+Because $[K^-,K^+]$ contains $D$, the second problem is not obtained by
+simply deleting one ghost while leaving the rest of
+\eqref{eq:CE-differential} unchanged.  It requires a different relative or
+boundary-charge complex.  Theorem~\ref{thm:residual-main} answers only the
+first problem.  A strict pure-Weyl derivation must state the temporal
+boundary conditions, the residual gauge group, and the treatment of its
+charges before calling the result a physical state space.
+
+\subsection{Cartan homotopy}
+
+Let $\iota_D$ be contraction with the generator $D$ in the residual ghost
+exterior algebra.  The usual Cartan identity is
+\begin{equation}\label{eq:cartan-identity}
+ d\iota_D+\iota_Dd=\cL_D.
+\end{equation}
+
+\begin{theorem}[Cartan homotopy reduction to compact degree zero]\label{thm:cartan}
+Decompose the residual complex into total compact-degree eigenspaces,
+\begin{equation}
+ C=\bigoplus_{\delta}C_\delta,
+ \qquad \cL_D|_{C_\delta}=\delta\,\id.
+\end{equation}
+Every $C_\delta$ with $\delta\ne0$ is contractible.  Hence inclusion of the
+centered subcomplex is a quasi-isomorphism:
+\begin{equation}\label{eq:cartan-quasiiso}
+ \boxed{H^\bullet(C,d)\cong H^\bullet(C_{\delta=0},d).}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+On $C_\delta$ with $\delta\ne0$, define
+\begin{equation}
+ h_\delta=\frac{\iota_D}{\delta}.
+\end{equation}
+Equation \eqref{eq:cartan-identity} gives
+\begin{equation}
+ dh_\delta+h_\delta d=\id.
+\end{equation}
+Thus every closed vector of nonzero total degree has the explicit primitive
+$\delta^{-1}\iota_D\Psi$.  If $\cL_D$ has a nilpotent part, the same proof
+works wherever $\cL_D$ is invertible by using
+$h=\iota_D\cL_D^{-1}$.
+\end{proof}
+
+The theorem depends on treating $D$ as a residual gauge generator.  If
+cylinder time translation is retained as a physical Hamiltonian or a
+boundary charge, contraction by its ghost is not an allowed quotient and
+\eqref{eq:cartan-quasiiso} does not apply.
+
+\subsection{Finite centered inventory}
+
+At ghost number four, the minimal residual exterior algebra contains at
+most the four negative-degree ghosts, so
+\begin{equation}
+ D_{\rm ghost}\ge-4.
+\end{equation}
+At $\delta=0$ this implies
+\begin{equation}\label{eq:matter-bound}
+ D_{\rm matter}\le4.
+\end{equation}
+Every nonvacuum Weyl quantum has weight at least two.  Therefore only
+particle numbers $N=0,1,2$ can contribute to the centered ghost degree
+selected by the Hamada polarization.  All $N\ge3$ sectors have matter weight at least six and are
+contractible before any matrix-rank computation.
+
+\section{Complete centered cohomology}\label{sec:centered}
+
+\subsection{The relative weight-four kernel}
+
+The complete matter Fock space at weight four is
+\begin{equation}\label{eq:F4}
+ \F_4=\cH_4\oplus\operatorname{Sym}^2\cH_2,
+ \qquad \dim\F_4=82+55=137.
+\end{equation}
+The induced matter form has signature
+\begin{equation}\label{eq:F4-signature}
+ \operatorname{sig}(J_{\F_4})=(97,40).
+\end{equation}
+The relative conformal-primary conditions are
+\begin{equation}\label{eq:relative-conditions}
+ (D-4)|\Psi\rangle=0,
+ \qquad R|\Psi\rangle=0,
+ \qquad K^-_q|\Psi\rangle=0.
+\end{equation}
+Their exact kernel on the full space \eqref{eq:F4} is two-dimensional.  In a
+spin-two magnetic basis its normalized chiral generators are
+\begin{equation}\label{eq:W-square-states}
+ |W_\pm^2\rangle
+ =\sqrt{\frac25}|2,-2\rangle_\pm
+ -\sqrt{\frac25}|1,-1\rangle_\pm
+ +\frac1{\sqrt5}|0,0\rangle_\pm.
+\end{equation}
+They obey
+\begin{equation}\label{eq:relative-I2}
+ \langle W_r^2|J_{\F}|W_s^2\rangle=\delta_{rs}.
+\end{equation}
+This relative computation is not by itself an absolute cohomology theorem;
+incoming exact states must also be excluded.
+
+There is a simple representation-theoretic reason for the number two.  The
+weight-two one-particle space is
+\begin{equation}
+ E_2^+\oplus E_2^-=(2,0)\oplus(0,2).
+\end{equation}
+The symmetric square decomposes as
+\begin{equation}
+ \operatorname{Sym}^2(2,0)
+ \oplus\bigl[(2,0)\otimes(0,2)\bigr]
+ \oplus\operatorname{Sym}^2(0,2).
+\end{equation}
+There is one compact scalar in each same-chirality symmetric square and no
+scalar in the mixed product.  Since $E_2^\pm$ are lowest-weight spaces,
+every $K^-_q$ annihilates both factors, so these two scalar singlets are
+relative primaries.  By contrast, the one-particle weight-four space
+contains
+\begin{equation}
+ (3,1)\oplus(2,1)\oplus(2,0)
+\end{equation}
+and its parity conjugate, with no compact scalar.  Thus representation
+theory predicts the two relative candidates before the matrix calculation.
+The absolute computation below is still necessary to exclude exactness and
+to prove the one-particle acyclicity.  A complete Hochschild--Serre or
+Kostant-style derivation of the latter ranks would be a useful conceptual
+replacement for the large matrices \cite{CapBGG}.
+
+\subsection{Absolute kernel and image}
+
+The cutoff-complete absolute calculation supplies that missing test.  For
+one chirality in the one-particle coefficient module, the centered complex
+around ghost number four has exact dimensions
+\begin{equation}\label{eq:one-particle-complex}
+ C^3_0(290)\xrightarrow{d_3}
+ C^4_0(1311)\xrightarrow{d_4}
+ C^5_0(3657).
+\end{equation}
+The entries lie in
+$\mathbb Q(i,\sqrt2,\sqrt3,\sqrt5)$.  Good-prime reduction modulo $241$,
+combined with exact nilpotency, fixes the characteristic-zero ranks to
+\begin{equation}
+ \rank d_3=260,
+ \qquad \rank d_4=1051.
+\end{equation}
+Since the ranks sum to $1311$,
+\begin{equation}\label{eq:one-particle-zero}
+ H^4_{\delta=0,N=1}=0.
+\end{equation}
+Parity supplies the identical result for the opposite chirality.
+
+The lowest two-particle block begins at matter weight four.  Exterior
+saturation makes its beginning
+\begin{equation}\label{eq:two-particle-complex}
+ 0\longrightarrow C^4_0(55)
+ \xrightarrow{d_4}C^5_0(385)
+ \xrightarrow{d_5}C^6_0(1155).
+\end{equation}
+There is no incoming $C^3_0$ space: three residual ghosts have compact
+degree at least $-3$ and cannot center a two-particle coefficient of minimum
+weight four.  Exact nilpotency gives $d_5d_4=0$.
+The two vectors \eqref{eq:W-square-states} lie in $\ker d_4$, while a
+good-prime minor gives $\rank d_4\ge53$.  The displayed independent kernel
+vectors give $\rank d_4\le53$.  Therefore
+\begin{equation}\label{eq:two-particle-H}
+ H^4_{\delta=0,N=2}
+ =\operatorname{span}\{[W_+^2],[W_-^2]\}.
+\end{equation}
+
+For the vacuum coefficient module the complex is ordinary Lie-algebra
+cohomology.  Since
+\begin{equation}
+ H^\bullet(\mathfrak{so}(4,2);\C)
+ \cong\Lambda(u_3,u_5,u_7),
+\end{equation}
+one has
+\begin{equation}\label{eq:vacuum-zero}
+ H^4_{\delta=0,N=0}=0.
+\end{equation}
+
+\subsection{The normalized residual representative Gram matrix}
+
+The absolute ghost exterior algebra carries a complementary-degree pairing.
+The centered ghost representative $v$ in \eqref{eq:ghost-vacuum-degree} is
+normalized, using the standard residual insertion, so that
+\begin{equation}\label{eq:ghost-norm}
+ (v,v)_{\rm gh}=1.
+\end{equation}
+This fixed insertion is not a nondegenerate inner product on each individual
+ghost-number block.  It is sufficient here because the incoming
+two-particle space is empty and the two normalized representatives are
+fixed.  Multiplying \eqref{eq:ghost-norm} by the matter restriction
+\eqref{eq:relative-I2} gives their exact normalized residual representative
+Gram matrix.  It is Hermitian and sesquilinear on the complex oscillator
+module; the parity-compatible real structure gives its real restriction.
+We reserve the phrase ``transferred BV cohomological pairing'' for the
+cyclic-transfer statement in Section~\ref{sec:transfer}.
+
+\begin{theorem}[Complete cohomology under full residual conformal gauging]\label{thm:residual-main}
+Let the coefficient module be the free bosonic Fock space
+$\F(\W_+\oplus\W_-)$, let the residual algebra be
+$\mathfrak{so}(4,2)$, treat $D$ as a gauge generator, and use the centered
+ghost polarization \eqref{eq:ghost-vacuum-degree}.  Then the complete
+minimal absolute residual cohomology at the selected ghost number four is
+\begin{equation}\label{eq:main-result}
+ \boxed{
+ H^4_{\rm res,min}
+ =\operatorname{span}\{[W_+^2],[W_-^2]\},
+ \qquad G_{\rm rep}=I_2.}
+\end{equation}
+There is no one-particle class and no higher-matter-weight class in this
+minimal centered polarization.
+\end{theorem}
+
+\begin{proof}
+The Cartan homotopy, Theorem~\ref{thm:cartan}, eliminates every nonzero
+total compact degree.  The ghost-degree floor then reduces the centered
+inventory to $N=0,1,2$.  Equations \eqref{eq:vacuum-zero},
+\eqref{eq:one-particle-zero}, and \eqref{eq:two-particle-H} exhaust those
+sectors.  Equations \eqref{eq:relative-I2} and \eqref{eq:ghost-norm} give the
+pairing.
+\end{proof}
+
+\begin{remark}[What is positive]
+The theorem does not turn the indefinite one-particle module
+\eqref{eq:Jconf} into a positive particle space.  It removes the
+one-particle sector from this absolute residual cohomology.  The positive
+$I_2$ belongs to two ghost-dressed scalar vertex classes.
+\end{remark}
+
+\section{Descent and the dynamical/topological split}\label{sec:descent}
+
+\subsection{Why weight four is selected}
+
+Let $V_h$ be a scalar conformal primary of weight $h$, and let
+\begin{equation}\label{eq:ghost-volume}
+ \omega=\frac1{4!}\epsilon_{\mu\nu\rho\sigma}
+ c^\mu c^\nu c^\rho c^\sigma
+\end{equation}
+be the top lowering-ghost product.  In the residual descent conventions,
+\begin{equation}\label{eq:descent-transformations}
+ sV_h=c^\mu\nabla_\mu V_h
+ +\frac h4(\nabla_\mu c^\mu)V_h,
+ \qquad
+ s\omega=-\omega\nabla_\mu c^\mu,
+ \qquad \omega c^\mu=0.
+\end{equation}
+It follows that both the integrated density and the unintegrated
+ghost-dressed operator have the same closure defect,
+proportional to $h/4-1$.  Hence
+\begin{equation}\label{eq:descent-map}
+ \boxed{[\omega V_4]\longleftrightarrow
+ \left[\int_M d^4x\,\sqrt{-g}\,V_4\right].}
+\end{equation}
+The $-4$ compact degree of the ghost factor is therefore the conformal
+counterpart of the four-dimensional volume form, rather than an accidental
+normal-ordering shift.  This weight-four state--operator mechanism and a
+Weyl-square example were already explicit in \cite{HamadaBRST}; the new use
+here is the absolute exhaustion and pairing calculation of
+Section~\ref{sec:centered}.
+
+Three cohomological quotients appear and must not be identified without the
+transfer theorem:
+\begin{equation}\label{eq:three-cohomologies}
+ H^4\bigl(\mathfrak{so}(4,2);\F_{\W}\bigr),
+ \qquad
+ H^{0,4}_{\rm loc}(s\mid d),
+ \qquad
+ \frac{\{\text{integrated local functionals}\}}
+ {\{\text{allowed boundary functionals}\}}.
+\end{equation}
+The first is the residual Chevalley--Eilenberg group computed exactly in
+this paper.  The second is local BRST cohomology modulo spacetime descent
+\cite{BarnichBrandtHenneaux}.  The third depends on topology and boundary
+conditions.  Equation \eqref{eq:descent-map} identifies representatives in
+the residual construction; its promotion to an isomorphism with the strict
+pure-Weyl local group is part of the conditional bridge.
+
+\subsection{Parity basis}
+
+Parity exchanges $W_+^2$ and $W_-^2$.  Define
+\begin{equation}\label{eq:parity-basis}
+ e=\frac{W_+^2+W_-^2}{\sqrt2},
+ \qquad
+ o=\frac{W_+^2-W_-^2}{\sqrt2}.
+\end{equation}
+Up to the orientation-dependent factor of $i$ in Lorentzian self-duality
+conventions, descent identifies
+\begin{equation}
+ e\sim C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma},
+ \qquad
+ o\sim C_{\mu\nu\rho\sigma}\widetilde
+ C^{\mu\nu\rho\sigma}.
+\end{equation}
+Because \eqref{eq:parity-basis} is orthogonal, its Gram matrix remains
+$I_2$.
+
+\subsection{Euler--Lagrange quotient}
+
+Let
+\begin{equation}
+ \cE:H^4_{\rm res,min}
+ \longrightarrow
+ \{\text{local equation and gauge deformations}\}
+\end{equation}
+be the Euler--Lagrange map obtained by varying the integrated density.  In
+the conventions of Section~\ref{sec:local-detour},
+\begin{equation}\label{eq:EL-map}
+ \cE(e)=\lambda_B B_{\mu\nu},
+ \qquad \lambda_B\ne0,
+ \qquad
+ \cE(o)=0.
+\end{equation}
+The first identity is the Weyl-square variation.  Under locality,
+smoothness, Lorentz invariance, and a four-derivative bound, it is the unique
+nontrivial self-interaction of a single linear conformal graviton modulo
+equivalence \cite{BoulangerHenneaux}.
+
+The second identity is Chern--Weil transgression.  In a local frame,
+\begin{equation}\label{eq:chern-weil}
+ P_4=\Tr(R\wedge R)=dQ_3(\Gamma),
+\end{equation}
+where
+\begin{equation}\label{eq:CS3}
+ Q_3(\Gamma)=\Tr\left(
+ \Gamma\wedge d\Gamma+\frac23\Gamma\wedge\Gamma\wedge\Gamma
+ \right).
+\end{equation}
+Its variation is
+\begin{equation}\label{eq:Pvariation}
+ \delta P_4=2d\Tr(\delta\Gamma\wedge R),
+\end{equation}
+using the Bianchi identity.  On a finite cylinder, in a chosen global frame,
+\begin{equation}\label{eq:finite-cylinder-P}
+ \int_{[t_1,t_2]\times S^3}P_4
+ =\CS[\Gamma(t_2)]-\CS[\Gamma(t_1)].
+\end{equation}
+Thus fixed-endpoint or compactly supported variations have no bulk
+Euler--Lagrange derivative.
+
+Equations \eqref{eq:EL-map}--\eqref{eq:finite-cylinder-P} give the exact
+sequence
+\begin{equation}\label{eq:EL-exact-sequence}
+ 0\longrightarrow\operatorname{span}\{o\}
+ \longrightarrow H^4_{\rm res,min}
+ \xrightarrow{\cE}\operatorname{span}\{B_{\mu\nu}\}
+ \longrightarrow0.
+\end{equation}
+Quotienting variationally trivial local bulk functionals yields
+\begin{equation}\label{eq:dynamic-quotient}
+ H^4_{\rm dyn}
+ =H^4_{\rm res,min}/\ker\cE
+ \cong\operatorname{span}\{[C^2]\},
+ \qquad
+ \boxed{G_{\rm dyn,rep}=I_1.}
+\end{equation}
+Equivalently,
+\begin{equation}\label{eq:I2-split}
+ \boxed{I_2=I_1^{\rm dynamical}\oplus I_1^{\rm topological}.}
+\end{equation}
+
+The odd class is only locally and variationally trivial.  A gravitational
+theta parameter can affect boundaries, horizons, contact terms, large frame
+transformations, and nontrivial topology \cite{FischlerKundu}.  We do not
+quotient those global data without specifying the boundary problem.
+
+\section{The local-to-residual transfer}\label{sec:transfer}
+
+Theorem~\ref{thm:residual-main} begins with the locally reduced Weyl module.
+This section states exactly what is needed to identify it with the complete
+free pure-Weyl BV answer.
+
+\subsection{Equivariant Cartan transfer}
+
+Let $(C,q)$ be the gauge-fixed local free BV complex after the fifteen
+conformal-Killing zero modes have been separated, and let $H=H(q)$.  Suppose
+there is a strong deformation retract
+\begin{equation}\label{eq:SDR}
+ (H,0)\mathrel{\mathop{\rightleftarrows}^{\jmath}_{p}}(C,q),
+ \qquad
+ \jmath p=\id-qs-sq,
+ \qquad p\jmath=\id_H.
+\end{equation}
+Let $\Delta$ contain the residual zero-mode differential and mixed terms, so
+$Q=q+\Delta$.  With the sign convention in \eqref{eq:SDR}, homological
+perturbation gives
+\begin{align}\label{eq:HPL-data}
+ I&=(\id+s\Delta)^{-1}\jmath,
+ &P&=p(\id+\Delta s)^{-1},
+ &Q_H&=p\Delta(\id+s\Delta)^{-1}\jmath.
+\end{align}
+If
+\begin{equation}\label{eq:D-equivariance}
+ [D,q]=[D,\Delta]=[D,s]=0,
+ \qquad pD=D_Hp,
+ \qquad D\jmath=\jmath D_H,
+\end{equation}
+then the transferred operators
+\begin{equation}
+ \iota_D^H=P\iota_DI,
+ \qquad \cL_D^H=P\cL_DI
+\end{equation}
+obey
+\begin{equation}\label{eq:transferred-Cartan}
+ [Q_H,\iota_D^H]_+=\cL_D^H.
+\end{equation}
+Thus every transferred subspace on which $\cL_D^H$ is invertible is again
+contractible.
+
+\subsection{Cyclic transfer and the pairing}
+
+Let $\sharp$ be the graded adjoint for the full BV/Krein pairing.  Suppose
+the unperturbed retract is cyclic,
+\begin{equation}\label{eq:cyclic-SDR}
+ \jmath^\sharp=p,
+ \qquad (s\Delta)^\sharp=\Delta s.
+\end{equation}
+Then taking the adjoint of \eqref{eq:HPL-data} gives
+\begin{equation}
+ I^\sharp=P.
+\end{equation}
+Since $PI=\id_H$,
+\begin{equation}\label{eq:HPL-isometry}
+ \boxed{I^\sharp I=\id_H.}
+\end{equation}
+The dressed inclusion is therefore an exact isometry: contractible local
+dressing changes representatives without changing the reduced Gram matrix.
+
+In finite compact-degree blocks, a cyclic retract exists algebraically when
+$q^\sharp=-q$ and the induced cohomology pairing is nondegenerate.  One
+chooses a nondegenerate representative space $\cH\subset\ker q$, an
+isotropic complement to $\im q$, and defines $s$ as the inverse of $q$ on
+that complement.  The remaining field-theory obligation is to make this
+choice simultaneously compatible with compact degree, the cylinder domain,
+and the zero-mode split.
+
+\subsection{The filtered local-to-residual complex}
+
+The possible failure modes can be displayed without compressing them into
+the phrase ``no other row.''  After the conformal-Killing zero modes have
+been split from the local ghosts, introduce the residual-ghost filtration
+on the bicomplex
+\begin{equation}\label{eq:bicomplex}
+ C^{p,q}=\Lambda^p\g^*\widehat\otimes C^q_{\rm local},
+ \qquad
+ F^pC=\bigoplus_{r\ge p}C^{r,*}.
+\end{equation}
+Here $p$ is residual ghost number and $q$ is local BV degree.  A transferred
+degree-one differential has the filtered expansion
+\begin{equation}\label{eq:transferred-expansion}
+ Q_H=q_{\rm local}+d_{\rm res}
+ +\sum_{k\ge2}Q_{[k]},
+\end{equation}
+with bidegrees
+\begin{equation}
+ |q_{\rm local}|=(0,1),
+ \qquad |d_{\rm res}|=(1,0),
+ \qquad |Q_{[k]}|=(k,1-k).
+\end{equation}
+The terms $Q_{[k]}$ encode higher transferred ghost operations; assuming
+that they vanish is a substantive strictness assertion, not automatic
+homological bookkeeping.
+
+The resulting spectral sequence begins
+\begin{align}\label{eq:spectral-pages}
+ E_1^{p,q}
+ &=\Lambda^p\g^*\otimes H^q(q_{\rm local}),
+ &E_2^{p,q}
+ &=H^p\!\left(\g;H^q(q_{\rm local})\right),
+\end{align}
+and
+\begin{equation}\label{eq:spectral-bidegree}
+ d_r:E_r^{p,q}\longrightarrow E_r^{p+r,q-r+1}.
+\end{equation}
+For the desired term $E_r^{4,0}$, a higher differential can enter from
+$(4-r,r-1)$ for $r=2,3,4$, and can leave toward $(4+r,1-r)$ for
+$2\le r\le11$.  Thus local classes in degrees $q=1,2,3$ and antifield or
+negative-degree classes down to $q=-10$ are potential modifiers.  They must
+be inventoried or excluded; it is not enough to compute only the local
+degree-zero row.  Since $0\le p\le15$, this filtration is bounded.  On each
+finite compact-energy block the cochain spaces used here are finite, so the
+spectral sequence converges.  An infinite completed state space additionally
+requires a complete, separated filtration.  Even after collapse, a cyclic
+splitting is needed to control extension data and the Hermitian form.
+
+This is the standard local-BRST setting in which antifield and gauge-fixed
+cohomologies must be compared carefully
+\cite{BarnichBrandtHenneaux,BarnichHenneauxHurthSkenderis}.
+
+\begin{proposition}[Formal filtered-transfer criterion]\label{prop:formal-transfer}
+Suppose the zero-mode split produces \eqref{eq:bicomplex}; the filtration is
+convergent; $H^q(q_{\rm local})$ vanishes in every row that can enter or
+leave $(4,0)$; and the transferred differential on $H^0(q_{\rm local})$ is
+the strict residual Chevalley--Eilenberg differential, with all relevant
+$Q_{[k]}$ absent.  Then the full cohomology in the selected filtered degree
+is isomorphic, as a vector space, to the residual group
+\begin{equation}
+ H^4\!\left(\g;H^0(q_{\rm local})\right).
+\end{equation}
+If in addition the retract is compact-degree equivariant and cyclic, the
+Cartan homotopy and the cohomological Hermitian pairing transfer, and the
+dressed inclusion is the isometry \eqref{eq:HPL-isometry}.
+\end{proposition}
+
+\begin{proof}
+Under the stated row and strictness assumptions no differential
+\eqref{eq:spectral-bidegree} enters or leaves $(4,0)$, so the bounded
+spectral sequence collapses there to its $E_2$ value.  The equivariant and
+cyclic statements are \eqref{eq:transferred-Cartan} and
+\eqref{eq:HPL-isometry}.  The cyclic splitting fixes the extension of the
+pairing from the associated graded object.
+\end{proof}
+
+\subsection{Pure-Weyl field-theoretic hypotheses}
+
+\begin{conjecture}[Strict pure-Weyl zero-mode transfer]\label{hyp:pure-weyl}
+The gauge-fixed free strict-pure-Weyl BV complex on the stated cylinder
+domain has the following properties.
+\begin{enumerate}
+\item Its local Diff$\times$Weyl ghosts split exactly into the fifteen
+conformal-Killing zero modes and a nonzero-mode complement, without double
+counting either sector.
+\item After nonminimal doublets are contracted,
+\begin{equation}
+ H^0(q_{\rm local})\cong\F(\W_+\oplus\W_-),
+\end{equation}
+which includes the all-level Lorentzian cylinder isomorphism
+\eqref{eq:local-target}.
+\item The local ghost and antifield rows which could enter or leave
+$E_r^{4,0}$ in \eqref{eq:spectral-bidegree} vanish, and the filtration is
+complete and convergent on the chosen function space.
+\item A compact-degree-equivariant cyclic strong deformation retract exists
+and satisfies \eqref{eq:D-equivariance} and \eqref{eq:cyclic-SDR}.
+\item The transferred differential is the strict residual
+$\mathfrak{so}(4,2)$ Chevalley--Eilenberg differential
+\eqref{eq:CE-differential}; the higher operations $Q_{[k]}$ vanish or are
+removed by a filtered cyclic equivalence in the centered window.
+\item The zero-mode measure induces the Hamada ghost polarization with the
+degree and normalization \eqref{eq:ghost-vacuum-degree} and
+\eqref{eq:ghost-norm}, and the parity-compatible real structure transfers.
+\end{enumerate}
+\end{conjecture}
+
+These are field-theoretic hypotheses, not consequences of the exact
+residual matrices.  In particular, Items 3 and 5 contain the two mechanisms
+by which the residual answer could fail to equal the full BV answer.
+
+\begin{corollary}[Conditional strict-pure-Weyl result]\label{cor:conditional}
+If Field-Theoretic Hypothesis~\ref{hyp:pure-weyl} holds, the complete free
+classical local-plus-residual BV cohomology in the selected degree is
+\eqref{eq:main-result}.  Its transferred cohomological Hermitian form is
+$I_2$, and its local Euler--Lagrange quotient is
+\eqref{eq:dynamic-quotient} with form $I_1$.
+\end{corollary}
+
+\begin{proof}
+Items 1--3 identify the filtered complex and coefficient module required by
+Proposition~\ref{prop:formal-transfer}.  Items 4--5 transfer the Cartan
+homotopy, strict residual differential, and pairing.  Item 6 identifies the
+selected degree and normalization.  The exact residual theorem then gives
+\eqref{eq:main-result}, while \eqref{eq:HPL-isometry} promotes its
+representative Gram matrix to the transferred cohomological form.
+\end{proof}
+
+The formal detour theorem, factorization \eqref{eq:Bfactor},
+fifteen-dimensional zero-mode count, and finite jet table are exact inputs.
+Separate finite-dimensional fixtures verify
+\eqref{eq:transferred-Cartan} and \eqref{eq:HPL-isometry} with a genuinely
+dressed inclusion.  They do not instantiate the full pure-Weyl field
+complex.  The unproved core is the Lorentzian local-kernel theorem and the
+row/strictness assertions made explicit above.
+
+\section{Scope, interpretation, and open questions}\label{sec:scope}
+
+\paragraph{Residual gauge choice.}
+The result is specific to quotienting the full residual $SO(4,2)$ action on
+the compact cylinder.  If some generators are retained as global or
+asymptotic charges, the physical complex is different.  In particular,
+Cartan contraction cannot be used to erase nonzero $D$ energy when $D$ is
+the physical Hamiltonian.
+
+\paragraph{No positive graviton Fock claim.}
+The unreduced module remains indefinite and the one-particle residual
+cohomology is zero.  The positive classes are weight-four scalar vertices.
+Calling $I_2$ a positive graviton Hilbert space would therefore misidentify
+both the cohomological degree and the state--operator map.
+
+\paragraph{Classical and free.}
+The result concerns the free classical complex and its finite residual
+reduction.  It does not show that the interaction preserves the reduced
+space or pairing.  Nor does it address the quantum master equation.  A local
+Diff$\times$Weyl anomaly could obstruct quantum nilpotency even if
+Corollary~\ref{cor:conditional} is fully established.
+
+\paragraph{Vertex versus dynamics.}
+The two residual classes do not define two independent local gravitational
+dynamics.  The parity-even class is the Weyl action direction; the
+parity-odd class is a theta direction, locally related by a canonical
+boundary transformation.  The positive dynamical quotient is therefore
+one-dimensional.
+
+\paragraph{The remaining classical theorem.}
+The highest-priority mathematical task is the all-level Lorentzian cylinder
+identification
+\begin{equation}
+ \ker B_{\rm lin}/\im K\cong\W_+\oplus\W_-
+\end{equation}
+inside the complete local BV complex, followed by a compact-degree
+equivariant cyclic zero-mode transfer.  The exact ranks in
+Table~\ref{tab:detour-ranks} are a finite certificate and a regression rail,
+not a substitute for that proof.
+
+\section{Conclusion}\label{sec:conclusion}
+
+The conventional free oscillator description of pure conformal gravity on
+$\R\times S^3$ is indefinite.  Residual conformal reduction changes the
+question rather than re-signing those oscillators.  The absolute residual
+complex carries a Cartan contraction which eliminates every noncentered
+compact degree.  At the ghost number four selected by the centered
+polarization this turns the apparent
+infinite problem into the three sectors $N=0,1,2$.  The first two are
+acyclic; the last has exactly two classes and positive Gram matrix:
+\begin{equation*}
+ H^4_{\rm res,min}
+ =\operatorname{span}\{[W_+^2],[W_-^2]\},
+ \qquad G_{\rm rep}=I_2.
+\end{equation*}
+Descent identifies them as the Weyl-square and Pontryagin vertex directions,
+and the quotient by variationally trivial bulk functionals leaves one
+positive dynamical direction.
+
+The result is both stronger and narrower than a sampled positivity
+calculation.  It is exhaustive for the stated minimal residual complex, but
+it concerns vertices rather than propagating particles.  Its promotion to
+the full free pure-Weyl BV theory is controlled by the explicit hypotheses
+of Corollary~\ref{cor:conditional}.  Quantum consistency and interaction
+descent are separate questions.
+
+\appendix
+
+\section{Conventions}\label{app:conventions}
+
+The cylinder radius is one and the Lorentzian signature is $(-,+,+,+)$.
+Compact energy is the eigenvalue of $D=i\partial_t$ in the oscillator
+convention.  The compact algebra is
+$SO(4)\cong SU(2)_L\times SU(2)_R$.  A label $(j_L,j_R)$ has dimension
+$(2j_L+1)(2j_R+1)$.  Positive chirality means the lowest Weyl primary
+$(2;2,0)$; parity exchanges $j_L$ and $j_R$.
+
+The normalized module convention is \eqref{eq:Jconf}.  The reduced curvature
+action \eqref{eq:Sred} differs by an overall factor and sign from the common
+$-\int C^2$ oscillator convention.  All moment-map comparisons derive the
+symplectic form and Taub kernel from the same action, so the overall action
+factor cancels.  Lorentzian self-duality may insert a factor of $i$ in the
+odd parity combination; no conclusion depends on that convention.
+
+The residual generator degrees are $(0^7,-1^4,+1^4)$ and dual ghost degrees
+are their negatives.  Ghost number and compact degree are independent.
+The selected absolute residual degree in this paper is ghost number four,
+fixed by \eqref{eq:ghost-vacuum-degree}; it is not ordinary ghost number
+zero.  We call it a candidate physical degree only under the full residual
+gauging specified in Section~\ref{sec:D-gauge}.
+
+\section{Exact rank certification}\label{app:ranks}
+
+The one-particle matrices contain radicals.  They are represented over
+\begin{equation}
+ K=\mathbb Q(i,\sqrt2,\sqrt3,\sqrt5).
+\end{equation}
+For a lower bound on rank, the calculation maps this field to
+$\mathbb F_{241}$ by
+\begin{equation}
+ i\mapsto64,
+ \qquad \sqrt2\mapsto22,
+ \qquad \sqrt3\mapsto56,
+ \qquad \sqrt5\mapsto103.
+\end{equation}
+Each image obeys its defining square relation.  A nonzero minor after this
+good-prime reduction is a nonzero characteristic-zero minor.  Exact
+nilpotency provides the complementary upper bound
+\begin{equation}
+ \rank d_{q-1}+\rank d_q\le\dim C^q.
+\end{equation}
+For the one-particle complex the modular lower bounds saturate this inequality.
+For the two-particle complex the two explicit independent kernel vectors
+provide the upper bound which the modular rank saturates.  Thus the ranks
+quoted in Section~\ref{sec:centered} are exact characteristic-zero ranks,
+not probabilistic modular estimates.
+
+\section{Claim-status and verification index}\label{app:verification}
+
+The scientific input was frozen at repository commit
+\begin{center}
+\texttt{e928f257c25099eb534eb34109dfc1dc6a3127a1}.
+\end{center}
+The companion snapshot records the environment, hashes, expected-failure
+guards, and command lines.  The complete paper verification is run with
+\begin{verbatim}
+python3 symbolic/verify_conformal_paper_free.py
+\end{verbatim}
+
+\begin{center}
+\footnotesize
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.25\textwidth}
+                >{\raggedright\arraybackslash}p{0.17\textwidth}
+                >{\raggedright\arraybackslash}p{0.48\textwidth}}
+\toprule
+Claim & Status & Evidence / boundary\\
+\midrule
+Formal pure-Weyl detour identities & Exact & Branson--Gover theorem plus
+action-normalized factorization and finite scalar-block audits.\\
+Euclidean polynomial detour ranks, degrees $2$--$6$ & Exact finite
+certificate & Rational matrices verify kernels, ranks, and the $15$ residual
+zero modes; no all-level or Lorentzian identification is inferred.\\
+On-shell Weyl module and stable generator coefficients & Exact module
+construction & Character, tower inventory, invariant form, and cutoff-stable
+conformal brackets.\\
+Residual Cartan homotopy reduction & Theorem & Explicit homotopy
+$\iota_D/\delta$ on every nonzero total degree; this is a quotient only in
+the full residual-gauging problem.\\
+Centered vacuum and one-particle sectors & Exact & Semisimple Lie-algebra
+cohomology for the vacuum; cutoff-complete absolute rank certificate for
+one particle.\\
+Centered two-particle sector and $G_{\rm rep}=I_2$ & Exact residual theorem &
+Independent relative and absolute calculations; empty incoming absolute
+space and exact rank $53$.\\
+Vertex descent and dynamical/topological split & Exact locally & Weight-four
+descent, Chern--Weil transgression, and Euler--Lagrange quotient.  Global
+theta effects are retained.\\
+Full local-plus-residual pure-Weyl BV result & Conditional & Requires
+Field-Theoretic Hypothesis~\ref{hyp:pure-weyl}; the all-level Lorentzian
+local-kernel theorem, row inventory, and strict transfer remain open.\\
+Interpretation as a physical state space & Choice-dependent & Requires a
+boundary and gauge principle that treats all fifteen generators, including
+$D$, as gauge rather than global charges.\\
+Quantum anomaly freedom and interacting probability & Not claimed & Outside
+the scope of this paper.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{thebibliography}{99}
+
+\bibitem{BransonGover}
+T.~Branson and A.~R.~Gover,
+``The conformal deformation detour complex for the obstruction tensor,''
+\href{https://arxiv.org/abs/math/0605192}{arXiv:math/0605192}.
+
+\bibitem{GoverSombergSoucek}
+A.~R.~Gover, P.~Somberg, and V.~Sou\v{c}ek,
+``Yang--Mills detour complexes and conformal geometry,''
+Commun. Math. Phys. \textbf{278} (2008) 307--327,
+\href{https://arxiv.org/abs/math/0606401}{arXiv:math/0606401}.
+
+\bibitem{GreenHyperbolic}
+M.~Benini, G.~Musante, and A.~Schenkel,
+``Green hyperbolic complexes on Lorentzian manifolds,''
+Commun. Math. Phys. (2023),
+\href{https://doi.org/10.1007/s00220-023-04807-5}{doi:10.1007/s00220-023-04807-5},
+\href{https://arxiv.org/abs/2207.04069}{arXiv:2207.04069}.
+
+\bibitem{CapBGG}
+A.~\v{C}ap,
+``Overdetermined systems, conformal geometry, and the BGG complex,''
+in \emph{Symmetries and Overdetermined Systems of Partial Differential
+Equations}, IMA Vol. Math. Appl. \textbf{144} (Springer, 2008) 1--24,
+\href{https://arxiv.org/abs/math/0610225}{arXiv:math/0610225}.
+
+\bibitem{HamadaHorata}
+K.-j.~Hamada and S.~Horata,
+``Conformal algebra and physical states in non-critical 3-brane on
+$\R\times S^3$,''
+Prog. Theor. Phys. \textbf{110} (2003) 1169--1210,
+\href{https://arxiv.org/abs/hep-th/0307008}{arXiv:hep-th/0307008}.
+
+\bibitem{HamadaBuildingBlocks}
+K.-j.~Hamada,
+``Building blocks of physical states in a non-critical 3-brane on
+$\R\times S^3$,''
+Int. J. Mod. Phys. A \textbf{20} (2005) 5353--5398,
+\href{https://arxiv.org/abs/hep-th/0402136}{arXiv:hep-th/0402136}.
+
+\bibitem{HamadaCFT}
+K.-j.~Hamada,
+``Conformal field theory on $\R\times S^3$ from quantized gravity,''
+Int. J. Mod. Phys. A \textbf{24} (2009) 3073--3110,
+\href{https://arxiv.org/abs/0811.1647}{arXiv:0811.1647}.
+
+\bibitem{HamadaBRST}
+K.-j.~Hamada,
+``BRST analysis of physical fields and states for 4D quantum gravity on
+$\R\times S^3$,''
+Phys. Rev. D \textbf{86} (2012) 124006,
+\href{https://arxiv.org/abs/1202.4538}{arXiv:1202.4538}.
+
+\bibitem{KuzenkoPonds}
+S.~M.~Kuzenko and M.~Ponds,
+``Conformal geometry and (super)conformal higher-spin gauge theories,''
+JHEP \textbf{05} (2019) 113,
+\href{https://arxiv.org/abs/1902.08010}{arXiv:1902.08010}.
+
+\bibitem{BeccariaBekaertTseytlin}
+M.~Beccaria, X.~Bekaert, and A.~A.~Tseytlin,
+``Partition function of free conformal higher spin theory,''
+JHEP \textbf{08} (2014) 113,
+\href{https://arxiv.org/abs/1406.3542}{arXiv:1406.3542}.
+
+\bibitem{BoulangerHenneaux}
+N.~Boulanger and M.~Henneaux,
+``A derivation of Weyl gravity,''
+Annalen Phys. \textbf{10} (2001) 935--964,
+\href{https://arxiv.org/abs/hep-th/0106065}{arXiv:hep-th/0106065}.
+
+\bibitem{BarnichBrandtHenneaux}
+G.~Barnich, F.~Brandt, and M.~Henneaux,
+``Local BRST cohomology in gauge theories,''
+Phys. Rept. \textbf{338} (2000) 439--569,
+\href{https://arxiv.org/abs/hep-th/0002245}{arXiv:hep-th/0002245}.
+
+\bibitem{BarnichHenneauxHurthSkenderis}
+G.~Barnich, M.~Henneaux, T.~Hurth, and K.~Skenderis,
+``Cohomological analysis of gauged-fixed gauge theories,''
+Phys. Lett. B \textbf{492} (2000) 376--384,
+\href{https://arxiv.org/abs/hep-th/9910201}{arXiv:hep-th/9910201}.
+
+\bibitem{MetsaevBRSTBV}
+R.~R.~Metsaev,
+``BRST--BV approach to conformal fields,''
+J. Phys. A \textbf{49} (2016) 175401,
+\href{https://arxiv.org/abs/1511.01836}{arXiv:1511.01836}.
+
+\bibitem{BarnichBekaertGrigoriev}
+G.~Barnich, X.~Bekaert, and M.~Grigoriev,
+``Notes on conformal invariance of gauge fields,''
+J. Phys. A \textbf{48} (2015) 505402,
+\href{https://arxiv.org/abs/1506.00595}{arXiv:1506.00595}.
+
+\bibitem{AltasTekinLinearization}
+E.~Altas and B.~Tekin,
+``Linearization instability for generic gravity in AdS,''
+Phys. Rev. D \textbf{97} (2018) 024028,
+\href{https://arxiv.org/abs/1705.10234}{arXiv:1705.10234}.
+
+\bibitem{AltasTekinTaub}
+E.~Altas and B.~Tekin,
+``Second order perturbation theory in general relativity: Taub charges as
+integral constraints,''
+Phys. Rev. D \textbf{99} (2019) 104078,
+\href{https://arxiv.org/abs/1903.11982}{arXiv:1903.11982}.
+
+\bibitem{ChevalleyEilenberg}
+C.~Chevalley and S.~Eilenberg,
+``Cohomology theory of Lie groups and Lie algebras,''
+Trans. Amer. Math. Soc. \textbf{63} (1948) 85--124.
+
+\bibitem{FischlerKundu}
+W.~Fischler and S.~Kundu,
+``Physical effects of the gravitational $\Theta$-parameter,''
+JHEP \textbf{05} (2017) 098,
+\href{https://arxiv.org/abs/1612.06010}{arXiv:1612.06010}.
+
+\end{thebibliography}
+
+\end{document}

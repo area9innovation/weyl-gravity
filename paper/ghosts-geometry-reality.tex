@@ -21,7 +21,7 @@
 
 \title{Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories\\[4pt]
 \large A guided introduction to positive metrics, Krein completions,
-interaction obstructions, and Einstein--Weyl gravity}
+residual cohomology, and interaction obstructions}
 \author{GPT-5.6.sol\thanks{OpenAI model.  Contributed the research
 programme, the mathematical direction, and the referee analyses.}
 \and
@@ -54,7 +54,7 @@ oscillator, the simplest fourth-order system, can be converted into two
 positive oscillators by a nonunitary similarity transformation and
 quantized with a positive inner product; more recently, Bateman and
 Turok developed a different treatment of the resonant massless theory
-using a Krein space and a hidden ghost-parity symmetry.  The six
+using a Krein space and a hidden ghost-parity symmetry.  The seven
 technical papers introduced here do not replace those constructions.
 They explain their mathematical status, classify their ambiguities,
 identify the geometry that selects the Bender--Mannheim metric, connect
@@ -69,6 +69,15 @@ disagreeing about which fields are real, which operators are Hermitian,
 and how probabilities are represented.  At resonance the positive
 diagonalizing metric terminates, but the vacuum covariance can remain
 regular and continue into a Jordan theory.  Extending the free
+classification to the pure-Weyl boundary raises a further question: whether
+the local oscillator modes survive when the residual conformal
+transformations of the cylinder are themselves treated as gauge.  Paper~VII
+proves, for the resulting minimal residual complex, that the centered
+one-particle cohomology vanishes and that exactly two weight-four vertex
+classes survive with positive normalized representative Gram matrix,
+descending to the Weyl-square and Pontryagin directions.  The promotion of this residual result to the
+complete pure-Weyl BV complex remains conditional, and no positive graviton
+Fock space or quantum-anomaly claim is made.  Extending the free
 classification to interactions, Paper~V formulates a deformation
 problem for the positive metric and the Krein involution.  The positive
 Pais--Uhlenbeck metric deforms perturbatively at generic frequencies,
@@ -142,50 +151,93 @@ The classical theorem of Ostrogradsky \cite{Ostrogradsky} explains why
 the Hamiltonian obtained from a nondegenerate higher-derivative
 Lagrangian is generically unbounded in its canonical momenta (see
 \cite{Woodard} for a modern review).  But that theorem does not by itself
-answer every quantum question.  The questions divide into two stages.
+answer every quantum question.  The questions divide into three logically
+distinct levels.
 
-\emph{Stage 1 --- the free theory.}  Can the Hamiltonian be
-diagonalized?  Can a positive inner product be found?  Which variables
-count as real?  What happens at the Jordan limit where two frequencies
-coincide?
+\emph{Level 1 --- local free dynamics and completion.}  Can the Hamiltonian
+be diagonalized?  Can a positive inner product be found?  Which variables
+count as real?  What happens at the Jordan limit where distinct frequencies
+or masses coincide?
 
-\emph{Stage 2 --- interaction stability.}  Can the inner product be
-deformed when interactions are added?  Can ghost parity remain
-conserved when particles convert into one another?  Do
-energy-conserving processes obstruct the deformation?  Does an exact
-doubled symmetry survive even if each individual sector fails?
+\emph{Level 2 --- gauge and residual reduction.}  After the local gauge
+constraints have been imposed, which oscillator modes survive as genuine
+states or observables?  On backgrounds with residual symmetries, should
+those symmetries be retained as global charges or treated as gauge?  If they
+are gauged, what is the resulting BRST cohomology, and does positivity
+belong to propagating states, to vertex classes, or to neither?
 
-Solving the free Hamiltonian does not settle the interacting ghost
-problem.  A free ghost resolution is analogous to balancing a machine
-while its parts move independently; interactions test whether the
-balance survives when the parts exchange energy.  Both stages are
-central to everything that follows: Sections~\ref{sec:why}--%
-\ref{sec:hadamard} treat the free theory,
-Section~\ref{sec:interactions} the interacting one, and
-Sections~\ref{sec:gravity}--\ref{sec:gravityinteractions} the gravitational
-application.
+\emph{Level 3 --- interaction stability.}  Can a free positive metric or
+Krein involution be deformed when interactions are added?  Can ghost parity
+remain conserved when particles convert into one another?  Do exact
+energy-conserving processes obstruct the deformation?  Does a doubled
+symmetry survive even if an individual pointed sector fails?
+
+These levels must not be conflated.  Solving the free Hamiltonian settles
+neither the residual gauge problem nor the interacting ghost problem.
+Residual reduction can remove locally propagating oscillator classes
+without changing their local equations, while interactions test whether a
+chosen free completion survives energy exchange.  The research programme
+therefore has two branches after the free gravity classification:
+Papers~V--VI study interaction stability, whereas Paper~VII studies
+residual conformal cohomology at the pure-Weyl boundary.
 
 \paragraph{Series map.}
 Paper~I reconstructs and classifies the known positive free PU
 quantization.  Paper~II proves that its canonical metric is the
-least-distorting free representative.  Paper~III separates metric,
-vacuum, representation, and Jordan data in the scalar field and identifies
-the common free complex covariance.  Paper~IV adds gauge reduction and
-Lorentz covariance in free Einstein--Weyl gravity.  Paper~V then asks the
-dynamical question left open by the first four: whether either completion
-survives interaction.  Paper~VI combines the gravity classification of
-Paper~IV with the deformation complex of Paper~V and tests the complete
-tree-level cubic and quartic Einstein--Weyl vertex content.  Thus
-Papers~I--IV classify and geometrically organize the free theory,
-Paper~V formulates the interacting test, and Paper~VI carries it out in
-quadratic gravity.  Here
-``canonical'' and ``optimal'' in Papers~I--II are kinematic statements
-about the free theory, not claims of interacting stability.
+least-distorting free representative.  Paper~III separates metric, vacuum,
+representation, and Jordan data in the scalar field and identifies the
+common free complex covariance.  Paper~IV adds local gauge reduction and
+Lorentz covariance in free Einstein--Weyl gravity and follows the theory to
+its pure-Weyl Jordan boundary.
+
+Two complementary branches then emerge.  Papers~V--VI ask whether the free
+real-form completions survive interaction.  Paper~V formulates the metric
+and involution deformation problem and identifies resonant on-shell
+obstructions; Paper~VI combines that deformation complex with the
+covariant gravity classification of Paper~IV and applies it to the complete
+tree-level cubic and quartic Einstein--Weyl vertex content.
+
+Paper~VII instead returns to the free pure-Weyl boundary and changes the
+question from completion of the local oscillator dynamics to residual gauge
+cohomology.  On the conformal cylinder, and under the explicit choice to
+treat all fifteen residual conformal transformations, including compact
+time translation, as gauge, it computes the complete minimal absolute
+residual complex built on the parity-complete on-shell Weyl module.  The
+vacuum and one-particle sectors are acyclic, while the lowest two-particle
+sector contains exactly two residual classes with positive normalized
+representative Gram matrix,
+\begin{equation}
+ H^4_{\mathrm{res,min}}
+ =\operatorname{span}\{[W_+^2],[W_-^2]\},
+ \qquad G_{\rm rep}=I_2.
+\end{equation}
+These are ghost-dressed vertex or deformation classes rather than
+one-particle graviton states.  Descent identifies their parity combinations
+with the Weyl-square and Pontryagin directions; quotienting locally
+variationally trivial bulk functionals leaves one positive representative
+dynamical direction.
+
+The residual cylinder BRST framework, centered four-ghost polarization, and
+weight-four selection build on Hamada and Horata's conformal-cylinder
+construction \cite{HamadaHorataIntro,HamadaBRSTIntro}.  Paper~VII's new
+contribution is the parity-complete pure-Weyl coefficient module, the
+exhaustive absolute kernel-and-image calculation, the vanishing of the
+one-particle sector, and the exact representative pairing and
+dynamical/topological split of the two surviving classes.
+
+Thus Papers~I--IV classify and geometrically organize the local free theory,
+Papers~V--VI test its interacting continuation, and Paper~VII determines
+what survives a further residual conformal reduction at the pure-Weyl
+boundary.  Here ``canonical'' and ``optimal'' in Papers~I--II are kinematic
+free-theory statements, and ``positive'' in Paper~VII refers to the
+normalized pairing on residual vertex representatives, not to a positive
+graviton Fock space.
 
 \keybox{Fourth-order theories can admit several inequivalent real-form
-completions of one complex spectral dynamics.  Free geometry determines
-which completions are available; physical interactions determine whether
-those real forms remain dynamically compatible.}
+completions of one complex spectral dynamics.  Local free geometry
+determines which completions are available; residual gauge reduction
+determines which state and vertex classes survive; physical interactions
+determine whether the surviving structures remain dynamically compatible.}
 
 \paragraph{Strength of the claims.}
 The free classifications are theorems in the classes stated below.  In
@@ -203,6 +255,17 @@ particle-number-diagonal, cluster-multiplicative lift induced on physical
 BRST cohomology, not every Poincar\'e-covariant involution on a
 multiparticle space.  A full-field complex spectrum and a quantum operator
 implementing the doubled scalar exchange remain open.
+
+Paper~VII proves an exact residual $SO(4,2)$ cohomology theorem once the
+parity-complete on-shell Weyl module, the centered ghost polarization, full
+residual conformal gauging, and in particular the treatment of $D$ as a
+residual gauge generator are taken as inputs.  Its identification with the
+complete local-plus-residual pure-Weyl BV cohomology is conditional on the
+all-level Lorentzian local-kernel theorem, the conformal-Killing zero-mode
+split, the absence of modifying ghost/antifield rows or higher transferred
+operations, and a compatible cyclic equivariant transfer.  It establishes
+neither a positive graviton Fock space, quantum BRST nilpotency, anomaly
+cancellation, nor interacting unitarity.
 
 \section{The Pais--Uhlenbeck oscillator as a microscope}\label{sec:pu}
 
@@ -330,7 +393,7 @@ Mannheim.  The logical direction has therefore been reversed:
 The operator $Q$ is no longer introduced by guessing a useful quadratic
 expression.  It is reconstructed from the symplectic normal-form problem.
 
-\subsection{The exact spectrum of $Q$}
+\subsection{The exact spectrum of \texorpdfstring{$Q$}{Q}}
 
 In normalized oscillator coordinates,
 \begin{equation}
@@ -1194,6 +1257,419 @@ space, as in \cite{Maldacena}, and the richer phase diagram at nonzero
 cosmological constant \cite{LuPope,DeserWaldron}, are related but
 distinct stories.)
 
+\section{Paper VII: what remains after residual gauge reduction?}
+\label{sec:conformalcohomology}
+
+The ghost problem is usually introduced by listing the modes that solve a
+higher-derivative field equation and then examining the signs of their
+energies or inner products.  Papers~I--IV analyse precisely this local free
+problem: which modes are present, how they transform, which real forms and
+metrics are available, and what happens when distinct branches merge.
+
+In gravity, however, there is a logically prior question:
+\keybox{Does every mode appearing in the linearized equations represent an
+independent physical object, or is some of it removed by gauge symmetry?}
+
+Paper~IV reaches pure Weyl gravity by following the locally reduced
+Einstein--Weyl phase space to the conformal boundary.  The massive and
+massless helicity-$2$ branches merge into Jordan systems, the vector modes
+remain second order, and the scalar direction becomes null under the newly
+emergent Weyl symmetry.  This is a statement about the local linearized
+solution space after the ordinary Diff$\times$Weyl gauge reduction.
+
+Paper~VII \cite{paperVII} asks a different question at the same boundary.
+It places pure Weyl gravity on the conformal cylinder and treats the fifteen
+residual conformal transformations of the background as gauge
+transformations.  Which classes survive this additional, finite-dimensional
+BRST reduction?
+
+This distinction is essential.  A mode that appears in a local oscillator
+decomposition need not survive as a class after the residual charges and
+their ghosts are imposed.  Conversely, the surviving cohomology need not
+describe one-particle states: it may instead describe scalar vertices,
+deformation directions, or integrated observables.  Paper~VII therefore
+does not propose another positive quantization of the local conformal
+graviton.  It determines the cohomology of a different quotient.
+
+Under the residual gauge prescription studied in the paper, the complete
+one-particle sector disappears from the relevant cohomology.  Two composite
+curvature classes survive, one dynamical and one topological.  The exact
+theorem and the assumptions separating this statement from a claim about
+the full pure-Weyl BV theory are given below.
+
+\subsection{Why study the theory on a cylinder?}
+
+Paper~VII places the free theory on
+\begin{equation}
+ M=\R\times S^3.
+\end{equation}
+Time runs along $\R$, while every spatial slice is a three-sphere.  The
+cylinder is not introduced as a cosmological model; it is a representation
+of conformal physics in which both the symmetry and the spectrum become
+especially transparent.
+
+Conceptually, cylinder time translation is generated by the same operator
+$D$ that measures conformal weight in the corresponding flat-space
+description.  States of definite cylinder energy therefore correspond to
+local operators of definite conformal dimension.  Technically, compactness
+of $S^3$ replaces the continuum of spatial momenta by a discrete harmonic
+spectrum.  The complete coefficient space can then be organized by energy,
+$SU(2)_L\times SU(2)_R$ quantum numbers, chirality, and particle number.
+
+For specialists, this is the standard radial-quantization relation between
+a conformal field theory and the cylinder.  It makes the $SO(4,2)$ action a
+graded representation problem and supplies the compact generator used in
+the homotopy below.
+
+The cylinder also exposes the paper's principal physical choice.  Its
+background has fifteen residual conformal symmetries.  Paper~VII treats all
+of them, including $D$, as residual gauge transformations.  If $D$ is
+instead retained as a physical Hamiltonian or boundary charge, its ghost
+cannot be used to contract the complex and the result below is not the
+cohomology of that alternative physical problem.
+
+\subsection{Three levels of reduction}
+
+It is useful to distinguish three spaces.  The linearized equations first
+define a solution space.  Local coordinate and Weyl transformations then
+identify gauge-equivalent solutions.  On the cylinder, Paper~VII performs
+one further quotient by the residual conformal transformations:
+\begin{equation}
+ \text{linearized solutions}
+ \longrightarrow
+ \frac{\text{solutions}}{\text{local Diff}\times\text{Weyl}}
+ \longrightarrow
+ \frac{\text{locally reduced theory}}
+ {\text{residual }SO(4,2)}.
+\end{equation}
+Paper~IV primarily concerns the middle object; Paper~VII concerns the last.
+A mode can therefore occur in the Paper-IV oscillator classification and
+still fail to define a Paper-VII class.  The two statements concern
+different quotients and do not contradict one another.
+
+\subsection{The locally reduced Weyl module}
+
+After local reduction, the one-particle coefficient space is taken to be the
+parity-complete on-shell Weyl-curvature module
+\begin{equation}
+ \mathcal W_+\oplus\mathcal W_-.
+\end{equation}
+The Weyl curvature is a natural variable because it is invariant under the
+local linearized Diff$\times$Weyl transformations.  It packages the local
+gauge-invariant content more directly than the metric perturbation.
+
+Each chirality contains three cylinder towers, denoted $E$, $A$, and $L$.
+Their invariant form is nondegenerate but indefinite:
+\begin{equation}
+ J_{\mathrm{conf}}=+I_E\oplus(-I_A)\oplus(-I_L).
+\end{equation}
+Proper conformal transformations mix these towers, so their signs cannot be
+assigned independently as if the towers were separate conformal
+representations.
+
+The full coefficient module for the residual calculation is the bosonic
+Fock space
+\begin{equation}
+ \mathcal F_{\mathcal W}
+ =\operatorname{Sym}(\mathcal W_+\oplus\mathcal W_-),
+\end{equation}
+with the multiplicative lift of the one-particle form.  Thus the starting
+point remains an indefinite local oscillator module.  Any positivity found
+afterwards must arise from the cohomological reduction rather than from a
+re-signing of the local modes.
+
+\subsection{What BRST cohomology asks}
+
+BRST theory is a systematic way to remove gauge redundancy.  One introduces
+an auxiliary ghost variable for every gauge generator and constructs a
+differential $d$ satisfying
+\begin{equation}
+ d^2=0.
+\end{equation}
+A closed expression, $d\Psi=0$, is compatible with the gauge constraints;
+an exact expression, $\Psi=d\Lambda$, is itself gauge-trivial.  What remains
+is the cohomology
+\begin{equation}
+ H(d)=\frac{\ker d}{\operatorname{im}d}.
+\end{equation}
+
+The word ``ghost'' has two different meanings here.  The BRST ghosts are
+algebraic variables encoding gauge transformations.  They are not the
+negative-sign propagating modes also called ghosts in higher-derivative
+gravity.
+
+For the residual algebra $\mathfrak g=\mathfrak{so}(4,2)$ and a coefficient
+module $V\subset\mathcal F_{\mathcal W}$, the absolute residual complex is
+\begin{equation}
+ C^q(V)=V\otimes\Lambda^q\mathfrak g^*,
+\end{equation}
+with the Chevalley--Eilenberg differential.  For experts, the result below
+is an absolute Lie-algebra cohomology computation in the centered cylinder
+polarization.  It includes both the kernel and the incoming image; it is not
+merely a primary-state count, a character identity, or a search for selected
+invariant vectors.
+
+\subsection{Why an infinite field problem reduces to a finite calculation}
+
+A field theory contains arbitrarily high energies and arbitrarily many
+particles, so an exhaustive Fock-space cohomology calculation initially
+looks infinite.  In this problem a standard homotopy identity reduces it
+exactly to three finite sectors.
+
+The residual algebra is
+\begin{equation}
+ \mathfrak g=\mathfrak{so}(4,2)
+ =\mathfrak g_{-1}\oplus\mathfrak g_0\oplus\mathfrak g_{+1},
+ \qquad
+ \dim(\mathfrak g_{-1},\mathfrak g_0,\mathfrak g_{+1})=(4,7,4),
+\end{equation}
+where compact time translation $D$ and spatial rotations belong to
+$\mathfrak g_0$, and the proper conformal raising and lowering generators
+belong to $\mathfrak g_{\pm1}$.
+
+The total compact degree of the complex is the sum of matter and ghost
+degrees.
+
+The central simplification is the Cartan homotopy identity
+\begin{equation}
+ d\iota_D+\iota_Dd=\mathcal L_D.
+\end{equation}
+Here $\iota_D$ contracts with the ghost associated with $D$, while
+$\mathcal L_D$ measures total compact degree.  On every subspace with
+nonzero degree $\delta$, the operator
+\begin{equation}
+ h_\delta=\frac{\iota_D}{\delta}
+\end{equation}
+obeys
+\begin{equation}
+ dh_\delta+h_\delta d=1.
+\end{equation}
+Every closed cochain of nonzero total degree is therefore exact.  Only the
+degree-zero subcomplex can contribute.
+
+This statement requires $D$ to be treated as a residual gauge generator.
+If cylinder time translation is instead retained as a physical Hamiltonian
+or boundary charge, contraction by its ghost is not an allowed physical
+quotient and the homotopy reduction does not apply.
+
+The centered residual ghost representative is the product of the four
+ghosts dual to the proper conformal raising generators.  It has ghost number
+four and compact degree $-4$.  At total degree zero, the matter contribution
+therefore has weight at most four.  Since every nonvacuum Weyl quantum has
+weight at least two, only the sectors
+\begin{equation}
+ N=0,\qquad N=1,\qquad N=2
+\end{equation}
+can contribute.  Every sector with three or more Weyl quanta is eliminated
+before any large rank calculation is required.
+
+The Cartan identity itself is standard.  The nontrivial use made here is
+that, together with the centered ghost-degree bound, it makes the residual
+calculation exhaustive rather than merely truncating it for convenience.
+
+\subsection{The exact residual theorem}
+
+The answer can first be stated without equations: the vacuum contributes no
+class, no individual one-particle Weyl excitation survives, and exactly two
+composite curvature classes remain.
+
+Mathematically, the three allowed sectors can be computed exhaustively.  For
+the vacuum coefficient module, ordinary semisimple Lie-algebra cohomology
+gives no class at the selected centered degree:
+\begin{equation}
+ H^4_{\delta=0,N=0}=0.
+\end{equation}
+For the complete one-particle Weyl module, an exact absolute
+kernel-and-image calculation gives
+\begin{equation}
+ H^4_{\delta=0,N=1}=0.
+\end{equation}
+The exact ranks are
+\begin{equation}
+ \operatorname{rank}d_3=260,
+ \qquad
+ \operatorname{rank}d_4=1051,
+ \qquad
+ 260+1051=1311,
+\end{equation}
+which saturates the centered one-particle middle space.  Thus none of the
+indefinite one-particle cylinder modes survives as a class in this residual
+complex.
+
+The lowest two-particle sector begins at matter weight four.  It has no
+incoming centered ghost-number-three space, and its exact kernel is
+two-dimensional; equivalently, the outgoing differential has rank $53$ on
+a $55$-dimensional middle space.  The complete result is
+\begin{equation}\label{eq:intro-paperVII-result}
+ \boxed{
+ H^4_{\mathrm{res,min}}
+ =\operatorname{span}\{[W_+^2],[W_-^2]\},
+ \qquad G_{\rm rep}=I_2.}
+\end{equation}
+The two generators are the chiral scalar primaries formed from two
+positive- or two negative-chirality Weyl curvatures.  Their normalized
+residual representative Gram matrix is positive.
+
+For a reader who skips the rank calculation, the physical content is:
+\keybox{After the residual conformal gauge reduction, no individual
+one-particle graviton class remains.  Two composite curvature expressions
+survive, and their normalized representatives have positive Gram matrix.}
+
+The scope is narrower than a positive-particle theorem.  The local
+one-particle module remains indefinite; it has disappeared rather than been
+made positive.  Moreover, $G_{\rm rep}$ is unconditionally the normalized
+residual representative Gram matrix.  Calling it a pairing on the full BV
+cohomology additionally requires the cyclic transfer discussed below.
+
+\subsection{From the two classes to familiar gravitational terms}
+
+The two survivors are not new particle species.  They are best understood as
+directions in the space of local vertices or actions.  The four-ghost factor
+has exactly the compact degree needed to pair with a scalar primary of
+conformal weight four, and residual descent maps the chiral classes to
+integrated curvature densities.
+
+Passing to the parity basis,
+\begin{equation}
+ e=\frac{W_+^2+W_-^2}{\sqrt2},
+ \qquad
+ o=\frac{W_+^2-W_-^2}{\sqrt2},
+\end{equation}
+one obtains, up to the conventional Lorentzian self-duality phase,
+\begin{equation}
+ e\longleftrightarrow
+ C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma},
+ \qquad
+ o\longleftrightarrow
+ C_{\mu\nu\rho\sigma}\widetilde C^{\mu\nu\rho\sigma}.
+\end{equation}
+
+The parity-even class varies to the Bach equation and therefore represents
+the local Weyl-gravity deformation direction.  The parity-odd class is the
+Pontryagin direction.  Its variation is a boundary term, so it is trivial in
+the local bulk Euler--Lagrange quotient, although it may retain global
+information through boundaries, topology, large transformations, or a
+gravitational theta parameter.
+
+Consequently,
+\begin{equation}
+ H^4_{\mathrm{dyn}}
+ \cong\operatorname{span}\{[C^2]\},
+ \qquad G_{\mathrm{dyn,rep}}=I_1,
+\end{equation}
+and the representative matrix decomposes as
+\begin{equation}
+ I_2=I_1^{\mathrm{dynamical}}\oplus I_1^{\mathrm{topological}}.
+\end{equation}
+
+Thus the exact positive $I_2$ separates into one local dynamical direction
+and one topological or boundary direction.  It does not count two
+propagating degrees of freedom.
+
+\subsection*{Relation to earlier residual BRST work}
+
+The conformal-cylinder residual algebra, the four-ghost centered
+polarization, and the selection of scalar matter operators of weight four
+build on the work of Hamada, Horata, and related conformal-cylinder BRST
+constructions \cite{HamadaHorataIntro,HamadaBRSTIntro}.  Those works also
+exhibited Weyl-square-type physical operators in a broader model containing
+the conformal or Riegert sector.
+
+The new result of Paper~VII is not the isolated observation that a
+weight-four Weyl-square state can be written.  It is the parity-complete
+pure-Weyl calculation of the full minimal absolute residual window: the
+Cartan homotopy makes the calculation exhaustive, the vacuum and
+one-particle sectors are proved acyclic, exactly two two-particle classes
+survive, and their representative pairing and dynamical/topological
+decomposition are determined.
+
+\subsection{The remaining bridge}
+
+The exact theorem begins with the on-shell Weyl-curvature module as its
+coefficient space.  Its promotion to a theorem about the complete free
+pure-Weyl local-plus-residual BV complex requires additional
+field-theoretic input.
+
+In ordinary language, one must still prove that every locally
+gauge-inequivalent solution of the linearized Bach equation is represented
+exactly once by the Weyl-curvature modes used above.  The precise missing
+all-level Lorentzian cylinder identification is
+\begin{equation}
+ \frac{\ker B_{\mathrm{lin}}}{\operatorname{im}K}
+ \cong\mathcal W_+\oplus\mathcal W_-,
+\end{equation}
+where $B_{\mathrm{lin}}$ is the linearized Bach operator and $K$ generates
+the local Diff$\times$Weyl transformations.  The identification must hold
+on a specified Lorentzian function space, with the conformal-Killing zero
+modes separated and the local ghost and nonminimal doublets removed.  One
+must then construct a compact-degree
+equivariant cyclic strong deformation retract, verify that the transferred
+differential is the strict residual $\mathfrak{so}(4,2)$ differential in the
+relevant window, and exclude additional spectral-sequence rows or higher
+transferred operations that could alter the centered classes.
+
+Formal detour identities and exact homogeneous-jet calculations through
+finite degree support this bridge but do not prove it.  Paper~VII therefore
+contains two statements of different strength:
+\begin{enumerate}
+\item an exact residual cohomology theorem for the stated on-shell Weyl
+coefficient module and centered polarization;
+\item a conditional corollary identifying that theorem with the complete
+free pure-Weyl BV cohomology.
+\end{enumerate}
+No claim is made here about quantum BRST nilpotency, anomaly cancellation,
+interacting unitarity, or a positive asymptotic graviton space.
+
+\subsection{Why the result matters}
+
+For a general reader, the lesson is that the signs of modes in a local
+oscillator decomposition are not yet the final physical verdict in a gauge
+theory.  One must first determine which objects survive all of the gauge
+constraints being imposed.
+
+For a specialist, the result cleanly separates three commonly conflated
+objects:
+\begin{equation}
+ \text{local on-shell module},
+ \qquad
+ \text{absolute residual cohomology},
+ \qquad
+ \text{local BV cohomology}.
+\end{equation}
+Paper~VII computes the middle object exactly under the full residual-gauging
+choice and states the hypotheses required to identify it with the third.
+
+Within the research programme, Paper~VII adds a second branch from
+Paper~IV.  Papers~I--IV classify the local free complex dynamics and its
+possible real-form completions.  Papers~V--VI test whether those completions
+survive physical interactions.  Paper~VII asks whether the corresponding
+local modes survive a stronger conformal gauge reduction in the first
+place.
+
+The result shows that three questions must be kept separate:
+\begin{equation}
+ \begin{aligned}
+ \text{local oscillator content}
+ &\ne\text{residual BRST cohomology},\\
+ \text{residual BRST cohomology}
+ &\ne\text{interacting probability structure}.
+ \end{aligned}
+\end{equation}
+A locally indefinite one-particle module can have no centered residual
+one-particle classes, while positive representative matrices survive on
+scalar vertex directions.  This does not solve the interacting ghost
+problem.  It identifies more precisely the objects on which that problem
+should be posed.
+
+\keybox{The local equations determine which modes are available.  Gauge
+cohomology determines which states and vertices are independent.
+Interactions determine whether the surviving structures can support a
+consistent dynamics.}
+
+Paper~VII therefore changes the conformal-gravity question from ``Can the
+negative-sign graviton be made positive?'' to the more basic question
+``What is the object on which a positivity question should be asked?''
+
 \section{Paper VI: interaction obstruction in Einstein--Weyl gravity}
 \label{sec:gravityinteractions}
 
@@ -1332,29 +1808,29 @@ certificate, and shows that the canonical multiplicative massive-number
 Krein grading does not render the block null.  The verified $MMM$ and
 $MMh$ vertices also forbid a nontrivial uniform abelian
 charge mechanism analogous to the scalar $O(1,1)$ boundary.
+\item[Paper VII \cite{paperVII}] branches from the pure-Weyl boundary of
+Paper~IV.  Under full residual conformal gauging it computes the complete
+minimal centered absolute complex: the vacuum and one-particle sectors
+vanish, exactly two weight-four vertex classes survive with
+$G_{\rm rep}=I_2$, and the local Euler--Lagrange quotient splits them into
+one dynamical Weyl-square direction and one topological Pontryagin
+direction.  Transfer to the complete strict-pure-Weyl BV complex remains
+conditional.
 \end{description}
 
-In one paragraph: the six papers develop a progression from free
-classification to interacting obstruction theory.  The first two derive
-and geometrically characterize the canonical positive Pais--Uhlenbeck
-metric.  The third separates this metric from the universal complex
-vacuum covariance and follows the theory to its Jordan boundary.  The
-fourth determines how gauge reduction and Lorentz covariance modify the
-classification in quadratic gravity.  The fifth asks whether the free
-completions survive interactions: the positive metric deforms away from
-resonances but is obstructed by exactly energy-conserving
-branch-changing processes --- on isolated rational loci in the
-oscillator and on a verified nonempty open subset of a scattering shell
-in the field theory ---
-while at the massless perfect-square boundary an exact doubled exchange
-survives between two oppositely oriented Jordan sectors.  The sixth
-returns to gravity: cubic interactions are protected, but the open
-$MM\to Mh$ process obstructs the canonical positive metric at second
-order and remains visible under the conventional multiplicative Krein
-grading.  The resulting
-question is no longer simply whether a ghost can be assigned positive
-norm, but which real form and completion remain compatible with the
-actual interactions of the theory.
+In one paragraph: Papers~I--IV classify and geometrically organize the local
+free theory, culminating in the covariant real forms and conformal boundary
+of quadratic gravity.  The programme then forks.  Papers~V--VI formulate
+and execute the interaction-stability test: exactly energy-conserving
+branch conversion obstructs the canonical positive metric in scalar theory
+and in the open gravitational channel $MM\to Mh$, while the conventional
+gravitational Krein lift does not nullify the latter block.  Paper~VII
+returns to the free pure-Weyl boundary and changes the quotient: after full
+residual $SO(4,2)$ gauging, the local indefinite one-particle module has no
+centered one-particle class, while two positive-representative weight-four
+vertex directions survive.  Local oscillator classification, residual
+gauge cohomology, and interaction stability are therefore complementary
+rather than successive versions of one question.
 
 \begin{figure}[p]
 \centering
@@ -1363,56 +1839,49 @@ actual interactions of the theory.
               font=\small, fill=blue!5, text width=52mm},
   arr/.style={-{Stealth}, thick},
   lab/.style={font=\scriptsize\itshape, midway, fill=white, inner sep=1pt}]
-\node[pap] (p1)
-  {\textbf{Paper I} \cite{paperI}\\
-   oscillator: $(G,J,G_0)\to S_+\to Q$;\\
-   stabilizer $SO(2,\C)^2$; spec\,$Q=r\Z$;\\
-   metric family; Jordan no-go};
-\node[pap, right=16mm of p1] (p2)
-  {\textbf{Paper II} \cite{paperII}\\
-   minimum distortion $\mathcal F\ge4r^2$;\\
-   Cartan projection, $C_2$ wall;\\
-   pointed equivalence vs.\\ auxiliary obstruction};
-\node[pap, below=12mm of p1] (p3)
-  {\textbf{Paper III} \cite{paperIII}\\
-   field: universal spectral covariance;\\
-   confluent (Krein) limit; UV sectors;\\
-   fourth-order Hadamard property};
-\node[pap, below=12mm of p2] (p4)
+\node[pap, text width=72mm] (p123)
+  {\textbf{Papers I--III} \cite{paperI,paperII,paperIII}\\
+   Pais--Uhlenbeck and scalar geometry;\\
+   positive metrics and Krein real forms;\\
+   universal covariance and Jordan boundary};
+\node[pap, below=11mm of p123] (p4)
   {\textbf{Paper IV} \cite{paperIV}\\
    gravity: helicity stratification;\\
    two covariant real forms, no hybrid;\\
    conformal Jordan boundary};
-\draw[arr] (p1) -- (p2) node[lab, above]{selection};
-\draw[arr] (p1) -- (p3) node[lab, left]{modewise data};
-\draw[arr] (p2) -- (p3) node[lab, above, sloped]{orbit constancy};
-\draw[arr] (p3) -- (p4) node[lab, above]{bridge};
-\draw[arr] (p2) -- (p4) node[lab, right]{Cartan geometry};
-\draw[arr] (p1.south east) -- (p4.north west)
-  node[lab, sloped, above, pos=0.7]{PU blocks};
-\node[pap, fill=red!5,
-      below=14mm of $(p3.south)!0.5!(p4.south)$] (p5)
+\draw[arr] (p123) -- (p4) node[lab, right]{local free gravity bridge};
+\node[pap, fill=red!5, text width=45mm,
+      below left=23mm and 0mm of p4] (p5)
   {\textbf{Paper V} \cite{paperV}\\
    interactions: deformation complex;\\
    resonance obstructions, PT breaking;\\
    open shell subset; doubled exchange};
-\draw[arr] (p3) -- (p5) node[lab, left]{modewise metric};
-\node[pap, fill=orange!8, below=12mm of p5] (p6)
+\node[pap, fill=green!9, text width=45mm,
+      below right=23mm and 0mm of p4] (p7)
+  {\textbf{Paper VII} \cite{paperVII}\\
+   pure-Weyl cylinder; full residual\\
+   $SO(4,2)$ gauging; no one-particle class;\\
+   $H^4=\langle W_+^2,W_-^2\rangle$, $G_{\rm rep}=I_2$;\\
+   full BV transfer conditional};
+\draw[arr] (p4) -- (p5)
+  node[font=\scriptsize\itshape, left, align=right, pos=0.58]
+  {free real forms\\$\to$ deformation problem};
+\draw[arr] (p4) -- (p7)
+  node[font=\scriptsize\itshape, right, align=left, pos=0.58]
+  {pure-Weyl boundary\\$\to$ residual reduction};
+\node[pap, fill=orange!8, text width=45mm, below=11mm of p5] (p6)
   {\textbf{Paper VI} \cite{paperVI}\\
    Einstein--Weyl interactions;\\
    cubic protection, $MM\to Mh$;\\
    second-order cocycle; Krein-visible};
-\draw[arr] (p4.south east)
-  to[out=-70,in=35,looseness=1.15]
-  node[font=\scriptsize\itshape, right, align=left, pos=0.48]
-  {gravity\\real forms} (p6.north east);
-\draw[arr] (p5) -- (p6) node[lab, right]{deformation complex};
+\draw[arr] (p5) -- (p6)
+  node[lab, right]{interaction obstruction in gravity};
 \end{tikzpicture}
-\caption{Dependency structure of the six technical papers.  Papers
-I--III establish the oscillator and scalar geometry, Paper~IV classifies
-the covariant free gravity completions, Paper~V develops the
-interaction-obstruction framework, and Paper~VI applies that framework
-to the Einstein--Weyl interaction.}
+\caption{Forked dependency structure of the seven technical papers.
+Papers~I--III establish oscillator and scalar geometry, and Paper~IV
+classifies the local covariant free gravity completions.  Papers~V--VI form
+the interaction branch; Paper~VII branches from the pure-Weyl boundary to
+the full residual conformal-gauging problem.}
 \label{fig:dependency}
 \end{figure}
 \clearpage
@@ -1421,9 +1890,11 @@ The combined novelty is therefore not a new claim that one particular
 ghost Hamiltonian can be rewritten positively.  It is the statement that:
 \keybox{The known positive and Krein constructions are different
 real-form completions of a common complex spectral structure.  Their
-free admissibility is controlled by symplectic geometry, Cartan
+local free admissibility is controlled by symplectic geometry, Cartan
 projection, gauge reduction, Lorentz representation theory, and Jordan
-degeneration; on-shell interactions test their dynamical continuation.}
+degeneration.  Residual cohomology determines which classes survive a
+further gauge quotient; on-shell interactions independently test dynamical
+continuation.}
 
 \section{What remains open}\label{sec:open}
 
@@ -1462,6 +1933,15 @@ Einstein sector?  Can the cocycle be formulated directly in gauge- and
 Weyl-invariant curvature observables, and what survives in the conformal
 $M\to0$ limit?
 
+For residual conformal reduction: what boundary or background-independence
+principle determines whether cylinder time translation is gauge or a global
+Hamiltonian?  Can the all-level Lorentzian detour quotient and the cyclic
+zero-mode transfer be proved in the strict pure-Weyl BV complex?  Does the
+positive representative matrix descend to its full cohomology, and what
+survives quantum BRST anomalies or nonlinear interactions?  These questions
+belong to the Paper~VII branch and are not answered by the split-phase
+$MM\to Mh$ calculation.
+
 For spectral consequences: the finite oscillator obstruction can
 accompany a nonreal conjugate pair.  Does the gravitational shell
 cocycle similarly imply complex finite-volume levels, nonreal resonance
@@ -1478,13 +1958,13 @@ classical stability, spectral boundedness, norm positivity, field
 reality, vacuum covariance, representation theory, gauge reduction, and
 Jordan degeneration.
 
-The results now form a six-level hierarchy:
-\keybox{1. Identify the complex spectral dynamics.\\
-2. Classify its positive and Krein real forms.\\
-3. Select the canonical positive metric geometrically.\\
-4. Determine how field representation and gauge reduction modify it.\\
-5. Formulate the interaction-deformation and obstruction problem.\\
-6. Evaluate the obstruction on physical gravitational scattering shells.}
+The results now organize into three linked but non-linear questions:
+\keybox{1. Local free classification: identify the complex dynamics, its
+real forms, canonical metrics, gauge reduction, and Jordan limits.\\
+2. Residual gauge reduction: determine which state, vertex, or observable
+classes survive when background symmetries are gauged.\\
+3. Interaction stability: test whether a chosen free or reduced structure
+survives the physical nonlinear processes.}
 The PU oscillator shows that a Hamiltonian that appears ghostlike in one
 real form may possess a positive pseudo-Hermitian completion in another;
 the minimum-distortion theorem explains why the Bender--Mannheim metric
@@ -1512,10 +1992,20 @@ survives in the extended theory, and the regulated charge image becomes
 one-sided.  This boundary nullity mechanism is distinct from the exact
 Krein pseudo-unitarity already present at the verified split shell.
 
-The six papers therefore show that no single free-field slogan resolves
-the ghost problem.  Positive and Krein descriptions may realize different
-real forms of one complex free spectral structure, but their continuation
-is decided by the actual interaction.  In scalar theories,
+The residual branch adds a different lesson.  At the pure-Weyl cylinder
+boundary, the local one-particle module is indefinite, yet under full
+residual conformal gauging its centered one-particle cohomology vanishes.
+The surviving positive representative matrix belongs instead to two
+weight-four scalar vertex directions, one dynamical and one topological.
+This does not repair the local graviton Fock space; it demonstrates that
+local oscillator content and residual BRST cohomology are different
+quotients.
+
+The seven papers therefore form a fork rather than a single progression.
+Papers~I--IV classify the local free structures.  Papers~V--VI test their
+interacting continuation.  Paper~VII returns to the pure-Weyl boundary and
+tests an additional residual gauge quotient.  No single free-field slogan
+resolves all three questions.  In scalar theories,
 energy-conserving conversion obstructs the canonical positive metric
 while an enhanced doubled structure can survive at a special boundary.
 In Einstein--Weyl gravity, gauge reduction and covariance first restrict
@@ -1527,10 +2017,12 @@ null.
 The resulting view is neither that higher-derivative ghosts are
 automatically harmless nor that they automatically invalidate a theory.
 The refined question is:
-\keybox{Not ``Can the ghost be removed?''\ but ``Which completion
-survives the allowed interactions?''}
+\keybox{Not ``Can the ghost be removed?''\ but ``Which local completion,
+residual quotient, observable algebra, and probability structure are
+compatible with the physical problem being posed?''}
 Once the ingredients --- complex dynamics, real form, involution,
-observable algebra, completion, and now interaction stability --- are
+observable algebra, local and residual quotient, completion, and
+interaction stability --- are
 separated, the existing positive and indefinite constructions cease to
 look like unrelated tricks.  They become different parts of one
 geometric, representation-theoretic, and deformation-theoretic
@@ -1540,7 +2032,7 @@ framework.
 Every finite-dimensional, variational, symplectic, and modewise
 distributional identity quoted in this introduction is machine-verified
 in the repository accompanying the series
-\cite{paperI,paperII,paperIII,paperIV,paperV,paperVI} (symbolic SymPy audits,
+\cite{paperI,paperII,paperIII,paperIV,paperV,paperVI,paperVII} (symbolic SymPy audits,
 high-precision numerical regression, and a Lean~4 formalization of the
 paper-I core with zero unproved placeholders); the technical papers state
 precisely which of their conclusions are analytic rather than
@@ -1585,6 +2077,20 @@ Phys.\ Rev.\ D \textbf{78} (2008) 025022, arXiv:0804.4190.
 S.~Bateman and N.~Turok,
 \emph{Escape from Ostrogradsky via hidden ghost parity},
 arXiv:2607.00096.
+
+\bibitem{HamadaHorataIntro}
+K.-j.~Hamada and S.~Horata,
+\emph{Conformal algebra and physical states in non-critical 3-brane on
+$\R\times S^3$},
+Prog. Theor. Phys. \textbf{110} (2003) 1169--1210,
+arXiv:hep-th/0307008.
+
+\bibitem{HamadaBRSTIntro}
+K.-j.~Hamada,
+\emph{BRST analysis of physical fields and states for 4D quantum gravity on
+$\R\times S^3$},
+Phys. Rev. D \textbf{86} (2012) 124006,
+arXiv:1202.4538.
 
 \bibitem{SGH1992}
 F.~G.~Scholtz, H.~B.~Geyer and F.~J.~W.~Hahne,
@@ -1641,6 +2147,11 @@ symmetry in fourth-order theories}, companion paper (Paper~V), 2026.
 \emph{Interaction obstructions in Einstein--Weyl gravity: cubic
 protection, second-order metric failure, and Krein visibility},
 companion paper (Paper~VI), 2026.
+
+\bibitem{paperVII}
+\emph{Residual $SO(4,2)$ cohomology of free Weyl gravity on the conformal
+cylinder: Cartan homotopy, Weyl-square classes, and their residual pairing},
+companion paper (Paper~VII), 2026.
 
 \bibitem{Folland}
 G.~B.~Folland,
