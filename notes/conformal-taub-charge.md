@@ -183,11 +183,13 @@ decide whether the external modes:
 3. require collective background coordinates; or
 4. remain after a larger global BRST reduction.
 
-The following remain mandatory before P4 can be interpreted physically:
+The following remain mandatory before P4 can be interpreted physically.
+C2f-N/A/M have since completed item 1 through source energy four, but not on
+the all-level/Fock complex required by the later items:
 
-1. extend the two reconstructed mixed proper-CK multiplets to the remaining
-   mode towers and construct the seven Killing-charge kernels, diagonal
-   blocks, and any real-field anomalous bilinears;
+1. extend the source-energy-four moment-map jet far enough to obtain a
+   complete global-BRST kernel/image pair and second-quantize the seven
+   compact plus eight proper-conformal kernels;
 2. include local ghosts, reducibility ghosts and contractible sectors;
 3. compute the global BRST cohomology and the reduced energy-six pairing;
 4. decide the disposition of the `t` zero mode before forming any reduced

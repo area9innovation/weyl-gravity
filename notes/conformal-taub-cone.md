@@ -150,11 +150,13 @@ Only `D`, `J_L^z`, and `J_R^z` remain tangent to the chosen four-mode
 coordinate slice, where their rank is three.  The other rotations leave the
 slice while remaining tangent to the full seeded zero locus.
 
-The proper-conformal `M_q` are charge kernels, not yet Hamiltonian action
-matrices.  Constructing their orbit tangents requires the appropriate
-symplectic/Poisson structure, real-form normalization, and a check that the
-resulting action descends through the global reduction.  C2d deliberately
-does not substitute `M_qz` for that missing construction.
+The proper-conformal `M_q` in C2d are charge kernels, not Hamiltonian action
+matrices.  C2d deliberately does not substitute `M_qz` for the then-missing
+symplectic construction.  C2f-N/M subsequently supply that conversion
+through source energy four.  They also show that this four-mode vector,
+although still neutral under every proper-CK lowering component, has
+`mu_D=-6` and `mu_Rz=-3`; it is therefore not on the full conformal zero
+locus.  The C2d rank numbers remain valid only for the seeded map.
 
 ## Fail-closed conclusion
 
@@ -166,6 +168,11 @@ The exact conclusion is limited:
 > lie in its tangent space.  The complete constraint locus, its Hamiltonian
 > moment-map interpretation, and its globally reduced geometry remain
 > unknown.
+
+The later C2f result narrows this historical conclusion: the Hamiltonian
+moment-map jet is now explicit through source energy four and excludes the
+test vector from the full zero locus.  The infinite energy-graded locus and
+its global-BRST quotient remain unknown.
 
 The executable exposes three guards, all of which fail:
 

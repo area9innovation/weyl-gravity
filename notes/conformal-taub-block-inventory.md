@@ -81,10 +81,12 @@ Those values must come from one of:
   kernel and the oscillator generator has been established; or
 - selected curvature seeds used as independent normalization checks.
 
-At present, the action-normalized kernels contain factors not yet matched to
-the full oscillator symplectic normalization.  Therefore one must not impose
-the `[K^+,K^-]` algebra directly on the C2b coefficient kernels as if they
-were already oscillator-generator matrices.
+At the inventory stage, the action-normalized kernels contained factors not
+yet matched to the full oscillator symplectic normalization.  Therefore one
+must not impose the `[K^+,K^-]` algebra directly on the C2b coefficient
+kernels as if they were already oscillator-generator matrices.  C2f-N/A
+later perform the missing conversion and fix all seven coefficients through
+source energy four without making that identification.
 
 ## Acceptance boundary
 
@@ -96,7 +98,7 @@ The inventory proves:
 - the six stable all-energy branch families; and
 - the precise number of missing reduced coefficients at every cutoff.
 
-It does not prove:
+By itself this inventory does not prove:
 
 - any value for an unseeded coefficient;
 - full coadjoint equivariance;

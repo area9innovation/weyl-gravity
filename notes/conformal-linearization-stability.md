@@ -88,6 +88,13 @@ seventeen uncomputed.  Thus the two curvature seeds do not determine the
 full low-energy Taub constraint map or establish its Hamiltonian moment-map
 identity.
 
+C2f-N/A/M subsequently supply the absolute symplectic form, solve all seven
+source-energy-four generator blocks, and construct the complete
+fifteen-component moment-map jet on the buffered low-energy module.  They
+also show that the earlier four-mode seeded cancellation has `mu_D=-6` and
+`mu_Rz=-3`, so it is not globally neutral.  The historical C2c/C2d numbers
+below remain statements about the seeded partial map.
+
 The C2c-E reconstructed seeded kernels nevertheless pass an exact partial
 tensor/coadjoint covariance theorem.  Under the independently known compact
 oscillator generators they transform as an energy-graded `(1/2,1/2)` tensor
@@ -144,9 +151,9 @@ effective Hamiltonian, establish all of the following.
 1. Construct the complete gauge-fixed BRST complex on `R x S^3`, including
    zero modes, reducibility ghosts, auxiliary fields, and global conformal
    generators.
-2. Extend the two now-complete proper-CK magnetic multiplets to every
-   required mode tower and multiplicity sector, and construct the seven
-   compact-energy-preserving Killing-charge kernels.
+2. Extend the exact source-energy-four moment-map jet to every mode tower
+   needed for a complete kernel/image pair at the target BRST degree, and
+   second-quantize its seven compact and eight proper-conformal kernels.
 3. Determine whether individual `E`, `A`, and `L` oscillator excitations
    descend to BRST cohomology or require charge-neutral, dressed, or conformal
    singlet combinations.
@@ -171,6 +178,6 @@ are useful local/covariant certificates and regression rails.  They do not
 establish a physical energy-six amplitude, pseudo-unitarity violation, or
 metric-deformation obstruction.  In particular, `kappa_t=0` is never divided
 through.  The t current seeds two exactly reconstructed proper-conformal
-mixed Taub multiplets, but the remaining reduced blocks, seven Killing
-charges, full quadratic moment map, and global-BRST physical-state kernel
-remain open.
+mixed Taub multiplets.  The low-energy reduced blocks, seven Killing
+kernels, and moment-map jet are now supplied by C2f; the all-level
+global-BRST physical-state kernel remains open.

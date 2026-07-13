@@ -153,9 +153,11 @@ that broader conformal-gravity/Riegert system:
 Before the global reduction can act on the provisional P4 oscillator block,
 the programme still needs:
 
-1. all fifteen action-normalized charge kernels on the relevant pure-Weyl
-   oscillator, Fock, auxiliary, and contractible sectors;
-2. verification that their operator algebra has no anomaly or central term;
+1. extension of the exact fifteen-component one-particle moment-map jet
+   beyond the energy-four buffer and its second quantization on the relevant
+   oscillator, auxiliary, and contractible sectors;
+2. verification that the resulting full operator algebra has no anomaly or
+   central term;
 3. the combined local Diff `x` Weyl plus global conformal BRST operator;
 4. its ghost-number-zero cohomology and induced pairing; and
 5. the disposition of the Hessian-null `t` block after that reduction.

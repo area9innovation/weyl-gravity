@@ -14,9 +14,10 @@ equivariantly under
 
 Here `D` is compact cylinder energy.  This is a **partial tensor/coadjoint
 covariance theorem**, not a representation of the full `SO(4,2)` algebra.
-The proper-conformal kernels are known, while the seven Killing kernels, the
-remaining oscillator towers, the full symplectic/global-generator map, and
-global BRST cohomology are not.
+At the C2c-E stage the proper-conformal seed kernels were known, while the
+seven Killing kernels, the remaining oscillator towers, and the normalized
+symplectic/global-generator map were not.  C2f-N/A/M subsequently close
+those items through source energy four; global BRST cohomology remains open.
 
 ## Kernels are not generators
 
@@ -50,7 +51,8 @@ structure.  Schematically the resulting map would look like
 \]
 
 with the appropriate real structure and index placement.  No such normalized
-`Omega` is presently available.  Thus neither the ordinary matrix
+`Omega` is used inside this historical C2c certificate.  C2f-N later derives
+it and C2f-M performs the conversion.  Thus, within C2c-E alone, neither the ordinary matrix
 commutator of two `M` kernels nor their ordinary dagger relation is a test of
 the proper-conformal generator algebra.
 

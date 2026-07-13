@@ -405,8 +405,8 @@ holds only open items.
       and reproduce the curvature seed matrices on projection.  An exact
       cancelling superposition demonstrates a point on the seeded quadratic
       Taub-constraint zero locus, not a common operator kernel or a linear
-      state exclusion.  Its Hamiltonian moment-map interpretation still
-      requires the symplectic kernel-to-generator identity.
+      state exclusion.  C2f-N now supplies the previously missing absolute
+      symplectic normalization and kernel-to-generator bridge.
 
       C2c-I now gives the exact representation-theoretic workload.  A
       proper-conformal lowering charge can occur in six branch families per
@@ -442,10 +442,42 @@ holds only open items.
       represent the charges on pure-Weyl oscillator/Fock states, combine them
       with local Diff x Weyl BRST, compute cohomology, or induce a pairing.
 
-      Next: determine the missing reduced coefficients and seven Killing
-      kernels; fix the symplectic kernel-to-generator map; assemble and test
-      the full equivariant fifteen-component moment map; construct its exact
-      global action and local-plus-global BRST cohomology; and restrict
+      C2f-N derives the action-normalized oscillator form in the exact C2a
+      wave coordinates.  Hamada--Horata's canonical form is
+      `G_HH=diag(+E,-A,-L)` with unit magnitudes; for the literal reduced
+      action used by C2a,
+      `G_red=-G_HH/2` and `J_comm_red=-2 G_HH`.  The seeded CK component has
+      the exact phase `xi_repo=-i sqrt(2)/pi xi_HH`, and both independent
+      curvature kernels generate the published oscillator action after the
+      mixed-polarization and target-sign maps.  This closes the normalization
+      bridge rather than fitting one coefficient.
+
+      C2f-A solves the actual proper-conformal generator ansatz through source
+      energy four.  All sixteen `[K^-,K^+]` brackets close on the complete
+      energy-two and energy-three interior for both chiralities; the invariant
+      lowering--raising products are
+      `(96/5,-16/5,35,-2,18,-1,4)`.  The algebra forces `E` to have the
+      opposite sign from `A/L`.  In canonical normalization the seven
+      lowering coefficients are
+      `(4 sqrt(6/5),4/sqrt(5),sqrt(35),sqrt(2),3sqrt(2),-1,2)`.
+
+      C2f-M assembles the seven compact kernels and eight proper-CK kernels
+      into a 132-dimensional, two-chirality fifteen-component moment-map jet
+      through source energy four.  For `Omega=i dzbar J wedge dz`, every
+      kernel obeys `M_X=J K_X`; compact kernels are Hermitian, raising kernels
+      are lowering daggers, and the exact interior algebra passes.  The raw
+      parity-reduced Taub coefficients are now fixed to
+      `(-2sqrt(15)/(5pi),-sqrt(10)/(5pi),-sqrt(70)/(4pi),-1/(2pi),`
+      `3/(2pi),sqrt(2)/(4pi),sqrt(2)/(2pi))`; the two direct-curvature seeds
+      are reproduced independently.  The former four-mode seeded
+      cancellation still kills all proper-CK lowering values but has
+      `mu_D=-6` and `mu_Rz=-3`, so it is not on the full conformal zero locus.
+      The energy-four cutoff is only a buffer: closure on its top states needs
+      source-energy-five blocks, and no finite-cutoff cohomology is claimed.
+
+      Next: extend the exact energy-graded conformal action far enough to
+      compute a complete global-BRST kernel/image pair at the first nontrivial
+      energy; combine it with the local Diff x Weyl complex; and restrict
       `J_conf` to the resulting classes.  Only then finish s/u currents, the
       covariant-to-stationary Born map, subtraction rails, provisional reduced
       `Veff`, and its nine coordinates.  Whether nonlinear/global reduction

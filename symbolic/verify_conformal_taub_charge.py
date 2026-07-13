@@ -37,8 +37,11 @@ Consequently, if ``C_s`` is the independently computed slice coefficient,
 
     Q_s = -i s C_s.
 
-This is an operator-normalized equality between the covariant cubic current
-and a bilinear Euler/Bach charge.  It is not yet the full 15-component charge
+This is an action-normalized equality between the covariant cubic current
+and a bilinear Euler/Bach kernel.  Converting it to a Noether/operator charge
+requires the oscillator symplectic and mixed-polarization bridge supplied by
+``verify_conformal_oscillator_pairing.py``.  It is not yet the full
+15-component charge
 matrix on global BRST cohomology: only the proper-CK component selected by
 the low-energy chiral seed and its parity partner are evaluated by direct
 curvature here.  The companion ``verify_conformal_taub_multiplets.py``
@@ -345,9 +348,10 @@ def main() -> None:
         "LOW-ENERGY OSCILLATOR REPRESENTATIVES. The equality Q_s=-i*s*C_s "
         "is fixed both locally and after S3 integration. The other CK magnetic "
         "components are not independently curvature-evaluated here; their two "
-        "seeded multiplets are reconstructed in the C2b companion. The seven "
-        "Killing charges, remaining mode blocks, full moment map, global BRST "
-        "cohomology, and nonlinear state-space reduction remain open."
+        "seeded multiplets are reconstructed in the C2b companion. C2f later "
+        "supplies the source-energy-four symplectic/generator completion and "
+        "seven compact kernels. All-level global BRST cohomology and nonlinear "
+        "state-space reduction remain open."
     )
     if args.require_full_15:
         raise SystemExit(

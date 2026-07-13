@@ -176,24 +176,26 @@ Classically, the expected local structure is a moment-map reduction
 P_phys = mu^(-1)(0)/SO(4,2),
 ```
 
-with fifteen quadratic components `mu_A`.  The finite oscillator kernels
-must still be matched to the symplectic generators before that moment-map
-language is a theorem.  The expected zero set is nonlinear rather than the
+with fifteen quadratic components `mu_A`.  C2f-N/A/M now match the finite
+oscillator kernels to the symplectic generators and construct the complete
+moment-map jet through source energy four.  The expected all-level zero set is nonlinear rather than the
 oscillator Fock space used by P4 staging.  Its quantum realization
 requires the global reducibility ghosts and a BFV/BRST construction; simply
 deleting one oscillator mode or projecting a Hessian by hand would not be a
 derivation.
 
-The next acceptance target is therefore the completion of the low-energy
-collection
+The low-energy collection through source energy four is now supplied by
+`notes/conformal-moment-map-energy4.md`.  The next acceptance target is the
+extension of this energy-graded action far enough to compute a complete
+global-BRST kernel and image, followed by the charge-constrained energy-six
+state space and its induced pairing.  The defining collection is
 
 ```text
 (Q_A)_ij=integral_S3 sqrt(gamma) n_m xi_(A)n E^(2)mn[u_i,u_j],
 A=1,...,15,
 ```
 
-followed by the charge-constrained energy-six state space and its induced
-pairing.  Until then no `1/kappa_t`, reduced `t` exchange, physical
+Until that cohomological step closes, no `1/kappa_t`, reduced `t` exchange, physical
 energy-six effective Hamiltonian, or metric obstruction is defined.
 
 The exact seeded-block reconstruction is in
