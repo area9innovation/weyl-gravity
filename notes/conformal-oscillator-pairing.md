@@ -375,13 +375,16 @@ The pairing certificate does **not** supply:
 - the seven Killing-charge kernels;
 - the full fifteen-component moment map;
 - the local-plus-global BRST cohomology; or
-- the reduced energy-six physical pairing.
+- the cyclic pure-Weyl BV transfer that would identify the residual class
+  pairing with the full free physical pairing.
 
 The first three items are supplied subsequently, through source energy four,
 by `verify_conformal_generator_ansatz.py` and
 `verify_conformal_moment_map_energy4.py`.  They use the canonical charge
-reconstruction and retain an explicit buffer-boundary guard.  The all-level
-global-BRST and energy-six physical-pairing items remain open.
+reconstruction and retain an explicit buffer-boundary guard.  The later C2g
+rails supply the all-level module and show that the absolute energy-six
+residual sector is Cartan-contractible.  The remaining open item is the C2i
+local-BV/cyclic transfer, not an energy-six pairing calculation.
 
 ## Reproduction
 

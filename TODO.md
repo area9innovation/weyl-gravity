@@ -475,16 +475,67 @@ holds only open items.
       The energy-four cutoff is only a buffer: closure on its top states needs
       source-energy-five blocks, and no finite-cutoff cohomology is claimed.
 
-      Next: extend the exact energy-graded conformal action far enough to
-      compute a complete global-BRST kernel/image pair at the first nontrivial
-      energy; combine it with the local Diff x Weyl complex; and restrict
-      `J_conf` to the resulting classes.  Only then finish s/u currents, the
-      covariant-to-stationary Born map, subtraction rails, provisional reduced
-      `Veff`, and its nine coordinates.  Whether nonlinear/global reduction
-      leaves trivial, indefinite, or positive physical cohomology remains
-      open.  A full-shell theorem additionally requires the other reduced
-      irreps and spectator sectors.  The flat `P_0` Jordan cokernel remains a
-      distinct wave-packet/distributional problem.
+      C2g-W/A identifies the complete oscillator tower with the two chiral
+      on-shell Weyl-curvature modules.  Per chirality its exact character is
+      `V(2;2,0)-V(4;1,1)+V(5;1/2,1/2)`, and the all-level proper-conformal
+      coefficients close exactly on every finite-buffer interior.  The hard
+      energy-five/six dimensions are `136,202` after parity, with cumulative
+      one-particle dimension `470` through energy six.
+
+      C2g-R/F/N then closes the first cutoff-complete free residual-BRST
+      window.  The complete matter-weight-four Fock shell has dimension 137
+      and signature `(97,40)`.  Its relative primary-scalar kernel is exactly
+      the two normalized chiral Weyl-square states and has matter Gram `I2`.
+      Independently, the absolute global-only one-particle window
+      `290 -> 1311 -> 3657` is acyclic, while the particle-number-two window
+      `0 -> 55 -> 385 -> 1155` has exact outgoing rank 53 and no incoming
+      space.  The matter-vacuum `H4` vanishes by semisimple Lie-algebra
+      cohomology.  Thus the complete
+      centered free-Fock result is
+      `H4_delta=0=span{W_+^2,W_-^2}`.
+
+      C2g-G constructs Hamada's residual ghost polarization explicitly.
+      The eight dynamic ghosts have inserted-form signature `(128,128)`, the
+      centered degree-four block has `(35,35)`, and the selected ghost vacuum
+      has norm `+1`.  Consequently the exact **global-only residual** class
+      Gram is `I2`.  This is not yet the full pure-Weyl physical pairing:
+      the fixed insertion is degenerate on the unrestricted fifteen-ghost
+      exterior algebra, and the local Diff x Weyl BV zero-mode split and
+      anomaly conditions remain unproved.
+
+      C2g-Cartan supplies the structural simplification.  On total compact
+      degree `delta`, `d i_D+i_D d=delta I`, so every `delta != 0` absolute
+      residual sector is contractible.  The matter-weight-six target has
+      `delta=6-4=2`; its 53,056-dimensional middle cochain space therefore
+      has zero cohomology without rank reduction.  The provisional compact
+      quartic oscillator block is not a physical absolute-global block when
+      cylinder time translation is gauged.  It remains meaningful only in a
+      fixed-cylinder or boundary setting where `D` is retained as a physical
+      charge.  The vacuum coefficient needs no matrix rail:
+      `H*(so(4,2);C)=Lambda(u3,u5,u7)`, so `H4=0`.  Since the ghost floor is
+      `-4` and every particle has weight at least two, the N=0,1,2 results
+      exhaust the centered minimal free residual complex:
+      `H4_residual,min=span{W_+^2,W_-^2}` with Gram `I2`.
+
+      C2h formulates the exact bridge criterion.  The local pure-Weyl
+      contraction must be a strong deformation retract in the category of
+      compact-energy-graded complexes.  A stationary modewise Hodge
+      contraction supplies `D` equivariance once the fifteen
+      conformal-Killing zero modes are split off; the remaining hard theorem
+      is that its harmonic kernel is exactly the two-chiral Weyl module with
+      no relevant local/nonminimal ghost classes.
+
+      Next (C2i): construct the cyclic minimal-model bridge from the full
+      pure-Weyl BV/BFV complex.  Prove the local-cohomology theorem, cyclic
+      compatibility with the BV/Krein pairing, and that the transferred
+      one-ghost/two-matter term is the normalized Taub moment map
+      `M_Taub=-sqrt(2)/(4pi) J K^-`, alongside the universal residual ghost
+      differential and its `-4` vacuum shift.  Then show the local/global
+      spectral sequence collapses in the centered row.  Only after that
+      should an interaction act on the reduced classes.  Quantum survival
+      separately requires an anomaly-free nilpotent Diff x Weyl BRST charge.
+      The flat `P_0` Jordan cokernel and noncompact/boundary scattering remain
+      distinct problems.
     - NEXT (ON5, precise spec): boundary Born-trace evaluation —
       build the mapped process operator A_s = Σ(T_s)_xy|x_s⟩⟨y_s|
       on a truncated charge-Fock space with the squeezed vacuum;
