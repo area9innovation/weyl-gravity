@@ -38,6 +38,7 @@ particle-number-diagonal Krein lift does not make that block null.
 | 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | frozen, tag `paper4-v1.1` (15 pp.) |
 | 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions, Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order Theories** | frozen, tag `paper5-v1.1` (17 pp.; accepted by team referee, then extended: 5:1 confirmation, Krein separation, literature repositioning, charge-null lemma + regulated-embedding proposition) |
 | 6 | `einstein-weyl-interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions in Einstein–Weyl Gravity: Cubic Protection, Second-Order Metric Failure, and Krein Visibility** | draft, major-review revision (30 pp.) |
+| 7 | `conformal-residual-cohomology.tex` / `.pdf` | **Residual $SO(4,2)$ Cohomology of Free Weyl Gravity on the Conformal Cylinder** | draft; classical algebraic BV--BFV chain and energy-mode Krein completion certified |
 
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.
@@ -46,6 +47,13 @@ General-audience article:
 [`Before Worrying About a Gravitational Ghost, Ask Whether It Is Really There`](paper/before-worrying-about-a-gravitational-ghost.md)
 explains the completed classical pure-Weyl BV–BFV result without assuming
 advanced mathematics or physics.
+
+Energy-mode analytic completion:
+[`analytic_completion/README.md`](analytic_completion/README.md) documents
+the infinite-index one-particle and bosonic Krein completions, closed
+residual BRST operator, bounded Cartan contraction, and proof that completed
+centered cohomology and its $I_2$ Gram matrix are unchanged.  It deliberately
+does not claim a covariant metric-field Sobolev or Green-hyperbolic theorem.
 
 **Paper 1** (the audit paper): the Bender–Mannheim generator Q is
 *reconstructed* from the normal-form data (G, J, G₀) + positivity rather than
@@ -152,6 +160,20 @@ two-cubic exchange terms. Within the explicitly stated natural,
 particle-number-diagonal, cluster-multiplicative class, the induced Krein
 grading is `(-1)^N_M`; the obstruction is non-null, survives physical
 BRST cohomology, and admits no uniform abelian charge-null analogue.
+
+**Paper 7** (the residual conformal branch): starts from pure-Weyl metric
+fields on the conformal cylinder, derives the minimal and gauge-fixed
+BV--BFV state complex, and gauges all fifteen residual conformal generators
+for the selected closed-universe boundary problem.  The centered
+one-particle cohomology vanishes; exactly the two ghost-dressed chiral
+curvature-square vertex classes `[W_+^2]` and `[W_-^2]` survive, with
+field-induced Gram matrix `I2`.  The normalized `E/A/L` module now has an
+infinite-index energy-mode Krein completion, its symmetric bosonic Fock
+space has fundamental symmetry `Gamma_s(J)`, and the residual differential
+has a closed maximal block realization.  A bounded Cartan contraction
+proves closed range and reduces completed cohomology to the unchanged finite
+centered block.  This is not a positive graviton Hilbert-space theorem, a
+covariant metric-field Sobolev completion, or a quantum anomaly result.
 
 ## Reports (`reports/`)
 

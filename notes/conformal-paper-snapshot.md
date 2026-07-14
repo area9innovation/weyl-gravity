@@ -109,19 +109,28 @@ Gover--Peterson/Cap flat BGG theorem + M ~ S3 topology
  residual CE + canonical ghost pairing + explicit closed-S3 BFV choice
              |
              v
- exact N=0,1,2 centered algebraic cohomology
+exact N=0,1,2 centered algebraic cohomology
              |
              v
- H^4_res=span{W+^2,W-^2}, G_res=I2
+H^4_res=span{W+^2,W-^2}, G_res=I2
              |
              v
- descent + Euler--Lagrange map -> I1 dynamic + I1 topological
+descent + Euler--Lagrange map -> I1 dynamic + I1 topological
              |
              v
- complete field-theoretic BV-domain identification (conjectural)
+minimal field BV dictionary + gauge/nonminimal contraction
              |
              v
- conditional full local-plus-residual field-theory BV result
+zero-mode suspension + positive-frequency state polarization
+             |
+             v
+infinite-index energy-mode Krein--Fock completion
+             |
+             v
+closed Qbar + bounded off-center Cartan contraction
+             |
+             v
+completed H^4=span{W+^2,W-^2}, G=I2
 ```
 
 The residual cohomology is exact under the explicitly selected full residual
@@ -130,13 +139,16 @@ finite positive-energy `E/A/L` realization are exact.  A second polynomial
 calculation starts from metric/ghost/antifield rows, measures the noncompact
 homotopy defects, constructs the cross-energy cyclic form, verifies the full
 centered HPL transfer, and reproduces the centered ranks and `I2`.  The
-closed-universe BFV choice and all-energy Taub normalization are now explicit
-certificates rather than hidden assumptions.  What remains conditional is
-the identification of this algebraic polynomial complex with a chosen
-complete gauge-fixed field-theory BV domain.  Finite jets remain independent
-convention checks.  Treating `D` as gauge is a declared physical choice; if
-it is retained as the cylinder Hamiltonian, this is not the relevant
-quotient.
+closed-universe BFV choice and all-energy Taub normalization are explicit
+certificates rather than hidden assumptions.  The minimal field dictionary,
+specified gauge-fixed contraction, zero-mode suspension, polarized state
+ledger, and field pairing transfer close the classical algebraic chain.  The
+normalized energy modes now also have a certified infinite-index Krein--Fock
+completion with closed residual BRST operator, closed range, and unchanged
+centered cohomology.  Finite jets remain independent convention checks.
+Treating `D` as gauge is a declared physical choice; if it is retained as the
+cylinder Hamiltonian, this is not the relevant quotient.  A covariant
+metric-field Sobolev/distributional completion remains open.
 
 ## Priority positioning
 
@@ -152,9 +164,9 @@ Four statements are kept separate throughout the manuscript:
 
 1. the exact algebraic residual theorem;
 2. the exact smooth Bach-to-geometric-curvature theorem;
-3. the exact polynomial metric-BV transfer, cross-energy cyclic form, and
-   centered HPL comparison, with only its complete field-domain
-   identification conditional;
+3. the exact classical algebraic BV--BFV identification and its natural
+   infinite-index energy-mode Krein--Fock completion with closed residual
+   operator;
 4. the interpretation as candidate physical states under full residual
    conformal gauging.
 
@@ -166,7 +178,7 @@ Four statements are kept separate throughout the manuscript:
 | `B_lin = C1^# C1` in the repository action convention | Exact on the conformally flat cylinder | Formal-adjoint factorization, not a positivity factorization |
 | `C1^# star C1 = 0` | Exact complex identity | Published four-dimensional deformation complex; repository script independently checks both signatures in its flat-symbol conventions |
 | `H_def^q(R x S3) = (g,0,0,g,0)` | Exact smooth global theorem | Flat BGG fine resolution, trivial adjoint local system, and ordinary cohomology of `S3`; not a machine-derived or completed-Hilbert theorem |
-| `ker B_lin / im K = Wgeom,+^sm + Wgeom,-^sm` | Exact smooth equivariant theorem | Uses global exactness, `B=C1^#C1`, and Lorentzian chirality; analytic completions remain separate |
+| `ker B_lin / im K = Wgeom,+^sm + Wgeom,-^sm` | Exact smooth equivariant theorem | Uses global exactness, `B=C1^#C1`, and Lorentzian chirality; the separate energy-mode completion does not turn this into a covariant metric Sobolev theorem |
 | Algebraic `E/A/L` cylinder realization | Exact symbolic theorem | Full coordinate `C1 h` at symbolic `n`, nonzero pivots, Hodge chirality, `C1^#C1h=0`, parity, same-block metric preimages, and character exhaustion |
 | Polynomial detour quotient dimensions `10,40,82,136,202` | Exact for homogeneous degrees 2--6 | Euclidean finite jets only |
 | Raw polynomial metric-BV retract | Exact through the complete centered buffer | Includes ghost, metric, equation-antifield and identity-antifield rows; noncompact defects are explicitly homotopic, not zero |
@@ -185,7 +197,11 @@ Four statements are kept separate throughout the manuscript:
 | Vacuum `H^4=0` | Exact literature theorem | Trivial coefficient module: `H*(so(4,2);C)=Lambda(u3,u5,u7)` |
 | One-particle centered `H^4=0` | Exact cutoff-complete rank certificate | Global residual complex on the one-particle Weyl module |
 | Two-particle centered `H^4=span{W_+^2,W_-^2}` | Exact cutoff-complete rank certificate | Global residual complex; incoming space is empty |
-| Residual CE pairing `I2` | Exact in the chosen residual complex and algebraic raw transfer | Canonical complementary-degree `(4,7,4)` pairing plus exact raw cross-energy cyclic isometry; vertex classes, not a particle Hilbert space or a completed field-theory BV pairing |
+| Residual CE pairing `I2` | Exact in the algebraic and energy-mode completed residual complexes | Canonical complementary-degree `(4,7,4)` pairing plus exact field/raw transfer; vertex classes, not a positive particle Hilbert space |
+| One-particle Krein completion | Exact energy-mode theorem | Hilbert `l2` majorant and block fundamental symmetry `+E,-A,-L`; infinite positive and negative index, hence not Pontryagin |
+| Bosonic Krein--Fock completion | Exact energy-mode theorem | `Gamma_s(J_1)` on the normalized symmetric Fock completion; algebraic Fock is dense |
+| Closed completed residual BRST operator | Exact maximal block theorem | Every total compact-degree block is finite; finite block support is a graph core; `Qbar` is closed and nilpotent |
+| Completed cohomology and range | Exact | Bounded `iota_D/delta` gives closed off-center range; the centered block is finite and unchanged, so completed `H4=C2` and `G=I2` |
 | Descent to `C^2` and `C Ctilde` | Exact residual/local descent | Lorentzian `i` phase is convention-dependent |
 | Dynamical representative quotient `I1` | Exact locally | Pontryagin is only locally variationally trivial; global theta effects retained |
 | Full field-theoretic pure-Weyl local-plus-residual BV/BFV result | Conditional corollary | Requires identifying the certified algebraic polynomial cyclic complex with the complete chosen gauge-fixed field-theory BV domain, with no extra rows or domain effects |
@@ -300,30 +316,31 @@ silently presented as machine outputs:
   decision to gauge the residual cylinder conformal group;
 - the identification and normalization of `H_def^3` as the dual BFV/Taub
   sector;
-- identification of the algebraic polynomial complex with the complete
-  gauge-fixed field-theory BV domain;
-- extension to an infinite Hilbert/Krein completion;
+- integration of the common-core unbounded Lie-algebra representation to a
+  global `SO(4,2)` representation;
+- equivalence between the certified energy-mode completion and a covariant
+  Lorentzian metric-field Sobolev or Green-hyperbolic complex;
 - any quantum anomaly or interaction conclusion.
 
 ## Review focus
 
 The highest-value remaining referee questions are:
 
-1. Does the complete gauge-fixed pure-Weyl field-theory BV domain reduce to
-   the certified algebraic polynomial rows with no additional cohomology or
-   domain effects?
+1. Does a fully specified Lorentzian gauge-fixed metric Bach/BV complex have
+   a covariant Sobolev or Green-hyperbolic completion equivalent to the
+   certified energy-mode Krein completion?
 2. Is the degree-three adjoint BGG group exactly the dual BFV/Taub charge
    sector geometrically, independently of the direct Noether/Taub
    normalization already certified?
-3. Does the explicit filtered bicomplex inventory remain complete under the
-   intended field-theoretic locality and boundary conditions?
+3. How do distributional, spacelike-compact, or alternative boundary
+   conditions change the fixed-time state complex?
 4. Should the Pontryagin class remain in the residual vertex space for the
    intended cylinder boundary conditions, even though it is removed from the
    local Euler--Lagrange quotient?
 5. Is the explicitly selected closed-`S3` BFV boundary problem the intended
    physical formulation, or should `D` instead remain a global Hamiltonian?
-6. Which algebraic result, if any, extends continuously to the intended
-   Hilbert or Krein completion?
+6. Do the unbounded common-core conformal generators satisfy an appropriate
+   global integrability theorem, if such a group action is required?
 
 After the literature/referee review, the programme overview was updated to
 show Paper VII as a residual-cohomology branch from Paper IV rather than a

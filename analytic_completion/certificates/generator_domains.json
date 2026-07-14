@@ -1,0 +1,29 @@
+{
+  "D_domain": "sum_n n^2 ||u_n||^2 finite",
+  "D_hilbert_self_adjoint": true,
+  "D_krein_self_adjoint": true,
+  "closure_equals_maximal_shift": true,
+  "common_invariant_core": "finite-energy vectors",
+  "compact_generators": "closed block-diagonal maximal realizations",
+  "domain_equality_proved": true,
+  "domain_reason": "J is bounded and block diagonal; the Hilbert adjoint of the maximal weighted shift has the transposed maximal block domain",
+  "finite_support_graph_core": true,
+  "hilbert_adjoint_domain": "v with sum_n ||(T_n^-)^dagger v_(n-1)||^2 finite",
+  "krein_adjoint_block": "T_(n-1)^+ = J_n (T_n^-)^dagger J_(n-1)",
+  "krein_adjoint_relation": "(closure K^-)^sharp = closure K^+",
+  "lie_brackets": "verified on the common finite-energy core",
+  "lowering_block_convention": "(K^- u)_(n-1)=T_n^- u_n",
+  "maximal_shift_domain": "u in H with sum_n ||T_n u_n||^2 finite",
+  "minimal_domain": "finite-energy support",
+  "minimal_operators_closable": true,
+  "not_proved": [
+    "closed-operator commutators on arbitrary maximal-domain intersections",
+    "bounded conformal generators",
+    "integration to an SO(4,2) group representation",
+    "automatic exponentiation of the common-core Lie algebra"
+  ],
+  "proof_closable": "the algebraic J-adjoint supplies a dense adjoint domain",
+  "proof_graph_core": "energy truncations converge in norm and graph norm",
+  "raising_maximal_domain": "v with sum_n ||T_(n-1)^+ v_(n-1)||^2 finite; equal to the J-conjugated Hilbert-adjoint domain",
+  "schema": "pure-weyl-generator-domains-v1"
+}

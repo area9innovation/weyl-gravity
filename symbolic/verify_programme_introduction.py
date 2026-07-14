@@ -3,7 +3,7 @@
 
 The audit has four jobs:
 
-* require the completed classical theorem chain and its category qualifiers;
+* require the completed classical energy-mode theorem chain and qualifiers;
 * classify every formerly dangerous conditional-language occurrence;
 * verify that every citation key is defined; and
 * fail closed on affirmative analytic, nonlinear, quantum, particle, or
@@ -31,8 +31,8 @@ TSV_REPORT = ROOT / "symbolic" / "programme-introduction-language-report.tsv"
 
 
 REQUIRED_SNIPPETS = {
-    "classical algebraic theorem":
-        r"\begin{theorem}[Classical algebraic pure-Weyl BV--BFV theorem]",
+    "classical energy-mode theorem":
+        r"\begin{theorem}[Classical energy-mode pure-Weyl BV--BFV theorem]",
     "theorem label": r"\label{thm:intro-pure-weyl}",
     "minimal BV/raw theorem":
         r"\mathcal C_{\rm raw}^{\rm tf,min}\oplus\mathcal C_{\rm tr}",
@@ -47,10 +47,12 @@ REQUIRED_SNIPPETS = {
     "centered classes":
         r"H^4_{\rm res}=\operatorname{span}\{[W_+^2],[W_-^2]\}",
     "field Gram matrix": r"G_{\rm res}=I_2",
+    "infinite-index completion": r"infinite-index Krein space $\mathscr H_1$",
+    "closed completed differential": r"closed densely defined residual differential $\overline Q$",
     "status table": r"\label{tab:programme-status}",
     "solid theorem-chain diagram": r"\label{fig:pure-weyl-chain}",
     "historical gap closed": r"That historical gap is now closed",
-    "analytic frontier": r"\subsection{Analytic completion}",
+    "analytic frontier": r"\subsection{Covariant analytic completion}",
     "nonlinear frontier": r"\subsection{Nonlinear classical extension}",
     "quantum frontier": r"\subsection{Quantum extension}",
     "quantum challenge":
@@ -74,7 +76,9 @@ REQUIRED_STATUS_ROWS = (
     "Strict residual CE transfer & Proved",
     "Two centered classes & Proved",
     "Field-induced Gram matrix $I_2$ & Proved",
-    "Hilbert/Krein completion & Open",
+    "Energy-mode one-particle/Fock Krein completion & Proved",
+    "Closed residual BRST and completed $H^4$ & Proved",
+    "Covariant metric-field Sobolev/distributional completion & Open",
     "Nonlinear stability & Open",
     "Quantum master equation/anomalies & Open",
     "Quantum survival of the two classes & Open",
@@ -116,13 +120,44 @@ AUDIT_TERMS = (
 # negations ("does not establish", "not claimed", and open questions).
 OVERCLAIM_RULES = (
     (
-        "hilbert-krein-completion",
+        "pontryagin-space",
+        re.compile(r"(?:the|this) (?:completed )?(?:space|module) is a pontryagin space", re.IGNORECASE),
+        "The completed module is a Pontryagin space.",
+    ),
+    (
+        "bounded-conformal-generators",
+        re.compile(r"all (?:the )?conformal generators are bounded", re.IGNORECASE),
+        "All conformal generators are bounded.",
+    ),
+    (
+        "automatic-group-integration",
         re.compile(
-            r"(?:the|this|our) (?:result|theorem) (?:proves|establishes) "
-            r"(?:a |the )?(?:completed )?(?:hilbert|krein)(?:/krein)? completion",
+            r"(?:the )?lie algebra representation (?:automatically )?integrates to (?:a |the )?(?:global )?so\(4,2\)",
             re.IGNORECASE,
         ),
-        "The theorem establishes a Hilbert/Krein completion.",
+        "The Lie algebra representation automatically integrates to a global SO(4,2) representation.",
+    ),
+    (
+        "global-ghost-krein-metric",
+        re.compile(
+            r"(?:the )?centered ghost insertion is a (?:global )?nondegenerate krein metric",
+            re.IGNORECASE,
+        ),
+        "The centered ghost insertion is a global nondegenerate Krein metric.",
+    ),
+    (
+        "bounded-residual-brst",
+        re.compile(r"(?:the )?residual brst differential is bounded", re.IGNORECASE),
+        "The residual BRST differential is bounded.",
+    ),
+    (
+        "covariant-metric-completion",
+        re.compile(
+            r"(?:the|this|our) (?:result|theorem) (?:proves|establishes) "
+            r"(?:a |the )?covariant (?:metric-field )?(?:sobolev|distributional|hilbert|krein) completion",
+            re.IGNORECASE,
+        ),
+        "The theorem establishes a covariant metric-field Sobolev completion.",
     ),
     (
         "nonlinear-classical-equivalence",
@@ -132,6 +167,24 @@ OVERCLAIM_RULES = (
             re.IGNORECASE,
         ),
         "This result proves nonlinear stability.",
+    ),
+    (
+        "green-hyperbolic-completion",
+        re.compile(
+            r"(?:the|this|our) (?:result|theorem) (?:proves|establishes|constructs) "
+            r"(?:a |the )?green-hyperbolic completion",
+            re.IGNORECASE,
+        ),
+        "The theorem constructs a Green-hyperbolic completion.",
+    ),
+    (
+        "hadamard-state",
+        re.compile(
+            r"(?:the|this|our) (?:result|theorem) (?:proves|establishes|constructs) "
+            r"(?:a |the )?hadamard state",
+            re.IGNORECASE,
+        ),
+        "The theorem constructs a Hadamard state.",
     ),
     (
         "interacting-bv-cohomology",
@@ -351,8 +404,8 @@ def build_report(text: str) -> tuple[dict[str, object], list[str]]:
         "source": str(SOURCE.relative_to(ROOT)),
         "source_sha256": source_digest(text),
         "logical_category": (
-            "quadratic D-finite SO(4)-finite algebraic closed-cylinder "
-            "BV-BFV state complex with positive-frequency polarization"
+            "quadratic closed-cylinder BV-BFV state complex with its "
+            "infinite-index energy-mode Krein-Fock completion"
         ),
         "language_occurrences": occurrences,
         "language_summary": {

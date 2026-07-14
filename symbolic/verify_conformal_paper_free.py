@@ -225,6 +225,16 @@ CERTIFICATES = (
         slow=True,
     ),
     Certificate(
+        "energy-mode one-particle and Fock Krein foundation",
+        "verify_conformal_energy_mode_krein.py",
+        "CONFORMAL ENERGY-MODE KREIN FOUNDATION: ALL PASS",
+    ),
+    Certificate(
+        "closed completed residual BRST and unchanged H4",
+        "verify_conformal_completed_residual.py",
+        "CONFORMAL COMPLETED RESIDUAL BRST: ALL PASS",
+    ),
+    Certificate(
         "weight-four vertex descent",
         "verify_conformal_vertex_descent.py",
         "CONFORMAL PAPER VERTEX DESCENT: ALL PASS",
@@ -283,6 +293,18 @@ GUARDS = (
     ("the algebraic polarized state complex is not a Hilbert/Krein completion", "verify_conformal_polarized_state_complex.py", ("--claim-hilbert-completion",)),
     ("the polarized I2 is not a positive particle Hilbert metric", "verify_conformal_polarized_pairing_transfer.py", ("--claim-particle-hilbert",)),
     ("the exact algebraic pairing is not an analytic completion theorem", "verify_conformal_polarized_pairing_transfer.py", ("--claim-analytic-pairing",)),
+    ("the energy-mode Krein space has infinite positive and negative index", "verify_conformal_energy_mode_krein.py", ("--claim-pontryagin",)),
+    ("the completed E/A/L space is not a positive graviton Hilbert space", "verify_conformal_energy_mode_krein.py", ("--claim-positive-graviton-hilbert",)),
+    ("closed unbounded conformal generators are not bounded group operators", "verify_conformal_energy_mode_krein.py", ("--claim-bounded-generators",)),
+    ("formal matrix adjointness alone does not prove maximal adjoint domains", "verify_conformal_energy_mode_krein.py", ("--claim-formal-adjoint-domains",)),
+    ("common-core Lie brackets do not prove group exponentiation", "verify_conformal_energy_mode_krein.py", ("--claim-group-representation",)),
+    ("the energy Sobolev scale is not a covariant metric Sobolev theorem", "verify_conformal_energy_mode_krein.py", ("--claim-covariant-sobolev",)),
+    ("the completed residual BRST operator is closed but unbounded", "verify_conformal_completed_residual.py", ("--claim-bounded-q",)),
+    ("the centered ghost insertion is not a global ghost Krein metric", "verify_conformal_completed_residual.py", ("--claim-global-ghost-krein",)),
+    ("completed Cartan localization still requires D to be gauged", "verify_conformal_completed_residual.py", ("--treat-d-as-physical-hamiltonian",)),
+    ("the energy-mode theorem is not Green-hyperbolic", "verify_conformal_completed_residual.py", ("--claim-green-hyperbolic",)),
+    ("the energy-mode theorem is not a Hadamard-state theorem", "verify_conformal_completed_residual.py", ("--claim-hadamard",)),
+    ("the energy-mode theorem is not a quantum unitarity result", "verify_conformal_completed_residual.py", ("--claim-quantum-unitarity",)),
     ("vertex descent is not a particle Hilbert theorem", "verify_conformal_vertex_descent.py", ("--claim-particle-hilbert",)),
     ("Pontryagin is not globally trivial", "verify_conformal_dynamical_topological.py", ("--claim-pontryagin-globally-trivial",)),
     ("theta can retain boundary observables", "verify_conformal_dynamical_topological.py", ("--claim-theta-has-no-observables",)),
@@ -391,8 +413,10 @@ def main() -> None:
         "positive-frequency state polarization, and field pairing transfer, "
         "cross-energy cyclic form, complete centered HPL transfer, explicit "
         "closed-universe BFV choice, and all-energy Taub normalization. The "
-        "result is exact in the selected D-finite, SO(4)-finite algebraic "
-        "closed-cylinder category. Analytic completion, uniqueness among "
+        "algebraic result has a certified infinite-index energy-mode "
+        "Krein--Fock completion with closed residual BRST operator, bounded "
+        "off-center Cartan contraction, closed range, and unchanged centered "
+        "H4 and I2. Covariant metric-field completion, uniqueness among "
         "alternative boundary polarizations, nonlinear stability, and quantum "
         "theory remain explicitly out of scope."
     )

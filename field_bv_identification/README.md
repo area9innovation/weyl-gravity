@@ -123,9 +123,11 @@ python3 symbolic/verify_conformal_polarized_pairing_transfer.py --emit
 These commands emit three JSON certificates under
 `polarized_state/certificates/` and three generated LaTeX fragments.  They
 complete the selected algebraic closed-cylinder BV--BFV polarization used by
-the residual theorem.  They do **not** prove:
+the residual theorem.  Taken by themselves, they do **not** prove:
 
 - single-row concentration of the unpolarized bulk BV tangent complex;
-- continuity, closed range, or a Hilbert/Krein completion;
+- continuity, closed range, or a Hilbert/Krein completion (the separate
+  `analytic_completion/` theorem now supplies the natural energy-mode
+  completion, but not a covariant metric-field one);
 - uniqueness among alternative boundary conditions or polarizations;
 - interactions, anomalies, or quantum BRST nilpotency.

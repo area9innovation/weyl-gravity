@@ -1,0 +1,20 @@
+{
+  "clebsch_component_norm": "<= 1",
+  "clebsch_reason": "fixed tensor component is a partial weighted permutation; weights are products of unitary CG coefficients",
+  "coefficient_bound": "|c_family(n)| <= 2(1+n)",
+  "coefficient_remainders": {
+    "AA": "2*(n**3 + 2*n**2 - n - 10)/(n - 2)",
+    "AE": "4*(n**4 + 2*n**3 - 3*n**2 - 10*n - 2)/((n - 2)*(n + 2))",
+    "EE": "2*(n + 1)*(n**2 + 4*n + 7)/(n + 2)",
+    "LA": "4*(n**3 - 3*n - 4)/(n - 2)",
+    "LE": "2*(2*n**3 - 7*n - 1)/(n - 2)",
+    "LL": "2*(n + 1)*(n + 4)"
+  },
+  "compact_rotation_block_norm": "<= 2(1+n)",
+  "energy_block_norm": "n",
+  "proper_lowering_block_norm": "<= 12(1+n)",
+  "proper_raising_block_norm": "<= 18(1+n)",
+  "schema": "pure-weyl-generator-growth-v1",
+  "sobolev_constant": "a valid common choice is 18*2^|s|",
+  "sobolev_mapping": "K^+ and K^- map H_1^(s+1) continuously to H_1^s"
+}

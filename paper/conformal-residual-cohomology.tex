@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1.08in]{geometry}
-\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \usepackage{booktabs,array,longtable}
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
@@ -111,10 +111,18 @@ negative frequencies supply the symplectic dual, local and nonminimal
 doublets contribute only their vacuum, and BFV ghost momenta act by
 contraction rather than generating another exterior algebra.  One
 action-normalized energy-two comparison and the oriented cotangent ghost
-measure then transfer the field pairing and give $G_{m field}=I_2$.
-Analytic completion and uniqueness among other boundary polarizations still
-require separate control.  We claim neither a positive
-graviton Fock space nor quantum anomaly freedom.
+measure then transfer the field pairing and give $G_{\rm field}=I_2$.
+The normalized $E/A/L$ basis also defines a canonical energy-mode Hilbert
+majorant and an infinite-index one-particle Krein completion.  Its bosonic
+second quantization, tensored with the finite residual ghost space, carries
+a closed maximal residual BRST operator.  Every total compact-degree block
+is finite-dimensional, and the bounded off-center Cartan homotopy proves
+closed range and localizes completed cohomology to the same finite centered
+block.  Consequently the completed cohomology and field-induced Gram matrix
+remain exactly the displayed $\C^2$ and $I_2$.  This is an energy-mode
+Krein--Fock theorem, not a covariant Sobolev or distributional theorem for
+metric fields.  We claim neither an integrated $SO(4,2)$ group
+representation, a positive graviton Fock space, nor quantum anomaly freedom.
 \end{abstract}
 
 \tableofcontents
@@ -150,8 +158,9 @@ smooth metric-to-curvature bridge is proved globally, and an exact
 all-energy cylinder construction identifies its algebraic positive-energy
 part with the $E/A/L$ module used below.  The passage to the complete
 selected algebraic local-plus-residual BV--BFV state complex is also proved
-below.  Analytic completions and alternative boundary polarizations remain
-separate problems.
+below.  Its natural energy-mode Krein--Fock completion is proved as well.
+Covariant metric-field completions and alternative boundary polarizations
+remain separate problems.
 
 The present paper isolates that free classical problem on
 \begin{equation}
@@ -231,7 +240,8 @@ gauging.
 exact global theorem.  Its restriction to the $D$-finite cylinder category
 is also exact: the explicit $E/A/L$ harmonics give same-energy metric
 preimages, nonzero curvature intertwiners, and character exhaustion.
-Neither theorem is a statement about a completed Hilbert/Krein domain.
+These statements concern the geometric and algebraic realizations; the
+energy-mode completion is a separate theorem below.
 \item In the finite polynomial conformal category, an exact metric-BV
 calculation now includes the ghost and antifield detour rows, constructs a
 homotopy-equivariant retract, transfers the strict residual action, and
@@ -243,7 +253,13 @@ nonminimal extension contracts back to them exactly.  For the selected
 algebraic BV--BFV suspension and positive-frequency polarization, the endpoint
 map has scalar $+1$, the polarized row ledger is exhaustive, and the
 matter-times-ghost pairing transfers exactly.  This is not a statement about
-a completed analytic field domain or a unique boundary polarization.
+a unique boundary polarization.
+\item The normalized $E/A/L$ module has a canonical infinite-index
+energy-mode Krein completion, its bosonic Fock completion is Krein, and the
+residual BRST operator has a closed maximal block realization.  The bounded
+Cartan contraction reduces its cohomology to the unchanged finite centered
+block.  This does not construct a covariant Sobolev completion of metric
+fields or integrate the unbounded Lie-algebra action to $SO(4,2)$.
 \item Calling the resulting classes physical states additionally requires a
 boundary and gauge principle which makes all fifteen conformal generators,
 including $D$, gauge rather than global charges.  We call them
@@ -697,25 +713,121 @@ detour chain has its own exact endpoint quotient, while comparison of the
 two realizations remains useful but is not needed for the residual rank
 calculation.
 
-\subsection{Domain boundary of the theorem}
+\subsection{Energy-mode Krein completion and its boundary}
+\label{sec:energy-mode-completion}
 
-Theorems~\ref{thm:global-BGG} and \ref{thm:curvature-isomorphism} are exact
-for smooth complexified global sections.  Theorem~\ref{thm:algebraic-cylinder}
-additionally identifies the $D$-finite, $SO(4)$-finite positive-energy
-submodule by explicit metric representatives.  These theorems do not identify
-spacelike-compact or distributional cohomology, nor do they prove
-continuity and closed range on an infinite Hilbert/Krein completion.  If
-such an analytic completion is required, Green-hyperbolic complexes and
-causal homotopies remain natural tools \cite{GreenHyperbolic}.
+The smooth and algebraic theorems above now admit a natural completion in
+the positive-frequency cylinder-energy variables used by the residual
+calculation.  This is deliberately narrower than a covariant completion of
+the metric Bach/BV complex.
 
-The other remaining issue is BV--BFV rather than local geometry.  The fifteen
-conformal-Killing zero modes and the dual endpoint quotient must be
-transgressed to a time-slice BFV cotangent sector without double counting.
-Dneprov and Grigoriev's minimal
-nonlinear Weyl-jet model supplies compatible presymplectic data for this
-comparison \cite{DneprovGrigoriev}, but its curvature-dependent ghost terms
-must not be imported as a proof that the free residual transfer is strict.
-It does not perform the global cylinder BFV split.
+Let
+\begin{equation}
+ \W_{\rm alg}=\bigoplus_{n\ge2}^{\rm alg}\cH_n
+\end{equation}
+be the parity-complete $E/A/L$ module.  Declare its normalized cylinder
+basis orthonormal for a positive Hilbert majorant and complete the direct
+sum to $\mathscr H_1$.  The block involution
+\begin{equation}
+ \mathfrak J_1=+1_E\oplus(-1_A)\oplus(-1_L)
+\end{equation}
+is a bounded self-adjoint involution of norm one, and
+$[u,v]_1=(u,\mathfrak J_1v)_0$ extends the algebraic invariant form.  Both
+the positive and negative eigenspaces are infinite-dimensional.  Thus this
+is an infinite-index Krein space, not a Pontryagin space.
+
+The reduced proper-conformal coefficients obey an all-level linear bound
+$|c_{\alpha\beta}(n)|\le 2(1+n)$.  With the unit-normalized Clebsch--Gordan
+maps, $K^\pm$ are finite-band matrix-weighted shifts of energy order one.
+Their finite-support realizations are closable, energy truncations are graph
+cores, and their closures equal the maximal square-summability domains.
+The equality
+\begin{equation}
+ (\overline{K^-})^\sharp=\overline{K^+}
+\end{equation}
+includes equality of those maximal domains.  The conformal commutators are
+claimed on the common finite-energy invariant core only; no exponentiation
+to a global Krein-unitary $SO(4,2)$ representation is inferred
+\cite{JorgensenTian}.
+
+Second quantization gives the Hilbert Fock space
+\begin{equation}
+ \mathscr F=\Gamma_s(\mathscr H_1),
+ \qquad
+ \mathfrak J_{\mathscr F}=\Gamma_s(\mathfrak J_1),
+\end{equation}
+and hence a bosonic Krein--Fock completion.  Give the finite residual ghost
+exterior algebra its positive monomial Hilbert norm and set
+$\mathscr K=\mathscr F\widehat\otimes\Lambda^\bullet\g^*$.  The centered
+ghost insertion remains a bounded complementary-degree cohomological
+pairing; it is not promoted here to a nondegenerate Krein metric on every
+ghost-number block.
+
+\begin{theorem}[Energy-mode Krein completion]
+\label{thm:energy-mode-completion}
+For the selected closed-cylinder problem in which all fifteen residual
+generators, including $D$, are gauged, the algebraic residual differential
+has a closed densely defined maximal extension $\overline Q$ on
+$\mathscr K$, and the algebraic state space is a graph core.  Every total
+compact-degree eigenspace $\mathscr K_\delta$ is finite-dimensional.  On
+the complement of $\mathscr K_0$, the bounded operator
+\begin{equation}
+ h=\bigoplus_{\delta\ne0}\frac{\iota_D}{\delta}
+\end{equation}
+preserves $\operatorname{Dom}\overline Q$ and satisfies
+\begin{equation}
+ \overline Qh+h\overline Q=1-P_0.
+\end{equation}
+The range of $\overline Q$ is closed, ordinary and reduced cohomology
+coincide, and
+\begin{equation}
+ \boxed{
+ H^4(\mathscr K,\overline Q)
+ =\operatorname{span}\{[W_+^2],[W_-^2]\},
+ \qquad G_{\rm completed}=I_2.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The ghost compact spectrum is contained in $[-4,4]$.  At fixed total degree
+$\delta$, matter energy therefore belongs to a finite interval.  Fixed
+matter energy bounds particle number by $N\le E/2$, uses only the finite
+one-particle blocks with $n\le E$, and has finitely many bosonic partitions.
+Thus every $\mathscr K_\delta$ is finite-dimensional.  In particular,
+$\mathscr K_0$ has matter energy at most four and is literally the algebraic
+centered block.
+
+Write $Q_\delta$ for the finite nilpotent matrix on $\mathscr K_\delta$.
+The maximal Hilbert direct sum, with domain
+$\sum_\delta\|Q_\delta\Psi_\delta\|^2<\infty$, is closed; total-degree
+truncations converge in norm and graph norm.  Blockwise nilpotency also
+places $\overline Q\Psi$ back in the domain and gives
+$\overline Q^2\Psi=0$.
+
+Exterior contraction $\iota_D$ is bounded of norm one, and nonzero
+$\delta$ is integral, so $\|h\|\le1$.  The estimate
+\begin{equation}
+ \|Q_\delta h_\delta\Psi_\delta\|
+ \le \|\Psi_\delta\|+\|h_\delta\|\,
+       \|Q_\delta\Psi_\delta\|
+\end{equation}
+proves domain invariance and extends the algebraic Cartan identity to the
+maximal domain.  Hence every off-center closed vector is exact, and the
+off-center range equals the closed kernel.  The centered range is
+finite-dimensional, so the total range is closed.  The already-certified
+finite centered calculation then applies without a limiting argument and
+gives the displayed cohomology and Gram matrix.
+\end{proof}
+
+This theorem completes modes of the already-selected polarized Weyl state
+complex.  It does not identify spacelike-compact or distributional metric
+cohomology, construct Green operators, or prove equivalence with a covariant
+metric-field Sobolev topology.  Green-hyperbolic complexes and causal
+homotopies remain natural tools for that later problem
+\cite{BaerGreenHyperbolic,GreenHyperbolic}.  Nor does the theorem make the
+choice to gauge $D$
+universal: if $D$ is retained as a Hamiltonian or boundary charge, the
+Cartan contraction is not part of that physical complex.
 
 \section{The on-shell Weyl module}\label{sec:weyl-module}
 
@@ -1504,8 +1616,10 @@ algebraic direct sum over $N$ proves \eqref{eq:Fock-lift}.
 \end{proof}
 
 Thus the Fock-space coefficient module is not an independent field-theory
-input.  The statement is algebraic; topological tensor products and
-completed Fock spaces require their own continuity assumptions.
+input.  Proposition~\ref{prop:Fock-lift} is algebraic.  Its selected
+Hilbert/Krein symmetric-Fock realization and the closed residual operator
+are supplied separately by Theorem~\ref{thm:energy-mode-completion}; that
+theorem does not claim an arbitrary topological tensor-product completion.
 
 \subsection{Equivariant Cartan transfer}
 
@@ -2419,7 +2533,8 @@ reduction.  It does not show that the interaction preserves the reduced
 space or pairing.  Nor does it address the quantum master equation.  A local
 Diff$\times$Weyl anomaly can obstruct quantum nilpotency even though
 Corollary~\ref{cor:algebraic-pure-weyl} is established in the free classical
-algebraic category.
+algebraic category and Theorem~\ref{thm:energy-mode-completion} extends its
+residual cohomology to the selected energy-mode Krein completion.
 
 \paragraph{Vertex versus dynamics.}
 The two residual classes do not define two independent local gravitational
@@ -2428,7 +2543,7 @@ parity-odd class is a theta direction, locally related by a canonical
 boundary transformation.  The positive dynamical quotient is therefore
 one-dimensional.
 
-\paragraph{The completed algebraic bridge and its analytic boundary.}
+\paragraph{The algebraic bridge, energy completion, and covariant boundary.}
 The all-level smooth metric-to-$\mathcal W_{\rm geom}$ identification and
 the algebraic $E/A/L$ curvature intertwiner are exact.  The raw polynomial
 metric-BV complex now supplies its explicit ghost and antifield detour rows,
@@ -2448,10 +2563,14 @@ $\Omega_{\rm BV}\to\Omega_{\rm BFV}\to\Omega_\Sigma\to J_+$ gives
 $G_{\rm field}=I_2$.
 The direct Taub comparison does not require first identifying a
 degree-three BGG representative, although that geometric comparison remains
-valuable.  Extension to a chosen Hilbert or Krein completion is a separate
-analytic question, as is uniqueness among boundary or deparametrized
-polarizations.  The exact ranks in Table~\ref{tab:detour-ranks} remain
-independent convention and regression checks.
+valuable.  The normalized energy modes now have the Krein--Fock completion
+of Theorem~\ref{thm:energy-mode-completion}, with closed residual operator,
+closed range, and unchanged $H^4$.  Extension of the metric-field complex to
+a covariant Sobolev, distributional, or Green-hyperbolic category remains a
+separate analytic question, as does uniqueness among boundary or
+deparametrized polarizations.  The exact ranks in
+Table~\ref{tab:detour-ranks} remain independent convention and regression
+checks.
 
 \section{Conclusion}\label{sec:conclusion}
 
@@ -2486,9 +2605,12 @@ minimal chain while preserving all fifteen CKVs.  In the selected algebraic
 closed-cylinder BV--BFV polarization, endpoint suspension, state-row
 completeness, and pairing transfer are now exact, so the same $I_2$ is the
 field-induced form on the two residual vertex classes.  This remains a
-choice-dependent algebraic state theorem, not a positive graviton Hilbert
-space.  Analytic completion, alternative boundary polarizations, quantum
-consistency, and interaction descent are separate questions.
+choice-dependent classical state theorem, not a positive graviton Hilbert
+space.  The energy-mode Krein--Fock completion and closed residual operator
+of Theorem~\ref{thm:energy-mode-completion} leave the finite centered result
+unchanged.  Covariant metric-field completion, alternative boundary
+polarizations, quantum consistency, and interaction descent are separate
+questions.
 
 \appendix
 
@@ -2577,8 +2699,9 @@ action-normalized factorization and finite scalar-block audits.\\
 Global smooth deformation cohomology and curvature isomorphism & Exact
 smooth theorem & The flat BGG fine resolution and
 $H^\bullet(\R\times S^3)$ give $H^1_{\rm def}=H^2_{\rm def}=0$ and hence
-\eqref{eq:curvature-isomorphism}.  This does not establish a completed
-Hilbert/Krein isomorphism or the BV/BFV zero-mode split.\\
+\eqref{eq:curvature-isomorphism}.  This smooth theorem does not itself
+establish the energy-mode completion or a covariant metric Sobolev
+isomorphism.\\
 Euclidean polynomial detour ranks, degrees $2$--$6$ & Exact finite
 certificate & Rational matrices verify kernels, ranks, and the $15$ residual
 zero modes; they are an independent convention audit rather than the source
@@ -2614,9 +2737,11 @@ $\operatorname{Sym}(\W_+\oplus\W_-)\otimes\Lambda^\bullet\g^*$, represents
 $b_a$ by $\iota_a$, and contracts every local and nonminimal doublet to its
 vacuum.  One matter normalization and the cotangent orientation transfer the
 pairing and give $G_{\rm field}=I_2$.\\
-Residual Cartan homotopy reduction & Theorem & Explicit homotopy
-$\iota_D/\delta$ on every nonzero total degree; this is a quotient only in
-the full residual-gauging problem.\\
+Completed residual Cartan homotopy reduction & Exact energy-mode theorem &
+The maximal block-direct-sum $\overline Q$ is closed and nilpotent, every
+total-degree block is finite, and bounded $\iota_D/\delta$ gives closed
+range and unchanged centered cohomology.  This is a quotient only in the
+full residual-gauging problem.\\
 Centered vacuum and one-particle sectors & Exact & Semisimple Lie-algebra
 cohomology for the vacuum; cutoff-complete absolute rank certificate for
 one particle.\\
@@ -2626,10 +2751,15 @@ space and exact rank $53$.\\
 Vertex descent and dynamical/topological split & Exact locally & Weight-four
 descent, Chern--Weil transgression, and Euler--Lagrange quotient.  Global
 theta effects are retained.\\
-Analytic or alternative-boundary BV--BFV realization & Not claimed & The
-algebraic theorem does not establish boundedness, closed range,
-distributional cohomology, or uniqueness among boundary, clock, asymptotic,
-or deparametrized polarizations.\\
+Energy-mode one-particle/Fock Krein completion & Exact & The normalized
+$E/A/L$ basis gives an infinite-index Krein space, $\Gamma_s(\mathfrak J_1)$
+gives the bosonic Fock fundamental symmetry, and weighted-shift domains give
+closed Krein-adjoint conformal generators on a common core.\\
+Covariant or alternative-boundary BV--BFV realization & Not claimed & The
+energy-mode theorem does not establish a metric-field Sobolev or
+distributional complex, Green-hyperbolic equivalence, group exponentiation,
+or uniqueness among boundary, clock, asymptotic, or deparametrized
+polarizations.\\
 Interpretation as a physical state space & Choice-dependent & Requires a
 boundary and gauge principle that treats all fifteen generators, including
 $D$, as gauge rather than global charges.\\
@@ -2664,6 +2794,18 @@ M.~Benini, G.~Musante, and A.~Schenkel,
 Commun. Math. Phys. (2023),
 \href{https://doi.org/10.1007/s00220-023-04807-5}{doi:10.1007/s00220-023-04807-5},
 \href{https://arxiv.org/abs/2207.04069}{arXiv:2207.04069}.
+
+\bibitem{BaerGreenHyperbolic}
+C.~B\"ar,
+``Green-hyperbolic operators on globally hyperbolic spacetimes,''
+Commun. Math. Phys. \textbf{333} (2015) 1585--1615,
+\href{https://arxiv.org/abs/1310.0738}{arXiv:1310.0738}.
+
+\bibitem{JorgensenTian}
+P.~E.~T.~Jorgensen and F.~Tian,
+``Unbounded operators, Lie algebras, and local representations,''
+J. Math. Phys. \textbf{55} (2014) 111702,
+\href{https://arxiv.org/abs/1406.6966}{arXiv:1406.6966}.
 
 \bibitem{CapBGG}
 A.~\v{C}ap,

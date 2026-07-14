@@ -367,9 +367,12 @@ Gram matrix `I2`.
 
 This is an end-to-end theorem in the finite, algebraic polynomial conformal
 category.  The later checkpoints add the raw cross-energy cyclic form and
-make the closed-universe BFV choice explicit.  They do **not** make that
-boundary choice compulsory in other physical problems, establish an
-analytic completion, or address the quantum theory.
+make the closed-universe BFV choice explicit.  The separate
+`analytic_completion/` layer now establishes the natural energy-mode
+Krein--Fock completion and unchanged centered cohomology.  None of these
+results makes that boundary choice compulsory in other physical problems,
+establishes a covariant metric-field completion, or addresses the quantum
+theory.
 
 ## Completed checkpoint: cross-energy cyclic transfer
 

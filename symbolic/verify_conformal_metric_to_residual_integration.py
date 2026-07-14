@@ -173,8 +173,8 @@ def certificate_data() -> dict[str, object]:
                 "dynamical/topological parity split",
             ],
             "remaining": [
-                "identification with the complete gauge-fixed field-theory BV domain",
-                "analytic completion and quantum anomaly questions",
+                "this executable alone does not derive the gauge-fixed field BV-BFV polarization; companion certificates do",
+                "covariant metric-field completion and quantum anomaly questions",
             ],
         },
     }

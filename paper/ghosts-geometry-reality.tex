@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1.15in]{geometry}
-\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \usepackage{booktabs,array}
 \usepackage{xcolor}
 \usepackage{tikz}
@@ -92,10 +92,15 @@ cohomology vanishes, while exactly two weight-four vertex classes survive:
  \qquad G_{\rm res}=I_2.
 \end{equation*}
 These are classical deformation classes descending to the Weyl-square and
-Pontryagin directions, not one-particle gravitons.  The theorem is quadratic
-and algebraic; it proves neither a positive graviton Hilbert space nor
-quantum anomaly freedom or interacting unitarity.  Analytic completion,
-nonlinear stability, and the quantum master equation remain separate.
+Pontryagin directions, not one-particle gravitons.  The normalized $E/A/L$
+module and its bosonic Fock space now admit an infinite-index energy-mode
+Krein completion.  The residual differential has a closed maximal extension,
+and a bounded Cartan contraction forces its cohomology back into the same
+finite centered block, so the completed result is still $\C^2$ with Gram
+matrix $I_2$.  The theorem is quadratic and does not construct a positive
+graviton Hilbert space.  Covariant metric-field completion, nonlinear
+stability, quantum anomaly freedom, and interacting unitarity remain
+separate.
 Extending the free
 classification to interactions, Paper~V formulates a deformation
 problem for the positive metric and the Krein involution.  The positive
@@ -286,9 +291,15 @@ minimal master-action chain, trace contraction, gauge-fixed extension,
 endpoint duality, $\lambda=+1$ BV-to-BFV suspension, polarized row ledger,
 strict residual CE transfer, and field pairing are all explicit.  The physical
 choice to constrain all fifteen generators, especially $D$, remains part of
-the theorem's hypotheses.  Analytic completion is additional.  The theorem
-establishes neither a positive graviton Fock space, nonlinear stability,
-quantum BRST nilpotency, anomaly cancellation, nor interacting unitarity.
+the theorem's hypotheses.  The natural energy-mode one-particle and bosonic
+Fock Krein completions, closed residual BRST operator, bounded Cartan
+contraction, and unchanged completed $H^4$ are now proved.  The theorem does
+not establish a covariant metric-field Sobolev completion, an integrated
+$SO(4,2)$ group representation, a positive graviton Fock space, nonlinear
+stability, quantum BRST nilpotency, anomaly cancellation, or interacting
+unitarity.  Common-core commutators of unbounded generators do not by
+themselves supply the missing group integrability conditions
+\cite{JorgensenTianIntro}.
 
 \begin{table}[p]
 \centering\scriptsize
@@ -312,7 +323,11 @@ Positive-frequency state ledger & Proved & Algebraic polarization\\
 Strict residual CE transfer & Proved & Centered coefficient window\\
 Two centered classes & Proved & Classical polarized state complex\\
 Field-induced Gram matrix $I_2$ & Proved & Selected pairing conventions\\
-Hilbert/Krein completion & Open & Analytic\\
+Energy-mode one-particle/Fock Krein completion & Proved & Infinite-index
+cylinder-energy completion\\
+Closed residual BRST and completed $H^4$ & Proved & Maximal total-degree
+block realization\\
+Covariant metric-field Sobolev/distributional completion & Open & Analytic\\
 Nonlinear stability & Open & Classical interacting theory\\
 Quantum master equation/anomalies & Open & Quantum\\
 Quantum survival of the two classes & Open & Quantum residual theory\\
@@ -1354,7 +1369,7 @@ one-particle sector disappears from the relevant cohomology.  Two composite
 curvature classes survive, one dynamical and one topological.  The completed
 classical statement is the following.
 
-\begin{theorem}[Classical algebraic pure-Weyl BV--BFV theorem]
+\begin{theorem}[Classical energy-mode pure-Weyl BV--BFV theorem]
 \label{thm:intro-pure-weyl}
 In the quadratic, $D$-finite, $SO(4)$-finite cylinder category, choose the
 closed-universe BFV problem in which all fifteen residual conformal
@@ -1375,13 +1390,26 @@ its centered one-particle cohomology vanishes, and
 \end{equation}
 The pairing in \eqref{eq:intro-field-result} is induced from the selected
 field-theoretic BV--BFV and positive-frequency data.
+Moreover, the normalized $E/A/L$ module completes to an infinite-index
+Krein space $\mathscr H_1$, and
+\begin{equation}
+ \mathscr K
+ =\Gamma_s(\mathscr H_1)\widehat\otimes
+   \Lambda^\bullet\mathfrak{so}(4,2)^*
+\end{equation}
+carries a closed densely defined residual differential $\overline Q$ with
+the algebraic state space as a graph core.  A bounded Cartan contraction
+localizes completed cohomology to the unchanged finite centered block.
+Thus \eqref{eq:intro-field-result} also holds for
+$H^4(\mathscr K,\overline Q)$.
 \end{theorem}
 
 The two classes in Theorem~\ref{thm:intro-pure-weyl} are deformation or
 vertex classes, not two graviton states.  The theorem is classical,
-quadratic, algebraic, and boundary-choice dependent.  It does not establish
-a positive graviton Hilbert space, nonlinear equivalence, quantum anomaly
-freedom, or interacting unitarity.
+quadratic, energy-mode based, and boundary-choice dependent.  It does not
+establish a covariant Sobolev completion of metric fields, a positive
+graviton Hilbert space, nonlinear equivalence, quantum anomaly freedom, or
+interacting unitarity.
 
 \subsection{Why study the theory on a cylinder?}
 
@@ -1812,21 +1840,23 @@ field-induced pairing in \eqref{eq:intro-field-result}.
 \node[stage, below=4mm of bv] (gf) {Gauge-fixed contraction and zero-mode split};
 \node[stage, below=4mm of gf] (bfv) {Closed-universe residual BFV system};
 \node[stage, below=4mm of bfv] (state) {Positive-frequency polarized state complex};
-\node[stage, below=4mm of state] (ce) {Strict residual $SO(4,2)$ CE cohomology};
+\node[stage, below=4mm of state] (complete)
+ {Energy-mode Krein--Fock completion; closed $\overline Q$};
+\node[stage, below=4mm of complete] (ce) {Strict residual $SO(4,2)$ CE cohomology};
 \node[stage, below=4mm of ce] (result)
  {$H^4_{\rm res}=\C^2$, $G_{\rm res}=I_2$};
-\foreach \a/\b in {action/bgg,bgg/bv,bv/gf,gf/bfv,bfv/state,state/ce,ce/result}
+\foreach \a/\b in {action/bgg,bgg/bv,bv/gf,gf/bfv,bfv/state,state/complete,complete/ce,ce/result}
  {\draw[arr] (\a) -- (\b);}
 \node[open, below=10mm of result] (nonlinear) {nonlinear extension};
-\node[open, left=5mm of nonlinear] (analytic) {analytic completion};
+\node[open, left=5mm of nonlinear] (analytic) {covariant metric completion};
 \node[open, right=5mm of nonlinear] (quantum) {quantum QME/anomalies};
 \draw[oarr] (result) -- (analytic);
 \draw[oarr] (result) -- (nonlinear);
 \draw[oarr] (result) -- (quantum);
 \end{tikzpicture}
 \caption{Completed classical theorem chain for the pure-Weyl branch.  Solid
-arrows are proved in the stated smooth or algebraic categories; dashed arrows
-mark the three remaining frontiers.}
+arrows are proved in the stated smooth, algebraic, or energy-mode categories;
+dashed arrows mark the three remaining frontiers.}
 \label{fig:pure-weyl-chain}
 \end{figure}
 
@@ -1836,8 +1866,9 @@ directly from the latter rather than inferred by naming its quotient a BGG
 $H^3$ representative.  Dneprov and Grigoriev's nonlinear Weyl-jet model
 remains useful comparison data, but its curvature-dependent ghost terms are
 not inserted into the free residual differential
-\cite{DneprovGrigorievIntro}.  Analytic completion, nonlinear transfer, and
-quantum consistency are not consequences of the algebraic theorem.
+\cite{DneprovGrigorievIntro}.  Covariant metric-field completion, nonlinear
+transfer, and quantum consistency are not consequences of the energy-mode
+theorem.
 
 \subsection{Why the result matters}
 
@@ -2167,18 +2198,28 @@ continuation.}
 
 \section{What remains open}\label{sec:open}
 
-The field-theoretic identification of the classical algebraic Paper-VII
-complex is no longer an open problem.  The frontier now has three parts.
+The field-theoretic identification and the natural energy-mode Krein--Fock
+completion of the classical Paper-VII complex are no longer open problems.
+The frontier now has three parts.
 
-\subsection{Analytic completion}
+\subsection{Covariant analytic completion}
 
-The exact modewise maps act on finite sums of $D$-eigenmodes and finite
-$SO(4)$ type.  Extending them requires continuity estimates, closed-range
-theorems, and a choice among smooth, distributional, spacelike-compact, or
-other support conditions.  One must control convergence of the algebraic
-mode expansions, construct completed Krein and Fock spaces, and prove that
-the positive-frequency Lagrangian polarization is compatible with the
-chosen topology.
+The normalized $E/A/L$ modes now complete to an infinite-index Krein space;
+their bosonic Fock completion carries a closed residual BRST operator, and
+the bounded Cartan homotopy proves closed range and unchanged centered
+cohomology.  What remains is a different analytic theorem: start from a
+fully specified Lorentzian gauge-fixed metric Bach/BV complex, choose
+smooth, distributional, spacelike-compact, or other support conditions,
+construct causal or Sobolev homotopies, and prove that its Cauchy-data
+topology agrees with the energy-mode completion.  This includes continuity
+of the metric-to-curvature maps and compatibility of covariant and
+fixed-time pairings.
+Green-hyperbolic operators and complexes supply the natural causal tools for
+such a comparison \cite{BaerGreenIntro,GreenComplexIntro}.  Known
+factorizations of the conformal higher-spin kinetic operators on
+$S^1\times S^3$, including the Weyl graviton, are useful evidence but do not
+by themselves prove the Lorentzian gauge-complex theorem
+\cite{BeccariaBekaertTseytlinIntro}.
 
 Boundary data are part of this problem.  The theorem uses the
 closed-universe constraint choice.  A boundary, asymptotic region, external
@@ -2186,7 +2227,7 @@ clock, or deparametrization may retain $D$ as a charge and produce a
 different state complex.  Likewise, a Maldacena-type conformal boundary
 condition may truncate a bulk branch rather than complete the same bulk
 space \cite{Maldacena}.  None of these alternatives is ruled out by the
-algebraic theorem.
+energy-mode theorem.
 
 \subsection{Nonlinear classical extension}
 
@@ -2271,7 +2312,7 @@ survives in the extended theory, and the regulated charge image becomes
 one-sided.  This boundary nullity mechanism is distinct from the exact
 Krein pseudo-unitarity already present at the verified split shell.
 
-The residual branch is now complete in its stated classical algebraic
+The residual branch is now complete in its stated classical energy-mode
 category.  It begins with the metric pure-Weyl field theory, derives the
 minimal and gauge-fixed BV complexes, contracts the trace and nonminimal
 sectors, transfers the fifteen global zero modes to the selected
@@ -2280,8 +2321,10 @@ polarization.  The resulting strict residual $SO(4,2)$ complex has no
 centered one-particle class and has exactly two weight-four curvature-square
 classes, with field-induced Gram matrix $I_2$.  One direction is dynamical
 and one topological.  These are vertex or deformation classes, not two
-positive-norm gravitons, and the theorem is neither an analytic completion
-nor a nonlinear or quantum statement.
+positive-norm gravitons.  The algebraic state complex has a natural
+infinite-index Krein--Fock completion with closed residual differential and
+the same cohomology.  This is not a covariant metric-field completion, a
+nonlinear theorem, or a quantum statement.
 
 The seven papers therefore form a fork rather than a single progression.
 Papers~I--IV classify the local free structures.  Papers~V--VI test their
@@ -2310,12 +2353,12 @@ look like unrelated tricks.  They become different parts of one
 geometric, representation-theoretic, and deformation-theoretic
 framework.
 
-The programme therefore now supplies a complete classical algebraic
+The programme therefore now supplies a complete classical energy-mode
 BV--BFV derivation of the centered residual cohomology of free pure-Weyl
-gravity on the conformal cylinder.  The remaining frontier is not the
-identification of the classical complex: it is the analytic completion of
-the modewise theorem, its nonlinear extension, and the renormalized quantum
-master equation.
+gravity on the conformal cylinder, including its infinite-index Krein--Fock
+completion.  The remaining frontier is not the identification or natural
+mode completion of the classical complex: it is the covariant PDE
+completion, nonlinear extension, and renormalized quantum master equation.
 
 \keybox{Do the two classical deformation classes survive an anomaly-free
 renormalized quantum BV--BFV transfer?}
@@ -2407,6 +2450,27 @@ A.~S.~Cattaneo, P.~Mnev and N.~Reshetikhin,
 \emph{Classical BV theories on manifolds with boundary},
 Commun. Math. Phys. \textbf{332} (2014) 535--603,
 arXiv:1201.0290.
+
+\bibitem{BaerGreenIntro}
+C.~B\"ar,
+\emph{Green-hyperbolic operators on globally hyperbolic spacetimes},
+Commun. Math. Phys. \textbf{333} (2015) 1585--1615,
+arXiv:1310.0738.
+
+\bibitem{GreenComplexIntro}
+M.~Benini, G.~Musante and A.~Schenkel,
+\emph{Green hyperbolic complexes on Lorentzian manifolds},
+Commun. Math. Phys. (2023), arXiv:2207.04069.
+
+\bibitem{BeccariaBekaertTseytlinIntro}
+M.~Beccaria, X.~Bekaert and A.~A.~Tseytlin,
+\emph{Partition function of free conformal higher spin theory},
+JHEP \textbf{08} (2014) 113, arXiv:1406.3542.
+
+\bibitem{JorgensenTianIntro}
+P.~E.~T.~Jorgensen and F.~Tian,
+\emph{Unbounded operators, Lie algebras, and local representations},
+J. Math. Phys. \textbf{55} (2014) 111702, arXiv:1406.6966.
 
 \bibitem{SGH1992}
 F.~G.~Scholtz, H.~B.~Geyer and F.~J.~W.~Hahne,
