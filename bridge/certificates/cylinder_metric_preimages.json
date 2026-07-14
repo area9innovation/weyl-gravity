@@ -1,0 +1,105 @@
+{
+  "category": "D-finite SO(4)-finite highest-weight blocks",
+  "common_factor": "exp[-i(E tau+mL alpha+mR gamma)]*(1+r^2)^(-a)",
+  "coordinate_chart": "r=tan(beta/2), r>0",
+  "curvature_convention": "U_(F,n,M)=C1 h_(F,n,M)",
+  "level_dimensions_2_through_6": [
+    10,
+    40,
+    82,
+    136,
+    202
+  ],
+  "parity_completion": {
+    "hodge_eigenvalues": {
+      "+": "-I",
+      "-": "+I"
+    },
+    "map": "alpha<->gamma",
+    "orientation": -1
+  },
+  "records": [
+    {
+      "chirality": "+",
+      "curvature_pivot": "sqrt(n)*sqrt(n - 1)*sqrt(n + 1)/(16*pi*(r**2 + 1)**2)",
+      "curvature_pivot_index": [
+        0,
+        2,
+        0,
+        2
+      ],
+      "dimension": "n**2 + 2*n - 3",
+      "energy": "n",
+      "family": "E",
+      "hodge_eigenvalue": "-I",
+      "irrep": [
+        "n/2 + 1",
+        "n/2 - 1"
+      ],
+      "metric_amplitude": "sqrt(n - 1)/(32*pi*sqrt(n)*sqrt(n + 1))",
+      "minimum_energy": 2,
+      "radial_exponent": "n/2 - 1",
+      "right_inverse": "R_n(U_E,n,M)=h_E,n,M"
+    },
+    {
+      "chirality": "+",
+      "curvature_pivot": "sqrt(n)*sqrt(n - 2)*sqrt(n - 1)/(32*pi*sqrt(n + 2)*(r**2 + 1))",
+      "curvature_pivot_index": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "dimension": "n**2 - 1",
+      "energy": "n",
+      "family": "A",
+      "hodge_eigenvalue": "-I",
+      "irrep": [
+        "n/2",
+        "n/2 - 1"
+      ],
+      "metric_amplitude": "-sqrt(n - 1)/(8*pi*sqrt(n)*sqrt(n**2 - 4))",
+      "minimum_energy": 3,
+      "radial_exponent": "n/2 - 1",
+      "right_inverse": "R_n(U_A,n,M)=h_A,n,M"
+    },
+    {
+      "chirality": "+",
+      "curvature_pivot": "sqrt(n)*sqrt(n - 3)*sqrt(n - 1)/(16*pi*(r**2 + 1)**2)",
+      "curvature_pivot_index": [
+        0,
+        2,
+        0,
+        2
+      ],
+      "dimension": "n**2 - 2*n - 3",
+      "energy": "n",
+      "family": "L",
+      "hodge_eigenvalue": "-I",
+      "irrep": [
+        "n/2",
+        "n/2 - 2"
+      ],
+      "metric_amplitude": "sqrt(n - 3)/(32*pi*sqrt(n)*sqrt(n - 1))",
+      "minimum_energy": 4,
+      "radial_exponent": "n/2 - 2",
+      "right_inverse": "R_n(U_L,n,M)=h_L,n,M"
+    }
+  ],
+  "right_inverse_identity": "C1 R_n=id on E/A/L curvature image blocks",
+  "schema": "pure-weyl-cylinder-preimages-v1",
+  "scope": {
+    "not_yet_proved": [
+      "complete off-shell K_n/C_n/D2_n harmonic complex",
+      "full one-particle BV cohomology",
+      "SO(4,2)-equivariant cyclic transfer"
+    ],
+    "proved": [
+      "symbolic all-n normalized metric preimage in each E/A/L irrep",
+      "nonzero full coordinate Weyl image",
+      "chiral algebraic Weyl identities",
+      "linear Bach equation",
+      "same-energy and same-SO(4)-block right inverse"
+    ]
+  }
+}

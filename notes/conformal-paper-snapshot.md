@@ -97,8 +97,8 @@ Gover--Peterson/Cap flat BGG theorem + M ~ S3 topology
  smooth Bach quotient = Wgeom,+^sm + Wgeom,-^sm           |
              |                                            |
              v                                            |
- algebraic cylinder realization (conditional)             |
- E/A/L intertwiner + finite-mode metric potentials        |
+ exact symbolic E/A/L curvature intertwiners              |
+ + same-energy finite-mode metric preimages               |
              |                                            |
       +------+----------------+                           |
       |                       |                           |
@@ -135,10 +135,11 @@ finite polynomial jets (degrees 2--6) --------------------+
 
 The right branch through residual cohomology is exact under full residual
 conformal gauging.  The smooth local metric-to-geometric-curvature bridge is
-also exact.  Its restriction to finite cylinder modes, the full cyclic BV
-transfer, and the residual BFV polarization remain conditional.  Finite jet
+also exact, and the explicit symbolic `E/A/L` construction closes its
+restriction to finite positive-energy cylinder modes.  The full cyclic BV
+transfer and residual BFV polarization remain conditional.  Finite jet
 agreement is an independent audit of conventions and low levels, not the
-proof of smooth or algebraic-mode exactness.  Treating `D` as gauge is a
+proof of either theorem.  Treating `D` as gauge is a
 physical choice; if it is retained as the cylinder Hamiltonian, this is not
 the relevant quotient.
 
@@ -168,11 +169,12 @@ Four statements are kept separate throughout the manuscript:
 | `B_lin = C1^# C1` in the repository action convention | Exact on the conformally flat cylinder | Formal-adjoint factorization, not a positivity factorization |
 | `C1^# star C1 = 0` | Exact complex identity | Published four-dimensional deformation complex; repository script independently checks both signatures in its flat-symbol conventions |
 | `H_def^q(R x S3) = (g,0,0,g,0)` | Exact smooth global theorem | Flat BGG fine resolution, trivial adjoint local system, and ordinary cohomology of `S3`; not a machine-derived or completed-Hilbert theorem |
-| `ker B_lin / im K = Wgeom,+^sm + Wgeom,-^sm` | Exact smooth equivariant theorem | Uses global exactness, `B=C1^#C1`, and Lorentzian chirality; algebraic positive-energy exactness and analytic completions remain separate |
+| `ker B_lin / im K = Wgeom,+^sm + Wgeom,-^sm` | Exact smooth equivariant theorem | Uses global exactness, `B=C1^#C1`, and Lorentzian chirality; analytic completions remain separate |
+| Algebraic `E/A/L` cylinder realization | Exact symbolic theorem | Full coordinate `C1 h` at symbolic `n`, nonzero pivots, Hodge chirality, `C1^#C1h=0`, parity, same-block metric preimages, and character exhaustion |
 | Polynomial detour quotient dimensions `10,40,82,136,202` | Exact for homogeneous degrees 2--6 | Euclidean finite jets only |
 | Fifteen conformal-Killing zero modes | Exact global theorem and finite certificate | `H_def^0 = g`; independently recovered as the low-degree gauge-map kernel |
 | Degree-three adjoint BGG sector | Exact as a 15-dimensional global cohomology group | Its identification and normalization as the BFV/Taub dual sector remain conditional |
-| On-shell `W_+ + W_-` character and E/A/L inventory | Exact abstract coefficient-module theorem | Its all-level curvature intertwiner and finite-mode metric potentials are the algebraic-cylinder hypothesis |
+| On-shell `W_+ + W_-` character and E/A/L inventory | Exact geometric/algebraic identification | Character and stable module action plus the all-level cylinder-preimage theorem |
 | Stable proper-conformal reduced coefficients and `J`-adjoint action | Exact cutoff-stable module construction | Top buffer shell is not treated as a finite representation |
 | Hamiltonian moment-map normalization | Exact through source energy four | A finite jet; its Taub interpretation is tested in selected kernels, not a general local-BV theorem |
 | Cartan homotopy reduction to total compact degree zero | Exact theorem | Requires `D` to be a residual gauge generator |
@@ -182,7 +184,7 @@ Four statements are kept separate throughout the manuscript:
 | Residual CE pairing `I2` | Exact in the chosen residual complex | Canonical complementary-degree pairing with the normalized `(4,7,4)` polarization; vertex classes, not a particle Hilbert space or yet the transferred pure-Weyl BV pairing |
 | Descent to `C^2` and `C Ctilde` | Exact residual/local descent | Lorentzian `i` phase is convention-dependent |
 | Dynamical representative quotient `I1` | Exact locally | Pontryagin is only locally variationally trivial; global theta effects retained |
-| Full pure-Weyl local-plus-residual BV result | Conditional corollary | Requires algebraic cylinder realization, a full `SO(4,2)`-equivariant cyclic BV transfer with row control, and the selected residual BFV polarization and normalization |
+| Full pure-Weyl local-plus-residual BV result | Conditional corollary | Requires a full `SO(4,2)`-equivariant cyclic BV transfer with row control and the selected residual BFV polarization and normalization |
 | Physical-state interpretation | Choice-dependent | Requires a boundary/gauge principle that treats all 15 generators, including `D`, as gauge |
 | Quantum nilpotency, anomaly cancellation, interaction unitarity | Not claimed | Reserved for a separate quantum project |
 
@@ -192,6 +194,7 @@ Four statements are kept separate throughout the manuscript:
 | --- | --- |
 | `verify_conformal_detour_action.py` | action normalization and formal/finite scalar detour identities |
 | `verify_conformal_bgg_bridge.py` | signature-aware `C1^# star C1=0`, cylinder topology, chiral split, and unique bottom four-ghost scalar |
+| `verify_conformal_cylinder_preimages.py` | symbolic all-energy `E/A/L` metric preimages, full Weyl/Bach tensors, chirality, pivots, parity, and dimension regressions |
 | `verify_conformal_detour_polynomial.py` | finite homogeneous-jet ranks and the 15-dimensional reducibility kernel |
 | `verify_conformal_weyl_module.py` | Weyl character and E/A/L tower equality |
 | `verify_conformal_cylinder_form.py` | uniqueness and signature of the standard invariant cylinder form |
@@ -217,8 +220,7 @@ them with `--guards`.
 verify_conformal_detour_action.py --require-explicit-cylinder-c1
 verify_conformal_bgg_bridge.py --claim-machine-proof-of-bgg
 verify_conformal_bgg_bridge.py --claim-completed-domain
-verify_conformal_bgg_bridge.py --claim-algebraic-mode-exactness
-verify_conformal_bgg_bridge.py --claim-eal-intertwiner
+verify_conformal_cylinder_preimages.py --claim-complete-harmonic-complex
 verify_conformal_bgg_bridge.py --claim-taub-identification
 verify_conformal_bgg_bridge.py --claim-completed-bv-transfer
 verify_conformal_bgg_bridge.py --claim-pure-weyl-bfv-pairing
@@ -272,8 +274,6 @@ silently presented as machine outputs:
   the Boulanger--Henneaux uniqueness theorem;
 - the semisimple trivial-coefficient Lie-algebra cohomology theorem;
 - the physical decision to gauge the residual cylinder conformal group;
-- exactness of the BGG sequence on the algebraic positive-energy metric-mode
-  complex and the all-level `E/A/L` curvature intertwiner;
 - the identification and normalization of `H_def^3` as the dual BFV/Taub
   sector;
 - the full pure-Weyl BV zero-mode transfer;
@@ -284,32 +284,30 @@ silently presented as machine outputs:
 
 The highest-value remaining referee questions are:
 
-1. Does the smooth BGG isomorphism restrict to the `D`-finite,
-   `SO(4)`-finite cylinder category without secular or infinite-mode metric
-   potentials, and do the explicit `E/A/L` curvatures give the required
-   graded intertwiner?
-2. Is the residual ghost polarization appropriate for strict pure-Weyl BV
+1. Is the residual ghost polarization appropriate for strict pure-Weyl BV
    after the canonical `g[0] + g[3]` global pair is split?
-3. Is the degree-three adjoint BGG group exactly the dual BFV/Taub charge
+2. Is the degree-three adjoint BGG group exactly the dual BFV/Taub charge
    sector, and does one normalized component fix the equivariant map?
-4. Does the explicit filtered bicomplex inventory all local ghost/antifield
+3. Does the explicit filtered bicomplex inventory all local ghost/antifield
    rows and higher transferred operations capable of entering or leaving
    `(p,q)=(4,0)`?
-5. Should the Pontryagin class remain in the residual vertex space for the
+4. Should the Pontryagin class remain in the residual vertex space for the
    intended cylinder boundary conditions, even though it is removed from the
    local Euler--Lagrange quotient?
-6. What boundary or background-independence principle makes cylinder time
+5. What boundary or background-independence principle makes cylinder time
    translation a gauge generator rather than a global Hamiltonian?
-7. Which algebraic result, if any, extends continuously to the intended
+6. Which algebraic result, if any, extends continuously to the intended
    Hilbert or Krein completion?
 
 After the literature/referee review, the programme overview was updated to
 show Paper VII as a residual-cohomology branch from Paper IV rather than a
 seventh step after the Paper V--VI interaction branch.  The README remains
-untouched in this snapshot.
+the general programme entry point; the detailed implementation state is
+tracked in `bridge/README.md`.
 
 The post-paper implementation work is frozen separately in
-`bridge/README.md`.  Its blocking deliverable is an exact all-energy,
+`bridge/README.md`.  Its first blocking deliverable---an exact all-energy,
 same-cylinder-block right inverse of the linearized Weyl map on every
-`E/A/L` tower.  Additional cutoff growth is explicitly not a substitute for
-that theorem.
+`E/A/L` tower---is now complete.  The surrounding off-shell harmonic BGG
+matrices and full BV transfer are the next workstreams.  Additional cutoff
+growth is explicitly not a substitute for those theorems.

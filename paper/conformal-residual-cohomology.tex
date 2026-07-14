@@ -78,12 +78,14 @@ The last assumption is a physical choice: if $D$ is retained as a Hamiltonian
 or boundary charge, the contraction is not a physical quotient.  The flat
 adjoint BGG resolution and the topology of $\R\times S^3$ additionally give
 an all-level smooth isomorphism between the Bach quotient and a geometrically
-defined on-shell curvature system.  Three further steps remain conditional:
-exactness on the algebraic positive-energy cylinder module, the full
-equivariant cyclic BV transfer with its antifield rows, and derivation of the
-centered BFV polarization from the chosen closed-universe reduction.  Any
-analytic completion requires additional control.  We claim neither a
-positive graviton Fock space nor quantum anomaly freedom.
+defined on-shell curvature system.  An exact symbolic cylinder construction
+supplies finite-mode metric preimages for every $E/A/L$ block and identifies
+that geometric system with the algebraic positive-energy module.  Two
+further steps remain conditional: the full equivariant cyclic BV transfer
+with its ghost and antifield rows, and derivation of the centered BFV
+polarization from the chosen closed-universe reduction.  Any analytic
+completion requires additional control.  We claim neither a positive
+graviton Fock space nor quantum anomaly freedom.
 \end{abstract}
 
 \tableofcontents
@@ -115,9 +117,10 @@ The organizing question is therefore more basic than a sign assignment:
 before asking whether a gravitational mode has positive or negative norm,
 one must first determine whether it survives the full gauge reduction being
 imposed.  The exact answer below concerns the residual reduction.  The
-smooth metric-to-curvature bridge is also proved globally; the passage to
-the algebraic mode complex and then to the complete local-plus-residual
-BV/BFV theory remains conditional.
+smooth metric-to-curvature bridge is proved globally, and an exact
+all-energy cylinder construction identifies its algebraic positive-energy
+part with the $E/A/L$ module used below.  The passage to the complete
+local-plus-residual BV/BFV theory remains conditional.
 
 The present paper isolates that free classical problem on
 \begin{equation}
@@ -194,11 +197,10 @@ absolute $SO(4,2)$ Chevalley--Eilenberg complex built on the on-shell Weyl
 module, the stated centered ghost polarization, and full residual conformal
 gauging.
 \item The smooth complexified metric-to-geometric-curvature bridge is an
-exact global theorem.  Restricting it to the $D$-finite cylinder category and
-identifying its target with the previously constructed $E/A/L$ coefficient
-module require an explicit algebraic intertwiner or equivariant BGG
-homotopy.  Smooth equivariance of quotient classes alone does not supply
-finite-mode metric representatives.
+exact global theorem.  Its restriction to the $D$-finite cylinder category
+is also exact: the explicit $E/A/L$ harmonics give same-energy metric
+preimages, nonzero curvature intertwiners, and character exhaustion.
+Neither theorem is a statement about a completed Hilbert/Krein domain.
 \item The complete strict-pure-Weyl local-plus-residual BV statement remains
 conditional on a full equivariant cyclic zero-mode transfer with the relevant
 ghost and antifield rows, and on a residual BFV choice which induces the
@@ -486,26 +488,78 @@ preserves compact energy and both rotation spins on quotient classes.  It
 remains to match this geometric system to the abstract positive-energy
 module constructed in Section~\ref{sec:weyl-module}.
 
-\begin{conjecture}[Algebraic cylinder realization]\label{hyp:algebraic-cylinder}
+\begin{theorem}[Algebraic cylinder realization]\label{thm:algebraic-cylinder}
 Let $\mathcal W_{{\rm geom},\pm}^{\rm alg,+}$ denote the $D$-finite,
 $SO(4)$-finite positive-energy solutions of
-\eqref{eq:smooth-Weyl-spaces}.  The curvature construction should restrict
-to an isomorphism
+\eqref{eq:smooth-Weyl-spaces}.  The curvature construction restricts to an
+isomorphism
 \begin{equation}\label{eq:local-target}
  \boxed{
  \mathcal W_{{\rm geom},+}^{\rm alg,+}
  \oplus\mathcal W_{{\rm geom},-}^{\rm alg,+}
  \cong\W_+\oplus\W_-.}
 \end{equation}
-Moreover, every element on the left should admit a Bach-flat metric
-representative which is itself a finite sum in the same $D$-energy and
-$SO(4)$ type.
-\end{conjecture}
+Every curvature basis vector has an explicit Bach-flat metric representative
+in the same $D$-energy and $SO(4)$ type.
+\end{theorem}
 
-The conjecture has a short, concrete proof target.  First construct the
-curvature intertwiner on every explicit $E/A/L$ oscillator and verify
-$C_1^\sharp U_\pm=0$.  This gives a graded injection into the geometric
-kernel.  For positive chirality, the flat chiral BGG data consist of the
+\begin{proof}
+Put $r=\tan(\beta/2)$, $z=1+r^2$, and
+$q=d\beta+i\sin\beta\,d\gamma$.  For positive chirality the normalized
+highest-weight metric representatives are the radiation-gauge cylinder
+modes
+\begin{equation}\label{eq:metric-preimage-families}
+ \begin{array}{c|c|c}
+  \text{tower}&J&\text{nonzero metric component}\\
+  \hline
+  E_n&n/2&h_{ij}=N_E(J)T[J]_{ij}e^{-int}\\
+  A_n&(n-1)/2&h_{0i}=N_A(J)V[J]_ie^{-int}\\
+  L_n&(n-2)/2&h_{ij}=N_L(J)T[J]_{ij}e^{-int}.
+ \end{array}
+\end{equation}
+Here
+\begin{align}
+ V[J]&=-\frac{\sqrt{2J}}{4\pi}
+ \cos^{2J-1}\!\frac\beta2\,
+ e^{-i[(J+\frac12)\alpha+(J-\frac12)\gamma]}q,\nonumber\\
+ T[J]&=\frac{\sqrt{2(2J-1)}}{16\pi}
+ \cos^{2J-2}\!\frac\beta2\,
+ e^{-i[(J+1)\alpha+(J-1)\gamma]}q\otimes q,
+ \label{eq:metric-preimage-harmonics}
+\end{align}
+and
+\begin{equation}
+ N_E=\frac1{4\sqrt{J(2J+1)}},\qquad
+ N_A=\frac1{2\sqrt{(2J-1)(2J+1)(2J+3)}},\qquad
+ N_L=\frac1{4\sqrt{(J+1)(2J+1)}}.
+\end{equation}
+
+An exact coordinate calculation retains symbolic integer $n$, constructs
+all components of $C_1h$, and applies $C_1^\sharp$ independently.  After
+suppressing the common factor
+$e^{-i(n t+m_L\alpha+m_R\gamma)}z^{-a}$, nonzero pivots are
+\begin{align}
+ (C_1h_E)_{0202}
+ &=\frac{\sqrt{n(n-1)(n+1)}}{16\pi z^2},\nonumber\\
+ (C_1h_A)_{0102}
+ &=\frac{\sqrt{n(n-2)(n-1)}}{32\pi\sqrt{n+2}\,z},
+ \label{eq:curvature-pivots}\\
+ (C_1h_L)_{0202}
+ &=\frac{\sqrt{n(n-3)(n-1)}}{16\pi z^2}.\nonumber
+\end{align}
+They are nonzero at every allowed tower energy.  The full tensors are
+algebraically trace-free, have one common Hodge chirality, and obey
+$C_1^\sharp C_1h=0$ identically in $n$.  Naturality of $C_1$ extends each
+nonzero highest-weight intertwiner to its complete $SO(4)$ irrep.  Defining
+$U_{F,n,M}=C_1h_{F,n,M}$ therefore gives the explicit same-block inverse
+\begin{equation}\label{eq:cylinder-right-inverse}
+ R_nU_{F,n,M}=h_{F,n,M},\qquad C_1R_n=\id,
+ \qquad F\in\{E,A,L\}.
+\end{equation}
+The orientation-reversing cylinder isometry $\alpha\leftrightarrow\gamma$
+exchanges the two $SU(2)$ factors and supplies the other chirality.
+
+For exhaustion, the flat positive-chirality BGG data consist of the
 lowest-weight curvature primary $(2;2,0)$, the equation module $(4;1,1)$,
 and its identity $(5;\tfrac12,\tfrac12)$.  Their alternating character is
 \begin{equation}
@@ -515,18 +569,15 @@ and its identity $(5;\tfrac12,\tfrac12)$.  Their alternating character is
 \end{equation}
 The cylinder module $\W_+$ is cyclic from the same primary and has this
 character by \eqref{eq:weyl-character}; parity supplies the other chirality.
-An injective graded intertwiner plus equality of the all-level character
-would prove the first statement.
-
-The metric-potential statement is separate.  The smooth theorem supplies
-some smooth preimage and equivariance fixes the weight of its \emph{quotient
-class}; it does not exclude a representative containing secular terms such
-as $t e^{-iEt}$ or an infinite harmonic expansion.  One still needs a
-$D$- and $SO(4)$-equivariant BGG homotopy, exactness in the relevant
-Harish--Chandra category, or an explicit all-level harmonic potential.
-Bounded Poincar\'e operators illustrate how de Rham homotopies can be
-transferred to BGG complexes \cite{CapHuPoincare}, but their existence does
-not by itself establish this cylinder-mode restriction.
+The nonzero graded intertwiner and equality of every graded $SO(4)$
+multiplicity prove exhaustion.  Equations
+\eqref{eq:metric-preimage-families}--\eqref{eq:cylinder-right-inverse}
+supply finite harmonic metric representatives directly, excluding secular
+or infinite-harmonic preimages in this algebraic category.
+The exact coordinate tensor calculation, a machine-readable certificate,
+and the generated pivot table are produced by
+\path{symbolic/verify_conformal_cylinder_preimages.py}.
+\end{proof}
 
 \subsection{The finite-jet calculation as an independent convention audit}
 
@@ -611,9 +662,9 @@ ghost/antifield degree and construct the corresponding zero-mode projector.
 \subsection{Domain boundary of the theorem}
 
 Theorems~\ref{thm:global-BGG} and \ref{thm:curvature-isomorphism} are exact
-for smooth complexified global sections.  Their restriction to the
-algebraic positive-energy cylinder category remains
-Conjecture~\ref{hyp:algebraic-cylinder}.  The theorems do not automatically identify
+for smooth complexified global sections.  Theorem~\ref{thm:algebraic-cylinder}
+additionally identifies the $D$-finite, $SO(4)$-finite positive-energy
+submodule by explicit metric representatives.  These theorems do not identify
 spacelike-compact or distributional cohomology, nor do they prove
 continuity and closed range on an infinite Hilbert/Krein completion.  If
 such an analytic completion is required, Green-hyperbolic complexes and
@@ -647,11 +698,10 @@ $(5;\tfrac12,\tfrac12)$.  The resulting one-chirality character is
  =\frac{5q^2-9q^4+4q^5}{(1-q)^4}.
 \end{equation}
 This defines the abstract algebraic positive-energy module $\W_+$.  The
-character and tower calculation below are the representation-theoretic side
-of Conjecture~\ref{hyp:algebraic-cylinder}: the smooth
-metric-to-geometric-curvature map is proved, while equality of the geometric
-chiral system with this abstract module still requires the explicit
-intertwiner and algebraic-potential statement described there.
+character and tower calculation below, together with the explicit
+intertwiner and metric preimages of
+Theorem~\ref{thm:algebraic-cylinder}, identify it with the geometric chiral
+system.
 
 On $\R\times S^3$, $\W_+$ decomposes into three multiplicity-free towers:
 \begin{align}
@@ -1558,20 +1608,17 @@ cyclic statements are \eqref{eq:transferred-Cartan} and
 pairing from the associated graded object.
 \end{proof}
 
-\subsection{Three remaining field-theoretic hypotheses}
+\subsection{Two remaining field-theoretic hypotheses}
 
-The smooth BGG theorem removes the original global PDE-surjectivity gap, but
-it does not by itself compute the complete algebraic BV complex.  The
-remaining bridge is concentrated in three statements.
+The smooth BGG theorem and Theorem~\ref{thm:algebraic-cylinder} remove the
+global PDE-surjectivity and finite-mode preimage gaps.  They do not by
+themselves compute the complete BV complex.  The remaining bridge is
+concentrated in two statements.
 
 \begin{conjecture}[Strict pure-Weyl transfer hypotheses]\label{hyp:pure-weyl}
 The gauge-fixed free strict-pure-Weyl BV complex has the following
 properties in the cylinder problem under consideration.
 \begin{enumerate}
-\item \emph{Algebraic cylinder realization.}
-Conjecture~\ref{hyp:algebraic-cylinder} holds: the geometric chiral solution
-spaces and their Bach-flat metric potentials restrict exactly to the
-$D$-finite, $SO(4)$-finite $E/A/L$ modules used in the residual calculation.
 \item \emph{BV transfer.}
 The fifteen global reducibilities and their genuine dual
 constraint/antifield sectors can be split without double counting.  After
@@ -1589,12 +1636,11 @@ Lemma~\ref{lem:ghost-pairing}, including the common normalization
 \end{enumerate}
 \end{conjecture}
 
-These are not consequences of the residual rank matrices.  The first can be
-closed by an explicit cylinder intertwiner and equivariant potential
-construction.  The second requires the complete local ghost/antifield row
-inventory and a genuinely conformal cyclic transfer, rather than merely the
+These are not consequences of the residual rank matrices.  The first
+requires the complete local ghost/antifield row inventory and a genuinely
+conformal cyclic transfer, rather than merely the
 blockwise $D\times SO(4)$ splitting of
-Proposition~\ref{prop:cyclic-retract}.  The third is stronger than verifying
+Proposition~\ref{prop:cyclic-retract}.  The second is stronger than verifying
 the natural Berezin saturation inside the already chosen residual complex.
 
 \begin{corollary}[Conditional algebraic strict-pure-Weyl result]\label{cor:conditional}
@@ -1606,11 +1652,12 @@ is \eqref{eq:dynamic-quotient} with form $I_1$.
 \end{corollary}
 
 \begin{proof}
-Item 1 and Theorem~\ref{thm:curvature-isomorphism} identify the
-one-particle coefficient module.  Proposition~\ref{prop:Fock-lift} gives its
-free Fock lift.  Item 2 supplies the full equivariant cyclic hypotheses under
+Theorems~\ref{thm:curvature-isomorphism} and
+\ref{thm:algebraic-cylinder} identify the one-particle coefficient module.
+Proposition~\ref{prop:Fock-lift} gives its free Fock lift.  Item 1 supplies
+the full equivariant cyclic hypotheses under
 which Propositions~\ref{prop:cyclic-retract} and \ref{prop:single-row} give
-strict residual transfer and spectral-sequence collapse.  Item 3 fixes the
+strict residual transfer and spectral-sequence collapse.  Item 2 fixes the
 selected ghost pairing and normalization.  The exact residual theorem then
 gives \eqref{eq:main-result}, while \eqref{eq:HPL-isometry} identifies its
 residual CE Gram matrix with the transferred pure-Weyl BV cohomological form.
@@ -1622,11 +1669,10 @@ The global smooth BGG theorem, curvature isomorphism
 finite-dimensional fixtures verify
 \eqref{eq:transferred-Cartan} and \eqref{eq:HPL-isometry} with a genuinely
 dressed inclusion.  They do not instantiate the full pure-Weyl field
-complex.  Nor does the smooth BGG preimage prove exactness in the algebraic
-cylinder category.  The three hypotheses above state the remaining
-obligations without folding algebraic mode exactness, full conformal
-equivariance, antifield-row control, or BFV normalization into the smooth
-theorem.  A Hilbert, Krein, distributional, or completed Fock statement
+complex.  The two hypotheses above state the remaining obligations without
+folding full conformal equivariance, antifield-row control, or BFV
+normalization into the metric-to-curvature theorem.  A Hilbert, Krein,
+distributional, or completed Fock statement
 would require separate continuity, closed-range, and convergence results.
 
 \section{Scope, interpretation, and open questions}\label{sec:scope}
@@ -1659,17 +1705,17 @@ boundary transformation.  The positive dynamical quotient is therefore
 one-dimensional.
 
 \paragraph{The remaining classical bridge.}
-The all-level smooth metric-to-$\mathcal W_{\rm geom}$ identification is
-exact.  Three sharper obligations remain: establish algebraic cylinder-mode
-exactness and the explicit $E/A/L$ curvature intertwiner; construct the full
-$SO(4,2)$-equivariant cyclic BV zero-mode transfer with its antifield-row
-inventory; and derive the chosen four-ghost polarization and normalized
-pairing from the residual BFV boundary problem.  The direct Taub argument
+The all-level smooth metric-to-$\mathcal W_{\rm geom}$ identification and
+the algebraic $E/A/L$ curvature intertwiner are exact.  Two sharper
+obligations remain: construct the full $SO(4,2)$-equivariant cyclic BV
+zero-mode transfer with its antifield-row inventory, and derive the chosen
+four-ghost polarization and normalized pairing from the residual BFV
+boundary problem.  The direct Taub argument
 does not require first identifying a degree-three BGG representative,
 although that geometric comparison remains valuable.  Extension to a
 chosen Hilbert or Krein completion is a separate analytic question.  The
 exact ranks in Table~\ref{tab:detour-ranks} remain independent convention and
-regression checks, not the proof of algebraic-mode exactness.
+regression checks.
 
 \section{Conclusion}\label{sec:conclusion}
 
@@ -1780,16 +1826,15 @@ Global smooth deformation cohomology and curvature isomorphism & Exact
 smooth theorem & The flat BGG fine resolution and
 $H^\bullet(\R\times S^3)$ give $H^1_{\rm def}=H^2_{\rm def}=0$ and hence
 \eqref{eq:curvature-isomorphism}.  This does not establish a completed
-Hilbert/Krein isomorphism, exactness on the algebraic positive-energy mode
-complex, or the BV/BFV zero-mode split.\\
+Hilbert/Krein isomorphism or the BV/BFV zero-mode split.\\
 Euclidean polynomial detour ranks, degrees $2$--$6$ & Exact finite
 certificate & Rational matrices verify kernels, ranks, and the $15$ residual
 zero modes; they are an independent convention audit rather than the source
 of the global theorem.\\
-On-shell Weyl module and stable generator coefficients & Exact abstract
-module construction & Character, tower inventory, invariant form, and
-cutoff-stable conformal brackets.  Its geometric curvature intertwiner and
-algebraic metric potentials remain Conjecture~\ref{hyp:algebraic-cylinder}.\\
+Algebraic cylinder realization and stable generator coefficients & Exact
+symbolic theorem & Full coordinate Weyl/Bach calculation at symbolic $n$,
+nonzero $E/A/L$ pivots, explicit same-block metric preimages, character
+exhaustion, invariant form, and cutoff-stable conformal brackets.\\
 Residual Cartan homotopy reduction & Theorem & Explicit homotopy
 $\iota_D/\delta$ on every nonzero total degree; this is a quotient only in
 the full residual-gauging problem.\\
@@ -1803,9 +1848,9 @@ Vertex descent and dynamical/topological split & Exact locally & Weight-four
 descent, Chern--Weil transgression, and Euler--Lagrange quotient.  Global
 theta effects are retained.\\
 Full local-plus-residual pure-Weyl BV result & Conditional & Requires the
-three parts of Field-Theoretic Hypothesis~\ref{hyp:pure-weyl}: algebraic
-cylinder realization, full equivariant cyclic BV transfer with row control,
-and the selected residual BFV polarization and normalization.\\
+two parts of Field-Theoretic Hypothesis~\ref{hyp:pure-weyl}: full
+equivariant cyclic BV transfer with row control, and the selected residual
+BFV polarization and normalization.\\
 Interpretation as a physical state space & Choice-dependent & Requires a
 boundary and gauge principle that treats all fifteen generators, including
 $D$, as gauge rather than global charges.\\

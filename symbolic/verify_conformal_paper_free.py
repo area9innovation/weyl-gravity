@@ -44,6 +44,12 @@ CERTIFICATES = (
         "C2i-BGG STATUS:",
     ),
     Certificate(
+        "all-energy cylinder metric preimages",
+        "verify_conformal_cylinder_preimages.py",
+        "CONFORMAL S1 CYLINDER METRIC PREIMAGES: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
         "finite polynomial detour jets",
         "verify_conformal_detour_polynomial.py",
         "C2h-L STATUS:",
@@ -131,8 +137,7 @@ GUARDS = (
     ("detour is not an explicit cylinder C1 map", "verify_conformal_detour_action.py", ("--require-explicit-cylinder-c1",)),
     ("BGG fine resolution is a literature theorem", "verify_conformal_bgg_bridge.py", ("--claim-machine-proof-of-bgg",)),
     ("smooth BGG exactness is not an analytic completion theorem", "verify_conformal_bgg_bridge.py", ("--claim-completed-domain",)),
-    ("smooth BGG exactness is not algebraic mode exactness", "verify_conformal_bgg_bridge.py", ("--claim-algebraic-mode-exactness",)),
-    ("the E/A/L curvature intertwiner is still required", "verify_conformal_bgg_bridge.py", ("--claim-eal-intertwiner",)),
+    ("physical E/A/L preimages are not the complete off-shell harmonic complex", "verify_conformal_cylinder_preimages.py", ("--claim-complete-harmonic-complex",)),
     ("degree-three BGG is not yet the normalized Taub sector", "verify_conformal_bgg_bridge.py", ("--claim-taub-identification",)),
     ("BGG exactness is not the cyclic BV/BFV transfer", "verify_conformal_bgg_bridge.py", ("--claim-completed-bv-transfer",)),
     ("residual CE saturation is not the transferred pure-Weyl BFV pairing", "verify_conformal_bgg_bridge.py", ("--claim-pure-weyl-bfv-pairing",)),
@@ -247,9 +252,9 @@ def main() -> None:
     print(
         "CONFORMAL FREE PAPER BATTERY: ALL PASS. The exact result is the "
         "minimal residual vertex cohomology plus the smooth Bach-curvature "
-        "bridge; algebraic mode exactness, the local pure-Weyl BV/BFV "
-        "transfer, analytic completion, and quantum theory remain explicitly "
-        "conditional/out of scope."
+        "bridge and all-energy E/A/L metric preimages; the complete local "
+        "pure-Weyl BV/BFV transfer, analytic completion, and quantum theory "
+        "remain explicitly conditional/out of scope."
     )
 
 

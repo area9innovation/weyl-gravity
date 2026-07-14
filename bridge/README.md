@@ -257,3 +257,23 @@ Until the bridge closes, do not:
 
 The immediate programming deliverable is the exact cylinder-harmonic right
 inverse `R_n` of the linearized Weyl map on every `E/A/L` block.
+
+## Implemented checkpoint: physical E/A/L preimages
+
+`bridge/cylinder_harmonics/linearized_geometry.py` and
+`bridge/metric_preimages/all_energy.py` now implement the normalized
+highest-weight metric representatives and the full coordinate linearized
+Weyl/Bach operators with symbolic energy `n`.  The certificate
+
+```text
+symbolic/verify_conformal_cylinder_preimages.py
+```
+
+proves a nonzero chiral Bach-flat Weyl image and an exact same-block right
+inverse for every `E_n`, `A_n`, and `L_n`, with parity completion and the
+first five level dimensions as regressions.  The machine-readable and LaTeX
+artifacts are in `bridge/certificates/` and `bridge/generated/`.
+
+This closes the immediate physical-block preimage target.  Sprint 1 remains
+open until the surrounding off-shell gauge/metric/compatibility matrices
+`K_n,C_n,D2_n` and their exactness certificates are also implemented.

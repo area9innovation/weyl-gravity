@@ -77,11 +77,13 @@ one-particle cohomology vanishes and that exactly two weight-four vertex
 classes survive with positive normalized residual CE pairing,
 descending to the Weyl-square and Pontryagin directions.  A global BGG
 argument now identifies the smooth Bach quotient exactly with the two
-geometric on-shell chiral Weyl-curvature spaces.  Promotion of the residual
-result to the complete pure-Weyl BV complex nevertheless remains
-conditional on exactness in the algebraic cylinder module, a full
-equivariant cyclic BV transfer with its ghost/antifield rows, and the chosen
-residual BFV polarization.  Any analytic completion is a further problem;
+geometric on-shell chiral Weyl-curvature spaces.  Exact symbolic
+highest-weight curvature calculations additionally construct same-energy
+metric preimages for every $E/A/L$ block and identify the algebraic
+positive-energy module.  Promotion of the residual result to the complete
+pure-Weyl BV complex nevertheless remains conditional on a full equivariant
+cyclic BV transfer with its ghost/antifield rows and the chosen residual BFV
+polarization.  Any analytic completion is a further problem;
 no positive graviton Fock-space or quantum-anomaly claim is made.  Extending the free
 classification to interactions, Paper~V formulates a deformation
 problem for the positive metric and the Krein involution.  The positive
@@ -266,13 +268,14 @@ parity-complete on-shell Weyl module, the centered ghost polarization, full
 residual conformal gauging, and in particular the treatment of $D$ as a
 residual gauge generator are taken as inputs.  The smooth global
 metric-to-curvature bridge is exact by the flat BGG fine resolution and the
-topology of $\R\times S^3$.  Identification with the complete
-local-plus-residual pure-Weyl BV cohomology remains conditional on three
-sharper statements: exact algebraic cylinder realization of the geometric
-curvature system and its metric potentials; a full $SO(4,2)$-equivariant
-cyclic BV transfer with no modifying ghost/antifield rows or higher
-operations; and a closed-universe residual BFV choice which induces the
-four-ghost polarization and pairing.  Any analytic completion is additional.
+topology of $\R\times S^3$.  The algebraic cylinder realization is fixed by
+explicit all-energy $E/A/L$ metric preimages and curvature intertwiners.
+Identification with the complete local-plus-residual pure-Weyl BV
+cohomology remains conditional on two sharper statements: a full
+$SO(4,2)$-equivariant cyclic BV transfer with no modifying
+ghost/antifield rows or higher operations, and a closed-universe residual
+BFV choice which induces the four-ghost polarization and pairing.  Any
+analytic completion is additional.
 It establishes neither a positive graviton Fock space, quantum BRST
 nilpotency, anomaly cancellation, nor interacting unitarity.
 
@@ -1406,19 +1409,24 @@ isomorphism
  \cong\mathcal W_{{\rm geom},+}^{\rm sm}
  \oplus\mathcal W_{{\rm geom},-}^{\rm sm}.
 \end{equation}
-The final identification of its algebraic positive-energy part with the
-explicit $\mathcal W_+\oplus\mathcal W_-$ module above remains a short but
-real intertwiner and mode-exactness problem
+For each $E_n,A_n,L_n$ highest weight, an exact symbolic cylinder
+calculation now constructs a normalized metric representative, evaluates
+all components of $C_1h$, verifies chirality and
+$C_1^\sharp C_1h=0$, and exhibits a nonzero curvature pivot.  Naturality,
+multiplicity one, parity, and equality of the all-level character extend
+this result to every magnetic component and identify the algebraic
+positive-energy part with
+$\mathcal W_+\oplus\mathcal W_-$
 \cite{GoverPetersonIntro,CapBGGIntro}.
 
 For a general reader, this says that every smooth gauge-inequivalent
 Bach-flat metric perturbation is represented faithfully by a geometric
 on-shell Weyl curvature.  For a specialist, it closes the global
-smooth local-kernel theorem without an elliptic argument.  It does not by
-itself show that a finite-energy curvature mode has a finite-energy metric
-potential: smooth preimages could contain secular time factors or infinite
-harmonic expansions.  Nor does it construct the BV/BFV zero-mode split or
-prove continuity on a chosen Hilbert or Krein completion.
+smooth local-kernel theorem without an elliptic argument.  The explicit
+cylinder representatives close the finite-energy preimage issue without
+introducing secular time factors or infinite harmonic expansions.  This
+does not construct the BV/BFV zero-mode split or prove continuity on a
+chosen Hilbert or Krein completion.
 
 \subsection{What BRST cohomology asks}
 
@@ -1654,13 +1662,10 @@ dimension and representation expected of a residual charge or Taub sector.
 That interpretation is a sharply defined candidate, not yet a proved BV
 identification.
 
-In ordinary language, three bridges remain.  First, the smooth curvature
-theorem must be restricted to the algebraic cylinder category: every
-$E/A/L$ curvature mode must be intertwined with the geometric system and
-must admit a finite-mode metric potential.  Second, the complete local BV
+In ordinary language, two bridges remain.  First, the complete local BV
 complex must retract cyclically and $SO(4,2)$-equivariantly, with its global
 reducibilities, antifields, and possible additional rows kept explicit.
-Third, the selected closed-universe BFV reduction must be shown to induce
+Second, the selected closed-universe BFV reduction must be shown to induce
 the four-ghost vacuum and complementary-degree pairing used by the residual
 calculation.  Dneprov and Grigoriev's nonlinear minimal Weyl-jet BRST/BV
 model is useful comparison data, but its curvature-dependent ghost terms do
@@ -1671,9 +1676,10 @@ Paper~VII therefore contains two statements of different strength:
 \begin{enumerate}
 \item an exact residual cohomology theorem for the stated on-shell Weyl
 coefficient module and centered polarization;
-\item an exact smooth metric-to-geometric-curvature theorem, followed by a
-conditional corollary identifying the residual answer with the complete
-free pure-Weyl BV cohomology in the algebraic cylinder category.
+\item exact smooth and algebraic metric-to-geometric-curvature theorems,
+followed by a conditional corollary identifying the residual answer with
+the complete free pure-Weyl BV cohomology in the algebraic cylinder
+category.
 \end{enumerate}
 An extension from the algebraic positive-energy module to an infinite
 Hilbert or Krein completion also requires separate continuity and
@@ -1923,7 +1929,8 @@ rather than successive versions of one question.
    pure-Weyl cylinder; full residual\\
    $SO(4,2)$ gauging; no one-particle class;\\
    $H^4=\langle W_+^2,W_-^2\rangle$, $G_{\rm res}=I_2$;\\
-   smooth BGG bridge exact; algebraic/BFV transfer conditional};
+   smooth BGG + algebraic $E/A/L$ bridge exact;\\
+   full BV/BFV transfer conditional};
 \draw[arr] (p4) -- (p5)
   node[font=\scriptsize\itshape, left, align=right, pos=0.58]
   {free real forms\\$\to$ deformation problem};
@@ -1996,15 +2003,13 @@ $M\to0$ limit?
 
 For residual conformal reduction: what boundary or background-independence
 principle determines whether cylinder time translation is gauge or a global
-Hamiltonian?  Does the smooth BGG isomorphism restrict exactly to the
-$D$-finite $E/A/L$ module and finite-mode metric potentials?  Can the
-degree-three BGG class be identified and normalized as the dual BFV/Taub
-sector, and can the complete local complex be transferred cyclically and
-$SO(4,2)$-equivariantly without additional antifield rows?  Does the
-positive representative matrix descend to its full cohomology, and what
-survives quantum BRST anomalies or nonlinear interactions?  These questions
-belong to the Paper~VII branch and are not answered by the split-phase
-$MM\to Mh$ calculation.
+Hamiltonian?  Can the degree-three BGG class be identified and normalized
+as the dual BFV/Taub sector, and can the complete local complex be
+transferred cyclically and $SO(4,2)$-equivariantly without additional
+antifield rows?  Does the positive representative matrix descend to its
+full cohomology, and what survives quantum BRST anomalies or nonlinear
+interactions?  These questions belong to the Paper~VII branch and are not
+answered by the split-phase $MM\to Mh$ calculation.
 
 For spectral consequences: the finite oscillator obstruction can
 accompany a nonreal conjugate pair.  Does the gravitational shell

@@ -319,11 +319,11 @@ def main() -> None:
         )
     if args.claim_algebraic_mode_exactness:
         raise SystemExit(
-            "a smooth BGG preimage need not be D-finite or SO(4)-finite; an equivariant homotopy or explicit mode potential is still required"
+            "this topology-only script does not construct D-finite preimages; use verify_conformal_cylinder_preimages.py for the explicit theorem"
         )
     if args.claim_eal_intertwiner:
         raise SystemExit(
-            "character agreement is not the missing all-level geometric E/A/L curvature intertwiner"
+            "this topology-only script does not construct the intertwiner; use verify_conformal_cylinder_preimages.py"
         )
     if args.claim_taub_identification:
         raise SystemExit(
@@ -345,9 +345,10 @@ def main() -> None:
     print(
         "C2i-BGG STATUS: LORENTZIAN COMPLEX IDENTITY, CYLINDER TOPOLOGY, "
         "CHIRAL SPLIT, AND BOTTOM-GHOST UNIQUENESS ALL PASS. The global "
-        "fine resolution is cited; algebraic mode exactness, the E/A/L "
-        "intertwiner, analytic completion, Taub identification, and cyclic "
-        "BV/BFV transfer remain guarded."
+        "fine resolution is cited; the companion cylinder-preimage "
+        "certificate supplies the algebraic E/A/L realization. Analytic "
+        "completion, Taub identification, and cyclic BV/BFV transfer remain "
+        "guarded."
     )
 
 
