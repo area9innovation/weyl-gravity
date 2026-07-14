@@ -3,7 +3,7 @@
 
 The default run executes every positive certificate used by the manuscript.
 Use ``--guards`` to execute the declared fail-closed overclaim tests as well.
-``--quick`` omits the two largest exact matrix calculations.
+``--quick`` omits the slow exact matrix calculations.
 """
 
 from __future__ import annotations
@@ -146,10 +146,34 @@ CERTIFICATES = (
         slow=True,
     ),
     Certificate(
+        "raw cross-energy cyclic pairing",
+        "verify_conformal_cross_energy_pairing.py",
+        "CONFORMAL S3 CROSS-ENERGY PAIRING: ALL PASS",
+        ("--max-energy", "5"),
+        slow=True,
+    ),
+    Certificate(
+        "complete centered HPL transfer",
+        "verify_conformal_full_hpl_transfer.py",
+        "CONFORMAL S4 FULL HPL TRANSFER: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
         "metric-to-residual integration",
         "verify_conformal_metric_to_residual_integration.py",
         "CONFORMAL METRIC-TO-RESIDUAL INTEGRATION: ALL PASS",
         slow=True,
+    ),
+    Certificate(
+        "closed-universe residual BFV choice",
+        "verify_conformal_closed_universe_bfv.py",
+        "CONFORMAL S4 CLOSED-UNIVERSE BFV CHOICE: ALL PASS",
+    ),
+    Certificate(
+        "all-energy Taub/moment-map normalization",
+        "verify_conformal_taub_moment_map_all_levels.py",
+        "CONFORMAL S5 TAUB/MOMENT MAP: ALL PASS",
+        ("--max-energy", "6"),
     ),
     Certificate(
         "weight-four vertex descent",
@@ -172,9 +196,9 @@ GUARDS = (
     ("smooth BGG exactness is not an analytic completion theorem", "verify_conformal_bgg_bridge.py", ("--claim-completed-domain",)),
     ("physical E/A/L preimages are not the complete off-shell harmonic complex", "verify_conformal_cylinder_preimages.py", ("--claim-complete-harmonic-complex",)),
     ("BGG split blocks are not raw magnetic-state matrices", "verify_conformal_cylinder_bgg_blocks.py", ("--claim-raw-coordinate-basis",)),
-    ("degree-three BGG is not yet the normalized Taub sector", "verify_conformal_bgg_bridge.py", ("--claim-taub-identification",)),
-    ("BGG exactness is not the cyclic BV/BFV transfer", "verify_conformal_bgg_bridge.py", ("--claim-completed-bv-transfer",)),
-    ("residual CE saturation is not the transferred pure-Weyl BFV pairing", "verify_conformal_bgg_bridge.py", ("--claim-pure-weyl-bfv-pairing",)),
+    ("degree-three BGG is not yet geometrically identified with the normalized Taub sector", "verify_conformal_bgg_bridge.py", ("--claim-taub-identification",)),
+    ("BGG exactness is not the complete field-theory BV-domain transfer", "verify_conformal_bgg_bridge.py", ("--claim-completed-bv-transfer",)),
+    ("residual CE saturation is not the complete field-theory pure-Weyl BFV pairing", "verify_conformal_bgg_bridge.py", ("--claim-pure-weyl-bfv-pairing",)),
     ("finite jets do not prove all levels", "verify_conformal_detour_polynomial.py", ("--claim-all-levels",)),
     ("finite jets do not prove Lorentzian E/A/L equivalence", "verify_conformal_detour_polynomial.py", ("--claim-lorentzian-eal",)),
     ("character equality is not local exactness", "verify_conformal_weyl_module.py", ("--claim-exact-sequence",)),
@@ -192,7 +216,10 @@ GUARDS = (
     ("compact split cyclicity is not full conformal equivariance", "verify_conformal_cyclic_bv_retract.py", ("--claim-full-so42-equivariance",)),
     ("intrinsic residual CE pairing is not the transferred BV pairing", "verify_conformal_residual_bfv_bridge.py", ("--claim-transferred-pure-weyl-pairing",)),
     ("raw SDR is homotopy-equivariant rather than strict", "verify_conformal_raw_bv_transfer.py", ("--claim-strict-sdr",)),
-    ("integrated algebraic cohomology does not derive the full BV/BFV pairing", "verify_conformal_metric_to_residual_integration.py", ("--claim-complete-bv-bfv-pairing",)),
+    ("algebraic cross-energy pairing is not the complete field-theory BV pairing", "verify_conformal_cross_energy_pairing.py", ("--claim-full-bv-pairing",)),
+    ("integrated algebraic cohomology does not identify the complete field-theory BV/BFV domain", "verify_conformal_metric_to_residual_integration.py", ("--claim-complete-bv-bfv-pairing",)),
+    ("the closed-universe choice does not make D universally gauge", "verify_conformal_closed_universe_bfv.py", ("--claim-universal-D-gauging",)),
+    ("equivariance does not replace direct curvature integration in every magnetic block", "verify_conformal_taub_moment_map_all_levels.py", ("--claim-all-block-direct-curvature",)),
     ("vertex descent is not a particle Hilbert theorem", "verify_conformal_vertex_descent.py", ("--claim-particle-hilbert",)),
     ("Pontryagin is not globally trivial", "verify_conformal_dynamical_topological.py", ("--claim-pontryagin-globally-trivial",)),
     ("theta can retain boundary observables", "verify_conformal_dynamical_topological.py", ("--claim-theta-has-no-observables",)),
@@ -254,7 +281,7 @@ def main() -> None:
     parser.add_argument(
         "--quick",
         action="store_true",
-        help="omit the finite polynomial jet and large absolute residual rank jobs",
+        help="omit the slow exact matrix, rank, cross-energy, and HPL jobs",
     )
     parser.add_argument(
         "--guards",
@@ -292,10 +319,12 @@ def main() -> None:
         "CONFORMAL FREE PAPER BATTERY: ALL PASS. The exact result is the "
         "minimal residual vertex cohomology plus the smooth Bach-curvature "
         "bridge, all-energy E/A/L metric preimages, and an end-to-end "
-        "algebraic polynomial metric-to-residual calculation. The "
-        "cross-energy cyclic BV/BFV normalization, closed-universe BFV "
-        "choice, analytic completion, and quantum theory remain explicitly "
-        "conditional/out of scope."
+        "algebraic polynomial metric-to-residual calculation with a "
+        "cross-energy cyclic form, complete centered HPL transfer, explicit "
+        "closed-universe BFV choice, and all-energy Taub normalization. The "
+        "complete field-theoretic BV-domain identification, analytic "
+        "completion, and quantum theory remain explicitly conditional or "
+        "out of scope."
     )
 
 

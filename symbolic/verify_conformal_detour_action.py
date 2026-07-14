@@ -127,7 +127,7 @@ def main() -> None:
     parser.add_argument(
         "--require-explicit-cylinder-c1",
         action="store_true",
-        help="fail closed: no curved-cylinder harmonic matrix for linearized Weyl curvature exists yet",
+        help="fail closed: this scalar action certificate does not contain the all-energy cylinder C1 construction",
     )
     parser.add_argument(
         "--require-all-harmonics",
@@ -142,7 +142,7 @@ def main() -> None:
     args = parser.parse_args()
     if args.require_explicit_cylinder_c1:
         raise SystemExit(
-            "the cylinder-harmonic C1 matrix and its Weyl-fibre pairing require new code"
+            "this executable contains the scalar action blocks only; the all-energy cylinder C1 construction is certified by verify_conformal_cylinder_preimages.py"
         )
     if args.require_all_harmonics:
         raise SystemExit("scalar, vector, TT, ghost, and antifield blocks are not all assembled")
@@ -153,9 +153,9 @@ def main() -> None:
     verify_scalar_detour_blocks()
     print(
         "C2i-D STATUS: EXACT ACTION-NORMALIZED FORMAL FACTORIZATION INPUT "
-        "AND FINITE SCALAR-BLOCK DETOUR IDENTITIES. The explicit geometric "
-        "cylinder C1 matrix, all harmonic sectors, and global/local-BV "
-        "cohomology remain open and are guarded."
+        "AND FINITE SCALAR-BLOCK DETOUR IDENTITIES. Companion bridge "
+        "certificates now supply the all-energy cylinder C1 and algebraic BV "
+        "rows; this executable alone does not prove those larger statements."
     )
 
 

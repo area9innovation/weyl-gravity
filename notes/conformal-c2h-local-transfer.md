@@ -228,14 +228,19 @@ spectral calculation once the local kernel and its nondegenerate induced
 form are known.  In every finite compact-degree block, a cyclic retract can
 be constructed by a Witt decomposition of the exact/contractible sector;
 `verify_conformal_cyclic_hpl.py` then proves that homological perturbation is
-an exact isometry.  The remaining obligation is to choose that cyclic
-retract simultaneously `D`-equivariant and compatible with the cylinder
-zero-mode split and field-theory domains.
+an exact isometry.  The raw cross-energy implementation now constructs the
+needed `D x SO(4)`-graded cyclic form, checks all adjacent noncompact
+contravariance relations, and verifies the dressed isometry.  Its
+representative retract is homotopy-equivariant rather than strictly
+equivariant, but the complete centered HPL correction test gives the strict
+CE differential.  The remaining obligation is to identify this certified
+algebraic construction with the complete chosen field-theory BV domain.
 
-## Pure-Weyl obligations
+## Pure-Weyl obligations and implementation status
 
-To instantiate the lemma rather than merely quote it, the next certificate
-must construct the following objects on `R x S^3`.
+The algebraic certificate suite now constructs the following objects on
+`R x S^3`; the same inventory still has to be justified as complete for the
+chosen field-theory BV domain.
 
 1. **Local BV differential.**  Include the metric, diffeomorphism ghost,
    Weyl ghost, antifields, gauge-fixing auxiliaries, antighosts, and the
@@ -265,8 +270,11 @@ must construct the following objects on `R x S^3`.
    anomaly question.  Quantum nilpotency requires cancellation or control of
    the Diff `x` Weyl anomaly and normal-ordering shifts.
 
-The first six items are a free/classical homological calculation.  The last
-is a genuinely quantum consistency condition.
+The first six items are now instantiated in the finite algebraic cylinder
+model, including the explicit closed-`S3` residual BFV choice and all-energy
+Taub normalization.  Their promotion to the complete field-theoretic BV
+domain is the remaining classical identification.  The last item is a
+genuinely quantum consistency condition.
 
 ## Finite centered inventory
 
@@ -332,8 +340,8 @@ the absolute complex.  The master equation then contains the moment-map
 equivariance and conformal Jacobi identities already certified on the
 residual side.
 
-The next bridge must establish three substantive facts rather than compute
-another matter shell:
+The implementation has established the following three facts in the finite
+algebraic cylinder category rather than by computing another matter shell:
 
 1. `H(q)` is the Fock space on the two chiral on-shell Weyl modules after the
    fifteen stabilizer modes are separated, with no additional relevant
@@ -347,12 +355,12 @@ another matter shell:
    `M_Taub = -sqrt(2)/(4*pi) J K^-`, with no unaccounted higher operation in
    that arity.
 
-If local cohomology is concentrated in the physical row, the local-to-global
-spectral sequence collapses at the residual-cohomology page.  Under those
-conditions the two positive Weyl-square classes are the full free classical
-answer.  Quantum nilpotency remains a distinct local Diff `x` Weyl anomaly
-problem; the absence of a finite-dimensional central extension does not
-settle it.
+The resulting centered algebraic spectral sequence collapses at the
+residual-cohomology page, so the two positive Weyl-square classes are the
+complete answer in that model.  The remaining field-theory conjecture is
+that no additional BV row or domain effect changes this model.  Quantum
+nilpotency remains a distinct local Diff `x` Weyl anomaly problem; the
+absence of a finite-dimensional central extension does not settle it.
 
 ## Physical meaning and boundary dependence
 

@@ -173,8 +173,7 @@ def certificate_data() -> dict[str, object]:
                 "dynamical/topological parity split",
             ],
             "remaining": [
-                "cross-energy cyclicity of the complete local BV pairing",
-                "derivation of the selected closed-universe BFV polarization",
+                "identification with the complete gauge-fixed field-theory BV domain",
                 "analytic completion and quantum anomaly questions",
             ],
         },
@@ -209,13 +208,13 @@ def main() -> None:
     parser.add_argument(
         "--claim-complete-bv-bfv-pairing",
         action="store_true",
-        help="fail closed: the full cross-energy BV/BFV normalization is open",
+        help="fail closed: the complete field-theory BV-domain identification is open",
     )
     args = parser.parse_args()
     if args.claim_complete_bv_bfv_pairing:
         raise SystemExit(
             "REFUSED: the algebraic metric-to-residual cohomology is integrated, "
-            "but the full cross-energy cyclic BV/BFV normalization is not derived"
+            "but its equality to the complete field-theory BV/BFV domain is not derived"
         )
     data = certificate_data()
     if args.emit:

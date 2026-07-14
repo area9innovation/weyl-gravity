@@ -327,17 +327,17 @@ def main() -> None:
         )
     if args.claim_taub_identification:
         raise SystemExit(
-            "the 15-dimensional degree-three sector has the right representation but its Taub normalization is still open"
+            "the oscillator Taub kernels are normalized independently, but the geometric identification of this 15-dimensional degree-three BGG sector with them remains open"
         )
     if args.claim_completed_bv_transfer:
         raise SystemExit(
-            "the polynomial metric-to-residual vector-space transfer and CKV "
-            "projector are now constructed separately; the cross-energy cyclic "
-            "local-BV pairing and its field-theoretic BFV identification remain open"
+            "the polynomial metric-to-residual transfer, cross-energy cyclic form, "
+            "and selected residual BFV sector are constructed separately; their "
+            "identification with the complete gauge-fixed field-theory BV domain remains open"
         )
     if args.claim_pure_weyl_bfv_pairing:
         raise SystemExit(
-            "the canonical residual CE pairing is verified internally, but its induction from strict pure-Weyl BV/BFV remains conditional"
+            "the canonical residual CE pairing and algebraic raw isometry are verified, but their induction from the complete field-theory pure-Weyl BV/BFV domain remains conditional"
         )
 
     verify_hodge_and_complex_identity()

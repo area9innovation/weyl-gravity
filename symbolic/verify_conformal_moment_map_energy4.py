@@ -345,7 +345,7 @@ def main() -> None:
         )
     if args.require_physical_cohomology:
         raise SystemExit(
-            "the infinite energy-graded state action and local-plus-global BRST cohomology remain open"
+            "this energy-four jet is not physical cohomology; an all-energy Taub companion is certified separately, while the complete field-theory BV-domain identification remains conditional"
         )
 
 

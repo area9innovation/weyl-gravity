@@ -16,9 +16,12 @@ strong deformation retract.  C2i now has a nontrivial algebraic
 instantiation: the raw polynomial metric BV rows admit an exact rational
 retract, its noncompact defects are explicitly homotopic, the induced
 residual action is strict, and the centered metric-to-CE pipeline reproduces
-the residual answer.  The missing instantiation has narrowed to the
-cross-energy cyclic local-BV pairing and the field-theoretic residual BFV
-boundary/normalization choice on `R x S3`.
+the residual answer.  The cross-energy cyclic form, complete centered HPL
+correction test, canonical residual CE pairing, explicit closed-`S3` BFV
+choice, and all-energy Taub normalization are now also certified.  The one
+remaining classical identification is whether this algebraic polynomial
+complex is the complete chosen gauge-fixed field-theory BV domain, with no
+additional rows or domain effects.
 
 This is a free/classical bridge.  Quantum Diff `x` Weyl anomaly cancellation
 is a later and independent requirement.
@@ -86,10 +89,10 @@ are fixed.  They prove the smooth metric-to-geometric-curvature quotient.
 The symbolic all-energy cylinder preimages now prove its restriction to the
 algebraic positive-energy `E/A/L` module.  The raw polynomial BV
 implementation also includes the minimal ghost/antifield detour rows and
-separate contractible nonminimal certificates.  The remaining statements
-are the field-theoretic identification of this algebraic model and its
-cross-energy cyclic form, plus the placement and normalization of the
-residual BFV zero-mode sector.
+separate contractible nonminimal certificates.  Its cross-energy cyclic form
+and residual BFV zero-mode choice are now explicit.  The remaining statement
+is the field-theoretic identification of this algebraic model and its cyclic
+form.
 
 ## Compact-degree-equivariant retract
 
@@ -137,12 +140,13 @@ algebraically.  The raw calculation shows that demanding a strictly
 equivariant representative choice is unnecessarily strong: its natural
 `p,j,s` has nonzero `K^+/-` defects, but they are exactly `q`-homotopic, the
 induced cohomology action is strict, and the physical-row HPL corrections
-vanish.  What must still be chosen compatibly is the cross-energy cyclic
-pairing and conformal-Killing zero-mode split in the complete field complex.
-Those compatibility and domain conditions—not a term-by-term recomputation
-of the dressed Gram—are the remaining field-theory obligation that promotes
-the residual representative Gram `I2` to the induced pairing on
-local-plus-global cohomology.  Even after that
+vanish.  The exact cross-energy recursion now supplies the raw cyclic
+pairing, and the complete ordered-generator test proves the absence of
+higher centered HPL terms.  What remains is to identify this certified
+algebraic split and pairing with the complete field-theory BV domain.  That
+domain condition—not a term-by-term recomputation of the dressed Gram—is
+the remaining obligation that promotes the algebraic `I2` to the complete
+field-theoretic local-plus-global cohomology.  Even after that
 bridge closes, C2j-D identifies these as ghost-dressed
 vertex/deformation classes rather than a propagating graviton Hilbert space.
 
@@ -328,7 +332,8 @@ than infer it solely from the finite-dimensional existence argument.
 
 ## Transferred residual charge
 
-The leading minimal BFV charge should be
+In the certified free algebraic cylinder model, the leading minimal BFV
+charge is
 
 \[
 \Omega_{\min}
@@ -337,28 +342,32 @@ The leading minimal BFV charge should be
 +O(c\,\Phi^3,c^2\Phi,\ldots).
 \]
 
-The two displayed terms have strong separate evidence:
+The two displayed terms are now tied together by exact certificates:
 
 - the second is the universal `so(4,2)` Chevalley--Eilenberg differential;
-- the first is the quadratic oscillator moment map, matched to selected Taub
-  kernels in the finite cylinder certificate.
+- the first is the quadratic oscillator moment map, whose `D` component is
+  derived from the quadratic Noether Hamiltonian and whose proper-conformal
+  normalization is fixed by two independent direct `B^(2)` curvature seeds.
 
-C2i must derive their coexistence from the same transferred master action and
-fix the one-ghost/two-matter normalization to
+The complete centered HPL calculation gives the strict CE action with no
+higher correction in this window, and the one-ghost/two-matter normalization
+is
 
 \[
 M_{\rm Taub}=-\frac{\sqrt2}{4\pi}J K^-.
 \]
 
-The transferred master equation must reproduce
+The exact kernels reproduce
 
 \[
 \{\mu_A,\mu_B\}=f_{AB}{}^C\mu_C
 \]
 
 and moment-map equivariance.  Because the Weyl module is multiplicity-free,
-the all-level generator theorem and the two direct curvature seeds should
-fix this arity uniquely up to the already chosen overall normalization.
+the all-level generator theorem and the two direct curvature seeds fix this
+arity uniquely up to the displayed normalization.  What remains conditional
+is its identification with the charge obtained from the complete chosen
+field-theory BV domain, not the algebraic all-energy comparison itself.
 
 ## Spectral-sequence criterion
 
@@ -384,33 +393,23 @@ H^4_{\rm free}
 up to a possible local/topological identification of the parity-odd
 Pontryagin combination.
 
-## Acceptance criteria
+## Acceptance status
 
-C2i is closed only when all of the following are available.
+The five executable sprints in `bridge/README.md` are complete in the finite
+algebraic cylinder category.  They provide the all-energy curvature
+intertwiner, raw ghost/metric/antifield rows and zero-mode projector,
+noncompact homotopies, cross-energy cyclic form, exact dressed isometry,
+complete centered HPL test, residual CE pairing, explicit closed-universe
+BFV choice, all-energy Taub normalization, and end-to-end `I2` integration
+test.
 
-The executable work packages and sprint order are maintained in
-`bridge/README.md`; that file is the canonical programmer handoff for these
-criteria.
-
-1. An explicit pure-Weyl local BV/BFV field and ghost complex in a stationary
-   cylinder gauge.
-2. A non-overlapping split of the fifteen conformal-Killing zero modes.
-3. An all-level curvature intertwiner from the explicit `E/A/L` modes into
-   the geometric chiral kernel, together with a `D`- and `SO(4)`-finite
-   metric-potential construction.
-4. The full local BV harmonic-kernel calculation giving exactly the
-   `W_+ + W_-` module and no relevant extra ghost or antifield cohomology.
-5. Verification that the local form and compact-degree operator meet the
-   hypotheses above, followed by construction of the resulting
-   full `SO(4,2)`-equivariant cyclic retract and its exact HPL isometry.
-6. Derivation of the residual ghost differential and Taub coupling from the
-   transferred master action, including the `-4` ghost-vacuum shift.
-7. A spectral-sequence argument excluding higher differentials in the
-   centered physical row.
-
-Only after these free/classical items close should the programme test quantum
-nilpotency.  The finite conformal algebra has no nontrivial ordinary central
-two-cocycle, but that does not remove the local Weyl anomaly.
+C2i closes as a statement about the complete field-theory BV complex only
+after one remaining identification: the chosen gauge-fixed pure-Weyl field
+domain must be shown to have precisely the certified raw polynomial rows and
+no additional cohomology, locality obstruction, or analytic domain effect.
+Quantum nilpotency remains later still.  The finite conformal algebra has no
+nontrivial ordinary central two-cocycle, but that does not remove the local
+Weyl anomaly.
 
 ## Physical boundary of the conclusion
 

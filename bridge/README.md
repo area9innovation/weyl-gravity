@@ -1,7 +1,8 @@
 # Pure-Weyl metric-to-residual bridge programme
 
-This directory is the canonical implementation roadmap for closing the three
-conditional steps in Paper VII.  The starting points already proved are:
+This directory is the canonical implementation roadmap and completion record
+for the finite algebraic bridge developed for Paper VII.  The starting points
+already proved were:
 
 - the smooth global Bach-to-geometric-curvature isomorphism on
   `R x S3`;
@@ -15,7 +16,7 @@ conditional steps in Paper VII.  The starting points already proved are:
 The programme must connect those endpoints.  It must not extend cutoff tables
 as a substitute for an all-energy construction.
 
-## Blocking target: an all-energy cylinder right inverse
+## Original blocking target: an all-energy cylinder right inverse (completed)
 
 For every allowed compact energy `n` and `SO(4) = SU(2)_L x SU(2)_R` type,
 construct exact harmonic spaces and matrices
@@ -227,7 +228,7 @@ Every theorem-level deliverable must include:
 - a machine-readable certificate; and
 - CI coverage.
 
-Planned package layout:
+Implemented package layout:
 
 ```text
 bridge/
@@ -245,7 +246,7 @@ bridge/
 
 ## Explicit non-goals
 
-Until the bridge closes, do not:
+Beyond the completed algebraic sprints, do not:
 
 - add Euclidean jet levels without an all-`n` formula target;
 - enlarge residual cutoffs merely to obtain bigger rank tables;
@@ -255,8 +256,11 @@ Until the bridge closes, do not:
 - discard ghost or antifield rows without contraction certificates; or
 - treat the Hamada insertion as proof of the pure-Weyl BV/BFV transfer.
 
-The immediate programming deliverable is the exact cylinder-harmonic right
-inverse `R_n` of the linearized Weyl map on every `E/A/L` block.
+The original immediate programming deliverable was the exact
+cylinder-harmonic right inverse `R_n` of the linearized Weyl map on every
+`E/A/L` block.  It and the four subsequent sprints are now complete in the
+finite algebraic cylinder category; the exact claim boundary is recorded at
+the end of this file.
 
 ## Implemented checkpoint: physical E/A/L preimages
 
@@ -328,9 +332,9 @@ second `s` acts on the gauge row.  The outcome is therefore explicitly
 action is the strict residual conformal action.
 
 The split contraction also has a canonical cyclic form and exact compact
-equivariance (`symbolic/verify_conformal_cyclic_bv_retract.py`).  What is not
-yet derived is cyclicity for the full cross-energy local BV pairing in the
-raw polynomial/cylinder realization.
+equivariance (`symbolic/verify_conformal_cyclic_bv_retract.py`).  The later
+cross-energy checkpoint transports this form into the raw polynomial
+coordinates and fixes it uniquely across adjacent energies.
 
 ## Implemented checkpoint: residual BFV and end-to-end integration
 
@@ -362,21 +366,83 @@ by the canonical residual ghost norm gives the normalized representative
 Gram matrix `I2`.
 
 This is an end-to-end theorem in the finite, algebraic polynomial conformal
-category.  It does **not** yet identify the cross-energy local BV pairing
-with the chosen residual BFV normalization, make the closed-universe choice
-to gauge `D` compulsory, establish an analytic completion, or address the
-quantum theory.
+category.  The later checkpoints add the raw cross-energy cyclic form and
+make the closed-universe BFV choice explicit.  They do **not** make that
+boundary choice compulsory in other physical problems, establish an
+analytic completion, or address the quantum theory.
 
-## Remaining critical path
+## Completed checkpoint: cross-energy cyclic transfer
 
-The computational unknowns are now narrower than the original seven
-workstreams:
+`bridge/cyclic_retract/cross_energy.py` reconstructs the physical form in
+the actual raw polynomial cohomology basis from the exact recursion
 
-1. construct the cross-energy cyclic local BV pairing and compare its
-   transferred normalization with the intrinsic residual BFV top form;
-2. finish the all-level equivariant Taub/moment-map normalization from the
-   quadratic Bach source (one `D` component plus one proper-conformal check);
-3. decide and state the boundary/BFV principle selecting full residual
-   gauging, especially the status of `D`;
-4. only then promote the algebraic integration result to the complete
-   closed-universe pure-Weyl BV/BFV theorem.
+```text
+J_n K+_(n-1) = -(K-_n)^T J_(n-1).
+```
+
+The four raising blocks have joint full row rank, so the form at each new
+energy is unique.  Starting with the energy-two curvature form gives exact
+signatures `+E,-A,-L` through the full centered buffer.  Transporting the
+form through the raw adapted basis makes `q,s,j,p` cyclic in the
+ghost/metric/equation/identity rows.  All elementary HPL dressings are
+mutually isotropic, hence the dressed inclusion obeys `I^sharp I=1`.
+
+`bridge/transfer/hpl.py` independently checks every allowed ordered pair of
+all fifteen residual generators on centered source energies two through
+four.  The sole out-of-buffer double-raising path from the top shell is zero
+by four-ghost exterior saturation.  The direct matrix checks prove
+
+```text
+p Delta s Delta j = 0
+s Delta s Delta j = 0
+Q_H = p Delta j = d_CE
+```
+
+in the centered physical window.  Thus the non-strict representative SDR
+has no hidden higher transferred operation there.
+
+## Completed checkpoint: all-energy Taub/moment map
+
+`bridge/taub_moment_map/` constructs the canonical fifteen quadratic
+moment-map kernels for the action convention used by the curvature code:
+
+```text
+M_X^canonical = -(1/2) J K_X.
+```
+
+It derives the `D` component directly from the quadratic Ostrogradsky
+Noether Hamiltonian.  Two independent direct `B^(2)` curvature integrations
+fix the proper-conformal conversion once, after which exact conformal
+equivariance generates all six stable lowering families at arbitrary
+energy.  The raw curvature normalization is
+
+```text
+M_Kminus^raw = sqrt(2)/(2*pi) M_Kminus^canonical
+             = -sqrt(2)/(4*pi) J Kminus.
+```
+
+The certificate checks the all-energy formulas through energy six as a
+regression buffer; the formulas themselves are symbolic in `n`.
+
+## Completed checkpoint: explicit boundary choice
+
+`bridge/residual_bfv/closed_universe.py` makes the physical input auditable.
+For the selected boundaryless `S^3` Dirac/BFV sector there are no surface
+charge variables, all fifteen reducibilities are constraints, and `D` is
+therefore included.  The alternative which retains `D` as a charge is
+represented separately and disables the Cartan contraction.  This is a
+declared boundary problem, not a claim that every cylinder formulation must
+gauge time translation.
+
+## Sprint completion boundary
+
+All five implementation sprints are complete in the finite algebraic
+cylinder category, with exact JSON/LaTeX certificates and CI rails.  What
+remains is no longer a missing sprint calculation:
+
+1. identify the raw polynomial cyclic complex with a chosen complete
+   gauge-fixed field-theoretic BV domain, including analytic domains;
+2. prove continuity/closed range on any Hilbert or Krein completion;
+3. study nonlinear and quantum anomaly questions.
+
+Those are deliberately outside the classical algebraic sprint theorem.

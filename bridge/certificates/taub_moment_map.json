@@ -1,0 +1,48 @@
+{
+  "all_energy_raw_reduced_coefficients": {
+    "AA": "sqrt((n**3 - 2*n**2 - 5*n + 6)/(n - 2))/(2*pi)",
+    "AE": "-sqrt(n - 1)*sqrt(1/(n - 2))/(pi*sqrt(n + 2))",
+    "EE": "-sqrt(n**3 + 3*n**2 - n - 3)/(2*pi*sqrt(n + 2))",
+    "LA": "sqrt(1/(n - 2))/pi",
+    "LE": "sqrt((n - 3)/(n - 2))/(2*pi)",
+    "LL": "sqrt(n**2 - n - 2)/(2*pi)"
+  },
+  "buffer_dimension": 470,
+  "canonical_action_scale": "-1/2",
+  "category": "D-finite E/A/L oscillator module",
+  "direct_D_HH_coefficients": {
+    "A": "-2*J - 1",
+    "E": "2*J",
+    "L": "-2*J - 2"
+  },
+  "direct_curvature_seeds": {
+    "direct_magnetic_A_to_E": "-sqrt(5)/(5*pi)",
+    "direct_magnetic_L_to_A": "sqrt(10)/(5*pi)",
+    "reduced_AE_3": "-sqrt(10)/(5*pi)",
+    "reduced_LA_4": "sqrt(2)/(2*pi)"
+  },
+  "identities": [
+    "M_X^(canonical)=-(1/2) J K_X",
+    "M_Kminus^(raw)=sqrt(2)/(2*pi) M_Kminus^(canonical)",
+    "all fifteen canonical moment maps are equivariant on every interior shell",
+    "D charge agrees with the direct quadratic Noether Hamiltonian",
+    "two independent B^(2) curvature seeds fix the proper-CK normalization"
+  ],
+  "maximum_regression_energy": 6,
+  "raw_ck_to_canonical_scale": "sqrt(2)/(2*pi)",
+  "schema": "pure-weyl-taub-moment-map-all-energy-v1",
+  "scope": {
+    "not_proved": [
+      "pointwise direct B^(2) curvature evaluation for every magnetic block",
+      "a boundary-independent mandate to gauge D",
+      "nonlinear all-orders linearization stability"
+    ],
+    "proved": [
+      "all-energy proper-conformal Taub reduced coefficients",
+      "canonical fifteen-component moment-map reconstruction",
+      "direct D normalization",
+      "two independent direct Bach-source normalizations",
+      "equivariance and conservation by the exact conformal algebra"
+    ]
+  }
+}
