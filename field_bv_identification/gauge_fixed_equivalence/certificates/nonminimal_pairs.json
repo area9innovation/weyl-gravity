@@ -1,0 +1,542 @@
+{
+  "coordinate_vs_tangent_convention": "coordinate BRST has s(bar_c)=b; suspended tangent differential has b->bar_c",
+  "levels": [
+    {
+      "coordinate_brst_rules": [
+        {
+          "image": "vector_multiplier",
+          "source": "vector_antighost"
+        },
+        {
+          "image": "0",
+          "source": "vector_multiplier"
+        },
+        {
+          "image": "scalar_multiplier",
+          "source": "scalar_antighost"
+        },
+        {
+          "image": "0",
+          "source": "scalar_multiplier"
+        },
+        {
+          "image": "vector_antighost_antifield",
+          "source": "vector_multiplier_antifield"
+        },
+        {
+          "image": "0",
+          "source": "vector_antighost_antifield"
+        },
+        {
+          "image": "scalar_antighost_antifield",
+          "source": "scalar_multiplier_antifield"
+        },
+        {
+          "image": "0",
+          "source": "scalar_antighost_antifield"
+        }
+      ],
+      "energy": 2,
+      "fields": [
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": -1,
+          "name": "vector_antighost",
+          "primary_weight": 3,
+          "role": "Diff nonminimal antighost",
+          "start": 0,
+          "stop": 0,
+          "tangent_degree": 1,
+          "tensor_type": "vector"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": 0,
+          "name": "vector_multiplier",
+          "primary_weight": 3,
+          "role": "Diff Nakanishi--Lautrup multiplier",
+          "start": 0,
+          "stop": 0,
+          "tangent_degree": 0,
+          "tensor_type": "vector"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": -1,
+          "name": "scalar_antighost",
+          "primary_weight": 4,
+          "role": "Weyl nonminimal antighost",
+          "start": 0,
+          "stop": 0,
+          "tangent_degree": 1,
+          "tensor_type": "scalar"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": 0,
+          "name": "scalar_multiplier",
+          "primary_weight": 4,
+          "role": "Weyl Nakanishi--Lautrup multiplier",
+          "start": 0,
+          "stop": 0,
+          "tangent_degree": 0,
+          "tensor_type": "scalar"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": 0,
+          "name": "vector_antighost_antifield",
+          "primary_weight": 1,
+          "role": "antifield of the Diff antighost",
+          "start": 0,
+          "stop": 16,
+          "tangent_degree": 0,
+          "tensor_type": "covector density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": -1,
+          "name": "vector_multiplier_antifield",
+          "primary_weight": 1,
+          "role": "antifield of the Diff multiplier",
+          "start": 16,
+          "stop": 32,
+          "tangent_degree": 1,
+          "tensor_type": "covector density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": 0,
+          "name": "scalar_antighost_antifield",
+          "primary_weight": 0,
+          "role": "antifield of the Weyl antighost",
+          "start": 32,
+          "stop": 42,
+          "tangent_degree": 0,
+          "tensor_type": "scalar density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": -1,
+          "name": "scalar_multiplier_antifield",
+          "primary_weight": 0,
+          "role": "antifield of the Weyl multiplier",
+          "start": 42,
+          "stop": 52,
+          "tangent_degree": 1,
+          "tensor_type": "scalar density"
+        }
+      ],
+      "homotopy_sha256": "1ea809f5ec796dcc8343eddd1d507f2a682dcfb13198af33ed0fec8e0b37e629",
+      "tangent_arrows": [
+        "vector_multiplier -> vector_antighost",
+        "scalar_multiplier -> scalar_antighost",
+        "vector_antighost_antifield -> vector_multiplier_antifield",
+        "scalar_antighost_antifield -> scalar_multiplier_antifield"
+      ]
+    },
+    {
+      "coordinate_brst_rules": [
+        {
+          "image": "vector_multiplier",
+          "source": "vector_antighost"
+        },
+        {
+          "image": "0",
+          "source": "vector_multiplier"
+        },
+        {
+          "image": "scalar_multiplier",
+          "source": "scalar_antighost"
+        },
+        {
+          "image": "0",
+          "source": "scalar_multiplier"
+        },
+        {
+          "image": "vector_antighost_antifield",
+          "source": "vector_multiplier_antifield"
+        },
+        {
+          "image": "0",
+          "source": "vector_antighost_antifield"
+        },
+        {
+          "image": "scalar_antighost_antifield",
+          "source": "scalar_multiplier_antifield"
+        },
+        {
+          "image": "0",
+          "source": "scalar_antighost_antifield"
+        }
+      ],
+      "energy": 3,
+      "fields": [
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": -1,
+          "name": "vector_antighost",
+          "primary_weight": 3,
+          "role": "Diff nonminimal antighost",
+          "start": 0,
+          "stop": 4,
+          "tangent_degree": 1,
+          "tensor_type": "vector"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": 0,
+          "name": "vector_multiplier",
+          "primary_weight": 3,
+          "role": "Diff Nakanishi--Lautrup multiplier",
+          "start": 4,
+          "stop": 8,
+          "tangent_degree": 0,
+          "tensor_type": "vector"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": -1,
+          "name": "scalar_antighost",
+          "primary_weight": 4,
+          "role": "Weyl nonminimal antighost",
+          "start": 8,
+          "stop": 8,
+          "tangent_degree": 1,
+          "tensor_type": "scalar"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": 0,
+          "name": "scalar_multiplier",
+          "primary_weight": 4,
+          "role": "Weyl Nakanishi--Lautrup multiplier",
+          "start": 8,
+          "stop": 8,
+          "tangent_degree": 0,
+          "tensor_type": "scalar"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": 0,
+          "name": "vector_antighost_antifield",
+          "primary_weight": 1,
+          "role": "antifield of the Diff antighost",
+          "start": 8,
+          "stop": 48,
+          "tangent_degree": 0,
+          "tensor_type": "covector density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": -1,
+          "name": "vector_multiplier_antifield",
+          "primary_weight": 1,
+          "role": "antifield of the Diff multiplier",
+          "start": 48,
+          "stop": 88,
+          "tangent_degree": 1,
+          "tensor_type": "covector density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": 0,
+          "name": "scalar_antighost_antifield",
+          "primary_weight": 0,
+          "role": "antifield of the Weyl antighost",
+          "start": 88,
+          "stop": 108,
+          "tangent_degree": 0,
+          "tensor_type": "scalar density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": -1,
+          "name": "scalar_multiplier_antifield",
+          "primary_weight": 0,
+          "role": "antifield of the Weyl multiplier",
+          "start": 108,
+          "stop": 128,
+          "tangent_degree": 1,
+          "tensor_type": "scalar density"
+        }
+      ],
+      "homotopy_sha256": "5661589cc007adbbbcd53e4002f90d4ac6a52d7b3dddcd1f4855a9999149392b",
+      "tangent_arrows": [
+        "vector_multiplier -> vector_antighost",
+        "scalar_multiplier -> scalar_antighost",
+        "vector_antighost_antifield -> vector_multiplier_antifield",
+        "scalar_antighost_antifield -> scalar_multiplier_antifield"
+      ]
+    },
+    {
+      "coordinate_brst_rules": [
+        {
+          "image": "vector_multiplier",
+          "source": "vector_antighost"
+        },
+        {
+          "image": "0",
+          "source": "vector_multiplier"
+        },
+        {
+          "image": "scalar_multiplier",
+          "source": "scalar_antighost"
+        },
+        {
+          "image": "0",
+          "source": "scalar_multiplier"
+        },
+        {
+          "image": "vector_antighost_antifield",
+          "source": "vector_multiplier_antifield"
+        },
+        {
+          "image": "0",
+          "source": "vector_antighost_antifield"
+        },
+        {
+          "image": "scalar_antighost_antifield",
+          "source": "scalar_multiplier_antifield"
+        },
+        {
+          "image": "0",
+          "source": "scalar_antighost_antifield"
+        }
+      ],
+      "energy": 4,
+      "fields": [
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": -1,
+          "name": "vector_antighost",
+          "primary_weight": 3,
+          "role": "Diff nonminimal antighost",
+          "start": 0,
+          "stop": 16,
+          "tangent_degree": 1,
+          "tensor_type": "vector"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": 0,
+          "name": "vector_multiplier",
+          "primary_weight": 3,
+          "role": "Diff Nakanishi--Lautrup multiplier",
+          "start": 16,
+          "stop": 32,
+          "tangent_degree": 0,
+          "tensor_type": "vector"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": -1,
+          "name": "scalar_antighost",
+          "primary_weight": 4,
+          "role": "Weyl nonminimal antighost",
+          "start": 32,
+          "stop": 33,
+          "tangent_degree": 1,
+          "tensor_type": "scalar"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": 0,
+          "name": "scalar_multiplier",
+          "primary_weight": 4,
+          "role": "Weyl Nakanishi--Lautrup multiplier",
+          "start": 33,
+          "stop": 34,
+          "tangent_degree": 0,
+          "tensor_type": "scalar"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": 0,
+          "name": "vector_antighost_antifield",
+          "primary_weight": 1,
+          "role": "antifield of the Diff antighost",
+          "start": 34,
+          "stop": 114,
+          "tangent_degree": 0,
+          "tensor_type": "covector density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": -1,
+          "name": "vector_multiplier_antifield",
+          "primary_weight": 1,
+          "role": "antifield of the Diff multiplier",
+          "start": 114,
+          "stop": 194,
+          "tangent_degree": 1,
+          "tensor_type": "covector density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": 0,
+          "name": "scalar_antighost_antifield",
+          "primary_weight": 0,
+          "role": "antifield of the Weyl antighost",
+          "start": 194,
+          "stop": 229,
+          "tangent_degree": 0,
+          "tensor_type": "scalar density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": -1,
+          "name": "scalar_multiplier_antifield",
+          "primary_weight": 0,
+          "role": "antifield of the Weyl multiplier",
+          "start": 229,
+          "stop": 264,
+          "tangent_degree": 1,
+          "tensor_type": "scalar density"
+        }
+      ],
+      "homotopy_sha256": "43a34edeeca97538f217c5fc4a8242d1c3b695acbe0d91e11b9eb9ca48f8e2f9",
+      "tangent_arrows": [
+        "vector_multiplier -> vector_antighost",
+        "scalar_multiplier -> scalar_antighost",
+        "vector_antighost_antifield -> vector_multiplier_antifield",
+        "scalar_antighost_antifield -> scalar_multiplier_antifield"
+      ]
+    },
+    {
+      "coordinate_brst_rules": [
+        {
+          "image": "vector_multiplier",
+          "source": "vector_antighost"
+        },
+        {
+          "image": "0",
+          "source": "vector_multiplier"
+        },
+        {
+          "image": "scalar_multiplier",
+          "source": "scalar_antighost"
+        },
+        {
+          "image": "0",
+          "source": "scalar_multiplier"
+        },
+        {
+          "image": "vector_antighost_antifield",
+          "source": "vector_multiplier_antifield"
+        },
+        {
+          "image": "0",
+          "source": "vector_antighost_antifield"
+        },
+        {
+          "image": "scalar_antighost_antifield",
+          "source": "scalar_multiplier_antifield"
+        },
+        {
+          "image": "0",
+          "source": "scalar_antighost_antifield"
+        }
+      ],
+      "energy": 5,
+      "fields": [
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": -1,
+          "name": "vector_antighost",
+          "primary_weight": 3,
+          "role": "Diff nonminimal antighost",
+          "start": 0,
+          "stop": 40,
+          "tangent_degree": 1,
+          "tensor_type": "vector"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": 0,
+          "name": "vector_multiplier",
+          "primary_weight": 3,
+          "role": "Diff Nakanishi--Lautrup multiplier",
+          "start": 40,
+          "stop": 80,
+          "tangent_degree": 0,
+          "tensor_type": "vector"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": -1,
+          "name": "scalar_antighost",
+          "primary_weight": 4,
+          "role": "Weyl nonminimal antighost",
+          "start": 80,
+          "stop": 84,
+          "tangent_degree": 1,
+          "tensor_type": "scalar"
+        },
+        {
+          "antifield_number": 0,
+          "conventional_ghost_number": 0,
+          "name": "scalar_multiplier",
+          "primary_weight": 4,
+          "role": "Weyl Nakanishi--Lautrup multiplier",
+          "start": 84,
+          "stop": 88,
+          "tangent_degree": 0,
+          "tensor_type": "scalar"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": 0,
+          "name": "vector_antighost_antifield",
+          "primary_weight": 1,
+          "role": "antifield of the Diff antighost",
+          "start": 88,
+          "stop": 228,
+          "tangent_degree": 0,
+          "tensor_type": "covector density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": -1,
+          "name": "vector_multiplier_antifield",
+          "primary_weight": 1,
+          "role": "antifield of the Diff multiplier",
+          "start": 228,
+          "stop": 368,
+          "tangent_degree": 1,
+          "tensor_type": "covector density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": 0,
+          "name": "scalar_antighost_antifield",
+          "primary_weight": 0,
+          "role": "antifield of the Weyl antighost",
+          "start": 368,
+          "stop": 424,
+          "tangent_degree": 0,
+          "tensor_type": "scalar density"
+        },
+        {
+          "antifield_number": 1,
+          "conventional_ghost_number": -1,
+          "name": "scalar_multiplier_antifield",
+          "primary_weight": 0,
+          "role": "antifield of the Weyl multiplier",
+          "start": 424,
+          "stop": 480,
+          "tangent_degree": 1,
+          "tensor_type": "scalar density"
+        }
+      ],
+      "homotopy_sha256": "99c5a10c3492592a869bc3cce5674e723185461659ffb4b72283d2bacdeaf66e",
+      "tangent_arrows": [
+        "vector_multiplier -> vector_antighost",
+        "scalar_multiplier -> scalar_antighost",
+        "vector_antighost_antifield -> vector_multiplier_antifield",
+        "scalar_antighost_antifield -> scalar_multiplier_antifield"
+      ]
+    }
+  ],
+  "schema": "pure-weyl-nonminimal-pairs-v1"
+}

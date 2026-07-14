@@ -6,9 +6,10 @@ linear tangent differential from the quadratic minimal master action in full
 symmetric metric variables, constructs the trace/ghost canonical change of
 variables, and proves exact matrix identities with the certified raw chain.
 
-The result does *not* yet identify the complete gauge-fixed field domain:
-nonminimal gauge fixing, the dual residual zero-mode sector, the full BV-row
-inventory, and transfer of the cyclic pairing remain later work packages.
+By itself this Phase-1 result does not perform gauge fixing, time-slice
+BV--BFV transgression, positive-frequency polarization, or pairing transfer.
+Those are separate companion propositions rather than hidden assumptions in
+the minimal dictionary.
 """
 
 from __future__ import annotations
@@ -253,10 +254,9 @@ def certificate_data(minimum_energy: int, maximum_energy: int) -> dict[str, obje
             "one generated record per raw basis vector",
         ],
         "not_proved": [
-            "complete gauge-fixed BV-domain identification",
-            "dual residual zero-mode replacement",
-            "nonminimal and generalized-auxiliary elimination from a chosen gauge fermion",
-            "all potentially entering antifield rows",
+            "gauge-fixed nonminimal contraction (proved by a companion certificate)",
+            "bulk-endpoint-to-BFV time-slice transgression",
+            "polarized-state row completeness",
             "field-theoretic cyclic/BFV pairing transfer",
             "analytic completion",
         ],
@@ -334,8 +334,8 @@ def main() -> None:
     args = parser.parse_args()
     if args.claim_complete_field_bv_domain:
         raise SystemExit(
-            "REFUSED: the exact minimal chain comparison does not yet inventory "
-            "the complete gauge-fixed BV domain, dual zero modes, or pairing transfer"
+            "REFUSED: the exact minimal chain comparison does not itself perform "
+            "BFV transgression, state polarization, or pairing transfer"
         )
     data = certificate_data(args.min_energy, args.max_energy)
     if args.emit:

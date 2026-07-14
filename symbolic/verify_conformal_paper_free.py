@@ -125,7 +125,7 @@ CERTIFICATES = (
         "CONFORMAL C2i CYCLIC HPL ISOMETRY: ALL PASS",
     ),
     Certificate(
-        "complete split free-BV rows and zero modes",
+        "split free-BV fixture and zero modes",
         "verify_conformal_free_bv_complex.py",
         "CONFORMAL S2 FREE BV COMPLEX: ALL PASS",
     ),
@@ -133,6 +133,24 @@ CERTIFICATES = (
         "field-theoretic minimal BV/raw-chain dictionary",
         "verify_conformal_field_bv_dictionary.py",
         "CONFORMAL FIELD-BV MINIMAL CHAIN DICTIONARY: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
+        "field-theoretic gauge-fixed/nonminimal equivalence",
+        "verify_conformal_gauge_fixed_equivalence.py",
+        "CONFORMAL FIELD-BV GAUGE-FIXED EQUIVALENCE: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
+        "canonical dual endpoint cokernel",
+        "verify_conformal_dual_zero_modes.py",
+        "CONFORMAL FIELD-BV DUAL ENDPOINT: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
+        "residual BFV role/no-conflation audit",
+        "verify_conformal_residual_bfv_roles.py",
+        "CONFORMAL RESIDUAL BFV ROLE AUDIT: ALL PASS",
         slow=True,
     ),
     Certificate(
@@ -182,6 +200,12 @@ CERTIFICATES = (
         ("--max-energy", "6"),
     ),
     Certificate(
+        "endpoint Taub/moment-map composition",
+        "verify_conformal_taub_obstruction_map.py",
+        "CONFORMAL ENDPOINT/TAUB OBSTRUCTION MAP: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
         "weight-four vertex descent",
         "verify_conformal_vertex_descent.py",
         "CONFORMAL PAPER VERTEX DESCENT: ALL PASS",
@@ -220,6 +244,12 @@ GUARDS = (
     ("cyclic fixture is not pure-Weyl BV", "verify_conformal_cyclic_hpl.py", ("--claim-pure-weyl-bv",)),
     ("split free-BV contraction is not yet the full cyclic transfer", "verify_conformal_free_bv_complex.py", ("--claim-full-conformal-cyclic-transfer",)),
     ("minimal master-action chain is not the complete gauge-fixed field-BV domain", "verify_conformal_field_bv_dictionary.py", ("--claim-complete-field-bv-domain",)),
+    ("gauge fixing alone does not perform the bulk-to-BFV zero-mode transfer", "verify_conformal_gauge_fixed_equivalence.py", ("--claim-dual-zero-mode-replacement",)),
+    ("gauge-fixed dictionary is not the complete centered row ledger", "verify_conformal_gauge_fixed_equivalence.py", ("--claim-complete-row-inventory",)),
+    ("canonical gauge fixing does not transfer the field BV/BFV pairing", "verify_conformal_gauge_fixed_equivalence.py", ("--claim-pairing-transfer",)),
+    ("endpoint duality is not the time-slice BFV transgression", "verify_conformal_dual_zero_modes.py", ("--claim-bfv-transgression",)),
+    ("bulk endpoint degree is not BFV ghost-momentum degree", "verify_conformal_dual_zero_modes.py", ("--claim-endpoint-is-bfv-momentum",)),
+    ("role counting is not the no-duplication transfer theorem", "verify_conformal_residual_bfv_roles.py", ("--claim-no-duplication-transfer",)),
     ("compact split cyclicity is not full conformal equivariance", "verify_conformal_cyclic_bv_retract.py", ("--claim-full-so42-equivariance",)),
     ("intrinsic residual CE pairing is not the transferred BV pairing", "verify_conformal_residual_bfv_bridge.py", ("--claim-transferred-pure-weyl-pairing",)),
     ("raw SDR is homotopy-equivariant rather than strict", "verify_conformal_raw_bv_transfer.py", ("--claim-strict-sdr",)),
@@ -227,6 +257,7 @@ GUARDS = (
     ("integrated algebraic cohomology does not identify the complete field-theory BV/BFV domain", "verify_conformal_metric_to_residual_integration.py", ("--claim-complete-bv-bfv-pairing",)),
     ("the closed-universe choice does not make D universally gauge", "verify_conformal_closed_universe_bfv.py", ("--claim-universal-D-gauging",)),
     ("equivariance does not replace direct curvature integration in every magnetic block", "verify_conformal_taub_moment_map_all_levels.py", ("--claim-all-block-direct-curvature",)),
+    ("Taub endpoint normalization does not compute the BFV transgression", "verify_conformal_taub_obstruction_map.py", ("--claim-bfv-transgression",)),
     ("vertex descent is not a particle Hilbert theorem", "verify_conformal_vertex_descent.py", ("--claim-particle-hilbert",)),
     ("Pontryagin is not globally trivial", "verify_conformal_dynamical_topological.py", ("--claim-pontryagin-globally-trivial",)),
     ("theta can retain boundary observables", "verify_conformal_dynamical_topological.py", ("--claim-theta-has-no-observables",)),
@@ -327,10 +358,13 @@ def main() -> None:
         "minimal residual vertex cohomology plus the smooth Bach-curvature "
         "bridge, all-energy E/A/L metric preimages, and an end-to-end "
         "algebraic polynomial metric-to-residual calculation with a "
-        "field-derived minimal master-action/raw-chain dictionary, "
+        "field-derived minimal master-action/raw-chain dictionary and "
+        "gauge-fixed/nonminimal contraction, "
+        "canonical dual endpoint and Taub obstruction map, "
         "cross-energy cyclic form, complete centered HPL transfer, explicit "
         "closed-universe BFV choice, and all-energy Taub normalization. The "
-        "complete field-theoretic BV-domain identification, analytic "
+        "one-scalar BV-to-BFV transgression, polarized-state row completeness, "
+        "complete field-theoretic pairing identification, analytic "
         "completion, and quantum theory remain explicitly conditional or "
         "out of scope."
     )

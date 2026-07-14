@@ -1,0 +1,61 @@
+{
+  "category": "bulk zero-mode extraction before time-slice transgression",
+  "counts": {
+    "BFV_ghost_momenta": 15,
+    "bulk_endpoint_exact_directions": 50,
+    "bulk_endpoint_obstruction_quotient": 15,
+    "local_nonzero_ghosts": 50,
+    "moment_map_coordinate_count": 0,
+    "residual_ghosts": 15
+  },
+  "identities": [
+    "G = G_perp direct-sum Z",
+    "I = im K^sharp direct-sum H_endpoint",
+    "Omega_gh = delta b_a wedge delta c^a is nondegenerate",
+    "mu is a Z^*-valued function, not a third coordinate copy"
+  ],
+  "open": [
+    "tau:H_endpoint^bulk -> Z^*[-1]_BFV",
+    "the scalar lambda in tau=lambda Theta",
+    "the orientation/sign fixed by the time-slice boundary form"
+  ],
+  "roles": [
+    {
+      "ghost_degree": "+1",
+      "is_bfv_coordinate": true,
+      "origin": "the fifteen local gauge reducibilities, moved to residual BFV",
+      "role": "residual ghost",
+      "space": "Z[1]",
+      "symbol": "c^a",
+      "transgression_relation": "identity on Z after zero-mode extraction"
+    },
+    {
+      "ghost_degree": "-1",
+      "is_bfv_coordinate": true,
+      "origin": "cotangent coordinates on T^*[0](Z[1])",
+      "role": "BFV ghost momentum",
+      "space": "Z^*[-1]",
+      "symbol": "b_a",
+      "transgression_relation": "target of tau:H_endpoint^bulk -> Z^*[-1]; scalar lambda open"
+    },
+    {
+      "ghost_degree": "0",
+      "is_bfv_coordinate": false,
+      "origin": "quadratic Taub/Kuranishi obstruction map",
+      "role": "residual constraint",
+      "space": "Z^*-valued functions on the physical phase space",
+      "symbol": "mu_a",
+      "transgression_relation": "takes values in the same Z^* module but is not a coordinate"
+    },
+    {
+      "ghost_degree": "local tangent degree +2",
+      "is_bfv_coordinate": false,
+      "origin": "dual endpoint cohomology of the minimal BV detour chain",
+      "role": "obstruction codomain",
+      "space": "coker K^sharp ~= Z^*",
+      "symbol": "[u]",
+      "transgression_relation": "source of tau=lambda Theta into the BFV momentum module"
+    }
+  ],
+  "schema": "pure-weyl-residual-bfv-role-audit-v1"
+}

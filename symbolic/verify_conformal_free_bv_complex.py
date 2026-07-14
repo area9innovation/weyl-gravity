@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sprint-2 certificate for the complete algebraic free pure-Weyl BV rows.
+"""Sprint-2 split-normal-form fixture for the free pure-Weyl BV rows.
 
 The executable constructs the minimal detour BV row, the Weyl trace/ghost
 doublet and its antifield dual, and a nonminimal antighost/multiplier pair at
@@ -8,9 +8,10 @@ nonphysical coordinate.  The fifteen conformal-Killing reducibilities are
 removed by an independently constructed rational projector with compact
 grading ``4_-1+7_0+4_+1``.
 
-The result is the complete one-particle cohomology of this algebraic free BV
-model.  Full noncompact-conformal equivariance and cyclicity of the chosen
-homotopy are tested by the next workstream, not assumed here.
+The result is the one-particle cohomology of this split fixture.  It is not
+the field-derived gauge-fixed domain: the latter has a specified gauge
+fermion, vector and scalar nonminimal pairs, and both antifield duals in the
+separate field-BV certificate.
 """
 
 from __future__ import annotations
@@ -145,7 +146,7 @@ def certificate_data(maximum_energy: int) -> dict[str, object]:
         ],
         "scope": {
             "proved": [
-                "complete algebraic minimal and nonminimal free rows",
+                "split algebraic minimal rows and one nonminimal test pair",
                 "exact CKV zero-mode projector",
                 "nilpotency",
                 "explicit contraction of every nonphysical row",

@@ -1,0 +1,88 @@
+{
+  "category": "finite D-eigenmode, SO(4)-finite algebraic cylinder category",
+  "gauge_fermion": {
+    "antighost_euler_derivative": "delta_Psi/delta_bar_c=div(h0)",
+    "compact_symmetry": "D x SO(4)",
+    "density_weight": 4,
+    "formula": "Psi=integral sqrt(|gbar|) [bar_c_perp^mu nabla^nu h0_(mu nu)+bar_omega tau]",
+    "ghost_number": -1,
+    "metric_euler_derivative": "delta_Psi/delta_h0=-K0(bar_c)/2",
+    "multiplier_square": false,
+    "trace_euler_derivatives": "delta_Psi/delta_tau=bar_omega; delta_Psi/delta_bar_omega=tau"
+  },
+  "generalized_auxiliary_report": {
+    "gauge": "conformal Landau",
+    "generalized_auxiliary_eliminations": [],
+    "multiplier_square_present": false,
+    "statement": "No generalized auxiliary elimination is used; every antighost, multiplier, and antifield dual remains until contracted explicitly."
+  },
+  "identity": "j_gf p_gf = 1-Q_gf s_gf-s_gf Q_gf; p_gf j_gf=1",
+  "levels": [
+    {
+      "canonical_inverse_sha256": "c838e0095cc9705443877b260fa28a2c628e1fa1283e4644a1bc5ca7b8a335fc",
+      "canonical_map_sha256": "fbc4daafe2b5fc47108c2dfdcc0fa38b936a05878a3afd1e01dc473c64b902e3",
+      "dictionary_records": 242,
+      "energy": 2,
+      "gauge_fixed_dimension": 242,
+      "homotopy_sha256": "b4b39a5c5e8fc945eddce9cbd4c0975e5b1a82019b0d4eeba30d9a1ca824cbeb",
+      "inclusion_sha256": "873449055f1309df3cc8b9e891c312ed10b891ffb008032a17717577dacdf2b9",
+      "minimal_dimension": 190,
+      "nonminimal_dimension": 52,
+      "projection_sha256": "a3ca35c8b71ba5f6def2f8930c84d7d13fd13b6dab49ff59724f5e9e43fa9c4a",
+      "q_gauge_fixed_sha256": "9ad251200a72c9a0b5ee4f2bfd08a8a8c53751fb74cff42d573ad55fe5e15549"
+    },
+    {
+      "canonical_inverse_sha256": "89305eb06d61864b7bcdc1ac8151ba5116a984f120cb51c6968a4f2ee8160ff0",
+      "canonical_map_sha256": "605646c054b849f26c21bd32dcec02faf4bf517dcc6b71c37f7516a49e549682",
+      "dictionary_records": 488,
+      "energy": 3,
+      "gauge_fixed_dimension": 488,
+      "homotopy_sha256": "cdd1845a1b70678c8997655a8bffaa70e9a8a3f0e5dde9a5cceacae33d49779d",
+      "inclusion_sha256": "7538ee52d720126c0ada63776ac4e4238f2b2401c5524654b180b5122bb39c3a",
+      "minimal_dimension": 360,
+      "nonminimal_dimension": 128,
+      "projection_sha256": "d3809ee27d4b27db6713f2ce1045e0d541f39c5ccc956fc1d85674a087010603",
+      "q_gauge_fixed_sha256": "8ee359ada4514297405569d6353511a2957ddc2bcbe2c01845bac8f13bad06b5"
+    },
+    {
+      "canonical_inverse_sha256": "e4b84db1cf1fdb42d4eae235f4dd8bfba8fcc6eed99cc8fb0cb5d198a9deea2a",
+      "canonical_map_sha256": "cc1cc1b0d5ce2c87253dc98b3158d3bf4995f970f536f93bd8d6a1e9f025ebbe",
+      "dictionary_records": 884,
+      "energy": 4,
+      "gauge_fixed_dimension": 884,
+      "homotopy_sha256": "1fb28a333a9a537479d5105d08ec1d5693496fdb40e710526e3225ee78fd7db6",
+      "inclusion_sha256": "9bd4d3f784b3c1fc33f420f59610dcc6498ed7b21a37ebe96b968f9fbe928e73",
+      "minimal_dimension": 620,
+      "nonminimal_dimension": 264,
+      "projection_sha256": "e0334b5b44af0bb96a4e0d173f9145046683766744a1cdc065858d9851c03669",
+      "q_gauge_fixed_sha256": "f65a2f51cc70a75459f334983ea1692774e03e5a43198e7d3dc198e15ed5cd42"
+    },
+    {
+      "canonical_inverse_sha256": "038f3545d9ef405a5df35b0c682f71978da5258470645ec619ad04ef190f0907",
+      "canonical_map_sha256": "151653af89cf588a7afeeff04dd2c696ba28851416a04e85aa8b0b8b965d3dbc",
+      "dictionary_records": 1480,
+      "energy": 5,
+      "gauge_fixed_dimension": 1480,
+      "homotopy_sha256": "3a9a77ed55aec84c5d7e525a63b65aa50acf60fa73533948abeaae1909958e41",
+      "inclusion_sha256": "86eed942c9df551f21616a17248427c745b8a3e6a876d3165df8fc23e6d3bfc3",
+      "minimal_dimension": 1000,
+      "nonminimal_dimension": 480,
+      "projection_sha256": "d9137ef11a7e4ceeee1a0a49b7419c5f6610b6230fd99ebd3ff5410538e086a6",
+      "q_gauge_fixed_sha256": "55f9f91970e90378a10914a420ac854dfe4eaca4f6552b7aaeec464fed670b4f"
+    }
+  ],
+  "not_proved": [
+    "one-scalar bulk-endpoint-to-BFV transgression",
+    "complete polarized-state spectral-row inventory",
+    "field BV/BFV pairing transfer",
+    "analytic completion"
+  ],
+  "proved": [
+    "canonical BV gauge-fermion conjugation of the quadratic tangent complex",
+    "complete Diff and Weyl nonminimal sector including antifield duals",
+    "explicit strong deformation retract to the proven minimal raw chain",
+    "preservation of all fifteen conformal-Killing modes",
+    "exhaustive gauge-fixed coordinate classification"
+  ],
+  "schema": "pure-weyl-gauge-fixed-contraction-v1"
+}

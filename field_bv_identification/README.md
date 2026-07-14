@@ -1,9 +1,9 @@
 # Field-theoretic BV identification
 
 This package addresses the remaining classical claim boundary in
-`paper/conformal-residual-cohomology.tex`: whether the certified algebraic
-metric-BV model is the complete gauge-fixed strict-pure-Weyl BV complex in
-the selected finite-energy cylinder window.
+`paper/conformal-residual-cohomology.tex`: how the certified algebraic bulk
+BV model passes through time-slice BFV reduction and positive-frequency
+polarization to the residual state complex used in the paper.
 
 The work is intentionally staged.  The first completed milestone starts
 from the quadratic minimal master action and proves an exact chain
@@ -44,17 +44,61 @@ Outputs:
 - `generated_latex/minimal_bv_dictionary.tex`
 
 This milestone does **not** yet prove the full field-domain theorem.  The
-remaining phases are:
+second completed milestone, an implementation corollary rather than a
+premise of the minimal theorem, chooses the stationary conformal-Landau fermion
 
-1. derive a concrete gauge-fixed/nonminimal extension and contract every
-   removed field explicitly;
-2. split and replace the fifteen local conformal-Killing ghost modes and
-   their genuine dual sector without double counting;
-3. inventory every local BV row capable of entering or leaving the centered
-   spectral-sequence term;
-4. compare the field residual action, HPL transfer, and cyclic BV/BFV
-   pairing with the already certified raw operators;
-5. rerun the residual cohomology from the field variables.
+```text
+Psi = integral [bar_c_perp.div(h_0) + bar_omega tau]
+```
+
+and adds the full vector and scalar antighost/multiplier sectors together
+with both antifield-dual pairs.  The induced unipotent canonical shear
+obeys `Q_gf=T_Psi Q_ext T_Psi^-1`; transporting the direct-sum homotopy gives
+exact `p_gf`, `j_gf`, and `s_gf`.  An independent low-mode certificate proves
+`P_Z Q_gf=Q_gf P_Z`, `Q_gf P_Z=0`, and `rank(P_Z)=15`.
+
+Run:
+
+```bash
+python3 symbolic/verify_conformal_gauge_fixed_equivalence.py --emit
+```
+
+This produces an exhaustive 3,094-coordinate dictionary and separate
+nonminimal-pair, contraction, and zero-mode certificates under
+`gauge_fixed_equivalence/certificates/`.
+
+The third completed milestone proves the canonical bulk endpoint theorem
+
+```text
+coker(K^sharp)  ~=  (ker K)^*
+```
+
+in the exact 65-dimensional conformal-Killing chart.  It constructs the
+duality matrix `Theta`, verifies `Theta K^sharp=0`, supplies an exact quotient
+section, and certifies the dual compact type `4_+1 + 7_0 + 4_-1`.  A separate
+role audit keeps four objects distinct: the residual ghost `c`, the BFV
+momentum `b`, the `Z*`-valued moment map `mu`, and the bulk endpoint class.
+The endpoint/Taub certificate composes this quotient theorem with the
+existing direct `D` and proper-conformal Bach-source normalizations.
+
+Run:
+
+```bash
+python3 symbolic/verify_conformal_dual_zero_modes.py --emit
+python3 symbolic/verify_conformal_residual_bfv_roles.py --emit
+python3 symbolic/verify_conformal_taub_obstruction_map.py --emit
+```
+
+The remaining phases are now:
+
+1. compute the one-scalar time-slice transgression
+   `tau:H_endpoint^bulk -> Z*[-1]_BFV` and its orientation;
+2. inventory rows after canonical phase-space reduction, positive-frequency
+   polarization, and nonminimal quartet contraction (not on the full
+   unpolarized bulk BV complex);
+3. transport `Omega_BV -> Omega_BFV -> Omega_Sigma -> J_positive` and match
+   the matter and residual ghost normalizations;
+4. rerun the residual cohomology from the resulting polarized state variables.
 
 Analytic completions, interactions, anomalies, and quantum nilpotency are
 out of scope.

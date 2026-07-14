@@ -87,16 +87,26 @@ noncompact homotopy defects, transfers the strict residual action, and
 reproduces the centered cohomology without importing the hand-specified
 $E/A/L$ matrices.  The tangent differential derived directly from the
 quadratic minimal master action is related to those raw rows by explicit
-inverse chain maps throughout the centered energy buffer.  Exact
+inverse chain maps throughout the centered energy buffer.  A stationary
+$D\times SO(4)$ conformal-Landau gauge fermion, together with the complete
+Diff and Weyl nonminimal fields and their antifield duals, gives an exact
+canonical conjugation and strong deformation retract back to that minimal
+chain without changing the fifteen conformal-Killing modes.  Exact
 cross-energy recursion then fixes the raw
 cohomology form, makes the raw retract cyclic, and verifies the dressed
 isometry and the absence of higher HPL corrections in the centered window.
 An all-energy equivariant Taub reconstruction is normalized by a direct
 $D$-charge calculation and two independent quadratic Bach-source
 integrals.  The closed-universe BFV choice is stated explicitly rather than
-claimed universally.  Identification of this algebraic cyclic model with a
-chosen complete gauge-fixed field-theoretic BV domain, and any analytic
-completion, require additional control.  We claim neither a positive
+claimed universally.  Perfect endpoint pairings now give an exact
+fifteen-dimensional isomorphism
+$\operatorname{coker}K^\sharp\cong(\ker K)^*$, and the quadratic endpoint
+obstruction is the certified Taub/moment map.  This bulk obstruction space is
+not itself the BFV ghost-momentum space.  The remaining field-theoretic
+identification is the one-scalar time-slice transgression between those dual
+modules, completeness of the polarized BFV state rows, and transfer of the
+BV--BFV--phase-space pairing; analytic completion also requires separate control.  We
+claim neither a positive
 graviton Fock space nor quantum anomaly freedom.
 \end{abstract}
 
@@ -218,9 +228,11 @@ calculation now includes the ghost and antifield detour rows, constructs a
 homotopy-equivariant retract, transfers the strict residual action, and
 reproduces the centered kernel and image.  Cross-energy recursion constructs
 its invariant physical form in the raw basis; the raw cyclic retract and
-dressed isometry are exact through the centered window.  The remaining
-conditional step is its identification with a chosen complete gauge-fixed
-field-theoretic BV domain, not another residual rank calculation.
+dressed isometry are exact through the centered window.  The minimal rows
+are derived from the field master action, and a specified gauge-fixed
+nonminimal extension contracts back to them exactly.  The remaining
+conditional steps are the bulk-to-BFV transgression, polarized-state row
+completeness, and pairing transfer---not another residual rank calculation.
 \item Calling the resulting classes physical states additionally requires a
 boundary and gauge principle which makes all fifteen conformal generators,
 including $D$, gauge rather than global charges.  We call them
@@ -659,20 +671,20 @@ Poincar\'e duality on $S^3$ and the Killing form pair the two copies, with
 
 Its dimension, representation, and position are exactly those expected of
 the dual residual constraint sector.  It is therefore a strong candidate
-for the geometric source of the fifteen moment-map or Taub components
-constructed in Section~\ref{sec:moment-map}.  That identification is not
-yet a theorem: the full four-dimensional BGG sequence must first be kept
-distinct from the shorter Bach detour complex, and the degree-three bundle
-representative must be located explicitly.  Importantly, the direct
-second-order argument in Proposition~\ref{prop:Taub-constraint} establishes
-the Taub constraints without depending on this identification.  If the BGG
-and BFV realizations are then compared, equivariance reduces the map to one
-nonzero component and one overall scalar.
+for a geometric realization of the fifteen moment-map or Taub components
+constructed in Section~\ref{sec:moment-map}.  The full five-term BGG sequence
+must nevertheless be kept distinct from the shorter four-term Bach/BV
+detour complex.  Proposition~\ref{prop:dual-endpoint} below derives the
+endpoint duality of the latter directly from cyclic finite-dimensional
+linear algebra, without identifying it by fiat with BGG $H^3$.  Locating the
+degree-three BGG bundle representative remains a separate geometric
+comparison, not a premise of the BV endpoint theorem.
 
 Thus the smooth deformation complex contains a controlled finite pair,
-not an unspecified collection of extra global classes.  A complete BV
-argument must still place the degree-three copy at the correct
-ghost/antifield degree and construct the corresponding zero-mode projector.
+not an unspecified collection of extra global classes.  The shorter BV
+detour chain has its own exact endpoint quotient, while comparison of the
+two realizations remains useful but is not needed for the residual rank
+calculation.
 
 \subsection{Domain boundary of the theorem}
 
@@ -685,9 +697,10 @@ continuity and closed range on an infinite Hilbert/Krein completion.  If
 such an analytic completion is required, Green-hyperbolic complexes and
 causal homotopies remain natural tools \cite{GreenHyperbolic}.
 
-The other remaining issue is BV rather than local geometry.  The fifteen
-conformal-Killing zero modes and their degree-three duals must be split from
-the local complex without double counting.  Dneprov and Grigoriev's minimal
+The other remaining issue is BV--BFV rather than local geometry.  The fifteen
+conformal-Killing zero modes and the dual endpoint quotient must be
+transgressed to a time-slice BFV cotangent sector without double counting.
+Dneprov and Grigoriev's minimal
 nonlinear Weyl-jet model supplies compatible presymplectic data for this
 comparison \cite{DneprovGrigoriev}, but its curvature-dependent ghost terms
 must not be imported as a proof that the free residual transfer is strict.
@@ -868,7 +881,25 @@ adjoint/coadjoint $\mathfrak{so}(4,2)$ modules.  Since the complexified
 adjoint module is simple, a nonzero equivariant comparison is unique up to
 one scalar.  This is also the local-BRST relation between reducibilities and
 conserved-current classes
-\cite{BarnichAntifield,BarnichBrandtHenneaux}.
+\cite{BarnichAntifield,BarnichBrandtHenneaux}; the covariant Hamiltonian
+identity is the higher-derivative counterpart of the standard Noether-charge
+construction \cite{IyerWald}.
+
+The equality in \eqref{eq:moment-Taub-target} has an abstract Hessian proof.
+Let $H_\epsilon[g]$ be the covariant constraint Hamiltonian.  Because
+$\epsilon$ fixes the background,
+$H_\epsilon[\bar g]=dH_\epsilon|_{\bar g}=0$.  Its Hessian on linearized
+solutions is simultaneously
+\begin{equation}\label{eq:Taub-Hessian}
+ d^2H_\epsilon|_{\bar g}(h,h)
+ =\Omega_\Sigma(h,R_\epsilon h)
+ =2\mathcal T_\epsilon[h].
+\end{equation}
+The first equality is the Hamiltonian definition of the residual linear
+action; the second is the quadratic term in the same nonlinear constraint
+with the Taylor convention of \eqref{eq:second-order-Bach}.  Thus the direct
+component calculations below fix conventions and the common scalar rather
+than supplying fifteen logically independent proofs.
 
 \begin{cproposition}[All-energy Taub/moment-map normalization]
 \label{prop:all-energy-Taub}
@@ -906,6 +937,23 @@ conversion
 The exact all-$n$ formulas and their energy-six regression buffer are
 generated by
 \path{symbolic/verify_conformal_taub_moment_map_all_levels.py}.
+
+After Proposition~\ref{prop:dual-endpoint}, the quadratic Bach source also
+defines a canonical Kuranishi class
+\begin{equation}
+ \kappa_2(h,h)=[B^{(2)}[h,h]]\in\operatorname{coker}K^\sharp.
+\end{equation}
+Its image under endpoint duality evaluates on a reducibility as
+\begin{equation}\label{eq:endpoint-Taub-map}
+ \Theta(\kappa_2(h,h))(\epsilon)
+ =\langle\epsilon,B^{(2)}[h,h]\rangle
+ =\mathcal T_\epsilon[h]=\mu_\epsilon(h).
+\end{equation}
+The exact quotient invariance, direct $D$ normalization, two independent
+Bach-source seeds, and equivariant fifteen-component completion are composed
+by \path{symbolic/verify_conformal_taub_obstruction_map.py}.  This does not
+compute the separate time-slice transgression from the bulk endpoint degree
+to BFV ghost momentum.
 
 This section supplies the Hamiltonian normalization of the residual action
 and its Taub interpretation.  It reconstructs all components by equivariance
@@ -1449,8 +1497,11 @@ completed Fock spaces require their own continuity assumptions.
 
 \subsection{Equivariant Cartan transfer}
 
-Let $(C,q)$ be the gauge-fixed local free BV complex after the fifteen
-conformal-Killing zero modes have been separated, and let $H=H(q)$.  Suppose
+Let $(C,q)$ be the local coefficient complex after the fifteen
+conformal-Killing zero modes have been separated, and let $H=H(q)$.  In the
+field-theoretic application to states, $C$ denotes the time-slice-reduced,
+polarized complex of \eqref{eq:BV-BFV-polarization}, not the entire
+unpolarized bulk BV tangent complex.  Suppose
 there is a strong deformation retract
 \begin{equation}\label{eq:SDR}
  (H,0)\mathrel{\mathop{\rightleftarrows}^{\jmath}_{p}}(C,q),
@@ -1665,9 +1716,243 @@ constructs both sides independently, verifies every matrix identity in
 one entry per raw basis vector, including conventional ghost number,
 antifield number, compact degree, $SO(4)$ content, differential image, and
 an exact equality flag.  This proposition identifies the \emph{minimal
-quadratic chain}.  It does not yet derive a chosen gauge-fixed nonminimal
+quadratic chain}.  By itself it does not derive a chosen gauge-fixed nonminimal
 domain, replace both sides of the global reducibility sector, inventory all
 additional BV rows, or transfer the field-theoretic cyclic pairing.
+
+The first of these qualifications can be closed without choosing an
+analytic completion, but it is an implementation corollary rather than a
+premise of the gauge-invariant classical theorem.  Adjoin vector and scalar antighost--multiplier pairs
+and their antifields,
+\begin{equation}
+ (\bar c_\mu,b_\mu;\bar c^{*\mu},b^{*\mu}),\qquad
+ (\bar\omega,b_\omega;\bar\omega^*,b_\omega^*),
+\end{equation}
+with the standard coordinate-BRST rules $s\bar c=b$, $sb=0$ and their Weyl
+counterparts.  The suspended tangent complex used in
+\eqref{eq:field-BV-tangent-chain} has the transposed arrows
+$b\to\bar c$ and $\bar c^*\to b^*$.  Both conventions are retained in the
+machine dictionary.
+
+In trace-split variables choose the conformal Landau fermion
+\begin{equation}\label{eq:cylinder-gauge-fermion}
+ \Psi_{\rm gf}=\int_M\!\sqrt{|\bar g|}\,
+ \left(\bar c_\perp^\mu\bar\nabla^\nu h^0_{\mu\nu}
+       +\bar\omega\tau\right),
+ \qquad \bar c_\perp=P_\perp\bar c .
+\end{equation}
+It has ghost number $-1$, is a weight-four scalar density, and commutes with
+$D\times SO(4)$.  No multiplier-square term is used: all multipliers remain
+in the displayed complex and are removed only by an explicit homotopy.  The
+canonical transformation is
+\begin{equation}
+ T_\Psi:\quad
+ \phi_A^*\longmapsto
+ \phi_A^*+\frac{\delta\Psi_{\rm gf}}{\delta\phi^A},
+ \qquad
+ Q_{\rm gf}=T_\Psi Q_{\rm ext}T_\Psi^{-1}.
+\end{equation}
+For the vector condition the two Euler derivatives are
+$\delta\Psi/\delta\bar c=\bar\nabla\!\cdot h_0$ and
+$\delta\Psi/\delta h_0=-K_0\bar c/2$ in the conventions of
+\eqref{eq:quadratic-field-BV-differential}; the trace derivatives are the
+two unit maps $\tau\leftrightarrow\bar\omega$.
+
+\begin{cproposition}[Gauge-fixed/nonminimal equivalence]
+\label{prop:gauge-fixed-equivalence}
+Let $C^{\rm ext}_n=C^{\rm min}_{\rm BV,n}\oplus C_{{\rm nm},n}$, where
+$C_{{\rm nm},n}$ contains the complete Diff and Weyl nonminimal pairs and
+their antifield duals.  In every centered block $n=2,3,4,5$, the Hessian of
+\eqref{eq:cylinder-gauge-fermion} gives an exact unipotent map
+$T_{\Psi,n}=1+N_n$, with $N_n^2=0$, such that
+\begin{equation}
+ Q_{{\rm gf},n}=T_{\Psi,n}Q_{{\rm ext},n}T_{\Psi,n}^{-1},
+ \qquad Q_{{\rm gf},n}^2=0.
+\end{equation}
+If $p_0,\jmath_0,s_0$ are the direct-sum contraction of the nonminimal
+pairs, then
+\begin{equation}
+ p_{\rm gf}=p_0T_\Psi^{-1},\qquad
+ \jmath_{\rm gf}=T_\Psi\jmath_0,\qquad
+ s_{\rm gf}=T_\Psi s_0T_\Psi^{-1}
+\end{equation}
+obey
+\begin{equation}\label{eq:gauge-fixed-contraction}
+ p_{\rm gf}\jmath_{\rm gf}=1,
+ \qquad
+ \jmath_{\rm gf}p_{\rm gf}
+ =1-Q_{\rm gf}s_{\rm gf}-s_{\rm gf}Q_{\rm gf}.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:gauge-fixed-equivalence}
+ \boxed{
+ C^{\rm gf,alg}_{\rm BV,n}
+ \simeq C^{\rm min,alg}_{\rm BV,n}\oplus C_{{\rm nm,triv},n},
+ \qquad H(C_{{\rm nm,triv},n})=0.}
+\end{equation}
+The certified dimensions are
+\begin{equation}
+\begin{array}{c|rrr}
+n&\dim C^{\rm min}_n&\dim C^{\rm nm}_n&\dim C^{\rm gf}_n\\ \hline
+2&190&52&242\\
+3&360&128&488\\
+4&620&264&884\\
+5&1000&480&1480.
+\end{array}
+\end{equation}
+On the inhomogeneous low-mode block, the exact projector $P_Z$ and its
+fifty-dimensional complement satisfy
+\begin{equation}\label{eq:gauge-fixed-zero-modes}
+ P_ZQ_{\rm gf}=Q_{\rm gf}P_Z,
+ \qquad Q_{\rm gf}P_Z=0,
+ \qquad \rank P_Z=15,
+ \qquad \ker(K|_{\operatorname{im}P_\perp})=0.
+\end{equation}
+Thus gauge fixing neither absorbs nor duplicates any conformal-Killing
+mode.  No generalized auxiliary field is silently eliminated.
+\end{cproposition}
+
+The executable
+\begin{center}
+\path{symbolic/verify_conformal_gauge_fixed_equivalence.py}
+\end{center}
+constructs the canonical shear and the transported contraction independently
+in every block.  Its 3094-record ledger classifies every minimal field, nonminimal
+field, multiplier, and antifield coordinate.  Proposition
+\ref{prop:gauge-fixed-equivalence} does not compute the degree-shifting
+time-slice transgression \eqref{eq:zero-mode-transgression}, establish the
+post-polarization row ledger, or transfer the field-theoretic pairing;
+those are the remaining steps below.  The bulk dual endpoint itself is
+identified independently in Proposition~\ref{prop:dual-endpoint}.
+
+\subsection{The dual endpoint and the BFV degree shift}
+
+There is a short exact argument for the dual bulk zero modes.  Write the
+minimal detour chain in the form
+\begin{equation}
+ G\xrightarrow{A}M\xrightarrow{B}E\xrightarrow{C}I,
+ \qquad C=\pm A^\sharp,
+\end{equation}
+where the tangent BV structure gives perfect pairings between $G$ and $I$
+and between $M$ and $E$.  Let $Z=\ker A$.
+
+\begin{proposition}[Canonical dual endpoint]\label{prop:dual-endpoint}
+The endpoint quotient pairs perfectly with the residual gauge kernel:
+\begin{equation}\label{eq:dual-endpoint}
+ \boxed{
+ \Theta:I/\operatorname{im}C\xrightarrow{\ \sim\ }Z^*,
+ \qquad \Theta([u])(z)=\langle z,u\rangle_{G,I}.}
+\end{equation}
+In the exact conformal-Killing block,
+\begin{equation}
+ \dim Z=\dim\operatorname{coker}C=15,
+ \qquad
+ Z=4_{-1}\oplus7_0\oplus4_{+1},
+ \qquad
+ Z^*=4_{+1}\oplus7_0\oplus4_{-1}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $z\in\ker A$,
+$\langle z,Ce\rangle=\pm\langle Az,e\rangle=0$, so $\Theta$ is
+well defined.  If $\Theta([u])=0$, then
+$u\in(\ker A)^\perp$.  Finite-dimensional adjoint linear algebra gives
+$(\ker A)^\perp=\operatorname{im}A^\sharp=\operatorname{im}C$, proving
+injectivity; equality of dimensions gives surjectivity.
+\end{proof}
+
+The machine certificate does more than compare dimensions.  If $Z$ is the
+$65\times15$ matrix of the already certified conformal-Killing basis and
+$J_{GI}$ is the endpoint pairing, it constructs
+\begin{equation}
+ \Theta=Z^\dagger J_{GI},
+ \qquad
+ J_{GI}C=A^\dagger J_{ME},
+\end{equation}
+verifies $\Theta C=0$, and produces an exact section $S$ with
+$\Theta S=I_{15}$.  It also verifies
+\begin{equation}
+ I=\operatorname{im}C\oplus S(Z^*)
+\end{equation}
+by an exact rank-$65$ decomposition.  These identities and the dual compact
+grading are generated by
+\path{symbolic/verify_conformal_dual_zero_modes.py}.
+
+The interpretation requires one further distinction.  The bulk endpoint
+class, the residual BFV momentum, and the constraint value all transform in
+dual modules, but they are not the same coordinate:
+\begin{equation}\label{eq:residual-role-table}
+ \begin{array}{c|c|c|c}
+ \text{object}&\text{space}&\text{degree}&\text{role}\\ \hline
+ c^a&Z[1]&+1&\text{residual ghost}\\
+ b_a&Z^*[-1]&-1&\text{BFV ghost momentum}\\
+ \mu_a&Z^*\text{-valued functions}&0&\text{constraint}\\
+ \lbrack u\rbrack&\operatorname{coker}C\cong Z^*&\text{bulk endpoint}&\text{obstruction codomain}
+ \end{array}
+\end{equation}
+The time-slice BV--BFV construction must supply a degree-shifting
+transgression
+\begin{equation}\label{eq:zero-mode-transgression}
+ \tau:H^{\rm bulk}_{\rm endpoint}\longrightarrow Z^*[-1]_{\rm BFV},
+\end{equation}
+in the sense of the bulk-to-boundary BV--BFV correspondence
+\cite{CattaneoMnevReshetikhin}.
+Equivariance reduces it to one scalar,
+$\tau=\lambda\Theta$, after the generator bases are fixed.  Thus the
+remaining task is one $D$-component normalization and one orientation sign,
+not fifteen unrelated mode matches.  The exact role audit verifies one
+residual ghost copy, one endpoint quotient, one $15+15$ BFV cotangent
+sector, and refuses to identify $[u]$ with $b_a$ before
+\eqref{eq:zero-mode-transgression}; see
+\path{symbolic/verify_conformal_residual_bfv_roles.py}.
+
+Schematically, the no-duplication theorem still to be proved is a transfer,
+not a deletion:
+\begin{equation}\label{eq:zero-mode-replacement}
+ \begin{array}{ccc}
+ Z_{\rm local}\oplus H^{\rm bulk}_{\rm endpoint}
+ &\subset&C^{\rm min}_{\rm BV}\\
+ \downarrow\scriptstyle{\mathrm{id}\oplus\tau}&&\downarrow\\
+ Z[1]\oplus Z^*[-1]&\subset&C^{\rm res}_{\rm BFV}.
+ \end{array}
+\end{equation}
+The moment map is a function into $Z^*$ and is not a third set of zero-mode
+coordinates.
+
+\subsection{The state complex is obtained after polarization}
+
+The full cyclic bulk BV tangent complex should not be asserted to have only
+one cohomological row: its ghost, physical, and antifield sectors occur with
+their cyclic duals.  The single-row criterion used by the residual
+calculation belongs after the sequence
+\begin{equation}\label{eq:BV-BFV-polarization}
+ C^{\rm bulk}_{\rm BV}
+ \longrightarrow C^\Sigma_{\rm BFV}
+ \longrightarrow C^{+}_{\rm state},
+\end{equation}
+where the first arrow is time-slice BV--BFV transgression and the second is
+canonical phase-space reduction followed by the positive-frequency
+Lagrangian polarization.  Nonminimal quartets contract in this passage;
+negative-frequency modes supply symplectic duals rather than additional
+positive-energy coefficient states.  The final coefficient complex is
+\begin{equation}
+ \F(\W_+\oplus\W_-)\otimes\Lambda^\bullet\g^*,
+\end{equation}
+not the unpolarized bulk antifield complex.
+
+Correspondingly, the even form on the positive-energy module is induced
+from the real phase-space symplectic form,
+\begin{equation}\label{eq:pairing-pipeline}
+ \Omega_{\rm BV}\longrightarrow\Omega_{\rm BFV}
+ \longrightarrow\Omega_\Sigma
+ \longrightarrow
+ J_+(u,v)=i\Omega_\Sigma(\bar u,v),
+\end{equation}
+up to the fixed real-structure convention.  This is distinct from
+restricting the odd BV form to one positive-frequency half.  A complete row
+ledger must therefore be generated after the two arrows in
+\eqref{eq:BV-BFV-polarization}.
 
 \begin{cproposition}[Raw metric-BV retract and conformal transfer]
 \label{prop:raw-BV-transfer}
@@ -1772,16 +2057,25 @@ pairs; it is stronger than the proper-conformal pair test in
 \subsection{The filtered local-to-residual complex}
 
 The possible failure modes can be displayed without compressing them into
-the phrase ``no other row.''  After the conformal-Killing zero modes have
-been split from the local ghosts, introduce the residual-ghost filtration
-on the bicomplex
+the phrase ``no other row.''  This filtration is formed \emph{after} the
+time-slice transfer, canonical phase-space reduction, positive-frequency
+polarization, and nonminimal-quartet contraction in
+\eqref{eq:BV-BFV-polarization}; it is not the cohomology spectral sequence
+of the full unpolarized cyclic bulk tangent complex.  After the
+conformal-Killing zero modes have been transferred from the local ghosts,
+introduce the residual-ghost filtration on the polarized state-resolution
+bicomplex
 \begin{equation}\label{eq:bicomplex}
  C^{p,q}=\Lambda^p\g^*\widehat\otimes C^q_{\rm local},
  \qquad
  F^pC=\bigoplus_{r\ge p}C^{r,*}.
 \end{equation}
-Here $p$ is residual ghost number and $q$ is local BV degree.  A transferred
-degree-one differential has the filtered expansion
+Here $p$ is residual ghost number and $q$ is the degree in the remaining
+polarized local resolution.  Antifields and negative-frequency conjugates
+which supplied the bulk cyclic duals are not silently deleted: their role
+must already have been accounted for by the two arrows in
+\eqref{eq:BV-BFV-polarization}.  A transferred degree-one differential has
+the filtered expansion
 \begin{equation}\label{eq:transferred-expansion}
  Q_H=q_{\rm local}+d_{\rm res}
  +\sum_{k\ge2}Q_{[k]},
@@ -1824,7 +2118,8 @@ cohomologies must be compared carefully
 
 \begin{proposition}[Single-row strictness and collapse]
 \label{prop:single-row}
-Suppose the global zero modes have been split exactly,
+For the polarized state-resolution bicomplex just described, suppose the
+global zero modes have been transferred exactly,
 $H^q(q_{\rm local})=0$ for $q\ne0$, and the free residual perturbation
 $\Delta$ has bidegree $(1,0)$.  Suppose in addition that the chosen SDR is
 compatible with the local grading, so that $s$ has bidegree $(0,-1)$ and
@@ -1954,7 +2249,7 @@ Hamiltonian removes $D$ from the constraint list and disables the Cartan
 contraction.  The two alternatives are represented explicitly by
 \path{symbolic/verify_conformal_closed_universe_bfv.py}.
 
-\subsection{One remaining field-theoretic identification}
+\subsection{The remaining field-theoretic identifications}
 
 The smooth BGG theorem and Theorem~\ref{thm:algebraic-cylinder} remove the
 global PDE-surjectivity and finite-mode preimage gaps.
@@ -1966,53 +2261,55 @@ transferred differential, and centered-rank calculation in an explicit
 polynomial metric-BV model.  Proposition~\ref{prop:field-BV-dictionary}
 also identifies its four minimal rows exactly with the tangent complex
 derived from the quadratic master action.
+Proposition~\ref{prop:gauge-fixed-equivalence} further derives a concrete
+Landau-gauge canonical transformation, retains both nonminimal antifield
+duals, contracts the entire nonminimal extension, and proves that the
+fifteen conformal-Killing modes are unchanged.  Proposition
+\ref{prop:dual-endpoint} now also identifies the bulk endpoint quotient
+canonically with $Z^*$, while \eqref{eq:endpoint-Taub-map} identifies the
+quadratic endpoint obstruction with the certified Taub/moment map.  Three
+sharply delimited steps remain.
 
-\begin{conjecture}[Field-theoretic completion]\label{hyp:pure-weyl}
-For the specified algebraic cylinder gauge fixing and closed-universe BFV
-choice, the following four statements hold.
+\begin{conjecture}[BV--BFV and polarized-state completion]\label{hyp:pure-weyl}
+For the minimal algebraic cylinder BV theory, the closed-universe BFV choice,
+and the positive-energy state polarization, the following three statements
+hold.
 \begin{enumerate}
-\item \emph{Gauge-fixed-domain equivalence.}  Adjoining the stated
-nonminimal sector and applying the gauge fermion gives a canonical BV
-transformation and explicit contraction
+\item \emph{One-scalar zero-mode transgression.}  The time-slice boundary
+form induces the equivariant map
+$\tau=\lambda\Theta$ in \eqref{eq:zero-mode-transgression}, with nonzero
+$\lambda$ and a fixed orientation.  Under this map the local pair is
+transferred, not copied, into exactly one residual BFV cotangent pair
+$(c^a,b_a)$, and the residual charge is
 \begin{equation}
- C^{\rm gf,alg}_{\rm BV}\simeq
- C^{\rm min,alg}_{\rm BV}\oplus C_{\rm nonmin,triv},
+ \Omega_{\rm res}=c^a\mu_a-\frac12f^a{}_{bc}c^bc^cb_a.
 \end{equation}
-including every generalized auxiliary field introduced by gauge fixing.
-\item \emph{Dual zero-mode identification.}  The fifteen local
-conformal-Killing ghost modes and their genuine dual constraint/antifield
-sector are removed and replaced by the residual BFV variables without
-duplication.  The finite comparison realizes
-\begin{equation}
- \mathcal Z_{\rm local}\longleftrightarrow
- \mathfrak{so}(4,2)\oplus
- \mathfrak{so}(4,2)^*[\text{dual degree}].
-\end{equation}
-\item \emph{Complete row inventory.}  Every remaining field or antifield
-row which can enter or leave the centered filtered term $(p,q)=(4,0)$ is
-represented by the certified raw complex, explicitly contractible,
-eliminated as auxiliary, excluded by compact degree, or killed by a
-displayed differential.
-\item \emph{Pairing transfer.}  The field-theoretic cyclic BV/BFV form
-induces the raw cross-energy form of
+\item \emph{Polarized-state row completeness.}  After time-slice reduction,
+canonical phase-space reduction, positive-frequency polarization, and
+nonminimal quartet contraction, every row capable of entering or leaving
+the centered term $(p,q)=(4,0)$ is represented by the certified state
+complex, contractible, or excluded by compact degree and representation
+content.  No single-row claim is imposed on the unpolarized bulk BV complex.
+\item \emph{Pairing transfer.}  The sequence
+\eqref{eq:pairing-pipeline} induces the raw cross-energy form of
 Proposition~\ref{prop:raw-cross-energy} and the normalized residual
 complementary-degree ghost pairing, with the same orientation and scalar.
 \end{enumerate}
 \end{conjecture}
 
 This is not a consequence of the residual rank matrices.  The raw
-calculation and Proposition~\ref{prop:field-BV-dictionary} already contain
-and identify the minimal detour ghost and antifield rows,
-the noncompact homotopies, the cross-energy cyclic form, and the complete
-centered HPL correction test.  The conjecture asks whether a concrete
-gauge-fixed field-theoretic domain has further nonminimal, auxiliary,
-reducibility-dual, or antifield rows or domain effects absent from that
-algebraic model, and whether its cyclic form induces the certified raw one.
+calculation and Proposition~\ref{prop:field-BV-dictionary} already identify
+the minimal detour rows; Proposition~\ref{prop:gauge-fixed-equivalence} is a
+separate gauge-fixed realization which contracts every added antighost,
+multiplier, and antifield dual.  The endpoint quotient and its Taub map are
+now exact.  The conjecture asks for the time-slice degree shift and scalar,
+the completeness of the resulting \emph{polarized} state domain, and the
+induced matter and ghost pairings.
 
 \begin{corollary}[Conditional algebraic strict-pure-Weyl result]\label{cor:conditional}
 If Field-Theoretic Hypothesis~\ref{hyp:pure-weyl} holds, the complete free
-classical local-plus-residual BV cohomology in the algebraic cylinder
-category and selected degree is \eqref{eq:main-result}.  Its transferred
+classical polarized residual BFV state cohomology induced from the algebraic
+bulk BV theory, in the selected degree, is \eqref{eq:main-result}.  Its transferred
 cohomological Hermitian form is $I_2$, and its local Euler--Lagrange quotient
 is \eqref{eq:dynamic-quotient} with form $I_1$.
 \end{corollary}
@@ -2021,13 +2318,17 @@ is \eqref{eq:dynamic-quotient} with form $I_1$.
 Theorems~\ref{thm:curvature-isomorphism} and
 \ref{thm:algebraic-cylinder} identify the one-particle coefficient module.
 Proposition~\ref{prop:Fock-lift} gives its free Fock lift.
+Proposition~\ref{prop:gauge-fixed-equivalence} shows independently that the
+specified gauge-fixed nonminimal realization contracts to the same minimal
+chain; it is not a premise of the gauge-invariant cohomology.
 Propositions~\ref{prop:raw-BV-transfer} and
 \ref{prop:metric-residual-integration} give the strict induced residual
 action and centered cohomology in the algebraic polynomial model.
 Conjecture~\ref{hyp:pure-weyl} identifies this model and its cyclic form
-with the complete local BV complex.  The explicit closed-universe choice
-\eqref{eq:closed-BFV-choice} fixes the selected ghost pairing and
-normalization.
+with the polarized BFV state complex obtained from the minimal bulk theory.
+The explicit closed-universe choice \eqref{eq:closed-BFV-choice} fixes which
+generators are constrained; the transgression and pairing clauses fix the
+remaining scalar and orientation.
 Equation~\eqref{eq:HPL-isometry} then identifies the residual representative
 Gram matrix with the transferred pure-Weyl BV cohomological form.
 \end{proof}
@@ -2035,9 +2336,11 @@ Gram matrix with the transferred pure-Weyl BV cohomological form.
 The global smooth BGG theorem, curvature isomorphism
 \eqref{eq:curvature-isomorphism}, action factorization
 \eqref{eq:Bfactor}, raw metric-BV transfer, cross-energy cyclic form,
-closed-universe residual choice, and integrated centered ranks are exact
-inputs.  The conjecture above states the one remaining field-theoretic
-identification without folding it into the metric-to-curvature theorem.  A
+closed-universe residual choice, canonical endpoint quotient, Taub map, and
+integrated centered ranks are exact
+inputs.  The conjecture above states the three remaining field-theoretic
+identifications without folding them into the metric-to-curvature theorem.
+A
 Hilbert, Krein, distributional, or completed Fock statement
 would require separate continuity, closed-range, and convergence results.
 
@@ -2073,17 +2376,21 @@ one-dimensional.
 \paragraph{The remaining classical bridge.}
 The all-level smooth metric-to-$\mathcal W_{\rm geom}$ identification and
 the algebraic $E/A/L$ curvature intertwiner are exact.  The raw polynomial
-metric-BV complex now supplies the antifield-row inventory, explicit
+metric-BV complex now supplies its explicit ghost and antifield detour rows,
+explicit
 noncompact homotopies, strict induced conformal action, cross-energy cyclic
 form, vanishing centered HPL corrections, canonical residual CE pairing,
 and end-to-end centered ranks.  Its minimal four-row differential has also
 been derived from the quadratic field-theoretic master action and identified
-by exact inverse chain maps.  The remaining classical bridge is the
-field-theoretic identification in Conjecture~\ref{hyp:pure-weyl}: one must
-show that a concrete gauge-fixed pure-Weyl BV domain, including nonminimal
-variables and both sides of the residual zero-mode split, has no additional
-rows or domain effects absent from the certified algebraic cylinder model,
-and that its cyclic pairing transfers to the raw form.
+by exact inverse chain maps.  A concrete conformal-Landau gauge fermion and
+the full vector and scalar nonminimal sectors have now also been canonically
+adjoined and explicitly contracted, with all fifteen conformal-Killing modes
+preserved.  The remaining classical bridge is Conjecture~\ref{hyp:pure-weyl}:
+one must compute the one-scalar time-slice transgression to BFV ghost
+momentum, prove row completeness after positive-frequency polarization
+rather than on the unpolarized bulk BV complex, and transfer the pairing
+through
+$\Omega_{\rm BV}\to\Omega_{\rm BFV}\to\Omega_\Sigma\to J_+$.
 The direct Taub comparison does not require first identifying a
 degree-three BGG representative, although that geometric comparison remains
 valuable.  Extension to a chosen Hilbert or Krein completion is a separate
@@ -2117,10 +2424,14 @@ particles.  In the finite algebraic cylinder model the cross-energy cyclic
 normalization, residual BFV boundary choice, full centered HPL transfer, and
 all-energy Taub normalization are now explicit.  The minimal four-row chain
 has additionally been derived from the quadratic master action and matched
-to the raw complex by exact inverse maps.  Promotion to the complete
-gauge-fixed field-theoretic pure-Weyl BV/BFV domain is controlled by the
-remaining identification in Conjecture~\ref{hyp:pure-weyl}.  Analytic completion,
-quantum consistency, and interaction descent are separate questions.
+to the raw complex by exact inverse maps.  Its specified gauge-fixed
+nonminimal extension is canonically conjugate and contracts back to the
+minimal chain while preserving all fifteen CKVs.  Promotion to the complete
+field-theoretic polarized BV--BFV state domain is controlled by the three
+remaining identifications in Conjecture~\ref{hyp:pure-weyl}; the gauge-fixed
+extension is an independently proved corollary.  Analytic
+completion, quantum consistency, and interaction descent are separate
+questions.
 
 \appendix
 
@@ -2218,8 +2529,21 @@ Quadratic minimal field-BV/raw-chain identification & Exact centered-buffer
 certificate & The master-action tangent differential is constructed in full
 metric and antifield variables.  Explicit inverse maps verify
 $FQ_{\rm BV}=Q_{\rm raw}F$ and $GQ_{\rm raw}=Q_{\rm BV}G$ on all 2170 basis
-vectors at energies two through five; gauge fixing and the dual global
-zero-mode sector are not included in this statement.\\
+vectors at energies two through five; gauge fixing is a separate proposition
+and the dual global zero-mode sector is not included here.\\
+Gauge-fixed/nonminimal equivalence & Exact centered-buffer certificate & The
+stationary conformal-Landau fermion generates an invertible canonical shear.
+All vector and scalar antighosts, multipliers, and antifield duals are retained;
+the transported $p_{\rm gf},\jmath_{\rm gf},s_{\rm gf}$ contract them exactly.
+The low-mode certificate verifies $P_ZQ_{\rm gf}=Q_{\rm gf}P_Z$ and preserves
+all fifteen CKVs.\\
+Canonical bulk endpoint duality and Taub codomain & Exact algebraic theorem &
+Perfect endpoint pairings give
+$\operatorname{coker}K^\sharp\cong(\ker K)^*$ with dual compact type
+$4_{+1}\oplus7_0\oplus4_{-1}$.  Exact matrices construct $\Theta$, its
+quotient section, and the direct-sum endpoint decomposition.  The quadratic
+Kuranishi class evaluates to the certified Taub/moment map.  The time-slice
+transgression to BFV momentum is not included in this theorem.\\
 Residual Cartan homotopy reduction & Theorem & Explicit homotopy
 $\iota_D/\delta$ on every nonzero total degree; this is a quotient only in
 the full residual-gauging problem.\\
@@ -2232,10 +2556,11 @@ space and exact rank $53$.\\
 Vertex descent and dynamical/topological split & Exact locally & Weight-four
 descent, Chern--Weil transgression, and Euler--Lagrange quotient.  Global
 theta effects are retained.\\
-Full local-plus-residual pure-Weyl BV result & Conditional & Requires the
-remaining parts of Field-Theoretic Hypothesis~\ref{hyp:pure-weyl}: a
-complete gauge-fixed/nonminimal row and zero-mode identification, full
-equivariant cyclic transfer, and the selected residual BFV normalization.\\
+Bulk-BV-induced polarized residual BFV result & Conditional & Requires the
+remaining parts of Field-Theoretic Hypothesis~\ref{hyp:pure-weyl}: the
+one-scalar time-slice transgression, a row ledger after phase-space reduction
+and positive-frequency polarization, and transfer of the
+BV--BFV--phase-space pairing and residual orientation.\\
 Interpretation as a physical state space & Choice-dependent & Requires a
 boundary and gauge principle that treats all fifteen generators, including
 $D$, as gauge rather than global charges.\\
@@ -2352,6 +2677,19 @@ G.~Barnich, M.~Henneaux, T.~Hurth, and K.~Skenderis,
 ``Cohomological analysis of gauged-fixed gauge theories,''
 Phys. Lett. B \textbf{492} (2000) 376--384,
 \href{https://arxiv.org/abs/hep-th/9910201}{arXiv:hep-th/9910201}.
+
+\bibitem{CattaneoMnevReshetikhin}
+A.~S.~Cattaneo, P.~Mnev, and N.~Reshetikhin,
+``Classical BV theories on manifolds with boundary,''
+Commun. Math. Phys. \textbf{332} (2014) 535--603,
+\href{https://arxiv.org/abs/1201.0290}{arXiv:1201.0290}.
+
+\bibitem{IyerWald}
+V.~Iyer and R.~M.~Wald,
+``Some properties of Noether charge and a proposal for dynamical black hole
+entropy,''
+Phys. Rev. D \textbf{50} (1994) 846--864,
+\href{https://arxiv.org/abs/gr-qc/9403028}{arXiv:gr-qc/9403028}.
 
 \bibitem{MetsaevBRSTBV}
 R.~R.~Metsaev,

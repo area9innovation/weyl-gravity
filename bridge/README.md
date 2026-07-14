@@ -436,13 +436,26 @@ gauge time translation.
 
 ## Sprint completion boundary
 
-All five implementation sprints are complete in the finite algebraic
-cylinder category, with exact JSON/LaTeX certificates and CI rails.  What
-remains is no longer a missing sprint calculation:
+All five original bridge sprints are complete in the finite algebraic
+cylinder category, with exact JSON/LaTeX certificates and CI rails.  The
+field-theoretic companion now also derives the minimal raw chain from the BV
+master action, contracts one explicit gauge-fixed nonminimal extension, and
+proves
 
-1. identify the raw polynomial cyclic complex with a chosen complete
-   gauge-fixed field-theoretic BV domain, including analytic domains;
-2. prove continuity/closed range on any Hilbert or Krein completion;
-3. study nonlinear and quantum anomaly questions.
+```text
+coker(K^sharp) ~= (ker K)^*.
+```
+
+The endpoint quotient is the bulk obstruction codomain.  It is not the BFV
+ghost momentum before time-slice transgression.  What remains is therefore:
+
+1. compute the one-scalar bulk-BV to time-slice-BFV transgression and its
+   orientation;
+2. certify row completeness after phase-space reduction and
+   positive-frequency polarization, not on the unpolarized cyclic bulk BV
+   complex;
+3. transport `Omega_BV -> Omega_BFV -> Omega_Sigma -> J_positive`;
+4. prove continuity/closed range on any later Hilbert or Krein completion;
+5. study nonlinear and quantum anomaly questions.
 
 Those are deliberately outside the classical algebraic sprint theorem.

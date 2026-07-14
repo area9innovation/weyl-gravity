@@ -1,14 +1,15 @@
-"""Complete algebraic one-particle free-BV block after CKV separation.
+"""Split normal-form free-BV fixture after CKV separation.
 
 The minimal trace-free detour row is augmented by the Weyl trace doublet,
-its antifield dual, and an explicit antighost/multiplier nonminimal doublet.
+its antifield dual, and a scalar antighost/multiplier test doublet.
 Every eliminated coordinate is therefore accompanied by a concrete
 contracting homotopy.  The only cohomology is the two-chirality physical
 metric block.
 
-This is an exact ``D x SO(4)``-finite BV block.  It does not by itself prove
-that the chosen contraction intertwines the noncompact conformal generators;
-that is the separate cyclic/equivariance sprint.
+This exact ``D x SO(4)``-finite fixture predates the field-derived gauge
+fermion and is not the complete nonminimal field domain.  The complete
+vector-plus-scalar nonminimal extension and both antifield duals are built in
+``field_bv_identification.gauge_fixed_equivalence``.
 """
 
 from __future__ import annotations
