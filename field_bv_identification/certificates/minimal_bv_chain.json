@@ -1,0 +1,339 @@
+{
+  "basis_dictionary": {
+    "columns": [
+      "energy",
+      "raw_row",
+      "raw_index",
+      "raw_basis_element",
+      "bv_variable",
+      "field_redefinition",
+      "conventional_bv_ghost_number",
+      "antifield_number",
+      "local_tangent_degree",
+      "compact_degree",
+      "primary_weight",
+      "polynomial_level",
+      "so4_content",
+      "differential_image",
+      "differential_target",
+      "image_nnz",
+      "equality_certificate"
+    ],
+    "path": "field_bv_identification/certificates/minimal_bv_dictionary.tsv",
+    "records": 2170
+  },
+  "category": "finite D-eigenmode, SO(4)-finite algebraic polynomial cylinder category",
+  "levels": [
+    {
+      "basis_records": 190,
+      "chain_homotopies": {
+        "H_BV": "zero (the minimal comparison is an isomorphism)",
+        "H_raw": "zero (the minimal comparison is an isomorphism)"
+      },
+      "dimension": 190,
+      "energy": 2,
+      "field_to_raw_sha256": "d193b2ac56c2ca1e624fc1ae14e6fd0fb4321d29a04869cf069d1675a0f05a61",
+      "q_bv_sha256": "2a2f9c4f94d6c61963cdeb8f736f17d4b881e2a11e7f30a347736aba6e57a0c8",
+      "q_raw_sha256": "2f01c28c028376fd5b528092d8be10f6acbaf8b735bdd5fe98f68c1b7728a041",
+      "raw_to_field_sha256": "62a27f2158dfdda1bed3d9354a5d1c60babf7562299cf8fe0f8bd939ec090898",
+      "row_dimensions": {
+        "equation": 0,
+        "gauge": 90,
+        "identity": 0,
+        "metric": 100
+      },
+      "trace_trivial_dimension": 20
+    },
+    {
+      "basis_records": 360,
+      "chain_homotopies": {
+        "H_BV": "zero (the minimal comparison is an isomorphism)",
+        "H_raw": "zero (the minimal comparison is an isomorphism)"
+      },
+      "dimension": 360,
+      "energy": 3,
+      "field_to_raw_sha256": "b9c63400f8a591eb7e4c17b18636041533d33e1b832d28554730c1c7dd15bf39",
+      "q_bv_sha256": "3a31df8f6e66dfb4759b841cdbd816e2a766064906b77a3423a5f1611f3ba0fe",
+      "q_raw_sha256": "91a45a7c9ff61015671fb0de776b23d3b7b17c755cab4eeb25a9331d6d8d9599",
+      "raw_to_field_sha256": "2fb77d7db10adf926b3a2107c4a7555de28adde1b9a026851010db1bf1b89beb",
+      "row_dimensions": {
+        "equation": 0,
+        "gauge": 160,
+        "identity": 0,
+        "metric": 200
+      },
+      "trace_trivial_dimension": 40
+    },
+    {
+      "basis_records": 620,
+      "chain_homotopies": {
+        "H_BV": "zero (the minimal comparison is an isomorphism)",
+        "H_raw": "zero (the minimal comparison is an isomorphism)"
+      },
+      "dimension": 620,
+      "energy": 4,
+      "field_to_raw_sha256": "e7f68d8566bf81d4c77f5eb04a8288ce86931c755bf7356926aaba4ec9531596",
+      "q_bv_sha256": "82f0c18d8e613d950ee8ea1216627314a274403d9534b618087db16a3d8ef960",
+      "q_raw_sha256": "84302e15be7765b59d9c3af31399c358b0adab27259a67efba194413e20a7f8c",
+      "raw_to_field_sha256": "faeb5c004b8c32771f0fcb8d44b8bd2d98a063fd332770680b3acc4e0d5a5366",
+      "row_dimensions": {
+        "equation": 10,
+        "gauge": 259,
+        "identity": 1,
+        "metric": 350
+      },
+      "trace_trivial_dimension": 72
+    },
+    {
+      "basis_records": 1000,
+      "chain_homotopies": {
+        "H_BV": "zero (the minimal comparison is an isomorphism)",
+        "H_raw": "zero (the minimal comparison is an isomorphism)"
+      },
+      "dimension": 1000,
+      "energy": 5,
+      "field_to_raw_sha256": "483d0d9646fcd1a06b263c4d6bfec415cf6f40943f06ab02a10d4abe9380e492",
+      "q_bv_sha256": "6578905eaf0d6928c63af3de4092708eef20acb38f39bca2865386a95b369912",
+      "q_raw_sha256": "9dd5c58299edfd015bec812a62af3d65f41e19658b4819b6025be53f85e496af",
+      "raw_to_field_sha256": "39cdf0d404ab60c71897af431cf46de46546a1205997b5083f09695bc38f77c0",
+      "row_dimensions": {
+        "equation": 40,
+        "gauge": 392,
+        "identity": 8,
+        "metric": 560
+      },
+      "trace_trivial_dimension": 120
+    }
+  ],
+  "master_action": {
+    "free_tangent_differential": {
+      "c_mu": "0",
+      "cstar_nu": "-2 nabla^mu hstar_mu_nu",
+      "h_mu_nu": "2 nabla_(mu c_nu) + 2 omega gbar_mu_nu",
+      "hstar_mu_nu": "B_lin[h]_mu_nu",
+      "omega": "0",
+      "omegastar": "2 gbar^mu_nu hstar_mu_nu"
+    },
+    "grading_convention": "raw local tangent degree equals minus conventional BV ghost number",
+    "minimal_master_action": [
+      "S_W[g]",
+      "integral gstar^(mu nu) (L_c g_(mu nu) + 2 omega g_(mu nu))",
+      "integral cstar_mu [c,c]^mu/2",
+      "integral omegastar L_c omega"
+    ],
+    "nonlinear_terms_excluded_from_q": [
+      "hstar L_c h",
+      "2 hstar omega h",
+      "cstar [c,c]/2",
+      "omegastar L_c omega",
+      "cubic and higher terms in S_W"
+    ],
+    "quadratic_tangent_terms": [
+      "S_W^(2)[h]/2",
+      "integral hstar^(mu nu) (2 nabla_(mu c_(nu)) + 2 omega gbar_(mu nu))"
+    ]
+  },
+  "not_proved": [
+    "complete gauge-fixed BV-domain identification",
+    "dual residual zero-mode replacement",
+    "nonminimal and generalized-auxiliary elimination from a chosen gauge fermion",
+    "all potentially entering antifield rows",
+    "field-theoretic cyclic/BFV pairing transfer",
+    "analytic completion"
+  ],
+  "proved": [
+    "quadratic minimal master-action tangent differential",
+    "conventional BV ghost number versus suspended tangent degree",
+    "invertible trace/Weyl and dual-antifield field redefinitions",
+    "exact F and G chain maps with zero homotopies",
+    "unit trace/Weyl contractible arrows",
+    "explicit trace projector and contraction q s+s q=P_trace",
+    "T(ker K_BV)=ker K_raw for all fifteen conformal-Killing modes",
+    "one generated record per raw basis vector"
+  ],
+  "row_dictionary": [
+    {
+      "antifield_number": 0,
+      "bv_variable": "diffeomorphism ghost c_mu",
+      "differential": "K_0 c",
+      "equality_certificate": "F Q_BV = Q_raw F exactly",
+      "field_redefinition": "c_raw=c",
+      "ghost_number": 1,
+      "local_degree": -1,
+      "module_index": 0,
+      "raw_row": "G_n",
+      "raw_variable": "c_mu",
+      "target": "M_n:h_0"
+    },
+    {
+      "antifield_number": 0,
+      "bv_variable": "Weyl ghost omega",
+      "differential": "tau",
+      "equality_certificate": "F Q_BV = Q_raw F exactly",
+      "field_redefinition": "Omega=omega+(partial.c)/4",
+      "ghost_number": 1,
+      "local_degree": -1,
+      "module_index": 1,
+      "raw_row": "G_n",
+      "raw_variable": "Omega",
+      "target": "M_n:tau"
+    },
+    {
+      "antifield_number": 0,
+      "bv_variable": "trace-free metric fluctuation",
+      "differential": "B_lin h_0",
+      "equality_certificate": "F Q_BV = Q_raw F exactly",
+      "field_redefinition": "h_0=h-eta tr(h)/4",
+      "ghost_number": 0,
+      "local_degree": 0,
+      "module_index": 0,
+      "raw_row": "M_n",
+      "raw_variable": "h_0",
+      "target": "E_n:hstar_0"
+    },
+    {
+      "antifield_number": 0,
+      "bv_variable": "metric trace",
+      "differential": "0",
+      "equality_certificate": "F Q_BV = Q_raw F exactly",
+      "field_redefinition": "tau=tr(h)/8",
+      "ghost_number": 0,
+      "local_degree": 0,
+      "module_index": 1,
+      "raw_row": "M_n",
+      "raw_variable": "tau",
+      "target": "0"
+    },
+    {
+      "antifield_number": 1,
+      "bv_variable": "trace-free metric antifield",
+      "differential": "partial^mu hstar_0(mu nu)",
+      "equality_certificate": "F Q_BV = Q_raw F exactly",
+      "field_redefinition": "hstar_0=hstar-eta tr(hstar)/4",
+      "ghost_number": -1,
+      "local_degree": 1,
+      "module_index": 0,
+      "raw_row": "E_n",
+      "raw_variable": "hstar_0",
+      "target": "I_n:i_star"
+    },
+    {
+      "antifield_number": 1,
+      "bv_variable": "trace metric antifield",
+      "differential": "Omega_star",
+      "equality_certificate": "F Q_BV = Q_raw F exactly",
+      "field_redefinition": "tau_star=2 tr(hstar)",
+      "ghost_number": -1,
+      "local_degree": 1,
+      "module_index": 1,
+      "raw_row": "E_n",
+      "raw_variable": "tau_star",
+      "target": "I_n:Omega_star"
+    },
+    {
+      "antifield_number": 2,
+      "bv_variable": "diffeomorphism-ghost antifield",
+      "differential": "0",
+      "equality_certificate": "F Q_BV = Q_raw F exactly",
+      "field_redefinition": "i_star=-(cstar+partial omegastar/4)/2",
+      "ghost_number": -2,
+      "local_degree": 2,
+      "module_index": 0,
+      "raw_row": "I_n",
+      "raw_variable": "i_star_mu",
+      "target": "0"
+    },
+    {
+      "antifield_number": 2,
+      "bv_variable": "Weyl-ghost antifield",
+      "differential": "0",
+      "equality_certificate": "F Q_BV = Q_raw F exactly",
+      "field_redefinition": "Omega_star=omegastar",
+      "ghost_number": -2,
+      "local_degree": 2,
+      "module_index": 1,
+      "raw_row": "I_n",
+      "raw_variable": "Omega_star",
+      "target": "0"
+    }
+  ],
+  "schema": "pure-weyl-field-bv-minimal-chain-v1",
+  "theorem": "The tangent complex of the quadratic minimal pure-Weyl master action is exactly isomorphic to the direct sum of the certified trace-free raw G->M->E->I detour chain and the explicitly contracted trace summand throughout the complete centered energy buffer.",
+  "variables": [
+    {
+      "antifield_number": 0,
+      "conventional_ghost_number": 1,
+      "grassmann_parity": "odd",
+      "name": "diffeomorphism_ghost",
+      "primary_compact_weight": -1,
+      "role": "minimal Diff ghost",
+      "symbol": "c_mu",
+      "tangent_degree": -1,
+      "tensor_type": "vector"
+    },
+    {
+      "antifield_number": 0,
+      "conventional_ghost_number": 1,
+      "grassmann_parity": "odd",
+      "name": "weyl_ghost",
+      "primary_compact_weight": 0,
+      "role": "minimal Weyl ghost",
+      "symbol": "omega",
+      "tangent_degree": -1,
+      "tensor_type": "scalar"
+    },
+    {
+      "antifield_number": 0,
+      "conventional_ghost_number": 0,
+      "grassmann_parity": "even",
+      "name": "metric_fluctuation",
+      "primary_compact_weight": 0,
+      "role": "metric fluctuation",
+      "symbol": "h_mn",
+      "tangent_degree": 0,
+      "tensor_type": "symmetric"
+    },
+    {
+      "antifield_number": 1,
+      "conventional_ghost_number": -1,
+      "grassmann_parity": "odd",
+      "name": "metric_antifield",
+      "primary_compact_weight": 4,
+      "role": "equation/Koszul--Tate row",
+      "symbol": "hstar_mn",
+      "tangent_degree": 1,
+      "tensor_type": "symmetric"
+    },
+    {
+      "antifield_number": 2,
+      "conventional_ghost_number": -2,
+      "grassmann_parity": "even",
+      "name": "diffeomorphism_ghost_antifield",
+      "primary_compact_weight": 5,
+      "role": "Diff Noether-identity row",
+      "symbol": "cstar_mu",
+      "tangent_degree": 2,
+      "tensor_type": "vector"
+    },
+    {
+      "antifield_number": 2,
+      "conventional_ghost_number": -2,
+      "grassmann_parity": "even",
+      "name": "weyl_ghost_antifield",
+      "primary_compact_weight": 4,
+      "role": "Weyl Noether-identity row",
+      "symbol": "omegastar",
+      "tangent_degree": 2,
+      "tensor_type": "scalar"
+    }
+  ],
+  "zero_mode_trace_split": {
+    "Omega_on_ckv": "zero",
+    "ambient_dimension": 65,
+    "ckv_rank_after": 15,
+    "ckv_rank_before": 15,
+    "forward_sha256": "a90585ac1ab4bf9bea6de3b87d965ebf7c7c85fc91e6a587f1cab4e64aac1beb",
+    "inverse_sha256": "da083fdd36c891fcdbede0f99cfa6b965785b8f8a56ae35e2b67d35a0d2a9e15",
+    "kernel_identity": "T(ker K_BV)=ker K_raw=so(4,2)"
+  }
+}

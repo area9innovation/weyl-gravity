@@ -130,6 +130,12 @@ CERTIFICATES = (
         "CONFORMAL S2 FREE BV COMPLEX: ALL PASS",
     ),
     Certificate(
+        "field-theoretic minimal BV/raw-chain dictionary",
+        "verify_conformal_field_bv_dictionary.py",
+        "CONFORMAL FIELD-BV MINIMAL CHAIN DICTIONARY: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
         "split cyclic BV retract",
         "verify_conformal_cyclic_bv_retract.py",
         "CONFORMAL S3 CYCLIC BV RETRACT: COMPACT/CYCLIC PART ALL PASS",
@@ -213,6 +219,7 @@ GUARDS = (
     ("transfer fixture is not pure-Weyl BV", "verify_conformal_cartan_transfer.py", ("--claim-pure-weyl-bv",)),
     ("cyclic fixture is not pure-Weyl BV", "verify_conformal_cyclic_hpl.py", ("--claim-pure-weyl-bv",)),
     ("split free-BV contraction is not yet the full cyclic transfer", "verify_conformal_free_bv_complex.py", ("--claim-full-conformal-cyclic-transfer",)),
+    ("minimal master-action chain is not the complete gauge-fixed field-BV domain", "verify_conformal_field_bv_dictionary.py", ("--claim-complete-field-bv-domain",)),
     ("compact split cyclicity is not full conformal equivariance", "verify_conformal_cyclic_bv_retract.py", ("--claim-full-so42-equivariance",)),
     ("intrinsic residual CE pairing is not the transferred BV pairing", "verify_conformal_residual_bfv_bridge.py", ("--claim-transferred-pure-weyl-pairing",)),
     ("raw SDR is homotopy-equivariant rather than strict", "verify_conformal_raw_bv_transfer.py", ("--claim-strict-sdr",)),
@@ -320,6 +327,7 @@ def main() -> None:
         "minimal residual vertex cohomology plus the smooth Bach-curvature "
         "bridge, all-energy E/A/L metric preimages, and an end-to-end "
         "algebraic polynomial metric-to-residual calculation with a "
+        "field-derived minimal master-action/raw-chain dictionary, "
         "cross-energy cyclic form, complete centered HPL transfer, explicit "
         "closed-universe BFV choice, and all-energy Taub normalization. The "
         "complete field-theoretic BV-domain identification, analytic "

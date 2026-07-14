@@ -85,7 +85,10 @@ end-to-end polynomial calculation additionally constructs the metric,
 ghost, equation-antifield and identity-antifield rows, measures the
 noncompact homotopy defects, transfers the strict residual action, and
 reproduces the centered cohomology without importing the hand-specified
-$E/A/L$ matrices.  Exact cross-energy recursion then fixes the raw
+$E/A/L$ matrices.  The tangent differential derived directly from the
+quadratic minimal master action is related to those raw rows by explicit
+inverse chain maps throughout the centered energy buffer.  Exact
+cross-energy recursion then fixes the raw
 cohomology form, makes the raw retract cyclic, and verifies the dressed
 isometry and the absence of higher HPL corrections in the centered window.
 An all-energy equivariant Taub reconstruction is normalized by a direct
@@ -1547,6 +1550,125 @@ trace is an explicit doublet.  The raw matrices commute with all four
 coordinate translations and special-conformal vector fields, not only with
 $D\times SO(4)$.
 
+The interpretation of these rows can be derived directly from the minimal
+master action rather than assigned after the calculation.  With conventional
+BV variables $(h_{\mu\nu},c^\mu,\omega)$ and antifields
+$(h^{*\mu\nu},c^*_\mu,\omega^*)$, take
+\begin{align}\label{eq:minimal-master-action}
+ S_{\rm BV}={}&S_W[g]
+ +\int g^{*\mu\nu}\bigl(\cL_cg_{\mu\nu}+2\omega g_{\mu\nu}\bigr)
+ +\int c^*_\mu\frac12[c,c]^\mu
+ +\int\omega^*\cL_c\omega .
+\end{align}
+At the conformally flat background, the tangent differential of its
+quadratic part has the four-row form
+\begin{equation}\label{eq:field-BV-tangent-chain}
+ (c,\omega)\xrightarrow{K}(h)
+ \xrightarrow{B_{\rm lin}}(h^*)
+ \xrightarrow{K^\sharp}(c^*,\omega^*).
+\end{equation}
+Here tangent-complex degree is minus conventional BV ghost number: the four
+rows have degrees $-1,0,1,2$, whereas the underlying BV coordinates have
+ghost numbers $1,0,-1,-2$.  In a flat conformal chart, one consistent
+antibracket convention gives
+\begin{align}
+ Qh_{\mu\nu}&=2\partial_{(\mu}c_{\nu)}+2\omega\eta_{\mu\nu},
+ &Qh^*_{\mu\nu}&=B_{\rm lin}[h]_{\mu\nu},\nonumber\\
+ Qc^*_\nu&=-2\partial^\mu h^*_{\mu\nu},
+ &Q\omega^*&=2h^{*\mu}{}_{\mu}.
+ \label{eq:quadratic-field-BV-differential}
+\end{align}
+The nonlinear terms in \eqref{eq:minimal-master-action}, including
+$c^*[c,c]$, $\omega^*\cL_c\omega$, and the field-dependent part of
+$h^*\cL_ch$, do not belong to this free tangent differential.
+
+Define the invertible component redefinitions
+\begin{align}\label{eq:field-raw-redefinitions}
+ \Omega&=\omega+\frac14\partial\!\cdot c,
+ &\tau&=\frac18\operatorname{tr}h,
+ &h_0&=h-\frac14\eta\operatorname{tr}h,\nonumber\\
+ \tau^*&=2\operatorname{tr}h^*,
+ &h_0^*&=h^*-\frac14\eta\operatorname{tr}h^*,
+ &i^*_\mu&=-\frac12\left(c^*_\mu+\frac14\partial_\mu\omega^*\right),
+ \qquad \Omega^*=\omega^*.
+\end{align}
+Then \eqref{eq:field-BV-tangent-chain} becomes exactly
+\begin{equation}
+ (c,\Omega)\longmapsto(K_0c,\Omega),\qquad
+ (h_0,\tau)\longmapsto(B_{\rm lin}h_0,0),\qquad
+ (h_0^*,\tau^*)\longmapsto(\partial\!\cdot h_0^*,\tau^*),
+\end{equation}
+which is the raw chain \eqref{eq:raw-polynomial-chain}.  In particular,
+$\Omega\to\tau$ and $\tau^*\to\Omega^*$ are displayed unit contractible
+pairs.
+
+\begin{cproposition}[Minimal field-theoretic realization of the raw detour complex]
+\label{prop:field-BV-dictionary}
+For each $D$-finite, $SO(4)$-finite polynomial block in the complete centered
+buffer $n=2,3,4,5$, the redefinitions
+\eqref{eq:field-raw-redefinitions} give exact rational inverse maps
+\begin{equation}
+ F_n:C^{\rm min}_{\rm BV,n}\longrightarrow C^{\rm raw}_n,
+ \qquad
+ G_n:C^{\rm raw}_n\longrightarrow C^{\rm min}_{\rm BV,n}
+\end{equation}
+satisfying
+\begin{equation}\label{eq:minimal-field-raw-chain-maps}
+ F_nQ_{\rm BV}=Q_{\rm raw}F_n,qquad
+ G_nQ_{\rm raw}=Q_{\rm BV}G_n,qquad
+ F_nG_n=G_nF_n=1.
+\end{equation}
+Thus the comparison homotopies vanish: this phase is a chain isomorphism,
+not merely a rank-preserving quasi-isomorphism.  If $P_{\rm tr}$ selects
+$(\Omega,\tau,\tau^*,\Omega^*)$ and $s_{\rm tr}$ reverses the two unit
+arrows, the same matrices verify
+\begin{equation}\label{eq:trace-contraction}
+ [Q_{\rm raw},P_{\rm tr}]=0,
+ \qquad
+ Q_{\rm raw}s_{\rm tr}+s_{\rm tr}Q_{\rm raw}=P_{\rm tr}.
+\end{equation}
+Consequently, in the selected algebraic blocks,
+\begin{equation}\label{eq:minimal-field-direct-sum}
+ \boxed{
+ C^{\rm min,alg}_{\rm BV,n}
+ \cong C^{\rm tf,min}_{\rm raw,n}\oplus C_{{\rm tr},n},
+ \qquad H(C_{{\rm tr},n})=0.}
+\end{equation}
+The block dimensions are
+\begin{equation}
+\begin{array}{c|rrrr|r}
+n&\dim G_n&\dim M_n&\dim E_n&\dim I_n&\dim C_n\\ \hline
+2&90&100&0&0&190\\
+3&160&200&0&0&360\\
+4&259&350&10&1&620\\
+5&392&560&40&8&1000.
+\end{array}
+\end{equation}
+The same triangular trace change is invertible on the inhomogeneous
+low-mode gauge space and maps the full fifteen-dimensional conformal-Killing
+kernel to $\Omega=0$ without changing its rank.  More precisely, the exact
+low-mode matrices give
+\begin{equation}\label{eq:minimal-zero-mode-identity}
+ T\bigl(\ker K_{\rm BV}\bigr)=\ker K_{\rm raw}
+ \cong\mathfrak{so}(4,2).
+\end{equation}
+Hence no residual conformal zero mode is created, removed, or absorbed into
+the trace contraction.
+\end{cproposition}
+
+The executable
+\begin{center}
+\path{symbolic/verify_conformal_field_bv_dictionary.py}
+\end{center}
+constructs both sides independently, verifies every matrix identity in
+\eqref{eq:minimal-field-raw-chain-maps}, and emits a 2170-record table with
+one entry per raw basis vector, including conventional ghost number,
+antifield number, compact degree, $SO(4)$ content, differential image, and
+an exact equality flag.  This proposition identifies the \emph{minimal
+quadratic chain}.  It does not yet derive a chosen gauge-fixed nonminimal
+domain, replace both sides of the global reducibility sector, inventory all
+additional BV rows, or transfer the field-theoretic cyclic pairing.
+
 \begin{cproposition}[Raw metric-BV retract and conformal transfer]
 \label{prop:raw-BV-transfer}
 In the complete energy buffer $n=2,3,4,5$, exact rational changes of basis
@@ -1841,28 +1963,51 @@ Propositions~\ref{prop:raw-BV-transfer} and
 Propositions~\ref{prop:raw-cross-energy} and \ref{prop:full-HPL-test},
 additionally close the kernel, image, noncompact action, cyclic form,
 transferred differential, and centered-rank calculation in an explicit
-polynomial metric-BV model.
+polynomial metric-BV model.  Proposition~\ref{prop:field-BV-dictionary}
+also identifies its four minimal rows exactly with the tangent complex
+derived from the quadratic master action.
 
-\begin{conjecture}[Field-theoretic BV identification]\label{hyp:pure-weyl}
-In the selected cylinder domain, the gauge-fixed free strict-pure-Weyl BV
-complex is represented completely by the raw algebraic model in the
-centered window.
-The fifteen global reducibilities and their genuine dual
-constraint/antifield sectors can be split without double counting.  After
-nonminimal doublets are contracted, the complete nonzero-mode free local BV
-complex is quasi-isomorphic, in the selected cylinder window, to the raw
-polynomial detour rows of \eqref{eq:raw-polynomial-chain}, with no additional
-local or antifield row entering or leaving the centered degree.  Its
-field-theoretic cyclic pairing restricts to the raw form of
-Proposition~\ref{prop:raw-cross-energy}.
+\begin{conjecture}[Field-theoretic completion]\label{hyp:pure-weyl}
+For the specified algebraic cylinder gauge fixing and closed-universe BFV
+choice, the following four statements hold.
+\begin{enumerate}
+\item \emph{Gauge-fixed-domain equivalence.}  Adjoining the stated
+nonminimal sector and applying the gauge fermion gives a canonical BV
+transformation and explicit contraction
+\begin{equation}
+ C^{\rm gf,alg}_{\rm BV}\simeq
+ C^{\rm min,alg}_{\rm BV}\oplus C_{\rm nonmin,triv},
+\end{equation}
+including every generalized auxiliary field introduced by gauge fixing.
+\item \emph{Dual zero-mode identification.}  The fifteen local
+conformal-Killing ghost modes and their genuine dual constraint/antifield
+sector are removed and replaced by the residual BFV variables without
+duplication.  The finite comparison realizes
+\begin{equation}
+ \mathcal Z_{\rm local}\longleftrightarrow
+ \mathfrak{so}(4,2)\oplus
+ \mathfrak{so}(4,2)^*[\text{dual degree}].
+\end{equation}
+\item \emph{Complete row inventory.}  Every remaining field or antifield
+row which can enter or leave the centered filtered term $(p,q)=(4,0)$ is
+represented by the certified raw complex, explicitly contractible,
+eliminated as auxiliary, excluded by compact degree, or killed by a
+displayed differential.
+\item \emph{Pairing transfer.}  The field-theoretic cyclic BV/BFV form
+induces the raw cross-energy form of
+Proposition~\ref{prop:raw-cross-energy} and the normalized residual
+complementary-degree ghost pairing, with the same orientation and scalar.
+\end{enumerate}
 \end{conjecture}
 
 This is not a consequence of the residual rank matrices.  The raw
-calculation already contains the minimal detour ghost and antifield rows,
+calculation and Proposition~\ref{prop:field-BV-dictionary} already contain
+and identify the minimal detour ghost and antifield rows,
 the noncompact homotopies, the cross-energy cyclic form, and the complete
-centered HPL correction test.  The conjecture asks only whether the chosen
-field-theoretic gauge-fixed domain has further rows or domain effects absent
-from that algebraic model.
+centered HPL correction test.  The conjecture asks whether a concrete
+gauge-fixed field-theoretic domain has further nonminimal, auxiliary,
+reducibility-dual, or antifield rows or domain effects absent from that
+algebraic model, and whether its cyclic form induces the certified raw one.
 
 \begin{corollary}[Conditional algebraic strict-pure-Weyl result]\label{cor:conditional}
 If Field-Theoretic Hypothesis~\ref{hyp:pure-weyl} holds, the complete free
@@ -1931,10 +2076,14 @@ the algebraic $E/A/L$ curvature intertwiner are exact.  The raw polynomial
 metric-BV complex now supplies the antifield-row inventory, explicit
 noncompact homotopies, strict induced conformal action, cross-energy cyclic
 form, vanishing centered HPL corrections, canonical residual CE pairing,
-and end-to-end centered ranks.  The remaining classical bridge is the
+and end-to-end centered ranks.  Its minimal four-row differential has also
+been derived from the quadratic field-theoretic master action and identified
+by exact inverse chain maps.  The remaining classical bridge is the
 field-theoretic identification in Conjecture~\ref{hyp:pure-weyl}: one must
-show that the chosen gauge-fixed pure-Weyl BV domain has no additional
-rows or domain effects absent from the certified algebraic cylinder model.
+show that a concrete gauge-fixed pure-Weyl BV domain, including nonminimal
+variables and both sides of the residual zero-mode split, has no additional
+rows or domain effects absent from the certified algebraic cylinder model,
+and that its cyclic pairing transfers to the raw form.
 The direct Taub comparison does not require first identifying a
 degree-three BGG representative, although that geometric comparison remains
 valuable.  Extension to a chosen Hilbert or Krein completion is a separate
@@ -1966,9 +2115,11 @@ the same centered ranks now arise from an independent raw polynomial
 metric-BV transfer, but it concerns vertices rather than propagating
 particles.  In the finite algebraic cylinder model the cross-energy cyclic
 normalization, residual BFV boundary choice, full centered HPL transfer, and
-all-energy Taub normalization are now explicit.  Promotion to the complete
-field-theoretic pure-Weyl BV/BFV domain is controlled by the single
-identification in Conjecture~\ref{hyp:pure-weyl}.  Analytic completion,
+all-energy Taub normalization are now explicit.  The minimal four-row chain
+has additionally been derived from the quadratic master action and matched
+to the raw complex by exact inverse maps.  Promotion to the complete
+gauge-fixed field-theoretic pure-Weyl BV/BFV domain is controlled by the
+remaining identification in Conjecture~\ref{hyp:pure-weyl}.  Analytic completion,
 quantum consistency, and interaction descent are separate questions.
 
 \appendix
@@ -2063,6 +2214,12 @@ Algebraic cylinder realization and stable generator coefficients & Exact
 symbolic theorem & Full coordinate Weyl/Bach calculation at symbolic $n$,
 nonzero $E/A/L$ pivots, explicit same-block metric preimages, character
 exhaustion, invariant form, and cutoff-stable conformal brackets.\\
+Quadratic minimal field-BV/raw-chain identification & Exact centered-buffer
+certificate & The master-action tangent differential is constructed in full
+metric and antifield variables.  Explicit inverse maps verify
+$FQ_{\rm BV}=Q_{\rm raw}F$ and $GQ_{\rm raw}=Q_{\rm BV}G$ on all 2170 basis
+vectors at energies two through five; gauge fixing and the dual global
+zero-mode sector are not included in this statement.\\
 Residual Cartan homotopy reduction & Theorem & Explicit homotopy
 $\iota_D/\delta$ on every nonzero total degree; this is a quotient only in
 the full residual-gauging problem.\\
@@ -2076,9 +2233,9 @@ Vertex descent and dynamical/topological split & Exact locally & Weight-four
 descent, Chern--Weil transgression, and Euler--Lagrange quotient.  Global
 theta effects are retained.\\
 Full local-plus-residual pure-Weyl BV result & Conditional & Requires the
-two parts of Field-Theoretic Hypothesis~\ref{hyp:pure-weyl}: full
-equivariant cyclic BV transfer with row control, and the selected residual
-BFV polarization and normalization.\\
+remaining parts of Field-Theoretic Hypothesis~\ref{hyp:pure-weyl}: a
+complete gauge-fixed/nonminimal row and zero-mode identification, full
+equivariant cyclic transfer, and the selected residual BFV normalization.\\
 Interpretation as a physical state space & Choice-dependent & Requires a
 boundary and gauge principle that treats all fifteen generators, including
 $D$, as gauge rather than global charges.\\
