@@ -235,6 +235,66 @@ CERTIFICATES = (
         "CONFORMAL COMPLETED RESIDUAL BRST: ALL PASS",
     ),
     Certificate(
+        "Lorentzian tensor/vector curl factorization and E/A/L dictionary",
+        "verify_conformal_covariant_factorization.py",
+        "CONFORMAL COVARIANT CURL FACTORIZATION: ALL PASS",
+    ),
+    Certificate(
+        "field-induced cylinder Cauchy-Sobolev realization",
+        "verify_conformal_cauchy_sobolev.py",
+        "CONFORMAL CAUCHY-SOBOLEV REALIZATION: ALL PASS",
+    ),
+    Certificate(
+        "exact local ghost witness and action-normalized field intertwiner",
+        "verify_conformal_minimal_witness.py",
+        "MINIMAL WITNESS STRUCTURAL IDENTITIES: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
+        "auxiliary four-row symbol witness and 66-to-30 Fourier SDR",
+        "verify_conformal_auxiliary_green_realization.py",
+        "CONFORMAL AUXILIARY SYMBOL WITNESS AND RETRACT: ALL PASS",
+    ),
+    Certificate(
+        "exact curved action/gauge-map inputs and fail-closed jet ledger",
+        "verify_conformal_curved_operator_workstream.py",
+        "CURVED OPERATOR WORKSTREAM: ALL IMPLEMENTED CHECKS PASS",
+        slow=True,
+    ),
+    Certificate(
+        "local BV-canonical curved auxiliary shift and fail-closed retract gate",
+        "verify_conformal_curved_retract.py",
+        "CURVED AUXILIARY SHIFT/CANONICAL INFRASTRUCTURE: ALL PROVED CHECKS PASS",
+        slow=True,
+    ),
+    Certificate(
+        "action-derived current improvement and fail-closed curved pairing gate",
+        "verify_conformal_curved_current.py",
+        "ACTION-DERIVED CURRENT COMPARISON: ALL IMPLEMENTED CHECKS PASS",
+        slow=True,
+    ),
+    Certificate(
+        "fail-closed covariant BV last-mile status",
+        "verify_conformal_covariant_bv_last_mile.py",
+        "COVARIANT BV LAST-MILE CERTIFICATES: ALL IMPLEMENTED CHECKS PASS",
+        slow=True,
+    ),
+    Certificate(
+        "final covariant claim dependency DAG",
+        "verify_conformal_covariant_dependency_report.py",
+        "COVARIANT FINAL CLAIM DEPENDENCY REPORT: ALL LOGIC CHECKS PASS",
+    ),
+    Certificate(
+        "transport-only final covariant H4 gate",
+        "verify_conformal_final_covariant_transport.py",
+        "FINAL COVARIANT TRANSPORT: ALL IMPLEMENTED LOGIC CHECKS PASS",
+    ),
+    Certificate(
+        "four-flag covariant closure gate",
+        "verify_conformal_four_flag_closure.py",
+        "FOUR-FLAG COVARIANT STATUS: ALL DEPENDENCY CHECKS PASS",
+    ),
+    Certificate(
         "weight-four vertex descent",
         "verify_conformal_vertex_descent.py",
         "CONFORMAL PAPER VERTEX DESCENT: ALL PASS",
@@ -305,6 +365,39 @@ GUARDS = (
     ("the energy-mode theorem is not Green-hyperbolic", "verify_conformal_completed_residual.py", ("--claim-green-hyperbolic",)),
     ("the energy-mode theorem is not a Hadamard-state theorem", "verify_conformal_completed_residual.py", ("--claim-hadamard",)),
     ("the energy-mode theorem is not a quantum unitarity result", "verify_conformal_completed_residual.py", ("--claim-quantum-unitarity",)),
+    ("the reduced cylinder theorem is not an arbitrary-background theorem", "verify_conformal_covariant_factorization.py", ("--claim-arbitrary-background",)),
+    ("the TT projector is not local", "verify_conformal_covariant_factorization.py", ("--claim-local-tt-projector",)),
+    ("the spectral E/L split is not local", "verify_conformal_covariant_factorization.py", ("--claim-local-branch-split",)),
+    ("the spectral E/L split is not certified support-preserving", "verify_conformal_covariant_factorization.py", ("--claim-causal-branch-split",)),
+    ("the vector Killing band is not a metric A_2 block", "verify_conformal_covariant_factorization.py", ("--include-vector-killing-as-a2",)),
+    ("reduced Green factors are not a full BV Green witness", "verify_conformal_covariant_factorization.py", ("--claim-full-bv-green",)),
+    ("the exact ghost biwave does not imply a direct metric factorization", "verify_conformal_minimal_witness.py", ("--claim-exact-factorization",)),
+    ("the auxiliary symbol witness is not a direct same-bundle factorization", "verify_conformal_auxiliary_green_realization.py", ("--claim-direct-factorization",)),
+    ("the auxiliary symbol witness is not a direct causal homotopy on H", "verify_conformal_auxiliary_green_realization.py", ("--claim-direct-original-causal-homotopy",)),
+    ("the symbol witness is not the curved global witness", "verify_conformal_auxiliary_green_realization.py", ("--claim-curved-globalization",)),
+    ("the recognition identity is not a constructed causal homotopy", "verify_conformal_auxiliary_green_realization.py", ("--claim-causal-homotopy",)),
+    ("the action-derived curved gauge map is not the full curved witness identity", "verify_conformal_curved_operator_workstream.py", ("--claim-curved-operator-identity",)),
+    ("the canonical auxiliary shift is not yet the actual curved-Q deformation retract", "verify_conformal_curved_retract.py", ("--claim-curved-deformation-retract",)),
+    ("the exact action-level current improvement is not the complete curved current theorem", "verify_conformal_curved_current.py", ("--claim-curved-current",)),
+    ("the current algorithm has not emitted both complete curved presymplectic potentials", "verify_conformal_curved_current.py", ("--claim-curved-potentials",)),
+    ("formal witness consequences do not replace the curved Green/current equality", "verify_conformal_curved_current.py", ("--claim-green-current-equality",)),
+    ("the covariant theorem waits for curved coefficients and the Green current", "verify_conformal_covariant_bv_last_mile.py", ("--claim-complete-covariant-theorem",)),
+    ("the curved lower-order coefficient table is not emitted", "verify_conformal_covariant_bv_last_mile.py", ("--claim-curved-coefficient-table",)),
+    ("the Fourier SDR is not yet the curved support-category retract", "verify_conformal_covariant_bv_last_mile.py", ("--claim-curved-retract",)),
+    ("the covariant/Cauchy pairing is not inferred from I2", "verify_conformal_covariant_bv_last_mile.py", ("--claim-covariant-cauchy-pairing",)),
+    ("the exact Fourier witness is not the curved operator identity", "verify_conformal_covariant_dependency_report.py", ("--claim-curved-operator",)),
+    ("the support-local Fourier SDR is not the curved deformation retract", "verify_conformal_covariant_dependency_report.py", ("--claim-curved-retract",)),
+    ("the reduced EAL current is not the curved current comparison", "verify_conformal_covariant_dependency_report.py", ("--claim-curved-current",)),
+    ("wave symbols do not by themselves prove complete BV Green hyperbolicity", "verify_conformal_covariant_dependency_report.py", ("--claim-complete-green-hyperbolicity",)),
+    ("the final covariant H4 transport remains dependency-blocked", "verify_conformal_covariant_dependency_report.py", ("--claim-final-covariant-h4",)),
+    ("the transport theorem cannot promote while curved inputs are false", "verify_conformal_final_covariant_transport.py", ("--claim-final-covariant-h4",)),
+    ("the final theorem transports rather than recomputes auxiliary H4", "verify_conformal_final_covariant_transport.py", ("--recompute-auxiliary-h4",)),
+    ("the four covariant flags cannot be promoted while curved lemmas are open", "verify_conformal_four_flag_closure.py", ("--claim-complete",)),
+    ("the vector field residue has elliptic order two", "verify_conformal_cauchy_sobolev.py", ("--claim-vector-residue-order-zero",)),
+    ("the vector Cauchy space is not H half plus H minus half", "verify_conformal_cauchy_sobolev.py", ("--claim-vector-h-half",)),
+    ("the raw Bach data carry a mixed graph norm", "verify_conformal_cauchy_sobolev.py", ("--claim-product-sobolev",)),
+    ("equation factorization alone does not fix the pairing", "verify_conformal_cauchy_sobolev.py", ("--claim-factorization-fixes-pairing",)),
+    ("the Cauchy theorem is not distributional or Hadamard", "verify_conformal_cauchy_sobolev.py", ("--claim-hadamard",)),
     ("vertex descent is not a particle Hilbert theorem", "verify_conformal_vertex_descent.py", ("--claim-particle-hilbert",)),
     ("Pontryagin is not globally trivial", "verify_conformal_dynamical_topological.py", ("--claim-pontryagin-globally-trivial",)),
     ("theta can retain boundary observables", "verify_conformal_dynamical_topological.py", ("--claim-theta-has-no-observables",)),
@@ -416,9 +509,24 @@ def main() -> None:
         "algebraic result has a certified infinite-index energy-mode "
         "Krein--Fock completion with closed residual BRST operator, bounded "
         "off-center Cartan contraction, closed range, and unchanged centered "
-        "H4 and I2. Covariant metric-field completion, uniqueness among "
-        "alternative boundary polarizations, nonlinear stability, and quantum "
-        "theory remain explicitly out of scope."
+        "H4 and I2. The reduced Lorentzian metric fields now have an exact "
+        "tensor-curl Green factorization and a field-induced branch "
+        "Cauchy--Sobolev realization Krein-unitarily equivalent to the "
+        "energy-mode module. The exact ghost biwave, auxiliary four-row "
+        "symbol witness, and 66-to-30 Fourier SDR with support-local formulas "
+        "are proved. The curved workstreams additionally certify the exact "
+        "covariant action/gauge map, parallel-curvature normal form, local "
+        "BV-canonical auxiliary shift with universal SDR, and action-level "
+        "auxiliary/metric current improvement. A machine-readable four-flag "
+        "claim DAG keeps the curved operator, "
+        "deformation-retract, and current-comparison lemmas false and blocks "
+        "every dependent theorem. The expanded curved Hessian/companion and "
+        "adjoint table, actual curved-Q retract, full curved presymplectic and "
+        "Green-current comparison, a direct same-bundle metric factorization, complete "
+        "covariant/Cauchy pairing comparison, "
+        "distributional/Hadamard completion, uniqueness among alternative "
+        "boundary polarizations, nonlinear stability, and quantum theory "
+        "remain explicitly out of scope."
     )
 
 

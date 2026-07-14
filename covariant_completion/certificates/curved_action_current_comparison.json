@@ -1,0 +1,67 @@
+{
+  "EAL_regression": {
+    "all_energy_normalization": true,
+    "chiralities": [
+      "+",
+      "-"
+    ],
+    "derived_from_reduced_action": true,
+    "families": [
+      "E",
+      "A",
+      "L"
+    ],
+    "krein_signs": {
+      "A": -1,
+      "E": 1,
+      "L": -1
+    },
+    "role": "regression, not proof of the curved current identity"
+  },
+  "cauchy_statement": "the time-current difference is an exact spatial divergence; its integral vanishes on closed S^3 once the curved identity is supplied",
+  "current_convention": "straight-line polynomial Green current; differential pullback includes both chain-rule boundary terms",
+  "curved_current_comparison": false,
+  "curved_promotion_criteria": {
+    "EAL_normalization_regression": true,
+    "Green_pairing_equals_current_pairing": false,
+    "auxiliary_presymplectic_potential_derived": false,
+    "cauchy_current_zero_on_cohomology": false,
+    "metric_presymplectic_potential_derived": false,
+    "pullback_difference_is_d_plus_Q": false
+  },
+  "exact_action_level": {
+    "auxiliary_green_identity": true,
+    "auxiliary_shift_is_BV_canonical": true,
+    "cauchy_difference_is_spatial_divergence": true,
+    "comparison_uses_minimal_action_before_gauge_fixing": true,
+    "current_difference_is_closed": true,
+    "differential_pullback_green_identity": true,
+    "explicit_antisymmetric_improvement": true,
+    "metric_green_identity": true,
+    "operator_orders": {
+      "auxiliary": 2,
+      "current_improvement_at_most": 2,
+      "metric_after_elimination": 4,
+      "metric_inclusion": 2
+    }
+  },
+  "exact_curved_algebraic_input": {
+    "nonlinear_auxiliary_square_completed": true,
+    "pointwise_inverse": "A_g^{-1}(s)=-2s+(2/3)g tr_g(s)",
+    "scope": "exact curved zero-derivative auxiliary block; the curved derivative current coefficients remain open",
+    "shift": "phi_hat=phi-A_g^{-1}G^b(g,b)",
+    "source_module": "covariant_completion.curved_retract.auxiliary_eom_shift"
+  },
+  "matrix_sha256": {
+    "auxiliary_current": "69c71c0b5f201473b5a5ad8fe9c8dbbc31b95449c666af35849e347930da36f8",
+    "bv_pairing": "f8f5f1924a012135561c14834d27c797cad9bf035da9e905ad37efd4b8f3a544",
+    "composite_current": "4a63a4a741a84e0274df3aa0e92d322033e6110c00f3adfafde715f3a242c810",
+    "current_difference": "2bf34a84fbd78da78b0fdf5eb11a27e9d6bfe295f33b6929e83b9379fe458467",
+    "improvement": "64ed83194bffc478a3e659a7df2e1bc3ff51878dd326ce6e017a510bc6bc7e25",
+    "metric_current": "995c60cd6f99614d851cd8f2e4070b965791b6fdb5f1d6c99dd0eb44f94dbf85",
+    "metric_hessian": "82bf3b4d7b6ffc9334668cc3578d659c26b62a065330293546711172006729db",
+    "metric_inclusion": "b8212ccf88a20e0370b21d0c0f6d481f14f13372758a98590419612ce39ac238"
+  },
+  "schema": "pure-weyl-action-current-comparison-v1",
+  "theorem_boundary": "the exact action/Fourier Green currents, BV-canonical cotangent lift, and explicit improvement are proved.  Promotion still requires both complete curved presymplectic potentials, their off-shell d+Q comparison, equality with the curved Green pairing, and the separately contractible gauge-fixing/nonminimal currents"
+}

@@ -1,0 +1,58 @@
+{
+  "action_definition_emitted": true,
+  "complete_curved_witness_certificate": false,
+  "covariant_action": {
+    "G_b": "Ric+sym(nabla b)/2+b tensor b/2-g(R+2 div b-b^2/2)/2",
+    "defines_all_curved_coefficients": true,
+    "density": "-phi^{mu nu}G^b_(mu nu)-F(b)^2/4-phi^{mu nu}phi_mu nu/4+(tr phi)^2/4"
+  },
+  "curved_gauge_map_emitted": true,
+  "curved_lower_coefficient_table_emitted": false,
+  "curved_operator_identity_status": "covariant_completion/certificates/curved_operator_identity_status.json",
+  "curved_retract_chain_maps_emitted": false,
+  "cylinder_background": {
+    "Ricci_covariant_components": [
+      0,
+      2,
+      2,
+      2
+    ],
+    "b_background": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "metric_signature": "(-,+,+,+)",
+    "parallel_curvature_and_auxiliary": true,
+    "phi_background": [
+      -2,
+      -2,
+      -2,
+      -2
+    ],
+    "phi_formula": "-2 Ric+(R/3)g",
+    "scalar_curvature": 6
+  },
+  "derivative_normal_form_emitted": true,
+  "globalization_ledger_emitted": true,
+  "guard": "normal-frame wave symbols prove normal hyperbolicity only after the global curved operator and its lower coefficients have been instantiated; this status file does not promote that remaining implementation to a theorem",
+  "proved": [
+    "exact covariant action and gauge symmetry define the global natural operator",
+    "exact linearized cylinder gauge map includes Lie_xi(phi_background)",
+    "exact curved gauge map reduces to the certified K_aux in the flat limit",
+    "parallel-curvature derivative normal form is executable and idempotent",
+    "the globalization ledger counts every required one-point jet vector",
+    "exact flat/normal-frame Q^2 and QW+WQ symbol matrices",
+    "scalar metric principal symbols in all four minimal degrees",
+    "formal companion adjoint at symbol level"
+  ],
+  "remaining_for_certificate_A": [
+    "emit the full first-order 24-by-24 cylinder coefficient matrices",
+    "emit the full zeroth-order 24-by-24 cylinder coefficient matrices",
+    "verify the curved trace/Weyl triangular variables against phi_background",
+    "verify the curved 66-to-30 auxiliary inclusion, projection, and homotopy identities",
+    "verify W^sharp=W by covariant integration by parts, including lower terms"
+  ],
+  "schema": "pure-weyl-curved-auxiliary-witness-status-v1"
+}

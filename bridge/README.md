@@ -371,8 +371,12 @@ make the closed-universe BFV choice explicit.  The separate
 `analytic_completion/` layer now establishes the natural energy-mode
 Krein--Fock completion and unchanged centered cohomology.  None of these
 results makes that boundary choice compulsory in other physical problems,
-establishes a covariant metric-field completion, or addresses the quantum
-theory.
+proves the complete covariant/Cauchy pairing or a Hadamard completion, or
+addresses the quantum theory.  The companion `covariant_completion/`
+package proves the reduced Lorentzian tensor/vector Cauchy--Sobolev theorem,
+an exact four-row auxiliary symbol witness, and an exact $66$-to-$30$
+Fourier-complex retract with support-local formulas.  It does not yet assert the curved all-degree
+Green theorem.
 
 ## Completed checkpoint: cross-energy cyclic transfer
 
@@ -466,11 +470,18 @@ all polarized local and nonminimal doublets to their vacuum, and factors the
 field pairing into the action-normalized matter form and the oriented
 complementary-degree CE form.
 
-What remains outside this classical algebraic theorem is:
+What remains outside this classical algebraic theorem is narrower now.  The
+energy-mode Krein--Fock completion and its closed residual operator are
+certified in `analytic_completion/`; the reduced Lorentzian field
+Cauchy--Sobolev realization and TT/vector Green factorization are certified
+in `covariant_completion/`, together with the auxiliary symbol witness and
+Fourier-complex retract.  The open items are:
 
-1. continuity and closed range on a Hilbert or Krein completion;
-2. uniqueness or comparison of alternative boundary conditions and
+1. the curved lower-order auxiliary witness and formal-adjoint table, the
+   complete covariant/Cauchy pairing comparison, and Hadamard extension;
+2. the optional direct same-bundle Bach factorization;
+3. uniqueness or comparison of alternative boundary conditions and
    polarizations;
-3. nonlinear stability and quantum anomaly questions.
+4. nonlinear stability and quantum anomaly questions.
 
 Those are deliberately outside the classical algebraic sprint theorem.

@@ -128,6 +128,8 @@ the residual theorem.  Taken by themselves, they do **not** prove:
 - single-row concentration of the unpolarized bulk BV tangent complex;
 - continuity, closed range, or a Hilbert/Krein completion (the separate
   `analytic_completion/` theorem now supplies the natural energy-mode
-  completion, but not a covariant metric-field one);
+  completion, while `covariant_completion/` supplies its reduced
+  one-particle metric-field Cauchy realization; the complete BV Green's
+  witness is still open);
 - uniqueness among alternative boundary conditions or polarizations;
 - interactions, anomalies, or quantum BRST nilpotency.

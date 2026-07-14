@@ -1,0 +1,31 @@
+{
+  "causal_map": {
+    "definition": "Lambda=Lambda_plus-Lambda_minus",
+    "general_theorem": "Gamma_c(F)[1] quasi-isomorphic to Gamma_sc(F)"
+  },
+  "chain_compatibility": {
+    "algebraic_derivation": "QG=GPQG=GQPG=GQ",
+    "domain_guard": "Q maps compact support to compact support",
+    "identity": "Q G_plus/minus=G_plus/minus Q"
+  },
+  "cylinder_specialization": {
+    "Gamma_sc_equals_Gamma_smooth": true,
+    "J_of_cauchy_surface": "R x S^3",
+    "cauchy_surface": "S^3 compact",
+    "consequence_if_hypotheses_pass": "Gamma_c(F)[1] quasi-isomorphic to Gamma(F)"
+  },
+  "green_homotopies": {
+    "definition": "Lambda_plus/minus=W G_plus/minus",
+    "derivation": "QWG+WGQ=(QW+WQ)G=PG=1",
+    "identity": "Q Lambda_plus/minus+Lambda_plus/minus Q=1",
+    "support": "supp Lambda_plus/minus f subset J_plus/minus(supp f)"
+  },
+  "hypotheses": [
+    "Q^2=0",
+    "P=QW+WQ degreewise",
+    "P has unique retarded/advanced Green operators G_plus/minus",
+    "W and Q are differential operators"
+  ],
+  "schema": "pure-weyl-green-witness-recognition-v1",
+  "theorem_boundary": "this certificate proves the formal Green-witness consequences; it depends on, and does not replace, the curved normally-hyperbolic witness certificate"
+}

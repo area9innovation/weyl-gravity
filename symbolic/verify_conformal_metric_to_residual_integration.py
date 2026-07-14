@@ -174,7 +174,7 @@ def certificate_data() -> dict[str, object]:
             ],
             "remaining": [
                 "this executable alone does not derive the gauge-fixed field BV-BFV polarization; companion certificates do",
-                "covariant metric-field completion and quantum anomaly questions",
+                "curved all-degree BV Green witness and covariant pairing, distributional/Hadamard completion, and quantum anomaly questions",
             ],
         },
     }

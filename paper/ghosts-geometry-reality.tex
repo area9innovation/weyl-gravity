@@ -98,9 +98,17 @@ Krein completion.  The residual differential has a closed maximal extension,
 and a bounded Cartan contraction forces its cohomology back into the same
 finite centered block, so the completed result is still $\C^2$ with Gram
 matrix $I_2$.  The theorem is quadratic and does not construct a positive
-graviton Hilbert space.  Covariant metric-field completion, nonlinear
-stability, quantum anomaly freedom, and interacting unitarity remain
-separate.
+graviton Hilbert space.  At the reduced one-particle level, a Lorentzian
+tensor-curl factorization and field-action residue calculation now identify
+the exact Cauchy--Sobolev space and prove its Krein-unitary equivalence with
+the energy-mode completion.  An exact ghost biwave, an ordinary-derivative
+four-row symbol witness, and an exact $66$-to-$30$ Fourier-complex retract
+with support-local formulas are now proved.  The curved lower-order
+witness/retract and adjoint table, causal Green
+homotopies, the complete covariant/Cauchy pairing comparison,
+distributional/Hadamard completion, nonlinear stability, quantum anomaly
+freedom, and interacting unitarity remain separate.  A direct same-bundle
+Bach factorization is optional.
 Extending the free
 classification to interactions, Paper~V formulates a deformation
 problem for the positive metric and the Krein involution.  The positive
@@ -294,10 +302,17 @@ choice to constrain all fifteen generators, especially $D$, remains part of
 the theorem's hypotheses.  The natural energy-mode one-particle and bosonic
 Fock Krein completions, closed residual BRST operator, bounded Cartan
 contraction, and unchanged completed $H^4$ are now proved.  The theorem does
-not establish a covariant metric-field Sobolev completion, an integrated
-$SO(4,2)$ group representation, a positive graviton Fock space, nonlinear
-stability, quantum BRST nilpotency, anomaly cancellation, or interacting
-unitarity.  Common-core commutators of unbounded generators do not by
+not establish an integrated $SO(4,2)$ group representation, a positive
+graviton Fock space, nonlinear stability, quantum BRST nilpotency, anomaly
+cancellation, or interacting unitarity.  The reduced Lorentzian tensor and
+vector fields do now carry a field-induced Cauchy--Sobolev topology
+Krein-unitarily equivalent to the mode completion; an ordinary-derivative
+realization now supplies the exact four-row symbol witness and $66$-to-$30$
+Fourier-complex retract.  The curved lower-order witness/retract and adjoint table,
+its causal homotopies, the complete covariant/Cauchy pairing comparison,
+and distributional theory remain open.  Direct same-bundle factorization is
+optional.  Common-core
+commutators of unbounded generators do not by
 themselves supply the missing group integrability conditions
 \cite{JorgensenTianIntro}.
 
@@ -327,7 +342,13 @@ Energy-mode one-particle/Fock Krein completion & Proved & Infinite-index
 cylinder-energy completion\\
 Closed residual BRST and completed $H^4$ & Proved & Maximal total-degree
 block realization\\
-Covariant metric-field Sobolev/distributional completion & Open & Analytic\\
+Reduced Lorentzian tensor/vector Green factorization & Proved & Physical
+cylinder field equations\\
+Field-induced branch Cauchy--Sobolev realization & Proved &
+$H^1\oplus L^2$ on $E,L$; $H^{3/2}\oplus H^{1/2}$ on $A$\\
+Auxiliary symbol witness and $66$-to-$30$ Fourier SDR & Proved & Exact
+cylinder symbols; finite differential and pointwise support-local formulas\\
+Curved auxiliary witness/covariant pairing/Hadamard completion & Open & Analytic\\
 Nonlinear stability & Open & Classical interacting theory\\
 Quantum master equation/anomalies & Open & Quantum\\
 Quantum survival of the two classes & Open & Quantum residual theory\\
@@ -1402,14 +1423,25 @@ the algebraic state space as a graph core.  A bounded Cartan contraction
 localizes completed cohomology to the unchanged finite centered block.
 Thus \eqref{eq:intro-field-result} also holds for
 $H^4(\mathscr K,\overline Q)$.
+At the reduced Lorentzian field level, the tensor/vector curl factors are
+normally hyperbolic and the field-induced Cauchy space is
+\begin{equation}
+ (H^1_{\rm TT}\oplus L^2_{\rm TT})_E
+ \oplus(H^{3/2}_{\rm T}\oplus H^{1/2}_{\rm T})_A
+ \oplus(H^1_{\rm TT}\oplus L^2_{\rm TT})_L.
+\end{equation}
+Its positive-frequency harmonic transform is Krein-unitary onto
+$\mathscr H_1$.
 \end{theorem}
 
 The two classes in Theorem~\ref{thm:intro-pure-weyl} are deformation or
 vertex classes, not two graviton states.  The theorem is classical,
 quadratic, energy-mode based, and boundary-choice dependent.  It does not
-establish a covariant Sobolev completion of metric fields, a positive
-graviton Hilbert space, nonlinear equivalence, quantum anomaly freedom, or
-interacting unitarity.
+establish the curved all-degree auxiliary Green witness, its causal
+homotopies, the complete covariant/Cauchy pairing comparison, a
+distributional or Hadamard completion, a positive graviton Hilbert space,
+nonlinear equivalence, quantum anomaly freedom, or interacting unitarity.
+A direct same-bundle Bach factorization is an optional strengthening.
 
 \subsection{Why study the theory on a cylinder?}
 
@@ -1839,16 +1871,21 @@ field-induced pairing in \eqref{eq:intro-field-result}.
 \node[stage, below=4mm of bgg] (bv) {Minimal algebraic BV complex};
 \node[stage, below=4mm of bv] (gf) {Gauge-fixed contraction and zero-mode split};
 \node[stage, below=4mm of gf] (bfv) {Closed-universe residual BFV system};
-\node[stage, below=4mm of bfv] (state) {Positive-frequency polarized state complex};
+\node[stage, below=4mm of bfv] (cauchy)
+ {Reduced Lorentzian Cauchy--Sobolev realization; $E/A/L$ Krein isometry};
+\node[stage, below=4mm of cauchy] (green)
+ {Auxiliary four-row symbol witness and $66$-to-$30$ Fourier SDR};
+\node[stage, below=4mm of green] (state) {Positive-frequency polarized state complex};
 \node[stage, below=4mm of state] (complete)
  {Energy-mode Krein--Fock completion; closed $\overline Q$};
 \node[stage, below=4mm of complete] (ce) {Strict residual $SO(4,2)$ CE cohomology};
 \node[stage, below=4mm of ce] (result)
  {$H^4_{\rm res}=\C^2$, $G_{\rm res}=I_2$};
-\foreach \a/\b in {action/bgg,bgg/bv,bv/gf,gf/bfv,bfv/state,state/complete,complete/ce,ce/result}
+\foreach \a/\b in {action/bgg,bgg/bv,bv/gf,gf/bfv,bfv/cauchy,cauchy/green,green/state,state/complete,complete/ce,ce/result}
  {\draw[arr] (\a) -- (\b);}
 \node[open, below=10mm of result] (nonlinear) {nonlinear extension};
-\node[open, left=5mm of nonlinear] (analytic) {covariant metric completion};
+\node[open, left=5mm of nonlinear] (analytic)
+ {curved BV Green witness, covariant pairing, and Hadamard completion};
 \node[open, right=5mm of nonlinear] (quantum) {quantum QME/anomalies};
 \draw[oarr] (result) -- (analytic);
 \draw[oarr] (result) -- (nonlinear);
@@ -1866,9 +1903,10 @@ directly from the latter rather than inferred by naming its quotient a BGG
 $H^3$ representative.  Dneprov and Grigoriev's nonlinear Weyl-jet model
 remains useful comparison data, but its curvature-dependent ghost terms are
 not inserted into the free residual differential
-\cite{DneprovGrigorievIntro}.  Covariant metric-field completion, nonlinear
-transfer, and quantum consistency are not consequences of the energy-mode
-theorem.
+\cite{DneprovGrigorievIntro}.  The reduced metric-field Cauchy realization is
+now proved; the remaining covariant item is the all-degree local BV Green's
+witness and its support-sensitive cohomology.  Nonlinear transfer and quantum
+consistency are likewise not consequences of the energy-mode theorem.
 
 \subsection{Why the result matters}
 
@@ -2207,19 +2245,41 @@ The frontier now has three parts.
 The normalized $E/A/L$ modes now complete to an infinite-index Krein space;
 their bosonic Fock completion carries a closed residual BRST operator, and
 the bounded Cartan homotopy proves closed range and unchanged centered
-cohomology.  What remains is a different analytic theorem: start from a
-fully specified Lorentzian gauge-fixed metric Bach/BV complex, choose
-smooth, distributional, spacelike-compact, or other support conditions,
-construct causal or Sobolev homotopies, and prove that its Cauchy-data
-topology agrees with the energy-mode completion.  This includes continuity
-of the metric-to-curvature maps and compatibility of covariant and
-fixed-time pairings.
-Green-hyperbolic operators and complexes supply the natural causal tools for
-such a comparison \cite{BaerGreenIntro,GreenComplexIntro}.  Known
-factorizations of the conformal higher-spin kinetic operators on
-$S^1\times S^3$, including the Weyl graviton, are useful evidence but do not
-by themselves prove the Lorentzian gauge-complex theorem
-\cite{BeccariaBekaertTseytlinIntro}.
+cohomology.  The reduced Lorentzian field comparison is now also exact.
+Tensor and vector curl give local normally hyperbolic factors for the TT
+Bach and transverse-vector equations, and the field-action residues give
+\begin{equation}
+ (H^1_{\rm TT}\oplus L^2_{\rm TT})_E
+ \oplus(H^{3/2}_{\rm T}\oplus H^{1/2}_{\rm T})_A
+ \oplus(H^1_{\rm TT}\oplus L^2_{\rm TT})_L.
+\end{equation}
+The harmonic transform from this branch Cauchy space is Krein-unitary onto
+the energy-mode one-particle completion.  The vector order is fixed by the
+nontrivial residue $R_A=2(A_A^2-4)$; it is not inferred from the second-order
+equation alone.
+
+The auxiliary route is now exact at symbol and Fourier-retract level.  The
+third-order companion obeys $TK=\Box(\Box+2)$ on the full ghost bundle.
+Rather than assert an unproved direct factorization of the gauge-completed
+Bach operator, the construction uses Metsaev's local tensor--tensor--vector
+formulation \cite{MetsaevOrdinaryIntro}.  Its exact four-row Fourier symbols
+obey $Q^2=0$, $QW+WQ=P$, and graded symbol-level self-adjointness, with scalar
+metric principal symbols.  The complete $66$-component Fourier complex
+contracts to the $30$-component metric BV core.  Its Stueckelberg,
+auxiliary, antifield, and dual maps are finite differential or pointwise
+algebraic formulas and therefore preserve support.  The trace and nonminimal
+sectors attach as support-local contractible summands.
+
+What remains is to reconstruct the complete curved first- and zeroth-order
+witness and all-row retract, verify the integration-by-parts adjoints,
+construct the resulting causal
+homotopies, and compare the covariant Green current with the fixed-time BV
+and energy-mode forms, followed by distributional or Hadamard completion.
+Green-hyperbolic operators and complexes supply the
+general tools \cite{BaerGreenIntro,GreenComplexIntro}.  The direct
+same-bundle factorization remains an optional strengthening; the known
+Einstein-background obstruction \cite{NutmaTaronnaIntro} is not promoted to
+a no-go theorem for the gauge-completed operator.
 
 Boundary data are part of this problem.  The theorem uses the
 closed-universe constraint choice.  A boundary, asymptotic region, external
@@ -2323,8 +2383,10 @@ classes, with field-induced Gram matrix $I_2$.  One direction is dynamical
 and one topological.  These are vertex or deformation classes, not two
 positive-norm gravitons.  The algebraic state complex has a natural
 infinite-index Krein--Fock completion with closed residual differential and
-the same cohomology.  This is not a covariant metric-field completion, a
-nonlinear theorem, or a quantum statement.
+the same cohomology.  The reduced Lorentzian field equations now also have
+an exact Green factorization and Cauchy--Sobolev realization equivalent to
+that one-particle completion.  This is not yet a complete BV Green-complex,
+a nonlinear theorem, or a quantum statement.
 
 The seven papers therefore form a fork rather than a single progression.
 Papers~I--IV classify the local free structures.  Papers~V--VI test their
@@ -2356,9 +2418,11 @@ framework.
 The programme therefore now supplies a complete classical energy-mode
 BV--BFV derivation of the centered residual cohomology of free pure-Weyl
 gravity on the conformal cylinder, including its infinite-index Krein--Fock
-completion.  The remaining frontier is not the identification or natural
-mode completion of the classical complex: it is the covariant PDE
-completion, nonlinear extension, and renormalized quantum master equation.
+completion and reduced field Cauchy--Sobolev realization.  The remaining
+frontier is not the identification or natural mode completion of the
+classical complex: it is the curved all-degree Green witness, complete
+covariant/Cauchy pairing and Hadamard completion, nonlinear extension, and
+renormalized quantum master equation.
 
 \keybox{Do the two classical deformation classes survive an anomaly-free
 renormalized quantum BV--BFV transfer?}
@@ -2466,6 +2530,16 @@ Commun. Math. Phys. (2023), arXiv:2207.04069.
 M.~Beccaria, X.~Bekaert and A.~A.~Tseytlin,
 \emph{Partition function of free conformal higher spin theory},
 JHEP \textbf{08} (2014) 113, arXiv:1406.3542.
+
+\bibitem{MetsaevOrdinaryIntro}
+R.~R.~Metsaev,
+\emph{Ordinary-derivative formulation of conformal low-spin fields},
+JHEP \textbf{01} (2008) 064, arXiv:0707.4437.
+
+\bibitem{NutmaTaronnaIntro}
+T.~Nutma and M.~Taronna,
+\emph{On conformal higher spin wave operators},
+JHEP \textbf{06} (2014) 066, arXiv:1404.7452.
 
 \bibitem{JorgensenTianIntro}
 P.~E.~T.~Jorgensen and F.~Tian,

@@ -1,0 +1,29 @@
+{
+  "category": "natural local operators on the conformal cylinder",
+  "construction": "B_lin=-2[nabla^c nabla^d C_1(acbd)+(1/2)Ric^{cd}C_1(acbd)]",
+  "factorization_input": "B_lin=C_1^sharp C_1",
+  "formal_self_adjointness": "follows from the C_1^sharp C_1 action construction",
+  "gauge_identity": "C_1 K=0 and hence B_lin K=0",
+  "gauge_jet_test": {
+    "exhaustive": true,
+    "input_components": 4,
+    "maximum_order": 3,
+    "multiindices_per_component": 35
+  },
+  "globalization": {
+    "argument": "the natural operator differences have the certified finite differential orders; vanishing on every fibre component and every jet through those orders at one homogeneous base point therefore gives the global cylinder identities",
+    "equivariance": "R x SO(4)",
+    "homogeneous_operator_coefficients": true,
+    "isotropy_covariance_exhausted": true,
+    "jet_basis_spans_every_component": true,
+    "parallel_background_curvature": true
+  },
+  "normalization": "-2 times the displayed standard Bach convention, fixed on every trace-free fourth principal jet against the repository action Hessian",
+  "principal_jet_test": {
+    "exhaustive": true,
+    "homogeneous_multiindices": 35,
+    "maximum_order": 4,
+    "tracefree_input_components": 9
+  },
+  "schema": "pure-weyl-linearized-bach-cylinder-v1"
+}

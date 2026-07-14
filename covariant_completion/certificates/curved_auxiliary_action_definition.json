@@ -1,0 +1,61 @@
+{
+  "background_is_stationary_reason": "the algebraic phi equation holds and elimination gives the Weyl action; the conformally flat cylinder has vanishing Bach tensor",
+  "cylinder_background": {
+    "Ricci_covariant": [
+      0,
+      2,
+      2,
+      2
+    ],
+    "Weyl_tensor": "zero",
+    "algebraic_Bianchi_verified": true,
+    "auxiliary_background": [
+      -2,
+      -2,
+      -2,
+      -2
+    ],
+    "auxiliary_formula": "phi_bar=-2 Ric+(R/3)g",
+    "dimension": 4,
+    "parallel_curvature": true,
+    "riemann_symmetries_verified": true,
+    "scalar_curvature": 6,
+    "schema": "pure-weyl-cylinder-curvature-normal-frame-v1",
+    "signature": "(-,+,+,+)"
+  },
+  "exact_global_definition": true,
+  "expanded_curved_hessian_emitted": false,
+  "guard": "an exact action-derived definition and exact gauge map do not replace the expanded Hessian, companion, witness, and exhaustive jet checks",
+  "linearized_gauge_map": {
+    "field_order": [
+      "h[10]",
+      "f[10]",
+      "v[4]"
+    ],
+    "flat_limit_equals_certified_K_aux": true,
+    "flat_limit_sha256": "658ee51517e29d9781b65b3b0499ea7496723d7eb5ec0790affbab303b53c76a",
+    "ghost_order": [
+      "xi[4]",
+      "kappa[4]",
+      "sigma[1]"
+    ],
+    "includes_Lie_xi_phi_bar": true,
+    "phi_bar_is_parallel": true,
+    "sha256": "be92954ce7743814411c649217cbc729dfd0f25703208b3a35d54f85c4bed1bf",
+    "shape": [
+      24,
+      9
+    ]
+  },
+  "schema": "pure-weyl-covariant-auxiliary-action-definition-v1",
+  "source": {
+    "G_b": "Ric+sym(nabla b)/2+b tensor b/2-g(R+2 div b-b^2/2)/2",
+    "density": "sqrt(-g)[-phi^{mu nu} G^b_(mu nu)-F(b)^2/4-phi^{mu nu}phi_mu nu/4+(tr phi)^2/4]",
+    "gauge_transformations": {
+      "Weyl": "delta g=g sigma, delta b=d sigma, delta phi=0",
+      "conformal_boost": "delta b=-kappa; delta phi=sym(nabla kappa) at b_bar=0",
+      "diffeomorphism": "Lie derivative on g, phi, b"
+    },
+    "reference": "R.R. Metsaev, arXiv:0707.4437v3, Sec. 6"
+  }
+}

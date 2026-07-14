@@ -27,7 +27,10 @@ OVERCLAIM_FLAGS = {
     "--claim-bounded-q": "the residual BRST operator is closed and generally unbounded",
     "--claim-global-ghost-krein": "the centered insertion is not a global ghost Krein metric",
     "--treat-d-as-physical-hamiltonian": "Cartan localization requires D to be gauged",
-    "--claim-green-hyperbolic": "no covariant Green-hyperbolic complex is constructed",
+    "--claim-green-hyperbolic": (
+        "this energy-mode executable constructs neither the reduced field Green "
+        "realization nor a Green's witness for the complete BV complex"
+    ),
     "--claim-hadamard": "no state microlocal-spectrum theorem is proved",
     "--claim-quantum-unitarity": "the result is classical residual cohomology, not unitarity",
 }

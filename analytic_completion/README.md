@@ -127,11 +127,16 @@ machine-readable proof summaries are under
 
 ## Deliberate boundary
 
-This package does not prove a covariant Sobolev or distributional theorem
-for the metric Bach/BV complex.  It does not construct Green operators,
-Hadamard states, closed spacelike-compact cohomology, or an integrated
-conformal-group representation.  The later covariant project should use a
-fully specified Lorentzian gauge complex.  Green-hyperbolic operators are
+This package by itself does not prove a covariant Sobolev or distributional
+theorem for the metric Bach/BV complex.  The companion
+`covariant_completion/` package now proves the reduced Lorentzian
+tensor/vector Cauchy--Sobolev realization, the exact ghost biwave, an exact
+ordinary-derivative four-row symbol witness, and an exact $66$-to-$30$
+Fourier-complex retract with support-local formulas.  The curved lower-order
+witness/retract table, the
+complete covariant/Cauchy pairing comparison, Hadamard states, and an
+integrated conformal-group representation remain outside that theorem.  A
+direct same-bundle metric factorization is optional.  Green-hyperbolic operators are
 stable under direct sums and composition
 ([Bär](https://arxiv.org/abs/1310.0738)), while Green-hyperbolic complexes
 provide retarded/advanced homotopies and covariant/fixed-time comparisons

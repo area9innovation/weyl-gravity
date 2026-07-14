@@ -55,6 +55,29 @@ residual BRST operator, bounded Cartan contraction, and proof that completed
 centered cohomology and its $I_2$ Gram matrix are unchanged.  It deliberately
 does not claim a covariant metric-field Sobolev or Green-hyperbolic theorem.
 
+Lorentzian cylinder field realization:
+[`covariant_completion/README.md`](covariant_completion/README.md) proves the
+tensor/vector curl identities, the local Green-hyperbolic factorization of
+the reduced physical system, the exact field origin of the `E/A/L` towers,
+and the field-induced branch Cauchy--Sobolev topology.  Its harmonic
+transform is Krein-unitary onto the energy-mode one-particle completion.
+The complete covariant BV Green theorem and distributional/Hadamard theory
+are now separated more sharply.  A support-local ordinary-derivative
+auxiliary BV realization has a certified four-row symbol witness and an
+exact $66$-to-$30$ Fourier-complex deformation retract whose formulas are
+support local.  The curved workstreams now additionally certify the exact
+covariant action and gauge map, a parallel-curvature derivative normal form,
+the nonlinear BV-canonical auxiliary shift with its universal local SDR, and
+the action-level auxiliary/metric current improvement.  The expanded curved
+Hessian and companion, actual curved-`Q` retract, complete curved
+presymplectic-current comparison, and Hadamard theory remain open.  A direct same-bundle factorization of
+`B_lin+K T/2` is an optional strengthening, not a hidden premise.
+The generated
+[`final_claim_dependencies.md`](covariant_completion/generated/final_claim_dependencies.md)
+keeps the curved operator, deformation-retract, and current-comparison
+lemmas—and every theorem depending on them—explicitly false until their
+operator-level certificates pass.
+
 **Paper 1** (the audit paper): the Bender–Mannheim generator Q is
 *reconstructed* from the normal-form data (G, J, G₀) + positivity rather than
 assumed; unique Hermitian-positive diagonalizer; stabilizer SO(2,ℂ)²
@@ -173,7 +196,11 @@ space has fundamental symmetry `Gamma_s(J)`, and the residual differential
 has a closed maximal block realization.  A bounded Cartan contraction
 proves closed range and reduces completed cohomology to the unchanged finite
 centered block.  This is not a positive graviton Hilbert-space theorem, a
-covariant metric-field Sobolev completion, or a quantum anomaly result.
+quantum anomaly result, or a full covariant BV Green-complex theorem.  At the
+reduced one-particle level, the Lorentzian tensor/vector fields now have an
+exact Cauchy--Sobolev realization: the TT branches use
+`H^1 + L^2`, the vector branch uses `H^(3/2) + H^(1/2)`, and the resulting
+harmonic transform is Krein-unitary onto the completed `E/A/L` module.
 
 ## Reports (`reports/`)
 

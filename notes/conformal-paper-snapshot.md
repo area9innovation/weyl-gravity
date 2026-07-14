@@ -147,8 +147,14 @@ normalized energy modes now also have a certified infinite-index Krein--Fock
 completion with closed residual BRST operator, closed range, and unchanged
 centered cohomology.  Finite jets remain independent convention checks.
 Treating `D` as gauge is a declared physical choice; if it is retained as the
-cylinder Hamiltonian, this is not the relevant quotient.  A covariant
-metric-field Sobolev/distributional completion remains open.
+cylinder Hamiltonian, this is not the relevant quotient.  The reduced
+metric fields now have a cylinder Cauchy--Sobolev realization; an exact
+auxiliary four-row symbol witness and $66$-to-$30$ Fourier-complex retract
+with support-local formulas are also certified.  The curved lower-order
+witness/retract and adjoint table, causal
+homotopies, complete covariant/Cauchy pairing comparison, and
+distributional/Hadamard completion remain open.  A direct same-bundle
+factorization is optional.
 
 ## Priority positioning
 
@@ -160,14 +166,15 @@ the incoming-image calculation, vacuum and one-particle vanishing, exactly
 two surviving two-particle classes, their normalized residual CE pairing,
 and the dynamical/topological split.
 
-Four statements are kept separate throughout the manuscript:
+Five statements are kept separate throughout the manuscript:
 
 1. the exact algebraic residual theorem;
 2. the exact smooth Bach-to-geometric-curvature theorem;
 3. the exact classical algebraic BV--BFV identification and its natural
    infinite-index energy-mode Krein--Fock completion with closed residual
    operator;
-4. the interpretation as candidate physical states under full residual
+4. the reduced Lorentzian field Cauchy--Sobolev and Green-factor theorem;
+5. the interpretation as candidate physical states under full residual
    conformal gauging.
 
 ## Claim-status table
@@ -178,7 +185,7 @@ Four statements are kept separate throughout the manuscript:
 | `B_lin = C1^# C1` in the repository action convention | Exact on the conformally flat cylinder | Formal-adjoint factorization, not a positivity factorization |
 | `C1^# star C1 = 0` | Exact complex identity | Published four-dimensional deformation complex; repository script independently checks both signatures in its flat-symbol conventions |
 | `H_def^q(R x S3) = (g,0,0,g,0)` | Exact smooth global theorem | Flat BGG fine resolution, trivial adjoint local system, and ordinary cohomology of `S3`; not a machine-derived or completed-Hilbert theorem |
-| `ker B_lin / im K = Wgeom,+^sm + Wgeom,-^sm` | Exact smooth equivariant theorem | Uses global exactness, `B=C1^#C1`, and Lorentzian chirality; the separate energy-mode completion does not turn this into a covariant metric Sobolev theorem |
+| `ker B_lin / im K = Wgeom,+^sm + Wgeom,-^sm` | Exact smooth equivariant theorem | Uses global exactness, `B=C1^#C1`, and Lorentzian chirality; the later Cauchy theorem supplies the reduced completed field realization |
 | Algebraic `E/A/L` cylinder realization | Exact symbolic theorem | Full coordinate `C1 h` at symbolic `n`, nonzero pivots, Hodge chirality, `C1^#C1h=0`, parity, same-block metric preimages, and character exhaustion |
 | Polynomial detour quotient dimensions `10,40,82,136,202` | Exact for homogeneous degrees 2--6 | Euclidean finite jets only |
 | Raw polynomial metric-BV retract | Exact through the complete centered buffer | Includes ghost, metric, equation-antifield and identity-antifield rows; noncompact defects are explicitly homotopic, not zero |
@@ -202,9 +209,21 @@ Four statements are kept separate throughout the manuscript:
 | Bosonic Krein--Fock completion | Exact energy-mode theorem | `Gamma_s(J_1)` on the normalized symmetric Fock completion; algebraic Fock is dense |
 | Closed completed residual BRST operator | Exact maximal block theorem | Every total compact-degree block is finite; finite block support is a graph core; `Qbar` is closed and nilpotent |
 | Completed cohomology and range | Exact | Bounded `iota_D/delta` gives closed off-center range; the centered block is finite and unchanged, so completed `H4=C2` and `G=I2` |
+| Tensor/vector curl identities | Exact unit-cylinder theorem | `C2^2=-D^2+3` on TT tensors and `C1^2=-D^2+2` on transverse vectors, including constraint preservation and formal self-adjointness |
+| Reduced physical Green factorization | Exact Lorentzian cylinder theorem | `B_TT=[dt^2+(C2-1)^2][dt^2+(C2+1)^2]` and `P_A=dt^2+C1^2` |
+| Field origin of `E/A/L` | Exact all-energy theorem | Lower TT, non-Killing vector, and upper TT multiplicities agree block by block; the vector Killing band at energy two is excluded |
+| Branch symplectic residues | Exact reduced-action theorem | `R_E=R_L=4|C2|`, `R_A=2(A_A^2-4)`, with signs `+,-,-`; the vector residue has order two |
+| Cauchy--Sobolev/mode equivalence | Exact reduced one-particle theorem | `E,L: H1+L2`, `A: H3/2+H1/2`; normalized harmonic transform extends Krein-unitarily to the energy-mode completion |
+| Exact ghost biwave | Exact full-bundle cylinder theorem | `T K=Box(Box+2)` with two normally hyperbolic one-form factors; no CKV projector |
+| Auxiliary symbol witness and 66-to-30 Fourier SDR | Exact symbol theorem | Scalar metric tensor--tensor--vector and ghost symbols, a full four-row Fourier contraction with support-local formulas, and symbol-level formal adjoints |
+| Curved operator workstream | Exact partial covariant infrastructure, fail-closed | Covariant auxiliary action, exact curved `24 x 9` gauge map, cylinder curvature normal form, and quantitative jet ledger are certified; the expanded Hessian/companion, exact curved witness/adjoints, and complete globalization remain open |
+| Curved auxiliary canonical split | Exact partial local theorem, fail-closed | Nonlinear completion of the auxiliary square, local BV-canonical cotangent lift, universal shifted auxiliary SDR, and support preservation are certified; actual curved-`Q` conjugation and all-row retract identities remain open |
+| Curved current workstream | Exact action-level comparison, fail-closed | Fourier/action Green currents, the differential-inclusion chain-rule current, explicit Koszul improvement, and `E/A/L` regression are certified; full curved potentials, off-shell `d+Q`, Cauchy, and Green/current identities remain open |
+| Covariant final-claim dependency DAG | Exact fail-closed meta-certificate | Proved scaffold facts are true; `curved_operator_identity`, `curved_deformation_retract`, `curved_current_comparison`, and every dependent final claim remain false |
+| Curved auxiliary witness and covariant pairing | Open | No complete curved lower-order witness/retract/adjoint table, causal homotopies, or covariant/Cauchy pairing comparison is claimed; direct `H_- H_+` remains optional |
 | Descent to `C^2` and `C Ctilde` | Exact residual/local descent | Lorentzian `i` phase is convention-dependent |
 | Dynamical representative quotient `I1` | Exact locally | Pontryagin is only locally variationally trivial; global theta effects retained |
-| Full field-theoretic pure-Weyl local-plus-residual BV/BFV result | Conditional corollary | Requires identifying the certified algebraic polynomial cyclic complex with the complete chosen gauge-fixed field-theory BV domain, with no extra rows or domain effects |
+| Full field-theoretic pure-Weyl local-plus-residual algebraic BV/BFV result | Exact selected-category theorem | Minimal dictionary, gauge-fixed contraction, zero-mode suspension, polarized ledger and pairing transfer are certified; alternative boundary choices remain separate |
 | Physical-state interpretation | Choice-dependent | Requires a boundary/gauge principle that treats all 15 generators, including `D`, as gauge |
 | Quantum nilpotency, anomaly cancellation, interaction unitarity | Not claimed | Reserved for a separate quantum project |
 
@@ -240,6 +259,8 @@ Four statements are kept separate throughout the manuscript:
 | `verify_conformal_cyclic_hpl.py` | exact cyclic HPL isometry fixture |
 | `verify_conformal_vertex_descent.py` | weight-four state--operator descent and parity basis |
 | `verify_conformal_dynamical_topological.py` | Chern--Weil transgression and rank-one dynamical quotient |
+| `verify_conformal_covariant_factorization.py` | tensor/vector curl identities, local Lorentzian factors, branch projectors and exact `E/A/L` field dictionary |
+| `verify_conformal_cauchy_sobolev.py` | action-derived residues, exact Sobolev orders, raw graph space and Krein-unitary harmonic transform |
 
 ## Expected-failing guards
 
@@ -318,17 +339,19 @@ silently presented as machine outputs:
   sector;
 - integration of the common-core unbounded Lie-algebra representation to a
   global `SO(4,2)` representation;
-- equivalence between the certified energy-mode completion and a covariant
-  Lorentzian metric-field Sobolev or Green-hyperbolic complex;
+- the curved lower-order auxiliary witness/retract and adjoint table, its causal
+  homotopies, the complete covariant/Cauchy pairing comparison, and Hadamard
+  extension (the exact symbol witness and support-local retract are proved);
 - any quantum anomaly or interaction conclusion.
 
 ## Review focus
 
 The highest-value remaining referee questions are:
 
-1. Does a fully specified Lorentzian gauge-fixed metric Bach/BV complex have
-   a covariant Sobolev or Green-hyperbolic completion equivalent to the
-   certified energy-mode Krein completion?
+1. Does the exact auxiliary symbol witness globalize with the required
+   lower-order adjoints, and does its causal pairing agree with the fixed-time
+   and energy-mode forms on full BV cohomology?  Can the same result also be
+   obtained from an optional direct same-bundle Bach factorization?
 2. Is the degree-three adjoint BGG group exactly the dual BFV/Taub charge
    sector geometrically, independently of the direct Noether/Taub
    normalization already certified?

@@ -1,0 +1,25 @@
+{
+  "T": "Box delta-(1/3)d delta^2+(R/3)delta-Ric o delta+(1/3)d<Ric,h>",
+  "Tsharp": "-(1/2)K Box+(1/6)K d div-(R/6)K+(1/2)K Ric-(1/3)Ric_TF div",
+  "basic_adjoints": {
+    "Box_sharp": "Box",
+    "Ric_parallel": true,
+    "Ric_sharp": "Ric",
+    "d_sharp": "-div",
+    "delta_sharp": "-K/2"
+  },
+  "boundary_terms": "zero by compact spacetime support",
+  "consequences": [
+    "(TK)sharp=Ksharp Tsharp",
+    "(B+(1/2)KT)sharp=B+(1/2)Tsharp Ksharp"
+  ],
+  "machine_derivation": {
+    "composition_order_reversed": true,
+    "derived_terms_match_displayed_Tsharp": true,
+    "rational_coefficients_exact": true,
+    "term_count": 5
+  },
+  "pairing_convention": "<h,K xi>=<-2 delta h,xi>",
+  "schema": "pure-weyl-companion-formal-adjoint-v1",
+  "support_category": "compactly supported smooth cylinder sections"
+}

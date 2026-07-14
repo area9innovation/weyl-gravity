@@ -120,8 +120,18 @@ is finite-dimensional, and the bounded off-center Cartan homotopy proves
 closed range and localizes completed cohomology to the same finite centered
 block.  Consequently the completed cohomology and field-induced Gram matrix
 remain exactly the displayed $\C^2$ and $I_2$.  This is an energy-mode
-Krein--Fock theorem, not a covariant Sobolev or distributional theorem for
-metric fields.  We claim neither an integrated $SO(4,2)$ group
+Krein--Fock theorem.  At the reduced one-particle field level, tensor-curl
+factorization now gives a Lorentzian Cauchy--Sobolev realization
+Krein-unitarily equivalent to that completion.  An exact third-order gauge
+companion factors the full ghost row, and a support-local
+ordinary-derivative auxiliary realization supplies an exact four-row
+Fourier-symbol witness and $66$-to-$30$ Fourier-complex deformation retract
+with support-local formulas.  The curved lower-order witness/retract and
+integration-by-parts adjoint
+table, its causal Green homotopies, the full covariant/Cauchy pairing
+comparison, and a Hadamard theory remain open.  A direct same-bundle
+factorization of the gauge-completed Bach operator is optional.
+We claim neither an integrated $SO(4,2)$ group
 representation, a positive graviton Fock space, nor quantum anomaly freedom.
 \end{abstract}
 
@@ -159,8 +169,14 @@ all-energy cylinder construction identifies its algebraic positive-energy
 part with the $E/A/L$ module used below.  The passage to the complete
 selected algebraic local-plus-residual BV--BFV state complex is also proved
 below.  Its natural energy-mode Krein--Fock completion is proved as well.
-Covariant metric-field completions and alternative boundary polarizations
-remain separate problems.
+The reduced Lorentzian metric fields are then identified with that
+completion by a field-induced branch Cauchy--Sobolev theorem.  The auxiliary
+route now supplies an exact four-row symbol witness and a support-preserving
+all-row retract.  Its curved lower-order witness/adjoint table, causal
+homotopies, the complete covariant/Cauchy pairing comparison,
+distributional/Hadamard completion, and alternative boundary polarizations
+remain separate problems.  A direct same-bundle metric factorization is an
+optional strengthening.
 
 The present paper isolates that free classical problem on
 \begin{equation}
@@ -258,8 +274,16 @@ a unique boundary polarization.
 energy-mode Krein completion, its bosonic Fock completion is Krein, and the
 residual BRST operator has a closed maximal block realization.  The bounded
 Cartan contraction reduces its cohomology to the unchanged finite centered
-block.  This does not construct a covariant Sobolev completion of metric
-fields or integrate the unbounded Lie-algebra action to $SO(4,2)$.
+block.  This mode-space theorem alone does not construct the reduced field
+Cauchy realization below or integrate the unbounded Lie-algebra action to
+$SO(4,2)$.
+\item On the Lorentzian cylinder the tensor- and vector-curl identities give
+local normally hyperbolic factors for the reduced TT and transverse-vector
+operators.  The lower TT, vector, and upper TT branches are exactly the
+$E/A/L$ towers.  Their field-action residues determine a branch
+Cauchy--Sobolev space Krein-unitarily equivalent to the completed
+one-particle module.  This reduced theorem is not yet a Green's witness for
+the complete BV complex.
 \item Calling the resulting classes physical states additionally requires a
 boundary and gauge principle which makes all fifteen conformal generators,
 including $D$, gauge rather than global charges.  We call them
@@ -820,14 +844,234 @@ gives the displayed cohomology and Gram matrix.
 \end{proof}
 
 This theorem completes modes of the already-selected polarized Weyl state
-complex.  It does not identify spacelike-compact or distributional metric
-cohomology, construct Green operators, or prove equivalence with a covariant
-metric-field Sobolev topology.  Green-hyperbolic complexes and causal
-homotopies remain natural tools for that later problem
-\cite{BaerGreenHyperbolic,GreenHyperbolic}.  Nor does the theorem make the
-choice to gauge $D$
-universal: if $D$ is retained as a Hamiltonian or boundary charge, the
-Cartan contraction is not part of that physical complex.
+complex.  It does not by itself identify a metric-field Cauchy topology.
+That reduced one-particle comparison is supplied next.  The theorem still
+does not make the choice to gauge $D$ universal: if $D$ is retained as a
+Hamiltonian or boundary charge, the Cartan contraction is not part of that
+physical complex.
+
+\subsection{Lorentzian Cauchy--Sobolev realization}
+\label{sec:cauchy-sobolev}
+
+The energy-mode completion can now be reached directly from reduced metric
+fields on the Lorentzian cylinder.  Let $D_i$ denote the Levi--Civita
+connection of the unit $S^3$.  On transverse-traceless spatial tensors and
+transverse one-forms define
+\begin{equation}
+ (\mathcal C_2h)_{ij}=\epsilon_i{}^{kl}D_kh_{lj},
+ \qquad
+ (\mathcal C_1v)_i=\epsilon_i{}^{jk}D_jv_k.
+\end{equation}
+Exact constant-curvature index algebra gives
+\begin{equation}\label{eq:curl-squares}
+ \boxed{
+ \mathcal C_2^\dagger=\mathcal C_2,quad
+ \mathcal C_2^2=-D^2+3;
+ \qquad
+ \mathcal C_1^\dagger=\mathcal C_1,quad
+ \mathcal C_1^2=-D^2+2.}
+\end{equation}
+The tensor curl preserves symmetry, trace and divergence.  The curvature
+terms are fixed by
+$[D^n,D_i]h_{nj}=3h_{ij}$ and $[D^n,D_i]v_n=2v_i$ in our convention.
+
+Using \eqref{eq:curl-squares}, the Euclidean Weyl-graviton operator of
+Ref.~\cite{BeccariaBekaertTseytlin} continues to the local Lorentzian
+factorization
+\begin{equation}\label{eq:local-tt-factors}
+ \boxed{
+ B_{\rm TT}=P_-P_+,qquad
+ P_\pm=\partial_t^2+(\mathcal C_2\pm1)^2
+       =\partial_t^2-D^2+4\pm2\mathcal C_2.}
+\end{equation}
+Each factor has wave principal part and a first-order curl term.  A local
+extension to spatial two-tensors is normally hyperbolic, its TT subspace is
+reducing, and the restriction supplies the reduced TT Green operators.  The
+transverse-vector branch is
+\begin{equation}\label{eq:vector-wave-factor}
+ P_A=\partial_t^2+\mathcal C_1^2
+    =\partial_t^2-D^2+2,
+\end{equation}
+and is normally hyperbolic as well.  Closure of Green-hyperbolic operators
+under composition and direct sum then makes the reduced physical TT-plus-vector
+system Green hyperbolic \cite{BaerGreenHyperbolic}.  For
+$B_{\rm TT}=P_-\circ P_+$, the ordered Green operator is
+$G_{P_+}^{\pm}G_{P_-}^{\pm}$.
+
+The local factors interchange the two frequencies between tensor
+helicities.  For polarization define the nonlocal spectral operators
+\begin{equation}
+ A_E=|\mathcal C_2|-1,qquad
+ A_L=|\mathcal C_2|+1,qquad
+ A_A=|\mathcal C_1|.
+\end{equation}
+On a TT harmonic labelled by $r\ge0$, $|\mathcal C_2|=r+3$, so the
+frequencies are $r+2$ and $r+4$.  On the metric-derived vector branch
+$|\mathcal C_1|=r+2$ with $r\ge1$: the $r=0$ band consists of Killing
+vectors whose symmetrized gradient vanishes.  Hence the physical $A$ tower
+starts at energy three, not two.  At compact energy $N$ the exact
+parity-complete multiplicities are
+\begin{equation}\label{eq:field-eal-dictionary}
+ \boxed{
+ d_E(N)=2(N-1)(N+3),\quad
+ d_A(N)=2(N-1)(N+1),\quad
+ d_L(N)=2(N-3)(N+1),}
+\end{equation}
+on the respective ranges $N\ge2,3,4$.  Thus $E$, $A$, and $L$ are exactly
+the lower TT, non-Killing transverse-vector, and upper TT field branches,
+not merely character-matched modules.
+
+The equation factorization alone does not determine the topology.  The
+quadratic Weyl action does.  In the convention
+$S=-\alpha_g\int C^2$, $\alpha_g>0$, its TT Pais--Uhlenbeck and reduced
+vector symplectic forms give the positive residue magnitudes
+\begin{equation}\label{eq:branch-residues}
+ R_E=R_L=4|\mathcal C_2|,\qquad
+ R_A=2(A_A^2-4),
+\end{equation}
+with signs $(+,-,-)$.  In particular $R_A$ has elliptic order two, not
+zero.  The positive-frequency coordinate
+\begin{equation}
+ z_\alpha=\frac1{\sqrt2}
+ \left[(R_\alpha A_\alpha)^{1/2}q_\alpha
+ +i(R_\alpha A_\alpha^{-1})^{1/2}p_\alpha\right]
+\end{equation}
+therefore induces the Cauchy space
+\begin{equation}\label{eq:branch-sobolev-spaces}
+ \boxed{
+ (H^1_{\rm TT}\oplus L^2_{\rm TT})_E
+ \oplus(H^{3/2}_{\rm T}\oplus H^{1/2}_{\rm T})_A
+ \oplus(H^1_{\rm TT}\oplus L^2_{\rm TT})_L.}
+\end{equation}
+The normalized metric waves obey
+$2R_\alpha(N)N|N_\alpha|^2=1$ at every level.  Together with
+\eqref{eq:field-eal-dictionary}, this proves the following result.
+
+\begin{theorem}[Cylinder Cauchy--Sobolev realization]
+\label{thm:cauchy-sobolev}
+The positive-frequency harmonic transform from the reduced branch Cauchy
+space \eqref{eq:branch-sobolev-spaces} extends by density to a Krein-unitary
+isomorphism onto the one-particle energy-mode completion $\mathscr H_1$ of
+Section~\ref{sec:energy-mode-completion}.  It intertwines the field-induced
+signs with
+$\mathfrak J_1=+1_E\oplus(-1_A)\oplus(-1_L)$.
+The reduced TT Bach and vector operators are Green hyperbolic through
+\eqref{eq:local-tt-factors} and \eqref{eq:vector-wave-factor}.
+\end{theorem}
+
+For raw TT data $(h_0,h_1,h_2,h_3)$, branch extraction uses
+$(4|\mathcal C_2|)^{-1}$ and defines a mixed pullback graph norm.  We do not
+replace it by an unsupported product-Sobolev norm.
+
+\subsection{Exact ghost companion, auxiliary symbol witness, and local retract}
+\label{sec:auxiliary-green-witness}
+
+Theorem~\ref{thm:cauchy-sobolev} concerns the reduced physical branches.
+The all-degree symbol statement and local BV equivalence are obtained through
+an ordinary-derivative realization.  On the complete trace-free metric bundle
+define
+\begin{equation}\label{eq:exact-gauge-companion}
+ T=\Box\delta-\frac13d\delta^2+\frac R3\delta
+ -\operatorname{Ric}\circ\delta
+ +\frac13d\langle\operatorname{Ric},h\rangle .
+\end{equation}
+Exhaustive finite-order jet algebra on the homogeneous cylinder gives the
+global natural-operator identities
+\begin{equation}\label{eq:exact-ghost-biwave}
+ \boxed{TK=\Box(\Box+2),\qquad B_{\rm lin}K=0.}
+\end{equation}
+The first operator factors as
+$(\Box-\operatorname{Ric}+2)(\Box+\operatorname{Ric})$, since
+$\nabla\operatorname{Ric}=0$ and $\operatorname{Ric}^2=2\operatorname{Ric}$.
+Both factors are normally hyperbolic.  If
+$H=B_{\rm lin}+\frac12KT$, then
+$HK=\frac12K\Box(\Box+2)$ follows formally.  With the action normalization,
+the graded self-adjoint witness blocks are
+$(T,2\sharp^{-1},T^\sharp)$, so the actual field block of $QW+WQ$ is
+$2H=2B_{\rm lin}+KT$.
+
+A direct product of $H$ on every component of $S^2_0T^*M$ has not been
+certified.  The local fallback instead uses the ordinary-derivative
+conformal-gravity action of Ref.~\cite{MetsaevOrdinaryDerivative}, with
+fields $(h_{ab},f_{ab},v_a)$.  Its modified de Donder conditions obey
+\begin{equation}
+ \delta C_{0a}=\Box\xi_{-2,a}-\xi_{0,a},\qquad
+ \delta C_{2a}=\Box\xi_{0,a},\qquad
+ \delta C_1=\Box\sigma .
+\end{equation}
+Thus the combined ghost principal symbol is
+$g^{\mu\nu}\zeta_\mu\zeta_\nu I_9$.  The gauge-fixed field Hessian has
+principal symbol $g^{\mu\nu}\zeta_\mu\zeta_\nu J_{\rm aux}$ with a
+nondegenerate $24$-dimensional fibre form.  More precisely, direct
+reconstruction of the quadratic ordinary-derivative Hessian and the
+modified de Donder companion gives
+\begin{equation}
+ E_{\rm aux}(-\zeta)^T=E_{\rm aux}(\zeta),\qquad
+ E_{\rm aux}K_{\rm aux}=0,\qquad
+ Y_{\rm gh}C_{\rm aux}(\zeta)
+   =K_{\rm aux}(-\zeta)^TJ_{\rm aux}.
+\end{equation}
+The gauge-fixing density is
+$-C_0\mathbin{\cdot}C_2-C_1^2/2$, and hence the exact witness field block
+is
+\begin{equation}
+ P_{\rm field}=J_{\rm aux}^{-1}E_{\rm aux}
+                 +K_{\rm aux}C_{\rm aux},qquad
+ \sigma_2(P_{\rm field})
+   =g^{\mu\nu}\zeta_\mu\zeta_\nu I_{24}.
+\end{equation}
+Thus fibre identification gives the scalar metric principal symbol required
+for a normally hyperbolic system; the normalization and symbol-level adjoint
+relation are fixed by the action rather than inferred from ranks or harmonic
+data.  The complete curved first- and zeroth-order coefficient table and its
+integration-by-parts adjoint remain a separate certificate.
+
+The unipotent local change
+\begin{equation}
+ \eta=\xi_0-d\sigma,\qquad
+ \widehat f=f+2d_{(a}v_{b)}
+\end{equation}
+isolates $Qv=-\eta$.  The remaining auxiliary equation is pointwise
+invertible,
+\begin{equation}
+ \widehat f_{ab}=-2G^v_{ab}+\frac23g_{ab}\operatorname{tr}G^v,
+\end{equation}
+and substitution gives $\operatorname{Ric}^2-R^2/3$ in the $v=0$ gauge.
+The changes, their inverses, and this elimination preserve support.
+
+\begin{proposition}[Auxiliary symbol witness and Fourier-complex SDR]
+\label{thm:auxiliary-green-witness}
+The ordinary-derivative tensor--tensor--vector BV complex on the Lorentzian
+conformal cylinder has an exact $66$-to-$30$ contraction at the four-row
+Fourier-complex level.  In that realization the identities
+$Q^2=0$, $QW_{\rm aux}+W_{\rm aux}Q=P_{\rm aux}$ and
+$W_{\rm aux}^{\sharp}=W_{\rm aux}$ are exact matrix identities, and every
+diagonal block has scalar metric principal symbol.  A finite differential
+change of variables and pointwise auxiliary inverse split off the complete
+Stueckelberg, auxiliary, and cotangent sector, with explicit maps satisfying
+$ip-1=Qk+kQ$.  Their formulas are finite differential or pointwise maps and
+therefore preserve compact, spacelike-compact, and unrestricted smooth
+support.  The complete curved lower-order chain-map identities remain part
+of the global witness certificate.
+The trace/Weyl and nonminimal doublets attach as pointwise
+support-preserving contractible summands.  No local conformal-Killing
+projector is used.
+\end{proposition}
+
+Once the remaining curved lower-order witness certificate is supplied,
+normal hyperbolicity gives unique $G_\pm$ and the general recognition
+identity gives
+\begin{equation}
+ \Lambda_\pm=W_{\rm aux}G_\pm,\qquad
+ Q\Lambda_\pm+\Lambda_\pm Q=1.
+\end{equation}
+This consequence is not asserted as completed by the symbol proposition.
+
+This implements the auxiliary option rather than claiming a direct
+factorization of $H$.  The known obstruction to factorizing the
+gauge-invariant spin-two conformal operator away from Einstein backgrounds
+is relevant context \cite{NutmaTaronna}, but is not used as a no-go theorem
+for the gauge-completed $H$.
 
 \section{The on-shell Weyl module}\label{sec:weyl-module}
 
@@ -2543,7 +2787,7 @@ parity-odd class is a theta direction, locally related by a canonical
 boundary transformation.  The positive dynamical quotient is therefore
 one-dimensional.
 
-\paragraph{The algebraic bridge, energy completion, and covariant boundary.}
+\paragraph{Bridge, completion, and covariant boundary.}
 The all-level smooth metric-to-$\mathcal W_{\rm geom}$ identification and
 the algebraic $E/A/L$ curvature intertwiner are exact.  The raw polynomial
 metric-BV complex now supplies its explicit ghost and antifield detour rows,
@@ -2565,10 +2809,15 @@ The direct Taub comparison does not require first identifying a
 degree-three BGG representative, although that geometric comparison remains
 valuable.  The normalized energy modes now have the Krein--Fock completion
 of Theorem~\ref{thm:energy-mode-completion}, with closed residual operator,
-closed range, and unchanged $H^4$.  Extension of the metric-field complex to
-a covariant Sobolev, distributional, or Green-hyperbolic category remains a
-separate analytic question, as does uniqueness among boundary or
-deparametrized polarizations.  The exact ranks in
+closed range, and unchanged $H^4$.  The reduced Lorentzian metric fields
+have the Cauchy--Sobolev realization of
+Theorem~\ref{thm:cauchy-sobolev}, while
+Proposition~\ref{thm:auxiliary-green-witness} supplies the all-degree symbol
+witness and Fourier-complex BV retract.  The curved lower-order
+witness/retract/adjoint identities, their causal homotopies, the full covariant/Cauchy
+pairing comparison, Hadamard completion, and
+uniqueness among boundary or deparametrized polarizations remain separate
+analytic questions.  The exact ranks in
 Table~\ref{tab:detour-ranks} remain independent convention and regression
 checks.
 
@@ -2608,9 +2857,16 @@ field-induced form on the two residual vertex classes.  This remains a
 choice-dependent classical state theorem, not a positive graviton Hilbert
 space.  The energy-mode Krein--Fock completion and closed residual operator
 of Theorem~\ref{thm:energy-mode-completion} leave the finite centered result
-unchanged.  Covariant metric-field completion, alternative boundary
+unchanged.  The auxiliary all-degree symbol witness and support-local retract
+are now exact, while the curved lower-order witness/retract and causal homotopies,
+complete covariant/Cauchy pairing comparison, alternative boundary
 polarizations, quantum consistency, and interaction descent are separate
-questions.
+questions.  At the reduced one-particle level, however,
+Theorem~\ref{thm:cauchy-sobolev} now identifies the field Cauchy space with
+the energy-mode Krein module and proves Green hyperbolicity of its TT and
+vector propagation blocks.  The remaining covariant steps are the curved
+auxiliary Green theorem, pairing comparison, and distributional completion.
+A direct same-bundle metric factorization remains optional.
 
 \appendix
 
@@ -2686,22 +2942,25 @@ command lines.  The complete paper verification is run with
 python3 symbolic/verify_conformal_paper_free.py
 \end{verbatim}
 
-\begin{center}
-\scriptsize
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.25\textwidth}
+{\scriptsize
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.25\textwidth}
                 >{\raggedright\arraybackslash}p{0.17\textwidth}
                 >{\raggedright\arraybackslash}p{0.48\textwidth}}
 \toprule
 Claim & Status & Evidence / boundary\\
 \midrule
+\endfirsthead
+\toprule
+Claim & Status & Evidence / boundary\\
+\midrule
+\endhead
 Formal pure-Weyl detour identities & Exact & Branson--Gover theorem plus
 action-normalized factorization and finite scalar-block audits.\\
 Global smooth deformation cohomology and curvature isomorphism & Exact
 smooth theorem & The flat BGG fine resolution and
 $H^\bullet(\R\times S^3)$ give $H^1_{\rm def}=H^2_{\rm def}=0$ and hence
 \eqref{eq:curvature-isomorphism}.  This smooth theorem does not itself
-establish the energy-mode completion or a covariant metric Sobolev
-isomorphism.\\
+establish the later energy-mode or field Cauchy completions.\\
 Euclidean polynomial detour ranks, degrees $2$--$6$ & Exact finite
 certificate & Rational matrices verify kernels, ranks, and the $15$ residual
 zero modes; they are an independent convention audit rather than the source
@@ -2755,19 +3014,28 @@ Energy-mode one-particle/Fock Krein completion & Exact & The normalized
 $E/A/L$ basis gives an infinite-index Krein space, $\Gamma_s(\mathfrak J_1)$
 gives the bosonic Fock fundamental symmetry, and weighted-shift domains give
 closed Krein-adjoint conformal generators on a common core.\\
-Covariant or alternative-boundary BV--BFV realization & Not claimed & The
-energy-mode theorem does not establish a metric-field Sobolev or
-distributional complex, Green-hyperbolic equivalence, group exponentiation,
-or uniqueness among boundary, clock, asymptotic, or deparametrized
-polarizations.\\
+Reduced Lorentzian Cauchy--Sobolev realization & Exact cylinder theorem &
+Tensor/vector curl factorization, action-derived residues, exact $E/A/L$
+multiplicities, and normalized harmonics give
+\eqref{eq:branch-sobolev-spaces} and a Krein-unitary map to the energy-mode
+one-particle completion.  The physical TT and vector blocks are Green
+hyperbolic.\\
+Auxiliary symbol witness and $66$-to-$30$ Fourier SDR & Exact cylinder
+symbol theorem & The exact ghost biwave, scalar metric auxiliary
+symbols, support-local Stueckelberg/auxiliary reduction, and symbol-level
+formal adjoints are certified.\\
+Curved auxiliary witness/covariant-pairing completion & Open & No complete
+curved lower-order witness/adjoint table, causal Green homotopies,
+covariant/Cauchy pairing identification, Hadamard theorem, group
+exponentiation, or uniqueness among
+boundary, clock, asymptotic, or deparametrized polarizations is established.\\
 Interpretation as a physical state space & Choice-dependent & Requires a
 boundary and gauge principle that treats all fifteen generators, including
 $D$, as gauge rather than global charges.\\
 Quantum anomaly freedom and interacting probability & Not claimed & Outside
 the scope of this paper.\\
 \bottomrule
-\end{tabular}
-\end{center}
+\end{longtable}}
 
 \begin{thebibliography}{99}
 
@@ -2864,6 +3132,18 @@ M.~Beccaria, X.~Bekaert, and A.~A.~Tseytlin,
 ``Partition function of free conformal higher spin theory,''
 JHEP \textbf{08} (2014) 113,
 \href{https://arxiv.org/abs/1406.3542}{arXiv:1406.3542}.
+
+\bibitem{MetsaevOrdinaryDerivative}
+R.~R.~Metsaev,
+``Ordinary-derivative formulation of conformal low-spin fields,''
+JHEP \textbf{01} (2008) 064,
+\href{https://arxiv.org/abs/0707.4437}{arXiv:0707.4437}.
+
+\bibitem{NutmaTaronna}
+T.~Nutma and M.~Taronna,
+``On conformal higher spin wave operators,''
+JHEP \textbf{06} (2014) 066,
+\href{https://arxiv.org/abs/1404.7452}{arXiv:1404.7452}.
 
 \bibitem{BoulangerHenneaux}
 N.~Boulanger and M.~Henneaux,

@@ -32,7 +32,12 @@ def dependencies() -> tuple[Path, ...]:
         ROOT / "symbolic" / "conformal-paper-requirements.txt",
         Path(__file__).resolve(),
     }
-    for directory in ("bridge", "field_bv_identification", "analytic_completion"):
+    for directory in (
+        "bridge",
+        "field_bv_identification",
+        "analytic_completion",
+        "covariant_completion",
+    ):
         for path in (ROOT / directory).rglob("*"):
             if path.is_file() and path.suffix in ALLOWED_SUFFIXES and "__pycache__" not in path.parts:
                 files.add(path)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit the programme introduction after the classical BV--BFV closure.
+"""Audit the programme introduction after BV--BFV and reduced Cauchy closure.
 
 The audit has four jobs:
 
@@ -49,6 +49,8 @@ REQUIRED_SNIPPETS = {
     "field Gram matrix": r"G_{\rm res}=I_2",
     "infinite-index completion": r"infinite-index Krein space $\mathscr H_1$",
     "closed completed differential": r"closed densely defined residual differential $\overline Q$",
+    "reduced Cauchy spaces":
+        r"(H^1_{\rm TT}\oplus L^2_{\rm TT})_E",
     "status table": r"\label{tab:programme-status}",
     "solid theorem-chain diagram": r"\label{fig:pure-weyl-chain}",
     "historical gap closed": r"That historical gap is now closed",
@@ -78,7 +80,10 @@ REQUIRED_STATUS_ROWS = (
     "Field-induced Gram matrix $I_2$ & Proved",
     "Energy-mode one-particle/Fock Krein completion & Proved",
     "Closed residual BRST and completed $H^4$ & Proved",
-    "Covariant metric-field Sobolev/distributional completion & Open",
+    "Reduced Lorentzian tensor/vector Green factorization & Proved",
+    "Field-induced branch Cauchy--Sobolev realization & Proved",
+    "Auxiliary symbol witness and $66$-to-$30$ Fourier SDR & Proved",
+    "Curved auxiliary witness/covariant pairing/Hadamard completion & Open",
     "Nonlinear stability & Open",
     "Quantum master equation/anomalies & Open",
     "Quantum survival of the two classes & Open",
@@ -176,6 +181,62 @@ OVERCLAIM_RULES = (
             re.IGNORECASE,
         ),
         "The theorem constructs a Green-hyperbolic completion.",
+    ),
+    (
+        "curved-auxiliary-green-witness",
+        re.compile(
+            r"(?:the )?(?:ordinary-derivative )?auxiliary (?:realization|complex) "
+            r"(?:now )?(?:supplies|gives|admits|proves) (?:a |the )?"
+            r"(?:complete )?(?:local )?(?:all-degree )?(?:bv )?green(?:'s)? witness",
+            re.IGNORECASE,
+        ),
+        "The auxiliary realization now supplies a complete all-degree BV Green witness.",
+    ),
+    (
+        "auxiliary-causal-homotopies",
+        re.compile(
+            r"(?:the )?(?:formally self-adjoint )?(?:auxiliary )?witness "
+            r"(?:supplies|gives|constructs) retarded and advanced green homotopies",
+            re.IGNORECASE,
+        ),
+        "The auxiliary witness supplies retarded and advanced Green homotopies.",
+    ),
+    (
+        "auxiliary-causal-quasi-isomorphism",
+        re.compile(
+            r"(?:the )?(?:ordinary-derivative )?auxiliary (?:realization|complex) "
+            r"is causally quasi-isomorphic",
+            re.IGNORECASE,
+        ),
+        "The auxiliary realization is causally quasi-isomorphic to the metric complex.",
+    ),
+    (
+        "direct-same-bundle-factorization",
+        re.compile(
+            r"(?:the|this|our) (?:result|theorem) (?:proves|establishes|constructs) "
+            r"(?:a |the )?direct same[- ]bundle (?:bach |metric )?factorization",
+            re.IGNORECASE,
+        ),
+        "The theorem proves a direct same-bundle Bach factorization.",
+    ),
+    (
+        "local-tt-projector",
+        re.compile(r"(?:the )?tt projector is local", re.IGNORECASE),
+        "The TT projector is local.",
+    ),
+    (
+        "local-el-split",
+        re.compile(r"(?:the )?(?:e/l|e--l) (?:branch )?split is local", re.IGNORECASE),
+        "The E/L branch split is local.",
+    ),
+    (
+        "raw-product-sobolev",
+        re.compile(
+            r"(?:the )?raw (?:fourth-order |bach )?(?:cauchy )?data (?:has|have|carry|carries) "
+            r"(?:a |the )?(?:standard )?product sobolev norm",
+            re.IGNORECASE,
+        ),
+        "The raw Bach Cauchy data carry a standard product Sobolev norm.",
     ),
     (
         "hadamard-state",

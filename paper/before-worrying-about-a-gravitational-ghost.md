@@ -256,13 +256,17 @@ Neither question replaces the other.
 
 ## What has not been proved
 
-The completed result is classical, free and algebraic. It concerns finite
-combinations of definite cylinder-energy modes in a specified closed-universe
-polarization.
+The core result is classical and free. It began with finite combinations of
+definite cylinder-energy modes in a specified closed-universe polarization.
+That mode space has now also been completed to allow controlled infinite
+energy-mode sums, without changing the two surviving classes. The reduced
+field equations have a matching fixed-time wave description.
 
 It does not yet provide:
 
-- a completed Hilbert or Krein space containing infinite mode sums;
+- a fully covariant completion of the entire gauge-field complex, including
+  all causal Green operators and their pairing;
+- a general distributional or Hadamard-state construction;
 - a proof that the construction survives nonlinear gravitational evolution;
 - a solution of the quantum master equation;
 - cancellation of quantum Weyl or gravitational anomalies;
@@ -284,8 +288,9 @@ The classical chain is now complete in its stated domain:
 
 The frontier has moved.
 
-The next challenge is to determine whether this structure can be completed
-analytically, extended nonlinearly and preserved by quantum renormalization.
+The next challenge is to finish the covariant analytic bridge, extend the
+structure nonlinearly and determine whether it survives quantum
+renormalization.
 
 The central question is now:
 

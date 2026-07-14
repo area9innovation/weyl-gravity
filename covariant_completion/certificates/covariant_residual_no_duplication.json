@@ -1,0 +1,93 @@
+{
+  "arrows": [
+    {
+      "map": "Gamma_c(C_aux)[1] -> Gamma_sc(C_aux)=Gamma(C_aux)",
+      "name": "causal",
+      "requires": [
+        "curved_operator_identity"
+      ],
+      "status": false
+    },
+    {
+      "map": "Gamma(C_aux) -> Gamma(C_met)",
+      "name": "auxiliary_elimination",
+      "requires": [
+        "curved_deformation_retract"
+      ],
+      "status": false
+    },
+    {
+      "map": "Gamma(C_met) -> C_Sigma -> K_energy",
+      "name": "Cauchy_and_polarization",
+      "requires": [
+        "certified reduced Cauchy-Sobolev and polarization theorems"
+      ],
+      "status": true
+    },
+    {
+      "map": "K_energy -> C_BFV,res",
+      "name": "residual",
+      "requires": [
+        "CKV_recovery",
+        "residual_no_duplication"
+      ],
+      "status": false
+    }
+  ],
+  "guard": "the displayed result is not promoted until every terminal-gate dependency is true",
+  "independent_inputs": {
+    "energy_H4_is_C2": true,
+    "energy_gram_is_I2": true
+  },
+  "method": "transport through pairing-compatible quasi-isomorphisms; no auxiliary H4 recomputation",
+  "schema": "pure-weyl-final-covariant-transport-status-v1",
+  "selected_claim": "residual_no_duplication",
+  "status": false,
+  "terminal_gate": {
+    "blocking_dependencies": [
+      "curved_hessian_expanded",
+      "curved_companion_expanded",
+      "curved_Q_nilpotency",
+      "curved_witness_identity",
+      "curved_formal_adjointness",
+      "curved_globalization_coverage",
+      "curved_metric_to_aux_chain_map",
+      "curved_aux_to_metric_chain_map",
+      "curved_retract_identity",
+      "curved_Q_conjugation",
+      "curved_all_BV_rows",
+      "curved_auxiliary_presymplectic_potential",
+      "curved_metric_presymplectic_potential",
+      "curved_green_current",
+      "curved_cauchy_boundary_current",
+      "curved_auxiliary_metric_current_identity"
+    ],
+    "requires": [
+      "curved_operator_identity",
+      "curved_deformation_retract",
+      "curved_current_comparison",
+      "causal_quasi_isomorphism",
+      "CKV_recovery",
+      "residual_no_duplication",
+      "energy_H4_is_C2",
+      "energy_gram_is_I2"
+    ],
+    "status": false
+  },
+  "transported_result_when_gate_passes": {
+    "Gram": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "H4": [
+      "W_+^2",
+      "W_-^2"
+    ]
+  }
+}

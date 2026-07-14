@@ -1,0 +1,88 @@
+{
+  "actual_curved_Q_conjugation_verified": false,
+  "auxiliary_eom_shift": {
+    "dimension": 4,
+    "eliminated_density": "<G^b,G^b>-(tr_g G^b)^2/3",
+    "exact_completion_of_square": true,
+    "mass_bundle_map": "A_g(phi)=-1/2(phi-g tr_g(phi))",
+    "nonlinear_shift": "phi_hat=phi-A_g^{-1}G^b(g,b)",
+    "pointwise_inverse": "A_g^{-1}(s)=-2s+(2/3)g tr_g(s)",
+    "pointwise_mass_inverse_exact": true,
+    "schema": "pure-weyl-curved-auxiliary-eom-shift-v1",
+    "sha256": {
+      "inverse_mass_image": "50e9a99d292b405472f6683b35daff6d2cfddc92556969b7dee1965a5779dbc7",
+      "mass_image": "50e567ea71273f4d3280635915ab03f0192bf092f8137538f8282a01de3dc5dd",
+      "original_density": "02af3566a29db175f4645d929b2182a38a76354300b0379c4ee544085e163d34",
+      "split_density": "02af3566a29db175f4645d929b2182a38a76354300b0379c4ee544085e163d34"
+    },
+    "source_action_auxiliary_density": "1/2 <phi,A_g phi>-<phi,G^b(g,b)>",
+    "tangent_differential_orders": {
+      "auxiliary_mass_inverse": 0,
+      "h": 2,
+      "v": 1
+    },
+    "tangent_shift": "f_hat=f-D[A_g^{-1}G^b]_(gbar,bbar)(h,v)",
+    "theorem_boundary": "the natural nonlinear auxiliary shift and its tangent are exact; the explicit curved four-row Q conjugation remains a separate check",
+    "uses_green_operator": false,
+    "uses_nonlocal_projector": false
+  },
+  "canonical_lift": {
+    "Fourier_regression": {
+      "field_change_sha256": "ab0b7fd1e1f737d36e8952a096f0057769eb877643362dfd2987596eba35af7a",
+      "field_pairing_defect": "zero",
+      "full_field_dimension": 24,
+      "full_ghost_dimension": 9,
+      "ghost_change_sha256": "9e15e15f6342bad3c0ca91c6a9d4f83fc806cf456531292cbddcb368adaf4402",
+      "ghost_pairing_defect": "zero"
+    },
+    "all_cotangent_rows_generated_together": true,
+    "curved_Q_conjugation_verified": false,
+    "induced_antifields": {
+      "metric_and_vector": "old cotangents equal new cotangents minus the formal Frechet adjoints of D(A_g^{-1}G^b) applied to phi_hat^*",
+      "sigma_star": "sigma_new_star-d^sharp eta_star (graded convention)",
+      "xi_0_star": "eta_star"
+    },
+    "local_BV_cotangent_lift_is_canonical": true,
+    "new_fields": {
+      "eta": "xi_0-d sigma",
+      "phi_hat": "phi-A_g^{-1}G^b(g,b)"
+    },
+    "reason": "the transformation is defined by a local type-II generating functional; its cotangent rows use formal adjoints",
+    "schema": "pure-weyl-local-bv-canonical-auxiliary-shift-v1",
+    "theorem_boundary": "canonicality of the local shift is exact, but canonicality alone does not prove that the un-emitted curved Q becomes block split",
+    "type_II_generating_functional": "F_shift=int[<h_new^*,h>+<v_new^*,v>+<phi_hat_new^*,phi-A_g^{-1}G^b(g,b)>+<eta_new^*,xi_0-d sigma>+<sigma_new^*,sigma>+...]"
+  },
+  "curved_deformation_retract": false,
+  "proved": {
+    "exact_curved_completion_of_square": true,
+    "local_BV_cotangent_lift_is_canonical": true,
+    "universal_all_row_auxiliary_contraction": true
+  },
+  "schema": "pure-weyl-curved-auxiliary-canonical-split-v1",
+  "universal_generalized_auxiliary_split": {
+    "actual_curved_Q_identified_with_split_model": false,
+    "all_rows": [
+      {
+        "arrow": "eta -> -v",
+        "rank": 4
+      },
+      {
+        "arrow": "phi_hat -> A_g phi_hat^*",
+        "rank": 10
+      },
+      {
+        "arrow": "v^* -> -eta^*",
+        "rank": 4
+      }
+    ],
+    "contractible": true,
+    "differential_sha256": "438e949785ac9ac40ff29aa1e37087240c19aebc5809c36079a5d720aae62c56",
+    "dimension": 36,
+    "homotopy_sha256": "2c27810fdf9f6f094a922ec0c27e2a24f166bae283648e59dcd680e2231cd336",
+    "nilpotency": "q_genaux^2=0",
+    "pointwise_after_shift": true,
+    "schema": "pure-weyl-universal-curved-generalized-auxiliary-split-v1",
+    "selected_sign_convention": "q_genaux k+k q_genaux=-identity",
+    "theorem_boundary": "the universal post-shift summand contracts exactly; the explicit curved Q conjugation is still required before this becomes the curved deformation retract"
+  }
+}

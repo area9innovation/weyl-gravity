@@ -1,0 +1,89 @@
+{
+  "category": "exact cylinder Fourier-symbol algebra; the retract formulas are finite differential or pointwise support-local maps",
+  "degreewise_operators": {
+    "antifield": {
+      "curved_global_operator_verified": false,
+      "operator": "field block sharp",
+      "wave_principal_symbol_verified": true
+    },
+    "field": {
+      "curved_global_operator_verified": false,
+      "normalized_principal_symbol": "zeta^2 I_24",
+      "operator": "J_aux^{-1}E_aux+K_aux C_aux",
+      "wave_principal_symbol_verified": true
+    },
+    "ghost": {
+      "curved_global_operator_verified": false,
+      "normalized_principal_symbol": "zeta^2 I_9",
+      "operator": "C_aux K_aux",
+      "wave_principal_symbol_verified": true
+    },
+    "identity_antifield": {
+      "curved_global_operator_verified": false,
+      "operator": "ghost block sharp",
+      "wave_principal_symbol_verified": true
+    }
+  },
+  "exact_symbol_checks": {
+    "QW_plus_WQ": "P_aux",
+    "Q_squared": "zero",
+    "companion_adjoint": "Y C(zeta)=K(-zeta)^T J_aux",
+    "field_block": "J_aux^{-1}E_aux+K_aux C_aux"
+  },
+  "formal_self_adjointness": {
+    "W_aux_sharp_equals_W_aux_at_symbol_level": true,
+    "antifield_symbol_blocks_are_formal_adjoints": true,
+    "curved_integration_by_parts_check": false,
+    "field_hessian_symbol_formally_self_adjoint": true,
+    "symbol_convention": "A^sharp(zeta)=Pairing^{-1}A(-zeta)^T Pairing"
+  },
+  "fourier_complex_deformation_retract": {
+    "all_row_sdr": "66-to-30 chain maps and i p-1=Q k+k Q on the 36-dimensional added cotangent sector",
+    "auxiliary_tensor": "exact equation-of-motion shift followed by the pointwise-invertible mass block",
+    "compact_support": true,
+    "physical_green_recovery_after_A": "once curved Green operators exist, their h-h Schur block is the fourth-order pure-Weyl Green operator in the selected gauge",
+    "spacelike_compact_support": true,
+    "stueckelberg_pair": "Qv=-eta with support-preserving homotopy"
+  },
+  "global_ckv_guard": "no conformal-Killing projector enters a local operator; the fifteen non-compactly-supported smooth modes remain global cohomology and are reattached once through the certified residual BFV sector",
+  "green_homotopies": {
+    "definition": "Lambda_plus/minus=W_aux G_plus/minus",
+    "derivation": [
+      "Q^2=0 implies [Q,P]=0 for P=QW+WQ",
+      "uniqueness gives [Q,G_plus/minus]=0",
+      "(QW+WQ)G_plus/minus=P G_plus/minus=1",
+      "W is differential and therefore does not enlarge support"
+    ],
+    "identity": "Q Lambda_plus/minus+Lambda_plus/minus Q=1 on Gamma_c",
+    "status": "exact recognition identity, conditional on curved G_plus/minus",
+    "support": "supp Lambda_plus/minus f subset J_plus/minus(supp f)"
+  },
+  "green_operators": {
+    "commutation": "Q_aux G_plus/minus=G_plus/minus Q_aux",
+    "existence_if_A_passes": "unique G_plus and G_minus for every degreewise normally hyperbolic curved operator on the globally hyperbolic cylinder",
+    "reason": "[Q_aux,P_aux]=0 and uniqueness of causal Green operators",
+    "status": "formal consequence after curved globalization certificate A"
+  },
+  "identity": "P_aux=Q_aux W_aux+W_aux Q_aux",
+  "matrix_sha256": {
+    "BV_pairing": "fad1e80e6141b9b113b8477861b653ad55bd44c5d2316e75fc0985b9571b5334",
+    "P_aux": "f44f45e04dd3eda78dde97905a495f374b0489bf6f8f3c9e08590d1573a322c1",
+    "Q_aux": "87934e7cf079f90af089a57665862500467677003eedec7625328c36802c58c4",
+    "W_aux": "fcdd5e777f6e5d616b012004f4faca7a27fd88ea655978e9d9db999103dd4fd1"
+  },
+  "realization": "ordinary-derivative h--f--v BV Fourier complex with an exact 66-to-30 SDR; its formulas are support local",
+  "schema": "pure-weyl-auxiliary-symbol-green-witness-v3",
+  "theorem_boundary": "this establishes the exact four-row auxiliary symbol witness and 66-to-30 Fourier SDR with support-local formulas.  It does not assert the still-missing curved lower-coefficient/retract/adjoint certificate, a direct same-bundle factorization of B+KT/2, or covariant/Cauchy pairing normalization",
+  "trace_and_nonminimal_reattachment": {
+    "diff_antighost_multiplier_and_dual": "pointwise contractible P=I blocks",
+    "retarded_equals_advanced_on_algebraic_blocks": true,
+    "support_unchanged": true,
+    "trace_weyl_doublet": "pointwise contractible P=I block",
+    "weyl_antighost_multiplier_and_dual": "pointwise contractible P=I blocks"
+  },
+  "witness_blocks": {
+    "E_to_M": "J_aux^{-1}",
+    "I_to_E": "C_aux^sharp",
+    "M_to_G": "C_aux (modified de Donder companion)"
+  }
+}

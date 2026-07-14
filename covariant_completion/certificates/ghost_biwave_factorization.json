@@ -1,0 +1,34 @@
+{
+  "category": "natural differential operators on R x S3",
+  "companion": "T=Box delta-(1/3)d delta^2+(R/3)delta-Ric o delta+(1/3)d<Ric,h>",
+  "conformal_killing_modes": "retained as global smooth cohomology; no nonlocal projector enters the local factors",
+  "exact_identity": "T K=Box(Box+2) I_G",
+  "factorization": {
+    "R_minus": "Box-Ric+2",
+    "R_plus": "Box+Ric",
+    "normally_hyperbolic_factors": true,
+    "product": "R_minus R_plus=Box(Box+2) I_G",
+    "reason": "nabla Ric=0 and Ric^2=2 Ric"
+  },
+  "jet_test": {
+    "base_point": "t=0, stereographic spatial origin",
+    "exhaustive": true,
+    "globalization": "R x SO(4) homogeneity and tensorial naturality",
+    "homogeneous_operator_coefficients": true,
+    "input_components": 4,
+    "isotropy_covariance_exhausted": true,
+    "jet_basis_spans_every_component": true,
+    "maximum_order": 4,
+    "multiindices_per_component": 70,
+    "not_a_harmonic_cutoff": true,
+    "parallel_background_curvature": true
+  },
+  "schema": "pure-weyl-cylinder-ghost-curvature-completion-v1",
+  "scope_guard": "this proves the exact ghost-row factorization only; the full trace-free metric factor B+K T/2 and the graded witness remain separate obligations",
+  "solved_parallel_curvature_coefficients": {
+    "R_delta": "1/3",
+    "Ric_delta": "-1",
+    "Ric_derivative_cross": "0",
+    "d_Ric_trace": "1/3"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "background": "Lorentzian conformal cylinder",
+  "field_content": {
+    "f_auxiliary_symmetric": 10,
+    "h_symmetric": 10,
+    "v_stueckelberg_covector": 4
+  },
+  "field_operator": {
+    "action_hessian_formally_self_adjoint": "E(-zeta)^T=E(zeta)",
+    "action_hessian_times_gauge_map": "zero",
+    "companion_adjoint_identity": "Y_ghost C(zeta)=K(-zeta)^T J_aux",
+    "curved_global_operator_verified": false,
+    "exact_witness_operator": "J_aux^{-1}E_aux+K_aux C_aux",
+    "fibre_pairing_rank": 24,
+    "gauge_fixing_density": "-C0^a C2_a-C1^2/2",
+    "gauge_fixing_hessian_blocks": {
+      "C0_C2": "-g^{ab}",
+      "C1_C1": "-1"
+    },
+    "lower_order_terms": "fixed by the covariant ordinary-derivative action and the chosen modified de Donder gauge",
+    "normalized_principal_symbol": "zeta^2 I_24",
+    "principal_symbol_before_fibre_identification": "zeta^2 J_aux",
+    "wave_principal_symbol_verified": true
+  },
+  "gauge_parameters": {
+    "sigma": 1,
+    "xi_0": 4,
+    "xi_minus_2": 4
+  },
+  "generalized_auxiliary_elimination": {
+    "in_stueckelberg_gauge_v_zero": "Ric^2-R^2/3",
+    "local": true,
+    "mass_hessian_rank": 10,
+    "reason": "the inverse is a pointwise algebraic fibre map; the source contains only finitely many local derivatives of h and v",
+    "solution": "f=-2G^v+(2/3)g tr(G^v)",
+    "substituted_density": "G^v_ab G_v^ab-(tr G^v)^2/3",
+    "support_preserving": true
+  },
+  "ghost_operator": {
+    "curved_global_operator_verified": false,
+    "ghost_pairing_rank": 9,
+    "lower_triangular_coupling": "C0 contains -xi_0",
+    "principal_symbol": "zeta^2 I_9",
+    "symbol_formally_self_adjoint": true,
+    "wave_principal_symbol_verified": true
+  },
+  "matrix_sha256": {
+    "auxiliary_mass_hessian": "8770d2abcc7cdc768bc241b624f1ca8b7dd271ddd513ec974451c1d349bcf32d",
+    "field_fibre_pairing": "f608d7c29d1404288616f0e62d56d6b0491e532a333552ed3d4be0130b071321",
+    "field_witness_operator": "a578c576995dea7144f930f7f5b3699b923d1e1f6c5aad194dbb15ad5a4788a0",
+    "gauge_condition": "754bfffc1c1a981486fcaee914ec316b073c42a2b15a11865bcc05b1fcefda4e",
+    "gauge_fixed_flat_hessian": "e5ea09233895f752bd80b43fc7d3a1b979aa77101d6c2e83fedc0d12e926a3de",
+    "gauge_fixing_pairing": "c8f53deced6f6fbaaca9fd2232bae7554c8b0d062aa3b8681526752572d50b16",
+    "gauge_invariant_flat_hessian": "dc1cfa4f7ceafcea47d1ed195b6ec45b8cafc8fd1f094d9c123fc87d0ac89146",
+    "gauge_map": "658ee51517e29d9781b65b3b0499ea7496723d7eb5ec0790affbab303b53c76a",
+    "ghost_operator": "92127023a1af8828643c00617c9bdefd8df71adb57d0b69f53dbde9aa3ceb00a",
+    "linearized_einstein_operator": "090d9111c814615162049edd5ffcb7f14a96723f6a67c94f4bd8f05c626cce93",
+    "maxwell_operator": "ad80b5903afb95f4f1d7fcd612c06b424c19225110784bcf7c2b51b9c613a406",
+    "tensor_vector_mixing": "52cba3ef274dd47f062ba35f2c0b8f793caa2d8a983f41e6fb77d5a3925fb60f"
+  },
+  "modified_de_donder_variations": {
+    "delta_C0": "Box xi_minus_2-xi_0",
+    "delta_C1": "Box sigma",
+    "delta_C2": "Box xi_0"
+  },
+  "schema": "pure-weyl-ordinary-derivative-auxiliary-system-v2",
+  "source_action": "L=-f^{mu nu}G^v_{mu nu}-F(v)^2/4-f^{mu nu}f_{mu nu}/4+(tr f)^2/4, linearized about its cylinder solution",
+  "theorem_boundary": "this certifies the exact auxiliary Fourier-symbol realization and its scalar metric principal symbols.  The curved lower-order operator/adjoint table and retarded/advanced BV homotopies are separate certificates"
+}

@@ -1,0 +1,36 @@
+{
+  "auxiliary_schur_complement": {
+    "algebraic_mass_inverse": true,
+    "h_h_green_block_after_curved_certificate": "after curved Green operators are constructed, the physical fourth-order Green operator is their h-h Schur block",
+    "tracefree_normalized_principal_symbol": "2 (zeta^2)^2 I_9"
+  },
+  "causal_support": {
+    "auxiliary_elimination_support_preserving": true,
+    "field_redefinition_support_preserving": true,
+    "inverse_redefinition_support_preserving": true,
+    "reason": "finite differential maps do not enlarge support, and the only inverse used in elimination is pointwise algebraic"
+  },
+  "contractible_stueckelberg_pair": {
+    "differential": "Q v=-eta, Q eta=0",
+    "field_and_antifield_duals": true,
+    "homotopy": "s eta=-v, s v=0"
+  },
+  "local_changes": {
+    "changes_unipotent": true,
+    "field": "f_hat=f+2 d_(a v_b)",
+    "ghost": "eta=xi_0-d sigma",
+    "inverses_are_finite_differential_operators": true
+  },
+  "matrix_sha256": {
+    "field_new_to_old": "eaa8ed8d6d1ab83c2a150a54dff8ad84f45380b38528f79da2f916f821d381c7",
+    "ghost_new_to_old": "9e15e15f6342bad3c0ca91c6a9d4f83fc806cf456531292cbddcb368adaf4402",
+    "transformed_gauge_map": "a089ebac6bf15a9cb98e3b5b4a0d5fd225118b10e26a51b9d418e70372129b0f"
+  },
+  "remaining_gauge_transformations": {
+    "Q f_hat": "2 d_a d_b sigma plus cylinder lower-curvature terms",
+    "Q h": "2 d_(a xi_minus_2_b)+g_ab sigma",
+    "eta_occurs_elsewhere": false
+  },
+  "schema": "pure-weyl-causal-auxiliary-reduction-v1",
+  "scope_guard": "support-local reduction and principal Schur recovery are certified; the global retarded/advanced homotopy identities are emitted only after the degreewise Green operators are assembled"
+}
