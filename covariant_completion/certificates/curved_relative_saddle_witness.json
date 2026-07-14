@@ -1,0 +1,148 @@
+{
+  "analytic_boundary": {
+    "Schur_Z_is_local_differential_operator": false,
+    "first_order_symmetric_hyperbolic_certificate_applies": false,
+    "missing_for_symmetric_hyperbolicity": [
+      "coefficient tables and fibre maps R,S",
+      "a local first-order reduction cancelling or prolonging every Eaux occurrence",
+      "a positive temporal symmetrizer for the complete coupled principal matrix"
+    ],
+    "reason": "Z contains the curvature Green operators G_L",
+    "therefore_Schur_condition_is_not_a_local_Green_witness_proof": true,
+    "unreduced_saddle_maximum_order": 2
+  },
+  "causal_green_homotopy": false,
+  "constructive_conclusion": "pairs 4+5 are the smallest exact two-way field/curvature saddle; they identify the coefficient ansatz to investigate, but neither the nonlocal Schur condition nor the current order-two saddle closes Green hyperbolicity",
+  "curvature_causal_green_operators": false,
+  "exact_schur_factorization": {
+    "A": "Eaux+K C",
+    "B": "[R,S]",
+    "C": "[Ssharp Eaux,Rsharp Eaux]^T",
+    "D": "diag(L_26,L_26sharp)",
+    "Z": "A-B diag(G_L,G_Lsharp) C",
+    "factorization": "P=[[1,B G_D],[0,1]] diag(Z,D) [[1,0],[G_D C,1]]",
+    "finite_block_algebra": true,
+    "inverse_if_Z_has_two_sided_causal_inverse": "right-to-left inverse of the displayed three factors"
+  },
+  "fail_closed": true,
+  "prolonged_green_witness": false,
+  "relative_degree_minus_one_classification": {
+    "all_partner_signs_positive_in_current_orientation": true,
+    "allowed_directed_entries": 18,
+    "derived_partner_signs": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "each_pair_BV_cyclicity_defect": 0,
+    "no_single_pair_makes_two_way_saddle": true,
+    "odd_cotangent_adjoint_pairs": 9,
+    "pairing_source": "oriented odd incidence matrix Omega from the corrected 16-block kernel",
+    "partner_derivation": "for W[row,column]=R, cyclicity gives partner W[dual(column),dual(row)]=epsilon(row)/((-1)^degree(column) epsilon(column)) Rsharp",
+    "reciprocal_node_pairs_available_from_pair_combinations": [
+      [
+        "G_aux",
+        "X_Id_sharp"
+      ],
+      [
+        "G_aux",
+        "Y_Eq_sharp"
+      ],
+      [
+        "M_aux",
+        "X_U"
+      ],
+      [
+        "M_aux",
+        "X_Eq_sharp"
+      ],
+      [
+        "M_aux",
+        "Y_U_sharp"
+      ],
+      [
+        "Ebar_aux",
+        "X_Eq"
+      ],
+      [
+        "Ebar_aux",
+        "Y_U"
+      ],
+      [
+        "Ebar_aux",
+        "X_U_sharp"
+      ],
+      [
+        "I_aux",
+        "X_Id"
+      ],
+      [
+        "I_aux",
+        "Y_Eq"
+      ]
+    ],
+    "single_pair_reciprocal_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "schema": "pure-weyl-relative-saddle-witness-diagnostic-v1",
+  "smallest_physical_saddle_candidate": {
+    "DeltaW_BV_cyclicity_defect": 0,
+    "DeltaW_BV_cyclicity_identity": "DeltaW^(T,formal) Omega-D Omega DeltaW=0",
+    "degree_one_cotangent_partner_forced": true,
+    "degree_zero_matrix": [
+      [
+        "Eaux+K C",
+        "R",
+        "S"
+      ],
+      [
+        "Ssharp Eaux",
+        "L_26",
+        "0"
+      ],
+      [
+        "Rsharp Eaux",
+        "0",
+        "L_26sharp"
+      ]
+    ],
+    "degree_zero_order": [
+      "M_aux",
+      "X_U",
+      "Y_U_sharp"
+    ],
+    "entries": [
+      "W: Y_U -> M_aux is R",
+      "W: Ebar_aux -> Y_U_sharp is Rsharp",
+      "W: X_U_sharp -> M_aux is S",
+      "W: Ebar_aux -> X_U is Ssharp"
+    ],
+    "matrix_sha256": {
+      "P_total_split": "1b7e45b60f4779a54d125ff96b5e5d0488ba93fca0d328ad84a652da0d85e305",
+      "W_relative": "fef7a415eb552138d6161668623d644136ae4d04ef9bd28589959dc5560d2181",
+      "W_total_split": "e14e63708a14d955e6661ec75d8e7362e957e5d85733abaea03280f1e054e9ef"
+    },
+    "relative_pairs": [
+      4,
+      5
+    ],
+    "two_way_aux_curvature_coupling": true
+  },
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": []
+}

@@ -334,9 +334,12 @@ class FinalClaimDependencyReport:
         atomic(
             "support_local_prolongation_retract",
             bool(curvature_prolongation["support_local_prolongation_retract"]),
-            "open_analytic_obligation",
-            ("curved_curvature_prolongation_status.json",),
-            "Construct the local Psi-W(h) prolongation equivalence without inverse curl, Laplacian, or helicity projector.",
+            "implemented_structural_fact",
+            (
+                "curved_curvature_mapping_cylinder_substitution.json",
+                "curved_curvature_prolongation_status.json",
+            ),
+            "The complete odd BV mapping cylinder gives a support-local prolongation SDR without inverse curl, Laplacian, or helicity projector.",
         )
         atomic(
             "prolonged_BV_operator_identity",
@@ -345,16 +348,25 @@ class FinalClaimDependencyReport:
                     "prolonged_BV_operator_identity", False
                 )
             ),
-            "open_analytic_obligation",
-            ("curved_curvature_prolongation_status.json",),
-            "Assemble every prolonged BV row and certify Q_prol^2=0, including curvature equations, identities, antifields, and contractible rows.",
+            "implemented_structural_fact",
+            (
+                "curved_curvature_mapping_cylinder_substitution.json",
+                "curved_curvature_prolongation_status.json",
+            ),
+            "Every prolonged BV row is assembled and Q_prol^2=0 is exact, including curvature equations, identities, antifields, and contractible rows.",
         )
         atomic(
             "prolonged_green_witness",
             bool(curvature_prolongation.get("prolonged_green_witness", False)),
             "open_analytic_obligation",
-            ("curved_curvature_prolongation_status.json",),
-            "Construct the generalized block Green witness P_prol=Q_prol W_prol+W_prol Q_prol with its chain and adjoint identities.",
+            (
+                "curved_curvature_mapping_cylinder_witness.json",
+                "curved_auxiliary_prenormal_symbol.json",
+                "curved_auxiliary_lower_order_factor_ansatz.json",
+                "curved_relative_saddle_witness.json",
+                "curved_curvature_prolongation_status.json",
+            ),
+            "The canonical coefficientwise W has exact QW+WQ and fourteen Green blocks.  The auxiliary symbol has an exact prenormal complement and no invariant cubic obstruction, but the quadratic curvature/lower equations or a locally hyperbolic two-way curvature saddle remain open.",
         )
         atomic(
             "curvature_causal_green_operators",

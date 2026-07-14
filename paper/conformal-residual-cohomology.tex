@@ -1264,6 +1264,56 @@ couple the auxiliary and curvature sectors in both directions to form a
 nontriangular saddle operator, unless the auxiliary diagonal witness is
 independently replaced by a Green-hyperbolic one.
 
+Two exact fail-closed diagnostics further delimit this open construction.
+For $q=g^{-1}(\zeta,\zeta)$, the generic prenormal principal symbol
+$P_2=J_{\rm act}^{-1}E_2+K_1C_1$ obeys
+\begin{equation}\label{eq:prenormal-minimal-polynomial}
+ (P_2-qI_{24})^2=0,
+ \qquad
+ (2qI_{24}-P_2)P_2=P_2(2qI_{24}-P_2)=q^2I_{24}.
+\end{equation}
+Its Smith multiplicities are $6/12/6$, corresponding respectively to
+algebraic, wave and biwave factors.  This is a principal-symbol identity, not
+a Green theorem.  Indeed, the naive frozen lower-order completion
+$2qI-P$ has nonzero remainders in orders zero, one and two.  This rejects only
+that literal completion; it does not rule out corrected first-order factors
+or a full covariant composition.
+
+The complete invariant lower-order ansatz makes the next gate finite.  The
+$SO(3)$ cylinder-holonomy decomposition gives
+\begin{equation}\label{eq:lower-factor-ansatz-dimensions}
+ \dim D_0=38,
+ \qquad
+ \dim D_1=93,
+ \qquad
+ D=D_{\rm naive}+X_1^\mu\nabla_\mu+X_0.
+\end{equation}
+The exact cubic divisibility equations for both $DP$ and $PD$ have a
+simultaneous $45$-parameter solution family.  There is therefore no cubic
+obstruction.  The curvature-corrected quadratic and lower equations, which
+also contain nonlinear products of the two factor first-order matrices,
+remain unassembled and unsolved.  Thus this gate proves neither a
+factorization nor a Green theorem.
+
+The exhaustive relative-incidence ledger contains nine possible odd-adjoint
+pairs.  No single pair yields reciprocal coupling, and the smallest physical
+two-way candidate is the pair $4+5$.  On the ordered core
+$(M_{\rm aux},X_U,Y_U^\sharp)$ it gives
+\begin{equation}\label{eq:minimal-relative-saddle}
+ \begin{pmatrix}
+ E_{\rm aux}+KC & R & S\\
+ S^\sharp E_{\rm aux} & L_{26} & 0\\
+ R^\sharp E_{\rm aux} & 0 & L_{26}^\sharp
+ \end{pmatrix}.
+\end{equation}
+The finite-block Schur formula is exact, but its Schur complement contains
+the Green operators of $L_{26}$ and $L_{26}^\sharp$ and is therefore
+nonlocal.  Conversely, the unreduced saddle is order two, so the certified
+first-order symmetric-hyperbolic theorem does not apply to it.  Explicit
+coefficient tables for $R,S$, a support-local first-order reduction of every
+$E_{\rm aux}$ occurrence, and a positive temporal symmetrizer for the full
+coupled principal matrix remain open.  Neither diagnostic promotes a flag.
+
 The selected causal route therefore has the following explicit flags:
 \begin{equation}\label{eq:open-curvature-flags}
  \begin{aligned}
@@ -3300,6 +3350,17 @@ primary and six secondary constraints give a formally equivalent adjusted
 $26$-state system with positive symmetrizer, causal speeds, exact sourced
 compatibility, and constraint propagation.  The all-level $E/A/L$ spectrum
 and absence of Cotton duplication are symbolic theorems.\\
+Prenormal auxiliary symbol and relative saddle diagnostics & Exact
+fail-closed diagnostics & The generic principal symbol obeys
+$(P_2-qI)^2=0$ with algebraic/wave/biwave Smith multiplicities $6/12/6$,
+but the naive frozen lower completion has nonzero lower-order remainder.
+The complete invariant ansatz has $\dim D_0=38$ and $\dim D_1=93$;
+simultaneous $DP/PD$ cubic divisibility leaves a $45$-parameter family and
+hence no cubic obstruction, while the curvature-corrected nonlinear
+quadratic and lower solve remains open.
+The smallest reciprocal relative saddle is the odd-adjoint pair $4+5$.
+Its Schur complement is nonlocal, while its unreduced order-two form still
+lacks a support-local first-order reduction and full positive symmetrizer.\\
 Curvature causal realization and final covariant $H^4$ & Open, fail-closed &
 The first eight flags in \eqref{eq:open-curvature-flags} are true and the other
 seven remain false.  They require the prolonged Green witness and actual BV

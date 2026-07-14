@@ -152,7 +152,25 @@ blocks and retain the scalar-wave rank obstruction.  The final witness must
 therefore go beyond direct-sum conjugation, using two-way relative
 auxiliary--curvature degree-minus-one terms that form a genuinely coupled
 saddle operator, unless an independently Green-hyperbolic auxiliary
-diagonal witness is found.
+diagonal witness is found.  Two further fail-closed diagnostics sharpen this
+open step.  At an arbitrary covector the auxiliary prenormal principal symbol
+satisfies `(P2-q I)^2=0`, with Smith multiplicities `6/12/6` for the
+algebraic/wave/biwave factors.  The formal lower factor `2q I-P2` is exact at
+principal level, but its naive frozen lower-order completion has nonzero
+orders zero through two, so it is not yet a local Green factorization.  The
+complete invariant correction spaces have `dim D0=38` and `dim D1=93`.
+Exact simultaneous cubic divisibility of both `DP` and `PD` leaves a
+45-parameter family, so there is no cubic obstruction.  The
+curvature-corrected quadratic and lower equations, including nonlinear
+products of the first-order factor matrices, remain open.  Among the nine
+allowed odd-adjoint relative pairs, no single pair gives reciprocal
+coupling; the smallest two-way saddle uses pairs 4 and 5.  Its exact core is
+the coupled `(M_aux,X_U,Y_U_sharp)` block with off-diagonal maps `R,S` and
+their odd adjoints.  Its formal Schur complement contains curvature Green
+operators and is therefore nonlocal, while the unreduced saddle is order two
+and still lacks the required local first-order reduction and positive
+symmetrizer.  These are diagnostics, not theorem promotions: the same seven
+causal/transport flags remain false.
 
 The residual calculation is already complete: `residual_H4_is_C2` and
 `residual_gram_is_I2` are inputs to the terminal transport gate.  The missing

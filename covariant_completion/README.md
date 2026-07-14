@@ -349,6 +349,43 @@ blocks, but the auxiliary field block `E_aux+K C` and its cotangent copy retain
 the scalar-wave obstruction.  Closing the witness therefore requires a
 genuinely coupled two-way relative auxiliary--curvature block, unless the
 auxiliary diagonal is independently replaced by a Green-hyperbolic witness.
+
+The generic prenormal-symbol diagnostic is nevertheless exact.  Writing
+`q=g^{-1}(zeta,zeta)` and `P2=J_act^{-1} E2+K1 C1`, it proves
+`(P2-q I24)^2=0` and the polynomial inverse identity
+`(2q I24-P2)P2=P2(2q I24-P2)=q^2 I24`.  The Smith ledger is exactly
+`6/12/6`: six algebraic, twelve wave, and six biwave factors.  This does not
+yet globalize to a local operator factorization.  The naive frozen completion
+`2q I-P` has nonzero lower-order remainders (orders zero, one, and two), so
+only that literal completion is rejected; corrected first-order factors and
+the full covariant composition remain open.
+
+The complete invariant lower-order ansatz makes that remaining question
+finite.  Cylinder holonomy gives `dim D0=38` and `dim D1=93` for
+`D=D_naive+X1^mu nabla_mu+X0`.  Exact simultaneous cubic divisibility of both
+`D P` and `P D` leaves a 45-parameter family, hence there is no cubic
+obstruction.  Curvature first enters the still-open quadratic and lower
+equations, together with nonlinear products of the two factor first-order
+matrices.  Those equations have not yet been assembled and solved, so this
+gate proves neither factorization nor Green hyperbolicity.
+
+The exhaustive relative-incidence search also identifies, without promoting
+a flag, the smallest reciprocal saddle: odd-adjoint pairs 4 and 5.  On the
+core ordered as `(M_aux,X_U,Y_U_sharp)` its degree-zero block is
+
+```text
+[ E_aux+K C    R             S           ]
+[ Ssharp E_aux L_26          0           ]
+[ Rsharp E_aux 0             L_26sharp   ]
+```
+
+No single allowed pair is two-way.  Eliminating the curvature diagonal gives
+an exact finite-block Schur formula, but its complement contains the Green
+operators of `L_26` and `L_26sharp`, hence is nonlocal and is not an accepted
+support-local witness proof.  The unreduced saddle has order two; explicit
+coefficient tables for `R,S`, a local first-order reduction of every
+`E_aux` occurrence, and a positive temporal symmetrizer for the full coupled
+principal matrix are still required.
 The remaining seven flags isolate that prolonged Green witness, the actual causal chain homotopy, residual
 endpoint recovery, `SO(4,2)` equivariance, and prolonged current transport.
 The terminal stage transports the existing `H4 = C^2`, `G = I2`; it must not

@@ -1,0 +1,63 @@
+{
+  "ansatz_completeness": {
+    "field_decomposition": "5 V_0 + 3 V_1 + 2 V_2",
+    "first_order_constraint_rank": 2211,
+    "first_order_constraint_shape": [
+      6912,
+      2304
+    ],
+    "first_order_derivation": "38 time intertwiners plus 55 spatial intertwiners; exact infinitesimal constraint rank 2211 on 2304 coefficients",
+    "first_order_dimension": 93,
+    "isotropy": "SO(3) holonomy of the cylinder",
+    "parallel_globalization": true,
+    "zeroth_order_derivation": "5^2+3^2+2^2=38",
+    "zeroth_order_dimension": 38
+  },
+  "candidate": {
+    "complement": "D=D_naive+X_1^mu nabla_mu+X_0",
+    "factor_first_order_matrices_allowed": true,
+    "factor_principal_symbols": "q I_24",
+    "left_factorization": "DP=L_- L_+",
+    "right_factorization": "PD=R_- R_+"
+  },
+  "exact_cubic_gate": {
+    "cubic_obstruction": false,
+    "left_equation": "X_1 P_2=q S_L",
+    "left_matrix_shape": [
+      11520,
+      186
+    ],
+    "left_rank": 121,
+    "left_solution_dimension": 65,
+    "projection_ranks_X1_SL_SR": [
+      45,
+      45,
+      45
+    ],
+    "reason_curvature_does_not_enter": "commuting two derivatives lowers order by two on the parallel-curvature cylinder, so order three is unchanged",
+    "right_equation": "P_2 X_1=q S_R",
+    "simultaneous_matrix_shape": [
+      23040,
+      279
+    ],
+    "simultaneous_rank": 234,
+    "simultaneous_solution_dimension": 45
+  },
+  "outcome": {
+    "complete_invariant_ansatz_declared": true,
+    "flag_promoted": false,
+    "mixed_order_factorization_proved": false,
+    "mixed_order_green_realization": false,
+    "simultaneous_cubic_solution_family_dimension": 45
+  },
+  "remaining_exact_solve": {
+    "curvature_commutators_required": true,
+    "full_lower_order_solution_found": false,
+    "left_null_obstruction_found": false,
+    "nonlinear_terms": "products of the two factor first-order matrices",
+    "quadratic_factor_equations_assembled": false,
+    "zeroth_and_first_order_factor_coefficients_required": true
+  },
+  "schema": "pure-weyl-auxiliary-lower-order-factor-ansatz-v1",
+  "theorem_boundary": "the complete invariant first-order family passes the exact simultaneous cubic divisibility gate with a 45-parameter family; the curvature-corrected nonlinear quadratic and lower equations remain unsolved, so no factorization or Green theorem follows"
+}

@@ -775,12 +775,13 @@
     },
     "prolonged_BV_operator_identity": {
       "blocking_dependencies": [],
-      "classification": "open_analytic_obligation",
+      "classification": "implemented_structural_fact",
       "dependency_mode": "all",
       "evidence": [
+        "curved_curvature_mapping_cylinder_substitution.json",
         "curved_curvature_prolongation_status.json"
       ],
-      "note": "Assemble every prolonged BV row and certify Q_prol^2=0, including curvature equations, identities, antifields, and contractible rows.",
+      "note": "Every prolonged BV row is assembled and Q_prol^2=0 is exact, including curvature equations, identities, antifields, and contractible rows.",
       "requires": [],
       "status": true
     },
@@ -805,9 +806,13 @@
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [
+        "curved_curvature_mapping_cylinder_witness.json",
+        "curved_auxiliary_prenormal_symbol.json",
+        "curved_auxiliary_lower_order_factor_ansatz.json",
+        "curved_relative_saddle_witness.json",
         "curved_curvature_prolongation_status.json"
       ],
-      "note": "Construct the generalized block Green witness P_prol=Q_prol W_prol+W_prol Q_prol with its chain and adjoint identities.",
+      "note": "The canonical coefficientwise W has exact QW+WQ and fourteen Green blocks.  The auxiliary symbol has an exact prenormal complement and no invariant cubic obstruction, but the quadratic curvature/lower equations or a locally hyperbolic two-way curvature saddle remain open.",
       "requires": [],
       "status": false
     },
@@ -877,12 +882,13 @@
     },
     "support_local_prolongation_retract": {
       "blocking_dependencies": [],
-      "classification": "open_analytic_obligation",
+      "classification": "implemented_structural_fact",
       "dependency_mode": "all",
       "evidence": [
+        "curved_curvature_mapping_cylinder_substitution.json",
         "curved_curvature_prolongation_status.json"
       ],
-      "note": "Construct the local Psi-W(h) prolongation equivalence without inverse curl, Laplacian, or helicity projector.",
+      "note": "The complete odd BV mapping cylinder gives a support-local prolongation SDR without inverse curl, Laplacian, or helicity projector.",
       "requires": [],
       "status": true
     },

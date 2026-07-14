@@ -53,6 +53,8 @@ flowchart TD
 - `curved_sourced_constraint_identity` — The curvature-corrected sourced subsidiary identity and its six compatible-source rows are exact.
 - `curved_constraint_propagation` — All fourteen primary and secondary constraints propagate in a causal symmetric-hyperbolic subsidiary system for compatible sources.
 - `EAL_curvature_spectrum_match` — The exact covariant Weyl--Cotton equations carry precisely the parity-complete E, A, and L towers at every energy; symbolic BGG rank and character identities prove exhaustion and the Cotton graph adds no modes.
+- `support_local_prolongation_retract` — The complete odd BV mapping cylinder gives a support-local prolongation SDR without inverse curl, Laplacian, or helicity projector.
+- `prolonged_BV_operator_identity` — Every prolonged BV row is assembled and Q_prol^2=0 is exact, including curvature equations, identities, antifields, and contractible rows.
 - `candidate_curvature_principal_symmetric_hyperbolicity` — The legacy candidate electric/magnetic Weyl principal block has a positive symmetrizer and the two physical characteristic speeds in each direction. This certificate alone is principal-symbol evidence; the exact curved derivation is certified separately by the curved E/B, first-order, sourced-constraint, and propagation nodes.
 - `candidate_curvature_principal_constraints_propagate` — The principal divergence constraints close through div(curl_2 h)=(1/2)curl_1(div h).
 - `support_preservation` — The displayed finite differential and pointwise maps do not enlarge support.
@@ -78,7 +80,7 @@ exact curved equations, and the 26-state first-order closure are
 true. The remaining analytic, causal, endpoint, equivariance, and
 pairing-transport flags below remain open.
 
-- `prolonged_green_witness` — Construct the generalized block Green witness P_prol=Q_prol W_prol+W_prol Q_prol with its chain and adjoint identities.
+- `prolonged_green_witness` — The canonical coefficientwise W has exact QW+WQ and fourteen Green blocks.  The auxiliary symbol has an exact prenormal complement and no invariant cubic obstruction, but the quadratic curvature/lower equations or a locally hyperbolic two-way curvature saddle remain open.
 - `curvature_causal_green_operators` — Construct retarded and advanced operators for the exact constrained curvature system and assemble the full BV blocks.
 - `causal_green_homotopy` — Verify Q Lambda_+/- + Lambda_+/- Q=1 on the complete prolonged BV complex with causal support.
 - `causal_quasi_isomorphism` — Prove that the causal map Gamma_c(C_prol)[1] -> Gamma_sc(C_prol) is a quasi-isomorphism and specialize it to all smooth cylinder solutions.

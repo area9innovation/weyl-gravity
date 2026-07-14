@@ -1,0 +1,87 @@
+{
+  "aligned_characteristic_data": {
+    "covector": "(omega,kappa,0,0)",
+    "determinant": "(kappa - omega)**24*(kappa + omega)**24",
+    "future_null_rank": 6,
+    "globalization": "SO(3) aligns every nonzero spatial covector; homogeneity covers the two nonzero null orbits",
+    "past_null_rank": 6
+  },
+  "arbitrary_covector_identity": {
+    "complement": "D_2=2q I_24-P_2",
+    "exact_polynomial_defect": 0,
+    "left_product": "D_2 P_2=q^2 I_24",
+    "nilpotent_deviation": "(P_2-q I_24)^2=0",
+    "nilpotent_deviation_nonzero_entries": 76,
+    "right_product": "P_2 D_2=q^2 I_24"
+  },
+  "exact_inputs": {
+    "companion": "C=Y^-1 K^sharp J_act coefficientwise",
+    "gauge_generator": "exact curved first-order K",
+    "hessian": "cached exhaustive curved action Hessian",
+    "scalar_wave_no_go_unchanged": true
+  },
+  "field_and_cotangent_blocks": {
+    "cotangent": "formal-adjoint copy has the same invariant factors",
+    "field": "the displayed identity"
+  },
+  "input_block": "P_2=J_act^-1 E_2+K_1 C_1",
+  "lower_order_completion": {
+    "commutative_normal_frame_remainder_nonzero_counts_by_order_0_to_4": [
+      65,
+      95,
+      240,
+      0,
+      0
+    ],
+    "interpretation": "the exact principal complement does not by itself supply the curved lower-order complementary operator; curvature commutators and correction coefficients remain to be solved",
+    "literal_frozen_candidate": "D_naive=2qI-P",
+    "lower_order_operator_factorization_proved": false,
+    "narrow_frozen_ansatz_obstruction": "the rank-12 quadratic remainder on q=0 is not q times a zeroth-order matrix, so the literal commutative normal-frame candidate does not factor into two wave operators having zero first-order symbols; this is not a no-go for corrected first-order factors or the full covariant composition",
+    "orders_3_and_4_cancel": true,
+    "quadratic_remainder_rank_at_future_and_past_null_covectors": [
+      12,
+      12
+    ],
+    "sample_nonzero_coefficients_orders_0_1_2": [
+      "-6",
+      "4*covariant_jet_zeta_0",
+      "-4*covariant_jet_zeta_0**2"
+    ]
+  },
+  "outcome": {
+    "curved_operator_identity_promoted": false,
+    "mixed_order_green_realization": false,
+    "mixed_order_prenormal_symbol_exact": true,
+    "principal_symbol_obstruction_to_mixed_order_route": false,
+    "support_local_block_triangularization_constructed": false
+  },
+  "schema": "pure-weyl-curved-auxiliary-prenormal-symbol-v1",
+  "sha256": {
+    "D_2": "4c0094fe9110d0dd6bddd6998dbf4defd6de13d4f702657dfe7a514d37489016",
+    "P_2": "b2a09fbef793692c82217b43b9855fa1db4641e9d170b9d84c97486440cb6432",
+    "field_pairing": "f608d7c29d1404288616f0e62d56d6b0491e532a333552ed3d4be0130b071321",
+    "gauge_companion": "4d459caa2e3d211b95347b15f7388eee7e7e1e7875eab7c07d6a999d30cfd470",
+    "gauge_generator": "078cf1db42bb0874c8c6283e89502d81c73623d4e81def0efbb202559296a174",
+    "hessian_cache": "0d14ccf2b7e14d52705512b92027d2bcdf801256924a5998292ec7b29ca67866",
+    "naive_lower_remainder": "b291b3d5e667ed52ccd6e00f0e03ae7ac438398ccf714fccd0076d92d60f404e"
+  },
+  "support_local_symbol_candidate": {
+    "D_2_order": 2,
+    "contains_inverse_covector": false,
+    "contains_spectral_projector": false
+  },
+  "theorem_boundary": "the two open auxiliary field/cotangent blocks have an exact mixed algebraic-wave-biwave prenormal principal symbol.  No curved complementary operator, global local Smith transform, causal Green inverse, or BV Green homotopy is inferred",
+  "univariate_smith_ledger": {
+    "derivation": "D_2P_2=q^2I bounds every invariant-factor exponent by 2; null rank 6 and det(P_2)=q^24 fix multiplicities 6,12,6",
+    "global_unimodular_transform_constructed": false,
+    "interpretation": {
+      "algebraic": 6,
+      "biwave": 6,
+      "wave": 12
+    },
+    "q_factors": 12,
+    "q_squared_factors": 6,
+    "unit_factors": 6
+  },
+  "wave_quadratic": "-covariant_jet_zeta_0**2 + covariant_jet_zeta_1**2 + covariant_jet_zeta_2**2 + covariant_jet_zeta_3**2"
+}
