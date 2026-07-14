@@ -100,13 +100,17 @@ Gover--Peterson/Cap flat BGG theorem + M ~ S3 topology
  exact symbolic E/A/L curvature intertwiners              |
  + same-energy finite-mode metric preimages               |
              |                                            |
-      +------+----------------+                           |
-      |                       |                           |
-      v                       v                           |
-residual CE complex      invariant form J_conf            |
-      |                       |                           |
-      v                       |                           |
-Cartan homotopy reduction    |                           |
+      +------+----------------+-------------------+       |
+      |                       |                   |       |
+      v                       v                   v       |
+residual CE complex      invariant form J_conf   raw polynomial metric BV
+      |                       |                   |       |
+      v                       |                   v       |
+Cartan homotopy reduction    |          exact p,j,s with measured K defects
+      |                       |                   |       |
+      |                       |                   v       |
+      |                       |          strict induced residual action
+      |                       |                   |       |
       |                       |                           |
       v                       |                           |
 exact N=0,1,2 centered cohomology                         |
@@ -125,8 +129,8 @@ finite polynomial jets (degrees 2--6) --------------------+
   independent convention/regression audit                 |
                                                           v
                                     filtered local/residual bicomplex
-                                    + full SO(4,2)-equivariant cyclic split
-                                    + strictness and row control
+                                    + cross-energy cyclic local BV form
+                                    + field-theoretic domain identification
                                     + residual BFV polarization
                                                           |
                                                           v
@@ -136,10 +140,13 @@ finite polynomial jets (degrees 2--6) --------------------+
 The right branch through residual cohomology is exact under full residual
 conformal gauging.  The smooth local metric-to-geometric-curvature bridge is
 also exact, and the explicit symbolic `E/A/L` construction closes its
-restriction to finite positive-energy cylinder modes.  The full cyclic BV
-transfer and residual BFV polarization remain conditional.  Finite jet
-agreement is an independent audit of conventions and low levels, not the
-proof of either theorem.  Treating `D` as gauge is a
+restriction to finite positive-energy cylinder modes.  A second exact
+polynomial calculation now starts from metric/ghost/antifield rows, measures
+the noncompact homotopy defects, transfers the strict cohomology action, and
+reproduces the centered ranks and representative `I2`.  The cross-energy
+cyclic BV normalization and residual BFV boundary choice remain
+conditional.  Finite jet agreement is an independent audit of conventions
+and low levels, not the proof of either theorem.  Treating `D` as gauge is a
 physical choice; if it is retained as the cylinder Hamiltonian, this is not
 the relevant quotient.
 
@@ -157,7 +164,8 @@ Four statements are kept separate throughout the manuscript:
 
 1. the exact algebraic residual theorem;
 2. the exact smooth Bach-to-geometric-curvature theorem;
-3. the conditional transfer to the strict pure-Weyl algebraic BV complex;
+3. the exact polynomial metric-BV transfer and its conditional
+   field-theoretic/cyclic identification;
 4. the interpretation as candidate physical states under full residual
    conformal gauging.
 
@@ -172,6 +180,10 @@ Four statements are kept separate throughout the manuscript:
 | `ker B_lin / im K = Wgeom,+^sm + Wgeom,-^sm` | Exact smooth equivariant theorem | Uses global exactness, `B=C1^#C1`, and Lorentzian chirality; analytic completions remain separate |
 | Algebraic `E/A/L` cylinder realization | Exact symbolic theorem | Full coordinate `C1 h` at symbolic `n`, nonzero pivots, Hodge chirality, `C1^#C1h=0`, parity, same-block metric preimages, and character exhaustion |
 | Polynomial detour quotient dimensions `10,40,82,136,202` | Exact for homogeneous degrees 2--6 | Euclidean finite jets only |
+| Raw polynomial metric-BV retract | Exact through the complete centered buffer | Includes ghost, metric, equation-antifield and identity-antifield rows; noncompact defects are explicitly homotopic, not zero |
+| Strict residual action induced from raw BV rows | Exact in energies 2--5 | All 16 `[K,P]` brackets; physical-row higher HPL terms vanish |
+| End-to-end metric-to-residual ranks | Exact algebraic integration | Vacuum `116+291=407`, one particle `520+2102=2622`, two particle rank `53/55` |
+| Raw transferred parity/representative form | Exact in the centered two-class block | Parity `(-1,+1)`, raw Gram `diag(5/64,5)`, normalized representative Gram `I2` |
 | Fifteen conformal-Killing zero modes | Exact global theorem and finite certificate | `H_def^0 = g`; independently recovered as the low-degree gauge-map kernel |
 | Degree-three adjoint BGG sector | Exact as a 15-dimensional global cohomology group | Its identification and normalization as the BFV/Taub dual sector remain conditional |
 | On-shell `W_+ + W_-` character and E/A/L inventory | Exact geometric/algebraic identification | Character and stable module action plus the all-level cylinder-preimage theorem |
@@ -184,7 +196,7 @@ Four statements are kept separate throughout the manuscript:
 | Residual CE pairing `I2` | Exact in the chosen residual complex | Canonical complementary-degree pairing with the normalized `(4,7,4)` polarization; vertex classes, not a particle Hilbert space or yet the transferred pure-Weyl BV pairing |
 | Descent to `C^2` and `C Ctilde` | Exact residual/local descent | Lorentzian `i` phase is convention-dependent |
 | Dynamical representative quotient `I1` | Exact locally | Pontryagin is only locally variationally trivial; global theta effects retained |
-| Full pure-Weyl local-plus-residual BV result | Conditional corollary | Requires a full `SO(4,2)`-equivariant cyclic BV transfer with row control and the selected residual BFV polarization and normalization |
+| Full field-theoretic pure-Weyl local-plus-residual BV/BFV result | Conditional corollary | Requires cross-energy cyclic-pairing identification, complete field-domain/zero-mode identification, and the selected residual BFV boundary polarization and normalization |
 | Physical-state interpretation | Choice-dependent | Requires a boundary/gauge principle that treats all 15 generators, including `D`, as gauge |
 | Quantum nilpotency, anomaly cancellation, interaction unitarity | Not claimed | Reserved for a separate quantum project |
 
@@ -195,6 +207,12 @@ Four statements are kept separate throughout the manuscript:
 | `verify_conformal_detour_action.py` | action normalization and formal/finite scalar detour identities |
 | `verify_conformal_bgg_bridge.py` | signature-aware `C1^# star C1=0`, cylinder topology, chiral split, and unique bottom four-ghost scalar |
 | `verify_conformal_cylinder_preimages.py` | symbolic all-energy `E/A/L` metric preimages, full Weyl/Bach tensors, chirality, pivots, parity, and dimension regressions |
+| `verify_conformal_cylinder_bgg_blocks.py` | all-energy BGG split normal forms, dimension identities, and off-shell complex/factorization rails |
+| `verify_conformal_free_bv_complex.py` | complete split minimal/nonminimal free-BV rows and exact CKV projector |
+| `verify_conformal_cyclic_bv_retract.py` | compact-equivariant split cyclic contraction and isometry |
+| `verify_conformal_residual_bfv_bridge.py` | intrinsic `4+7+4` residual algebra, Cartan identity, and top-form ghost pairing |
+| `verify_conformal_raw_bv_transfer.py` | raw polynomial `p,j,s`, measured noncompact defects, strict induced brackets, and vanishing physical HPL corrections |
+| `verify_conformal_metric_to_residual_integration.py` | end-to-end metric-BV to residual CE ranks, parity split, and normalized representative `I2` |
 | `verify_conformal_detour_polynomial.py` | finite homogeneous-jet ranks and the 15-dimensional reducibility kernel |
 | `verify_conformal_weyl_module.py` | Weyl character and E/A/L tower equality |
 | `verify_conformal_cylinder_form.py` | uniqueness and signature of the standard invariant cylinder form |
@@ -221,6 +239,7 @@ verify_conformal_detour_action.py --require-explicit-cylinder-c1
 verify_conformal_bgg_bridge.py --claim-machine-proof-of-bgg
 verify_conformal_bgg_bridge.py --claim-completed-domain
 verify_conformal_cylinder_preimages.py --claim-complete-harmonic-complex
+verify_conformal_cylinder_bgg_blocks.py --claim-raw-coordinate-basis
 verify_conformal_bgg_bridge.py --claim-taub-identification
 verify_conformal_bgg_bridge.py --claim-completed-bv-transfer
 verify_conformal_bgg_bridge.py --claim-pure-weyl-bfv-pairing
@@ -237,6 +256,11 @@ verify_conformal_cartan_contraction.py --claim-local-bv
 verify_conformal_cartan_contraction.py --treat-d-as-physical-hamiltonian
 verify_conformal_cartan_transfer.py --claim-pure-weyl-bv
 verify_conformal_cyclic_hpl.py --claim-pure-weyl-bv
+verify_conformal_free_bv_complex.py --claim-full-conformal-cyclic-transfer
+verify_conformal_cyclic_bv_retract.py --claim-full-so42-equivariance
+verify_conformal_residual_bfv_bridge.py --claim-transferred-pure-weyl-pairing
+verify_conformal_raw_bv_transfer.py --claim-strict-sdr
+verify_conformal_metric_to_residual_integration.py --claim-complete-bv-bfv-pairing
 verify_conformal_vertex_descent.py --claim-particle-hilbert
 verify_conformal_dynamical_topological.py --claim-pontryagin-globally-trivial
 verify_conformal_dynamical_topological.py --claim-theta-has-no-observables

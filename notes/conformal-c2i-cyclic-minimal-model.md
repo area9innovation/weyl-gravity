@@ -12,9 +12,13 @@ H^4_{\rm residual,min}
 \]
 
 C2h proves that Cartan localization survives any compact-degree-equivariant
-strong deformation retract.  C2i is the missing instantiation: derive that
-retract and the residual charge from the full gauge-fixed pure-Weyl BV/BFV
-complex on `R x S3`.
+strong deformation retract.  C2i now has a nontrivial algebraic
+instantiation: the raw polynomial metric BV rows admit an exact rational
+retract, its noncompact defects are explicitly homotopic, the induced
+residual action is strict, and the centered metric-to-CE pipeline reproduces
+the residual answer.  The missing instantiation has narrowed to the
+cross-energy cyclic local-BV pairing and the field-theoretic residual BFV
+boundary/normalization choice on `R x S3`.
 
 This is a free/classical bridge.  Quantum Diff `x` Weyl anomaly cancellation
 is a later and independent requirement.
@@ -79,11 +83,13 @@ B_{\rm lin}=C_1^\sharp C_1
 \]
 
 are fixed.  They prove the smooth metric-to-geometric-curvature quotient.
-They do not yet prove its restriction to the algebraic positive-energy
-`E/A/L` module or the existence of finite-mode metric potentials.  Beyond
-that algebraic-cylinder problem, the remaining statements are the placement
-and normalization of the canonical degree-three global BGG sector, removal
-of local/nonminimal rows, and the strict cyclic zero-mode transfer.
+The symbolic all-energy cylinder preimages now prove its restriction to the
+algebraic positive-energy `E/A/L` module.  The raw polynomial BV
+implementation also includes the minimal ghost/antifield detour rows and
+separate contractible nonminimal certificates.  The remaining statements
+are the field-theoretic identification of this algebraic model and its
+cross-energy cyclic form, plus the placement and normalization of the
+residual BFV zero-mode sector.
 
 ## Compact-degree-equivariant retract
 
@@ -127,14 +133,16 @@ The auxiliary Hodge product does not establish descent of the physical
 pairing.  Once the local kernel and its nondegenerate induced form are
 identified, cyclicity is not an independent spectrum or norm calculation
 inside one finite harmonic block: a cyclic retract exists there
-algebraically.  It must nevertheless be chosen simultaneously
-compact-degree equivariant, compatible with the conformal-Killing zero-mode
-split, and equivariant under the noncompact generators `K^+` and `K^-`.
-The last condition does not follow by averaging because the conformal
-modules are nonunitary and need not be semisimple.  Those compatibility and
-domain conditions—not a term-by-term recomputation of the dressed Gram—are
-the remaining field-theory obligation that promotes the residual class Gram
-`I2` to the induced pairing on local-plus-global cohomology.  Even after that
+algebraically.  The raw calculation shows that demanding a strictly
+equivariant representative choice is unnecessarily strong: its natural
+`p,j,s` has nonzero `K^+/-` defects, but they are exactly `q`-homotopic, the
+induced cohomology action is strict, and the physical-row HPL corrections
+vanish.  What must still be chosen compatibly is the cross-energy cyclic
+pairing and conformal-Killing zero-mode split in the complete field complex.
+Those compatibility and domain conditions—not a term-by-term recomputation
+of the dressed Gram—are the remaining field-theory obligation that promotes
+the residual representative Gram `I2` to the induced pairing on
+local-plus-global cohomology.  Even after that
 bridge closes, C2j-D identifies these as ghost-dressed
 vertex/deformation classes rather than a propagating graviton Hilbert space.
 

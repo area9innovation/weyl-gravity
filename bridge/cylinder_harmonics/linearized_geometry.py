@@ -291,6 +291,51 @@ class LinearizedCylinderGeometry:
             )
         )
 
+    def gauge_image(
+        self,
+        profile: CylinderMode,
+        covector: Mapping[int, sp.Expr],
+        weyl_parameter: sp.Expr = sp.Integer(0),
+    ) -> CylinderMode:
+        """Return ``L_xi g+2 sigma g`` with the common phase suppressed.
+
+        ``profile`` supplies the Fourier weights and common radial power;
+        its own metric field is ignored.  The covariant components of
+        ``xi`` and ``sigma`` are coefficient functions multiplying that same
+        common factor.  This represents the full linear Diff x Weyl map
+        before trace gauge is chosen.
+        """
+
+        gamma = self.christoffel
+
+        def nabla(first: int, second: int) -> sp.Expr:
+            return canonical(
+                profile.phase_derivative(first, covector.get(second, 0))
+                - sum(
+                    tensor_get(gamma, contracted, first, second)
+                    * covector.get(contracted, 0)
+                    for contracted in INDICES
+                )
+            )
+
+        metric = dense_tensor(
+            2,
+            lambda first, second: nabla(first, second)
+            + nabla(second, first)
+            + 2 * weyl_parameter * self.metric[first, second],
+        )
+        return CylinderMode(
+            family="K",
+            energy=profile.energy,
+            spin_left=profile.spin_left,
+            spin_right=profile.spin_right,
+            magnetic_left=profile.magnetic_left,
+            magnetic_right=profile.magnetic_right,
+            radial_exponent=profile.radial_exponent,
+            amplitude=sp.Integer(1),
+            metric=metric,
+        )
+
     def delta_inverse(self, mode: CylinderMode) -> sp.Matrix:
         h = mode.metric
         return sp.Matrix(

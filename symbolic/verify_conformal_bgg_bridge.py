@@ -331,7 +331,9 @@ def main() -> None:
         )
     if args.claim_completed_bv_transfer:
         raise SystemExit(
-            "the residual BFV pairing, zero-mode projector, and cyclic full-BV transfer are not constructed"
+            "the polynomial metric-to-residual vector-space transfer and CKV "
+            "projector are now constructed separately; the cross-energy cyclic "
+            "local-BV pairing and its field-theoretic BFV identification remain open"
         )
     if args.claim_pure_weyl_bfv_pairing:
         raise SystemExit(

@@ -278,15 +278,16 @@ In Lorentz signature, write \(U=U_++U_-\) with
 \cong \mathscr W_+^{\rm sm}\oplus\mathscr W_-^{\rm sm}.
 \]
 
-The smooth result is equivariant, but this alone controls the weight of the
-quotient class rather than the mode content of a chosen metric potential.
-A finite-energy curvature mode could in principle acquire a secular
-preimage such as `t exp(-iEt)` or an infinite harmonic expansion.  To
-restrict the theorem to the algebraic positive-energy module used by the
-residual calculation one still needs a `D`- and `SO(4)`-equivariant BGG
-homotopy, exactness in the relevant Harish--Chandra category, or an explicit
-all-level cylinder-harmonic potential.  Continuity, closed range, and
-completion remain further analytic questions.
+The smooth result is equivariant, but by itself it controls the weight of
+the quotient class rather than the mode content of a chosen metric
+potential.  The repository now closes the algebraic positive-energy step
+independently: `bridge/metric_preimages/all_energy.py` gives symbolic
+same-energy metric representatives for every allowed `E/A/L` tower,
+computes their full Weyl image, and proves the Bach equation identically in
+the energy.  Thus secular terms such as `t exp(-iEt)` and infinite harmonic
+preimages are unnecessary in the `D`-finite, `SO(4)`-finite module.  This
+does not prove continuity, closed range, or bounded inverses on an analytic
+completion.
 
 ## The controlled global zero-mode pair
 
@@ -318,6 +319,12 @@ The following rails are complementary rather than interchangeable:
    homogeneous-polynomial matrices through degree six and reproduces the
    quotient dimensions `10,40,82,136,202`.  It is an independent convention
    and low-level regression audit, not the all-level proof.
+3. `verify_conformal_cylinder_preimages.py` proves the symbolic all-energy
+   physical `E/A/L` metric preimages in cylinder coordinates.
+4. `verify_conformal_raw_bv_transfer.py` constructs the polynomial
+   ghost/metric/equation/identity rows, an exact raw SDR, and the measured
+   noncompact homotopies.  It closes the centered vector-space transfer but
+   not the cross-energy cyclic BV/BFV normalization.
 3. `verify_conformal_detour_action.py` checks the action normalization,
    formal adjoints, and finite scalar Ward kernels.
 4. `verify_conformal_c2a_reducibilities.py` constructs all fifteen cylinder

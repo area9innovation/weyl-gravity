@@ -50,6 +50,12 @@ CERTIFICATES = (
         slow=True,
     ),
     Certificate(
+        "off-shell cylinder BGG blocks",
+        "verify_conformal_cylinder_bgg_blocks.py",
+        "CONFORMAL S1 CYLINDER BGG BLOCKS: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
         "finite polynomial detour jets",
         "verify_conformal_detour_polynomial.py",
         "C2h-L STATUS:",
@@ -119,6 +125,33 @@ CERTIFICATES = (
         "CONFORMAL C2i CYCLIC HPL ISOMETRY: ALL PASS",
     ),
     Certificate(
+        "complete split free-BV rows and zero modes",
+        "verify_conformal_free_bv_complex.py",
+        "CONFORMAL S2 FREE BV COMPLEX: ALL PASS",
+    ),
+    Certificate(
+        "split cyclic BV retract",
+        "verify_conformal_cyclic_bv_retract.py",
+        "CONFORMAL S3 CYCLIC BV RETRACT: COMPACT/CYCLIC PART ALL PASS",
+    ),
+    Certificate(
+        "intrinsic residual BFV/CE package",
+        "verify_conformal_residual_bfv_bridge.py",
+        "CONFORMAL S4 RESIDUAL BFV: ALL PASS",
+    ),
+    Certificate(
+        "raw noncompact metric-BV transfer",
+        "verify_conformal_raw_bv_transfer.py",
+        "CONFORMAL RAW BV TRANSFER: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
+        "metric-to-residual integration",
+        "verify_conformal_metric_to_residual_integration.py",
+        "CONFORMAL METRIC-TO-RESIDUAL INTEGRATION: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
         "weight-four vertex descent",
         "verify_conformal_vertex_descent.py",
         "CONFORMAL PAPER VERTEX DESCENT: ALL PASS",
@@ -138,6 +171,7 @@ GUARDS = (
     ("BGG fine resolution is a literature theorem", "verify_conformal_bgg_bridge.py", ("--claim-machine-proof-of-bgg",)),
     ("smooth BGG exactness is not an analytic completion theorem", "verify_conformal_bgg_bridge.py", ("--claim-completed-domain",)),
     ("physical E/A/L preimages are not the complete off-shell harmonic complex", "verify_conformal_cylinder_preimages.py", ("--claim-complete-harmonic-complex",)),
+    ("BGG split blocks are not raw magnetic-state matrices", "verify_conformal_cylinder_bgg_blocks.py", ("--claim-raw-coordinate-basis",)),
     ("degree-three BGG is not yet the normalized Taub sector", "verify_conformal_bgg_bridge.py", ("--claim-taub-identification",)),
     ("BGG exactness is not the cyclic BV/BFV transfer", "verify_conformal_bgg_bridge.py", ("--claim-completed-bv-transfer",)),
     ("residual CE saturation is not the transferred pure-Weyl BFV pairing", "verify_conformal_bgg_bridge.py", ("--claim-pure-weyl-bfv-pairing",)),
@@ -154,6 +188,11 @@ GUARDS = (
     ("Cartan contraction requires D to be gauged", "verify_conformal_cartan_contraction.py", ("--treat-d-as-physical-hamiltonian",)),
     ("transfer fixture is not pure-Weyl BV", "verify_conformal_cartan_transfer.py", ("--claim-pure-weyl-bv",)),
     ("cyclic fixture is not pure-Weyl BV", "verify_conformal_cyclic_hpl.py", ("--claim-pure-weyl-bv",)),
+    ("split free-BV contraction is not yet the full cyclic transfer", "verify_conformal_free_bv_complex.py", ("--claim-full-conformal-cyclic-transfer",)),
+    ("compact split cyclicity is not full conformal equivariance", "verify_conformal_cyclic_bv_retract.py", ("--claim-full-so42-equivariance",)),
+    ("intrinsic residual CE pairing is not the transferred BV pairing", "verify_conformal_residual_bfv_bridge.py", ("--claim-transferred-pure-weyl-pairing",)),
+    ("raw SDR is homotopy-equivariant rather than strict", "verify_conformal_raw_bv_transfer.py", ("--claim-strict-sdr",)),
+    ("integrated algebraic cohomology does not derive the full BV/BFV pairing", "verify_conformal_metric_to_residual_integration.py", ("--claim-complete-bv-bfv-pairing",)),
     ("vertex descent is not a particle Hilbert theorem", "verify_conformal_vertex_descent.py", ("--claim-particle-hilbert",)),
     ("Pontryagin is not globally trivial", "verify_conformal_dynamical_topological.py", ("--claim-pontryagin-globally-trivial",)),
     ("theta can retain boundary observables", "verify_conformal_dynamical_topological.py", ("--claim-theta-has-no-observables",)),
@@ -252,9 +291,11 @@ def main() -> None:
     print(
         "CONFORMAL FREE PAPER BATTERY: ALL PASS. The exact result is the "
         "minimal residual vertex cohomology plus the smooth Bach-curvature "
-        "bridge and all-energy E/A/L metric preimages; the complete local "
-        "pure-Weyl BV/BFV transfer, analytic completion, and quantum theory "
-        "remain explicitly conditional/out of scope."
+        "bridge, all-energy E/A/L metric preimages, and an end-to-end "
+        "algebraic polynomial metric-to-residual calculation. The "
+        "cross-energy cyclic BV/BFV normalization, closed-universe BFV "
+        "choice, analytic completion, and quantum theory remain explicitly "
+        "conditional/out of scope."
     )
 
 

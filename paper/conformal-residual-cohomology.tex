@@ -80,10 +80,14 @@ adjoint BGG resolution and the topology of $\R\times S^3$ additionally give
 an all-level smooth isomorphism between the Bach quotient and a geometrically
 defined on-shell curvature system.  An exact symbolic cylinder construction
 supplies finite-mode metric preimages for every $E/A/L$ block and identifies
-that geometric system with the algebraic positive-energy module.  Two
-further steps remain conditional: the full equivariant cyclic BV transfer
-with its ghost and antifield rows, and derivation of the centered BFV
-polarization from the chosen closed-universe reduction.  Any analytic
+that geometric system with the algebraic positive-energy module.  An
+end-to-end polynomial calculation additionally constructs the metric,
+ghost, equation-antifield and identity-antifield rows, measures the
+noncompact homotopy defects, transfers the strict residual action, and
+reproduces the centered cohomology without importing the hand-specified
+$E/A/L$ matrices.  Two identifications remain conditional: the cross-energy
+cyclic local-BV pairing and its normalization, and derivation of the centered
+BFV polarization from the chosen closed-universe reduction.  Any analytic
 completion requires additional control.  We claim neither a positive
 graviton Fock space nor quantum anomaly freedom.
 \end{abstract}
@@ -201,11 +205,14 @@ exact global theorem.  Its restriction to the $D$-finite cylinder category
 is also exact: the explicit $E/A/L$ harmonics give same-energy metric
 preimages, nonzero curvature intertwiners, and character exhaustion.
 Neither theorem is a statement about a completed Hilbert/Krein domain.
-\item The complete strict-pure-Weyl local-plus-residual BV statement remains
-conditional on a full equivariant cyclic zero-mode transfer with the relevant
-ghost and antifield rows, and on a residual BFV choice which induces the
-centered ghost insertion and its normalization.  These remaining hypotheses
-are displayed rather than hidden.
+\item In the finite polynomial conformal category, an exact metric-BV
+calculation now includes the ghost and antifield detour rows, constructs a
+homotopy-equivariant retract, transfers the strict residual action, and
+reproduces the centered kernel and image.  Identifying its representative
+form with the complete cross-energy local-BV pairing remains conditional, as
+does the residual BFV boundary choice which induces the centered ghost
+insertion and its normalization.  These remaining hypotheses are displayed
+rather than hidden.
 \item Calling the resulting classes physical states additionally requires a
 boundary and gauge principle which makes all fifteen conformal generators,
 including $D$, gauge rather than global charges.  We call them
@@ -1493,6 +1500,65 @@ global zero-mode split, and the BV pairing remains a field-theory
 obligation.  Boundedness on a completed cylinder space is a separate
 analytic question.
 
+\subsection{Raw polynomial instantiation and measured noncompact defects}
+
+The abstract discussion can be instantiated before choosing an analytic
+completion.  In the finite polynomial conformal category, fixed total
+compact energy gives the exact rational chain
+\begin{equation}\label{eq:raw-polynomial-chain}
+ G_n\xrightarrow{A_n}M_n\xrightarrow{B_n}E_n
+ \xrightarrow{C_n}I_n,
+\end{equation}
+where the four slots contain the Diff$\times$Weyl ghosts, trace-free metric
+and trace doublet, Bach equation/metric-antifield row, and Noether
+identity/ghost-antifield row.  The Weyl scalar is written as
+\begin{equation}
+ \omega=\sigma+\frac14\partial\!\cdot\!\xi,
+\end{equation}
+so the vector arrow is the trace-free conformal-Killing operator and the
+trace is an explicit doublet.  The raw matrices commute with all four
+coordinate translations and special-conformal vector fields, not only with
+$D\times SO(4)$.
+
+\begin{cproposition}[Raw metric-BV retract and conformal transfer]
+\label{prop:raw-BV-transfer}
+In the complete energy buffer $n=2,3,4,5$, exact rational changes of basis
+give maps $p_n,\jmath_n,s_n$ satisfying
+\begin{equation}
+ p_n\jmath_n=1,
+ \qquad
+ \jmath_np_n=1-q_ns_n-s_nq_n,
+\end{equation}
+with cohomology dimensions $10,40,82,136$.  The chosen retract is not
+strictly equivariant under the noncompact generators.  For one Cartesian
+component, the defect ranks are
+\begin{equation}\label{eq:raw-defect-ranks}
+\begin{array}{c|rrrr}
+ &\rank\rho_H&\rank\delta_{\jmath}&\rank\delta_p&\rank\delta_s\\
+\hline
+ P_0&40&29&5&35\\
+ K_0&82&80&9&97.
+\end{array}
+\end{equation}
+Every inclusion defect is explicitly $q$-exact, every projection defect has
+an explicit right $q$-homotopy, and the homotopy defect obeys the induced
+projector identity.  The transferred maps obey all sixteen $[K_b,P_a]$
+brackets exactly on cohomology.  Moreover,
+\begin{equation}\label{eq:physical-HPL-zero}
+ p\rho_a s\rho_b\jmath=0
+\end{equation}
+on the physical metric row for every pair of proper-conformal components;
+all higher terms vanish because a second $s$ acts on the gauge row.
+\end{cproposition}
+
+Thus full equivariance of an arbitrarily chosen representative inclusion is
+not needed and, for this natural exact splitting, is false.  What transfers
+strictly is the conformal action on cohomology.  The calculation therefore
+realizes the homotopy-equivariant outcome anticipated above rather than
+silently replacing it by a strict SDR.  The exact matrices, defect
+homotopies, and generated table are produced by
+\path{symbolic/verify_conformal_raw_bv_transfer.py}.
+
 \subsection{The filtered local-to-residual complex}
 
 The possible failure modes can be displayed without compressing them into
@@ -1608,25 +1674,79 @@ cyclic statements are \eqref{eq:transferred-Cartan} and
 pairing from the associated graded object.
 \end{proof}
 
+\subsection{End-to-end centered integration in the polynomial category}
+
+The transferred coefficient matrices of
+Proposition~\ref{prop:raw-BV-transfer} can be coupled directly to the
+independently generated residual BFV/CE ghosts.  This removes the
+hand-specified $E/A/L$ matrices from the final centered rank calculation.
+
+\begin{cproposition}[Metric-to-residual integration]
+\label{prop:metric-residual-integration}
+In the parity-complete algebraic polynomial complex, the pipeline
+\begin{equation}
+ \text{metric BV rows}\longrightarrow
+ H(q)\longrightarrow
+ C^\bullet(\mathfrak{so}(4,2);H(q))
+\end{equation}
+has the exact centered dimensions and ranks
+\begin{equation}\label{eq:integrated-rank-table}
+\begin{array}{c|rrr|rr|r}
+ &\dim C^3&\dim C^4&\dim C^5&\rank d_3&\rank d_4&\dim H^4\\
+\hline
+\text{vacuum}&147&407&833&116&291&0\\
+\text{one particle}&580&2622&7314&520&2102&0\\
+\text{two particles}&0&55&385&0&53&2.
+\end{array}
+\end{equation}
+For the two-particle row, the next space has dimension $1155$ and
+$d_5d_4=0$ exactly.  Orientation reversal acts on the two kernel vectors by
+\begin{equation}
+ \operatorname{diag}(-1,+1).
+\end{equation}
+Pulling the positive energy-two electric/magnetic curvature form back to
+the metric representatives gives the raw kernel Gram matrix
+\begin{equation}
+ \operatorname{diag}\!\left(\frac5{64},5\right).
+\end{equation}
+After exact normalization and multiplication by the intrinsic unit residual
+ghost norm, the representative Gram matrix is $I_2$.
+\end{cproposition}
+
+The odd and even eigenvectors are respectively the Pontryagin and
+Weyl-square directions.  The calculation verifies the vector-space transfer
+and positive representative form in this algebraic model.  It does not by
+itself identify the curvature-coordinate normalization with the complete
+cross-energy local BV/BFV symplectic pairing.  That final cyclic
+normalization comparison remains visible below.  The certificate and
+machine-readable ranks are produced by
+\path{symbolic/verify_conformal_metric_to_residual_integration.py}.
+
 \subsection{Two remaining field-theoretic hypotheses}
 
 The smooth BGG theorem and Theorem~\ref{thm:algebraic-cylinder} remove the
-global PDE-surjectivity and finite-mode preimage gaps.  They do not by
-themselves compute the complete BV complex.  The remaining bridge is
-concentrated in two statements.
+global PDE-surjectivity and finite-mode preimage gaps.
+Propositions~\ref{prop:raw-BV-transfer} and
+\ref{prop:metric-residual-integration} additionally close the kernel,
+image, noncompact-action, and centered-rank calculation in an explicit
+polynomial metric-BV model.  Identifying that model and its representative
+form with the complete field-theoretic BV/BFV complex is concentrated in
+two statements.
 
 \begin{conjecture}[Strict pure-Weyl transfer hypotheses]\label{hyp:pure-weyl}
 The gauge-fixed free strict-pure-Weyl BV complex has the following
 properties in the cylinder problem under consideration.
 \begin{enumerate}
-\item \emph{BV transfer.}
+\item \emph{Field-theoretic BV and cyclic identification.}
 The fifteen global reducibilities and their genuine dual
 constraint/antifield sectors can be split without double counting.  After
-nonminimal doublets are removed, the remaining nonzero-mode local BV complex
-admits an $SO(4,2)$-equivariant cyclic retract to
-$\F(\W_+\oplus\W_-)$, has no additional local or antifield row which can
-enter or leave the centered degree, and transfers the strict linear residual
-action with no higher ghost operations.
+nonminimal doublets are contracted, the complete nonzero-mode free local BV
+complex is quasi-isomorphic, in the selected cylinder window, to the raw
+polynomial detour rows of \eqref{eq:raw-polynomial-chain}, with no additional
+local or antifield row entering or leaving the centered degree.  Its
+cross-energy BV/Krein pairing admits a cyclic transfer whose normalization
+agrees with the curvature form used in
+Proposition~\ref{prop:metric-residual-integration}.
 \item \emph{Residual BFV choice.}
 The selected closed-universe boundary problem gauges all fifteen residual
 generators and its BFV pairing induces the compact-energy four-ghost
@@ -1636,12 +1756,12 @@ Lemma~\ref{lem:ghost-pairing}, including the common normalization
 \end{enumerate}
 \end{conjecture}
 
-These are not consequences of the residual rank matrices.  The first
-requires the complete local ghost/antifield row inventory and a genuinely
-conformal cyclic transfer, rather than merely the
-blockwise $D\times SO(4)$ splitting of
-Proposition~\ref{prop:cyclic-retract}.  The second is stronger than verifying
-the natural Berezin saturation inside the already chosen residual complex.
+These are not consequences of the residual rank matrices.  The raw
+calculation already contains the minimal detour ghost and antifield rows and
+proves homotopy-equivariant noncompact transfer; the first item asks for the
+remaining identification with the complete field-theoretic BV domain and
+its cross-energy cyclic form.  The second is stronger than verifying the
+natural Berezin saturation inside the already chosen residual complex.
 
 \begin{corollary}[Conditional algebraic strict-pure-Weyl result]\label{cor:conditional}
 If Field-Theoretic Hypothesis~\ref{hyp:pure-weyl} holds, the complete free
@@ -1654,25 +1774,23 @@ is \eqref{eq:dynamic-quotient} with form $I_1$.
 \begin{proof}
 Theorems~\ref{thm:curvature-isomorphism} and
 \ref{thm:algebraic-cylinder} identify the one-particle coefficient module.
-Proposition~\ref{prop:Fock-lift} gives its free Fock lift.  Item 1 supplies
-the full equivariant cyclic hypotheses under
-which Propositions~\ref{prop:cyclic-retract} and \ref{prop:single-row} give
-strict residual transfer and spectral-sequence collapse.  Item 2 fixes the
-selected ghost pairing and normalization.  The exact residual theorem then
-gives \eqref{eq:main-result}, while \eqref{eq:HPL-isometry} identifies its
-residual CE Gram matrix with the transferred pure-Weyl BV cohomological form.
+Proposition~\ref{prop:Fock-lift} gives its free Fock lift.
+Propositions~\ref{prop:raw-BV-transfer} and
+\ref{prop:metric-residual-integration} give the strict induced residual
+action and centered cohomology in the algebraic polynomial model.  Item 1
+identifies this model and its cyclic form with the complete local BV
+complex.  Item 2 fixes the selected ghost pairing and normalization.
+Equation~\eqref{eq:HPL-isometry} then identifies the residual representative
+Gram matrix with the transferred pure-Weyl BV cohomological form.
 \end{proof}
 
 The global smooth BGG theorem, curvature isomorphism
 \eqref{eq:curvature-isomorphism}, action factorization
-\eqref{eq:Bfactor}, and finite jet table are exact inputs.  Separate
-finite-dimensional fixtures verify
-\eqref{eq:transferred-Cartan} and \eqref{eq:HPL-isometry} with a genuinely
-dressed inclusion.  They do not instantiate the full pure-Weyl field
-complex.  The two hypotheses above state the remaining obligations without
-folding full conformal equivariance, antifield-row control, or BFV
-normalization into the metric-to-curvature theorem.  A Hilbert, Krein,
-distributional, or completed Fock statement
+\eqref{eq:Bfactor}, raw metric-BV transfer, and integrated centered ranks are
+exact inputs.  The two hypotheses above state the remaining obligations
+without folding the cross-energy cyclic pairing or BFV boundary choice into
+the metric-to-curvature theorem.  A Hilbert, Krein, distributional, or
+completed Fock statement
 would require separate continuity, closed-range, and convergence results.
 
 \section{Scope, interpretation, and open questions}\label{sec:scope}
@@ -1706,11 +1824,13 @@ one-dimensional.
 
 \paragraph{The remaining classical bridge.}
 The all-level smooth metric-to-$\mathcal W_{\rm geom}$ identification and
-the algebraic $E/A/L$ curvature intertwiner are exact.  Two sharper
-obligations remain: construct the full $SO(4,2)$-equivariant cyclic BV
-zero-mode transfer with its antifield-row inventory, and derive the chosen
-four-ghost polarization and normalized pairing from the residual BFV
-boundary problem.  The direct Taub argument
+the algebraic $E/A/L$ curvature intertwiner are exact.  The raw polynomial
+metric-BV complex now supplies the antifield-row inventory, explicit
+noncompact homotopies, strict induced conformal action, and end-to-end
+centered ranks.  Two sharper obligations remain: identify its
+curvature-coordinate form with the complete cross-energy cyclic local-BV
+pairing, and derive the chosen four-ghost polarization and normalized
+pairing from the residual BFV boundary problem.  The direct Taub argument
 does not require first identifying a degree-three BGG representative,
 although that geometric comparison remains valuable.  Extension to a
 chosen Hilbert or Krein completion is a separate analytic question.  The
@@ -1737,10 +1857,13 @@ and the quotient by variationally trivial bulk functionals leaves one
 positive dynamical direction.
 
 The result is both stronger and narrower than a sampled positivity
-calculation.  It is exhaustive for the stated minimal residual complex, but
-it concerns vertices rather than propagating particles.  Its promotion to
-the full free pure-Weyl BV theory is controlled by the explicit hypotheses
-of Corollary~\ref{cor:conditional}.  Quantum consistency and interaction
+calculation.  It is exhaustive for the stated minimal residual complex, and
+the same centered ranks now arise from an independent raw polynomial
+metric-BV transfer, but it concerns vertices rather than propagating
+particles.  Its promotion to the complete field-theoretic pure-Weyl BV/BFV
+theory, including the cyclic normalization and boundary choice, is
+controlled by the explicit hypotheses of
+Corollary~\ref{cor:conditional}.  Quantum consistency and interaction
 descent are separate questions.
 
 \appendix

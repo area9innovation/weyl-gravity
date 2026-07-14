@@ -249,8 +249,10 @@ def main() -> None:
     args = parser.parse_args()
     if args.claim_complete_harmonic_complex:
         raise SystemExit(
-            "REFUSED: E/A/L right inverses do not yet construct every gauge, "
-            "metric, compatibility, and equation block of K_n/C_n/D2_n."
+            "REFUSED: this executable contains the raw physical E/A/L "
+            "preimages only. Off-shell BGG split blocks and raw polynomial "
+            "BV rows are certified by separate bridge executables; a full "
+            "raw magnetic-state cylinder tensor complex is not stored here."
         )
 
     data = certificate_data()

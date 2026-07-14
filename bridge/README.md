@@ -274,6 +274,109 @@ inverse for every `E_n`, `A_n`, and `L_n`, with parity completion and the
 first five level dimensions as regressions.  The machine-readable and LaTeX
 artifacts are in `bridge/certificates/` and `bridge/generated/`.
 
-This closes the immediate physical-block preimage target.  Sprint 1 remains
-open until the surrounding off-shell gauge/metric/compatibility matrices
-`K_n,C_n,D2_n` and their exactness certificates are also implemented.
+This closes the immediate physical-block preimage target.
+
+## Implemented checkpoint: off-shell BGG blocks and raw polynomial BV rows
+
+The surrounding off-shell dimensions and arrows are now generated in two
+independent realizations.
+
+- `bridge/bgg_operators/normal_form.py` constructs exact all-energy
+  BGG-adapted normal forms for `K_n`, `C_n`, `C_n^sharp`, `D2_n`, `B_n`, and
+  `K_n^sharp`.  It proves the dimension identities symbolically and verifies
+  every complex/factorization identity through a configurable regression
+  buffer.  These are split harmonic normal forms, not a claim that every
+  magnetic-state tensor has been stored in raw cylinder coordinates.
+- `bridge/bv_complex/polynomial_bv.py` constructs the actual rational
+  Diff/Weyl ghost, trace-free metric, Bach-equation, and identity rows in the
+  polynomial conformal-module realization.  The correction
+  `omega=sigma+(div xi)/4` is built into the trace/trace-free split.  Its
+  differential commutes exactly with all four coordinate translations and
+  all four special-conformal transformations, as well as `D x SO(4)`.
+
+The corresponding certificates are
+
+```text
+symbolic/verify_conformal_cylinder_bgg_blocks.py
+symbolic/verify_conformal_free_bv_complex.py
+```
+
+and emit exact JSON/LaTeX artifacts under `bridge/certificates/` and
+`bridge/generated/`.
+
+## Implemented checkpoint: measured noncompact transfer
+
+`bridge/cyclic_retract/raw_polynomial.py` extracts exact rational maps
+`p,j,s` directly from the raw polynomial metric BV matrices.  It does not
+assume full conformal equivariance.  The certificate
+
+```text
+symbolic/verify_conformal_raw_bv_transfer.py
+```
+
+finds nonzero `P` and `K` defects, proves each defect has the displayed
+`q`-homotopy, verifies the strict induced conformal brackets on cohomology,
+and proves
+
+```text
+p rho s rho j = 0
+```
+
+on the physical metric row.  All higher HPL terms then vanish because a
+second `s` acts on the gauge row.  The outcome is therefore explicitly
+**homotopy-equivariant, not strict**, while the transferred coefficient
+action is the strict residual conformal action.
+
+The split contraction also has a canonical cyclic form and exact compact
+equivariance (`symbolic/verify_conformal_cyclic_bv_retract.py`).  What is not
+yet derived is cyclicity for the full cross-energy local BV pairing in the
+raw polynomial/cylinder realization.
+
+## Implemented checkpoint: residual BFV and end-to-end integration
+
+`bridge/residual_bfv/` independently constructs the rational
+`4+7+4`-graded conformal algebra, CE ghosts, contractions, Cartan identity,
+and complementary-degree ghost pairing.  It derives the four-ghost unit norm
+by saturating all fifteen ghost directions.
+
+`bridge/transfer/raw_residual.py` then induces the residual coefficient
+matrices from the raw metric BV contraction rather than importing the
+hand-specified `E/A/L` matrices.  The integration certificate
+
+```text
+symbolic/verify_conformal_metric_to_residual_integration.py
+```
+
+reconstructs the centered residual complex and obtains
+
+```text
+vacuum:       ranks 116 + 291 = 407,  H^4 = 0
+one particle: ranks 520 + 2102 = 2622, H^4 = 0
+two particles: rank d4 = 53 on 55 states, H^4 = 2
+```
+
+The two exact kernel vectors have parity `(-1,+1)`, corresponding to the
+Pontryagin/odd and Weyl-square/even directions.  Pulling the positive
+energy-two curvature form back to the metric representatives and multiplying
+by the canonical residual ghost norm gives the normalized representative
+Gram matrix `I2`.
+
+This is an end-to-end theorem in the finite, algebraic polynomial conformal
+category.  It does **not** yet identify the cross-energy local BV pairing
+with the chosen residual BFV normalization, make the closed-universe choice
+to gauge `D` compulsory, establish an analytic completion, or address the
+quantum theory.
+
+## Remaining critical path
+
+The computational unknowns are now narrower than the original seven
+workstreams:
+
+1. construct the cross-energy cyclic local BV pairing and compare its
+   transferred normalization with the intrinsic residual BFV top form;
+2. finish the all-level equivariant Taub/moment-map normalization from the
+   quadratic Bach source (one `D` component plus one proper-conformal check);
+3. decide and state the boundary/BFV principle selecting full residual
+   gauging, especially the status of `D`;
+4. only then promote the algebraic integration result to the complete
+   closed-universe pure-Weyl BV/BFV theorem.
