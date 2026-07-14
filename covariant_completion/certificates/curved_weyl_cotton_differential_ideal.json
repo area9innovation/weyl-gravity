@@ -1,0 +1,52 @@
+{
+  "adjusted_evolution_plus_14_constraints_rank": 40,
+  "covariant_and_adjusted_differential_ideals_equal": true,
+  "covariant_and_adjusted_smooth_solution_spaces_equal": true,
+  "differential_generation_of_missing_rows": [
+    "2a=U_x-div(f_E)-q_t-(1/2)curl r",
+    "2c=U_y-div(f_B)-r_t+(1/2)curl q"
+  ],
+  "exact_covariant_row_rank": 34,
+  "exact_rows_contained_pointwise": true,
+  "exact_union_adjusted_rank": 40,
+  "exact_vector_relations": [
+    "R_x=U_x-2a",
+    "R_y=U_y-2c"
+  ],
+  "fail_closed": true,
+  "interpretation": "The 26-state adjusted system closes the covariant differential ideal when all q,r,a,c,s,t rows are retained.  The 32-state graph promotion is not a closed rank-14 Cauchy formulation; its secondary a=c=0 constraints must also be imposed.",
+  "pointwise_reverse_containment": false,
+  "pointwise_reverse_defect_rank": 6,
+  "promoted_32_state_audit": {
+    "additional_formal_integrability_rows": 6,
+    "advertised_constraint_rank": 14,
+    "advertised_constraints_propagate": false,
+    "constraint_rank_after_secondary_completion": 20,
+    "exact_constraint_derivatives": [
+      "q_t+(1/2)curl r+2a=f_x-div f_E",
+      "r_t-(1/2)curl q+2c=f_y-div f_B"
+    ],
+    "exact_graph_first_jet_rank": 40,
+    "global_spacetime_solution_equivalence_with_all_rows": true,
+    "missing_secondary_constraints": "a[3]=0,c[3]=0",
+    "promoted_equation_first_jet_rank": 46,
+    "propagation_defect_rank": 6,
+    "rank_14_Cauchy_constraint_equivalence": false,
+    "union_rank": 46
+  },
+  "schema": "pure-weyl-cotton-differential-ideal-audit-v1",
+  "source_compatibility_map_available": true,
+  "source_compatibility_rows": [
+    "f_x-div f_E",
+    "f_y-div f_B",
+    "div f_A+(1/2)curl f_y",
+    "div f_C-(1/2)curl f_x",
+    "div f_x",
+    "div f_y"
+  ],
+  "sourced_subsidiary_identity_curvature_corrected": true,
+  "status_flags_promoted": [],
+  "unit_S3_curvature_correction_required": true,
+  "vector_relation_defect": 0,
+  "warranted_atomic_flags": []
+}

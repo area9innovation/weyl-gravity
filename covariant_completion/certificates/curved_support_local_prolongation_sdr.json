@@ -1,0 +1,89 @@
+{
+  "SDR_maps": {
+    "homotopy": "canonical conjugate of Psi_star |-> -Psi_hat and c_star |-> -c_hat",
+    "inclusion_fields": "h |-> (h,Psi=C1 h,c=div C1 h)",
+    "inclusion_graph_equation_antifields": "zero",
+    "projection_base_equation_antifield": "h_star+C1^sharp Psi_star+C1^sharp div^sharp c_star",
+    "projection_fields": "(h,Psi,c) |-> h"
+  },
+  "adjoined_rows": [
+    {
+      "dimension": 10,
+      "equation_antifield": "Psi_star",
+      "equation_dimension": 10,
+      "field": "Psi",
+      "shift": "Psi_hat=Psi-C1 h"
+    },
+    {
+      "dimension": 16,
+      "equation_antifield": "c_star",
+      "equation_dimension": 16,
+      "field": "c=div Psi",
+      "shift": "c_hat=c-div Psi"
+    }
+  ],
+  "base_complex": {
+    "minimal_dimension": 66,
+    "retained_without_omission": true,
+    "rows": [
+      "gauge ghosts",
+      "auxiliary fields including h",
+      "equations/field antifields",
+      "Noether-identity/ghost-antifields"
+    ],
+    "trace_Weyl_and_nonminimal_direct_summands": "identity"
+  },
+  "cotangent_lift": {
+    "Psi_star_old": "Psi_star_new-div^sharp c_star_new",
+    "c_star_old": "c_star_new",
+    "formal_BV_pairing_defect": 0,
+    "h_star_old": "h_star_new-C1^sharp Psi_star_new"
+  },
+  "exact_identities": {
+    "I_P_minus_identity": "Q_prol H+H Q_prol",
+    "P_I": "identity",
+    "P_Q_prol_minus_Q_aux_P": "zero",
+    "Q_prol_I_minus_I_Q_aux": "zero",
+    "Q_prol_squared": "zero modulo Q_aux_squared=0",
+    "U_U_inverse": "identity",
+    "U_inverse_U": "identity"
+  },
+  "fail_closed": true,
+  "identity_antifield_reason": "the graph equations are algebraically independent and have no new Noether identity; the original identity-antifields remain present",
+  "matrix_sha256": {
+    "homotopy": "306fc5f90a2f97514a20bc3bf088a1aaa5c9a19b6a70f7b0755bfe2e0c7bc511",
+    "inclusion": "44ad3eb0ff7d58b62d8fe1b94855bcd624d211bc11831073e91848e51a662f74",
+    "new_to_old": "32728e80c203278b9902866c9d7e291d345728b96e9cfe4f87f5cf51dadd0b59",
+    "old_to_new": "8d3b5cca593bf2c4157847e5577e235a1c864d185eb65195b8e9bf2f99e25b71",
+    "projection": "22731828ea8a6393b219257c06f20901426bbf37536af8450b1f2d7d6f6d9069",
+    "split_Q": "b03f3d22d0e3b4a440470662e5891d1c6da186859eb51ff060e54dacdc802fb5",
+    "unshifted_Q": "b05a797b407c296968c20c9531b146e7224db3d5ed844a0e3dbc44744066043e"
+  },
+  "minimal_prolonged_dimension": 118,
+  "new_identity_antifields": 0,
+  "prolonged_BV_operator_identity": false,
+  "schema": "pure-weyl-support-local-curvature-graph-SDR-v1",
+  "support": {
+    "Green_operator": false,
+    "compact": true,
+    "finite_order_only": true,
+    "inverse_Laplacian": false,
+    "inverse_curl": false,
+    "operators": {
+      "C1": 2,
+      "C1_sharp": 2,
+      "div": 1,
+      "div_C1": 3,
+      "div_sharp": 1,
+      "homotopy_max_order": 2
+    },
+    "pointwise_inverses_only": true,
+    "smooth_global": true,
+    "spacelike_compact": true,
+    "spectral_or_helicity_projector": false
+  },
+  "support_local_curvature_graph_retract": true,
+  "support_local_prolongation_retract": false,
+  "theorem_boundary": "this is the exact all-row graph/generalized-auxiliary SDR for Psi=C1 h and c=div Psi; promotion of the complete prolongation still requires inserting and checking the derived Bianchi/Bach, constraint, and identity rows of Q_prol",
+  "type_II_generator": "F_graph=<h_new^*,h>+<Psi_new^*,Psi-C1 h>+<c_new^*,c-div Psi> plus unchanged base rows"
+}

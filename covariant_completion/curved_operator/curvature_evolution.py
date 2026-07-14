@@ -19,21 +19,8 @@ from dataclasses import dataclass
 
 import sympy as sp
 
-
-def _epsilon(i: int, j: int, k: int) -> sp.Integer:
-    return sp.Integer(sp.LeviCivita(i, j, k))
-
-
-def _stf_basis() -> tuple[sp.Matrix, ...]:
-    """A rational basis of symmetric trace-free 3 by 3 tensors."""
-
-    return (
-        sp.diag(1, -1, 0),
-        sp.diag(1, 1, -2),
-        sp.Matrix([[0, 1, 0], [1, 0, 0], [0, 0, 0]]),
-        sp.Matrix([[0, 0, 1], [0, 0, 0], [1, 0, 0]]),
-        sp.Matrix([[0, 0, 0], [0, 0, 1], [0, 1, 0]]),
-    )
+from .weyl_3plus1 import epsilon as _epsilon
+from .weyl_3plus1 import stf_basis as _stf_basis
 
 
 def _frobenius(first: sp.Matrix, second: sp.Matrix) -> sp.Expr:
@@ -180,7 +167,7 @@ class CurvatureEvolutionPrincipalSymbol:
     def certificate(self) -> dict[str, object]:
         self.verify()
         return {
-            "schema": "pure-weyl-curvature-evolution-principal-symbol-v1",
+            "schema": "pure-weyl-curvature-evolution-principal-symbol-v2",
             "bundle": "STF_2(S^3) electric + STF_2(S^3) magnetic",
             "rank": 10,
             "principal_equations": [
@@ -220,8 +207,25 @@ class CurvatureEvolutionPrincipalSymbol:
             },
             "principal_system_derived_from_curved_Bianchi_Bach": False,
             "curved_Bianchi_Bach_lower_terms_derived": False,
+            "curved_EB_equations": False,
+            "curved_EB_first_order_closure": False,
+            "curved_EB_symmetric_hyperbolicity": False,
+            "curved_sourced_constraint_identity": False,
             "curvature_constraints_propagate": False,
+            "curved_constraint_propagation": False,
+            "EAL_curvature_spectrum_match": False,
             "local_prolongation_retract_verified": False,
+            "support_local_prolongation_retract": False,
+            "prolonged_BV_operator_identity": False,
+            "prolonged_green_witness": False,
+            "curvature_causal_green_operators": False,
+            "causal_green_homotopy": False,
             "complete_curvature_green_realization": False,
+            "proof_boundary": (
+                "the exact certificate is only the SO(3)-equivariant candidate "
+                "principal block and principal divergence identity; it does not "
+                "derive the curved Bianchi--Bach system, sourced constraints, "
+                "all-level E/A/L spectrum, or a BV Green homotopy"
+            ),
             "fail_closed": True,
         }

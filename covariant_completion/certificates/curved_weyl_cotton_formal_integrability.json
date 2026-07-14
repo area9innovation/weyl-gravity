@@ -1,0 +1,103 @@
+{
+  "adjusted_homogeneous_subsidiary_equations": [
+    "q_t+(1/2)curl r=0",
+    "r_t-(1/2)curl q=0",
+    "a_t-q-(1/3)grad s=0",
+    "c_t-r-(1/3)grad t=0",
+    "s_t-div a=0",
+    "t_t-div c=0"
+  ],
+  "adjusted_sourced_subsidiary_equations": [
+    "q_t+(1/2)curl_1 r=f_x-div f_E",
+    "r_t-(1/2)curl_1 q=f_y-div f_B",
+    "a_t-q-(1/3)grad s=div f_A+(1/2)curl_1 f_y",
+    "c_t-r-(1/3)grad t=div f_C-(1/2)curl_1 f_x",
+    "s_t-div a=div f_x",
+    "t_t-div c=div f_y"
+  ],
+  "compatible_exact_sources": [
+    "g_x-div f_E=0",
+    "g_y-div f_B=0",
+    "div f_A+(1/2)curl g_y=0",
+    "div f_C-(1/2)curl g_x=0",
+    "div g_x=0",
+    "div g_y=0"
+  ],
+  "compatible_sources_preserve_all_fourteen_constraints": true,
+  "constraint_additions_are_support_local": true,
+  "constraint_adjustment_removes_raw_imaginary_longitudinal_pair": true,
+  "exact_covariant_system": "34 Weyl-definition/Bach/dual rows",
+  "exact_raw_homogeneous_subsidiary_equations": [
+    "q_t+(1/2)curl r+2a=0",
+    "r_t-(1/2)curl q+2c=0",
+    "a_t+curl c-q-(1/3)grad s=0",
+    "c_t-curl a-r-(1/3)grad t=0",
+    "s_t+div a=0",
+    "t_t+div c=0"
+  ],
+  "exact_raw_longitudinal_speeds": [
+    "-i/sqrt(3)",
+    "+i/sqrt(3)"
+  ],
+  "exact_raw_sourced_subsidiary_equations": [
+    "q_t+(1/2)curl r+2a=g_x-div f_E",
+    "r_t-(1/2)curl q+2c=g_y-div f_B",
+    "a_t+curl c-q-(1/3)grad s=div f_A+(1/2)curl g_y",
+    "c_t-curl a-r-(1/3)grad t=div f_C-(1/2)curl g_x",
+    "s_t+div a=div g_x",
+    "t_t+div c=div g_y"
+  ],
+  "exact_raw_subsidiary_characteristic": "lambda**2*(lambda - 1)**2*(lambda + 1)**2*(2*lambda - 1)**2*(2*lambda + 1)**2*(3*lambda**2 + 1)**2/144",
+  "exact_raw_subsidiary_hyperbolic": false,
+  "exact_sourced_subsidiary_operator_identity": true,
+  "exact_to_hyperbolic_implication": [
+    "q_t+(1/2)curl r=R_x on the exact first-twenty rows",
+    "r_t-(1/2)curl q=R_y on the exact first-twenty rows",
+    "q=r=U_x=U_y=0 and R_x=U_x-2a, R_y=U_y-2c imply a=c=0",
+    "then R_x=R_y=0"
+  ],
+  "exact_vector_row_relation": [
+    "R_x=U_x-2a",
+    "R_y=U_y-2c"
+  ],
+  "fail_closed": true,
+  "flags_promoted_here": [],
+  "formally_integrable_differential_ideals_equivalent": true,
+  "hyperbolic_system": "26 adjusted evolution rows plus 14 constraints",
+  "hyperbolic_to_exact_implication": [
+    "the first twenty hyperbolic rows are exact covariant row combinations",
+    "q=r=s=t=0 recover the eight primary covariant constraints",
+    "R_x=R_y=a=c=0 imply U_x=U_y=0"
+  ],
+  "pointwise_row_modules_equal": false,
+  "pointwise_row_rank_defect": 6,
+  "primary_covariant_constraints": [
+    "q=x-div E",
+    "r=y-div B",
+    "s=div x",
+    "t=div y"
+  ],
+  "proof_boundary": "exact curvature PDE and formally integrable sourced constraint closure only; no E/A/L, BV, Green, causal-homotopy, endpoint, equivariance, or current theorem",
+  "schema": "pure-weyl-cotton-formal-integrability-v1",
+  "secondary_constraint_rank": 6,
+  "secondary_constraints": [
+    "a=div A+(1/2)curl y",
+    "c=div C-(1/2)curl x"
+  ],
+  "source_notation": "f_E,f_B,f_A,f_C source the first twenty tensor rows; g_x,g_y source the exact vector Bach rows",
+  "subsidiary_characteristic": "lambda**6*(2*lambda - 1)**2*(2*lambda + 1)**2*(3*lambda**2 - 1)**2/144",
+  "subsidiary_characteristic_speeds": {
+    "+1/2": 2,
+    "+1/sqrt(3)": 2,
+    "-1/2": 2,
+    "-1/sqrt(3)": 2,
+    "0": 6
+  },
+  "subsidiary_characteristics_causal": true,
+  "subsidiary_symmetrizer_positive": true,
+  "warranted_atomic_flags": [
+    "curved_EB_symmetric_hyperbolicity",
+    "curved_sourced_constraint_identity",
+    "curved_constraint_propagation"
+  ]
+}

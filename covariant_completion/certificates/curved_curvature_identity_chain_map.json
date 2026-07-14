@@ -1,0 +1,152 @@
+{
+  "A_metric": {
+    "tracefree_Bach_to_curvature_sha256": "444dabf81f7945e342dda9d6fd8ffc0e6d6a7814792d613915a99a3aa7af5927"
+  },
+  "B_identity": {
+    "coefficient_multiindices": 1,
+    "formula": "B_aux=B_metric p_identity",
+    "maximum_order": 0,
+    "nonzero_blocks": [
+      "B_aux[a[3],xi_0_star spatial[3]]=-I_3/4",
+      "B_aux[s,xi_0_star temporal]=-1/4"
+    ],
+    "nonzero_coefficients": 4,
+    "rank": 4,
+    "sha256": "52b01d99ad2f7cdf59ab295cdcc4cedd74f1d809b3781f6b51a5b7152f0b58e0",
+    "shape": [
+      14,
+      9
+    ]
+  },
+  "B_identity_emitted": true,
+  "B_metric": {
+    "nonzero_blocks": [
+      "B_metric[a[3],spatial_divergence[3]]=-I_3/4",
+      "B_metric[s,temporal_divergence]=-1/4"
+    ],
+    "rank": 4,
+    "sha256": "be8084b39565f453b538fc0a6cf36fd2411214ad3513adaab3b1f86cb0dc51ed",
+    "shape": [
+      14,
+      5
+    ]
+  },
+  "basis_conventions": {
+    "adjoint_convention": "K^sharp=-2 div",
+    "auxiliary_identities": "xi_minus_2_star[4],xi_0_star[4],sigma_star[1]",
+    "curvature_identities": "q[3],r[3],a[3],c[3],s[1],t[1]",
+    "metric_equations": "action Bach scalar[1],mixed[3],spatial-STF[5],trace[1]",
+    "metric_identities": "diffeomorphism[4],Weyl-trace[1]"
+  },
+  "coefficientwise_identity_square": {
+    "C_metric_shapes": [
+      [
+        5,
+        10
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        5,
+        10
+      ]
+    ],
+    "N_curv_A_metric_minus_B_metric_C_metric": "zero",
+    "N_curv_shapes": [
+      [
+        14,
+        40
+      ],
+      [
+        14,
+        40
+      ],
+      [
+        14,
+        40
+      ],
+      [
+        14,
+        40
+      ],
+      [
+        14,
+        40
+      ]
+    ],
+    "curved_globalization": "natural SO(3) component identity with exact unit-S3 lower terms",
+    "defect_counts": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "table_order": [
+      "time",
+      "space_1",
+      "space_2",
+      "space_3",
+      "zeroth"
+    ]
+  },
+  "cotangent_lift": {
+    "generated_from_same_BV_pairings": true,
+    "map": "B_identity^sharp",
+    "maximum_order": 0,
+    "shape": [
+      9,
+      14
+    ]
+  },
+  "fail_closed": true,
+  "full_auxiliary_chain_relation": {
+    "N_curv_A_equation_minus_B_identity_C_aux": "zero",
+    "derivation": [
+      "N A_aux=N A_metric p_equation",
+      "N A_metric=B_metric C_metric",
+      "C_metric p_equation=p_identity C_aux",
+      "therefore N A_aux=B_identity C_aux"
+    ],
+    "exact": true
+  },
+  "identity_projection": {
+    "Weyl_scalar_block": "sigma_star -> metric Weyl identity",
+    "derivative_scalar_correction_relevant": false,
+    "full_retract_projection_sha256": "39a4a0b56b925415eb99b53cd2398010c25523dcc0c70079d12400c89f3452b7",
+    "reason": "B_metric annihilates the Weyl-scalar column",
+    "sha256": "dabae2d7919e4cc3954960e3c193155a5f70a358950896af29a6966791f34df0",
+    "shape": [
+      5,
+      9
+    ],
+    "vector_block": "xi_0_star[4] -> metric diffeomorphism identity[4]"
+  },
+  "mapping_cylinder_cotangent_kernel_assembled": false,
+  "proof_boundary": "both mapping-cylinder chain squares are now exact; assembly of the enlarged differential, cotangent cone, and SDR is separate",
+  "schema": "pure-weyl-curvature-auxiliary-identity-chain-map-v1",
+  "second_chain_relation": "N_curv A_equation=B_identity C_aux",
+  "second_chain_relation_exact": true,
+  "status_flags_promoted": [],
+  "support": {
+    "Green_operator": false,
+    "compact": true,
+    "finite_order": true,
+    "inverse_Laplacian_or_curl": false,
+    "maximum_order": 0,
+    "smooth_global": true,
+    "spacelike_compact": true,
+    "spectral_projector": false
+  },
+  "warranted_atomic_flags": []
+}

@@ -1,0 +1,104 @@
+{
+  "attachment_obstruction": {
+    "adjusted_first_jet_evolution_plus_constraint_rank": 40,
+    "covariant_first_jet_row_rank": 34,
+    "differential_only_row_excess": 6,
+    "direct_sum_is_support_local_prolongation_SDR": false,
+    "missing_rows": "a[3],c[3]",
+    "nonzero_curvature_module_certified": true,
+    "pointwise_row_selection_suffices": false,
+    "promoted_32_state_rank14_constraints_propagate": false,
+    "promoted_constraint_propagation_defect_rank": 6,
+    "reason": "the autonomous curvature complex has the nonzero all-level E/A/L solution module, so forgetting it cannot satisfy IP-1=QH+HQ"
+  },
+  "autonomous_curvature_equation_complex": {
+    "Q_squared": "zero",
+    "equations": {
+      "decomposition": "26 evolution plus 14 constraints",
+      "operator": "E_curv=(L,K)",
+      "rank": 40
+    },
+    "identities": {
+      "identity": "N_curv E_curv=SK-RL=0",
+      "operator": "N_curv=(-R,S)",
+      "rank": 14,
+      "unit_S3_curvature_correction_included": true
+    },
+    "state": {
+      "order": "E,B,A,C,x,y",
+      "rank": 26
+    },
+    "support_local": true
+  },
+  "cotangent_completion": {
+    "Q_squared": "zero",
+    "all_arrows_are_formal_cotangent_adjoints": true,
+    "arrows": [
+      "N_curv^sharp",
+      "E_curv^sharp",
+      "zero central arrow",
+      "E_curv",
+      "N_curv"
+    ],
+    "block_order": [
+      "identity_dual[14]",
+      "equation_dual[40]",
+      "state_dual[26]",
+      "state[26]",
+      "equation[40]",
+      "identity[14]"
+    ],
+    "formal_cotangent_incidence_pairing_preserved": true,
+    "matrix_sha256": "9bedf8227c0deb3862a2e5a155536de4f32a551da38deadbaafab343b3ff2e39",
+    "total_rank": 160
+  },
+  "exact_results": {
+    "all_autonomous_curvature_rows_enumerated": true,
+    "autonomous_curvature_Q_squared": true,
+    "base_direct_sum_P_I": true,
+    "cotangent_adjoint_Q_squared": true,
+    "support_local_operator_complex": true
+  },
+  "fail_closed": true,
+  "precise_next_step": "emit A_equation and B_identity as exact local differential operators, including the six differential a/c generators, then apply the mapping-cylinder cotangent kernel",
+  "required_mapping_cylinder_data": {
+    "A_equation": "auxiliary equations[24] -> curvature equations[40]",
+    "B_identity": "auxiliary identity-antifields[9] -> curvature identities[14]",
+    "T_state": "(C1,div C1): auxiliary fields[24] -> U[26]",
+    "all_row_mapping_cylinder_constructible_now": false,
+    "coefficientwise_A_equation_emitted": false,
+    "coefficientwise_B_identity_emitted": false,
+    "cotangent_rows": "A_equation^sharp and B_identity^sharp",
+    "first_missing_chain_relation": "E_curv T_state=A_equation E_aux",
+    "gauge_relation": "T_state K_aux=0",
+    "second_missing_chain_relation": "N_curv A_equation=B_identity C_aux"
+  },
+  "schema": "pure-weyl-prolonged-BV-differential-attachment-audit-v1",
+  "status_flags_promoted": [],
+  "support_orders": {
+    "K_constraint": 1,
+    "L_evolution": 1,
+    "R_source_compatibility": 1,
+    "S_subsidiary": 1,
+    "formal_adjoints": 1,
+    "nonlocal_inverse_or_projector": false
+  },
+  "unchanged_auxiliary_rows": {
+    "direct_sum_P_I": "identity on the 66-row auxiliary summand",
+    "direct_sum_Q_squared": "zero",
+    "direct_sum_total_before_reattached_summands": 226,
+    "equation_antifield_rows": 24,
+    "field_rows": 24,
+    "ghost_rows": 9,
+    "identity_antifield_rows": 9,
+    "minimal_auxiliary_BV_rank": 66,
+    "trace_Weyl_and_nonminimal_rows": "unchanged direct summands"
+  },
+  "unproved_results": {
+    "complete_IP_minus_identity_equals_QH_plus_HQ": false,
+    "complete_attachment_chain_map": false,
+    "prolonged_BV_operator_identity": false,
+    "support_local_prolongation_retract": false
+  },
+  "warranted_atomic_flags": []
+}

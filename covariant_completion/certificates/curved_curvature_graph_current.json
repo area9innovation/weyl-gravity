@@ -1,0 +1,77 @@
+{
+  "action_level_blocker": {
+    "missing": [
+      "a complete all-row Q_prol/master action containing the derived Bianchi--Bach evolution, sourced constraints, identity-antifields, and their antifield rows",
+      "a cyclic BV pairing (or local quadratic parent) whose Euler--Lagrange/Koszul--Tate rows are exactly that curvature resolution",
+      "formal-adjoint/cyclicity identities and the resulting Green concomitant for every resolution row"
+    ],
+    "promotion_condition": "extend this exact graph parent to the complete all-row curvature resolution and prove I^*omega_prol-omega_aux=d beta+Q gamma off shell",
+    "why_the_PDE_symmetrizer_is_insufficient": "a positive symmetrizer proves well-posedness but neither defines the BV presymplectic current nor supplies Q-cyclicity"
+  },
+  "curvature_graph_current_comparison": true,
+  "exact_identities": {
+    "I_pullback_omega_parent_minus_omega_aux": "zero",
+    "I_pullback_theta_parent_minus_theta_aux": "zero",
+    "R_I": "zero",
+    "Rsharp_R_I": "zero",
+    "graph_Hessian_adjoint_defect": "zero",
+    "improvement": "d beta+Q gamma with beta=0 and gamma=0"
+  },
+  "fail_closed": true,
+  "flags_promoted_here": [],
+  "local_quadratic_parent": {
+    "Euler_Lagrange_graph_block": "R^sharp R(h,Psi,c), equivalent after the triangular graph shift to the two pointwise unit arrows",
+    "bundle_forms": "fixed nondegenerate pointwise Weyl and Cotton forms; identity in the formal normalization",
+    "formula": "L_parent=L_aux+1/2<Psi_hat,Psi_hat>_W+1/2<c_hat,c_hat>_C",
+    "graph_Hessian": "R^sharp R",
+    "graph_Hessian_formally_self_adjoint": true
+  },
+  "matrix_sha256": {
+    "graph_Hessian": "3f805ef3b75585f84e2d462a6c620ada7001bb8fc69a0c024da8177e4602afca",
+    "graph_inclusion": "b3bb81137596431afc90e49f93410ac04cc96c498e7dd1ae8c6c215841189ff8",
+    "residual_R": "edd6982544fc1154c31e0f6f17480cc5e649f5752786a4752d087d70eb321204"
+  },
+  "pairing_separation": {
+    "action_BV_Krein_current": "the indefinite cohomological pairing inherited from L_aux and the local parent",
+    "identified_with_each_other": false,
+    "positive_PDE_symmetrizer": "used only for symmetric-hyperbolic energy estimates and finite propagation"
+  },
+  "prolonged_current_comparison": false,
+  "schema": "pure-weyl-curvature-graph-current-comparison-v1",
+  "support": {
+    "C1_order": 2,
+    "Green_operator": false,
+    "compact": true,
+    "div_order": 1,
+    "finite_order_only": true,
+    "inverse_Laplacian": false,
+    "inverse_curl": false,
+    "pointwise_bundle_forms_only": true,
+    "smooth_global": true,
+    "spacelike_compact": true,
+    "spectral_projector": false
+  },
+  "theorem_boundary": "the local BV-canonical graph/generalized-auxiliary sector has an exact action and current pullback; the complete curvature resolution has no certified action-level cyclic realization yet",
+  "variables": {
+    "cotangent_lift": "the exact type-II BV-canonical graph generator",
+    "fields": [
+      "h",
+      "Psi",
+      "c"
+    ],
+    "graph_inclusion": "h |-> (h,C1 h,div C1 h)",
+    "shifted_residuals": [
+      "Psi_hat=Psi-C1 h",
+      "c_hat=c-div Psi"
+    ]
+  },
+  "variational_boundary": {
+    "current_pullback": "I^*omega_graph=0",
+    "delta_L_graph": "<Psi_hat,delta Psi-C1 delta h>+<c_hat,delta c-div delta Psi>",
+    "green_concomitant_convention": "d J_A(u,v)=<u,A v>-<A^sharp u,v>",
+    "potential_pullback": "I^*theta_graph=0",
+    "residual_pullback": "I^*(Psi_hat,c_hat)=(0,0)",
+    "tangent_residual_pullback": "I^*(delta Psi_hat,delta c_hat)=(0,0)",
+    "theta_graph": "-J_C1(Psi_hat,delta h)-J_div(c_hat,delta Psi)"
+  }
+}

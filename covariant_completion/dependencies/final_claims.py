@@ -91,11 +91,11 @@ class FinalClaimDependencyReport:
         )
         curvature_prolongation = _load(
             "curved_curvature_prolongation_status.json",
-            "pure-weyl-curvature-prolongation-status-v1",
+            "pure-weyl-curvature-prolongation-status-v2",
         )
         curvature_evolution_symbol = _load(
             "curved_curvature_evolution_principal_symbol.json",
-            "pure-weyl-curvature-evolution-principal-symbol-v1",
+            "pure-weyl-curvature-evolution-principal-symbol-v2",
         )
         wave_symbols = _load(
             "degreewise_wave_symbols.json",
@@ -266,23 +266,70 @@ class FinalClaimDependencyReport:
         atomic(
             "curved_EB_equations",
             bool(curvature_prolongation["curved_EB_equations"]),
-            "open_analytic_obligation",
-            ("curved_curvature_prolongation_status.json",),
-            "Derive the complete electric/magnetic Weyl equations from the curved linearized Bianchi/Cotton and Bach identities.",
+            "implemented_structural_fact",
+            (
+                "curved_weyl_cotton_jet_comparison.json",
+                "curved_curvature_prolongation_status.json",
+            ),
+            "The complete curved Weyl/Cotton and Bach equations agree on all 150 independent Weyl two-jets and globalize by cylinder homogeneity.",
+        )
+        atomic(
+            "curved_EB_first_order_closure",
+            bool(curvature_prolongation.get("curved_EB_first_order_closure", False)),
+            "implemented_structural_fact",
+            (
+                "curved_weyl_cotton_3plus1.json",
+                "curved_weyl_cotton_bach_first_order.json",
+                "curved_curvature_prolongation_status.json",
+            ),
+            "The ten Weyl E/B components plus the sixteen-component Cotton divergence form an exact local 26-state first-order closure with 34 covariant rows and eight constraints.",
         )
         atomic(
             "curved_EB_symmetric_hyperbolicity",
             bool(curvature_prolongation["curved_EB_symmetric_hyperbolicity"]),
-            "open_analytic_obligation",
-            ("curved_curvature_prolongation_status.json",),
-            "Identify the actual curved E/B coefficient matrices and prove the positive STF form symmetrizes them.",
+            "implemented_structural_fact",
+            (
+                "curved_weyl_cotton_hyperbolic.json",
+                "curved_weyl_cotton_differential_ideal.json",
+                "curved_weyl_cotton_formal_integrability.json",
+                "curved_curvature_prolongation_status.json",
+            ),
+            "The constraint-adjusted 26-state system is formally integrable-equivalent to the exact covariant rows and has a positive symmetrizer with causal characteristics.",
+        )
+        atomic(
+            "curved_sourced_constraint_identity",
+            bool(
+                curvature_prolongation.get(
+                    "curved_sourced_constraint_identity", False
+                )
+            ),
+            "implemented_structural_fact",
+            (
+                "curved_weyl_cotton_formal_integrability.json",
+                "curved_curvature_prolongation_status.json",
+            ),
+            "The curvature-corrected sourced subsidiary identity and its six compatible-source rows are exact.",
         )
         atomic(
             "curved_constraint_propagation",
             bool(curvature_prolongation["curved_constraint_propagation"]),
-            "open_analytic_obligation",
-            ("curved_curvature_prolongation_status.json",),
-            "Derive the complete homogeneous curved evolution of every E/B constraint.",
+            "implemented_structural_fact",
+            (
+                "curved_weyl_cotton_hyperbolic.json",
+                "curved_weyl_cotton_formal_integrability.json",
+                "curved_curvature_prolongation_status.json",
+            ),
+            "All fourteen primary and secondary constraints propagate in a causal symmetric-hyperbolic subsidiary system for compatible sources.",
+        )
+        atomic(
+            "EAL_curvature_spectrum_match",
+            bool(curvature_prolongation.get("EAL_curvature_spectrum_match", False)),
+            "implemented_structural_fact",
+            (
+                "curved_EAL_spectrum_all_level.json",
+                "curved_curvature_prolongation_status.json",
+            ),
+            "The exact covariant Weyl--Cotton equations carry precisely the parity-complete E, A, and L towers at every energy; symbolic BGG rank and character identities prove exhaustion and the Cotton graph adds no modes.",
         )
         atomic(
             "support_local_prolongation_retract",
@@ -292,11 +339,70 @@ class FinalClaimDependencyReport:
             "Construct the local Psi-W(h) prolongation equivalence without inverse curl, Laplacian, or helicity projector.",
         )
         atomic(
+            "prolonged_BV_operator_identity",
+            bool(
+                curvature_prolongation.get(
+                    "prolonged_BV_operator_identity", False
+                )
+            ),
+            "open_analytic_obligation",
+            ("curved_curvature_prolongation_status.json",),
+            "Assemble every prolonged BV row and certify Q_prol^2=0, including curvature equations, identities, antifields, and contractible rows.",
+        )
+        atomic(
+            "prolonged_green_witness",
+            bool(curvature_prolongation.get("prolonged_green_witness", False)),
+            "open_analytic_obligation",
+            ("curved_curvature_prolongation_status.json",),
+            "Construct the generalized block Green witness P_prol=Q_prol W_prol+W_prol Q_prol with its chain and adjoint identities.",
+        )
+        atomic(
             "curvature_causal_green_operators",
             bool(curvature_prolongation["curvature_causal_green_operators"]),
             "open_analytic_obligation",
             ("curved_curvature_prolongation_status.json",),
             "Construct retarded and advanced operators for the exact constrained curvature system and assemble the full BV blocks.",
+        )
+        atomic(
+            "causal_green_homotopy",
+            bool(curvature_prolongation.get("causal_green_homotopy", False)),
+            "open_analytic_obligation",
+            ("curved_curvature_prolongation_status.json",),
+            "Verify Q Lambda_+/- + Lambda_+/- Q=1 on the complete prolonged BV complex with causal support.",
+        )
+        atomic(
+            "causal_quasi_isomorphism",
+            bool(curvature_prolongation.get("causal_quasi_isomorphism", False)),
+            "open_analytic_obligation",
+            ("curved_curvature_prolongation_status.json",),
+            "Prove that the causal map Gamma_c(C_prol)[1] -> Gamma_sc(C_prol) is a quasi-isomorphism and specialize it to all smooth cylinder solutions.",
+        )
+        atomic(
+            "residual_endpoint_recovery",
+            bool(curvature_prolongation.get("residual_endpoint_recovery", False)),
+            "open_analytic_obligation",
+            (
+                "curved_curvature_prolongation_status.json",
+                "residual_bfv_comparison.json",
+            ),
+            "Realize the fifteen cutoff CKV classes and their dual endpoints through the actual causal map, with no prolongation copy and suspension sign +1.",
+        )
+        atomic(
+            "SO42_equivariant_transport",
+            bool(curvature_prolongation.get("SO42_equivariant_transport", False)),
+            "open_analytic_obligation",
+            ("curved_curvature_prolongation_status.json",),
+            "Prove that the causal/Cauchy identification transfers the full SO(4,2) action, strictly or by an explicit chain homotopy.",
+        )
+        atomic(
+            "prolonged_current_comparison",
+            bool(curvature_prolongation.get("prolonged_current_comparison", False)),
+            "open_analytic_obligation",
+            (
+                "curved_curvature_prolongation_status.json",
+                "curved_current_comparison.json",
+            ),
+            "Compare the prolonged and auxiliary currents by d+Q improvements and identify the Green, Cauchy, energy, and residual pairings.",
         )
         atomic(
             "candidate_curvature_principal_symmetric_hyperbolicity",
@@ -307,7 +413,7 @@ class FinalClaimDependencyReport:
             ),
             "implemented_structural_fact",
             ("curved_curvature_evolution_principal_symbol.json",),
-            "The candidate electric/magnetic Weyl principal block has a positive symmetrizer and the two physical characteristic speeds in each direction; derivation from the curved prolonged equations remains open.",
+            "The legacy candidate electric/magnetic Weyl principal block has a positive symmetrizer and the two physical characteristic speeds in each direction. This certificate alone is principal-symbol evidence; the exact curved derivation is certified separately by the curved E/B, first-order, sourced-constraint, and propagation nodes.",
         )
         atomic(
             "candidate_curvature_principal_constraints_propagate",
@@ -377,7 +483,7 @@ class FinalClaimDependencyReport:
             "The algebraic BFV replacement contains one ghost and one momentum copy.",
         )
         atomic(
-            "energy_H4_is_C2",
+            "residual_H4_is_C2",
             bool(energy_h4["completed_centered_equals_algebraic_centered"])
             and list(energy_h4["centered"]["classes"]) == ["W_+^2", "W_-^2"]
             and int(energy_h4["centered"]["two_particle_H4"]) == 2,
@@ -386,11 +492,23 @@ class FinalClaimDependencyReport:
             "The completed energy-mode centered cohomology is the certified two-class space.",
         )
         atomic(
-            "energy_gram_is_I2",
+            "residual_gram_is_I2",
             list(energy_gram["completed_gram"]) == [[1, 0], [0, 1]],
             "implemented_structural_fact",
             ("analytic_completion/certificates/completed_gram.json",),
             "The completed energy-mode cohomological Gram matrix is I_2.",
+        )
+        derived(
+            "energy_H4_is_C2",
+            ("residual_H4_is_C2",),
+            "compatibility_alias",
+            "Compatibility alias for the independently certified residual/energy H4 theorem.",
+        )
+        derived(
+            "energy_gram_is_I2",
+            ("residual_gram_is_I2",),
+            "compatibility_alias",
+            "Compatibility alias for the independently certified residual/energy Gram theorem.",
         )
         atomic(
             "curved_action_and_gauge_map",
@@ -632,21 +750,27 @@ class FinalClaimDependencyReport:
             "curvature_prolonged_complex_exact",
             (
                 "curved_EB_equations",
+                "curved_EB_first_order_closure",
+                "curved_sourced_constraint_identity",
                 "curved_constraint_propagation",
+                "EAL_curvature_spectrum_match",
                 "support_local_prolongation_retract",
+                "prolonged_BV_operator_identity",
             ),
             "open_analytic_obligation",
-            "The exact local curvature-prolonged complex includes its equations, homogeneous constraints, and support-local equivalence.",
+            "The exact local curvature-prolonged complex includes its first-order equations, sourced subsidiary system, all-level spectrum, every BV row, and support-local equivalence.",
         )
         derived(
             "curvature_green_realization",
             (
                 "curvature_prolonged_complex_exact",
                 "curved_EB_symmetric_hyperbolicity",
+                "prolonged_green_witness",
                 "curvature_causal_green_operators",
+                "causal_green_homotopy",
             ),
             "open_analytic_obligation",
-            "The selected Green realization is the exact constrained symmetric-hyperbolic Weyl-curvature system.",
+            "The selected realization supplies the exact constrained symmetric-hyperbolic curvature system and a causal Green homotopy on the complete prolonged BV complex.",
         )
         derived(
             "complete_bv_green_hyperbolicity",
@@ -663,7 +787,11 @@ class FinalClaimDependencyReport:
         )
         derived(
             "green_homotopies",
-            ("complete_bv_green_hyperbolicity", "green_witness_recognition_theorem"),
+            (
+                "complete_bv_green_hyperbolicity",
+                "green_witness_recognition_theorem",
+                "causal_green_homotopy",
+            ),
             "derived_analytic_claim",
             "Retarded and advanced Green homotopies for the full auxiliary BV complex.",
         )
@@ -694,10 +822,10 @@ class FinalClaimDependencyReport:
             "Causal compact-to-spacelike-compact theorem specialized to global cylinder sections.",
         )
         derived(
-            "causal_quasi_isomorphism",
-            ("compact_to_global_quasi_isomorphism",),
+            "formal_compact_to_global_consequence",
+            ("compact_to_global_quasi_isomorphism", "causal_quasi_isomorphism"),
             "derived_analytic_claim",
-            "The causal Green map is the compact-to-global quasi-isomorphism on R x S^3.",
+            "The certified causal quasi-isomorphism realizes the formal compact-to-global theorem on R x S^3.",
         )
         derived(
             "support_preserving_metric_equivalence",
@@ -738,16 +866,25 @@ class FinalClaimDependencyReport:
                 "curved_operator_identity",
                 "curved_deformation_retract",
                 "curved_current_comparison",
+                "scalar_wave_witness_no_go",
+                "weyl_symbol_helicity_isomorphism",
                 "curved_EB_equations",
+                "curved_EB_first_order_closure",
                 "curved_EB_symmetric_hyperbolicity",
+                "curved_sourced_constraint_identity",
                 "curved_constraint_propagation",
+                "EAL_curvature_spectrum_match",
                 "support_local_prolongation_retract",
+                "prolonged_BV_operator_identity",
+                "prolonged_green_witness",
                 "curvature_causal_green_operators",
+                "causal_green_homotopy",
                 "causal_quasi_isomorphism",
-                "CKV_recovery",
-                "residual_no_duplication",
-                "energy_H4_is_C2",
-                "energy_gram_is_I2",
+                "residual_endpoint_recovery",
+                "SO42_equivariant_transport",
+                "prolonged_current_comparison",
+                "residual_H4_is_C2",
+                "residual_gram_is_I2",
             ),
             "terminal_theorem_claim",
             "Transport of the certified two-class H4 and Gram I2 through the covariant chain.",
@@ -850,6 +987,8 @@ class FinalClaimDependencyReport:
                     "support_preserving_metric_equivalence"
                 ].status,
                 "pairing_compatibility": self.nodes["pairing_compatibility"].status,
+                "residual_H4_is_C2": self.nodes["residual_H4_is_C2"].status,
+                "residual_gram_is_I2": self.nodes["residual_gram_is_I2"].status,
                 "energy_H4_is_C2": self.nodes["energy_H4_is_C2"].status,
                 "energy_gram_is_I2": self.nodes["energy_gram_is_I2"].status,
                 "final_covariant_H4": self.nodes["final_covariant_H4"].status,
@@ -870,15 +1009,28 @@ class FinalClaimDependencyReport:
                 "status": self.nodes["curvature_green_realization"].status,
                 "required_atomic_flags": [
                     "curved_EB_equations",
+                    "curved_EB_first_order_closure",
                     "curved_EB_symmetric_hyperbolicity",
+                    "curved_sourced_constraint_identity",
                     "curved_constraint_propagation",
+                    "EAL_curvature_spectrum_match",
                     "support_local_prolongation_retract",
+                    "prolonged_BV_operator_identity",
+                    "prolonged_green_witness",
                     "curvature_causal_green_operators",
+                    "causal_green_homotopy",
                 ],
                 "blocking_dependencies": list(
                     self._blocking_atomic_dependencies(
                         "curvature_green_realization"
                     )
+                ),
+            },
+            "causal_transport_gate": {
+                "status": self.nodes["final_covariant_H4"].status,
+                "required_flags": list(self.nodes["final_covariant_H4"].requires),
+                "blocking_atomic_dependencies": list(
+                    self._blocking_atomic_dependencies("final_covariant_H4")
                 ),
             },
             "honest_status": (
@@ -904,11 +1056,11 @@ class FinalClaimDependencyReport:
             "```mermaid",
             "flowchart TD",
             "  A[curved_operator_identity] --> F[final_covariant_H4]",
-            "  E[curved_EB_equations] --> F",
-            "  H[curved_EB_symmetric_hyperbolicity] --> F",
-            "  Q[curved_constraint_propagation] --> F",
-            "  P[support_local_prolongation_retract] --> F",
-            "  G[curvature_causal_green_operators] --> F",
+            "  E[exact curved first-order E/B system] --> F",
+            "  S[sourced constraints and E/A/L audit] --> F",
+            "  P[all-row support-local prolongation] --> F",
+            "  G[prolonged witness and causal Green homotopy] --> F",
+            "  T[endpoint, SO(4,2), and pairing transport] --> F",
             "  R[curved_deformation_retract] --> F[final_covariant_H4]",
             "  C[curved_current_comparison] --> F",
             "```",
@@ -940,6 +1092,8 @@ class FinalClaimDependencyReport:
             "residual_no_duplication",
             "energy_H4_is_C2",
             "energy_gram_is_I2",
+            "residual_H4_is_C2",
+            "residual_gram_is_I2",
             "final_covariant_H4",
         )
         for name in final_names:
@@ -962,9 +1116,10 @@ class FinalClaimDependencyReport:
                 "## Remaining curvature-propagation theorem",
                 "",
                 "The selected final gate is the constrained symmetric-hyperbolic",
-                "Weyl-curvature realization. The reduced Weyl-symbol theorem and the",
-                "candidate principal matrix/constraint algebra are true; the five",
-                "displayed curved realization flags remain open.",
+                "Weyl-curvature realization. The reduced Weyl-symbol theorem, the",
+                "exact curved equations, and the 26-state first-order closure are",
+                "true. The remaining analytic, causal, endpoint, equivariance, and",
+                "pairing-transport flags below remain open.",
                 "",
             ]
         )

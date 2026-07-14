@@ -131,13 +131,21 @@ also proves that no pointwise fibre pairing and first-order gauge companion
 can turn its $24$-field Hessian into a scalar-wave block: at a generic null
 covector the Hessian and gauge symbols have ranks $11$ and $9$.  The
 two-dimensional quotient is the helicity-$\pm2$ module, and the reduced
-linearized-Weyl symbol is the isomorphism $\frac14 I_2$.  A ten-component
-electric/magnetic Weyl candidate has a positive STF symmetrizer, speeds
-$0,\pm\frac12,\pm1$, and the correct principal div--curl constraint
-identity.  These are principal-symbol facts only.  The exact curved
-Bianchi--Bach evolution, full constraint propagation, support-local
-prolongation retract, causal curvature Green operators, final covariant
-$H^4$ transport, and a Hadamard theory remain open.  A direct same-bundle
+  linearized-Weyl symbol is the isomorphism $\frac14 I_2$.  Exact decomposition
+  of the curved Bianchi--Bach equations gives a $26$-state Weyl--Cotton
+  system.  Its constraint-adjusted form is symmetric hyperbolic, its complete
+  sourced subsidiary identity propagates all fourteen constraints, and an
+  all-level symbolic audit recovers precisely the parity-complete $E/A/L$
+  module.  A degree-resolved odd BV mapping cylinder also proves the
+  support-local all-row prolongation retract and nilpotence of the prolonged
+  differential.  The first eight curvature flags are therefore true.  The
+  prolonged Green witness, causal Green operators and BV Green homotopies,
+  causal quasi-isomorphism, residual endpoint recovery,
+  $SO(4,2)$-equivariant transport, prolonged current comparison, and a
+  Hadamard theory remain open.  The
+residual $H^4$ calculation itself is complete: the missing theorem is the
+causal bridge identifying the covariant complex with that already-certified
+module.  A direct same-bundle
 factorization of the gauge-completed Bach operator is optional.
 We claim neither an integrated $SO(4,2)$ group
 representation, a positive graviton Fock space, nor quantum anomaly freedom.
@@ -186,11 +194,15 @@ at a null covector the action Hessian has rank $11$, whereas the gauge symbol
 has rank $9$.  The uncancelled rank-two quotient is precisely helicity
 $\pm2$, and the reduced Weyl symbol acts on it by $\frac14 I_2$.  Thus the
 remaining causal theorem must propagate the physical sector in curvature
-variables rather than hide it in a $24$-component scalar-wave block.  Exact
-curved electric/magnetic equations, constraint propagation, a support-local
-prolongation retract, causal curvature Green operators,
-distributional/Hadamard completion, and alternative boundary polarizations
-remain separate problems.  A direct same-bundle metric factorization is an
+variables rather than hide it in a $24$-component scalar-wave block.  The
+  exact Weyl--Cotton equations, their constraint-adjusted symmetric-hyperbolic
+  closure, sourced constraint propagation, and the all-level $E/A/L$ audit
+  are proved.  The support-local all-row prolongation retract and prolonged
+  BV differential are exact as well.  What remains is the prolonged Green
+  witness, causal operators and BV Green homotopies, the causal
+  quasi-isomorphism, residual endpoint recovery, equivariant pairing
+  transport, prolonged current comparison, distributional/Hadamard
+  completion, and alternative boundary polarizations.  A direct same-bundle metric factorization is an
 optional strengthening.
 
 The present paper isolates that free classical problem on
@@ -308,10 +320,12 @@ current comparison are exact.  They are recorded respectively by
 calculation proves that the former scalar-wave witness ansatz is impossible;
 it does not supply causal Green homotopies.
 \item The exact null-symbol quotient is the two-dimensional helicity-$\pm2$
-module and the reduced Weyl symbol is $\frac14 I_2$.  A symmetric-hyperbolic
-electric/magnetic principal block has been certified, but it has not yet been
-derived with all lower-order terms from the curved Bianchi and Bach
-identities.  Consequently the final covariant $H^4$ flag remains false.
+module and the reduced Weyl symbol is $\frac14 I_2$.  The exact $26$-state
+Weyl--Cotton equations, constraint-adjusted symmetric hyperbolicity, sourced
+constraint propagation, all-level $E/A/L$ spectrum, and all-row prolonged BV
+differential are certified.  The first eight curvature flags are true; the
+remaining seven causal-transport flags keep the final covariant $H^4$ flag
+false.
 \item Calling the resulting classes physical states additionally requires a
 boundary and gauge principle which makes all fifteen conformal generators,
 including $D$, gauge rather than global charges.  We call them
@@ -1127,41 +1141,165 @@ electric and magnetic STF parts by
  E_{ij}=\Psi_{0i0j},\qquad
  B_{ij}=\frac12\epsilon_i{}^{kl}\Psi_{0jkl}.
 \end{equation}
-On the ten-dimensional bundle
-$\operatorname{STF}_2(S^3)\oplus\operatorname{STF}_2(S^3)$, the candidate
-principal equations
-\begin{equation}\label{eq:EB-candidate-principal}
- \partial_tE-\operatorname{curl}_2B=\text{lower order},\qquad
- \partial_tB+\operatorname{curl}_2E=\text{lower order}
+The ten-dimensional algebraic bundle
+$\operatorname{STF}_2(S^3)\oplus\operatorname{STF}_2(S^3)$ does not close by
+itself at first order.  If
+\(V_{\mu,\nu,\sigma}=\nabla^\rho\Psi_{\mu\rho\nu\sigma}\), its independent
+components form a sixteen-dimensional Cotton slot, naturally two trace-free
+$3\times3$ matrices.  Exact contraction of the Cotton definition, Bach row,
+and Hodge-dual compatibility row gives a $34\times26$ first-order coefficient
+table on $(E,B,V)$ whose temporal matrix has rank $26$ and leaves eight
+constraints.  An exhaustive comparison on all
+$10\binom{6}{4}=150$ Weyl two-jets proves equality with the curved covariant
+Bianchi--Bach equations and globalizes by cylinder homogeneity.  Thus
+\texttt{curved\_EB\_equations} and
+\texttt{curved\_EB\_first\_order\_closure} are exact.
+
+This result is not yet a hyperbolicity theorem.  The canonical unadjusted
+choice of 26 evolution rows has characteristic polynomial
+\begin{equation}\label{eq:EB-unadjusted-characteristic}
+ \frac1{144}\lambda^2(\lambda^2-1)^8
+ (4\lambda^2-1)^2(3\lambda^2+1)^2,
 \end{equation}
-have $A^0=I_{10}$ and a positive STF symmetrizer.  For every unit spatial
-covector their complete characteristic speeds, including constraint and
-auxiliary channels, are
-\begin{equation}
- 0,\quad \pm\frac12,\quad \pm1,
-\end{equation}
-each with multiplicity two.  The physical transverse sector has speeds
-$\pm1$, and exact constant-curvature symbol algebra gives
+so the pair $\lambda=\pm i/\sqrt3$ proves that constraint additions are
+necessary.  Exact constant-curvature symbol algebra nevertheless gives
 \begin{equation}\label{eq:EB-principal-constraint}
  \operatorname{div}\operatorname{curl}_2
  =\frac12\operatorname{curl}_1\operatorname{div}.
 \end{equation}
-These facts certify a candidate symmetric-hyperbolic principal block; they
-do not derive \eqref{eq:EB-candidate-principal} from the curved linearized
-Bianchi and Bach equations or prove lower-order constraint closure.
+The constraint-adjusted square system is now exact at the level required for
+the Cauchy problem.  Its first twenty rows are covariant combinations, while
+its final six differ from the vector Bach rows by the two vector constraints
+$a,c$.  Consequently the pointwise row modules differ by rank six.  This is
+not a solution-space defect: differentiating the primary $q,r$ constraints
+and using the exact vector Bach rows generates $a=c=0$.  Conversely, the
+adjusted rows together with all fourteen constraints recover every covariant
+row.  Thus the two presentations generate the same formally integrable
+differential ideal.
 
-The selected causal route therefore has five explicit open flags:
-\begin{equation}\label{eq:open-curvature-flags}
- \begin{gathered}
- \texttt{curved\_EB\_equations},\\
- \texttt{curved\_EB\_symmetric\_hyperbolicity},\\
- \texttt{curved\_constraint\_propagation},\\
- \texttt{support\_local\_prolongation\_retract},\\
- \texttt{curvature\_causal\_green\_operators}.
- \end{gathered}
+The adjusted $26$-state system has a positive symmetrizer and causal speeds
+$0,\pm\frac12,\pm1/\sqrt3,\pm1$.  Its complete sourced subsidiary identity
+includes the unit-$S^3$ curvature commutator correction, and compatible
+sources preserve all fourteen constraints.  This proves
+\texttt{curved\_EB\_symmetric\_hyperbolicity},
+\texttt{curved\_sourced\_constraint\_identity}, and
+\texttt{curved\_constraint\_propagation}.  The unadjusted raw subsidiary
+system retains an imaginary longitudinal pair; the certified local
+constraint addition, not a hidden spectral projection, removes it.
+
+The global solution-space audit is independent of that analytic repair and
+is already exact.  The exhaustive jet equivalence, the smooth cylinder BGG
+theorem, and the symbolic all-energy metric preimages give
+\begin{equation}
+ \ker(C_1^\sharp)\cap\ker(C_1^\sharp\star)
+ \cong E\oplus A\oplus L
 \end{equation}
-All five remain false.  In particular, the paper does not yet construct
-$G_\pm$, causal Green homotopies, or the causal quasi-isomorphism.  The known
+with both chiralities.  Symbolically,
+$\dim\mathcal C_n-2\rank C_1^\sharp=6n^2-14$, equal to the parity-complete
+$E/A/L$ multiplicity, and the exact rational characters agree.  The Cotton
+definition has an algebraic identity coefficient, so its graph adds no
+second solution copy.  Thus \texttt{EAL\_curvature\_spectrum\_match} is true;
+the levels $2$ through $6$ are retained only as regressions, not as the proof.
+
+The target is not a second residual Chevalley--Eilenberg calculation.  That
+calculation and its pairing are already complete.  It is a local chain of
+pairing-compatible, support-preserving quasi-isomorphisms
+\begin{equation}\label{eq:covariant-causal-bridge}
+ \Gamma_c(\mathcal C_{\rm met})[1]
+ \simeq\Gamma_c(\mathcal C_{\rm aux})[1]
+ \simeq\Gamma_c(\mathcal C_{\rm prol})[1]
+ \simeq\Gamma_{sc}(\mathcal C_{\rm prol})
+ \simeq\mathcal C_\Sigma
+ \simeq\mathcal W_+\oplus\mathcal W_-
+ \quad\text{with residual endpoints}.
+\end{equation}
+The curvature variable must be adjoined as a contractible prolongation,
+for example through $\widehat\Psi=\Psi-C_1h$, rather than replacing the
+metric potential by curvature.  Its inclusion, projection, and homotopy
+must contain every field, equation, identity, antifield, trace/Weyl,
+nonminimal, and first-order-reduction row and use only finite differential
+operators and pointwise inverses.
+
+Two further support-local subtheorems are now exact.  First, adjoining the
+graphs $\Psi=C_1h$ and $c=\operatorname{div}\Psi$ with their cotangent lifts
+gives a BV-canonical contractible SDR.  Second, the curvature rows form the
+autonomous compatibility complex
+\begin{equation}
+ U_{26}\xrightarrow{(L,K)}F_{26}\oplus C_{14}
+ \xrightarrow{(-R,S)}I_{14},
+ \qquad SK=RL,
+\end{equation}
+together with its formal cotangent-adjoint complex.  A zeroth-order backward
+witness makes $QW+WQ$ diagonal with the symmetric-hyperbolic blocks $L$ and
+$S$ and algebraic graph identities.
+
+These subtheorems cannot be direct-summed: the autonomous curvature complex
+carries the nonzero $E/A/L$ module and would duplicate physical cohomology.
+The required mapping-cylinder chain maps have now been constructed.  They
+are explicit local operators $A_{\rm eq}$ and $B_{\rm id}$ satisfying
+\begin{equation}
+ (L,K)T=A_{\rm eq}E_{\rm aux},\qquad
+ (-R,S)A_{\rm eq}=B_{\rm id}C_{\rm aux},\qquad
+ T=(C_1,\operatorname{div}C_1),
+\end{equation}
+The first square is verified on all $10\binom{8}{4}=700$ metric four-jets.
+In trace-free Bach coordinates the second square is especially sparse:
+$A_{\rm eq}$ has only $f_A=-b_{\rm STF}/2$, $a=-b_{0i}/2$, and
+$s=-3b_s/2$, while $B_{\rm id}$ sends the four diffeomorphism identities to
+the $a$ and $s$ identity rows with coefficient $-1/4$ and kills the Weyl
+trace identity.  Thus the six differential secondary rows are retained
+exactly.  The preceding square $TK_{\rm aux}=0$ is independently exhaustive
+on all diffeomorphism and Weyl-scalar jets and all four boost ghosts.  These
+maps and their forced Koszul adjoints have now been inserted into a
+degree-resolved sixteen-block odd BV mapping cylinder.  Its oriented
+incidence form, cyclic differential and homotopy, nilpotence, canonical
+shears, and support-local all-row SDR are exact.  Conjugating the canonical
+direct-sum degree-$(-1)$ witness gives an exact identity
+$P_{\rm prol}=Q_{\rm prol}W_{\rm prol}+W_{\rm prol}Q_{\rm prol}$, and fourteen
+of the sixteen split diagonal blocks are Green hyperbolic.  The two exceptions
+are $E_{\rm aux}+KC$ on the auxiliary field row and its cotangent copy; they
+retain the scalar-wave null-rank obstruction.  Thus mere direct-sum
+conjugation does not prove the prolonged Green theorem.  The next witness must
+couple the auxiliary and curvature sectors in both directions to form a
+nontriangular saddle operator, unless the auxiliary diagonal witness is
+independently replaced by a Green-hyperbolic one.
+
+The selected causal route therefore has the following explicit flags:
+\begin{equation}\label{eq:open-curvature-flags}
+ \begin{aligned}
+ &\texttt{curved\_EB\_equations},
+ &&\texttt{curved\_EB\_first\_order\_closure},\\
+ &\texttt{curved\_EB\_symmetric\_hyperbolicity},
+ &&\texttt{curved\_sourced\_constraint\_identity},\\
+ &\texttt{curved\_constraint\_propagation},
+ &&\texttt{EAL\_curvature\_spectrum\_match},\\
+ &\texttt{support\_local\_prolongation\_retract},
+ &&\texttt{prolonged\_BV\_operator\_identity},\\
+ &\texttt{prolonged\_green\_witness},
+ &&\texttt{curvature\_causal\_green\_operators},\\
+ &\texttt{causal\_green\_homotopy},
+ &&\texttt{causal\_quasi\_isomorphism},\\
+ &\texttt{residual\_endpoint\_recovery},
+ &&\texttt{SO42\_equivariant\_transport},\\
+ &\texttt{prolonged\_current\_comparison}.&&
+ \end{aligned}
+\end{equation}
+The first eight flags in \eqref{eq:open-curvature-flags} are true; the remaining
+seven remain false.  In particular, the paper now constructs the complete
+support-local prolonged BV rows, but not yet $G_\pm$ or degree-$(-1)$ maps
+$\Lambda_\pm$ satisfying
+\begin{equation}\label{eq:open-green-homotopy}
+ Q_{\rm prol}\Lambda_\pm+\Lambda_\pm Q_{\rm prol}=1,
+ \qquad
+ \operatorname{supp}\Lambda_\pm f\subseteq J^\pm(\operatorname{supp}f).
+\end{equation}
+Homogeneous constraint propagation and symmetric hyperbolicity by themselves
+would not prove \eqref{eq:open-green-homotopy}: compatible inhomogeneous
+sources must be shown to generate constrained retarded and advanced
+solutions.  Nor would a nonequivariant vector-space identification suffice;
+the causal/Cauchy bridge must preserve the residual $SO(4,2)$ action up to a
+certified chain homotopy and compare the prolonged current with the auxiliary
+current by a $d+Q$ improvement.  The known
 obstruction to factorizing the gauge-invariant spin-two conformal operator
 away from Einstein backgrounds is relevant context \cite{NutmaTaronna}, but
 is not used as the no-go theorem \eqref{eq:null-rank-no-go}.
@@ -2911,13 +3049,17 @@ current comparison.  The null-symbol theorem
 \eqref{eq:null-rank-no-go} rules out a scalar-wave witness on the original
 $24$-field bundle and identifies the uncancelled quotient with the two
 physical helicities; the reduced Weyl symbol \eqref{eq:reduced-Weyl-symbol}
-is an isomorphism.  The candidate electric/magnetic block has a positive
-principal symmetrizer and causal characteristic speeds, but its full curved
-Bianchi--Bach equations and constraint propagation have not been derived.
-The five open flags in \eqref{eq:open-curvature-flags}, the resulting causal
+is an isomorphism.  The exact $26$-state Weyl--Cotton equations, their
+constraint-adjusted symmetric-hyperbolic closure, sourced subsidiary
+identity, all-level $E/A/L$ spectrum, and complete all-row BV prolongation
+are now proved.  The remaining seven false flags in
+\eqref{eq:open-curvature-flags}, the resulting causal
 quasi-isomorphism, Hadamard completion, and uniqueness among boundary or
 deparametrized polarizations remain separate analytic questions.  The final
-covariant $H^4$ transport is therefore not yet a theorem.  The exact ranks in
+covariant $H^4$ transport is therefore not yet a theorem, even though the
+residual $H^4$ module and its Gram matrix are already completely computed.
+The remaining work is transport through \eqref{eq:covariant-causal-bridge},
+not another residual CE calculation.  The exact ranks in
 Table~\ref{tab:detour-ranks} remain independent convention and regression
 checks.
 
@@ -2963,9 +3105,14 @@ not merely unfinished: the rank-$11$ versus rank-$9$ null-symbol obstruction
 proves it impossible for the present $24$-field, $9$-gauge realization.  Its
 rank-two complement is exactly helicity $\pm2$ and is carried isomorphically
 by the reduced Weyl symbol.  The remaining analytic route is therefore the
-curved electric/magnetic Weyl prolongation, whose exact equations, symmetric
-hyperbolicity, constraint propagation, local prolongation retract, and
-causal Green operators remain open.  Alternative boundary polarizations,
+curved electric/magnetic Weyl prolongation.  Its exact equations,
+first-order closure, constraint-adjusted symmetric hyperbolicity, sourced
+constraint identity and propagation, all-level $E/A/L$ spectrum, all-row
+local prolongation retract, and prolonged BV operator are proved.  The
+prolonged Green witness and causal Green operators, causal BV Green homotopy
+and quasi-isomorphism, endpoint recovery, $SO(4,2)$-equivariant transport,
+and prolonged current comparison remain open.
+Alternative boundary polarizations,
 quantum consistency, and interaction descent are also separate questions.
 At the reduced one-particle level, however,
 Theorem~\ref{thm:cauchy-sobolev} now identifies the field Cauchy space with
@@ -3146,15 +3293,20 @@ Physical null-symbol quotient and Weyl carrier & Exact symbol theorem & The
 quotient has dimension two and transverse helicities $+2$ and $-2$.  The
 reduced Weyl symbol is $\frac14I_2$.  No unreduced claim
 $\ker\W_2=\im K_1$ is made.\\
-Electric/magnetic Weyl principal candidate & Exact principal-symbol
-certificate only & The ten-component STF block has a positive symmetrizer,
-speeds $0,\pm\frac12,\pm1$, and
-$\operatorname{div}\operatorname{curl}_2
-=\frac12\operatorname{curl}_1\operatorname{div}$.  It has not yet been
-derived, including lower-order terms, from the curved Bianchi--Bach system.\\
+Electric/magnetic Weyl--Cotton first-order system & Exact curved theorem &
+The Cotton divergence supplies the required sixteen components.  The exact
+$34\times26$ covariant table agrees with all 150 Weyl two-jets.  Its eight
+primary and six secondary constraints give a formally equivalent adjusted
+$26$-state system with positive symmetrizer, causal speeds, exact sourced
+compatibility, and constraint propagation.  The all-level $E/A/L$ spectrum
+and absence of Cotton duplication are symbolic theorems.\\
 Curvature causal realization and final covariant $H^4$ & Open, fail-closed &
-The five flags in \eqref{eq:open-curvature-flags} remain false.  Consequently
-the causal quasi-isomorphism and \texttt{final\_covariant\_H4} remain false;
+The first eight flags in \eqref{eq:open-curvature-flags} are true and the other
+seven remain false.  They require the prolonged Green witness and actual BV
+Green homotopy, residual endpoint recovery, equivariance, and
+prolonged current comparison.  Consequently the causal quasi-isomorphism
+and \texttt{final\_covariant\_H4} remain false; the already-complete residual
+$H^4=\C^2$ and $G=I_2$ are not being recomputed;
 no Hadamard theorem, group exponentiation, or uniqueness among boundary,
 clock, asymptotic, or deparametrized polarizations is established.\\
 Interpretation as a physical state space & Choice-dependent & Requires a

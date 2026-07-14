@@ -28,6 +28,31 @@ CLAIM_FLAGS = {
     "claim_final_covariant_h4": "final_covariant_H4",
 }
 
+EXPECTED_FINAL_REQUIREMENTS = (
+    "curved_operator_identity",
+    "curved_deformation_retract",
+    "curved_current_comparison",
+    "scalar_wave_witness_no_go",
+    "weyl_symbol_helicity_isomorphism",
+    "curved_EB_equations",
+    "curved_EB_first_order_closure",
+    "curved_EB_symmetric_hyperbolicity",
+    "curved_sourced_constraint_identity",
+    "curved_constraint_propagation",
+    "EAL_curvature_spectrum_match",
+    "support_local_prolongation_retract",
+    "prolonged_BV_operator_identity",
+    "prolonged_green_witness",
+    "curvature_causal_green_operators",
+    "causal_green_homotopy",
+    "causal_quasi_isomorphism",
+    "residual_endpoint_recovery",
+    "SO42_equivariant_transport",
+    "prolonged_current_comparison",
+    "residual_H4_is_C2",
+    "residual_gram_is_I2",
+)
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -86,11 +111,19 @@ def main() -> None:
             if node.status and blockers:
                 raise AssertionError(f"true claim {name} still reports blockers")
         final = report.nodes["final_covariant_H4"]
+        if final.requires != EXPECTED_FINAL_REQUIREMENTS:
+            raise AssertionError(
+                "final_covariant_H4 does not implement the expanded causal bridge"
+            )
         if bool(certificate["final_claim_atomic_blockers"]) == bool(final.status):
             raise AssertionError(
                 "final atomic blockers must be present exactly while the theorem is false"
             )
-        print("COVARIANT CLAIM DEPENDENCY GUARDS: 5/5 PASS")
+        if not report.nodes["residual_H4_is_C2"].status:
+            raise AssertionError("the certified residual H4 input regressed")
+        if not report.nodes["residual_gram_is_I2"].status:
+            raise AssertionError("the certified residual Gram input regressed")
+        print("COVARIANT CLAIM DEPENDENCY GUARDS: 8/8 PASS")
 
     print("COVARIANT FINAL CLAIM DEPENDENCY REPORT: ALL LOGIC CHECKS PASS")
 

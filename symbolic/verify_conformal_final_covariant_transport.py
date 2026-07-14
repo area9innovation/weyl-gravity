@@ -30,7 +30,7 @@ def main() -> None:
     status = FinalCovariantTransportStatus.build()
     if args.recompute_auxiliary_h4:
         raise SystemExit(
-            "REFUSED: the terminal theorem transports the certified energy H4; "
+            "REFUSED: the terminal theorem transports the certified residual H4; "
             "it does not recompute cohomology in the auxiliary variables"
         )
     if args.claim_final_covariant_h4 and not status.complete:
@@ -50,19 +50,19 @@ def main() -> None:
             },
             "covariant_CKV_recovery.json": {
                 **payload,
-                "selected_claim": "CKV_recovery",
-                "status": status.report.nodes["CKV_recovery"].status,
+                "selected_claim": "residual_endpoint_recovery",
+                "status": status.report.nodes["residual_endpoint_recovery"].status,
             },
             "covariant_residual_no_duplication.json": {
                 **payload,
-                "selected_claim": "residual_no_duplication",
-                "status": status.report.nodes["residual_no_duplication"].status,
+                "selected_claim": "residual_endpoint_recovery",
+                "status": status.report.nodes["residual_endpoint_recovery"].status,
             },
             "covariant_H4_transport.json": payload,
             "covariant_gram_transport.json": {
                 **payload,
-                "selected_claim": "pairing_compatibility",
-                "status": status.report.nodes["pairing_compatibility"].status,
+                "selected_claim": "prolonged_current_comparison",
+                "status": status.report.nodes["prolonged_current_comparison"].status,
             },
         }
         for name, value in outputs.items():
@@ -74,10 +74,10 @@ def main() -> None:
             print("wrote", path.relative_to(ROOT))
 
     if args.guards:
-        if not status.report.nodes["energy_H4_is_C2"].status:
-            raise AssertionError("energy H4 input regressed")
-        if not status.report.nodes["energy_gram_is_I2"].status:
-            raise AssertionError("energy Gram input regressed")
+        if not status.report.nodes["residual_H4_is_C2"].status:
+            raise AssertionError("residual H4 input regressed")
+        if not status.report.nodes["residual_gram_is_I2"].status:
+            raise AssertionError("residual Gram input regressed")
         blockers = payload["terminal_gate"]["blocking_dependencies"]
         if bool(blockers) == bool(status.complete):
             raise AssertionError(
@@ -88,7 +88,9 @@ def main() -> None:
             status.report.nodes[name].status for name in terminal.requires
         ):
             raise AssertionError("terminal status is not derived from the live DAG")
-        print("FINAL COVARIANT TRANSPORT GUARDS: 4/4 PASS")
+        if payload["terminal_gate"]["requires"] != list(terminal.requires):
+            raise AssertionError("transport payload drifted from the terminal DAG")
+        print("FINAL COVARIANT TRANSPORT GUARDS: 5/5 PASS")
 
     print("FINAL COVARIANT TRANSPORT: ALL IMPLEMENTED LOGIC CHECKS PASS")
 

@@ -8,11 +8,11 @@ uses its displayed all/any dependency mode.
 ```mermaid
 flowchart TD
   A[curved_operator_identity] --> F[final_covariant_H4]
-  E[curved_EB_equations] --> F
-  H[curved_EB_symmetric_hyperbolicity] --> F
-  Q[curved_constraint_propagation] --> F
-  P[support_local_prolongation_retract] --> F
-  G[curvature_causal_green_operators] --> F
+  E[exact curved first-order E/B system] --> F
+  S[sourced constraints and E/A/L audit] --> F
+  P[all-row support-local prolongation] --> F
+  G[prolonged witness and causal Green homotopy] --> F
+  T[endpoint, SO(4,2), and pairing transport] --> F
   R[curved_deformation_retract] --> F[final_covariant_H4]
   C[curved_current_comparison] --> F
 ```
@@ -32,12 +32,14 @@ flowchart TD
 | `complete_bv_green_hyperbolicity` | **false** | `curved_auxiliary_hessian_exact`, `support_preserving_retract`, `curvature_green_realization`, `curved_Q_nilpotency`, `curved_witness_identity`, `curved_formal_adjointness` |
 | `support_preserving_metric_equivalence` | **true** | `curved_deformation_retract`, `support_preservation` |
 | `pairing_compatibility` | **false** | `curved_current_comparison`, `green_homotopies`, `curved_green_current`, `EAL_pairing_regression` |
-| `causal_quasi_isomorphism` | **false** | `compact_to_global_quasi_isomorphism` |
+| `causal_quasi_isomorphism` | **false** |  |
 | `CKV_recovery` | **false** | `green_homotopies`, `ckv_cutoff_identity` |
 | `residual_no_duplication` | **false** | `support_preserving_metric_equivalence`, `CKV_recovery`, `algebraic_residual_no_duplication` |
-| `energy_H4_is_C2` | **true** |  |
-| `energy_gram_is_I2` | **true** |  |
-| `final_covariant_H4` | **false** | `curved_operator_identity`, `curved_deformation_retract`, `curved_current_comparison`, `curved_EB_equations`, `curved_EB_symmetric_hyperbolicity`, `curved_constraint_propagation`, `support_local_prolongation_retract`, `curvature_causal_green_operators`, `causal_quasi_isomorphism`, `CKV_recovery`, `residual_no_duplication`, `energy_H4_is_C2`, `energy_gram_is_I2` |
+| `energy_H4_is_C2` | **true** | `residual_H4_is_C2` |
+| `energy_gram_is_I2` | **true** | `residual_gram_is_I2` |
+| `residual_H4_is_C2` | **true** |  |
+| `residual_gram_is_I2` | **true** |  |
+| `final_covariant_H4` | **false** | `curved_operator_identity`, `curved_deformation_retract`, `curved_current_comparison`, `scalar_wave_witness_no_go`, `weyl_symbol_helicity_isomorphism`, `curved_EB_equations`, `curved_EB_first_order_closure`, `curved_EB_symmetric_hyperbolicity`, `curved_sourced_constraint_identity`, `curved_constraint_propagation`, `EAL_curvature_spectrum_match`, `support_local_prolongation_retract`, `prolonged_BV_operator_identity`, `prolonged_green_witness`, `curvature_causal_green_operators`, `causal_green_homotopy`, `causal_quasi_isomorphism`, `residual_endpoint_recovery`, `SO42_equivariant_transport`, `prolonged_current_comparison`, `residual_H4_is_C2`, `residual_gram_is_I2` |
 
 ## Implemented scaffold
 
@@ -45,7 +47,13 @@ flowchart TD
 - `physical_symbol_quotient_exact` — The normalized Hessian image modulo the gauge image is exactly two-dimensional.
 - `physical_symbol_is_helicity_two` — The two quotient directions are the real helicity-two pair transverse to the null direction.
 - `weyl_symbol_helicity_isomorphism` — On the exact Hessian-reduced physical quotient, the linearized Weyl symbol is an isomorphism onto the two helicity-two curvature directions.
-- `candidate_curvature_principal_symmetric_hyperbolicity` — The candidate electric/magnetic Weyl principal block has a positive symmetrizer and the two physical characteristic speeds in each direction; derivation from the curved prolonged equations remains open.
+- `curved_EB_equations` — The complete curved Weyl/Cotton and Bach equations agree on all 150 independent Weyl two-jets and globalize by cylinder homogeneity.
+- `curved_EB_first_order_closure` — The ten Weyl E/B components plus the sixteen-component Cotton divergence form an exact local 26-state first-order closure with 34 covariant rows and eight constraints.
+- `curved_EB_symmetric_hyperbolicity` — The constraint-adjusted 26-state system is formally integrable-equivalent to the exact covariant rows and has a positive symmetrizer with causal characteristics.
+- `curved_sourced_constraint_identity` — The curvature-corrected sourced subsidiary identity and its six compatible-source rows are exact.
+- `curved_constraint_propagation` — All fourteen primary and secondary constraints propagate in a causal symmetric-hyperbolic subsidiary system for compatible sources.
+- `EAL_curvature_spectrum_match` — The exact covariant Weyl--Cotton equations carry precisely the parity-complete E, A, and L towers at every energy; symbolic BGG rank and character identities prove exhaustion and the Cotton graph adds no modes.
+- `candidate_curvature_principal_symmetric_hyperbolicity` — The legacy candidate electric/magnetic Weyl principal block has a positive symmetrizer and the two physical characteristic speeds in each direction. This certificate alone is principal-symbol evidence; the exact curved derivation is certified separately by the curved E/B, first-order, sourced-constraint, and propagation nodes.
 - `candidate_curvature_principal_constraints_propagate` — The principal divergence constraints close through div(curl_2 h)=(1/2)curl_1(div h).
 - `support_preservation` — The displayed finite differential and pointwise maps do not enlarge support.
 - `green_witness_recognition_theorem` — Formal Green consequences hold once the curved witness hypotheses hold.
@@ -53,8 +61,8 @@ flowchart TD
 - `EAL_pairing_regression` — The reduced physical current has the certified +E,-A,-L normalization.
 - `ckv_cutoff_identity` — The cutoff-source identity recovers all fifteen modes once Lambda exists.
 - `algebraic_residual_no_duplication` — The algebraic BFV replacement contains one ghost and one momentum copy.
-- `energy_H4_is_C2` — The completed energy-mode centered cohomology is the certified two-class space.
-- `energy_gram_is_I2` — The completed energy-mode cohomological Gram matrix is I_2.
+- `residual_H4_is_C2` — The completed energy-mode centered cohomology is the certified two-class space.
+- `residual_gram_is_I2` — The completed energy-mode cohomological Gram matrix is I_2.
 - `curved_action_and_gauge_map` — The exact covariant action and its curved 24-by-9 gauge map are instantiated.
 - `parallel_curvature_derivative_normal_form` — Covariant derivative words reduce canonically using the parallel cylinder curvature.
 - `curved_auxiliary_shift_is_BV_canonical` — The nonlinear completion-of-square shift has its exact local cotangent lift.
@@ -65,15 +73,18 @@ flowchart TD
 ## Remaining curvature-propagation theorem
 
 The selected final gate is the constrained symmetric-hyperbolic
-Weyl-curvature realization. The reduced Weyl-symbol theorem and the
-candidate principal matrix/constraint algebra are true; the five
-displayed curved realization flags remain open.
+Weyl-curvature realization. The reduced Weyl-symbol theorem, the
+exact curved equations, and the 26-state first-order closure are
+true. The remaining analytic, causal, endpoint, equivariance, and
+pairing-transport flags below remain open.
 
-- `curved_EB_equations` — Derive the complete electric/magnetic Weyl equations from the curved linearized Bianchi/Cotton and Bach identities.
-- `curved_EB_symmetric_hyperbolicity` — Identify the actual curved E/B coefficient matrices and prove the positive STF form symmetrizes them.
-- `curved_constraint_propagation` — Derive the complete homogeneous curved evolution of every E/B constraint.
-- `support_local_prolongation_retract` — Construct the local Psi-W(h) prolongation equivalence without inverse curl, Laplacian, or helicity projector.
+- `prolonged_green_witness` — Construct the generalized block Green witness P_prol=Q_prol W_prol+W_prol Q_prol with its chain and adjoint identities.
 - `curvature_causal_green_operators` — Construct retarded and advanced operators for the exact constrained curvature system and assemble the full BV blocks.
+- `causal_green_homotopy` — Verify Q Lambda_+/- + Lambda_+/- Q=1 on the complete prolonged BV complex with causal support.
+- `causal_quasi_isomorphism` — Prove that the causal map Gamma_c(C_prol)[1] -> Gamma_sc(C_prol) is a quasi-isomorphism and specialize it to all smooth cylinder solutions.
+- `residual_endpoint_recovery` — Realize the fifteen cutoff CKV classes and their dual endpoints through the actual causal map, with no prolongation copy and suspension sign +1.
+- `SO42_equivariant_transport` — Prove that the causal/Cauchy identification transfers the full SO(4,2) action, strictly or by an explicit chain homotopy.
+- `prolonged_current_comparison` — Compare the prolonged and auxiliary currents by d+Q improvements and identify the Green, Cauchy, energy, and residual pairings.
 
 > The algebraic and energy-mode result is independently certified:
 > `H^4 = C^2` with Gram matrix `I_2`. This report tracks its

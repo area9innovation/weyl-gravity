@@ -4,6 +4,8 @@ from .auxiliary_eom_shift import CurvedAuxiliaryEOMShift
 from .all_rows import BVRowBlock, CurvedBVRowLedger
 from .bv_canonical_generator import BVCanonicalAuxiliaryShift
 from .curved_retract_status import CurvedRetractStatus
+from .curvature_prolongation_sdr import CurvatureProlongationGraphSDR
+from .prolonged_bv_differential_audit import ProlongedBVDifferentialAudit
 from .factorized_q_split import FactorizedCurvedQSplit
 from .q_conjugation import FourRowQConjugation
 from .support_preservation import LocalSupportCertificate
@@ -17,6 +19,8 @@ __all__ = [
     "CurvedAuxiliaryTangentShift",
     "CurvedBVRowLedger",
     "CurvedRetractStatus",
+    "CurvatureProlongationGraphSDR",
+    "ProlongedBVDifferentialAudit",
     "FourRowQConjugation",
     "FactorizedCurvedQSplit",
     "LocalSupportCertificate",

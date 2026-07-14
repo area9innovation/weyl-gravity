@@ -1,26 +1,68 @@
 {
   "atomic_blockers": [
-    "curved_EB_equations",
-    "curved_EB_symmetric_hyperbolicity",
-    "curved_constraint_propagation",
-    "support_local_prolongation_retract",
-    "curvature_causal_green_operators"
+    "prolonged_green_witness",
+    "curvature_causal_green_operators",
+    "causal_green_homotopy",
+    "causal_quasi_isomorphism",
+    "residual_endpoint_recovery",
+    "SO42_equivariant_transport",
+    "prolonged_current_comparison"
   ],
+  "causal_transport_gate": {
+    "blocking_atomic_dependencies": [
+      "prolonged_green_witness",
+      "curvature_causal_green_operators",
+      "causal_green_homotopy",
+      "causal_quasi_isomorphism",
+      "residual_endpoint_recovery",
+      "SO42_equivariant_transport",
+      "prolonged_current_comparison"
+    ],
+    "required_flags": [
+      "curved_operator_identity",
+      "curved_deformation_retract",
+      "curved_current_comparison",
+      "scalar_wave_witness_no_go",
+      "weyl_symbol_helicity_isomorphism",
+      "curved_EB_equations",
+      "curved_EB_first_order_closure",
+      "curved_EB_symmetric_hyperbolicity",
+      "curved_sourced_constraint_identity",
+      "curved_constraint_propagation",
+      "EAL_curvature_spectrum_match",
+      "support_local_prolongation_retract",
+      "prolonged_BV_operator_identity",
+      "prolonged_green_witness",
+      "curvature_causal_green_operators",
+      "causal_green_homotopy",
+      "causal_quasi_isomorphism",
+      "residual_endpoint_recovery",
+      "SO42_equivariant_transport",
+      "prolonged_current_comparison",
+      "residual_H4_is_C2",
+      "residual_gram_is_I2"
+    ],
+    "status": false
+  },
   "complete": false,
   "curvature_propagation_gate": {
     "blocking_dependencies": [
-      "curved_EB_equations",
-      "curved_constraint_propagation",
-      "support_local_prolongation_retract",
-      "curved_EB_symmetric_hyperbolicity",
-      "curvature_causal_green_operators"
+      "prolonged_green_witness",
+      "curvature_causal_green_operators",
+      "causal_green_homotopy"
     ],
     "required_atomic_flags": [
       "curved_EB_equations",
+      "curved_EB_first_order_closure",
       "curved_EB_symmetric_hyperbolicity",
+      "curved_sourced_constraint_identity",
       "curved_constraint_propagation",
+      "EAL_curvature_spectrum_match",
       "support_local_prolongation_retract",
-      "curvature_causal_green_operators"
+      "prolonged_BV_operator_identity",
+      "prolonged_green_witness",
+      "curvature_causal_green_operators",
+      "causal_green_homotopy"
     ],
     "status": false
   },
@@ -29,16 +71,25 @@
     "curved_operator_identity",
     "curved_deformation_retract",
     "curved_current_comparison",
+    "scalar_wave_witness_no_go",
+    "weyl_symbol_helicity_isomorphism",
     "curved_EB_equations",
+    "curved_EB_first_order_closure",
     "curved_EB_symmetric_hyperbolicity",
+    "curved_sourced_constraint_identity",
     "curved_constraint_propagation",
+    "EAL_curvature_spectrum_match",
     "support_local_prolongation_retract",
+    "prolonged_BV_operator_identity",
+    "prolonged_green_witness",
     "curvature_causal_green_operators",
+    "causal_green_homotopy",
     "causal_quasi_isomorphism",
-    "CKV_recovery",
-    "residual_no_duplication",
-    "energy_H4_is_C2",
-    "energy_gram_is_I2"
+    "residual_endpoint_recovery",
+    "SO42_equivariant_transport",
+    "prolonged_current_comparison",
+    "residual_H4_is_C2",
+    "residual_gram_is_I2"
   ],
   "flags": {
     "curved_current_comparison": true,

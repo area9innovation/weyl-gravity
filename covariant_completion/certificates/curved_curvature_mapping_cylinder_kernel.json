@@ -1,0 +1,212 @@
+{
+  "auxiliary_four_row_degrees": {
+    "Ebar[24]": 1,
+    "G[9]": -1,
+    "I[9]": 2,
+    "M[24]": 0
+  },
+  "coefficient_inputs": {
+    "A_equation": "order 2, paired Ebar normalization",
+    "B_identity": "order 0, rank 4",
+    "T_state": "order 3, from C1 and div C1",
+    "chain_relations": [
+      "T K_aux=0",
+      "E_curv T=A Ebar",
+      "N_curv A=B C_aux"
+    ],
+    "formal_adjoint_chain_relations": [
+      "C_aux Tsharp=0",
+      "Tsharp E_curv_sharp=Ebar Asharp",
+      "Asharp N_curv_sharp=K_aux Bsharp"
+    ],
+    "primal_and_adjoint_relation_defects": 0
+  },
+  "coefficientwise_complete_prolonged_Q": false,
+  "complete_16_block_degree_ledger": [
+    {
+      "block": "G_aux",
+      "degree": -1,
+      "index": 0
+    },
+    {
+      "block": "M_aux",
+      "degree": 0,
+      "index": 1
+    },
+    {
+      "block": "Ebar_aux",
+      "degree": 1,
+      "index": 2
+    },
+    {
+      "block": "I_aux",
+      "degree": 2,
+      "index": 3
+    },
+    {
+      "block": "X_U",
+      "degree": 0,
+      "index": 4
+    },
+    {
+      "block": "X_Eq",
+      "degree": 1,
+      "index": 5
+    },
+    {
+      "block": "X_Id",
+      "degree": 2,
+      "index": 6
+    },
+    {
+      "block": "Y_U",
+      "degree": 1,
+      "index": 7
+    },
+    {
+      "block": "Y_Eq",
+      "degree": 2,
+      "index": 8
+    },
+    {
+      "block": "Y_Id",
+      "degree": 3,
+      "index": 9
+    },
+    {
+      "block": "X_Id_sharp",
+      "degree": -1,
+      "index": 10
+    },
+    {
+      "block": "X_Eq_sharp",
+      "degree": 0,
+      "index": 11
+    },
+    {
+      "block": "X_U_sharp",
+      "degree": 1,
+      "index": 12
+    },
+    {
+      "block": "Y_Id_sharp",
+      "degree": -2,
+      "index": 13
+    },
+    {
+      "block": "Y_Eq_sharp",
+      "degree": -1,
+      "index": 14
+    },
+    {
+      "block": "Y_U_sharp",
+      "degree": 0,
+      "index": 15
+    }
+  ],
+  "cotangent_direction": "T,A,B map auxiliary primal rows to curvature primal rows; their adjoints map curvature dual rows contravariantly into auxiliary cotangent rows",
+  "curvature_complex_degrees": {
+    "Eq[40]": 1,
+    "Id[14]": 2,
+    "U[26]": 0
+  },
+  "degree_checks": {
+    "every_canonical_shear_has_degree_zero": true,
+    "every_incidence_pairing_has_total_degree_one": true,
+    "every_split_Q_arrow_raises_degree_by_one": true
+  },
+  "equation_normalization": {
+    "J_aux_rank": 24,
+    "J_aux_sha256": "f608d7c29d1404288616f0e62d56d6b0491e532a333552ed3d4be0130b071321",
+    "J_aux_shape": [
+      24,
+      24
+    ],
+    "Y_aux_rank": 9,
+    "Y_aux_sha256": "c8f53deced6f6fbaaca9fd2232bae7554c8b0d062aa3b8681526752572d50b16",
+    "Y_aux_shape": [
+      9,
+      9
+    ],
+    "conversion_defect": 0,
+    "four_row_equation": "Ebar=J_aux^{-1} E_raw",
+    "odd_curvature_incidence_sha256": "dcdea384620b0313b53218b60f3a7f5e223cf6ffb6794ab216fdb2f709108802",
+    "p_equation_domain": "paired Ebar row",
+    "raw_to_paired_map": "A=A_raw J_aux"
+  },
+  "exact_formal_kernel": true,
+  "fail_closed": true,
+  "forced_cotangent_shifts": [
+    "Ebar -> Ebar-Tsharp X_Usharp",
+    "M -> M-Asharp X_Eqsharp",
+    "G -> G-Bsharp X_Idsharp"
+  ],
+  "mapping_cylinder": {
+    "BV_pairing_defect": 0,
+    "I_P_minus_identity": "QH+HQ",
+    "P_I": "identity",
+    "Q_squared": "zero",
+    "attachment": "Cone(identity_curvature) plus cotangent dual",
+    "autonomous_curvature_direct_sum_used": false,
+    "chain_maps": "exact",
+    "homotopy_sign": "IP-1=QH+HQ",
+    "new_to_old_inverse_defect": 0,
+    "odd_BV_cyclicity_defect": 0,
+    "odd_BV_pairing_squared": "-identity",
+    "reason": "a direct sum would duplicate the E/A/L module",
+    "split_cone_contractible": true
+  },
+  "matrix_sha256": {
+    "canonical_transform": "76baaae14a443725ef96802982ac9256966986ce9bc0e666c93773e8b1b4fa32",
+    "homotopy": "eba35a2f5b610a617b1ab10b85d0ab320533268eb46b375bdc302b0ae651390a",
+    "inclusion": "7c79b667069ddb38f9d33cf3fb10dce5f9d05e50e20fb35e5545ac2dc520acfd",
+    "odd_pairing": "dcdea384620b0313b53218b60f3a7f5e223cf6ffb6794ab216fdb2f709108802",
+    "projection": "136acb94ce478f52fbdb5849506684cb011f93479b2f8423c0e2516156a54170",
+    "prolonged_Q": "a346542a3c3eae6e80bd28b4ad7e707c51e5f3089b5241ba781efd280363fa29",
+    "split_Q": "89279ca634b112c0dc1e2052863f9e94a2050e434674e34e05740266e6feadd4"
+  },
+  "odd_BV_cyclicity": {
+    "Koszul_degree_sign": "D_jj=(-1)^degree(j)",
+    "cyclic_homotopy_identity": "H^(T,formal) Omega-D Omega H=0",
+    "cyclicity_identity": "Q^(T,formal) Omega+D Omega Q=0",
+    "dual_arrow_rule": "D:Z_d->Z'_(d+1) induces (-1)^(d+1) epsilon_Z'/epsilon_Z Dsharp",
+    "homotopy_cyclicity_defect": 0,
+    "pairing": "Omega(z,zsharp)=epsilon_z, Omega(zsharp,z)=-epsilon_z",
+    "pairing_epsilon_X": [
+      1,
+      -1,
+      -1
+    ],
+    "pairing_epsilon_Y": [
+      -1,
+      -1,
+      1
+    ],
+    "pairing_epsilon_auxiliary": [
+      1,
+      1,
+      -1,
+      -1
+    ],
+    "prolonged_Q_cyclicity_defect": 0,
+    "split_Q_cyclicity_defect": 0
+  },
+  "primal_graph_shifts": [
+    "X_U -> X_U+T M",
+    "X_Eq -> X_Eq+A Ebar",
+    "X_Id -> X_Id+B I"
+  ],
+  "reason_for_fail_closed": "the kernel fixes degrees, signs and cotangent incidence, but the complete expanded coefficient matrix has not yet been instantiated in this 16-block cone basis",
+  "schema": "pure-weyl-curvature-mapping-cylinder-kernel-v1",
+  "status_flags_promoted": [],
+  "support": {
+    "Green_operator": false,
+    "compact": true,
+    "finite_differential_orders_only": true,
+    "inverse_Laplacian_or_curl": false,
+    "smooth_global": true,
+    "spacelike_compact": true,
+    "spectral_projector": false
+  },
+  "warranted_atomic_flags": []
+}

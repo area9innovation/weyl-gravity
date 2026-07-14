@@ -1,29 +1,46 @@
 {
   "arrows": [
     {
-      "map": "Gamma_c(C_aux)[1] -> Gamma_sc(C_aux)=Gamma(C_aux)",
-      "name": "causal",
-      "requires": [
-        "curved_EB_equations",
-        "curved_EB_symmetric_hyperbolicity",
-        "curved_constraint_propagation",
-        "support_local_prolongation_retract",
-        "curvature_causal_green_operators"
-      ],
-      "status": false
-    },
-    {
-      "map": "Gamma(C_aux) -> Gamma(C_met)",
-      "name": "auxiliary_elimination",
+      "map": "Gamma_c(C_met)[1] <-> Gamma_c(C_aux)[1]",
+      "name": "auxiliary_equivalence",
       "requires": [
         "curved_deformation_retract"
       ],
       "status": true
     },
     {
-      "map": "Gamma(C_met) -> C_Sigma -> K_energy",
+      "map": "Gamma_c(C_aux)[1] -> Gamma_c(C_prol)[1]",
+      "name": "auxiliary_prolongation",
+      "requires": [
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity"
+      ],
+      "status": true
+    },
+    {
+      "map": "Gamma_c(C_prol)[1] -> Gamma_sc(C_prol)=Gamma(C_prol)",
+      "name": "causal",
+      "requires": [
+        "curved_EB_equations",
+        "curved_EB_first_order_closure",
+        "curved_EB_symmetric_hyperbolicity",
+        "curved_sourced_constraint_identity",
+        "curved_constraint_propagation",
+        "EAL_curvature_spectrum_match",
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity",
+        "prolonged_green_witness",
+        "curvature_causal_green_operators",
+        "causal_green_homotopy",
+        "causal_quasi_isomorphism"
+      ],
+      "status": false
+    },
+    {
+      "map": "Gamma(C_prol) -> C_Sigma -> K_energy",
       "name": "Cauchy_and_polarization",
       "requires": [
+        "EAL_curvature_spectrum_match",
         "certified reduced Cauchy-Sobolev and polarization theorems"
       ],
       "status": true
@@ -32,8 +49,18 @@
       "map": "K_energy -> C_BFV,res",
       "name": "residual",
       "requires": [
-        "CKV_recovery",
-        "residual_no_duplication"
+        "residual_endpoint_recovery",
+        "SO42_equivariant_transport"
+      ],
+      "status": false
+    },
+    {
+      "map": "Omega_prol -> Omega_aux -> Omega_met -> Omega_energy -> G_res",
+      "name": "pairing",
+      "requires": [
+        "curved_current_comparison",
+        "prolonged_current_comparison",
+        "residual_gram_is_I2"
       ],
       "status": false
     }
@@ -41,35 +68,48 @@
   "guard": "the displayed result is not promoted until every terminal-gate dependency is true",
   "independent_inputs": {
     "energy_H4_is_C2": true,
-    "energy_gram_is_I2": true
+    "energy_gram_is_I2": true,
+    "residual_H4_is_C2": true,
+    "residual_gram_is_I2": true
   },
   "method": "transport through pairing-compatible quasi-isomorphisms; no auxiliary H4 recomputation",
   "schema": "pure-weyl-final-covariant-transport-status-v1",
-  "selected_claim": "pairing_compatibility",
+  "selected_claim": "prolonged_current_comparison",
   "status": false,
   "terminal_gate": {
     "blocking_dependencies": [
-      "curved_EB_equations",
-      "curved_EB_symmetric_hyperbolicity",
-      "curved_constraint_propagation",
-      "support_local_prolongation_retract",
-      "curvature_causal_green_operators"
+      "prolonged_green_witness",
+      "curvature_causal_green_operators",
+      "causal_green_homotopy",
+      "causal_quasi_isomorphism",
+      "residual_endpoint_recovery",
+      "SO42_equivariant_transport",
+      "prolonged_current_comparison"
     ],
     "derived_not_manually_set": true,
     "requires": [
       "curved_operator_identity",
       "curved_deformation_retract",
       "curved_current_comparison",
+      "scalar_wave_witness_no_go",
+      "weyl_symbol_helicity_isomorphism",
       "curved_EB_equations",
+      "curved_EB_first_order_closure",
       "curved_EB_symmetric_hyperbolicity",
+      "curved_sourced_constraint_identity",
       "curved_constraint_propagation",
+      "EAL_curvature_spectrum_match",
       "support_local_prolongation_retract",
+      "prolonged_BV_operator_identity",
+      "prolonged_green_witness",
       "curvature_causal_green_operators",
+      "causal_green_homotopy",
       "causal_quasi_isomorphism",
-      "CKV_recovery",
-      "residual_no_duplication",
-      "energy_H4_is_C2",
-      "energy_gram_is_I2"
+      "residual_endpoint_recovery",
+      "SO42_equivariant_transport",
+      "prolonged_current_comparison",
+      "residual_H4_is_C2",
+      "residual_gram_is_I2"
     ],
     "status": false
   },

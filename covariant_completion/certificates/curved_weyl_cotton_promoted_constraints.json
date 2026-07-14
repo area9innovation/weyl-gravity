@@ -1,0 +1,57 @@
+{
+  "all_characteristics_causal": true,
+  "characteristic_speeds": {
+    "+1": 8,
+    "+1/2": 2,
+    "+1/sqrt(3)": 2,
+    "-1": 8,
+    "-1/2": 2,
+    "-1/sqrt(3)": 2,
+    "0": 8
+  },
+  "constraint_rank": 14,
+  "constraint_subtraction_is_support_local": true,
+  "covariant_differential_ideal_equivalence_audited": false,
+  "exact_vector_Bach_rows": [
+    "U_x=R_x+2a=x_t-div A+(1/2)curl y+2a",
+    "U_y=R_y+2c=y_t-div C-(1/2)curl x+2c"
+  ],
+  "fail_closed": true,
+  "first_order_constraint_subtraction": [
+    "subtract q+(1/3)grad s and use a_t+curl c=0",
+    "subtract r+(1/3)grad t and use c_t-curl a=0"
+  ],
+  "flags_promoted_here": [],
+  "formal_integrability_rows": [
+    "a_t=q+(1/3)grad s-curl c",
+    "c_t=r+(1/3)grad t+curl a"
+  ],
+  "literal_formal_integrability_is_first_order": false,
+  "literal_second_order_rank_at_nonzero_xi": 1,
+  "literal_second_order_symbol": "(1/3) xi tensor xi in each sector",
+  "proof_boundary": "the first-order rank-32 candidate is internally symmetric hyperbolic; equivalence of the constraint-subtracted a/c rows to the complete covariant differential ideal remains an independent exact row audit",
+  "representative_characteristic": "lambda**8*(lambda - 1)**8*(lambda + 1)**8*(2*lambda - 1)**2*(2*lambda + 1)**2*(3*lambda**2 - 1)**2/144",
+  "retained_constraints": [
+    "q=x-div E",
+    "r=y-div B",
+    "s=div x",
+    "t=div y",
+    "d_a=a-div A-(1/2)curl y",
+    "d_c=c-div C+(1/2)curl x"
+  ],
+  "schema": "pure-weyl-cotton-promoted-constraint-candidate-v1",
+  "spatial_symbols_self_adjoint": true,
+  "state_order": [
+    "E_STF[5]",
+    "B_STF[5]",
+    "A_STF[5]",
+    "C_STF[5]",
+    "x[3]",
+    "y[3]",
+    "a[3]",
+    "c[3]"
+  ],
+  "state_rank": 32,
+  "symmetrizer_positive": true,
+  "warranted_atomic_flags": []
+}

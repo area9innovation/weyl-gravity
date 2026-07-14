@@ -1,0 +1,95 @@
+{
+  "analytic_kernel_consequence": {
+    "conditional_chain_commutation": "QG=GQ by two-sided uniqueness",
+    "conditional_homotopy": "Lambda_plus/minus=W G_plus/minus and Q Lambda+Lambda Q=1",
+    "degreewise_G_plus_minus_exist": true,
+    "reason": "symmetric-hyperbolic L and S on the globally hyperbolic cylinder, plus algebraic graph identities"
+  },
+  "backward_witness": {
+    "F_to_U": "identity",
+    "G_star_to_G": "identity",
+    "I_to_C": "identity",
+    "differential_order": 0,
+    "support_local": true
+  },
+  "block_order": [
+    "U[26]",
+    "F[26]",
+    "C[14]",
+    "I[14]",
+    "G[26]",
+    "G_star[26]"
+  ],
+  "canonical_source_identification": {
+    "K_and_R_coefficient_tables_equal": true,
+    "consequence": "the displayed K-R triangular block vanishes",
+    "table_sha256": "f2833a190c6ad7129df4c158483e6cd13e433cdcca8ae20cba3b22a5b1e1bc5f"
+  },
+  "causal_green_homotopy": false,
+  "compatibility_complex": {
+    "Q_squared": "zero",
+    "curved_unit_S3_correction_included": true,
+    "first_arrow": "U -> F+C: (L,K)",
+    "nilpotency_relation": "S K=R L",
+    "second_arrow": "F+C -> I: (-R,S)"
+  },
+  "curvature_causal_green_operators": false,
+  "exact_block_identities": {
+    "P_equals_QW_plus_WQ": true,
+    "Q_P_equals_P_Q": true,
+    "degree_F_plus_C": "[[L,0],[K-R,S]]",
+    "degree_I": "S",
+    "degree_U": "L",
+    "graph_degrees": "identity"
+  },
+  "fail_closed": true,
+  "graph_input": {
+    "BV_canonical_graph_shift": true,
+    "pointwise_contractible": true,
+    "shifted_pairs": [
+      "Psi_hat -> Psi_hat_star",
+      "c_hat -> c_hat_star"
+    ],
+    "support_local_SDR": true
+  },
+  "green_hyperbolic_diagonal_blocks": {
+    "L_26": {
+      "causal_characteristics": true,
+      "positive_symmetrizer": true,
+      "type": "first-order symmetric hyperbolic"
+    },
+    "S_14": {
+      "causal_characteristics": true,
+      "positive_symmetrizer": true,
+      "type": "first-order symmetric hyperbolic subsidiary"
+    },
+    "graph": {
+      "retarded_equals_advanced": true,
+      "type": "pointwise identity"
+    }
+  },
+  "matrix_sha256": {
+    "P_kernel": "c8ee554257f537d5a76aaa35cdb2fb573274340b9af9945b46a1b3ce397625c8",
+    "Q_kernel": "4e239db862b945fe42c138de80e8e37e819fe704bc464e77c0990c6e3d6fe710",
+    "W_kernel": "dcac63124dd7c113ef9f71fb9afca3b84321724e43d45fa91a7f974f695c7fa1"
+  },
+  "missing_for_complete_prolonged_BV_witness": [
+    "an all-degree Q_prol embedding this compatibility mapping cone into the retained metric/auxiliary ghost-field-antifield rows",
+    "the cotangent/formal-adjoint companion of the L,K,R,S mapping-cone rows with the project BV signs and fibre pairings",
+    "explicit triangular couplings to the gauge-wave, trace/Weyl and nonminimal blocks",
+    "a proof that the analytic-kernel Green inverses are the diagonal blocks of one two-sided G_plus/minus on every prolonged BV degree",
+    "graded adjoint identities needed for Green/current pairing compatibility"
+  ],
+  "prolonged_BV_operator_identity": false,
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-cotton-block-green-witness-v1",
+  "scope": "curvature compatibility kernel plus shifted graph pairs",
+  "status_flags_promoted": [],
+  "theorem_boundary": "The exact compatibility-kernel and graph block witness is now constructed.  It cannot be promoted to the complete prolonged BV witness until the retained gauge/cotangent rows are assembled with this mapping cone and checked on every degree.",
+  "triangular_green_formula": {
+    "canonical_K_equals_R": "G_mid=diag(G_L,G_S)",
+    "causal_support_preserved": true,
+    "general_middle_block": "G_mid=[[G_L,0],[-G_S (K-R) G_L,G_S]]"
+  },
+  "warranted_atomic_flags": []
+}

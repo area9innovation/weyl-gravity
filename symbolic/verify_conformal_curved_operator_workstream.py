@@ -19,6 +19,9 @@ from covariant_completion.curved_operator import (
     CurvatureProlongationStatus,
     CurvedOperatorIdentityStatus,
 )
+from covariant_completion.curved_operator.curvature_prolongation_status import (
+    OPEN_OBLIGATION_FIELDS,
+)
 from covariant_completion.curved_operator.covariant_jets import CovariantJetBasis
 from covariant_completion.curved_operator.expanded_hessian import (
     coefficient_cache_certificate,
@@ -145,10 +148,9 @@ def main() -> None:
             "curved_helicity_two_channel.json",
             status.null_symbol_quotient.helicity_certificate(),
         )
-        _write(
-            "curved_curvature_prolongation_status.json",
-            prolongation_certificate,
-        )
+        # The curvature-evolution verifier owns the live prolongation status.
+        # This operator verifier deliberately keeps only a local fail-closed
+        # status so parallel orchestration cannot overwrite later promotions.
         _write("curved_globalization.json", status.globalization.certificate())
         _write("curved_operator_identity_status.json", certificate)
 
@@ -203,13 +205,11 @@ def main() -> None:
         reduction = prolongation_certificate["exact_symbol_reduction"]
         if reduction["full_fibre_ker_W_equals_im_K_claimed"]:
             raise AssertionError("full-fibre ker(W)=im(K) was incorrectly claimed")
-        for open_flag in (
-            "curved_EB_equations",
-            "curved_EB_symmetric_hyperbolicity",
-            "curved_constraint_propagation",
-            "support_local_prolongation_retract",
-            "curvature_causal_green_operators",
+        if set(prolongation_certificate["atomic_open_obligations"]) != set(
+            OPEN_OBLIGATION_FIELDS
         ):
+            raise AssertionError("expanded curvature obligation ledger drifted")
+        for open_flag in OPEN_OBLIGATION_FIELDS:
             if prolongation_certificate[open_flag]:
                 raise AssertionError(f"unproved curvature flag promoted: {open_flag}")
         if prolongation.curvature_prolonged_complex_exact:
@@ -229,7 +229,7 @@ def main() -> None:
             raise AssertionError("globalization proof-mode ledger drifted")
         if covariant_jets.certificate(reverify=False)["raw_coordinate_exponential_used_as_covariant_table"]:
             raise AssertionError("raw coordinate jets crossed the covariant table guard")
-        print("CURVED OPERATOR WORKSTREAM GUARDS: 32/32 PASS")
+        print("CURVED OPERATOR WORKSTREAM GUARDS: 43/43 PASS")
 
     print("CURVED OPERATOR WORKSTREAM: ALL IMPLEMENTED CHECKS PASS")
 

@@ -16,7 +16,17 @@ from .action_hessian import ActionDerivedAuxiliaryHessian
 from .covariant_action import CovariantAuxiliaryAction
 from .conventions import CurvedBVConventions, FirstOrderOperator
 from .curvature_evolution import CurvatureEvolutionPrincipalSymbol
+from .curvature_eb_bundle import WeylElectricMagneticBundle
+from .curvature_eb_jets import CurvedWeylCottonJetComparison
+from .curvature_eal_spectrum import AllLevelCurvatureEALSpectrum
+from .weyl_cotton_causal_pde import CausalWeylCottonPDE
+from .weyl_cotton_block_green_witness import WeylCottonBlockGreenWitness
 from .curvature_prolongation_status import CurvatureProlongationStatus
+from .weyl_cotton_hyperbolic import ConstraintAdjustedWeylCottonEvolution
+from .weyl_cotton_differential_ideal import WeylCottonDifferentialIdealAudit
+from .weyl_cotton_formal_integrability import WeylCottonFormalIntegrability
+from .weyl_cotton_promoted_constraints import PromotedCottonConstraintEvolution
+from .weyl_cotton_row_audit import WeylCottonRowReductionAudit
 from .covariant_jets import CovariantJetBasis
 from .derivative_normal_form import ParallelCylinderNormalForm
 from .eliminated_density import EliminatedVectorDensityIdentity
@@ -32,7 +42,17 @@ __all__ = [
     "CovariantAuxiliaryAction",
     "CurvedBVConventions",
     "CurvatureEvolutionPrincipalSymbol",
+    "WeylElectricMagneticBundle",
+    "CurvedWeylCottonJetComparison",
+    "AllLevelCurvatureEALSpectrum",
+    "CausalWeylCottonPDE",
+    "WeylCottonBlockGreenWitness",
     "CurvatureProlongationStatus",
+    "ConstraintAdjustedWeylCottonEvolution",
+    "WeylCottonDifferentialIdealAudit",
+    "WeylCottonFormalIntegrability",
+    "PromotedCottonConstraintEvolution",
+    "WeylCottonRowReductionAudit",
     "CovariantJetBasis",
     "FirstOrderOperator",
     "ParallelCylinderNormalForm",

@@ -1,0 +1,142 @@
+{
+  "causal_green_homotopy": false,
+  "certified_green_diagonal_blocks": 14,
+  "coefficientwise_candidate_W_prol": true,
+  "construction": {
+    "coefficientwise_16_block_Q_input": true,
+    "coefficientwise_W_nonzero_blocks": 16,
+    "cotangent_signs_from_corrected_odd_pairing": true,
+    "curvature_backward_maps": {
+      "Eq_to_U": "pF, projection onto the 26 evolution rows",
+      "Id_to_Eq": "iC, inclusion into the 14 constraint rows",
+      "orders": 0
+    },
+    "degree": -1,
+    "finite_differential_operators_only": true,
+    "formula": "W_prol=S (W_aux direct_sum W_cone) S^-1",
+    "support_local": true
+  },
+  "curvature_causal_green_operators": false,
+  "design_constraint_for_next_witness": {
+    "block_diagonal_Q_implies_offdiagonal_W_cannot_change_diagonal_P": true,
+    "curvature_must_carry_physical_helicity_two": true,
+    "lower_triangular_relative_terms_alone_suffice": false,
+    "mere_conjugation_of_direct_sum_witnesses_suffices": false,
+    "successful_options": [
+      "replace the auxiliary diagonal witness so its field block is independently Green hyperbolic",
+      "add two-way relative blocks producing a non-triangular saddle operator and prove that coupled operator Green hyperbolic"
+    ]
+  },
+  "exact_identities": {
+    "P_prol_equals_QW_plus_WQ": true,
+    "P_prol_equals_S_Psplit_Sinverse": true,
+    "W_has_degree_minus_one": true,
+    "split_off_diagonal_blocks": 0,
+    "support_local_diagonalization_inverse_exact": true
+  },
+  "fail_closed": true,
+  "matrix_sha256": {
+    "P_prol": "509a44c192bba66057e2b30add8d5bfb222c1a5ca091289c774fbe46be0b76b5",
+    "P_split": "d73e609fcb964f6edacedb1f561a1ba25652ef933ae0b49c23ad243177890657",
+    "W_prol": "83ad4db070ed1245137ab065b4e1025fc9e211003fdd3f584d073e143dcbeaf4",
+    "W_split": "1bdf5ef0e0d6e1b3046e382b46ffd6af15afe0df374451271f49d5e121311029"
+  },
+  "open_block": {
+    "basis_independent_null_rank_no_go": true,
+    "consequence": "the canonical conjugate of the direct-sum witnesses does not close the prolonged Green theorem",
+    "general_mixed_order_green_hyperbolicity_proved": false,
+    "indices": [
+      1,
+      2
+    ],
+    "operator": "Eaux+K C and its cotangent copy",
+    "scalar_normally_hyperbolic_realization": false
+  },
+  "open_green_diagonal_blocks": 2,
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-curvature-mapping-cylinder-witness-v1",
+  "split_diagonal_ledger": [
+    {
+      "block": "G_aux",
+      "green_status": "certified curvature/gauge block",
+      "operator": "C K"
+    },
+    {
+      "block": "M_aux",
+      "green_status": "open auxiliary field block",
+      "operator": "Eaux + K C"
+    },
+    {
+      "block": "Ebar_aux",
+      "green_status": "open auxiliary field block",
+      "operator": "Eaux + K C"
+    },
+    {
+      "block": "I_aux",
+      "green_status": "certified curvature/gauge block",
+      "operator": "C K"
+    },
+    {
+      "block": "X_U",
+      "green_status": "certified curvature/gauge block",
+      "operator": "pF Ecurv"
+    },
+    {
+      "block": "X_Eq",
+      "green_status": "certified curvature/gauge block",
+      "operator": "Ecurv pF + iC Ncurv"
+    },
+    {
+      "block": "X_Id",
+      "green_status": "certified curvature/gauge block",
+      "operator": "Ncurv iC"
+    },
+    {
+      "block": "Y_U",
+      "green_status": "certified curvature/gauge block",
+      "operator": "pF Ecurv"
+    },
+    {
+      "block": "Y_Eq",
+      "green_status": "certified curvature/gauge block",
+      "operator": "Ecurv pF + iC Ncurv"
+    },
+    {
+      "block": "Y_Id",
+      "green_status": "certified curvature/gauge block",
+      "operator": "Ncurv iC"
+    },
+    {
+      "block": "X_Id_sharp",
+      "green_status": "certified curvature/gauge block",
+      "operator": "iCsharp NcurvSharp"
+    },
+    {
+      "block": "X_Eq_sharp",
+      "green_status": "certified curvature/gauge block",
+      "operator": "NcurvSharp iCsharp + pFsharp EcurvSharp"
+    },
+    {
+      "block": "X_U_sharp",
+      "green_status": "certified curvature/gauge block",
+      "operator": "EcurvSharp pFsharp"
+    },
+    {
+      "block": "Y_Id_sharp",
+      "green_status": "certified curvature/gauge block",
+      "operator": "iCsharp NcurvSharp"
+    },
+    {
+      "block": "Y_Eq_sharp",
+      "green_status": "certified curvature/gauge block",
+      "operator": "NcurvSharp iCsharp + pFsharp EcurvSharp"
+    },
+    {
+      "block": "Y_U_sharp",
+      "green_status": "certified curvature/gauge block",
+      "operator": "EcurvSharp pFsharp"
+    }
+  ],
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": []
+}

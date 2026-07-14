@@ -125,10 +125,26 @@ def main() -> None:
             ("verify_conformal_auxiliary_green_realization.py", emit_args),
             ("verify_conformal_curved_operator_workstream.py", guarded_args),
             ("verify_conformal_curvature_evolution.py", guarded_args),
+            ("verify_conformal_weyl_cotton_promoted_constraints.py", guarded_args),
+            ("verify_conformal_weyl_cotton_block_green_witness.py", guarded_args),
+            ("verify_conformal_curvature_prolongation_sdr.py", ()),
+            ("verify_conformal_curvature_state_gauge_chain_map.py", ()),
+            ("verify_conformal_curvature_auxiliary_chain_map.py", guarded_args),
+            ("verify_conformal_curvature_mapping_cylinder_kernel.py", ()),
+            ("verify_conformal_prolonged_bv_differential.py", guarded_args),
+            ("verify_conformal_curvature_graph_current.py", ()),
             ("verify_conformal_curved_retract.py", guarded_args),
             ("verify_conformal_curved_current.py", guarded_args),
         )
     )
+    _run("verify_conformal_curvature_identity_chain_map.py", *guarded_args)
+    _run("verify_conformal_curvature_mapping_cylinder_substitution.py")
+    _run(
+        "verify_conformal_curvature_mapping_cylinder_witness.py",
+        *guarded_args,
+    )
+    _run("verify_conformal_curvature_prolongation_status.py", *guarded_args)
+    _run("verify_conformal_prolonged_green_bridge.py", *guarded_args)
     _run("verify_conformal_covariant_bv_last_mile.py", *guarded_args)
     _run("verify_conformal_covariant_dependency_report.py", *guarded_args)
     _run_parallel(

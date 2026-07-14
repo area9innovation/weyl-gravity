@@ -47,16 +47,25 @@ class FinalCovariantTransportStatus:
             "curved_operator_identity",
             "curved_deformation_retract",
             "curved_current_comparison",
+            "scalar_wave_witness_no_go",
+            "weyl_symbol_helicity_isomorphism",
             "curved_EB_equations",
+            "curved_EB_first_order_closure",
             "curved_EB_symmetric_hyperbolicity",
+            "curved_sourced_constraint_identity",
             "curved_constraint_propagation",
+            "EAL_curvature_spectrum_match",
             "support_local_prolongation_retract",
+            "prolonged_BV_operator_identity",
+            "prolonged_green_witness",
             "curvature_causal_green_operators",
+            "causal_green_homotopy",
             "causal_quasi_isomorphism",
-            "CKV_recovery",
-            "residual_no_duplication",
-            "energy_H4_is_C2",
-            "energy_gram_is_I2",
+            "residual_endpoint_recovery",
+            "SO42_equivariant_transport",
+            "prolonged_current_comparison",
+            "residual_H4_is_C2",
+            "residual_gram_is_I2",
         )
         if final.requires != expected:
             raise AssertionError(
@@ -66,10 +75,10 @@ class FinalCovariantTransportStatus:
             raise AssertionError("the terminal transport flag was set manually")
 
         # The energy theorem is an input, not an output of this transport.
-        if not nodes["energy_H4_is_C2"].status:
-            raise AssertionError("the independently certified energy H4 regressed")
-        if not nodes["energy_gram_is_I2"].status:
-            raise AssertionError("the independently certified energy Gram regressed")
+        if not nodes["residual_H4_is_C2"].status:
+            raise AssertionError("the independently certified residual H4 regressed")
+        if not nodes["residual_gram_is_I2"].status:
+            raise AssertionError("the independently certified residual Gram regressed")
 
     @property
     def complete(self) -> bool:
@@ -91,34 +100,87 @@ class FinalCovariantTransportStatus:
         nodes = self.report.nodes
         arrows = [
             {
-                "name": "causal",
-                "map": "Gamma_c(C_aux)[1] -> Gamma_sc(C_aux)=Gamma(C_aux)",
-                "status": nodes["causal_quasi_isomorphism"].status,
-                "requires": [
-                    "curved_EB_equations",
-                    "curved_EB_symmetric_hyperbolicity",
-                    "curved_constraint_propagation",
-                    "support_local_prolongation_retract",
-                    "curvature_causal_green_operators",
-                ],
-            },
-            {
-                "name": "auxiliary_elimination",
-                "map": "Gamma(C_aux) -> Gamma(C_met)",
+                "name": "auxiliary_equivalence",
+                "map": "Gamma_c(C_met)[1] <-> Gamma_c(C_aux)[1]",
                 "status": nodes["curved_deformation_retract"].status,
                 "requires": ["curved_deformation_retract"],
             },
             {
+                "name": "auxiliary_prolongation",
+                "map": "Gamma_c(C_aux)[1] -> Gamma_c(C_prol)[1]",
+                "status": nodes["support_local_prolongation_retract"].status
+                and nodes["prolonged_BV_operator_identity"].status,
+                "requires": [
+                    "support_local_prolongation_retract",
+                    "prolonged_BV_operator_identity",
+                ],
+            },
+            {
+                "name": "causal",
+                "map": "Gamma_c(C_prol)[1] -> Gamma_sc(C_prol)=Gamma(C_prol)",
+                "status": all(
+                    nodes[name].status
+                    for name in (
+                        "curved_EB_equations",
+                        "curved_EB_first_order_closure",
+                        "curved_EB_symmetric_hyperbolicity",
+                        "curved_sourced_constraint_identity",
+                        "curved_constraint_propagation",
+                        "EAL_curvature_spectrum_match",
+                        "support_local_prolongation_retract",
+                        "prolonged_BV_operator_identity",
+                        "prolonged_green_witness",
+                        "curvature_causal_green_operators",
+                        "causal_green_homotopy",
+                        "causal_quasi_isomorphism",
+                    )
+                ),
+                "requires": [
+                    "curved_EB_equations",
+                    "curved_EB_first_order_closure",
+                    "curved_EB_symmetric_hyperbolicity",
+                    "curved_sourced_constraint_identity",
+                    "curved_constraint_propagation",
+                    "EAL_curvature_spectrum_match",
+                    "support_local_prolongation_retract",
+                    "prolonged_BV_operator_identity",
+                    "prolonged_green_witness",
+                    "curvature_causal_green_operators",
+                    "causal_green_homotopy",
+                    "causal_quasi_isomorphism",
+                ],
+            },
+            {
                 "name": "Cauchy_and_polarization",
-                "map": "Gamma(C_met) -> C_Sigma -> K_energy",
-                "status": nodes["EAL_pairing_regression"].status,
-                "requires": ["certified reduced Cauchy-Sobolev and polarization theorems"],
+                "map": "Gamma(C_prol) -> C_Sigma -> K_energy",
+                "status": nodes["EAL_curvature_spectrum_match"].status
+                and nodes["EAL_pairing_regression"].status,
+                "requires": [
+                    "EAL_curvature_spectrum_match",
+                    "certified reduced Cauchy-Sobolev and polarization theorems",
+                ],
             },
             {
                 "name": "residual",
                 "map": "K_energy -> C_BFV,res",
-                "status": nodes["residual_no_duplication"].status,
-                "requires": ["CKV_recovery", "residual_no_duplication"],
+                "status": nodes["residual_endpoint_recovery"].status
+                and nodes["SO42_equivariant_transport"].status,
+                "requires": [
+                    "residual_endpoint_recovery",
+                    "SO42_equivariant_transport",
+                ],
+            },
+            {
+                "name": "pairing",
+                "map": "Omega_prol -> Omega_aux -> Omega_met -> Omega_energy -> G_res",
+                "status": nodes["curved_current_comparison"].status
+                and nodes["prolonged_current_comparison"].status
+                and nodes["residual_gram_is_I2"].status,
+                "requires": [
+                    "curved_current_comparison",
+                    "prolonged_current_comparison",
+                    "residual_gram_is_I2",
+                ],
             },
         ]
         return {
@@ -138,6 +200,8 @@ class FinalCovariantTransportStatus:
                 "Gram": [[1, 0], [0, 1]],
             },
             "independent_inputs": {
+                "residual_H4_is_C2": nodes["residual_H4_is_C2"].status,
+                "residual_gram_is_I2": nodes["residual_gram_is_I2"].status,
                 "energy_H4_is_C2": nodes["energy_H4_is_C2"].status,
                 "energy_gram_is_I2": nodes["energy_gram_is_I2"].status,
             },

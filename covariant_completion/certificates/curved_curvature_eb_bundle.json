@@ -1,0 +1,30 @@
+{
+  "algebraic_Bianchi_verified": true,
+  "background_frame": "oriented normal orthonormal cylinder frame",
+  "curved_EB_equations": false,
+  "definitions": {
+    "electric": "E_ij=Psi_0i0j",
+    "magnetic": "B_ij=(1/2) epsilon_i^{kl} Psi_0jkl"
+  },
+  "domain": "STF_2(Sigma) direct-sum STF_2(Sigma)",
+  "domain_dimension": 10,
+  "fail_closed": true,
+  "field_equations_claimed": false,
+  "hodge_action": "star(E,B)=(B,-E)",
+  "hodge_square": "-identity",
+  "inverse_formulas": {
+    "Psi_0i0j": "E_ij",
+    "Psi_0ijk": "epsilon_mjk B_mi",
+    "Psi_ijkl": "-epsilon_ijm epsilon_kln E_mn"
+  },
+  "negative_chirality_relation": "star W_-=+i W_- implies B=+i E",
+  "orientation": "epsilon_0123=+1 and epsilon_123=+1",
+  "positive_chirality_relation": "star W_+=-i W_+ implies B=-i E",
+  "reconstruction_and_extraction_are_inverse": true,
+  "schema": "pure-weyl-curvature-electric-magnetic-bundle-v1",
+  "signature": "(-,+,+,+)",
+  "target": "algebraic Weyl tensors",
+  "target_dimension": 10,
+  "trace_free_verified": true,
+  "weyl_symmetries_verified": true
+}

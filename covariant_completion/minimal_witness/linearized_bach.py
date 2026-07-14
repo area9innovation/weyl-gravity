@@ -241,9 +241,20 @@ class LinearizedBach:
                         )
         return output
 
-    def standard_bach(self, tensor):
+    def standard_bach_from_weyl(self, weyl):
+        """Apply the standard curvature-to-Bach operator to an algebraic Weyl field.
+
+        This is the reusable ``D(U)`` map
+
+        ``nabla^c nabla^d U_acbd + (1/2) Ric^cd U_acbd``.
+
+        ``standard_bach`` below supplies ``U=C_1 h``.  Keeping the curvature
+        input entry point explicit lets the curvature-prolongation work derive
+        its electric/magnetic equations without reconstructing a metric
+        potential or using a nonlocal inverse of ``C_1``.
+        """
+
         geometry = self.geometry
-        weyl = self.linearized_weyl(tensor)
         derivative = self.covariant_derivative_rank4(weyl)
         first_divergence = _rank((4, 4, 4))
         for a in range(4):
@@ -272,6 +283,9 @@ class LinearizedBach:
                 )
                 output[a][b] = double_divergence + ricci_term
         return geometry.tracefree_projection(output)
+
+    def standard_bach(self, tensor):
+        return self.standard_bach_from_weyl(self.linearized_weyl(tensor))
 
     def action_normalized_bach(self, tensor):
         # Fixed by ``verify_normalization`` below.

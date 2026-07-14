@@ -1,0 +1,55 @@
+{
+  "A_equation": {
+    "Bach_to_curvature_rank": 9,
+    "Bach_to_curvature_sha256": "444dabf81f7945e342dda9d6fd8ffc0e6d6a7814792d613915a99a3aa7af5927",
+    "Bach_to_curvature_shape": [
+      40,
+      9
+    ],
+    "coefficient_multiindices": 15,
+    "factorization": "A_raw=H_Bach(E_h+S_h^sharp E_f), A_equation=A_raw J_aux on Ebar=J_aux^-1 E_raw",
+    "input_row": "paired Ebar=J_aux^-1 E_raw",
+    "maximum_order": 2,
+    "nonzero_coefficients": 149,
+    "raw_to_paired_conversion": "A_equation=A_raw J_aux",
+    "sha256": "a60f3b6143b45667057a3ecaae5e6e361c0791721a7b55f0f1b69d8706bde9b7",
+    "shape": [
+      40,
+      24
+    ]
+  },
+  "B_identity_emitted": false,
+  "T_state": {
+    "coefficient_multiindices": 35,
+    "maximum_order": 3,
+    "nonzero_coefficients": 439,
+    "operator": "(C1,div C1)",
+    "sha256": "ca86a296fca48e3526690c8c0e94730fc5a8bcd438544306ab2dcdae7c7181ca",
+    "shape": [
+      26,
+      24
+    ]
+  },
+  "differential_ac_generation": {
+    "included": true,
+    "nonzero_H_entries_in_a_c_rows": 2,
+    "rows": "adjusted constraint rows a[3],c[3]"
+  },
+  "exhaustive_jet_certificate": {
+    "Bach_sample_rank": 9,
+    "E_curv_T_minus_H_Bach_defect": 0,
+    "base_point": "cylinder stereographic origin",
+    "covariant_multiindices_through_order_4": 70,
+    "globalization": "R x SO(4) homogeneity",
+    "metric_components": 10,
+    "tested_metric_four_jets": 700
+  },
+  "fail_closed": true,
+  "first_chain_relation": "E_curv T_state=A_equation E_aux",
+  "first_chain_relation_exact": true,
+  "mapping_cylinder_cotangent_kernel_assembled": false,
+  "proof_boundary": "the state/equation chain square is coefficientwise exact; the identity-row factorization N_curv A_equation=B_identity C_aux remains to be solved before cotangent assembly",
+  "schema": "pure-weyl-curvature-auxiliary-equation-chain-map-v1",
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": []
+}

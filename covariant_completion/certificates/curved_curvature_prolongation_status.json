@@ -1,10 +1,48 @@
 {
+  "EAL_curvature_spectrum_match": true,
+  "SO42_equivariant_transport": false,
+  "all_level_spectrum_evidence": {
+    "certificate": "curved_EAL_spectrum_all_level.json",
+    "cotton_no_duplication": true,
+    "global_BGG_exhaustion": true,
+    "symbolic_not_finite_cutoff": true
+  },
+  "analytic_closure_evidence": {
+    "defect_generated_by_secondary_constraints": true,
+    "differential_ideal_certificate": "curved_weyl_cotton_differential_ideal.json",
+    "formal_integrability_certificate": "curved_weyl_cotton_formal_integrability.json",
+    "homogeneous_constraint_propagation_exact": true,
+    "hyperbolic_certificate": "curved_weyl_cotton_hyperbolic.json",
+    "pointwise_row_defect_rank": 6,
+    "sourced_compatibility_exact": true
+  },
+  "atomic_open_obligations": {
+    "EAL_curvature_spectrum_match": true,
+    "SO42_equivariant_transport": false,
+    "causal_green_homotopy": false,
+    "causal_quasi_isomorphism": false,
+    "curvature_causal_green_operators": false,
+    "curved_EB_equations": true,
+    "curved_EB_first_order_closure": true,
+    "curved_EB_symmetric_hyperbolicity": true,
+    "curved_constraint_propagation": true,
+    "curved_sourced_constraint_identity": true,
+    "prolonged_BV_operator_identity": true,
+    "prolonged_current_comparison": false,
+    "prolonged_green_witness": false,
+    "residual_endpoint_recovery": false,
+    "support_local_prolongation_retract": true
+  },
+  "causal_green_homotopy": false,
+  "causal_quasi_isomorphism": false,
   "curvature_causal_green_operators": false,
   "curvature_green_realization": false,
-  "curvature_prolonged_complex_exact": false,
-  "curved_EB_equations": false,
-  "curved_EB_symmetric_hyperbolicity": false,
-  "curved_constraint_propagation": false,
+  "curvature_prolonged_complex_exact": true,
+  "curved_EB_equations": true,
+  "curved_EB_first_order_closure": true,
+  "curved_EB_symmetric_hyperbolicity": true,
+  "curved_constraint_propagation": true,
+  "curved_sourced_constraint_identity": true,
   "exact_symbol_reduction": {
     "domain": "(F/ker N_2)/(N_2^{-1} im K_1/ker N_2)",
     "domain_dimension": 2,
@@ -25,8 +63,31 @@
     "target_dimension": 2
   },
   "fail_closed": true,
-  "next_exact_step": "construct the local Psi-W(h) defining row, Bianchi/Bach rows, and support-local prolongation SDR before promoting a causal electric/magnetic Weyl evolution",
-  "schema": "pure-weyl-curvature-prolongation-status-v1",
-  "support_local_prolongation_retract": false,
+  "mapping_cylinder_evidence": {
+    "certificate": "curved_curvature_mapping_cylinder_substitution.json",
+    "coefficientwise_complete": true,
+    "prolonged_BV_operator_identity_promoted": true,
+    "support_local_prolongation_retract_promoted": true
+  },
+  "next_exact_step": "construct the coefficientwise degree-minus-one prolonged Green witness and certify its support-local triangular Green blocks",
+  "phase1_evidence": {
+    "certificate": "curved_weyl_cotton_jet_comparison.json",
+    "curved_equations_and_first_order_closure_promoted_from_certificate": true,
+    "exhaustive_Weyl_two_jets": 150
+  },
+  "prolonged_BV_operator_identity": true,
+  "prolonged_current_comparison": false,
+  "prolonged_green_witness": false,
+  "proof_boundary": {
+    "curvature_only_potential_reconstruction_is_support_local": false,
+    "finite_harmonic_checks_are_all_level_EAL_audit": false,
+    "homogeneous_constraint_symbol_is_sourced_identity": false,
+    "positive_PDE_symmetrizer_is_action_Krein_pairing": false,
+    "principal_symbol_results_are_full_curved_equations": false,
+    "symmetric_hyperbolicity_is_chain_green_homotopy": false
+  },
+  "residual_endpoint_recovery": false,
+  "schema": "pure-weyl-curvature-prolongation-status-v2",
+  "support_local_prolongation_retract": true,
   "weyl_symbol_helicity_isomorphism": true
 }

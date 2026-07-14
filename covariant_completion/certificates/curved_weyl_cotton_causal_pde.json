@@ -1,0 +1,114 @@
+{
+  "analytic_input": {
+    "application": "for f in Gamma_c(F), choose a Cauchy slice strictly to the past (respectively future) of supp(f), solve L_WC u=f with zero Cauchy data there, and use uniqueness to make the result independent of the chosen slice",
+    "finite_propagation": "the symmetric-hyperbolic domain of dependence is contained in the metric causal domain because every characteristic speed has absolute value at most one",
+    "theorem": "global existence, uniqueness and finite propagation for linear symmetric-hyperbolic systems on globally hyperbolic spacetimes; equivalently the symmetric-hyperbolic case of B\u00e4r, Green-hyperbolic operators on globally hyperbolic spacetimes, Commun. Math. Phys. 333 (2015) 1585-1615"
+  },
+  "background": {
+    "cauchy_surfaces": "Sigma_t={t} x S3",
+    "cauchy_surfaces_compact": true,
+    "globally_hyperbolic": true,
+    "lapse": 1,
+    "metric": "-dt^2+dOmega_3^2",
+    "shift": 0,
+    "spacetime": "R x unit S3",
+    "time_function": "t"
+  },
+  "causal_green_homotopy": false,
+  "compatible_source_restriction": {
+    "advanced_support": "supp(G_con^- f) subset J^-(supp f)",
+    "codomain": "ker K_WC",
+    "constraint_proof": "for K_src f=0, C=K_WC G_un^+/- f solves L_K C=0; retarded/advanced zero data and subsidiary uniqueness give C=0",
+    "definition": "G_con^+/-=G_un^+/- restricted to ker K_src",
+    "domain": "Gamma_c^comp(F_WC)",
+    "left_inverse": "L_WC G_con^+/- f=f for compatible f",
+    "restriction_does_not_use_a_projector_onto_ker_K_src": true,
+    "retarded_support": "supp(G_con^+ f) subset J^+(supp f)",
+    "right_inverse": "G_con^+/- L_WC u=u for compact u in ker K_WC; the identity makes L_WC u source-compatible",
+    "unique": true
+  },
+  "compatible_source_restriction_is_ordinary_full_bundle_green_operator": false,
+  "constraint_operator": {
+    "constrained_fields": "ker K_WC",
+    "constraint_state": "q[3]+r[3]+a[3]+c[3]+s[1]+t[1]",
+    "notation": "K_WC",
+    "rank": 14,
+    "subsidiary_characteristic": "lambda**6*(2*lambda - 1)**2*(2*lambda + 1)**2*(3*lambda**2 - 1)**2/144",
+    "subsidiary_characteristics_causal": true,
+    "subsidiary_operator": "L_K",
+    "subsidiary_symmetric_hyperbolic": true
+  },
+  "curvature_block_causal_solution_operators": true,
+  "curvature_causal_green_operators": false,
+  "exact_covariant_curvature_system": {
+    "adjusted_and_covariant_differential_ideals_equal": true,
+    "pointwise_rank_six_boundary_retained": true,
+    "pointwise_row_modules_equal": false,
+    "smooth_solution_spaces_equal": true,
+    "therefore_constrained_solutions_satisfy_all_34_covariant_rows": true
+  },
+  "fail_closed": true,
+  "flags_promoted_here": [],
+  "operator": {
+    "bundle_rank": 26,
+    "characteristic_cone_inside_metric_cone": true,
+    "characteristic_speeds": {
+      "+1": 6,
+      "+1/2": 2,
+      "+1/sqrt(3)": 2,
+      "-1": 6,
+      "-1/2": 2,
+      "-1/sqrt(3)": 2,
+      "0": 6
+    },
+    "coefficients_global_smooth": true,
+    "lower_order_terms_do_not_change_characteristic_cone": true,
+    "name": "L_WC",
+    "positive_symmetrizer": true,
+    "spatial_symbols_symmetrized_self_adjoint": true,
+    "state": "E[5]+B[5]+A[5]+C[5]+x[3]+y[3]",
+    "temporal_principal_matrix": "I_26"
+  },
+  "prerequisites_for_repository_flag": [
+    "embed L_WC and K_src in every degree of the prolonged BV operator",
+    "construct the remaining ghost, identity, antifield and contractible Green blocks",
+    "assemble a degreewise block-triangular prolonged Green operator",
+    "verify Q_prol commutes with those advanced/retarded operators"
+  ],
+  "prolonged_green_witness": false,
+  "proof_boundary": "causal PDE theorem for the exact constrained curvature block; no BV witness W_prol, no QG=GQ theorem, no Lambda^+/- chain homotopy, and no compact-to-spacelike-compact quasi-isomorphism",
+  "schema": "pure-weyl-cotton-causal-pde-v1",
+  "source_compatibility": {
+    "K_src_is_finite_order_differential": true,
+    "K_src_preserves_compact_support": true,
+    "compatible_sources": "Gamma_c^comp(F_WC)=ker K_src",
+    "exact_operator_identity": "L_K K_WC=K_src L_WC",
+    "notation": "K_src",
+    "rows": [
+      "f_x-div f_E",
+      "f_y-div f_B",
+      "div f_A+(1/2)curl f_y",
+      "div f_C-(1/2)curl f_x",
+      "div f_x",
+      "div f_y"
+    ],
+    "unit_S3_curvature_correction_included": true
+  },
+  "unconstrained_green_operators": {
+    "advanced_support": "supp(G_un^- f) subset J^-(supp f)",
+    "codomain": "Gamma(F_WC)",
+    "domain": "Gamma_c(F_WC)",
+    "exists_for_every_compact_source": true,
+    "left_inverse": "L_WC G_un^+/- f=f",
+    "notation": [
+      "G_un^+",
+      "G_un^-"
+    ],
+    "preserves_constraints_for_arbitrary_source": false,
+    "retarded_support": "supp(G_un^+ f) subset J^+(supp f)",
+    "right_inverse": "G_un^+/- L_WC u=u for u in Gamma_c(F_WC)",
+    "unique": true
+  },
+  "unconstrained_operator_is_constrained_operator": false,
+  "warranted_integration_claim": "the exact constrained Weyl--Cotton curvature block has unique advanced/retarded compatible-source solution operators with metric-causal support"
+}

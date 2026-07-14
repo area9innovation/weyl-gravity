@@ -1,0 +1,73 @@
+{
+  "causal_green_homotopy": false,
+  "curvature_causal_green_operators": false,
+  "dependency_closure": {
+    "if_full_W_and_triangularization_pass": [
+      "prolonged_green_witness",
+      "curvature_causal_green_operators",
+      "causal_green_homotopy"
+    ],
+    "reason": "the triangular inverse and Green-homotopy recognition steps are exact and introduce no further coefficient calculation"
+  },
+  "exact_inputs": {
+    "BV_canonical_mapping_cylinder": true,
+    "Q_prol_squared": "zero",
+    "coefficientwise_16_block_Q": true,
+    "compatible_sources_land_in_constraint_kernel": true,
+    "curvature_kernel_QP_equals_PQ": true,
+    "curvature_kernel_QW_plus_WQ": true,
+    "rank14_subsidiary_symmetric_hyperbolicity": true,
+    "rank26_symmetric_hyperbolic_green_operators": true,
+    "support_local_mapping_cylinder_SDR": true
+  },
+  "fail_closed": true,
+  "finite_triangular_green_theorem": {
+    "advanced_support_preserved": true,
+    "diagonal_relations": "D_i G_i^+/-=G_i^+/- D_i=1",
+    "finite_no_Neumann_convergence_assumption": true,
+    "left_inverse_defect": 0,
+    "matrix_sha256": {
+      "generic_G": "36822875bfa691ea6d30761f39c253457f3cd20555a076700a7bd2173c9ddda5",
+      "generic_P": "a743193cd6621ef980fb7e05bee71a79f6fb3f88cb293e8c7cea86193491587f"
+    },
+    "operator": "P_ii=D_i, P_ij=A_ij for i>j",
+    "recursion": "G_ii=G_i; G_ij=-G_i sum_{k=j}^{i-1} P_ik G_kj",
+    "retarded_support_preserved": true,
+    "right_inverse_defect": 0,
+    "same_sided_extension_domain": "retarded diagonal Green operators are used on past-compact intermediate sources and advanced ones on future-compact intermediate sources; the standard unique extensions of Green-hyperbolic operators are understood",
+    "support_reason": "finite compositions of differential blocks and same-sided causal Green operators remain inside J^+ or J^-; global hyperbolicity gives J^+(J^+(K))=J^+(K) and likewise in the advanced direction",
+    "tested_block_count": 8
+  },
+  "prolonged_green_witness": false,
+  "recognition_after_full_witness": {
+    "causal_support": true,
+    "chain_commutation": "QG^+/-=G^+/-Q",
+    "definition": "Lambda^+/-=W_prol G^+/-",
+    "derivation": "QG=GPQG=GQPG=GQ",
+    "homotopy": "Q Lambda^+/-+Lambda^+/- Q=1",
+    "purely_formal_step_complete": true
+  },
+  "schema": "pure-weyl-prolonged-green-bridge-v1",
+  "single_missing_constructive_certificate": {
+    "analytic_gap_after_triangularization": false,
+    "koszul_or_pairing_gap_before_triangularization": true,
+    "name": "coefficientwise prolonged Green witness",
+    "required_data": [
+      "a degree-minus-one finite differential W_prol on all 16 mapping-cylinder blocks and retained direct summands",
+      "the exact equality P_prol=Q_prol W_prol+W_prol Q_prol",
+      "a support-local triangular transformation of every degree of P_prol to the target diagonal ledger",
+      "the formal-adjoint/cotangent blocks with the project fibre pairings"
+    ],
+    "why_existing_kernel_witness_is_insufficient": "it acts on the autonomous curvature compatibility kernel, not on every block of the canonically attached 16-block BV cylinder"
+  },
+  "status_flags_promoted": [],
+  "target_diagonal_ledger": [
+    "gauge/ghost wave blocks and formal adjoints",
+    "Weyl-Cotton L_26 and its formal adjoint",
+    "subsidiary S_14 and its formal adjoint",
+    "generalized-auxiliary pointwise blocks",
+    "trace/Weyl and nonminimal pointwise doublets",
+    "mapping-cylinder contractible identity blocks"
+  ],
+  "warranted_atomic_flags": []
+}

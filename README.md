@@ -77,15 +77,19 @@ null covector the Hessian and gauge symbols have ranks 11 and 9.  The
 rank-two obstruction is the physical helicity-two module, not missing gauge
 freedom.  The linearized Weyl symbol induces the exact isomorphism
 `(1/4) I2` from the reduced Hessian quotient to the two-dimensional Weyl
-helicity quotient.  The candidate ten-component electric/magnetic Weyl
-principal block has exact symmetric-hyperbolic algebra, with a positive STF symmetrizer
-and physical characteristic speeds `+1,-1`; its principal divergence
-constraints close by `div(curl_2 h)=(1/2)curl_1(div h)`.  The preferred remaining
-Green-hyperbolicity step is therefore a local curvature prolongation that
-propagates this Weyl module.  The curved Bianchi/Bach lower-order terms,
-derivation of this block from the curved Bianchi/Bach equations, their
-lower-order terms and full constraint propagation, the local prolongation retract, and causal Green
-operators are not yet proved.  Hadamard theory also remains open.  A direct same-bundle
+helicity quotient.  The exact curved Bianchi--Bach decomposition now requires
+the ten electric/magnetic Weyl components together with a sixteen-component
+Cotton slot.  Its 34 covariant rows have temporal rank 26 and eight primary
+constraints, and exhaustive comparison on all 150 Weyl two-jets proves the
+curved equations and this local first-order closure.  Formal integrability
+adds six secondary constraints.  The constraint-adjusted 26-state system is
+exactly equivalent as a differential ideal, symmetric hyperbolic with causal
+speeds, and has a complete sourced subsidiary identity.  The odd BV mapping
+cylinder now gives the complete support-local all-row prolongation and its
+nilpotent prolonged differential.  The prolonged Green witness and actual
+BV Green homotopy, residual endpoint recovery, `SO(4,2)`-equivariant
+transport, and prolonged current comparison are not yet proved.  Hadamard
+theory also remains open.  A direct same-bundle
 factorization of `B_lin+K T/2` is an optional strengthening, not a hidden
 premise.
 
@@ -100,19 +104,64 @@ curved_current_comparison      = true
 final_covariant_H4             = false
 ```
 
-The final flag remains false while the curvature-propagation/causal-Green
-theorem is absent.  The negative rank certificate and the positive reduced
+The final flag remains false while the complete causal BV Green bridge is
+absent.  The negative rank certificate and the positive reduced
 Weyl-symbol isomorphism are both exposed independently.
 
-The selected curvature route is split into five explicit open flags:
+The selected curvature route is split into explicit fail-closed flags:
 
 ```text
-curved_EB_equations                = false
-curved_EB_symmetric_hyperbolicity = false
-curved_constraint_propagation     = false
-support_local_prolongation_retract= false
+curved_EB_equations                = true
+curved_EB_first_order_closure      = true
+curved_EB_symmetric_hyperbolicity = true
+curved_sourced_constraint_identity= true
+curved_constraint_propagation     = true
+EAL_curvature_spectrum_match       = true
+support_local_prolongation_retract= true
+prolonged_BV_operator_identity     = true
+prolonged_green_witness            = false
 curvature_causal_green_operators  = false
+causal_green_homotopy              = false
+causal_quasi_isomorphism           = false
+residual_endpoint_recovery         = false
+SO42_equivariant_transport         = false
+prolonged_current_comparison       = false
 ```
+
+The exact all-level curvature audit is also complete: symbolic BGG rank and
+character identities show that the 26-state covariant equations carry
+precisely the parity-complete `E/A/L` towers and that the Cotton graph adds no
+second copy.  This is not inferred from a finite harmonic cutoff.
+
+The BV-canonical Weyl/Cotton graph SDR, autonomous curvature compatibility
+complex `26 -> 40 -> 14` with cotangent adjoint, causal curvature-block
+solution operators, and analytic block Green witness are exact subtheorems.
+The complete graded mapping cylinder is now exact.  The state map
+`T=(C1,div C1)` and an order-two equation map satisfy
+`E_curv T=A_eq E_aux` on the exhaustive 700-dimensional metric four-jet
+fibre.  A sparse order-zero identity map satisfies
+`N_curv A_eq=B_id C_aux`, including the differentially generated secondary
+rows.  Their odd BV incidence, Koszul adjoints, canonical shears, nilpotent
+all-row differential, and support-local SDR are certified, so both
+`support_local_prolongation_retract` and `prolonged_BV_operator_identity` are
+true.  The canonical direct-sum/conjugated degree-minus-one witness is also
+an exact operator identity, and fourteen of its sixteen split diagonal
+blocks are Green hyperbolic.  It does not close the theorem: the auxiliary
+field block $E_{\rm aux}+KC$ and its cotangent copy are the two remaining
+blocks and retain the scalar-wave rank obstruction.  The final witness must
+therefore go beyond direct-sum conjugation, using two-way relative
+auxiliary--curvature degree-minus-one terms that form a genuinely coupled
+saddle operator, unless an independently Green-hyperbolic auxiliary
+diagonal witness is found.
+
+The residual calculation is already complete: `residual_H4_is_C2` and
+`residual_gram_is_I2` are inputs to the terminal transport gate.  The missing
+theorem is a pairing-compatible causal BV bridge from compactly supported
+metric/auxiliary data through an all-row curvature prolongation to Cauchy
+data, the `E/A/L` module, and the residual endpoints.  It must include
+compatible inhomogeneous sources and degree-`-1` retarded/advanced maps
+`Lambda_±` with `Q Lambda_± + Lambda_± Q = 1`; symmetric hyperbolicity alone
+does not establish this identity.
 
 **Paper 1** (the audit paper): the Bender–Mannheim generator Q is
 *reconstructed* from the normal-form data (G, J, G₀) + positivity rather than
