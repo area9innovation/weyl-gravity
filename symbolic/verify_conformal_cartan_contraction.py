@@ -117,7 +117,8 @@ def main() -> None:
     args = parser.parse_args()
     if args.claim_local_bv:
         raise SystemExit(
-            "the residual conformal-Killing complex has not been derived from pure-Weyl local BV"
+            "this Cartan executable does not derive the residual complex from "
+            "local pure-Weyl BV; that selected algebraic derivation is certified separately"
         )
     if args.treat_d_as_physical_hamiltonian:
         raise SystemExit(

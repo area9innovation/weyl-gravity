@@ -124,13 +124,13 @@ def main() -> None:
     args = parser.parse_args()
     if args.claim_bfv_transgression:
         raise SystemExit(
-            "REFUSED: endpoint duality is proved, but the one-scalar time-slice "
-            "BV-to-BFV transgression has not been computed"
+            "REFUSED: endpoint duality alone is not the time-slice suspension; "
+            "the normalized suspension is certified by its companion executable"
         )
     if args.claim_endpoint_is_bfv_momentum:
         raise SystemExit(
             "REFUSED: the bulk endpoint and BFV momentum have different degrees; "
-            "they are related only after the missing transgression"
+            "they are related only after the separately certified degree suspension"
         )
     data = certificate_data()
     if args.emit:

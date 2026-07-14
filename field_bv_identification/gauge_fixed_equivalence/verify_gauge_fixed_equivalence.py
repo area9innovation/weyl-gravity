@@ -289,8 +289,8 @@ def main() -> None:
     args = parser.parse_args()
     if args.claim_dual_zero_mode_replacement:
         raise SystemExit(
-            "REFUSED: gauge fixing preserves the fifteen CKVs but does not yet "
-            "construct the bulk-endpoint-to-BFV time-slice transgression"
+            "REFUSED: this gauge-fixing executable preserves the fifteen CKVs "
+            "but does not itself construct the separately certified endpoint suspension"
         )
     if args.claim_complete_row_inventory:
         raise SystemExit(
@@ -300,12 +300,12 @@ def main() -> None:
     if args.claim_pairing_transfer:
         raise SystemExit(
             "REFUSED: canonical gauge fixing is proved, but the even field form and "
-            "residual BFV/CE normalization have not yet been transferred"
+            "residual BFV/CE normalization are transferred by a separate certificate"
         )
     if args.claim_complete_field_bv_domain:
         raise SystemExit(
-            "REFUSED: BFV transgression, polarized row completeness, and pairing "
-            "transfer remain open"
+            "REFUSED: this gauge-fixing certificate alone does not prove the "
+            "separately certified BFV suspension, polarized ledger, and pairing transfer"
         )
     contraction, pairs, zero_modes, records = certificate_data(
         args.min_energy, args.max_energy

@@ -267,7 +267,9 @@ def main() -> None:
     )
     if args.claim_absolute_cohomology:
         raise SystemExit(
-            "the residual ghost polarization has not been derived from the full pure-Weyl local BV complex"
+            "this relative-primary executable does not derive the residual ghost "
+            "polarization from local BV; the selected algebraic BV-BFV "
+            "polarization is certified separately"
         )
 
 

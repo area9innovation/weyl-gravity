@@ -447,15 +447,27 @@ coker(K^sharp) ~= (ker K)^*.
 ```
 
 The endpoint quotient is the bulk obstruction codomain.  It is not the BFV
-ghost momentum before time-slice transgression.  What remains is therefore:
+ghost momentum before time-slice transgression.  The field-theoretic companion
+now additionally proves, for the selected algebraic closed-cylinder
+polarization,
 
-1. compute the one-scalar bulk-BV to time-slice-BFV transgression and its
-   orientation;
-2. certify row completeness after phase-space reduction and
-   positive-frequency polarization, not on the unpolarized cyclic bulk BV
-   complex;
-3. transport `Omega_BV -> Omega_BFV -> Omega_Sigma -> J_positive`;
-4. prove continuity/closed range on any later Hilbert or Krein completion;
-5. study nonlinear and quantum anomaly questions.
+```text
+tau = Theta,  lambda = +1,
+H_state = Sym(W_+ direct-sum W_-) tensor Lambda(so(4,2)^*),
+G_field = I_2.
+```
+
+The proof transfers rather than duplicates the bulk endpoint sector, treats
+BFV momenta as contractions on one residual ghost exterior algebra, contracts
+all polarized local and nonminimal doublets to their vacuum, and factors the
+field pairing into the action-normalized matter form and the oriented
+complementary-degree CE form.
+
+What remains outside this classical algebraic theorem is:
+
+1. continuity and closed range on a Hilbert or Krein completion;
+2. uniqueness or comparison of alternative boundary conditions and
+   polarizations;
+3. nonlinear stability and quantum anomaly questions.
 
 Those are deliberately outside the classical algebraic sprint theorem.

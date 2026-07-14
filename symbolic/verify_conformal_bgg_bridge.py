@@ -331,13 +331,15 @@ def main() -> None:
         )
     if args.claim_completed_bv_transfer:
         raise SystemExit(
-            "the polynomial metric-to-residual transfer, cross-energy cyclic form, "
-            "and selected residual BFV sector are constructed separately; their "
-            "identification with the complete gauge-fixed field-theory BV domain remains open"
+            "this BGG topology executable does not establish the field-BV/BFV "
+            "transfer; the selected algebraic transfer is certified by the "
+            "field_bv_identification executables"
         )
     if args.claim_pure_weyl_bfv_pairing:
         raise SystemExit(
-            "the canonical residual CE pairing and algebraic raw isometry are verified, but their induction from the complete field-theory pure-Weyl BV/BFV domain remains conditional"
+            "this BGG topology executable does not transfer the field pairing; "
+            "the selected algebraic pairing is certified separately by "
+            "verify_conformal_polarized_pairing_transfer.py"
         )
 
     verify_hodge_and_complex_identity()

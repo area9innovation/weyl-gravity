@@ -206,6 +206,24 @@ CERTIFICATES = (
         slow=True,
     ),
     Certificate(
+        "algebraic zero-mode BV-to-BFV suspension",
+        "verify_conformal_zero_mode_transgression.py",
+        "CONFORMAL ALGEBRAIC ZERO-MODE TRANSGRESSION: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
+        "polarized algebraic state complex",
+        "verify_conformal_polarized_state_complex.py",
+        "CONFORMAL POLARIZED STATE COMPLEX: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
+        "polarized field pairing transfer",
+        "verify_conformal_polarized_pairing_transfer.py",
+        "CONFORMAL POLARIZED PAIRING TRANSFER: ALL PASS",
+        slow=True,
+    ),
+    Certificate(
         "weight-four vertex descent",
         "verify_conformal_vertex_descent.py",
         "CONFORMAL PAPER VERTEX DESCENT: ALL PASS",
@@ -258,6 +276,12 @@ GUARDS = (
     ("the closed-universe choice does not make D universally gauge", "verify_conformal_closed_universe_bfv.py", ("--claim-universal-D-gauging",)),
     ("equivariance does not replace direct curvature integration in every magnetic block", "verify_conformal_taub_moment_map_all_levels.py", ("--claim-all-block-direct-curvature",)),
     ("Taub endpoint normalization does not compute the BFV transgression", "verify_conformal_taub_obstruction_map.py", ("--claim-bfv-transgression",)),
+    ("the normalized endpoint/Taub/BFV data leave no arbitrary suspension magnitude", "verify_conformal_zero_mode_transgression.py", ("--claim-arbitrary-lambda",)),
+    ("the algebraic zero-mode suspension is not an analytic boundary theorem", "verify_conformal_zero_mode_transgression.py", ("--claim-analytic-boundary-theorem",)),
+    ("row concentration is a polarized-state result, not an unpolarized bulk-BV claim", "verify_conformal_polarized_state_complex.py", ("--claim-unpolarized-single-row",)),
+    ("the algebraic polarized state complex is not a Hilbert/Krein completion", "verify_conformal_polarized_state_complex.py", ("--claim-hilbert-completion",)),
+    ("the polarized I2 is not a positive particle Hilbert metric", "verify_conformal_polarized_pairing_transfer.py", ("--claim-particle-hilbert",)),
+    ("the exact algebraic pairing is not an analytic completion theorem", "verify_conformal_polarized_pairing_transfer.py", ("--claim-analytic-pairing",)),
     ("vertex descent is not a particle Hilbert theorem", "verify_conformal_vertex_descent.py", ("--claim-particle-hilbert",)),
     ("Pontryagin is not globally trivial", "verify_conformal_dynamical_topological.py", ("--claim-pontryagin-globally-trivial",)),
     ("theta can retain boundary observables", "verify_conformal_dynamical_topological.py", ("--claim-theta-has-no-observables",)),
@@ -361,12 +385,14 @@ def main() -> None:
         "field-derived minimal master-action/raw-chain dictionary and "
         "gauge-fixed/nonminimal contraction, "
         "canonical dual endpoint and Taub obstruction map, "
+        "normalized algebraic BV-to-BFV zero-mode suspension, selected "
+        "positive-frequency state polarization, and field pairing transfer, "
         "cross-energy cyclic form, complete centered HPL transfer, explicit "
         "closed-universe BFV choice, and all-energy Taub normalization. The "
-        "one-scalar BV-to-BFV transgression, polarized-state row completeness, "
-        "complete field-theoretic pairing identification, analytic "
-        "completion, and quantum theory remain explicitly conditional or "
-        "out of scope."
+        "result is exact in the selected D-finite, SO(4)-finite algebraic "
+        "closed-cylinder category. Analytic completion, uniqueness among "
+        "alternative boundary polarizations, nonlinear stability, and quantum "
+        "theory remain explicitly out of scope."
     )
 
 

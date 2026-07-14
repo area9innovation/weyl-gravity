@@ -89,16 +89,43 @@ python3 symbolic/verify_conformal_residual_bfv_roles.py --emit
 python3 symbolic/verify_conformal_taub_obstruction_map.py --emit
 ```
 
-The remaining phases are now:
+The fourth completed milestone performs the selected algebraic
+BV-to-BFV suspension and positive-frequency polarization.  With the endpoint
+basis normalized by `Theta`, the bulk endpoint component and the canonical
+BFV equation both read `Q b_a = mu_a`; hence the equivariant suspension has
+`lambda=+1` in the declared symplectic and charge conventions.  The same
+certificate fixes the homogeneous `(4+7+4)` ghost orientation and gives the
+centered four-ghost representative unit norm.
 
-1. compute the one-scalar time-slice transgression
-   `tau:H_endpoint^bulk -> Z*[-1]_BFV` and its orientation;
-2. inventory rows after canonical phase-space reduction, positive-frequency
-   polarization, and nonminimal quartet contraction (not on the full
-   unpolarized bulk BV complex);
-3. transport `Omega_BV -> Omega_BFV -> Omega_Sigma -> J_positive` and match
-   the matter and residual ghost normalizations;
-4. rerun the residual cohomology from the resulting polarized state variables.
+After time-slice reduction the physical complex splits into complementary
+positive- and negative-frequency Lagrangians.  Local, trace, and nonminimal
+doublets contribute only their vacuum; the endpoint class is transferred
+once to the BFV momentum; and the BFV momenta act as contractions on a single
+ghost exterior algebra.  The resulting state complex is therefore
 
-Analytic completions, interactions, anomalies, and quantum nilpotency are
-out of scope.
+```text
+Sym(W_+ direct-sum W_-) tensor Lambda(so(4,2)^*)
+```
+
+The matter form induced from the canonical symplectic structure is fixed by
+one action-normalized energy-two comparison and then by conformal recursion.
+Together with the canonical ghost orientation it gives the field-theoretic
+representative Gram matrix `I_2`.
+
+Run:
+
+```bash
+python3 symbolic/verify_conformal_zero_mode_transgression.py --emit
+python3 symbolic/verify_conformal_polarized_state_complex.py --emit
+python3 symbolic/verify_conformal_polarized_pairing_transfer.py --emit
+```
+
+These commands emit three JSON certificates under
+`polarized_state/certificates/` and three generated LaTeX fragments.  They
+complete the selected algebraic closed-cylinder BV--BFV polarization used by
+the residual theorem.  They do **not** prove:
+
+- single-row concentration of the unpolarized bulk BV tangent complex;
+- continuity, closed range, or a Hilbert/Krein completion;
+- uniqueness among alternative boundary conditions or polarizations;
+- interactions, anomalies, or quantum BRST nilpotency.

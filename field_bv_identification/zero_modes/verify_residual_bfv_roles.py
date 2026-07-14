@@ -86,8 +86,8 @@ def main() -> None:
     args = parser.parse_args()
     if args.claim_no_duplication_transfer:
         raise SystemExit(
-            "REFUSED: dimensions and roles are certified, but no-duplication as a "
-            "BV-to-BFV transfer theorem requires the missing scalar transgression"
+            "REFUSED: this pre-suspension role audit certifies dimensions and roles "
+            "only; no-duplication is proved by the normalized suspension certificate"
         )
     data = certificate_data()
     if args.emit:

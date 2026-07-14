@@ -345,7 +345,9 @@ def main() -> None:
         )
     if args.require_physical_cohomology:
         raise SystemExit(
-            "this energy-four jet is not physical cohomology; an all-energy Taub companion is certified separately, while the complete field-theory BV-domain identification remains conditional"
+            "this energy-four jet is not physical cohomology; the all-energy "
+            "Taub and selected algebraic BV-BFV state theorems are certified "
+            "by separate executables"
         )
 
 

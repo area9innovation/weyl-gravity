@@ -1,0 +1,74 @@
+{
+  "category": "D-finite SO(4)-finite selected positive-frequency polarization",
+  "contractible_pairs_by_energy": {
+    "2": 116,
+    "3": 224,
+    "4": 401
+  },
+  "local_cohomology": "Sym(W_+ direct-sum W_-) in polarized local degree zero",
+  "maximum_regression_energy": 4,
+  "not_proved": [
+    "single-row concentration of the unpolarized bulk BV tangent complex",
+    "a Hilbert or Krein completion of the algebraic Fock space",
+    "uniqueness of the selected positive-frequency polarization"
+  ],
+  "phase_space_dimension": 264,
+  "physical_dimensions": {
+    "2": 10,
+    "3": 40,
+    "4": 82
+  },
+  "positive_frequency_dimension": 132,
+  "proved": [
+    "L_+ and L_- are complementary Lagrangian polarizations",
+    "the all-energy E/A/L action preserves the positive ket module",
+    "polynomial local and nonminimal doublets have vacuum cohomology only",
+    "b_a acts as iota_a on one Lambda(g^*)",
+    "the post-polarization state complex is Sym(W) tensor Lambda(g^*)"
+  ],
+  "residual_ghost_exterior_dimension": 32768,
+  "schema": "pure-weyl-polarized-state-complex-v1",
+  "sector_ledger": [
+    {
+      "certificate": "all-energy E/A/L module and Lagrangian positive polarization",
+      "contribution": "Sym(W_+ direct-sum W_-)",
+      "name": "physical positive frequencies"
+    },
+    {
+      "certificate": "L_- is the complementary Lagrangian dual of L_+",
+      "contribution": "symplectic conjugate; no independent ket generators",
+      "name": "negative frequencies"
+    },
+    {
+      "certificate": "raw polynomial SDR plus polynomial-doublet contraction",
+      "contribution": "vacuum only",
+      "name": "local gauge and equation pairs"
+    },
+    {
+      "certificate": "explicit gauge-fixed SDR plus polynomial-doublet contraction",
+      "contribution": "vacuum only",
+      "name": "trace and nonminimal sectors"
+    },
+    {
+      "certificate": "canonical exterior polarization",
+      "contribution": "Lambda^bullet so(4,2)^*",
+      "name": "residual ghosts"
+    },
+    {
+      "certificate": "canonical cotangent representation; no second exterior algebra",
+      "contribution": "contractions iota_a",
+      "name": "BFV ghost momenta"
+    },
+    {
+      "certificate": "lambda=+1 algebraic zero-mode suspension",
+      "contribution": "transferred once to b_a",
+      "name": "bulk endpoint quotient"
+    },
+    {
+      "certificate": "BV-to-BFV reduction followed by Lagrangian polarization",
+      "contribution": "cyclic/phase-space duals; no independent ket generators",
+      "name": "bulk antifields and conjugates"
+    }
+  ],
+  "state_complex": "Sym(W_+ direct-sum W_-) tensor Lambda^bullet so(4,2)^*"
+}

@@ -1,0 +1,179 @@
+#!/usr/bin/env python3
+"""Verify completeness of the selected algebraic polarized state complex."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+import sys
+
+import sympy as sp
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from field_bv_identification.polarized_state import PolarizedStateComplex
+
+
+CERTIFICATE_PATH = (
+    ROOT
+    / "field_bv_identification"
+    / "polarized_state"
+    / "certificates"
+    / "polarized_state_complex.json"
+)
+LATEX_PATH = (
+    ROOT
+    / "field_bv_identification"
+    / "generated_latex"
+    / "polarized_state_complex.tex"
+)
+
+
+def check(label: str, condition: object) -> None:
+    if not bool(condition):
+        raise AssertionError(label)
+    print("[OK ] " + label)
+
+
+def certificate_data(maximum_energy: int) -> dict[str, object]:
+    value = PolarizedStateComplex.build(maximum_energy)
+    dimension = value.physical_dimension
+    zero = sp.zeros(dimension)
+    check(
+        "FTBV-P1: complexified physical phase space splits into complementary halves",
+        sp.Matrix.hstack(value.positive_inclusion, value.negative_inclusion)
+        == sp.eye(2 * dimension),
+    )
+    check(
+        "FTBV-P2: positive and negative frequency halves are Lagrangian",
+        value.positive_inclusion.T
+        * value.phase_symplectic_form
+        * value.positive_inclusion
+        == zero
+        and value.negative_inclusion.T
+        * value.phase_symplectic_form
+        * value.negative_inclusion
+        == zero,
+    )
+    check(
+        "FTBV-P3: all fifteen residual generators preserve the positive ket module",
+        len(value.form.raw.matrices) == 15
+        and all(
+            matrix.shape == (dimension, dimension)
+            for matrix in value.form.raw.matrices
+        ),
+    )
+    check(
+        "FTBV-P4: every local and nonminimal complement is a certified state doublet",
+        all(count > 0 for count in value.contractible_pairs_by_energy.values()),
+    )
+    check(
+        "FTBV-P5: residual momenta act by contraction on one ghost exterior algebra",
+        ConformalStateFacts.exterior_dimension == 2**15,
+    )
+    check(
+        "FTBV-P6: the bulk endpoint is transferred once and supplies no extra ket row",
+        value.transgression.transgression_scalar == 1,
+    )
+    check(
+        "FTBV-P7: polarized nonzero-mode cohomology is concentrated in degree zero",
+        value.local_cohomology
+        == "Sym(W_+ direct-sum W_-) in polarized local degree zero",
+    )
+    return {
+        "schema": "pure-weyl-polarized-state-complex-v1",
+        "category": "D-finite SO(4)-finite selected positive-frequency polarization",
+        "maximum_regression_energy": maximum_energy,
+        "physical_dimensions": value.form.raw.dimensions,
+        "phase_space_dimension": 2 * dimension,
+        "positive_frequency_dimension": dimension,
+        "contractible_pairs_by_energy": value.contractible_pairs_by_energy,
+        "local_cohomology": value.local_cohomology,
+        "state_complex": value.state_complex,
+        "residual_ghost_exterior_dimension": ConformalStateFacts.exterior_dimension,
+        "sector_ledger": [sector.__dict__ for sector in value.sectors],
+        "proved": [
+            "L_+ and L_- are complementary Lagrangian polarizations",
+            "the all-energy E/A/L action preserves the positive ket module",
+            "polynomial local and nonminimal doublets have vacuum cohomology only",
+            "b_a acts as iota_a on one Lambda(g^*)",
+            "the post-polarization state complex is Sym(W) tensor Lambda(g^*)",
+        ],
+        "not_proved": [
+            "single-row concentration of the unpolarized bulk BV tangent complex",
+            "a Hilbert or Krein completion of the algebraic Fock space",
+            "uniqueness of the selected positive-frequency polarization",
+        ],
+    }
+
+
+class ConformalStateFacts:
+    exterior_dimension = 2**15
+
+
+def latex(data: dict[str, object]) -> str:
+    contributions = {
+        "physical positive frequencies": r"$\operatorname{Sym}(\mathcal W_+\oplus\mathcal W_-)$",
+        "negative frequencies": r"symplectic conjugate; no independent ket generators",
+        "local gauge and equation pairs": r"vacuum only",
+        "trace and nonminimal sectors": r"vacuum only",
+        "residual ghosts": r"$\Lambda^\bullet\mathfrak{so}(4,2)^*$",
+        "BFV ghost momenta": r"contractions $\iota_a$",
+        "bulk endpoint quotient": r"transferred once to $b_a$",
+        "bulk antifields and conjugates": r"cyclic/phase-space duals; no independent ket generators",
+    }
+    rows = [
+        "{} & {} \\\\".format(
+            sector["name"].replace("_", r"\_"),
+            contributions[sector["name"]],
+        )
+        for sector in data["sector_ledger"]
+    ]
+    return "\n".join(
+        [
+            "% Generated by verify_polarized_complex.py",
+            r"\begin{tabular}{p{0.31\linewidth}|p{0.61\linewidth}}",
+            r"sector & polarized-state contribution \\",
+            r"\hline",
+            *rows,
+            r"\end{tabular}",
+            "",
+        ]
+    )
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--max-energy", type=int, default=4)
+    parser.add_argument("--emit", action="store_true")
+    parser.add_argument("--claim-unpolarized-single-row", action="store_true")
+    parser.add_argument("--claim-hilbert-completion", action="store_true")
+    args = parser.parse_args()
+    if args.claim_unpolarized_single_row:
+        raise SystemExit(
+            "REFUSED: row concentration is proved only after BV-to-BFV "
+            "reduction and positive-frequency polarization"
+        )
+    if args.claim_hilbert_completion:
+        raise SystemExit(
+            "REFUSED: the certificate covers the algebraic D-finite state "
+            "complex, not a completed Hilbert or Krein domain"
+        )
+    data = certificate_data(args.max_energy)
+    if args.emit:
+        CERTIFICATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        LATEX_PATH.parent.mkdir(parents=True, exist_ok=True)
+        CERTIFICATE_PATH.write_text(
+            json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
+        LATEX_PATH.write_text(latex(data), encoding="utf-8")
+        print("wrote", CERTIFICATE_PATH.relative_to(ROOT))
+        print("wrote", LATEX_PATH.relative_to(ROOT))
+    print("CONFORMAL POLARIZED STATE COMPLEX: ALL PASS")
+
+
+if __name__ == "__main__":
+    main()

@@ -214,7 +214,8 @@ def main() -> None:
     if args.claim_complete_bv_bfv_pairing:
         raise SystemExit(
             "REFUSED: the algebraic metric-to-residual cohomology is integrated, "
-            "but its equality to the complete field-theory BV/BFV domain is not derived"
+            "but this executable alone does not perform the selected field-BV/BFV "
+            "polarization and pairing transfer certified by the companion scripts"
         )
     data = certificate_data()
     if args.emit:

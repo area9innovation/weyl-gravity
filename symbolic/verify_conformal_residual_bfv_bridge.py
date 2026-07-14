@@ -153,7 +153,8 @@ def main() -> None:
     if args.claim_transferred_pure_weyl_pairing:
         raise SystemExit(
             "REFUSED: the canonical residual BFV pairing is exact internally; "
-            "its equality to the pairing of the complete field-theory pure-Weyl BV domain remains conditional"
+            "this executable alone does not perform the selected field pairing "
+            "transfer certified by verify_conformal_polarized_pairing_transfer.py"
         )
     data = certificate_data()
     if args.emit:
