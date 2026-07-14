@@ -42,6 +42,11 @@ particle-number-diagonal Krein lift does not make that block null.
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.
 
+General-audience article:
+[`Before Worrying About a Gravitational Ghost, Ask Whether It Is Really There`](paper/before-worrying-about-a-gravitational-ghost.md)
+explains the completed classical pure-Weyl BV–BFV result without assuming
+advanced mathematics or physics.
+
 **Paper 1** (the audit paper): the Bender–Mannheim generator Q is
 *reconstructed* from the normal-form data (G, J, G₀) + positivity rather than
 assumed; unique Hermitian-positive diagonalizer; stabilizer SO(2,ℂ)²
