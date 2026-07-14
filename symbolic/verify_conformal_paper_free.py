@@ -20,6 +20,7 @@ import sympy as sp
 
 RESIDUAL_SOURCE_COMMIT = "e928f257c25099eb534eb34109dfc1dc6a3127a1"
 BGG_REVISION_BASE_COMMIT = "c471b99f5e3708e692b1c25238f6272c9e29b48f"
+ALGEBRAIC_BV_BFV_SNAPSHOT_COMMIT = "8a7e7821f8cd4af5798fd1cb7a962f1da69cdf86"
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -371,6 +372,7 @@ def main() -> None:
     print("=== Free conformal paper verification ===")
     print("residual scientific input commit:", RESIDUAL_SOURCE_COMMIT)
     print("BGG bridge revision base:", BGG_REVISION_BASE_COMMIT)
+    print("algebraic BV-BFV snapshot:", ALGEBRAIC_BV_BFV_SNAPSHOT_COMMIT)
     print("python:", sys.version.split()[0])
     print("sympy:", sp.__version__)
     if not args.guards_only:
