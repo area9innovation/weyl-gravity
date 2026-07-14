@@ -1,7 +1,67 @@
 {
+  "BV_gauge_fixing_nonminimal_improvement": {
+    "Q_off_diagonal_block_defect": 0,
+    "actual_curved_Q_direct_sum": true,
+    "all_rows": {
+      "Weyl_nonminimal": true,
+      "diffeomorphism_nonminimal": true,
+      "minimal_66": true,
+      "trace_Weyl": true
+    },
+    "canonical_transformation_full_pairing_defect": 0,
+    "companion_block_defect": 0,
+    "companion_reason": "C_shift=Y_shift^{-1} K_shift^sharp J_shift is block diagonal because U is canonical and K_shift is the exact direct sum",
+    "curved_companion_coefficient_identity": "Y_gh C_cyl=K_cyl^sharp J_aux verified coefficientwise",
+    "definition": "Psi_aux=(U^{-1})^*Psi_met, using the same local type-II BV-canonical U as the curved Q split",
+    "executable_block_calculation": {
+      "metric_sha256": "14fc6f89d52df8ad801b6ec40ae0789d73efe375f432d0bba54a6264a04e8be5",
+      "metric_shape": [
+        5,
+        15
+      ],
+      "pullback_matrix_defect": 0,
+      "shifted_columns": [
+        "h[10]",
+        "f_hat[10]",
+        "v[4]",
+        "b_met[5]"
+      ],
+      "shifted_rows": [
+        "bar_c_met[5]"
+      ],
+      "shifted_sha256": "6e419486fed6c7622c47a64b529a514cffc84dbf54a626c1455200d900ec71ab",
+      "shifted_shape": [
+        5,
+        29
+      ]
+    },
+    "gamma": "-delta theta_Psi_gen=0",
+    "gauge_fermion_split": "U^*Psi_aux=Psi_met+0 by definition",
+    "generalized_gauge_fermion": "zero: eta/v is already a minimal algebraic doublet; no uncertified boost antighost is introduced",
+    "graded_word_defect": 0,
+    "identity": "delta(Q theta_Psi_gen)=Q gamma",
+    "inclusion_relation": "i_aux=U i_shift, hence i_aux^*(U^{-1})^*=i_shift^*",
+    "lagrangian_difference": "Q Psi_gen=0",
+    "metric_gauge_fermion": "Psi_met=<bar c_met,C_met h+alpha_met b_met/2>",
+    "potential_difference": "Q theta_Psi_gen=0 because Psi_gen is horizontal order zero",
+    "pullback": "i^*Psi_aux=Psi_met",
+    "pullback_defect": 0
+  },
   "Fourier_action_improvement_exact": true,
   "antisymmetric_improvement_hash": "64ed83194bffc478a3e659a7df2e1bc3ff51878dd326ce6e017a510bc6bc7e25",
-  "complete": false,
-  "curved_d_plus_Q_identity": false,
+  "complete": true,
+  "curved_d_plus_Q_identity": true,
+  "minimal_shifted_curved_action_current_identity": true,
+  "minimal_shifted_curved_d_plus_Q_defect": "zero",
+  "off_shell_identity": {
+    "beta": "zero in the compatible shifted convention",
+    "boundary_delta_squared_defect": 0,
+    "defect": 0,
+    "formula": "i^*omega_aux-omega_met=d beta+Q gamma",
+    "gamma": "-i^*delta theta_Psi_gen",
+    "on_retract_image": "f_hat=delta f_hat=generalized auxiliary/nonminimal variables=0"
+  },
+  "ordinary_derivative_potential_improvement_exact": true,
+  "potential_improvement_hash": "d8acbd80a3ffd5666ceea6317a3892c5df15af49c0a41d42ba1544f70d28f379",
   "schema": "pure-weyl-curved-current-improvement-status-v1"
 }

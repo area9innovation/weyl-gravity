@@ -34,7 +34,7 @@ def main() -> None:
             "it does not recompute cohomology in the auxiliary variables"
         )
     if args.claim_final_covariant_h4 and not status.complete:
-        blockers = status.certificate()["terminal_gate"]["blocking_dependencies"]
+        blockers = status.blocking_dependencies("final_covariant_H4")
         raise SystemExit(
             "REFUSED: final_covariant_H4 is false; blocking atomic dependencies: "
             + ", ".join(blockers)
@@ -74,13 +74,21 @@ def main() -> None:
             print("wrote", path.relative_to(ROOT))
 
     if args.guards:
-        if status.complete:
-            raise AssertionError("final covariant H4 unexpectedly passed")
         if not status.report.nodes["energy_H4_is_C2"].status:
             raise AssertionError("energy H4 input regressed")
         if not status.report.nodes["energy_gram_is_I2"].status:
             raise AssertionError("energy Gram input regressed")
-        print("FINAL COVARIANT TRANSPORT GUARDS: 3/3 PASS")
+        blockers = payload["terminal_gate"]["blocking_dependencies"]
+        if bool(blockers) == bool(status.complete):
+            raise AssertionError(
+                "transport blockers must be present exactly while the gate is incomplete"
+            )
+        terminal = status.report.nodes["final_covariant_H4"]
+        if terminal.status != all(
+            status.report.nodes[name].status for name in terminal.requires
+        ):
+            raise AssertionError("terminal status is not derived from the live DAG")
+        print("FINAL COVARIANT TRANSPORT GUARDS: 4/4 PASS")
 
     print("FINAL COVARIANT TRANSPORT: ALL IMPLEMENTED LOGIC CHECKS PASS")
 

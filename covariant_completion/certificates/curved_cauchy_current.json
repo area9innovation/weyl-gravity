@@ -1,7 +1,20 @@
 {
   "Fourier_time_current_difference_is_spatial_divergence": true,
-  "closed_S3_integral_consequence": "conditional on curved identity",
-  "complete": false,
-  "curved_slab_current_derived": false,
-  "schema": "pure-weyl-curved-cauchy-current-status-v1"
+  "closed_S3_integral_consequence": "zero on Q cohomology",
+  "complete": true,
+  "curved_slab_current_derived": true,
+  "minimal_shifted_curved_Cauchy_current_difference": "zero",
+  "schema": "pure-weyl-curved-cauchy-current-status-v1",
+  "slab_identity": {
+    "boundary_of_S3": "empty",
+    "cohomology_class": 0,
+    "formula": "Delta Omega_Sigma=integral_Sigma d_Sigma beta+Q integral_Sigma gamma",
+    "holds_for": [
+      "compact",
+      "spacelike_compact",
+      "smooth_global"
+    ],
+    "spacetime_slab": "[t0,t1] x S^3",
+    "spatial_Stokes_term": 0
+  }
 }

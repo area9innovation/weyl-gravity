@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import json
 from pathlib import Path
 import subprocess
@@ -40,33 +41,7 @@ GUARDS = (
     ("verify_conformal_auxiliary_green_realization.py", "--claim-direct-original-causal-homotopy"),
     ("verify_conformal_auxiliary_green_realization.py", "--claim-curved-globalization"),
     ("verify_conformal_auxiliary_green_realization.py", "--claim-causal-homotopy"),
-    (
-        "verify_conformal_curved_operator_workstream.py",
-        "--claim-curved-operator-identity",
-    ),
-    (
-        "verify_conformal_curved_retract.py",
-        "--claim-curved-deformation-retract",
-    ),
-    (
-        "verify_conformal_curved_current.py",
-        "--claim-curved-current",
-    ),
-    (
-        "verify_conformal_curved_current.py",
-        "--claim-curved-potentials",
-    ),
-    (
-        "verify_conformal_curved_current.py",
-        "--claim-green-current-equality",
-    ),
     ("verify_conformal_covariant_bv_last_mile.py", "--claim-complete-covariant-theorem"),
-    ("verify_conformal_covariant_bv_last_mile.py", "--claim-curved-coefficient-table"),
-    ("verify_conformal_covariant_bv_last_mile.py", "--claim-curved-retract"),
-    ("verify_conformal_covariant_bv_last_mile.py", "--claim-covariant-cauchy-pairing"),
-    ("verify_conformal_covariant_dependency_report.py", "--claim-curved-operator"),
-    ("verify_conformal_covariant_dependency_report.py", "--claim-curved-retract"),
-    ("verify_conformal_covariant_dependency_report.py", "--claim-curved-current"),
     (
         "verify_conformal_covariant_dependency_report.py",
         "--claim-complete-green-hyperbolicity",
@@ -86,6 +61,29 @@ def _run(script: str, *arguments: str) -> None:
     )
 
 
+def _run_parallel(jobs: tuple[tuple[str, tuple[str, ...]], ...]) -> None:
+    """Run independent certificate producers with deterministic output."""
+
+    def execute(job: tuple[str, tuple[str, ...]]) -> subprocess.CompletedProcess[str]:
+        script, arguments = job
+        return subprocess.run(
+            [sys.executable, str(ROOT / "symbolic" / script), *arguments],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+
+    with ThreadPoolExecutor(max_workers=min(4, len(jobs))) as executor:
+        results = tuple(executor.map(execute, jobs))
+    for (script, _), result in zip(jobs, results, strict=True):
+        if result.stdout:
+            print(result.stdout, end="")
+        if result.stderr:
+            print(result.stderr, end="", file=sys.stderr)
+        if result.returncode != 0:
+            raise subprocess.CalledProcessError(result.returncode, script)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--emit", action="store_true")
@@ -103,24 +101,42 @@ def main() -> None:
     args = parser.parse_args()
     if args.claim_direct_same_bundle_witness:
         raise SystemExit(
-            "REFUSED: the auxiliary symbol witness and support-local retract are "
-            "proved, but a direct same-bundle factorization of H remains uncertified"
+            "REFUSED: the exact null-symbol rank theorem rules out the proposed "
+            "scalar same-bundle witness on the current 24-field/9-gauge bundle"
         )
     if args.claim_covariant_fixed_time_pairing:
-        raise SystemExit("REFUSED: only the reduced physical Cauchy/energy pairing is proved")
+        raise SystemExit(
+            "REFUSED: the off-shell current comparison and E/A/L normalization "
+            "are proved, but the causal Green realization and Green/current "
+            "identification remain open"
+        )
 
-    child_args = ("--emit",) if args.emit else ()
-    _run("verify_conformal_covariant_factorization.py", *child_args)
-    _run("verify_conformal_cauchy_sobolev.py", *child_args)
-    _run("verify_conformal_minimal_witness.py", *child_args)
-    _run("verify_conformal_auxiliary_green_realization.py", *child_args)
-    _run("verify_conformal_curved_operator_workstream.py", *child_args)
-    _run("verify_conformal_curved_retract.py", *child_args)
-    _run("verify_conformal_curved_current.py", *child_args)
-    _run("verify_conformal_covariant_bv_last_mile.py", *child_args)
-    _run("verify_conformal_covariant_dependency_report.py", *child_args)
-    _run("verify_conformal_final_covariant_transport.py", *child_args)
-    _run("verify_conformal_four_flag_closure.py", *child_args)
+    emit_args = ("--emit",) if args.emit else ()
+    guarded_args = emit_args + (("--guards",) if args.guards else ())
+
+    # These producers emit disjoint certificates. The older structural
+    # verifiers expose their overclaim checks through dedicated flags below
+    # and intentionally do not accept ``--guards``.
+    _run_parallel(
+        (
+            ("verify_conformal_covariant_factorization.py", emit_args),
+            ("verify_conformal_cauchy_sobolev.py", emit_args),
+            ("verify_conformal_minimal_witness.py", guarded_args),
+            ("verify_conformal_auxiliary_green_realization.py", emit_args),
+            ("verify_conformal_curved_operator_workstream.py", guarded_args),
+            ("verify_conformal_curvature_evolution.py", guarded_args),
+            ("verify_conformal_curved_retract.py", guarded_args),
+            ("verify_conformal_curved_current.py", guarded_args),
+        )
+    )
+    _run("verify_conformal_covariant_bv_last_mile.py", *guarded_args)
+    _run("verify_conformal_covariant_dependency_report.py", *guarded_args)
+    _run_parallel(
+        (
+            ("verify_conformal_final_covariant_transport.py", guarded_args),
+            ("verify_conformal_four_flag_closure.py", guarded_args),
+        )
+    )
     physical = ReducedPhysicalGreenRealization().certificate()
     status = BVGreenWitnessStatus().certificate()
     if args.emit:

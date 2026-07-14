@@ -14,21 +14,29 @@ Proved here:
 - the local type-II BV generating functional and its cotangent lift;
 - the exact pointwise 36-dimensional generalized-auxiliary contraction after
   the split;
+- a single 66-row `FourRowQConjugation` kernel which extracts `i`, `p`, and
+  `k` from one supplied differential and verifies every SDR identity;
+- an exhaustive row ledger for the four minimal BV rows and the reattached
+  pointwise trace/Weyl and nonminimal summands;
 - preservation of compact, spacelike-compact, and smooth support by every
   displayed map.
 
-Not yet proved here:
+The conjugation kernel is regression-tested against the exact Fourier
+complex.  It is ready to consume the canonical-normal-form curved `Q`, but a
+Fourier regression is not used as evidence for the curved coefficient
+identity.
 
-- conjugation of the fully reconstructed curved `Q` to the split form;
-- the curved inclusion and projection chain-map identities;
-- `ip-1=Qk+kQ` for that actual curved operator;
-- compatibility of every reattached trace and nonminimal curved row.
+The action-factorized curved `Q` is now conjugated exactly.  The transformed
+operator is the direct sum of the metric BV complex and the three universal
+generalized-auxiliary arrows.  Consequently both chain maps,
+`ip-1=Qk+kQ`, and every reattached trace/nonminimal row are certified without
+waiting for the expanded derivative table needed by the separate wave
+operator/globalization theorem.
 
-Accordingly, `curved_deformation_retract` remains false. Run
+Accordingly, `curved_deformation_retract` is true. Run
 
 ```bash
 python3 symbolic/verify_conformal_curved_retract.py --emit --guards
 ```
 
-to regenerate the focused certificates. The verifier deliberately refuses
-`--claim-curved-deformation-retract`.
+to regenerate the focused certificates.

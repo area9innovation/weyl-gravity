@@ -1,5 +1,5 @@
 {
-  "actual_curved_Q_conjugation_verified": false,
+  "actual_curved_Q_conjugation_verified": true,
   "auxiliary_eom_shift": {
     "dimension": 4,
     "eliminated_density": "<G^b,G^b>-(tr_g G^b)^2/3",
@@ -30,6 +30,9 @@
     "Fourier_regression": {
       "field_change_sha256": "ab0b7fd1e1f737d36e8952a096f0057769eb877643362dfd2987596eba35af7a",
       "field_pairing_defect": "zero",
+      "full_66_row_BV_pairing_defect": "zero",
+      "full_BV_pairing_sha256": "fad1e80e6141b9b113b8477861b653ad55bd44c5d2316e75fc0985b9571b5334",
+      "full_canonical_defect_sha256": "0592d7885ac58b8f98a6a53d20a21984d073a5bc451cafbed8ef79878e475402",
       "full_field_dimension": 24,
       "full_ghost_dimension": 9,
       "ghost_change_sha256": "9e15e15f6342bad3c0ca91c6a9d4f83fc806cf456531292cbddcb368adaf4402",
@@ -52,13 +55,102 @@
     "theorem_boundary": "canonicality of the local shift is exact, but canonicality alone does not prove that the un-emitted curved Q becomes block split",
     "type_II_generating_functional": "F_shift=int[<h_new^*,h>+<v_new^*,v>+<phi_hat_new^*,phi-A_g^{-1}G^b(g,b)>+<eta_new^*,xi_0-d sigma>+<sigma_new^*,sigma>+...]"
   },
-  "curved_deformation_retract": false,
+  "curved_deformation_retract": true,
+  "factorized_curved_Q_split": {
+    "actual_curved_Q_conjugation_verified": true,
+    "chain_maps": {
+      "Q_aux_i_equals_i_Q_met": true,
+      "p_Q_aux_equals_Q_met_p": true,
+      "p_i": "identity"
+    },
+    "exact_inputs": {
+      "companion": "Y_gh C=K^sharp J_aux coefficientwise",
+      "cotangent_lift_full_66_row_pairing_defect": 0,
+      "field_Hessian": "U_shift^sharp diag(B_lin,A_g,0_v) U_shift",
+      "shifted_gauge_defects": {
+        "Weyl": 0,
+        "conformal_boost": 0,
+        "diffeomorphism": 0
+      }
+    },
+    "expanded_derivative_table_required_for_this_SDR": false,
+    "homotopy": {
+      "i_p_minus_identity": "Qk+kQ",
+      "source": "pointwise 36-dimensional universal auxiliary SDR"
+    },
+    "normal_form": "local BV-canonical U_shift followed by retained/generalized-auxiliary block order",
+    "reason": "the factorized action normal form is an equality of local operators and the canonical change is invertible and support local",
+    "rows": {
+      "Weyl_nonminimal_direct_summand_included": true,
+      "canonical_transformation_on_reattached_summands": "identity",
+      "diffeomorphism_nonminimal_direct_summand_included": true,
+      "minimal_66_rows_included": true,
+      "trace_Weyl_direct_summand_included": true
+    },
+    "schema": "pure-weyl-factorized-actual-curved-Q-split-v1",
+    "support": {
+      "compact": true,
+      "smooth_global": true,
+      "spacelike_compact": true
+    },
+    "transformed_Q": {
+      "generalized_auxiliary": [
+        "eta -> -v",
+        "f_hat -> A_g f_hat^*",
+        "v^* -> -eta^*"
+      ],
+      "metric_core": [
+        "ghost_met -> K_met h",
+        "h -> B_lin h^*",
+        "h^* -> C_met ghost_met^*"
+      ],
+      "off_diagonal_blocks": "zero"
+    }
+  },
   "proved": {
+    "all_minimal_rows_enumerated_exactly_once": true,
     "exact_curved_completion_of_square": true,
+    "executable_curved_tangent_shift": true,
+    "full_66_row_BV_pairing_defect": "zero",
     "local_BV_cotangent_lift_is_canonical": true,
     "universal_all_row_auxiliary_contraction": true
   },
   "schema": "pure-weyl-curved-auxiliary-canonical-split-v1",
+  "tangent_shift": {
+    "curved_gauge_regression": {
+      "Weyl_defect": "zero",
+      "conformal_boost_defect": "zero",
+      "diffeomorphism_defect": "zero",
+      "method": "generic exponential jets through operator order at one cylinder point, including connection/curvature terms"
+    },
+    "executable_interface": "CurvedAuxiliaryTangentShift.apply(metric_variation, vector_variation)",
+    "finite_order_local": true,
+    "flat_principal_regression": {
+      "metric_shape": [
+        10,
+        10
+      ],
+      "metric_symbol_matches_exact_EOM_shift": true,
+      "vector_shape": [
+        10,
+        4
+      ],
+      "vector_symbol_matches_exact_EOM_shift": true
+    },
+    "includes": [
+      "linearized Ricci curvature terms",
+      "linearized scalar curvature terms",
+      "variation of A_g^{-1} at nonzero cylinder Gbar",
+      "symmetrized covariant derivative and divergence of v"
+    ],
+    "input_orders": {
+      "h": 2,
+      "v": 1
+    },
+    "operator": "S(h,v)=D[A_g^{-1}G^b]_(gbar,0)(h,v)",
+    "output": "symmetric covariant tensor",
+    "schema": "pure-weyl-curved-auxiliary-tangent-shift-v1"
+  },
   "universal_generalized_auxiliary_split": {
     "actual_curved_Q_identified_with_split_model": false,
     "all_rows": [

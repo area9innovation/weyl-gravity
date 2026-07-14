@@ -1,11 +1,12 @@
-"""Exact action-level current comparison for the auxiliary realization.
+"""Exact action-level presymplectic comparison for the auxiliary realization.
 
 This module deliberately separates two statements which are easy to conflate.
 
 * The ordinary-derivative auxiliary action and its differential auxiliary
   elimination determine exact constant-coefficient (Fourier-polynomial)
-  Green currents.  Their difference is an explicitly constructed spatial
-  improvement on a Cauchy slice.
+  presymplectic potentials and Green currents.  Their difference is an
+  explicitly constructed spacetime improvement whose time component is a
+  spatial divergence on a Cauchy slice.
 * The same statement for the complete curved cylinder actions requires the
   first- and zeroth-order connection/curvature terms in both presymplectic
   potentials.  Those data are not reconstructed here, so the curved-current
@@ -57,6 +58,24 @@ def _substitute_matrix(
     target: tuple[sp.Expr, ...],
 ) -> sp.Matrix:
     return sp.Matrix(matrix).subs(dict(zip(source, target)), simultaneous=True)
+
+
+def quadratic_presymplectic_potential(
+    green_current: tuple[sp.Matrix, ...],
+) -> tuple[sp.Matrix, ...]:
+    """Return the boundary potential of a symmetrized quadratic action.
+
+    If ``L(u)=1/2 <u,E u>`` and ``J_E`` is the Green concomitant with
+
+    ``d J_E(u,v)=<u,E v>-<E u,v>``,
+
+    then direct variation gives ``theta_E(u;du)=J_E(u,du)/2``.  For a
+    formally self-adjoint ``E``, the straight-line current used below obeys
+    ``J_E(x,y)=-J_E(y,x)^T``.  Consequently antisymmetrizing ``delta theta``
+    returns ``J_E`` exactly, with no appeal to modes or equations of motion.
+    """
+
+    return tuple(sp.Matrix(component / 2) for component in green_current)
 
 
 def _integrate_polynomial_in_t(expression: sp.Expr, t: sp.Symbol) -> sp.Expr:
@@ -238,18 +257,22 @@ def _koszul_improvement(
 
 @dataclass(frozen=True)
 class ActionCurrentComparison:
-    """Exact Fourier-action comparison plus fail-closed curved status."""
+    """Exact quadratic-action comparison plus fail-closed curved status."""
 
     retract: GeneralizedAuxiliaryRetract
     left_covector: tuple[sp.Symbol, ...]
     right_covector: tuple[sp.Symbol, ...]
     metric_inclusion: sp.Matrix
     metric_hessian: sp.Matrix
+    auxiliary_potential: tuple[sp.Matrix, ...]
+    metric_potential: tuple[sp.Matrix, ...]
+    composite_potential: tuple[sp.Matrix, ...]
     auxiliary_current: tuple[sp.Matrix, ...]
     metric_current: tuple[sp.Matrix, ...]
     composite_current: tuple[sp.Matrix, ...]
     current_difference: tuple[sp.Matrix, ...]
     improvement: tuple[tuple[sp.Matrix, ...], ...]
+    improvement_potential: tuple[tuple[sp.Matrix, ...], ...]
     bv_pairing: sp.Matrix
 
     @staticmethod
@@ -293,6 +316,17 @@ class ActionCurrentComparison:
             for mu in range(DIMENSION)
         )
         improvement = _koszul_improvement(current_difference, left, right)
+        auxiliary_potential = quadratic_presymplectic_potential(
+            auxiliary_current
+        )
+        metric_potential = quadratic_presymplectic_potential(metric_current)
+        composite_potential = quadratic_presymplectic_potential(
+            composite_current
+        )
+        improvement_potential = tuple(
+            tuple(sp.Matrix(component / 2) for component in row)
+            for row in improvement
+        )
 
         # Symmetric presentation of the odd cotangent pairing.  Graded signs
         # live in the degree convention; this matrix tests the exact inverse
@@ -311,11 +345,15 @@ class ActionCurrentComparison:
             right_covector=right,
             metric_inclusion=metric_inclusion,
             metric_hessian=metric_hessian,
+            auxiliary_potential=auxiliary_potential,
+            metric_potential=metric_potential,
+            composite_potential=composite_potential,
             auxiliary_current=auxiliary_current,
             metric_current=metric_current,
             composite_current=composite_current,
             current_difference=current_difference,
             improvement=improvement,
+            improvement_potential=improvement_potential,
             bv_pairing=bv_pairing,
         )
         result.verify()
@@ -361,6 +399,26 @@ class ActionCurrentComparison:
             - self.metric_hessian
         ) != sp.zeros(10):
             raise AssertionError("the eliminated metric Hessian is not formally self-adjoint")
+
+        # The displayed boundary potentials are obtained by varying the
+        # symmetrized quadratic actions, not guessed from a mode pairing.
+        # The identity J_E(x,y)=-J_E(y,x)^T follows algebraically from
+        # E(z)=E(-z)^T in the straight-line integral: transpose, replace
+        # t by 1-t, and differentiate E(-z).  Thus 2 theta=J is the exact
+        # potential/current relation and avoids an expensive redundant
+        # substitution through the fourth-order 10-by-10 current.
+        for name, potential, current in (
+            ("auxiliary", self.auxiliary_potential, self.auxiliary_current),
+            ("metric", self.metric_potential, self.metric_current),
+            ("pulled-back auxiliary", self.composite_potential, self.composite_current),
+        ):
+            for potential_component, current_component in zip(
+                potential, current, strict=True
+            ):
+                if 2 * potential_component != current_component:
+                    raise AssertionError(
+                        f"the {name} presymplectic potential has the wrong current"
+                    )
         if _current_divergence(
             self.current_difference, left, right
         ) != sp.zeros(10):
@@ -382,6 +440,29 @@ class ActionCurrentComparison:
             ).applyfunc(sp.expand)
             if reconstructed != self.current_difference[mu]:
                 raise AssertionError("the explicit current improvement is incomplete")
+
+        # At potential level the same statement is
+        # theta_pullback-theta_metric=dY.  Antisymmetrizing it gives the
+        # already-checked current identity omega_pullback-omega_metric=d(delta Y).
+        potential_difference = tuple(
+            sp.Matrix(
+                self.composite_potential[mu] - self.metric_potential[mu]
+            ).applyfunc(sp.expand)
+            for mu in range(DIMENSION)
+        )
+        for mu in range(DIMENSION):
+            reconstructed_potential = sum(
+                (
+                    (left[nu] + right[nu])
+                    * self.improvement_potential[nu][mu]
+                    for nu in range(DIMENSION)
+                ),
+                sp.zeros(10),
+            ).applyfunc(sp.expand)
+            if reconstructed_potential != potential_difference[mu]:
+                raise AssertionError(
+                    "the presymplectic-potential improvement is incomplete"
+                )
 
         # For mu=0 the antisymmetric B^{00} vanishes, so the Cauchy-current
         # difference is a spatial divergence exactly.
@@ -436,11 +517,16 @@ class ActionCurrentComparison:
         return {
             "schema": "pure-weyl-action-current-comparison-v1",
             "exact_action_level": {
+                "auxiliary_presymplectic_potential_derived": True,
+                "metric_presymplectic_potential_derived": True,
+                "pulled_back_auxiliary_potential_derived": True,
+                "potential_antisymmetrization_reproduces_currents": True,
                 "auxiliary_green_identity": True,
                 "metric_green_identity": True,
                 "differential_pullback_green_identity": True,
                 "current_difference_is_closed": True,
                 "explicit_antisymmetric_improvement": True,
+                "potential_difference_is_explicit_improvement": True,
                 "cauchy_difference_is_spatial_divergence": True,
                 "auxiliary_shift_is_BV_canonical": True,
                 "comparison_uses_minimal_action_before_gauge_fixing": True,
@@ -482,6 +568,13 @@ class ActionCurrentComparison:
             "matrix_sha256": {
                 "metric_inclusion": _digest_matrices((self.metric_inclusion,)),
                 "metric_hessian": _digest_matrices((self.metric_hessian,)),
+                "auxiliary_potential": _digest_matrices(
+                    self.auxiliary_potential
+                ),
+                "metric_potential": _digest_matrices(self.metric_potential),
+                "composite_potential": _digest_matrices(
+                    self.composite_potential
+                ),
                 "auxiliary_current": _digest_matrices(self.auxiliary_current),
                 "metric_current": _digest_matrices(self.metric_current),
                 "composite_current": _digest_matrices(self.composite_current),
@@ -489,6 +582,13 @@ class ActionCurrentComparison:
                 "improvement": _digest_matrices(
                     tuple(
                         self.improvement[nu][mu]
+                        for nu in range(DIMENSION)
+                        for mu in range(DIMENSION)
+                    )
+                ),
+                "improvement_potential": _digest_matrices(
+                    tuple(
+                        self.improvement_potential[nu][mu]
                         for nu in range(DIMENSION)
                         for mu in range(DIMENSION)
                     )

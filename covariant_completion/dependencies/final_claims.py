@@ -39,6 +39,7 @@ class ClaimNode:
     status: bool
     classification: str
     requires: tuple[str, ...] = ()
+    dependency_mode: str = "all"
     evidence: tuple[str, ...] = ()
     note: str = ""
 
@@ -47,6 +48,7 @@ class ClaimNode:
             "status": self.status,
             "classification": self.classification,
             "requires": list(self.requires),
+            "dependency_mode": self.dependency_mode,
             "blocking_dependencies": list(blockers),
             "evidence": list(self.evidence),
             "note": self.note,
@@ -81,7 +83,19 @@ class FinalClaimDependencyReport:
     def build() -> "FinalClaimDependencyReport":
         curved_operator = _load(
             "curved_operator_identity_status.json",
-            "pure-weyl-curved-operator-identity-status-v1",
+            "pure-weyl-curved-operator-identity-status-v2",
+        )
+        curved_null_obstruction = _load(
+            "curved_null_symbol_rank_obstruction.json",
+            "pure-weyl-curved-null-symbol-rank-obstruction-v1",
+        )
+        curvature_prolongation = _load(
+            "curved_curvature_prolongation_status.json",
+            "pure-weyl-curvature-prolongation-status-v1",
+        )
+        curvature_evolution_symbol = _load(
+            "curved_curvature_evolution_principal_symbol.json",
+            "pure-weyl-curvature-evolution-principal-symbol-v1",
         )
         wave_symbols = _load(
             "degreewise_wave_symbols.json",
@@ -184,11 +198,127 @@ class FinalClaimDependencyReport:
         atomic(
             "degreewise_wave_symbols",
             bool(wave_symbols["verified"])
-            and int(curved_operator["exact_inputs_now"]["all_degree_wave_symbol_defects"])
-            == 0,
+            and not bool(
+                curved_operator["scalar_wave_realization"][
+                    "curved_scalar_wave_no_go"
+                ]
+            ),
+            "open_curved_obligation",
+            (
+                "degreewise_wave_symbols.json",
+                "curved_null_symbol_rank_obstruction.json",
+            ),
+            "The flat symbols are scalar metric, but the current curved 24-field scalar-symbol completion is exactly obstructed.",
+        )
+        atomic(
+            "curved_auxiliary_hessian_exact",
+            bool(curved_operator["promotion_flags"]["curved_hessian_expanded"]),
             "implemented_structural_fact",
-            ("degreewise_wave_symbols.json",),
-            "Every emitted degree has scalar metric principal symbol.",
+            (
+                "curved_auxiliary_hessian.json",
+                "curved_hessian_coefficient_table.json",
+            ),
+            "The complete action-derived curved Hessian table is exact, formally adjoint, and has 630/630 high-order jet coverage.",
+        )
+        atomic(
+            "scalar_wave_witness_no_go",
+            not bool(
+                curved_null_obstruction[
+                    "pointwise_pairing_companion_solution_exists"
+                ]
+            )
+            and int(curved_null_obstruction["exact_hessian_rank"]) == 11
+            and int(curved_null_obstruction["exact_gauge_rank"]) == 9,
+            "implemented_negative_theorem",
+            ("curved_null_symbol_rank_obstruction.json",),
+            "At a null covector rank(E_2)=11>rank(K_1)=9, ruling out every pointwise-pairing/first-order-companion scalar witness for the present E and K.",
+        )
+        atomic(
+            "physical_symbol_quotient_exact",
+            int(
+                curved_null_obstruction["fixed_action_field_operator_quotient"]
+                ["image_N_mod_image_K_dimension"]
+            )
+            == 2,
+            "implemented_structural_fact",
+            ("curved_null_symbol_rank_obstruction.json",),
+            "The normalized Hessian image modulo the gauge image is exactly two-dimensional.",
+        )
+        atomic(
+            "physical_symbol_is_helicity_two",
+            "helicity-2"
+            in str(
+                curved_null_obstruction["fixed_action_field_operator_quotient"][
+                    "channel"
+                ]
+            ),
+            "implemented_structural_fact",
+            ("curved_null_symbol_rank_obstruction.json",),
+            "The two quotient directions are the real helicity-two pair transverse to the null direction.",
+        )
+        atomic(
+            "weyl_symbol_helicity_isomorphism",
+            bool(curvature_prolongation["weyl_symbol_helicity_isomorphism"]),
+            "implemented_structural_fact",
+            ("curved_curvature_prolongation_status.json",),
+            "On the exact Hessian-reduced physical quotient, the linearized Weyl symbol is an isomorphism onto the two helicity-two curvature directions.",
+        )
+        atomic(
+            "curved_EB_equations",
+            bool(curvature_prolongation["curved_EB_equations"]),
+            "open_analytic_obligation",
+            ("curved_curvature_prolongation_status.json",),
+            "Derive the complete electric/magnetic Weyl equations from the curved linearized Bianchi/Cotton and Bach identities.",
+        )
+        atomic(
+            "curved_EB_symmetric_hyperbolicity",
+            bool(curvature_prolongation["curved_EB_symmetric_hyperbolicity"]),
+            "open_analytic_obligation",
+            ("curved_curvature_prolongation_status.json",),
+            "Identify the actual curved E/B coefficient matrices and prove the positive STF form symmetrizes them.",
+        )
+        atomic(
+            "curved_constraint_propagation",
+            bool(curvature_prolongation["curved_constraint_propagation"]),
+            "open_analytic_obligation",
+            ("curved_curvature_prolongation_status.json",),
+            "Derive the complete homogeneous curved evolution of every E/B constraint.",
+        )
+        atomic(
+            "support_local_prolongation_retract",
+            bool(curvature_prolongation["support_local_prolongation_retract"]),
+            "open_analytic_obligation",
+            ("curved_curvature_prolongation_status.json",),
+            "Construct the local Psi-W(h) prolongation equivalence without inverse curl, Laplacian, or helicity projector.",
+        )
+        atomic(
+            "curvature_causal_green_operators",
+            bool(curvature_prolongation["curvature_causal_green_operators"]),
+            "open_analytic_obligation",
+            ("curved_curvature_prolongation_status.json",),
+            "Construct retarded and advanced operators for the exact constrained curvature system and assemble the full BV blocks.",
+        )
+        atomic(
+            "candidate_curvature_principal_symmetric_hyperbolicity",
+            bool(
+                curvature_evolution_symbol[
+                    "candidate_curvature_principal_symmetric_hyperbolicity"
+                ]
+            ),
+            "implemented_structural_fact",
+            ("curved_curvature_evolution_principal_symbol.json",),
+            "The candidate electric/magnetic Weyl principal block has a positive symmetrizer and the two physical characteristic speeds in each direction; derivation from the curved prolonged equations remains open.",
+        )
+        atomic(
+            "candidate_curvature_principal_constraints_propagate",
+            bool(
+                curvature_evolution_symbol[
+                    "candidate_curvature_principal_constraints_propagate"
+                ]
+            ),
+            "implemented_structural_fact",
+            ("curved_curvature_evolution_principal_symbol.json",),
+            "The principal divergence constraints close through div(curl_2 h)=(1/2)curl_1(div h).",
         )
         atomic(
             "support_preservation",
@@ -323,7 +453,8 @@ class FinalClaimDependencyReport:
             "The action-level Fourier currents differ by an explicit antisymmetric improvement.",
         )
 
-        # Atomic curved obligations.  These are intentionally false today.
+        # Atomic curved obligations. Each is read from its owning certificate;
+        # no status is pinned false or promoted manually here.
         atomic(
             "curved_hessian_expanded",
             bool(curved_operator["promotion_criteria"]["curved_hessian_expanded"]),
@@ -471,41 +602,20 @@ class FinalClaimDependencyReport:
                 "curved_Q_nilpotency",
                 "curved_witness_identity",
                 "curved_formal_adjointness",
-                "degreewise_wave_symbols",
                 "curved_globalization_coverage",
             ),
             "theorem_boundary_lemma",
-            "Exact curved Q^2=0 and QW+WQ=P identities, including the covariant adjoint check.",
+            "Exact curved Q^2=0 and QW+WQ=P identities, including the covariant adjoint check; this no longer asserts an impossible scalar wave symbol.",
         )
-        # Green homotopies are the common analytic input to the remaining
-        # two curved lemmas.  Each status is mechanically computed.
         derived(
             "degreewise_normal_hyperbolicity",
             ("curved_operator_identity", "degreewise_wave_symbols"),
-            "derived_analytic_claim",
-            "The scalar wave symbol becomes a theorem only for the instantiated curved operator.",
+            "superseded_analytic_claim",
+            "Retained as a negative legacy diagnostic: the exact null-symbol theorem rules out this route for the current bundle.",
         )
         derived(
-            "complete_bv_green_hyperbolicity",
+            "support_preserving_retract",
             (
-                "curved_Q_nilpotency",
-                "curved_witness_identity",
-                "degreewise_normal_hyperbolicity",
-                "curved_formal_adjointness",
-            ),
-            "derived_analytic_claim",
-            "Exact formally self-adjoint curved witness with degreewise Green operators.",
-        )
-        derived(
-            "green_homotopies",
-            ("complete_bv_green_hyperbolicity", "green_witness_recognition_theorem"),
-            "derived_analytic_claim",
-            "Retarded and advanced Green homotopies for the full auxiliary BV complex.",
-        )
-        derived(
-            "curved_deformation_retract",
-            (
-                "green_homotopies",
                 "curved_auxiliary_shift_is_BV_canonical",
                 "universal_post_shift_auxiliary_SDR",
                 "curved_metric_to_aux_chain_map",
@@ -515,24 +625,67 @@ class FinalClaimDependencyReport:
                 "curved_all_BV_rows",
                 "support_preservation",
             ),
+            "implemented_structural_fact",
+            "The complete all-row curved SDR is local and support preserving, independently of the Green realization.",
+        )
+        derived(
+            "curvature_prolonged_complex_exact",
+            (
+                "curved_EB_equations",
+                "curved_constraint_propagation",
+                "support_local_prolongation_retract",
+            ),
+            "open_analytic_obligation",
+            "The exact local curvature-prolonged complex includes its equations, homogeneous constraints, and support-local equivalence.",
+        )
+        derived(
+            "curvature_green_realization",
+            (
+                "curvature_prolonged_complex_exact",
+                "curved_EB_symmetric_hyperbolicity",
+                "curvature_causal_green_operators",
+            ),
+            "open_analytic_obligation",
+            "The selected Green realization is the exact constrained symmetric-hyperbolic Weyl-curvature system.",
+        )
+        derived(
+            "complete_bv_green_hyperbolicity",
+            (
+                "curved_auxiliary_hessian_exact",
+                "support_preserving_retract",
+                "curvature_green_realization",
+                "curved_Q_nilpotency",
+                "curved_witness_identity",
+                "curved_formal_adjointness",
+            ),
+            "derived_analytic_claim",
+            "The exact BV complex has causal Green operators through the selected Weyl-curvature prolongation.",
+        )
+        derived(
+            "green_homotopies",
+            ("complete_bv_green_hyperbolicity", "green_witness_recognition_theorem"),
+            "derived_analytic_claim",
+            "Retarded and advanced Green homotopies for the full auxiliary BV complex.",
+        )
+        derived(
+            "curved_deformation_retract",
+            ("support_preserving_retract",),
             "theorem_boundary_lemma",
-            "Exact curved inclusion, projection, and homotopy identities in the Green-hyperbolic complex.",
+            "Exact curved inclusion, projection, and homotopy identities in every support category.",
         )
         derived(
             "curved_current_comparison",
             (
-                "green_homotopies",
                 "curved_auxiliary_shift_is_BV_canonical",
                 "exact_action_Fourier_current_improvement",
                 "curved_auxiliary_presymplectic_potential",
                 "curved_metric_presymplectic_potential",
-                "curved_green_current",
                 "curved_cauchy_boundary_current",
                 "curved_auxiliary_metric_current_identity",
                 "EAL_pairing_regression",
             ),
             "theorem_boundary_lemma",
-            "Exact covariant, Cauchy, and auxiliary-to-metric current comparison.",
+            "Exact off-shell d+Q, Cauchy, and auxiliary-to-metric current comparison; Green pairing transport is gated separately.",
         )
         derived(
             "compact_to_global_quasi_isomorphism",
@@ -554,7 +707,12 @@ class FinalClaimDependencyReport:
         )
         derived(
             "pairing_compatibility",
-            ("curved_current_comparison", "EAL_pairing_regression"),
+            (
+                "curved_current_comparison",
+                "green_homotopies",
+                "curved_green_current",
+                "EAL_pairing_regression",
+            ),
             "derived_analytic_claim",
             "The covariant causal, Cauchy, and energy-mode pairings agree on cohomology.",
         )
@@ -580,6 +738,11 @@ class FinalClaimDependencyReport:
                 "curved_operator_identity",
                 "curved_deformation_retract",
                 "curved_current_comparison",
+                "curved_EB_equations",
+                "curved_EB_symmetric_hyperbolicity",
+                "curved_constraint_propagation",
+                "support_local_prolongation_retract",
+                "curvature_causal_green_operators",
                 "causal_quasi_isomorphism",
                 "CKV_recovery",
                 "residual_no_duplication",
@@ -620,7 +783,18 @@ class FinalClaimDependencyReport:
                 if dependency not in self.nodes:
                     raise AssertionError(f"{name} requires missing claim {dependency}")
             if node.requires:
-                expected = all(self.nodes[dependency].status for dependency in node.requires)
+                if node.dependency_mode == "all":
+                    expected = all(
+                        self.nodes[dependency].status for dependency in node.requires
+                    )
+                elif node.dependency_mode == "any":
+                    expected = any(
+                        self.nodes[dependency].status for dependency in node.requires
+                    )
+                else:
+                    raise AssertionError(
+                        f"unknown dependency mode for {name}: {node.dependency_mode}"
+                    )
                 if node.status != expected:
                     raise AssertionError(
                         f"derived claim {name}={node.status} but dependencies imply {expected}"
@@ -662,7 +836,10 @@ class FinalClaimDependencyReport:
         open_claims = [name for name, node in self.nodes.items() if not node.status]
         return {
             "schema": "pure-weyl-final-covariant-claim-dependencies-v1",
-            "policy": "derived claims are conjunctions of their declared dependencies",
+            "policy": (
+                "derived claims use their declared all/any dependency mode; "
+                "atomic statuses are read from owning certificates"
+            ),
             "summary": {
                 "implemented_or_derived_true": len(implemented),
                 "open_or_blocked": len(open_claims),
@@ -680,17 +857,37 @@ class FinalClaimDependencyReport:
             "theorem_boundary_lemmas": {
                 name: claims[name] for name in self.theorem_boundary_lemmas
             },
-            "top_level_theorem_boundary_blockers": list(
-                self.theorem_boundary_lemmas
-            ),
+            "top_level_theorem_boundary_blockers": [
+                name
+                for name in self.theorem_boundary_lemmas
+                if not self.nodes[name].status
+            ],
             "claims": claims,
             "final_claim_atomic_blockers": list(
                 self._blocking_atomic_dependencies("final_covariant_H4")
             ),
+            "curvature_propagation_gate": {
+                "status": self.nodes["curvature_green_realization"].status,
+                "required_atomic_flags": [
+                    "curved_EB_equations",
+                    "curved_EB_symmetric_hyperbolicity",
+                    "curved_constraint_propagation",
+                    "support_local_prolongation_retract",
+                    "curvature_causal_green_operators",
+                ],
+                "blocking_dependencies": list(
+                    self._blocking_atomic_dependencies(
+                        "curvature_green_realization"
+                    )
+                ),
+            },
             "honest_status": (
-                "The algebraic/structural scaffold is certified.  The curved "
-                "operator, deformation-retract, and current-comparison lemmas "
-                "remain false, so the complete covariant H4 transport remains false."
+                "The curved operator, deformation retract, current comparison, "
+                "and final covariant H4 transport are certified."
+                if self.nodes["final_covariant_H4"].status
+                else "The algebraic/structural scaffold is certified. The final "
+                "covariant H4 transport remains false exactly where the reported "
+                "curved atomic dependencies remain open."
             ),
         }
 
@@ -699,18 +896,21 @@ class FinalClaimDependencyReport:
         lines = [
             "# Final covariant claim dependency report",
             "",
-            "This report is generated from the atomic certificates. A derived claim is",
-            "true only when every listed dependency is true.",
+            "This report is generated from the atomic certificates. Each derived claim",
+            "uses its displayed all/any dependency mode.",
             "",
             "## Dependency flow",
             "",
             "```mermaid",
             "flowchart TD",
-            "  A[curved_operator_identity] --> G[covariant Green homotopies]",
-            "  G --> B[curved_deformation_retract]",
-            "  G --> C[curved_current_comparison]",
-            "  B --> F[final_covariant_H4]",
-            "  C --> F",
+            "  A[curved_operator_identity] --> F[final_covariant_H4]",
+            "  E[curved_EB_equations] --> F",
+            "  H[curved_EB_symmetric_hyperbolicity] --> F",
+            "  Q[curved_constraint_propagation] --> F",
+            "  P[support_local_prolongation_retract] --> F",
+            "  G[curvature_causal_green_operators] --> F",
+            "  R[curved_deformation_retract] --> F[final_covariant_H4]",
+            "  C[curved_current_comparison] --> F",
             "```",
             "",
             "## Theorem boundary",
@@ -759,18 +959,28 @@ class FinalClaimDependencyReport:
         lines.extend(
             [
                 "",
-                "## Atomic blockers for `final_covariant_H4`",
+                "## Remaining curvature-propagation theorem",
+                "",
+                "The selected final gate is the constrained symmetric-hyperbolic",
+                "Weyl-curvature realization. The reduced Weyl-symbol theorem and the",
+                "candidate principal matrix/constraint algebra are true; the five",
+                "displayed curved realization flags remain open.",
                 "",
             ]
         )
         for name in certificate["final_claim_atomic_blockers"]:
             lines.append(f"- `{name}` — {self.nodes[name].note}")
+        transport_state = (
+            "now-certified covariant transport"
+            if self.nodes["final_covariant_H4"].status
+            else "still-open covariant transport"
+        )
         lines.extend(
             [
                 "",
-                "> The existing algebraic and energy-mode result remains independently",
-                "> certified: `H^4 = C^2` with Gram matrix `I_2`. This report concerns",
-                "> only its still-open covariant transport.",
+                "> The algebraic and energy-mode result is independently certified:",
+                "> `H^4 = C^2` with Gram matrix `I_2`. This report tracks its",
+                f"> {transport_state}.",
                 "",
             ]
         )

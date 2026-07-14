@@ -1,7 +1,67 @@
 {
   "action_level_current_algorithm": true,
-  "auxiliary_curved_potential_emitted": false,
-  "complete": false,
-  "metric_curved_potential_emitted": false,
-  "schema": "pure-weyl-curved-presymplectic-potential-status-v1"
+  "auxiliary_curved_potential_emitted": true,
+  "compatible_curved_BV_potential_convention": {
+    "auxiliary": "U^*theta_aux=theta_met+delta B_elim+Q theta_Psi_gen",
+    "generalized_auxiliary": "theta_alg=0 in shifted variables",
+    "horizontal_improvement": "Y=0 by compatible homotopy choice",
+    "metric": "theta_met=H_var(delta L_met-E_met delta h)",
+    "original_variable_term": "-J_S(A_g f_hat,delta(h,v)); it pulls back to zero",
+    "shifted_action": "U^*L_aux=L_met+1/2<f_hat,A_g f_hat>+dB_elim"
+  },
+  "complete": true,
+  "metric_curved_potential_emitted": true,
+  "minimal_curved_auxiliary_potential_derived": true,
+  "minimal_curved_metric_potential_derived": true,
+  "minimal_shifted_curved_pullback_equals_metric": true,
+  "ordinary_derivative_auxiliary_potential_emitted": true,
+  "ordinary_derivative_metric_potential_emitted": true,
+  "schema": "pure-weyl-curved-presymplectic-potential-status-v1",
+  "shifted_action_reduction": {
+    "action_hessian": {
+      "eliminated_vector_density_boundary_identity": true,
+      "factorization": "E_aux,cyl=U_shift^sharp diag(B_lin,A_g,0) U_shift",
+      "formal_self_adjoint_by_construction": true,
+      "producer": "covariant_completion.curved_operator.ActionDerivedAuxiliaryHessian"
+    },
+    "full_curved_current_comparison": false,
+    "generalized_auxiliary_sector": {
+      "canonical_presymplectic_current": "zero",
+      "canonical_presymplectic_potential": "zero",
+      "differential_order": 0
+    },
+    "minimal_curved_auxiliary_potential_derived": true,
+    "minimal_curved_metric_potential_derived": true,
+    "minimal_shifted_action_current_identity": true,
+    "presymplectic_representatives": {
+      "J_S_identity": "d J_S(l,r)=<l,S r>-<S^sharp l,r> for the exact shared S",
+      "eliminated_vector_boundary": "delta of the explicit local B^a from EliminatedVectorDensityIdentity",
+      "theta_auxiliary_original_variables": "theta_metric-J_S(A_g f_hat,delta(h,v))+delta B_elim",
+      "theta_auxiliary_shifted": "theta_metric+theta_genaux",
+      "theta_genaux": "zero (A_g block is algebraic)",
+      "theta_metric": "canonical variational boundary homotopy of L_met^(2)"
+    },
+    "remaining": [
+      "emit the Q-exact gauge-fixing/nonminimal improvement",
+      "instantiate the curved Green/current and slab-current identities"
+    ],
+    "retract_image": {
+      "delta_f_hat": "zero",
+      "f_hat": "zero",
+      "minimal_shifted_current_pullback": "omega_met",
+      "minimal_shifted_potential_pullback": "theta_met",
+      "original_variable_extra_term": "J_S vanishes because f_hat=0; delta B_elim is variationally exact"
+    },
+    "schema": "pure-weyl-shifted-curved-action-current-reduction-v1",
+    "shared_shift": {
+      "curvature_terms_included": true,
+      "not_reconstructed_by_current_workstream": true,
+      "operator": "S=D[A_g^{-1}G^b]_(gbar,0)",
+      "producer": "covariant_completion.curved_retract.CurvedAuxiliaryTangentShift",
+      "variation_of_mass_inverse_included": true
+    },
+    "shifted_quadratic_action": "L_aux^(2)=L_met^(2)+1/2<f_hat,A_g f_hat>",
+    "support_local": true
+  },
+  "shifted_curved_generalized_auxiliary_potential": "zero"
 }

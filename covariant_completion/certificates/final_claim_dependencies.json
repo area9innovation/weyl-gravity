@@ -2,14 +2,14 @@
   "claims": {
     "CKV_recovery": {
       "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage"
+        "curved_EB_equations",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract",
+        "curved_EB_symmetric_hyperbolicity",
+        "curvature_causal_green_operators"
       ],
       "classification": "derived_analytic_claim",
+      "dependency_mode": "all",
       "evidence": [],
       "note": "The causal map realizes the fifteen cutoff sources as the global CKV classes.",
       "requires": [
@@ -21,6 +21,7 @@
     "EAL_pairing_regression": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "curved_EAL_pairing_regression.json"
       ],
@@ -31,6 +32,7 @@
     "algebraic_residual_no_duplication": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "residual_no_duplication.json"
       ],
@@ -38,16 +40,38 @@
       "requires": [],
       "status": true
     },
+    "candidate_curvature_principal_constraints_propagate": {
+      "blocking_dependencies": [],
+      "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_curvature_evolution_principal_symbol.json"
+      ],
+      "note": "The principal divergence constraints close through div(curl_2 h)=(1/2)curl_1(div h).",
+      "requires": [],
+      "status": true
+    },
+    "candidate_curvature_principal_symmetric_hyperbolicity": {
+      "blocking_dependencies": [],
+      "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_curvature_evolution_principal_symbol.json"
+      ],
+      "note": "The candidate electric/magnetic Weyl principal block has a positive symmetrizer and the two physical characteristic speeds in each direction; derivation from the curved prolonged equations remains open.",
+      "requires": [],
+      "status": true
+    },
     "causal_quasi_isomorphism": {
       "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage"
+        "curved_EB_equations",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract",
+        "curved_EB_symmetric_hyperbolicity",
+        "curvature_causal_green_operators"
       ],
       "classification": "derived_analytic_claim",
+      "dependency_mode": "all",
       "evidence": [],
       "note": "The causal Green map is the compact-to-global quasi-isomorphism on R x S^3.",
       "requires": [
@@ -58,6 +82,7 @@
     "ckv_cutoff_identity": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "residual_bfv_comparison.json"
       ],
@@ -68,6 +93,7 @@
     "compact_cylinder_spacelike_support": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "compact_to_global_quasi_isomorphism.json"
       ],
@@ -77,14 +103,14 @@
     },
     "compact_to_global_quasi_isomorphism": {
       "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage"
+        "curved_EB_equations",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract",
+        "curved_EB_symmetric_hyperbolicity",
+        "curvature_causal_green_operators"
       ],
       "classification": "derived_analytic_claim",
+      "dependency_mode": "all",
       "evidence": [],
       "note": "Causal compact-to-spacelike-compact theorem specialized to global cylinder sections.",
       "requires": [
@@ -95,51 +121,127 @@
     },
     "complete_bv_green_hyperbolicity": {
       "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage"
+        "curved_EB_equations",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract",
+        "curved_EB_symmetric_hyperbolicity",
+        "curvature_causal_green_operators"
       ],
       "classification": "derived_analytic_claim",
+      "dependency_mode": "all",
       "evidence": [],
-      "note": "Exact formally self-adjoint curved witness with degreewise Green operators.",
+      "note": "The exact BV complex has causal Green operators through the selected Weyl-curvature prolongation.",
       "requires": [
+        "curved_auxiliary_hessian_exact",
+        "support_preserving_retract",
+        "curvature_green_realization",
         "curved_Q_nilpotency",
         "curved_witness_identity",
-        "degreewise_normal_hyperbolicity",
         "curved_formal_adjointness"
       ],
       "status": false
     },
-    "curved_Q_conjugation": {
+    "curvature_causal_green_operators": {
       "blocking_dependencies": [
-        "curved_Q_conjugation"
+        "curvature_causal_green_operators"
       ],
+      "classification": "open_analytic_obligation",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_curvature_prolongation_status.json"
+      ],
+      "note": "Construct retarded and advanced operators for the exact constrained curvature system and assemble the full BV blocks.",
+      "requires": [],
+      "status": false
+    },
+    "curvature_green_realization": {
+      "blocking_dependencies": [
+        "curved_EB_equations",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract",
+        "curved_EB_symmetric_hyperbolicity",
+        "curvature_causal_green_operators"
+      ],
+      "classification": "open_analytic_obligation",
+      "dependency_mode": "all",
+      "evidence": [],
+      "note": "The selected Green realization is the exact constrained symmetric-hyperbolic Weyl-curvature system.",
+      "requires": [
+        "curvature_prolonged_complex_exact",
+        "curved_EB_symmetric_hyperbolicity",
+        "curvature_causal_green_operators"
+      ],
+      "status": false
+    },
+    "curvature_prolonged_complex_exact": {
+      "blocking_dependencies": [
+        "curved_EB_equations",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract"
+      ],
+      "classification": "open_analytic_obligation",
+      "dependency_mode": "all",
+      "evidence": [],
+      "note": "The exact local curvature-prolonged complex includes its equations, homogeneous constraints, and support-local equivalence.",
+      "requires": [
+        "curved_EB_equations",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract"
+      ],
+      "status": false
+    },
+    "curved_EB_equations": {
+      "blocking_dependencies": [
+        "curved_EB_equations"
+      ],
+      "classification": "open_analytic_obligation",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_curvature_prolongation_status.json"
+      ],
+      "note": "Derive the complete electric/magnetic Weyl equations from the curved linearized Bianchi/Cotton and Bach identities.",
+      "requires": [],
+      "status": false
+    },
+    "curved_EB_symmetric_hyperbolicity": {
+      "blocking_dependencies": [
+        "curved_EB_symmetric_hyperbolicity"
+      ],
+      "classification": "open_analytic_obligation",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_curvature_prolongation_status.json"
+      ],
+      "note": "Identify the actual curved E/B coefficient matrices and prove the positive STF form symmetrizes them.",
+      "requires": [],
+      "status": false
+    },
+    "curved_Q_conjugation": {
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_deformation_retract_status.json"
       ],
       "note": "Conjugate the complete curved four-row Q by the local BV-canonical transformation.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_Q_nilpotency": {
-      "blocking_dependencies": [
-        "curved_Q_nilpotency"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_operator_identity_status.json"
       ],
       "note": "Expand the curved four-row Q and exhaust its squared defect in canonical normal form.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_action_and_gauge_map": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "curved_auxiliary_action_definition.json",
         "curved_operator_identity_status.json"
@@ -149,57 +251,66 @@
       "status": true
     },
     "curved_all_BV_rows": {
-      "blocking_dependencies": [
-        "curved_all_BV_rows"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_deformation_retract_status.json",
         "curved_chain_maps.json"
       ],
       "note": "Reattach and verify every trace, antifield, ghost, and nonminimal curved row.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_aux_to_metric_chain_map": {
-      "blocking_dependencies": [
-        "curved_aux_to_metric_chain_map"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_chain_maps.json"
       ],
       "note": "Instantiate the auxiliary-to-metric chain map with all curved lower terms.",
       "requires": [],
-      "status": false
+      "status": true
+    },
+    "curved_auxiliary_hessian_exact": {
+      "blocking_dependencies": [],
+      "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_auxiliary_hessian.json",
+        "curved_hessian_coefficient_table.json"
+      ],
+      "note": "The complete action-derived curved Hessian table is exact, formally adjoint, and has 630/630 high-order jet coverage.",
+      "requires": [],
+      "status": true
     },
     "curved_auxiliary_metric_current_identity": {
-      "blocking_dependencies": [
-        "curved_auxiliary_metric_current_identity"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_current_improvement.json"
       ],
       "note": "Verify j_aux-j_metric=db+Qc with all cylinder lower terms.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_auxiliary_presymplectic_potential": {
-      "blocking_dependencies": [
-        "curved_auxiliary_presymplectic_potential"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_presymplectic_potentials.json"
       ],
       "note": "Derive the complete curved auxiliary presymplectic potential from the exact action.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_auxiliary_shift_is_BV_canonical": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "curved_auxiliary_canonical_split.json"
       ],
@@ -208,221 +319,181 @@
       "status": true
     },
     "curved_cauchy_boundary_current": {
-      "blocking_dependencies": [
-        "curved_cauchy_boundary_current"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_cauchy_current.json"
       ],
       "note": "Derive the exact slab current and prove equality on cohomology.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_companion_expanded": {
-      "blocking_dependencies": [
-        "curved_companion_expanded"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_operator_identity_status.json"
       ],
       "note": "Emit the complete curved gauge companion from the exact gauge-fixing density.",
       "requires": [],
+      "status": true
+    },
+    "curved_constraint_propagation": {
+      "blocking_dependencies": [
+        "curved_constraint_propagation"
+      ],
+      "classification": "open_analytic_obligation",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_curvature_prolongation_status.json"
+      ],
+      "note": "Derive the complete homogeneous curved evolution of every E/B constraint.",
+      "requires": [],
       "status": false
     },
     "curved_current_comparison": {
-      "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage",
-        "curved_auxiliary_presymplectic_potential",
-        "curved_metric_presymplectic_potential",
-        "curved_green_current",
-        "curved_cauchy_boundary_current",
-        "curved_auxiliary_metric_current_identity"
-      ],
+      "blocking_dependencies": [],
       "classification": "theorem_boundary_lemma",
+      "dependency_mode": "all",
       "evidence": [],
-      "note": "Exact covariant, Cauchy, and auxiliary-to-metric current comparison.",
+      "note": "Exact off-shell d+Q, Cauchy, and auxiliary-to-metric current comparison; Green pairing transport is gated separately.",
       "requires": [
-        "green_homotopies",
         "curved_auxiliary_shift_is_BV_canonical",
         "exact_action_Fourier_current_improvement",
         "curved_auxiliary_presymplectic_potential",
         "curved_metric_presymplectic_potential",
-        "curved_green_current",
         "curved_cauchy_boundary_current",
         "curved_auxiliary_metric_current_identity",
         "EAL_pairing_regression"
       ],
-      "status": false
+      "status": true
     },
     "curved_deformation_retract": {
-      "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage",
-        "curved_metric_to_aux_chain_map",
-        "curved_aux_to_metric_chain_map",
-        "curved_retract_identity",
-        "curved_Q_conjugation",
-        "curved_all_BV_rows"
-      ],
+      "blocking_dependencies": [],
       "classification": "theorem_boundary_lemma",
+      "dependency_mode": "all",
       "evidence": [],
-      "note": "Exact curved inclusion, projection, and homotopy identities in the Green-hyperbolic complex.",
+      "note": "Exact curved inclusion, projection, and homotopy identities in every support category.",
       "requires": [
-        "green_homotopies",
-        "curved_auxiliary_shift_is_BV_canonical",
-        "universal_post_shift_auxiliary_SDR",
-        "curved_metric_to_aux_chain_map",
-        "curved_aux_to_metric_chain_map",
-        "curved_retract_identity",
-        "curved_Q_conjugation",
-        "curved_all_BV_rows",
-        "support_preservation"
+        "support_preserving_retract"
       ],
-      "status": false
+      "status": true
     },
     "curved_formal_adjointness": {
-      "blocking_dependencies": [
-        "curved_formal_adjointness"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_operator_identity_status.json"
       ],
       "note": "Evaluate every covariant integration-by-parts adjoint defect after the lower terms are emitted.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_globalization_coverage": {
-      "blocking_dependencies": [
-        "curved_globalization_coverage"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_globalization.json",
         "curved_operator_identity_status.json"
       ],
       "note": "Exhaust every required curved jet fibre and isotropy component before globalizing the operator identity.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_green_current": {
-      "blocking_dependencies": [
-        "curved_green_current"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_green_current_pairing.json"
       ],
       "note": "Prove equality of the causal Green pairing and the current pairing.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_hessian_expanded": {
-      "blocking_dependencies": [
-        "curved_hessian_expanded"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_operator_identity_status.json"
       ],
       "note": "Differentiate the exact covariant action to emit the complete curved auxiliary Hessian.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_metric_presymplectic_potential": {
-      "blocking_dependencies": [
-        "curved_metric_presymplectic_potential"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_presymplectic_potentials.json"
       ],
       "note": "Derive the complete curved fourth-order metric presymplectic potential.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_metric_to_aux_chain_map": {
-      "blocking_dependencies": [
-        "curved_metric_to_aux_chain_map"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_chain_maps.json"
       ],
       "note": "Instantiate the metric-to-auxiliary chain map with all curved lower terms.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_operator_identity": {
-      "blocking_dependencies": [
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage"
-      ],
+      "blocking_dependencies": [],
       "classification": "theorem_boundary_lemma",
+      "dependency_mode": "all",
       "evidence": [],
-      "note": "Exact curved Q^2=0 and QW+WQ=P identities, including the covariant adjoint check.",
+      "note": "Exact curved Q^2=0 and QW+WQ=P identities, including the covariant adjoint check; this no longer asserts an impossible scalar wave symbol.",
       "requires": [
         "curved_hessian_expanded",
         "curved_companion_expanded",
         "curved_Q_nilpotency",
         "curved_witness_identity",
         "curved_formal_adjointness",
-        "degreewise_wave_symbols",
         "curved_globalization_coverage"
       ],
-      "status": false
+      "status": true
     },
     "curved_retract_identity": {
-      "blocking_dependencies": [
-        "curved_retract_identity"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_retract_identity.json"
       ],
       "note": "Verify pi=1 and ip-1=Qk+kQ for the actual covariant operators.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "curved_witness_identity": {
-      "blocking_dependencies": [
-        "curved_witness_identity"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_curved_obligation",
+      "dependency_mode": "all",
       "evidence": [
         "curved_operator_identity_status.json"
       ],
-      "note": "differentiate the displayed covariant action and gauge-fixing density to emit E_aux,cyl and C_aux,cyl in the canonical normal form, then evaluate the globalization ledger",
+      "note": "construct either a mixed-order Green realization or a curvature-prolonged realization; both remain false and neither is inferred from the positive scalar-wave no-go theorem",
       "requires": [],
-      "status": false
+      "status": true
     },
     "degreewise_normal_hyperbolicity": {
       "blocking_dependencies": [
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage"
+        "degreewise_wave_symbols"
       ],
-      "classification": "derived_analytic_claim",
+      "classification": "superseded_analytic_claim",
+      "dependency_mode": "all",
       "evidence": [],
-      "note": "The scalar wave symbol becomes a theorem only for the instantiated curved operator.",
+      "note": "Retained as a negative legacy diagnostic: the exact null-symbol theorem rules out this route for the current bundle.",
       "requires": [
         "curved_operator_identity",
         "degreewise_wave_symbols"
@@ -430,18 +501,23 @@
       "status": false
     },
     "degreewise_wave_symbols": {
-      "blocking_dependencies": [],
-      "classification": "implemented_structural_fact",
-      "evidence": [
-        "degreewise_wave_symbols.json"
+      "blocking_dependencies": [
+        "degreewise_wave_symbols"
       ],
-      "note": "Every emitted degree has scalar metric principal symbol.",
+      "classification": "open_curved_obligation",
+      "dependency_mode": "all",
+      "evidence": [
+        "degreewise_wave_symbols.json",
+        "curved_null_symbol_rank_obstruction.json"
+      ],
+      "note": "The flat symbols are scalar metric, but the current curved 24-field scalar-symbol completion is exactly obstructed.",
       "requires": [],
-      "status": true
+      "status": false
     },
     "energy_H4_is_C2": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "analytic_completion/certificates/completed_H4.json"
       ],
@@ -452,6 +528,7 @@
     "energy_gram_is_I2": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "analytic_completion/certificates/completed_gram.json"
       ],
@@ -462,6 +539,7 @@
     "exact_action_Fourier_current_improvement": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "curved_action_current_comparison.json",
         "curved_current_improvement.json"
@@ -472,30 +550,25 @@
     },
     "final_covariant_H4": {
       "blocking_dependencies": [
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage",
-        "curved_metric_to_aux_chain_map",
-        "curved_aux_to_metric_chain_map",
-        "curved_retract_identity",
-        "curved_Q_conjugation",
-        "curved_all_BV_rows",
-        "curved_auxiliary_presymplectic_potential",
-        "curved_metric_presymplectic_potential",
-        "curved_green_current",
-        "curved_cauchy_boundary_current",
-        "curved_auxiliary_metric_current_identity"
+        "curved_EB_equations",
+        "curved_EB_symmetric_hyperbolicity",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract",
+        "curvature_causal_green_operators"
       ],
       "classification": "terminal_theorem_claim",
+      "dependency_mode": "all",
       "evidence": [],
       "note": "Transport of the certified two-class H4 and Gram I2 through the covariant chain.",
       "requires": [
         "curved_operator_identity",
         "curved_deformation_retract",
         "curved_current_comparison",
+        "curved_EB_equations",
+        "curved_EB_symmetric_hyperbolicity",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract",
+        "curvature_causal_green_operators",
         "causal_quasi_isomorphism",
         "CKV_recovery",
         "residual_no_duplication",
@@ -506,14 +579,14 @@
     },
     "green_homotopies": {
       "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage"
+        "curved_EB_equations",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract",
+        "curved_EB_symmetric_hyperbolicity",
+        "curvature_causal_green_operators"
       ],
       "classification": "derived_analytic_claim",
+      "dependency_mode": "all",
       "evidence": [],
       "note": "Retarded and advanced Green homotopies for the full auxiliary BV complex.",
       "requires": [
@@ -525,6 +598,7 @@
     "green_witness_recognition_theorem": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "green_operator_chain_compatibility.json"
       ],
@@ -534,23 +608,20 @@
     },
     "pairing_compatibility": {
       "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage",
-        "curved_auxiliary_presymplectic_potential",
-        "curved_metric_presymplectic_potential",
-        "curved_green_current",
-        "curved_cauchy_boundary_current",
-        "curved_auxiliary_metric_current_identity"
+        "curved_EB_equations",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract",
+        "curved_EB_symmetric_hyperbolicity",
+        "curvature_causal_green_operators"
       ],
       "classification": "derived_analytic_claim",
+      "dependency_mode": "all",
       "evidence": [],
       "note": "The covariant causal, Cauchy, and energy-mode pairings agree on cohomology.",
       "requires": [
         "curved_current_comparison",
+        "green_homotopies",
+        "curved_green_current",
         "EAL_pairing_regression"
       ],
       "status": false
@@ -558,6 +629,7 @@
     "parallel_curvature_derivative_normal_form": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "curved_derivative_normal_form.json"
       ],
@@ -565,21 +637,38 @@
       "requires": [],
       "status": true
     },
+    "physical_symbol_is_helicity_two": {
+      "blocking_dependencies": [],
+      "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_null_symbol_rank_obstruction.json"
+      ],
+      "note": "The two quotient directions are the real helicity-two pair transverse to the null direction.",
+      "requires": [],
+      "status": true
+    },
+    "physical_symbol_quotient_exact": {
+      "blocking_dependencies": [],
+      "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_null_symbol_rank_obstruction.json"
+      ],
+      "note": "The normalized Hessian image modulo the gauge image is exactly two-dimensional.",
+      "requires": [],
+      "status": true
+    },
     "residual_no_duplication": {
       "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage",
-        "curved_metric_to_aux_chain_map",
-        "curved_aux_to_metric_chain_map",
-        "curved_retract_identity",
-        "curved_Q_conjugation",
-        "curved_all_BV_rows"
+        "curved_EB_equations",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract",
+        "curved_EB_symmetric_hyperbolicity",
+        "curvature_causal_green_operators"
       ],
       "classification": "derived_analytic_claim",
+      "dependency_mode": "all",
       "evidence": [],
       "note": "Auxiliary enlargement, causal recovery, and BFV replacement preserve one residual copy.",
       "requires": [
@@ -589,9 +678,34 @@
       ],
       "status": false
     },
+    "scalar_wave_witness_no_go": {
+      "blocking_dependencies": [],
+      "classification": "implemented_negative_theorem",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_null_symbol_rank_obstruction.json"
+      ],
+      "note": "At a null covector rank(E_2)=11>rank(K_1)=9, ruling out every pointwise-pairing/first-order-companion scalar witness for the present E and K.",
+      "requires": [],
+      "status": true
+    },
+    "support_local_prolongation_retract": {
+      "blocking_dependencies": [
+        "support_local_prolongation_retract"
+      ],
+      "classification": "open_analytic_obligation",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_curvature_prolongation_status.json"
+      ],
+      "note": "Construct the local Psi-W(h) prolongation equivalence without inverse curl, Laplacian, or helicity projector.",
+      "requires": [],
+      "status": false
+    },
     "support_preservation": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
       "evidence": [
         "curved_support_preservation.json"
       ],
@@ -600,120 +714,24 @@
       "status": true
     },
     "support_preserving_metric_equivalence": {
-      "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage",
-        "curved_metric_to_aux_chain_map",
-        "curved_aux_to_metric_chain_map",
-        "curved_retract_identity",
-        "curved_Q_conjugation",
-        "curved_all_BV_rows"
-      ],
+      "blocking_dependencies": [],
       "classification": "derived_analytic_claim",
+      "dependency_mode": "all",
       "evidence": [],
       "note": "The original fourth-order and auxiliary BV complexes are locally equivalent in support categories.",
       "requires": [
         "curved_deformation_retract",
         "support_preservation"
       ],
-      "status": false
+      "status": true
     },
-    "universal_post_shift_auxiliary_SDR": {
+    "support_preserving_retract": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
-      "evidence": [
-        "curved_deformation_retract_status.json"
-      ],
-      "note": "The universal 36-dimensional shifted auxiliary cotangent summand contracts exactly.",
-      "requires": [],
-      "status": true
-    }
-  },
-  "final_claim_atomic_blockers": [
-    "curved_hessian_expanded",
-    "curved_companion_expanded",
-    "curved_Q_nilpotency",
-    "curved_witness_identity",
-    "curved_formal_adjointness",
-    "curved_globalization_coverage",
-    "curved_metric_to_aux_chain_map",
-    "curved_aux_to_metric_chain_map",
-    "curved_retract_identity",
-    "curved_Q_conjugation",
-    "curved_all_BV_rows",
-    "curved_auxiliary_presymplectic_potential",
-    "curved_metric_presymplectic_potential",
-    "curved_green_current",
-    "curved_cauchy_boundary_current",
-    "curved_auxiliary_metric_current_identity"
-  ],
-  "honest_status": "The algebraic/structural scaffold is certified.  The curved operator, deformation-retract, and current-comparison lemmas remain false, so the complete covariant H4 transport remains false.",
-  "policy": "derived claims are conjunctions of their declared dependencies",
-  "schema": "pure-weyl-final-covariant-claim-dependencies-v1",
-  "summary": {
-    "complete_bv_green_hyperbolicity": false,
-    "energy_H4_is_C2": true,
-    "energy_gram_is_I2": true,
-    "final_covariant_H4": false,
-    "implemented_or_derived_true": 14,
-    "open_or_blocked": 29,
-    "pairing_compatibility": false,
-    "support_preserving_metric_equivalence": false
-  },
-  "theorem_boundary_lemmas": {
-    "curved_current_comparison": {
-      "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage",
-        "curved_auxiliary_presymplectic_potential",
-        "curved_metric_presymplectic_potential",
-        "curved_green_current",
-        "curved_cauchy_boundary_current",
-        "curved_auxiliary_metric_current_identity"
-      ],
-      "classification": "theorem_boundary_lemma",
+      "dependency_mode": "all",
       "evidence": [],
-      "note": "Exact covariant, Cauchy, and auxiliary-to-metric current comparison.",
+      "note": "The complete all-row curved SDR is local and support preserving, independently of the Green realization.",
       "requires": [
-        "green_homotopies",
-        "curved_auxiliary_shift_is_BV_canonical",
-        "exact_action_Fourier_current_improvement",
-        "curved_auxiliary_presymplectic_potential",
-        "curved_metric_presymplectic_potential",
-        "curved_green_current",
-        "curved_cauchy_boundary_current",
-        "curved_auxiliary_metric_current_identity",
-        "EAL_pairing_regression"
-      ],
-      "status": false
-    },
-    "curved_deformation_retract": {
-      "blocking_dependencies": [
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage",
-        "curved_metric_to_aux_chain_map",
-        "curved_aux_to_metric_chain_map",
-        "curved_retract_identity",
-        "curved_Q_conjugation",
-        "curved_all_BV_rows"
-      ],
-      "classification": "theorem_boundary_lemma",
-      "evidence": [],
-      "note": "Exact curved inclusion, projection, and homotopy identities in the Green-hyperbolic complex.",
-      "requires": [
-        "green_homotopies",
         "curved_auxiliary_shift_is_BV_canonical",
         "universal_post_shift_auxiliary_SDR",
         "curved_metric_to_aux_chain_map",
@@ -723,35 +741,113 @@
         "curved_all_BV_rows",
         "support_preservation"
       ],
-      "status": false
+      "status": true
+    },
+    "universal_post_shift_auxiliary_SDR": {
+      "blocking_dependencies": [],
+      "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_deformation_retract_status.json"
+      ],
+      "note": "The universal 36-dimensional shifted auxiliary cotangent summand contracts exactly.",
+      "requires": [],
+      "status": true
+    },
+    "weyl_symbol_helicity_isomorphism": {
+      "blocking_dependencies": [],
+      "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_curvature_prolongation_status.json"
+      ],
+      "note": "On the exact Hessian-reduced physical quotient, the linearized Weyl symbol is an isomorphism onto the two helicity-two curvature directions.",
+      "requires": [],
+      "status": true
+    }
+  },
+  "curvature_propagation_gate": {
+    "blocking_dependencies": [
+      "curved_EB_equations",
+      "curved_constraint_propagation",
+      "support_local_prolongation_retract",
+      "curved_EB_symmetric_hyperbolicity",
+      "curvature_causal_green_operators"
+    ],
+    "required_atomic_flags": [
+      "curved_EB_equations",
+      "curved_EB_symmetric_hyperbolicity",
+      "curved_constraint_propagation",
+      "support_local_prolongation_retract",
+      "curvature_causal_green_operators"
+    ],
+    "status": false
+  },
+  "final_claim_atomic_blockers": [
+    "curved_EB_equations",
+    "curved_EB_symmetric_hyperbolicity",
+    "curved_constraint_propagation",
+    "support_local_prolongation_retract",
+    "curvature_causal_green_operators"
+  ],
+  "honest_status": "The algebraic/structural scaffold is certified. The final covariant H4 transport remains false exactly where the reported curved atomic dependencies remain open.",
+  "policy": "derived claims use their declared all/any dependency mode; atomic statuses are read from owning certificates",
+  "schema": "pure-weyl-final-covariant-claim-dependencies-v1",
+  "summary": {
+    "complete_bv_green_hyperbolicity": false,
+    "energy_H4_is_C2": true,
+    "energy_gram_is_I2": true,
+    "final_covariant_H4": false,
+    "implemented_or_derived_true": 41,
+    "open_or_blocked": 17,
+    "pairing_compatibility": false,
+    "support_preserving_metric_equivalence": true
+  },
+  "theorem_boundary_lemmas": {
+    "curved_current_comparison": {
+      "blocking_dependencies": [],
+      "classification": "theorem_boundary_lemma",
+      "dependency_mode": "all",
+      "evidence": [],
+      "note": "Exact off-shell d+Q, Cauchy, and auxiliary-to-metric current comparison; Green pairing transport is gated separately.",
+      "requires": [
+        "curved_auxiliary_shift_is_BV_canonical",
+        "exact_action_Fourier_current_improvement",
+        "curved_auxiliary_presymplectic_potential",
+        "curved_metric_presymplectic_potential",
+        "curved_cauchy_boundary_current",
+        "curved_auxiliary_metric_current_identity",
+        "EAL_pairing_regression"
+      ],
+      "status": true
+    },
+    "curved_deformation_retract": {
+      "blocking_dependencies": [],
+      "classification": "theorem_boundary_lemma",
+      "dependency_mode": "all",
+      "evidence": [],
+      "note": "Exact curved inclusion, projection, and homotopy identities in every support category.",
+      "requires": [
+        "support_preserving_retract"
+      ],
+      "status": true
     },
     "curved_operator_identity": {
-      "blocking_dependencies": [
-        "curved_hessian_expanded",
-        "curved_companion_expanded",
-        "curved_Q_nilpotency",
-        "curved_witness_identity",
-        "curved_formal_adjointness",
-        "curved_globalization_coverage"
-      ],
+      "blocking_dependencies": [],
       "classification": "theorem_boundary_lemma",
+      "dependency_mode": "all",
       "evidence": [],
-      "note": "Exact curved Q^2=0 and QW+WQ=P identities, including the covariant adjoint check.",
+      "note": "Exact curved Q^2=0 and QW+WQ=P identities, including the covariant adjoint check; this no longer asserts an impossible scalar wave symbol.",
       "requires": [
         "curved_hessian_expanded",
         "curved_companion_expanded",
         "curved_Q_nilpotency",
         "curved_witness_identity",
         "curved_formal_adjointness",
-        "degreewise_wave_symbols",
         "curved_globalization_coverage"
       ],
-      "status": false
+      "status": true
     }
   },
-  "top_level_theorem_boundary_blockers": [
-    "curved_operator_identity",
-    "curved_deformation_retract",
-    "curved_current_comparison"
-  ]
+  "top_level_theorem_boundary_blockers": []
 }

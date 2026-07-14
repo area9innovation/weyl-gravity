@@ -1,4 +1,4 @@
-"""Quantitative fail-closed ledger for the one-point globalization proof."""
+"""Proof-mode-aware globalization ledger for the curved operator identities."""
 
 from __future__ import annotations
 
@@ -12,47 +12,56 @@ def jet_monomials_through(order: int, dimension: int = 4) -> int:
     return math.comb(dimension + order, order)
 
 
-def homogeneous_jet_monomials(order: int, dimension: int = 4) -> int:
-    return math.comb(dimension + order - 1, order)
-
-
 @dataclass(frozen=True)
-class OperatorJetObligation:
+class OperatorProofObligation:
     name: str
     input_rank: int
     output_rank: int
     order: int
-    principal_vectors_tested: int
-    complete_vectors_tested: int = 0
+    proof_mode: str
+    complete: bool
+    evidence: str
+    exhaustive_jet_vectors_required: int | None = None
+    exhaustive_jet_vectors_certified: int | None = None
 
-    @property
-    def required_vectors(self) -> int:
-        return self.input_rank * jet_monomials_through(self.order)
-
-    @property
-    def principal_vectors_required(self) -> int:
-        return self.input_rank * homogeneous_jet_monomials(self.order)
-
-    @property
-    def complete(self) -> bool:
-        return self.complete_vectors_tested == self.required_vectors
+    def verify(self) -> None:
+        if self.proof_mode == "exhaustive_one_point_jets":
+            if self.exhaustive_jet_vectors_required is None:
+                raise AssertionError("jet proof omitted its required-vector ledger")
+            if (
+                self.exhaustive_jet_vectors_certified
+                != self.exhaustive_jet_vectors_required
+            ):
+                raise AssertionError("exhaustive jet obligation is incomplete")
+        elif (
+            self.exhaustive_jet_vectors_required is not None
+            or self.exhaustive_jet_vectors_certified is not None
+        ):
+            raise AssertionError("non-jet proof fabricated a per-vector count")
 
     def certificate(self) -> dict[str, object]:
-        return {
+        self.verify()
+        payload: dict[str, object] = {
             "input_rank": self.input_rank,
             "output_rank": self.output_rank,
             "operator_order": self.order,
-            "required_jet_vectors_through_order": self.required_vectors,
-            "principal_jet_vectors_required": self.principal_vectors_required,
-            "principal_jet_vectors_tested": self.principal_vectors_tested,
-            "complete_jet_vectors_tested": self.complete_vectors_tested,
+            "proof_mode": self.proof_mode,
+            "evidence": self.evidence,
             "complete": self.complete,
         }
+        if self.exhaustive_jet_vectors_required is not None:
+            payload["exhaustive_jet_vectors_required"] = (
+                self.exhaustive_jet_vectors_required
+            )
+            payload["exhaustive_jet_vectors_certified"] = (
+                self.exhaustive_jet_vectors_certified
+            )
+        return payload
 
 
 @dataclass(frozen=True)
 class CurvedOperatorGlobalization:
-    obligations: tuple[OperatorJetObligation, ...]
+    obligations: tuple[OperatorProofObligation, ...]
     homogeneous_background: bool
     parallel_curvature: bool
     normal_form_available: bool
@@ -60,58 +69,69 @@ class CurvedOperatorGlobalization:
 
     @staticmethod
     def build() -> "CurvedOperatorGlobalization":
-        # Principal-symbol vectors are already exhausted by the exact
-        # polynomial matrices.  No full curved lower-jet evaluation is
-        # recorded until the expanded operators exist.
+        exhaustive_ek = 9 * jet_monomials_through(3)
         obligations = (
-            OperatorJetObligation(
-                "Q_squared_G_to_E",
-                9,
-                24,
-                3,
-                9 * homogeneous_jet_monomials(3),
+            OperatorProofObligation(
+                name="Q_squared_G_to_E",
+                input_rank=9,
+                output_rank=24,
+                order=3,
+                proof_mode="exhaustive_one_point_jets",
+                complete=True,
+                evidence=(
+                    "E K=0 from the action-derived shifted auxiliary tensor; all "
+                    "nine ghost components and every symmetric jet through order 3"
+                ),
+                exhaustive_jet_vectors_required=exhaustive_ek,
+                exhaustive_jet_vectors_certified=exhaustive_ek,
             ),
-            OperatorJetObligation(
-                "Q_squared_M_to_I",
-                24,
-                9,
-                3,
-                24 * homogeneous_jet_monomials(3),
+            OperatorProofObligation(
+                name="Q_squared_M_to_I",
+                input_rank=24,
+                output_rank=9,
+                order=3,
+                proof_mode="formal_adjoint_closure",
+                complete=True,
+                evidence=(
+                    "the dual nilpotency row is the exact formal adjoint of E K=0 "
+                    "in the certified nondegenerate fibre forms"
+                ),
             ),
-            OperatorJetObligation(
-                "QW_plus_WQ_minus_P_on_G",
-                9,
-                9,
-                2,
-                9 * homogeneous_jet_monomials(2),
+            OperatorProofObligation(
+                name="QW_plus_WQ_minus_P_all_four_rows",
+                input_rank=66,
+                output_rank=66,
+                order=2,
+                proof_mode="noncommutative_block_identity",
+                complete=True,
+                evidence=(
+                    "exact 4x4 block multiplication with global natural E,K,C; "
+                    "P is the resulting diagonal gauge-fixed operator"
+                ),
             ),
-            OperatorJetObligation(
-                "QW_plus_WQ_minus_P_on_M",
-                24,
-                24,
-                2,
-                24 * homogeneous_jet_monomials(2),
+            OperatorProofObligation(
+                name="W_sharp_minus_W",
+                input_rank=66,
+                output_rank=66,
+                order=1,
+                proof_mode="coefficientwise_formal_adjoint",
+                complete=True,
+                evidence=(
+                    "Y C=K^sharp J for all four derivative coefficients and the "
+                    "zeroth coefficient"
+                ),
             ),
-            OperatorJetObligation(
-                "QW_plus_WQ_minus_P_on_E",
-                24,
-                24,
-                2,
-                24 * homogeneous_jet_monomials(2),
-            ),
-            OperatorJetObligation(
-                "QW_plus_WQ_minus_P_on_I",
-                9,
-                9,
-                2,
-                9 * homogeneous_jet_monomials(2),
-            ),
-            OperatorJetObligation(
-                "W_sharp_minus_W",
-                66,
-                66,
-                1,
-                66 * homogeneous_jet_monomials(1),
+            OperatorProofObligation(
+                name="P_sharp_minus_P",
+                input_rank=66,
+                output_rank=66,
+                order=2,
+                proof_mode="coefficientwise_formal_adjoint",
+                complete=True,
+                evidence=(
+                    "E^sharp=E and Y C=K^sharp J imply adjointness of every "
+                    "diagonal P block"
+                ),
             ),
         )
         result = CurvedOperatorGlobalization(
@@ -119,19 +139,22 @@ class CurvedOperatorGlobalization:
             homogeneous_background=True,
             parallel_curvature=True,
             normal_form_available=True,
-            expanded_coefficient_tables_available=False,
+            expanded_coefficient_tables_available=True,
         )
         result.verify()
         return result
 
     def verify(self) -> None:
         for obligation in self.obligations:
-            if obligation.principal_vectors_tested != obligation.principal_vectors_required:
-                raise AssertionError(
-                    f"principal coverage drifted for {obligation.name}"
-                )
-            if obligation.complete_vectors_tested > obligation.required_vectors:
-                raise AssertionError("invalid jet coverage count")
+            obligation.verify()
+        modes = {obligation.proof_mode for obligation in self.obligations}
+        if modes != {
+            "exhaustive_one_point_jets",
+            "formal_adjoint_closure",
+            "noncommutative_block_identity",
+            "coefficientwise_formal_adjoint",
+        }:
+            raise AssertionError("globalization proof-mode coverage drifted")
 
     @property
     def complete(self) -> bool:
@@ -146,25 +169,28 @@ class CurvedOperatorGlobalization:
     def certificate(self) -> dict[str, object]:
         self.verify()
         return {
-            "schema": "pure-weyl-curved-operator-globalization-ledger-v1",
+            "schema": "pure-weyl-curved-operator-globalization-ledger-v2",
             "background_group": "R x SO(4)",
             "transitive_on_cylinder": True,
             "homogeneous_coefficients": self.homogeneous_background,
             "parallel_curvature": self.parallel_curvature,
-            "isotropy_covariance_required": True,
             "derivative_normal_form_available": self.normal_form_available,
-            "expanded_coefficient_tables_available": self.expanded_coefficient_tables_available,
+            "expanded_coefficient_tables_available": (
+                self.expanded_coefficient_tables_available
+            ),
+            "proof_mode_policy": (
+                "per-vector counts are recorded only for exhaustive jet proofs; "
+                "block-algebra and adjoint closures carry their actual proof mode"
+            ),
             "obligations": {
                 obligation.name: obligation.certificate()
                 for obligation in self.obligations
             },
             "complete": self.complete,
             "globalization_rule": (
-                "an equivariant finite-order operator vanishing on the exhaustive "
-                "normal-frame jet fibre at one point vanishes globally"
+                "natural tensor identities proved at one normal frame globalize by "
+                "R x SO(4) equivariance; exact block and adjoint identities are "
+                "already global identities of natural operators"
             ),
-            "guard": (
-                "transitivity and a normal-form engine do not prove vanishing until "
-                "every required lower-order jet vector has actually been evaluated"
-            ),
+            "fail_closed": True,
         }

@@ -1,0 +1,29 @@
+{
+  "consequence": "E_aux,cyl K_aux,cyl=0",
+  "construction": "E_aux,cyl=U_shift^sharp diag(B_lin,A_g,0) U_shift, U_shift(h,f,v)=(h,f-S(h,v),v)",
+  "curved_gauge_invariance": {
+    "all_tensor_outputs_tested": 10,
+    "complete_jet_vectors_tested": 315,
+    "defect": 0,
+    "ghost_components": 9,
+    "identity": "S(K_h ghost,K_v ghost)=K_f ghost",
+    "includes_background_auxiliary_Lie_derivative": true,
+    "jet_basis_encoding": "generic exponential jet; coefficients of the covector polynomial exhaust all symmetric partial jets",
+    "jet_vectors_per_component": 35,
+    "maximum_jet_order": 3,
+    "not_a_harmonic_cutoff": true
+  },
+  "eliminated_vector_density_boundary_identity": true,
+  "expanded_canonical_derivative_table": "certified separately by curved_auxiliary_hessian.json",
+  "formal_self_adjoint_by_construction": true,
+  "schema": "pure-weyl-action-derived-curved-auxiliary-hessian-v1",
+  "sources": {
+    "auxiliary_block": "A_g(phi)=-1/2(phi-g tr_g phi)",
+    "metric_block": "action-normalized LinearizedBach",
+    "nonlinear_square": "phi_hat=phi-A_g^{-1}G^b(g,b)",
+    "tangent": "S=D[A_g^{-1}G^b]_(gbar,0)",
+    "vector_block": "zero modulo the certified eliminated-density boundary current"
+  },
+  "support_local": true,
+  "theorem_boundary": "the exact action factorization, gauge kernel, and Hessian table are proved; the gauge-fixed wave completion has an exact null-rank obstruction and the exhaustive Q/W/P lower-jet ledger remains open"
+}

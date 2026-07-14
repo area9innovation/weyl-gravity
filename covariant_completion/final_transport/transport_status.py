@@ -21,7 +21,22 @@ class FinalCovariantTransportStatus:
 
     @staticmethod
     def build() -> "FinalCovariantTransportStatus":
-        result = FinalCovariantTransportStatus(FinalClaimDependencyReport.build())
+        return FinalCovariantTransportStatus.from_report(
+            FinalClaimDependencyReport.build()
+        )
+
+    @staticmethod
+    def from_report(
+        report: FinalClaimDependencyReport,
+    ) -> "FinalCovariantTransportStatus":
+        """Build from one validated DAG snapshot.
+
+        Keeping this constructor explicit makes the terminal behavior testable
+        both before and after the upstream A--C lemmas close; no transport
+        status is cached as an assumed constant.
+        """
+
+        result = FinalCovariantTransportStatus(report)
         result.verify()
         return result
 
@@ -32,6 +47,11 @@ class FinalCovariantTransportStatus:
             "curved_operator_identity",
             "curved_deformation_retract",
             "curved_current_comparison",
+            "curved_EB_equations",
+            "curved_EB_symmetric_hyperbolicity",
+            "curved_constraint_propagation",
+            "support_local_prolongation_retract",
+            "curvature_causal_green_operators",
             "causal_quasi_isomorphism",
             "CKV_recovery",
             "residual_no_duplication",
@@ -55,6 +75,17 @@ class FinalCovariantTransportStatus:
     def complete(self) -> bool:
         return self.report.nodes["final_covariant_H4"].status
 
+    def blocking_dependencies(self, claim: str) -> tuple[str, ...]:
+        if claim not in self.report.nodes:
+            raise KeyError(f"unknown transport claim: {claim}")
+        payload = self.report.certificate()["claims"][claim]
+        blockers = tuple(payload["blocking_dependencies"])
+        if bool(blockers) == self.report.nodes[claim].status:
+            raise AssertionError(
+                f"{claim} blockers disagree with its dependency-DAG status"
+            )
+        return blockers
+
     def certificate(self) -> dict[str, object]:
         self.verify()
         nodes = self.report.nodes
@@ -63,7 +94,13 @@ class FinalCovariantTransportStatus:
                 "name": "causal",
                 "map": "Gamma_c(C_aux)[1] -> Gamma_sc(C_aux)=Gamma(C_aux)",
                 "status": nodes["causal_quasi_isomorphism"].status,
-                "requires": ["curved_operator_identity"],
+                "requires": [
+                    "curved_EB_equations",
+                    "curved_EB_symmetric_hyperbolicity",
+                    "curved_constraint_propagation",
+                    "support_local_prolongation_retract",
+                    "curvature_causal_green_operators",
+                ],
             },
             {
                 "name": "auxiliary_elimination",
@@ -92,10 +129,9 @@ class FinalCovariantTransportStatus:
                 "requires": list(nodes["final_covariant_H4"].requires),
                 "status": self.complete,
                 "blocking_dependencies": list(
-                    self.report.certificate()["claims"]["final_covariant_H4"][
-                        "blocking_dependencies"
-                    ]
+                    self.blocking_dependencies("final_covariant_H4")
                 ),
+                "derived_not_manually_set": True,
             },
             "transported_result_when_gate_passes": {
                 "H4": ["W_+^2", "W_-^2"],

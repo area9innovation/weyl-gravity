@@ -4,7 +4,11 @@
       "map": "Gamma_c(C_aux)[1] -> Gamma_sc(C_aux)=Gamma(C_aux)",
       "name": "causal",
       "requires": [
-        "curved_operator_identity"
+        "curved_EB_equations",
+        "curved_EB_symmetric_hyperbolicity",
+        "curved_constraint_propagation",
+        "support_local_prolongation_retract",
+        "curvature_causal_green_operators"
       ],
       "status": false
     },
@@ -14,7 +18,7 @@
       "requires": [
         "curved_deformation_retract"
       ],
-      "status": false
+      "status": true
     },
     {
       "map": "Gamma(C_met) -> C_Sigma -> K_energy",
@@ -43,27 +47,22 @@
   "schema": "pure-weyl-final-covariant-transport-status-v1",
   "terminal_gate": {
     "blocking_dependencies": [
-      "curved_hessian_expanded",
-      "curved_companion_expanded",
-      "curved_Q_nilpotency",
-      "curved_witness_identity",
-      "curved_formal_adjointness",
-      "curved_globalization_coverage",
-      "curved_metric_to_aux_chain_map",
-      "curved_aux_to_metric_chain_map",
-      "curved_retract_identity",
-      "curved_Q_conjugation",
-      "curved_all_BV_rows",
-      "curved_auxiliary_presymplectic_potential",
-      "curved_metric_presymplectic_potential",
-      "curved_green_current",
-      "curved_cauchy_boundary_current",
-      "curved_auxiliary_metric_current_identity"
+      "curved_EB_equations",
+      "curved_EB_symmetric_hyperbolicity",
+      "curved_constraint_propagation",
+      "support_local_prolongation_retract",
+      "curvature_causal_green_operators"
     ],
+    "derived_not_manually_set": true,
     "requires": [
       "curved_operator_identity",
       "curved_deformation_retract",
       "curved_current_comparison",
+      "curved_EB_equations",
+      "curved_EB_symmetric_hyperbolicity",
+      "curved_constraint_propagation",
+      "support_local_prolongation_retract",
+      "curvature_causal_green_operators",
       "causal_quasi_isomorphism",
       "CKV_recovery",
       "residual_no_duplication",

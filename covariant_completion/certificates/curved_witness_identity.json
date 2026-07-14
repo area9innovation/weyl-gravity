@@ -1,6 +1,35 @@
 {
-  "curved_global_identity_verified": false,
-  "four_row_Fourier_identity": "QW+WQ=P",
-  "remaining": "complete first/zeroth-order witness and retract coefficients",
-  "schema": "pure-weyl-curved-witness-identity-status-v1"
+  "P_blocks": {
+    "E": "J_aux^{-1}E_aux,cyl+K_cyl C_cyl",
+    "G": "C_cyl K_cyl",
+    "I": "C_cyl K_cyl",
+    "M": "J_aux^{-1}E_aux,cyl+K_cyl C_cyl"
+  },
+  "QW_plus_WQ_minus_P": "zero",
+  "Q_blocks": {
+    "E_to_I": "C_cyl",
+    "G_to_M": "K_cyl",
+    "M_to_E": "J_aux^{-1}E_aux,cyl"
+  },
+  "Q_squared_inputs": [
+    "E_aux,cyl K_cyl=0 from action-derived tangent split",
+    "K_cyl^sharp E_aux,cyl=0 by formal adjointness"
+  ],
+  "W_blocks": {
+    "E_to_M": "identity_24",
+    "I_to_E": "K_cyl",
+    "M_to_G": "C_cyl"
+  },
+  "formal_adjoint_inputs": [
+    "E_aux,cyl^sharp=E_aux,cyl from action Hessian",
+    "Y_gh C_cyl=K_cyl^sharp J_aux coefficientwise"
+  ],
+  "noncommutative_block_multiplication_exact": true,
+  "row_order": [
+    "G[9]",
+    "M[24]",
+    "E[24]",
+    "I[9]"
+  ],
+  "schema": "pure-weyl-curved-four-row-operator-kernel-v1"
 }

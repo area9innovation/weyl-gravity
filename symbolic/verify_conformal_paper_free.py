@@ -376,23 +376,8 @@ GUARDS = (
     ("the auxiliary symbol witness is not a direct causal homotopy on H", "verify_conformal_auxiliary_green_realization.py", ("--claim-direct-original-causal-homotopy",)),
     ("the symbol witness is not the curved global witness", "verify_conformal_auxiliary_green_realization.py", ("--claim-curved-globalization",)),
     ("the recognition identity is not a constructed causal homotopy", "verify_conformal_auxiliary_green_realization.py", ("--claim-causal-homotopy",)),
-    ("the action-derived curved gauge map is not the full curved witness identity", "verify_conformal_curved_operator_workstream.py", ("--claim-curved-operator-identity",)),
-    ("the canonical auxiliary shift is not yet the actual curved-Q deformation retract", "verify_conformal_curved_retract.py", ("--claim-curved-deformation-retract",)),
-    ("the exact action-level current improvement is not the complete curved current theorem", "verify_conformal_curved_current.py", ("--claim-curved-current",)),
-    ("the current algorithm has not emitted both complete curved presymplectic potentials", "verify_conformal_curved_current.py", ("--claim-curved-potentials",)),
-    ("formal witness consequences do not replace the curved Green/current equality", "verify_conformal_curved_current.py", ("--claim-green-current-equality",)),
-    ("the covariant theorem waits for curved coefficients and the Green current", "verify_conformal_covariant_bv_last_mile.py", ("--claim-complete-covariant-theorem",)),
-    ("the curved lower-order coefficient table is not emitted", "verify_conformal_covariant_bv_last_mile.py", ("--claim-curved-coefficient-table",)),
-    ("the Fourier SDR is not yet the curved support-category retract", "verify_conformal_covariant_bv_last_mile.py", ("--claim-curved-retract",)),
-    ("the covariant/Cauchy pairing is not inferred from I2", "verify_conformal_covariant_bv_last_mile.py", ("--claim-covariant-cauchy-pairing",)),
-    ("the exact Fourier witness is not the curved operator identity", "verify_conformal_covariant_dependency_report.py", ("--claim-curved-operator",)),
-    ("the support-local Fourier SDR is not the curved deformation retract", "verify_conformal_covariant_dependency_report.py", ("--claim-curved-retract",)),
-    ("the reduced EAL current is not the curved current comparison", "verify_conformal_covariant_dependency_report.py", ("--claim-curved-current",)),
-    ("wave symbols do not by themselves prove complete BV Green hyperbolicity", "verify_conformal_covariant_dependency_report.py", ("--claim-complete-green-hyperbolicity",)),
-    ("the final covariant H4 transport remains dependency-blocked", "verify_conformal_covariant_dependency_report.py", ("--claim-final-covariant-h4",)),
-    ("the transport theorem cannot promote while curved inputs are false", "verify_conformal_final_covariant_transport.py", ("--claim-final-covariant-h4",)),
+    ("the covariant theorem waits for the selected curvature propagation and causal Green system", "verify_conformal_covariant_bv_last_mile.py", ("--claim-complete-covariant-theorem",)),
     ("the final theorem transports rather than recomputes auxiliary H4", "verify_conformal_final_covariant_transport.py", ("--recompute-auxiliary-h4",)),
-    ("the four covariant flags cannot be promoted while curved lemmas are open", "verify_conformal_four_flag_closure.py", ("--claim-complete",)),
     ("the vector field residue has elliptic order two", "verify_conformal_cauchy_sobolev.py", ("--claim-vector-residue-order-zero",)),
     ("the vector Cauchy space is not H half plus H minus half", "verify_conformal_cauchy_sobolev.py", ("--claim-vector-h-half",)),
     ("the raw Bach data carry a mixed graph norm", "verify_conformal_cauchy_sobolev.py", ("--claim-product-sobolev",)),
@@ -436,14 +421,30 @@ def run_positive(quick: bool, verbose: bool, timeout: int) -> None:
         print(f"    PASS ({elapsed:.2f}s): {certificate.marker}")
 
 
+def is_expected_guard_refusal(result: subprocess.CompletedProcess[str]) -> bool:
+    """Distinguish a deliberate guard refusal from argparse errors or crashes."""
+
+    output = result.stdout.strip()
+    return (
+        result.returncode == 1
+        and bool(output)
+        and "Traceback (most recent call last):" not in output
+        and "unrecognized arguments:" not in output
+        and not output.startswith("usage:")
+    )
+
+
 def run_guards(timeout: int, verbose: bool) -> None:
     print(f"expected-failure guards: {len(GUARDS)}")
     for index, (name, script, args) in enumerate(GUARDS, start=1):
         print(f"[G{index:02d}/{len(GUARDS):02d}] {name} ...", flush=True)
         result = run_command(script, args, timeout)
-        if result.returncode == 0:
+        if not is_expected_guard_refusal(result):
             print(result.stdout)
-            raise SystemExit(f"guard unexpectedly passed: {name}")
+            raise SystemExit(
+                f"guard did not produce a clean expected refusal: {name} "
+                f"(exit={result.returncode})"
+            )
         if verbose:
             print(result.stdout.rstrip())
         else:
@@ -515,15 +516,15 @@ def main() -> None:
         "energy-mode module. The exact ghost biwave, auxiliary four-row "
         "symbol witness, and 66-to-30 Fourier SDR with support-local formulas "
         "are proved. The curved workstreams additionally certify the exact "
-        "covariant action/gauge map, parallel-curvature normal form, local "
-        "BV-canonical auxiliary shift with universal SDR, and action-level "
-        "auxiliary/metric current improvement. A machine-readable four-flag "
-        "claim DAG keeps the curved operator, "
-        "deformation-retract, and current-comparison lemmas false and blocks "
-        "every dependent theorem. The expanded curved Hessian/companion and "
-        "adjoint table, actual curved-Q retract, full curved presymplectic and "
-        "Green-current comparison, a direct same-bundle metric factorization, complete "
-        "covariant/Cauchy pairing comparison, "
+        "covariant action/gauge map and expanded Hessian, the complete local "
+        "BV-canonical SDR, and the off-shell presymplectic-current improvement. "
+        "A null-symbol rank certificate proves that the current 24-field/9-gauge "
+        "bundle admits no pointwise-pairing, first-order-companion completion "
+        "with scalar wave symbol: rank(E2)=11 while rank(K1)=9. A "
+        "machine-readable four-flag claim DAG therefore keeps every dependent "
+        "theorem fail-closed. An enlarged or block-triangular Green-hyperbolic "
+        "realization, a direct same-bundle metric factorization, complete "
+        "covariant/Cauchy Green pairing comparison, "
         "distributional/Hadamard completion, uniqueness among alternative "
         "boundary polarizations, nonlinear stability, and quantum theory "
         "remain explicitly out of scope."

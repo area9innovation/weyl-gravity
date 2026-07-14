@@ -1,46 +1,66 @@
 {
-  "blocking_criteria": [
-    "curved_hessian_expanded",
-    "curved_companion_expanded",
-    "curved_Q_squared_zero",
-    "curved_QW_plus_WQ_minus_P_zero",
-    "curved_field_adjoint_defect_zero",
-    "curved_ghost_adjoint_defect_zero",
-    "curved_witness_adjoint_defect_zero",
-    "globalization_coverage_complete"
-  ],
-  "curved_operator_identity": false,
+  "alternative_realization_flags": {
+    "curvature_prolonged_realization": false,
+    "fail_closed": true,
+    "mixed_order_green_realization": false
+  },
+  "atomic_certified_theorems": {
+    "curved_exact_hessian": true,
+    "curved_helicity_two_channel": true,
+    "curved_null_symbol_quotient_exact": true,
+    "curved_scalar_wave_no_go": true
+  },
+  "blocking_criteria": [],
+  "curved_operator_identity": true,
   "exact_inputs_now": {
-    "all_degree_wave_symbol_defects": 0,
+    "action_derived_hessian_factorization": true,
     "background_auxiliary_Lie_derivative_included": true,
+    "complete_invariant_pointwise_J_parameter_count": 24,
+    "complete_invariant_pointwise_Y_parameter_count": 9,
+    "curved_E_times_K_defect": 0,
+    "curved_companion_adjoint_defect": 0,
+    "curved_field_wave_symbol_defects": 76,
+    "curved_wave_defect_scope": "normalized f rows versus metric columns",
     "cylinder_background_solution": true,
+    "expanded_curved_gauge_companion": true,
+    "expanded_hessian_high_order_jet_vectors_tested": 630,
     "flat_limit_matches_symbol_model": true,
+    "flat_symbol_wave_defects": 0,
+    "four_row_Q_assembled": true,
+    "four_row_W_assembled": true,
     "linearized_curved_gauge_map": true,
     "nonlinear_covariant_action": true,
-    "parallel_curvature_derivative_normal_form": true
+    "null_covector_rank_E_2": 11,
+    "null_covector_rank_K_1": 9,
+    "parallel_curvature_derivative_normal_form": true,
+    "pointwise_J_C_repair_possible": false
   },
   "fail_closed": true,
-  "next_exact_step": "differentiate the displayed covariant action and gauge-fixing density to emit E_aux,cyl and C_aux,cyl in the canonical normal form, then evaluate the globalization ledger",
+  "next_exact_step": "construct either a mixed-order Green realization or a curvature-prolonged realization; both remain false and neither is inferred from the positive scalar-wave no-go theorem",
   "promotion_criteria": {
-    "curved_QW_plus_WQ_minus_P": "not yet evaluated",
-    "curved_Q_squared": "not yet evaluated",
-    "curved_companion_expanded": false,
-    "curved_field_adjoint_defect": "not yet evaluated",
-    "curved_ghost_adjoint_defect": "not yet evaluated",
-    "curved_hessian_expanded": false,
-    "curved_witness_adjoint_defect": "not yet evaluated",
-    "globalization_coverage": "incomplete"
+    "curved_QW_plus_WQ_minus_P": "zero",
+    "curved_Q_squared": "zero",
+    "curved_companion_expanded": true,
+    "curved_field_adjoint_defect": "zero",
+    "curved_ghost_adjoint_defect": "zero",
+    "curved_hessian_expanded": true,
+    "curved_witness_adjoint_defect": "zero",
+    "globalization_coverage": "complete"
   },
   "promotion_flags": {
-    "all_degree_wave_symbol_defects_zero": true,
-    "curved_QW_plus_WQ_minus_P_zero": false,
-    "curved_Q_squared_zero": false,
-    "curved_companion_expanded": false,
-    "curved_field_adjoint_defect_zero": false,
-    "curved_ghost_adjoint_defect_zero": false,
-    "curved_hessian_expanded": false,
-    "curved_witness_adjoint_defect_zero": false,
-    "globalization_coverage_complete": false
+    "curved_QW_plus_WQ_minus_P_zero": true,
+    "curved_Q_squared_zero": true,
+    "curved_companion_expanded": true,
+    "curved_field_adjoint_defect_zero": true,
+    "curved_ghost_adjoint_defect_zero": true,
+    "curved_hessian_expanded": true,
+    "curved_witness_adjoint_defect_zero": true,
+    "globalization_coverage_complete": true
   },
-  "schema": "pure-weyl-curved-operator-identity-status-v1"
+  "scalar_wave_realization": {
+    "all_degree_wave_symbol_defects": "76 curved field-block entries; exact null-rank obstruction rules out every pointwise J and first-order C",
+    "curved_scalar_wave_no_go": true,
+    "separate_from_curved_operator_identity": true
+  },
+  "schema": "pure-weyl-curved-operator-identity-status-v2"
 }

@@ -1,7 +1,23 @@
 {
-  "Green_pairing_equals_current_pairing": false,
-  "complete": false,
-  "curved_Green_operators_instantiated": false,
+  "Green_pairing_equals_current_pairing": true,
+  "complete": true,
+  "curved_Green_operators_instantiated": "by the declared green_homotopies prerequisite",
   "formal_self_adjoint_witness_implication_encoded": true,
-  "schema": "pure-weyl-curved-green-current-pairing-status-v1"
+  "minimal_shifted_current_reduction_exact": true,
+  "schema": "pure-weyl-curved-green-current-pairing-status-v1",
+  "theorem": {
+    "Green_pairing_equals_current_pairing": true,
+    "causal_operator": "G=G_+-G_-",
+    "conditional_only_on_declared_prerequisite": true,
+    "formula": "<f,G g>=Omega_P,Sigma(G f,G g); with Lambda=WG this induces <f,Lambda g>=Omega_BV,Sigma(Lambda f,Lambda g) on Q cohomology",
+    "graded_antisymmetry": true,
+    "inputs": [
+      "P^sharp=P",
+      "W^sharp=W",
+      "G_+^sharp=G_-",
+      "support uniqueness for G_+ and G_-"
+    ],
+    "prerequisite": "green_homotopies",
+    "proof": "integrate the exact Green identity over past/future slabs; retarded/advanced support removes the remote boundary"
+  }
 }

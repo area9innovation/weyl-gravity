@@ -47,11 +47,15 @@ def main() -> None:
         "final_covariant_H4_requires": list(final_requirements),
         "final_covariant_H4_is_exact_conjunction": True,
         "atomic_blockers": list(report_certificate["final_claim_atomic_blockers"]),
+        "curvature_propagation_gate": report_certificate[
+            "curvature_propagation_gate"
+        ],
         "complete": all(flags.values()),
         "honest_status": (
-            "The exact partial infrastructure is certified; all four terminal "
-            "flags remain false until the remaining curved operator-level "
-            "lemmas are proved."
+            "All four terminal flags are certified by the exact dependency DAG."
+            if all(flags.values())
+            else "The exact partial infrastructure is certified; terminal flags "
+            "remain false exactly where curved atomic lemmas are still open."
         ),
     }
 
@@ -70,14 +74,20 @@ def main() -> None:
         print("wrote", CERTIFICATE.relative_to(ROOT))
 
     if args.guards:
-        if any(flags.values()):
-            raise AssertionError("a terminal covariant flag was promoted prematurely")
+        if flags != {
+            name: report.nodes[name].status for name in FLAG_NAMES
+        }:
+            raise AssertionError("the emitted flags drifted from the dependency DAG")
+        if payload["complete"] != all(flags.values()):
+            raise AssertionError("the closure status is not the exact four-flag conjunction")
         if report.nodes["energy_H4_is_C2"].status is not True:
             raise AssertionError("the independent energy H4 input regressed")
         if report.nodes["energy_gram_is_I2"].status is not True:
             raise AssertionError("the independent energy Gram input regressed")
-        if not payload["atomic_blockers"]:
-            raise AssertionError("the false terminal flag has no visible blockers")
+        if bool(payload["atomic_blockers"]) == bool(payload["complete"]):
+            raise AssertionError(
+                "atomic blockers must be present exactly while closure is incomplete"
+            )
         print("FOUR-FLAG CLOSURE GUARDS: 4/4 PASS")
 
     print("FOUR-FLAG COVARIANT STATUS: ALL DEPENDENCY CHECKS PASS")

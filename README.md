@@ -2,8 +2,8 @@
 
 Verification project and paper series on the PT-symmetric Pais–Uhlenbeck
 oscillator, the fourth-order scalar field, and quadratic gravity. Started
-from the audit spec in `../Symplectic Reconstruction.md`; grew into seven
-papers (an expository introduction, four technical papers on the free
+from the audit spec in `../Symplectic Reconstruction.md`; grew into eight
+papers (an expository introduction, five technical papers on the free
 theories, and two interaction papers), a Lean formalization, and a
 machine-checked verification pipeline.
 
@@ -66,17 +66,53 @@ are now separated more sharply.  A support-local ordinary-derivative
 auxiliary BV realization has a certified four-row symbol witness and an
 exact $66$-to-$30$ Fourier-complex deformation retract whose formulas are
 support local.  The curved workstreams now additionally certify the exact
-covariant action and gauge map, a parallel-curvature derivative normal form,
-the nonlinear BV-canonical auxiliary shift with its universal local SDR, and
-the action-level auxiliary/metric current improvement.  The expanded curved
-Hessian and companion, actual curved-`Q` retract, complete curved
-presymplectic-current comparison, and Hadamard theory remain open.  A direct same-bundle factorization of
-`B_lin+K T/2` is an optional strengthening, not a hidden premise.
+covariant action, gauge map and expanded action Hessian, including exhaustive
+cancellation of all third- and fourth-order jets and exact formal
+adjointness.  The nonlinear BV-canonical auxiliary shift gives the complete
+local curved SDR, and the curved presymplectic comparison closes off shell up
+to the certified improvement terms.  An exact null-symbol rank obstruction
+rules out the original 24-field/9-gauge scalar-symbol witness for every
+pointwise nondegenerate fibre pairing and every first-order companion: at a
+null covector the Hessian and gauge symbols have ranks 11 and 9.  The
+rank-two obstruction is the physical helicity-two module, not missing gauge
+freedom.  The linearized Weyl symbol induces the exact isomorphism
+`(1/4) I2` from the reduced Hessian quotient to the two-dimensional Weyl
+helicity quotient.  The candidate ten-component electric/magnetic Weyl
+principal block has exact symmetric-hyperbolic algebra, with a positive STF symmetrizer
+and physical characteristic speeds `+1,-1`; its principal divergence
+constraints close by `div(curl_2 h)=(1/2)curl_1(div h)`.  The preferred remaining
+Green-hyperbolicity step is therefore a local curvature prolongation that
+propagates this Weyl module.  The curved Bianchi/Bach lower-order terms,
+derivation of this block from the curved Bianchi/Bach equations, their
+lower-order terms and full constraint propagation, the local prolongation retract, and causal Green
+operators are not yet proved.  Hadamard theory also remains open.  A direct same-bundle
+factorization of `B_lin+K T/2` is an optional strengthening, not a hidden
+premise.
+
 The generated
 [`final_claim_dependencies.md`](covariant_completion/generated/final_claim_dependencies.md)
-keeps the curved operator, deformation-retract, and current-comparison
-lemmas—and every theorem depending on them—explicitly false until their
-operator-level certificates pass.
+records the current fail-closed boundary:
+
+```text
+curved_operator_identity       = true
+curved_deformation_retract     = true
+curved_current_comparison      = true
+final_covariant_H4             = false
+```
+
+The final flag remains false while the curvature-propagation/causal-Green
+theorem is absent.  The negative rank certificate and the positive reduced
+Weyl-symbol isomorphism are both exposed independently.
+
+The selected curvature route is split into five explicit open flags:
+
+```text
+curved_EB_equations                = false
+curved_EB_symmetric_hyperbolicity = false
+curved_constraint_propagation     = false
+support_local_prolongation_retract= false
+curvature_causal_green_operators  = false
+```
 
 **Paper 1** (the audit paper): the Bender–Mannheim generator Q is
 *reconstructed* from the normal-form data (G, J, G₀) + positivity rather than
@@ -314,10 +350,11 @@ cd symbolic && python3 verify_gravity_reduction.py   # paper 4, G1–G7
 cd symbolic && python3 verify_gravity_completion.py  # paper 4, G8–G9
 cd symbolic && python3 verify_gravity_spectral.py    # paper 4, G10–G12
 cd symbolic && python3 verify_gravity_paper6.py       # paper 6, full suite
+cd symbolic && python3 verify_conformal_paper_free.py --guards  # paper 7, full suite
 cd numeric  && python3 regression.py && python3 distortion_scan.py && python3 cartan_checks.py
 cd lean     && lake exe cache get && lake build    # zero sorry
 cd symbolic && for f in verify_interaction_deformation verify_interaction_order3 verify_pt_breaking verify_perfect_square verify_two_field verify_sector_obstruction verify_hardening verify_doubled_theory verify_51_order4 verify_obstruction_null; do python3 $f.py; done   # paper 5
-cd paper    && for f in symplectic-diagonalization variational-fock fourth-order-vacuum fourth-order-gravity ghosts-geometry-reality interaction-obstructions einstein-weyl-interaction-obstructions; do pdflatex $f.tex; done
+cd paper    && for f in symplectic-diagonalization variational-fock fourth-order-vacuum fourth-order-gravity ghosts-geometry-reality interaction-obstructions einstein-weyl-interaction-obstructions conformal-residual-cohomology; do pdflatex $f.tex; done
 ```
 
 Release tags: `paper1-v1.2`, `paper2-v1.3`, `paper3-v1.3`,

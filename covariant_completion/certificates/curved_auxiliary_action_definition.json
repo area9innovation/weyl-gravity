@@ -1,5 +1,12 @@
 {
   "background_is_stationary_reason": "the algebraic phi equation holds and elimination gives the Weyl action; the conformally flat cylinder has vanishing Bach tensor",
+  "curved_gauge_companion": {
+    "coefficient_sha256": "4d459caa2e3d211b95347b15f7388eee7e7e1e7875eab7c07d6a999d30cfd470",
+    "definition": "C_cyl=Y_gh^{-1} K_cyl^sharp J_aux",
+    "expanded_all_first_and_zeroth_order_coefficients": true,
+    "flat_limit_equals_certified_C_aux": true,
+    "formal_adjoint_defect": 0
+  },
   "cylinder_background": {
     "Ricci_covariant": [
       0,
@@ -24,8 +31,8 @@
     "signature": "(-,+,+,+)"
   },
   "exact_global_definition": true,
-  "expanded_curved_hessian_emitted": false,
-  "guard": "an exact action-derived definition and exact gauge map do not replace the expanded Hessian, companion, witness, and exhaustive jet checks",
+  "expanded_curved_hessian": "certified separately by curved_auxiliary_hessian.json",
+  "guard": "the exact action, gauge map, and Hessian do not override the separate wave-symbol obstruction or exhaustive globalization gate",
   "linearized_gauge_map": {
     "field_order": [
       "h[10]",

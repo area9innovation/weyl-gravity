@@ -150,11 +150,20 @@ Treating `D` as gauge is a declared physical choice; if it is retained as the
 cylinder Hamiltonian, this is not the relevant quotient.  The reduced
 metric fields now have a cylinder Cauchy--Sobolev realization; an exact
 auxiliary four-row symbol witness and $66$-to-$30$ Fourier-complex retract
-with support-local formulas are also certified.  The curved lower-order
-witness/retract and adjoint table, causal
-homotopies, complete covariant/Cauchy pairing comparison, and
-distributional/Hadamard completion remain open.  A direct same-bundle
-factorization is optional.
+with support-local formulas are also certified.  The curved action Hessian,
+all-row retract, adjoints, and off-shell current comparison are now exact.
+An exact null-symbol rank obstruction rules out the original curved
+24-field scalar-symbol witness.  Its rank-two quotient is exactly the
+physical helicity-two pair, and the linearized Weyl symbol induces the exact
+`(1/4) I2` isomorphism onto the reduced Weyl helicity quotient.  The
+candidate ten-component electric/magnetic Weyl principal block has exact
+symmetric-hyperbolic algebra, with a positive STF symmetrizer and physical speeds `+1,-1`;
+its principal divergence constraints also close exactly.
+Curvature prolongation is therefore the preferred missing causal Green
+realization; deriving that candidate from the curved Bianchi/Bach equations,
+their lower-order terms, full constraint propagation,
+local retract, and Green theorem are not yet claimed.  Distributional/Hadamard
+completion remains open, and a direct same-bundle factorization is optional.
 
 ## Priority positioning
 
@@ -216,11 +225,12 @@ Five statements are kept separate throughout the manuscript:
 | Cauchy--Sobolev/mode equivalence | Exact reduced one-particle theorem | `E,L: H1+L2`, `A: H3/2+H1/2`; normalized harmonic transform extends Krein-unitarily to the energy-mode completion |
 | Exact ghost biwave | Exact full-bundle cylinder theorem | `T K=Box(Box+2)` with two normally hyperbolic one-form factors; no CKV projector |
 | Auxiliary symbol witness and 66-to-30 Fourier SDR | Exact symbol theorem | Scalar metric tensor--tensor--vector and ghost symbols, a full four-row Fourier contraction with support-local formulas, and symbol-level formal adjoints |
-| Curved operator workstream | Exact partial covariant infrastructure, fail-closed | Covariant auxiliary action, exact curved `24 x 9` gauge map, cylinder curvature normal form, and quantitative jet ledger are certified; the expanded Hessian/companion, exact curved witness/adjoints, and complete globalization remain open |
-| Curved auxiliary canonical split | Exact partial local theorem, fail-closed | Nonlinear completion of the auxiliary square, local BV-canonical cotangent lift, universal shifted auxiliary SDR, and support preservation are certified; actual curved-`Q` conjugation and all-row retract identities remain open |
-| Curved current workstream | Exact action-level comparison, fail-closed | Fourier/action Green currents, the differential-inclusion chain-rule current, explicit Koszul improvement, and `E/A/L` regression are certified; full curved potentials, off-shell `d+Q`, Cauchy, and Green/current identities remain open |
-| Covariant final-claim dependency DAG | Exact fail-closed meta-certificate | Proved scaffold facts are true; `curved_operator_identity`, `curved_deformation_retract`, `curved_current_comparison`, and every dependent final claim remain false |
-| Curved auxiliary witness and covariant pairing | Open | No complete curved lower-order witness/retract/adjoint table, causal homotopies, or covariant/Cauchy pairing comparison is claimed; direct `H_- H_+` remains optional |
+| Curved operator workstream | Exact Hessian, no-go, and reduced Weyl-symbol theorem | The complete action-derived Hessian table, adjoints, and 630 high-order cancellations are certified. At a null covector `rank(E2)=11>rank(K1)=9`, so no pointwise pairing/first-order companion can give the current 24-field system scalar wave symbol. The quotient is the transverse helicity-two pair, and the induced reduced Weyl-symbol map is `(1/4) I2` |
+| Curvature evolution candidate principal symbol | Exact candidate-block algebra | The ten-component electric/magnetic Weyl candidate has `A0=I10`, a positive STF symmetrizer, symmetric spatial symbol, physical speeds `+1,-1`, and exact principal constraint closure `div curl_2=(1/2)curl_1 div`; derivation from the curved Bianchi/Bach equations, lower-order terms, and full constraint propagation are not included |
+| Curved auxiliary canonical split | Exact local theorem | The BV-canonical cotangent lift conjugates the complete curved `Q`; the all-row SDR includes trace/nonminimal rows and preserves compact, spacelike-compact, and smooth support |
+| Curved current workstream | Exact off-shell comparison, Green-gated | Both curved potentials and their `d+Q` improvement are certified, together with the Cauchy and `E/A/L` regressions; Green/current equality awaits the repaired Green-hyperbolic operator |
+| Covariant final-claim dependency DAG | Exact fail-closed meta-certificate | `curved_operator_identity`, `curved_deformation_retract`, and `curved_current_comparison` are true; `final_covariant_H4` remains false pending a causal Green realization |
+| Curvature-prolonged Green realization | Open selected route | Derive and complete the curved Bianchi/Bach system, prove full constraint propagation and a support-local prolongation retract, and construct causal Green operators. The candidate-block symmetric-hyperbolicity and constraint-closure tests are exact |
 | Descent to `C^2` and `C Ctilde` | Exact residual/local descent | Lorentzian `i` phase is convention-dependent |
 | Dynamical representative quotient `I1` | Exact locally | Pontryagin is only locally variationally trivial; global theta effects retained |
 | Full field-theoretic pure-Weyl local-plus-residual algebraic BV/BFV result | Exact selected-category theorem | Minimal dictionary, gauge-fixed contraction, zero-mode suspension, polarized ledger and pairing transfer are certified; alternative boundary choices remain separate |
@@ -339,19 +349,23 @@ silently presented as machine outputs:
   sector;
 - integration of the common-core unbounded Lie-algebra representation to a
   global `SO(4,2)` representation;
-- the curved lower-order auxiliary witness/retract and adjoint table, its causal
-  homotopies, the complete covariant/Cauchy pairing comparison, and Hadamard
-  extension (the exact symbol witness and support-local retract are proved);
+- the curved lower-order curvature-prolongation equations, constraint
+  propagation, local prolongation retract, causal Green homotopies, the
+  resulting Green/current pairing equality, and Hadamard extension (the
+  curved operator identities, auxiliary retract, off-shell current
+  comparison, reduced Weyl-symbol isomorphism, and symmetric-hyperbolic
+  curvature principal symbol are proved);
 - any quantum anomaly or interaction conclusion.
 
 ## Review focus
 
 The highest-value remaining referee questions are:
 
-1. Does the exact auxiliary symbol witness globalize with the required
-   lower-order adjoints, and does its causal pairing agree with the fixed-time
-   and energy-mode forms on full BV cohomology?  Can the same result also be
-   obtained from an optional direct same-bundle Bach factorization?
+1. Can the candidate symmetric-hyperbolic electric/magnetic Weyl principal
+   block be derived from the exact curved Bianchi/Bach equations, with propagated
+   constraints, and a support-local prolongation retract?  Do its resulting
+   causal Green pairing and the certified off-shell, fixed-time, and
+   energy-mode forms agree?
 2. Is the degree-three adjoint BGG group exactly the dual BFV/Taub charge
    sector geometrically, independently of the direct Noether/Taub
    normalization already certified?

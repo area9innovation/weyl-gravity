@@ -1,31 +1,237 @@
 {
-  "curved_deformation_retract": false,
-  "guard": "the exact curved action shift, canonical cotangent lift, universal contractible summand, and support theorem do not by themselves identify the actual curved Q with the split model",
+  "conjugation_interface": {
+    "Fourier_regression": {
+      "dimensions": {
+        "generalized_auxiliary": 36,
+        "retained_metric_core": 30,
+        "source": 66
+      },
+      "exact_checks": {
+        "Q_i_minus_i_Qcore": "zero",
+        "auxiliary_Q_squared": "zero",
+        "core_Q_squared": "zero",
+        "i_p_minus_identity": "Qk+kQ",
+        "p_Q_minus_Qcore_p": "zero",
+        "p_i": "identity",
+        "source_Q_squared": "zero",
+        "transformed_off_diagonal_blocks": "zero"
+      },
+      "guard": "the Fourier regression proves the conjugation/retract engine and its sign conventions, but only a canonical-normal-form input with source_scope=curved_global can discharge the curved theorem",
+      "is_complete_curved_Q_certificate": false,
+      "matrix_sha256": {
+        "auxiliary_Q": "438e949785ac9ac40ff29aa1e37087240c19aebc5809c36079a5d720aae62c56",
+        "core_Q": "b46d2148db7fd7c0f1b5377f104baaf7baf0f397b4a0c0e2eb4023a736ab49cb",
+        "homotopy": "85f1a44654abccc4ac606a3ccfe220c685bd3f8041e4f9b7da846df524b825d7",
+        "inclusion": "a76104bfdac9cc2d5d40908ed64c41ae18a712773e88c48a881d8aa89a5c6f4b",
+        "ordered_new_to_old": "4e46e7de74d55d636d8aa02ec0695b77b705814ab116875a580c7ca86de3001e",
+        "projection": "39a4a0b56b925415eb99b53cd2398010c25523dcc0c70079d12400c89f3452b7",
+        "source_Q": "87934e7cf079f90af089a57665862500467677003eedec7625328c36802c58c4",
+        "transformed_Q": "5dc0e53925bf83c9438c2eb819ac09481ad1ae0a0e267e4526f1b184763050ec"
+      },
+      "schema": "pure-weyl-four-row-Q-conjugation-kernel-v1",
+      "source_scope": "flat_fourier_regression"
+    },
+    "actual_curved_input_available": true,
+    "consumer": "FourRowQConjugation.build(source_differential, ordered_new_to_old, auxiliary_homotopy, source_scope)"
+  },
+  "curved_deformation_retract": true,
+  "factorized_actual_curved_Q": {
+    "actual_curved_Q_conjugation_verified": true,
+    "chain_maps": {
+      "Q_aux_i_equals_i_Q_met": true,
+      "p_Q_aux_equals_Q_met_p": true,
+      "p_i": "identity"
+    },
+    "exact_inputs": {
+      "companion": "Y_gh C=K^sharp J_aux coefficientwise",
+      "cotangent_lift_full_66_row_pairing_defect": 0,
+      "field_Hessian": "U_shift^sharp diag(B_lin,A_g,0_v) U_shift",
+      "shifted_gauge_defects": {
+        "Weyl": 0,
+        "conformal_boost": 0,
+        "diffeomorphism": 0
+      }
+    },
+    "expanded_derivative_table_required_for_this_SDR": false,
+    "homotopy": {
+      "i_p_minus_identity": "Qk+kQ",
+      "source": "pointwise 36-dimensional universal auxiliary SDR"
+    },
+    "normal_form": "local BV-canonical U_shift followed by retained/generalized-auxiliary block order",
+    "reason": "the factorized action normal form is an equality of local operators and the canonical change is invertible and support local",
+    "rows": {
+      "Weyl_nonminimal_direct_summand_included": true,
+      "canonical_transformation_on_reattached_summands": "identity",
+      "diffeomorphism_nonminimal_direct_summand_included": true,
+      "minimal_66_rows_included": true,
+      "trace_Weyl_direct_summand_included": true
+    },
+    "schema": "pure-weyl-factorized-actual-curved-Q-split-v1",
+    "support": {
+      "compact": true,
+      "smooth_global": true,
+      "spacelike_compact": true
+    },
+    "transformed_Q": {
+      "generalized_auxiliary": [
+        "eta -> -v",
+        "f_hat -> A_g f_hat^*",
+        "v^* -> -eta^*"
+      ],
+      "metric_core": [
+        "ghost_met -> K_met h",
+        "h -> B_lin h^*",
+        "h^* -> C_met ghost_met^*"
+      ],
+      "off_diagonal_blocks": "zero"
+    }
+  },
+  "guard": "promotion uses the action-factorized actual curved Q, not the Fourier regression or a principal-symbol surrogate",
   "promotion_criteria": {
-    "actual_curved_Q_conjugation_verified": false,
-    "all_full_BV_rows_included": false,
+    "actual_curved_Q_conjugation_verified": true,
+    "all_full_BV_rows_included": true,
     "compact_support_preserved": true,
-    "curved_i_is_chain_map": false,
-    "curved_i_p_minus_identity_equals_Qk_plus_kQ": false,
+    "curved_i_is_chain_map": true,
+    "curved_i_p_minus_identity_equals_Qk_plus_kQ": true,
     "curved_p_i": "identity",
-    "curved_p_is_chain_map": false,
+    "curved_p_is_chain_map": true,
     "curved_shift_is_BV_canonical": true,
     "spacelike_compact_support_preserved": true
   },
   "proved": {
+    "all_66_minimal_rows_enumerated_exactly_once": true,
+    "exact_Q_conjugation_engine_fourier_regression": true,
     "exact_nonlinear_auxiliary_completion_of_square": true,
     "local_shift_has_BV_canonical_cotangent_lift": true,
     "local_tangent_auxiliary_shift": true,
     "p_i_for_displayed_triangular_maps": "identity",
     "pointwise_auxiliary_mass_inverse": true,
     "support_preserved_in_all_three_categories": true,
+    "tangent_shift_curvature_coefficients_executable": true,
+    "tangent_shift_flat_principal_regression": true,
     "universal_post_shift_36_dimensional_SDR": true
   },
-  "remaining": [
-    "emit the complete curved four-row Q coefficient table",
-    "conjugate that Q by the tangent canonical transformation",
-    "verify both curved chain maps and ip-1=Qk+kQ componentwise",
-    "reattach and check every trace and nonminimal curved row"
-  ],
-  "schema": "pure-weyl-curved-deformation-retract-status-v1"
+  "remaining": [],
+  "row_coverage": {
+    "coefficient_compatibility_with_actual_curved_Q": "verified by the separate factorized actual-curved-Q split",
+    "generalized_auxiliary_blocks": [
+      {
+        "dimension": 4,
+        "name": "eta"
+      },
+      {
+        "dimension": 10,
+        "name": "f_hat"
+      },
+      {
+        "dimension": 4,
+        "name": "v"
+      },
+      {
+        "dimension": 10,
+        "name": "f_hat_star"
+      },
+      {
+        "dimension": 4,
+        "name": "v_star"
+      },
+      {
+        "dimension": 4,
+        "name": "eta_star"
+      }
+    ],
+    "generalized_auxiliary_dimension": 36,
+    "guard": "the ledger prevents silent row omission; coefficient compatibility must still be checked after the complete curved Q is supplied",
+    "minimal_dimension": 66,
+    "minimal_four_row_blocks": [
+      {
+        "dimension": 9,
+        "indices": [
+          0,
+          8
+        ],
+        "name": "ghosts[xi_minus_2,xi_0,sigma]",
+        "role": "ghost"
+      },
+      {
+        "dimension": 24,
+        "indices": [
+          9,
+          32
+        ],
+        "name": "fields[h,f,v]",
+        "role": "field"
+      },
+      {
+        "dimension": 24,
+        "indices": [
+          33,
+          56
+        ],
+        "name": "field_antifields[h_star,f_star,v_star]",
+        "role": "field antifield"
+      },
+      {
+        "dimension": 9,
+        "indices": [
+          57,
+          65
+        ],
+        "name": "ghost_antifields[xi_minus_2_star,xi_0_star,sigma_star]",
+        "role": "ghost antifield"
+      }
+    ],
+    "minimal_rows_exhausted_exactly_once": true,
+    "reattached_direct_summands": [
+      {
+        "differential": "pointwise identity contraction",
+        "name": "trace/Weyl doublet and antifield dual"
+      },
+      {
+        "differential": "pointwise identity contraction",
+        "name": "diffeomorphism antighost/multiplier and dual"
+      },
+      {
+        "differential": "pointwise identity contraction",
+        "name": "Weyl antighost/multiplier and dual"
+      }
+    ],
+    "schema": "pure-weyl-curved-BV-row-ledger-v1"
+  },
+  "schema": "pure-weyl-curved-deformation-retract-status-v1",
+  "tangent_shift": {
+    "curved_gauge_regression": {
+      "Weyl_defect": "zero",
+      "conformal_boost_defect": "zero",
+      "diffeomorphism_defect": "zero",
+      "method": "generic exponential jets through operator order at one cylinder point, including connection/curvature terms"
+    },
+    "executable_interface": "CurvedAuxiliaryTangentShift.apply(metric_variation, vector_variation)",
+    "finite_order_local": true,
+    "flat_principal_regression": {
+      "metric_shape": [
+        10,
+        10
+      ],
+      "metric_symbol_matches_exact_EOM_shift": true,
+      "vector_shape": [
+        10,
+        4
+      ],
+      "vector_symbol_matches_exact_EOM_shift": true
+    },
+    "includes": [
+      "linearized Ricci curvature terms",
+      "linearized scalar curvature terms",
+      "variation of A_g^{-1} at nonzero cylinder Gbar",
+      "symmetrized covariant derivative and divergence of v"
+    ],
+    "input_orders": {
+      "h": 2,
+      "v": 1
+    },
+    "operator": "S(h,v)=D[A_g^{-1}G^b]_(gbar,0)(h,v)",
+    "output": "symmetric covariant tensor",
+    "schema": "pure-weyl-curved-auxiliary-tangent-shift-v1"
+  }
 }

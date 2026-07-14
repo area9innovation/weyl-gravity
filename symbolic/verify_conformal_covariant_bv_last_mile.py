@@ -14,6 +14,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from covariant_completion.auxiliary_equivalence import GeneralizedAuxiliaryRetract
+from covariant_completion.final_transport import FinalCovariantTransportStatus
 from covariant_completion.global_witness import CurvedAuxiliaryWitnessStatus
 from covariant_completion.green_homotopy import (
     GreenWitnessRecognition,
@@ -45,27 +46,48 @@ def main() -> None:
     parser.add_argument("--claim-covariant-cauchy-pairing", action="store_true")
     args = parser.parse_args()
 
-    if args.claim_complete_covariant_theorem:
-        raise SystemExit(
-            "REFUSED: the generalized-auxiliary retract and abstract causal layer "
-            "are proved, but the curved lower-coefficient and covariant-current "
-            "certificates are not yet complete"
-        )
-    if args.claim_curved_coefficient_table:
-        raise SystemExit(
-            "REFUSED: the full first/zeroth-order 24-by-24 curved-cylinder "
-            "coefficient table has not been emitted"
-        )
-    if args.claim_curved_retract:
-        raise SystemExit(
-            "REFUSED: the exact 66-to-30 Fourier SDR has support-local formulas, "
-            "but its complete curved lower-order chain identities are not emitted"
-        )
-    if args.claim_covariant_cauchy_pairing:
-        raise SystemExit(
-            "REFUSED: the auxiliary Green current and its pullback to the metric "
-            "Cauchy current remain to be derived"
-        )
+    # Claim behavior is derived from one live dependency-DAG snapshot.  These
+    # gates therefore work unchanged before and after the upstream A--C
+    # certificates close; there is no static "must remain false" branch.
+    transport = FinalCovariantTransportStatus.build()
+    report = transport.report
+    report_certificate = report.certificate()
+
+    def blockers(claim: str) -> tuple[str, ...]:
+        values = transport.blocking_dependencies(claim)
+        if tuple(
+            report_certificate["claims"][claim]["blocking_dependencies"]
+        ) != values:
+            raise AssertionError(f"{claim} report snapshot drifted")
+        return values
+
+    def require_claim(requested: bool, claim: str, label: str) -> None:
+        if requested and not report.nodes[claim].status:
+            raise SystemExit(
+                f"REFUSED: {label} is false; blocking atomic dependencies: "
+                + ", ".join(blockers(claim))
+            )
+
+    require_claim(
+        args.claim_complete_covariant_theorem,
+        "final_covariant_H4",
+        "complete covariant theorem",
+    )
+    require_claim(
+        args.claim_curved_coefficient_table,
+        "curved_hessian_expanded",
+        "curved coefficient table",
+    )
+    require_claim(
+        args.claim_curved_retract,
+        "curved_deformation_retract",
+        "curved deformation retract",
+    )
+    require_claim(
+        args.claim_covariant_cauchy_pairing,
+        "curved_current_comparison",
+        "covariant Cauchy pairing",
+    )
 
     # Dependency order A--G.  A and D deliberately emit incomplete status
     # records rather than silently upgrading symbol or mode checks.
@@ -76,40 +98,30 @@ def main() -> None:
     pairing = CovariantPairingStatus.build().certificate()
     residual = ResidualCutoffRecovery.build().certificate()
 
-    complete = bool(
-        curved["complete_curved_witness_certificate"]
-        and pairing["complete_covariant_pairing_certificate"]
-    )
-    curved_q_status = {
-        "schema": "pure-weyl-curved-Q-nilpotency-status-v1",
-        "four_row_Fourier_Q_squared": "zero",
-        "curved_global_Q_squared_verified": False,
-        "remaining": "reconstruct every lower-order curved block and multiply as differential operators",
-    }
-    curved_witness_status = {
-        "schema": "pure-weyl-curved-witness-identity-status-v1",
-        "four_row_Fourier_identity": "QW+WQ=P",
-        "curved_global_identity_verified": False,
-        "remaining": "complete first/zeroth-order witness and retract coefficients",
-    }
+    complete = report.nodes["final_covariant_H4"].status
     wave_symbol_status = {
         "schema": "pure-weyl-degreewise-wave-symbols-v1",
         "fibre_dimensions": [9, 24, 24, 9],
         "normalized_principal_symbols": "g^{mu nu} zeta_mu zeta_nu times identity",
+        "scope": (
+            "flat/Fourier symbol witness only; the exact null-symbol theorem "
+            "rules out this scalar completion for the curved 24-field block"
+        ),
         "verified": True,
+        "curved_scalar_symbol_witness_no_go": report.nodes[
+            "scalar_wave_witness_no_go"
+        ].status,
         "implication_guard": "principal symbols alone do not instantiate the curved Green operators",
-    }
-    curved_adjoint_status = {
-        "schema": "pure-weyl-curved-formal-adjointness-status-v1",
-        "Fourier_symbol_adjointness": True,
-        "curved_integration_by_parts_adjointness": False,
-        "remaining": "include all lower-order connection, curvature, and auxiliary-background terms",
     }
     normal_hyperbolicity_status = {
         "schema": "pure-weyl-degreewise-normal-hyperbolicity-status-v1",
         "wave_symbols_verified": True,
-        "global_curved_operators_instantiated": False,
-        "degreewise_normal_hyperbolicity_theorem": False,
+        "global_curved_operators_instantiated": report.nodes[
+            "curved_operator_identity"
+        ].status,
+        "degreewise_normal_hyperbolicity_theorem": report.nodes[
+            "degreewise_normal_hyperbolicity"
+        ].status,
     }
     chain_map_status = {
         "schema": "pure-weyl-auxiliary-chain-map-status-v1",
@@ -119,7 +131,16 @@ def main() -> None:
             "Q_aux_i_equals_i_Q_met": True,
             "p_Q_aux_equals_Q_met_p": True,
         },
-        "curved_lower_order_chain_maps_verified": False,
+        "curved_lower_order_chain_maps_verified": all(
+            report.nodes[name].status
+            for name in (
+                "curved_metric_to_aux_chain_map",
+                "curved_aux_to_metric_chain_map",
+                "curved_retract_identity",
+                "curved_Q_conjugation",
+                "curved_all_BV_rows",
+            )
+        ),
         "support_local_formulas": True,
     }
     support_status = {
@@ -127,7 +148,8 @@ def main() -> None:
         "compact": "preserved by every displayed finite differential/pointwise map",
         "spacelike_compact": "preserved by every displayed finite differential/pointwise map",
         "smooth_global": "preserved",
-        "guard": "support preservation does not replace the open curved chain-map identities",
+        "dependency_report_status": report.nodes["support_preservation"].status,
+        "guard": "support preservation is tracked independently of the chain-map gate",
     }
     completion = {
         "schema": "pure-weyl-completed-covariant-bv-status-v1",
@@ -141,9 +163,19 @@ def main() -> None:
             "G cohomology transport",
         ],
         "proved_now": [
-            "exact 66-to-30 all-row Fourier-complex SDR with support-local formulas",
-            "Gamma_sc=Gamma on R x S^3",
-            "compatibility with the existing lambda=+1 BFV replacement",
+            name
+            for name in (
+                "degreewise_wave_symbols",
+                "support_preservation",
+                "curved_Q_conjugation",
+                "curved_all_BV_rows",
+                "EAL_pairing_regression",
+                "ckv_cutoff_identity",
+                "algebraic_residual_no_duplication",
+                "energy_H4_is_C2",
+                "energy_gram_is_I2",
+            )
+            if report.nodes[name].status
         ],
         "formal_consequences_after_A": [
             "Green-operator chain compatibility",
@@ -151,19 +183,18 @@ def main() -> None:
             "basis-level CKV cutoff-source recovery",
             "compact-to-global quasi-isomorphism",
         ],
-        "remaining": [
-            "complete curved first/zeroth-order coefficient and adjoint table",
-            "curved lower-order chain identities for the 66-to-30 retract",
-            "auxiliary differential Green current",
-            "auxiliary-to-metric Cauchy-current comparison",
-            "pairing-compatible covariant-to-energy quasi-isomorphism",
-        ],
+        "remaining": list(blockers("final_covariant_H4")),
         "complete_covariant_theorem": complete,
-        "completed_H4_transport": (
-            "blocked until the curved operator, deformation-retract, and "
-            "current-comparison lemmas pass"
-        ),
+        "completed_H4_transport": {
+            "status": complete,
+            "blocking_dependencies": list(blockers("final_covariant_H4")),
+            "H4": ["W_+^2", "W_-^2"] if complete else None,
+            "Gram": [[1, 0], [0, 1]] if complete else None,
+        },
         "algebraic_and_energy_mode_H4": "C^2 with Gram I_2 remains independently certified",
+        "dependency_report_terminal_gate": list(
+            report.nodes["final_covariant_H4"].requires
+        ),
     }
 
     if args.emit:
@@ -171,10 +202,7 @@ def main() -> None:
         GENERATED_DIR.mkdir(parents=True, exist_ok=True)
         payloads = {
             "curved_auxiliary_witness_status.json": curved,
-            "curved_Q_nilpotency.json": curved_q_status,
-            "curved_witness_identity.json": curved_witness_status,
             "degreewise_wave_symbols.json": wave_symbol_status,
-            "curved_formal_adjointness.json": curved_adjoint_status,
             "degreewise_normal_hyperbolicity.json": normal_hyperbolicity_status,
             "auxiliary_shift_split.json": retract,
             "generalized_auxiliary_contraction.json": retract,
@@ -199,41 +227,55 @@ def main() -> None:
             _write(name, payload)
 
         theorem_path = GENERATED_DIR / "covariant_bv_last_mile_status.tex"
-        theorem_path.write_text(
-            "\n".join(
+        latex_lines = [
+            "% Generated by symbolic/verify_conformal_covariant_bv_last_mile.py",
+            r"\begin{proposition}[Covariant BV dependency gate]",
+            r"The terminal covariant theorem is the conjunction recorded in the",
+            r"machine-checked final-claim dependency graph.",
+        ]
+        if complete:
+            latex_lines.extend(
                 [
-                    "% Generated by symbolic/verify_conformal_covariant_bv_last_mile.py",
-                    r"\begin{proposition}[Auxiliary Fourier-complex SDR]",
-                    r"The shifted ordinary-derivative auxiliary tensor, its equation row,",
-                    r"the conformal-boost Stueckelberg pair, and their cotangent duals",
-                    r"form an explicit $36$-dimensional contractible summand in the",
-                    r"four-row Fourier complex.  Exact $66$-to-$30$ chain maps and",
-                    r"homotopy are emitted, with finite differential or pointwise",
-                    r"support-local formulas.",
-                    r"\end{proposition}",
-                    r"\begin{remark}[Remaining covariant certificates]",
-                    r"The abstract Green-homotopy and residual cutoff-source identities",
-                    r"are exact.  The complete curved lower-coefficient/retract table and the",
-                    r"auxiliary-to-metric Green-current comparison remain open; hence the",
-                    r"completed covariant pairing theorem is not asserted here.",
-                    r"\end{remark}",
-                    "",
+                    r"All dependencies pass, so $H^4_{\rm cov}$ is spanned by",
+                    r"$[W_+^2],[W_-^2]$ and its transported Gram matrix is $I_2$.",
                 ]
-            ),
-            encoding="utf-8",
-        )
+            )
+        else:
+            latex_blockers = ", ".join(
+                r"\texttt{" + name.replace("_", r"\_") + "}"
+                for name in blockers("final_covariant_H4")
+            )
+            latex_lines.extend(
+                [
+                    r"The terminal gate remains fail closed on the following atomic",
+                    "dependencies: " + latex_blockers + ".",
+                ]
+            )
+        latex_lines.extend([r"\end{proposition}", ""])
+        theorem_path.write_text("\n".join(latex_lines), encoding="utf-8")
         print("wrote", theorem_path.relative_to(ROOT))
 
     if args.guards:
+        final = report.nodes["final_covariant_H4"]
         checks = (
-            not complete,
-            not bool(curved["curved_lower_coefficient_table_emitted"]),
-            not bool(curved["curved_retract_chain_maps_emitted"]),
-            not bool(pairing["complete_covariant_pairing_certificate"]),
+            final.status == all(report.nodes[name].status for name in final.requires),
+            bool(blockers("final_covariant_H4")) != complete,
+            completion["complete_covariant_theorem"] == final.status,
+            chain_map_status["curved_lower_order_chain_maps_verified"]
+            == all(
+                report.nodes[name].status
+                for name in (
+                    "curved_metric_to_aux_chain_map",
+                    "curved_aux_to_metric_chain_map",
+                    "curved_retract_identity",
+                    "curved_Q_conjugation",
+                    "curved_all_BV_rows",
+                )
+            ),
         )
         if not all(checks):
-            raise AssertionError("one or more fail-closed boundaries unexpectedly closed")
-        print("COVARIANT BV LAST-MILE GUARDS: 4/4 PASS")
+            raise AssertionError("live dependency-DAG guard consistency failed")
+        print("COVARIANT BV LAST-MILE DYNAMIC GUARDS: 4/4 PASS")
     print("COVARIANT BV LAST-MILE CERTIFICATES: ALL IMPLEMENTED CHECKS PASS")
 
 

@@ -55,9 +55,12 @@ def main() -> None:
     if args.guards:
         for script, flag in GUARDS:
             result = _run(script, flag)
-            if result.returncode == 0:
+            if result.returncode != 1 or "REFUSED:" not in result.stdout:
                 print(result.stdout)
-                raise SystemExit(f"guard unexpectedly passed: {script} {flag}")
+                raise SystemExit(
+                    f"guard did not produce the expected refusal: {script} {flag} "
+                    f"(exit={result.returncode})"
+                )
         print(f"ANALYTIC COMPLETION OVERCLAIM GUARDS: {len(GUARDS)}/{len(GUARDS)} PASS")
     print("CONFORMAL ANALYTIC COMPLETION BATTERY: ALL PASS")
 

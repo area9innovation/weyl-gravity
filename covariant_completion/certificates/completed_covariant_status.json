@@ -1,7 +1,18 @@
 {
   "algebraic_and_energy_mode_H4": "C^2 with Gram I_2 remains independently certified",
   "complete_covariant_theorem": false,
-  "completed_H4_transport": "blocked until the curved operator, deformation-retract, and current-comparison lemmas pass",
+  "completed_H4_transport": {
+    "Gram": null,
+    "H4": null,
+    "blocking_dependencies": [
+      "curved_EB_equations",
+      "curved_EB_symmetric_hyperbolicity",
+      "curved_constraint_propagation",
+      "support_local_prolongation_retract",
+      "curvature_causal_green_operators"
+    ],
+    "status": false
+  },
   "dependency_order": [
     "A curved witness",
     "B Green homotopies",
@@ -11,6 +22,21 @@
     "F residual comparison",
     "G cohomology transport"
   ],
+  "dependency_report_terminal_gate": [
+    "curved_operator_identity",
+    "curved_deformation_retract",
+    "curved_current_comparison",
+    "curved_EB_equations",
+    "curved_EB_symmetric_hyperbolicity",
+    "curved_constraint_propagation",
+    "support_local_prolongation_retract",
+    "curvature_causal_green_operators",
+    "causal_quasi_isomorphism",
+    "CKV_recovery",
+    "residual_no_duplication",
+    "energy_H4_is_C2",
+    "energy_gram_is_I2"
+  ],
   "formal_consequences_after_A": [
     "Green-operator chain compatibility",
     "retarded/advanced homotopy identities and causal support",
@@ -18,16 +44,21 @@
     "compact-to-global quasi-isomorphism"
   ],
   "proved_now": [
-    "exact 66-to-30 all-row Fourier-complex SDR with support-local formulas",
-    "Gamma_sc=Gamma on R x S^3",
-    "compatibility with the existing lambda=+1 BFV replacement"
+    "support_preservation",
+    "curved_Q_conjugation",
+    "curved_all_BV_rows",
+    "EAL_pairing_regression",
+    "ckv_cutoff_identity",
+    "algebraic_residual_no_duplication",
+    "energy_H4_is_C2",
+    "energy_gram_is_I2"
   ],
   "remaining": [
-    "complete curved first/zeroth-order coefficient and adjoint table",
-    "curved lower-order chain identities for the 66-to-30 retract",
-    "auxiliary differential Green current",
-    "auxiliary-to-metric Cauchy-current comparison",
-    "pairing-compatible covariant-to-energy quasi-isomorphism"
+    "curved_EB_equations",
+    "curved_EB_symmetric_hyperbolicity",
+    "curved_constraint_propagation",
+    "support_local_prolongation_retract",
+    "curvature_causal_green_operators"
   ],
   "schema": "pure-weyl-completed-covariant-bv-status-v1"
 }

@@ -2,13 +2,15 @@
 
 The action and gauge transformations are the nonlinear formulas of
 Metsaev's ordinary-derivative four-dimensional Weyl gravity.  The purpose of
-this module is narrower than a computer-algebra Hessian: it fixes the global
-operator being differentiated and constructs its *exact linearized gauge
-map* on the cylinder, including the background-auxiliary Lie derivative
-which is absent in the flat symbol model.
+this module is narrower than a canonical coefficient-table Hessian: it fixes
+the global operator being differentiated, constructs its *exact linearized
+gauge map* on the cylinder, and imports the adjoint-derived curved companion.
+The background-auxiliary Lie derivative absent in the flat symbol model is
+included.
 
-An expanded 24-by-24 curved Hessian is deliberately not fabricated here.
-Its absence is visible in :mod:`status` and keeps the theorem fail closed.
+The Hessian is available both in action-factorized form and as a separately
+certified 24-by-24 canonical derivative table.  The wave-symbol obstruction
+and remaining globalization ledger stay visible in :mod:`status`.
 """
 
 from __future__ import annotations
@@ -20,6 +22,7 @@ import sympy as sp
 
 from covariant_completion.auxiliary_witness import OrdinaryDerivativeWeylSystem
 
+from .conventions import CurvedBVConventions, _ordinary_system
 from .cylinder_background import CylinderBackground
 
 
@@ -44,6 +47,7 @@ def _digest(matrix: sp.MatrixBase) -> str:
 
 @dataclass(frozen=True)
 class CovariantAuxiliaryAction:
+    conventions: CurvedBVConventions
     background: CylinderBackground
     covector: sp.Matrix
     cylinder_gauge_symbol: sp.Matrix
@@ -52,8 +56,9 @@ class CovariantAuxiliaryAction:
 
     @staticmethod
     def build() -> "CovariantAuxiliaryAction":
-        background = CylinderBackground.build()
-        source = OrdinaryDerivativeWeylSystem.build()
+        conventions = CurvedBVConventions.build()
+        background = conventions.background
+        source = _ordinary_system()
         zeta = source.covector
 
         def tensor_coordinates(tensor: sp.Matrix) -> sp.Matrix:
@@ -93,9 +98,10 @@ class CovariantAuxiliaryAction:
             result[20:24, 8] = zeta
             return result
 
-        cylinder = gauge_symbol(background.auxiliary_background)
+        cylinder = conventions.gauge_generator.symbol(zeta)
         flat = gauge_symbol(sp.zeros(4))
         result = CovariantAuxiliaryAction(
+            conventions=conventions,
             background=background,
             covector=zeta,
             cylinder_gauge_symbol=cylinder,
@@ -106,6 +112,7 @@ class CovariantAuxiliaryAction:
         return result
 
     def verify(self) -> None:
+        self.conventions.verify()
         if self.flat_limit_gauge_symbol != self.source_flat_gauge_symbol:
             raise AssertionError("the covariant gauge map has the wrong flat limit")
         if self.cylinder_gauge_symbol.shape != (24, 9):
@@ -150,14 +157,25 @@ class CovariantAuxiliaryAction:
                 "sha256": _digest(self.cylinder_gauge_symbol),
                 "flat_limit_sha256": _digest(self.flat_limit_gauge_symbol),
             },
+            "curved_gauge_companion": {
+                "definition": "C_cyl=Y_gh^{-1} K_cyl^sharp J_aux",
+                "expanded_all_first_and_zeroth_order_coefficients": True,
+                "coefficient_sha256": (
+                    self.conventions.gauge_companion.coefficient_sha256
+                ),
+                "formal_adjoint_defect": 0,
+                "flat_limit_equals_certified_C_aux": True,
+            },
             "exact_global_definition": True,
             "background_is_stationary_reason": (
                 "the algebraic phi equation holds and elimination gives the Weyl "
                 "action; the conformally flat cylinder has vanishing Bach tensor"
             ),
-            "expanded_curved_hessian_emitted": False,
+            "expanded_curved_hessian": (
+                "certified separately by curved_auxiliary_hessian.json"
+            ),
             "guard": (
-                "an exact action-derived definition and exact gauge map do not replace "
-                "the expanded Hessian, companion, witness, and exhaustive jet checks"
+                "the exact action, gauge map, and Hessian do not override the "
+                "separate wave-symbol obstruction or exhaustive globalization gate"
             ),
         }

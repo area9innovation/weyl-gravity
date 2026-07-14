@@ -1,28 +1,39 @@
 {
   "atomic_blockers": [
-    "curved_hessian_expanded",
-    "curved_companion_expanded",
-    "curved_Q_nilpotency",
-    "curved_witness_identity",
-    "curved_formal_adjointness",
-    "curved_globalization_coverage",
-    "curved_metric_to_aux_chain_map",
-    "curved_aux_to_metric_chain_map",
-    "curved_retract_identity",
-    "curved_Q_conjugation",
-    "curved_all_BV_rows",
-    "curved_auxiliary_presymplectic_potential",
-    "curved_metric_presymplectic_potential",
-    "curved_green_current",
-    "curved_cauchy_boundary_current",
-    "curved_auxiliary_metric_current_identity"
+    "curved_EB_equations",
+    "curved_EB_symmetric_hyperbolicity",
+    "curved_constraint_propagation",
+    "support_local_prolongation_retract",
+    "curvature_causal_green_operators"
   ],
   "complete": false,
+  "curvature_propagation_gate": {
+    "blocking_dependencies": [
+      "curved_EB_equations",
+      "curved_constraint_propagation",
+      "support_local_prolongation_retract",
+      "curved_EB_symmetric_hyperbolicity",
+      "curvature_causal_green_operators"
+    ],
+    "required_atomic_flags": [
+      "curved_EB_equations",
+      "curved_EB_symmetric_hyperbolicity",
+      "curved_constraint_propagation",
+      "support_local_prolongation_retract",
+      "curvature_causal_green_operators"
+    ],
+    "status": false
+  },
   "final_covariant_H4_is_exact_conjunction": true,
   "final_covariant_H4_requires": [
     "curved_operator_identity",
     "curved_deformation_retract",
     "curved_current_comparison",
+    "curved_EB_equations",
+    "curved_EB_symmetric_hyperbolicity",
+    "curved_constraint_propagation",
+    "support_local_prolongation_retract",
+    "curvature_causal_green_operators",
     "causal_quasi_isomorphism",
     "CKV_recovery",
     "residual_no_duplication",
@@ -30,12 +41,12 @@
     "energy_gram_is_I2"
   ],
   "flags": {
-    "curved_current_comparison": false,
-    "curved_deformation_retract": false,
-    "curved_operator_identity": false,
+    "curved_current_comparison": true,
+    "curved_deformation_retract": true,
+    "curved_operator_identity": true,
     "final_covariant_H4": false
   },
-  "honest_status": "The exact partial infrastructure is certified; all four terminal flags remain false until the remaining curved operator-level lemmas are proved.",
+  "honest_status": "The exact partial infrastructure is certified; terminal flags remain false exactly where curved atomic lemmas are still open.",
   "policy": "no flag is manually promoted",
   "schema": "pure-weyl-four-flag-closure-status-v1"
 }

@@ -31,6 +31,8 @@ class BVCanonicalAuxiliaryShift:
     retract: GeneralizedAuxiliaryRetract
     field_canonical_defect: sp.Matrix
     ghost_canonical_defect: sp.Matrix
+    bv_pairing: sp.Matrix
+    full_canonical_defect: sp.Matrix
 
     @staticmethod
     def build(
@@ -60,10 +62,27 @@ class BVCanonicalAuxiliaryShift:
             * ghost_dual_change
             - system.gauge_fixing_pairing
         )
+
+        # One all-row check is stronger than two disconnected primal/dual
+        # checks: it catches a swapped row block or an inconsistent choice of
+        # field and ghost cotangent conventions.
+        bv_pairing = sp.zeros(66)
+        bv_pairing[0:9, 57:66] = system.gauge_fixing_pairing
+        bv_pairing[57:66, 0:9] = system.gauge_fixing_pairing
+        bv_pairing[9:33, 33:57] = system.field_fibre_pairing
+        bv_pairing[33:57, 9:33] = system.field_fibre_pairing
+        full_canonical_defect = sp.simplify(
+            total_change.subs(negative_covector).T
+            * bv_pairing
+            * total_change
+            - bv_pairing
+        )
         result = BVCanonicalAuxiliaryShift(
             retract=retract,
             field_canonical_defect=field_canonical_defect,
             ghost_canonical_defect=ghost_canonical_defect,
+            bv_pairing=bv_pairing,
+            full_canonical_defect=full_canonical_defect,
         )
         result.verify()
         return result
@@ -73,6 +92,8 @@ class BVCanonicalAuxiliaryShift:
             raise AssertionError("the field cotangent lift is not canonical")
         if self.ghost_canonical_defect != sp.zeros(9):
             raise AssertionError("the ghost cotangent lift is not canonical")
+        if self.full_canonical_defect != sp.zeros(66):
+            raise AssertionError("the full four-row cotangent lift is not canonical")
 
     def certificate(self, *, reverify: bool = True) -> dict[str, object]:
         if reverify:
@@ -104,6 +125,7 @@ class BVCanonicalAuxiliaryShift:
             "Fourier_regression": {
                 "field_pairing_defect": "zero",
                 "ghost_pairing_defect": "zero",
+                "full_66_row_BV_pairing_defect": "zero",
                 "full_field_dimension": 24,
                 "full_ghost_dimension": 9,
                 "field_change_sha256": _digest(
@@ -111,6 +133,10 @@ class BVCanonicalAuxiliaryShift:
                 ),
                 "ghost_change_sha256": _digest(
                     self.retract.ghost_new_to_old
+                ),
+                "full_BV_pairing_sha256": _digest(self.bv_pairing),
+                "full_canonical_defect_sha256": _digest(
+                    self.full_canonical_defect
                 ),
             },
             "all_cotangent_rows_generated_together": True,

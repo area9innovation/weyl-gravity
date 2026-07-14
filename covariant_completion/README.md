@@ -7,7 +7,7 @@ derives the branch symplectic residues from the quadratic Weyl action, and
 identifies the resulting Cauchy spaces with the completed `E/A/L` mode
 module.
 
-Four layers are now certified:
+Five layers are now certified:
 
 1. exact tensor-curl factorization and an all-energy field-theoretic
    `E/A/L` dictionary;
@@ -16,13 +16,16 @@ Four layers are now certified:
 3. the exact local third-order ghost companion and its biwave factorization;
 4. an exact ordinary-derivative four-row symbol witness and an exact
    `66 -> 30` Fourier-complex generalized-auxiliary retract whose formulas
-   are finite differential or pointwise maps.
+   are finite differential or pointwise maps;
+5. the exact curved Hessian/operator identities, local BV-canonical all-row
+   retract, and off-shell presymplectic-current comparison.
 
-The fourth statement uses the explicitly permitted auxiliary-field route.
-The complete curved first/zeroth-order witness and retract identities,
-covariant integration-by-parts adjoint check, and auxiliary Green-current comparison
-remain separate obligations.  It also does **not** claim a direct
-same-bundle factorization of `H=B_lin+K T/2`.
+The fifth layer includes the exact scalar-wave no-go theorem, the reduced
+helicity-two Weyl-symbol isomorphism, and the symmetric-hyperbolic algebra
+and principal constraint closure of the candidate electric/magnetic Weyl
+evolution.  It does **not** yet include the curved Bianchi/Bach lower-order terms, full constraint propagation, the local
+prolongation retract, or causal Green operators, and it does not claim a
+direct same-bundle factorization of `H=B_lin+K T/2`.
 
 ## Exact minimal ghost witness
 
@@ -95,20 +98,17 @@ Y_ghost C_aux(zeta)=K_aux(-zeta)^T J_aux.
 ```
 
 The modified de Donder gauge-fixing density is
-`-C0.C2-C1^2/2`.  Consequently
+`-C0.C2-C1^2/2`.  In the earlier Fourier symbol model the proposed completion
+was
 
 ```text
 P_field=J_aux^{-1} E_aux+K_aux C_aux
 ```
 
-has principal symbol `zeta^2 I_24`; both `J_aux` and the ghost pairing
-`Y_ghost` are nondegenerate.  Thus the wave symbol, its normalization, and
-formal adjointness are solved simultaneously rather than guessed.  These
-scalar metric principal symbols are the necessary normally-hyperbolic
-symbols.  The repository does not promote them to a curved Green theorem
-until the complete first- and zeroth-order cylinder coefficients and their
-integration-by-parts adjoints have been reconstructed as global differential
-operators.
+with a scalar-symbol target.  The exact action-derived curved Hessian below
+shows that this target cannot be realized on the present 24-field/9-gauge
+bundle.  The Fourier contraction remains a useful algebraic model, but is
+not promoted as the curved Green witness.
 
 The local unipotent change
 
@@ -129,22 +129,25 @@ and its inverse are finite differential maps, while the only inverse in the
 auxiliary elimination is pointwise algebraic.  They therefore preserve
 compact and spacelike-compact support.
 
-For the auxiliary BV complex the modified de Donder companion, inverse
+For the flat auxiliary BV complex the modified de Donder companion, inverse
 field pairing, and formal adjoint form a graded self-adjoint witness
-`W_aux`.  The emitted 66-by-66 four-row symbol matrices verify exactly
+`W_aux`.  The emitted 66-by-66 symbol matrices verify exactly
 `Q_aux^2=0`, `P_aux=Q_aux W_aux+W_aux Q_aux`, and
-`W_aux^sharp=W_aux`.  Every diagonal symbol is scalar metric.  Once the
-curved lower-order operators and adjoints are certified as global
-differential operators, normal hyperbolicity supplies unique causal Green operators
-`G_plus/minus`,
+`W_aux^sharp=W_aux`, with scalar metric diagonal symbols.  The analogous
+curved scalar-symbol claim is now known to be impossible for the present
+24-field/9-gauge bundle: at a null covector `rank(E2)=11` but `rank(K1)=9`,
+so no term `K1 C1` can cancel the Hessian symbol for any pointwise
+nondegenerate fibre identification.  A repaired Green-hyperbolic operator
+would still supply unique causal Green operators `G_plus/minus`, after which
 
 ```text
 Lambda_plus/minus=W_aux G_plus/minus
 ```
 
-formally obeys `Q Lambda+Lambda Q=1` once the curved degreewise Green
-operators have been constructed.  This is the exact Green-witness
-recognition identity, not yet the missing curved coefficient certificate.
+formally obeys `Q Lambda+Lambda Q=1`.  The recognition identity is exact in
+the flat witness model; the preferred missing curved input is a local
+Weyl-curvature prolongation with causal Green evolution, not another scalar
+completion of the original field bundle.
 
 The stronger Fourier-complex equivalence statement is also exact.  Shifting the
 auxiliary tensor by its pointwise equation-of-motion solution block
@@ -155,8 +158,8 @@ three arrows `eta -> -v`, `f_hat -> M f_hat^*`, and
 36-dimensional homotopy verify both chain-map identities and
 `i p-1=Qk+kQ`.  All formulas are finite differential or pointwise maps and
 therefore preserve compact, spacelike-compact, and unrestricted smooth
-support.  Their complete curved lower-order chain identities remain in the
-global certificate.  The trace/Weyl and
+support.  Their complete curved lower-order chain identities are included in
+the global certificate.  The trace/Weyl and
 nonminimal doublets attach as the previously certified pointwise summands.
 No local conformal-Killing projector is used.
 
@@ -273,20 +276,22 @@ python3 symbolic/verify_conformal_covariant_dependency_report.py --emit --guards
 
 Its machine-readable form is
 `certificates/final_claim_dependencies.json`; the human report is
-`generated/final_claim_dependencies.md`.  The graph distinguishes proved
-structural facts from three still-false curved lemmas:
+`generated/final_claim_dependencies.md`.  The graph distinguishes the three
+proved curved lemmas from the remaining terminal transport gate:
 
 ```text
-curved_operator_identity       = false
-curved_deformation_retract     = false
-curved_current_comparison      = false
+curved_operator_identity       = true
+curved_deformation_retract     = true
+curved_current_comparison      = true
+final_covariant_H4             = false
 ```
 
-Every downstream claim is the conjunction of its declared dependencies.
-In particular, `complete_bv_green_hyperbolicity`,
-`support_preserving_metric_equivalence`, `pairing_compatibility`, and
-`final_covariant_H4` remain false until their inputs are certified.  The
-already-proved algebraic and energy-mode result `H4 = C^2`, `G = I2` is an
+Every downstream claim is computed from its declared dependencies.
+`support_preserving_metric_equivalence` is already true;
+`complete_bv_green_hyperbolicity`, `pairing_compatibility`, and
+`final_covariant_H4` remain false until a non-scalar Green realization is
+certified.  The already-proved algebraic and energy-mode result
+`H4 = C^2`, `G = I2` is an
 independent theorem and is not downgraded by this covariant status report.
 
 The terminal layer is transport-only:
@@ -302,6 +307,11 @@ Its `final_covariant_H4` value is computed from exactly
 curved_operator_identity
 and curved_deformation_retract
 and curved_current_comparison
+and curved_EB_equations
+and curved_EB_symmetric_hyperbolicity
+and curved_constraint_propagation
+and support_local_prolongation_retract
+and curvature_causal_green_operators
 and causal_quasi_isomorphism
 and CKV_recovery
 and residual_no_duplication
@@ -309,8 +319,10 @@ and energy_H4_is_C2
 and energy_gram_is_I2.
 ```
 
-The last two inputs are already true; the terminal value remains false while
-any curved or causal input is false.
+All algebraic, operator, retract, current, and energy inputs are now true.
+The five displayed curvature-propagation flags remain false.  They isolate
+the exact E/B equations, symmetric hyperbolicity, full constraint evolution,
+support-local prolongation retract, and causal Green operators.
 
 ### Four-flag closure workstreams
 
@@ -325,26 +337,63 @@ python3 symbolic/verify_conformal_curved_current.py --emit --guards
 
 The operator workstream derives the covariant auxiliary action, the exact
 curved `24 x 9` gauge map (including the background-auxiliary Lie derivative),
-the cylinder curvature identities, and a canonical parallel-curvature
-derivative normal form.  It does **not** yet claim the full curved Hessian,
-companion, witness identity, adjoint table, or exhaustive globalization.
+the complete canonical coefficient table of the curved Hessian, and exact
+formal adjoints.  All 630 potentially surviving order-three/four jets vanish.
+It also records a decisive negative result: at the null covector
+`(1,1,0,0)`, the Hessian principal symbol has rank 11 while the gauge symbol
+has rank 9.  Hence no pointwise nondegenerate fibre form and no first-order
+companion can give the current 24-field system scalar wave symbol.  The
+normalized obstruction quotient is two-dimensional and is represented by
+the transverse helicity-two pair `f_22-f_33`, `f_23`.  The associated metric
+domain pair is `h_22-h_33`, `h_23`, the physical Hessian block is `4 I2`, and
+the little-group generator has weights `+2i,-2i`.
+
+The linearized Weyl symbol supplies the positive replacement at symbol
+level.  It induces `(1/4) I2` between the exact reduced Hessian quotient and
+the two-dimensional Weyl quotient, hence is an isomorphism on the physical
+helicity-two module.  This is deliberately stated on the reduced quotient:
+the repository does not claim `ker(W_2)=im(K_1)` on the full field bundle,
+where auxiliary and contractible directions remain.
+
+The candidate electric/magnetic Weyl evolution has also passed its internal
+principal-symbol test.  On
+`STF_2(S^3)_E + STF_2(S^3)_B`, the ten-component system
+
+```text
+partial_t E-curl_2 B=lower order,
+partial_t B+curl_2 E=lower order
+```
+
+has `A0=I_10`, a positive STF symmetrizer, symmetric spatial symbol after
+symmetrization, and physical characteristic speeds `+1,-1`.  Its principal
+divergence constraints close exactly through
+`div(curl_2 h)=(1/2)curl_1(div h)`.  This proves principal symmetric
+hyperbolicity and principal constraint propagation only; it does not derive
+this block from the curved Bianchi/Bach equations, nor their lower-order
+terms or full constraint evolution.
 
 The retract workstream proves the exact nonlinear auxiliary completion of the
-square, its local BV-canonical cotangent lift, a universal shifted auxiliary
-SDR, and support preservation.  It does **not** yet claim that the complete
-curved four-row `Q` has been conjugated into this split or that every trace and
-nonminimal row has been reattached.
+square, its local BV-canonical cotangent lift, conjugation of the complete
+curved four-row `Q`, the all-row SDR (including trace and nonminimal rows), and
+support preservation in all three support categories.
 
-The current workstream derives exact action/Fourier Green currents for the
-auxiliary and eliminated metric Hessians, the full differential-inclusion
-chain-rule current, and an explicit antisymmetric improvement whose Cauchy
-time component differs by a spatial divergence.  It does **not** yet replace
-the missing curved presymplectic potentials or prove the curved off-shell
-`d + Q` and Green/current identities.
+The current workstream derives both curved presymplectic potentials and the
+exact off-shell `d + Q` improvement under the same BV-canonical shift.  The
+Cauchy current and `E/A/L` regression close; the Green/current equality
+remains downstream of whichever Green-hyperbolic repair replaces the
+impossible scalar-symbol witness.
 
-These exact partial results appear as true scaffold nodes in the generated
-dependency report.  The four requested terminal flags remain false until the
-remaining operator-level certificates pass; no flag is manually editable.
+These exact results appear as true scaffold nodes in the generated dependency
+report.  Three requested flags are true; only `final_covariant_H4` remains
+false.  The preferred missing construction is a local Weyl-curvature
+prolongation with a certified causal Green realization.  Such a prolongation
+must propagate the helicity-two quotient rather than cancel it as gauge; no
+complete curvature propagation theorem is claimed here.  The principal
+candidate symmetric-hyperbolicity and constraint-closure tests have passed,
+but derivation from the prolonged equations, their lower-order terms, full
+constraints, prolongation SDR, and Green operators remain open.  A genuinely
+curvature-prolonged realization is now the selected final dependency gate.
+
 The compact four-flag view is reproduced with
 
 ```bash
@@ -360,15 +409,17 @@ witness yields retarded/advanced Green homotopies and comparison of
 covariant and fixed-time Poisson structures up to homotopy; see
 [Benini, Musante, and Schenkel](https://arxiv.org/abs/2207.04069).
 
-For pure Weyl gravity the symbol-level recognition identities and the exact
-Fourier-complex auxiliary retract with support-local formulas are now
-discharged.  Two
-programme-specific analytic tasks remain before the Green-complex theorem:
-the curved lower-order witness/retract/adjoint reconstruction and the complete
-cohomological comparison of the resulting causal pairing with the fixed-time
-BV pairing and the already-certified energy-mode Krein form.  A direct
-same-bundle metric factorization is an optional strengthening, not an input
-to the auxiliary route.
+For pure Weyl gravity the curved operator identities, support-local retract,
+and off-shell current comparison are discharged.  The remaining analytic
+task is to construct a local curvature-prolonged complex and prove causal
+Green evolution of its physical Weyl helicities.  The electric/magnetic principal
+candidate block is already symmetric hyperbolic and its principal constraints
+close; the remaining work is to derive it from the prolonged equations and
+complete the curved lower-order terms, full constraint propagation, local equivalence,
+and Green construction.  Only after that theorem can the causal
+quasi-isomorphism and Green/current pairing equality be promoted.  A
+direct same-bundle metric factorization is an optional strengthening, not an
+input to the prolongation route.
 
 This package does not claim arbitrary backgrounds, a direct same-bundle
 factorization of `H`, a local TT projector, a causal `E/L` branch split, a

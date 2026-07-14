@@ -1,0 +1,798 @@
+{
+  "atomic_flag": "curved_scalar_wave_no_go",
+  "covector": [
+    1,
+    1,
+    0,
+    0
+  ],
+  "covector_square": 0,
+  "curved_scalar_wave_no_go": true,
+  "exact_gauge_rank": 9,
+  "exact_hessian_rank": 11,
+  "fail_closed": true,
+  "fixed_action_field_operator_quotient": {
+    "channel": "real helicity-2 SO(2) pair transverse to the null covector along x1",
+    "conversion": "N=J_act^-1 E_2 (E_2 itself is dual-valued)",
+    "field_coordinate_legend": {
+      "17": "f_(2,2)",
+      "18": "f_(2,3)",
+      "19": "f_(3,3)"
+    },
+    "image_N_mod_image_K_dimension": 2,
+    "image_intersection_dimension": 9,
+    "rank_K": 9,
+    "rank_N": 11,
+    "rank_concatenated_N_K": 11,
+    "representatives": [
+      {
+        "input_column": 7,
+        "name": "f_22_minus_f_33",
+        "representative_nonzero_components": [
+          [
+            17,
+            2
+          ],
+          [
+            19,
+            -2
+          ]
+        ],
+        "subtracted_gauge_coefficients": [
+          "1/2",
+          "1/2",
+          "0",
+          "0",
+          "-2",
+          "2",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      {
+        "input_column": 8,
+        "name": "f_23",
+        "representative_nonzero_components": [
+          [
+            18,
+            4
+          ]
+        ],
+        "subtracted_gauge_coefficients": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    ]
+  },
+  "fixed_action_pairing_cokernel": {
+    "left_nullity_of_JK": 15,
+    "little_group_channels": "the two transverse spatial trace-free spin-2 polarizations relative to the null covector along x1",
+    "rank_of_L_T_E_2": 2,
+    "tensor_coordinate_legend": {
+      "7": "(2,2)",
+      "8": "(2,3)",
+      "9": "(3,3)"
+    },
+    "witnesses": [
+      {
+        "ell_T_E_nonzero_components": [
+          [
+            8,
+            4
+          ]
+        ],
+        "ell_T_JK_is_zero": true,
+        "ell_nonzero_components": [
+          [
+            8,
+            1
+          ]
+        ],
+        "name": "h_23"
+      },
+      {
+        "ell_T_E_nonzero_components": [
+          [
+            7,
+            -2
+          ],
+          [
+            9,
+            2
+          ]
+        ],
+        "ell_T_JK_is_zero": true,
+        "ell_nonzero_components": [
+          [
+            7,
+            -1
+          ],
+          [
+            9,
+            1
+          ]
+        ],
+        "name": "h_33_minus_h_22"
+      }
+    ]
+  },
+  "gauge_nonzero_minor": {
+    "columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "determinant": 4,
+    "rows": [
+      0,
+      1,
+      2,
+      3,
+      10,
+      11,
+      12,
+      13,
+      20
+    ]
+  },
+  "hessian_cache_sha256": "0d14ccf2b7e14d52705512b92027d2bcdf801256924a5998292ec7b29ca67866",
+  "hessian_high_order_jet_vectors_tested": 630,
+  "hessian_nonzero_minor": {
+    "columns": [
+      0,
+      2,
+      3,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      17,
+      20
+    ],
+    "determinant": -1,
+    "rows": [
+      0,
+      2,
+      3,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      17,
+      20
+    ]
+  },
+  "identity_under_test": "J^-1 E_2 + K_1 C_1 = q I",
+  "pointwise_pairing_companion_solution_exists": false,
+  "rank_inequality_defect": 2,
+  "rank_inequality_required_at_null_covector": "rank(E_2)<=rank(K_1)",
+  "repair_boundary": "the current E_2 or K_1 input must change (or the gauge bundle/order architecture must change); varying only J, Y, C, or the gauge density cannot remove this rank obstruction",
+  "schema": "pure-weyl-curved-null-symbol-rank-obstruction-v1",
+  "scope": "all invertible pointwise J and all first-order C; no invariance or formal-adjoint ansatz was imposed",
+  "symbol_extension": {
+    "gauge_image": {
+      "basis": [
+        {
+          "component_labels": [
+            "h_(0,0)",
+            "h_(0,1)",
+            "f_(0,0)",
+            "f_(0,1)"
+          ],
+          "ghost_column": 0,
+          "ghost_label": "xi_0",
+          "nonzero_components": [
+            [
+              0,
+              "2"
+            ],
+            [
+              1,
+              "1"
+            ],
+            [
+              10,
+              "4"
+            ],
+            [
+              11,
+              "2"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "h_(0,1)",
+            "h_(1,1)",
+            "f_(0,1)",
+            "f_(1,1)"
+          ],
+          "ghost_column": 1,
+          "ghost_label": "xi_1",
+          "nonzero_components": [
+            [
+              1,
+              "1"
+            ],
+            [
+              4,
+              "2"
+            ],
+            [
+              11,
+              "-2"
+            ],
+            [
+              14,
+              "-4"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "h_(0,2)",
+            "h_(1,2)",
+            "f_(0,2)",
+            "f_(1,2)"
+          ],
+          "ghost_column": 2,
+          "ghost_label": "xi_2",
+          "nonzero_components": [
+            [
+              2,
+              "1"
+            ],
+            [
+              5,
+              "1"
+            ],
+            [
+              12,
+              "-2"
+            ],
+            [
+              15,
+              "-2"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "h_(0,3)",
+            "h_(1,3)",
+            "f_(0,3)",
+            "f_(1,3)"
+          ],
+          "ghost_column": 3,
+          "ghost_label": "xi_3",
+          "nonzero_components": [
+            [
+              3,
+              "1"
+            ],
+            [
+              6,
+              "1"
+            ],
+            [
+              13,
+              "-2"
+            ],
+            [
+              16,
+              "-2"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "f_(0,0)",
+            "f_(0,1)"
+          ],
+          "ghost_column": 4,
+          "ghost_label": "kappa_0",
+          "nonzero_components": [
+            [
+              10,
+              "2"
+            ],
+            [
+              11,
+              "1"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "f_(0,1)",
+            "f_(1,1)"
+          ],
+          "ghost_column": 5,
+          "ghost_label": "kappa_1",
+          "nonzero_components": [
+            [
+              11,
+              "1"
+            ],
+            [
+              14,
+              "2"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "f_(0,2)",
+            "f_(1,2)"
+          ],
+          "ghost_column": 6,
+          "ghost_label": "kappa_2",
+          "nonzero_components": [
+            [
+              12,
+              "1"
+            ],
+            [
+              15,
+              "1"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "f_(0,3)",
+            "f_(1,3)"
+          ],
+          "ghost_column": 7,
+          "ghost_label": "kappa_3",
+          "nonzero_components": [
+            [
+              13,
+              "1"
+            ],
+            [
+              16,
+              "1"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "v_0",
+            "v_1"
+          ],
+          "ghost_column": 8,
+          "ghost_label": "sigma",
+          "nonzero_components": [
+            [
+              20,
+              "1"
+            ],
+            [
+              21,
+              "1"
+            ]
+          ]
+        }
+      ],
+      "dimension": 9
+    },
+    "helicity_two": {
+      "atomic_flag": "curved_helicity_two_channel",
+      "characteristic_polynomial": "lambda^2+4",
+      "complex_weights": [
+        "+2i",
+        "-2i"
+      ],
+      "curved_helicity_two_channel": true,
+      "exact": true,
+      "generator_square": "-4 I_2",
+      "infinitesimal_generator": [
+        [
+          0,
+          2
+        ],
+        [
+          -2,
+          0
+        ]
+      ],
+      "linearized_Weyl_symbol": {
+        "Jordan_blocks": [
+          {
+            "eigenvalue": "1/4",
+            "size": 1
+          },
+          {
+            "eigenvalue": "1/4",
+            "size": 1
+          }
+        ],
+        "characteristic_polynomial": "(lambda-1/4)^2",
+        "determinant": "1/16",
+        "electric_TT_determinant": "1/4",
+        "electric_TT_matrix_on_h22-h33_h23": [
+          [
+            "-1/2",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2"
+          ]
+        ],
+        "full_symbol_rank": 5,
+        "induced_quotient_matrix": [
+          [
+            "1/4",
+            "0"
+          ],
+          [
+            "0",
+            "1/4"
+          ]
+        ],
+        "is_isomorphism": true,
+        "ker_N_subset_ker_W": true,
+        "minimal_polynomial": "lambda-1/4",
+        "physical_image_nonzero_component_counts": [
+          32,
+          32
+        ],
+        "physical_image_squared_coordinate_norms": [
+          "8",
+          "8"
+        ],
+        "rank_W_on_gauge_preimages": 3,
+        "rational_invariant_factors": [
+          "lambda-1/4",
+          "lambda-1/4"
+        ],
+        "sha256": "c1f94c3e1e8610b4109fd6c93c9c131418341a472b802a4c4ab025417bd59112",
+        "target_quotient_dimension": 2
+      },
+      "little_group": "SO(2) stabilizing zeta=(1,1,0,0)",
+      "minimal_polynomial": "lambda^2+4",
+      "rational_invariant_factors": [
+        "lambda^2+4"
+      ],
+      "real_basis": [
+        "f_22-f_33",
+        "f_23"
+      ],
+      "schema": "pure-weyl-curved-helicity-two-channel-v1"
+    },
+    "kernel_cokernel": {
+      "E_2_cokernel_dimension": 13,
+      "E_2_kernel_dimension": 13
+    },
+    "quotient": {
+      "E_2_cokernel_dimension": 13,
+      "E_2_kernel_dimension": 13,
+      "atomic_flag": "curved_null_symbol_quotient_exact",
+      "covector": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "curved_null_symbol_quotient_exact": true,
+      "exact": true,
+      "im_K_basis": [
+        {
+          "component_labels": [
+            "h_(0,0)",
+            "h_(0,1)",
+            "f_(0,0)",
+            "f_(0,1)"
+          ],
+          "ghost_column": 0,
+          "ghost_label": "xi_0",
+          "nonzero_components": [
+            [
+              0,
+              "2"
+            ],
+            [
+              1,
+              "1"
+            ],
+            [
+              10,
+              "4"
+            ],
+            [
+              11,
+              "2"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "h_(0,1)",
+            "h_(1,1)",
+            "f_(0,1)",
+            "f_(1,1)"
+          ],
+          "ghost_column": 1,
+          "ghost_label": "xi_1",
+          "nonzero_components": [
+            [
+              1,
+              "1"
+            ],
+            [
+              4,
+              "2"
+            ],
+            [
+              11,
+              "-2"
+            ],
+            [
+              14,
+              "-4"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "h_(0,2)",
+            "h_(1,2)",
+            "f_(0,2)",
+            "f_(1,2)"
+          ],
+          "ghost_column": 2,
+          "ghost_label": "xi_2",
+          "nonzero_components": [
+            [
+              2,
+              "1"
+            ],
+            [
+              5,
+              "1"
+            ],
+            [
+              12,
+              "-2"
+            ],
+            [
+              15,
+              "-2"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "h_(0,3)",
+            "h_(1,3)",
+            "f_(0,3)",
+            "f_(1,3)"
+          ],
+          "ghost_column": 3,
+          "ghost_label": "xi_3",
+          "nonzero_components": [
+            [
+              3,
+              "1"
+            ],
+            [
+              6,
+              "1"
+            ],
+            [
+              13,
+              "-2"
+            ],
+            [
+              16,
+              "-2"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "f_(0,0)",
+            "f_(0,1)"
+          ],
+          "ghost_column": 4,
+          "ghost_label": "kappa_0",
+          "nonzero_components": [
+            [
+              10,
+              "2"
+            ],
+            [
+              11,
+              "1"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "f_(0,1)",
+            "f_(1,1)"
+          ],
+          "ghost_column": 5,
+          "ghost_label": "kappa_1",
+          "nonzero_components": [
+            [
+              11,
+              "1"
+            ],
+            [
+              14,
+              "2"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "f_(0,2)",
+            "f_(1,2)"
+          ],
+          "ghost_column": 6,
+          "ghost_label": "kappa_2",
+          "nonzero_components": [
+            [
+              12,
+              "1"
+            ],
+            [
+              15,
+              "1"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "f_(0,3)",
+            "f_(1,3)"
+          ],
+          "ghost_column": 7,
+          "ghost_label": "kappa_3",
+          "nonzero_components": [
+            [
+              13,
+              "1"
+            ],
+            [
+              16,
+              "1"
+            ]
+          ]
+        },
+        {
+          "component_labels": [
+            "v_0",
+            "v_1"
+          ],
+          "ghost_column": 8,
+          "ghost_label": "sigma",
+          "nonzero_components": [
+            [
+              20,
+              "1"
+            ],
+            [
+              21,
+              "1"
+            ]
+          ]
+        }
+      ],
+      "image_N_mod_image_K_dimension": 2,
+      "image_intersection_dimension": 9,
+      "normalized_quotient_basis": [
+        {
+          "gauge_coefficients_a": [
+            "1/2",
+            "1/2",
+            "0",
+            "0",
+            "-2",
+            "2",
+            "0",
+            "0",
+            "0"
+          ],
+          "name": "f_22_minus_f_33",
+          "normalized_representative": [
+            [
+              17,
+              "1"
+            ],
+            [
+              19,
+              "-1"
+            ]
+          ],
+          "relation": "u1=(N e7-K a)/2"
+        },
+        {
+          "gauge_coefficients_a": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "name": "f_23",
+          "normalized_representative": [
+            [
+              18,
+              "1"
+            ]
+          ],
+          "relation": "u2=N e8/4"
+        }
+      ],
+      "physical_normalized_block": {
+        "Jordan_blocks": [
+          {
+            "eigenvalue": "4",
+            "size": 1
+          },
+          {
+            "eigenvalue": "4",
+            "size": 1
+          }
+        ],
+        "characteristic_polynomial": "(lambda-4)^2",
+        "codomain_basis": [
+          "f_22-f_33",
+          "f_23"
+        ],
+        "domain_basis": [
+          "h_22-h_33",
+          "h_23"
+        ],
+        "is_semisimple": true,
+        "matrix": [
+          [
+            "4",
+            "0"
+          ],
+          [
+            "0",
+            "4"
+          ]
+        ],
+        "minimal_polynomial": "lambda-4",
+        "rank": 2,
+        "rational_invariant_factors": [
+          "lambda-4",
+          "lambda-4"
+        ]
+      },
+      "rank_K": 9,
+      "rank_N": 11,
+      "rank_concatenated_N_K": 11,
+      "schema": "pure-weyl-curved-null-symbol-quotient-v1"
+    }
+  }
+}

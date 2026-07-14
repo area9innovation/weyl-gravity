@@ -67,13 +67,29 @@ def main() -> None:
         print("wrote", MARKDOWN.relative_to(ROOT))
 
     if args.guards:
-        boundary = report.theorem_boundary_lemmas
-        if any(report.nodes[name].status for name in boundary):
-            raise AssertionError("a curved boundary lemma unexpectedly passed")
-        if report.nodes["complete_bv_green_hyperbolicity"].status:
-            raise AssertionError("complete BV Green hyperbolicity unexpectedly passed")
-        if report.nodes["final_covariant_H4"].status:
-            raise AssertionError("the top-level theorem unexpectedly passed")
+        certificate = report.certificate()
+        for name, node in report.nodes.items():
+            dependency_statuses = [
+                report.nodes[dependency].status for dependency in node.requires
+            ]
+            expected = (
+                all(dependency_statuses)
+                if node.dependency_mode == "all"
+                else any(dependency_statuses)
+            )
+            if node.requires and node.status != expected:
+                raise AssertionError(
+                    f"derived claim {name} does not implement dependency mode "
+                    f"{node.dependency_mode!r}"
+                )
+            blockers = certificate["claims"][name]["blocking_dependencies"]
+            if node.status and blockers:
+                raise AssertionError(f"true claim {name} still reports blockers")
+        final = report.nodes["final_covariant_H4"]
+        if bool(certificate["final_claim_atomic_blockers"]) == bool(final.status):
+            raise AssertionError(
+                "final atomic blockers must be present exactly while the theorem is false"
+            )
         print("COVARIANT CLAIM DEPENDENCY GUARDS: 5/5 PASS")
 
     print("COVARIANT FINAL CLAIM DEPENDENCY REPORT: ALL LOGIC CHECKS PASS")
