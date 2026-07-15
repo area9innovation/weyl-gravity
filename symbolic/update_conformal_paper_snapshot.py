@@ -25,12 +25,18 @@ def dependencies() -> tuple[Path, ...]:
         ROOT.parent.parent / ".github" / "workflows" / "conformal-bridge.yml",
         ROOT / "README.md",
         ROOT / "notes" / "conformal-paper-snapshot.md",
+        ROOT / "notes" / "conformal-paper-split-roadmap.md",
+        ROOT / "notes" / "conformal-referee-major-revision.md",
         ROOT / "notes" / "conformal-publication-reproduction.md",
         ROOT / "paper" / "conformal-residual-cohomology.tex",
         ROOT / "paper" / "conformal-residual-cohomology.pdf",
+        ROOT / "paper" / "conformal-residual-cohomology-computational-supplement.tex",
+        ROOT / "paper" / "conformal-residual-cohomology-computational-supplement.pdf",
+        ROOT / "paper" / "generated" / "endpoint_factorization_nullstellensatz.tex",
         ROOT / "paper" / "ghosts-geometry-reality.tex",
         ROOT / "paper" / "ghosts-geometry-reality.pdf",
         ROOT / "symbolic" / "conformal-paper-requirements.txt",
+        ROOT / "symbolic" / "generate_endpoint_factorization_nullstellensatz_tex.py",
         Path(__file__).resolve(),
     }
     for directory in (

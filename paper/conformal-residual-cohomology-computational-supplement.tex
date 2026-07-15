@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,array}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\rank}{\operatorname{rank}}
+
+\title{Computational supplement scaffold for\\
+Residual cohomology and causal transport in free pure-Weyl gravity}
+\author{Repository revision artifact}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This tracked scaffold records the computational material assigned to the
+supplement in the major-revision split of
+\path{conformal-residual-cohomology.tex}.  It is not an independent theorem
+paper yet.  The archival monolith remains authoritative until the residual
+paper, causal paper and this supplement each have standalone claim ledgers
+and dependency manifests.
+\end{abstract}
+
+\section{Scope and publication split}
+
+The section-level extraction map and submission gates are maintained in
+\path{../notes/conformal-paper-split-roadmap.md}.  The supplement will serve
+two articles:
+\begin{enumerate}
+\item the residual cohomology and pairing calculation;
+\item the support-local causal curvature/tractor bridge which transports that
+      result to covariant cohomology.
+\end{enumerate}
+It will contain implementation receipts, not a third competing theorem
+statement.
+
+\section{Independent central residual-rank check}
+
+The command
+\begin{verbatim}
+python3 symbolic/verify_conformal_residual_rank53_independent.py
+\end{verbatim}
+uses only the Python standard library.  It constructs the integral spin-two
+$\mathfrak{sl}_2\oplus\mathfrak{sl}_2$ action on
+\[
+ \operatorname{Sym}^2\bigl((2,0)\oplus(0,2)\bigr),
+ \qquad 55=15+25+15,
+\]
+and obtains exact block ranks
+\[
+ 53=14+25+14.
+\]
+The two exact kernel vectors are the chiral binary-quartic singlets
+\[
+ e_0e_4-4e_1e_3+3e_2^2.
+\]
+Ranks are computed over two prime fields.  Since modular rank is a
+characteristic-zero lower bound and the two displayed independent exact
+kernel vectors give the complementary upper bound, the characteristic-zero
+rank is exactly $53$.
+
+This independent check is intentionally narrow.  It does not replace the
+one-particle $290\to1311\to3657$ absolute window, full Chevalley--Eilenberg
+nilpotency, BV--BFV transfer or covariant causal certificates.
+
+\section{Generated-input inventory}
+
+The archival paper has one active generated TeX input.  It is tracked by Git
+and its header binds the source certificate digest:
+\begin{center}
+\path{generated/endpoint_factorization_nullstellensatz.tex}.
+\end{center}
+Other generated TeX files in \path{analytic_completion/generated/} and
+\path{covariant_completion/generated/} are tracked standalone receipts, not
+active \verb|\input| dependencies of the archival paper.  The future
+supplement manifest will classify every generated file as active input,
+standalone current receipt or historical checkpoint.
+
+\section{Endpoint factorization receipt}
+
+For continuity with the archival appendix, the active generated input is
+included below.  It is a scoped no-go receipt for the complete parallel
+invariant two-wave-factor family; it is not used as evidence against the
+direct tractor causal homotopy.
+
+\input{generated/endpoint_factorization_nullstellensatz.tex}
+
+\section{Material to extract from the archival monolith}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.31\textwidth}
+                  >{\raggedright\arraybackslash}p{0.61\textwidth}}
+\toprule
+Block & Supplement content \\
+\midrule
+\endhead
+Finite-jet convention audit & Coordinate bases, globalization coverage and
+independent convention checks. \\
+Residual ranks & Sparse formats, good-prime embeddings, pivot/minor witnesses,
+exact kernel representatives and the independent rank-$53$ check. \\
+BV--BFV dictionaries & Raw/minimal/gauge-fixed basis ledgers, zero-mode
+sections, contraction maps and sign conventions. \\
+Curvature prolongation & Weyl--Cotton row tables, sourced subsidiary system,
+mapping-cylinder rows, PBW normal forms and cyclic projectors. \\
+Alternative witnesses & Scoped scalar-wave, first-order, factorization and
+relative-saddle searches, including exact negative receipts. \\
+Publication provenance & Certificate schemas, content hashes, terminal proof
+ledger, commands, timeouts and artifact policy. \\
+\bottomrule
+\end{longtable}
+
+\section{Submission gates}
+
+Before this scaffold becomes the submitted supplement it must:
+\begin{enumerate}
+\item build twice without undefined references;
+\item have its own dependency manifest and focused verification runner;
+\item reproduce every active generated input from its authoritative source;
+\item distinguish theorem dependencies from historical diagnostics;
+\item bind Paper A's residual claims and Paper B's causal claims to separate
+      short ledgers;
+\item preserve the archival equation-label map for referee auditability.
+\end{enumerate}
+
+\end{document}

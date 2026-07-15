@@ -47,6 +47,12 @@ Publication and reproduction instructions for Paper 7 are collected in
 [`notes/conformal-publication-reproduction.md`](notes/conformal-publication-reproduction.md),
 including the fast required rail, exhaustive scheduled rail, scoped legacy
 flags, and publication artifact procedure.
+The referee major-revision plan separating the residual theorem, causal
+bridge, and computational supplement is
+[`notes/conformal-paper-split-roadmap.md`](notes/conformal-paper-split-roadmap.md).
+The itemized response, including what remains genuinely open before
+submission, is
+[`notes/conformal-referee-major-revision.md`](notes/conformal-referee-major-revision.md).
 
 General-audience article:
 [`Before Worrying About a Gravitational Ghost, Ask Whether It Is Really There`](paper/before-worrying-about-a-gravitational-ghost.md)

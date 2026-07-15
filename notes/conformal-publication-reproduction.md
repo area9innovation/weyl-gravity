@@ -29,6 +29,17 @@ The generated
 binds every terminal claim to its authoritative evidence, canonical digest,
 and exact reproduction command.
 
+The referee major-revision architecture is documented in the
+[Paper A/Paper B/supplement split roadmap](conformal-paper-split-roadmap.md).
+The corresponding
+[response ledger](conformal-referee-major-revision.md) separates completed
+manuscript repairs from submission gates that still require human authorship,
+artifact release, paper extraction, or independent expert review.
+The current monolithic paper remains authoritative while those three outputs
+are extracted by a copy-first process.  A buildable computational-supplement
+scaffold is tracked at
+[`paper/conformal-residual-cohomology-computational-supplement.tex`](../paper/conformal-residual-cohomology-computational-supplement.tex).
+
 ## Scoped legacy and no-go routes
 
 Two machine flags intentionally remain false:
@@ -70,6 +81,7 @@ python3 symbolic/verify_conformal_final_covariant_transport.py
 python3 symbolic/verify_conformal_four_flag_closure.py
 python3 symbolic/verify_conformal_certificate_provenance.py
 python3 symbolic/verify_conformal_covariant_H4_proof_ledger.py --check --guards
+python3 symbolic/verify_conformal_residual_rank53_independent.py
 python3 -m unittest covariant_completion.final_transport.tests.test_proof_ledger
 python3 symbolic/update_conformal_paper_snapshot.py --check
 ```
@@ -106,6 +118,8 @@ To rebuild the paper after the exact rail passes:
 cd paper
 pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology.tex
 pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology.tex
+pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology-computational-supplement.tex
+pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology-computational-supplement.tex
 cd ..
 python3 symbolic/update_conformal_paper_snapshot.py --write
 python3 symbolic/update_conformal_paper_snapshot.py --check

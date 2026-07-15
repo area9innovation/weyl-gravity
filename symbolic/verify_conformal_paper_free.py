@@ -107,6 +107,22 @@ CERTIFICATES = (
         slow=True,
     ),
     Certificate(
+        "independent central two-particle residual rank",
+        "verify_conformal_residual_rank53_independent.py",
+        "INDEPENDENT RESIDUAL RANK CHECK: rank=53 kernel=2 PASS",
+    ),
+    Certificate(
+        "active endpoint Nullstellensatz TeX input freshness",
+        "generate_endpoint_factorization_nullstellensatz_tex.py",
+        "[PASS] endpoint factorization TeX receipt is exact and current",
+        ("--check",),
+    ),
+    Certificate(
+        "referee-driven manuscript claim discipline",
+        "verify_conformal_manuscript_claim_discipline.py",
+        "MANUSCRIPT CLAIM-DISCIPLINE GUARDS: ALL PASS",
+    ),
+    Certificate(
         "residual ghost pairing",
         "verify_conformal_residual_ghost_pairing.py",
         "CONFORMAL C2g-G RESIDUAL GHOST PAIRING: ALL PASS",
