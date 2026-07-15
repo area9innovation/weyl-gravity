@@ -65,6 +65,38 @@ positive branch is
 The scalar equations and all three independent metric equations vanish
 coefficientwise.
 
+## Frozen action normalization
+
+In the curvature convention used by the producer,
+
+\[
+C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}
+=\frac{4(a^2-c^2)^2}{3a^8},
+\]
+
+and independent lapse, horizontal-scale, and vertical-scale variations all
+give the same exact identity
+
+\[
+\delta\!\int\sqrt{-g}\,C^2
+=4\int\sqrt{-g}\,B_{\mu\nu}\,\delta g^{\mu\nu}.
+\]
+
+Therefore the authoritative action convention is
+
+\[
+S=\int\sqrt{-g}\left[
+\frac{\alpha_B}{8}C^2
+-\frac12\sum_A(\nabla T_A)^2
+-\frac{R}{12}\rho^2
+-\frac{\lambda}{4}\rho^4
+\right],
+\]
+
+with \(T_{\mu\nu}=-2\,\delta S_m/\delta g^{\mu\nu}\). Its metric equation is
+exactly \(\alpha_BB_{\mu\nu}=T_{\mu\nu}\). This replaces the earlier informal
+action-sign dictionary; it does not change the certified field equations.
+
 ## Health of the clock matter
 
 Throughout the interval, the scalar kinetic metric is positive and the

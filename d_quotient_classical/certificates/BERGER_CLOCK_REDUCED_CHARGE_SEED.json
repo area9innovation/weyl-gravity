@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "The certificate proves a nonzero conserved internal clock momentum and the exact helical relation between D and O(2) rotation on the Berger background. It does not equate Q_R with the total D charge and assigns no D verdict.",
+  "claim_boundary": "The certificate derives the covariant internal current, fixes the SU(2) volume, proves the nonzero clock momentum, audits the fixed-coupling stationary family, and derives Omega_total(delta,L_D)=omega delta Q_R on the Berger background. It does not establish whether an allowed fixed-coupling linearized tangent has delta Q_R nonzero, so it assigns no total D verdict.",
   "claim_status": "CERTIFIED_REDUCED_CHARGE_SEED",
   "clock_interpretation": {
     "canonical_phase_momentum": "p_theta=Q_R",
@@ -9,10 +9,20 @@
     "standard_sign_target": true
   },
   "conventions": {
+    "authoritative_matter_action": "S_m=int sqrt(-g){-(1/2) sum_A nabla T_A.nabla T_A -(R/12) rho^2 -(lambda/4) rho^4}",
     "future_charge_density": "n_mu j^mu=T_1 dot(T_2)-T_2 dot(T_1)",
     "internal_rotation": "R(T_1,T_2)=(-T_2,T_1)",
+    "maurer_cartan_volume": "V_0=int sigma_1 wedge sigma_2 wedge sigma_3=16 pi^2",
     "metric_signature": "(-,+,+,+)",
-    "spatial_volume": "Vol(S3_Berger)=V_0 a^3 sqrt(q)"
+    "scalar_presymplectic_convention": "Omega_Sigma=sum_A int delta(sqrt(h) n.nabla T_A) wedge delta T_A",
+    "spatial_volume": "Vol(S3_Berger)=16 pi^2 a^3 sqrt(q)"
+  },
+  "covariant_current_audit": {
+    "derived_from_action": true,
+    "improvement_cross_term": "ZERO because delta_R g=0 and delta_R(T_1^2+T_2^2)=0",
+    "internal_current": "j_R^mu=T_1 nabla^mu T_2-T_2 nabla^mu T_1 up to the declared future-density orientation",
+    "presymplectic_identity": "Omega_m(delta,R)=delta Q_R",
+    "scalar_potential": "theta_m^mu(delta T)=-sum_A nabla^mu T_A delta T_A plus the metric-only conformal-improvement potential"
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -22,31 +32,51 @@
     "current_conservation": "partial_t j_R=0",
     "current_density": "j_R=rho^2 omega",
     "helical_action": "L_D(T_1,T_2)=omega R(T_1,T_2)",
-    "integrated_charge": "Q_R=V_0 alpha_B q sqrt(1-4q)",
-    "integrated_matter_energy": "E_m=V_0 alpha_B sqrt(q)(1-q)^2/(6a)",
+    "integrated_charge": "Q_R=16 pi^2 alpha_B q sqrt(1-4q)",
+    "integrated_matter_energy": "E_m=(8 pi^2/3) alpha_B sqrt(q)(1-q)^2/a",
     "matter_energy_density": "epsilon=alpha_B(1-q)^2/(6a^4)"
   },
+  "fixed_coupling_audit": {
+    "coupling_equation": "q^2-5q+1+6(alpha_B lambda)(1-4q)^2=0",
+    "derivative_nonzero_on_interval": true,
+    "on_shell_q_derivative": "3(6q-1)/(4q-1)",
+    "scale_direction": "a is the common Weyl scale; Q_R is independent of a",
+    "stationary_fixed_coupling_consequence": "delta q=0",
+    "warning": "The open q interval is a family across coupling products alpha_B lambda, not a physical tangent inside one fixed theory."
+  },
   "flags": {
+    "covariant_internal_current_derived": true,
+    "fixed_coupling_tangent_audited": true,
     "global_internal_charge_computed": true,
     "gravitational_and_matter_presymplectic_currents_combined": false,
     "helical_D_internal_relation_computed": true,
+    "helical_presymplectic_identity_derived": true,
     "support_local_all_row_bv_retract_constructed": false,
     "total_covariant_D_charge_computed": false
+  },
+  "helical_presymplectic_audit": {
+    "allowed_delta_Q_tangent_constructed": false,
+    "background_metric_action": "L_D g=0",
+    "background_scalar_action": "L_D T=omega R T",
+    "decision_rule": "D is non-null iff the fixed-coupling allowed tangent space contains a delta with delta Q_R nonzero.",
+    "identity": "Omega_total(delta,L_D)=omega delta Q_R for every allowed linearized tangent delta at the background",
+    "pure_weyl_cross_term": "Omega_W(delta,L_D g)=0"
   },
   "next_gate": "TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT",
   "not_established": [
     "whether gravitational and matter contributions make total D gauge, charged, sector-dependent, or non-Hamiltonian",
     "the full linearized solution and allowed-variation space at fixed theory couplings",
+    "existence or absence of a fixed-coupling allowed tangent with delta Q_R nonzero",
     "the all-row support-local BV contraction and causal Green homotopy"
   ],
   "phase_space_id": "positive_rotating_scalar_berger_background",
   "rational_fixture": {
-    "V_0": "1",
+    "V_0": "16 pi^2",
     "a": "1",
     "alpha_B": "5",
     "charge_density": "3/4",
-    "integrated_charge": "9 sqrt(10)/80",
-    "integrated_matter_energy": "961 sqrt(10)/12800",
+    "integrated_charge": "9 pi^2 sqrt(10)/5",
+    "integrated_matter_energy": "961 pi^2 sqrt(10)/800",
     "matter_energy_density": "961/1920",
     "q": "9/40"
   },

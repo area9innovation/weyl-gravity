@@ -27,6 +27,18 @@ class PositiveBergerClockBackgroundTests(unittest.TestCase):
         self.assertTrue(health["quartic_potential_bounded_below"])
         self.assertTrue(health["dominant_energy_condition"])
 
+    def test_action_and_bach_normalization_is_frozen(self) -> None:
+        conventions = self.payload["conventions"]
+        self.assertIn("(alpha_B/8) C_mnrs C^mnrs", conventions["authoritative_action"])
+        self.assertEqual(
+            conventions["reduced_variation_factors"],
+            {"lapse": 4, "horizontal_scale": 4, "vertical_scale": 4},
+        )
+        self.assertEqual(
+            self.payload["berger_geometry"]["weyl_squared"],
+            "4(a^2-c^2)^2/(3a^8)",
+        )
+
     def test_rational_fixture_is_human_auditable(self) -> None:
         fixture = self.payload["rational_fixture"]
         self.assertEqual(fixture["q"], "9/40")

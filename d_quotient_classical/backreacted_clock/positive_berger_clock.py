@@ -55,7 +55,9 @@ SCHEMA_PATH = (
 )
 
 
-def _berger_geometry(a: sp.Symbol, c: sp.Symbol) -> tuple[sp.Matrix, sp.Expr, sp.Matrix]:
+def _berger_geometry(
+    a: sp.Symbol, c: sp.Symbol
+) -> tuple[sp.Matrix, sp.Expr, sp.Matrix, sp.Expr]:
     """Derive Ricci, scalar curvature, and Bach tensors in an orthonormal frame."""
 
     n = 4
@@ -227,7 +229,20 @@ def _berger_geometry(a: sp.Symbol, c: sp.Symbol) -> tuple[sp.Matrix, sp.Expr, sp
         raise AssertionError("derived Berger Bach tensor is not traceless")
     if bach != bach.T:
         raise AssertionError("derived Berger Bach tensor is not symmetric")
-    return ricci, sp.factor(scalar), bach
+    weyl_squared = sp.factor(
+        sum(
+            eta[first, first]
+            * eta[second, second]
+            * eta[third, third]
+            * eta[fourth, fourth]
+            * weyl[first][second][third][fourth] ** 2
+            for first in range(n)
+            for second in range(n)
+            for third in range(n)
+            for fourth in range(n)
+        )
+    )
+    return ricci, sp.factor(scalar), bach, weyl_squared
 
 
 @dataclass(frozen=True)
@@ -240,7 +255,7 @@ class PositiveBergerClockBackground:
     def build(cls) -> "PositiveBergerClockBackground":
         a, c = sp.symbols("a c", positive=True, real=True)
         q, alpha_b = sp.symbols("q alpha_B", positive=True, real=True)
-        ricci, scalar, bach = _berger_geometry(a, c)
+        ricci, scalar, bach, weyl_squared = _berger_geometry(a, c)
 
         expected_ricci = sp.diag(
             0,
@@ -261,6 +276,38 @@ class PositiveBergerClockBackground:
             raise AssertionError("Berger scalar curvature drifted")
         if sp.simplify(bach - expected_bach) != sp.zeros(4):
             raise AssertionError("Berger Bach tensor drifted")
+        expected_weyl_squared = 4 * (a**2 - c**2) ** 2 / (3 * a**8)
+        if sp.simplify(weyl_squared - expected_weyl_squared) != 0:
+            raise AssertionError("Berger Weyl-squared invariant drifted")
+
+        # Freeze the action normalization in the producer's curvature
+        # convention.  For I_C=int sqrt(-g) C^2, independent lapse and
+        # biaxial scale variations all give
+        #
+        #     delta I_C = 4 int sqrt(-g) B_mn delta g^mn.
+        #
+        # With T_mn=-2 delta S_m/delta g^mn, the action coefficient
+        # alpha_B/8 therefore yields alpha_B B_mn=T_mn.
+        spatial_volume_density = a**2 * c
+        lapse_variation_factor = sp.factor(
+            weyl_squared / (2 * expected_bach[0, 0])
+        )
+        horizontal_variation_factor = sp.factor(
+            -a
+            * sp.diff(spatial_volume_density * weyl_squared, a)
+            / (4 * spatial_volume_density * expected_bach[1, 1])
+        )
+        vertical_variation_factor = sp.factor(
+            -c
+            * sp.diff(spatial_volume_density * weyl_squared, c)
+            / (2 * spatial_volume_density * expected_bach[3, 3])
+        )
+        if (
+            lapse_variation_factor != 4
+            or horizontal_variation_factor != 4
+            or vertical_variation_factor != 4
+        ):
+            raise AssertionError("Weyl-action/Bach normalization drifted")
 
         # Dimensionless matter solve.  x=lambda*rho^2*a^2 and q=c^2/a^2.
         x = sp.symbols("x", real=True)
@@ -312,6 +359,13 @@ class PositiveBergerClockBackground:
             / (6 * alpha_b * (1 - 4 * q) ** 2)
         )
         omega_squared = sp.factor(q / (4 * a**2 * (1 - 4 * q)))
+        scalar_eom_defect = sp.factor(
+            omega_squared
+            - (4 - q) / (12 * a**2)
+            - quartic * rho_squared
+        )
+        if scalar_eom_defect != 0:
+            raise AssertionError("action-derived conformal-scalar equation drifted")
 
         # A rational human-auditable point in the positive interval.
         fixture = {
@@ -395,7 +449,14 @@ class PositiveBergerClockBackground:
                 "squashing": "q=c^2/a^2",
                 "matter": "two real standard-sign conformal scalars with O(2)-invariant potential lambda(T_1^2+T_2^2)^2/4",
                 "metric_equation": "alpha_B B_mn=T_mn with alpha_B>0",
-                "common_action_convention": "alpha_B=4 alpha_g for S_W=-alpha_g integral C^2, subject to the repository's overall Bach sign convention",
+                "authoritative_action": "S=int sqrt(-g){(alpha_B/8) C_mnrs C^mnrs -(1/2) sum_A nabla T_A.nabla T_A -(R/12) rho^2 -(lambda/4) rho^4}",
+                "stress_definition": "delta S_m=-(1/2) int sqrt(-g) T_mn delta g^mn",
+                "weyl_variation_identity": "delta int sqrt(-g) C^2=4 int sqrt(-g) B_mn delta g^mn in the producer curvature convention",
+                "reduced_variation_factors": {
+                    "lapse": 4,
+                    "horizontal_scale": 4,
+                    "vertical_scale": 4
+                },
             },
             "berger_geometry": {
                 "scalar_curvature": "R=(4a^2-c^2)/(2a^4)",
@@ -411,6 +472,7 @@ class PositiveBergerClockBackground:
                     "(a^2-c^2)(a^2-3c^2)/(6a^8)",
                     "(a^2-c^2)(5c^2-a^2)/(6a^8)",
                 ],
+                "weyl_squared": "4(a^2-c^2)^2/(3a^8)",
                 "bach_trace": "ZERO",
                 "bach_symmetric": True,
                 "nonconformally_flat_on_solution_interval": True,
@@ -612,6 +674,38 @@ positive branch is
 
 The scalar equations and all three independent metric equations vanish
 coefficientwise.
+
+## Frozen action normalization
+
+In the curvature convention used by the producer,
+
+\[
+C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}
+=\frac{4(a^2-c^2)^2}{3a^8},
+\]
+
+and independent lapse, horizontal-scale, and vertical-scale variations all
+give the same exact identity
+
+\[
+\delta\!\int\sqrt{-g}\,C^2
+=4\int\sqrt{-g}\,B_{\mu\nu}\,\delta g^{\mu\nu}.
+\]
+
+Therefore the authoritative action convention is
+
+\[
+S=\int\sqrt{-g}\left[
+\frac{\alpha_B}{8}C^2
+-\frac12\sum_A(\nabla T_A)^2
+-\frac{R}{12}\rho^2
+-\frac{\lambda}{4}\rho^4
+\right],
+\]
+
+with \(T_{\mu\nu}=-2\,\delta S_m/\delta g^{\mu\nu}\). Its metric equation is
+exactly \(\alpha_BB_{\mu\nu}=T_{\mu\nu}\). This replaces the earlier informal
+action-sign dictionary; it does not change the certified field equations.
 
 ## Health of the clock matter
 

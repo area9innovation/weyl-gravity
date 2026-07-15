@@ -24,7 +24,18 @@ class BergerClockChargeSeedTests(unittest.TestCase):
     def test_rational_fixture(self) -> None:
         fixture = self.payload["rational_fixture"]
         self.assertEqual(fixture["charge_density"], "3/4")
-        self.assertEqual(fixture["integrated_charge"], "9 sqrt(10)/80")
+        self.assertEqual(fixture["integrated_charge"], "9 pi^2 sqrt(10)/5")
+
+    def test_fixed_coupling_and_covariant_current_audits(self) -> None:
+        fixed = self.payload["fixed_coupling_audit"]
+        current = self.payload["covariant_current_audit"]
+        helical = self.payload["helical_presymplectic_audit"]
+        self.assertTrue(fixed["derivative_nonzero_on_interval"])
+        self.assertEqual(fixed["stationary_fixed_coupling_consequence"], "delta q=0")
+        self.assertTrue(current["derived_from_action"])
+        self.assertEqual(current["presymplectic_identity"], "Omega_m(delta,R)=delta Q_R")
+        self.assertIn("omega delta Q_R", helical["identity"])
+        self.assertFalse(helical["allowed_delta_Q_tangent_constructed"])
 
     def test_total_D_verdict_remains_open(self) -> None:
         self.assertIsNone(self.payload["scientific_verdict"])

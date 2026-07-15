@@ -7,7 +7,9 @@
   "required": [
     "schema", "result_id", "setting_id", "phase_space_id", "claim_status",
     "scientific_verdict", "dependency_tags", "conventions", "exact_identities",
-    "clock_interpretation", "rational_fixture", "flags", "next_gate",
+    "fixed_coupling_audit", "covariant_current_audit",
+    "helical_presymplectic_audit", "clock_interpretation",
+    "rational_fixture", "flags", "next_gate",
     "not_established", "claim_boundary"
   ],
   "properties": {
@@ -20,6 +22,9 @@
     "dependency_tags": {"type": "array", "items": {"type": "string"}, "minItems": 2},
     "conventions": {"type": "object"},
     "exact_identities": {"type": "object"},
+    "fixed_coupling_audit": {"type": "object"},
+    "covariant_current_audit": {"type": "object"},
+    "helical_presymplectic_audit": {"type": "object"},
     "clock_interpretation": {"type": "object"},
     "rational_fixture": {"type": "object"},
     "flags": {"type": "object"},

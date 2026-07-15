@@ -15,7 +15,8 @@
       "(2a^2-c^2)/(2a^4)",
       "c^2/(2a^4)"
     ],
-    "scalar_curvature": "R=(4a^2-c^2)/(2a^4)"
+    "scalar_curvature": "R=(4a^2-c^2)/(2a^4)",
+    "weyl_squared": "4(a^2-c^2)^2/(3a^8)"
   },
   "claim_boundary": "This certificate proves an exact open family of smooth non-conformally-flat Bach-sourced backgrounds with a positive-energy rotating conformal-scalar phase clock and a positive quartic potential. It does not yet prove that D is gauge on the full perturbative covariant phase space; that requires the separate charge and all-row BV audit.",
   "claim_status": "CERTIFIED_EXACT_BACKGROUND",
@@ -34,13 +35,20 @@
     "target_metric": "d rho^2+rho^2 d theta^2"
   },
   "conventions": {
-    "common_action_convention": "alpha_B=4 alpha_g for S_W=-alpha_g integral C^2, subject to the repository's overall Bach sign convention",
+    "authoritative_action": "S=int sqrt(-g){(alpha_B/8) C_mnrs C^mnrs -(1/2) sum_A nabla T_A.nabla T_A -(R/12) rho^2 -(lambda/4) rho^4}",
     "matter": "two real standard-sign conformal scalars with O(2)-invariant potential lambda(T_1^2+T_2^2)^2/4",
     "maurer_cartan": "[e1,e2]=(c/a^2)e3, [e2,e3]=(1/c)e1, [e3,e1]=(1/c)e2",
     "metric": "g=-dt^2+a^2(sigma_1^2+sigma_2^2)+c^2 sigma_3^2",
     "metric_equation": "alpha_B B_mn=T_mn with alpha_B>0",
     "metric_signature": "(-,+,+,+)",
-    "squashing": "q=c^2/a^2"
+    "reduced_variation_factors": {
+      "horizontal_scale": 4,
+      "lapse": 4,
+      "vertical_scale": 4
+    },
+    "squashing": "q=c^2/a^2",
+    "stress_definition": "delta S_m=-(1/2) int sqrt(-g) T_mn delta g^mn",
+    "weyl_variation_identity": "delta int sqrt(-g) C^2=4 int sqrt(-g) B_mn delta g^mn in the producer curvature convention"
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
