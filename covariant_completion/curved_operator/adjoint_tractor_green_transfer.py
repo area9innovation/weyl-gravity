@@ -167,16 +167,31 @@ class AdjointTractorGreenTransfer:
         )
 
         required_curved_keys = (
-            "curved_cylinder_BGG_chain_maps_exact",
+            "curved_BGG_chain_maps_exact",
             "curved_differential_homotopy_exact",
-            "full_Bach_coefficient_match",
-            "support_local_differential_maps",
+            "endpoint_Bach_operator_match",
+            "support_local",
             "cyclic_i_sharp_equals_p",
-            "p_i_equals_identity",
+        )
+        curved_boundary = (
+            curved_bgg_certificate.get("theorem_boundary")
+            if curved_bgg_certificate is not None
+            else None
+        )
+        curved_schema_valid = bool(
+            curved_bgg_certificate is not None
+            and curved_bgg_certificate.get("schema_version") == 1
+            and curved_bgg_certificate.get("dependency_tag")
+            == "LORENTZIAN-CAUSAL"
+            and curved_bgg_certificate.get("fail_closed") is True
+            and isinstance(curved_boundary, Mapping)
+            and curved_boundary.get("parent_green_homotopy_transferred")
+            is False
         )
         curved_ready = bool(
-            curved_bgg_certificate is not None
-            and all(curved_bgg_certificate.get(key) is True for key in required_curved_keys)
+            curved_schema_valid
+            and isinstance(curved_boundary, Mapping)
+            and all(curved_boundary.get(key) is True for key in required_curved_keys)
         )
         endpoint_ready = curved_ready
 
@@ -249,6 +264,19 @@ class AdjointTractorGreenTransfer:
             "curved_BGG_gate": {
                 "current_screen_boundary_open": screen_open,
                 "future_certificate_supplied": curved_bgg_certificate is not None,
+                "authoritative_future_filename": (
+                    "adjoint_tractor_bgg_curved_pbw.json"
+                ),
+                "required_future_schema_version": 1,
+                "future_certificate_schema_valid": curved_schema_valid,
+                "upstream_transfer_flag_remains_false": (
+                    isinstance(curved_boundary, Mapping)
+                    and curved_boundary.get("parent_green_homotopy_transferred")
+                    is False
+                ),
+                "future_certificate_sha256": (
+                    dependencies.get("curved_bgg")
+                ),
                 "required_true_keys": list(required_curved_keys),
                 "all_required_keys_true": curved_ready,
                 "current_commuting_derivative_defect_entries": (

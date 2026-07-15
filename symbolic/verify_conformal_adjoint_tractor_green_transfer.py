@@ -107,6 +107,65 @@ def main() -> int:
             and certificate["status_flags_promoted"] == []
         ),
     }
+    forged = {
+        "schema_version": 999,
+        "dependency_tag": "LORENTZIAN-CAUSAL",
+        "fail_closed": True,
+        "theorem_boundary": {
+            key: True
+            for key in certificate["curved_BGG_gate"]["required_true_keys"]
+        },
+    }
+    forged_result = theorem.certificate(
+        kostant_certificate=_load("adjoint_tractor_kostant_compression.json"),
+        differential_screen_certificate=_load(
+            "adjoint_tractor_bgg_differential_screen.json"
+        ),
+        endpoint_certificate=_load(
+            "curved_prolonged_metric_endpoint_complex.json"
+        ),
+        endpoint_filtration_certificate=_load(
+            "curved_endpoint_green_filtration_boundary.json"
+        ),
+        curved_bgg_certificate=forged,
+    )
+    checks["wrong future schema cannot promote"] = (
+        forged_result["curved_BGG_gate"]["future_certificate_schema_valid"]
+        is False
+        and forged_result["causal_green_homotopy"] is False
+    )
+    valid_future = {
+        "schema_version": 1,
+        "dependency_tag": "LORENTZIAN-CAUSAL",
+        "fail_closed": True,
+        "theorem_boundary": {
+            **{
+                key: True
+                for key in certificate["curved_BGG_gate"]["required_true_keys"]
+            },
+            "parent_green_homotopy_transferred": False,
+        },
+    }
+    valid_future_result = theorem.certificate(
+        kostant_certificate=_load("adjoint_tractor_kostant_compression.json"),
+        differential_screen_certificate=_load(
+            "adjoint_tractor_bgg_differential_screen.json"
+        ),
+        endpoint_certificate=_load(
+            "curved_prolonged_metric_endpoint_complex.json"
+        ),
+        endpoint_filtration_certificate=_load(
+            "curved_endpoint_green_filtration_boundary.json"
+        ),
+        curved_bgg_certificate=valid_future,
+    )
+    checks["exact future contract promotes downstream transfer"] = (
+        valid_future_result["curved_BGG_gate"]["future_certificate_schema_valid"]
+        is True
+        and valid_future_result["curved_BGG_gate"]["all_required_keys_true"]
+        is True
+        and valid_future_result["causal_green_homotopy"] is True
+    )
     if args.curved_bgg is not None:
         checks["supplied curved certificate controls promotion"] = (
             certificate["causal_green_homotopy"]
