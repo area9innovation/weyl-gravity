@@ -1,0 +1,419 @@
+{
+  "algorithm": {
+    "hand_fitted": false,
+    "inequality": "order+w_source-w_target <= 0",
+    "normalization": "all G[9] weights fixed to zero",
+    "objective": "componentwise minimal target weights",
+    "type": "integer longest paths in the acyclic map diagram"
+  },
+  "causal_strata": {
+    "generic_(2,1,3,5)": {
+      "cohomology_defined": true,
+      "cohomology_ranks": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "differential_ranks": [
+        9,
+        15,
+        35,
+        14
+      ],
+      "square_ranks": [
+        0,
+        0,
+        0
+      ]
+    },
+    "null_(1,1,0,0)": {
+      "cohomology_defined": true,
+      "cohomology_ranks": [
+        0,
+        4,
+        8,
+        4,
+        0
+      ],
+      "differential_ranks": [
+        9,
+        11,
+        31,
+        14
+      ],
+      "square_ranks": [
+        0,
+        0,
+        0
+      ]
+    },
+    "spacelike_(0,1,0,0)": {
+      "cohomology_defined": true,
+      "cohomology_ranks": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "differential_ranks": [
+        9,
+        15,
+        35,
+        14
+      ],
+      "square_ranks": [
+        0,
+        0,
+        0
+      ]
+    },
+    "temporal_(1,0,0,0)": {
+      "cohomology_defined": true,
+      "cohomology_ranks": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "differential_ranks": [
+        9,
+        15,
+        35,
+        14
+      ],
+      "square_ranks": [
+        0,
+        0,
+        0
+      ]
+    },
+    "timelike_(2,1,0,0)": {
+      "cohomology_defined": true,
+      "cohomology_ranks": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "differential_ranks": [
+        9,
+        15,
+        35,
+        14
+      ],
+      "square_ranks": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "corrected_retract_maps": {
+    "Anew": "A_core p_equation",
+    "Bnew": "B_core p_identity with derivative Weyl column",
+    "Tnew": "T_core p_field; degree-zero unchanged",
+    "full_T_lower_order_bound_certified": true
+  },
+  "decision": {
+    "all_terms_filtered_degree_nonpositive": true,
+    "causal_green_homotopy": false,
+    "common_integer_Rees_weights_found": true,
+    "degree_zero_associated_graded_is_a_complex": true,
+    "prolonged_green_witness": false,
+    "rank14_SDR_constructed": false,
+    "support_local_contraction_constructed": false
+  },
+  "degree_zero_cone": {
+    "cohomology_computed_after_d2": true,
+    "degree_ranks": [
+      9,
+      24,
+      50,
+      49,
+      14
+    ],
+    "differential_shapes": [
+      [
+        24,
+        9
+      ],
+      [
+        50,
+        24
+      ],
+      [
+        49,
+        50
+      ],
+      [
+        14,
+        49
+      ]
+    ],
+    "is_complex": true,
+    "square_nonzero_entries": [
+      0,
+      0,
+      0
+    ]
+  },
+  "fail_closed": true,
+  "interpretation": {
+    "claim": "the corrected associated-graded cone is exact off the null characteristic set and carries a 4-8-4 null module",
+    "generic_noncharacteristic_acyclic": true,
+    "null_Euler_characteristic": 0,
+    "null_cohomology_ranks_by_degree": [
+      0,
+      4,
+      8,
+      4,
+      0
+    ],
+    "timelike_spacelike_temporal_acyclic": true
+  },
+  "map_layers": {
+    "A": {
+      "degree_zero_nonzero_entries": 82,
+      "degree_zero_sha256": "393c6e4c2e3112d4ce1b38d4b592b464eebc46b7e3e95f13ba0daf6a4b6f0f09",
+      "emitted_degrees": [
+        0,
+        -2
+      ],
+      "positive_degree_terms": 0
+    },
+    "B": {
+      "degree_zero_nonzero_entries": 16,
+      "degree_zero_sha256": "92d05ae417bb3fab3ec27d75ca2f8e544635921c3592f1d46b1dbb7bc9a8cdfe",
+      "emitted_degrees": [
+        0,
+        -1,
+        -2
+      ],
+      "positive_degree_terms": 0
+    },
+    "C": {
+      "degree_zero_nonzero_entries": 88,
+      "degree_zero_sha256": "4df1b677aa92d3b0eccf3e615e196a2df251d24ce51bfb4e6f03c3119eeebb01",
+      "emitted_degrees": [
+        0,
+        -1
+      ],
+      "positive_degree_terms": 0
+    },
+    "E": {
+      "degree_zero_nonzero_entries": 192,
+      "degree_zero_sha256": "de68e21caba2f676ae4813ee1fc2e8eddffd03fb39c4a9707b7e222119250348",
+      "emitted_degrees": [
+        0,
+        -1,
+        -2
+      ],
+      "positive_degree_terms": 0
+    },
+    "Ewc": {
+      "degree_zero_nonzero_entries": 224,
+      "degree_zero_sha256": "310967a9619db0a018eedd36b2e8d0c56b59f2b32231cb3338eba117eef082e9",
+      "emitted_degrees": [
+        0,
+        -2
+      ],
+      "positive_degree_terms": 0
+    },
+    "K": {
+      "degree_zero_nonzero_entries": 52,
+      "degree_zero_sha256": "85ca3dce86b40862a100708d6618da2ccb49d59cbace544a9800d0726b63d936",
+      "emitted_degrees": [
+        0,
+        -1
+      ],
+      "positive_degree_terms": 0
+    },
+    "N": {
+      "degree_zero_nonzero_entries": 106,
+      "degree_zero_sha256": "ef89da2f38eca403b8b32aa3b280c1648ef0ba2c5a27955d01874934d7c74abf",
+      "emitted_degrees": [
+        0,
+        -2
+      ],
+      "positive_degree_terms": 0
+    },
+    "T": {
+      "degree_zero_nonzero_entries": 206,
+      "degree_zero_sha256": "34b88c3d3b9a2307bf4e8fbcd1fb0180232579409e8c44fce5401390628bef0d",
+      "emitted_degrees": [
+        0
+      ],
+      "positive_degree_terms": 0
+    }
+  },
+  "next_exact_step": "identify the 4-8-4 null module under the little group and lift the corrected filtration through curved PBW composition",
+  "schema": "pure-weyl-rank14-corrected-rees-weights-v1",
+  "status_flags_promoted": [],
+  "weights": {
+    "E": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "G": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "I": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "J": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "M": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Q": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "U": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ]
+  }
+}
