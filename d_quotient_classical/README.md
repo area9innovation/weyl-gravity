@@ -80,6 +80,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS.json`](certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS.json)
 - Clock-reattached principal-witness report:
   [`reports/berger-clock-reattached-principal-witness.md`](reports/berger-clock-reattached-principal-witness.md)
+- Portable all-row 34-component minimal contraction:
+  [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
+- Portable minimal-contraction report:
+  [`reports/berger-minimal-34-portable-contraction.md`](reports/berger-minimal-34-portable-contraction.md)
 
 The only scientific verdicts are:
 
@@ -204,6 +208,13 @@ consumer deliberately starts from the frozen PBW coefficient table and
 checks digests, adjoints, Noether compositions, cyclicity, and nilpotency. It
 does **not** independently rederive the Bach expansion from the action. These
 are two distinct audit layers and must not be conflated.
+
+The portable 34-row certificate now closes the combined minimal contraction
+requested by downstream teams. It exports `classical_unary_q1` together with
+the exact support-local maps `iota_cl`, `pi_cl`, and `S_cl`. It does not close
+the overall handoff: nonminimal rows, `classical_binary_q2`, local
+`D_action_cl`, the general Koszul--Tate package, and causal/Hadamard data
+remain explicitly false.
 
 ## Promotion rule
 

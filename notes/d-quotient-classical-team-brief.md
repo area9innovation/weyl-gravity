@@ -269,6 +269,18 @@ producer derives the Bach PBW expansion from the action, while the independent
 consumer verifies the frozen coefficients and their algebraic BV identities
 without independently rederiving the action Hessian.
 
+The combined minimal unary item is now complete:
+
+```text
+BERGER_COMBINED_MINIMAL_CONTRACTION_ALL_34_ROWS = true
+```
+
+The portable certificate exports `classical_unary_q1` and the exact
+\((\iota_{\rm cl},\pi_{\rm cl},S_{\rm cl})\) on all thirty-four minimal rows.
+The downstream wishlist remains fail-closed for nonminimal gauge fixing,
+support-local \(\ell^{\rm cl}_2\), local \(D\)-equivariance, the general
+Koszul--Tate export, causal Green operators, and Hadamard data.
+
 Begin with a conformally coupled scalar \(T\).  Define a domain on which it is a
 valid clock and construct complete observables
 

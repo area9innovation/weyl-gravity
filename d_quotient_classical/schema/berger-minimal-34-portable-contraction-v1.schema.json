@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-minimal-34-portable-contraction-v1.schema.json",
+  "title": "Portable 34-row minimal Berger contraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "operator_semantics", "row_layout",
+    "classical_unary_q1", "retained_unary", "contraction", "exact_checks",
+    "flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-minimal-34-portable-contraction-v1"},
+    "result_id": {"const": "BERGER_MINIMAL_34_PORTABLE_CONTRACTION"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "claim_status": {"const": "CERTIFIED_COMPLETE_MINIMAL_UNARY_CONTRACTION"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object"},
+    "operator_semantics": {"type": "object"},
+    "row_layout": {"type": "object"},
+    "classical_unary_q1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["K_full", "H_full", "minus_K_full_sharp", "total_matrix"],
+      "properties": {
+        "K_full": {"$ref": "#/$defs/operator12x5"},
+        "H_full": {"$ref": "#/$defs/operator12x12"},
+        "minus_K_full_sharp": {"$ref": "#/$defs/operator5x12"},
+        "total_matrix": {"$ref": "#/$defs/operator34x34"}
+      }
+    },
+    "retained_unary": {"$ref": "#/$defs/operator26x26"},
+    "contraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "iota_cl", "pi_cl", "S_cl", "P_retained", "P_clock", "identity",
+        "side_conditions", "support_local", "maximum_differential_order",
+        "cyclic"
+      ],
+      "properties": {
+        "iota_cl": {"$ref": "#/$defs/operator34x26"},
+        "pi_cl": {"$ref": "#/$defs/operator26x34"},
+        "S_cl": {"$ref": "#/$defs/operator34x34"},
+        "P_retained": {"$ref": "#/$defs/operator34x34"},
+        "P_clock": {"$ref": "#/$defs/operator34x34"},
+        "identity": {"type": "string", "minLength": 1},
+        "side_conditions": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+        "support_local": {"const": true},
+        "maximum_differential_order": {"const": 0},
+        "cyclic": {"const": true}
+      }
+    },
+    "exact_checks": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "operator12x5": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [12, 5]}}}]},
+    "operator12x12": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [12, 12]}}}]},
+    "operator5x12": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [5, 12]}}}]},
+    "operator34x34": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [34, 34]}}}]},
+    "operator26x26": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [26, 26]}}}]},
+    "operator34x26": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [34, 26]}}}]},
+    "operator26x34": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [26, 34]}}}]},
+    "pbwOperatorRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {
+          "type": "array",
+          "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/pbwMatrixEntry"}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "pbwMatrixEntry": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "integer", "minimum": 0},
+        {"type": "integer", "minimum": 0},
+        {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/pbwTerm"}}
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "pbwTerm": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "array",
+          "prefixItems": [
+            {"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0},
+            {"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        },
+        {"type": "string", "minLength": 1}
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    }
+  }
+}

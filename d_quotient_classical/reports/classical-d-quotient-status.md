@@ -196,7 +196,7 @@ generators are not a Lie subalgebra. The exact obstruction is
 | Vacuum cylinder | `SECTOR_DEPENDENT` on the declared sectors | certified baseline | certified baseline | zero only in selected absolute residual \(H^4\) | \(I_2\) on centered degree-four classes | open in this challenge record |
 | Cylinder + scalar clock | one-real-scalar exact-cylinder candidate `OBSTRUCTED` | `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` |
 | Cylinder + neutral clock pair | `D_GAUGE` on `compact_neutral_clock_pair_homogeneous` | `OPEN` | `OPEN` | `OPEN` | unrestricted reference pairing is indefinite | `OPEN` |
-| Positive Berger clock | `D_GAUGE` on the smooth fixed-coupling linearized phase space | complete support-local cyclic 26-row minimal (q_1), clock SDR, and reattached principal witness certified | full 10-metric/5-ghost scalar-biwave principal completion; curved witness and total homotopy `OPEN` | `OPEN` | helical current and complete minimal cyclic pairing exact; full transport open | `OPEN` |
+| Positive Berger clock | `D_GAUGE` on the smooth fixed-coupling linearized phase space | portable 34-row classical unary operator and all-row contraction onto the exact 26-row retained complex certified | full 10-metric/5-ghost scalar-biwave principal completion; curved witness and total homotopy `OPEN` | `OPEN` | helical current and complete minimal cyclic pairing exact; full transport open | `OPEN` |
 | Cylinder + Yang--Mills | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Weakly deformed background | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Lorentzian dS/AdS | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
@@ -216,6 +216,9 @@ status promotion.
    curved PBW orders, build the 34-row causal homotopy, transport it through
    the clock SDR, and only then add nonminimal direct summands. Nonlinear
    \(q_2\) and the arity-two \(D\)-Cartan contraction remain downstream.
+   The combined contraction on all 34 minimal rows is no longer open; it is
+   exported portably as `classical_unary_q1` with
+   \((\iota_{\rm cl},\pi_{\rm cl},S_{\rm cl})\).
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
 3. Compute the first background-deformation obstruction and a quantitative
