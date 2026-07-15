@@ -12,21 +12,21 @@
     "the charge vanishes on the exact sector proposed for quotienting",
     "the zero-charge transformations close as a Lie algebra or declared algebroid",
     "the classical Cartan and causal homotopies exist in the declared support category",
-    "Berger retained q1 coefficients and nonminimal rows remain open after the typed layout freeze",
+    "Berger retained minimal q1 and the reattached scalar-biwave principal witness are complete; curved witness terms, total causal homotopy, nonminimal rows, q2, and arity-two stability remain open",
     "interacting promotion requires a corrected Cartan homotopy",
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
   "next_shared_gate": {
-    "gate_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+    "gate_id": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
     "owner_order": [
       "classical",
       "nonlinear",
       "quantum",
       "einstein_boundary"
     ],
-    "rule": "The fixed-coupling D_GAUGE gate, eight-row clock SDR, and typed 26-row retained layout are complete. Construct the coefficientwise retained minimal operator before the separate nonminimal, causal, and stability gates, without weakening CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT."
+    "rule": "The fixed-coupling D_GAUGE gate, clock SDR, complete retained minimal q1, causal endpoint factors, and reattached scalar-biwave principal witness are complete. Construct the curved lower-order witness and total causal homotopy without weakening the separate nonminimal, q2, arity-two, or Einstein-incidence gates."
   },
-  "programme_base_commit": "02d5b560649d6199d82ec0ff66ceb75844276567",
+  "programme_base_commit": "82c569772bb38ef568828aabd11b522295e3233c",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -165,6 +165,15 @@
       "setting_id": "compact_positive_berger_clock_retained_minimal_layout",
       "status": "CERTIFIED",
       "verdict": "RETAINED_MINIMAL_LAYOUT_FROZEN"
+    },
+    {
+      "boundary_conditions": "closed Berger S3; certified positive-clock background; same clock stress in the tested Einstein equation",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+      "setting_id": "compact_positive_berger_clock_einstein_incidence",
+      "status": "CERTIFIED",
+      "verdict": "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -713,6 +722,47 @@
       "sha256": "9205daeb857021cdb883a10e3367691c4168ea7ef7b9d7b7589df1906758cf77"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-berger-incidence.json",
+      "payload": {
+        "boundary_conditions": "closed Berger S3; certified open squashing interval; fixed positive Weyl coupling and the same rotating conformal-clock stress",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the certified positive Berger clock background is not Einstein",
+          "nonzero B_00 rules out conformal Einstein incidence",
+          "the exact trace-free-Ricci/Bach minor -q(1-q)/(8a^6) rules out Einstein gravity with the same clock stress for every constant kappa and Lambda",
+          "the complete retained Berger minimal q1 is a genuine non-Einstein Weyl--matter branch rather than a same-base-point Einstein tangent subcomplex"
+        ],
+        "evidence": {
+          "commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
+          "path": "bridge/certificates/berger_einstein_incidence.json",
+          "sha256": "6ab941dbf3312bcc991dc0de59be30853f876e4599414196a3ae21c967c863b4"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "select a different common Einstein--matter/Weyl--matter background before attempting a tangent-complex inclusion; continue Berger curved-witness and causal work as a Weyl--matter rail",
+        "not_established": [
+          "a universal obstruction to Einstein--matter backgrounds",
+          "a matter-BV lift into the flat external-source Ward complex",
+          "a nonminimal, causal, nonlinear, scattering, or quantum theorem"
+        ],
+        "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_positive_berger_clock_einstein_incidence",
+        "team_id": "einstein_boundary",
+        "verdict": "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.berger_einstein_incidence --verify bridge/certificates/berger_einstein_incidence.json",
+          "python3 bridge/einstein_sector/verify_berger_einstein_incidence.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_berger_einstein_incidence"
+        ]
+      },
+      "sha256": "18c97ec0f09c2c920f811c9ff954f1c0a705e8471bbb7282deecd7451df60804"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -800,19 +850,19 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "a9d4a176bc70607af44a08c9341c30a130ae27c6",
+      "commit": "5744d923b898a49bea884e5127768e05cb574b94",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "60b45542e0d5091d0f52bf1a5c4d7376a0d127e1b6ac06301df76faf51a0d89d"
+      "sha256": "761b50bf5bacee37aa100709cb49817499605a2745113801380ee7d707fd3456"
     },
     "einstein_boundary": {
-      "commit": "02d5b560649d6199d82ec0ff66ceb75844276567",
+      "commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
       "path": "bridge/certificates/d_quotient_asymptotic_seed.json",
-      "sha256": "e39cff26bc6b6037eb6d0063899d6612e0c293b6c154aca42ce70881ef009796"
+      "sha256": "ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685"
     },
     "nonlinear": {
-      "commit": "0cf759198ecec847314c777cbb079eaaeea05627",
+      "commit": "cf322df7abc0125ad1e68dc2b2da110a717a5c75",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "e7afa777832424a438fa831acc6e9b6e6b20f4786141b3e42c3e1b1fa8c64c77"
+      "sha256": "504b14dd188aa01831c232296bd8beeffcdeccd6a20dcfd9a421b73ac0bf0a79"
     },
     "quantum": {
       "commit": "2aec6ed91793d136c9a6d80a0f74b2b233775d49",
@@ -822,15 +872,15 @@
   },
   "team_status": [
     {
-      "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. Its eight clock/minimal-dual rows contract exactly, and the typed 26-row retained layout, pairing, allowed q1 blocks, support rules, and order ceilings are frozen.",
-      "next_gate": "construct the retained coefficientwise minimal operator, then the nonminimal rows, causal theory, and stability",
-      "result_state": "BERGER_RETAINED_LAYOUT_CLOSED_OPERATOR_NONMINIMAL_CAUSAL_STABILITY_OPEN",
+      "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The complete retained minimal q1 is exact and cyclic; the retained causal endpoints are Green-hyperbolic and reattaching the clock rows gives a full scalar-biwave principal witness.",
+      "next_gate": "construct the curved clock-reattached witness and total causal homotopy, then reattach nonminimal rows and export q2",
+      "result_state": "BERGER_MINIMAL_Q1_AND_REATTACHED_BIWAVE_PRINCIPAL_CLOSED_CURVED_CAUSAL_OPEN",
       "team_id": "classical",
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem.",
-      "next_gate": "complete a boundary-preserving full Bach phase space and calculate charge and flux",
+      "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is exactly classified as a non-Einstein Weyl--matter branch, so its same-base-point Einstein tangent gate is not applicable.",
+      "next_gate": "complete a boundary-preserving full Bach phase space and calculate charge and flux; use a different common matter background for any Einstein tangent comparison",
       "result_state": "KINEMATICS_PROVED_PHASE_SPACE_OPEN",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"

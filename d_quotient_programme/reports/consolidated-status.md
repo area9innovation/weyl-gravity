@@ -19,17 +19,19 @@ cylinder supports two standard-sign rotating conformal scalars with positive
 quartic potential, dominant-energy stress, timelike phase, and full raw clock
 incidence. Its fixed-coupling linearized charge gate is also closed: the lapse
 constraint fixes \(\delta Q_R=0\), compact averaging excludes an inhomogeneous
-escape, and the scoped verdict is `D_GAUGE`. The all-row BV reduction, causal
-propagation, and stability remain open. The eight temporal/Weyl clock and
-minimal-dual rows now contract support-locally and cyclically; the retained
-coefficientwise and nonminimal rows remain the next BV gate.
+escape, and the scoped verdict is `D_GAUGE`. The clock rows contract
+support-locally and cyclically, the retained minimal `q1` is complete, and the
+reattached full gauge presentation has an exact scalar-biwave principal
+witness. Curved lower-order witness terms, the total causal homotopy,
+nonminimal rows, `q2`, and stability remain open. The Einstein-incidence audit
+separately classifies this background as a non-Einstein Weyl--matter branch.
 
 ## Four-team ledger
 
 | Team | Current verdict | Established | Next gate |
 |---|---|---|---|
-| classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. Its eight clock/minimal-dual rows contract exactly, and the typed 26-row retained layout, pairing, allowed q1 blocks, support rules, and order ceilings are frozen. | construct the retained coefficientwise minimal operator, then the nonminimal rows, causal theory, and stability |
-| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. | complete a boundary-preserving full Bach phase space and calculate charge and flux |
+| classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The complete retained minimal q1 is exact and cyclic; the retained causal endpoints are Green-hyperbolic and reattaching the clock rows gives a full scalar-biwave principal witness. | construct the curved clock-reattached witness and total causal homotopy, then reattach nonminimal rows and export q2 |
+| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is exactly classified as a non-Einstein Weyl--matter branch, so its same-base-point Einstein tangent gate is not applicable. | complete a boundary-preserving full Bach phase space and calculate charge and flux; use a different common matter background for any Einstein tangent comparison |
 | nonlinear | `INPUT_GATE_BLOCKED` | selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked | complete support-local q2 export and solve for iota_D^(2) or retain its obstruction |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered | complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion |
 
@@ -50,6 +52,7 @@ coefficientwise and nonminimal rows remain the next BV gate.
 | compact_positive_berger_clock_fixed_coupling_linearized | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_CHARGE | `CERTIFIED` | `D_GAUGE` |
 | compact_positive_berger_clock_minimal_bv_sdr | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_BV | `CERTIFIED` | `MINIMAL_CLOCK_SECTOR_SDR` |
 | compact_positive_berger_clock_retained_minimal_layout | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_BV | `CERTIFIED` | `RETAINED_MINIMAL_LAYOUT_FROZEN` |
+| compact_positive_berger_clock_einstein_incidence | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_BV | `CERTIFIED` | `EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `INPUT_GATE_BLOCKED` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
@@ -65,7 +68,7 @@ coefficientwise and nonminimal rows remain the next BV gate.
 3. the charge vanishes on the exact sector proposed for quotienting
 4. the zero-charge transformations close as a Lie algebra or declared algebroid
 5. the classical Cartan and causal homotopies exist in the declared support category
-6. Berger retained q1 coefficients and nonminimal rows remain open after the typed layout freeze
+6. Berger retained minimal q1 and the reattached scalar-biwave principal witness are complete; curved witness terms, total causal homotopy, nonminimal rows, q2, and arity-two stability remain open
 7. interacting promotion requires a corrected Cartan homotopy
 8. quantum promotion requires a restored QME and renormalized Ward identity
 
@@ -84,6 +87,7 @@ coefficientwise and nonminimal rows remain the next BV gate.
 | classical | `compact_positive_berger_clock_minimal_bv_sdr` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `MINIMAL_CLOCK_SECTOR_SDR` |
 | classical | `compact_positive_berger_clock_retained_minimal_layout` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `RETAINED_MINIMAL_LAYOUT_FROZEN` |
 | einstein_boundary | `asymptotic_real_cylinder_time` | `H_ESU` | `asymptotically_flat_full_Bach` | `PARTIAL` | `PHASE_SPACE_NOT_CLOSED` |
+| einstein_boundary | `compact_positive_berger_clock_einstein_incidence` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | quantum | `vacuum_cylinder` | `D_compact` | `compact_quantum` | `BLOCKED` | `NO_VERDICT` |
 
@@ -95,13 +99,13 @@ Paper X remains reserved for interaction/quantum stability after its separate
 classical-export and QME gates.
 
 The immediate shared calculation is
-`BERGER_RETAINED_MINIMAL_OPERATOR`: The fixed-coupling D_GAUGE gate, eight-row clock SDR, and typed 26-row retained layout are complete. Construct the coefficientwise retained minimal operator before the separate nonminimal, causal, and stability gates, without weakening CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT.
+`BERGER_CURVED_CLOCK_REATTACHED_WITNESS`: The fixed-coupling D_GAUGE gate, clock SDR, complete retained minimal q1, causal endpoint factors, and reattached scalar-biwave principal witness are complete. Construct the curved lower-order witness and total causal homotopy without weakening the separate nonminimal, q2, arity-two, or Einstein-incidence gates.
 
 ## Imported evidence
 
-- `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `a9d4a176bc70607af44a08c9341c30a130ae27c6`, SHA-256 `60b45542e0d5091d0f52bf1a5c4d7376a0d127e1b6ac06301df76faf51a0d89d`
-- `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `02d5b560649d6199d82ec0ff66ceb75844276567`, SHA-256 `e39cff26bc6b6037eb6d0063899d6612e0c293b6c154aca42ce70881ef009796`
-- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `0cf759198ecec847314c777cbb079eaaeea05627`, SHA-256 `e7afa777832424a438fa831acc6e9b6e6b20f4786141b3e42c3e1b1fa8c64c77`
+- `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `5744d923b898a49bea884e5127768e05cb574b94`, SHA-256 `761b50bf5bacee37aa100709cb49817499605a2745113801380ee7d707fd3456`
+- `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `7e87281c416f4c4f98edfe61ae05829f4b48593a`, SHA-256 `ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685`
+- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `cf322df7abc0125ad1e68dc2b2da110a717a5c75`, SHA-256 `504b14dd188aa01831c232296bd8beeffcdeccd6a20dcfd9a421b73ac0bf0a79`
 - `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `2aec6ed91793d136c9a6d80a0f74b2b233775d49`, SHA-256 `d4c235dd3b28bc9c2934feff035d358855212fd176d5f7da0dedac3a09ef5d9e`
 
 ## Claim boundary

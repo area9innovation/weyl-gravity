@@ -30,6 +30,7 @@ CLASSICAL_BERGER_MINIMAL_BV_CLOCK_SDR_CONTRIBUTION = PACKAGE / "contributions" /
 CLASSICAL_BERGER_RETAINED_MINIMAL_LAYOUT_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-retained-minimal-layout.json"
 NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
 EINSTEIN_ED1A_CONTRIBUTION = PACKAGE / "contributions" / "einstein-ed1a-asymptotic-generator-gate.json"
+EINSTEIN_BERGER_INCIDENCE_CONTRIBUTION = PACKAGE / "contributions" / "einstein-berger-incidence.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -123,6 +124,10 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
             "berger_fixed_coupling_delta_charge",
             "berger_minimal_bv_clock_sdr",
             "berger_retained_minimal_layout",
+            "berger_retained_minimal_operator_preflight",
+            "berger_retained_minimal_operator",
+            "berger_causal_witness_preflight",
+            "berger_clock_reattached_principal_witness",
         ]
     ):
         raise AssertionError("classical scalar-clock obstruction scope drifted")
@@ -548,6 +553,34 @@ def _einstein_ed1a_contribution() -> dict[str, Any]:
     return contribution
 
 
+def _einstein_berger_incidence_contribution() -> dict[str, Any]:
+    contribution = _load(EINSTEIN_BERGER_INCIDENCE_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "einstein_boundary"
+        and contribution.get("setting_id")
+        == "compact_positive_berger_clock_einstein_incidence"
+        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("phase_space_id")
+        == "positive_berger_fixed_coupling_linearized_solutions"
+        and contribution.get("lifecycle_layer") == "CLASSICAL_BV"
+        and contribution.get("claim_status") == "CERTIFIED"
+        and contribution.get("verdict")
+        == "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND"
+        and contribution.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    ):
+        raise AssertionError("Einstein Berger-incidence contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path = evidence.get("path")
+    commit = evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("Einstein Berger-incidence evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("Einstein Berger-incidence evidence hash drifted")
+    return contribution
+
+
 def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     team_data = {team: _load_team_input(path) for team, path in TEAM_PATHS.items()}
     _assert_team_inputs(team_data)
@@ -569,6 +602,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         _classical_berger_retained_minimal_layout_contribution()
     )
     ed1a_contribution = _einstein_ed1a_contribution()
+    berger_incidence_contribution = _einstein_berger_incidence_contribution()
     nd1_contribution = _nonlinear_nd1_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
@@ -644,6 +678,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": ed1a_contribution,
             },
             {
+                "path": str(EINSTEIN_BERGER_INCIDENCE_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_BERGER_INCIDENCE_CONTRIBUTION),
+                "payload": berger_incidence_contribution,
+            },
+            {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
@@ -657,17 +696,17 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "team_status": [
             {
                 "team_id": "classical",
-                "result_state": "BERGER_RETAINED_LAYOUT_CLOSED_OPERATOR_NONMINIMAL_CAUSAL_STABILITY_OPEN",
+                "result_state": "BERGER_MINIMAL_Q1_AND_REATTACHED_BIWAVE_PRINCIPAL_CLOSED_CURVED_CAUSAL_OPEN",
                 "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE",
-                "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. Its eight clock/minimal-dual rows contract exactly, and the typed 26-row retained layout, pairing, allowed q1 blocks, support rules, and order ceilings are frozen.",
-                "next_gate": "construct the retained coefficientwise minimal operator, then the nonminimal rows, causal theory, and stability",
+                "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The complete retained minimal q1 is exact and cyclic; the retained causal endpoints are Green-hyperbolic and reattaching the clock rows gives a full scalar-biwave principal witness.",
+                "next_gate": "construct the curved clock-reattached witness and total causal homotopy, then reattach nonminimal rows and export q2",
             },
             {
                 "team_id": "einstein_boundary",
                 "result_state": "KINEMATICS_PROVED_PHASE_SPACE_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem.",
-                "next_gate": "complete a boundary-preserving full Bach phase space and calculate charge and flux",
+                "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is exactly classified as a non-Einstein Weyl--matter branch, so its same-base-point Einstein tangent gate is not applicable.",
+                "next_gate": "complete a boundary-preserving full Bach phase space and calculate charge and flux; use a different common matter background for any Einstein tangent comparison",
             },
             {
                 "team_id": "nonlinear",
@@ -803,6 +842,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "RETAINED_MINIMAL_LAYOUT_FROZEN",
             },
             {
+                "setting_id": "compact_positive_berger_clock_einstein_incidence",
+                "generator_id": "D_compact",
+                "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+                "boundary_conditions": "closed Berger S3; certified positive-clock background; same clock stress in the tested Einstein equation",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -872,7 +920,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "the charge vanishes on the exact sector proposed for quotienting",
             "the zero-charge transformations close as a Lie algebra or declared algebroid",
             "the classical Cartan and causal homotopies exist in the declared support category",
-            "Berger retained q1 coefficients and nonminimal rows remain open after the typed layout freeze",
+            "Berger retained minimal q1 and the reattached scalar-biwave principal witness are complete; curved witness terms, total causal homotopy, nonminimal rows, q2, and arity-two stability remain open",
             "interacting promotion requires a corrected Cartan homotopy",
             "quantum promotion requires a restored QME and renormalized Ward identity",
         ],
@@ -891,9 +939,9 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
         },
         "next_shared_gate": {
-            "gate_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+            "gate_id": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
             "owner_order": ["classical", "nonlinear", "quantum", "einstein_boundary"],
-            "rule": "The fixed-coupling D_GAUGE gate, eight-row clock SDR, and typed 26-row retained layout are complete. Construct the coefficientwise retained minimal operator before the separate nonminimal, causal, and stability gates, without weakening CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT.",
+            "rule": "The fixed-coupling D_GAUGE gate, clock SDR, complete retained minimal q1, causal endpoint factors, and reattached scalar-biwave principal witness are complete. Construct the curved lower-order witness and total causal homotopy without weakening the separate nonminimal, q2, arity-two, or Einstein-incidence gates.",
         },
         "claim_boundary": (
             "The dossier consolidates sector-indexed results. It does not promote a "
@@ -934,6 +982,16 @@ def validate(data: dict[str, Any]) -> list[str]:
         and quantum_contributions[0].get("verdict") is None
     ):
         errors.append("quantum blocked contribution inventory drifted")
+    einstein_contributions = {
+        record.get("payload", {}).get("setting_id")
+        for record in data.get("team_contributions", [])
+        if record.get("payload", {}).get("team_id") == "einstein_boundary"
+    }
+    if einstein_contributions != {
+        "asymptotic_real_cylinder_time",
+        "compact_positive_berger_clock_einstein_incidence",
+    }:
+        errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
     required = {
         "compact_unrestricted": "D_CHARGED",
@@ -949,6 +1007,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_positive_berger_clock_fixed_coupling_linearized": "D_GAUGE",
         "compact_positive_berger_clock_minimal_bv_sdr": "MINIMAL_CLOCK_SECTOR_SDR",
         "compact_positive_berger_clock_retained_minimal_layout": "RETAINED_MINIMAL_LAYOUT_FROZEN",
+        "compact_positive_berger_clock_einstein_incidence": "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -973,6 +1032,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Berger retained minimal layout was dropped")
     if ledger.get("compact_positive_berger_clock_minimal_bv_sdr", {}).get("status") != "CERTIFIED":
         errors.append("minimal Berger clock BV SDR was dropped")
+    if ledger.get("compact_positive_berger_clock_einstein_incidence", {}).get("status") != "CERTIFIED":
+        errors.append("Berger Einstein-incidence classification was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -1027,10 +1088,12 @@ cylinder supports two standard-sign rotating conformal scalars with positive
 quartic potential, dominant-energy stress, timelike phase, and full raw clock
 incidence. Its fixed-coupling linearized charge gate is also closed: the lapse
 constraint fixes \(\delta Q_R=0\), compact averaging excludes an inhomogeneous
-escape, and the scoped verdict is `D_GAUGE`. The all-row BV reduction, causal
-propagation, and stability remain open. The eight temporal/Weyl clock and
-minimal-dual rows now contract support-locally and cyclically; the retained
-coefficientwise and nonminimal rows remain the next BV gate.
+escape, and the scoped verdict is `D_GAUGE`. The clock rows contract
+support-locally and cyclically, the retained minimal `q1` is complete, and the
+reattached full gauge presentation has an exact scalar-biwave principal
+witness. Curved lower-order witness terms, the total causal homotopy,
+nonminimal rows, `q2`, and stability remain open. The Einstein-incidence audit
+separately classifies this background as a non-Einstein Weyl--matter branch.
 
 ## Four-team ledger
 
@@ -1185,6 +1248,24 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
     mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "asymptotic_real_cylinder_time")["verdict"] = "D_GAUGE"
     reject("promote_asymptotic_generator_before_phase_space", mutant)
+
+    mutant = deepcopy(data)
+    next(
+        row
+        for row in mutant["setting_ledger"]
+        if row["setting_id"]
+        == "compact_positive_berger_clock_einstein_incidence"
+    )["verdict"] = "EINSTEIN_TANGENT_EMBEDDED"
+    reject("promote_Berger_nonincidence_to_tangent_embedding", mutant)
+
+    mutant = deepcopy(data)
+    mutant["team_contributions"] = [
+        record
+        for record in mutant["team_contributions"]
+        if record["payload"]["setting_id"]
+        != "compact_positive_berger_clock_einstein_incidence"
+    ]
+    reject("drop_Berger_Einstein_incidence_contribution", mutant)
 
     mutant = deepcopy(data)
     mutant["publication_plan"]["paper_IX"]["status"] = "ACTIVE_THEOREM_PAPER"

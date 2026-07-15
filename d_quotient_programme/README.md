@@ -43,6 +43,8 @@ because the existing results concern different objects:
 - [`reports/classical-berger-minimal-bv-sdr-registration-receipt.md`](reports/classical-berger-minimal-bv-sdr-registration-receipt.md)
 - [`reports/classical-berger-retained-layout-registration-receipt.md`](reports/classical-berger-retained-layout-registration-receipt.md)
 - [`reports/einstein-ed1a-registration-receipt.md`](reports/einstein-ed1a-registration-receipt.md)
+- [`contributions/einstein-berger-incidence.json`](contributions/einstein-berger-incidence.json)
+- [`reports/einstein-berger-incidence-registration-receipt.md`](reports/einstein-berger-incidence-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -89,10 +91,16 @@ audit closes the tangent question exactly:
 
 Compact spatial averaging excludes an inhomogeneous escape, so `D_GAUGE`
 holds on the declared smooth fixed-coupling linearized Berger phase space.
-The temporal/Weyl clock doublets and all minimal dual rows now also admit an
-exact first-order support-local cyclic SDR, contracting 8 of the 34 minimal
-rows. The typed 26-row retained layout, pairings, allowed `q1` blocks, support
-rules, and order ceilings are also frozen.  The immediate gate is now
-`BERGER_RETAINED_MINIMAL_OPERATOR`; nonminimal completion, causal Green
-homotopies, and stability follow after it. This does not replace the nonlinear team's separate
+The temporal/Weyl clock doublets and all minimal dual rows admit an exact
+first-order support-local cyclic SDR.  The retained 26-row minimal `q1` is now
+coefficientwise exact and cyclic, its endpoint factors are Green-hyperbolic,
+and reattaching the clock rows gives a scalar-biwave principal witness on all
+metric and ghost directions.  The next classical gate is the curved
+clock-reattached witness and total causal homotopy.
+
+The Einstein team has separately proved that this Berger background is a
+genuine non-Einstein Weyl--matter branch.  It is neither Einstein,
+conformally Einstein, nor Einstein with the same clock stress for any
+constant `kappa,Lambda`; therefore its same-base-point Einstein tangent gate
+is `NOT_APPLICABLE`.  This does not replace the nonlinear team's separate
 `CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT` gate.

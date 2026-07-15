@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "closed Berger S3; certified open squashing interval; fixed positive Weyl coupling and the same rotating conformal-clock stress",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "the certified positive Berger clock background is not Einstein",
+    "nonzero B_00 rules out conformal Einstein incidence",
+    "the exact trace-free-Ricci/Bach minor -q(1-q)/(8a^6) rules out Einstein gravity with the same clock stress for every constant kappa and Lambda",
+    "the complete retained Berger minimal q1 is a genuine non-Einstein Weyl--matter branch rather than a same-base-point Einstein tangent subcomplex"
+  ],
+  "evidence": {
+    "commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
+    "path": "bridge/certificates/berger_einstein_incidence.json",
+    "sha256": "6ab941dbf3312bcc991dc0de59be30853f876e4599414196a3ae21c967c863b4"
+  },
+  "generator_id": "D_compact",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "select a different common Einstein--matter/Weyl--matter background before attempting a tangent-complex inclusion; continue Berger curved-witness and causal work as a Weyl--matter rail",
+  "not_established": [
+    "a universal obstruction to Einstein--matter backgrounds",
+    "a matter-BV lift into the flat external-source Ward complex",
+    "a nonminimal, causal, nonlinear, scattering, or quantum theorem"
+  ],
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_positive_berger_clock_einstein_incidence",
+  "team_id": "einstein_boundary",
+  "verdict": "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.berger_einstein_incidence --verify bridge/certificates/berger_einstein_incidence.json",
+    "python3 bridge/einstein_sector/verify_berger_einstein_incidence.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_berger_einstein_incidence"
+  ]
+}
