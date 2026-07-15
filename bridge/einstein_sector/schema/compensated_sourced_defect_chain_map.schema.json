@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "compensated-sourced-defect-chain-map-v1",
+  "title": "Compensated external-source Ward and Einstein-defect chain map",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "dependency_tags", "provenance", "inputs", "domain", "chain_map_theorem",
+    "matrix_export", "compatible_source_fibers", "classification", "verdict",
+    "claim_flags", "missing_object_ledger", "scope_guards", "verification_command"
+  ],
+  "properties": {
+    "schema": {"const": "compensated-sourced-defect-chain-map-v1"},
+    "result_id": {"const": "COMPENSATED_EXTERNAL_SOURCE_DEFECT_CHAIN_MAP"},
+    "result_state": {"const": "UNIVERSAL_SOURCE_WARD_CHAIN_MAP_CERTIFIED_MATTER_BV_LIFT_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "verdict": {"const": "SOURCE_WARD_TO_EINSTEIN_DEFECT_CHAIN_MAP_EXACT_GENERIC_MATTER_BV_NOT_UNIVERSAL"},
+    "compatible_source_fibers": {
+      "type": "object",
+      "required": ["generic", "null", "zero"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -190,9 +190,19 @@ a claim that local or asymptotically flat radiative solutions are absent.
 This is still not the global classical import freeze.  The `p=0` global modes,
 covariant characteristic bundle, physical radiative pairing, gauge-fixed
 nonminimal domain, and causal Green data remain open.  E-D2 should next
-construct or refute the sourced-defect chain map for a declared dynamical
-matter/source complex.  A higher-derivative dressed source is a separately
-labelled coupling, not conventional Einstein equivalence.
+lift the sourced-defect map through a declared dynamical matter BV complex.
+A higher-derivative dressed source is a separately labelled coupling, not
+conventional Einstein equivalence.
+
+The universal part of that gate is now complete in
+`bridge/certificates/compensated_sourced_defect_chain_map.json`.  It constructs
+the external `(T_mn,J_phi)` Ward complex, the exact `Q(T)` obstruction chain
+map, the affine Einstein-defect map, and compatible-source kernel
+representatives.  At a generic symbol, only one of six Ward cycles is
+Einstein-compatible; at a nonzero null symbol, five of six are.  The next E-D2
+gate is narrower and model-dependent: select a matter action, construct its
+full BV complex, and prove its stress/source realization maps into this
+universal Ward complex while preserving `ker Q`.
 
 The minimal BV certificate imports the classical Berger-clock background and
 reduced charge seed by hash.  Those pinned inputs establish an exact
@@ -203,9 +213,12 @@ the stronger scoped verdict `D_GAUGE` on
 `LOCAL-ALGEBRAIC` and `REDUCED-MODE`.
 
 That result is neither identified with the flat Stueckelberg compensator nor
-inserted into the compensated BV differential.  A support-local all-row BV
-retract, causal Green complex, and nonlinear stability theorem remain open;
-the current Berger gate is `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
+inserted into the compensated BV differential.  The subsequent
+`BERGER_MINIMAL_BV_CLOCK_SDR` theorem now contracts the eight temporal/Weyl
+clock and minimal-dual rows support-locally and cyclically, leaving a 26-row
+retained minimal complex.  Its coefficientwise `q1`, nonminimal rows, causal
+Green complex, and stability theorem remain open; the current Berger gate is
+`BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`.
 
 ## Work package E-D3: observables, charges, and scattering
 

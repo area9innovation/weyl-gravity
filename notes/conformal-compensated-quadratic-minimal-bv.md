@@ -222,7 +222,7 @@ complete classical import freeze.  The following remain open:
 - global \(p=0\) Killing and cylinder residual modes;
 - a gauge-fixed nonminimal complex;
 - Green-hyperbolic and Hadamard data;
-- a dynamical matter BV complex and sourced-defect chain map;
+- a dynamical matter BV lift of the universal sourced-defect Ward chain map;
 - null-infinity, scattering, and quantum constructions.
 
 The canonical operator export and the first scoped characteristic result are
@@ -235,8 +235,10 @@ second root, with nondegenerate momentum-reversing odd BV pairings.
 
 That is a scoped symbol snapshot, not the global
 `COMPENSATED_CLASSICAL_IMPORT_FREEZE`.  Covariant characteristic bundles,
-global zero modes, the physical Cauchy/radiative pairing, matter/defect chain
-maps, and nonminimal causal data remain open.
+global zero modes, the physical Cauchy/radiative pairing, the dynamical matter
+BV lift of the defect map, and nonminimal causal data remain open.  The
+universal external-source Ward/defect chain map is now certified separately;
+what remains here is its model-dependent dynamical matter realization.
 
 ## Berger-clock coordination
 
@@ -249,10 +251,11 @@ The two Berger inputs pinned by this certificate establish:
 They were fail-closed before a total-(D) verdict.  Since this certificate was
 issued, the classical programme has additionally certified `D_GAUGE` on the
 specific smooth fixed-coupling linearized Berger phase space, with tags
-`LOCAL-ALGEBRAIC` and `REDUCED-MODE`.  That newer result does not construct a
-support-local all-row BV retract, causal Green complex, or nonlinear stability
-theorem; the current Berger gate is
-`FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
+`LOCAL-ALGEBRAIC` and `REDUCED-MODE`.  It has since also certified a
+support-local cyclic SDR for the eight temporal/Weyl clock and minimal-dual
+rows.  The retained 26-row coefficientwise operator, nonminimal rows, causal
+Green complex, and nonlinear stability theorem remain open; the current
+Berger gate is `BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`.
 
 The Berger phase is a dynamical relational matter clock on a non-flat compact
 background and uses the opposite metric-signature convention.  The coordinate

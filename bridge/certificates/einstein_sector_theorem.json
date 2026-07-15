@@ -88,6 +88,21 @@
       0
     ]
   },
+  "compensated_sourced_defect_chain_map": {
+    "defect_chain_map": "Delta=G1(h_hat)-T/c1 intertwines Diff and divergence rows",
+    "generic_source_dimensions": {
+      "Q_compatible": 1,
+      "ward_cycles": 6
+    },
+    "null_source_dimensions": {
+      "Q_compatible": 5,
+      "ward_cycles": 6
+    },
+    "obstruction_chain_map": "Q(T) intertwines Ward rows exactly",
+    "residual_identity": "E_EW=(c1 I+2 alpha Q)Delta+(2 alpha/c1)Q(T)",
+    "scope": "universal external-source chain theorem only; a matter-inclusive BV lift, causal propagation, nonlinear closure, and scattering remain open",
+    "source_complex": "external (T_mn,J_phi) Diff x Weyl Ward complex"
+  },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
@@ -106,6 +121,10 @@
     "compensated_characteristic_snapshot": {
       "path": "bridge/certificates/compensated_nonzero_characteristic_snapshot.json",
       "sha256": "a690622d5cdd2cb5889aea15b9ca8280b91b345b31bd4a43748fb5e1089fd3dd"
+    },
+    "compensated_sourced_defect_chain_map": {
+      "path": "bridge/certificates/compensated_sourced_defect_chain_map.json",
+      "sha256": "42215bce4769fb49d336a85e94225af01043944e609dea62e8bf58eecfda49f4"
     },
     "completed_residual": {
       "path": "analytic_completion/certificates/completed_H4.json",
@@ -200,7 +219,7 @@
     "status": "NO_MECHANISM_CERTIFIED_IN_THIS_THEOREM"
   },
   "schema": "pure-weyl-einstein-sector-theorem-v1",
-  "source_commit": "25364fb760ed869f193983eb179ad3b120b52557",
+  "source_commit": "0cf75919f37b03328720fa86653ce245f2cfe365",
   "theorem": {
     "conclusions": [
       "every Einstein metric is Bach-flat",

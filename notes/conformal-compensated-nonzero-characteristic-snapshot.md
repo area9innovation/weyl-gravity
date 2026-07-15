@@ -108,9 +108,10 @@ Lorentzian scattering theorem.
 
 1. Covariantize the framewise contractions over each nonzero characteristic
    component.
-2. Construct the matter-inclusive sourced-defect chain map; the preflight
-   already proves that a generic conserved traceless same-source coupling is
-   insufficient.
+2. The universal external-source Ward/defect chain map is now complete in
+   `notes/conformal-compensated-sourced-defect-chain-map.md`.  Next select a
+   dynamical matter model and lift its full BV complex into that Ward complex;
+   the theorem proves that Ward compatibility by itself is insufficient.
 3. Classify the (p=0) modes in each chosen global/boundary function space.
 4. Construct the nonminimal causal complex and its Green/current pairing.
 5. At null infinity, decide which conformal transformations are charged,

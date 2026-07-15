@@ -34,6 +34,10 @@ INPUTS = {
     / "bridge"
     / "certificates"
     / "compensated_nonzero_characteristic_snapshot.json",
+    "compensated_sourced_defect_chain_map": ROOT
+    / "bridge"
+    / "certificates"
+    / "compensated_sourced_defect_chain_map.json",
 }
 
 
@@ -147,6 +151,29 @@ def _verify_inputs(records: dict[str, dict[str, Any]]) -> None:
         "compensated characteristic claim boundary drifted",
     )
 
+    sourced = records["compensated_sourced_defect_chain_map"]
+    _require(
+        sourced.get("result_state")
+        == "UNIVERSAL_SOURCE_WARD_CHAIN_MAP_CERTIFIED_MATTER_BV_LIFT_OPEN"
+        and sourced.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "compensated sourced-defect chain-map scope drifted",
+    )
+    source_flags = sourced.get("claim_flags", {})
+    _require(
+        source_flags.get("bach_obstruction_chain_map_exact") is True
+        and source_flags.get("einstein_defect_chain_map_exact") is True
+        and source_flags.get("matter_inclusive_bv_complex_constructed") is False
+        and source_flags.get("lorentzian_causal_claim") is False,
+        "compensated sourced-defect claim boundary drifted",
+    )
+    source_fibers = sourced.get("compatible_source_fibers", {})
+    _require(
+        source_fibers.get("generic", {}).get("compatible_source_dimension") == 1
+        and source_fibers.get("null", {}).get("compatible_source_dimension") == 5,
+        "compatible-source fiber inventory drifted",
+    )
+
 
 def build_certificate() -> dict[str, Any]:
     records = {name: _load(path) for name, path in INPUTS.items()}
@@ -156,7 +183,7 @@ def build_certificate() -> dict[str, Any]:
         "schema": "pure-weyl-einstein-sector-theorem-v1",
         "result_id": "CLASSICAL_EINSTEIN_SECTOR_THEOREM",
         "result_state": "PROVED_WITH_OPEN_BOUNDARY_RAIL",
-        "source_commit": "25364fb760ed869f193983eb179ad3b120b52557",
+        "source_commit": "0cf75919f37b03328720fa86653ce245f2cfe365",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "theorem": {
             "name": "Einstein locus and closed-cylinder state separation",
@@ -231,6 +258,18 @@ def build_certificate() -> dict[str, Any]:
                 "REDUCED-MODE symbol fibers only; p=0 global modes, the physical "
                 "Cauchy/radiative pairing, global classical freeze, and causal "
                 "scattering remain open"
+            ),
+        },
+        "compensated_sourced_defect_chain_map": {
+            "source_complex": "external (T_mn,J_phi) Diff x Weyl Ward complex",
+            "obstruction_chain_map": "Q(T) intertwines Ward rows exactly",
+            "defect_chain_map": "Delta=G1(h_hat)-T/c1 intertwines Diff and divergence rows",
+            "residual_identity": "E_EW=(c1 I+2 alpha Q)Delta+(2 alpha/c1)Q(T)",
+            "generic_source_dimensions": {"ward_cycles": 6, "Q_compatible": 1},
+            "null_source_dimensions": {"ward_cycles": 6, "Q_compatible": 5},
+            "scope": (
+                "universal external-source chain theorem only; a matter-inclusive "
+                "BV lift, causal propagation, nonlinear closure, and scattering remain open"
             ),
         },
         "classification": {

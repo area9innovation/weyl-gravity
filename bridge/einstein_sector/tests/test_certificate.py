@@ -56,6 +56,14 @@ class EinsteinSectorCertificateTests(unittest.TestCase):
         self.assertIn("p=0 global modes", scoped["scope"])
         self.assertFalse(result["claim_flags"]["asymptotically_flat_scattering_recovered"])
 
+    def test_sourced_defect_chain_map_is_imported_without_matter_bv_promotion(self) -> None:
+        result = certificate.build_certificate()
+        sourced = result["compensated_sourced_defect_chain_map"]
+        self.assertEqual(sourced["generic_source_dimensions"], {"ward_cycles": 6, "Q_compatible": 1})
+        self.assertEqual(sourced["null_source_dimensions"], {"ward_cycles": 6, "Q_compatible": 5})
+        self.assertIn("matter-inclusive BV lift", sourced["scope"])
+        self.assertFalse(result["claim_flags"]["einstein_sector_causally_closed_at_null_infinity"])
+
     def test_altered_certificate_is_rejected(self) -> None:
         payload = certificate.build_certificate()
         payload["claim_flags"]["asymptotically_flat_scattering_recovered"] = True

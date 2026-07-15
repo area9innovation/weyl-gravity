@@ -62,6 +62,10 @@ nonzero-characteristic snapshot.  This changed only the transitive input hash:
 the bootstrap equations, `AF-E1`--`AF-E8` statuses, and all causal/scattering
 claim flags are unchanged.
 
+It was regenerated once more when the Einstein-sector theorem imported the
+universal external-source Ward/defect chain map.  Again only the transitive
+input hash changed; no bootstrap equation or lifecycle flag moved.
+
 Tier 2 regenerated the direct asymptotic and D-quotient consumers.  Existing
 cylinder and residual mathematical inputs were unchanged and checked by
 hash.  Tier 3 was not run because no freeze, release, shared core algebra, or

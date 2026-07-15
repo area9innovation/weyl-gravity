@@ -264,6 +264,16 @@ is nondegenerate, but it is not the physical Cauchy/radiative symplectic form.
 The zero fiber, covariant mass-shell bundle, nonminimal causal complex,
 dynamical matter, and global classical import freeze remain open.
 
+The sourced follow-on in
+`notes/conformal-compensated-sourced-defect-chain-map.md` now constructs the
+universal external-source Ward complex and an exact chain map to the Einstein
+defect.  The full residual identity is
+`E_EW=(c1 I+2 alpha Q)Delta+(2 alpha/c1)Q(T)`.  At a generic representative
+covector, six source Ward cycles exist but only one lies in `ker Q`; at a
+nonzero null covector, five of six do.  This proves at chain level that Ward
+compatibility is weaker than same-source Einstein closure.  It is not yet a
+matter BV complex: that lift depends on a selected matter action.
+
 ## Background inventory
 
 All smooth four-dimensional Einstein metrics survive the pure-Weyl equation,

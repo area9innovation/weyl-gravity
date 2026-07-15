@@ -212,10 +212,16 @@ reported as conventional same-source Einstein equivalence.
    inclusions, projections, homotopies, and momentum-reversing odd BV
    pairings.  The global freeze remains open at the covariant-bundle and zero
    mode gates.
-3. Lift \(\Delta\) to a chain map and classify the admissible dynamical
-   matter/source complex.  This is now the next constructive E-D2 gate.
-4. Construct retarded and advanced defect propagation on declared spaces.
-5. Compute the first nonlinear obstruction and only then pass to null infinity
+3. Lift \(\Delta\) to the universal external-source Ward complex and classify
+   its compatible kernel.  This is now complete in
+   `notes/conformal-compensated-sourced-defect-chain-map.md`: both Ward squares,
+   the sourced residual identity, and exact representative source kernels are
+   certified.
+4. Select a dynamical matter action and prove that its full BV complex maps to
+   the universal source Ward complex.  External spurions are not themselves a
+   matter BV theory.
+5. Construct retarded and advanced defect propagation on declared spaces.
+6. Compute the first nonlinear obstruction and only then pass to null infinity
    and scattering.
 
 The target is explicitly disjunctive: construct a same-source sector on a
