@@ -1,0 +1,78 @@
+{
+  "causal_green_homotopy": false,
+  "curvature_causal_green_operators": false,
+  "curved_BGG_gate": {
+    "all_required_keys_true": false,
+    "current_commuting_derivative_defect_entries": 48,
+    "current_screen_boundary_open": true,
+    "future_certificate_supplied": false,
+    "required_true_keys": [
+      "curved_cylinder_BGG_chain_maps_exact",
+      "curved_differential_homotopy_exact",
+      "full_Bach_coefficient_match",
+      "support_local_differential_maps",
+      "cyclic_i_sharp_equals_p",
+      "p_i_equals_identity"
+    ]
+  },
+  "dependency_sha256": {
+    "differential_screen": "7f8e4e0ed8134dfd46a8a9483ccfe027144e85aecf5093ffdd549b8d134e7848",
+    "endpoint": "584e875444f303643d0408874a92bbe65ce61c07fc78122f00d037d776367771",
+    "endpoint_filtration": "7f0d180064bca9cb0d47b02dfb96201f8ea895026f9ef4c059d8fce5b74fd53d",
+    "kostant": "212a5672ccba9bedfe0fc896a3b92c21c2fbaad04282b331e5a53f519c156701"
+  },
+  "dependency_tag": "LORENTZIAN-CAUSAL",
+  "endpoint_assembly": {
+    "complete_30_row_endpoint_causal_homotopy": false,
+    "formula_when_ready": "direct sum/triangular assembly of the transferred 4-9-9-4 homotopy with the certified four trace/Weyl rows",
+    "trace_Weyl_triangular_channels_already_green": true,
+    "tracefree_parent_transfer_ready": false
+  },
+  "fail_closed": true,
+  "parent_YM_detour": {
+    "Q_parent_G_equals_G_Q_parent": "by two-sided uniqueness and Q_parent P=P Q_parent",
+    "adjoint_relation": "Lambda_parent,+^sharp=Lambda_parent,-",
+    "advanced_retarded_Green_operators": true,
+    "backward_witness": "delta_A, identity, d_A",
+    "bundle_ranks": [
+      15,
+      60,
+      60,
+      15
+    ],
+    "causal_homotopy": "Lambda_parent,+/-=W_parent G_parent,+/-",
+    "degreewise_normally_hyperbolic": true,
+    "differential": "d_A, delta_A d_A, delta_A",
+    "flat_adjoint_tractor_connection": true,
+    "homotopy_identity": "Q_parent Lambda_parent,+/-+Lambda_parent,+/- Q_parent=1",
+    "wave_anticommutator": [
+      "delta_A d_A",
+      "d_A delta_A+delta_A d_A",
+      "d_A delta_A+delta_A d_A",
+      "delta_A d_A"
+    ]
+  },
+  "prolonged_green_witness": false,
+  "proof_boundary": "the parent causal theorem and abstract cyclic transfer are exact; the endpoint conclusion remains false until a future coefficientwise curved BGG SDR certificate satisfies every listed gate",
+  "schema": "pure-weyl-adjoint-tractor-green-transfer-v1",
+  "status_flags_promoted": [],
+  "support_local_prolongation_retract": false,
+  "transfer_theorem": {
+    "adjoint_derivation": "i^sharp=p and p^sharp=i imply Lambda_end,+^sharp=p Lambda_parent,- i",
+    "algebraic_identity_exact": true,
+    "cyclic_adjoint_exact_conditionally": true,
+    "derivation": "q p=p Q, Q i=i q, p i=1 imply q(p Lambda i)+(p Lambda i)q=p(Q Lambda+Lambda Q)i=1",
+    "endpoint_bundle_ranks": [
+      4,
+      9,
+      9,
+      4
+    ],
+    "formula": "Lambda_end,+/-=p Lambda_parent,+/- i",
+    "support_derivation": "finite-order differential pre/postcomposition does not enlarge support, so supp Lambda_end,+/- f is contained in J^+/- supp f"
+  },
+  "warranted_atomic_flags": [
+    "adjoint_tractor_parent_YM_green_homotopy_exact",
+    "cyclic_BGG_green_transfer_theorem_exact"
+  ]
+}
