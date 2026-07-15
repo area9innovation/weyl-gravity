@@ -93,8 +93,8 @@ them is a later computation after both admissible complexes are declared.
 ```text
 command:
   PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -q
-elapsed_seconds: 0.19
-status: PASS (27 tests)
+elapsed_seconds: 0.23
+status: PASS (32 tests, including dossier contribution guards)
 test_tier: 1
 
 command:
@@ -131,3 +131,26 @@ test_tier: 0
 Tier 3 was not run: this is an isolated infrastructure precertificate, changes
 no shared algebraic dependency, and promotes no physical candidate, QME,
 residual-transfer, paper-theorem, or Lorentzian lifecycle state.
+
+## Cross-programme handoff
+
+The quantum team contribution is emitted at
+`quantum-weyl/cartan/contributions/QUANTUM_CARTAN_BLOCKED.json`.  It uses
+`generator_id = D_compact`, `phase_space_id = compact_quantum`, and lifecycle
+`QUANTUM`.  Its claim status is `BLOCKED` and its verdict is null.  The
+evidence certificate is pinned to commit
+`04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61` and SHA-256
+`aa7edc21c7250349531559657d4ec69eee2dd9100de3eedf242a8e29829e874c`.
+
+```text
+command:
+  PYTHONPATH=quantum-weyl python3 -m cartan.contribution --check
+elapsed_seconds: 0.08
+status: PASS
+test_tier: 1
+
+command:
+  python3 d_quotient_programme/verify_programme_status.py --check --guards
+status: PASS (5/5 mutation guards)
+test_tier: 2 targeted dossier-contract audit
+```
