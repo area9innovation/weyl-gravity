@@ -1,0 +1,84 @@
+{
+  "causal_green_homotopy": false,
+  "component_projectors": {
+    "auxiliary": {
+      "H_alg_cyclicity_defect": 0,
+      "P_alg_P_end": "zero",
+      "P_alg_rank": 36,
+      "P_alg_squared_minus_P_alg": "zero",
+      "P_end_rank": 30,
+      "P_end_squared_minus_P_end": "zero",
+      "QH_plus_HQ_minus_P_alg": "zero",
+      "Q_projector_commutators": "zero",
+      "projector_adjoint_defects": 0,
+      "sha256": {
+        "H_alg": "5d92f075c527c3d55bba6f4270b79be369c1a99af6f9031a5bdc829d523d24b6",
+        "P_alg": "0a6233402dab07ed966cabca4b707966b081a4aab1919a53a9e57b2238c63da0",
+        "P_end": "5157fa4953da65a72edfba0afd0bc622326e6cdd9681abd3080d532cbcc06efc"
+      }
+    },
+    "mapping_cylinder": {
+      "H_alg_cyclicity_defect": 0,
+      "P_alg_P_end": "zero",
+      "P_alg_squared_minus_P_alg": "zero",
+      "P_end_squared_minus_P_end": "zero",
+      "QH_plus_HQ_minus_P_alg": "zero",
+      "Q_projector_commutators": "zero",
+      "projector_adjoint_defects": 0
+    }
+  },
+  "composite_SDR": {
+    "D_P_alg_equals_P_alg_D": true,
+    "D_P_end_equals_P_end_D": true,
+    "H_alg": "-k",
+    "P_alg": "1-P_end=Q H_alg+H_alg Q",
+    "P_alg_P_end": "zero",
+    "P_alg_idempotent": true,
+    "P_end": "I_cyl I_aux P_aux P_cyl",
+    "P_end_idempotent": true,
+    "cyclic_and_formally_self_adjoint": true,
+    "homotopy_in_project_convention": "k=k_cyl+I_cyl k_aux P_cyl",
+    "inclusion": "I=I_cyl I_aux",
+    "inverse_Laplacian_or_curl": false,
+    "projection": "P=P_aux P_cyl",
+    "spectral_or_helicity_projector": false,
+    "support_local": true
+  },
+  "curvature_causal_green_operators": false,
+  "fail_closed": true,
+  "input_certificate_sha256": {
+    "curvature_mapping_cylinder_substitution": "b56ba739afdd05548e40c351721e8a39e4776ecb7581a8213e9540faa6c06797",
+    "curved_auxiliary_canonical_split": "fca1c5e2a6c33174c3e6e44241bb898aa351e879c6a9acabdc5b7f31d2022537"
+  },
+  "minimal_dimension_ledger": {
+    "algebraically_contracted": 356,
+    "auxiliary_base": 66,
+    "calculation": "386=66+4*(26+40+14); 356=386-30",
+    "prolonged": 386,
+    "retained_metric_curvature_graph": 30
+  },
+  "prolonged_green_witness": false,
+  "retained_endpoint": {
+    "curvature_to_metric_inverse_used": false,
+    "curvature_variables_retained_as_local_graph_values": true,
+    "description": "the metric BV core embedded as the local curvature graph",
+    "dimension": 30,
+    "next_identity": "construct L_end=Q W_end+W_end Q on im(P_end), prove its finite filtered wave/subsidiary/physical-biwave Green realization, then Gamma=W_end G_end P_end",
+    "required_analytic_blocks": [
+      "Weyl--Cotton L_26 evolution",
+      "Weyl--Cotton S_14 subsidiary system",
+      "physical triangular biwave extension",
+      "gauge/ghost wave blocks",
+      "pointwise contractible blocks"
+    ],
+    "ruled_out_fallback": "the unproved scalar-symbol auxiliary field witness E_aux+K_aux C_aux",
+    "ruled_out_fallback_used": false,
+    "separate_G_end_constructed": false,
+    "separate_W_end_constructed": false
+  },
+  "schema": "pure-weyl-prolonged-hybrid-algebraic-projector-v1",
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": [
+    "prolonged_hybrid_algebraic_projector_exact"
+  ]
+}
