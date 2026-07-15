@@ -1,0 +1,129 @@
+{
+  "canonical_middle_graph_lift_obstruction": {
+    "A_F_support": "A_STF[5] source rows",
+    "T_factorization": "T_core=J_WC W_EB",
+    "canonical_p_F_graph_lift_exists": false,
+    "does_not_rule_out": [
+      "a different curvature backward map",
+      "a witness with off-graph relative-cone components",
+      "a two-way Green-hyperbolic saddle extension",
+      "Green hyperbolicity of the metric BV complex"
+    ],
+    "pi_EB_A_F": "zero",
+    "pi_EB_J_WC": "identity",
+    "polynomial_symbol_identity": true,
+    "proof": "T S=A_F implies W_EB S=pi_EB A_F=0; then T S=J_WC W_EB S=0, contradicting rank(A_F)=5",
+    "rank_A_F": 5,
+    "required_equation": "T_core S=p_F A_core=A_F",
+    "sample_rank_regression": {
+      "generic_(2,1,3,5)": {
+        "intersection_dimension": 0,
+        "rank_A_F": 5,
+        "rank_T": 5,
+        "rank_T_join_A_F": 10
+      },
+      "null_(1,1,0,0)": {
+        "intersection_dimension": 0,
+        "rank_A_F": 5,
+        "rank_T": 5,
+        "rank_T_join_A_F": 10
+      },
+      "spacelike_(0,1,0,0)": {
+        "intersection_dimension": 0,
+        "rank_A_F": 5,
+        "rank_T": 5,
+        "rank_T_join_A_F": 10
+      },
+      "temporal_(1,0,0,0)": {
+        "intersection_dimension": 0,
+        "rank_A_F": 5,
+        "rank_T": 5,
+        "rank_T_join_A_F": 10
+      },
+      "timelike_(2,1,0,0)": {
+        "intersection_dimension": 0,
+        "rank_A_F": 5,
+        "rank_T": 5,
+        "rank_T_join_A_F": 10
+      }
+    },
+    "scope": "the leading Douglis incidence of the canonical zeroth-order Weyl--Cotton backward map p_F"
+  },
+  "certified_endpoint_blocks": {
+    "gauge_ghost": {
+      "advanced_retarded_support": true,
+      "normally_hyperbolic_factors": true,
+      "operator": "T_gauge K_met=Box(Box+2)"
+    },
+    "physical_restriction": {
+      "arbitrary_source_TT_projector_used": false,
+      "extends_to_all_metric_sources": false,
+      "operator": "B_TT=P_minus P_plus",
+      "triangular_biwave_green_formula_exact": true
+    },
+    "weyl_cotton": {
+      "diagonal_blocks": [
+        "L_26",
+        "S_14"
+      ],
+      "sourced_identity": "S K=R L",
+      "symmetric_hyperbolic": true
+    }
+  },
+  "decision": {
+    "actual_L_end_two_sided_Green": false,
+    "actual_W_end_constructed": false,
+    "arbitrary_compact_endpoint_sources_solved": false,
+    "canonical_WC_witness_restricts_to_30_graph": false,
+    "causal_green_homotopy": false,
+    "curvature_causal_green_operators": false,
+    "graded_adjoint_Green_identity_proved": false,
+    "prolonged_green_witness": false
+  },
+  "dependency_tag": "LORENTZIAN-CAUSAL",
+  "fail_closed": true,
+  "input_certificate_sha256": {
+    "TT_biwave": "b1f9c750a6af28128eab034f68ecfd7e9400c2d301a571ce44f34be10da2b41b",
+    "curved_core_chain_map": "78164e0c98d27819dbea2cc1597c387b6496a5ef47e67d196fcc9b34a8cdff15",
+    "ghost_biwave": "d5832e7d0be7c062c03b0649073de7579b98c1fc11b0c770993bd985fc6f2d34",
+    "hybrid_projector": "c3867f2de2c3bff40f36d5ce8d8875119202acc24f4085f5905bede1ae0c5ade",
+    "weyl_cotton_witness": "b068819251fd2211d545697fe2ac8f9fa240922b8f01b480db9e4db790ec8889"
+  },
+  "minimum_remaining_operator_identity": {
+    "forbidden_shortcuts": [
+      "TT or helicity projector",
+      "inverse curl",
+      "inverse Laplacian",
+      "curvature-only metric reconstruction"
+    ],
+    "preferred_relative_form": "construct W_rel with (1-P_end) W_rel P_end nonzero and L_rel=Q W_rel+W_rel Q a finite filtered extension of L_26, S_14, the ghost waves and the physical biwave",
+    "required_adjoint_statement": "W_rel is graded cyclic (or has a certified adjoint witness) and G_rel,+^sharp equals the graded G_rel,-",
+    "required_source_statement": "for every compact endpoint source, the same-sided Green solution returns to the curvature graph and its sourced subsidiary defect vanishes"
+  },
+  "retained_endpoint": {
+    "complex": "G_met[5] -> M_met[10] -> E_met[10] -> I_met[5]",
+    "curvature_inverse_used": false,
+    "dimension": 30,
+    "embedding": "local metric-curvature graph",
+    "projector_support_local": true
+  },
+  "schema": "pure-weyl-endpoint-curvature-graph-lift-boundary-v1",
+  "status_flags_promoted": [],
+  "upper_graph_lift": {
+    "R_nonzero_entries": 4,
+    "R_rank": 4,
+    "R_sha256": "4d087c9bee49189f33df7d92269cd6b7bc9aa734e22b61365113409ae4b64eef",
+    "R_shape": [
+      10,
+      5
+    ],
+    "exact": true,
+    "finite_order": 0,
+    "support_local": true,
+    "target_equation": "A_core R=i_C B_core"
+  },
+  "warranted_atomic_flags": [
+    "endpoint_upper_curvature_graph_lift_exact",
+    "canonical_middle_curvature_graph_lift_no_go"
+  ]
+}
