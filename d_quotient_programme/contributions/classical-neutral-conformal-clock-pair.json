@@ -1,0 +1,40 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_neutral_clock_pair",
+  "generator_id": "D_compact",
+  "phase_space_id": "compact_neutral_clock_pair_homogeneous",
+  "boundary_conditions": "closed unit S3; exact Bach-flat cylinder; homogeneous neutral sector H_D=0 and W nonzero; no surface flux",
+  "lifecycle_layer": "CLASSICAL_CHARGE",
+  "claim_status": "CERTIFIED",
+  "verdict": "D_GAUGE",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "two opposite-sign homogeneous conformal scalars solve the unit-oscillator equations and have conserved energy difference H_D and Wronskian W",
+    "on H_D=0 the improved density and pressure cancel componentwise, so the nonzero scalar pair coexists with the Bach-flat cylinder",
+    "on W nonzero the Weyl-invariant projective angle is an everywhere monotone group-valued clock for compact D",
+    "the raw two-field Diff x Weyl incidence determinant is W and is full rank on the regular sector",
+    "the D flow is the kernel of the symplectic form pulled back to the regular zero-charge level"
+  ],
+  "not_established": [
+    "a support-local inhomogeneous BV completion of the neutral clock pair",
+    "removal or harmlessness of the opposite-sign reference direction outside the homogeneous quotient",
+    "nonlinear stability under arbitrary perturbations",
+    "a universal-cover real clock without winding data",
+    "distributional, boundary, interacting, or quantum admissibility"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/NEUTRAL_CONFORMAL_CLOCK_PAIR.json",
+    "commit": "a558ecf6eae7259ebd9dfef048602b83f9ccf9e4",
+    "sha256": "c68921ec717de842052350238cfb3cb65f950a05197dd213691b5b4bb1b14e03"
+  },
+  "verification_commands": [
+    "python3 d_quotient_classical/composite_clock/neutral_conformal_clock.py --check --guards",
+    "python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_conformal_clock",
+    "python3 d_quotient_classical/verify_classical_status.py --guards"
+  ],
+  "next_gate": "construct the support-local inhomogeneous neutral-clock BV complex and determine whether its opposite-sign reference sector is entirely gauge or contractible"
+}

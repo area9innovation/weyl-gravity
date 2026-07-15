@@ -46,9 +46,10 @@ For each new result, send one machine-readable contribution conforming to
 
 Team-specific priorities:
 
-- **Classical:** own the replacement backreacted, composite/two-field, or
-  reference-matter BV/clock model, its clock domain, total improved
-  symplectic form, and total \(D\) charge.
+- **Classical:** own the support-local inhomogeneous completion of the
+  certified neutral two-field reference clock, its total improved symplectic
+  form, and the proof that the opposite-sign direction is gauge/contractible
+  or an explicit obstruction.
 - **Einstein/boundary:** import the single-scalar obstruction and use only a
   certified replacement clock where relevant; otherwise
   complete one real boundary-preserving full-Bach phase space and compute the
@@ -62,12 +63,14 @@ Team-specific priorities:
   renormalized observable algebra, and classify the first Ward/QME obstruction
   without promoting the classical verdict.
 
-`SCALAR_CLOCK_VERTICAL_SLICE` is now certified as obstructed for one real
-conformal scalar on the exact vacuum cylinder. The replacement shared gate is
-`BACKREACTED_OR_COMPOSITE_CLOCK_MODEL`. Do not reuse the obstructed
-background. The classical team defines one backreacted, composite/two-field,
-or separately declared reference-matter model; the other teams consume it by
-hash rather than independently inventing four clock theories.
+`SCALAR_CLOCK_VERTICAL_SLICE` is certified as obstructed for one real
+conformal scalar on the exact vacuum cylinder. Its replacement
+`NEUTRAL_CONFORMAL_CLOCK_PAIR` is certified on the exact homogeneous sector
+with internal signature `(+,-)` and scoped verdict `D_GAUGE`. The shared gate
+is now `FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION`. Do not reuse the obstructed
+background or broaden the replacement beyond its homogeneous claim. The
+other teams consume both results by hash rather than independently inventing
+four clock theories.
 
 Paper IX remains reserved until the scalar-clock theorem and at least one
 boundary or interaction theorem are certified.  Paper X remains reserved for

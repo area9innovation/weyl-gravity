@@ -16,16 +16,16 @@
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
   "next_shared_gate": {
-    "gate_id": "BACKREACTED_OR_COMPOSITE_CLOCK_MODEL",
+    "gate_id": "FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION",
     "owner_order": [
       "classical",
       "nonlinear",
       "quantum",
       "einstein_boundary"
     ],
-    "rule": "Do not reuse the obstructed one-real-scalar exact-cylinder background; construct one backreacted, composite/two-field, or separately declared reference-matter clock and make downstream teams import it by hash."
+    "rule": "Import the certified neutral two-field homogeneous sector by hash, construct its support-local inhomogeneous BV complex, and determine whether the opposite-sign reference direction is entirely gauge or contractible."
   },
-  "programme_base_commit": "b49e055fcba87540343c97f9736887b5321f6062",
+  "programme_base_commit": "a558ecf6eae7259ebd9dfef048602b83f9ccf9e4",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -42,7 +42,7 @@
   },
   "registry_hashes": {
     "generator_registry": "1df39af78cdd49eeb64faa2d46134542e9bb75a598f0dde98932657a682525de",
-    "phase_space_registry": "6c0624729039f6d7d99d87b9b13115b787ed1737560335c6658ad0db5bbb617d"
+    "phase_space_registry": "b63d3387accd084e844e8337c9b79a81f332c7f40b147695b58d4aa9cb466cc2"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -83,6 +83,15 @@
       "setting_id": "compact_scalar_clock",
       "status": "BLOCKED",
       "verdict": "SINGLE_SCALAR_CLOCK_BACKGROUND_OBSTRUCTED"
+    },
+    {
+      "boundary_conditions": "closed unit S3; exact Bach-flat cylinder; H_D=0 and W nonzero; no surface flux",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_CHARGE",
+      "phase_space_id": "compact_neutral_clock_pair_homogeneous",
+      "setting_id": "compact_neutral_clock_pair",
+      "status": "CERTIFIED",
+      "verdict": "D_GAUGE"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -194,6 +203,50 @@
       "sha256": "6af07a9333fb2362733a53339d3398d5e8ca4ea262370c3589b996e706a1ffd3"
     },
     {
+      "path": "d_quotient_programme/contributions/classical-neutral-conformal-clock-pair.json",
+      "payload": {
+        "boundary_conditions": "closed unit S3; exact Bach-flat cylinder; homogeneous neutral sector H_D=0 and W nonzero; no surface flux",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "two opposite-sign homogeneous conformal scalars solve the unit-oscillator equations and have conserved energy difference H_D and Wronskian W",
+          "on H_D=0 the improved density and pressure cancel componentwise, so the nonzero scalar pair coexists with the Bach-flat cylinder",
+          "on W nonzero the Weyl-invariant projective angle is an everywhere monotone group-valued clock for compact D",
+          "the raw two-field Diff x Weyl incidence determinant is W and is full rank on the regular sector",
+          "the D flow is the kernel of the symplectic form pulled back to the regular zero-charge level"
+        ],
+        "evidence": {
+          "commit": "a558ecf6eae7259ebd9dfef048602b83f9ccf9e4",
+          "path": "d_quotient_classical/certificates/NEUTRAL_CONFORMAL_CLOCK_PAIR.json",
+          "sha256": "c68921ec717de842052350238cfb3cb65f950a05197dd213691b5b4bb1b14e03"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "CLASSICAL_CHARGE",
+        "next_gate": "construct the support-local inhomogeneous neutral-clock BV complex and determine whether its opposite-sign reference sector is entirely gauge or contractible",
+        "not_established": [
+          "a support-local inhomogeneous BV completion of the neutral clock pair",
+          "removal or harmlessness of the opposite-sign reference direction outside the homogeneous quotient",
+          "nonlinear stability under arbitrary perturbations",
+          "a universal-cover real clock without winding data",
+          "distributional, boundary, interacting, or quantum admissibility"
+        ],
+        "phase_space_id": "compact_neutral_clock_pair_homogeneous",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_neutral_clock_pair",
+        "team_id": "classical",
+        "verdict": "D_GAUGE",
+        "verification_commands": [
+          "python3 d_quotient_classical/composite_clock/neutral_conformal_clock.py --check --guards",
+          "python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_conformal_clock",
+          "python3 d_quotient_classical/verify_classical_status.py --guards"
+        ]
+      },
+      "sha256": "831e8765d32ea301b24b0c78b50ac667b2ff8bc5e6bd4d5c087f94fd384d3e6e"
+    },
+    {
       "path": "d_quotient_programme/contributions/einstein-ed1a-asymptotic-generator-gate.json",
       "payload": {
         "boundary_conditions": "fixed Minkowski conformal completion at null infinity; full Bach radiative, Coulombic, soft, corner, ghost, and antifield phase space not yet closed",
@@ -279,9 +332,9 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "704787c06de9e3746c1230e130bb652cb787a825",
+      "commit": "a558ecf6eae7259ebd9dfef048602b83f9ccf9e4",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "9aa1d40baeafc63ba75a0c96ccbe084bb8181f08713f41c1b7d4fe25faebf867"
+      "sha256": "592ec58f7604fda6a7702f6e9898b0044da657aeb28e5253a408096c2c5cb4d9"
     },
     "einstein_boundary": {
       "commit": "89acca36479ebaea069c21eb23517dc6b1b49389",
@@ -301,11 +354,11 @@
   },
   "team_status": [
     {
-      "established": "D_compact is charged on compact_P_lin and gauge on compact_P_Taub0/compact_P_der; the one-real-scalar exact-cylinder clock background is obstructed.",
-      "next_gate": "backreacted scalar geometry, Weyl-invariant composite/two-field clock, or separately declared reference matter",
-      "result_state": "PARTIAL_WITH_COMPACT_SPLIT_AND_SINGLE_SCALAR_NO_GO",
+      "established": "D_compact is charged on compact_P_lin, gauge on compact_P_Taub0/compact_P_der, and gauge on the exact homogeneous neutral two-field clock sector; the one-real-scalar candidate remains obstructed.",
+      "next_gate": "support-local inhomogeneous neutral-clock BV completion and health audit of its opposite-sign reference sector",
+      "result_state": "PARTIAL_WITH_COMPACT_SPLIT_AND_NEUTRAL_CLOCK_PAIR",
       "team_id": "classical",
-      "verdict": "SECTOR_DEPENDENT_WITH_SINGLE_SCALAR_CLOCK_OBSTRUCTION"
+      "verdict": "SECTOR_DEPENDENT_WITH_SCOPED_NEUTRAL_CLOCK_D_GAUGE"
     },
     {
       "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem.",

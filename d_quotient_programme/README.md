@@ -28,6 +28,7 @@ because the existing results concern different objects:
 - [`schema/team-contribution-v1.schema.json`](schema/team-contribution-v1.schema.json)
 - [`contributions/`](contributions/)
 - [`reports/classical-scalar-clock-registration-receipt.md`](reports/classical-scalar-clock-registration-receipt.md)
+- [`reports/classical-neutral-clock-registration-receipt.md`](reports/classical-neutral-clock-registration-receipt.md)
 - [`reports/einstein-ed1a-registration-receipt.md`](reports/einstein-ed1a-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -48,13 +49,15 @@ verification.
 ## Publication policy
 
 Papers VII--VIII retain their completed theorem, now with an explicit compact
-phase-space split. The certified one-real-scalar no-go supplies the
-scalar-clock scope half of the Paper-IX gate; Paper IX remains reserved until
-at least one complete boundary or interaction theorem also lands.
+phase-space split. The certified one-real-scalar no-go and the scoped neutral
+two-field replacement supply the scalar-clock scope half of the Paper-IX gate;
+Paper IX remains reserved until at least one complete boundary or interaction
+theorem also lands.
 A possible Paper X is reserved for interaction and quantum stability after the
 applicable classical export and QME gates pass.
 
-The immediate replacement gate is a genuinely backreacted scalar geometry, a
-Weyl-invariant composite/two-field clock, or a separately declared
-reference-matter model. Downstream teams must import the classical
-single-scalar obstruction by content hash rather than reuse that background.
+The immediate gate is `FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION`: construct the
+support-local inhomogeneous clock-pair complex and determine whether the
+opposite-sign reference direction is entirely gauge or contractible.
+Downstream teams must import both the single-scalar obstruction and the scoped
+neutral replacement by content hash.

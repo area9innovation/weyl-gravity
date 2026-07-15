@@ -125,6 +125,22 @@ genuinely backreacted scalar geometry, a Weyl-invariant composite/two-field
 clock, or separately declared reference matter. Do not reuse the obstructed
 background in downstream work.
 
+### Neutral two-field replacement
+
+This gate is now passed on the exact homogeneous sector by
+`NEUTRAL_CONFORMAL_CLOCK_PAIR`. Two conformal scalars with internal signature
+`(+,-)` have conserved
+\(H_D=(I_1-I_2)\) and Wronskian \(W\). On \(H_D=0\), their improved stresses
+cancel componentwise; on \(W\ne0\), their projective angle is an everywhere
+monotone compact-\(D\) clock and the raw Diff \(\times\) Weyl incidence has
+full rank. The scoped verdict is `D_GAUGE` on
+`compact_neutral_clock_pair_homogeneous`.
+
+The replacement uses opposite-sign reference matter. The next gate is
+`FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION`, not an unrestricted health claim.
+Construct the support-local inhomogeneous complex and prove that the negative
+direction is gauge/contractible, or record the obstruction.
+
 ### Parked nonlinear support-local export
 
 The nonlinear team additionally requires one authoritative classical export
