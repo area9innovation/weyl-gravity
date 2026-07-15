@@ -213,8 +213,12 @@ and the derived Levi-Civita/Chern--Weil Euler current is in
 That Euler receipt now also contains an exact ordinary-bidegree projection:
 the two connecting equations and terminal closure pass on exhaustive rational
 Weyl, Cotton, Schouten, and mixed basis cases, with coefficient sensitivity
-and pre-cancellation hashes.  The epsilon-contracted identification of the
-carrier head with the frozen `omega E4` representative remains open.
+and pre-cancellation hashes.  An independent Lorentzian tensor-basis audit
+identifies the epsilon-contracted carrier head with the frozen `omega E4`
+representative in all 210 Weyl, Schouten, and mixed quadratic cases.  It also
+rejects reversed carrier orientation and a perturbed Schouten-square
+coefficient.  This completes the intrinsic Weyl tower; it does not decide the
+relative BV class.
 The exact sparse totalization and quotient engine is certified by
 [`certificates/RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE.json`](certificates/RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE.json);
 its anchored API excludes total classes without the requested top component
@@ -250,7 +254,7 @@ the content-addressed bundle under
 Raw contraction existence is distinct from tensor realizability; only a
 generated canonical representative currently promotes the latter status.
 
-Next admissible local steps are the epsilon-contracted Euler-head
-reconstruction, completion of the AFN0 lower-form mapping-cone basis, and the
-unrestricted higher-derivative Weyl--Cotton jet quotient.  Only the
+Next admissible local steps are integration of the completed Euler tower into
+the exhaustive AFN0 lower-form mapping-cone basis and the unrestricted
+higher-derivative Weyl--Cotton jet quotient.  Only the
 antifield/Koszul--Tate extension waits for the frozen classical schema.

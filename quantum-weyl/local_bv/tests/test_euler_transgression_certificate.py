@@ -15,7 +15,7 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         self.assertFalse(validate_instance(certificate, json.loads(SCHEMA_PATH.read_text())))
         self.assertEqual(
             certificate["checks"]["omega_E4_intrinsic_descent_continuation"],
-            "FROZEN_CARRIER_CONNECTING_IDENTITIES_VERIFIED",
+            "NONTRIVIAL_COMPLETE",
         )
         self.assertEqual(
             [
@@ -61,7 +61,7 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         )
         self.assertEqual(
             template["certificate_status"],
-            "CONNECTING_IDENTITIES_VERIFIED_TOP_TENSOR_MATCH_PENDING",
+            "INTRINSIC_EULER_TOWER_VERIFIED",
         )
         self.assertEqual(
             template["normalization_contract"]["global_source_to_project_scale"],
@@ -110,9 +110,9 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
             ["QW_a14_plus_dh_a23"],
             "VERIFIED",
         )
-        self.assertIn(
-            "epsilon-contracted tensor reconstruction",
-            " ".join(certificate["not_computed"]),
+        self.assertEqual(
+            expansion["epsilon_head_reconstruction"]["nonzero_residual_count"],
+            0,
         )
 
     def test_schema_fails_closed_on_unknown_nested_claim(self) -> None:
@@ -120,6 +120,25 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         certificate["checks"]["tower_secretly_complete"] = "VERIFIED"
         errors = validate_instance(certificate, json.loads(SCHEMA_PATH.read_text()))
         self.assertTrue(any("additional property is forbidden" in error for error in errors))
+
+    def test_schema_fails_closed_on_head_control_drift(self) -> None:
+        certificate = deepcopy(build_certificate())
+        head = certificate["euler_intrinsic_transgression"][
+            "ordinary_bidegree_expansion"
+        ]["epsilon_head_reconstruction"]
+        head["negative_controls"]["reverse_carrier_orientation"][
+            "failing_case_count"
+        ] = 0
+        errors = validate_instance(certificate, json.loads(SCHEMA_PATH.read_text()))
+        self.assertTrue(errors)
+
+        certificate = deepcopy(build_certificate())
+        head = certificate["euler_intrinsic_transgression"][
+            "ordinary_bidegree_expansion"
+        ]["epsilon_head_reconstruction"]
+        head["claim_boundary"]["relative_cohomology_status"] = "NONTRIVIAL"
+        errors = validate_instance(certificate, json.loads(SCHEMA_PATH.read_text()))
+        self.assertTrue(errors)
 
 
 if __name__ == "__main__":

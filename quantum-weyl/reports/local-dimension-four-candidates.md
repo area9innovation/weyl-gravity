@@ -69,18 +69,18 @@ omega Box R = -(1/12) s(R^2) mod d.
 ```
 
 The Euler candidate remains distinct from the strictly Weyl-invariant
-densities.  Its first Chern--Weil transgression and both frozen-carrier
-ordinary-bidegree connecting equations are now certified.  The independent
-epsilon-contracted identification of the head with `omega E4` remains
-pending.  Universal Diff completion and intrinsic Weyl descent are recorded
-in separate fields.
+densities.  Its Chern--Weil transgression, both frozen-carrier
+ordinary-bidegree connecting equations, terminal closure, and independent
+Lorentzian epsilon-contracted identification of the head with `omega E4` are
+now certified.  Universal Diff completion, intrinsic Weyl descent, and
+relative cohomology status remain separate fields.
 
 ## Claim boundary
 
 This is a finite curvature-candidate theorem, not the complete
 `H^{0,4}(s|d)` or `H^{1,4}(s|d)` theorem.  Still `NOT_COMPUTED` are:
 
-- the epsilon-contracted Euler-head identification and mixed sectors;
+- exhaustive lower-form mapping-cone bases, including mixed sectors;
 - antifield/Koszul--Tate, equation-of-motion, and gauge-fixing sectors;
 - nontriviality of the `C^2`, Euler, and parity-odd anomaly candidates;
 - anomaly or counterterm coefficients and QME restoration;

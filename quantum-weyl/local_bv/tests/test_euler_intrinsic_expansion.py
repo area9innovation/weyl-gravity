@@ -57,6 +57,12 @@ class EulerIntrinsicExpansionTests(unittest.TestCase):
             ["QW_a23_minus_dh_a32"],
             "VERIFIED",
         )
+        self.assertEqual(
+            result["epsilon_head_reconstruction"]["checks"]
+            ["direct_RR_equals_W2_plus_4WX_plus_4X2"],
+            "VERIFIED",
+        )
+        self.assertEqual(result["claim_boundary"]["intrinsic_tower_status"], "COMPLETE")
         payload = {
             key: value for key, value in result.items() if key != "expansion_sha256"
         }

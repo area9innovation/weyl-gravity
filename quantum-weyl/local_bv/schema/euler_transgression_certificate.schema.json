@@ -7,7 +7,7 @@
   "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "normalization", "checks", "derived_rows", "euler_intrinsic_transgression", "euler_full_diff_completed_tower", "canonical_hashes", "assumptions", "not_computed"],
   "properties": {
     "result_id": {"const": "EULER_TRANSGRESSION_CERTIFICATE"},
-    "result_state": {"const": "VARIATIONAL_TRANSGRESSION_VERIFIED"},
+    "result_state": {"const": "INTRINSIC_EULER_TOWER_VERIFIED"},
     "classical_commit": {"const": "UNFROZEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
     "normalization": {"const": "E4 = epsilon_abcd R^ab wedge R^cd"},
@@ -32,7 +32,7 @@
         "bidegree_manifests_content_addressed": {"const": "VERIFIED"},
         "total_differential_component_signs": {"const": "VERIFIED"},
         "omega_E4_intrinsic_component_expansion": {"const": "VERIFIED"},
-        "omega_E4_intrinsic_descent_continuation": {"const": "FROZEN_CARRIER_CONNECTING_IDENTITIES_VERIFIED"},
+        "omega_E4_intrinsic_descent_continuation": {"const": "NONTRIVIAL_COMPLETE"},
         "intrinsic_bottom_QW_closure": {"const": "VERIFIED"},
         "intrinsic_terminal_slots_zero": {"const": "VERIFIED"},
         "indexed_connecting_identity_preflight": {"const": "VERIFIED"},
@@ -40,7 +40,7 @@
         "two_riemann_product_expansion": {"const": "VERIFIED"},
         "reduced_covariant_connecting_tensor_sectors": {"const": "VERIFIED"},
         "ordinary_bidegree_connecting_equations": {"const": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA"},
-        "epsilon_contracted_top_reconstruction": {"const": "IN_PROGRESS"},
+        "epsilon_contracted_top_reconstruction": {"const": "VERIFIED"},
         "horizontal_connecting_generator_rows": {"const": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA"},
         "euler_top_transgression_regression": {"const": "VERIFIED"},
         "unresolved_domega_theta_regression": {"const": "VERIFIED"},
@@ -95,7 +95,7 @@
             "type_a_component_indices": {"const": [1, 2]},
             "type_b_component_indices": {"const": [0]},
             "expansion_status": {"const": "ORDINARY_BIDEGREE_COMPONENTS_VERIFIED"},
-            "certificate_status": {"const": "CONNECTING_IDENTITIES_VERIFIED_TOP_TENSOR_MATCH_PENDING"},
+            "certificate_status": {"const": "INTRINSIC_EULER_TOWER_VERIFIED"},
             "generalized_connection_dictionary": {"type": "object", "additionalProperties": false, "required": ["schema_version", "spacetime_dimension", "coordinate_engineering_convention", "schouten_convention", "orientation_convention", "generators", "dictionary_status", "dictionary_sha256"], "properties": {"schema_version": {"const": "generalized-connection-v1"}, "spacetime_dimension": {"const": 4}, "coordinate_engineering_convention": {"type": "string"}, "schouten_convention": {"type": "string"}, "orientation_convention": {"type": "string"}, "generators": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object"}}, "dictionary_status": {"const": "FROZEN_FOR_BIDEGREE_EXPANSION"}, "dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
             "bidegree_manifests": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["ghost_number", "form_degree", "manifest_sha256", "path"], "properties": {"ghost_number": {"type": "integer", "minimum": 1, "maximum": 5}, "form_degree": {"type": "integer", "minimum": 0, "maximum": 4}, "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "path": {"type": "string", "minLength": 1}}}},
             "template_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
@@ -104,7 +104,7 @@
         "ordinary_bidegree_expansion": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["result_id", "dependency_tags", "source", "carrier_definitions", "dictionary_sha256", "normalization_sha256", "components", "checks", "top_reconstruction", "bottom_closure", "ordinary_bidegree_projection", "claim_boundary", "next_required_generator_identities", "expansion_sha256"],
+          "required": ["result_id", "dependency_tags", "source", "carrier_definitions", "dictionary_sha256", "normalization_sha256", "components", "checks", "top_reconstruction", "bottom_closure", "ordinary_bidegree_projection", "epsilon_head_reconstruction", "claim_boundary", "next_required_generator_identities", "expansion_sha256"],
           "properties": {
             "result_id": {"const": "EULER_INTRINSIC_BIDEGREE_EXPANSION"},
             "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
@@ -140,6 +140,63 @@
                 "projection_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
               }
             },
+            "epsilon_head_reconstruction": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["result_id", "dependency_tags", "arithmetic", "spacetime_dimension", "signature", "metric_diagonal", "orientation", "hodge_convention", "direct_head", "carrier_head", "schouten_carrier", "weyl_coordinate_dimension", "weyl_constraint_rank", "weyl_basis_dimension", "schouten_basis_dimension", "case_counts", "verified_case_count", "nonzero_residual_count", "case_value_sha256", "negative_controls", "checks", "claim_boundary", "reconstruction_sha256"],
+              "properties": {
+                "result_id": {"const": "EULER_EPSILON_HEAD_RECONSTRUCTION"},
+                "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+                "arithmetic": {"const": "EXACT_RATIONAL"},
+                "spacetime_dimension": {"const": 4},
+                "signature": {"const": "LORENTZIAN_MINUS_PLUS_PLUS_PLUS"},
+                "metric_diagonal": {"const": [-1, 1, 1, 1]},
+                "orientation": {"type": "string"},
+                "hodge_convention": {"type": "string"},
+                "direct_head": {"type": "string"},
+                "carrier_head": {"type": "string"},
+                "schouten_carrier": {"type": "string"},
+                "weyl_coordinate_dimension": {"const": 21},
+                "weyl_constraint_rank": {"const": 11},
+                "weyl_basis_dimension": {"const": 10},
+                "schouten_basis_dimension": {"const": 10},
+                "case_counts": {"const": {"SCHOUTEN_QUADRATIC": 55, "WEYL_QUADRATIC": 55, "WEYL_SCHOUTEN": 100}},
+                "verified_case_count": {"const": 210},
+                "nonzero_residual_count": {"const": 0},
+                "case_value_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "negative_controls": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["reverse_carrier_orientation", "mixed_4WX_coefficient_times_5_over_4", "4X2_coefficient_times_5_over_4"],
+                  "properties": {
+                    "reverse_carrier_orientation": {"const": {"failing_case_count": 142, "status": "EXPECTED_FAILURE_OBSERVED"}},
+                    "mixed_4WX_coefficient_times_5_over_4": {"const": {"failing_case_count": 0, "status": "INSENSITIVE_BY_WEYL_TRACEFREENESS"}},
+                    "4X2_coefficient_times_5_over_4": {"const": {"failing_case_count": 42, "status": "EXPECTED_FAILURE_OBSERVED"}}
+                  }
+                },
+                "checks": {
+                  "const": {
+                    "Lorentz_signature_used": "VERIFIED",
+                    "Schouten_square_coefficient_sensitivity": "VERIFIED",
+                    "Weyl_rank_nullity": "VERIFIED_21_MINUS_11_EQUALS_10",
+                    "direct_RR_equals_W2_plus_4WX_plus_4X2": "VERIFIED",
+                    "frozen_orientation_used": "VERIFIED",
+                    "mixed_WX_sector": "STRUCTURALLY_ZERO_BY_WEYL_TRACEFREENESS",
+                    "orientation_sensitivity": "VERIFIED"
+                  }
+                },
+                "claim_boundary": {
+                  "const": {
+                    "Berger_clock_dependency": "NONE_UNTIL_A_SEPARATE_BACKGROUND_IMPORT_IS_FROZEN",
+                    "Euler_head_tensor_reconstruction": "VERIFIED",
+                    "full_BV_status": "BLOCKED_BY_ANTIFIELD_EXPORT",
+                    "intrinsic_carrier_tower_status": "COMPLETE",
+                    "relative_cohomology_status": "UNDECIDED"
+                  }
+                },
+                "reconstruction_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+              }
+            },
             "claim_boundary": {"type": "object"},
             "next_required_generator_identities": {"type": "array", "minItems": 2, "items": {"type": "string"}},
             "expansion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
@@ -148,7 +205,7 @@
         "connecting_identity_preflight": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["result_id", "dependency_tags", "generator_dictionary", "generator_dictionary_sha256", "cotton_convention_bridge", "two_riemann_top_preflight", "connecting_tensor_sector_audit", "bottom_representative", "bottom_QW_residual", "QW_squared_on_generators", "QW_generator_row_status", "checks", "source_to_project_identity_map", "claim_boundary", "preflight_sha256"],
+          "required": ["result_id", "dependency_tags", "generator_dictionary", "generator_dictionary_sha256", "cotton_convention_bridge", "two_riemann_top_preflight", "connecting_tensor_sector_audit", "epsilon_head_reconstruction", "bottom_representative", "bottom_QW_residual", "QW_squared_on_generators", "QW_generator_row_status", "checks", "source_to_project_identity_map", "claim_boundary", "preflight_sha256"],
           "properties": {
             "result_id": {"const": "EULER_CONNECTING_IDENTITY_PREFLIGHT"},
             "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
@@ -157,11 +214,12 @@
             "cotton_convention_bridge": {"type": "object"},
             "two_riemann_top_preflight": {"type": "object"},
             "connecting_tensor_sector_audit": {"type": "object"},
+            "epsilon_head_reconstruction": {"type": "object"},
             "bottom_representative": {"type": "array", "minItems": 1},
             "bottom_QW_residual": {"const": []},
             "QW_squared_on_generators": {"type": "object"},
             "QW_generator_row_status": {"type": "object"},
-            "checks": {"type": "object", "additionalProperties": false, "required": ["indexed_total_form_words", "coefficient_and_total_parities_separated", "source_project_cotton_sign", "bounded_two_riemann_expansion", "bottom_closure_by_applied_QW", "QW_squared_on_available_generator_rows", "reduced_covariant_tensor_sectors", "epsilon_contracted_top_reconstruction", "horizontal_generator_rows", "QW_dh_anticommutator_on_connecting_generators", "Gamma_action_on_W_two_form"], "properties": {"indexed_total_form_words": {"const": "VERIFIED"}, "coefficient_and_total_parities_separated": {"const": "VERIFIED"}, "source_project_cotton_sign": {"const": "VERIFIED"}, "bounded_two_riemann_expansion": {"const": "VERIFIED"}, "bottom_closure_by_applied_QW": {"const": "VERIFIED"}, "QW_squared_on_available_generator_rows": {"const": "VERIFIED"}, "reduced_covariant_tensor_sectors": {"const": "VERIFIED"}, "epsilon_contracted_top_reconstruction": {"const": "NOT_COMPUTED"}, "horizontal_generator_rows": {"const": "NOT_COMPUTED"}, "QW_dh_anticommutator_on_connecting_generators": {"const": "NOT_COMPUTED"}, "Gamma_action_on_W_two_form": {"const": "NOT_COMPUTED"}}},
+            "checks": {"type": "object", "additionalProperties": false, "required": ["indexed_total_form_words", "coefficient_and_total_parities_separated", "source_project_cotton_sign", "bounded_two_riemann_expansion", "bottom_closure_by_applied_QW", "QW_squared_on_available_generator_rows", "reduced_covariant_tensor_sectors", "epsilon_contracted_top_reconstruction", "horizontal_generator_rows", "QW_dh_anticommutator_on_connecting_generators", "Gamma_action_on_W_two_form"], "properties": {"indexed_total_form_words": {"const": "VERIFIED"}, "coefficient_and_total_parities_separated": {"const": "VERIFIED"}, "source_project_cotton_sign": {"const": "VERIFIED"}, "bounded_two_riemann_expansion": {"const": "VERIFIED"}, "bottom_closure_by_applied_QW": {"const": "VERIFIED"}, "QW_squared_on_available_generator_rows": {"const": "VERIFIED"}, "reduced_covariant_tensor_sectors": {"const": "VERIFIED"}, "epsilon_contracted_top_reconstruction": {"const": "VERIFIED_BY_INDEPENDENT_LORENTZ_TENSOR_BASIS"}, "horizontal_generator_rows": {"const": "NOT_COMPUTED"}, "QW_dh_anticommutator_on_connecting_generators": {"const": "NOT_COMPUTED"}, "Gamma_action_on_W_two_form": {"const": "NOT_COMPUTED"}}},
             "source_to_project_identity_map": {"type": "object"},
             "claim_boundary": {"type": "object"},
             "preflight_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
@@ -172,6 +230,6 @@
     "euler_full_diff_completed_tower": {"type": "object", "additionalProperties": false, "required": ["counterterm_tower_sha256", "anomaly_tower_sha256", "coefficients"], "properties": {"counterterm_tower_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "anomaly_tower_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "coefficients": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object"}}}},
     "canonical_hashes": {"type": "object", "additionalProperties": false, "required": ["source_manifest_sha256", "curvature_sha256", "theta_sha256", "zero_variational_residual_sha256", "generalized_connection_dictionary_sha256", "normalization_contract_sha256", "bidegree_manifest_set_sha256", "intrinsic_component_expansion_sha256", "connecting_identity_preflight_sha256"], "properties": {"source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "curvature_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "theta_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "zero_variational_residual_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "generalized_connection_dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "normalization_contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "bidegree_manifest_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "intrinsic_component_expansion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "connecting_identity_preflight_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
     "assumptions": {"type": "array", "minItems": 4, "items": {"type": "string"}},
-    "not_computed": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+    "not_computed": {"type": "array", "minItems": 2, "items": {"type": "string"}}
   }
 }

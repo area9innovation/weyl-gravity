@@ -50,6 +50,8 @@ def _source_manifest() -> dict[str, str]:
         "curvature.py",
         "dimension_four_candidates.py",
         "dimension_four_candidate_certificate.py",
+        "euler_connecting_identities.py",
+        "euler_head_reconstruction.py",
         "hodge.py",
         "horizontal_forms.py",
         "metadata.py",
@@ -63,6 +65,7 @@ def _source_manifest() -> dict[str, str]:
         "schema/dimension_four_candidate_certificate.schema.json",
         "tests/test_dimension_four_candidates.py",
         "tests/test_dimension_four_candidate_certificate.py",
+        "tests/test_euler_head_reconstruction.py",
         "tests/test_weyl_target.py",
     )
     return {
@@ -179,7 +182,7 @@ def build_certificate() -> dict[str, Any]:
     }
     if intrinsic_statuses["ANOM_OMEGA_C2"] != "TRIVIAL":
         raise AssertionError("type-B Weyl descent terminology drifted")
-    if intrinsic_statuses["ANOM_OMEGA_E4"] != "IN_PROGRESS":
+    if intrinsic_statuses["ANOM_OMEGA_E4"] != "NONTRIVIAL_COMPLETE":
         raise AssertionError("type-A Weyl descent boundary drifted")
 
     source_manifest = _source_manifest()

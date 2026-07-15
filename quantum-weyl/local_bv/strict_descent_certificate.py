@@ -11,6 +11,7 @@ from typing import Any
 
 from .algebra import canonical_sha256
 from .euler_bidegree_projection import euler_bidegree_projection_analysis
+from .euler_head_reconstruction import euler_head_reconstruction_analysis
 from .horizontal_forms import (
     STRICT_DENSITY,
     HorizontalForm,
@@ -39,6 +40,7 @@ def _source_manifest() -> dict[str, str]:
         "brst.py",
         "euler_bidegree_projection.py",
         "euler_connecting_identities.py",
+        "euler_head_reconstruction.py",
         "horizontal_forms.py",
         "metadata.py",
         "strict_descent.py",
@@ -48,6 +50,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_horizontal_forms.py",
         "tests/test_euler_bidegree_projection.py",
         "tests/test_euler_connecting_identities.py",
+        "tests/test_euler_head_reconstruction.py",
         "tests/test_strict_descent.py",
         "tests/test_strict_descent_certificate.py",
     )
@@ -180,6 +183,9 @@ def build_database() -> dict[str, Any]:
     euler_projection = euler_bidegree_projection_analysis()
     if euler_projection["checks"]["QW_a14_plus_dh_a23"] != "VERIFIED":
         raise AssertionError("Euler ordinary-bidegree projection is not certified")
+    euler_head = euler_head_reconstruction_analysis()
+    if euler_head["checks"]["direct_RR_equals_W2_plus_4WX_plus_4X2"] != "VERIFIED":
+        raise AssertionError("Euler epsilon-contracted head is not certified")
     entries = (
         _database_entry(
             "CT_C2",
@@ -193,9 +199,9 @@ def build_database() -> dict[str, Any]:
             "CT_E4",
             ghost_number=0,
             parity="even",
-            intrinsic_status="IN_PROGRESS",
+            intrinsic_status="CLOSED",
             tower_id="UNIVERSAL_COUNTERTERM_DIFF_TOWER",
-            notes="Universal Diff completion is complete; the separate Euler Weyl-current transgression is pending.",
+            notes="Universal Diff completion and the separate Euler Weyl-current transgression are complete; relative cohomology remains undecided.",
         ),
         _database_entry(
             "CT_C_DUAL_C",
@@ -225,12 +231,12 @@ def build_database() -> dict[str, Any]:
             "ANOM_OMEGA_E4",
             ghost_number=1,
             parity="even",
-            intrinsic_status="IN_PROGRESS",
+            intrinsic_status="NONTRIVIAL_COMPLETE",
             tower_id="UNIVERSAL_ANOMALY_DIFF_TOWER",
             notes=(
-                "Universal Diff completion and the two intrinsic connecting identities "
-                "are verified in the frozen Euler carrier algebra; epsilon-contracted "
-                "identification of the head with omega E4 remains pending."
+                "Universal Diff completion, the two intrinsic connecting identities, "
+                "terminal closure, and the epsilon-contracted omega E4 head are verified. "
+                "Relative cohomological nontriviality remains undecided."
             ),
         ),
         _database_entry(
@@ -267,7 +273,6 @@ def build_database() -> dict[str, Any]:
             "HORIZONTAL_BICOMPLEX_CERTIFICATE.json"
         ),
         "not_computed": [
-            "epsilon-contracted identification of the Euler carrier head with omega E4",
             "antifield/Koszul-Tate completion",
             "cohomological nontriviality of strict candidates",
             "coefficients, QME status, and residual transfer",
@@ -328,7 +333,7 @@ def build_certificate() -> dict[str, Any]:
             "counterterm_diff_descent_tower_equations": "VERIFIED",
             "anomaly_diff_descent_tower_equations": "VERIFIED",
             "bottom_brst_closure": "VERIFIED",
-            "euler_intrinsic_weyl_descent": "CONNECTING_IDENTITIES_VERIFIED_TOP_TENSOR_MATCH_PENDING",
+            "euler_intrinsic_weyl_descent": "NONTRIVIAL_COMPLETE",
             "antifield_descent": "BLOCKED_CLASSICAL_EXPORT",
         },
         "towers": {

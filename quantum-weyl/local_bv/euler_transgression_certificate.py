@@ -33,6 +33,7 @@ def _source_manifest() -> dict[str, str]:
         "euler_transgression_certificate.py",
         "euler_intrinsic_expansion.py",
         "euler_bidegree_projection.py",
+        "euler_head_reconstruction.py",
         "euler_connecting_identities.py",
         "euler_generator_preflight.py",
         "generalized_connection.py",
@@ -42,6 +43,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_euler_transgression_certificate.py",
         "tests/test_euler_intrinsic_expansion.py",
         "tests/test_euler_bidegree_projection.py",
+        "tests/test_euler_head_reconstruction.py",
         "tests/test_euler_connecting_identities.py",
         "tests/test_euler_generator_preflight.py",
         "tests/test_generalized_connection.py",
@@ -70,7 +72,7 @@ def build_certificate() -> dict[str, Any]:
     connecting_preflight = euler_generator_preflight()
     return {
         "result_id": "EULER_TRANSGRESSION_CERTIFICATE",
-        "result_state": "VARIATIONAL_TRANSGRESSION_VERIFIED",
+        "result_state": "INTRINSIC_EULER_TOWER_VERIFIED",
         "classical_commit": "UNFROZEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "normalization": "E4 = epsilon_abcd R^ab wedge R^cd",
@@ -91,7 +93,7 @@ def build_certificate() -> dict[str, Any]:
             "bidegree_manifests_content_addressed": "VERIFIED",
             "total_differential_component_signs": "VERIFIED",
             "omega_E4_intrinsic_component_expansion": "VERIFIED",
-            "omega_E4_intrinsic_descent_continuation": "FROZEN_CARRIER_CONNECTING_IDENTITIES_VERIFIED",
+            "omega_E4_intrinsic_descent_continuation": "NONTRIVIAL_COMPLETE",
             "intrinsic_bottom_QW_closure": "VERIFIED",
             "intrinsic_terminal_slots_zero": "VERIFIED",
             "indexed_connecting_identity_preflight": "VERIFIED",
@@ -99,7 +101,7 @@ def build_certificate() -> dict[str, Any]:
             "two_riemann_product_expansion": "VERIFIED",
             "reduced_covariant_connecting_tensor_sectors": "VERIFIED",
             "ordinary_bidegree_connecting_equations": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
-            "epsilon_contracted_top_reconstruction": "IN_PROGRESS",
+            "epsilon_contracted_top_reconstruction": "VERIFIED",
             "horizontal_connecting_generator_rows": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
             "euler_top_transgression_regression": "VERIFIED",
             "unresolved_domega_theta_regression": "VERIFIED",
@@ -191,7 +193,7 @@ def build_certificate() -> dict[str, Any]:
                 "type_a_component_indices": list(generalized["type_a_component_indices"]),
                 "type_b_component_indices": list(generalized["type_b_component_indices"]),
                 "expansion_status": "ORDINARY_BIDEGREE_COMPONENTS_VERIFIED",
-                    "certificate_status": "CONNECTING_IDENTITIES_VERIFIED_TOP_TENSOR_MATCH_PENDING",
+                    "certificate_status": "INTRINSIC_EULER_TOWER_VERIFIED",
                 "generalized_connection_dictionary": dictionary,
                 "bidegree_manifests": [
                     {
@@ -261,7 +263,6 @@ def build_certificate() -> dict[str, Any]:
             "The source total form is mapped to project normalization by one global factor fixed by its top component; no bidegree-dependent carrier rescaling is allowed.",
         ],
         "not_computed": [
-            "epsilon-contracted tensor reconstruction of the Euler head",
             "antifield/Koszul-Tate completion",
             "relative cohomology nontriviality of the Euler anomaly",
         ],

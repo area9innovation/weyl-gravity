@@ -30,8 +30,9 @@ class StrictDensityDescentCertificateTests(unittest.TestCase):
         }
         self.assertEqual(
             entries["ANOM_OMEGA_E4"]["intrinsic_weyl_descent_status"],
-            "IN_PROGRESS",
+            "NONTRIVIAL_COMPLETE",
         )
+        self.assertEqual(entries["CT_E4"]["intrinsic_weyl_descent_status"], "CLOSED")
         self.assertEqual(
             [row["status"] for row in entries["ANOM_OMEGA_E4"]["intrinsic_tower"]],
             [

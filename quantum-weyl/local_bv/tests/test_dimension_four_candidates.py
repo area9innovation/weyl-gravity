@@ -84,6 +84,8 @@ class DimensionFourCandidateTests(unittest.TestCase):
         self.assertEqual(intrinsic["CT_C_DUAL_C"], "STRICTLY_WEYL_INVARIANT")
         self.assertEqual(intrinsic["ANOM_OMEGA_C2"], "TRIVIAL")
         self.assertEqual(intrinsic["ANOM_OMEGA_C_DUAL_C"], "TRIVIAL")
+        self.assertEqual(intrinsic["CT_E4"], "CLOSED")
+        self.assertEqual(intrinsic["ANOM_OMEGA_E4"], "NONTRIVIAL_COMPLETE")
 
     def test_named_even_candidates_reach_the_native_weyl_carrier(self) -> None:
         analysis = dimension_four_candidate_analysis()

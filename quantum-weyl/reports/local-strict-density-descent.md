@@ -87,8 +87,8 @@ single global factor of four fixed by that top component gives the normalized
 project vector `(1,-4,4)`.  The older `(4,-4,1)` vector is retained only as a
 rejected, underived carrier rescaling.  No bidegree-dependent normalization
 is allowed.  This resolves the convention map; the frozen-carrier connecting
-equations now close, while the epsilon-contracted top identification remains
-an independent gate.
+equations now close.  The independent Lorentzian tensor-basis reconstruction
+described below also closes the epsilon-contracted top-identification gate.
 
 The generalized-connection dictionary now freezes total degree, ordinary
 ghost/form bidegree components, parity, engineering dimension, Weyl weight,
@@ -123,10 +123,9 @@ The two connecting identities are now verified in the frozen Euler carrier
 algebra after expanding `tilde_omega=U-P`.  Tensor-orbit generation and
 canonical quotienting of the full production basis remain `NOT_COMPUTED`.
 The `r=0` component is recorded separately as type B; the `r=1,2` components
-form the type-A template.  Its status is
-`CONNECTING_IDENTITIES_VERIFIED_TOP_TENSOR_MATCH_PENDING`, not yet a completed
-Euler certificate, because the epsilon-contracted reconstruction of the head
-is still open.
+form the type-A template.  After the independent head reconstruction, its
+intrinsic descent status is `NONTRIVIAL_COMPLETE`.  This label applies to the
+intrinsic Weyl descent only; the relative BV class remains `UNDECIDED`.
 
 The connecting-identity preflight now separates coefficient parity from total
 form parity in an indexed carrier algebra and applies `Q_W` rather than merely
@@ -152,9 +151,19 @@ This sign is proved against the existing Schouten derivative relation and is
 now inserted in the pending horizontal Weyl identity.  Finally, the Ricci
 decomposition engine permits an explicitly bounded two-Riemann expansion:
 the exact 25 branches split into `1` Weyl--Weyl, `8` Weyl--Schouten, and `16`
-Schouten--Schouten terms.  The epsilon-contracted comparison is still open,
-so the earlier top check has been narrowed to a carrier-polynomial statement
-rather than presented as a completed tensor identity.
+Schouten--Schouten terms.  The independent reconstruction now compares this
+decomposition with the frozen Euler density as a completed tensor identity.
+
+The reconstruction fixes Lorentzian signature `(-,+,+,+)`, carrier
+orientation `epsilon_0123=+1`, and
+`epsilon_abcd epsilon^cdef=-2 delta_ab^ef`.  It constructs the full
+ten-dimensional algebraic Weyl space and ten-dimensional symmetric Schouten
+space and checks 55 Weyl-square, 55 Schouten-square, and 100 mixed basis
+cases.  All 210 exact residuals vanish.  Reversing the carrier orientation
+fails on nonzero cases, and perturbing the Schouten-square coefficient fails.
+The mixed epsilon contraction vanishes structurally by Weyl tracefreeness, so
+it is recorded as coefficient-insensitive rather than used as a false
+negative control.
 
 An exact reduced covariant tensor-sector audit now constructs the full
 four-dimensional algebraic Weyl space (dimension `10`) and irreducible
@@ -198,8 +207,7 @@ This is the strict-density part of the antifield-independent descent
 database, not the complete `H^{0,4}(s|d)` or `H^{1,4}(s|d)` result.  Still
 unavailable are:
 
-- epsilon-contracted identification of the verified carrier head with the
-  frozen `omega E4` tensor representative;
+- exhaustive AFN0 lower-form mapping-cone and boundary bases;
 - antifield/Koszul--Tate and equation-of-motion sectors;
 - proof of cohomological nontriviality for the strict candidates;
 - anomaly coefficients, QME restoration, and residual transfer.
@@ -288,16 +296,26 @@ AFN0 theorem, and `d_quotient` verdict unpromoted.
 | 2 | Euler projection and horizontal-database hashes under seeds `1,7,123`, parallel | 14.2 s wall | pass |
 
 The complete local rail remains below the agreed 60-second threshold.  Tier
-3 and the classical pipeline were not triggered: the frozen carrier
-connecting equations advanced, but the epsilon-contracted Euler head, AFN0
-quotient theorem, classical freeze, QME lifecycle, and `d_quotient` verdict
-remain unpromoted.
+3 and the classical pipeline were not triggered: the intrinsic Euler tower
+advanced, but the AFN0 quotient theorem, classical
+freeze, QME lifecycle, and `d_quotient` verdict remain unpromoted.
+
+### Lorentzian Euler-head reconstruction addendum
+
+| Tier | Command/rail | Elapsed | Result |
+|---|---|---:|---|
+| 0 | changed Python compile, strict schema parse, generated-artifact reproduction, scoped diff check | under 30 s | pass |
+| 1 | Euler head, connecting equations, expansion, preflight, descent database, and candidate consumers | 24.5 s | 30 pass |
+| 2 | complete `quantum-weyl/local_bv/tests` rail | about 28 s wall | 188 pass |
+| 2 | Euler, horizontal, and candidate certificate consumers under hash seeds `1,7,123`, parallel | under 25 s wall | 10 pass per seed |
+
+The suite remains below the 60-second full-tier threshold.  No classical,
+spectral, Lorentzian, or `d_quotient` verdict was rerun because the new proof
+is `LOCAL-ALGEBRAIC` and changes none of those inputs.
 
 ## Next local gate
 
-Complete the epsilon-contracted tensor reconstruction of the Euler head and
-compare it with the frozen `omega E4` representative and orientation.  Once
-that passes, the intrinsic carrier tower may be promoted from `IN_PROGRESS`
-to a complete intrinsic-descent certificate.  Then formulate the exact AFN0
-mapping-cone coboundary matrices.  Antifield completion remains blocked until
-the classical team exports the portable Koszul--Tate rows.
+Integrate the completed intrinsic Euler tower into the exhaustive AFN0
+mapping-cone bases and formulate the exact coboundary matrices.  Antifield
+completion remains blocked until the classical team exports the portable
+Koszul--Tate rows.

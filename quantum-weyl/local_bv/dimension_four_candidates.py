@@ -13,6 +13,7 @@ from fractions import Fraction
 from functools import lru_cache
 
 from .curvature import RIEMANN, named_quadratic_representatives, quadratic_curvature_analysis
+from .euler_head_reconstruction import euler_head_reconstruction_analysis
 from .quotient import exact_nullspace, exact_rank
 from .tensors import (
     TensorExpression,
@@ -123,9 +124,9 @@ def _attach_descent_status(
         raise AssertionError(f"unregistered dimension-four candidate: {class_id}")
 
     intrinsic = (
-        "IN_PROGRESS"
+        "CLOSED"
         if class_id == "CT_E4"
-        else "IN_PROGRESS"
+        else "NONTRIVIAL_COMPLETE"
         if class_id == "ANOM_OMEGA_E4"
         else "TRIVIAL_WITH_PRIMITIVE"
         if "BOX_R" in class_id
@@ -169,6 +170,10 @@ def _attach_descent_status(
 @lru_cache(maxsize=1)
 def dimension_four_candidate_analysis() -> dict[str, object]:
     """Generate the exact curvature-sector counterterm/anomaly candidates."""
+
+    euler_head = euler_head_reconstruction_analysis()
+    if euler_head["nonzero_residual_count"]:
+        raise AssertionError("Euler head reconstruction is not certified")
 
     curvature = quadratic_curvature_analysis()
     quotient = curvature["quotient"]

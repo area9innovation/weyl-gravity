@@ -9,9 +9,9 @@ complete `H^{1,4}(s|d)`, anomaly coefficients, cancellation, or QME status.
 All candidates reference their generated four-step universal Diff tower in
 `../local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR.json`.  A separate
 `intrinsic_weyl_descent_status` records type-B triviality, the explicit
-type-D primitive, or the pending type-A continuation.  The Euler
-variational current and the nonzero first `omega E4` residual are certified;
-the two ordinary-bidegree connecting equations are now exact in the frozen
-Euler carrier algebra.  The status remains `IN_PROGRESS` until the
-epsilon-contracted carrier head is independently identified with the frozen
-`omega E4` tensor representative.
+type-D primitive, or the type-A continuation.  For `omega E4`, the
+variational current, nonzero first residual, ordinary-bidegree connecting
+equations, terminal closure, and Lorentzian epsilon-contracted head are now
+independently certified.  Its intrinsic status is `NONTRIVIAL_COMPLETE`.
+Its relative BV class remains `UNDECIDED`: descent completion is not a
+nontriviality proof in `H^{1,4}(s|d)`.

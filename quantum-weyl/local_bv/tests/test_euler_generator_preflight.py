@@ -26,6 +26,9 @@ class EulerGeneratorPreflightTests(unittest.TestCase):
             result["connecting_tensor_sector_audit"]["cotton_basis_dimension"],
             16,
         )
+        self.assertEqual(
+            result["epsilon_head_reconstruction"]["nonzero_residual_count"], 0
+        )
 
     def test_bottom_closure_uses_applied_differential(self) -> None:
         result = euler_generator_preflight()

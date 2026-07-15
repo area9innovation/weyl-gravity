@@ -77,7 +77,8 @@ setting has verdict `ANALYTIC_FRAMEWORK_MISSING`.  In particular:
   `D` is charged on `P_lin` but gauge on the declared `P_Taub0` derived zero
   fibre; this phase-space split is not promoted to a quantum verdict;
 - the classical import remains unfrozen;
-- AFN0 lower-form exhaustiveness and the intrinsic Euler tower remain open;
+- AFN0 lower-form exhaustiveness remains open; the intrinsic Euler tower is
+  complete but has not yet been integrated into the production quotient;
 - the minimal antifield/Koszul--Tate rows have not been imported;
 - no renormalized operator algebra or actual `Q_1` exists;
 - the pure-Weyl QME has not been restored;

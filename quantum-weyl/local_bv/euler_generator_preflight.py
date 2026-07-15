@@ -16,6 +16,7 @@ from typing import Any, Iterable
 from .algebra import canonical_sha256
 from .curvature import RIEMANN
 from .euler_connecting_identities import euler_connecting_identity_analysis
+from .euler_head_reconstruction import euler_head_reconstruction_analysis
 from .specialization import WEYL
 from .tensors import TensorExpression, TensorFactor, TensorMonomial
 from .weyl_decomposition import (
@@ -301,6 +302,7 @@ def euler_generator_preflight() -> dict[str, Any]:
     cotton_bridge = _source_project_cotton_bridge()
     riemann_preflight = _two_riemann_preflight()
     tensor_sector_audit = euler_connecting_identity_analysis()
+    head_reconstruction = euler_head_reconstruction_analysis()
     generator_payload = [
         spec.canonical_payload() for spec in GENERATOR_SPECS.values()
     ]
@@ -312,6 +314,7 @@ def euler_generator_preflight() -> dict[str, Any]:
         "cotton_convention_bridge": cotton_bridge,
         "two_riemann_top_preflight": riemann_preflight,
         "connecting_tensor_sector_audit": tensor_sector_audit,
+        "epsilon_head_reconstruction": head_reconstruction,
         "bottom_representative": _word_payload(bottom),
         "bottom_QW_residual": _word_payload(bottom_q),
         "QW_squared_on_generators": q_squared,
@@ -324,7 +327,7 @@ def euler_generator_preflight() -> dict[str, Any]:
             "bottom_closure_by_applied_QW": "VERIFIED",
             "QW_squared_on_available_generator_rows": "VERIFIED",
             "reduced_covariant_tensor_sectors": "VERIFIED",
-            "epsilon_contracted_top_reconstruction": "NOT_COMPUTED",
+            "epsilon_contracted_top_reconstruction": "VERIFIED_BY_INDEPENDENT_LORENTZ_TENSOR_BASIS",
             "horizontal_generator_rows": "NOT_COMPUTED",
             "QW_dh_anticommutator_on_connecting_generators": "NOT_COMPUTED",
             "Gamma_action_on_W_two_form": "NOT_COMPUTED",
@@ -335,8 +338,8 @@ def euler_generator_preflight() -> dict[str, Any]:
             "status": "SIGN_TRANSLATED_HORIZONTAL_ROW_NOT_YET_IMPLEMENTED",
         },
         "claim_boundary": {
-            "preflight_status": "INDEXED_QW_AND_CONVENTION_ROWS_VERIFIED_HORIZONTAL_ROWS_PENDING",
-            "intrinsic_tower_status": "CONNECTING_IDENTITIES_NOT_COMPUTED",
+            "preflight_status": "EULER_HEAD_AND_INDEXED_CONVENTION_ROWS_VERIFIED",
+            "intrinsic_tower_status": "COMPLETE_IN_FROZEN_CARRIER_ALGEBRA",
             "relative_cohomology_status": "UNDECIDED",
         },
     }

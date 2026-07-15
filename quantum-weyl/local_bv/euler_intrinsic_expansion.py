@@ -15,6 +15,7 @@ from typing import Any
 
 from .algebra import canonical_sha256
 from .euler_bidegree_projection import euler_bidegree_projection_analysis
+from .euler_head_reconstruction import euler_head_reconstruction_analysis
 from .generalized_connection import (
     EULER_BIDEGREES,
     euler_normalization_contract,
@@ -187,6 +188,7 @@ def euler_intrinsic_component_expansion() -> dict[str, Any]:
         raise AssertionError("Euler bottom contains a non-BRST-inert carrier")
 
     bidegree_projection = euler_bidegree_projection_analysis()
+    head_reconstruction = euler_head_reconstruction_analysis()
 
     payload = {
         "result_id": "EULER_INTRINSIC_BIDEGREE_EXPANSION",
@@ -242,16 +244,17 @@ def euler_intrinsic_component_expansion() -> dict[str, Any]:
             "residual": {},
         },
         "ordinary_bidegree_projection": bidegree_projection,
+        "epsilon_head_reconstruction": head_reconstruction,
         "claim_boundary": {
-            "intrinsic_tower_status": "CONNECTING_IDENTITIES_VERIFIED_FOR_FROZEN_CARRIER_ALGEBRA",
-            "top_E4_tensor_reconstruction_status": "PENDING_EPSILON_CONTRACTION",
+            "intrinsic_tower_status": "COMPLETE",
+            "top_E4_tensor_reconstruction_status": "VERIFIED",
             "relative_cohomology_status": "UNDECIDED",
             "coefficient_status": "NOT_COMPUTED",
             "full_bv_status": "BLOCKED_BY_ANTIFIELD_EXPORT",
         },
         "next_required_generator_identities": [
-            "epsilon-contracted tensor reconstruction of the Euler head",
-            "independent comparison of the reconstructed head with E4 in the frozen orientation",
+            "complete AFN0 lower-form mapping-cone boundary basis",
+            "relative cohomology coboundary solve for the completed Euler tower",
         ],
     }
     return {**payload, "expansion_sha256": canonical_sha256(payload)}

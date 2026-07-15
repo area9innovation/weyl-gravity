@@ -38,10 +38,10 @@ This is not yet the antifield-independent obstruction classification.  The
 top curvature-density carrier basis is complete under its declared rules,
 but the lower-form ghost/generalized-connection bases required by the total
 complex are still `IN_PROGRESS`.  The pure-Diff ghost basis at ghost number
-one is likewise incomplete.  The even anomaly slice still excludes
-`omega E4`: its frozen-carrier connecting equations now close, but the
-epsilon-contracted head and complete lower-form production basis have not yet
-passed their independent gates.
+one is likewise incomplete.  The checked-in even anomaly slice still excludes
+`omega E4`: its intrinsic tower now passes independently, but it has not yet
+been integrated into a complete lower-form production basis and rerun through
+the mapping cone.
 
 Consequently the run emits no nontriviality claim and no dual witness for a
 physical representative.  The only permitted provisional witness label is
@@ -86,9 +86,9 @@ still pending.
 
 Generate all lower-form spaces at total engineering dimension four, including
 Weyl-ghost derivatives and the certified generalized-connection carriers.
-Assemble exact `Q` and `d_h` matrices, complete the intrinsic `omega E4`
-tower, rerun the even anomaly slice, and only then solve the full boundary
-membership problem.
+Assemble exact `Q` and `d_h` matrices, integrate the completed intrinsic
+`omega E4` tower, rerun the even anomaly slice, and only then solve the full
+boundary-membership problem.
 
 ## Verification receipt
 

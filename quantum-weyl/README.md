@@ -83,7 +83,7 @@ schema/             machine-readable result contracts
 | Gate | Deliverable | Bootstrap status |
 |---|---|---|
 | A | `CLASSICAL_IMPORT_CERTIFICATE` | `FAIL_CLOSED`; artifact integrity verified, but 15 of 18 export categories remain incomplete or unavailable |
-| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; generated dimension-four catalogues, universal Diff towers, explicit type-D primitives, Euler variational transgression, exact frozen-carrier intrinsic connecting equations, and a mapping-cone engine, but no epsilon-contracted Euler-head match, antifield completion, or production BRST-cohomology quotient |
+| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; generated dimension-four catalogues, universal Diff towers, explicit type-D primitives, a complete Lorentzian intrinsic Euler tower, and a mapping-cone engine, but no exhaustive production BRST-cohomology quotient or antifield completion |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `IN_PROGRESS` import/projection infrastructure only |
 | D | reduced and Euclidean coefficient ledgers | `IN_PROGRESS` bookkeeping only; no BV coefficient claimed |
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
@@ -142,8 +142,9 @@ or quantum-master-equation result.
 - [`reports/local-strict-density-descent.md`](reports/local-strict-density-descent.md)
   records the exact horizontal-form algebra, generated four-step universal
   Diff towers, explicit type-D primitives, the Euler variational current,
-  exact ordinary-bidegree type-A connecting equations in the frozen carrier
-  algebra, and the still-open Euler-head, quotient, and antifield boundaries.
+  exact ordinary-bidegree type-A connecting equations and the independent
+  Lorentzian Euler-head reconstruction, together with the still-open quotient
+  and antifield boundaries.
 - [`reports/relative-cohomology-engine.md`](reports/relative-cohomology-engine.md)
   records the exact sparse totalization, anchored top-form projection,
   lower-only class exclusion, quotient proof fields, and the uncomputed
