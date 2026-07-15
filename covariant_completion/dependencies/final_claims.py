@@ -21,14 +21,196 @@ No downstream claim can become true while any required node remains false.
 from __future__ import annotations
 
 from dataclasses import dataclass
+import hashlib
 import json
 from pathlib import Path
 from typing import Any, Mapping
 
-
 COVARIANT_ROOT = Path(__file__).resolve().parents[1]
 CERTIFICATE_DIR = COVARIANT_ROOT / "certificates"
 ANALYTIC_CERTIFICATE_DIR = COVARIANT_ROOT.parent / "analytic_completion" / "certificates"
+BRIDGE_CERTIFICATE_DIR = COVARIANT_ROOT.parent / "bridge" / "certificates"
+
+DIRECT_CAUSAL_PAIRING_INPUTS = {
+    "curved_pbw": "adjoint_tractor_bgg_curved_pbw.json",
+    "parent_transfer": "adjoint_tractor_green_transfer.json",
+    "full_homotopy": "curved_full_prolonged_green_homotopy_assembly.json",
+    "prolonged_current": "curved_prolonged_current_comparison.json",
+    "auxiliary_metric_current": "curved_current_comparison.json",
+    "green_current_theorem": "curved_green_current_pairing.json",
+    "EAL_regression": "curved_EAL_pairing_regression.json",
+}
+
+
+def _file_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _json_certificate_digest(path: Path) -> str:
+    value = json.loads(path.read_text(encoding="utf-8"))
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+
+
+def _authoritative_so42_input_sha256() -> dict[str, str]:
+    paths = {
+        "actual_causal_quasi_isomorphism": (
+            CERTIFICATE_DIR / "curved_causal_transport_recognition.json"
+        ),
+        "auxiliary_retract": (
+            CERTIFICATE_DIR / "curved_auxiliary_canonical_split.json"
+        ),
+        "curvature_mapping_cylinder": (
+            CERTIFICATE_DIR
+            / "curved_curvature_mapping_cylinder_substitution.json"
+        ),
+        "curvature_causal_pde": (
+            CERTIFICATE_DIR / "curved_weyl_cotton_causal_pde.json"
+        ),
+        "raw_bv_transfer": BRIDGE_CERTIFICATE_DIR / "raw_bv_transfer.json",
+        "cylinder_bgg_blocks": (
+            BRIDGE_CERTIFICATE_DIR / "cylinder_bgg_blocks.json"
+        ),
+        "cylinder_metric_preimages": (
+            BRIDGE_CERTIFICATE_DIR / "cylinder_metric_preimages.json"
+        ),
+        "curvature_EAL_spectrum": (
+            CERTIFICATE_DIR / "curved_EAL_spectrum_all_level.json"
+        ),
+    }
+    return {name: _json_certificate_digest(path) for name, path in paths.items()}
+
+
+def so42_authoritative_certificate_passes(
+    certificate: Mapping[str, Any],
+) -> bool:
+    if certificate.get("schema") != (
+        "pure-weyl-so42-causal-transport-recognition-v1"
+    ):
+        return False
+    if certificate.get("dependency_tag") != "LORENTZIAN-CAUSAL":
+        return False
+    sections = tuple(
+        certificate.get(name)
+        for name in (
+            "conditional_theorem",
+            "cutoff_homotopy",
+            "local_naturality",
+            "global_module_identification",
+            "residual_action",
+            "promotion_boundary",
+            "input_certificate_sha256",
+        )
+    )
+    if not all(isinstance(value, Mapping) for value in sections):
+        return False
+    theorem, cutoff, local, module, residual, boundary, hashes = sections
+    if dict(hashes) != _authoritative_so42_input_sha256():
+        return False
+    return all(
+        (
+            theorem.get("recognition_exact") is True,
+            theorem.get("requires_causal_quasi_isomorphism") is True,
+            theorem.get("actual_causal_quasi_isomorphism_bound") is True,
+            cutoff.get("formal_defect") == 0,
+            cutoff.get("identity") == "[kappa,rho]=[Q,[chi,rho]]",
+            cutoff.get("homotopy") == "[chi,rho]",
+            cutoff.get("homotopy_support_compact") is True,
+            cutoff.get("all_fifteen_generators") is True,
+            local.get("auxiliary_shift_natural") is True,
+            local.get("auxiliary_retract_support_local") is True,
+            local.get("curvature_map_natural") is True,
+            local.get("curvature_mapping_cylinder_support_local") is True,
+            local.get("first_order_state_action_inherited_from_covariant_rows")
+            is True,
+            local.get("contractible_rows_add_no_action") is True,
+            module.get("smooth_global_BGG_equivariant") is True,
+            module.get("curvature_quotient_is_W_plus_W_minus") is True,
+            module.get("all_level_EAL_exhaustion") is True,
+            module.get("both_chiralities") is True,
+            residual.get("raw_generators_are_chain_maps") is True,
+            residual.get("raw_SDR_homotopy_equivariant") is True,
+            residual.get("strict_so42_action_on_cohomology") is True,
+            residual.get("proper_conformal_brackets_exact") is True,
+            boundary.get("does_not_construct_causal_green_homotopy") is True,
+            boundary.get("does_not_claim_strict_Cauchy_split") is True,
+            boundary.get("does_not_claim_pairing_transport") is True,
+            boundary.get("SO42_equivariant_transport_conditional") is True,
+        )
+    )
+
+
+def direct_causal_pairing_certificate_passes(
+    certificate: Mapping[str, Any],
+) -> bool:
+    """Recognize the SHA-bound implementation-neutral pairing theorem."""
+
+    if certificate.get("schema") != (
+        "pure-weyl-direct-causal-pairing-transport-v1"
+    ):
+        return False
+    if certificate.get("dependency_tag") != "LORENTZIAN-CAUSAL":
+        return False
+    if certificate.get("fail_closed") is not True:
+        return False
+    recorded = certificate.get("input_certificate_sha256")
+    guards = certificate.get("fail_closed_guards")
+    causal = certificate.get("causal_difference")
+    pairing = certificate.get("pairing_transport")
+    normalization = certificate.get("normalization")
+    if not all(
+        isinstance(value, Mapping)
+        for value in (recorded, guards, causal, pairing, normalization)
+    ):
+        return False
+    if set(recorded) != set(DIRECT_CAUSAL_PAIRING_INPUTS):
+        return False
+    if any(
+        recorded.get(role)
+        != _file_sha256(CERTIFICATE_DIR / filename)
+        for role, filename in DIRECT_CAUSAL_PAIRING_INPUTS.items()
+    ):
+        return False
+    required_guards = {
+        "EAL_regression:verified",
+        "curved_pbw:theorem_boundary.cyclic_i_sharp_equals_p",
+        "full_homotopy:causal_green_homotopy",
+        "full_homotopy:full_hybrid_assembly.graded_adjoint_exact_conditionally",
+        "green_current_theorem:Green_pairing_equals_current_pairing",
+        "manual_final_H4_promotion_rejected",
+        "prolonged_current:prolonged_current_comparison",
+    }
+    if not required_guards.issubset(guards):
+        return False
+    if any(value is not True for value in guards.values()):
+        return False
+    if causal.get("causal_support") is not True:
+        return False
+    if causal.get("graded_antisymmetry") != "Delta_Lambda^sharp=-Delta_Lambda":
+        return False
+    if pairing.get("implementation_neutral") is not True:
+        return False
+    if pairing.get("positive_PDE_symmetrizer_used") is not False:
+        return False
+    if pairing.get("canonical_D_TF_inverse_used") is not False:
+        return False
+    if pairing.get("global_W0_G_end_identity_used") is not False:
+        return False
+    if normalization.get("Krein_signs") != {"E": 1, "A": -1, "L": -1}:
+        return False
+    return all(
+        (
+            certificate.get("Green_pairing_equals_current_pairing") is True,
+            certificate.get("pairing_compatibility") is True,
+            certificate.get("status_flags_promoted")
+            == [
+                "Green_pairing_equals_current_pairing",
+                "pairing_compatibility",
+            ],
+            certificate.get("final_covariant_H4") is False,
+        )
+    )
 
 
 @dataclass(frozen=True)
@@ -140,6 +322,14 @@ class FinalClaimDependencyReport:
         curved_eal = _load(
             "curved_EAL_pairing_regression.json",
             "pure-weyl-curved-EAL-pairing-regression-v1",
+        )
+        direct_causal_pairing = _load(
+            "curved_direct_causal_pairing_transport.json",
+            "pure-weyl-direct-causal-pairing-transport-v1",
+        )
+        so42_transport = _load(
+            "curved_SO42_causal_transport_recognition.json",
+            "pure-weyl-so42-causal-transport-recognition-v1",
         )
         recognition = _load(
             "green_operator_chain_compatibility.json",
@@ -441,44 +631,55 @@ class FinalClaimDependencyReport:
         atomic(
             "causal_quasi_isomorphism",
             bool(curvature_prolongation.get("causal_quasi_isomorphism", False)),
-            "open_analytic_obligation",
+            "implemented_structural_fact",
             (
                 "curved_causal_transport_recognition.json",
                 "curved_curvature_prolongation_status.json",
             ),
-            "Prove that the causal map Gamma_c(C_prol)[1] -> Gamma_sc(C_prol) is a quasi-isomorphism and specialize it to all smooth cylinder solutions.",
+            "The support-exact-sequence construction proves that Lambda_+-Lambda_- is a quasi-isomorphism Gamma_c(C_prol)[1] -> Gamma_sc(C_prol), and compactness of S3 identifies the target with all smooth cylinder solutions.",
         )
         atomic(
             "residual_endpoint_recovery",
             bool(curvature_prolongation.get("residual_endpoint_recovery", False)),
-            "open_analytic_obligation",
+            "implemented_structural_fact",
             (
                 "curved_causal_transport_recognition.json",
                 "curved_curvature_prolongation_status.json",
                 "residual_bfv_comparison.json",
             ),
-            "Realize the fifteen cutoff CKV classes and their dual endpoints through the actual causal map, with no prolongation copy and suspension sign +1.",
+            "All fifteen cutoff CKV classes and their dual endpoints are realized through the actual causal map, with no prolongation copy and suspension sign +1.",
         )
         atomic(
             "SO42_equivariant_transport",
-            bool(curvature_prolongation.get("SO42_equivariant_transport", False)),
-            "open_analytic_obligation",
+            bool(curvature_prolongation.get("SO42_equivariant_transport", False))
+            and so42_authoritative_certificate_passes(so42_transport),
+            "implemented_structural_fact",
             (
                 "curved_SO42_causal_transport_recognition.json",
                 "curved_curvature_prolongation_status.json",
             ),
-            "Prove that the causal/Cauchy identification transfers the full SO(4,2) action, strictly or by an explicit chain homotopy.",
+            "The causal/Cauchy identification transfers the full SO(4,2) action by the explicit compactly supported cutoff homotopy [kappa,rho]=[Q,[chi,rho]].",
         )
         atomic(
             "prolonged_current_comparison",
             bool(curvature_prolongation.get("prolonged_current_comparison", False)),
-            "open_analytic_obligation",
+            "implemented_structural_fact",
             (
                 "curved_curvature_prolongation_status.json",
                 "curved_prolonged_current_comparison.json",
                 "curved_current_comparison.json",
             ),
             "The all-row cyclic quadratic parent and off-shell d+Q current comparison are exact and content-addressed to the corrected curved core-chain and mapping-cylinder certificates.",
+        )
+        atomic(
+            "direct_causal_pairing_transport",
+            direct_causal_pairing_certificate_passes(direct_causal_pairing),
+            "implemented_structural_fact",
+            (
+                "curved_direct_causal_pairing_transport.json",
+                *DIRECT_CAUSAL_PAIRING_INPUTS.values(),
+            ),
+            "The SHA-bound direct cyclic causal homotopy identifies the Green pairing with the prolonged, auxiliary, metric, Cauchy and all-energy E/A/L current pairings; it does not use a canonical endpoint inverse.",
         )
         atomic(
             "candidate_curvature_principal_symmetric_hyperbolicity",
@@ -833,7 +1034,7 @@ class FinalClaimDependencyReport:
                 "support_local_prolongation_retract",
                 "prolonged_BV_operator_identity",
             ),
-            "open_analytic_obligation",
+            "derived_analytic_claim",
             "The exact local curvature-prolonged complex includes its first-order equations, sourced subsidiary system, all-level spectrum, every BV row, and support-local equivalence.",
         )
         derived(
@@ -844,7 +1045,7 @@ class FinalClaimDependencyReport:
                 "direct_tractor_causal_homotopy",
                 "causal_green_homotopy",
             ),
-            "open_analytic_obligation",
+            "derived_analytic_claim",
             "The selected direct tractor realization supplies a causal homotopy on the complete prolonged BV complex; it does not assert the superseded canonical witness/inverse implementation.",
         )
         derived(
@@ -915,6 +1116,7 @@ class FinalClaimDependencyReport:
                 "green_homotopies",
                 "curved_green_current",
                 "EAL_pairing_regression",
+                "direct_causal_pairing_transport",
             ),
             "derived_analytic_claim",
             "The covariant causal, Cauchy, and energy-mode pairings agree on cohomology.",
@@ -957,6 +1159,8 @@ class FinalClaimDependencyReport:
                 "residual_endpoint_recovery",
                 "SO42_equivariant_transport",
                 "prolonged_current_comparison",
+                "direct_causal_pairing_transport",
+                "pairing_compatibility",
                 "residual_H4_is_C2",
                 "residual_gram_is_I2",
             ),

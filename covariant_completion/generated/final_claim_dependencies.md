@@ -31,7 +31,7 @@ flowchart TD
 | --- | --- | --- |
 | `complete_bv_green_hyperbolicity` | **true** | `curved_auxiliary_hessian_exact`, `support_preserving_retract`, `curvature_green_realization`, `curved_Q_nilpotency`, `curved_witness_identity`, `curved_formal_adjointness` |
 | `support_preserving_metric_equivalence` | **true** | `curved_deformation_retract`, `support_preservation` |
-| `pairing_compatibility` | **true** | `curved_current_comparison`, `green_homotopies`, `curved_green_current`, `EAL_pairing_regression` |
+| `pairing_compatibility` | **true** | `curved_current_comparison`, `green_homotopies`, `curved_green_current`, `EAL_pairing_regression`, `direct_causal_pairing_transport` |
 | `causal_quasi_isomorphism` | **true** |  |
 | `CKV_recovery` | **true** | `green_homotopies`, `ckv_cutoff_identity` |
 | `residual_no_duplication` | **true** | `support_preserving_metric_equivalence`, `CKV_recovery`, `algebraic_residual_no_duplication` |
@@ -39,7 +39,7 @@ flowchart TD
 | `energy_gram_is_I2` | **true** | `residual_gram_is_I2` |
 | `residual_H4_is_C2` | **true** |  |
 | `residual_gram_is_I2` | **true** |  |
-| `final_covariant_H4` | **true** | `curved_operator_identity`, `curved_deformation_retract`, `curved_current_comparison`, `scalar_wave_witness_no_go`, `weyl_symbol_helicity_isomorphism`, `curved_EB_equations`, `curved_EB_first_order_closure`, `curved_EB_symmetric_hyperbolicity`, `curved_sourced_constraint_identity`, `curved_constraint_propagation`, `EAL_curvature_spectrum_match`, `support_local_prolongation_retract`, `prolonged_BV_operator_identity`, `direct_tractor_causal_homotopy`, `causal_green_homotopy`, `causal_quasi_isomorphism`, `residual_endpoint_recovery`, `SO42_equivariant_transport`, `prolonged_current_comparison`, `residual_H4_is_C2`, `residual_gram_is_I2` |
+| `final_covariant_H4` | **true** | `curved_operator_identity`, `curved_deformation_retract`, `curved_current_comparison`, `scalar_wave_witness_no_go`, `weyl_symbol_helicity_isomorphism`, `curved_EB_equations`, `curved_EB_first_order_closure`, `curved_EB_symmetric_hyperbolicity`, `curved_sourced_constraint_identity`, `curved_constraint_propagation`, `EAL_curvature_spectrum_match`, `support_local_prolongation_retract`, `prolonged_BV_operator_identity`, `direct_tractor_causal_homotopy`, `causal_green_homotopy`, `causal_quasi_isomorphism`, `residual_endpoint_recovery`, `SO42_equivariant_transport`, `prolonged_current_comparison`, `direct_causal_pairing_transport`, `pairing_compatibility`, `residual_H4_is_C2`, `residual_gram_is_I2` |
 
 ## Implemented scaffold
 
@@ -57,6 +57,11 @@ flowchart TD
 - `prolonged_BV_operator_identity` — The complete sixteen-block fibre-identified mapping cylinder is coefficientwise nilpotent, odd cyclic, and satisfies PI=1 and IP-1=QH+HQ; the old rank-four Rees defect used the wrong flat-Fourier cotangent projection.
 - `direct_tractor_causal_homotopy` — The SHA-bound curved adjoint-tractor transfer, trace/Weyl shear, and 356+30 hybrid SDR give advanced and retarded all-row homotopies directly, without claiming a canonical endpoint inverse.
 - `causal_green_homotopy` — The complete 386-row prolonged complex has support-causal Lambda_+/- with Q Lambda_+/- + Lambda_+/- Q=1 and Lambda_+^sharp=Lambda_-.
+- `causal_quasi_isomorphism` — The support-exact-sequence construction proves that Lambda_+-Lambda_- is a quasi-isomorphism Gamma_c(C_prol)[1] -> Gamma_sc(C_prol), and compactness of S3 identifies the target with all smooth cylinder solutions.
+- `residual_endpoint_recovery` — All fifteen cutoff CKV classes and their dual endpoints are realized through the actual causal map, with no prolongation copy and suspension sign +1.
+- `SO42_equivariant_transport` — The causal/Cauchy identification transfers the full SO(4,2) action by the explicit compactly supported cutoff homotopy [kappa,rho]=[Q,[chi,rho]].
+- `prolonged_current_comparison` — The all-row cyclic quadratic parent and off-shell d+Q current comparison are exact and content-addressed to the corrected curved core-chain and mapping-cylinder certificates.
+- `direct_causal_pairing_transport` — The SHA-bound direct cyclic causal homotopy identifies the Green pairing with the prolonged, auxiliary, metric, Cauchy and all-energy E/A/L current pairings; it does not use a canonical endpoint inverse.
 - `candidate_curvature_principal_symmetric_hyperbolicity` — The legacy candidate electric/magnetic Weyl principal block has a positive symmetrizer and the two physical characteristic speeds in each direction. This certificate alone is principal-symbol evidence; the exact curved derivation is certified separately by the curved E/B, first-order, sourced-constraint, and propagation nodes.
 - `candidate_curvature_principal_constraints_propagate` — The principal divergence constraints close through div(curl_2 h)=(1/2)curl_1(div h).
 - `support_preservation` — The displayed finite differential and pointwise maps do not enlarge support.

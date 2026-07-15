@@ -159,6 +159,8 @@ causal_quasi_isomorphism           = true
 residual_endpoint_recovery         = true
 SO42_equivariant_transport         = true
 prolonged_current_comparison       = true
+direct_causal_pairing_transport    = true
+pairing_compatibility              = true
 ```
 
 The two false flags are scoped legacy implementation flags: the direct

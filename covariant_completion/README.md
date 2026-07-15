@@ -347,6 +347,8 @@ and causal_quasi_isomorphism
 and residual_endpoint_recovery
 and SO42_equivariant_transport
 and prolonged_current_comparison
+and direct_causal_pairing_transport
+and pairing_compatibility
 and residual_H4_is_C2
 and residual_gram_is_I2.
 ```
@@ -362,6 +364,8 @@ causal_quasi_isomorphism           = true
 residual_endpoint_recovery         = true
 SO42_equivariant_transport         = true
 prolonged_current_comparison       = true
+direct_causal_pairing_transport    = true
+pairing_compatibility              = true
 ```
 
 The two false flags encode stronger implementation-specific constructions;

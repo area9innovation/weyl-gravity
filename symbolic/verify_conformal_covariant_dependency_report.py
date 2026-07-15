@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from copy import deepcopy
 import json
 from pathlib import Path
 import sys
@@ -14,6 +15,10 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from covariant_completion.dependencies import FinalClaimDependencyReport
+from covariant_completion.dependencies.final_claims import (
+    direct_causal_pairing_certificate_passes,
+    so42_authoritative_certificate_passes,
+)
 
 
 CERTIFICATE = ROOT / "covariant_completion" / "certificates" / "final_claim_dependencies.json"
@@ -48,6 +53,8 @@ EXPECTED_FINAL_REQUIREMENTS = (
     "residual_endpoint_recovery",
     "SO42_equivariant_transport",
     "prolonged_current_comparison",
+    "direct_causal_pairing_transport",
+    "pairing_compatibility",
     "residual_H4_is_C2",
     "residual_gram_is_I2",
 )
@@ -122,7 +129,64 @@ def main() -> None:
             raise AssertionError("the certified residual H4 input regressed")
         if not report.nodes["residual_gram_is_I2"].status:
             raise AssertionError("the certified residual Gram input regressed")
-        print("COVARIANT CLAIM DEPENDENCY GUARDS: 8/8 PASS")
+        direct_path = (
+            ROOT
+            / "covariant_completion"
+            / "certificates"
+            / "curved_direct_causal_pairing_transport.json"
+        )
+        direct = json.loads(direct_path.read_text(encoding="utf-8"))
+        if not direct_causal_pairing_certificate_passes(direct):
+            raise AssertionError("authoritative direct pairing receipt regressed")
+        if direct_causal_pairing_certificate_passes({}):
+            raise AssertionError("missing direct pairing receipt was recognized")
+        mutations = []
+        for path, value in (
+            (("schema",), "forged-schema"),
+            (("dependency_tag",), "REDUCED-MODE"),
+            (("fail_closed",), False),
+            (("input_certificate_sha256", "curved_pbw"), "0" * 64),
+            (("pairing_compatibility",), False),
+            (("fail_closed_guards", "manual_final_H4_promotion_rejected"), False),
+        ):
+            forged = deepcopy(direct)
+            cursor = forged
+            for key in path[:-1]:
+                cursor = cursor[key]
+            cursor[path[-1]] = value
+            mutations.append(forged)
+        if any(direct_causal_pairing_certificate_passes(item) for item in mutations):
+            raise AssertionError("forged direct pairing receipt was recognized")
+        if "direct_causal_pairing_transport" not in final.requires:
+            raise AssertionError("terminal gate omits direct causal pairing")
+        if "pairing_compatibility" not in final.requires:
+            raise AssertionError("terminal gate omits pairing compatibility")
+        if all(
+            False if name == "direct_causal_pairing_transport" else report.nodes[name].status
+            for name in final.requires
+        ):
+            raise AssertionError("missing direct pairing receipt did not block terminal promotion")
+        so42_path = (
+            ROOT
+            / "covariant_completion"
+            / "certificates"
+            / "curved_SO42_causal_transport_recognition.json"
+        )
+        so42 = json.loads(so42_path.read_text(encoding="utf-8"))
+        if not so42_authoritative_certificate_passes(so42):
+            raise AssertionError("authoritative SO(4,2) receipt regressed")
+        forged_so42 = deepcopy(so42)
+        forged_so42["input_certificate_sha256"]["raw_bv_transfer"] = "0" * 64
+        if so42_authoritative_certificate_passes(forged_so42):
+            raise AssertionError("forged SO(4,2) input hash was recognized")
+        if not report.nodes["SO42_equivariant_transport"].status:
+            raise AssertionError("SHA-bound SO(4,2) terminal atom regressed")
+        if all(
+            False if name == "SO42_equivariant_transport" else report.nodes[name].status
+            for name in final.requires
+        ):
+            raise AssertionError("forged SO(4,2) receipt did not block terminal promotion")
+        print("COVARIANT CLAIM DEPENDENCY GUARDS: 22/22 PASS")
 
     print("COVARIANT FINAL CLAIM DEPENDENCY REPORT: ALL LOGIC CHECKS PASS")
 

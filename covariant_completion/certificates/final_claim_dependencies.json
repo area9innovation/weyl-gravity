@@ -21,6 +21,8 @@
       "residual_endpoint_recovery",
       "SO42_equivariant_transport",
       "prolonged_current_comparison",
+      "direct_causal_pairing_transport",
+      "pairing_compatibility",
       "residual_H4_is_C2",
       "residual_gram_is_I2"
     ],
@@ -64,13 +66,13 @@
     },
     "SO42_equivariant_transport": {
       "blocking_dependencies": [],
-      "classification": "open_analytic_obligation",
+      "classification": "implemented_structural_fact",
       "dependency_mode": "all",
       "evidence": [
         "curved_SO42_causal_transport_recognition.json",
         "curved_curvature_prolongation_status.json"
       ],
-      "note": "Prove that the causal/Cauchy identification transfers the full SO(4,2) action, strictly or by an explicit chain homotopy.",
+      "note": "The causal/Cauchy identification transfers the full SO(4,2) action by the explicit compactly supported cutoff homotopy [kappa,rho]=[Q,[chi,rho]].",
       "requires": [],
       "status": true
     },
@@ -121,13 +123,13 @@
     },
     "causal_quasi_isomorphism": {
       "blocking_dependencies": [],
-      "classification": "open_analytic_obligation",
+      "classification": "implemented_structural_fact",
       "dependency_mode": "all",
       "evidence": [
         "curved_causal_transport_recognition.json",
         "curved_curvature_prolongation_status.json"
       ],
-      "note": "Prove that the causal map Gamma_c(C_prol)[1] -> Gamma_sc(C_prol) is a quasi-isomorphism and specialize it to all smooth cylinder solutions.",
+      "note": "The support-exact-sequence construction proves that Lambda_+-Lambda_- is a quasi-isomorphism Gamma_c(C_prol)[1] -> Gamma_sc(C_prol), and compactness of S3 identifies the target with all smooth cylinder solutions.",
       "requires": [],
       "status": true
     },
@@ -196,7 +198,7 @@
     },
     "curvature_green_realization": {
       "blocking_dependencies": [],
-      "classification": "open_analytic_obligation",
+      "classification": "derived_analytic_claim",
       "dependency_mode": "all",
       "evidence": [],
       "note": "The selected direct tractor realization supplies a causal homotopy on the complete prolonged BV complex; it does not assert the superseded canonical witness/inverse implementation.",
@@ -210,7 +212,7 @@
     },
     "curvature_prolonged_complex_exact": {
       "blocking_dependencies": [],
-      "classification": "open_analytic_obligation",
+      "classification": "derived_analytic_claim",
       "dependency_mode": "all",
       "evidence": [],
       "note": "The exact local curvature-prolonged complex includes its first-order equations, sourced subsidiary system, all-level spectrum, every BV row, and support-local equivalence.",
@@ -574,6 +576,24 @@
       "requires": [],
       "status": false
     },
+    "direct_causal_pairing_transport": {
+      "blocking_dependencies": [],
+      "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_direct_causal_pairing_transport.json",
+        "adjoint_tractor_bgg_curved_pbw.json",
+        "adjoint_tractor_green_transfer.json",
+        "curved_full_prolonged_green_homotopy_assembly.json",
+        "curved_prolonged_current_comparison.json",
+        "curved_current_comparison.json",
+        "curved_green_current_pairing.json",
+        "curved_EAL_pairing_regression.json"
+      ],
+      "note": "The SHA-bound direct cyclic causal homotopy identifies the Green pairing with the prolonged, auxiliary, metric, Cauchy and all-energy E/A/L current pairings; it does not use a canonical endpoint inverse.",
+      "requires": [],
+      "status": true
+    },
     "direct_tractor_causal_homotopy": {
       "blocking_dependencies": [],
       "classification": "implemented_structural_fact",
@@ -647,6 +667,8 @@
         "residual_endpoint_recovery",
         "SO42_equivariant_transport",
         "prolonged_current_comparison",
+        "direct_causal_pairing_transport",
+        "pairing_compatibility",
         "residual_H4_is_C2",
         "residual_gram_is_I2"
       ],
@@ -698,7 +720,8 @@
         "curved_current_comparison",
         "green_homotopies",
         "curved_green_current",
-        "EAL_pairing_regression"
+        "EAL_pairing_regression",
+        "direct_causal_pairing_transport"
       ],
       "status": true
     },
@@ -750,7 +773,7 @@
     },
     "prolonged_current_comparison": {
       "blocking_dependencies": [],
-      "classification": "open_analytic_obligation",
+      "classification": "implemented_structural_fact",
       "dependency_mode": "all",
       "evidence": [
         "curved_curvature_prolongation_status.json",
@@ -827,14 +850,14 @@
     },
     "residual_endpoint_recovery": {
       "blocking_dependencies": [],
-      "classification": "open_analytic_obligation",
+      "classification": "implemented_structural_fact",
       "dependency_mode": "all",
       "evidence": [
         "curved_causal_transport_recognition.json",
         "curved_curvature_prolongation_status.json",
         "residual_bfv_comparison.json"
       ],
-      "note": "Realize the fifteen cutoff CKV classes and their dual endpoints through the actual causal map, with no prolongation copy and suspension sign +1.",
+      "note": "All fifteen cutoff CKV classes and their dual endpoints are realized through the actual causal map, with no prolongation copy and suspension sign +1.",
       "requires": [],
       "status": true
     },
@@ -975,7 +998,7 @@
     "energy_H4_is_C2": true,
     "energy_gram_is_I2": true,
     "final_covariant_H4": true,
-    "implemented_or_derived_true": 67,
+    "implemented_or_derived_true": 68,
     "open_or_blocked": 4,
     "pairing_compatibility": true,
     "residual_H4_is_C2": true,
