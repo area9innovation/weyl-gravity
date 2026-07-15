@@ -1,4 +1,12 @@
 {
+  "CKV_recovery_promoted": true,
+  "SO42_equivariant_transport": false,
+  "actual_causal_input": {
+    "advanced_retarded_adjoint": "Lambda_full,+^sharp=Lambda_full,-",
+    "causal_green_homotopy": true,
+    "formula": "Lambda_full,+/-=H_alg+i_end Lambda_end,+/- p_end",
+    "full_component_count": 386
+  },
   "causal_quasi_isomorphism": {
     "causal_map_is_chain_map": true,
     "chain_defect": 0,
@@ -11,13 +19,24 @@
     "left_cohomology_inverse": true,
     "map": "Lambda=Lambda_plus-Lambda_minus: Gamma_c(C)[1] -> Gamma_sc(C)",
     "right_cohomology_inverse": true,
+    "side_complex_contractions": "Lambda_+ on past-compact and Lambda_- on future-compact",
+    "support_exact_sequence": "0 -> Gamma_c -> Gamma_pc direct-sum Gamma_fc -> Gamma_sc -> 0",
+    "support_exact_sequence_maps": [
+      "f maps to (f,f)",
+      "(u_pc,u_fc) maps to u_pc-u_fc"
+    ],
+    "support_exact_sequence_matrix_defects": {
+      "composition": 0,
+      "kernel_mod_image": 0
+    },
     "support_lemma": "supp([Q,chi_plus]u) lies in a compact time slab intersected with the causal hull of compact Cauchy data",
     "support_lemmas_exact": true
   },
+  "causal_quasi_isomorphism_promoted": true,
   "conditional_theorem": {
+    "actual_causal_green_homotopy_bound": true,
     "input": "degreewise causal Lambda_plus/minus with Q Lambda_plus/minus+Lambda_plus/minus Q=1",
-    "recognition_exact": true,
-    "requires_actual_causal_green_homotopy": true
+    "recognition_exact": true
   },
   "cylinder_specialization": {
     "Gamma_sc_equals_Gamma_smooth": true,
@@ -26,18 +45,31 @@
     "cauchy_surface_compact": true,
     "spacetime": "R x S^3"
   },
+  "dependency_tag": "LORENTZIAN-CAUSAL",
+  "fail_closed": true,
+  "final_covariant_H4": false,
+  "input_certificate_sha256": {
+    "curvature_mapping_cylinder": "b56ba739afdd05548e40c351721e8a39e4776ecb7581a8213e9540faa6c06797",
+    "cutoff_recovery": "b513373230a616c86ba1953ca52460d3b4582a58e93315ba3c3f5a567c7b0f48",
+    "full_prolonged_causal_homotopy": "aeee4aa29ac8d161649324ad6ef17ec20a3aba9711937788b35149d367776787",
+    "green_recognition": "60b3f49b74fa9704795baa2382b035ec9e823d4bd0528435a574ad4e7d036df2",
+    "residual_no_duplication": "b513373230a616c86ba1953ca52460d3b4582a58e93315ba3c3f5a567c7b0f48"
+  },
   "no_duplication": {
     "I_P_minus_identity": "QH+HQ",
     "P_I": "identity",
+    "auxiliary_and_curvature_added_copies_contractible": true,
     "curvature_mapping_cylinder_contractible": true,
+    "endpoint_to_BFV_rank": 15,
     "moment_map_is_function_not_coordinate": true,
     "one_bfv_momentum_copy": 15,
-    "one_residual_ghost_copy": 15
+    "one_residual_ghost_copy": 15,
+    "suspension_scalar": 1
   },
   "promotion_boundary": {
     "SO42_equivariant_transport_proved": false,
     "does_not_construct_Green_operators": true,
-    "does_not_promote_without_three_Green_flags": true,
+    "does_not_require_separate_Green_witness_flag": true,
     "prolonged_current_comparison_proved": false
   },
   "residual_endpoint_recovery": {
@@ -45,9 +77,296 @@
     "compact_cutoff_sources": true,
     "compact_types": "4_-1 + 7_0 + 4_+1",
     "dual_endpoint_rank": 15,
+    "dual_representatives": [
+      {
+        "compact_degree": 1,
+        "cutoff_source": "j_P0^sharp",
+        "index": 0,
+        "label": "P0^*",
+        "quotient_pairing": "delta_0",
+        "representative": "quotient_section[:,0]"
+      },
+      {
+        "compact_degree": 1,
+        "cutoff_source": "j_P1^sharp",
+        "index": 1,
+        "label": "P1^*",
+        "quotient_pairing": "delta_1",
+        "representative": "quotient_section[:,1]"
+      },
+      {
+        "compact_degree": 1,
+        "cutoff_source": "j_P2^sharp",
+        "index": 2,
+        "label": "P2^*",
+        "quotient_pairing": "delta_2",
+        "representative": "quotient_section[:,2]"
+      },
+      {
+        "compact_degree": 1,
+        "cutoff_source": "j_P3^sharp",
+        "index": 3,
+        "label": "P3^*",
+        "quotient_pairing": "delta_3",
+        "representative": "quotient_section[:,3]"
+      },
+      {
+        "compact_degree": 0,
+        "cutoff_source": "j_M01^sharp",
+        "index": 4,
+        "label": "M01^*",
+        "quotient_pairing": "delta_4",
+        "representative": "quotient_section[:,4]"
+      },
+      {
+        "compact_degree": 0,
+        "cutoff_source": "j_M02^sharp",
+        "index": 5,
+        "label": "M02^*",
+        "quotient_pairing": "delta_5",
+        "representative": "quotient_section[:,5]"
+      },
+      {
+        "compact_degree": 0,
+        "cutoff_source": "j_M03^sharp",
+        "index": 6,
+        "label": "M03^*",
+        "quotient_pairing": "delta_6",
+        "representative": "quotient_section[:,6]"
+      },
+      {
+        "compact_degree": 0,
+        "cutoff_source": "j_M12^sharp",
+        "index": 7,
+        "label": "M12^*",
+        "quotient_pairing": "delta_7",
+        "representative": "quotient_section[:,7]"
+      },
+      {
+        "compact_degree": 0,
+        "cutoff_source": "j_M13^sharp",
+        "index": 8,
+        "label": "M13^*",
+        "quotient_pairing": "delta_8",
+        "representative": "quotient_section[:,8]"
+      },
+      {
+        "compact_degree": 0,
+        "cutoff_source": "j_M23^sharp",
+        "index": 9,
+        "label": "M23^*",
+        "quotient_pairing": "delta_9",
+        "representative": "quotient_section[:,9]"
+      },
+      {
+        "compact_degree": 0,
+        "cutoff_source": "j_D^sharp",
+        "index": 10,
+        "label": "D^*",
+        "quotient_pairing": "delta_10",
+        "representative": "quotient_section[:,10]"
+      },
+      {
+        "compact_degree": -1,
+        "cutoff_source": "j_K0^sharp",
+        "index": 11,
+        "label": "K0^*",
+        "quotient_pairing": "delta_11",
+        "representative": "quotient_section[:,11]"
+      },
+      {
+        "compact_degree": -1,
+        "cutoff_source": "j_K1^sharp",
+        "index": 12,
+        "label": "K1^*",
+        "quotient_pairing": "delta_12",
+        "representative": "quotient_section[:,12]"
+      },
+      {
+        "compact_degree": -1,
+        "cutoff_source": "j_K2^sharp",
+        "index": 13,
+        "label": "K2^*",
+        "quotient_pairing": "delta_13",
+        "representative": "quotient_section[:,13]"
+      },
+      {
+        "compact_degree": -1,
+        "cutoff_source": "j_K3^sharp",
+        "index": 14,
+        "label": "K3^*",
+        "quotient_pairing": "delta_14",
+        "representative": "quotient_section[:,14]"
+      }
+    ],
     "endpoint_suspension_sign": 1,
+    "exact_matrix_sha256": {
+      "CKV_basis": "8c51b108380bfad4855ca6c2c6c20d0f82c31e46040480062320f512d51fd546",
+      "CKV_projector": "0cff4f459d5780b776d2e5a9060580f6449d6310f8c051e22c656685725259fc",
+      "dual_quotient_map": "2d83a7e6b8abac63e58dccfde1b58cd5b8010b82c5412eba2db7deabc575f439",
+      "dual_quotient_section": "e41a3d9c300acbcf68a9604b0cb32c8d9a1161a46ef7b1da83f382a871973ae5",
+      "endpoint_to_BFV": "970ff9d818e335ed5ce1492ee44daaac4ed3b837f593d1accc0a05650ace7794"
+    },
     "ghost_rank": 15,
+    "ghost_representatives": [
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_P0]=[xi_P0]",
+        "compact_degree": -1,
+        "index": 0,
+        "label": "P0",
+        "source": "j_P0=Q(chi xi_P0)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_P1]=[xi_P1]",
+        "compact_degree": -1,
+        "index": 1,
+        "label": "P1",
+        "source": "j_P1=Q(chi xi_P1)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_P2]=[xi_P2]",
+        "compact_degree": -1,
+        "index": 2,
+        "label": "P2",
+        "source": "j_P2=Q(chi xi_P2)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_P3]=[xi_P3]",
+        "compact_degree": -1,
+        "index": 3,
+        "label": "P3",
+        "source": "j_P3=Q(chi xi_P3)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_M01]=[xi_M01]",
+        "compact_degree": 0,
+        "index": 4,
+        "label": "M01",
+        "source": "j_M01=Q(chi xi_M01)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_M02]=[xi_M02]",
+        "compact_degree": 0,
+        "index": 5,
+        "label": "M02",
+        "source": "j_M02=Q(chi xi_M02)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_M03]=[xi_M03]",
+        "compact_degree": 0,
+        "index": 6,
+        "label": "M03",
+        "source": "j_M03=Q(chi xi_M03)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_M12]=[xi_M12]",
+        "compact_degree": 0,
+        "index": 7,
+        "label": "M12",
+        "source": "j_M12=Q(chi xi_M12)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_M13]=[xi_M13]",
+        "compact_degree": 0,
+        "index": 8,
+        "label": "M13",
+        "source": "j_M13=Q(chi xi_M13)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_M23]=[xi_M23]",
+        "compact_degree": 0,
+        "index": 9,
+        "label": "M23",
+        "source": "j_M23=Q(chi xi_M23)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_D]=[xi_D]",
+        "compact_degree": 0,
+        "index": 10,
+        "label": "D",
+        "source": "j_D=Q(chi xi_D)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_K0]=[xi_K0]",
+        "compact_degree": 1,
+        "index": 11,
+        "label": "K0",
+        "source": "j_K0=Q(chi xi_K0)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_K1]=[xi_K1]",
+        "compact_degree": 1,
+        "index": 12,
+        "label": "K1",
+        "source": "j_K1=Q(chi xi_K1)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_K2]=[xi_K2]",
+        "compact_degree": 1,
+        "index": 13,
+        "label": "K2",
+        "source": "j_K2=Q(chi xi_K2)",
+        "source_compact": true
+      },
+      {
+        "K_xi": "zero",
+        "Q_j": "zero",
+        "causal_recovery": "[Lambda j_K3]=[xi_K3]",
+        "compact_degree": 1,
+        "index": 14,
+        "label": "K3",
+        "source": "j_K3=Q(chi xi_K3)",
+        "source_compact": true
+      }
+    ],
     "source": "j_a=Q(chi xi_a)"
   },
-  "schema": "pure-weyl-causal-transport-recognition-v1"
+  "residual_endpoint_recovery_promoted": true,
+  "residual_no_duplication_promoted": true,
+  "schema": "pure-weyl-causal-transport-recognition-v1",
+  "source_commits": {
+    "curved_adjoint_tractor_PBW": "e47bdf54",
+    "full_prolonged_causal_homotopy": "c5f811e1"
+  }
 }

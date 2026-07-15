@@ -25,10 +25,20 @@ conditional on the actual causal quasi-isomorphism.
 from __future__ import annotations
 
 from dataclasses import dataclass
+import hashlib
+import json
 from typing import Mapping
 
 
 SCHEMA = "pure-weyl-so42-causal-transport-recognition-v1"
+
+
+def _certificate_digest(certificate: Mapping[str, object]) -> str:
+    return hashlib.sha256(
+        json.dumps(certificate, sort_keys=True, separators=(",", ":")).encode(
+            "utf-8"
+        )
+    ).hexdigest()
 
 
 def _mapping(value: object, name: str) -> Mapping[str, object]:
@@ -93,6 +103,7 @@ def recognition_certificate_passes(certificate: Mapping[str, object]) -> bool:
     return bool(
         theorem.get("recognition_exact")
         and theorem.get("requires_causal_quasi_isomorphism")
+        and theorem.get("actual_causal_quasi_isomorphism_bound")
         and cutoff.get("formal_defect") == 0
         and cutoff.get("identity") == "[kappa,rho]=[Q,[chi,rho]]"
         and cutoff.get("homotopy") == "[chi,rho]"
@@ -141,12 +152,22 @@ class SO42CausalTransportRecognition:
         causal_theorem = _mapping(
             self.causal_transport.get("conditional_theorem"), "causal theorem"
         )
+        actual_causal = _mapping(
+            self.causal_transport.get("actual_causal_input"),
+            "actual causal input",
+        )
         cylinder = _mapping(
             self.causal_transport.get("cylinder_specialization"), "cylinder"
         )
         if not (
             causal_theorem.get("recognition_exact")
-            and causal_theorem.get("requires_actual_causal_green_homotopy")
+            and causal_theorem.get("actual_causal_green_homotopy_bound")
+            and self.causal_transport.get("causal_quasi_isomorphism_promoted")
+            is True
+            and self.causal_transport.get("residual_endpoint_recovery_promoted")
+            is True
+            and actual_causal.get("causal_green_homotopy") is True
+            and actual_causal.get("full_component_count") == 386
             and cylinder.get("Gamma_sc_equals_Gamma_smooth")
             and cylinder.get("cauchy_surface_compact")
         ):
@@ -272,9 +293,16 @@ class SO42CausalTransportRecognition:
         self.verify()
         result = {
             "schema": SCHEMA,
+            "dependency_tag": "LORENTZIAN-CAUSAL",
+            "input_certificate_sha256": {
+                "actual_causal_quasi_isomorphism": _certificate_digest(
+                    self.causal_transport
+                )
+            },
             "conditional_theorem": {
                 "recognition_exact": True,
                 "requires_causal_quasi_isomorphism": True,
+                "actual_causal_quasi_isomorphism_bound": True,
                 "conclusion": (
                     "the causal/global-solution identification induces the strict "
                     "SO(4,2) action on W_plus direct-sum W_minus and the residual endpoints"

@@ -1,5 +1,6 @@
 {
   "conditional_theorem": {
+    "actual_causal_quasi_isomorphism_bound": true,
     "conclusion": "the causal/global-solution identification induces the strict SO(4,2) action on W_plus direct-sum W_minus and the residual endpoints",
     "recognition_exact": true,
     "requires_causal_quasi_isomorphism": true
@@ -13,12 +14,16 @@
     "identity": "[kappa,rho]=[Q,[chi,rho]]",
     "support_reason": "d chi is supported in a compact time slab and S3 is compact; rho is a local first-order conformal generator"
   },
+  "dependency_tag": "LORENTZIAN-CAUSAL",
   "global_module_identification": {
     "all_level_EAL_exhaustion": true,
     "both_chiralities": true,
     "curvature_quotient_is_W_plus_W_minus": true,
     "external_theorem": "flat BGG fine resolution on the conformal cylinder",
     "smooth_global_BGG_equivariant": true
+  },
+  "input_certificate_sha256": {
+    "actual_causal_quasi_isomorphism": "cb8d99d59b4bd0821364a4612a4ac89094ef2532d29675fec87b49eabc0bb66d"
   },
   "local_naturality": {
     "auxiliary_retract_support_local": true,

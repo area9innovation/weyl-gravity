@@ -22,6 +22,7 @@ from covariant_completion.green_homotopy.causal_transport import (
 
 CERTIFICATE_DIR = ROOT / "covariant_completion" / "certificates"
 OUTPUT = CERTIFICATE_DIR / "curved_causal_transport_recognition.json"
+REPORT = ROOT / "covariant_completion" / "generated" / "curved_causal_transport_recognition.md"
 
 
 def _load(name: str) -> dict[str, object]:
@@ -37,12 +38,15 @@ def _build(
     cutoff: dict[str, object] | None = None,
     residual: dict[str, object] | None = None,
     mapping: dict[str, object] | None = None,
+    full_homotopy: dict[str, object] | None = None,
 ) -> CausalTransportRecognition:
     return CausalTransportRecognition(
         green or _load("compact_to_global_quasi_isomorphism.json"),
         cutoff or _load("ckv_cutoff_sources.json"),
         residual or _load("residual_no_duplication.json"),
         mapping or _load("curved_curvature_mapping_cylinder_substitution.json"),
+        full_homotopy
+        or _load("curved_full_prolonged_green_homotopy_assembly.json"),
     )
 
 
@@ -71,8 +75,18 @@ def main() -> int:
 
     checks = {
         "conditional_recognition_exact": recognition_certificate_passes(certificate),
+        "actual_full_homotopy_bound": certificate["actual_causal_input"][
+            "causal_green_homotopy"
+        ]
+        is True,
         "causal_chain_defect_zero": (
             certificate["causal_quasi_isomorphism"]["chain_defect"] == 0
+        ),
+        "support_exact_sequence_exact": all(
+            value == 0
+            for value in certificate["causal_quasi_isomorphism"][
+                "support_exact_sequence_matrix_defects"
+            ].values()
         ),
         "cylinder_sc_is_smooth": certificate["cylinder_specialization"][
             "Gamma_sc_equals_Gamma_smooth"
@@ -83,6 +97,14 @@ def main() -> int:
         "fifteen_duals": (
             certificate["residual_endpoint_recovery"]["dual_endpoint_rank"] == 15
         ),
+        "all_fifteen_labeled_CKV_sources": len(
+            certificate["residual_endpoint_recovery"]["ghost_representatives"]
+        )
+        == 15,
+        "all_fifteen_labeled_dual_sources": len(
+            certificate["residual_endpoint_recovery"]["dual_representatives"]
+        )
+        == 15,
         "curvature_copy_contractible": certificate["no_duplication"][
             "curvature_mapping_cylinder_contractible"
         ],
@@ -97,6 +119,15 @@ def main() -> int:
         ],
     }
     if args.guards:
+        full_homotopy = _load(
+            "curved_full_prolonged_green_homotopy_assembly.json"
+        )
+        bad_full_homotopy = deepcopy(full_homotopy)
+        bad_full_homotopy["causal_green_homotopy"] = False
+        checks["missing_actual_full_homotopy_rejected"] = _rejects(
+            full_homotopy=bad_full_homotopy
+        )
+
         green = _load("compact_to_global_quasi_isomorphism.json")
         bad_green = deepcopy(green)
         bad_green["green_homotopies"]["identity"] = "unproved"
@@ -133,10 +164,11 @@ def main() -> int:
             ("causal_quasi_isomorphism", "right_cohomology_inverse", False),
             ("cylinder_specialization", "Gamma_sc_equals_Gamma_smooth", False),
             ("residual_endpoint_recovery", "dual_endpoint_rank", 14),
+            ("actual_causal_input", "causal_green_homotopy", False),
             ("no_duplication", "curvature_mapping_cylinder_contractible", False),
             (
                 "promotion_boundary",
-                "does_not_promote_without_three_Green_flags",
+                "does_not_require_separate_Green_witness_flag",
                 False,
             ),
             ("promotion_boundary", "SO42_equivariant_transport_proved", True),
@@ -147,16 +179,40 @@ def main() -> int:
             checks[f"broken_output_{key}_not_recognized"] = not (
                 recognition_certificate_passes(broken)
             )
+        broken_representative = deepcopy(certificate)
+        broken_representative["residual_endpoint_recovery"][
+            "ghost_representatives"
+        ][0]["source_compact"] = False
+        checks["broken_individual_CKV_source_not_recognized"] = not (
+            recognition_certificate_passes(broken_representative)
+        )
 
     failed = [name for name, passed in checks.items() if not passed]
     if failed:
         raise AssertionError("causal transport recognition failed: " + ", ".join(failed))
+    if args.emit:
+        REPORT.write_text(
+            "# Causal quasi-isomorphism and residual endpoint recovery\n\n"
+            "The SHA-bound 386-row retarded/advanced homotopies induce "
+            "`Lambda=Lambda_+-Lambda_-` and the exact support sequence "
+            "`0 -> Gamma_c -> Gamma_pc direct-sum Gamma_fc -> Gamma_sc -> 0`. "
+            "The past/future side complexes contract, so the connecting map "
+            "is a quasi-isomorphism. Since the Cauchy surface is compact, "
+            "`Gamma_sc=Gamma^infinity` on the cylinder.\n\n"
+            "All fifteen labeled CKV cutoff sources and all fifteen normalized "
+            "dual endpoints were rerun exactly. The mapping cylinder and "
+            "auxiliary enlargement contribute no duplicate residual copy, "
+            "and the BV--BFV suspension sign is +1. SO(4,2) transport, pairing "
+            "transport, and final H4 remain downstream.\n",
+            encoding="utf-8",
+        )
+        print("wrote", REPORT.relative_to(ROOT))
     if args.guards:
         print(
             "CAUSAL TRANSPORT RECOGNITION GUARDS: "
             f"{len(checks)}/{len(checks)} PASS"
         )
-    print("CAUSAL TRANSPORT RECOGNITION: EXACT CONDITIONAL THEOREM")
+    print("CAUSAL TRANSPORT RECOGNITION: EXACT ACTUAL THEOREM")
     return 0
 
 

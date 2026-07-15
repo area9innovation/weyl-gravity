@@ -81,6 +81,9 @@ def main() -> int:
         "causal_input_required": certificate["conditional_theorem"][
             "requires_causal_quasi_isomorphism"
         ],
+        "actual_causal_input_bound": certificate["conditional_theorem"][
+            "actual_causal_quasi_isomorphism_bound"
+        ],
         "Cauchy_split_not_claimed_strict": certificate["promotion_boundary"][
             "does_not_claim_strict_Cauchy_split"
         ],
@@ -93,6 +96,11 @@ def main() -> int:
         bad = deepcopy(causal)
         bad["cylinder_specialization"]["Gamma_sc_equals_Gamma_smooth"] = False
         checks["noncompact_cauchy_surface_rejected"] = _rejects(causal_transport=bad)
+        bad = deepcopy(causal)
+        bad["actual_causal_input"]["causal_green_homotopy"] = False
+        checks["missing_actual_causal_homotopy_rejected"] = _rejects(
+            causal_transport=bad
+        )
 
         auxiliary = _load(CERT / "curved_auxiliary_canonical_split.json")
         bad = deepcopy(auxiliary)
@@ -130,6 +138,7 @@ def main() -> int:
 
         for section, key, value in (
             ("cutoff_homotopy", "formal_defect", 1),
+            ("conditional_theorem", "actual_causal_quasi_isomorphism_bound", False),
             ("cutoff_homotopy", "homotopy_support_compact", False),
             ("global_module_identification", "smooth_global_BGG_equivariant", False),
             ("residual_action", "strict_so42_action_on_cohomology", False),
