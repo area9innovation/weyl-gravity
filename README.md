@@ -48,6 +48,11 @@ General-audience article:
 explains the completed classical pure-Weyl BV–BFV result without assuming
 advanced mathematics or physics.
 
+Video orientation:
+[`Conformal ghosts, fourth-order gravity, and quantum completion`](paper/video-background-guide.md)
+is a guided viewing and reading route through the main competing approaches
+to the higher-derivative ghost problem and their relation to this programme.
+
 Energy-mode analytic completion:
 [`analytic_completion/README.md`](analytic_completion/README.md) documents
 the infinite-index one-particle and bosonic Krein completions, closed
