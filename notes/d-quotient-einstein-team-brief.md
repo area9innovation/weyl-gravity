@@ -216,9 +216,11 @@ That result is neither identified with the flat Stueckelberg compensator nor
 inserted into the compensated BV differential.  The subsequent
 `BERGER_MINIMAL_BV_CLOCK_SDR` theorem now contracts the eight temporal/Weyl
 clock and minimal-dual rows support-locally and cyclically, leaving a 26-row
-retained minimal complex.  Its coefficientwise `q1`, nonminimal rows, causal
-Green complex, and stability theorem remain open; the current Berger gate is
-`BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`.
+retained minimal complex.  `BERGER_RETAINED_MINIMAL_LAYOUT` now freezes those
+26 component rows, bundle types, pairings, allowed `q1` blocks, support rules,
+and order ceilings.  Its coefficientwise operator remains open; the immediate
+gate is `BERGER_RETAINED_MINIMAL_OPERATOR`, followed by nonminimal, causal,
+and stability completion.
 
 ## Work package E-D3: observables, charges, and scattering
 

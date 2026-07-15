@@ -31,6 +31,7 @@ OPERATOR_EXPORT = ROOT / "bridge/certificates/compensated_minimal_bv_operator_ex
 PREFLIGHT = ROOT / "bridge/certificates/compensated_einstein_sourced_defect_preflight.json"
 CHARACTERISTIC_SNAPSHOT = ROOT / "bridge/certificates/compensated_nonzero_characteristic_snapshot.json"
 BERGER_MINIMAL_BV_SDR = ROOT / "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json"
+BERGER_RETAINED_LAYOUT = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json"
 
 
 class SourcedDefectChainMapError(RuntimeError):
@@ -226,6 +227,7 @@ def build_certificate() -> dict[str, Any]:
     preflight = _load(PREFLIGHT)
     snapshot = _load(CHARACTERISTIC_SNAPSHOT)
     berger = _load(BERGER_MINIMAL_BV_SDR)
+    berger_layout = _load(BERGER_RETAINED_LAYOUT)
     _require(preflight.get("verdict") == "ARBITRARY_SAME_SOURCE_EINSTEIN_TRUNCATION_REFUTED_LINEAR_FLAT", "preflight verdict changed")
     _require(snapshot.get("result_state") == "SCOPED_EXACT_SNAPSHOT_CERTIFIED_GLOBAL_CLASSICAL_FREEZE_OPEN", "characteristic scope changed")
     _require(
@@ -235,6 +237,15 @@ def build_certificate() -> dict[str, Any]:
         and berger.get("flags", {}).get("retained_dressed_metric_q1_coefficients_complete") is False
         and berger.get("flags", {}).get("gauge_fixed_nonminimal_rows_complete") is False,
         "Berger minimal-BV contextual gate changed",
+    )
+    _require(
+        berger_layout.get("result_id") == "BERGER_RETAINED_MINIMAL_LAYOUT"
+        and berger_layout.get("claim_status") == "CERTIFIED_TYPED_LAYOUT"
+        and berger_layout.get("flags", {}).get("retained_row_inventory_complete") is True
+        and berger_layout.get("flags", {}).get("q1_block_types_frozen") is True
+        and berger_layout.get("flags", {}).get("retained_q1_coefficients_complete") is False
+        and berger_layout.get("flags", {}).get("nonminimal_rows_complete") is False,
+        "Berger retained-layout contextual gate changed",
     )
     data = _build_exact_data()
     generic = _compatible_source_fiber(data, "generic_noncharacteristic", (2, 1, 0, 0))
@@ -253,7 +264,7 @@ def build_certificate() -> dict[str, Any]:
         "result_state": "UNIVERSAL_SOURCE_WARD_CHAIN_MAP_CERTIFIED_MATTER_BV_LIFT_OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "provenance": {
-            "input_base_commit": "0cf75919f37b03328720fa86653ce245f2cfe365",
+            "input_base_commit": "46d95a1f6f04e446a4d5290ec5666af3af6cd392",
             "generator_path": "bridge/einstein_sector/compensated_sourced_defect_chain_map.py",
             "generator_sha256": _sha256(Path(__file__)),
         },
@@ -262,6 +273,7 @@ def build_certificate() -> dict[str, Any]:
             "sourced_defect_preflight": {"path": str(PREFLIGHT.relative_to(ROOT)), "sha256": _sha256(PREFLIGHT)},
             "characteristic_snapshot": {"path": str(CHARACTERISTIC_SNAPSHOT.relative_to(ROOT)), "sha256": _sha256(CHARACTERISTIC_SNAPSHOT)},
             "berger_minimal_bv_clock_sdr": {"path": str(BERGER_MINIMAL_BV_SDR.relative_to(ROOT)), "sha256": _sha256(BERGER_MINIMAL_BV_SDR)},
+            "berger_retained_minimal_layout": {"path": str(BERGER_RETAINED_LAYOUT.relative_to(ROOT)), "sha256": _sha256(BERGER_RETAINED_LAYOUT)},
         },
         "domain": {
             "spacetime": "four-dimensional Minkowski space",
@@ -288,7 +300,7 @@ def build_certificate() -> dict[str, Any]:
             "external_source_geometry": "for fixed nonzero source, the field solution locus remains affine",
             "not_a_bv_complex_reason": "T and J have no declared kinetic equations, matter gauge symmetries, ghosts, or antifields",
             "model_dependent_next_lift": "choose a matter action (the Berger conformal-scalar model is one candidate), construct its full BV rows, and prove that its stress/source map intertwines the matter BV differential with this universal Ward complex",
-            "berger_context": "the Berger team has certified an eight-row support-local minimal clock SDR, but the retained 26-row q1 coefficients and nonminimal rows required for a full matter-BV lift remain open",
+            "berger_context": "the Berger team has certified an eight-row support-local minimal clock SDR and frozen the typed 26-row retained layout; retained q1 coefficients and nonminimal rows required for a full matter-BV lift remain open",
         },
         "verdict": "SOURCE_WARD_TO_EINSTEIN_DEFECT_CHAIN_MAP_EXACT_GENERIC_MATTER_BV_NOT_UNIVERSAL",
         "claim_flags": {
@@ -300,6 +312,7 @@ def build_certificate() -> dict[str, Any]:
             "compatible_source_kernel_representatives_exact": True,
             "dressed_source_ward_endomorphism_exact": True,
             "berger_minimal_clock_sdr_imported": True,
+            "berger_retained_typed_layout_imported": True,
             "arbitrary_ward_cycle_is_einstein_compatible": False,
             "fixed_external_source_locus_is_bv_subcomplex": False,
             "matter_inclusive_bv_complex_constructed": False,

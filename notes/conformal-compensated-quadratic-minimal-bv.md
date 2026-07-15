@@ -254,8 +254,9 @@ specific smooth fixed-coupling linearized Berger phase space, with tags
 `LOCAL-ALGEBRAIC` and `REDUCED-MODE`.  It has since also certified a
 support-local cyclic SDR for the eight temporal/Weyl clock and minimal-dual
 rows.  The retained 26-row coefficientwise operator, nonminimal rows, causal
-Green complex, and nonlinear stability theorem remain open; the current
-Berger gate is `BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`.
+Green complex, and nonlinear stability theorem remain open.  The retained
+typed layout has now been frozen separately; the immediate Berger gate is
+`BERGER_RETAINED_MINIMAL_OPERATOR`.
 
 The Berger phase is a dynamical relational matter clock on a non-flat compact
 background and uses the opposite metric-signature convention.  The coordinate

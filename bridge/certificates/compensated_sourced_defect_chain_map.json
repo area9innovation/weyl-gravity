@@ -14,6 +14,7 @@
     "bach_obstruction_chain_map_exact": true,
     "berger_matter_bv_lift_constructed": false,
     "berger_minimal_clock_sdr_imported": true,
+    "berger_retained_typed_layout_imported": true,
     "canonical_compensated_operator_export_imported": true,
     "compatible_source_kernel_representatives_exact": true,
     "dressed_source_ward_endomorphism_exact": true,
@@ -28,7 +29,7 @@
     "sourced_defect_residual_identity_exact": true
   },
   "classification": {
-    "berger_context": "the Berger team has certified an eight-row support-local minimal clock SDR, but the retained 26-row q1 coefficients and nonminimal rows required for a full matter-BV lift remain open",
+    "berger_context": "the Berger team has certified an eight-row support-local minimal clock SDR and frozen the typed 26-row retained layout; retained q1 coefficients and nonminimal rows required for a full matter-BV lift remain open",
     "external_source_geometry": "for fixed nonzero source, the field solution locus remains affine",
     "model_dependent_next_lift": "choose a matter action (the Berger conformal-scalar model is one candidate), construct its full BV rows, and prove that its stress/source map intertwines the matter BV differential with this universal Ward complex",
     "not_a_bv_complex_reason": "T and J have no declared kinetic equations, matter gauge symmetries, ghosts, or antifields",
@@ -282,7 +283,11 @@
   "inputs": {
     "berger_minimal_bv_clock_sdr": {
       "path": "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
-      "sha256": "552b7fc975e1c98be909fe9082e2781d60bbe70f0cc6cf19f45ea0e28c154ffd"
+      "sha256": "9e7503ed7fd6082b4164ae7b03d350c753f941cc45d639ffb02598ba8f262422"
+    },
+    "berger_retained_minimal_layout": {
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json",
+      "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
     },
     "characteristic_snapshot": {
       "path": "bridge/certificates/compensated_nonzero_characteristic_snapshot.json",
@@ -3192,8 +3197,8 @@
   ],
   "provenance": {
     "generator_path": "bridge/einstein_sector/compensated_sourced_defect_chain_map.py",
-    "generator_sha256": "c6c206b38d8afc9a1884721b4f3a78514a518da39e79f0cc2e507441a35fef65",
-    "input_base_commit": "0cf75919f37b03328720fa86653ce245f2cfe365"
+    "generator_sha256": "89f0302f7029a76daa98800b6497b90620af238b7341cbece5b660ef2e1c9e0f",
+    "input_base_commit": "46d95a1f6f04e446a4d5290ec5666af3af6cd392"
   },
   "result_id": "COMPENSATED_EXTERNAL_SOURCE_DEFECT_CHAIN_MAP",
   "result_state": "UNIVERSAL_SOURCE_WARD_CHAIN_MAP_CERTIFIED_MATTER_BV_LIFT_OPEN",

@@ -183,7 +183,7 @@ def build_certificate() -> dict[str, Any]:
         "schema": "pure-weyl-einstein-sector-theorem-v1",
         "result_id": "CLASSICAL_EINSTEIN_SECTOR_THEOREM",
         "result_state": "PROVED_WITH_OPEN_BOUNDARY_RAIL",
-        "source_commit": "0cf75919f37b03328720fa86653ce245f2cfe365",
+        "source_commit": "46d95a1f6f04e446a4d5290ec5666af3af6cd392",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "theorem": {
             "name": "Einstein locus and closed-cylinder state separation",

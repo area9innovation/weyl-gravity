@@ -62,10 +62,11 @@ full BV differential with the universal Ward complex while preserving
 
 The newly landed Berger theorem is imported contextually.  It certifies an
 eight-row support-local cyclic minimal clock SDR and leaves a retained 26-row
-minimal complex.  Its coefficientwise retained `q1`, nonminimal rows, Green
-homotopies, and stability remain open, so it is not yet a complete
-matter-inclusive input for this theorem.  No Berger operator is inserted into
-the flat chain map.
+minimal complex.  Its follow-on typed-layout certificate freezes all 26 rows,
+bundle types, pairings, allowed `q1` blocks, support rules, and order ceilings.
+The coefficientwise retained operator, nonminimal rows, Green homotopies, and
+stability remain open, so it is not yet a complete matter-inclusive input for
+this theorem.  No Berger operator is inserted into the flat chain map.
 
 ## Claim boundary
 
@@ -76,20 +77,21 @@ propagation, nonlinear closure, scattering, or quantum result is asserted.
 
 ## Provenance
 
-Input base commit: `0cf75919f37b03328720fa86653ce245f2cfe365`.
+Input base commit: `46d95a1f6f04e446a4d5290ec5666af3af6cd392`.
 
 | Artifact | SHA-256 |
 |---|---|
-| generator | `c6c206b38d8afc9a1884721b4f3a78514a518da39e79f0cc2e507441a35fef65` |
+| generator | `89f0302f7029a76daa98800b6497b90620af238b7341cbece5b660ef2e1c9e0f` |
 | schema | `fabe7924ecc4b4ae9cfda7fa85ea3ec356938b6571fb341b15626e6e06d30b83` |
-| certificate | `42215bce4769fb49d336a85e94225af01043944e609dea62e8bf58eecfda49f4` |
-| tests | `13349b6cbc99b8b42dd2acd38ae0c74e69d9e920fc61aa748d41ee45416cbdc6` |
-| theorem note | `e42db262b7a18d523dc1cd8a0cc8bb836dd39416f35f5e66f6d207bbcbed3788` |
-| Einstein-sector aggregator | `9892fef7ca707bf23ce35a4b362fa0d62d4e1aa0cefb6114019c0b720b41cb00` |
-| Einstein-sector theorem certificate | `622bb7c2501e501660d4896577248f7438223c7bb8b3d4ca98e1b8f1009c1005` |
-| refreshed asymptotic bootstrap | `3251ce2a1da809d8ef1518fde71a59eaf92871b34b5f5f9a2f38eece6841bae4` |
-| refreshed D-quotient asymptotic seed | `15531aa7e3605979ff237ad2bbc064248254e8d8ad262f1e92a020006df0c70b` |
-| contextual Berger minimal BV SDR | `552b7fc975e1c98be909fe9082e2781d60bbe70f0cc6cf19f45ea0e28c154ffd` |
+| certificate | `8d3da8f3a81384b365f4b3be7ec639ba7304e91e6e764c0579b8c6193e761c51` |
+| tests | `89dc776c91ab64734bd8b6d478f938e59f62bf703c8768731115a4fe064f7731` |
+| theorem note | `c0aa3e610511269dfb6fe21cd9530d616789eb3bb22ea0fdd4485cfd11fc96db` |
+| Einstein-sector aggregator | `0fb582bbdef80608d08dcc5c04fbff1d9f22832fc08caacd3e81423d0843cfde` |
+| Einstein-sector theorem certificate | `e75d5b9e926207b5b02502f7dc9b65092e3edcdf85db63fcf7d59c7178a72bf8` |
+| refreshed asymptotic bootstrap | `c56267e8bd81b556d4099a407379cda5d683e094411bc845c6fa56d131b55ee9` |
+| refreshed D-quotient asymptotic seed | `e39cff26bc6b6037eb6d0063899d6612e0c293b6c154aca42ce70881ef009796` |
+| contextual Berger minimal BV SDR | `9e7503ed7fd6082b4164ae7b03d350c753f941cc45d639ffb02598ba8f262422` |
+| contextual Berger retained typed layout | `3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba` |
 
 ## Verification
 
@@ -98,10 +100,10 @@ Input base commit: `0cf75919f37b03328720fa86653ce245f2cfe365`.
 | 0 | Python compile, JSON parse, and `git diff --check` | under 0.1 s | PASS |
 | 1 | sourced-defect chain-map verifier | 14 s | PASS |
 | 1 | scoped chain-map tests | 17 s | PASS (9 tests) |
-| 1/2 | complete Einstein-sector test discovery | 54.92 s | PASS (118 tests) |
+| 1/2 | complete Einstein-sector test discovery | 61.73 s | PASS (118 tests) |
 | 2 | independent compensated operator-export consumer | 9 s | PASS |
 | 2 | preflight plus characteristic snapshot verifiers | 17 s | PASS |
-| 2 | Einstein aggregator/asymptotic/D-seed affected tests | 12.4 s | PASS (32 tests) |
+| 2 | Einstein aggregator/asymptotic/D-seed affected tests | 15.8 s | PASS (32 tests) |
 | coordination | classical D-quotient status guards | under 0.1 s | PASS (13/13) |
 | coordination | cross-programme status check and mutation guards | under 0.1 s | PASS |
 

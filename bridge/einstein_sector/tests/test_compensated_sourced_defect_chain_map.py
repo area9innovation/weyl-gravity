@@ -65,8 +65,9 @@ class CompensatedSourcedDefectChainMapTests(unittest.TestCase):
 
     def test_berger_minimal_sdr_is_context_only(self) -> None:
         self.assertTrue(self.result["claim_flags"]["berger_minimal_clock_sdr_imported"])
+        self.assertTrue(self.result["claim_flags"]["berger_retained_typed_layout_imported"])
         self.assertIn("eight-row", self.result["classification"]["berger_context"])
-        self.assertIn("retained 26-row", self.result["classification"]["berger_context"])
+        self.assertIn("typed 26-row", self.result["classification"]["berger_context"])
         self.assertFalse(self.result["claim_flags"]["berger_matter_bv_lift_constructed"])
 
     def test_forged_matter_bv_promotion_is_rejected(self) -> None:

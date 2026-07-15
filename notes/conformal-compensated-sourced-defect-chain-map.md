@@ -166,10 +166,12 @@ the universal Ward complex above, and the matter equations must preserve
 The positive Berger conformal-scalar model is a concrete candidate.  Its
 current certificate constructs an exact support-local cyclic SDR for the eight
 temporal/Weyl clock and minimal-dual rows, leaving a 26-row retained minimal
-complex.  The retained coefficientwise `q1`, nonminimal rows, Green homotopies,
-and stability remain open, so it is not yet a full matter-BV input for this
-lift.  Moreover, its curved compact background is not silently identified
-with the flat compensator phase used here.
+complex.  A follow-on certificate freezes that retained row inventory, bundle
+types, pairings, allowed `q1` blocks, support rules, and differential-order
+ceilings.  The actual retained `q1` coefficients, nonminimal rows, Green
+homotopies, and stability remain open, so it is not yet a full matter-BV input
+for this lift.  Moreover, its curved compact background is not silently
+identified with the flat compensator phase used here.
 
 Only after that lift should the programme construct retarded/advanced defect
 propagation.
