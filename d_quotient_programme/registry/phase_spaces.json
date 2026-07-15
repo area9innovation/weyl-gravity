@@ -1,0 +1,46 @@
+{
+  "schema": "pure-weyl-d-phase-space-registry-v1",
+  "phase_spaces": [
+    {
+      "phase_space_id": "compact_P_lin",
+      "definition": "D-finite E/A/L linearized solutions after local Diff x Weyl reduction and before residual Taub restrictions.",
+      "boundary_conditions": "R x S3 with closed spatial slice and no surface-charge sector"
+    },
+    {
+      "phase_space_id": "compact_P_Taub0",
+      "definition": "Formal common zero fibre of all fifteen quadratic Taub/moment-map components inside compact_P_lin.",
+      "boundary_conditions": "closed spatial slice; explicit zero-charge restriction"
+    },
+    {
+      "phase_space_id": "compact_P_der",
+      "definition": "Derived zero locus and residual quotient selected by Papers VII-VIII.",
+      "boundary_conditions": "closed-universe polarization; no external clock or surface charge"
+    },
+    {
+      "phase_space_id": "compact_scalar_clock",
+      "definition": "Compact pure-Weyl system coupled to one conformal scalar on a declared monotone clock chart.",
+      "boundary_conditions": "OPEN_PENDING_CANONICAL_SHARED_MODEL"
+    },
+    {
+      "phase_space_id": "compact_interacting",
+      "definition": "Nonlinear compact pure-Weyl BV theory with support-local Taylor tensors and transferred operations.",
+      "boundary_conditions": "closed spatial slice; complete local export pending"
+    },
+    {
+      "phase_space_id": "compact_quantum",
+      "definition": "Renormalized compact observable algebra with restored QME and residual Ward operators.",
+      "boundary_conditions": "NOT_CONSTRUCTED"
+    },
+    {
+      "phase_space_id": "asymptotically_flat_full_Bach",
+      "definition": "Full asymptotically flat fourth-order Bach phase space including radiative, Coulombic, soft, corner, ghost, antifield, and defect data.",
+      "boundary_conditions": "NOT_CLOSED_OR_CERTIFIED"
+    },
+    {
+      "phase_space_id": "lorentzian_dS_AdS",
+      "definition": "Lorentzian dS or AdS phase space with a separately declared patch and boundary condition.",
+      "boundary_conditions": "NOT_SPECIFIED"
+    }
+  ],
+  "fail_closed_rule": "A verdict belongs only to its phase_space_id. Restriction to a zero-charge fibre, deparametrization, or a boundary-condition change creates a new phase-space row."
+}

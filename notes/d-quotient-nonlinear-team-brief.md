@@ -196,3 +196,11 @@ Every result must carry at least one exact dependency tag:
 `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, `REDUCED-MODE`, or
 `LORENTZIAN-CAUSAL`.  Reduced-mode transfer does not establish causal
 interaction stability.
+
+## Cross-team contribution contract
+
+Submit new results through
+[`d_quotient_programme/`](../d_quotient_programme/README.md).  Import the
+classical generator, phase-space, clock, and tensor definitions by content
+hash; do not rebuild a competing scalar-clock setting or promote a free
+sector verdict to an interacting Cartan theorem.

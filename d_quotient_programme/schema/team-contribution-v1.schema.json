@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-d-quotient-team-contribution-v1.schema.json",
+  "title": "D-quotient team contribution",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "team_id", "setting_id", "generator_id", "phase_space_id",
+    "boundary_conditions", "lifecycle_layer", "claim_status", "verdict",
+    "dependency_tags", "established", "not_established", "evidence",
+    "verification_commands", "next_gate"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-d-quotient-team-contribution-v1"},
+    "team_id": {"enum": ["classical", "einstein_boundary", "nonlinear", "quantum"]},
+    "setting_id": {"type": "string", "minLength": 1},
+    "generator_id": {"type": "string", "minLength": 1},
+    "phase_space_id": {"type": "string", "minLength": 1},
+    "boundary_conditions": {"type": "string", "minLength": 1},
+    "lifecycle_layer": {"enum": ["CLASSICAL_CHARGE", "CLASSICAL_CARTAN", "LORENTZIAN_CAUSAL", "INTERACTING", "QUANTUM"]},
+    "claim_status": {"enum": ["NOT_TESTED", "OPEN", "PARTIAL", "CERTIFIED", "BLOCKED"]},
+    "verdict": {"type": ["string", "null"]},
+    "dependency_tags": {
+      "type": "array", "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "established": {"type": "array", "items": {"type": "string"}},
+    "not_established": {"type": "array", "items": {"type": "string"}},
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "verification_commands": {"type": "array", "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1}
+  }
+}

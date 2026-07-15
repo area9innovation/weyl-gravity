@@ -166,6 +166,41 @@ fix its scalar for all fifteen components
 \cite{AltasTekinLinearization,BarnichBrandtHenneaux}.
 \end{proof}
 
+\begin{corollary}[Compact $D$-charge phase-space split]
+\label{cor:D-sector-split}
+Let $\mathcal P_{\rm lin}$ be the $D$-finite linearized solution space after
+local Diff$\times$Weyl reduction and before residual Taub restrictions.  In
+the action normalization of Proposition~\ref{prop:taub},
+\begin{equation}\label{eq:D-charge-kernel}
+ M_D=-\frac12J_{\rm conf}D,
+ \qquad
+ M_D\big|_{E_n}=-\frac n2,
+ \quad M_D\big|_{A_n}=\frac n2,
+ \quad M_D\big|_{L_n}=\frac n2.
+\end{equation}
+In particular, normalized lowest $E_2$, $A_3$, and $L_4$ modes have charges
+$-1$, $3/2$, and $2$, so $D$ is not a presymplectic degeneracy on
+$\mathcal P_{\rm lin}$.  If
+$\iota:\mathcal P_{\rm Taub0}\hookrightarrow\mathcal P_{\rm lin}$ denotes
+the common zero fibre of all fifteen moment maps, then
+\begin{equation}\label{eq:D-zero-fibre-degeneracy}
+ \iota^*\iota_{X_D}\Omega_\Sigma
+ =\iota^*d\mu_D=d(\iota^*\mu_D)=0.
+\end{equation}
+With $H_D[0]=0$, $D$ is proper gauge on the selected zero fibre and its
+derived quotient.  The compact conclusion is therefore sector-dependent.
+\end{corollary}
+
+\begin{proof}
+The direct compact generator and transported branch form give
+\eqref{eq:D-charge-kernel}; any nonzero diagonal entry disproves degeneracy
+on $\mathcal P_{\rm lin}$.  Equation
+\eqref{eq:D-zero-fibre-degeneracy} is the pullback of the Hamiltonian identity
+$\iota_{X_D}\Omega_\Sigma=d\mu_D$ to the declared zero fibre.  The charged
+linearized representatives are consequently Taub-obstructed rather than
+counterexamples inside $\mathcal P_{\rm Taub0}$.
+\end{proof}
+
 The endpoint module is not introduced by hand.  In the finite-dimensional
 residual zero-mode block of the cyclic minimal detour chain, write
 \begin{equation}\label{eq:detour}
@@ -531,10 +566,12 @@ signature $(2,0)$ and matrix $I_2$ after the specified normalization.  The
 result survives the selected Krein--Fock completion because every
 total-degree block is finite and the Cartan homotopy extends boundedly.
 
-This conclusion is deliberately conditional on full residual gauging.  A
-fixed cylinder with $D$ as Hamiltonian, a boundary-charge problem, an
-interacting theory, or a positive graviton Hilbert-space question requires a
-different complex and is not answered here.
+This conclusion is deliberately conditional on full residual gauging.
+Corollary~\ref{cor:D-sector-split} shows that this is an actual phase-space
+restriction, not a consequence of compactness alone.  A fixed cylinder with
+$D$ as Hamiltonian, a boundary-charge problem, an interacting theory, or a
+positive graviton Hilbert-space question requires a different complex and is
+not answered here.
 
 \begin{thebibliography}{99}
 

@@ -236,3 +236,10 @@ Every material result must carry at least one exact dependency tag:
 `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, `REDUCED-MODE`, or
 `LORENTZIAN-CAUSAL`.  Only an explicit `LORENTZIAN-CAUSAL` certificate may
 support causal propagation or scattering claims.
+
+## Cross-team contribution contract
+
+Submit new results through the generator and phase-space registries in
+[`d_quotient_programme/`](../d_quotient_programme/README.md).  In particular,
+keep `H_ESU`, `D_M`, `D_rad`, and `P_0` in distinct ledger rows unless an
+explicit phase-space-preserving intertwiner has been certified.

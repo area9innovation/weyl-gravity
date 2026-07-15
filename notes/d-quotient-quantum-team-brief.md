@@ -226,3 +226,11 @@ Every result must carry at least one exact dependency tag:
 `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, `REDUCED-MODE`, or
 `LORENTZIAN-CAUSAL`.  The first three do not establish a Lorentzian QME or
 causal quantum theory.
+
+## Cross-team contribution contract
+
+Submit new results through
+[`d_quotient_programme/`](../d_quotient_programme/README.md).  Every quantum
+row must import the exact classical generator and phase-space certificate by
+content hash and retain `ANALYTIC_FRAMEWORK_MISSING` until the renormalized
+observable algebra and applicable QME/Ward gates are actually constructed.

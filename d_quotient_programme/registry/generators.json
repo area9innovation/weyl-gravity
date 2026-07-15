@@ -1,0 +1,50 @@
+{
+  "schema": "pure-weyl-d-generator-registry-v1",
+  "generators": [
+    {
+      "generator_id": "D_compact",
+      "definition": "The compact-energy generator denoted D in Papers VII-VIII and in the E/A/L residual module.",
+      "domain": "real conformal cylinder together with the declared positive-frequency residual representation",
+      "relations": [
+        "represented geometrically by cylinder time translation H_ESU in the real-cylinder charge audit",
+        "identified with the radial grading only in the declared radial-quantization continuation"
+      ]
+    },
+    {
+      "generator_id": "H_ESU",
+      "definition": "Real Einstein-static-universe time translation partial_T.",
+      "domain": "real Lorentzian Einstein cylinder",
+      "relations": [
+        "pushes to (P_0+K_0)/2 under the stated real Penrose map",
+        "does not preserve a fixed Minkowski null boundary"
+      ]
+    },
+    {
+      "generator_id": "D_M",
+      "definition": "Real Lorentzian Minkowski dilation t partial_t + r partial_r.",
+      "domain": "real Lorentzian Minkowski patch",
+      "relations": [
+        "is tangent to null infinity and restricts to u partial_u",
+        "is not Minkowski time translation P_0",
+        "agrees with the radial grading only after the declared Cayley/Wick continuation"
+      ]
+    },
+    {
+      "generator_id": "D_rad",
+      "definition": "Compact radial-quantization grading used in the residual representation.",
+      "domain": "radial/positive-frequency representation category",
+      "relations": [
+        "must not be substituted for the real Penrose push-forward of H_ESU without the analytic continuation"
+      ]
+    },
+    {
+      "generator_id": "P_0",
+      "definition": "Real Minkowski time translation, restricting to Bondi retarded-time translation partial_u.",
+      "domain": "real asymptotically flat phase space",
+      "relations": [
+        "its ADM/Bondi charge does not compute the charge of D_M or H_ESU"
+      ]
+    }
+  ],
+  "fail_closed_rule": "A charge, Cartan, causal, interaction, or quantum result may not be transported between generator_id values without an explicit intertwiner preserving the declared phase space and boundary data."
+}

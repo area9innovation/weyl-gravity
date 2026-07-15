@@ -1,0 +1,194 @@
+{
+  "claim_boundary": "The dossier consolidates sector-indexed results. It does not promote a universal D-gauge verdict, an interacting Cartan theorem, a quantum anomaly result, or an asymptotic charge theorem.",
+  "claim_key": [
+    "generator_id",
+    "phase_space_id",
+    "boundary_conditions",
+    "lifecycle_layer"
+  ],
+  "dependency_gate": [
+    "the selected generator preserves the declared phase space and boundary data",
+    "the generator is Hamiltonian with an integrable normalized charge",
+    "the charge vanishes on the exact sector proposed for quotienting",
+    "the zero-charge transformations close as a Lie algebra or declared algebroid",
+    "the classical Cartan and causal homotopies exist in the declared support category",
+    "interacting promotion requires a corrected Cartan homotopy",
+    "quantum promotion requires a restored QME and renormalized Ward identity"
+  ],
+  "next_shared_gate": {
+    "gate_id": "SCALAR_CLOCK_VERTICAL_SLICE",
+    "owner_order": [
+      "classical",
+      "nonlinear",
+      "quantum",
+      "einstein_boundary"
+    ],
+    "rule": "Define one canonical conformal-scalar BV model and clock domain; downstream teams import it by hash rather than rebuilding it."
+  },
+  "programme_base_commit": "9a3497a2b68d5f70a19ba788d44e647ba20e1f86",
+  "publication_plan": {
+    "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
+    "paper_IX": {
+      "promotion_gate": "scalar-clock theorem plus at least one boundary or interaction theorem",
+      "status": "RESERVED_NOT_STARTED",
+      "working_title": "When Is Cylinder Time Gauge? Taub Constraints, Relational Clocks, and Residual Reduction in Weyl Gravity"
+    },
+    "paper_X": {
+      "promotion_gate": "complete classical nonlinear export and applicable QME/Ward gate",
+      "status": "RESERVED_NOT_STARTED",
+      "working_title": "Interaction and Quantum Stability of the Residual D-Quotient"
+    },
+    "papers_VII_VIII": "completed theorem retained with explicit compact phase-space scope"
+  },
+  "registry_hashes": {
+    "generator_registry": "1df39af78cdd49eeb64faa2d46134542e9bb75a598f0dde98932657a682525de",
+    "phase_space_registry": "fd8d8884e25af7723b6f9c1101a2ddc79a584d8bb9a8fae4da3127593f9e7482"
+  },
+  "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
+  "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
+  "schema": "pure-weyl-d-quotient-programme-status-v1",
+  "setting_ledger": [
+    {
+      "boundary_conditions": "closed S3; no residual zero-charge restriction",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_CHARGE",
+      "phase_space_id": "compact_P_lin",
+      "setting_id": "compact_unrestricted",
+      "status": "CERTIFIED",
+      "verdict": "D_CHARGED"
+    },
+    {
+      "boundary_conditions": "closed S3; all fifteen moment maps constrained to zero",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_CHARGE",
+      "phase_space_id": "compact_P_Taub0",
+      "setting_id": "compact_taub_zero",
+      "status": "CERTIFIED",
+      "verdict": "D_GAUGE"
+    },
+    {
+      "boundary_conditions": "selected closed-universe derived quotient",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_CARTAN",
+      "phase_space_id": "compact_P_der",
+      "setting_id": "compact_derived_residual",
+      "status": "CERTIFIED",
+      "verdict": "D_GAUGE"
+    },
+    {
+      "boundary_conditions": "not yet declared",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_CHARGE",
+      "phase_space_id": "compact_scalar_clock",
+      "setting_id": "compact_scalar_clock",
+      "status": "OPEN",
+      "verdict": null
+    },
+    {
+      "boundary_conditions": "closed S3; support-local nonlinear export incomplete",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "INTERACTING",
+      "phase_space_id": "compact_interacting",
+      "setting_id": "compact_interacting",
+      "status": "BLOCKED",
+      "verdict": "INPUT_GATE_BLOCKED"
+    },
+    {
+      "boundary_conditions": "renormalized observable algebra not constructed",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "QUANTUM",
+      "phase_space_id": "compact_quantum",
+      "setting_id": "compact_quantum",
+      "status": "BLOCKED",
+      "verdict": "ANALYTIC_FRAMEWORK_MISSING"
+    },
+    {
+      "boundary_conditions": "fixed Minkowski null boundary",
+      "generator_id": "H_ESU",
+      "lifecycle_layer": "LORENTZIAN_CAUSAL",
+      "phase_space_id": "asymptotically_flat_full_Bach",
+      "setting_id": "asymptotic_real_cylinder_time",
+      "status": "OPEN",
+      "verdict": "PHASE_SPACE_NOT_CLOSED"
+    },
+    {
+      "boundary_conditions": "full null-infinity data not yet closed",
+      "generator_id": "D_M",
+      "lifecycle_layer": "LORENTZIAN_CAUSAL",
+      "phase_space_id": "asymptotically_flat_full_Bach",
+      "setting_id": "asymptotic_dilation",
+      "status": "OPEN",
+      "verdict": null
+    },
+    {
+      "boundary_conditions": "Bondi/ADM boundary conditions not yet completed for pure Weyl",
+      "generator_id": "P_0",
+      "lifecycle_layer": "LORENTZIAN_CAUSAL",
+      "phase_space_id": "asymptotically_flat_full_Bach",
+      "setting_id": "asymptotic_time_translation",
+      "status": "OPEN",
+      "verdict": null
+    },
+    {
+      "boundary_conditions": "not specified",
+      "generator_id": "UNSELECTED",
+      "lifecycle_layer": "LORENTZIAN_CAUSAL",
+      "phase_space_id": "lorentzian_dS_AdS",
+      "setting_id": "lorentzian_dS_AdS",
+      "status": "NOT_TESTED",
+      "verdict": null
+    }
+  ],
+  "team_inputs": {
+    "classical": {
+      "commit": "926e03ce07b3bff437cd942587837504a44fc8fb",
+      "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
+      "sha256": "495de6865c8aa7bceb32a55769cd4f912da6d67035e899b8571843ab504457af"
+    },
+    "einstein_boundary": {
+      "commit": "52c86d386d5442d31a25aa28ed660fcd1bffddfc",
+      "path": "bridge/certificates/d_quotient_asymptotic_seed.json",
+      "sha256": "82831a22108b88590bac1fd5b4d1ccead3a462505a3072a4fa981844b4990d84"
+    },
+    "nonlinear": {
+      "commit": "ed5ada08f4dbe0dca929fc49957770b4a8a99fd0",
+      "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
+      "sha256": "e92381966794d0f7b08dcc3551b2a655faf9b82c80c085afa82ad8102c7d2738"
+    },
+    "quantum": {
+      "commit": "9a3497a2b68d5f70a19ba788d44e647ba20e1f86",
+      "path": "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json",
+      "sha256": "8314dc2048ea1f0e3179395f2b25b80dd9cf278064ae6af90c9351080ab0a2cb"
+    }
+  },
+  "team_status": [
+    {
+      "established": "D_compact is charged on compact_P_lin and gauge on compact_P_Taub0/compact_P_der.",
+      "next_gate": "canonical conformal-scalar clock model and total improved D charge",
+      "result_state": "PARTIAL_WITH_COMPACT_SECTOR_SPLIT_CERTIFIED",
+      "team_id": "classical",
+      "verdict": "SECTOR_DEPENDENT"
+    },
+    {
+      "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem.",
+      "next_gate": "complete a boundary-preserving full Bach phase space and calculate charge and flux",
+      "result_state": "KINEMATICS_PROVED_PHASE_SPACE_OPEN",
+      "team_id": "einstein_boundary",
+      "verdict": "PHASE_SPACE_NOT_CLOSED"
+    },
+    {
+      "established": "exact transfer engine, selected residual cubic bracket, and local Bach seeds",
+      "next_gate": "complete support-local q2 export and compute the interacting D-Cartan defect",
+      "result_state": "ENGINE_READY_INPUT_BLOCKED",
+      "team_id": "nonlinear",
+      "verdict": "INPUT_GATE_BLOCKED"
+    },
+    {
+      "established": "classical sector split imported by content hash without quantum promotion",
+      "next_gate": "construct the renormalized observable algebra and classify the first D-Ward obstruction",
+      "result_state": "ALGEBRAIC_ENGINE_READY_ANALYTIC_FRAMEWORK_MISSING",
+      "team_id": "quantum",
+      "verdict": "ANALYTIC_FRAMEWORK_MISSING"
+    }
+  ]
+}

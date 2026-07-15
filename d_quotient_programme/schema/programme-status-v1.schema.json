@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-d-quotient-programme-status-v1.schema.json",
+  "title": "Cross-programme D-quotient status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "programme_base_commit", "result_state",
+    "claim_key", "registry_hashes", "team_inputs", "team_status",
+    "setting_ledger", "dependency_gate", "publication_plan",
+    "next_shared_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-d-quotient-programme-status-v1"},
+    "result_id": {"const": "D_QUOTIENT_PROGRAMME_STATUS"},
+    "programme_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "result_state": {"const": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED"},
+    "claim_key": {"const": ["generator_id", "phase_space_id", "boundary_conditions", "lifecycle_layer"]},
+    "registry_hashes": {"type": "object"},
+    "team_inputs": {"type": "object"},
+    "team_status": {"type": "array", "minItems": 4, "maxItems": 4},
+    "setting_ledger": {"type": "array", "minItems": 8},
+    "dependency_gate": {"type": "array", "minItems": 6},
+    "publication_plan": {"type": "object"},
+    "next_shared_gate": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

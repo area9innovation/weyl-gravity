@@ -201,3 +201,9 @@ The fail-closed status matrix, schema, report, and verification commands live
 in [`d_quotient_classical/`](../d_quotient_classical/README.md).  Untested
 settings remain `OPEN` or `NOT_TESTED`; the machine record never assigns a
 scientific verdict without its declared charge evidence and dependency tags.
+
+Cross-team consolidation is governed by
+[`d_quotient_programme/`](../d_quotient_programme/README.md).  New classical
+results must identify their generator, phase space, boundary conditions, and
+lifecycle layer using the shared registries before the programme ledger is
+regenerated.

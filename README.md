@@ -62,11 +62,14 @@ The itemized response, including what remains genuinely open before
 submission, is
 [`notes/conformal-referee-major-revision.md`](notes/conformal-referee-major-revision.md).
 
-Classical $D$-quotient challenge:
-[`d_quotient_classical/README.md`](d_quotient_classical/README.md) tracks the
-compact-cylinder charge audit, mathematically valid alternative residual
-complexes, and the still-open clock/background/boundary settings with
-fail-closed verdicts and dependency tags.
+Cross-programme $D$-quotient validation:
+[`d_quotient_programme/README.md`](d_quotient_programme/README.md) consolidates
+the classical, Einstein/boundary, nonlinear, and quantum investigations by
+generator, phase space, boundary conditions, and lifecycle layer.  The
+underlying compact charge audit remains in
+[`d_quotient_classical/`](d_quotient_classical/README.md).  Paper IX is
+reserved, but is not promoted until the scalar-clock gate and at least one
+boundary or interaction theorem land.
 
 General-audience article:
 [`Before Worrying About a Gravitational Ghost, Ask Whether It Is Really There`](paper/before-worrying-about-a-gravitational-ghost.md)
