@@ -77,6 +77,14 @@ def main() -> int:
             certificate["schur_calculation"]["endpoint_schur_operator"]
             == "S_end=D-CB=D"
         ),
+        "full hybrid scope bound": all(
+            certificate["full_hybrid_scope"][key] is True
+            for key in (
+                "endpoint_seed_leg_fixed_by_66_to_30",
+                "cyclic_seed_leg_fixed_by_66_to_30",
+                "Q_commutes_with_P_end",
+            )
+        ),
         "no causal overclaim": all(
             certificate[key] is False
             for key in ("causal_green_homotopy", "prolonged_green_witness")

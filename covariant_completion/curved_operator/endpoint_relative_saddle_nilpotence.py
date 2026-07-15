@@ -142,6 +142,26 @@ class EndpointRelativeSaddleNilpotence:
             raise AssertionError("the complete prolonged differential is unavailable")
         if endpoint_certificate.get("dimension") != 30:
             raise AssertionError("the retained endpoint dimension drifted")
+        incidence = feasibility_certificate.get("rank_five_relative_incidence")
+        if not isinstance(incidence, Mapping):
+            raise AssertionError("the relative incidence audit is unavailable")
+        scope = incidence.get("full_hybrid_scope_audit")
+        if not isinstance(scope, Mapping) or not all(
+            scope.get(key) is True
+            for key in (
+                "A_F_p_E_fixed_by_auxiliary_endpoint_projector",
+                "cyclic_i_M_A_F_sharp_fixed_by_auxiliary_endpoint_projector",
+            )
+        ):
+            raise AssertionError("the two saddle legs are not fixed by 66->30")
+        graph_maps = endpoint_certificate.get("local_graph_maps")
+        if not isinstance(graph_maps, Mapping):
+            raise AssertionError("the endpoint graph maps are unavailable")
+        graph_identities = graph_maps.get("identities")
+        if not isinstance(graph_identities, Mapping) or (
+            graph_identities.get("Q_prol_P_end") != "P_end_Q_prol"
+        ):
+            raise AssertionError("Q does not commute with the hybrid endpoint projector")
 
         relative_entries = _nonzero_entries(self.relative_operator)
         forward_entries = _nonzero_entries(self.endpoint_to_algebraic)
@@ -177,6 +197,16 @@ class EndpointRelativeSaddleNilpotence:
                 "correction_is_zero_before_chain_reduction": True,
                 "endpoint_schur_operator": "S_end=D-CB=D",
                 "Tsharp_L_T_correction_survives": False,
+            },
+            "full_hybrid_scope": {
+                "endpoint_seed_leg_fixed_by_66_to_30": True,
+                "cyclic_seed_leg_fixed_by_66_to_30": True,
+                "Q_commutes_with_P_end": True,
+                "consequence": (
+                    "the displayed mapping-cylinder product is the full "
+                    "hybrid endpoint Schur correction, not a restriction "
+                    "to an unverified seed subspace"
+                ),
             },
             "interpretation": {
                 "positive": (
