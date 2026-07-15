@@ -144,8 +144,9 @@ or quantum-master-equation result.
   Diff towers, explicit type-D primitives, the Euler variational current,
   and the still-open intrinsic type-A and antifield boundaries.
 - [`reports/relative-cohomology-engine.md`](reports/relative-cohomology-engine.md)
-  records the exact sparse totalization, quotient proof fields, passing
-  fixture, and the uncomputed production-basis boundary.
+  records the exact sparse totalization, anchored top-form projection,
+  lower-only class exclusion, quotient proof fields, and the uncomputed
+  production-basis boundary.
 - [`reports/branch-c-spectral-bootstrap.md`](reports/branch-c-spectral-bootstrap.md)
   records the reduced `E/A/L` character, residues, and determinant boundary.
 - [`reports/bootstrap-integration.md`](reports/bootstrap-integration.md)
