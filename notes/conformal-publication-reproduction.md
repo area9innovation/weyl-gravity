@@ -1,7 +1,16 @@
 # Paper 7 publication and reproduction guide
 
 This guide is the public entry point for reproducing the free pure-Weyl
-result in `paper/conformal-residual-cohomology.tex`.  Commands are run from
+publication pair:
+
+- Paper A: `paper/conformal-residual-cohomology-krein.tex`;
+- Paper B: `paper/conformal-covariant-causal-transport.tex`.
+
+The versioned supplement is
+`paper/conformal-residual-cohomology-computational-supplement.tex`.  The
+combined `paper/conformal-residual-cohomology.tex` is archival: it preserves
+the original equation labels and implementation chronology but is no longer
+the primary submission.  Commands are run from
 `physics/symplectic-reconstruction/` unless stated otherwise.
 
 ## Certified theorem
@@ -33,11 +42,10 @@ The referee major-revision architecture is documented in the
 [Paper A/Paper B/supplement split roadmap](conformal-paper-split-roadmap.md).
 The corresponding
 [response ledger](conformal-referee-major-revision.md) separates completed
-manuscript repairs from submission gates that still require human authorship,
-artifact release, paper extraction, or independent expert review.
-The current monolithic paper remains authoritative while those three outputs
-are extracted by a copy-first process.  A buildable computational-supplement
-scaffold is tracked at
+manuscript repairs from submission gates that still require a public artifact
+release or independent expert review.
+The split is implemented by the two standalone entrypoints above.  The
+versioned computational supplement is tracked at
 [`paper/conformal-residual-cohomology-computational-supplement.tex`](../paper/conformal-residual-cohomology-computational-supplement.tex).
 
 ## Scoped legacy and no-go routes
@@ -82,6 +90,7 @@ python3 symbolic/verify_conformal_four_flag_closure.py
 python3 symbolic/verify_conformal_certificate_provenance.py
 python3 symbolic/verify_conformal_covariant_H4_proof_ledger.py --check --guards
 python3 symbolic/verify_conformal_residual_rank53_independent.py
+python3 symbolic/verify_conformal_split_publications.py
 python3 -m unittest covariant_completion.final_transport.tests.test_proof_ledger
 python3 symbolic/update_conformal_paper_snapshot.py --check
 ```
@@ -112,10 +121,31 @@ reports, dependency manifest, and paper PDF.  Exact duration is
 machine-dependent; individual verifier subprocesses are bounded to 30
 minutes.
 
+For a release or referee artifact review, run the clean tracked-snapshot
+audit as a separate gate:
+
+```bash
+python3 symbolic/audit_conformal_publication_release.py \
+  --tree-ish HEAD \
+  --timeout 1800 \
+  --receipt conformal-publication-release-audit.json
+```
+
+This command uses `git archive`; it never builds from the dirty development
+tree. It checks that Paper A, Paper B, the supplement, the archival monolith,
+their PDFs, and all recursively active TeX inputs are tracked in the selected
+tree. It then verifies generated-input freshness, builds all four documents
+to reference stability, and runs the independent residual-rank, provenance,
+proof-ledger, and manifest checks.
+
 To rebuild the paper after the exact rail passes:
 
 ```bash
 cd paper
+pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology-krein.tex
+pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology-krein.tex
+pdflatex -interaction=nonstopmode -halt-on-error conformal-covariant-causal-transport.tex
+pdflatex -interaction=nonstopmode -halt-on-error conformal-covariant-causal-transport.tex
 pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology.tex
 pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology.tex
 pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology-computational-supplement.tex

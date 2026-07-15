@@ -2,9 +2,9 @@
 """Guard the referee-driven claim discipline of the archival manuscript.
 
 This is an editorial regression check, not a mathematical certificate and
-not a declaration that the manuscript is submission-ready.  Paper
-extraction, artifact release, and independent specialist review remain
-external gates recorded in ``notes/conformal-referee-major-revision.md``.
+not a declaration that the manuscript is submission-ready.  The paper split
+is checked separately; public artifact release and independent specialist
+review remain external gates in ``notes/conformal-referee-major-revision.md``.
 """
 
 from __future__ import annotations
@@ -79,7 +79,7 @@ def main() -> None:
         "MANUSCRIPT CLAIM-DISCIPLINE GUARDS: ALL PASS "
         f"(abstract={abstract_words}, conclusion={conclusion_words}, outlook={outlook_words})"
     )
-    print("SUBMISSION GATES STILL OPEN: split extraction, archival release, independent specialist review")
+    print("SUBMISSION GATES STILL OPEN: public archival release, independent specialist review")
 
 
 if __name__ == "__main__":

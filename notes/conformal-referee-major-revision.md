@@ -56,15 +56,18 @@ of cylinder boundary problem.
 
 The section-level split into a residual-cohomology article, a covariant
 causal-completion article, and a versioned computational supplement is
-specified in `notes/conformal-paper-split-roadmap.md`.  The current monolith
-remains the archival theorem source until both article extractions compile,
-have independent manifests, and pass their own claim ledgers.  This avoids a
-cosmetic split that silently breaks cross-references or certificate scope.
+implemented as `paper/conformal-residual-cohomology-krein.tex`,
+`paper/conformal-covariant-causal-transport.tex`, and the computational
+supplement.  Both articles compile standalone and carry focused claim
+ledgers.  The current monolith remains an archival theorem/label source.
+Split-publication editorial guards and the isolated tracked-snapshot release
+audit prevent a cosmetic split that silently breaks cross-references or
+certificate scope.
 
 ## Still required before submission
 
-1. Extract and independently build Papers A and B and the supplement; the
-   roadmap alone is not the requested final split.
+1. Run the clean `git archive` publication audit on the final committed tree
+   and archive its machine-readable receipt.
 2. Freeze a public repository release and archival identifier containing all
    generated inputs, manifests, certificates, and minimal checkers.
 3. Obtain independent reviews from conformal/BGG geometry, BV--BFV,
@@ -81,9 +84,11 @@ cosmetic split that silently breaks cross-references or certificate scope.
 ```bash
 python3 symbolic/verify_conformal_residual_rank53_independent.py
 python3 symbolic/verify_conformal_manuscript_claim_discipline.py
+python3 symbolic/verify_conformal_split_publications.py
 python3 symbolic/verify_conformal_paper_free.py --required --timeout 180
 python3 symbolic/verify_conformal_covariant_H4_proof_ledger.py --check --guards
 python3 symbolic/update_conformal_paper_snapshot.py --check
+python3 symbolic/audit_conformal_publication_release.py --tree-ish HEAD
 ```
 
 The exhaustive publication rail remains:

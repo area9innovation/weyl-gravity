@@ -1,17 +1,16 @@
 # Paper 7 major-revision split roadmap
 
-This is an editorial plan, not a new theorem or a change to the certified
-dependency graph.  The current monolithic source
-`paper/conformal-residual-cohomology.tex` remains the buildable archival
-version until both extracted papers and the computational supplement pass
-their own reference, bibliography, and certificate checks.
+This records the implemented editorial split, not a new theorem or a change
+to the certified dependency graph.  The primary entrypoints are now Paper A,
+Paper B, and the versioned computational supplement.  The combined
+`paper/conformal-residual-cohomology.tex` remains a buildable archival source
+for stable equation labels and implementation-history cross-references.
 
 ## Publication units
 
 ### Paper A — residual cohomology and pairing
 
-Provisional title: **Residual cohomology of free pure-Weyl gravity on the
-conformal cylinder**.
+Primary entrypoint: `paper/conformal-residual-cohomology-krein.tex`.
 
 Its mathematical spine should be:
 
@@ -37,8 +36,7 @@ Lorentzian causal BV theorem.
 
 ### Paper B — covariant causal bridge
 
-Provisional title: **Causal curvature prolongation and covariant transport
-for the free pure-Weyl BV complex**.
+Primary entrypoint: `paper/conformal-covariant-causal-transport.tex`.
 
 Its mathematical spine should be:
 
@@ -66,8 +64,9 @@ remain scoped legacy implementation flags and are not premises of Paper B.
 
 ### Computational supplement
 
-The supplement should be a repository-linked, versioned companion shared by
-Papers A and B.  It should contain:
+The repository-linked, versioned companion shared by Papers A and B is
+`paper/conformal-residual-cohomology-computational-supplement.tex`.  It
+contains or indexes:
 
 - convention tables and finite-jet globalization audits;
 - sparse-matrix formats, good-prime rank witnesses, and exact null vectors;
@@ -87,24 +86,25 @@ subsection and in `Raw polynomial instantiation and measured noncompact
 defects` is supplement material.  It remains in the archival monolith during
 the split so equation labels and cross-references do not silently change.
 
-## Safe extraction sequence
+## Implemented extraction and remaining release gates
 
-1. Freeze the current monolith, PDF, dependency manifest, and proof ledger.
-2. Create Paper A by copying theorem prose, not by moving source in place.
-   Replace implementation-ledger paragraphs with stable supplement
-   references only after the copied paper builds independently.
-3. Create Paper B in the same way and import Paper A's residual theorem as an
-   explicit dependency.
-4. Extract the marked implementation-history blocks into a standalone
-   supplement.  Preserve their original equation labels with a prefix or a
-   label map so old certificate reports remain interpretable.
-5. Add per-publication verification runners and manifests.  Only then remove
-   duplicated implementation material from the article sources.
-6. Keep the archival monolith in the repository until both articles and the
-   supplement reproduce from a clean checkout.
+1. **Implemented:** freeze and retain the monolith, PDF, dependency manifest,
+   and proof ledger as the archival cross-reference.
+2. **Implemented:** extract Paper A by copying theorem prose and giving it a
+   focused claim ledger.
+3. **Implemented:** extract Paper B and make its import of Paper A's residual
+   theorem explicit.
+4. **Implemented:** provide a versioned supplement with separate A/B
+   dependency ledgers, generated-input classification, and independent-check
+   scope.
+5. **Implemented:** add split-publication editorial guards and an isolated
+   `git archive` release audit which builds all four documents to reference
+   stability.
+6. **Release gate:** run the isolated audit on the final committed tree and
+   archive its JSON/log artifacts with the public release identifier.
 
-This copy-first sequence avoids breaking the current paper while the split is
-under referee review.
+The copy-first sequence preserved the current paper while producing compact
+standalone submissions.
 
 ## Current source-to-destination map
 
@@ -124,14 +124,16 @@ under referee review.
 
 ## Generated-input audit
 
-The current paper has exactly one generated TeX input:
+The publication quartet has exactly one recursively active generated TeX
+input:
 
 ```text
 paper/generated/endpoint_factorization_nullstellensatz.tex
 ```
 
 It is tracked by Git, names its generator and source-certificate digest in
-its header, and is included only by the endpoint no-go appendix.  The other
+its header, and is included by the supplement and archival endpoint no-go
+appendix.  The other
 tracked generated TeX fragments are standalone receipts rather than active
 `\input` dependencies:
 
@@ -145,7 +147,7 @@ covariant_completion/generated/curl_factorization.tex
 covariant_completion/generated/minimal_ghost_witness.tex
 ```
 
-The supplement must distinguish active TeX inputs from historical generated
+The supplement distinguishes active TeX inputs from historical generated
 receipts.  In particular, `covariant_bv_last_mile_status.tex` records a
 superseded canonical-witness checkpoint and must not be presented as the
 current direct-tractor dependency status.
@@ -172,9 +174,9 @@ or pairing certificates.
 
 ## Acceptance gates for the split
 
-Each article and the supplement should have:
+The split-publication guard checks that each article and the supplement have:
 
-- a standalone two-pass TeX build with no undefined references;
+- a standalone reference-stable TeX build with no undefined references;
 - a short claim ledger containing only claims used by that publication;
 - an exact dependency manifest and clean-check command;
 - at least one independent checker for its central finite computation;
@@ -182,5 +184,6 @@ Each article and the supplement should have:
 - an explicit dependency tag (`LOCAL-ALGEBRAIC`, `REDUCED-MODE`, or
   `LORENTZIAN-CAUSAL`) on every headline result.
 
-Until those gates exist, the current monolith remains the authoritative
-publication artifact.
+The standalone A/B articles are the primary reading entrypoints.  The
+monolith remains the archival label/provenance artifact, and the final clean
+tracked-snapshot audit is the release gate.

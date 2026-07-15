@@ -118,6 +118,11 @@ CERTIFICATES = (
         ("--check",),
     ),
     Certificate(
+        "split-publication editorial and claim-boundary guards",
+        "verify_conformal_split_publications.py",
+        "CONFORMAL SPLIT-PUBLICATION EDITORIAL GUARDS: ALL PASS",
+    ),
+    Certificate(
         "referee-driven manuscript claim discipline",
         "verify_conformal_manuscript_claim_discipline.py",
         "MANUSCRIPT CLAIM-DISCIPLINE GUARDS: ALL PASS",

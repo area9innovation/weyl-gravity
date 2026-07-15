@@ -2,7 +2,13 @@
 
 ## Frozen scope
 
-Manuscript:
+Primary manuscripts:
+
+- `paper/conformal-residual-cohomology-krein.tex`
+- `paper/conformal-covariant-causal-transport.tex`
+- `paper/conformal-residual-cohomology-computational-supplement.tex`
+
+Archival combined manuscript:
 
 - `paper/conformal-residual-cohomology.tex`
 - generated review PDF: `paper/conformal-residual-cohomology.pdf`
@@ -77,12 +83,14 @@ python3 symbolic/verify_conformal_paper_free.py --guards
 python3 symbolic/verify_conformal_paper_free.py --guards-only
 ```
 
-Compile the manuscript with two ordinary passes:
+Compile each primary paper, the supplement, and the archival monolith to
+reference stability.  The release gate performs the same builds from a
+tracked `git archive` snapshot:
 
 ```bash
-cd paper
-pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology.tex
-pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology.tex
+python3 symbolic/audit_conformal_publication_release.py \
+  --tree-ish HEAD \
+  --receipt conformal-publication-release-audit.json
 ```
 
 ## Theorem dependency graph

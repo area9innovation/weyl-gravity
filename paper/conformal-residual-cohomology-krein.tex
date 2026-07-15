@@ -1,0 +1,568 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,longtable}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,
+ citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\g}{\mathfrak g}
+\newcommand{\W}{\mathcal W}
+\newcommand{\F}{\mathcal F}
+\newcommand{\K}{\mathscr K}
+\newcommand{\Hone}{\mathscr H_1}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\localtag}{\texttt{LOCAL-}\allowbreak\texttt{ALGEBRAIC}}
+\newcommand{\reducedtag}{\texttt{REDUCED-}\allowbreak\texttt{MODE}}
+
+\title{Residual Cohomology of Free Pure-Weyl Gravity\
+on the Conformal Cylinder:\
+Derived Reduction, Weyl-Square Classes, and Krein Completion}
+\author{GPT-5.6.sol\thanks{OpenAI model.  Contributed the research
+programme, mathematical direction, derivations, machine verification,
+referee analyses, and manuscript.  The project was commissioned and directed
+by Asger Alstrup Palm (\texttt{asger@area9.dk}), who initiated the questions,
+served as the non-technical orchestrator and corresponding human contact, but
+claims no technical contribution.}}
+\date{Draft for external review, July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We compute the absolute residual $SO(4,2)$ cohomology of free
+four-dimensional pure-Weyl gravity on $\R\times S^3$ in a selected
+closed-universe BV--BFV polarization.  All fifteen cylinder conformal
+reducibilities, including compact time translation $D$, are treated as
+constraints.  The quadratic conformal moment map equals the Taub
+linearization-stability obstruction, and endpoint duality plus the BV--BFV
+degree suspension identifies the residual BFV complex with the formal
+derived zero-locus and stabilizer quotient.  Cartan contraction reduces the
+absolute Chevalley--Eilenberg calculation to a finite centered block.  Its
+vacuum and one-particle sectors are acyclic, while
+\[
+ H^4_{\rm res}
+ =\operatorname{span}\{[W_+^2],[W_-^2]\},
+ \qquad \operatorname{sig}G_{\rm res}=(2,0),
+ \qquad G_{\rm res}=I_2
+\]
+after the stated basis, orientation, and unit-overlap normalization.  These
+are residual vertex/deformation classes, not one-particle gravitons.  The
+algebraic result extends to a closed residual differential on an
+infinite-index Krein--Fock completion without changing the cohomology.
+Keeping $D$ as a Hamiltonian, adding boundary charges, or deparametrizing
+time defines a different problem.
+\end{abstract}
+
+\section{Problem, selection, and claim boundary}
+
+Let
+\begin{equation}\label{eq:cylinder}
+ M=\R\times S^3,
+ \qquad \bar g=-dt^2+d\Omega_3^2,
+\end{equation}
+and consider the linearized pure-Weyl theory about $\bar g$.  The local
+Diff$\times$Weyl complex has fifteen global reducibilities: the conformal
+Killing transformations of the cylinder.  There are two inequivalent ways
+to treat them.  In a fixed-background cylinder problem they act as global
+symmetries and $D=i\partial_t$ is the Hamiltonian.  In the selected
+closed-universe problem of this paper they are residual constraints.
+
+We assume throughout that $S^3$ is closed, no boundary or asymptotic charge
+is retained, no external clock is adjoined, the cylinder is not
+deparametrized, and all fifteen residual reducibilities are gauged.  The
+derived statement is formal near $\bar g$ and concerns the zero-charge,
+second-order integrable sector.  We use the infinitesimal stabilizer algebra
+$\g\cong\mathfrak{so}(4,2)$; no integrated group representation or free
+group action is assumed.
+
+The output must also be typed correctly.  The local BV differential,
+current, moment map, and endpoint pairing are classical linearized data.
+The symmetric-algebra coefficient module arises only after a
+positive-frequency Lagrangian polarization.  Its Hilbert/Krein completion is
+a selected free state representation, not the unpolarized classical BV
+tangent complex.  Positivity below belongs only to two ghost-dressed
+residual deformation classes and is not a positive graviton norm.
+
+\section{The parity-complete Weyl module}
+
+The on-shell chiral Weyl module has character
+\begin{equation}\label{eq:character}
+ \chi_+(q)=\frac{5q^2-9q^4+4q^5}{(1-q)^4},
+\end{equation}
+and decomposes on the cylinder into three multiplicity-free towers
+\begin{align}
+ E_n^+&:\left(\frac{n+2}{2},\frac{n-2}{2}\right),
+ &\dim E_n&=(n+3)(n-1), &&n\ge2,\nonumber\\
+ A_n^+&:\left(\frac n2,\frac{n-2}{2}\right),
+ &\dim A_n&=(n+1)(n-1), &&n\ge3,\label{eq:EAL}\\
+ L_n^+&:\left(\frac n2,\frac{n-4}{2}\right),
+ &\dim L_n&=(n+1)(n-3), &&n\ge4.\nonumber
+\end{align}
+The negative chirality exchanges the two $SU(2)$ spins.  The smooth BGG
+bridge and explicit all-level cylinder intertwiners identify this module
+with the parity-complete geometric Weyl-curvature quotient.  This paper uses
+that theorem as the one-particle input; its coordinate certificates are
+listed in Section~\ref{sec:ledger}.
+
+The invariant form is nondegenerate and indefinite:
+\begin{equation}\label{eq:krein-one}
+ J_{\rm conf}=+I_E\oplus(-I_A)\oplus(-I_L).
+\end{equation}
+Proper conformal generators obey $(K^-_q)^\sharp=K^+_q$ with respect to
+$J_{\rm conf}$ and mix the three towers.  Hence their signs cannot be
+changed independently.  The polarized algebraic coefficient module is
+\begin{equation}\label{eq:fock-alg}
+ \F_{\W}=\operatorname{Sym}(\W_+\oplus\W_-).
+\end{equation}
+This is the characteristic-zero symmetric-algebra lift of the free
+linearized BRST cohomology, not an additional classical field complex.
+
+\section{Taub constraints and the derived residual quotient}
+
+For a residual reducibility $\epsilon=(\xi,\sigma)$, with
+$2\nabla_{(\mu}\xi_{\nu)}+2\sigma\bar g_{\mu\nu}=0$, let $h$ solve the
+linearized Bach equation.  The second-order Bach equation is
+\begin{equation}\label{eq:bach-second}
+ B^{(1)}[k]+B^{(2)}[h,h]=0.
+\end{equation}
+
+\begin{proposition}[Taub equals moment map]\label{prop:taub}
+The current $J_\epsilon^\mu=\xi_\nu B^{(2)\mu\nu}[h,h]$ is conserved.  If
+$h$ is tangent to a second-order family of Bach-flat metrics, then
+\begin{equation}\label{eq:taub}
+ \mathcal T_\epsilon[h]
+ =\int_{S^3}n_\mu\xi_\nu B^{(2)\mu\nu}[h,h]\,d\Sigma=0.
+\end{equation}
+With the action and orientation conventions used here, this charge is the
+quadratic Hamiltonian moment map:
+\begin{equation}\label{eq:moment-taub}
+ \mu_\epsilon(h)=\frac12\Omega_\Sigma(h,R_\epsilon h)
+ =\mathcal T_\epsilon[h].
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The second-order divergence and trace identities give
+$\nabla_\mu B^{(2)\mu\nu}=0$ and $B^{(2)\mu}{}_{\mu}=0$ on the linearized
+shell.  Contracting with the conformal Killing equation proves current
+conservation.  If \eqref{eq:bach-second} is solvable, the charge is minus the
+integrated linearized Noether current of $k$, which is a spatial divergence
+for a reducibility parameter and vanishes because $\partial S^3=\varnothing$.
+The covariant phase-space Noether identity gives the first equality in
+\eqref{eq:moment-taub}; direct $D$ normalization and conformal equivariance
+fix its scalar for all fifteen components
+\cite{AltasTekinLinearization,BarnichBrandtHenneaux}.
+\end{proof}
+
+The endpoint module is not introduced by hand.  In the finite-dimensional
+residual zero-mode block of the cyclic minimal detour chain, write
+\begin{equation}\label{eq:detour}
+ G\xrightarrow{A}M\xrightarrow{B}E\xrightarrow{C}I,
+ \qquad C=\pm A^\sharp,
+\end{equation}
+and set $Z=\ker A\cong\g$.
+
+\begin{proposition}[Endpoint duality and suspension]\label{prop:endpoint}
+There is a canonical perfect pairing
+\begin{equation}\label{eq:endpoint}
+ \Theta:I/\im C\xrightarrow{\sim}Z^*,
+ \qquad \Theta([u])(z)=\langle z,u\rangle_{G,I}.
+\end{equation}
+The selected algebraic time-slice BV--BFV map suspends this quotient by one
+degree,
+\begin{equation}\label{eq:suspension}
+ \tau:H^{\rm bulk}_{\rm endpoint}\longrightarrow Z^*[-1]_{\rm BFV},
+ \qquad \tau=\Theta
+\end{equation}
+in the selected canonical orientation.  Thus exactly one residual cotangent
+pair $(c^a,b_a)$ of degrees $(+1,-1)$ is retained.
+\end{proposition}
+
+\begin{proof}
+For $z\in\ker A$, adjointness gives $\langle z,Ce\rangle=0$, so $\Theta$
+is well defined.  Its kernel vanishes because
+\begin{equation*}
+ (\ker A)^\perp=\im A^\sharp=\im C.
+\end{equation*}
+The fifteen-dimensional endpoint and kernel dimensions give surjectivity.
+Independently of this cokernel argument, the selected algebraic time-slice
+construction gives an equivariant map $\tau=\lambda\Theta$.  Choose representatives
+$\Theta([u_a])=e^a$.  The separately certified endpoint/Taub obstruction map
+gives $Q_{\rm bulk}u_a=\mu_a$ in the quotient, while the canonical ghost form
+$\Omega_{\rm gh}=\delta b_a\wedge\delta c^a$ and the BFV charge
+\eqref{eq:bfv-charge} give $Q_{\rm BFV}b_a=\mu_a$ on the ghost-free slice.
+Compatibility of the time-slice chain map therefore fixes $\lambda=+1$;
+equivariance extends the independently normalized $D$ component to all
+fifteen components.  Thus endpoint duality, the Taub map, and the suspension
+normalization are three successive inputs, not definitions of one another.
+\end{proof}
+
+Let $\mathcal P_{\rm lin}$ be the formal linearized phase space after the
+local gauge quotient.  The selected residual BFV charge is
+\begin{equation}\label{eq:bfv-charge}
+ \Omega_{\rm res}
+ =c^a\mu_a-\frac12f^a{}_{bc}c^bc^cb_a.
+\end{equation}
+
+\begin{theorem}[Derived residual reduction]\label{thm:derived}
+Under the assumptions of Section~1, the residual classical problem is
+represented in the selected formal algebraic category by
+\begin{equation}\label{eq:derived}
+ \boxed{
+ \mathcal P_{\rm der}
+ =\left[\mathcal P_{\rm lin}
+ \mathop{\times}^{\mathbf R}_{\g^*}\{0\}\,/\!/^{\mathbf R}\g\right].}
+\end{equation}
+Equivalently, \eqref{eq:bfv-charge} generates
+\begin{equation}\label{eq:bfv-differential}
+ Qf=c^a\{\mu_a,f\},\qquad
+ Qc^a=-\frac12f^a{}_{bc}c^bc^c,
+ \qquad Qb_a\big|_{c=0}=\mu_a.
+\end{equation}
+After positive-frequency polarization this becomes the absolute residual
+Chevalley--Eilenberg complex on \eqref{eq:fock-alg}.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:taub} identifies the equations imposed by the Koszul
+part of \eqref{eq:bfv-differential} with the actual quadratic Taub
+obstruction components; in particular, every second-order integrable
+perturbation lies in their common zero locus.  No converse sufficiency claim
+is used here.
+Proposition~\ref{prop:endpoint} identifies its equation values with
+$\g^*$, supplies the degree-$-1$ BFV momenta, and prevents a duplicate
+endpoint sector.  The canonical brackets applied to \eqref{eq:bfv-charge}
+give \eqref{eq:bfv-differential}; equivariance of $\mu$ and the Jacobi
+identity give $Q^2=0$.  Its Koszul part resolves the formal derived zero
+fibre and its Chevalley--Eilenberg part takes the infinitesimal stabilizer
+quotient, proving \eqref{eq:derived}.  This retains nonregular stabilizer
+directions rather than replacing them by an ordinary smooth quotient
+\cite{CattaneoMnevReshetikhin}.  In the chosen polarization $c^a$ acts by
+exterior multiplication and $b_a$ by contraction, producing the absolute
+complex below.
+\end{proof}
+
+\begin{remark}[Fixed-cylinder alternative]
+If $D$ is a Hamiltonian or the moment-map values are boundary charges, one
+does not impose $\mu=0$ or divide by the full stabilizer.  The relative
+primary kernel remains useful representation theory but is not
+\eqref{eq:derived}.  A subgroup, boundary, or deparametrized problem requires
+its own relative or boundary BFV complex; deleting only the $D$ ghost is not
+consistent because $[K^-,K^+]$ contains $D$.
+\end{remark}
+
+\section{Cartan contraction and the exact residual group}
+
+The absolute complex is
+\begin{equation}\label{eq:CE}
+ C^q=\F_{\W}\otimes\Lambda^q\g^*,
+ \qquad
+ d=c^a\rho(G_a)-\frac12f^a{}_{bc}c^bc^c\iota_a.
+\end{equation}
+The compact grading is
+\begin{equation}
+ \g=\g_{-1}\oplus\g_0\oplus\g_{+1},
+ \qquad \dim(\g_{-1},\g_0,\g_{+1})=(4,7,4),
+\end{equation}
+and total compact degree is
+$\delta=D_{\rm matter}+D_{\rm ghost}$.  The centered ghost vacuum $v_-$ is
+the determinant of the four ghosts dual to $\g_{+1}$, so
+\begin{equation}\label{eq:centered}
+ \operatorname{gh}(v_-)=4,
+ \qquad D_{\rm ghost}(v_-)=-4.
+\end{equation}
+
+\begin{theorem}[Cartan reduction]\label{thm:cartan-a}
+Inclusion of the centered subcomplex is a quasi-isomorphism:
+\begin{equation}\label{eq:cartan-a}
+ H^\bullet(C,d)\cong H^\bullet(C_{\delta=0},d).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The Cartan identity is
+$d\iota_D+\iota_Dd=\mathcal L_D$.  On $C_\delta$ with $\delta\ne0$,
+$h_\delta=\iota_D/\delta$ satisfies $dh_\delta+h_\delta d=1$.
+\end{proof}
+
+The ghost spectrum is bounded below by $-4$, whereas every one-particle
+matter excitation has energy at least two.  At ghost number four and total
+degree zero only particle numbers $N=0,1,2$ occur.  The vacuum group
+$H^4(\g;\C)$ vanishes.  For one chirality the relevant one-particle window
+has dimensions and exact ranks
+\begin{equation}\label{eq:one-ranks}
+ C^3_0(290)\xrightarrow{d_3}C^4_0(1311)
+ \xrightarrow{d_4}C^5_0(3657),
+ \qquad \rank d_3=260,
+ \quad \rank d_4=1051.
+\end{equation}
+Thus the middle cohomology is zero; parity gives the other chirality.
+
+At two particles the minimal energy is four and exterior saturation removes
+the incoming degree:
+\begin{equation}\label{eq:two-ranks}
+ 0\longrightarrow C^4_0(55)\xrightarrow{d_4}C^5_0(385),
+ \qquad \rank d_4=53.
+\end{equation}
+The two exact kernel vectors are the normalized same-chirality singlets
+\begin{equation}\label{eq:Wstates}
+ |W_\pm^2\rangle
+ =\sqrt{\frac25}|2,-2\rangle_\pm
+ -\sqrt{\frac25}|1,-1\rangle_\pm
+ +\frac1{\sqrt5}|0,0\rangle_\pm.
+\end{equation}
+The rank $53$ is verified both by the authoritative absolute CE calculation
+and by an independent integral spin-two construction over two good primes.
+
+For the pairing, orient determinant vectors
+$v_-\in\det\g_{+1}^*$, $\Theta_0\in\det\g_0^*$, and
+$v_+=v_-^\dagger\in\det\g_{-1}^*$.  Coefficient extraction from
+$v_+\wedge\Theta_0\wedge v_-$ gives the complementary-degree CE pairing and
+fixes
+\begin{equation}\label{eq:ghostnorm-a}
+ (v_-,v_-)_{\rm gh}=1.
+\end{equation}
+Unimodularity of $\g$ makes $d$ graded skew for this pairing.  The matter
+restriction on \eqref{eq:Wstates} is $\delta_{rs}$.
+
+\begin{theorem}[Complete selected residual cohomology]\label{thm:main-a}
+For the selected derived reduction and centered polarization,
+\begin{equation}\label{eq:main-a}
+ \boxed{
+ H^4_{\rm res}
+ =\operatorname{span}\{[W_+^2],[W_-^2]\},
+ \qquad \operatorname{sig}G_{\rm res}=(2,0),
+ \qquad G_{\rm res}=I_2.}
+\end{equation}
+There is no one-particle class and no higher-matter-weight class.
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:cartan-a} removes every noncentered degree.  The ghost floor
+leaves only $N=0,1,2$.  The vacuum result, \eqref{eq:one-ranks}, and
+\eqref{eq:two-ranks} exhaust them.  Equation~\eqref{eq:ghostnorm-a} and the
+normalized matter restriction give a positive-definite form of signature
+$(2,0)$; $I_2$ is its matrix only after the stated chiral-basis, orientation,
+and unit-overlap choices.
+\end{proof}
+
+\section{Krein--Fock completion}
+
+Let $\W_{\rm alg}=\bigoplus_{n\ge2}^{\rm alg}\mathcal H_n$ and declare its
+normalized cylinder basis orthonormal for a positive Hilbert majorant.
+Completing gives $\Hone$.  The bounded involution
+\begin{equation}
+ \mathfrak J_1=+1_E\oplus(-1_A)\oplus(-1_L)
+\end{equation}
+extends \eqref{eq:krein-one}; both eigenspaces are infinite-dimensional, so
+$\Hone$ is a Krein space, not a Pontryagin space.  Set
+\begin{equation}\label{eq:KreinFock}
+ \mathscr F=\Gamma_s(\Hone),
+ \qquad \mathfrak J_{\mathscr F}=\Gamma_s(\mathfrak J_1),
+ \qquad \K=\mathscr F\widehat\otimes\Lambda^\bullet\g^*.
+\end{equation}
+
+\begin{theorem}[Energy-mode Krein completion]\label{thm:completion-a}
+The residual differential has a closed densely defined maximal extension
+$\overline Q$ on $\K$, with the algebraic state space as a graph core.  Every
+total-degree eigenspace $\K_\delta$ is finite-dimensional.  On its
+noncentered complement the bounded operator
+\begin{equation}
+ h=\bigoplus_{\delta\ne0}\frac{\iota_D}{\delta}
+\end{equation}
+preserves $\operatorname{Dom}\overline Q$ and satisfies
+\begin{equation}
+ \overline Qh+h\overline Q=1-P_0.
+\end{equation}
+The range of $\overline Q$ is closed, ordinary and reduced cohomology agree,
+and
+\begin{equation}\label{eq:completed-a}
+ \boxed{
+ H^4(\K,\overline Q)
+ =\operatorname{span}\{[W_+^2],[W_-^2]\},
+ \qquad \operatorname{sig}G_{\rm completed}=(2,0),
+ \qquad G_{\rm completed}=I_2.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The ghost compact spectrum lies in $[-4,4]$.  At fixed total degree, matter
+energy is therefore confined to a finite interval, particle number is
+bounded by half that energy, and only finitely many finite-dimensional
+one-particle blocks and bosonic partitions occur.  Hence each $\K_\delta$ is
+finite-dimensional and $\K_0$ is exactly the algebraic centered block.
+
+Writing $Q_\delta$ for its finite nilpotent matrix, the maximal Hilbert direct
+sum with graph domain is closed, and total-degree truncations are a graph
+core.  Since nonzero $\delta$ is integral and $\|\iota_D\|=1$, one has
+$\|h\|\le1$.  The block identity and estimate
+\[
+ \|Q_\delta h_\delta\psi\|
+ \le\|\psi\|+\|h_\delta\|\,\|Q_\delta\psi\|
+\]
+give domain invariance and the displayed contraction.  The off-center range
+is a closed kernel, while the centered range is finite-dimensional.  Thus
+the total range is closed and Theorem~\ref{thm:main-a} applies without a
+limiting correction.
+\end{proof}
+
+The completion does not exponentiate the unbounded conformal generators or
+construct a metric-field Cauchy topology.  It also does not turn
+$J_{\rm conf}$ into a positive one-particle form.
+
+\section{Descent and the dynamical quotient}
+
+For a scalar conformal primary $V_h$, let
+\begin{equation}
+ \omega=\frac1{4!}\epsilon_{\mu\nu\rho\sigma}
+ c^\mu c^\nu c^\rho c^\sigma.
+\end{equation}
+The BRST transformations give the same closure defect for $\omega V_h$ and
+the integrated density, proportional to $h/4-1$.  Hence weight four gives
+the residual descent
+\begin{equation}
+ [\omega V_4]\longleftrightarrow
+ \left[\int_M\sqrt{-g}\,V_4\right].
+\end{equation}
+Parity exchanges the chiral classes.  In the orthonormal basis
+\begin{equation}\label{eq:parity-a}
+ e=\frac{W_+^2+W_-^2}{\sqrt2},
+ \qquad o=\frac{W_+^2-W_-^2}{\sqrt2},
+\end{equation}
+they descend, up to Lorentzian orientation conventions, to $C^2$ and
+$C\widetilde C$.  Their Gram matrix remains $I_2$.
+
+The Euler--Lagrange map sends $e$ to a nonzero multiple of the Bach tensor
+and sends $o$ to zero by Chern--Weil transgression.  Therefore
+\begin{equation}\label{eq:dynamical-a}
+ 0\longrightarrow\operatorname{span}\{o\}
+ \longrightarrow H^4_{\rm res}
+ \longrightarrow\operatorname{span}\{B_{\mu\nu}\}
+ \longrightarrow0,
+ \qquad
+ H^4_{\rm dyn}\cong\operatorname{span}\{[C^2]\},
+ \quad G_{\rm dyn}=I_1.
+\end{equation}
+The odd class is locally variationally trivial, not globally irrelevant for
+all boundary conditions or topologies.
+
+\clearpage
+\section{Focused claim ledger}\label{sec:ledger}
+
+This page records the claims used by this article and their exact
+dependency boundary.  Detailed sparse matrices, hashes, elapsed times, and
+generated bases are retained in the companion computational supplement.
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.24\textwidth}
+                >{\raggedright\arraybackslash}p{0.18\textwidth}
+                >{\raggedright\arraybackslash}p{0.46\textwidth}}
+\toprule
+Claim & Status/category & Exact receipt or falsification command\\
+\midrule
+Parity-complete $E/A/L$ module, global curvature bridge, and invariant
+Krein form & Exact; \reducedtag{} &
+\path{symbolic/verify_conformal_weyl_module.py};
+\path{symbolic/verify_conformal_cylinder_preimages.py}\\
+
+Taub/moment-map equality, endpoint duality, and normalized BV--BFV
+suspension & Exact; \localtag{} / \reducedtag{} &
+\path{symbolic/verify_conformal_taub_moment_map_all_levels.py};
+\path{symbolic/verify_conformal_taub_obstruction_map.py};
+\path{symbolic/verify_conformal_dual_zero_modes.py};
+\path{symbolic/verify_conformal_residual_bfv_roles.py};
+\path{symbolic/verify_conformal_closed_universe_bfv.py};
+\path{symbolic/verify_conformal_zero_mode_transgression.py}\\
+
+Centered absolute residual ranks and $H^4_{\rm res}\cong\C^2$ & Exact;
+\reducedtag{} &
+run with \texttt{python3}:
+\path{symbolic/verify_conformal_paper_free.py};
+\path{symbolic/verify_conformal_polarized_state_complex.py}; independent central rank:
+\path{symbolic/verify_conformal_residual_rank53_independent.py}\\
+
+Residual Hermitian signature $(2,0)$ and normalized $I_2$ & Exact for the
+selected vertex/deformation basis; \reducedtag{} &
+\path{symbolic/verify_conformal_polarized_pairing_transfer.py}; positivity is
+not a one-particle or graviton-Hilbert claim\\
+
+Closed maximal residual differential and Krein--Fock cohomology & Exact;
+\reducedtag{} completion &
+\path{symbolic/verify_conformal_energy_mode_krein.py}; no integrated
+$SO(4,2)$ representation or metric Cauchy completion claimed\\
+
+Derived quotient interpretation & Exact in selected formal infinitesimal
+category; \localtag{} & Theorem~\ref{thm:derived};
+\path{symbolic/verify_conformal_closed_universe_bfv.py}; no global derived
+stack, boundary-charge, or fixed-cylinder theorem claimed\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Tier boundary.}
+This paper is a residual algebraic and energy-mode completion theorem.  It
+does not use reduced-mode or Euclidean evidence to claim a Lorentzian
+off-shell BV propagator.  The separate causal-curvature paper supplies that
+bridge and imports Theorem~\ref{thm:main-a}; it does not recompute the CE
+group.
+
+\section{Conclusion}
+
+For the selected closed-universe residual gauging, the Taub constraints are
+the components of the residual moment map, endpoint duality supplies their
+BFV cotangent variables, and the Koszul--CE charge realizes the formal
+derived zero-locus and stabilizer quotient.  Cartan contraction reduces the
+absolute complex to a finite centered calculation.  Exactly two
+ghost-dressed Weyl-square deformation classes survive, with positive-definite
+signature $(2,0)$ and matrix $I_2$ after the specified normalization.  The
+result survives the selected Krein--Fock completion because every
+total-degree block is finite and the Cartan homotopy extends boundedly.
+
+This conclusion is deliberately conditional on full residual gauging.  A
+fixed cylinder with $D$ as Hamiltonian, a boundary-charge problem, an
+interacting theory, or a positive graviton Hilbert-space question requires a
+different complex and is not answered here.
+
+\begin{thebibliography}{99}
+
+\bibitem{AltasTekinLinearization}
+E.~Altas and B.~Tekin,
+``Linearization instability for generic gravity in AdS,''
+Phys. Rev. D \textbf{97} (2018) 124017,
+\href{https://arxiv.org/abs/1804.05602}{arXiv:1804.05602}.
+
+\bibitem{BarnichBrandtHenneaux}
+G.~Barnich, F.~Brandt, and M.~Henneaux,
+``Local BRST cohomology in gauge theories,''
+Phys. Rept. \textbf{338} (2000) 439--569,
+\href{https://arxiv.org/abs/hep-th/0002245}{arXiv:hep-th/0002245}.
+
+\bibitem{CattaneoMnevReshetikhin}
+A.~S.~Cattaneo, P.~Mnev, and N.~Reshetikhin,
+``Classical BV theories on manifolds with boundary,''
+Commun. Math. Phys. \textbf{332} (2014) 535--603,
+\href{https://arxiv.org/abs/1201.0290}{arXiv:1201.0290}.
+
+\bibitem{HamadaBRST}
+K.~Hamada,
+``BRST analysis of physical fields and states for 4D quantum gravity on
+$R\times S^3$,''
+Phys. Rev. D \textbf{85} (2012) 024028,
+\href{https://arxiv.org/abs/1202.4538}{arXiv:1202.4538}.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,784 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\W}{\mathcal W}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\supp}{\operatorname{supp}}
+
+\title{Causal Curvature Prolongation and Covariant BV--BFV Transport\\
+for Free Pure-Weyl Gravity}
+\author{GPT-5.6.sol\thanks{OpenAI model.  Contributed the research
+programme, mathematical direction, derivations, machine verification,
+referee analyses, and manuscript.  The project was commissioned and directed
+by Asger Alstrup Palm (\texttt{asger@area9.dk}), who initiated the questions,
+served as the non-technical orchestrator and corresponding human contact, but
+claims no technical contribution.}}
+\date{Draft for external review, July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct causal chain homotopies for the complete free pure-Weyl
+BV--BFV complex on the conformal cylinder
+$M=\R\times S^3$.  The companion residual paper supplies one external
+input: in the selected closed-universe polarization, the residual
+cohomology is
+$H^4_{\rm res}=\operatorname{span}\{[W_+^2],[W_-^2]\}$ with normalized
+Hermitian Gram matrix $I_2$.  We do not repeat that Chevalley--Eilenberg
+calculation here.
+
+The action-derived ordinary-derivative auxiliary complex has curved
+nilpotent and cyclic operator identities, a BV-canonical support-local
+deformation retract to the metric complex, and an off-shell current
+comparison.  A null-symbol theorem proves that no pointwise fibre pairing
+and first-order companion can turn its $24$-field Hessian into a scalar-wave
+block: the Hessian and gauge symbols have ranks $11$ and $9$, and the
+remaining quotient is the two-helicity Weyl module.  We therefore adjoin
+curvature rather than project onto helicity.  The resulting $26$-state
+Weyl--Cotton system is locally equivalent to the curved Bianchi--Bach rows,
+is symmetric hyperbolic after a constraint adjustment, and propagates all
+fourteen constraints for compatible sources.
+
+An all-row curvature mapping cylinder is support-locally contractible away
+from a $30$-component metric graph.  Curved homological transfer from the
+adjoint-tractor detour complex, followed by a trace/Weyl shear and the
+$356+30$ hybrid retract, yields retarded and advanced degree-$(-1)$ maps
+$\Lambda_\pm$ satisfying
+$Q\Lambda_\pm+\Lambda_\pm Q=1$ with causal support and graded adjointness.
+Their difference gives a compact-to-spacelike-compact quasi-isomorphism,
+recovers all fifteen residual endpoint pairs without duplication, transports
+$SO(4,2)$ up to compactly supported chain homotopy, and identifies the Green
+and covariant-current pairings.  Consequently
+$H^4_{\rm cov}=\operatorname{span}\{[W_+^2],[W_-^2]\}$ and
+$G_{\rm cov}=I_2$.  The theorem is free, classical, and polarization
+dependent; it is not a Hadamard or interacting quantum construction.
+\end{abstract}
+
+\section*{Authorship and generated inputs}
+The named model author produced the mathematical programme, derivations,
+verification code, referee responses, and manuscript.  Asger Alstrup Palm
+commissioned and directed the work, initiated the questions, and served as
+non-technical orchestrator and corresponding human contact; he claims no
+technical contribution.  Repository scripts generate the identified tables
+and certificates; those artifacts are computational inputs rather than
+additional authors.  This article has no generated \TeX{} input.
+
+\tableofcontents
+
+\section{Problem and theorem boundary}\label{sec:intro}
+
+Let
+\begin{equation}\label{eq:cylinder}
+ M=\R\times S^3,
+ \qquad \bar g=-dt^2+d\Omega_3^2,
+\end{equation}
+with unit cylinder radius and Lorentzian signature $(-,+,+,+)$.  We study
+the free classical BV complex of the Weyl-square action.  Compactly
+supported, spacelike-compact, and unrestricted smooth sections are denoted
+by $\Gamma_c$, $\Gamma_{sc}$, and $\Gamma^\infty$.
+
+The analytic target is not a scalar wave equation for every off-shell
+component.  It is a pair of degree-$(-1)$ maps
+\begin{equation}\label{eq:causal-target}
+ \Lambda_\pm:\Gamma_c(\cC_{\rm prol})
+ \longrightarrow \Gamma^\infty(\cC_{\rm prol})[-1]
+\end{equation}
+such that
+\begin{equation}\label{eq:causal-identity}
+ Q\Lambda_\pm+\Lambda_\pm Q=\id,
+ \qquad
+ \supp(\Lambda_\pm f)\subseteq J^\pm(\supp f).
+\end{equation}
+The Green-hyperbolic-complex formalism turns this identity into a causal
+quasi-isomorphism \cite{GreenHyperbolic}.  We realize it directly by
+finite-order homological transfer from known hyperbolic blocks; no single
+scalar principal symbol on the original field bundle is required.
+
+\subsection{The sole residual-cohomology input}
+
+We use the following result from the companion residual paper as an input.
+It is not rederived in this article.
+
+\begin{theorem}[Residual input from Paper A]\label{thm:paper-A-input}
+For the selected closed-cylinder BV--BFV polarization, in which all fifteen
+residual conformal generators are gauged, the centered residual complex has
+\begin{equation}\label{eq:paper-A-result}
+ H^4_{\rm res}
+ =\operatorname{span}\{[W_+^2],[W_-^2]\},
+ \qquad \operatorname{sig}G_{\rm res}=(2,0),
+ \qquad G_{\rm res}=I_2.
+\end{equation}
+The underlying one-particle curvature form has cylinder signs
+$+I_E\oplus(-I_A)\oplus(-I_L)$.  The two classes are residual
+vertex/deformation classes, not one-particle graviton states.
+\end{theorem}
+
+Paper A proves \eqref{eq:paper-A-result} by Cartan reduction and an exact
+centered residual calculation.  Here it enters only at the final transport
+step.  In particular, no residual Chevalley--Eilenberg matrices or finite
+harmonic cutoffs are recomputed below.
+
+\subsection{Main result}
+
+\begin{theorem}[Covariant causal BV--BFV transport]\label{thm:main}
+The complete free pure-Weyl BV complex on \eqref{eq:cylinder} admits a
+support-local curvature prolongation and maps \eqref{eq:causal-target}
+satisfying \eqref{eq:causal-identity} and
+$\Lambda_+^\sharp=\Lambda_-$.  Their causal difference induces a
+pairing-compatible quasi-isomorphism
+\begin{equation}\label{eq:main-chain}
+ \Gamma_c(\cC_{\rm met})[1]
+ \simeq \Gamma_c(\cC_{\rm aux})[1]
+ \simeq \Gamma_c(\cC_{\rm prol})[1]
+ \simeq \Gamma_{sc}(\cC_{\rm prol})
+ \simeq \cC_\Sigma
+ \simeq \W_+\oplus\W_-
+\end{equation}
+with the fifteen residual endpoint pairs.  The last identification is
+$SO(4,2)$-equivariant on cohomology.  Transporting
+Theorem~\ref{thm:paper-A-input} gives
+\begin{equation}\label{eq:main-H4}
+ \boxed{
+ H^4_{\rm cov}=\operatorname{span}\{[W_+^2],[W_-^2]\},
+ \qquad \operatorname{sig}G_{\rm cov}=(2,0),
+ \qquad G_{\rm cov}=I_2.}
+\end{equation}
+\end{theorem}
+
+The proof occupies Sections~\ref{sec:auxiliary}--\ref{sec:transport}.  Three
+scoped negative theorems delimit stronger architectures but are not premises
+of the positive causal construction.
+
+\section{Curved auxiliary complex, local retract, and current}
+\label{sec:auxiliary}
+
+An ordinary-derivative realization of conformal gravity uses a trace-free
+metric perturbation $h$, an auxiliary symmetric tensor $f$, a Stueckelberg
+one-form $v$, and nine Diff/Weyl gauge parameters
+\cite{MetsaevOrdinaryDerivative}.  Direct covariant variation of the action
+and gauge fermion gives the Hessian $E_{\rm aux}$, gauge map $K_{\rm aux}$,
+companion, and four-row BV operators $Q_{\rm aux},W_{\rm aux}$ and
+$P_{\rm aux}$.
+
+\begin{proposition}[Curved operator identities]\label{prop:operators}
+In canonical covariant-derivative normal form, the complete curved operators
+satisfy
+\begin{align}
+ E_{\rm aux}^\sharp&=E_{\rm aux},
+ &E_{\rm aux}K_{\rm aux}&=0,
+ &Q_{\rm aux}^2&=0,\label{eq:operator-first}\\
+ Q_{\rm aux}W_{\rm aux}+W_{\rm aux}Q_{\rm aux}&=P_{\rm aux},
+ &W_{\rm aux}^\sharp&=W_{\rm aux},
+ &P_{\rm aux}^\sharp&=P_{\rm aux}.\label{eq:operator-second}
+\end{align}
+The coefficient comparison is exhaustive on all $630$ required cylinder
+jets and globalizes by homogeneity.  Equations
+\eqref{eq:operator-first}--\eqref{eq:operator-second} do not assert that the
+field block of $P_{\rm aux}$ has scalar normally hyperbolic symbol.
+\end{proposition}
+
+The local BV-canonical variables include
+\begin{equation}\label{eq:aux-shift}
+ \eta=\xi_0-d\sigma,
+ \qquad
+ \widehat f=f-A_g^{-1}G^b(g,b),
+ \qquad
+ A_g^{-1}(s)=-2s+\frac23g\operatorname{tr}_g s.
+\end{equation}
+The same generating functional transforms fields and antifields, so the
+pairing is not adjusted row by row.
+
+\begin{proposition}[Support-local BV retract]\label{prop:aux-SDR}
+There are finite-order differential maps
+\begin{equation}
+ i:\cC_{\rm met}\longrightarrow\cC_{\rm aux},
+ \qquad p:\cC_{\rm aux}\longrightarrow\cC_{\rm met},
+ \qquad k:\cC_{\rm aux}\longrightarrow\cC_{\rm aux}[-1]
+\end{equation}
+on every field, ghost, antifield, trace/Weyl, and nonminimal row, with
+\begin{equation}\label{eq:aux-SDR}
+ p i=\id,
+ \qquad i p-\id=Q_{\rm aux}k+kQ_{\rm aux}.
+\end{equation}
+Each entry is a finite differential operator or a pointwise inverse; hence
+the retract acts on $\Gamma_c$, $\Gamma_{sc}$, and $\Gamma^\infty$ and never
+uses a conformal-Killing or transverse projector.
+\end{proposition}
+
+\begin{proposition}[Off-shell current comparison]\label{prop:aux-current}
+The action-derived presymplectic currents obey
+\begin{equation}\label{eq:aux-current}
+ i^*\omega_{\rm aux}-\omega_{\rm met}=d\beta+Q\gamma.
+\end{equation}
+On the closed Cauchy surface $S^3$, the spatial divergence integrates to
+zero, so the induced Cauchy pairings agree on cohomology.  This is an
+off-shell variational identity; it is not inferred from equal equations of
+motion or mode normalization.
+\end{proposition}
+
+Propositions~\ref{prop:operators}--\ref{prop:aux-current} are the exact
+contents of the three repository flags
+\begin{center}\small
+\path{curved_operator_identity},\par
+\path{curved_deformation_retract},\par
+\path{curved_current_comparison}.
+\end{center}
+
+\section{Scoped analytic boundary theorems}\label{sec:nogo}
+
+The following negative results prevent stronger but unnecessary analytic
+claims.  They are stated only as invariant boundary lemmas; their exact
+certificates and scope conditions are recorded in the computational
+supplement.
+
+\begin{proposition}[Scalar-wave witness no-go]\label{prop:scalar-no-go}
+At a generic nonzero null covector $\zeta$,
+\begin{equation}\label{eq:null-ranks}
+ \rank E_2(\zeta)=11,
+ \qquad \rank K_1(\zeta)=9.
+\end{equation}
+For every nondegenerate pointwise fibre map $J$ and every first-order
+companion $C$,
+$\rank(J^{-1}E_2)=11$ and $\rank(K_1C_1)\leq9$.  Therefore
+$J^{-1}E_2+K_1C_1$ cannot equal the vanishing null symbol of a scalar normally
+hyperbolic $24$-field block.
+\end{proposition}
+
+The quotient left by \eqref{eq:null-ranks} is physical rather than missing
+gauge freedom:
+\begin{equation}\label{eq:helicity-quotient}
+ \im(J_{\rm act}^{-1}E_2)/\im K_1
+ \cong\cH_{+2}\oplus\cH_{-2},
+ \qquad
+ \sigma(\W)_{\rm red}=\frac14 I_2.
+\end{equation}
+Thus the correct repair propagates curvature; it does not cancel the two
+helicities.
+
+\begin{proposition}[Fixed-temporal first-order no-go]\label{prop:first-no-go}
+For the fixed temporal pair-$(1,6)$, cyclic $-2\Pi$ realization, the complete
+$46$-parameter invariant spatial family retains the same length-two
+polynomial Jordan chain.  The induced sensitivity map from all $46$
+parameters to the intrinsic Jordan obstruction is zero.  Hence no regular
+member has a semisimple faithful strong linearization or a positive
+symmetric-hyperbolic symmetrizer.
+\end{proposition}
+
+This proposition is scoped to that temporal incidence and cyclic placement.
+Moreover, its Jordan extension becomes triangular/contractible after the
+certified auxiliary shift; it is not a no-go for generalized Green
+hyperbolicity.
+
+\begin{proposition}[Parallel two-wave-factor no-go]\label{prop:factor-no-go}
+On the $30$-row endpoint graph, the complete parallel $SO(3)$-invariant
+trace-free-preserving two-wave family
+\begin{equation}
+ L_\pm=P_{\rm tr}+\Box P_{\rm TF}
+       +A_\pm^\mu\nabla_\mu+B_\pm
+\end{equation}
+cannot factor the endpoint operator.  After the order-three and linear
+order-two equations are eliminated, twelve exact rational multipliers obey
+\begin{equation}\label{eq:nullstellensatz}
+ \sum_i w_i f_i=1,
+\end{equation}
+so the remaining order-two polynomial system is inconsistent.
+\end{proposition}
+
+Proposition~\ref{prop:factor-no-go} excludes only this same-bundle parallel
+family.  It does not exclude mixed-order systems, triangular extensions,
+larger prolongations, or the adjoint-tractor transfer used below.
+
+\section{Weyl--Cotton evolution and sourced constraints}
+\label{sec:curvature}
+
+Introduce an independent algebraic Weyl tensor $\Psi$ through the local graph
+$\widehat\Psi=\Psi-C_1h$.  Its electric and magnetic parts are
+\begin{equation}
+ E_{ij}=\Psi_{0i0j},
+ \qquad B_{ij}=\frac12\epsilon_i{}^{kl}\Psi_{0jkl}.
+\end{equation}
+The ten $E/B$ components do not close at first order.  Adding the sixteen
+independent components of the Cotton divergence
+$V_{\mu,\nu,\sigma}=\nabla^\rho\Psi_{\mu\rho\nu\sigma}$ gives a $26$-state
+bundle.  Direct decomposition of the Bianchi, dual-Bianchi, and Bach rows
+produces a $34\times26$ first-order table with eight primary constraints.
+Comparison on all $150$ independent Weyl two-jets proves equality with the
+covariant rows and globalizes over the cylinder.
+
+\begin{theorem}[Constraint-adjusted Weyl--Cotton system]
+\label{thm:WC}
+There is a local constraint adjustment for which the $26$-state evolution
+system is symmetric hyperbolic.  A positive STF symmetrizer makes every
+spatial principal matrix symmetric, and the characteristic speeds are
+\begin{equation}
+ 0,\qquad \pm\frac12,\qquad \pm\frac1{\sqrt3},\qquad \pm1.
+\end{equation}
+The eight primary and six secondary constraints form a closed causal
+subsidiary system.  For an inhomogeneous source $F$, the exact subsidiary
+identity has the form
+\begin{equation}\label{eq:sourced-subsidiary}
+ L_{\rm con}\,\mathcal K(U)
+ =R\,\mathcal K_{\rm src}(F).
+\end{equation}
+Consequently retarded and advanced solutions of compatible sources,
+$\mathcal K_{\rm src}(F)=0$, remain in the constrained covariant system.
+\end{theorem}
+
+\begin{proof}
+The $3+1$ decomposition of the covariant Bianchi, dual-Bianchi, and Bach
+rows gives the stated $34\times26$ table.  Subtracting the local constraint
+adjustment changes only combinations of the fourteen constraint rows and
+therefore preserves the compatible covariant solution space.  In the
+$SO(3)$ irreducible STF/vector/scalar blocks, direct multiplication by the
+positive fibre form makes every adjusted spatial principal matrix symmetric;
+diagonalizing those finite blocks gives the listed real causal speeds.
+Applying the complete constraint operator to the adjusted evolution table
+and commuting the $S^3$ derivatives gives
+\eqref{eq:sourced-subsidiary} coefficientwise.  Its homogeneous principal
+part has the same symmetric-hyperbolic energy estimate.  Uniqueness for that
+subsidiary Cauchy problem therefore preserves all fourteen constraints when
+the source compatibility rows vanish.  The coefficient tables and the two
+independent covariant-versus-$3+1$ jet comparisons are identified in
+Table~\ref{tab:ledger}.
+\end{proof}
+
+The sourced statement \eqref{eq:sourced-subsidiary}, not homogeneous
+constraint propagation alone, is what permits Green operators on the
+compatible complex.  The all-level solution audit gives precisely
+\begin{align}
+ d_E(N)&=2(N-1)(N+3), &&N\geq2,\nonumber\\
+ d_A(N)&=2(N-1)(N+1), &&N\geq3,\label{eq:EAL-multiplicity}\\
+ d_L(N)&=2(N-3)(N+1), &&N\geq4,\nonumber
+\end{align}
+with both chiralities.  Character identities prove exhaustion; the Cotton
+graph adds no second solution copy.  Thus curvature propagation carries the
+entire $E/A/L$ module, not only the Einstein branch.
+
+\section{All-row prolongation and cyclic hybrid retract}
+\label{sec:mapping-cylinder}
+
+Curvature is adjoined as a contractible prolongation rather than substituted
+for the metric potential.  The state/equation chain square is
+\begin{equation}\label{eq:chain-square}
+ (L,K)T=A_{\rm eq}E_{\rm aux},
+ \qquad T=(C_1,\operatorname{div}C_1),
+\end{equation}
+and the equation/identity square is its fibre-identified curved cotangent
+counterpart.  The resulting mapping cylinder includes fields, equations,
+identities, all antifields, trace/Weyl rows, nonminimal rows, and the
+first-order curvature reduction.
+
+\begin{proposition}[Curved mapping-cylinder SDR]\label{prop:cylinder-SDR}
+The complete sixteen-block differential obeys
+\begin{equation}\label{eq:prol-SDR}
+ Q_{\rm prol}^2=0,
+ \qquad PI=\id,
+ \qquad IP-\id=Q_{\rm prol}H+HQ_{\rm prol},
+\end{equation}
+and is odd cyclic.  All entries of $I,P,H$ are finite-order differential
+operators or pointwise inverses.  The prolonged current satisfies
+\begin{equation}\label{eq:prolonged-current}
+ I^*\omega_{\rm prol}-\omega_{\rm aux}=d\beta+Q\gamma,
+ \qquad \beta=\delta Y_I,
+ \qquad \gamma=0.
+\end{equation}
+\end{proposition}
+
+A filtered contraction sharpens \eqref{eq:prol-SDR}.  On all $386$
+components there are complementary chain projectors
+\begin{equation}\label{eq:hybrid-projectors}
+ P_{\rm alg}+P_{\rm end}=\id,
+ \qquad P_{\rm alg}P_{\rm end}=0,
+ \qquad [Q,P_{\rm alg}]=[Q,P_{\rm end}]=0,
+\end{equation}
+with ranks $356$ and $30$, and a local cyclic homotopy
+\begin{equation}\label{eq:alg-contraction}
+ QH_{\rm alg}+H_{\rm alg}Q=P_{\rm alg}.
+\end{equation}
+The endpoint image is a differential graph retaining the metric together
+with its locally determined curvature and equation variables.  No inverse
+Weyl map, Laplacian, curl, TT projector, or helicity projector appears.
+
+\section{Adjoint-tractor transfer and all-row causal homotopy}
+\label{sec:tractor}
+
+The adjoint-tractor Yang--Mills detour complex has bundle ranks
+$15\to60\to60\to15$ and a degreewise normally hyperbolic parent witness
+\cite{GoverSombergSoucek}.  Kostant contraction and finite homological
+perturbation compress it to the trace-free metric ranks $4\to9\to9\to4$.
+On the curved cylinder, the derivative commutators occupy ten invariant
+$SO(3)$ channels.  Curvature action on the derivative, form, and tractor
+slots cancels every channel and gives finite-order cyclic maps $i,p,h$.
+
+\begin{proposition}[Curved HPL/Bach match]\label{prop:Bach-match}
+The compressed parent middle operator agrees coefficientwise with the full
+metric Bach block at derivative orders zero through four:
+\begin{equation}\label{eq:Bach-match}
+ P_{\rm mid}^{\rm parent,comp}
+ =-2S^TJ_{\rm met}\,\bar B\,S.
+\end{equation}
+Consequently the parent homotopies transfer to
+\begin{equation}\label{eq:TF-homotopy}
+ \Lambda_{{\rm TF},\pm}=p\Lambda_{{\rm parent},\pm}i,
+ \qquad
+ q_{\rm TF}\Lambda_{{\rm TF},\pm}
+ +\Lambda_{{\rm TF},\pm}q_{\rm TF}=\id,
+ \qquad
+ \Lambda_{{\rm TF},+}^\sharp=\Lambda_{{\rm TF},-}.
+\end{equation}
+Their support is retarded or advanced because pre- and postcomposition are
+finite-order local.
+\end{proposition}
+
+\begin{proof}
+The curved HPL maps are chain maps, satisfy $pi=\id$, and are cyclic:
+$i^\sharp=p$.  The PBW comparison in \eqref{eq:Bach-match} identifies the
+transferred differential with the actual trace-free metric Bach complex,
+not merely its principal symbol.  Hence the parent identity gives
+\begin{align*}
+ q_{\rm TF}(p\Lambda_{{\rm parent},\pm}i)
+ +(p\Lambda_{{\rm parent},\pm}i)q_{\rm TF}
+ &=p(q_{\rm parent}\Lambda_{{\rm parent},\pm}
+ +\Lambda_{{\rm parent},\pm}q_{\rm parent})i\\
+ &=pi=\id.
+\end{align*}
+Finite-order pre- and postcomposition preserves retarded/advanced support,
+and $i^\sharp=p$ transfers the parent adjoint relation.  This proves
+\eqref{eq:TF-homotopy}.
+\end{proof}
+
+The trace/Weyl rows attach through the local shear
+\begin{equation}\label{eq:shear}
+ U_G=\begin{pmatrix}1&0\\-d&1\end{pmatrix},
+ \qquad
+ U_I=\begin{pmatrix}1&d^\sharp\\0&1\end{pmatrix},
+ \qquad d=\frac12\operatorname{div},
+ \qquad U^\sharp=U^{-1}.
+\end{equation}
+The trace complex consists of pointwise identity doublets with contraction
+$h_{\rm tr}$.  Thus
+\begin{equation}\label{eq:endpoint-homotopy}
+ \Lambda_{{\rm end},\pm}
+ =U(\Lambda_{{\rm TF},\pm}\oplus h_{\rm tr})U^{-1}.
+\end{equation}
+
+\begin{theorem}[Full causal homotopy]\label{thm:full-homotopy}
+On the complete prolonged complex,
+\begin{equation}\label{eq:full-homotopy}
+ \boxed{
+ \Lambda_{{\rm prol},\pm}
+ =H_{\rm alg}
+ +i_{\rm end}\Lambda_{{\rm end},\pm}p_{\rm end}},
+\end{equation}
+and
+\begin{equation}\label{eq:full-properties}
+ Q_{\rm prol}\Lambda_{{\rm prol},\pm}
+ +\Lambda_{{\rm prol},\pm}Q_{\rm prol}=\id,
+ \qquad
+ \supp\Lambda_{{\rm prol},\pm}f\subseteq J^\pm(\supp f),
+ \qquad
+ \Lambda_{{\rm prol},+}^\sharp=\Lambda_{{\rm prol},-}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The endpoint inclusion and projection satisfy
+$i_{\rm end}p_{\rm end}=P_{\rm end}$ and
+$p_{\rm end}i_{\rm end}=\id$.  Therefore
+\begin{align*}
+ Q\Lambda_{{\rm prol},\pm}+\Lambda_{{\rm prol},\pm}Q
+ &=P_{\rm alg}
+ +i_{\rm end}
+   (Q_{\rm end}\Lambda_{{\rm end},\pm}
+    +\Lambda_{{\rm end},\pm}Q_{\rm end})p_{\rm end}\\
+ &=P_{\rm alg}+P_{\rm end}=\id.
+\end{align*}
+The algebraic term and the endpoint inclusion/projection are local, while
+the endpoint homotopy has causal support by
+Proposition~\ref{prop:Bach-match}; their sum therefore has the required
+support.  The identities $H_{\rm alg}^\sharp=H_{\rm alg}$,
+$i_{\rm end}^\sharp=p_{\rm end}$, and
+$\Lambda_{{\rm end},+}^\sharp=\Lambda_{{\rm end},-}$ give the final adjoint
+relation.
+\end{proof}
+
+Theorem~\ref{thm:full-homotopy} does not construct a canonical same-sided
+inverse for the endpoint operator or a monolithic prolonged witness
+$QW+WQ$ with degreewise Green inverses.  Those two implementation-specific
+objects are unnecessary for \eqref{eq:full-properties}.
+
+\section{Causal, equivariant, and pairing transport}\label{sec:transport}
+
+Put
+\begin{equation}\label{eq:causal-difference}
+ \Lambda=\Lambda_+-\Lambda_-:
+ \Gamma_c(\cC_{\rm prol})[1]
+ \longrightarrow\Gamma_{sc}(\cC_{\rm prol}).
+\end{equation}
+
+\begin{proposition}[Causal quasi-isomorphism]\label{prop:causal-QI}
+The map \eqref{eq:causal-difference} is a quasi-isomorphism.  Its cutoff
+inverse is represented by $[u]\mapsto[Q(\chi_+u)]$; the two inverse identities
+follow from the past-compact and future-compact contractions and the support
+exact sequence.  Since $S^3$ is compact,
+\begin{equation}
+ \Gamma_{sc}(\cC_{\rm prol})=\Gamma^\infty(\cC_{\rm prol}),
+\end{equation}
+so the target contains all smooth global cylinder solutions.
+\end{proposition}
+
+\begin{proof}
+Subtracting the two identities in \eqref{eq:full-properties} shows that
+$\Lambda_+-\Lambda_-$ is a chain map of degree $-1$.  The standard support
+exact sequence
+\[
+ 0\longrightarrow\Gamma_c
+ \longrightarrow\Gamma_{pc}\oplus\Gamma_{fc}
+ \longrightarrow\Gamma_{sc}\longrightarrow0
+\]
+together with the two same-sided contractions gives its inverse on
+cohomology.  Concretely, for a spacelike-compact cocycle $u$, a temporal
+partition defines the compact cocycle $Q(\chi_+u)$; the homotopy identities
+send its causal class back to $[u]$.  Conversely, a causal class that is
+exact has past-compact and future-compact primitives whose difference is a
+compact primitive.  These are the two standard inverse computations for a
+Green-hyperbolic complex \cite{GreenHyperbolic}.  Compactness of $S^3$
+turns spacelike-compact support into unrestricted smooth support.
+\end{proof}
+
+For each conformal-Killing generator $\xi_a$, choose a temporal cutoff
+$\chi$ and set
+\begin{equation}\label{eq:CKV-source}
+ j_a=Q(\chi\xi_a).
+\end{equation}
+Then $j_a$ is compactly supported, $Qj_a=0$, and
+$[\Lambda j_a]=[\xi_a]$.  The dual endpoint construction is complementary,
+the endpoint pairing is perfect, and the compact grading is
+\begin{equation}\label{eq:CKV-grading}
+ 4_{-1}\oplus7_0\oplus4_{+1}.
+\end{equation}
+All prolongation and auxiliary additions are contractible, so no second
+endpoint copy appears.
+
+\begin{proposition}[$SO(4,2)$ transport]\label{prop:SO42}
+The causal/Cauchy bridge is $SO(4,2)$-equivariant on cohomology.  If $\rho$
+is a local conformal chain generator and $\kappa=[Q,\chi]$, then
+\begin{equation}\label{eq:cutoff-equivariance}
+ [\kappa,\rho]=[Q,[\chi,\rho]].
+\end{equation}
+The homotopy $[\chi,\rho]$ has compact support on spacelike-compact sections.
+Together with naturality of the curvature mapping cylinder and the all-level
+$E/A/L$ intertwiners, \eqref{eq:cutoff-equivariance} induces the strict
+residual action on cohomology.  The chosen Cauchy splitting itself need not
+be strictly equivariant.
+\end{proposition}
+
+\begin{proof}
+Local conformal naturality gives $[Q,\rho]=0$.  The graded Jacobi identity
+then gives \eqref{eq:cutoff-equivariance} from $\kappa=[Q,\chi]$.  Since
+$[\chi,\rho]$ contains derivatives of the temporal cutoff, its coefficients
+are supported in the compact transition slab; $S^3$ is compact.  Thus it is
+an admissible compactly supported chain homotopy.  Naturality of the two
+local retracts and the all-level curvature intertwiners identifies the
+resulting cohomological action with the residual action imported from Paper
+A.
+\end{proof}
+
+Let $\Delta_\Lambda=\Lambda_+-\Lambda_-$.  The adjoint identity in
+\eqref{eq:full-properties} makes $\Delta_\Lambda$ graded antisymmetric.  The
+common algebraic and trace contractions cancel in this difference, leaving
+the parent Green/current identity.
+
+\begin{proposition}[Pairing transport]\label{prop:pairing}
+The causal Green pairing and the prolonged, auxiliary, metric, and Cauchy
+current pairings agree on cohomology.  Under the all-energy harmonic
+transform they have signs
+\begin{equation}\label{eq:EAL-signs}
+ +I_E\oplus(-I_A)\oplus(-I_L).
+\end{equation}
+This result uses the action-derived currents
+\eqref{eq:aux-current} and \eqref{eq:prolonged-current}; the positive
+symmetric-hyperbolic energy is not substituted for the indefinite BV form.
+\end{proposition}
+
+\begin{proof}
+The adjoint relation in \eqref{eq:full-properties} and the Green identity
+identify the causal pairing with the parent Cauchy current.  The local
+algebraic and trace contractions are identical in $\Lambda_+$ and
+$\Lambda_-$ and cancel in their difference.  Pulling the remaining current
+successively through \eqref{eq:prolonged-current} and
+\eqref{eq:aux-current} changes it only by $d+Q$ improvements.  The $d$ term
+integrates to zero on the closed $S^3$, and the $Q$ term vanishes on
+cohomology.  The certified all-level harmonic transform of the resulting
+metric current is \eqref{eq:EAL-signs}, proving the claim without replacing
+it by the positive PDE symmetrizer.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Proposition~\ref{prop:aux-SDR} and
+Proposition~\ref{prop:cylinder-SDR} give the first two local equivalences in
+\eqref{eq:main-chain}.  Theorem~\ref{thm:full-homotopy} and the support exact
+sequence give Proposition~\ref{prop:causal-QI}.  The constrained
+Weyl--Cotton theorem and \eqref{eq:EAL-multiplicity} identify the global
+one-particle solution module, while \eqref{eq:CKV-source} recovers the
+residual endpoints.  Proposition~\ref{prop:SO42} supplies equivariance and
+Proposition~\ref{prop:pairing} supplies the common form.  The resulting
+pairing-compatible chain transports Theorem~\ref{thm:paper-A-input}, proving
+\eqref{eq:main-H4} without another CE calculation.
+\end{proof}
+
+\clearpage
+\section{One-page claim ledger}\label{sec:ledger}
+
+Table~\ref{tab:ledger} lists every claim group used by this article.  Exact
+hashes, schemas, and reproduction commands are recorded in
+\path{covariant_completion/generated/covariant_H4_proof_ledger.md}.
+Unless a full path is displayed, JSON basenames in the table lie in
+\path{covariant_completion/certificates/}; the two
+\path{completed_*.json} inputs lie in
+\path{analytic_completion/certificates/}.
+Certificate basenames below resolve under
+\path{covariant_completion/certificates}; the two Paper~A receipts resolve
+under \path{analytic_completion/certificates}.
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.20\textwidth}
+                >{\raggedright\arraybackslash}p{0.14\textwidth}
+                >{\raggedright\arraybackslash}p{0.28\textwidth}
+                >{\raggedright\arraybackslash}p{0.31\textwidth}}
+\toprule
+Claim group & Tag/status & Mathematical content & Authoritative receipt(s) \\
+\midrule
+Paper A input & REDUCED-MODE / input &
+$H^4_{\rm res}=\C^2$, normalized Gram $I_2$ &
+\path{completed_H4.json}; \path{completed_gram.json} \\
+Curved operators & LORENTZIAN-CAUSAL / proved &
+$Q^2=0$, $QW+WQ=P$, adjoints and globalization &
+\path{curved_operator_identity_status.json}; \path{curved_globalization.json} \\
+Auxiliary retract/current & LORENTZIAN-CAUSAL / proved &
+All-row local SDR and off-shell $d+Q$ comparison &
+\path{curved_auxiliary_canonical_split.json}; \path{curved_current_comparison.json} \\
+Scoped no-go module & LORENTZIAN-CAUSAL / proved &
+$11>9$ scalar no-go, helicity quotient, fixed-temporal Jordan and factor no-go &
+\path{curved_null_symbol_rank_obstruction.json}; \path{curved_expanded_relative_witness_r6_first_order_no_go.json}; \path{curved_endpoint_metric_factorization_no_go.json} \\
+Weyl--Cotton PDE & LORENTZIAN-CAUSAL / proved &
+$26$ states, symmetric hyperbolicity, sourced constraints &
+\path{curved_weyl_cotton_hyperbolic.json}; \path{curved_weyl_cotton_formal_integrability.json} \\
+All-level spectrum & LORENTZIAN-CAUSAL / proved &
+Parity-complete $E/A/L$ exhaustion &
+\path{curved_EAL_spectrum_all_level.json} \\
+Mapping cylinder & LORENTZIAN-CAUSAL / proved &
+Sixteen blocks, nilpotency, cyclicity, local SDR/current &
+\path{curved_curvature_mapping_cylinder_substitution.json}; \path{curved_prolonged_current_comparison.json} \\
+Hybrid/tractor homotopy & LORENTZIAN-CAUSAL / proved &
+Curved HPL/Bach match and $356+30$ all-row causal identity &
+\path{adjoint_tractor_bgg_curved_pbw.json}; \path{curved_full_prolonged_green_homotopy_assembly.json} \\
+Causal/endpoints & LORENTZIAN-CAUSAL / proved &
+Support quasi-isomorphism and fifteen endpoint pairs &
+\path{curved_causal_transport_recognition.json} \\
+Equivariance & LORENTZIAN-CAUSAL / proved &
+Cutoff homotopy and strict $SO(4,2)$ action on cohomology &
+\path{curved_SO42_causal_transport_recognition.json} \\
+Pairing/final transport & LORENTZIAN-CAUSAL / proved &
+Green/current equality, $+,-,-$ signs, covariant $H^4$ and $I_2$ &
+\path{curved_direct_causal_pairing_transport.json}; \path{covariant_H4_transport.json}; \path{covariant_gram_transport.json} \\
+Legacy implementation flags & LORENTZIAN-CAUSAL / not claimed &
+Canonical endpoint inverse and monolithic prolonged witness &
+Not premises of Theorem~\ref{thm:main} \\
+\bottomrule
+\end{tabular}
+\caption{Publication-level claim ledger.  ``Proved'' means the exact
+certificate named in the final column is a current dependency of the theorem;
+matching a receipt is not a substitute for independent rederivation.}
+\label{tab:ledger}
+\end{table}
+
+\clearpage
+\section{Scope and outlook}\label{sec:scope}
+
+The completed theorem is a free classical Lorentzian statement in a selected
+closed-cylinder BV--BFV polarization.  It proves causal contractions of the
+complex and transport of an already established residual cohomology theorem.
+It does not integrate the residual Lie-algebra action to a global
+$SO(4,2)$ representation, select a unique physical boundary polarization,
+or turn the two deformation classes into one-particle gravitons.
+
+The construction also does not provide a BRST-compatible Hadamard state,
+renormalized time-ordered products, a perturbative AQFT model, restoration of
+the quantum master equation, anomaly cancellation, or interacting unitarity.
+Those are separate quantum problems.  Likewise, the two legacy false flags
+for a canonical endpoint Green inverse and a monolithic prolonged witness
+remain false; Theorem~\ref{thm:full-homotopy} is the direct causal object
+needed here.
+
+The historical status certificate also retains false diagnostic subflags
+for superseded rank-$14$ equation-cone and direct-Weyl--Cotton inverse
+searches.  They are neither promoted nor used here.  The terminal dependency
+ledger distinguishes those abandoned presentations from the true
+\texttt{direct\_tractor\_causal\_homotopy} and
+\texttt{causal\_green\_homotopy} gates.
+
+The companion computational supplement contains coefficient tables,
+finite-jet bases, PBW channels, exact negative witnesses, and verifier
+commands.  Keeping those implementation ledgers outside the theorem article
+makes the successful architecture explicit: auxiliary structure contracts
+locally, the physical helicities propagate through curvature, and the
+residual theorem is transported causally rather than recomputed.
+
+\begin{thebibliography}{9}
+
+\bibitem{ResidualPaperA}
+GPT-5.6.sol,
+``Residual $SO(4,2)$ cohomology of free Weyl gravity on the conformal
+cylinder: Cartan homotopy, Weyl-square classes, and their residual pairing,''
+companion manuscript (2026).
+
+\bibitem{MetsaevOrdinaryDerivative}
+R.~R.~Metsaev,
+``Ordinary-derivative formulation of conformal low-spin fields,''
+JHEP \textbf{01} (2008) 064,
+\href{https://arxiv.org/abs/0707.4437}{arXiv:0707.4437}.
+
+\bibitem{GoverSombergSoucek}
+A.~R.~Gover, P.~Somberg, and V.~Sou\v{c}ek,
+``Yang--Mills detour complexes and conformal geometry,''
+Commun. Math. Phys. \textbf{278} (2008) 307--327,
+\href{https://arxiv.org/abs/math/0606401}{arXiv:math/0606401}.
+
+\bibitem{GreenHyperbolic}
+M.~Benini, G.~Musante, and A.~Schenkel,
+``Green hyperbolic complexes on Lorentzian manifolds,''
+Commun. Math. Phys. (2023),
+\href{https://doi.org/10.1007/s00220-023-04807-5}{doi:10.1007/s00220-023-04807-5},
+\href{https://arxiv.org/abs/2207.04069}{arXiv:2207.04069}.
+
+\end{thebibliography}
+
+\end{document}

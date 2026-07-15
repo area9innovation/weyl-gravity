@@ -2,10 +2,10 @@
 
 Verification project and paper series on the PT-symmetric Pais–Uhlenbeck
 oscillator, the fourth-order scalar field, and quadratic gravity. Started
-from the audit spec in `../Symplectic Reconstruction.md`; grew into eight
-papers (an expository introduction, five technical papers on the free
-theories, and two interaction papers), a Lean formalization, and a
-machine-checked verification pipeline.
+from the audit spec in `../Symplectic Reconstruction.md`; grew into nine
+primary papers (an expository introduction, the free-theory sequence, two
+interaction papers, and the two-part conformal-cylinder result), a Lean
+formalization, and a machine-checked verification pipeline.
 
 ## Overview
 
@@ -38,7 +38,10 @@ particle-number-diagonal Krein lift does not make that block null.
 | 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | frozen, tag `paper4-v1.1` (15 pp.) |
 | 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions, Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order Theories** | frozen, tag `paper5-v1.1` (17 pp.; accepted by team referee, then extended: 5:1 confirmation, Krein separation, literature repositioning, charge-null lemma + regulated-embedding proposition) |
 | 6 | `einstein-weyl-interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions in Einstein–Weyl Gravity: Cubic Protection, Second-Order Metric Failure, and Krein Visibility** | draft, major-review revision (30 pp.) |
-| 7 | `conformal-residual-cohomology.tex` / `.pdf` | **Residual $SO(4,2)$ Cohomology of Free Weyl Gravity on the Conformal Cylinder** | draft; covariant causal BV bridge, residual $H^4\cong\mathbb C^2$, and $I_2$ pairing certified |
+| 7A | `conformal-residual-cohomology-krein.tex` / `.pdf` | **Residual Cohomology of Free Pure-Weyl Gravity on the Conformal Cylinder: Derived Reduction, Weyl-Square Classes, and Krein Completion** | primary residual-cohomology submission; $H^4\cong\mathbb C^2$ and signature $(2,0)$ certified |
+| 7B | `conformal-covariant-causal-transport.tex` / `.pdf` | **Causal Curvature Prolongation and Covariant BV--BFV Transport for Free Pure-Weyl Gravity** | primary causal submission; support-local tractor homotopies and transport to covariant $H^4$ certified |
+| 7S | `conformal-residual-cohomology-computational-supplement.tex` / `.pdf` | **Computational Supplement for Residual Cohomology and Causal Transport** | versioned supplement; claim ledgers, generated inputs, focused checks, and clean-release procedure |
+| 7X | `conformal-residual-cohomology.tex` / `.pdf` | **Residual $SO(4,2)$ Cohomology of Free Weyl Gravity on the Conformal Cylinder** | archival combined manuscript; retained for equation-label and certificate cross-reference |
 
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.
@@ -47,8 +50,7 @@ Publication and reproduction instructions for Paper 7 are collected in
 [`notes/conformal-publication-reproduction.md`](notes/conformal-publication-reproduction.md),
 including the fast required rail, exhaustive scheduled rail, scoped legacy
 flags, and publication artifact procedure.
-The referee major-revision plan separating the residual theorem, causal
-bridge, and computational supplement is
+The implemented referee major-revision split and extraction map are
 [`notes/conformal-paper-split-roadmap.md`](notes/conformal-paper-split-roadmap.md).
 The itemized response, including what remains genuinely open before
 submission, is
