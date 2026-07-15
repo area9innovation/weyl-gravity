@@ -1,0 +1,39 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_positive_berger_clock_minimal_bv_sdr",
+  "generator_id": "D_compact",
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "boundary_conditions": "closed Berger S3; nonzero scalar modulus and rotation frequency; smooth fixed-coupling linearized fields; no spatial boundary",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "claim_status": "CERTIFIED",
+  "verdict": "MINIMAL_CLOCK_SECTOR_SDR",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "established": [
+    "the normalized phase and modulus fluctuations split the temporal-diffeomorphism and Weyl gauge incidence from the dressed metric",
+    "the differential field change and its inverse are first-order and support local on the nonzero-rho, nonzero-omega Berger chart",
+    "the cotangent lift is BV canonical on the complete 34-coordinate minimal complex",
+    "the two clock field/ghost doublets and their four minimal dual rows form an exact cyclic eight-row contraction",
+    "the 34-row minimal complex retracts support-locally onto a 26-row dressed-metric and spatial-diffeomorphism complex"
+  ],
+  "not_established": [
+    "the coefficientwise retained dressed-metric q1 and Hessian rows",
+    "the nonminimal antighost, multiplier, and gauge-fixing rows",
+    "stability or causal Green homotopies",
+    "nonlinear q2 or the separate CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
+    "commit": "f6e8a2b0802b99f323382e4b7d494a41ca571e47",
+    "sha256": "552b7fc975e1c98be909fe9082e2781d60bbe70f0cc6cf19f45ea0e28c154ffd"
+  },
+  "verification_commands": [
+    "python3 d_quotient_classical/backreacted_clock/berger_minimal_bv_clock_sdr.py --check --guards",
+    "python3 d_quotient_classical/backreacted_clock/verify_berger_minimal_bv_clock_sdr_independent.py",
+    "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_minimal_bv_clock_sdr",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ],
+  "next_gate": "BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION"
+}

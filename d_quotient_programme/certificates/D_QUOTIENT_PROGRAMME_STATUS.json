@@ -12,20 +12,21 @@
     "the charge vanishes on the exact sector proposed for quotienting",
     "the zero-charge transformations close as a Lie algebra or declared algebroid",
     "the classical Cartan and causal homotopies exist in the declared support category",
+    "retained and nonminimal Berger BV rows remain open after the minimal clock SDR",
     "interacting promotion requires a corrected Cartan homotopy",
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
   "next_shared_gate": {
-    "gate_id": "FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT",
+    "gate_id": "BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION",
     "owner_order": [
       "classical",
       "nonlinear",
       "quantum",
       "einstein_boundary"
     ],
-    "rule": "The fixed-coupling linearized charge gate is complete with D_GAUGE. Construct the support-local all-row Berger clock contraction, causal Green homotopies, and stability theorem without weakening the separate CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT requested by the nonlinear team."
+    "rule": "The fixed-coupling D_GAUGE gate and eight-row minimal clock SDR are complete. Emit the coefficientwise retained q1 and nonminimal rows, then construct causal Green homotopies and stability without weakening the separate CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT requested by the nonlinear team."
   },
-  "programme_base_commit": "b4f5fe6cbfa42dde7296c3e8000de358b4609366",
+  "programme_base_commit": "03243aa1a8cad113755483f3d570445ccfc36e35",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -146,6 +147,15 @@
       "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
       "status": "CERTIFIED",
       "verdict": "D_GAUGE"
+    },
+    {
+      "boundary_conditions": "closed Berger S3; nonzero rho and omega clock chart; smooth fixed-coupling linearized fields",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+      "setting_id": "compact_positive_berger_clock_minimal_bv_sdr",
+      "status": "CERTIFIED",
+      "verdict": "MINIMAL_CLOCK_SECTOR_SDR"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -566,6 +576,49 @@
       "sha256": "6ccbaa84d2e385ebaa77a6c2769494edd4af05e11f3ae2a1fe24c9e9aaa1633e"
     },
     {
+      "path": "d_quotient_programme/contributions/classical-berger-minimal-bv-clock-sdr.json",
+      "payload": {
+        "boundary_conditions": "closed Berger S3; nonzero scalar modulus and rotation frequency; smooth fixed-coupling linearized fields; no spatial boundary",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC"
+        ],
+        "established": [
+          "the normalized phase and modulus fluctuations split the temporal-diffeomorphism and Weyl gauge incidence from the dressed metric",
+          "the differential field change and its inverse are first-order and support local on the nonzero-rho, nonzero-omega Berger chart",
+          "the cotangent lift is BV canonical on the complete 34-coordinate minimal complex",
+          "the two clock field/ghost doublets and their four minimal dual rows form an exact cyclic eight-row contraction",
+          "the 34-row minimal complex retracts support-locally onto a 26-row dressed-metric and spatial-diffeomorphism complex"
+        ],
+        "evidence": {
+          "commit": "f6e8a2b0802b99f323382e4b7d494a41ca571e47",
+          "path": "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
+          "sha256": "552b7fc975e1c98be909fe9082e2781d60bbe70f0cc6cf19f45ea0e28c154ffd"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION",
+        "not_established": [
+          "the coefficientwise retained dressed-metric q1 and Hessian rows",
+          "the nonminimal antighost, multiplier, and gauge-fixing rows",
+          "stability or causal Green homotopies",
+          "nonlinear q2 or the separate CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT"
+        ],
+        "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_positive_berger_clock_minimal_bv_sdr",
+        "team_id": "classical",
+        "verdict": "MINIMAL_CLOCK_SECTOR_SDR",
+        "verification_commands": [
+          "python3 d_quotient_classical/backreacted_clock/berger_minimal_bv_clock_sdr.py --check --guards",
+          "python3 d_quotient_classical/backreacted_clock/verify_berger_minimal_bv_clock_sdr_independent.py",
+          "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_minimal_bv_clock_sdr",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "57bdbd275138f7e1e687b8d53a58a62586bf692220b1ab138e26f4a42534d454"
+    },
+    {
       "path": "d_quotient_programme/contributions/einstein-ed1a-asymptotic-generator-gate.json",
       "payload": {
         "boundary_conditions": "fixed Minkowski conformal completion at null infinity; full Bach radiative, Coulombic, soft, corner, ghost, and antifield phase space not yet closed",
@@ -651,9 +704,9 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "09844b4299a263ff99792397ce8c06c74e3921a6",
+      "commit": "03243aa1a8cad113755483f3d570445ccfc36e35",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "54b2843e6258a36603929f5845dee7a6b00b5cc070fa02b448c8ff300dac31c0"
+      "sha256": "12fe623360c36f359f9136db2e544ef4877f6f9e56ddec8fff3b32fd9c1b6350"
     },
     "einstein_boundary": {
       "commit": "b4f5fe6cbfa42dde7296c3e8000de358b4609366",
@@ -661,9 +714,9 @@
       "sha256": "4ac34cb9bc6b755c48def9553ed82c0e3be3a05853e89656d252c71cc6b73099"
     },
     "nonlinear": {
-      "commit": "23fedad35121fc9ad1f037809ae9efd4a20a9537",
+      "commit": "0cf759198ecec847314c777cbb079eaaeea05627",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "204fe87e9e9f5eb15b970b4b4cddf540c63c58c4fbeb3ad212f4a67c09c65a12"
+      "sha256": "e7afa777832424a438fa831acc6e9b6e6b20f4786141b3e42c3e1b1fa8c64c77"
     },
     "quantum": {
       "commit": "0e919d434ce09c4dbab042c0c2aa708126409685",
@@ -673,9 +726,9 @@
   },
   "team_status": [
     {
-      "established": "The healthy positive Berger background has Q_R nonzero, but its exact fixed-coupling lapse constraint gives delta E_N=-(alpha_B q^(3/2)/2) delta Q_R/Q_R. Compact averaging excludes a charged tangent in every spatial mode, so Omega_total(delta,L_D)=0 on the declared linearized phase space.",
-      "next_gate": "construct the all-row support-local Berger clock BV contraction, causal theory, and stability audit",
-      "result_state": "BERGER_LINEARIZED_CHARGE_CLOSED_BV_STABILITY_OPEN",
+      "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. Its temporal/Weyl clock and minimal-dual rows also form an exact first-order support-local cyclic eight-row SDR, leaving a 26-row retained minimal complex.",
+      "next_gate": "emit the retained coefficientwise q1 and nonminimal rows, then construct causal theory and stability",
+      "result_state": "BERGER_MINIMAL_BV_SDR_CLOSED_RETAINED_CAUSAL_STABILITY_OPEN",
       "team_id": "classical",
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },

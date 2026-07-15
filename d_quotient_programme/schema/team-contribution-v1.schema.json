@@ -17,7 +17,7 @@
     "generator_id": {"type": "string", "minLength": 1},
     "phase_space_id": {"type": "string", "minLength": 1},
     "boundary_conditions": {"type": "string", "minLength": 1},
-    "lifecycle_layer": {"enum": ["CLASSICAL_CHARGE", "CLASSICAL_CARTAN", "LORENTZIAN_CAUSAL", "INTERACTING", "QUANTUM"]},
+    "lifecycle_layer": {"enum": ["CLASSICAL_CHARGE", "CLASSICAL_CARTAN", "CLASSICAL_BV", "LORENTZIAN_CAUSAL", "INTERACTING", "QUANTUM"]},
     "claim_status": {"enum": ["NOT_TESTED", "OPEN", "PARTIAL", "CERTIFIED", "BLOCKED"]},
     "verdict": {"type": ["string", "null"]},
     "dependency_tags": {

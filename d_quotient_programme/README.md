@@ -35,9 +35,11 @@ because the existing results concern different objects:
 - [`contributions/classical-positive-berger-clock-background.json`](contributions/classical-positive-berger-clock-background.json)
 - [`contributions/classical-berger-clock-charge-seed.json`](contributions/classical-berger-clock-charge-seed.json)
 - [`contributions/classical-berger-fixed-coupling-delta-charge.json`](contributions/classical-berger-fixed-coupling-delta-charge.json)
+- [`contributions/classical-berger-minimal-bv-clock-sdr.json`](contributions/classical-berger-minimal-bv-clock-sdr.json)
 - [`reports/classical-positive-berger-clock-registration-receipt.md`](reports/classical-positive-berger-clock-registration-receipt.md)
 - [`reports/classical-berger-clock-charge-seed-registration-receipt.md`](reports/classical-berger-clock-charge-seed-registration-receipt.md)
 - [`reports/classical-berger-fixed-coupling-registration-receipt.md`](reports/classical-berger-fixed-coupling-registration-receipt.md)
+- [`reports/classical-berger-minimal-bv-sdr-registration-receipt.md`](reports/classical-berger-minimal-bv-sdr-registration-receipt.md)
 - [`reports/einstein-ed1a-registration-receipt.md`](reports/einstein-ed1a-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -84,4 +86,9 @@ audit closes the tangent question exactly:
 
 Compact spatial averaging excludes an inhomogeneous escape, so `D_GAUGE`
 holds on the declared smooth fixed-coupling linearized Berger phase space.
-The immediate gate is now `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
+The temporal/Weyl clock doublets and all minimal dual rows now also admit an
+exact first-order support-local cyclic SDR, contracting 8 of the 34 minimal
+rows. The immediate gate is now
+`BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`; causal Green homotopies and
+stability follow after it. This does not replace the nonlinear team's separate
+`CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT` gate.
