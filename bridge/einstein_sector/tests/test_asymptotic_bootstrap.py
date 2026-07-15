@@ -35,6 +35,12 @@ class AsymptoticBootstrapTests(unittest.TestCase):
         self.assertTrue(
             result["claim_flags"]["p1_same_falloff_bach_obstruction_identified"]
         )
+        self.assertTrue(
+            result["claim_flags"]["einstein_defect_factorization_derived"]
+        )
+        self.assertTrue(
+            result["claim_flags"]["kappa_zero_insufficient_for_einstein"]
+        )
         self.assertFalse(result["claim_flags"]["nonlinear_einstein_constraint_preserved"])
         self.assertFalse(result["claim_flags"]["helicity_two_scattering_space_recovered"])
         self.assertEqual(
@@ -54,6 +60,15 @@ class AsymptoticBootstrapTests(unittest.TestCase):
             result["bondi_bach_indicial_theorem"]["einstein_compatible_falloff"]
             ["einstein_subconstraint"],
             "kappa=0",
+        )
+        self.assertEqual(
+            result["einstein_defect_theorem"]["definition"]["einstein_equation"],
+            "chi=0",
+        )
+        self.assertIn(
+            "does not imply rho=0",
+            result["einstein_defect_theorem"]["p1_defect_tower"]
+            ["kappa_zero_consequence"],
         )
         obligations = {row["id"]: row for row in result["obligation_status"]}
         self.assertEqual(obligations["AF-E4"]["status"], "PARTIAL")
@@ -99,6 +114,20 @@ class AsymptoticBootstrapTests(unittest.TestCase):
                 payload["claim_flags"][
                     "fixed_boundary_metric_isolates_full_einstein_sector"
                 ] = True
+            return payload
+
+        with patch.object(asymptotic_bootstrap, "_load", side_effect=forged_load):
+            with self.assertRaises(asymptotic_bootstrap.AsymptoticBootstrapError):
+                asymptotic_bootstrap.build_certificate()
+
+    def test_defect_kappa_sufficiency_promotion_is_rejected(self) -> None:
+        original_load = asymptotic_bootstrap._load
+
+        def forged_load(path: Path):
+            payload = original_load(path)
+            if path == asymptotic_bootstrap.INPUTS["einstein_defect_asymptotics"]:
+                payload = copy.deepcopy(payload)
+                payload["claim_flags"]["kappa_zero_sufficient_for_einstein"] = True
             return payload
 
         with patch.object(asymptotic_bootstrap, "_load", side_effect=forged_load):

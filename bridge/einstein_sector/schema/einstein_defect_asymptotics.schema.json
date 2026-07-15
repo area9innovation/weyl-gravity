@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-einstein-defect-asymptotics-v1",
+  "title": "Reduced Einstein-defect asymptotics certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "provenance",
+    "inputs",
+    "geometric_definition",
+    "radial_defect_map",
+    "defect_wave_recurrence",
+    "p0_defect",
+    "p1_defect_tower",
+    "boundary_selection_consequence",
+    "full_tensor_completion_gate",
+    "claim_flags",
+    "scope_guards",
+    "verification_command"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-einstein-defect-asymptotics-v1"
+    },
+    "schema_path": {
+      "const": "bridge/einstein_sector/schema/einstein_defect_asymptotics.schema.json"
+    },
+    "result_id": {
+      "const": "REDUCED_EINSTEIN_DEFECT_ASYMPTOTICS"
+    },
+    "result_state": {
+      "const": "PROVED_REDUCED_DEFECT_FACTORIZATION"
+    },
+    "dependency_tags": {
+      "const": ["REDUCED-MODE"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "einstein_defect_factorization_derived",
+        "radial_defect_map_derived",
+        "p0_leading_defect_identified",
+        "p1_kappa_and_rho_identified",
+        "kappa_zero_sufficient_for_einstein",
+        "fixed_boundary_metric_isolates_einstein",
+        "kappa_proved_physical_particle",
+        "full_tensor_defect_expansion_constructed",
+        "all_characteristic_defect_data_classified",
+        "causal_zero_defect_theorem_proved",
+        "einstein_scattering_equivalence_proved"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

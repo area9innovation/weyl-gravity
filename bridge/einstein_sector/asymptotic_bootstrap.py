@@ -28,6 +28,10 @@ SCHEMA_PATH = (
 )
 
 INPUTS = {
+    "einstein_defect_asymptotics": ROOT
+    / "bridge"
+    / "certificates"
+    / "einstein_defect_asymptotics.json",
     "bondi_bach_indicial": ROOT
     / "bridge"
     / "certificates"
@@ -148,6 +152,14 @@ def _validate_contract(payload: dict[str, Any]) -> None:
         flags.get("fixed_boundary_metric_excludes_leading_p0_kinematically") is True,
         "kinematic p=0 boundary-selection result is absent",
     )
+    _require(
+        flags.get("einstein_defect_factorization_derived") is True,
+        "Einstein-defect factorization is absent",
+    )
+    _require(
+        flags.get("kappa_zero_insufficient_for_einstein") is True,
+        "kappa insufficiency result is absent",
+    )
     full_claims = {
         "full_asymptotically_flat_function_space_admissible",
         "null_infinity_green_complex_constructed",
@@ -169,6 +181,33 @@ def _matrix_rows(matrix: sp.MatrixBase) -> list[list[str]]:
 
 
 def _verify_scope_inputs(records: dict[str, dict[str, Any]]) -> None:
+    defect = records["einstein_defect_asymptotics"]
+    _require(
+        defect.get("schema") == "pure-weyl-einstein-defect-asymptotics-v1",
+        "Einstein-defect asymptotics schema changed",
+    )
+    _require(
+        defect.get("geometric_definition", {}).get("einstein_equation") == "chi=0",
+        "Einstein-defect zero condition changed",
+    )
+    _require(
+        defect.get("defect_wave_recurrence", {})
+        .get("factorization_check", {})
+        .get("status")
+        == "PASS",
+        "Einstein-defect factorization is not certified",
+    )
+    _require(
+        defect.get("claim_flags", {}).get("kappa_zero_sufficient_for_einstein")
+        is False,
+        "upstream defect theorem overpromotes kappa=0",
+    )
+    _require(
+        defect.get("claim_flags", {}).get("causal_zero_defect_theorem_proved")
+        is False,
+        "upstream defect theorem claims unproved causal uniqueness",
+    )
+
     indicial = records["bondi_bach_indicial"]
     _require(
         indicial.get("schema") == "pure-weyl-bondi-bach-indicial-v2",
@@ -355,14 +394,14 @@ def build_certificate() -> dict[str, Any]:
     linearized = _linearized_tt_identity()
 
     obligations = [
-        ("AF-E1", "PARTIAL", "linearized TT data and reduced p=0,1 recursions fixed; full tensor weighted spaces open", "REDUCED-MODE"),
+        ("AF-E1", "PARTIAL", "linearized TT, p=0,1, and Einstein-defect radial recursions fixed; full tensor weighted spaces open", "REDUCED-MODE"),
         ("AF-E2", "OPEN", "no retarded/advanced null-infinity complex", None),
         ("AF-E3", "PARTIAL", "charge criterion fixed; pure-Weyl charges not computed", "LOCAL-ALGEBRAIC"),
-        ("AF-E4", "PARTIAL", "fixed boundary metric excludes leading p=0 only; a p=1 kappa datum survives and causal preservation is open", "REDUCED-MODE"),
+        ("AF-E4", "PARTIAL", "Einstein is chi=0; fixed boundary metric and kappa=0 are each insufficient, and causal zero-defect preservation is open", "REDUCED-MODE"),
         ("AF-E5", "PARTIAL", "linearized fixed-mode closure proved; nonlinear closure open", "REDUCED-MODE"),
         ("AF-E6", "OPEN", "no null-infinity current/flux comparison", None),
         ("AF-E7", "OPEN", "no asymptotic scattering cohomology", None),
-        ("AF-E8", "PARTIAL", "leading p=0 branch and same-falloff p=1 kappa datum identified; tensor, soft, and Coulombic channels open", "REDUCED-MODE"),
+        ("AF-E8", "PARTIAL", "p=0 defect plus p=1 kappa and rho tower identified; tensor, soft, Coulombic, and corner data open", "REDUCED-MODE"),
     ]
 
     certificate = {
@@ -372,13 +411,31 @@ def build_certificate() -> dict[str, Any]:
         "result_id": "ASYMPTOTICALLY_FLAT_EINSTEIN_SECTOR_BOOTSTRAP",
         "result_state": "PARTIAL_EXACT_LINEARIZED_AND_INDICIAL_RAILS",
         "provenance": {
-            "input_base_commit": "1f87e38d3282defef2e69867dd53f7deac70bec6",
+            "input_base_commit": "efa5708d91b235c5c2cfe056c536f2194a2d23dc",
             "generator_path": "bridge/einstein_sector/asymptotic_bootstrap.py",
             "generator_sha256": _sha256(Path(__file__)),
         },
         "dependency_tags": ["REDUCED-MODE"],
         "required_promotion_tag": "LORENTZIAN-CAUSAL",
         "linearized_minkowski_theorem": linearized,
+        "einstein_defect_theorem": {
+            "definition": records["einstein_defect_asymptotics"][
+                "geometric_definition"
+            ],
+            "radial_map": records["einstein_defect_asymptotics"][
+                "radial_defect_map"
+            ],
+            "p0_defect": records["einstein_defect_asymptotics"]["p0_defect"],
+            "p1_defect_tower": records["einstein_defect_asymptotics"][
+                "p1_defect_tower"
+            ],
+            "boundary_consequence": records["einstein_defect_asymptotics"][
+                "boundary_selection_consequence"
+            ],
+            "scope_guards": records["einstein_defect_asymptotics"][
+                "scope_guards"
+            ],
+        },
         "bondi_bach_indicial_theorem": {
             "sector": "scalar amplitude of each flat Cartesian TT polarization",
             "retarded_series": "phi=sum_(n>=0) r^(-p-n) f_n(u) Y_L(x)",
@@ -514,6 +571,8 @@ def build_certificate() -> dict[str, Any]:
             "p0_boundary_metric_branch_identified": True,
             "p1_same_falloff_bach_obstruction_identified": True,
             "fixed_boundary_metric_excludes_leading_p0_kinematically": True,
+            "einstein_defect_factorization_derived": True,
+            "kappa_zero_insufficient_for_einstein": True,
             "full_asymptotically_flat_function_space_admissible": False,
             "null_infinity_green_complex_constructed": False,
             "pure_weyl_surface_charges_computed": False,
@@ -530,6 +589,8 @@ def build_certificate() -> dict[str, Any]:
             "p0_boundary_metric_branch_identified": ["REDUCED-MODE"],
             "p1_same_falloff_bach_obstruction_identified": ["REDUCED-MODE"],
             "fixed_boundary_metric_excludes_leading_p0_kinematically": ["REDUCED-MODE"],
+            "einstein_defect_factorization_derived": ["REDUCED-MODE"],
+            "kappa_zero_insufficient_for_einstein": ["REDUCED-MODE"],
             "all_false_asymptotic_claims_require": ["LORENTZIAN-CAUSAL"],
         },
         "sources": [

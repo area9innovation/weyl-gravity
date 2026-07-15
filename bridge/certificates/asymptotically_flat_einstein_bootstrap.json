@@ -112,11 +112,17 @@
     "bondi_bach_radiative_indicial_roots_classified": [
       "REDUCED-MODE"
     ],
+    "einstein_defect_factorization_derived": [
+      "REDUCED-MODE"
+    ],
     "fixed_boundary_metric_excludes_leading_p0_kinematically": [
       "REDUCED-MODE"
     ],
     "flat_tt_bach_operator_derived": [
       "LOCAL-ALGEBRAIC",
+      "REDUCED-MODE"
+    ],
+    "kappa_zero_insufficient_for_einstein": [
       "REDUCED-MODE"
     ],
     "linearized_minkowski_einstein_data_invariant": [
@@ -131,11 +137,13 @@
   },
   "claim_flags": {
     "bondi_bach_radiative_indicial_roots_classified": true,
+    "einstein_defect_factorization_derived": true,
     "extra_weyl_channels_classified": false,
     "fixed_boundary_metric_excludes_leading_p0_kinematically": true,
     "flat_tt_bach_operator_derived": true,
     "full_asymptotically_flat_function_space_admissible": false,
     "helicity_two_scattering_space_recovered": false,
+    "kappa_zero_insufficient_for_einstein": true,
     "linearized_minkowski_einstein_data_invariant": true,
     "non_einstein_branch_causally_excluded": false,
     "nonlinear_einstein_constraint_preserved": false,
@@ -168,6 +176,74 @@
   "dependency_tags": [
     "REDUCED-MODE"
   ],
+  "einstein_defect_theorem": {
+    "boundary_consequence": {
+      "candidate_cauchy_condition": [
+        "chi restricted to Sigma is zero",
+        "nabla_n chi restricted to Sigma is zero"
+      ],
+      "causal_null_infinity_theorem": "OPEN",
+      "fixed_boundary_metric": "removes the leading p=0 metric branch",
+      "not_sufficient": [
+        "p=1 falloff",
+        "fixed unphysical boundary metric alone",
+        "kappa=0 alone"
+      ],
+      "remaining_condition": "all admissible characteristic and corner data of chi must vanish"
+    },
+    "definition": {
+      "bach_equation": "B_1=-(1/4) Box chi=0",
+      "defect_field": "chi_mn=Box h_mn^TT",
+      "einstein_equation": "chi=0",
+      "exact_inclusion": "ker(chi) is contained in ker(Box chi)",
+      "linearized_ricci_relation": "chi_mn=-2 Ric_1_mn",
+      "linearized_scalar_curvature": "R_1=0"
+    },
+    "p0_defect": {
+      "boundary_interpretation": "nonzero p=0 changes the unphysical boundary metric; removing it also removes this leading source-like defect family",
+      "chi_leading": "chi=-2 r^-1 d_u f_0-r^-2 L f_0+O(r^-3)",
+      "leading_coefficients": [
+        "g_0=-2 d_u f_0",
+        "g_1=-L f_0"
+      ]
+    },
+    "p1_defect_tower": {
+      "classification": "kappa and higher g_j are Einstein-defect coefficients inside the p=1 metric falloff; their tensor, gauge, charge, and phase-space status is open",
+      "first_defect_rows": [
+        "4 d_u kappa=0",
+        "6 d_u rho+(6-L) kappa=0"
+      ],
+      "kappa": "g_1=kappa=2 d_u f_1-L f_0",
+      "kappa_zero_consequence": "kappa=0 implies only d_u rho=0; it does not imply rho=0",
+      "leading_zero": "g_0=0",
+      "rho": "g_2=rho=4 d_u f_2+(2-L) f_1",
+      "static_single_term": "chi=r^-3 kappa Y_L with d_u kappa=0 solves Box chi=0 without subleading terms when L=6"
+    },
+    "radial_map": {
+      "chi_series": "chi=sum_(j>=0) r^(-p-j-1) g_j Y_L",
+      "einstein_condition": "g_j=0 for every j",
+      "g_j_terms": [
+        {
+          "coefficient": "2*(j + p - 1)",
+          "field": "d_u f_j"
+        },
+        {
+          "coefficient": "-L + j**2 + 2*j*p - 3*j + p**2 - 3*p + 2",
+          "field": "f_(j-1)"
+        }
+      ],
+      "index_convention": "f_j=g_j=0 for j<0",
+      "phi_series": "phi=sum_(j>=0) r^(-p-j) f_j Y_L"
+    },
+    "scope_guards": [
+      "exact for formal inverse-radius series of each flat Cartesian TT scalar amplitude",
+      "not a full tensor Bondi-gauge calculation",
+      "kappa is an Einstein-defect coefficient, not a certified particle or charge",
+      "formal radial continuation is not null-infinity causal well-posedness",
+      "the displayed L=6 single term is an exterior formal mode and may be singular in the interior",
+      "no nonlinear Einstein-defect propagation theorem"
+    ]
+  },
   "gauge_charge_rule": {
     "boundary_preserving_parameter": "proper gauge only when its renormalized surface-charge variation vanishes on every tangent direction and its reference charge is zero",
     "charged_parameter": "asymptotic symmetry, not quotiented as gauge",
@@ -197,6 +273,10 @@
     "cylinder_tt_factorization": {
       "path": "covariant_completion/certificates/tt_local_factorization.json",
       "sha256": "42ce4c10b09ac7dd6a8dfee410f3dac21725735d0d02a13d8f9e9b9426afb291"
+    },
+    "einstein_defect_asymptotics": {
+      "path": "bridge/certificates/einstein_defect_asymptotics.json",
+      "sha256": "75780eb8b9800ff035897b725d67a099d658c0a7779c2ecd878bf730725639a0"
     },
     "einstein_sector": {
       "path": "bridge/certificates/einstein_sector_theorem.json",
@@ -323,7 +403,7 @@
     {
       "id": "AF-E1",
       "partial_receipt_tag": "REDUCED-MODE",
-      "receipt": "linearized TT data and reduced p=0,1 recursions fixed; full tensor weighted spaces open",
+      "receipt": "linearized TT, p=0,1, and Einstein-defect radial recursions fixed; full tensor weighted spaces open",
       "required_closure_tag": "LORENTZIAN-CAUSAL",
       "status": "PARTIAL"
     },
@@ -344,7 +424,7 @@
     {
       "id": "AF-E4",
       "partial_receipt_tag": "REDUCED-MODE",
-      "receipt": "fixed boundary metric excludes leading p=0 only; a p=1 kappa datum survives and causal preservation is open",
+      "receipt": "Einstein is chi=0; fixed boundary metric and kappa=0 are each insufficient, and causal zero-defect preservation is open",
       "required_closure_tag": "LORENTZIAN-CAUSAL",
       "status": "PARTIAL"
     },
@@ -372,22 +452,22 @@
     {
       "id": "AF-E8",
       "partial_receipt_tag": "REDUCED-MODE",
-      "receipt": "leading p=0 branch and same-falloff p=1 kappa datum identified; tensor, soft, and Coulombic channels open",
+      "receipt": "p=0 defect plus p=1 kappa and rho tower identified; tensor, soft, Coulombic, and corner data open",
       "required_closure_tag": "LORENTZIAN-CAUSAL",
       "status": "PARTIAL"
     }
   ],
   "provenance": {
     "generator_path": "bridge/einstein_sector/asymptotic_bootstrap.py",
-    "generator_sha256": "f6e00630627e0317c8135332640fef4023159d41ca7dda831e181d49c6e79035",
-    "input_base_commit": "1f87e38d3282defef2e69867dd53f7deac70bec6"
+    "generator_sha256": "723518b1023109d15a5c5291598d4f5a8376fdcf16bdb3ea7112ec596a7dbda4",
+    "input_base_commit": "efa5708d91b235c5c2cfe056c536f2194a2d23dc"
   },
   "required_promotion_tag": "LORENTZIAN-CAUSAL",
   "result_id": "ASYMPTOTICALLY_FLAT_EINSTEIN_SECTOR_BOOTSTRAP",
   "result_state": "PARTIAL_EXACT_LINEARIZED_AND_INDICIAL_RAILS",
   "schema": "pure-weyl-asymptotically-flat-einstein-bootstrap-v1",
   "schema_path": "bridge/einstein_sector/schema/asymptotic_bootstrap.schema.json",
-  "schema_sha256": "74dfc2531f299b4a1ee6d549e5100753bca66f2899368969ea768e93f94ef065",
+  "schema_sha256": "4509ac0ddbca1bd372cd36924b43d7965e6f22abb4cb7b41b360e95b46fdf2e2",
   "sources": [
     {
       "citation": "Ashtekar and Streubel, Proc. Roy. Soc. A 376 (1981) 585",

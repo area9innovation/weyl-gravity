@@ -142,6 +142,29 @@ This does not prove causal preservation, a full tensor recursion, a charge
 classification, or scattering equivalence.  It moves `AF-E4` and `AF-E8`
 from `OPEN` to `PARTIAL` without promoting either full claim.
 
+## Einstein-defect formulation
+
+The reduced theorem now introduces
+
+```text
+chi_mn=Box h_mn^TT=-2 Ric_1_mn.
+```
+
+Then Bach is `Box chi=0`, while Einstein is `chi=0`.  The complete radial
+map and its certificate are documented in
+`notes/conformal-einstein-defect-asymptotics.md`.
+
+Within the `p=1` metric falloff, `kappa` is only the first nonzero candidate
+coefficient of `chi`.  The next coefficient `rho` obeys
+
+```text
+6 d_u rho+(6-L)kappa=0.
+```
+
+Thus `kappa=0` implies `rho` is u-independent, not zero.  Einstein selection
+requires all admissible characteristic and corner data of `chi` to vanish.
+The causal theorem establishing that implication remains open.
+
 ## First null-infinity data declaration
 
 The bootstrap selects a smooth conformal-completion rail
@@ -224,14 +247,14 @@ asymptotic claim.
 
 | Obligation | Status after this bootstrap |
 |---|---|
-| `AF-E1` | `PARTIAL`: exact linearized TT data and reduced `p=0,1` recursions plus a declared Bondi seed; full tensor weighted Bach space open. |
+| `AF-E1` | `PARTIAL`: exact linearized TT, `p=0,1`, and Einstein-defect radial recursions plus a declared Bondi seed; full tensor weighted Bach space open. |
 | `AF-E2` | `OPEN`: no null-infinity retarded/advanced complex. |
 | `AF-E3` | `PARTIAL`: gauge/charge criterion fixed; conformal-gravity charges open. |
-| `AF-E4` | `PARTIAL`: fixed boundary metric excludes leading `p=0` only; the `p=1` `kappa` datum survives and causal preservation is open. |
+| `AF-E4` | `PARTIAL`: Einstein is `chi=0`; fixed boundary metric and `kappa=0` are each insufficient, and causal zero-defect preservation is open. |
 | `AF-E5` | `PARTIAL`: exact linearized fixed-mode closure; nonlinear closure open. |
 | `AF-E6` | `OPEN`: no Green/current-to-radiative-flux comparison. |
 | `AF-E7` | `OPEN`: no scattering cohomology or helicity theorem. |
-| `AF-E8` | `PARTIAL`: leading `p=0` and same-falloff `p=1` Bach data are identified; tensor, soft, and Coulombic channels remain open. |
+| `AF-E8` | `PARTIAL`: the `p=0` defect and `p=1` `kappa,rho` tower are identified; tensor, soft, Coulombic, and corner data remain open. |
 
 The next mathematical target is the full tensor Bondi-gauge recursion,
 including the exceptional harmonics and the soft/Coulombic completion.

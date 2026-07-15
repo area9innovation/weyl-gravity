@@ -174,6 +174,12 @@ compares them with both recursions.  It also binds a JSON schema, the schema
 hash, the generator path and hash, the base commit, and the imported flat-TT
 operator hash.
 
+The follow-on theorem
+`notes/conformal-einstein-defect-asymptotics.md` packages the entire wave
+residual as `chi=Box phi`.  It proves that Einstein requires every radial
+coefficient of `chi` to vanish and that `kappa=0` alone leaves the next
+u-independent coefficient `rho` unconstrained.
+
 The next closure step is the full tensor Bondi-gauge recursion, followed by
 the renormalized presymplectic flux and surface charges of the surviving
 boundary fields.  Only then can the kinematic selection be tested for

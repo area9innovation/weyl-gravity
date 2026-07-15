@@ -1,0 +1,153 @@
+{
+  "boundary_selection_consequence": {
+    "candidate_cauchy_condition": [
+      "chi restricted to Sigma is zero",
+      "nabla_n chi restricted to Sigma is zero"
+    ],
+    "causal_null_infinity_theorem": "OPEN",
+    "fixed_boundary_metric": "removes the leading p=0 metric branch",
+    "not_sufficient": [
+      "p=1 falloff",
+      "fixed unphysical boundary metric alone",
+      "kappa=0 alone"
+    ],
+    "remaining_condition": "all admissible characteristic and corner data of chi must vanish"
+  },
+  "claim_flags": {
+    "all_characteristic_defect_data_classified": false,
+    "causal_zero_defect_theorem_proved": false,
+    "einstein_defect_factorization_derived": true,
+    "einstein_scattering_equivalence_proved": false,
+    "fixed_boundary_metric_isolates_einstein": false,
+    "full_tensor_defect_expansion_constructed": false,
+    "kappa_proved_physical_particle": false,
+    "kappa_zero_sufficient_for_einstein": false,
+    "p0_leading_defect_identified": true,
+    "p1_kappa_and_rho_identified": true,
+    "radial_defect_map_derived": true
+  },
+  "defect_wave_recurrence": {
+    "direct_series_check": {
+      "checked_integer_weights": [
+        0,
+        1,
+        2
+      ],
+      "defect_map": "PASS",
+      "defect_wave_recurrence": "PASS",
+      "method": "direct Box extraction from finite phi series, followed by direct Box chi",
+      "terms_per_weight": 6
+    },
+    "equation_rule": "sum of the listed terms equals zero",
+    "factorization_check": {
+      "biwave_coefficients": [
+        "4*(j + p)*(j + p - 1)",
+        "4*(j + p - 1)*(-L + j**2 + 2*j*p - 2*j + p**2 - 2*p)",
+        "(-L + j**2 + 2*j*p - j + p**2 - p)*(-L + j**2 + 2*j*p - 5*j + p**2 - 5*p + 6)"
+      ],
+      "coefficient_order": [
+        "d_u^2 f_j",
+        "d_u f_(j-1)",
+        "f_(j-2)"
+      ],
+      "composed_coefficients": [
+        "4*(j + p)*(j + p - 1)",
+        "4*(j + p - 1)*(-L + j**2 + 2*j*p - 2*j + p**2 - 2*p)",
+        "(-L + j**2 + 2*j*p - j + p**2 - p)*(-L + j**2 + 2*j*p - 5*j + p**2 - 5*p + 6)"
+      ],
+      "defect_weight": "p+1",
+      "identity": "Box^2 phi=Box chi with chi=Box phi",
+      "status": "PASS"
+    },
+    "terms": [
+      {
+        "coefficient": "2*(j + p)",
+        "field": "d_u g_j"
+      },
+      {
+        "coefficient": "-L + j**2 + 2*j*p - j + p**2 - p",
+        "field": "g_(j-1)"
+      }
+    ]
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "full_tensor_completion_gate": {
+    "required_replacement": "chi_mn must be expanded with the full Bondi metric, tensor/spin-2 harmonics, residual Diff x Weyl action, and all Bach constraints",
+    "status": "OPEN_FAIL_CLOSED"
+  },
+  "geometric_definition": {
+    "bach_equation": "B_1=-(1/4) Box chi=0",
+    "defect_field": "chi_mn=Box h_mn^TT",
+    "einstein_equation": "chi=0",
+    "exact_inclusion": "ker(chi) is contained in ker(Box chi)",
+    "linearized_ricci_relation": "chi_mn=-2 Ric_1_mn",
+    "linearized_scalar_curvature": "R_1=0"
+  },
+  "inputs": {
+    "bondi_bach_indicial": {
+      "path": "bridge/certificates/bondi_bach_indicial.json",
+      "sha256": "0c66fcf5f86f009769c652ed5aac8bcd117f9153c1e5d1d7d64f6ea53a617eee"
+    },
+    "flat_tt_bach": {
+      "path": "bridge/certificates/flat_tt_bach_operator.json",
+      "sha256": "a4aa604755c3a6adecdd747e0411d555b82d8bcdfd483c451c7bdb42ee920242"
+    }
+  },
+  "p0_defect": {
+    "boundary_interpretation": "nonzero p=0 changes the unphysical boundary metric; removing it also removes this leading source-like defect family",
+    "chi_leading": "chi=-2 r^-1 d_u f_0-r^-2 L f_0+O(r^-3)",
+    "leading_coefficients": [
+      "g_0=-2 d_u f_0",
+      "g_1=-L f_0"
+    ]
+  },
+  "p1_defect_tower": {
+    "classification": "kappa and higher g_j are Einstein-defect coefficients inside the p=1 metric falloff; their tensor, gauge, charge, and phase-space status is open",
+    "first_defect_rows": [
+      "4 d_u kappa=0",
+      "6 d_u rho+(6-L) kappa=0"
+    ],
+    "kappa": "g_1=kappa=2 d_u f_1-L f_0",
+    "kappa_zero_consequence": "kappa=0 implies only d_u rho=0; it does not imply rho=0",
+    "leading_zero": "g_0=0",
+    "rho": "g_2=rho=4 d_u f_2+(2-L) f_1",
+    "static_single_term": "chi=r^-3 kappa Y_L with d_u kappa=0 solves Box chi=0 without subleading terms when L=6"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_defect_asymptotics.py",
+    "generator_sha256": "48cdc1c78a942860c5f4fca85c7e686841a2b55ac5cfe4902fb300f469ee2b46",
+    "input_base_commit": "efa5708d91b235c5c2cfe056c536f2194a2d23dc"
+  },
+  "radial_defect_map": {
+    "chi_series": "chi=sum_(j>=0) r^(-p-j-1) g_j Y_L",
+    "einstein_condition": "g_j=0 for every j",
+    "g_j_terms": [
+      {
+        "coefficient": "2*(j + p - 1)",
+        "field": "d_u f_j"
+      },
+      {
+        "coefficient": "-L + j**2 + 2*j*p - 3*j + p**2 - 3*p + 2",
+        "field": "f_(j-1)"
+      }
+    ],
+    "index_convention": "f_j=g_j=0 for j<0",
+    "phi_series": "phi=sum_(j>=0) r^(-p-j) f_j Y_L"
+  },
+  "result_id": "REDUCED_EINSTEIN_DEFECT_ASYMPTOTICS",
+  "result_state": "PROVED_REDUCED_DEFECT_FACTORIZATION",
+  "schema": "pure-weyl-einstein-defect-asymptotics-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_defect_asymptotics.schema.json",
+  "schema_sha256": "66aafeaffc378200302aa5671384a6e8bd0946eb3c4dddb5529576d586e1435c",
+  "scope_guards": [
+    "exact for formal inverse-radius series of each flat Cartesian TT scalar amplitude",
+    "not a full tensor Bondi-gauge calculation",
+    "kappa is an Einstein-defect coefficient, not a certified particle or charge",
+    "formal radial continuation is not null-infinity causal well-posedness",
+    "the displayed L=6 single term is an exterior formal mode and may be singular in the interior",
+    "no nonlinear Einstein-defect propagation theorem"
+  ],
+  "verification_command": "python3 -m bridge.einstein_sector.einstein_defect_asymptotics --verify bridge/certificates/einstein_defect_asymptotics.json"
+}
