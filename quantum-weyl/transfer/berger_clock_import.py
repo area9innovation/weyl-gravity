@@ -19,6 +19,12 @@ CLASSICAL_STATUS_PATH = CLASSICAL_ROOT / "certificates" / "CLASSICAL_D_QUOTIENT_
 PROGRAMME_STATUS_PATH = PROGRAMME_ROOT / "certificates" / "D_QUOTIENT_PROGRAMME_STATUS.json"
 BACKGROUND_CONTRIBUTION_PATH = PROGRAMME_ROOT / "contributions" / "classical-positive-berger-clock-background.json"
 CHARGE_CONTRIBUTION_PATH = PROGRAMME_ROOT / "contributions" / "classical-berger-clock-charge-seed.json"
+TOTAL_D_PATH = TRANSFER_ROOT / "certificates" / "BERGER_TOTAL_D_DISPOSITION.json"
+
+try:
+    from .total_d_disposition import validate_total_d_disposition
+except ImportError:
+    from total_d_disposition import validate_total_d_disposition
 
 
 def _sha256(path: Path) -> str:
@@ -67,6 +73,8 @@ def build_import() -> dict[str, Any]:
     programme_status = _load(PROGRAMME_STATUS_PATH)
     background_contribution = _load(BACKGROUND_CONTRIBUTION_PATH)
     charge_contribution = _load(CHARGE_CONTRIBUTION_PATH)
+    total_D_payload = _load(TOTAL_D_PATH)
+    total_D = validate_total_d_disposition(total_D_payload)
 
     if background.get("result_id") != "POSITIVE_BERGER_CLOCK_BACKGROUND":
         raise ValueError("Berger background result id drifted")
@@ -172,6 +180,8 @@ def build_import() -> dict[str, Any]:
         raise ValueError("programme Berger background scope was promoted or removed")
     if programme_rows.get("compact_positive_berger_clock_reduced_charge", {}).get("status") != "PARTIAL":
         raise ValueError("programme Berger charge scope was promoted or removed")
+    if total_D.status != "D_GAUGE" or not total_D.D_quotient_authorized:
+        raise ValueError("Berger fixed-coupling D_GAUGE disposition was lost")
     programme_contributions = {
         row.get("path"): row
         for row in programme_status.get("team_contributions", [])
@@ -202,7 +212,7 @@ def build_import() -> dict[str, Any]:
     return {
         "schema": "quantum-weyl-berger-clock-nonlinear-import-v1",
         "result_id": "BERGER_CLOCK_NONLINEAR_IMPORT",
-        "result_state": "BACKGROUND_AND_REDUCED_CHARGE_IMPORTED_TOTAL_D_OPEN",
+        "result_state": "BACKGROUND_REDUCED_CHARGE_AND_SCOPED_D_GAUGE_IMPORTED_BV_OPEN",
         "setting_id": "compact_positive_berger_clock",
         "phase_space_id": "positive_rotating_scalar_berger_background",
         "generator_id": "D_compact",
@@ -224,32 +234,29 @@ def build_import() -> dict[str, Any]:
             "canonical_phase_momentum": charge["clock_interpretation"]["canonical_phase_momentum"],
         },
         "D_disposition": {
-            "status": "OPEN",
-            "allowed_terminal_dispositions": [
-                "D_GAUGE",
-                "D_CHARGED_NO_QUOTIENT",
-                "SECTOR_DEPENDENT",
-                "NOT_HAMILTONIAN",
-            ],
-            "reason": "the reduced O(2) clock momentum is nonzero, but the combined gravitational-plus-matter covariant D charge has not been computed",
-            "next_gate": "TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT",
+            "status": "D_GAUGE",
+            "setting_id": total_D.setting_id,
+            "phase_space_id": total_D.phase_space_id,
+            "boundary_conditions_sha256": total_D.boundary_conditions_sha256,
+            "classical_commit": total_D.classical_commit,
+            "reason": "the exact fixed-coupling lapse constraint and compact averaging force delta Q_R=0, hence Omega_total(delta,L_D)=0 on the declared linearized phase space",
+            "next_gate": "FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT",
         },
         "physical_run_gate": {
-            "total_D_disposition_certificate": "NOT_AVAILABLE",
+            "total_D_disposition_certificate": "AVAILABLE_SCOPED_D_GAUGE",
             "support_local_q1_q2_D": "NOT_AVAILABLE",
             "classical_contraction": "NOT_AVAILABLE",
             "admissibility_policy": "NOT_AVAILABLE",
             "support_local_q3": "NOT_AVAILABLE",
-            "route": "BLOCKED_BEFORE_CARTAN_CLASSIFICATION",
+            "route": "D_GAUGE_CERTIFIED_BV_INPUT_BLOCKED",
         },
         "established": [
             "a healthy exact positive-energy Berger clock background exists on an open parameter interval",
             "the clock phase carries nonzero conserved standard-sign matter momentum",
             "D acts helically with the internal O(2) rotation on the exact background",
+            "D is presymplectically null on the smooth fixed-coupling linearized Berger phase space",
         ],
         "not_established": [
-            "the total gravitational-plus-matter covariant D charge",
-            "a D_GAUGE, D_CHARGED_NO_QUOTIENT, SECTOR_DEPENDENT, or NOT_HAMILTONIAN disposition",
             "a support-local all-row matter-coupled BV contraction",
             "a physical nonlinear Cartan correction or obstruction on the Berger background",
             "causal propagation, stability, quantum admissibility, or a Lorentzian quantum theorem",
@@ -266,6 +273,11 @@ def build_import() -> dict[str, Any]:
                 "path": PROGRAMME_STATUS_PATH.relative_to(ROOT).as_posix(),
                 "sha256": _sha256(PROGRAMME_STATUS_PATH),
                 "programme_base_commit": programme_base_commit,
+            },
+            "total_D_disposition": {
+                "path": TOTAL_D_PATH.relative_to(ROOT).as_posix(),
+                "sha256": _sha256(TOTAL_D_PATH),
+                "classical_commit": total_D.classical_commit,
             },
         },
     }

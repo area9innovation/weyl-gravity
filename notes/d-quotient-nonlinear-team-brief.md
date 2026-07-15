@@ -25,6 +25,12 @@ The current low-arity transfer machinery and selected residual cubic data are
 a bootstrap, not proof that the complete support-local interacting BV tensor
 transfers or that the quotient is interaction-stable.
 
+The healthy Berger-clock branch now carries a certified scoped classical
+verdict: the fixed-coupling lapse equation and compact averaging prove
+`D_GAUGE` on `positive_berger_fixed_coupling_linearized_solutions`.  This
+settles the charge classification only.  The support-local all-row BV
+contraction and nonlinear tensor export remain separate required inputs.
+
 ## Work package N-D1: transfer the full low-arity structure
 
 Write the interacting cohomological vector field and transferred operations as
@@ -189,8 +195,14 @@ Deliver one human-readable report and machine-readable certificates containing:
 - exact commands, elapsed times, applicable test tiers, and skipped-tier reasons;
 - open inputs and fail-closed claim flags;
 - one verdict per setting: `INTERACTING_CARTAN_EXISTS`,
-  `INTERACTING_CARTAN_OBSTRUCTED`, `D_CHARGED_NO_QUOTIENT`, or
+  `INTERACTING_CARTAN_OBSTRUCTED`, canonical `D_CHARGED`, or
   `INPUT_GATE_BLOCKED`.
+
+`D_CHARGED_NO_QUOTIENT` is a route description, not an additional scientific
+verdict.  A total-`D` handoff must satisfy
+`quantum-weyl/transfer/schema/total-d-disposition-v1.schema.json`; a physical
+ND2 run additionally binds its phase space, boundary-condition hash,
+classical commit, dependency-tag union, and source hashes.
 
 Every result must carry at least one exact dependency tag:
 `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, `REDUCED-MODE`, or

@@ -18,7 +18,13 @@
     "schema": {"const": "quantum-weyl-nd2-physical-run-input-v1"},
     "run_id": {"type": "string", "minLength": 1},
     "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
-    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
     "artifacts": {
       "type": "array",
       "minItems": 4,
@@ -45,11 +51,13 @@
     "D_disposition": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["status", "setting_id", "generator_id"],
+      "required": ["status", "setting_id", "phase_space_id", "generator_id", "boundary_conditions_sha256"],
       "properties": {
-        "status": {"enum": ["OPEN", "D_GAUGE", "D_CHARGED_NO_QUOTIENT", "SECTOR_DEPENDENT", "NOT_HAMILTONIAN"]},
+        "status": {"enum": ["OPEN", "D_GAUGE", "D_CHARGED", "SECTOR_DEPENDENT", "NOT_HAMILTONIAN"]},
         "setting_id": {"type": "string", "minLength": 1},
-        "generator_id": {"const": "D_compact"}
+        "phase_space_id": {"type": "string", "minLength": 1},
+        "generator_id": {"const": "D_compact"},
+        "boundary_conditions_sha256": {"$ref": "#/$defs/hash"}
       }
     }
   },
@@ -58,11 +66,17 @@
     "artifact": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["artifact_id", "path", "sha256"],
+      "required": ["artifact_id", "path", "sha256", "dependency_tags"],
       "properties": {
         "artifact_id": {"enum": ["support_local_q1_q2_D", "classical_contraction", "admissibility_policy", "D_disposition_certificate"]},
         "path": {"type": "string", "minLength": 1},
-        "sha256": {"$ref": "#/$defs/hash"}
+        "sha256": {"$ref": "#/$defs/hash"},
+        "dependency_tags": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+        }
       }
     }
   }

@@ -20,10 +20,12 @@ evaluators, expression-schema mismatches, changed evaluator implementations,
 and unregistered adapters stop before a physical classification.
 
 The disposition certificate is a semantic gate, not just another hash.  Its
-setting, generator, and status must agree with the manifest.  Only `D_GAUGE`
-dispatches the assembly adapter and Cartan solver.  `OPEN`,
-`D_CHARGED_NO_QUOTIENT`, `SECTOR_DEPENDENT`, and `NOT_HAMILTONIAN` return
-distinct receipts without contracting `D`.
+setting, phase space, generator, boundary conditions, classical commit,
+dependency tags, and source hashes must agree with the manifest.  Only
+`D_GAUGE` dispatches the assembly adapter and Cartan solver.  `OPEN`, canonical
+`D_CHARGED`, `SECTOR_DEPENDENT`, and `NOT_HAMILTONIAN` return distinct
+receipts without contracting `D`.  Execution requires an opaque verified-
+manifest token.
 
 Second, evaluator dispatch is content-addressed.  Each evaluator declares its
 accepted expression schema, allowed local operators, complete implementation
@@ -56,11 +58,11 @@ contributions are retained as distinct tensors.  Nonzero fixtures establish
 the exact-correction, normalized-obstruction, exchange, and broken-`D`
 rejection branches.
 
-Fifth, the exact positive Berger background and reduced O(2) clock momentum
-are imported content-addressedly from the classical and programme ledgers.
-The imported status is deliberately `OPEN`: the total gravitational-plus-
-matter covariant `D` disposition has not been certified, so the candidate
-stops before Cartan classification.
+Fifth, the exact positive Berger background, reduced O(2) clock momentum, and
+fixed-coupling tangent theorem are imported content-addressedly from the
+classical and programme ledgers.  The exact lapse row and compact averaging
+give `delta Q_R=0` for every allowed smooth tangent, so the scoped disposition
+is `D_GAUGE`.  The support-local all-row BV contraction remains absent.
 
 ## Claim boundary
 
@@ -79,15 +81,15 @@ quartic stability, a relational-clock result, a quantum correction, or a
 - `quantum-weyl/transfer/certificates/ND2_PHYSICAL_RUN.json`
 - `quantum-weyl/transfer/certificates/ND3_ARITY_THREE_CARTAN_ENGINE.json`
 - `quantum-weyl/transfer/certificates/BERGER_CLOCK_NONLINEAR_IMPORT.json`
+- `quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json`
 
 ## Next gate
 
-Complete `TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT`.  If and only if it returns
-`D_GAUGE`, verify the remaining physical manifest, dispatch its pinned
-evaluator and assembly adapter, classify the arity-two source, and then feed
-the retained physical `iota_D^(2)` together with `q3` into the arity-three
-recurrence.  Charged, sector-dependent, and non-Hamiltonian outcomes remain
-physical/equivariant branches rather than quotient inputs.
+Complete `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT` and the separate
+`CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT`.  Then verify the remaining physical
+manifest, dispatch its pinned evaluator and assembly adapter, classify the
+arity-two source, and feed the retained physical `iota_D^(2)` together with
+`q3` into the arity-three recurrence.
 
 ## Verification receipt
 
@@ -101,6 +103,9 @@ physical/equivariant branches rather than quotient inputs.
 | Classical and programme status guards | 0.26 | PASS (25/25 mutation guards) | 2 |
 | Berger/ND2/aggregate focused tests | 1.58 | PASS (14 tests) | 2 |
 | Updated complete transfer suite | 66.03 | PASS (90 tests) | 2 |
+| Scoped Berger `D_GAUGE` producer, independent audit, and unit tests | 2.47 | PASS | 2 |
+| Hardened total-`D` certificate chain | 5.24 | PASS | 2 |
+| Hardened complete transfer suite | 66.69 | PASS (98 tests) | 2 |
 | Scoped `git diff --check` and staged-diff inspection | recorded at commit | PASS | 0 |
 
 An initial full-suite run exposed an import-order dependency in two new test

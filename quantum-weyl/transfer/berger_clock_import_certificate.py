@@ -33,8 +33,12 @@ def _source_manifest() -> dict[str, str]:
     paths = (
         "berger_clock_import.py",
         "berger_clock_import_certificate.py",
+        "total_d_disposition.py",
+        "total_d_disposition_certificate.py",
         "schema/berger-clock-nonlinear-import-v1.schema.json",
+        "schema/total-d-disposition-v1.schema.json",
         "tests/test_berger_clock_import.py",
+        "tests/test_total_d_disposition.py",
     )
     return {path: _sha256(TRANSFER_ROOT / path) for path in paths}
 
@@ -67,7 +71,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("BERGER CLOCK: HEALTHY BACKGROUND AND REDUCED MOMENTUM IMPORTED, TOTAL D OPEN")
+        print("BERGER CLOCK: SCOPED FIXED-COUPLING D_GAUGE IMPORTED, BV INPUT OPEN")
     return 0
 
 

@@ -54,8 +54,9 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             if item["question_id"] == "D_quotient_interaction_stability"
         )
         self.assertIn("SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED", d_question["status"])
-        self.assertIn("ND2_DISPOSITION_ROUTER", d_question["status"])
-        self.assertIn("TOTAL_D_OPEN", d_question["status"])
+        self.assertIn("ND2_VERIFIED_MANIFEST_ROUTER", d_question["status"])
+        self.assertIn("SCOPED_FIXED_COUPLING_D_GAUGE_IMPORTED", d_question["status"])
+        self.assertIn("BV_CONTRACTION_AND_FULL_LOCAL_INPUT_GATE_BLOCKED", d_question["status"])
         self.assertIn("ND3_CARTAN_SOLVER_READY", d_question["status"])
         self.assertIn("INPUT_GATE_BLOCKED", d_question["status"])
 
@@ -70,6 +71,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn("nd2_physical_run_contract_sha256", certificate["provenance"])
         self.assertIn("berger_clock_nonlinear_import_sha256", certificate["provenance"])
+        self.assertIn("berger_total_D_disposition_sha256", certificate["provenance"])
         self.assertIn("nd3_arity_three_cartan_engine_sha256", certificate["provenance"])
         self.assertTrue(
             any(

@@ -25,24 +25,29 @@ try:
         BilinearOperator,
     )
     from .evaluator_registry import EvaluatorRegistry
+    from .total_d_disposition import (
+        DEPENDENCY_TAG_ORDER,
+        DISPOSITIONS,
+        TotalDDisposition,
+        validate_total_d_disposition,
+    )
 except ImportError:
     from arity_two_cartan import AdmissibleArityTwoComplex, ArityTwoCartanData, BilinearOperator
     from evaluator_registry import EvaluatorRegistry
+    from total_d_disposition import (
+        DEPENDENCY_TAG_ORDER,
+        DISPOSITIONS,
+        TotalDDisposition,
+        validate_total_d_disposition,
+    )
 
 
 MANIFEST_SCHEMA = "quantum-weyl-nd2-physical-run-input-v1"
 TERMINAL_STATES = ("EXACT_CORRECTION", "NONTRIVIAL_OBSTRUCTION", "ZERO_SOURCE")
-D_DISPOSITIONS = (
-    "OPEN",
-    "D_GAUGE",
-    "D_CHARGED_NO_QUOTIENT",
-    "SECTOR_DEPENDENT",
-    "NOT_HAMILTONIAN",
-)
 D_ROUTES = {
     "OPEN": "BLOCKED_PENDING_TOTAL_D_DISPOSITION",
     "D_GAUGE": "CARTAN_CONTRACTION_EXECUTED",
-    "D_CHARGED_NO_QUOTIENT": "EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT",
+    "D_CHARGED": "EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT",
     "SECTOR_DEPENDENT": "SCOPED_DISPOSITION_REQUIRED",
     "NOT_HAMILTONIAN": "CARTAN_CONTRACTION_NOT_APPLICABLE",
 }
@@ -61,12 +66,34 @@ class PinnedArtifact:
     artifact_id: str
     path: str
     sha256: str
+    dependency_tags: tuple[str, ...]
 
     @classmethod
     def from_payload(cls, payload: object) -> "PinnedArtifact":
-        if not isinstance(payload, dict) or set(payload) != {"artifact_id", "path", "sha256"}:
+        if not isinstance(payload, dict) or set(payload) != {
+            "artifact_id",
+            "path",
+            "sha256",
+            "dependency_tags",
+        }:
             raise ValueError("physical-run artifact has the wrong field set")
-        artifact = cls(payload["artifact_id"], payload["path"], payload["sha256"])
+        raw_tags = payload["dependency_tags"]
+        if not isinstance(raw_tags, list):
+            raise ValueError("physical-run artifact dependency tags must be a list")
+        tags = tuple(raw_tags)
+        if (
+            not tags
+            or len(tags) != len(set(tags))
+            or any(tag not in DEPENDENCY_TAG_ORDER for tag in tags)
+            or tags != tuple(tag for tag in DEPENDENCY_TAG_ORDER if tag in tags)
+        ):
+            raise ValueError("physical-run artifact dependency tags are invalid")
+        artifact = cls(
+            payload["artifact_id"],
+            payload["path"],
+            payload["sha256"],
+            tags,
+        )
         if not artifact.artifact_id or not artifact.path:
             raise ValueError("physical-run artifact id and path are required")
         if len(artifact.sha256) != 64 or any(char not in "0123456789abcdef" for char in artifact.sha256):
@@ -99,45 +126,51 @@ class PinnedArtifact:
 class DDisposition:
     status: str
     setting_id: str
+    phase_space_id: str
     generator_id: str
+    boundary_conditions_sha256: str
 
     @classmethod
     def from_payload(cls, payload: object) -> "DDisposition":
         if not isinstance(payload, dict) or set(payload) != {
             "status",
             "setting_id",
+            "phase_space_id",
             "generator_id",
+            "boundary_conditions_sha256",
         }:
             raise ValueError("ND2 total-D disposition has the wrong field set")
-        disposition = cls(payload["status"], payload["setting_id"], payload["generator_id"])
-        if disposition.status not in D_DISPOSITIONS:
+        disposition = cls(
+            payload["status"],
+            payload["setting_id"],
+            payload["phase_space_id"],
+            payload["generator_id"],
+            payload["boundary_conditions_sha256"],
+        )
+        if disposition.status not in DISPOSITIONS:
             raise ValueError("ND2 total-D disposition status is invalid")
-        if not disposition.setting_id or disposition.generator_id != "D_compact":
+        if (
+            not disposition.setting_id
+            or not disposition.phase_space_id
+            or disposition.generator_id != "D_compact"
+        ):
             raise ValueError("ND2 total-D disposition scope is invalid")
+        if (
+            len(disposition.boundary_conditions_sha256) != 64
+            or any(
+                char not in "0123456789abcdef"
+                for char in disposition.boundary_conditions_sha256
+            )
+        ):
+            raise ValueError("ND2 total-D boundary-condition hash is invalid")
         return disposition
-
-    def verify_certificate(self, path: Path) -> None:
-        try:
-            certificate = json.loads(path.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError) as exc:
-            raise ValueError("total-D disposition certificate is not readable JSON") from exc
-        if not isinstance(certificate, dict):
-            raise ValueError("total-D disposition certificate is not a mapping")
-        certified = certificate.get("D_disposition")
-        if not isinstance(certified, dict) or certified.get("status") != self.status:
-            raise ValueError("manifest total-D disposition disagrees with its certificate")
-        if certificate.get("setting_id") != self.setting_id:
-            raise ValueError("manifest total-D setting disagrees with its certificate")
-        if certificate.get("generator_id") != self.generator_id:
-            raise ValueError("manifest total-D generator disagrees with its certificate")
-        if self.status != "OPEN" and certificate.get("claim_status") != "CERTIFIED":
-            raise ValueError("terminal total-D disposition is not certified")
 
 
 @dataclass(frozen=True)
 class PhysicalRunManifest:
     run_id: str
     classical_commit: str
+    dependency_tags: tuple[str, ...]
     artifacts: tuple[PinnedArtifact, ...]
     evaluator_id: str
     expression_schema_version: str
@@ -159,8 +192,21 @@ class PhysicalRunManifest:
         }
         if not isinstance(payload, dict) or set(payload) != fields:
             raise ValueError("ND2 physical-run manifest has the wrong field set")
-        if payload["schema"] != MANIFEST_SCHEMA or payload["dependency_tags"] != ["LOCAL-ALGEBRAIC"]:
-            raise ValueError("ND2 physical-run schema or dependency tag is invalid")
+        if payload["schema"] != MANIFEST_SCHEMA:
+            raise ValueError("ND2 physical-run schema is invalid")
+        raw_tags = payload["dependency_tags"]
+        if not isinstance(raw_tags, list):
+            raise ValueError("ND2 physical-run dependency tags must be a list")
+        dependency_tags = tuple(raw_tags)
+        if (
+            not dependency_tags
+            or len(dependency_tags) != len(set(dependency_tags))
+            or any(tag not in DEPENDENCY_TAG_ORDER for tag in dependency_tags)
+            or dependency_tags
+            != tuple(tag for tag in DEPENDENCY_TAG_ORDER if tag in dependency_tags)
+            or "LOCAL-ALGEBRAIC" not in dependency_tags
+        ):
+            raise ValueError("ND2 physical-run dependency tags are invalid or noncanonical")
         commit = payload["classical_commit"]
         if not isinstance(commit, str) or len(commit) != 40 or any(char not in "0123456789abcdef" for char in commit):
             raise ValueError("ND2 physical-run classical commit is invalid")
@@ -177,6 +223,15 @@ class PhysicalRunManifest:
         ]
         if sorted(ids) != required_ids:
             raise ValueError("ND2 physical-run artifact inventory is incomplete or duplicated")
+        artifact_dependency_union = tuple(
+            tag
+            for tag in DEPENDENCY_TAG_ORDER
+            if any(tag in artifact.dependency_tags for artifact in artifacts)
+        )
+        if dependency_tags != artifact_dependency_union:
+            raise ValueError(
+                "ND2 physical-run dependency tags do not equal the artifact union"
+            )
         evaluator = payload["evaluator"]
         if not isinstance(evaluator, dict) or set(evaluator) != {
             "evaluator_id",
@@ -190,17 +245,22 @@ class PhysicalRunManifest:
             raise ValueError("ND2 physical-run assembly adapter id is required")
         disposition = DDisposition.from_payload(payload["D_disposition"])
         return cls(
-            payload["run_id"],
-            commit,
-            tuple(sorted(artifacts, key=lambda artifact: artifact.artifact_id)),
-            evaluator["evaluator_id"],
-            evaluator["expression_schema_version"],
-            evaluator["implementation_manifest_sha256"],
-            payload["assembly_adapter_id"],
-            disposition,
+            run_id=payload["run_id"],
+            classical_commit=commit,
+            dependency_tags=dependency_tags,
+            artifacts=tuple(sorted(artifacts, key=lambda artifact: artifact.artifact_id)),
+            evaluator_id=evaluator["evaluator_id"],
+            expression_schema_version=evaluator["expression_schema_version"],
+            evaluator_implementation_sha256=evaluator["implementation_manifest_sha256"],
+            assembly_adapter_id=payload["assembly_adapter_id"],
+            D_disposition=disposition,
         )
 
-    def verify(self, repository_root: Path, registry: EvaluatorRegistry) -> None:
+    def verify(
+        self,
+        repository_root: Path,
+        registry: EvaluatorRegistry,
+    ) -> "VerifiedPhysicalRun":
         for artifact in self.artifacts:
             artifact.verify(repository_root)
         disposition_artifact = next(
@@ -208,12 +268,85 @@ class PhysicalRunManifest:
             for artifact in self.artifacts
             if artifact.artifact_id == "D_disposition_certificate"
         )
-        self.D_disposition.verify_certificate(disposition_artifact.resolved_path(repository_root))
+        try:
+            disposition_payload = json.loads(
+                disposition_artifact.resolved_path(repository_root).read_text(
+                    encoding="utf-8"
+                )
+            )
+        except (OSError, json.JSONDecodeError) as exc:
+            raise ValueError("total-D disposition certificate is not readable JSON") from exc
+        disposition = validate_total_d_disposition(disposition_payload)
+        binding = self.D_disposition
+        if disposition.status != binding.status:
+            raise ValueError("manifest total-D disposition disagrees with its certificate")
+        if disposition.setting_id != binding.setting_id:
+            raise ValueError("manifest total-D setting disagrees with its certificate")
+        if disposition.phase_space_id != binding.phase_space_id:
+            raise ValueError("manifest total-D phase space disagrees with its certificate")
+        if disposition.generator_id != binding.generator_id:
+            raise ValueError("manifest total-D generator disagrees with its certificate")
+        if disposition.boundary_conditions_sha256 != binding.boundary_conditions_sha256:
+            raise ValueError("manifest total-D boundary conditions disagree with its certificate")
+        if disposition.classical_commit != self.classical_commit:
+            raise ValueError("manifest classical commit disagrees with total-D provenance")
+        if disposition.dependency_tags != disposition_artifact.dependency_tags:
+            raise ValueError(
+                "disposition artifact dependency scope disagrees with total-D provenance"
+            )
+        self._verify_disposition_sources(repository_root, disposition)
         descriptor = registry.descriptor(self.evaluator_id)
         if descriptor.expression_schema_version != self.expression_schema_version:
             raise ValueError("physical-run evaluator schema mismatch")
         if descriptor.implementation_manifest_sha256 != self.evaluator_implementation_sha256:
             raise ValueError("physical-run evaluator implementation hash mismatch")
+        return VerifiedPhysicalRun._create(self, disposition)
+
+    @staticmethod
+    def _verify_disposition_sources(
+        repository_root: Path,
+        disposition: TotalDDisposition,
+    ) -> None:
+        root = repository_root.resolve()
+        for relative, expected in disposition.source_artifacts + disposition.source_manifest:
+            path = (root / relative).resolve()
+            try:
+                path.relative_to(root)
+            except ValueError as exc:
+                raise ValueError("total-D provenance path escapes repository") from exc
+            if not path.is_file() or _sha256(path) != expected:
+                raise ValueError(f"total-D provenance hash mismatch: {relative}")
+
+
+_VERIFIED_PHYSICAL_RUN_TOKEN = object()
+
+
+@dataclass(frozen=True, init=False)
+class VerifiedPhysicalRun:
+    """Opaque result of verifying every physical-run artifact and scope."""
+
+    manifest: PhysicalRunManifest
+    total_D_disposition: TotalDDisposition
+    _token: object
+
+    def __init__(self, *_args, **_kwargs) -> None:
+        raise TypeError("VerifiedPhysicalRun objects are created only by manifest verification")
+
+    @classmethod
+    def _create(
+        cls,
+        manifest: PhysicalRunManifest,
+        disposition: TotalDDisposition,
+    ) -> "VerifiedPhysicalRun":
+        value = object.__new__(cls)
+        object.__setattr__(value, "manifest", manifest)
+        object.__setattr__(value, "total_D_disposition", disposition)
+        object.__setattr__(value, "_token", _VERIFIED_PHYSICAL_RUN_TOKEN)
+        return value
+
+    def assert_verified(self) -> None:
+        if self._token is not _VERIFIED_PHYSICAL_RUN_TOKEN:
+            raise ValueError("physical-run verification token is invalid")
 
 
 @dataclass(frozen=True)
@@ -333,10 +466,9 @@ def load_manifest(
     *,
     repository_root: Path,
     registry: EvaluatorRegistry,
-) -> PhysicalRunManifest:
+) -> VerifiedPhysicalRun:
     manifest = PhysicalRunManifest.from_payload(json.loads(path.read_text(encoding="utf-8")))
-    manifest.verify(repository_root, registry)
-    return manifest
+    return manifest.verify(repository_root, registry)
 
 
 def _sparse(operator: BilinearOperator, data: ArityTwoCartanData) -> dict[str, object]:
@@ -371,23 +503,30 @@ def execute_evaluated_cartan(
 
 
 def execute_verified_manifest(
-    manifest: PhysicalRunManifest,
+    verified_run: VerifiedPhysicalRun,
     *,
     adapter_registry: AssemblyAdapterRegistry,
 ) -> dict[str, Any]:
     """Route on total-D status; only ``D_GAUGE`` executes Cartan contraction."""
 
-    route = D_ROUTES[manifest.D_disposition.status]
-    if manifest.D_disposition.status != "D_GAUGE":
+    if not isinstance(verified_run, VerifiedPhysicalRun):
+        raise TypeError("execute_verified_manifest requires a VerifiedPhysicalRun")
+    verified_run.assert_verified()
+    manifest = verified_run.manifest
+    disposition = verified_run.total_D_disposition
+    route = D_ROUTES[disposition.status]
+    if disposition.status != "D_GAUGE":
         return {
-            "D_disposition": manifest.D_disposition.status,
+            "D_disposition": disposition.status,
             "disposition_route": route,
             "cartan_execution": None,
         }
+    if not disposition.D_quotient_authorized:
+        raise ValueError("D_GAUGE certificate did not authorize the quotient")
 
     data, admissible = adapter_registry.assemble(manifest)
     return {
-        "D_disposition": manifest.D_disposition.status,
+        "D_disposition": disposition.status,
         "disposition_route": route,
         "cartan_execution": execute_evaluated_cartan(
             data,

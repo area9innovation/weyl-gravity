@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "total-d-disposition-v1.schema.json",
+  "title": "Setting-scoped total-D presymplectic audit disposition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "lifecycle_layer", "claim_status",
+    "assessment_status", "verdict", "setting_id", "phase_space_id",
+    "generator_id", "boundary_conditions", "boundary_conditions_sha256",
+    "classical_commit", "dependency_tags", "charge_audit", "sector_ledger",
+    "exact_checks", "fail_closed", "verification_receipts", "provenance",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-total-d-disposition-v1"},
+    "result_id": {"type": "string", "minLength": 1},
+    "lifecycle_layer": {"const": "CLASSICAL_CHARGE"},
+    "claim_status": {"enum": ["OPEN", "CERTIFIED"]},
+    "assessment_status": {"enum": ["OPEN", "COMPUTED"]},
+    "verdict": {
+      "oneOf": [
+        {"type": "null"},
+        {"enum": ["D_GAUGE", "D_CHARGED", "SECTOR_DEPENDENT", "NOT_HAMILTONIAN"]}
+      ]
+    },
+    "setting_id": {"type": "string", "minLength": 1},
+    "phase_space_id": {"type": "string", "minLength": 1},
+    "generator_id": {"const": "D_compact"},
+    "boundary_conditions": {"type": "string", "minLength": 1},
+    "boundary_conditions_sha256": {"$ref": "#/$defs/hash"},
+    "classical_commit": {"$ref": "#/$defs/commit"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "charge_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "combined_gravitational_matter_presymplectic_contraction", "normalization",
+        "integrability", "allowed_fixed_coupling_delta_Q_tangent",
+        "presymplectic_kernel", "total_D_charge_variation"
+      ],
+      "properties": {
+        "combined_gravitational_matter_presymplectic_contraction": {"enum": ["OPEN", "COMPUTED"]},
+        "normalization": {"enum": ["OPEN", "FIXED"]},
+        "integrability": {"enum": ["OPEN", "INTEGRABLE", "NONINTEGRABLE", "SECTOR_DEPENDENT"]},
+        "allowed_fixed_coupling_delta_Q_tangent": {"enum": ["OPEN", "EXISTS", "ABSENT", "SECTOR_DEPENDENT"]},
+        "presymplectic_kernel": {"enum": ["OPEN", "D_IN_KERNEL", "D_NOT_IN_KERNEL", "SECTOR_DEPENDENT", "NOT_DEFINED"]},
+        "total_D_charge_variation": {"enum": ["OPEN", "ZERO", "NONZERO", "SECTOR_DEPENDENT", "NOT_DEFINED"]}
+      }
+    },
+    "sector_ledger": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/sector"}
+    },
+    "exact_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "combined_presymplectic_contraction_derived", "charge_variation_identity_verified",
+        "boundary_corner_terms_controlled",
+        "fixed_coupling_tangent_space_classified", "exact_arithmetic"
+      ],
+      "properties": {
+        "combined_presymplectic_contraction_derived": {"type": "boolean"},
+        "charge_variation_identity_verified": {"type": "boolean"},
+        "boundary_corner_terms_controlled": {"type": "boolean"},
+        "fixed_coupling_tangent_space_classified": {"type": "boolean"},
+        "exact_arithmetic": {"type": "boolean"}
+      }
+    },
+    "fail_closed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["D_quotient_authorized", "unresolved_fields", "claim_boundary"],
+      "properties": {
+        "D_quotient_authorized": {"type": "boolean"},
+        "unresolved_fields": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "claim_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "verification_receipts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/receipt"}
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "source_artifacts", "source_manifest", "source_manifest_sha256", "schema"],
+      "properties": {
+        "source_commit": {"$ref": "#/$defs/commit"},
+        "source_artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/artifact"}
+        },
+        "source_manifest": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/total-d-disposition-v1.schema.json"}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "elapsed_seconds", "status", "test_tier"],
+      "properties": {
+        "command": {"type": "string", "minLength": 1},
+        "elapsed_seconds": {"type": "number", "minimum": 0},
+        "status": {"const": "PASS"},
+        "test_tier": {"type": "integer", "minimum": 0, "maximum": 3}
+      }
+    },
+    "sector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sector_id", "phase_space_id", "verdict", "total_D_charge_variation", "presymplectic_kernel"],
+      "properties": {
+        "sector_id": {"type": "string", "minLength": 1},
+        "phase_space_id": {"type": "string", "minLength": 1},
+        "verdict": {"enum": ["D_GAUGE", "D_CHARGED", "NOT_HAMILTONIAN"]},
+        "total_D_charge_variation": {"enum": ["ZERO", "NONZERO", "NOT_DEFINED"]},
+        "presymplectic_kernel": {"enum": ["D_IN_KERNEL", "D_NOT_IN_KERNEL", "NOT_DEFINED"]}
+      }
+    }
+  }
+}

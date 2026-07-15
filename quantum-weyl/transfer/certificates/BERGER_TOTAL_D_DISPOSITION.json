@@ -1,0 +1,95 @@
+{
+  "assessment_status": "COMPUTED",
+  "boundary_conditions": "closed Berger S3; smooth fixed-coupling linearized solutions about the positive rotating scalar background; no spatial boundary",
+  "boundary_conditions_sha256": "0e4b200dd1446d78e18cf61928b9c36522125f7eb9d0117591f95096e81b70e8",
+  "charge_audit": {
+    "allowed_fixed_coupling_delta_Q_tangent": "ABSENT",
+    "combined_gravitational_matter_presymplectic_contraction": "COMPUTED",
+    "integrability": "INTEGRABLE",
+    "normalization": "FIXED",
+    "presymplectic_kernel": "D_IN_KERNEL",
+    "total_D_charge_variation": "ZERO"
+  },
+  "claim_status": "CERTIFIED",
+  "classical_commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_checks": {
+    "boundary_corner_terms_controlled": true,
+    "charge_variation_identity_verified": true,
+    "combined_presymplectic_contraction_derived": true,
+    "exact_arithmetic": true,
+    "fixed_coupling_tangent_space_classified": true
+  },
+  "fail_closed": {
+    "D_quotient_authorized": true,
+    "claim_boundary": "At fixed alpha_B and lambda, the exact lapse constraint and compact spatial averaging prove delta Q_R=0 for every smooth linearized solution about the positive Berger clock background. Together with the certified helical current identity this gives D_GAUGE on that declared linearized phase space. The theorem does not supply the all-row BV retract, causal propagation, nonlinear stability, or any boundary or quantum result.",
+    "unresolved_fields": []
+  },
+  "generator_id": "D_compact",
+  "lifecycle_layer": "CLASSICAL_CHARGE",
+  "next_gate": "FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT",
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "provenance": {
+    "schema": "quantum-weyl/transfer/schema/total-d-disposition-v1.schema.json",
+    "source_artifacts": [
+      {
+        "path": "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
+        "sha256": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786"
+      },
+      {
+        "path": "d_quotient_programme/contributions/classical-berger-fixed-coupling-delta-charge.json",
+        "sha256": "6ccbaa84d2e385ebaa77a6c2769494edd4af05e11f3ae2a1fe24c9e9aaa1633e"
+      },
+      {
+        "path": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json",
+        "sha256": "1bfcb2a75df3f04c467ac6bde0f0c97dc060bce841f821a501e0c6f232fee358"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
+        "sha256": "54b2843e6258a36603929f5845dee7a6b00b5cc070fa02b448c8ff300dac31c0"
+      }
+    ],
+    "source_commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17",
+    "source_manifest": {
+      "quantum-weyl/transfer/schema/total-d-disposition-v1.schema.json": "e467697c9df742a61d7c12deac078c6d3cd0b1cba487352e2bc82d062a29edce",
+      "quantum-weyl/transfer/tests/test_total_d_disposition.py": "6079b9ba6155579b28ec061b3b5b4f8616d053d0f587d0f6ab948d24bdc4bc49",
+      "quantum-weyl/transfer/total_d_disposition.py": "f5d9a77305da27bb2a70d28d1c0258961871ed787791cc16cedc95bddac2453c",
+      "quantum-weyl/transfer/total_d_disposition_certificate.py": "9d03ef2e9145065229e9c51fd02c40353a5cce31630cf9db861a8186f2fcc3b7"
+    },
+    "source_manifest_sha256": "919a173638f53661993a12dc8a58b26fc2c0dee25f558462398386c83d03acf0"
+  },
+  "result_id": "BERGER_TOTAL_D_DISPOSITION_D_GAUGE",
+  "schema": "pure-weyl-total-d-disposition-v1",
+  "sector_ledger": [],
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "verdict": "D_GAUGE",
+  "verification_receipts": [
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/fixed_coupling_delta_charge.py --check --guards",
+      "elapsed_seconds": 0.85,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_fixed_coupling_delta_charge_independent.py",
+      "elapsed_seconds": 0.77,
+      "status": "PASS",
+      "test_tier": 2
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_fixed_coupling_delta_charge",
+      "elapsed_seconds": 0.85,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_programme/verify_programme_status.py --check --guards",
+      "elapsed_seconds": 0.11,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}

@@ -32,16 +32,16 @@ class BergerClockImportTests(unittest.TestCase):
         self.assertTrue(background["everywhere_timelike_phase_clock"])
         self.assertTrue(certificate["imported_reduced_charge"]["charge_nonzero_on_open_interval"])
 
-    def test_total_D_and_physical_Cartan_run_remain_open(self) -> None:
+    def test_scoped_D_gauge_is_imported_but_physical_Cartan_run_remains_blocked(self) -> None:
         certificate = CERTIFICATE.build_certificate()
-        self.assertEqual(certificate["D_disposition"]["status"], "OPEN")
+        self.assertEqual(certificate["D_disposition"]["status"], "D_GAUGE")
         self.assertEqual(certificate["setting_verdict"], "INPUT_GATE_BLOCKED")
         self.assertEqual(
             certificate["physical_run_gate"]["route"],
-            "BLOCKED_BEFORE_CARTAN_CLASSIFICATION",
+            "D_GAUGE_CERTIFIED_BV_INPUT_BLOCKED",
         )
         self.assertTrue(
-            any("total gravitational-plus-matter" in claim for claim in certificate["not_established"])
+            any("all-row" in claim for claim in certificate["not_established"])
         )
 
     def test_imported_bytes_are_pinned_to_classical_contributions(self) -> None:

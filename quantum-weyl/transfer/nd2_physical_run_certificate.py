@@ -43,10 +43,14 @@ def _source_manifest() -> dict[str, str]:
         "support_local_q2_consumer.py",
         "nd2_physical_run.py",
         "nd2_physical_run_certificate.py",
+        "total_d_disposition.py",
+        "total_d_disposition_certificate.py",
         "schema/nd2-physical-run-input-v1.schema.json",
         "schema/nd2-physical-run-certificate-v1.schema.json",
+        "schema/total-d-disposition-v1.schema.json",
         "tests/test_evaluator_registry.py",
         "tests/test_nd2_physical_run.py",
+        "tests/test_total_d_disposition.py",
     )
     return {path: _sha256(TRANSFER_ROOT / path) for path in paths}
 
@@ -57,7 +61,7 @@ def build_certificate() -> dict[str, Any]:
     descriptors = [descriptor.to_payload() for descriptor in registry.descriptors()]
     if INPUT_PATH.exists():
         try:
-            manifest = load_manifest(INPUT_PATH, repository_root=ROOT, registry=registry)
+            verified_run = load_manifest(INPUT_PATH, repository_root=ROOT, registry=registry)
         except (ValueError, OSError, json.JSONDecodeError) as exc:
             input_gate = {
                 "status": "INPUT_REJECTED",
@@ -70,7 +74,7 @@ def build_certificate() -> dict[str, Any]:
                 "status": "INPUT_VERIFIED_ASSEMBLY_ADAPTER_PENDING",
                 "manifest_path": str(INPUT_PATH.relative_to(ROOT)),
                 "manifest_sha256": _sha256(INPUT_PATH),
-                "reason": f"pinned manifest {manifest.run_id} passed integrity; assembly adapter {manifest.assembly_adapter_id} is not registered",
+                "reason": f"pinned manifest {verified_run.manifest.run_id} passed integrity; assembly adapter {verified_run.manifest.assembly_adapter_id} is not registered",
             }
     else:
         input_gate = {
@@ -100,12 +104,14 @@ def build_certificate() -> dict[str, Any]:
             "D_disposition_routes": {
                 "OPEN": "BLOCKED_PENDING_TOTAL_D_DISPOSITION",
                 "D_GAUGE": "CARTAN_CONTRACTION_EXECUTED",
-                "D_CHARGED_NO_QUOTIENT": "EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT",
+                "D_CHARGED": "EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT",
                 "SECTOR_DEPENDENT": "SCOPED_DISPOSITION_REQUIRED",
                 "NOT_HAMILTONIAN": "CARTAN_CONTRACTION_NOT_APPLICABLE",
             },
             "cartan_execution_policy": "D_GAUGE_ONLY",
             "terminal_disposition_claim_status": "CERTIFIED",
+            "total_D_disposition_schema": "quantum-weyl/transfer/schema/total-d-disposition-v1.schema.json",
+            "verified_manifest_execution_token": "REQUIRED",
             "accepted_terminal_states": list(TERMINAL_STATES),
             "unregistered_evaluator_policy": "REJECT",
             "unregistered_assembly_adapter_policy": "REJECT",
@@ -126,16 +132,19 @@ def build_certificate() -> dict[str, Any]:
             "pinned evaluator identity and implementation hashes are verified before dispatch",
             "support-local, contraction, admissibility, and total-D disposition artifacts must all be present and hashed",
             "only a certified D_GAUGE disposition is routed into Cartan contraction",
+            "phase space, boundary conditions, classical commit, dependency scope, and disposition source hashes are bound before execution",
+            "the manifest dependency tags must equal the canonical union declared by all four pinned artifacts",
+            "the Cartan executor accepts only an opaque verified-manifest token",
             "exact assembled inputs return a retained correction or normalized obstruction witness",
         ],
         "not_established": [
             "a registered conformal-gravity expression evaluator",
             "a registered classical contraction assembly adapter",
-            "a terminal total-D disposition for the Berger clock setting",
+            "an installed Berger physical-run manifest combining the scoped D_GAUGE theorem with the missing BV artifacts",
             "a physical conformal-gravity arity-two Cartan execution",
             "cyclic, real, boundary-compatible, or causal admissibility in a physical setting",
         ],
-        "next_gate": "certify the total-D disposition, then install the pinned classical input manifest and register its exact evaluator plus contraction assembly adapter",
+        "next_gate": "install the pinned Berger support-local tensor, all-row contraction, and admissibility artifacts, then register their exact evaluator and assembly adapter",
         "provenance": {
             "source_manifest": source_manifest,
             "source_manifest_sha256": _canonical_hash(source_manifest),

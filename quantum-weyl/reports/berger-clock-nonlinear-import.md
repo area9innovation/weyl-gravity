@@ -30,23 +30,30 @@ are all hashed.  Their setting, phase space, dependency tags, claim states,
 and open-gate flags are rechecked before the quantum-side import certificate
 can reproduce.
 
-The combined gravitational-plus-matter covariant `D` charge has not been
-computed.  The imported disposition is therefore `OPEN`, and the next
-classical gate remains `TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT`.
+The fixed-coupling tangent audit is now certified.  The lapse constraint gives
+
+```text
+delta E_N = -(alpha_B q^(3/2)/2)(delta Q_R/Q_R),
+```
+
+and compact `SU(2)_L x U(1)_R` averaging excludes a smooth charged tangent in
+every spatial mode.  Hence `Omega_total(delta,L_D)=0` on the declared smooth
+fixed-coupling linearized phase space and the scoped verdict is `D_GAUGE`.
+The next classical gate is `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
 
 ## Physical-run routing
 
-The ND2 manifest now pins a fourth artifact,
-`D_disposition_certificate`, and cross-checks the declared setting, generator,
-and disposition against its JSON contents.  Every non-`OPEN` classification
-must additionally carry
-`claim_status: CERTIFIED`.
+The ND2 manifest pins a fourth artifact, `D_disposition_certificate`, and
+validates it against the strict total-`D` schema.  The setting, phase space,
+generator, boundary-condition hash, classical commit, dependency-tag union,
+and source hashes must all agree.  Execution accepts only the opaque token
+returned by complete manifest verification.
 
 | Certified disposition | Nonlinear route |
 |---|---|
 | `OPEN` | `BLOCKED_PENDING_TOTAL_D_DISPOSITION` |
 | `D_GAUGE` | `CARTAN_CONTRACTION_EXECUTED` |
-| `D_CHARGED_NO_QUOTIENT` | `EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT` |
+| `D_CHARGED` | `EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT` |
 | `SECTOR_DEPENDENT` | `SCOPED_DISPOSITION_REQUIRED` |
 | `NOT_HAMILTONIAN` | `CARTAN_CONTRACTION_NOT_APPLICABLE` |
 
@@ -56,15 +63,16 @@ clock cannot be silently removed from the physical complex.
 
 ## Claim boundary
 
-This establishes a healthy exact background and nonzero reduced internal
-clock momentum.  It does not establish the total `D` charge, a terminal
-`D` disposition, a support-local matter-coupled BV retract, a physical
-arity-two Cartan correction, stability, causal Green theory, quantum
+This establishes a healthy exact background, nonzero reduced internal clock
+momentum, and scoped fixed-coupling linearized `D_GAUGE`.  It does not
+establish a support-local matter-coupled BV retract, a physical arity-two
+Cartan correction, nonlinear stability, causal Green theory, quantum
 admissibility, or any `LORENTZIAN-CAUSAL` or quantum-master-equation theorem.
 
 ## Machine receipts
 
 - `quantum-weyl/transfer/certificates/BERGER_CLOCK_NONLINEAR_IMPORT.json`
+- `quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json`
 - `quantum-weyl/transfer/certificates/ND2_PHYSICAL_RUN.json`
 - `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json`
 
@@ -82,6 +90,10 @@ admissibility, or any `LORENTZIAN-CAUSAL` or quantum-master-equation theorem.
 | Affected nonlinear certificate chain | 5.80 | PASS | 2 |
 | Complete transfer test suite | 66.03 | PASS (90 tests) | 2 |
 | Python compile, JSON/YAML parsing, and scoped diff check | 0.10 | PASS | 0 |
+| Scoped fixed-coupling producer and independent reconstruction | 1.62 | PASS | 2 |
+| Updated classical and programme guards | 0.17 | PASS (27/27 guards) | 2 |
+| Hardened total-`D` affected certificate chain | 5.24 | PASS | 2 |
+| Hardened complete transfer suite | 66.69 | PASS (98 tests) | 2 |
 
 The first complete-suite run failed because the classical team had changed
 the content-addressed status ledger, making the dependent ND1 certificate

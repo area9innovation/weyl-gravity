@@ -1,14 +1,12 @@
 {
   "D_disposition": {
-    "allowed_terminal_dispositions": [
-      "D_GAUGE",
-      "D_CHARGED_NO_QUOTIENT",
-      "SECTOR_DEPENDENT",
-      "NOT_HAMILTONIAN"
-    ],
-    "next_gate": "TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT",
-    "reason": "the reduced O(2) clock momentum is nonzero, but the combined gravitational-plus-matter covariant D charge has not been computed",
-    "status": "OPEN"
+    "boundary_conditions_sha256": "0e4b200dd1446d78e18cf61928b9c36522125f7eb9d0117591f95096e81b70e8",
+    "classical_commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17",
+    "next_gate": "FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT",
+    "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+    "reason": "the exact fixed-coupling lapse constraint and compact averaging force delta Q_R=0, hence Omega_total(delta,L_D)=0 on the declared linearized phase space",
+    "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+    "status": "D_GAUGE"
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -17,7 +15,8 @@
   "established": [
     "a healthy exact positive-energy Berger clock background exists on an open parameter interval",
     "the clock phase carries nonzero conserved standard-sign matter momentum",
-    "D acts helically with the internal O(2) rotation on the exact background"
+    "D acts helically with the internal O(2) rotation on the exact background",
+    "D is presymplectically null on the smooth fixed-coupling linearized Berger phase space"
   ],
   "generator_id": "D_compact",
   "imported_background": {
@@ -36,8 +35,6 @@
   },
   "lifecycle_layer": "CLASSICAL_CHARGE",
   "not_established": [
-    "the total gravitational-plus-matter covariant D charge",
-    "a D_GAUGE, D_CHARGED_NO_QUOTIENT, SECTOR_DEPENDENT, or NOT_HAMILTONIAN disposition",
     "a support-local all-row matter-coupled BV contraction",
     "a physical nonlinear Cartan correction or obstruction on the Berger background",
     "causal propagation, stability, quantum admissibility, or a Lorentzian quantum theorem"
@@ -46,10 +43,10 @@
   "physical_run_gate": {
     "admissibility_policy": "NOT_AVAILABLE",
     "classical_contraction": "NOT_AVAILABLE",
-    "route": "BLOCKED_BEFORE_CARTAN_CLASSIFICATION",
+    "route": "D_GAUGE_CERTIFIED_BV_INPUT_BLOCKED",
     "support_local_q1_q2_D": "NOT_AVAILABLE",
     "support_local_q3": "NOT_AVAILABLE",
-    "total_D_disposition_certificate": "NOT_AVAILABLE"
+    "total_D_disposition_certificate": "AVAILABLE_SCOPED_D_GAUGE"
   },
   "provenance": {
     "background": {
@@ -59,13 +56,13 @@
     },
     "classical_status": {
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "ca4a6f632aaf6d5cc903fcf1dee9a0c69d1d935b1b174df590ffcc430b59c776",
-      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+      "sha256": "54b2843e6258a36603929f5845dee7a6b00b5cc070fa02b448c8ff300dac31c0",
+      "source_commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17"
     },
     "programme_status": {
       "path": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json",
-      "programme_base_commit": "958f51a700a839baf4d526c6a207c893048dfe62",
-      "sha256": "996f153fb0224f4cf4c211a4bf7a96c208fff5a8a393cbcda716b572c998b7fd"
+      "programme_base_commit": "b4f5fe6cbfa42dde7296c3e8000de358b4609366",
+      "sha256": "1bfcb2a75df3f04c467ac6bde0f0c97dc060bce841f821a501e0c6f232fee358"
     },
     "reduced_charge": {
       "commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db",
@@ -74,15 +71,24 @@
     },
     "schema": "quantum-weyl/transfer/schema/berger-clock-nonlinear-import-v1.schema.json",
     "source_manifest": {
-      "berger_clock_import.py": "cb18244d1741f60f1366fa4fa5ed6d16d18fa5c4da0b1bcbcb91b27aa9328e12",
-      "berger_clock_import_certificate.py": "61a6e09f8edcc27d21b1bb3c3d874bd2ca921040086c53e877aa86be5f69e3c4",
-      "schema/berger-clock-nonlinear-import-v1.schema.json": "b66241aaf1ecabcd7ab4d2bce86b320a2a1161dcd66f425fb537fc1d1c65daad",
-      "tests/test_berger_clock_import.py": "5de77521e6ff3741dc7bf2b5ba7eb93e801f8569c5e98d1b54c159f9812f2781"
+      "berger_clock_import.py": "e96aed2d9a8bcd8222ca9306fd6939e0e605bd32ced1d42bf02c37a8ee48b0f1",
+      "berger_clock_import_certificate.py": "09311e189695d880980a4cff2f645b851a9ca196d1078552f4786b83769d87bc",
+      "schema/berger-clock-nonlinear-import-v1.schema.json": "3a195cf017e16ffae50976ab0e41918697310400df3f7b32660bcdc36cb90d44",
+      "schema/total-d-disposition-v1.schema.json": "e467697c9df742a61d7c12deac078c6d3cd0b1cba487352e2bc82d062a29edce",
+      "tests/test_berger_clock_import.py": "55bb4731840f515bfc254ebb53fe33a23ff8f1ab6ccc67ab3aa7fc5d5d8ca70f",
+      "tests/test_total_d_disposition.py": "6079b9ba6155579b28ec061b3b5b4f8616d053d0f587d0f6ab948d24bdc4bc49",
+      "total_d_disposition.py": "f5d9a77305da27bb2a70d28d1c0258961871ed787791cc16cedc95bddac2453c",
+      "total_d_disposition_certificate.py": "9d03ef2e9145065229e9c51fd02c40353a5cce31630cf9db861a8186f2fcc3b7"
     },
-    "source_manifest_sha256": "73ba7619e221e814c5df1417ebb596dd83d38d4b50e9f34d75a07faa4dc407c9"
+    "source_manifest_sha256": "420c33f68f9ab3ae8a915b1b843ed01e10bd4c924fab13d77f9ebbe68fc0698b",
+    "total_D_disposition": {
+      "classical_commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17",
+      "path": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json",
+      "sha256": "3d0bebbe27d77f6572a1ae25d1893720cad104426d2b3e1e89e2c9cefc9e8b89"
+    }
   },
   "result_id": "BERGER_CLOCK_NONLINEAR_IMPORT",
-  "result_state": "BACKGROUND_AND_REDUCED_CHARGE_IMPORTED_TOTAL_D_OPEN",
+  "result_state": "BACKGROUND_REDUCED_CHARGE_AND_SCOPED_D_GAUGE_IMPORTED_BV_OPEN",
   "schema": "quantum-weyl-berger-clock-nonlinear-import-v1",
   "setting_id": "compact_positive_berger_clock",
   "setting_verdict": "INPUT_GATE_BLOCKED"

@@ -92,19 +92,23 @@ The permanent ND2 engine is now separated from a versioned physical-run
 contract.  A physical execution must pin four independently hashed artifacts:
 the total-`D` disposition certificate, support-local `q1/q2/D` export,
 classical contraction, and admissibility policy.  The declared disposition is
-checked against the certificate bytes.  Only `D_GAUGE` reaches the Cartan
-solver; `OPEN`, `D_CHARGED_NO_QUOTIENT`, `SECTOR_DEPENDENT`, and
-`NOT_HAMILTONIAN` terminate on distinct non-contraction routes.  Expression
+checked against a strict total-`D` schema and bound to its phase space,
+boundary-condition hash, classical commit, dependency-tag union, and source
+hashes.  Only `D_GAUGE` reaches the Cartan solver; `OPEN`, canonical
+`D_CHARGED`, `SECTOR_DEPENDENT`, and `NOT_HAMILTONIAN` terminate on distinct
+non-contraction routes.  The physical executor accepts only the opaque token
+returned by complete manifest verification.  Expression
 evaluators are registered by schema version, operator inventory, and
 implementation-manifest hash.  Unknown evaluators, schema mismatches, changed
 evaluator source, missing assembly adapters, and artifact hash drift all stop
 before classification.
 
-The positive Berger-clock result is now imported on its actual boundary.  It
-provides a healthy exact background and nonzero reduced internal clock
-momentum, while the combined gravitational-plus-matter `D` disposition remains
-`OPEN`.  It therefore selects the blocked route before Cartan classification;
-it is not evidence that `D` is gauge.
+The positive Berger-clock result is now imported on its actual boundary.  In
+addition to the healthy exact background and nonzero reduced internal clock
+momentum, the exact fixed-coupling lapse constraint and compact averaging prove
+`D_GAUGE` on the declared smooth linearized phase space.  The support-local
+all-row BV contraction, `q1/q2/D` tensor, and admissibility artifacts remain
+absent, so no physical ND2 Cartan execution has occurred.
 
 The arity-two solve also has a block-sparse exact rail.  Declared additive
 labels such as `D` weight, momentum, or jet filtration must be preserved by
@@ -157,6 +161,7 @@ python3 quantum-weyl/transfer/local_bach_seed_certificate.py --check
 python3 quantum-weyl/transfer/d_derivation_certificate.py --check
 python3 quantum-weyl/transfer/nd2_arity_two_certificate.py --check
 python3 quantum-weyl/transfer/nd2_physical_run_certificate.py --check
+python3 quantum-weyl/transfer/total_d_disposition_certificate.py --check
 python3 quantum-weyl/transfer/berger_clock_import_certificate.py --check
 python3 quantum-weyl/transfer/arity_three_cartan_certificate.py --check
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
