@@ -21,12 +21,12 @@ The coarse top-form Weyl count remains the requested `3` at ghost number zero
 and `9` at ghost number one.  Applying only tensor-seed, scalar-index, and
 epsilon-availability constraints gives:
 
-| Slice | Coarse | Refined | Tensor-realizable | Known nonzero signatures | Pending |
-|---|---:|---:|---:|---:|---:|
-| `H04_AFN0_EVEN` | 3 | 2 | 2 | 2 | 0 |
-| `H04_AFN0_ODD` | 3 | 2 | 2 | 1 | 0 |
-| `H14_AFN0_EVEN_WITHOUT_EULER` | 9 | 5 | 5 | 2 | 2 |
-| `H14_AFN0_ODD` | 9 | 5 | 5 | 1 | 3 |
+| Slice | Coarse | Refined | Raw contraction | Realizable by generated representative | Known nonzero | Pending |
+|---|---:|---:|---:|---:|---:|---:|
+| `H04_AFN0_EVEN` | 3 | 2 | 2 | 2 | 2 | 0 |
+| `H04_AFN0_ODD` | 3 | 2 | 2 | 1 | 1 | 0 |
+| `H14_AFN0_EVEN_WITHOUT_EULER` | 9 | 5 | 5 | 2 | 2 | 2 |
+| `H14_AFN0_ODD` | 9 | 5 | 5 | 1 | 1 | 3 |
 
 The eliminated signatures attempted to apply covariant tensor derivatives
 without any curvature or other tensor seed.  Since the Levi-Civita
@@ -35,9 +35,12 @@ connection is metric-compatible, `nabla g = 0`; these rows terminate as
 
 Two further single-factor families terminate as `TOTAL_DERIVATIVE_ONLY`:
 the fourth-derivative Weyl-ghost signature and the odd single-curvature
-two-derivative signature.  In each raw graph, exposing the outer contracted
-derivative gives an explicit current because both metric and epsilon
-contractions are covariantly constant.  The mixed curvature/ghost-derivative
+two-derivative signature.  The derivative ordering is now explicit, with
+position zero declared outermost.  For every raw graph the machine stores a
+current that replaces that derivative slot by the current's free index and
+then verifies that covariant divergence reconstructs the original graph.
+The witness count must equal the raw graph count.  Metric and epsilon
+covariant constancy are stored inputs.  The mixed curvature/ghost-derivative
 signatures remain pending.
 
 The Diff top-form sector is deliberately separate from the Weyl-anomaly
@@ -54,11 +57,25 @@ ghost index slots.  The machine enumerates every raw scalar contraction graph:
 - odd parity: every choice of four epsilon slots followed by all perfect
   metric matchings of the remaining slots.
 
-Each row stores its raw graph count and a content hash of the full graph
-manifest.  This is forward raw generation, not yet a canonical tensor basis.
-Factor permutations, tensor symmetries, Bianchi identities, integration by
-parts, Grassmann relations, and four-dimensional antisymmetrization remain
-open gates.
+Each slot now stores factor ownership, index variance, derivative attachment,
+and derivative order.  Metric edges distinguish inverse metrics, metrics, and
+Kronecker contractions.  Signed Riemann pair antisymmetries, pair exchange,
+epsilon reordering, and factor permutation where derivative attachment does
+not obstruct it are applied to form symmetry-canonical graph orbits.  An
+independent double-factorial/binomial count must agree with the forward raw
+enumeration.
+
+Raw contraction is no longer called tensor realizability.  Without an
+already generated representative, its status is
+`UNDECIDED_PENDING_BIANCHI_AND_DIMENSION_IDENTITIES`.  Algebraic and
+differential Bianchi quotients, derivative-distribution factor permutations,
+Grassmann relations, integration by parts beyond the certified single-factor
+rule, and four-dimensional antisymmetrization remain open gates.
+
+Full slot, orbit, and current payloads are stored separately in the
+content-addressed bundle under
+`quantum-weyl/local_bv/certificates/basis_graph_manifests/`; the main gap
+certificate retains its path and hash.
 
 ## Claim boundary
 
@@ -84,11 +101,11 @@ bidegree entering the total descent complex.
 
 | Rail | Result |
 |---|---:|
-| focused grading, tensor-graph, gap, AFN0, and consumer tests | 15 pass in 1.28 s |
-| complete local-BV suite | 169 pass in 25.51 s |
+| focused tensor-graph, gap, and AFN0 consumer tests | 12 pass in 5.52 s |
+| complete local-BV suite | 171 pass in 33.34 s |
 | generic result schemas | 6 pass in 0.001 s |
-| classical-import boundary | 16 pass in 0.315 s |
-| three affected certificate builders under hash seeds `1,7,123` | identical in about 10 s |
+| classical-import boundary | 16 pass in 0.313 s |
+| affected certificate builders under hash seeds `1,7,123` | identical |
 | changed Python compile rail and scoped `git diff --check` | pass |
 
 The complete classical certificate pipeline was not rerun because no

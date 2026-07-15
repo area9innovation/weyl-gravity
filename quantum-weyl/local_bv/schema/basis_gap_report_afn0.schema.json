@@ -4,7 +4,7 @@
   "title": "AFN0 dimension-four basis-gap report",
   "type": "object",
   "additionalProperties": false,
-  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope_label", "resolution_vocabulary", "slices", "diff_top_form_ledgers", "total_complex_gates", "claim_boundary", "report_hash", "canonical_hashes", "certificate_hash"],
+  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope_label", "resolution_vocabulary", "slices", "diff_top_form_ledgers", "graph_artifact_bundle", "total_complex_gates", "claim_boundary", "report_hash", "canonical_hashes", "certificate_hash"],
   "properties": {
     "result_id": {"const": "BASIS_GAP_REPORT_AFN0"},
     "result_state": {"const": "BASIS_GAPS_PARTIALLY_RESOLVED"},
@@ -21,7 +21,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["slice", "ghost_number", "form_degree", "parity", "coarse_grading_signature_count", "refined_grading_signature_count", "tensor_realizable_signature_count", "canonical_nonzero_signature_count", "terminal_resolution_count", "pending_resolution_count", "top_form_signature_resolution_status", "forward_reverse_span_agreement", "records"],
+        "required": ["slice", "ghost_number", "form_degree", "parity", "coarse_grading_signature_count", "refined_grading_signature_count", "raw_contraction_signature_count", "tensor_realizable_signature_count", "canonical_nonzero_signature_count", "terminal_resolution_count", "pending_resolution_count", "top_form_signature_resolution_status", "forward_reverse_span_agreement", "records"],
         "properties": {
           "slice": {"type": "string", "minLength": 1},
           "ghost_number": {"enum": [0, 1]},
@@ -29,6 +29,7 @@
           "parity": {"enum": ["even", "odd"]},
           "coarse_grading_signature_count": {"type": "integer", "minimum": 0},
           "refined_grading_signature_count": {"type": "integer", "minimum": 0},
+          "raw_contraction_signature_count": {"type": "integer", "minimum": 0},
           "tensor_realizable_signature_count": {"type": "integer", "minimum": 0},
           "canonical_nonzero_signature_count": {"type": "integer", "minimum": 0},
           "terminal_resolution_count": {"type": "integer", "minimum": 0},
@@ -41,7 +42,7 @@
             "items": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["slice", "signature", "grading_status", "refined_grading_status", "tensor_realizability", "canonical_status", "generated_raw_count", "canonical_nonzero_count", "expected_index_balance", "candidate_ids", "resolution", "resolution_reason", "terminal_witness", "raw_graph_manifest_hash", "graph_enumeration_status", "proof_hash"],
+              "required": ["slice", "signature", "grading_status", "refined_grading_status", "raw_contraction_status", "tensor_realizability", "canonical_status", "generated_raw_count", "symmetry_canonical_orbit_count", "canonical_nonzero_count", "expected_index_balance", "candidate_ids", "resolution", "resolution_reason", "terminal_witness", "raw_graph_manifest_hash", "graph_enumeration_status", "graph_artifact_hash", "graphwise_divergence_status", "graphwise_current_manifest_hash", "proof_hash"],
               "properties": {
                 "slice": {"type": "string"},
                 "signature": {
@@ -64,9 +65,11 @@
                 },
                 "grading_status": {"const": "GRADING_ADMISSIBLE"},
                 "refined_grading_status": {"enum": ["REFINED_ADMISSIBLE", "REJECTED_BY_REFINED_GRADING"]},
-                "tensor_realizability": {"enum": ["TENSOR_REALIZABLE", "NOT_REALIZABLE_AFTER_REFINED_GRADING"]},
+                "raw_contraction_status": {"enum": ["RAW_CONTRACTION_EXISTS", "NOT_APPLICABLE"]},
+                "tensor_realizability": {"enum": ["TENSOR_REALIZABLE_BY_GENERATED_REPRESENTATIVE", "UNDECIDED_PENDING_BIANCHI_AND_DIMENSION_IDENTITIES", "NOT_REALIZABLE_AFTER_REFINED_GRADING"]},
                 "canonical_status": {"enum": ["CANONICALLY_NONZERO", "UNDECIDED", "NOT_APPLICABLE"]},
                 "generated_raw_count": {"type": "integer", "minimum": 0},
+                "symmetry_canonical_orbit_count": {"type": "integer", "minimum": 0},
                 "canonical_nonzero_count": {"type": "integer", "minimum": 0},
                 "expected_index_balance": {
                   "type": "object",
@@ -84,7 +87,10 @@
                 "resolution_reason": {"type": "string", "minLength": 1},
                 "terminal_witness": {"type": ["object", "null"]},
                 "raw_graph_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-                "graph_enumeration_status": {"enum": ["RAW_COMPLETE_CANONICAL_QUOTIENT_PENDING", "NOT_APPLICABLE"]},
+                "graph_enumeration_status": {"enum": ["SYMMETRY_CANONICALIZED_BIANCHI_PENDING", "NOT_APPLICABLE"]},
+                "graph_artifact_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "graphwise_divergence_status": {"enum": ["VERIFIED_EVERY_RAW_GRAPH", "NOT_APPLICABLE"]},
+                "graphwise_current_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
                 "proof_hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}
               }
             }
@@ -93,6 +99,16 @@
       }
     },
     "diff_top_form_ledgers": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object"}},
+    "graph_artifact_bundle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bundle_hash", "artifact_count", "path"],
+      "properties": {
+        "bundle_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "artifact_count": {"type": "integer", "minimum": 1},
+        "path": {"type": "string", "pattern": "^basis_graph_manifests/[0-9a-f]{64}\\.json$"}
+      }
+    },
     "total_complex_gates": {
       "type": "object",
       "additionalProperties": false,

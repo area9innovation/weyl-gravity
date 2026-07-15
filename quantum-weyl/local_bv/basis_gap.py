@@ -7,7 +7,7 @@ from functools import lru_cache
 from .algebra import canonical_sha256
 from .basis_exhaustiveness import grading_signature_manifest, refine_top_form_signature
 from .dimension_four_candidates import dimension_four_candidate_analysis
-from .tensor_graphs import contraction_graph_manifest
+from .tensor_graphs import contraction_graph_bundle, contraction_graph_manifest
 
 
 TERMINAL_RESOLUTIONS = (
@@ -98,7 +98,9 @@ def _structural_terminal_resolution(
     ):
         return (
             "TOTAL_DERIVATIVE_ONLY",
-            "every contraction has a covariant derivative on the sole nonconstant ghost factor; metric and epsilon contractions are covariantly constant",
+            "every contraction has a covariant derivative on the sole "
+            "nonconstant ghost factor; metric and epsilon contractions are "
+            "covariantly constant",
         )
     if (
         signature["ghost_species"] == "NONE"
@@ -107,7 +109,9 @@ def _structural_terminal_resolution(
     ):
         return (
             "TOTAL_DERIVATIVE_ONLY",
-            "every contraction has a covariant derivative on the sole nonconstant curvature factor; metric and epsilon contractions are covariantly constant",
+            "every contraction has a covariant derivative on the sole "
+            "nonconstant curvature factor; metric and epsilon contractions "
+            "are covariantly constant",
         )
     return None
 
@@ -156,19 +160,32 @@ def _gap_record(
             }
         )
     elif structural := _structural_terminal_resolution(signature):
+        if graph["graphwise_divergence_status"] != "VERIFIED_EVERY_RAW_GRAPH":
+            raise AssertionError("total-derivative resolution lacks graphwise currents")
         resolution, refinement_reason = structural
         canonical_status = "UNDECIDED"
         terminal_witness = {
             "witness_type": "TOTAL_DERIVATIVE_GRAPH_RULE",
-            "equation_or_rule": "for each raw graph, remove one outer derivative and expose its contracted partner as the current index; covariant divergence reconstructs the graph",
+            "equation_or_rule": (
+                "the stored current for every raw graph removes derivative-position "
+                "zero and exposes its contracted partner as the current index; "
+                "covariant divergence reconstructs that exact graph"
+            ),
             "covariant_constancy_inputs": ["nabla_metric=0", "nabla_epsilon=0"],
+            "graphwise_current_manifest_hash": graph[
+                "graphwise_current_manifest_hash"
+            ],
+            "graph_artifact_hash": graph["graph_artifact_hash"],
         }
         proof_hash = canonical_sha256(
             {
                 "signature": signature,
                 "resolution": resolution,
                 "covariant_constancy_inputs": ["nabla_metric=0", "nabla_epsilon=0"],
-                "primitive_rule": "expose one contracted outer covariant derivative as d_h of the corresponding current",
+                "primitive_rule": (
+                    "expose one contracted outer covariant derivative as d_h of "
+                    "the corresponding current"
+                ),
             }
         )
     else:
@@ -184,9 +201,17 @@ def _gap_record(
         "refined_grading_status": (
             "REFINED_ADMISSIBLE" if refined else "REJECTED_BY_REFINED_GRADING"
         ),
-        "tensor_realizability": graph["tensor_realizability"],
+        "raw_contraction_status": graph["raw_contraction_status"],
+        "tensor_realizability": (
+            "TENSOR_REALIZABLE_BY_GENERATED_REPRESENTATIVE"
+            if candidates
+            else graph["tensor_realizability"]
+        ),
         "canonical_status": canonical_status,
         "generated_raw_count": graph["raw_contraction_graph_count"],
+        "symmetry_canonical_orbit_count": graph[
+            "symmetry_canonical_orbit_count"
+        ],
         "canonical_nonzero_count": len(candidates),
         "expected_index_balance": {
             "total_index_slots": signature["total_index_slots"],
@@ -203,6 +228,11 @@ def _gap_record(
         "terminal_witness": terminal_witness,
         "raw_graph_manifest_hash": graph["raw_graph_manifest_hash"],
         "graph_enumeration_status": graph["graph_enumeration_status"],
+        "graph_artifact_hash": graph["graph_artifact_hash"],
+        "graphwise_divergence_status": graph["graphwise_divergence_status"],
+        "graphwise_current_manifest_hash": graph[
+            "graphwise_current_manifest_hash"
+        ],
         "proof_hash": proof_hash,
     }
 
@@ -222,11 +252,14 @@ def _diff_ledger(parity: str) -> dict[str, object]:
                     else "REJECTED_BY_REFINED_GRADING"
                 ),
                 "tensor_realizability": graph["tensor_realizability"],
+                "raw_contraction_status": graph["raw_contraction_status"],
                 "resolution": (
                     "PENDING" if refined else "WRONG_AFTER_REFINED_GRADING"
                 ),
                 "reason": reason,
                 "raw_graph_manifest_hash": graph["raw_graph_manifest_hash"],
+                "graph_artifact_hash": graph["graph_artifact_hash"],
+                "graph_enumeration_status": graph["graph_enumeration_status"],
             }
         )
     return {
@@ -270,7 +303,12 @@ def basis_gap_report() -> dict[str, object]:
                     for record in records
                 ),
                 "tensor_realizable_signature_count": sum(
-                    record["tensor_realizability"] == "TENSOR_REALIZABLE"
+                    record["tensor_realizability"]
+                    == "TENSOR_REALIZABLE_BY_GENERATED_REPRESENTATIVE"
+                    for record in records
+                ),
+                "raw_contraction_signature_count": sum(
+                    record["raw_contraction_status"] == "RAW_CONTRACTION_EXISTS"
                     for record in records
                 ),
                 "canonical_nonzero_signature_count": sum(
@@ -286,6 +324,7 @@ def basis_gap_report() -> dict[str, object]:
                 "records": records,
             }
         )
+    bundle = basis_gap_graph_bundle()
     payload = {
         "result_id": "BASIS_GAP_REPORT_AFN0",
         "result_state": "BASIS_GAPS_PARTIALLY_RESOLVED",
@@ -295,6 +334,11 @@ def basis_gap_report() -> dict[str, object]:
         "resolution_vocabulary": list(TERMINAL_RESOLUTIONS),
         "slices": slices,
         "diff_top_form_ledgers": [_diff_ledger("even"), _diff_ledger("odd")],
+        "graph_artifact_bundle": {
+            "bundle_hash": bundle["bundle_hash"],
+            "artifact_count": bundle["artifact_count"],
+            "path": f"basis_graph_manifests/{bundle['bundle_hash']}.json",
+        },
         "total_complex_gates": {
             "TOP_FORM_BASIS_EXHAUSTIVE": "IN_PROGRESS",
             "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE": "NOT_COMPUTED",
@@ -303,10 +347,33 @@ def basis_gap_report() -> dict[str, object]:
             "FORWARD_REVERSE_SPAN_AGREEMENT": "NOT_COMPUTED",
         },
         "claim_boundary": [
-            "raw contraction graphs have not yet been quotiented by tensor symmetries, Bianchi identities, integration by parts, or dimension-specific antisymmetrization",
+            (
+                "signed Riemann-pair, pair-exchange, epsilon-order, and available "
+                "factor-permutation symmetries are implemented; Bianchi identities, "
+                "derivative-distribution permutations, general integration by parts, "
+                "and dimension-specific antisymmetrization remain open"
+            ),
             "PENDING is not a terminal signature resolution",
             "the separate Diff top-form ledger is not the universal lower-form Diff completion",
             "this report cannot promote a complete nontriviality witness",
         ],
     }
     return {**payload, "report_hash": canonical_sha256(payload)}
+
+
+@lru_cache(maxsize=1)
+def basis_gap_graph_bundle() -> dict[str, object]:
+    signatures = []
+    for _, ghost_number, parity in _SLICE_SPECS:
+        signatures.extend(
+            grading_signature_manifest(ghost_number, parity)[
+                "coarse_grading_signatures"
+            ]
+        )
+    for parity in ("even", "odd"):
+        signatures.extend(
+            grading_signature_manifest(1, parity)[
+                "diff_top_form_coarse_signatures"
+            ]
+        )
+    return contraction_graph_bundle(signatures)

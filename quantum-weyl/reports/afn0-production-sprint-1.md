@@ -92,11 +92,11 @@ membership problem.
 
 | Rail | Result |
 |---|---:|
-| focused basis-gap, AFN0, and consumer tests | 15 pass in 1.28 s |
-| complete local-BV suite | 169 pass in 25.51 s |
+| focused tensor-graph, basis-gap, and AFN0 consumer tests | 12 pass in 5.52 s |
+| complete local-BV suite | 171 pass in 33.34 s |
 | generic result schemas | 6 pass in 0.001 s |
-| classical-import regression | 16 pass in 0.315 s |
-| three affected certificate builders under hash seeds `1,7,123` | identical in about 10 s |
+| classical-import regression | 16 pass in 0.313 s |
+| affected certificate builders under hash seeds `1,7,123` | identical |
 | changed Python compile rail | pass |
 
 The full classical certificate pipeline was not rerun: no classical input,

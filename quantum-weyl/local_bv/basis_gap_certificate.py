@@ -9,12 +9,14 @@ from pathlib import Path
 from typing import Any
 
 from .algebra import canonical_sha256
-from .basis_gap import basis_gap_report
+from .basis_gap import basis_gap_graph_bundle, basis_gap_report
 
 
 PACKAGE_ROOT = Path(__file__).resolve().parent
 OUTPUT_PATH = PACKAGE_ROOT / "certificates" / "BASIS_GAP_REPORT_AFN0.json"
 SCHEMA_PATH = PACKAGE_ROOT / "schema" / "basis_gap_report_afn0.schema.json"
+GRAPH_BUNDLE_DIR = PACKAGE_ROOT / "certificates" / "basis_graph_manifests"
+GRAPH_BUNDLE_SCHEMA_PATH = PACKAGE_ROOT / "schema" / "basis_graph_bundle.schema.json"
 
 
 def _source_manifest() -> dict[str, str]:
@@ -24,6 +26,7 @@ def _source_manifest() -> dict[str, str]:
         "basis_gap_certificate.py",
         "tensor_graphs.py",
         "schema/basis_gap_report_afn0.schema.json",
+        "schema/basis_graph_bundle.schema.json",
         "tests/test_basis_exhaustiveness.py",
         "tests/test_basis_gap.py",
         "tests/test_tensor_graphs.py",
@@ -56,14 +59,23 @@ def main() -> int:
     parser.add_argument("--emit", action="store_true")
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    content = _render(build_certificate())
+    certificate = build_certificate()
+    bundle = basis_gap_graph_bundle()
+    bundle_path = GRAPH_BUNDLE_DIR / f"{bundle['bundle_hash']}.json"
+    outputs = {
+        OUTPUT_PATH: _render(certificate),
+        bundle_path: _render(bundle),
+    }
     if args.emit:
-        OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-        OUTPUT_PATH.write_text(content, encoding="utf-8")
-    if args.check and OUTPUT_PATH.read_text(encoding="utf-8") != content:
-        raise SystemExit(f"AFN0 basis-gap report is stale: {OUTPUT_PATH}")
+        for path, content in outputs.items():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(content, encoding="utf-8")
+    if args.check:
+        for path, content in outputs.items():
+            if path.read_text(encoding="utf-8") != content:
+                raise SystemExit(f"AFN0 basis-gap artifact is stale: {path}")
     if not args.emit and not args.check:
-        print(content, end="")
+        print(outputs[OUTPUT_PATH], end="")
     else:
         print("AFN0 BASIS GAP: FAIL-CLOSED REPORT VERIFIED")
     return 0

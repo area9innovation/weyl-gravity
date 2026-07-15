@@ -239,6 +239,11 @@ and the separate Diff top-form counts `(12,7)` before and after structural
 refinement.  Pending raw contraction graphs are not promoted to canonical
 local invariants, and all lower-form total-complex exhaustiveness gates remain
 open.
+The large slot, signed-symmetry-orbit, and graphwise-current payload is kept in
+the content-addressed bundle under
+[`certificates/basis_graph_manifests/`](certificates/basis_graph_manifests/).
+Raw contraction existence is distinct from tensor realizability; only a
+generated canonical representative currently promotes the latter status.
 
 Next admissible local steps are the continuation of the intrinsic type-A
 descent from `omega E4`, completion of the AFN0 lower-form mapping-cone basis,
