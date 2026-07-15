@@ -206,10 +206,14 @@ reported as conventional same-source Einstein equivalence.
    antifields, Noether rows, nilpotency, cyclicity, and the Weyl Stueckelberg
    contraction.  This is now complete in
    `notes/conformal-compensated-quadratic-minimal-bv.md`.
-2. Complete the stricter classical import freeze with a declared cohomology
-   result kind, exact representatives, pairing, chain maps, provenance, and a
-   missing-object ledger.
-3. Lift \(\Delta\) to a chain map and classify the admissible source complex.
+2. Export the actual minimal BV operators and certify a declared exact
+   cohomology result kind.  The nonzero representative fibers are now complete
+   in `notes/conformal-compensated-nonzero-characteristic-snapshot.md`, with
+   inclusions, projections, homotopies, and momentum-reversing odd BV
+   pairings.  The global freeze remains open at the covariant-bundle and zero
+   mode gates.
+3. Lift \(\Delta\) to a chain map and classify the admissible dynamical
+   matter/source complex.  This is now the next constructive E-D2 gate.
 4. Construct retarded and advanced defect propagation on declared spaces.
 5. Compute the first nonlinear obstruction and only then pass to null infinity
    and scattering.

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "compensated-minimal-bv-operator-export-v1",
+  "title": "Canonical sparse compensated minimal BV operator export",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "dependency_tags", "provenance", "inputs", "coefficient_ring", "symbols",
+    "formal_adjoint", "coordinate_order", "matrices", "verdict", "claim_flags",
+    "scope_guards", "verification_command"
+  ],
+  "properties": {
+    "schema": {"const": "compensated-minimal-bv-operator-export-v1"},
+    "result_id": {"const": "COMPENSATED_MINIMAL_BV_CANONICAL_OPERATOR_EXPORT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "verdict": {"const": "ACTUAL_SPARSE_OPERATORS_EXPORTED_WITH_CANONICAL_CONTENT_HASHES"},
+    "matrices": {
+      "type": "object",
+      "required": [
+        "metric_operator", "field_map", "original_action_hessian", "field_gram",
+        "ghost_gram", "gauge", "hessian", "noether", "q", "pairing",
+        "inclusion", "pi_cl", "homotopy", "reduced_q", "reduced_pairing"
+      ]
+    }
+  }
+}

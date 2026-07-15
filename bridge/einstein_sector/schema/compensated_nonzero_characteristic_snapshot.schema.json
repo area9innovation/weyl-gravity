@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "compensated-nonzero-characteristic-snapshot-v1",
+  "title": "Exact nonzero-characteristic compensated BV snapshot",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "dependency_tags", "provenance", "inputs", "domain", "branches",
+    "zero_momentum_ledger", "theorem", "verdict", "claim_flags",
+    "missing_object_ledger", "scope_guards", "verification_command"
+  ],
+  "properties": {
+    "schema": {"const": "compensated-nonzero-characteristic-snapshot-v1"},
+    "result_id": {"const": "COMPENSATED_NONZERO_CHARACTERISTIC_CLASSICAL_SNAPSHOT"},
+    "result_state": {"const": "SCOPED_EXACT_SNAPSHOT_CERTIFIED_GLOBAL_CLASSICAL_FREEZE_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "verdict": {"const": "NONZERO_NULL_2_PLUS_SECOND_ROOT_5_SYMBOL_COHOMOLOGY_WITH_EXACT_CONTRACTIONS"},
+    "branches": {
+      "type": "object",
+      "required": ["generic", "massless", "second_root"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -251,9 +251,18 @@ The local minimal compensated BV theorem in
 metric--scalar complex.  In the `v!=0` invariant chart it splits exactly into
 the Einstein--Weyl metric--Diff minimal complex and a contractible Weyl
 Stueckelberg doublet, with nilpotency, formal cyclicity, chain contraction, and
-nondegenerate reduced pairing certified.  Physical cohomology, global zero
-modes, the nonminimal causal complex, dynamical matter, and the full classical
-import freeze remain open.
+nondegenerate reduced pairing certified.
+
+The follow-on exact snapshot in
+`notes/conformal-compensated-nonzero-characteristic-snapshot.md` exports the
+actual sparse operators for independent verification and constructs explicit
+cohomology contractions.  The nonzero null fiber has two degree-zero classes
+and two BV-dual degree-one classes; the second root has five of each.  The two
+null field classes are the local symbol representatives of helicity `+/-2`
+before the global residual quotient.  Their momentum-reversing odd BV pairing
+is nondegenerate, but it is not the physical Cauchy/radiative symplectic form.
+The zero fiber, covariant mass-shell bundle, nonminimal causal complex,
+dynamical matter, and global classical import freeze remain open.
 
 ## Background inventory
 

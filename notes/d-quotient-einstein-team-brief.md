@@ -173,12 +173,26 @@ local minimal compensated complex in invariant variables and proves exact
 nilpotency, formal cyclicity, and contraction of the Weyl Stueckelberg doublet.
 It reduces to the 28-dimensional Einstein--Weyl metric--Diff minimal complex.
 
-This is not yet the complete classical import freeze: physical cohomology,
-global zero modes, a gauge-fixed nonminimal domain, and causal Green data are
-open.  E-D2 must complete that stricter freeze, then construct or refute a
-defect chain map for a declared dynamical matter/source complex.  A
-higher-derivative dressed source is a separately labelled coupling, not
-conventional Einstein equivalence.
+The actual operators are now available in the independently consumed canonical
+export `bridge/certificates/compensated_minimal_bv_operator_export.json`.
+The scoped snapshot
+`bridge/certificates/compensated_nonzero_characteristic_snapshot.json`
+constructs exact representatives, `pi_cl` projections, homotopies, and
+momentum-reversing odd BV pairings.  Its nonzero null fiber has
+`(H^-1,H^0,H^1,H^2)=(0,2,2,0)`, while the extra root has `(0,5,5,0)`.
+
+The two null degree-zero classes are where the usual helicity-`+/-2` local
+waves live before the final residual quotient.  Their existence is compatible
+with vanishing absolute one-particle residual cohomology on the closed
+cylinder: the latter is an additional compact global `SO(4,2)` reduction, not
+a claim that local or asymptotically flat radiative solutions are absent.
+
+This is still not the global classical import freeze.  The `p=0` global modes,
+covariant characteristic bundle, physical radiative pairing, gauge-fixed
+nonminimal domain, and causal Green data remain open.  E-D2 should next
+construct or refute the sourced-defect chain map for a declared dynamical
+matter/source complex.  A higher-derivative dressed source is a separately
+labelled coupling, not conventional Einstein equivalence.
 
 The same certificate imports the classical Berger-clock background and
 reduced charge seed by hash.  They establish an exact positive-energy rotating

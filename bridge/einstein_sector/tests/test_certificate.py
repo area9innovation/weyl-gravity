@@ -48,6 +48,14 @@ class EinsteinSectorCertificateTests(unittest.TestCase):
             with self.assertRaises(certificate.EinsteinSectorCertificateError):
                 certificate.build_certificate()
 
+    def test_compensated_characteristic_snapshot_is_imported_fail_closed(self) -> None:
+        result = certificate.build_certificate()
+        scoped = result["compensated_local_symbol_snapshot"]
+        self.assertEqual(scoped["nonzero_null_cohomology"], [0, 2, 2, 0])
+        self.assertEqual(scoped["second_root_cohomology"], [0, 5, 5, 0])
+        self.assertIn("p=0 global modes", scoped["scope"])
+        self.assertFalse(result["claim_flags"]["asymptotically_flat_scattering_recovered"])
+
     def test_altered_certificate_is_rejected(self) -> None:
         payload = certificate.build_certificate()
         payload["claim_flags"]["asymptotically_flat_scattering_recovered"] = True

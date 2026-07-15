@@ -63,6 +63,31 @@
     ],
     "survivor_role": "ghost-dressed deformation/vertex classes, not particles"
   },
+  "compensated_local_symbol_snapshot": {
+    "generic_cohomology": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "interpretation": "the two null degree-zero classes are local helicity-two precursors before the global residual quotient; the five second-root classes are the extra Einstein--Weyl branch",
+    "nonzero_null_cohomology": [
+      0,
+      2,
+      2,
+      0
+    ],
+    "pairing": "nondegenerate odd BV pairing between p and -p cohomology fibers",
+    "phase": "flat constant compensator v!=0 with c1=alpha=-1 and v=1 fixture",
+    "representative_data": "exact inclusions, pi_cl projections, and homotopies",
+    "scope": "REDUCED-MODE symbol fibers only; p=0 global modes, the physical Cauchy/radiative pairing, global classical freeze, and causal scattering remain open",
+    "second_root_cohomology": [
+      0,
+      5,
+      5,
+      0
+    ]
+  },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
@@ -78,6 +103,10 @@
     }
   ],
   "inputs": {
+    "compensated_characteristic_snapshot": {
+      "path": "bridge/certificates/compensated_nonzero_characteristic_snapshot.json",
+      "sha256": "a690622d5cdd2cb5889aea15b9ca8280b91b345b31bd4a43748fb5e1089fd3dd"
+    },
     "completed_residual": {
       "path": "analytic_completion/certificates/completed_H4.json",
       "sha256": "4cffa654fe753327fd317341e0682abca936fd1c8a992cb80be941f64e9e5b3c"
@@ -171,7 +200,7 @@
     "status": "NO_MECHANISM_CERTIFIED_IN_THIS_THEOREM"
   },
   "schema": "pure-weyl-einstein-sector-theorem-v1",
-  "source_commit": "689d835ad2ff59b2de23b14d9610fe85dad24b95",
+  "source_commit": "25364fb760ed869f193983eb179ad3b120b52557",
   "theorem": {
     "conclusions": [
       "every Einstein metric is Bach-flat",

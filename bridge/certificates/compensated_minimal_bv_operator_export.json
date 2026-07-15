@@ -1,0 +1,4070 @@
+{
+  "claim_flags": {
+    "actual_sparse_entries_exported": true,
+    "characteristic_cohomology_in_this_artifact": false,
+    "independent_consumer_verification_in_this_artifact": false,
+    "lorentzian_causal_claim": false,
+    "physical_symplectic_pairing_in_this_artifact": false,
+    "quantum_claim": false,
+    "source_fingerprints_reproduced": true
+  },
+  "coefficient_ring": "Q(c1,alpha,v,v^-1)[p0,p1,p2,p3]",
+  "coordinate_order": [
+    {
+      "degree": -1,
+      "name": "ghosts",
+      "start": 0,
+      "stop": 5
+    },
+    {
+      "degree": 0,
+      "name": "fields",
+      "start": 5,
+      "stop": 16
+    },
+    {
+      "degree": 1,
+      "name": "antifields",
+      "start": 16,
+      "stop": 27
+    },
+    {
+      "degree": 2,
+      "name": "ghost_antifields",
+      "start": 27,
+      "stop": 32
+    }
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "formal_adjoint": {
+    "p0": "-p0",
+    "p1": "-p1",
+    "p2": "-p2",
+    "p3": "-p3"
+  },
+  "inputs": {
+    "minimal_bv_certificate": {
+      "path": "bridge/certificates/compensated_quadratic_minimal_bv.json",
+      "sha256": "bb4cfb76211cb4de913f1df2a405c67a7b0b43ccc7122ee3fe151c490296e002"
+    },
+    "minimal_bv_generator": {
+      "path": "bridge/einstein_sector/compensated_quadratic_minimal_bv.py",
+      "sha256": "be159378f57eb21f403336e1cad790f40cd3f9cdf5b6646656f8b78f9006c4f8"
+    }
+  },
+  "matrices": {
+    "field_gram": {
+      "entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "-2"
+        ],
+        [
+          2,
+          2,
+          "-2"
+        ],
+        [
+          3,
+          3,
+          "-2"
+        ],
+        [
+          4,
+          4,
+          "1"
+        ],
+        [
+          5,
+          5,
+          "2"
+        ],
+        [
+          6,
+          6,
+          "2"
+        ],
+        [
+          7,
+          7,
+          "1"
+        ],
+        [
+          8,
+          8,
+          "2"
+        ],
+        [
+          9,
+          9,
+          "1"
+        ],
+        [
+          10,
+          10,
+          "1"
+        ]
+      ],
+      "sha256": "b4a53743c615abb5b3a3d9adc7f09c6e91092a1717ae0ef2c83acd4f56f701dd",
+      "shape": [
+        11,
+        11
+      ]
+    },
+    "field_map": {
+      "entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          0,
+          10,
+          "2/v"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ],
+        [
+          4,
+          4,
+          "1"
+        ],
+        [
+          4,
+          10,
+          "-2/v"
+        ],
+        [
+          5,
+          5,
+          "1"
+        ],
+        [
+          6,
+          6,
+          "1"
+        ],
+        [
+          7,
+          7,
+          "1"
+        ],
+        [
+          7,
+          10,
+          "-2/v"
+        ],
+        [
+          8,
+          8,
+          "1"
+        ],
+        [
+          9,
+          9,
+          "1"
+        ],
+        [
+          9,
+          10,
+          "-2/v"
+        ],
+        [
+          10,
+          10,
+          "1/v"
+        ]
+      ],
+      "sha256": "b4891aea0cc3b33f1fe4c6cfaf3622166ff350abc7b34fa74c625f3e3096f379",
+      "shape": [
+        11,
+        11
+      ]
+    },
+    "gauge": {
+      "entries": [
+        [
+          0,
+          0,
+          "2*p0"
+        ],
+        [
+          1,
+          0,
+          "p1"
+        ],
+        [
+          1,
+          1,
+          "p0"
+        ],
+        [
+          2,
+          0,
+          "p2"
+        ],
+        [
+          2,
+          2,
+          "p0"
+        ],
+        [
+          3,
+          0,
+          "p3"
+        ],
+        [
+          3,
+          3,
+          "p0"
+        ],
+        [
+          4,
+          1,
+          "2*p1"
+        ],
+        [
+          5,
+          1,
+          "p2"
+        ],
+        [
+          5,
+          2,
+          "p1"
+        ],
+        [
+          6,
+          1,
+          "p3"
+        ],
+        [
+          6,
+          3,
+          "p1"
+        ],
+        [
+          7,
+          2,
+          "2*p2"
+        ],
+        [
+          8,
+          2,
+          "p3"
+        ],
+        [
+          8,
+          3,
+          "p2"
+        ],
+        [
+          9,
+          3,
+          "2*p3"
+        ],
+        [
+          10,
+          4,
+          "-1"
+        ]
+      ],
+      "sha256": "88606164b2c5965116207a11b79e416c98754af195df28a8fdbfe35a1c96bce1",
+      "shape": [
+        11,
+        5
+      ]
+    },
+    "ghost_gram": {
+      "entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "-1"
+        ],
+        [
+          2,
+          2,
+          "-1"
+        ],
+        [
+          3,
+          3,
+          "-1"
+        ],
+        [
+          4,
+          4,
+          "1"
+        ]
+      ],
+      "sha256": "89595030cf809d02df7a7b9b783126e986781a274222dda9478580e910c5c462",
+      "shape": [
+        5,
+        5
+      ]
+    },
+    "hessian": {
+      "entries": [
+        [
+          0,
+          0,
+          "-alpha*(p1**2 + p2**2 + p3**2)**2/3"
+        ],
+        [
+          0,
+          1,
+          "2*alpha*p0*p1*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          0,
+          2,
+          "2*alpha*p0*p2*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          0,
+          3,
+          "2*alpha*p0*p3*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          0,
+          4,
+          "-(2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**4 + 2*alpha*p2**2*p3**2 + alpha*p3**4 - 3*c1*p2**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          0,
+          5,
+          "-p1*p2*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          0,
+          6,
+          "-p1*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          0,
+          7,
+          "(alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 + alpha*p0**2*p3**2 - alpha*p1**4 - alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 - alpha*p2**2*p3**2 - alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          0,
+          8,
+          "-p2*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          0,
+          9,
+          "(alpha*p0**2*p1**2 + alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - alpha*p1**4 - 2*alpha*p1**2*p2**2 - alpha*p1**2*p3**2 - alpha*p2**4 - alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          1,
+          0,
+          "-alpha*p0*p1*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          1,
+          1,
+          "(4*alpha*p0**2*p1**2 + 3*alpha*p0**2*p2**2 + 3*alpha*p0**2*p3**2 - 3*alpha*p1**2*p2**2 - 3*alpha*p1**2*p3**2 - 3*alpha*p2**4 - 6*alpha*p2**2*p3**2 - 3*alpha*p3**4 + 3*c1*p2**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          1,
+          2,
+          "p1*p2*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          1,
+          3,
+          "p1*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          1,
+          4,
+          "-alpha*p0*p1*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          1,
+          5,
+          "-p0*p2*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          1,
+          6,
+          "-p0*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          1,
+          7,
+          "p0*p1*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          1,
+          8,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          1,
+          9,
+          "p0*p1*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          2,
+          0,
+          "-alpha*p0*p2*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          2,
+          1,
+          "p1*p2*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          2,
+          2,
+          "(3*alpha*p0**2*p1**2 + 4*alpha*p0**2*p2**2 + 3*alpha*p0**2*p3**2 - 3*alpha*p1**4 - 3*alpha*p1**2*p2**2 - 6*alpha*p1**2*p3**2 - 3*alpha*p2**2*p3**2 - 3*alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          2,
+          3,
+          "p2*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          2,
+          4,
+          "p0*p2*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          2,
+          5,
+          "-p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          2,
+          6,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          2,
+          7,
+          "-alpha*p0*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          2,
+          8,
+          "-p0*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          2,
+          9,
+          "p0*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          3,
+          0,
+          "-alpha*p0*p3*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          3,
+          1,
+          "p1*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          3,
+          2,
+          "p2*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          3,
+          3,
+          "(3*alpha*p0**2*p1**2 + 3*alpha*p0**2*p2**2 + 4*alpha*p0**2*p3**2 - 3*alpha*p1**4 - 6*alpha*p1**2*p2**2 - 3*alpha*p1**2*p3**2 - 3*alpha*p2**4 - 3*alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          3,
+          4,
+          "p0*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          3,
+          5,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          3,
+          6,
+          "-p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          3,
+          7,
+          "p0*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          3,
+          8,
+          "-p0*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          3,
+          9,
+          "-alpha*p0*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          4,
+          0,
+          "-(2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**4 + 2*alpha*p2**2*p3**2 + alpha*p3**4 - 3*c1*p2**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          4,
+          1,
+          "2*alpha*p0*p1*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          4,
+          2,
+          "-p0*p2*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          4,
+          3,
+          "-p0*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          4,
+          4,
+          "-alpha*(p0**2 - p2**2 - p3**2)**2/3"
+        ],
+        [
+          4,
+          5,
+          "-2*alpha*p1*p2*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          4,
+          6,
+          "-2*alpha*p1*p3*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          4,
+          7,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - 2*alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**2*p3**2 + alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          4,
+          8,
+          "p2*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          4,
+          9,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 + alpha*p2**4 + alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          5,
+          0,
+          "-p1*p2*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          5,
+          1,
+          "p0*p2*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          5,
+          2,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          5,
+          3,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          5,
+          4,
+          "-alpha*p1*p2*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          5,
+          5,
+          "-(3*alpha*p0**4 - 3*alpha*p0**2*p1**2 - 3*alpha*p0**2*p2**2 - 6*alpha*p0**2*p3**2 + 4*alpha*p1**2*p2**2 + 3*alpha*p1**2*p3**2 + 3*alpha*p2**2*p3**2 + 3*alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          5,
+          6,
+          "-p2*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          5,
+          7,
+          "-alpha*p1*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          5,
+          8,
+          "-p1*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          5,
+          9,
+          "p1*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          0,
+          "-p1*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          1,
+          "p0*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          2,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          6,
+          3,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          4,
+          "-alpha*p1*p3*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          6,
+          5,
+          "-p2*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          6,
+          "-(3*alpha*p0**4 - 3*alpha*p0**2*p1**2 - 6*alpha*p0**2*p2**2 - 3*alpha*p0**2*p3**2 + 3*alpha*p1**2*p2**2 + 4*alpha*p1**2*p3**2 + 3*alpha*p2**4 + 3*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          6,
+          7,
+          "p1*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          8,
+          "-p1*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          9,
+          "-alpha*p1*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          7,
+          0,
+          "(alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 + alpha*p0**2*p3**2 - alpha*p1**4 - alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 - alpha*p2**2*p3**2 - alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          7,
+          1,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          7,
+          2,
+          "2*alpha*p0*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          7,
+          3,
+          "-p0*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          7,
+          4,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - 2*alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**2*p3**2 + alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          7,
+          5,
+          "-2*alpha*p1*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          7,
+          6,
+          "p1*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          7,
+          7,
+          "-alpha*(p0**2 - p1**2 - p3**2)**2/3"
+        ],
+        [
+          7,
+          8,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          7,
+          9,
+          "(alpha*p0**4 - 2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**4 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 - 2*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          8,
+          0,
+          "-p2*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          1,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          8,
+          2,
+          "p0*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          3,
+          "p0*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          4,
+          "p2*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          5,
+          "-p1*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          6,
+          "-p1*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          7,
+          "-alpha*p2*p3*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          8,
+          8,
+          "-(3*alpha*p0**4 - 6*alpha*p0**2*p1**2 - 3*alpha*p0**2*p2**2 - 3*alpha*p0**2*p3**2 + 3*alpha*p1**4 + 3*alpha*p1**2*p2**2 + 3*alpha*p1**2*p3**2 + 4*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          8,
+          9,
+          "-alpha*p2*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          9,
+          0,
+          "(alpha*p0**2*p1**2 + alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - alpha*p1**4 - 2*alpha*p1**2*p2**2 - alpha*p1**2*p3**2 - alpha*p2**4 - alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          9,
+          1,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          9,
+          2,
+          "-p0*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          9,
+          3,
+          "2*alpha*p0*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          9,
+          4,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 + alpha*p2**4 + alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          9,
+          5,
+          "p1*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          9,
+          6,
+          "-2*alpha*p1*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          9,
+          7,
+          "(alpha*p0**4 - 2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**4 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 - 2*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          9,
+          8,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          9,
+          9,
+          "-alpha*(p0**2 - p1**2 - p2**2)**2/3"
+        ]
+      ],
+      "sha256": "f822cc441cb37a4bc686644238c7d5462b1cea4e53dfe026db0f5d97ef366c3b",
+      "shape": [
+        11,
+        11
+      ]
+    },
+    "homotopy": {
+      "entries": [
+        [
+          4,
+          15,
+          "-1"
+        ],
+        [
+          26,
+          31,
+          "1"
+        ]
+      ],
+      "sha256": "f7638d21e11db2bb2cfbde1cf85470ea37bc4e7eeaababf8b8830ea922a8793f",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    "inclusion": {
+      "entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ],
+        [
+          5,
+          4,
+          "1"
+        ],
+        [
+          6,
+          5,
+          "1"
+        ],
+        [
+          7,
+          6,
+          "1"
+        ],
+        [
+          8,
+          7,
+          "1"
+        ],
+        [
+          9,
+          8,
+          "1"
+        ],
+        [
+          10,
+          9,
+          "1"
+        ],
+        [
+          11,
+          10,
+          "1"
+        ],
+        [
+          12,
+          11,
+          "1"
+        ],
+        [
+          13,
+          12,
+          "1"
+        ],
+        [
+          14,
+          13,
+          "1"
+        ],
+        [
+          16,
+          14,
+          "1"
+        ],
+        [
+          17,
+          15,
+          "1"
+        ],
+        [
+          18,
+          16,
+          "1"
+        ],
+        [
+          19,
+          17,
+          "1"
+        ],
+        [
+          20,
+          18,
+          "1"
+        ],
+        [
+          21,
+          19,
+          "1"
+        ],
+        [
+          22,
+          20,
+          "1"
+        ],
+        [
+          23,
+          21,
+          "1"
+        ],
+        [
+          24,
+          22,
+          "1"
+        ],
+        [
+          25,
+          23,
+          "1"
+        ],
+        [
+          27,
+          24,
+          "1"
+        ],
+        [
+          28,
+          25,
+          "1"
+        ],
+        [
+          29,
+          26,
+          "1"
+        ],
+        [
+          30,
+          27,
+          "1"
+        ]
+      ],
+      "sha256": "883cb375ab009c560e14c6c12020be9fc37f136b3f4d11ea714f94a0ee5588c8",
+      "shape": [
+        32,
+        28
+      ]
+    },
+    "metric_operator": {
+      "entries": [
+        [
+          0,
+          0,
+          "-alpha*(p1**2 + p2**2 + p3**2)**2/3"
+        ],
+        [
+          0,
+          1,
+          "2*alpha*p0*p1*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          0,
+          2,
+          "2*alpha*p0*p2*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          0,
+          3,
+          "2*alpha*p0*p3*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          0,
+          4,
+          "-(2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**4 + 2*alpha*p2**2*p3**2 + alpha*p3**4 - 3*c1*p2**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          0,
+          5,
+          "-p1*p2*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          0,
+          6,
+          "-p1*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          0,
+          7,
+          "(alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 + alpha*p0**2*p3**2 - alpha*p1**4 - alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 - alpha*p2**2*p3**2 - alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          0,
+          8,
+          "-p2*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          0,
+          9,
+          "(alpha*p0**2*p1**2 + alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - alpha*p1**4 - 2*alpha*p1**2*p2**2 - alpha*p1**2*p3**2 - alpha*p2**4 - alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          1,
+          0,
+          "-alpha*p0*p1*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          1,
+          1,
+          "(4*alpha*p0**2*p1**2 + 3*alpha*p0**2*p2**2 + 3*alpha*p0**2*p3**2 - 3*alpha*p1**2*p2**2 - 3*alpha*p1**2*p3**2 - 3*alpha*p2**4 - 6*alpha*p2**2*p3**2 - 3*alpha*p3**4 + 3*c1*p2**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          1,
+          2,
+          "p1*p2*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          1,
+          3,
+          "p1*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          1,
+          4,
+          "-alpha*p0*p1*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          1,
+          5,
+          "-p0*p2*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          1,
+          6,
+          "-p0*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          1,
+          7,
+          "p0*p1*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          1,
+          8,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          1,
+          9,
+          "p0*p1*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          2,
+          0,
+          "-alpha*p0*p2*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          2,
+          1,
+          "p1*p2*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          2,
+          2,
+          "(3*alpha*p0**2*p1**2 + 4*alpha*p0**2*p2**2 + 3*alpha*p0**2*p3**2 - 3*alpha*p1**4 - 3*alpha*p1**2*p2**2 - 6*alpha*p1**2*p3**2 - 3*alpha*p2**2*p3**2 - 3*alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          2,
+          3,
+          "p2*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          2,
+          4,
+          "p0*p2*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          2,
+          5,
+          "-p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          2,
+          6,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          2,
+          7,
+          "-alpha*p0*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          2,
+          8,
+          "-p0*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          2,
+          9,
+          "p0*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          3,
+          0,
+          "-alpha*p0*p3*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          3,
+          1,
+          "p1*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          3,
+          2,
+          "p2*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          3,
+          3,
+          "(3*alpha*p0**2*p1**2 + 3*alpha*p0**2*p2**2 + 4*alpha*p0**2*p3**2 - 3*alpha*p1**4 - 6*alpha*p1**2*p2**2 - 3*alpha*p1**2*p3**2 - 3*alpha*p2**4 - 3*alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          3,
+          4,
+          "p0*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          3,
+          5,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          3,
+          6,
+          "-p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          3,
+          7,
+          "p0*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          3,
+          8,
+          "-p0*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          3,
+          9,
+          "-alpha*p0*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          4,
+          0,
+          "-(2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**4 + 2*alpha*p2**2*p3**2 + alpha*p3**4 - 3*c1*p2**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          4,
+          1,
+          "2*alpha*p0*p1*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          4,
+          2,
+          "-p0*p2*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          4,
+          3,
+          "-p0*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          4,
+          4,
+          "-alpha*(p0**2 - p2**2 - p3**2)**2/3"
+        ],
+        [
+          4,
+          5,
+          "-2*alpha*p1*p2*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          4,
+          6,
+          "-2*alpha*p1*p3*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          4,
+          7,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - 2*alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**2*p3**2 + alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          4,
+          8,
+          "p2*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          4,
+          9,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 + alpha*p2**4 + alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          5,
+          0,
+          "-p1*p2*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          5,
+          1,
+          "p0*p2*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          5,
+          2,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          5,
+          3,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          5,
+          4,
+          "-alpha*p1*p2*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          5,
+          5,
+          "-(3*alpha*p0**4 - 3*alpha*p0**2*p1**2 - 3*alpha*p0**2*p2**2 - 6*alpha*p0**2*p3**2 + 4*alpha*p1**2*p2**2 + 3*alpha*p1**2*p3**2 + 3*alpha*p2**2*p3**2 + 3*alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          5,
+          6,
+          "-p2*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          5,
+          7,
+          "-alpha*p1*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          5,
+          8,
+          "-p1*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          5,
+          9,
+          "p1*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          0,
+          "-p1*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          1,
+          "p0*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          2,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          6,
+          3,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          4,
+          "-alpha*p1*p3*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          6,
+          5,
+          "-p2*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          6,
+          "-(3*alpha*p0**4 - 3*alpha*p0**2*p1**2 - 6*alpha*p0**2*p2**2 - 3*alpha*p0**2*p3**2 + 3*alpha*p1**2*p2**2 + 4*alpha*p1**2*p3**2 + 3*alpha*p2**4 + 3*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          6,
+          7,
+          "p1*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          8,
+          "-p1*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          6,
+          9,
+          "-alpha*p1*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          7,
+          0,
+          "(alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 + alpha*p0**2*p3**2 - alpha*p1**4 - alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 - alpha*p2**2*p3**2 - alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          7,
+          1,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          7,
+          2,
+          "2*alpha*p0*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          7,
+          3,
+          "-p0*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          7,
+          4,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - 2*alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**2*p3**2 + alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          7,
+          5,
+          "-2*alpha*p1*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          7,
+          6,
+          "p1*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          7,
+          7,
+          "-alpha*(p0**2 - p1**2 - p3**2)**2/3"
+        ],
+        [
+          7,
+          8,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          7,
+          9,
+          "(alpha*p0**4 - 2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**4 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 - 2*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          8,
+          0,
+          "-p2*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          1,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          8,
+          2,
+          "p0*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          3,
+          "p0*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          4,
+          "p2*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          5,
+          "-p1*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          6,
+          "-p1*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          8,
+          7,
+          "-alpha*p2*p3*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          8,
+          8,
+          "-(3*alpha*p0**4 - 6*alpha*p0**2*p1**2 - 3*alpha*p0**2*p2**2 - 3*alpha*p0**2*p3**2 + 3*alpha*p1**4 + 3*alpha*p1**2*p2**2 + 3*alpha*p1**2*p3**2 + 4*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          8,
+          9,
+          "-alpha*p2*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          9,
+          0,
+          "(alpha*p0**2*p1**2 + alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - alpha*p1**4 - 2*alpha*p1**2*p2**2 - alpha*p1**2*p3**2 - alpha*p2**4 - alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          9,
+          1,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          9,
+          2,
+          "-p0*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          9,
+          3,
+          "2*alpha*p0*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          9,
+          4,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 + alpha*p2**4 + alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          9,
+          5,
+          "p1*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          9,
+          6,
+          "-2*alpha*p1*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          9,
+          7,
+          "(alpha*p0**4 - 2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**4 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 - 2*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          9,
+          8,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          9,
+          9,
+          "-alpha*(p0**2 - p1**2 - p2**2)**2/3"
+        ]
+      ],
+      "sha256": "b329ac10880e12752d5cab193c213debc6a78a7055cfffa29ad44ae596d28aed",
+      "shape": [
+        10,
+        10
+      ]
+    },
+    "noether": {
+      "entries": [
+        [
+          0,
+          0,
+          "2*p0"
+        ],
+        [
+          0,
+          1,
+          "-2*p1"
+        ],
+        [
+          0,
+          2,
+          "-2*p2"
+        ],
+        [
+          0,
+          3,
+          "-2*p3"
+        ],
+        [
+          1,
+          1,
+          "2*p0"
+        ],
+        [
+          1,
+          4,
+          "-2*p1"
+        ],
+        [
+          1,
+          5,
+          "-2*p2"
+        ],
+        [
+          1,
+          6,
+          "-2*p3"
+        ],
+        [
+          2,
+          2,
+          "2*p0"
+        ],
+        [
+          2,
+          5,
+          "-2*p1"
+        ],
+        [
+          2,
+          7,
+          "-2*p2"
+        ],
+        [
+          2,
+          8,
+          "-2*p3"
+        ],
+        [
+          3,
+          3,
+          "2*p0"
+        ],
+        [
+          3,
+          6,
+          "-2*p1"
+        ],
+        [
+          3,
+          8,
+          "-2*p2"
+        ],
+        [
+          3,
+          9,
+          "-2*p3"
+        ],
+        [
+          4,
+          10,
+          "1"
+        ]
+      ],
+      "sha256": "56088df8f6e1574cb7ab05e47c52f05d933ef49178a4e95d7d0dd452d9dea0b6",
+      "shape": [
+        5,
+        11
+      ]
+    },
+    "original_action_hessian": {
+      "entries": [
+        [
+          0,
+          0,
+          "-alpha*(p1**2 + p2**2 + p3**2)**2/3"
+        ],
+        [
+          0,
+          1,
+          "2*alpha*p0*p1*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          0,
+          2,
+          "2*alpha*p0*p2*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          0,
+          3,
+          "2*alpha*p0*p3*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          0,
+          4,
+          "-(2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**4 + 2*alpha*p2**2*p3**2 + alpha*p3**4 - 3*c1*p2**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          0,
+          5,
+          "-p1*p2*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          0,
+          6,
+          "-p1*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          0,
+          7,
+          "(alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 + alpha*p0**2*p3**2 - alpha*p1**4 - alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 - alpha*p2**2*p3**2 - alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          0,
+          8,
+          "-p2*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          0,
+          9,
+          "(alpha*p0**2*p1**2 + alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - alpha*p1**4 - 2*alpha*p1**2*p2**2 - alpha*p1**2*p3**2 - alpha*p2**4 - alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          0,
+          10,
+          "-2*c1*(p1**2 + p2**2 + p3**2)/v"
+        ],
+        [
+          1,
+          0,
+          "2*alpha*p0*p1*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          1,
+          1,
+          "-(4*alpha*p0**2*p1**2 + 3*alpha*p0**2*p2**2 + 3*alpha*p0**2*p3**2 - 3*alpha*p1**2*p2**2 - 3*alpha*p1**2*p3**2 - 3*alpha*p2**4 - 6*alpha*p2**2*p3**2 - 3*alpha*p3**4 + 3*c1*p2**2 + 3*c1*p3**2)/3"
+        ],
+        [
+          1,
+          2,
+          "-p1*p2*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/3"
+        ],
+        [
+          1,
+          3,
+          "-p1*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/3"
+        ],
+        [
+          1,
+          4,
+          "2*alpha*p0*p1*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          1,
+          5,
+          "p0*p2*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          1,
+          6,
+          "p0*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          1,
+          7,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          1,
+          8,
+          "4*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          1,
+          9,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          1,
+          10,
+          "4*c1*p0*p1/v"
+        ],
+        [
+          2,
+          0,
+          "2*alpha*p0*p2*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          2,
+          1,
+          "-p1*p2*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/3"
+        ],
+        [
+          2,
+          2,
+          "-(3*alpha*p0**2*p1**2 + 4*alpha*p0**2*p2**2 + 3*alpha*p0**2*p3**2 - 3*alpha*p1**4 - 3*alpha*p1**2*p2**2 - 6*alpha*p1**2*p3**2 - 3*alpha*p2**2*p3**2 - 3*alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/3"
+        ],
+        [
+          2,
+          3,
+          "-p2*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/3"
+        ],
+        [
+          2,
+          4,
+          "-p0*p2*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          2,
+          5,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          2,
+          6,
+          "4*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          2,
+          7,
+          "2*alpha*p0*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          2,
+          8,
+          "p0*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          2,
+          9,
+          "-p0*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          2,
+          10,
+          "4*c1*p0*p2/v"
+        ],
+        [
+          3,
+          0,
+          "2*alpha*p0*p3*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          3,
+          1,
+          "-p1*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/3"
+        ],
+        [
+          3,
+          2,
+          "-p2*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/3"
+        ],
+        [
+          3,
+          3,
+          "-(3*alpha*p0**2*p1**2 + 3*alpha*p0**2*p2**2 + 4*alpha*p0**2*p3**2 - 3*alpha*p1**4 - 6*alpha*p1**2*p2**2 - 3*alpha*p1**2*p3**2 - 3*alpha*p2**4 - 3*alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/3"
+        ],
+        [
+          3,
+          4,
+          "-p0*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          3,
+          5,
+          "4*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          3,
+          6,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          3,
+          7,
+          "-p0*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          3,
+          8,
+          "p0*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          3,
+          9,
+          "2*alpha*p0*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          3,
+          10,
+          "4*c1*p0*p3/v"
+        ],
+        [
+          4,
+          0,
+          "-(2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**4 + 2*alpha*p2**2*p3**2 + alpha*p3**4 - 3*c1*p2**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          4,
+          1,
+          "2*alpha*p0*p1*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          4,
+          2,
+          "-p0*p2*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          4,
+          3,
+          "-p0*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          4,
+          4,
+          "-alpha*(p0**2 - p2**2 - p3**2)**2/3"
+        ],
+        [
+          4,
+          5,
+          "-2*alpha*p1*p2*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          4,
+          6,
+          "-2*alpha*p1*p3*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          4,
+          7,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - 2*alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**2*p3**2 + alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          4,
+          8,
+          "p2*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          4,
+          9,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 + alpha*p2**4 + alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          4,
+          10,
+          "-2*c1*(p0**2 - p2**2 - p3**2)/v"
+        ],
+        [
+          5,
+          0,
+          "-p1*p2*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          5,
+          1,
+          "p0*p2*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          5,
+          2,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          5,
+          3,
+          "4*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          5,
+          4,
+          "-2*alpha*p1*p2*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          5,
+          5,
+          "-(3*alpha*p0**4 - 3*alpha*p0**2*p1**2 - 3*alpha*p0**2*p2**2 - 6*alpha*p0**2*p3**2 + 4*alpha*p1**2*p2**2 + 3*alpha*p1**2*p3**2 + 3*alpha*p2**2*p3**2 + 3*alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/3"
+        ],
+        [
+          5,
+          6,
+          "-p2*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          5,
+          7,
+          "-2*alpha*p1*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          5,
+          8,
+          "-p1*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          5,
+          9,
+          "p1*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          5,
+          10,
+          "-4*c1*p1*p2/v"
+        ],
+        [
+          6,
+          0,
+          "-p1*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          6,
+          1,
+          "p0*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          6,
+          2,
+          "4*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          6,
+          3,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          6,
+          4,
+          "-2*alpha*p1*p3*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          6,
+          5,
+          "-p2*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          6,
+          6,
+          "-(3*alpha*p0**4 - 3*alpha*p0**2*p1**2 - 6*alpha*p0**2*p2**2 - 3*alpha*p0**2*p3**2 + 3*alpha*p1**2*p2**2 + 4*alpha*p1**2*p3**2 + 3*alpha*p2**4 + 3*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/3"
+        ],
+        [
+          6,
+          7,
+          "p1*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          6,
+          8,
+          "-p1*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          6,
+          9,
+          "-2*alpha*p1*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          6,
+          10,
+          "-4*c1*p1*p3/v"
+        ],
+        [
+          7,
+          0,
+          "(alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 + alpha*p0**2*p3**2 - alpha*p1**4 - alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 - alpha*p2**2*p3**2 - alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          7,
+          1,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          7,
+          2,
+          "2*alpha*p0*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          7,
+          3,
+          "-p0*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          7,
+          4,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - 2*alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**2*p3**2 + alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          7,
+          5,
+          "-2*alpha*p1*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          7,
+          6,
+          "p1*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          7,
+          7,
+          "-alpha*(p0**2 - p1**2 - p3**2)**2/3"
+        ],
+        [
+          7,
+          8,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          7,
+          9,
+          "(alpha*p0**4 - 2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**4 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 - 2*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          7,
+          10,
+          "-2*c1*(p0**2 - p1**2 - p3**2)/v"
+        ],
+        [
+          8,
+          0,
+          "-p2*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          8,
+          1,
+          "4*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          8,
+          2,
+          "p0*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          8,
+          3,
+          "p0*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          8,
+          4,
+          "p2*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          8,
+          5,
+          "-p1*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          8,
+          6,
+          "-p1*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          8,
+          7,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          8,
+          8,
+          "-(3*alpha*p0**4 - 6*alpha*p0**2*p1**2 - 3*alpha*p0**2*p2**2 - 3*alpha*p0**2*p3**2 + 3*alpha*p1**4 + 3*alpha*p1**2*p2**2 + 3*alpha*p1**2*p3**2 + 4*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/3"
+        ],
+        [
+          8,
+          9,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          8,
+          10,
+          "-4*c1*p2*p3/v"
+        ],
+        [
+          9,
+          0,
+          "(alpha*p0**2*p1**2 + alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - alpha*p1**4 - 2*alpha*p1**2*p2**2 - alpha*p1**2*p3**2 - alpha*p2**4 - alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          9,
+          1,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          9,
+          2,
+          "-p0*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          9,
+          3,
+          "2*alpha*p0*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          9,
+          4,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 + alpha*p2**4 + alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          9,
+          5,
+          "p1*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          9,
+          6,
+          "-2*alpha*p1*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          9,
+          7,
+          "(alpha*p0**4 - 2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**4 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 - 2*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          9,
+          8,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          9,
+          9,
+          "-alpha*(p0**2 - p1**2 - p2**2)**2/3"
+        ],
+        [
+          9,
+          10,
+          "-2*c1*(p0**2 - p1**2 - p2**2)/v"
+        ],
+        [
+          10,
+          0,
+          "-2*c1*(p1**2 + p2**2 + p3**2)/v"
+        ],
+        [
+          10,
+          1,
+          "4*c1*p0*p1/v"
+        ],
+        [
+          10,
+          2,
+          "4*c1*p0*p2/v"
+        ],
+        [
+          10,
+          3,
+          "4*c1*p0*p3/v"
+        ],
+        [
+          10,
+          4,
+          "-2*c1*(p0**2 - p2**2 - p3**2)/v"
+        ],
+        [
+          10,
+          5,
+          "-4*c1*p1*p2/v"
+        ],
+        [
+          10,
+          6,
+          "-4*c1*p1*p3/v"
+        ],
+        [
+          10,
+          7,
+          "-2*c1*(p0**2 - p1**2 - p3**2)/v"
+        ],
+        [
+          10,
+          8,
+          "-4*c1*p2*p3/v"
+        ],
+        [
+          10,
+          9,
+          "-2*c1*(p0**2 - p1**2 - p2**2)/v"
+        ],
+        [
+          10,
+          10,
+          "12*c1*(p0**2 - p1**2 - p2**2 - p3**2)/v**2"
+        ]
+      ],
+      "sha256": "ffb66733f8969f66161a6fdbc67239ec33839f232d731cf0a6c4e3a6a51e2c13",
+      "shape": [
+        11,
+        11
+      ]
+    },
+    "pairing": {
+      "entries": [
+        [
+          0,
+          27,
+          "1"
+        ],
+        [
+          1,
+          28,
+          "-1"
+        ],
+        [
+          2,
+          29,
+          "-1"
+        ],
+        [
+          3,
+          30,
+          "-1"
+        ],
+        [
+          4,
+          31,
+          "1"
+        ],
+        [
+          5,
+          16,
+          "1"
+        ],
+        [
+          6,
+          17,
+          "-2"
+        ],
+        [
+          7,
+          18,
+          "-2"
+        ],
+        [
+          8,
+          19,
+          "-2"
+        ],
+        [
+          9,
+          20,
+          "1"
+        ],
+        [
+          10,
+          21,
+          "2"
+        ],
+        [
+          11,
+          22,
+          "2"
+        ],
+        [
+          12,
+          23,
+          "1"
+        ],
+        [
+          13,
+          24,
+          "2"
+        ],
+        [
+          14,
+          25,
+          "1"
+        ],
+        [
+          15,
+          26,
+          "1"
+        ],
+        [
+          16,
+          5,
+          "-1"
+        ],
+        [
+          17,
+          6,
+          "2"
+        ],
+        [
+          18,
+          7,
+          "2"
+        ],
+        [
+          19,
+          8,
+          "2"
+        ],
+        [
+          20,
+          9,
+          "-1"
+        ],
+        [
+          21,
+          10,
+          "-2"
+        ],
+        [
+          22,
+          11,
+          "-2"
+        ],
+        [
+          23,
+          12,
+          "-1"
+        ],
+        [
+          24,
+          13,
+          "-2"
+        ],
+        [
+          25,
+          14,
+          "-1"
+        ],
+        [
+          26,
+          15,
+          "-1"
+        ],
+        [
+          27,
+          0,
+          "-1"
+        ],
+        [
+          28,
+          1,
+          "1"
+        ],
+        [
+          29,
+          2,
+          "1"
+        ],
+        [
+          30,
+          3,
+          "1"
+        ],
+        [
+          31,
+          4,
+          "-1"
+        ]
+      ],
+      "sha256": "0b80ea6d46353688871a36e36f25ee498a299e61cce2cb080cbf8faa643b8dde",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    "pi_cl": {
+      "entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ],
+        [
+          4,
+          5,
+          "1"
+        ],
+        [
+          5,
+          6,
+          "1"
+        ],
+        [
+          6,
+          7,
+          "1"
+        ],
+        [
+          7,
+          8,
+          "1"
+        ],
+        [
+          8,
+          9,
+          "1"
+        ],
+        [
+          9,
+          10,
+          "1"
+        ],
+        [
+          10,
+          11,
+          "1"
+        ],
+        [
+          11,
+          12,
+          "1"
+        ],
+        [
+          12,
+          13,
+          "1"
+        ],
+        [
+          13,
+          14,
+          "1"
+        ],
+        [
+          14,
+          16,
+          "1"
+        ],
+        [
+          15,
+          17,
+          "1"
+        ],
+        [
+          16,
+          18,
+          "1"
+        ],
+        [
+          17,
+          19,
+          "1"
+        ],
+        [
+          18,
+          20,
+          "1"
+        ],
+        [
+          19,
+          21,
+          "1"
+        ],
+        [
+          20,
+          22,
+          "1"
+        ],
+        [
+          21,
+          23,
+          "1"
+        ],
+        [
+          22,
+          24,
+          "1"
+        ],
+        [
+          23,
+          25,
+          "1"
+        ],
+        [
+          24,
+          27,
+          "1"
+        ],
+        [
+          25,
+          28,
+          "1"
+        ],
+        [
+          26,
+          29,
+          "1"
+        ],
+        [
+          27,
+          30,
+          "1"
+        ]
+      ],
+      "sha256": "baa5b1aae03d9c095e9142d0a9b833029a32f7d810e756f47638a0cc4f71cbfe",
+      "shape": [
+        28,
+        32
+      ]
+    },
+    "q": {
+      "entries": [
+        [
+          5,
+          0,
+          "2*p0"
+        ],
+        [
+          6,
+          0,
+          "p1"
+        ],
+        [
+          6,
+          1,
+          "p0"
+        ],
+        [
+          7,
+          0,
+          "p2"
+        ],
+        [
+          7,
+          2,
+          "p0"
+        ],
+        [
+          8,
+          0,
+          "p3"
+        ],
+        [
+          8,
+          3,
+          "p0"
+        ],
+        [
+          9,
+          1,
+          "2*p1"
+        ],
+        [
+          10,
+          1,
+          "p2"
+        ],
+        [
+          10,
+          2,
+          "p1"
+        ],
+        [
+          11,
+          1,
+          "p3"
+        ],
+        [
+          11,
+          3,
+          "p1"
+        ],
+        [
+          12,
+          2,
+          "2*p2"
+        ],
+        [
+          13,
+          2,
+          "p3"
+        ],
+        [
+          13,
+          3,
+          "p2"
+        ],
+        [
+          14,
+          3,
+          "2*p3"
+        ],
+        [
+          15,
+          4,
+          "-1"
+        ],
+        [
+          16,
+          5,
+          "-alpha*(p1**2 + p2**2 + p3**2)**2/3"
+        ],
+        [
+          16,
+          6,
+          "2*alpha*p0*p1*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          16,
+          7,
+          "2*alpha*p0*p2*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          16,
+          8,
+          "2*alpha*p0*p3*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          16,
+          9,
+          "-(2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**4 + 2*alpha*p2**2*p3**2 + alpha*p3**4 - 3*c1*p2**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          16,
+          10,
+          "-p1*p2*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          16,
+          11,
+          "-p1*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          16,
+          12,
+          "(alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 + alpha*p0**2*p3**2 - alpha*p1**4 - alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 - alpha*p2**2*p3**2 - alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          16,
+          13,
+          "-p2*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          16,
+          14,
+          "(alpha*p0**2*p1**2 + alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - alpha*p1**4 - 2*alpha*p1**2*p2**2 - alpha*p1**2*p3**2 - alpha*p2**4 - alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          17,
+          5,
+          "-alpha*p0*p1*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          17,
+          6,
+          "(4*alpha*p0**2*p1**2 + 3*alpha*p0**2*p2**2 + 3*alpha*p0**2*p3**2 - 3*alpha*p1**2*p2**2 - 3*alpha*p1**2*p3**2 - 3*alpha*p2**4 - 6*alpha*p2**2*p3**2 - 3*alpha*p3**4 + 3*c1*p2**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          17,
+          7,
+          "p1*p2*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          17,
+          8,
+          "p1*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          17,
+          9,
+          "-alpha*p0*p1*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          17,
+          10,
+          "-p0*p2*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          17,
+          11,
+          "-p0*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          17,
+          12,
+          "p0*p1*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          17,
+          13,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          17,
+          14,
+          "p0*p1*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          18,
+          5,
+          "-alpha*p0*p2*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          18,
+          6,
+          "p1*p2*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          18,
+          7,
+          "(3*alpha*p0**2*p1**2 + 4*alpha*p0**2*p2**2 + 3*alpha*p0**2*p3**2 - 3*alpha*p1**4 - 3*alpha*p1**2*p2**2 - 6*alpha*p1**2*p3**2 - 3*alpha*p2**2*p3**2 - 3*alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          18,
+          8,
+          "p2*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          18,
+          9,
+          "p0*p2*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          18,
+          10,
+          "-p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          18,
+          11,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          18,
+          12,
+          "-alpha*p0*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          18,
+          13,
+          "-p0*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          18,
+          14,
+          "p0*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          19,
+          5,
+          "-alpha*p0*p3*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          19,
+          6,
+          "p1*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          19,
+          7,
+          "p2*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          19,
+          8,
+          "(3*alpha*p0**2*p1**2 + 3*alpha*p0**2*p2**2 + 4*alpha*p0**2*p3**2 - 3*alpha*p1**4 - 6*alpha*p1**2*p2**2 - 3*alpha*p1**2*p3**2 - 3*alpha*p2**4 - 3*alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          19,
+          9,
+          "p0*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          19,
+          10,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          19,
+          11,
+          "-p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          19,
+          12,
+          "p0*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          19,
+          13,
+          "-p0*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          19,
+          14,
+          "-alpha*p0*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          20,
+          5,
+          "-(2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**4 + 2*alpha*p2**2*p3**2 + alpha*p3**4 - 3*c1*p2**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          20,
+          6,
+          "2*alpha*p0*p1*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          20,
+          7,
+          "-p0*p2*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          20,
+          8,
+          "-p0*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          20,
+          9,
+          "-alpha*(p0**2 - p2**2 - p3**2)**2/3"
+        ],
+        [
+          20,
+          10,
+          "-2*alpha*p1*p2*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          20,
+          11,
+          "-2*alpha*p1*p3*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          20,
+          12,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - 2*alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**2*p3**2 + alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          20,
+          13,
+          "p2*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          20,
+          14,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 + alpha*p2**4 + alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          21,
+          5,
+          "-p1*p2*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          21,
+          6,
+          "p0*p2*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          21,
+          7,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          21,
+          8,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          21,
+          9,
+          "-alpha*p1*p2*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          21,
+          10,
+          "-(3*alpha*p0**4 - 3*alpha*p0**2*p1**2 - 3*alpha*p0**2*p2**2 - 6*alpha*p0**2*p3**2 + 4*alpha*p1**2*p2**2 + 3*alpha*p1**2*p3**2 + 3*alpha*p2**2*p3**2 + 3*alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          21,
+          11,
+          "-p2*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          21,
+          12,
+          "-alpha*p1*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          21,
+          13,
+          "-p1*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          21,
+          14,
+          "p1*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          5,
+          "-p1*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          6,
+          "p0*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          7,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          22,
+          8,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          9,
+          "-alpha*p1*p3*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          22,
+          10,
+          "-p2*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          11,
+          "-(3*alpha*p0**4 - 3*alpha*p0**2*p1**2 - 6*alpha*p0**2*p2**2 - 3*alpha*p0**2*p3**2 + 3*alpha*p1**2*p2**2 + 4*alpha*p1**2*p3**2 + 3*alpha*p2**4 + 3*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          22,
+          12,
+          "p1*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          13,
+          "-p1*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          14,
+          "-alpha*p1*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          23,
+          5,
+          "(alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 + alpha*p0**2*p3**2 - alpha*p1**4 - alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 - alpha*p2**2*p3**2 - alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          23,
+          6,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          23,
+          7,
+          "2*alpha*p0*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          23,
+          8,
+          "-p0*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          23,
+          9,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - 2*alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**2*p3**2 + alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          23,
+          10,
+          "-2*alpha*p1*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          23,
+          11,
+          "p1*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          23,
+          12,
+          "-alpha*(p0**2 - p1**2 - p3**2)**2/3"
+        ],
+        [
+          23,
+          13,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          23,
+          14,
+          "(alpha*p0**4 - 2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**4 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 - 2*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          24,
+          5,
+          "-p2*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          24,
+          6,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          24,
+          7,
+          "p0*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          24,
+          8,
+          "p0*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          24,
+          9,
+          "p2*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          24,
+          10,
+          "-p1*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          24,
+          11,
+          "-p1*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          24,
+          12,
+          "-alpha*p2*p3*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          24,
+          13,
+          "-(3*alpha*p0**4 - 6*alpha*p0**2*p1**2 - 3*alpha*p0**2*p2**2 - 3*alpha*p0**2*p3**2 + 3*alpha*p1**4 + 3*alpha*p1**2*p2**2 + 3*alpha*p1**2*p3**2 + 4*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          24,
+          14,
+          "-alpha*p2*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          25,
+          5,
+          "(alpha*p0**2*p1**2 + alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - alpha*p1**4 - 2*alpha*p1**2*p2**2 - alpha*p1**2*p3**2 - alpha*p2**4 - alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          25,
+          6,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          25,
+          7,
+          "-p0*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          25,
+          8,
+          "2*alpha*p0*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          25,
+          9,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 + alpha*p2**4 + alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          25,
+          10,
+          "p1*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          25,
+          11,
+          "-2*alpha*p1*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          25,
+          12,
+          "(alpha*p0**4 - 2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**4 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 - 2*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          25,
+          13,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          25,
+          14,
+          "-alpha*(p0**2 - p1**2 - p2**2)**2/3"
+        ],
+        [
+          27,
+          16,
+          "2*p0"
+        ],
+        [
+          27,
+          17,
+          "-2*p1"
+        ],
+        [
+          27,
+          18,
+          "-2*p2"
+        ],
+        [
+          27,
+          19,
+          "-2*p3"
+        ],
+        [
+          28,
+          17,
+          "2*p0"
+        ],
+        [
+          28,
+          20,
+          "-2*p1"
+        ],
+        [
+          28,
+          21,
+          "-2*p2"
+        ],
+        [
+          28,
+          22,
+          "-2*p3"
+        ],
+        [
+          29,
+          18,
+          "2*p0"
+        ],
+        [
+          29,
+          21,
+          "-2*p1"
+        ],
+        [
+          29,
+          23,
+          "-2*p2"
+        ],
+        [
+          29,
+          24,
+          "-2*p3"
+        ],
+        [
+          30,
+          19,
+          "2*p0"
+        ],
+        [
+          30,
+          22,
+          "-2*p1"
+        ],
+        [
+          30,
+          24,
+          "-2*p2"
+        ],
+        [
+          30,
+          25,
+          "-2*p3"
+        ],
+        [
+          31,
+          26,
+          "1"
+        ]
+      ],
+      "sha256": "a421dff74dc17f392567f8d4c496cce504dfdd22e4f7ce4c3e30169fa3b2732b",
+      "shape": [
+        32,
+        32
+      ]
+    },
+    "reduced_pairing": {
+      "entries": [
+        [
+          0,
+          24,
+          "1"
+        ],
+        [
+          1,
+          25,
+          "-1"
+        ],
+        [
+          2,
+          26,
+          "-1"
+        ],
+        [
+          3,
+          27,
+          "-1"
+        ],
+        [
+          4,
+          14,
+          "1"
+        ],
+        [
+          5,
+          15,
+          "-2"
+        ],
+        [
+          6,
+          16,
+          "-2"
+        ],
+        [
+          7,
+          17,
+          "-2"
+        ],
+        [
+          8,
+          18,
+          "1"
+        ],
+        [
+          9,
+          19,
+          "2"
+        ],
+        [
+          10,
+          20,
+          "2"
+        ],
+        [
+          11,
+          21,
+          "1"
+        ],
+        [
+          12,
+          22,
+          "2"
+        ],
+        [
+          13,
+          23,
+          "1"
+        ],
+        [
+          14,
+          4,
+          "-1"
+        ],
+        [
+          15,
+          5,
+          "2"
+        ],
+        [
+          16,
+          6,
+          "2"
+        ],
+        [
+          17,
+          7,
+          "2"
+        ],
+        [
+          18,
+          8,
+          "-1"
+        ],
+        [
+          19,
+          9,
+          "-2"
+        ],
+        [
+          20,
+          10,
+          "-2"
+        ],
+        [
+          21,
+          11,
+          "-1"
+        ],
+        [
+          22,
+          12,
+          "-2"
+        ],
+        [
+          23,
+          13,
+          "-1"
+        ],
+        [
+          24,
+          0,
+          "-1"
+        ],
+        [
+          25,
+          1,
+          "1"
+        ],
+        [
+          26,
+          2,
+          "1"
+        ],
+        [
+          27,
+          3,
+          "1"
+        ]
+      ],
+      "sha256": "a53f3cbacd00e1211cfa1d266d93da3d112f3277c1c94fa8dd4524b4543ad7fb",
+      "shape": [
+        28,
+        28
+      ]
+    },
+    "reduced_q": {
+      "entries": [
+        [
+          4,
+          0,
+          "2*p0"
+        ],
+        [
+          5,
+          0,
+          "p1"
+        ],
+        [
+          5,
+          1,
+          "p0"
+        ],
+        [
+          6,
+          0,
+          "p2"
+        ],
+        [
+          6,
+          2,
+          "p0"
+        ],
+        [
+          7,
+          0,
+          "p3"
+        ],
+        [
+          7,
+          3,
+          "p0"
+        ],
+        [
+          8,
+          1,
+          "2*p1"
+        ],
+        [
+          9,
+          1,
+          "p2"
+        ],
+        [
+          9,
+          2,
+          "p1"
+        ],
+        [
+          10,
+          1,
+          "p3"
+        ],
+        [
+          10,
+          3,
+          "p1"
+        ],
+        [
+          11,
+          2,
+          "2*p2"
+        ],
+        [
+          12,
+          2,
+          "p3"
+        ],
+        [
+          12,
+          3,
+          "p2"
+        ],
+        [
+          13,
+          3,
+          "2*p3"
+        ],
+        [
+          14,
+          4,
+          "-alpha*(p1**2 + p2**2 + p3**2)**2/3"
+        ],
+        [
+          14,
+          5,
+          "2*alpha*p0*p1*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          14,
+          6,
+          "2*alpha*p0*p2*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          14,
+          7,
+          "2*alpha*p0*p3*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          14,
+          8,
+          "-(2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**4 + 2*alpha*p2**2*p3**2 + alpha*p3**4 - 3*c1*p2**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          14,
+          9,
+          "-p1*p2*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          14,
+          10,
+          "-p1*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          14,
+          11,
+          "(alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 + alpha*p0**2*p3**2 - alpha*p1**4 - alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 - alpha*p2**2*p3**2 - alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          14,
+          12,
+          "-p2*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          14,
+          13,
+          "(alpha*p0**2*p1**2 + alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - alpha*p1**4 - 2*alpha*p1**2*p2**2 - alpha*p1**2*p3**2 - alpha*p2**4 - alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          15,
+          4,
+          "-alpha*p0*p1*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          15,
+          5,
+          "(4*alpha*p0**2*p1**2 + 3*alpha*p0**2*p2**2 + 3*alpha*p0**2*p3**2 - 3*alpha*p1**2*p2**2 - 3*alpha*p1**2*p3**2 - 3*alpha*p2**4 - 6*alpha*p2**2*p3**2 - 3*alpha*p3**4 + 3*c1*p2**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          15,
+          6,
+          "p1*p2*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          15,
+          7,
+          "p1*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          15,
+          8,
+          "-alpha*p0*p1*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          15,
+          9,
+          "-p0*p2*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          15,
+          10,
+          "-p0*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          15,
+          11,
+          "p0*p1*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          15,
+          12,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          15,
+          13,
+          "p0*p1*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          16,
+          4,
+          "-alpha*p0*p2*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          16,
+          5,
+          "p1*p2*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          16,
+          6,
+          "(3*alpha*p0**2*p1**2 + 4*alpha*p0**2*p2**2 + 3*alpha*p0**2*p3**2 - 3*alpha*p1**4 - 3*alpha*p1**2*p2**2 - 6*alpha*p1**2*p3**2 - 3*alpha*p2**2*p3**2 - 3*alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          16,
+          7,
+          "p2*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          16,
+          8,
+          "p0*p2*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          16,
+          9,
+          "-p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          16,
+          10,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          16,
+          11,
+          "-alpha*p0*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          16,
+          12,
+          "-p0*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          16,
+          13,
+          "p0*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          17,
+          4,
+          "-alpha*p0*p3*(p1**2 + p2**2 + p3**2)/3"
+        ],
+        [
+          17,
+          5,
+          "p1*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          17,
+          6,
+          "p2*p3*(alpha*p0**2 + 3*alpha*p1**2 + 3*alpha*p2**2 + 3*alpha*p3**2 - 3*c1)/6"
+        ],
+        [
+          17,
+          7,
+          "(3*alpha*p0**2*p1**2 + 3*alpha*p0**2*p2**2 + 4*alpha*p0**2*p3**2 - 3*alpha*p1**4 - 6*alpha*p1**2*p2**2 - 3*alpha*p1**2*p3**2 - 3*alpha*p2**4 - 3*alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          17,
+          8,
+          "p0*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          17,
+          9,
+          "-2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          17,
+          10,
+          "-p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          17,
+          11,
+          "p0*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          17,
+          12,
+          "-p0*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          17,
+          13,
+          "-alpha*p0*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          18,
+          4,
+          "-(2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**4 + 2*alpha*p2**2*p3**2 + alpha*p3**4 - 3*c1*p2**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          18,
+          5,
+          "2*alpha*p0*p1*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          18,
+          6,
+          "-p0*p2*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          18,
+          7,
+          "-p0*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          18,
+          8,
+          "-alpha*(p0**2 - p2**2 - p3**2)**2/3"
+        ],
+        [
+          18,
+          9,
+          "-2*alpha*p1*p2*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          18,
+          10,
+          "-2*alpha*p1*p3*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          18,
+          11,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - 2*alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**2*p3**2 + alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          18,
+          12,
+          "p2*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          18,
+          13,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 + alpha*p2**4 + alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          19,
+          4,
+          "-p1*p2*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          19,
+          5,
+          "p0*p2*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          19,
+          6,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          19,
+          7,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          19,
+          8,
+          "-alpha*p1*p2*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          19,
+          9,
+          "-(3*alpha*p0**4 - 3*alpha*p0**2*p1**2 - 3*alpha*p0**2*p2**2 - 6*alpha*p0**2*p3**2 + 4*alpha*p1**2*p2**2 + 3*alpha*p1**2*p3**2 + 3*alpha*p2**2*p3**2 + 3*alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          19,
+          10,
+          "-p2*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          19,
+          11,
+          "-alpha*p1*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          19,
+          12,
+          "-p1*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          19,
+          13,
+          "p1*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          20,
+          4,
+          "-p1*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          20,
+          5,
+          "p0*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          20,
+          6,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          20,
+          7,
+          "p0*p1*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          20,
+          8,
+          "-alpha*p1*p3*(p0**2 - p2**2 - p3**2)/3"
+        ],
+        [
+          20,
+          9,
+          "-p2*p3*(3*alpha*p0**2 + alpha*p1**2 - 3*alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          20,
+          10,
+          "-(3*alpha*p0**4 - 3*alpha*p0**2*p1**2 - 6*alpha*p0**2*p2**2 - 3*alpha*p0**2*p3**2 + 3*alpha*p1**2*p2**2 + 4*alpha*p1**2*p3**2 + 3*alpha*p2**4 + 3*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          20,
+          11,
+          "p1*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          20,
+          12,
+          "-p1*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          20,
+          13,
+          "-alpha*p1*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          21,
+          4,
+          "(alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 + alpha*p0**2*p3**2 - alpha*p1**4 - alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 - alpha*p2**2*p3**2 - alpha*p3**4 + 3*c1*p1**2 + 3*c1*p3**2)/6"
+        ],
+        [
+          21,
+          5,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          21,
+          6,
+          "2*alpha*p0*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          21,
+          7,
+          "-p0*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          21,
+          8,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - 2*alpha*p1**2*p2**2 + alpha*p1**2*p3**2 + alpha*p2**2*p3**2 + alpha*p3**4 + 3*c1*p0**2 - 3*c1*p3**2)/6"
+        ],
+        [
+          21,
+          9,
+          "-2*alpha*p1*p2*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          21,
+          10,
+          "p1*p3*(alpha*p0**2 - alpha*p1**2 - 3*alpha*p2**2 - alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          21,
+          11,
+          "-alpha*(p0**2 - p1**2 - p3**2)**2/3"
+        ],
+        [
+          21,
+          12,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          21,
+          13,
+          "(alpha*p0**4 - 2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**4 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 - 2*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          22,
+          4,
+          "-p2*p3*(3*alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          5,
+          "2*alpha*p0*p1*p2*p3/3"
+        ],
+        [
+          22,
+          6,
+          "p0*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          7,
+          "p0*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          8,
+          "p2*p3*(alpha*p0**2 - 3*alpha*p1**2 - alpha*p2**2 - alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          9,
+          "-p1*p3*(3*alpha*p0**2 - 3*alpha*p1**2 + alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          10,
+          "-p1*p2*(3*alpha*p0**2 - 3*alpha*p1**2 - 3*alpha*p2**2 + alpha*p3**2 + 3*c1)/6"
+        ],
+        [
+          22,
+          11,
+          "-alpha*p2*p3*(p0**2 - p1**2 - p3**2)/3"
+        ],
+        [
+          22,
+          12,
+          "-(3*alpha*p0**4 - 6*alpha*p0**2*p1**2 - 3*alpha*p0**2*p2**2 - 3*alpha*p0**2*p3**2 + 3*alpha*p1**4 + 3*alpha*p1**2*p2**2 + 3*alpha*p1**2*p3**2 + 4*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          22,
+          13,
+          "-alpha*p2*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          23,
+          4,
+          "(alpha*p0**2*p1**2 + alpha*p0**2*p2**2 - 2*alpha*p0**2*p3**2 - alpha*p1**4 - 2*alpha*p1**2*p2**2 - alpha*p1**2*p3**2 - alpha*p2**4 - alpha*p2**2*p3**2 + 3*c1*p1**2 + 3*c1*p2**2)/6"
+        ],
+        [
+          23,
+          5,
+          "-p0*p1*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          23,
+          6,
+          "-p0*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          23,
+          7,
+          "2*alpha*p0*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          23,
+          8,
+          "(alpha*p0**4 - alpha*p0**2*p1**2 - 2*alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**2*p2**2 - 2*alpha*p1**2*p3**2 + alpha*p2**4 + alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p2**2)/6"
+        ],
+        [
+          23,
+          9,
+          "p1*p2*(alpha*p0**2 - alpha*p1**2 - alpha*p2**2 - 3*alpha*p3**2 + 3*c1)/3"
+        ],
+        [
+          23,
+          10,
+          "-2*alpha*p1*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          23,
+          11,
+          "(alpha*p0**4 - 2*alpha*p0**2*p1**2 - alpha*p0**2*p2**2 - alpha*p0**2*p3**2 + alpha*p1**4 + alpha*p1**2*p2**2 + alpha*p1**2*p3**2 - 2*alpha*p2**2*p3**2 + 3*c1*p0**2 - 3*c1*p1**2)/6"
+        ],
+        [
+          23,
+          12,
+          "-2*alpha*p2*p3*(p0**2 - p1**2 - p2**2)/3"
+        ],
+        [
+          23,
+          13,
+          "-alpha*(p0**2 - p1**2 - p2**2)**2/3"
+        ],
+        [
+          24,
+          14,
+          "2*p0"
+        ],
+        [
+          24,
+          15,
+          "-2*p1"
+        ],
+        [
+          24,
+          16,
+          "-2*p2"
+        ],
+        [
+          24,
+          17,
+          "-2*p3"
+        ],
+        [
+          25,
+          15,
+          "2*p0"
+        ],
+        [
+          25,
+          18,
+          "-2*p1"
+        ],
+        [
+          25,
+          19,
+          "-2*p2"
+        ],
+        [
+          25,
+          20,
+          "-2*p3"
+        ],
+        [
+          26,
+          16,
+          "2*p0"
+        ],
+        [
+          26,
+          19,
+          "-2*p1"
+        ],
+        [
+          26,
+          21,
+          "-2*p2"
+        ],
+        [
+          26,
+          22,
+          "-2*p3"
+        ],
+        [
+          27,
+          17,
+          "2*p0"
+        ],
+        [
+          27,
+          20,
+          "-2*p1"
+        ],
+        [
+          27,
+          22,
+          "-2*p2"
+        ],
+        [
+          27,
+          23,
+          "-2*p3"
+        ]
+      ],
+      "sha256": "ab8dab767009d7e9d3b441cb7e6f36b8c4574f622168f534248908f7f8845ec1",
+      "shape": [
+        28,
+        28
+      ]
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/compensated_minimal_bv_operator_export.py",
+    "generator_sha256": "04d36cdcdb084ae9cf4913651d0d17f2caeb4f92c9db2df8fcfc6a9dfb3ae7b2",
+    "input_base_commit": "25364fb760ed869f193983eb179ad3b120b52557"
+  },
+  "result_id": "COMPENSATED_MINIMAL_BV_CANONICAL_OPERATOR_EXPORT",
+  "result_state": "CANONICAL_OPERATOR_SNAPSHOT_EXPORTED_INDEPENDENT_VERIFICATION_REQUIRED",
+  "schema": "compensated-minimal-bv-operator-export-v1",
+  "schema_path": "bridge/einstein_sector/schema/compensated_minimal_bv_operator_export.schema.json",
+  "schema_sha256": "6f13148aafdac6236cf36b074f10758d20923cbb5f6790f7758b351e141f6d6a",
+  "scope_guards": [
+    "this is a canonical LOCAL-ALGEBRAIC operator snapshot, not a physical state space",
+    "the odd BV pairing is not the physical Cauchy or radiative symplectic form",
+    "independent verification is a separate certificate and lifecycle gate"
+  ],
+  "symbols": [
+    "p0",
+    "p1",
+    "p2",
+    "p3",
+    "c1",
+    "alpha",
+    "v"
+  ],
+  "verdict": "ACTUAL_SPARSE_OPERATORS_EXPORTED_WITH_CANONICAL_CONTENT_HASHES",
+  "verification_command": "python3 -m bridge.einstein_sector.compensated_minimal_bv_operator_export --verify bridge/certificates/compensated_minimal_bv_operator_export.json"
+}

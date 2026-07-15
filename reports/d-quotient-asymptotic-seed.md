@@ -59,7 +59,7 @@ Input base commit: `69b2b240d9a06a5473d275a16ed41d6df12687f8`.
 |---|---|
 | `d_quotient_asymptotic_seed.py` | `69a9a43827b2dbd901e69cb1b32a96cf7d153ab390b0a3c99e0cc696a4bdcb52` |
 | `d_quotient_asymptotic_seed.schema.json` | `a1feac2bbd71d557cec16504c039863c8630a3d59df1a8004726e579878f3de6` |
-| `d_quotient_asymptotic_seed.json` | `359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663` |
+| `d_quotient_asymptotic_seed.json` | `4ac34cb9bc6b755c48def9553ed82c0e3be3a05853e89656d252c71cc6b73099` |
 | `test_d_quotient_asymptotic_seed.py` | `397b24f9fa5c786da72b0d3276fe068d9ecd9ca9568ac74f8ebe454cea7664c3` |
 | `conformal-d-quotient-asymptotic-seed.md` | `3bbe13fbd6d4f0060f3850c267ec3fdeb75592cbb81651373abb852695787b0b` |
 
@@ -80,6 +80,11 @@ causal, and scattering promotions.
 The certificate hash was refreshed after bootstrap schema v2 imported the
 flat Einstein symplectic-restriction no-go.  No D-generator identity or
 verdict changed.
+
+It was refreshed again after the fail-closed Einstein-sector theorem imported
+the independently verified compensated nonzero-characteristic snapshot.  The
+new input certifies local `(0,2,2,0)` null-symbol cohomology and leaves every
+asymptotic phase-space, charge, causal, and scattering flag unchanged.
 
 Tier 2 was limited to the directly affected Einstein-sector certificate
 chain.  Tier 3 is not required because this work changes no shared core

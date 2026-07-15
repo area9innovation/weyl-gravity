@@ -56,6 +56,12 @@ The affected tests additionally verify the zero-versus-rank-two symplectic
 matrices, local-improvement guard, `AF-E6/E7` partial statuses, and rejection
 of a forged full scattering promotion.
 
+The certificate was subsequently regenerated when its fail-closed
+Einstein-sector input imported the independently verified compensated
+nonzero-characteristic snapshot.  This changed only the transitive input hash:
+the bootstrap equations, `AF-E1`--`AF-E8` statuses, and all causal/scattering
+claim flags are unchanged.
+
 Tier 2 regenerated the direct asymptotic and D-quotient consumers.  Existing
 cylinder and residual mathematical inputs were unchanged and checked by
 hash.  Tier 3 was not run because no freeze, release, shared core algebra, or

@@ -30,6 +30,10 @@ INPUTS = {
     / "analytic_completion"
     / "certificates"
     / "completed_H4.json",
+    "compensated_characteristic_snapshot": ROOT
+    / "bridge"
+    / "certificates"
+    / "compensated_nonzero_characteristic_snapshot.json",
 }
 
 
@@ -116,6 +120,33 @@ def _verify_inputs(records: dict[str, dict[str, Any]]) -> None:
         "completed residual classes are no longer guarded as non-particle classes",
     )
 
+    characteristic = records["compensated_characteristic_snapshot"]
+    _require(
+        characteristic.get("result_state")
+        == "SCOPED_EXACT_SNAPSHOT_CERTIFIED_GLOBAL_CLASSICAL_FREEZE_OPEN"
+        and characteristic.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "compensated characteristic snapshot scope drifted",
+    )
+    branches = characteristic.get("branches", {})
+    _require(
+        branches.get("massless", {}).get("cohomology_dimensions")
+        == {"-1": 0, "0": 2, "1": 2, "2": 0}
+        and branches.get("second_root", {}).get("cohomology_dimensions")
+        == {"-1": 0, "0": 5, "1": 5, "2": 0},
+        "compensated characteristic cohomology inventory drifted",
+    )
+    flags = characteristic.get("claim_flags", {})
+    _require(
+        flags.get("operator_export_independently_verified") is True
+        and flags.get("momentum_reversing_odd_bv_pairings_nondegenerate") is True
+        and flags.get("zero_momentum_global_modes_classified") is False
+        and flags.get("physical_cauchy_symplectic_pairing_computed_here") is False
+        and flags.get("classical_import_freeze_complete") is False
+        and flags.get("lorentzian_causal_claim") is False,
+        "compensated characteristic claim boundary drifted",
+    )
+
 
 def build_certificate() -> dict[str, Any]:
     records = {name: _load(path) for name, path in INPUTS.items()}
@@ -125,7 +156,7 @@ def build_certificate() -> dict[str, Any]:
         "schema": "pure-weyl-einstein-sector-theorem-v1",
         "result_id": "CLASSICAL_EINSTEIN_SECTOR_THEOREM",
         "result_state": "PROVED_WITH_OPEN_BOUNDARY_RAIL",
-        "source_commit": "689d835ad2ff59b2de23b14d9610fe85dad24b95",
+        "source_commit": "25364fb760ed869f193983eb179ad3b120b52557",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "theorem": {
             "name": "Einstein locus and closed-cylinder state separation",
@@ -182,6 +213,24 @@ def build_certificate() -> dict[str, Any]:
                 "if cylinder time translation or asymptotic symmetries are retained as "
                 "physical charges, the absolute residual complex used here is not the "
                 "physical-state complex"
+            ),
+        },
+        "compensated_local_symbol_snapshot": {
+            "phase": "flat constant compensator v!=0 with c1=alpha=-1 and v=1 fixture",
+            "generic_cohomology": [0, 0, 0, 0],
+            "nonzero_null_cohomology": [0, 2, 2, 0],
+            "second_root_cohomology": [0, 5, 5, 0],
+            "representative_data": "exact inclusions, pi_cl projections, and homotopies",
+            "pairing": "nondegenerate odd BV pairing between p and -p cohomology fibers",
+            "interpretation": (
+                "the two null degree-zero classes are local helicity-two precursors "
+                "before the global residual quotient; the five second-root classes "
+                "are the extra Einstein--Weyl branch"
+            ),
+            "scope": (
+                "REDUCED-MODE symbol fibers only; p=0 global modes, the physical "
+                "Cauchy/radiative pairing, global classical freeze, and causal "
+                "scattering remain open"
             ),
         },
         "classification": {

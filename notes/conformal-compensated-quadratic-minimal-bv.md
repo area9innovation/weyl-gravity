@@ -225,9 +225,18 @@ complete classical import freeze.  The following remain open:
 - a dynamical matter BV complex and sourced-defect chain map;
 - null-infinity, scattering, and quantum constructions.
 
-The next lifecycle gate is `COMPENSATED_CLASSICAL_IMPORT_FREEZE`, with an
-explicit result-kind choice, cohomology representatives, pairing, chain maps,
-provenance, and missing-object ledger.
+The canonical operator export and the first scoped characteristic result are
+now complete in
+`notes/conformal-compensated-nonzero-characteristic-snapshot.md`.  A separate
+consumer verifies the actual sparse matrices without importing this
+constructor.  Exact representative-frame contractions give cohomology
+dimensions `(0,2,2,0)` on the nonzero null branch and `(0,5,5,0)` on the
+second root, with nondegenerate momentum-reversing odd BV pairings.
+
+That is a scoped symbol snapshot, not the global
+`COMPENSATED_CLASSICAL_IMPORT_FREEZE`.  Covariant characteristic bundles,
+global zero modes, the physical Cauchy/radiative pairing, matter/defect chain
+maps, and nonminimal causal data remain open.
 
 ## Berger-clock coordination
 
