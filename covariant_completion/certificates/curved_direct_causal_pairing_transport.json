@@ -1,0 +1,80 @@
+{
+  "Green_pairing_equals_current_pairing": true,
+  "causal_difference": {
+    "causal_support": true,
+    "chain_identity": "Q Delta_Lambda+Delta_Lambda Q=0 by subtracting the two same-sided homotopy identities",
+    "definition": "Delta_Lambda=Lambda_full,+-Lambda_full,-",
+    "graded_antisymmetry": "Delta_Lambda^sharp=-Delta_Lambda",
+    "local_algebraic_cancellation": "H_alg is identical in the + and - homotopies and cancels",
+    "reduced_formula": "Delta_Lambda=i_end U ((p Delta_Lambda_parent i) direct-sum 0) U^-1 p_end",
+    "same_sided_adjoint": "Lambda_full,+^sharp=Lambda_full,-",
+    "same_sided_formula": "Lambda_full,+/-=H_alg+i_end Lambda_end,+/- p_end",
+    "trace_doublet_cancellation": "h_tr is identical in the + and - endpoint homotopies and cancels"
+  },
+  "dependency_tag": "LORENTZIAN-CAUSAL",
+  "downstream_not_promoted_by_this_certificate": [
+    "causal_quasi_isomorphism",
+    "residual_endpoint_recovery",
+    "SO42_equivariant_transport",
+    "final_covariant_H4"
+  ],
+  "fail_closed": true,
+  "fail_closed_guards": {
+    "EAL_regression:verified": true,
+    "curved_pbw:theorem_boundary.cyclic_i_sharp_equals_p": true,
+    "full_homotopy:causal_green_homotopy": true,
+    "full_homotopy:full_hybrid_assembly.graded_adjoint_exact_conditionally": true,
+    "green_current_theorem:Green_pairing_equals_current_pairing": true,
+    "manual_final_H4_promotion_rejected": true,
+    "prolonged_current:prolonged_current_comparison": true
+  },
+  "final_covariant_H4": false,
+  "input_certificate_sha256": {
+    "EAL_regression": "ae9f0cc61bfa38e0a4b202d822ad23bcdb0d4771dbcc1914805fc53141b895b8",
+    "auxiliary_metric_current": "c98211f74ae81b5b2d8acaadbd61d20e3cfa58bf0b24ef4077e29677457812bc",
+    "curved_pbw": "ae8fa2cc43cc655b13a8a120b4479e0c1603270df57555b30a1e81534e688fd4",
+    "full_homotopy": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee",
+    "green_current_theorem": "ad13f2177b4854bb488c1d1e3d3dfc58a61900e99a01c782132cb8f6fcf96082",
+    "parent_transfer": "228e4ffd21fccdac155629342ea75ab590f10b75272dcfe20fdc2fa304edb7d8",
+    "prolonged_current": "0a0f2d440c9a9466468bc493b61d8c52f0bb4634a22871d0118140043e2b89ac"
+  },
+  "normalization": {
+    "Krein_signs": {
+      "A": -1,
+      "E": 1,
+      "L": -1
+    },
+    "all_energy": true,
+    "chiralities": [
+      "+",
+      "-"
+    ],
+    "families": [
+      "E",
+      "A",
+      "L"
+    ],
+    "statement": "+I_E direct-sum (-I_A) direct-sum (-I_L)"
+  },
+  "pairing_compatibility": true,
+  "pairing_transport": {
+    "auxiliary_to_metric": "i^*omega_aux-omega_met=d beta+Q gamma",
+    "canonical_D_TF_inverse_used": false,
+    "closed_cauchy_surface": "boundary(S^3)=empty",
+    "cohomological_improvements": "d-exact integrates to zero; Q-exact vanishes on cohomology",
+    "cyclic_BGG_transfer": "i^sharp=p",
+    "cyclic_hybrid_transfer": "i_end^sharp=p_end",
+    "cyclic_trace_shear": "U^sharp=U^-1",
+    "global_W0_G_end_identity_used": false,
+    "implementation_neutral": true,
+    "parent_Green_current_identity": true,
+    "positive_PDE_symmetrizer_used": false,
+    "prolonged_to_auxiliary": "I^*omega_prol-omega_aux=d beta+Q gamma"
+  },
+  "schema": "pure-weyl-direct-causal-pairing-transport-v1",
+  "status_flags_promoted": [
+    "Green_pairing_equals_current_pairing",
+    "pairing_compatibility"
+  ],
+  "theorem_boundary": "The causal pairing defined by Delta_Lambda agrees on cohomology with the prolonged, auxiliary, metric and E/A/L Cauchy-current pairings.  This uses the direct cyclic transferred homotopy and does not assert a canonical D_TF Green inverse, a prolonged witness, a causal quasi-isomorphism, endpoint recovery, residual equivariance or final covariant H4."
+}
