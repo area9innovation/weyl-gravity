@@ -244,6 +244,7 @@ def main() -> None:
 
     emit_args = ("--emit",) if args.emit else ()
     guarded_args = emit_args + (("--guards",) if args.guards else ())
+    guard_only_args = ("--guards",) if args.guards else ()
 
     # These producers emit disjoint certificates. The older structural
     # verifiers expose their overclaim checks through dedicated flags below
@@ -321,6 +322,9 @@ def main() -> None:
             ("verify_conformal_rank14_full_cone_symbol_gate.py", guarded_args),
             ("verify_conformal_rank14_full_cone_rees_gate.py", guarded_args),
             ("verify_conformal_rank14_weyl_cotton_incoming_map_ledger.py", guarded_args),
+            ("verify_conformal_rank14_corrected_rees_weights.py", guarded_args),
+            ("verify_conformal_rank14_strict_local_contraction_no_go.py", guarded_args),
+            ("verify_conformal_prolonged_hybrid_algebraic_projector.py", guarded_args),
             ("verify_conformal_expanded_relative_witness_incidence_screen.py", guarded_args),
             ("verify_conformal_expanded_relative_witness_alternative_semisimplicity.py", guarded_args),
             ("verify_conformal_expanded_relative_witness_alternative_family_no_go.py", guarded_args),
@@ -338,6 +342,10 @@ def main() -> None:
     _run("verify_conformal_curved_core_curvature_chain_map.py", *guarded_args)
     _run("verify_conformal_curvature_mapping_cylinder_substitution.py")
     _run("verify_conformal_prolonged_current_comparison.py")
+    _run(
+        "verify_conformal_rank14_endpoint_green_witness_boundary.py",
+        *guard_only_args,
+    )
     _run(
         "verify_conformal_curvature_mapping_cylinder_witness.py",
         *guarded_args,
