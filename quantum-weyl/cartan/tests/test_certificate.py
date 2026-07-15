@@ -50,14 +50,39 @@ class CartanDefectCertificateTests(unittest.TestCase):
             "VERIFIED",
         )
 
+    def test_scheme_covariance_preserves_class_and_rejects_illegal_shift(self) -> None:
+        fixture = build_certificate()["scheme_covariance_fixture"]
+        self.assertEqual(fixture["baseline_representative_status"], "ZERO")
+        self.assertEqual(
+            fixture["uncompensated_representative_status"], "EXACT_REMOVABLE"
+        )
+        self.assertEqual(
+            fixture["quotient_class_relation"],
+            "SAME_TRIVIAL_CLASS_BY_EXPLICIT_Q_EXACT_SHIFT",
+        )
+        self.assertEqual(fixture["inadmissible_scheme_shift_status"], "REJECTED")
+        self.assertEqual(fixture["scheme_covariance_status"], "VERIFIED")
+
     def test_physical_ledgers_fail_closed(self) -> None:
         certificate = build_certificate()
         self.assertEqual(certificate["classical_commit"], "UNFROZEN")
         self.assertTrue(
             all(
-                item["status"] == "UNDEFINED_ANALYTICALLY"
+                item["analytic_operator_status"] == "UNDEFINED_ANALYTICALLY"
                 for item in certificate["candidate_sector_ledger"]
             )
+        )
+        self.assertTrue(
+            all(
+                item["coefficient_status"] == "NOT_COMPUTED"
+                for item in certificate["candidate_sector_ledger"]
+            )
+        )
+        self.assertEqual(
+            certificate["candidate_sector_ledger"][0][
+                "algebraic_classification_status"
+            ],
+            "IN_PROGRESS",
         )
         self.assertTrue(
             all(

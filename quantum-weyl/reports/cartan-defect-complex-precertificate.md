@@ -55,11 +55,22 @@ in the full endomorphism complex but nontrivial in the admissible subcomplex
 because its sole degree-minus-one primitive is forbidden.  This prevents an
 illegal finite counterterm from producing a false `EXACT_REMOVABLE` result.
 
+The certificate also verifies first-order scheme covariance.  An
+uncompensated homotopy shift changes the defect by the stored exact term
+`[Q,X]`; the baseline `ZERO` representative and shifted `EXACT_REMOVABLE`
+representative therefore define the same trivial quotient class.  The
+compensated homotopy shift and simultaneous similarity transformation leave
+the representative unchanged exactly.  A scheme shift excluded by the
+admissibility constraints is rejected.
+
 ## Fail-closed physical status
 
-Every bulk, residual, boundary/corner, measure, and scalar-clock candidate
-sector is `UNDEFINED_ANALYTICALLY`.  Every requested physical setting has
-verdict `ANALYTIC_FRAMEWORK_MISSING`.  In particular:
+The sector ledger now distinguishes algebraic, analytic, and coefficient
+status.  Bulk algebraic classification is `IN_PROGRESS`; residual and clock
+classification are `BLOCKED`; boundary and measure classification are
+`NOT_COMPUTED`.  Every analytic operator remains `UNDEFINED_ANALYTICALLY`,
+every coefficient remains `NOT_COMPUTED`, and every requested physical
+setting has verdict `ANALYTIC_FRAMEWORK_MISSING`.  In particular:
 
 - the classical compact-cylinder handoff is parsed with mutation guards and
   imported by hash; it says that
@@ -82,13 +93,13 @@ them is a later computation after both admissible complexes are declared.
 ```text
 command:
   PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -q
-elapsed_seconds: 0.15
-status: PASS (22 tests)
+elapsed_seconds: 0.19
+status: PASS (27 tests)
 test_tier: 1
 
 command:
   PYTHONPATH=quantum-weyl python3 -m cartan.certificate --check
-elapsed_seconds: 0.08
+elapsed_seconds: 0.07
 status: PASS
 test_tier: 1
 
@@ -113,7 +124,7 @@ test_tier: 0
 command:
   PYTHONHASHSEED={1,7,123} PYTHONPATH=quantum-weyl python3 -m cartan.certificate | sha256sum
 status: PASS
-certificate_sha256: 8314dc2048ea1f0e3179395f2b25b80dd9cf278064ae6af90c9351080ab0a2cb
+certificate_sha256: aa7edc21c7250349531559657d4ec69eee2dd9100de3eedf242a8e29829e874c
 test_tier: 0
 ```
 

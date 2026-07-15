@@ -172,6 +172,59 @@ class ExactCartanDefectTests(unittest.TestCase):
                 certified_source_degrees=(0,),
             )
 
+    def test_uncompensated_homotopy_shift_changes_defect_by_exact_term(self) -> None:
+        data = acyclic_data(iota_correction=False)
+        shifted = data.with_homotopy_shift(
+            data.iota_0, compensate_lie=False
+        )
+        exact_change = graded_commutator(data.complex.q, data.iota_0)
+        self.assertEqual(
+            shifted.defect().matrix - data.defect().matrix,
+            exact_change.matrix,
+        )
+        self.assertEqual(
+            classify_closed_defect(data.complex, data.defect()).status,
+            "ZERO",
+        )
+        self.assertEqual(
+            classify_closed_defect(data.complex, shifted.defect()).status,
+            "EXACT_REMOVABLE",
+        )
+
+    def test_compensated_homotopy_shift_preserves_defect_representative(self) -> None:
+        data = acyclic_data(iota_correction=False)
+        shifted = data.with_homotopy_shift(
+            data.iota_0, compensate_lie=True
+        )
+        self.assertEqual(shifted.defect().matrix, data.defect().matrix)
+        self.assertTrue(all(shifted.checks().values()))
+
+    def test_similarity_scheme_redefinition_preserves_first_order_defect(self) -> None:
+        data = acyclic_data(iota_correction=False)
+        generator = HomogeneousOperator(
+            "R", 0, ExactMatrix.from_rows(((1, 0), (0, 0)))
+        )
+        transformed = data.conjugated_first_order(generator)
+        self.assertFalse(transformed.q_1.matrix.is_zero())
+        self.assertEqual(transformed.defect().matrix, data.defect().matrix)
+        self.assertTrue(all(transformed.checks().values()))
+
+    def test_scheme_shift_must_be_admissible_when_policy_is_supplied(self) -> None:
+        data = acyclic_data(iota_correction=False)
+        admissible = AdmissibleOperatorComplex(
+            ambient=data.complex,
+            constraints=(
+                LinearConstraint.from_row("forbid_iota_direction", -1, (1,)),
+            ),
+            certified_source_degrees=(-1, 0),
+        )
+        with self.assertRaisesRegex(ValueError, "not in the admissible"):
+            data.with_homotopy_shift(
+                data.iota_0,
+                compensate_lie=False,
+                admissible_complex=admissible,
+            )
+
     def test_nonhomogeneous_operator_is_rejected(self) -> None:
         data = acyclic_data(iota_correction=False)
         bad = HomogeneousOperator(

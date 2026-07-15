@@ -18,6 +18,7 @@ from .defect_complex import (
     HomogeneousOperator,
     LinearConstraint,
     classify_closed_defect,
+    graded_commutator,
 )
 
 
@@ -178,6 +179,63 @@ def _admissibility_receipt() -> dict[str, Any]:
     }
 
 
+def _scheme_covariance_receipt() -> dict[str, Any]:
+    data = _acyclic_fixture(corrected=False)
+    shift = data.iota_0
+    uncompensated = data.with_homotopy_shift(shift, compensate_lie=False)
+    compensated = data.with_homotopy_shift(shift, compensate_lie=True)
+    generator = HomogeneousOperator(
+        "R", 0, ExactMatrix.from_rows(((1, 0), (0, 0)))
+    )
+    conjugated = data.conjugated_first_order(generator)
+    exact_change = HomogeneousOperator(
+        "A_shift_minus_A",
+        0,
+        uncompensated.defect().matrix - data.defect().matrix,
+    )
+    expected_change = graded_commutator(data.complex.q, shift, name="[Q,X]")
+    baseline_class = classify_closed_defect(data.complex, data.defect())
+    shifted_class = classify_closed_defect(data.complex, uncompensated.defect())
+    if exact_change.matrix != expected_change.matrix:
+        raise AssertionError("homotopy scheme shift is not the expected exact term")
+    if baseline_class.status != "ZERO" or shifted_class.status != "EXACT_REMOVABLE":
+        raise AssertionError("scheme fixture did not preserve the trivial quotient class")
+    if compensated.defect().matrix != data.defect().matrix:
+        raise AssertionError("compensated homotopy shift changed the defect")
+    if conjugated.defect().matrix != data.defect().matrix:
+        raise AssertionError("similarity scheme redefinition changed the defect")
+    admissible = AdmissibleOperatorComplex(
+        ambient=data.complex,
+        constraints=(
+            LinearConstraint.from_row("forbid_iota_direction", -1, (1,)),
+        ),
+        certified_source_degrees=(-1, 0),
+    )
+    try:
+        data.with_homotopy_shift(
+            shift,
+            compensate_lie=False,
+            admissible_complex=admissible,
+        )
+    except ValueError:
+        inadmissible_shift_status = "REJECTED"
+    else:
+        raise AssertionError("inadmissible scheme shift was accepted")
+    return {
+        "fixture_id": "first_order_scheme_covariance",
+        "scope": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY",
+        "baseline_representative_status": baseline_class.status,
+        "uncompensated_representative_status": shifted_class.status,
+        "quotient_class_relation": "SAME_TRIVIAL_CLASS_BY_EXPLICIT_Q_EXACT_SHIFT",
+        "exact_representative_change": _operator_payload(exact_change),
+        "exact_shift_primitive": _operator_payload(shift),
+        "compensated_representative_status": "UNCHANGED_EXACTLY",
+        "similarity_redefinition_status": "UNCHANGED_EXACTLY",
+        "inadmissible_scheme_shift_status": inadmissible_shift_status,
+        "scheme_covariance_status": "VERIFIED",
+    }
+
+
 def _fixture_receipt(fixture_id: str, data: FirstOrderCartanData) -> dict[str, Any]:
     checks = data.checks()
     if not all(checks.values()):
@@ -307,35 +365,46 @@ def build_certificate() -> dict[str, Any]:
         "mechanics_fixtures": list(fixtures),
         "sourced_consistency_fixture": _sourced_consistency_receipt(),
         "admissibility_fixture": _admissibility_receipt(),
+        "scheme_covariance_fixture": _scheme_covariance_receipt(),
         "classical_D_import": import_receipt(),
         "candidate_sector_ledger": [
             {
                 "sector": "bulk_local_pure_weyl",
-                "status": "UNDEFINED_ANALYTICALLY",
+                "algebraic_classification_status": "IN_PROGRESS",
+                "analytic_operator_status": "UNDEFINED_ANALYTICALLY",
+                "coefficient_status": "NOT_COMPUTED",
                 "classification_gate": "AFN0_LOWER_FORM_AND_EULER_COMPLETION_THEN_MINIMAL_BV_IMPORT",
                 "missing_input": "renormalized Q_1, iota_1, and L_D^(1) on a declared observable algebra",
             },
             {
                 "sector": "residual_zero_modes_and_central_terms",
-                "status": "UNDEFINED_ANALYTICALLY",
+                "algebraic_classification_status": "BLOCKED",
+                "analytic_operator_status": "UNDEFINED_ANALYTICALLY",
+                "coefficient_status": "NOT_COMPUTED",
                 "classification_gate": "FROZEN_EQUIVARIANT_CLASSICAL_CONTRACTION_AND_RESTORED_LOCAL_QME",
                 "missing_input": "renormalized residual Ward algebra and zero-mode measure",
             },
             {
                 "sector": "boundary_and_corner",
-                "status": "UNDEFINED_ANALYTICALLY",
+                "algebraic_classification_status": "NOT_COMPUTED",
+                "analytic_operator_status": "UNDEFINED_ANALYTICALLY",
+                "coefficient_status": "NOT_COMPUTED",
                 "classification_gate": "DECLARED_BFV_BOUNDARY_OBSERVABLE_AND_CHARGE_COMPLEX",
                 "missing_input": "boundary conditions, charges, corner fields, and renormalized products",
             },
             {
                 "sector": "measure_and_jacobian",
-                "status": "UNDEFINED_ANALYTICALLY",
+                "algebraic_classification_status": "NOT_COMPUTED",
+                "analytic_operator_status": "UNDEFINED_ANALYTICALLY",
+                "coefficient_status": "NOT_COMPUTED",
                 "classification_gate": "ADMISSIBLE_REGULARIZATION_AND_MEASURE_DEFINITION",
                 "missing_input": "regularized BV Laplacian or equivalent Slavnov-breaking construction",
             },
             {
                 "sector": "conformal_scalar_clock",
-                "status": "UNDEFINED_ANALYTICALLY",
+                "algebraic_classification_status": "BLOCKED",
+                "analytic_operator_status": "UNDEFINED_ANALYTICALLY",
+                "coefficient_status": "NOT_COMPUTED",
                 "classification_gate": "SCALAR_BV_EXTENSION_THEN_BULK_AND_RELATIONAL_WARD_CLASSIFICATION",
                 "missing_input": "clock field/antifield rows, relational observable algebra, and measure",
             },
@@ -358,6 +427,7 @@ def build_certificate() -> dict[str, Any]:
                 "the sourced Jacobi/Ward consistency identity in finite exact complexes, including nonzero QME or Ward sources",
                 "exact ZERO, EXACT_REMOVABLE, and NONTRIVIAL_ANOMALY classification mechanics with primitive or dual witnesses",
                 "exact admissible-subcomplex classification that rejects an ambient but forbidden primitive",
+                "first-order scheme covariance under admissible homotopy shifts and simultaneous similarity redefinitions",
                 "fail-closed lifecycle, setting, and candidate-sector ledgers",
                 "semantically verified and hash-pinned import of the classical compact-cylinder sector split without quantum promotion",
             ],

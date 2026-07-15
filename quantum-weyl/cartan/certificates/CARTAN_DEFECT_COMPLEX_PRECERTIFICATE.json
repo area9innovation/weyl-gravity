@@ -67,34 +67,44 @@
   ],
   "candidate_sector_ledger": [
     {
+      "algebraic_classification_status": "IN_PROGRESS",
+      "analytic_operator_status": "UNDEFINED_ANALYTICALLY",
       "classification_gate": "AFN0_LOWER_FORM_AND_EULER_COMPLETION_THEN_MINIMAL_BV_IMPORT",
+      "coefficient_status": "NOT_COMPUTED",
       "missing_input": "renormalized Q_1, iota_1, and L_D^(1) on a declared observable algebra",
-      "sector": "bulk_local_pure_weyl",
-      "status": "UNDEFINED_ANALYTICALLY"
+      "sector": "bulk_local_pure_weyl"
     },
     {
+      "algebraic_classification_status": "BLOCKED",
+      "analytic_operator_status": "UNDEFINED_ANALYTICALLY",
       "classification_gate": "FROZEN_EQUIVARIANT_CLASSICAL_CONTRACTION_AND_RESTORED_LOCAL_QME",
+      "coefficient_status": "NOT_COMPUTED",
       "missing_input": "renormalized residual Ward algebra and zero-mode measure",
-      "sector": "residual_zero_modes_and_central_terms",
-      "status": "UNDEFINED_ANALYTICALLY"
+      "sector": "residual_zero_modes_and_central_terms"
     },
     {
+      "algebraic_classification_status": "NOT_COMPUTED",
+      "analytic_operator_status": "UNDEFINED_ANALYTICALLY",
       "classification_gate": "DECLARED_BFV_BOUNDARY_OBSERVABLE_AND_CHARGE_COMPLEX",
+      "coefficient_status": "NOT_COMPUTED",
       "missing_input": "boundary conditions, charges, corner fields, and renormalized products",
-      "sector": "boundary_and_corner",
-      "status": "UNDEFINED_ANALYTICALLY"
+      "sector": "boundary_and_corner"
     },
     {
+      "algebraic_classification_status": "NOT_COMPUTED",
+      "analytic_operator_status": "UNDEFINED_ANALYTICALLY",
       "classification_gate": "ADMISSIBLE_REGULARIZATION_AND_MEASURE_DEFINITION",
+      "coefficient_status": "NOT_COMPUTED",
       "missing_input": "regularized BV Laplacian or equivalent Slavnov-breaking construction",
-      "sector": "measure_and_jacobian",
-      "status": "UNDEFINED_ANALYTICALLY"
+      "sector": "measure_and_jacobian"
     },
     {
+      "algebraic_classification_status": "BLOCKED",
+      "analytic_operator_status": "UNDEFINED_ANALYTICALLY",
       "classification_gate": "SCALAR_BV_EXTENSION_THEN_BULK_AND_RELATIONAL_WARD_CLASSIFICATION",
+      "coefficient_status": "NOT_COMPUTED",
       "missing_input": "clock field/antifield rows, relational observable algebra, and measure",
-      "sector": "conformal_scalar_clock",
-      "status": "UNDEFINED_ANALYTICALLY"
+      "sector": "conformal_scalar_clock"
     }
   ],
   "claim_boundary": {
@@ -103,6 +113,7 @@
       "the sourced Jacobi/Ward consistency identity in finite exact complexes, including nonzero QME or Ward sources",
       "exact ZERO, EXACT_REMOVABLE, and NONTRIVIAL_ANOMALY classification mechanics with primitive or dual witnesses",
       "exact admissible-subcomplex classification that rejects an ambient but forbidden primitive",
+      "first-order scheme covariance under admissible homotopy shifts and simultaneous similarity redefinitions",
       "fail-closed lifecycle, setting, and candidate-sector ledgers",
       "semantically verified and hash-pinned import of the classical compact-cylinder sector split without quantum promotion"
     ],
@@ -318,21 +329,76 @@
     "dependency_manifest_sha256": "6cb41b26024e62f0115e4365c97771504ec19e0437cd61f8f326feca5dbd43a8",
     "schema": "quantum-weyl/cartan/schema/cartan_defect_precertificate.schema.json",
     "source_manifest": {
-      "README.md": "6933b9838d5cb00c6251e7394e717c6f4396a6366a38c858f08a6021b1cc1374",
+      "README.md": "405238120cef23db9aef03fa15b9cbfa824641062e1fdbefa4d1183413bd812e",
       "__init__.py": "cb58b22f4ecc525df804b0059715239d2d3d70f2c7046cc3db4c0b79f458fc1e",
-      "certificate.py": "20fd1d56a834c30637b87f0ae32eb7b36df03dbd8bc98ee95545b51c1b47ee0a",
+      "certificate.py": "a79c13ebaa97a7d892078fe490fbf833fe982610fd60ec6b6b33f699dcf4b6b5",
       "classical_import.py": "825b4f9d1160b5b3de4ac134001d3523b8a2874eb6e8be96bdde81fd4c148ebe",
-      "defect_complex.py": "c70b04240d28a862c1c8fc0c6023021f30384194731991a92e87ef19de7f047f",
-      "schema/cartan_defect_precertificate.schema.json": "efef1f1c18e9f2844abd27f6ced236f4c1c4299fbb783a65887d4f64d957d793",
-      "tests/test_certificate.py": "8cfaca8cb17dc6c39f313ccf625945d835e07e6cf515c125c5c14a92131473d2",
+      "defect_complex.py": "8ed616e0a2bb66f1282cafc491ae23e98a7068702a71e3775472bafda7f06313",
+      "schema/cartan_defect_precertificate.schema.json": "f47fb15f5429ea9eb228b7052d243a5f8817348de1af7807d4ea9b44c9127b75",
+      "tests/test_certificate.py": "560bc27eb960bd710fdc5cd9178cc9e341465dd68e39e09d23f09d29a8672ad4",
       "tests/test_classical_import.py": "67047af3fa67c516ada82de097f24989192c664d77ba2518a59ca51f8341fb61",
-      "tests/test_defect_complex.py": "fef3a306a407b98e9cf40c46e1fba17a6e5774e8b00e628a867f70b010bc7211"
+      "tests/test_defect_complex.py": "648a259aa39a2a3164c746423049bcdb61f67809a6e348d2886825f80d0632d2"
     },
-    "source_manifest_sha256": "63b1d5fe8c70d52830372a5217bfdc867b164a27c89fa0e02dd0ea7557f825d5"
+    "source_manifest_sha256": "c3f7f4d000510a1179b4c60a53bb37fca2d3890d50063420e36582ee2a84fa48"
   },
   "result_id": "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE",
   "result_state": "ALGEBRAIC_ENGINE_READY_PHYSICAL_CANDIDATES_INPUT_BLOCKED",
   "schema_version": "cartan-defect-precertificate-v1",
+  "scheme_covariance_fixture": {
+    "baseline_representative_status": "ZERO",
+    "compensated_representative_status": "UNCHANGED_EXACTLY",
+    "exact_representative_change": {
+      "degree": 0,
+      "entries": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "source": 0,
+          "target": 0
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "source": 1,
+          "target": 1
+        }
+      ],
+      "name": "A_shift_minus_A",
+      "shape": [
+        2,
+        2
+      ]
+    },
+    "exact_shift_primitive": {
+      "degree": -1,
+      "entries": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "source": 1,
+          "target": 0
+        }
+      ],
+      "name": "iota_D",
+      "shape": [
+        2,
+        2
+      ]
+    },
+    "fixture_id": "first_order_scheme_covariance",
+    "inadmissible_scheme_shift_status": "REJECTED",
+    "quotient_class_relation": "SAME_TRIVIAL_CLASS_BY_EXPLICIT_Q_EXACT_SHIFT",
+    "scheme_covariance_status": "VERIFIED",
+    "scope": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY",
+    "similarity_redefinition_status": "UNCHANGED_EXACTLY",
+    "uncompensated_representative_status": "EXACT_REMOVABLE"
+  },
   "setting_ledger": [
     {
       "D_charge": "SECTOR_DEPENDENT_CLASSICALLY_P_LIN_CHARGED_P_TAUB0_GAUGE",

@@ -49,9 +49,20 @@ it violates those constraints.  The certificate includes a regression where
 an ambient `EXACT_REMOVABLE` defect becomes `NONTRIVIAL_ANOMALY` after its
 only primitive is excluded.
 
+First-order scheme changes are explicit.  An uncompensated admissible shift
+`iota_1 -> iota_1 + X` changes the representative by `[Q,X]` and therefore
+preserves its quotient class.  Adding the matching Ward correction preserves
+the representative itself.  Simultaneous similarity redefinitions of
+`Q_1`, `iota_1`, and `L_D^(1)` also leave the first-order defect unchanged.
+The engine rejects a scheme generator that is outside the declared
+admissible subcomplex.
+
 ## Claim boundary
 
-The physical candidate ledgers currently read `UNDEFINED_ANALYTICALLY`.
+The physical sector ledger separates algebraic classification, analytic
+operator construction, and coefficient computation.  The bulk algebraic
+basis is `IN_PROGRESS`; every analytic operator is
+`UNDEFINED_ANALYTICALLY`; every coefficient is `NOT_COMPUTED`.
 There is no renormalized `Q_1`, `iota_1`, or `L_D^(1)`, the classical import
 is unfrozen, the AFN0 lower-form and Euler bases are incomplete, and the local
 QME has not been restored.  Boundary/corner, scalar-clock, measure, and

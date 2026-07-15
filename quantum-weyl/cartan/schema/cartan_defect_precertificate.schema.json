@@ -16,6 +16,7 @@
     "mechanics_fixtures",
     "sourced_consistency_fixture",
     "admissibility_fixture",
+    "scheme_covariance_fixture",
     "classical_D_import",
     "candidate_sector_ledger",
     "setting_ledger",
@@ -99,6 +100,24 @@
         "admissible_complex_manifest": {"$ref": "#/$defs/admissibleManifest"}
       }
     },
+    "scheme_covariance_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture_id", "scope", "baseline_representative_status", "uncompensated_representative_status", "quotient_class_relation", "exact_representative_change", "exact_shift_primitive", "compensated_representative_status", "similarity_redefinition_status", "inadmissible_scheme_shift_status", "scheme_covariance_status"],
+      "properties": {
+        "fixture_id": {"const": "first_order_scheme_covariance"},
+        "scope": {"const": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY"},
+        "baseline_representative_status": {"const": "ZERO"},
+        "uncompensated_representative_status": {"const": "EXACT_REMOVABLE"},
+        "quotient_class_relation": {"const": "SAME_TRIVIAL_CLASS_BY_EXPLICIT_Q_EXACT_SHIFT"},
+        "exact_representative_change": {"$ref": "#/$defs/operator"},
+        "exact_shift_primitive": {"$ref": "#/$defs/operator"},
+        "compensated_representative_status": {"const": "UNCHANGED_EXACTLY"},
+        "similarity_redefinition_status": {"const": "UNCHANGED_EXACTLY"},
+        "inadmissible_scheme_shift_status": {"const": "REJECTED"},
+        "scheme_covariance_status": {"const": "VERIFIED"}
+      }
+    },
     "classical_D_import": {
       "type": "object",
       "additionalProperties": false,
@@ -125,10 +144,12 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["sector", "status", "classification_gate", "missing_input"],
+        "required": ["sector", "algebraic_classification_status", "analytic_operator_status", "coefficient_status", "classification_gate", "missing_input"],
         "properties": {
           "sector": {"type": "string", "minLength": 1},
-          "status": {"enum": ["ZERO", "EXACT_REMOVABLE", "NONTRIVIAL_ANOMALY", "UNDEFINED_ANALYTICALLY"]},
+          "algebraic_classification_status": {"enum": ["NOT_COMPUTED", "IN_PROGRESS", "BLOCKED", "CLASSIFIED"]},
+          "analytic_operator_status": {"enum": ["UNDEFINED_ANALYTICALLY", "DEFINED"]},
+          "coefficient_status": {"enum": ["NOT_COMPUTED", "COMPUTED"]},
           "classification_gate": {"type": "string", "minLength": 1},
           "missing_input": {"type": "string", "minLength": 1}
         }
