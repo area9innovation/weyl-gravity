@@ -1,0 +1,157 @@
+{
+  "charge": {
+    "all_energy_branch_coefficients": {
+      "A": "n/2",
+      "E": "-n/2",
+      "L": "n/2"
+    },
+    "conserved": true,
+    "covariant_identity": "delta H_D=Omega_Sigma(delta h,R_D h)",
+    "integrable": true,
+    "kernel": "M_D=-(1/2) J D",
+    "quadratic_identity": "H_D=mu_D=1/2 Omega_Sigma(h,R_D h)=zbar M_D z",
+    "reference_normalization": "H_D[0]=0",
+    "regression_buffer_dimension": 470,
+    "regression_buffer_maximum_energy": 6
+  },
+  "compact_vacuum_verdict": "SECTOR_DEPENDENT",
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "all_energy_kernel_formula": true,
+    "closed_surface_has_no_boundary_or_corner_term": true,
+    "current_to_EAL_pairing_transport_imported": true,
+    "direct_D_normalization_imported": true,
+    "nonzero_E_A_L_counterexamples": true,
+    "quadratic_integrability": true,
+    "zero_fibre_invariant_under_D_by_equivariance": true,
+    "zero_fibre_pullback_degeneracy_identity": true
+  },
+  "fail_closed": {
+    "P_lin_counterexample_is_second_order_integrable": false,
+    "Taub_zero_is_sufficient_for_all_orders_integrability": false,
+    "boundary_or_clock_sectors_classified": false,
+    "compactness_alone_implies_D_gauge": false,
+    "universal_D_verdict": false,
+    "unrestricted_smooth_infinite_completion_reproved_here": false
+  },
+  "open_settings": [
+    "cylinder plus conformally coupled scalar clock",
+    "cylinder plus Yang-Mills",
+    "weakly perturbed conformally flat backgrounds",
+    "Lorentzian dS and AdS with declared boundary conditions",
+    "asymptotically flat spacetimes at null infinity"
+  ],
+  "phase_spaces": {
+    "P_Taub0": {
+      "D_action_preserves_phase_space": true,
+      "D_presymplectic_degeneracy": true,
+      "definition": "formal common derived zero fibre mu^{-1}(0) of all fifteen Taub/moment-map components inside P_lin",
+      "interpretation": "D becomes proper gauge only after the explicit zero-charge restriction and residual quotient",
+      "normalized_H_D_identically_zero": true,
+      "preservation_identity": "L_XD mu_A=f_DA^B mu_B=0 on the common zero fibre",
+      "residual_zero_charge_restriction": true,
+      "tangent_identity": "for i:P_Taub0->P_lin, i^* i_XD Omega=i^* d mu_D=d(i^* mu_D)=0",
+      "verdict": "D_GAUGE"
+    },
+    "P_der": {
+      "D_action_preserves_phase_space": true,
+      "D_presymplectic_degeneracy": true,
+      "definition": "[P_lin x^R_{g*}{0} /^R g] with all fifteen residual generators constrained",
+      "interpretation": "selected formal closed-universe derived phase space of Paper VII",
+      "normalized_H_D_identically_zero": true,
+      "verdict": "D_GAUGE"
+    },
+    "P_lin": {
+      "D_presymplectic_degeneracy": false,
+      "definition": "D-finite algebraic linearized solution space after local Diff x Weyl quotient and before every residual Taub restriction",
+      "interpretation": "D is an integrable physical Hamiltonian symmetry on this phase space",
+      "normalized_H_D_identically_zero": false,
+      "residual_zero_charge_restriction": false,
+      "strongest_counterexamples": {
+        "A": {
+          "chirality": "+",
+          "energy": 3,
+          "unit_amplitude_H_D": "3/2",
+          "unit_radial_variation_delta_H_D": "3"
+        },
+        "E": {
+          "chirality": "+",
+          "energy": 2,
+          "unit_amplitude_H_D": "-1",
+          "unit_radial_variation_delta_H_D": "-2"
+        },
+        "L": {
+          "chirality": "+",
+          "energy": 4,
+          "unit_amplitude_H_D": "2",
+          "unit_radial_variation_delta_H_D": "4"
+        }
+      },
+      "verdict": "D_CHARGED"
+    }
+  },
+  "provenance": {
+    "higher_tiers_not_run": "No shared operator or previously certified theorem input was changed.",
+    "import_base_git_commit": "394743bbf36dbd4df670db4a8451d9fea66ccac8",
+    "input_sha256": {
+      "bridge/certificates/closed_universe_bfv.json": "37eda8319d7fbe69e6b0838677b3d7fd4aecddd8b6274c281fefc2cf3f612ceb",
+      "bridge/certificates/taub_moment_map.json": "84fb8d94043f89fcd70e8fdd2940b266ea6f9006c3ff94cb55884b1b4ceb46e1",
+      "bridge/taub_moment_map/all_energy.py": "29d3549c4bdba06dc65a971e4e29f6f983554cbb7b98883c9c0882099d50c67f",
+      "bridge/taub_moment_map/compact_d_charge.py": "ea10ef431861f6b6df8cbc913b1a3ffea5c0cc5e279161dda4a9198a6b459098",
+      "covariant_completion/certificates/curved_EAL_pairing_regression.json": "ae9f0cc61bfa38e0a4b202d822ad23bcdb0d4771dbcc1914805fc53141b895b8",
+      "covariant_completion/certificates/curved_current_comparison.json": "c98211f74ae81b5b2d8acaadbd61d20e3cfa58bf0b24ef4077e29677457812bc",
+      "d_quotient_classical/schema/compact-cylinder-d-charge-audit-v1.schema.json": "ffbf472ea119480e65892d134d1dcbcf9864443e49a7b123dc19e87d059b6f75",
+      "field_bv_identification/zero_modes/certificates/taub_obstruction_map.json": "72ac747c0b15c85c75f7a86d983960f305e486c96ab594c056f9b3377cfbf540",
+      "symbolic/verify_compact_cylinder_d_charge_audit.py": "bbed90ee7fad1424dd9510418597bea5f10e903f4cb1c9d4609e5e0656347918"
+    },
+    "test_tiers": [
+      "Tier 0",
+      "Tier 1"
+    ],
+    "verification_commands": [
+      "python3 symbolic/verify_compact_cylinder_d_charge_audit.py",
+      "python3 -m unittest bridge.taub_moment_map.tests.test_compact_d_charge"
+    ]
+  },
+  "schema": "pure-weyl-compact-cylinder-d-charge-audit-v1",
+  "setting": {
+    "action": "S_red=int sqrt(-g)(Ric^2-R^2/3)=(C^2-Euler)/2",
+    "allowed_variations": "smooth D-finite E/A/L linearized solutions modulo local Diff x Weyl; residual constraints are declared per phase space",
+    "cauchy_surface": "closed oriented S^3",
+    "corner_data": "none",
+    "equations": "linearized Bach equation; second-order Bach equation for the Taub test",
+    "finite_counterterm_convention": "Euler/total-derivative improvement fixed; no added boundary counterterm; H_D[gbar]=H_D[0]=0",
+    "flux": "zero through a timelike boundary because no timelike/spatial boundary is present",
+    "presymplectic_convention": "action-derived metric current transported to +I_E direct-sum (-I_A) direct-sum (-I_L)",
+    "spacetime": "R x S^3 with gbar=-dt^2+dOmega_3^2",
+    "spatial_boundary": "empty"
+  },
+  "strongest_counterexample_scope": {
+    "D_action_preserves_P_lin": true,
+    "H_D": "-1",
+    "claimed_second_order_linearizable": false,
+    "radial_delta_H_D": "-2",
+    "reason": "nonzero mu_D excludes the representative from the Taub/Kuranishi zero fibre",
+    "representative": "unit-amplitude normalized E_2 mode of either chirality",
+    "smooth_global_linearized_solution": true
+  },
+  "verification_receipts": [
+    {
+      "command": "python3 symbolic/verify_compact_cylinder_d_charge_audit.py --check",
+      "elapsed_seconds": 0.57,
+      "recorded_date": "2026-07-15",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest bridge.taub_moment_map.tests.test_compact_d_charge",
+      "elapsed_seconds": 0.48,
+      "recorded_date": "2026-07-15",
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}
