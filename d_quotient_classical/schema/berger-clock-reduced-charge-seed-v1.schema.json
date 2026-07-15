@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-clock-reduced-charge-seed-v1.schema.json",
+  "title": "Berger clock reduced charge seed",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "phase_space_id", "claim_status",
+    "scientific_verdict", "dependency_tags", "conventions", "exact_identities",
+    "clock_interpretation", "rational_fixture", "flags", "next_gate",
+    "not_established", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-clock-reduced-charge-seed-v1"},
+    "result_id": {"const": "BERGER_CLOCK_REDUCED_CHARGE_SEED"},
+    "setting_id": {"const": "compact_positive_berger_clock"},
+    "phase_space_id": {"const": "positive_rotating_scalar_berger_background"},
+    "claim_status": {"const": "CERTIFIED_REDUCED_CHARGE_SEED"},
+    "scientific_verdict": {"type": "null"},
+    "dependency_tags": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+    "conventions": {"type": "object"},
+    "exact_identities": {"type": "object"},
+    "clock_interpretation": {"type": "object"},
+    "rational_fixture": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT"},
+    "not_established": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
