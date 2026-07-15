@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-inhomogeneous-conformal-stealth-clock-no-go-v1.schema.json",
+  "title": "Complete one-field conformal stealth-clock no-go",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "generator_id", "phase_space_id",
+    "claim_status", "scientific_verdict", "dependency_tags", "conventions",
+    "zero_field_gate", "reciprocal_stress", "global_classification",
+    "global_obstruction", "timelike_gradient_obstruction", "gate_result",
+    "flags", "not_established", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-inhomogeneous-conformal-stealth-clock-no-go-v1"},
+    "result_id": {"const": "INHOMOGENEOUS_CONFORMAL_STEALTH_CLOCK_NO_GO"},
+    "setting_id": {"const": "compact_inhomogeneous_conformal_stealth_clock"},
+    "generator_id": {"const": "D_compact"},
+    "phase_space_id": {"const": "standard_conformal_scalar_stealth_clock_sector"},
+    "claim_status": {"const": "CERTIFIED_SCOPED_NO_GO"},
+    "scientific_verdict": {"type": "null"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "conventions": {"type": "object"},
+    "zero_field_gate": {
+      "type": "object",
+      "properties": {
+        "clock_can_cross_T_zero": {"const": false},
+        "reciprocal_valid_on_every_clock_candidate": {"const": true}
+      },
+      "required": [
+        "stress_at_T_zero", "equivalent_tensor_equation", "consequence",
+        "clock_can_cross_T_zero", "reciprocal_valid_on_every_clock_candidate"
+      ]
+    },
+    "reciprocal_stress": {"type": "object"},
+    "global_classification": {
+      "type": "object",
+      "properties": {
+        "complete_denominator": {"const": "sigma=A*cos(t)+B*sin(t)+C.n"},
+        "coupling_relation": {"const": "kappa=2(|C|^2-A^2-B^2)"},
+        "classification_global_for_nowhere_zero_clock_candidates": {"const": true}
+      },
+      "required": [
+        "mixed_equation", "spatial_equation", "divergence_identity",
+        "compact_solution", "time_equation", "complete_denominator",
+        "coupling_relation", "classification_global_for_nowhere_zero_clock_candidates"
+      ]
+    },
+    "global_obstruction": {
+      "type": "object",
+      "properties": {
+        "every_nontrivial_denominator_has_zero": {"const": true},
+        "every_nontrivial_scalar_has_global_pole": {"const": true},
+        "globally_regular_stealth_scalar_clock_exists": {"const": false}
+      },
+      "required": [
+        "time_dependent_case", "time_independent_case", "trivial_case",
+        "every_nontrivial_denominator_has_zero", "every_nontrivial_scalar_has_global_pole",
+        "globally_regular_stealth_scalar_clock_exists"
+      ]
+    },
+    "timelike_gradient_obstruction": {
+      "type": "object",
+      "properties": {
+        "time_dependent_gradient_everywhere_timelike": {"const": false},
+        "time_independent_member_is_clock": {"const": false}
+      },
+      "required": [
+        "gradient_norm", "regular_test_point", "norm_at_test_point",
+        "time_dependent_gradient_everywhere_timelike", "time_independent_member_is_clock"
+      ]
+    },
+    "gate_result": {
+      "type": "object",
+      "properties": {
+        "gate": {"const": "INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK"},
+        "status": {"const": "STANDARD_ONE_FIELD_STEALTH_BRANCH_OBSTRUCTED"},
+        "surviving_gate": {"const": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_BACH_SOURCED_CLOCK"},
+        "surviving_gate_status": {"const": "OPEN"}
+      },
+      "required": ["gate", "status", "surviving_gate", "surviving_gate_status"]
+    },
+    "flags": {"type": "object"},
+    "not_established": {"type": "array", "items": {"type": "string"}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

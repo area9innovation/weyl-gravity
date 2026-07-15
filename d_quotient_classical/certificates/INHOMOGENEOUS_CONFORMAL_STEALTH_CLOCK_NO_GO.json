@@ -1,0 +1,82 @@
+{
+  "claim_boundary": "This theorem rules out globally regular relational clocks among all real one-field stealth configurations of the standard positive-sign conformal scalar with quartic Weyl-invariant potential on the unit cylinder, including inhomogeneous configurations. It does not rule out generalized scalar actions or genuinely non-conformally-flat Bach-sourced clock backgrounds.",
+  "claim_status": "CERTIFIED_SCOPED_NO_GO",
+  "conventions": {
+    "action": "S=-integral sqrt(-g)[(nabla T)^2/2+R*T^2/12+kappa*T^4/4]",
+    "clock_requirement": "T smooth and grad(T) everywhere timelike and nonzero",
+    "field": "one real conformal scalar T of Weyl weight -1 with standard positive kinetic sign",
+    "metric": "g=-dt^2+dOmega_3^2 on the unit Einstein cylinder",
+    "scalar_curvature": 6,
+    "spatial_embedding": "n in S3 subset R4 and C.n is the complete l=1 harmonic family"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flags": {
+    "complete_one_field_clock_sector_classified": true,
+    "everywhere_timelike_gradient_ruled_out": true,
+    "generalized_non_noetherian_or_higher_derivative_scalar_ruled_out": false,
+    "global_zero_locus_proved": true,
+    "globally_regular_one_field_stealth_clock_exists": false,
+    "inhomogeneous_modes_included": true,
+    "nonconformally_flat_backreacted_clock_ruled_out": false
+  },
+  "gate_result": {
+    "gate": "INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK",
+    "status": "STANDARD_ONE_FIELD_STEALTH_BRANCH_OBSTRUCTED",
+    "surviving_gate": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_BACH_SOURCED_CLOCK",
+    "surviving_gate_status": "OPEN"
+  },
+  "generator_id": "D_compact",
+  "global_classification": {
+    "classification_global_for_nowhere_zero_clock_candidates": true,
+    "compact_solution": "s=s0+C.n",
+    "complete_denominator": "sigma=A*cos(t)+B*sin(t)+C.n",
+    "coupling_relation": "kappa=2(|C|^2-A^2-B^2)",
+    "divergence_identity": "D_i(Delta_S3+3)s=0",
+    "mixed_equation": "D_i partial_t sigma=0, hence sigma=f(t)+s(n)",
+    "spatial_equation": "Hess_S3(s)^TF=0",
+    "time_equation": "f''+f+s0=0"
+  },
+  "global_obstruction": {
+    "every_nontrivial_denominator_has_zero": true,
+    "every_nontrivial_scalar_has_global_pole": true,
+    "globally_regular_stealth_scalar_clock_exists": false,
+    "time_dependent_case": "if A^2+B^2>0 choose n perpendicular to C and a zero of A cos(t)+B sin(t); then sigma=0",
+    "time_independent_case": "if A=B=0 and C nonzero choose n perpendicular to C; then sigma=0 and there is no time clock",
+    "trivial_case": "A=B=C=0 does not define T=1/sigma"
+  },
+  "not_established": [
+    "a no-go theorem for generalized non-Noetherian or higher-derivative conformal scalar actions",
+    "a no-go theorem for positive-energy Bach-sourced non-conformally-flat clocks",
+    "a support-local all-row BV construction for a surviving clock",
+    "an interacting, boundary, or quantum D verdict"
+  ],
+  "phase_space_id": "standard_conformal_scalar_stealth_clock_sector",
+  "reciprocal_stress": {
+    "equivalent_to_scalar_eom_plus_zero_stress_on_sigma_nonzero": true,
+    "polynomial_tensor_equation": "sigma(Hess_mn sigma-g_mn Box sigma)+(3/2)g_mn(grad sigma)^2+(1/2)sigma^2 G_mn-(3/4)kappa g_mn=0",
+    "trace_equation": "sigma Box sigma-2(grad sigma)^2+sigma^2+kappa=0",
+    "trace_free_equation": "(Hess sigma)^TF=-(sigma/2)G^TF",
+    "variable": "sigma=1/T"
+  },
+  "result_id": "INHOMOGENEOUS_CONFORMAL_STEALTH_CLOCK_NO_GO",
+  "schema": "pure-weyl-inhomogeneous-conformal-stealth-clock-no-go-v1",
+  "scientific_verdict": null,
+  "setting_id": "compact_inhomogeneous_conformal_stealth_clock",
+  "timelike_gradient_obstruction": {
+    "gradient_norm": "(grad sigma)^2=-(d_t u)^2+|C|^2-(C.n)^2",
+    "norm_at_test_point": "(grad sigma)^2=|C|^2>=0 while sigma=+/-sqrt(A^2+B^2) is nonzero",
+    "regular_test_point": "choose n perpendicular to C and a time extremum of u=A cos(t)+B sin(t)",
+    "time_dependent_gradient_everywhere_timelike": false,
+    "time_independent_member_is_clock": false
+  },
+  "zero_field_gate": {
+    "clock_can_cross_T_zero": false,
+    "consequence": "T=0 and stress=0 imply dT=0",
+    "equivalent_tensor_equation": "4 dT tensor dT=g (dT)^2",
+    "reciprocal_valid_on_every_clock_candidate": true,
+    "stress_at_T_zero": "T_mn=(2/3)d_mT d_nT-(1/6)g_mn(dT)^2"
+  }
+}
