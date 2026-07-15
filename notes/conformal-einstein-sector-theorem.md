@@ -202,6 +202,25 @@ On the closed cylinder, the corresponding alternative must use a relative or
 boundary BFV complex in which `D` is the Hamiltonian.  Simply deleting the
 `D` ghost from the absolute complex is not a proof.
 
+## Berger clock branch: exact non-incidence
+
+The positive Berger clock now has a complete coefficientwise minimal
+Weyl--matter `q1`, but it does not furnish an Einstein phase.  On its certified
+open squashing interval the background is not Einstein and cannot be
+conformally Einstein because its Bach tensor is nonzero.  Even allowing the
+same rotating clock stress in an Einstein equation with arbitrary constants
+`kappa,Lambda`, the trace fixes `Lambda=R/4` and the exact component minor
+
+\[
+S_{00}B_{11}-S_{11}B_{00}=-\frac{q(1-q)}{8a^6}
+\]
+
+never vanishes.  Consequently the retained Berger complex is a genuine
+non-Einstein Weyl--matter branch.  A same-base-point Einstein tangent
+subcomplex is `NOT_APPLICABLE`; a different common background is required.
+This is a `LOCAL-ALGEBRAIC`, `REDUCED-MODE` statement and does not alter the
+asymptotically flat causal commission.
+
 ## Einstein-Hilbert scale
 
 Pure four-dimensional Weyl gravity has a dimensionless coupling and no

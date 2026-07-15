@@ -38,6 +38,10 @@ INPUTS = {
     / "bridge"
     / "certificates"
     / "compensated_sourced_defect_chain_map.json",
+    "berger_einstein_incidence": ROOT
+    / "bridge"
+    / "certificates"
+    / "berger_einstein_incidence.json",
 }
 
 
@@ -174,6 +178,23 @@ def _verify_inputs(records: dict[str, dict[str, Any]]) -> None:
         "compatible-source fiber inventory drifted",
     )
 
+    incidence = records["berger_einstein_incidence"]
+    incidence_classification = incidence.get("classification", {})
+    _require(
+        incidence.get("result_state")
+        == "EXACT_BACKGROUND_NONINCIDENCE_CERTIFIED_TANGENT_EMBEDDING_NOT_APPLICABLE"
+        and incidence.get("dependency_tags") == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "Berger Einstein-incidence scope drifted",
+    )
+    _require(
+        incidence_classification.get("berger_background_in_pure_einstein_locus") is False
+        and incidence_classification.get("berger_background_in_conformally_einstein_locus") is False
+        and incidence_classification.get("berger_background_in_einstein_same_clock_locus") is False
+        and incidence_classification.get("berger_background_is_genuine_non_einstein_weyl_matter_branch") is True
+        and incidence_classification.get("same_base_point_linearized_einstein_clock_complex_exists") is False,
+        "Berger Einstein-incidence classification drifted",
+    )
+
 
 def build_certificate() -> dict[str, Any]:
     records = {name: _load(path) for name, path in INPUTS.items()}
@@ -183,7 +204,7 @@ def build_certificate() -> dict[str, Any]:
         "schema": "pure-weyl-einstein-sector-theorem-v1",
         "result_id": "CLASSICAL_EINSTEIN_SECTOR_THEOREM",
         "result_state": "PROVED_WITH_OPEN_BOUNDARY_RAIL",
-        "source_commit": "46d95a1f6f04e446a4d5290ec5666af3af6cd392",
+        "source_commit": "bb86c011d66440bf3b204125a655189e511d6615",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "theorem": {
             "name": "Einstein locus and closed-cylinder state separation",
@@ -272,6 +293,16 @@ def build_certificate() -> dict[str, Any]:
                 "BV lift, causal propagation, nonlinear closure, and scattering remain open"
             ),
         },
+        "berger_clock_einstein_incidence": {
+            "background": "positive rotating conformal-scalar clock on the static Berger cylinder",
+            "weyl_matter_status": "exact solution with complete retained minimal q1",
+            "pure_einstein_status": "REFUTED_ON_CERTIFIED_INTERVAL",
+            "conformally_einstein_status": "REFUTED_BY_NONZERO_BACH_TENSOR",
+            "einstein_same_clock_status": "REFUTED_FOR_ALL_CONSTANT_KAPPA_AND_LAMBDA",
+            "exact_obstruction": "det((S_00,B_00),(S_11,B_11))=-q(1-q)/(8a^6) != 0",
+            "tangent_consequence": "same-base-point Einstein--clock tangent embedding is not applicable",
+            "scope": "LOCAL-ALGEBRAIC and REDUCED-MODE background classification; no causal or universal matter obstruction",
+        },
         "classification": {
             "einstein_solutions_subset_conformal_solutions": "ESTABLISHED_AS_A_MAP_OF_SOLUTION_LOCI",
             "einstein_observables_subset_reduced_conformal_observables": "NOT_ESTABLISHED",
@@ -279,6 +310,7 @@ def build_certificate() -> dict[str, Any]:
             "einstein_as_exact_solution_sector": "ESTABLISHED",
             "einstein_as_boundary_selected_sector": "CONDITIONAL_ON_ADDITIONAL_BOUNDARY_DATA",
             "einstein_as_phase_or_effective_sector": "MODEL_DEPENDENT_NOT_ESTABLISHED_HERE",
+            "positive_berger_clock_as_einstein_phase": "REFUTED_AT_THIS_BACKGROUND",
         },
         "background_inventory": {
             "survive": [
@@ -289,6 +321,9 @@ def build_certificate() -> dict[str, Any]:
             "additional_conformal_solutions": [
                 "Bach-flat metrics that are not conformally Einstein",
                 "linearized A and L cylinder towers in addition to the E tower",
+            ],
+            "additional_weyl_matter_solutions": [
+                "the certified positive Berger clock background, which is neither Einstein, conformally Einstein, nor Einstein with the same clock stress",
             ],
         },
         "scale_statement": {
@@ -409,6 +444,8 @@ def build_certificate() -> dict[str, Any]:
             "einstein_sector_causally_closed_at_null_infinity": False,
             "ordinary_helicity_two_scattering_space_recovered": False,
             "extra_asymptotic_weyl_channels_classified": False,
+            "positive_berger_clock_is_non_einstein_weyl_matter_branch": True,
+            "positive_berger_clock_einstein_tangent_embedding": False,
             "lorentzian_quantum_theorem": False,
         },
         "inputs": {

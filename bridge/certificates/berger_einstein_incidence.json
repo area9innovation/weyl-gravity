@@ -1,0 +1,290 @@
+{
+  "claim_boundary": "This exact theorem classifies one certified homogeneous Berger Weyl--matter background. It proves no universal obstruction to Einstein--matter backgrounds, no tangent theorem about a different common base point, and no nonminimal, causal, nonlinear, scattering, or quantum result.",
+  "claim_flags": {
+    "berger_conformally_einstein_incidence_refuted": true,
+    "berger_einstein_incidence_refuted": true,
+    "berger_matter_bv_to_flat_source_ward_lift_constructed": false,
+    "berger_same_clock_einstein_incidence_refuted": true,
+    "berger_tangent_einstein_embedding_constructed": false,
+    "complete_retained_minimal_q1_imported": true,
+    "exact_berger_background_imported": true,
+    "lorentzian_causal_claim": false,
+    "nonlinear_claim": false,
+    "nonminimal_completion_claimed": false,
+    "quantum_claim": false,
+    "support_local_clock_sdr_imported": true
+  },
+  "classification": {
+    "berger_background_in_conformally_einstein_locus": false,
+    "berger_background_in_einstein_same_clock_locus": false,
+    "berger_background_in_pure_einstein_locus": false,
+    "berger_background_is_genuine_non_einstein_weyl_matter_branch": true,
+    "retained_berger_q1_is_complete_weyl_matter_minimal_complex": true,
+    "retained_berger_q1_is_einstein_tangent_subcomplex": false,
+    "same_base_point_linearized_einstein_clock_complex_exists": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": {
+    "assumptions": [
+      "a>0",
+      "alpha_B>0",
+      "(5-sqrt(21))/2<q<1/4"
+    ],
+    "einstein_matter_test_equation": "G_ab+Lambda g_ab=kappa T_ab",
+    "metric": "g=-dt^2+a^2(sigma_1^2+sigma_2^2)+q a^2 sigma_3^2",
+    "parameter_interval": "(5-sqrt(21))/2 < q < 1/4",
+    "signature": "(-,+,+,+)",
+    "weyl_matter_equation": "alpha_B B_ab=T_ab"
+  },
+  "exact_tensors": {
+    "bach_orthonormal": [
+      [
+        "(q - 1)**2/(6*a**4)",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "(q - 1)*(3*q - 1)/(6*a**4)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "(q - 1)*(3*q - 1)/(6*a**4)",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-(q - 1)*(5*q - 1)/(6*a**4)"
+      ]
+    ],
+    "clock_stress_orthonormal": [
+      [
+        "alpha_B*(q - 1)**2/(6*a**4)",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "alpha_B*(q - 1)*(3*q - 1)/(6*a**4)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "alpha_B*(q - 1)*(3*q - 1)/(6*a**4)",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-alpha_B*(q - 1)*(5*q - 1)/(6*a**4)"
+      ]
+    ],
+    "ricci_orthonormal": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-(q - 2)/(2*a**2)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-(q - 2)/(2*a**2)",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "q/(2*a**2)"
+      ]
+    ],
+    "scalar_curvature": "-(q - 4)/(2*a**2)",
+    "tracefree_ricci_orthonormal": [
+      [
+        "-(q - 4)/(8*a**2)",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-(3*q - 4)/(8*a**2)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-(3*q - 4)/(8*a**2)",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "(5*q - 4)/(8*a**2)"
+      ]
+    ]
+  },
+  "incidence_tests": {
+    "conformally_einstein": {
+      "necessary_condition": "four-dimensional conformally Einstein metrics are Bach-flat",
+      "obstruction": "B_00=(q - 1)**2/(6*a**4)>0",
+      "status": "REFUTED_ON_CERTIFIED_INTERVAL"
+    },
+    "einstein": {
+      "lambda_from_00": "0",
+      "reason": "Ric_00=0 forces Lambda=0, while Ric_11=(2-q)/(2a^2)>0",
+      "spatial_residual_after_00": "-(q - 2)/(2*a**2)",
+      "status": "REFUTED_ON_CERTIFIED_INTERVAL"
+    },
+    "einstein_with_same_clock_stress": {
+      "interval_reason": "-q(1-q)/(8a^6) is strictly negative for 0<q<1/4",
+      "proportionality_minor_00_11": "q*(q - 1)/(8*a**6)",
+      "reduced_equation": "Ric_ab-(R/4)g_ab=(kappa alpha_B)B_ab",
+      "status": "REFUTED_FOR_ALL_CONSTANT_KAPPA_AND_LAMBDA_ON_CERTIFIED_INTERVAL",
+      "trace_fixed_lambda": "-(q - 4)/(8*a**2)"
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/berger_einstein_incidence.py",
+    "generator_sha256": "3c16abc73b3371edd32151a467c4045d638e39433c7ddfeb467190b0a4ce7cf4",
+    "inputs": {
+      "berger_minimal_bv_clock_sdr": {
+        "path": "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
+        "sha256": "9e7503ed7fd6082b4164ae7b03d350c753f941cc45d639ffb02598ba8f262422"
+      },
+      "berger_retained_minimal_operator": {
+        "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+        "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+      },
+      "positive_berger_clock_background": {
+        "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+        "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"
+      }
+    }
+  },
+  "rational_fixture": {
+    "bach_orthonormal": [
+      [
+        "961/9600",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "403/9600",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "403/9600",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "31/1920"
+      ]
+    ],
+    "clock_stress_orthonormal": [
+      [
+        "961/1920",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "403/1920",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "403/1920",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "31/384"
+      ]
+    ],
+    "parameters": {
+      "a": "1",
+      "alpha_B": "5",
+      "q": "9/40"
+    },
+    "proportionality_minor_00_11": "-279/12800",
+    "ricci_orthonormal": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "71/80",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "71/80",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "9/80"
+      ]
+    ],
+    "scalar_curvature": "151/80",
+    "trace_fixed_lambda": "151/320"
+  },
+  "result_id": "BERGER_EINSTEIN_INCIDENCE",
+  "result_state": "EXACT_BACKGROUND_NONINCIDENCE_CERTIFIED_TANGENT_EMBEDDING_NOT_APPLICABLE",
+  "schema": "berger-einstein-incidence-v1",
+  "schema_path": "bridge/einstein_sector/schema/berger_einstein_incidence.schema.json",
+  "schema_sha256": "54d6ea3ff2ba1c68689d77ccce1dc972161dc0faaa6d0d45acaf348399dbe9f5",
+  "tangent_gate": {
+    "allowed_followups": [
+      "classify a different common Einstein--matter/Weyl--matter background before comparing tangent complexes",
+      "export delta B and delta T separately to study the affine Einstein defect around this non-Einstein branch without calling it a tangent inclusion",
+      "continue the Berger nonminimal and causal programme as a Weyl--matter theorem"
+    ],
+    "reason": "a tangent inclusion of solution complexes requires a common background solution; the certified Berger background fails every tested Einstein incidence condition",
+    "status": "NOT_APPLICABLE_AT_THIS_BASE_POINT"
+  },
+  "verification_command": "python3 -m bridge.einstein_sector.berger_einstein_incidence --verify bridge/certificates/berger_einstein_incidence.json"
+}

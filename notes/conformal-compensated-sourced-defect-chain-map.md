@@ -157,26 +157,35 @@ It deliberately does not assert
 \text{external source complex}=\text{matter BV complex}.
 \]
 
-The next theorem must select a matter action and construct its Euler,
-gauge/ghost, antifield, Noether, pairing, and cyclicity rows.  The stress/source
-realization must then be proved to intertwine that matter BV differential with
-the universal Ward complex above, and the matter equations must preserve
-\(Q(T)=0\).
+The next theorem must select a *common* Einstein--matter/Weyl--matter
+background and construct its Euler, gauge/ghost, antifield, Noether, pairing,
+and cyclicity rows.  The stress/source realization must then be proved to
+intertwine that matter BV differential with the universal Ward complex above,
+and the matter equations must preserve \(Q(T)=0\).
 
-The positive Berger conformal-scalar model is a concrete candidate.  Its
-current certificate constructs an exact support-local cyclic SDR for the eight
-temporal/Weyl clock and minimal-dual rows, leaving a 26-row retained minimal
-complex.  A follow-on certificate freezes that retained row inventory, bundle
-types, pairings, allowed `q1` blocks, support rules, and differential-order
-ceilings.  The actual retained `q1` coefficients, nonminimal rows, Green
-homotopies, and stability remain open, so it is not yet a full matter-BV input
-for this lift.  Moreover, its curved compact background is not silently
-identified with the flat compensator phase used here.
+The positive Berger conformal-scalar model has now been decided rather than
+left as a candidate.  Its complete support-local cyclic 26-row retained
+minimal \(q_1\) is coefficientwise exact in the curved PBW algebra.  However,
+the separate incidence certificate proves that this background is neither
+Einstein, conformally Einstein, nor Einstein with the same clock stress for
+any constant \(\kappa,\Lambda\).  The exact obstruction is
+
+\[
+S_{00}B_{11}-S_{11}B_{00}=-\frac{q(1-q)}{8a^6}\ne0.
+\]
+
+It is therefore a genuine non-Einstein Weyl--matter branch, not a common base
+point on which to construct an Einstein tangent subcomplex.  Its nonminimal
+rows, Green homotopies, and stability remain separate classical gates.  No
+Berger operator is inserted into the flat compensator chain map.
 
 Only after that lift should the programme construct retarded/advanced defect
 propagation.
 
 Machine certificate:
 `bridge/certificates/compensated_sourced_defect_chain_map.json`.
+
+Berger incidence certificate:
+`bridge/certificates/berger_einstein_incidence.json`.
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`.

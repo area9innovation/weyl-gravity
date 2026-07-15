@@ -64,6 +64,17 @@ class EinsteinSectorCertificateTests(unittest.TestCase):
         self.assertIn("matter-inclusive BV lift", sourced["scope"])
         self.assertFalse(result["claim_flags"]["einstein_sector_causally_closed_at_null_infinity"])
 
+    def test_berger_clock_is_classified_as_a_non_einstein_weyl_matter_branch(self) -> None:
+        result = certificate.build_certificate()
+        incidence = result["berger_clock_einstein_incidence"]
+        self.assertEqual(incidence["pure_einstein_status"], "REFUTED_ON_CERTIFIED_INTERVAL")
+        self.assertEqual(
+            incidence["einstein_same_clock_status"],
+            "REFUTED_FOR_ALL_CONSTANT_KAPPA_AND_LAMBDA",
+        )
+        self.assertTrue(result["claim_flags"]["positive_berger_clock_is_non_einstein_weyl_matter_branch"])
+        self.assertFalse(result["claim_flags"]["positive_berger_clock_einstein_tangent_embedding"])
+
     def test_altered_certificate_is_rejected(self) -> None:
         payload = certificate.build_certificate()
         payload["claim_flags"]["asymptotically_flat_scattering_recovered"] = True

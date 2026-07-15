@@ -56,17 +56,19 @@ the main model-dependent obligation.
 
 Accordingly, this result certifies the universal chain map and leaves
 `matter_inclusive_bv_complex_constructed=false`.  The next theorem must choose
-a matter action and prove that its stress/source realization intertwines its
-full BV differential with the universal Ward complex while preserving
-`ker Q`.
+a common Einstein--matter/Weyl--matter background and prove that its
+stress/source realization intertwines its full BV differential with the
+universal Ward complex while preserving `ker Q`.
 
-The newly landed Berger theorem is imported contextually.  It certifies an
-eight-row support-local cyclic minimal clock SDR and leaves a retained 26-row
-minimal complex.  Its follow-on typed-layout certificate freezes all 26 rows,
-bundle types, pairings, allowed `q1` blocks, support rules, and order ceilings.
-The coefficientwise retained operator, nonminimal rows, Green homotopies, and
-stability remain open, so it is not yet a complete matter-inclusive input for
-this theorem.  No Berger operator is inserted into the flat chain map.
+The Berger imports have advanced to the complete support-local cyclic 26-row
+retained minimal `q1`.  The separate exact incidence theorem nevertheless
+rules this background out as a common Einstein base point: it is neither
+Einstein, conformally Einstein, nor Einstein with the same clock stress for
+any constant `kappa,Lambda`.  Its proportionality obstruction is
+`-q(1-q)/(8a^6)`.  Thus the Berger result is a genuine non-Einstein
+Weyl--matter branch and its same-base-point Einstein tangent gate is
+`NOT_APPLICABLE`; nonminimal and causal rows remain open.  No Berger operator
+is inserted into the flat chain map.
 
 ## Claim boundary
 
@@ -77,21 +79,23 @@ propagation, nonlinear closure, scattering, or quantum result is asserted.
 
 ## Provenance
 
-Input base commit: `46d95a1f6f04e446a4d5290ec5666af3af6cd392`.
+Input base commit: `bb86c011d66440bf3b204125a655189e511d6615`.
 
 | Artifact | SHA-256 |
 |---|---|
-| generator | `89f0302f7029a76daa98800b6497b90620af238b7341cbece5b660ef2e1c9e0f` |
+| generator | `def3f4f512beeeae7dfcb115f8b3861976485520cc90748415230db66e8e82c4` |
 | schema | `fabe7924ecc4b4ae9cfda7fa85ea3ec356938b6571fb341b15626e6e06d30b83` |
-| certificate | `8d3da8f3a81384b365f4b3be7ec639ba7304e91e6e764c0579b8c6193e761c51` |
-| tests | `89dc776c91ab64734bd8b6d478f938e59f62bf703c8768731115a4fe064f7731` |
-| theorem note | `c0aa3e610511269dfb6fe21cd9530d616789eb3bb22ea0fdd4485cfd11fc96db` |
-| Einstein-sector aggregator | `0fb582bbdef80608d08dcc5c04fbff1d9f22832fc08caacd3e81423d0843cfde` |
-| Einstein-sector theorem certificate | `e75d5b9e926207b5b02502f7dc9b65092e3edcdf85db63fcf7d59c7178a72bf8` |
-| refreshed asymptotic bootstrap | `c56267e8bd81b556d4099a407379cda5d683e094411bc845c6fa56d131b55ee9` |
-| refreshed D-quotient asymptotic seed | `e39cff26bc6b6037eb6d0063899d6612e0c293b6c154aca42ce70881ef009796` |
+| certificate | `c4a25b0610b869d9d8c82c19bc85005cbce20186700149d1d9cd212689eefc56` |
+| tests | `da6d558fe485265be9398d6c6494e00ab3fce950b9af4c31e86d013e0e5f4f84` |
+| theorem note | `40a199f1bf62984be4f8e472ec0a6f0847026379843a8bbf916a142586c73bec` |
+| Einstein-sector aggregator | `b772968483020e28c1a7b2abae6a8ed86e0c85666bc5fa76531279ac601401fb` |
+| Einstein-sector theorem certificate | `c4ed958ad7db67296039a573afbec5e5338d496bbbf1eecc43111a2d105b0896` |
+| refreshed asymptotic bootstrap | `1dc398b3f553f6f8d87ffa43f6cedf02ca3c4ed4e7e1e4d10596a470c9af56df` |
+| refreshed D-quotient asymptotic seed | `ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685` |
 | contextual Berger minimal BV SDR | `9e7503ed7fd6082b4164ae7b03d350c753f941cc45d639ffb02598ba8f262422` |
 | contextual Berger retained typed layout | `3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba` |
+| contextual complete Berger retained operator | `296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77` |
+| Berger Einstein-incidence certificate | `6ab941dbf3312bcc991dc0de59be30853f876e4599414196a3ae21c967c863b4` |
 
 ## Verification
 
@@ -100,7 +104,7 @@ Input base commit: `46d95a1f6f04e446a4d5290ec5666af3af6cd392`.
 | 0 | Python compile, JSON parse, and `git diff --check` | under 0.1 s | PASS |
 | 1 | sourced-defect chain-map verifier | 14 s | PASS |
 | 1 | scoped chain-map tests | 17 s | PASS (9 tests) |
-| 1/2 | complete Einstein-sector test discovery | 61.73 s | PASS (118 tests) |
+| 1/2 | complete Einstein-sector test discovery | 70.18 s | PASS (124 tests) |
 | 2 | independent compensated operator-export consumer | 9 s | PASS |
 | 2 | preflight plus characteristic snapshot verifiers | 17 s | PASS |
 | 2 | Einstein aggregator/asymptotic/D-seed affected tests | 15.8 s | PASS (32 tests) |
@@ -116,8 +120,7 @@ team registered the Berger minimal-BV SDR, then passed after that owner landed
 the registration.  Unrelated quantum import edits were not modified or staged
 here.
 
-The subsequent retained-layout result is now registered as
-`RETAINED_MINIMAL_LAYOUT_FROZEN`, and the programme dossier imports this
-theorem's updated Einstein-boundary seed by committed hash.  The shared gate is
-`BERGER_RETAINED_MINIMAL_OPERATOR`; no retained coefficient or nonminimal
-promotion was inferred from the typed layout.
+The retained operator is now registered as complete minimal `q1`.  The shared
+classical gate has moved to nonminimal completion and causal construction;
+the Einstein-side incidence gate is closed negatively at this Berger base
+point without changing any causal claim.

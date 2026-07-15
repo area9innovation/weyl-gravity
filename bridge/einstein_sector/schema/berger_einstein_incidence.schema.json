@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-einstein-incidence-v1",
+  "title": "Exact Einstein-incidence classification of the positive Berger clock background",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "dependency_tags", "provenance", "domain", "exact_tensors",
+    "incidence_tests", "rational_fixture", "classification", "tangent_gate",
+    "claim_flags", "claim_boundary", "verification_command"
+  ],
+  "properties": {
+    "schema": {"const": "berger-einstein-incidence-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/berger_einstein_incidence.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "BERGER_EINSTEIN_INCIDENCE"},
+    "result_state": {"const": "EXACT_BACKGROUND_NONINCIDENCE_CERTIFIED_TANGENT_EMBEDDING_NOT_APPLICABLE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "provenance": {"type": "object"},
+    "domain": {"type": "object"},
+    "exact_tensors": {"type": "object"},
+    "incidence_tests": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["einstein", "conformally_einstein", "einstein_with_same_clock_stress"]
+    },
+    "rational_fixture": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "berger_background_in_pure_einstein_locus",
+        "berger_background_in_conformally_einstein_locus",
+        "berger_background_in_einstein_same_clock_locus",
+        "berger_background_is_genuine_non_einstein_weyl_matter_branch",
+        "same_base_point_linearized_einstein_clock_complex_exists",
+        "retained_berger_q1_is_complete_weyl_matter_minimal_complex",
+        "retained_berger_q1_is_einstein_tangent_subcomplex"
+      ]
+    },
+    "tangent_gate": {"type": "object"},
+    "claim_flags": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "verification_command": {"type": "string", "minLength": 1}
+  }
+}

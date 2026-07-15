@@ -250,13 +250,16 @@ The two Berger inputs pinned by this certificate establish:
 
 They were fail-closed before a total-(D) verdict.  Since this certificate was
 issued, the classical programme has additionally certified `D_GAUGE` on the
-specific smooth fixed-coupling linearized Berger phase space, with tags
-`LOCAL-ALGEBRAIC` and `REDUCED-MODE`.  It has since also certified a
-support-local cyclic SDR for the eight temporal/Weyl clock and minimal-dual
-rows.  The retained 26-row coefficientwise operator, nonminimal rows, causal
-Green complex, and nonlinear stability theorem remain open.  The retained
-typed layout has now been frozen separately; the immediate Berger gate is
-`BERGER_RETAINED_MINIMAL_OPERATOR`.
+specific smooth fixed-coupling linearized Berger phase space, the
+support-local cyclic clock SDR, and the complete coefficientwise cyclic
+26-row retained minimal `q1`.  Nonminimal rows, the causal Green complex, and
+nonlinear stability remain open.
+
+The Einstein-side incidence theorem also proves that this particular Berger
+background is neither Einstein, conformally Einstein, nor Einstein with the
+same clock stress for any constant `kappa,Lambda`.  It is therefore a genuine
+non-Einstein Weyl--matter branch rather than a background on which to embed an
+Einstein tangent complex.
 
 The Berger phase is a dynamical relational matter clock on a non-flat compact
 background and uses the opposite metric-signature convention.  The coordinate

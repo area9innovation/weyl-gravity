@@ -66,6 +66,11 @@ It was regenerated once more when the Einstein-sector theorem imported the
 universal external-source Ward/defect chain map.  Again only the transitive
 input hash changed; no bootstrap equation or lifecycle flag moved.
 
+It was refreshed again after the Einstein-sector theorem classified the
+positive Berger clock as a genuine non-Einstein Weyl--matter branch.  This is
+also a transitive input-hash change only: the asymptotically-flat bootstrap
+equations and every `AF-E1`--`AF-E8` status remain unchanged.
+
 Tier 2 regenerated the direct asymptotic and D-quotient consumers.  Existing
 cylinder and residual mathematical inputs were unchanged and checked by
 hash.  Tier 3 was not run because no freeze, release, shared core algebra, or

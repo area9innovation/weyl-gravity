@@ -32,6 +32,8 @@ PREFLIGHT = ROOT / "bridge/certificates/compensated_einstein_sourced_defect_pref
 CHARACTERISTIC_SNAPSHOT = ROOT / "bridge/certificates/compensated_nonzero_characteristic_snapshot.json"
 BERGER_MINIMAL_BV_SDR = ROOT / "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json"
 BERGER_RETAINED_LAYOUT = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json"
+BERGER_RETAINED_OPERATOR = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json"
+BERGER_EINSTEIN_INCIDENCE = ROOT / "bridge/certificates/berger_einstein_incidence.json"
 
 
 class SourcedDefectChainMapError(RuntimeError):
@@ -228,6 +230,8 @@ def build_certificate() -> dict[str, Any]:
     snapshot = _load(CHARACTERISTIC_SNAPSHOT)
     berger = _load(BERGER_MINIMAL_BV_SDR)
     berger_layout = _load(BERGER_RETAINED_LAYOUT)
+    berger_operator = _load(BERGER_RETAINED_OPERATOR)
+    berger_incidence = _load(BERGER_EINSTEIN_INCIDENCE)
     _require(preflight.get("verdict") == "ARBITRARY_SAME_SOURCE_EINSTEIN_TRUNCATION_REFUTED_LINEAR_FLAT", "preflight verdict changed")
     _require(snapshot.get("result_state") == "SCOPED_EXACT_SNAPSHOT_CERTIFIED_GLOBAL_CLASSICAL_FREEZE_OPEN", "characteristic scope changed")
     _require(
@@ -247,6 +251,28 @@ def build_certificate() -> dict[str, Any]:
         and berger_layout.get("flags", {}).get("nonminimal_rows_complete") is False,
         "Berger retained-layout contextual gate changed",
     )
+    _require(
+        berger_operator.get("result_id") == "BERGER_RETAINED_MINIMAL_OPERATOR"
+        and berger_operator.get("claim_status") == "CERTIFIED_COMPLETE_MINIMAL_Q1"
+        and berger_operator.get("flags", {}).get("BERGER_RETAINED_MINIMAL_OPERATOR") is True
+        and berger_operator.get("flags", {}).get("BERGER_NONMINIMAL_COMPLETION") is False
+        and berger_operator.get("flags", {}).get("BERGER_CAUSAL_GREEN_HOMOTOPY") is False,
+        "Berger retained-operator contextual gate changed",
+    )
+    _require(
+        berger_incidence.get("result_id") == "BERGER_EINSTEIN_INCIDENCE"
+        and berger_incidence.get("result_state")
+        == "EXACT_BACKGROUND_NONINCIDENCE_CERTIFIED_TANGENT_EMBEDDING_NOT_APPLICABLE"
+        and berger_incidence.get("classification", {}).get(
+            "berger_background_is_genuine_non_einstein_weyl_matter_branch"
+        )
+        is True
+        and berger_incidence.get("classification", {}).get(
+            "same_base_point_linearized_einstein_clock_complex_exists"
+        )
+        is False,
+        "Berger Einstein-incidence contextual gate changed",
+    )
     data = _build_exact_data()
     generic = _compatible_source_fiber(data, "generic_noncharacteristic", (2, 1, 0, 0))
     null = _compatible_source_fiber(data, "nonzero_null", (1, 0, 0, 1))
@@ -264,7 +290,7 @@ def build_certificate() -> dict[str, Any]:
         "result_state": "UNIVERSAL_SOURCE_WARD_CHAIN_MAP_CERTIFIED_MATTER_BV_LIFT_OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "provenance": {
-            "input_base_commit": "46d95a1f6f04e446a4d5290ec5666af3af6cd392",
+            "input_base_commit": "bb86c011d66440bf3b204125a655189e511d6615",
             "generator_path": "bridge/einstein_sector/compensated_sourced_defect_chain_map.py",
             "generator_sha256": _sha256(Path(__file__)),
         },
@@ -274,6 +300,8 @@ def build_certificate() -> dict[str, Any]:
             "characteristic_snapshot": {"path": str(CHARACTERISTIC_SNAPSHOT.relative_to(ROOT)), "sha256": _sha256(CHARACTERISTIC_SNAPSHOT)},
             "berger_minimal_bv_clock_sdr": {"path": str(BERGER_MINIMAL_BV_SDR.relative_to(ROOT)), "sha256": _sha256(BERGER_MINIMAL_BV_SDR)},
             "berger_retained_minimal_layout": {"path": str(BERGER_RETAINED_LAYOUT.relative_to(ROOT)), "sha256": _sha256(BERGER_RETAINED_LAYOUT)},
+            "berger_retained_minimal_operator": {"path": str(BERGER_RETAINED_OPERATOR.relative_to(ROOT)), "sha256": _sha256(BERGER_RETAINED_OPERATOR)},
+            "berger_einstein_incidence": {"path": str(BERGER_EINSTEIN_INCIDENCE.relative_to(ROOT)), "sha256": _sha256(BERGER_EINSTEIN_INCIDENCE)},
         },
         "domain": {
             "spacetime": "four-dimensional Minkowski space",
@@ -299,8 +327,8 @@ def build_certificate() -> dict[str, Any]:
             "universal_result": "external-source Ward and defect chain maps",
             "external_source_geometry": "for fixed nonzero source, the field solution locus remains affine",
             "not_a_bv_complex_reason": "T and J have no declared kinetic equations, matter gauge symmetries, ghosts, or antifields",
-            "model_dependent_next_lift": "choose a matter action (the Berger conformal-scalar model is one candidate), construct its full BV rows, and prove that its stress/source map intertwines the matter BV differential with this universal Ward complex",
-            "berger_context": "the Berger team has certified an eight-row support-local minimal clock SDR and frozen the typed 26-row retained layout; retained q1 coefficients and nonminimal rows required for a full matter-BV lift remain open",
+            "model_dependent_next_lift": "choose a common Einstein--matter/Weyl--matter background, construct its full matter BV rows, and prove that its stress/source map intertwines the matter BV differential with this universal Ward complex",
+            "berger_context": "the Berger team has certified the support-local clock SDR and the complete cyclic 26-row retained minimal q1; an exact incidence theorem proves that this particular background is neither Einstein, conformally Einstein, nor Einstein with the same clock stress for any constant kappa and Lambda, so a same-base-point Einstein tangent embedding is not applicable; nonminimal and causal rows remain open",
         },
         "verdict": "SOURCE_WARD_TO_EINSTEIN_DEFECT_CHAIN_MAP_EXACT_GENERIC_MATTER_BV_NOT_UNIVERSAL",
         "claim_flags": {
@@ -313,6 +341,8 @@ def build_certificate() -> dict[str, Any]:
             "dressed_source_ward_endomorphism_exact": True,
             "berger_minimal_clock_sdr_imported": True,
             "berger_retained_typed_layout_imported": True,
+            "berger_retained_minimal_operator_imported": True,
+            "berger_background_einstein_incidence_refuted": True,
             "arbitrary_ward_cycle_is_einstein_compatible": False,
             "fixed_external_source_locus_is_bv_subcomplex": False,
             "matter_inclusive_bv_complex_constructed": False,
@@ -323,7 +353,7 @@ def build_certificate() -> dict[str, Any]:
             "quantum_claim": False,
         },
         "missing_object_ledger": [
-            "select and import a dynamical matter action with exact provenance",
+            "select and import a common Einstein--matter/Weyl--matter background with exact provenance; the positive Berger clock background is exactly ruled out for this same-base-point role",
             "construct matter Euler, gauge, ghost, antifield, Noether, pairing, and cyclicity rows",
             "prove the stress/source realization is a chain map into the universal source Ward complex",
             "test whether the matter equations preserve Q(T)=0 rather than merely the Ward identities",
@@ -334,6 +364,7 @@ def build_certificate() -> dict[str, Any]:
             "the compatible-source kernels are exact representative symbol fibers, not global matter solution spaces",
             "Q(T)=0 is stronger than Diff x Weyl Ward compatibility",
             "the dressed source is a changed higher-derivative coupling, not same-source Einstein equivalence",
+            "a complete Weyl--matter minimal q1 at a non-Einstein base point is not an Einstein tangent subcomplex",
             "no LORENTZIAN-CAUSAL, nonlinear, scattering, or quantum claim is made",
         ],
         "verification_command": "python3 -m bridge.einstein_sector.compensated_sourced_defect_chain_map --verify bridge/certificates/compensated_sourced_defect_chain_map.json",

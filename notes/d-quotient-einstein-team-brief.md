@@ -189,8 +189,9 @@ a claim that local or asymptotically flat radiative solutions are absent.
 
 This is still not the global classical import freeze.  The `p=0` global modes,
 covariant characteristic bundle, physical radiative pairing, gauge-fixed
-nonminimal domain, and causal Green data remain open.  E-D2 should next
-lift the sourced-defect map through a declared dynamical matter BV complex.
+nonminimal domain, and causal Green data remain open.  E-D2 should next lift
+the sourced-defect map through a declared dynamical matter BV complex at a
+common Einstein--matter/Weyl--matter background.
 A higher-derivative dressed source is a separately labelled coupling, not
 conventional Einstein equivalence.
 
@@ -204,23 +205,19 @@ gate is narrower and model-dependent: select a matter action, construct its
 full BV complex, and prove its stress/source realization maps into this
 universal Ward complex while preserving `ker Q`.
 
-The minimal BV certificate imports the classical Berger-clock background and
-reduced charge seed by hash.  Those pinned inputs establish an exact
-positive-energy rotating clock and nonzero internal matter momentum on a
-compact squashed background.  The classical programme has since certified
-the stronger scoped verdict `D_GAUGE` on
-`positive_berger_fixed_coupling_linearized_solutions`, with tags
-`LOCAL-ALGEBRAIC` and `REDUCED-MODE`.
+The Berger rail now supplies an exact positive-energy rotating clock, the
+scoped `D_GAUGE` verdict, the clock SDR, and the complete coefficientwise
+cyclic 26-row retained minimal `q1`.  It is neither identified with the flat
+Stueckelberg compensator nor inserted into the compensated BV differential.
 
-That result is neither identified with the flat Stueckelberg compensator nor
-inserted into the compensated BV differential.  The subsequent
-`BERGER_MINIMAL_BV_CLOCK_SDR` theorem now contracts the eight temporal/Weyl
-clock and minimal-dual rows support-locally and cyclically, leaving a 26-row
-retained minimal complex.  `BERGER_RETAINED_MINIMAL_LAYOUT` now freezes those
-26 component rows, bundle types, pairings, allowed `q1` blocks, support rules,
-and order ceilings.  Its coefficientwise operator remains open; the immediate
-gate is `BERGER_RETAINED_MINIMAL_OPERATOR`, followed by nonminimal, causal,
-and stability completion.
+The new `BERGER_EINSTEIN_INCIDENCE` certificate classifies the background
+itself.  It is not Einstein, not conformally Einstein because `B_00` is
+nonzero, and not Einstein with the same clock stress for any constants
+`kappa,Lambda`.  The exact trace-free-Ricci/Bach minor is
+`-q(1-q)/(8a^6)`.  Hence this is a genuine non-Einstein Weyl--matter branch;
+a same-base-point Einstein tangent inclusion is `NOT_APPLICABLE`, not merely
+open.  The classical Berger rail continues independently with nonminimal and
+causal completion.
 
 ## Work package E-D3: observables, charges, and scattering
 
@@ -308,6 +305,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | known target; boundaryless scope | known target | proved baseline | zero in stated absolute residual complex | \(I_2\) on centered degree-four classes | proper solution sector |
 | Cylinder + scalar clock | open | open | open | open | open | open |
+| Positive Berger clock | `D_GAUGE` on fixed-coupling linearized phase space | minimal clock SDR and retained `q1` complete; arity two open | principal endpoint factors only; curved/Green gates open | open | minimal cyclic pairing exact | `NOT_APPLICABLE` at this base point: certified non-Einstein Weyl--matter branch |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | stability open |
 | Lorentzian dS/AdS | boundary-dependent; compute | open | open | open | open | selected sector to certify |
@@ -322,8 +320,9 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 3. Prove or refute linear causal preservation of the Einstein branch.
 4. Classify the extra radiative branch and its norm.
 5. Compare Bondi observables and tree amplitudes.
-6. Add the scalar clock, then Lorentzian dS/AdS; add Yang--Mills only after the
-   scalar rail is understood.
+6. Seek a different common scalar background for an Einstein--matter tangent
+   comparison; retain the Berger clock as the certified non-Einstein control
+   branch.  Add Yang--Mills only after that distinction is stable.
 
 Escalate immediately if the Einstein selection is nonlocal or future-dependent,
 if a negative-norm radiative mode is unavoidable, or if the selected sector

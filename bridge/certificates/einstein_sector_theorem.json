@@ -4,11 +4,24 @@
       "Bach-flat metrics that are not conformally Einstein",
       "linearized A and L cylinder towers in addition to the E tower"
     ],
+    "additional_weyl_matter_solutions": [
+      "the certified positive Berger clock background, which is neither Einstein, conformally Einstein, nor Einstein with the same clock stress"
+    ],
     "survive": [
       "all four-dimensional Ricci-flat metrics",
       "all four-dimensional Einstein metrics with cosmological constant",
       "their Weyl transforms as pure-Weyl solutions"
     ]
+  },
+  "berger_clock_einstein_incidence": {
+    "background": "positive rotating conformal-scalar clock on the static Berger cylinder",
+    "conformally_einstein_status": "REFUTED_BY_NONZERO_BACH_TENSOR",
+    "einstein_same_clock_status": "REFUTED_FOR_ALL_CONSTANT_KAPPA_AND_LAMBDA",
+    "exact_obstruction": "det((S_00,B_00),(S_11,B_11))=-q(1-q)/(8a^6) != 0",
+    "pure_einstein_status": "REFUTED_ON_CERTIFIED_INTERVAL",
+    "scope": "LOCAL-ALGEBRAIC and REDUCED-MODE background classification; no causal or universal matter obstruction",
+    "tangent_consequence": "same-base-point Einstein--clock tangent embedding is not applicable",
+    "weyl_matter_status": "exact solution with complete retained minimal q1"
   },
   "boundary_and_cauchy_ledger": [
     {
@@ -42,7 +55,9 @@
     "local_helicity_two_modes_present": true,
     "lorentzian_quantum_theorem": false,
     "observable_algebra_embedding": false,
-    "ordinary_helicity_two_scattering_space_recovered": false
+    "ordinary_helicity_two_scattering_space_recovered": false,
+    "positive_berger_clock_einstein_tangent_embedding": false,
+    "positive_berger_clock_is_non_einstein_weyl_matter_branch": true
   },
   "classification": {
     "einstein_as_boundary_selected_sector": "CONDITIONAL_ON_ADDITIONAL_BOUNDARY_DATA",
@@ -50,7 +65,8 @@
     "einstein_as_global_gauge_slice": "FALSE_IN_GENERAL",
     "einstein_as_phase_or_effective_sector": "MODEL_DEPENDENT_NOT_ESTABLISHED_HERE",
     "einstein_observables_subset_reduced_conformal_observables": "NOT_ESTABLISHED",
-    "einstein_solutions_subset_conformal_solutions": "ESTABLISHED_AS_A_MAP_OF_SOLUTION_LOCI"
+    "einstein_solutions_subset_conformal_solutions": "ESTABLISHED_AS_A_MAP_OF_SOLUTION_LOCI",
+    "positive_berger_clock_as_einstein_phase": "REFUTED_AT_THIS_BACKGROUND"
   },
   "closed_cylinder_residual_result": {
     "boundary_problem": "closed cylinder with all fifteen residual generators gauged",
@@ -118,13 +134,17 @@
     }
   ],
   "inputs": {
+    "berger_einstein_incidence": {
+      "path": "bridge/certificates/berger_einstein_incidence.json",
+      "sha256": "6ab941dbf3312bcc991dc0de59be30853f876e4599414196a3ae21c967c863b4"
+    },
     "compensated_characteristic_snapshot": {
       "path": "bridge/certificates/compensated_nonzero_characteristic_snapshot.json",
       "sha256": "a690622d5cdd2cb5889aea15b9ca8280b91b345b31bd4a43748fb5e1089fd3dd"
     },
     "compensated_sourced_defect_chain_map": {
       "path": "bridge/certificates/compensated_sourced_defect_chain_map.json",
-      "sha256": "8d3da8f3a81384b365f4b3be7ec639ba7304e91e6e764c0579b8c6193e761c51"
+      "sha256": "c4a25b0610b869d9d8c82c19bc85005cbce20186700149d1d9cd212689eefc56"
     },
     "completed_residual": {
       "path": "analytic_completion/certificates/completed_H4.json",
@@ -219,7 +239,7 @@
     "status": "NO_MECHANISM_CERTIFIED_IN_THIS_THEOREM"
   },
   "schema": "pure-weyl-einstein-sector-theorem-v1",
-  "source_commit": "46d95a1f6f04e446a4d5290ec5666af3af6cd392",
+  "source_commit": "bb86c011d66440bf3b204125a655189e511d6615",
   "theorem": {
     "conclusions": [
       "every Einstein metric is Bach-flat",
