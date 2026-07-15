@@ -325,10 +325,16 @@ module and the reduced Weyl symbol is $\frac14 I_2$.  The exact $26$-state
 Weyl--Cotton equations, constraint-adjusted symmetric hyperbolicity, sourced
 constraint propagation and all-level $E/A/L$ spectrum are certified.  The
 support-local all-row prolongation and BV operator identity are also exact.
-The retained $30$-row metric endpoint is coefficient-complete.  Its canonical
-upper curvature lift is exact, the canonical middle graph lift is obstructed,
-and the minimal cyclic relative saddle has zero Schur correction.  Thus the
-metric endpoint Green witness remains open.  Nine curvature/current flags are
+The retained $30$-row metric endpoint and its canonical backward witness are
+coefficient-complete.  A normalization audit gives scalar trace-free biwave
+symbol and reduces the open primal channel to a rank-nine operator.  Its
+complete invariant two-wave-factor family is ruled out by an exact
+order-two polynomial certificate.  The canonical upper curvature lift is
+exact, the canonical middle graph lift is obstructed, and the minimal cyclic
+relative saddle has zero Schur correction.  A flat adjoint-tractor HPL
+compression and its principal Bach match are exact, but the corresponding
+curved PBW chain map still has a $48$-entry defect.  Thus the endpoint Green
+homotopy remains open.  Nine curvature/current flags are
 true; the remaining six causal flags keep the final covariant $H^4$ flag
 false.
 \item Calling the resulting classes physical states additionally requires a
@@ -1646,6 +1652,30 @@ intertwine $Q_{\rm prol}$ and $Q_{\rm end}$.  Thus the earlier $66\to30$
 flat-Fourier hashes remain only a dimension/order/sign regression and are no
 longer the source of the curved endpoint claim.
 
+The endpoint equation coordinates already contain the fibre identification
+$\bar B=J_{\rm met}^{-1}E_{\rm Bach}$.  Consequently the abstract minimal
+witness coefficient $2\sharp^{-1}$ must not be inserted a second time.  The
+coefficientwise canonical backward map is
+\begin{equation}\label{eq:endpoint-canonical-backward-witness}
+ W_0=(T_{\rm gf},1,T_{\rm gf}^{\sharp}),
+ \qquad
+ D_{\rm end}=Q_{\rm end}W_0+W_0Q_{\rm end}.
+\end{equation}
+With the superseded middle coefficient $2I$, the trace-free principal matrix
+at $\zeta=dt$ has spectrum $1^4\oplus2^5$; this is the exact normalization
+counterexample missed by the first textual guard.  With the identity in
+\eqref{eq:endpoint-canonical-backward-witness}, exhaustive fourth-order
+coefficients instead give
+\begin{equation}\label{eq:endpoint-scalar-tracefree-symbol}
+ \sigma_4(D_{\rm TF})(\zeta)
+ =\bigl(g^{\mu\nu}\zeta_\mu\zeta_\nu\bigr)^2I_9.
+\end{equation}
+The ghost block is a triangular extension of
+$\Box(\Box+2)I_4$ by the Weyl-scalar identity; the metric trace is likewise a
+triangular identity extension.  Thus the sole primal analytic block is the
+rank-nine $D_{\rm TF}=P_{\rm TF}D_MP_{\rm TF}$, together with its formal-adjoint
+copy in the equation row.
+
 The canonical curvature backward-map audit identifies a precise boundary.
 The upper row lifts locally: there is a rank-four algebraic map $R$ with
 \begin{equation}
@@ -1674,12 +1704,64 @@ incidence introduces no new endpoint obstruction, but it also cannot improve
 Green invertibility of the exact thirty-row diagonal.  Larger relative
 witnesses are not excluded.
 
+The most direct same-bundle factorization of $D_{\rm TF}$ is now excluded
+exactly.  Write
+\begin{equation}\label{eq:endpoint-wave-factor-ansatz}
+ L_\pm=P_{\rm tr}+\Box P_{\rm TF}
+       +A_\pm^\mu\nabla_\mu+B_\pm .
+\end{equation}
+On $S^2_0T^*M\cong V_0\oplus V_1\oplus V_2$, the complete parallel
+$SO(3)$-invariant trace-free-preserving families have dimensions nine at
+first order and three at order zero.  A general nondegenerate wave-type
+leading pair $qH_-,qH_+$ loses no solutions under the displayed scalar
+normalization: the scalar target forces $H_-H_+=1$, and replacing the factors
+by $L_-H_+$ and $H_+^{-1}L_+$ preserves their product and the complete
+lower-order families.  Exact symmetrized PBW composition of
+$L_-L_+-D_{\rm TF}$ has no order-four defect.  Order three has coefficient and
+augmented rank nine and forces $A_+=-A_-$.  At order two the three sums
+$B_-+B_+$ are fixed; the remaining $42$ quadratics admit twelve explicit
+degree-two rational multipliers $w_i$ satisfying
+\begin{equation}\label{eq:endpoint-factor-nullstellensatz}
+ \boxed{\sum_i w_i f_i=1.}
+\end{equation}
+Hence no factorization of the form \eqref{eq:endpoint-wave-factor-ansatz}
+exists, and orders one and zero are unreachable.  This is a no-go for the
+complete parallel invariant two-wave-factor family, not for mixed-order or
+enlarged systems, triangular Green extensions, or the equation-cone
+curvature-to-metric route.  Its exact receipt is
+\texttt{curved\_endpoint\_metric\_factorization\_no\_go.json}; the nonzero
+multipliers are printed in
+Appendix~\ref{app:endpoint-factorization-receipt}.
+
+There is, however, a positive parent-detour route.  For the flat adjoint
+tractor connection, the Yang--Mills detour complex of
+Ref.~\cite{GoverSombergSoucek} has ranks $15\to60\to60\to15$ and a
+degreewise normally hyperbolic parent witness.  Exact Kostant contraction
+and finite homological perturbation terminate after two terms and compress
+it to ranks $4\to9\to9\to4$; every flat splitting, retraction, chain-map and
+cyclic dual-row defect vanishes.  The compressed middle principal operator
+matches the endpoint Bach symbol coefficientwise with normalization $-2$.
+For a completed curved cyclic SDR $(i,p)$, the causal transfer would be
+\begin{equation}\label{eq:conditional-tractor-green-transfer}
+ \Lambda_{{\rm TF},\pm}=p\Lambda_{{\rm parent},\pm}i,
+ \qquad
+ q\Lambda_{{\rm TF},\pm}+\Lambda_{{\rm TF},\pm}q=1,
+\end{equation}
+with causal support preserved by finite-order pre- and postcomposition.
+The present cylinder substitution is not yet that SDR: treating the
+Levi--Civita derivatives as commuting leaves an exact $48$-entry chain defect.
+This is the scoped PBW boundary requiring the missing tensor-slot curvature
+commutators, not a no-go for curved BGG compression.  Accordingly
+\eqref{eq:conditional-tractor-green-transfer} remains conditional and no
+causal flag is promoted.
+
 What remains is
 $L_{\rm end}=DW_{\rm end}+W_{\rm end}D$ and
 $\Gamma_\pm=W_{\rm end}G_{\rm end,\pm}P_{\rm end}$.
 Then $\Lambda_\pm=H_{\rm alg}+\Gamma_\pm$ should satisfy
-$D\Lambda_\pm+\Lambda_\pm D=1$ causally.  The endpoint witness and Green
-operators are not constructed, so no causal flag is promoted.
+$D\Lambda_\pm+\Lambda_\pm D=1$ causally.  The algebraic endpoint witness
+$W_0$ is constructed, but neither a Green inverse for $D_{\rm TF}$ nor the
+curved tractor/BGG transfer is complete, so no causal flag is promoted.
 
 The selected causal route therefore has the following explicit flags:
 \begin{equation}\label{eq:open-curvature-flags}
@@ -3612,7 +3694,16 @@ local and exact, while the canonical middle graph lift has the scoped
 rank-five obstruction described above.  Passing to the full relative saddle
 does restore a cyclic two-way incidence, but its minimal Schur correction
 vanishes identically by \eqref{eq:endpoint-minimal-saddle-nilpotence}; hence
-the still-missing object is the endpoint-diagonal witness $W_0$ itself.  The
+the exact endpoint diagonal remains intrinsic.  Its corrected canonical
+$W_0$ is \eqref{eq:endpoint-canonical-backward-witness}, and its trace-free
+principal symbol is scalar by \eqref{eq:endpoint-scalar-tracefree-symbol}.
+The complete invariant two-wave-factor route is impossible by
+\eqref{eq:endpoint-factor-nullstellensatz}.  The flat adjoint-tractor HPL
+compression and principal normalization are exact, while its curved
+Levi--Civita PBW lift retains the explicit $48$-entry defect described above.
+Thus the missing object is a Green realization of the rank-nine trace-free
+endpoint, most plausibly through the completed curved tractor/BGG or
+equation-cone triangular route.  The
 off-shell prolonged/auxiliary current comparison is exact; its identification
 with a causal Green pairing remains downstream.  The prolonged Green witness
 and causal Green operators, causal BV Green homotopy
@@ -3626,8 +3717,9 @@ the energy-mode Krein module and proves Green hyperbolicity of its TT and
 vector propagation blocks.  Since the curvature Green realization and
 causal quasi-isomorphism are not yet constructed,
 \texttt{final\_covariant\_H4} remains false.  Distributional and Hadamard
-completion are not claimed.  A direct same-bundle metric factorization
-remains optional.
+completion are not claimed.  A direct invariant two-wave-factor metric
+factorization is now ruled out in the stated complete family rather than left
+optional.
 
 \appendix
 
@@ -3679,6 +3771,23 @@ For the two-particle complex the two explicit independent kernel vectors
 provide the upper bound which the modular rank saturates.  Thus the ranks
 quoted in Section~\ref{sec:centered} are exact characteristic-zero ranks,
 not probabilistic modular estimates.
+
+\section{Endpoint factorization no-go receipt}
+\label{app:endpoint-factorization-receipt}
+
+For auditability, this appendix records the nonzero part of the exact
+Nullstellensatz certificate used in
+\eqref{eq:endpoint-factor-nullstellensatz}.  The variables
+$a_0,\ldots,a_8$ are the nine coefficients of the invariant first-order
+term $A_-$ after the cubic equation has imposed $A_+=-A_-$.  The $f_i$ are
+the indexed residual quadratic coefficient equations after the three
+zeroth-order sums have been eliminated; all unlisted multipliers vanish.
+The table is generated mechanically from
+\path{curved_endpoint_metric_factorization_no_go.json}, and its
+generator re-expands the displayed identity over $\mathbb Q$ before writing
+the TeX file.
+
+\input{generated/endpoint_factorization_nullstellensatz.tex}
 
 \section{Claim-status and verification index}\label{app:verification}
 
@@ -3846,11 +3955,16 @@ Nine flags in \eqref{eq:open-curvature-flags} are true and the six
 causal/transport flags remain false.  The local all-row prolongation, BV
 differential, off-shell current comparison, and $356/30$ hybrid algebraic
 projector are complete.  The retained $5\to10\to10\to5$ endpoint is
-coefficient-complete and cyclic.  Its upper curvature graph lift is exact;
+coefficient-complete and cyclic.  Its corrected canonical backward witness
+has trace-free scalar biwave symbol.  The complete parallel invariant
+two-wave-factor family is excluded by a twelve-multiplier degree-two
+Nullstellensatz certificate.  Its upper curvature graph lift is exact;
 the canonical middle lift is obstructed.  The minimal cyclic relative saddle
 exists on all $386$ rows but has zero endpoint Schur correction, so it neither
 helps nor obstructs the still-open endpoint-diagonal Green problem.  The
-remaining work is the endpoint witness $W_0$ and actual BV Green homotopy,
+flat adjoint-tractor HPL compression and principal $-2$ Bach match are exact,
+but its curved PBW lift has a $48$-entry chain defect.  The remaining work is
+a Green inverse for the rank-nine trace-free endpoint and the actual BV Green homotopy,
 residual endpoint recovery, and
 equivariance; Green/current equality is further downstream.  Consequently the causal quasi-isomorphism
 and \texttt{final\_covariant\_H4} remain false; the already-complete residual
