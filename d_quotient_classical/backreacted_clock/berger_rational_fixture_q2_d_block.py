@@ -3,8 +3,11 @@
 
 This is deliberately a ``REDUCED-MODE`` artifact.  It restricts the exact
 homogeneous Berger action to the stationary D-weight-zero variations
-``(delta c, delta N, delta rho)`` at the rational fixture.  The Hessian is
-the six-row unary Koszul--Tate block and the third action derivative is its
+``(delta u, delta N, delta rho)`` at the rational fixture, where
+``c=c_0(1+u)`` and the action density is normalized by the constant
+background factor ``c_0``.  This makes every exported coefficient rational
+without changing the stationary equations.  The Hessian is the six-row
+unary Koszul--Tate block and the third action derivative is its
 arity-two Taylor coefficient.  It is not the complete support-local q2.
 """
 
@@ -37,7 +40,10 @@ def _matrix_rows(matrix: sp.MatrixBase) -> list[list[str]]:
 
 
 def _exact_data() -> dict[str, object]:
-    c, lapse, rho, omega = sp.symbols("c N rho omega", positive=True, real=True)
+    u, lapse, rho, omega = sp.symbols("u N rho omega", real=True)
+    q0 = sp.Rational(9, 40)
+    c0 = sp.sqrt(q0)
+    c = c0 * (1 + u)
     alpha_b = sp.Rational(5)
     quartic = sp.Rational(119, 480)
     scalar_curvature = (4 - c**2) / 2
@@ -48,11 +54,11 @@ def _exact_data() -> dict[str, object]:
             + rho**2 * omega**2 / (2 * lapse**2)
             - scalar_curvature * rho**2 / 12
             - quartic * rho**4 / 4
-        )
+        ) / c0
     )
-    fields = (c, lapse, rho)
+    fields = (u, lapse, rho)
     fixture = {
-        c: 3 * sp.sqrt(10) / 20,
+        u: 0,
         lapse: 1,
         rho: 1,
         omega: sp.Rational(3, 4),
@@ -137,10 +143,10 @@ class BergerRationalFixtureQ2DBlock:
     def build(cls) -> "BergerRationalFixtureQ2DBlock":
         data = _exact_data()
         rows = [
-            {"index": 0, "row_id": "delta_c_w0", "degree": 0, "parity": 0, "D_weight": 0, "role": "field"},
+            {"index": 0, "row_id": "delta_u_w0", "degree": 0, "parity": 0, "D_weight": 0, "role": "field"},
             {"index": 1, "row_id": "delta_N_w0", "degree": 0, "parity": 0, "D_weight": 0, "role": "field"},
             {"index": 2, "row_id": "delta_rho_w0", "degree": 0, "parity": 0, "D_weight": 0, "role": "field"},
-            {"index": 3, "row_id": "E_c_w0", "degree": 1, "parity": 1, "D_weight": 0, "role": "equation"},
+            {"index": 3, "row_id": "E_u_w0", "degree": 1, "parity": 1, "D_weight": 0, "role": "equation"},
             {"index": 4, "row_id": "E_N_w0", "degree": 1, "parity": 1, "D_weight": 0, "role": "equation"},
             {"index": 5, "row_id": "E_rho_w0", "degree": 1, "parity": 1, "D_weight": 0, "role": "equation"},
         ]
@@ -163,11 +169,11 @@ class BergerRationalFixtureQ2DBlock:
                 "limitation": "D acts trivially on this centered block; this tests exact ingestion and BV identities, not a nonzero-weight D obstruction",
             },
             "action_derivation": {
-                "authoritative_restriction": "S/(16pi^2)=int dt N c{alpha_B C^2/8+rho^2 omega^2/(2N^2)-R rho^2/12-lambda rho^4/4}",
+                "authoritative_restriction": "L_bar=L/c0 with c=c0(1+u), c0^2=9/40, and L=N c{alpha_B C^2/8+rho^2 omega^2/(2N^2)-R rho^2/12-lambda rho^4/4}",
                 "reduced_lagrangian": str(data["lagrangian"]),
-                "variables": ["c", "N", "rho"],
+                "variables": ["u", "N", "rho"],
                 "held_fixed": {"alpha_B": "5", "lambda": "119/480", "omega": "3/4"},
-                "background": {"c": "3*sqrt(10)/20", "N": "1", "rho": "1", "q": "9/40"},
+                "background": {"u": "0", "c0": "3*sqrt(10)/20", "N": "1", "rho": "1", "q": "9/40"},
                 "stationary_gradient": [str(value) for value in data["gradient"]],
                 "q1_rule": "H_ij=d_i d_j L at the fixture",
                 "q2_rule": "C_ijk=d_i d_j d_k L at the fixture in q=q1+q2/2+... convention",
@@ -187,7 +193,7 @@ class BergerRationalFixtureQ2DBlock:
                 "pairing_nondegenerate": True,
                 "D_weight_conservation": True,
                 "declared_mode_block_closed": True,
-                "all_coefficients_exact_Q_sqrt10": True,
+                "all_exported_coefficients_in_Q": True,
             },
             "flags": {
                 "BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK": True,
@@ -225,15 +231,17 @@ class BergerRationalFixtureQ2DBlock:
         return r"""# Rational Berger fixture q2/D block
 
 The exact homogeneous reduced action is restricted to stationary variations
-of ((c,N,\rho)) at
+of the rationally normalized coordinates ((u,N,\rho)), with
+\(c=c_0(1+u)\), at
 
 \[
 q=\frac9{40},\quad \alpha_B=5,\quad
 \lambda=\frac{119}{480},\quad \omega=\frac34.
 \]
 
-Its Hessian and third derivative give a six-row Koszul--Tate block and a
-nonzero exact (q_2). The canonical field--equation pairing makes the cubic
+The reduced action density is divided by the fixed background factor \(c_0\).
+Its Hessian and third derivative therefore give a six-row Koszul--Tate block
+with coefficients in \(\mathbb Q\) and a nonzero exact (q_2). The canonical field--equation pairing makes the cubic
 tensor cyclic. Every row has (D)-weight zero, so the block is closed and
 the (D)-derivation identities hold exactly.
 

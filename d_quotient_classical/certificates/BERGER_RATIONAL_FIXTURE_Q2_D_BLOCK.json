@@ -62,12 +62,13 @@
     ]
   },
   "action_derivation": {
-    "authoritative_restriction": "S/(16pi^2)=int dt N c{alpha_B C^2/8+rho^2 omega^2/(2N^2)-R rho^2/12-lambda rho^4/4}",
+    "authoritative_restriction": "L_bar=L/c0 with c=c0(1+u), c0^2=9/40, and L=N c{alpha_B C^2/8+rho^2 omega^2/(2N^2)-R rho^2/12-lambda rho^4/4}",
     "background": {
       "N": "1",
-      "c": "3*sqrt(10)/20",
+      "c0": "3*sqrt(10)/20",
       "q": "9/40",
-      "rho": "1"
+      "rho": "1",
+      "u": "0"
     },
     "held_fixed": {
       "alpha_B": "5",
@@ -76,7 +77,7 @@
     },
     "q1_rule": "H_ij=d_i d_j L at the fixture",
     "q2_rule": "C_ijk=d_i d_j d_k L at the fixture in q=q1+q2/2+... convention",
-    "reduced_lagrangian": "c*(1600*N**2*c**4 + 80*N**2*c**2*rho**2 - 3200*N**2*c**2 - 119*N**2*rho**4 - 320*N**2*rho**2 + 1600*N**2 + 960*omega**2*rho**2)/(1920*N)",
+    "reduced_lagrangian": "(u + 1)*(-119*N**2*rho**4 + 18*N**2*rho**2*u**2 + 36*N**2*rho**2*u - 302*N**2*rho**2 + 81*N**2*u**4 + 324*N**2*u**3 - 234*N**2*u**2 - 1116*N**2*u + 961*N**2 + 960*omega**2*rho**2)/(1920*N)",
     "residual_fit_used": false,
     "stationary_gradient": [
       "0",
@@ -84,7 +85,7 @@
       "0"
     ],
     "variables": [
-      "c",
+      "u",
       "N",
       "rho"
     ]
@@ -95,19 +96,19 @@
     "degree": 1,
     "entries": [
       {
-        "coefficient": "3/2",
+        "coefficient": "27/80",
         "left": 0,
         "output": 3,
         "right": 0
       },
       {
-        "coefficient": "-9*sqrt(10)/10",
+        "coefficient": "-27/20",
         "left": 0,
         "output": 3,
         "right": 1
       },
       {
-        "coefficient": "3*sqrt(10)/40",
+        "coefficient": "9/80",
         "left": 0,
         "output": 3,
         "right": 2
@@ -131,7 +132,7 @@
         "right": 2
       },
       {
-        "coefficient": "-9*sqrt(10)/10",
+        "coefficient": "-27/20",
         "left": 0,
         "output": 4,
         "right": 0
@@ -149,25 +150,25 @@
         "right": 2
       },
       {
-        "coefficient": "-81*sqrt(10)/320",
+        "coefficient": "-27/16",
         "left": 1,
         "output": 4,
         "right": 1
       },
       {
-        "coefficient": "27*sqrt(10)/160",
+        "coefficient": "9/8",
         "left": 1,
         "output": 4,
         "right": 2
       },
       {
-        "coefficient": "-389*sqrt(10)/1600",
+        "coefficient": "-389/240",
         "left": 2,
         "output": 4,
         "right": 2
       },
       {
-        "coefficient": "3*sqrt(10)/40",
+        "coefficient": "9/80",
         "left": 0,
         "output": 5,
         "right": 0
@@ -185,19 +186,19 @@
         "right": 2
       },
       {
-        "coefficient": "27*sqrt(10)/160",
+        "coefficient": "9/8",
         "left": 1,
         "output": 5,
         "right": 1
       },
       {
-        "coefficient": "-389*sqrt(10)/1600",
+        "coefficient": "-389/240",
         "left": 1,
         "output": 5,
         "right": 2
       },
       {
-        "coefficient": "-357*sqrt(10)/1600",
+        "coefficient": "-119/80",
         "left": 2,
         "output": 5,
         "right": 2
@@ -233,7 +234,7 @@
         "0"
       ],
       [
-        "-9*sqrt(10)/10",
+        "-27/20",
         "-9/16",
         "3/80",
         "0",
@@ -242,16 +243,16 @@
       ],
       [
         "-9/16",
-        "27*sqrt(10)/320",
-        "-27*sqrt(10)/160",
+        "9/16",
+        "-9/8",
         "0",
         "0",
         "0"
       ],
       [
         "3/80",
-        "-27*sqrt(10)/160",
-        "-119*sqrt(10)/1600",
+        "-9/8",
+        "-119/240",
         "0",
         "0",
         "0"
@@ -330,7 +331,7 @@
   "exact_checks": {
     "D_weight_conservation": true,
     "action_stationary_on_fixture": true,
-    "all_coefficients_exact_Q_sqrt10": true,
+    "all_exported_coefficients_in_Q": true,
     "declared_mode_block_closed": true,
     "pairing_nondegenerate": true,
     "q1_D_commutator_zero": true,
@@ -355,7 +356,7 @@
       "index": 0,
       "parity": 0,
       "role": "field",
-      "row_id": "delta_c_w0"
+      "row_id": "delta_u_w0"
     },
     {
       "D_weight": 0,
@@ -379,7 +380,7 @@
       "index": 3,
       "parity": 1,
       "role": "equation",
-      "row_id": "E_c_w0"
+      "row_id": "E_u_w0"
     },
     {
       "D_weight": 0,

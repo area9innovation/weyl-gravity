@@ -243,9 +243,11 @@ Koszul--Tate package, and causal/Hadamard data.
 
 The rational Berger fixture now supplies the smallest action-derived input
 that can exercise the arity-two ND2 machinery. Its six rows are the three
-stationary homogeneous variations \(\delta c,\delta N,\delta\rho\) and their
-Euler--Lagrange rows. The Hessian and cubic Taylor tensor are derived from the
-exact reduced action, the cyclic pairing is canonical, and all declared
+stationary homogeneous variations \(\delta u,\delta N,\delta\rho\), with
+\(c=c_0(1+u)\), and their Euler--Lagrange rows. The Hessian and cubic Taylor
+tensor are derived from the exact action normalized by the constant
+background factor \(c_0\), so every exported coefficient is rational. The
+cyclic pairing is canonical, and all declared
 \(D\)-weights are zero. Exact checks prove \([q_1,D]=0\), the arity-two
 \(q^2\) identity, cyclicity, and block closure. This is deliberately tagged
 `REDUCED-MODE`: it is an ingestion and identity fixture, not the full

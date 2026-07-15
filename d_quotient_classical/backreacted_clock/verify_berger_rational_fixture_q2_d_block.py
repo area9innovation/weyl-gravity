@@ -19,15 +19,18 @@ def _matrix(rows: list[list[str]]) -> sp.Matrix:
 
 def verify_certificate() -> dict[str, object]:
     payload = json.loads(CERTIFICATE.read_text())
-    c, lapse, rho, omega = sp.symbols("c N rho omega", positive=True, real=True)
+    u, lapse, rho, omega = sp.symbols("u N rho omega", real=True)
+    q0 = sp.Rational(9, 40)
+    c0 = sp.sqrt(q0)
+    c = c0 * (1 + u)
     lagrangian = sp.factor(lapse * c * (
         sp.Rational(5, 8) * 4 * (1 - c**2) ** 2 / 3
         + rho**2 * omega**2 / (2 * lapse**2)
         - (4 - c**2) * rho**2 / 24
         - sp.Rational(119, 1920) * rho**4
-    ))
-    fields = (c, lapse, rho)
-    fixture = {c: 3 * sp.sqrt(10) / 20, lapse: 1, rho: 1, omega: sp.Rational(3, 4)}
+    ) / c0)
+    fields = (u, lapse, rho)
+    fixture = {u: 0, lapse: 1, rho: 1, omega: sp.Rational(3, 4)}
     assert all(sp.factor(sp.diff(lagrangian, field).subs(fixture)) == 0 for field in fields)
     hessian = sp.Matrix(3, 3, lambda row, column: sp.factor(sp.diff(lagrangian, fields[row], fields[column]).subs(fixture)))
     q1 = _matrix(payload["classical_unary_q1"]["matrix"])
@@ -42,6 +45,8 @@ def verify_certificate() -> dict[str, object]:
                     expected[(3 + output, left, right)] = value
     observed = {(entry["output"], entry["left"], entry["right"]): sp.sympify(entry["coefficient"]) for entry in payload["classical_binary_q2"]["entries"]}
     assert observed == expected
+    assert all(value.is_Rational for value in q1)
+    assert all(value.is_Rational for value in observed.values())
     pairing = _matrix(payload["cyclic_pairing"]["matrix"])
     assert pairing.rank() == 6
     assert q1.T * pairing + pairing * q1 == sp.zeros(6)

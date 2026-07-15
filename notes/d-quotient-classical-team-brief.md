@@ -291,7 +291,8 @@ Koszul--Tate export, causal Green operators, and Hadamard data.
 
 `BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK` now provides a separate, deliberately
 small nonlinear handoff. The exact stationary homogeneous Berger action is
-differentiated at the rational fixture to produce a six-row Koszul--Tate
+differentiated in the normalized coordinate \(c=c_0(1+u)\), after dividing
+the action density by the constant \(c_0\), to produce a rational six-row Koszul--Tate
 block: three field variations and three equation rows. Its Hessian is
 `classical_unary_q1`, its symmetric third derivative is
 `classical_binary_q2`, and the canonical field--equation pairing fixes

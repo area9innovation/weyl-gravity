@@ -12,8 +12,10 @@ class BergerRationalFixtureQ2DBlockTests(unittest.TestCase):
 
     def test_action_derived_closed_block(self) -> None:
         self.assertEqual(len(self.payload["row_layout"]), 6)
+        self.assertEqual(self.payload["row_layout"][0]["row_id"], "delta_u_w0")
         self.assertGreater(len(self.payload["classical_binary_q2"]["entries"]), 0)
         self.assertTrue(self.payload["exact_checks"]["declared_mode_block_closed"])
+        self.assertTrue(self.payload["exact_checks"]["all_exported_coefficients_in_Q"])
 
     def test_reduced_mode_boundary(self) -> None:
         self.assertEqual(self.payload["dependency_tags"], ["LOCAL-ALGEBRAIC", "REDUCED-MODE"])
