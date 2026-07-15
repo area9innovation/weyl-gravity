@@ -12,9 +12,10 @@ The resulting cubic Hamiltonian terms are
 
     Omega_3 = c^A mu_A(Phi,Phi) - f^A_BC c^B c^C b_A / 2.
 
-They determine ``ell_2(ghost,matter)`` and ``ell_2(ghost,ghost)``.  The
-matter--matter output of the full nonlinear Bach/BV vector field is a
-different Taylor block and remains absent.
+Its Hamiltonian vector field determines ``ell_2(matter,matter)`` into the
+residual ghost momentum, ``ell_2(ghost,matter)``, and the universal ghost
+brackets.  The complete support-local BV tensor before endpoint projection
+remains absent.
 """
 
 from __future__ import annotations
@@ -174,19 +175,21 @@ def build_certificate(maximum_energy: int = 4) -> dict[str, Any]:
     }
     return {
         "result_id": "HT1_RESIDUAL_CUBIC_BLOCK",
-        "result_state": "PARTIAL_CUBIC_BLOCK_COMPUTED",
+        "result_state": "SELECTED_RESIDUAL_CUBIC_BRACKET_COMPUTED",
         "classical_commit": "UNFROZEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "category": "selected finite algebraic closed-cylinder BV-BFV model",
         "taylor_convention": obstruction_source["taylor_convention"],
         "residual_charge": transgression_source["conventions"]["residual_charge"],
         "computed_taylor_blocks": [
+            "ell_2(physical_matter, physical_matter) -> residual_ghost_momentum",
             "ell_2(residual_ghost, physical_matter)",
             "ell_2(residual_ghost, residual_ghost)",
+            "ell_2(residual_ghost, residual_ghost_momentum)",
         ],
         "uncomputed_taylor_blocks": [
-            "ell_2(physical_matter, physical_matter) from the nonlinear Bach/BV rows",
-            "all antifield-dependent nonlinear q2 rows outside the residual zero-mode charge",
+            "the complete support-local classical q2 tensor before endpoint projection",
+            "projected q2 components from any additional field-theory BV rows not present in the selected algebraic domain",
             "q3 and higher local classical BV Taylor tensors",
         ],
         "cubic_charge": {
@@ -203,6 +206,7 @@ def build_certificate(maximum_energy: int = 4) -> dict[str, Any]:
         },
         "checks": {
             "endpoint_to_moment_map_components": "VERIFIED_15_OF_15",
+            "matter_matter_endpoint_output": "VERIFIED_Q_BFV_b_EQUALS_MU",
             "selected_bfv_suspension_lambda": "VERIFIED_1",
             "moment_map_normalization": "VERIFIED_EXACT",
             "conformal_closure": "VERIFIED_ON_EVERY_INTERIOR_SHELL",
@@ -213,13 +217,14 @@ def build_certificate(maximum_energy: int = 4) -> dict[str, Any]:
         },
         "scientific_consequences": [
             "the transferred residual cubic charge is nonzero and exactly normalized",
+            "the matter-matter Kuranishi bracket into all fifteen residual ghost momenta is computed",
             "this cubic ghost-matter block does not mix W_+ and W_- one-particle modules",
             "the universal ghost block and matter action close as the strict residual CE differential in the centered window",
             "the centered one-particle H4 vanishing persists for this residual cubic charge block",
         ],
         "claim_guards": [
-            "the result does not compute the matter-matter gravitational self-interaction bracket",
-            "chirality block diagonality here does not prove closure of the dynamical Weyl-square deformation under the missing nonlinear bracket",
+            "the result does not serialize the complete support-local nonlinear BV tensor before homological projection",
+            "chirality block diagonality here does not prove closure of the dynamical Weyl-square deformation under brackets of deformation classes or higher arity",
             "the result does not prove that the Pontryagin direction is central in the full transferred L-infinity algebra",
             "the result does not exclude higher-bracket re-entry from absent local BV sectors",
             "the result is not a quantum correction or a LORENTZIAN-CAUSAL theorem",

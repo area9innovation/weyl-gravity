@@ -2,7 +2,7 @@
 
 Dependency tag: `LOCAL-ALGEBRAIC`
 
-Result state: `ENGINE_READY_HT1_PARTIAL_INPUT_BLOCKED`
+Result state: `ENGINE_READY_HT1_SELECTED_MODEL_COMPUTED_INPUT_BLOCKED`
 
 ## Established
 
@@ -15,8 +15,9 @@ identities through arity three are executable checks.
 
 HT1 now additionally composes the already-certified endpoint Taub map,
 closed-cylinder BV--BFV suspension, all-energy moment map, and strict
-centered HPL transfer.  This computes the residual ghost--matter and
-ghost--ghost cubic charge blocks exactly.
+centered HPL transfer.  The Hamiltonian vector field computes the selected
+residual matter--matter Kuranishi output, ghost--matter action, ghost bracket,
+and ghost-momentum coadjoint action exactly.
 
 The portable input schema requires full and residual graded bases, `q1`,
 `q2`, `q3`, `iota_cl`, `pi_cl`, `s_cl`, the cyclic pairing, normalized
@@ -27,9 +28,9 @@ answers for coefficient data.
 ## Not established
 
 No complete conformal-gravity nonlinear tensor has yet passed the portable
-input gate.  The partial residual cubic block does not compute the
-matter--matter bracket sourced by the nonlinear Bach tensor.  It therefore
-does not prove closure of the dynamical direction, prove that the
+input gate.  The selected residual bracket is certified through the endpoint
+projection but the complete support-local nonlinear Bach/BV tensor has not
+been serialized.  The result does not prove closure of the dynamical direction, prove that the
 topological direction is central or inert, exclude sector re-entry by higher
 brackets, or establish a complete interacting particle/deformation
 interpretation.
@@ -44,7 +45,7 @@ transferred before `QME_RESTORED`.
 | Stage | Exact deliverable | Status |
 |---|---|---|
 | HT0 | Engine, convention, schema, blocker ledger | Ready |
-| HT1 | Import classical Taylor data; compute `ell_2` | Partial residual ghost--matter block computed; matter--matter block blocked on export |
+| HT1 | Import classical Taylor data; compute `ell_2` | Selected residual cubic/Kuranishi bracket computed; complete support-local lift blocked on export |
 | HT2 | Compute `ell_3`; dynamical/topological mixing and centrality ledgers | Not computed |
 | HT3 | Higher arities and particle-filtration spectral sequence | Not computed |
 | HT4 | Cyclic minimal action and formal moduli/deformation interpretation | Not computed |

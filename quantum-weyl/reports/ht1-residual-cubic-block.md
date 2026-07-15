@@ -2,7 +2,7 @@
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`
 
-Result state: `PARTIAL_CUBIC_BLOCK_COMPUTED`
+Result state: `SELECTED_RESIDUAL_CUBIC_BRACKET_COMPUTED`
 
 ## Result
 
@@ -16,8 +16,12 @@ Omega_3 = c^A mu_A(Phi,Phi) - f^A_BC c^B c^C b_A/2,
 M_A = -(1/2) J K_A.
 ```
 
-This determines `ell_2(residual ghost, physical matter)` and the universal
-`ell_2(residual ghost, residual ghost)` for all fifteen conformal generators.
+Because the selected BFV convention has `Q_BFV b_A=mu_A`, this determines
+the matter--matter Kuranishi bracket into all fifteen residual ghost
+momenta.  The same Hamiltonian also determines
+`ell_2(residual ghost, physical matter)`, the universal
+`ell_2(residual ghost, residual ghost)`, and the coadjoint ghost-momentum
+action.
 The finite exact regression buffer has dimension 132 through energy four;
 the source certificate supplies the symbolic all-energy coefficients.
 
@@ -34,35 +38,41 @@ remains two-dimensional.
 
 ## Claim boundary
 
-This is not yet the gravitational self-interaction bracket.  The missing
-block is
+This is the projected gravitational Kuranishi/self-interaction bracket in
+the selected residual model:
 
 ```text
-ell_2(physical matter, physical matter),
+ell_2(physical matter, physical matter) -> residual ghost momentum.
 ```
 
-obtained from the quadratic nonlinear Bach source together with its complete
-antifield/BV rows and projected through `pi_cl`.  Until that block is
-exported, the result does not establish closure of the dynamical Weyl-square
-direction, centrality of the Pontryagin direction, or absence of sector
-re-entry at higher arity.
+It is certified indirectly but exactly by the endpoint Bach/Taub identity,
+the nondegenerate endpoint pairing, and BV--BFV suspension.  What is not yet
+serialized is the complete support-local quadratic Bach/BV tensor before
+projection, including every antifield row and any additional field-domain
+component.  The current result also does not establish closure of the
+dynamical Weyl-square *deformation class* under higher brackets, centrality
+of the Pontryagin direction, or absence of sector re-entry at higher arity.
 
 The result is not a quantum correction and carries no `LORENTZIAN-CAUSAL`
 claim.
 
 ## Next exact target
 
-HT1b should serialize the bilinear Bach source
-`B^(2)(h_1,h_2)`, its ghost/antifield completions required by the classical
-master equation, and the compatible endpoint projection.  The acceptance
-test is the exact tensor
+HT1b should lift the certified residual bracket by serializing the bilinear
+Bach source `B^(2)(h_1,h_2)`, its ghost/antifield completions required by the
+classical master equation, and the compatible endpoint projection.  The
+acceptance test is equality of the direct transfer tensor
 
 ```text
-ell_2^matter = pi_cl q2(iota_cl(-), iota_cl(-))
+pi_cl q2(iota_cl(-), iota_cl(-))
+
+= the certified fifteen-component Taub/moment-map bracket
 ```
 
-in the chiral basis, followed by the `(e,o)` change of basis.  No expected
-closure or centrality matrix will be hard-coded.
+in the chiral basis, followed by the `(e,o)` change of basis.  This is a
+local-lift/field-domain comparison, not a recomputation of an unknown
+residual answer.  No expected higher closure or centrality matrix will be
+hard-coded.
 
 ## Verification receipt
 
@@ -75,7 +85,6 @@ closure or centrality matrix will be hard-coded.
 | JSON parse of both generated transfer certificates | 0.04 | PASS | 0 |
 
 Tiers 2 and 3 were not run.  No upstream classical artifact was changed and
-no full matter self-interaction, lifecycle, paper, quantum, or Lorentzian
-claim was promoted.  The upstream inputs are bound by content hashes and the
-new certificate independently regenerates the exact finite moment-map
-matrices.
+no complete support-local BV, lifecycle, paper, quantum, or Lorentzian claim
+was promoted.  The upstream inputs are bound by content hashes and the new
+certificate independently regenerates the exact finite moment-map matrices.

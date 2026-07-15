@@ -5,22 +5,25 @@
     "chirality_off_diagonal_nonzero_entries": 0,
     "conformal_closure": "VERIFIED_ON_EVERY_INTERIOR_SHELL",
     "endpoint_to_moment_map_components": "VERIFIED_15_OF_15",
+    "matter_matter_endpoint_output": "VERIFIED_Q_BFV_b_EQUALS_MU",
     "moment_map_normalization": "VERIFIED_EXACT",
     "one_particle_centered_h4": 0,
     "selected_bfv_suspension_lambda": "VERIFIED_1",
     "two_particle_centered_h4": 2
   },
   "claim_guards": [
-    "the result does not compute the matter-matter gravitational self-interaction bracket",
-    "chirality block diagonality here does not prove closure of the dynamical Weyl-square deformation under the missing nonlinear bracket",
+    "the result does not serialize the complete support-local nonlinear BV tensor before homological projection",
+    "chirality block diagonality here does not prove closure of the dynamical Weyl-square deformation under brackets of deformation classes or higher arity",
     "the result does not prove that the Pontryagin direction is central in the full transferred L-infinity algebra",
     "the result does not exclude higher-bracket re-entry from absent local BV sectors",
     "the result is not a quantum correction or a LORENTZIAN-CAUSAL theorem"
   ],
   "classical_commit": "UNFROZEN",
   "computed_taylor_blocks": [
+    "ell_2(physical_matter, physical_matter) -> residual_ghost_momentum",
     "ell_2(residual_ghost, physical_matter)",
-    "ell_2(residual_ghost, residual_ghost)"
+    "ell_2(residual_ghost, residual_ghost)",
+    "ell_2(residual_ghost, residual_ghost_momentum)"
   ],
   "cubic_charge": {
     "all_energy_formula_source": "pure-weyl-taub-moment-map-all-energy-v1",
@@ -40,11 +43,11 @@
   ],
   "provenance": {
     "generated_kernel_payload_in_certificate": false,
-    "implementation_manifest_sha256": "7ae860884de4ebe77470d4541d509d328659e5ce5131aaa550c072e2524abfe0",
+    "implementation_manifest_sha256": "f1d9fa9a01d410a3c675e55639ae138da98facfecdb336a2e10cb7b736cfdd79",
     "implementation_sha256": {
-      "residual_cubic_block.py": "490c56c7f228346a8ba883854c52ffa92a96dd42ff8a6fb3235cc31082d124fa",
-      "residual_cubic_certificate.py": "5cd11a1189d2eb154108ea03aa253badccb1b253464ffe87ba3f87770b2c1b26",
-      "tests/test_residual_cubic_block.py": "3f866305eb9c79b5b0af75b1ccde43fd34d80236c4f02d3a296361042ae67a0b"
+      "residual_cubic_block.py": "27603d25ae4a460d28334af1981d2dcd0c5809eec4b34715d6a4e956555115e8",
+      "residual_cubic_certificate.py": "e12978543a5e720d2c6598054fefad62b1d3dc9e1a9fcbea01784b57e7cf69c9",
+      "tests/test_residual_cubic_block.py": "b2b39bcd5d6b873cff5989c3c8dd1207c401fac8120a558ffff899dcdc49a3c7"
     },
     "kernel_payload_policy": "content hash only; matrices are regenerated exactly from authoritative classical code",
     "upstream_manifest_sha256": "719e3dd7d5aa8432dca7313ea043ca5a4aa04a21e7fa38e3832c783e1e45236e",
@@ -69,17 +72,18 @@
   },
   "residual_charge": "Omega_res=c^a mu_a-f^a_bc c^b c^c b_a/2",
   "result_id": "HT1_RESIDUAL_CUBIC_BLOCK",
-  "result_state": "PARTIAL_CUBIC_BLOCK_COMPUTED",
+  "result_state": "SELECTED_RESIDUAL_CUBIC_BRACKET_COMPUTED",
   "scientific_consequences": [
     "the transferred residual cubic charge is nonzero and exactly normalized",
+    "the matter-matter Kuranishi bracket into all fifteen residual ghost momenta is computed",
     "this cubic ghost-matter block does not mix W_+ and W_- one-particle modules",
     "the universal ghost block and matter action close as the strict residual CE differential in the centered window",
     "the centered one-particle H4 vanishing persists for this residual cubic charge block"
   ],
   "taylor_convention": "g(lambda)=gbar+lambda h+lambda^2 k/2+...",
   "uncomputed_taylor_blocks": [
-    "ell_2(physical_matter, physical_matter) from the nonlinear Bach/BV rows",
-    "all antifield-dependent nonlinear q2 rows outside the residual zero-mode charge",
+    "the complete support-local classical q2 tensor before endpoint projection",
+    "projected q2 components from any additional field-theory BV rows not present in the selected algebraic domain",
     "q3 and higher local classical BV Taylor tensors"
   ]
 }

@@ -21,18 +21,23 @@ class ResidualCubicBlockTests(unittest.TestCase):
         checked = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
         self.assertEqual(checked, self.certificate)
 
-    def test_partial_cubic_block_is_nonzero_and_closed(self) -> None:
+    def test_selected_residual_cubic_bracket_is_nonzero_and_closed(self) -> None:
         certificate = self.certificate
-        self.assertEqual(certificate["result_state"], "PARTIAL_CUBIC_BLOCK_COMPUTED")
+        self.assertEqual(
+            certificate["result_state"],
+            "SELECTED_RESIDUAL_CUBIC_BRACKET_COMPUTED",
+        )
         self.assertEqual(certificate["cubic_charge"]["component_count"], 15)
         self.assertEqual(certificate["checks"]["conformal_closure"], "VERIFIED_ON_EVERY_INTERIOR_SHELL")
         self.assertEqual(certificate["checks"]["chirality_off_diagonal_nonzero_entries"], 0)
 
-    def test_missing_gravitational_self_bracket_remains_explicit(self) -> None:
+    def test_matter_self_bracket_and_missing_local_lift_are_distinguished(self) -> None:
+        computed = " ".join(self.certificate["computed_taylor_blocks"])
+        self.assertIn("ell_2(physical_matter, physical_matter)", computed)
         missing = " ".join(self.certificate["uncomputed_taylor_blocks"])
-        self.assertIn("ell_2(physical_matter, physical_matter)", missing)
+        self.assertIn("support-local classical q2", missing)
         guards = " ".join(self.certificate["claim_guards"])
-        self.assertIn("does not compute the matter-matter", guards)
+        self.assertIn("does not serialize the complete support-local", guards)
         self.assertIn("does not prove that the Pontryagin direction is central", guards)
 
     def test_centered_one_particle_statement_is_scoped(self) -> None:

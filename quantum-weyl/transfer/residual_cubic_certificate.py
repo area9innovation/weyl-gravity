@@ -23,7 +23,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("HT1 RESIDUAL CUBIC BLOCK: PARTIAL BLOCK COMPUTED")
+        print("HT1 RESIDUAL CUBIC BLOCK: SELECTED RESIDUAL BRACKET COMPUTED")
     return 0
 
 
