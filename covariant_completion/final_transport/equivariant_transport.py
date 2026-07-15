@@ -32,6 +32,17 @@ from typing import Mapping
 
 SCHEMA = "pure-weyl-so42-causal-transport-recognition-v1"
 
+INPUT_DIGEST_KEYS = (
+    "actual_causal_quasi_isomorphism",
+    "auxiliary_retract",
+    "curvature_mapping_cylinder",
+    "curvature_causal_pde",
+    "raw_bv_transfer",
+    "cylinder_bgg_blocks",
+    "cylinder_metric_preimages",
+    "curvature_EAL_spectrum",
+)
+
 
 def _certificate_digest(certificate: Mapping[str, object]) -> str:
     return hashlib.sha256(
@@ -88,7 +99,11 @@ def cutoff_equivariance_defect() -> dict[tuple[str, ...], int]:
     )
 
 
-def recognition_certificate_passes(certificate: Mapping[str, object]) -> bool:
+def recognition_certificate_passes(
+    certificate: Mapping[str, object],
+    *,
+    expected_input_sha256: Mapping[str, str] | None = None,
+) -> bool:
     if certificate.get("schema") != SCHEMA:
         return False
     try:
@@ -98,10 +113,28 @@ def recognition_certificate_passes(certificate: Mapping[str, object]) -> bool:
         module = _mapping(certificate.get("global_module_identification"), "global_module_identification")
         residual = _mapping(certificate.get("residual_action"), "residual_action")
         boundary = _mapping(certificate.get("promotion_boundary"), "promotion_boundary")
+        input_hashes = _mapping(
+            certificate.get("input_certificate_sha256"),
+            "input_certificate_sha256",
+        )
     except AssertionError:
         return False
+    hashes_well_formed = (
+        tuple(sorted(input_hashes)) == tuple(sorted(INPUT_DIGEST_KEYS))
+        and all(
+            isinstance(input_hashes[key], str)
+            and len(input_hashes[key]) == 64
+            and all(character in "0123456789abcdef" for character in input_hashes[key])
+            for key in INPUT_DIGEST_KEYS
+        )
+    )
+    hashes_match_inputs = expected_input_sha256 is None or dict(input_hashes) == dict(
+        expected_input_sha256
+    )
     return bool(
-        theorem.get("recognition_exact")
+        hashes_well_formed
+        and hashes_match_inputs
+        and theorem.get("recognition_exact")
         and theorem.get("requires_causal_quasi_isomorphism")
         and theorem.get("actual_causal_quasi_isomorphism_bound")
         and cutoff.get("formal_defect") == 0
@@ -297,7 +330,20 @@ class SO42CausalTransportRecognition:
             "input_certificate_sha256": {
                 "actual_causal_quasi_isomorphism": _certificate_digest(
                     self.causal_transport
-                )
+                ),
+                "auxiliary_retract": _certificate_digest(self.auxiliary_retract),
+                "curvature_mapping_cylinder": _certificate_digest(
+                    self.curvature_mapping_cylinder
+                ),
+                "curvature_causal_pde": _certificate_digest(
+                    self.curvature_causal_pde
+                ),
+                "raw_bv_transfer": _certificate_digest(self.raw_bv_transfer),
+                "cylinder_bgg_blocks": _certificate_digest(self.bgg_blocks),
+                "cylinder_metric_preimages": _certificate_digest(
+                    self.metric_preimages
+                ),
+                "curvature_EAL_spectrum": _certificate_digest(self.eal_spectrum),
             },
             "conditional_theorem": {
                 "recognition_exact": True,

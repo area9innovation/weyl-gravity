@@ -15,7 +15,9 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from covariant_completion.final_transport.equivariant_transport import (
+    INPUT_DIGEST_KEYS,
     SO42CausalTransportRecognition,
+    _certificate_digest,
     cutoff_equivariance_defect,
     recognition_certificate_passes,
 )
@@ -68,6 +70,20 @@ def main() -> int:
 
     proof = _build()
     certificate = proof.certificate()
+    expected_input_sha256 = {
+        "actual_causal_quasi_isomorphism": _certificate_digest(
+            proof.causal_transport
+        ),
+        "auxiliary_retract": _certificate_digest(proof.auxiliary_retract),
+        "curvature_mapping_cylinder": _certificate_digest(
+            proof.curvature_mapping_cylinder
+        ),
+        "curvature_causal_pde": _certificate_digest(proof.curvature_causal_pde),
+        "raw_bv_transfer": _certificate_digest(proof.raw_bv_transfer),
+        "cylinder_bgg_blocks": _certificate_digest(proof.bgg_blocks),
+        "cylinder_metric_preimages": _certificate_digest(proof.metric_preimages),
+        "curvature_EAL_spectrum": _certificate_digest(proof.eal_spectrum),
+    }
     if args.emit:
         OUTPUT.write_text(
             json.dumps(certificate, indent=2, sort_keys=True) + "\n",
@@ -77,7 +93,15 @@ def main() -> int:
 
     checks = {
         "formal_cutoff_defect_zero": cutoff_equivariance_defect() == {},
-        "conditional_recognition_exact": recognition_certificate_passes(certificate),
+        "conditional_recognition_exact": recognition_certificate_passes(
+            certificate,
+            expected_input_sha256=expected_input_sha256,
+        ),
+        "all_checked_inputs_content_bound": (
+            certificate["input_certificate_sha256"] == expected_input_sha256
+            and tuple(sorted(expected_input_sha256))
+            == tuple(sorted(INPUT_DIGEST_KEYS))
+        ),
         "causal_input_required": certificate["conditional_theorem"][
             "requires_causal_quasi_isomorphism"
         ],
@@ -147,7 +171,20 @@ def main() -> int:
             broken = deepcopy(certificate)
             broken[section][key] = value
             checks[f"broken_output_{key}_rejected"] = not (
-                recognition_certificate_passes(broken)
+                recognition_certificate_passes(
+                    broken,
+                    expected_input_sha256=expected_input_sha256,
+                )
+            )
+
+        for input_name in INPUT_DIGEST_KEYS:
+            broken = deepcopy(certificate)
+            broken["input_certificate_sha256"][input_name] = "0" * 64
+            checks[f"mutated_input_hash_{input_name}_rejected"] = not (
+                recognition_certificate_passes(
+                    broken,
+                    expected_input_sha256=expected_input_sha256,
+                )
             )
 
     failed = [name for name, passed in checks.items() if not passed]
