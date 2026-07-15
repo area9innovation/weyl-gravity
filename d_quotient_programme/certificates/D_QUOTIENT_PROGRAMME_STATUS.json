@@ -25,7 +25,7 @@
     ],
     "rule": "Do not reuse the obstructed one-real-scalar exact-cylinder background; construct one backreacted, composite/two-field, or separately declared reference-matter clock and make downstream teams import it by hash."
   },
-  "programme_base_commit": "0e1ca9aadeb119597ccbf52530d3a8577cc3494f",
+  "programme_base_commit": "b49e055fcba87540343c97f9736887b5321f6062",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -250,9 +250,9 @@
           "the selected ghost-momentum and bra-ket pairing weights are D-neutral"
         ],
         "evidence": {
-          "commit": "1d3917394a03c6f5f288ef213d1b90dd98f9097f",
+          "commit": "b49e055fcba87540343c97f9736887b5321f6062",
           "path": "quantum-weyl/transfer/certificates/ND1_SELECTED_RESIDUAL_D_DERIVATION.json",
-          "sha256": "69516596f2c30adaa6a20849f9c25b6d113de11abdff424245041cb0b5356e46"
+          "sha256": "a3bcd3b5b3eb7f62078c6686a1f01a8b04e352c51593db6b49109597464bb159"
         },
         "generator_id": "D_compact",
         "lifecycle_layer": "INTERACTING",
@@ -269,11 +269,12 @@
         "verdict": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "verification_commands": [
           "python3 quantum-weyl/transfer/d_derivation_certificate.py --check",
+          "python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check",
           "python3 -m unittest quantum-weyl/transfer/tests/test_d_derivation_defect.py -v",
           "python3 quantum-weyl/transfer/residual_cubic_certificate.py --check"
         ]
       },
-      "sha256": "5ebd9b3814336028b4fc83335015cc7c5806fed5b4d3206f13ac59aca82438fe"
+      "sha256": "130fd7c112ce47f27c7d54ecdaee610e980905c31aef75ae2d11fedadedcec8a"
     }
   ],
   "team_inputs": {
@@ -288,9 +289,9 @@
       "sha256": "359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663"
     },
     "nonlinear": {
-      "commit": "1d3917394a03c6f5f288ef213d1b90dd98f9097f",
+      "commit": "b49e055fcba87540343c97f9736887b5321f6062",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "b18db8505b652640a7777d678eb67f1847e9b129d6ea0a965dae2ba2ca313618"
+      "sha256": "87ab515cf19a29077af086d3d0c3d32f204ae31f77c42a75ae72fa6473162592"
     },
     "quantum": {
       "commit": "04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61",

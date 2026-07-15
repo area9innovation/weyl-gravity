@@ -24,11 +24,12 @@
   ],
   "evidence": {
     "path": "quantum-weyl/transfer/certificates/ND1_SELECTED_RESIDUAL_D_DERIVATION.json",
-    "commit": "1d3917394a03c6f5f288ef213d1b90dd98f9097f",
-    "sha256": "69516596f2c30adaa6a20849f9c25b6d113de11abdff424245041cb0b5356e46"
+    "commit": "b49e055fcba87540343c97f9736887b5321f6062",
+    "sha256": "a3bcd3b5b3eb7f62078c6686a1f01a8b04e352c51593db6b49109597464bb159"
   },
   "verification_commands": [
     "python3 quantum-weyl/transfer/d_derivation_certificate.py --check",
+    "python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check",
     "python3 -m unittest quantum-weyl/transfer/tests/test_d_derivation_defect.py -v",
     "python3 quantum-weyl/transfer/residual_cubic_certificate.py --check"
   ],
