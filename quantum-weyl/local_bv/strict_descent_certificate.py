@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from .algebra import canonical_sha256
+from .euler_bidegree_projection import euler_bidegree_projection_analysis
 from .horizontal_forms import (
     STRICT_DENSITY,
     HorizontalForm,
@@ -36,6 +37,8 @@ def _source_manifest() -> dict[str, str]:
     paths = (
         "algebra.py",
         "brst.py",
+        "euler_bidegree_projection.py",
+        "euler_connecting_identities.py",
         "horizontal_forms.py",
         "metadata.py",
         "strict_descent.py",
@@ -43,6 +46,8 @@ def _source_manifest() -> dict[str, str]:
         "schema/descent_database.schema.json",
         "schema/strict_descent_certificate.schema.json",
         "tests/test_horizontal_forms.py",
+        "tests/test_euler_bidegree_projection.py",
+        "tests/test_euler_connecting_identities.py",
         "tests/test_strict_descent.py",
         "tests/test_strict_descent_certificate.py",
     )
@@ -71,6 +76,46 @@ def _tower_payload(tower: dict[str, object]) -> dict[str, object]:
     }
 
 
+def _intrinsic_tower(class_id: str, ghost_number: int) -> list[dict[str, object]]:
+    if class_id == "ANOM_OMEGA_E4":
+        return [
+            {
+                "form_degree": 3,
+                "ghost_number": 2,
+                "status": "CONNECTING_IDENTITY_VERIFIED",
+                "representative": "a23 from the normalized U/P Euler expansion",
+            },
+            {
+                "form_degree": 2,
+                "ghost_number": 3,
+                "status": "CONNECTING_IDENTITY_VERIFIED",
+                "representative": "a32 from the normalized U/U Euler expansion",
+            },
+            {
+                "form_degree": 1,
+                "ghost_number": 4,
+                "status": "STRUCTURALLY_ZERO",
+                "representative": "0",
+            },
+            {
+                "form_degree": 0,
+                "ghost_number": 5,
+                "status": "STRUCTURALLY_ZERO",
+                "representative": "0",
+            },
+        ]
+    if class_id == "CT_E4":
+        return [
+            {
+                "form_degree": 3,
+                "ghost_number": ghost_number + 1,
+                "status": "CLOSED",
+                "representative": "-Theta_E(Q_W)",
+            }
+        ]
+    return []
+
+
 def _database_entry(
     class_id: str,
     *,
@@ -90,22 +135,7 @@ def _database_entry(
             (Fraction(1), Fraction(-1), Fraction(1, 2), Fraction(-1, 6), Fraction(1, 24))
         )
     ]
-    intrinsic_tower = (
-        [
-            {
-                "form_degree": 3,
-                "ghost_number": ghost_number + 1,
-                "status": "CLOSED" if class_id == "CT_E4" else "IN_PROGRESS",
-                "representative": (
-                    "-Theta_E(Q_W)"
-                    if class_id == "CT_E4"
-                    else "omega Theta_E(Q_W); residual d_h omega wedge Theta_E retained"
-                ),
-            }
-        ]
-        if "E4" in class_id
-        else []
-    )
+    intrinsic_tower = _intrinsic_tower(class_id, ghost_number)
     basis_manifest_hash = canonical_sha256(
         {
             "scope": "dimension-four antifield-zero curvature-density carriers",
@@ -131,8 +161,9 @@ def _database_entry(
         "diff_tower": diff_tower,
         "intrinsic_tower": intrinsic_tower,
         "closure_certificate": (
-            "quantum-weyl/local_bv/certificates/"
-            "HORIZONTAL_BICOMPLEX_CERTIFICATE.json"
+            "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json"
+            if "E4" in class_id
+            else "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json"
         ),
         "exactness_certificate": (
             "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json"
@@ -146,6 +177,9 @@ def _database_entry(
 
 
 def build_database() -> dict[str, Any]:
+    euler_projection = euler_bidegree_projection_analysis()
+    if euler_projection["checks"]["QW_a14_plus_dh_a23"] != "VERIFIED":
+        raise AssertionError("Euler ordinary-bidegree projection is not certified")
     entries = (
         _database_entry(
             "CT_C2",
@@ -193,7 +227,11 @@ def build_database() -> dict[str, Any]:
             parity="even",
             intrinsic_status="IN_PROGRESS",
             tower_id="UNIVERSAL_ANOMALY_DIFF_TOWER",
-            notes="Universal Diff completion is complete; the intrinsic type-A Weyl descent is pending.",
+            notes=(
+                "Universal Diff completion and the two intrinsic connecting identities "
+                "are verified in the frozen Euler carrier algebra; epsilon-contracted "
+                "identification of the head with omega E4 remains pending."
+            ),
         ),
         _database_entry(
             "ANOM_OMEGA_C_DUAL_C",
@@ -229,7 +267,7 @@ def build_database() -> dict[str, Any]:
             "HORIZONTAL_BICOMPLEX_CERTIFICATE.json"
         ),
         "not_computed": [
-            "Euler Weyl-current descent",
+            "epsilon-contracted identification of the Euler carrier head with omega E4",
             "antifield/Koszul-Tate completion",
             "cohomological nontriviality of strict candidates",
             "coefficients, QME status, and residual transfer",
@@ -290,7 +328,7 @@ def build_certificate() -> dict[str, Any]:
             "counterterm_diff_descent_tower_equations": "VERIFIED",
             "anomaly_diff_descent_tower_equations": "VERIFIED",
             "bottom_brst_closure": "VERIFIED",
-            "euler_intrinsic_weyl_descent": "IN_PROGRESS",
+            "euler_intrinsic_weyl_descent": "CONNECTING_IDENTITIES_VERIFIED_TOP_TENSOR_MATCH_PENDING",
             "antifield_descent": "BLOCKED_CLASSICAL_EXPORT",
         },
         "towers": {

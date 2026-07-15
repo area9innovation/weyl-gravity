@@ -33,6 +33,15 @@ class StrictDensityDescentCertificateTests(unittest.TestCase):
             "IN_PROGRESS",
         )
         self.assertEqual(
+            [row["status"] for row in entries["ANOM_OMEGA_E4"]["intrinsic_tower"]],
+            [
+                "CONNECTING_IDENTITY_VERIFIED",
+                "CONNECTING_IDENTITY_VERIFIED",
+                "STRUCTURALLY_ZERO",
+                "STRUCTURALLY_ZERO",
+            ],
+        )
+        self.assertEqual(
             entries["ANOM_OMEGA_BOX_R"]["intrinsic_weyl_descent_status"],
             "TRIVIAL_WITH_PRIMITIVE",
         )

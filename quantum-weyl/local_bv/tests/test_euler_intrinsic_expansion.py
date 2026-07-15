@@ -50,7 +50,12 @@ class EulerIntrinsicExpansionTests(unittest.TestCase):
         self.assertEqual(checks["bottom_factor_rule_closure"], "VERIFIED")
         self.assertEqual(
             checks["QW_a14_plus_dh_a23"],
-            "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION",
+            "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
+        )
+        self.assertEqual(
+            result["ordinary_bidegree_projection"]["checks"]
+            ["QW_a23_minus_dh_a32"],
+            "VERIFIED",
         )
         payload = {
             key: value for key, value in result.items() if key != "expansion_sha256"

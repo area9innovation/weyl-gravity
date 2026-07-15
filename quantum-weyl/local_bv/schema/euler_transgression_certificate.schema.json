@@ -14,7 +14,7 @@
     "checks": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["levi_civita_variation_derived_from_qg", "delta_curvature_equals_D_delta_connection", "curvature_bianchi_identity", "delta_E4_minus_dTheta", "QE4_plus_d_descent_descendant", "coordinate_euler_current", "closed_manifold_integrated_variation", "euler_full_diff_completed_tower", "omega_E4_generalized_connection_template", "euler_primary_source_convention_map", "generalized_connection_dictionary", "source_project_carrier_normalization", "all_five_euler_bidegrees_enumerated", "bidegree_manifests_content_addressed", "total_differential_component_signs", "omega_E4_intrinsic_component_expansion", "omega_E4_intrinsic_descent_continuation", "intrinsic_bottom_QW_closure", "intrinsic_terminal_slots_zero", "indexed_connecting_identity_preflight", "source_project_cotton_sign_bridge", "two_riemann_product_expansion", "reduced_covariant_connecting_tensor_sectors", "epsilon_contracted_top_reconstruction", "horizontal_connecting_generator_rows", "euler_top_transgression_regression", "unresolved_domega_theta_regression", "lower_descendant_complete_cancellation"],
+      "required": ["levi_civita_variation_derived_from_qg", "delta_curvature_equals_D_delta_connection", "curvature_bianchi_identity", "delta_E4_minus_dTheta", "QE4_plus_d_descent_descendant", "coordinate_euler_current", "closed_manifold_integrated_variation", "euler_full_diff_completed_tower", "omega_E4_generalized_connection_template", "euler_primary_source_convention_map", "generalized_connection_dictionary", "source_project_carrier_normalization", "all_five_euler_bidegrees_enumerated", "bidegree_manifests_content_addressed", "total_differential_component_signs", "omega_E4_intrinsic_component_expansion", "omega_E4_intrinsic_descent_continuation", "intrinsic_bottom_QW_closure", "intrinsic_terminal_slots_zero", "indexed_connecting_identity_preflight", "source_project_cotton_sign_bridge", "two_riemann_product_expansion", "reduced_covariant_connecting_tensor_sectors", "ordinary_bidegree_connecting_equations", "epsilon_contracted_top_reconstruction", "horizontal_connecting_generator_rows", "euler_top_transgression_regression", "unresolved_domega_theta_regression", "lower_descendant_complete_cancellation"],
       "properties": {
         "levi_civita_variation_derived_from_qg": {"const": "VERIFIED"},
         "delta_curvature_equals_D_delta_connection": {"const": "VERIFIED"},
@@ -32,18 +32,19 @@
         "bidegree_manifests_content_addressed": {"const": "VERIFIED"},
         "total_differential_component_signs": {"const": "VERIFIED"},
         "omega_E4_intrinsic_component_expansion": {"const": "VERIFIED"},
-        "omega_E4_intrinsic_descent_continuation": {"const": "PARTIAL_CONNECTING_IDENTITIES_PENDING"},
+        "omega_E4_intrinsic_descent_continuation": {"const": "FROZEN_CARRIER_CONNECTING_IDENTITIES_VERIFIED"},
         "intrinsic_bottom_QW_closure": {"const": "VERIFIED"},
         "intrinsic_terminal_slots_zero": {"const": "VERIFIED"},
         "indexed_connecting_identity_preflight": {"const": "VERIFIED"},
         "source_project_cotton_sign_bridge": {"const": "VERIFIED"},
         "two_riemann_product_expansion": {"const": "VERIFIED"},
         "reduced_covariant_connecting_tensor_sectors": {"const": "VERIFIED"},
+        "ordinary_bidegree_connecting_equations": {"const": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA"},
         "epsilon_contracted_top_reconstruction": {"const": "IN_PROGRESS"},
-        "horizontal_connecting_generator_rows": {"const": "IN_PROGRESS"},
+        "horizontal_connecting_generator_rows": {"const": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA"},
         "euler_top_transgression_regression": {"const": "VERIFIED"},
         "unresolved_domega_theta_regression": {"const": "VERIFIED"},
-        "lower_descendant_complete_cancellation": {"const": "IN_PROGRESS"}
+        "lower_descendant_complete_cancellation": {"const": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA"}
       }
     },
     "derived_rows": {
@@ -94,7 +95,7 @@
             "type_a_component_indices": {"const": [1, 2]},
             "type_b_component_indices": {"const": [0]},
             "expansion_status": {"const": "ORDINARY_BIDEGREE_COMPONENTS_VERIFIED"},
-            "certificate_status": {"const": "COMPONENT_EXPANSION_VERIFIED_CONNECTING_IDENTITIES_PENDING"},
+            "certificate_status": {"const": "CONNECTING_IDENTITIES_VERIFIED_TOP_TENSOR_MATCH_PENDING"},
             "generalized_connection_dictionary": {"type": "object", "additionalProperties": false, "required": ["schema_version", "spacetime_dimension", "coordinate_engineering_convention", "schouten_convention", "orientation_convention", "generators", "dictionary_status", "dictionary_sha256"], "properties": {"schema_version": {"const": "generalized-connection-v1"}, "spacetime_dimension": {"const": 4}, "coordinate_engineering_convention": {"type": "string"}, "schouten_convention": {"type": "string"}, "orientation_convention": {"type": "string"}, "generators": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object"}}, "dictionary_status": {"const": "FROZEN_FOR_BIDEGREE_EXPANSION"}, "dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
             "bidegree_manifests": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["ghost_number", "form_degree", "manifest_sha256", "path"], "properties": {"ghost_number": {"type": "integer", "minimum": 1, "maximum": 5}, "form_degree": {"type": "integer", "minimum": 0, "maximum": 4}, "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "path": {"type": "string", "minLength": 1}}}},
             "template_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
@@ -103,7 +104,7 @@
         "ordinary_bidegree_expansion": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["result_id", "dependency_tags", "source", "carrier_definitions", "dictionary_sha256", "normalization_sha256", "components", "checks", "top_reconstruction", "bottom_closure", "claim_boundary", "next_required_generator_identities", "expansion_sha256"],
+          "required": ["result_id", "dependency_tags", "source", "carrier_definitions", "dictionary_sha256", "normalization_sha256", "components", "checks", "top_reconstruction", "bottom_closure", "ordinary_bidegree_projection", "claim_boundary", "next_required_generator_identities", "expansion_sha256"],
           "properties": {
             "result_id": {"const": "EULER_INTRINSIC_BIDEGREE_EXPANSION"},
             "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
@@ -112,11 +113,35 @@
             "dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
             "normalization_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
             "components": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object"}},
-            "checks": {"type": "object", "additionalProperties": false, "required": ["ordinary_bidegree_expansion", "coefficient_multiplicities_from_binomial_expansion", "top_carrier_polynomial_matches_declared_E4_decomposition", "bottom_factor_rule_closure", "ghost_number_4_form_1_component", "ghost_number_5_form_0_component", "QW_a14_plus_dh_a23", "QW_a23_minus_dh_a32"], "properties": {"ordinary_bidegree_expansion": {"const": "VERIFIED"}, "coefficient_multiplicities_from_binomial_expansion": {"const": "VERIFIED"}, "top_carrier_polynomial_matches_declared_E4_decomposition": {"const": "VERIFIED"}, "bottom_factor_rule_closure": {"const": "VERIFIED"}, "ghost_number_4_form_1_component": {"const": "STRUCTURALLY_ZERO"}, "ghost_number_5_form_0_component": {"const": "STRUCTURALLY_ZERO"}, "QW_a14_plus_dh_a23": {"const": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION"}, "QW_a23_minus_dh_a32": {"const": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION"}}},
+            "checks": {"type": "object", "additionalProperties": false, "required": ["ordinary_bidegree_expansion", "coefficient_multiplicities_from_binomial_expansion", "top_carrier_polynomial_matches_declared_E4_decomposition", "bottom_factor_rule_closure", "ghost_number_4_form_1_component", "ghost_number_5_form_0_component", "QW_a14_plus_dh_a23", "QW_a23_minus_dh_a32"], "properties": {"ordinary_bidegree_expansion": {"const": "VERIFIED"}, "coefficient_multiplicities_from_binomial_expansion": {"const": "VERIFIED"}, "top_carrier_polynomial_matches_declared_E4_decomposition": {"const": "VERIFIED"}, "bottom_factor_rule_closure": {"const": "VERIFIED"}, "ghost_number_4_form_1_component": {"const": "STRUCTURALLY_ZERO"}, "ghost_number_5_form_0_component": {"const": "STRUCTURALLY_ZERO"}, "QW_a14_plus_dh_a23": {"const": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA"}, "QW_a23_minus_dh_a32": {"const": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA"}}},
             "top_reconstruction": {"type": "object"},
             "bottom_closure": {"type": "object"},
+            "ordinary_bidegree_projection": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["result_id", "dependency_tags", "arithmetic", "totalization", "component_substitution", "split_generator_rows", "generator_rows", "constraint_rank_receipt", "verified_case_count", "target_bidegrees", "nonzero_residual_counts", "pre_cancellation_nonzero_summand_counts", "cancellation_receipts", "negative_controls", "checks", "claim_boundary", "projection_sha256"],
+              "properties": {
+                "result_id": {"const": "EULER_ORDINARY_BIDEGREE_PROJECTION"},
+                "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+                "arithmetic": {"const": "EXACT_RATIONAL"},
+                "totalization": {"const": "D = Q_W + (-1)^ghost_number d_h"},
+                "component_substitution": {"const": "tilde_omega_a = U_a - P_a"},
+                "split_generator_rows": {"type": "object"},
+                "generator_rows": {"type": "object"},
+                "constraint_rank_receipt": {"type": "object"},
+                "verified_case_count": {"const": 136},
+                "target_bidegrees": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}},
+                "nonzero_residual_counts": {"const": {"g2_p4": 0, "g3_p3": 0, "g4_p2": 0}},
+                "pre_cancellation_nonzero_summand_counts": {"type": "object"},
+                "cancellation_receipts": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object"}},
+                "negative_controls": {"type": "object"},
+                "checks": {"type": "object"},
+                "claim_boundary": {"type": "object"},
+                "projection_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+              }
+            },
             "claim_boundary": {"type": "object"},
-            "next_required_generator_identities": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+            "next_required_generator_identities": {"type": "array", "minItems": 2, "items": {"type": "string"}},
             "expansion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
           }
         },

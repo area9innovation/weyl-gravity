@@ -15,7 +15,7 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         self.assertFalse(validate_instance(certificate, json.loads(SCHEMA_PATH.read_text())))
         self.assertEqual(
             certificate["checks"]["omega_E4_intrinsic_descent_continuation"],
-            "PARTIAL_CONNECTING_IDENTITIES_PENDING",
+            "FROZEN_CARRIER_CONNECTING_IDENTITIES_VERIFIED",
         )
         self.assertEqual(
             [
@@ -34,7 +34,8 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         self.assertEqual(checks["euler_top_transgression_regression"], "VERIFIED")
         self.assertEqual(checks["unresolved_domega_theta_regression"], "VERIFIED")
         self.assertEqual(
-            checks["lower_descendant_complete_cancellation"], "IN_PROGRESS"
+            checks["lower_descendant_complete_cancellation"],
+            "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
         )
         template = certificate["euler_intrinsic_transgression"][
             "generalized_connection_total_form"
@@ -60,7 +61,7 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         )
         self.assertEqual(
             template["certificate_status"],
-            "COMPONENT_EXPANSION_VERIFIED_CONNECTING_IDENTITIES_PENDING",
+            "CONNECTING_IDENTITIES_VERIFIED_TOP_TENSOR_MATCH_PENDING",
         )
         self.assertEqual(
             template["normalization_contract"]["global_source_to_project_scale"],
@@ -104,7 +105,15 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
             ["full_total_form_connecting_identity"],
             "NOT_COMPUTED",
         )
-        self.assertIn("connecting intrinsic descent", " ".join(certificate["not_computed"]))
+        self.assertEqual(
+            expansion["ordinary_bidegree_projection"]["checks"]
+            ["QW_a14_plus_dh_a23"],
+            "VERIFIED",
+        )
+        self.assertIn(
+            "epsilon-contracted tensor reconstruction",
+            " ".join(certificate["not_computed"]),
+        )
 
     def test_schema_fails_closed_on_unknown_nested_claim(self) -> None:
         certificate = deepcopy(build_certificate())

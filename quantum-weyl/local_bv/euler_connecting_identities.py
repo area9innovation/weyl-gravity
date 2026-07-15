@@ -15,10 +15,11 @@ from __future__ import annotations
 from fractions import Fraction
 from functools import lru_cache
 from itertools import combinations, permutations
+import json
 from typing import Iterable, Sequence
 
 from .algebra import canonical_sha256
-from .quotient import exact_nullspace
+from .quotient import exact_nullspace, exact_rank
 
 
 DIMENSION = 4
@@ -74,7 +75,7 @@ def _cotton_constraint(
 
 
 @lru_cache(maxsize=1)
-def _weyl_basis() -> tuple[tuple[Fraction, ...], ...]:
+def _weyl_constraints() -> tuple[tuple[Fraction, ...], ...]:
     constraints = [
         _weyl_constraint(
             (
@@ -89,14 +90,21 @@ def _weyl_basis() -> tuple[tuple[Fraction, ...], ...]:
         for b in range(DIMENSION)
         for d in range(b, DIMENSION)
     )
-    basis = exact_nullspace(constraints, column_count=len(WEYL_COORDINATES))
+    return tuple(constraints)
+
+
+@lru_cache(maxsize=1)
+def _weyl_basis() -> tuple[tuple[Fraction, ...], ...]:
+    basis = exact_nullspace(
+        _weyl_constraints(), column_count=len(WEYL_COORDINATES)
+    )
     if len(basis) != 10:
         raise AssertionError("four-dimensional algebraic Weyl dimension drifted")
     return basis
 
 
 @lru_cache(maxsize=1)
-def _cotton_basis() -> tuple[tuple[Fraction, ...], ...]:
+def _cotton_constraints() -> tuple[tuple[Fraction, ...], ...]:
     constraints = [
         _cotton_constraint(
             ((1, (a, b, c)), (1, (b, c, a)), (1, (c, a, b)))
@@ -107,7 +115,14 @@ def _cotton_basis() -> tuple[tuple[Fraction, ...], ...]:
         _cotton_constraint((1, (a, a, c)) for a in range(DIMENSION))
         for c in range(DIMENSION)
     )
-    basis = exact_nullspace(constraints, column_count=len(COTTON_COORDINATES))
+    return tuple(constraints)
+
+
+@lru_cache(maxsize=1)
+def _cotton_basis() -> tuple[tuple[Fraction, ...], ...]:
+    basis = exact_nullspace(
+        _cotton_constraints(), column_count=len(COTTON_COORDINATES)
+    )
     if len(basis) != 16:
         raise AssertionError("four-dimensional irreducible Cotton dimension drifted")
     return basis
@@ -290,8 +305,7 @@ def _d_phi2_sectors(
     return _sum(*d_omega_terms), _sum(*d_tilde_terms)
 
 
-@lru_cache(maxsize=1)
-def euler_connecting_identity_analysis() -> dict[str, object]:
+def _build_euler_connecting_identity_analysis() -> dict[str, object]:
     """Verify the exact reduced covariant sectors entering D(Phi_1 + Phi_2)."""
 
     weyl_basis = _weyl_basis()
@@ -334,6 +348,14 @@ def euler_connecting_identity_analysis() -> dict[str, object]:
         "arithmetic": "EXACT_RATIONAL",
         "weyl_basis_dimension": len(weyl_basis),
         "cotton_basis_dimension": len(cotton_basis),
+        "constraint_rank_receipt": {
+            "weyl_coordinate_dimension": len(WEYL_COORDINATES),
+            "weyl_constraint_row_count": len(_weyl_constraints()),
+            "weyl_constraint_rank": exact_rank(_weyl_constraints()),
+            "cotton_coordinate_dimension": len(COTTON_COORDINATES),
+            "cotton_constraint_row_count": len(_cotton_constraints()),
+            "cotton_constraint_rank": exact_rank(_cotton_constraints()),
+        },
         "basis_constraints": {
             "weyl": "pair antisymmetry, pair exchange, algebraic Bianchi, tracefree",
             "cotton": "last-pair antisymmetry, cyclic identity, tracefree",
@@ -351,6 +373,7 @@ def euler_connecting_identity_analysis() -> dict[str, object]:
         "checks": {
             "weyl_tensor_space_exhaustive": "VERIFIED_DIMENSION_10",
             "cotton_tensor_space_exhaustive": "VERIFIED_DIMENSION_16",
+            "constraint_ranks_exact": "VERIFIED",
             "Domega_Phi1": "VERIFIED",
             "Dtilde_Phi1": "VERIFIED",
             "Domega_Phi2": "VERIFIED",
@@ -367,3 +390,18 @@ def euler_connecting_identity_analysis() -> dict[str, object]:
         },
     }
     return {**payload, "analysis_sha256": canonical_sha256(payload)}
+
+
+@lru_cache(maxsize=1)
+def _cached_analysis_json() -> str:
+    return json.dumps(
+        _build_euler_connecting_identity_analysis(),
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+
+
+def euler_connecting_identity_analysis() -> dict[str, object]:
+    """Return a fresh copy of the cached exact tensor-sector audit."""
+
+    return json.loads(_cached_analysis_json())

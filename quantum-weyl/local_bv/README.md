@@ -210,6 +210,11 @@ The explicit type-D primitives are in
 [`certificates/TRIVIALITY_CERTIFICATE.json`](certificates/TRIVIALITY_CERTIFICATE.json),
 and the derived Levi-Civita/Chern--Weil Euler current is in
 [`certificates/EULER_TRANSGRESSION_CERTIFICATE.json`](certificates/EULER_TRANSGRESSION_CERTIFICATE.json).
+That Euler receipt now also contains an exact ordinary-bidegree projection:
+the two connecting equations and terminal closure pass on exhaustive rational
+Weyl, Cotton, Schouten, and mixed basis cases, with coefficient sensitivity
+and pre-cancellation hashes.  The epsilon-contracted identification of the
+carrier head with the frozen `omega E4` representative remains open.
 The exact sparse totalization and quotient engine is certified by
 [`certificates/RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE.json`](certificates/RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE.json);
 its anchored API excludes total classes without the requested top component
@@ -245,7 +250,7 @@ the content-addressed bundle under
 Raw contraction existence is distinct from tensor realizability; only a
 generated canonical representative currently promotes the latter status.
 
-Next admissible local steps are the continuation of the intrinsic type-A
-descent from `omega E4`, completion of the AFN0 lower-form mapping-cone basis,
-and the unrestricted higher-derivative Weyl--Cotton jet quotient.  Only the
+Next admissible local steps are the epsilon-contracted Euler-head
+reconstruction, completion of the AFN0 lower-form mapping-cone basis, and the
+unrestricted higher-derivative Weyl--Cotton jet quotient.  Only the
 antifield/Koszul--Tate extension waits for the frozen classical schema.

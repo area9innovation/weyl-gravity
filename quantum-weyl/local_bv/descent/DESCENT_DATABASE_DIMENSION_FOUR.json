@@ -68,7 +68,7 @@
       "antifield_number": 0,
       "basis_manifest_hash": "e17a9ffa46511377f8fe6f9749bff8c8ae9d58ed3f534ec207d230ec8a4b6b43",
       "classical_snapshot_hash": "UNFROZEN",
-      "closure_certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
+      "closure_certificate": "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json",
       "diff_descent_status": "NONZERO_DIFF_TOWER",
       "diff_tower": [
         {
@@ -315,7 +315,7 @@
       "antifield_number": 0,
       "basis_manifest_hash": "38bfc5b3b8b58004920a19fa6d57a3df9227e3752a659332fda0f7ee6858523c",
       "classical_snapshot_hash": "UNFROZEN",
-      "closure_certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
+      "closure_certificate": "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json",
       "diff_descent_status": "NONZERO_DIFF_TOWER",
       "diff_tower": [
         {
@@ -368,12 +368,30 @@
         {
           "form_degree": 3,
           "ghost_number": 2,
-          "representative": "omega Theta_E(Q_W); residual d_h omega wedge Theta_E retained",
-          "status": "IN_PROGRESS"
+          "representative": "a23 from the normalized U/P Euler expansion",
+          "status": "CONNECTING_IDENTITY_VERIFIED"
+        },
+        {
+          "form_degree": 2,
+          "ghost_number": 3,
+          "representative": "a32 from the normalized U/U Euler expansion",
+          "status": "CONNECTING_IDENTITY_VERIFIED"
+        },
+        {
+          "form_degree": 1,
+          "ghost_number": 4,
+          "representative": "0",
+          "status": "STRUCTURALLY_ZERO"
+        },
+        {
+          "form_degree": 0,
+          "ghost_number": 5,
+          "representative": "0",
+          "status": "STRUCTURALLY_ZERO"
         }
       ],
       "intrinsic_weyl_descent_status": "IN_PROGRESS",
-      "notes": "Universal Diff completion is complete; the intrinsic type-A Weyl descent is pending.",
+      "notes": "Universal Diff completion and the two intrinsic connecting identities are verified in the frozen Euler carrier algebra; epsilon-contracted identification of the head with omega E4 remains pending.",
       "parity": "even",
       "relative_cohomology_status": "UNDECIDED",
       "representative_id": "ANOM_OMEGA_E4"
@@ -501,7 +519,7 @@
   ],
   "entry_count": 8,
   "not_computed": [
-    "Euler Weyl-current descent",
+    "epsilon-contracted identification of the Euler carrier head with omega E4",
     "antifield/Koszul-Tate completion",
     "cohomological nontriviality of strict candidates",
     "coefficients, QME status, and residual transfer"

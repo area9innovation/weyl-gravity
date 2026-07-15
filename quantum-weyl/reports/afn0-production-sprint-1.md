@@ -38,8 +38,10 @@ This is not yet the antifield-independent obstruction classification.  The
 top curvature-density carrier basis is complete under its declared rules,
 but the lower-form ghost/generalized-connection bases required by the total
 complex are still `IN_PROGRESS`.  The pure-Diff ghost basis at ghost number
-one is likewise incomplete, and the even anomaly slice excludes `omega E4`
-until its intrinsic tower closes.
+one is likewise incomplete.  The even anomaly slice still excludes
+`omega E4`: its frozen-carrier connecting equations now close, but the
+epsilon-contracted head and complete lower-form production basis have not yet
+passed their independent gates.
 
 Consequently the run emits no nontriviality claim and no dual witness for a
 physical representative.  The only permitted provisional witness label is

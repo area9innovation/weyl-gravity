@@ -11,4 +11,7 @@ All candidates reference their generated four-step universal Diff tower in
 `intrinsic_weyl_descent_status` records type-B triviality, the explicit
 type-D primitive, or the pending type-A continuation.  The Euler
 variational current and the nonzero first `omega E4` residual are certified;
-the complete intrinsic type-A anomaly descent remains `NOT_COMPUTED`.
+the two ordinary-bidegree connecting equations are now exact in the frozen
+Euler carrier algebra.  The status remains `IN_PROGRESS` until the
+epsilon-contracted carrier head is independently identified with the frozen
+`omega E4` tensor representative.

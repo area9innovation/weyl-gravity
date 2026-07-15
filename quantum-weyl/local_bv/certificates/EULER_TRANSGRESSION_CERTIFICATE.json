@@ -7,12 +7,12 @@
   ],
   "canonical_hashes": {
     "bidegree_manifest_set_sha256": "52392a8222829f74d450ddf8813d2e0e04f55911d9486da0b38e0242838b6124",
-    "connecting_identity_preflight_sha256": "148b4658232d383b4613deab956bacb02d12b31b9e7f18ba64f32f874d80b707",
+    "connecting_identity_preflight_sha256": "324cba4f58d464ed9ce9f5c7d82521d49ea2a3e347a91f8ce5d4b357e7f30051",
     "curvature_sha256": "dbfaad8d3cd29aed54c944cc764fe2d4298cdc9ec3e55e46c8829d9c261e28eb",
     "generalized_connection_dictionary_sha256": "2bbb92c660f15c592004e5717d5a99fe4d535dee17ddd84f57f5b4a18566ea39",
-    "intrinsic_component_expansion_sha256": "b23a8d5957412f0f0be2a35f4a834ee613a8f65dd56477f23fe9458e46e86f13",
+    "intrinsic_component_expansion_sha256": "76bdd3566460c024df53b27bc58e91fa85f73b3ffccf6e5a2548ad7c201534dd",
     "normalization_contract_sha256": "3ee9bb04638c2327e675dc2e8793627784fcba584e4fcd963ff2fe1d9801b46f",
-    "source_manifest_sha256": "e68c7485712649c576df71d0d96b0d5895e6ddace8842acef54318ad46716e85",
+    "source_manifest_sha256": "cd70c781e9667efdd82ef6f617c74830c6009ba9f89f429872091fb9e00b2a6e",
     "theta_sha256": "0bfe7489b59dc61839ffd718426243b997b18dec70c3c810386c4f0602b4362b",
     "zero_variational_residual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
   },
@@ -30,15 +30,16 @@
     "euler_primary_source_convention_map": "VERIFIED",
     "euler_top_transgression_regression": "VERIFIED",
     "generalized_connection_dictionary": "VERIFIED",
-    "horizontal_connecting_generator_rows": "IN_PROGRESS",
+    "horizontal_connecting_generator_rows": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
     "indexed_connecting_identity_preflight": "VERIFIED",
     "intrinsic_bottom_QW_closure": "VERIFIED",
     "intrinsic_terminal_slots_zero": "VERIFIED",
     "levi_civita_variation_derived_from_qg": "VERIFIED",
-    "lower_descendant_complete_cancellation": "IN_PROGRESS",
+    "lower_descendant_complete_cancellation": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
     "omega_E4_generalized_connection_template": "VERIFIED",
     "omega_E4_intrinsic_component_expansion": "VERIFIED",
-    "omega_E4_intrinsic_descent_continuation": "PARTIAL_CONNECTING_IDENTITIES_PENDING",
+    "omega_E4_intrinsic_descent_continuation": "FROZEN_CARRIER_CONNECTING_IDENTITIES_VERIFIED",
+    "ordinary_bidegree_connecting_equations": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
     "reduced_covariant_connecting_tensor_sectors": "VERIFIED",
     "source_project_carrier_normalization": "VERIFIED",
     "source_project_cotton_sign_bridge": "VERIFIED",
@@ -201,7 +202,7 @@
         "relative_cohomology_status": "UNDECIDED"
       },
       "connecting_tensor_sector_audit": {
-        "analysis_sha256": "25becd7d1df10d1987c41f2425decf34eed06c4ac0f6bfe9d4967fb83e45137d",
+        "analysis_sha256": "9e1218739af6dc5c3faf727789b8517fbcfb954a7c9d6d775e6312da3e5dc462",
         "arithmetic": "EXACT_RATIONAL",
         "basis_constraints": {
           "cotton": "last-pair antisymmetry, cyclic identity, tracefree",
@@ -213,6 +214,7 @@
           "Domega_Phi2": "VERIFIED",
           "Dtilde_Phi1": "VERIFIED",
           "Gamma_action_and_homogeneous_weight_rows": "NOT_COMPUTED",
+          "constraint_ranks_exact": "VERIFIED",
           "cotton_tensor_space_exhaustive": "VERIFIED_DIMENSION_16",
           "ordinary_bidegree_projection": "NOT_COMPUTED",
           "reduced_covariant_total_form_sectors": "VERIFIED",
@@ -223,6 +225,14 @@
           "ordinary_bidegree_connecting_equations": "PENDING_COMPONENT_PROJECTION",
           "relative_cohomology_status": "UNDECIDED",
           "tensor_sector_status": "REDUCED_COVARIANT_SECTORS_VERIFIED"
+        },
+        "constraint_rank_receipt": {
+          "cotton_constraint_rank": 8,
+          "cotton_constraint_row_count": 8,
+          "cotton_coordinate_dimension": 24,
+          "weyl_constraint_rank": 11,
+          "weyl_constraint_row_count": 11,
+          "weyl_coordinate_dimension": 21
         },
         "cotton_basis_dimension": 16,
         "dependency_tags": [
@@ -338,7 +348,7 @@
         }
       ],
       "generator_dictionary_sha256": "6a5790ee1dffcd9ef36aedeab13f559774b15012bc68e2bcf7a255d89db8a774",
-      "preflight_sha256": "148b4658232d383b4613deab956bacb02d12b31b9e7f18ba64f32f874d80b707",
+      "preflight_sha256": "324cba4f58d464ed9ce9f5c7d82521d49ea2a3e347a91f8ce5d4b357e7f30051",
       "result_id": "EULER_CONNECTING_IDENTITY_PREFLIGHT",
       "source_to_project_identity_map": {
         "project_DW": "D W^(mu nu) = -2 A_project_rho g^(rho[mu) dx^(nu])",
@@ -485,7 +495,7 @@
           "path": "certificates/euler_bidegree_manifests/fd69ad4de16fd6155a4c331046eb081a4aa88991548803d0c836a6cbd54e6093.json"
         }
       ],
-      "certificate_status": "COMPONENT_EXPANSION_VERIFIED_CONNECTING_IDENTITIES_PENDING",
+      "certificate_status": "CONNECTING_IDENTITIES_VERIFIED_TOP_TENSOR_MATCH_PENDING",
       "components": [
         {
           "coefficient": {
@@ -836,8 +846,8 @@
         "tilde_omega_alpha": "U_alpha - P_alpha"
       },
       "checks": {
-        "QW_a14_plus_dh_a23": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION",
-        "QW_a23_minus_dh_a32": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION",
+        "QW_a14_plus_dh_a23": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
+        "QW_a23_minus_dh_a32": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
         "bottom_factor_rule_closure": "VERIFIED",
         "coefficient_multiplicities_from_binomial_expansion": "VERIFIED",
         "ghost_number_4_form_1_component": "STRUCTURALLY_ZERO",
@@ -848,8 +858,9 @@
       "claim_boundary": {
         "coefficient_status": "NOT_COMPUTED",
         "full_bv_status": "BLOCKED_BY_ANTIFIELD_EXPORT",
-        "intrinsic_tower_status": "COMPONENT_EXPANSION_VERIFIED_CONNECTING_IDENTITIES_PENDING",
-        "relative_cohomology_status": "UNDECIDED"
+        "intrinsic_tower_status": "CONNECTING_IDENTITIES_VERIFIED_FOR_FROZEN_CARRIER_ALGEBRA",
+        "relative_cohomology_status": "UNDECIDED",
+        "top_E4_tensor_reconstruction_status": "PENDING_EPSILON_CONTRACTION"
       },
       "components": [
         {
@@ -1088,14 +1099,150 @@
         "LOCAL-ALGEBRAIC"
       ],
       "dictionary_sha256": "2bbb92c660f15c592004e5717d5a99fe4d535dee17ddd84f57f5b4a18566ea39",
-      "expansion_sha256": "b23a8d5957412f0f0be2a35f4a834ee613a8f65dd56477f23fe9458e46e86f13",
+      "expansion_sha256": "76bdd3566460c024df53b27bc58e91fa85f73b3ffccf6e5a2548ad7c201534dd",
       "next_required_generator_identities": [
-        "D W^(mu nu) = 2 C_rho g^(rho[mu) dx^(nu])",
-        "Q_W P_alpha from Q_W K_alpha_beta = -nabla_alpha partial_beta omega",
-        "Gamma_alpha action on the Weyl two-form",
-        "Cotton cancellation in both connecting bidegree equations"
+        "epsilon-contracted tensor reconstruction of the Euler head",
+        "independent comparison of the reconstructed head with E4 in the frozen orientation"
       ],
       "normalization_sha256": "3ee9bb04638c2327e675dc2e8793627784fcba584e4fcd963ff2fe1d9801b46f",
+      "ordinary_bidegree_projection": {
+        "arithmetic": "EXACT_RATIONAL",
+        "cancellation_receipts": [
+          {
+            "bidegree": {
+              "form_degree": 4,
+              "ghost_number": 2
+            },
+            "left_component": "a14",
+            "left_sha256": "a687c07f714f31d1b4ac87e9512da21faf809fb123938407b67da1fe38286a27",
+            "left_term_count": 3,
+            "pairing_status": "RIGHT_EQUALS_NEGATIVE_LEFT",
+            "residual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "right_component": "a23",
+            "right_sha256": "aacddc906d326611f361cf3f37f3fa9c3cc59060d992445e8a01b7513f13e8ba",
+            "right_term_count": 3,
+            "witness_case_index": 0
+          },
+          {
+            "bidegree": {
+              "form_degree": 3,
+              "ghost_number": 3
+            },
+            "left_component": "a23",
+            "left_sha256": "de5a277c6be257f7696e7ed97d8ee1d10866afd2a89cf29186f561f466e51f79",
+            "left_term_count": 24,
+            "pairing_status": "RIGHT_EQUALS_NEGATIVE_LEFT",
+            "residual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "right_component": "a32",
+            "right_sha256": "4a7bf13509baea10129d16716041fff4a90a58b842cf51742b434206982bcd81",
+            "right_term_count": 24,
+            "witness_case_index": 0
+          }
+        ],
+        "checks": {
+          "Cotton_row_wiring_sensitivity": "VERIFIED_ON_RAW_COORDINATE_PROBE",
+          "Cotton_sign_on_irreducible_subspace": "INSENSITIVE_BY_IDENTITIES",
+          "QW_a14_plus_dh_a23": "VERIFIED",
+          "QW_a23_minus_dh_a32": "VERIFIED",
+          "QW_a32": "VERIFIED",
+          "basis_rank_nullity": "VERIFIED",
+          "individual_summands_projected_before_cancellation": "VERIFIED",
+          "mixed_coefficient_sensitivity": "VERIFIED",
+          "nonzero_cancellation_pair_hashes": "VERIFIED"
+        },
+        "claim_boundary": {
+          "epsilon_contracted_top_reconstruction": "NOT_COMPUTED",
+          "full_bv_status": "BLOCKED_BY_ANTIFIELD_EXPORT",
+          "intrinsic_connecting_equations": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
+          "relative_cohomology_status": "UNDECIDED"
+        },
+        "component_substitution": "tilde_omega_a = U_a - P_a",
+        "constraint_rank_receipt": {
+          "cotton_constraint_rank": 8,
+          "cotton_coordinate_dimension": 24,
+          "symmetric_schouten_dimension": 10,
+          "weyl_constraint_rank": 11,
+          "weyl_coordinate_dimension": 21
+        },
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC"
+        ],
+        "generator_rows": {
+          "D_P_a": "-H_ab dx^b - C_source_a",
+          "D_U_a": "-H_ab dx^b",
+          "D_W_ab": "C_source^a dx^b - C_source^b dx^a",
+          "D_omega": "-U_a dx^a"
+        },
+        "negative_controls": {
+          "Cotton_bridge_relative_sign_flip": {
+            "failing_case_count": 0,
+            "status": "PHYSICAL_SUBSPACE_INSENSITIVE_BY_COTTON_IDENTITIES"
+          },
+          "mixed_UP_coefficient_perturbation": {
+            "failing_case_count": 136,
+            "replacement_scale": {
+              "denominator": 4,
+              "numerator": 5
+            },
+            "status": "EXPECTED_FAILURE_OBSERVED"
+          },
+          "raw_Cotton_row_wiring_probe": {
+            "baseline_nonzero_bidegrees": [],
+            "flipped_nonzero_bidegrees": [
+              "g2_p4"
+            ],
+            "status": "EXPECTED_WIRING_CHANGE_OBSERVED",
+            "uses_nonphysical_coordinate_vector": true
+          }
+        },
+        "nonzero_residual_counts": {
+          "g2_p4": 0,
+          "g3_p3": 0,
+          "g4_p2": 0
+        },
+        "pre_cancellation_nonzero_summand_counts": {
+          "a14": 12,
+          "a23": 60,
+          "a32": 48
+        },
+        "projection_sha256": "30bea487c9351264ab64bfb96a47b6af31e04110be7fe817a273f46cac896a24",
+        "result_id": "EULER_ORDINARY_BIDEGREE_PROJECTION",
+        "split_generator_rows": {
+          "Q_W": {
+            "P_a": "-H_ab dx^b",
+            "U_a": "0",
+            "W_ab": "HOMOGENEOUS_ONLY_AND_ZERO_AFTER_THE_EXISTING_ODD_OMEGA",
+            "omega": "0"
+          },
+          "base_Weyl_Gamma_row": {
+            "equation": "Gamma_alpha W_Omega0 = 0",
+            "reason": "W_Omega0 is the undifferentiated conformally invariant mixed Weyl tensor",
+            "status": "DERIVED_FOR_BASE_WEYL_CARRIER"
+          },
+          "d_h": {
+            "P_a": "-C_source_a",
+            "U_a": "H_ab dx^b",
+            "W_ab": "C_source^a dx^b - C_source^b dx^a",
+            "omega": "U_a dx^a"
+          }
+        },
+        "target_bidegrees": [
+          {
+            "form_degree": 4,
+            "ghost_number": 2
+          },
+          {
+            "form_degree": 3,
+            "ghost_number": 3
+          },
+          {
+            "form_degree": 2,
+            "ghost_number": 4
+          }
+        ],
+        "totalization": "D = Q_W + (-1)^ghost_number d_h",
+        "verified_case_count": 136
+      },
       "result_id": "EULER_INTRINSIC_BIDEGREE_EXPANSION",
       "source": {
         "arxiv": "0704.2472",
@@ -1171,9 +1318,7 @@
   },
   "normalization": "E4 = epsilon_abcd R^ab wedge R^cd",
   "not_computed": [
-    "the two connecting intrinsic descent identities requiring the Cotton and Gamma generator actions",
     "epsilon-contracted tensor reconstruction of the Euler head",
-    "horizontal differential rows and the Q_W-d_h compatibility check on every connecting generator",
     "antifield/Koszul-Tate completion",
     "relative cohomology nontriviality of the Euler anomaly"
   ],

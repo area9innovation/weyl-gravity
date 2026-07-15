@@ -36,6 +36,14 @@ class EulerConnectingIdentityTests(unittest.TestCase):
         }
         self.assertEqual(result["analysis_sha256"], canonical_sha256(payload))
 
+    def test_cached_analysis_is_returned_as_a_fresh_copy(self) -> None:
+        first = euler_connecting_identity_analysis()
+        first["checks"]["ordinary_bidegree_projection"] = "CORRUPTED"
+        second = euler_connecting_identity_analysis()
+        self.assertEqual(
+            second["checks"]["ordinary_bidegree_projection"], "NOT_COMPUTED"
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -14,6 +14,7 @@ from itertools import product
 from typing import Any
 
 from .algebra import canonical_sha256
+from .euler_bidegree_projection import euler_bidegree_projection_analysis
 from .generalized_connection import (
     EULER_BIDEGREES,
     euler_normalization_contract,
@@ -185,6 +186,8 @@ def euler_intrinsic_component_expansion() -> dict[str, Any]:
     ):
         raise AssertionError("Euler bottom contains a non-BRST-inert carrier")
 
+    bidegree_projection = euler_bidegree_projection_analysis()
+
     payload = {
         "result_id": "EULER_INTRINSIC_BIDEGREE_EXPANSION",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
@@ -213,8 +216,8 @@ def euler_intrinsic_component_expansion() -> dict[str, Any]:
             "bottom_factor_rule_closure": "VERIFIED",
             "ghost_number_4_form_1_component": "STRUCTURALLY_ZERO",
             "ghost_number_5_form_0_component": "STRUCTURALLY_ZERO",
-            "QW_a14_plus_dh_a23": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION",
-            "QW_a23_minus_dh_a32": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION",
+            "QW_a14_plus_dh_a23": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
+            "QW_a23_minus_dh_a32": "VERIFIED_FOR_FROZEN_EULER_CARRIER_ALGEBRA",
         },
         "top_reconstruction": {
             "verification_scope": "CARRIER_POLYNOMIAL_ONLY",
@@ -238,17 +241,17 @@ def euler_intrinsic_component_expansion() -> dict[str, Any]:
             ],
             "residual": {},
         },
+        "ordinary_bidegree_projection": bidegree_projection,
         "claim_boundary": {
-            "intrinsic_tower_status": "COMPONENT_EXPANSION_VERIFIED_CONNECTING_IDENTITIES_PENDING",
+            "intrinsic_tower_status": "CONNECTING_IDENTITIES_VERIFIED_FOR_FROZEN_CARRIER_ALGEBRA",
+            "top_E4_tensor_reconstruction_status": "PENDING_EPSILON_CONTRACTION",
             "relative_cohomology_status": "UNDECIDED",
             "coefficient_status": "NOT_COMPUTED",
             "full_bv_status": "BLOCKED_BY_ANTIFIELD_EXPORT",
         },
         "next_required_generator_identities": [
-            "D W^(mu nu) = 2 C_rho g^(rho[mu) dx^(nu])",
-            "Q_W P_alpha from Q_W K_alpha_beta = -nabla_alpha partial_beta omega",
-            "Gamma_alpha action on the Weyl two-form",
-            "Cotton cancellation in both connecting bidegree equations",
+            "epsilon-contracted tensor reconstruction of the Euler head",
+            "independent comparison of the reconstructed head with E4 in the frozen orientation",
         ],
     }
     return {**payload, "expansion_sha256": canonical_sha256(payload)}

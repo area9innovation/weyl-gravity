@@ -76,9 +76,8 @@ Q E4 + d_h(-Theta_E(Q)) = 0.
 ```
 
 For `omega E4`, the first attempted intrinsic step leaves the exact residual
-`d_h(omega) wedge Theta_E`; the remaining type-A continuation is therefore
-kept `IN_PROGRESS` rather than silently identified with the variational
-current.  The generalized connection
+`d_h(omega) wedge Theta_E`; that residual remains a regression input rather
+than being silently identified with the variational current.  The generalized connection
 `tilde_omega_a = partial_a omega - Schouten_ab dx^b` has now been admitted.
 Theorem 1 of Boulanger's
 [Wess--Zumino classification](https://arxiv.org/abs/0704.2472) prints the
@@ -87,8 +86,9 @@ coefficient `(-1)^p 2^(-p) m!/(r!p!)`, which specializes to
 single global factor of four fixed by that top component gives the normalized
 project vector `(1,-4,4)`.  The older `(4,-4,1)` vector is retained only as a
 rejected, underived carrier rescaling.  No bidegree-dependent normalization
-is allowed.  This resolves the convention map without claiming that the
-intrinsic tower closes.
+is allowed.  This resolves the convention map; the frozen-carrier connecting
+equations now close, while the epsilon-contracted top identification remains
+an independent gate.
 
 The generalized-connection dictionary now freezes total degree, ordinary
 ghost/form bidegree components, parity, engineering dimension, Weyl weight,
@@ -119,16 +119,14 @@ Expanding `tilde_omega=U-P`, with `U_a=partial_a omega` and
 The top row reconstructs `omega epsilon (W+2X)(W+2X)=omega E4`, while the
 bottom `4 omega epsilon U U dx dx` is `Q_W`-closed directly from
 `Q_W omega=Q_W U=Q_W dx=0`.  These are now verified component statements.
-The two connecting identities remain open until the machine implements the
-Cotton identity, the `Gamma_a` action on the Weyl two-form, and the exact
-`Q_W P_a` row.  Tensor-orbit generation and canonical quotienting of the
-full production basis likewise remain `NOT_COMPUTED`.  The `r=0` component is
-recorded separately as type B; the `r=1,2` components form the type-A
-template.  Its status is
-`COMPONENT_EXPANSION_VERIFIED_CONNECTING_IDENTITIES_PENDING`, not a completed
-Euler certificate.  Separate regression gates cover the verified top
-transgression, the retained `d omega wedge Theta_E` source, and the still-open
-complete lower-descendant cancellation.
+The two connecting identities are now verified in the frozen Euler carrier
+algebra after expanding `tilde_omega=U-P`.  Tensor-orbit generation and
+canonical quotienting of the full production basis remain `NOT_COMPUTED`.
+The `r=0` component is recorded separately as type B; the `r=1,2` components
+form the type-A template.  Its status is
+`CONNECTING_IDENTITIES_VERIFIED_TOP_TENSOR_MATCH_PENDING`, not yet a completed
+Euler certificate, because the epsilon-contracted reconstruction of the head
+is still open.
 
 The connecting-identity preflight now separates coefficient parity from total
 form parity in an indexed carrier algebra and applies `Q_W` rather than merely
@@ -162,10 +160,28 @@ An exact reduced covariant tensor-sector audit now constructs the full
 four-dimensional algebraic Weyl space (dimension `10`) and irreducible
 Cotton space (dimension `16`) from their defining linear identities.  Every
 independent rational basis case vanishes in the four curvature sectors that
-enter the generalized-connection calculation.  This is not promoted to the
-two ordinary-bidegree connecting equations: the inhomogeneous substitution
-`tilde_omega = U - P`, the project totalization signs, and the homogeneous
-Gamma/weight rows still require an explicit component projection.
+enter the generalized-connection calculation.  The independent ordinary
+projector then substitutes `tilde_omega=U-P` before cancellation, uses
+`D=Q_W+(-1)^g d_h`, and retains separate Hessian and Cotton images.  Across
+`136` exact Schouten, Weyl, Cotton, and Schouten--Weyl basis cases it verifies
+
+```text
+Q_W a14 + d_h a23 = 0
+Q_W a23 - d_h a32 = 0
+Q_W a32 = 0.
+```
+
+The witness calculation contains `12`, `60`, and `48` nonzero differential
+summands in the three components before cancellation.  Both connecting pairs
+carry independent left/right hashes and verify `RIGHT_EQUALS_NEGATIVE_LEFT`.
+Changing the mixed `U/P` coefficient by the factor `5/4` breaks all `136`
+cases.  A relative Cotton-sign flip is invisible after imposing the
+irreducible Cotton identities; the receipt records that fact rather than
+claiming false sensitivity.  A deliberately nonphysical raw Cotton
+coordinate probe changes under the same flip and therefore checks only the
+row wiring.  Exact constraint ranks are `11` in the 21-coordinate Weyl
+presentation and `8` in the 24-coordinate Cotton presentation.  Cached
+analyses are serialized and every caller receives a fresh copy.
 
 The generic quotient engine's exhaustiveness proof is also fail-closed at the
 artifact layer.  Promotion to `COMPLETE_NONTRIVIALITY_WITNESS` now requires
@@ -182,7 +198,8 @@ This is the strict-density part of the antifield-independent descent
 database, not the complete `H^{0,4}(s|d)` or `H^{1,4}(s|d)` result.  Still
 unavailable are:
 
-- the complete intrinsic type-A descent beginning at `omega E4`;
+- epsilon-contracted identification of the verified carrier head with the
+  frozen `omega E4` tensor representative;
 - antifield/Koszul--Tate and equation-of-motion sectors;
 - proof of cohomological nontriviality for the strict candidates;
 - anomaly coefficients, QME restoration, and residual transfer.
@@ -261,11 +278,26 @@ pipeline were not triggered because this preflight deliberately leaves the
 horizontal generator rows, epsilon contraction, connecting cancellations,
 AFN0 theorem, and `d_quotient` verdict unpromoted.
 
+### Ordinary-bidegree projection addendum
+
+| Tier | Command/rail | Elapsed | Result |
+|---|---|---:|---|
+| 0 | compile changed modules; reproduce/check Euler and horizontal certificates; strict schemas; scoped diff check | under 30 s | pass |
+| 1 | Euler tensor audit, ordinary projection, expansion, preflight, certificate, and descent-database consumers | 12.9 s | 16 pass |
+| 2 | complete `quantum-weyl/local_bv/tests` discovery rail | 41.2 s wall | 185 pass in 40.7 s |
+| 2 | Euler projection and horizontal-database hashes under seeds `1,7,123`, parallel | 14.2 s wall | pass |
+
+The complete local rail remains below the agreed 60-second threshold.  Tier
+3 and the classical pipeline were not triggered: the frozen carrier
+connecting equations advanced, but the epsilon-contracted Euler head, AFN0
+quotient theorem, classical freeze, QME lifecycle, and `d_quotient` verdict
+remain unpromoted.
+
 ## Next local gate
 
-Continue the intrinsic type-A anomaly descent from the certified
-`d_h(omega) wedge Theta_E` residual by implementing the Cotton and `Gamma`
-generator actions and checking the two remaining connecting equations term
-by term.  Then formulate the exact mapping-cone coboundary matrices.
-Antifield completion remains blocked until the classical team exports the
-portable Koszul--Tate rows.
+Complete the epsilon-contracted tensor reconstruction of the Euler head and
+compare it with the frozen `omega E4` representative and orientation.  Once
+that passes, the intrinsic carrier tower may be promoted from `IN_PROGRESS`
+to a complete intrinsic-descent certificate.  Then formulate the exact AFN0
+mapping-cone coboundary matrices.  Antifield completion remains blocked until
+the classical team exports the portable Koszul--Tate rows.
