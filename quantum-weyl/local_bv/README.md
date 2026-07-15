@@ -68,6 +68,19 @@ whose rank drops from eight to six; the derivative sectors acquire no further
 dimension-dependent loss.  The surjective specialization map and its two
 kernel witnesses are stored exactly.
 
+The Weyl-decomposition hardening layer now makes the next specialization
+safe to attempt.  Metric, Schouten, and Cotton tensors have exact declared
+symmetries and the convention
+`A_abc = nabla_b P_ca - nabla_c P_ba`.  The six-term Ricci decomposition,
+its covariant derivative, and the cyclic Weyl--Cotton differential identity
+are stored as exact tensor relations; expanding Cotton back to `nabla P`
+reproduces the differentiated decomposition term for term.  The older
+algebraic `Riemann -> Weyl` restriction now rejects every differentiated
+Riemann factor, preventing it from silently dropping Schouten/Cotton terms.
+Full-Weyl Hodge dualization flips the explicit parity block, with exact
+`star^2=+1` in Euclidean and `star^2=-1` in Lorentzian signature on a complete
+Weyl contraction.
+
 This is not Gate A or Gate B.  In particular, the classical commit is
 `NOT_FROZEN`; antifield and nonminimal rows have not been imported; and
 general covariant curvature reduction remains incomplete.  The
@@ -89,12 +102,14 @@ PYTHONPATH=quantum-weyl python -m local_bv.scaling_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.six_derivative_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.specialization_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.four_dimensional_certificate --check
+PYTHONPATH=quantum-weyl python -m local_bv.weyl_decomposition_certificate --check
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_CURVATURE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_SPECIALIZATION_FOUNDATIONS.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT.json
+python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS.json
 ```
 
 The certificate is
@@ -133,6 +148,11 @@ The four-dimensional Schouten receipt is
 [`certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT_CERTIFICATE.json`](certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT_CERTIFICATE.json),
 with its common result envelope at
 [`../certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT.json`](../certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT.json).
+
+The Weyl--Schouten--Cotton hardening receipt is
+[`certificates/LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS_CERTIFICATE.json`](certificates/LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS_CERTIFICATE.json),
+with its common result envelope at
+[`../certificates/LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS.json`](../certificates/LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS.json).
 
 Next admissible local steps are the tracefree-Weyl and parity-odd
 specializations, Weyl BRST curvature rows, and a derivative-bounded

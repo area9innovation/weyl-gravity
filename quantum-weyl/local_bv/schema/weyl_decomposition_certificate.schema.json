@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-local-weyl-decomposition-foundations-v1.json",
+  "title": "Pure-Weyl Weyl--Schouten--Cotton foundation certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope", "conventions", "checks", "relations", "shortcut_guard", "hodge", "provenance", "canonical_hashes", "not_computed", "assumptions"],
+  "properties": {
+    "result_id": {"const": "LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS_CERTIFICATE"},
+    "result_state": {"const": "WEYL_DECOMPOSITION_INFRASTRUCTURE_VERIFIED"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "string", "minLength": 1},
+    "conventions": {
+      "const": {
+        "schouten": "P_ab=(R_ab-R*g_ab/(2*(n-1)))/(n-2)",
+        "cotton": "A_abc=nabla_b(P_ca)-nabla_c(P_ba)",
+        "ricci_decomposition": "R_abcd=C_abcd+g_ac*P_bd-g_ad*P_bc-g_bc*P_ad+g_bd*P_ac",
+        "hodge": "(*C)_abcd=epsilon_abef*C_efcd/2"
+      }
+    },
+    "checks": {
+      "const": {
+        "ricci_decomposition": "VERIFIED",
+        "differentiated_ricci_decomposition": "VERIFIED",
+        "cotton_antisymmetry": "VERIFIED",
+        "cotton_cyclic_identity": "VERIFIED",
+        "cotton_trace_reduction": "VERIFIED",
+        "weyl_differential_bianchi_sign_audit": "VERIFIED",
+        "derivative_shortcut_guard": "VERIFIED",
+        "full_weyl_hodge_parity": "VERIFIED",
+        "euclidean_hodge_square": "VERIFIED",
+        "lorentzian_hodge_square": "VERIFIED",
+        "tracefree_weyl_quotient": "NOT_COMPUTED",
+        "parity_odd_invariant_enumeration": "NOT_COMPUTED",
+        "local_cohomology_H_s_mod_d": "NOT_COMPUTED"
+      }
+    },
+    "relations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ricci_term_count", "ricci_sha256", "differentiated_ricci_term_count", "differentiated_ricci_sha256", "cotton_definition_term_count", "cotton_definition_sha256", "cotton_cyclic_term_count", "cotton_cyclic_sha256", "expanded_cotton_cyclic_status", "weyl_differential_term_count", "weyl_differential_sha256", "expanded_differential_term_count", "expanded_cotton_sha256", "expanded_schouten_sha256", "cotton_trace_statuses"],
+      "properties": {
+        "ricci_term_count": {"const": 6},
+        "ricci_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "differentiated_ricci_term_count": {"const": 6},
+        "differentiated_ricci_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "cotton_definition_term_count": {"const": 3},
+        "cotton_definition_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "cotton_cyclic_term_count": {"const": 3},
+        "cotton_cyclic_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "expanded_cotton_cyclic_status": {"const": "ZERO"},
+        "weyl_differential_term_count": {"const": 9},
+        "weyl_differential_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "expanded_differential_term_count": {"const": 15},
+        "expanded_cotton_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "expanded_schouten_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "cotton_trace_statuses": {"const": {"first_second": "ZERO", "first_third": "ZERO", "second_third": "ZERO"}}
+      }
+    },
+    "shortcut_guard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algebraic_restriction", "differentiated_restriction", "error"],
+      "properties": {
+        "algebraic_restriction": {"const": "ALLOWED"},
+        "differentiated_restriction": {"const": "REJECTED"},
+        "error": {"type": "string", "pattern": ".*Schouten/Cotton.*"}
+      }
+    },
+    "hodge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dual_parity", "dual_sha256", "star_square", "euclidean_witness_sha256", "lorentzian_witness_sha256"],
+      "properties": {
+        "dual_parity": {"const": "odd"},
+        "dual_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "star_square": {"const": {"EUCLIDEAN": 1, "LORENTZIAN": -1}},
+        "euclidean_witness_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "lorentzian_witness_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "provenance": {"type": "array", "minItems": 2, "items": {"type": "object"}},
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest_sha256", "certificate_inputs_sha256"],
+      "properties": {
+        "source_manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "certificate_inputs_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "not_computed": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "assumptions": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  }
+}

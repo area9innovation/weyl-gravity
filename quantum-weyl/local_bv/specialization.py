@@ -250,7 +250,23 @@ def reduce_epsilon_pair_in_monomial(
 
 
 def replace_riemann_by_weyl(expression: TensorExpression) -> TensorExpression:
-    """Apply the formal Riemann-to-tracefree-Weyl tensor replacement."""
+    """Apply the algebraic Riemann-to-tracefree-Weyl restriction.
+
+    This is deliberately not a differential substitution.  Replacing
+    ``nabla Riemann`` by ``nabla Weyl`` drops the Schouten/Cotton terms in the
+    differentiated Ricci decomposition.  Such input therefore fails closed
+    instead of silently producing a false derivative-sector relation.
+    """
+
+    if any(
+        factor.spec == RIEMANN and factor.derivatives
+        for monomial in expression.terms
+        for factor in monomial.factors
+    ):
+        raise ValueError(
+            "derivative Riemann-to-Weyl replacement requires the explicit "
+            "Schouten/Cotton decomposition"
+        )
 
     terms: dict[TensorMonomial, Fraction] = {}
     for monomial, coefficient in expression.terms.items():

@@ -143,6 +143,15 @@ class SpecializationFoundationTests(unittest.TestCase):
             )
         )
 
+    def test_derivative_riemann_to_weyl_shortcut_fails_closed(self) -> None:
+        differentiated = TensorExpression.monomial(
+            TensorMonomial(
+                (TensorFactor(RIEMANN, (0, 1, 2, 3), (4,)),)
+            )
+        )
+        with self.assertRaisesRegex(ValueError, "Schouten/Cotton"):
+            replace_riemann_by_weyl(differentiated)
+
     def test_epsilon_pair_expansion_tracks_signature_and_parity(self) -> None:
         euclidean = epsilon_pair_expansion(Signature.EUCLIDEAN)
         lorentzian = epsilon_pair_expansion(Signature.LORENTZIAN)

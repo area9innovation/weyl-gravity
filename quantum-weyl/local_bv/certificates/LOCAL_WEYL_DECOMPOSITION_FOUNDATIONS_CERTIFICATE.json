@@ -1,0 +1,94 @@
+{
+  "assumptions": [
+    "All displayed abstract indices are lowered; repeated labels denote inverse-metric contraction.",
+    "The Riemann sign convention is the one already frozen by the local curvature package.",
+    "Cotton trace reduction is the irreducible consequence of the contracted Bianchi identity and the declared Schouten normalization.",
+    "The Hodge witness tests a complete Weyl contraction; it does not enumerate the parity-odd invariant quotient."
+  ],
+  "canonical_hashes": {
+    "certificate_inputs_sha256": "cca8f2c9e5ea9a99bdc21f903e201b783a38e0e75fc8571e86b4080008a61a59",
+    "source_manifest_sha256": "f2778b0bf236d29172c070c13e105d20a7f7674ebbd0b92a5b5dd1cd8979331f"
+  },
+  "checks": {
+    "cotton_antisymmetry": "VERIFIED",
+    "cotton_cyclic_identity": "VERIFIED",
+    "cotton_trace_reduction": "VERIFIED",
+    "derivative_shortcut_guard": "VERIFIED",
+    "differentiated_ricci_decomposition": "VERIFIED",
+    "euclidean_hodge_square": "VERIFIED",
+    "full_weyl_hodge_parity": "VERIFIED",
+    "local_cohomology_H_s_mod_d": "NOT_COMPUTED",
+    "lorentzian_hodge_square": "VERIFIED",
+    "parity_odd_invariant_enumeration": "NOT_COMPUTED",
+    "ricci_decomposition": "VERIFIED",
+    "tracefree_weyl_quotient": "NOT_COMPUTED",
+    "weyl_differential_bianchi_sign_audit": "VERIFIED"
+  },
+  "classical_commit": "UNFROZEN",
+  "conventions": {
+    "cotton": "A_abc=nabla_b(P_ca)-nabla_c(P_ba)",
+    "hodge": "(*C)_abcd=epsilon_abef*C_efcd/2",
+    "ricci_decomposition": "R_abcd=C_abcd+g_ac*P_bd-g_ad*P_bc-g_bc*P_ad+g_bd*P_ac",
+    "schouten": "P_ab=(R_ab-R*g_ab/(2*(n-1)))/(n-2)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "hodge": {
+    "dual_parity": "odd",
+    "dual_sha256": "1fdf2d9d829c48ee2300b8fb024e1a356eb31d3f6f46573f5dcc7d66a2bfdffe",
+    "euclidean_witness_sha256": "a54b07dc5075356e15d7b81502d911b3957f75867faf0849e46116bb9dfacbe5",
+    "lorentzian_witness_sha256": "0b8e7bd73a3da5ced84a4e604386d83008ad682624a788df52b059e41c3ca054",
+    "star_square": {
+      "EUCLIDEAN": 1,
+      "LORENTZIAN": -1
+    }
+  },
+  "not_computed": [
+    "the tracefree-Weyl image and kernel of the eight-dimensional four-dimensional Riemann quotient",
+    "the parity-odd single-epsilon invariant basis",
+    "Weyl-BRST closure, antifield descent, and H^{g,4}(s|d)",
+    "anomaly or counterterm coefficients and the quantum master equation"
+  ],
+  "provenance": [
+    {
+      "role": "Schouten and Weyl convention; Cotton/Weyl differential identity cross-check",
+      "source": "Boulanger, A Weyl-covariant tensor calculus",
+      "url": "https://arxiv.org/abs/hep-th/0412314"
+    },
+    {
+      "role": "independent Cotton convention and Bianchi provenance",
+      "source": "Garcia, Hehl, Heinicke, Macias, The Cotton tensor in Riemannian spacetimes",
+      "url": "https://arxiv.org/abs/gr-qc/0309008"
+    }
+  ],
+  "relations": {
+    "cotton_cyclic_sha256": "50b5c35be504ad449cbb6cbc13b8661a434a21ba2af84dc9f3b500912c0984f5",
+    "cotton_cyclic_term_count": 3,
+    "cotton_definition_sha256": "e93184357a96e5e38d0bbddfc7c4bf02bc2dc4c098c62203e4faf9cfeb46ae0f",
+    "cotton_definition_term_count": 3,
+    "cotton_trace_statuses": {
+      "first_second": "ZERO",
+      "first_third": "ZERO",
+      "second_third": "ZERO"
+    },
+    "differentiated_ricci_sha256": "e9b04ec331abe074fc4b399605fc1f817d03099c41cc1d516c252bc600687493",
+    "differentiated_ricci_term_count": 6,
+    "expanded_cotton_cyclic_status": "ZERO",
+    "expanded_cotton_sha256": "72ccce3b7db589f5004e2f84c8a4eadb89a6986faf4b5533b8d7c80de9f5e201",
+    "expanded_differential_term_count": 15,
+    "expanded_schouten_sha256": "72ccce3b7db589f5004e2f84c8a4eadb89a6986faf4b5533b8d7c80de9f5e201",
+    "ricci_sha256": "a5409c94a7a7b7cbdb83d831b883d46fcf2bbec380733a6db40356abcac66b4f",
+    "ricci_term_count": 6,
+    "weyl_differential_sha256": "445f9abbf9eea68da7897e7b4bd9ad33a4208b1c3056f7cf0fcebc47d88ae6c9",
+    "weyl_differential_term_count": 9
+  },
+  "result_id": "LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS_CERTIFICATE",
+  "result_state": "WEYL_DECOMPOSITION_INFRASTRUCTURE_VERIFIED",
+  "scope": "Exact metric/Schouten/Cotton tensor conventions, algebraic and differentiated Ricci decomposition, cyclic Weyl--Cotton identity, fail-closed derivative specialization, and full-Weyl Hodge witnesses.",
+  "shortcut_guard": {
+    "algebraic_restriction": "ALLOWED",
+    "differentiated_restriction": "REJECTED",
+    "error": "derivative Riemann-to-Weyl replacement requires the explicit Schouten/Cotton decomposition"
+  }
+}
