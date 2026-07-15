@@ -5,6 +5,22 @@
     "dual_witness_present": true,
     "forbidden_primitive_coordinate_count": 36
   },
+  "block_sparse_fixture": {
+    "ambient_and_block_sources_equal": true,
+    "classification": "EXACT_CORRECTION",
+    "correction_identity": true,
+    "metrics": {
+      "axis_names": [
+        "D_weight"
+      ],
+      "block_count": 4,
+      "differential_nonzero_coefficient_count": 72,
+      "largest_source_block": 16,
+      "largest_target_block": 20,
+      "source_coordinate_count": 36,
+      "target_coordinate_count": 45
+    }
+  },
   "consumer_fixture": {
     "canonical_expression_sha256": "97f8ab75adc8e88335335262e17dffe15dbcd7f4c0f6603c46c20901cb2230a3",
     "generator_count": 6,
@@ -144,16 +160,20 @@
     "schema": "quantum-weyl/transfer/schema/nd2-arity-two-cartan-engine-v1.schema.json",
     "source_manifest": {
       "arity_two_cartan.py": "656ad3fc3e94846ab06ab9da6bcce0b79510eda5388d48d034492cb64c9440bf",
+      "block_sparse_arity_two.py": "3378b396f47e29e700ca56e2fbcb989ef2692c9b50e8ab62f1dc37cf9f84255f",
+      "evaluator_registry.py": "3394aa39631e20346cad4c7a09050df043cf8a7ebdff7432928688516e066c1e",
       "local_expression_ast.py": "747e6ece20cc3be5f2904c130cd8e5821b0a9e375c34d88f8eea231a7e69cf68",
-      "nd2_arity_two_certificate.py": "6d5f1f24e565b55c981f8f5ab7de585fd30ddd09aa2fe81ab274585c383cc238",
-      "schema/nd2-arity-two-cartan-engine-v1.schema.json": "05fcb60532a9bbc429ab69464331df6c2ceabde63f7a6518fc1810c7f7220ed6",
-      "support_local_q2_consumer.py": "9cf5254c0c4ff60359dd9ce1b973a0113c041bcdfcd1a3ad760ae06ae223fa88",
+      "nd2_arity_two_certificate.py": "4ce680bbb5d1aeea2eb765a33c1ddfaf88bb68ef83edbdea06dce6f54365e238",
+      "schema/nd2-arity-two-cartan-engine-v1.schema.json": "5f10e248b937a7982c7b8e7f733c732dfbb3ece01e5822f64e8747adba91f232",
+      "support_local_q2_consumer.py": "8b27f10caabdef0595cda3a02fd47f3dd8bd0fd4e0caf19f0e532ef1c17e91be",
       "tests/test_arity_two_cartan.py": "253e6a68c465c1f839fe670cf8124b92b6ce70d546c2d43f9a891691aebf2cf2",
+      "tests/test_block_sparse_arity_two.py": "0e609676501cd5b804aacfc73d112783e9aac4e2016d7f00d498afdd5b2fae33",
+      "tests/test_evaluator_registry.py": "ec273ff62f913a0ed197a4a04337ee493f4e98590e79ef739cbb3694d7048074",
       "tests/test_local_expression_ast.py": "52b883e235387a41b96f2443d23117b078d68970ee59915f86a190b0d7416c9b",
-      "tests/test_nd2_arity_two_certificate.py": "2faac13968a00fdc125586bf28c5aed8669d0772d4a90200c9ce3f11f217b413",
+      "tests/test_nd2_arity_two_certificate.py": "1ca5a2eaa28a6f53043096caff26cf18f7651817d73f49b0237290c63daffb98",
       "tests/test_support_local_q2_consumer.py": "f859bf3c440aacdddb19033c5ab2e0240c1b7c991e0dfcff2ae3d6fc0551e411"
     },
-    "source_manifest_sha256": "ba52746f4162efb0285409a8289f8a7a3c7815b099cc9321a6dbf6602187b4c9",
+    "source_manifest_sha256": "7ab806ac9152985054592cc95c490d5f6e5c781309f67d3fd1983cb6a574337c",
     "support_local_contract": "quantum-weyl/classical_import/certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json",
     "support_local_contract_sha256": "c9fcc9a537856b0418897741782ad07edbb88a2bea71ff559002d7e67f57fd6b"
   },

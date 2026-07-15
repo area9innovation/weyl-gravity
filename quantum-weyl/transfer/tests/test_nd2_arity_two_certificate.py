@@ -60,6 +60,13 @@ class ND2ArityTwoCertificateTests(unittest.TestCase):
             "NONTRIVIAL_OBSTRUCTION",
         )
 
+    def test_block_sparse_solver_reproduces_the_ambient_source(self) -> None:
+        block = CERTIFICATE.build_certificate()["block_sparse_fixture"]
+        self.assertEqual(block["classification"], "EXACT_CORRECTION")
+        self.assertTrue(block["correction_identity"])
+        self.assertTrue(block["ambient_and_block_sources_equal"])
+        self.assertGreater(block["metrics"]["block_count"], 1)
+
     def test_physical_claim_stays_behind_the_input_gate(self) -> None:
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(certificate["dependency_tags"], ["LOCAL-ALGEBRAIC"])

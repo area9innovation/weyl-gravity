@@ -13,6 +13,7 @@
     "convention",
     "consumer_fixture",
     "exact_correction_fixture",
+    "block_sparse_fixture",
     "mutation_fixture",
     "obstruction_fixture",
     "admissibility_fixture",
@@ -73,6 +74,20 @@
         "classification": {"const": "EXACT_CORRECTION"},
         "iota_D2": {"$ref": "#/$defs/sparseBilinear"},
         "correction_identity": {"const": true}
+      }
+    },
+    "block_sparse_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "metrics", "correction_identity", "ambient_and_block_sources_equal"],
+      "properties": {
+        "classification": {"const": "EXACT_CORRECTION"},
+        "metrics": {
+          "type": "object",
+          "required": ["axis_names", "source_coordinate_count", "target_coordinate_count", "block_count", "largest_source_block", "largest_target_block", "differential_nonzero_coefficient_count"]
+        },
+        "correction_identity": {"const": true},
+        "ambient_and_block_sources_equal": {"const": true}
       }
     },
     "mutation_fixture": {

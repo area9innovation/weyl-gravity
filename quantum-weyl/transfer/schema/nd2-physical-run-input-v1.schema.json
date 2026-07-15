@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nd2-physical-run-input-v1.schema.json",
+  "title": "Pinned ND2 physical arity-two run input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "run_id",
+    "classical_commit",
+    "dependency_tags",
+    "artifacts",
+    "evaluator",
+    "assembly_adapter_id"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-nd2-physical-run-input-v1"},
+    "run_id": {"type": "string", "minLength": 1},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "artifacts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/artifact"},
+      "allOf": [
+        {"contains": {"properties": {"artifact_id": {"const": "support_local_q1_q2_D"}}, "required": ["artifact_id"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"properties": {"artifact_id": {"const": "classical_contraction"}}, "required": ["artifact_id"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"properties": {"artifact_id": {"const": "admissibility_policy"}}, "required": ["artifact_id"]}, "minContains": 1, "maxContains": 1}
+      ]
+    },
+    "evaluator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evaluator_id", "expression_schema_version", "implementation_manifest_sha256"],
+      "properties": {
+        "evaluator_id": {"type": "string", "minLength": 1},
+        "expression_schema_version": {"type": "string", "minLength": 1},
+        "implementation_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "assembly_adapter_id": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"enum": ["support_local_q1_q2_D", "classical_contraction", "admissibility_policy"]},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

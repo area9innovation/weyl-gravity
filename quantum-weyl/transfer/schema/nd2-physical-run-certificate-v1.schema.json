@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nd2-physical-run-certificate-v1.schema.json",
+  "title": "ND2 physical arity-two run contract certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "setting_verdict",
+    "contract",
+    "registered_evaluators",
+    "registered_assembly_adapters",
+    "engine_self_test",
+    "input_gate",
+    "established",
+    "not_established",
+    "next_gate",
+    "provenance"
+  ],
+  "properties": {
+    "result_id": {"const": "ND2_PHYSICAL_RUN_CONTRACT"},
+    "result_state": {"const": "CONTRACT_READY_PHYSICAL_INPUT_BLOCKED"},
+    "lifecycle_layer": {"const": "INTERACTING"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_verdict": {"const": "INPUT_GATE_BLOCKED"},
+    "contract": {"type": "object"},
+    "registered_evaluators": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "registered_assembly_adapters": {"type": "array", "items": {"type": "object"}},
+    "engine_self_test": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "all_checks_pass", "correction_retained", "physical_coefficient_claim"],
+      "properties": {
+        "classification": {"const": "EXACT_CORRECTION"},
+        "all_checks_pass": {"const": true},
+        "correction_retained": {"const": true},
+        "physical_coefficient_claim": {"const": false}
+      }
+    },
+    "input_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "manifest_path", "manifest_sha256", "reason"],
+      "properties": {
+        "status": {"enum": ["INPUT_NOT_AVAILABLE", "INPUT_REJECTED", "INPUT_VERIFIED_ASSEMBLY_ADAPTER_PENDING"]},
+        "manifest_path": {"type": "string", "minLength": 1},
+        "manifest_sha256": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/hash"}]},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "established": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "not_established": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256", "schema"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/nd2-physical-run-certificate-v1.schema.json"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

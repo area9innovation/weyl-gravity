@@ -1,0 +1,133 @@
+{
+  "convention": "suspended-graded-symmetric-factorial-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "direct_q3_fixture": {
+    "checks": {
+      "Cartan_identity_arity_one": true,
+      "Cartan_identity_arity_two": true,
+      "D_equivariance_arity_three": true,
+      "D_equivariance_arity_two": true,
+      "Q_squared_arity_three": true,
+      "Q_squared_arity_two": true,
+      "cartan_source_q1_closed": true,
+      "q1_squared_zero": true
+    },
+    "classification": "EXACT_CORRECTION",
+    "correction": {
+      "ambient_coordinate_count": 16,
+      "degree": -1,
+      "nonzero_entries": [
+        [
+          2,
+          0,
+          0,
+          1,
+          "-1"
+        ]
+      ]
+    },
+    "correction_identity": true,
+    "q3_nonzero": true,
+    "source": {
+      "ambient_coordinate_count": 20,
+      "degree": 0,
+      "nonzero_entries": [
+        [
+          2,
+          0,
+          0,
+          0,
+          "3"
+        ],
+        [
+          3,
+          0,
+          0,
+          1,
+          "1"
+        ]
+      ]
+    }
+  },
+  "established": [
+    "exact graded-symmetric ternary-map complex and rational boundary solver",
+    "arity-three Q-squared, Cartan, D-equivariance, and source-closure checks",
+    "separate direct q3 and exchange [q2,iota_D^(2)] source tensors",
+    "retained exact iota_D^(3) correction or normalized dual obstruction witness"
+  ],
+  "exchange_fixture": {
+    "exchange_nonzero": true,
+    "exchange_source": {
+      "ambient_coordinate_count": 4,
+      "degree": 0,
+      "nonzero_entries": [
+        [
+          0,
+          0,
+          1,
+          1,
+          "2"
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          "3"
+        ]
+      ]
+    },
+    "graded_commutator_symmetry": true,
+    "iota_D2_nonzero": true,
+    "q2_nonzero": true
+  },
+  "input_gate": {
+    "classical_homotopy_s_cl": "NOT_AVAILABLE",
+    "classical_inclusion_iota_cl": "NOT_AVAILABLE",
+    "classical_projection_pi_cl": "NOT_AVAILABLE",
+    "physical_iota_D2": "NOT_COMPUTED_PENDING_ARITY_TWO_PHYSICAL_RUN",
+    "support_local_classical_bv_q2": "NOT_AVAILABLE",
+    "support_local_classical_bv_q3": "NOT_AVAILABLE_NO_VERSIONED_EXPORT"
+  },
+  "lifecycle_layer": "INTERACTING",
+  "mutation_fixture": {
+    "Cartan_identity_arity_one": false,
+    "D_equivariance_arity_three": false,
+    "mutation": "change the weight-three q3 output D eigenvalue from 3 to 4",
+    "solver_gate": "REJECTED_BEFORE_CORRECTION_CLASSIFICATION"
+  },
+  "next_gate": "after the physical arity-two run, import q3 and L_D^(3), recompute the direct and exchange sources, and classify the admissible arity-three obstruction",
+  "not_established": [
+    "a conformal-gravity q3 Taylor coefficient",
+    "the physical arity-three Cartan source or correction",
+    "quartic dynamical/topological mixing or an instability amplitude",
+    "a quantum correction or Lorentzian causal theorem"
+  ],
+  "obstruction_fixture": {
+    "classification": "NONTRIVIAL_OBSTRUCTION",
+    "dual_witness": [
+      "1"
+    ],
+    "dual_witness_normalization": "1"
+  },
+  "provenance": {
+    "classical_snapshot": "quantum-weyl/classical_import/snapshots/bootstrap-v1.json",
+    "classical_snapshot_sha256": "459f46e3a8d233754ceec2593c858b1996ead38ec52622678bf5a7c7ec3a61e9",
+    "schema": "quantum-weyl/transfer/schema/arity-three-cartan-engine-v1.schema.json",
+    "source_manifest": {
+      "arity_three_cartan.py": "eeec6a358380be25d39f62958b80968150ec806fe99712dda29c425100435fcb",
+      "arity_three_cartan_certificate.py": "cee1825abfa90bad27f0560b88f4a2cae58ec8e72e289a8723502d896fc55b90",
+      "arity_two_cartan.py": "656ad3fc3e94846ab06ab9da6bcce0b79510eda5388d48d034492cb64c9440bf",
+      "schema/arity-three-cartan-engine-v1.schema.json": "d05594899045ce7e235e01d82c6bc2c9e3ca3ae2c934e3d272cecf27614de182",
+      "tests/test_arity_three_cartan.py": "8c576a5f727e9588fcef750998f2b389e2680cde3e810af99be6a587e30bc95f",
+      "tests/test_arity_three_cartan_certificate.py": "f6edb6d39b362717f37f0bebcba266d83f98ae6ad0127e5e7a7028a6d5a4c371"
+    },
+    "source_manifest_sha256": "dd4e766a980e52f421ba607ce954d059be71989f5e2dc9c3c8f7e9911c953494"
+  },
+  "recurrence": "[q1,iota_D^(3)]=-[q3,iota_D]-[q2,iota_D^(2)]+L_D^(3)",
+  "result_id": "ND3_ARITY_THREE_CARTAN_ENGINE",
+  "result_state": "ENGINE_READY_AWAITING_Q3_AND_LOWER_PHYSICAL_DATA",
+  "setting_verdict": "INPUT_GATE_BLOCKED"
+}

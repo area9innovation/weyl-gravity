@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "arity-three-cartan-engine-v1.schema.json",
+  "title": "Exact arity-three Cartan recurrence engine",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id", "result_state", "lifecycle_layer", "dependency_tags",
+    "setting_verdict", "convention", "recurrence", "direct_q3_fixture",
+    "exchange_fixture", "obstruction_fixture", "mutation_fixture", "input_gate",
+    "established", "not_established", "next_gate", "provenance"
+  ],
+  "properties": {
+    "result_id": {"const": "ND3_ARITY_THREE_CARTAN_ENGINE"},
+    "result_state": {"const": "ENGINE_READY_AWAITING_Q3_AND_LOWER_PHYSICAL_DATA"},
+    "lifecycle_layer": {"const": "INTERACTING"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_verdict": {"const": "INPUT_GATE_BLOCKED"},
+    "convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "recurrence": {"type": "string", "minLength": 1},
+    "direct_q3_fixture": {
+      "type": "object",
+      "required": ["checks", "q3_nonzero", "source", "classification", "correction", "correction_identity"],
+      "properties": {
+        "checks": {"type": "object", "minProperties": 8, "additionalProperties": {"const": true}},
+        "q3_nonzero": {"const": true},
+        "classification": {"const": "EXACT_CORRECTION"},
+        "correction_identity": {"const": true}
+      }
+    },
+    "exchange_fixture": {
+      "type": "object",
+      "required": ["q2_nonzero", "iota_D2_nonzero", "exchange_source", "exchange_nonzero", "graded_commutator_symmetry"],
+      "properties": {
+        "q2_nonzero": {"const": true},
+        "iota_D2_nonzero": {"const": true},
+        "exchange_nonzero": {"const": true},
+        "graded_commutator_symmetry": {"const": true}
+      }
+    },
+    "obstruction_fixture": {
+      "type": "object",
+      "required": ["classification", "dual_witness", "dual_witness_normalization"],
+      "properties": {
+        "classification": {"const": "NONTRIVIAL_OBSTRUCTION"},
+        "dual_witness": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "dual_witness_normalization": {"const": "1"}
+      }
+    },
+    "mutation_fixture": {
+      "type": "object",
+      "required": ["mutation", "Cartan_identity_arity_one", "D_equivariance_arity_three", "solver_gate"],
+      "properties": {
+        "Cartan_identity_arity_one": {"const": false},
+        "D_equivariance_arity_three": {"const": false},
+        "solver_gate": {"const": "REJECTED_BEFORE_CORRECTION_CLASSIFICATION"}
+      }
+    },
+    "input_gate": {"type": "object"},
+    "established": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "not_established": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "required": ["classical_snapshot", "classical_snapshot_sha256", "source_manifest", "source_manifest_sha256", "schema"],
+      "properties": {
+        "classical_snapshot_sha256": {"$ref": "#/$defs/hash"},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/arity-three-cartan-engine-v1.schema.json"}
+      }
+    }
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

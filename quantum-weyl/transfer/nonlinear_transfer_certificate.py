@@ -45,9 +45,15 @@ def _source_manifest() -> dict[str, str]:
         "d_derivation_defect.py",
         "d_derivation_certificate.py",
         "arity_two_cartan.py",
+        "block_sparse_arity_two.py",
+        "evaluator_registry.py",
         "local_expression_ast.py",
         "support_local_q2_consumer.py",
         "nd2_arity_two_certificate.py",
+        "nd2_physical_run.py",
+        "nd2_physical_run_certificate.py",
+        "arity_three_cartan.py",
+        "arity_three_cartan_certificate.py",
         "local_bach_seed_lift.py",
         "local_bach_seed_certificate.py",
         "local_bach_seed_direct_audit.py",
@@ -56,15 +62,23 @@ def _source_manifest() -> dict[str, str]:
         "schema/local-bach-seed-direct-audit-v1.schema.json",
         "schema/selected-residual-d-derivation-v1.schema.json",
         "schema/nd2-arity-two-cartan-engine-v1.schema.json",
+        "schema/nd2-physical-run-input-v1.schema.json",
+        "schema/nd2-physical-run-certificate-v1.schema.json",
+        "schema/arity-three-cartan-engine-v1.schema.json",
         "schema/nonlinear_classical_export.schema.json",
         "residual_cubic_block.py",
         "residual_cubic_certificate.py",
         "tests/test_homological_transfer.py",
         "tests/test_d_derivation_defect.py",
         "tests/test_arity_two_cartan.py",
+        "tests/test_block_sparse_arity_two.py",
+        "tests/test_evaluator_registry.py",
         "tests/test_local_expression_ast.py",
         "tests/test_support_local_q2_consumer.py",
         "tests/test_nd2_arity_two_certificate.py",
+        "tests/test_nd2_physical_run.py",
+        "tests/test_arity_three_cartan.py",
+        "tests/test_arity_three_cartan_certificate.py",
         "tests/test_local_bach_seed_lift.py",
         "tests/test_local_bach_seed_direct_audit.py",
         "tests/test_nonlinear_transfer_certificate.py",
@@ -110,6 +124,8 @@ def build_certificate() -> dict[str, Any]:
                 "HT1b direct curvature reevaluation of six forward probes and two reverse slice probes",
                 "ND1 exact arity-two D-derivation defect vanishes on all four selected residual HT1 q2 blocks",
                 "ND2 canonical exact local-expression consumer and full arity-two Cartan primitive/obstruction engine",
+                "ND2 stable physical-run contract with content-addressed evaluator registry and block-sparse exact solving",
+                "ND3 exact arity-three Cartan recurrence engine with separate direct q3 and exchange sources",
             ],
             "not_established": [
                 "the complete conformal-gravity q2 or q3 Taylor tensors",
@@ -131,7 +147,7 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_ND2_CARTAN_SOLVER_READY_FULL_LOCAL_VERDICT_INPUT_GATE_BLOCKED",
+                "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_ND2_PHYSICAL_RUN_CONTRACT_AND_ND3_CARTAN_SOLVER_READY_FULL_LOCAL_VERDICT_INPUT_GATE_BLOCKED",
                 "next_certificate": "ND1_COMPLETE_SUPPORT_LOCAL_D_DERIVATION_AND_IOTA_D2",
             },
             {
@@ -163,7 +179,7 @@ def build_certificate() -> dict[str, Any]:
         "programme_stages": [
             {"stage": "HT0", "deliverable": "exact transfer engine and input contract", "status": "READY"},
             {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "RESIDUAL_CUBIC_LOCAL_SEEDS_AND_SELECTED_D_DERIVATION_COMPUTED_FULL_LOCAL_EXPORT_PENDING"},
-            {"stage": "HT2", "deliverable": "compute ell3 and dynamical/topological mixing table", "status": "NOT_COMPUTED"},
+            {"stage": "HT2", "deliverable": "compute ell3 and dynamical/topological mixing table", "status": "ARITY_THREE_CARTAN_RECURRENCE_ENGINE_READY_PHYSICAL_Q3_INPUT_BLOCKED"},
             {"stage": "HT3", "deliverable": "higher-arity and particle-filtration obstruction ledger", "status": "NOT_COMPUTED"},
             {"stage": "HT4", "deliverable": "cyclic minimal action and formal moduli interpretation", "status": "NOT_COMPUTED"},
             {"stage": "HTQ", "deliverable": "transfer restored quantum Q corrections", "status": "BLOCKED_PENDING_QME_RESTORED"},
@@ -202,6 +218,14 @@ def build_certificate() -> dict[str, Any]:
             "nd2_arity_two_cartan_engine_sha256": _sha256(
                 TRANSFER_ROOT / "certificates" / "ND2_ARITY_TWO_CARTAN_ENGINE.json"
             ),
+            "nd2_physical_run_contract_certificate": "quantum-weyl/transfer/certificates/ND2_PHYSICAL_RUN.json",
+            "nd2_physical_run_contract_sha256": _sha256(
+                TRANSFER_ROOT / "certificates" / "ND2_PHYSICAL_RUN.json"
+            ),
+            "nd3_arity_three_cartan_engine_certificate": "quantum-weyl/transfer/certificates/ND3_ARITY_THREE_CARTAN_ENGINE.json",
+            "nd3_arity_three_cartan_engine_sha256": _sha256(
+                TRANSFER_ROOT / "certificates" / "ND3_ARITY_THREE_CARTAN_ENGINE.json"
+            ),
         },
         "assumptions": [
             "The low-arity engine uses a finite exact basis and the declared suspended convention.",
@@ -212,6 +236,7 @@ def build_certificate() -> dict[str, Any]:
             "The two local Bach density seeds test selected matrix elements only; they do not substitute for an arbitrary-input bilinear Bach tensor or its BV completions.",
             "The vanishing selected residual D-derivation defect does not construct the full support-local interacting Cartan homotopy.",
             "ND2 fixture primitives and obstruction witnesses certify the exact solver branches only; they contain no conformal-gravity interaction coefficient.",
+            "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics only; physical q3 and iota_D^(2) remain absent.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",
         ],
     }
@@ -236,7 +261,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: HT1/ND1 RESULTS AND ND2 CARTAN SOLVER READY; FULL LOCAL INPUT BLOCKED")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: HT1/ND1 RESULTS, ND2 PHYSICAL CONTRACT, AND ND3 CARTAN SOLVER READY; INPUT BLOCKED")
     return 0
 
 

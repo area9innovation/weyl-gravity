@@ -88,6 +88,32 @@ obstruction, mutation, and inadmissible-primitive branches.  They carry no
 conformal-gravity coefficient: the physical evaluator and classical
 `q1/q2/D/iota_cl/pi_cl/s_cl` payload remain absent.
 
+The permanent ND2 engine is now separated from a versioned physical-run
+contract.  A physical execution must pin three independently hashed artifacts:
+the support-local `q1/q2/D` export, the classical contraction, and the
+admissibility policy.  Expression evaluators are registered by schema version,
+operator inventory, and implementation-manifest hash.  Unknown evaluators,
+schema mismatches, changed evaluator source, missing assembly adapters, and
+artifact hash drift all stop before classification.
+
+The arity-two solve also has a block-sparse exact rail.  Declared additive
+labels such as `D` weight, momentum, or jet filtration must be preserved by
+`q1`; the differential then splits by
+`w_out-w_left-w_right`.  Sparse rational elimination runs only in occupied
+blocks and reproduces the ambient correction and obstruction witness exactly.
+
+ND3 extends the Cartan recurrence by one arity:
+
+```text
+[q1,iota_D^(3)] = -[q3,iota_D] - [q2,iota_D^(2)] + L_D^(3).
+```
+
+The engine checks `Q^2=0`, the Cartan identities, `D` equivariance, and source
+closure through arity three.  Direct `q3` and exchange `[q2,iota_D^(2)]`
+sources remain separate machine tensors.  Exact fixtures exercise a retained
+`iota_D^(3)`, a normalized obstruction, and a broken-`D` rejection.  No
+physical `q3` or quartic conformal-gravity result is inferred.
+
 The parity combinations
 
 ```text
@@ -120,6 +146,8 @@ python3 quantum-weyl/transfer/residual_cubic_certificate.py --check
 python3 quantum-weyl/transfer/local_bach_seed_certificate.py --check
 python3 quantum-weyl/transfer/d_derivation_certificate.py --check
 python3 quantum-weyl/transfer/nd2_arity_two_certificate.py --check
+python3 quantum-weyl/transfer/nd2_physical_run_certificate.py --check
+python3 quantum-weyl/transfer/arity_three_cartan_certificate.py --check
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v

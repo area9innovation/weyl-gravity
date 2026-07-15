@@ -34,6 +34,7 @@ try:
         canonical_expression_hash,
         parse_operator_components,
     )
+    from .evaluator_registry import EvaluatorDescriptor, EvaluatorRegistry
 except ImportError:  # direct script or path-loaded test execution
     from arity_two_cartan import ArityTwoComplex, BilinearOperator, LinearOperator
     from local_expression_ast import (
@@ -42,6 +43,7 @@ except ImportError:  # direct script or path-loaded test execution
         canonical_expression_hash,
         parse_operator_components,
     )
+    from evaluator_registry import EvaluatorDescriptor, EvaluatorRegistry
 
 from verify_support_local_q2_export import validate_export
 
@@ -196,3 +198,41 @@ def evaluate_identity_fixture(parsed: ParsedSupportLocalExport) -> EvaluatedArit
         source_commit=parsed.classical_commit,
         canonical_expression_sha256=parsed.canonical_expression_sha256,
     )
+
+
+def build_evaluator_registry(
+    *,
+    repository_root: Path | None = None,
+) -> EvaluatorRegistry:
+    """Return the built-in registry with its fixture evaluator pinned."""
+
+    root = (repository_root or TRANSFER_ROOT.parents[1]).resolve()
+    descriptor = EvaluatorDescriptor.from_paths(
+        evaluator_id="scalar-identity-fixture-v1",
+        expression_schema_version=EXPRESSION_SCHEMA_VERSION,
+        repository_root=root,
+        implementation_paths=(Path(__file__).resolve(), TRANSFER_ROOT / "local_expression_ast.py"),
+        allowed_operator_ids=("scalar_identity",),
+    )
+    registry = EvaluatorRegistry(root)
+    registry.register(descriptor, evaluate_identity_fixture)
+    return registry
+
+
+def evaluate_registered(
+    parsed: ParsedSupportLocalExport,
+    *,
+    evaluator_id: str,
+    registry: EvaluatorRegistry | None = None,
+) -> EvaluatedArityTwoExport:
+    """Dispatch an independently parsed export through a pinned evaluator."""
+
+    active_registry = registry or build_evaluator_registry()
+    result = active_registry.dispatch(
+        evaluator_id,
+        parsed.expression_schema_version,
+        parsed,
+    )
+    if not isinstance(result, EvaluatedArityTwoExport):
+        raise ValueError(f"evaluator {evaluator_id} returned the wrong result type")
+    return result

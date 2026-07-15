@@ -50,6 +50,18 @@ correction, a deliberately non-equivariant `D` mutation rejected before the
 solve, a closed nonboundary with normalized dual witness, and an ambient
 primitive excluded by admissibility.
 
+The solver now also admits an exact block decomposition by any declared
+additive basis labels preserved by `q1`.  The fixture uses `D` weight and
+verifies that block-sparse rational elimination returns the same source and
+correction identity as the ambient solve.  A nonconserved label ledger is
+rejected before elimination.
+
+Physical executions are no longer coupled to this permanent fixture
+certificate.  `ND2_PHYSICAL_RUN.json` defines a separate manifest contract
+that pins the support-local tensor, classical contraction, admissibility
+policy, expression evaluator, and assembly adapter.  Evaluator implementation
+files are content-addressed and rechecked at dispatch.
+
 ## Claim boundary
 
 These are engine fixtures, not conformal-gravity coefficients.  The current
@@ -75,14 +87,16 @@ obstruction witness.
 
 `quantum-weyl/transfer/certificates/ND2_ARITY_TWO_CARTAN_ENGINE.json`
 
+`quantum-weyl/transfer/certificates/ND2_PHYSICAL_RUN.json`
+
 ## Verification receipt
 
 | Command | Elapsed seconds | Status | Tier |
 |---|---:|---|---:|
 | `python3 -m unittest discover -s quantum-weyl/classical_import/tests -v` | 0.39 | PASS (28 tests) | 1 |
-| `python3 -m unittest discover -s quantum-weyl/transfer/tests -q` | 50.25 | PASS (62 tests) | 2 |
-| ND2, ND1, support-local contract, nonlinear aggregate, and snapshot certificate checks | 3.80 | PASS after provenance refresh | 2 |
-| Python compile, JSON parsing, and scoped `git diff --check` | 4.00 | PASS | 0 |
+| `python3 -m unittest discover -s quantum-weyl/transfer/tests -q` | 57.99 | PASS (85 tests after physical-run, sparse, and arity-three hardening) | 2 |
+| ND2, ND1, support-local contract, nonlinear aggregate, ND3, and snapshot certificate checks | 6.01 | PASS | 2 |
+| Python compile, JSON/YAML parsing, and scoped `git diff --check` | recorded at commit | PASS | 0 |
 
 Draft-2020-12 schema validation was attempted but was **not run** because the
 environment does not provide the `jsonschema` module.  It is not counted as a

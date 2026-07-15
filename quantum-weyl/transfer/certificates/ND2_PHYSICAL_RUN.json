@@ -1,0 +1,81 @@
+{
+  "contract": {
+    "accepted_terminal_states": [
+      "EXACT_CORRECTION",
+      "NONTRIVIAL_OBSTRUCTION",
+      "ZERO_SOURCE"
+    ],
+    "input_schema": "quantum-weyl/transfer/schema/nd2-physical-run-input-v1.schema.json",
+    "manifest_schema": "quantum-weyl-nd2-physical-run-input-v1",
+    "required_artifacts": [
+      "support_local_q1_q2_D",
+      "classical_contraction",
+      "admissibility_policy"
+    ],
+    "unregistered_assembly_adapter_policy": "REJECT",
+    "unregistered_evaluator_policy": "REJECT"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "engine_self_test": {
+    "all_checks_pass": true,
+    "classification": "EXACT_CORRECTION",
+    "correction_retained": true,
+    "physical_coefficient_claim": false
+  },
+  "established": [
+    "stable content-addressed physical-run manifest contract",
+    "pinned evaluator identity and implementation hashes are verified before dispatch",
+    "support-local, contraction, and admissibility artifacts must all be present and hashed",
+    "exact assembled inputs return a retained correction or normalized obstruction witness"
+  ],
+  "input_gate": {
+    "manifest_path": "quantum-weyl/classical_import/exports/ND2_PHYSICAL_RUN_INPUT.json",
+    "manifest_sha256": null,
+    "reason": "no pinned support-local q1/q2/D, contraction, and admissibility manifest is present",
+    "status": "INPUT_NOT_AVAILABLE"
+  },
+  "lifecycle_layer": "INTERACTING",
+  "next_gate": "install the pinned classical input manifest and register its exact evaluator plus contraction assembly adapter",
+  "not_established": [
+    "a registered conformal-gravity expression evaluator",
+    "a registered classical contraction assembly adapter",
+    "a physical conformal-gravity arity-two Cartan execution",
+    "cyclic, real, boundary-compatible, or causal admissibility in a physical setting"
+  ],
+  "provenance": {
+    "schema": "quantum-weyl/transfer/schema/nd2-physical-run-certificate-v1.schema.json",
+    "source_manifest": {
+      "arity_two_cartan.py": "656ad3fc3e94846ab06ab9da6bcce0b79510eda5388d48d034492cb64c9440bf",
+      "evaluator_registry.py": "3394aa39631e20346cad4c7a09050df043cf8a7ebdff7432928688516e066c1e",
+      "local_expression_ast.py": "747e6ece20cc3be5f2904c130cd8e5821b0a9e375c34d88f8eea231a7e69cf68",
+      "nd2_physical_run.py": "fda14d81b15a3b78aaa76fbe4b98b903920258a399950bb29349d99fefe519c5",
+      "nd2_physical_run_certificate.py": "e8db3e82c831be19e8457661b56698d4fee88bd7e9052074097b43f390eb6bc2",
+      "schema/nd2-physical-run-certificate-v1.schema.json": "ecc2ef94ee0a26e843fd704efdbdd16e428369bd76ccaf4bdd82149b2d571634",
+      "schema/nd2-physical-run-input-v1.schema.json": "51bbf17cff6f8ef228593275b4041f95db1d744fc5cbe8846491f86a1e493308",
+      "support_local_q2_consumer.py": "8b27f10caabdef0595cda3a02fd47f3dd8bd0fd4e0caf19f0e532ef1c17e91be",
+      "tests/test_evaluator_registry.py": "ec273ff62f913a0ed197a4a04337ee493f4e98590e79ef739cbb3694d7048074",
+      "tests/test_nd2_physical_run.py": "1b63d5708f3e8adf5fdd665705cf9e4a2164839098870ef52e977cfa91849b92"
+    },
+    "source_manifest_sha256": "20e194fd93a8cf41a4b19f0ff4ca0ec3acf3106529d2ed6be3518d8cda4b64b8"
+  },
+  "registered_assembly_adapters": [],
+  "registered_evaluators": [
+    {
+      "allowed_operator_ids": [
+        "scalar_identity"
+      ],
+      "evaluator_id": "scalar-identity-fixture-v1",
+      "expression_schema_version": "quantum-weyl-canonical-local-expression-v1",
+      "implementation_manifest": {
+        "quantum-weyl/transfer/local_expression_ast.py": "747e6ece20cc3be5f2904c130cd8e5821b0a9e375c34d88f8eea231a7e69cf68",
+        "quantum-weyl/transfer/support_local_q2_consumer.py": "8b27f10caabdef0595cda3a02fd47f3dd8bd0fd4e0caf19f0e532ef1c17e91be"
+      },
+      "implementation_manifest_sha256": "e7a7f885539e59c126739a0eeb56a5fcdbce1c1368361bc9c36485c8c0273849"
+    }
+  ],
+  "result_id": "ND2_PHYSICAL_RUN_CONTRACT",
+  "result_state": "CONTRACT_READY_PHYSICAL_INPUT_BLOCKED",
+  "setting_verdict": "INPUT_GATE_BLOCKED"
+}

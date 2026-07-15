@@ -30,6 +30,7 @@ try:
         evaluate_identity_fixture,
         parse_support_local_export,
     )
+    from .block_sparse_arity_two import BlockSparseArityTwoComplex
 except ImportError:  # direct script execution
     from arity_two_cartan import (
         AdmissibleArityTwoComplex,
@@ -43,6 +44,7 @@ except ImportError:  # direct script execution
         evaluate_identity_fixture,
         parse_support_local_export,
     )
+    from block_sparse_arity_two import BlockSparseArityTwoComplex
 
 
 def _canonical_hash(value: object) -> str:
@@ -220,11 +222,15 @@ def _consumer_fixture_payload() -> dict[str, object]:
 def _source_manifest() -> dict[str, str]:
     paths = (
         "arity_two_cartan.py",
+        "block_sparse_arity_two.py",
+        "evaluator_registry.py",
         "local_expression_ast.py",
         "support_local_q2_consumer.py",
         "nd2_arity_two_certificate.py",
         "schema/nd2-arity-two-cartan-engine-v1.schema.json",
         "tests/test_arity_two_cartan.py",
+        "tests/test_block_sparse_arity_two.py",
+        "tests/test_evaluator_registry.py",
         "tests/test_local_expression_ast.py",
         "tests/test_support_local_q2_consumer.py",
         "tests/test_nd2_arity_two_certificate.py",
@@ -242,6 +248,18 @@ def build_certificate() -> dict[str, Any]:
     if classification.correction is None:
         raise AssertionError("ND2 exact fixture did not produce a correction")
     correction = classification.correction
+    weights = tuple(
+        (data.lie_D.entries[index][index],)
+        for index in range(data.complex.dimension)
+    )
+    block_complex = BlockSparseArityTwoComplex(
+        data.complex,
+        ("D_weight",),
+        weights,
+    )
+    block_classification = classify_cartan_source(block_complex, data.cartan_source())
+    if block_classification.correction is None:
+        raise AssertionError("ND2 block-sparse fixture did not produce a correction")
 
     mutated_rows = [list(row) for row in data.lie_D.entries]
     mutated_rows[5][5] = 3
@@ -306,6 +324,18 @@ def build_certificate() -> dict[str, Any]:
                 name="[q1,iota_D2]",
             ).entries
             == data.cartan_source().scaled(-1).entries,
+        },
+        "block_sparse_fixture": {
+            "classification": block_classification.status,
+            "metrics": block_complex.metrics(0),
+            "correction_identity": data.complex.differential(
+                block_classification.correction,
+                name="block_[q1,iota_D2]",
+            ).entries
+            == data.cartan_source().scaled(-1).entries,
+            "ambient_and_block_sources_equal": (
+                block_classification.source.entries == classification.source.entries
+            ),
         },
         "mutation_fixture": {
             "mutation": "change weight-two output D eigenvalue from 2 to 3",

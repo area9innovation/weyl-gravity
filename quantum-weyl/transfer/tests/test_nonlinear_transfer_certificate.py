@@ -54,7 +54,8 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             if item["question_id"] == "D_quotient_interaction_stability"
         )
         self.assertIn("SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED", d_question["status"])
-        self.assertIn("ND2_CARTAN_SOLVER_READY", d_question["status"])
+        self.assertIn("ND2_PHYSICAL_RUN_CONTRACT", d_question["status"])
+        self.assertIn("ND3_CARTAN_SOLVER_READY", d_question["status"])
         self.assertIn("INPUT_GATE_BLOCKED", d_question["status"])
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
@@ -66,6 +67,8 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             "nd2_arity_two_cartan_engine_sha256",
             certificate["provenance"],
         )
+        self.assertIn("nd2_physical_run_contract_sha256", certificate["provenance"])
+        self.assertIn("nd3_arity_three_cartan_engine_sha256", certificate["provenance"])
         self.assertTrue(
             any(
                 "complete conformal-gravity q2" in claim

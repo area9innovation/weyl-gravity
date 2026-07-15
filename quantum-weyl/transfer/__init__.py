@@ -17,6 +17,14 @@ from .arity_two_cartan import (
     LinearOperator,
     classify_cartan_source,
 )
+from .block_sparse_arity_two import BlockSparseArityTwoComplex
+from .arity_three_cartan import (
+    ArityThreeCartanData,
+    ArityThreeComplex,
+    TernaryOperator,
+    classify_arity_three_source,
+)
+from .evaluator_registry import EvaluatorDescriptor, EvaluatorRegistry
 
 __all__ = [
     "Contraction",
@@ -32,4 +40,11 @@ __all__ = [
     "BilinearOperator",
     "LinearOperator",
     "classify_cartan_source",
+    "BlockSparseArityTwoComplex",
+    "ArityThreeCartanData",
+    "ArityThreeComplex",
+    "TernaryOperator",
+    "classify_arity_three_source",
+    "EvaluatorDescriptor",
+    "EvaluatorRegistry",
 ]
