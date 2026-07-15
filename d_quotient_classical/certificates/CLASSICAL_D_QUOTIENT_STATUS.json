@@ -150,7 +150,16 @@
       ],
       "evidence_id": "berger_minimal_bv_clock_sdr",
       "path": "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
-      "sha256": "552b7fc975e1c98be909fe9082e2781d60bbe70f0cc6cf19f45ea0e28c154ffd"
+      "sha256": "9e7503ed7fd6082b4164ae7b03d350c753f941cc45d639ffb02598ba8f262422"
+    },
+    {
+      "claim_scope": "Authoritative 26-component retained minimal-BV layout with stable row IDs, degrees, bundle types, dual involution, pairing and adjoint conventions, support rules, differential-order ceilings, and separated retained/nonminimal gates; no retained coefficients.",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "evidence_id": "berger_retained_minimal_layout",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json",
+      "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
     }
   ],
   "open_fields": [
@@ -601,7 +610,7 @@
       "verdict_dependency_tags": []
     }
   ],
-  "source_commit": "f6e8a2b0802b99f323382e4b7d494a41ca571e47",
+  "source_commit": "46d95a1f6f04e446a4d5290ec5666af3af6cd392",
   "verification_receipts": [
     {
       "command": "python3 symbolic/verify_compact_cylinder_d_charge_audit.py --check",
@@ -767,7 +776,31 @@
       "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_minimal_bv_clock_sdr",
       "elapsed_seconds": 0.2,
       "escalation_criterion": "Escalate if minimal-row completeness or any open retained/nonminimal/causal flag drifts.",
-      "higher_tiers_not_run": "The next gate is BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION.",
+      "higher_tiers_not_run": "The next gate is BERGER_RETAINED_MINIMAL_OPERATOR; nonminimal completion follows separately.",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/berger_retained_minimal_layout.py --check --guards",
+      "elapsed_seconds": 0.1,
+      "escalation_criterion": "Escalate if the stable row IDs, degree ranks, duality, pairing conventions, block orders, support rules, or gate split changes.",
+      "higher_tiers_not_run": "This is a typed layout theorem; retained coefficients and every nonminimal row remain open.",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_layout_independent.py",
+      "elapsed_seconds": 0.1,
+      "escalation_criterion": "Escalate if the independent row, duality, q1-block, or split-gate reconstruction fails.",
+      "higher_tiers_not_run": "No retained coefficient, nonminimal row, or q2 operation is certified.",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_minimal_layout",
+      "elapsed_seconds": 0.1,
+      "escalation_criterion": "Escalate if the 3+10+10+3 inventory, dual involution, or fail-closed flags drift.",
+      "higher_tiers_not_run": "The next gate is BERGER_RETAINED_MINIMAL_OPERATOR.",
       "status": "PASS",
       "test_tier": 1
     }
@@ -820,10 +853,11 @@
         "positive_berger_clock_background",
         "berger_clock_reduced_charge_seed",
         "berger_fixed_coupling_delta_charge",
-        "berger_minimal_bv_clock_sdr"
+        "berger_minimal_bv_clock_sdr",
+        "berger_retained_minimal_layout"
       ],
-      "next_gate": "Complete BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION, then the causal and stability parts of FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT.",
-      "result": "The vacuum one-real-scalar and complete standard one-field stealth routes are obstructed. The neutral (+,-) pair gives a scoped homogeneous D_GAUGE reference-clock theorem but fails the global positive-health audit. The exact Berger-cylinder family supplies healthy standard-sign matter and nonzero clock momentum. At fixed alpha_B and lambda, the exact lapse row is proportional to delta Q_R; compact spatial averaging forces delta Q_R=0 in every smooth linearized mode. The helical presymplectic identity therefore gives D_GAUGE on the declared fixed-coupling Berger phase space. The eight temporal/Weyl clock and minimal-dual rows contract support-locally and cyclically, leaving a 26-row retained minimal complex. Its coefficientwise operator, nonminimal rows, causal theory, and nonlinear stability remain open.",
+      "next_gate": "Complete BERGER_RETAINED_MINIMAL_OPERATOR, then BERGER_NONMINIMAL_COMPLETION, followed by the causal and stability gates.",
+      "result": "The vacuum one-real-scalar and complete standard one-field stealth routes are obstructed. The neutral (+,-) pair gives a scoped homogeneous D_GAUGE reference-clock theorem but fails the global positive-health audit. The exact Berger-cylinder family supplies healthy standard-sign matter and nonzero clock momentum. At fixed alpha_B and lambda, the exact lapse row is proportional to delta Q_R; compact spatial averaging forces delta Q_R=0 in every smooth linearized mode. The helical presymplectic identity therefore gives D_GAUGE on the declared fixed-coupling Berger phase space. The eight temporal/Weyl clock and minimal-dual rows contract support-locally and cyclically, leaving a 26-component retained minimal complex whose authoritative row layout and pairing conventions are frozen. Its coefficientwise operator, nonminimal rows, causal theory, and nonlinear stability remain open.",
       "status": "PARTIAL"
     }
   }

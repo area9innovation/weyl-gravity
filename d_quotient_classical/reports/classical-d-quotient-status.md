@@ -207,11 +207,12 @@ status promotion.
 
 ## Next gates
 
-1. Run `BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`: the support-local
-   cyclic SDR of the eight temporal/Weyl minimal clock rows is complete, but
-   the 26-row retained coefficients and nonminimal gauge-fixing rows are not.
-   Then construct causal propagation and stability on the exact positive
-   Berger branch.  The fixed-coupling linearized \(D\)-charge sub-gate is
+1. Run `BERGER_RETAINED_MINIMAL_OPERATOR` against the authoritative
+   26-component layout. The support-local cyclic SDR of the eight
+   temporal/Weyl minimal clock rows is complete, but the retained coefficients
+   are not. Then run the separate `BERGER_NONMINIMAL_COMPLETION` gate before
+   constructing causal propagation and stability on the exact positive
+   Berger branch. The fixed-coupling linearized \(D\)-charge sub-gate is
    complete.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.

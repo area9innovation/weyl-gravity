@@ -60,6 +60,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json`](certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json)
 - Minimal Berger-clock BV contraction report:
   [`reports/berger-minimal-bv-clock-sdr.md`](reports/berger-minimal-bv-clock-sdr.md)
+- Authoritative 26-component retained minimal-BV layout:
+  [`certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json`](certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json)
+- Retained minimal-BV layout report:
+  [`reports/berger-retained-minimal-layout.md`](reports/berger-retained-minimal-layout.md)
 
 The only scientific verdicts are:
 
@@ -102,6 +106,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_fixed_coup
 python3 d_quotient_classical/backreacted_clock/berger_minimal_bv_clock_sdr.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_minimal_bv_clock_sdr_independent.py
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_minimal_bv_clock_sdr
+python3 d_quotient_classical/backreacted_clock/berger_retained_minimal_layout.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_layout_independent.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_minimal_layout
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -128,8 +135,11 @@ Thus `D_GAUGE` holds on this declared Berger phase space.  The temporal/Weyl
 clock doublets and all four minimal BV-dual rows now also admit an exact
 first-order support-local cyclic contraction: 8 of the 34 minimal rows
 contract, leaving a 26-row dressed-metric/spatial-diffeomorphism complex.
-The coefficientwise retained operator, nonminimal gauge-fixing rows, causal
-Green homotopies, and nonlinear stability remain open.
+Its component IDs, degree ranks, duality, pairing conventions, support rules,
+and three allowed (q_1) blocks are now frozen by one authoritative layout.
+The immediate gate is `BERGER_RETAINED_MINIMAL_OPERATOR`; nonminimal
+gauge-fixing is the separate `BERGER_NONMINIMAL_COMPLETION` gate. Causal Green
+homotopies and nonlinear stability remain open.
 
 ## Promotion rule
 

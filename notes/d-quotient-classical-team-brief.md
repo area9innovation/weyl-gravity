@@ -222,8 +222,9 @@ average to a forbidden charged homogeneous tangent. Consequently
 for every smooth fixed-coupling linearized tangent, and the scoped verdict is
 `D_GAUGE`.  The nonzero background momentum is fixed by the compact lapse
 constraint; its pullback differential vanishes. The replacement gate is now
-`BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`, followed by the causal and
-stability parts of `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
+`BERGER_RETAINED_MINIMAL_OPERATOR`, using the authoritative 26-component row
+layout.  `BERGER_NONMINIMAL_COMPLETION` follows as a separate gate, then the
+causal and stability parts of `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
 
 ### Parked nonlinear support-local export
 
