@@ -80,6 +80,8 @@ def build_certificate() -> dict[str, Any]:
             "omega_BoxR_explicit_primitive": "VERIFIED",
             "premature_nontriviality_promotion_absent": "VERIFIED",
             "closure_and_truncated_quotient_outputs_separated": "VERIFIED",
+            "closure_witness_artifact_hashes": "VERIFIED",
+            "closure_witness_semantic_status_agreement": "VERIFIED",
             "truncated_witness_vocabulary": "VERIFIED",
             "grading_integer_signature_enumeration": "VERIFIED",
             "coarse_and_refined_signature_counts_separated": "VERIFIED",

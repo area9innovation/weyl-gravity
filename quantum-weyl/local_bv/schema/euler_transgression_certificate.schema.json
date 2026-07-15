@@ -143,7 +143,7 @@
             "epsilon_head_reconstruction": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["result_id", "dependency_tags", "arithmetic", "spacetime_dimension", "signature", "metric_diagonal", "orientation", "hodge_convention", "direct_head", "carrier_head", "schouten_carrier", "weyl_coordinate_dimension", "weyl_constraint_rank", "weyl_basis_dimension", "schouten_basis_dimension", "case_counts", "verified_case_count", "nonzero_residual_count", "case_value_sha256", "negative_controls", "checks", "claim_boundary", "reconstruction_sha256"],
+              "required": ["result_id", "dependency_tags", "arithmetic", "spacetime_dimension", "signature", "metric_diagonal", "orientation", "hodge_convention", "independent_convention_audit", "direct_head", "carrier_head", "schouten_carrier", "weyl_coordinate_dimension", "weyl_constraint_rank", "weyl_basis_dimension", "schouten_basis_dimension", "case_counts", "verified_case_count", "nonzero_residual_count", "case_value_sha256", "negative_controls", "checks", "claim_boundary", "reconstruction_sha256"],
               "properties": {
                 "result_id": {"const": "EULER_EPSILON_HEAD_RECONSTRUCTION"},
                 "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
@@ -153,6 +153,25 @@
                 "metric_diagonal": {"const": [-1, 1, 1, 1]},
                 "orientation": {"type": "string"},
                 "hodge_convention": {"type": "string"},
+                "independent_convention_audit": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["pair_basis_source", "weyl_coordinate_source", "epsilon_definition_primary", "epsilon_definition_independent", "epsilon_case_count", "epsilon_mismatch_count", "hodge_contraction_case_count", "hodge_contraction_nonzero_residual_count", "euclidean_signature_negative_control_failure_count", "verified_identity", "status", "audit_sha256"],
+                  "properties": {
+                    "pair_basis_source": {"type": "string", "minLength": 1},
+                    "weyl_coordinate_source": {"type": "string", "minLength": 1},
+                    "epsilon_definition_primary": {"const": "permutation inversion parity"},
+                    "epsilon_definition_independent": {"const": "Kronecker-basis Laplace determinant"},
+                    "epsilon_case_count": {"const": 256},
+                    "epsilon_mismatch_count": {"const": 0},
+                    "hodge_contraction_case_count": {"const": 256},
+                    "hodge_contraction_nonzero_residual_count": {"const": 0},
+                    "euclidean_signature_negative_control_failure_count": {"const": 24},
+                    "verified_identity": {"const": "epsilon_abcd epsilon^cdef = -2 delta_ab^ef"},
+                    "status": {"const": "VERIFIED_INDEPENDENTLY"},
+                    "audit_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+                  }
+                },
                 "direct_head": {"type": "string"},
                 "carrier_head": {"type": "string"},
                 "schouten_carrier": {"type": "string"},
@@ -180,7 +199,9 @@
                     "Schouten_square_coefficient_sensitivity": "VERIFIED",
                     "Weyl_rank_nullity": "VERIFIED_21_MINUS_11_EQUALS_10",
                     "direct_RR_equals_W2_plus_4WX_plus_4X2": "VERIFIED",
+                    "epsilon_definition_independence": "VERIFIED",
                     "frozen_orientation_used": "VERIFIED",
+                    "hodge_contraction_identity": "VERIFIED",
                     "mixed_WX_sector": "STRUCTURALLY_ZERO_BY_WEYL_TRACEFREENESS",
                     "orientation_sensitivity": "VERIFIED"
                   }

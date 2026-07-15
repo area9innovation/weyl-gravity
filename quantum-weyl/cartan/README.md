@@ -72,8 +72,10 @@ Lorentzian observable algebras are also absent.  Consequently this package
 does not establish anomaly freedom, an anomaly coefficient, residual quantum
 transfer, or a quantum pairing correction.
 
-The classical D-quotient handoff is parsed, semantically verified, and
-imported by content hash.  It records a
+The required classical D-quotient handoff settings are parsed, semantically
+verified, and imported by content hash.  Additive settings, including the
+Berger clock, are enumerated but not consumed by this compact quantum rail.
+The consumed handoff records a
 sector-dependent compact-cylinder result: `D_CHARGED` on the unrestricted
 locally reduced linearized space `P_lin`, and `D_GAUGE` only on the declared
 full Taub/moment-map zero fibre `P_Taub0`.  This restricts the quantum question

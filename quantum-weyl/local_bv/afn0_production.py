@@ -8,21 +8,155 @@ the lower-form and coboundary bases are exhaustive under the same bounds.
 
 from __future__ import annotations
 
+import hashlib
+import json
 from functools import lru_cache
+from pathlib import Path
 
 from .algebra import canonical_sha256
 from .basis_exhaustiveness import grading_signature_manifest
 from .dimension_four_candidates import dimension_four_candidate_analysis
 
 
+PACKAGE_ROOT = Path(__file__).resolve().parent
+REPOSITORY_ROOT = PACKAGE_ROOT.parents[1]
+DESCENT_DATABASE_PATH = (
+    "quantum-weyl/local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR.json"
+)
+
+
+@lru_cache(maxsize=None)
+def _load_artifact(relative_path: str) -> tuple[dict[str, object], str]:
+    path = REPOSITORY_ROOT / relative_path
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ValueError(f"closure artifact is not an object: {relative_path}")
+    return payload, hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _artifact_receipt(relative_path: str) -> dict[str, str]:
+    payload, digest = _load_artifact(relative_path)
+    result_id = payload.get("result_id")
+    if not isinstance(result_id, str):
+        raise ValueError(f"closure artifact has no result_id: {relative_path}")
+    return {"path": relative_path, "sha256": digest, "result_id": result_id}
+
+
+def _verify_intrinsic_certificate(
+    representative_id: str,
+    relative_path: str,
+) -> str:
+    certificate, _ = _load_artifact(relative_path)
+    result_id = certificate.get("result_id")
+    if representative_id in {"CT_E4", "ANOM_OMEGA_E4"}:
+        if not (
+            result_id == "EULER_TRANSGRESSION_CERTIFICATE"
+            and certificate.get("checks", {}).get(
+                "epsilon_contracted_top_reconstruction"
+            )
+            == "VERIFIED"
+        ):
+            raise ValueError("Euler closure certificate is incomplete")
+        if representative_id == "CT_E4":
+            if (
+                certificate.get("checks", {}).get(
+                    "QE4_plus_d_descent_descendant"
+                )
+                != "VERIFIED"
+            ):
+                raise ValueError("Euler counterterm transgression is incomplete")
+            return "EULER_VARIATIONAL_TRANSGRESSION_AND_HEAD_VERIFIED"
+        if (
+            certificate.get("checks", {}).get(
+                "omega_E4_intrinsic_descent_continuation"
+            )
+            != "NONTRIVIAL_COMPLETE"
+        ):
+            raise ValueError("Euler anomaly intrinsic tower is incomplete")
+        return "EULER_INTRINSIC_TOWER_AND_HEAD_VERIFIED"
+    if representative_id in {"CT_BOX_R", "ANOM_OMEGA_BOX_R"}:
+        trivializations = certificate.get("trivializations", {})
+        if not (
+            result_id == "TRIVIALITY_CERTIFICATE"
+            and isinstance(trivializations, dict)
+            and trivializations.get(representative_id, {}).get("class_status")
+            == "EXACT"
+        ):
+            raise ValueError(f"exact closure witness is incomplete: {representative_id}")
+        return "EXPLICIT_RELATIVE_TRIVIALIZATION_VERIFIED"
+
+    catalogues = certificate.get("catalogues", {})
+    catalogue_key = (
+        "anomaly_candidate_ids"
+        if representative_id.startswith("ANOM_")
+        else "counterterm_candidate_ids"
+    )
+    if not (
+        result_id == "LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE"
+        and representative_id in catalogues.get(catalogue_key, [])
+        and certificate.get("checks", {}).get("strict_density_diff_descent")
+        == "VERIFIED"
+    ):
+        raise ValueError(f"candidate closure certificate is incomplete: {representative_id}")
+    return "STRICT_DENSITY_CANDIDATE_CLOSURE_VERIFIED"
+
+
 def _closure_candidate_payload(record: dict[str, object]) -> dict[str, object]:
+    representative_id = str(record["class_id"])
+    descent_path = str(record["descent_certificate"])
+    intrinsic_path = str(record["intrinsic_weyl_descent_certificate"])
+    horizontal, _ = _load_artifact(descent_path)
+    database, database_digest = _load_artifact(DESCENT_DATABASE_PATH)
+    if not (
+        horizontal.get("result_id") == "HORIZONTAL_BICOMPLEX_CERTIFICATE"
+        and horizontal.get("database", {}).get("sha256")
+        == canonical_sha256(database)
+        and horizontal.get("checks", {}).get(
+            "totalized_Q_dh_anticommutator_zero"
+        )
+        == "VERIFIED"
+    ):
+        raise ValueError("horizontal closure certificate or descent database drifted")
+    entries = {
+        entry["representative_id"]: entry
+        for entry in database.get("entries", [])
+        if isinstance(entry, dict) and "representative_id" in entry
+    }
+    entry = entries.get(representative_id)
+    if not (
+        entry
+        and entry.get("diff_descent_status") == "NONZERO_DIFF_TOWER"
+        and entry.get("intrinsic_weyl_descent_status")
+        == record["intrinsic_weyl_descent_status"]
+        and entry.get("relative_cohomology_status")
+        == ("EXACT" if record["class_status"] == "EXACT" else "UNDECIDED")
+    ):
+        raise ValueError(f"descent database status drifted: {representative_id}")
+    intrinsic_semantic_check = _verify_intrinsic_certificate(
+        representative_id, intrinsic_path
+    )
     return {
-        "representative_id": record["class_id"],
+        "representative_id": representative_id,
         "representative_sha256": record["representative_sha256"],
         "closure_status": "CLOSED",
         "closure_witness": {
-            "certificate": record["descent_certificate"],
-            "intrinsic_certificate": record["intrinsic_weyl_descent_certificate"],
+            "certificate": _artifact_receipt(descent_path),
+            "intrinsic_certificate": _artifact_receipt(intrinsic_path),
+            "descent_database": {
+                **_artifact_receipt(DESCENT_DATABASE_PATH),
+                "canonical_sha256": canonical_sha256(database),
+            },
+            "semantic_status": {
+                "diff_descent_status": entry["diff_descent_status"],
+                "intrinsic_weyl_descent_status": entry[
+                    "intrinsic_weyl_descent_status"
+                ],
+                "relative_cohomology_status": entry[
+                    "relative_cohomology_status"
+                ],
+                "intrinsic_certificate_check": intrinsic_semantic_check,
+                "verification_status": "VERIFIED_FROM_HASH_BOUND_ARTIFACTS",
+            },
         },
     }
 

@@ -114,6 +114,11 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
             expansion["epsilon_head_reconstruction"]["nonzero_residual_count"],
             0,
         )
+        self.assertEqual(
+            expansion["epsilon_head_reconstruction"]
+            ["independent_convention_audit"]["status"],
+            "VERIFIED_INDEPENDENTLY",
+        )
 
     def test_schema_fails_closed_on_unknown_nested_claim(self) -> None:
         certificate = deepcopy(build_certificate())

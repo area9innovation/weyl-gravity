@@ -163,7 +163,11 @@ cases.  All 210 exact residuals vanish.  Reversing the carrier orientation
 fails on nonzero cases, and perturbing the Schouten-square coefficient fails.
 The mixed epsilon contraction vanishes structurally by Weyl tracefreeness, so
 it is recorded as coefficient-insensitive rather than used as a false
-negative control.
+negative control.  A second convention rail owns its pair-coordinate
+generation and defines epsilon by a Kronecker-basis Laplace determinant.  It
+agrees with inversion parity on 256 index tuples, verifies
+`epsilon_abcd epsilon^cdef=-2 delta_ab^ef` in 256 cases, and observes 24
+expected failures when Euclidean raising is substituted.
 
 An exact reduced covariant tensor-sector audit now constructs the full
 four-dimensional algebraic Weyl space (dimension `10`) and irreducible
@@ -306,7 +310,7 @@ freeze, QME lifecycle, and `d_quotient` verdict remain unpromoted.
 |---|---|---:|---|
 | 0 | changed Python compile, strict schema parse, generated-artifact reproduction, scoped diff check | under 30 s | pass |
 | 1 | Euler head, connecting equations, expansion, preflight, descent database, and candidate consumers | 24.5 s | 30 pass |
-| 2 | complete `quantum-weyl/local_bv/tests` rail | about 28 s wall | 188 pass |
+| 2 | complete `quantum-weyl/local_bv/tests` rail | 54.20 s wall | 189 pass, 125 subtests |
 | 2 | Euler, horizontal, and candidate certificate consumers under hash seeds `1,7,123`, parallel | under 25 s wall | 10 pass per seed |
 
 The suite remains below the 60-second full-tier threshold.  No classical,

@@ -125,7 +125,8 @@ class CartanDefectCertificateTests(unittest.TestCase):
         )
         self.assertEqual(vacuum["verdict"], "ANALYTIC_FRAMEWORK_MISSING")
         self.assertEqual(
-            certificate["classical_D_import"]["semantic_validation"], "VERIFIED"
+            certificate["classical_D_import"]["semantic_validation"],
+            "REQUIRED_SETTINGS_VERIFIED_ADDITIONAL_SETTINGS_ENUMERATED_NOT_CONSUMED",
         )
         self.assertEqual(
             certificate["classical_D_import"]["sha256"],

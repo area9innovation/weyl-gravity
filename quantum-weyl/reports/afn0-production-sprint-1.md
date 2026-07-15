@@ -113,6 +113,10 @@ The historical `H14_AFN0_EVEN_WITHOUT_EULER` slice has been replaced by
 and `omega Box R`; the Euler row points to the completed intrinsic Euler
 certificate.  In the truncated quotient, `omega E4` remains `UNDECIDED`,
 `omega Box R` remains `EXACT`, and no nonmembership witness is promoted.
+Every closure row now binds the bytes and result IDs of its horizontal and
+intrinsic certificates and the bytes plus canonical hash of the descent
+database.  Emission fails unless those artifacts agree on Diff descent,
+intrinsic Weyl descent, and relative status.
 Reverse signature coverage records `omega C2` and `omega E4` as two generated
 candidates with the same quadratic-curvature signature, without inflating the
 number of realizable signatures.
@@ -120,10 +124,22 @@ number of realizable signatures.
 | Rail | Result |
 |---|---:|
 | AFN0, basis-gap, tensor-graph, and exhaustiveness consumers | 16 pass in 13.11 s |
-| complete local-BV suite | 188 pass in about 28 s |
+| complete local-BV suite | 189 pass, 125 subtests in 54.20 s |
 | Cartan consumers excluding the intentionally commit-pinned dossier contribution | 28 pass in 0.17 s |
 | basis-gap, AFN0, and Cartan artifact reproduction checks | pass |
 | AFN0, basis-gap, Cartan-import, certificate, and contribution consumers under hash seeds `1,7,123`, parallel | 29 pass per seed in under 15 s wall |
 
 The Cartan contribution was repinned only after the updated certificate had a
 commit hash; its blocked lifecycle and null verdict are unchanged.
+
+### Closure-witness hardening
+
+| Rail | Result |
+|---|---:|
+| hash-bound AFN0 plus Cartan import/certificate consumers | 20 pass in 14.02 s |
+| independent Euler convention and certificate consumers | 12 pass in 24.55 s |
+| complete local-BV suite | 189 pass, 125 subtests in 54.20 s |
+| all affected certificate reproduction checks | pass |
+
+The dossier contribution remains intentionally pinned to the preceding
+certificate commit until this strengthened certificate chain is committed.

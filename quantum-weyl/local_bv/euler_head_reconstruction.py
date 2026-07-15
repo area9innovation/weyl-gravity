@@ -12,17 +12,21 @@ from __future__ import annotations
 
 from fractions import Fraction
 from functools import lru_cache
-from itertools import combinations, permutations
+from itertools import combinations, combinations_with_replacement, permutations
 import json
 from typing import Iterable, Sequence
 
 from .algebra import canonical_sha256
-from .euler_connecting_identities import PAIRS, PAIR_INDEX, WEYL_COORDINATES
 from .quotient import exact_nullspace, exact_rank
 
 
 DIMENSION = 4
 LORENTZ_SIGNATURE = (-1, 1, 1, 1)
+PAIRS = tuple(combinations(range(DIMENSION), 2))
+PAIR_INDEX = {pair: index for index, pair in enumerate(PAIRS)}
+WEYL_COORDINATES = tuple(
+    combinations_with_replacement(range(len(PAIRS)), 2)
+)
 SYMMETRIC_PAIRS = tuple(
     (left, right)
     for left in range(DIMENSION)
@@ -45,6 +49,92 @@ def _epsilon(indices: Sequence[int]) -> int:
         for right in range(left + 1, DIMENSION)
     )
     return -1 if inversions % 2 else 1
+
+
+def _determinant(matrix: Sequence[Sequence[int]]) -> int:
+    """Laplace determinant used only as an independent epsilon definition."""
+
+    if len(matrix) == 1:
+        return matrix[0][0]
+    return sum(
+        (-1 if column % 2 else 1)
+        * matrix[0][column]
+        * _determinant(
+            tuple(
+                tuple(row[index] for index in range(len(matrix)) if index != column)
+                for row in matrix[1:]
+            )
+        )
+        for column in range(len(matrix))
+    )
+
+
+def _epsilon_by_determinant(indices: Sequence[int]) -> int:
+    return _determinant(
+        tuple(
+            tuple(int(index == column) for column in range(DIMENSION))
+            for index in indices
+        )
+    )
+
+
+def _independent_convention_audit() -> dict[str, object]:
+    epsilon_cases = tuple(
+        (a, b, c, d)
+        for a in range(DIMENSION)
+        for b in range(DIMENSION)
+        for c in range(DIMENSION)
+        for d in range(DIMENSION)
+    )
+    epsilon_mismatches = sum(
+        _epsilon(case) != _epsilon_by_determinant(case)
+        for case in epsilon_cases
+    )
+    hodge_residuals = []
+    wrong_signature_residuals = []
+    for a, b, e, f in epsilon_cases:
+        contraction = sum(
+            _epsilon((a, b, c, d))
+            * LORENTZ_SIGNATURE[c]
+            * LORENTZ_SIGNATURE[d]
+            * LORENTZ_SIGNATURE[e]
+            * LORENTZ_SIGNATURE[f]
+            * _epsilon_by_determinant((c, d, e, f))
+            for c in range(DIMENSION)
+            for d in range(DIMENSION)
+        )
+        generalized_delta = int(a == e and b == f) - int(a == f and b == e)
+        hodge_residuals.append(contraction + 2 * generalized_delta)
+        euclidean_contraction = sum(
+            _epsilon((a, b, c, d))
+            * _epsilon_by_determinant((c, d, e, f))
+            for c in range(DIMENSION)
+            for d in range(DIMENSION)
+        )
+        wrong_signature_residuals.append(
+            euclidean_contraction + 2 * generalized_delta
+        )
+    if epsilon_mismatches or any(hodge_residuals):
+        raise AssertionError("independent Lorentzian epsilon convention audit failed")
+    wrong_signature_failure_count = sum(bool(value) for value in wrong_signature_residuals)
+    if not wrong_signature_failure_count:
+        raise AssertionError("Euclidean-signature epsilon negative control was insensitive")
+    payload = {
+        "pair_basis_source": "independently generated lexicographic two-index combinations",
+        "weyl_coordinate_source": "independently generated symmetric pair-of-pairs combinations",
+        "epsilon_definition_primary": "permutation inversion parity",
+        "epsilon_definition_independent": "Kronecker-basis Laplace determinant",
+        "epsilon_case_count": len(epsilon_cases),
+        "epsilon_mismatch_count": epsilon_mismatches,
+        "hodge_contraction_case_count": len(hodge_residuals),
+        "hodge_contraction_nonzero_residual_count": sum(
+            bool(value) for value in hodge_residuals
+        ),
+        "euclidean_signature_negative_control_failure_count": wrong_signature_failure_count,
+        "verified_identity": "epsilon_abcd epsilon^cdef = -2 delta_ab^ef",
+        "status": "VERIFIED_INDEPENDENTLY",
+    }
+    return {**payload, "audit_sha256": canonical_sha256(payload)}
 
 
 def _oriented_pair(left: int, right: int) -> tuple[int | None, int]:
@@ -261,6 +351,7 @@ def _basis_sums(
 
 
 def _build_analysis() -> dict[str, object]:
+    convention_audit = _independent_convention_audit()
     weyl_basis = _lorentz_weyl_basis()
     schouten_basis = tuple(
         tuple(
@@ -351,6 +442,7 @@ def _build_analysis() -> dict[str, object]:
         "metric_diagonal": list(LORENTZ_SIGNATURE),
         "orientation": "epsilon_0123 = +1; dx0 wedge dx1 wedge dx2 wedge dx3 positive",
         "hodge_convention": "epsilon_abcd epsilon^cdef = -2 delta_ab^ef",
+        "independent_convention_audit": convention_audit,
         "direct_head": "epsilon_abcd R^ab wedge R^cd",
         "carrier_head": "epsilon_abcd (W^ab W^cd + 4 W^ab X^cd + 4 X^ab X^cd)",
         "schouten_carrier": "2 X_ab = (g wedge P)_ab",
@@ -379,6 +471,8 @@ def _build_analysis() -> dict[str, object]:
         "checks": {
             "Lorentz_signature_used": "VERIFIED",
             "frozen_orientation_used": "VERIFIED",
+            "epsilon_definition_independence": "VERIFIED",
+            "hodge_contraction_identity": "VERIFIED",
             "Weyl_rank_nullity": "VERIFIED_21_MINUS_11_EQUALS_10",
             "direct_RR_equals_W2_plus_4WX_plus_4X2": "VERIFIED",
             "orientation_sensitivity": "VERIFIED",

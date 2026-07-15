@@ -217,8 +217,11 @@ and pre-cancellation hashes.  An independent Lorentzian tensor-basis audit
 identifies the epsilon-contracted carrier head with the frozen `omega E4`
 representative in all 210 Weyl, Schouten, and mixed quadratic cases.  It also
 rejects reversed carrier orientation and a perturbed Schouten-square
-coefficient.  This completes the intrinsic Weyl tower; it does not decide the
-relative BV class.
+coefficient.  The audit now owns its pair-coordinate generation, compares
+permutation parity with a Laplace-determinant epsilon on all 256 index tuples,
+verifies the Lorentzian epsilon-contraction identity in 256 cases, and rejects
+the Euclidean-signature substitution.  This completes the intrinsic Weyl
+tower; it does not decide the relative BV class.
 The exact sparse totalization and quotient engine is certified by
 [`certificates/RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE.json`](certificates/RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE.json);
 its anchored API excludes total classes without the requested top component
@@ -234,6 +237,10 @@ result, and the eight mode-specific receipts live under
 [`cohomology/slices/`](cohomology/slices/).  Complete-witness promotion now
 requires a hash-bound `BasisExhaustivenessProof` covering all three adjacent
 total degrees and their differentials; a bare status string is rejected.
+Every AFN0 closure row also byte-hashes its horizontal and intrinsic
+certificates, byte- and canonically hashes the descent database, and verifies
+that all three artifacts agree on the representative's Diff, intrinsic-Weyl,
+and relative statuses before emitting `CLOSED`.
 The structural multigrading enumerator is in
 [`basis_exhaustiveness.py`](basis_exhaustiveness.py), and the empty
 antifield-filtration block interface is certified by

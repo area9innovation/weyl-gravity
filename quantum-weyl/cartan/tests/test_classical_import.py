@@ -34,6 +34,10 @@ class ClassicalDImportTests(unittest.TestCase):
             import_receipt()["additional_setting_ids"],
             ["cylinder_neutral_clock_pair", "positive_berger_clock"],
         )
+        self.assertEqual(
+            import_receipt()["semantic_validation"],
+            "REQUIRED_SETTINGS_VERIFIED_ADDITIONAL_SETTINGS_ENUMERATED_NOT_CONSUMED",
+        )
 
     def test_wrong_result_id_is_rejected(self) -> None:
         mutated = current_record()

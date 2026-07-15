@@ -75,7 +75,9 @@ setting has verdict `ANALYTIC_FRAMEWORK_MISSING`.  In particular:
 - the classical compact-cylinder handoff is parsed with mutation guards and
   imported by hash; it says that
   `D` is charged on `P_lin` but gauge on the declared `P_Taub0` derived zero
-  fibre; this phase-space split is not promoted to a quantum verdict;
+  fibre; this phase-space split is not promoted to a quantum verdict.  New
+  classical settings are enumerated as additive inputs and explicitly marked
+  not consumed by this compact quantum rail;
 - the classical import remains unfrozen;
 - AFN0 lower-form exhaustiveness remains open; the completed intrinsic Euler
   tower is included in the truncated even-anomaly production quotient;

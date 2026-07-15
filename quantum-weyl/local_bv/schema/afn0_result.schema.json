@@ -82,10 +82,12 @@
                     "closure_witness": {
                       "type": "object",
                       "additionalProperties": false,
-                      "required": ["certificate", "intrinsic_certificate"],
+                      "required": ["certificate", "intrinsic_certificate", "descent_database", "semantic_status"],
                       "properties": {
-                        "certificate": {"type": "string", "minLength": 1},
-                        "intrinsic_certificate": {"type": "string", "minLength": 1}
+                        "certificate": {"$ref": "#/$defs/artifactReceipt"},
+                        "intrinsic_certificate": {"$ref": "#/$defs/artifactReceipt"},
+                        "descent_database": {"$ref": "#/$defs/databaseReceipt"},
+                        "semantic_status": {"$ref": "#/$defs/closureSemanticStatus"}
                       }
                     }
                   }
@@ -126,5 +128,40 @@
       }
     },
     "production_boundary": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  },
+  "$defs": {
+    "artifactReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "result_id"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "result_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "databaseReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "result_id", "canonical_sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "result_id": {"const": "DESCENT_DATABASE_DIMENSION_FOUR"},
+        "canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "closureSemanticStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["diff_descent_status", "intrinsic_weyl_descent_status", "relative_cohomology_status", "intrinsic_certificate_check", "verification_status"],
+      "properties": {
+        "diff_descent_status": {"const": "NONZERO_DIFF_TOWER"},
+        "intrinsic_weyl_descent_status": {"enum": ["STRICTLY_WEYL_INVARIANT", "CLOSED", "TRIVIAL", "TRIVIAL_WITH_PRIMITIVE", "NONTRIVIAL_COMPLETE"]},
+        "relative_cohomology_status": {"enum": ["EXACT", "UNDECIDED"]},
+        "intrinsic_certificate_check": {"enum": ["EULER_VARIATIONAL_TRANSGRESSION_AND_HEAD_VERIFIED", "EULER_INTRINSIC_TOWER_AND_HEAD_VERIFIED", "EXPLICIT_RELATIVE_TRIVIALIZATION_VERIFIED", "STRICT_DENSITY_CANDIDATE_CLOSURE_VERIFIED"]},
+        "verification_status": {"const": "VERIFIED_FROM_HASH_BOUND_ARTIFACTS"}
+      }
+    }
   }
 }

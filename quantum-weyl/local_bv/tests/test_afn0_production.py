@@ -1,7 +1,14 @@
+import hashlib
 import json
 import unittest
+from copy import deepcopy
 
-from local_bv.afn0_production import afn0_production_results, afn0_slice_results
+from local_bv.afn0_production import (
+    REPOSITORY_ROOT,
+    _closure_candidate_payload,
+    afn0_production_results,
+    afn0_slice_results,
+)
 from local_bv.afn0_production_certificate import (
     CERTIFICATE_PATH,
     RESULT_DIR,
@@ -10,6 +17,7 @@ from local_bv.afn0_production_certificate import (
     build_certificate,
 )
 from local_bv.schema_validation import validate_instance
+from local_bv.dimension_four_candidates import dimension_four_candidate_analysis
 
 
 class AfnZeroProductionTests(unittest.TestCase):
@@ -76,13 +84,52 @@ class AfnZeroProductionTests(unittest.TestCase):
             "TRUNCATED_NONMEMBERSHIP_WITNESS",
         )
 
+    def test_closure_witnesses_are_hash_bound_and_semantically_checked(self) -> None:
+        closures = [
+            candidate
+            for result in afn0_production_results().values()
+            for slice_ in result["slices"]
+            for candidate in slice_["closure_result"]["candidates"]
+        ]
+        for candidate in closures:
+            witness = candidate["closure_witness"]
+            for key in ("certificate", "intrinsic_certificate", "descent_database"):
+                receipt = witness[key]
+                self.assertEqual(
+                    receipt["sha256"],
+                    hashlib.sha256(
+                        (REPOSITORY_ROOT / receipt["path"]).read_bytes()
+                    ).hexdigest(),
+                )
+            self.assertEqual(
+                witness["semantic_status"]["verification_status"],
+                "VERIFIED_FROM_HASH_BOUND_ARTIFACTS",
+            )
+
+        euler = next(
+            deepcopy(record)
+            for record in dimension_four_candidate_analysis()["anomalies"]
+            if record["class_id"] == "ANOM_OMEGA_E4"
+        )
+        euler["intrinsic_weyl_descent_status"] = "UNDECIDED"
+        with self.assertRaisesRegex(ValueError, "descent database status drifted"):
+            _closure_candidate_payload(euler)
+
     def test_schema_and_checked_in_receipts(self) -> None:
         schema = json.loads(SCHEMA_PATH.read_text())
         for result_id, result in afn0_production_results().items():
             self.assertFalse(validate_instance(result, schema))
             checked = json.loads((RESULT_DIR / f"{result_id}.json").read_text())
             self.assertEqual(checked, result)
-        self.assertEqual(json.loads(CERTIFICATE_PATH.read_text()), build_certificate())
+        certificate = build_certificate()
+        self.assertEqual(json.loads(CERTIFICATE_PATH.read_text()), certificate)
+        self.assertEqual(
+            certificate["checks"]["closure_witness_artifact_hashes"], "VERIFIED"
+        )
+        self.assertEqual(
+            certificate["checks"]["closure_witness_semantic_status_agreement"],
+            "VERIFIED",
+        )
 
     def test_eight_standalone_slice_receipts(self) -> None:
         slices = afn0_slice_results()

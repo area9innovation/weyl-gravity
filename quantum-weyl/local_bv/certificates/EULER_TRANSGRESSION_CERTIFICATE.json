@@ -7,12 +7,12 @@
   ],
   "canonical_hashes": {
     "bidegree_manifest_set_sha256": "52392a8222829f74d450ddf8813d2e0e04f55911d9486da0b38e0242838b6124",
-    "connecting_identity_preflight_sha256": "5e25a0827e94b833f067b558c2ad238dd3bb2a35fe4e9a4b37bb287ad0b0a9e9",
+    "connecting_identity_preflight_sha256": "5f73fdf788ff534ac5b554b97199502d3684c6c48a3b10862cc7ee20ee7f2c0e",
     "curvature_sha256": "dbfaad8d3cd29aed54c944cc764fe2d4298cdc9ec3e55e46c8829d9c261e28eb",
     "generalized_connection_dictionary_sha256": "2bbb92c660f15c592004e5717d5a99fe4d535dee17ddd84f57f5b4a18566ea39",
-    "intrinsic_component_expansion_sha256": "da7cb9d8369d764f10d5ccc7955835b19d091fd03bb6e636edc1d74a2e6e58ae",
+    "intrinsic_component_expansion_sha256": "1ca22e636c19c9d32602ab67f83abd126ec7f893cb66f9d280658b0795dc228c",
     "normalization_contract_sha256": "3ee9bb04638c2327e675dc2e8793627784fcba584e4fcd963ff2fe1d9801b46f",
-    "source_manifest_sha256": "bafd726be46404d59a2f30f240d9985a4f1224751696b5883d84e2cf8d918d45",
+    "source_manifest_sha256": "c5fee7081ec691cc3511c4af47e18616a976eb865d2a9814ccd7592a55f9e58d",
     "theta_sha256": "0bfe7489b59dc61839ffd718426243b997b18dec70c3c810386c4f0602b4362b",
     "zero_variational_residual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
   },
@@ -287,7 +287,9 @@
           "Schouten_square_coefficient_sensitivity": "VERIFIED",
           "Weyl_rank_nullity": "VERIFIED_21_MINUS_11_EQUALS_10",
           "direct_RR_equals_W2_plus_4WX_plus_4X2": "VERIFIED",
+          "epsilon_definition_independence": "VERIFIED",
           "frozen_orientation_used": "VERIFIED",
+          "hodge_contraction_identity": "VERIFIED",
           "mixed_WX_sector": "STRUCTURALLY_ZERO_BY_WEYL_TRACEFREENESS",
           "orientation_sensitivity": "VERIFIED"
         },
@@ -303,6 +305,20 @@
         ],
         "direct_head": "epsilon_abcd R^ab wedge R^cd",
         "hodge_convention": "epsilon_abcd epsilon^cdef = -2 delta_ab^ef",
+        "independent_convention_audit": {
+          "audit_sha256": "03739b80765162c8ee3775eb23b57a47f33e87c7cce33004305291c5d9c1dc7a",
+          "epsilon_case_count": 256,
+          "epsilon_definition_independent": "Kronecker-basis Laplace determinant",
+          "epsilon_definition_primary": "permutation inversion parity",
+          "epsilon_mismatch_count": 0,
+          "euclidean_signature_negative_control_failure_count": 24,
+          "hodge_contraction_case_count": 256,
+          "hodge_contraction_nonzero_residual_count": 0,
+          "pair_basis_source": "independently generated lexicographic two-index combinations",
+          "status": "VERIFIED_INDEPENDENTLY",
+          "verified_identity": "epsilon_abcd epsilon^cdef = -2 delta_ab^ef",
+          "weyl_coordinate_source": "independently generated symmetric pair-of-pairs combinations"
+        },
         "metric_diagonal": [
           -1,
           1,
@@ -325,7 +341,7 @@
         },
         "nonzero_residual_count": 0,
         "orientation": "epsilon_0123 = +1; dx0 wedge dx1 wedge dx2 wedge dx3 positive",
-        "reconstruction_sha256": "f383eb2d294ff4b7ba4baa56ee555a472aad38c4f5d4787feccb9c02230e0cbe",
+        "reconstruction_sha256": "c4a5bb34fa90b9f131fecca03e339a2b5b124cc7ff86445f9f807cbfdf1dc425",
         "result_id": "EULER_EPSILON_HEAD_RECONSTRUCTION",
         "schouten_basis_dimension": 10,
         "schouten_carrier": "2 X_ab = (g wedge P)_ab",
@@ -411,7 +427,7 @@
         }
       ],
       "generator_dictionary_sha256": "6a5790ee1dffcd9ef36aedeab13f559774b15012bc68e2bcf7a255d89db8a774",
-      "preflight_sha256": "5e25a0827e94b833f067b558c2ad238dd3bb2a35fe4e9a4b37bb287ad0b0a9e9",
+      "preflight_sha256": "5f73fdf788ff534ac5b554b97199502d3684c6c48a3b10862cc7ee20ee7f2c0e",
       "result_id": "EULER_CONNECTING_IDENTITY_PREFLIGHT",
       "source_to_project_identity_map": {
         "project_DW": "D W^(mu nu) = -2 A_project_rho g^(rho[mu) dx^(nu])",
@@ -1176,7 +1192,9 @@
           "Schouten_square_coefficient_sensitivity": "VERIFIED",
           "Weyl_rank_nullity": "VERIFIED_21_MINUS_11_EQUALS_10",
           "direct_RR_equals_W2_plus_4WX_plus_4X2": "VERIFIED",
+          "epsilon_definition_independence": "VERIFIED",
           "frozen_orientation_used": "VERIFIED",
+          "hodge_contraction_identity": "VERIFIED",
           "mixed_WX_sector": "STRUCTURALLY_ZERO_BY_WEYL_TRACEFREENESS",
           "orientation_sensitivity": "VERIFIED"
         },
@@ -1192,6 +1210,20 @@
         ],
         "direct_head": "epsilon_abcd R^ab wedge R^cd",
         "hodge_convention": "epsilon_abcd epsilon^cdef = -2 delta_ab^ef",
+        "independent_convention_audit": {
+          "audit_sha256": "03739b80765162c8ee3775eb23b57a47f33e87c7cce33004305291c5d9c1dc7a",
+          "epsilon_case_count": 256,
+          "epsilon_definition_independent": "Kronecker-basis Laplace determinant",
+          "epsilon_definition_primary": "permutation inversion parity",
+          "epsilon_mismatch_count": 0,
+          "euclidean_signature_negative_control_failure_count": 24,
+          "hodge_contraction_case_count": 256,
+          "hodge_contraction_nonzero_residual_count": 0,
+          "pair_basis_source": "independently generated lexicographic two-index combinations",
+          "status": "VERIFIED_INDEPENDENTLY",
+          "verified_identity": "epsilon_abcd epsilon^cdef = -2 delta_ab^ef",
+          "weyl_coordinate_source": "independently generated symmetric pair-of-pairs combinations"
+        },
         "metric_diagonal": [
           -1,
           1,
@@ -1214,7 +1246,7 @@
         },
         "nonzero_residual_count": 0,
         "orientation": "epsilon_0123 = +1; dx0 wedge dx1 wedge dx2 wedge dx3 positive",
-        "reconstruction_sha256": "f383eb2d294ff4b7ba4baa56ee555a472aad38c4f5d4787feccb9c02230e0cbe",
+        "reconstruction_sha256": "c4a5bb34fa90b9f131fecca03e339a2b5b124cc7ff86445f9f807cbfdf1dc425",
         "result_id": "EULER_EPSILON_HEAD_RECONSTRUCTION",
         "schouten_basis_dimension": 10,
         "schouten_carrier": "2 X_ab = (g wedge P)_ab",
@@ -1225,7 +1257,7 @@
         "weyl_constraint_rank": 11,
         "weyl_coordinate_dimension": 21
       },
-      "expansion_sha256": "da7cb9d8369d764f10d5ccc7955835b19d091fd03bb6e636edc1d74a2e6e58ae",
+      "expansion_sha256": "1ca22e636c19c9d32602ab67f83abd126ec7f893cb66f9d280658b0795dc228c",
       "next_required_generator_identities": [
         "complete AFN0 lower-form mapping-cone boundary basis",
         "relative cohomology coboundary solve for the completed Euler tower"

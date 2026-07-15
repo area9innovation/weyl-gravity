@@ -157,5 +157,5 @@ def import_receipt(path: Path = DEFAULT_STATUS_PATH) -> dict[str, Any]:
             set(setting["setting_id"] for setting in data["settings"])
             - set(EXPECTED_SETTINGS)
         ),
-        "semantic_validation": "VERIFIED",
+        "semantic_validation": "REQUIRED_SETTINGS_VERIFIED_ADDITIONAL_SETTINGS_ENUMERATED_NOT_CONSUMED",
     }

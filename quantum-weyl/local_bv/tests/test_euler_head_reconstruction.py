@@ -35,6 +35,13 @@ class EulerHeadReconstructionTests(unittest.TestCase):
             ["failing_case_count"],
             0,
         )
+        audit = result["independent_convention_audit"]
+        self.assertEqual(audit["epsilon_mismatch_count"], 0)
+        self.assertEqual(audit["hodge_contraction_nonzero_residual_count"], 0)
+        self.assertEqual(
+            audit["euclidean_signature_negative_control_failure_count"], 24
+        )
+        self.assertEqual(audit["status"], "VERIFIED_INDEPENDENTLY")
 
     def test_rank_hash_and_fresh_copy(self) -> None:
         result = euler_head_reconstruction_analysis()
