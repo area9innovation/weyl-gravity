@@ -1,0 +1,5 @@
+# Endpoint metric factorization screen
+
+The exact rank-nine trace-free endpoint has scalar biwave principal symbol after the endpoint-coordinate normalization is fixed.  The complete parallel `SO(3)`-invariant two-factor ansatz contains nine first-order and three algebraic coefficients in each factor.  Order three forces `A_plus=-A_minus`.  At order two the three sums `B_minus+B_plus` are fixed, and the remaining quadratics have an explicit degree-two polynomial Nullstellensatz certificate `sum_i w_i f_i=1`.  Hence no factorization exists in this complete scalar-principal same-bundle family.
+
+A general nondegenerate parallel invariant leading pair is covered: the scalar target forces `H_minus H_plus=I`, and a parallel fibre redistribution reduces it to the tested scalar principal form without leaving the complete lower-order family. The no-go still does not exclude mixed-order or enlarged systems, triangular Green extensions, or the equation-cone curvature-to-metric causal lift.  No Green or causal flag is promoted.

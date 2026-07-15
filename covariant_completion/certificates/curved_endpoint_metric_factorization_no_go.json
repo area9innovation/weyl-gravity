@@ -1,0 +1,127 @@
+{
+  "ansatz_completeness": {
+    "first_order_derivation": "3 temporal intertwiners plus 6 spatial Clebsch-Gordan intertwiners",
+    "first_order_dimension": 9,
+    "isotropy": "SO(3) holonomy of R x S3",
+    "parallel_globalization": true,
+    "principal_normalization_WLOG": "For general invariant leading maps q H_minus and q H_plus, the scalar target forces H_minus H_plus=I.  Both are invertible and parallel, and the exact redistribution L_minus H_plus, H_plus^{-1} L_plus has scalar qI principal symbols, the same product, and remains inside the complete 9+3 lower-order families.",
+    "tracefree_preserving": true,
+    "tracefree_representation": "V_0+V_1+V_2",
+    "zeroth_order_derivation": "sum_l 1^2=3",
+    "zeroth_order_dimension": 3
+  },
+  "candidate": "L_-/+ = P_tr+Box P_TF+A_-/+^mu nabla_mu+B_-/+",
+  "dependency_tag": "LORENTZIAN-CAUSAL",
+  "endpoint_backward_witness_coefficients_sha256": "f04ee6f5c44ab7225e16520a5c6cbe079e661b6bc55dbf47a73ac199a98b8bd5",
+  "fail_closed": true,
+  "normal_form": "exact symmetrized covariant derivatives with all unit-S3 curvature commutators",
+  "outcome": {
+    "complete_parallel_invariant_wave_leading_fibre_family_covered": true,
+    "curvature_metric_lift_disproved": false,
+    "full_factorization_proved": false,
+    "general_green_hyperbolicity_disproved": false,
+    "green_claim_promoted": false,
+    "normally_hyperbolic_same_bundle_factor_pair_disproved_in_this_ansatz": true,
+    "scalar_principal_factorization_disproved_in_complete_ansatz": true
+  },
+  "schema": "pure-weyl-endpoint-metric-scalar-factorization-no-go-v1",
+  "scope": "The no-go exhausts two second-order factors with trace identity, scalar Box principal symbol on S2_0, and every parallel SO(3)-invariant tracefree-preserving first- and zeroth-order term. The scalar-principal normalization is without loss for any parallel invariant nondegenerate leading pair whose product is the scalar target.  The no-go does not exclude enlarged or mixed-order systems, triangular Green extensions, or the equation-cone curvature-to-metric route.",
+  "staged_solve": {
+    "order0": "not reached: exact order-two ideal is the unit ideal",
+    "order1": "not reached: exact order-two ideal is the unit ideal",
+    "order2": {
+      "B_minus_plus_B_plus_rank": 3,
+      "B_sum_pivot_equation_indices": [
+        0,
+        2,
+        3
+      ],
+      "B_sum_solution": [
+        "2 - am0**2",
+        "-(30*am1**2 + 36*am1*am2 + 6*am2**2 - 17)/6",
+        "-(36*am1**2 + 24*am1*am2 + 12*am2**2 + 31)/6"
+      ],
+      "certificate_multiplier_degree": 2,
+      "defect": 0,
+      "equations": 48,
+      "identity": "sum_i weight_i constraint_i=1",
+      "polynomial_nullstellensatz_certificate": [
+        {
+          "constraint": "-2*am0*am4 - am0*am5 - 16*am1*am4 - 8*am1*am5 - 8*am2*am4 - 4*am2*am5 + 2",
+          "constraint_index": 0,
+          "weight": "3*(18*am0**2 - 192*am0*am1 - 72*am0*am2 + 23*am0*am6 + 384*am1**2 + 192*am1*am2 + 62*am1*am6 + 58*am2*am6 + am3*am7 - 152*am4*am6 + 224*am4*am8 - 68*am5*am6 + 112*am5*am8)/128"
+        },
+        {
+          "constraint": "2*am0*am6 - 3*am0*am8 + 16*am1*am6 - 24*am1*am8 + 8*am2*am6 - 12*am2*am8 - 2",
+          "constraint_index": 1,
+          "weight": "3*(27*am0*am4 + 24*am0*am5 - 48*am1*am4 - 60*am1*am5 + 2*am3**2 + 2*am3*am7 - 224*am4**2 - 224*am4*am5 - 56*am5**2 + 6*am7**2 - 58)/128"
+        },
+        {
+          "constraint": "-am0*am8 + 6*am1*am6 - 8*am1*am8 + 2*am2*am6 - 4*am2*am8 - 2",
+          "constraint_index": 2,
+          "weight": "-3*(81*am0*am4 + 72*am0*am5 - 144*am1*am4 - 180*am1*am5 + 6*am3**2 + 6*am3*am7 - 224*am4**2 - 224*am4*am5 - 56*am5**2 + 18*am7**2 - 174)/128"
+        },
+        {
+          "constraint": "-2*am0*am3",
+          "constraint_index": 4,
+          "weight": "3*(2*am3*am6 - am4*am7 + am5*am7 - 4*am6*am7)/128"
+        },
+        {
+          "constraint": "-(3*am0*am5 + 18*am1*am4 + 6*am1*am5 + 6*am2*am4 + 6*am2*am5 - 10)/3",
+          "constraint_index": 7,
+          "weight": "3*(21*am0*am6 - 72*am1*am6 - 3*am3*am7 - 64*am4*am6 - 32*am5*am6)/128"
+        },
+        {
+          "constraint": "2*am7*(am1 - am2)",
+          "constraint_index": 9,
+          "weight": "-3*(am3*am4 - am3*am5 - 6*am6*am7)/128"
+        },
+        {
+          "constraint": "-48*am1**2 - 48*am1*am2 - 12*am2**2 + 4*am4*am6 - 6*am4*am8 + 2*am5*am6 - 3*am5*am8 - 1",
+          "constraint_index": 14,
+          "weight": "-(3*am0**2 - 288*am0*am1 - 108*am0*am2 - 135*am0*am4 - 36*am0*am5 - 174*am1**2 - 516*am1*am2 + 432*am1*am4 + 108*am1*am5 - 174*am2**2 - 110)/64"
+        },
+        {
+          "constraint": "-16*am1**2 - 16*am1*am2 - 4*am2**2 - 2*am4*am8 - am5*am8 - 1",
+          "constraint_index": 15,
+          "weight": "9*(am0**2 - 96*am0*am1 - 36*am0*am2 - 21*am0*am4 - 58*am1**2 - 172*am1*am2 + 80*am1*am4 + 4*am1*am5 - 58*am2**2 - 26)/64"
+        },
+        {
+          "constraint": "-am0**2 + 6*am4*am6 - 8*am4*am8 + 2*am5*am6 - 4*am5*am8 + 4",
+          "constraint_index": 17,
+          "weight": "-3*(18*am0*am4 + 9*am0*am5 - 48*am1*am4 - 24*am1*am5 - 20)/64"
+        },
+        {
+          "constraint": "-(2*am0**2 - 2*am3**2 - am4*am6 + am5*am6 - 4)/2",
+          "constraint_index": 18,
+          "weight": "-3/16"
+        },
+        {
+          "constraint": "-am6*(am3 + am7)",
+          "constraint_index": 19,
+          "weight": "3*(3*am0*am7 - am1*am3 + am2*am3)/32"
+        },
+        {
+          "constraint": "-(2*am1**2 - 4*am1*am2 + 2*am2**2 - am4*am6 + am5*am6 - 2*am7**2 + 4)/2",
+          "constraint_index": 25,
+          "weight": "-9/16"
+        }
+      ],
+      "polynomial_nullstellensatz_nonzero_multipliers": 12,
+      "residual_monomials": 691,
+      "residual_quadratics": 42
+    },
+    "order3": {
+      "augmented_rank": 9,
+      "coefficient_rank": 9,
+      "equations": 34,
+      "solution": "A_plus=-A_minus"
+    },
+    "order4": {
+      "defects": 0,
+      "result": "scalar biwave symbols agree"
+    }
+  },
+  "status_flags_promoted": [],
+  "target": "D_M=P_tr+H_end,TF"
+}
