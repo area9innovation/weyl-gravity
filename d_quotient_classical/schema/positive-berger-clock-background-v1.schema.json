@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-positive-berger-clock-background-v1.schema.json",
+  "title": "Positive Berger-sphere clock background",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "generator_id", "phase_space_id",
+    "claim_status", "scientific_verdict", "dependency_tags", "conventions",
+    "berger_geometry", "clock_ansatz", "exact_solution_family",
+    "energy_health", "rational_fixture", "gate_result", "flags",
+    "not_established", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-positive-berger-clock-background-v1"},
+    "result_id": {"const": "POSITIVE_BERGER_CLOCK_BACKGROUND"},
+    "setting_id": {"const": "compact_positive_berger_clock"},
+    "generator_id": {"const": "D_compact"},
+    "phase_space_id": {"const": "positive_rotating_scalar_berger_background"},
+    "claim_status": {"const": "CERTIFIED_EXACT_BACKGROUND"},
+    "scientific_verdict": {"type": "null"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "conventions": {"type": "object"},
+    "berger_geometry": {
+      "type": "object",
+      "properties": {
+        "bach_trace": {"const": "ZERO"},
+        "bach_symmetric": {"const": true},
+        "nonconformally_flat_on_solution_interval": {"const": true}
+      },
+      "required": [
+        "scalar_curvature", "ricci_orthonormal", "bach_orthonormal",
+        "bach_trace", "bach_symmetric", "nonconformally_flat_on_solution_interval"
+      ]
+    },
+    "clock_ansatz": {
+      "type": "object",
+      "properties": {
+        "phase_kinetic_coefficient": {"const": "+rho^2"},
+        "incidence_full_rank": {"const": true}
+      },
+      "required": [
+        "fields", "modulus", "phase", "phase_gradient_norm", "target_metric",
+        "phase_kinetic_coefficient", "diff_weyl_incidence_determinant",
+        "incidence_full_rank", "separate_weyl_gauge"
+      ]
+    },
+    "exact_solution_family": {
+      "type": "object",
+      "properties": {
+        "parameter_interval": {"const": "(5-sqrt(21))/2 < q < 1/4"},
+        "solution_interval_nonempty": {"const": true},
+        "rho_squared_positive": {"const": true},
+        "omega_squared_positive": {"const": true},
+        "lambda_positive": {"const": true}
+      },
+      "required": [
+        "parameter_interval", "interval_lower_approx", "rho_squared",
+        "omega_squared", "lambda", "scalar_equations", "metric_equations",
+        "solution_interval_nonempty", "rho_squared_positive",
+        "omega_squared_positive", "lambda_positive"
+      ]
+    },
+    "energy_health": {
+      "type": "object",
+      "properties": {
+        "energy_density_positive": {"const": true},
+        "all_principal_pressures_positive": {"const": true},
+        "dominant_energy_condition": {"const": true},
+        "quartic_potential_bounded_below": {"const": true},
+        "scalar_target_positive_definite": {"const": true}
+      },
+      "required": [
+        "energy_density", "horizontal_pressure", "vertical_pressure",
+        "energy_density_positive", "all_principal_pressures_positive",
+        "dominant_energy_condition", "quartic_potential_bounded_below",
+        "scalar_target_positive_definite"
+      ]
+    },
+    "rational_fixture": {"type": "object"},
+    "gate_result": {
+      "type": "object",
+      "properties": {
+        "gate": {"const": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_BACH_SOURCED_CLOCK"},
+        "status": {"const": "PASSED_BY_EXACT_BERGER_BACKGROUND"},
+        "next_gate": {"const": "FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT"},
+        "next_gate_status": {"const": "OPEN"}
+      },
+      "required": ["gate", "status", "next_gate", "next_gate_status"]
+    },
+    "flags": {"type": "object"},
+    "not_established": {"type": "array", "items": {"type": "string"}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
