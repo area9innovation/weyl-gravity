@@ -15,18 +15,19 @@
       24,
       9
     ],
-    "N_left_null_dimension": 2,
-    "N_rank": 12,
-    "N_shape": [
+    "combined_N_B_left_null_dimension": 1,
+    "combined_N_B_rank": 13,
+    "combined_N_B_shape": [
       14,
-      40
+      49
     ],
     "exact_witnesses": {
       "K_kernel_sha256": "eca91f792360ab74e62714932310eecf772e9b45105f3d8475dba70842d45cf4",
       "K_times_kernel": "zero",
-      "N_left_null_sha256": "d90646ac58bfad310fd55e903597a33e57fabe83f520874b6455ce3dd8c4c81b",
-      "left_null_transpose_times_N": "zero"
+      "combined_N_B_left_null_sha256": "420f4472f07bf9b4ebdc9e4199875a304b58b8bdd34fa7bf775554b1a366cb6f",
+      "left_null_transpose_times_combined_N_B": "zero"
     },
+    "upper_endpoint_has_rank_obstruction": true,
     "zero_covector": [
       0,
       0,
@@ -44,22 +45,28 @@
   "status_flags_promoted": [],
   "strict_contraction_obstruction": {
     "H1_K_identity_possible": false,
-    "N_H4_identity_possible": false,
+    "combined_N_B_H4_rank_obstructed_at_zero": true,
     "endpoint_equations_for_DH_plus_HD_equals_identity": [
       "H1 K=I_9",
-      "N H4=I_14"
+      "[N,B] H4=I_14"
     ],
     "polynomial_support_local_DH_plus_HD_equals_identity_possible": false,
-    "proof": "evaluation at zeta=0 gives ranks at most 5 and 12, strictly below the identity ranks 9 and 14"
+    "proof": "evaluation at zeta=0 gives rank(H1 K)<=5<9 and rank([N,B] H4)<=13<14"
   },
-  "surviving_green_witness_route": {
-    "DH_plus_HD_equals_P_cone_ruled_out": false,
-    "endpoint_targets": [
-      "P_G=C_aux K_aux (gauge wave block)",
-      "P_J=N_curv i_C (subsidiary block)"
+  "surviving_hybrid_projector_route": {
+    "idempotent_P_alg_ruled_out": false,
+    "lower_endpoint_constraint": "P_alg,G=H1 K has rank at most five at zeta=0, so P_end,G retains at least four directions",
+    "next_exact_system": "first solve the four adjacent PBW projector identities for H_alg; then solve L_end=D W_end+W_end D on im(P_end) and prove L_end Green hyperbolic before defining Gamma",
+    "projector_identities_required": [
+      "P_alg=D H_alg+H_alg D",
+      "P_alg^2=P_alg",
+      "P_end=1-P_alg",
+      "P_end^2=P_end",
+      "D P_alg=P_alg D"
     ],
-    "next_exact_system": "solve the four adjacent PBW identities in D H+H D=P_cone, fixing the endpoint blocks to the certified gauge-wave and Weyl--Cotton subsidiary operators",
-    "reason": "Green-hyperbolic endpoint operators may be characteristic and need not have full rank at the zero covector"
+    "reason": "the rank defect forbids contraction of the whole cone but is compatible with an algebraic projector onto a proper contractible summand",
+    "upper_endpoint_constraint": "P_alg,J=[N,B] H4 has rank at most thirteen at zeta=0, so P_end,J retains at least one direction",
+    "wave_or_subsidiary_operator_used_as_projector": false
   },
   "warranted_atomic_flags": [
     "rank14_strict_local_identity_contraction_no_go"

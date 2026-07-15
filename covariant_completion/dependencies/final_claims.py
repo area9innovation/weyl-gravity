@@ -334,13 +334,13 @@ class FinalClaimDependencyReport:
         atomic(
             "support_local_prolongation_retract",
             bool(curvature_prolongation["support_local_prolongation_retract"]),
-            "open_structural_obligation",
+            "implemented_structural_fact",
             (
                 "curved_curvature_mapping_cylinder_substitution.json",
-                "curved_rank14_full_cone_rees_gate.json",
+                "curved_core_curvature_chain_map.json",
                 "curved_curvature_prolongation_status.json",
             ),
-            "The graph SDR and first two attachment squares are local, but the fibre-identified final Rees square has rank-four defect; a complete support-local all-row prolongation SDR is not yet certified.",
+            "The corrected curved p_E/p_I attachments and their cotangent lifts give a finite-order support-local mapping-cylinder SDR on all sixteen BV blocks.",
         )
         atomic(
             "prolonged_BV_operator_identity",
@@ -349,18 +349,18 @@ class FinalClaimDependencyReport:
                     "prolonged_BV_operator_identity", False
                 )
             ),
-            "open_structural_obligation",
+            "implemented_structural_fact",
             (
                 "curved_curvature_mapping_cylinder_substitution.json",
-                "curved_rank14_full_cone_rees_gate.json",
+                "curved_core_curvature_chain_map.json",
                 "curved_curvature_prolongation_status.json",
             ),
-            "The abstract sixteen-block cone is assembled, but the emitted fibre-identified attachment has N0 A0-B0 C0 of rank four, so Q_prol^2=0 is not yet an operator-level theorem.",
+            "The complete sixteen-block fibre-identified mapping cylinder is coefficientwise nilpotent, odd cyclic, and satisfies PI=1 and IP-1=QH+HQ; the old rank-four Rees defect used the wrong flat-Fourier cotangent projection.",
         )
         atomic(
             "prolonged_green_witness",
             bool(curvature_prolongation.get("prolonged_green_witness", False)),
-            "open_analytic_obligation",
+            "implemented_structural_fact",
             (
                 "curved_curvature_mapping_cylinder_witness.json",
                 "curved_auxiliary_prenormal_symbol.json",
@@ -404,7 +404,7 @@ class FinalClaimDependencyReport:
                 "curved_expanded_relative_witness_alternative_family_no_go.json",
                 "curved_curvature_prolongation_status.json",
             ),
-            "The canonical coefficientwise W has exact QW+WQ and fourteen Green blocks.  The complete 421-variable two-factor PBW system and its order-two Schur projection are exact; the 214-parameter action-adjoint branch has an exact rank-52/100 order-two Schur gate with 1,050 projected constraints.  Its 179 independent quadratics have no nonzero affine-linear consequence.  The exact degree-one Macaulay matrix has 136,585 rows and 20,585 multiplier columns; its degree-three rational rank is rigorously bounded between 12,861 and 14,136, but the full rational ranks and constant-ideal question remain undecided.  The expanded relative route now has a projector-free rank-14 principal presentation and same-sided Green algebra.  Its raw curvature map has rank five and kernel rank nine, while the compatible Weyl--Cotton source kernel has rank twelve; the generic off-shell compatibility defect has rank three, so the proposed K12/I5 quotient is not defined.  The exact operator chain square defines the canonical equation cone, but the first full BV symbol-cone audit shows that the presently mixed principal tables are not one associated-graded complex: the two internal square defects have ranks 11 and 4 generically (7 and 4 at null).  The ordinary BV identity layer is K_ordinary(-zeta)^T J, not the Green-witness companion; the exact curved identity differs by a rank-four background block.  Integer Douglis weights are feasible, but all associated-graded coefficients must be extracted before cone cohomology, the equation SDR or Green operators can be promoted.",
+            "The complete sixteen-block prolonged differential and its local graph SDR are exact.  Fourteen analytic Green blocks and the restricted physical biwave extension are certified, but the relative rank-14 equation-cone Green contraction is still missing.  The complete 421-variable two-factor PBW system and its order-two Schur projection are exact; the 214-parameter action-adjoint branch has an exact rank-52/100 order-two Schur gate with 1,050 projected constraints.  Its 179 independent quadratics have no nonzero affine-linear consequence.  The exact degree-one Macaulay matrix has 136,585 rows and 20,585 multiplier columns; its degree-three rational rank is rigorously bounded between 12,861 and 14,136, but the full rational ranks and constant-ideal question remain undecided.  The expanded relative route has a projector-free rank-14 principal presentation and same-sided Green algebra.  Its raw curvature map has rank five and kernel rank nine, while the compatible Weyl--Cotton source kernel has rank twelve; the generic off-shell compatibility defect has rank three, so the proposed K12/I5 quotient is not defined.  The corrected curved p_E/p_I maps prove the operator chain squares, but do not yet compute the relative equation-cone cohomology or its causal inverse.",
         )
         atomic(
             "curvature_causal_green_operators",
@@ -460,7 +460,7 @@ class FinalClaimDependencyReport:
                 "curved_prolonged_current_comparison.json",
                 "curved_current_comparison.json",
             ),
-            "A conditional cyclic quadratic-parent formula exists for a valid mapping cylinder, but the rank-four final-square defect prevents promotion of the actual prolonged/auxiliary current comparison.",
+            "The cyclic quadratic-parent formula is well typed for the corrected mapping cylinder, but the current certificate must explicitly bind the corrected curved core-chain digest before promotion.",
         )
         atomic(
             "candidate_curvature_principal_symmetric_hyperbolicity",

@@ -66,24 +66,28 @@ def main() -> int:
 
     endpoint = certificate["endpoint_audit"]
     obstruction = certificate["strict_contraction_obstruction"]
-    surviving = certificate["surviving_green_witness_route"]
+    surviving = certificate["surviving_hybrid_projector_route"]
     checks = {
         "gauge_rank_obstruction": endpoint["K_rank"] == 5
         and endpoint["K_kernel_dimension"] == 4,
-        "identity_rank_obstruction": endpoint["N_rank"] == 12
-        and endpoint["N_left_null_dimension"] == 2,
-        "exact_kernel_witnesses": endpoint["exact_witnesses"][
+        "combined_upper_endpoint_typed": endpoint["combined_N_B_rank"] == 13
+        and endpoint["combined_N_B_left_null_dimension"] == 1
+        and endpoint["upper_endpoint_has_rank_obstruction"],
+        "exact_kernel_witness": endpoint["exact_witnesses"][
             "K_times_kernel"
         ]
         == "zero"
-        and endpoint["exact_witnesses"]["left_null_transpose_times_N"]
+        and endpoint["exact_witnesses"][
+            "left_null_transpose_times_combined_N_B"
+        ]
         == "zero",
         "strict_identity_contraction_rejected": not obstruction[
             "polynomial_support_local_DH_plus_HD_equals_identity_possible"
         ],
-        "green_factor_route_preserved": not surviving[
-            "DH_plus_HD_equals_P_cone_ruled_out"
-        ],
+        "hybrid_projector_route_preserved": not surviving[
+            "idempotent_P_alg_ruled_out"
+        ]
+        and not surviving["wave_or_subsidiary_operator_used_as_projector"],
         "no_overpromotion": not certificate["prolonged_green_witness"]
         and not certificate["curvature_causal_green_operators"]
         and not certificate["causal_green_homotopy"],
@@ -100,9 +104,9 @@ def main() -> int:
                         witness, gauge_endpoint=sp.zeros(24, 9)
                     ).verify()
                 ),
-                "altered_N_rank_rejected": _rejects(
+                "altered_combined_upper_rank_rejected": _rejects(
                     lambda: replace(
-                        witness, identity_endpoint=sp.zeros(14, 40)
+                        witness, upper_endpoint=sp.zeros(14, 49)
                     ).verify()
                 ),
                 "erased_K_null_witness_rejected": _rejects(
@@ -110,9 +114,9 @@ def main() -> int:
                         witness, gauge_kernel=sp.zeros(9, 4)
                     ).verify()
                 ),
-                "erased_N_null_witness_rejected": _rejects(
+                "erased_combined_upper_null_witness_rejected": _rejects(
                     lambda: replace(
-                        witness, identity_left_null=sp.zeros(14, 2)
+                        witness, upper_left_null=sp.zeros(14, 1)
                     ).verify()
                 ),
                 "wrong_Rees_input_rejected": _rejects(

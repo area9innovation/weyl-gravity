@@ -335,6 +335,7 @@ def main() -> None:
         )
     )
     _run("verify_conformal_curvature_identity_chain_map.py", *guarded_args)
+    _run("verify_conformal_curved_core_curvature_chain_map.py", *guarded_args)
     _run("verify_conformal_curvature_mapping_cylinder_substitution.py")
     _run("verify_conformal_prolonged_current_comparison.py")
     _run(

@@ -123,6 +123,12 @@ MAPPING_CYLINDER_CERTIFICATE = (
     / "certificates"
     / "curved_curvature_mapping_cylinder_substitution.json"
 )
+CURVED_CORE_CHAIN_CERTIFICATE = (
+    ROOT
+    / "covariant_completion"
+    / "certificates"
+    / "curved_core_curvature_chain_map.json"
+)
 PREIMAGE_CERTIFICATE = ROOT / "bridge" / "certificates" / "cylinder_metric_preimages.json"
 BGG_CERTIFICATE = ROOT / "bridge" / "certificates" / "cylinder_bgg_blocks.json"
 
@@ -165,6 +171,9 @@ def main() -> None:
         formal_integrability_certificate=formal_integrability_certificate,
         mapping_cylinder_certificate=json.loads(
             MAPPING_CYLINDER_CERTIFICATE.read_text(encoding="utf-8")
+        ),
+        curved_core_chain_certificate=json.loads(
+            CURVED_CORE_CHAIN_CERTIFICATE.read_text(encoding="utf-8")
         ),
     )
     prolongation_certificate = prolongation.certificate()
@@ -222,6 +231,8 @@ def main() -> None:
             "curved_sourced_constraint_identity",
             "curved_constraint_propagation",
             "EAL_curvature_spectrum_match",
+            "support_local_prolongation_retract",
+            "prolonged_BV_operator_identity",
         }
         for open_obligation in OPEN_OBLIGATION_FIELDS:
             expected = open_obligation in promoted
@@ -230,10 +241,8 @@ def main() -> None:
                     "curvature obligation promotion mismatch: "
                     f"{open_obligation}={prolongation_certificate[open_obligation]}"
                 )
-        if prolongation_certificate["curvature_prolonged_complex_exact"]:
-            raise AssertionError(
-                "rank-four Rees defect was bypassed in the prolonged complex"
-            )
+        if not prolongation_certificate["curvature_prolonged_complex_exact"]:
+            raise AssertionError("the exact local prolonged complex regressed")
         if prolongation_certificate["curvature_green_realization"]:
             raise AssertionError("curvature Green realization was inferred")
         if any(prolongation_certificate["proof_boundary"].values()):

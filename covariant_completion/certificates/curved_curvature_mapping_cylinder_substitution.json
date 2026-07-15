@@ -15,7 +15,7 @@
       "coefficient_multiindices": 1,
       "maximum_order": 0,
       "rank": 4,
-      "sha256": "52b01d99ad2f7cdf59ab295cdcc4cedd74f1d809b3781f6b51a5b7152f0b58e0",
+      "sha256": "e277b7497971429b3f4e43d92f74f05c85df9d3f2ecd25c8aba4ce51e6aac8f7",
       "shape": [
         14,
         9
@@ -42,9 +42,9 @@
       "target_pairing_sha256": "dcdea384620b0313b53218b60f3a7f5e223cf6ffb6794ab216fdb2f709108802"
     },
     "B_identity_sharp": {
-      "derived_sha256": "74ae93cf9ae4d567d40fa4facfc9190bc3ac5e2f23e4e9182bd8d8745bc4398a",
+      "derived_sha256": "84729824e18fb721291edcdd5cca479964288f3f0957f56219035287e38dd7f5",
       "maximum_order": 0,
-      "primal_sha256": "52b01d99ad2f7cdf59ab295cdcc4cedd74f1d809b3781f6b51a5b7152f0b58e0",
+      "primal_sha256": "e277b7497971429b3f4e43d92f74f05c85df9d3f2ecd25c8aba4ce51e6aac8f7",
       "source_pairing_sha256": "c8f53deced6f6fbaaca9fd2232bae7554c8b0d062aa3b8681526752572d50b16",
       "target_pairing_sha256": "dcdea384620b0313b53218b60f3a7f5e223cf6ffb6794ab216fdb2f709108802"
     },
@@ -58,11 +58,11 @@
     "rule": "parallel coefficients: A_I^sharp=(-1)^|I| A_I^T, conjugated by the content-addressed source/target pairings"
   },
   "input_certificate_sha256": {
+    "actual_curved_retract": "fddca9b8f97bbc51b029a75c760df8b8374374eb96f09c51caf83dd7cf6b296d",
     "autonomous_curvature_cotangent": "e7b3dc2623c7b3bd1a8e89d1882fbe7a319553b98231e5f3e8c67c13e5100a93",
-    "auxiliary_retract": "ab27d6b89a9d1214b8285d897e4ff64d8e3463551ecea03408fd529a3f60878d",
+    "curved_core_chain_map": "78164e0c98d27819dbea2cc1597c387b6496a5ef47e67d196fcc9b34a8cdff15",
     "equation_chain_map": "a73abedd820be6c0ed07a79f77500f134e88e80ccdadeebf4be7a806a89366cd",
     "formal_kernel": "d9937f3e37f70c298c1525e137ef70dd7737be15da40765c58e3ed46cc053f6a",
-    "identity_chain_map": "786475f0521f69059265f29f136d646f2059fb9f65d87498853dc7b114bcd82d",
     "linearized_bach": "33433d86694dda81a72abb0650bce85fa2478f27280f6d74ea0ee38065cb256b",
     "state_gauge_chain_map": "022b82c8c535cf9ece6931c7afc36f237450e1f714dd909c747aa77984fa3fcb"
   },
@@ -71,6 +71,8 @@
     "I_P_minus_identity": "QH+HQ",
     "P_I": "identity",
     "Q_squared": "zero",
+    "all_16_blocks_Q_squared_checked": true,
+    "all_16_blocks_graph_SDR_checked": true,
     "complete_16_block_degree_ledger": [
       {
         "block": "G_aux",
@@ -167,7 +169,13 @@
       "prolonged_Q": "a346542a3c3eae6e80bd28b4ad7e707c51e5f3089b5241ba781efd280363fa29",
       "split_Q": "89279ca634b112c0dc1e2052863f9e94a2050e434674e34e05740266e6feadd4"
     },
-    "odd_BV_cyclicity_defect": 0
+    "odd_BV_cyclicity_defect": 0,
+    "row_coverage": {
+      "fields_equations_identities_and_cotangents": true,
+      "rows_enumerated": 16,
+      "rows_expected": 16,
+      "silent_rows_dropped": 0
+    }
   },
   "meaning_of_coefficientwise_complete": "every nonzero attachment block is an exact finite coefficient table T/A/B or its BV-forced formal adjoint; the remaining incidence blocks are exact identities or the certified autonomous auxiliary/curvature differentials",
   "proof_boundary": "this closes coefficient substitution, degree/sign incidence, nilpotence and the local prolongation SDR; it does not by itself construct a Green witness or causal homotopy",
@@ -181,11 +189,15 @@
       "M_aux += -A_equation^sharp X_Eq^sharp",
       "G_aux += -B_identity^sharp X_Id^sharp"
     ],
+    "curved_core_chain_certificate": "curved_core_curvature_chain_map.json",
+    "curved_equation_projection": "p_E=(D^-1 S_h^sharp D,1,0)",
+    "curved_identity_projection": "p_I from the actual cotangent shift",
+    "equation_projection_sha256": "09160b1f4a057d6a9bb8b8830f306f2e6978b496fadb477efab259e0536dadaa",
     "first_chain_relation": "E_curv T_state=A_equation Ebar_aux",
     "first_chain_relation_exact": true,
+    "flat_Fourier_projection_used": false,
     "formal_adjoint_tables_generated_from_primal_tables": true,
-    "full_retract_projection_sha256": "39a4a0b56b925415eb99b53cd2398010c25523dcc0c70079d12400c89f3452b7",
-    "identity_projection_sha256": "dabae2d7919e4cc3954960e3c193155a5f70a358950896af29a6966791f34df0",
+    "identity_projection_sha256": "814d10c47565a3659a93e789a2c58c2bb1b5a24bef26916721f0fc8d1c3f0684",
     "primal_blocks": [
       "X_U += T_state M_aux",
       "X_Eq += A_equation Ebar_aux",
@@ -195,6 +207,11 @@
     "second_chain_relation_exact": true,
     "state_gauge_relation": "T_state K_aux=0",
     "state_gauge_relation_exact": true
+  },
+  "superseded_diagnostic": {
+    "certificate": "curved_rank14_full_cone_rees_gate.json",
+    "rank_four_defect_is_operator_obstruction": false,
+    "reason": "its rank-four final square used flat-Fourier p_E in the curved cotangent row and is not a promotion premise"
   },
   "support_local": true,
   "warranted_atomic_flags": [

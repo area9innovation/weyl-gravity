@@ -16,14 +16,20 @@ if str(ROOT) not in sys.path:
 from covariant_completion.curved_retract.curvature_mapping_cylinder_substitution import (
     CurvatureMappingCylinderSubstitution,
 )
+from covariant_completion.curved_retract.curvature_mapping_cylinder_kernel import (
+    CurvatureMappingCylinderKernel,
+)
+from covariant_completion.curved_retract.curved_core_curvature_chain_map import (
+    CurvedCoreCurvatureChainMap,
+)
 
 
 CERTIFICATE_DIR = ROOT / "covariant_completion" / "certificates"
 STATE_GAUGE = CERTIFICATE_DIR / "curved_curvature_state_gauge_chain_map.json"
 LINEARIZED_BACH = CERTIFICATE_DIR / "linearized_bach.json"
 EQUATION = CERTIFICATE_DIR / "curved_curvature_auxiliary_chain_map.json"
-IDENTITY = CERTIFICATE_DIR / "curved_curvature_identity_chain_map.json"
-RETRACT = CERTIFICATE_DIR / "curved_chain_maps.json"
+CORE_CHAIN = CERTIFICATE_DIR / "curved_core_curvature_chain_map.json"
+CURVED_RETRACT = CERTIFICATE_DIR / "curved_deformation_retract_status.json"
 KERNEL = CERTIFICATE_DIR / "curved_curvature_mapping_cylinder_kernel.json"
 COTANGENT = CERTIFICATE_DIR / "curved_prolonged_bv_differential_audit.json"
 OUTPUT = CERTIFICATE_DIR / "curved_curvature_mapping_cylinder_substitution.json"
@@ -42,8 +48,8 @@ def _rejects(
     state_gauge: dict[str, object],
     linearized_bach: dict[str, object],
     equation: dict[str, object],
-    identity: dict[str, object],
-    retract: dict[str, object],
+    core_chain: dict[str, object],
+    curved_retract: dict[str, object],
     kernel: dict[str, object],
     cotangent: dict[str, object],
 ) -> bool:
@@ -52,8 +58,8 @@ def _rejects(
             state_gauge,
             linearized_bach,
             equation,
-            identity,
-            retract,
+            core_chain,
+            curved_retract,
             kernel,
             cotangent,
         ).verify()
@@ -66,16 +72,30 @@ def main() -> int:
     state_gauge = _load(STATE_GAUGE)
     linearized_bach = _load(LINEARIZED_BACH)
     equation = _load(EQUATION)
-    identity = _load(IDENTITY)
-    retract = _load(RETRACT)
+    core_chain = _load(CORE_CHAIN)
+    curved_retract = _load(CURVED_RETRACT)
     kernel = _load(KERNEL)
     cotangent = _load(COTANGENT)
+
+    # Rebuild both exact algebraic inputs in this process.  This prevents a
+    # hand-edited JSON flag from standing in for the corrected p_E/p_I square
+    # or for any of the sixteen mapping-cylinder matrix identities.
+    rebuilt_core_chain = CurvedCoreCurvatureChainMap.build().certificate(
+        equation_certificate=equation,
+        curved_retract_certificate=curved_retract,
+    )
+    if rebuilt_core_chain != core_chain:
+        raise AssertionError("curved core-chain certificate is not reproducible")
+    rebuilt_kernel = CurvatureMappingCylinderKernel.build().certificate()
+    if rebuilt_kernel != kernel:
+        raise AssertionError("sixteen-block mapping-cylinder kernel drifted")
+
     audit = CurvatureMappingCylinderSubstitution(
         state_gauge,
         linearized_bach,
         equation,
-        identity,
-        retract,
+        core_chain,
+        curved_retract,
         kernel,
         cotangent,
     )
@@ -87,10 +107,14 @@ def main() -> int:
     broken_a_hash["A_equation"]["sha256"] = "not-a-digest"
     broken_first_square = deepcopy(equation)
     broken_first_square["first_chain_relation_exact"] = False
-    broken_b_rank = deepcopy(identity)
-    broken_b_rank["B_identity"]["rank"] = 3
-    broken_second_square = deepcopy(identity)
-    broken_second_square["second_chain_relation_exact"] = False
+    broken_b_hash = deepcopy(core_chain)
+    broken_b_hash["identity_attachment"]["sha256"] = "not-a-digest"
+    broken_second_square = deepcopy(core_chain)
+    broken_second_square["lifted_chain_squares"]["exact"] = False
+    broken_projection = deepcopy(core_chain)
+    broken_projection["coordinate_correction"][
+        "ordinary_symbol_substitution_used"
+    ] = True
     broken_degree = deepcopy(kernel)
     broken_degree["degree_checks"][
         "every_split_Q_arrow_raises_degree_by_one"
@@ -101,12 +125,8 @@ def main() -> int:
     broken_state_gauge["T_state_K_aux_exact"] = False
     broken_bach_input = deepcopy(linearized_bach)
     broken_bach_input["gauge_jet_test"]["exhaustive"] = False
-    broken_h_link = deepcopy(identity)
-    broken_h_link["A_metric"]["tracefree_Bach_to_curvature_sha256"] = "f" * 64
-    broken_projection_link = deepcopy(identity)
-    broken_projection_link["identity_projection"][
-        "full_retract_projection_sha256"
-    ] = "e" * 64
+    broken_retract = deepcopy(curved_retract)
+    broken_retract["promotion_criteria"]["curved_p_is_chain_map"] = False
     broken_cotangent = deepcopy(cotangent)
     broken_cotangent["exact_results"]["cotangent_adjoint_Q_squared"] = False
 
@@ -115,8 +135,8 @@ def main() -> int:
             state_gauge,
             linearized_bach,
             broken_a_order,
-            identity,
-            retract,
+            core_chain,
+            curved_retract,
             kernel,
             cotangent,
         ),
@@ -124,8 +144,8 @@ def main() -> int:
             state_gauge,
             linearized_bach,
             broken_a_hash,
-            identity,
-            retract,
+            core_chain,
+            curved_retract,
             kernel,
             cotangent,
         ),
@@ -133,17 +153,17 @@ def main() -> int:
             state_gauge,
             linearized_bach,
             broken_first_square,
-            identity,
-            retract,
+            core_chain,
+            curved_retract,
             kernel,
             cotangent,
         ),
-        "wrong_B_rank_rejected": _rejects(
+        "bad_corrected_B_hash_rejected": _rejects(
             state_gauge,
             linearized_bach,
             equation,
-            broken_b_rank,
-            retract,
+            broken_b_hash,
+            curved_retract,
             kernel,
             cotangent,
         ),
@@ -152,7 +172,7 @@ def main() -> int:
             linearized_bach,
             equation,
             broken_second_square,
-            retract,
+            curved_retract,
             kernel,
             cotangent,
         ),
@@ -160,8 +180,8 @@ def main() -> int:
             state_gauge,
             linearized_bach,
             equation,
-            identity,
-            retract,
+            core_chain,
+            curved_retract,
             broken_degree,
             cotangent,
         ),
@@ -169,8 +189,8 @@ def main() -> int:
             state_gauge,
             linearized_bach,
             equation,
-            identity,
-            retract,
+            core_chain,
+            curved_retract,
             broken_pairing,
             cotangent,
         ),
@@ -178,8 +198,8 @@ def main() -> int:
             broken_state_gauge,
             linearized_bach,
             equation,
-            identity,
-            retract,
+            core_chain,
+            curved_retract,
             kernel,
             cotangent,
         ),
@@ -187,26 +207,26 @@ def main() -> int:
             state_gauge,
             broken_bach_input,
             equation,
-            identity,
-            retract,
+            core_chain,
+            curved_retract,
             kernel,
             cotangent,
         ),
-        "A_B_H_hash_mismatch_rejected": _rejects(
+        "stale_flat_Fourier_projection_rejected": _rejects(
             state_gauge,
             linearized_bach,
             equation,
-            broken_h_link,
-            retract,
+            broken_projection,
+            curved_retract,
             kernel,
             cotangent,
         ),
-        "retract_projection_hash_mismatch_rejected": _rejects(
+        "broken_actual_curved_retract_rejected": _rejects(
             state_gauge,
             linearized_bach,
             equation,
-            broken_projection_link,
-            retract,
+            core_chain,
+            broken_retract,
             kernel,
             cotangent,
         ),
@@ -214,8 +234,8 @@ def main() -> int:
             state_gauge,
             linearized_bach,
             equation,
-            identity,
-            retract,
+            core_chain,
+            curved_retract,
             kernel,
             broken_cotangent,
         ),
@@ -248,6 +268,27 @@ def main() -> int:
             "odd_BV_cyclicity_defect"
         ] == 0,
         "SDR_identity": certificate["kernel"]["I_P_minus_identity"] == "QH+HQ",
+        "all_16_rows_enumerated": certificate["kernel"]["row_coverage"]
+        == {
+            "rows_enumerated": 16,
+            "rows_expected": 16,
+            "silent_rows_dropped": 0,
+            "fields_equations_identities_and_cotangents": True,
+        },
+        "all_16_Q_squared_checked": certificate["kernel"][
+            "all_16_blocks_Q_squared_checked"
+        ],
+        "all_16_graph_SDR_checked": certificate["kernel"][
+            "all_16_blocks_graph_SDR_checked"
+        ],
+        "curved_pE_pI_used": not certificate["substitution"][
+            "flat_Fourier_projection_used"
+        ],
+        "stale_rank_four_not_operator_obstruction": not certificate[
+            "superseded_diagnostic"
+        ]["rank_four_defect_is_operator_obstruction"],
+        "curved_core_rebuilt_exact": rebuilt_core_chain == core_chain,
+        "sixteen_block_kernel_rebuilt_exact": rebuilt_kernel == kernel,
         "three_adjoint_tables_content_addressed": all(
             len(entry["derived_sha256"]) == 64
             and len(entry["source_pairing_sha256"]) == 64

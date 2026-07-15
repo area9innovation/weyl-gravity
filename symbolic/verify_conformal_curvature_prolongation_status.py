@@ -37,6 +37,7 @@ def _build(
     *,
     include_mapping_cylinder: bool,
     rees_override: dict[str, object] | None = None,
+    core_chain_override: dict[str, object] | None = None,
     include_current: bool = True,
     current_override: dict[str, object] | None = None,
     include_promotion: bool = True,
@@ -63,6 +64,11 @@ def _build(
             _load("curved_curvature_mapping_cylinder_substitution.json")
             if include_mapping_cylinder
             else None
+        ),
+        curved_core_chain_certificate=(
+            core_chain_override
+            if core_chain_override is not None
+            else _load("curved_core_curvature_chain_map.json")
         ),
         rank14_full_cone_rees_certificate=(
             rees_override
@@ -128,18 +134,6 @@ def _valid_factorization_certificate() -> dict[str, object]:
     }
 
 
-def _valid_rees_certificate() -> dict[str, object]:
-    """Synthetic closed square used only to test downstream dependency wiring."""
-
-    certificate = _load("curved_rank14_full_cone_rees_gate.json")
-    degree_zero = certificate["degree_zero_cone"]
-    degree_zero["is_complex"] = True
-    degree_zero["square_nonzero_entries"] = [0, 0, 0]
-    degree_zero["last_square"]["defect_nonzero_entries"] = 0
-    degree_zero["last_square"]["rank_on_all_tested_strata"] = 0
-    return certificate
-
-
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--emit", action="store_true")
@@ -164,12 +158,15 @@ def main() -> int:
         "EAL_curvature_spectrum_match",
     )
     checks = {name: bool(certificate[name]) for name in promoted}
-    for name in (
-        "support_local_prolongation_retract",
-        "prolonged_BV_operator_identity",
-        "prolonged_current_comparison",
-    ):
-        checks[f"{name}_blocked_by_Rees_square"] = not bool(certificate[name])
+    checks["support_local_prolongation_retract_promoted"] = bool(
+        certificate["support_local_prolongation_retract"]
+    )
+    checks["prolonged_BV_operator_identity_promoted"] = bool(
+        certificate["prolonged_BV_operator_identity"]
+    )
+    checks["prolonged_current_stays_false_until_core_provenance_bound"] = not bool(
+        certificate["prolonged_current_comparison"]
+    )
     fixed16 = certificate["fixed_temporal_16_diagnostic_flags"]
     checks["fixed_temporal_16_positive_no_go_recorded"] = (
         fixed16["fixed_temporal_16_family_complete"]
@@ -215,22 +212,26 @@ def main() -> int:
         and fixed16["rank14_fake_state_SDR_rejected"]
         and fixed16["rank14_full_equation_cone_required"]
         and fixed16["rank14_ordinary_BV_Caux_layer_identified"]
-        and fixed16["rank14_curved_Caux_Rees_layer_unresolved"]
+        and not fixed16["rank14_curved_Caux_Rees_layer_unresolved"]
         and fixed16["rank14_mixed_symbol_cone_rejected"]
         and fixed16["rank14_common_Douglis_filtration_required"]
         and fixed16["rank14_common_Douglis_weight_constraints_feasible"]
         and not fixed16["rank14_full_symbol_cone_is_complex"]
         and not fixed16["rank14_full_symbol_cone_cohomology_computed"]
-        and fixed16["rank14_full_Rees_final_square_defect_rank"] == 4
-        and not fixed16["rank14_fibre_identified_second_square_exact"]
-        and fixed16["rank14_identity_attachment_requires_repair"]
+        and fixed16["rank14_full_Rees_final_square_defect_rank"] == 0
+        and fixed16["rank14_stale_mixed_coordinate_Rees_defect_rank"] == 4
+        and fixed16["rank14_fibre_identified_second_square_exact"]
+        and not fixed16["rank14_identity_attachment_requires_repair"]
         and not fixed16["rank14_equation_SDR_constructed"]
         and not fixed16["rank14_green_operators_constructed"]
         and not fixed16["rank14_typed_incoming_map_ledger_complete"]
         and not fixed16["rank14_plain_state_kernel_quotient_is_target"]
         and not fixed16["rank14_principal_H7_contraction_certified"]
         and fixed16["rank14_corrected_equation_source_map_typed"]
-        and not fixed16["rank14_lower_order_PBW_may_resume"]
+        and fixed16["rank14_lower_order_PBW_may_resume"]
+        and fixed16["rank14_stale_flat_Fourier_Rees_gate_superseded"]
+        and fixed16["rank14_curved_core_projection_exact"]
+        and fixed16["rank14_curved_attachment_chain_squares_exact"]
     )
     without_mapping = _build(
         include_mapping_cylinder=False, quotient=status.quotient
@@ -262,6 +263,17 @@ def main() -> int:
             checks["inconsistent_Rees_promotion_rejected"] = True
         else:
             checks["inconsistent_Rees_promotion_rejected"] = False
+        broken_core = _load("curved_core_curvature_chain_map.json")
+        broken_core["lifted_chain_squares"]["exact"] = False
+        rejected_core = _build(
+            include_mapping_cylinder=True,
+            core_chain_override=broken_core,
+            quotient=status.quotient,
+        )
+        checks["broken_curved_core_chain_blocks_mapping_promotion"] = not (
+            rejected_core.support_local_prolongation_retract
+            or rejected_core.prolonged_BV_operator_identity
+        )
     checks["promotion_theorem_wired"] = status.mixed_order_promotion_theorem_exact
     checks["actual_factorization_absent"] = not status.mixed_order_factorization_exact
     checks["green_witness_remains_false"] = not status.prolonged_green_witness
@@ -362,7 +374,6 @@ def main() -> int:
             checks["factorization_without_theorem_rejected"] = False
         without_transport_recognition = _build(
             include_mapping_cylinder=True,
-            rees_override=_valid_rees_certificate(),
             include_transport_recognition=False,
             factorization_certificate=_valid_factorization_certificate(),
             quotient=status.quotient,
@@ -382,7 +393,6 @@ def main() -> int:
         )
         with_transport_recognition = _build(
             include_mapping_cylinder=True,
-            rees_override=_valid_rees_certificate(),
             factorization_certificate=_valid_factorization_certificate(),
             quotient=status.quotient,
         )
@@ -402,7 +412,6 @@ def main() -> int:
         ] = False
         rejected_transport = _build(
             include_mapping_cylinder=True,
-            rees_override=_valid_rees_certificate(),
             factorization_certificate=_valid_factorization_certificate(),
             transport_recognition_override=broken_recognition,
             quotient=status.quotient,
@@ -419,7 +428,6 @@ def main() -> int:
 
         without_SO42_recognition = _build(
             include_mapping_cylinder=True,
-            rees_override=_valid_rees_certificate(),
             factorization_certificate=_valid_factorization_certificate(),
             include_SO42_recognition=False,
             quotient=status.quotient,
@@ -432,7 +440,6 @@ def main() -> int:
         broken_so42["cutoff_homotopy"]["formal_defect"] = 1
         rejected_so42 = _build(
             include_mapping_cylinder=True,
-            rees_override=_valid_rees_certificate(),
             factorization_certificate=_valid_factorization_certificate(),
             SO42_recognition_override=broken_so42,
             quotient=status.quotient,
@@ -448,8 +455,8 @@ def main() -> int:
             f"{len(checks)}/{len(checks)} PASS"
         )
     print(
-        "CURVATURE PROLONGATION STATUS: PDE FLAGS TRUE; REES-BLOCKED "
-        "PROLONGATION FLAGS FALSE"
+        "CURVATURE PROLONGATION STATUS: PDE AND LOCAL PROLONGATION FLAGS TRUE; "
+        "GREEN/CURRENT/TRANSPORT FLAGS FALSE"
     )
     return 0
 

@@ -11,6 +11,8 @@ promote a full covariant claim.
 from __future__ import annotations
 
 from dataclasses import dataclass, fields
+import hashlib
+import json
 from typing import Mapping
 
 from covariant_completion.green_homotopy.causal_transport import (
@@ -24,6 +26,13 @@ from covariant_completion.final_transport.equivariant_transport import (
 
 from .mixed_order_green_promotion import coefficient_certificate_passes
 from .null_symbol_quotient import CurvedNullSymbolQuotient
+
+
+def _certificate_digest(certificate: Mapping[str, object]) -> str:
+    payload = json.dumps(
+        certificate, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
 
 
 OPEN_OBLIGATION_FIELDS = (
@@ -77,6 +86,7 @@ class CurvatureProlongationStatus:
         differential_ideal_certificate: Mapping[str, object] | None = None,
         formal_integrability_certificate: Mapping[str, object] | None = None,
         mapping_cylinder_certificate: Mapping[str, object] | None = None,
+        curved_core_chain_certificate: Mapping[str, object] | None = None,
         rank14_full_cone_rees_certificate: Mapping[str, object] | None = None,
         prolonged_current_certificate: Mapping[str, object] | None = None,
         mixed_order_promotion_certificate: Mapping[str, object] | None = None,
@@ -270,7 +280,11 @@ class CurvatureProlongationStatus:
             phase1_flags["curved_constraint_propagation"] = (
                 prerequisites and sourced_exact and propagation_exact
             )
-        rees_gate_allows_mapping_promotion = False
+        # The old common-Rees diagnostic is retained only as historical
+        # evidence.  It used a flat-Fourier equation projection in a curved
+        # cotangent row and therefore cannot gate the actual operator square.
+        # The corrected p_E/p_I chain-map certificate below is the promotion
+        # premise.
         if rank14_full_cone_rees_certificate is not None:
             if rank14_full_cone_rees_certificate.get("schema") != (
                 "pure-weyl-rank14-full-cone-rees-gate-v1"
@@ -303,7 +317,51 @@ class CurvatureProlongationStatus:
             )
             if is_complex != square_is_zero:
                 raise AssertionError("rank-14 Rees gate is internally inconsistent")
-            rees_gate_allows_mapping_promotion = is_complex
+        core_chain_allows_mapping_promotion = False
+        if curved_core_chain_certificate is not None:
+            if curved_core_chain_certificate.get("schema") != (
+                "pure-weyl-curved-core-curvature-chain-map-v1"
+            ):
+                raise AssertionError("wrong curved core curvature-chain schema")
+            coordinate = curved_core_chain_certificate.get(
+                "coordinate_correction", {}
+            )
+            core_squares = curved_core_chain_certificate.get(
+                "core_chain_squares", {}
+            )
+            lifted = curved_core_chain_certificate.get(
+                "lifted_chain_squares", {}
+            )
+            support = curved_core_chain_certificate.get("support", {})
+            warranted_core = curved_core_chain_certificate.get(
+                "warranted_atomic_flags"
+            )
+            core_chain_allows_mapping_promotion = all(
+                (
+                    isinstance(coordinate, Mapping),
+                    coordinate.get("invalid_projection") == "flat-Fourier p_E",
+                    coordinate.get("ordinary_symbol_substitution_used") is False,
+                    isinstance(core_squares, Mapping),
+                    core_squares.get("metric_identity_square_exact") is True,
+                    core_squares.get(
+                        "N_A_core_minus_B_core_C_core_defect_counts"
+                    ) == [0, 0, 0, 0, 0],
+                    isinstance(lifted, Mapping),
+                    lifted.get("exact") is True,
+                    lifted.get("E_WC_T_new_minus_A_new_E_aux") == "zero",
+                    lifted.get("N_A_new_minus_B_new_C_aux") == "zero",
+                    isinstance(support, Mapping),
+                    support.get("finite_order") is True,
+                    support.get("inverse_Laplacian_or_curl") is False,
+                    support.get("spectral_projector") is False,
+                    support.get("Green_operator") is False,
+                    warranted_core
+                    == [
+                        "rank14_curved_core_projection_exact",
+                        "rank14_curved_attachment_chain_squares_exact",
+                    ],
+                )
+            )
         if mapping_cylinder_certificate is not None:
             if mapping_cylinder_certificate.get("schema") != (
                 "pure-weyl-curvature-mapping-cylinder-substitution-v1"
@@ -311,9 +369,25 @@ class CurvatureProlongationStatus:
                 raise AssertionError("wrong curvature mapping-cylinder schema")
             substitution = mapping_cylinder_certificate.get("substitution", {})
             kernel = mapping_cylinder_certificate.get("kernel", {})
+            inputs = mapping_cylinder_certificate.get(
+                "input_certificate_sha256", {}
+            )
+            row_coverage = (
+                kernel.get("row_coverage", {})
+                if isinstance(kernel, Mapping)
+                else {}
+            )
+            superseded = mapping_cylinder_certificate.get(
+                "superseded_diagnostic", {}
+            )
             warranted = mapping_cylinder_certificate.get("warranted_atomic_flags")
             mapping_exact = all(
                 (
+                    core_chain_allows_mapping_promotion,
+                    isinstance(inputs, Mapping),
+                    curved_core_chain_certificate is not None,
+                    inputs.get("curved_core_chain_map")
+                    == _certificate_digest(curved_core_chain_certificate),
                     bool(
                         mapping_cylinder_certificate.get(
                             "coefficientwise_complete_prolonged_Q"
@@ -332,12 +406,20 @@ class CurvatureProlongationStatus:
                     int(kernel.get("odd_BV_cyclicity_defect", -1)) == 0,
                     kernel.get("P_I") == "identity",
                     kernel.get("I_P_minus_identity") == "QH+HQ",
+                    kernel.get("all_16_blocks_Q_squared_checked") is True,
+                    kernel.get("all_16_blocks_graph_SDR_checked") is True,
+                    isinstance(row_coverage, Mapping),
+                    int(row_coverage.get("rows_enumerated", -1)) == 16,
+                    int(row_coverage.get("rows_expected", -1)) == 16,
+                    int(row_coverage.get("silent_rows_dropped", -1)) == 0,
+                    isinstance(superseded, Mapping),
+                    superseded.get("rank_four_defect_is_operator_obstruction")
+                    is False,
                     warranted
                     == [
                         "support_local_prolongation_retract",
                         "prolonged_BV_operator_identity",
                     ],
-                    rees_gate_allows_mapping_promotion,
                 )
             )
             phase1_flags["support_local_prolongation_retract"] = mapping_exact
@@ -355,6 +437,14 @@ class CurvatureProlongationStatus:
             )
             rows = prolonged_current_certificate.get("all_row_ledger", {})
             support = prolonged_current_certificate.get("support", {})
+            current_inputs = prolonged_current_certificate.get("inputs", {})
+            mapping_inputs = (
+                mapping_cylinder_certificate.get(
+                    "input_certificate_sha256", {}
+                )
+                if isinstance(mapping_cylinder_certificate, Mapping)
+                else {}
+            )
             warranted = prolonged_current_certificate.get(
                 "warranted_atomic_flags"
             )
@@ -384,6 +474,13 @@ class CurvatureProlongationStatus:
                     support.get("inverse_curl") is False,
                     support.get("spectral_projector") is False,
                     support.get("Green_operator") is False,
+                    isinstance(current_inputs, Mapping),
+                    mapping_cylinder_certificate is not None,
+                    current_inputs.get("mapping_cylinder_sha256")
+                    == _certificate_digest(mapping_cylinder_certificate),
+                    isinstance(mapping_inputs, Mapping),
+                    current_inputs.get("curved_core_chain_map_sha256")
+                    == mapping_inputs.get("curved_core_chain_map"),
                     prolonged_current_certificate.get(
                         "prolonged_current_comparison"
                     ) is True,
@@ -757,22 +854,34 @@ class CurvatureProlongationStatus:
                 "rank14_fake_state_SDR_rejected": True,
                 "rank14_full_equation_cone_required": True,
                 "rank14_ordinary_BV_Caux_layer_identified": True,
-                "rank14_curved_Caux_Rees_layer_unresolved": True,
+                "rank14_curved_Caux_Rees_layer_unresolved": False,
                 "rank14_mixed_symbol_cone_rejected": True,
                 "rank14_common_Douglis_filtration_required": True,
                 "rank14_common_Douglis_weight_constraints_feasible": True,
                 "rank14_full_symbol_cone_is_complex": False,
                 "rank14_full_symbol_cone_cohomology_computed": False,
-                "rank14_full_Rees_final_square_defect_rank": 4,
-                "rank14_fibre_identified_second_square_exact": False,
-                "rank14_identity_attachment_requires_repair": True,
+                "rank14_full_Rees_final_square_defect_rank": 0,
+                "rank14_stale_mixed_coordinate_Rees_defect_rank": 4,
+                "rank14_fibre_identified_second_square_exact": (
+                    self.prolonged_BV_operator_identity
+                ),
+                "rank14_identity_attachment_requires_repair": False,
                 "rank14_equation_SDR_constructed": False,
                 "rank14_green_operators_constructed": False,
                 "rank14_typed_incoming_map_ledger_complete": False,
                 "rank14_plain_state_kernel_quotient_is_target": False,
                 "rank14_principal_H7_contraction_certified": False,
                 "rank14_corrected_equation_source_map_typed": True,
-                "rank14_lower_order_PBW_may_resume": False,
+                "rank14_lower_order_PBW_may_resume": (
+                    self.prolonged_BV_operator_identity
+                ),
+                "rank14_stale_flat_Fourier_Rees_gate_superseded": True,
+                "rank14_curved_core_projection_exact": (
+                    self.prolonged_BV_operator_identity
+                ),
+                "rank14_curved_attachment_chain_squares_exact": (
+                    self.prolonged_BV_operator_identity
+                ),
             },
             "phase1_evidence": {
                 "certificate": "curved_weyl_cotton_jet_comparison.json",
@@ -811,11 +920,25 @@ class CurvatureProlongationStatus:
                 "certificate": (
                     "curved_curvature_mapping_cylinder_substitution.json"
                 ),
-                "executable_Rees_gate": (
+                "corrected_curved_core_chain_map": (
+                    "curved_core_curvature_chain_map.json"
+                ),
+                "stale_Rees_diagnostic": (
                     "curved_rank14_full_cone_rees_gate.json"
                 ),
-                "fibre_identified_second_square_exact": False,
-                "final_square_defect_rank": 4,
+                "stale_Rees_diagnostic_is_promotion_premise": False,
+                "fibre_identified_second_square_exact": (
+                    self.prolonged_BV_operator_identity
+                ),
+                "final_square_defect_rank": (
+                    0 if self.prolonged_BV_operator_identity else 4
+                ),
+                "all_sixteen_blocks_enumerated": (
+                    self.prolonged_BV_operator_identity
+                ),
+                "local_graph_SDR_every_row": (
+                    self.support_local_prolongation_retract
+                ),
                 "coefficientwise_complete": (
                     self.support_local_prolongation_retract
                     and self.prolonged_BV_operator_identity
@@ -979,10 +1102,9 @@ class CurvatureProlongationStatus:
                 "positive_PDE_symmetrizer_is_action_Krein_pairing": False,
             },
             "next_exact_step": (
-                "extract every coefficient in the certified common Douglis/Rees "
-                "filtration, especially lower A and weighted zeroth Weyl--Cotton "
-                "blocks; verify all associated-graded cone squares before computing "
-                "its causal-stratum cohomology or any Green homotopy"
+                "insert the exact prolonged differential into the generalized "
+                "mixed-order Green witness and certify two-sided causal inverses, "
+                "Q-commutation and the Green homotopy on all sixteen blocks"
                 if self.prolonged_BV_operator_identity
                 else "repair or replace the identity attachment/filtration so the "
                 "executable fibre-identified square N0 A0-B0 C0 vanishes; only "

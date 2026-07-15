@@ -133,8 +133,8 @@ curved_EB_symmetric_hyperbolicity = true
 curved_sourced_constraint_identity= true
 curved_constraint_propagation     = true
 EAL_curvature_spectrum_match       = true
-support_local_prolongation_retract= false
-prolonged_BV_operator_identity     = false
+support_local_prolongation_retract= true
+prolonged_BV_operator_identity     = true
 prolonged_green_witness            = false
 curvature_causal_green_operators  = false
 causal_green_homotopy              = false
@@ -159,16 +159,20 @@ second copy.  This is not inferred from a finite harmonic cutoff.
 The BV-canonical Weyl/Cotton graph SDR, autonomous curvature compatibility
 complex `26 -> 40 -> 14` with cotangent adjoint, causal curvature-block
 solution operators, and analytic block Green witness are exact subtheorems.
-The state map
-`T=(C1,div C1)` and an order-two equation map satisfy
+The state map `T=(C1,div C1)` and an order-two equation map satisfy
 `E_curv T=A_eq E_aux` on the exhaustive 700-dimensional metric four-jet
-fibre.  However, the sparse order-zero identity attachment does not satisfy
-`N_curv A_eq=B_id C_aux` in the actual fibre-identified coordinates: the
-executable common-Rees gate finds a rank-four defect on the `a[3],s[1]`
-identity rows.  The abstract sixteen-block cone and its canonical shear are
-therefore conditional templates; they do not yet certify a nilpotent all-row
-differential, support-local SDR, or prolonged current.  Even after this
-attachment defect is repaired, the auxiliary
+fibre.  The apparent rank-four defect in the next square was a coordinate
+error: that diagnostic inserted the flat-Fourier equation projection into
+the curved fibre-identified cotangent row.  Reconstructing the actual curved
+projections `p_E=(D^-1 S_h^sharp D,1,0)` and `p_I` gives
+`A_eq=A_core p_E`, `B_id=B_core p_I` and
+`N_curv A_eq=B_id C_aux` exactly.  The resulting sixteen-block cotangent
+mapping cylinder is coefficientwise nilpotent and odd cyclic, enumerates
+every field/equation/identity and dual row, and satisfies
+`PI=1`, `IP-1=QH+HQ` by finite-order local maps.  Thus the all-row local
+prolongation and BV operator flags are now true.  The prolonged current flag
+remains false until its current certificate is explicitly rebound to the new
+curved core-chain provenance.  The auxiliary
 field block $E_{\rm aux}+KC$ and its cotangent copy are the two remaining
 blocks and retain the scalar-wave rank obstruction.  The final witness must
 therefore go beyond direct-sum conjugation, using two-way relative
@@ -322,9 +326,9 @@ On the exact TT-plus-shifted-auxiliary operator subcomplex this promotes
 `physical_biwave_block_green_hyperbolic=true` and
 `physical_Jordan_extension_causal=true`: the restricted witness has
 `P=diag(B_TT,1,B_TT,1)` and an exact restricted
-`Q Lambda + Lambda Q=1`.  The all-row Green flags stay false because a
-support-local arbitrary-source TT realization, the rank-34 reciprocal block,
-and the rank-four vector block remain open.
+`Q Lambda + Lambda Q=1`.  The all-row Green flags stay false because the
+projector-free relative rank-14 equation-cone contraction inside the
+rank-34 reciprocal block remains open.
 
 A projector-free differential-module audit further reduces the reciprocal
 rank-34 block.  A presented rank-12 gauge/subsidiary submodule has an exact

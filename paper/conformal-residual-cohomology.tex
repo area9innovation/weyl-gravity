@@ -324,8 +324,9 @@ it does not supply causal Green homotopies.
 \item The exact null-symbol quotient is the two-dimensional helicity-$\pm2$
 module and the reduced Weyl symbol is $\frac14 I_2$.  The exact $26$-state
 Weyl--Cotton equations, constraint-adjusted symmetric hyperbolicity, sourced
-constraint propagation and all-level $E/A/L$ spectrum are certified.  Six
-curvature flags are true; the remaining nine prolongation/causal flags keep the
+constraint propagation and all-level $E/A/L$ spectrum are certified.  The
+support-local all-row prolongation and BV operator identity are also exact.
+Eight curvature flags are true; the remaining seven current/causal flags keep the
 final covariant $H^4$ flag false.
 \item Calling the resulting classes physical states additionally requires a
 boundary and gauge principle which makes all fifteen conformal generators,
@@ -1243,20 +1244,41 @@ constructed.  It supplies the explicit local operator $A_{\rm eq}$ satisfying
  T=(C_1,\operatorname{div}C_1).
 \end{equation}
 The first square is verified on all $10\binom{8}{4}=700$ metric four-jets.
-The formerly inferred order-zero identity attachment does not complete the
-next square in the actual fibre-identified coordinates.  The common-Rees
-calculation gives
+The formerly reported order-zero identity-square defect was a coordinate
+artifact.  The common-Rees diagnostic had composed the curved attachment with
+the flat-Fourier equation projection, whereas the fibre-identified curved
+cotangent row uses
 \begin{equation}
- \rank\bigl(N_0A_0-B_0C_0\bigr)=4,
+ p_E=(D^{-1}S_h^\sharp D,1,0)
 \end{equation}
-with support on the three $a$ rows and the $s$ row.  This is an attachment or
-filtration defect, not a Green-hyperbolicity no-go theorem.  The preceding
-square $TK_{\rm aux}=0$ is independently exhaustive
-on all diffeomorphism and Weyl-scalar jets and all four boost ghosts.  These
-partial maps define an abstract sixteen-block cone template, but not yet a
-coefficientwise nilpotent prolonged BV operator or support-local all-row SDR.
-After the rank-four attachment defect is repaired, the two remaining analytic
-exceptions
+and the corresponding identity projection $p_I$.  Reconstructing these maps
+coefficientwise gives
+\begin{equation}
+ A_{\rm eq}=A_{\rm core}p_E,
+ \qquad B_{\rm id}=B_{\rm core}p_I,
+ \qquad N_{\rm curv}A_{\rm eq}=B_{\rm id}C_{\rm aux}.
+\end{equation}
+The last equality follows from the exact metric-core square together with the
+equation-to-identity block $p_IC_{\rm aux}=C_{\rm core}p_E$ of the certified
+all-row curved retract.  Thus the old rank-four matrix is retained only as a
+scoped mixed-coordinate diagnostic and is not an operator obstruction.  The
+preceding square $TK_{\rm aux}=0$ remains independently exhaustive on all
+diffeomorphism and Weyl-scalar jets and all four boost ghosts.
+
+Substitution into the complete sixteen-block cotangent mapping cylinder now
+proves coefficientwise
+\begin{equation}
+ Q_{\rm prol}^2=0,
+ \qquad PI=1,
+ \qquad IP-1=Q_{\rm prol}H+HQ_{\rm prol},
+\end{equation}
+as well as odd BV cyclicity.  Every field, equation, identity, cotangent and
+contractible cone row is enumerated, and $I,P,H$ contain only finite-order
+differential operators and pointwise inverses.  Hence
+\texttt{support\_local\_prolongation\_retract} and
+\texttt{prolonged\_BV\_operator\_identity} are true.  The prolonged current
+flag is deliberately left false until its certificate explicitly binds the
+corrected curved core-chain provenance.  The two remaining analytic exceptions
 are $E_{\rm aux}+KC$ on the auxiliary field row and its cotangent copy; they
 retain the scalar-wave null-rank obstruction.  Thus mere direct-sum
 conjugation does not prove the prolonged Green theorem.  The next witness must
@@ -1598,17 +1620,16 @@ ranks
 \[
  9\longrightarrow24\longrightarrow50\longrightarrow49\longrightarrow14.
 \]
-It also separates the ordinary BV identity layer
-$K_{\rm ordinary}(-\zeta)^T J_{\rm aux}$ from both the exact curved identity
-and the Green-witness companion.  With the presently mixed leading tables,
-the two internal square defects have ranks $11,4$ at generic, timelike,
-spacelike and temporal covectors, and ranks $7,4$ at a null covector.
-Consequently these tables do not yet form one associated-graded complex and
-no cone-cohomology rank is assigned.  The integer Douglis weight constraints
-are feasible and an explicit representative is certified; the missing step
-is the complete associated-graded extraction, especially the lower $A$
-terms and weighted zeroth-order Weyl--Cotton blocks.  Neither the
-equation-level SDR nor its Green operators has been constructed.
+Its original mixed-coordinate extraction separated an ordinary identity
+layer from the curved fibre-identified companion and reported internal defect
+ranks $11,4$ (or $7,4$ at a null covector).  The curved core calculation shows
+that the rank-four part used the wrong equation projection.  Substitution of
+the actual $p_E,p_I$ proves the operator chain squares and the support-local
+graph mapping-cylinder SDR exactly.  This does not compute the cohomology of
+the relative rank-$14$ equation cone and does not construct its deformation
+retract or Green operators.  The integer Douglis weight constraints remain a
+useful representative for that later causal/PBW problem, but the stale
+rank-four matrix is no longer a nilpotence obstruction.
 
 The selected causal route therefore has the following explicit flags:
 \begin{equation}\label{eq:open-curvature-flags}
@@ -1630,11 +1651,12 @@ The selected causal route therefore has the following explicit flags:
  &\texttt{prolonged\_current\_comparison}.&&
  \end{aligned}
 \end{equation}
-Six flags in \eqref{eq:open-curvature-flags} are true: the curved equations,
+Eight flags in \eqref{eq:open-curvature-flags} are true: the curved equations,
 first-order closure, symmetric hyperbolicity, sourced identity, constraint
-propagation, and all-level spectrum.  The remaining nine prolongation,
-causal, and transport flags are false.  In particular, the paper does not yet
-construct the complete support-local prolonged BV rows, $G_\pm$, or degree-$(-1)$ maps
+propagation, all-level spectrum, support-local prolongation retract, and
+prolonged BV operator identity.  The remaining seven current, causal, and
+transport flags are false.  In particular, the paper does not yet construct
+$G_\pm$ or degree-$(-1)$ maps
 $\Lambda_\pm$ satisfying
 \begin{equation}\label{eq:open-green-homotopy}
  Q_{\rm prol}\Lambda_\pm+\Lambda_\pm Q_{\rm prol}=1,
@@ -1654,9 +1676,10 @@ quadratic parent
  \qquad \beta=\delta Y_I,\quad\gamma=0,
 \end{equation}
 where $Y_I$ is the finite Lagrange concomitant of the $T$ and $A$ shears.
-Because the current $B$ attachment leaves the rank-four final-square defect,
-this formula is presently conditional and does not promote
-\texttt{prolonged\_current\_comparison}.  The equivariance defect of the Cauchy
+The corrected mapping cylinder makes this a well-typed candidate, but its
+current certificate does not yet bind the corrected core-chain digest;
+therefore \texttt{prolonged\_current\_comparison} remains false until that
+provenance and the associated pullback are checked explicitly.  The equivariance defect of the Cauchy
 cutoff is nevertheless now controlled conditionally and exactly.  If
 $\rho$ is any of the fifteen local conformal chain generators and
 $\kappa=[Q,\chi]$ is the standard temporal-cutoff inverse to the causal map,
@@ -3423,8 +3446,9 @@ $24$-field bundle and identifies the uncancelled quotient with the two
 physical helicities; the reduced Weyl symbol \eqref{eq:reduced-Weyl-symbol}
 is an isomorphism.  The exact $26$-state Weyl--Cotton equations, their
 constraint-adjusted symmetric-hyperbolic closure, sourced subsidiary
-identity and all-level $E/A/L$ spectrum are now proved.  The remaining nine
-false prolongation/causal/transport flags in
+identity and all-level $E/A/L$ spectrum are now proved.  The all-row local
+prolongation and BV differential are exact.  The remaining seven false
+current/causal/transport flags in
 \eqref{eq:open-curvature-flags}, the resulting causal
 quasi-isomorphism, Hadamard completion, and uniqueness among boundary or
 deparametrized polarizations remain separate analytic questions.  The final
@@ -3480,13 +3504,13 @@ by the reduced Weyl symbol.  The remaining analytic route is therefore the
 curved electric/magnetic Weyl prolongation.  Its exact equations,
 first-order closure, constraint-adjusted symmetric hyperbolicity, sourced
 constraint identity and propagation and all-level $E/A/L$ spectrum are
-proved.  The all-row local prolongation retract and prolonged BV operator
-remain open because the current identity attachment leaves a rank-four
-associated-graded square defect.  The
+proved.  The corrected curved cotangent projections also prove the all-row
+local prolongation retract and prolonged BV operator identity; the formerly
+reported rank-four associated-graded defect used mixed coordinates.  The
 prolonged Green witness and causal Green operators, causal BV Green homotopy
 and quasi-isomorphism, endpoint recovery, $SO(4,2)$-equivariant transport,
 remain open.  The all-row prolonged/auxiliary current comparison is likewise
-conditional on repairing that attachment; its later identification with a
+pending an explicit corrected-core provenance link; its later identification with a
 causal Green pairing is a separate downstream step.
 Alternative boundary polarizations,
 quantum consistency, and interaction descent are also separate questions.
@@ -3712,9 +3736,9 @@ two-pair candidates, but its central cross-ranks are only $21/24$; the three
 missing directions are rotation scalars which must be retained or locally
 prolonged.\\
 Curvature causal realization and final covariant $H^4$ & Open, fail-closed &
-Six flags in \eqref{eq:open-curvature-flags} are true and the nine
-prolongation/causal/transport flags remain false.  They require repair of the
-rank-four final-square attachment, the prolonged Green
+Eight flags in \eqref{eq:open-curvature-flags} are true and the seven
+current/causal/transport flags remain false.  The local all-row prolongation
+and BV differential are complete.  The remaining work is the prolonged Green
 witness and actual BV Green homotopy, residual endpoint recovery, and
 equivariance.  The prolonged current comparison is not yet promoted;
 Green/current equality is further downstream.  Consequently the causal quasi-isomorphism

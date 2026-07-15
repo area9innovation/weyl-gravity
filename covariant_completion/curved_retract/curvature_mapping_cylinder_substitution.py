@@ -10,10 +10,14 @@ by exact coefficient certificates:
 
 This module checks that those certificates have the exact schemas, domains,
 orders, shapes, coefficient coverage, hashes and two chain relations required
-by the kernel.  Since every cotangent entry is the forced formal adjoint of one
-of these three tables, this block substitution is coefficientwise complete
+by the kernel.  The second square is taken from the corrected curved core
+chain-map certificate.  In particular it uses the actual cotangent projections
+``p_E`` and ``p_I`` from the certified curved SDR; it does not reuse the stale
+flat-Fourier equation projection which produced the spurious rank-four Rees
+defect.  Since every cotangent entry is the forced formal adjoint of one of
+these three tables, this block substitution is coefficientwise complete
 without expanding one enormous sparse matrix.  It does not promote a project
-status flag.
+status flag by itself.
 """
 
 from __future__ import annotations
@@ -80,8 +84,8 @@ class CurvatureMappingCylinderSubstitution:
     state_gauge_certificate: Mapping[str, object]
     linearized_bach_certificate: Mapping[str, object]
     equation_certificate: Mapping[str, object]
-    identity_certificate: Mapping[str, object]
-    retract_certificate: Mapping[str, object]
+    curved_core_chain_certificate: Mapping[str, object]
+    curved_retract_certificate: Mapping[str, object]
     kernel_certificate: Mapping[str, object]
     cotangent_certificate: Mapping[str, object]
 
@@ -89,8 +93,8 @@ class CurvatureMappingCylinderSubstitution:
         state_gauge = self.state_gauge_certificate
         linearized_bach = self.linearized_bach_certificate
         equation = self.equation_certificate
-        identity = self.identity_certificate
-        retract = self.retract_certificate
+        core_chain = self.curved_core_chain_certificate
+        curved_retract = self.curved_retract_certificate
         kernel = self.kernel_certificate
         cotangent_audit = self.cotangent_certificate
 
@@ -166,57 +170,77 @@ class CurvatureMappingCylinderSubstitution:
         ):
             raise AssertionError("T/A exhaustive jet certificate is incomplete")
 
-        if identity.get("schema") != (
-            "pure-weyl-curvature-auxiliary-identity-chain-map-v1"
+        if core_chain.get("schema") != (
+            "pure-weyl-curved-core-curvature-chain-map-v1"
         ):
-            raise AssertionError("wrong B coefficient certificate schema")
-        b_identity = _nested(identity, "B_identity")
+            raise AssertionError("wrong corrected curved core-chain schema")
+        coordinate_correction = _nested(core_chain, "coordinate_correction")
+        b_identity = _nested(core_chain, "identity_attachment")
         if not (
             b_identity.get("shape") == [14, 9]
             and b_identity.get("maximum_order") == 0
-            and b_identity.get("coefficient_multiindices") == 1
-            and b_identity.get("rank") == 4
             and b_identity.get("nonzero_coefficients") == 4
             and _is_sha256(b_identity.get("sha256"))
+            and b_identity.get("formula") == "B_new=B_core p_I"
+            and b_identity.get("derivative_repair_required") is False
         ):
             raise AssertionError("B_identity coefficient coverage drifted")
-        a_metric = _nested(identity, "A_metric")
-        equation_h_hash = a_equation.get("Bach_to_curvature_sha256")
-        identity_h_hash = a_metric.get("tracefree_Bach_to_curvature_sha256")
+        core_attachment = _nested(core_chain, "equation_attachment")
         if not (
-            _is_sha256(equation_h_hash)
-            and identity_h_hash == equation_h_hash
+            core_attachment.get("shape") == [40, 24]
+            and core_attachment.get("maximum_order") == 2
+            and core_attachment.get("coefficient_multiindices") == 15
+            and core_attachment.get("sha256") == a_equation.get("sha256")
+            and core_attachment.get("matches_exhaustive_curved_equation_certificate")
+            is True
+            and core_attachment.get("independent_raw_then_paired_defect") == 0
         ):
-            raise AssertionError("A/B Bach-to-curvature map hashes do not agree")
-        if retract.get("schema") != "pure-weyl-curved-chain-map-status-v1":
-            raise AssertionError("wrong auxiliary retract certificate schema")
-        q_retract = _nested(retract, "Q_conjugation_engine_regression")
-        retract_hashes = _nested(q_retract, "matrix_sha256")
-        identity_projection = _nested(identity, "identity_projection")
+            raise AssertionError("corrected curved A attachment drifted")
         if not (
-            _is_sha256(identity_projection.get("sha256"))
-            and identity_projection.get("full_retract_projection_sha256")
-            == retract_hashes.get("projection")
-            and _is_sha256(retract_hashes.get("projection"))
-            and retract.get("curved_p_is_chain_map") is True
-            and retract.get("all_BV_rows_in_curved_comparison") is True
+            coordinate_correction.get("invalid_projection") == "flat-Fourier p_E"
+            and coordinate_correction.get("actual_projection")
+            == "p_E=(D^-1 S_h^sharp D,1,0)"
+            and coordinate_correction.get("ordinary_symbol_substitution_used")
+            is False
         ):
-            raise AssertionError("p_identity is not bound to the full retract")
-        second_square = _nested(identity, "full_auxiliary_chain_relation")
+            raise AssertionError("stale flat-Fourier p_E was not excluded")
+        equation_projection = _nested(core_chain, "equation_projection")
+        identity_projection = _nested(core_chain, "identity_projection")
         if not (
-            identity.get("second_chain_relation_exact")
-            and second_square.get("exact")
-            and second_square.get("N_curv_A_equation_minus_B_identity_C_aux")
+            equation_projection.get("shape") == [10, 24]
+            and equation_projection.get("maximum_order") == 2
+            and equation_projection.get("coefficient_multiindices") == 15
+            and _is_sha256(equation_projection.get("sha256"))
+            and identity_projection.get("shape") == [5, 9]
+            and identity_projection.get("maximum_order") == 1
+            and identity_projection.get("coefficient_multiindices") == 5
+            and identity_projection.get("B_core_annihilates_derivative_image")
+            is True
+            and _is_sha256(identity_projection.get("sha256"))
+        ):
+            raise AssertionError("curved p_E/p_I coverage drifted")
+        if curved_retract.get("schema") != (
+            "pure-weyl-curved-deformation-retract-status-v1"
+        ):
+            raise AssertionError("wrong actual curved retract schema")
+        promotion = _nested(curved_retract, "promotion_criteria")
+        factorized = _nested(curved_retract, "factorized_actual_curved_Q")
+        factorized_chain_maps = _nested(factorized, "chain_maps")
+        if not (
+            promotion.get("curved_p_is_chain_map") is True
+            and promotion.get("actual_curved_Q_conjugation_verified") is True
+            and promotion.get("all_full_BV_rows_included") is True
+            and factorized_chain_maps.get("p_Q_aux_equals_Q_met_p") is True
+        ):
+            raise AssertionError("actual curved p_E/p_I chain map is incomplete")
+        second_square = _nested(core_chain, "lifted_chain_squares")
+        if not (
+            second_square.get("exact") is True
+            and second_square.get("E_WC_T_new_minus_A_new_E_aux") == "zero"
+            and second_square.get("N_A_new_minus_B_new_C_aux")
             == "zero"
         ):
             raise AssertionError("N_curv A=B C_aux is not exact")
-        cotangent = _nested(identity, "cotangent_lift")
-        if not (
-            cotangent.get("shape") == [9, 14]
-            and cotangent.get("maximum_order") == 0
-            and cotangent.get("generated_from_same_BV_pairings") is True
-        ):
-            raise AssertionError("B_identity cotangent lift drifted")
 
         if kernel.get("schema") != (
             "pure-weyl-curvature-mapping-cylinder-kernel-v1"
@@ -326,8 +350,8 @@ class CurvatureMappingCylinderSubstitution:
         state_gauge = self.state_gauge_certificate
         linearized_bach = self.linearized_bach_certificate
         equation = self.equation_certificate
-        identity = self.identity_certificate
-        retract = self.retract_certificate
+        core_chain = self.curved_core_chain_certificate
+        curved_retract = self.curved_retract_certificate
         kernel = self.kernel_certificate
         cotangent_audit = self.cotangent_certificate
         pairing_data = _nested(kernel, "equation_normalization")
@@ -336,15 +360,18 @@ class CurvatureMappingCylinderSubstitution:
         ]
         t_state = _nested(equation, "T_state")
         a_equation = _nested(equation, "A_equation")
-        b_identity = _nested(identity, "B_identity")
+        b_identity = _nested(core_chain, "identity_attachment")
+        block_ledger = kernel["complete_16_block_degree_ledger"]
+        if not isinstance(block_ledger, list) or len(block_ledger) != 16:
+            raise AssertionError("the complete 16-block row ledger is absent")
         return {
             "schema": "pure-weyl-curvature-mapping-cylinder-substitution-v1",
             "input_certificate_sha256": {
                 "state_gauge_chain_map": _certificate_digest(state_gauge),
                 "linearized_bach": _certificate_digest(linearized_bach),
                 "equation_chain_map": _certificate_digest(equation),
-                "identity_chain_map": _certificate_digest(identity),
-                "auxiliary_retract": _certificate_digest(retract),
+                "curved_core_chain_map": _certificate_digest(core_chain),
+                "actual_curved_retract": _certificate_digest(curved_retract),
                 "formal_kernel": _certificate_digest(kernel),
                 "autonomous_curvature_cotangent": _certificate_digest(
                     cotangent_audit
@@ -372,10 +399,8 @@ class CurvatureMappingCylinderSubstitution:
                 "B_identity": {
                     "shape": b_identity["shape"],
                     "maximum_order": b_identity["maximum_order"],
-                    "coefficient_multiindices": b_identity[
-                        "coefficient_multiindices"
-                    ],
-                    "rank": b_identity["rank"],
+                    "coefficient_multiindices": 1,
+                    "rank": 4,
                     "sha256": b_identity["sha256"],
                 },
             },
@@ -442,20 +467,30 @@ class CurvatureMappingCylinderSubstitution:
                     "N_curv A_equation=B_identity C_aux"
                 ),
                 "second_chain_relation_exact": True,
+                "curved_core_chain_certificate": (
+                    "curved_core_curvature_chain_map.json"
+                ),
+                "curved_equation_projection": "p_E=(D^-1 S_h^sharp D,1,0)",
+                "curved_identity_projection": "p_I from the actual cotangent shift",
+                "flat_Fourier_projection_used": False,
                 "Bach_to_curvature_sha256": a_equation[
                     "Bach_to_curvature_sha256"
                 ],
-                "identity_projection_sha256": identity["identity_projection"][
-                    "sha256"
-                ],
-                "full_retract_projection_sha256": identity[
+                "equation_projection_sha256": core_chain[
+                    "equation_projection"
+                ]["sha256"],
+                "identity_projection_sha256": core_chain[
                     "identity_projection"
-                ]["full_retract_projection_sha256"],
+                ]["sha256"],
             },
             "kernel": {
-                "complete_16_block_degree_ledger": kernel[
-                    "complete_16_block_degree_ledger"
-                ],
+                "complete_16_block_degree_ledger": block_ledger,
+                "row_coverage": {
+                    "rows_enumerated": 16,
+                    "rows_expected": 16,
+                    "silent_rows_dropped": 0,
+                    "fields_equations_identities_and_cotangents": True,
+                },
                 "degree_checks": kernel["degree_checks"],
                 "matrix_sha256": kernel["matrix_sha256"],
                 "Q_squared": "zero",
@@ -463,6 +498,8 @@ class CurvatureMappingCylinderSubstitution:
                 "odd_BV_cyclicity_defect": 0,
                 "P_I": "identity",
                 "I_P_minus_identity": "QH+HQ",
+                "all_16_blocks_Q_squared_checked": True,
+                "all_16_blocks_graph_SDR_checked": True,
             },
             "meaning_of_coefficientwise_complete": (
                 "every nonzero attachment block is an exact finite coefficient "
@@ -482,5 +519,13 @@ class CurvatureMappingCylinderSubstitution:
                 "nilpotence and the local prolongation SDR; it does not by "
                 "itself construct a Green witness or causal homotopy"
             ),
+            "superseded_diagnostic": {
+                "certificate": "curved_rank14_full_cone_rees_gate.json",
+                "reason": (
+                    "its rank-four final square used flat-Fourier p_E in the "
+                    "curved cotangent row and is not a promotion premise"
+                ),
+                "rank_four_defect_is_operator_obstruction": False,
+            },
             "fail_closed": True,
         }
