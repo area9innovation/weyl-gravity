@@ -3,8 +3,9 @@
 Verification project and paper series on the PT-symmetric Pais–Uhlenbeck
 oscillator, the fourth-order scalar field, and quadratic gravity. Started
 from the audit spec in `../Symplectic Reconstruction.md`; grew into nine
-primary papers (an expository introduction, the free-theory sequence, two
-interaction papers, and the two-part conformal-cylinder result), a Lean
+primary papers—one expository introduction and eight technical papers
+(the free-theory sequence, two interaction papers, and the two-part
+conformal-cylinder result)—a Lean
 formalization, and a machine-checked verification pipeline.
 
 ## Overview
@@ -31,22 +32,22 @@ particle-number-diagonal Krein lift does not make that block null.
 
 | # | File | Title | Status |
 |---|------|-------|--------|
-| 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series, incl. the interaction results) | draft (28 pp.) |
+| 0 | `ghosts-geometry-reality.tex` / `.pdf` | **Ghosts, Geometry, and Reality in Fourth-Order Quantum Theories** (expository introduction to the series, incl. the interaction results) | draft (30 pp.) |
 | 1 | `symplectic-diagonalization.tex` / `.pdf` | **Canonical Positive Symplectic Diagonalization of the Pais–Uhlenbeck Oscillator** | frozen, tag `paper1-v1.2` (17 pp.) |
 | 2 | `variational-fock.tex` / `.pdf` | **The Pais–Uhlenbeck Metric as a Minimum-Distortion Principle, and the Representation Problem for the Fourth-Order Field** | frozen, tag `paper2-v1.3` (14 pp.) |
 | 3 | `fourth-order-vacuum.tex` / `.pdf` | **The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits, Fock Sectors, and the Krein Boundary** | frozen, tag `paper3-v1.3` (13 pp.) |
 | 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | frozen, tag `paper4-v1.1` (15 pp.) |
 | 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions, Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order Theories** | frozen, tag `paper5-v1.1` (17 pp.; accepted by team referee, then extended: 5:1 confirmation, Krein separation, literature repositioning, charge-null lemma + regulated-embedding proposition) |
 | 6 | `einstein-weyl-interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions in Einstein–Weyl Gravity: Cubic Protection, Second-Order Metric Failure, and Krein Visibility** | draft, major-review revision (30 pp.) |
-| 7A | `conformal-residual-cohomology-krein.tex` / `.pdf` | **Residual Cohomology of Free Pure-Weyl Gravity on the Conformal Cylinder: Derived Reduction, Weyl-Square Classes, and Krein Completion** | primary residual-cohomology submission; $H^4\cong\mathbb C^2$ and signature $(2,0)$ certified |
-| 7B | `conformal-covariant-causal-transport.tex` / `.pdf` | **Causal Curvature Prolongation and Covariant BV--BFV Transport for Free Pure-Weyl Gravity** | primary causal submission; support-local tractor homotopies and transport to covariant $H^4$ certified |
-| 7S | `conformal-residual-cohomology-computational-supplement.tex` / `.pdf` | **Computational Supplement for Residual Cohomology and Causal Transport** | versioned supplement; claim ledgers, generated inputs, focused checks, and clean-release procedure |
-| 7X | `conformal-residual-cohomology.tex` / `.pdf` | **Residual $SO(4,2)$ Cohomology of Free Weyl Gravity on the Conformal Cylinder** | archival combined manuscript; retained for equation-label and certificate cross-reference |
+| 7 | `conformal-residual-cohomology-krein.tex` / `.pdf` | **Residual Cohomology of Free Pure-Weyl Gravity on the Conformal Cylinder: Derived Reduction, Weyl-Square Classes, and Krein Completion** | Paper VII; computes $H^4\cong\mathbb C^2$ and its signature $(2,0)$ in the residual state complex |
+| 8 | `conformal-covariant-causal-transport.tex` / `.pdf` | **Causal Curvature Prolongation and Covariant BV--BFV Transport for Free Pure-Weyl Gravity** | Paper VIII; transports Paper VII through support-local causal homotopies to covariant $H^4$ without recomputing residual CE cohomology |
+| S | `conformal-residual-cohomology-computational-supplement.tex` / `.pdf` | **Computational Supplement for Residual Cohomology and Causal Transport** | versioned supplement; claim ledgers, generated inputs, focused checks, and clean-release procedure |
+| X | `conformal-residual-cohomology.tex` / `.pdf` | **Residual $SO(4,2)$ Cohomology of Free Weyl Gravity on the Conformal Cylinder** | archival combined manuscript; retained for equation-label and certificate cross-reference |
 
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.
 
-Publication and reproduction instructions for Paper 7 are collected in
+Publication and reproduction instructions for Papers 7--8 are collected in
 [`notes/conformal-publication-reproduction.md`](notes/conformal-publication-reproduction.md),
 including the fast required rail, exhaustive scheduled rail, scoped legacy
 flags, and publication artifact procedure.
@@ -564,10 +565,10 @@ particle-number-diagonal, cluster-multiplicative class, the induced Krein
 grading is `(-1)^N_M`; the obstruction is non-null, survives physical
 BRST cohomology, and admits no uniform abelian charge-null analogue.
 
-**Paper 7** (the residual conformal branch): starts from pure-Weyl metric
-fields on the conformal cylinder, derives the minimal and gauge-fixed
-BV--BFV state complex, and gauges all fifteen residual conformal generators
-for the selected closed-universe boundary problem.  The centered
+**Paper 7** (the residual state-side theorem): starts from the selected
+pure-Weyl state complex on the conformal cylinder and gauges all fifteen
+residual conformal generators for the closed-universe boundary problem. The
+centered
 one-particle cohomology vanishes; exactly the two ghost-dressed chiral
 curvature-square vertex classes `[W_+^2]` and `[W_-^2]` survive, with
 field-induced Gram matrix `I2`.  The normalized `E/A/L` module now has an
@@ -575,10 +576,17 @@ infinite-index energy-mode Krein completion, its symmetric bosonic Fock
 space has fundamental symmetry `Gamma_s(J)`, and the residual differential
 has a closed maximal block realization.  A bounded Cartan contraction
 proves closed range and reduces completed cohomology to the unchanged finite
-centered block.  This is not a positive graviton Hilbert-space theorem or a
-quantum anomaly result.  The separate direct tractor construction now proves
-the full free covariant BV causal theorem, but not a canonical endpoint Green
-inverse or Hadamard theory.  At the reduced one-particle level, the Lorentzian tensor/vector fields have an
+centered block. This is not a positive graviton Hilbert-space theorem or a
+quantum anomaly result.
+
+**Paper 8** (the covariant field-side theorem): derives Paper 7's selected
+state complex from the covariant pure-Weyl metric BV--BFV theory. A
+support-local tractor/curvature construction gives the complete free causal
+homotopies, endpoint recovery, residual-equivariant transport, and pairing
+comparison. It imports the Paper-7 residual cohomology theorem rather than
+recomputing the Chevalley--Eilenberg complex. It does not construct a
+Hadamard state or an interacting quantum theory. At the reduced one-particle
+level, the Lorentzian tensor/vector fields have an
 exact Cauchy--Sobolev realization: the TT branches use
 `H^1 + L^2`, the vector branch uses `H^(3/2) + H^(1/2)`, and the resulting
 harmonic transform is Krein-unitary onto the completed `E/A/L` module.
@@ -695,12 +703,12 @@ cd symbolic && python3 verify_gravity_reduction.py   # paper 4, G1–G7
 cd symbolic && python3 verify_gravity_completion.py  # paper 4, G8–G9
 cd symbolic && python3 verify_gravity_spectral.py    # paper 4, G10–G12
 cd symbolic && python3 verify_gravity_paper6.py       # paper 6, full suite
-cd symbolic && python3 verify_conformal_paper_free.py --required   # paper 7, fast required rail
-cd symbolic && python3 verify_conformal_paper_free.py --reproduce  # paper 7, exhaustive publication rail
+cd symbolic && python3 verify_conformal_paper_free.py --required   # papers 7--8, fast required rail
+cd symbolic && python3 verify_conformal_paper_free.py --reproduce  # papers 7--8, exhaustive publication rail
 cd numeric  && python3 regression.py && python3 distortion_scan.py && python3 cartan_checks.py
 cd lean     && lake exe cache get && lake build    # zero sorry
 cd symbolic && for f in verify_interaction_deformation verify_interaction_order3 verify_pt_breaking verify_perfect_square verify_two_field verify_sector_obstruction verify_hardening verify_doubled_theory verify_51_order4 verify_obstruction_null; do python3 $f.py; done   # paper 5
-cd paper    && for f in symplectic-diagonalization variational-fock fourth-order-vacuum fourth-order-gravity ghosts-geometry-reality interaction-obstructions einstein-weyl-interaction-obstructions conformal-residual-cohomology; do pdflatex $f.tex; done
+cd paper    && for pass in 1 2 3; do for f in symplectic-diagonalization variational-fock fourth-order-vacuum fourth-order-gravity ghosts-geometry-reality interaction-obstructions einstein-weyl-interaction-obstructions conformal-residual-cohomology-krein conformal-covariant-causal-transport conformal-residual-cohomology-computational-supplement conformal-residual-cohomology; do pdflatex -interaction=nonstopmode -halt-on-error $f.tex; done; done
 ```
 
 Release tags: `paper1-v1.2`, `paper2-v1.3`, `paper3-v1.3`,

@@ -105,6 +105,10 @@ def dependencies() -> tuple[Path, ...]:
         ROOT / "symbolic" / "conformal-paper-requirements.txt",
         ROOT / "symbolic" / "audit_conformal_publication_release.py",
         ROOT / "symbolic" / "generate_endpoint_factorization_nullstellensatz_tex.py",
+        ROOT / "symbolic" / "programme-introduction-language-report.json",
+        ROOT / "symbolic" / "programme-introduction-language-report.tsv",
+        ROOT / "symbolic" / "programme-introduction-verification.sha256",
+        ROOT / "symbolic" / "verify_programme_introduction.py",
         ROOT / "symbolic" / "verify_conformal_split_publications.py",
         Path(__file__).resolve(),
     }
