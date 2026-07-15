@@ -1,0 +1,126 @@
+{
+  "authorization": {
+    "full_support_local_q2": false,
+    "nonzero_weight_D_equivariance": false,
+    "physical_ND2_execution": false,
+    "reduced_mode_solver_input": true
+  },
+  "claim_boundary": "This pinned consumer imports and independently evaluates the action-derived six-row rational REDUCED-MODE q2/D block. It is not the full support-local q2 and authorizes no physical or quantum conclusion.",
+  "claim_status": "CERTIFIED_REDUCED_MODE_ND2_INPUT",
+  "classical_source": {
+    "artifacts": {
+      "certificate": {
+        "commit": "74311edb2fb907060e86f740977439f4db8b0ed5",
+        "path": "d_quotient_classical/certificates/BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK.json",
+        "sha256": "5beef963f45d73b4100e175acd057c41a5a7c0bd7ae9c4d356a4eaceeef42cbe"
+      },
+      "independent_verifier": {
+        "commit": "74311edb2fb907060e86f740977439f4db8b0ed5",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_rational_fixture_q2_d_block.py",
+        "sha256": "1aa855432b6ff7550150aae3050d21a76416207cd3e2c25d19e2eb5f8e4ea665"
+      },
+      "producer": {
+        "commit": "74311edb2fb907060e86f740977439f4db8b0ed5",
+        "path": "d_quotient_classical/backreacted_clock/berger_rational_fixture_q2_d_block.py",
+        "sha256": "08d2f0a952bcebde1c09ba225869345e5a55da7ccdeab55e0e04bb10f399afc9"
+      },
+      "report": {
+        "commit": "74311edb2fb907060e86f740977439f4db8b0ed5",
+        "path": "d_quotient_classical/reports/berger-rational-fixture-q2-d-block.md",
+        "sha256": "b8f41cba37fed90ff2b31186a2d2b6fe42e6ea2089bb730d40ca8a9579edd7b2"
+      },
+      "schema": {
+        "commit": "74311edb2fb907060e86f740977439f4db8b0ed5",
+        "path": "d_quotient_classical/schema/berger-rational-fixture-q2-d-block-v1.schema.json",
+        "sha256": "f9b10525a28ea2727b25a87bded97a20d69639039db59317a03b28c1ceda3ebb"
+      },
+      "tests": {
+        "commit": "74311edb2fb907060e86f740977439f4db8b0ed5",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_rational_fixture_q2_d_block.py",
+        "sha256": "45d2c05794683c79485171949fbd2cb405c5a09bc2197d98cd1c7032d9089944"
+      }
+    },
+    "commit": "74311edb2fb907060e86f740977439f4db8b0ed5"
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "arity_two_cartan.py": "656ad3fc3e94846ab06ab9da6bcce0b79510eda5388d48d034492cb64c9440bf",
+      "berger_rational_fixture_q2_d_import.py": "5b07795193ff0ac82657cdc17b385695c1dbc18612cc475a4b82b7ad004978db",
+      "berger_rational_fixture_q2_d_import_certificate.py": "196c26162c93224ddc66ebb77801a82c916fba9028daf894214f35c7c83fc512",
+      "schema/berger-rational-fixture-q2-d-import-v1.schema.json": "10d13a248c42c4baf2a09f27c1135ae8ec1e30f446faeb3ea879d34980cf85bd",
+      "tests/test_berger_rational_fixture_q2_d_import.py": "f69d076eac781870018c39eecdaab07a547e3546cf1c2cc905c4284a4c842ea5"
+    },
+    "source_manifest_sha256": "a79363647f91cd363736b3622b7051b0d34a44f699fdf73b8715b0f6d11de4fc"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "imported_block": {
+    "admissible_mode_block": "stationary SU(2)_L x U(1)_R homogeneous D-weight-zero block",
+    "coefficient_domain": "Q",
+    "degrees": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "input_D_weights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "output_D_weights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "parities": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "q1_nonzero_count": 9,
+    "q2_nonzero_canonical_count": 18,
+    "row_count": 6,
+    "row_ids": [
+      "delta_u_w0",
+      "delta_N_w0",
+      "delta_rho_w0",
+      "E_u_w0",
+      "E_N_w0",
+      "E_rho_w0"
+    ]
+  },
+  "nd2_checks": {
+    "D_q2_derivation": true,
+    "all_coefficients_rational": true,
+    "cartan_source_q1_closed": true,
+    "classical_Cartan_identity": true,
+    "declared_mode_block_closed": true,
+    "q1_cyclic": true,
+    "q1_q2_arity_two_nilpotency": true,
+    "q1_squared_zero": true,
+    "q2_cyclic": true,
+    "sourced_consistency_identity": true
+  },
+  "nd2_classification": {
+    "cartan_source_nonzero_count": 0,
+    "interpretation": "The centered weight-zero fixture has no arity-two D-Cartan source; it validates exact ingestion and identities but does not test a nonzero-weight obstruction.",
+    "status": "ZERO_SOURCE"
+  },
+  "next_gate": "NONZERO_WEIGHT_REDUCED_MODE_BLOCK_OR_NORMALIZED_LEAKAGE_OBSTRUCTION",
+  "result_id": "ND2_REDUCED_MODE_FIXTURE_IMPORT",
+  "schema": "quantum-weyl-berger-rational-fixture-q2-d-import-v1"
+}

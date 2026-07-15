@@ -152,6 +152,22 @@ decisive nonlinear input remains absent: a complete support-local
 `classical_binary_q2` together with the local `D_action_cl` and its
 equivariance. ND2 therefore remains fail-closed.
 
+A separate pinned consumer now imports the first action-derived nonlinear
+Berger block without crossing that boundary.  The six stationary homogeneous
+rows use the rational coordinate \(c=c_0(1+u)\) and normalized action density
+\(L/c_0\), so the exact Hessian and cubic Taylor tensor lie in \(\mathbb Q\).
+The consumer reconstructs `classical_unary_q1`, `classical_binary_q2`, the
+cyclic pairing, and the centered weight-zero `D_action_cl`, then runs the ND2
+arity-two engine.  All identities pass and the Cartan classification is
+`ZERO_SOURCE`.  This certifies an immediately executable `REDUCED-MODE`
+ingestion fixture only; full support-local q2, nonzero-weight D equivariance,
+and physical ND2 execution remain false.  Reproduce it with
+
+```bash
+python3 quantum-weyl/transfer/berger_rational_fixture_q2_d_import_certificate.py --check
+python3 -m unittest quantum-weyl/transfer/tests/test_berger_rational_fixture_q2_d_import.py
+```
+
 The arity-two solve also has a block-sparse exact rail.  Declared additive
 labels such as `D` weight, momentum, or jet filtration must be preserved by
 `q1`; the differential then splits by

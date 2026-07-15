@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-rational-fixture-q2-d-import-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "claim_status", "dependency_tags", "classical_source", "imported_block", "nd2_checks", "nd2_classification", "authorization", "next_gate", "claim_boundary", "consumer_provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-rational-fixture-q2-d-import-v1"},
+    "result_id": {"const": "ND2_REDUCED_MODE_FIXTURE_IMPORT"},
+    "claim_status": {"const": "CERTIFIED_REDUCED_MODE_ND2_INPUT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "classical_source": {"type": "object"},
+    "imported_block": {
+      "type": "object",
+      "required": ["row_count", "row_ids", "degrees", "parities", "input_D_weights", "output_D_weights", "q1_nonzero_count", "q2_nonzero_canonical_count", "coefficient_domain", "admissible_mode_block"],
+      "properties": {
+        "row_count": {"const": 6},
+        "row_ids": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string"}},
+        "degrees": {"const": [0, 0, 0, 1, 1, 1]},
+        "parities": {"const": [0, 0, 0, 1, 1, 1]},
+        "input_D_weights": {"const": [0, 0, 0, 0, 0, 0]},
+        "output_D_weights": {"const": [0, 0, 0, 0, 0, 0]},
+        "q1_nonzero_count": {"type": "integer", "minimum": 1},
+        "q2_nonzero_canonical_count": {"type": "integer", "minimum": 1},
+        "coefficient_domain": {"const": "Q"},
+        "admissible_mode_block": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "nd2_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "nd2_classification": {
+      "type": "object",
+      "required": ["status", "cartan_source_nonzero_count", "interpretation"],
+      "properties": {
+        "status": {"const": "ZERO_SOURCE"},
+        "cartan_source_nonzero_count": {"const": 0},
+        "interpretation": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "authorization": {
+      "type": "object",
+      "required": ["reduced_mode_solver_input", "full_support_local_q2", "nonzero_weight_D_equivariance", "physical_ND2_execution"],
+      "properties": {
+        "reduced_mode_solver_input": {"const": true},
+        "full_support_local_q2": {"const": false},
+        "nonzero_weight_D_equivariance": {"const": false},
+        "physical_ND2_execution": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "NONZERO_WEIGHT_REDUCED_MODE_BLOCK_OR_NORMALIZED_LEAKAGE_OBSTRUCTION"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "consumer_provenance": {"type": "object"}
+  }
+}
