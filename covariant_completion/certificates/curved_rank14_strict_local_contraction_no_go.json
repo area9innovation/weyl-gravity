@@ -1,0 +1,64 @@
+{
+  "causal_green_homotopy": false,
+  "cone_dimensions": [
+    9,
+    24,
+    50,
+    49,
+    14
+  ],
+  "curvature_causal_green_operators": false,
+  "endpoint_audit": {
+    "K_kernel_dimension": 4,
+    "K_rank": 5,
+    "K_shape": [
+      24,
+      9
+    ],
+    "N_left_null_dimension": 2,
+    "N_rank": 12,
+    "N_shape": [
+      14,
+      40
+    ],
+    "exact_witnesses": {
+      "K_kernel_sha256": "eca91f792360ab74e62714932310eecf772e9b45105f3d8475dba70842d45cf4",
+      "K_times_kernel": "zero",
+      "N_left_null_sha256": "d90646ac58bfad310fd55e903597a33e57fabe83f520874b6455ce3dd8c4c81b",
+      "left_null_transpose_times_N": "zero"
+    },
+    "zero_covector": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "fail_closed": true,
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-rank14-strict-local-contraction-no-go-v1",
+  "scope": "finite-order polynomial contraction of the corrected five-term relative equation cone with algebraic identity anticommutator",
+  "status_flags_promoted": [],
+  "strict_contraction_obstruction": {
+    "H1_K_identity_possible": false,
+    "N_H4_identity_possible": false,
+    "endpoint_equations_for_DH_plus_HD_equals_identity": [
+      "H1 K=I_9",
+      "N H4=I_14"
+    ],
+    "polynomial_support_local_DH_plus_HD_equals_identity_possible": false,
+    "proof": "evaluation at zeta=0 gives ranks at most 5 and 12, strictly below the identity ranks 9 and 14"
+  },
+  "surviving_green_witness_route": {
+    "DH_plus_HD_equals_P_cone_ruled_out": false,
+    "endpoint_targets": [
+      "P_G=C_aux K_aux (gauge wave block)",
+      "P_J=N_curv i_C (subsidiary block)"
+    ],
+    "next_exact_system": "solve the four adjacent PBW identities in D H+H D=P_cone, fixing the endpoint blocks to the certified gauge-wave and Weyl--Cotton subsidiary operators",
+    "reason": "Green-hyperbolic endpoint operators may be characteristic and need not have full rank at the zero covector"
+  },
+  "warranted_atomic_flags": [
+    "rank14_strict_local_identity_contraction_no_go"
+  ]
+}
