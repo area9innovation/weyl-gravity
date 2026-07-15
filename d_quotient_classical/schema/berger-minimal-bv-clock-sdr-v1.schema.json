@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-minimal-bv-clock-sdr-v1.schema.json",
+  "title": "Support-local minimal Berger clock BV contraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "phase_space_id", "claim_status",
+    "dependency_tags", "background_inputs", "field_coordinates",
+    "gauge_incidence", "canonical_antifield_lift", "minimal_row_layout",
+    "clock_block", "hessian_split_argument", "sdr", "operator_fingerprints",
+    "rational_fixture", "flags", "next_gate", "not_established",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-minimal-bv-clock-sdr-v1"},
+    "result_id": {"const": "BERGER_MINIMAL_BV_CLOCK_SDR"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "phase_space_id": {"const": "positive_berger_fixed_coupling_linearized_solutions"},
+    "claim_status": {"const": "CERTIFIED_MINIMAL_CLOCK_SECTOR_SDR"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "background_inputs": {"type": "object"},
+    "field_coordinates": {"type": "object"},
+    "gauge_incidence": {"type": "object"},
+    "canonical_antifield_lift": {"type": "object"},
+    "minimal_row_layout": {"type": "array", "minItems": 12, "maxItems": 12},
+    "clock_block": {"type": "object"},
+    "hessian_split_argument": {"type": "object"},
+    "sdr": {"type": "object"},
+    "operator_fingerprints": {"type": "object"},
+    "rational_fixture": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION"},
+    "not_established": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

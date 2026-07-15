@@ -1,0 +1,223 @@
+{
+  "background_inputs": {
+    "fixed_coupling_D_verdict": "D_GAUGE",
+    "normal_parallel": "n=partial_t is parallel on the static product Berger cylinder",
+    "omega_nonzero": true,
+    "rho_nonzero": true
+  },
+  "canonical_antifield_lift": {
+    "canonical_pairing_preserved": true,
+    "formal_adjoint": "K_t^sharp h*=-2 n_nu nabla_mu h*^(mu nu)",
+    "maximum_differential_order": 1,
+    "metric": "h_hat*=h*",
+    "modulus": "R*=rho_bar rho*-2 tr_g(h*)",
+    "phase": "Theta*=omega theta*+K_t^sharp h*",
+    "temporal_operator": "K_t Theta=L_{Theta n}g_bar"
+  },
+  "claim_boundary": "The theorem constructs the exact support-local cyclic SDR of the temporal-diffeomorphism/Weyl clock doublets and all their minimal BV-dual rows on the rho_bar*omega nonzero Berger chart. It does not emit the retained dressed-metric Hessian coefficients, nonminimal gauge-fixed rows, Green homotopies, stability, nonlinear operations, or a complete classical export.",
+  "claim_status": "CERTIFIED_MINIMAL_CLOCK_SECTOR_SDR",
+  "clock_block": {
+    "homotopy_maps": [
+      "s(Theta)=tau",
+      "s(R)=-sigma",
+      "s(tau*)=-Theta*",
+      "s(sigma*)=R*"
+    ],
+    "identities": [
+      "q1^2=0",
+      "q1 s+s q1=1_clock",
+      "s^2=0",
+      "q1^T Omega+Omega q1=0",
+      "s^T Omega+Omega s=0"
+    ],
+    "minimal_clock_rows_complete": true,
+    "ordered_rows": [
+      "tau",
+      "sigma",
+      "Theta",
+      "R",
+      "Theta*",
+      "R*",
+      "tau*",
+      "sigma*"
+    ],
+    "q1_maps": [
+      "q1(tau)=Theta",
+      "q1(sigma)=-R",
+      "q1(Theta*)=-tau*",
+      "q1(R*)=sigma*"
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "field_coordinates": {
+    "determinant": "1/(rho_bar omega)",
+    "dressed_metric": "h_hat=h-L_{Theta n}g_bar+2R g_bar",
+    "inverse": "h=h_hat+L_{Theta n}g_bar-2R g_bar; delta(rho)=rho_bar R; delta(theta)=omega Theta",
+    "maximum_differential_order": 1,
+    "normalized_modulus": "R=delta(rho)/rho_bar",
+    "normalized_phase": "Theta=delta(theta)/omega",
+    "support_local": true
+  },
+  "flags": {
+    "canonical_antifield_transformation_exact": true,
+    "causal_green_homotopy_constructed": false,
+    "full_Berger_clock_BV_theorem": false,
+    "gauge_fixed_nonminimal_rows_complete": false,
+    "minimal_clock_antifield_identity_rows_complete": true,
+    "minimal_clock_field_ghost_rows_complete": true,
+    "retained_dressed_metric_q1_coefficients_complete": false,
+    "retained_operator_stability_proved": false,
+    "support_local_clock_SDR_exact": true
+  },
+  "gauge_incidence": {
+    "clock_incidence_determinant": -1,
+    "clock_incidence_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    "dressed": [
+      "q1(xi_perp)=L_{xi_perp}g_bar",
+      "q1(tau)=Theta",
+      "q1(sigma)=-R"
+    ],
+    "ghost_split": "xi=xi_perp+tau n together with Weyl ghost sigma",
+    "raw": [
+      "K1(xi_perp,tau,sigma)=(L_{xi_perp}g_bar+L_{tau n}g_bar+2 sigma g_bar,-rho_bar sigma,omega tau)"
+    ],
+    "temporal_and_weyl_columns_removed_from_metric": true
+  },
+  "hessian_split_argument": {
+    "consequence": "in dressed variables the Theta and R columns vanish; formal self-adjointness makes their rows vanish, so H=H_retained direct_sum 0_clock",
+    "input": "the coupled background solves the Euler-Lagrange equations and the quadratic Hessian is formally self-adjoint",
+    "noether_statement": "H R_gauge=0",
+    "retained_coefficients_emitted": false,
+    "retained_operator": "the actual ten-component dressed-metric Hessian H_retained"
+  },
+  "minimal_row_layout": [
+    {
+      "degree": -1,
+      "dimension": 3,
+      "name": "spatial_diff_ghost",
+      "retained": true
+    },
+    {
+      "degree": -1,
+      "dimension": 1,
+      "name": "temporal_diff_ghost_tau",
+      "retained": false
+    },
+    {
+      "degree": -1,
+      "dimension": 1,
+      "name": "weyl_ghost_sigma",
+      "retained": false
+    },
+    {
+      "degree": 0,
+      "dimension": 10,
+      "name": "dressed_metric_h_hat",
+      "retained": true
+    },
+    {
+      "degree": 0,
+      "dimension": 1,
+      "name": "clock_phase_Theta",
+      "retained": false
+    },
+    {
+      "degree": 0,
+      "dimension": 1,
+      "name": "clock_modulus_R",
+      "retained": false
+    },
+    {
+      "degree": 1,
+      "dimension": 10,
+      "name": "dressed_metric_antifield",
+      "retained": true
+    },
+    {
+      "degree": 1,
+      "dimension": 1,
+      "name": "clock_phase_antifield",
+      "retained": false
+    },
+    {
+      "degree": 1,
+      "dimension": 1,
+      "name": "clock_modulus_antifield",
+      "retained": false
+    },
+    {
+      "degree": 2,
+      "dimension": 3,
+      "name": "spatial_diff_ghost_antifield",
+      "retained": true
+    },
+    {
+      "degree": 2,
+      "dimension": 1,
+      "name": "temporal_diff_ghost_antifield",
+      "retained": false
+    },
+    {
+      "degree": 2,
+      "dimension": 1,
+      "name": "weyl_ghost_antifield",
+      "retained": false
+    }
+  ],
+  "next_gate": "BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION",
+  "not_established": [
+    "the coefficientwise ten-component dressed-metric Hessian and its Noether row",
+    "the gauge-fixed antighost, multiplier, and auxiliary rows",
+    "the kinetic-sign and characteristic audit of the retained operator",
+    "retarded or advanced Green homotopies",
+    "nonlinear q2 or the parked CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT"
+  ],
+  "operator_fingerprints": {
+    "canonical_map": "e40c77a7718ab4a537350d0eb5e33c4e925527374aaa405ebf7ee640ec9e9bac",
+    "canonical_pairing": "d3aac8840613b84e7dc3bf54bcacf09beeb56306d97ec15eddefe4eda1066775",
+    "field_map": "9c0d9bde04cf43290458c48e2047e673c8c8ccf8d9743a1dfc8be91ef72cf4d3",
+    "fixture_field_map": "16a0479c032fec49096c0a2874136d243e3357afcaee5c0094e477ef33b4c08e",
+    "homotopy": "cb8ff1517c8fb11845cdd82a3e73581463268de0283e7de03e1ea0e091f2b568",
+    "new_gauge": "b30bc753e1f7f32bf63bb7d9d726056c410017cbfae7900b7d430fc1d5ec3836",
+    "old_gauge": "aefd5a88a0a935c595b01c8f9d077ee5e2ad2469499a05b7a429f5689c61f07e",
+    "omega_clock": "1ededba7f333b88ee631254db686f09c3b204388b6d14c370ccdac06537f8b98",
+    "q_clock": "3973ca6b0998ef7f7362bc6159cd941f7fd9e34ce6ede072fe702f4642a92197"
+  },
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "rational_fixture": {
+    "dressed_gauge_rank": 5,
+    "field_map_determinant": "4/3",
+    "omega": "3/4",
+    "raw_gauge_rank": 5,
+    "rho_bar": "1",
+    "symbol_covector": "p=(2,1,0,0)"
+  },
+  "result_id": "BERGER_MINIMAL_BV_CLOCK_SDR",
+  "schema": "pure-weyl-berger-minimal-bv-clock-sdr-v1",
+  "sdr": {
+    "contracted_clock_dimension": 8,
+    "full_minimal_dimension": 34,
+    "identity": "i p=1-q1 s-s q1",
+    "inclusion": "set those eight clock coordinates to zero",
+    "projection": "delete tau,sigma,Theta,R and their four BV-dual rows in dressed coordinates",
+    "retained_minimal_dimension": 26,
+    "support_categories": [
+      "compact",
+      "spacelike-compact",
+      "smooth"
+    ],
+    "support_preservation": "all entries are algebraic or first-order differential operators and obey supp(Tu) subset supp(u)"
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}
