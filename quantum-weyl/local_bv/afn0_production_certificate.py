@@ -10,6 +10,7 @@ from typing import Any
 
 from .afn0_production import afn0_production_results, afn0_slice_results
 from .algebra import canonical_sha256
+from .basis_gap import basis_gap_report
 
 
 PACKAGE_ROOT = Path(__file__).resolve().parent
@@ -24,11 +25,15 @@ def _source_manifest() -> dict[str, str]:
         "afn0_production.py",
         "afn0_production_certificate.py",
         "basis_exhaustiveness.py",
+        "basis_gap.py",
+        "tensor_graphs.py",
         "schema/afn0_result.schema.json",
         "schema/afn0_closure_result.schema.json",
         "schema/afn0_truncated_quotient_result.schema.json",
         "tests/test_afn0_production.py",
         "tests/test_basis_exhaustiveness.py",
+        "tests/test_basis_gap.py",
+        "tests/test_tensor_graphs.py",
     )
     return {
         path: hashlib.sha256((PACKAGE_ROOT / path).read_bytes()).hexdigest()
@@ -39,6 +44,7 @@ def _source_manifest() -> dict[str, str]:
 def build_certificate() -> dict[str, Any]:
     results = afn0_production_results()
     slice_results = afn0_slice_results()
+    gap_report = basis_gap_report()
     h04 = results["H04_AFN0_RESULT"]
     h14 = results["H14_AFN0_RESULT"]
     exact_ids = {
@@ -76,12 +82,20 @@ def build_certificate() -> dict[str, Any]:
             "closure_and_truncated_quotient_outputs_separated": "VERIFIED",
             "truncated_witness_vocabulary": "VERIFIED",
             "grading_integer_signature_enumeration": "VERIFIED",
+            "coarse_and_refined_signature_counts_separated": "VERIFIED",
+            "raw_tensor_contraction_graph_enumeration": "VERIFIED",
+            "basis_gap_report_emitted": "VERIFIED",
+            "H04_even_top_signature_resolution": "VERIFIED",
+            "H04_odd_top_signature_resolution": "VERIFIED",
+            "forward_reverse_span_agreement": "NOT_COMPUTED",
+            "total_complex_exhaustiveness": "NOT_COMPUTED",
             "complete_lower_form_basis": "IN_PROGRESS",
             "Euler_intrinsic_tower": "IN_PROGRESS",
         },
         "result_hashes": {
             "H04_AFN0_RESULT": canonical_sha256(h04),
             "H14_AFN0_RESULT": canonical_sha256(h14),
+            "BASIS_GAP_REPORT_AFN0": gap_report["report_hash"],
             **{
                 result_id: canonical_sha256(result)
                 for result_id, result in sorted(slice_results.items())
@@ -92,6 +106,9 @@ def build_certificate() -> dict[str, Any]:
         },
         "next_required_computation": [
             "generate all lower-form ghost and generalized-connection monomials at total engineering dimension four",
+            "canonically quotient the pending raw contraction graphs by tensor identities and integration by parts",
+            "resolve every remaining top-form and Diff signature with a terminal status",
+            "compare the forward canonical span with reverse signature coverage",
             "assemble the production Q and d_h sparse matrices",
             "complete the omega-Euler intrinsic tower",
             "emit COMPLETE_NONTRIVIALITY_WITNESS only after the complete boundary rank and exhaustiveness proof are frozen",

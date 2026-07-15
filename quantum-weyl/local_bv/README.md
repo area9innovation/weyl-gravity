@@ -232,6 +232,14 @@ antifield-filtration block interface is certified by
 That interface checks the filtered `Q^2`, `d_h^2`, and `Q`--`d_h` identities
 blockwise before imported rows can be accepted.
 
+The reverse-coverage and raw tensor-contraction ledger is
+[`certificates/BASIS_GAP_REPORT_AFN0.json`](certificates/BASIS_GAP_REPORT_AFN0.json).
+It preserves the coarse top-Weyl counts `(3,9)`, the refined counts `(2,5)`,
+and the separate Diff top-form counts `(12,7)` before and after structural
+refinement.  Pending raw contraction graphs are not promoted to canonical
+local invariants, and all lower-form total-complex exhaustiveness gates remain
+open.
+
 Next admissible local steps are the continuation of the intrinsic type-A
 descent from `omega E4`, completion of the AFN0 lower-form mapping-cone basis,
 and the unrestricted higher-derivative Weyl--Cotton jet quotient.  Only the

@@ -40,11 +40,15 @@
               "identity_quotient_ranks": {"type": "object"},
               "structural_grading_enumeration": {
                 "type": "object",
-                "required": ["grading_manifest_hash", "integer_solution_count", "multigrading_status", "exhaustiveness_status"],
+                "required": ["grading_manifest_hash", "coarse_grading_signature_count", "refined_grading_signature_count", "diff_top_form_coarse_signature_count", "diff_top_form_refined_signature_count", "combined_coarse_signature_count", "multigrading_status", "exhaustiveness_status"],
                 "properties": {
                   "grading_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-                  "integer_solution_count": {"type": "integer", "minimum": 0},
-                  "multigrading_status": {"const": "ENGINEERING_FORM_GHOST_PARITY_INDEX_BALANCE_ENUMERATED"},
+                  "coarse_grading_signature_count": {"type": "integer", "minimum": 0},
+                  "refined_grading_signature_count": {"type": "integer", "minimum": 0},
+                  "diff_top_form_coarse_signature_count": {"type": "integer", "minimum": 0},
+                  "diff_top_form_refined_signature_count": {"type": "integer", "minimum": 0},
+                  "combined_coarse_signature_count": {"type": "integer", "minimum": 0},
+                  "multigrading_status": {"const": "COARSE_AND_REFINED_TOP_FORM_COUNTS_SEPARATED"},
                   "exhaustiveness_status": {"const": "IN_PROGRESS"}
                 }
               },

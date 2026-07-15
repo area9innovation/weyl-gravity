@@ -1,21 +1,28 @@
 {
   "canonical_hashes": {
-    "source_manifest_sha256": "7ae54ced284c250e1b3b5518d1d73c9b0146151828ed63beccc34f46fbdf6111"
+    "source_manifest_sha256": "6e6d1b85f1ecd9552e1c7c8abc12e45267f0026af154ee760aa718e376c3bd0e"
   },
   "checks": {
     "BoxR_explicit_primitive": "VERIFIED",
     "Euler_intrinsic_tower": "IN_PROGRESS",
     "H04_AFN0_EVEN_started": "VERIFIED",
     "H04_AFN0_ODD_started": "VERIFIED",
+    "H04_even_top_signature_resolution": "VERIFIED",
+    "H04_odd_top_signature_resolution": "VERIFIED",
     "H14_AFN0_EVEN_WITHOUT_EULER_started": "VERIFIED",
     "H14_AFN0_ODD_started": "VERIFIED",
+    "basis_gap_report_emitted": "VERIFIED",
     "closure_and_truncated_quotient_outputs_separated": "VERIFIED",
+    "coarse_and_refined_signature_counts_separated": "VERIFIED",
     "complete_lower_form_basis": "IN_PROGRESS",
+    "forward_reverse_span_agreement": "NOT_COMPUTED",
     "grading_integer_signature_enumeration": "VERIFIED",
     "omega_BoxR_explicit_primitive": "VERIFIED",
     "parity_split": "VERIFIED",
     "premature_nontriviality_promotion_absent": "VERIFIED",
+    "raw_tensor_contraction_graph_enumeration": "VERIFIED",
     "top_curvature_carrier_generation": "VERIFIED",
+    "total_complex_exhaustiveness": "NOT_COMPUTED",
     "truncated_witness_vocabulary": "VERIFIED"
   },
   "classical_commit": "UNFROZEN",
@@ -24,21 +31,25 @@
   ],
   "next_required_computation": [
     "generate all lower-form ghost and generalized-connection monomials at total engineering dimension four",
+    "canonically quotient the pending raw contraction graphs by tensor identities and integration by parts",
+    "resolve every remaining top-form and Diff signature with a terminal status",
+    "compare the forward canonical span with reverse signature coverage",
     "assemble the production Q and d_h sparse matrices",
     "complete the omega-Euler intrinsic tower",
     "emit COMPLETE_NONTRIVIALITY_WITNESS only after the complete boundary rank and exhaustiveness proof are frozen"
   ],
   "result_hashes": {
-    "H04_AFN0_EVEN_CLOSURE": "a1ea17706fb24c7fbac99d31658c9ca05cf7bc60b95ea69f70ddd544eae7a66c",
-    "H04_AFN0_EVEN_TRUNCATED_QUOTIENT": "95bf2a83a796fb9b5e832e436c1fdb24c9ddd5ba7d8e8bf1bd0032740d7a1314",
-    "H04_AFN0_ODD_CLOSURE": "18da6ca53c7994ad1cb5489451b03607663bb1ff4520084647b313669e052718",
-    "H04_AFN0_ODD_TRUNCATED_QUOTIENT": "b0f0bc68edd5be37d2064865c5d215a329c635328005f7a20b2a6864a757e95a",
-    "H04_AFN0_RESULT": "c09320082b793ee803f1d22d351b912acd35941a2cb58d36b0674b636356772b",
-    "H14_AFN0_EVEN_NO_EULER_CLOSURE": "ac8d7c554e195199ec22784bb19ca86e3dc2897d325932607a1797157cb1dc82",
-    "H14_AFN0_EVEN_NO_EULER_TRUNCATED_QUOTIENT": "3867e5b5eada6316d72c82657fd89e9e9c2aa53bb25690e4d540c63b4996f073",
-    "H14_AFN0_ODD_CLOSURE": "befa802f4503b332698a380ff52daa1d302068b3c456517f8b03382c5498bb6b",
-    "H14_AFN0_ODD_TRUNCATED_QUOTIENT": "e8cbe9c3c0d3620d5dd0aec1fd7aabd43d1ec0aae7bea50486a50e9b16859a83",
-    "H14_AFN0_RESULT": "06128c9cc2546f1c8b3e3ef9929a11038aa4a37467af70d3d50669803e22616b"
+    "BASIS_GAP_REPORT_AFN0": "aab9fdedda74496bc62f46e72d51cf6616f09b89afe3ee6c8e4e99710a68ddbd",
+    "H04_AFN0_EVEN_CLOSURE": "09a0901a88ed2bf357a7a17d660486a6379300ec3f4d7df9981c921e4a1f655d",
+    "H04_AFN0_EVEN_TRUNCATED_QUOTIENT": "283b26d5314b987aa2d9187a8e27722dcb8309dff1e180901a5f032ccd0b1be4",
+    "H04_AFN0_ODD_CLOSURE": "d92e244cf3be12b33c5b1e821b29939e3ca66821a74d8ee128f5479d6692229d",
+    "H04_AFN0_ODD_TRUNCATED_QUOTIENT": "a4e65329ab0f8f35372a2f0cfc23bca393e2e5113b61f068b64840558b1227f5",
+    "H04_AFN0_RESULT": "fcb95ea46816ee53912c82c82dcc61704f582ad6ace55754d72ee8e44c092ac0",
+    "H14_AFN0_EVEN_NO_EULER_CLOSURE": "19363c2557887a0b837fdcbe4452ea3c01b10a2dae7f33c4d6710ae66dc86aa0",
+    "H14_AFN0_EVEN_NO_EULER_TRUNCATED_QUOTIENT": "a5169ad88bedb5ddde19b3b50b9d9c0dd7e60d8f0f408e1efb16ec5678eda441",
+    "H14_AFN0_ODD_CLOSURE": "e4e35a21b59204070828d91ab4d87cb766c5dc150925d2e1e5d35aefb64a4555",
+    "H14_AFN0_ODD_TRUNCATED_QUOTIENT": "b82261512933aa41108c72914fe0d5ed1f0bd3159da63464419f304142adb124",
+    "H14_AFN0_RESULT": "e118bd1901f18d59b5f693d6d3cfc2f8b612a86ea3ce421348a37984024da25f"
   },
   "result_id": "AFN0_PRODUCTION_RUN_CERTIFICATE",
   "result_state": "SPRINT_1_IN_PROGRESS",

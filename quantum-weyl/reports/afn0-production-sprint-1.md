@@ -54,21 +54,22 @@ lambda(representative) = 1
 and promotes its label to `COMPLETE_NONTRIVIALITY_WITNESS` only after the
 complete boundary space and an exhaustiveness proof are frozen.
 
-An independent multigrading enumerator now solves
+An independent multigrading enumerator now preserves the coarse equation
 
 ```text
 2*n_curvature + n_tensor_derivative + n_ghost_derivative
   + ghost_engineering_offset = 4
 ```
 
-alongside form degree, spacetime parity, ghost species, and covariant-index
-balance.  It finds three signatures in each ghost-number-zero parity slice
-and 21 in each ghost-number-one parity slice once both Weyl and Diff ghosts
-are admitted.  Only two signatures in each slice are covered by the current
-curvature-carrier generator.  Generalized-connection degree is tracked as a
-separate pending expansion gate.  The missing derivative-ghost, pure-Diff,
-generalized-connection, and index-orbit gates are recorded rather than
-inferred away.
+and then applies tensor-seed, scalar-index, and epsilon-availability
+constraints.  The top-form Weyl counts refine from `3` to `2` at ghost number
+zero and from `9` to `5` at ghost number one.  A separate Diff top-form ledger
+refines from `12` to `7` signatures per parity sector.  The earlier combined
+count `21=9+12` remains stored for provenance, but is no longer presented as
+the top Weyl-anomaly count.  Generalized-connection degree is tracked as a
+separate pending expansion gate.  Raw index-contraction graphs and their
+hashes are now emitted for every refined row; their canonical quotient is
+still pending.
 
 ## Machine receipts
 
@@ -76,6 +77,7 @@ inferred away.
 - `quantum-weyl/local_bv/cohomology/H14_AFN0_RESULT.json`;
 - `quantum-weyl/local_bv/cohomology/slices/*.json` (eight mode-specific receipts);
 - `quantum-weyl/local_bv/certificates/AFN0_PRODUCTION_RUN_CERTIFICATE.json`;
+- `quantum-weyl/local_bv/certificates/BASIS_GAP_REPORT_AFN0.json`;
 - `quantum-weyl/local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR.json`.
 
 ## Next computation
@@ -90,11 +92,11 @@ membership problem.
 
 | Rail | Result |
 |---|---:|
-| focused proof, AFN0, filtration, Euler, and quotient tests | 23 pass in 1.20 s |
-| complete local-BV suite | 163 pass in 22.15 s |
+| focused basis-gap, AFN0, and consumer tests | 15 pass in 1.28 s |
+| complete local-BV suite | 169 pass in 25.51 s |
 | generic result schemas | 6 pass in 0.001 s |
-| classical-import regression | 16 pass in 0.317 s |
-| four affected certificate builders under hash seeds `1,7,123` | identical in 7.8 s |
+| classical-import regression | 16 pass in 0.315 s |
+| three affected certificate builders under hash seeds `1,7,123` | identical in about 10 s |
 | changed Python compile rail | pass |
 
 The full classical certificate pipeline was not rerun: no classical input,

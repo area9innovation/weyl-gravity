@@ -1,0 +1,73 @@
+"""Emit the fail-closed AFN0 basis-gap report."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+from typing import Any
+
+from .algebra import canonical_sha256
+from .basis_gap import basis_gap_report
+
+
+PACKAGE_ROOT = Path(__file__).resolve().parent
+OUTPUT_PATH = PACKAGE_ROOT / "certificates" / "BASIS_GAP_REPORT_AFN0.json"
+SCHEMA_PATH = PACKAGE_ROOT / "schema" / "basis_gap_report_afn0.schema.json"
+
+
+def _source_manifest() -> dict[str, str]:
+    paths = (
+        "basis_exhaustiveness.py",
+        "basis_gap.py",
+        "basis_gap_certificate.py",
+        "tensor_graphs.py",
+        "schema/basis_gap_report_afn0.schema.json",
+        "tests/test_basis_exhaustiveness.py",
+        "tests/test_basis_gap.py",
+        "tests/test_tensor_graphs.py",
+    )
+    return {
+        path: hashlib.sha256((PACKAGE_ROOT / path).read_bytes()).hexdigest()
+        for path in paths
+    }
+
+
+def build_certificate() -> dict[str, Any]:
+    report = basis_gap_report()
+    source_manifest = _source_manifest()
+    payload = {
+        **report,
+        "canonical_hashes": {
+            "source_manifest_sha256": canonical_sha256(source_manifest),
+            "report_payload_sha256": report["report_hash"],
+        },
+    }
+    return {**payload, "certificate_hash": canonical_sha256(payload)}
+
+
+def _render(value: dict[str, Any]) -> str:
+    return json.dumps(value, indent=2, sort_keys=True, ensure_ascii=True) + "\n"
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--emit", action="store_true")
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args()
+    content = _render(build_certificate())
+    if args.emit:
+        OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+        OUTPUT_PATH.write_text(content, encoding="utf-8")
+    if args.check and OUTPUT_PATH.read_text(encoding="utf-8") != content:
+        raise SystemExit(f"AFN0 basis-gap report is stale: {OUTPUT_PATH}")
+    if not args.emit and not args.check:
+        print(content, end="")
+    else:
+        print("AFN0 BASIS GAP: FAIL-CLOSED REPORT VERIFIED")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
