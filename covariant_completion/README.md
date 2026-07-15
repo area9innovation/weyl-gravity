@@ -25,8 +25,8 @@ helicity-two Weyl-symbol isomorphism, the exact 26-state Weyl--Cotton system,
 the symbolic all-level `E/A/L` curvature audit, and the formally integrable
 constraint-adjusted symmetric-hyperbolic realization with compatible
 sources.  It does **not** yet include the complete prolonged Green witness or
-an actual BV Green homotopy, residual endpoint recovery, equivariant
-transport, or prolonged current comparison.  The all-row curvature
+an actual BV Green homotopy, residual endpoint recovery, or equivariant
+transport.  The all-row curvature
 prolongation is now exact: the corrected curved cotangent projections remove
 the spurious rank-four Rees defect, and the complete sixteen-block local SDR
 and prolonged BV differential are certified.  This package also does not claim a
@@ -350,10 +350,11 @@ actual curved cotangent maps `p_E` and `p_I`, the identities
 `N A_aux=B_aux C_aux` are exact.  Conjugating the complete sixteen-block
 cotangent cone therefore proves `Q_prol^2=0`, odd cyclicity, `PI=1`, and
 `IP-1=QH+HQ` on every row using finite-order support-local maps.  The
-prolonged current comparison remains false pending an explicit provenance
-link to the corrected curved core chain map.  Closing the witness still requires a
-genuinely coupled two-way relative auxiliary--curvature block, unless the
-auxiliary diagonal is independently replaced by a Green-hyperbolic witness.
+prolonged current certificate now binds the corrected curved core chain map
+and proves the off-shell `d+Q` comparison exactly.  Closing the witness now
+means constructing `W_end`, `L_end`, and the causal inverses on the retained
+metric--curvature graph; the scalar-wave-obstructed auxiliary diagonal is not
+used as the endpoint witness.
 
 The generic prenormal-symbol diagnostic is nevertheless exact.  Writing
 `q=g^{-1}(zeta,zeta)` and `P2=J_act^{-1} E2+K1 C1`, it proves
@@ -591,13 +592,51 @@ required.  The exact curved core certificate reconstructs the full order
 zero/two projection, proves both lifted chain squares and binds them to the
 actual all-row auxiliary SDR.  Consequently the mapping-cylinder symbol is a
 complex and its local graph SDR is complete.  Cone cohomology and a causal
-Green inverse remain separate: the next gate is insertion of this exact
-operator into the generalized mixed-order witness, including the unresolved
-rank-14 causal block and all cotangent adjoints.
+Green inverse remain separate.  The common Douglis filtration now resolves
+the null algebra exactly: the authoritative curved attachment contains 15
+coefficient multiindices absent from the retract-composed page chart, and
+their degree `-2` contribution is precisely the missing differential on the
+residual `2 -> 4 -> 2` helicity page.  The two maps have rank two, their
+composition vanishes, and the certificate records an explicit finite-page
+homotopy.  Thus no null PBW/Rees cohomology survives.
 
-The remaining flags include regeneration of the prolonged current comparison
-as well as the prolonged Green witness, causal chain
-homotopy, residual endpoint recovery, and `SO(4,2)` equivariance.
+That finite-page result is not a strict differential inverse of the complete
+five-term cone.  The latter is ruled out exactly at zero covector: its lower
+endpoint equation would be `H1 K=I9` although `rank K=5`, and the correctly
+typed upper endpoint is the combined map `[N,B]`, for which
+`rank [N,B]=13<14`.  The use of `N` alone is a type error.  This scoped
+no-go is expected for propagating endpoints and does not obstruct Green
+hyperbolicity.
+
+The hybrid algebraic part is now exact:
+
+```text
+P_alg = D H_alg + H_alg D,   P_alg^2=P_alg,   [D,P_alg]=0
+P_end = 1-P_alg
+L_end = D W_end + W_end D
+Gamma_+- = W_end G_end,+- P_end
+Lambda_+- = H_alg + Gamma_+-
+```
+
+The composite SDR proves that `P_alg` and `P_end` are complementary,
+support-local, cyclic chain projectors.  It contracts 356 of the 386
+prolonged components and retains the 30-component metric--curvature graph.
+The component hashes of the `66 -> 30` auxiliary contraction are a
+flat-Fourier regression of its universal pointwise summand; curved exactness
+is supplied by the factorized curved-`Q` certificate, not by an expanded
+`30 x 30` curved coefficient table.  The endpoint `W_end`, `L_end`, and
+`G_end,+-` are not constructed, so no causal flag is promoted.
+
+The two scoped receipts are regenerated with
+
+```bash
+python3 symbolic/verify_conformal_rank14_corrected_rees_weights.py --guards
+python3 symbolic/verify_conformal_rank14_strict_local_contraction_no_go.py --guards
+python3 symbolic/verify_conformal_prolonged_hybrid_algebraic_projector.py --guards
+```
+
+The remaining flags are the prolonged Green witness, causal chain homotopy,
+residual endpoint recovery, and `SO(4,2)` equivariance.
 The terminal stage transports the existing `H4 = C^2`, `G = I2`; it must not
 recompute the residual CE complex.
 
@@ -672,8 +711,8 @@ four-jets.  The old sparse identity-square defect used a flat-Fourier
 projection in the curved cotangent row.  The reconstructed curved `p_E/p_I`
 maps now give the exact degree/sign-resolved odd BV mapping cylinder,
 nilpotent all-row differential, and support-local SDR.  The prolonged current
-comparison remains false until its certificate explicitly binds the corrected
-curved core-chain digest.  A genuinely
+comparison now binds that corrected digest and is exact off shell; its
+identification with a causal Green pairing remains downstream.  A genuinely
 curvature-prolonged realization is now the selected final dependency gate.
 
 The compact four-flag view is reproduced with
@@ -700,9 +739,8 @@ derived as the exact 26-state Weyl--Cotton system; its curved lower-order
 terms, sourced constraints, formal integrability, and all-level `E/A/L`
 audit are exact.  The all-row BV-canonical mapping cylinder is now exact in
 the corrected curved cotangent coordinates.  The remaining work is to
-construct the Green witness and homotopy, endpoint recovery, equivariant
-transport, and bind the prolonged current comparison to the corrected core
-chain map.  Only
+construct the Green witness and homotopy, endpoint recovery, and equivariant
+transport.  Only
 after that theorem can the causal
 quasi-isomorphism and Green/current pairing equality be promoted.  A
 direct same-bundle metric factorization is an optional strengthening, not an

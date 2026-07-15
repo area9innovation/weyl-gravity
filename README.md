@@ -99,12 +99,11 @@ constraints, and exhaustive comparison on all 150 Weyl two-jets proves the
 curved equations and this local first-order closure.  Formal integrability
 adds six secondary constraints.  The constraint-adjusted 26-state system is
 exactly equivalent as a differential ideal, symmetric hyperbolic with causal
-speeds, and has a complete sourced subsidiary identity.  The proposed odd BV
-mapping cylinder is not yet a complex in the fibre-identified coordinates:
-its final associated-graded square has exact rank four.  Hence the all-row
-prolongation retract, prolonged BV operator identity, and
-prolonged/auxiliary current comparison remain open together with the Green
-witness, causal homotopy, endpoint recovery, and `SO(4,2)` transport.  Hadamard
+speeds, and has a complete sourced subsidiary identity.  The corrected
+fibre-identified curved projections close the odd BV mapping cylinder.  Its
+all-row prolongation retract, prolonged BV operator identity, and off-shell
+prolonged/auxiliary current comparison are exact.  The Green witness, causal
+homotopy, endpoint recovery, and `SO(4,2)` transport remain open.  Hadamard
 theory also remains open.  A direct same-bundle
 factorization of `B_lin+K T/2` is an optional strengthening, not a hidden
 premise.
@@ -141,7 +140,7 @@ causal_green_homotopy              = false
 causal_quasi_isomorphism           = false
 residual_endpoint_recovery         = false
 SO42_equivariant_transport         = false
-prolonged_current_comparison       = false
+prolonged_current_comparison       = true
 ```
 
 The `SO(4,2)` item is now an exact conditional recognition theorem rather
@@ -170,15 +169,16 @@ projections `p_E=(D^-1 S_h^sharp D,1,0)` and `p_I` gives
 mapping cylinder is coefficientwise nilpotent and odd cyclic, enumerates
 every field/equation/identity and dual row, and satisfies
 `PI=1`, `IP-1=QH+HQ` by finite-order local maps.  Thus the all-row local
-prolongation and BV operator flags are now true.  The prolonged current flag
-remains false until its current certificate is explicitly rebound to the new
-curved core-chain provenance.  The auxiliary
-field block $E_{\rm aux}+KC$ and its cotangent copy are the two remaining
-blocks and retain the scalar-wave rank obstruction.  The final witness must
-therefore go beyond direct-sum conjugation, using two-way relative
-auxiliary--curvature degree-minus-one terms that form a genuinely coupled
-saddle operator, unless an independently Green-hyperbolic auxiliary
-diagonal witness is found.  Two further fail-closed diagnostics sharpen this
+prolongation and BV operator flags are now true.  The prolonged current
+certificate is rebound to the curved core-chain provenance and proves the
+off-shell `d+Q` comparison exactly; Green/current equality remains
+downstream.  The support-local cyclic hybrid projector also contracts 356
+prolonged components and retains the 30-component metric--curvature graph.
+Only its endpoint Green witness and inverses remain open.  The construction
+does not use the scalar-wave-obstructed auxiliary block $E_{\rm aux}+KC$ as
+an endpoint witness; the next operator is
+$L_{\rm end}=QW_{\rm end}+W_{\rm end}Q$ on the retained metric--curvature
+graph.  Two further fail-closed diagnostics sharpen this
 open step.  At an arbitrary covector the auxiliary prenormal principal symbol
 satisfies `(P2-q I)^2=0`, with Smith multiplicities `6/12/6` for the
 algebraic/wave/biwave factors.  The formal lower factor `2q I-P2` is exact at
