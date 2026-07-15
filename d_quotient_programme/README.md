@@ -49,6 +49,8 @@ because the existing results concern different objects:
 - [`reports/einstein-maxwell-product-registration-receipt.md`](reports/einstein-maxwell-product-registration-receipt.md)
 - [`contributions/einstein-maxwell-product-tangent-preflight.json`](contributions/einstein-maxwell-product-tangent-preflight.json)
 - [`reports/einstein-maxwell-product-tangent-registration-receipt.md`](reports/einstein-maxwell-product-tangent-registration-receipt.md)
+- [`contributions/einstein-maxwell-chevreton-tangent.json`](contributions/einstein-maxwell-chevreton-tangent.json)
+- [`reports/einstein-maxwell-chevreton-tangent-registration-receipt.md`](reports/einstein-maxwell-chevreton-tangent-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -108,3 +110,11 @@ conformally Einstein, nor Einstein with the same clock stress for any
 constant `kappa,Lambda`; therefore its same-base-point Einstein tangent gate
 is `NOT_APPLICABLE`.  This does not replace the nonlinear team's separate
 `CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT` gate.
+
+At the separate common Einstein--Maxwell/Weyl--Maxwell product background,
+the principal chain map is now complemented by a complete on-shell linear
+theorem. The parallel flux kills the first variation of the quadratic
+Chevreton defect, so every Einstein--Maxwell solution tangent survives in
+Weyl--Maxwell before residual quotient. This does not yet supply the curved
+off-shell BV map, quotient injection, nonlinear closure, or causal scattering
+sector.

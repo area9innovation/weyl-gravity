@@ -12,23 +12,23 @@
     "the charge vanishes on the exact sector proposed for quotienting",
     "the zero-charge transformations close as a Lie algebra or declared algebroid",
     "the classical Cartan and causal homotopies exist in the declared support category",
-    "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and unfixed cyclic 54-to-26 nonminimal contraction are complete; the gauge-fermion shear, total causal homotopy, q2, and arity-two stability remain open",
+    "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and the support-local cyclic gauge-fixed 54-to-26 contraction are complete; total causal homotopy, q2, local D-equivariance, and arity-two stability remain open",
     "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
-    "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; curved lower-order completion, prolonged modes, cyclicity, presymplectic comparison, and all D/charge questions remain open",
+    "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open",
     "interacting promotion requires a corrected Cartan homotopy",
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
   "next_shared_gate": {
-    "gate_id": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
+    "gate_id": "BERGER_GAUGE_FIXED_TOTAL_CAUSAL_HOMOTOPY",
     "owner_order": [
       "classical",
       "nonlinear",
       "quantum",
       "einstein_boundary"
     ],
-    "rule": "The fixed-coupling D_GAUGE gate, clock SDR, complete retained minimal q1, causal endpoint factors, and reattached scalar-biwave principal witness are complete. Construct the curved lower-order witness and total causal homotopy without weakening the separate nonminimal, q2, arity-two, or Einstein-incidence gates."
+    "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "0629a381eeffca10beb229fd6cbf2cc28d476182",
+  "programme_base_commit": "445e26663d06764bc858ff0a004ba6178acce75f",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -45,7 +45,7 @@
   },
   "registry_hashes": {
     "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-    "phase_space_registry": "654ce74ba298d2fb455a7455df024d0296d7414552c67024028ad41606cf075a"
+    "phase_space_registry": "64736875755f380c9a761268cf02b95a4434a4fcb5b845763eb5f072cf611285"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -194,6 +194,15 @@
       "setting_id": "compact_einstein_maxwell_product_tangent_preflight",
       "status": "PARTIAL",
       "verdict": "PRINCIPAL_TANGENT_CHAIN_MAP_WITH_EXTRA_WEYL_CLASSES"
+    },
+    {
+      "boundary_conditions": "complete linearized solution tangents at the parallel-flux product before residual quotient; off-shell BV, causal support, and global bundle data open",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_on_shell_linear_tangents",
+      "setting_id": "compact_einstein_maxwell_product_on_shell_tangent",
+      "status": "CERTIFIED",
+      "verdict": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CHEVRETON"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -865,6 +874,47 @@
       "sha256": "895ce597a51dd11306f2dbb8a2fee1e957cbb63aecdf734f20f3673ea7d73288"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-chevreton-tangent.json",
+      "payload": {
+        "boundary_conditions": "complete linearized source-free Einstein--Maxwell solution tangents at the certified R_t x S1_L x S2_r parallel-flux product background, before residual quotient; no off-shell BV or causal support completion",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC"
+        ],
+        "established": [
+          "the Einstein--Maxwell Bach/Chevreton defect is quadratic in nabla F and has vanishing value and first variation at the parallel-flux product background",
+          "the exact product tuning makes alpha_B*(2*kappa*Lambda/3)=1",
+          "every complete linearized source-free Einstein--Maxwell solution maps identically to a complete linearized pure-Weyl--Maxwell solution, including curvature and background-flux lower-order terms",
+          "the ordinary graviton-plus-photon solution tangents survive before the residual quotient"
+        ],
+        "evidence": {
+          "commit": "9518d0ea13f2683d6039a1d475f0a65ed145e768",
+          "path": "bridge/certificates/einstein_maxwell_chevreton_tangent.json",
+          "sha256": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "construct the curved off-shell BV equation and identity row maps with cyclic pairing and magnetic-bundle gluing, prolong the fourth-order characteristic complex, and evaluate the quadratic Chevreton defect at second order on physical representatives",
+        "not_established": [
+          "a curved off-shell BV chain map, cyclic pairing, or covariant presymplectic embedding",
+          "injectivity after the residual quotient or an observable-algebra inclusion",
+          "nonlinear Einstein--Maxwell sector closure or the physical second-order obstruction",
+          "a Lorentzian-causal, asymptotically flat, scattering, or quantum verdict"
+        ],
+        "phase_space_id": "einstein_maxwell_product_on_shell_linear_tangents",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_product_on_shell_tangent",
+        "team_id": "einstein_boundary",
+        "verdict": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CHEVRETON",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_chevreton_tangent --verify bridge/certificates/einstein_maxwell_chevreton_tangent.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_chevreton_tangent.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_chevreton_tangent"
+        ]
+      },
+      "sha256": "b1dbbeb358dbdc2f86f13e44689213139aefcaa66456f73fdbeb8e8edcea191e"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -952,9 +1002,9 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "0629a381eeffca10beb229fd6cbf2cc28d476182",
+      "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "2d72ef0f037c0c9cc3b259b06051df042375ab9b4f39499f38ec105616d04c7b"
+      "sha256": "743d6b4015b85304113444e06e029f656858b19c5efb2b384939b57efc5fba11"
     },
     "einstein_boundary": {
       "commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
@@ -974,16 +1024,16 @@
   },
   "team_status": [
     {
-      "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 is exact and cyclic; its 34-row minimal contraction is portable. Five nonminimal antighost--multiplier quartets extend it to an exact pointwise cyclic unfixed 54-to-26 contraction, and the curved five-direction companion is derived from one source.",
-      "next_gate": "apply the gauge-fermion canonical transform coefficientwise on all 54 rows, then construct the causal homotopy and export q2",
-      "result_state": "BERGER_UNFIXED_54_TO_26_CONTRACTION_CLOSED_GAUGE_FERMION_CAUSAL_OPEN",
+      "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 is exact and cyclic; its 34-row minimal contraction is portable. Five nonminimal antighost--multiplier quartets extend it to 54 rows, and the selected gauge fermion acts by an exact finite BV-canonical shear, producing a complete support-local cyclic gauge-fixed 54-to-26 contraction.",
+      "next_gate": "construct the total causal homotopy for the gauge-fixed 54-row complex, then export q2 and test local D-equivariance",
+      "result_state": "BERGER_GAUGE_FIXED_54_TO_26_CONTRACTION_CLOSED_CAUSAL_AND_Q2_OPEN",
       "team_id": "classical",
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is a non-Einstein branch. A positive Einstein--Maxwell/Weyl--Maxwell product supplies an exact common base point; its action-normalized principal BV chain map injects the ordinary Einstein null-symbol classes and leaves two additional simple-symbol Weyl metric classes.",
-      "next_gate": "complete the curved product Hessians, lower-order chain map, cyclic and presymplectic comparison, and prolonged fourth-order characteristic complex; independently complete the asymptotic Bach phase space and charge audit",
-      "result_state": "COMMON_BACKGROUND_AND_PRINCIPAL_TANGENT_MAP_CERTIFIED_CURVED_PHASE_SPACE_OPEN",
+      "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is a non-Einstein branch. A positive Einstein--Maxwell/Weyl--Maxwell product supplies an exact common base point and principal BV chain map. The Bach/Chevreton factorization now proves that every complete Einstein--Maxwell linear solution tangent, including curvature and flux lower-order terms, survives in Weyl--Maxwell before quotient.",
+      "next_gate": "construct the curved off-shell BV row maps, cyclic and presymplectic comparison, magnetic-bundle gluing, prolonged fourth-order characteristic complex, and second-order Chevreton obstruction; independently complete the asymptotic Bach phase space and charge audit",
+      "result_state": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CERTIFIED_OFF_SHELL_BV_AND_CAUSAL_PHASE_SPACE_OPEN",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },

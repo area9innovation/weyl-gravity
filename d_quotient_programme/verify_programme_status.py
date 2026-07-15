@@ -33,6 +33,7 @@ EINSTEIN_ED1A_CONTRIBUTION = PACKAGE / "contributions" / "einstein-ed1a-asymptot
 EINSTEIN_BERGER_INCIDENCE_CONTRIBUTION = PACKAGE / "contributions" / "einstein-berger-incidence.json"
 EINSTEIN_MAXWELL_PRODUCT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-product-incidence.json"
 EINSTEIN_MAXWELL_TANGENT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-product-tangent-preflight.json"
+EINSTEIN_MAXWELL_CHEVRETON_TANGENT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-chevreton-tangent.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -132,6 +133,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
             "berger_clock_reattached_principal_witness",
             "berger_minimal_34_portable_contraction",
             "berger_nonminimal_algebraic_completion",
+            "berger_gauge_fixed_nonminimal_completion",
         ]
     ):
         raise AssertionError("classical scalar-clock obstruction scope drifted")
@@ -639,6 +641,33 @@ def _einstein_maxwell_tangent_contribution() -> dict[str, Any]:
     return contribution
 
 
+def _einstein_maxwell_chevreton_tangent_contribution() -> dict[str, Any]:
+    contribution = _load(EINSTEIN_MAXWELL_CHEVRETON_TANGENT_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "einstein_boundary"
+        and contribution.get("setting_id")
+        == "compact_einstein_maxwell_product_on_shell_tangent"
+        and contribution.get("generator_id") == "H_product"
+        and contribution.get("phase_space_id")
+        == "einstein_maxwell_product_on_shell_linear_tangents"
+        and contribution.get("lifecycle_layer") == "CLASSICAL_BV"
+        and contribution.get("claim_status") == "CERTIFIED"
+        and contribution.get("verdict")
+        == "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CHEVRETON"
+        and contribution.get("dependency_tags") == ["LOCAL-ALGEBRAIC"]
+    ):
+        raise AssertionError("Einstein--Maxwell Chevreton tangent scope drifted")
+    evidence = contribution.get("evidence", {})
+    path = evidence.get("path")
+    commit = evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("Einstein--Maxwell Chevreton tangent evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("Einstein--Maxwell Chevreton tangent evidence hash drifted")
+    return contribution
+
+
 def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     team_data = {team: _load_team_input(path) for team, path in TEAM_PATHS.items()}
     _assert_team_inputs(team_data)
@@ -663,6 +692,9 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     berger_incidence_contribution = _einstein_berger_incidence_contribution()
     maxwell_product_contribution = _einstein_maxwell_product_contribution()
     maxwell_tangent_contribution = _einstein_maxwell_tangent_contribution()
+    maxwell_chevreton_tangent_contribution = (
+        _einstein_maxwell_chevreton_tangent_contribution()
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
@@ -753,6 +785,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": maxwell_tangent_contribution,
             },
             {
+                "path": str(EINSTEIN_MAXWELL_CHEVRETON_TANGENT_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_CHEVRETON_TANGENT_CONTRIBUTION),
+                "payload": maxwell_chevreton_tangent_contribution,
+            },
+            {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
@@ -766,17 +803,17 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "team_status": [
             {
                 "team_id": "classical",
-                "result_state": "BERGER_UNFIXED_54_TO_26_CONTRACTION_CLOSED_GAUGE_FERMION_CAUSAL_OPEN",
+                "result_state": "BERGER_GAUGE_FIXED_54_TO_26_CONTRACTION_CLOSED_CAUSAL_AND_Q2_OPEN",
                 "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE",
-                "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 is exact and cyclic; its 34-row minimal contraction is portable. Five nonminimal antighost--multiplier quartets extend it to an exact pointwise cyclic unfixed 54-to-26 contraction, and the curved five-direction companion is derived from one source.",
-                "next_gate": "apply the gauge-fermion canonical transform coefficientwise on all 54 rows, then construct the causal homotopy and export q2",
+                "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 is exact and cyclic; its 34-row minimal contraction is portable. Five nonminimal antighost--multiplier quartets extend it to 54 rows, and the selected gauge fermion acts by an exact finite BV-canonical shear, producing a complete support-local cyclic gauge-fixed 54-to-26 contraction.",
+                "next_gate": "construct the total causal homotopy for the gauge-fixed 54-row complex, then export q2 and test local D-equivariance",
             },
             {
                 "team_id": "einstein_boundary",
-                "result_state": "COMMON_BACKGROUND_AND_PRINCIPAL_TANGENT_MAP_CERTIFIED_CURVED_PHASE_SPACE_OPEN",
+                "result_state": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CERTIFIED_OFF_SHELL_BV_AND_CAUSAL_PHASE_SPACE_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is a non-Einstein branch. A positive Einstein--Maxwell/Weyl--Maxwell product supplies an exact common base point; its action-normalized principal BV chain map injects the ordinary Einstein null-symbol classes and leaves two additional simple-symbol Weyl metric classes.",
-                "next_gate": "complete the curved product Hessians, lower-order chain map, cyclic and presymplectic comparison, and prolonged fourth-order characteristic complex; independently complete the asymptotic Bach phase space and charge audit",
+                "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is a non-Einstein branch. A positive Einstein--Maxwell/Weyl--Maxwell product supplies an exact common base point and principal BV chain map. The Bach/Chevreton factorization now proves that every complete Einstein--Maxwell linear solution tangent, including curvature and flux lower-order terms, survives in Weyl--Maxwell before quotient.",
+                "next_gate": "construct the curved off-shell BV row maps, cyclic and presymplectic comparison, magnetic-bundle gluing, prolonged fourth-order characteristic complex, and second-order Chevreton obstruction; independently complete the asymptotic Bach phase space and charge audit",
             },
             {
                 "team_id": "nonlinear",
@@ -939,6 +976,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "PRINCIPAL_TANGENT_CHAIN_MAP_WITH_EXTRA_WEYL_CLASSES",
             },
             {
+                "setting_id": "compact_einstein_maxwell_product_on_shell_tangent",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_on_shell_linear_tangents",
+                "boundary_conditions": "complete linearized solution tangents at the parallel-flux product before residual quotient; off-shell BV, causal support, and global bundle data open",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CHEVRETON",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1008,9 +1054,9 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "the charge vanishes on the exact sector proposed for quotienting",
             "the zero-charge transformations close as a Lie algebra or declared algebroid",
             "the classical Cartan and causal homotopies exist in the declared support category",
-            "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and unfixed cyclic 54-to-26 nonminimal contraction are complete; the gauge-fermion shear, total causal homotopy, q2, and arity-two stability remain open",
+            "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and the support-local cyclic gauge-fixed 54-to-26 contraction are complete; total causal homotopy, q2, local D-equivariance, and arity-two stability remain open",
             "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
-            "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; curved lower-order completion, prolonged modes, cyclicity, presymplectic comparison, and all D/charge questions remain open",
+            "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open",
             "interacting promotion requires a corrected Cartan homotopy",
             "quantum promotion requires a restored QME and renormalized Ward identity",
         ],
@@ -1029,9 +1075,9 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
         },
         "next_shared_gate": {
-            "gate_id": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
+            "gate_id": "BERGER_GAUGE_FIXED_TOTAL_CAUSAL_HOMOTOPY",
             "owner_order": ["classical", "nonlinear", "quantum", "einstein_boundary"],
-            "rule": "The fixed-coupling D_GAUGE gate, clock SDR, complete retained minimal q1, causal endpoint factors, and reattached scalar-biwave principal witness are complete. Construct the curved lower-order witness and total causal homotopy without weakening the separate nonminimal, q2, arity-two, or Einstein-incidence gates.",
+            "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates.",
         },
         "claim_boundary": (
             "The dossier consolidates sector-indexed results. It does not promote a "
@@ -1082,6 +1128,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_positive_berger_clock_einstein_incidence",
         "compact_einstein_maxwell_product_background",
         "compact_einstein_maxwell_product_tangent_preflight",
+        "compact_einstein_maxwell_product_on_shell_tangent",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1102,6 +1149,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_positive_berger_clock_einstein_incidence": "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND",
         "compact_einstein_maxwell_product_background": "COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND",
         "compact_einstein_maxwell_product_tangent_preflight": "PRINCIPAL_TANGENT_CHAIN_MAP_WITH_EXTRA_WEYL_CLASSES",
+        "compact_einstein_maxwell_product_on_shell_tangent": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CHEVRETON",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -1132,6 +1180,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Einstein--Maxwell product common background was dropped")
     if ledger.get("compact_einstein_maxwell_product_tangent_preflight", {}).get("status") != "PARTIAL":
         errors.append("Einstein--Maxwell product tangent preflight was promoted or dropped")
+    if ledger.get("compact_einstein_maxwell_product_on_shell_tangent", {}).get("status") != "CERTIFIED":
+        errors.append("Einstein--Maxwell full on-shell tangent theorem was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -1188,10 +1238,10 @@ incidence. Its fixed-coupling linearized charge gate is also closed: the lapse
 constraint fixes \(\delta Q_R=0\), compact averaging excludes an inhomogeneous
 escape, and the scoped verdict is `D_GAUGE`. The clock rows contract
 support-locally and cyclically, the retained minimal `q1` is complete, and the
-reattached full gauge presentation has an exact scalar-biwave principal
-witness. Curved lower-order witness terms, the total causal homotopy,
-nonminimal rows, `q2`, and stability remain open. The Einstein-incidence audit
-separately classifies this background as a non-Einstein Weyl--matter branch.
+selected gauge fermion gives an exact support-local cyclic gauge-fixed
+54-to-26 contraction. The total causal homotopy, `q2`, local D-equivariance,
+and stability remain open. The Einstein-incidence audit separately classifies
+this background as a non-Einstein Weyl--matter branch.
 
 ## Four-team ledger
 
@@ -1382,6 +1432,15 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         != "compact_einstein_maxwell_product_tangent_preflight"
     ]
     reject("drop_Einstein_Maxwell_tangent_preflight_contribution", mutant)
+
+    mutant = deepcopy(data)
+    mutant["team_contributions"] = [
+        record
+        for record in mutant["team_contributions"]
+        if record["payload"]["setting_id"]
+        != "compact_einstein_maxwell_product_on_shell_tangent"
+    ]
+    reject("drop_Einstein_Maxwell_Chevreton_tangent_contribution", mutant)
 
     mutant = deepcopy(data)
     mutant["publication_plan"]["paper_IX"]["status"] = "ACTIVE_THEOREM_PAPER"

@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "complete linearized source-free Einstein--Maxwell solution tangents at the certified R_t x S1_L x S2_r parallel-flux product background, before residual quotient; no off-shell BV or causal support completion",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "established": [
+    "the Einstein--Maxwell Bach/Chevreton defect is quadratic in nabla F and has vanishing value and first variation at the parallel-flux product background",
+    "the exact product tuning makes alpha_B*(2*kappa*Lambda/3)=1",
+    "every complete linearized source-free Einstein--Maxwell solution maps identically to a complete linearized pure-Weyl--Maxwell solution, including curvature and background-flux lower-order terms",
+    "the ordinary graviton-plus-photon solution tangents survive before the residual quotient"
+  ],
+  "evidence": {
+    "commit": "9518d0ea13f2683d6039a1d475f0a65ed145e768",
+    "path": "bridge/certificates/einstein_maxwell_chevreton_tangent.json",
+    "sha256": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "construct the curved off-shell BV equation and identity row maps with cyclic pairing and magnetic-bundle gluing, prolong the fourth-order characteristic complex, and evaluate the quadratic Chevreton defect at second order on physical representatives",
+  "not_established": [
+    "a curved off-shell BV chain map, cyclic pairing, or covariant presymplectic embedding",
+    "injectivity after the residual quotient or an observable-algebra inclusion",
+    "nonlinear Einstein--Maxwell sector closure or the physical second-order obstruction",
+    "a Lorentzian-causal, asymptotically flat, scattering, or quantum verdict"
+  ],
+  "phase_space_id": "einstein_maxwell_product_on_shell_linear_tangents",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_product_on_shell_tangent",
+  "team_id": "einstein_boundary",
+  "verdict": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CHEVRETON",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_chevreton_tangent --verify bridge/certificates/einstein_maxwell_chevreton_tangent.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_chevreton_tangent.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_chevreton_tangent"
+  ]
+}
