@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-gauge-fixed-nonminimal-completion-v1.schema.json",
+  "title": "Gauge-fixed 54-row Berger classical unary complex",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "operator_semantics", "row_layout", "gauge_fermion", "classical_unary_q1", "contraction", "exact_checks", "flags", "quantum_handoff", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-gauge-fixed-nonminimal-completion-v1"},
+    "result_id": {"const": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "claim_status": {"const": "CERTIFIED_COMPLETE_GAUGE_FIXED_UNARY_CONTRACTION"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "additionalProperties": false, "required": ["unfixed_nonminimal", "minimal_34"], "properties": {"unfixed_nonminimal": {"$ref": "#/$defs/dependency"}, "minimal_34": {"$ref": "#/$defs/dependency"}}},
+    "operator_semantics": {"type": "object", "additionalProperties": false, "required": ["portable_name", "mathematical_name", "not_quantum_loop_operator", "normalization"], "properties": {"portable_name": {"const": "classical_unary_q1"}, "mathematical_name": {"const": "ell_1_cl_gauge_fixed"}, "not_quantum_loop_operator": {"const": true}, "normalization": {"const": "alpha_nm=1"}}},
+    "row_layout": {"type": "object", "required": ["total_rows", "degree_ranks", "minimal_rows", "nonminimal_rows", "component_rows", "ghost_order"], "properties": {"total_rows": {"const": 54}, "degree_ranks": {"const": [5, 22, 22, 5]}, "minimal_rows": {"const": 34}, "nonminimal_rows": {"const": 20}, "component_rows": {"type": "array", "minItems": 54, "maxItems": 54, "items": {"$ref": "#/$defs/row"}}, "ghost_order": {"const": ["diff_1", "diff_2", "diff_3", "tau", "sigma"]}}, "additionalProperties": false},
+    "gauge_fermion": {"type": "object", "additionalProperties": false, "required": ["formula", "raw_metric_relation", "raw_metric_from_dressed", "gauge_condition_A", "canonical_shear_nilpotent_part", "shear_formula", "maximum_differential_order", "support_local", "BV_canonical"], "properties": {"formula": {"type": "string", "minLength": 1}, "raw_metric_relation": {"type": "string", "minLength": 1}, "raw_metric_from_dressed": {"$ref": "#/$defs/operator10x12"}, "gauge_condition_A": {"$ref": "#/$defs/operator5x12"}, "canonical_shear_nilpotent_part": {"$ref": "#/$defs/operator54x54"}, "shear_formula": {"type": "string", "minLength": 1}, "maximum_differential_order": {"const": 4}, "support_local": {"const": true}, "BV_canonical": {"const": true}}},
+    "classical_unary_q1": {"type": "object", "additionalProperties": false, "required": ["matrix", "shape", "degree_ranks", "construction", "squared_zero", "cyclic"], "properties": {"matrix": {"$ref": "#/$defs/operator54x54"}, "shape": {"const": [54, 54]}, "degree_ranks": {"const": [5, 22, 22, 5]}, "construction": {"const": "U ell_1_unfixed U^{-1}"}, "squared_zero": {"const": true}, "cyclic": {"const": true}}},
+    "contraction": {"type": "object", "additionalProperties": false, "required": ["iota_cl", "pi_cl", "S_cl", "cyclic_pairing", "identity", "side_conditions", "support_local", "maximum_differential_order", "cyclic"], "properties": {"iota_cl": {"$ref": "#/$defs/operator54x26"}, "pi_cl": {"$ref": "#/$defs/operator26x54"}, "S_cl": {"$ref": "#/$defs/operator54x54"}, "cyclic_pairing": {"$ref": "#/$defs/operator54x54"}, "identity": {"type": "string", "minLength": 1}, "side_conditions": {"type": "array", "minItems": 3, "items": {"type": "string"}}, "support_local": {"const": true}, "maximum_differential_order": {"const": 4}, "cyclic": {"const": true}}},
+    "exact_checks": {"type": "object", "minProperties": 11, "additionalProperties": {"const": true}},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["BERGER_GAUGE_FERMION_CANONICAL_TRANSFORM", "BERGER_NONMINIMAL_COMPLETION", "BERGER_COMPLETE_GAUGE_FIXED_UNARY_EXPORT", "CLASSICAL_SUPPORT_LOCAL_Q2", "BERGER_LOCAL_D_ACTION_EQUIVARIANT", "BERGER_GENERAL_KOSZUL_TATE_EXPORT", "BERGER_CURVED_CLOCK_REATTACHED_WITNESS", "BERGER_CAUSAL_GREEN_HOMOTOPY", "BERGER_HADAMARD_DATA", "CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT"], "properties": {"BERGER_GAUGE_FERMION_CANONICAL_TRANSFORM": {"const": true}, "BERGER_NONMINIMAL_COMPLETION": {"const": true}, "BERGER_COMPLETE_GAUGE_FIXED_UNARY_EXPORT": {"const": true}, "CLASSICAL_SUPPORT_LOCAL_Q2": {"const": false}, "BERGER_LOCAL_D_ACTION_EQUIVARIANT": {"const": false}, "BERGER_GENERAL_KOSZUL_TATE_EXPORT": {"const": false}, "BERGER_CURVED_CLOCK_REATTACHED_WITNESS": {"const": false}, "BERGER_CAUSAL_GREEN_HOMOTOPY": {"const": false}, "BERGER_HADAMARD_DATA": {"const": false}, "CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT": {"const": false}}},
+    "quantum_handoff": {"type": "object", "additionalProperties": false, "required": ["available", "missing"], "properties": {"available": {"type": "array", "minItems": 4, "items": {"type": "string"}}, "missing": {"type": "array", "minItems": 4, "items": {"type": "string"}}}},
+    "next_gate": {"const": "CLASSICAL_SUPPORT_LOCAL_Q2_AND_D_ACTION"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["result_id", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "row": {"type": "object", "additionalProperties": false, "required": ["index", "row_id", "degree", "sector"], "properties": {"index": {"type": "integer", "minimum": 0, "maximum": 53}, "row_id": {"type": "string", "minLength": 1}, "degree": {"type": "integer", "minimum": -1, "maximum": 2}, "sector": {"type": "string", "minLength": 1}}},
+    "operator10x12": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [10, 12]}}}]},
+    "operator5x12": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [5, 12]}}}]},
+    "operator54x54": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [54, 54]}}}]},
+    "operator54x26": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [54, 26]}}}]},
+    "operator26x54": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [26, 54]}}}]},
+    "pbwOperatorRecord": {"type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"], "properties": {"shape": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 2, "maxItems": 2}, "entries": {"type": "array", "items": {"$ref": "#/$defs/pbwMatrixEntry"}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "pbwMatrixEntry": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/pbwTerm"}}], "items": false, "minItems": 3, "maxItems": 3},
+    "pbwTerm": {"type": "array", "prefixItems": [{"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}], "items": false, "minItems": 4, "maxItems": 4}, {"type": "string", "minLength": 1}], "items": false, "minItems": 2, "maxItems": 2}
+  }
+}

@@ -88,6 +88,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_NONMINIMAL_ALGEBRAIC_COMPLETION.json`](certificates/BERGER_NONMINIMAL_ALGEBRAIC_COMPLETION.json)
 - Nonminimal algebraic-completion report:
   [`reports/berger-nonminimal-algebraic-completion.md`](reports/berger-nonminimal-algebraic-completion.md)
+- Complete gauge-fixed 54-row Berger unary export:
+  [`certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json`](certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json)
+- Gauge-fixed nonminimal-completion report:
+  [`reports/berger-gauge-fixed-nonminimal-completion.md`](reports/berger-gauge-fixed-nonminimal-completion.md)
 
 The only scientific verdicts are:
 
@@ -145,6 +149,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_cau
 python3 d_quotient_classical/backreacted_clock/berger_nonminimal_algebraic_completion.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_nonminimal_algebraic_completion.py
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_nonminimal_algebraic_completion
+python3 d_quotient_classical/backreacted_clock/berger_gauge_fixed_nonminimal_completion.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_gauge_fixed_nonminimal_completion.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_gauge_fixed_nonminimal_completion
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -220,9 +227,11 @@ The portable 34-row certificate closes the combined minimal contraction
 requested by downstream teams. The twenty nonminimal antighost--multiplier
 rows are now also enumerated and contract pointwise and cyclically, giving an
 exact unfixed 54-to-26 contraction and a coefficientwise curved companion.
-The gauge-fermion canonical shear has deliberately not been applied, so the
-combined gauge-fixed nonminimal flag remains false. The remaining handoff
-still requires `classical_binary_q2`, local `D_action_cl`, the general
+The selected gauge fermion has now been applied as an exact finite-order
+BV-canonical shear. The resulting complete 54-row gauge-fixed
+`classical_unary_q1`, cyclic pairing, and transformed
+`iota_cl`, `pi_cl`, and `S_cl` are portable. The decisive remaining handoff
+requires `classical_binary_q2`, local `D_action_cl`, the general nonlinear
 Koszul--Tate package, and causal/Hadamard data.
 
 ## Promotion rule
