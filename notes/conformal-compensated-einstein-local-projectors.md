@@ -180,10 +180,18 @@ not the vacuum condition `Box h=0` imposed unchanged.
 
 ## Next object
 
-The next theorem must construct that Einstein-defect subcomplex on the full
-Diff x Weyl BV fields without relying on a nonlocal TT projection.  It should
-then construct the compatible retarded/advanced Green splitting and determine
-whether interactions preserve the defect-zero subcomplex.
+The sourced-defect preflight is now recorded in
+`notes/conformal-compensated-einstein-sourced-defect-preflight.md`.  It proves
+that a conventional same-source Einstein solution lies in the linearized
+Einstein--Weyl theory only when the independent tensor condition `Q(T)=0`
+holds.  Conservation and the compensator trace Ward identity do not imply this
+condition.
+
+The next theorem must therefore construct **or refute** the appropriate
+Einstein sector.  A fixed external source gives an affine defect-zero locus,
+not a BV subcomplex.  The next constructive gate is a certified compensated
+metric--scalar quadratic BV complex; only then can the defect be lifted to a
+chain map and its retarded/advanced propagation tested.
 
 Machine certificate:
 `bridge/certificates/compensated_einstein_local_projectors.json`.

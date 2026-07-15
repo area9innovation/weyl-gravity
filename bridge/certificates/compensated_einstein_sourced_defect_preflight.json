@@ -1,0 +1,163 @@
+{
+  "affine_vs_bv_classification": {
+    "compensated_freeze_gate": [
+      "quadratic compensated action and Hessian",
+      "metric and compensator gauge maps",
+      "diffeomorphism and Weyl ghosts plus antifields",
+      "scalar and metric Euler-Lagrange rows",
+      "Noether identities and exact nilpotency",
+      "BV pairing and cyclicity",
+      "contraction of the Weyl Stueckelberg pair on the phi=v chart",
+      "chain map from the compensated BV complex to the Einstein-defect target"
+    ],
+    "external_source_geometry": "for fixed nonzero T, solutions of Lh=T form an affine translate of ker(L), not a vector subspace",
+    "genuine_bv_requirement": "include matter fields, any matter gauge ghosts, antifields, equations, and Diff x Weyl Ward identities",
+    "status": "PASS",
+    "terminology_rule": "call the fixed-source defect-zero locus an affine sourced sector, not a BV subcomplex"
+  },
+  "claim_flags": {
+    "arbitrary_same_source_einstein_truncation_refuted": true,
+    "arbitrary_ward_compatible_external_source_preserves_einstein_sector": false,
+    "compensated_bv_freeze_gate_declared": true,
+    "compensated_quadratic_bv_complex_certified": false,
+    "conserved_incompatible_source_witness_constructed": true,
+    "dressed_source_alternative_classified": true,
+    "einstein_defect_chain_map_constructed": false,
+    "einstein_scattering_equivalence_proved": false,
+    "external_source_sector_classified_affine": true,
+    "fixed_external_source_locus_is_bv_subcomplex": false,
+    "gauge_covariant_einstein_defect_defined": true,
+    "linearized_bach_factorization_derived": true,
+    "matter_inclusive_bv_complex_constructed": false,
+    "nonlinear_einstein_truncation_proved": false,
+    "null_infinity_closure_proved": false,
+    "reduced_tt_source_obstruction_matched": true,
+    "retarded_advanced_defect_propagation_proved": false,
+    "same_source_compatibility_operator_derived": true,
+    "source_ward_identities_declared": true,
+    "weyl_invariant_linear_metric_derived": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": {
+    "equation": "linearized Einstein-Weyl metric equation with an external source",
+    "parameters": "c1 and alpha nonzero; M2=c1/alpha in the TT comparison",
+    "phase": "constant nonzero compensator phi=v, lambda=0",
+    "source_class": "symmetric distributional or smooth tensor satisfying declared Ward identities",
+    "spacetime": "four-dimensional Minkowski space"
+  },
+  "inputs": {
+    "causal_subsector": {
+      "path": "bridge/certificates/compensated_einstein_causal_subsector.json",
+      "sha256": "ec91bb684fc0b306517de5d1bcd9763a5b69b1520fe3bd4a6b61de7e697b73b9"
+    },
+    "compensator_phase": {
+      "path": "bridge/certificates/compensator_einstein_phase.json",
+      "sha256": "b5c9f6caa05a263cdb006c33e6bbf60139139d8c30303706e073948a62e7a6b4"
+    },
+    "local_projectors": {
+      "path": "bridge/certificates/compensated_einstein_local_projectors.json",
+      "sha256": "0a895b5f4f3f5ed3d29c8474a4174bdc9f486579b7a57cc3accc8303c602818a"
+    },
+    "pure_weyl_free_bv_reference": {
+      "path": "bridge/certificates/free_bv_complex.json",
+      "sha256": "015d829312c2d4337d6dc4a2212e4ab81a5ec699a1e8c79c76c3fe5128ce4bde"
+    }
+  },
+  "linearized_tensor_theorem": {
+    "background": "four-dimensional Minkowski space with eta=diag(1,-1,-1,-1)",
+    "diffeomorphism_variation": "delta_xi h_hat_mn=partial_m xi_n+partial_n xi_m",
+    "identities": [
+      "partial^m G1_mn=0",
+      "partial^m B1_mn=0",
+      "tr(B1)=0",
+      "G1(delta_xi h_hat)=0",
+      "B1(delta_xi h_hat)=0"
+    ],
+    "linearized_bach_factorization": "B1_mn=Q(G1)_mn=(1/2)Box G1_mn-(1/6)(eta_mn Box-partial_m partial_n)tr(G1)",
+    "linearized_einstein_tensor": "G1_mn=R1_mn-(1/2)eta_mn R1",
+    "status": "PASS",
+    "tt_reduction": [
+      "G1(h_TT)=-(1/2)Box h_TT",
+      "B1(h_TT)=-(1/4)Box^2 h_TT"
+    ],
+    "weyl_invariant_metric": "h_hat_mn=h_mn+2(varphi/v)eta_mn",
+    "weyl_variations": [
+      "delta_sigma h_mn=2 sigma eta_mn",
+      "delta_sigma varphi=-v sigma"
+    ]
+  },
+  "programme_decision": {
+    "next_certificate": "COMPENSATED_QUADRATIC_BV_FREEZE",
+    "revised_E_D2_target": "construct or refute a same-source Einstein sector; do not assume generic source closure",
+    "success_outcomes": [
+      "same-source closure on a precisely characterized admissible source class",
+      "a scoped no-go for arbitrary Ward-compatible external sources",
+      "a separately labelled higher-derivative dressed-source sector"
+    ],
+    "then": "lift the defect to a chain map and test retarded/advanced propagation on declared spaces"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/compensated_einstein_sourced_defect_preflight.py",
+    "generator_sha256": "236b2331abc888908e2dcedce715a279bb173a37728c3326dc0c9f9b70bfd3ea",
+    "input_base_commit": "c9098557717623ade475649cd0d9e97c9b6c0fe8"
+  },
+  "result_id": "COMPENSATED_EINSTEIN_SOURCED_DEFECT_PREFLIGHT",
+  "result_state": "SOURCE_COMPATIBILITY_CLASSIFIED_COMPENSATED_BV_OPEN",
+  "schema": "compensated-einstein-sourced-defect-preflight-v1",
+  "schema_path": "bridge/einstein_sector/schema/compensated_einstein_sourced_defect_preflight.schema.json",
+  "schema_sha256": "8045a28d64a1973386865b2016a544b406cc9e8312b6d870f1885365f2eb2354",
+  "scope_guards": [
+    "the tensor identities are linearized LOCAL-ALGEBRAIC statements on flat space",
+    "the D(D+M2) comparison is REDUCED-MODE and is not reused as a full BV propagator",
+    "Q(T)=0 classifies same-source compatibility; it is not implied by conservation alone",
+    "the explicit incompatible source is a local Fourier-symbol witness, not a global matter solution",
+    "a dressed source changes the source coupling and is not conventional same-source Einstein equivalence",
+    "a fixed external source defines an affine sector and cannot by itself define a BV subcomplex",
+    "the imported pure-Weyl free BV complex is not a compensated metric-scalar BV freeze",
+    "no LORENTZIAN-CAUSAL, nonlinear, null-infinity, scattering, or quantum claim is made"
+  ],
+  "source_compatibility_theorem": {
+    "conserved_counterexample": {
+      "consequence": "conservation and the Weyl trace Ward identity do not imply Einstein compatibility",
+      "momentum": "p_m=(1,0,0,0)",
+      "properties": [
+        "partial^m T_mn=0",
+        "tr(T)=0",
+        "Q(T)=(1/2)T!=0"
+      ],
+      "source": "T_mn=diag(0,1,-1,0)"
+    },
+    "defect_equation": "(c1 I+2 alpha Q)Delta=-(2 alpha/c1)Q(T)",
+    "dressed_source_alternative": {
+      "classification": "local higher-derivative source dressing; not same-source equivalence to conventional Einstein matter",
+      "formula": "T_EW=T_E+(2 alpha/c1)Q(T_E)",
+      "meaning": "an Einstein solution c1 G1=T_E solves the Einstein-Weyl equation with T_EW"
+    },
+    "einstein_defect": "Delta_mn=G1_mn(h_hat)-T_mn/c1",
+    "einstein_weyl_equation": "c1 G1(h_hat)+2 alpha B1(h_hat)=T",
+    "necessary_and_sufficient_same_source_condition": "Q(T)=0",
+    "reduced_tt_check": {
+      "compatibility": "D J=0",
+      "defect": "delta=D h-J/M2",
+      "defect_equation": "(D+M2)delta=-(D J)/M2",
+      "fourth_order_equation": "D(D+M2)h=J with M2=c1/alpha",
+      "same_source_einstein_equation": "D h=J/M2",
+      "substitution": "D(D+M2)h=J+(D J)/M2"
+    },
+    "same_source_einstein_equation": "c1 G1(h_hat)=T",
+    "source_obstruction": "Q(T)_mn=(1/2)Box T_mn-(1/6)(eta_mn Box-partial_m partial_n)tr(T)",
+    "status": "PASS"
+  },
+  "source_ward_theorem": {
+    "diffeomorphism_ward_identity": "nabla_m T^m_n=J_phi partial_n phi; on phi=v constant this reduces to partial_m T^m_n=0",
+    "metric_only_source_warning": "a traceful metric source with J_phi=0 violates the compensator Weyl Ward identity",
+    "status": "PASS",
+    "variation_convention": "delta S_source=int[(1/2)T^mn delta g_mn+J_phi delta phi]",
+    "weyl_ward_identity": "tr(T)-phi J_phi=0; on phi=v this is tr(T)-v J_phi=0"
+  },
+  "verdict": "ARBITRARY_SAME_SOURCE_EINSTEIN_TRUNCATION_REFUTED_LINEAR_FLAT",
+  "verification_command": "python3 -m bridge.einstein_sector.compensated_einstein_sourced_defect_preflight --verify bridge/certificates/compensated_einstein_sourced_defect_preflight.json"
+}

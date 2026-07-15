@@ -236,6 +236,16 @@ symplectically block diagonal on already-TT fields, but it neither makes the
 spatial TT reduction local nor preserves an Einstein-only sector under a
 generic source.
 
+The sourced-defect preflight in
+`notes/conformal-compensated-einstein-sourced-defect-preflight.md` sharpens
+that source caveat.  In the linearized compensated theory, conventional
+same-source Einstein closure is equivalent to the independent differential
+condition `Q(T)=0`; stress-tensor conservation and the Weyl trace Ward identity
+are not sufficient.  Arbitrary same-source closure is therefore refuted on
+flat space.  Fixed-source solutions form an affine sector, so a genuine BV
+subcomplex must include the matter fields and await a compensated quadratic BV
+freeze.
+
 ## Background inventory
 
 All smooth four-dimensional Einstein metrics survive the pure-Weyl equation,

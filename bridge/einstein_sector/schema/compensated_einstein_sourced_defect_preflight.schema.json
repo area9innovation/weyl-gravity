@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "compensated-einstein-sourced-defect-preflight-v1",
+  "title": "Compensated Einstein sourced-defect preflight certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "provenance",
+    "inputs",
+    "domain",
+    "linearized_tensor_theorem",
+    "source_ward_theorem",
+    "source_compatibility_theorem",
+    "affine_vs_bv_classification",
+    "programme_decision",
+    "verdict",
+    "claim_flags",
+    "scope_guards",
+    "verification_command"
+  ],
+  "properties": {
+    "schema": {"const": "compensated-einstein-sourced-defect-preflight-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/compensated_einstein_sourced_defect_preflight.schema.json"},
+    "result_id": {"const": "COMPENSATED_EINSTEIN_SOURCED_DEFECT_PREFLIGHT"},
+    "result_state": {"const": "SOURCE_COMPATIBILITY_CLASSIFIED_COMPENSATED_BV_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "verdict": {"const": "ARBITRARY_SAME_SOURCE_EINSTEIN_TRUNCATION_REFUTED_LINEAR_FLAT"},
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "weyl_invariant_linear_metric_derived",
+        "linearized_bach_factorization_derived",
+        "source_ward_identities_declared",
+        "gauge_covariant_einstein_defect_defined",
+        "same_source_compatibility_operator_derived",
+        "conserved_incompatible_source_witness_constructed",
+        "arbitrary_same_source_einstein_truncation_refuted",
+        "reduced_tt_source_obstruction_matched",
+        "dressed_source_alternative_classified",
+        "external_source_sector_classified_affine",
+        "compensated_bv_freeze_gate_declared",
+        "arbitrary_ward_compatible_external_source_preserves_einstein_sector",
+        "fixed_external_source_locus_is_bv_subcomplex",
+        "compensated_quadratic_bv_complex_certified",
+        "matter_inclusive_bv_complex_constructed",
+        "einstein_defect_chain_map_constructed",
+        "retarded_advanced_defect_propagation_proved",
+        "nonlinear_einstein_truncation_proved",
+        "null_infinity_closure_proved",
+        "einstein_scattering_equivalence_proved"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

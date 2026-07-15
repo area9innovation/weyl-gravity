@@ -155,8 +155,22 @@ the complementary on-shell differential projectors `Pi_E=1+Box/M^2` and
 `Pi_M=-Box/M^2`.  They commute with free evolution, are support-nonincreasing,
 and reproduce the symplectic block split.  Their locality begins only after TT
 reduction, and the source audit shows that a generic source excites both
-branches.  The next E-D2 object is therefore a gauge-covariant sourced
-Einstein-defect subcomplex on the unreduced metric BV fields.
+branches.
+
+The sourced-defect preflight certificate
+`bridge/certificates/compensated_einstein_sourced_defect_preflight.json` now
+derives the unreduced flat tensor obstruction.  For
+`c1 G1+2 alpha B1=T`, a solution of the conventional same-source Einstein
+equation `c1 G1=T` solves Einstein--Weyl gravity if and only if `Q(T)=0`.
+Conservation and the compensator Weyl Ward identity do not imply this; an
+exact conserved traceless counterexample is certified.  Arbitrary same-source
+closure is therefore refuted at linearized flat level.
+
+Do not call a fixed-external-source solution locus a BV subcomplex: it is
+affine.  E-D2 must first freeze the compensated metric--scalar quadratic BV
+complex, then construct or refute a defect chain map for a declared dynamical
+matter/source complex.  A higher-derivative dressed source is a separately
+labelled coupling, not conventional Einstein equivalence.
 
 ## Work package E-D3: observables, charges, and scattering
 
