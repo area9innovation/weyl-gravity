@@ -19,7 +19,7 @@ OUTPUT_PATH = PACKAGE_ROOT / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 SCHEMA_PATH = PROGRAMME_ROOT / "schema" / "team-contribution-v1.schema.json"
 GENERATOR_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "generators.json"
 PHASE_SPACE_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "phase_spaces.json"
-EVIDENCE_COMMIT = "2aec6ed91793d136c9a6d80a0f74b2b233775d49"
+EVIDENCE_COMMIT = "04833ba9d0a213b5bd5b6780ea5bf13a1d3e476e"
 EVIDENCE_PATH = (
     "quantum-weyl/cartan/certificates/"
     "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json"
@@ -87,6 +87,7 @@ def build_contribution() -> dict[str, Any]:
             "semantic import of the classical compact-cylinder sector split without quantum promotion",
             "complete intrinsic Euler descent included in the truncated AFN0 even-anomaly closure slice",
             "hash-bound AFN0 closure witnesses with semantic agreement checks against the descent database",
+            "complete even Weyl-ghost AFN0 candidate quotient with normalized dual witnesses for omega C2 and omega E4",
         ],
         "not_established": [
             "a complete bulk pure-Weyl Cartan-obstruction candidate basis",
@@ -105,7 +106,7 @@ def build_contribution() -> dict[str, Any]:
             "PYTHONPATH=quantum-weyl python3 -m cartan.contribution --check",
             "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -v",
         ],
-        "next_gate": "complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis; consume separately gated clock inputs only after their total-D and shared classical BV exports land",
+        "next_gate": "extend the completed even AFN0 candidate quotient to the odd, Diff, and antifield sectors, then instantiate the admissible bulk Cartan-obstruction basis; consume separately gated clock inputs only after their total-D and shared classical BV exports land",
     }
 
 
