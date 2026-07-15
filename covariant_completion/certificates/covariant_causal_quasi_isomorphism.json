@@ -59,17 +59,29 @@
       "requires": [
         "curved_current_comparison",
         "prolonged_current_comparison",
+        "direct_causal_pairing_transport",
+        "pairing_compatibility",
         "residual_gram_is_I2"
       ],
       "status": true
     }
   ],
+  "dependency_tag": "LORENTZIAN-CAUSAL",
   "guard": "the displayed result is not promoted until every terminal-gate dependency is true",
   "independent_inputs": {
     "energy_H4_is_C2": true,
     "energy_gram_is_I2": true,
     "residual_H4_is_C2": true,
     "residual_gram_is_I2": true
+  },
+  "input_certificate_sha256": {
+    "SO42_equivariant_transport": "826d45d9bfbca0776cb55b9369363402fe2902644a8b3d526779654f107df3f9",
+    "causal_quasi_isomorphism": "7c9299ab13b98352b2c60ab8f933a3983b007b587e1f3d497d4e74205639df40",
+    "curvature_prolongation_status": "1e9a08536e8b6938d14b7acc2a6c618e8a6459282e165c8139c0af34cf168ec7",
+    "direct_causal_pairing_transport": "5de7aa9abc9c5c276092cc9c8e61c1046c870fca3a528464410986535a14704b",
+    "final_claim_DAG": "7ebb80ebc44ef2f07151e26c15e29d15e456a75235b8a9dd8eba3917183b59da",
+    "residual_Gram": "046640040e6a4c84213df4f4824f6a774523d213cbd033d4630ac3e1a91471f0",
+    "residual_H4": "4cffa654fe753327fd317341e0682abca936fd1c8a992cb80be941f64e9e5b3c"
   },
   "method": "transport through pairing-compatible quasi-isomorphisms; no auxiliary H4 recomputation",
   "schema": "pure-weyl-final-covariant-transport-status-v1",
@@ -97,10 +109,24 @@
       "residual_endpoint_recovery",
       "SO42_equivariant_transport",
       "prolonged_current_comparison",
+      "direct_causal_pairing_transport",
+      "pairing_compatibility",
       "residual_H4_is_C2",
       "residual_gram_is_I2"
     ],
     "status": true
+  },
+  "transitive_input_certificate_sha256": {
+    "SO42_equivariant_transport": {
+      "actual_causal_quasi_isomorphism": "cb8d99d59b4bd0821364a4612a4ac89094ef2532d29675fec87b49eabc0bb66d",
+      "auxiliary_retract": "fca1c5e2a6c33174c3e6e44241bb898aa351e879c6a9acabdc5b7f31d2022537",
+      "curvature_EAL_spectrum": "d229e4a270dd8b0fd8d137e7d6a356a83ea57e3c9a042d9dc96295817bee3daa",
+      "curvature_causal_pde": "b553072a21ba550a44b0b5737e3fa0eafcc513195fbac83ed09cd2fab05216d1",
+      "curvature_mapping_cylinder": "b56ba739afdd05548e40c351721e8a39e4776ecb7581a8213e9540faa6c06797",
+      "cylinder_bgg_blocks": "2b9b6fabedc9a4e35c39f9f9a653b62cb13df77ba01e191a0274efb706071245",
+      "cylinder_metric_preimages": "e90f9d0c130cee98100bcc7b7dc388e76e8a1099aaa9af1e3fac6a9ebab92d5e",
+      "raw_bv_transfer": "ca58893b3c2dd7a54bd7b09cc227dc1377b95f93f55e3ff81b97d306a8226531"
+    }
   },
   "transported_result_when_gate_passes": {
     "Gram": [

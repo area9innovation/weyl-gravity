@@ -63,6 +63,8 @@ class FinalCovariantTransportStatus:
             "residual_endpoint_recovery",
             "SO42_equivariant_transport",
             "prolonged_current_comparison",
+            "direct_causal_pairing_transport",
+            "pairing_compatibility",
             "residual_H4_is_C2",
             "residual_gram_is_I2",
         )
@@ -172,10 +174,14 @@ class FinalCovariantTransportStatus:
                 "map": "Omega_prol -> Omega_aux -> Omega_met -> Omega_energy -> G_res",
                 "status": nodes["curved_current_comparison"].status
                 and nodes["prolonged_current_comparison"].status
+                and nodes["direct_causal_pairing_transport"].status
+                and nodes["pairing_compatibility"].status
                 and nodes["residual_gram_is_I2"].status,
                 "requires": [
                     "curved_current_comparison",
                     "prolonged_current_comparison",
+                    "direct_causal_pairing_transport",
+                    "pairing_compatibility",
                     "residual_gram_is_I2",
                 ],
             },
