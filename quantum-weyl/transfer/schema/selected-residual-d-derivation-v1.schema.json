@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "selected-residual-d-derivation-v1.schema.json",
+  "title": "ND1 selected residual arity-two D-derivation defect",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id",
+    "result_state",
+    "classical_commit",
+    "dependency_tags",
+    "analysis_payload",
+    "analysis_payload_sha256",
+    "setting_verdict",
+    "established",
+    "claim_guards",
+    "input_gates",
+    "next_gate",
+    "provenance"
+  ],
+  "properties": {
+    "result_id": {"const": "ND1_SELECTED_RESIDUAL_D_DERIVATION"},
+    "result_state": {"const": "SELECTED_RESIDUAL_Q2_D_DEFECT_COMPUTED_FULL_LOCAL_INPUT_BLOCKED"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "analysis_payload": {"$ref": "#/$defs/analysis"},
+    "analysis_payload_sha256": {"$ref": "#/$defs/hash"},
+    "setting_verdict": {"const": "INPUT_GATE_BLOCKED"},
+    "established": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "claim_guards": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "input_gates": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {"type": "string", "pattern": "^(BLOCKED|NOT_)"}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "HT1_transfer_payload_sha256",
+        "dependency_sha256",
+        "dependency_manifest_sha256",
+        "implementation_sha256",
+        "implementation_manifest_sha256",
+        "schema"
+      ],
+      "properties": {
+        "HT1_transfer_payload_sha256": {"$ref": "#/$defs/hash"},
+        "dependency_sha256": {"$ref": "#/$defs/hashManifest"},
+        "dependency_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "implementation_sha256": {"$ref": "#/$defs/hashManifest"},
+        "implementation_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/selected-residual-d-derivation-v1.schema.json"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hashManifest": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/hash"}
+    },
+    "exactScalar": {"type": "string", "pattern": "^(?!.*Float).+$"},
+    "defectTensor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shape",
+        "coordinate_order",
+        "scalar_format",
+        "checked_coefficient_count",
+        "entries"
+      ],
+      "properties": {
+        "shape": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 1}},
+        "coordinate_order": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "scalar_format": {"const": "sympy-srepr-exact-v1"},
+        "checked_coefficient_count": {"type": "integer", "minimum": 1},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {"type": "integer"},
+              {"type": "integer"},
+              {"type": "integer"},
+              {"$ref": "#/$defs/exactScalar"}
+            ],
+            "minItems": 4,
+            "maxItems": 4
+          }
+        }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "scope",
+        "D_generator_index",
+        "D_generator_name",
+        "D_action",
+        "component_ledgers",
+        "defect_tensors",
+        "checks",
+        "selected_verdict"
+      ],
+      "properties": {
+        "schema_version": {"const": 1},
+        "scope": {"const": "selected finite residual HT1 BFV q2 field domain"},
+        "D_generator_index": {"type": "integer", "minimum": 0},
+        "D_generator_name": {"const": "D"},
+        "D_action": {"type": "object"},
+        "component_ledgers": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "block",
+              "source_nonzero_component_count",
+              "D_weight_violation_count",
+              "D_weight_violations",
+              "particle_number_convention",
+              "particle_number_change",
+              "defect_nonzero_component_count"
+            ]
+          }
+        },
+        "defect_tensors": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ghost_ghost_to_ghost",
+            "ghost_matter_to_matter",
+            "matter_matter_to_ghost_momentum",
+            "ghost_ghost_momentum_to_ghost_momentum"
+          ],
+          "properties": {
+            "ghost_ghost_to_ghost": {"$ref": "#/$defs/defectTensor"},
+            "ghost_matter_to_matter": {"$ref": "#/$defs/defectTensor"},
+            "matter_matter_to_ghost_momentum": {"$ref": "#/$defs/defectTensor"},
+            "ghost_ghost_momentum_to_ghost_momentum": {"$ref": "#/$defs/defectTensor"}
+          }
+        },
+        "checks": {"type": "object"},
+        "selected_verdict": {
+          "enum": [
+            "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
+            "SELECTED_RESIDUAL_D_DERIVATION_DEFECT_NONZERO"
+          ]
+        }
+      }
+    }
+  }
+}

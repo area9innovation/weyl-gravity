@@ -5,13 +5,15 @@
     "The classical import remains fail-closed until portable tensors and maps are independently verified.",
     "The certified endpoint projection computes the residual matter-matter Kuranishi bracket but does not substitute for a portable support-local q2 tensor.",
     "The two local Bach density seeds test selected matrix elements only; they do not substitute for an arbitrary-input bilinear Bach tensor or its BV completions.",
+    "The vanishing selected residual D-derivation defect does not construct the full support-local interacting Cartan homotopy.",
     "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme."
   ],
   "classical_freeze_gate": "FAIL_CLOSED",
   "classical_snapshot_commit": "a3fc926cc289e5a545933a43331e395328580e0e",
   "convention": "suspended-graded-symmetric-factorial-v1",
   "dependency_tags": [
-    "LOCAL-ALGEBRAIC"
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
   ],
   "input_blockers": [
     {
@@ -64,7 +66,7 @@
     {
       "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2",
       "stage": "HT1",
-      "status": "RESIDUAL_CUBIC_AND_TWO_LOCAL_BACH_SEEDS_COMPUTED_FULL_LOCAL_EXPORT_PENDING"
+      "status": "RESIDUAL_CUBIC_LOCAL_SEEDS_AND_SELECTED_D_DERIVATION_COMPUTED_FULL_LOCAL_EXPORT_PENDING"
     },
     {
       "deliverable": "compute ell3 and dynamical/topological mixing table",
@@ -97,30 +99,42 @@
     "ht1b_local_bach_seed_certificate": "quantum-weyl/transfer/certificates/HT1B_LOCAL_BACH_SEED_LIFT.json",
     "ht1b_local_bach_seed_sha256": "f08976200d4e07dc4fb349fa785c960ab4aa8a0d685fc82fe1a2cb30c5ff26c5",
     "input_schema": "quantum-weyl/transfer/schema/nonlinear_classical_export.schema.json",
+    "nd1_selected_residual_D_derivation_certificate": "quantum-weyl/transfer/certificates/ND1_SELECTED_RESIDUAL_D_DERIVATION.json",
+    "nd1_selected_residual_D_derivation_sha256": "69516596f2c30adaa6a20849f9c25b6d113de11abdff424245041cb0b5356e46",
     "source_manifest": {
+      "__init__.py": "fdc68a01877d182c2ab4a8ce9af4dbff2c0840b0bf7e75dad54c3d6f28a7cafc",
+      "d_derivation_certificate.py": "e3ed675ea360ee3d4033a46143b701b5ecb4b250fdf75e7ed131a0619bba07a0",
+      "d_derivation_defect.py": "d1a6e3c75c4752d558f1b219c1f51d48ac4ef578fa87fc3f3b84780551fb3ee7",
       "homological_transfer.py": "2a39337ddbede21ee299e9c9c83282f5039f84fe032026967e8d33fd51e6f54a",
       "local_bach_seed_certificate.py": "14df89758e07bf495f054608d9159cc1d49d032ec79be429515a8720038f4bf3",
       "local_bach_seed_direct_audit.py": "4abb22dcf527787a25204ac4ab06cdd357f5df24cfda90b09945d5c916937ca1",
       "local_bach_seed_lift.py": "5b9de00f940f67e105320f3816434540caad79cd3bdc4081b5dcb43e7f0fe9d4",
-      "nonlinear_transfer_certificate.py": "3b34aeb3af4d033fcdcca309bfdc4837b29da4507ba367ba77440ebdb9a2852c",
+      "nonlinear_transfer_certificate.py": "c0167a997025a6ca439804c78f700fb73f56cc62e8b1dee7a079f18eaa0f1b17",
       "residual_cubic_block.py": "d8e5a5100ea81b85a3a9b70ff8a683707ba358cc757308e705dd56c127bf3aa2",
       "residual_cubic_certificate.py": "597a47905f5bddef720459672c5b10504fc66826b8b4b3ab332b16c4063ec5b9",
       "schema/local-bach-seed-direct-audit-v1.schema.json": "22ecd9efb3d4f7edf01845e4971733c29782ec5fdc337aae95921fd44eea6876",
       "schema/local-bach-seed-lift-v2.schema.json": "fdc249e774785068e73f0e6197b2e6995bab33f373e040771105e849fb454b2d",
       "schema/nonlinear_classical_export.schema.json": "c476d0e1b3f4c30937100a58622c87b611afdb0224b9ffedea35ae376398ac79",
+      "schema/selected-residual-d-derivation-v1.schema.json": "7a385f4d81c46c38c6eece5ba7f133ed77d85230875a722b97229e4e67cf2aad",
+      "tests/test_d_derivation_defect.py": "163adad03235ff996b2c5f7612a70e56bad41f30ba3f6b992d706a31e15ed337",
       "tests/test_homological_transfer.py": "369354c95a8e4209c0ab1f1d5d877535c86ae39e19421ce0398cbd61ae394783",
       "tests/test_local_bach_seed_direct_audit.py": "2b9a918aebd8123ad2c62ec3c8607238006a660b16b34ddebfbe0a7630fa86a6",
       "tests/test_local_bach_seed_lift.py": "e24646cc61ccebeb8b9ecff7fd057ef220ed747ba8ae0d30aee6cfb3f2b05d99",
-      "tests/test_nonlinear_transfer_certificate.py": "36410678ccdd65e73cc6e8d1dfe34af9117020510ebbc4ad3997fe846b493a96",
+      "tests/test_nonlinear_transfer_certificate.py": "e4c78fc8494a4b89e624f0272e974e74a56d058d1883dc905ea0c1380730e65f",
       "tests/test_residual_cubic_block.py": "d279660e15cd7e0c12b7da2c514a6ba566db0505dd03c9c44e3a696454d618cb"
     },
-    "source_manifest_sha256": "4cfd69dbdb462567c4b345266db0a7d12aa4f8b8b0701793dc0c753f2c66bc3b"
+    "source_manifest_sha256": "66c6166c639afa2dc1f0b44502d53f397dbbc14c863131affbec1f3afa33cc03"
   },
   "question_ledger": [
     {
       "next_certificate": "HT1B_COMPLETE_SUPPORT_LOCAL_Q2",
       "question_id": "transferred_cubic_bracket",
       "status": "COMPUTED_SELECTED_RESIDUAL_MODEL_TWO_DIRECT_LOCAL_SEEDS_FULL_FIELD_DOMAIN_PENDING"
+    },
+    {
+      "next_certificate": "ND1_COMPLETE_SUPPORT_LOCAL_D_DERIVATION_AND_IOTA_D2",
+      "question_id": "D_quotient_interaction_stability",
+      "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_FULL_LOCAL_VERDICT_INPUT_GATE_BLOCKED"
     },
     {
       "next_certificate": "HT2_DYNAMICAL_CLOSURE",
@@ -170,7 +184,8 @@
       "portable nonlinear classical export schema",
       "HT1 selected residual cubic bracket including the matter-matter Kuranishi output",
       "HT1b two mode-specialized local quadratic-Bach density seeds matched to residual q2 entries",
-      "HT1b direct curvature reevaluation of six forward probes and two reverse slice probes"
+      "HT1b direct curvature reevaluation of six forward probes and two reverse slice probes",
+      "ND1 exact arity-two D-derivation defect vanishes on all four selected residual HT1 q2 blocks"
     ],
     "not_established": [
       "the complete conformal-gravity q2 or q3 Taylor tensors",

@@ -54,6 +54,16 @@ local metric-sector seed, not the arbitrary-input tensor
 `B^(2)_{mu nu}[h_1,h_2]`; the Diff/Weyl ghost rows, antifield rows, and local
 arity-two classical-master identity remain absent.
 
+ND1 now tests the first nonlinear `D`-quotient identity on every `q2` block
+available in HT1.  It derives the adjoint, coadjoint, matter-ket, and
+matter-bra `D` actions from the portable payload and computes all 529,470
+coefficients of the four arity-two derivation-defect tensors.  They vanish
+exactly, and all 3,976 nonzero selected `q2` components conserve `D` weight.
+This rules out a cubic `D`-derivation defect inside the selected residual BFV
+model only.  The full support-local defect and `iota_D^(2)` remain blocked on
+the arbitrary-input BV tensor and imported contraction, so the setting verdict
+is still `INPUT_GATE_BLOCKED`.
+
 The parity combinations
 
 ```text
@@ -84,6 +94,7 @@ this package is a quantum or `LORENTZIAN-CAUSAL` result.
 python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check
 python3 quantum-weyl/transfer/residual_cubic_certificate.py --check
 python3 quantum-weyl/transfer/local_bach_seed_certificate.py --check
+python3 quantum-weyl/transfer/d_derivation_certificate.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v
 ```
 

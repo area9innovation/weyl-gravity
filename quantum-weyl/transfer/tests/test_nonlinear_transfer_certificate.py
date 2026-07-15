@@ -25,7 +25,10 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             certificate["result_state"],
             "ENGINE_READY_HT1_RESIDUAL_AND_LOCAL_SEEDS_COMPUTED_INPUT_BLOCKED",
         )
-        self.assertEqual(certificate["dependency_tags"], ["LOCAL-ALGEBRAIC"])
+        self.assertEqual(
+            certificate["dependency_tags"],
+            ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        )
         self.assertTrue(certificate["input_blockers"])
         self.assertTrue(
             all(
@@ -39,12 +42,19 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertEqual(
             certificate["programme_stages"][1]["status"],
-            "RESIDUAL_CUBIC_AND_TWO_LOCAL_BACH_SEEDS_COMPUTED_FULL_LOCAL_EXPORT_PENDING",
+            "RESIDUAL_CUBIC_LOCAL_SEEDS_AND_SELECTED_D_DERIVATION_COMPUTED_FULL_LOCAL_EXPORT_PENDING",
         )
         self.assertIn(
             "TWO_DIRECT_LOCAL_SEEDS",
             certificate["question_ledger"][0]["status"],
         )
+        d_question = next(
+            item
+            for item in certificate["question_ledger"]
+            if item["question_id"] == "D_quotient_interaction_stability"
+        )
+        self.assertIn("SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED", d_question["status"])
+        self.assertIn("INPUT_GATE_BLOCKED", d_question["status"])
 
     def test_missing_nonlinear_and_contraction_exports_are_named(self) -> None:
         blocked = {

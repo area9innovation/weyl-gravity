@@ -1,6 +1,6 @@
 # Nonlinear homological-transfer bootstrap
 
-Dependency tag: `LOCAL-ALGEBRAIC`
+Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`
 
 Result state: `ENGINE_READY_HT1_RESIDUAL_AND_LOCAL_SEEDS_COMPUTED_INPUT_BLOCKED`
 
@@ -25,6 +25,13 @@ densities.  Their exact integrals reproduce two raw-normalized entries of the
 portable residual `q2` tensor.  This establishes real local lift seeds while
 leaving the arbitrary-input Bach tensor and all ghost/antifield completions
 fail-closed.
+
+ND1 additionally computes the complete arity-two `D`-derivation defect on all
+four selected residual `q2` blocks.  All 529,470 defect coefficients and all
+`D`-weight violations vanish.  This excludes a cubic counterexample within
+the selected residual BFV model, but does not construct the full interacting
+Cartan homotopy because the support-local BV tensor and contraction remain
+outside the import gate.
 
 The portable input schema requires full and residual graded bases, `q1`,
 `q2`, `q3`, `iota_cl`, `pi_cl`, `s_cl`, the cyclic pairing, normalized
@@ -52,7 +59,7 @@ transferred before `QME_RESTORED`.
 | Stage | Exact deliverable | Status |
 |---|---|---|
 | HT0 | Engine, convention, schema, blocker ledger | Ready |
-| HT1 | Import classical Taylor data; compute `ell_2` | Residual cubic bracket and two direct local Bach-density seeds computed; complete support-local lift blocked on export |
+| HT1 | Import classical Taylor data; compute `ell_2` | Residual cubic bracket, local Bach seeds, and selected residual `D`-derivation computed; complete support-local lift blocked on export |
 | HT2 | Compute `ell_3`; dynamical/topological mixing and centrality ledgers | Not computed |
 | HT3 | Higher arities and particle-filtration spectral sequence | Not computed |
 | HT4 | Cyclic minimal action and formal moduli/deformation interpretation | Not computed |
@@ -64,8 +71,10 @@ transferred before `QME_RESTORED`.
 |---|---:|---|---:|
 | `python3 quantum-weyl/transfer/local_bach_seed_certificate.py --emit` | 3.77 | PASS | 1 |
 | `python3 quantum-weyl/transfer/local_bach_seed_direct_audit.py --emit --jobs 4` | 665.68 | PASS (8 direct probes) | 2 |
+| `python3 quantum-weyl/transfer/d_derivation_certificate.py --emit` | 3.37 | PASS | 1 |
+| `python3 quantum-weyl/transfer/residual_cubic_certificate.py --check` | 46.20 | PASS | 2 |
 | `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check` | 0.04 | PASS | 2 |
-| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 39.53 | PASS (34 tests) | 1 |
+| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 46.87 | PASS (42 tests) | 1 |
 | Compile, JSON/YAML parsing, and scoped `git diff --check` | 0.24 | PASS | 0 |
 
 An optional Draft-2020-12 meta-schema check was attempted but was **not
