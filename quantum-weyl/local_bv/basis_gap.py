@@ -7,6 +7,8 @@ from functools import lru_cache
 from .algebra import canonical_sha256
 from .basis_exhaustiveness import grading_signature_manifest, refine_top_form_signature
 from .dimension_four_candidates import dimension_four_candidate_analysis
+from .lower_form_basis import lower_form_carrier_analysis
+from .lower_form_ambient import ambient_lower_form_signature_analysis
 from .tensor_graphs import contraction_graph_bundle, contraction_graph_manifest
 
 
@@ -323,6 +325,8 @@ def basis_gap_report() -> dict[str, object]:
             }
         )
     bundle = basis_gap_graph_bundle()
+    lower_form = lower_form_carrier_analysis()
+    ambient_lower_form = ambient_lower_form_signature_analysis()
     payload = {
         "result_id": "BASIS_GAP_REPORT_AFN0",
         "result_state": "BASIS_GAPS_PARTIALLY_RESOLVED",
@@ -337,10 +341,30 @@ def basis_gap_report() -> dict[str, object]:
             "artifact_count": bundle["artifact_count"],
             "path": f"basis_graph_manifests/{bundle['bundle_hash']}.json",
         },
+        "lower_form_carrier_inventory": {
+            "result_id": lower_form["result_id"],
+            "analysis_sha256": lower_form["analysis_sha256"],
+            "counts": lower_form["counts"],
+            "coverage": lower_form["declared_carrier_algebra"]["coverage"],
+            "ambient_local_form_basis": lower_form["declared_carrier_algebra"][
+                "ambient_local_form_basis"
+            ],
+        },
+        "ambient_lower_form_signature_inventory": {
+            "result_id": ambient_lower_form["result_id"],
+            "analysis_sha256": ambient_lower_form["analysis_sha256"],
+            "totals": ambient_lower_form["totals"],
+            "integer_grading_status": ambient_lower_form["checks"][
+                "integer_grading_enumeration"
+            ],
+            "tensor_graph_realizability": ambient_lower_form["next_gates"][
+                "tensor_graph_realizability"
+            ],
+        },
         "total_complex_gates": {
             "TOP_FORM_BASIS_EXHAUSTIVE": "IN_PROGRESS",
-            "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE": "NOT_COMPUTED",
-            "LOWER_FORM_BOUNDARY_BASIS_EXHAUSTIVE": "NOT_COMPUTED",
+            "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE": "IN_PROGRESS_GRADING_EXHAUSTIVE_CANDIDATE_CARRIERS_COMPLETE",
+            "LOWER_FORM_BOUNDARY_BASIS_EXHAUSTIVE": "IN_PROGRESS_GRADING_EXHAUSTIVE_EXACT_BOUNDARY_CARRIERS_COMPLETE",
             "TOTAL_COMPLEX_EXHAUSTIVE": "NOT_COMPUTED",
             "FORWARD_REVERSE_SPAN_AGREEMENT": "NOT_COMPUTED",
         },
@@ -352,7 +376,7 @@ def basis_gap_report() -> dict[str, object]:
                 "and dimension-specific antisymmetrization remain open"
             ),
             "PENDING is not a terminal signature resolution",
-            "the separate Diff top-form ledger is not the universal lower-form Diff completion",
+            "the universal Diff and intrinsic Euler candidate carriers are now complete, but the separate Diff top-form ledger and unrestricted ambient lower-form basis remain open",
             "this report cannot promote a complete nontriviality witness",
         ],
     }

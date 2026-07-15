@@ -4,7 +4,7 @@
   "title": "AFN0 dimension-four basis-gap report",
   "type": "object",
   "additionalProperties": false,
-  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope_label", "resolution_vocabulary", "slices", "diff_top_form_ledgers", "graph_artifact_bundle", "total_complex_gates", "claim_boundary", "report_hash", "canonical_hashes", "certificate_hash"],
+  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope_label", "resolution_vocabulary", "slices", "diff_top_form_ledgers", "graph_artifact_bundle", "lower_form_carrier_inventory", "ambient_lower_form_signature_inventory", "total_complex_gates", "claim_boundary", "report_hash", "canonical_hashes", "certificate_hash"],
   "properties": {
     "result_id": {"const": "BASIS_GAP_REPORT_AFN0"},
     "result_state": {"const": "BASIS_GAPS_PARTIALLY_RESOLVED"},
@@ -109,14 +109,38 @@
         "path": {"type": "string", "pattern": "^basis_graph_manifests/[0-9a-f]{64}\\.json$"}
       }
     },
+    "lower_form_carrier_inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "analysis_sha256", "counts", "coverage", "ambient_local_form_basis"],
+      "properties": {
+        "result_id": {"const": "AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE"},
+        "analysis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "counts": {"type": "object"},
+        "coverage": {"const": "FORWARD_AND_REVERSE_COMPLETE_FOR_DECLARED_CARRIER_ALGEBRA"},
+        "ambient_local_form_basis": {"const": "IN_PROGRESS"}
+      }
+    },
+    "ambient_lower_form_signature_inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "analysis_sha256", "totals", "integer_grading_status", "tensor_graph_realizability"],
+      "properties": {
+        "result_id": {"const": "AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE"},
+        "analysis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "totals": {"type": "object"},
+        "integer_grading_status": {"const": "EXHAUSTIVE_UNDER_DECLARED_GENERATOR_ALGEBRA"},
+        "tensor_graph_realizability": {"const": "NOT_COMPUTED"}
+      }
+    },
     "total_complex_gates": {
       "type": "object",
       "additionalProperties": false,
       "required": ["TOP_FORM_BASIS_EXHAUSTIVE", "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE", "LOWER_FORM_BOUNDARY_BASIS_EXHAUSTIVE", "TOTAL_COMPLEX_EXHAUSTIVE", "FORWARD_REVERSE_SPAN_AGREEMENT"],
       "properties": {
         "TOP_FORM_BASIS_EXHAUSTIVE": {"const": "IN_PROGRESS"},
-        "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE": {"const": "NOT_COMPUTED"},
-        "LOWER_FORM_BOUNDARY_BASIS_EXHAUSTIVE": {"const": "NOT_COMPUTED"},
+        "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE": {"const": "IN_PROGRESS_GRADING_EXHAUSTIVE_CANDIDATE_CARRIERS_COMPLETE"},
+        "LOWER_FORM_BOUNDARY_BASIS_EXHAUSTIVE": {"const": "IN_PROGRESS_GRADING_EXHAUSTIVE_EXACT_BOUNDARY_CARRIERS_COMPLETE"},
         "TOTAL_COMPLEX_EXHAUSTIVE": {"const": "NOT_COMPUTED"},
         "FORWARD_REVERSE_SPAN_AGREEMENT": {"const": "NOT_COMPUTED"}
       }

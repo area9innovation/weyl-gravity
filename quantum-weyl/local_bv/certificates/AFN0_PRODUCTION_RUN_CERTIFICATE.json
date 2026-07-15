@@ -1,6 +1,6 @@
 {
   "canonical_hashes": {
-    "source_manifest_sha256": "f0c60242dccb8f3c584688ea85244069466f4512a2d852dfb48a4d475430e7e1"
+    "source_manifest_sha256": "d4553342b31ac2a6e1c42c339a85eca90835343fcc50df797791491f20c6807d"
   },
   "checks": {
     "BoxR_explicit_primitive": "VERIFIED",
@@ -11,6 +11,7 @@
     "H04_odd_top_signature_resolution": "VERIFIED",
     "H14_AFN0_EVEN_complete_candidate_closure": "VERIFIED",
     "H14_AFN0_ODD_started": "VERIFIED",
+    "ambient_lower_form_integer_signature_enumeration": "EXHAUSTIVE",
     "basis_gap_report_emitted": "VERIFIED",
     "closure_and_truncated_quotient_outputs_separated": "VERIFIED",
     "closure_witness_artifact_hashes": "VERIFIED",
@@ -23,6 +24,8 @@
     "graphwise_total_derivative_currents": "VERIFIED",
     "independent_raw_graph_combinatorial_counts": "VERIFIED",
     "index_variance_and_derivative_attachment": "VERIFIED",
+    "lower_form_candidate_carrier_coverage": "COMPLETE",
+    "lower_form_exact_boundary_carrier_coverage": "COMPLETE",
     "omega_BoxR_explicit_primitive": "VERIFIED",
     "parity_split": "VERIFIED",
     "premature_nontriviality_promotion_absent": "VERIFIED",
@@ -38,16 +41,18 @@
     "LOCAL-ALGEBRAIC"
   ],
   "next_required_computation": [
-    "generate all lower-form ghost and generalized-connection monomials at total engineering dimension four",
+    "construct tensor graphs for all 720 refined ambient lower-form signatures and resolve realizability",
     "canonically quotient the pending raw contraction graphs by tensor identities and integration by parts",
     "resolve every remaining top-form and Diff signature with a terminal status",
     "compare the forward canonical span with reverse signature coverage",
     "assemble the production Q and d_h sparse matrices",
-    "integrate the completed omega-Euler tower into the production Q and d_h matrices",
+    "integrate the now-inventoried omega-Euler and universal Diff carriers into the production Q and d_h matrices",
     "emit COMPLETE_NONTRIVIALITY_WITNESS only after the complete boundary rank and exhaustiveness proof are frozen"
   ],
   "result_hashes": {
-    "BASIS_GAP_REPORT_AFN0": "13c79a64be1bce222904f738896dca0228ba4d9e2bd4a2b315e486ab8a0b3712",
+    "AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE": "69c8e606576dda275983508f98882957365bf8b9bde9d82dd9febabbd0ae2066",
+    "AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE": "f03847f59d2ed2995cabf32d82e67ffc0ea4cefa5d4ea42dff61af70a2d1ebd1",
+    "BASIS_GAP_REPORT_AFN0": "49b10da1111724b2cc9183d3067dfe7ae46f391fb26ebff023823f885c8d2593",
     "H04_AFN0_EVEN_CLOSURE": "6ca36cf5ddc063a43f46f4eca7aad636d8b5cf5457c2f5bdac6876e9c1a67295",
     "H04_AFN0_EVEN_TRUNCATED_QUOTIENT": "283b26d5314b987aa2d9187a8e27722dcb8309dff1e180901a5f032ccd0b1be4",
     "H04_AFN0_ODD_CLOSURE": "e7fa8f30d690a1975690cdff416175b36117cdd0827da1ece0077aecb3e916eb",

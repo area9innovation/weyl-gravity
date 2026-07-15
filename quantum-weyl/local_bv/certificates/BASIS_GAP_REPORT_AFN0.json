@@ -1,13 +1,24 @@
 {
-  "canonical_hashes": {
-    "report_payload_sha256": "13c79a64be1bce222904f738896dca0228ba4d9e2bd4a2b315e486ab8a0b3712",
-    "source_manifest_sha256": "e6508acc2374762bc7a990e95b23c1a5b42e2f0ae84da08583d948a025a868bb"
+  "ambient_lower_form_signature_inventory": {
+    "analysis_sha256": "69c8e606576dda275983508f98882957365bf8b9bde9d82dd9febabbd0ae2066",
+    "integer_grading_status": "EXHAUSTIVE_UNDER_DECLARED_GENERATOR_ALGEBRA",
+    "result_id": "AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE",
+    "tensor_graph_realizability": "NOT_COMPUTED",
+    "totals": {
+      "coarse_signature_count": 2480,
+      "refined_signature_count": 720,
+      "rejected_signature_count": 1760
+    }
   },
-  "certificate_hash": "0816a1f362daab577a81a691d53aade3bb201b4d9448820a801f45313d911bf3",
+  "canonical_hashes": {
+    "report_payload_sha256": "49b10da1111724b2cc9183d3067dfe7ae46f391fb26ebff023823f885c8d2593",
+    "source_manifest_sha256": "9e34a8eca5ef39638c3acf76fe75867641a9cbd9c7bb0be921f9d438d208279d"
+  },
+  "certificate_hash": "731afb869167d3c382e29241bf6493108ab853cc6e089a25ba0bfc7514008680",
   "claim_boundary": [
     "signed Riemann-pair, pair-exchange, epsilon-order, and available factor-permutation symmetries are implemented; Bianchi identities, derivative-distribution permutations, general integration by parts, and dimension-specific antisymmetrization remain open",
     "PENDING is not a terminal signature resolution",
-    "the separate Diff top-form ledger is not the universal lower-form Diff completion",
+    "the universal Diff and intrinsic Euler candidate carriers are now complete, but the separate Diff top-form ledger and unrestricted ambient lower-form basis remain open",
     "this report cannot promote a complete nontriviality witness"
   ],
   "classical_commit": "UNFROZEN",
@@ -589,7 +600,21 @@
     "bundle_hash": "2ca5e9a9594df7b02856e3e23c6386d77e93c22d6bb38249092691d7aaca9251",
     "path": "basis_graph_manifests/2ca5e9a9594df7b02856e3e23c6386d77e93c22d6bb38249092691d7aaca9251.json"
   },
-  "report_hash": "13c79a64be1bce222904f738896dca0228ba4d9e2bd4a2b315e486ab8a0b3712",
+  "lower_form_carrier_inventory": {
+    "ambient_local_form_basis": "IN_PROGRESS",
+    "analysis_sha256": "f03847f59d2ed2995cabf32d82e67ffc0ea4cefa5d4ea42dff61af70a2d1ebd1",
+    "counts": {
+      "all_carriers": 64,
+      "exact_boundary_carriers": 13,
+      "intrinsic_euler_carriers": 11,
+      "strict_lower_form_carriers": 55,
+      "structurally_zero_euler_components": 2,
+      "universal_candidate_carriers": 40
+    },
+    "coverage": "FORWARD_AND_REVERSE_COMPLETE_FOR_DECLARED_CARRIER_ALGEBRA",
+    "result_id": "AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE"
+  },
+  "report_hash": "49b10da1111724b2cc9183d3067dfe7ae46f391fb26ebff023823f885c8d2593",
   "resolution_vocabulary": [
     "GENERATED_NONZERO",
     "IDENTICALLY_ZERO_BY_SYMMETRY",
@@ -1736,8 +1761,8 @@
   ],
   "total_complex_gates": {
     "FORWARD_REVERSE_SPAN_AGREEMENT": "NOT_COMPUTED",
-    "LOWER_FORM_BOUNDARY_BASIS_EXHAUSTIVE": "NOT_COMPUTED",
-    "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE": "NOT_COMPUTED",
+    "LOWER_FORM_BOUNDARY_BASIS_EXHAUSTIVE": "IN_PROGRESS_GRADING_EXHAUSTIVE_EXACT_BOUNDARY_CARRIERS_COMPLETE",
+    "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE": "IN_PROGRESS_GRADING_EXHAUSTIVE_CANDIDATE_CARRIERS_COMPLETE",
     "TOP_FORM_BASIS_EXHAUSTIVE": "IN_PROGRESS",
     "TOTAL_COMPLEX_EXHAUSTIVE": "NOT_COMPUTED"
   }

@@ -81,6 +81,24 @@ class BasisGapTests(unittest.TestCase):
             report["total_complex_gates"]["TOTAL_COMPLEX_EXHAUSTIVE"],
             "NOT_COMPUTED",
         )
+        self.assertEqual(
+            report["total_complex_gates"][
+                "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE"
+            ],
+            "IN_PROGRESS_GRADING_EXHAUSTIVE_CANDIDATE_CARRIERS_COMPLETE",
+        )
+        self.assertEqual(
+            report["lower_form_carrier_inventory"]["counts"]["all_carriers"],
+            64,
+        )
+        self.assertEqual(
+            report["ambient_lower_form_signature_inventory"]["totals"],
+            {
+                "coarse_signature_count": 2480,
+                "refined_signature_count": 720,
+                "rejected_signature_count": 1760,
+            },
+        )
 
     def test_raw_matching_does_not_promote_tensor_realizability(self) -> None:
         records = [

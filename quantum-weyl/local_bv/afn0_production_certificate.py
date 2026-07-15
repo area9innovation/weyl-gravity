@@ -11,6 +11,8 @@ from typing import Any
 from .afn0_production import afn0_production_results, afn0_slice_results
 from .algebra import canonical_sha256
 from .basis_gap import basis_gap_report
+from .lower_form_basis import lower_form_carrier_analysis
+from .lower_form_ambient import ambient_lower_form_signature_analysis
 
 
 PACKAGE_ROOT = Path(__file__).resolve().parent
@@ -26,13 +28,21 @@ def _source_manifest() -> dict[str, str]:
         "afn0_production_certificate.py",
         "basis_exhaustiveness.py",
         "basis_gap.py",
+        "lower_form_basis.py",
+        "lower_form_basis_certificate.py",
+        "lower_form_ambient.py",
+        "lower_form_ambient_certificate.py",
         "tensor_graphs.py",
         "schema/afn0_result.schema.json",
         "schema/afn0_closure_result.schema.json",
         "schema/afn0_truncated_quotient_result.schema.json",
+        "schema/afn0_lower_form_carrier_precertificate.schema.json",
+        "schema/afn0_ambient_lower_form_signature.schema.json",
         "tests/test_afn0_production.py",
         "tests/test_basis_exhaustiveness.py",
         "tests/test_basis_gap.py",
+        "tests/test_lower_form_basis.py",
+        "tests/test_lower_form_ambient.py",
         "tests/test_tensor_graphs.py",
     )
     return {
@@ -45,6 +55,8 @@ def build_certificate() -> dict[str, Any]:
     results = afn0_production_results()
     slice_results = afn0_slice_results()
     gap_report = basis_gap_report()
+    lower_form = lower_form_carrier_analysis()
+    ambient_lower_form = ambient_lower_form_signature_analysis()
     h04 = results["H04_AFN0_RESULT"]
     h14 = results["H14_AFN0_RESULT"]
     exact_ids = {
@@ -98,12 +110,21 @@ def build_certificate() -> dict[str, Any]:
             "forward_reverse_span_agreement": "NOT_COMPUTED",
             "total_complex_exhaustiveness": "NOT_COMPUTED",
             "complete_lower_form_basis": "IN_PROGRESS",
+            "lower_form_candidate_carrier_coverage": "COMPLETE",
+            "lower_form_exact_boundary_carrier_coverage": "COMPLETE",
+            "ambient_lower_form_integer_signature_enumeration": "EXHAUSTIVE",
             "Euler_intrinsic_tower": "NONTRIVIAL_COMPLETE",
         },
         "result_hashes": {
             "H04_AFN0_RESULT": canonical_sha256(h04),
             "H14_AFN0_RESULT": canonical_sha256(h14),
             "BASIS_GAP_REPORT_AFN0": gap_report["report_hash"],
+            "AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE": lower_form[
+                "analysis_sha256"
+            ],
+            "AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE": ambient_lower_form[
+                "analysis_sha256"
+            ],
             **{
                 result_id: canonical_sha256(result)
                 for result_id, result in sorted(slice_results.items())
@@ -113,12 +134,12 @@ def build_certificate() -> dict[str, Any]:
             "source_manifest_sha256": canonical_sha256(_source_manifest()),
         },
         "next_required_computation": [
-            "generate all lower-form ghost and generalized-connection monomials at total engineering dimension four",
+            "construct tensor graphs for all 720 refined ambient lower-form signatures and resolve realizability",
             "canonically quotient the pending raw contraction graphs by tensor identities and integration by parts",
             "resolve every remaining top-form and Diff signature with a terminal status",
             "compare the forward canonical span with reverse signature coverage",
             "assemble the production Q and d_h sparse matrices",
-            "integrate the completed omega-Euler tower into the production Q and d_h matrices",
+            "integrate the now-inventoried omega-Euler and universal Diff carriers into the production Q and d_h matrices",
             "emit COMPLETE_NONTRIVIALITY_WITNESS only after the complete boundary rank and exhaustiveness proof are frozen",
         ],
     }

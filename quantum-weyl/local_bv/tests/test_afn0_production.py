@@ -130,6 +130,22 @@ class AfnZeroProductionTests(unittest.TestCase):
             certificate["checks"]["closure_witness_semantic_status_agreement"],
             "VERIFIED",
         )
+        self.assertEqual(
+            certificate["checks"]["lower_form_candidate_carrier_coverage"],
+            "COMPLETE",
+        )
+        self.assertRegex(
+            certificate["result_hashes"][
+                "AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE"
+            ],
+            r"^[0-9a-f]{64}$",
+        )
+        self.assertEqual(
+            certificate["checks"][
+                "ambient_lower_form_integer_signature_enumeration"
+            ],
+            "EXHAUSTIVE",
+        )
 
     def test_eight_standalone_slice_receipts(self) -> None:
         slices = afn0_slice_results()

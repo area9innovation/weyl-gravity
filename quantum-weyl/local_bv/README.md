@@ -261,7 +261,19 @@ the content-addressed bundle under
 Raw contraction existence is distinct from tensor realizability; only a
 generated canonical representative currently promotes the latter status.
 
-Next admissible local steps are integration of the completed Euler tower into
-the exhaustive AFN0 lower-form mapping-cone basis and the unrestricted
-higher-derivative Weyl--Cotton jet quotient.  Only the
+The lower-form carrier seam is now explicit in
+[`certificates/AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE.json`](certificates/AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE.json).
+It independently reconstructs and hash-binds all 40 universal candidate
+carriers, 11 intrinsic Euler carriers, and 13 carriers belonging to the exact
+`Box R` boundary witnesses. Forward and reverse coverage agrees for this
+declared 64-carrier algebra, including 55 strict lower forms. The independent
+ambient multigrading certificate enumerates 2,480 signatures in total degrees
+three through six and retains 720 after seed, engineering, Grassmann, parity,
+and scalar-index refinement. This is not yet an ambient-basis exhaustiveness
+claim: tensor-graph realizability and the Bianchi/IBP/dimension-specific
+quotient remain `NOT_COMPUTED`.
+
+Next admissible local steps are tensor-graph realization of the 720 refined
+ambient signatures, their canonical quotient, assembly of exact `Q` and
+`d_h` matrices, and the higher-derivative Weyl--Cotton jet quotient. Only the
 antifield/Koszul--Tate extension waits for the frozen classical schema.

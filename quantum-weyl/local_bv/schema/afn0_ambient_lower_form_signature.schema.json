@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-afn0-ambient-lower-form-signatures-v1.json",
+  "title": "AFN0 ambient lower-form integer signatures",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope_label", "declared_bounds", "generator_algebra", "grading_equations", "manifests", "totals", "checks", "next_gates", "claim_boundary", "analysis_sha256", "canonical_hashes", "certificate_sha256"],
+  "properties": {
+    "result_id": {"const": "AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE"},
+    "result_state": {"const": "AMBIENT_GRADING_EXHAUSTIVE_TENSOR_QUOTIENT_OPEN"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope_label": {"const": "AFN0_ONLY"},
+    "declared_bounds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_degrees", "form_degrees", "spacetime_dimension", "antifield_number", "total_form_engineering_dimension", "curvature_count_upper_bound"],
+      "properties": {
+        "total_degrees": {"const": [3, 4, 5, 6]},
+        "form_degrees": {"const": [0, 1, 2, 3, 4]},
+        "spacetime_dimension": {"const": 4},
+        "antifield_number": {"const": 0},
+        "total_form_engineering_dimension": {"const": 0},
+        "curvature_count_upper_bound": {"const": 3}
+      }
+    },
+    "generator_algebra": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["curvature", "covariant_derivative", "weyl_ghost", "diff_ghost", "horizontal_dx", "epsilon"],
+      "properties": {
+        "curvature": {"type": "string"},
+        "covariant_derivative": {"type": "string"},
+        "weyl_ghost": {"type": "string"},
+        "diff_ghost": {"type": "string"},
+        "horizontal_dx": {"type": "string"},
+        "epsilon": {"type": "string"}
+      }
+    },
+    "grading_equations": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "manifests": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["parity", "total_degree", "coarse_signature_count", "refined_signature_count", "signatures"],
+        "properties": {
+          "parity": {"enum": ["even", "odd"]},
+          "total_degree": {"enum": [3, 4, 5, 6]},
+          "coarse_signature_count": {"type": "integer", "minimum": 1},
+          "refined_signature_count": {"type": "integer", "minimum": 1},
+          "signatures": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"$ref": "#/$defs/signature"}
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coarse_signature_count", "refined_signature_count", "rejected_signature_count"],
+      "properties": {
+        "coarse_signature_count": {"const": 2480},
+        "refined_signature_count": {"const": 720},
+        "rejected_signature_count": {"const": 1760}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["integer_grading_enumeration", "engineering_dimension_zero", "total_degree_range_three_through_six", "seed_constraints", "undifferentiated_weyl_ghost_nilpotence", "scalar_index_parity"],
+      "properties": {
+        "integer_grading_enumeration": {"const": "EXHAUSTIVE_UNDER_DECLARED_GENERATOR_ALGEBRA"},
+        "engineering_dimension_zero": {"const": "VERIFIED_EVERY_SIGNATURE"},
+        "total_degree_range_three_through_six": {"const": "VERIFIED"},
+        "seed_constraints": {"const": "VERIFIED"},
+        "undifferentiated_weyl_ghost_nilpotence": {"const": "VERIFIED"},
+        "scalar_index_parity": {"const": "VERIFIED"}
+      }
+    },
+    "next_gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tensor_graph_realizability", "Bianchi_and_Grassmann_quotient", "integration_by_parts_quotient", "dimension_specific_antisymmetrization", "production_Q_dh_matrices"],
+      "properties": {
+        "tensor_graph_realizability": {"const": "NOT_COMPUTED"},
+        "Bianchi_and_Grassmann_quotient": {"const": "NOT_COMPUTED"},
+        "integration_by_parts_quotient": {"const": "NOT_COMPUTED"},
+        "dimension_specific_antisymmetrization": {"const": "NOT_COMPUTED"},
+        "production_Q_dh_matrices": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "claim_boundary": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "analysis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest_sha256", "analysis_sha256"],
+      "properties": {
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "analysis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "certificate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_degree", "ghost_number", "form_degree", "parity", "curvature_count", "tensor_derivative_count", "weyl_ghost_count", "weyl_ghost_derivative_count", "diff_ghost_count", "diff_ghost_derivative_count", "epsilon_count", "coefficient_engineering_dimension", "dx_engineering_dimension", "total_form_engineering_dimension", "tensor_index_slots", "ghost_index_slots", "horizontal_dx_index_slots", "total_index_slots_with_dx", "refinement_status", "refinement_reason", "signature_sha256"],
+      "properties": {
+        "total_degree": {"enum": [3, 4, 5, 6]},
+        "ghost_number": {"type": "integer", "minimum": 0},
+        "form_degree": {"type": "integer", "minimum": 0, "maximum": 4},
+        "parity": {"enum": ["even", "odd"]},
+        "curvature_count": {"type": "integer", "minimum": 0, "maximum": 3},
+        "tensor_derivative_count": {"type": "integer", "minimum": 0},
+        "weyl_ghost_count": {"type": "integer", "minimum": 0},
+        "weyl_ghost_derivative_count": {"type": "integer", "minimum": 0},
+        "diff_ghost_count": {"type": "integer", "minimum": 0},
+        "diff_ghost_derivative_count": {"type": "integer", "minimum": 0},
+        "epsilon_count": {"enum": [0, 1]},
+        "coefficient_engineering_dimension": {"type": "integer"},
+        "dx_engineering_dimension": {"type": "integer"},
+        "total_form_engineering_dimension": {"const": 0},
+        "tensor_index_slots": {"type": "integer", "minimum": 0},
+        "ghost_index_slots": {"type": "integer", "minimum": 0},
+        "horizontal_dx_index_slots": {"type": "integer", "minimum": 0, "maximum": 4},
+        "total_index_slots_with_dx": {"type": "integer", "minimum": 0},
+        "refinement_status": {"enum": ["REFINED_ADMISSIBLE", "REJECTED"]},
+        "refinement_reason": {"type": "string", "minLength": 1},
+        "signature_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

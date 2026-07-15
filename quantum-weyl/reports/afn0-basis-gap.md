@@ -77,13 +77,40 @@ content-addressed bundle under
 `quantum-weyl/local_bv/certificates/basis_graph_manifests/`; the main gap
 certificate retains its path and hash.
 
+## Lower-form carrier rail
+
+The previously disconnected lower-form inputs are now assembled into one
+content-addressed inventory:
+
+| Carrier family | Count |
+|---|---:|
+| universal Diff completions of the eight current candidates | 40 |
+| intrinsic Euler components and their Diff completions | 11 |
+| explicit `Box R` and `omega Box R` primitive/current boundaries | 13 |
+| total | 64 |
+| carriers of form degree below four | 55 |
+
+The generator reconstructs the universal coefficients
+`1,-1,1/2,-1/6,1/24`, verifies every bidegree against the descent database,
+retains the structurally zero Euler tail, and binds the Euler, triviality,
+candidate-catalogue, and descent artifacts by byte and canonical hashes.
+Forward and reverse coverage agrees for this declared carrier algebra.
+
+An independent integer solver now enumerates the ambient mapping-cone
+bidegrees at total degrees three through six. It generates 2,480 coarse
+signatures and retains 720 after seed, engineering, scalar-index, parity, and
+Grassmann refinement. Thus the ambient grading signature stage is exhaustive
+under the declared generator algebra. Tensor realizability, canonical
+identity quotienting, and `TOTAL_COMPLEX_EXHAUSTIVE` remain `NOT_COMPUTED`.
+
 ## Claim boundary
 
 Both `H04` parity slices have terminal resolution for every coarse top-form
 signature.  Even there, `TOP_FORM_BASIS_EXHAUSTIVE` remains `IN_PROGRESS`
 until the canonical forward span is compared with reverse signature coverage.
-All lower-form cocycle and boundary bases remain `NOT_COMPUTED`, so
-`TOTAL_COMPLEX_EXHAUSTIVE` is also `NOT_COMPUTED`.  The report cannot produce
+The current candidate and exact-boundary lower-form carrier sectors are
+complete, but the ambient cocycle and boundary bases are not exhaustive, so
+`TOTAL_COMPLEX_EXHAUSTIVE` is still `NOT_COMPUTED`. The report cannot produce
 a `COMPLETE_NONTRIVIALITY_WITNESS`.
 
 Machine receipt:
@@ -94,8 +121,17 @@ Machine receipt:
 Canonicalize the pending raw contraction graphs under factor permutations,
 dummy-index renaming, curvature symmetries, Bianchi identities, Grassmann
 relations, integration by parts, and dimension-specific antisymmetrization.
-Then repeat the same forward/reverse coverage comparison in every lower-form
-bidegree entering the total descent complex.
+Then construct tensor graphs for all 720 refined ambient signatures, quotient
+them by Bianchi, Grassmann, integration-by-parts, and dimension-specific
+identities, and assemble the production `Q` and `d_h` matrices.
+
+### Lower-form extension verification
+
+| Rail | Result |
+|---|---:|
+| lower-form, ambient-signature, basis-gap, and AFN0 consumers | 20 pass in 12.92 s |
+| complete local-BV suite | 199 pass, 125 subtests in 54.07 s |
+| all affected certificate reproduction checks | pass |
 
 ## Verification receipt
 

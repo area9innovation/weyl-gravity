@@ -84,11 +84,28 @@ still pending.
 
 ## Next computation
 
-Generate all lower-form spaces at total engineering dimension four, including
-Weyl-ghost derivatives and the certified generalized-connection carriers.
-Assemble exact `Q` and `d_h` matrices, integrate the completed intrinsic
-`omega E4` tower, rerun the even anomaly slice, and only then solve the full
-boundary-membership problem.
+The current candidate, intrinsic Euler, and explicit exact-boundary
+lower-form carriers are now assembled and content-addressed: 64 carriers in
+all, 55 below top form degree. The ambient integer solver separately produces
+2,480 coarse signatures and 720 refined signatures across total degrees three
+through six. Construct and quotient their tensor graphs, then assemble exact
+`Q` and `d_h` matrices and only then solve the full boundary-membership
+problem.
+
+Machine receipt:
+`quantum-weyl/local_bv/certificates/AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE.json`.
+
+Ambient grading receipt:
+`quantum-weyl/local_bv/certificates/AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE.json`.
+
+### Lower-form production receipt
+
+| Rail | Result |
+|---|---:|
+| lower-form, ambient-signature, basis-gap, and AFN0 consumers | 20 pass in 12.92 s |
+| complete local-BV suite | 199 pass, 125 subtests in 54.07 s |
+| standalone carrier/signature reproduction checks | pass in under 1 s each |
+| changed Python compile, strict schemas, and scoped diff check | pass |
 
 ## Verification receipt
 

@@ -310,7 +310,7 @@ freeze, QME lifecycle, and `d_quotient` verdict remain unpromoted.
 |---|---|---:|---|
 | 0 | changed Python compile, strict schema parse, generated-artifact reproduction, scoped diff check | under 30 s | pass |
 | 1 | Euler head, connecting equations, expansion, preflight, descent database, and candidate consumers | 24.5 s | 30 pass |
-| 2 | complete `quantum-weyl/local_bv/tests` rail | 54.20 s wall | 189 pass, 125 subtests |
+| 2 | complete `quantum-weyl/local_bv/tests` rail | 54.07 s test time | 199 pass, 125 subtests |
 | 2 | Euler, horizontal, and candidate certificate consumers under hash seeds `1,7,123`, parallel | under 25 s wall | 10 pass per seed |
 
 The suite remains below the 60-second full-tier threshold.  No classical,
