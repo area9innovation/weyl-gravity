@@ -66,8 +66,29 @@ T^{-1}=A\cos t+B\sin t+C\cdot n,
 Every nontrivial denominator vanishes somewhere on the cylinder, and every
 time-dependent member has a regular point where its gradient is spacelike or
 zero.  Thus the complete standard one-field stealth-clock branch is
-obstructed. Generalized scalar actions and genuinely non-conformally-flat
-backreaction remain open.
+obstructed.
+
+The genuinely backreacted route now has a positive result. On the static
+Berger cylinder
+
+\[
+g=-dt^2+a^2(\sigma_1^2+\sigma_2^2)+c^2\sigma_3^2,
+\qquad q=c^2/a^2,
+\]
+
+two standard-sign conformal scalars
+\(T_1=\rho\cos(\omega t)\), \(T_2=\rho\sin(\omega t)\) solve the exact
+coupled Bach--scalar equations on
+
+\[
+\frac{5-\sqrt{21}}2<q<\frac14.
+\]
+
+Their target metric is positive, their phase has timelike gradient, the
+quartic potential is bounded below, and their stationary stress satisfies the
+dominant energy inequalities. This passes the healthy-background gate but
+does not assign a \(D\) verdict: the perturbative covariant charge and all-row
+BV reduction remain open.
 
 The present charge audit composes the exact reduced-mode moment map with the
 already-certified Lorentzian current comparison, so it is tagged
@@ -135,6 +156,7 @@ generators are not a Lie subalgebra. The exact obstruction is
 | Vacuum cylinder | `SECTOR_DEPENDENT` on the declared sectors | certified baseline | certified baseline | zero only in selected absolute residual \(H^4\) | \(I_2\) on centered degree-four classes | open in this challenge record |
 | Cylinder + scalar clock | one-real-scalar exact-cylinder candidate `OBSTRUCTED` | `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` |
 | Cylinder + neutral clock pair | `D_GAUGE` on `compact_neutral_clock_pair_homogeneous` | `OPEN` | `OPEN` | `OPEN` | unrestricted reference pairing is indefinite | `OPEN` |
+| Positive Berger clock | exact healthy background; charge verdict `OPEN` | `OPEN` | `OPEN` | `OPEN` | action current not yet reduced | `OPEN` |
 | Cylinder + Yang--Mills | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Weakly deformed background | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Lorentzian dS/AdS | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
@@ -145,9 +167,9 @@ status promotion.
 
 ## Next gates
 
-1. Construct a positive-energy clock on a genuinely non-conformally-flat
-   Bach-sourced background. Treat a generalized non-Noetherian or
-   higher-derivative scalar as a new theory with separate health and BV gates.
+1. Run `FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT`: compute the normalized
+   covariant \(D\) charge, support-local all-row clock contraction, causal
+   propagation, and stability on the exact positive Berger branch.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
 3. Compute the first background-deformation obstruction and a quantitative
@@ -177,6 +199,8 @@ python3 d_quotient_classical/scalar_clock/homogeneous_stealth_clock.py --check -
 python3 -m unittest d_quotient_classical.scalar_clock.tests.test_homogeneous_stealth_clock
 python3 d_quotient_classical/scalar_clock/inhomogeneous_stealth_clock.py --check --guards
 python3 -m unittest d_quotient_classical.scalar_clock.tests.test_inhomogeneous_stealth_clock
+python3 d_quotient_classical/backreacted_clock/positive_berger_clock.py --check --guards
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_positive_berger_clock
 ```
 
 No full-suite result is implied by the scoped checks.

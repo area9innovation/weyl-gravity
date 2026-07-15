@@ -28,6 +28,7 @@ SETTING_IDS = [
     "vacuum_cylinder",
     "cylinder_scalar_clock",
     "cylinder_neutral_clock_pair",
+    "positive_berger_clock",
     "cylinder_yang_mills",
     "weakly_deformed_background",
     "lorentzian_ds_ads",
@@ -367,6 +368,15 @@ def validate_record(record: object) -> list[str]:
             ),
             None,
         )
+        berger_setting = next(
+            (
+                setting
+                for setting in settings
+                if isinstance(setting, dict)
+                and setting.get("setting_id") == "positive_berger_clock"
+            ),
+            None,
+        )
         if isinstance(clock, dict) and clock.get("status") == "PARTIAL":
             if clock.get("evidence_refs") != [
                 "scalar_clock_vertical_slice",
@@ -374,8 +384,9 @@ def validate_record(record: object) -> list[str]:
                 "neutral_clock_bv_health_audit",
                 "homogeneous_positive_conformal_stealth_clock",
                 "inhomogeneous_conformal_stealth_clock_no_go",
+                "positive_berger_clock_background",
             ]:
-                errors.append("$.work_packages.relational_clock: partial replacement requires the one-scalar, neutral-pair, health, homogeneous-stealth, and complete standard-stealth certificates")
+                errors.append("$.work_packages.relational_clock: partial replacement requires the one-scalar, neutral-pair, health, stealth, and positive Berger-background certificates")
             if not isinstance(scalar_setting, dict):
                 errors.append("$.settings: missing scalar-clock setting")
             elif scalar_setting.get("verdict") is not None or scalar_setting.get("assessment_status") != "OPEN":
@@ -388,6 +399,15 @@ def validate_record(record: object) -> list[str]:
                 or neutral_setting.get("claim_scope") != "REDUCED_MODE"
             ):
                 errors.append("$.settings.cylinder_neutral_clock_pair: replacement requires the scoped homogeneous D_GAUGE theorem")
+            if not isinstance(berger_setting, dict):
+                errors.append("$.settings: missing positive-Berger-clock setting")
+            elif (
+                berger_setting.get("verdict") is not None
+                or berger_setting.get("assessment_status") != "OPEN"
+                or berger_setting.get("claim_scope") != "REDUCED_MODE"
+                or berger_setting.get("charge_test", {}).get("status") != "OPEN"
+            ):
+                errors.append("$.settings.positive_berger_clock: exact background must remain open pending the charge/BV audit")
 
     receipts = record.get("verification_receipts")
     if not isinstance(receipts, list) or not receipts:
@@ -483,6 +503,17 @@ def _mutation_guards(record: dict[str, Any]) -> list[str]:
         "homogeneous_positive_conformal_stealth_clock",
     ]
     rejected("complete_stealth_obstruction_erased", mutant)
+
+    mutant = deepcopy(record)
+    berger = next(
+        setting
+        for setting in mutant["settings"]
+        if setting["setting_id"] == "positive_berger_clock"
+    )
+    berger["assessment_status"] = "CERTIFIED"
+    berger["verdict"] = "D_GAUGE"
+    berger["verdict_dependency_tags"] = ["LOCAL-ALGEBRAIC"]
+    rejected("berger_background_promoted_to_D_verdict", mutant)
     return failures
 
 
@@ -510,7 +541,7 @@ def main() -> int:
             for failure in failures:
                 print(f"mutation guard failed: {failure}", file=sys.stderr)
             return 1
-        print("mutation guards: 10/10 PASS")
+        print("mutation guards: 11/11 PASS")
     print(f"{args.certificate}: PASS")
     return 0
 

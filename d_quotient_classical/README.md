@@ -46,6 +46,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/INHOMOGENEOUS_CONFORMAL_STEALTH_CLOCK_NO_GO.json`](certificates/INHOMOGENEOUS_CONFORMAL_STEALTH_CLOCK_NO_GO.json)
 - Complete standard one-field stealth-clock no-go report:
   [`reports/inhomogeneous-conformal-stealth-clock-no-go.md`](reports/inhomogeneous-conformal-stealth-clock-no-go.md)
+- Positive Berger-clock background certificate:
+  [`certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json`](certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json)
+- Positive Berger-clock background report:
+  [`reports/positive-berger-clock-background.md`](reports/positive-berger-clock-background.md)
 
 The only scientific verdicts are:
 
@@ -78,6 +82,8 @@ python3 d_quotient_classical/scalar_clock/homogeneous_stealth_clock.py --check -
 python3 -m unittest d_quotient_classical.scalar_clock.tests.test_homogeneous_stealth_clock
 python3 d_quotient_classical/scalar_clock/inhomogeneous_stealth_clock.py --check --guards
 python3 -m unittest d_quotient_classical.scalar_clock.tests.test_inhomogeneous_stealth_clock
+python3 d_quotient_classical/backreacted_clock/positive_berger_clock.py --check --guards
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_positive_berger_clock
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -87,7 +93,8 @@ producer checks for the compact charge, alternative residual complexes, and
 the one-real-scalar obstruction, neutral two-field replacement, its local
 positive-health obstruction, the homogeneous positive-sign stealth
 classification, and the complete standard one-field inhomogeneous stealth
-no-go.
+no-go. The final pair certifies the exact positive-matter Berger-clock
+background while keeping the covariant charge and all-row BV verdict open.
 
 ## Promotion rule
 

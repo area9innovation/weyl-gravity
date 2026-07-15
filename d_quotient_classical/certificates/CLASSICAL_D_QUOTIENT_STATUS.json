@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split and the homogeneous neutral two-scalar clock sector on their separately declared reduced-mode phase spaces. Local audits prove that the neutral clock's opposite-sign ratio sector is not globally positive or entirely contractible. The complete standard one-field positive-sign conformal stealth family, including inhomogeneous configurations, is also classified and has no globally regular everywhere-timelike clock. These results do not alter the scoped homogeneous D_GAUGE verdict or rule out generalized scalar actions and genuinely non-conformally-flat Bach-sourced backreaction. No healthy backreacted matter, interacting, boundary, quantum, or universal D verdict is promoted.",
+  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split and the homogeneous neutral two-scalar clock sector on their separately declared reduced-mode phase spaces. Local audits prove that the neutral clock's opposite-sign ratio sector is not globally positive or entirely contractible, while the complete standard one-field conformal stealth family has no globally regular everywhere-timelike clock. A new exact open family of non-conformally-flat Berger-cylinder backgrounds carries a standard-sign rotating two-scalar phase clock, positive quartic potential, and dominant-energy stress. This is a healthy background theorem, not a D-charge or all-row BV theorem. No new interacting, boundary, quantum, or universal D verdict is promoted.",
   "claim_state": "PARTIAL",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -112,12 +112,23 @@
       "evidence_id": "inhomogeneous_conformal_stealth_clock_no_go",
       "path": "d_quotient_classical/certificates/INHOMOGENEOUS_CONFORMAL_STEALTH_CLOCK_NO_GO.json",
       "sha256": "8883036bbad16a0aa1420240d35571257f2cff470f5554c7003f2e5c091d9349"
+    },
+    {
+      "claim_scope": "Exact non-conformally-flat Berger-cylinder Bach-source family with two standard-sign rotating conformal scalars, full local Diff x Weyl clock incidence, positive quartic potential, and dominant-energy stress; no D-charge verdict.",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "evidence_id": "positive_berger_clock_background",
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "sha256": "fd7419b3a5985d83593de83824263c320b8fe44e47c69c473e7db5e30040b192"
     }
   ],
   "open_fields": [
     "sufficiency of the quadratic Taub zero fibre for all-order nonlinear integrability",
     "closure and possible algebroid structure of zero-charge transformations",
-    "positive-energy clock on a genuinely non-conformally-flat Bach-sourced background, or a separately declared generalized scalar theory with new health and BV gates",
+    "normalized covariant D charge and presymplectic reduction on perturbations of the positive Berger-clock branch",
+    "support-local all-row BV contraction and causal Green theory for the matter-coupled Berger branch",
     "Yang-Mills matter contribution",
     "quantitative weak-background stability radius",
     "Lorentzian dS/AdS boundary charges",
@@ -463,6 +474,29 @@
       "verdict_dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
     },
     {
+      "assessment_status": "OPEN",
+      "assumptions": [
+        "the background metric is the static biaxially squashed Berger cylinder with q in ((5-sqrt(21))/2,1/4)",
+        "two real standard-sign Weyl-weight-minus-one conformal scalars have constant modulus and phase theta=omega t",
+        "the declared metric equation convention is alpha_B B_mn=T_mn with alpha_B>0"
+      ],
+      "boundary_conditions": "closed Berger S3 with no spatial boundary; exact stationary Bach-sourced background; perturbative phase space and charge normalization remain open",
+      "cartan_contraction": {"dependency_tags": [], "evidence_refs": [], "result": null, "status": "OPEN"},
+      "causal_homotopy": {"dependency_tags": [], "evidence_refs": [], "result": null, "status": "OPEN"},
+      "charge_test": {"conservation": "OPEN", "delta_H_D": "OPEN", "evidence_refs": [], "flux": "OPEN", "integrability": "OPEN", "phase_space_preserved": "OPEN", "reference_normalization": "OPEN", "status": "OPEN", "strongest_counterexample": null, "surface_corner_terms": "OPEN"},
+      "claim_scope": "REDUCED_MODE",
+      "einstein_sector": {"dependency_tags": [], "evidence_refs": [], "result": null, "status": "OPEN"},
+      "one_particle_sector": {"dependency_tags": [], "evidence_refs": [], "result": null, "status": "OPEN"},
+      "pairing": {"dependency_tags": [], "evidence_refs": [], "result": null, "status": "OPEN"},
+      "phase_space": "positive_rotating_scalar_berger_background: exact open family of smooth stationary backgrounds with positive target metric, bounded-below quartic, timelike phase clock, and full raw Diff x Weyl incidence; perturbations have not yet been reduced",
+      "phase_space_status": "PARTIALLY_SPECIFIED",
+      "sector_restrictions": [],
+      "sector_results": [],
+      "setting_id": "positive_berger_clock",
+      "verdict": null,
+      "verdict_dependency_tags": []
+    },
+    {
       "assessment_status": "NOT_TESTED",
       "assumptions": [],
       "boundary_conditions": null,
@@ -539,7 +573,7 @@
       "verdict_dependency_tags": []
     }
   ],
-  "source_commit": "fc751539810e9c8191e455c4fcd715ba6d39a41a",
+  "source_commit": "77c4108b6a7e8d4aedb6ef6ddaaa5772c4636851",
   "verification_receipts": [
     {
       "command": "python3 symbolic/verify_compact_cylinder_d_charge_audit.py --check",
@@ -652,6 +686,22 @@
       "higher_tiers_not_run": "No backreacted Bach geometry, all-row BV contraction, boundary, or quantum result is claimed.",
       "status": "PASS",
       "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/positive_berger_clock.py --check --guards",
+      "elapsed_seconds": 0.85,
+      "escalation_criterion": "Escalate if the Berger curvature, exact Bach-source family, positivity interval, energy inequalities, clock incidence, or claim-boundary guards change.",
+      "higher_tiers_not_run": "The exact background theorem does not compute the perturbative covariant D charge, all-row BV contraction, causal Green homotopy, or stability.",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_positive_berger_clock",
+      "elapsed_seconds": 0.7,
+      "escalation_criterion": "Escalate if the exact background, positive matter health, rational fixture, or fail-closed D-verdict boundary changes.",
+      "higher_tiers_not_run": "The next gate is the full Berger-clock charge and BV audit on perturbations.",
+      "status": "PASS",
+      "test_tier": 1
     }
   ],
   "work_packages": {
@@ -684,7 +734,7 @@
       "evidence_refs": [
         "compact_d_charge"
       ],
-      "next_gate": "Construct a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background; generalized scalar actions are separate theories with new health gates.",
+      "next_gate": "Compute the normalized covariant D charge on the positive Berger-clock perturbative phase space, including scalar improvement and all gravitational/matter terms.",
       "result": "The compact vacuum cylinder is sector-dependent: D is charged on P_lin and gauge only after restriction to and quotient by the full Taub-zero derived sector.",
       "status": "CERTIFIED"
     },
@@ -698,10 +748,11 @@
         "neutral_conformal_clock_pair",
         "neutral_clock_bv_health_audit",
         "homogeneous_positive_conformal_stealth_clock",
-        "inhomogeneous_conformal_stealth_clock_no_go"
+        "inhomogeneous_conformal_stealth_clock_no_go",
+        "positive_berger_clock_background"
       ],
-      "next_gate": "Construct a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background; treat generalized scalar actions as new theories with independent health and BV gates.",
-      "result": "The free one-real-scalar candidate is obstructed. The neutral (+,-) pair is an exact homogeneous compact-D clock with scoped D_GAUGE verdict, but its Weyl-reduced ratio mode retains derivatives and every neutral winding orbit crosses four kinetic-sign degeneracies. The complete standard positive-sign conformal stealth family is now classified, including inhomogeneous configurations: sigma=1/T=A cos(t)+B sin(t)+C.n with fixed quartic coupling. Every nontrivial denominator has a zero, and every time-dependent member has a regular point where its gradient is spacelike or zero. The neutral reference theorem survives; no healthy global standard one-field clock exists.",
+      "next_gate": "Run FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT: derive the perturbative covariant D charge, support-local all-row clock contraction, causal propagation, and stability on the positive Berger branch.",
+      "result": "The vacuum one-real-scalar and complete standard one-field stealth routes are obstructed. The neutral (+,-) pair gives a scoped homogeneous D_GAUGE reference-clock theorem but fails the global positive-health audit. A new exact Berger-cylinder family passes the coupled Bach-scalar equations with two standard-sign rotating conformal scalars, full raw Diff x Weyl clock incidence, positive quartic potential, and dominant-energy stress. This establishes a credible healthy physical-clock background, but not yet a D charge verdict or support-local all-row BV reduction.",
       "status": "PARTIAL"
     }
   }

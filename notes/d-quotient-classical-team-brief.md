@@ -149,8 +149,23 @@ candidate has reciprocal
 \(T^{-1}=A\cos t+B\sin t+C\cdot n\); every nontrivial denominator has a zero,
 and every time-dependent gradient fails the everywhere-timelike test. The next
 clock gate is `POSITIVE_ENERGY_NONCONFORMALLY_FLAT_BACH_SOURCED_CLOCK`.
-Generalized non-Noetherian or higher-derivative scalar actions count as new
-theories and require independent health and BV gates.
+That gate is now passed by an exact Berger-cylinder family. Two standard-sign
+conformal scalars of constant modulus rotate with phase \(\theta=\omega t\),
+source the nonzero Bach tensor, have a positive quartic potential, satisfy the
+dominant energy inequalities, and give full raw Diff \(\times\) Weyl incidence
+on
+
+\[
+\frac{5-\sqrt{21}}2<q=\frac{c^2}{a^2}<\frac14.
+\]
+
+This proves a credible healthy clock *background*, not yet a physical
+reduction theorem. The replacement gate is
+`FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT`: derive the normalized covariant
+\(D\) charge on perturbations, the support-local all-row clock contraction,
+causal Green homotopies, and stability. Generalized non-Noetherian or
+higher-derivative scalar actions remain separate theories with independent
+health and BV gates.
 
 ### Parked nonlinear support-local export
 
