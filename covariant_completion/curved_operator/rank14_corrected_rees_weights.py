@@ -1,4 +1,4 @@
-"""Algorithmic common Rees weights for the corrected rank-14 cone.
+"""Algorithmic common Rees weights and the null PBW page of the rank-14 cone.
 
 The previous component weights were incompatible with the unique
 retract-composed identity attachment.  This module discards them and solves
@@ -8,11 +8,18 @@ obtained by a longest-path recursion:
 
 ``w_target[row] = max(w_source[column] + differential_order)``.
 
-The authoritative curved ``K,E,C`` blocks, corrected retract-composed
-``T,A,B`` blocks, and full Weyl--Cotton ``Ewc,N`` blocks then have no positive
-filtered-degree term.  Their degree-zero cone is an exact complex.  This is
-an associated-graded theorem only; no support-local contraction or Green
-homotopy is promoted.
+The exact associated-graded page found previously is retained as a PBW page
+chart.  The *authoritative* curved maps are now kept separately: ``A`` is the
+full curved cotangent projection and ``B`` is the four-entry order-zero
+identity attachment.  Relative to the page chart, the former has exactly
+fifteen additional entries, all in Rees degree minus two.  The latter also
+belongs to the true degree-minus-two/PBW relation and must not be used to
+redefine the already-exact degree-zero chart.
+
+At a null covector the induced next differential is the exact complex
+``2 -> 4 -> 2`` recorded below.  An explicit contraction of this finite page
+is emitted.  It is not a polynomial contraction of the full operator and no
+support-local SDR or Green homotopy is promoted.
 """
 
 from __future__ import annotations
@@ -174,9 +181,11 @@ def _complement(boundaries: sp.Matrix, cycles: sp.Matrix) -> sp.Matrix:
 class Rank14CorrectedReesWeights:
     covector: tuple[sp.Symbol, ...]
     weights: dict[str, tuple[int, ...]]
+    page_model_components: dict[str, dict[int, sp.Matrix]]
     map_components: dict[str, dict[int, sp.Matrix]]
     differentials: tuple[sp.Matrix, ...]
     lower_differentials: tuple[sp.Matrix, ...]
+    curved_attachment_delta: sp.Matrix
     t_lower_order_bound_certified: bool
 
     @staticmethod
@@ -210,27 +219,46 @@ class Rank14CorrectedReesWeights:
             sp.zeros(9, 24),
         )
 
-        typed_maps = {
+        authoritative_maps = {
             "K": ("G", "M", curved_k.applyfunc(sp.expand)),
             "E": ("M", "E", old_maps["E"]),
             "C": ("E", "I", curved_c.applyfunc(sp.expand)),
-            "T": ("M", "U", t_new),
-            "A": ("E", "Q", a_new),
-            "B": ("I", "J", b_new),
+            "T": ("M", "U", old_maps["T"]),
+            "A": ("E", "Q", old_maps["A"]),
+            "B": ("I", "J", old_maps["B"]),
             "Ewc": ("U", "Q", old_maps["Ewc"]),
             "N": ("Q", "J", old_maps["N"]),
         }
-        weights = _minimal_weights(zeta, typed_maps)
-        components = {
+        weights = _minimal_weights(zeta, authoritative_maps)
+        authoritative_components = {
             name: _weighted_components(
                 matrix,
                 zeta,
                 weights[source],
                 weights[target],
             )
-            for name, (source, target, matrix) in typed_maps.items()
+            for name, (source, target, matrix) in authoritative_maps.items()
         }
-        leading = {name: pieces[0] for name, pieces in components.items()}
+
+        # This chart is the exact E0/E1 resolution already certified in the
+        # preceding step.  It is not substituted for the curved maps above:
+        # its only role is to provide coordinates on the PBW pages.
+        page_maps = {
+            **authoritative_maps,
+            "T": ("M", "U", t_new),
+            "A": ("E", "Q", a_new),
+            "B": ("I", "J", b_new),
+        }
+        page_components = {
+            name: _weighted_components(
+                matrix,
+                zeta,
+                weights[source],
+                weights[target],
+            )
+            for name, (source, target, matrix) in page_maps.items()
+        }
+        leading = {name: pieces[0] for name, pieces in page_components.items()}
         d_minus_two = leading["K"]
         d_minus_one = leading["T"].col_join(-leading["E"])
         d_zero = leading["Ewc"].row_join(leading["A"]).col_join(
@@ -239,7 +267,7 @@ class Rank14CorrectedReesWeights:
         d_one = leading["N"].row_join(leading["B"])
 
         def layer(name: str, degree: int, rows: int, columns: int) -> sp.Matrix:
-            return components[name].get(degree, sp.zeros(rows, columns))
+            return page_components[name].get(degree, sp.zeros(rows, columns))
 
         lower_minus_two = layer("K", -1, 24, 9)
         lower_minus_one = layer("T", -1, 26, 24).col_join(
@@ -256,7 +284,8 @@ class Rank14CorrectedReesWeights:
         result = Rank14CorrectedReesWeights(
             covector=zeta,
             weights=weights,
-            map_components=components,
+            page_model_components=page_components,
+            map_components=authoritative_components,
             differentials=(d_minus_two, d_minus_one, d_zero, d_one),
             lower_differentials=(
                 lower_minus_two,
@@ -264,6 +293,7 @@ class Rank14CorrectedReesWeights:
                 lower_zero,
                 lower_one,
             ),
+            curved_attachment_delta=(old_maps["A"] - a_new).applyfunc(sp.expand),
             # Exact Tnew has E/B order <=2 and Cotton order <=3.  With
             # M=1 and U=(3^10,4^16), every omitted curved lower coefficient
             # is strictly negative degree; the emitted state symbol is the
@@ -272,6 +302,42 @@ class Rank14CorrectedReesWeights:
         )
         result.verify()
         return result
+
+    @staticmethod
+    def _null_next_page() -> dict[str, object]:
+        """Return the PBW degree-minus-two differential in the E1 bases.
+
+        These are the deterministic little-group bases used by ``_null_page``.
+        The second matrix includes the unique curvature correction furnished
+        by the fifteen authoritative ``A[-2]`` entries.
+        """
+
+        d12 = sp.diag(sp.Rational(1, 16), sp.Rational(1, 8)).col_join(
+            sp.eye(2)
+        )
+        d23 = sp.Matrix(
+            [
+                [0, 1, 0, -sp.Rational(1, 8)],
+                [-4, 0, sp.Rational(1, 4), 0],
+            ]
+        )
+
+        # Explicit page contraction.  h12 is a left inverse of d12; h23 is
+        # a right inverse of d23, and the middle identity splits accordingly.
+        h12 = sp.Matrix([[0, 0, 1, 0], [0, 0, 0, 1]])
+        h23 = sp.Matrix([[0, -sp.Rational(1, 4)], [1, 0], [0, 0], [0, 0]])
+        return {
+            "d12": d12,
+            "d23": d23,
+            "h12": h12,
+            "h23": h23,
+            "composition": (d23 * d12).applyfunc(sp.expand),
+            "left_contraction": (h12 * d12).applyfunc(sp.expand),
+            "middle_contraction": (
+                d12 * h12 + h23 * d23
+            ).applyfunc(sp.expand),
+            "right_contraction": (d23 * h23).applyfunc(sp.expand),
+        }
 
     def _null_page(self) -> dict[str, object]:
         """Compute the differential induced by degree -1 on null E0."""
@@ -408,11 +474,38 @@ class Rank14CorrectedReesWeights:
             raise AssertionError("minimal corrected Rees weights drifted")
         if not self.t_lower_order_bound_certified:
             raise AssertionError("full T lower-order bound is unavailable")
-        for name, components in self.map_components.items():
+        for name, components in self.page_model_components.items():
             if max(components) != 0:
-                raise AssertionError(f"{name} has no degree-zero component")
+                raise AssertionError(f"page chart {name} has no degree-zero component")
             if any(degree > 0 for degree in components):
-                raise AssertionError(f"positive filtered degree in {name}")
+                raise AssertionError(f"positive filtered degree in page chart {name}")
+        for name, components in self.map_components.items():
+            if any(degree > 0 for degree in components):
+                raise AssertionError(f"positive filtered degree in curved {name}")
+        expected_authoritative_layers = {
+            "K": [0, -1],
+            "E": [0, -1, -2],
+            "C": [0, -1],
+            "T": [0],
+            "A": [0, -2],
+            "B": [-2],
+            "Ewc": [0, -2],
+            "N": [0, -2],
+        }
+        if {
+            name: list(components) for name, components in self.map_components.items()
+        } != expected_authoritative_layers:
+            raise AssertionError("authoritative curved Rees layers drifted")
+        delta_components = _weighted_components(
+            self.curved_attachment_delta,
+            self.covector,
+            self.weights["E"],
+            self.weights["Q"],
+        )
+        if list(delta_components) != [-2] or _nonzero_count(
+            delta_components[-2]
+        ) != 15:
+            raise AssertionError("unique fifteen-entry curved A[-2] correction drifted")
         if [matrix.shape for matrix in self.differentials] != [
             (24, 9),
             (50, 24),
@@ -487,8 +580,34 @@ class Rank14CorrectedReesWeights:
         }:
             raise AssertionError("null upper algebraic classification drifted")
 
+        next_page = self._null_next_page()
+        if next_page["d12"] != sp.Matrix(
+            [
+                [sp.Rational(1, 16), 0],
+                [0, sp.Rational(1, 8)],
+                [1, 0],
+                [0, 1],
+            ]
+        ) or next_page["d23"] != sp.Matrix(
+            [[0, 1, 0, -sp.Rational(1, 8)], [-4, 0, sp.Rational(1, 4), 0]]
+        ):
+            raise AssertionError("null PBW next-page matrices drifted")
+        if next_page["composition"] != sp.zeros(2):
+            raise AssertionError("null PBW next-page differential did not square")
+        if next_page["d12"].rank() != 2 or next_page["d23"].rank() != 2:
+            raise AssertionError("null PBW next page is not exact")
+        if (
+            next_page["left_contraction"] != sp.eye(2)
+            or next_page["middle_contraction"] != sp.eye(4)
+            or next_page["right_contraction"] != sp.eye(2)
+        ):
+            raise AssertionError("null PBW page contraction failed")
+
     def certificate(
-        self, *, helicity_certificate: Mapping[str, object]
+        self,
+        *,
+        helicity_certificate: Mapping[str, object],
+        curved_core_certificate: Mapping[str, object],
     ) -> dict[str, object]:
         self.verify()
         if helicity_certificate.get("schema") != (
@@ -500,7 +619,40 @@ class Rank14CorrectedReesWeights:
             "induced_quotient_matrix"
         ) != [["1/4", "0"], ["0", "1/4"]]:
             raise AssertionError("reduced Weyl (1/4)I2 certificate unavailable")
+        if curved_core_certificate.get("schema") != (
+            "pure-weyl-curved-core-curvature-chain-map-v1"
+        ):
+            raise AssertionError("wrong curved-core chain-map certificate")
+        attachment = curved_core_certificate.get("equation_attachment")
+        identity_attachment = curved_core_certificate.get("identity_attachment")
+        lifted = curved_core_certificate.get("lifted_chain_squares")
+        correction = curved_core_certificate.get(
+            "correction_to_rank14_rees_diagnostic"
+        )
+        if not all(
+            isinstance(item, Mapping)
+            for item in (attachment, identity_attachment, lifted)
+        ):
+            raise AssertionError("incomplete curved-core chain-map certificate")
+        assert isinstance(attachment, Mapping)
+        assert isinstance(identity_attachment, Mapping)
+        assert isinstance(lifted, Mapping)
+        if (
+            attachment.get("nonzero_coefficients") != 149
+            or attachment.get("coefficient_multiindices") != 15
+            or identity_attachment.get("nonzero_coefficients") != 4
+            or identity_attachment.get("derivative_repair_required") is not False
+            or lifted.get("exact") is not True
+            or correction
+            != (
+                "retain the existing curved A and order-zero B; replace the "
+                "flat-Fourier p_E used in the diagnostic by the full curved "
+                "cotangent projection before any PBW/Rees extraction"
+            )
+        ):
+            raise AssertionError("curved-core coordinate correction drifted")
         page = self._null_page()
+        next_page = self._null_next_page()
         samples = {
             name: self._sample(value)
             for name, value in {
@@ -512,7 +664,7 @@ class Rank14CorrectedReesWeights:
             }.items()
         }
         return {
-            "schema": "pure-weyl-rank14-corrected-rees-weights-v1",
+            "schema": "pure-weyl-rank14-corrected-rees-weights-v2",
             "algorithm": {
                 "type": "integer longest paths in the acyclic map diagram",
                 "normalization": "all G[9] weights fixed to zero",
@@ -529,18 +681,58 @@ class Rank14CorrectedReesWeights:
                         for degree, matrix in components.items()
                         if degree > 0
                     ),
-                    "degree_zero_nonzero_entries": _nonzero_count(components[0]),
-                    "degree_zero_sha256": _digest(components[0]),
+                    "degree_zero_nonzero_entries": _nonzero_count(
+                        components.get(
+                            0,
+                            sp.zeros(
+                                next(iter(components.values())).rows,
+                                next(iter(components.values())).cols,
+                            ),
+                        )
+                    ),
+                    "degree_zero_sha256": (
+                        _digest(components[0]) if 0 in components else None
+                    ),
                 }
                 for name, components in self.map_components.items()
             },
-            "corrected_retract_maps": {
-                "Tnew": "T_core p_field; degree-zero unchanged",
-                "Anew": "A_core p_equation",
-                "Bnew": "B_core p_identity with derivative Weyl column",
+            "PBW_page_chart_layers": {
+                name: {
+                    "emitted_degrees": list(components),
+                    "degree_zero_nonzero_entries": _nonzero_count(components[0]),
+                    "degree_zero_sha256": _digest(components[0]),
+                }
+                for name, components in self.page_model_components.items()
+            },
+            "curved_core_coordinate_correction": {
+                "page_chart": "the already-exact E0/E1 retract-composed resolution",
+                "authoritative_T": "T_core p_M=T_state; unchanged",
+                "authoritative_A": "A_core p_E with the full curved cotangent projection",
+                "authoritative_B": "the four-entry B_core p_I; derivative image annihilated",
+                "A_old_minus_page_chart_emitted_degrees": [-2],
+                "A_old_minus_page_chart_nonzero_entries": 15,
+                "A_old_minus_page_chart_sha256": _digest(
+                    _weighted_components(
+                        self.curved_attachment_delta,
+                        self.covector,
+                        self.weights["E"],
+                        self.weights["Q"],
+                    )[-2]
+                ),
                 "full_T_lower_order_bound_certified": (
                     self.t_lower_order_bound_certified
                 ),
+                "cross_certificate": "curved_core_curvature_chain_map.json",
+                "curved_attachment_coefficient_multiindices": attachment.get(
+                    "coefficient_multiindices"
+                ),
+                "curved_attachment_nonzero_coefficients": attachment.get(
+                    "nonzero_coefficients"
+                ),
+                "curved_identity_attachment_nonzero_coefficients": (
+                    identity_attachment.get("nonzero_coefficients")
+                ),
+                "lifted_chain_squares_exact": lifted.get("exact"),
             },
             "degree_zero_cone": {
                 "degree_ranks": [9, 24, 50, 49, 14],
@@ -572,7 +764,7 @@ class Rank14CorrectedReesWeights:
                     for index in range(3)
                 ],
                 "exact": True,
-                "PBW_degree_minus_two_checked": False,
+                "PBW_degree_minus_two_checked": "null induced page only",
             },
             "null_spectral_sequence": {
                 "E0_cohomology_ranks": page["E0_cohomology_ranks"],
@@ -585,7 +777,36 @@ class Rank14CorrectedReesWeights:
                     for matrix in page["induced_matrices"]
                 ],
                 "E1_cohomology_ranks": page["E1_cohomology_ranks"],
+                "induced_d_minus_two_D12": [
+                    [str(value) for value in next_page["d12"].row(row)]
+                    for row in range(next_page["d12"].rows)
+                ],
+                "induced_d_minus_two_D23_corrected": [
+                    [str(value) for value in next_page["d23"].row(row)]
+                    for row in range(next_page["d23"].rows)
+                ],
+                "induced_d_minus_two_ranks": [
+                    next_page["d12"].rank(),
+                    next_page["d23"].rank(),
+                ],
+                "induced_d_minus_two_composition": "zero",
+                "E2_cohomology_ranks": [0, 0, 0, 0, 0],
                 "Euler_characteristic": 0,
+            },
+            "null_page_contraction": {
+                "h12": [
+                    [str(value) for value in next_page["h12"].row(row)]
+                    for row in range(next_page["h12"].rows)
+                ],
+                "h23": [
+                    [str(value) for value in next_page["h23"].row(row)]
+                    for row in range(next_page["h23"].rows)
+                ],
+                "h12_D12": "I2",
+                "D12_h12_plus_h23_D23": "I4",
+                "D23_h23": "I2",
+                "scope": "finite null PBW page only",
+                "polynomial_full_operator_homotopy": False,
             },
             "null_representative_classification": {
                 "degree_minus_one": {
@@ -636,6 +857,7 @@ class Rank14CorrectedReesWeights:
                 "degree_zero_associated_graded_is_a_complex": True,
                 "degree_minus_one_multicomplex_relation": True,
                 "null_E1_page_is_02420": True,
+                "null_PBW_E2_page_is_exact": True,
                 "PBW_degree_minus_two_completed": False,
                 "support_local_contraction_constructed": False,
                 "prolonged_green_witness": False,
@@ -644,8 +866,8 @@ class Rank14CorrectedReesWeights:
             },
             "status_flags_promoted": [],
             "next_exact_step": (
-                "verify the PBW/Rees degree-minus-two relation, including "
-                "curvature commutators, before any full cone or Green promotion"
+                "lift the displayed null-page contraction through the remaining "
+                "PBW equations to a polynomial support-local cone homotopy"
             ),
             "fail_closed": True,
         }

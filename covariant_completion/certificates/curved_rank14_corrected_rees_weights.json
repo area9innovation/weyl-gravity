@@ -1,4 +1,71 @@
 {
+  "PBW_page_chart_layers": {
+    "A": {
+      "degree_zero_nonzero_entries": 82,
+      "degree_zero_sha256": "393c6e4c2e3112d4ce1b38d4b592b464eebc46b7e3e95f13ba0daf6a4b6f0f09",
+      "emitted_degrees": [
+        0,
+        -2
+      ]
+    },
+    "B": {
+      "degree_zero_nonzero_entries": 16,
+      "degree_zero_sha256": "92d05ae417bb3fab3ec27d75ca2f8e544635921c3592f1d46b1dbb7bc9a8cdfe",
+      "emitted_degrees": [
+        0,
+        -1,
+        -2
+      ]
+    },
+    "C": {
+      "degree_zero_nonzero_entries": 88,
+      "degree_zero_sha256": "4df1b677aa92d3b0eccf3e615e196a2df251d24ce51bfb4e6f03c3119eeebb01",
+      "emitted_degrees": [
+        0,
+        -1
+      ]
+    },
+    "E": {
+      "degree_zero_nonzero_entries": 192,
+      "degree_zero_sha256": "de68e21caba2f676ae4813ee1fc2e8eddffd03fb39c4a9707b7e222119250348",
+      "emitted_degrees": [
+        0,
+        -1,
+        -2
+      ]
+    },
+    "Ewc": {
+      "degree_zero_nonzero_entries": 224,
+      "degree_zero_sha256": "310967a9619db0a018eedd36b2e8d0c56b59f2b32231cb3338eba117eef082e9",
+      "emitted_degrees": [
+        0,
+        -2
+      ]
+    },
+    "K": {
+      "degree_zero_nonzero_entries": 52,
+      "degree_zero_sha256": "85ca3dce86b40862a100708d6618da2ccb49d59cbace544a9800d0726b63d936",
+      "emitted_degrees": [
+        0,
+        -1
+      ]
+    },
+    "N": {
+      "degree_zero_nonzero_entries": 106,
+      "degree_zero_sha256": "ef89da2f38eca403b8b32aa3b280c1648ef0ba2c5a27955d01874934d7c74abf",
+      "emitted_degrees": [
+        0,
+        -2
+      ]
+    },
+    "T": {
+      "degree_zero_nonzero_entries": 206,
+      "degree_zero_sha256": "34b88c3d3b9a2307bf4e8fbcd1fb0180232579409e8c44fce5401390628bef0d",
+      "emitted_degrees": [
+        0
+      ]
+    }
+  },
   "algorithm": {
     "hand_fitted": false,
     "inequality": "order+w_source-w_target <= 0",
@@ -113,11 +180,22 @@
       ]
     }
   },
-  "corrected_retract_maps": {
-    "Anew": "A_core p_equation",
-    "Bnew": "B_core p_identity with derivative Weyl column",
-    "Tnew": "T_core p_field; degree-zero unchanged",
-    "full_T_lower_order_bound_certified": true
+  "curved_core_coordinate_correction": {
+    "A_old_minus_page_chart_emitted_degrees": [
+      -2
+    ],
+    "A_old_minus_page_chart_nonzero_entries": 15,
+    "A_old_minus_page_chart_sha256": "036990534acfa2c27670e817f05320703c8d8953589dd4622ae960dfa14ba100",
+    "authoritative_A": "A_core p_E with the full curved cotangent projection",
+    "authoritative_B": "the four-entry B_core p_I; derivative image annihilated",
+    "authoritative_T": "T_core p_M=T_state; unchanged",
+    "cross_certificate": "curved_core_curvature_chain_map.json",
+    "curved_attachment_coefficient_multiindices": 15,
+    "curved_attachment_nonzero_coefficients": 149,
+    "curved_identity_attachment_nonzero_coefficients": 4,
+    "full_T_lower_order_bound_certified": true,
+    "lifted_chain_squares_exact": true,
+    "page_chart": "the already-exact E0/E1 retract-composed resolution"
   },
   "decision": {
     "PBW_degree_minus_two_completed": false,
@@ -127,12 +205,13 @@
     "degree_minus_one_multicomplex_relation": true,
     "degree_zero_associated_graded_is_a_complex": true,
     "null_E1_page_is_02420": true,
+    "null_PBW_E2_page_is_exact": true,
     "prolonged_green_witness": false,
     "rank14_SDR_constructed": false,
     "support_local_contraction_constructed": false
   },
   "degree_minus_one_multicomplex": {
-    "PBW_degree_minus_two_checked": false,
+    "PBW_degree_minus_two_checked": "null induced page only",
     "exact": true,
     "relation": "D[0]D[-1]+D[-1]D[0]=0",
     "square_nonzero_entries": [
@@ -216,11 +295,9 @@
       "positive_degree_terms": 0
     },
     "B": {
-      "degree_zero_nonzero_entries": 16,
-      "degree_zero_sha256": "92d05ae417bb3fab3ec27d75ca2f8e544635921c3592f1d46b1dbb7bc9a8cdfe",
+      "degree_zero_nonzero_entries": 0,
+      "degree_zero_sha256": null,
       "emitted_degrees": [
-        0,
-        -1,
         -2
       ],
       "positive_degree_terms": 0
@@ -280,7 +357,46 @@
       "positive_degree_terms": 0
     }
   },
-  "next_exact_step": "verify the PBW/Rees degree-minus-two relation, including curvature commutators, before any full cone or Green promotion",
+  "next_exact_step": "lift the displayed null-page contraction through the remaining PBW equations to a polynomial support-local cone homotopy",
+  "null_page_contraction": {
+    "D12_h12_plus_h23_D23": "I4",
+    "D23_h23": "I2",
+    "h12": [
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "h12_D12": "I2",
+    "h23": [
+      [
+        "0",
+        "-1/4"
+      ],
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "polynomial_full_operator_homotopy": false,
+    "scope": "finite null PBW page only"
+  },
   "null_representative_classification": {
     "degree_minus_one": {
       "interpretation": "E0 splits into algebraic f[2] and v[2]; d[-1] kills the v pair and retains the f pair",
@@ -317,6 +433,13 @@
       2,
       4,
       2,
+      0
+    ],
+    "E2_cohomology_ranks": [
+      0,
+      0,
+      0,
+      0,
       0
     ],
     "Euler_characteristic": 0,
@@ -444,9 +567,46 @@
         0,
         4
       ]
+    ],
+    "induced_d_minus_two_D12": [
+      [
+        "1/16",
+        "0"
+      ],
+      [
+        "0",
+        "1/8"
+      ],
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "induced_d_minus_two_D23_corrected": [
+      [
+        "0",
+        "1",
+        "0",
+        "-1/8"
+      ],
+      [
+        "-4",
+        "0",
+        "1/4",
+        "0"
+      ]
+    ],
+    "induced_d_minus_two_composition": "zero",
+    "induced_d_minus_two_ranks": [
+      2,
+      2
     ]
   },
-  "schema": "pure-weyl-rank14-corrected-rees-weights-v1",
+  "schema": "pure-weyl-rank14-corrected-rees-weights-v2",
   "status_flags_promoted": [],
   "weights": {
     "E": [
