@@ -1,17 +1,17 @@
 {
   "D_end": {
     "coefficient_sha256": {
-      "D_E": "a0683d12abaeaa2e69267f5c4ae25af266c45f6c8e4da53813639339396603dd",
+      "D_E": "70af99046ae98b2acdbee2281eaa6359aacf1dbcf5166e8209c850697f48213a",
       "D_G": "17be0d9c3966998835715e5b8dacbefed487e89fc1817949ab6c1929774d75e8",
       "D_I": "f28de529a6f36087a50dc438099042f3085a20690bdbe5ce7f6205abe3b14994",
-      "D_M": "83bf0133d0f128bff8d537ad2d63a468eced626bbc09f0a3c1d038929e4c8155"
+      "D_M": "9fdb02dde863fe6944645d816d3981fa466960ae8b96f5609f2d323c1349d483"
     },
     "coefficientwise_complete": true,
     "degreewise_blocks": {
-      "E": "2 Bach_bar+T_gf^sharp C_met=(D_M)^sharp",
+      "E": "Bach_bar+T_gf^sharp C_met=(D_M)^sharp",
       "G": "T_gf K_met",
       "I": "C_met T_gf^sharp=(D_G)^sharp",
-      "M": "2 Bach_bar+K_met T_gf=2H"
+      "M": "Bach_bar+K_met T_gf=H_end"
     },
     "formal_adjoint_defects": 0,
     "identity": "D_end=Q_end W0+W0 Q_end",
@@ -22,19 +22,19 @@
     "coefficient_sha256": {
       "T_gf": "c9c7c45d1b7470a06cb8410680059c86a9b20f854f036a2f23e85ed27c793cc1",
       "T_gf_sharp": "3fb6245297411bf4df58919850cfcbfd58cbf156d4b20c489260f9580661023e",
-      "middle_2I": "3defde02398172bb6283b4727632a9875f3a13e8774fe7382eec2bb5821911af"
+      "middle_I": "95bbd13365e425e8ba218d8e12d27353e54d12aef5aa1badc16926d3163336d9"
     },
     "degree": -1,
     "graded_cyclic": true,
     "maximum_order": 3,
     "nonzero_blocks": {
-      "E_to_M": "2 fibre-identification",
+      "E_to_M": "endpoint fibre identity",
       "I_to_E": "T_gf^sharp",
       "M_to_G": "T_gf=(T_completed P_TF, trace/4)"
     }
   },
   "causal_green_homotopy": false,
-  "coefficient_payload_sha256": "e684e93113de4ade8c43eb5d77cf0dd75975627e6d440c7eb056e0448950f6cf",
+  "coefficient_payload_sha256": "f04ee6f5c44ab7225e16520a5c6cbe079e661b6bc55dbf47a73ac199a98b8bd5",
   "curvature_causal_green_operators": false,
   "dependency_sha256": {
     "endpoint": "584e875444f303643d0408874a92bbe65ce61c07fc78122f00d037d776367771",
@@ -54,6 +54,22 @@
       "D_I",
       "K_T_gf"
     ]
+  },
+  "endpoint_normalization": {
+    "Bach_bar_coordinates": "J_met^{-1} E_Bach",
+    "abstract_minimal_middle": "2 sharp^{-1}",
+    "legacy_complete_leading_fibre_screen": {
+      "SO3_decomposition": "V_0+V_1+V_2",
+      "consequence": "the rejected scalar-leading normalization was not a no-go for the complete non-scalar leading-fibre family",
+      "invariant_factorization": "(Pi_0+Pi_1+2 Pi_2) I",
+      "leading_map": "Pi_0+Pi_1+2 Pi_2",
+      "nondegenerate": true
+    },
+    "legacy_middle_2I_principal_spectrum_at_dt": "1^4+2^5",
+    "legacy_middle_2I_rejected": true,
+    "reason": "the endpoint Bach_bar has already absorbed the fibre identification which converts the action-normalized half-biwave coefficient",
+    "tracefree_principal_symbol": "(zeta^2)^2 I_9",
+    "transported_endpoint_middle": "identity"
   },
   "endpoint_order": [
     "G[5]",
@@ -82,7 +98,7 @@
   },
   "prolonged_green_witness": false,
   "proof_boundary": "W0 and D_end are exact algebraic differential-operator data; this certificate does not prove that D_end or a relative saddle has advanced/retarded inverses",
-  "schema": "pure-weyl-prolonged-metric-endpoint-backward-witness-v1",
+  "schema": "pure-weyl-prolonged-metric-endpoint-backward-witness-v2",
   "status_flags_promoted": [],
   "support": {
     "Green_operator": false,
@@ -93,6 +109,7 @@
   },
   "warranted_atomic_flags": [
     "endpoint_canonical_backward_witness_exact",
-    "endpoint_D_end_coefficientwise_exact"
+    "endpoint_D_end_coefficientwise_exact",
+    "endpoint_tracefree_biwave_normalization_exact"
   ]
 }

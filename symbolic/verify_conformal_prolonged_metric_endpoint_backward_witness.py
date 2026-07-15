@@ -114,6 +114,7 @@ def main() -> int:
     witness = certificate["W0"]
     d_end = certificate["D_end"]
     ghost = certificate["ghost_block"]
+    normalization = certificate["endpoint_normalization"]
     filtration = certificate["endpoint_green_filtration_input"]
     checks = {
         "verification_rail": verification_rail in {
@@ -124,12 +125,17 @@ def main() -> int:
         and witness["maximum_order"] == 3
         and witness["graded_cyclic"],
         "middle_normalization": witness["nonzero_blocks"]["E_to_M"]
-        == "2 fibre-identification",
+        == "endpoint fibre identity",
         "D_identity": d_end["identity"] == "D_end=Q_end W0+W0 Q_end"
         and d_end["off_diagonal_blocks"] == "zero"
         and d_end["coefficientwise_complete"],
         "field_block": d_end["degreewise_blocks"]["M"]
-        == "2 Bach_bar+K_met T_gf=2H",
+        == "Bach_bar+K_met T_gf=H_end",
+        "tracefree_scalar_biwave": normalization["tracefree_principal_symbol"]
+        == "(zeta^2)^2 I_9"
+        and normalization["legacy_middle_2I_rejected"]
+        and normalization["legacy_middle_2I_principal_spectrum_at_dt"]
+        == "1^4+2^5",
         "formal_adjoints": d_end["formal_adjoint_defects"] == 0
         and d_end["degreewise_blocks"]["E"].endswith("(D_M)^sharp")
         and d_end["degreewise_blocks"]["I"].endswith("(D_G)^sharp"),
@@ -173,7 +179,7 @@ def main() -> int:
                         coefficient_payload_sha256=coefficient_sha256,
                     )
                 ),
-                "lost_factor_two_rejected": _rejects(
+                "abstract_normalization_dependency_rejected": _rejects(
                     lambda: theorem.certificate(
                         dependencies=bad_middle,
                         coefficient_payload_sha256=coefficient_sha256,

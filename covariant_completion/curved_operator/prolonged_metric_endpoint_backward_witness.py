@@ -6,7 +6,7 @@ The exact endpoint complex is
 
 This module supplies the canonical algebraic backward witness
 
-``W0(M->G,E->M,I->E)=(T_gf,2 I,T_gf^sharp)``.
+``W0(M->G,E->M,I->E)=(T_gf,I,T_gf^sharp)``.
 
 The vector part of ``T_gf`` is the certified third-order cylinder companion
 applied to the trace-free part of the metric.  Its scalar part is one quarter
@@ -30,8 +30,15 @@ from typing import Mapping
 
 import sympy as sp
 
-from covariant_completion.curved_operator.conventions import SYMMETRIC_COORDINATES
+from covariant_completion.curved_operator.conventions import (
+    SYMMETRIC_COORDINATES,
+    _ordinary_system,
+)
 from covariant_completion.curved_operator.covariant_jets import CovariantJetBasis
+from covariant_completion.curved_operator.invariant_pairings import (
+    _rotation_generators,
+    _tensor_representation,
+)
 from covariant_completion.curved_operator.prolonged_metric_endpoint_complex import (
     CoefficientTable,
     ProlongedMetricEndpointComplex,
@@ -212,6 +219,20 @@ def _identity_table(size: int, coefficient: int = 1) -> CoefficientTable:
     return ((ZERO, coefficient * sp.eye(size)),)
 
 
+def _wave_square_coefficient(multiindex: Multiindex) -> sp.Expr:
+    """Coefficient of ``(-z0^2+z1^2+z2^2+z3^2)^2``."""
+
+    if sum(multiindex) != 4:
+        return sp.Integer(0)
+    support = [axis for axis, multiplicity in enumerate(multiindex) if multiplicity]
+    signs = (-1, 1, 1, 1)
+    if len(support) == 1 and multiindex[support[0]] == 4:
+        return sp.Integer(1)
+    if len(support) == 2 and all(multiindex[axis] == 2 for axis in support):
+        return sp.Integer(2 * signs[support[0]] * signs[support[1]])
+    return sp.Integer(0)
+
+
 @dataclass(frozen=True)
 class ProlongedMetricEndpointBackwardWitness:
     """Canonical W0 and its four degreewise anticommutator blocks."""
@@ -242,7 +263,7 @@ class ProlongedMetricEndpointBackwardWitness:
         field = _add_tables(
             endpoint.bach_coefficients,
             kt,
-            left_scale=2,
+            left_scale=1,
         )
         equation = _formal_pairing_adjoint(
             field,
@@ -257,7 +278,13 @@ class ProlongedMetricEndpointBackwardWitness:
         result = ProlongedMetricEndpointBackwardWitness(
             endpoint=endpoint,
             t_gf_coefficients=t_gf,
-            middle_coefficients=_identity_table(10, 2),
+            # Bach_bar is already J_met^{-1} E_Bach in the endpoint equation
+            # coordinates.  The factor two in the older abstract minimal
+            # witness converted the action-normalized B_lin before this fibre
+            # identification.  Transporting that two once more would give
+            # principal eigenvalues 1 on V_0+V_1 but 2 on V_2.  The endpoint
+            # coordinate map is therefore the identity.
+            middle_coefficients=_identity_table(10),
             t_gf_sharp_coefficients=t_gf_sharp,
             ghost_block_coefficients=ghost,
             field_block_coefficients=field,
@@ -274,7 +301,7 @@ class ProlongedMetricEndpointBackwardWitness:
         payload: Mapping[str, object],
     ) -> "ProlongedMetricEndpointBackwardWitness":
         if payload.get("schema") != (
-            "pure-weyl-prolonged-metric-endpoint-backward-witness-coefficients-v1"
+            "pure-weyl-prolonged-metric-endpoint-backward-witness-coefficients-v2"
         ):
             raise AssertionError("wrong endpoint W0 coefficient schema")
 
@@ -316,7 +343,7 @@ class ProlongedMetricEndpointBackwardWitness:
         result = ProlongedMetricEndpointBackwardWitness(
             endpoint=endpoint,
             t_gf_coefficients=parse(witness, "T_gf"),
-            middle_coefficients=parse(witness, "middle_2I"),
+            middle_coefficients=parse(witness, "middle_I"),
             t_gf_sharp_coefficients=parse(witness, "T_gf_sharp"),
             ghost_block_coefficients=parse(blocks, "D_G"),
             field_block_coefficients=parse(blocks, "D_M"),
@@ -330,7 +357,7 @@ class ProlongedMetricEndpointBackwardWitness:
     def verify(self) -> None:
         expected = {
             "T_gf": (self.t_gf_coefficients, (5, 10), 35, 3),
-            "2I": (self.middle_coefficients, (10, 10), 1, 0),
+            "I": (self.middle_coefficients, (10, 10), 1, 0),
             "T_gf_sharp": (self.t_gf_sharp_coefficients, (10, 5), 35, 3),
             "D_G": (self.ghost_block_coefficients, (5, 5), 70, 4),
             "D_M": (self.field_block_coefficients, (10, 10), 70, 4),
@@ -345,8 +372,8 @@ class ProlongedMetricEndpointBackwardWitness:
                 raise AssertionError(f"{name} coefficient coverage drifted")
             if max(sum(multiindex) for multiindex, _ in table) != maximum_order:
                 raise AssertionError(f"{name} order drifted")
-        if self.middle_coefficients != _identity_table(10, 2):
-            raise AssertionError("middle W0 block is not 2 fibre-identification")
+        if self.middle_coefficients != _identity_table(10):
+            raise AssertionError("middle W0 block is not the endpoint identity")
 
         expected_sharp = _formal_pairing_adjoint(
             self.t_gf_coefficients,
@@ -358,9 +385,9 @@ class ProlongedMetricEndpointBackwardWitness:
         if self.field_block_coefficients != _add_tables(
             self.endpoint.bach_coefficients,
             self.kt_coefficients,
-            left_scale=2,
+            left_scale=1,
         ):
-            raise AssertionError("D_M is not 2 Bach+K T_gf")
+            raise AssertionError("D_M is not Bach_bar+K T_gf")
         if self.equation_block_coefficients != _formal_pairing_adjoint(
             self.field_block_coefficients,
             source_pairing=self.endpoint.field_pairing,
@@ -373,6 +400,56 @@ class ProlongedMetricEndpointBackwardWitness:
             target_pairing=self.endpoint.ghost_pairing,
         ):
             raise AssertionError("D_I is not the formal adjoint of D_G")
+
+        source = _ordinary_system()
+        metric_vector = sp.Matrix(
+            [source.metric[a, b] for a, b in SYMMETRIC_COORDINATES]
+        )
+        trace_projector = metric_vector * source.trace / 4
+        tracefree_projector = sp.eye(10) - trace_projector
+        # This is the normalization check which the first endpoint certificate
+        # omitted.  It is coefficientwise over the complete fourth-order
+        # symbol, not a sampled-covector assertion.
+        for multiindex, coefficient in self.field_block_coefficients:
+            if sum(multiindex) != 4:
+                continue
+            defect = (
+                tracefree_projector
+                * coefficient
+                * tracefree_projector
+                - _wave_square_coefficient(multiindex) * tracefree_projector
+            ).applyfunc(sp.expand)
+            if defect != sp.zeros(10):
+                raise AssertionError(
+                    "endpoint field block lost its scalar trace-free biwave symbol"
+                )
+
+        # Preserve the exact counterexample to the superseded middle 2I.
+        bach = dict(self.endpoint.bach_coefficients)[(4, 0, 0, 0)]
+        kt = dict(self.kt_coefficients)[(4, 0, 0, 0)]
+        legacy = (
+            tracefree_projector * (2 * bach + kt) * tracefree_projector
+        ).applyfunc(sp.expand)
+        if legacy.eigenvals() != {sp.Integer(0): 1, sp.Integer(1): 4, sp.Integer(2): 5}:
+            raise AssertionError("legacy endpoint normalization counterexample drifted")
+        casimir = -sum(
+            (
+                _tensor_representation(rotation) ** 2
+                for rotation in _rotation_generators()
+            ),
+            sp.zeros(10),
+        )
+        spin0 = tracefree_projector * (casimir - 2 * sp.eye(10)) * (
+            casimir - 6 * sp.eye(10)
+        ) / 12
+        spin1 = -tracefree_projector * casimir * (
+            casimir - 6 * sp.eye(10)
+        ) / 8
+        spin2 = tracefree_projector * casimir * (
+            casimir - 2 * sp.eye(10)
+        ) / 24
+        if legacy != (spin0 + spin1 + 2 * spin2).applyfunc(sp.expand):
+            raise AssertionError("legacy leading fibre decomposition drifted")
 
         # The exhaustive build checked the vector diagonal directly against
         # the independently evaluated cylinder ghost biwave.  The fast rail
@@ -397,7 +474,7 @@ class ProlongedMetricEndpointBackwardWitness:
         self.verify()
         return {
             "schema": (
-                "pure-weyl-prolonged-metric-endpoint-backward-witness-coefficients-v1"
+                "pure-weyl-prolonged-metric-endpoint-backward-witness-coefficients-v2"
             ),
             "normal_form": (
                 "parallel coefficients on fully symmetrized covariant derivatives; "
@@ -407,7 +484,7 @@ class ProlongedMetricEndpointBackwardWitness:
                 "T_gf": _sparse_table(
                     self.t_gf_coefficients, source="M[10]", target="G[5]"
                 ),
-                "middle_2I": _sparse_table(
+                "middle_I": _sparse_table(
                     self.middle_coefficients, source="E[10]", target="M[10]"
                 ),
                 "T_gf_sharp": _sparse_table(
@@ -469,10 +546,10 @@ class ProlongedMetricEndpointBackwardWitness:
         if not isinstance(backward, Mapping) or backward.get("E_to_M") != (
             "2 sharp^{-1}"
         ):
-            raise AssertionError("minimal W0 middle normalization drifted")
+            raise AssertionError("abstract minimal-witness normalization drifted")
 
         return {
-            "schema": "pure-weyl-prolonged-metric-endpoint-backward-witness-v1",
+            "schema": "pure-weyl-prolonged-metric-endpoint-backward-witness-v2",
             "dependency_tag": "LORENTZIAN-CAUSAL",
             "dependency_sha256": {
                 name: _certificate_digest(value)
@@ -484,14 +561,14 @@ class ProlongedMetricEndpointBackwardWitness:
                 "degree": -1,
                 "nonzero_blocks": {
                     "M_to_G": "T_gf=(T_completed P_TF, trace/4)",
-                    "E_to_M": "2 fibre-identification",
+                    "E_to_M": "endpoint fibre identity",
                     "I_to_E": "T_gf^sharp",
                 },
                 "maximum_order": 3,
                 "graded_cyclic": True,
                 "coefficient_sha256": {
                     "T_gf": _digest_tables(self.t_gf_coefficients),
-                    "middle_2I": _digest_tables(self.middle_coefficients),
+                    "middle_I": _digest_tables(self.middle_coefficients),
                     "T_gf_sharp": _digest_tables(self.t_gf_sharp_coefficients),
                 },
             },
@@ -500,8 +577,8 @@ class ProlongedMetricEndpointBackwardWitness:
                 "off_diagonal_blocks": "zero",
                 "degreewise_blocks": {
                     "G": "T_gf K_met",
-                    "M": "2 Bach_bar+K_met T_gf=2H",
-                    "E": "2 Bach_bar+T_gf^sharp C_met=(D_M)^sharp",
+                    "M": "Bach_bar+K_met T_gf=H_end",
+                    "E": "Bach_bar+T_gf^sharp C_met=(D_M)^sharp",
                     "I": "C_met T_gf^sharp=(D_G)^sharp",
                 },
                 "maximum_order": 4,
@@ -522,6 +599,29 @@ class ProlongedMetricEndpointBackwardWitness:
                 "vector_factorization": ["Box+Ric", "Box-Ric+2"],
                 "curved_lower_order_coefficients_included": True,
                 "Weyl_scalar_completion": "pointwise identity",
+            },
+            "endpoint_normalization": {
+                "Bach_bar_coordinates": "J_met^{-1} E_Bach",
+                "abstract_minimal_middle": "2 sharp^{-1}",
+                "transported_endpoint_middle": "identity",
+                "reason": (
+                    "the endpoint Bach_bar has already absorbed the fibre "
+                    "identification which converts the action-normalized "
+                    "half-biwave coefficient"
+                ),
+                "tracefree_principal_symbol": "(zeta^2)^2 I_9",
+                "legacy_middle_2I_principal_spectrum_at_dt": "1^4+2^5",
+                "legacy_middle_2I_rejected": True,
+                "legacy_complete_leading_fibre_screen": {
+                    "SO3_decomposition": "V_0+V_1+V_2",
+                    "leading_map": "Pi_0+Pi_1+2 Pi_2",
+                    "nondegenerate": True,
+                    "invariant_factorization": "(Pi_0+Pi_1+2 Pi_2) I",
+                    "consequence": (
+                        "the rejected scalar-leading normalization was not a "
+                        "no-go for the complete non-scalar leading-fibre family"
+                    ),
+                },
             },
             "endpoint_green_filtration_input": {
                 "D_end_available_coefficientwise": True,
@@ -553,6 +653,7 @@ class ProlongedMetricEndpointBackwardWitness:
             "warranted_atomic_flags": [
                 "endpoint_canonical_backward_witness_exact",
                 "endpoint_D_end_coefficientwise_exact",
+                "endpoint_tracefree_biwave_normalization_exact",
             ],
             "status_flags_promoted": [],
             "fail_closed": True,
