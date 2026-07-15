@@ -184,8 +184,32 @@ Einstein graviton-plus-photon symbol sector is present, with a two-dimensional
 additional Weyl metric cokernel at this level.
 
 This is not yet a complete spectrum statement: generalized solutions of the
-fourth-order operator require a prolonged characteristic complex, and the
-curved lower-order chain squares have not been established.
+fourth-order operator require a prolonged characteristic complex.
+
+### Complete on-shell linear tangent inclusion completed
+
+The certificate
+`bridge/certificates/einstein_maxwell_chevreton_tangent.json` now closes the
+curvature/flux question **on shell**. On any four-dimensional source-free
+Einstein--Maxwell solution, the repository-convention Bach identity reads
+
+```text
+B_mn-(2*kappa*Lambda/3)T_mn=C_Ch_mn,
+```
+
+where the convention-adjusted Chevreton trace `C_Ch` is quadratic in
+`nabla F`. The aligned product flux is parallel, so `C_Ch` and its first
+variation vanish. Together with the certified product tuning
+`alpha_B*(2*kappa*Lambda/3)=1`, this proves that every solution of the
+complete linearized Einstein--Maxwell equations solves the complete
+linearized Weyl--Maxwell equations with the same `(h,a)`. An exact coordinate
+radion fixture checks the result directly, including all lower-order terms.
+
+The ordinary graviton-plus-photon tangents therefore survive before the
+residual quotient. This remains an on-shell solution-tangent inclusion, not a
+curved off-shell BV chain map or an observable embedding. Since the
+Chevreton defect is quadratic, the first possible nonlinear obstruction is
+at second order and has not yet been evaluated on physical representatives.
 
 ### Curved completion
 
@@ -194,7 +218,8 @@ at this identical base point. The comparison must include the Maxwell ghost
 and antifield rows and must certify:
 
 1. both Hessians, gauge maps, Noether identities, nilpotency, and cyclicity;
-2. an explicit tangent chain map or an exact obstruction;
+2. the off-shell equation/identity row maps extending the certified on-shell
+   tangent inclusion, or an exact obstruction;
 3. helicity-two and photon cohomology before the residual quotient;
 4. the two covariant presymplectic currents and their normalizations;
 5. which additional fourth-order Weyl modes remain at this base point.

@@ -1,0 +1,223 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC theorem proves the complete on-shell linearized Einstein--Maxwell solution tangent maps into the complete on-shell linearized pure-Weyl--Maxwell solution tangent at the certified parallel-flux product background. It uses the convention-adjusted Einstein--Maxwell Bach/Chevreton factorization and includes curvature and flux lower-order terms on shell. It does not construct the off-shell curved BV chain map, quotient injection, cyclic or presymplectic map, nonlinear closure, second-order physical obstruction, causal dynamics, observables, scattering, or quantum equivalence.",
+  "claim_flags": {
+    "local_algebraic_full_on_shell_linear_result": true,
+    "lorentzian_causal_claim": false,
+    "nonlinear_closure_claim": false,
+    "observable_embedding_claim": false,
+    "off_shell_bv_chain_map_claim": false,
+    "quantum_claim": false,
+    "scattering_claim": false
+  },
+  "classification": {
+    "covariant_presymplectic_map_constructed": false,
+    "full_lower_order_on_shell_linear_tangent_inclusion": true,
+    "nonlinear_einstein_maxwell_sector_closure_certified": false,
+    "off_shell_curved_minimal_bv_chain_map_constructed": false,
+    "ordinary_einstein_graviton_and_photon_tangents_survive_before_quotient": true,
+    "quotient_observable_injection_constructed": false,
+    "second_order_chevreton_obstruction_computed_for_physical_modes": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "direct_radion_fixture": {
+    "background_bach": [
+      [
+        "1/6",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/6",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1/6",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "sin(theta)**2/6"
+      ]
+    ],
+    "background_stress": [
+      [
+        "1/2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "sin(theta)**2/2"
+      ]
+    ],
+    "base_conformal_mode": "psi=t^2",
+    "full_lower_order_coordinate_check": "PASS",
+    "linearized_einstein_residual": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "linearized_maxwell_residual": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "linearized_weyl_residual": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "maxwell_perturbation": "delta F=0 with fixed magnetic flux",
+    "metric_perturbation": "h=2*t^2*(-dt^2+dx^2)+2*dOmega_2^2",
+    "radion": "phi=1"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": {
+    "required_checks": [
+      "prolong the fourth-order characteristic complex",
+      "choose exact graviton and photon representatives on the product",
+      "evaluate the quadratic Chevreton trace on their first-order Maxwell jets",
+      "separate a genuine second-order obstruction from a removable Weyl/diffeomorphism term",
+      "construct formal adjoints, magnetic-bundle patching, and the covariant presymplectic comparison"
+    ],
+    "status": "OPEN",
+    "target": "compute the second-order Chevreton defect on representatives of the injected graviton-plus-photon cohomology and construct the off-shell curved BV row maps and cyclic pairing"
+  },
+  "on_shell_factorization": {
+    "C_Ch_definition": "convention-adjusted trace of the Chevreton electromagnetic superenergy tensor",
+    "background_consequence": "C_Ch(gbar,Fbar)=0",
+    "background_property": "nabla Fbar=0 because the aligned factor volume forms are parallel",
+    "domain": "four-dimensional source-free Einstein--Maxwell equations with cosmological constant Lambda",
+    "linearized_consequence": "delta C_Ch=0 for arbitrary (h,a) because the derivative of a quadratic form vanishes at nabla Fbar=0",
+    "repository_convention_identity": "B_mn-(2*kappa*Lambda/3)T_mn=C_Ch_mn",
+    "structural_property": "C_Ch is homogeneous quadratic in nabla F"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_chevreton_tangent.py",
+    "generator_sha256": "2fdf9882f831deb0da3a92dfc7de154554ab0d623eb6b8395c3e1e65c2fc5158",
+    "inputs": {
+      "common_background": {
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      "principal_tangent_preflight": {
+        "path": "bridge/certificates/einstein_maxwell_product_tangent_preflight.json",
+        "sha256": "cbae5417348975b9ceee8b04be7b6214c7ca8bf5f2c3778b4527de461569512b"
+      }
+    },
+    "primary_literature_identity": {
+      "arxiv": "gr-qc/0703073v2",
+      "authors": "G. Bergqvist and I. Eriksson",
+      "journal_doi": "10.1088/0264-9381/24/13/018",
+      "source_equation": "Eq. (66), translated to the repository curvature, stress, and coupling conventions",
+      "title": "The Chevreton Tensor and Einstein-Maxwell Spacetimes Conformal to Einstein Spaces"
+    }
+  },
+  "quadratic_onset": {
+    "first_variation": "0",
+    "generic_quadratic_fixture": "C(epsilon)=epsilon^2*(J1^2+3*J1*J2+2*J2^2)",
+    "interpretation": "the Chevreton defect cannot obstruct the linear tangent inclusion but can first enter at second order",
+    "second_variation": "2*(J1 + J2)*(J1 + 2*J2)"
+  },
+  "relation_to_principal_preflight": {
+    "lower_order_on_shell_solution_map_closed": true,
+    "off_shell_equation_and_identity_row_maps_closed": false,
+    "ordinary_null_symbol_injection_retained": true,
+    "principal_chain_map_retained": true
+  },
+  "result_id": "EINSTEIN_MAXWELL_CHEVRETON_TANGENT",
+  "result_state": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CERTIFIED_OFF_SHELL_BV_AND_NONLINEAR_OPEN",
+  "schema": "einstein-maxwell-chevreton-tangent-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_chevreton_tangent.schema.json",
+  "schema_sha256": "8a95791ae605c1f9b9339fc0fc3131570af0c1a4a6ad1927303993d4d2f3dde4",
+  "theorem": {
+    "field_map": "identity on (h_mn,a_m)",
+    "includes_background_flux_mixing_on_shell": true,
+    "includes_curvature_lower_order_terms": true,
+    "not_an_off_shell_chain_map": true,
+    "solution_tangent_map": "injective before quotient; quotient injectivity remains a separate gauge/global question",
+    "statement": "Every solution of the complete linearized source-free Einstein--Maxwell equations at the certified parallel-flux product background solves the complete linearized pure-Weyl--Maxwell equations with the same (h,a)."
+  },
+  "tuning_deduction": {
+    "coefficient": "alpha_B*(2*kappa*Lambda/3)=1",
+    "linearized_maxwell_identity": "the source-free Maxwell equation is identical in both theories",
+    "linearized_metric_identity_on_einstein_maxwell_shell": "alpha_B*delta B_mn-delta T_mn=0",
+    "product_relations": [
+      "k_1+k_2=2*Lambda",
+      "alpha_B*kappa*(k_1+k_2)=3"
+    ],
+    "symbolic_check": "1"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_chevreton_tangent --verify bridge/certificates/einstein_maxwell_chevreton_tangent.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_chevreton_tangent.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_chevreton_tangent"
+  ]
+}

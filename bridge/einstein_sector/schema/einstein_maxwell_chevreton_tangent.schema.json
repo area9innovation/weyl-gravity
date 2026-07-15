@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-chevreton-tangent-v1",
+  "title": "Full on-shell Einstein-Maxwell tangent inclusion from the Chevreton factorization",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "provenance",
+    "on_shell_factorization",
+    "tuning_deduction",
+    "theorem",
+    "quadratic_onset",
+    "direct_radion_fixture",
+    "relation_to_principal_preflight",
+    "classification",
+    "next_gate",
+    "claim_flags",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-chevreton-tangent-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_chevreton_tangent.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_CHEVRETON_TANGENT"},
+    "result_state": {"const": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CERTIFIED_OFF_SHELL_BV_AND_NONLINEAR_OPEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "provenance": {"type": "object"},
+    "on_shell_factorization": {"type": "object"},
+    "tuning_deduction": {"type": "object"},
+    "theorem": {
+      "type": "object",
+      "required": [
+        "statement",
+        "includes_curvature_lower_order_terms",
+        "includes_background_flux_mixing_on_shell",
+        "field_map",
+        "solution_tangent_map",
+        "not_an_off_shell_chain_map"
+      ]
+    },
+    "quadratic_onset": {"type": "object"},
+    "direct_radion_fixture": {"type": "object"},
+    "relation_to_principal_preflight": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "full_lower_order_on_shell_linear_tangent_inclusion",
+        "ordinary_einstein_graviton_and_photon_tangents_survive_before_quotient",
+        "off_shell_curved_minimal_bv_chain_map_constructed",
+        "quotient_observable_injection_constructed",
+        "covariant_presymplectic_map_constructed",
+        "nonlinear_einstein_maxwell_sector_closure_certified",
+        "second_order_chevreton_obstruction_computed_for_physical_modes"
+      ]
+    },
+    "next_gate": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "local_algebraic_full_on_shell_linear_result",
+        "off_shell_bv_chain_map_claim",
+        "nonlinear_closure_claim",
+        "lorentzian_causal_claim",
+        "observable_embedding_claim",
+        "scattering_claim",
+        "quantum_claim"
+      ]
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

@@ -238,11 +238,9 @@ on the declared positive nondegenerate branch. The specialization
 `R^(1,1) x S^2`, and its spatial `S^1` quotient, gives a positive-energy
 common background with compact Cauchy topology `S^1 x S^2`.
 
-This establishes background incidence only. The Maxwell configuration is not
-a relational clock, the background is not asymptotically flat, and no
-linearized tangent-complex or observable inclusion has yet been constructed.
-The next exact gate is the same-base-point minimal Einstein--Maxwell versus
-Diff x Weyl--Maxwell BV comparison described in
+The Maxwell configuration is not a relational clock and the background is
+not asymptotically flat. The same-base-point minimal Einstein--Maxwell versus
+Diff x Weyl--Maxwell comparison is described in
 `notes/conformal-common-einstein-maxwell-product-background.md`.
 
 Its principal part is now complete. The exact four-stage symbol complexes
@@ -251,9 +249,20 @@ Maxwell gauge ghost and identity. The action-normalized equation-row map
 `diag(alpha_B kappa Q_p,identity_Maxwell)` gives an exact chain map. At a null
 covector the two Einstein metric and two photon classes inject into the
 Weyl--Maxwell simple-symbol cohomology, leaving two additional metric classes.
-This is a `LOCAL-ALGEBRAIC` principal theorem only: curvature/flux lower-order
-completion, generalized fourth-order modes, cyclicity, helicities, and the
-presymplectic map remain open.
+The `EINSTEIN_MAXWELL_CHEVRETON_TANGENT` certificate now upgrades this to the
+complete **on-shell linear** solution tangent. The Einstein--Maxwell
+Bach/Chevreton factorization has a defect quadratic in `nabla F`; the product
+flux is parallel, so the defect and its first variation vanish. The product
+tuning then makes the stress coefficient exactly one. Hence every complete
+linearized Einstein--Maxwell solution maps identically to a complete
+linearized Weyl--Maxwell solution, including curvature and flux lower-order
+terms, before quotient.
+
+This is still not an off-shell curved BV chain map or observable injection.
+Generalized fourth-order modes, equation/identity row maps, cyclicity,
+magnetic-bundle patching, helicities on the product, and the presymplectic map
+remain open. The first possible Chevreton obstruction to nonlinear closure is
+second order and has not been computed on physical representatives.
 
 ## Einstein-Hilbert scale
 
