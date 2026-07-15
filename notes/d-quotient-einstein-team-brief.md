@@ -55,6 +55,15 @@ is `EINSTEIN_OPEN`.  See `notes/conformal-d-quotient-asymptotic-seed.md` for
 the exact dictionary, reduced shear/news action, and triangular `(h,chi)`
 operator seed.
 
+The subsequent flat TT Schwartz-core kill test adds a separate obstruction:
+the pure-Weyl current restricts to zero on two Einstein wave tangents, while
+the Einstein-Hilbert current has a nonzero Cauchy witness.  Local finite-jet
+improvements cannot change this rank mismatch on the declared domain.  Thus
+causal closure of `chi=0`, even if proved, is not sufficient for Einstein
+scattering; a nondegenerate symplectic and charge comparison is independently
+required.  The result is scoped and does not yet classify null-infinity
+corners or compensator-generated Einstein-Hilbert terms.
+
 ## Work package E-D1: asymptotically flat Lorentzian BV--BFV complex
 
 Construct the retarded/advanced linear BV complex with declared spaces and

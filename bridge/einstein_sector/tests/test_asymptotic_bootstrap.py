@@ -41,6 +41,12 @@ class AsymptoticBootstrapTests(unittest.TestCase):
         self.assertTrue(
             result["claim_flags"]["kappa_zero_insufficient_for_einstein"]
         )
+        self.assertTrue(result["claim_flags"]["flat_reduced_einstein_pairing_zero"])
+        self.assertTrue(
+            result["claim_flags"][
+                "nonzero_eh_symplectic_embedding_refuted_on_schwartz_core"
+            ]
+        )
         self.assertFalse(result["claim_flags"]["nonlinear_einstein_constraint_preserved"])
         self.assertFalse(result["claim_flags"]["helicity_two_scattering_space_recovered"])
         self.assertEqual(
@@ -72,7 +78,17 @@ class AsymptoticBootstrapTests(unittest.TestCase):
         )
         obligations = {row["id"]: row for row in result["obligation_status"]}
         self.assertEqual(obligations["AF-E4"]["status"], "PARTIAL")
+        self.assertEqual(obligations["AF-E6"]["status"], "PARTIAL")
+        self.assertEqual(obligations["AF-E7"]["status"], "PARTIAL")
         self.assertEqual(obligations["AF-E8"]["status"], "PARTIAL")
+
+    def test_reduced_symplectic_no_go_cannot_be_promoted_to_full_scattering(self) -> None:
+        result = asymptotic_bootstrap.build_certificate()
+        self.assertEqual(
+            result["flat_symplectic_restriction"]["cauchy_matrix_test"]["ranks"],
+            {"restricted_weyl": 0, "einstein_hilbert": 2},
+        )
+        self.assertFalse(result["claim_flags"]["helicity_two_scattering_space_recovered"])
 
     def test_compact_cylinder_scope_is_required(self) -> None:
         original_load = asymptotic_bootstrap._load

@@ -59,7 +59,7 @@ Input base commit: `69b2b240d9a06a5473d275a16ed41d6df12687f8`.
 |---|---|
 | `d_quotient_asymptotic_seed.py` | `69a9a43827b2dbd901e69cb1b32a96cf7d153ab390b0a3c99e0cc696a4bdcb52` |
 | `d_quotient_asymptotic_seed.schema.json` | `a1feac2bbd71d557cec16504c039863c8630a3d59df1a8004726e579878f3de6` |
-| `d_quotient_asymptotic_seed.json` | `82831a22108b88590bac1fd5b4d1ccead3a462505a3072a4fa981844b4990d84` |
+| `d_quotient_asymptotic_seed.json` | `359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663` |
 | `test_d_quotient_asymptotic_seed.py` | `397b24f9fa5c786da72b0d3276fe068d9ecd9ca9568ac74f8ebe454cea7664c3` |
 | `conformal-d-quotient-asymptotic-seed.md` | `3bbe13fbd6d4f0060f3850c267ec3fdeb75592cbb81651373abb852695787b0b` |
 
@@ -76,6 +76,10 @@ The tests cover the exact Penrose generator map, metric Lie derivatives,
 `I_plus` tangency/transversality, the `D_M`/`P_0` bracket, shear/news action,
 triangular inverse, input hashes, and rejection of forged charge, gauge,
 causal, and scattering promotions.
+
+The certificate hash was refreshed after bootstrap schema v2 imported the
+flat Einstein symplectic-restriction no-go.  No D-generator identity or
+verdict changed.
 
 Tier 2 was limited to the directly affected Einstein-sector certificate
 chain.  Tier 3 is not required because this work changes no shared core

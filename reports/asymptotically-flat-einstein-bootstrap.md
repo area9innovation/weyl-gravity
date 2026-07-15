@@ -22,38 +22,44 @@ Wald--Zoupas charge criterion distinguishing proper gauge transformations
 from charged asymptotic symmetries.  These are explicit specifications with
 open admissibility and charge calculations, not promoted theorems.
 
-Obligations `AF-E1`, `AF-E3`, and `AF-E5` move to `PARTIAL`.  `AF-E2`,
-`AF-E4`, `AF-E6`, `AF-E7`, and `AF-E8` remain `OPEN`.  Every full scattering,
-nonlinear, charge, flux, and extra-channel claim flag remains false.
+Schema v2 additionally imports the flat TT Schwartz-core symplectic
+restriction.  The pure-Weyl current is zero on two Einstein tangents, while
+the Einstein-Hilbert Cauchy matrix has rank two.  Local finite-jet
+improvements do not change the zero integral on this domain.  Thus `AF-E6`
+and `AF-E7` are now `PARTIAL` with a scoped `LORENTZIAN-CAUSAL` obstruction;
+the null-infinity current, corners, full scattering cohomology, nonlinear
+closure, charges, flux, and extra-channel classification remain open.
 
 ## Provenance
 
-Source commit: `cab0e805238440d9d6e9ec39e1f3cf10624fae5e`.
+Original source commit: `cab0e805238440d9d6e9ec39e1f3cf10624fae5e`.
+Symplectic-restriction update base: `ed5ada08f4dbe0dca929fc49957770b4a8a99fd0`.
 
-The generated certificate binds SHA-256 hashes of the existing
-Einstein-sector theorem, closed-universe BFV choice, cylinder causal
-transport, and reduced cylinder TT factorization.  Those inputs were
-unchanged.  Their scope guards are imported to prove that compact-cylinder
-causal transport cannot be silently reused at null infinity.
+The generated certificate now also binds the flat symplectic-restriction
+certificate.  Existing Einstein-sector, closed-universe, cylinder causal,
+and reduced cylinder TT inputs remain content-addressed.  Their scope guards
+prevent the flat or compact results from being promoted to a complete
+null-infinity phase space.
 
 ## Verification
 
 | Tier | Command | Elapsed | Result |
 |---|---|---:|---|
-| 0 | `python3 -m py_compile bridge/einstein_sector/asymptotic_bootstrap.py bridge/einstein_sector/tests/test_asymptotic_bootstrap.py` | 0.02 s | PASS |
-| 0 | `python3 -m json.tool bridge/certificates/asymptotically_flat_einstein_bootstrap.json` | 0.02 s | PASS |
-| 1 | `python3 -m bridge.einstein_sector.asymptotic_bootstrap --verify bridge/certificates/asymptotically_flat_einstein_bootstrap.json` | 0.29 s | PASS |
-| 1 | `python3 -m unittest discover -s bridge/einstein_sector/tests -p 'test_*.py'` | 0.37 s | PASS (8 tests) |
+| 0 | combined affected-generator `python3 -m py_compile` | 0.04 s | PASS |
+| 0 | combined affected-certificate `python3 -m json.tool` | 0.18 s | PASS |
+| 1 | `python3 -m bridge.einstein_sector.flat_einstein_symplectic_restriction --verify bridge/certificates/flat_einstein_symplectic_restriction.json` | 0.48 s | PASS |
+| 2 | `python3 -m bridge.einstein_sector.asymptotic_bootstrap --verify bridge/certificates/asymptotically_flat_einstein_bootstrap.json` | 0.40 s | PASS |
+| 2 | `python3 -m bridge.einstein_sector.d_quotient_asymptotic_seed --verify bridge/certificates/d_quotient_asymptotic_seed.json` | 0.53 s | PASS |
+| 1/2 | `python3 -m unittest discover -s bridge/einstein_sector/tests -p 'test_*.py'` | 6.92 s | PASS (47 tests) |
 
-The new tests verify the exact zero intertwining defect, the `4 -> 2` data
-restriction, rejection of a forged cylinder compactness premise, and
-rejection of a false scattering promotion.
+The affected tests additionally verify the zero-versus-rank-two symplectic
+matrices, local-improvement guard, `AF-E6/E7` partial statuses, and rejection
+of a forged full scattering promotion.
 
-Tier 2 did not require regeneration of the existing cylinder or residual
-chains: their content-addressed mathematical inputs did not change, and the
-new certificate has no existing downstream consumer.  Tier 3 was not run
-because no paper theorem, lifecycle state, shared core algebra, freeze, tag,
-or release was modified.
+Tier 2 regenerated the direct asymptotic and D-quotient consumers.  Existing
+cylinder and residual mathematical inputs were unchanged and checked by
+hash.  Tier 3 was not run because no freeze, release, shared core algebra, or
+full scattering theorem was promoted.
 
 ## Concurrent work
 

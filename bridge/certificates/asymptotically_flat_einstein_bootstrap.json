@@ -118,6 +118,10 @@
     "fixed_boundary_metric_excludes_leading_p0_kinematically": [
       "REDUCED-MODE"
     ],
+    "flat_reduced_einstein_pairing_zero": [
+      "REDUCED-MODE",
+      "LORENTZIAN-CAUSAL"
+    ],
     "flat_tt_bach_operator_derived": [
       "LOCAL-ALGEBRAIC",
       "REDUCED-MODE"
@@ -127,6 +131,10 @@
     ],
     "linearized_minkowski_einstein_data_invariant": [
       "REDUCED-MODE"
+    ],
+    "nonzero_eh_symplectic_embedding_refuted_on_schwartz_core": [
+      "REDUCED-MODE",
+      "LORENTZIAN-CAUSAL"
     ],
     "p0_boundary_metric_branch_identified": [
       "REDUCED-MODE"
@@ -140,6 +148,7 @@
     "einstein_defect_factorization_derived": true,
     "extra_weyl_channels_classified": false,
     "fixed_boundary_metric_excludes_leading_p0_kinematically": true,
+    "flat_reduced_einstein_pairing_zero": true,
     "flat_tt_bach_operator_derived": true,
     "full_asymptotically_flat_function_space_admissible": false,
     "helicity_two_scattering_space_recovered": false,
@@ -147,6 +156,7 @@
     "linearized_minkowski_einstein_data_invariant": true,
     "non_einstein_branch_causally_excluded": false,
     "nonlinear_einstein_constraint_preserved": false,
+    "nonzero_eh_symplectic_embedding_refuted_on_schwartz_core": true,
     "null_infinity_green_complex_constructed": false,
     "p0_boundary_metric_branch_identified": true,
     "p1_same_falloff_bach_obstruction_identified": true,
@@ -174,7 +184,8 @@
     ]
   },
   "dependency_tags": [
-    "REDUCED-MODE"
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
   ],
   "einstein_defect_theorem": {
     "boundary_consequence": {
@@ -244,6 +255,84 @@
       "no nonlinear Einstein-defect propagation theorem"
     ]
   },
+  "flat_symplectic_restriction": {
+    "action_current_derivation": {
+      "current": "omega_W^mu(h1,h2)=chi1 partial^mu h2-partial^mu chi1 h2-chi2 partial^mu h1+partial^mu chi2 h1",
+      "defect": "chi=Box h",
+      "eh_cauchy_witness": "data (q,0) and (0,q) give Omega_EH=int_Sigma q_ij q^ij>0",
+      "eh_current": "omega_EH^mu=h1 partial^mu h2-h2 partial^mu h1 up to a nonzero normalization",
+      "einstein_restriction": "chi1=chi2=0 implies omega_W^mu=0 pointwise",
+      "fourier_variation_identity": "delta[(1/2)(D_q h)^2]=delta h D_q^2 h+d_t[(D_q h)d_t(delta h)-d_t(D_q h)delta h]",
+      "presymplectic_potential": "theta_W^mu=chi partial^mu(delta h)-partial^mu(chi) delta h",
+      "quadratic_density": "L_W=(1/2)(Box h)^2",
+      "status": "PASS"
+    },
+    "boundary_improvement_test": {
+      "allowed_Y": "local finite-jet polynomial with smooth background coefficients",
+      "conclusion": "no allowed local improvement changes the zero restricted Cauchy pairing",
+      "current_change": "omega -> omega+d(delta_1 Y(delta_2)-delta_2 Y(delta_1))",
+      "delta_B_effect": "zero by antisymmetry of commuting field variations",
+      "not_classified": [
+        "nonlocal boundary functionals",
+        "finite null-infinity corner degrees of freedom",
+        "soft or distributional endpoint data",
+        "counterterms requiring a dynamical conformal frame"
+      ],
+      "potential_ambiguity": "theta -> theta+dY+delta B",
+      "schwartz_consequence": "the improvement integrand is Schwartz on every finite-time Cauchy slice",
+      "spatial_boundary": "lim_(R->infinity) int_(S_R) improvement=0"
+    },
+    "cauchy_matrix_test": {
+      "cauchy_coordinates": [
+        "q",
+        "p"
+      ],
+      "einstein_hilbert_matrix": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ]
+      ],
+      "nonzero_proportionality": "IMPOSSIBLE",
+      "ranks": {
+        "einstein_hilbert": 2,
+        "restricted_weyl": 0
+      },
+      "restricted_weyl_matrix": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "status": "PASS"
+    },
+    "scope_guards": [
+      "exact for the reduced flat TT quadratic action and its two helicity copies",
+      "the LORENTZIAN-CAUSAL tag applies only to the real-time flat Schwartz Cauchy core",
+      "not a complete metric Diff x Weyl BV phase-space theorem",
+      "not a null-infinity soft, memory, Coulombic, or corner theorem",
+      "local finite-jet improvements are excluded as repairs; nonlocal or boundary extensions remain open",
+      "solution-sector inclusion Einstein subset Weyl remains true",
+      "the result refutes a nondegenerate symplectic embedding, not the existence of gravitational wave solutions"
+    ],
+    "time_translation_test": {
+      "einstein_hilbert_comparison": "positive-energy wave packets have nonzero EH Hamiltonian",
+      "generator": "P_0=d_t",
+      "normalization": "H_P0[0]=0",
+      "pure_weyl_variation": "delta H_P0=Omega_W(delta h,L_P0 h)=0 on every tangent direction",
+      "restricted_charge": "H_P0=0 on the connected Schwartz Einstein-wave core",
+      "tangency": "P_0 maps ker(Box) to ker(Box)"
+    },
+    "verdict": "REDUCED_FLAT_EINSTEIN_SYMPLECTIC_EMBEDDING_REFUTED"
+  },
   "gauge_charge_rule": {
     "boundary_preserving_parameter": "proper gauge only when its renormalized surface-charge variation vanishes on every tangent direction and its reference charge is zero",
     "charged_parameter": "asymptotic symmetry, not quotiented as gauge",
@@ -281,6 +370,10 @@
     "einstein_sector": {
       "path": "bridge/certificates/einstein_sector_theorem.json",
       "sha256": "a158fb2d7b76bb4badefccfa27002a522854d47ffd11e0085ec7b1f94a07eb68"
+    },
+    "flat_einstein_symplectic_restriction": {
+      "path": "bridge/certificates/flat_einstein_symplectic_restriction.json",
+      "sha256": "8e3e690b5a1f62d79cdd587c2fa35c9f958604c01ce4f2a08749c367d5ab8f6d"
     },
     "flat_tt_bach": {
       "path": "bridge/certificates/flat_tt_bach_operator.json",
@@ -437,17 +530,17 @@
     },
     {
       "id": "AF-E6",
-      "partial_receipt_tag": null,
-      "receipt": "no null-infinity current/flux comparison",
+      "partial_receipt_tag": "LORENTZIAN-CAUSAL",
+      "receipt": "flat Schwartz TT restriction of the pure-Weyl current is zero while the Einstein-Hilbert pairing is nonzero; null-infinity current/flux comparison remains open",
       "required_closure_tag": "LORENTZIAN-CAUSAL",
-      "status": "OPEN"
+      "status": "PARTIAL"
     },
     {
       "id": "AF-E7",
-      "partial_receipt_tag": null,
-      "receipt": "no asymptotic scattering cohomology",
+      "partial_receipt_tag": "LORENTZIAN-CAUSAL",
+      "receipt": "conventional nondegenerate Einstein symplectic embedding is refuted on the flat Schwartz TT core; full asymptotic scattering cohomology remains open",
       "required_closure_tag": "LORENTZIAN-CAUSAL",
-      "status": "OPEN"
+      "status": "PARTIAL"
     },
     {
       "id": "AF-E8",
@@ -459,15 +552,15 @@
   ],
   "provenance": {
     "generator_path": "bridge/einstein_sector/asymptotic_bootstrap.py",
-    "generator_sha256": "723518b1023109d15a5c5291598d4f5a8376fdcf16bdb3ea7112ec596a7dbda4",
-    "input_base_commit": "efa5708d91b235c5c2cfe056c536f2194a2d23dc"
+    "generator_sha256": "0b8dc02e3e81e0a519bbdfad204f8bc4c2da56fa798971b9954ed579f1ca7e91",
+    "input_base_commit": "ed5ada08f4dbe0dca929fc49957770b4a8a99fd0"
   },
   "required_promotion_tag": "LORENTZIAN-CAUSAL",
   "result_id": "ASYMPTOTICALLY_FLAT_EINSTEIN_SECTOR_BOOTSTRAP",
-  "result_state": "PARTIAL_EXACT_LINEARIZED_AND_INDICIAL_RAILS",
-  "schema": "pure-weyl-asymptotically-flat-einstein-bootstrap-v1",
+  "result_state": "PARTIAL_WITH_REDUCED_FLAT_SYMPLECTIC_NO_GO",
+  "schema": "pure-weyl-asymptotically-flat-einstein-bootstrap-v2",
   "schema_path": "bridge/einstein_sector/schema/asymptotic_bootstrap.schema.json",
-  "schema_sha256": "4509ac0ddbca1bd372cd36924b43d7965e6f22abb4cb7b41b360e95b46fdf2e2",
+  "schema_sha256": "7f21be8dd2e821551784a8d382d982bd8da30aa89d6f787d45c11ad8bb493604",
   "sources": [
     {
       "citation": "Ashtekar and Streubel, Proc. Roy. Soc. A 376 (1981) 585",

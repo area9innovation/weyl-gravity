@@ -140,7 +140,9 @@ Conventional asymptotically flat scattering needs a new
    removes `A/L` data while retaining the `E` helicities;
 3. prove that the Bach evolution preserves that Einstein constraint;
 4. compare the restricted Weyl symplectic current with the Einstein
-   symplectic current, including boundary terms and normalization;
+   symplectic current, including boundary terms and normalization; the flat
+   TT Schwartz-core comparison is now a scoped no-go rather than an open
+   equivalence;
 5. construct the boundary BFV map and prove injectivity/surjectivity on the
    intended observable algebra;
 6. only then state an Einstein scattering or Cauchy equivalence theorem.
@@ -152,10 +154,15 @@ The load-bearing question for that theorem is
 
 Existence of the Einstein solution locus does not answer this.  The theorem
 must determine whether retarded/advanced Bach evolution preserves Einstein
-initial data without imposing nonlocal future conditions.  If it does, the
-theory has an honest Einstein scattering sector.  If it does not, Einstein
-data can access the larger Bach-flat solution space and the relationship is
-only a solution-locus inclusion.
+initial data without imposing nonlocal future conditions.  Even if it does,
+causal closure alone is no longer sufficient for an honest Einstein
+scattering sector: the restricted pairing and charges must be nondegenerate
+and match Einstein-Hilbert gravity.  The flat TT Schwartz-core certificate
+finds the pure-Weyl restriction identically zero while the Einstein-Hilbert
+pairing is nonzero.  A full null-infinity extension must either preserve this
+obstruction or identify and justify new corner data.  If causal closure fails
+as well, Einstein data can access the larger Bach-flat solution space and the
+relationship is only a solution-locus inclusion.
 
 ### Commissioned asymptotically flat theorem
 

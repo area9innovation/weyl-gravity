@@ -28,6 +28,10 @@ SCHEMA_PATH = (
 )
 
 INPUTS = {
+    "flat_einstein_symplectic_restriction": ROOT
+    / "bridge"
+    / "certificates"
+    / "flat_einstein_symplectic_restriction.json",
     "einstein_defect_asymptotics": ROOT
     / "bridge"
     / "certificates"
@@ -79,7 +83,7 @@ def _sha256(path: Path) -> str:
 def _validate_contract(payload: dict[str, Any]) -> None:
     schema = _load(SCHEMA_PATH)
     _require(
-        schema.get("$id") == "pure-weyl-asymptotically-flat-einstein-bootstrap-v1",
+        schema.get("$id") == "pure-weyl-asymptotically-flat-einstein-bootstrap-v2",
         "wrong asymptotic bootstrap schema id",
     )
     for key in schema.get("required", []):
@@ -160,6 +164,15 @@ def _validate_contract(payload: dict[str, Any]) -> None:
         flags.get("kappa_zero_insufficient_for_einstein") is True,
         "kappa insufficiency result is absent",
     )
+    _require(
+        flags.get("flat_reduced_einstein_pairing_zero") is True,
+        "flat Einstein pairing restriction is absent",
+    )
+    _require(
+        flags.get("nonzero_eh_symplectic_embedding_refuted_on_schwartz_core")
+        is True,
+        "flat reduced symplectic no-go is absent",
+    )
     full_claims = {
         "full_asymptotically_flat_function_space_admissible",
         "null_infinity_green_complex_constructed",
@@ -181,6 +194,30 @@ def _matrix_rows(matrix: sp.MatrixBase) -> list[list[str]]:
 
 
 def _verify_scope_inputs(records: dict[str, dict[str, Any]]) -> None:
+    restriction = records["flat_einstein_symplectic_restriction"]
+    _require(
+        restriction.get("schema")
+        == "pure-weyl-flat-einstein-symplectic-restriction-v1",
+        "flat symplectic-restriction schema changed",
+    )
+    _require(
+        restriction.get("verdict")
+        == "REDUCED_FLAT_EINSTEIN_SYMPLECTIC_EMBEDDING_REFUTED",
+        "flat symplectic-restriction verdict is absent",
+    )
+    _require(
+        restriction.get("claim_flags", {}).get(
+            "nonzero_symplectic_proportionality_refuted"
+        )
+        is True,
+        "flat symplectic rank mismatch is absent",
+    )
+    _require(
+        restriction.get("claim_flags", {}).get("full_einstein_scattering_no_go_proved")
+        is False,
+        "reduced symplectic no-go was promoted to a full scattering no-go",
+    )
+
     defect = records["einstein_defect_asymptotics"]
     _require(
         defect.get("schema") == "pure-weyl-einstein-defect-asymptotics-v1",
@@ -399,25 +436,39 @@ def build_certificate() -> dict[str, Any]:
         ("AF-E3", "PARTIAL", "charge criterion fixed; pure-Weyl charges not computed", "LOCAL-ALGEBRAIC"),
         ("AF-E4", "PARTIAL", "Einstein is chi=0; fixed boundary metric and kappa=0 are each insufficient, and causal zero-defect preservation is open", "REDUCED-MODE"),
         ("AF-E5", "PARTIAL", "linearized fixed-mode closure proved; nonlinear closure open", "REDUCED-MODE"),
-        ("AF-E6", "OPEN", "no null-infinity current/flux comparison", None),
-        ("AF-E7", "OPEN", "no asymptotic scattering cohomology", None),
+        ("AF-E6", "PARTIAL", "flat Schwartz TT restriction of the pure-Weyl current is zero while the Einstein-Hilbert pairing is nonzero; null-infinity current/flux comparison remains open", "LORENTZIAN-CAUSAL"),
+        ("AF-E7", "PARTIAL", "conventional nondegenerate Einstein symplectic embedding is refuted on the flat Schwartz TT core; full asymptotic scattering cohomology remains open", "LORENTZIAN-CAUSAL"),
         ("AF-E8", "PARTIAL", "p=0 defect plus p=1 kappa and rho tower identified; tensor, soft, Coulombic, and corner data open", "REDUCED-MODE"),
     ]
 
     certificate = {
-        "schema": "pure-weyl-asymptotically-flat-einstein-bootstrap-v1",
+        "schema": "pure-weyl-asymptotically-flat-einstein-bootstrap-v2",
         "schema_path": "bridge/einstein_sector/schema/asymptotic_bootstrap.schema.json",
         "schema_sha256": _sha256(SCHEMA_PATH),
         "result_id": "ASYMPTOTICALLY_FLAT_EINSTEIN_SECTOR_BOOTSTRAP",
-        "result_state": "PARTIAL_EXACT_LINEARIZED_AND_INDICIAL_RAILS",
+        "result_state": "PARTIAL_WITH_REDUCED_FLAT_SYMPLECTIC_NO_GO",
         "provenance": {
-            "input_base_commit": "efa5708d91b235c5c2cfe056c536f2194a2d23dc",
+            "input_base_commit": "ed5ada08f4dbe0dca929fc49957770b4a8a99fd0",
             "generator_path": "bridge/einstein_sector/asymptotic_bootstrap.py",
             "generator_sha256": _sha256(Path(__file__)),
         },
-        "dependency_tags": ["REDUCED-MODE"],
+        "dependency_tags": ["REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "required_promotion_tag": "LORENTZIAN-CAUSAL",
         "linearized_minkowski_theorem": linearized,
+        "flat_symplectic_restriction": {
+            "verdict": records["flat_einstein_symplectic_restriction"]["verdict"],
+            "action_current_derivation": records["flat_einstein_symplectic_restriction"]
+            ["action_current_derivation"],
+            "cauchy_matrix_test": records["flat_einstein_symplectic_restriction"]
+            ["cauchy_matrix_test"],
+            "boundary_improvement_test": records[
+                "flat_einstein_symplectic_restriction"
+            ]["boundary_improvement_test"],
+            "time_translation_test": records["flat_einstein_symplectic_restriction"]
+            ["time_translation_test"],
+            "scope_guards": records["flat_einstein_symplectic_restriction"]
+            ["scope_guards"],
+        },
         "einstein_defect_theorem": {
             "definition": records["einstein_defect_asymptotics"][
                 "geometric_definition"
@@ -573,6 +624,8 @@ def build_certificate() -> dict[str, Any]:
             "fixed_boundary_metric_excludes_leading_p0_kinematically": True,
             "einstein_defect_factorization_derived": True,
             "kappa_zero_insufficient_for_einstein": True,
+            "flat_reduced_einstein_pairing_zero": True,
+            "nonzero_eh_symplectic_embedding_refuted_on_schwartz_core": True,
             "full_asymptotically_flat_function_space_admissible": False,
             "null_infinity_green_complex_constructed": False,
             "pure_weyl_surface_charges_computed": False,
@@ -591,6 +644,14 @@ def build_certificate() -> dict[str, Any]:
             "fixed_boundary_metric_excludes_leading_p0_kinematically": ["REDUCED-MODE"],
             "einstein_defect_factorization_derived": ["REDUCED-MODE"],
             "kappa_zero_insufficient_for_einstein": ["REDUCED-MODE"],
+            "flat_reduced_einstein_pairing_zero": [
+                "REDUCED-MODE",
+                "LORENTZIAN-CAUSAL",
+            ],
+            "nonzero_eh_symplectic_embedding_refuted_on_schwartz_core": [
+                "REDUCED-MODE",
+                "LORENTZIAN-CAUSAL",
+            ],
             "all_false_asymptotic_claims_require": ["LORENTZIAN-CAUSAL"],
         },
         "sources": [

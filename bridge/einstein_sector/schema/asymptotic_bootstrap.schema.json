@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "pure-weyl-asymptotically-flat-einstein-bootstrap-v1",
+  "$id": "pure-weyl-asymptotically-flat-einstein-bootstrap-v2",
   "title": "Pure-Weyl asymptotically flat Einstein-sector bootstrap",
   "type": "object",
   "required": [
@@ -13,6 +13,7 @@
     "dependency_tags",
     "required_promotion_tag",
     "linearized_minkowski_theorem",
+    "flat_symplectic_restriction",
     "einstein_defect_theorem",
     "bondi_bach_indicial_theorem",
     "asymptotic_data_seed",
@@ -28,7 +29,7 @@
   ],
   "properties": {
     "schema": {
-      "const": "pure-weyl-asymptotically-flat-einstein-bootstrap-v1"
+      "const": "pure-weyl-asymptotically-flat-einstein-bootstrap-v2"
     },
     "schema_path": {
       "const": "bridge/einstein_sector/schema/asymptotic_bootstrap.schema.json"
@@ -41,10 +42,10 @@
       "const": "ASYMPTOTICALLY_FLAT_EINSTEIN_SECTOR_BOOTSTRAP"
     },
     "result_state": {
-      "const": "PARTIAL_EXACT_LINEARIZED_AND_INDICIAL_RAILS"
+      "const": "PARTIAL_WITH_REDUCED_FLAT_SYMPLECTIC_NO_GO"
     },
     "dependency_tags": {
-      "const": ["REDUCED-MODE"]
+      "const": ["REDUCED-MODE", "LORENTZIAN-CAUSAL"]
     },
     "required_promotion_tag": {
       "const": "LORENTZIAN-CAUSAL"
@@ -85,6 +86,8 @@
         "fixed_boundary_metric_excludes_leading_p0_kinematically",
         "einstein_defect_factorization_derived",
         "kappa_zero_insufficient_for_einstein",
+        "flat_reduced_einstein_pairing_zero",
+        "nonzero_eh_symplectic_embedding_refuted_on_schwartz_core",
         "full_asymptotically_flat_function_space_admissible",
         "null_infinity_green_complex_constructed",
         "pure_weyl_surface_charges_computed",

@@ -252,15 +252,17 @@ asymptotic claim.
 | `AF-E3` | `PARTIAL`: gauge/charge criterion fixed; conformal-gravity charges open. |
 | `AF-E4` | `PARTIAL`: Einstein is `chi=0`; fixed boundary metric and `kappa=0` are each insufficient, and causal zero-defect preservation is open. |
 | `AF-E5` | `PARTIAL`: exact linearized fixed-mode closure; nonlinear closure open. |
-| `AF-E6` | `OPEN`: no Green/current-to-radiative-flux comparison. |
-| `AF-E7` | `OPEN`: no scattering cohomology or helicity theorem. |
+| `AF-E6` | `PARTIAL`: the pure-Weyl current restricts to zero on the flat TT Schwartz Einstein core while the Einstein-Hilbert pairing is nonzero; null-infinity Green/current-to-flux comparison remains open. |
+| `AF-E7` | `PARTIAL`: a conventional nondegenerate Einstein symplectic embedding is refuted on that core; full scattering cohomology, corners, and helicity completion remain open. |
 | `AF-E8` | `PARTIAL`: the `p=0` defect and `p=1` `kappa,rho` tower are identified; tensor, soft, Coulombic, and corner data remain open. |
 
-The next mathematical target is the full tensor Bondi-gauge recursion,
-including the exceptional harmonics and the soft/Coulombic completion.
-That calculation must test whether the reduced `p=0,1` classification
-survives all constraints.  Charge renormalization and causal Green-operator
-preservation can then be tested on the resulting boundary fields.
+The next mathematical target has two gates.  First, complete the full tensor
+Bondi-gauge recursion, including exceptional harmonics and the
+soft/Coulombic completion, and test whether the reduced `p=0,1`
+classification survives all constraints.  Second, determine whether an
+independently justified null-infinity corner extension changes the flat
+Schwartz symplectic no-go.  Charge renormalization and causal Green-operator
+preservation must then be tested on those same boundary fields.
 
 ## Sources
 

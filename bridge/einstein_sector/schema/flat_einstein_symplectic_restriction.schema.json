@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-flat-einstein-symplectic-restriction-v1",
+  "title": "Flat reduced Einstein symplectic-restriction certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "provenance",
+    "inputs",
+    "action_current_derivation",
+    "cauchy_matrix_test",
+    "schwartz_wave_packet_domain",
+    "boundary_improvement_test",
+    "time_translation_test",
+    "cylinder_non_contradiction",
+    "interpretation",
+    "verdict",
+    "claim_flags",
+    "scope_guards",
+    "verification_command"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-flat-einstein-symplectic-restriction-v1"
+    },
+    "schema_path": {
+      "const": "bridge/einstein_sector/schema/flat_einstein_symplectic_restriction.schema.json"
+    },
+    "result_id": {
+      "const": "FLAT_EINSTEIN_SYMPLECTIC_RESTRICTION"
+    },
+    "result_state": {
+      "const": "REFUTED_REDUCED_SYMPLECTIC_EMBEDDING"
+    },
+    "dependency_tags": {
+      "const": ["REDUCED-MODE", "LORENTZIAN-CAUSAL"]
+    },
+    "verdict": {
+      "const": "REDUCED_FLAT_EINSTEIN_SYMPLECTIC_EMBEDDING_REFUTED"
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "pure_weyl_tt_current_derived",
+        "einstein_restriction_pointwise_zero",
+        "schwartz_local_improvements_integrate_to_zero",
+        "einstein_hilbert_witness_nonzero",
+        "nonzero_symplectic_proportionality_refuted",
+        "normalized_P0_charge_zero_on_restricted_core",
+        "full_tensor_bv_complex_constructed",
+        "null_infinity_symplectic_form_computed",
+        "all_boundary_counterterms_classified",
+        "compensator_or_eh_scale_included",
+        "full_einstein_scattering_no_go_proved",
+        "einstein_solutions_absent",
+        "helicity_two_scattering_space_recovered"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
