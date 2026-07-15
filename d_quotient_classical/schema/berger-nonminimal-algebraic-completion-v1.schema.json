@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-nonminimal-algebraic-completion-v1.schema.json",
+  "title": "Berger 54-row nonminimal algebraic completion",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "row_layout", "nonminimal_unary_extension", "contraction",
+    "gauge_fermion_template", "exact_checks", "flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-nonminimal-algebraic-completion-v1"},
+    "result_id": {"const": "BERGER_NONMINIMAL_ALGEBRAIC_COMPLETION"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "claim_status": {"const": "CERTIFIED_NONMINIMAL_DIRECT_SUM_GAUGE_SHEAR_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["minimal_34", "retained_classical_unary_q1"],
+      "properties": {
+        "minimal_34": {"$ref": "#/$defs/dependency"},
+        "retained_classical_unary_q1": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "row_layout": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_rows", "degree_ranks", "minimal_rows", "nonminimal_rows", "component_rows", "ghost_order"],
+      "properties": {
+        "total_rows": {"const": 54},
+        "degree_ranks": {"const": [5, 22, 22, 5]},
+        "minimal_rows": {"const": 34},
+        "nonminimal_rows": {"const": 20},
+        "component_rows": {"type": "array", "minItems": 54, "maxItems": 54, "items": {"$ref": "#/$defs/row"}},
+        "ghost_order": {"const": ["diff_1", "diff_2", "diff_3", "tau", "sigma"]}
+      }
+    },
+    "nonminimal_unary_extension": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coordinate_rules", "matrix", "pointwise", "cyclic"],
+      "properties": {
+        "coordinate_rules": {"const": ["ell_1 b=bar_c", "ell_1 bar_c_star=b_star"]},
+        "matrix": {"$ref": "#/$defs/operator54x54"},
+        "pointwise": {"const": true},
+        "cyclic": {"const": true}
+      }
+    },
+    "contraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["minimal_iota", "minimal_pi", "S_nonminimal", "iota_cl", "pi_cl", "S_cl", "identity", "side_conditions", "support_local", "maximum_differential_order", "cyclic"],
+      "properties": {
+        "minimal_iota": {"$ref": "#/$defs/operator54x34"},
+        "minimal_pi": {"$ref": "#/$defs/operator34x54"},
+        "S_nonminimal": {"$ref": "#/$defs/operator54x54"},
+        "iota_cl": {"$ref": "#/$defs/operator54x26"},
+        "pi_cl": {"$ref": "#/$defs/operator26x54"},
+        "S_cl": {"$ref": "#/$defs/operator54x54"},
+        "identity": {"type": "string", "minLength": 1},
+        "side_conditions": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+        "support_local": {"const": true},
+        "maximum_differential_order": {"const": 0},
+        "cyclic": {"const": true}
+      }
+    },
+    "gauge_fermion_template": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "coordinate_presentation", "curved_companion", "companion_row_orders", "ghost_principal_identity", "metric_principal_identity", "canonical_transform_applied"],
+      "properties": {
+        "formula": {"type": "string", "minLength": 1},
+        "coordinate_presentation": {"type": "string", "minLength": 1},
+        "curved_companion": {"$ref": "#/$defs/operator5x10"},
+        "companion_row_orders": {"const": [3, 3, 3, 3, 4]},
+        "ghost_principal_identity": {"type": "string", "minLength": 1},
+        "metric_principal_identity": {"type": "string", "minLength": 1},
+        "canonical_transform_applied": {"const": false}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_NONMINIMAL_ROWS_COMPLETE", "BERGER_NONMINIMAL_DIRECT_SUM_CONTRACTION", "BERGER_COMPLETE_54_ROW_UNFIXED_CONTRACTION", "BERGER_CURVED_COMPANION_DERIVED", "BERGER_GAUGE_FERMION_CANONICAL_TRANSFORM", "BERGER_NONMINIMAL_COMPLETION", "BERGER_CURVED_CLOCK_REATTACHED_WITNESS", "CLASSICAL_SUPPORT_LOCAL_Q2", "BERGER_LOCAL_D_ACTION_EQUIVARIANT", "BERGER_GENERAL_KOSZUL_TATE_EXPORT", "BERGER_CAUSAL_GREEN_HOMOTOPY", "BERGER_HADAMARD_DATA", "CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT"],
+      "properties": {
+        "BERGER_NONMINIMAL_ROWS_COMPLETE": {"const": true},
+        "BERGER_NONMINIMAL_DIRECT_SUM_CONTRACTION": {"const": true},
+        "BERGER_COMPLETE_54_ROW_UNFIXED_CONTRACTION": {"const": true},
+        "BERGER_CURVED_COMPANION_DERIVED": {"const": true},
+        "BERGER_GAUGE_FERMION_CANONICAL_TRANSFORM": {"const": false},
+        "BERGER_NONMINIMAL_COMPLETION": {"const": false},
+        "BERGER_CURVED_CLOCK_REATTACHED_WITNESS": {"const": false},
+        "CLASSICAL_SUPPORT_LOCAL_Q2": {"const": false},
+        "BERGER_LOCAL_D_ACTION_EQUIVARIANT": {"const": false},
+        "BERGER_GENERAL_KOSZUL_TATE_EXPORT": {"const": false},
+        "BERGER_CAUSAL_GREEN_HOMOTOPY": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_GAUGE_FERMION_CANONICAL_TRANSFORM"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["result_id", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "row": {"type": "object", "additionalProperties": false, "required": ["index", "row_id", "degree", "sector"], "properties": {"index": {"type": "integer", "minimum": 0, "maximum": 53}, "row_id": {"type": "string", "minLength": 1}, "degree": {"type": "integer", "minimum": -2, "maximum": 3}, "sector": {"type": "string", "minLength": 1}}},
+    "operator54x54": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [54, 54]}}}]},
+    "operator54x34": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [54, 34]}}}]},
+    "operator34x54": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [34, 54]}}}]},
+    "operator54x26": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [54, 26]}}}]},
+    "operator26x54": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [26, 54]}}}]},
+    "operator5x10": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [5, 10]}}}]},
+    "pbwOperatorRecord": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 2, "maxItems": 2},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/pbwMatrixEntry"}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "pbwMatrixEntry": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/pbwTerm"}}], "items": false, "minItems": 3, "maxItems": 3},
+    "pbwTerm": {"type": "array", "prefixItems": [{"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}], "items": false, "minItems": 4, "maxItems": 4}, {"type": "string", "minLength": 1}], "items": false, "minItems": 2, "maxItems": 2}
+  }
+}

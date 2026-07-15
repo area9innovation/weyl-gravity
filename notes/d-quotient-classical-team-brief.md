@@ -277,9 +277,14 @@ BERGER_COMBINED_MINIMAL_CONTRACTION_ALL_34_ROWS = true
 
 The portable certificate exports `classical_unary_q1` and the exact
 \((\iota_{\rm cl},\pi_{\rm cl},S_{\rm cl})\) on all thirty-four minimal rows.
-The downstream wishlist remains fail-closed for nonminimal gauge fixing,
-support-local \(\ell^{\rm cl}_2\), local \(D\)-equivariance, the general
-Koszul--Tate export, causal Green operators, and Hadamard data.
+The twenty nonminimal antighost--multiplier rows are now complete as an
+unfixed direct sum. They give an exact pointwise cyclic 54-to-26 contraction,
+and the exact curved five-direction companion is derived coefficientwise from
+one source. This does not yet apply the gauge-fermion canonical transform, so
+the gauge-fixed `BERGER_NONMINIMAL_COMPLETION` flag remains false. The next
+gate is that canonical shear, followed by support-local
+\(\ell^{\rm cl}_2\), local \(D\)-equivariance, the general Koszul--Tate
+export, causal Green operators, and Hadamard data.
 
 Begin with a conformally coupled scalar \(T\).  Define a domain on which it is a
 valid clock and construct complete observables
