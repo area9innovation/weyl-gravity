@@ -15,6 +15,7 @@ from typing import Any, Iterable
 
 from .algebra import canonical_sha256
 from .curvature import RIEMANN
+from .euler_connecting_identities import euler_connecting_identity_analysis
 from .specialization import WEYL
 from .tensors import TensorExpression, TensorFactor, TensorMonomial
 from .weyl_decomposition import (
@@ -299,6 +300,7 @@ def euler_generator_preflight() -> dict[str, Any]:
 
     cotton_bridge = _source_project_cotton_bridge()
     riemann_preflight = _two_riemann_preflight()
+    tensor_sector_audit = euler_connecting_identity_analysis()
     generator_payload = [
         spec.canonical_payload() for spec in GENERATOR_SPECS.values()
     ]
@@ -309,6 +311,7 @@ def euler_generator_preflight() -> dict[str, Any]:
         "generator_dictionary_sha256": canonical_sha256(generator_payload),
         "cotton_convention_bridge": cotton_bridge,
         "two_riemann_top_preflight": riemann_preflight,
+        "connecting_tensor_sector_audit": tensor_sector_audit,
         "bottom_representative": _word_payload(bottom),
         "bottom_QW_residual": _word_payload(bottom_q),
         "QW_squared_on_generators": q_squared,
@@ -320,6 +323,7 @@ def euler_generator_preflight() -> dict[str, Any]:
             "bounded_two_riemann_expansion": "VERIFIED",
             "bottom_closure_by_applied_QW": "VERIFIED",
             "QW_squared_on_available_generator_rows": "VERIFIED",
+            "reduced_covariant_tensor_sectors": "VERIFIED",
             "epsilon_contracted_top_reconstruction": "NOT_COMPUTED",
             "horizontal_generator_rows": "NOT_COMPUTED",
             "QW_dh_anticommutator_on_connecting_generators": "NOT_COMPUTED",

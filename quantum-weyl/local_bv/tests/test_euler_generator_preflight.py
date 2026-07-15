@@ -19,6 +19,13 @@ class EulerGeneratorPreflightTests(unittest.TestCase):
                 "SCHOUTEN_SCHOUTEN": 16,
             },
         )
+        self.assertEqual(
+            result["connecting_tensor_sector_audit"]["weyl_basis_dimension"], 10
+        )
+        self.assertEqual(
+            result["connecting_tensor_sector_audit"]["cotton_basis_dimension"],
+            16,
+        )
 
     def test_bottom_closure_uses_applied_differential(self) -> None:
         result = euler_generator_preflight()

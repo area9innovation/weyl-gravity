@@ -158,6 +158,15 @@ Schouten--Schouten terms.  The epsilon-contracted comparison is still open,
 so the earlier top check has been narrowed to a carrier-polynomial statement
 rather than presented as a completed tensor identity.
 
+An exact reduced covariant tensor-sector audit now constructs the full
+four-dimensional algebraic Weyl space (dimension `10`) and irreducible
+Cotton space (dimension `16`) from their defining linear identities.  Every
+independent rational basis case vanishes in the four curvature sectors that
+enter the generalized-connection calculation.  This is not promoted to the
+two ordinary-bidegree connecting equations: the inhomogeneous substitution
+`tilde_omega = U - P`, the project totalization signs, and the homogeneous
+Gamma/weight rows still require an explicit component projection.
+
 The generic quotient engine's exhaustiveness proof is also fail-closed at the
 artifact layer.  Promotion to `COMPLETE_NONTRIVIALITY_WITNESS` now requires
 seven embedded canonical artifacts: the basis manifest, declared bounds,
@@ -243,7 +252,8 @@ verdict was promoted.
 |---|---|---:|---|
 | 0 | Euler certificate reproduction/check, strict nested schema, scoped diff check | under 3 s | pass |
 | 1 | focused Euler preflight, intrinsic expansion, certificate, and Weyl decomposition rail | 0.7 s | 13 pass |
-| 2 | complete `quantum-weyl/local_bv/tests` discovery rail | 28.4 s wall | 179 pass in 28.0 s |
+| 1 | exact reduced tensor-sector audit plus certificate consumers | 1.5 s | 7 pass |
+| 2 | complete `quantum-weyl/local_bv/tests` discovery rail | 30.4 s wall | 181 pass in 30.0 s |
 | 2 | Euler preflight hash under seeds `1,7,123`; affected Weyl decomposition, Schouten-zero image, and dimension-four catalogue certificates | under 15 s | pass |
 
 The complete local rail remains below 60 seconds.  Tier 3 and the classical

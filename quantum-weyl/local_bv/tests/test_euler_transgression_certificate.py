@@ -99,6 +99,11 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         self.assertEqual(
             preflight["checks"]["horizontal_generator_rows"], "NOT_COMPUTED"
         )
+        self.assertEqual(
+            preflight["connecting_tensor_sector_audit"]["claim_boundary"]
+            ["full_total_form_connecting_identity"],
+            "NOT_COMPUTED",
+        )
         self.assertIn("connecting intrinsic descent", " ".join(certificate["not_computed"]))
 
     def test_schema_fails_closed_on_unknown_nested_claim(self) -> None:

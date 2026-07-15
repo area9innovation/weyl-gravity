@@ -14,7 +14,7 @@
     "checks": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["levi_civita_variation_derived_from_qg", "delta_curvature_equals_D_delta_connection", "curvature_bianchi_identity", "delta_E4_minus_dTheta", "QE4_plus_d_descent_descendant", "coordinate_euler_current", "closed_manifold_integrated_variation", "euler_full_diff_completed_tower", "omega_E4_generalized_connection_template", "euler_primary_source_convention_map", "generalized_connection_dictionary", "source_project_carrier_normalization", "all_five_euler_bidegrees_enumerated", "bidegree_manifests_content_addressed", "total_differential_component_signs", "omega_E4_intrinsic_component_expansion", "omega_E4_intrinsic_descent_continuation", "intrinsic_bottom_QW_closure", "intrinsic_terminal_slots_zero", "indexed_connecting_identity_preflight", "source_project_cotton_sign_bridge", "two_riemann_product_expansion", "epsilon_contracted_top_reconstruction", "horizontal_connecting_generator_rows", "euler_top_transgression_regression", "unresolved_domega_theta_regression", "lower_descendant_complete_cancellation"],
+      "required": ["levi_civita_variation_derived_from_qg", "delta_curvature_equals_D_delta_connection", "curvature_bianchi_identity", "delta_E4_minus_dTheta", "QE4_plus_d_descent_descendant", "coordinate_euler_current", "closed_manifold_integrated_variation", "euler_full_diff_completed_tower", "omega_E4_generalized_connection_template", "euler_primary_source_convention_map", "generalized_connection_dictionary", "source_project_carrier_normalization", "all_five_euler_bidegrees_enumerated", "bidegree_manifests_content_addressed", "total_differential_component_signs", "omega_E4_intrinsic_component_expansion", "omega_E4_intrinsic_descent_continuation", "intrinsic_bottom_QW_closure", "intrinsic_terminal_slots_zero", "indexed_connecting_identity_preflight", "source_project_cotton_sign_bridge", "two_riemann_product_expansion", "reduced_covariant_connecting_tensor_sectors", "epsilon_contracted_top_reconstruction", "horizontal_connecting_generator_rows", "euler_top_transgression_regression", "unresolved_domega_theta_regression", "lower_descendant_complete_cancellation"],
       "properties": {
         "levi_civita_variation_derived_from_qg": {"const": "VERIFIED"},
         "delta_curvature_equals_D_delta_connection": {"const": "VERIFIED"},
@@ -38,6 +38,7 @@
         "indexed_connecting_identity_preflight": {"const": "VERIFIED"},
         "source_project_cotton_sign_bridge": {"const": "VERIFIED"},
         "two_riemann_product_expansion": {"const": "VERIFIED"},
+        "reduced_covariant_connecting_tensor_sectors": {"const": "VERIFIED"},
         "epsilon_contracted_top_reconstruction": {"const": "IN_PROGRESS"},
         "horizontal_connecting_generator_rows": {"const": "IN_PROGRESS"},
         "euler_top_transgression_regression": {"const": "VERIFIED"},
@@ -122,7 +123,7 @@
         "connecting_identity_preflight": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["result_id", "dependency_tags", "generator_dictionary", "generator_dictionary_sha256", "cotton_convention_bridge", "two_riemann_top_preflight", "bottom_representative", "bottom_QW_residual", "QW_squared_on_generators", "QW_generator_row_status", "checks", "source_to_project_identity_map", "claim_boundary", "preflight_sha256"],
+          "required": ["result_id", "dependency_tags", "generator_dictionary", "generator_dictionary_sha256", "cotton_convention_bridge", "two_riemann_top_preflight", "connecting_tensor_sector_audit", "bottom_representative", "bottom_QW_residual", "QW_squared_on_generators", "QW_generator_row_status", "checks", "source_to_project_identity_map", "claim_boundary", "preflight_sha256"],
           "properties": {
             "result_id": {"const": "EULER_CONNECTING_IDENTITY_PREFLIGHT"},
             "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
@@ -130,11 +131,12 @@
             "generator_dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
             "cotton_convention_bridge": {"type": "object"},
             "two_riemann_top_preflight": {"type": "object"},
+            "connecting_tensor_sector_audit": {"type": "object"},
             "bottom_representative": {"type": "array", "minItems": 1},
             "bottom_QW_residual": {"const": []},
             "QW_squared_on_generators": {"type": "object"},
             "QW_generator_row_status": {"type": "object"},
-            "checks": {"type": "object", "additionalProperties": false, "required": ["indexed_total_form_words", "coefficient_and_total_parities_separated", "source_project_cotton_sign", "bounded_two_riemann_expansion", "bottom_closure_by_applied_QW", "QW_squared_on_available_generator_rows", "epsilon_contracted_top_reconstruction", "horizontal_generator_rows", "QW_dh_anticommutator_on_connecting_generators", "Gamma_action_on_W_two_form"], "properties": {"indexed_total_form_words": {"const": "VERIFIED"}, "coefficient_and_total_parities_separated": {"const": "VERIFIED"}, "source_project_cotton_sign": {"const": "VERIFIED"}, "bounded_two_riemann_expansion": {"const": "VERIFIED"}, "bottom_closure_by_applied_QW": {"const": "VERIFIED"}, "QW_squared_on_available_generator_rows": {"const": "VERIFIED"}, "epsilon_contracted_top_reconstruction": {"const": "NOT_COMPUTED"}, "horizontal_generator_rows": {"const": "NOT_COMPUTED"}, "QW_dh_anticommutator_on_connecting_generators": {"const": "NOT_COMPUTED"}, "Gamma_action_on_W_two_form": {"const": "NOT_COMPUTED"}}},
+            "checks": {"type": "object", "additionalProperties": false, "required": ["indexed_total_form_words", "coefficient_and_total_parities_separated", "source_project_cotton_sign", "bounded_two_riemann_expansion", "bottom_closure_by_applied_QW", "QW_squared_on_available_generator_rows", "reduced_covariant_tensor_sectors", "epsilon_contracted_top_reconstruction", "horizontal_generator_rows", "QW_dh_anticommutator_on_connecting_generators", "Gamma_action_on_W_two_form"], "properties": {"indexed_total_form_words": {"const": "VERIFIED"}, "coefficient_and_total_parities_separated": {"const": "VERIFIED"}, "source_project_cotton_sign": {"const": "VERIFIED"}, "bounded_two_riemann_expansion": {"const": "VERIFIED"}, "bottom_closure_by_applied_QW": {"const": "VERIFIED"}, "QW_squared_on_available_generator_rows": {"const": "VERIFIED"}, "reduced_covariant_tensor_sectors": {"const": "VERIFIED"}, "epsilon_contracted_top_reconstruction": {"const": "NOT_COMPUTED"}, "horizontal_generator_rows": {"const": "NOT_COMPUTED"}, "QW_dh_anticommutator_on_connecting_generators": {"const": "NOT_COMPUTED"}, "Gamma_action_on_W_two_form": {"const": "NOT_COMPUTED"}}},
             "source_to_project_identity_map": {"type": "object"},
             "claim_boundary": {"type": "object"},
             "preflight_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
