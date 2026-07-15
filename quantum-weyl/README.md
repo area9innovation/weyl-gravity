@@ -77,7 +77,7 @@ schema/             machine-readable result contracts
 | Gate | Deliverable | Bootstrap status |
 |---|---|---|
 | A | `CLASSICAL_IMPORT_CERTIFICATE` | `FAIL_CLOSED`; artifact integrity verified, but 15 of 18 export categories remain incomplete or unavailable |
-| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; exact 4D order-six Riemann quotient and rank-one Schouten-zero Weyl image, but no unrestricted Weyl--Cotton/parity-odd quotient or BRST-cohomology classification |
+| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; generated antifield-independent dimension-four curvature catalogues and target-native even/odd Weyl quotients, but no full Diff--Weyl descent, antifield completion, or BRST-cohomology classification |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `IN_PROGRESS` import/projection infrastructure only |
 | D | reduced and Euclidean coefficient ledgers | `IN_PROGRESS` bookkeeping only; no BV coefficient claimed |
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
@@ -128,6 +128,10 @@ or quantum-master-equation result.
   records the exact `8 -> 1` Schouten-flat Weyl image, its seven-dimensional
   kernel, the common image of all three order-six sectors, and the boundary
   separating this restriction from the unrestricted Weyl--Cotton jet algebra.
+- [`reports/local-dimension-four-candidates.md`](reports/local-dimension-four-candidates.md)
+  records the generated three-dimensional quadratic curvature ansatz, its
+  two-dimensional Weyl-closed kernel, independent target-native even/odd
+  Weyl quotients, and the scoped counterterm/anomaly candidate catalogues.
 - [`reports/branch-c-spectral-bootstrap.md`](reports/branch-c-spectral-bootstrap.md)
   records the reduced `E/A/L` character, residues, and determinant boundary.
 - [`reports/bootstrap-integration.md`](reports/bootstrap-integration.md)

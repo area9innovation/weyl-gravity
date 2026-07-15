@@ -1,0 +1,270 @@
+{
+  "assumptions": [
+    "The catalogue is restricted to antifield-independent curvature densities at mass dimension four.",
+    "Closure is tested only in the scalar Weyl sector modulo covariant total derivatives.",
+    "The compressed DualWeyl carrier is accepted only after its explicit epsilon-over-two audit.",
+    "No candidate except omega Box R is promoted to a local BV cohomology class or trivial class."
+  ],
+  "canonical_hashes": {
+    "anomalies_sha256": "be89307b98a8981d6da320bc903f7eb1614b8155c5bbc76a559713bd8d9c8eff",
+    "counterterms_sha256": "be1ed14d52e92b481247e587e912a89608eb8aa50ecc0d47e532a9ca38d33ce2",
+    "source_manifest_sha256": "4879f2f7a674cec83f742eef10470de6dd3f4890ddf0f1fdeaf1e39e2ab1482d"
+  },
+  "catalogues": {
+    "anomaly_candidate_ids": [
+      "ANOM_OMEGA_C2",
+      "ANOM_OMEGA_E4",
+      "ANOM_OMEGA_C_DUAL_C",
+      "ANOM_OMEGA_BOX_R"
+    ],
+    "anomaly_catalogue_sha256": "072854cb3f54cbc021d2082097d3642b71977fd34a969b110c22495866090811",
+    "anomaly_result_id": "ANOMALY_CANDIDATE_CATALOGUE_DIMENSION_FOUR",
+    "box_r_primitive": {
+      "factors": [
+        {
+          "derivatives": [
+            0
+          ],
+          "grassmann_parity": 0,
+          "slots": [
+            1,
+            2,
+            1,
+            2
+          ],
+          "spacetime_parity": 0,
+          "tensor": "Riemann"
+        }
+      ]
+    },
+    "counterterm_candidate_ids": [
+      "CT_C2",
+      "CT_E4",
+      "CT_C_DUAL_C",
+      "CT_BOX_R"
+    ],
+    "counterterm_catalogue_sha256": "2ac122d6633271e0cda5abf2c3a63941b6e9938c92b20e23173d535e2972380c",
+    "counterterm_result_id": "COUNTERTERM_CANDIDATE_CATALOGUE_DIMENSION_FOUR",
+    "omega_box_r_trivialization_coefficient": {
+      "denominator": 12,
+      "numerator": -1
+    }
+  },
+  "checks": {
+    "box_r_divergence_witness": "VERIFIED",
+    "dimension_four_cotton_scalar_absence": "VERIFIED",
+    "dual_weyl_epsilon_correspondence": "VERIFIED",
+    "full_local_bv_cohomology": "NOT_COMPUTED",
+    "hodge_square_signatures": "VERIFIED",
+    "integrated_weyl_variation_kernel": "VERIFIED",
+    "named_even_to_target_native_bridge": "VERIFIED",
+    "omega_box_r_trivialization": "VERIFIED_MOD_D",
+    "quadratic_riemann_ansatz": "GENERATED",
+    "target_native_even_weyl_quotient": "VERIFIED",
+    "target_native_odd_dual_weyl_quotient": "VERIFIED"
+  },
+  "classical_commit": "UNFROZEN",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "generated_ansatz": {
+    "bianchi_relation_rank": 1,
+    "closed_kernel": [
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -3
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "closed_kernel_dimension": 2,
+    "conventional_closed_basis": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "integrated_weyl_variation": [
+      [
+        {
+          "denominator": 1,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": -12
+        }
+      ]
+    ],
+    "local_weyl_variation": [
+      [
+        {
+          "denominator": 1,
+          "numerator": -8
+        },
+        {
+          "denominator": 1,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": -12
+        }
+      ]
+    ],
+    "named_basis": [
+      "Riemann_squared",
+      "Ricci_squared",
+      "scalar_curvature_squared"
+    ],
+    "named_coordinates": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "named_representative_rank": 3,
+    "nonzero_unique_bianchi_relation_count": 2,
+    "quotient_dimension": 3,
+    "raw_pairing_count": 105,
+    "symmetry_canonical_monomial_count": 4
+  },
+  "not_computed": [
+    "full H^{g,4}(s|d) closure, exactness, and descent",
+    "antifield, equation-of-motion, gauge-fixing, Diff, and mixed sectors",
+    "one-loop coefficients and QME status",
+    "cylinder restriction and residual transfer"
+  ],
+  "result_id": "LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE",
+  "result_state": "CANDIDATES_GENERATED_NOT_COHOMOLOGY",
+  "scope": "Generated antifield-independent mass-dimension-four curvature candidates and target-native even/odd Weyl carriers.",
+  "target_native_quotients": {
+    "cotton_cyclic_relation_sha256": "50b5c35be504ad449cbb6cbc13b8661a434a21ba2af84dc9f3b500912c0984f5",
+    "cotton_dimension_four_scalar_count": 0,
+    "euclidean_hodge_square_sha256": "a54b07dc5075356e15d7b81502d911b3957f75867faf0849e46116bb9dfacbe5",
+    "even": {
+      "quotient_dimension": 1,
+      "raw_pairing_count": 105,
+      "relation_count": 2,
+      "relation_rank": 1,
+      "relations_sha256": "ce15b366a7e49317977031c511d440448f82a37395c04c7244e5bf21ec311c17",
+      "representative_sha256": "ebbbe6b133d353674eb27f1c2f5fc19981dfb1e43db6d7b973f159d56805ab09",
+      "tracefree_ambient_dimension": 2
+    },
+    "explicit_hodge_companion_sha256": "1fdf2d9d829c48ee2300b8fb024e1a356eb31d3f6f46573f5dcc7d66a2bfdffe",
+    "lorentzian_hodge_square_sha256": "0b8e7bd73a3da5ced84a4e604386d83008ad682624a788df52b059e41c3ca054",
+    "named_even_weyl_restriction_sha256": "a54b07dc5075356e15d7b81502d911b3957f75867faf0849e46116bb9dfacbe5",
+    "odd": {
+      "quotient_dimension": 1,
+      "raw_pairing_count": 105,
+      "relation_count": 2,
+      "relation_rank": 1,
+      "relations_sha256": "0323b7796fa10ded8f0348700c202f07bf5564e5159f2eecb83906f0768b2b0c",
+      "representative_sha256": "098b14411be493ef51eaf24046950e6bf91545dc9476ece53c40306be024fe07",
+      "tracefree_ambient_dimension": 2
+    },
+    "weyl_cotton_differential_relation_sha256": "445f9abbf9eea68da7897e7b4bd9ad33a4208b1c3056f7cf0fcebc47d88ae6c9"
+  }
+}

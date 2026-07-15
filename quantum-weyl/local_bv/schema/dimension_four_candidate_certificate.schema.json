@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-dimension-four-candidates-v1.json",
+  "title": "Pure-Weyl dimension-four candidate certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope", "checks", "target_native_quotients", "generated_ansatz", "catalogues", "canonical_hashes", "not_computed", "assumptions"],
+  "properties": {
+    "result_id": {"const": "LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE"},
+    "result_state": {"const": "CANDIDATES_GENERATED_NOT_COHOMOLOGY"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "string", "minLength": 1},
+    "checks": {
+      "const": {
+        "quadratic_riemann_ansatz": "GENERATED",
+        "integrated_weyl_variation_kernel": "VERIFIED",
+        "target_native_even_weyl_quotient": "VERIFIED",
+        "target_native_odd_dual_weyl_quotient": "VERIFIED",
+        "named_even_to_target_native_bridge": "VERIFIED",
+        "dual_weyl_epsilon_correspondence": "VERIFIED",
+        "hodge_square_signatures": "VERIFIED",
+        "dimension_four_cotton_scalar_absence": "VERIFIED",
+        "box_r_divergence_witness": "VERIFIED",
+        "omega_box_r_trivialization": "VERIFIED_MOD_D",
+        "full_local_bv_cohomology": "NOT_COMPUTED"
+      }
+    },
+    "target_native_quotients": {"type": "object"},
+    "generated_ansatz": {"type": "object"},
+    "catalogues": {"type": "object"},
+    "canonical_hashes": {
+      "type": "object",
+      "required": ["source_manifest_sha256", "counterterms_sha256", "anomalies_sha256"],
+      "properties": {
+        "source_manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "counterterms_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "anomalies_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "not_computed": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "assumptions": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  }
+}

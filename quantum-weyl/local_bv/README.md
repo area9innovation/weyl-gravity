@@ -92,6 +92,17 @@ An explicit odd Hodge companion is constructed.  Because this restriction
 also sets Cotton to zero, it is a Schouten-flat image theorem rather than the
 unrestricted Weyl-jet quotient or a complete parity-odd enumeration.
 
+The dimension-four one-loop curvature sector is now generated separately
+from that order-six image.  The 105 quadratic Riemann pairings reduce to the
+three-dimensional `Riemann^2`, `Ricci^2`, `R^2` ansatz.  Exact Weyl variation
+modulo the contracted Bianchi total derivative has rank one, and its
+two-dimensional kernel is verified to be spanned by `C^2` and `E4`.
+Independently generated target-native quadratic Weyl quotients have dimension
+one in both the even and compressed dual-Weyl odd sectors.  `Box R` has an
+explicit divergence witness, while `omega Box R` has the integrated
+trivialization `-(1/12) s(R^2)`.  These are candidate catalogues; full
+Diff--Weyl descent, antifield completion, and cohomology remain open.
+
 This is not Gate A or Gate B.  In particular, the classical commit is
 `NOT_FROZEN`; antifield and nonminimal rows have not been imported; and
 general covariant curvature reduction remains incomplete.  The
@@ -115,6 +126,7 @@ PYTHONPATH=quantum-weyl python -m local_bv.specialization_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.four_dimensional_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.weyl_decomposition_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.weyl_image_certificate --check
+PYTHONPATH=quantum-weyl python -m local_bv.dimension_four_candidate_certificate --check
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_CURVATURE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json
@@ -123,6 +135,8 @@ python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_S
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE.json
+python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/COUNTERTERM_CANDIDATES_DIMENSION_FOUR.json
+python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/ANOMALY_CANDIDATES_DIMENSION_FOUR.json
 ```
 
 The certificate is
@@ -172,7 +186,13 @@ The Schouten-zero Weyl-image receipt is
 with its common result envelope at
 [`../certificates/LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE.json`](../certificates/LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE.json).
 
-Next admissible local steps are the unrestricted Weyl--Cotton jet quotient,
-the exhaustive parity-odd specialization, Weyl BRST curvature rows, and a
-derivative-bounded ghost-number ansatz.  The antifield and
-relative-cohomology layers still wait for the frozen classical schema.
+The generated dimension-four candidate receipt is
+[`certificates/LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE.json`](certificates/LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE.json),
+with catalogues under [`../counterterms/`](../counterterms/) and
+[`../anomalies/`](../anomalies/) and separate ghost-number-zero and
+ghost-number-one common result envelopes under [`../certificates/`](../certificates/).
+
+Next admissible local steps are the full longitudinal Diff--Weyl descent on
+the generated dimension-four carriers and the unrestricted higher-derivative
+Weyl--Cotton jet quotient.  The antifield and relative-cohomology layers still
+wait for the frozen classical schema.
