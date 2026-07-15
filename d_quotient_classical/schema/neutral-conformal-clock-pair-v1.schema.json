@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-neutral-conformal-clock-pair-v1.schema.json",
+  "title": "Neutral two-scalar conformal clock-pair certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "generator_id", "phase_space_id",
+    "claim_status", "scientific_verdict", "dependency_tags", "conventions",
+    "exact_solution_family", "stress_cancellation", "gauge_slice",
+    "symplectic_reduction", "health_and_scope", "gate_result", "flags",
+    "not_established", "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-neutral-conformal-clock-pair-v1"},
+    "result_id": {"const": "NEUTRAL_CONFORMAL_CLOCK_PAIR"},
+    "setting_id": {"const": "compact_neutral_clock_pair"},
+    "generator_id": {"const": "D_compact"},
+    "phase_space_id": {"const": "compact_neutral_clock_pair_homogeneous"},
+    "claim_status": {"const": "CERTIFIED_SCOPED_CLASSICAL_THEOREM"},
+    "scientific_verdict": {"const": "D_GAUGE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "conventions": {"type": "object"},
+    "exact_solution_family": {
+      "type": "object",
+      "properties": {
+        "wronskian_conserved": {"const": true},
+        "regular_sector_preserved": {"const": true}
+      },
+      "required": [
+        "equations", "neutral_constraint", "regular_clock_sector",
+        "representative", "representative_charge", "representative_wronskian",
+        "wronskian_conserved", "regular_sector_preserved"
+      ]
+    },
+    "stress_cancellation": {
+      "type": "object",
+      "properties": {
+        "stress_vanishes_on_neutral_constraint": {"const": true},
+        "cylinder_bach_tensor": {"const": "ZERO"},
+        "coupled_metric_equation_satisfied": {"const": true},
+        "scalar_equations_satisfied": {"const": true},
+        "exact_nonzero_clock_background_exists": {"const": true}
+      },
+      "required": [
+        "individual_density", "total_density", "total_pressure", "total_trace",
+        "stress_vanishes_on_neutral_constraint", "cylinder_bach_tensor",
+        "coupled_metric_equation_satisfied", "scalar_equations_satisfied",
+        "exact_nonzero_clock_background_exists"
+      ]
+    },
+    "gauge_slice": {
+      "type": "object",
+      "properties": {
+        "full_rank_on_regular_sector": {"const": true},
+        "clock_velocity_never_zero_on_regular_sector": {"const": true},
+        "weyl_invariant": {"const": true},
+        "global_compact_D_clock": {"const": true},
+        "global_real_lift_on_universal_cover": {"const": false}
+      },
+      "required": [
+        "raw_variation", "incidence_frame", "incidence_matrix", "incidence_determinant",
+        "full_rank_on_regular_sector", "clock", "local_angle", "clock_velocity",
+        "clock_velocity_never_zero_on_regular_sector", "clock_orientation",
+        "weyl_invariant", "weyl_gauge", "representative_incidence",
+        "global_compact_D_clock", "global_real_lift_on_universal_cover",
+        "universal_cover_requirement"
+      ]
+    },
+    "symplectic_reduction": {
+      "type": "object",
+      "properties": {
+        "D_is_kernel_of_pulled_back_symplectic_form": {"const": true},
+        "scoped_verdict": {"const": "D_GAUGE"}
+      },
+      "required": [
+        "D_hamiltonian", "D_flow", "zero_level_regular_for_r_nonzero",
+        "gradient_norm_squared_on_representative",
+        "D_is_kernel_of_pulled_back_symplectic_form", "compact_spatial_flux",
+        "integrability", "conservation", "phase_space_preserved",
+        "surface_corner_terms", "scoped_verdict"
+      ]
+    },
+    "health_and_scope": {
+      "type": "object",
+      "properties": {
+        "opposite_sign_reference_scalar_present": {"const": true},
+        "unrestricted_matter_energy_positive": {"const": false},
+        "negative_direction_removed_by_full_local_BV_reduction": {"const": "NOT_ESTABLISHED"}
+      },
+      "required": [
+        "opposite_sign_reference_scalar_present",
+        "unrestricted_matter_energy_positive",
+        "negative_direction_removed_by_full_local_BV_reduction",
+        "inhomogeneous_stress_cancellation", "interpretation"
+      ]
+    },
+    "gate_result": {
+      "type": "object",
+      "properties": {
+        "shared_gate": {"const": "BACKREACTED_OR_COMPOSITE_CLOCK_MODEL"},
+        "status": {"const": "PASSED_BY_NEUTRAL_TWO_FIELD_HOMOGENEOUS_SECTOR"},
+        "next_gate": {"const": "FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION"}
+      },
+      "required": ["shared_gate", "status", "replaces", "next_gate"]
+    },
+    "flags": {"type": "object"},
+    "not_established": {"type": "array", "items": {"type": "string"}},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

@@ -125,6 +125,24 @@ genuinely backreacted scalar geometry, a Weyl-invariant composite/two-field
 clock, or separately declared reference matter. Do not reuse the obstructed
 background in downstream work.
 
+### Parked nonlinear support-local export
+
+The nonlinear team additionally requires one authoritative classical export
+before its actual theorem or obstruction can be promoted. This is a separate
+work package from any homogeneous clock certificate. It must contain:
+
+1. the complete support-local Taylor operations \(q_1\) and \(q_2\);
+2. the local \(D\)-action on the same declared complex;
+3. the contraction data
+   \((\pi_{\rm cl},\iota_{\rm cl},s_{\rm cl})\);
+4. the cyclic pairing, with conventions and formal adjoints pinned;
+5. a typed row layout, support/order metadata, hashes, and fail-closed guards.
+
+The handoff gate is named `CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT`. Reduced
+harmonic matrices, endpoint projections, or the homogeneous clock sector do
+not satisfy it. They may be imported only as regressions after the complete
+local export exists.
+
 Begin with a conformally coupled scalar \(T\).  Define a domain on which it is a
 valid clock and construct complete observables
 

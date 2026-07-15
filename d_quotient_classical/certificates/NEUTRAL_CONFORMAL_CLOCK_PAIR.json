@@ -1,0 +1,134 @@
+{
+  "claim_boundary": "This certificate proves an exact nonzero homogeneous clock sector on the Bach-flat cylinder and a scoped D_GAUGE reduction there. It uses an opposite-sign reference scalar and does not promote an inhomogeneous, healthy-matter, interacting, boundary, or quantum theorem.",
+  "claim_status": "CERTIFIED_SCOPED_CLASSICAL_THEOREM",
+  "conventions": {
+    "action": "S_pair=-1/2 integral sqrt(-g) eta_AB[(nabla T^A)(nabla T^B)+(R/6)T^A T^B]",
+    "fields": "two real conformal scalars T_1,T_2 of Weyl weight -1",
+    "homogeneous_variables": "chi_A=a*T_A; on the fixed cylinder a=1 so chi_A=T_A numerically",
+    "internal_metric": "eta_AB=diag(+1,-1)",
+    "metric": "g=-dt^2+dOmega_3^2 on the unit conformal cylinder",
+    "scalar_curvature": 6,
+    "symplectic_form": "Omega=dchi_1 wedge dpi_1-dchi_2 wedge dpi_2"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_solution_family": {
+    "equations": [
+      "ddot(chi_1)+chi_1=0",
+      "ddot(chi_2)+chi_2=0"
+    ],
+    "neutral_constraint": "H_D=(chi_1^2+pi_1^2-chi_2^2-pi_2^2)/2=0",
+    "regular_clock_sector": "H_D=0 and W=chi_1*pi_2-chi_2*pi_1!=0",
+    "regular_sector_preserved": true,
+    "representative": [
+      "chi_1=r*cos(t)",
+      "pi_1=-r*sin(t)",
+      "chi_2=r*sin(t)",
+      "pi_2=r*cos(t)"
+    ],
+    "representative_charge": "ZERO",
+    "representative_wronskian": "r^2",
+    "wronskian_conserved": true
+  },
+  "flags": {
+    "compact_group_valued_clock_global": true,
+    "componentwise_stress_cancellation": true,
+    "diff_weyl_incidence_full_rank": true,
+    "exact_nonzero_cylinder_clock_background": true,
+    "full_inhomogeneous_BV_completion": false,
+    "healthy_positive_matter_completion": false,
+    "homogeneous_D_reduction_exact": true,
+    "regular_sector_evolution_invariant": true,
+    "two_field_action_weyl_invariant": true,
+    "universal_cover_real_clock_global_without_lift": false
+  },
+  "gate_result": {
+    "next_gate": "FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION",
+    "replaces": "the obstructed one-real-scalar exact-cylinder candidate",
+    "shared_gate": "BACKREACTED_OR_COMPOSITE_CLOCK_MODEL",
+    "status": "PASSED_BY_NEUTRAL_TWO_FIELD_HOMOGENEOUS_SECTOR"
+  },
+  "gauge_slice": {
+    "clock": "z=(chi_1+i chi_2)/sqrt(chi_1^2+chi_2^2) in U(1)",
+    "clock_orientation": "sign(W), conserved",
+    "clock_velocity": "dot(theta)=W/(chi_1^2+chi_2^2)",
+    "clock_velocity_never_zero_on_regular_sector": true,
+    "full_rank_on_regular_sector": true,
+    "global_compact_D_clock": true,
+    "global_real_lift_on_universal_cover": false,
+    "incidence_determinant": "W=T_1*dot(T_2)-T_2*dot(T_1)",
+    "incidence_frame": "fixed cylinder a=1, where T_A=chi_A numerically; chi_A=a*T_A remains Weyl invariant",
+    "incidence_matrix": [
+      [
+        "dot(T_1)",
+        "-T_1"
+      ],
+      [
+        "dot(T_2)",
+        "-T_2"
+      ]
+    ],
+    "local_angle": "theta=atan2(chi_2,chi_1)",
+    "raw_variation": "delta T_A=epsilon_D*dot(T_A)-sigma_W*T_A",
+    "representative_incidence": "delta theta=epsilon_D; delta u=-sigma_W",
+    "universal_cover_requirement": "choose a winding lift and an initial reference",
+    "weyl_gauge": "u=(1/2)log(T_1^2+T_2^2) in raw-field coordinates",
+    "weyl_invariant": true
+  },
+  "generator_id": "D_compact",
+  "health_and_scope": {
+    "inhomogeneous_stress_cancellation": "NOT_ESTABLISHED",
+    "interpretation": "minimal classical reference/Krein clock sector, not a healthy standalone matter theory",
+    "negative_direction_removed_by_full_local_BV_reduction": "NOT_ESTABLISHED",
+    "opposite_sign_reference_scalar_present": true,
+    "unrestricted_matter_energy_positive": false
+  },
+  "not_established": [
+    "a support-local inhomogeneous BV complex for the clock pair",
+    "removal or harmlessness of the opposite-sign scalar outside the homogeneous constrained quotient",
+    "nonlinear stability of the neutral clock sector under arbitrary perturbations",
+    "a distributional, Hadamard, or quantum completion",
+    "a real-valued global clock on the universal cover without extra winding data"
+  ],
+  "phase_space_id": "compact_neutral_clock_pair_homogeneous",
+  "provenance": {
+    "generator_path": "d_quotient_classical/composite_clock/neutral_conformal_clock.py",
+    "input_base_commit": "0c200a2805f1085f44e466987dc126001035585b",
+    "schema_path": "d_quotient_classical/schema/neutral-conformal-clock-pair-v1.schema.json"
+  },
+  "result_id": "NEUTRAL_CONFORMAL_CLOCK_PAIR",
+  "schema": "pure-weyl-neutral-conformal-clock-pair-v1",
+  "scientific_verdict": "D_GAUGE",
+  "setting_id": "compact_neutral_clock_pair",
+  "stress_cancellation": {
+    "coupled_metric_equation_satisfied": true,
+    "cylinder_bach_tensor": "ZERO",
+    "exact_nonzero_clock_background_exists": true,
+    "individual_density": "rho_A=(chi_A^2+pi_A^2)/(2 Vol(S3))",
+    "scalar_equations_satisfied": true,
+    "stress_vanishes_on_neutral_constraint": true,
+    "total_density": "rho_total=H_D/Vol(S3)",
+    "total_pressure": "p_total=H_D/(3 Vol(S3))",
+    "total_trace": "ZERO"
+  },
+  "symplectic_reduction": {
+    "D_flow": [
+      "pi_1",
+      "-chi_1",
+      "pi_2",
+      "-chi_2"
+    ],
+    "D_hamiltonian": "H_D=(chi_1^2+pi_1^2-chi_2^2-pi_2^2)/2",
+    "D_is_kernel_of_pulled_back_symplectic_form": true,
+    "compact_spatial_flux": "ZERO",
+    "conservation": "CONSERVED",
+    "gradient_norm_squared_on_representative": "2*r^2",
+    "integrability": "INTEGRABLE",
+    "phase_space_preserved": true,
+    "scoped_verdict": "D_GAUGE",
+    "surface_corner_terms": "NONE_ON_CLOSED_S3",
+    "zero_level_regular_for_r_nonzero": true
+  }
+}

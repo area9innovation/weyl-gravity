@@ -27,6 +27,7 @@ VERDICTS = {"D_GAUGE", "D_CHARGED", "SECTOR_DEPENDENT", "NOT_HAMILTONIAN"}
 SETTING_IDS = [
     "vacuum_cylinder",
     "cylinder_scalar_clock",
+    "cylinder_neutral_clock_pair",
     "cylinder_yang_mills",
     "weakly_deformed_background",
     "lorentzian_ds_ads",
@@ -357,13 +358,33 @@ def validate_record(record: object) -> list[str]:
             ),
             None,
         )
-        if isinstance(clock, dict) and clock.get("status") == "OBSTRUCTED":
-            if clock.get("evidence_refs") != ["scalar_clock_vertical_slice"]:
-                errors.append("$.work_packages.relational_clock: obstruction requires the scalar-clock certificate")
+        neutral_setting = next(
+            (
+                setting
+                for setting in settings
+                if isinstance(setting, dict)
+                and setting.get("setting_id") == "cylinder_neutral_clock_pair"
+            ),
+            None,
+        )
+        if isinstance(clock, dict) and clock.get("status") == "CERTIFIED":
+            if clock.get("evidence_refs") != [
+                "scalar_clock_vertical_slice",
+                "neutral_conformal_clock_pair",
+            ]:
+                errors.append("$.work_packages.relational_clock: certified replacement requires both clock certificates")
             if not isinstance(scalar_setting, dict):
                 errors.append("$.settings: missing scalar-clock setting")
             elif scalar_setting.get("verdict") is not None or scalar_setting.get("assessment_status") != "OPEN":
                 errors.append("$.settings.cylinder_scalar_clock: obstructed candidate must remain open without a D verdict")
+            if not isinstance(neutral_setting, dict):
+                errors.append("$.settings: missing neutral-clock setting")
+            elif (
+                neutral_setting.get("verdict") != "D_GAUGE"
+                or neutral_setting.get("assessment_status") != "CERTIFIED"
+                or neutral_setting.get("claim_scope") != "REDUCED_MODE"
+            ):
+                errors.append("$.settings.cylinder_neutral_clock_pair: replacement requires the scoped homogeneous D_GAUGE theorem")
 
     receipts = record.get("verification_receipts")
     if not isinstance(receipts, list) or not receipts:
@@ -427,6 +448,21 @@ def _mutation_guards(record: dict[str, Any]) -> list[str]:
     mutant = deepcopy(record)
     mutant["residual_complexes"][1]["definition"] = "so(4,2)\\<D> set subtraction"
     rejected("illegal_set_subtraction", mutant)
+
+    mutant = deepcopy(record)
+    neutral = next(
+        setting
+        for setting in mutant["settings"]
+        if setting["setting_id"] == "cylinder_neutral_clock_pair"
+    )
+    neutral["claim_scope"] = "COVARIANT_SMOOTH"
+    rejected("neutral_clock_scope_escape", mutant)
+
+    mutant = deepcopy(record)
+    mutant["work_packages"]["relational_clock"]["evidence_refs"] = [
+        "neutral_conformal_clock_pair"
+    ]
+    rejected("single_scalar_obstruction_erased", mutant)
     return failures
 
 
@@ -454,7 +490,7 @@ def main() -> int:
             for failure in failures:
                 print(f"mutation guard failed: {failure}", file=sys.stderr)
             return 1
-        print("mutation guards: 6/6 PASS")
+        print("mutation guards: 8/8 PASS")
     print(f"{args.certificate}: PASS")
     return 0
 

@@ -20,14 +20,28 @@ Thus compactness alone does not make \(D\) gauge. The zero-charge/Taub
 restriction does. This conclusion is not exported to matter-coupled,
 deformed, dS/AdS, or asymptotically flat phase spaces.
 
-The first matter-clock candidate has now been resolved negatively but
-constructively. For one real conformally coupled scalar, the invariant
+The first matter-clock candidate was resolved negatively but constructively.
+For one real conformally coupled scalar, the invariant
 homogeneous variable \(\chi=aT\) is an exact local oscillator clock with
 positive improved charge. It is not a consistent nonzero background on the
 exact vacuum cylinder: its stress tensor is nonzero while the cylinder Bach
 tensor vanishes. Around the only compatible background, \(\bar T=0\), its
 linearized Diff \(\times\) Weyl incidence vanishes. This obstructs that
-candidate without assigning a verdict to a backreacted or composite clock.
+candidate.
+
+A minimal two-field replacement now works on a precisely declared homogeneous
+sector. Give the two conformal scalars internal signature \((+,-)\), impose
+the regular neutral conditions \(H_D=0\) and \(W\ne0\), and use their
+projective angle as the clock. The opposite improved stresses cancel
+componentwise, so the nonzero scalar pair and the Bach-flat cylinder solve the
+coupled equations. The Wronskian \(W\) is conserved, the angle has no turning
+point, and the raw two-field Diff \(\times\) Weyl incidence has determinant
+\(W\). On this homogeneous zero-level phase space, \(D\) is a null direction
+of the pulled-back symplectic form and is therefore `D_GAUGE`.
+
+This is reference/Krein matter, not a positive-energy matter completion. Its
+support-local inhomogeneous BV theory and the fate of the negative direction
+remain open.
 
 The present charge audit composes the exact reduced-mode moment map with the
 already-certified Lorentzian current comparison, so it is tagged
@@ -93,7 +107,8 @@ generators are not a Lie subalgebra. The exact obstruction is
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | `SECTOR_DEPENDENT` on the declared sectors | certified baseline | certified baseline | zero only in selected absolute residual \(H^4\) | \(I_2\) on centered degree-four classes | open in this challenge record |
-| Cylinder + scalar clock | one-real-scalar exact-cylinder candidate `OBSTRUCTED`; replacement phase space `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` |
+| Cylinder + scalar clock | one-real-scalar exact-cylinder candidate `OBSTRUCTED` | `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` |
+| Cylinder + neutral clock pair | `D_GAUGE` on `compact_neutral_clock_pair_homogeneous` | `OPEN` | `OPEN` | `OPEN` | unrestricted reference pairing is indefinite | `OPEN` |
 | Cylinder + Yang--Mills | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Weakly deformed background | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Lorentzian dS/AdS | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
@@ -104,9 +119,9 @@ status promotion.
 
 ## Next gates
 
-1. Replace the obstructed one-scalar exact-cylinder candidate by a genuinely
-   backreacted solution, a Weyl-invariant composite/two-field clock, or a
-   separately declared reference-matter model; then compute its total charge.
+1. Construct the support-local inhomogeneous BV completion of the neutral
+   two-field clock and decide whether its opposite-sign reference direction is
+   entirely gauge/contractible.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
 3. Compute the first background-deformation obstruction and a quantitative
@@ -128,6 +143,8 @@ python3 -m unittest bridge.taub_moment_map.tests.test_compact_d_charge
 python3 symbolic/verify_conformal_d_global_alternatives.py --check-result
 python3 d_quotient_classical/scalar_clock/conformal_scalar_clock.py --check --guards
 python3 -m unittest d_quotient_classical.scalar_clock.tests.test_conformal_scalar_clock
+python3 d_quotient_classical/composite_clock/neutral_conformal_clock.py --check --guards
+python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_conformal_clock
 ```
 
 No full-suite result is implied by the scoped checks.

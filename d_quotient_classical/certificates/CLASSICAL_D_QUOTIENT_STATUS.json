@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "The only promoted physical classification is the compact vacuum-cylinder sector split in the declared smooth/reduced-mode phase spaces. The one-real-scalar exact-cylinder clock candidate is now exactly obstructed, but no verdict is promoted on a backreacted or composite clock phase space. Yang-Mills, deformed backgrounds, dS/AdS boundaries, null infinity, all-order nonlinear integrability, and a universal D verdict remain open or not tested.",
+  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split and the homogeneous neutral two-scalar clock sector on their separately declared reduced-mode phase spaces. The neutral clock uses opposite-sign reference matter; no inhomogeneous healthy-matter, interacting, boundary, quantum, or universal D verdict is promoted. Yang-Mills, deformed backgrounds, dS/AdS boundaries, null infinity, and all-order nonlinear integrability remain open or not tested.",
   "claim_state": "PARTIAL",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -72,12 +72,22 @@
       "evidence_id": "scalar_clock_vertical_slice",
       "path": "d_quotient_classical/certificates/SCALAR_CLOCK_VERTICAL_SLICE.json",
       "sha256": "de30ec828943d8c20be7e36bb523deb4d31f74e817bce92cf6d9374e80ab2948"
+    },
+    {
+      "claim_scope": "Exact homogeneous two-scalar reference-clock solution, componentwise stress cancellation, full Diff x Weyl incidence, and scoped D reduction on the neutral regular sector.",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "evidence_id": "neutral_conformal_clock_pair",
+      "path": "d_quotient_classical/certificates/NEUTRAL_CONFORMAL_CLOCK_PAIR.json",
+      "sha256": "c68921ec717de842052350238cfb3cb65f950a05197dd213691b5b4bb1b14e03"
     }
   ],
   "open_fields": [
     "sufficiency of the quadratic Taub zero fibre for all-order nonlinear integrability",
     "closure and possible algebroid structure of zero-charge transformations",
-    "backreacted or Weyl-invariant composite clock phase space and its total improved D charge",
+    "support-local inhomogeneous BV completion and health of the neutral two-field clock pair",
     "Yang-Mills matter contribution",
     "quantitative weak-background stability radius",
     "Lorentzian dS/AdS boundary charges",
@@ -389,6 +399,40 @@
       "verdict_dependency_tags": []
     },
     {
+      "assessment_status": "CERTIFIED",
+      "assumptions": [
+        "two real Weyl-weight-minus-one conformal scalars have internal metric diag(+1,-1)",
+        "the declared phase space is the exact homogeneous sector H_D=0 with conserved Wronskian W nonzero",
+        "the group-valued clock fixes the effective compact D orbit; a universal-cover real lift requires separate winding data"
+      ],
+      "boundary_conditions": "closed unit S3; exact Bach-flat cylinder; no surface or corner flux",
+      "cartan_contraction": {"dependency_tags": [], "evidence_refs": [], "result": null, "status": "OPEN"},
+      "causal_homotopy": {"dependency_tags": [], "evidence_refs": [], "result": null, "status": "OPEN"},
+      "charge_test": {
+        "conservation": "CONSERVED",
+        "delta_H_D": "IDENTICALLY_ZERO",
+        "evidence_refs": ["neutral_conformal_clock_pair"],
+        "flux": "ZERO",
+        "integrability": "INTEGRABLE",
+        "phase_space_preserved": "YES",
+        "reference_normalization": "DECLARED",
+        "status": "CERTIFIED",
+        "strongest_counterexample": null,
+        "surface_corner_terms": "COMPLETE"
+      },
+      "claim_scope": "REDUCED_MODE",
+      "einstein_sector": {"dependency_tags": [], "evidence_refs": [], "result": null, "status": "OPEN"},
+      "one_particle_sector": {"dependency_tags": [], "evidence_refs": [], "result": null, "status": "OPEN"},
+      "pairing": {"dependency_tags": [], "evidence_refs": [], "result": null, "status": "OPEN"},
+      "phase_space": "compact_neutral_clock_pair_homogeneous: exact homogeneous scalar-pair solutions with H_D=0 and W nonzero, modulo compact D and common Weyl rescaling",
+      "phase_space_status": "SPECIFIED",
+      "sector_restrictions": [],
+      "sector_results": [],
+      "setting_id": "cylinder_neutral_clock_pair",
+      "verdict": "D_GAUGE",
+      "verdict_dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    {
       "assessment_status": "NOT_TESTED",
       "assumptions": [],
       "boundary_conditions": null,
@@ -514,6 +558,22 @@
       "higher_tiers_not_run": "Full coupled BV and Green tests await a consistent replacement clock phase space.",
       "status": "PASS",
       "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/composite_clock/neutral_conformal_clock.py --check --guards",
+      "elapsed_seconds": 0.6,
+      "escalation_criterion": "Escalate if stress cancellation, Wronskian conservation, Diff x Weyl transversality, the scoped charge verdict, or an overclaim guard changes.",
+      "higher_tiers_not_run": "The certificate is an exact homogeneous reduced-mode theorem; the support-local inhomogeneous BV completion remains its next gate.",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_conformal_clock",
+      "elapsed_seconds": 0.35,
+      "escalation_criterion": "Escalate if the exact background, clock transversality, compact-group scope, or Krein/reference-field caveat changes.",
+      "higher_tiers_not_run": "Inhomogeneous, nonlinear, causal, and quantum clock-pair tests are explicitly open.",
+      "status": "PASS",
+      "test_tier": 1
     }
   ],
   "work_packages": {
@@ -546,7 +606,7 @@
       "evidence_refs": [
         "compact_d_charge"
       ],
-      "next_gate": "Replace the obstructed one-scalar exact-cylinder candidate by a backreacted or Weyl-invariant composite clock, then compute its total charge.",
+      "next_gate": "Construct the support-local inhomogeneous neutral-clock BV complex and determine whether the opposite-sign reference direction is gauge/contractible.",
       "result": "The compact vacuum cylinder is sector-dependent: D is charged on P_lin and gauge only after restriction to and quotient by the full Taub-zero derived sector.",
       "status": "CERTIFIED"
     },
@@ -556,11 +616,12 @@
         "REDUCED-MODE"
       ],
       "evidence_refs": [
-        "scalar_clock_vertical_slice"
+        "scalar_clock_vertical_slice",
+        "neutral_conformal_clock_pair"
       ],
-      "next_gate": "Construct a genuinely backreacted scalar-pure-Weyl background, a Weyl-invariant composite/two-field clock, or a separately declared reference-matter model.",
-      "result": "The Weyl-invariant homogeneous variable chi=aT gives exact local relational charts and a nonzero improved D charge, but every nonzero one-scalar clock has positive stress while the exact vacuum cylinder has vanishing Bach tensor. The only compatible homogeneous background T_bar=0 has zero linearized clock incidence.",
-      "status": "OBSTRUCTED"
+      "next_gate": "Construct the full support-local inhomogeneous BV completion of the neutral pair and test whether its opposite-sign reference sector is entirely gauge/contractible.",
+      "result": "The one-real-scalar exact-cylinder candidate is obstructed. A minimal two-field replacement with internal signature (+,-) has an exact nonzero neutral sector: H_D=0 cancels the improved stress, W!=0 is conserved, the projective angle is a global compact-D clock, and the Diff x Weyl incidence has full rank. D is gauge on this declared homogeneous zero-level phase space.",
+      "status": "CERTIFIED"
     }
   }
 }

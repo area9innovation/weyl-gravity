@@ -30,8 +30,8 @@
     },
     "settings": {
       "type": "array",
-      "minItems": 6,
-      "maxItems": 6,
+      "minItems": 7,
+      "maxItems": 7,
       "items": {"$ref": "#/$defs/setting"}
     },
     "residual_complexes": {
@@ -122,7 +122,7 @@
         "pairing", "einstein_sector", "assumptions"
       ],
       "properties": {
-        "setting_id": {"enum": ["vacuum_cylinder", "cylinder_scalar_clock", "cylinder_yang_mills", "weakly_deformed_background", "lorentzian_ds_ads", "asymptotically_flat"]},
+        "setting_id": {"enum": ["vacuum_cylinder", "cylinder_scalar_clock", "cylinder_neutral_clock_pair", "cylinder_yang_mills", "weakly_deformed_background", "lorentzian_ds_ads", "asymptotically_flat"]},
         "claim_scope": {"enum": ["NOT_TESTED", "REDUCED_MODE", "COVARIANT_SMOOTH", "LORENTZIAN_BOUNDARY"]},
         "phase_space_status": {"enum": ["NOT_SPECIFIED", "PARTIALLY_SPECIFIED", "SPECIFIED"]},
         "phase_space": {"type": ["string", "null"]},
