@@ -69,14 +69,16 @@ omega Box R = -(1/12) s(R^2) mod d.
 ```
 
 The Euler candidate remains distinct from the strictly Weyl-invariant
-densities because its nontrivial descent has not been computed.
+densities.  Its first Chern--Weil transgression is now certified, while the
+complete intrinsic type-A anomaly continuation remains pending.  Universal
+Diff completion and intrinsic Weyl descent are recorded in separate fields.
 
 ## Claim boundary
 
 This is a finite curvature-candidate theorem, not the complete
 `H^{0,4}(s|d)` or `H^{1,4}(s|d)` theorem.  Still `NOT_COMPUTED` are:
 
-- full Diff--Weyl closure and mixed descents;
+- the complete intrinsic type-A anomaly descent and mixed sectors;
 - antifield/Koszul--Tate, equation-of-motion, and gauge-fixing sectors;
 - nontriviality of the `C^2`, Euler, and parity-odd anomaly candidates;
 - anomaly or counterterm coefficients and QME restoration;

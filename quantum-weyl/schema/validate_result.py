@@ -38,6 +38,18 @@ def validate_record(record: object, schema: dict[str, Any]) -> list[str]:
         if name not in record:
             errors.append(f"$.{name}: missing required property")
 
+    legacy_descent = "descent_status" in record
+    split_descent = {
+        "diff_descent_status",
+        "intrinsic_weyl_descent_status",
+    }.issubset(record)
+    if not legacy_descent and not split_descent:
+        errors.append(
+            "$: require legacy descent_status or both split descent status fields"
+        )
+    if legacy_descent and split_descent:
+        errors.append("$: legacy and split descent status fields are mutually exclusive")
+
     if schema.get("additionalProperties") is False:
         for name in sorted(set(record) - set(properties)):
             errors.append(f"$.{name}: additional property is forbidden")

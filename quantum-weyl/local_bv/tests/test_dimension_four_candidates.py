@@ -62,7 +62,20 @@ class DimensionFourCandidateTests(unittest.TestCase):
                 "ANOM_OMEGA_BOX_R",
             ],
         )
-        self.assertTrue(all(record["cohomology_status"] == "NOT_COMPUTED" for record in analysis["counterterms"] + analysis["anomalies"]))
+        records = analysis["counterterms"] + analysis["anomalies"]
+        statuses = {record["class_id"]: record["class_status"] for record in records}
+        self.assertEqual(statuses["CT_BOX_R"], "EXACT")
+        self.assertEqual(statuses["ANOM_OMEGA_BOX_R"], "EXACT")
+        self.assertTrue(
+            all(
+                status == "UNDECIDED"
+                for class_id, status in statuses.items()
+                if "BOX_R" not in class_id
+            )
+        )
+        self.assertTrue(
+            all(record["diff_descent_status"] == "NONZERO_COMPLETE" for record in records)
+        )
 
     def test_named_even_candidates_reach_the_native_weyl_carrier(self) -> None:
         analysis = dimension_four_candidate_analysis()

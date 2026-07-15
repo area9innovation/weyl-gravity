@@ -15,7 +15,6 @@
     "parity",
     "representative",
     "cohomology_status",
-    "descent_status",
     "coefficient_status",
     "residual_projection_status",
     "proof_certificate",
@@ -76,6 +75,12 @@
     },
     "descent_status": {
       "enum": ["TRIVIAL", "NONTRIVIAL", "OBSTRUCTED", "NOT_COMPUTED"]
+    },
+    "diff_descent_status": {
+      "enum": ["NONZERO_COMPLETE", "ZERO_COMPLETE", "OBSTRUCTED", "NOT_COMPUTED"]
+    },
+    "intrinsic_weyl_descent_status": {
+      "enum": ["TRIVIAL", "TRIVIAL_WITH_PRIMITIVE", "NONTRIVIAL", "FIRST_TRANSGRESSION_VERIFIED_CONTINUATION_PENDING", "PENDING_TYPE_A_TRANSGRESSION", "MIXED_BY_CANDIDATE", "OBSTRUCTED", "NOT_COMPUTED"]
     },
     "coefficient_status": {
       "enum": ["NOT_COMPUTED", "COMPUTED"]

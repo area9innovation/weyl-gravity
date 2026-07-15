@@ -23,10 +23,10 @@ PACKAGE_ROOT = Path(__file__).resolve().parent
 DETAILED_PATH = (
     PACKAGE_ROOT
     / "certificates"
-    / "LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE.json"
+    / "HORIZONTAL_BICOMPLEX_CERTIFICATE.json"
 )
 DATABASE_PATH = (
-    PACKAGE_ROOT / "descent" / "DESCENT_DATABASE_DIMENSION_FOUR_STRICT.json"
+    PACKAGE_ROOT / "descent" / "DESCENT_DATABASE_DIMENSION_FOUR.json"
 )
 SCHEMA_PATH = PACKAGE_ROOT / "schema" / "strict_descent_certificate.schema.json"
 DATABASE_SCHEMA_PATH = PACKAGE_ROOT / "schema" / "descent_database.schema.json"
@@ -75,7 +75,7 @@ def _database_entry(
     class_id: str,
     *,
     ghost_number: int,
-    status: str,
+    intrinsic_status: str,
     length: int | str,
     tower_id: str,
     notes: str,
@@ -85,13 +85,21 @@ def _database_entry(
         "ghost_number": ghost_number,
         "form_degree": 4,
         "antifield_number": 0,
-        "descent_status": status,
-        "descent_length": length,
+        "diff_descent_status": "NONZERO_COMPLETE",
+        "diff_descent_length": length,
+        "intrinsic_weyl_descent_status": intrinsic_status,
+        "intrinsic_proof_certificate": (
+            "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json"
+            if "E4" in class_id
+            else "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json"
+            if "BOX_R" in class_id
+            else "quantum-weyl/local_bv/certificates/LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE.json"
+        ),
         "tower_id": tower_id,
-        "cohomology_status": "NOT_COMPUTED",
+        "class_status": "EXACT" if "BOX_R" in class_id else "UNDECIDED",
         "proof_certificate": (
             "quantum-weyl/local_bv/certificates/"
-            "LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE.json"
+            "HORIZONTAL_BICOMPLEX_CERTIFICATE.json"
         ),
         "notes": notes,
     }
@@ -102,7 +110,7 @@ def build_database() -> dict[str, Any]:
         _database_entry(
             "CT_C2",
             ghost_number=0,
-            status="NONTRIVIAL",
+            intrinsic_status="TRIVIAL",
             length=4,
             tower_id="STRICT_COUNTERTERM_DIFF_TOWER",
             notes="Nonzero universal Diff descent; cohomological nontriviality is not inferred.",
@@ -110,15 +118,15 @@ def build_database() -> dict[str, Any]:
         _database_entry(
             "CT_E4",
             ghost_number=0,
-            status="NOT_COMPUTED",
-            length="NOT_COMPUTED",
-            tower_id="NOT_COMPUTED",
-            notes="Requires the separate Euler Weyl-current descent.",
+            intrinsic_status="FIRST_TRANSGRESSION_VERIFIED_CONTINUATION_PENDING",
+            length=4,
+            tower_id="UNIVERSAL_COUNTERTERM_DIFF_TOWER",
+            notes="Universal Diff completion is complete; the separate Euler Weyl-current transgression is pending.",
         ),
         _database_entry(
             "CT_C_DUAL_C",
             ghost_number=0,
-            status="NONTRIVIAL",
+            intrinsic_status="TRIVIAL",
             length=4,
             tower_id="STRICT_COUNTERTERM_DIFF_TOWER",
             notes="Nonzero universal Diff descent for the strict parity-odd density.",
@@ -126,15 +134,15 @@ def build_database() -> dict[str, Any]:
         _database_entry(
             "CT_BOX_R",
             ghost_number=0,
-            status="TRIVIAL",
-            length=0,
-            tower_id="EXPLICIT_TOTAL_DERIVATIVE",
-            notes="The density is d(nabla R).",
+            intrinsic_status="TRIVIAL_WITH_PRIMITIVE",
+            length=4,
+            tower_id="UNIVERSAL_COUNTERTERM_DIFF_TOWER",
+            notes="The universal Diff tower is complete; independently, the density is d(nabla R).",
         ),
         _database_entry(
             "ANOM_OMEGA_C2",
             ghost_number=1,
-            status="NONTRIVIAL",
+            intrinsic_status="TRIVIAL",
             length=4,
             tower_id="STRICT_ANOMALY_DIFF_TOWER",
             notes="Nonzero universal Diff descent; anomaly nontriviality is not inferred.",
@@ -142,15 +150,15 @@ def build_database() -> dict[str, Any]:
         _database_entry(
             "ANOM_OMEGA_E4",
             ghost_number=1,
-            status="NOT_COMPUTED",
-            length="NOT_COMPUTED",
-            tower_id="NOT_COMPUTED",
-            notes="Requires the nontrivial Euler Weyl descent.",
+            intrinsic_status="PENDING_TYPE_A_TRANSGRESSION",
+            length=4,
+            tower_id="UNIVERSAL_ANOMALY_DIFF_TOWER",
+            notes="Universal Diff completion is complete; the intrinsic type-A Weyl descent is pending.",
         ),
         _database_entry(
             "ANOM_OMEGA_C_DUAL_C",
             ghost_number=1,
-            status="NONTRIVIAL",
+            intrinsic_status="TRIVIAL",
             length=4,
             tower_id="STRICT_ANOMALY_DIFF_TOWER",
             notes="Nonzero universal Diff descent for the strict parity-odd ghost lift.",
@@ -158,26 +166,27 @@ def build_database() -> dict[str, Any]:
         _database_entry(
             "ANOM_OMEGA_BOX_R",
             ghost_number=1,
-            status="TRIVIAL",
-            length=0,
-            tower_id="OMEGA_BOX_R_TRIVIALIZATION",
-            notes="Equals -(1/12) s(R^2) modulo d in the integrated Weyl sector.",
+            intrinsic_status="TRIVIAL_WITH_PRIMITIVE",
+            length=4,
+            tower_id="UNIVERSAL_ANOMALY_DIFF_TOWER",
+            notes="The universal Diff tower is complete; independently, omega Box R has the explicit R^2 primitive modulo d.",
         ),
     )
     return {
-        "result_id": "DESCENT_DATABASE_DIMENSION_FOUR_STRICT",
+        "result_id": "DESCENT_DATABASE_DIMENSION_FOUR",
         "classical_commit": "UNFROZEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "result_state": "PARTIAL_DESCENT_DATABASE",
         "scope": (
-            "Universal Diff descent for strict Weyl-invariant dimension-four "
-            "densities and their Weyl-ghost lifts."
+            "Universal Diff-horizontal completion of covariant dimension-four "
+            "top forms and their Weyl-ghost lifts, with intrinsic Weyl status "
+            "recorded independently."
         ),
         "entry_count": len(entries),
         "entries": list(entries),
         "proof_certificate": (
             "quantum-weyl/local_bv/certificates/"
-            "LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE.json"
+            "HORIZONTAL_BICOMPLEX_CERTIFICATE.json"
         ),
         "not_computed": [
             "Euler Weyl-current descent",
@@ -227,19 +236,21 @@ def build_certificate() -> dict[str, Any]:
     database = build_database()
     source_manifest = _source_manifest()
     return {
-        "result_id": "LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE",
+        "result_id": "HORIZONTAL_BICOMPLEX_CERTIFICATE",
         "result_state": "PARTIAL_DESCENT_DATABASE",
         "classical_commit": "UNFROZEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "scope": database["scope"],
         "checks": {
-            "horizontal_d_squared": "VERIFIED",
-            "density_brst_nilpotency": "VERIFIED",
-            "brst_horizontal_commutation": "VERIFIED",
-            "counterterm_tower_equations": "VERIFIED",
-            "anomaly_tower_equations": "VERIFIED",
+            "Q_squared_zero_on_density_generators": "VERIFIED",
+            "d_h_squared_zero": "VERIFIED",
+            "coordinate_Q_dh_commutator_zero": "VERIFIED",
+            "totalized_Q_dh_anticommutator_zero": "VERIFIED",
+            "contraction_coefficients_verified": "VERIFIED",
+            "counterterm_diff_descent_tower_equations": "VERIFIED",
+            "anomaly_diff_descent_tower_equations": "VERIFIED",
             "bottom_brst_closure": "VERIFIED",
-            "euler_weyl_descent": "NOT_COMPUTED",
+            "euler_intrinsic_weyl_descent": "NOT_COMPUTED",
             "antifield_descent": "BLOCKED_CLASSICAL_EXPORT",
         },
         "towers": {
@@ -259,8 +270,8 @@ def build_certificate() -> dict[str, Any]:
         "not_computed": database["not_computed"],
         "assumptions": [
             "C^2 and C dual C are covariant strict Weyl-invariant top densities.",
-            "NONTRIVIAL descent status means the stored descent tower is nonzero; it does not assert a nontrivial BV cohomology class.",
-            "The Euler density is excluded because its Weyl variation has a separate nontrivial current descent.",
+            "Universal Diff completion and intrinsic Weyl descent are independent ledger fields.",
+            "The universal Diff tower is complete for every covariant top form; the Euler intrinsic Weyl current is separate.",
             "The coordinate BRST and horizontal differential commute; bicomplex totalization supplies the conventional grading sign.",
         ],
     }
@@ -290,7 +301,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(outputs[DETAILED_PATH], end="")
     else:
-        print("LOCAL STRICT-DENSITY DESCENT: EXACT CHECKS PASS")
+        print("HORIZONTAL BICOMPLEX: EXACT CHECKS PASS")
     return 0
 
 

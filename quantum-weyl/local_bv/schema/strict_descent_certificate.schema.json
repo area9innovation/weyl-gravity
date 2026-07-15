@@ -1,25 +1,27 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://area9.dk/schemas/quantum-weyl-strict-descent-certificate-v1.json",
-  "title": "Pure-Weyl strict-density descent certificate",
+  "$id": "https://area9.dk/schemas/quantum-weyl-horizontal-bicomplex-certificate-v2.json",
+  "title": "Pure-Weyl horizontal bicomplex certificate",
   "type": "object",
   "additionalProperties": false,
   "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope", "checks", "towers", "database", "canonical_hashes", "not_computed", "assumptions"],
   "properties": {
-    "result_id": {"const": "LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE"},
+    "result_id": {"const": "HORIZONTAL_BICOMPLEX_CERTIFICATE"},
     "result_state": {"const": "PARTIAL_DESCENT_DATABASE"},
     "classical_commit": {"const": "UNFROZEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
     "scope": {"type": "string", "minLength": 1},
     "checks": {
       "const": {
-        "horizontal_d_squared": "VERIFIED",
-        "density_brst_nilpotency": "VERIFIED",
-        "brst_horizontal_commutation": "VERIFIED",
-        "counterterm_tower_equations": "VERIFIED",
-        "anomaly_tower_equations": "VERIFIED",
+        "Q_squared_zero_on_density_generators": "VERIFIED",
+        "d_h_squared_zero": "VERIFIED",
+        "coordinate_Q_dh_commutator_zero": "VERIFIED",
+        "totalized_Q_dh_anticommutator_zero": "VERIFIED",
+        "contraction_coefficients_verified": "VERIFIED",
+        "counterterm_diff_descent_tower_equations": "VERIFIED",
+        "anomaly_diff_descent_tower_equations": "VERIFIED",
         "bottom_brst_closure": "VERIFIED",
-        "euler_weyl_descent": "NOT_COMPUTED",
+        "euler_intrinsic_weyl_descent": "NOT_COMPUTED",
         "antifield_descent": "BLOCKED_CLASSICAL_EXPORT"
       }
     },
@@ -28,7 +30,7 @@
       "type": "object",
       "required": ["result_id", "entry_count", "sha256"],
       "properties": {
-        "result_id": {"const": "DESCENT_DATABASE_DIMENSION_FOUR_STRICT"},
+        "result_id": {"const": "DESCENT_DATABASE_DIMENSION_FOUR"},
         "entry_count": {"type": "integer", "const": 8},
         "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
       }

@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://area9.dk/schemas/quantum-weyl-strict-descent-database-v1.json",
-  "title": "Pure-Weyl partial descent database",
+  "$id": "https://area9.dk/schemas/quantum-weyl-split-descent-database-v2.json",
+  "title": "Pure-Weyl universal Diff and intrinsic Weyl descent database",
   "type": "object",
   "additionalProperties": false,
   "required": ["result_id", "classical_commit", "dependency_tags", "result_state", "scope", "entry_count", "entries", "proof_certificate", "not_computed"],
   "properties": {
-    "result_id": {"const": "DESCENT_DATABASE_DIMENSION_FOUR_STRICT"},
+    "result_id": {"const": "DESCENT_DATABASE_DIMENSION_FOUR"},
     "classical_commit": {"const": "UNFROZEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
     "result_state": {"const": "PARTIAL_DESCENT_DATABASE"},
@@ -19,16 +19,18 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["class_id", "ghost_number", "form_degree", "antifield_number", "descent_status", "descent_length", "tower_id", "cohomology_status", "proof_certificate", "notes"],
+        "required": ["class_id", "ghost_number", "form_degree", "antifield_number", "diff_descent_status", "diff_descent_length", "intrinsic_weyl_descent_status", "intrinsic_proof_certificate", "tower_id", "class_status", "proof_certificate", "notes"],
         "properties": {
           "class_id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
           "ghost_number": {"type": "integer"},
           "form_degree": {"type": "integer", "const": 4},
           "antifield_number": {"type": "integer", "const": 0},
-          "descent_status": {"enum": ["TRIVIAL", "NONTRIVIAL", "OBSTRUCTED", "NOT_COMPUTED"]},
-          "descent_length": {},
+          "diff_descent_status": {"enum": ["NONZERO_COMPLETE", "ZERO_COMPLETE", "OBSTRUCTED", "NOT_COMPUTED"]},
+          "diff_descent_length": {},
+          "intrinsic_weyl_descent_status": {"enum": ["TRIVIAL", "TRIVIAL_WITH_PRIMITIVE", "NONTRIVIAL", "FIRST_TRANSGRESSION_VERIFIED_CONTINUATION_PENDING", "PENDING_TYPE_A_TRANSGRESSION", "OBSTRUCTED", "NOT_COMPUTED"]},
+          "intrinsic_proof_certificate": {"type": "string", "minLength": 1},
           "tower_id": {"type": "string", "minLength": 1},
-          "cohomology_status": {"const": "NOT_COMPUTED"},
+          "class_status": {"enum": ["CLOSED", "EXACT", "NONTRIVIAL", "UNDECIDED"]},
           "proof_certificate": {"type": "string", "minLength": 1},
           "notes": {"type": "string"}
         }

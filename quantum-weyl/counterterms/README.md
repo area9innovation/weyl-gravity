@@ -6,7 +6,8 @@ antifield-independent mass-dimension-four curvature catalogue.  Its
 calculation of `H^{0,4}(s|d)`.  Closure, triviality, descent, coefficients,
 and residual restrictions retain independent statuses.
 
-The strict `C^2` and parity-odd entries now reference the generated
-four-step Diff tower in
-`../local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR_STRICT.json`.  The Euler
-Weyl-current descent remains `NOT_COMPUTED`.
+All four entries reference the generated four-step universal Diff tower in
+`../local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR.json`.  The Euler
+variational transgression `delta E4=d_h Theta_E` is certified separately;
+its complete intrinsic BRST continuation remains pending.  `Box R` is marked
+`EXACT` only because its explicit `nabla R` primitive is stored.

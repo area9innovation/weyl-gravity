@@ -26,11 +26,22 @@ class StrictDensityDescentCertificateTests(unittest.TestCase):
     def test_database_does_not_promote_euler_or_cohomology(self) -> None:
         database = build_database()
         entries = {entry["class_id"]: entry for entry in database["entries"]}
-        self.assertEqual(entries["ANOM_OMEGA_E4"]["descent_status"], "NOT_COMPUTED")
-        self.assertEqual(entries["ANOM_OMEGA_BOX_R"]["descent_status"], "TRIVIAL")
-        self.assertTrue(
-            all(entry["cohomology_status"] == "NOT_COMPUTED" for entry in entries.values())
+        self.assertEqual(
+            entries["ANOM_OMEGA_E4"]["intrinsic_weyl_descent_status"],
+            "PENDING_TYPE_A_TRANSGRESSION",
         )
+        self.assertEqual(
+            entries["ANOM_OMEGA_BOX_R"]["intrinsic_weyl_descent_status"],
+            "TRIVIAL_WITH_PRIMITIVE",
+        )
+        self.assertTrue(
+            all(
+                entry["diff_descent_status"] == "NONZERO_COMPLETE"
+                for entry in entries.values()
+            )
+        )
+        self.assertEqual(entries["ANOM_OMEGA_BOX_R"]["class_status"], "EXACT")
+        self.assertEqual(entries["ANOM_OMEGA_C2"]["class_status"], "UNDECIDED")
 
 
 if __name__ == "__main__":

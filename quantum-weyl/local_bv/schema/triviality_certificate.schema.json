@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-triviality-certificate-v1.json",
+  "title": "Pure-Weyl dimension-four explicit triviality certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "checks", "trivializations", "canonical_hashes", "assumptions", "not_computed"],
+  "properties": {
+    "result_id": {"const": "TRIVIALITY_CERTIFICATE"},
+    "result_state": {"const": "EXACT_PRIMITIVES_VERIFIED"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "checks": {"type": "object"},
+    "trivializations": {
+      "type": "object",
+      "required": ["CT_BOX_R", "ANOM_OMEGA_BOX_R"]
+    },
+    "canonical_hashes": {"type": "object"},
+    "assumptions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "not_computed": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  }
+}

@@ -83,14 +83,18 @@ def _candidate_record(
         "form_degree": 4,
         "mass_dimension": 4,
         "parity": parity,
-        "descent_length": "NOT_COMPUTED",
-        "descent_status": "NOT_COMPUTED",
+        "diff_descent_length": "NOT_COMPUTED",
+        "diff_descent_status": "NOT_COMPUTED",
+        "intrinsic_weyl_descent_status": "NOT_COMPUTED",
+        "intrinsic_weyl_descent_certificate": "NOT_COMPUTED",
         "descent_certificate": "NOT_COMPUTED",
         "topological_status": topological_status,
         "local_triviality": local_triviality,
         "integrated_triviality": integrated_triviality,
         "closure_status": closure_status,
-        "cohomology_status": "NOT_COMPUTED",
+        "class_status": "UNDECIDED",
+        "cohomology_status": "UNDECIDED",
+        "trivialization": "NOT_COMPUTED",
         "proof_status": proof_status,
         "proof_certificate": (
             "quantum-weyl/local_bv/certificates/"
@@ -108,19 +112,54 @@ def _attach_descent_status(
     class_id = str(result["class_id"])
     certificate = (
         "quantum-weyl/local_bv/certificates/"
-        "LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE.json"
+        "HORIZONTAL_BICOMPLEX_CERTIFICATE.json"
     )
-    if class_id in descent["computed_candidates"]:
+    if class_id not in {
+        *descent["computed_candidates"],
+        *descent["trivialized_candidates"],
+        "CT_E4",
+        "ANOM_OMEGA_E4",
+    }:
+        raise AssertionError(f"unregistered dimension-four candidate: {class_id}")
+
+    intrinsic = (
+        "FIRST_TRANSGRESSION_VERIFIED_CONTINUATION_PENDING"
+        if class_id == "CT_E4"
+        else "PENDING_TYPE_A_TRANSGRESSION"
+        if class_id == "ANOM_OMEGA_E4"
+        else "TRIVIAL_WITH_PRIMITIVE"
+        if "BOX_R" in class_id
+        else "TRIVIAL"
+    )
+    result.update(
+        diff_descent_length=4,
+        diff_descent_status="NONZERO_COMPLETE",
+        intrinsic_weyl_descent_status=intrinsic,
+        descent_certificate=certificate,
+        intrinsic_weyl_descent_certificate=(
+            "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json"
+            if "E4" in class_id
+            else "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json"
+            if "BOX_R" in class_id
+            else "quantum-weyl/local_bv/certificates/LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE.json"
+        ),
+    )
+    if "BOX_R" in class_id:
         result.update(
-            descent_length=4,
-            descent_status="NONTRIVIAL",
-            descent_certificate=certificate,
-        )
-    elif class_id in descent["trivialized_candidates"]:
-        result.update(
-            descent_length=0,
-            descent_status="TRIVIAL",
-            descent_certificate=certificate,
+            class_status="EXACT",
+            cohomology_status="EXACT",
+            trivialization={
+                "proof_certificate": (
+                    "quantum-weyl/local_bv/certificates/"
+                    "TRIVIALITY_CERTIFICATE.json"
+                ),
+                "primitive": "nabla R" if class_id == "CT_BOX_R" else "R^2",
+                "equation": (
+                    "BoxR = d_h(nabla R)"
+                    if class_id == "CT_BOX_R"
+                    else "omega BoxR = -(1/12) Q_W(R^2) - d_h(R nabla omega - omega nabla R)"
+                ),
+            },
         )
     return result
 
@@ -292,9 +331,9 @@ def dimension_four_candidate_analysis() -> dict[str, object]:
                     else "GHOST_LIFT_OF_GENERATED_DENSITY"
                 ),
                 notes=(
-                    "Explicit integrated trivialization by -R^2/12; full Diff-Weyl descent remains open."
+                    "Explicit local relative trivialization by -R^2/12 and the stored current; the universal Diff tower is complete."
                     if is_box
-                    else "Candidate only; descent and nontriviality remain to be computed."
+                    else "Candidate only; class status remains undecided pending the complete coboundary ansatz."
                 ),
             )
         )

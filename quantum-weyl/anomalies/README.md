@@ -1,10 +1,14 @@
 # Anomalies
 
 `ghost_number_1/ANOMALY_CANDIDATES.json` contains the Weyl-ghost lifts of the
-generated dimension-four curvature densities.  Only the `omega Box R`
-candidate currently has an explicit trivialization.  The file does not claim
+generated dimension-four curvature densities.  `omega Box R` has an explicit
+primitive and local current in `../local_bv/certificates/TRIVIALITY_CERTIFICATE.json`.
+The file does not claim
 complete `H^{1,4}(s|d)`, anomaly coefficients, cancellation, or QME status.
 
-The strict Weyl-ghost candidates now reference the generated four-step Diff
-tower in `../local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR_STRICT.json`.
-The Euler anomaly descent remains `NOT_COMPUTED`.
+All candidates reference their generated four-step universal Diff tower in
+`../local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR.json`.  A separate
+`intrinsic_weyl_descent_status` records type-B triviality, the explicit
+type-D primitive, or the pending type-A continuation.  The Euler
+variational current and the nonzero first `omega E4` residual are certified;
+the complete intrinsic type-A anomaly descent remains `NOT_COMPUTED`.

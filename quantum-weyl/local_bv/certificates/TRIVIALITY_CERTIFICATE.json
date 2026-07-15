@@ -1,0 +1,130 @@
+{
+  "assumptions": [
+    "The certificate is the four-dimensional infinitesimal Weyl sector; universal Diff completion is recorded separately.",
+    "The density convention is Q_W(sqrt(g) R^2) = -12 sqrt(g) R Box(omega)."
+  ],
+  "canonical_hashes": {
+    "anomaly_current_sha256": "95074b9e16d48656431cd88e1f2734a1ce6edaa4a089a738294ba8a7af03f5cb",
+    "box_r_sha256": "7d9e8068f4fa1328153d37fab9530ad0118c70415f4a371347d76c6b3d7f5c87",
+    "omega_box_r_sha256": "9b5b62f64bdf6aafe0a2da0702db005a7231b5b371288a506301ef948f430be6",
+    "source_manifest_sha256": "aaad5073776ce2c2ff41cb34e75c9a926415108bc1c008533640d1b1ddc20d07",
+    "zero_residual_sha256": "a2f2a2a871fc6c22108aeb363ce5d0ff5ddc2e4dfe0d56f5f73f2c9df22316c0"
+  },
+  "checks": {
+    "box_r_equals_div_gradient_r": "VERIFIED",
+    "current_divergence_identity": "VERIFIED",
+    "omega_box_r_relative_trivialization": "VERIFIED",
+    "weyl_brst_r_squared_row": "VERIFIED"
+  },
+  "classical_commit": "UNFROZEN",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "not_computed": [
+    "full relative cohomology quotient outside these explicit primitives",
+    "antifield/Koszul-Tate sector"
+  ],
+  "result_id": "TRIVIALITY_CERTIFICATE",
+  "result_state": "EXACT_PRIMITIVES_VERIFIED",
+  "trivializations": {
+    "ANOM_OMEGA_BOX_R": {
+      "class_status": "EXACT",
+      "current": {
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "monomial": {
+              "factors": [
+                {
+                  "derivatives": [],
+                  "grassmann_parity": 0,
+                  "slots": [
+                    1,
+                    2,
+                    1,
+                    2
+                  ],
+                  "spacetime_parity": 0,
+                  "tensor": "Riemann"
+                },
+                {
+                  "derivatives": [
+                    0
+                  ],
+                  "grassmann_parity": 1,
+                  "slots": [],
+                  "spacetime_parity": 0,
+                  "tensor": "omega"
+                }
+              ]
+            }
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "monomial": {
+              "factors": [
+                {
+                  "derivatives": [
+                    0
+                  ],
+                  "grassmann_parity": 0,
+                  "slots": [
+                    1,
+                    2,
+                    1,
+                    2
+                  ],
+                  "spacetime_parity": 0,
+                  "tensor": "Riemann"
+                },
+                {
+                  "derivatives": [],
+                  "grassmann_parity": 1,
+                  "slots": [],
+                  "spacetime_parity": 0,
+                  "tensor": "omega"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "equation": "omega BoxR = -(1/12) Q_W(R^2) - d_h(R nabla omega - omega nabla R)",
+      "primitive": "R^2",
+      "primitive_coefficient": {
+        "denominator": 12,
+        "numerator": -1
+      },
+      "verification_hash": "a2f2a2a871fc6c22108aeb363ce5d0ff5ddc2e4dfe0d56f5f73f2c9df22316c0"
+    },
+    "CT_BOX_R": {
+      "class_status": "EXACT",
+      "equation": "BoxR = d_h(nabla R)",
+      "primitive": {
+        "factors": [
+          {
+            "derivatives": [
+              0
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              2,
+              1,
+              2
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      "verification_hash": "7d9e8068f4fa1328153d37fab9530ad0118c70415f4a371347d76c6b3d7f5c87"
+    }
+  }
+}

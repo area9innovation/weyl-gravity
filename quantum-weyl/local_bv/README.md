@@ -202,11 +202,16 @@ with catalogues under [`../counterterms/`](../counterterms/) and
 [`../anomalies/`](../anomalies/) and separate ghost-number-zero and
 ghost-number-one common result envelopes under [`../certificates/`](../certificates/).
 
-The strict-density descent receipt is
-[`certificates/LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE.json`](certificates/LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE.json),
-with the partial database at
-[`descent/DESCENT_DATABASE_DIMENSION_FOUR_STRICT.json`](descent/DESCENT_DATABASE_DIMENSION_FOUR_STRICT.json).
+The universal Diff-horizontal receipt is
+[`certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json`](certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json),
+with the split-status database at
+[`descent/DESCENT_DATABASE_DIMENSION_FOUR.json`](descent/DESCENT_DATABASE_DIMENSION_FOUR.json).
+The explicit type-D primitives are in
+[`certificates/TRIVIALITY_CERTIFICATE.json`](certificates/TRIVIALITY_CERTIFICATE.json),
+and the derived Levi-Civita/Chern--Weil Euler current is in
+[`certificates/EULER_TRANSGRESSION_CERTIFICATE.json`](certificates/EULER_TRANSGRESSION_CERTIFICATE.json).
 
-Next admissible local steps are the Euler Weyl-current descent and the
-unrestricted higher-derivative Weyl--Cotton jet quotient.  The antifield and
-relative-cohomology layers still wait for the frozen classical schema.
+Next admissible local steps are the continuation of the intrinsic type-A
+descent from `omega E4` and the unrestricted higher-derivative
+Weyl--Cotton jet quotient.  The antifield and relative-cohomology layers
+still wait for the frozen classical schema.

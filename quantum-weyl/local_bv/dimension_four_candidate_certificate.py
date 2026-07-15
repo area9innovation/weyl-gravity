@@ -97,7 +97,7 @@ def _catalogue(result_id: str, sector: str, candidates: tuple[dict[str, object],
             "LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE.json"
         ),
         "not_computed": [
-            "full H^{g,4}(s|d) closure, exactness, and descent",
+            "full H^{g,4}(s|d) coboundary quotient and intrinsic Euler anomaly descent",
             "antifield, equation-of-motion, gauge-fixing, Diff, and mixed sectors",
             "one-loop coefficients and QME status",
             "cylinder restriction and residual transfer",
@@ -167,22 +167,20 @@ def build_certificate() -> dict[str, Any]:
     ]
     if counterterm_ids != expected_counterterms or anomaly_ids != expected_anomalies:
         raise AssertionError("candidate identifier ledger drifted")
-    descent_statuses = {
-        record["class_id"]: record["descent_status"]
+    diff_descent_statuses = {
+        record["class_id"]: record["diff_descent_status"]
         for record in counterterms["candidates"] + anomalies["candidates"]
     }
-    expected_descent_statuses = {
-        "CT_C2": "NONTRIVIAL",
-        "CT_E4": "NOT_COMPUTED",
-        "CT_C_DUAL_C": "NONTRIVIAL",
-        "CT_BOX_R": "TRIVIAL",
-        "ANOM_OMEGA_C2": "NONTRIVIAL",
-        "ANOM_OMEGA_E4": "NOT_COMPUTED",
-        "ANOM_OMEGA_C_DUAL_C": "NONTRIVIAL",
-        "ANOM_OMEGA_BOX_R": "TRIVIAL",
+    if set(diff_descent_statuses.values()) != {"NONZERO_COMPLETE"}:
+        raise AssertionError("universal Diff descent ledger drifted")
+    intrinsic_statuses = {
+        record["class_id"]: record["intrinsic_weyl_descent_status"]
+        for record in counterterms["candidates"] + anomalies["candidates"]
     }
-    if descent_statuses != expected_descent_statuses:
-        raise AssertionError("partial descent status ledger drifted")
+    if intrinsic_statuses["ANOM_OMEGA_C2"] != "TRIVIAL":
+        raise AssertionError("type-B Weyl descent terminology drifted")
+    if intrinsic_statuses["ANOM_OMEGA_E4"] != "PENDING_TYPE_A_TRANSGRESSION":
+        raise AssertionError("type-A Weyl descent boundary drifted")
 
     source_manifest = _source_manifest()
     return {
@@ -281,7 +279,7 @@ def build_certificate() -> dict[str, Any]:
             "The catalogue is restricted to antifield-independent curvature densities at mass dimension four.",
             "Closure is tested only in the scalar Weyl sector modulo covariant total derivatives.",
             "The compressed DualWeyl carrier is accepted only after its explicit epsilon-over-two audit.",
-            "No candidate except omega Box R is promoted to a local BV cohomology class or trivial class.",
+            "Only Box R and omega Box R are marked exact, each with an explicit stored primitive; no other candidate is promoted to a local BV class.",
         ],
     }
 
@@ -298,7 +296,8 @@ def _result_envelope(*, result_id: str, ghost_number: int, representative: str) 
         "parity": "mixed",
         "representative": representative,
         "cohomology_status": "NOT_COMPUTED",
-        "descent_status": "NOT_COMPUTED",
+        "diff_descent_status": "NONZERO_COMPLETE",
+        "intrinsic_weyl_descent_status": "MIXED_BY_CANDIDATE",
         "coefficient_status": "NOT_COMPUTED",
         "residual_projection_status": "NOT_COMPUTED",
         "proof_certificate": (
@@ -310,7 +309,7 @@ def _result_envelope(*, result_id: str, ghost_number: int, representative: str) 
         ],
         "notes": (
             "The quadratic ansatz and Weyl-closed kernel are generated exactly. "
-            "Full Diff-Weyl BV closure, descent, exactness, and coefficients remain NOT_COMPUTED."
+            "Universal Diff completion is verified. Intrinsic Weyl status and class exactness are resolved per candidate; the complete quotient and coefficients remain NOT_COMPUTED."
         ),
     }
 

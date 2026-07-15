@@ -3735,27 +3735,43 @@ The quadratic tracefree-Weyl quotient has dimension one in each parity
 sector.  The odd sector is enumerated with a compressed dual-Weyl carrier
 whose epsilon-over-two realization and Euclidean/Lorentzian Hodge squares are
 checked explicitly.  Adjoining the explicit boundary density $\Box R$ gives
-four ghost-number-zero curvature candidates and their four Weyl-ghost lifts;
-the latter include the certified trivialization
-$\omega\Box R=-\frac1{12}s(R^2)$ modulo a total derivative.  This is only an
-antifield-independent candidate catalogue: full Diff--Weyl descent,
-antifield completion, cohomological nontriviality and coefficients remain
-open.  The receipt is
+four ghost-number-zero curvature candidates and their four Weyl-ghost lifts.
+The type-D lift has the certified local trivialization
+\begin{equation}
+ \omega\Box R=-\frac1{12}Q_W(R^2)
+ -d_h\bigl(R\nabla\omega-\omega\nabla R\bigr).
+\end{equation}
+This is only an antifield-independent candidate catalogue: the complete
+relative coboundary quotient, antifield completion, cohomological
+nontriviality and coefficients remain open.  The receipt is
 \texttt{LOCAL\_DIMENSION\_FOUR\_CANDIDATE\_CATALOGUE\_CERTIFICATE}.
-The strict-density part of that descent has now been constructed as an exact
-horizontal bicomplex.  For a strict Weyl-invariant top density $L$, and
+The universal diffeomorphism part of that descent has now been constructed
+as an exact horizontal bicomplex.  For a covariant top density $L$, and
 separately for its Weyl-ghost lift $\omega L$, the machine generates
 $I_k=\iota_\xi^kI_0$ and solves
 $QI_k=(k+1)^{-1}d_hI_{k+1}$.  Hence the verified form-degree $4$--$0$
 tower has coefficients
-$1,-1,\frac12,-\frac16,\frac1{24}$ and a BRST-closed bottom.  This supplies
-the nonzero Diff descents for $C^2$, $C\widetilde C$ and their Weyl-ghost
-lifts.  It does not identify a nonzero descent with a nontrivial cohomology
-class.  The Euler density and $\omega E_4$ are deliberately excluded because
-their Weyl variation requires a separate transgression-current descent;
-antifield completion remains blocked on the portable classical export.  The
-receipt is
-\texttt{LOCAL\_STRICT\_DENSITY\_DESCENT\_CERTIFICATE}.
+$1,-1,\frac12,-\frac16,\frac1{24}$ and a BRST-closed bottom.  The ledger
+therefore separates \path{diff_descent_status} from
+\path{intrinsic_weyl_descent_status}: a nonzero universal Diff tower is
+not called a nontrivial descent and says nothing about the BV class quotient.
+The receipt is \path{HORIZONTAL_BICOMPLEX_CERTIFICATE}.
+
+The Euler current is treated independently in Chern--Weil form.  Starting
+from $E_4=\epsilon_{abcd}R^{ab}\wedge R^{cd}$, the machine derives the
+Levi--Civita connection variation from $Qg_{\mu\nu}$, verifies
+$Q R=D(Q\omega)$ and $D R=0$, and constructs
+\begin{equation}
+ \Theta_E(Q)=2\epsilon_{abcd}
+ Q\omega^{ab}\wedge R^{cd},
+ \qquad Q E_4-d_h\Theta_E(Q)=0.
+\end{equation}
+Equivalently the first descent representative is $a^3=-\Theta_E(Q)$, so
+$Q E_4+d_ha^3=0$.  For the anomaly lift, however, the first attempted step
+leaves $d_h\omega\wedge\Theta_E$; the complete intrinsic type-A continuation
+is therefore still recorded as \path{NOT_COMPUTED}.  This distinction is
+certified by \path{EULER_TRANSGRESSION_CERTIFICATE}.  Antifield completion
+remains blocked on the portable classical export.
 \paragraph{Vertex versus dynamics.}
 The two residual classes do not define two independent local gravitational
 dynamics.  The parity-even class is the Weyl action direction; the

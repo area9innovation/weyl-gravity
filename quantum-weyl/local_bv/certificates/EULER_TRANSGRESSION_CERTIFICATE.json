@@ -1,0 +1,227 @@
+{
+  "assumptions": [
+    "The invariant bilinear polynomial is epsilon_abcd X^ab wedge Y^cd in the stated normalization.",
+    "The descent descendant is minus the variational transgression, fixing the sign in Q E4 + d_h a3 = 0.",
+    "The universal Diff completion is independent of the intrinsic Weyl transgression."
+  ],
+  "canonical_hashes": {
+    "curvature_sha256": "dbfaad8d3cd29aed54c944cc764fe2d4298cdc9ec3e55e46c8829d9c261e28eb",
+    "source_manifest_sha256": "a274f2a97186a54286afce77d3dedca938a50dd75a5810fdee2bc3b00b1ba79e",
+    "theta_sha256": "0bfe7489b59dc61839ffd718426243b997b18dec70c3c810386c4f0602b4362b",
+    "zero_variational_residual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "checks": {
+    "QE4_plus_d_descent_descendant": "VERIFIED",
+    "closed_manifold_integrated_variation": "VERIFIED_BY_STOKES",
+    "coordinate_euler_current": "VERIFIED",
+    "curvature_bianchi_identity": "VERIFIED",
+    "delta_E4_minus_dTheta": "VERIFIED",
+    "delta_curvature_equals_D_delta_connection": "VERIFIED",
+    "euler_full_diff_completed_tower": "VERIFIED",
+    "levi_civita_variation_derived_from_qg": "VERIFIED",
+    "omega_E4_intrinsic_descent_continuation": "NOT_COMPUTED"
+  },
+  "classical_commit": "UNFROZEN",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "derived_rows": {
+    "coordinate_current_divergence": [
+      {
+        "denominator": 1,
+        "numerator": 8
+      },
+      {
+        "denominator": 1,
+        "numerator": -4
+      }
+    ],
+    "local_euler_weyl_variation": [
+      {
+        "denominator": 1,
+        "numerator": 8
+      },
+      {
+        "denominator": 1,
+        "numerator": -4
+      }
+    ],
+    "weyl_connection_variation": {
+      "g_mu_nu_D_rho_omega": {
+        "denominator": 1,
+        "numerator": -1
+      },
+      "g_rho_mu_D_nu_omega": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "g_rho_nu_D_mu_omega": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    }
+  },
+  "euler_full_diff_completed_tower": {
+    "anomaly_tower_sha256": "3450fe7916c338feb3ef190f05504b371100bbd8d4bddb4cc83ed35039d7e219",
+    "coefficients": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": -1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 6,
+        "numerator": -1
+      },
+      {
+        "denominator": 24,
+        "numerator": 1
+      }
+    ],
+    "counterterm_tower_sha256": "0a595f7c9017e039138b9fd88b4ce7cf0e39c6f3127f208810282e31edb41145"
+  },
+  "euler_intrinsic_transgression": {
+    "curvature": [
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "form_degree": 2,
+        "word": [
+          "A",
+          "A"
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "form_degree": 2,
+        "word": [
+          "dA"
+        ]
+      }
+    ],
+    "curvature_variation": [
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "form_degree": 2,
+        "word": [
+          "A",
+          "K"
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "form_degree": 2,
+        "word": [
+          "K",
+          "A"
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "form_degree": 2,
+        "word": [
+          "dK"
+        ]
+      }
+    ],
+    "descent_descendant": [
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "form_degree": 3,
+        "left": [
+          "A",
+          "A"
+        ],
+        "right": [
+          "K"
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "form_degree": 3,
+        "left": [
+          "K"
+        ],
+        "right": [
+          "dA"
+        ]
+      }
+    ],
+    "descent_equation": "Q E4 + d_h(-Theta_E(Q)) = 0",
+    "omega_E4_first_step": {
+      "continuation_status": "NOT_COMPUTED",
+      "equation": "Q(omega E4) + d_h(omega Theta_E) = d_h(omega) wedge Theta_E",
+      "residual": {
+        "domega_Theta": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      }
+    },
+    "theta_variation": [
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "form_degree": 3,
+        "left": [
+          "A",
+          "A"
+        ],
+        "right": [
+          "K"
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "form_degree": 3,
+        "left": [
+          "K"
+        ],
+        "right": [
+          "dA"
+        ]
+      }
+    ],
+    "variational_equation": "delta E4 - d_h Theta_E(delta) = 0"
+  },
+  "normalization": "E4 = epsilon_abcd R^ab wedge R^cd",
+  "not_computed": [
+    "the complete intrinsic type-A descent beginning at omega E4",
+    "antifield/Koszul-Tate completion",
+    "relative cohomology nontriviality of the Euler anomaly"
+  ],
+  "result_id": "EULER_TRANSGRESSION_CERTIFICATE",
+  "result_state": "VARIATIONAL_TRANSGRESSION_VERIFIED"
+}

@@ -3,12 +3,12 @@
     "The catalogue is restricted to antifield-independent curvature densities at mass dimension four.",
     "Closure is tested only in the scalar Weyl sector modulo covariant total derivatives.",
     "The compressed DualWeyl carrier is accepted only after its explicit epsilon-over-two audit.",
-    "No candidate except omega Box R is promoted to a local BV cohomology class or trivial class."
+    "Only Box R and omega Box R are marked exact, each with an explicit stored primitive; no other candidate is promoted to a local BV class."
   ],
   "canonical_hashes": {
-    "anomalies_sha256": "067d6ad7d684db5603abc6a7ddc90eed443bf7b2676f86ab1ef324e03e9af368",
-    "counterterms_sha256": "3cf2c661287a8f4acf8198db253c781a94904f3c564af9d79224178b2f821b5a",
-    "source_manifest_sha256": "2f0a10134dae77f7ff7907c79e5bb1d49232006ad4e1ad7a5100f16c7e52b1e6"
+    "anomalies_sha256": "dfd4ec359824b9cc781b42df0c87d604df62a6eb8e0af69580e841c19373fbcf",
+    "counterterms_sha256": "58e83a390d8925f740b93bb59f136efd66cdb735eff2f91c41e1cb55236caa99",
+    "source_manifest_sha256": "514cafa4e737d9ae78b21b91683213b5e105ab559e581355cff4fc4e8008d894"
   },
   "catalogues": {
     "anomaly_candidate_ids": [
@@ -17,7 +17,7 @@
       "ANOM_OMEGA_C_DUAL_C",
       "ANOM_OMEGA_BOX_R"
     ],
-    "anomaly_catalogue_sha256": "dab10f81fe26b40c2a446e066a2302d7e5a120107a716ef031c00f0801344afa",
+    "anomaly_catalogue_sha256": "f609e99d7b7b45b20a5c3ce4ded3918adca7692589655f5c6cb1bb92f97109f1",
     "anomaly_result_id": "ANOMALY_CANDIDATE_CATALOGUE_DIMENSION_FOUR",
     "box_r_primitive": {
       "factors": [
@@ -43,7 +43,7 @@
       "CT_C_DUAL_C",
       "CT_BOX_R"
     ],
-    "counterterm_catalogue_sha256": "a63c7e6b15bead2bc50569b3328d4c2b999dbc14f562ff9ec50f5088e9f6f125",
+    "counterterm_catalogue_sha256": "677a499601644ccce1b07b2a977020639b29d809026469e74406100a7b2b9e8c",
     "counterterm_result_id": "COUNTERTERM_CANDIDATE_CATALOGUE_DIMENSION_FOUR",
     "omega_box_r_trivialization_coefficient": {
       "denominator": 12,
@@ -233,7 +233,7 @@
     "symmetry_canonical_monomial_count": 4
   },
   "not_computed": [
-    "full H^{g,4}(s|d) closure, exactness, and descent",
+    "full H^{g,4}(s|d) coboundary quotient and intrinsic Euler anomaly descent",
     "antifield, equation-of-motion, gauge-fixing, Diff, and mixed sectors",
     "one-loop coefficients and QME status",
     "cylinder restriction and residual transfer"

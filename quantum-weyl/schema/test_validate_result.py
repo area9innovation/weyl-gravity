@@ -48,6 +48,20 @@ class ResultSchemaTests(unittest.TestCase):
         errors = VALIDATOR.validate_record(record, SCHEMA)
         self.assertTrue(any("dependency_tags[0]" in error for error in errors))
 
+    def test_split_descent_record_passes_without_legacy_collision(self) -> None:
+        record = base_record()
+        record.pop("descent_status")
+        record["diff_descent_status"] = "NONZERO_COMPLETE"
+        record["intrinsic_weyl_descent_status"] = "MIXED_BY_CANDIDATE"
+        self.assertEqual(VALIDATOR.validate_record(record, SCHEMA), [])
+
+    def test_legacy_and_split_descent_fields_cannot_mix(self) -> None:
+        record = base_record()
+        record["diff_descent_status"] = "NONZERO_COMPLETE"
+        record["intrinsic_weyl_descent_status"] = "TRIVIAL"
+        errors = VALIDATOR.validate_record(record, SCHEMA)
+        self.assertTrue(any("mutually exclusive" in error for error in errors))
+
     def test_lorentzian_promotion_requires_causal_tag(self) -> None:
         record = base_record()
         record["lifecycle_status"] = "LORENTZIAN_CERTIFIED"
