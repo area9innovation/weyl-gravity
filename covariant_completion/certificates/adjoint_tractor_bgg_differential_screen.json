@@ -1,0 +1,95 @@
+{
+  "cylinder_metric_split_screen": {
+    "Levi_Civita_PBW_curvature_included": false,
+    "Schouten_g_plus_term_included": true,
+    "commuting_derivative_chain_defect_entries": 48,
+    "commuting_derivative_chain_defect_sha256": "ad9cc042503fcb8567042af83467aac8476e34d00ef24196d104534784acf925",
+    "interpretation": "The nonzero defect is the exact obstruction to treating the cylinder Levi-Civita derivatives as commuting in the HPL formula.  It is not a no-go for curved BGG splitting; the missing curvature commutators must be supplied by a tensor-slot PBW implementation."
+  },
+  "dependencies": {
+    "adjoint_tractor_kostant_compression_matrices.json": "6959cb31fad909b88d92a55689e06d9740f715cf9296fea032f8f387ed768f26",
+    "curved_prolonged_metric_endpoint_coefficients.json": "2d3e6857e42b38a7f68e0c1ecb90adfa621ffa87038fa44f3e37c14f6938e9f6"
+  },
+  "dependency_tag": "LOCAL-ALGEBRAIC",
+  "fail_closed_guards": {
+    "Green_transfer_not_promoted": true,
+    "curved_chain_map_not_promoted": true,
+    "full_Bach_match_not_promoted": true,
+    "tampered_HPL_splitting_rejected": true,
+    "tampered_Kostant_inverse_rejected": true
+  },
+  "finite_HPL": {
+    "L0_maximum_derivative_order": 2,
+    "L1_maximum_derivative_order": 2,
+    "Q_exact_rational": true,
+    "compressed_parent_detour_gauge_defects": 0,
+    "compressed_parent_detour_order": 4,
+    "first_BGG_order": 1,
+    "first_BGG_project_normalization": "K_BGG=(1/2) K_TF after vector/covector metric identification",
+    "flat_all_row_cyclic_maps": {
+      "compressed": [
+        4,
+        9,
+        9,
+        4
+      ],
+      "dual_retraction_defects": 0,
+      "dual_rows_generated_by_formal_adjoint": true,
+      "parent": [
+        15,
+        60,
+        60,
+        15
+      ]
+    },
+    "flat_chain_map_defects": 0,
+    "flat_differential_homotopy_defects": 0,
+    "flat_differential_retraction_defects": 0,
+    "flat_splitting_defects": 0,
+    "kostant_laplacian_spectra": {
+      "degree_0": {
+        "-2": 6,
+        "-4": 5,
+        "0": 4
+      },
+      "degree_1": {
+        "-1": 16,
+        "-2": 15,
+        "-4": 19,
+        "-6": 1,
+        "0": 9
+      }
+    },
+    "series_terminates_after": 2
+  },
+  "literature_anchor": {
+    "arxiv": "math/0606401",
+    "title": "Yang-Mills detour complexes and conformal geometry",
+    "use": "parent detour translation diagram and formal-adjoint compression"
+  },
+  "middle_symbol_comparison": {
+    "coefficientwise_principal_match": true,
+    "compressed_order": 4,
+    "endpoint_target": "S^T J_met Bach_bar S",
+    "normalization": "-2",
+    "parent_operator": "delta^nabla d^nabla on adjoint-tractor one-forms"
+  },
+  "payload_sha256": "29de74d959eff856ebbdd46be1c2522727ce824e817cb5ab1159857ee843e022",
+  "result": "PASS_WITH_CURVED_BOUNDARY_OPEN",
+  "schema_version": 1,
+  "support": {
+    "all_emitted_HPL_maps_finite_order": true,
+    "contains_Green_operator": false,
+    "contains_nonlocal_projector": false,
+    "pointwise_and_differential_candidates_support_local": true
+  },
+  "theorem_boundary": {
+    "curved_cylinder_BGG_chain_maps_exact": false,
+    "curved_differential_homotopy_exact": false,
+    "flat_associated_graded_BGG_chain_maps_exact": true,
+    "full_Bach_coefficient_match": false,
+    "next_required_step": "Implement the induced adjoint-tractor/form tensor slots in the curvature-aware PBW composer, cancel the recorded cylinder chain defect, and only then compare all Bach derivative orders.",
+    "parent_green_homotopy_transferred": false
+  },
+  "verification_rail": "exact_rational_content_addressed"
+}
