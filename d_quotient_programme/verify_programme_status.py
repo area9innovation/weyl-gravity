@@ -22,6 +22,7 @@ CLASSICAL_SCALAR_CLOCK_CONTRIBUTION = PACKAGE / "contributions" / "classical-sca
 CLASSICAL_NEUTRAL_CLOCK_CONTRIBUTION = PACKAGE / "contributions" / "classical-neutral-conformal-clock-pair.json"
 CLASSICAL_NEUTRAL_CLOCK_HEALTH_CONTRIBUTION = PACKAGE / "contributions" / "classical-neutral-clock-bv-health.json"
 CLASSICAL_HOMOGENEOUS_STEALTH_CONTRIBUTION = PACKAGE / "contributions" / "classical-homogeneous-positive-stealth-clock.json"
+CLASSICAL_STANDARD_STEALTH_NO_GO_CONTRIBUTION = PACKAGE / "contributions" / "classical-standard-conformal-stealth-clock-no-go.json"
 NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
 EINSTEIN_ED1A_CONTRIBUTION = PACKAGE / "contributions" / "einstein-ed1a-asymptotic-generator-gate.json"
 
@@ -104,6 +105,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
             "neutral_conformal_clock_pair",
             "neutral_clock_bv_health_audit",
             "homogeneous_positive_conformal_stealth_clock",
+            "inhomogeneous_conformal_stealth_clock_no_go",
         ]
     ):
         raise AssertionError("classical scalar-clock obstruction scope drifted")
@@ -298,6 +300,34 @@ def _classical_homogeneous_stealth_contribution() -> dict[str, Any]:
     return contribution
 
 
+def _classical_standard_stealth_no_go_contribution() -> dict[str, Any]:
+    contribution = _load(CLASSICAL_STANDARD_STEALTH_NO_GO_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "classical"
+        and contribution.get("setting_id")
+        == "compact_standard_conformal_stealth_clock"
+        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("phase_space_id")
+        == "standard_conformal_scalar_stealth_clock_sector"
+        and contribution.get("lifecycle_layer") == "CLASSICAL_CHARGE"
+        and contribution.get("claim_status") == "CERTIFIED"
+        and contribution.get("verdict")
+        == "STANDARD_ONE_FIELD_STEALTH_CLOCK_NO_GO"
+        and contribution.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    ):
+        raise AssertionError("classical standard stealth no-go contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path = evidence.get("path")
+    commit = evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("classical standard stealth no-go evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("classical standard stealth no-go evidence hash drifted")
+    return contribution
+
+
 def _einstein_ed1a_contribution() -> dict[str, Any]:
     contribution = _load(EINSTEIN_ED1A_CONTRIBUTION)
     if not (
@@ -331,6 +361,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     neutral_clock_contribution = _classical_neutral_clock_contribution()
     neutral_clock_health_contribution = _classical_neutral_clock_health_contribution()
     homogeneous_stealth_contribution = _classical_homogeneous_stealth_contribution()
+    standard_stealth_no_go_contribution = _classical_standard_stealth_no_go_contribution()
     ed1a_contribution = _einstein_ed1a_contribution()
     nd1_contribution = _nonlinear_nd1_contribution()
     return {
@@ -371,6 +402,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": homogeneous_stealth_contribution,
             },
             {
+                "path": str(CLASSICAL_STANDARD_STEALTH_NO_GO_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(CLASSICAL_STANDARD_STEALTH_NO_GO_CONTRIBUTION),
+                "payload": standard_stealth_no_go_contribution,
+            },
+            {
                 "path": str(EINSTEIN_ED1A_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(EINSTEIN_ED1A_CONTRIBUTION),
                 "payload": ed1a_contribution,
@@ -384,10 +420,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "team_status": [
             {
                 "team_id": "classical",
-                "result_state": "PARTIAL_WITH_HOMOGENEOUS_CLOCK_ALTERNATIVES_CLASSIFIED",
-                "verdict": "SCOPED_NEUTRAL_CLOCK_D_GAUGE_WITH_TWO_HEALTH_OBSTRUCTIONS",
-                "established": "D_compact is gauge on the exact homogeneous neutral clock sector, but that model has a sign-changing ratio mode; the positive-sign homogeneous stealth alternative is exactly a finite-time singular secant family.",
-                "next_gate": "inhomogeneous regular stealth clock or positive-energy non-conformally-flat Bach-sourced clock",
+                "result_state": "PARTIAL_WITH_STANDARD_ONE_FIELD_CLOCK_ALTERNATIVES_CLASSIFIED",
+                "verdict": "SCOPED_NEUTRAL_CLOCK_D_GAUGE_STANDARD_STEALTH_NO_GO",
+                "established": "D_compact is gauge on the exact homogeneous neutral clock sector, but that model has a sign-changing ratio mode; the complete standard positive-sign one-field stealth family, including inhomogeneous configurations, has no globally regular everywhere-timelike clock.",
+                "next_gate": "positive-energy non-conformally-flat Bach-sourced clock",
             },
             {
                 "team_id": "einstein_boundary",
@@ -474,6 +510,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "lifecycle_layer": "CLASSICAL_CHARGE",
                 "status": "BLOCKED",
                 "verdict": "HOMOGENEOUS_STEALTH_CLOCK_OBSTRUCTED",
+            },
+            {
+                "setting_id": "compact_standard_conformal_stealth_clock",
+                "generator_id": "D_compact",
+                "phase_space_id": "standard_conformal_scalar_stealth_clock_sector",
+                "boundary_conditions": "closed unit S3; complete standard positive-sign conformal scalar stealth family, including inhomogeneous configurations",
+                "lifecycle_layer": "CLASSICAL_CHARGE",
+                "status": "BLOCKED",
+                "verdict": "STANDARD_ONE_FIELD_STEALTH_CLOCK_NO_GO",
             },
             {
                 "setting_id": "compact_selected_residual_HT1_q2",
@@ -563,9 +608,9 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
         },
         "next_shared_gate": {
-            "gate_id": "INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK",
+            "gate_id": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_BACH_SOURCED_CLOCK",
             "owner_order": ["classical", "nonlinear", "quantum", "einstein_boundary"],
-            "rule": "Retain the neutral pair only as a scoped homogeneous reference clock and the secant stealth family only as a local obstruction; construct either an inhomogeneous stress-free clock with timelike nonvanishing gradient or a positive-energy clock on a genuinely Bach-sourced non-conformally-flat background.",
+            "rule": "Retain the neutral pair only as a scoped homogeneous reference clock and the complete standard one-field stealth family as a no-go; construct a positive-energy clock on a genuinely Bach-sourced non-conformally-flat background. Generalized scalar actions are new theories with separate health and BV gates.",
         },
         "claim_boundary": (
             "The dossier consolidates sector-indexed results. It does not promote a "
@@ -603,6 +648,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_neutral_clock_pair": "D_GAUGE",
         "compact_neutral_clock_pair_local_health": "OPPOSITE_SIGN_LOCAL_HEALTH_OBSTRUCTED",
         "compact_homogeneous_positive_stealth_clock": "HOMOGENEOUS_STEALTH_CLOCK_OBSTRUCTED",
+        "compact_standard_conformal_stealth_clock": "STANDARD_ONE_FIELD_STEALTH_CLOCK_NO_GO",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -664,9 +710,11 @@ a coupled phase space exists.  A distinct neutral two-field reference sector
 now supplies an exact homogeneous clock and a scoped `D_GAUGE` reduction, but
 its local health audit proves that the opposite-sign ratio mode is not
 globally positive or entirely contractible.  The positive-sign homogeneous
-stealth alternative is also completely classified: its nonzero branches are
-finite-time singular secant trajectories.  Inhomogeneous stealth, boundary,
-nonlinear, and quantum questions are separate gates.
+stealth result extends to the complete standard one-field family: every
+inhomogeneous clock candidate has a reciprocal denominator with a global zero,
+and no time-dependent member has an everywhere-timelike gradient.  Generalized
+scalar theories, backreacted geometry, boundary, nonlinear, and quantum
+questions are separate gates.
 
 ## Four-team ledger
 
@@ -759,6 +807,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
     reject("erase_homogeneous_stealth_obstruction", mutant)
 
     mutant = deepcopy(data)
+    next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_standard_conformal_stealth_clock")["verdict"] = "D_GAUGE"
+    reject("erase_standard_stealth_no_go", mutant)
+
+    mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_quantum")["verdict"] = "CARTAN_QUANTUM_EXACT"
     reject("promote_quantum_before_QME", mutant)
 
@@ -814,7 +866,7 @@ def main() -> int:
         failures = mutation_guards(data)
         if failures:
             raise AssertionError("mutation guards failed: " + ", ".join(failures))
-        print("mutation guards: 10/10 PASS")
+        print("mutation guards: 11/11 PASS")
     print(CERTIFICATE, "PASS")
     return 0
 

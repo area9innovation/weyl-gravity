@@ -22,8 +22,9 @@ signed secant trajectory.  It has the standard positive kinetic sign but
 requires an unbounded negative quartic, has a turning point, and reaches
 finite-time poles.  No global homogeneous clock is promoted.
 
-The next shared gate is
-`INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK`.  The receipt does not
-rule out an inhomogeneous stealth field with timelike nonvanishing gradient or
-a positive-energy clock on a genuinely Bach-sourced non-conformally-flat
-background.
+The original next shared gate was
+`INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK`.  The complete standard
+inhomogeneous one-field stealth family has since been classified and
+obstructed.  The current gate is
+`POSITIVE_ENERGY_NONCONFORMALLY_FLAT_BACH_SOURCED_CLOCK`.  Generalized scalar
+actions would be new theories with separate health and BV gates.

@@ -1,0 +1,39 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_standard_conformal_stealth_clock",
+  "generator_id": "D_compact",
+  "phase_space_id": "standard_conformal_scalar_stealth_clock_sector",
+  "boundary_conditions": "unit Einstein cylinder with closed S3; one real standard positive-sign conformal scalar; all nowhere-zero homogeneous and inhomogeneous stealth-clock candidates",
+  "lifecycle_layer": "CLASSICAL_CHARGE",
+  "claim_status": "CERTIFIED",
+  "verdict": "STANDARD_ONE_FIELD_STEALTH_CLOCK_NO_GO",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "a stealth field cannot cross T=0 with nonzero gradient, so every clock candidate admits sigma=1/T",
+    "the complete denominator is sigma=A cos(t)+B sin(t)+C.n with kappa=2(|C|^2-A^2-B^2)",
+    "every nontrivial denominator has a zero somewhere on R x S3, so every associated scalar has a global pole",
+    "every time-dependent member has a regular point where its gradient is spacelike or zero",
+    "no globally regular everywhere-timelike standard one-field conformal stealth clock exists"
+  ],
+  "not_established": [
+    "a no-go theorem for generalized non-Noetherian or higher-derivative conformal scalar actions",
+    "a no-go theorem for positive-energy clocks on genuinely non-conformally-flat Bach-sourced backgrounds",
+    "a support-local all-row BV construction for a surviving clock",
+    "an interacting, boundary, or quantum D verdict"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/INHOMOGENEOUS_CONFORMAL_STEALTH_CLOCK_NO_GO.json",
+    "commit": "541309813a9c82eb152707fed6d02fe15f611b68",
+    "sha256": "8883036bbad16a0aa1420240d35571257f2cff470f5554c7003f2e5c091d9349"
+  },
+  "verification_commands": [
+    "python3 d_quotient_classical/scalar_clock/inhomogeneous_stealth_clock.py --check --guards",
+    "python3 -m unittest d_quotient_classical.scalar_clock.tests.test_inhomogeneous_stealth_clock",
+    "python3 d_quotient_classical/verify_classical_status.py --guards"
+  ],
+  "next_gate": "construct a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background; generalized scalar actions are separate theories with independent health and BV gates"
+}

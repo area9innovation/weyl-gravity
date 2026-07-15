@@ -16,16 +16,16 @@
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
   "next_shared_gate": {
-    "gate_id": "INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK",
+    "gate_id": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_BACH_SOURCED_CLOCK",
     "owner_order": [
       "classical",
       "nonlinear",
       "quantum",
       "einstein_boundary"
     ],
-    "rule": "Retain the neutral pair only as a scoped homogeneous reference clock and the secant stealth family only as a local obstruction; construct either an inhomogeneous stress-free clock with timelike nonvanishing gradient or a positive-energy clock on a genuinely Bach-sourced non-conformally-flat background."
+    "rule": "Retain the neutral pair only as a scoped homogeneous reference clock and the complete standard one-field stealth family as a no-go; construct a positive-energy clock on a genuinely Bach-sourced non-conformally-flat background. Generalized scalar actions are new theories with separate health and BV gates."
   },
-  "programme_base_commit": "7963aa0cc4dcd23154dcef8ea431c98816f96fb2",
+  "programme_base_commit": "26d10404b96fdf0721b7325ecefabf295dfe2a83",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -42,7 +42,7 @@
   },
   "registry_hashes": {
     "generator_registry": "1df39af78cdd49eeb64faa2d46134542e9bb75a598f0dde98932657a682525de",
-    "phase_space_registry": "01c28ed3a7b8db53f8e6bf3bc01afc783e4e75969619bf3edd955bf72434cd90"
+    "phase_space_registry": "dc942f3d3c7cad9f2f61ea7fe08c739143c141cb1fcab3d117610fc63edaeb5a"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -110,6 +110,15 @@
       "setting_id": "compact_homogeneous_positive_stealth_clock",
       "status": "BLOCKED",
       "verdict": "HOMOGENEOUS_STEALTH_CLOCK_OBSTRUCTED"
+    },
+    {
+      "boundary_conditions": "closed unit S3; complete standard positive-sign conformal scalar stealth family, including inhomogeneous configurations",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_CHARGE",
+      "phase_space_id": "standard_conformal_scalar_stealth_clock_sector",
+      "setting_id": "compact_standard_conformal_stealth_clock",
+      "status": "BLOCKED",
+      "verdict": "STANDARD_ONE_FIELD_STEALTH_CLOCK_NO_GO"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -287,12 +296,12 @@
         },
         "generator_id": "D_compact",
         "lifecycle_layer": "CLASSICAL_CHARGE",
-        "next_gate": "construct an inhomogeneous stress-free clock with timelike nonvanishing gradient or a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background",
+        "next_gate": "construct a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background; the complete standard one-field stealth branch is now separately obstructed",
         "not_established": [
           "a complete all-row coupled BV differential or causal Green complex",
           "a positive-energy local matter completion",
           "a no-go theorem for non-conformally-flat Bach-sourced clocks",
-          "a no-go theorem for inhomogeneous regular stress-free stealth clocks",
+          "a no-go theorem for generalized non-Noetherian or higher-derivative stealth clocks",
           "interacting, boundary, or quantum stability"
         ],
         "phase_space_id": "compact_neutral_clock_pair_local_extension",
@@ -306,7 +315,7 @@
           "python3 d_quotient_classical/verify_classical_status.py --guards"
         ]
       },
-      "sha256": "543c05f5aa40ccc49096c078feb50e7d9a74ebce4f7fae1dfd87c3a329471b3d"
+      "sha256": "0b49756060f0044c23e8671230fea319ca1436ee0ca8957c0138b508a6ae3466"
     },
     {
       "path": "d_quotient_programme/contributions/classical-homogeneous-positive-stealth-clock.json",
@@ -331,9 +340,9 @@
         },
         "generator_id": "D_compact",
         "lifecycle_layer": "CLASSICAL_CHARGE",
-        "next_gate": "construct an inhomogeneous stress-free clock with timelike nonvanishing gradient or a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background",
+        "next_gate": "construct a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background; the complete standard inhomogeneous one-field stealth branch is now separately obstructed",
         "not_established": [
-          "a no-go theorem for inhomogeneous stealth fields",
+          "a no-go theorem for generalized non-Noetherian or higher-derivative stealth fields",
           "a no-go theorem for positive-energy clocks on non-conformally-flat Bach-sourced backgrounds",
           "a support-local all-row BV clock contraction",
           "an interacting, boundary, or quantum D verdict"
@@ -349,7 +358,50 @@
           "python3 d_quotient_classical/verify_classical_status.py --guards"
         ]
       },
-      "sha256": "bc24c683cde6b9c954f2d8f4ba51712c75ffd4f0d81d63531dde815fd9140bd9"
+      "sha256": "80cbc2cab5930299c6668e072635bb626288fc413a8e47c27b9d5990076f299d"
+    },
+    {
+      "path": "d_quotient_programme/contributions/classical-standard-conformal-stealth-clock-no-go.json",
+      "payload": {
+        "boundary_conditions": "unit Einstein cylinder with closed S3; one real standard positive-sign conformal scalar; all nowhere-zero homogeneous and inhomogeneous stealth-clock candidates",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "a stealth field cannot cross T=0 with nonzero gradient, so every clock candidate admits sigma=1/T",
+          "the complete denominator is sigma=A cos(t)+B sin(t)+C.n with kappa=2(|C|^2-A^2-B^2)",
+          "every nontrivial denominator has a zero somewhere on R x S3, so every associated scalar has a global pole",
+          "every time-dependent member has a regular point where its gradient is spacelike or zero",
+          "no globally regular everywhere-timelike standard one-field conformal stealth clock exists"
+        ],
+        "evidence": {
+          "commit": "541309813a9c82eb152707fed6d02fe15f611b68",
+          "path": "d_quotient_classical/certificates/INHOMOGENEOUS_CONFORMAL_STEALTH_CLOCK_NO_GO.json",
+          "sha256": "8883036bbad16a0aa1420240d35571257f2cff470f5554c7003f2e5c091d9349"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "CLASSICAL_CHARGE",
+        "next_gate": "construct a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background; generalized scalar actions are separate theories with independent health and BV gates",
+        "not_established": [
+          "a no-go theorem for generalized non-Noetherian or higher-derivative conformal scalar actions",
+          "a no-go theorem for positive-energy clocks on genuinely non-conformally-flat Bach-sourced backgrounds",
+          "a support-local all-row BV construction for a surviving clock",
+          "an interacting, boundary, or quantum D verdict"
+        ],
+        "phase_space_id": "standard_conformal_scalar_stealth_clock_sector",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_standard_conformal_stealth_clock",
+        "team_id": "classical",
+        "verdict": "STANDARD_ONE_FIELD_STEALTH_CLOCK_NO_GO",
+        "verification_commands": [
+          "python3 d_quotient_classical/scalar_clock/inhomogeneous_stealth_clock.py --check --guards",
+          "python3 -m unittest d_quotient_classical.scalar_clock.tests.test_inhomogeneous_stealth_clock",
+          "python3 d_quotient_classical/verify_classical_status.py --guards"
+        ]
+      },
+      "sha256": "3eae146312bea69edbd8cefa0abc2440a508f1bb5e75ff4447722a4ac50e9f52"
     },
     {
       "path": "d_quotient_programme/contributions/einstein-ed1a-asymptotic-generator-gate.json",
@@ -437,9 +489,9 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "b4b1010a881ce97f2867d11adf2654865384adf9",
+      "commit": "26d10404b96fdf0721b7325ecefabf295dfe2a83",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "ef6195f694ed6b3f520f9915fb7bac04618b9c6394a20fe2df9bf9a31554247f"
+      "sha256": "d28b8a7ba353d90b24b78ad64cc27bde08a1ec52c2bec84c020435ced887480f"
     },
     "einstein_boundary": {
       "commit": "89acca36479ebaea069c21eb23517dc6b1b49389",
@@ -459,11 +511,11 @@
   },
   "team_status": [
     {
-      "established": "D_compact is gauge on the exact homogeneous neutral clock sector, but that model has a sign-changing ratio mode; the positive-sign homogeneous stealth alternative is exactly a finite-time singular secant family.",
-      "next_gate": "inhomogeneous regular stealth clock or positive-energy non-conformally-flat Bach-sourced clock",
-      "result_state": "PARTIAL_WITH_HOMOGENEOUS_CLOCK_ALTERNATIVES_CLASSIFIED",
+      "established": "D_compact is gauge on the exact homogeneous neutral clock sector, but that model has a sign-changing ratio mode; the complete standard positive-sign one-field stealth family, including inhomogeneous configurations, has no globally regular everywhere-timelike clock.",
+      "next_gate": "positive-energy non-conformally-flat Bach-sourced clock",
+      "result_state": "PARTIAL_WITH_STANDARD_ONE_FIELD_CLOCK_ALTERNATIVES_CLASSIFIED",
       "team_id": "classical",
-      "verdict": "SCOPED_NEUTRAL_CLOCK_D_GAUGE_WITH_TWO_HEALTH_OBSTRUCTIONS"
+      "verdict": "SCOPED_NEUTRAL_CLOCK_D_GAUGE_STANDARD_STEALTH_NO_GO"
     },
     {
       "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem.",
