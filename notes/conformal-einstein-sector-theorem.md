@@ -180,10 +180,16 @@ Its fail-closed obligations are:
 | `AF-E7` | Recover, or refute recovery of, the ordinary helicity-`±2` scattering space. |
 | `AF-E8` | Classify extra Weyl solutions as radiative channels or non-radiative data. |
 
-All eight obligations are `OPEN`.  The machine ledger refuses the claims
-that the Einstein sector is causally closed, that ordinary graviton
-scattering has been recovered, or that the extra Weyl channels have been
-classified.
+At commissioning, all eight obligations were `OPEN`.  The theorem ledger
+refuses the claims that the Einstein sector is causally closed, that ordinary
+graviton scattering has been recovered, or that the extra Weyl channels have
+been classified.
+
+The first follow-on bootstrap is now recorded in
+`notes/conformal-asymptotically-flat-einstein-bootstrap.md`.  It proves exact
+linearized nonzero-mode preservation of the Einstein Cauchy-data kernel and
+marks `AF-E1`, `AF-E3`, and `AF-E5` as `PARTIAL`; it does not alter any full
+`LORENTZIAN-CAUSAL` claim flag.
 
 On the closed cylinder, the corresponding alternative must use a relative or
 boundary BFV complex in which `D` is the Hamiltonian.  Simply deleting the

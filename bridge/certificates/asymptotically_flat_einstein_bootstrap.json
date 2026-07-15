@@ -1,0 +1,265 @@
+{
+  "asymptotic_data_seed": {
+    "bondi_seed_fields": [
+      "unit-sphere metric q_AB",
+      "trace-free shear C_AB(u,x)",
+      "news N_AB=d_u C_AB",
+      "Bondi mass aspect m(u,x)",
+      "angular-momentum aspect N_A(u,x)"
+    ],
+    "candidate_radiative_class": [
+      "C_AB is smooth and has finite H^s(S^2) endpoint limits as u tends to plus/minus infinity",
+      "N_AB lies in L^1_u H^s(S^2) intersect L^2_u H^s(S^2), with s>3 declared but not sharp",
+      "memory Delta C_AB is allowed and equals the difference of the endpoint shears"
+    ],
+    "conformal_completion": {
+      "objects": [
+        "M_tilde",
+        "g_tilde",
+        "Omega"
+      ],
+      "regularity_choice": "smooth conformal completion at null infinity",
+      "relations": [
+        "g_tilde=Omega^2 g on the physical interior",
+        "Omega=0 and dOmega nonzero at I_plus and I_minus",
+        "I_plus and I_minus each have topology R x S^2"
+      ]
+    },
+    "missing_bach_data": [
+      "falloffs and regularity for the second fourth-order radiative pair",
+      "Coulombic and q=0 soft sectors",
+      "corner matching through spatial infinity",
+      "closure of the Bach operator on weighted/polyhomogeneous spaces",
+      "constraint-compatible gauge and ghost falloffs"
+    ],
+    "status": "SPECIFIED_NOT_ADMISSIBILITY_PROVED"
+  },
+  "claim_flags": {
+    "extra_weyl_channels_classified": false,
+    "full_asymptotically_flat_function_space_admissible": false,
+    "helicity_two_scattering_space_recovered": false,
+    "linearized_minkowski_einstein_data_invariant": true,
+    "non_einstein_branch_causally_excluded": false,
+    "nonlinear_einstein_constraint_preserved": false,
+    "null_infinity_green_complex_constructed": false,
+    "pure_weyl_surface_charges_computed": false,
+    "radiative_symplectic_form_matched": false
+  },
+  "cylinder_non_reuse": {
+    "established": true,
+    "reasons": [
+      "the cylinder proof uses compact S^3 to identify all smooth sections with spacelike-compact sections",
+      "the selected closed-universe BFV problem has no boundary and surface-charge rank zero",
+      "null infinity has boundary flux and may retain time/BMS transformations as charged symmetries"
+    ]
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "gauge_charge_rule": {
+    "boundary_preserving_parameter": "proper gauge only when its renormalized surface-charge variation vanishes on every tangent direction and its reference charge is zero",
+    "charged_parameter": "asymptotic symmetry, not quotiented as gauge",
+    "consequence": "time translations and BMS-type generators cannot be gauged by name alone",
+    "missing": [
+      "pure-Weyl presymplectic potential and boundary counterterm choice",
+      "finite integrable surface-charge formula",
+      "flux/balance law and charge algebra",
+      "generator-by-generator proper/charged classification"
+    ],
+    "proper_gauge_core": "Diff x Weyl parameters vanishing near null infinity",
+    "status": "CRITERION_FIXED_ASSIGNMENTS_OPEN"
+  },
+  "inputs": {
+    "closed_universe_bfv": {
+      "path": "bridge/certificates/closed_universe_bfv.json",
+      "sha256": "37eda8319d7fbe69e6b0838677b3d7fd4aecddd8b6274c281fefc2cf3f612ceb"
+    },
+    "cylinder_causal_transport": {
+      "path": "covariant_completion/certificates/curved_causal_transport_recognition.json",
+      "sha256": "7c9299ab13b98352b2c60ab8f933a3983b007b587e1f3d497d4e74205639df40"
+    },
+    "cylinder_tt_factorization": {
+      "path": "covariant_completion/certificates/tt_local_factorization.json",
+      "sha256": "42ce4c10b09ac7dd6a8dfee410f3dac21725735d0d02a13d8f9e9b9426afb291"
+    },
+    "einstein_sector": {
+      "path": "bridge/certificates/einstein_sector_theorem.json",
+      "sha256": "a158fb2d7b76bb4badefccfa27002a522854d47ffd11e0085ec7b1f94a07eb68"
+    }
+  },
+  "linearized_minkowski_theorem": {
+    "bach_data_dimension_per_helicity": 4,
+    "bach_equation": "(d_t^2+q)^2 h=0",
+    "bach_evolution_matrix": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "-q**2",
+        "0",
+        "-2*q",
+        "0"
+      ]
+    ],
+    "background": "four-dimensional Minkowski space",
+    "constraint_evolution_matrix": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "-q",
+        "0"
+      ]
+    ],
+    "einstein_constraint_matrix": [
+      [
+        "q",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "q",
+        "0",
+        "1"
+      ]
+    ],
+    "einstein_constraint_order": [
+      "(d_t^2+q)h",
+      "d_t(d_t^2+q)h"
+    ],
+    "einstein_data_dimension_per_helicity": 2,
+    "einstein_equation": "(d_t^2+q) h=0",
+    "einstein_kernel_basis": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ],
+      [
+        "-q",
+        "0"
+      ],
+      [
+        "0",
+        "-q"
+      ]
+    ],
+    "intertwining_defect": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "intertwining_identity": "C_E A_B = A_E C_E",
+    "restricted_evolution_identity": "A_B i_E = i_E A_E",
+    "result": "the linearized Einstein initial-data kernel is exactly invariant under fixed-mode Bach evolution",
+    "scope_guards": [
+      "q=0 soft and Coulombic sectors are not classified",
+      "no statement about radial falloff or null-infinity flux",
+      "no nonlinear constraint-preservation theorem",
+      "modewise evolution invariance is not a support theorem for Green operators"
+    ],
+    "sector": "one transverse-traceless polarization at fixed spatial q=|k|^2>0",
+    "state_order": [
+      "h",
+      "d_t h",
+      "d_t^2 h",
+      "d_t^3 h"
+    ]
+  },
+  "obligation_status": [
+    {
+      "id": "AF-E1",
+      "receipt": "linearized TT data fixed; nonlinear weighted Bondi/Bach spaces open",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AF-E2",
+      "receipt": "no retarded/advanced null-infinity complex",
+      "status": "OPEN"
+    },
+    {
+      "id": "AF-E3",
+      "receipt": "charge criterion fixed; pure-Weyl charges not computed",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AF-E4",
+      "receipt": "no causal exclusion of the non-Einstein branch",
+      "status": "OPEN"
+    },
+    {
+      "id": "AF-E5",
+      "receipt": "linearized fixed-mode closure proved; nonlinear closure open",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "AF-E6",
+      "receipt": "no null-infinity current/flux comparison",
+      "status": "OPEN"
+    },
+    {
+      "id": "AF-E7",
+      "receipt": "no asymptotic scattering cohomology",
+      "status": "OPEN"
+    },
+    {
+      "id": "AF-E8",
+      "receipt": "extra Bach-flat asymptotic channels unclassified",
+      "status": "OPEN"
+    }
+  ],
+  "required_promotion_tag": "LORENTZIAN-CAUSAL",
+  "result_id": "ASYMPTOTICALLY_FLAT_EINSTEIN_SECTOR_BOOTSTRAP",
+  "result_state": "PARTIAL_EXACT_LINEARIZED_RAIL",
+  "schema": "pure-weyl-asymptotically-flat-einstein-bootstrap-v1",
+  "source_commit": "cab0e805238440d9d6e9ec39e1f3cf10624fae5e",
+  "sources": [
+    {
+      "citation": "Ashtekar and Streubel, Proc. Roy. Soc. A 376 (1981) 585",
+      "role": "null-infinity radiative phase-space control",
+      "url": "https://doi.org/10.1098/rspa.1981.0109"
+    },
+    {
+      "citation": "Wald and Zoupas, Phys. Rev. D 61 (2000) 084027",
+      "role": "charge-versus-gauge criterion with radiative flux",
+      "url": "https://arxiv.org/abs/gr-qc/9911095"
+    },
+    {
+      "citation": "Lovrekovic, arXiv:1505.05820",
+      "role": "four-dimensional conformal-gravity canonical charge control",
+      "scope_guard": "generalized Fefferman-Graham boundaries, not an asymptotically flat theorem",
+      "url": "https://arxiv.org/abs/1505.05820"
+    }
+  ],
+  "verification_command": "python3 -m bridge.einstein_sector.asymptotic_bootstrap --verify bridge/certificates/asymptotically_flat_einstein_bootstrap.json"
+}
