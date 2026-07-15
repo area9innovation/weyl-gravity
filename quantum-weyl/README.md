@@ -31,6 +31,12 @@ one-particle graviton states.
 6. If the local QME is restored, transfer `Q_1` and later corrections through
    the frozen classical contraction.
 
+In parallel, `transfer/` now runs the classical nonlinear prerequisite:
+import the full classical BV Taylor tensors and transfer `q_2`, `q_3`, and
+higher operations through `pi_cl`, `iota_cl`, and `s_cl`.  This track does
+not transfer a quantum correction and does not bypass the `QME_RESTORED`
+gate in item 6.
+
 The algebraic classification comes before determinant calculations.  A beta
 function or background trace anomaly is not silently identified with a BV
 master-equation obstruction.
@@ -64,7 +70,7 @@ anomalies/          ghost-number-one, antifield, Diff/Weyl, and parity sectors
 cylinder/           background, conformal Killing data, harmonics, projection
 spectral/           reduced-mode, Euclidean, and determinant bookkeeping
 lorentzian/         filtration, block Green maps, Hadamard, causal products
-transfer/           q1/q2 HPL, Cartan, moment maps, and pairing corrections
+transfer/           classical nonlinear HPL; Q1/Q2 only after restored QME
 certificates/       cross-package machine certificates
 reports/            human-readable claim and blocker ledger
 schema/             machine-readable result contracts
@@ -83,6 +89,7 @@ schema/             machine-readable result contracts
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
 | F | one-loop Slavnov breaking and QME status | `NOT_COMPUTED` |
 | G | residual quantum transfer and pairing correction | `NOT_COMPUTED` |
+| N | nonlinear classical transfer prerequisite | `ENGINE_READY_INPUT_BLOCKED`; exact arity-2/3 engine and schema ready, classical Taylor tensors and portable contraction absent |
 
 The precursor audits
 [`verify_conformal_descent_anomaly.py`](../symbolic/verify_conformal_descent_anomaly.py)
@@ -144,6 +151,9 @@ or quantum-master-equation result.
 - [`reports/bootstrap-integration.md`](reports/bootstrap-integration.md)
   records the integrated scoped test run and why the full classical suite was
   not triggered.
+- [`reports/nonlinear-homological-transfer-bootstrap.md`](reports/nonlinear-homological-transfer-bootstrap.md)
+  records the exact low-arity transfer engine, classical export contract,
+  scientific question ledger, and fail-closed input blockers.
 
 The applicable test tiers and escalation rules are in
 [`TESTING.md`](TESTING.md).

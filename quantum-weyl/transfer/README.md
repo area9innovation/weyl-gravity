@@ -1,0 +1,60 @@
+# Nonlinear homological transfer
+
+This package starts the classical nonlinear prerequisite to the residual
+quantum programme.  It transfers the Taylor coefficients of the full
+classical BV vector field through the already certified free contraction:
+
+```text
+full conformal-gravity BV complex -> endpoint complex -> residual/minimal model
+```
+
+The implementation uses exact arithmetic and the suspended
+graded-symmetric factorial convention.  Through arity three it computes
+
+```text
+ell_2 = pi_cl q2(iota_cl, iota_cl)
+ell_3 = pi_cl [q3(iota_cl^3) - sum q2(s_cl q2(iota_cl,iota_cl),iota_cl)]
+```
+
+with the Koszul signs of the three `(2,1)` unshuffles.  The engine verifies
+the full linear strong-deformation-retract identities, side conditions,
+degree/parity, Koszul symmetry, `Q^2=0` for both the imported and transferred
+Taylor tensors through arity three, and absence of floating-point data.
+
+## Current boundary
+
+The engine is ready, but the conformal-gravity calculation is blocked.  The
+current classical import does not export the complete nonlinear `q` Taylor
+tensors, portable `pi_cl`, `iota_cl`, and `s_cl`, the full cyclic pairing, or
+coefficient vectors for the normalized Weyl-square representatives.  The
+checked-in bootstrap certificate therefore answers none of the physical
+questions affirmatively.
+
+The parity combinations
+
+```text
+e = (W_+^2 + W_-^2)/sqrt(2)   dynamical Weyl-square direction
+o = (W_+^2 - W_-^2)/sqrt(2)   topological/Pontryagin direction
+```
+
+are analysis outputs, not hard-coded bracket answers.  Once the classical
+export passes the schema, HT1 computes `ell_2` in the chiral basis and then
+changes basis to `(e,o)`.  HT2 computes the direct `q3` contact term and the
+`q2 s_cl q2` exchange trees separately, so centrality, inertness, and
+cancellations remain auditable.
+
+The one-particle question is formulated as a particle-number filtration
+question.  Interactions need not preserve particle number, so the relevant
+HT3 receipt is the associated spectral sequence and its obstruction maps,
+not an assertion that the free direct-summand decomposition remains literal.
+
+Quantum `Q_1` or higher corrections are a later input.  They may be
+transferred only after a separate `QME_RESTORED` certificate.  Nothing in
+this package is a quantum or `LORENTZIAN-CAUSAL` result.
+
+## Commands
+
+```bash
+python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check
+python3 -m unittest discover -s quantum-weyl/transfer/tests -v
+```

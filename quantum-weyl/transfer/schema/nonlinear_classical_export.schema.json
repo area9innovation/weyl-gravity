@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-nonlinear-classical-export-v1.json",
+  "title": "Portable classical input for nonlinear BV homological transfer",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "classical_commit",
+    "dependency_tags",
+    "convention",
+    "full_basis",
+    "residual_basis",
+    "q_taylor_coefficients",
+    "contraction",
+    "cyclic_pairing",
+    "weyl_square_representatives",
+    "verification_receipts",
+    "canonical_hashes"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-nonlinear-classical-export-v1"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "full_basis": {"$ref": "#/$defs/basis"},
+    "residual_basis": {"$ref": "#/$defs/basis"},
+    "q_taylor_coefficients": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["q1", "q2", "q3", "maximum_certified_arity"],
+      "properties": {
+        "q1": {"$ref": "#/$defs/sparseTensor"},
+        "q2": {"$ref": "#/$defs/sparseTensor"},
+        "q3": {"$ref": "#/$defs/sparseTensor"},
+        "maximum_certified_arity": {"type": "integer", "minimum": 3}
+      }
+    },
+    "contraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["iota_cl", "pi_cl", "s_cl"],
+      "properties": {
+        "iota_cl": {"$ref": "#/$defs/sparseTensor"},
+        "pi_cl": {"$ref": "#/$defs/sparseTensor"},
+        "s_cl": {"$ref": "#/$defs/sparseTensor"}
+      }
+    },
+    "cyclic_pairing": {"$ref": "#/$defs/sparseTensor"},
+    "weyl_square_representatives": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "allOf": [
+        {"contains": {"type": "object", "properties": {"class_id": {"const": "W_+^2"}}, "required": ["class_id"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"type": "object", "properties": {"class_id": {"const": "W_-^2"}}, "required": ["class_id"]}, "minContains": 1, "maxContains": 1}
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["class_id", "parity_partner", "coefficient_vector", "normalization"],
+        "properties": {
+          "class_id": {"enum": ["W_+^2", "W_-^2"]},
+          "parity_partner": {"enum": ["W_+^2", "W_-^2"]},
+          "coefficient_vector": {"$ref": "#/$defs/sparseTensor"},
+          "normalization": {"$ref": "#/$defs/exactScalar"}
+        }
+      }
+    },
+    "verification_receipts": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "allOf": [
+        {"contains": {"type": "object", "properties": {"check_id": {"const": "q_squared_zero_through_exported_arity"}}, "required": ["check_id"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"type": "object", "properties": {"check_id": {"const": "pi_cl_iota_cl_identity"}}, "required": ["check_id"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"type": "object", "properties": {"check_id": {"const": "classical_contraction_identity"}}, "required": ["check_id"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"type": "object", "properties": {"check_id": {"const": "q1_iota_cl_chain_map"}}, "required": ["check_id"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"type": "object", "properties": {"check_id": {"const": "pi_cl_q1_chain_map"}}, "required": ["check_id"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"type": "object", "properties": {"check_id": {"const": "cyclic_compatibility"}}, "required": ["check_id"]}, "minContains": 1, "maxContains": 1}
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_id", "status", "artifact", "sha256"],
+        "properties": {
+          "check_id": {
+            "enum": [
+              "q_squared_zero_through_exported_arity",
+              "pi_cl_iota_cl_identity",
+              "classical_contraction_identity",
+              "q1_iota_cl_chain_map",
+              "pi_cl_q1_chain_map",
+              "cyclic_compatibility"
+            ]
+          },
+          "status": {"const": "VERIFIED"},
+          "artifact": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basis_hash", "q_taylor_hash", "contraction_hash", "pairing_hash", "representative_hash"],
+      "properties": {
+        "basis_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "q_taylor_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "contraction_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "pairing_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "representative_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  },
+  "$defs": {
+    "exactScalar": {
+      "oneOf": [
+        {"type": "integer"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["numerator", "denominator"],
+          "properties": {
+            "numerator": {"type": "integer"},
+            "denominator": {"type": "integer", "not": {"const": 0}}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["algebraic_expression", "minimal_polynomial", "isolating_interval"],
+          "properties": {
+            "algebraic_expression": {"type": "string", "minLength": 1},
+            "minimal_polynomial": {"type": "string", "minLength": 1},
+            "isolating_interval": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {"$ref": "#/$defs/exactScalar"}
+            }
+          }
+        }
+      ]
+    },
+    "basis": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["symbol", "cohomological_degree", "parity", "sector", "particle_number"],
+        "properties": {
+          "symbol": {"type": "string", "minLength": 1},
+          "cohomological_degree": {"type": "integer"},
+          "parity": {"enum": [0, 1]},
+          "sector": {"enum": ["gauge", "equation", "contractible", "physical", "residual_ghost", "deformation"]},
+          "particle_number": {"type": ["integer", "null"], "minimum": 0}
+        }
+      }
+    },
+    "sparseTensor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "entries"],
+      "properties": {
+        "shape": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "integer", "minimum": 1}
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["indices", "coefficient"],
+            "properties": {
+              "indices": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+              "coefficient": {"$ref": "#/$defs/exactScalar"}
+            }
+          }
+        }
+      }
+    }
+  }
+}
