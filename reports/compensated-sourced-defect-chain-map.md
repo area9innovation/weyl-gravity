@@ -106,11 +106,18 @@ Input base commit: `46d95a1f6f04e446a4d5290ec5666af3af6cd392`.
 | 2 | Einstein aggregator/asymptotic/D-seed affected tests | 15.8 s | PASS (32 tests) |
 | coordination | classical D-quotient status guards | under 0.1 s | PASS (13/13) |
 | coordination | cross-programme status check and mutation guards | under 0.1 s | PASS |
+| coordination | retained Berger layout generator, independent verifier, and tests | 0.35 s | PASS (4 tests) |
 
 Tier 3 was not run because the global classical freeze, shared core algebra,
 causal lifecycle, quantum lifecycle, and release status remain unpromoted.
 
 The cross-programme verifier was temporarily mid-update while the classical
 team registered the Berger minimal-BV SDR, then passed after that owner landed
-the registration.  Concurrent programme and quantum import edits were not
-modified or staged here.
+the registration.  Unrelated quantum import edits were not modified or staged
+here.
+
+The subsequent retained-layout result is now registered as
+`RETAINED_MINIMAL_LAYOUT_FROZEN`, and the programme dossier imports this
+theorem's updated Einstein-boundary seed by committed hash.  The shared gate is
+`BERGER_RETAINED_MINIMAL_OPERATOR`; no retained coefficient or nonminimal
+promotion was inferred from the typed layout.

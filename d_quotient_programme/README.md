@@ -36,10 +36,12 @@ because the existing results concern different objects:
 - [`contributions/classical-berger-clock-charge-seed.json`](contributions/classical-berger-clock-charge-seed.json)
 - [`contributions/classical-berger-fixed-coupling-delta-charge.json`](contributions/classical-berger-fixed-coupling-delta-charge.json)
 - [`contributions/classical-berger-minimal-bv-clock-sdr.json`](contributions/classical-berger-minimal-bv-clock-sdr.json)
+- [`contributions/classical-berger-retained-minimal-layout.json`](contributions/classical-berger-retained-minimal-layout.json)
 - [`reports/classical-positive-berger-clock-registration-receipt.md`](reports/classical-positive-berger-clock-registration-receipt.md)
 - [`reports/classical-berger-clock-charge-seed-registration-receipt.md`](reports/classical-berger-clock-charge-seed-registration-receipt.md)
 - [`reports/classical-berger-fixed-coupling-registration-receipt.md`](reports/classical-berger-fixed-coupling-registration-receipt.md)
 - [`reports/classical-berger-minimal-bv-sdr-registration-receipt.md`](reports/classical-berger-minimal-bv-sdr-registration-receipt.md)
+- [`reports/classical-berger-retained-layout-registration-receipt.md`](reports/classical-berger-retained-layout-registration-receipt.md)
 - [`reports/einstein-ed1a-registration-receipt.md`](reports/einstein-ed1a-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
@@ -89,7 +91,8 @@ Compact spatial averaging excludes an inhomogeneous escape, so `D_GAUGE`
 holds on the declared smooth fixed-coupling linearized Berger phase space.
 The temporal/Weyl clock doublets and all minimal dual rows now also admit an
 exact first-order support-local cyclic SDR, contracting 8 of the 34 minimal
-rows. The immediate gate is now
-`BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`; causal Green homotopies and
-stability follow after it. This does not replace the nonlinear team's separate
+rows. The typed 26-row retained layout, pairings, allowed `q1` blocks, support
+rules, and order ceilings are also frozen.  The immediate gate is now
+`BERGER_RETAINED_MINIMAL_OPERATOR`; nonminimal completion, causal Green
+homotopies, and stability follow after it. This does not replace the nonlinear team's separate
 `CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT` gate.

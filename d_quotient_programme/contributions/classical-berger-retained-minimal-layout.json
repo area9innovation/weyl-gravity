@@ -1,0 +1,39 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_positive_berger_clock_retained_minimal_layout",
+  "generator_id": "D_compact",
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "boundary_conditions": "closed Berger S3; typed 26-row retained minimal layout after the support-local clock SDR",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "claim_status": "CERTIFIED",
+  "verdict": "RETAINED_MINIMAL_LAYOUT_FROZEN",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "established": [
+    "the complete 26-component retained minimal row inventory and chain degrees are frozen",
+    "bundle types, BV-dual pairing partners, and pairing signs are explicit",
+    "allowed q1 blocks and formal-adjoint partners are typed",
+    "support-locality rules and differential-order ceilings are declared",
+    "the layout is content-addressed by a canonical payload hash"
+  ],
+  "not_established": [
+    "any retained q1 coefficient or dressed-metric Hessian entry",
+    "the nonminimal antighost, multiplier, auxiliary, or gauge-fixing rows",
+    "kinetic-sign, characteristic, stability, or causal Green results",
+    "nonlinear q2 or the separate CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json",
+    "commit": "46d95a1f6f04e446a4d5290ec5666af3af6cd392",
+    "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
+  },
+  "verification_commands": [
+    "python3 d_quotient_classical/backreacted_clock/berger_retained_minimal_layout.py --check --guards",
+    "python3 d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_layout_independent.py",
+    "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_minimal_layout",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ],
+  "next_gate": "BERGER_RETAINED_MINIMAL_OPERATOR"
+}
