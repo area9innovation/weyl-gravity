@@ -294,6 +294,14 @@ python3 symbolic/verify_conformal_covariant_completion.py --emit --guards
 Generated theorem text is in `covariant_completion/generated/`; exact proof
 summaries are in `covariant_completion/certificates/`.
 
+The [covariant H4 proof ledger](generated/covariant_H4_proof_ledger.md) gives
+the human-readable 23-requirement audit, full evidence hashes, reproduction
+commands, scoped caveats, and a skeptical independent-review checklist:
+
+```bash
+python3 symbolic/verify_conformal_covariant_H4_proof_ledger.py --check --guards
+```
+
 The final-claim dependency graph is generated separately:
 
 ```bash

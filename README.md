@@ -178,6 +178,11 @@ character identities show that the 26-state covariant equations carry
 precisely the parity-complete `E/A/L` towers and that the Cotton graph adds no
 second copy.  This is not inferred from a finite harmonic cutoff.
 
+The human-readable [covariant H4 proof ledger](covariant_completion/generated/covariant_H4_proof_ledger.md)
+maps all 23 terminal requirements to authoritative hashes, reproduction
+commands, scoped caveats, and an independent-review checklist.  Check it with
+`python3 symbolic/verify_conformal_covariant_H4_proof_ledger.py --check --guards`.
+
 The BV-canonical Weyl/Cotton graph SDR, autonomous curvature compatibility
 complex `26 -> 40 -> 14` with cotangent adjoint, causal curvature-block
 solution operators, and analytic block Green witness are exact subtheorems.
