@@ -386,6 +386,7 @@ def validate_record(record: object) -> list[str]:
                 "inhomogeneous_conformal_stealth_clock_no_go",
                 "positive_berger_clock_background",
                 "berger_clock_reduced_charge_seed",
+                "berger_fixed_coupling_delta_charge",
             ]:
                 errors.append("$.work_packages.relational_clock: partial replacement requires the one-scalar, neutral-pair, health, stealth, and positive Berger-background certificates")
             if not isinstance(scalar_setting, dict):
@@ -403,12 +404,14 @@ def validate_record(record: object) -> list[str]:
             if not isinstance(berger_setting, dict):
                 errors.append("$.settings: missing positive-Berger-clock setting")
             elif (
-                berger_setting.get("verdict") is not None
-                or berger_setting.get("assessment_status") != "OPEN"
+                berger_setting.get("verdict") != "D_GAUGE"
+                or berger_setting.get("assessment_status") != "CERTIFIED"
                 or berger_setting.get("claim_scope") != "REDUCED_MODE"
-                or berger_setting.get("charge_test", {}).get("status") != "OPEN"
+                or berger_setting.get("charge_test", {}).get("status")
+                != "CERTIFIED"
+                or berger_setting.get("phase_space_status") != "SPECIFIED"
             ):
-                errors.append("$.settings.positive_berger_clock: exact background must remain open pending the charge/BV audit")
+                errors.append("$.settings.positive_berger_clock: fixed-coupling linearized D_GAUGE theorem is required")
 
     receipts = record.get("verification_receipts")
     if not isinstance(receipts, list) or not receipts:
@@ -511,10 +514,8 @@ def _mutation_guards(record: dict[str, Any]) -> list[str]:
         for setting in mutant["settings"]
         if setting["setting_id"] == "positive_berger_clock"
     )
-    berger["assessment_status"] = "CERTIFIED"
-    berger["verdict"] = "D_GAUGE"
-    berger["verdict_dependency_tags"] = ["LOCAL-ALGEBRAIC"]
-    rejected("berger_background_promoted_to_D_verdict", mutant)
+    berger["verdict"] = "D_CHARGED"
+    rejected("berger_fixed_coupling_D_GAUGE_erased", mutant)
 
     mutant = deepcopy(record)
     mutant["work_packages"]["relational_clock"]["evidence_refs"] = [
@@ -523,6 +524,14 @@ def _mutation_guards(record: dict[str, Any]) -> list[str]:
         if ref != "berger_clock_reduced_charge_seed"
     ]
     rejected("berger_clock_momentum_erased", mutant)
+
+    mutant = deepcopy(record)
+    mutant["work_packages"]["relational_clock"]["evidence_refs"] = [
+        ref
+        for ref in mutant["work_packages"]["relational_clock"]["evidence_refs"]
+        if ref != "berger_fixed_coupling_delta_charge"
+    ]
+    rejected("berger_fixed_coupling_verdict_erased", mutant)
     return failures
 
 
@@ -550,7 +559,7 @@ def main() -> int:
             for failure in failures:
                 print(f"mutation guard failed: {failure}", file=sys.stderr)
             return 1
-        print("mutation guards: 12/12 PASS")
+        print("mutation guards: 13/13 PASS")
     print(f"{args.certificate}: PASS")
     return 0
 
