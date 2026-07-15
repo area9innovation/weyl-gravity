@@ -1,0 +1,287 @@
+{
+  "assumptions": [
+    "Repeated lowered labels denote contraction with a covariantly constant inverse metric.",
+    "The certified parity-even quadratic scalar sector is in four spacetime dimensions and contains two Riemann factors with no covariant derivatives.",
+    "The covariant derivative is even and obeys Leibniz; its commutator is outside this certificate.",
+    "The epsilon tensor is covariantly constant and odd under orientation reversal."
+  ],
+  "canonical_hashes": {
+    "bianchi_relations_sha256": "f29a514985bcb063ac2ea7997b37ab5570f377cc2b4ae9577b52488cc5a28789",
+    "ibp_relation_sha256": "7bf39616d45cf252fe367fd42be21fb3a381989f087b4fee1fc0d24a7280305c",
+    "parity_odd_epsilon_sha256": "c7c584937aefb33432e0915e24c1747fb97d1480d89970208311b03198d251ee",
+    "quadratic_basis_sha256": "b0daf22d0156d1cfaf0e0dd09f19f62dd2646c28cfb7c1a1ff36e7a6309afad9",
+    "source_manifest_sha256": "934ba5446638ee1334db4703f66d2b4aefe7564096f09c6ee80d1c53be853ac8"
+  },
+  "checks": {
+    "algebraic_bianchi_quotient": "VERIFIED",
+    "antifield_rows": "BLOCKED",
+    "covariant_derivative_commutators": "NOT_COMPUTED",
+    "differential_bianchi": "NOT_COMPUTED",
+    "dummy_index_renaming": "VERIFIED",
+    "exact_rational_relation_reduction": "VERIFIED",
+    "free_index_order_preservation": "VERIFIED",
+    "graded_factor_ordering": "VERIFIED",
+    "hodge_dual_normalization": "NOT_COMPUTED",
+    "integration_by_parts_quotient": "VERIFIED",
+    "local_cohomology_H_s_mod_d": "NOT_COMPUTED",
+    "signed_tensor_symmetries": "VERIFIED",
+    "spacetime_parity_involution": "VERIFIED",
+    "total_derivative_leibniz": "VERIFIED"
+  },
+  "classical_commit": "UNFROZEN",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "integration_by_parts": {
+    "leibniz_term_count": 2,
+    "quotient_dimension": 1,
+    "relation_rank": 1,
+    "total_divergence_coordinates": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "vector_factor_count": 2
+  },
+  "not_computed": [
+    "dimension-dependent Schouten identities beyond the generated quadratic scalar sector",
+    "differential Bianchi identities and covariant derivative commutators",
+    "Hodge-star normalization and chiral Weyl projectors",
+    "Weyl BRST variations of curvature tensors",
+    "general derivative-bounded invariant ansatz generation",
+    "antifield and Koszul-Tate differential",
+    "counterterm cohomology H^{0,4}(s|d)",
+    "anomaly cohomology H^{1,4}(s|d)",
+    "descent equations and cylinder restriction"
+  ],
+  "parity": {
+    "epsilon_eigenvalue": -1,
+    "epsilon_signed_symmetry_group_order": 24,
+    "parity_squared": 1,
+    "riemann_eigenvalue": 1,
+    "riemann_signed_symmetry_group_order": 8
+  },
+  "quadratic_curvature": {
+    "basis_was_generated": true,
+    "bianchi_relation_rank": 1,
+    "canonical_basis": [
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              3,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              2
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              3,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              2,
+              1,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      }
+    ],
+    "free_columns": [
+      0,
+      1,
+      3
+    ],
+    "generator": "all perfect matchings of eight slots in Riemann tensor squared",
+    "named_representative_free_coordinates": {
+      "Ricci_squared": [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "Riemann_squared": [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      "scalar_curvature_squared": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    },
+    "named_representative_rank": 3,
+    "named_representatives": [
+      "Riemann_squared",
+      "Ricci_squared",
+      "scalar_curvature_squared"
+    ],
+    "nonzero_unique_bianchi_relation_count": 2,
+    "pivot_columns": [
+      2
+    ],
+    "quotient_dimension": 3,
+    "raw_pairing_count": 105,
+    "relation_rref": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "symmetry_canonical_monomial_count": 4
+  },
+  "result_id": "LOCAL_CURVATURE_CANONICALIZATION_CERTIFICATE",
+  "result_state": "INFRASTRUCTURE_VERIFIED",
+  "scope": "Finite exact abstract-index monomials; signed Riemann and epsilon symmetries; graded factor order; dummy renaming; algebraic Bianchi quotient; covariant total-derivative/IBP quotient; spacetime parity."
+}

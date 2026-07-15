@@ -59,8 +59,9 @@ import gate, exact local BV/cohomology work, cylinder restriction, reduced
 and Euclidean spectral checks, Lorentzian causal construction, and eventual
 quantum residual transfer.  The bootstrap is deliberately fail-closed:
 Gate A is not frozen, the local package currently certifies only the minimal
-Diff `x` Weyl coordinate-jet rows, and the reduced `E/A/L` ledger computes no
-determinant or one-loop coefficient.
+Diff `x` Weyl coordinate-jet rows plus a finite exact curvature/Bianchi/IBP
+quotient, and the reduced `E/A/L` ledger computes no determinant or one-loop
+coefficient.
 
 Energy-mode analytic completion:
 [`analytic_completion/README.md`](analytic_completion/README.md) documents

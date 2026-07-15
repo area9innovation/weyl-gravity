@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-local-curvature-certificate-v1.json",
+  "title": "Pure-Weyl local curvature canonicalization certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id",
+    "result_state",
+    "classical_commit",
+    "dependency_tags",
+    "scope",
+    "checks",
+    "quadratic_curvature",
+    "integration_by_parts",
+    "parity",
+    "canonical_hashes",
+    "not_computed",
+    "assumptions"
+  ],
+  "properties": {
+    "result_id": {"const": "LOCAL_CURVATURE_CANONICALIZATION_CERTIFICATE"},
+    "result_state": {"const": "INFRASTRUCTURE_VERIFIED"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "string", "minLength": 1},
+    "checks": {
+      "type": "object",
+      "additionalProperties": {"enum": ["VERIFIED", "NOT_COMPUTED", "BLOCKED"]}
+    },
+    "quadratic_curvature": {"type": "object"},
+    "integration_by_parts": {"type": "object"},
+    "parity": {"type": "object"},
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+    },
+    "not_computed": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "assumptions": {"type": "array", "items": {"type": "string"}}
+  }
+}
