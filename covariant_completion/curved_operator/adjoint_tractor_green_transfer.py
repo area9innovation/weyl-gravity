@@ -288,10 +288,11 @@ class AdjointTractorGreenTransfer:
             "endpoint_assembly": {
                 "tracefree_parent_transfer_ready": endpoint_ready,
                 "trace_Weyl_triangular_channels_already_green": True,
-                "complete_30_row_endpoint_causal_homotopy": endpoint_ready,
+                "complete_30_row_endpoint_causal_homotopy": False,
                 "formula_when_ready": (
-                    "direct sum/triangular assembly of the transferred "
-                    "4-9-9-4 homotopy with the certified four trace/Weyl rows"
+                    "a downstream certificate must directly assemble the "
+                    "transferred 4-9-9-4 homotopy with the certified four "
+                    "trace/Weyl rows"
                 ),
             },
             "warranted_atomic_flags": [
@@ -301,13 +302,15 @@ class AdjointTractorGreenTransfer:
             "status_flags_promoted": [],
             "support_local_prolongation_retract": False,
             "curvature_causal_green_operators": False,
-            "causal_green_homotopy": endpoint_ready,
+            "tracefree_causal_green_homotopy": endpoint_ready,
+            "causal_green_homotopy": False,
             "prolonged_green_witness": False,
             "proof_boundary": (
                 "the parent causal theorem and abstract cyclic transfer are "
-                "exact; the endpoint conclusion remains false until a future "
-                "coefficientwise curved BGG SDR certificate satisfies every "
-                "listed gate"
+                "exact; a future coefficientwise curved BGG SDR certificate "
+                "activates only the trace-free 4-9-9-4 homotopy. A separate "
+                "trace/Weyl triangular assembly is required for the full "
+                "30-row endpoint and all-row causal flag"
             ),
             "fail_closed": True,
         }

@@ -38,7 +38,8 @@ def main() -> int:
     parser.add_argument(
         "--curved-bgg",
         type=Path,
-        help="optional future coefficientwise curved BGG SDR certificate",
+        default=CERTIFICATES / "adjoint_tractor_bgg_curved_pbw.json",
+        help="coefficientwise curved BGG SDR certificate",
     )
     args = parser.parse_args()
 
@@ -91,16 +92,13 @@ def main() -> int:
             is True
         ),
         "current endpoint remains fail closed": (
-            args.curved_bgg is not None
-            or (
-                certificate["curved_BGG_gate"]["all_required_keys_true"]
-                is False
-                and certificate["endpoint_assembly"][
-                    "complete_30_row_endpoint_causal_homotopy"
-                ]
-                is False
-                and certificate["causal_green_homotopy"] is False
-            )
+            certificate["endpoint_assembly"][
+                "complete_30_row_endpoint_causal_homotopy"
+            ]
+            is False
+            and certificate["causal_green_homotopy"] is False
+            and certificate["tracefree_causal_green_homotopy"]
+            is certificate["curved_BGG_gate"]["all_required_keys_true"]
         ),
         "no unrelated promotion": (
             certificate["prolonged_green_witness"] is False
@@ -132,6 +130,7 @@ def main() -> int:
     checks["wrong future schema cannot promote"] = (
         forged_result["curved_BGG_gate"]["future_certificate_schema_valid"]
         is False
+        and forged_result["tracefree_causal_green_homotopy"] is False
         and forged_result["causal_green_homotopy"] is False
     )
     valid_future = {
@@ -164,12 +163,18 @@ def main() -> int:
         is True
         and valid_future_result["curved_BGG_gate"]["all_required_keys_true"]
         is True
-        and valid_future_result["causal_green_homotopy"] is True
+        and valid_future_result["tracefree_causal_green_homotopy"] is True
+        and valid_future_result["endpoint_assembly"][
+            "complete_30_row_endpoint_causal_homotopy"
+        ]
+        is False
+        and valid_future_result["causal_green_homotopy"] is False
     )
     if args.curved_bgg is not None:
         checks["supplied curved certificate controls promotion"] = (
-            certificate["causal_green_homotopy"]
+            certificate["tracefree_causal_green_homotopy"]
             is certificate["curved_BGG_gate"]["all_required_keys_true"]
+            and certificate["causal_green_homotopy"] is False
         )
     if not all(checks.values()):
         failed = [name for name, value in checks.items() if not value]
@@ -185,11 +190,15 @@ def main() -> int:
             "exact cyclic differential BGG retract, the endpoint homotopy is "
             "`p Lambda_parent,+/- i`; the chain, support, and adjoint identities "
             "transfer formally.\n\n"
-            "The current curved BGG screen still has the recorded 48-entry "
-            "commuting-derivative defect, so the coefficientwise curved chain "
-            "maps, differential homotopy, and full Bach match are not yet "
-            "available. Consequently the endpoint causal homotopy remains "
-            "false.\n"
+            + (
+                "The authoritative curved PBW certificate satisfies the five "
+                "coefficientwise gates, so the trace-free 4--9--9--4 causal "
+                "homotopy is transferred. The complete 30-row endpoint remains "
+                "the responsibility of the separate trace/Weyl assembly.\n"
+                if certificate["tracefree_causal_green_homotopy"]
+                else "The curved PBW gate is not supplied, so even the "
+                "trace-free transfer remains false.\n"
+            )
         )
         print(f"wrote {OUTPUT.relative_to(ROOT)}")
         print(f"wrote {REPORT.relative_to(ROOT)}")

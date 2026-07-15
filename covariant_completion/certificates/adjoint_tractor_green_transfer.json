@@ -2,13 +2,13 @@
   "causal_green_homotopy": false,
   "curvature_causal_green_operators": false,
   "curved_BGG_gate": {
-    "all_required_keys_true": false,
+    "all_required_keys_true": true,
     "authoritative_future_filename": "adjoint_tractor_bgg_curved_pbw.json",
     "current_commuting_derivative_defect_entries": 48,
     "current_screen_boundary_open": true,
-    "future_certificate_schema_valid": false,
-    "future_certificate_sha256": null,
-    "future_certificate_supplied": false,
+    "future_certificate_schema_valid": true,
+    "future_certificate_sha256": "bd760f10032ffc2d46160db8290c674efa09e6acf2b736235ef11b4080a03c03",
+    "future_certificate_supplied": true,
     "required_future_schema_version": 1,
     "required_true_keys": [
       "curved_BGG_chain_maps_exact",
@@ -17,9 +17,10 @@
       "support_local",
       "cyclic_i_sharp_equals_p"
     ],
-    "upstream_transfer_flag_remains_false": false
+    "upstream_transfer_flag_remains_false": true
   },
   "dependency_sha256": {
+    "curved_bgg": "bd760f10032ffc2d46160db8290c674efa09e6acf2b736235ef11b4080a03c03",
     "differential_screen": "7f8e4e0ed8134dfd46a8a9483ccfe027144e85aecf5093ffdd549b8d134e7848",
     "endpoint": "584e875444f303643d0408874a92bbe65ce61c07fc78122f00d037d776367771",
     "endpoint_filtration": "7f0d180064bca9cb0d47b02dfb96201f8ea895026f9ef4c059d8fce5b74fd53d",
@@ -28,9 +29,9 @@
   "dependency_tag": "LORENTZIAN-CAUSAL",
   "endpoint_assembly": {
     "complete_30_row_endpoint_causal_homotopy": false,
-    "formula_when_ready": "direct sum/triangular assembly of the transferred 4-9-9-4 homotopy with the certified four trace/Weyl rows",
+    "formula_when_ready": "a downstream certificate must directly assemble the transferred 4-9-9-4 homotopy with the certified four trace/Weyl rows",
     "trace_Weyl_triangular_channels_already_green": true,
-    "tracefree_parent_transfer_ready": false
+    "tracefree_parent_transfer_ready": true
   },
   "fail_closed": true,
   "parent_YM_detour": {
@@ -57,10 +58,11 @@
     ]
   },
   "prolonged_green_witness": false,
-  "proof_boundary": "the parent causal theorem and abstract cyclic transfer are exact; the endpoint conclusion remains false until a future coefficientwise curved BGG SDR certificate satisfies every listed gate",
+  "proof_boundary": "the parent causal theorem and abstract cyclic transfer are exact; a future coefficientwise curved BGG SDR certificate activates only the trace-free 4-9-9-4 homotopy. A separate trace/Weyl triangular assembly is required for the full 30-row endpoint and all-row causal flag",
   "schema": "pure-weyl-adjoint-tractor-green-transfer-v1",
   "status_flags_promoted": [],
   "support_local_prolongation_retract": false,
+  "tracefree_causal_green_homotopy": true,
   "transfer_theorem": {
     "adjoint_derivation": "i^sharp=p and p^sharp=i imply Lambda_end,+^sharp=p Lambda_parent,- i",
     "algebraic_identity_exact": true,
