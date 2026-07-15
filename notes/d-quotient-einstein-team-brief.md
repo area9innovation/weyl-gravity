@@ -194,13 +194,18 @@ construct or refute the sourced-defect chain map for a declared dynamical
 matter/source complex.  A higher-derivative dressed source is a separately
 labelled coupling, not conventional Einstein equivalence.
 
-The same certificate imports the classical Berger-clock background and
-reduced charge seed by hash.  They establish an exact positive-energy rotating
-clock and nonzero internal matter momentum on a compact squashed background.
-They do not yet establish the total covariant `D` charge, support-local all-row
-BV retract, or causal complex, and they are not identified with the flat
-Stueckelberg compensator.  The Berger gate remains
-`TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT`.
+The minimal BV certificate imports the classical Berger-clock background and
+reduced charge seed by hash.  Those pinned inputs establish an exact
+positive-energy rotating clock and nonzero internal matter momentum on a
+compact squashed background.  The classical programme has since certified
+the stronger scoped verdict `D_GAUGE` on
+`positive_berger_fixed_coupling_linearized_solutions`, with tags
+`LOCAL-ALGEBRAIC` and `REDUCED-MODE`.
+
+That result is neither identified with the flat Stueckelberg compensator nor
+inserted into the compensated BV differential.  A support-local all-row BV
+retract, causal Green complex, and nonlinear stability theorem remain open;
+the current Berger gate is `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
 
 ## Work package E-D3: observables, charges, and scattering
 

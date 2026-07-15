@@ -112,3 +112,9 @@ lifecycle state, or release.
 
 Unrelated shared-tree edits in the D-quotient programme, paper, and quantum
 packages were present during verification and were not included in this work.
+
+During the work, the classical D-quotient status advanced the separate Berger
+clock to a scoped fixed-coupling linearized `D_GAUGE` verdict.  The compensated
+flat symbol matrices do not import Berger operators, so no certificate content
+or cohomology rank changed.  Coordination notes now record the newer verdict
+and preserve its open support-local BV, causal, and stability gates.

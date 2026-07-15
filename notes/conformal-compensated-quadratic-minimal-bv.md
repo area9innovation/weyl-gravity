@@ -240,21 +240,26 @@ maps, and nonminimal causal data remain open.
 
 ## Berger-clock coordination
 
-The classical team has separately certified:
+The two Berger inputs pinned by this certificate establish:
 
 - an exact positive-energy rotating scalar clock on a compact squashed Berger
   background;
 - a nonzero conserved internal \(O(2)\) clock momentum.
 
-The total gravitational-plus-matter covariant \(D\) charge, support-local
-all-row BV retract, and causal Green complex remain open.  Their next gate is
-`TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT`.
+They were fail-closed before a total-(D) verdict.  Since this certificate was
+issued, the classical programme has additionally certified `D_GAUGE` on the
+specific smooth fixed-coupling linearized Berger phase space, with tags
+`LOCAL-ALGEBRAIC` and `REDUCED-MODE`.  That newer result does not construct a
+support-local all-row BV retract, causal Green complex, or nonlinear stability
+theorem; the current Berger gate is
+`FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
 
 The Berger phase is a dynamical relational matter clock on a non-flat compact
 background and uses the opposite metric-signature convention.  The coordinate
 \(\rho\) in this theorem is a flat-phase Stueckelberg variable.  It is
 contractible and supplies no relational time.  No Berger operator or sign
-formula is inserted into the flat differential.
+formula is inserted into the flat differential, and the newer scoped
+`D_GAUGE` verdict does not alter this theorem's characteristic cohomology.
 
 Machine certificate:
 `bridge/certificates/compensated_quadratic_minimal_bv.json`.
