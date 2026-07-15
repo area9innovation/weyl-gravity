@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-neutral-clock-bv-health-audit-v1.schema.json",
+  "title": "Neutral conformal clock-pair BV health audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "generator_id", "phase_space_id",
+    "claim_status", "scientific_verdict", "dependency_tags", "inputs",
+    "local_field_reduction", "brst_incidence", "neutral_orbit_obstruction",
+    "degree_of_freedom_audit", "gate_result", "flags", "not_established",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-neutral-clock-bv-health-audit-v1"},
+    "result_id": {"const": "NEUTRAL_CLOCK_BV_HEALTH_AUDIT"},
+    "setting_id": {"const": "compact_neutral_clock_pair"},
+    "generator_id": {"const": "D_compact"},
+    "phase_space_id": {"const": "compact_neutral_clock_pair_local_extension"},
+    "claim_status": {"const": "CERTIFIED_SCOPED_OBSTRUCTION"},
+    "scientific_verdict": {"type": "null"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "inputs": {"type": "object"},
+    "local_field_reduction": {
+      "type": "object",
+      "properties": {
+        "remaining_angle_has_derivative_action": {"const": true},
+        "ratio_mode_weyl_contractible": {"const": false}
+      },
+      "required": [
+        "polar_fields", "weyl_action", "invariant_metric",
+        "target_line_element", "rho_constant_frame",
+        "remaining_angle_target_coefficient",
+        "remaining_angle_has_derivative_action",
+        "ratio_mode_weyl_contractible"
+      ]
+    },
+    "brst_incidence": {
+      "type": "object",
+      "properties": {
+        "determinant": {"const": "W"},
+        "field_ghost_incidence_invertible_on_W_nonzero": {"const": true},
+        "inverse_support_local": {"const": true}
+      },
+      "required": [
+        "scalar_rule", "polar_rules", "background_temporal_weyl_matrix",
+        "determinant", "field_ghost_incidence_invertible_on_W_nonzero",
+        "inverse_type", "inverse_support_local", "interpretation"
+      ]
+    },
+    "neutral_orbit_obstruction": {
+      "type": "object",
+      "properties": {
+        "clock_condition": {"const": "W!=0"},
+        "norm_zero_count_per_2pi": {"const": 4},
+        "kinetic_sign_definite_on_full_clock_orbit": {"const": false},
+        "kinetic_degeneracy_crossed_by_every_regular_clock_orbit": {"const": true},
+        "global_regular_einstein_or_scalar_frame_exists": {"const": false}
+      },
+      "required": [
+        "general_equal_energy_pair", "wronskian", "internal_norm",
+        "clock_condition", "norm_zero_count_per_2pi",
+        "norm_zero_representatives", "crossing_spacing",
+        "reduced_kinetic_sign", "kinetic_sign_definite_on_full_clock_orbit",
+        "kinetic_degeneracy_crossed_by_every_regular_clock_orbit",
+        "global_regular_einstein_or_scalar_frame_exists"
+      ]
+    },
+    "degree_of_freedom_audit": {
+      "type": "object",
+      "properties": {
+        "gauge_group_changed_by_adding_pair": {"const": false},
+        "new_second_order_scalar_fields": {"const": 2},
+        "scalar_coordinates_can_fix_temporal_diff_and_weyl": {"const": true},
+        "opposite_sign_reference_sector_entirely_contractible": {"const": false},
+        "healthy_positive_local_completion_on_this_orbit": {"const": false}
+      },
+      "required": [
+        "gauge_group_changed_by_adding_pair", "new_second_order_scalar_fields",
+        "scalar_coordinates_can_fix_temporal_diff_and_weyl",
+        "physical_effect", "opposite_sign_reference_sector_entirely_contractible",
+        "healthy_positive_local_completion_on_this_orbit"
+      ]
+    },
+    "gate_result": {
+      "type": "object",
+      "properties": {
+        "gate": {"const": "FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION"},
+        "status": {"const": "OBSTRUCTED_AS_GLOBALLY_REGULAR_HEALTHY_CLOCK"},
+        "homogeneous_clock_theorem_retained": {"const": true},
+        "next_gate": {"const": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK"}
+      },
+      "required": ["gate", "status", "homogeneous_clock_theorem_retained", "next_gate"]
+    },
+    "flags": {"type": "object"},
+    "not_established": {"type": "array", "items": {"type": "string"}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

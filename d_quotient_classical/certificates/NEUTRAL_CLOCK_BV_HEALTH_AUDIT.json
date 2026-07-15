@@ -1,0 +1,106 @@
+{
+  "brst_incidence": {
+    "background_temporal_weyl_matrix": [
+      [
+        "dot(T_1)",
+        "-T_1"
+      ],
+      [
+        "dot(T_2)",
+        "-T_2"
+      ]
+    ],
+    "determinant": "W",
+    "field_ghost_incidence_invertible_on_W_nonzero": true,
+    "interpretation": "scalar gauge coordinates can be eliminated locally, but their dynamics transfers to the metric/constraint rows",
+    "inverse_support_local": true,
+    "inverse_type": "pointwise multiplication by 1/W",
+    "polar_rules": [
+      "s theta=c^mu partial_mu theta",
+      "s log(rho)=c^mu partial_mu log(rho)-c_W"
+    ],
+    "scalar_rule": "s T_A=c^mu partial_mu T_A-c_W T_A"
+  },
+  "claim_boundary": "The audit proves that the minimal opposite-sign neutral pair cannot be promoted from a working homogeneous reference clock to a globally regular positive local clock merely by Diff x Weyl contraction. It does not obstruct other clock actions, backreacted non-conformally-flat backgrounds, stealth matter, or larger BV extensions.",
+  "claim_status": "CERTIFIED_SCOPED_OBSTRUCTION",
+  "degree_of_freedom_audit": {
+    "gauge_group_changed_by_adding_pair": false,
+    "healthy_positive_local_completion_on_this_orbit": false,
+    "new_second_order_scalar_fields": 2,
+    "opposite_sign_reference_sector_entirely_contractible": false,
+    "physical_effect": "unitary gauge transfers the scalar dynamics into metric and constraint rows rather than deleting it",
+    "scalar_coordinates_can_fix_temporal_diff_and_weyl": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flags": {
+    "full_all_row_bv_operator_constructed": false,
+    "homogeneous_clock_still_valid": true,
+    "kinetic_sign_global_positive": false,
+    "neutral_orbit_crosses_internal_null_cone": true,
+    "opposite_sign_sector_fully_contractible": false,
+    "polar_reduction_exact": true,
+    "ratio_derivative_mode_survives_weyl_reduction": true,
+    "scalar_incidence_support_local": true
+  },
+  "gate_result": {
+    "gate": "FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION",
+    "homogeneous_clock_theorem_retained": true,
+    "next_gate": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK",
+    "status": "OBSTRUCTED_AS_GLOBALLY_REGULAR_HEALTHY_CLOCK"
+  },
+  "generator_id": "D_compact",
+  "inputs": {
+    "commit": "a558ecf6eae7259ebd9dfef048602b83f9ccf9e4",
+    "homogeneous_clock_certificate": "d_quotient_classical/certificates/NEUTRAL_CONFORMAL_CLOCK_PAIR.json",
+    "sha256": "c68921ec717de842052350238cfb3cb65f950a05197dd213691b5b4bb1b14e03"
+  },
+  "local_field_reduction": {
+    "invariant_metric": "g_hat=rho^2*g",
+    "polar_fields": [
+      "T_1=rho*cos(theta)",
+      "T_2=rho*sin(theta)"
+    ],
+    "ratio_mode_weyl_contractible": false,
+    "remaining_angle_has_derivative_action": true,
+    "remaining_angle_target_coefficient": "G_theta=-rho^2*cos(2 theta)",
+    "rho_constant_frame": "d(rho)=0",
+    "target_line_element": "cos(2 theta) d(rho)^2-2 rho sin(2 theta)d(rho)d(theta)-rho^2 cos(2 theta)d(theta)^2",
+    "weyl_action": "rho -> exp(-sigma_W)*rho; theta -> theta"
+  },
+  "neutral_orbit_obstruction": {
+    "clock_condition": "W!=0",
+    "crossing_spacing": "pi/2",
+    "general_equal_energy_pair": [
+      "T_1=A*cos(t+alpha)",
+      "T_2=A*cos(t+beta)"
+    ],
+    "global_regular_einstein_or_scalar_frame_exists": false,
+    "internal_norm": "N=T_1^2-T_2^2=-W*sin(2t+alpha+beta)",
+    "kinetic_degeneracy_crossed_by_every_regular_clock_orbit": true,
+    "kinetic_sign_definite_on_full_clock_orbit": false,
+    "norm_zero_count_per_2pi": 4,
+    "norm_zero_representatives": [
+      "-(alpha+beta)/2",
+      "pi/2-(alpha+beta)/2",
+      "pi-(alpha+beta)/2",
+      "3*pi/2-(alpha+beta)/2"
+    ],
+    "reduced_kinetic_sign": "sign(G_theta)=sign(-N)",
+    "wronskian": "W=A^2*sin(alpha-beta)"
+  },
+  "not_established": [
+    "the complete coupled all-row BV differential and antifield transformation",
+    "a causal Green complex across the kinetic-degeneracy hypersurfaces",
+    "a healthy positive-energy matter interpretation",
+    "a no-go theorem for backreacted non-conformally-flat or stealth clocks",
+    "an interacting or quantum verdict"
+  ],
+  "phase_space_id": "compact_neutral_clock_pair_local_extension",
+  "result_id": "NEUTRAL_CLOCK_BV_HEALTH_AUDIT",
+  "schema": "pure-weyl-neutral-clock-bv-health-audit-v1",
+  "scientific_verdict": null,
+  "setting_id": "compact_neutral_clock_pair"
+}
