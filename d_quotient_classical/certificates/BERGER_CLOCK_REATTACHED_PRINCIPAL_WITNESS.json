@@ -1,0 +1,307 @@
+{
+  "claim_boundary": "This certificate proves an exact scalar-biwave principal completion after support-locally reattaching the already contractible temporal-diffeomorphism/Weyl clock rows. It does not prove the lower-order curved QW+WQ identity, construct advanced or retarded Green operators, complete nonminimal rows, or establish arity-two D-Cartan stability.",
+  "claim_status": "CERTIFIED_PRINCIPAL_COMPLETION_CURVED_OPEN",
+  "dependency_refs": {
+    "clock_sdr": {
+      "result_id": "BERGER_MINIMAL_BV_CLOCK_SDR",
+      "sha256": "9e7503ed7fd6082b4164ae7b03d350c753f941cc45d639ffb02598ba8f262422"
+    },
+    "retained_q1": {
+      "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "clock_sdr_imported": true,
+    "fibre_identification_nondegenerate": true,
+    "full_five_direction_gauge_symbol": true,
+    "ghost_scalar_biwave_principal": true,
+    "metric_scalar_biwave_principal": true,
+    "principal_cross_terms_zero": true,
+    "retained_q1_imported": true
+  },
+  "flags": {
+    "BERGER_ARITY_TWO_D_CARTAN": false,
+    "BERGER_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS": true,
+    "BERGER_CURVED_CLOCK_REATTACHED_WITNESS": false,
+    "BERGER_FULL_GHOST_BIWAVE_PRINCIPAL": true,
+    "BERGER_FULL_METRIC_BIWAVE_PRINCIPAL": true
+  },
+  "next_gate": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
+  "normalized_witness": {
+    "DD": "p^mu p^nu h_{nu mu}",
+    "D_mu": "p^nu h_{nu mu}",
+    "R_raise_diagonal": [
+      "1",
+      "-1/2",
+      "-1/2",
+      "-1/2",
+      "1",
+      "1/2",
+      "1/2",
+      "1",
+      "1/2",
+      "1"
+    ],
+    "companion_matrix": [
+      [
+        "-p1*(3*p0**2 - p1**2 - p2**2 - p3**2)/6",
+        "p0*(3*p0**2 - p1**2 - 3*p2**2 - 3*p3**2)/3",
+        "2*p0*p1*p2/3",
+        "2*p0*p1*p3/3",
+        "-p1*(5*p0**2 - 3*p1**2 - 5*p2**2 - 5*p3**2)/6",
+        "-p2*(3*p0**2 - p1**2 - 3*p2**2 - 3*p3**2)/3",
+        "-p3*(3*p0**2 - p1**2 - 3*p2**2 - 3*p3**2)/3",
+        "p1*(p0**2 - p1**2 - 3*p2**2 - p3**2)/6",
+        "-2*p1*p2*p3/3",
+        "p1*(p0**2 - p1**2 - p2**2 - 3*p3**2)/6"
+      ],
+      [
+        "-p2*(3*p0**2 - p1**2 - p2**2 - p3**2)/6",
+        "2*p0*p1*p2/3",
+        "p0*(3*p0**2 - 3*p1**2 - p2**2 - 3*p3**2)/3",
+        "2*p0*p2*p3/3",
+        "p2*(p0**2 - 3*p1**2 - p2**2 - p3**2)/6",
+        "-p1*(3*p0**2 - 3*p1**2 - p2**2 - 3*p3**2)/3",
+        "-2*p1*p2*p3/3",
+        "-p2*(5*p0**2 - 5*p1**2 - 3*p2**2 - 5*p3**2)/6",
+        "-p3*(3*p0**2 - 3*p1**2 - p2**2 - 3*p3**2)/3",
+        "p2*(p0**2 - p1**2 - p2**2 - 3*p3**2)/6"
+      ],
+      [
+        "-p3*(3*p0**2 - p1**2 - p2**2 - p3**2)/6",
+        "2*p0*p1*p3/3",
+        "2*p0*p2*p3/3",
+        "p0*(3*p0**2 - 3*p1**2 - 3*p2**2 - p3**2)/3",
+        "p3*(p0**2 - 3*p1**2 - p2**2 - p3**2)/6",
+        "-2*p1*p2*p3/3",
+        "-p1*(3*p0**2 - 3*p1**2 - 3*p2**2 - p3**2)/3",
+        "p3*(p0**2 - p1**2 - 3*p2**2 - p3**2)/6",
+        "-p2*(3*p0**2 - 3*p1**2 - 3*p2**2 - p3**2)/3",
+        "-p3*(5*p0**2 - 5*p1**2 - 5*p2**2 - 3*p3**2)/6"
+      ],
+      [
+        "p0*(3*p0**2 - 5*p1**2 - 5*p2**2 - 5*p3**2)/6",
+        "-p1*(p0**2 - 3*p1**2 - 3*p2**2 - 3*p3**2)/3",
+        "-p2*(p0**2 - 3*p1**2 - 3*p2**2 - 3*p3**2)/3",
+        "-p3*(p0**2 - 3*p1**2 - 3*p2**2 - 3*p3**2)/3",
+        "p0*(p0**2 - 3*p1**2 - p2**2 - p3**2)/6",
+        "-2*p0*p1*p2/3",
+        "-2*p0*p1*p3/3",
+        "p0*(p0**2 - p1**2 - 3*p2**2 - p3**2)/6",
+        "-2*p0*p2*p3/3",
+        "p0*(p0**2 - p1**2 - p2**2 - 3*p3**2)/6"
+      ],
+      [
+        "(p1**2 + p2**2 + p3**2)*(p0**2 - p1**2 - p2**2 - p3**2)/6",
+        "-p0*p1*(p0**2 - p1**2 - p2**2 - p3**2)/3",
+        "-p0*p2*(p0**2 - p1**2 - p2**2 - p3**2)/3",
+        "-p0*p3*(p0**2 - p1**2 - p2**2 - p3**2)/3",
+        "(p0**2 - p2**2 - p3**2)*(p0**2 - p1**2 - p2**2 - p3**2)/6",
+        "p1*p2*(p0**2 - p1**2 - p2**2 - p3**2)/3",
+        "p1*p3*(p0**2 - p1**2 - p2**2 - p3**2)/3",
+        "(p0**2 - p1**2 - p3**2)*(p0**2 - p1**2 - p2**2 - p3**2)/6",
+        "p2*p3*(p0**2 - p1**2 - p2**2 - p3**2)/3",
+        "(p0**2 - p1**2 - p2**2)*(p0**2 - p1**2 - p2**2 - p3**2)/6"
+      ]
+    ],
+    "diffeomorphism_companion": "T_mu=zeta^2 D_mu-(1/6)zeta^2 p_mu tr-(1/3)p_mu DD",
+    "fibre_identification": "J=(4/alpha_B) R_raise",
+    "wave_symbol": "zeta^2=-p0^2+p1^2+p2^2+p3^2",
+    "weyl_companion": "T_sigma=(1/6)(zeta^2)^2 tr-(1/6)zeta^2 DD"
+  },
+  "principal_identities": {
+    "diffeomorphism_weyl_cross_terms": "zero",
+    "ghost": "T K_1 = (zeta^2)^2 I_5",
+    "ghost_matrix": [
+      [
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2"
+      ]
+    ],
+    "ghost_rank_off_characteristic": 5,
+    "metric": "J H_4 + K_1 T = (zeta^2)^2 I_10",
+    "metric_matrix": [
+      [
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "(p0**2 - p1**2 - p2**2 - p3**2)**2"
+      ]
+    ],
+    "metric_rank_off_characteristic": 10
+  },
+  "reattached_layout": {
+    "clock_rows_remain_contractible": true,
+    "degree_ranks": [
+      5,
+      12,
+      12,
+      5
+    ],
+    "gauge_order": [
+      "xi_1",
+      "xi_2",
+      "xi_3",
+      "tau",
+      "sigma"
+    ],
+    "gauge_rank": 5,
+    "metric_rank": 10,
+    "support_local": true,
+    "total_minimal_rows": 34
+  },
+  "result_id": "BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS",
+  "schema": "pure-weyl-berger-clock-reattached-principal-witness-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

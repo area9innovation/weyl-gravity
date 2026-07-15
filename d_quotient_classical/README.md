@@ -76,6 +76,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json`](certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json)
 - Berger causal-witness preflight report:
   [`reports/berger-causal-witness-preflight.md`](reports/berger-causal-witness-preflight.md)
+- Clock-reattached Berger principal witness:
+  [`certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS.json`](certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS.json)
+- Clock-reattached principal-witness report:
+  [`reports/berger-clock-reattached-principal-witness.md`](reports/berger-clock-reattached-principal-witness.md)
 
 The only scientific verdicts are:
 
@@ -167,14 +171,39 @@ the full 26-row relation (q_1^2=0). The immediate gate is now the separate
 Nonlinear (q_2), arity-two (D)-Cartan stability, and the combined classical
 support-local export remain open.
 
-The causal witness is now fixed as
-`T=alpha_B Box_1 F_spatial`. Its ghost and dual identity blocks factor exactly
-into two normally hyperbolic vector operators and are Green hyperbolic. The
-metric block is the sole remaining analytic carrier: its fourth-order symbol
-has rank eight and an exact two-dimensional polynomial clock/constraint
-kernel. The immediate gate is `BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION`;
-the total causal homotopy remains false until that block has sourced causal
-propagation.
+The retained causal witness is fixed as `T=alpha_B Box_1 F_spatial`. Its ghost
+and dual identity blocks factor exactly into two normally hyperbolic vector
+operators. The retained metric block has rank eight and a two-dimensional
+clock/constraint kernel, but that is no longer a principal obstruction.
+Support-locally reattaching the certified temporal/Weyl clock doublets and
+using the full diffeomorphism/Weyl companion gives the exact principal
+identities
+
+```text
+J H_4 + K_1 T = (zeta^2)^2 I_10
+T K_1           = (zeta^2)^2 I_5.
+```
+
+The immediate gate is therefore `BERGER_CURVED_CLOCK_REATTACHED_WITNESS`:
+lift this completion through all lower PBW orders, construct its causal Green
+homotopy on 34 rows, and transport it back through the clock SDR. Principal
+symbol agreement alone does not promote the causal theorem.
+
+### Unary-operator naming and audit boundary
+
+The historical JSON key `q1_blocks` denotes the **classical unary BV
+differential** \(\ell^{\rm cl}_1\). It is not the quantum loop correction
+often written \(\hbar Q_1\). Cross-team adapters and the eventual authoritative
+support-local export must expose it as `classical_unary_q1` (alias
+`ell_1_cl`) while retaining the historical key only for certificate
+compatibility.
+
+The producing Berger calculation derives the Bach PBW coefficients from the
+classical action and curved invariant-frame geometry. The independent
+consumer deliberately starts from the frozen PBW coefficient table and
+checks digests, adjoints, Noether compositions, cyclicity, and nilpotency. It
+does **not** independently rederive the Bach expansion from the action. These
+are two distinct audit layers and must not be conflated.
 
 ## Promotion rule
 

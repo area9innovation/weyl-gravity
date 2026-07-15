@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-clock-reattached-principal-witness-v1.schema.json",
+  "title": "Clock-reattached Berger principal witness",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "reattached_layout", "normalized_witness",
+    "principal_identities", "exact_checks", "flags", "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-clock-reattached-principal-witness-v1"},
+    "result_id": {"const": "BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "claim_status": {"const": "CERTIFIED_PRINCIPAL_COMPLETION_CURVED_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object"},
+    "reattached_layout": {"type": "object"},
+    "normalized_witness": {"type": "object"},
+    "principal_identities": {"type": "object"},
+    "exact_checks": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

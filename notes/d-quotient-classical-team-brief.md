@@ -226,14 +226,22 @@ average to a forbidden charged homogeneous tangent. Consequently
 for every smooth fixed-coupling linearized tangent, and the scoped verdict is
 `D_GAUGE`.  The nonzero background momentum is fixed by the compact lapse
 constraint; its pullback differential vanishes.
-`BERGER_RETAINED_MINIMAL_OPERATOR` is now complete. The exact local companion
-`T=alpha_B Box_1 F_spatial` also makes the ghost and identity endpoints Green
-hyperbolic as compositions of normally hyperbolic vector operators. The
-fourth-order metric block has rank eight plus a two-dimensional polynomial
-clock/constraint kernel. Thus the immediate gate is
-`BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION`, followed by the total causal
-homotopy, nonminimal reattachment, and the stability part of
-`FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
+`BERGER_RETAINED_MINIMAL_OPERATOR` is now complete. The retained companion
+`T=alpha_B Box_1 F_spatial` makes the ghost and identity endpoints Green
+hyperbolic as compositions of normally hyperbolic vector operators. Its
+rank-eight metric symbol is a presentation effect, not a principal no-go:
+support-locally reattaching the eight certified clock rows restores temporal
+diffeomorphism and Weyl incidence, and the normalized full companion obeys
+
+\[
+JH_4+K_1T=(\zeta^2)^2I_{10},\qquad
+TK_1=(\zeta^2)^2I_5.
+\]
+
+Thus the immediate gate is `BERGER_CURVED_CLOCK_REATTACHED_WITNESS`: derive
+the lower-order PBW completion, construct the causal 34-row homotopy, and
+transport it back through the clock SDR. Nonminimal reattachment and the
+stability part of `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT` remain downstream.
 
 ### Parked nonlinear support-local export
 
@@ -252,6 +260,14 @@ The handoff gate is named `CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT`. Reduced
 harmonic matrices, endpoint projections, or the homogeneous clock sector do
 not satisfy it. They may be imported only as regressions after the complete
 local export exists.
+
+For cross-team use, the unary operator must be exported under the semantic
+name `classical_unary_q1` (equivalently \(\ell^{\rm cl}_1\)). The existing
+`q1_blocks` key is a stable historical certificate field, not the quantum
+\(\hbar Q_1\). The export must also distinguish its two audit layers: the
+producer derives the Bach PBW expansion from the action, while the independent
+consumer verifies the frozen coefficients and their algebraic BV identities
+without independently rederiving the action Hessian.
 
 Begin with a conformally coupled scalar \(T\).  Define a domain on which it is a
 valid clock and construct complete observables
