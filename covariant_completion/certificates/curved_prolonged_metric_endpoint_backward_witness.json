@@ -1,0 +1,98 @@
+{
+  "D_end": {
+    "coefficient_sha256": {
+      "D_E": "a0683d12abaeaa2e69267f5c4ae25af266c45f6c8e4da53813639339396603dd",
+      "D_G": "17be0d9c3966998835715e5b8dacbefed487e89fc1817949ab6c1929774d75e8",
+      "D_I": "f28de529a6f36087a50dc438099042f3085a20690bdbe5ce7f6205abe3b14994",
+      "D_M": "83bf0133d0f128bff8d537ad2d63a468eced626bbc09f0a3c1d038929e4c8155"
+    },
+    "coefficientwise_complete": true,
+    "degreewise_blocks": {
+      "E": "2 Bach_bar+T_gf^sharp C_met=(D_M)^sharp",
+      "G": "T_gf K_met",
+      "I": "C_met T_gf^sharp=(D_G)^sharp",
+      "M": "2 Bach_bar+K_met T_gf=2H"
+    },
+    "formal_adjoint_defects": 0,
+    "identity": "D_end=Q_end W0+W0 Q_end",
+    "maximum_order": 4,
+    "off_diagonal_blocks": "zero"
+  },
+  "W0": {
+    "coefficient_sha256": {
+      "T_gf": "c9c7c45d1b7470a06cb8410680059c86a9b20f854f036a2f23e85ed27c793cc1",
+      "T_gf_sharp": "3fb6245297411bf4df58919850cfcbfd58cbf156d4b20c489260f9580661023e",
+      "middle_2I": "3defde02398172bb6283b4727632a9875f3a13e8774fe7382eec2bb5821911af"
+    },
+    "degree": -1,
+    "graded_cyclic": true,
+    "maximum_order": 3,
+    "nonzero_blocks": {
+      "E_to_M": "2 fibre-identification",
+      "I_to_E": "T_gf^sharp",
+      "M_to_G": "T_gf=(T_completed P_TF, trace/4)"
+    }
+  },
+  "causal_green_homotopy": false,
+  "coefficient_payload_sha256": "e684e93113de4ade8c43eb5d77cf0dd75975627e6d440c7eb056e0448950f6cf",
+  "curvature_causal_green_operators": false,
+  "dependency_sha256": {
+    "endpoint": "584e875444f303643d0408874a92bbe65ce61c07fc78122f00d037d776367771",
+    "field_biwave": "7f5dfb75276fa8cff88b2ff562cc31c457da1bc4bfe8410061a7b273fdd73d59",
+    "ghost_biwave": "d5832e7d0be7c062c03b0649073de7579b98c1fc11b0c770993bd985fc6f2d34",
+    "minimal_witness": "e91e0086c08bdcdc784ddea249d5c6557b62b78c8cb4c65101d2f5da95df2fe9"
+  },
+  "dependency_tag": "LORENTZIAN-CAUSAL",
+  "endpoint_green_filtration_input": {
+    "D_end_available_coefficientwise": true,
+    "all_exported": true,
+    "formula_for_relative_saddle": "S_end=D_end-C B",
+    "required_exported_tables": [
+      "D_G",
+      "D_M",
+      "D_E",
+      "D_I",
+      "K_T_gf"
+    ]
+  },
+  "endpoint_order": [
+    "G[5]",
+    "M[10]",
+    "E[10]",
+    "I[5]"
+  ],
+  "fail_closed": true,
+  "ghost_block": {
+    "Weyl_scalar_completion": "pointwise identity",
+    "curved_lower_order_coefficients_included": true,
+    "matrix_form": [
+      [
+        "Box(Box+2) I_4",
+        "0"
+      ],
+      [
+        "(1/2) div",
+        "I_1"
+      ]
+    ],
+    "vector_factorization": [
+      "Box+Ric",
+      "Box-Ric+2"
+    ]
+  },
+  "prolonged_green_witness": false,
+  "proof_boundary": "W0 and D_end are exact algebraic differential-operator data; this certificate does not prove that D_end or a relative saddle has advanced/retarded inverses",
+  "schema": "pure-weyl-prolonged-metric-endpoint-backward-witness-v1",
+  "status_flags_promoted": [],
+  "support": {
+    "Green_operator": false,
+    "finite_order": true,
+    "inverse_Laplacian_or_curl": false,
+    "maximum_order": 4,
+    "spectral_or_helicity_projector": false
+  },
+  "warranted_atomic_flags": [
+    "endpoint_canonical_backward_witness_exact",
+    "endpoint_D_end_coefficientwise_exact"
+  ]
+}
