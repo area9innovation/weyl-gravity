@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-retained-minimal-operator-preflight-v1.schema.json",
+  "title": "Retained Berger minimal-operator preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "layout_ref", "coefficient_ring", "formal_adjoint", "action_inputs",
+    "covariant_normal_form", "matrices", "exact_checks",
+    "nonconformally_flat_guard", "flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-minimal-operator-preflight-v1"},
+    "result_id": {"const": "BERGER_RETAINED_MINIMAL_OPERATOR_PREFLIGHT"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "claim_status": {"const": "PARTIAL_ACTION_DERIVED_OPERATOR"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "layout_ref": {"type": "object"},
+    "coefficient_ring": {"type": "string", "minLength": 1},
+    "formal_adjoint": {"type": "object"},
+    "action_inputs": {"type": "object"},
+    "covariant_normal_form": {"type": "object"},
+    "matrices": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "K_spatial_full_frame_symbol",
+        "minus_K_spatial_sharp_full_frame_symbol",
+        "Bach_fourth_order_principal",
+        "matter_second_order_covariant_symbol",
+        "matter_zero_order_covariant",
+        "known_Bach_order4_plus_matter_order2"
+      ]
+    },
+    "exact_checks": {"type": "object"},
+    "nonconformally_flat_guard": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "BERGER_LINEARIZED_BACH_PBW_EXPANSION"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
