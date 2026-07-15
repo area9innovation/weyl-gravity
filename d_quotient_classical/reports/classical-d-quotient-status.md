@@ -48,6 +48,14 @@ transfers this dynamics to metric/constraint rows rather than deleting it.
 Thus the homogeneous reference clock remains valid, but its promotion to a
 globally regular positive local matter clock is obstructed.
 
+The first positive-sign stealth repair is now exhausted on the homogeneous
+sector. With the complete quartic Weyl-invariant potential, every nonzero
+stress-free trajectory requires a negative quartic and is, up to sign and
+time translation, \(T=\sqrt{-2/\kappa}\sec(t-t_0)\). It has positive kinetic
+sign but an unbounded potential, a turning point, and finite-time poles.
+Hence no globally regular homogeneous positive-sign stealth clock exists.
+Inhomogeneous stealth and non-conformally-flat backreaction remain open.
+
 The present charge audit composes the exact reduced-mode moment map with the
 already-certified Lorentzian current comparison, so it is tagged
 `REDUCED-MODE` and `LORENTZIAN-CAUSAL`. This does not classify any new
@@ -125,8 +133,8 @@ status promotion.
 ## Next gates
 
 1. Construct either a positive-energy clock on a genuinely
-   non-conformally-flat Bach-sourced background or a regular stress-free
-   conformal/stealth clock.
+   non-conformally-flat Bach-sourced background or an inhomogeneous
+   stress-free clock with timelike nonvanishing gradient.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
 3. Compute the first background-deformation obstruction and a quantitative
@@ -152,6 +160,8 @@ python3 d_quotient_classical/composite_clock/neutral_conformal_clock.py --check 
 python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_conformal_clock
 python3 d_quotient_classical/composite_clock/neutral_clock_bv_health.py --check --guards
 python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_clock_bv_health
+python3 d_quotient_classical/scalar_clock/homogeneous_stealth_clock.py --check --guards
+python3 -m unittest d_quotient_classical.scalar_clock.tests.test_homogeneous_stealth_clock
 ```
 
 No full-suite result is implied by the scoped checks.

@@ -372,8 +372,9 @@ def validate_record(record: object) -> list[str]:
                 "scalar_clock_vertical_slice",
                 "neutral_conformal_clock_pair",
                 "neutral_clock_bv_health_audit",
+                "homogeneous_positive_conformal_stealth_clock",
             ]:
-                errors.append("$.work_packages.relational_clock: partial replacement requires the obstruction, clock, and health certificates")
+                errors.append("$.work_packages.relational_clock: partial replacement requires the one-scalar, neutral-pair, health, and homogeneous-stealth certificates")
             if not isinstance(scalar_setting, dict):
                 errors.append("$.settings: missing scalar-clock setting")
             elif scalar_setting.get("verdict") is not None or scalar_setting.get("assessment_status") != "OPEN":
@@ -464,6 +465,14 @@ def _mutation_guards(record: dict[str, Any]) -> list[str]:
         "neutral_conformal_clock_pair"
     ]
     rejected("single_scalar_obstruction_erased", mutant)
+
+    mutant = deepcopy(record)
+    mutant["work_packages"]["relational_clock"]["evidence_refs"] = [
+        "scalar_clock_vertical_slice",
+        "neutral_conformal_clock_pair",
+        "neutral_clock_bv_health_audit",
+    ]
+    rejected("homogeneous_stealth_obstruction_erased", mutant)
     return failures
 
 
@@ -491,7 +500,7 @@ def main() -> int:
             for failure in failures:
                 print(f"mutation guard failed: {failure}", file=sys.stderr)
             return 1
-        print("mutation guards: 8/8 PASS")
+        print("mutation guards: 9/9 PASS")
     print(f"{args.certificate}: PASS")
     return 0
 

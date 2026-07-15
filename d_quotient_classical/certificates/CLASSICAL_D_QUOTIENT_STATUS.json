@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split and the homogeneous neutral two-scalar clock sector on their separately declared reduced-mode phase spaces. A local health audit proves that the neutral clock's opposite-sign ratio sector is not globally positive or entirely contractible; this does not alter the scoped homogeneous D_GAUGE verdict. No healthy inhomogeneous matter, interacting, boundary, quantum, or universal D verdict is promoted.",
+  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split and the homogeneous neutral two-scalar clock sector on their separately declared reduced-mode phase spaces. Local audits prove both that the neutral clock's opposite-sign ratio sector is not globally positive or entirely contractible and that every nonzero homogeneous positive-sign quartic stealth scalar is a finite-time singular secant branch. These do not alter the scoped homogeneous D_GAUGE verdict or rule out inhomogeneous stealth and non-conformally-flat backreaction. No healthy inhomogeneous matter, interacting, boundary, quantum, or universal D verdict is promoted.",
   "claim_state": "PARTIAL",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -92,12 +92,22 @@
       "evidence_id": "neutral_clock_bv_health_audit",
       "path": "d_quotient_classical/certificates/NEUTRAL_CLOCK_BV_HEALTH_AUDIT.json",
       "sha256": "182488e9efd280ed09c0c6d76a7699c64f822f23e79d0a877c5b439b66d56392"
+    },
+    {
+      "claim_scope": "Complete homogeneous classification for one positive-sign conformal scalar with quartic Weyl-invariant potential: the only nonzero stealth branches are finite-time singular secant trajectories and cannot define a global clock.",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "evidence_id": "homogeneous_positive_conformal_stealth_clock",
+      "path": "d_quotient_classical/certificates/HOMOGENEOUS_POSITIVE_CONFORMAL_STEALTH_CLOCK.json",
+      "sha256": "cbb5b579093afdc908c1a99c965db1c4140fe7037e42c32f2d03e859a909e12d"
     }
   ],
   "open_fields": [
     "sufficiency of the quadratic Taub zero fibre for all-order nonlinear integrability",
     "closure and possible algebroid structure of zero-charge transformations",
-    "positive-energy clock on a genuinely non-conformally-flat Bach-sourced background or a regular stress-free stealth clock",
+    "inhomogeneous stress-free clock with timelike nonvanishing gradient or a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background",
     "Yang-Mills matter contribution",
     "quantitative weak-background stability radius",
     "Lorentzian dS/AdS boundary charges",
@@ -600,6 +610,22 @@
       "higher_tiers_not_run": "Positive-energy non-conformally-flat and stealth alternatives are separate future models.",
       "status": "PASS",
       "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/scalar_clock/homogeneous_stealth_clock.py --check --guards",
+      "elapsed_seconds": 0.7,
+      "escalation_criterion": "Escalate if the exact stress, secant-family exhaustiveness, finite-time pole, or scope guards change.",
+      "higher_tiers_not_run": "The theorem classifies only homogeneous positive-sign quartic conformal stealth fields; inhomogeneous stealth and non-conformally-flat backreaction remain open.",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.scalar_clock.tests.test_homogeneous_stealth_clock",
+      "elapsed_seconds": 0.27,
+      "escalation_criterion": "Escalate if the local stealth branch, global regularity obstruction, or surviving parent gate changes.",
+      "higher_tiers_not_run": "No inhomogeneous PDE, all-row BV, or backreacted-background claim is made.",
+      "status": "PASS",
+      "test_tier": 1
     }
   ],
   "work_packages": {
@@ -632,7 +658,7 @@
       "evidence_refs": [
         "compact_d_charge"
       ],
-      "next_gate": "Construct a positive-energy clock on a non-conformally-flat Bach-sourced background or a regular stress-free stealth clock.",
+      "next_gate": "Construct an inhomogeneous regular stealth clock or a positive-energy clock on a non-conformally-flat Bach-sourced background.",
       "result": "The compact vacuum cylinder is sector-dependent: D is charged on P_lin and gauge only after restriction to and quotient by the full Taub-zero derived sector.",
       "status": "CERTIFIED"
     },
@@ -644,10 +670,11 @@
       "evidence_refs": [
         "scalar_clock_vertical_slice",
         "neutral_conformal_clock_pair",
-        "neutral_clock_bv_health_audit"
+        "neutral_clock_bv_health_audit",
+        "homogeneous_positive_conformal_stealth_clock"
       ],
-      "next_gate": "Construct a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background or a regular stress-free stealth clock.",
-      "result": "The one-real-scalar candidate is obstructed. The neutral (+,-) pair is an exact homogeneous compact-D clock with scoped D_GAUGE verdict, but its Weyl-reduced ratio mode retains derivatives and every neutral winding orbit crosses four kinetic-sign degeneracies. The homogeneous reference theorem survives; promotion to a healthy local physical clock is obstructed.",
+      "next_gate": "Construct an inhomogeneous stress-free clock with timelike nonvanishing gradient or a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background.",
+      "result": "The free one-real-scalar candidate is obstructed. The neutral (+,-) pair is an exact homogeneous compact-D clock with scoped D_GAUGE verdict, but its Weyl-reduced ratio mode retains derivatives and every neutral winding orbit crosses four kinetic-sign degeneracies. The homogeneous positive-sign quartic stealth family is now classified too: nonzero branches exist only for a negative quartic and are secant trajectories with a turning point and finite-time poles. The neutral reference theorem survives; no healthy global homogeneous physical clock has been found.",
       "status": "PARTIAL"
     }
   }

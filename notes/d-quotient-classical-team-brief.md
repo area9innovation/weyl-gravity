@@ -143,10 +143,14 @@ every neutral winding orbit crosses four kinetic degeneracies. The homogeneous
 clock theorem remains valid, but `FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION` fails
 as a globally regular positive clock.
 
-The next clock gate is
-`POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK`: use a genuinely
-Bach-sourced non-conformally-flat background or a regular stress-free stealth
-field, without a freely propagating opposite-sign reference scalar.
+The homogeneous positive-sign stealth alternative is now classified too. For
+the complete quartic Weyl-invariant potential, every nonzero homogeneous
+stealth branch is a secant trajectory with a turning point and finite-time
+poles. The next clock gate is
+`INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK`: use a genuinely
+Bach-sourced non-conformally-flat background or an inhomogeneous stress-free
+field with timelike nonvanishing gradient, without a freely propagating
+opposite-sign reference scalar.
 
 ### Parked nonlinear support-local export
 
