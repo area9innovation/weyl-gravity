@@ -46,21 +46,28 @@ For each new result, send one machine-readable contribution conforming to
 
 Team-specific priorities:
 
-- **Classical:** own the canonical conformally coupled scalar BV/clock model,
-  monotone clock domain, total improved symplectic form, and total \(D\) charge.
-- **Einstein/boundary:** use that same clock model where relevant; otherwise
+- **Classical:** own the replacement backreacted, composite/two-field, or
+  reference-matter BV/clock model, its clock domain, total improved
+  symplectic form, and total \(D\) charge.
+- **Einstein/boundary:** import the single-scalar obstruction and use only a
+  certified replacement clock where relevant; otherwise
   complete one real boundary-preserving full-Bach phase space and compute the
   selected generator's charge and flux.
-- **Nonlinear:** import the classical model and tensors by hash, complete the
+- **Nonlinear:** import the classical obstruction and any replacement tensors
+  by hash, complete the
   support-local \(q_2\) export, and compute the first interacting
   \(D\)-Cartan defect or correction.
-- **Quantum:** import the same classical setting by hash, construct the
+- **Quantum:** import the same classical obstruction/replacement setting by
+  hash, construct the
   renormalized observable algebra, and classify the first Ward/QME obstruction
   without promoting the classical verdict.
 
-The immediate shared gate is `SCALAR_CLOCK_VERTICAL_SLICE`.  The classical
-team defines it once; the other teams consume it rather than independently
-inventing four scalar-clock theories.
+`SCALAR_CLOCK_VERTICAL_SLICE` is now certified as obstructed for one real
+conformal scalar on the exact vacuum cylinder. The replacement shared gate is
+`BACKREACTED_OR_COMPOSITE_CLOCK_MODEL`. Do not reuse the obstructed
+background. The classical team defines one backreacted, composite/two-field,
+or separately declared reference-matter model; the other teams consume it by
+hash rather than independently inventing four clock theories.
 
 Paper IX remains reserved until the scalar-clock theorem and at least one
 boundary or interaction theorem are certified.  Paper X remains reserved for

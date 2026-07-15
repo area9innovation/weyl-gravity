@@ -68,8 +68,12 @@ the classical, Einstein/boundary, nonlinear, and quantum investigations by
 generator, phase space, boundary conditions, and lifecycle layer.  The
 underlying compact charge audit remains in
 [`d_quotient_classical/`](d_quotient_classical/README.md).  Paper IX is
-reserved, but is not promoted until the scalar-clock gate and at least one
-boundary or interaction theorem land.
+reserved. The one-real-scalar exact-cylinder clock gate is now a certified
+no-go: a nonzero homogeneous clock has positive improved stress incompatible
+with the Bach-flat vacuum cylinder, while the only compatible background has
+zero linearized clock incidence. This supplies the scalar-clock scope half of
+the gate; Paper IX still waits for at least one complete boundary or
+interaction theorem.
 
 General-audience article:
 [`Before Worrying About a Gravitational Ghost, Ask Whether It Is Really There`](paper/before-worrying-about-a-gravitational-ghost.md)

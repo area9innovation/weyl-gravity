@@ -108,6 +108,23 @@ basis.
 
 ## Work package C-D3: add a relational clock
 
+### Current one-scalar resolution
+
+The first candidate is now certified as obstructed on the exact vacuum
+cylinder. For one real conformally coupled scalar the Weyl-invariant
+homogeneous variable \(\chi=aT\) obeys \(\ddot\chi+\chi=0\), supplies exact
+local clock charts, and has positive improved charge
+\(H_D^T=(\dot\chi^2+\chi^2)/2\). Its improved stress is nonzero on every clock
+orbit, whereas the exact cylinder Bach tensor vanishes. Hence no nonzero
+homogeneous scalar clock is a coupled background there. At the only
+compatible background \(\bar T=0\), the linearized scalar gauge incidence
+vanishes and cannot fix \(D\).
+
+The replacement gate is `BACKREACTED_OR_COMPOSITE_CLOCK_MODEL`: use a
+genuinely backreacted scalar geometry, a Weyl-invariant composite/two-field
+clock, or separately declared reference matter. Do not reuse the obstructed
+background in downstream work.
+
 Begin with a conformally coupled scalar \(T\).  Define a domain on which it is a
 valid clock and construct complete observables
 

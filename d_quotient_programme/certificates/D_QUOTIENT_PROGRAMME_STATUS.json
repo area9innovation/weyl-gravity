@@ -16,20 +16,20 @@
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
   "next_shared_gate": {
-    "gate_id": "SCALAR_CLOCK_VERTICAL_SLICE",
+    "gate_id": "BACKREACTED_OR_COMPOSITE_CLOCK_MODEL",
     "owner_order": [
       "classical",
       "nonlinear",
       "quantum",
       "einstein_boundary"
     ],
-    "rule": "Define one canonical conformal-scalar BV model and clock domain; downstream teams import it by hash rather than rebuilding it."
+    "rule": "Do not reuse the obstructed one-real-scalar exact-cylinder background; construct one backreacted, composite/two-field, or separately declared reference-matter clock and make downstream teams import it by hash."
   },
-  "programme_base_commit": "f9fc64455245706a3c107d37ce9bbedeb87cded9",
+  "programme_base_commit": "0e1ca9aadeb119597ccbf52530d3a8577cc3494f",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
-      "promotion_gate": "scalar-clock theorem plus at least one boundary or interaction theorem",
+      "promotion_gate": "certified scalar-clock scope theorem (the single-scalar no-go now qualifies) plus at least one complete boundary or interaction theorem",
       "status": "RESERVED_NOT_STARTED",
       "working_title": "When Is Cylinder Time Gauge? Taub Constraints, Relational Clocks, and Residual Reduction in Weyl Gravity"
     },
@@ -42,7 +42,7 @@
   },
   "registry_hashes": {
     "generator_registry": "1df39af78cdd49eeb64faa2d46134542e9bb75a598f0dde98932657a682525de",
-    "phase_space_registry": "947726ced24f415c741bd597ef3513c384745997832ec8e6cccf819af305eeeb"
+    "phase_space_registry": "6c0624729039f6d7d99d87b9b13115b787ed1737560335c6658ad0db5bbb617d"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -76,13 +76,13 @@
       "verdict": "D_GAUGE"
     },
     {
-      "boundary_conditions": "not yet declared",
+      "boundary_conditions": "closed unit S3; exact vacuum-cylinder one-real-scalar candidate",
       "generator_id": "D_compact",
       "lifecycle_layer": "CLASSICAL_CHARGE",
       "phase_space_id": "compact_scalar_clock",
       "setting_id": "compact_scalar_clock",
-      "status": "OPEN",
-      "verdict": null
+      "status": "BLOCKED",
+      "verdict": "SINGLE_SCALAR_CLOCK_BACKGROUND_OBSTRUCTED"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -149,6 +149,50 @@
     }
   ],
   "team_contributions": [
+    {
+      "path": "d_quotient_programme/contributions/classical-scalar-clock-vertical-slice.json",
+      "payload": {
+        "boundary_conditions": "closed unit S3; exact vacuum conformal-cylinder metric; one real conformally coupled scalar candidate; no surface flux",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the Weyl-invariant homogeneous variable chi=aT obeys ddot(chi)+chi=0 and has only branch-local monotone clock charts",
+          "the improved scalar charge H_D^T=(dot(chi)^2+chi^2)/2 is positive on every nonzero clock orbit",
+          "explicit local complete observables and a nonzero reduced Poisson bracket exist in the scoped negative-sign E-like fixture",
+          "every nonzero homogeneous scalar clock has positive improved stress while the exact vacuum cylinder has zero Bach tensor",
+          "the only compatible homogeneous scalar background is T_bar=0, where the linearized Diff x Weyl scalar incidence vanishes"
+        ],
+        "evidence": {
+          "commit": "704787c06de9e3746c1230e130bb652cb787a825",
+          "path": "d_quotient_classical/certificates/SCALAR_CLOCK_VERTICAL_SLICE.json",
+          "sha256": "de30ec828943d8c20be7e36bb523deb4d31f74e817bce92cf6d9374e80ab2948"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "CLASSICAL_CHARGE",
+        "next_gate": "construct a genuinely backreacted scalar-pure-Weyl background, a Weyl-invariant composite/two-field clock, or a separately declared reference-matter clock model",
+        "not_established": [
+          "a backreacted scalar-pure-Weyl clock background or its phase space",
+          "a Weyl-invariant composite or two-field clock model",
+          "a full coupled BV deformation retract or causal Green complex",
+          "a D_GAUGE or D_CHARGED verdict on a consistent scalar-clock phase space",
+          "interacting, boundary, or quantum stability"
+        ],
+        "phase_space_id": "compact_scalar_clock",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_scalar_clock",
+        "team_id": "classical",
+        "verdict": "SINGLE_SCALAR_CLOCK_BACKGROUND_OBSTRUCTED",
+        "verification_commands": [
+          "python3 d_quotient_classical/scalar_clock/conformal_scalar_clock.py --check --guards",
+          "python3 -m unittest d_quotient_classical.scalar_clock.tests.test_conformal_scalar_clock",
+          "python3 d_quotient_classical/verify_classical_status.py --guards"
+        ]
+      },
+      "sha256": "6af07a9333fb2362733a53339d3398d5e8ca4ea262370c3589b996e706a1ffd3"
+    },
     {
       "path": "d_quotient_programme/contributions/einstein-ed1a-asymptotic-generator-gate.json",
       "payload": {
@@ -234,9 +278,9 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "926e03ce07b3bff437cd942587837504a44fc8fb",
+      "commit": "704787c06de9e3746c1230e130bb652cb787a825",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "495de6865c8aa7bceb32a55769cd4f912da6d67035e899b8571843ab504457af"
+      "sha256": "9aa1d40baeafc63ba75a0c96ccbe084bb8181f08713f41c1b7d4fe25faebf867"
     },
     "einstein_boundary": {
       "commit": "89acca36479ebaea069c21eb23517dc6b1b49389",
@@ -256,11 +300,11 @@
   },
   "team_status": [
     {
-      "established": "D_compact is charged on compact_P_lin and gauge on compact_P_Taub0/compact_P_der.",
-      "next_gate": "canonical conformal-scalar clock model and total improved D charge",
-      "result_state": "PARTIAL_WITH_COMPACT_SECTOR_SPLIT_CERTIFIED",
+      "established": "D_compact is charged on compact_P_lin and gauge on compact_P_Taub0/compact_P_der; the one-real-scalar exact-cylinder clock background is obstructed.",
+      "next_gate": "backreacted scalar geometry, Weyl-invariant composite/two-field clock, or separately declared reference matter",
+      "result_state": "PARTIAL_WITH_COMPACT_SPLIT_AND_SINGLE_SCALAR_NO_GO",
       "team_id": "classical",
-      "verdict": "SECTOR_DEPENDENT"
+      "verdict": "SECTOR_DEPENDENT_WITH_SINGLE_SCALAR_CLOCK_OBSTRUCTION"
     },
     {
       "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem.",
@@ -277,8 +321,8 @@
       "verdict": "INPUT_GATE_BLOCKED"
     },
     {
-      "established": "classical sector split imported by content hash without quantum promotion",
-      "next_gate": "construct the renormalized observable algebra and classify the first D-Ward obstruction",
+      "established": "the pre-scalar classical compact split is imported by content hash without quantum promotion; the new scalar no-go is not yet imported",
+      "next_gate": "import the scalar-clock obstruction hash, then construct the renormalized observable algebra and classify the first D-Ward obstruction",
       "result_state": "ALGEBRAIC_ENGINE_READY_ANALYTIC_FRAMEWORK_MISSING",
       "team_id": "quantum",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"

@@ -1,0 +1,40 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_scalar_clock",
+  "generator_id": "D_compact",
+  "phase_space_id": "compact_scalar_clock",
+  "boundary_conditions": "closed unit S3; exact vacuum conformal-cylinder metric; one real conformally coupled scalar candidate; no surface flux",
+  "lifecycle_layer": "CLASSICAL_CHARGE",
+  "claim_status": "CERTIFIED",
+  "verdict": "SINGLE_SCALAR_CLOCK_BACKGROUND_OBSTRUCTED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "the Weyl-invariant homogeneous variable chi=aT obeys ddot(chi)+chi=0 and has only branch-local monotone clock charts",
+    "the improved scalar charge H_D^T=(dot(chi)^2+chi^2)/2 is positive on every nonzero clock orbit",
+    "explicit local complete observables and a nonzero reduced Poisson bracket exist in the scoped negative-sign E-like fixture",
+    "every nonzero homogeneous scalar clock has positive improved stress while the exact vacuum cylinder has zero Bach tensor",
+    "the only compatible homogeneous scalar background is T_bar=0, where the linearized Diff x Weyl scalar incidence vanishes"
+  ],
+  "not_established": [
+    "a backreacted scalar-pure-Weyl clock background or its phase space",
+    "a Weyl-invariant composite or two-field clock model",
+    "a full coupled BV deformation retract or causal Green complex",
+    "a D_GAUGE or D_CHARGED verdict on a consistent scalar-clock phase space",
+    "interacting, boundary, or quantum stability"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/SCALAR_CLOCK_VERTICAL_SLICE.json",
+    "commit": "704787c06de9e3746c1230e130bb652cb787a825",
+    "sha256": "de30ec828943d8c20be7e36bb523deb4d31f74e817bce92cf6d9374e80ab2948"
+  },
+  "verification_commands": [
+    "python3 d_quotient_classical/scalar_clock/conformal_scalar_clock.py --check --guards",
+    "python3 -m unittest d_quotient_classical.scalar_clock.tests.test_conformal_scalar_clock",
+    "python3 d_quotient_classical/verify_classical_status.py --guards"
+  ],
+  "next_gate": "construct a genuinely backreacted scalar-pure-Weyl background, a Weyl-invariant composite/two-field clock, or a separately declared reference-matter clock model"
+}

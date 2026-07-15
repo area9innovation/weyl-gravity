@@ -18,6 +18,7 @@ CERTIFICATE = PACKAGE / "certificates" / "D_QUOTIENT_PROGRAMME_STATUS.json"
 REPORT = PACKAGE / "reports" / "consolidated-status.md"
 GENERATOR_REGISTRY = PACKAGE / "registry" / "generators.json"
 PHASE_REGISTRY = PACKAGE / "registry" / "phase_spaces.json"
+CLASSICAL_SCALAR_CLOCK_CONTRIBUTION = PACKAGE / "contributions" / "classical-scalar-clock-vertical-slice.json"
 NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
 EINSTEIN_ED1A_CONTRIBUTION = PACKAGE / "contributions" / "einstein-ed1a-asymptotic-generator-gate.json"
 
@@ -27,6 +28,9 @@ TEAM_PATHS = {
     "nonlinear": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
     "quantum": "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json",
 }
+PRE_SCALAR_CLASSICAL_STATUS_HASH = (
+    "495de6865c8aa7bceb32a55769cd4f912da6d67035e899b8571843ab504457af"
+)
 
 
 def _sha256_bytes(data: bytes) -> str:
@@ -81,6 +85,20 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
         == {"D_CHARGED", "D_GAUGE"}
     ):
         raise AssertionError("compact classical sector split drifted")
+    scalar_setting = next(
+        row
+        for row in classical["settings"]
+        if row["setting_id"] == "cylinder_scalar_clock"
+    )
+    if not (
+        scalar_setting["assessment_status"] == "OPEN"
+        and scalar_setting["verdict"] is None
+        and classical["work_packages"]["relational_clock"]["status"]
+        == "OBSTRUCTED"
+        and classical["work_packages"]["relational_clock"]["evidence_refs"]
+        == ["scalar_clock_vertical_slice"]
+    ):
+        raise AssertionError("classical scalar-clock obstruction scope drifted")
 
     einstein = data["einstein_boundary"]
     if not (
@@ -119,8 +137,10 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
     imported_hash = quantum["provenance"]["dependency_manifest"].get(
         "classical_D_quotient_status"
     )
-    if imported_hash != classical_hash:
-        raise AssertionError("quantum team has not imported the current classical split")
+    if imported_hash not in {classical_hash, PRE_SCALAR_CLASSICAL_STATUS_HASH}:
+        raise AssertionError("quantum team classical import is neither current nor the certified pre-scalar baseline")
+    if imported_hash != classical_hash and quantum["setting_ledger"][0]["verdict"] != "ANALYTIC_FRAMEWORK_MISSING":
+        raise AssertionError("quantum result promoted without importing the current scalar-clock status")
 
 
 def _nonlinear_nd1_contribution() -> dict[str, Any]:
@@ -146,6 +166,32 @@ def _nonlinear_nd1_contribution() -> dict[str, Any]:
         raise AssertionError("nonlinear ND1 contribution evidence is incomplete")
     if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
         raise AssertionError("nonlinear ND1 contribution evidence hash drifted")
+    return contribution
+
+
+def _classical_scalar_clock_contribution() -> dict[str, Any]:
+    contribution = _load(CLASSICAL_SCALAR_CLOCK_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "classical"
+        and contribution.get("setting_id") == "compact_scalar_clock"
+        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("phase_space_id") == "compact_scalar_clock"
+        and contribution.get("lifecycle_layer") == "CLASSICAL_CHARGE"
+        and contribution.get("claim_status") == "CERTIFIED"
+        and contribution.get("verdict")
+        == "SINGLE_SCALAR_CLOCK_BACKGROUND_OBSTRUCTED"
+        and contribution.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    ):
+        raise AssertionError("classical scalar-clock contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path = evidence.get("path")
+    commit = evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("classical scalar-clock evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("classical scalar-clock evidence hash drifted")
     return contribution
 
 
@@ -178,6 +224,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     team_data = {team: _load_team_input(path) for team, path in TEAM_PATHS.items()}
     _assert_team_inputs(team_data)
     inputs = {team: _team_input(path) for team, path in TEAM_PATHS.items()}
+    scalar_clock_contribution = _classical_scalar_clock_contribution()
     ed1a_contribution = _einstein_ed1a_contribution()
     nd1_contribution = _nonlinear_nd1_contribution()
     return {
@@ -198,6 +245,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "team_inputs": inputs,
         "team_contributions": [
             {
+                "path": str(CLASSICAL_SCALAR_CLOCK_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(CLASSICAL_SCALAR_CLOCK_CONTRIBUTION),
+                "payload": scalar_clock_contribution,
+            },
+            {
                 "path": str(EINSTEIN_ED1A_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(EINSTEIN_ED1A_CONTRIBUTION),
                 "payload": ed1a_contribution,
@@ -211,10 +263,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "team_status": [
             {
                 "team_id": "classical",
-                "result_state": "PARTIAL_WITH_COMPACT_SECTOR_SPLIT_CERTIFIED",
-                "verdict": "SECTOR_DEPENDENT",
-                "established": "D_compact is charged on compact_P_lin and gauge on compact_P_Taub0/compact_P_der.",
-                "next_gate": "canonical conformal-scalar clock model and total improved D charge",
+                "result_state": "PARTIAL_WITH_COMPACT_SPLIT_AND_SINGLE_SCALAR_NO_GO",
+                "verdict": "SECTOR_DEPENDENT_WITH_SINGLE_SCALAR_CLOCK_OBSTRUCTION",
+                "established": "D_compact is charged on compact_P_lin and gauge on compact_P_Taub0/compact_P_der; the one-real-scalar exact-cylinder clock background is obstructed.",
+                "next_gate": "backreacted scalar geometry, Weyl-invariant composite/two-field clock, or separately declared reference matter",
             },
             {
                 "team_id": "einstein_boundary",
@@ -234,8 +286,8 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "team_id": "quantum",
                 "result_state": "ALGEBRAIC_ENGINE_READY_ANALYTIC_FRAMEWORK_MISSING",
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
-                "established": "classical sector split imported by content hash without quantum promotion",
-                "next_gate": "construct the renormalized observable algebra and classify the first D-Ward obstruction",
+                "established": "the pre-scalar classical compact split is imported by content hash without quantum promotion; the new scalar no-go is not yet imported",
+                "next_gate": "import the scalar-clock obstruction hash, then construct the renormalized observable algebra and classify the first D-Ward obstruction",
             },
         ],
         "setting_ledger": [
@@ -270,10 +322,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "setting_id": "compact_scalar_clock",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_scalar_clock",
-                "boundary_conditions": "not yet declared",
+                "boundary_conditions": "closed unit S3; exact vacuum-cylinder one-real-scalar candidate",
                 "lifecycle_layer": "CLASSICAL_CHARGE",
-                "status": "OPEN",
-                "verdict": None,
+                "status": "BLOCKED",
+                "verdict": "SINGLE_SCALAR_CLOCK_BACKGROUND_OBSTRUCTED",
             },
             {
                 "setting_id": "compact_selected_residual_HT1_q2",
@@ -354,7 +406,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "paper_IX": {
                 "status": "RESERVED_NOT_STARTED",
                 "working_title": "When Is Cylinder Time Gauge? Taub Constraints, Relational Clocks, and Residual Reduction in Weyl Gravity",
-                "promotion_gate": "scalar-clock theorem plus at least one boundary or interaction theorem",
+                "promotion_gate": "certified scalar-clock scope theorem (the single-scalar no-go now qualifies) plus at least one complete boundary or interaction theorem",
             },
             "paper_X": {
                 "status": "RESERVED_NOT_STARTED",
@@ -363,9 +415,9 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
         },
         "next_shared_gate": {
-            "gate_id": "SCALAR_CLOCK_VERTICAL_SLICE",
+            "gate_id": "BACKREACTED_OR_COMPOSITE_CLOCK_MODEL",
             "owner_order": ["classical", "nonlinear", "quantum", "einstein_boundary"],
-            "rule": "Define one canonical conformal-scalar BV model and clock domain; downstream teams import it by hash rather than rebuilding it.",
+            "rule": "Do not reuse the obstructed one-real-scalar exact-cylinder background; construct one backreacted, composite/two-field, or separately declared reference-matter clock and make downstream teams import it by hash.",
         },
         "claim_boundary": (
             "The dossier consolidates sector-indexed results. It does not promote a "
@@ -399,6 +451,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_unrestricted": "D_CHARGED",
         "compact_taub_zero": "D_GAUGE",
         "compact_derived_residual": "D_GAUGE",
+        "compact_scalar_clock": "SINGLE_SCALAR_CLOCK_BACKGROUND_OBSTRUCTED",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -451,7 +504,9 @@ There is no universal yes/no verdict for \(D\).  The authoritative claim key is
 The compact result is sector-dependent: \(D\) is charged on the unrestricted
 locally reduced linearized space, and it becomes gauge only after restriction
 to the full Taub/moment-map zero fibre and the selected derived quotient.
-Boundary, nonlinear, and quantum questions are separate gates.
+The first one-real-scalar exact-cylinder clock candidate is obstructed before
+a coupled phase space exists. Boundary, nonlinear, and quantum questions are
+separate gates.
 
 ## Four-team ledger
 
@@ -485,8 +540,7 @@ Paper X remains reserved for interaction/quantum stability after its separate
 classical-export and QME gates.
 
 The immediate shared calculation is
-`{data['next_shared_gate']['gate_id']}`: define one canonical conformal-scalar
-BV/clock model, then make every downstream team import it by content hash.
+`{data['next_shared_gate']['gate_id']}`: {data['next_shared_gate']['rule']}
 
 ## Imported evidence
 
@@ -527,6 +581,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
     mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_unrestricted")["verdict"] = "D_GAUGE"
     reject("erase_compact_charge", mutant)
+
+    mutant = deepcopy(data)
+    next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_scalar_clock")["verdict"] = "D_GAUGE"
+    reject("erase_single_scalar_clock_obstruction", mutant)
 
     mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_quantum")["verdict"] = "CARTAN_QUANTUM_EXACT"
@@ -584,7 +642,7 @@ def main() -> int:
         failures = mutation_guards(data)
         if failures:
             raise AssertionError("mutation guards failed: " + ", ".join(failures))
-        print("mutation guards: 6/6 PASS")
+        print("mutation guards: 7/7 PASS")
     print(CERTIFICATE, "PASS")
     return 0
 
