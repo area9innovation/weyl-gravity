@@ -1,0 +1,148 @@
+{
+  "Q_end": {
+    "Q_end_squared": "zero",
+    "all_curved_lower_order_coefficients_emitted": true,
+    "coefficient_sha256": {
+      "Bach_bar": "9a0342b3e6f6819a6846ee9f4a2e90d49aa1d6dd109e9b569494c95abb9c6bdc",
+      "C_met": "4d6ac27fa5bcec2e6534e8dc5775f8702c173ae00ddf95e419cc4f5a12ccb7b5",
+      "K_met": "3f650a346ce90160d8810fee3471a57d684e29408d8cbefcac4fb3b24c18eb0d"
+    },
+    "formal_adjoint_defects": 0,
+    "formula": "p_end Q_prol j_end=Q_met",
+    "lower_square": "Bach K_met=0 by exhaustive curved gauge jets",
+    "maximum_orders": [
+      1,
+      4,
+      1
+    ],
+    "nonzero_arrows": [
+      "G_met --K_met--> h",
+      "h --J_met^-1 E_Bach--> Ebar_met",
+      "Ebar_met --Y_met^-1 K_met^sharp J_met--> I_met"
+    ],
+    "odd_cyclicity_defect": 0,
+    "upper_square": "C_met Bach=0 by formal adjunction of Bach K_met=0"
+  },
+  "causal_green_homotopy": false,
+  "coefficient_payload_sha256": "2d3e6857e42b38a7f68e0c1ecb90adfa621ffa87038fa44f3e37c14f6938e9f6",
+  "curvature_causal_green_operators": false,
+  "curved_vs_regression_boundary": {
+    "Fourier_66x66_matrices_used_as_curved_coefficients": false,
+    "Fourier_regression_role": "dimension/order/sign regression only; its hashes are not emitted as curved tables",
+    "actual_curved_sources": [
+      "70-table covariant-jet LinearizedBach reconstruction",
+      "factorized actual-curved-Q split",
+      "35-table curved T_state reconstruction",
+      "curved p_E/p_I and A_core/B_core coefficient tables",
+      "coefficient-complete canonical mapping-cylinder substitution"
+    ]
+  },
+  "cyclicity": {
+    "Bach_identity": "J_met Bach_bar=Bach_bar^sharp J_met",
+    "K_C_identity": "Y_met C_met=K_met^sharp J_met",
+    "coefficientwise_adjoint_reason": "the canonical normal form uses fully symmetrized covariant derivatives; reversal permutes the same symmetrized words, and every coefficient and fibre pairing is parallel, so formal adjunction is exactly (-1)^|I| transpose with no derivative-of-coefficient remainder",
+    "endpoint_Q_odd_cyclicity_defect": 0,
+    "endpoint_pairing": "Omega(G,I)=Y_met, Omega(h,Ebar)=J_met with odd reverse signs",
+    "graph_projector_formally_self_adjoint": true
+  },
+  "dependency_sha256": {
+    "curvature_equation": "a73abedd820be6c0ed07a79f77500f134e88e80ccdadeebf4be7a806a89366cd",
+    "curved_core_chain": "78164e0c98d27819dbea2cc1597c387b6496a5ef47e67d196fcc9b34a8cdff15",
+    "curved_retract": "fddca9b8f97bbc51b029a75c760df8b8374374eb96f09c51caf83dd7cf6b296d",
+    "hybrid_projector": "c3867f2de2c3bff40f36d5ce8d8875119202acc24f4085f5905bede1ae0c5ade",
+    "linearized_bach": "33433d86694dda81a72abb0650bce85fa2478f27280f6d74ea0ee38065cb256b",
+    "mapping_substitution": "b56ba739afdd05548e40c351721e8a39e4776ecb7581a8213e9540faa6c06797"
+  },
+  "dimension": 30,
+  "fail_closed": true,
+  "local_graph_maps": {
+    "identities": {
+      "P_end_squared": "P_end",
+      "Q_prol_P_end": "P_end_Q_prol",
+      "Q_prol_j_end": "j_end_Q_end",
+      "j_end_p_end": "P_end",
+      "p_end_Q_prol": "Q_end_p_end",
+      "p_end_j_end": "identity_30"
+    },
+    "j_end": {
+      "all_Y_and_dual_X/Y_blocks": "zero",
+      "base": [
+        "xi_minus_2 -> G_aux.xi_minus_2",
+        "sigma -> (G_aux.xi_0=nabla sigma,G_aux.sigma=sigma)",
+        "h -> (M_aux.h=h,M_aux.f=S_h h,M_aux.v=0)",
+        "Ebar_met -> Ebar_aux.f-slot",
+        "I_met -> I_aux.(xi_0-star,sigma-star)-slot"
+      ],
+      "curvature_graph": [
+        "X_U=T_core h=(C1 h,div C1 h)",
+        "X_Eq=A_core Ebar_met",
+        "X_Id=B_core I_met"
+      ],
+      "formula": "I_cyl I_aux",
+      "maximum_order": 3
+    },
+    "p_end": {
+      "cotangent_coefficients_forced_by_BV_canonical_adjoint": true,
+      "formula": "P_aux P_cyl",
+      "mapping_cylinder_corrections": [
+        "G_aux <- G_aux+Bsharp X_Id_sharp",
+        "M_aux <- M_aux+Asharp X_Eq_sharp",
+        "Ebar_aux <- Ebar_aux+Tsharp X_U_sharp",
+        "I_aux <- I_aux"
+      ],
+      "maximum_order_before_composition": 3,
+      "then": [
+        "p_G=(xi_minus_2,sigma)",
+        "p_M=(h)",
+        "p_E=(J_met^-1 S_h^sharp J_met,1,0)",
+        "p_I=the emitted order-one cotangent ghost projection"
+      ]
+    },
+    "support": {
+      "Fourier_or_harmonic_projector": false,
+      "compact": true,
+      "finite_order_differential": true,
+      "inverse_Weyl_Laplacian_or_curl": false,
+      "pointwise_inverses_only": true,
+      "smooth_global": true,
+      "spacelike_compact": true
+    }
+  },
+  "next_required_theorem": "construct a Green witness/homotopy on this exact thirty-row endpoint",
+  "ordered_endpoint_ledger": [
+    {
+      "block": "G_met[xi_minus_2[4],sigma[1]]",
+      "degree": -1,
+      "dimension": 5,
+      "index": 0,
+      "prolonged_role": "retained auxiliary ghost base"
+    },
+    {
+      "block": "h[10]",
+      "degree": 0,
+      "dimension": 10,
+      "index": 1,
+      "prolonged_role": "metric plus local curvature-state graph"
+    },
+    {
+      "block": "Ebar_met[10]",
+      "degree": 1,
+      "dimension": 10,
+      "index": 2,
+      "prolonged_role": "paired Bach equation plus curvature-equation graph"
+    },
+    {
+      "block": "I_met[4+1]",
+      "degree": 2,
+      "dimension": 5,
+      "index": 3,
+      "prolonged_role": "diffeomorphism/Weyl identities plus curvature-identity graph"
+    }
+  ],
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-prolonged-metric-endpoint-complex-v1",
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": [
+    "prolonged_metric_endpoint_complex_exact"
+  ]
+}
