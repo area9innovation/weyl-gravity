@@ -19,27 +19,25 @@ OUTPUT_PATH = PACKAGE_ROOT / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 SCHEMA_PATH = PROGRAMME_ROOT / "schema" / "team-contribution-v1.schema.json"
 GENERATOR_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "generators.json"
 PHASE_SPACE_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "phase_spaces.json"
-EVIDENCE_COMMIT = "0e919d434ce09c4dbab042c0c2aa708126409685"
+EVIDENCE_COMMIT = "2aec6ed91793d136c9a6d80a0f74b2b233775d49"
 EVIDENCE_PATH = (
-    "physics/symplectic-reconstruction/quantum-weyl/cartan/"
-    "certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json"
+    "quantum-weyl/cartan/certificates/"
+    "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json"
 )
 WORKING_EVIDENCE_PATH = (
     PACKAGE_ROOT / "certificates" / "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json"
 )
 
 
-def _git_root() -> Path:
-    output = subprocess.check_output(
-        ["git", "-C", str(REPOSITORY_ROOT), "rev-parse", "--show-toplevel"],
-        text=True,
-    )
-    return Path(output.strip())
-
-
 def _evidence_bytes() -> bytes:
     return subprocess.check_output(
-        ["git", "-C", str(_git_root()), "show", f"{EVIDENCE_COMMIT}:{EVIDENCE_PATH}"]
+        [
+            "git",
+            "-C",
+            str(REPOSITORY_ROOT),
+            "show",
+            f"{EVIDENCE_COMMIT}:./{EVIDENCE_PATH}",
+        ]
     )
 
 
@@ -88,6 +86,7 @@ def build_contribution() -> dict[str, Any]:
             "first-order scheme covariance with illegal scheme shifts rejected",
             "semantic import of the classical compact-cylinder sector split without quantum promotion",
             "complete intrinsic Euler descent included in the truncated AFN0 even-anomaly closure slice",
+            "hash-bound AFN0 closure witnesses with semantic agreement checks against the descent database",
         ],
         "not_established": [
             "a complete bulk pure-Weyl Cartan-obstruction candidate basis",
@@ -140,7 +139,13 @@ def validate_contribution(record: object) -> None:
     if re.fullmatch(r"[0-9a-f]{64}", evidence["sha256"]) is None:
         raise ValueError("team contribution evidence digest is invalid")
     pinned = subprocess.check_output(
-        ["git", "-C", str(_git_root()), "show", f"{evidence['commit']}:{evidence['path']}"]
+        [
+            "git",
+            "-C",
+            str(REPOSITORY_ROOT),
+            "show",
+            f"{evidence['commit']}:./{evidence['path']}",
+        ]
     )
     if _sha256(pinned) != evidence["sha256"]:
         raise ValueError("team contribution evidence hash does not match its commit")

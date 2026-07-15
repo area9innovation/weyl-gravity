@@ -37,7 +37,13 @@ class QuantumDContributionTests(unittest.TestCase):
         self.assertEqual(contribution["evidence"]["commit"], EVIDENCE_COMMIT)
         self.assertEqual(contribution["evidence"]["path"], EVIDENCE_PATH)
         payload = subprocess.check_output(
-            ["git", "-C", str(REPOSITORY_ROOT), "show", f"{EVIDENCE_COMMIT}:{EVIDENCE_PATH}"]
+            [
+                "git",
+                "-C",
+                str(REPOSITORY_ROOT),
+                "show",
+                f"{EVIDENCE_COMMIT}:./{EVIDENCE_PATH}",
+            ]
         )
         self.assertEqual(
             contribution["evidence"]["sha256"],

@@ -127,7 +127,7 @@ test_tier: 0
 command:
   PYTHONHASHSEED={1,7,123} PYTHONPATH=quantum-weyl python3 -m cartan.certificate | sha256sum
 status: PASS
-certificate_sha256: aa7edc21c7250349531559657d4ec69eee2dd9100de3eedf242a8e29829e874c
+certificate_sha256: d4c235dd3b28bc9c2934feff035d358855212fd176d5f7da0dedac3a09ef5d9e
 test_tier: 0
 ```
 
@@ -142,8 +142,8 @@ The quantum team contribution is emitted at
 `generator_id = D_compact`, `phase_space_id = compact_quantum`, and lifecycle
 `QUANTUM`.  Its claim status is `BLOCKED` and its verdict is null.  The
 evidence certificate is pinned to commit
-`0e919d434ce09c4dbab042c0c2aa708126409685` and SHA-256
-`fd2e84a211f750f6e00ea313b7730f4fa22f933a2c7e5235c82cdbf0e727638d`.
+`2aec6ed91793d136c9a6d80a0f74b2b233775d49` and SHA-256
+`d4c235dd3b28bc9c2934feff035d358855212fd176d5f7da0dedac3a09ef5d9e`.
 
 ```text
 command:

@@ -31,7 +31,7 @@ coefficientwise and nonminimal rows remain the next BV gate.
 | classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. Its temporal/Weyl clock and minimal-dual rows also form an exact first-order support-local cyclic eight-row SDR, leaving a 26-row retained minimal complex. | emit the retained coefficientwise q1 and nonminimal rows, then construct causal theory and stability |
 | einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. | complete a boundary-preserving full Bach phase space and calculate charge and flux |
 | nonlinear | `INPUT_GATE_BLOCKED` | selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked | complete support-local q2 export and solve for iota_D^(2) or retain its obstruction |
-| quantum | `ANALYTIC_FRAMEWORK_MISSING` | the pre-scalar classical compact split is imported by content hash without quantum promotion; the new scalar no-go is not yet imported | import the scalar-clock obstruction hash, then construct the renormalized observable algebra and classify the first D-Ward obstruction |
+| quantum | `ANALYTIC_FRAMEWORK_MISSING` | the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered | complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion |
 
 ## Setting ledger
 
@@ -83,6 +83,7 @@ coefficientwise and nonminimal rows remain the next BV gate.
 | classical | `compact_positive_berger_clock_minimal_bv_sdr` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `MINIMAL_CLOCK_SECTOR_SDR` |
 | einstein_boundary | `asymptotic_real_cylinder_time` | `H_ESU` | `asymptotically_flat_full_Bach` | `PARTIAL` | `PHASE_SPACE_NOT_CLOSED` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
+| quantum | `vacuum_cylinder` | `D_compact` | `compact_quantum` | `BLOCKED` | `NO_VERDICT` |
 
 ## Publication decision
 
@@ -99,7 +100,7 @@ The immediate shared calculation is
 - `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `03243aa1a8cad113755483f3d570445ccfc36e35`, SHA-256 `12fe623360c36f359f9136db2e544ef4877f6f9e56ddec8fff3b32fd9c1b6350`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `b4f5fe6cbfa42dde7296c3e8000de358b4609366`, SHA-256 `4ac34cb9bc6b755c48def9553ed82c0e3be3a05853e89656d252c71cc6b73099`
 - `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `0cf759198ecec847314c777cbb079eaaeea05627`, SHA-256 `e7afa777832424a438fa831acc6e9b6e6b20f4786141b3e42c3e1b1fa8c64c77`
-- `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `0e919d434ce09c4dbab042c0c2aa708126409685`, SHA-256 `fd2e84a211f750f6e00ea313b7730f4fa22f933a2c7e5235c82cdbf0e727638d`
+- `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `2aec6ed91793d136c9a6d80a0f74b2b233775d49`, SHA-256 `d4c235dd3b28bc9c2934feff035d358855212fd176d5f7da0dedac3a09ef5d9e`
 
 ## Claim boundary
 

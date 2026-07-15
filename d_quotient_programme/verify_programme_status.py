@@ -29,6 +29,7 @@ CLASSICAL_BERGER_FIXED_COUPLING_DELTA_CHARGE_CONTRIBUTION = PACKAGE / "contribut
 CLASSICAL_BERGER_MINIMAL_BV_CLOCK_SDR_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-minimal-bv-clock-sdr.json"
 NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
 EINSTEIN_ED1A_CONTRIBUTION = PACKAGE / "contributions" / "einstein-ed1a-asymptotic-generator-gate.json"
+QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
     "classical": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
@@ -219,6 +220,30 @@ def _nonlinear_nd1_contribution() -> dict[str, Any]:
         raise AssertionError("nonlinear ND1 contribution evidence is incomplete")
     if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
         raise AssertionError("nonlinear ND1 contribution evidence hash drifted")
+    return contribution
+
+
+def _quantum_cartan_contribution() -> dict[str, Any]:
+    contribution = _load(QUANTUM_CARTAN_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "quantum"
+        and contribution.get("setting_id") == "vacuum_cylinder"
+        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("phase_space_id") == "compact_quantum"
+        and contribution.get("lifecycle_layer") == "QUANTUM"
+        and contribution.get("claim_status") == "BLOCKED"
+        and contribution.get("verdict") is None
+        and contribution.get("dependency_tags") == ["LOCAL-ALGEBRAIC"]
+    ):
+        raise AssertionError("quantum Cartan contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path = evidence.get("path")
+    commit = evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("quantum Cartan contribution evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("quantum Cartan contribution evidence hash drifted")
     return contribution
 
 
@@ -510,6 +535,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     )
     ed1a_contribution = _einstein_ed1a_contribution()
     nd1_contribution = _nonlinear_nd1_contribution()
+    quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
         "schema": "pure-weyl-d-quotient-programme-status-v1",
         "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
@@ -581,6 +607,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
+            },
+            {
+                "path": str(QUANTUM_CARTAN_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(QUANTUM_CARTAN_CONTRIBUTION),
+                "payload": quantum_cartan_contribution,
             }
         ],
         "team_status": [
@@ -609,8 +640,8 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "team_id": "quantum",
                 "result_state": "ALGEBRAIC_ENGINE_READY_ANALYTIC_FRAMEWORK_MISSING",
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
-                "established": "the pre-scalar classical compact split is imported by content hash without quantum promotion; the new scalar no-go is not yet imported",
-                "next_gate": "import the scalar-clock obstruction hash, then construct the renormalized observable algebra and classify the first D-Ward obstruction",
+                "established": "the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered",
+                "next_gate": "complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion",
             },
         ],
         "setting_ledger": [
@@ -842,6 +873,18 @@ def validate(data: dict[str, Any]) -> list[str]:
         "quantum",
     ]:
         errors.append("four-team inventory drifted")
+    quantum_contributions = [
+        record.get("payload", {})
+        for record in data.get("team_contributions", [])
+        if record.get("payload", {}).get("team_id") == "quantum"
+    ]
+    if not (
+        len(quantum_contributions) == 1
+        and quantum_contributions[0].get("setting_id") == "vacuum_cylinder"
+        and quantum_contributions[0].get("claim_status") == "BLOCKED"
+        and quantum_contributions[0].get("verdict") is None
+    ):
+        errors.append("quantum blocked contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
     required = {
         "compact_unrestricted": "D_CHARGED",
@@ -903,7 +946,11 @@ def render_report(data: dict[str, Any]) -> str:
             generator=record["payload"]["generator_id"],
             phase_space=record["payload"]["phase_space_id"],
             status=record["payload"]["claim_status"],
-            verdict=record["payload"]["verdict"],
+            verdict=(
+                record["payload"]["verdict"]
+                if record["payload"]["verdict"] is not None
+                else "NO_VERDICT"
+            ),
         )
         for record in data["team_contributions"]
     )
@@ -1062,6 +1109,14 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
     reject("promote_quantum_before_QME", mutant)
 
     mutant = deepcopy(data)
+    next(
+        record["payload"]
+        for record in mutant["team_contributions"]
+        if record["payload"]["team_id"] == "quantum"
+    )["claim_status"] = "CERTIFIED"
+    reject("promote_quantum_contribution_before_QME", mutant)
+
+    mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_selected_residual_HT1_q2")["verdict"] = "INTERACTING_CARTAN_EXISTS"
     reject("promote_selected_residual_to_full_cartan", mutant)
 
@@ -1113,7 +1168,7 @@ def main() -> int:
         failures = mutation_guards(data)
         if failures:
             raise AssertionError("mutation guards failed: " + ", ".join(failures))
-        print("mutation guards: 14/14 PASS")
+        print("mutation guards: PASS")
     print(CERTIFICATE, "PASS")
     return 0
 

@@ -26,7 +26,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate and eight-row minimal clock SDR are complete. Emit the coefficientwise retained q1 and nonminimal rows, then construct causal Green homotopies and stability without weakening the separate CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT requested by the nonlinear team."
   },
-  "programme_base_commit": "03243aa1a8cad113755483f3d570445ccfc36e35",
+  "programme_base_commit": "2aec6ed91793d136c9a6d80a0f74b2b233775d49",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -700,6 +700,50 @@
         ]
       },
       "sha256": "130fd7c112ce47f27c7d54ecdaee610e980905c31aef75ae2d11fedadedcec8a"
+    },
+    {
+      "path": "quantum-weyl/cartan/contributions/QUANTUM_CARTAN_BLOCKED.json",
+      "payload": {
+        "boundary_conditions": "NOT_CONSTRUCTED",
+        "claim_status": "BLOCKED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC"
+        ],
+        "established": [
+          "exact first-order sourced Cartan-defect identity",
+          "admissible-operator quotient mechanics with primitive and dual witnesses",
+          "first-order scheme covariance with illegal scheme shifts rejected",
+          "semantic import of the classical compact-cylinder sector split without quantum promotion",
+          "complete intrinsic Euler descent included in the truncated AFN0 even-anomaly closure slice",
+          "hash-bound AFN0 closure witnesses with semantic agreement checks against the descent database"
+        ],
+        "evidence": {
+          "commit": "2aec6ed91793d136c9a6d80a0f74b2b233775d49",
+          "path": "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json",
+          "sha256": "d4c235dd3b28bc9c2934feff035d358855212fd176d5f7da0dedac3a09ef5d9e"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "QUANTUM",
+        "next_gate": "complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis; consume separately gated clock inputs only after their total-D and shared classical BV exports land",
+        "not_established": [
+          "a complete bulk pure-Weyl Cartan-obstruction candidate basis",
+          "a renormalized observable algebra or actual Q_1",
+          "a restored local quantum master equation",
+          "a residual quantum transfer, coefficient, or pairing correction",
+          "a scalar-clock, boundary, corner, or Lorentzian causal quantum theorem"
+        ],
+        "phase_space_id": "compact_quantum",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "vacuum_cylinder",
+        "team_id": "quantum",
+        "verdict": null,
+        "verification_commands": [
+          "PYTHONPATH=quantum-weyl python3 -m cartan.certificate --check",
+          "PYTHONPATH=quantum-weyl python3 -m cartan.contribution --check",
+          "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -v"
+        ]
+      },
+      "sha256": "1c6366980d7a4ca042880c2cfb72dab3d6afadc4bba33e56e05c701a607d9980"
     }
   ],
   "team_inputs": {
@@ -719,9 +763,9 @@
       "sha256": "e7afa777832424a438fa831acc6e9b6e6b20f4786141b3e42c3e1b1fa8c64c77"
     },
     "quantum": {
-      "commit": "0e919d434ce09c4dbab042c0c2aa708126409685",
+      "commit": "2aec6ed91793d136c9a6d80a0f74b2b233775d49",
       "path": "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json",
-      "sha256": "fd2e84a211f750f6e00ea313b7730f4fa22f933a2c7e5235c82cdbf0e727638d"
+      "sha256": "d4c235dd3b28bc9c2934feff035d358855212fd176d5f7da0dedac3a09ef5d9e"
     }
   },
   "team_status": [
@@ -747,8 +791,8 @@
       "verdict": "INPUT_GATE_BLOCKED"
     },
     {
-      "established": "the pre-scalar classical compact split is imported by content hash without quantum promotion; the new scalar no-go is not yet imported",
-      "next_gate": "import the scalar-clock obstruction hash, then construct the renormalized observable algebra and classify the first D-Ward obstruction",
+      "established": "the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered",
+      "next_gate": "complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion",
       "result_state": "ALGEBRAIC_ENGINE_READY_ANALYTIC_FRAMEWORK_MISSING",
       "team_id": "quantum",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"
