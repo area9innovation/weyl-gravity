@@ -5,7 +5,7 @@
   ],
   "canonical_hashes": {
     "required_generator_fields_sha256": "9166ed8a0d9c8f7120714c3693b6bdf735cf72417222cd54e0171dd3419a644f",
-    "source_manifest_sha256": "3e292951fff52492c3e747d89c6722fb12735329df655d461095b7276075263c"
+    "source_manifest_sha256": "dbcff0462865f579f31024e43d974e2e00384d4ce78c9129739d8b44dc546dd5"
   },
   "checks": {
     "canonical_hash_reproduction": "ENFORCED",
@@ -15,6 +15,7 @@
     "filtration_identities_independently_reverified": "NOT_COMPUTED",
     "minimal_antifield_metadata": "ENFORCED",
     "no_floating_point_payloads": "ENFORCED",
+    "pinned_proof_artifact_integrity": "ENFORCED_WHEN_REPOSITORY_ROOT_SUPPLIED",
     "proof_artifact_inventory": "ENFORCED"
   },
   "classical_commit": "UNFROZEN",
@@ -25,10 +26,13 @@
   "required_filtration_checks": [
     "delta_squared_zero",
     "delta_gamma_anticommutator_zero",
+    "Q_decomposition_sums_to_Q_image",
     "Q_squared_zero"
   ],
   "required_filtration_rows": {
     "Q_gt0": {
+      "component_count": "ZERO_OR_MORE",
+      "distinct_shifts_required": true,
       "minimum_antifield_number_shift": 1
     },
     "delta": {

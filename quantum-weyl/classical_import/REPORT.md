@@ -80,11 +80,15 @@ The preflight also requires the explicit split
 Q = delta + gamma + Q_gt0
 ```
 
-with antifield-number shifts `-1`, `0`, and positive, respectively.  It
+with antifield-number shifts `-1`, `0`, and zero or more distinct positive
+components, respectively.  It
 rejects floating-point data, missing minimal roles, unsafe proof paths,
 unverified filtration identities, and non-reproducing canonical hashes.
 Proof artifacts are required for `delta^2=0`,
-`delta gamma + gamma delta=0`, and `Q^2=0`.
+`delta gamma + gamma delta=0`, reconstruction of the complete `Q_image` from
+the filtration components, and `Q^2=0`.
+When supplied a repository root, it also verifies every proof digest against
+both the working-tree bytes and the pinned `classical_commit` Git blob.
 
 The receipt
 [`certificates/ANTIFIELD_EXPORT_CONTRACT.json`](certificates/ANTIFIELD_EXPORT_CONTRACT.json)
@@ -113,7 +117,7 @@ Run from `physics/symplectic-reconstruction/` on 2026-07-15:
 | 0 | Scoped Python EOF/trailing-whitespace check over all eight new text files | 0.02 s | pass |
 | 0 | `git diff --check -- quantum-weyl/classical_import quantum-weyl/cylinder` | <0.01 s | pass; integration staging remains with the root agent |
 | 1 | `python3 quantum-weyl/classical_import/verify_snapshot.py --check` | 0.12 s | pass |
-| 1 | `python3 -m unittest discover -s quantum-weyl/classical_import/tests -v` | under 1 s | pass (13 tests, including 9 antifield-contract tests) |
+| 1 | `python3 -m unittest discover -s quantum-weyl/classical_import/tests -v` | under 1 s | pass (16 tests, including 12 antifield-contract tests) |
 
 The tests include attempted false promotion of Gate A and an artifact-hash
 mutation; both fail closed.  Tier 2 was not triggered because no classical

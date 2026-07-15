@@ -69,7 +69,10 @@
           "properties": {
             "delta": {"$ref": "#/$defs/filteredRow"},
             "gamma": {"$ref": "#/$defs/filteredRow"},
-            "Q_gt0": {"$ref": "#/$defs/filteredRow"}
+            "Q_gt0": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/positiveFilteredRow"}
+            }
           }
         },
         "canonical_index_symmetry": {"type": "object"},
@@ -82,6 +85,15 @@
       "required": ["antifield_number_shift", "image"],
       "properties": {
         "antifield_number_shift": {"type": "integer"},
+        "image": {"type": "object"}
+      }
+    },
+    "positiveFilteredRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["antifield_number_shift", "image"],
+      "properties": {
+        "antifield_number_shift": {"type": "integer", "minimum": 1},
         "image": {"type": "object"}
       }
     },
@@ -99,7 +111,7 @@
       "additionalProperties": false,
       "required": ["check_id", "status", "proof_artifact"],
       "properties": {
-        "check_id": {"enum": ["delta_squared_zero", "delta_gamma_anticommutator_zero", "Q_squared_zero"]},
+        "check_id": {"enum": ["delta_squared_zero", "delta_gamma_anticommutator_zero", "Q_decomposition_sums_to_Q_image", "Q_squared_zero"]},
         "status": {"const": "VERIFIED"},
         "proof_artifact": {"$ref": "#/$defs/proofArtifact"}
       }

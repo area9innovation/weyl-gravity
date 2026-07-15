@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import importlib.util
+import subprocess
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -30,7 +33,7 @@ def _generator(symbol: str, role: str, ghost: int, antifield: int, parity: int) 
         "Q_decomposition": {
             "delta": {"antifield_number_shift": -1, "image": {}},
             "gamma": {"antifield_number_shift": 0, "image": {}},
-            "Q_gt0": {"antifield_number_shift": 1, "image": {}},
+            "Q_gt0": [],
         },
         "canonical_index_symmetry": {"generators": []},
         "equation_or_identity_row": {"row_id": f"{role}_row"},
@@ -117,6 +120,23 @@ class AntifieldExportPreflightTests(unittest.TestCase):
         with self.assertRaisesRegex(VERIFY.AntifieldExportError, "wrong delta"):
             VERIFY.validate_export(payload)
 
+    def test_multiple_positive_higher_filtration_components_are_allowed(self) -> None:
+        payload = valid_payload()
+        payload["generators"][0]["Q_decomposition"]["Q_gt0"] = [
+            {"antifield_number_shift": 1, "image": {"terms": []}},
+            {"antifield_number_shift": 2, "image": {"terms": []}},
+        ]
+        result = VERIFY.validate_export(_rehash(payload))
+        self.assertEqual(result["status"], "PREFLIGHT_VERIFIED")
+
+    def test_nonpositive_higher_filtration_component_fails_closed(self) -> None:
+        payload = valid_payload()
+        payload["generators"][0]["Q_decomposition"]["Q_gt0"] = [
+            {"antifield_number_shift": 0, "image": {}}
+        ]
+        with self.assertRaisesRegex(VERIFY.AntifieldExportError, "positive filtration"):
+            VERIFY.validate_export(payload)
+
     def test_unverified_identity_fails_closed(self) -> None:
         payload = valid_payload()
         payload["filtration_checks"][0]["status"] = "NOT_COMPUTED"
@@ -128,6 +148,44 @@ class AntifieldExportPreflightTests(unittest.TestCase):
         payload["generators"][0]["Q_image"]["terms"].append({"coefficient": 2})
         with self.assertRaisesRegex(VERIFY.AntifieldExportError, "hashes do not reproduce"):
             VERIFY.validate_export(payload)
+
+    def test_proof_artifacts_are_verified_in_worktree_and_pinned_commit(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+            subprocess.run(
+                ["git", "config", "user.email", "fixture@example.invalid"],
+                cwd=root,
+                check=True,
+            )
+            subprocess.run(
+                ["git", "config", "user.name", "Fixture"], cwd=root, check=True
+            )
+            payload = valid_payload()
+            for check in payload["filtration_checks"]:
+                path = root / check["proof_artifact"]["path"]
+                path.parent.mkdir(parents=True, exist_ok=True)
+                data = (check["check_id"] + "\n").encode("ascii")
+                path.write_bytes(data)
+                check["proof_artifact"]["sha256"] = hashlib.sha256(data).hexdigest()
+            subprocess.run(["git", "add", "proof"], cwd=root, check=True)
+            subprocess.run(["git", "commit", "-qm", "fixture"], cwd=root, check=True)
+            commit = subprocess.run(
+                ["git", "rev-parse", "HEAD"],
+                cwd=root,
+                check=True,
+                capture_output=True,
+                text=True,
+            ).stdout.strip()
+            payload["classical_commit"] = commit
+            _rehash(payload)
+            result = VERIFY.validate_export(payload, repository_root=root)
+            self.assertEqual(result["proof_artifact_integrity_status"], "VERIFIED")
+
+            first = root / payload["filtration_checks"][0]["proof_artifact"]["path"]
+            first.write_text("drift\n", encoding="ascii")
+            with self.assertRaisesRegex(VERIFY.AntifieldExportError, "working-tree proof hash"):
+                VERIFY.validate_export(payload, repository_root=root)
 
 
 if __name__ == "__main__":

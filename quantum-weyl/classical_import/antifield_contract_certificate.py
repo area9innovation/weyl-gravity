@@ -63,11 +63,16 @@ def build_certificate() -> dict[str, Any]:
         "required_filtration_rows": {
             "delta": {"antifield_number_shift": -1},
             "gamma": {"antifield_number_shift": 0},
-            "Q_gt0": {"minimum_antifield_number_shift": 1},
+            "Q_gt0": {
+                "component_count": "ZERO_OR_MORE",
+                "minimum_antifield_number_shift": 1,
+                "distinct_shifts_required": True,
+            },
         },
         "required_filtration_checks": [
             "delta_squared_zero",
             "delta_gamma_anticommutator_zero",
+            "Q_decomposition_sums_to_Q_image",
             "Q_squared_zero",
         ],
         "checks": {
@@ -76,6 +81,7 @@ def build_certificate() -> dict[str, Any]:
             "no_floating_point_payloads": "ENFORCED",
             "filtration_degree_rows": "ENFORCED",
             "proof_artifact_inventory": "ENFORCED",
+            "pinned_proof_artifact_integrity": "ENFORCED_WHEN_REPOSITORY_ROOT_SUPPLIED",
             "canonical_hash_reproduction": "ENFORCED",
             "classical_export_imported": "NOT_AVAILABLE",
             "filtration_identities_independently_reverified": "NOT_COMPUTED",
