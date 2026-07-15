@@ -2,15 +2,19 @@
   "category": "mode-specialized local metric-sector quadratic Bach seeds",
   "checks": {
     "antifield_completion": "NOT_COMPUTED",
+    "direct_curvature_evaluation_upstream_regression_bound": "VERIFIED_CONTENT_ADDRESSED_EXACT",
+    "direct_curvature_reevaluated_in_this_certificate": false,
     "direct_local_density_channel_count": 2,
     "full_support_local_q2": "NOT_COMPUTED",
     "ghost_completion": "NOT_COMPUTED",
     "integrated_raw_kernel_entry_count": 4,
     "local_q1_q2_chain_identity": "NOT_COMPUTED_MISSING_ARBITRARY_INPUT_Q2_AND_COMPLETIONS",
     "selected_projection_to_residual_q2": "VERIFIED_2_DIRECT_LOCAL_CHANNELS",
-    "selected_residual_cubic_master_equation": "VERIFIED_UPSTREAM"
+    "selected_residual_cubic_master_equation": "VERIFIED_UPSTREAM",
+    "separate_direct_curvature_audit": "quantum-weyl/transfer/certificates/HT1B_DIRECT_CURVATURE_AUDIT.json"
   },
   "claim_guards": [
+    "the fast certificate does not execute the curvature engine; direct reevaluation is a separate Tier-2 audit",
     "mode-specialized radial densities are not the arbitrary-support tensor B^(2)_{mu nu}[h1,h2]",
     "equivariant reconstruction of fifteen residual kernels is not direct local evaluation of fifteen Bach-source components",
     "the quadratic classical-master identity is not claimed without the full q1, q2 ghost rows, and antifield rows",
@@ -23,7 +27,7 @@
     "REDUCED-MODE"
   ],
   "established": [
-    "two independent mixed B^(2) curvature channels retain exact local radial densities before integration",
+    "two independent mixed B^(2) curvature channels are imported from content-addressed exact upstream curvature regressions",
     "each local density integrates exactly to its action-normalized Taub charge",
     "both direct charges equal the corresponding raw-normalized entries of the checked-in HT1 residual q2 payload",
     "the four integrated forward/reverse entries obey the exact dagger relation and parity-seed equality"
@@ -36,14 +40,14 @@
     "exact arity-two chain identity and full projection comparison"
   ],
   "provenance": {
-    "implementation_manifest_sha256": "925eb7db46d35d59f75efde1b414d78c6bfb8594d63a7d9c672dd7fd65040bf5",
+    "implementation_manifest_sha256": "9177a4cf3d9f59cc79b6196ff36874980dac7a5f364d679ba2e84661cf8f4ada",
     "implementation_sha256": {
       "local_bach_seed_certificate.py": "14df89758e07bf495f054608d9159cc1d49d032ec79be429515a8720038f4bf3",
-      "local_bach_seed_lift.py": "ed0431e65ad0615c848177442b87adb8f7f9077a8d850494f1d7c3638d55c235",
-      "schema/local-bach-seed-lift-v1.schema.json": "a5c1b8648dff48fa0519d54fb9f46ead3bb4e730e7ac60c68cd5c7405048fe85",
-      "tests/test_local_bach_seed_lift.py": "e712524e73bddd81a94f756d2c4de33c5b7e564a526efaeb892c304343dbac65"
+      "local_bach_seed_lift.py": "5b9de00f940f67e105320f3816434540caad79cd3bdc4081b5dcb43e7f0fe9d4",
+      "schema/local-bach-seed-lift-v2.schema.json": "fdc249e774785068e73f0e6197b2e6995bab33f373e040771105e849fb454b2d",
+      "tests/test_local_bach_seed_lift.py": "e24646cc61ccebeb8b9ecff7fd057ef220ed747ba8ae0d30aee6cfb3f2b05d99"
     },
-    "schema": "quantum-weyl/transfer/schema/local-bach-seed-lift-v1.schema.json",
+    "schema": "quantum-weyl/transfer/schema/local-bach-seed-lift-v2.schema.json",
     "upstream_manifest_sha256": "d3acbb305345f54bfaac49c91a08ec62fcd3624c7375d1e03f8bc9d499713c47",
     "upstream_sha256": {
       "bridge/certificates/taub_moment_map.json": "84fb8d94043f89fcd70e8fdd2940b266ea6f9006c3ff94cb55884b1b4ceb46e1",
@@ -211,12 +215,14 @@
         "L_-"
       ],
       "parity_seed_equality": "VERIFIED_EXACT",
+      "reverse_local_taub_density_status": "NOT_COMPUTED_MISSING_REVERSE_GAUGE_PROBES",
+      "reverse_slice_density_adjoint_audit": "HT1B_DIRECT_CURVATURE_AUDIT",
       "support_local_density_available_for_reverse_channels": false
     },
     "radial_coordinate": "t=tan(beta/2), t in (0,infinity)",
     "s3_integration_formula": "8*pi^2*integral_0^infinity measured_stereographic_integrand dt",
     "scalar_format": "sympy-srepr-exact-v1",
-    "schema_version": 1
+    "schema_version": 2
   },
-  "seed_payload_sha256": "3bee9761abccf2d8c87a8c6b20ac141edc41a49cc43cedddf80ebcd42c00218c"
+  "seed_payload_sha256": "a097939ce1d1f11fdceb8ca2b6169f29bd5ca9e1f5ecff409c275c1f790fa073"
 }

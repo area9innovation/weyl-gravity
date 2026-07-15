@@ -92,24 +92,29 @@
     "classical_snapshot_sha256": "01e4b2188695f901a77a5bd1921454dc57c19b2d8047c835a83646cbabd74a26",
     "ht1_selected_residual_certificate": "quantum-weyl/transfer/certificates/HT1_RESIDUAL_CUBIC_BLOCK.json",
     "ht1_selected_residual_sha256": "802ea86e1bb807476c7e1bbbe25f33435fa1a79ba433c1b0943b19c4986eefc4",
+    "ht1b_direct_curvature_audit": "quantum-weyl/transfer/certificates/HT1B_DIRECT_CURVATURE_AUDIT.json",
+    "ht1b_direct_curvature_audit_sha256": "f04cb4d64144b95fce2690ca0db56c835daacb44bb82311b7d81beaf9bc63257",
     "ht1b_local_bach_seed_certificate": "quantum-weyl/transfer/certificates/HT1B_LOCAL_BACH_SEED_LIFT.json",
-    "ht1b_local_bach_seed_sha256": "867f1787022d66e79ceaeb5312666b8b6e2e04506a976391cd5a41a4773ea068",
+    "ht1b_local_bach_seed_sha256": "f08976200d4e07dc4fb349fa785c960ab4aa8a0d685fc82fe1a2cb30c5ff26c5",
     "input_schema": "quantum-weyl/transfer/schema/nonlinear_classical_export.schema.json",
     "source_manifest": {
       "homological_transfer.py": "2a39337ddbede21ee299e9c9c83282f5039f84fe032026967e8d33fd51e6f54a",
       "local_bach_seed_certificate.py": "14df89758e07bf495f054608d9159cc1d49d032ec79be429515a8720038f4bf3",
-      "local_bach_seed_lift.py": "ed0431e65ad0615c848177442b87adb8f7f9077a8d850494f1d7c3638d55c235",
-      "nonlinear_transfer_certificate.py": "7f4e1974267635b394281e762796e996be0d489c16c34972c92f93849404d1e6",
+      "local_bach_seed_direct_audit.py": "4abb22dcf527787a25204ac4ab06cdd357f5df24cfda90b09945d5c916937ca1",
+      "local_bach_seed_lift.py": "5b9de00f940f67e105320f3816434540caad79cd3bdc4081b5dcb43e7f0fe9d4",
+      "nonlinear_transfer_certificate.py": "3b34aeb3af4d033fcdcca309bfdc4837b29da4507ba367ba77440ebdb9a2852c",
       "residual_cubic_block.py": "d8e5a5100ea81b85a3a9b70ff8a683707ba358cc757308e705dd56c127bf3aa2",
       "residual_cubic_certificate.py": "597a47905f5bddef720459672c5b10504fc66826b8b4b3ab332b16c4063ec5b9",
-      "schema/local-bach-seed-lift-v1.schema.json": "a5c1b8648dff48fa0519d54fb9f46ead3bb4e730e7ac60c68cd5c7405048fe85",
+      "schema/local-bach-seed-direct-audit-v1.schema.json": "22ecd9efb3d4f7edf01845e4971733c29782ec5fdc337aae95921fd44eea6876",
+      "schema/local-bach-seed-lift-v2.schema.json": "fdc249e774785068e73f0e6197b2e6995bab33f373e040771105e849fb454b2d",
       "schema/nonlinear_classical_export.schema.json": "c476d0e1b3f4c30937100a58622c87b611afdb0224b9ffedea35ae376398ac79",
       "tests/test_homological_transfer.py": "369354c95a8e4209c0ab1f1d5d877535c86ae39e19421ce0398cbd61ae394783",
-      "tests/test_local_bach_seed_lift.py": "e712524e73bddd81a94f756d2c4de33c5b7e564a526efaeb892c304343dbac65",
+      "tests/test_local_bach_seed_direct_audit.py": "2b9a918aebd8123ad2c62ec3c8607238006a660b16b34ddebfbe0a7630fa86a6",
+      "tests/test_local_bach_seed_lift.py": "e24646cc61ccebeb8b9ecff7fd057ef220ed747ba8ae0d30aee6cfb3f2b05d99",
       "tests/test_nonlinear_transfer_certificate.py": "36410678ccdd65e73cc6e8d1dfe34af9117020510ebbc4ad3997fe846b493a96",
       "tests/test_residual_cubic_block.py": "d279660e15cd7e0c12b7da2c514a6ba566db0505dd03c9c44e3a696454d618cb"
     },
-    "source_manifest_sha256": "c10c8cec052ba6171603ace62e7a90e52d1ea88a341295350e9b56ffc00cce3c"
+    "source_manifest_sha256": "4cfd69dbdb462567c4b345266db0a7d12aa4f8b8b0701793dc0c753f2c66bc3b"
   },
   "question_ledger": [
     {
@@ -164,7 +169,8 @@
       "floating-point rejection",
       "portable nonlinear classical export schema",
       "HT1 selected residual cubic bracket including the matter-matter Kuranishi output",
-      "HT1b two direct mode-specialized local quadratic-Bach density seeds matched to residual q2 entries"
+      "HT1b two mode-specialized local quadratic-Bach density seeds matched to residual q2 entries",
+      "HT1b direct curvature reevaluation of six forward probes and two reverse slice probes"
     ],
     "not_established": [
       "the complete conformal-gravity q2 or q3 Taylor tensors",

@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "local-bach-seed-direct-audit-v1.schema.json",
+  "title": "HT1b direct exact-curvature reevaluation audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "direct_curvature_reevaluated_in_this_certificate",
+    "input_seed_payload_sha256",
+    "direct_probe_results",
+    "checks",
+    "claim_guards",
+    "provenance"
+  ],
+  "properties": {
+    "result_id": {"const": "HT1B_DIRECT_CURVATURE_AUDIT"},
+    "result_state": {"const": "DIRECT_CURVATURE_REEVALUATED_SELECTED_HT1B_SEEDS"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "direct_curvature_reevaluated_in_this_certificate": {"const": true},
+    "input_seed_payload_sha256": {"$ref": "#/$defs/hash"},
+    "direct_probe_results": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {"$ref": "#/$defs/probe"}
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "forward_direct_probe_count",
+        "reverse_direct_slice_probe_count",
+        "forward_local_taub_density_reconstruction",
+        "reverse_slice_density_adjoint",
+        "reverse_local_taub_density",
+        "arbitrary_input_bilinear_bach_tensor"
+      ],
+      "properties": {
+        "forward_direct_probe_count": {"const": 6},
+        "reverse_direct_slice_probe_count": {"const": 2},
+        "forward_local_taub_density_reconstruction": {"const": "VERIFIED_EXACT_TWO_CHANNELS"},
+        "reverse_slice_density_adjoint": {"const": "VERIFIED_EXACT"},
+        "reverse_local_taub_density": {"const": "NOT_COMPUTED_MISSING_REVERSE_GAUGE_PROBES"},
+        "arbitrary_input_bilinear_bach_tensor": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "claim_guards": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "upstream_sha256",
+        "upstream_manifest_sha256",
+        "implementation_sha256",
+        "implementation_manifest_sha256",
+        "schema"
+      ],
+      "properties": {
+        "upstream_sha256": {"$ref": "#/$defs/hashManifest"},
+        "upstream_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "implementation_sha256": {"$ref": "#/$defs/hashManifest"},
+        "implementation_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/local-bach-seed-direct-audit-v1.schema.json"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hashManifest": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/hash"}
+    },
+    "exactScalar": {"type": "string", "pattern": "^(?!.*Float).+$"},
+    "probe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "side",
+        "probe",
+        "reverse",
+        "parity",
+        "local_radial_density",
+        "measured_stereographic_integrand",
+        "integrated_action_coefficient",
+        "reduced_amplitude",
+        "execution_kind"
+      ],
+      "properties": {
+        "side": {"enum": ["negative", "positive"]},
+        "probe": {"enum": ["slice", "gauge-0", "gauge-1"]},
+        "reverse": {"type": "boolean"},
+        "parity": {"const": false},
+        "local_radial_density": {"$ref": "#/$defs/exactScalar"},
+        "measured_stereographic_integrand": {"$ref": "#/$defs/exactScalar"},
+        "integrated_action_coefficient": {"$ref": "#/$defs/exactScalar"},
+        "reduced_amplitude": {
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/exactScalar"}
+          ]
+        },
+        "execution_kind": {"const": "DIRECT_EXACT_CURVATURE_ENGINE"}
+      }
+    }
+  }
+}

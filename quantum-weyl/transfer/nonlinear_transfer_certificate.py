@@ -41,13 +41,16 @@ def _source_manifest() -> dict[str, str]:
         "homological_transfer.py",
         "local_bach_seed_lift.py",
         "local_bach_seed_certificate.py",
+        "local_bach_seed_direct_audit.py",
         "nonlinear_transfer_certificate.py",
-        "schema/local-bach-seed-lift-v1.schema.json",
+        "schema/local-bach-seed-lift-v2.schema.json",
+        "schema/local-bach-seed-direct-audit-v1.schema.json",
         "schema/nonlinear_classical_export.schema.json",
         "residual_cubic_block.py",
         "residual_cubic_certificate.py",
         "tests/test_homological_transfer.py",
         "tests/test_local_bach_seed_lift.py",
+        "tests/test_local_bach_seed_direct_audit.py",
         "tests/test_nonlinear_transfer_certificate.py",
         "tests/test_residual_cubic_block.py",
     )
@@ -86,7 +89,8 @@ def build_certificate() -> dict[str, Any]:
                 "floating-point rejection",
                 "portable nonlinear classical export schema",
                 "HT1 selected residual cubic bracket including the matter-matter Kuranishi output",
-                "HT1b two direct mode-specialized local quadratic-Bach density seeds matched to residual q2 entries",
+                "HT1b two mode-specialized local quadratic-Bach density seeds matched to residual q2 entries",
+                "HT1b direct curvature reevaluation of six forward probes and two reverse slice probes",
             ],
             "not_established": [
                 "the complete conformal-gravity q2 or q3 Taylor tensors",
@@ -153,6 +157,10 @@ def build_certificate() -> dict[str, Any]:
             "ht1b_local_bach_seed_certificate": "quantum-weyl/transfer/certificates/HT1B_LOCAL_BACH_SEED_LIFT.json",
             "ht1b_local_bach_seed_sha256": _sha256(
                 TRANSFER_ROOT / "certificates" / "HT1B_LOCAL_BACH_SEED_LIFT.json"
+            ),
+            "ht1b_direct_curvature_audit": "quantum-weyl/transfer/certificates/HT1B_DIRECT_CURVATURE_AUDIT.json",
+            "ht1b_direct_curvature_audit_sha256": _sha256(
+                TRANSFER_ROOT / "certificates" / "HT1B_DIRECT_CURVATURE_AUDIT.json"
             ),
         },
         "assumptions": [

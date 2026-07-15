@@ -62,10 +62,11 @@ transferred before `QME_RESTORED`.
 
 | Command | Elapsed seconds | Status | Tier |
 |---|---:|---|---:|
-| `python3 quantum-weyl/transfer/local_bach_seed_certificate.py --emit` | 6.27 | PASS | 1 |
-| `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --emit` | 0.03 | PASS | 2 |
-| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 48.20 | PASS (27 tests) | 1 |
-| Compile, JSON parsing, and scoped `git diff --check` | 0.13 | PASS | 0 |
+| `python3 quantum-weyl/transfer/local_bach_seed_certificate.py --emit` | 3.77 | PASS | 1 |
+| `python3 quantum-weyl/transfer/local_bach_seed_direct_audit.py --emit --jobs 4` | 665.68 | PASS (8 direct probes) | 2 |
+| `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check` | 0.04 | PASS | 2 |
+| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 39.53 | PASS (34 tests) | 1 |
+| Compile, JSON/YAML parsing, and scoped `git diff --check` | 0.24 | PASS | 0 |
 
 An optional Draft-2020-12 meta-schema check was attempted but was **not
 run** because the environment does not provide the `jsonschema` module.  It

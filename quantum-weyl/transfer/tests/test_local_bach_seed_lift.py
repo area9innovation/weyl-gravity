@@ -13,6 +13,7 @@ sys.path.insert(0, str(QUANTUM_ROOT))
 from transfer.local_bach_seed_lift import (
     OUTPUT_PATH,
     SCHEMA_PATH,
+    _canonical_hash,
     build_certificate,
     validate_certificate,
 )
@@ -49,6 +50,10 @@ class LocalBachSeedLiftTests(unittest.TestCase):
         self.assertEqual(completion["dagger_relation"], "VERIFIED_EXACT")
         self.assertEqual(completion["parity_seed_equality"], "VERIFIED_EXACT")
         self.assertFalse(completion["support_local_density_available_for_reverse_channels"])
+        self.assertEqual(
+            completion["reverse_local_taub_density_status"],
+            "NOT_COMPUTED_MISSING_REVERSE_GAUGE_PROBES",
+        )
 
     def test_full_local_bv_lift_remains_blocked(self) -> None:
         checks = self.certificate["checks"]
@@ -62,12 +67,27 @@ class LocalBachSeedLiftTests(unittest.TestCase):
 
     def test_schema_receipt_is_present(self) -> None:
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
-        self.assertEqual(schema["$id"], "local-bach-seed-lift-v1.schema.json")
+        self.assertEqual(schema["$id"], "local-bach-seed-lift-v2.schema.json")
 
-    def test_payload_tamper_is_rejected(self) -> None:
+    def test_payload_hash_tamper_is_rejected(self) -> None:
         certificate = deepcopy(self.certificate)
         certificate["seed_payload"]["direct_local_channels"][0]["local_radial_density"] = "Integer(0)"
         with self.assertRaisesRegex(ValueError, "payload hash"):
+            validate_certificate(certificate)
+
+    def test_hash_consistent_density_tamper_is_semantically_rejected(self) -> None:
+        certificate = deepcopy(self.certificate)
+        certificate["seed_payload"]["direct_local_channels"][0]["local_radial_density"] = "Integer(0)"
+        certificate["seed_payload_sha256"] = _canonical_hash(certificate["seed_payload"])
+        with self.assertRaisesRegex(ValueError, "measured integrand"):
+            validate_certificate(certificate)
+
+    def test_hash_consistent_normalization_tamper_is_semantically_rejected(self) -> None:
+        certificate = deepcopy(self.certificate)
+        channel = certificate["seed_payload"]["direct_local_channels"][0]
+        channel["raw_ck_to_canonical_scale"] = "Integer(1)"
+        certificate["seed_payload_sha256"] = _canonical_hash(certificate["seed_payload"])
+        with self.assertRaisesRegex(ValueError, "normalization identity"):
             validate_certificate(certificate)
 
     def test_false_full_lift_promotion_is_rejected(self) -> None:

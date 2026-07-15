@@ -43,14 +43,16 @@ closes as the strict CE differential.  What remains absent is a portable
 support-local `q2` tensor before endpoint projection and any extra rows
 outside the selected algebraic field domain.
 
-HT1b has now started from the opposite, local side.  Two independent mixed
-curvature channels retain their exact stereographic radial
-`B^(2)(h_1,h_2)` densities before integration.  Their integrals equal the
-corresponding raw-normalized entries of the portable HT1 residual kernels
-entry by entry.  The reverse/dagger channels are available only after
-integration.  This is a mode-specialized local metric-sector seed, not the
-arbitrary-input tensor `B^(2)_{mu nu}[h_1,h_2]`; the Diff/Weyl ghost rows,
-antifield rows, and local arity-two classical-master identity remain absent.
+HT1b has now started from the opposite, local side.  Its fast rail imports two
+content-addressed exact curvature regressions, independently reintegrates their
+stereographic radial `B^(2)(h_1,h_2)` densities, and checks the corresponding
+raw-normalized HT1 residual entries.  A separate Tier-2 rail executes eight
+exact curvature probes: six reconstruct both forward local Taub densities and
+two verify the reverse slice-current density adjoint.  Reverse gauge probes and
+hence reverse local Taub densities remain absent.  This is a mode-specialized
+local metric-sector seed, not the arbitrary-input tensor
+`B^(2)_{mu nu}[h_1,h_2]`; the Diff/Weyl ghost rows, antifield rows, and local
+arity-two classical-master identity remain absent.
 
 The parity combinations
 
@@ -83,4 +85,11 @@ python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check
 python3 quantum-weyl/transfer/residual_cubic_certificate.py --check
 python3 quantum-weyl/transfer/local_bach_seed_certificate.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v
+```
+
+The expensive direct-curvature reproduction is scheduled/manual rather than a
+per-commit rail:
+
+```bash
+python3 quantum-weyl/transfer/local_bach_seed_direct_audit.py --check --jobs 2
 ```

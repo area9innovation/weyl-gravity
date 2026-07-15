@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "local-bach-seed-lift-v1.schema.json",
+  "$id": "local-bach-seed-lift-v2.schema.json",
   "title": "HT1b mode-specialized local quadratic-Bach seed certificate",
   "type": "object",
   "additionalProperties": false,
@@ -41,6 +41,9 @@
         "integrated_raw_kernel_entry_count",
         "selected_projection_to_residual_q2",
         "selected_residual_cubic_master_equation",
+        "direct_curvature_evaluation_upstream_regression_bound",
+        "direct_curvature_reevaluated_in_this_certificate",
+        "separate_direct_curvature_audit",
         "local_q1_q2_chain_identity",
         "full_support_local_q2",
         "ghost_completion",
@@ -51,6 +54,9 @@
         "integrated_raw_kernel_entry_count": {"const": 4},
         "selected_projection_to_residual_q2": {"const": "VERIFIED_2_DIRECT_LOCAL_CHANNELS"},
         "selected_residual_cubic_master_equation": {"const": "VERIFIED_UPSTREAM"},
+        "direct_curvature_evaluation_upstream_regression_bound": {"const": "VERIFIED_CONTENT_ADDRESSED_EXACT"},
+        "direct_curvature_reevaluated_in_this_certificate": {"const": false},
+        "separate_direct_curvature_audit": {"const": "quantum-weyl/transfer/certificates/HT1B_DIRECT_CURVATURE_AUDIT.json"},
         "local_q1_q2_chain_identity": {"const": "NOT_COMPUTED_MISSING_ARBITRARY_INPUT_Q2_AND_COMPLETIONS"},
         "full_support_local_q2": {"const": "NOT_COMPUTED"},
         "ghost_completion": {"const": "NOT_COMPUTED"},
@@ -74,7 +80,7 @@
         "upstream_manifest_sha256": {"$ref": "#/$defs/hash"},
         "implementation_sha256": {"$ref": "#/$defs/hashManifest"},
         "implementation_manifest_sha256": {"$ref": "#/$defs/hash"},
-        "schema": {"const": "quantum-weyl/transfer/schema/local-bach-seed-lift-v1.schema.json"}
+        "schema": {"const": "quantum-weyl/transfer/schema/local-bach-seed-lift-v2.schema.json"}
       }
     }
   },
@@ -162,7 +168,7 @@
         "integrated_reverse_completion"
       ],
       "properties": {
-        "schema_version": {"const": 1},
+        "schema_version": {"const": 2},
         "scalar_format": {"const": "sympy-srepr-exact-v1"},
         "radial_coordinate": {"type": "string"},
         "s3_integration_formula": {"type": "string"},
@@ -180,7 +186,9 @@
             "K_plus_raw_matrix",
             "dagger_relation",
             "parity_seed_equality",
-            "support_local_density_available_for_reverse_channels"
+            "support_local_density_available_for_reverse_channels",
+            "reverse_slice_density_adjoint_audit",
+            "reverse_local_taub_density_status"
           ],
           "properties": {
             "ordered_basis": {"const": ["E_+", "A_+", "A_-", "L_-"]},
@@ -188,7 +196,9 @@
             "K_plus_raw_matrix": {"$ref": "#/$defs/sparseMatrix"},
             "dagger_relation": {"const": "VERIFIED_EXACT"},
             "parity_seed_equality": {"const": "VERIFIED_EXACT"},
-            "support_local_density_available_for_reverse_channels": {"const": false}
+            "support_local_density_available_for_reverse_channels": {"const": false},
+            "reverse_slice_density_adjoint_audit": {"const": "HT1B_DIRECT_CURVATURE_AUDIT"},
+            "reverse_local_taub_density_status": {"const": "NOT_COMPUTED_MISSING_REVERSE_GAUGE_PROBES"}
           }
         }
       }

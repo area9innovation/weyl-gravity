@@ -1,0 +1,132 @@
+{
+  "checks": {
+    "arbitrary_input_bilinear_bach_tensor": "NOT_COMPUTED",
+    "forward_direct_probe_count": 6,
+    "forward_local_taub_density_reconstruction": "VERIFIED_EXACT_TWO_CHANNELS",
+    "reverse_direct_slice_probe_count": 2,
+    "reverse_local_taub_density": "NOT_COMPUTED_MISSING_REVERSE_GAUGE_PROBES",
+    "reverse_slice_density_adjoint": "VERIFIED_EXACT"
+  },
+  "claim_guards": [
+    "direct reevaluation covers two mode-specialized forward Taub densities, not arbitrary inputs",
+    "the reverse density-level adjoint is certified only for slice currents because reverse gauge probes are absent",
+    "no ghost, antifield, quantum, or LORENTZIAN-CAUSAL claim is made"
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_curvature_reevaluated_in_this_certificate": true,
+  "direct_probe_results": [
+    {
+      "execution_kind": "DIRECT_EXACT_CURVATURE_ENGINE",
+      "integrated_action_coefficient": "Mul(Rational(1, 5), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-1)))",
+      "local_radial_density": "Mul(Integer(-1), Rational(1, 80), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(7), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-11)))",
+      "measured_stereographic_integrand": "Mul(Integer(-1), Rational(1, 40), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-3)), Add(Mul(Integer(7), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-11)))",
+      "parity": false,
+      "probe": "slice",
+      "reduced_amplitude": "Mul(Rational(1, 10), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-1)))",
+      "reverse": false,
+      "side": "negative"
+    },
+    {
+      "execution_kind": "DIRECT_EXACT_CURVATURE_ENGINE",
+      "integrated_action_coefficient": "Integer(0)",
+      "local_radial_density": "Mul(Rational(7, 120), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)))",
+      "measured_stereographic_integrand": "Mul(Rational(7, 60), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-3)))",
+      "parity": false,
+      "probe": "gauge-0",
+      "reduced_amplitude": null,
+      "reverse": false,
+      "side": "negative"
+    },
+    {
+      "execution_kind": "DIRECT_EXACT_CURVATURE_ENGINE",
+      "integrated_action_coefficient": "Integer(0)",
+      "local_radial_density": "Mul(Rational(3, 20), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)))",
+      "measured_stereographic_integrand": "Mul(Rational(3, 10), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-3)))",
+      "parity": false,
+      "probe": "gauge-1",
+      "reduced_amplitude": null,
+      "reverse": false,
+      "side": "negative"
+    },
+    {
+      "execution_kind": "DIRECT_EXACT_CURVATURE_ENGINE",
+      "integrated_action_coefficient": "Mul(Rational(1, 5), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-1)))",
+      "local_radial_density": "Mul(Rational(1, 160), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(11), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-3)))",
+      "measured_stereographic_integrand": "Mul(Rational(1, 80), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-3)), Add(Mul(Integer(11), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-3)))",
+      "parity": false,
+      "probe": "slice",
+      "reduced_amplitude": "Mul(Rational(1, 10), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-1)))",
+      "reverse": false,
+      "side": "positive"
+    },
+    {
+      "execution_kind": "DIRECT_EXACT_CURVATURE_ENGINE",
+      "integrated_action_coefficient": "Integer(0)",
+      "local_radial_density": "Mul(Rational(1, 120), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)))",
+      "measured_stereographic_integrand": "Mul(Rational(1, 60), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-3)))",
+      "parity": false,
+      "probe": "gauge-0",
+      "reduced_amplitude": null,
+      "reverse": false,
+      "side": "positive"
+    },
+    {
+      "execution_kind": "DIRECT_EXACT_CURVATURE_ENGINE",
+      "integrated_action_coefficient": "Integer(0)",
+      "local_radial_density": "Mul(Rational(1, 40), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)))",
+      "measured_stereographic_integrand": "Mul(Rational(1, 20), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-3)))",
+      "parity": false,
+      "probe": "gauge-1",
+      "reduced_amplitude": null,
+      "reverse": false,
+      "side": "positive"
+    },
+    {
+      "execution_kind": "DIRECT_EXACT_CURVATURE_ENGINE",
+      "integrated_action_coefficient": "Mul(Integer(-1), Rational(1, 5), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-1)))",
+      "local_radial_density": "Mul(Integer(-1), Rational(1, 160), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(11), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-3)))",
+      "measured_stereographic_integrand": "Mul(Integer(-1), Rational(1, 80), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-3)), Add(Mul(Integer(11), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-3)))",
+      "parity": false,
+      "probe": "slice",
+      "reduced_amplitude": "Mul(Integer(-1), Rational(1, 10), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-1)))",
+      "reverse": true,
+      "side": "negative"
+    },
+    {
+      "execution_kind": "DIRECT_EXACT_CURVATURE_ENGINE",
+      "integrated_action_coefficient": "Mul(Integer(-1), Rational(1, 5), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-1)))",
+      "local_radial_density": "Mul(Rational(1, 80), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(7), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-11)))",
+      "measured_stereographic_integrand": "Mul(Rational(1, 40), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-3)), Add(Mul(Integer(7), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-11)))",
+      "parity": false,
+      "probe": "slice",
+      "reduced_amplitude": "Mul(Integer(-1), Rational(1, 10), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-1)))",
+      "reverse": true,
+      "side": "positive"
+    }
+  ],
+  "input_seed_payload_sha256": "a097939ce1d1f11fdceb8ca2b6169f29bd5ca9e1f5ecff409c275c1f790fa073",
+  "provenance": {
+    "implementation_manifest_sha256": "9a0ebf20e12ab3df9680ed2650e940af0de84ebe76fde6cf6b45f2dc1683ed7c",
+    "implementation_sha256": {
+      "local_bach_seed_direct_audit.py": "4abb22dcf527787a25204ac4ab06cdd357f5df24cfda90b09945d5c916937ca1",
+      "schema/local-bach-seed-direct-audit-v1.schema.json": "22ecd9efb3d4f7edf01845e4971733c29782ec5fdc337aae95921fd44eea6876",
+      "tests/test_local_bach_seed_direct_audit.py": "2b9a918aebd8123ad2c62ec3c8607238006a660b16b34ddebfbe0a7630fa86a6"
+    },
+    "schema": "quantum-weyl/transfer/schema/local-bach-seed-direct-audit-v1.schema.json",
+    "upstream_manifest_sha256": "71b22b1fe11bac035584adc2a4505e64f0f63bb4b40253c3bd36927742bb67ea",
+    "upstream_sha256": {
+      "quantum-weyl/transfer/certificates/HT1B_LOCAL_BACH_SEED_LIFT.json": "f08976200d4e07dc4fb349fa785c960ab4aa8a0d685fc82fe1a2cb30c5ff26c5",
+      "quantum-weyl/transfer/local_bach_seed_lift.py": "5b9de00f940f67e105320f3816434540caad79cd3bdc4081b5dcb43e7f0fe9d4",
+      "symbolic/verify_conformal_quartic_contact.py": "20e68a01cad0e9eb4ddaee12e6fab4662de84d4e732ae6b10941be7c3ca10ef0",
+      "symbolic/verify_conformal_quartic_currents.py": "dff704561af3ad7c3dfab8c888c8e5c62c409d6ba943d1b232fafd5f52236d46",
+      "symbolic/verify_conformal_quartic_exchange.py": "a29f3aa9076daf381bf0c241610a1aa5f5e7c7a6b44977f778af6194fd2cf86c",
+      "symbolic/verify_conformal_quartic_hessian.py": "9058f46eecb9e964de835ab460ef361919a9ac030d1150c0fc8f557f098a5f54",
+      "symbolic/verify_conformal_taub_charge.py": "7909156d1a0791b9d58be7b1b5e07b2b4b771b92a82ee1b780e276167641faf0"
+    }
+  },
+  "result_id": "HT1B_DIRECT_CURVATURE_AUDIT",
+  "result_state": "DIRECT_CURVATURE_REEVALUATED_SELECTED_HT1B_SEEDS"
+}

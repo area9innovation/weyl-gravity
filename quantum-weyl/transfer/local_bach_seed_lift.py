@@ -7,9 +7,11 @@ stereographic radial density before integration.  This module binds those
 densities to their integrated Taub charges and then, entry by entry, to the
 raw-normalized kernels underlying the selected residual cubic bracket.
 
-This is a genuine local-lift seed, not the complete support-local ``q2``.
-The missing arbitrary-input tensor and its ghost/antifield completions keep
-the quadratic classical-master identity fail-closed.
+The fast rail reconstructs the seeds from content-addressed exact regression
+expressions and verifies their mathematics independently.  A separate Tier-2
+audit reruns the curvature engine.  Neither rail is the complete support-local
+``q2``: the missing arbitrary-input tensor and its ghost/antifield completions
+keep the quadratic classical-master identity fail-closed.
 """
 
 from __future__ import annotations
@@ -41,7 +43,7 @@ from symbolic.verify_conformal_taub_charge import (
 
 TRANSFER_ROOT = Path(__file__).resolve().parent
 OUTPUT_PATH = TRANSFER_ROOT / "certificates" / "HT1B_LOCAL_BACH_SEED_LIFT.json"
-SCHEMA_PATH = TRANSFER_ROOT / "schema" / "local-bach-seed-lift-v1.schema.json"
+SCHEMA_PATH = TRANSFER_ROOT / "schema" / "local-bach-seed-lift-v2.schema.json"
 HT1_PATH = TRANSFER_ROOT / "certificates" / "HT1_RESIDUAL_CUBIC_BLOCK.json"
 
 UPSTREAM_PATHS = (
@@ -73,6 +75,18 @@ def _exact(value: sp.Expr) -> str:
     if value.atoms(sp.Float):
         raise ValueError("HT1b local Bach seed contains floating-point data")
     return sp.srepr(sp.factor(value))
+
+
+def _parse_exact_scalar(value: object, field: str) -> sp.Expr:
+    if not isinstance(value, str) or "Float" in value:
+        raise ValueError(f"HT1b {field} is not an exact serialized scalar")
+    try:
+        scalar = sp.sympify(value)
+    except (TypeError, ValueError, SyntaxError) as error:
+        raise ValueError(f"HT1b {field} is not a valid serialized scalar") from error
+    if scalar.atoms(sp.Float):
+        raise ValueError(f"HT1b {field} contains floating-point data")
+    return scalar
 
 
 def _matrix_payload(matrix: sp.MatrixBase) -> dict[str, object]:
@@ -236,7 +250,7 @@ def build_certificate(maximum_energy: int = 4) -> dict[str, Any]:
         raise AssertionError("parity-related integrated curvature seeds disagree")
 
     seed_payload = {
-        "schema_version": 1,
+        "schema_version": 2,
         "scalar_format": "sympy-srepr-exact-v1",
         "radial_coordinate": "t=tan(beta/2), t in (0,infinity)",
         "s3_integration_formula": "8*pi^2*integral_0^infinity measured_stereographic_integrand dt",
@@ -248,13 +262,15 @@ def build_certificate(maximum_energy: int = 4) -> dict[str, Any]:
             "dagger_relation": "VERIFIED_EXACT",
             "parity_seed_equality": "VERIFIED_EXACT",
             "support_local_density_available_for_reverse_channels": False,
+            "reverse_slice_density_adjoint_audit": "HT1B_DIRECT_CURVATURE_AUDIT",
+            "reverse_local_taub_density_status": "NOT_COMPUTED_MISSING_REVERSE_GAUGE_PROBES",
         },
     }
     upstream_hashes = {path: _sha256(ROOT / path) for path in UPSTREAM_PATHS}
     implementation_paths = (
         "local_bach_seed_lift.py",
         "local_bach_seed_certificate.py",
-        "schema/local-bach-seed-lift-v1.schema.json",
+        "schema/local-bach-seed-lift-v2.schema.json",
         "tests/test_local_bach_seed_lift.py",
     )
     implementation_hashes = {
@@ -275,18 +291,22 @@ def build_certificate(maximum_energy: int = 4) -> dict[str, Any]:
             ),
             "selected_projection_to_residual_q2": "VERIFIED_2_DIRECT_LOCAL_CHANNELS",
             "selected_residual_cubic_master_equation": "VERIFIED_UPSTREAM",
+            "direct_curvature_evaluation_upstream_regression_bound": "VERIFIED_CONTENT_ADDRESSED_EXACT",
+            "direct_curvature_reevaluated_in_this_certificate": False,
+            "separate_direct_curvature_audit": "quantum-weyl/transfer/certificates/HT1B_DIRECT_CURVATURE_AUDIT.json",
             "local_q1_q2_chain_identity": "NOT_COMPUTED_MISSING_ARBITRARY_INPUT_Q2_AND_COMPLETIONS",
             "full_support_local_q2": "NOT_COMPUTED",
             "ghost_completion": "NOT_COMPUTED",
             "antifield_completion": "NOT_COMPUTED",
         },
         "established": [
-            "two independent mixed B^(2) curvature channels retain exact local radial densities before integration",
+            "two independent mixed B^(2) curvature channels are imported from content-addressed exact upstream curvature regressions",
             "each local density integrates exactly to its action-normalized Taub charge",
             "both direct charges equal the corresponding raw-normalized entries of the checked-in HT1 residual q2 payload",
             "the four integrated forward/reverse entries obey the exact dagger relation and parity-seed equality",
         ],
         "claim_guards": [
+            "the fast certificate does not execute the curvature engine; direct reevaluation is a separate Tier-2 audit",
             "mode-specialized radial densities are not the arbitrary-support tensor B^(2)_{mu nu}[h1,h2]",
             "equivariant reconstruction of fifteen residual kernels is not direct local evaluation of fifteen Bach-source components",
             "the quadratic classical-master identity is not claimed without the full q1, q2 ghost rows, and antifield rows",
@@ -305,11 +325,97 @@ def build_certificate(maximum_energy: int = 4) -> dict[str, Any]:
             "upstream_manifest_sha256": _canonical_hash(upstream_hashes),
             "implementation_sha256": implementation_hashes,
             "implementation_manifest_sha256": _canonical_hash(implementation_hashes),
-            "schema": "quantum-weyl/transfer/schema/local-bach-seed-lift-v1.schema.json",
+            "schema": "quantum-weyl/transfer/schema/local-bach-seed-lift-v2.schema.json",
         },
     }
     validate_certificate(certificate)
     return certificate
+
+
+def verify_seed_payload(payload: object, ht1_payload: object) -> None:
+    """Recompute the portable seed identities without trusting check labels."""
+
+    if not isinstance(payload, dict) or payload.get("schema_version") != 2:
+        raise ValueError("HT1b local Bach seed payload is missing")
+    if not isinstance(ht1_payload, dict):
+        raise ValueError("HT1b residual q2 payload is missing")
+    channels = payload.get("direct_local_channels")
+    if not isinstance(channels, list) or len(channels) != 2:
+        raise ValueError("HT1b requires exactly two direct local seed channels")
+    expected_channels = {
+        "negative_A3_to_E2": ("K-_1/2_-1/2", [0, 17], -1),
+        "positive_A3_to_L4": ("K+_1/2_-1/2", [127, 83], 1),
+    }
+    if {channel.get("channel_id") for channel in channels if isinstance(channel, dict)} != set(expected_channels):
+        raise ValueError("HT1b direct channel identities changed")
+    for channel in channels:
+        if not isinstance(channel, dict):
+            raise ValueError("HT1b local seed channel is malformed")
+        label, coordinate, signed_frequency = expected_channels[channel["channel_id"]]
+        if channel.get("residual_kernel_label") != label or channel.get("residual_matrix_coordinate") != coordinate:
+            raise ValueError("HT1b residual matrix coordinate changed")
+        scalars = {
+            key: _parse_exact_scalar(channel.get(key), key)
+            for key in (
+                "local_radial_density",
+                "measured_stereographic_integrand",
+                "slice_coefficient",
+                "integrated_taub_charge",
+                "canonical_residual_kernel_entry",
+                "raw_ck_to_canonical_scale",
+                "raw_residual_kernel_entry",
+            )
+        }
+        density = scalars["local_radial_density"]
+        measured = scalars["measured_stereographic_integrand"]
+        radial_symbols = density.free_symbols | measured.free_symbols
+        if len(radial_symbols) != 1:
+            raise ValueError("HT1b density does not have one exact radial coordinate")
+        tangent = next(iter(radial_symbols))
+        if sp.cancel(measured - 2 * density / (1 + tangent**2)) != 0:
+            raise ValueError("HT1b measured integrand does not follow from its local density")
+        integrated = sp.simplify(
+            8 * sp.pi**2 * sp.integrate(measured, (tangent, 0, sp.oo))
+        )
+        if integrated != scalars["integrated_taub_charge"]:
+            raise ValueError("HT1b local density does not integrate to its Taub charge")
+        if sp.simplify(
+            -sp.I * signed_frequency * scalars["slice_coefficient"] - integrated
+        ) != 0:
+            raise ValueError("HT1b slice normalization no longer gives the Taub charge")
+        if sp.simplify(
+            scalars["raw_ck_to_canonical_scale"]
+            * scalars["canonical_residual_kernel_entry"]
+            - scalars["raw_residual_kernel_entry"]
+        ) != 0:
+            raise ValueError("HT1b raw/canonical normalization identity failed")
+        row, column = coordinate
+        portable_entry = _payload_matrix_entry(ht1_payload, label, row, column)
+        if portable_entry != scalars["canonical_residual_kernel_entry"]:
+            raise ValueError("HT1b canonical entry disagrees with the HT1 q2 payload")
+        if scalars["raw_residual_kernel_entry"] != integrated:
+            raise ValueError("HT1b Taub charge disagrees with the raw residual entry")
+
+    completion = payload.get("integrated_reverse_completion")
+    if not isinstance(completion, dict):
+        raise ValueError("HT1b integrated reverse completion is missing")
+    if completion.get("support_local_density_available_for_reverse_channels") is not False:
+        raise ValueError("HT1b reverse local density was over-promoted")
+    if completion.get("reverse_local_taub_density_status") != "NOT_COMPUTED_MISSING_REVERSE_GAUGE_PROBES":
+        raise ValueError("HT1b reverse local Taub density status changed")
+    matrices = []
+    for key in ("K_minus_raw_matrix", "K_plus_raw_matrix"):
+        matrix_payload = completion.get(key)
+        if not isinstance(matrix_payload, dict) or matrix_payload.get("shape") != [4, 4]:
+            raise ValueError("HT1b integrated reverse matrix shape changed")
+        matrix = sp.zeros(4)
+        for row, column, scalar in matrix_payload.get("entries", []):
+            if matrix[row, column] != 0:
+                raise ValueError("HT1b integrated reverse matrix has a duplicate entry")
+            matrix[row, column] = _parse_exact_scalar(scalar, key)
+        matrices.append(matrix)
+    if matrices[1] != matrices[0].conjugate().T:
+        raise ValueError("HT1b integrated reverse matrices lost the dagger relation")
 
 
 def validate_certificate(certificate: object) -> None:
@@ -322,28 +428,12 @@ def validate_certificate(certificate: object) -> None:
     if certificate.get("dependency_tags") != ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]:
         raise ValueError("HT1b local Bach seed dependency boundary changed")
     payload = certificate.get("seed_payload")
-    if not isinstance(payload, dict) or payload.get("schema_version") != 1:
+    if not isinstance(payload, dict) or payload.get("schema_version") != 2:
         raise ValueError("HT1b local Bach seed payload is missing")
     if _canonical_hash(payload) != certificate.get("seed_payload_sha256"):
         raise ValueError("HT1b local Bach seed payload hash mismatch")
-    channels = payload.get("direct_local_channels")
-    if not isinstance(channels, list) or len(channels) != 2:
-        raise ValueError("HT1b requires exactly two direct local seed channels")
-    for channel in channels:
-        if not isinstance(channel, dict):
-            raise ValueError("HT1b local seed channel is malformed")
-        for key in (
-            "local_radial_density",
-            "measured_stereographic_integrand",
-            "integrated_taub_charge",
-            "canonical_residual_kernel_entry",
-            "raw_residual_kernel_entry",
-        ):
-            scalar = channel.get(key)
-            if not isinstance(scalar, str) or "Float" in scalar or sp.sympify(scalar).atoms(sp.Float):
-                raise ValueError("HT1b local seed contains non-exact scalar data")
-        if channel.get("integrated_taub_charge") != channel.get("raw_residual_kernel_entry"):
-            raise ValueError("HT1b direct local integral no longer equals its residual entry")
+    ht1 = json.loads(HT1_PATH.read_text(encoding="utf-8"))
+    verify_seed_payload(payload, ht1.get("transfer_payload"))
     checks = certificate.get("checks")
     if not isinstance(checks, dict) or any(
         checks.get(key) != "NOT_COMPUTED"
@@ -352,6 +442,8 @@ def validate_certificate(certificate: object) -> None:
         raise ValueError("HT1b missing local BV sectors were over-promoted")
     if checks.get("local_q1_q2_chain_identity") != "NOT_COMPUTED_MISSING_ARBITRARY_INPUT_Q2_AND_COMPLETIONS":
         raise ValueError("HT1b local classical-master identity was over-promoted")
+    if checks.get("direct_curvature_reevaluated_in_this_certificate") is not False:
+        raise ValueError("HT1b fast certificate falsely claims direct curvature reevaluation")
     provenance = certificate.get("provenance")
     if not isinstance(provenance, dict):
         raise ValueError("HT1b provenance is missing")
