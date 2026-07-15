@@ -13,6 +13,7 @@ from .covariant_derivatives import (
     covariant_commutator_relation_in_monomial,
 )
 from .hodge import Signature, TwoFormHodge
+from .four_dimensional import four_dimensional_schouten_analysis
 from .metadata import FieldSpec, IndexVariance, SpacetimeParity, minimal_registry
 from .pairing_orbits import PairingOrbit, signed_pairing_orbits
 from .six_derivative import six_derivative_curvature_analysis
@@ -55,6 +56,7 @@ __all__ = [
     "covariant_commutator_relation",
     "covariant_commutator_relation_in_monomial",
     "epsilon_pair_expansion",
+    "four_dimensional_schouten_analysis",
     "reduce_epsilon_pair_in_monomial",
     "minimal_registry",
     "replace_riemann_by_weyl",

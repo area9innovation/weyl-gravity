@@ -57,17 +57,23 @@ projection matrix, kernel witnesses, parity-block dimensions, provenance,
 and deterministic named-representative coordinates.  A dimension-checked
 occurrence antisymmetrizer supplies the five-index Schouten primitive; Weyl
 is a distinct tracefree tensor specification; and paired epsilon tensors
-reduce through a signature-aware 24-term generalized-delta expansion.  These
-are verified primitives only: no four-dimensional Schouten relation has yet
-been applied to the order-six basis.
+reduce through a signature-aware 24-term generalized-delta expansion.
+
+The four-dimensional layer now applies that primitive exhaustively.  Across
+all three order-six sectors, 3,328 endpoint selections generate 72 unique
+nonzero Schouten rows of ambient rank 11.  Their induced rank on the universal
+integrated quotient is two, giving an exact specialization from dimension ten
+to dimension eight.  Both killed directions come from the cubic sector,
+whose rank drops from eight to six; the derivative sectors acquire no further
+dimension-dependent loss.  The surjective specialization map and its two
+kernel witnesses are stored exactly.
 
 This is not Gate A or Gate B.  In particular, the classical commit is
 `NOT_FROZEN`; antifield and nonminimal rows have not been imported; and
 general covariant curvature reduction remains incomplete.  The
-once-differentiated quotient does not apply integration by parts or commute
+once-differentiated standalone quotient does not apply integration by parts or commute
 derivatives, because those operations mix `(nabla Riemann)^2` with cubic
-curvature.  The dimension-dependent Schouten identities, Weyl-tensor
-tracefree Hodge action, descent, and both
+curvature.  The tracefree-Weyl specialization, parity-odd sector, descent, and both
 `H^{0,4}(s|d)` and `H^{1,4}(s|d)` remain unavailable.  These curvature
 certificates may not be cited as a complete covariant jet normal form or
 cohomology calculation.
@@ -82,11 +88,13 @@ PYTHONPATH=quantum-weyl python -m local_bv.differential_hodge_certificate --chec
 PYTHONPATH=quantum-weyl python -m local_bv.scaling_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.six_derivative_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.specialization_certificate --check
+PYTHONPATH=quantum-weyl python -m local_bv.four_dimensional_certificate --check
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_CURVATURE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_SPECIALIZATION_FOUNDATIONS.json
+python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT.json
 ```
 
 The certificate is
@@ -121,7 +129,12 @@ The specialization-foundation receipt is
 with its common result envelope at
 [`../certificates/LOCAL_SPECIALIZATION_FOUNDATIONS.json`](../certificates/LOCAL_SPECIALIZATION_FOUNDATIONS.json).
 
-Next admissible local steps are the four-dimensional Schouten and tracefree
-Weyl specializations, Weyl BRST curvature rows, and a derivative-bounded
+The four-dimensional Schouten receipt is
+[`certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT_CERTIFICATE.json`](certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT_CERTIFICATE.json),
+with its common result envelope at
+[`../certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT.json`](../certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT.json).
+
+Next admissible local steps are the tracefree-Weyl and parity-odd
+specializations, Weyl BRST curvature rows, and a derivative-bounded
 ghost-number ansatz.  The antifield and relative-cohomology layers still wait
 for the frozen classical schema.

@@ -101,3 +101,7 @@ Generate every nonzero five-index antisymmetrization induced on the universal
 order-six basis, store it as a provenance-bearing `dimension_4_schouten`
 relation family, and inspect the exact projection kernel before performing
 the tracefree-Weyl and parity-odd specializations.
+
+This gate is now completed by
+`reports/local-four-dimensional-schouten-quotient.md`; the foundation receipt
+remains the fail-closed record of the preceding infrastructure milestone.

@@ -77,7 +77,7 @@ schema/             machine-readable result contracts
 | Gate | Deliverable | Bootstrap status |
 |---|---|---|
 | A | `CLASSICAL_IMPORT_CERTIFICATE` | `FAIL_CLOSED`; artifact integrity verified, but 15 of 18 export categories remain incomplete or unavailable |
-| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; exact dimension-independent parity-even order-six curvature quotient and specialization-map foundations, but no computed four-dimensional Weyl/Schouten quotient or BRST-cohomology classification |
+| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; exact four-dimensional parity-even order-six Riemann quotient, but no tracefree-Weyl/parity-odd specialization or BRST-cohomology classification |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `IN_PROGRESS` import/projection infrastructure only |
 | D | reduced and Euclidean coefficient ledgers | `IN_PROGRESS` bookkeeping only; no BV coefficient claimed |
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
@@ -117,6 +117,9 @@ or quantum-master-equation result.
   records exact staged projections and kernels, relation provenance,
   five-index antisymmetrization, tracefree-Weyl reduction, and tensor-level
   epsilon-pair elimination without claiming the four-dimensional quotient.
+- [`reports/local-four-dimensional-schouten-quotient.md`](reports/local-four-dimensional-schouten-quotient.md)
+  records exhaustive five-index antisymmetrization, the exact `10 -> 8`
+  specialization and kernel, and the remaining tracefree-Weyl/BRST boundary.
 - [`reports/branch-c-spectral-bootstrap.md`](reports/branch-c-spectral-bootstrap.md)
   records the reduced `E/A/L` character, residues, and determinant boundary.
 - [`reports/bootstrap-integration.md`](reports/bootstrap-integration.md)
