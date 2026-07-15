@@ -89,7 +89,7 @@ schema/             machine-readable result contracts
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
 | F | one-loop Slavnov breaking and QME status | `NOT_COMPUTED` |
 | G | residual quantum transfer and pairing correction | `NOT_COMPUTED` |
-| N | nonlinear classical transfer prerequisite | `ENGINE_READY_INPUT_BLOCKED`; exact arity-2/3 engine and schema ready, classical Taylor tensors and portable contraction absent |
+| N | nonlinear classical transfer prerequisite | `HT1_PARTIAL`; exact residual ghost--matter cubic charge computed, matter--matter Bach/BV bracket and portable full contraction absent |
 
 The precursor audits
 [`verify_conformal_descent_anomaly.py`](../symbolic/verify_conformal_descent_anomaly.py)
@@ -154,6 +154,9 @@ or quantum-master-equation result.
 - [`reports/nonlinear-homological-transfer-bootstrap.md`](reports/nonlinear-homological-transfer-bootstrap.md)
   records the exact low-arity transfer engine, classical export contract,
   scientific question ledger, and fail-closed input blockers.
+- [`reports/ht1-residual-cubic-block.md`](reports/ht1-residual-cubic-block.md)
+  records the computed residual ghost--matter cubic charge and separates it
+  from the still-missing matter--matter gravitational bracket.
 
 The applicable test tiers and escalation rules are in
 [`TESTING.md`](TESTING.md).

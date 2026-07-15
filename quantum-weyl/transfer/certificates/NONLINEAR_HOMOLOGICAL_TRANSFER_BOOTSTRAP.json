@@ -3,6 +3,7 @@
     "The low-arity engine uses a finite exact basis and the declared suspended convention.",
     "The engine fixture tests implementation mechanics only and carries no conformal-gravity coefficient claim.",
     "The classical import remains fail-closed until portable tensors and maps are independently verified.",
+    "The certified residual ghost-matter block does not substitute for the missing matter-matter nonlinear Bach/BV tensor.",
     "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme."
   ],
   "classical_freeze_gate": "FAIL_CLOSED",
@@ -62,7 +63,7 @@
     {
       "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2",
       "stage": "HT1",
-      "status": "BLOCKED"
+      "status": "IN_PROGRESS_PARTIAL_RESIDUAL_BLOCK"
     },
     {
       "deliverable": "compute ell3 and dynamical/topological mixing table",
@@ -89,20 +90,25 @@
     "classical_snapshot": "quantum-weyl/classical_import/snapshots/bootstrap-v1.json",
     "classical_snapshot_sha256": "01e4b2188695f901a77a5bd1921454dc57c19b2d8047c835a83646cbabd74a26",
     "input_schema": "quantum-weyl/transfer/schema/nonlinear_classical_export.schema.json",
+    "partial_ht1_certificate": "quantum-weyl/transfer/certificates/HT1_RESIDUAL_CUBIC_BLOCK.json",
+    "partial_ht1_sha256": "284a92ef10357e322c7fd18dccbf55b85b03165c2059489983fec9a8402d5f0e",
     "source_manifest": {
       "homological_transfer.py": "2a39337ddbede21ee299e9c9c83282f5039f84fe032026967e8d33fd51e6f54a",
-      "nonlinear_transfer_certificate.py": "dc2c487379875d94d320c03c3ac9e0773e0051d426d27b74494c554f29771751",
+      "nonlinear_transfer_certificate.py": "ea1742d8691557bfa51c9b4d6cc6f1e311aab164a74c98d8598bf5ec4259943d",
+      "residual_cubic_block.py": "490c56c7f228346a8ba883854c52ffa92a96dd42ff8a6fb3235cc31082d124fa",
+      "residual_cubic_certificate.py": "5cd11a1189d2eb154108ea03aa253badccb1b253464ffe87ba3f87770b2c1b26",
       "schema/nonlinear_classical_export.schema.json": "c476d0e1b3f4c30937100a58622c87b611afdb0224b9ffedea35ae376398ac79",
       "tests/test_homological_transfer.py": "369354c95a8e4209c0ab1f1d5d877535c86ae39e19421ce0398cbd61ae394783",
-      "tests/test_nonlinear_transfer_certificate.py": "7f215357d95e8a3ab3da3079086a55508d4007fa16b678fd11d1f5a2c703b209"
+      "tests/test_nonlinear_transfer_certificate.py": "c064d9b2952e4f3cbbc8897113af5a27ed97547e0c878f77a2addddd380adc1a",
+      "tests/test_residual_cubic_block.py": "3f866305eb9c79b5b0af75b1ccde43fd34d80236c4f02d3a296361042ae67a0b"
     },
-    "source_manifest_sha256": "d878dc6e654b152d396c154a9f16e0f50d4c463d24b9156d5e4362e92cbfd399"
+    "source_manifest_sha256": "ed63d5e4df945e0d1460e7991119fa95233989575c5d234aeb06e1c08c22bf1f"
   },
   "question_ledger": [
     {
       "next_certificate": "HT1_TRANSFERRED_BINARY_BRACKET",
       "question_id": "transferred_cubic_bracket",
-      "status": "BLOCKED_MISSING_CLASSICAL_TAYLOR_DATA"
+      "status": "PARTIAL_GHOST_MATTER_BLOCK_COMPUTED_MATTER_SELF_BLOCK_MISSING"
     },
     {
       "next_certificate": "HT2_DYNAMICAL_CLOSURE",
@@ -141,7 +147,7 @@
     "normalized_weyl_square_representatives"
   ],
   "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-  "result_state": "ENGINE_READY_INPUT_BLOCKED",
+  "result_state": "ENGINE_READY_HT1_PARTIAL_INPUT_BLOCKED",
   "scope": {
     "established": [
       "exact strong-deformation-retract verification",
@@ -149,11 +155,12 @@
       "contact-plus-exchange transferred ternary Taylor bracket",
       "full and transferred coderivation-square checks through arity three",
       "floating-point rejection",
-      "portable nonlinear classical export schema"
+      "portable nonlinear classical export schema",
+      "partial HT1 residual ghost-matter and ghost-ghost cubic charge block"
     ],
     "not_established": [
-      "the conformal-gravity q2 or q3 Taylor tensors",
-      "the conformal-gravity transferred cubic bracket",
+      "the complete conformal-gravity q2 or q3 Taylor tensors",
+      "the matter-matter component of the conformal-gravity transferred cubic bracket",
       "closure or centrality of either Weyl-square direction",
       "absence of higher-bracket sector re-entry",
       "an interacting particle or deformation-theory theorem",

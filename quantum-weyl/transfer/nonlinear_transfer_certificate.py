@@ -41,8 +41,11 @@ def _source_manifest() -> dict[str, str]:
         "homological_transfer.py",
         "nonlinear_transfer_certificate.py",
         "schema/nonlinear_classical_export.schema.json",
+        "residual_cubic_block.py",
+        "residual_cubic_certificate.py",
         "tests/test_homological_transfer.py",
         "tests/test_nonlinear_transfer_certificate.py",
+        "tests/test_residual_cubic_block.py",
     )
     return {path: _sha256(TRANSFER_ROOT / path) for path in paths}
 
@@ -65,7 +68,7 @@ def build_certificate() -> dict[str, Any]:
     source_manifest = _source_manifest()
     return {
         "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-        "result_state": "ENGINE_READY_INPUT_BLOCKED",
+        "result_state": "ENGINE_READY_HT1_PARTIAL_INPUT_BLOCKED",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "classical_snapshot_commit": snapshot["classical_commit"],
         "classical_freeze_gate": snapshot["gate_a_status"],
@@ -78,10 +81,11 @@ def build_certificate() -> dict[str, Any]:
                 "full and transferred coderivation-square checks through arity three",
                 "floating-point rejection",
                 "portable nonlinear classical export schema",
+                "partial HT1 residual ghost-matter and ghost-ghost cubic charge block",
             ],
             "not_established": [
-                "the conformal-gravity q2 or q3 Taylor tensors",
-                "the conformal-gravity transferred cubic bracket",
+                "the complete conformal-gravity q2 or q3 Taylor tensors",
+                "the matter-matter component of the conformal-gravity transferred cubic bracket",
                 "closure or centrality of either Weyl-square direction",
                 "absence of higher-bracket sector re-entry",
                 "an interacting particle or deformation-theory theorem",
@@ -94,7 +98,7 @@ def build_certificate() -> dict[str, Any]:
         "question_ledger": [
             {
                 "question_id": "transferred_cubic_bracket",
-                "status": "BLOCKED_MISSING_CLASSICAL_TAYLOR_DATA",
+                "status": "PARTIAL_GHOST_MATTER_BLOCK_COMPUTED_MATTER_SELF_BLOCK_MISSING",
                 "next_certificate": "HT1_TRANSFERRED_BINARY_BRACKET",
             },
             {
@@ -125,7 +129,7 @@ def build_certificate() -> dict[str, Any]:
         ],
         "programme_stages": [
             {"stage": "HT0", "deliverable": "exact transfer engine and input contract", "status": "READY"},
-            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "BLOCKED"},
+            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "IN_PROGRESS_PARTIAL_RESIDUAL_BLOCK"},
             {"stage": "HT2", "deliverable": "compute ell3 and dynamical/topological mixing table", "status": "NOT_COMPUTED"},
             {"stage": "HT3", "deliverable": "higher-arity and particle-filtration obstruction ledger", "status": "NOT_COMPUTED"},
             {"stage": "HT4", "deliverable": "cyclic minimal action and formal moduli interpretation", "status": "NOT_COMPUTED"},
@@ -137,11 +141,16 @@ def build_certificate() -> dict[str, Any]:
             "source_manifest": source_manifest,
             "source_manifest_sha256": _canonical_hash(source_manifest),
             "input_schema": "quantum-weyl/transfer/schema/nonlinear_classical_export.schema.json",
+            "partial_ht1_certificate": "quantum-weyl/transfer/certificates/HT1_RESIDUAL_CUBIC_BLOCK.json",
+            "partial_ht1_sha256": _sha256(
+                TRANSFER_ROOT / "certificates" / "HT1_RESIDUAL_CUBIC_BLOCK.json"
+            ),
         },
         "assumptions": [
             "The low-arity engine uses a finite exact basis and the declared suspended convention.",
             "The engine fixture tests implementation mechanics only and carries no conformal-gravity coefficient claim.",
             "The classical import remains fail-closed until portable tensors and maps are independently verified.",
+            "The certified residual ghost-matter block does not substitute for the missing matter-matter nonlinear Bach/BV tensor.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",
         ],
     }
@@ -166,7 +175,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: ENGINE READY, INPUT BLOCKED")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: HT1 PARTIAL, FULL INPUT BLOCKED")
     return 0
 
 

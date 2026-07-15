@@ -2,7 +2,7 @@
 
 Dependency tag: `LOCAL-ALGEBRAIC`
 
-Result state: `ENGINE_READY_INPUT_BLOCKED`
+Result state: `ENGINE_READY_HT1_PARTIAL_INPUT_BLOCKED`
 
 ## Established
 
@@ -13,6 +13,11 @@ term and the three `q2 s_cl q2` exchange trees.  Koszul symmetry, parity, SDR
 side conditions, exact arithmetic, and the full/transferred `Q^2=0`
 identities through arity three are executable checks.
 
+HT1 now additionally composes the already-certified endpoint Taub map,
+closed-cylinder BV--BFV suspension, all-energy moment map, and strict
+centered HPL transfer.  This computes the residual ghost--matter and
+ghost--ghost cubic charge blocks exactly.
+
 The portable input schema requires full and residual graded bases, `q1`,
 `q2`, `q3`, `iota_cl`, `pi_cl`, `s_cl`, the cyclic pairing, normalized
 Weyl-square representative vectors, verification artifacts, and canonical
@@ -21,11 +26,13 @@ answers for coefficient data.
 
 ## Not established
 
-No conformal-gravity nonlinear tensor has yet passed this input gate.  In
-particular, this bootstrap does not compute the transferred cubic bracket,
-prove closure of the dynamical direction, prove that the topological
-direction is central or inert, exclude sector re-entry by higher brackets,
-or establish an interacting particle/deformation interpretation.
+No complete conformal-gravity nonlinear tensor has yet passed the portable
+input gate.  The partial residual cubic block does not compute the
+matter--matter bracket sourced by the nonlinear Bach tensor.  It therefore
+does not prove closure of the dynamical direction, prove that the
+topological direction is central or inert, exclude sector re-entry by higher
+brackets, or establish a complete interacting particle/deformation
+interpretation.
 
 The centered free statement must be tested through a particle-number
 filtration once interactions are present.  It is not promoted merely by
@@ -37,7 +44,7 @@ transferred before `QME_RESTORED`.
 | Stage | Exact deliverable | Status |
 |---|---|---|
 | HT0 | Engine, convention, schema, blocker ledger | Ready |
-| HT1 | Import classical Taylor data; compute `ell_2` | Blocked on export |
+| HT1 | Import classical Taylor data; compute `ell_2` | Partial residual ghost--matter block computed; matter--matter block blocked on export |
 | HT2 | Compute `ell_3`; dynamical/topological mixing and centrality ledgers | Not computed |
 | HT3 | Higher arities and particle-filtration spectral sequence | Not computed |
 | HT4 | Cyclic minimal action and formal moduli/deformation interpretation | Not computed |
@@ -48,7 +55,8 @@ transferred before `QME_RESTORED`.
 | Command | Elapsed seconds | Status | Tier |
 |---|---:|---|---:|
 | `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --emit` | 0.03 | PASS | 1 |
-| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 0.81 | PASS (8 tests) | 1 |
+| `python3 quantum-weyl/transfer/residual_cubic_certificate.py --emit` | 5.51 | PASS | 1 |
+| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 5.61 | PASS (12 tests) | 1 |
 | `python3 -m json.tool quantum-weyl/transfer/schema/nonlinear_classical_export.schema.json` | 0.02 | PASS | 0 |
 | `python3 -m py_compile quantum-weyl/transfer/*.py quantum-weyl/transfer/tests/*.py` | 0.03 | PASS | 0 |
 | `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check` | 0.03 | PASS | 1 |

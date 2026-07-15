@@ -1,0 +1,85 @@
+{
+  "category": "selected finite algebraic closed-cylinder BV-BFV model",
+  "checks": {
+    "centered_hpl_transfer": "VERIFIED_STRICT_CE",
+    "chirality_off_diagonal_nonzero_entries": 0,
+    "conformal_closure": "VERIFIED_ON_EVERY_INTERIOR_SHELL",
+    "endpoint_to_moment_map_components": "VERIFIED_15_OF_15",
+    "moment_map_normalization": "VERIFIED_EXACT",
+    "one_particle_centered_h4": 0,
+    "selected_bfv_suspension_lambda": "VERIFIED_1",
+    "two_particle_centered_h4": 2
+  },
+  "claim_guards": [
+    "the result does not compute the matter-matter gravitational self-interaction bracket",
+    "chirality block diagonality here does not prove closure of the dynamical Weyl-square deformation under the missing nonlinear bracket",
+    "the result does not prove that the Pontryagin direction is central in the full transferred L-infinity algebra",
+    "the result does not exclude higher-bracket re-entry from absent local BV sectors",
+    "the result is not a quantum correction or a LORENTZIAN-CAUSAL theorem"
+  ],
+  "classical_commit": "UNFROZEN",
+  "computed_taylor_blocks": [
+    "ell_2(residual_ghost, physical_matter)",
+    "ell_2(residual_ghost, residual_ghost)"
+  ],
+  "cubic_charge": {
+    "all_energy_formula_source": "pure-weyl-taub-moment-map-all-energy-v1",
+    "canonical_action_scale": "-1/2",
+    "ce_generator_count": 15,
+    "ce_structure_constants_sha256": "9c2caaa80c4f2a79bbb1604323172409f9bd06d35a19399ad2e440ddf560e01a",
+    "component_count": 15,
+    "finite_regression_dimension": 132,
+    "finite_regression_maximum_energy": 4,
+    "formula": "Omega_3=c^A mu_A(Phi,Phi)-f^A_BC c^B c^C b_A/2",
+    "kernel_payload_sha256": "1ae8a796787dfab9e28ce111b28970f86c0efde95e41011272cbfc8f8a06fc35",
+    "moment_map_formula": "M_A=-(1/2) J K_A"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "provenance": {
+    "generated_kernel_payload_in_certificate": false,
+    "implementation_manifest_sha256": "7ae860884de4ebe77470d4541d509d328659e5ce5131aaa550c072e2524abfe0",
+    "implementation_sha256": {
+      "residual_cubic_block.py": "490c56c7f228346a8ba883854c52ffa92a96dd42ff8a6fb3235cc31082d124fa",
+      "residual_cubic_certificate.py": "5cd11a1189d2eb154108ea03aa253badccb1b253464ffe87ba3f87770b2c1b26",
+      "tests/test_residual_cubic_block.py": "3f866305eb9c79b5b0af75b1ccde43fd34d80236c4f02d3a296361042ae67a0b"
+    },
+    "kernel_payload_policy": "content hash only; matrices are regenerated exactly from authoritative classical code",
+    "upstream_manifest_sha256": "719e3dd7d5aa8432dca7313ea043ca5a4aa04a21e7fa38e3832c783e1e45236e",
+    "upstream_sha256": {
+      "bridge/certificates/full_hpl_transfer.json": "18acc197a45ba9256e0979e7b04c0cd5e7ca36de94b7540aa2038fc1f9e3511a",
+      "bridge/certificates/metric_to_residual.json": "25bd2b6c3ac31139bda9bcee6ad18f2df69a73cea3ec102b66ff310b1644f8c3",
+      "bridge/certificates/taub_moment_map.json": "84fb8d94043f89fcd70e8fdd2940b266ea6f9006c3ff94cb55884b1b4ceb46e1",
+      "bridge/residual_bfv/conformal_ce.py": "2e13331cedc914c3a3d8e6f7e83a7822292eb3d5963e404828a85d5d7fcc6e93",
+      "bridge/taub_moment_map/all_energy.py": "29d3549c4bdba06dc65a971e4e29f6f983554cbb7b98883c9c0882099d50c67f",
+      "bridge/transfer/hpl.py": "1f5a9d2b6f46619c962999dfb992e72bb985f2281d17444407e448835b25fd17",
+      "bridge/transfer/integration.py": "16c329dd07806746f93f325fac24c9a38e8caf9ead9466eca8f76b9e982c74de",
+      "field_bv_identification/polarized_state/certificates/pairing_transfer.json": "bd786276d48051cff0bb98143b219c026ee4f9a019c5ab4aa410472279e04de4",
+      "field_bv_identification/polarized_state/certificates/zero_mode_transgression.json": "dfe70f8bf6ad6820178e67247a06b1c27fefba3c5b7396ba42fd14e96db82b53",
+      "field_bv_identification/polarized_state/zero_mode_transgression.py": "f9e778c3269dae2efc1b534a0d9e05bc3389ff36f0cd5f4baf52ffb878788761",
+      "field_bv_identification/zero_modes/certificates/taub_obstruction_map.json": "72ac747c0b15c85c75f7a86d983960f305e486c96ab594c056f9b3377cfbf540",
+      "field_bv_identification/zero_modes/verify_taub_obstruction_map.py": "be9cf7d1a1b8128b913d63375799b1918db777bfab7b389c0b9cb1cdd75183b2",
+      "symbolic/verify_conformal_generator_all_levels.py": "9b7f90e8377d794cd2fa4cde8b34a88baf2cba90c41074cb1a4a0fde4c77a6a0",
+      "symbolic/verify_conformal_taub_charge.py": "7909156d1a0791b9d58be7b1b5e07b2b4b771b92a82ee1b780e276167641faf0",
+      "symbolic/verify_conformal_taub_moment_map_all_levels.py": "a68ee506fff37922bebf518fd551592058bf851ef2b5c2d55ea80859a13b51e7",
+      "symbolic/verify_conformal_taub_multiplets.py": "ae8fe98e4fc050c365b8c43060fda4eb92b700a42ff9db146c4e11e4c9c7a192"
+    }
+  },
+  "residual_charge": "Omega_res=c^a mu_a-f^a_bc c^b c^c b_a/2",
+  "result_id": "HT1_RESIDUAL_CUBIC_BLOCK",
+  "result_state": "PARTIAL_CUBIC_BLOCK_COMPUTED",
+  "scientific_consequences": [
+    "the transferred residual cubic charge is nonzero and exactly normalized",
+    "this cubic ghost-matter block does not mix W_+ and W_- one-particle modules",
+    "the universal ghost block and matter action close as the strict residual CE differential in the centered window",
+    "the centered one-particle H4 vanishing persists for this residual cubic charge block"
+  ],
+  "taylor_convention": "g(lambda)=gbar+lambda h+lambda^2 k/2+...",
+  "uncomputed_taylor_blocks": [
+    "ell_2(physical_matter, physical_matter) from the nonlinear Bach/BV rows",
+    "all antifield-dependent nonlinear q2 rows outside the residual zero-mode charge",
+    "q3 and higher local classical BV Taylor tensors"
+  ]
+}
