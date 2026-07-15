@@ -113,9 +113,17 @@ fingerprints rather than independently consumable map entries, and it does not
 certify `D`-equivariance.  The companion portable receiving schema fixes the
 coefficient ring, derivative-symbol convention, grading bridge, basis order,
 partial maps, coverage, hashes, and the four `D` commutators required for the
-next handoff.  The complete `classical_contraction`, `q1/q2/D` tensor, and
-admissibility artifacts remain absent, so no physical ND2 Cartan execution has
-occurred.
+next handoff.
+
+The retained 26-row minimal `q1` is now a third immutable import.  Its theorem,
+classical registration, and repaired Draft-2020-12 schema are pinned at
+separate commits.  The quantum consumer parses all exact polynomial PBW
+coefficients, reconstructs the noncommutative invariant-frame operators, and
+independently reproduces formal self-adjointness, the dual Noether row, both
+Noether compositions, cyclicity, and nilpotency.  This closes the retained
+minimal-`q1` prerequisite only.  The portable clock maps, nonminimal/all-row
+`q1`, complete `classical_contraction`, `q2/D`, and admissibility artifacts
+remain absent, so no physical ND2 Cartan execution has occurred.
 
 The arity-two solve also has a block-sparse exact rail.  Declared additive
 labels such as `D` weight, momentum, or jet filtration must be preserved by
@@ -170,6 +178,7 @@ python3 quantum-weyl/transfer/nd2_arity_two_certificate.py --check
 python3 quantum-weyl/transfer/nd2_physical_run_certificate.py --check
 python3 quantum-weyl/transfer/total_d_disposition_certificate.py --check
 python3 quantum-weyl/transfer/berger_clock_import_certificate.py --check
+python3 quantum-weyl/transfer/berger_retained_q1_import_certificate.py --check
 python3 quantum-weyl/transfer/arity_three_cartan_certificate.py --check
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check

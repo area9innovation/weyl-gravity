@@ -1,0 +1,141 @@
+{
+  "claim_boundary": "The complete support-local cyclic 26-row retained minimal q1 is independently imported as a LOCAL-ALGEBRAIC prerequisite. The eight-row clock SDR remains a separate partial import. Nonminimal rows, a complete classical contraction, q2, the D action and equivariance, admissibility, causal Green theory, and every interacting or quantum verdict remain open.",
+  "classical_result": {
+    "certificate_sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77",
+    "claim_status": "CERTIFIED_COMPLETE_MINIMAL_Q1",
+    "layout_payload_sha256": "6e5f892b8f0269c2eb1c578a1ada5a1007d509ce482f54dbacfafca256a38ff0",
+    "portable_schema_commit": "e703df6d6f58c7e2592c7d01d1e452e919cd9923",
+    "registration_commit": "d4b4fbdad2e0fff4aebf670df66f8c813a39e340",
+    "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+    "schema_sha256": "de48f6f69f068ec3f1ca58e33346bc99810ebf49e70d4944289e2c95e355ab6e",
+    "theorem_commit": "b37bf3bd504a7745fbe80448cd0ab578a3a135ea"
+  },
+  "coverage": {
+    "complete_classical_contraction": false,
+    "contracted_clock_rows_separate": 8,
+    "full_minimal_rows": 34,
+    "nonminimal_rows_complete": false,
+    "retained_minimal_q1_rows_complete": true,
+    "retained_minimal_rows": 26
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "independent_checks": {
+    "H_retained_K_spatial_zero": true,
+    "H_retained_formally_self_adjoint": true,
+    "authoritative_26_row_layout": true,
+    "canonical_block_hashes": true,
+    "draft_2020_12_strict_pbw_contract": "VERIFIED_NATIVE_SUBSET_AND_AJV_UPSTREAM",
+    "exact_declared_polynomial_coefficients": true,
+    "finite_differential_order_support_locality": true,
+    "minus_K_spatial_sharp_H_retained_zero": true,
+    "minus_K_spatial_sharp_exact": true,
+    "q1_retained_cyclic": true,
+    "q1_retained_squared_zero": true,
+    "schema_repair_preserves_theorem_blob": true
+  },
+  "lifecycle_layer": "CLASSICAL_BV",
+  "nd2_gate": {
+    "admissibility_policy": "NOT_AVAILABLE",
+    "classical_contraction": "NOT_AVAILABLE",
+    "next_gate": "BERGER_NONMINIMAL_COMPLETION_AND_SUPPORT_LOCAL_Q2_D_EXPORT",
+    "physical_execution_authorized": false,
+    "retained_minimal_q1": "AVAILABLE_VERIFIED_PREREQUISITE",
+    "support_local_q1_q2_D": "NOT_AVAILABLE"
+  },
+  "operator_summary": {
+    "blocks": {
+      "H_retained": {
+        "maximum_differential_order": 4,
+        "nonzero_matrix_entries": 100,
+        "pbw_term_count": 863,
+        "sha256": "271d3102ecabbc18c8b573cc275761e75a332f9a1820fa434e5d508d13668cd3",
+        "shape": [
+          10,
+          10
+        ]
+      },
+      "K_spatial": {
+        "maximum_differential_order": 1,
+        "nonzero_matrix_entries": 14,
+        "pbw_term_count": 14,
+        "sha256": "71107e1385af35c4809bba139d1fba2c056c56868b4ab29d8ee250adb14acfbf",
+        "shape": [
+          10,
+          3
+        ]
+      },
+      "minus_K_spatial_sharp": {
+        "maximum_differential_order": 1,
+        "nonzero_matrix_entries": 14,
+        "pbw_term_count": 14,
+        "sha256": "76c54b8b018f0e967eb0e1bc8a22b90a363798642c418874bf82b3698f6b5460",
+        "shape": [
+          3,
+          10
+        ]
+      }
+    },
+    "coefficient_ring": "Q(alpha_B,u,v)[e0,e1,e2,e3]_PBW with u=c/a^2, v=1/c",
+    "ordered_pbw_basis": "e0^n0 e1^n1 e2^n2 e3^n3"
+  },
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "provenance": {
+    "classical_sources": {
+      "classical_independent_verifier": {
+        "commit": "e703df6d6f58c7e2592c7d01d1e452e919cd9923",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_operator.py",
+        "sha256": "1d11633971bb6c3268530b220440fd67f98cde659832ab6cfb1d29d1ad3c9f29"
+      },
+      "classical_registration": {
+        "commit": "d4b4fbdad2e0fff4aebf670df66f8c813a39e340",
+        "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
+        "sha256": "1ac9601b01448c08e60304c6f99bc8117625bf7bbb057fd3ab91454dd461fcb9"
+      },
+      "classical_report": {
+        "commit": "b37bf3bd504a7745fbe80448cd0ab578a3a135ea",
+        "path": "d_quotient_classical/reports/berger-retained-minimal-operator.md",
+        "sha256": "b08ad896c77ade3add01e9db936ddc0de9e095d29cb4396151fd95ece38023c8"
+      },
+      "operator_certificate": {
+        "commit": "b37bf3bd504a7745fbe80448cd0ab578a3a135ea",
+        "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+        "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+      },
+      "operator_producer": {
+        "commit": "b37bf3bd504a7745fbe80448cd0ab578a3a135ea",
+        "path": "d_quotient_classical/backreacted_clock/berger_linearized_bach_pbw.py",
+        "sha256": "cc3dfce26f66cda42e26ea58e6b545607d3821246ed4ea9d82b2861bc841333a"
+      },
+      "portable_schema": {
+        "commit": "e703df6d6f58c7e2592c7d01d1e452e919cd9923",
+        "path": "d_quotient_classical/schema/berger-retained-minimal-operator-v1.schema.json",
+        "sha256": "de48f6f69f068ec3f1ca58e33346bc99810ebf49e70d4944289e2c95e355ab6e"
+      },
+      "retained_layout": {
+        "commit": "b37bf3bd504a7745fbe80448cd0ab578a3a135ea",
+        "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json",
+        "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
+      },
+      "schema_regression_test": {
+        "commit": "e703df6d6f58c7e2592c7d01d1e452e919cd9923",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_retained_minimal_operator_schema.py",
+        "sha256": "d3dcf11a8fa3a9ef4a723b888fdb43c8c5dcac8ff8aa2bbfbb62dca19336c85a"
+      }
+    },
+    "classical_sources_sha256": "d875e48bc5ad1fb7da7e8812e78174c3f659402925c1288a5745a5f6e1e16716",
+    "schema": "quantum-weyl/transfer/schema/berger-retained-minimal-q1-import-v1.schema.json",
+    "source_manifest": {
+      "berger_retained_q1_import.py": "4f08026476c9bf102b6dcf58a060b3356109e825484d6966e89b9265ebb1aea7",
+      "berger_retained_q1_import_certificate.py": "a5ec24b430f90fcc21636d4efae51d2b094918c42c23d22530c016987755808d",
+      "schema/berger-retained-minimal-q1-import-v1.schema.json": "73387a13b44f7cf603b32ba2bb32420d38ed4c0e1f81651e93166e53d0904916",
+      "tests/test_berger_retained_q1_import.py": "9f87bcd9ee45346e27ca3c95ce035ec198617cbad005b6a23b0063bffc641988"
+    },
+    "source_manifest_sha256": "f2abc2db3cf31c17650d17c94443bdb0730ca87e87bafd62bb25d85e562df6c1"
+  },
+  "result_id": "BERGER_RETAINED_MINIMAL_Q1_IMPORT",
+  "result_state": "RETAINED_26_ROW_MINIMAL_Q1_IMPORTED_ND2_INPUT_INCOMPLETE",
+  "schema": "quantum-weyl-berger-retained-minimal-q1-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

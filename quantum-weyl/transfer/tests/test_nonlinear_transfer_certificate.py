@@ -42,7 +42,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertEqual(
             certificate["programme_stages"][1]["status"],
-            "RESIDUAL_CUBIC_LOCAL_SEEDS_AND_SELECTED_D_DERIVATION_COMPUTED_FULL_LOCAL_EXPORT_PENDING",
+            "RETAINED_MINIMAL_Q1_RESIDUAL_CUBIC_LOCAL_SEEDS_AND_SELECTED_D_DERIVATION_COMPUTED_FULL_LOCAL_EXPORT_PENDING",
         )
         self.assertIn(
             "TWO_DIRECT_LOCAL_SEEDS",
@@ -54,8 +54,9 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             if item["question_id"] == "D_quotient_interaction_stability"
         )
         self.assertIn("SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED", d_question["status"])
-        self.assertIn("SCOPED_D_GAUGE_AND_8_OF_34_CLOCK_SDR_EVIDENCE_IMPORTED", d_question["status"])
-        self.assertIn("PORTABLE_FULL_CONTRACTION_AND_LOCAL_INPUT_BLOCKED", d_question["status"])
+        self.assertIn("SCOPED_D_GAUGE_8_OF_34_CLOCK_SDR", d_question["status"])
+        self.assertIn("RETAINED_26_ROW_MINIMAL_Q1_IMPORTED", d_question["status"])
+        self.assertIn("FULL_CONTRACTION_Q2_D_INPUT_BLOCKED", d_question["status"])
         self.assertIn("ND2_ROUTER_AND_ND3_SOLVER_READY", d_question["status"])
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
@@ -70,6 +71,9 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("nd2_physical_run_contract_sha256", certificate["provenance"])
         self.assertIn("berger_clock_nonlinear_import_sha256", certificate["provenance"])
         self.assertIn("berger_clock_partial_sdr_import_sha256", certificate["provenance"])
+        self.assertIn(
+            "berger_retained_minimal_q1_import_sha256", certificate["provenance"]
+        )
         self.assertIn("berger_total_D_disposition_sha256", certificate["provenance"])
         self.assertIn("nd3_arity_three_cartan_engine_sha256", certificate["provenance"])
         self.assertTrue(
@@ -96,6 +100,11 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         }
         self.assertEqual(rows["classical_projection_pi_cl"]["status"], "INCOMPLETE")
         self.assertIn("8/34", rows["classical_homotopy_s_cl"]["reason"])
+        self.assertEqual(rows["local_classical_bv_differential_q0"]["status"], "INCOMPLETE")
+        self.assertIn(
+            "26-row retained Berger minimal q1",
+            rows["local_classical_bv_differential_q0"]["reason"],
+        )
 
 
 if __name__ == "__main__":

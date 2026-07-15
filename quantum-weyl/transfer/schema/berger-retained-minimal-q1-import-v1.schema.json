@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-minimal-q1-import-v1.schema.json",
+  "title": "Independent import of the retained Berger minimal q1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer",
+    "dependency_tags", "setting_id", "phase_space_id", "classical_result",
+    "coverage", "operator_summary", "independent_checks", "nd2_gate",
+    "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-minimal-q1-import-v1"},
+    "result_id": {"const": "BERGER_RETAINED_MINIMAL_Q1_IMPORT"},
+    "result_state": {"const": "RETAINED_26_ROW_MINIMAL_Q1_IMPORTED_ND2_INPUT_INCOMPLETE"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "phase_space_id": {"const": "positive_berger_fixed_coupling_linearized_solutions"},
+    "classical_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result_id", "claim_status", "theorem_commit", "registration_commit",
+        "portable_schema_commit", "certificate_sha256", "schema_sha256",
+        "layout_payload_sha256"
+      ],
+      "properties": {
+        "result_id": {"const": "BERGER_RETAINED_MINIMAL_OPERATOR"},
+        "claim_status": {"const": "CERTIFIED_COMPLETE_MINIMAL_Q1"},
+        "theorem_commit": {"$ref": "#/$defs/commit"},
+        "registration_commit": {"$ref": "#/$defs/commit"},
+        "portable_schema_commit": {"$ref": "#/$defs/commit"},
+        "certificate_sha256": {"$ref": "#/$defs/hash"},
+        "schema_sha256": {"$ref": "#/$defs/hash"},
+        "layout_payload_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "retained_minimal_rows", "retained_minimal_q1_rows_complete",
+        "contracted_clock_rows_separate", "full_minimal_rows",
+        "nonminimal_rows_complete", "complete_classical_contraction"
+      ],
+      "properties": {
+        "retained_minimal_rows": {"const": 26},
+        "retained_minimal_q1_rows_complete": {"const": true},
+        "contracted_clock_rows_separate": {"const": 8},
+        "full_minimal_rows": {"const": 34},
+        "nonminimal_rows_complete": {"const": false},
+        "complete_classical_contraction": {"const": false}
+      }
+    },
+    "operator_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient_ring", "ordered_pbw_basis", "blocks"],
+      "properties": {
+        "coefficient_ring": {"type": "string", "minLength": 1},
+        "ordered_pbw_basis": {"const": "e0^n0 e1^n1 e2^n2 e3^n3"},
+        "blocks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["K_spatial", "H_retained", "minus_K_spatial_sharp"],
+          "properties": {
+            "K_spatial": {
+              "allOf": [
+                {"$ref": "#/$defs/block"},
+                {"type": "object", "properties": {"shape": {"const": [10, 3]}, "maximum_differential_order": {"const": 1}}}
+              ]
+            },
+            "H_retained": {
+              "allOf": [
+                {"$ref": "#/$defs/block"},
+                {"type": "object", "properties": {"shape": {"const": [10, 10]}, "maximum_differential_order": {"const": 4}}}
+              ]
+            },
+            "minus_K_spatial_sharp": {
+              "allOf": [
+                {"$ref": "#/$defs/block"},
+                {"type": "object", "properties": {"shape": {"const": [3, 10]}, "maximum_differential_order": {"const": 1}}}
+              ]
+            }
+          }
+        }
+      }
+    },
+    "independent_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "draft_2020_12_strict_pbw_contract", "schema_repair_preserves_theorem_blob",
+        "authoritative_26_row_layout", "exact_declared_polynomial_coefficients",
+        "canonical_block_hashes", "finite_differential_order_support_locality",
+        "H_retained_formally_self_adjoint", "minus_K_spatial_sharp_exact",
+        "H_retained_K_spatial_zero", "minus_K_spatial_sharp_H_retained_zero",
+        "q1_retained_squared_zero", "q1_retained_cyclic"
+      ],
+      "properties": {
+        "draft_2020_12_strict_pbw_contract": {"const": "VERIFIED_NATIVE_SUBSET_AND_AJV_UPSTREAM"},
+        "schema_repair_preserves_theorem_blob": {"const": true},
+        "authoritative_26_row_layout": {"const": true},
+        "exact_declared_polynomial_coefficients": {"const": true},
+        "canonical_block_hashes": {"const": true},
+        "finite_differential_order_support_locality": {"const": true},
+        "H_retained_formally_self_adjoint": {"const": true},
+        "minus_K_spatial_sharp_exact": {"const": true},
+        "H_retained_K_spatial_zero": {"const": true},
+        "minus_K_spatial_sharp_H_retained_zero": {"const": true},
+        "q1_retained_squared_zero": {"const": true},
+        "q1_retained_cyclic": {"const": true}
+      }
+    },
+    "nd2_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "retained_minimal_q1", "support_local_q1_q2_D", "classical_contraction",
+        "admissibility_policy", "physical_execution_authorized", "next_gate"
+      ],
+      "properties": {
+        "retained_minimal_q1": {"const": "AVAILABLE_VERIFIED_PREREQUISITE"},
+        "support_local_q1_q2_D": {"const": "NOT_AVAILABLE"},
+        "classical_contraction": {"const": "NOT_AVAILABLE"},
+        "admissibility_policy": {"const": "NOT_AVAILABLE"},
+        "physical_execution_authorized": {"const": false},
+        "next_gate": {"const": "BERGER_NONMINIMAL_COMPLETION_AND_SUPPORT_LOCAL_Q2_D_EXPORT"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classical_sources", "classical_sources_sha256", "source_manifest",
+        "source_manifest_sha256", "schema"
+      ],
+      "properties": {
+        "classical_sources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "operator_certificate", "portable_schema", "retained_layout",
+            "classical_registration", "operator_producer",
+            "classical_independent_verifier", "schema_regression_test",
+            "classical_report"
+          ],
+          "properties": {
+            "operator_certificate": {"$ref": "#/$defs/artifact"},
+            "portable_schema": {"$ref": "#/$defs/artifact"},
+            "retained_layout": {"$ref": "#/$defs/artifact"},
+            "classical_registration": {"$ref": "#/$defs/artifact"},
+            "operator_producer": {"$ref": "#/$defs/artifact"},
+            "classical_independent_verifier": {"$ref": "#/$defs/artifact"},
+            "schema_regression_test": {"$ref": "#/$defs/artifact"},
+            "classical_report": {"$ref": "#/$defs/artifact"}
+          }
+        },
+        "classical_sources_sha256": {"$ref": "#/$defs/hash"},
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "maxProperties": 4,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/berger-retained-minimal-q1-import-v1.schema.json"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "commit": {"$ref": "#/$defs/commit"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shape", "sha256", "nonzero_matrix_entries", "pbw_term_count",
+        "maximum_differential_order"
+      ],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "nonzero_matrix_entries": {"type": "integer", "minimum": 1},
+        "pbw_term_count": {"type": "integer", "minimum": 1},
+        "maximum_differential_order": {"type": "integer", "minimum": 0, "maximum": 4}
+      }
+    }
+  }
+}

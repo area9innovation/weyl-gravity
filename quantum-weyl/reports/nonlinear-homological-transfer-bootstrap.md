@@ -62,6 +62,15 @@ grading/symbol bridge, and `D`-equivariance fail-closed.  The physical Cartan
 run remains blocked on the distinct complete contraction and nonlinear tensor
 inputs.
 
+The complete retained 26-row minimal `q1` is now independently imported as a
+third classical prerequisite.  The consumer pins the theorem, its classical
+promotion, and the later strict-schema repair separately; parses 891 exact PBW
+coefficients; and reconstructs the noncommutative invariant-frame algebra.  It
+reproduces `H^sharp=H`, `-K_spatial^sharp`, both Noether compositions,
+cyclicity, and `q1^2=0`.  This does not fill the separate clock-map payload,
+nonminimal rows, complete contraction, `q2`, or `D` action, and therefore does
+not authorize an ND2 physical run.
+
 ND3 additionally implements the next Cartan recurrence.  It retains the
 direct `[q3,iota_D]` and exchange `[q2,iota_D^(2)]` tensors separately, checks
 the arity-three `Q^2`, Cartan, and `D` identities, and returns either an exact
@@ -98,7 +107,7 @@ transferred before `QME_RESTORED`.
 | Stage | Exact deliverable | Status |
 |---|---|---|
 | HT0 | Engine, convention, schema, blocker ledger | Ready |
-| HT1 | Import classical Taylor data; compute `ell_2` | Residual cubic bracket, local Bach seeds, selected residual `D`-derivation, and ND2 Cartan solver computed; complete support-local lift blocked on export |
+| HT1 | Import classical Taylor data; compute `ell_2` | Retained minimal `q1`, residual cubic bracket, local Bach seeds, selected residual `D`-derivation, and ND2 Cartan solver computed; full support-local `q2/D` and contraction blocked |
 | HT2 | Compute `ell_3`; dynamical/topological mixing and centrality ledgers | Arity-three Cartan recurrence engine ready; physical `q3` and mixing input blocked |
 | HT3 | Higher arities and particle-filtration spectral sequence | Not computed |
 | HT4 | Cyclic minimal action and formal moduli/deformation interpretation | Not computed |
@@ -128,10 +137,24 @@ transferred before `QME_RESTORED`.
 | Total-`D` hardening: producer, independent audit, and unit tests | 2.47 | PASS | 2 |
 | Total-`D` hardening: affected certificate chain | 5.24 | PASS | 2 |
 | Total-`D` hardening: complete transfer suite | 66.69 | PASS (98 tests) | 2 |
+| Retained Berger minimal-`q1` independent PBW import | 11.30 | PASS | 1 |
+| Retained-`q1` quantum schema under AJV Draft 2020-12 strict mode | 2.03 | PASS | 0 |
+| Retained-`q1` and aggregate focused tests | 13.07 | PASS (10 tests) | 2 |
+| Affected transfer suite excluding stale ND1 reproduction receipt | 72.64 | PASS (108 tests) | 2 |
+| Remaining ND1 semantic and mutation tests | 9.05 | PASS (7 tests) | 2 |
+| ND1 checked-in certificate reproduction | 3.43 | FAIL (concurrent classical-status dependency hash drift) | 2 |
 
 An optional Draft-2020-12 meta-schema check was attempted but was **not
 run** because the environment does not provide the `jsonschema` module.  It
 is not counted as a pass; deterministic JSON parsing did pass.
+
+For the retained-Berger import, AJV's Draft-2020-12 engine is available
+through the pinned command recorded in the dedicated report and validates the
+new quantum receipt.  The pre-existing ND1 reproduction failure is not counted
+as a pass: the concurrent classical programme changed the hash of its live
+status dependency without regenerating the ND1 receipt.  All seven remaining
+ND1 semantic and mutation tests pass, and the retained-`q1` chain does not
+consume that stale certificate.
 
 The nonlinear bootstrap regeneration is the affected Tier-2 consumer check.
 Tier 3 was not run: this changes no imported classical mathematical input or

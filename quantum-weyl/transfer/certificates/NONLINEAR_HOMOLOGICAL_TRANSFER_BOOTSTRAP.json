@@ -10,6 +10,7 @@
     "ND2 fixture primitives and obstruction witnesses certify the exact solver branches only; they contain no conformal-gravity interaction coefficient.",
     "The Berger D_GAUGE theorem is scoped to the smooth fixed-coupling linearized phase space; it does not construct the support-local all-row BV contraction required by ND2.",
     "The registered Berger clock SDR contracts exactly 8 of 34 minimal rows; its current certificate carries formulas and fingerprints, not a portable map payload, and D-equivariance is not computed.",
+    "The retained Berger minimal q1 is complete on 26 rows and independently reconstructed from exact PBW entries; it supplies neither the separate clock maps nor nonminimal rows, q2, D action, or a contraction.",
     "D_CHARGED is the canonical classical verdict; EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT is a route label, not a fifth scientific disposition.",
     "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics only; physical q3 and iota_D^(2) remain absent.",
     "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme."
@@ -34,7 +35,7 @@
     },
     {
       "export_id": "local_classical_bv_differential_q0",
-      "reason": "The certificate explicitly excludes nonlinear terms from q and does not serialize the complete support-local classical BV differential.",
+      "reason": "The complete 26-row retained Berger minimal q1 is now independently imported in its exact PBW basis. The separate clock import still lacks portable map entries, and the nonminimal/all-row q1 and complete contraction remain absent.",
       "status": "INCOMPLETE"
     },
     {
@@ -82,7 +83,7 @@
     {
       "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2",
       "stage": "HT1",
-      "status": "RESIDUAL_CUBIC_LOCAL_SEEDS_AND_SELECTED_D_DERIVATION_COMPUTED_FULL_LOCAL_EXPORT_PENDING"
+      "status": "RETAINED_MINIMAL_Q1_RESIDUAL_CUBIC_LOCAL_SEEDS_AND_SELECTED_D_DERIVATION_COMPUTED_FULL_LOCAL_EXPORT_PENDING"
     },
     {
       "deliverable": "compute ell3 and dynamical/topological mixing table",
@@ -110,6 +111,8 @@
     "berger_clock_nonlinear_import_sha256": "c513c66aaea5288850e143526c6483f7cc781cd26d1dbebbdd2a2da0f2db42e6",
     "berger_clock_partial_sdr_import_certificate": "quantum-weyl/transfer/certificates/BERGER_CLOCK_PARTIAL_SDR_IMPORT.json",
     "berger_clock_partial_sdr_import_sha256": "c21c7497cade85ecc3f10844c1bc29001f16a652ca76a091ce92eec6e82ff122",
+    "berger_retained_minimal_q1_import_certificate": "quantum-weyl/transfer/certificates/BERGER_RETAINED_MINIMAL_Q1_IMPORT.json",
+    "berger_retained_minimal_q1_import_sha256": "f07124e84ac76347e7a24dbd2cb3977693eb299a5bf1607fd626b02bee7df6b5",
     "berger_total_D_disposition_certificate": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json",
     "berger_total_D_disposition_sha256": "27c91dee3b0293c66b73a0ba2e21c3e7579de3c70d080685043729da3d6b62e4",
     "classical_snapshot": "quantum-weyl/classical_import/snapshots/bootstrap-v1.json",
@@ -139,6 +142,8 @@
       "berger_clock_import_certificate.py": "239e246d3c5ca7589bbd99f040a110889f86a1e1c78972d74aa716a4d56f51e3",
       "berger_clock_sdr_import.py": "9d00234cf2a5001e0f14b09fbe45af1e629d5b1284c216be851689cd76356560",
       "berger_clock_sdr_import_certificate.py": "88cf2bee64176a42fd61a6d16fe6445bbe1a86dc7b068517d546e5f8eaf2bb70",
+      "berger_retained_q1_import.py": "4f08026476c9bf102b6dcf58a060b3356109e825484d6966e89b9265ebb1aea7",
+      "berger_retained_q1_import_certificate.py": "a5ec24b430f90fcc21636d4efae51d2b094918c42c23d22530c016987755808d",
       "block_sparse_arity_two.py": "3378b396f47e29e700ca56e2fbcb989ef2692c9b50e8ab62f1dc37cf9f84255f",
       "d_derivation_certificate.py": "e3ed675ea360ee3d4033a46143b701b5ecb4b250fdf75e7ed131a0619bba07a0",
       "d_derivation_defect.py": "5c6e740c2bd0e92b3e7110661260b3dab3b00d2fb8ef7ca8d79aa7cc24333508",
@@ -151,13 +156,14 @@
       "nd2_arity_two_certificate.py": "4ce680bbb5d1aeea2eb765a33c1ddfaf88bb68ef83edbdea06dce6f54365e238",
       "nd2_physical_run.py": "9fe6d7988932b3543c8347ef3f83c7b80ab93d18ca0d6306c45b5875d3152d50",
       "nd2_physical_run_certificate.py": "393f4f5cd4c1a864c5c42863b4853a6fec47fa1c2e2545ccbfaf07765d70c31d",
-      "nonlinear_transfer_certificate.py": "a23a2f5f2df9f19c706078da042280178b166d37ee18a36ccc1ce428368124b0",
+      "nonlinear_transfer_certificate.py": "f7a16b1ccbf7f071f7731f9afea698dc87d025d4079ab79f5e2d4066e160ad42",
       "residual_cubic_block.py": "d8e5a5100ea81b85a3a9b70ff8a683707ba358cc757308e705dd56c127bf3aa2",
       "residual_cubic_certificate.py": "597a47905f5bddef720459672c5b10504fc66826b8b4b3ab332b16c4063ec5b9",
       "schema/arity-three-cartan-engine-v1.schema.json": "d05594899045ce7e235e01d82c6bc2c9e3ca3ae2c934e3d272cecf27614de182",
       "schema/berger-clock-nonlinear-import-v1.schema.json": "28614723c9983974261e9dfdd4cd783ef190b765daa39da06948501b6e66d91d",
       "schema/berger-clock-partial-sdr-import-v1.schema.json": "c0110ac788b090e28368f220390dc21c00e37554d355655673740324361781eb",
       "schema/berger-clock-partial-sdr-portable-v1.schema.json": "20535ab2cd98b0ac20694a1fb579930b55526aa22378e3545f65e41306952775",
+      "schema/berger-retained-minimal-q1-import-v1.schema.json": "73387a13b44f7cf603b32ba2bb32420d38ed4c0e1f81651e93166e53d0904916",
       "schema/local-bach-seed-direct-audit-v1.schema.json": "22ecd9efb3d4f7edf01845e4971733c29782ec5fdc337aae95921fd44eea6876",
       "schema/local-bach-seed-lift-v2.schema.json": "fdc249e774785068e73f0e6197b2e6995bab33f373e040771105e849fb454b2d",
       "schema/nd2-arity-two-cartan-engine-v1.schema.json": "5f10e248b937a7982c7b8e7f733c732dfbb3ece01e5822f64e8747adba91f232",
@@ -172,6 +178,7 @@
       "tests/test_arity_two_cartan.py": "253e6a68c465c1f839fe670cf8124b92b6ce70d546c2d43f9a891691aebf2cf2",
       "tests/test_berger_clock_import.py": "9d80c022c28a15ce6dd336a6e2a70250b12c4452482c1c03e0502dac2e2aa052",
       "tests/test_berger_clock_sdr_import.py": "960a16b54ddc3e15406cdf3d5072e482156cc44d077c1a1ada3500b350908d9e",
+      "tests/test_berger_retained_q1_import.py": "9f87bcd9ee45346e27ca3c95ce035ec198617cbad005b6a23b0063bffc641988",
       "tests/test_block_sparse_arity_two.py": "0e609676501cd5b804aacfc73d112783e9aac4e2016d7f00d498afdd5b2fae33",
       "tests/test_d_derivation_defect.py": "a5db339f19ae35dc63d1df2a25d77bdbbbc3a17f5f70a10f484089a9872df1d1",
       "tests/test_evaluator_registry.py": "ec273ff62f913a0ed197a4a04337ee493f4e98590e79ef739cbb3694d7048074",
@@ -181,14 +188,14 @@
       "tests/test_local_expression_ast.py": "52b883e235387a41b96f2443d23117b078d68970ee59915f86a190b0d7416c9b",
       "tests/test_nd2_arity_two_certificate.py": "1ca5a2eaa28a6f53043096caff26cf18f7651817d73f49b0237290c63daffb98",
       "tests/test_nd2_physical_run.py": "f830b046566ec9547b6f0ae10a58981eba750a4d87efbcedc561615a184b3aea",
-      "tests/test_nonlinear_transfer_certificate.py": "6582d76c57bfa16d74d5471e428a4f2349bdfa219b705c601772ed022ac025c5",
+      "tests/test_nonlinear_transfer_certificate.py": "beb0bddfa17d4834271584cd0723f95d765f49bea248ff400d4bc1522491553d",
       "tests/test_residual_cubic_block.py": "d279660e15cd7e0c12b7da2c514a6ba566db0505dd03c9c44e3a696454d618cb",
       "tests/test_support_local_q2_consumer.py": "f859bf3c440aacdddb19033c5ab2e0240c1b7c991e0dfcff2ae3d6fc0551e411",
       "tests/test_total_d_disposition.py": "def20c048991bff2c206f99e31bad07fec27877f36aad320d3a7acc9f180e0e7",
       "total_d_disposition.py": "e81da4b928c7d69c7581bce68a7103972123e7e114b06d31bb38c8f648aad6f2",
       "total_d_disposition_certificate.py": "4aa33b5b6343bf7c107db120b1e610ca6a436fc60b656e45080b405e4fa47eb7"
     },
-    "source_manifest_sha256": "1e9da5b98e3492ca067bf8185cfaeab9a8f74c372151a8163bf031b4b749346c",
+    "source_manifest_sha256": "b49e484254d43829c1f72c9ce245dbb9cbe9793d2388c257bbebb5111f10b4d6",
     "support_local_q2_contract": "quantum-weyl/classical_import/certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json",
     "support_local_q2_contract_sha256": "c9fcc9a537856b0418897741782ad07edbb88a2bea71ff559002d7e67f57fd6b"
   },
@@ -201,7 +208,7 @@
     {
       "next_certificate": "ND1_COMPLETE_SUPPORT_LOCAL_D_DERIVATION_AND_IOTA_D2",
       "question_id": "D_quotient_interaction_stability",
-      "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_BERGER_SCOPED_D_GAUGE_AND_8_OF_34_CLOCK_SDR_EVIDENCE_IMPORTED_PORTABLE_FULL_CONTRACTION_AND_LOCAL_INPUT_BLOCKED_ND2_ROUTER_AND_ND3_SOLVER_READY"
+      "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_BERGER_SCOPED_D_GAUGE_8_OF_34_CLOCK_SDR_AND_RETAINED_26_ROW_MINIMAL_Q1_IMPORTED_FULL_CONTRACTION_Q2_D_INPUT_BLOCKED_ND2_ROUTER_AND_ND3_SOLVER_READY"
     },
     {
       "next_certificate": "HT2_DYNAMICAL_CLOSURE",
@@ -261,6 +268,7 @@
       "content-addressed Berger healthy-background, reduced-clock-momentum, and scoped fixed-coupling D_GAUGE import",
       "registered exact 8/34 support-local cyclic Berger clock-sector SDR evidence import",
       "strict portable partial-SDR receiving contract with explicit coefficient-ring, grading, derivative-symbol, coverage, and D-equivariance fields",
+      "independently reconstructed exact 26-row retained Berger minimal q1 in the noncommutative invariant-frame PBW algebra",
       "total-D disposition router that permits Cartan contraction only for a certified D_GAUGE result",
       "strict total-D presymplectic audit schema with canonical D_CHARGED vocabulary, sector ledger, and exact verdict signatures",
       "phase-space, boundary-condition, classical-commit, dependency-scope, and source-hash binding before physical execution",
