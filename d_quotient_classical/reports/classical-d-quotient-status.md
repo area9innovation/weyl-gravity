@@ -1,84 +1,89 @@
-# Classical $D$-quotient challenge: handoff report
+# Classical \(D\)-quotient challenge: handoff report
 
 ## Executive status
 
-The compact-cylinder result is **sector-dependent** in the precise scope
-recorded by the machine certificate:
+The compact vacuum-cylinder result is **sector-dependent** on two precisely
+declared phase spaces:
 
-- On the unrestricted locally reduced linearized solution space `P_lin`,
-  $D$ has a nonzero, integrable quadratic Noether Hamiltonian. The lowest
-  $E$, $A$, and $L$ branches provide exact charged examples.
+- On the unrestricted locally reduced linearized solution space
+  \(\mathcal P_{\rm lin}\), \(D\) has a nonzero, integrable quadratic Noether
+  Hamiltonian. The lowest \(E\), \(A\), and \(L\) branches provide exact
+  charged examples.
 - Those charged vectors do not lie in the full Taub/moment-map zero fibre and
   are obstructed as isolated tangent vectors to the selected nonlinear
   closed-universe solution space.
-- On the derived full moment-map zero fibre `P_Taub0`, the pullbacks of
-  $mu_D$ and $d mu_D$ vanish. Quotienting the corresponding null orbit is the
-  Paper-VII closed-universe choice.
+- On the derived full moment-map zero fibre \(\mathcal P_{\rm Taub0}\), the
+  pullback of \(\mu_D\) and \(d\mu_D\) vanishes. Quotienting the corresponding
+  null orbit is the Paper-VII closed-universe choice.
 
-Thus compactness alone does not make $D$ gauge. The explicit
-zero-charge/Taub restriction does. This conclusion is not exported to
-matter-coupled, deformed, dS/AdS, or asymptotically flat phase spaces.
+Thus compactness alone does not make \(D\) gauge. The zero-charge/Taub
+restriction does. This conclusion is not exported to matter-coupled,
+deformed, dS/AdS, or asymptotically flat phase spaces.
 
-The compact audit composes reduced-mode data with the certified Lorentzian
-current comparison and therefore carries both `REDUCED-MODE` and
-`LORENTZIAN-CAUSAL`. It is not a boundary-charge theorem. The boundary and
-clock challenges remain open.
+The present charge audit composes the exact reduced-mode moment map with the
+already-certified Lorentzian current comparison, so it is tagged
+`REDUCED-MODE` and `LORENTZIAN-CAUSAL`. This does not classify any new
+boundary phase space.
 
 ## Scope and conventions
 
 ### Unrestricted linearized sector
 
-- Field space: the $D$-finite $E/A/L$ linearized solution module after local
-  Diff x Weyl reduction.
-- Boundary: the closed cylinder `R x S3`; there is no spatial boundary or
-  corner term.
+- Field space: the \(D\)-finite \(E/A/L\) linearized solution module after
+  local Diff \(\times\) Weyl reduction.
+- Boundary: the closed cylinder \(\mathbb R\times S^3\); no spatial boundary
+  or corner term.
 - Hamiltonian normalization: the action-normalized kernel
-  `M_D = -(1/2) J D`.
-- Interpretation: a valid charge computation on `P_lin`, not proof of
-  nonlinear linearizability.
+  \(M_D=-\tfrac12 JD\).
+- Interpretation: a valid charge computation on \(\mathcal P_{\rm lin}\),
+  not proof of nonlinear linearizability.
 
 ### Derived Taub-zero sector
 
 - Field space: the formal common zero fibre of all fifteen quadratic
   Taub/moment-map components, with its derived residual quotient.
-- Charge: the pullback identities are `i* mu_D = 0` and
-  `i* i_XD Omega = d(i* mu_D) = 0`.
+- Charge: \(\iota^*\mu_D=0\) and
+  \(\iota^*\iota_{X_D}\Omega=d(\iota^*\mu_D)=0\).
 - Interpretation: proper gauge only after the explicit zero-charge
   restriction and quotient.
 
 ## Compact-cylinder charge receipt
 
-The exact all-energy branch formula and charged representatives are recorded
-in the producer certificate referenced by
+The exact all-energy branch formula and lowest charged representatives are
+recorded in the producer certificate referenced by
 `CLASSICAL_D_QUOTIENT_STATUS.json`. The decisive examples are:
 
-| branch | energy | unit-amplitude $H_D$ | radial $delta H_D$ |
+| branch | energy | \(H_D\) at unit real amplitude | radial \(\delta H_D\) |
 |---|---:|---:|---:|
-| $E$ | 2 | $-1$ | $-2$ |
-| $A$ | 3 | $3/2$ | $3$ |
-| $L$ | 4 | $2$ | $4$ |
+| \(E\) | 2 | \(-1\) | \(-2\) |
+| \(A\) | 3 | \(3/2\) | \(3\) |
+| \(L\) | 4 | \(2\) | \(4\) |
 
-They establish `D_CHARGED` on `P_lin`. The same certificate records why they
-do not establish `D_CHARGED` on `P_Taub0`.
+They establish `D_CHARGED` on \(\mathcal P_{\rm lin}\). The same certificate
+records why they do not establish `D_CHARGED` on
+\(\mathcal P_{\rm Taub0}\).
 
 ## Residual-complex comparison
 
 | Complex | Mathematical status | Computation status | Current result |
 |---|---|---|---|
-| Absolute `SO(4,2)` CE complex | selected Paper-VII complex | certified baseline | centered $H^4=C^2$, one-particle $H^4=0$, Gram $I_2$ |
-| $D$ global, lowering subalgebra gauged | legal closed-subalgebra comparison | partial | exact through total $D$-weight four; not a physical selection theorem |
-| Zero-charge transformations `g_H=0` | closure not established | open | no complex promoted |
-| Local gauge only; residual `SO(4,2)` global | zero residual differential | certified | full $E/A/L$ one-particle module survives with branch Krein signs |
+| Absolute \(SO(4,2)\) CE complex | selected Paper-VII complex | certified baseline | centered \(H^4=\mathbb C^2\), one-particle \(H^4=0\), Gram \(I_2\) |
+| \(D\) global, lowering subalgebra gauged | legal closed-subalgebra comparison | partial | exact through total \(D\)-weight four; not a physical selection theorem |
+| Zero-charge transformations \(\mathfrak g_{H=0}\) | closure not established | open | no complex promoted |
+| Local gauge only; residual \(SO(4,2)\) global | zero residual differential | certified | full \(E/A/L\) one-particle module survives with branch Krein signs |
 
-Deleting only the $D$ ghost is rejected: the remaining fourteen conformal
-generators are not a Lie subalgebra. The exact obstruction is the invariant
-contraction of raising and lowering generators that reproduces $D$.
+Deleting only the \(D\) ghost is rejected: the remaining fourteen conformal
+generators are not a Lie subalgebra. The exact obstruction is
+
+\[
+\frac14\sum_a[K^-_a,K^+_a]=2D.
+\]
 
 ## Background matrix
 
-| Setting | $D$ charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
+| Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
-| Vacuum cylinder | `SECTOR_DEPENDENT` on the declared sectors | certified baseline | certified baseline | zero only in selected absolute residual $H^4$ | $I_2$ on centered degree-four classes | open in this challenge record |
+| Vacuum cylinder | `SECTOR_DEPENDENT` on the declared sectors | certified baseline | certified baseline | zero only in selected absolute residual \(H^4\) | \(I_2\) on centered degree-four classes | open in this challenge record |
 | Cylinder + scalar clock | `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` |
 | Cylinder + Yang--Mills | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Weakly deformed background | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
@@ -90,7 +95,7 @@ status promotion.
 
 ## Next gates
 
-1. Add a conformally coupled scalar clock and compute its total improved
+1. Add a conformally coupled scalar clock and compute the total improved
    charge before considering Yang--Mills.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
@@ -98,9 +103,8 @@ status promotion.
    stability radius.
 4. Treat dS/AdS and asymptotically flat boundaries as new Lorentzian phase
    spaces, not as consequences of the compact-cylinder verdict.
-5. As an optional independent check, rederive the certified compact result
-   directly from the covariant presymplectic current without the
-   current-to-$E/A/L$ transport.
+5. Optionally reproduce the compact current-to-moment-map equivalence in an
+   independent implementation; this is a cross-check, not a missing premise.
 
 ## Verification receipts
 
@@ -114,4 +118,4 @@ python3 -m unittest bridge.taub_moment_map.tests.test_compact_d_charge
 python3 symbolic/verify_conformal_d_global_alternatives.py --check-result
 ```
 
-No full-suite result is implied by these scoped checks.
+No full-suite result is implied by the scoped checks.

@@ -1,0 +1,295 @@
+{
+  "allowed_candidate_statuses": [
+    "ZERO",
+    "EXACT_REMOVABLE",
+    "NONTRIVIAL_ANOMALY",
+    "UNDEFINED_ANALYTICALLY"
+  ],
+  "candidate_sector_ledger": [
+    {
+      "classification_gate": "AFN0_LOWER_FORM_AND_EULER_COMPLETION_THEN_MINIMAL_BV_IMPORT",
+      "missing_input": "renormalized Q_1, iota_1, and L_D^(1) on a declared observable algebra",
+      "sector": "bulk_local_pure_weyl",
+      "status": "UNDEFINED_ANALYTICALLY"
+    },
+    {
+      "classification_gate": "FROZEN_EQUIVARIANT_CLASSICAL_CONTRACTION_AND_RESTORED_LOCAL_QME",
+      "missing_input": "renormalized residual Ward algebra and zero-mode measure",
+      "sector": "residual_zero_modes_and_central_terms",
+      "status": "UNDEFINED_ANALYTICALLY"
+    },
+    {
+      "classification_gate": "DECLARED_BFV_BOUNDARY_OBSERVABLE_AND_CHARGE_COMPLEX",
+      "missing_input": "boundary conditions, charges, corner fields, and renormalized products",
+      "sector": "boundary_and_corner",
+      "status": "UNDEFINED_ANALYTICALLY"
+    },
+    {
+      "classification_gate": "ADMISSIBLE_REGULARIZATION_AND_MEASURE_DEFINITION",
+      "missing_input": "regularized BV Laplacian or equivalent Slavnov-breaking construction",
+      "sector": "measure_and_jacobian",
+      "status": "UNDEFINED_ANALYTICALLY"
+    },
+    {
+      "classification_gate": "SCALAR_BV_EXTENSION_THEN_BULK_AND_RELATIONAL_WARD_CLASSIFICATION",
+      "missing_input": "clock field/antifield rows, relational observable algebra, and measure",
+      "sector": "conformal_scalar_clock",
+      "status": "UNDEFINED_ANALYTICALLY"
+    }
+  ],
+  "claim_boundary": {
+    "established": [
+      "the exact first-order Cartan-defect formula and its degree",
+      "the Jacobi/Ward consistency implication in finite exact complexes",
+      "exact ZERO, EXACT_REMOVABLE, and NONTRIVIAL_ANOMALY classification mechanics with primitive or dual witnesses",
+      "fail-closed lifecycle, setting, and candidate-sector ledgers"
+    ],
+    "not_established": [
+      "a complete pure-Weyl Cartan-obstruction candidate basis",
+      "a coefficient of any physical obstruction class",
+      "a restored local quantum master equation",
+      "a residual quantum transfer or quantum pairing correction",
+      "a scalar-clock, boundary, corner, or Lorentzian causal theorem"
+    ]
+  },
+  "classical_commit": "UNFROZEN",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "input_gates": {
+    "AFN0_local_relative_basis": "IN_PROGRESS",
+    "Euler_intrinsic_descent": "IN_PROGRESS",
+    "boundary_BFV_complex": "NOT_IMPORTED",
+    "classical_freeze": "BLOCKED_UNFROZEN",
+    "minimal_BV_antifield_completion": "BLOCKED_PENDING_CLASSICAL_EXPORT",
+    "pure_weyl_QME": "NOT_RESTORED",
+    "renormalized_operator_algebra": "NOT_CONSTRUCTED",
+    "scalar_clock_extension": "NOT_IMPLEMENTED"
+  },
+  "lifecycle_gates": {
+    "CLASSIFIED": "NOT_REACHED_FULL_CANDIDATE_BASIS_INCOMPLETE",
+    "COEFFICIENT_COMPUTED": "NOT_REACHED",
+    "LORENTZIAN_CERTIFIED": "NOT_REACHED_ANALYTIC_FRAMEWORK_MISSING",
+    "QME_RESTORED": "NOT_REACHED",
+    "RESIDUAL_TRANSFERRED": "BLOCKED_PENDING_QME_RESTORED"
+  },
+  "mechanics_fixtures": [
+    {
+      "basis_degrees": [
+        0,
+        1
+      ],
+      "checks": {
+        "Q_squared_zero": "VERIFIED",
+        "classical_Cartan_identity": "VERIFIED",
+        "defect_consistency_Q_closed": "VERIFIED",
+        "defect_has_degree_zero": "VERIFIED",
+        "first_order_QME_linearization": "VERIFIED",
+        "first_order_Ward_compatibility": "VERIFIED"
+      },
+      "classification": "ZERO",
+      "defect": {
+        "degree": 0,
+        "entries": [],
+        "name": "A_D_1",
+        "shape": [
+          2,
+          2
+        ]
+      },
+      "dual_witness": null,
+      "endomorphism_H0_dimension": 0,
+      "fixture_id": "zero_defect",
+      "primitive": null,
+      "scope": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY"
+    },
+    {
+      "basis_degrees": [
+        0,
+        1
+      ],
+      "checks": {
+        "Q_squared_zero": "VERIFIED",
+        "classical_Cartan_identity": "VERIFIED",
+        "defect_consistency_Q_closed": "VERIFIED",
+        "defect_has_degree_zero": "VERIFIED",
+        "first_order_QME_linearization": "VERIFIED",
+        "first_order_Ward_compatibility": "VERIFIED"
+      },
+      "classification": "EXACT_REMOVABLE",
+      "defect": {
+        "degree": 0,
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "source": 0,
+            "target": 0
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "source": 1,
+            "target": 1
+          }
+        ],
+        "name": "A_D_1",
+        "shape": [
+          2,
+          2
+        ]
+      },
+      "dual_witness": null,
+      "endomorphism_H0_dimension": 0,
+      "fixture_id": "exact_removable_defect",
+      "primitive": {
+        "degree": -1,
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "source": 1,
+            "target": 0
+          }
+        ],
+        "name": "primitive_for_A_D_1",
+        "shape": [
+          2,
+          2
+        ]
+      },
+      "scope": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY"
+    },
+    {
+      "basis_degrees": [
+        0
+      ],
+      "checks": {
+        "Q_squared_zero": "VERIFIED",
+        "classical_Cartan_identity": "VERIFIED",
+        "defect_consistency_Q_closed": "VERIFIED",
+        "defect_has_degree_zero": "VERIFIED",
+        "first_order_QME_linearization": "VERIFIED",
+        "first_order_Ward_compatibility": "VERIFIED"
+      },
+      "classification": "NONTRIVIAL_ANOMALY",
+      "defect": {
+        "degree": 0,
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "source": 0,
+            "target": 0
+          }
+        ],
+        "name": "A_D_1",
+        "shape": [
+          1,
+          1
+        ]
+      },
+      "dual_witness": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      "endomorphism_H0_dimension": 1,
+      "fixture_id": "nontrivial_defect",
+      "primitive": null,
+      "scope": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY"
+    }
+  ],
+  "operator_complex": {
+    "ambient_obstruction_group": "H^0(Der_adm(C), [Q,-])",
+    "consistency_conclusion": "[Q,A_D^(1)]=0",
+    "consistency_hypotheses": [
+      "Q^2=0",
+      "[Q,Q_1]=0",
+      "[Q,iota_D]=L_D",
+      "[Q,L_D^(1)]+[Q_1,L_D]=0"
+    ],
+    "defect_degree": 0,
+    "differential": "delta_End(T) = [Q,T]_graded",
+    "first_order_defect": "A_D^(1)=[Q,iota_1]+[Q_1,iota_D]-L_D^(1)",
+    "local_relative_realization": "PENDING_DECLARED_RENORMALIZED_OBSERVABLE_ALGEBRA_AND_COMPLETE_LOCAL_BV_BASIS",
+    "removability_criterion": "A_D^(1)=[Q,X] for an admissible degree-minus-one finite renormalization X preserving the other declared Ward identities"
+  },
+  "provenance": {
+    "dependency_manifest": {
+      "afn0_production_certificate": "4b9f3db669c8349b8417210b238a718e95eaa8b615864a2b5acb713c4cedc859",
+      "classical_cartan_note": "6cfa7f0f6a47d4c7648985e4251eff7ab7a4f250728e3f06315bbfec06f9ad92",
+      "classical_cartan_verifier": "1eb4b966a90b5f84edab52beddc00b89162cc16154e9de83688c1c8ed50b04e2",
+      "classical_import_certificate": "3c6f540286ca0cda0e4c6663d31f68bf66a8a7cea40891dc65b60c43f4673213",
+      "commission": "aca1d6bb10e1a98df5cc3aeaf17ff0178f51c1c523e9dc0cadeb12e9715a3ab7",
+      "euler_transgression_certificate": "d9a90714b96ebc40c1048edce1156e604f0767f19711f408b115fa2754a4f972"
+    },
+    "dependency_manifest_sha256": "042f79d424932ea1093c5d30a93b073d48eb0945a08acbf742b6ed3958b87ebd",
+    "schema": "quantum-weyl/cartan/schema/cartan_defect_precertificate.schema.json",
+    "source_manifest": {
+      "README.md": "14b91c56755739312d3b77a970bfa60509df820476fb0ae1a520638fdad07483",
+      "__init__.py": "3f353f86e435c05dbd469ff5fcb6c90abcbd2e0793b8cf2851a725502cc06444",
+      "certificate.py": "44cb1c2f1a54c751285964aad165e4a2f20202042cb54543bc4994f98d066634",
+      "defect_complex.py": "04fb387db00516d5e330d20daa79ea3676e561276c9bc5d6979cd6650b985523",
+      "schema/cartan_defect_precertificate.schema.json": "03556aa8340fab841645e9f28fa4ebf476afa52632fd357e9d0537e1a5d0cc8b",
+      "tests/test_certificate.py": "91c728d724d21179c8a9e76629ce7b48c9c162f0cf88e8e1d3be4d2fc75cdb97",
+      "tests/test_defect_complex.py": "f01a9d0e10bc440b884d9844ed43a447ef8ee4bcb066cf75e2426ca225120aca"
+    },
+    "source_manifest_sha256": "81dd8b84f131a31f1d521e96cdcd4ce3fbbd20916e00a8ea017906ca751501e4"
+  },
+  "result_id": "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE",
+  "result_state": "ALGEBRAIC_ENGINE_READY_PHYSICAL_CANDIDATES_INPUT_BLOCKED",
+  "schema_version": "cartan-defect-precertificate-v1",
+  "setting_ledger": [
+    {
+      "D_charge": "CLASSICAL_GAUGE_TARGET_CONDITIONAL_GLOBAL_ONLY",
+      "reason": "no renormalized Q_1, Ward operator, or restored local QME",
+      "setting": "vacuum_cylinder",
+      "verdict": "ANALYTIC_FRAMEWORK_MISSING"
+    },
+    {
+      "D_charge": "OPEN",
+      "reason": "scalar BV and relational observable extensions are absent",
+      "setting": "cylinder_scalar_clock",
+      "verdict": "ANALYTIC_FRAMEWORK_MISSING"
+    },
+    {
+      "D_charge": "OPEN_NOT_TESTED_BEFORE_SCALAR",
+      "reason": "matter extension is outside the current execution gate",
+      "setting": "cylinder_yang_mills",
+      "verdict": "ANALYTIC_FRAMEWORK_MISSING"
+    },
+    {
+      "D_charge": "OPEN",
+      "reason": "background-dependent causal and renormalized complexes are absent",
+      "setting": "weakly_deformed_background",
+      "verdict": "ANALYTIC_FRAMEWORK_MISSING"
+    },
+    {
+      "D_charge": "BOUNDARY_DEPENDENT",
+      "reason": "boundary observable algebra and BRST-compatible Hadamard construction are absent",
+      "setting": "lorentzian_dS_AdS",
+      "verdict": "ANALYTIC_FRAMEWORK_MISSING"
+    },
+    {
+      "D_charge": "PHYSICAL_CHARGE_EXPECTED_NOT_CERTIFIED",
+      "reason": "renormalized asymptotic charge algebra is absent; contraction is not assumed",
+      "setting": "asymptotically_flat",
+      "verdict": "ANALYTIC_FRAMEWORK_MISSING"
+    }
+  ],
+  "verification_commands": [
+    "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -v",
+    "PYTHONPATH=quantum-weyl python3 -m cartan.certificate --check",
+    "python3 -m py_compile quantum-weyl/cartan/*.py quantum-weyl/cartan/tests/*.py"
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-cartan-defect-precertificate-v1.json",
+  "title": "First-order quantum Cartan-defect precertificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "result_id",
+    "result_state",
+    "classical_commit",
+    "dependency_tags",
+    "lifecycle_gates",
+    "operator_complex",
+    "allowed_candidate_statuses",
+    "mechanics_fixtures",
+    "candidate_sector_ledger",
+    "setting_ledger",
+    "input_gates",
+    "claim_boundary",
+    "provenance",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema_version": {"const": "cartan-defect-precertificate-v1"},
+    "result_id": {"const": "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE"},
+    "result_state": {"const": "ALGEBRAIC_ENGINE_READY_PHYSICAL_CANDIDATES_INPUT_BLOCKED"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "lifecycle_gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["CLASSIFIED", "COEFFICIENT_COMPUTED", "QME_RESTORED", "RESIDUAL_TRANSFERRED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "CLASSIFIED": {"const": "NOT_REACHED_FULL_CANDIDATE_BASIS_INCOMPLETE"},
+        "COEFFICIENT_COMPUTED": {"const": "NOT_REACHED"},
+        "QME_RESTORED": {"const": "NOT_REACHED"},
+        "RESIDUAL_TRANSFERRED": {"const": "BLOCKED_PENDING_QME_RESTORED"},
+        "LORENTZIAN_CERTIFIED": {"const": "NOT_REACHED_ANALYTIC_FRAMEWORK_MISSING"}
+      }
+    },
+    "operator_complex": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["defect_degree", "differential", "ambient_obstruction_group", "local_relative_realization", "first_order_defect", "consistency_hypotheses", "consistency_conclusion", "removability_criterion"],
+      "properties": {
+        "defect_degree": {"const": 0},
+        "differential": {"const": "delta_End(T) = [Q,T]_graded"},
+        "ambient_obstruction_group": {"const": "H^0(Der_adm(C), [Q,-])"},
+        "local_relative_realization": {"type": "string", "minLength": 1},
+        "first_order_defect": {"type": "string", "minLength": 1},
+        "consistency_hypotheses": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}},
+        "consistency_conclusion": {"const": "[Q,A_D^(1)]=0"},
+        "removability_criterion": {"type": "string", "minLength": 1}
+      }
+    },
+    "allowed_candidate_statuses": {
+      "const": ["ZERO", "EXACT_REMOVABLE", "NONTRIVIAL_ANOMALY", "UNDEFINED_ANALYTICALLY"]
+    },
+    "mechanics_fixtures": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/fixture"}
+    },
+    "candidate_sector_ledger": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sector", "status", "classification_gate", "missing_input"],
+        "properties": {
+          "sector": {"type": "string", "minLength": 1},
+          "status": {"enum": ["ZERO", "EXACT_REMOVABLE", "NONTRIVIAL_ANOMALY", "UNDEFINED_ANALYTICALLY"]},
+          "classification_gate": {"type": "string", "minLength": 1},
+          "missing_input": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "setting_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["setting", "D_charge", "verdict", "reason"],
+        "properties": {
+          "setting": {"type": "string", "minLength": 1},
+          "D_charge": {"type": "string", "minLength": 1},
+          "verdict": {"enum": ["CARTAN_QUANTUM_EXACT", "CARTAN_RESTORED", "CARTAN_ANOMALOUS", "ANALYTIC_FRAMEWORK_MISSING"]},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "input_gates": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "minLength": 1},
+      "required": ["classical_freeze", "AFN0_local_relative_basis", "Euler_intrinsic_descent", "minimal_BV_antifield_completion", "renormalized_operator_algebra", "pure_weyl_QME", "boundary_BFV_complex", "scalar_clock_extension"]
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["established", "not_established"],
+      "properties": {
+        "established": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "not_established": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256", "dependency_manifest", "dependency_manifest_sha256", "schema"],
+      "properties": {
+        "source_manifest": {"type": "object", "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "dependency_manifest": {"type": "object", "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "dependency_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"type": "string", "minLength": 1}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "degree", "shape", "entries"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "degree": {"type": "integer"},
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["target", "source", "coefficient"],
+            "properties": {
+              "target": {"type": "integer", "minimum": 0},
+              "source": {"type": "integer", "minimum": 0},
+              "coefficient": {"$ref": "#/$defs/rational"}
+            }
+          }
+        }
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture_id", "scope", "basis_degrees", "checks", "defect", "classification", "endomorphism_H0_dimension", "primitive", "dual_witness"],
+      "properties": {
+        "fixture_id": {"enum": ["zero_defect", "exact_removable_defect", "nontrivial_defect"]},
+        "scope": {"const": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY"},
+        "basis_degrees": {"type": "array", "minItems": 1, "items": {"type": "integer"}},
+        "checks": {"type": "object", "additionalProperties": {"const": "VERIFIED"}},
+        "defect": {"$ref": "#/$defs/operator"},
+        "classification": {"enum": ["ZERO", "EXACT_REMOVABLE", "NONTRIVIAL_ANOMALY"]},
+        "endomorphism_H0_dimension": {"type": "integer", "minimum": 0},
+        "primitive": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/operator"}]},
+        "dual_witness": {"oneOf": [{"type": "null"}, {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/rational"}}]}
+      }
+    }
+  }
+}
