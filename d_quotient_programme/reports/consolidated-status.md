@@ -48,6 +48,13 @@ Boundary, nonlinear, and quantum questions are separate gates.
 6. interacting promotion requires a corrected Cartan homotopy
 7. quantum promotion requires a restored QME and renormalized Ward identity
 
+## Registered scoped contributions
+
+| Team | Setting | Generator | Phase space | Status | Verdict |
+|---|---|---|---|---|---|
+| einstein_boundary | `asymptotic_real_cylinder_time` | `H_ESU` | `asymptotically_flat_full_Bach` | `PARTIAL` | `PHASE_SPACE_NOT_CLOSED` |
+| nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
+
 ## Publication decision
 
 This remains a cross-programme validation dossier.  Paper IX is reserved but

@@ -19,6 +19,7 @@ REPORT = PACKAGE / "reports" / "consolidated-status.md"
 GENERATOR_REGISTRY = PACKAGE / "registry" / "generators.json"
 PHASE_REGISTRY = PACKAGE / "registry" / "phase_spaces.json"
 NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
+EINSTEIN_ED1A_CONTRIBUTION = PACKAGE / "contributions" / "einstein-ed1a-asymptotic-generator-gate.json"
 
 TEAM_PATHS = {
     "classical": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
@@ -148,10 +149,36 @@ def _nonlinear_nd1_contribution() -> dict[str, Any]:
     return contribution
 
 
+def _einstein_ed1a_contribution() -> dict[str, Any]:
+    contribution = _load(EINSTEIN_ED1A_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "einstein_boundary"
+        and contribution.get("setting_id") == "asymptotic_real_cylinder_time"
+        and contribution.get("generator_id") == "H_ESU"
+        and contribution.get("phase_space_id") == "asymptotically_flat_full_Bach"
+        and contribution.get("lifecycle_layer") == "LORENTZIAN_CAUSAL"
+        and contribution.get("claim_status") == "PARTIAL"
+        and contribution.get("verdict") == "PHASE_SPACE_NOT_CLOSED"
+        and contribution.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    ):
+        raise AssertionError("Einstein E-D1a contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path = evidence.get("path")
+    commit = evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("Einstein E-D1a contribution evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("Einstein E-D1a contribution evidence hash drifted")
+    return contribution
+
+
 def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     team_data = {team: _load_team_input(path) for team, path in TEAM_PATHS.items()}
     _assert_team_inputs(team_data)
     inputs = {team: _team_input(path) for team, path in TEAM_PATHS.items()}
+    ed1a_contribution = _einstein_ed1a_contribution()
     nd1_contribution = _nonlinear_nd1_contribution()
     return {
         "schema": "pure-weyl-d-quotient-programme-status-v1",
@@ -170,6 +197,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         },
         "team_inputs": inputs,
         "team_contributions": [
+            {
+                "path": str(EINSTEIN_ED1A_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_ED1A_CONTRIBUTION),
+                "payload": ed1a_contribution,
+            },
             {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
@@ -368,6 +400,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_taub_zero": "D_GAUGE",
         "compact_derived_residual": "D_GAUGE",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
+        "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
     for setting, verdict in required.items():
         if ledger.get(setting, {}).get("verdict") != verdict:
@@ -393,6 +426,17 @@ def render_report(data: dict[str, Any]) -> str:
     evidence_rows = "\n".join(
         f"- `{team}`: `{record['path']}` at `{record['commit']}`, SHA-256 `{record['sha256']}`"
         for team, record in data["team_inputs"].items()
+    )
+    contribution_rows = "\n".join(
+        "| {team} | `{setting}` | `{generator}` | `{phase_space}` | `{status}` | `{verdict}` |".format(
+            team=record["payload"]["team_id"],
+            setting=record["payload"]["setting_id"],
+            generator=record["payload"]["generator_id"],
+            phase_space=record["payload"]["phase_space_id"],
+            status=record["payload"]["claim_status"],
+            verdict=record["payload"]["verdict"],
+        )
+        for record in data["team_contributions"]
     )
     return rf"""# Consolidated \(D\)-quotient programme status
 
@@ -426,6 +470,12 @@ Boundary, nonlinear, and quantum questions are separate gates.
 """ + "\n".join(
         f"{index}. {gate}" for index, gate in enumerate(data["dependency_gate"], 1)
     ) + f"""
+
+## Registered scoped contributions
+
+| Team | Setting | Generator | Phase space | Status | Verdict |
+|---|---|---|---|---|---|
+{contribution_rows}
 
 ## Publication decision
 
@@ -487,6 +537,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
     reject("promote_selected_residual_to_full_cartan", mutant)
 
     mutant = deepcopy(data)
+    next(row for row in mutant["setting_ledger"] if row["setting_id"] == "asymptotic_real_cylinder_time")["verdict"] = "D_GAUGE"
+    reject("promote_asymptotic_generator_before_phase_space", mutant)
+
+    mutant = deepcopy(data)
     mutant["publication_plan"]["paper_IX"]["status"] = "ACTIVE_THEOREM_PAPER"
     reject("promote_paper_IX_before_gate", mutant)
 
@@ -530,7 +584,7 @@ def main() -> int:
         failures = mutation_guards(data)
         if failures:
             raise AssertionError("mutation guards failed: " + ", ".join(failures))
-        print("mutation guards: 5/5 PASS")
+        print("mutation guards: 6/6 PASS")
     print(CERTIFICATE, "PASS")
     return 0
 

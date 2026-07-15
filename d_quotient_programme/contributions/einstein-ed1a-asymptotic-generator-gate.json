@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "fixed Minkowski conformal completion at null infinity; full Bach radiative, Coulombic, soft, corner, ghost, and antifield phase space not yet closed",
+  "claim_status": "PARTIAL",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "the real Penrose push-forward of H_ESU is (P_0+K_0)/2 in the declared convention and crosses a fixed Minkowski null boundary",
+    "the real Minkowski dilation D_M is tangent to null infinity and restricts to u partial_u",
+    "H_ESU, D_M, D_rad, and P_0 are distinct generator rows unless a phase-space-preserving intertwiner is supplied",
+    "PHASE_SPACE_NOT_CLOSED is the fail-closed asymptotic verdict"
+  ],
+  "evidence": {
+    "commit": "89acca36479ebaea069c21eb23517dc6b1b49389",
+    "path": "bridge/certificates/d_quotient_asymptotic_seed.json",
+    "sha256": "359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663"
+  },
+  "generator_id": "H_ESU",
+  "lifecycle_layer": "LORENTZIAN_CAUSAL",
+  "next_gate": "construct one boundary-preserving full asymptotically flat Bach phase space, select its actual generator, and compute the renormalized charge variation and flux",
+  "not_established": [
+    "a LORENTZIAN-CAUSAL Bach BV-BFV or Green complex",
+    "that D_M belongs to the chosen finite-charge asymptotic symmetry algebra",
+    "a pure-Weyl charge, flux, integrability, or charge algebra for H_ESU, D_M, or P_0",
+    "that any asymptotic generator is proper gauge or physically charged",
+    "Einstein causal selection, helicity scattering, or Einstein scattering equivalence"
+  ],
+  "phase_space_id": "asymptotically_flat_full_Bach",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "asymptotic_real_cylinder_time",
+  "team_id": "einstein_boundary",
+  "verdict": "PHASE_SPACE_NOT_CLOSED",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.d_quotient_asymptotic_seed --verify bridge/certificates/d_quotient_asymptotic_seed.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_d_quotient_asymptotic_seed -v"
+  ]
+}
