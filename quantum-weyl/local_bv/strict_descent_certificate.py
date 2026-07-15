@@ -110,7 +110,7 @@ def build_database() -> dict[str, Any]:
         _database_entry(
             "CT_C2",
             ghost_number=0,
-            intrinsic_status="TRIVIAL",
+            intrinsic_status="STRICTLY_WEYL_INVARIANT",
             length=4,
             tower_id="STRICT_COUNTERTERM_DIFF_TOWER",
             notes="Nonzero universal Diff descent; cohomological nontriviality is not inferred.",
@@ -126,7 +126,7 @@ def build_database() -> dict[str, Any]:
         _database_entry(
             "CT_C_DUAL_C",
             ghost_number=0,
-            intrinsic_status="TRIVIAL",
+            intrinsic_status="STRICTLY_WEYL_INVARIANT",
             length=4,
             tower_id="STRICT_COUNTERTERM_DIFF_TOWER",
             notes="Nonzero universal Diff descent for the strict parity-odd density.",

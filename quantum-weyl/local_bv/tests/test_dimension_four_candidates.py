@@ -76,6 +76,14 @@ class DimensionFourCandidateTests(unittest.TestCase):
         self.assertTrue(
             all(record["diff_descent_status"] == "NONZERO_COMPLETE" for record in records)
         )
+        intrinsic = {
+            record["class_id"]: record["intrinsic_weyl_descent_status"]
+            for record in records
+        }
+        self.assertEqual(intrinsic["CT_C2"], "STRICTLY_WEYL_INVARIANT")
+        self.assertEqual(intrinsic["CT_C_DUAL_C"], "STRICTLY_WEYL_INVARIANT")
+        self.assertEqual(intrinsic["ANOM_OMEGA_C2"], "TRIVIAL")
+        self.assertEqual(intrinsic["ANOM_OMEGA_C_DUAL_C"], "TRIVIAL")
 
     def test_named_even_candidates_reach_the_native_weyl_carrier(self) -> None:
         analysis = dimension_four_candidate_analysis()

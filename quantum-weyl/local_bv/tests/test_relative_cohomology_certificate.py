@@ -12,7 +12,9 @@ class RelativeCohomologyCertificateTests(unittest.TestCase):
     def test_schema_and_production_claim_boundary(self) -> None:
         certificate = build_certificate()
         self.assertFalse(validate_instance(certificate, json.loads(SCHEMA_PATH.read_text())))
-        self.assertEqual(certificate["fixture"]["quotient_dimension"], 1)
+        self.assertEqual(certificate["fixture"]["total_quotient_dimension"], 2)
+        self.assertEqual(certificate["fixture"]["anchored_quotient_dimension"], 1)
+        self.assertEqual(certificate["fixture"]["lower_only_total_class_dimension"], 1)
         self.assertIn("production", " ".join(certificate["not_computed"]))
 
 

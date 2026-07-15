@@ -51,9 +51,11 @@ while the anomaly tower runs from `(4,1)` to `(0,5)`.
 
 The ledger no longer overloads one descent status.  Every covariant top form
 has `diff_descent_status: NONZERO_COMPLETE` and length four.  The separate
-`intrinsic_weyl_descent_status` is `TRIVIAL` for the type-B strict densities,
-`TRIVIAL_WITH_PRIMITIVE` for the type-D pair, and explicitly pending for the
-type-A anomaly continuation.  Class status is a third independent field:
+`intrinsic_weyl_descent_status` is `STRICTLY_WEYL_INVARIANT` for the
+ghost-number-zero `C^2` and `C dual C` densities, while their Weyl-ghost lifts
+have intrinsic descent `TRIVIAL`.  It is `TRIVIAL_WITH_PRIMITIVE` for the
+type-D pair and explicitly pending for the type-A anomaly continuation.
+Class status is a third independent field:
 only `Box R` and `omega Box R` are currently `EXACT`; all other candidates
 remain `UNDECIDED` pending the complete coboundary ansatz.
 

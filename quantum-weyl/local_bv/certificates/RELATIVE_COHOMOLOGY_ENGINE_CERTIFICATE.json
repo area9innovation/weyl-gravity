@@ -4,16 +4,20 @@
     "The certificate validates the engine on a finite exact fixture and does not classify a physical candidate."
   ],
   "canonical_hashes": {
-    "source_manifest_sha256": "0880db67d147b3b3d3f93a4568ca7bd9eba4e5e86fd66284c540270fdfa6cb7a"
+    "source_manifest_sha256": "c46654185181d10ba2fd536240afe319cd2eab41ad99de24fc7d14c8c909d2db"
   },
   "checks": {
     "Q_squared_zero": "VERIFIED",
+    "anchored_top_component_projection": "VERIFIED",
     "coboundary_in_cocycle_space": "VERIFIED",
     "coordinate_Q_dh_commutator_zero": "VERIFIED",
     "d_h_squared_zero": "VERIFIED",
     "deterministic_kernel_basis": "VERIFIED",
     "exact_sparse_matrix_composition": "VERIFIED",
+    "incremental_quotient_independence": "VERIFIED",
+    "lower_only_total_class_exclusion": "VERIFIED",
     "quotient_representative_selection": "VERIFIED",
+    "sparse_exact_rank_and_nullspace": "VERIFIED",
     "totalized_differential_squared_zero": "VERIFIED"
   },
   "classical_commit": "UNFROZEN",
@@ -21,14 +25,29 @@
     "LOCAL-ALGEBRAIC"
   ],
   "fixture": {
-    "ansatz_basis_hash": "39c0d7687949d114409686c0aef0a823c3a64823d40e2428e0598e144afc07be",
-    "ansatz_dimension": 3,
-    "coboundary_matrix_rank": 1,
-    "cocycle_matrix_rank": 1,
-    "proof_hash": "07c5f6d049c4315d7a63e215a5959c5fa198dc9d7e0153c5a4a0cbaaaf167bda",
-    "purpose": "commuting square plus one isolated cohomology class",
-    "quotient_dimension": 1,
-    "representative_coordinates": [
+    "anchored_bidegree": {
+      "form_degree": 1,
+      "ghost_number": 0
+    },
+    "anchored_proof_hash": "6665d14cc665fc44597950078cf8e75128b4def5867ddc3a1e34ab067134cd8f",
+    "anchored_quotient_dimension": 1,
+    "anchored_representative_coordinates": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "anchored_top_coboundary_rank": 1,
+    "anchored_top_cocycle_dimension": 2,
+    "ansatz_basis_hash": "20a6a1bbe3ebc1759c8a638d136650f08b7aceb0403e31c28d6235cb83ecfa4e",
+    "ansatz_dimension": 4,
+    "complete_descent_lift_coordinates": [
       [
         {
           "denominator": 1,
@@ -41,10 +60,20 @@
         {
           "denominator": 1,
           "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
         }
       ]
     ],
-    "total_degree": 1
+    "lower_only_total_class_dimension": 1,
+    "purpose": "commuting square plus one isolated cohomology class",
+    "total_coboundary_matrix_rank": 1,
+    "total_cocycle_matrix_rank": 1,
+    "total_degree": 1,
+    "total_proof_hash": "964beb0a1c008e4251f208e2c07e1df0cbad263b3d90b4f9febdfe9449eea890",
+    "total_quotient_dimension": 2
   },
   "not_computed": [
     "production V^p_g bases at the one-loop derivative bound",

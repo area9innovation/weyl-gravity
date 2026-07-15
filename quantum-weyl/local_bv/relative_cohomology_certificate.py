@@ -35,9 +35,14 @@ def _source_manifest() -> dict[str, str]:
 def build_certificate() -> dict[str, Any]:
     complex_ = certification_bicomplex()
     checks = complex_.verify_bicomplex()
-    cohomology = complex_.cohomology(1)
-    if cohomology["quotient_dimension"] != 1:
-        raise AssertionError("mapping-cone fixture quotient drifted")
+    total_cohomology = complex_.cohomology(1)
+    relative = complex_.relative_cohomology(0, 1)
+    if total_cohomology["quotient_dimension"] != 2:
+        raise AssertionError("mapping-cone fixture total quotient drifted")
+    if relative["quotient_dimension"] != 1:
+        raise AssertionError("anchored relative quotient drifted")
+    if relative["lower_only_total_class_dimension"] != 1:
+        raise AssertionError("lower-only total class was not separated")
     return {
         "result_id": "RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE",
         "result_state": "ENGINE_VERIFIED_PRODUCTION_BASES_PENDING",
@@ -49,18 +54,29 @@ def build_certificate() -> dict[str, Any]:
             "deterministic_kernel_basis": "VERIFIED",
             "coboundary_in_cocycle_space": "VERIFIED",
             "quotient_representative_selection": "VERIFIED",
+            "anchored_top_component_projection": "VERIFIED",
+            "lower_only_total_class_exclusion": "VERIFIED",
+            "sparse_exact_rank_and_nullspace": "VERIFIED",
+            "incremental_quotient_independence": "VERIFIED",
         },
         "totalization_convention": "D = Q + (-1)^ghost_number d_h",
         "fixture": {
             "purpose": "commuting square plus one isolated cohomology class",
-            "total_degree": cohomology["total_degree"],
-            "ansatz_dimension": cohomology["ansatz_dimension"],
-            "ansatz_basis_hash": cohomology["ansatz_basis_hash"],
-            "cocycle_matrix_rank": cohomology["cocycle_matrix_rank"],
-            "coboundary_matrix_rank": cohomology["coboundary_matrix_rank"],
-            "quotient_dimension": cohomology["quotient_dimension"],
-            "representative_coordinates": cohomology["representative_coordinates"],
-            "proof_hash": cohomology["proof_hash"],
+            "total_degree": total_cohomology["total_degree"],
+            "ansatz_dimension": total_cohomology["ansatz_dimension"],
+            "ansatz_basis_hash": total_cohomology["ansatz_basis_hash"],
+            "total_cocycle_matrix_rank": total_cohomology["cocycle_matrix_rank"],
+            "total_coboundary_matrix_rank": total_cohomology["coboundary_matrix_rank"],
+            "total_quotient_dimension": total_cohomology["quotient_dimension"],
+            "anchored_bidegree": {"ghost_number": 0, "form_degree": 1},
+            "anchored_top_cocycle_dimension": relative["projected_top_cocycle_dimension"],
+            "anchored_top_coboundary_rank": relative["projected_top_coboundary_rank"],
+            "anchored_quotient_dimension": relative["quotient_dimension"],
+            "lower_only_total_class_dimension": relative["lower_only_total_class_dimension"],
+            "anchored_representative_coordinates": relative["representative_coordinates"],
+            "complete_descent_lift_coordinates": relative["complete_descent_lift_coordinates"],
+            "total_proof_hash": total_cohomology["proof_hash"],
+            "anchored_proof_hash": relative["proof_hash"],
         },
         "canonical_hashes": {
             "source_manifest_sha256": canonical_sha256(_source_manifest()),

@@ -16,21 +16,38 @@ class RelativeCohomologyTests(unittest.TestCase):
             "VERIFIED",
         )
         differential = complex_.total_differential(1)
-        self.assertEqual(differential.dense_rows(), ((1, 0, -1),))
+        self.assertEqual(differential.dense_rows(), ((1, 0, -1, 0),))
         self.assertFalse(complex_.total_differential(2).compose(differential).entries)
 
     def test_exact_quotient_detects_one_isolated_class(self) -> None:
         result = certification_bicomplex().cohomology(1)
-        self.assertEqual(result["ansatz_dimension"], 3)
-        self.assertEqual(result["cocycle_dimension"], 2)
+        self.assertEqual(result["ansatz_dimension"], 4)
+        self.assertEqual(result["cocycle_dimension"], 3)
         self.assertEqual(result["coboundary_matrix_rank"], 1)
-        self.assertEqual(result["quotient_dimension"], 1)
+        self.assertEqual(result["quotient_dimension"], 2)
         self.assertEqual(len(result["proof_hash"]), 64)
+
+    def test_anchored_relative_quotient_excludes_lower_only_class(self) -> None:
+        result = certification_bicomplex().relative_cohomology(0, 1)
+        self.assertEqual(result["top_ansatz_dimension"], 2)
+        self.assertEqual(result["projected_top_cocycle_dimension"], 2)
+        self.assertEqual(result["projected_top_coboundary_rank"], 1)
+        self.assertEqual(result["quotient_dimension"], 1)
+        self.assertEqual(result["lower_only_total_class_dimension"], 1)
+        self.assertEqual(
+            result["representative_coordinates"],
+            [[{"numerator": 0, "denominator": 1}, {"numerator": 1, "denominator": 1}]],
+        )
+
+    def test_lower_anchor_sees_the_lower_only_class(self) -> None:
+        result = certification_bicomplex().relative_cohomology(1, 0)
+        self.assertEqual(result["quotient_dimension"], 1)
+        self.assertEqual(result["lower_only_total_class_dimension"], 0)
 
     def test_noncommuting_square_fails_closed(self) -> None:
         complex_ = certification_bicomplex()
         bad_d = dict(complex_.d_maps)
-        bad_d[Bidegree(1, 0)] = SparseMatrix.from_dense(((2,),))
+        bad_d[Bidegree(1, 0)] = SparseMatrix.from_dense(((2, 0),))
         bad = FiniteBicomplex(complex_.spaces, complex_.q_maps, bad_d)
         with self.assertRaisesRegex(ValueError, "do not commute"):
             bad.verify_bicomplex()
@@ -41,6 +58,15 @@ class RelativeCohomologyTests(unittest.TestCase):
         self.assertEqual(matrix.canonical_payload()["entries"][0]["coefficient"], {"numerator": 1, "denominator": 1})
         with self.assertRaisesRegex(ValueError, "ragged"):
             SparseMatrix.from_dense(((1,), (1, 2)))
+
+    def test_sparse_rank_and_nullspace_do_not_require_dense_rows(self) -> None:
+        matrix = SparseMatrix.from_dense(((1, 2, 3), (0, 1, 1)))
+        self.assertEqual(matrix.rank(), 2)
+        self.assertEqual(matrix.nullspace(), ((-1, -1, 1),))
+        self.assertEqual(
+            SparseMatrix.zero(0, 2).nullspace(),
+            ((1, 0), (0, 1)),
+        )
 
 
 if __name__ == "__main__":

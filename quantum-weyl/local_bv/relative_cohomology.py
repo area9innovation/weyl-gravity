@@ -7,7 +7,6 @@ from fractions import Fraction
 from typing import Mapping, Sequence
 
 from .algebra import canonical_sha256
-from .quotient import exact_nullspace, exact_rank
 
 
 @dataclass(frozen=True, order=True)
@@ -118,6 +117,68 @@ class SparseMatrix:
             for column in range(self.column_count)
         )
 
+    def _sparse_rref(self) -> tuple[list[dict[int, Fraction]], tuple[int, ...]]:
+        """Return an exact sparse RREF without materializing zero entries."""
+
+        rows = [{} for _ in range(self.row_count)]
+        for (row, column), coefficient in self.entries.items():
+            rows[row][column] = coefficient
+        rows = [row for row in rows if row]
+        pivot_row = 0
+        pivots: list[int] = []
+        for column in range(self.column_count):
+            source = next(
+                (
+                    row_index
+                    for row_index in range(pivot_row, len(rows))
+                    if rows[row_index].get(column)
+                ),
+                None,
+            )
+            if source is None:
+                continue
+            rows[pivot_row], rows[source] = rows[source], rows[pivot_row]
+            pivot = rows[pivot_row][column]
+            rows[pivot_row] = {
+                index: value / pivot
+                for index, value in rows[pivot_row].items()
+                if value
+            }
+            for row_index, row in enumerate(rows):
+                if row_index == pivot_row or not row.get(column):
+                    continue
+                coefficient = row[column]
+                reduced = dict(row)
+                for index, pivot_value in rows[pivot_row].items():
+                    value = reduced.get(index, Fraction()) - coefficient * pivot_value
+                    if value:
+                        reduced[index] = value
+                    else:
+                        reduced.pop(index, None)
+                rows[row_index] = reduced
+            pivots.append(column)
+            pivot_row += 1
+            if pivot_row == len(rows):
+                break
+        return rows[:pivot_row], tuple(pivots)
+
+    def rank(self) -> int:
+        return len(self._sparse_rref()[1])
+
+    def nullspace(self) -> tuple[tuple[Fraction, ...], ...]:
+        rref, pivots = self._sparse_rref()
+        free_columns = tuple(
+            column for column in range(self.column_count) if column not in pivots
+        )
+        basis: list[tuple[Fraction, ...]] = []
+        for free in free_columns:
+            vector = [Fraction() for _ in range(self.column_count)]
+            vector[free] = Fraction(1)
+            for row, pivot in zip(rref, pivots):
+                vector[pivot] = -row.get(free, Fraction())
+            basis.append(tuple(vector))
+        return tuple(basis)
+
     def canonical_payload(self) -> dict[str, object]:
         return {
             "row_count": self.row_count,
@@ -136,19 +197,63 @@ class SparseMatrix:
         }
 
 
+class _ExactRowSpace:
+    """Incremental exact RREF used for deterministic independence tests."""
+
+    def __init__(self, width: int) -> None:
+        if width < 0:
+            raise ValueError("row-space width must be nonnegative")
+        self.width = width
+        self.rows: dict[int, list[Fraction]] = {}
+
+    @property
+    def rank(self) -> int:
+        return len(self.rows)
+
+    def add(self, vector: Sequence[Fraction | int]) -> bool:
+        if len(vector) != self.width:
+            raise ValueError("row-space vector has the wrong dimension")
+        row = list(map(Fraction, vector))
+        for pivot in sorted(self.rows):
+            coefficient = row[pivot]
+            if coefficient:
+                row = [
+                    value - coefficient * pivot_value
+                    for value, pivot_value in zip(row, self.rows[pivot])
+                ]
+        pivot = next((index for index, value in enumerate(row) if value), None)
+        if pivot is None:
+            return False
+        coefficient = row[pivot]
+        row = [value / coefficient for value in row]
+        for existing_pivot, existing in list(self.rows.items()):
+            coefficient = existing[pivot]
+            if coefficient:
+                self.rows[existing_pivot] = [
+                    value - coefficient * pivot_value
+                    for value, pivot_value in zip(existing, row)
+                ]
+        self.rows[pivot] = row
+        return True
+
+
 def _independent_extension(
     initial: Sequence[tuple[Fraction, ...]],
     candidates: Sequence[tuple[Fraction, ...]],
 ) -> tuple[tuple[Fraction, ...], ...]:
-    selected = list(initial)
-    rank = exact_rank(selected) if selected else 0
+    vectors = [*initial, *candidates]
+    if not vectors:
+        return ()
+    width = len(vectors[0])
+    if any(len(vector) != width for vector in vectors):
+        raise ValueError("independence candidates have inconsistent dimensions")
+    row_space = _ExactRowSpace(width)
+    for vector in initial:
+        row_space.add(vector)
     additions: list[tuple[Fraction, ...]] = []
     for candidate in candidates:
-        new_rank = exact_rank([*selected, candidate])
-        if new_rank > rank:
-            selected.append(candidate)
+        if row_space.add(candidate):
             additions.append(candidate)
-            rank = new_rank
     return tuple(additions)
 
 
@@ -224,19 +329,43 @@ class FiniteBicomplex:
             "totalized_differential_squared_zero": "VERIFIED",
         }
 
-    def total_basis(self, total_degree: int) -> tuple[tuple[Bidegree, int, str], ...]:
+    def total_basis(
+        self,
+        total_degree: int,
+        *,
+        max_form_degree: int | None = None,
+    ) -> tuple[tuple[Bidegree, int, str], ...]:
+        if max_form_degree is not None and not 0 <= max_form_degree <= 4:
+            raise ValueError("maximum form degree is outside 0,...,4")
         return tuple(
             (degree, index, label)
             for degree in sorted(
-                (item for item in self.spaces if item.total_degree == total_degree),
+                (
+                    item
+                    for item in self.spaces
+                    if item.total_degree == total_degree
+                    and (
+                        max_form_degree is None
+                        or item.form_degree <= max_form_degree
+                    )
+                ),
                 key=lambda item: (-item.form_degree, item.ghost_number),
             )
             for index, label in enumerate(self.spaces[degree])
         )
 
-    def total_differential(self, total_degree: int) -> SparseMatrix:
-        source_basis = self.total_basis(total_degree)
-        target_basis = self.total_basis(total_degree + 1)
+    def total_differential(
+        self,
+        total_degree: int,
+        *,
+        max_form_degree: int | None = None,
+    ) -> SparseMatrix:
+        source_basis = self.total_basis(
+            total_degree, max_form_degree=max_form_degree
+        )
+        target_basis = self.total_basis(
+            total_degree + 1, max_form_degree=max_form_degree
+        )
         target_positions = {
             (degree, local_index): total_index
             for total_index, (degree, local_index, _) in enumerate(target_basis)
@@ -246,27 +375,41 @@ class FiniteBicomplex:
             q_target = Bidegree(degree.ghost_number + 1, degree.form_degree)
             for (local_row, column), coefficient in self.q_map(degree).entries.items():
                 if column == local_column:
-                    row = target_positions[(q_target, local_row)]
+                    target_key = (q_target, local_row)
+                    if target_key not in target_positions:
+                        continue
+                    row = target_positions[target_key]
                     entries[(row, source_index)] = entries.get((row, source_index), Fraction()) + coefficient
             d_target = Bidegree(degree.ghost_number, degree.form_degree + 1)
             d_sign = -1 if degree.ghost_number % 2 else 1
             for (local_row, column), coefficient in self.d_map(degree).entries.items():
                 if column == local_column:
-                    row = target_positions[(d_target, local_row)]
+                    target_key = (d_target, local_row)
+                    if target_key not in target_positions:
+                        continue
+                    row = target_positions[target_key]
                     entries[(row, source_index)] = entries.get((row, source_index), Fraction()) + d_sign * coefficient
         return SparseMatrix(len(target_basis), len(source_basis), entries)
 
-    def cohomology(self, total_degree: int) -> dict[str, object]:
+    def cohomology(
+        self,
+        total_degree: int,
+        *,
+        max_form_degree: int | None = None,
+    ) -> dict[str, object]:
         self.verify_bicomplex()
-        differential = self.total_differential(total_degree)
-        previous = self.total_differential(total_degree - 1)
-        next_differential = self.total_differential(total_degree + 1)
+        differential = self.total_differential(
+            total_degree, max_form_degree=max_form_degree
+        )
+        previous = self.total_differential(
+            total_degree - 1, max_form_degree=max_form_degree
+        )
+        next_differential = self.total_differential(
+            total_degree + 1, max_form_degree=max_form_degree
+        )
         if next_differential.compose(differential).entries:
             raise AssertionError("totalized differential is not nilpotent")
-        cocycles = exact_nullspace(
-            differential.dense_rows(),
-            column_count=differential.column_count,
-        )
+        cocycles = differential.nullspace()
         coboundaries = _independent_extension((), previous.columns())
         if any(differential.apply(vector) != (Fraction(),) * differential.row_count for vector in coboundaries):
             raise AssertionError("a total coboundary is not closed")
@@ -278,7 +421,9 @@ class FiniteBicomplex:
                 "form_degree": degree.form_degree,
                 "label": label,
             }
-            for degree, _, label in self.total_basis(total_degree)
+            for degree, _, label in self.total_basis(
+                total_degree, max_form_degree=max_form_degree
+            )
         ]
         representative_coordinates = [
             [
@@ -289,9 +434,10 @@ class FiniteBicomplex:
         ]
         return {
             "total_degree": total_degree,
+            "max_form_degree": max_form_degree,
             "ansatz_dimension": differential.column_count,
             "ansatz_basis_hash": canonical_sha256(basis_payload),
-            "cocycle_matrix_rank": exact_rank(differential.dense_rows()),
+            "cocycle_matrix_rank": differential.rank(),
             "cocycle_dimension": len(cocycles),
             "coboundary_matrix_rank": len(coboundaries),
             "quotient_dimension": quotient_dimension,
@@ -307,22 +453,151 @@ class FiniteBicomplex:
             ),
         }
 
+    def relative_cohomology(
+        self,
+        ghost_number: int,
+        form_degree: int,
+    ) -> dict[str, object]:
+        """Project complete total cocycles onto the requested top bidegree.
+
+        The total complex is truncated to form degrees at most ``form_degree``.
+        A relative class is the top component of a complete total cocycle,
+        modulo top components of total coboundaries.  Total-cohomology classes
+        with zero top component are counted separately and never promoted to
+        ``H^{ghost_number,form_degree}(Q|d_h)``.
+        """
+
+        anchor = Bidegree(ghost_number, form_degree)
+        if not 0 <= form_degree <= 4:
+            raise ValueError("anchor form degree is outside 0,...,4")
+        total_degree = anchor.total_degree
+        total_basis = self.total_basis(
+            total_degree, max_form_degree=form_degree
+        )
+        top_positions = tuple(
+            index
+            for index, (degree, _, _) in enumerate(total_basis)
+            if degree == anchor
+        )
+        if len(top_positions) != self._dimension(anchor):
+            raise AssertionError("anchored top basis does not match its space")
+
+        differential = self.total_differential(
+            total_degree, max_form_degree=form_degree
+        )
+        previous = self.total_differential(
+            total_degree - 1, max_form_degree=form_degree
+        )
+        cocycle_lifts = differential.nullspace()
+        coboundary_lifts = _independent_extension((), previous.columns())
+
+        def top_component(
+            vector: Sequence[Fraction | int],
+        ) -> tuple[Fraction, ...]:
+            return tuple(Fraction(vector[index]) for index in top_positions)
+
+        top_cocycle_candidates = tuple(map(top_component, cocycle_lifts))
+        top_cocycles = _independent_extension((), top_cocycle_candidates)
+        top_coboundaries = _independent_extension(
+            (), tuple(map(top_component, coboundary_lifts))
+        )
+        top_cocycle_space = _ExactRowSpace(self._dimension(anchor))
+        for vector in top_cocycles:
+            top_cocycle_space.add(vector)
+        if any(top_cocycle_space.add(vector) for vector in top_coboundaries):
+            raise AssertionError("a projected coboundary is not a projected cocycle")
+
+        quotient_space = _ExactRowSpace(self._dimension(anchor))
+        for vector in top_coboundaries:
+            quotient_space.add(vector)
+        relative_representatives: list[tuple[Fraction, ...]] = []
+        descent_lifts: list[tuple[Fraction, ...]] = []
+        for lift in cocycle_lifts:
+            candidate = top_component(lift)
+            if quotient_space.add(candidate):
+                relative_representatives.append(candidate)
+                descent_lifts.append(lift)
+
+        total = self.cohomology(
+            total_degree, max_form_degree=form_degree
+        )
+        quotient_dimension = len(relative_representatives)
+        lower_only_dimension = total["quotient_dimension"] - quotient_dimension
+        if lower_only_dimension < 0:
+            raise AssertionError("anchored quotient exceeds total cohomology")
+
+        top_basis_payload = [
+            {
+                "ghost_number": degree.ghost_number,
+                "form_degree": degree.form_degree,
+                "label": label,
+            }
+            for degree, _, label in total_basis
+            if degree == anchor
+        ]
+
+        def coordinates_payload(
+            vectors: Sequence[Sequence[Fraction]],
+        ) -> list[list[dict[str, int]]]:
+            return [
+                [
+                    {
+                        "numerator": value.numerator,
+                        "denominator": value.denominator,
+                    }
+                    for value in vector
+                ]
+                for vector in vectors
+            ]
+
+        representative_payload = coordinates_payload(relative_representatives)
+        lift_payload = coordinates_payload(descent_lifts)
+        return {
+            "ghost_number": ghost_number,
+            "form_degree": form_degree,
+            "total_degree": total_degree,
+            "descent_completion_status": "COMPLETE_WITHIN_SUPPLIED_BICOMPLEX",
+            "top_ansatz_dimension": self._dimension(anchor),
+            "top_ansatz_basis_hash": canonical_sha256(top_basis_payload),
+            "complete_total_cocycle_dimension": len(cocycle_lifts),
+            "projected_top_cocycle_dimension": len(top_cocycles),
+            "projected_top_coboundary_rank": len(top_coboundaries),
+            "quotient_dimension": quotient_dimension,
+            "lower_only_total_class_dimension": lower_only_dimension,
+            "representative_coordinates": representative_payload,
+            "complete_descent_lift_coordinates": lift_payload,
+            "proof_hash": canonical_sha256(
+                {
+                    "anchor": {
+                        "ghost_number": ghost_number,
+                        "form_degree": form_degree,
+                    },
+                    "top_basis": top_basis_payload,
+                    "total_basis_hash": total["ansatz_basis_hash"],
+                    "top_cocycles": coordinates_payload(top_cocycles),
+                    "top_coboundaries": coordinates_payload(top_coboundaries),
+                    "representatives": representative_payload,
+                    "lifts": lift_payload,
+                }
+            ),
+        }
+
 
 def certification_bicomplex() -> FiniteBicomplex:
     """Return a commuting square plus one isolated total-cohomology class."""
 
     spaces = {
         Bidegree(0, 0): ("x",),
-        Bidegree(1, 0): ("Qx",),
+        Bidegree(1, 0): ("Qx", "lower_only_class"),
         Bidegree(0, 1): ("dx", "c"),
         Bidegree(1, 1): ("Qdx",),
     }
     q_maps = {
-        Bidegree(0, 0): SparseMatrix.from_dense(((1,),)),
+        Bidegree(0, 0): SparseMatrix.from_dense(((1,), (0,))),
         Bidegree(0, 1): SparseMatrix.from_dense(((1, 0),)),
     }
     d_maps = {
         Bidegree(0, 0): SparseMatrix.from_dense(((1,), (0,))),
-        Bidegree(1, 0): SparseMatrix.from_dense(((1,),)),
+        Bidegree(1, 0): SparseMatrix.from_dense(((1, 0),)),
     }
     return FiniteBicomplex(spaces, q_maps, d_maps)

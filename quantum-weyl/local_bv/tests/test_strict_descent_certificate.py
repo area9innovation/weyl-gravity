@@ -34,6 +34,14 @@ class StrictDensityDescentCertificateTests(unittest.TestCase):
             entries["ANOM_OMEGA_BOX_R"]["intrinsic_weyl_descent_status"],
             "TRIVIAL_WITH_PRIMITIVE",
         )
+        self.assertEqual(
+            entries["CT_C2"]["intrinsic_weyl_descent_status"],
+            "STRICTLY_WEYL_INVARIANT",
+        )
+        self.assertEqual(
+            entries["ANOM_OMEGA_C2"]["intrinsic_weyl_descent_status"],
+            "TRIVIAL",
+        )
         self.assertTrue(
             all(
                 entry["diff_descent_status"] == "NONZERO_COMPLETE"

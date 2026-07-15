@@ -129,6 +129,8 @@ def _attach_descent_status(
         if class_id == "ANOM_OMEGA_E4"
         else "TRIVIAL_WITH_PRIMITIVE"
         if "BOX_R" in class_id
+        else "STRICTLY_WEYL_INVARIANT"
+        if class_id.startswith("CT_")
         else "TRIVIAL"
     )
     result.update(
