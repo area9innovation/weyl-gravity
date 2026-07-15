@@ -86,7 +86,6 @@ pairing-transport flags below remain open.
 - `causal_quasi_isomorphism` — Prove that the causal map Gamma_c(C_prol)[1] -> Gamma_sc(C_prol) is a quasi-isomorphism and specialize it to all smooth cylinder solutions.
 - `residual_endpoint_recovery` — Realize the fifteen cutoff CKV classes and their dual endpoints through the actual causal map, with no prolongation copy and suspension sign +1.
 - `SO42_equivariant_transport` — Prove that the causal/Cauchy identification transfers the full SO(4,2) action, strictly or by an explicit chain homotopy.
-- `prolonged_current_comparison` — The cyclic quadratic-parent formula is well typed for the corrected mapping cylinder, but the current certificate must explicitly bind the corrected curved core-chain digest before promotion.
 
 > The algebraic and energy-mode result is independently certified:
 > `H^4 = C^2` with Gram matrix `I_2`. This report tracks its

@@ -94,6 +94,7 @@ def main() -> int:
     transgression = certificate["variational_transgression"]
     ledger = certificate["all_row_ledger"]
     support = certificate["support"]
+    mapping = _load("curved_curvature_mapping_cylinder_substitution.json")
     guards = {
         "quadratic_parent_is_coefficientwise_complete": certificate[
             "quadratic_BV_parent"
@@ -148,6 +149,10 @@ def main() -> int:
             current_identity_mutation_rejected
         ),
         "pullback_mutation_rejected": pullback_mutation_rejected,
+        "corrected_curved_core_provenance_bound": certificate["inputs"][
+            "curved_core_chain_map_sha256"
+        ]
+        == mapping["input_certificate_sha256"]["curved_core_chain_map"],
         "prolonged_current_flag_warranted": certificate[
             "prolonged_current_comparison"
         ]

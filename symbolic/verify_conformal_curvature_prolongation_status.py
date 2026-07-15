@@ -164,7 +164,7 @@ def main() -> int:
     checks["prolonged_BV_operator_identity_promoted"] = bool(
         certificate["prolonged_BV_operator_identity"]
     )
-    checks["prolonged_current_stays_false_until_core_provenance_bound"] = not bool(
+    checks["prolonged_current_promoted_from_corrected_core_provenance"] = bool(
         certificate["prolonged_current_comparison"]
     )
     fixed16 = certificate["fixed_temporal_16_diagnostic_flags"]

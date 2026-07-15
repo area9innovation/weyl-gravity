@@ -460,7 +460,7 @@ class FinalClaimDependencyReport:
                 "curved_prolonged_current_comparison.json",
                 "curved_current_comparison.json",
             ),
-            "The cyclic quadratic-parent formula is well typed for the corrected mapping cylinder, but the current certificate must explicitly bind the corrected curved core-chain digest before promotion.",
+            "The all-row cyclic quadratic parent and off-shell d+Q current comparison are exact and content-addressed to the corrected curved core-chain and mapping-cylinder certificates.",
         )
         atomic(
             "candidate_curvature_principal_symmetric_hyperbolicity",

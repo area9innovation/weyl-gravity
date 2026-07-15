@@ -6,8 +6,7 @@
       "causal_green_homotopy",
       "causal_quasi_isomorphism",
       "residual_endpoint_recovery",
-      "SO42_equivariant_transport",
-      "prolonged_current_comparison"
+      "SO42_equivariant_transport"
     ],
     "required_flags": [
       "curved_operator_identity",
@@ -646,8 +645,7 @@
         "causal_green_homotopy",
         "causal_quasi_isomorphism",
         "residual_endpoint_recovery",
-        "SO42_equivariant_transport",
-        "prolonged_current_comparison"
+        "SO42_equivariant_transport"
       ],
       "classification": "terminal_theorem_claim",
       "dependency_mode": "all",
@@ -789,9 +787,7 @@
       "status": true
     },
     "prolonged_current_comparison": {
-      "blocking_dependencies": [
-        "prolonged_current_comparison"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [
@@ -799,9 +795,9 @@
         "curved_prolonged_current_comparison.json",
         "curved_current_comparison.json"
       ],
-      "note": "The cyclic quadratic-parent formula is well typed for the corrected mapping cylinder, but the current certificate must explicitly bind the corrected curved core-chain digest before promotion.",
+      "note": "The all-row cyclic quadratic parent and off-shell d+Q current comparison are exact and content-addressed to the corrected curved core-chain and mapping-cylinder certificates.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "prolonged_green_witness": {
       "blocking_dependencies": [
@@ -1025,8 +1021,7 @@
     "causal_green_homotopy",
     "causal_quasi_isomorphism",
     "residual_endpoint_recovery",
-    "SO42_equivariant_transport",
-    "prolonged_current_comparison"
+    "SO42_equivariant_transport"
   ],
   "honest_status": "The algebraic/structural scaffold is certified. The final covariant H4 transport remains false exactly where the reported curved atomic dependencies remain open.",
   "policy": "derived claims use their declared all/any dependency mode; atomic statuses are read from owning certificates",
@@ -1036,8 +1031,8 @@
     "energy_H4_is_C2": true,
     "energy_gram_is_I2": true,
     "final_covariant_H4": false,
-    "implemented_or_derived_true": 52,
-    "open_or_blocked": 18,
+    "implemented_or_derived_true": 53,
+    "open_or_blocked": 17,
     "pairing_compatibility": false,
     "residual_H4_is_C2": true,
     "residual_gram_is_I2": true,

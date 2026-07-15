@@ -244,6 +244,7 @@ class ProlongedCurrentComparison:
             self.verify()
         mapping = self.mapping_cylinder_certificate
         coefficient_tables = _nested(mapping, "coefficient_tables")
+        mapping_inputs = _nested(mapping, "input_certificate_sha256")
         return {
             "schema": "pure-weyl-prolonged-current-comparison-v1",
             "inputs": {
@@ -254,6 +255,9 @@ class ProlongedCurrentComparison:
                     self.graph_current_certificate
                 ),
                 "mapping_cylinder_sha256": _certificate_digest(mapping),
+                "curved_core_chain_map_sha256": mapping_inputs[
+                    "curved_core_chain_map"
+                ],
             },
             "quadratic_BV_parent": {
                 "formula": "S_prol=1/2<Phi,D Omega Q_prol Phi>",
