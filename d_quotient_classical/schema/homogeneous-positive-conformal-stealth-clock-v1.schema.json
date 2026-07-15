@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-homogeneous-positive-conformal-stealth-clock-v1.schema.json",
+  "title": "Homogeneous positive-sign conformal stealth-clock audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "generator_id", "phase_space_id",
+    "claim_status", "scientific_verdict", "dependency_tags", "conventions",
+    "stress_classification", "complete_nonzero_family", "clock_and_health",
+    "gate_result", "flags", "not_established", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-homogeneous-positive-conformal-stealth-clock-v1"},
+    "result_id": {"const": "HOMOGENEOUS_POSITIVE_CONFORMAL_STEALTH_CLOCK"},
+    "setting_id": {"const": "compact_positive_conformal_stealth_clock"},
+    "generator_id": {"const": "D_compact"},
+    "phase_space_id": {"const": "homogeneous_conformal_scalar_on_unit_cylinder"},
+    "claim_status": {"const": "CERTIFIED_SCOPED_OBSTRUCTION"},
+    "scientific_verdict": {"type": "null"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "conventions": {"type": "object"},
+    "stress_classification": {
+      "type": "object",
+      "properties": {
+        "kappa_nonnegative_nonzero_stealth_exists": {"const": false},
+        "kappa_negative_required_for_nonzero_homogeneous_stealth": {"const": true}
+      },
+      "required": [
+        "energy_density", "pressure_off_shell", "pressure_on_shell",
+        "stress_trace_on_shell", "stealth_condition",
+        "kappa_nonnegative_nonzero_stealth_exists",
+        "kappa_negative_required_for_nonzero_homogeneous_stealth"
+      ]
+    },
+    "complete_nonzero_family": {
+      "type": "object",
+      "properties": {
+        "scalar_equation_exact": {"const": true},
+        "stress_tensor_zero": {"const": true},
+        "family_exhaustive_on_connected_nonzero_real_branches": {"const": true}
+      },
+      "required": [
+        "coupling", "solution", "first_integral", "exhaustiveness_variable",
+        "reduced_first_integral", "scalar_equation_exact", "stress_tensor_zero",
+        "family_exhaustive_on_connected_nonzero_real_branches"
+      ]
+    },
+    "clock_and_health": {
+      "type": "object",
+      "properties": {
+        "local_kinetic_sign": {"const": "POSITIVE"},
+        "potential_bounded_below": {"const": false},
+        "finite_time_singularity": {"const": true},
+        "globally_regular_on_R_times_S3": {"const": false},
+        "globally_monotone_clock": {"const": false},
+        "local_monotone_clock_charts": {"const": true}
+      },
+      "required": [
+        "local_kinetic_sign", "potential_bounded_below", "turning_point",
+        "nearest_poles", "maximal_regular_interval_length",
+        "finite_time_singularity", "globally_regular_on_R_times_S3",
+        "globally_monotone_clock", "local_monotone_clock_charts",
+        "raw_diff_weyl_incidence_rank", "independent_weyl_gauge_required"
+      ]
+    },
+    "gate_result": {
+      "type": "object",
+      "properties": {
+        "gate": {"const": "HOMOGENEOUS_POSITIVE_STEALTH_CLOCK"},
+        "status": {"const": "OBSTRUCTED_BY_TURNING_POINT_AND_FINITE_TIME_POLES"},
+        "parent_gate": {"const": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK"},
+        "parent_gate_status": {"const": "OPEN"},
+        "next_gate": {"const": "INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK"}
+      },
+      "required": ["gate", "status", "parent_gate", "parent_gate_status", "next_gate"]
+    },
+    "flags": {"type": "object"},
+    "not_established": {"type": "array", "items": {"type": "string"}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

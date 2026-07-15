@@ -1,0 +1,77 @@
+{
+  "claim_boundary": "This certificate completely classifies real homogeneous stealth trajectories of one positive-sign conformal scalar with quartic Weyl-invariant potential on the unit cylinder. It proves that none is a globally regular homogeneous clock. It does not rule out inhomogeneous stealth fields or genuinely backreacted non-conformally-flat clocks.",
+  "claim_status": "CERTIFIED_SCOPED_OBSTRUCTION",
+  "clock_and_health": {
+    "finite_time_singularity": true,
+    "globally_monotone_clock": false,
+    "globally_regular_on_R_times_S3": false,
+    "independent_weyl_gauge_required": true,
+    "local_kinetic_sign": "POSITIVE",
+    "local_monotone_clock_charts": true,
+    "maximal_regular_interval_length": "pi",
+    "nearest_poles": "t=t0+/-pi/2",
+    "potential_bounded_below": false,
+    "raw_diff_weyl_incidence_rank": 1,
+    "turning_point": "t=t0, dot(T)=0"
+  },
+  "complete_nonzero_family": {
+    "coupling": "kappa=-g with g>0",
+    "exhaustiveness_variable": "u=sqrt(2/g)/T",
+    "family_exhaustive_on_connected_nonzero_real_branches": true,
+    "first_integral": "dot(T)^2=T^2[(g/2)T^2-1]",
+    "reduced_first_integral": "dot(u)^2+u^2=1",
+    "scalar_equation_exact": true,
+    "solution": "T(t)=s*sqrt(2/g)*sec(t-t0), s in {+1,-1}",
+    "stress_tensor_zero": true
+  },
+  "conventions": {
+    "action": "S=-integral sqrt(-g)[(nabla T)^2/2+R*T^2/12+kappa*T^4/4]",
+    "equation": "ddot(T)+T+kappa*T^3=0",
+    "field": "one real conformal scalar T of Weyl weight -1",
+    "kinetic_sign": "POSITIVE_STANDARD",
+    "metric": "g=-dt^2+dOmega_3^2 on the unit conformal cylinder",
+    "potential": "V(T)=kappa*T^4/4",
+    "scalar_curvature": 6
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flags": {
+    "healthy_global_homogeneous_clock_exists": false,
+    "homogeneous_stress_derived": true,
+    "inhomogeneous_stealth_clock_ruled_out": false,
+    "nonconformally_flat_backreacted_clock_ruled_out": false,
+    "nonzero_global_regular_homogeneous_stealth_exists": false,
+    "nonzero_local_stealth_branch_exists": true,
+    "quartic_family_complete_for_local_weyl_invariant_potential": true
+  },
+  "gate_result": {
+    "gate": "HOMOGENEOUS_POSITIVE_STEALTH_CLOCK",
+    "next_gate": "INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK",
+    "parent_gate": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK",
+    "parent_gate_status": "OPEN",
+    "status": "OBSTRUCTED_BY_TURNING_POINT_AND_FINITE_TIME_POLES"
+  },
+  "generator_id": "D_compact",
+  "not_established": [
+    "an inhomogeneous stress-free scalar with timelike nonvanishing gradient",
+    "a globally regular positive clock on a Bach-sourced non-conformally-flat background",
+    "a support-local BV contraction for either surviving alternative",
+    "a Lorentzian-boundary, nonlinear, or quantum D verdict"
+  ],
+  "phase_space_id": "homogeneous_conformal_scalar_on_unit_cylinder",
+  "result_id": "HOMOGENEOUS_POSITIVE_CONFORMAL_STEALTH_CLOCK",
+  "schema": "pure-weyl-homogeneous-positive-conformal-stealth-clock-v1",
+  "scientific_verdict": null,
+  "setting_id": "compact_positive_conformal_stealth_clock",
+  "stress_classification": {
+    "energy_density": "rho=(dot(T)^2+T^2)/2+kappa*T^4/4",
+    "kappa_negative_required_for_nonzero_homogeneous_stealth": true,
+    "kappa_nonnegative_nonzero_stealth_exists": false,
+    "pressure_off_shell": "p=dot(T)^2/6-T^2/6-T*ddot(T)/3-kappa*T^4/4",
+    "pressure_on_shell": "p=rho/3",
+    "stealth_condition": "rho=0",
+    "stress_trace_on_shell": "ZERO"
+  }
+}
