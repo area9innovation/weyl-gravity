@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-gauge-fixed-nonminimal-import-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "classical_result", "coverage", "map_hashes", "independent_checks", "classical_freeze_gate", "nd2_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-gauge-fixed-nonminimal-import-v1"},
+    "result_id": {"const": "BERGER_GAUGE_FIXED_NONMINIMAL_IMPORT"},
+    "result_state": {"const": "COMPLETE_CLASSICAL_UNARY_PACKAGE_IMPORTED_NONLINEAR_INPUT_BLOCKED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "classical_result": {"type": "object"},
+    "coverage": {"type": "object", "required": ["total_rows", "minimal_rows", "nonminimal_rows", "retained_rows", "gauge_fixed_classical_unary_complete", "support_local_contraction_complete", "cyclic_pairing_complete"], "properties": {"total_rows": {"const": 54}, "minimal_rows": {"const": 34}, "nonminimal_rows": {"const": 20}, "retained_rows": {"const": 26}, "gauge_fixed_classical_unary_complete": {"const": true}, "support_local_contraction_complete": {"const": true}, "cyclic_pairing_complete": {"const": true}}, "additionalProperties": false},
+    "map_hashes": {"type": "object"},
+    "independent_checks": {"type": "object", "minProperties": 9, "additionalProperties": {"const": true}},
+    "classical_freeze_gate": {"type": "object", "required": ["status", "reason"], "properties": {"status": {"const": "FAIL_CLOSED"}, "reason": {"type": "string", "minLength": 1}}, "additionalProperties": false},
+    "nd2_gate": {"type": "object", "required": ["unary_nonminimal_prerequisite_satisfied", "support_local_classical_binary_q2", "local_D_action_and_equivariance", "general_nonlinear_Koszul_Tate", "causal_green_hadamard", "physical_execution_authorized", "next_gate"], "properties": {"unary_nonminimal_prerequisite_satisfied": {"const": true}, "support_local_classical_binary_q2": {"const": "NOT_AVAILABLE"}, "local_D_action_and_equivariance": {"const": "NOT_AVAILABLE"}, "general_nonlinear_Koszul_Tate": {"const": "NOT_AVAILABLE"}, "causal_green_hadamard": {"const": "NOT_AVAILABLE"}, "physical_execution_authorized": {"const": false}, "next_gate": {"const": "IMPORT_SUPPORT_LOCAL_Q2_AND_D_ACTION"}}, "additionalProperties": false},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "claim_boundary": "The complete gauge-fixed 54-row classical_unary_q1, cyclic pairing, and support-local contraction are independently imported. This is classical unary evidence, not hbar Q1. No nonlinear q2, local D-equivariance, nonlinear Koszul-Tate, causal/Hadamard, ND2 physical, or quantum claim is authorized.",
+  "classical_freeze_gate": {
+    "reason": "complete unary/nonminimal prerequisite imported; support-local q2 and local D action/equivariance are still absent",
+    "status": "FAIL_CLOSED"
+  },
+  "classical_result": {
+    "certificate_sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+    "claim_status": "CERTIFIED_COMPLETE_GAUGE_FIXED_UNARY_CONTRACTION",
+    "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+    "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION"
+  },
+  "coverage": {
+    "cyclic_pairing_complete": true,
+    "gauge_fixed_classical_unary_complete": true,
+    "minimal_rows": 34,
+    "nonminimal_rows": 20,
+    "retained_rows": 26,
+    "support_local_contraction_complete": true,
+    "total_rows": 54
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "independent_checks": {
+    "PBW_record_hashes": true,
+    "all_54_rows_typed": true,
+    "all_row_contraction_identity": true,
+    "canonical_shear_nilpotent_and_invertible": true,
+    "canonical_shear_pairing_preserving": true,
+    "classical_unary_q1_squared_zero": true,
+    "contraction_side_conditions": true,
+    "pi_cl_iota_cl_identity": true,
+    "strict_classical_schema": true
+  },
+  "lifecycle_layer": "CLASSICAL_BV",
+  "map_hashes": {
+    "S_sha256": "cbc91d3d1c3a91b531740aa8c1d8f607cf9b5eecb9974bcc2293745da780a818",
+    "iota_sha256": "1fe5497885baff3d525796736786138735f3f6b53dc7eb7e2cc7b9659d1d3f99",
+    "maximum_differential_order": 4,
+    "pairing_sha256": "29ec141213a9a2ffcffb48072468c0bd58bc10c0a3069cc49065be3196d3dd0b",
+    "pi_sha256": "9f65d2e92484079985862e04ece6da1c8b1d30f92e063034c4e69941081d91c5",
+    "q1_sha256": "286a53b9082398baeb4e033cec48c0eee520b044523d716cb57a52baa272ef51"
+  },
+  "nd2_gate": {
+    "causal_green_hadamard": "NOT_AVAILABLE",
+    "general_nonlinear_Koszul_Tate": "NOT_AVAILABLE",
+    "local_D_action_and_equivariance": "NOT_AVAILABLE",
+    "next_gate": "IMPORT_SUPPORT_LOCAL_Q2_AND_D_ACTION",
+    "physical_execution_authorized": false,
+    "support_local_classical_binary_q2": "NOT_AVAILABLE",
+    "unary_nonminimal_prerequisite_satisfied": true
+  },
+  "provenance": {
+    "classical_sources": {
+      "classical_certificate": {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+        "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+      },
+      "classical_independent_verifier": {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_gauge_fixed_nonminimal_completion.py",
+        "sha256": "d4368deee1f1277effbf2c6f9ff53e492ebd9028ca2ef6021b3f2982b4892547"
+      },
+      "classical_producer": {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/backreacted_clock/berger_gauge_fixed_nonminimal_completion.py",
+        "sha256": "bac326b41d001266d2665770ebe7ffacce8f123f8a76cb77f69bab2388bbc3b9"
+      },
+      "classical_report": {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/reports/berger-gauge-fixed-nonminimal-completion.md",
+        "sha256": "0d844d9efa4b2ceaf56477480b94626e0b7753853257f6f30164e4f625e831ff"
+      },
+      "classical_schema": {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/schema/berger-gauge-fixed-nonminimal-completion-v1.schema.json",
+        "sha256": "635bb82caf7d98df152d24612dbd216196a74f20bb82657f9551f681843873e4"
+      },
+      "classical_test": {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_gauge_fixed_nonminimal_completion.py",
+        "sha256": "94831ddfbe77453e9b9470bfa9b8db68baaffaef1175a209cb2fdc5e8d4bbef3"
+      }
+    },
+    "classical_sources_sha256": "e24c62b1465e6c198b4da38bba99d63251aed0e11fbb5f420d22f41ed68e30ad",
+    "schema": "quantum-weyl/transfer/schema/berger-gauge-fixed-nonminimal-import-v1.schema.json",
+    "source_manifest": {
+      "berger_gauge_fixed_nonminimal_import.py": "fda9730e0f12553dfc1e8e90aa35440eb756b9bf429536b8339a0a2747f75858",
+      "berger_gauge_fixed_nonminimal_import_certificate.py": "6fc0b2a95594177bc60d7e1f3d85a91db0cea72aedc3ae9cb6b71f5b18be248a",
+      "schema/berger-gauge-fixed-nonminimal-import-v1.schema.json": "a07e24292b44993408e7e3aca52de26bcbe8a121b9beeb1591036a3d445f3e8a",
+      "tests/test_berger_gauge_fixed_nonminimal_import.py": "d30c3b4d2d93866a7fdacb2657c39b519ab96ffa35985ea93d2832ddb2e7cad2"
+    },
+    "source_manifest_sha256": "e01dc117c535d78c3107357916755ba97ee5c0b5cf3359b4789292c0bd76c57c"
+  },
+  "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_IMPORT",
+  "result_state": "COMPLETE_CLASSICAL_UNARY_PACKAGE_IMPORTED_NONLINEAR_INPUT_BLOCKED",
+  "schema": "quantum-weyl-berger-gauge-fixed-nonminimal-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

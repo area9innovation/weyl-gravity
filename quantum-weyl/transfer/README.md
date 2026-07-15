@@ -143,6 +143,15 @@ cyclicity, and the full/retained pairings all pass.  Thus the standalone ND2
 separate `q2/D`, `D`-equivariance, admissibility, compatible Cartan assembly,
 and causal inputs remain open, so physical execution is still false.
 
+The subsequent gauge-fixed export now closes the unary/nonminimal prerequisite
+as well. A pinned quantum-side consumer independently parses the complete
+54-row `classical_unary_q1`, verifies the finite-order BV-canonical shear,
+cyclic pairing, nilpotency, and the transformed 54-to-26 contraction. This is
+classical unary evidence, not the quantum correction \(\hbar Q_1\). The
+decisive nonlinear input remains absent: a complete support-local
+`classical_binary_q2` together with the local `D_action_cl` and its
+equivariance. ND2 therefore remains fail-closed.
+
 The arity-two solve also has a block-sparse exact rail.  Declared additive
 labels such as `D` weight, momentum, or jet filtration must be preserved by
 `q1`; the differential then splits by
@@ -199,6 +208,7 @@ python3 quantum-weyl/transfer/berger_clock_import_certificate.py --check
 python3 quantum-weyl/transfer/berger_retained_q1_import_certificate.py --check
 python3 quantum-weyl/transfer/berger_pbw_backend_certificate.py --check
 python3 quantum-weyl/transfer/berger_minimal_contraction_import_certificate.py --check
+python3 quantum-weyl/transfer/berger_gauge_fixed_nonminimal_import_certificate.py --check
 python3 quantum-weyl/transfer/arity_three_cartan_certificate.py --check
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check
