@@ -41,6 +41,7 @@ def build_certificate() -> dict[str, Any]:
     universal = strict_candidate_descent_analysis()
     pair_payload = analysis["pair_payload"]
     expression_payload = analysis["expression_payload"]
+    generalized = analysis["generalized_connection_template"]
     return {
         "result_id": "EULER_TRANSGRESSION_CERTIFICATE",
         "result_state": "VARIATIONAL_TRANSGRESSION_VERIFIED",
@@ -56,7 +57,8 @@ def build_certificate() -> dict[str, Any]:
             "coordinate_euler_current": "VERIFIED",
             "closed_manifold_integrated_variation": "VERIFIED_BY_STOKES",
             "euler_full_diff_completed_tower": "VERIFIED",
-            "omega_E4_intrinsic_descent_continuation": "NOT_COMPUTED",
+            "omega_E4_generalized_connection_template": "VERIFIED",
+            "omega_E4_intrinsic_descent_continuation": "IN_PROGRESS",
         },
         "derived_rows": {
             "weyl_connection_variation": {
@@ -83,7 +85,46 @@ def build_certificate() -> dict[str, Any]:
                     carrier: _fraction(value)
                     for carrier, value in analysis["anomaly_first_step"]["residual"].items()
                 },
-                "continuation_status": "NOT_COMPUTED",
+                "continuation_status": "IN_PROGRESS",
+            },
+            "generalized_connection_total_form": {
+                "primary_reference": {
+                    "title": "General solutions of the Wess-Zumino consistency condition for the Weyl anomalies",
+                    "journal": "JHEP 07 (2007) 069",
+                    "doi": "10.1088/1126-6708/2007/07/069",
+                    "formula": "Theorem 1, equations (3.16)-(3.20)",
+                },
+                "generalized_connection": generalized["generalized_connection"],
+                "components": [
+                    {
+                        **{
+                            key: value
+                            for key, value in component.items()
+                            if key != "coefficient"
+                        },
+                        "coefficient": _fraction(component["coefficient"]),
+                    }
+                    for component in generalized["components"]
+                ],
+                "type_a_component_indices": list(generalized["type_a_component_indices"]),
+                "type_b_component_indices": list(generalized["type_b_component_indices"]),
+                "expansion_status": generalized["expansion_status"],
+                "template_sha256": canonical_sha256(
+                    {
+                        "connection": generalized["generalized_connection"],
+                        "components": [
+                            {
+                                **{
+                                    key: value
+                                    for key, value in component.items()
+                                    if key != "coefficient"
+                                },
+                                "coefficient": _fraction(component["coefficient"]),
+                            }
+                            for component in generalized["components"]
+                        ],
+                    }
+                ),
             },
         },
         "euler_full_diff_completed_tower": {
@@ -105,7 +146,7 @@ def build_certificate() -> dict[str, Any]:
             "The universal Diff completion is independent of the intrinsic Weyl transgression.",
         ],
         "not_computed": [
-            "the complete intrinsic type-A descent beginning at omega E4",
+            "machine expansion and closure of the generalized-connection type-A total form beginning at omega E4",
             "antifield/Koszul-Tate completion",
             "relative cohomology nontriviality of the Euler anomaly",
         ],

@@ -74,7 +74,7 @@ class DimensionFourCandidateTests(unittest.TestCase):
             )
         )
         self.assertTrue(
-            all(record["diff_descent_status"] == "NONZERO_COMPLETE" for record in records)
+            all(record["diff_descent_status"] == "NONZERO_DIFF_TOWER" for record in records)
         )
         intrinsic = {
             record["class_id"]: record["intrinsic_weyl_descent_status"]

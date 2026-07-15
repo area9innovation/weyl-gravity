@@ -1,0 +1,152 @@
+{
+  "antifield_number": 0,
+  "classical_commit": "UNFROZEN",
+  "coefficient_status": "NOT_COMPUTED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "form_degree": 4,
+  "full_bv_promotion_status": "BLOCKED_CLASSICAL_ANTIFIELD_EXPORT",
+  "ghost_number": 0,
+  "production_boundary": [
+    "lower-form mapping-cone basis is not yet exhaustive",
+    "dual nontriviality witnesses will be emitted only against that complete boundary space"
+  ],
+  "result_id": "H04_AFN0_RESULT",
+  "result_state": "IN_PROGRESS",
+  "scope_label": "AFN0_ONLY",
+  "slices": [
+    {
+      "basis_completeness": {
+        "basis_generation_rules": [
+          "generate pairwise contractions of two algebraic Riemann tensors",
+          "canonicalize intrinsic symmetries and dummy indices",
+          "quotient the algebraic Bianchi identities exactly",
+          "generate the parity carrier with the certified Hodge convention",
+          "adjoin Box R with its explicit divergence primitive",
+          "for ghost number one multiply carriers by the undifferentiated Weyl ghost"
+        ],
+        "basis_manifest_hash": "979390c53fae55995c4fd1dfc746f6300845fb198d457bc4a7fef27bff96db8c",
+        "candidate_ids": [
+          "CT_C2",
+          "CT_E4",
+          "CT_BOX_R"
+        ],
+        "canonical_basis_count": 4,
+        "complete_relative_ansatz_status": "IN_PROGRESS",
+        "dimension_and_bidegree_bounds": {
+          "antifield_number": 0,
+          "engineering_dimension": 4,
+          "form_degree": 4,
+          "ghost_number": 0,
+          "parity": "even",
+          "spacetime_dimension": 4
+        },
+        "identity_quotient_ranks": {
+          "algebraic_bianchi_rank": 1,
+          "quadratic_curvature_quotient_dimension": 3,
+          "weyl_target_quotient_dimension": 1,
+          "weyl_target_relation_rank": 1
+        },
+        "lower_form_mapping_cone_basis_status": "IN_PROGRESS",
+        "pure_diff_ghost_basis_status": "NOT_APPLICABLE",
+        "raw_monomial_count": 105,
+        "top_form_carrier_basis_status": "COMPLETE"
+      },
+      "candidates": [
+        {
+          "closure_witness": {
+            "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
+            "status": "CLOSED"
+          },
+          "exactness_witness": null,
+          "nontriviality_witness": null,
+          "relative_cohomology_status": "UNDECIDED",
+          "representative_id": "CT_C2",
+          "representative_sha256": "48c6055fb8904181dadcc4c02c8077ab884748dcdac7f59086ecb68217e7d0fd"
+        },
+        {
+          "closure_witness": {
+            "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
+            "status": "CLOSED"
+          },
+          "exactness_witness": null,
+          "nontriviality_witness": null,
+          "relative_cohomology_status": "UNDECIDED",
+          "representative_id": "CT_E4",
+          "representative_sha256": "2f9a63a136e32e023beadbc458b791b3391baa8f39aed7b5c0b2774a02d11de9"
+        },
+        {
+          "closure_witness": {
+            "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
+            "status": "CLOSED"
+          },
+          "exactness_witness": {
+            "equation": "BoxR = d_h(nabla R)",
+            "primitive": "nabla R",
+            "proof_certificate": "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json"
+          },
+          "nontriviality_witness": null,
+          "relative_cohomology_status": "EXACT",
+          "representative_id": "CT_BOX_R",
+          "representative_sha256": "7d9e8068f4fa1328153d37fab9530ad0118c70415f4a371347d76c6b3d7f5c87"
+        }
+      ],
+      "parity": "even",
+      "relative_cohomology_status": "UNDECIDED",
+      "slice_id": "H04_AFN0_EVEN"
+    },
+    {
+      "basis_completeness": {
+        "basis_generation_rules": [
+          "generate pairwise contractions of two algebraic Riemann tensors",
+          "canonicalize intrinsic symmetries and dummy indices",
+          "quotient the algebraic Bianchi identities exactly",
+          "generate the parity carrier with the certified Hodge convention",
+          "adjoin Box R with its explicit divergence primitive",
+          "for ghost number one multiply carriers by the undifferentiated Weyl ghost"
+        ],
+        "basis_manifest_hash": "e45ef9bf19ad827945e32f4d9414d27d3ee7d23402140c5e216b07ba6bf01acd",
+        "candidate_ids": [
+          "CT_C_DUAL_C"
+        ],
+        "canonical_basis_count": 4,
+        "complete_relative_ansatz_status": "IN_PROGRESS",
+        "dimension_and_bidegree_bounds": {
+          "antifield_number": 0,
+          "engineering_dimension": 4,
+          "form_degree": 4,
+          "ghost_number": 0,
+          "parity": "odd",
+          "spacetime_dimension": 4
+        },
+        "identity_quotient_ranks": {
+          "algebraic_bianchi_rank": 1,
+          "quadratic_curvature_quotient_dimension": 3,
+          "weyl_target_quotient_dimension": 1,
+          "weyl_target_relation_rank": 1
+        },
+        "lower_form_mapping_cone_basis_status": "IN_PROGRESS",
+        "pure_diff_ghost_basis_status": "NOT_APPLICABLE",
+        "raw_monomial_count": 105,
+        "top_form_carrier_basis_status": "COMPLETE"
+      },
+      "candidates": [
+        {
+          "closure_witness": {
+            "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
+            "status": "CLOSED"
+          },
+          "exactness_witness": null,
+          "nontriviality_witness": null,
+          "relative_cohomology_status": "UNDECIDED",
+          "representative_id": "CT_C_DUAL_C",
+          "representative_sha256": "ec364f8d8733a1097cc225a06d5d7d334eeb6d70d69853bb475f6bfc178594fd"
+        }
+      ],
+      "parity": "odd",
+      "relative_cohomology_status": "UNDECIDED",
+      "slice_id": "H04_AFN0_ODD"
+    }
+  ]
+}

@@ -15,6 +15,13 @@ class RelativeCohomologyCertificateTests(unittest.TestCase):
         self.assertEqual(certificate["fixture"]["total_quotient_dimension"], 2)
         self.assertEqual(certificate["fixture"]["anchored_quotient_dimension"], 1)
         self.assertEqual(certificate["fixture"]["lower_only_total_class_dimension"], 1)
+        self.assertEqual(
+            certificate["fixture"]["dual_witness_pairings"],
+            [{"numerator": 1, "denominator": 1}],
+        )
+        self.assertEqual(
+            certificate["checks"]["dual_nontriviality_witnesses"], "VERIFIED"
+        )
         self.assertIn("production", " ".join(certificate["not_computed"]))
 
 

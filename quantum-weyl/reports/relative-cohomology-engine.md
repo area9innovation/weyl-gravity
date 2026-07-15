@@ -32,6 +32,9 @@ computes, with exact rational arithmetic:
 - the coboundary matrix rank;
 - the quotient dimension;
 - deterministic representative coordinates; and
+- complete descent lifts as closure witnesses;
+- normalized dual functionals that annihilate the boundary space and pair to
+  one with each selected representative; and
 - a proof hash binding the adjacent differentials and representatives.
 
 Rank and nullspace elimination now operate directly on sparse exact rows.
@@ -64,9 +67,16 @@ and `d_h` matrices, the dimensions of `H^{0,4}(s|d)` and `H^{1,4}(s|d)`, and
 the antifield-dependent quotient.  `NONTRIVIAL` will be emitted only after a
 candidate survives the complete production coboundary space.
 
+The dual witness is deliberately emitted only with a `NONTRIVIAL` claim.  If
+the boundary rows are `B` and the representative is `a`, the certificate
+stores exact coordinates for `lambda` with `B lambda = 0` and
+`lambda(a) = 1`.  This makes non-membership independently checkable without
+replaying sparse quotient selection.
+
 ## Next input
 
-Generate the finite canonical bases at fixed ghost number, form degree,
-derivative bound, and antifield number.  The antifield-independent curvature
-and ghost sectors can be connected first; the Koszul--Tate blocks attach only
-after a classical export passes the antifield preflight.
+The top curvature-carrier production run has started under the explicit
+`AFN0_ONLY` scope.  Generate the remaining lower-form ghost and generalized-
+connection bases at fixed ghost number, form degree, engineering dimension,
+and antifield number.  The Koszul--Tate blocks attach only after a classical
+export passes the antifield preflight.

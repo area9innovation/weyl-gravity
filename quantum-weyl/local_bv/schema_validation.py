@@ -9,13 +9,16 @@ from pathlib import Path
 from typing import Any
 
 
-def _is_type(value: object, expected: str) -> bool:
+def _is_type(value: object, expected: str | list[str]) -> bool:
+    if isinstance(expected, list):
+        return any(_is_type(value, candidate) for candidate in expected)
     return {
         "object": lambda item: isinstance(item, dict),
         "array": lambda item: isinstance(item, list),
         "string": lambda item: isinstance(item, str),
         "integer": lambda item: isinstance(item, int) and not isinstance(item, bool),
         "boolean": lambda item: isinstance(item, bool),
+        "null": lambda item: item is None,
     }[expected](value)
 
 

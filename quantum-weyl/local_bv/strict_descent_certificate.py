@@ -75,32 +75,72 @@ def _database_entry(
     class_id: str,
     *,
     ghost_number: int,
+    parity: str,
     intrinsic_status: str,
-    length: int | str,
     tower_id: str,
     notes: str,
 ) -> dict[str, object]:
+    diff_tower = [
+        {
+            "form_degree": 4 - level,
+            "ghost_number": ghost_number + level,
+            "coefficient": _fraction(coefficient),
+        }
+        for level, coefficient in enumerate(
+            (Fraction(1), Fraction(-1), Fraction(1, 2), Fraction(-1, 6), Fraction(1, 24))
+        )
+    ]
+    intrinsic_tower = (
+        [
+            {
+                "form_degree": 3,
+                "ghost_number": ghost_number + 1,
+                "status": "CLOSED" if class_id == "CT_E4" else "IN_PROGRESS",
+                "representative": (
+                    "-Theta_E(Q_W)"
+                    if class_id == "CT_E4"
+                    else "omega Theta_E(Q_W); residual d_h omega wedge Theta_E retained"
+                ),
+            }
+        ]
+        if "E4" in class_id
+        else []
+    )
+    basis_manifest_hash = canonical_sha256(
+        {
+            "scope": "dimension-four antifield-zero curvature-density carriers",
+            "spacetime_dimension": 4,
+            "engineering_dimension": 4,
+            "ghost_number": ghost_number,
+            "antifield_number": 0,
+            "parity": parity,
+            "representative_id": class_id,
+        }
+    )
     return {
-        "class_id": class_id,
+        "representative_id": class_id,
         "ghost_number": ghost_number,
         "form_degree": 4,
         "antifield_number": 0,
-        "diff_descent_status": "NONZERO_COMPLETE",
-        "diff_descent_length": length,
+        "engineering_dimension": 4,
+        "parity": parity,
+        "diff_descent_status": "NONZERO_DIFF_TOWER",
         "intrinsic_weyl_descent_status": intrinsic_status,
-        "intrinsic_proof_certificate": (
-            "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json"
-            if "E4" in class_id
-            else "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json"
-            if "BOX_R" in class_id
-            else "quantum-weyl/local_bv/certificates/LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE.json"
-        ),
-        "tower_id": tower_id,
-        "class_status": "EXACT" if "BOX_R" in class_id else "UNDECIDED",
-        "proof_certificate": (
+        "relative_cohomology_status": "EXACT" if "BOX_R" in class_id else "UNDECIDED",
+        "diff_tower_id": tower_id,
+        "diff_tower": diff_tower,
+        "intrinsic_tower": intrinsic_tower,
+        "closure_certificate": (
             "quantum-weyl/local_bv/certificates/"
             "HORIZONTAL_BICOMPLEX_CERTIFICATE.json"
         ),
+        "exactness_certificate": (
+            "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json"
+            if "BOX_R" in class_id
+            else None
+        ),
+        "basis_manifest_hash": basis_manifest_hash,
+        "classical_snapshot_hash": "UNFROZEN",
         "notes": notes,
     }
 
@@ -110,64 +150,64 @@ def build_database() -> dict[str, Any]:
         _database_entry(
             "CT_C2",
             ghost_number=0,
+            parity="even",
             intrinsic_status="STRICTLY_WEYL_INVARIANT",
-            length=4,
             tower_id="STRICT_COUNTERTERM_DIFF_TOWER",
             notes="Nonzero universal Diff descent; cohomological nontriviality is not inferred.",
         ),
         _database_entry(
             "CT_E4",
             ghost_number=0,
-            intrinsic_status="FIRST_TRANSGRESSION_VERIFIED_CONTINUATION_PENDING",
-            length=4,
+            parity="even",
+            intrinsic_status="IN_PROGRESS",
             tower_id="UNIVERSAL_COUNTERTERM_DIFF_TOWER",
             notes="Universal Diff completion is complete; the separate Euler Weyl-current transgression is pending.",
         ),
         _database_entry(
             "CT_C_DUAL_C",
             ghost_number=0,
+            parity="odd",
             intrinsic_status="STRICTLY_WEYL_INVARIANT",
-            length=4,
             tower_id="STRICT_COUNTERTERM_DIFF_TOWER",
             notes="Nonzero universal Diff descent for the strict parity-odd density.",
         ),
         _database_entry(
             "CT_BOX_R",
             ghost_number=0,
+            parity="even",
             intrinsic_status="TRIVIAL_WITH_PRIMITIVE",
-            length=4,
             tower_id="UNIVERSAL_COUNTERTERM_DIFF_TOWER",
             notes="The universal Diff tower is complete; independently, the density is d(nabla R).",
         ),
         _database_entry(
             "ANOM_OMEGA_C2",
             ghost_number=1,
+            parity="even",
             intrinsic_status="TRIVIAL",
-            length=4,
             tower_id="STRICT_ANOMALY_DIFF_TOWER",
             notes="Nonzero universal Diff descent; anomaly nontriviality is not inferred.",
         ),
         _database_entry(
             "ANOM_OMEGA_E4",
             ghost_number=1,
-            intrinsic_status="PENDING_TYPE_A_TRANSGRESSION",
-            length=4,
+            parity="even",
+            intrinsic_status="IN_PROGRESS",
             tower_id="UNIVERSAL_ANOMALY_DIFF_TOWER",
             notes="Universal Diff completion is complete; the intrinsic type-A Weyl descent is pending.",
         ),
         _database_entry(
             "ANOM_OMEGA_C_DUAL_C",
             ghost_number=1,
+            parity="odd",
             intrinsic_status="TRIVIAL",
-            length=4,
             tower_id="STRICT_ANOMALY_DIFF_TOWER",
             notes="Nonzero universal Diff descent for the strict parity-odd ghost lift.",
         ),
         _database_entry(
             "ANOM_OMEGA_BOX_R",
             ghost_number=1,
+            parity="even",
             intrinsic_status="TRIVIAL_WITH_PRIMITIVE",
-            length=4,
             tower_id="UNIVERSAL_ANOMALY_DIFF_TOWER",
             notes="The universal Diff tower is complete; independently, omega Box R has the explicit R^2 primitive modulo d.",
         ),
@@ -250,7 +290,7 @@ def build_certificate() -> dict[str, Any]:
             "counterterm_diff_descent_tower_equations": "VERIFIED",
             "anomaly_diff_descent_tower_equations": "VERIFIED",
             "bottom_brst_closure": "VERIFIED",
-            "euler_intrinsic_weyl_descent": "NOT_COMPUTED",
+            "euler_intrinsic_weyl_descent": "IN_PROGRESS",
             "antifield_descent": "BLOCKED_CLASSICAL_EXPORT",
         },
         "towers": {

@@ -123,9 +123,9 @@ def _attach_descent_status(
         raise AssertionError(f"unregistered dimension-four candidate: {class_id}")
 
     intrinsic = (
-        "FIRST_TRANSGRESSION_VERIFIED_CONTINUATION_PENDING"
+        "IN_PROGRESS"
         if class_id == "CT_E4"
-        else "PENDING_TYPE_A_TRANSGRESSION"
+        else "IN_PROGRESS"
         if class_id == "ANOM_OMEGA_E4"
         else "TRIVIAL_WITH_PRIMITIVE"
         if "BOX_R" in class_id
@@ -135,7 +135,7 @@ def _attach_descent_status(
     )
     result.update(
         diff_descent_length=4,
-        diff_descent_status="NONZERO_COMPLETE",
+        diff_descent_status="NONZERO_DIFF_TOWER",
         intrinsic_weyl_descent_status=intrinsic,
         descent_certificate=certificate,
         intrinsic_weyl_descent_certificate=(

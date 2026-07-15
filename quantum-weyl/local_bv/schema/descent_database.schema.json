@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://area9.dk/schemas/quantum-weyl-split-descent-database-v2.json",
+  "$id": "https://area9.dk/schemas/quantum-weyl-split-descent-database-v3.json",
   "title": "Pure-Weyl universal Diff and intrinsic Weyl descent database",
   "type": "object",
   "additionalProperties": false,
@@ -19,19 +19,46 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["class_id", "ghost_number", "form_degree", "antifield_number", "diff_descent_status", "diff_descent_length", "intrinsic_weyl_descent_status", "intrinsic_proof_certificate", "tower_id", "class_status", "proof_certificate", "notes"],
+        "required": ["representative_id", "ghost_number", "form_degree", "antifield_number", "engineering_dimension", "parity", "diff_descent_status", "intrinsic_weyl_descent_status", "relative_cohomology_status", "diff_tower_id", "diff_tower", "intrinsic_tower", "closure_certificate", "exactness_certificate", "basis_manifest_hash", "classical_snapshot_hash", "notes"],
         "properties": {
-          "class_id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "representative_id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
           "ghost_number": {"type": "integer"},
           "form_degree": {"type": "integer", "const": 4},
           "antifield_number": {"type": "integer", "const": 0},
-          "diff_descent_status": {"enum": ["NONZERO_COMPLETE", "ZERO_COMPLETE", "OBSTRUCTED", "NOT_COMPUTED"]},
-          "diff_descent_length": {},
-          "intrinsic_weyl_descent_status": {"enum": ["STRICTLY_WEYL_INVARIANT", "TRIVIAL", "TRIVIAL_WITH_PRIMITIVE", "NONTRIVIAL", "FIRST_TRANSGRESSION_VERIFIED_CONTINUATION_PENDING", "PENDING_TYPE_A_TRANSGRESSION", "OBSTRUCTED", "NOT_COMPUTED"]},
-          "intrinsic_proof_certificate": {"type": "string", "minLength": 1},
-          "tower_id": {"type": "string", "minLength": 1},
-          "class_status": {"enum": ["CLOSED", "EXACT", "NONTRIVIAL", "UNDECIDED"]},
-          "proof_certificate": {"type": "string", "minLength": 1},
+          "engineering_dimension": {"type": "integer", "const": 4},
+          "parity": {"enum": ["even", "odd"]},
+          "diff_descent_status": {"enum": ["NONZERO_DIFF_TOWER", "NOT_COMPUTED", "IN_PROGRESS", "FAILED_CERTIFICATE"]},
+          "intrinsic_weyl_descent_status": {"enum": ["STRICTLY_WEYL_INVARIANT", "TRIVIAL", "TRIVIAL_WITH_PRIMITIVE", "NONTRIVIAL_INTRINSIC_DESCENT", "NOT_COMPUTED", "IN_PROGRESS", "CLOSED", "EXACT", "UNDECIDED", "FAILED_CERTIFICATE"]},
+          "relative_cohomology_status": {"enum": ["NOT_COMPUTED", "IN_PROGRESS", "CLOSED", "EXACT", "NONTRIVIAL", "UNDECIDED", "FAILED_CERTIFICATE"]},
+          "diff_tower_id": {"type": "string", "minLength": 1},
+          "diff_tower": {
+            "type": "array",
+            "minItems": 5,
+            "maxItems": 5,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["form_degree", "ghost_number", "coefficient"],
+              "properties": {
+                "form_degree": {"type": "integer", "minimum": 0, "maximum": 4},
+                "ghost_number": {"type": "integer"},
+                "coefficient": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["numerator", "denominator"],
+                  "properties": {
+                    "numerator": {"type": "integer"},
+                    "denominator": {"type": "integer", "minimum": 1}
+                  }
+                }
+              }
+            }
+          },
+          "intrinsic_tower": {"type": "array", "items": {"type": "object"}},
+          "closure_certificate": {"type": "string", "minLength": 1},
+          "exactness_certificate": {"type": ["string", "null"]},
+          "basis_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "classical_snapshot_hash": {"const": "UNFROZEN"},
           "notes": {"type": "string"}
         }
       }

@@ -56,6 +56,10 @@ def build_certificate() -> dict[str, Any]:
             "quotient_representative_selection": "VERIFIED",
             "anchored_top_component_projection": "VERIFIED",
             "lower_only_total_class_exclusion": "VERIFIED",
+            "closure_witnesses": "VERIFIED",
+            "dual_nontriviality_witnesses": "VERIFIED",
+            "dual_witness_boundary_annihilation": "VERIFIED",
+            "dual_witness_unit_pairing": "VERIFIED",
             "sparse_exact_rank_and_nullspace": "VERIFIED",
             "incremental_quotient_independence": "VERIFIED",
         },
@@ -75,6 +79,11 @@ def build_certificate() -> dict[str, Any]:
             "lower_only_total_class_dimension": relative["lower_only_total_class_dimension"],
             "anchored_representative_coordinates": relative["representative_coordinates"],
             "complete_descent_lift_coordinates": relative["complete_descent_lift_coordinates"],
+            "closure_witnesses": relative["closure_witnesses"],
+            "dual_nontriviality_witness_coordinates": relative[
+                "dual_nontriviality_witness_coordinates"
+            ],
+            "dual_witness_pairings": relative["dual_witness_pairings"],
             "total_proof_hash": total_cohomology["proof_hash"],
             "anchored_proof_hash": relative["proof_hash"],
         },

@@ -50,12 +50,12 @@ while the anomaly tower runs from `(4,1)` to `(0,5)`.
 ## Candidate ledger
 
 The ledger no longer overloads one descent status.  Every covariant top form
-has `diff_descent_status: NONZERO_COMPLETE` and length four.  The separate
+has `diff_descent_status: NONZERO_DIFF_TOWER` and length four.  The separate
 `intrinsic_weyl_descent_status` is `STRICTLY_WEYL_INVARIANT` for the
 ghost-number-zero `C^2` and `C dual C` densities, while their Weyl-ghost lifts
 have intrinsic descent `TRIVIAL`.  It is `TRIVIAL_WITH_PRIMITIVE` for the
-type-D pair and explicitly pending for the type-A anomaly continuation.
-Class status is a third independent field:
+type-D pair and `IN_PROGRESS` for the type-A anomaly continuation.
+Relative class status is a third independent field:
 only `Box R` and `omega Box R` are currently `EXACT`; all other candidates
 remain `UNDECIDED` pending the complete coboundary ansatz.
 
@@ -77,8 +77,15 @@ Q E4 + d_h(-Theta_E(Q)) = 0.
 
 For `omega E4`, the first attempted intrinsic step leaves the exact residual
 `d_h(omega) wedge Theta_E`; the remaining type-A continuation is therefore
-kept `NOT_COMPUTED` rather than silently identified with the variational
-current.
+kept `IN_PROGRESS` rather than silently identified with the variational
+current.  The generalized connection
+`tilde_omega_a = partial_a omega - Schouten_ab dx^b` has now been admitted.
+The exact four-dimensional total-form coefficients derived from Theorem 1 of
+Boulanger's [Wess--Zumino classification](https://doi.org/10.1088/1126-6708/2007/07/069)
+are `(4,-4,1)` for generalized-connection degrees `r=(0,1,2)`.  The `r=0`
+component is recorded separately as type B; the
+`r=1,2` components form the type-A template.  Machine expansion into every
+ordinary bidegree and verification of all residuals is still pending.
 
 ## Claim boundary
 
@@ -108,9 +115,9 @@ anticommuting presentations.
 | Tier | Command/rail | Elapsed | Result |
 |---|---|---:|---|
 | 0 | compile changed Python, reproduce four certificates, validate schemas, scoped diff check | under 5 s | pass |
-| 1 | focused bicomplex/triviality/Euler/candidate rail | 1.28 s | 25 pass in 1.22 s |
-| 1 | complete local-BV unit rail | 29.32 s wall | 140 pass in 28.68 s |
-| 1 | four affected certificates under hash seeds `1,7,123`, parallel | 3.8 s wall | pass |
+| 1 | focused bicomplex/triviality/Euler/candidate/AFN0 rail | under 2 s | pass |
+| 1 | complete local-BV unit rail | 22.23 s wall | 153 pass in 21.91 s |
+| 1 | five primary affected certificates under hash seeds `1,7,123`, parallel | under 2 s wall | pass |
 | 2 | two-pass paper build in isolated output directory | 4.4 s | pass; no unresolved references |
 
 The complete local rail remains below the agreed 60-second threshold.  Tier

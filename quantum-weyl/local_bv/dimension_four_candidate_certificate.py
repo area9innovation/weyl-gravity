@@ -171,7 +171,7 @@ def build_certificate() -> dict[str, Any]:
         record["class_id"]: record["diff_descent_status"]
         for record in counterterms["candidates"] + anomalies["candidates"]
     }
-    if set(diff_descent_statuses.values()) != {"NONZERO_COMPLETE"}:
+    if set(diff_descent_statuses.values()) != {"NONZERO_DIFF_TOWER"}:
         raise AssertionError("universal Diff descent ledger drifted")
     intrinsic_statuses = {
         record["class_id"]: record["intrinsic_weyl_descent_status"]
@@ -179,7 +179,7 @@ def build_certificate() -> dict[str, Any]:
     }
     if intrinsic_statuses["ANOM_OMEGA_C2"] != "TRIVIAL":
         raise AssertionError("type-B Weyl descent terminology drifted")
-    if intrinsic_statuses["ANOM_OMEGA_E4"] != "PENDING_TYPE_A_TRANSGRESSION":
+    if intrinsic_statuses["ANOM_OMEGA_E4"] != "IN_PROGRESS":
         raise AssertionError("type-A Weyl descent boundary drifted")
 
     source_manifest = _source_manifest()
@@ -296,7 +296,7 @@ def _result_envelope(*, result_id: str, ghost_number: int, representative: str) 
         "parity": "mixed",
         "representative": representative,
         "cohomology_status": "NOT_COMPUTED",
-        "diff_descent_status": "NONZERO_COMPLETE",
+        "diff_descent_status": "NONZERO_DIFF_TOWER",
         "intrinsic_weyl_descent_status": "MIXED_BY_CANDIDATE",
         "coefficient_status": "NOT_COMPUTED",
         "residual_projection_status": "NOT_COMPUTED",

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from fractions import Fraction
 from functools import lru_cache
+from math import factorial
 from typing import Iterable, Mapping
 
 from .algebra import canonical_sha256
@@ -170,6 +171,52 @@ def _derived_weyl_connection_variation() -> dict[str, Fraction]:
     return result
 
 
+def _four_dimensional_generalized_connection_template() -> dict[str, object]:
+    """Return the exact ``n=4`` specialization of Boulanger's total form.
+
+    For ``m=n/2`` and ``p=m-r`` the coefficient of
+    ``Phi^[n-r]_r`` is ``(-1)^p 2^p m!/(r! p!)``.  This fixes the finite
+    generalized-connection ansatz before expanding
+    ``tilde_omega_a = partial_a omega - K_ab dx^b`` into bidegrees.
+    """
+
+    n = 4
+    m = n // 2
+    components = []
+    for r in range(m + 1):
+        p = m - r
+        coefficient = Fraction(
+            ((-1) ** p) * (2**p) * factorial(m),
+            factorial(r) * factorial(p),
+        )
+        components.append(
+            {
+                "r": r,
+                "p": p,
+                "explicit_form_degree": n - r,
+                "generalized_connection_degree": r,
+                "weyl_two_form_count": p,
+                "coefficient": coefficient,
+                "sector": "TYPE_B_SEPARATELY_CLOSED" if r == 0 else "TYPE_A",
+            }
+        )
+    if tuple(component["coefficient"] for component in components) != (
+        Fraction(4),
+        Fraction(-4),
+        Fraction(1),
+    ):
+        raise AssertionError("four-dimensional generalized-connection coefficients drifted")
+    return {
+        "spacetime_dimension": n,
+        "m": m,
+        "generalized_connection": "tilde_omega_a = partial_a omega - Schouten_ab dx^b",
+        "components": tuple(components),
+        "type_a_component_indices": (1, 2),
+        "type_b_component_indices": (0,),
+        "expansion_status": "IN_PROGRESS",
+    }
+
+
 @lru_cache(maxsize=1)
 def euler_transgression_analysis() -> dict[str, object]:
     connection = {("A",): Fraction(1)}
@@ -232,6 +279,7 @@ def euler_transgression_analysis() -> dict[str, object]:
         },
         "residual": {"domega_Theta": Fraction(1)},
     }
+    generalized_connection_template = _four_dimensional_generalized_connection_template()
 
     return {
         "connection": connection,
@@ -251,6 +299,7 @@ def euler_transgression_analysis() -> dict[str, object]:
         "local_euler_weyl_variation": local_euler_weyl_variation,
         "coordinate_current_divergence": coordinate_current_divergence,
         "anomaly_first_step": anomaly_first_step,
+        "generalized_connection_template": generalized_connection_template,
         "expression_payload": _expression_payload,
         "pair_payload": _pair_payload,
         "hash": canonical_sha256,

@@ -25,6 +25,10 @@ class RelativeCohomologyTests(unittest.TestCase):
         self.assertEqual(result["cocycle_dimension"], 3)
         self.assertEqual(result["coboundary_matrix_rank"], 1)
         self.assertEqual(result["quotient_dimension"], 2)
+        self.assertEqual(result["dual_witness_pairings"], [
+            {"numerator": 1, "denominator": 1},
+            {"numerator": 1, "denominator": 1},
+        ])
         self.assertEqual(len(result["proof_hash"]), 64)
 
     def test_anchored_relative_quotient_excludes_lower_only_class(self) -> None:
@@ -38,6 +42,14 @@ class RelativeCohomologyTests(unittest.TestCase):
             result["representative_coordinates"],
             [[{"numerator": 0, "denominator": 1}, {"numerator": 1, "denominator": 1}]],
         )
+        self.assertEqual(
+            result["dual_nontriviality_witness_coordinates"],
+            [[{"numerator": 0, "denominator": 1}, {"numerator": 1, "denominator": 1}]],
+        )
+        self.assertEqual(result["dual_witness_pairings"], [
+            {"numerator": 1, "denominator": 1}
+        ])
+        self.assertEqual(result["closure_witnesses"][0]["residual_status"], "ZERO")
 
     def test_lower_anchor_sees_the_lower_only_class(self) -> None:
         result = certification_bicomplex().relative_cohomology(1, 0)

@@ -25,10 +25,12 @@ class StrictDensityDescentCertificateTests(unittest.TestCase):
 
     def test_database_does_not_promote_euler_or_cohomology(self) -> None:
         database = build_database()
-        entries = {entry["class_id"]: entry for entry in database["entries"]}
+        entries = {
+            entry["representative_id"]: entry for entry in database["entries"]
+        }
         self.assertEqual(
             entries["ANOM_OMEGA_E4"]["intrinsic_weyl_descent_status"],
-            "PENDING_TYPE_A_TRANSGRESSION",
+            "IN_PROGRESS",
         )
         self.assertEqual(
             entries["ANOM_OMEGA_BOX_R"]["intrinsic_weyl_descent_status"],
@@ -44,12 +46,19 @@ class StrictDensityDescentCertificateTests(unittest.TestCase):
         )
         self.assertTrue(
             all(
-                entry["diff_descent_status"] == "NONZERO_COMPLETE"
+                entry["diff_descent_status"] == "NONZERO_DIFF_TOWER"
                 for entry in entries.values()
             )
         )
-        self.assertEqual(entries["ANOM_OMEGA_BOX_R"]["class_status"], "EXACT")
-        self.assertEqual(entries["ANOM_OMEGA_C2"]["class_status"], "UNDECIDED")
+        self.assertEqual(
+            entries["ANOM_OMEGA_BOX_R"]["relative_cohomology_status"], "EXACT"
+        )
+        self.assertEqual(
+            entries["ANOM_OMEGA_C2"]["relative_cohomology_status"], "UNDECIDED"
+        )
+        self.assertEqual(len(entries["CT_C2"]["diff_tower"]), 5)
+        self.assertIsNone(entries["CT_C2"]["exactness_certificate"])
+        self.assertRegex(entries["CT_C2"]["basis_manifest_hash"], r"^[0-9a-f]{64}$")
 
 
 if __name__ == "__main__":

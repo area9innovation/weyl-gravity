@@ -14,7 +14,20 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         self.assertFalse(validate_instance(certificate, json.loads(SCHEMA_PATH.read_text())))
         self.assertEqual(
             certificate["checks"]["omega_E4_intrinsic_descent_continuation"],
-            "NOT_COMPUTED",
+            "IN_PROGRESS",
+        )
+        self.assertEqual(
+            [
+                row["coefficient"]
+                for row in certificate["euler_intrinsic_transgression"][
+                    "generalized_connection_total_form"
+                ]["components"]
+            ],
+            [
+                {"numerator": 4, "denominator": 1},
+                {"numerator": -4, "denominator": 1},
+                {"numerator": 1, "denominator": 1},
+            ],
         )
         self.assertIn("omega E4", " ".join(certificate["not_computed"]))
 

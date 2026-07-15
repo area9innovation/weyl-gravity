@@ -212,11 +212,16 @@ and the derived Levi-Civita/Chern--Weil Euler current is in
 [`certificates/EULER_TRANSGRESSION_CERTIFICATE.json`](certificates/EULER_TRANSGRESSION_CERTIFICATE.json).
 The exact sparse totalization and quotient engine is certified by
 [`certificates/RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE.json`](certificates/RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE.json);
-its anchored API excludes total classes without the requested top component.
-The fixture passes, while the production `H^{0,4}` and `H^{1,4}` bases and
-matrices remain uncomputed.
+its anchored API excludes total classes without the requested top component
+and emits exact dual non-membership witnesses.  The fail-closed Sprint 1
+receipts are
+[`cohomology/H04_AFN0_RESULT.json`](cohomology/H04_AFN0_RESULT.json) and
+[`cohomology/H14_AFN0_RESULT.json`](cohomology/H14_AFN0_RESULT.json).  Their
+top curvature-carrier bases are generated, but lower-form production bases
+and matrices remain `IN_PROGRESS`, so no familiar representative has been
+promoted to a nontrivial relative class.
 
 Next admissible local steps are the continuation of the intrinsic type-A
-descent from `omega E4` and the unrestricted higher-derivative
-Weyl--Cotton jet quotient.  The antifield and relative-cohomology layers
-still wait for the frozen classical schema.
+descent from `omega E4`, completion of the AFN0 lower-form mapping-cone basis,
+and the unrestricted higher-derivative Weyl--Cotton jet quotient.  Only the
+antifield/Koszul--Tate extension waits for the frozen classical schema.

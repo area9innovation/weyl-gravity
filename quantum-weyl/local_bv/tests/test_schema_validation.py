@@ -41,6 +41,12 @@ class SchemaValidationTests(unittest.TestCase):
         self.assertFalse(validate_instance(["a", "b"], schema))
         self.assertTrue(validate_instance(["A", "A", "b"], schema))
 
+    def test_union_and_null_types(self) -> None:
+        schema = {"type": ["string", "null"]}
+        self.assertFalse(validate_instance("proof.json", schema))
+        self.assertFalse(validate_instance(None, schema))
+        self.assertTrue(validate_instance(3, schema))
+
 
 if __name__ == "__main__":
     unittest.main()

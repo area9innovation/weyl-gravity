@@ -6,7 +6,7 @@
   ],
   "canonical_hashes": {
     "curvature_sha256": "dbfaad8d3cd29aed54c944cc764fe2d4298cdc9ec3e55e46c8829d9c261e28eb",
-    "source_manifest_sha256": "a274f2a97186a54286afce77d3dedca938a50dd75a5810fdee2bc3b00b1ba79e",
+    "source_manifest_sha256": "884c634c52dcc7e6e9bcf3fcc54b6520b4b4b45b32f44d65c595dcbd9b67c334",
     "theta_sha256": "0bfe7489b59dc61839ffd718426243b997b18dec70c3c810386c4f0602b4362b",
     "zero_variational_residual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
   },
@@ -19,7 +19,8 @@
     "delta_curvature_equals_D_delta_connection": "VERIFIED",
     "euler_full_diff_completed_tower": "VERIFIED",
     "levi_civita_variation_derived_from_qg": "VERIFIED",
-    "omega_E4_intrinsic_descent_continuation": "NOT_COMPUTED"
+    "omega_E4_generalized_connection_template": "VERIFIED",
+    "omega_E4_intrinsic_descent_continuation": "IN_PROGRESS"
   },
   "classical_commit": "UNFROZEN",
   "dependency_tags": [
@@ -175,8 +176,64 @@
       }
     ],
     "descent_equation": "Q E4 + d_h(-Theta_E(Q)) = 0",
+    "generalized_connection_total_form": {
+      "components": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "explicit_form_degree": 4,
+          "generalized_connection_degree": 0,
+          "p": 2,
+          "r": 0,
+          "sector": "TYPE_B_SEPARATELY_CLOSED",
+          "weyl_two_form_count": 2
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -4
+          },
+          "explicit_form_degree": 3,
+          "generalized_connection_degree": 1,
+          "p": 1,
+          "r": 1,
+          "sector": "TYPE_A",
+          "weyl_two_form_count": 1
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "explicit_form_degree": 2,
+          "generalized_connection_degree": 2,
+          "p": 0,
+          "r": 2,
+          "sector": "TYPE_A",
+          "weyl_two_form_count": 0
+        }
+      ],
+      "expansion_status": "IN_PROGRESS",
+      "generalized_connection": "tilde_omega_a = partial_a omega - Schouten_ab dx^b",
+      "primary_reference": {
+        "doi": "10.1088/1126-6708/2007/07/069",
+        "formula": "Theorem 1, equations (3.16)-(3.20)",
+        "journal": "JHEP 07 (2007) 069",
+        "title": "General solutions of the Wess-Zumino consistency condition for the Weyl anomalies"
+      },
+      "template_sha256": "345361a124ad5e36a04cd39e4a74375269eb838fdf42820c93e11022dd0610c0",
+      "type_a_component_indices": [
+        1,
+        2
+      ],
+      "type_b_component_indices": [
+        0
+      ]
+    },
     "omega_E4_first_step": {
-      "continuation_status": "NOT_COMPUTED",
+      "continuation_status": "IN_PROGRESS",
       "equation": "Q(omega E4) + d_h(omega Theta_E) = d_h(omega) wedge Theta_E",
       "residual": {
         "domega_Theta": {
@@ -218,7 +275,7 @@
   },
   "normalization": "E4 = epsilon_abcd R^ab wedge R^cd",
   "not_computed": [
-    "the complete intrinsic type-A descent beginning at omega E4",
+    "machine expansion and closure of the generalized-connection type-A total form beginning at omega E4",
     "antifield/Koszul-Tate completion",
     "relative cohomology nontriviality of the Euler anomaly"
   ],

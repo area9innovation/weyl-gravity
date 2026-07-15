@@ -51,13 +51,13 @@ class ResultSchemaTests(unittest.TestCase):
     def test_split_descent_record_passes_without_legacy_collision(self) -> None:
         record = base_record()
         record.pop("descent_status")
-        record["diff_descent_status"] = "NONZERO_COMPLETE"
+        record["diff_descent_status"] = "NONZERO_DIFF_TOWER"
         record["intrinsic_weyl_descent_status"] = "MIXED_BY_CANDIDATE"
         self.assertEqual(VALIDATOR.validate_record(record, SCHEMA), [])
 
     def test_legacy_and_split_descent_fields_cannot_mix(self) -> None:
         record = base_record()
-        record["diff_descent_status"] = "NONZERO_COMPLETE"
+        record["diff_descent_status"] = "NONZERO_DIFF_TOWER"
         record["intrinsic_weyl_descent_status"] = "TRIVIAL"
         errors = VALIDATOR.validate_record(record, SCHEMA)
         self.assertTrue(any("mutually exclusive" in error for error in errors))

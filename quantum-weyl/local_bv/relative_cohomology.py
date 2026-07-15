@@ -257,6 +257,64 @@ def _independent_extension(
     return tuple(additions)
 
 
+def _pairing(
+    left: Sequence[Fraction | int],
+    right: Sequence[Fraction | int],
+) -> Fraction:
+    if len(left) != len(right):
+        raise ValueError("pairing vectors have inconsistent dimensions")
+    return sum(
+        (Fraction(a) * Fraction(b) for a, b in zip(left, right)),
+        Fraction(),
+    )
+
+
+def _dual_nontriviality_witness(
+    boundaries: Sequence[tuple[Fraction, ...]],
+    representative: tuple[Fraction, ...],
+) -> tuple[Fraction, ...]:
+    """Return ``lambda`` annihilating boundaries with ``lambda(rep)=1``.
+
+    The witness lives in the algebraic dual of the ambient coordinate space.
+    It is independently checkable without replaying quotient selection.
+    """
+
+    width = len(representative)
+    if any(len(vector) != width for vector in boundaries):
+        raise ValueError("boundary vectors have inconsistent dimensions")
+    boundary_matrix = (
+        SparseMatrix.from_dense(boundaries)
+        if boundaries
+        else SparseMatrix.zero(0, width)
+    )
+    for candidate in boundary_matrix.nullspace():
+        value = _pairing(representative, candidate)
+        if not value:
+            continue
+        witness = tuple(coefficient / value for coefficient in candidate)
+        if boundary_matrix.apply(witness) != (Fraction(),) * len(boundaries):
+            raise AssertionError("dual witness does not annihilate boundaries")
+        if _pairing(representative, witness) != 1:
+            raise AssertionError("dual witness normalization failed")
+        return witness
+    raise ValueError("representative lies in the supplied boundary space")
+
+
+def _coordinates_payload(
+    vectors: Sequence[Sequence[Fraction]],
+) -> list[list[dict[str, int]]]:
+    return [
+        [
+            {
+                "numerator": value.numerator,
+                "denominator": value.denominator,
+            }
+            for value in vector
+        ]
+        for vector in vectors
+    ]
+
+
 class FiniteBicomplex:
     """Finite exact bicomplex with coordinate ``Q d_h = d_h Q`` convention."""
 
@@ -415,6 +473,10 @@ class FiniteBicomplex:
             raise AssertionError("a total coboundary is not closed")
         representatives = _independent_extension(coboundaries, cocycles)
         quotient_dimension = len(representatives)
+        dual_witnesses = tuple(
+            _dual_nontriviality_witness(coboundaries, representative)
+            for representative in representatives
+        )
         basis_payload = [
             {
                 "ghost_number": degree.ghost_number,
@@ -425,13 +487,8 @@ class FiniteBicomplex:
                 total_degree, max_form_degree=max_form_degree
             )
         ]
-        representative_coordinates = [
-            [
-                {"numerator": value.numerator, "denominator": value.denominator}
-                for value in representative
-            ]
-            for representative in representatives
-        ]
+        representative_coordinates = _coordinates_payload(representatives)
+        dual_witness_coordinates = _coordinates_payload(dual_witnesses)
         return {
             "total_degree": total_degree,
             "max_form_degree": max_form_degree,
@@ -443,12 +500,21 @@ class FiniteBicomplex:
             "quotient_dimension": quotient_dimension,
             "representatives": representatives,
             "representative_coordinates": representative_coordinates,
+            "dual_nontriviality_witness_coordinates": dual_witness_coordinates,
+            "dual_witness_pairings": [
+                {
+                    "numerator": _pairing(representative, witness).numerator,
+                    "denominator": _pairing(representative, witness).denominator,
+                }
+                for representative, witness in zip(representatives, dual_witnesses)
+            ],
             "proof_hash": canonical_sha256(
                 {
                     "basis": basis_payload,
                     "differential": differential.canonical_payload(),
                     "previous": previous.canonical_payload(),
                     "representatives": representative_coordinates,
+                    "dual_nontriviality_witnesses": dual_witness_coordinates,
                 }
             ),
         }
@@ -518,6 +584,11 @@ class FiniteBicomplex:
                 relative_representatives.append(candidate)
                 descent_lifts.append(lift)
 
+        dual_witnesses = tuple(
+            _dual_nontriviality_witness(top_coboundaries, representative)
+            for representative in relative_representatives
+        )
+
         total = self.cohomology(
             total_degree, max_form_degree=form_degree
         )
@@ -536,22 +607,9 @@ class FiniteBicomplex:
             if degree == anchor
         ]
 
-        def coordinates_payload(
-            vectors: Sequence[Sequence[Fraction]],
-        ) -> list[list[dict[str, int]]]:
-            return [
-                [
-                    {
-                        "numerator": value.numerator,
-                        "denominator": value.denominator,
-                    }
-                    for value in vector
-                ]
-                for vector in vectors
-            ]
-
-        representative_payload = coordinates_payload(relative_representatives)
-        lift_payload = coordinates_payload(descent_lifts)
+        representative_payload = _coordinates_payload(relative_representatives)
+        lift_payload = _coordinates_payload(descent_lifts)
+        dual_witness_payload = _coordinates_payload(dual_witnesses)
         return {
             "ghost_number": ghost_number,
             "form_degree": form_degree,
@@ -566,6 +624,24 @@ class FiniteBicomplex:
             "lower_only_total_class_dimension": lower_only_dimension,
             "representative_coordinates": representative_payload,
             "complete_descent_lift_coordinates": lift_payload,
+            "closure_witnesses": [
+                {
+                    "total_basis_hash": total["ansatz_basis_hash"],
+                    "complete_descent_lift_coordinates": lift,
+                    "residual_status": "ZERO",
+                }
+                for lift in lift_payload
+            ],
+            "dual_nontriviality_witness_coordinates": dual_witness_payload,
+            "dual_witness_pairings": [
+                {
+                    "numerator": _pairing(representative, witness).numerator,
+                    "denominator": _pairing(representative, witness).denominator,
+                }
+                for representative, witness in zip(
+                    relative_representatives, dual_witnesses
+                )
+            ],
             "proof_hash": canonical_sha256(
                 {
                     "anchor": {
@@ -574,10 +650,11 @@ class FiniteBicomplex:
                     },
                     "top_basis": top_basis_payload,
                     "total_basis_hash": total["ansatz_basis_hash"],
-                    "top_cocycles": coordinates_payload(top_cocycles),
-                    "top_coboundaries": coordinates_payload(top_coboundaries),
+                    "top_cocycles": _coordinates_payload(top_cocycles),
+                    "top_coboundaries": _coordinates_payload(top_coboundaries),
                     "representatives": representative_payload,
                     "lifts": lift_payload,
+                    "dual_nontriviality_witnesses": dual_witness_payload,
                 }
             ),
         }

@@ -17,6 +17,13 @@ class EulerChernWeilTests(unittest.TestCase):
             tuple(analysis["derived_weyl_connection_variation"].values()),
             (1, 1, -1),
         )
+        self.assertEqual(
+            tuple(
+                component["coefficient"]
+                for component in analysis["generalized_connection_template"]["components"]
+            ),
+            (4, -4, 1),
+        )
 
 
 if __name__ == "__main__":
