@@ -1,0 +1,413 @@
+{
+  "D_action_cl": {
+    "degree": 0,
+    "matrix": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "weight_rule": "D x=w(x)x",
+    "weights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "action_derivation": {
+    "authoritative_restriction": "S/(16pi^2)=int dt N c{alpha_B C^2/8+rho^2 omega^2/(2N^2)-R rho^2/12-lambda rho^4/4}",
+    "background": {
+      "N": "1",
+      "c": "3*sqrt(10)/20",
+      "q": "9/40",
+      "rho": "1"
+    },
+    "held_fixed": {
+      "alpha_B": "5",
+      "lambda": "119/480",
+      "omega": "3/4"
+    },
+    "q1_rule": "H_ij=d_i d_j L at the fixture",
+    "q2_rule": "C_ijk=d_i d_j d_k L at the fixture in q=q1+q2/2+... convention",
+    "reduced_lagrangian": "c*(1600*N**2*c**4 + 80*N**2*c**2*rho**2 - 3200*N**2*c**2 - 119*N**2*rho**4 - 320*N**2*rho**2 + 1600*N**2 + 960*omega**2*rho**2)/(1920*N)",
+    "residual_fit_used": false,
+    "stationary_gradient": [
+      "0",
+      "0",
+      "0"
+    ],
+    "variables": [
+      "c",
+      "N",
+      "rho"
+    ]
+  },
+  "claim_boundary": "This exact action-derived six-row stationary homogeneous fixture supplies a nonzero q2, the centered local D action, cyclic pairing, weights, and an admissible closed REDUCED-MODE block. It is not the complete support-local q2, its D action is zero because every retained row has weight zero, and it authorizes no physical ND2 or quantum conclusion.",
+  "claim_status": "CERTIFIED_REDUCED_MODE_Q2_D_BLOCK",
+  "classical_binary_q2": {
+    "degree": 1,
+    "entries": [
+      {
+        "coefficient": "3/2",
+        "left": 0,
+        "output": 3,
+        "right": 0
+      },
+      {
+        "coefficient": "-9*sqrt(10)/10",
+        "left": 0,
+        "output": 3,
+        "right": 1
+      },
+      {
+        "coefficient": "3*sqrt(10)/40",
+        "left": 0,
+        "output": 3,
+        "right": 2
+      },
+      {
+        "coefficient": "9/16",
+        "left": 1,
+        "output": 3,
+        "right": 1
+      },
+      {
+        "coefficient": "-87/80",
+        "left": 1,
+        "output": 3,
+        "right": 2
+      },
+      {
+        "coefficient": "-11/24",
+        "left": 2,
+        "output": 3,
+        "right": 2
+      },
+      {
+        "coefficient": "-9*sqrt(10)/10",
+        "left": 0,
+        "output": 4,
+        "right": 0
+      },
+      {
+        "coefficient": "9/16",
+        "left": 0,
+        "output": 4,
+        "right": 1
+      },
+      {
+        "coefficient": "-87/80",
+        "left": 0,
+        "output": 4,
+        "right": 2
+      },
+      {
+        "coefficient": "-81*sqrt(10)/320",
+        "left": 1,
+        "output": 4,
+        "right": 1
+      },
+      {
+        "coefficient": "27*sqrt(10)/160",
+        "left": 1,
+        "output": 4,
+        "right": 2
+      },
+      {
+        "coefficient": "-389*sqrt(10)/1600",
+        "left": 2,
+        "output": 4,
+        "right": 2
+      },
+      {
+        "coefficient": "3*sqrt(10)/40",
+        "left": 0,
+        "output": 5,
+        "right": 0
+      },
+      {
+        "coefficient": "-87/80",
+        "left": 0,
+        "output": 5,
+        "right": 1
+      },
+      {
+        "coefficient": "-11/24",
+        "left": 0,
+        "output": 5,
+        "right": 2
+      },
+      {
+        "coefficient": "27*sqrt(10)/160",
+        "left": 1,
+        "output": 5,
+        "right": 1
+      },
+      {
+        "coefficient": "-389*sqrt(10)/1600",
+        "left": 1,
+        "output": 5,
+        "right": 2
+      },
+      {
+        "coefficient": "-357*sqrt(10)/1600",
+        "left": 2,
+        "output": 5,
+        "right": 2
+      }
+    ],
+    "graded_symmetric": true
+  },
+  "classical_unary_q1": {
+    "degree": 1,
+    "matrix": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-9*sqrt(10)/10",
+        "-9/16",
+        "3/80",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-9/16",
+        "27*sqrt(10)/320",
+        "-27*sqrt(10)/160",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "3/80",
+        "-27*sqrt(10)/160",
+        "-119*sqrt(10)/1600",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "rank": 3
+  },
+  "cyclic_pairing": {
+    "convention": "<field_i,equation_j>=delta_ij; reverse block=-delta_ij",
+    "matrix": [
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "rank": 6
+  },
+  "dependency_refs": {
+    "background": {
+      "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"
+    },
+    "complete_unary": {
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_checks": {
+    "D_weight_conservation": true,
+    "action_stationary_on_fixture": true,
+    "all_coefficients_exact_Q_sqrt10": true,
+    "declared_mode_block_closed": true,
+    "pairing_nondegenerate": true,
+    "q1_D_commutator_zero": true,
+    "q1_q2_arity_two_nilpotency": true,
+    "q1_squared_zero": true,
+    "q2_cyclic": true
+  },
+  "flags": {
+    "BERGER_LOCAL_D_ACTION_EQUIVARIANT": false,
+    "BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK": true,
+    "CLASSICAL_REDUCED_MODE_Q2_D": true,
+    "CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT": false,
+    "CLASSICAL_SUPPORT_LOCAL_Q2": false,
+    "ND2_PHYSICAL_EXECUTION_AUTHORIZED": false
+  },
+  "next_gate": "ND2_REDUCED_MODE_FIXTURE_IMPORT",
+  "result_id": "BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK",
+  "row_layout": [
+    {
+      "D_weight": 0,
+      "degree": 0,
+      "index": 0,
+      "parity": 0,
+      "role": "field",
+      "row_id": "delta_c_w0"
+    },
+    {
+      "D_weight": 0,
+      "degree": 0,
+      "index": 1,
+      "parity": 0,
+      "role": "field",
+      "row_id": "delta_N_w0"
+    },
+    {
+      "D_weight": 0,
+      "degree": 0,
+      "index": 2,
+      "parity": 0,
+      "role": "field",
+      "row_id": "delta_rho_w0"
+    },
+    {
+      "D_weight": 0,
+      "degree": 1,
+      "index": 3,
+      "parity": 1,
+      "role": "equation",
+      "row_id": "E_c_w0"
+    },
+    {
+      "D_weight": 0,
+      "degree": 1,
+      "index": 4,
+      "parity": 1,
+      "role": "equation",
+      "row_id": "E_N_w0"
+    },
+    {
+      "D_weight": 0,
+      "degree": 1,
+      "index": 5,
+      "parity": 1,
+      "role": "equation",
+      "row_id": "E_rho_w0"
+    }
+  ],
+  "schema": "pure-weyl-berger-rational-fixture-q2-d-block-v1",
+  "scope": {
+    "D_weights": [
+      0
+    ],
+    "category": "stationary SU(2)_L x U(1)_R homogeneous D-weight-zero block",
+    "closure": "all q1 and q2 outputs remain in the six declared rows",
+    "limitation": "D acts trivially on this centered block; this tests exact ingestion and BV identities, not a nonzero-weight D obstruction",
+    "not_support_local_q2": true,
+    "spatial_mode": "homogeneous invariant"
+  },
+  "setting_id": "compact_positive_berger_clock_rational_fixture_stationary_homogeneous"
+}

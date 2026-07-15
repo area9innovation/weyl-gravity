@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-rational-fixture-q2-d-block-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "scope", "action_derivation", "row_layout", "classical_unary_q1", "classical_binary_q2", "D_action_cl", "cyclic_pairing", "exact_checks", "flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-rational-fixture-q2-d-block-v1"},
+    "result_id": {"const": "BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK"},
+    "setting_id": {"const": "compact_positive_berger_clock_rational_fixture_stationary_homogeneous"},
+    "claim_status": {"const": "CERTIFIED_REDUCED_MODE_Q2_D_BLOCK"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category", "not_support_local_q2", "spatial_mode", "D_weights", "closure", "limitation"],
+      "properties": {
+        "category": {"const": "stationary SU(2)_L x U(1)_R homogeneous D-weight-zero block"},
+        "not_support_local_q2": {"const": true},
+        "spatial_mode": {"const": "homogeneous invariant"},
+        "D_weights": {"const": [0]},
+        "closure": {"type": "string", "minLength": 1},
+        "limitation": {"type": "string", "minLength": 1}
+      }
+    },
+    "action_derivation": {"type": "object"},
+    "row_layout": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object"}},
+    "classical_unary_q1": {"type": "object"},
+    "classical_binary_q2": {"type": "object", "required": ["degree", "graded_symmetric", "entries"], "properties": {"degree": {"const": 1}, "graded_symmetric": {"const": true}, "entries": {"type": "array", "minItems": 1}}, "additionalProperties": false},
+    "D_action_cl": {"type": "object"},
+    "cyclic_pairing": {"type": "object"},
+    "exact_checks": {"type": "object", "minProperties": 9, "additionalProperties": {"const": true}},
+    "flags": {"type": "object", "required": ["BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK", "CLASSICAL_REDUCED_MODE_Q2_D", "CLASSICAL_SUPPORT_LOCAL_Q2", "BERGER_LOCAL_D_ACTION_EQUIVARIANT", "CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT", "ND2_PHYSICAL_EXECUTION_AUTHORIZED"], "properties": {"BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK": {"const": true}, "CLASSICAL_REDUCED_MODE_Q2_D": {"const": true}, "CLASSICAL_SUPPORT_LOCAL_Q2": {"const": false}, "BERGER_LOCAL_D_ACTION_EQUIVARIANT": {"const": false}, "CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT": {"const": false}, "ND2_PHYSICAL_EXECUTION_AUTHORIZED": {"const": false}}, "additionalProperties": false},
+    "next_gate": {"const": "ND2_REDUCED_MODE_FIXTURE_IMPORT"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

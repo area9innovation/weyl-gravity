@@ -396,6 +396,7 @@ def validate_record(record: object) -> list[str]:
                 "berger_minimal_34_portable_contraction",
                 "berger_nonminimal_algebraic_completion",
                 "berger_gauge_fixed_nonminimal_completion",
+                "berger_rational_fixture_q2_d_block",
             ]:
                 errors.append("$.work_packages.relational_clock: partial replacement requires the one-scalar, neutral-pair, health, stealth, and positive Berger-background certificates")
             if not isinstance(scalar_setting, dict):
@@ -613,6 +614,14 @@ def _mutation_guards(record: dict[str, Any]) -> list[str]:
         if ref != "berger_gauge_fixed_nonminimal_completion"
     ]
     rejected("berger_gauge_fixed_nonminimal_completion_erased", mutant)
+
+    mutant = deepcopy(record)
+    mutant["work_packages"]["relational_clock"]["evidence_refs"] = [
+        ref
+        for ref in mutant["work_packages"]["relational_clock"]["evidence_refs"]
+        if ref != "berger_rational_fixture_q2_d_block"
+    ]
+    rejected("berger_rational_fixture_q2_d_block_erased", mutant)
     return failures
 
 
@@ -640,7 +649,7 @@ def main() -> int:
             for failure in failures:
                 print(f"mutation guard failed: {failure}", file=sys.stderr)
             return 1
-        print("mutation guards: 22/22 PASS")
+        print("mutation guards: 23/23 PASS")
     print(f"{args.certificate}: PASS")
     return 0
 

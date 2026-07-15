@@ -287,6 +287,24 @@ next gate is the combined support-local \(\ell^{\rm cl}_2\) and local
 \(D\)-action/equivariance export, followed by the general nonlinear
 Koszul--Tate export, causal Green operators, and Hadamard data.
 
+### Reduced-mode arity-two fixture
+
+`BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK` now provides a separate, deliberately
+small nonlinear handoff. The exact stationary homogeneous Berger action is
+differentiated at the rational fixture to produce a six-row Koszul--Tate
+block: three field variations and three equation rows. Its Hessian is
+`classical_unary_q1`, its symmetric third derivative is
+`classical_binary_q2`, and the canonical field--equation pairing fixes
+cyclicity. Every row has homogeneous \(D\)-weight zero, so the exported local
+\(D\)-action is the zero matrix on this centered block.
+
+The certificate proves \([q_1,D]=0\), the arity-two \(q^2\) identity,
+cyclicity, and closure exactly. It is immediately ingestible by ND2, but its
+scope is only `REDUCED-MODE`. It neither satisfies
+`CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT` nor tests a nonzero-weight
+\(D\)-obstruction. The full 54-row support-local nonlinear export therefore
+remains an independent gate.
+
 Begin with a conformally coupled scalar \(T\).  Define a domain on which it is a
 valid clock and construct complete observables
 

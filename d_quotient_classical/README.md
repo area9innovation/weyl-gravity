@@ -92,6 +92,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json`](certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json)
 - Gauge-fixed nonminimal-completion report:
   [`reports/berger-gauge-fixed-nonminimal-completion.md`](reports/berger-gauge-fixed-nonminimal-completion.md)
+- Exact rational Berger reduced-mode q2/D fixture:
+  [`certificates/BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK.json`](certificates/BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK.json)
+- Rational Berger reduced-mode q2/D report:
+  [`reports/berger-rational-fixture-q2-d-block.md`](reports/berger-rational-fixture-q2-d-block.md)
 
 The only scientific verdicts are:
 
@@ -152,6 +156,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_non
 python3 d_quotient_classical/backreacted_clock/berger_gauge_fixed_nonminimal_completion.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_gauge_fixed_nonminimal_completion.py
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_gauge_fixed_nonminimal_completion
+python3 d_quotient_classical/backreacted_clock/berger_rational_fixture_q2_d_block.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_rational_fixture_q2_d_block.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_rational_fixture_q2_d_block
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -233,6 +240,16 @@ BV-canonical shear. The resulting complete 54-row gauge-fixed
 `iota_cl`, `pi_cl`, and `S_cl` are portable. The decisive remaining handoff
 requires `classical_binary_q2`, local `D_action_cl`, the general nonlinear
 Koszul--Tate package, and causal/Hadamard data.
+
+The rational Berger fixture now supplies the smallest action-derived input
+that can exercise the arity-two ND2 machinery. Its six rows are the three
+stationary homogeneous variations \(\delta c,\delta N,\delta\rho\) and their
+Euler--Lagrange rows. The Hessian and cubic Taylor tensor are derived from the
+exact reduced action, the cyclic pairing is canonical, and all declared
+\(D\)-weights are zero. Exact checks prove \([q_1,D]=0\), the arity-two
+\(q^2\) identity, cyclicity, and block closure. This is deliberately tagged
+`REDUCED-MODE`: it is an ingestion and identity fixture, not the full
+support-local \(q_2\) and not a nonzero-weight \(D\)-equivariance theorem.
 
 ## Promotion rule
 
