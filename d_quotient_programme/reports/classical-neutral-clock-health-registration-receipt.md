@@ -16,5 +16,8 @@ compact_neutral_clock_pair_local_extension:
 ```
 
 The Weyl-reduced ratio mode retains derivatives, and every neutral winding
-orbit crosses four kinetic-sign degeneracies per compact period. The next gate
-is `POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK`.
+orbit crosses four kinetic-sign degeneracies per compact period. The original
+next gate was `POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK`. Its
+homogeneous positive-sign stealth branch has since been classified and
+obstructed; the current refined gate is
+`INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK`.

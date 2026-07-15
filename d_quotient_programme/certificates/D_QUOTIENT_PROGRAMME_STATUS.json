@@ -16,16 +16,16 @@
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
   "next_shared_gate": {
-    "gate_id": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK",
+    "gate_id": "INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK",
     "owner_order": [
       "classical",
       "nonlinear",
       "quantum",
       "einstein_boundary"
     ],
-    "rule": "Retain the neutral pair only as a scoped homogeneous reference clock; construct either a positive-energy clock on a genuinely Bach-sourced non-conformally-flat background or a regular stress-free stealth clock."
+    "rule": "Retain the neutral pair only as a scoped homogeneous reference clock and the secant stealth family only as a local obstruction; construct either an inhomogeneous stress-free clock with timelike nonvanishing gradient or a positive-energy clock on a genuinely Bach-sourced non-conformally-flat background."
   },
-  "programme_base_commit": "b21d0244b108286b979c25d70ec593aa44587771",
+  "programme_base_commit": "7963aa0cc4dcd23154dcef8ea431c98816f96fb2",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -42,7 +42,7 @@
   },
   "registry_hashes": {
     "generator_registry": "1df39af78cdd49eeb64faa2d46134542e9bb75a598f0dde98932657a682525de",
-    "phase_space_registry": "f08243fbec809b283a9acfc4a6a9390402e084fff902df73f17f7f5ee4f2d934"
+    "phase_space_registry": "01c28ed3a7b8db53f8e6bf3bc01afc783e4e75969619bf3edd955bf72434cd90"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -101,6 +101,15 @@
       "setting_id": "compact_neutral_clock_pair_local_health",
       "status": "BLOCKED",
       "verdict": "OPPOSITE_SIGN_LOCAL_HEALTH_OBSTRUCTED"
+    },
+    {
+      "boundary_conditions": "closed unit S3; homogeneous positive-sign conformal scalar with quartic Weyl-invariant potential",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_CHARGE",
+      "phase_space_id": "compact_homogeneous_positive_stealth_scalar",
+      "setting_id": "compact_homogeneous_positive_stealth_clock",
+      "status": "BLOCKED",
+      "verdict": "HOMOGENEOUS_STEALTH_CLOCK_OBSTRUCTED"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -278,12 +287,12 @@
         },
         "generator_id": "D_compact",
         "lifecycle_layer": "CLASSICAL_CHARGE",
-        "next_gate": "construct a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background or a regular stress-free conformal/stealth clock",
+        "next_gate": "construct an inhomogeneous stress-free clock with timelike nonvanishing gradient or a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background",
         "not_established": [
           "a complete all-row coupled BV differential or causal Green complex",
           "a positive-energy local matter completion",
           "a no-go theorem for non-conformally-flat Bach-sourced clocks",
-          "a no-go theorem for regular stress-free stealth clocks",
+          "a no-go theorem for inhomogeneous regular stress-free stealth clocks",
           "interacting, boundary, or quantum stability"
         ],
         "phase_space_id": "compact_neutral_clock_pair_local_extension",
@@ -297,7 +306,50 @@
           "python3 d_quotient_classical/verify_classical_status.py --guards"
         ]
       },
-      "sha256": "320a87351d2201937fb3936ef53ed17601a4af3a2bdd931e72c0e9aede36ca67"
+      "sha256": "543c05f5aa40ccc49096c078feb50e7d9a74ebce4f7fae1dfd87c3a329471b3d"
+    },
+    {
+      "path": "d_quotient_programme/contributions/classical-homogeneous-positive-stealth-clock.json",
+      "payload": {
+        "boundary_conditions": "unit conformal cylinder with closed S3; one real positive-sign conformal scalar; homogeneous sector; quartic Weyl-invariant potential",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the exact homogeneous improved stress is rho=(dot(T)^2+T^2)/2+kappa*T^4/4 and p=rho/3 on shell",
+          "kappa nonnegative permits only the zero homogeneous stealth field",
+          "for kappa=-g<0 every connected nonzero real homogeneous stealth branch is, up to sign and time translation, sqrt(2/g) sec(t-t0)",
+          "each nonzero branch has a turning point and finite-time poles and therefore is not a globally regular homogeneous clock",
+          "the standard scalar kinetic sign is positive, but the required negative quartic potential is unbounded below"
+        ],
+        "evidence": {
+          "commit": "a894989e7c80f5e01eac0d09f22efe51ce87fd59",
+          "path": "d_quotient_classical/certificates/HOMOGENEOUS_POSITIVE_CONFORMAL_STEALTH_CLOCK.json",
+          "sha256": "cbb5b579093afdc908c1a99c965db1c4140fe7037e42c32f2d03e859a909e12d"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "CLASSICAL_CHARGE",
+        "next_gate": "construct an inhomogeneous stress-free clock with timelike nonvanishing gradient or a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background",
+        "not_established": [
+          "a no-go theorem for inhomogeneous stealth fields",
+          "a no-go theorem for positive-energy clocks on non-conformally-flat Bach-sourced backgrounds",
+          "a support-local all-row BV clock contraction",
+          "an interacting, boundary, or quantum D verdict"
+        ],
+        "phase_space_id": "compact_homogeneous_positive_stealth_scalar",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_homogeneous_positive_stealth_clock",
+        "team_id": "classical",
+        "verdict": "HOMOGENEOUS_STEALTH_CLOCK_OBSTRUCTED",
+        "verification_commands": [
+          "python3 d_quotient_classical/scalar_clock/homogeneous_stealth_clock.py --check --guards",
+          "python3 -m unittest d_quotient_classical.scalar_clock.tests.test_homogeneous_stealth_clock",
+          "python3 d_quotient_classical/verify_classical_status.py --guards"
+        ]
+      },
+      "sha256": "bc24c683cde6b9c954f2d8f4ba51712c75ffd4f0d81d63531dde815fd9140bd9"
     },
     {
       "path": "d_quotient_programme/contributions/einstein-ed1a-asymptotic-generator-gate.json",
@@ -385,9 +437,9 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "556486504a5ce687e02a035d6f0dc0eef02d233a",
+      "commit": "b4b1010a881ce97f2867d11adf2654865384adf9",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "3f8e1bbbcda764df824134ddd4c59b7bd8a80b9492291cd05ad2bad7468b8c10"
+      "sha256": "ef6195f694ed6b3f520f9915fb7bac04618b9c6394a20fe2df9bf9a31554247f"
     },
     "einstein_boundary": {
       "commit": "89acca36479ebaea069c21eb23517dc6b1b49389",
@@ -407,11 +459,11 @@
   },
   "team_status": [
     {
-      "established": "D_compact is gauge on the exact homogeneous neutral clock sector, but its opposite-sign ratio mode survives Weyl reduction and crosses kinetic-sign degeneracies on every winding orbit.",
-      "next_gate": "positive-energy non-conformally-flat Bach-sourced clock or regular stress-free stealth clock",
-      "result_state": "PARTIAL_WITH_NEUTRAL_CLOCK_AND_LOCAL_HEALTH_OBSTRUCTION",
+      "established": "D_compact is gauge on the exact homogeneous neutral clock sector, but that model has a sign-changing ratio mode; the positive-sign homogeneous stealth alternative is exactly a finite-time singular secant family.",
+      "next_gate": "inhomogeneous regular stealth clock or positive-energy non-conformally-flat Bach-sourced clock",
+      "result_state": "PARTIAL_WITH_HOMOGENEOUS_CLOCK_ALTERNATIVES_CLASSIFIED",
       "team_id": "classical",
-      "verdict": "SCOPED_NEUTRAL_CLOCK_D_GAUGE_WITH_LOCAL_HEALTH_OBSTRUCTION"
+      "verdict": "SCOPED_NEUTRAL_CLOCK_D_GAUGE_WITH_TWO_HEALTH_OBSTRUCTIONS"
     },
     {
       "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem.",

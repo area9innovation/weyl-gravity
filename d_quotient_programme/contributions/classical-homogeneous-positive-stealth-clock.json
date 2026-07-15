@@ -1,0 +1,39 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_homogeneous_positive_stealth_clock",
+  "generator_id": "D_compact",
+  "phase_space_id": "compact_homogeneous_positive_stealth_scalar",
+  "boundary_conditions": "unit conformal cylinder with closed S3; one real positive-sign conformal scalar; homogeneous sector; quartic Weyl-invariant potential",
+  "lifecycle_layer": "CLASSICAL_CHARGE",
+  "claim_status": "CERTIFIED",
+  "verdict": "HOMOGENEOUS_STEALTH_CLOCK_OBSTRUCTED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "the exact homogeneous improved stress is rho=(dot(T)^2+T^2)/2+kappa*T^4/4 and p=rho/3 on shell",
+    "kappa nonnegative permits only the zero homogeneous stealth field",
+    "for kappa=-g<0 every connected nonzero real homogeneous stealth branch is, up to sign and time translation, sqrt(2/g) sec(t-t0)",
+    "each nonzero branch has a turning point and finite-time poles and therefore is not a globally regular homogeneous clock",
+    "the standard scalar kinetic sign is positive, but the required negative quartic potential is unbounded below"
+  ],
+  "not_established": [
+    "a no-go theorem for inhomogeneous stealth fields",
+    "a no-go theorem for positive-energy clocks on non-conformally-flat Bach-sourced backgrounds",
+    "a support-local all-row BV clock contraction",
+    "an interacting, boundary, or quantum D verdict"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/HOMOGENEOUS_POSITIVE_CONFORMAL_STEALTH_CLOCK.json",
+    "commit": "a894989e7c80f5e01eac0d09f22efe51ce87fd59",
+    "sha256": "cbb5b579093afdc908c1a99c965db1c4140fe7037e42c32f2d03e859a909e12d"
+  },
+  "verification_commands": [
+    "python3 d_quotient_classical/scalar_clock/homogeneous_stealth_clock.py --check --guards",
+    "python3 -m unittest d_quotient_classical.scalar_clock.tests.test_homogeneous_stealth_clock",
+    "python3 d_quotient_classical/verify_classical_status.py --guards"
+  ],
+  "next_gate": "construct an inhomogeneous stress-free clock with timelike nonvanishing gradient or a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background"
+}

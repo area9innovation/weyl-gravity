@@ -75,7 +75,9 @@ monotone compact-\(D\) clock, and \(D\) is gauge on the declared regular
 zero-charge phase space. A subsequent local audit shows why this is not yet a
 healthy physical clock: the Weyl-reduced ratio mode keeps a derivative term,
 changes kinetic sign, and becomes degenerate four times per compact winding.
-The next candidate must use positive-energy Bach-sourced geometry or a regular
+The homogeneous positive-sign stealth repair is now classified and obstructed
+by a turning point and finite-time poles. The next candidate must use
+positive-energy Bach-sourced non-conformally-flat geometry or an inhomogeneous
 stress-free stealth mechanism. Paper IX still waits for at least one complete
 boundary or interaction theorem.
 

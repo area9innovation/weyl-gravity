@@ -47,8 +47,10 @@ For each new result, send one machine-readable contribution conforming to
 Team-specific priorities:
 
 - **Classical:** retain the neutral pair as a scoped homogeneous reference
-  theorem and own the next positive-energy non-conformally-flat or stealth
-  clock model, its total improved symplectic form, and total \(D\) charge.
+  theorem, retain the homogeneous positive-sign stealth family as a scoped
+  obstruction, and own the next inhomogeneous stealth or positive-energy
+  non-conformally-flat clock model, its total improved symplectic form, and
+  total \(D\) charge.
 - **Einstein/boundary:** import the single-scalar obstruction and use only a
   certified replacement clock where relevant; otherwise
   complete one real boundary-preserving full-Bach phase space and compute the
@@ -69,8 +71,8 @@ with internal signature `(+,-)` and scoped verdict `D_GAUGE`. The shared gate
 was tested by `NEUTRAL_CLOCK_BV_HEALTH_AUDIT` and is obstructed as a globally
 regular positive local clock: the ratio kinetic sign changes on every winding
 orbit. Do not broaden the replacement beyond its homogeneous claim. The next
-gate is `POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK`; other teams
-consume all three results by hash rather than independently inventing four
+gate is `INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK`; other teams
+consume all four results by hash rather than independently inventing four
 clock theories.
 
 Paper IX remains reserved until the scalar-clock theorem and at least one

@@ -30,6 +30,7 @@ because the existing results concern different objects:
 - [`reports/classical-scalar-clock-registration-receipt.md`](reports/classical-scalar-clock-registration-receipt.md)
 - [`reports/classical-neutral-clock-registration-receipt.md`](reports/classical-neutral-clock-registration-receipt.md)
 - [`reports/classical-neutral-clock-health-registration-receipt.md`](reports/classical-neutral-clock-health-registration-receipt.md)
+- [`reports/classical-homogeneous-stealth-registration-receipt.md`](reports/classical-homogeneous-stealth-registration-receipt.md)
 - [`reports/einstein-ed1a-registration-receipt.md`](reports/einstein-ed1a-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -59,7 +60,9 @@ applicable classical export and QME gates pass.
 
 The neutral pair remains a valid homogeneous reference clock, but its local
 positive-health promotion is obstructed: the ratio kinetic term changes sign
-and degenerates on every winding orbit. The immediate gate is
-`POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK`. Downstream teams must
-import the single-scalar obstruction, homogeneous neutral theorem, and local
-health obstruction by content hash.
+and degenerates on every winding orbit.  The positive-sign homogeneous
+stealth alternative is now exhausted too: all nonzero branches are secant
+trajectories with a turning point and finite-time poles.  The immediate gate
+is `INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK`. Downstream teams must
+import the one-scalar obstruction, homogeneous neutral theorem, local health
+obstruction, and homogeneous stealth classification by content hash.

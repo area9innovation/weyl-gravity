@@ -15,14 +15,16 @@ The first one-real-scalar exact-cylinder clock candidate is obstructed before
 a coupled phase space exists.  A distinct neutral two-field reference sector
 now supplies an exact homogeneous clock and a scoped `D_GAUGE` reduction, but
 its local health audit proves that the opposite-sign ratio mode is not
-globally positive or entirely contractible. Boundary, nonlinear, and quantum
-questions are separate gates.
+globally positive or entirely contractible.  The positive-sign homogeneous
+stealth alternative is also completely classified: its nonzero branches are
+finite-time singular secant trajectories.  Inhomogeneous stealth, boundary,
+nonlinear, and quantum questions are separate gates.
 
 ## Four-team ledger
 
 | Team | Current verdict | Established | Next gate |
 |---|---|---|---|
-| classical | `SCOPED_NEUTRAL_CLOCK_D_GAUGE_WITH_LOCAL_HEALTH_OBSTRUCTION` | D_compact is gauge on the exact homogeneous neutral clock sector, but its opposite-sign ratio mode survives Weyl reduction and crosses kinetic-sign degeneracies on every winding orbit. | positive-energy non-conformally-flat Bach-sourced clock or regular stress-free stealth clock |
+| classical | `SCOPED_NEUTRAL_CLOCK_D_GAUGE_WITH_TWO_HEALTH_OBSTRUCTIONS` | D_compact is gauge on the exact homogeneous neutral clock sector, but that model has a sign-changing ratio mode; the positive-sign homogeneous stealth alternative is exactly a finite-time singular secant family. | inhomogeneous regular stealth clock or positive-energy non-conformally-flat Bach-sourced clock |
 | einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. | complete a boundary-preserving full Bach phase space and calculate charge and flux |
 | nonlinear | `INPUT_GATE_BLOCKED` | selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked | complete support-local q2 export and solve for iota_D^(2) or retain its obstruction |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the pre-scalar classical compact split is imported by content hash without quantum promotion; the new scalar no-go is not yet imported | import the scalar-clock obstruction hash, then construct the renormalized observable algebra and classify the first D-Ward obstruction |
@@ -37,6 +39,7 @@ questions are separate gates.
 | compact_scalar_clock | `D_compact` | `compact_scalar_clock` | CLASSICAL_CHARGE | `BLOCKED` | `SINGLE_SCALAR_CLOCK_BACKGROUND_OBSTRUCTED` |
 | compact_neutral_clock_pair | `D_compact` | `compact_neutral_clock_pair_homogeneous` | CLASSICAL_CHARGE | `CERTIFIED` | `D_GAUGE` |
 | compact_neutral_clock_pair_local_health | `D_compact` | `compact_neutral_clock_pair_local_extension` | CLASSICAL_CHARGE | `BLOCKED` | `OPPOSITE_SIGN_LOCAL_HEALTH_OBSTRUCTED` |
+| compact_homogeneous_positive_stealth_clock | `D_compact` | `compact_homogeneous_positive_stealth_scalar` | CLASSICAL_CHARGE | `BLOCKED` | `HOMOGENEOUS_STEALTH_CLOCK_OBSTRUCTED` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `INPUT_GATE_BLOCKED` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
@@ -62,6 +65,7 @@ questions are separate gates.
 | classical | `compact_scalar_clock` | `D_compact` | `compact_scalar_clock` | `CERTIFIED` | `SINGLE_SCALAR_CLOCK_BACKGROUND_OBSTRUCTED` |
 | classical | `compact_neutral_clock_pair` | `D_compact` | `compact_neutral_clock_pair_homogeneous` | `CERTIFIED` | `D_GAUGE` |
 | classical | `compact_neutral_clock_pair_local_health` | `D_compact` | `compact_neutral_clock_pair_local_extension` | `CERTIFIED` | `OPPOSITE_SIGN_LOCAL_HEALTH_OBSTRUCTED` |
+| classical | `compact_homogeneous_positive_stealth_clock` | `D_compact` | `compact_homogeneous_positive_stealth_scalar` | `CERTIFIED` | `HOMOGENEOUS_STEALTH_CLOCK_OBSTRUCTED` |
 | einstein_boundary | `asymptotic_real_cylinder_time` | `H_ESU` | `asymptotically_flat_full_Bach` | `PARTIAL` | `PHASE_SPACE_NOT_CLOSED` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 
@@ -73,11 +77,11 @@ Paper X remains reserved for interaction/quantum stability after its separate
 classical-export and QME gates.
 
 The immediate shared calculation is
-`POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK`: Retain the neutral pair only as a scoped homogeneous reference clock; construct either a positive-energy clock on a genuinely Bach-sourced non-conformally-flat background or a regular stress-free stealth clock.
+`INHOMOGENEOUS_STEALTH_OR_NONCONFORMALLY_FLAT_CLOCK`: Retain the neutral pair only as a scoped homogeneous reference clock and the secant stealth family only as a local obstruction; construct either an inhomogeneous stress-free clock with timelike nonvanishing gradient or a positive-energy clock on a genuinely Bach-sourced non-conformally-flat background.
 
 ## Imported evidence
 
-- `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `556486504a5ce687e02a035d6f0dc0eef02d233a`, SHA-256 `3f8e1bbbcda764df824134ddd4c59b7bd8a80b9492291cd05ad2bad7468b8c10`
+- `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `b4b1010a881ce97f2867d11adf2654865384adf9`, SHA-256 `ef6195f694ed6b3f520f9915fb7bac04618b9c6394a20fe2df9bf9a31554247f`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `89acca36479ebaea069c21eb23517dc6b1b49389`, SHA-256 `359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663`
 - `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `b21d0244b108286b979c25d70ec593aa44587771`, SHA-256 `0af0703b8d8162c959b34d1672108937984088b2c121aa11731d76c47828adc4`
 - `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61`, SHA-256 `aa7edc21c7250349531559657d4ec69eee2dd9100de3eedf242a8e29829e874c`
