@@ -54,7 +54,24 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             if item["question_id"] == "D_quotient_interaction_stability"
         )
         self.assertIn("SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED", d_question["status"])
+        self.assertIn("ND2_CARTAN_SOLVER_READY", d_question["status"])
         self.assertIn("INPUT_GATE_BLOCKED", d_question["status"])
+
+    def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
+        certificate = CERTIFICATE.build_certificate()
+        self.assertTrue(
+            any("ND2 canonical" in claim for claim in certificate["scope"]["established"])
+        )
+        self.assertIn(
+            "nd2_arity_two_cartan_engine_sha256",
+            certificate["provenance"],
+        )
+        self.assertTrue(
+            any(
+                "complete conformal-gravity q2" in claim
+                for claim in certificate["scope"]["not_established"]
+            )
+        )
 
     def test_missing_nonlinear_and_contraction_exports_are_named(self) -> None:
         blocked = {

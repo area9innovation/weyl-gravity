@@ -44,6 +44,10 @@ def _source_manifest() -> dict[str, str]:
         "homological_transfer.py",
         "d_derivation_defect.py",
         "d_derivation_certificate.py",
+        "arity_two_cartan.py",
+        "local_expression_ast.py",
+        "support_local_q2_consumer.py",
+        "nd2_arity_two_certificate.py",
         "local_bach_seed_lift.py",
         "local_bach_seed_certificate.py",
         "local_bach_seed_direct_audit.py",
@@ -51,11 +55,16 @@ def _source_manifest() -> dict[str, str]:
         "schema/local-bach-seed-lift-v2.schema.json",
         "schema/local-bach-seed-direct-audit-v1.schema.json",
         "schema/selected-residual-d-derivation-v1.schema.json",
+        "schema/nd2-arity-two-cartan-engine-v1.schema.json",
         "schema/nonlinear_classical_export.schema.json",
         "residual_cubic_block.py",
         "residual_cubic_certificate.py",
         "tests/test_homological_transfer.py",
         "tests/test_d_derivation_defect.py",
+        "tests/test_arity_two_cartan.py",
+        "tests/test_local_expression_ast.py",
+        "tests/test_support_local_q2_consumer.py",
+        "tests/test_nd2_arity_two_certificate.py",
         "tests/test_local_bach_seed_lift.py",
         "tests/test_local_bach_seed_direct_audit.py",
         "tests/test_nonlinear_transfer_certificate.py",
@@ -100,6 +109,7 @@ def build_certificate() -> dict[str, Any]:
                 "HT1b two mode-specialized local quadratic-Bach density seeds matched to residual q2 entries",
                 "HT1b direct curvature reevaluation of six forward probes and two reverse slice probes",
                 "ND1 exact arity-two D-derivation defect vanishes on all four selected residual HT1 q2 blocks",
+                "ND2 canonical exact local-expression consumer and full arity-two Cartan primitive/obstruction engine",
             ],
             "not_established": [
                 "the complete conformal-gravity q2 or q3 Taylor tensors",
@@ -121,7 +131,7 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_FULL_LOCAL_VERDICT_INPUT_GATE_BLOCKED",
+                "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_ND2_CARTAN_SOLVER_READY_FULL_LOCAL_VERDICT_INPUT_GATE_BLOCKED",
                 "next_certificate": "ND1_COMPLETE_SUPPORT_LOCAL_D_DERIVATION_AND_IOTA_D2",
             },
             {
@@ -188,6 +198,10 @@ def build_certificate() -> dict[str, Any]:
             "nd1_selected_residual_D_derivation_sha256": _sha256(
                 TRANSFER_ROOT / "certificates" / "ND1_SELECTED_RESIDUAL_D_DERIVATION.json"
             ),
+            "nd2_arity_two_cartan_engine_certificate": "quantum-weyl/transfer/certificates/ND2_ARITY_TWO_CARTAN_ENGINE.json",
+            "nd2_arity_two_cartan_engine_sha256": _sha256(
+                TRANSFER_ROOT / "certificates" / "ND2_ARITY_TWO_CARTAN_ENGINE.json"
+            ),
         },
         "assumptions": [
             "The low-arity engine uses a finite exact basis and the declared suspended convention.",
@@ -197,6 +211,7 @@ def build_certificate() -> dict[str, Any]:
             "The certified endpoint projection computes the residual matter-matter Kuranishi bracket but does not substitute for a portable support-local q2 tensor.",
             "The two local Bach density seeds test selected matrix elements only; they do not substitute for an arbitrary-input bilinear Bach tensor or its BV completions.",
             "The vanishing selected residual D-derivation defect does not construct the full support-local interacting Cartan homotopy.",
+            "ND2 fixture primitives and obstruction witnesses certify the exact solver branches only; they contain no conformal-gravity interaction coefficient.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",
         ],
     }
@@ -221,7 +236,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: HT1 RESIDUAL BRACKET, LOCAL BACH SEEDS, AND SELECTED D-DERIVATION COMPUTED; FULL LOCAL INPUT BLOCKED")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: HT1/ND1 RESULTS AND ND2 CARTAN SOLVER READY; FULL LOCAL INPUT BLOCKED")
     return 0
 
 

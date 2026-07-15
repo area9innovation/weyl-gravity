@@ -94,10 +94,10 @@ def valid_payload() -> dict[str, object]:
     generators = _generators()
     symbols = [generator["symbol"] for generator in generators]
     q2_component = {
-        "component_id": "q2_h_h_xi",
-        "output": "h",
-        "inputs": ["h", "xi"],
-        "max_jet_orders": [0, 1],
+        "component_id": "q2_xi_h_h",
+        "output": "xi",
+        "inputs": ["h", "h"],
+        "max_jet_orders": [0, 0],
         "expression": {"terms": [{"coefficient": 1, "operator": "Lie"}]},
     }
     D_component = {
@@ -179,10 +179,10 @@ class SupportLocalQ2ExportPreflightTests(unittest.TestCase):
         with self.assertRaisesRegex(VERIFY.SupportLocalQ2ExportError, "floating-point"):
             VERIFY.validate_export(payload)
 
-    def test_operator_parity_violation_fails_closed(self) -> None:
+    def test_operator_degree_violation_fails_closed(self) -> None:
         payload = valid_payload()
-        payload["q2"]["components"][0]["output"] = "h_star"
-        with self.assertRaisesRegex(VERIFY.SupportLocalQ2ExportError, "parity degree"):
+        payload["q2"]["components"][0]["output"] = "omega_star"
+        with self.assertRaisesRegex(VERIFY.SupportLocalQ2ExportError, "cohomological degree"):
             VERIFY.validate_export(payload)
 
     def test_unverified_derivation_proof_fails_closed(self) -> None:

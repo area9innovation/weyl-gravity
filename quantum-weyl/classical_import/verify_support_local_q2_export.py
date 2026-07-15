@@ -284,6 +284,10 @@ def _validate_operator(
             raise SupportLocalQ2ExportError(f"{name}/{component_id}: expression is missing")
         output_parity = generators[output]["Grassmann_parity"]
         input_parity = sum(generators[symbol]["Grassmann_parity"] for symbol in inputs)
+        output_degree = generators[output]["ghost_number"]
+        input_degree = sum(generators[symbol]["ghost_number"] for symbol in inputs)
+        if output_degree - input_degree != degree:
+            raise SupportLocalQ2ExportError(f"{name}/{component_id}: cohomological degree violation")
         if (output_parity - input_parity - degree) % 2:
             raise SupportLocalQ2ExportError(f"{name}/{component_id}: parity degree violation")
         component_outputs[component_id] = output

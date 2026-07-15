@@ -33,6 +33,15 @@ the selected residual BFV model, but does not construct the full interacting
 Cartan homotopy because the support-local BV tensor and contraction remain
 outside the import gate.
 
+ND2 now supplies the exact consumer and correction/obstruction machinery for
+that next gate.  A canonical rational local-expression AST, independent jet
+checks, exact arity-two Cartan complex, admissibility subcomplex, boundary
+solver, and normalized dual witness are executable.  Nonzero fixtures certify
+both the primitive and obstruction branches and reject a deliberately broken
+`D` action.  They do not supply a conformal-gravity coefficient: the physical
+expression evaluator and support-local `q1/q2/D/iota_cl/pi_cl/s_cl` data remain
+absent.
+
 The support-local `q2` handoff is now executable rather than implicit.  Its
 preflight requires a declared local-polydifferential support category, all
 minimal field/ghost/antifield roles, complete output-row ledgers for `q1`,
@@ -62,7 +71,7 @@ transferred before `QME_RESTORED`.
 | Stage | Exact deliverable | Status |
 |---|---|---|
 | HT0 | Engine, convention, schema, blocker ledger | Ready |
-| HT1 | Import classical Taylor data; compute `ell_2` | Residual cubic bracket, local Bach seeds, and selected residual `D`-derivation computed; complete support-local lift blocked on export |
+| HT1 | Import classical Taylor data; compute `ell_2` | Residual cubic bracket, local Bach seeds, selected residual `D`-derivation, and ND2 Cartan solver computed; complete support-local lift blocked on export |
 | HT2 | Compute `ell_3`; dynamical/topological mixing and centrality ledgers | Not computed |
 | HT3 | Higher arities and particle-filtration spectral sequence | Not computed |
 | HT4 | Cyclic minimal action and formal moduli/deformation interpretation | Not computed |

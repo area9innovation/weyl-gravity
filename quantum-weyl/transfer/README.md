@@ -69,6 +69,25 @@ model only.  The full support-local defect and `iota_D^(2)` remain blocked on
 the arbitrary-input BV tensor and imported contraction, so the setting verdict
 is still `INPUT_GATE_BLOCKED`.
 
+ND2 now supplies the exact consumer and obstruction rail needed when the
+classical support-local payload arrives.  It canonicalizes rational local
+expressions, rejects unknown expression languages, independently reconstructs
+finite `q1`, `q2`, and `D` tensors, and evaluates both
+
+```text
+[L_D,q2],
+A_D^(2) = [q2,iota_D] - L_D^(2).
+```
+
+On the exact arity-two bilinear-map complex it solves
+`[q1,iota_D^(2)] = -A_D^(2)` or retains a normalized dual obstruction
+witness.  Admissibility constraints are part of the solve, so an ambient
+primitive can be rejected when it is not cyclic, real, boundary-compatible,
+or otherwise allowed.  Executable nonzero fixtures exercise the correction,
+obstruction, mutation, and inadmissible-primitive branches.  They carry no
+conformal-gravity coefficient: the physical evaluator and classical
+`q1/q2/D/iota_cl/pi_cl/s_cl` payload remain absent.
+
 The parity combinations
 
 ```text
@@ -100,6 +119,7 @@ python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check
 python3 quantum-weyl/transfer/residual_cubic_certificate.py --check
 python3 quantum-weyl/transfer/local_bach_seed_certificate.py --check
 python3 quantum-weyl/transfer/d_derivation_certificate.py --check
+python3 quantum-weyl/transfer/nd2_arity_two_certificate.py --check
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v

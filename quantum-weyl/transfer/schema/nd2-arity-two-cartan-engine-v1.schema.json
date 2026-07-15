@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nd2-arity-two-cartan-engine-v1.schema.json",
+  "title": "ND2 exact arity-two Cartan consumer and obstruction engine",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "setting_verdict",
+    "convention",
+    "consumer_fixture",
+    "exact_correction_fixture",
+    "mutation_fixture",
+    "obstruction_fixture",
+    "admissibility_fixture",
+    "input_gate",
+    "established",
+    "not_established",
+    "next_gate",
+    "provenance"
+  ],
+  "properties": {
+    "result_id": {"const": "ND2_ARITY_TWO_CARTAN_ENGINE"},
+    "result_state": {"const": "ENGINE_READY_AWAITING_SUPPORT_LOCAL_CLASSICAL_EXPORT"},
+    "lifecycle_layer": {"const": "INTERACTING"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_verdict": {"const": "INPUT_GATE_BLOCKED"},
+    "convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "consumer_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "generator_count",
+        "canonical_expression_sha256",
+        "q2_nonzero",
+        "q1_q2_nilpotency",
+        "unknown_expression_languages",
+        "nonidentity_fixture_evaluation"
+      ],
+      "properties": {
+        "schema_version": {"const": "quantum-weyl-canonical-local-expression-v1"},
+        "generator_count": {"type": "integer", "minimum": 6},
+        "canonical_expression_sha256": {"$ref": "#/$defs/hash"},
+        "q2_nonzero": {"const": true},
+        "q1_q2_nilpotency": {"const": true},
+        "unknown_expression_languages": {"const": "REJECTED"},
+        "nonidentity_fixture_evaluation": {"const": "REJECTED"}
+      }
+    },
+    "exact_correction_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis_dimension",
+        "checks",
+        "cartan_source",
+        "classification",
+        "iota_D2",
+        "correction_identity"
+      ],
+      "properties": {
+        "basis_dimension": {"type": "integer", "minimum": 1},
+        "checks": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"const": true}
+        },
+        "cartan_source": {"$ref": "#/$defs/sparseBilinear"},
+        "classification": {"const": "EXACT_CORRECTION"},
+        "iota_D2": {"$ref": "#/$defs/sparseBilinear"},
+        "correction_identity": {"const": true}
+      }
+    },
+    "mutation_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mutation", "D_derivation_defect", "nonzero_defect_detected", "solver_gate"],
+      "properties": {
+        "mutation": {"type": "string", "minLength": 1},
+        "D_derivation_defect": {"$ref": "#/$defs/sparseBilinear"},
+        "nonzero_defect_detected": {"const": true},
+        "solver_gate": {"const": "REJECTED_BEFORE_CORRECTION_CLASSIFICATION"}
+      }
+    },
+    "obstruction_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "source", "dual_witness", "dual_witness_normalization"],
+      "properties": {
+        "classification": {"const": "NONTRIVIAL_OBSTRUCTION"},
+        "source": {"$ref": "#/$defs/sparseBilinear"},
+        "dual_witness": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/exactScalar"}
+        },
+        "dual_witness_normalization": {"const": "1"}
+      }
+    },
+    "admissibility_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ambient_classification",
+        "admissible_classification",
+        "forbidden_primitive_coordinate_count",
+        "dual_witness_present"
+      ],
+      "properties": {
+        "ambient_classification": {"const": "EXACT_CORRECTION"},
+        "admissible_classification": {"const": "NONTRIVIAL_OBSTRUCTION"},
+        "forbidden_primitive_coordinate_count": {"type": "integer", "minimum": 1},
+        "dual_witness_present": {"const": true}
+      }
+    },
+    "input_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "support_local_classical_bv_q2",
+        "local_D_action_on_bv_generators",
+        "classical_inclusion_iota_cl",
+        "classical_projection_pi_cl",
+        "classical_homotopy_s_cl",
+        "physical_evaluator"
+      ],
+      "properties": {
+        "support_local_classical_bv_q2": {"const": "NOT_AVAILABLE"},
+        "local_D_action_on_bv_generators": {"const": "NOT_AVAILABLE"},
+        "classical_inclusion_iota_cl": {"const": "NOT_AVAILABLE"},
+        "classical_projection_pi_cl": {"const": "NOT_AVAILABLE"},
+        "classical_homotopy_s_cl": {"const": "NOT_AVAILABLE"},
+        "physical_evaluator": {"const": "NOT_REGISTERED_PENDING_EXPRESSION_SCHEMA"}
+      }
+    },
+    "established": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "not_established": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classical_snapshot",
+        "classical_snapshot_sha256",
+        "support_local_contract",
+        "support_local_contract_sha256",
+        "source_manifest",
+        "source_manifest_sha256",
+        "schema"
+      ],
+      "properties": {
+        "classical_snapshot": {"type": "string", "minLength": 1},
+        "classical_snapshot_sha256": {"$ref": "#/$defs/hash"},
+        "support_local_contract": {"type": "string", "minLength": 1},
+        "support_local_contract_sha256": {"$ref": "#/$defs/hash"},
+        "source_manifest": {"$ref": "#/$defs/hashManifest"},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/nd2-arity-two-cartan-engine-v1.schema.json"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hashManifest": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/hash"}
+    },
+    "exactScalar": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"},
+    "sparseBilinear": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["degree", "coordinate_convention", "ambient_coordinate_count", "nonzero_entries"],
+      "properties": {
+        "degree": {"type": "integer"},
+        "coordinate_convention": {"const": "graded-symmetric i<=j; odd diagonal omitted"},
+        "ambient_coordinate_count": {"type": "integer", "minimum": 0},
+        "nonzero_entries": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {"type": "integer", "minimum": 0},
+              {"type": "integer", "minimum": 0},
+              {"type": "integer", "minimum": 0},
+              {"$ref": "#/$defs/exactScalar"}
+            ],
+            "minItems": 4,
+            "maxItems": 4
+          }
+        }
+      }
+    }
+  }
+}
