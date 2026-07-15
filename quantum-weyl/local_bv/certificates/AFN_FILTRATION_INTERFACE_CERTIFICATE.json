@@ -1,0 +1,94 @@
+{
+  "afn0_to_minimal_comparison_statuses": [
+    "LIFTS_UNCHANGED",
+    "REQUIRES_ANTIFIELD_COMPLETION",
+    "BECOMES_EXACT",
+    "IS_OBSTRUCTED"
+  ],
+  "block_manifest": {
+    "comparison_statuses": [
+      "LIFTS_UNCHANGED",
+      "REQUIRES_ANTIFIELD_COMPLETION",
+      "BECOMES_EXACT",
+      "IS_OBSTRUCTED"
+    ],
+    "components": [
+      {
+        "antifield_number_shift": 0,
+        "component": "gamma",
+        "matrix": {
+          "column_count": 1,
+          "entries": [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "column": 0,
+              "row": 0
+            }
+          ],
+          "row_count": 1
+        },
+        "source": {
+          "antifield_number": 0,
+          "form_degree": 0,
+          "ghost_number": 0
+        }
+      },
+      {
+        "antifield_number_shift": 1,
+        "component": "Q_gt0[1]",
+        "matrix": {
+          "column_count": 1,
+          "entries": [],
+          "row_count": 1
+        },
+        "source": {
+          "antifield_number": 0,
+          "form_degree": 0,
+          "ghost_number": 0
+        }
+      },
+      {
+        "antifield_number_shift": -1,
+        "component": "delta",
+        "matrix": {
+          "column_count": 1,
+          "entries": [],
+          "row_count": 1
+        },
+        "source": {
+          "antifield_number": 1,
+          "form_degree": 0,
+          "ghost_number": -1
+        }
+      }
+    ],
+    "ordering": "increasing_antifield_number"
+  },
+  "canonical_hashes": {
+    "source_manifest_sha256": "de1d5c1de75d61e216a4f9ea8429c54a9ee821cdbe541a8ed42feec7778871f4"
+  },
+  "checks": {
+    "Q_squared_zero": "VERIFIED",
+    "afn0_view_reuses_relative_cohomology_API": "VERIFIED",
+    "coordinate_Q_dh_commutator_zero": "VERIFIED",
+    "d_h_squared_zero": "VERIFIED",
+    "delta_minus_one_block": "VERIFIED",
+    "gamma_diagonal_block": "VERIFIED",
+    "positive_Q_gt0_block": "VERIFIED",
+    "totalized_differential_squared_zero": "VERIFIED"
+  },
+  "classical_commit": "UNFROZEN",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "not_computed": [
+    "classical delta, gamma, and positive-filtration block entries",
+    "minimal-BV quotient",
+    "AFN0-to-minimal lift comparison"
+  ],
+  "result_id": "AFN_FILTRATION_INTERFACE_CERTIFICATE",
+  "result_state": "INTERFACE_READY_EXPORT_PENDING"
+}

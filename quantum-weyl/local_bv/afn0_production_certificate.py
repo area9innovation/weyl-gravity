@@ -22,8 +22,10 @@ def _source_manifest() -> dict[str, str]:
     paths = (
         "afn0_production.py",
         "afn0_production_certificate.py",
+        "basis_exhaustiveness.py",
         "schema/afn0_result.schema.json",
         "tests/test_afn0_production.py",
+        "tests/test_basis_exhaustiveness.py",
     )
     return {
         path: hashlib.sha256((PACKAGE_ROOT / path).read_bytes()).hexdigest()
@@ -39,16 +41,16 @@ def build_certificate() -> dict[str, Any]:
         candidate["representative_id"]
         for result in results.values()
         for slice_ in result["slices"]
-        for candidate in slice_["candidates"]
+        for candidate in slice_["truncated_quotient_result"]["candidates"]
         if candidate["relative_cohomology_status"] == "EXACT"
     }
     if exact_ids != {"CT_BOX_R", "ANOM_OMEGA_BOX_R"}:
         raise AssertionError("AFN0 known-exact ledger drifted")
     if any(
-        candidate["nontriviality_witness"] is not None
+        candidate["nonmembership_witness"] is not None
         for result in results.values()
         for slice_ in result["slices"]
-        for candidate in slice_["candidates"]
+        for candidate in slice_["truncated_quotient_result"]["candidates"]
     ):
         raise AssertionError("incomplete AFN0 run promoted a nontriviality witness")
     return {
@@ -67,6 +69,9 @@ def build_certificate() -> dict[str, Any]:
             "BoxR_explicit_primitive": "VERIFIED",
             "omega_BoxR_explicit_primitive": "VERIFIED",
             "premature_nontriviality_promotion_absent": "VERIFIED",
+            "closure_and_truncated_quotient_outputs_separated": "VERIFIED",
+            "truncated_witness_vocabulary": "VERIFIED",
+            "grading_integer_signature_enumeration": "VERIFIED",
             "complete_lower_form_basis": "IN_PROGRESS",
             "Euler_intrinsic_tower": "IN_PROGRESS",
         },
@@ -81,7 +86,7 @@ def build_certificate() -> dict[str, Any]:
             "generate all lower-form ghost and generalized-connection monomials at total engineering dimension four",
             "assemble the production Q and d_h sparse matrices",
             "complete the omega-Euler intrinsic tower",
-            "emit dual nontriviality witnesses only after the complete boundary rank is frozen",
+            "emit COMPLETE_NONTRIVIALITY_WITNESS only after the complete boundary rank and exhaustiveness proof are frozen",
         ],
     }
 

@@ -29,6 +29,20 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
                 {"numerator": 1, "denominator": 1},
             ],
         )
+        checks = certificate["checks"]
+        self.assertEqual(checks["euler_top_transgression_regression"], "VERIFIED")
+        self.assertEqual(checks["unresolved_domega_theta_regression"], "VERIFIED")
+        self.assertEqual(
+            checks["lower_descendant_complete_cancellation"], "IN_PROGRESS"
+        )
+        template = certificate["euler_intrinsic_transgression"][
+            "generalized_connection_total_form"
+        ]
+        self.assertEqual(template["dimension_specialization"], 4)
+        self.assertEqual(
+            template["certificate_status"],
+            "TEMPLATE_CANDIDATE_NOT_YET_VERIFIED_TOWER",
+        )
         self.assertIn("omega E4", " ".join(certificate["not_computed"]))
 
 

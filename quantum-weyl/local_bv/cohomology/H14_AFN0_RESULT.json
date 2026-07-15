@@ -27,7 +27,7 @@
           "adjoin Box R with its explicit divergence primitive",
           "for ghost number one multiply carriers by the undifferentiated Weyl ghost"
         ],
-        "basis_manifest_hash": "13e64cacc6cbba2bfe7ffedd3496157df27aab7c46bd57d76332a2762b2c3bae",
+        "basis_manifest_hash": "1ea4e2f13966a5c58eab637ec6d5e1784eea37846e9259d677b96d913898171d",
         "candidate_ids": [
           "ANOM_OMEGA_C2",
           "ANOM_OMEGA_BOX_R"
@@ -42,6 +42,7 @@
           "parity": "even",
           "spacetime_dimension": 4
         },
+        "full_top_form_basis_status": "IN_PROGRESS",
         "identity_quotient_ranks": {
           "algebraic_bianchi_rank": 1,
           "quadratic_curvature_quotient_dimension": 3,
@@ -51,43 +52,183 @@
         "lower_form_mapping_cone_basis_status": "IN_PROGRESS",
         "pure_diff_ghost_basis_status": "IN_PROGRESS",
         "raw_monomial_count": 105,
-        "top_form_carrier_basis_status": "COMPLETE"
-      },
-      "candidates": [
-        {
-          "closure_witness": {
-            "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
-            "status": "CLOSED"
+        "structural_grading_enumeration": {
+          "canonical_dimension": "PENDING_COMPLETE_IDENTITY_QUOTIENT",
+          "currently_generated_signature_count": 2,
+          "currently_generated_signatures": [
+            {
+              "curvature_count": 1,
+              "tensor_derivative_count": 2,
+              "weyl_ghost_derivative_order": 0,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 2,
+              "tensor_derivative_count": 0,
+              "weyl_ghost_derivative_order": 0,
+              "weyl_ghost_factor_count": 1
+            }
+          ],
+          "excluded_types_with_reason": [
+            {
+              "reason": "metric compatibility gives no nonconstant tensor seed",
+              "type": "pure_metric_derivatives"
+            },
+            {
+              "reason": "engineering convention and index-orbit enumeration are pending",
+              "type": "pure_diffeomorphism_ghost_signatures"
+            },
+            {
+              "reason": "Euler generalized-connection bidegree expansion is in progress",
+              "type": "unexpanded_generalized_connection_signatures"
+            }
+          ],
+          "exhaustiveness_status": "IN_PROGRESS",
+          "generated_orbit_count": "PENDING_INDEX_ORBIT_ENUMERATION",
+          "generator_algebra": {
+            "covariant_derivative": {
+              "engineering_dimension": 1,
+              "ghost_number": 0
+            },
+            "curvature_or_weyl_tensor": {
+              "engineering_dimension": 2,
+              "ghost_number": 0
+            },
+            "metric_inverse_metric_levi_civita": {
+              "engineering_dimension": 0,
+              "ghost_number": 0
+            },
+            "weyl_ghost": {
+              "derivative_cost": 1,
+              "engineering_dimension": 0,
+              "ghost_number": 1
+            }
           },
-          "exactness_witness": null,
-          "nontriviality_witness": null,
-          "relative_cohomology_status": "UNDECIDED",
-          "representative_id": "ANOM_OMEGA_C2",
-          "representative_sha256": "183c7e6e0075f06cfc9431037fc6123752886e669c3db0177e332ea9bf043150"
+          "grading_equations": [
+            "2*n_curvature + n_tensor_derivative + n_ghost_derivative = 4",
+            "n_weyl_ghost = 1",
+            "all signature variables are nonnegative integers"
+          ],
+          "grading_manifest_hash": "f81068a2daa7c2f932421080f3c8e6042867f004ce02dd9d4a0bc76ab9a5f010",
+          "integer_solution_count": 9,
+          "integer_solutions_for_monomial_types": [
+            {
+              "curvature_count": 0,
+              "tensor_derivative_count": 0,
+              "weyl_ghost_derivative_order": 4,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 0,
+              "tensor_derivative_count": 1,
+              "weyl_ghost_derivative_order": 3,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 0,
+              "tensor_derivative_count": 2,
+              "weyl_ghost_derivative_order": 2,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 0,
+              "tensor_derivative_count": 3,
+              "weyl_ghost_derivative_order": 1,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 0,
+              "tensor_derivative_count": 4,
+              "weyl_ghost_derivative_order": 0,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 1,
+              "tensor_derivative_count": 0,
+              "weyl_ghost_derivative_order": 2,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 1,
+              "tensor_derivative_count": 1,
+              "weyl_ghost_derivative_order": 1,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 1,
+              "tensor_derivative_count": 2,
+              "weyl_ghost_derivative_order": 0,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 2,
+              "tensor_derivative_count": 0,
+              "weyl_ghost_derivative_order": 0,
+              "weyl_ghost_factor_count": 1
+            }
+          ]
         },
-        {
-          "closure_witness": {
-            "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
-            "status": "CLOSED"
+        "top_curvature_carrier_basis_status": "COMPLETE"
+      },
+      "closure_result": {
+        "candidates": [
+          {
+            "closure_status": "CLOSED",
+            "closure_witness": {
+              "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
+              "intrinsic_certificate": "quantum-weyl/local_bv/certificates/LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE.json"
+            },
+            "representative_id": "ANOM_OMEGA_C2",
+            "representative_sha256": "183c7e6e0075f06cfc9431037fc6123752886e669c3db0177e332ea9bf043150"
           },
-          "exactness_witness": {
-            "equation": "omega BoxR = -(1/12) Q_W(R^2) - d_h(R nabla omega - omega nabla R)",
-            "primitive": "R^2",
-            "proof_certificate": "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json"
-          },
-          "nontriviality_witness": null,
-          "relative_cohomology_status": "EXACT",
-          "representative_id": "ANOM_OMEGA_BOX_R",
-          "representative_sha256": "9b5b62f64bdf6aafe0a2da0702db005a7231b5b371288a506301ef948f430be6"
-        }
-      ],
+          {
+            "closure_status": "CLOSED",
+            "closure_witness": {
+              "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
+              "intrinsic_certificate": "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json"
+            },
+            "representative_id": "ANOM_OMEGA_BOX_R",
+            "representative_sha256": "9b5b62f64bdf6aafe0a2da0702db005a7231b5b371288a506301ef948f430be6"
+          }
+        ],
+        "closure_scope": "TOP_RELATIVE_CLOSURE",
+        "result_id": "H14_AFN0_EVEN_NO_EULER_CLOSURE",
+        "result_state": "CLOSURE_RESULT"
+      },
       "excluded_required_candidate": {
         "reason": "intrinsic Euler descent is in progress",
         "representative_id": "ANOM_OMEGA_E4"
       },
       "parity": "even",
-      "relative_cohomology_status": "UNDECIDED",
-      "slice_id": "H14_AFN0_EVEN_WITHOUT_EULER"
+      "slice_id": "H14_AFN0_EVEN_WITHOUT_EULER",
+      "truncated_quotient_result": {
+        "basis_exhaustiveness_status": "TRUNCATED",
+        "candidates": [
+          {
+            "exactness_witness": null,
+            "nonmembership_witness": null,
+            "permitted_nonmembership_witness_type": "TRUNCATED_NONMEMBERSHIP_WITNESS",
+            "relative_cohomology_status": "UNDECIDED",
+            "representative_id": "ANOM_OMEGA_C2",
+            "representative_sha256": "183c7e6e0075f06cfc9431037fc6123752886e669c3db0177e332ea9bf043150"
+          },
+          {
+            "exactness_witness": {
+              "equation": "omega BoxR = -(1/12) Q_W(R^2) - d_h(R nabla omega - omega nabla R)",
+              "primitive": "R^2",
+              "proof_certificate": "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json"
+            },
+            "nonmembership_witness": null,
+            "permitted_nonmembership_witness_type": "NOT_APPLICABLE_EXACT",
+            "relative_cohomology_status": "EXACT",
+            "representative_id": "ANOM_OMEGA_BOX_R",
+            "representative_sha256": "9b5b62f64bdf6aafe0a2da0702db005a7231b5b371288a506301ef948f430be6"
+          }
+        ],
+        "relative_cohomology_status": "UNDECIDED",
+        "result_id": "H14_AFN0_EVEN_NO_EULER_TRUNCATED_QUOTIENT",
+        "result_state": "TRUNCATED_QUOTIENT_RESULT"
+      }
     },
     {
       "basis_completeness": {
@@ -99,7 +240,7 @@
           "adjoin Box R with its explicit divergence primitive",
           "for ghost number one multiply carriers by the undifferentiated Weyl ghost"
         ],
-        "basis_manifest_hash": "dbc5bb5abeaa3ec15d904ea927c9c1555c153db4f1ae30230475983d1baef257",
+        "basis_manifest_hash": "efc6ff5d09d60774a43626d99cea48fffd6be6603501280d3e9e82b48883c19f",
         "candidate_ids": [
           "ANOM_OMEGA_C_DUAL_C"
         ],
@@ -113,6 +254,7 @@
           "parity": "odd",
           "spacetime_dimension": 4
         },
+        "full_top_form_basis_status": "IN_PROGRESS",
         "identity_quotient_ranks": {
           "algebraic_bianchi_rank": 1,
           "quadratic_curvature_quotient_dimension": 3,
@@ -122,25 +264,159 @@
         "lower_form_mapping_cone_basis_status": "IN_PROGRESS",
         "pure_diff_ghost_basis_status": "IN_PROGRESS",
         "raw_monomial_count": 105,
-        "top_form_carrier_basis_status": "COMPLETE"
-      },
-      "candidates": [
-        {
-          "closure_witness": {
-            "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
-            "status": "CLOSED"
+        "structural_grading_enumeration": {
+          "canonical_dimension": "PENDING_COMPLETE_IDENTITY_QUOTIENT",
+          "currently_generated_signature_count": 2,
+          "currently_generated_signatures": [
+            {
+              "curvature_count": 1,
+              "tensor_derivative_count": 2,
+              "weyl_ghost_derivative_order": 0,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 2,
+              "tensor_derivative_count": 0,
+              "weyl_ghost_derivative_order": 0,
+              "weyl_ghost_factor_count": 1
+            }
+          ],
+          "excluded_types_with_reason": [
+            {
+              "reason": "metric compatibility gives no nonconstant tensor seed",
+              "type": "pure_metric_derivatives"
+            },
+            {
+              "reason": "engineering convention and index-orbit enumeration are pending",
+              "type": "pure_diffeomorphism_ghost_signatures"
+            },
+            {
+              "reason": "Euler generalized-connection bidegree expansion is in progress",
+              "type": "unexpanded_generalized_connection_signatures"
+            }
+          ],
+          "exhaustiveness_status": "IN_PROGRESS",
+          "generated_orbit_count": "PENDING_INDEX_ORBIT_ENUMERATION",
+          "generator_algebra": {
+            "covariant_derivative": {
+              "engineering_dimension": 1,
+              "ghost_number": 0
+            },
+            "curvature_or_weyl_tensor": {
+              "engineering_dimension": 2,
+              "ghost_number": 0
+            },
+            "metric_inverse_metric_levi_civita": {
+              "engineering_dimension": 0,
+              "ghost_number": 0
+            },
+            "weyl_ghost": {
+              "derivative_cost": 1,
+              "engineering_dimension": 0,
+              "ghost_number": 1
+            }
           },
-          "exactness_witness": null,
-          "nontriviality_witness": null,
-          "relative_cohomology_status": "UNDECIDED",
-          "representative_id": "ANOM_OMEGA_C_DUAL_C",
-          "representative_sha256": "5195e0e5d268da8c20c051a4122172aae05e5f60c3a9cc4393288110994c2760"
-        }
-      ],
+          "grading_equations": [
+            "2*n_curvature + n_tensor_derivative + n_ghost_derivative = 4",
+            "n_weyl_ghost = 1",
+            "all signature variables are nonnegative integers"
+          ],
+          "grading_manifest_hash": "f81068a2daa7c2f932421080f3c8e6042867f004ce02dd9d4a0bc76ab9a5f010",
+          "integer_solution_count": 9,
+          "integer_solutions_for_monomial_types": [
+            {
+              "curvature_count": 0,
+              "tensor_derivative_count": 0,
+              "weyl_ghost_derivative_order": 4,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 0,
+              "tensor_derivative_count": 1,
+              "weyl_ghost_derivative_order": 3,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 0,
+              "tensor_derivative_count": 2,
+              "weyl_ghost_derivative_order": 2,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 0,
+              "tensor_derivative_count": 3,
+              "weyl_ghost_derivative_order": 1,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 0,
+              "tensor_derivative_count": 4,
+              "weyl_ghost_derivative_order": 0,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 1,
+              "tensor_derivative_count": 0,
+              "weyl_ghost_derivative_order": 2,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 1,
+              "tensor_derivative_count": 1,
+              "weyl_ghost_derivative_order": 1,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 1,
+              "tensor_derivative_count": 2,
+              "weyl_ghost_derivative_order": 0,
+              "weyl_ghost_factor_count": 1
+            },
+            {
+              "curvature_count": 2,
+              "tensor_derivative_count": 0,
+              "weyl_ghost_derivative_order": 0,
+              "weyl_ghost_factor_count": 1
+            }
+          ]
+        },
+        "top_curvature_carrier_basis_status": "COMPLETE"
+      },
+      "closure_result": {
+        "candidates": [
+          {
+            "closure_status": "CLOSED",
+            "closure_witness": {
+              "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
+              "intrinsic_certificate": "quantum-weyl/local_bv/certificates/LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE.json"
+            },
+            "representative_id": "ANOM_OMEGA_C_DUAL_C",
+            "representative_sha256": "5195e0e5d268da8c20c051a4122172aae05e5f60c3a9cc4393288110994c2760"
+          }
+        ],
+        "closure_scope": "TOP_RELATIVE_CLOSURE",
+        "result_id": "H14_AFN0_ODD_CLOSURE",
+        "result_state": "CLOSURE_RESULT"
+      },
       "excluded_required_candidate": null,
       "parity": "odd",
-      "relative_cohomology_status": "UNDECIDED",
-      "slice_id": "H14_AFN0_ODD"
+      "slice_id": "H14_AFN0_ODD",
+      "truncated_quotient_result": {
+        "basis_exhaustiveness_status": "TRUNCATED",
+        "candidates": [
+          {
+            "exactness_witness": null,
+            "nonmembership_witness": null,
+            "permitted_nonmembership_witness_type": "TRUNCATED_NONMEMBERSHIP_WITNESS",
+            "relative_cohomology_status": "UNDECIDED",
+            "representative_id": "ANOM_OMEGA_C_DUAL_C",
+            "representative_sha256": "5195e0e5d268da8c20c051a4122172aae05e5f60c3a9cc4393288110994c2760"
+          }
+        ],
+        "relative_cohomology_status": "UNDECIDED",
+        "result_id": "H14_AFN0_ODD_TRUNCATED_QUOTIENT",
+        "result_state": "TRUNCATED_QUOTIENT_RESULT"
+      }
     }
   ]
 }

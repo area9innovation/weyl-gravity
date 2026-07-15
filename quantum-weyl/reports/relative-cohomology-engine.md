@@ -67,11 +67,14 @@ and `d_h` matrices, the dimensions of `H^{0,4}(s|d)` and `H^{1,4}(s|d)`, and
 the antifield-dependent quotient.  `NONTRIVIAL` will be emitted only after a
 candidate survives the complete production coboundary space.
 
-The dual witness is deliberately emitted only with a `NONTRIVIAL` claim.  If
-the boundary rows are `B` and the representative is `a`, the certificate
-stores exact coordinates for `lambda` with `B lambda = 0` and
-`lambda(a) = 1`.  This makes non-membership independently checkable without
-replaying sparse quotient selection.
+If the boundary rows are `B` and the representative is `a`, the engine stores
+exact coordinates for `lambda` with `B lambda = 0` and `lambda(a) = 1`.
+The default label is `TRUNCATED_NONMEMBERSHIP_WITNESS`: it proves only
+non-membership in the supplied boundary space.  The API emits
+`COMPLETE_NONTRIVIALITY_WITNESS` only when its caller explicitly supplies
+`basis_exhaustiveness_status=EXHAUSTIVE`.  Production code must bind that
+promotion to a manifest proving exhaustiveness under the declared locality,
+dimension, and bidegree bounds.
 
 ## Next input
 

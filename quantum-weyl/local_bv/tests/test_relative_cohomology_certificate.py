@@ -20,6 +20,10 @@ class RelativeCohomologyCertificateTests(unittest.TestCase):
             [{"numerator": 1, "denominator": 1}],
         )
         self.assertEqual(
+            certificate["fixture"]["dual_witness_type"],
+            "COMPLETE_NONTRIVIALITY_WITNESS",
+        )
+        self.assertEqual(
             certificate["checks"]["dual_nontriviality_witnesses"], "VERIFIED"
         )
         self.assertIn("production", " ".join(certificate["not_computed"]))

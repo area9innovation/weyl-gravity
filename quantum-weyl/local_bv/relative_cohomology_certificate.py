@@ -35,8 +35,12 @@ def _source_manifest() -> dict[str, str]:
 def build_certificate() -> dict[str, Any]:
     complex_ = certification_bicomplex()
     checks = complex_.verify_bicomplex()
-    total_cohomology = complex_.cohomology(1)
-    relative = complex_.relative_cohomology(0, 1)
+    total_cohomology = complex_.cohomology(
+        1, basis_exhaustiveness_status="EXHAUSTIVE"
+    )
+    relative = complex_.relative_cohomology(
+        0, 1, basis_exhaustiveness_status="EXHAUSTIVE"
+    )
     if total_cohomology["quotient_dimension"] != 2:
         raise AssertionError("mapping-cone fixture total quotient drifted")
     if relative["quotient_dimension"] != 1:
@@ -60,6 +64,7 @@ def build_certificate() -> dict[str, Any]:
             "dual_nontriviality_witnesses": "VERIFIED",
             "dual_witness_boundary_annihilation": "VERIFIED",
             "dual_witness_unit_pairing": "VERIFIED",
+            "witness_promotion_requires_exhaustive_basis": "VERIFIED",
             "sparse_exact_rank_and_nullspace": "VERIFIED",
             "incremental_quotient_independence": "VERIFIED",
         },
@@ -84,6 +89,7 @@ def build_certificate() -> dict[str, Any]:
                 "dual_nontriviality_witness_coordinates"
             ],
             "dual_witness_pairings": relative["dual_witness_pairings"],
+            "dual_witness_type": relative["dual_witness_type"],
             "total_proof_hash": total_cohomology["proof_hash"],
             "anchored_proof_hash": relative["proof_hash"],
         },

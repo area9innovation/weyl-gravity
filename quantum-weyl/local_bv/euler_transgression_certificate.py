@@ -59,6 +59,9 @@ def build_certificate() -> dict[str, Any]:
             "euler_full_diff_completed_tower": "VERIFIED",
             "omega_E4_generalized_connection_template": "VERIFIED",
             "omega_E4_intrinsic_descent_continuation": "IN_PROGRESS",
+            "euler_top_transgression_regression": "VERIFIED",
+            "unresolved_domega_theta_regression": "VERIFIED",
+            "lower_descendant_complete_cancellation": "IN_PROGRESS",
         },
         "derived_rows": {
             "weyl_connection_variation": {
@@ -95,6 +98,21 @@ def build_certificate() -> dict[str, Any]:
                     "formula": "Theorem 1, equations (3.16)-(3.20)",
                 },
                 "generalized_connection": generalized["generalized_connection"],
+                "source_formula": "Phi^[n-r]_r = (-1)^p 2^p m!/(r!p!) psi_(2p) W^p, p=m-r, m=n/2",
+                "source_convention_map": {
+                    "source_s_tilde_W": "project_total_D = Q_W + signed d_h",
+                    "source_tilde_omega_alpha": generalized[
+                        "generalized_connection"
+                    ],
+                    "source_W_mu_nu": "project Weyl tensor-valued two-form",
+                    "source_omega": "project odd Weyl ghost",
+                    "normalization_status": "PENDING_TOP_EULER_MATCH",
+                },
+                "dimension_specialization": 4,
+                "derived_coefficients": [
+                    _fraction(component["coefficient"])
+                    for component in generalized["components"]
+                ],
                 "components": [
                     {
                         **{
@@ -109,6 +127,7 @@ def build_certificate() -> dict[str, Any]:
                 "type_a_component_indices": list(generalized["type_a_component_indices"]),
                 "type_b_component_indices": list(generalized["type_b_component_indices"]),
                 "expansion_status": generalized["expansion_status"],
+                "certificate_status": "TEMPLATE_CANDIDATE_NOT_YET_VERIFIED_TOWER",
                 "template_sha256": canonical_sha256(
                     {
                         "connection": generalized["generalized_connection"],

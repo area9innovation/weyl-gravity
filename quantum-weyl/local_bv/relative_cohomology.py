@@ -454,7 +454,10 @@ class FiniteBicomplex:
         total_degree: int,
         *,
         max_form_degree: int | None = None,
+        basis_exhaustiveness_status: str = "TRUNCATED",
     ) -> dict[str, object]:
+        if basis_exhaustiveness_status not in {"TRUNCATED", "EXHAUSTIVE"}:
+            raise ValueError("unknown basis exhaustiveness status")
         self.verify_bicomplex()
         differential = self.total_differential(
             total_degree, max_form_degree=max_form_degree
@@ -489,6 +492,11 @@ class FiniteBicomplex:
         ]
         representative_coordinates = _coordinates_payload(representatives)
         dual_witness_coordinates = _coordinates_payload(dual_witnesses)
+        witness_type = (
+            "COMPLETE_NONTRIVIALITY_WITNESS"
+            if basis_exhaustiveness_status == "EXHAUSTIVE"
+            else "TRUNCATED_NONMEMBERSHIP_WITNESS"
+        )
         return {
             "total_degree": total_degree,
             "max_form_degree": max_form_degree,
@@ -500,6 +508,8 @@ class FiniteBicomplex:
             "quotient_dimension": quotient_dimension,
             "representatives": representatives,
             "representative_coordinates": representative_coordinates,
+            "basis_exhaustiveness_status": basis_exhaustiveness_status,
+            "dual_witness_type": witness_type,
             "dual_nontriviality_witness_coordinates": dual_witness_coordinates,
             "dual_witness_pairings": [
                 {
@@ -523,6 +533,8 @@ class FiniteBicomplex:
         self,
         ghost_number: int,
         form_degree: int,
+        *,
+        basis_exhaustiveness_status: str = "TRUNCATED",
     ) -> dict[str, object]:
         """Project complete total cocycles onto the requested top bidegree.
 
@@ -533,6 +545,8 @@ class FiniteBicomplex:
         ``H^{ghost_number,form_degree}(Q|d_h)``.
         """
 
+        if basis_exhaustiveness_status not in {"TRUNCATED", "EXHAUSTIVE"}:
+            raise ValueError("unknown basis exhaustiveness status")
         anchor = Bidegree(ghost_number, form_degree)
         if not 0 <= form_degree <= 4:
             raise ValueError("anchor form degree is outside 0,...,4")
@@ -590,7 +604,9 @@ class FiniteBicomplex:
         )
 
         total = self.cohomology(
-            total_degree, max_form_degree=form_degree
+            total_degree,
+            max_form_degree=form_degree,
+            basis_exhaustiveness_status=basis_exhaustiveness_status,
         )
         quotient_dimension = len(relative_representatives)
         lower_only_dimension = total["quotient_dimension"] - quotient_dimension
@@ -610,11 +626,17 @@ class FiniteBicomplex:
         representative_payload = _coordinates_payload(relative_representatives)
         lift_payload = _coordinates_payload(descent_lifts)
         dual_witness_payload = _coordinates_payload(dual_witnesses)
+        witness_type = (
+            "COMPLETE_NONTRIVIALITY_WITNESS"
+            if basis_exhaustiveness_status == "EXHAUSTIVE"
+            else "TRUNCATED_NONMEMBERSHIP_WITNESS"
+        )
         return {
             "ghost_number": ghost_number,
             "form_degree": form_degree,
             "total_degree": total_degree,
             "descent_completion_status": "COMPLETE_WITHIN_SUPPLIED_BICOMPLEX",
+            "basis_exhaustiveness_status": basis_exhaustiveness_status,
             "top_ansatz_dimension": self._dimension(anchor),
             "top_ansatz_basis_hash": canonical_sha256(top_basis_payload),
             "complete_total_cocycle_dimension": len(cocycle_lifts),
@@ -632,6 +654,7 @@ class FiniteBicomplex:
                 }
                 for lift in lift_payload
             ],
+            "dual_witness_type": witness_type,
             "dual_nontriviality_witness_coordinates": dual_witness_payload,
             "dual_witness_pairings": [
                 {
@@ -648,6 +671,7 @@ class FiniteBicomplex:
                         "ghost_number": ghost_number,
                         "form_degree": form_degree,
                     },
+                    "basis_exhaustiveness_status": basis_exhaustiveness_status,
                     "top_basis": top_basis_payload,
                     "total_basis_hash": total["ansatz_basis_hash"],
                     "top_cocycles": _coordinates_payload(top_cocycles),

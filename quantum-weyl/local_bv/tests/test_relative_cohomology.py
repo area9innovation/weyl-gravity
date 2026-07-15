@@ -29,6 +29,9 @@ class RelativeCohomologyTests(unittest.TestCase):
             {"numerator": 1, "denominator": 1},
             {"numerator": 1, "denominator": 1},
         ])
+        self.assertEqual(
+            result["dual_witness_type"], "TRUNCATED_NONMEMBERSHIP_WITNESS"
+        )
         self.assertEqual(len(result["proof_hash"]), 64)
 
     def test_anchored_relative_quotient_excludes_lower_only_class(self) -> None:
@@ -49,7 +52,22 @@ class RelativeCohomologyTests(unittest.TestCase):
         self.assertEqual(result["dual_witness_pairings"], [
             {"numerator": 1, "denominator": 1}
         ])
+        self.assertEqual(
+            result["dual_witness_type"], "TRUNCATED_NONMEMBERSHIP_WITNESS"
+        )
         self.assertEqual(result["closure_witnesses"][0]["residual_status"], "ZERO")
+
+    def test_complete_witness_requires_explicit_exhaustiveness(self) -> None:
+        result = certification_bicomplex().relative_cohomology(
+            0, 1, basis_exhaustiveness_status="EXHAUSTIVE"
+        )
+        self.assertEqual(
+            result["dual_witness_type"], "COMPLETE_NONTRIVIALITY_WITNESS"
+        )
+        with self.assertRaisesRegex(ValueError, "exhaustiveness"):
+            certification_bicomplex().relative_cohomology(
+                0, 1, basis_exhaustiveness_status="ASSUMED"
+            )
 
     def test_lower_anchor_sees_the_lower_only_class(self) -> None:
         result = certification_bicomplex().relative_cohomology(1, 0)

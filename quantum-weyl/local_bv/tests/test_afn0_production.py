@@ -26,10 +26,25 @@ class AfnZeroProductionTests(unittest.TestCase):
         )
         self.assertTrue(
             all(
-                slice_["relative_cohomology_status"] == "UNDECIDED"
+                slice_["truncated_quotient_result"]["relative_cohomology_status"]
+                == "UNDECIDED"
                 for result in results.values()
                 for slice_ in result["slices"]
             )
+        )
+        expected = {
+            "H04_AFN0_EVEN_CLOSURE",
+            "H04_AFN0_ODD_CLOSURE",
+            "H14_AFN0_EVEN_NO_EULER_CLOSURE",
+            "H14_AFN0_ODD_CLOSURE",
+        }
+        self.assertEqual(
+            {
+                slice_["closure_result"]["result_id"]
+                for result in results.values()
+                for slice_ in result["slices"]
+            },
+            expected,
         )
 
     def test_known_exact_classes_keep_explicit_witnesses(self) -> None:
@@ -37,13 +52,17 @@ class AfnZeroProductionTests(unittest.TestCase):
             candidate["representative_id"]: candidate
             for result in afn0_production_results().values()
             for slice_ in result["slices"]
-            for candidate in slice_["candidates"]
+            for candidate in slice_["truncated_quotient_result"]["candidates"]
         }
         for class_id in ("CT_BOX_R", "ANOM_OMEGA_BOX_R"):
             self.assertEqual(candidates[class_id]["relative_cohomology_status"], "EXACT")
             self.assertIsNotNone(candidates[class_id]["exactness_witness"])
         self.assertTrue(
-            all(candidate["nontriviality_witness"] is None for candidate in candidates.values())
+            all(candidate["nonmembership_witness"] is None for candidate in candidates.values())
+        )
+        self.assertEqual(
+            candidates["CT_C2"]["permitted_nonmembership_witness_type"],
+            "TRUNCATED_NONMEMBERSHIP_WITNESS",
         )
 
     def test_schema_and_checked_in_receipts(self) -> None:

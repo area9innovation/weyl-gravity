@@ -86,6 +86,12 @@ are `(4,-4,1)` for generalized-connection degrees `r=(0,1,2)`.  The `r=0`
 component is recorded separately as type B; the
 `r=1,2` components form the type-A template.  Machine expansion into every
 ordinary bidegree and verification of all residuals is still pending.
+The receipt stores the source formula, the project convention map, the
+four-dimensional specialization, and the derived coefficient vector.  Its
+status is `TEMPLATE_CANDIDATE_NOT_YET_VERIFIED_TOWER`, not a completed Euler
+certificate.  Separate regression gates cover the verified top
+transgression, the retained `d omega wedge Theta_E` source, and the still-open
+complete lower-descendant cancellation.
 
 ## Claim boundary
 
@@ -116,7 +122,7 @@ anticommuting presentations.
 |---|---|---:|---|
 | 0 | compile changed Python, reproduce four certificates, validate schemas, scoped diff check | under 5 s | pass |
 | 1 | focused bicomplex/triviality/Euler/candidate/AFN0 rail | under 2 s | pass |
-| 1 | complete local-BV unit rail | 22.23 s wall | 153 pass in 21.91 s |
+| 1 | complete local-BV unit rail | 23.64 s wall | 159 pass in 23.24 s |
 | 1 | five primary affected certificates under hash seeds `1,7,123`, parallel | under 2 s wall | pass |
 | 2 | two-pass paper build in isolated output directory | 4.4 s | pass; no unresolved references |
 

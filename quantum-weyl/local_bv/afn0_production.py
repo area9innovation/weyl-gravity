@@ -11,21 +11,35 @@ from __future__ import annotations
 from functools import lru_cache
 
 from .algebra import canonical_sha256
+from .basis_exhaustiveness import grading_signature_manifest
 from .dimension_four_candidates import dimension_four_candidate_analysis
 
 
-def _candidate_payload(record: dict[str, object]) -> dict[str, object]:
+def _closure_candidate_payload(record: dict[str, object]) -> dict[str, object]:
+    return {
+        "representative_id": record["class_id"],
+        "representative_sha256": record["representative_sha256"],
+        "closure_status": "CLOSED",
+        "closure_witness": {
+            "certificate": record["descent_certificate"],
+            "intrinsic_certificate": record["intrinsic_weyl_descent_certificate"],
+        },
+    }
+
+
+def _quotient_candidate_payload(record: dict[str, object]) -> dict[str, object]:
     exact = record["class_status"] == "EXACT"
     return {
         "representative_id": record["class_id"],
         "representative_sha256": record["representative_sha256"],
         "relative_cohomology_status": "EXACT" if exact else "UNDECIDED",
-        "closure_witness": {
-            "status": "CLOSED",
-            "certificate": record["descent_certificate"],
-        },
         "exactness_witness": record["trivialization"] if exact else None,
-        "nontriviality_witness": None,
+        "nonmembership_witness": None,
+        "permitted_nonmembership_witness_type": (
+            "NOT_APPLICABLE_EXACT"
+            if exact
+            else "TRUNCATED_NONMEMBERSHIP_WITNESS"
+        ),
     }
 
 
@@ -63,8 +77,10 @@ def _basis_manifest(
             "weyl_target_relation_rank": target["relation_rank"],
             "weyl_target_quotient_dimension": target["quotient_dimension"],
         },
+        "structural_grading_enumeration": grading_signature_manifest(ghost_number),
         "candidate_ids": list(candidate_ids),
-        "top_form_carrier_basis_status": "COMPLETE",
+        "top_curvature_carrier_basis_status": "COMPLETE",
+        "full_top_form_basis_status": "IN_PROGRESS",
         "lower_form_mapping_cone_basis_status": "IN_PROGRESS",
         "pure_diff_ghost_basis_status": (
             "NOT_APPLICABLE" if ghost_number == 0 else "IN_PROGRESS"
@@ -74,13 +90,54 @@ def _basis_manifest(
     return {**manifest, "basis_manifest_hash": canonical_sha256(manifest)}
 
 
-def _select(
-    records: tuple[dict[str, object], ...], ids: tuple[str, ...]
-) -> list[dict[str, object]]:
+def _select(records: tuple[dict[str, object], ...], ids: tuple[str, ...]) -> tuple[dict[str, object], ...]:
     by_id = {str(record["class_id"]): record for record in records}
     if set(ids) - set(by_id):
         raise AssertionError("AFN0 slice requested an unknown candidate")
-    return [_candidate_payload(by_id[class_id]) for class_id in ids]
+    return tuple(by_id[class_id] for class_id in ids)
+
+
+def _slice(
+    *,
+    analysis: dict[str, object],
+    slice_id: str,
+    closure_result_id: str,
+    quotient_result_id: str,
+    ghost_number: int,
+    parity: str,
+    records: tuple[dict[str, object], ...],
+    candidate_ids: tuple[str, ...],
+    excluded_required_candidate: dict[str, str] | None = None,
+) -> dict[str, object]:
+    selected = _select(records, candidate_ids)
+    return {
+        "slice_id": slice_id,
+        "parity": parity,
+        "basis_completeness": _basis_manifest(
+            analysis,
+            ghost_number=ghost_number,
+            parity=parity,
+            candidate_ids=candidate_ids,
+        ),
+        "closure_result": {
+            "result_id": closure_result_id,
+            "result_state": "CLOSURE_RESULT",
+            "closure_scope": "TOP_RELATIVE_CLOSURE",
+            "candidates": [
+                _closure_candidate_payload(record) for record in selected
+            ],
+        },
+        "truncated_quotient_result": {
+            "result_id": quotient_result_id,
+            "result_state": "TRUNCATED_QUOTIENT_RESULT",
+            "basis_exhaustiveness_status": "TRUNCATED",
+            "relative_cohomology_status": "UNDECIDED",
+            "candidates": [
+                _quotient_candidate_payload(record) for record in selected
+            ],
+        },
+        "excluded_required_candidate": excluded_required_candidate,
+    }
 
 
 @lru_cache(maxsize=1)
@@ -103,61 +160,52 @@ def afn0_production_results() -> dict[str, dict[str, object]]:
         "coefficient_status": "NOT_COMPUTED",
     }
     h04_slices = [
-        {
-            "slice_id": "H04_AFN0_EVEN",
-            "parity": "even",
-            "basis_completeness": _basis_manifest(
-                analysis,
-                ghost_number=0,
-                parity="even",
-                candidate_ids=h04_even_ids,
-            ),
-            "candidates": _select(counterterms, h04_even_ids),
-            "relative_cohomology_status": "UNDECIDED",
-        },
-        {
-            "slice_id": "H04_AFN0_ODD",
-            "parity": "odd",
-            "basis_completeness": _basis_manifest(
-                analysis,
-                ghost_number=0,
-                parity="odd",
-                candidate_ids=h04_odd_ids,
-            ),
-            "candidates": _select(counterterms, h04_odd_ids),
-            "relative_cohomology_status": "UNDECIDED",
-        },
+        _slice(
+            analysis=analysis,
+            slice_id="H04_AFN0_EVEN",
+            closure_result_id="H04_AFN0_EVEN_CLOSURE",
+            quotient_result_id="H04_AFN0_EVEN_TRUNCATED_QUOTIENT",
+            ghost_number=0,
+            parity="even",
+            records=counterterms,
+            candidate_ids=h04_even_ids,
+        ),
+        _slice(
+            analysis=analysis,
+            slice_id="H04_AFN0_ODD",
+            closure_result_id="H04_AFN0_ODD_CLOSURE",
+            quotient_result_id="H04_AFN0_ODD_TRUNCATED_QUOTIENT",
+            ghost_number=0,
+            parity="odd",
+            records=counterterms,
+            candidate_ids=h04_odd_ids,
+        ),
     ]
     h14_slices = [
-        {
-            "slice_id": "H14_AFN0_EVEN_WITHOUT_EULER",
-            "parity": "even",
-            "basis_completeness": _basis_manifest(
-                analysis,
-                ghost_number=1,
-                parity="even",
-                candidate_ids=h14_even_ids,
-            ),
-            "candidates": _select(anomalies, h14_even_ids),
-            "relative_cohomology_status": "UNDECIDED",
-            "excluded_required_candidate": {
+        _slice(
+            analysis=analysis,
+            slice_id="H14_AFN0_EVEN_WITHOUT_EULER",
+            closure_result_id="H14_AFN0_EVEN_NO_EULER_CLOSURE",
+            quotient_result_id="H14_AFN0_EVEN_NO_EULER_TRUNCATED_QUOTIENT",
+            ghost_number=1,
+            parity="even",
+            records=anomalies,
+            candidate_ids=h14_even_ids,
+            excluded_required_candidate={
                 "representative_id": "ANOM_OMEGA_E4",
                 "reason": "intrinsic Euler descent is in progress",
             },
-        },
-        {
-            "slice_id": "H14_AFN0_ODD",
-            "parity": "odd",
-            "basis_completeness": _basis_manifest(
-                analysis,
-                ghost_number=1,
-                parity="odd",
-                candidate_ids=h14_odd_ids,
-            ),
-            "candidates": _select(anomalies, h14_odd_ids),
-            "relative_cohomology_status": "UNDECIDED",
-            "excluded_required_candidate": None,
-        },
+        ),
+        _slice(
+            analysis=analysis,
+            slice_id="H14_AFN0_ODD",
+            closure_result_id="H14_AFN0_ODD_CLOSURE",
+            quotient_result_id="H14_AFN0_ODD_TRUNCATED_QUOTIENT",
+            ghost_number=1,
+            parity="odd",
+            records=anomalies,
+            candidate_ids=h14_odd_ids,
+        ),
     ]
     h04 = {
         "result_id": "H04_AFN0_RESULT",

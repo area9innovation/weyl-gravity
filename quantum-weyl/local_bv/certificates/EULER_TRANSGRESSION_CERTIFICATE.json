@@ -6,7 +6,7 @@
   ],
   "canonical_hashes": {
     "curvature_sha256": "dbfaad8d3cd29aed54c944cc764fe2d4298cdc9ec3e55e46c8829d9c261e28eb",
-    "source_manifest_sha256": "884c634c52dcc7e6e9bcf3fcc54b6520b4b4b45b32f44d65c595dcbd9b67c334",
+    "source_manifest_sha256": "b0b3d1ac7142ae37ea41874edf2c869e432a06638d6a0a82ef77c1dbf101be85",
     "theta_sha256": "0bfe7489b59dc61839ffd718426243b997b18dec70c3c810386c4f0602b4362b",
     "zero_variational_residual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
   },
@@ -18,9 +18,12 @@
     "delta_E4_minus_dTheta": "VERIFIED",
     "delta_curvature_equals_D_delta_connection": "VERIFIED",
     "euler_full_diff_completed_tower": "VERIFIED",
+    "euler_top_transgression_regression": "VERIFIED",
     "levi_civita_variation_derived_from_qg": "VERIFIED",
+    "lower_descendant_complete_cancellation": "IN_PROGRESS",
     "omega_E4_generalized_connection_template": "VERIFIED",
-    "omega_E4_intrinsic_descent_continuation": "IN_PROGRESS"
+    "omega_E4_intrinsic_descent_continuation": "IN_PROGRESS",
+    "unresolved_domega_theta_regression": "VERIFIED"
   },
   "classical_commit": "UNFROZEN",
   "dependency_tags": [
@@ -177,6 +180,7 @@
     ],
     "descent_equation": "Q E4 + d_h(-Theta_E(Q)) = 0",
     "generalized_connection_total_form": {
+      "certificate_status": "TEMPLATE_CANDIDATE_NOT_YET_VERIFIED_TOWER",
       "components": [
         {
           "coefficient": {
@@ -215,6 +219,21 @@
           "weyl_two_form_count": 0
         }
       ],
+      "derived_coefficients": [
+        {
+          "denominator": 1,
+          "numerator": 4
+        },
+        {
+          "denominator": 1,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      "dimension_specialization": 4,
       "expansion_status": "IN_PROGRESS",
       "generalized_connection": "tilde_omega_a = partial_a omega - Schouten_ab dx^b",
       "primary_reference": {
@@ -223,6 +242,14 @@
         "journal": "JHEP 07 (2007) 069",
         "title": "General solutions of the Wess-Zumino consistency condition for the Weyl anomalies"
       },
+      "source_convention_map": {
+        "normalization_status": "PENDING_TOP_EULER_MATCH",
+        "source_W_mu_nu": "project Weyl tensor-valued two-form",
+        "source_omega": "project odd Weyl ghost",
+        "source_s_tilde_W": "project_total_D = Q_W + signed d_h",
+        "source_tilde_omega_alpha": "tilde_omega_a = partial_a omega - Schouten_ab dx^b"
+      },
+      "source_formula": "Phi^[n-r]_r = (-1)^p 2^p m!/(r!p!) psi_(2p) W^p, p=m-r, m=n/2",
       "template_sha256": "345361a124ad5e36a04cd39e4a74375269eb838fdf42820c93e11022dd0610c0",
       "type_a_component_indices": [
         1,

@@ -220,6 +220,11 @@ receipts are
 top curvature-carrier bases are generated, but lower-form production bases
 and matrices remain `IN_PROGRESS`, so no familiar representative has been
 promoted to a nontrivial relative class.
+Each slice now stores a closure result separately from its truncated quotient
+result.  The structural grading enumerator is in
+[`basis_exhaustiveness.py`](basis_exhaustiveness.py), and the empty
+antifield-filtration block interface is certified by
+[`certificates/AFN_FILTRATION_INTERFACE_CERTIFICATE.json`](certificates/AFN_FILTRATION_INTERFACE_CERTIFICATE.json).
 
 Next admissible local steps are the continuation of the intrinsic type-A
 descent from `omega E4`, completion of the AFN0 lower-form mapping-cone basis,
