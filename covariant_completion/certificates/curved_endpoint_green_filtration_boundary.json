@@ -1,0 +1,99 @@
+{
+  "causal_green_homotopy": false,
+  "channel_ledger": {
+    "green_components": 12,
+    "open_components_including_adjoint_copy": 18,
+    "open_operator": "2H on trace-free symmetric tensors",
+    "single_primal_open_operator_rank": 9,
+    "total_endpoint_components": 30
+  },
+  "curvature_causal_green_operators": false,
+  "curvature_route": {
+    "Weyl_Cotton_L26_and_S14_causal": true,
+    "equation_cone_required": true,
+    "forward_chain_map": "(T_core,A_core,B_core)",
+    "inverse_Laplacian_or_curl_allowed": false,
+    "raw_A_F_alone_declared_source_compatible": false,
+    "remaining_map": "a retarded/advanced metric-potential lift from compatible Weyl--Cotton curvature plus gauge data to S2_0"
+  },
+  "dependency_sha256": {
+    "backward_witness": "81f69172807baef49c92e20151a6bf5b216055762a060f802fa10f8b3adb143a",
+    "curvature_chain": "78164e0c98d27819dbea2cc1597c387b6496a5ef47e67d196fcc9b34a8cdff15",
+    "curvature_green": "b068819251fd2211d545697fe2ac8f9fa240922b8f01b480db9e4db790ec8889",
+    "curvature_pde": "b553072a21ba550a44b0b5737e3fa0eafcc513195fbac83ed09cd2fab05216d1",
+    "endpoint": "584e875444f303643d0408874a92bbe65ce61c07fc78122f00d037d776367771",
+    "field_intertwiner": "7f5dfb75276fa8cff88b2ff562cc31c457da1bc4bfe8410061a7b273fdd73d59",
+    "field_symbol": "e26f17e8812bac76c02a44d9ad08cc1607fb636f0f8ba0bb29bdab8ed6dd002f",
+    "ghost_biwave": "d5832e7d0be7c062c03b0649073de7579b98c1fc11b0c770993bd985fc6f2d34",
+    "saddle_nilpotence": "47673fb934f8838998badbadf54947edef048c0b1a7ef27a1df8e492b2b7bab6"
+  },
+  "dependency_tag": "LORENTZIAN-CAUSAL",
+  "equation_channel": {
+    "operator": "D_E=D_M^sharp",
+    "remaining_open_part": "D_TF^sharp",
+    "status": "OPEN_BY_ADJOINT"
+  },
+  "fail_closed": true,
+  "ghost_channel": {
+    "R": "Box(Box+2) I_4=R_minus R_plus",
+    "R_factors_normally_hyperbolic": true,
+    "block": "[[R,0],[d/2,1]]",
+    "left_inverse": true,
+    "metric_causal_support": true,
+    "right_inverse": true,
+    "same_sided_R_green": "G_R,+/-=G_plus,+/- G_minus,+/-",
+    "same_sided_block_green": "[[G_R,0],[-(d/2)G_R,1]]",
+    "status": "GREEN"
+  },
+  "identity_channel": {
+    "green_relation": "G_I,+/-=(G_G,-/+)^sharp",
+    "metric_causal_support": true,
+    "operator": "D_I=D_G^sharp",
+    "status": "GREEN_BY_ADJOINT"
+  },
+  "metric_trace_filtration": {
+    "D_M_matrix": "[[D_TF,0],[r_trace,1]]",
+    "D_TF": "P_TF D_M P_TF=2H on S2_0",
+    "conditional_green": "[[G_TF,0],[-r_trace G_TF,1]]",
+    "conditional_left_inverse": true,
+    "conditional_right_inverse": true,
+    "decomposition": "M=S2_0 direct-sum trace",
+    "projectors_pointwise_parallel": true,
+    "trace_coupling_nonzero_coefficients": 344,
+    "trace_diagonal_defect": 0,
+    "trace_to_tracefree_defect": 0
+  },
+  "next_exact_tests": [
+    "factor D_TF on the same trace-free bundle into causal second-order factors",
+    "or construct a causal metric-potential lift for the full equation-cone curvature source",
+    "then impose G_TF,+^sharp=G_TF,- and assemble the endpoint BV Green homotopy"
+  ],
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-endpoint-green-filtration-boundary-v1",
+  "schur_endpoint": {
+    "degreewise_ranks": [
+      5,
+      10,
+      10,
+      5
+    ],
+    "operator": "D_end",
+    "reason": "the full hybrid minimal-A_F correction C B is zero"
+  },
+  "status_flags_promoted": [],
+  "tracefree_channel": {
+    "complete_lower_order_same_bundle_factorization": false,
+    "gauge_intertwiner": "D_TF K_TF=K_TF Box(Box+2)",
+    "operator": "D_TF=2H=2B_lin+K_TF T",
+    "principal_symbol": "(zeta^2)^2 I_9",
+    "rank": 9,
+    "reduced_physical_factors_known": true,
+    "status": "OPEN",
+    "support_local_curvature_to_metric_green_lift": false
+  },
+  "warranted_atomic_flags": [
+    "endpoint_ghost_identity_green_channels_exact",
+    "endpoint_trace_triangular_reduction_exact",
+    "endpoint_tracefree_green_boundary_exact"
+  ]
+}
