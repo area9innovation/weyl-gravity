@@ -181,23 +181,30 @@ def expand_cotton_definitions(expression: TensorExpression) -> TensorExpression:
     return TensorExpression(output)
 
 
-def expand_riemann_factors(expression: TensorExpression) -> TensorExpression:
-    """Expand one Riemann factor as ``Weyl + metric wedge Schouten``.
+def expand_riemann_factors(
+    expression: TensorExpression,
+    *,
+    max_factors: int = 1,
+) -> TensorExpression:
+    """Expand bounded Riemann factors as ``Weyl + metric wedge Schouten``.
 
     Derivative labels stay on the Weyl or Schouten factor while the metric is
     undifferentiated.  This is the explicit derivative-safe replacement that
-    the narrower algebraic shortcut cannot provide.  Products with several
-    Riemann factors require a staged target engine; materializing their full
-    generic canonical expansion is intentionally rejected.
+    the narrower algebraic shortcut cannot provide.  The conservative default
+    remains one factor.  A caller that has audited a finite product may raise
+    ``max_factors`` explicitly; the Euler preflight uses two factors and hence
+    materializes at most 25 exact branches.
     """
 
+    if max_factors < 0:
+        raise ValueError("max_factors must be nonnegative")
     if any(
-        sum(factor.spec == RIEMANN for factor in monomial.factors) > 1
+        sum(factor.spec == RIEMANN for factor in monomial.factors) > max_factors
         for monomial in expression.terms
     ):
         raise ValueError(
-            "multi-Riemann expansion requires a staged target engine; use "
-            "the factorized Schouten-zero projection when applicable"
+            "Riemann expansion exceeds the explicitly audited factor bound; "
+            "use a staged target engine or raise max_factors deliberately"
         )
     output: dict[TensorMonomial, Fraction] = {}
     for monomial, coefficient in expression.terms.items():

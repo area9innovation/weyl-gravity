@@ -7,11 +7,12 @@
   ],
   "canonical_hashes": {
     "bidegree_manifest_set_sha256": "52392a8222829f74d450ddf8813d2e0e04f55911d9486da0b38e0242838b6124",
+    "connecting_identity_preflight_sha256": "e09d71fa8a413a61ee7c6659ab548df6fa1577c60d7be22e7162779c279f555a",
     "curvature_sha256": "dbfaad8d3cd29aed54c944cc764fe2d4298cdc9ec3e55e46c8829d9c261e28eb",
     "generalized_connection_dictionary_sha256": "2bbb92c660f15c592004e5717d5a99fe4d535dee17ddd84f57f5b4a18566ea39",
-    "intrinsic_component_expansion_sha256": "9161d92561d920ed737f0108ae48473cdb7bc60394d0a663d1ad46dc0fd2c493",
+    "intrinsic_component_expansion_sha256": "b23a8d5957412f0f0be2a35f4a834ee613a8f65dd56477f23fe9458e46e86f13",
     "normalization_contract_sha256": "3ee9bb04638c2327e675dc2e8793627784fcba584e4fcd963ff2fe1d9801b46f",
-    "source_manifest_sha256": "88de6bbbdc3b9251ffb1ba40f2005c578520dbe6cc90cc02e495259c016a3b74",
+    "source_manifest_sha256": "13302dc9643200925bf36fb722b099a8f89494f0ab2e8ab4dce04f316c847261",
     "theta_sha256": "0bfe7489b59dc61839ffd718426243b997b18dec70c3c810386c4f0602b4362b",
     "zero_variational_residual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
   },
@@ -24,10 +25,13 @@
     "curvature_bianchi_identity": "VERIFIED",
     "delta_E4_minus_dTheta": "VERIFIED",
     "delta_curvature_equals_D_delta_connection": "VERIFIED",
+    "epsilon_contracted_top_reconstruction": "IN_PROGRESS",
     "euler_full_diff_completed_tower": "VERIFIED",
     "euler_primary_source_convention_map": "VERIFIED",
     "euler_top_transgression_regression": "VERIFIED",
     "generalized_connection_dictionary": "VERIFIED",
+    "horizontal_connecting_generator_rows": "IN_PROGRESS",
+    "indexed_connecting_identity_preflight": "VERIFIED",
     "intrinsic_bottom_QW_closure": "VERIFIED",
     "intrinsic_terminal_slots_zero": "VERIFIED",
     "levi_civita_variation_derived_from_qg": "VERIFIED",
@@ -36,7 +40,9 @@
     "omega_E4_intrinsic_component_expansion": "VERIFIED",
     "omega_E4_intrinsic_descent_continuation": "PARTIAL_CONNECTING_IDENTITIES_PENDING",
     "source_project_carrier_normalization": "VERIFIED",
+    "source_project_cotton_sign_bridge": "VERIFIED",
     "total_differential_component_signs": "VERIFIED",
+    "two_riemann_product_expansion": "VERIFIED",
     "unresolved_domega_theta_regression": "VERIFIED"
   },
   "classical_commit": "UNFROZEN",
@@ -106,6 +112,207 @@
     "counterterm_tower_sha256": "0a595f7c9017e039138b9fd88b4ce7cf0e39c6f3127f208810282e31edb41145"
   },
   "euler_intrinsic_transgression": {
+    "connecting_identity_preflight": {
+      "QW_generator_row_status": {
+        "Cotton_two_form": "NOT_COMPUTED_DERIVED_CURVATURE_ACTION",
+        "H": "AVAILABLE_ZERO",
+        "P": "AVAILABLE_NONZERO",
+        "U": "AVAILABLE_ZERO",
+        "W_two_form": "NOT_COMPUTED_GAMMA_AND_WEIGHT_ACTION",
+        "density_epsilon": "AVAILABLE_NONZERO",
+        "dx": "AVAILABLE_ZERO",
+        "omega": "AVAILABLE_ZERO"
+      },
+      "QW_squared_on_generators": {
+        "Cotton_two_form": "NOT_COMPUTED_DERIVED_CURVATURE_ACTION",
+        "H": "VERIFIED",
+        "P": "VERIFIED",
+        "U": "VERIFIED",
+        "W_two_form": "NOT_COMPUTED_GAMMA_AND_WEIGHT_ACTION",
+        "density_epsilon": "VERIFIED",
+        "dx": "VERIFIED",
+        "omega": "VERIFIED"
+      },
+      "bottom_QW_residual": [],
+      "bottom_representative": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "factors": [
+            {
+              "generator": "U",
+              "indices": [
+                0
+              ]
+            },
+            {
+              "generator": "U",
+              "indices": [
+                1
+              ]
+            },
+            {
+              "generator": "density_epsilon",
+              "indices": [
+                0,
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "generator": "dx",
+              "indices": [
+                2
+              ]
+            },
+            {
+              "generator": "dx",
+              "indices": [
+                3
+              ]
+            },
+            {
+              "generator": "omega",
+              "indices": []
+            }
+          ]
+        }
+      ],
+      "checks": {
+        "Gamma_action_on_W_two_form": "NOT_COMPUTED",
+        "QW_dh_anticommutator_on_connecting_generators": "NOT_COMPUTED",
+        "QW_squared_on_available_generator_rows": "VERIFIED",
+        "bottom_closure_by_applied_QW": "VERIFIED",
+        "bounded_two_riemann_expansion": "VERIFIED",
+        "coefficient_and_total_parities_separated": "VERIFIED",
+        "epsilon_contracted_top_reconstruction": "NOT_COMPUTED",
+        "horizontal_generator_rows": "NOT_COMPUTED",
+        "indexed_total_form_words": "VERIFIED",
+        "source_project_cotton_sign": "VERIFIED"
+      },
+      "claim_boundary": {
+        "intrinsic_tower_status": "CONNECTING_IDENTITIES_NOT_COMPUTED",
+        "preflight_status": "INDEXED_QW_AND_CONVENTION_ROWS_VERIFIED_HORIZONTAL_ROWS_PENDING",
+        "relative_cohomology_status": "UNDECIDED"
+      },
+      "cotton_convention_bridge": {
+        "bridge": "C_source[a,b,c] = -A_project[a,b,c]",
+        "bridge_sha256": "68259e25c1b7a92a589fa0f83ab251b28806d1505e04e7df9f89a4dd7a6416dc",
+        "definition_relation_sha256": "e93184357a96e5e38d0bbddfc7c4bf02bc2dc4c098c62203e4faf9cfeb46ae0f",
+        "project_definition": "A_project[a,b,c] = nabla_b P_ca - nabla_c P_ba",
+        "project_expression_sha256": "65ac0f1160c7933a69866bee1ce0101b1f08ea185e84aaddd58eb44a15b6f665",
+        "source_definition": "C_source[a,b,c] = nabla_c P_ba - nabla_b P_ca",
+        "source_expression_sha256": "255bd5f073ee0b315e94d0d79230aceaecfdc0a3affebd8aad4f783b300d2f4b",
+        "verification_status": "VERIFIED_EXACT_TENSOR_RELATION"
+      },
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "generator_dictionary": [
+        {
+          "coefficient_parity": 1,
+          "form_degree": 0,
+          "ghost_number": 1,
+          "name": "omega",
+          "tensor_rank": 0,
+          "total_parity": 1,
+          "weyl_weight": 0
+        },
+        {
+          "coefficient_parity": 0,
+          "form_degree": 0,
+          "ghost_number": 0,
+          "name": "density_epsilon",
+          "tensor_rank": 4,
+          "total_parity": 0,
+          "weyl_weight": -4
+        },
+        {
+          "coefficient_parity": 1,
+          "form_degree": 0,
+          "ghost_number": 1,
+          "name": "U",
+          "tensor_rank": 1,
+          "total_parity": 1,
+          "weyl_weight": 0
+        },
+        {
+          "coefficient_parity": 0,
+          "form_degree": 1,
+          "ghost_number": 0,
+          "name": "P",
+          "tensor_rank": 1,
+          "total_parity": 1,
+          "weyl_weight": "INHOMOGENEOUS_CONNECTION"
+        },
+        {
+          "coefficient_parity": 1,
+          "form_degree": 1,
+          "ghost_number": 1,
+          "name": "H",
+          "tensor_rank": 1,
+          "total_parity": 0,
+          "weyl_weight": 0
+        },
+        {
+          "coefficient_parity": 0,
+          "form_degree": 1,
+          "ghost_number": 0,
+          "name": "dx",
+          "tensor_rank": 1,
+          "total_parity": 1,
+          "weyl_weight": 0
+        },
+        {
+          "coefficient_parity": 0,
+          "form_degree": 2,
+          "ghost_number": 0,
+          "name": "W_two_form",
+          "tensor_rank": 2,
+          "total_parity": 0,
+          "weyl_weight": -2
+        },
+        {
+          "coefficient_parity": 0,
+          "form_degree": 2,
+          "ghost_number": 0,
+          "name": "Cotton_two_form",
+          "tensor_rank": 1,
+          "total_parity": 0,
+          "weyl_weight": -2
+        }
+      ],
+      "generator_dictionary_sha256": "6a5790ee1dffcd9ef36aedeab13f559774b15012bc68e2bcf7a255d89db8a774",
+      "preflight_sha256": "e09d71fa8a413a61ee7c6659ab548df6fa1577c60d7be22e7162779c279f555a",
+      "result_id": "EULER_CONNECTING_IDENTITY_PREFLIGHT",
+      "source_to_project_identity_map": {
+        "project_DW": "D W^(mu nu) = -2 A_project_rho g^(rho[mu) dx^(nu])",
+        "source_DW": "D W^(mu nu) = 2 C_source_rho g^(rho[mu) dx^(nu])",
+        "status": "SIGN_TRANSLATED_HORIZONTAL_ROW_NOT_YET_IMPLEMENTED"
+      },
+      "two_riemann_top_preflight": {
+        "epsilon_contraction_status": "NOT_COMPUTED",
+        "expanded_sha256": "f8f5e8aaf07583c197636de9b403ac3e5b8a373ad5cd4a45462e973bd653e2f2",
+        "expanded_term_count": 25,
+        "preflight_sha256": "2f08439d1f9bb9bb5e5746589600560926f403c09637a5601564b5445d8b7185",
+        "sector_sha256": {
+          "SCHOUTEN_SCHOUTEN": "4a3f70c7336ae54276178d2966e07c9fe4075c6df195a72f8531d9bb3ac734a1",
+          "WEYL_SCHOUTEN": "18507c4e7267e064cf4e582e2c2cd8f2812291ba72d2ac0b9361879af7fcc385",
+          "WEYL_WEYL": "1ba3383c7a56c34aa350193a4d77c0334046546e770978d876f188e6cb6400cc"
+        },
+        "sector_term_counts": {
+          "SCHOUTEN_SCHOUTEN": 16,
+          "WEYL_SCHOUTEN": 8,
+          "WEYL_WEYL": 1
+        },
+        "source_sha256": "bcac19ecd83bcda99a881aa06040234f6fbfea3d037f363f0cf8753ff3c3e7f5",
+        "source_term_count": 1,
+        "verification_status": "RICCI_PRODUCT_EXPANSION_VERIFIED"
+      }
+    },
     "curvature": [
       {
         "coefficient": {
@@ -567,7 +774,8 @@
           "Q_W U_alpha = partial_alpha(Q_W omega) = 0",
           "Q_W dx^mu = 0",
           "the Weyl variation of the density carrier is proportional to omega and vanishes after multiplication by the existing odd omega"
-        ]
+        ],
+        "verification_scope": "FACTOR_RULE_CHECK; APPLIED_INDEXED_QW_IS_IN_THE_CONNECTING_PREFLIGHT"
       },
       "carrier_definitions": {
         "P_alpha": "K_alpha_rho dx^rho",
@@ -578,12 +786,12 @@
       "checks": {
         "QW_a14_plus_dh_a23": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION",
         "QW_a23_minus_dh_a32": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION",
-        "bottom_QW_closure": "VERIFIED",
+        "bottom_factor_rule_closure": "VERIFIED",
         "coefficient_multiplicities_from_binomial_expansion": "VERIFIED",
         "ghost_number_4_form_1_component": "STRUCTURALLY_ZERO",
         "ghost_number_5_form_0_component": "STRUCTURALLY_ZERO",
         "ordinary_bidegree_expansion": "VERIFIED",
-        "top_component_reconstructs_omega_E4": "VERIFIED"
+        "top_carrier_polynomial_matches_declared_E4_decomposition": "VERIFIED"
       },
       "claim_boundary": {
         "coefficient_status": "NOT_COMPUTED",
@@ -828,7 +1036,7 @@
         "LOCAL-ALGEBRAIC"
       ],
       "dictionary_sha256": "2bbb92c660f15c592004e5717d5a99fe4d535dee17ddd84f57f5b4a18566ea39",
-      "expansion_sha256": "9161d92561d920ed737f0108ae48473cdb7bc60394d0a663d1ad46dc0fd2c493",
+      "expansion_sha256": "b23a8d5957412f0f0be2a35f4a834ee613a8f65dd56477f23fe9458e46e86f13",
       "next_required_generator_identities": [
         "D W^(mu nu) = 2 C_rho g^(rho[mu) dx^(nu])",
         "Q_W P_alpha from Q_W K_alpha_beta = -nabla_alpha partial_beta omega",
@@ -874,7 +1082,8 @@
             "denominator": 1,
             "numerator": 4
           }
-        }
+        },
+        "verification_scope": "CARRIER_POLYNOMIAL_ONLY"
       }
     },
     "theta_variation": [
@@ -911,6 +1120,8 @@
   "normalization": "E4 = epsilon_abcd R^ab wedge R^cd",
   "not_computed": [
     "the two connecting intrinsic descent identities requiring the Cotton and Gamma generator actions",
+    "epsilon-contracted tensor reconstruction of the Euler head",
+    "horizontal differential rows and the Q_W-d_h compatibility check on every connecting generator",
     "antifield/Koszul-Tate completion",
     "relative cohomology nontriviality of the Euler anomaly"
   ],

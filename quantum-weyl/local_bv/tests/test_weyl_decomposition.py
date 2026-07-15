@@ -76,17 +76,27 @@ class WeylDecompositionTests(unittest.TestCase):
                     TensorMonomial((TensorFactor(RIEMANN, (0, 1, 2, 3)),))
                 )
             )
-        with self.assertRaisesRegex(ValueError, "multi-Riemann"):
-            expand_riemann_factors(
-                TensorExpression.monomial(
-                    TensorMonomial(
-                        (
-                            TensorFactor(RIEMANN, (0, 1, 2, 3)),
-                            TensorFactor(RIEMANN, (0, 1, 2, 3)),
-                        )
-                    )
+        two_riemann = TensorExpression.monomial(
+            TensorMonomial(
+                (
+                    TensorFactor(RIEMANN, (0, 1, 2, 3)),
+                    TensorFactor(RIEMANN, (4, 5, 6, 7)),
                 )
             )
+        )
+        with self.assertRaisesRegex(ValueError, "audited factor bound"):
+            expand_riemann_factors(two_riemann)
+        expanded_two = expand_riemann_factors(two_riemann, max_factors=2)
+        self.assertTrue(expanded_two)
+        self.assertFalse(
+            any(
+                factor.spec == RIEMANN
+                for monomial in expanded_two.terms
+                for factor in monomial.factors
+            )
+        )
+        with self.assertRaisesRegex(ValueError, "nonnegative"):
+            expand_riemann_factors(two_riemann, max_factors=-1)
 
     def test_cotton_convention_is_antisymmetric_cyclic_and_tracefree(self) -> None:
         definition = cotton_definition_relation()

@@ -12,6 +12,7 @@ from typing import Any
 from .algebra import canonical_sha256
 from .chern_weil import euler_transgression_analysis
 from .euler_intrinsic_expansion import euler_intrinsic_component_expansion
+from .euler_generator_preflight import euler_generator_preflight
 from .generalized_connection import (
     euler_bidegree_manifests,
     euler_normalization_contract,
@@ -31,12 +32,16 @@ def _source_manifest() -> dict[str, str]:
         "chern_weil.py",
         "euler_transgression_certificate.py",
         "euler_intrinsic_expansion.py",
+        "euler_generator_preflight.py",
         "generalized_connection.py",
+        "weyl_decomposition.py",
         "schema/euler_transgression_certificate.schema.json",
         "tests/test_chern_weil.py",
         "tests/test_euler_transgression_certificate.py",
         "tests/test_euler_intrinsic_expansion.py",
+        "tests/test_euler_generator_preflight.py",
         "tests/test_generalized_connection.py",
+        "tests/test_weyl_decomposition.py",
     )
     return {
         path: hashlib.sha256((PACKAGE_ROOT / path).read_bytes()).hexdigest()
@@ -58,6 +63,7 @@ def build_certificate() -> dict[str, Any]:
     normalization_contract = euler_normalization_contract()
     bidegree_manifests = euler_bidegree_manifests()
     intrinsic_expansion = euler_intrinsic_component_expansion()
+    connecting_preflight = euler_generator_preflight()
     return {
         "result_id": "EULER_TRANSGRESSION_CERTIFICATE",
         "result_state": "VARIATIONAL_TRANSGRESSION_VERIFIED",
@@ -84,6 +90,11 @@ def build_certificate() -> dict[str, Any]:
             "omega_E4_intrinsic_descent_continuation": "PARTIAL_CONNECTING_IDENTITIES_PENDING",
             "intrinsic_bottom_QW_closure": "VERIFIED",
             "intrinsic_terminal_slots_zero": "VERIFIED",
+            "indexed_connecting_identity_preflight": "VERIFIED",
+            "source_project_cotton_sign_bridge": "VERIFIED",
+            "two_riemann_product_expansion": "VERIFIED",
+            "epsilon_contracted_top_reconstruction": "IN_PROGRESS",
+            "horizontal_connecting_generator_rows": "IN_PROGRESS",
             "euler_top_transgression_regression": "VERIFIED",
             "unresolved_domega_theta_regression": "VERIFIED",
             "lower_descendant_complete_cancellation": "IN_PROGRESS",
@@ -207,6 +218,7 @@ def build_certificate() -> dict[str, Any]:
                 ),
             },
             "ordinary_bidegree_expansion": intrinsic_expansion,
+            "connecting_identity_preflight": connecting_preflight,
         },
         "euler_full_diff_completed_tower": {
             "counterterm_tower_sha256": universal["counterterm"]["tower_sha256"],
@@ -232,6 +244,9 @@ def build_certificate() -> dict[str, Any]:
             "intrinsic_component_expansion_sha256": intrinsic_expansion[
                 "expansion_sha256"
             ],
+            "connecting_identity_preflight_sha256": connecting_preflight[
+                "preflight_sha256"
+            ],
         },
         "assumptions": [
             "The invariant bilinear polynomial is epsilon_abcd X^ab wedge Y^cd in the stated normalization.",
@@ -241,6 +256,8 @@ def build_certificate() -> dict[str, Any]:
         ],
         "not_computed": [
             "the two connecting intrinsic descent identities requiring the Cotton and Gamma generator actions",
+            "epsilon-contracted tensor reconstruction of the Euler head",
+            "horizontal differential rows and the Q_W-d_h compatibility check on every connecting generator",
             "antifield/Koszul-Tate completion",
             "relative cohomology nontriviality of the Euler anomaly",
         ],

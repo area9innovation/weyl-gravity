@@ -209,14 +209,15 @@ def euler_intrinsic_component_expansion() -> dict[str, Any]:
         "checks": {
             "ordinary_bidegree_expansion": "VERIFIED",
             "coefficient_multiplicities_from_binomial_expansion": "VERIFIED",
-            "top_component_reconstructs_omega_E4": "VERIFIED",
-            "bottom_QW_closure": "VERIFIED",
+            "top_carrier_polynomial_matches_declared_E4_decomposition": "VERIFIED",
+            "bottom_factor_rule_closure": "VERIFIED",
             "ghost_number_4_form_1_component": "STRUCTURALLY_ZERO",
             "ghost_number_5_form_0_component": "STRUCTURALLY_ZERO",
             "QW_a14_plus_dh_a23": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION",
             "QW_a23_minus_dh_a32": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION",
         },
         "top_reconstruction": {
+            "verification_scope": "CARRIER_POLYNOMIAL_ONLY",
             "curvature_decomposition": "R = W + 2 X",
             "computed_polynomial": {
                 key: _fraction(value) for key, value in top_polynomial.items()
@@ -227,6 +228,7 @@ def euler_intrinsic_component_expansion() -> dict[str, Any]:
             "residual": {},
         },
         "bottom_closure": {
+            "verification_scope": "FACTOR_RULE_CHECK; APPLIED_INDEXED_QW_IS_IN_THE_CONNECTING_PREFLIGHT",
             "representative": "4 omega epsilon^(ab nu1 nu2) U_a U_b dx^nu1 dx^nu2",
             "rules": [
                 "Q_W omega = 0",

@@ -77,7 +77,28 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
             [row["term_count"] for row in expansion["components"]],
             [3, 2, 1, 0, 0],
         )
-        self.assertEqual(expansion["checks"]["bottom_QW_closure"], "VERIFIED")
+        self.assertEqual(
+            expansion["checks"]["bottom_factor_rule_closure"], "VERIFIED"
+        )
+        preflight = certificate["euler_intrinsic_transgression"][
+            "connecting_identity_preflight"
+        ]
+        self.assertEqual(
+            preflight["cotton_convention_bridge"]["bridge"],
+            "C_source[a,b,c] = -A_project[a,b,c]",
+        )
+        self.assertEqual(preflight["bottom_QW_residual"], [])
+        self.assertEqual(
+            preflight["QW_squared_on_generators"]["W_two_form"],
+            "NOT_COMPUTED_GAMMA_AND_WEIGHT_ACTION",
+        )
+        self.assertEqual(
+            preflight["QW_squared_on_generators"]["Cotton_two_form"],
+            "NOT_COMPUTED_DERIVED_CURVATURE_ACTION",
+        )
+        self.assertEqual(
+            preflight["checks"]["horizontal_generator_rows"], "NOT_COMPUTED"
+        )
         self.assertIn("connecting intrinsic descent", " ".join(certificate["not_computed"]))
 
     def test_schema_fails_closed_on_unknown_nested_claim(self) -> None:

@@ -43,8 +43,11 @@ class EulerIntrinsicExpansionTests(unittest.TestCase):
     def test_verified_and_open_gates_are_separate(self) -> None:
         result = euler_intrinsic_component_expansion()
         checks = result["checks"]
-        self.assertEqual(checks["top_component_reconstructs_omega_E4"], "VERIFIED")
-        self.assertEqual(checks["bottom_QW_closure"], "VERIFIED")
+        self.assertEqual(
+            checks["top_carrier_polynomial_matches_declared_E4_decomposition"],
+            "VERIFIED",
+        )
+        self.assertEqual(checks["bottom_factor_rule_closure"], "VERIFIED")
         self.assertEqual(
             checks["QW_a14_plus_dh_a23"],
             "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION",

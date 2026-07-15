@@ -14,7 +14,7 @@
     "checks": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["levi_civita_variation_derived_from_qg", "delta_curvature_equals_D_delta_connection", "curvature_bianchi_identity", "delta_E4_minus_dTheta", "QE4_plus_d_descent_descendant", "coordinate_euler_current", "closed_manifold_integrated_variation", "euler_full_diff_completed_tower", "omega_E4_generalized_connection_template", "euler_primary_source_convention_map", "generalized_connection_dictionary", "source_project_carrier_normalization", "all_five_euler_bidegrees_enumerated", "bidegree_manifests_content_addressed", "total_differential_component_signs", "omega_E4_intrinsic_component_expansion", "omega_E4_intrinsic_descent_continuation", "intrinsic_bottom_QW_closure", "intrinsic_terminal_slots_zero", "euler_top_transgression_regression", "unresolved_domega_theta_regression", "lower_descendant_complete_cancellation"],
+      "required": ["levi_civita_variation_derived_from_qg", "delta_curvature_equals_D_delta_connection", "curvature_bianchi_identity", "delta_E4_minus_dTheta", "QE4_plus_d_descent_descendant", "coordinate_euler_current", "closed_manifold_integrated_variation", "euler_full_diff_completed_tower", "omega_E4_generalized_connection_template", "euler_primary_source_convention_map", "generalized_connection_dictionary", "source_project_carrier_normalization", "all_five_euler_bidegrees_enumerated", "bidegree_manifests_content_addressed", "total_differential_component_signs", "omega_E4_intrinsic_component_expansion", "omega_E4_intrinsic_descent_continuation", "intrinsic_bottom_QW_closure", "intrinsic_terminal_slots_zero", "indexed_connecting_identity_preflight", "source_project_cotton_sign_bridge", "two_riemann_product_expansion", "epsilon_contracted_top_reconstruction", "horizontal_connecting_generator_rows", "euler_top_transgression_regression", "unresolved_domega_theta_regression", "lower_descendant_complete_cancellation"],
       "properties": {
         "levi_civita_variation_derived_from_qg": {"const": "VERIFIED"},
         "delta_curvature_equals_D_delta_connection": {"const": "VERIFIED"},
@@ -35,6 +35,11 @@
         "omega_E4_intrinsic_descent_continuation": {"const": "PARTIAL_CONNECTING_IDENTITIES_PENDING"},
         "intrinsic_bottom_QW_closure": {"const": "VERIFIED"},
         "intrinsic_terminal_slots_zero": {"const": "VERIFIED"},
+        "indexed_connecting_identity_preflight": {"const": "VERIFIED"},
+        "source_project_cotton_sign_bridge": {"const": "VERIFIED"},
+        "two_riemann_product_expansion": {"const": "VERIFIED"},
+        "epsilon_contracted_top_reconstruction": {"const": "IN_PROGRESS"},
+        "horizontal_connecting_generator_rows": {"const": "IN_PROGRESS"},
         "euler_top_transgression_regression": {"const": "VERIFIED"},
         "unresolved_domega_theta_regression": {"const": "VERIFIED"},
         "lower_descendant_complete_cancellation": {"const": "IN_PROGRESS"}
@@ -53,7 +58,7 @@
     "euler_intrinsic_transgression": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["curvature", "curvature_variation", "theta_variation", "descent_descendant", "variational_equation", "descent_equation", "omega_E4_first_step", "generalized_connection_total_form", "ordinary_bidegree_expansion"],
+      "required": ["curvature", "curvature_variation", "theta_variation", "descent_descendant", "variational_equation", "descent_equation", "omega_E4_first_step", "generalized_connection_total_form", "ordinary_bidegree_expansion", "connecting_identity_preflight"],
       "properties": {
         "curvature": {"type": "array"},
         "curvature_variation": {"type": "array"},
@@ -106,18 +111,39 @@
             "dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
             "normalization_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
             "components": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object"}},
-            "checks": {"type": "object", "additionalProperties": false, "required": ["ordinary_bidegree_expansion", "coefficient_multiplicities_from_binomial_expansion", "top_component_reconstructs_omega_E4", "bottom_QW_closure", "ghost_number_4_form_1_component", "ghost_number_5_form_0_component", "QW_a14_plus_dh_a23", "QW_a23_minus_dh_a32"], "properties": {"ordinary_bidegree_expansion": {"const": "VERIFIED"}, "coefficient_multiplicities_from_binomial_expansion": {"const": "VERIFIED"}, "top_component_reconstructs_omega_E4": {"const": "VERIFIED"}, "bottom_QW_closure": {"const": "VERIFIED"}, "ghost_number_4_form_1_component": {"const": "STRUCTURALLY_ZERO"}, "ghost_number_5_form_0_component": {"const": "STRUCTURALLY_ZERO"}, "QW_a14_plus_dh_a23": {"const": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION"}, "QW_a23_minus_dh_a32": {"const": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION"}}},
+            "checks": {"type": "object", "additionalProperties": false, "required": ["ordinary_bidegree_expansion", "coefficient_multiplicities_from_binomial_expansion", "top_carrier_polynomial_matches_declared_E4_decomposition", "bottom_factor_rule_closure", "ghost_number_4_form_1_component", "ghost_number_5_form_0_component", "QW_a14_plus_dh_a23", "QW_a23_minus_dh_a32"], "properties": {"ordinary_bidegree_expansion": {"const": "VERIFIED"}, "coefficient_multiplicities_from_binomial_expansion": {"const": "VERIFIED"}, "top_carrier_polynomial_matches_declared_E4_decomposition": {"const": "VERIFIED"}, "bottom_factor_rule_closure": {"const": "VERIFIED"}, "ghost_number_4_form_1_component": {"const": "STRUCTURALLY_ZERO"}, "ghost_number_5_form_0_component": {"const": "STRUCTURALLY_ZERO"}, "QW_a14_plus_dh_a23": {"const": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION"}, "QW_a23_minus_dh_a32": {"const": "NOT_COMPUTED_MISSING_COTTON_AND_GAMMA_ACTION"}}},
             "top_reconstruction": {"type": "object"},
             "bottom_closure": {"type": "object"},
             "claim_boundary": {"type": "object"},
             "next_required_generator_identities": {"type": "array", "minItems": 4, "items": {"type": "string"}},
             "expansion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
           }
+        },
+        "connecting_identity_preflight": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["result_id", "dependency_tags", "generator_dictionary", "generator_dictionary_sha256", "cotton_convention_bridge", "two_riemann_top_preflight", "bottom_representative", "bottom_QW_residual", "QW_squared_on_generators", "QW_generator_row_status", "checks", "source_to_project_identity_map", "claim_boundary", "preflight_sha256"],
+          "properties": {
+            "result_id": {"const": "EULER_CONNECTING_IDENTITY_PREFLIGHT"},
+            "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+            "generator_dictionary": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object"}},
+            "generator_dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "cotton_convention_bridge": {"type": "object"},
+            "two_riemann_top_preflight": {"type": "object"},
+            "bottom_representative": {"type": "array", "minItems": 1},
+            "bottom_QW_residual": {"const": []},
+            "QW_squared_on_generators": {"type": "object"},
+            "QW_generator_row_status": {"type": "object"},
+            "checks": {"type": "object", "additionalProperties": false, "required": ["indexed_total_form_words", "coefficient_and_total_parities_separated", "source_project_cotton_sign", "bounded_two_riemann_expansion", "bottom_closure_by_applied_QW", "QW_squared_on_available_generator_rows", "epsilon_contracted_top_reconstruction", "horizontal_generator_rows", "QW_dh_anticommutator_on_connecting_generators", "Gamma_action_on_W_two_form"], "properties": {"indexed_total_form_words": {"const": "VERIFIED"}, "coefficient_and_total_parities_separated": {"const": "VERIFIED"}, "source_project_cotton_sign": {"const": "VERIFIED"}, "bounded_two_riemann_expansion": {"const": "VERIFIED"}, "bottom_closure_by_applied_QW": {"const": "VERIFIED"}, "QW_squared_on_available_generator_rows": {"const": "VERIFIED"}, "epsilon_contracted_top_reconstruction": {"const": "NOT_COMPUTED"}, "horizontal_generator_rows": {"const": "NOT_COMPUTED"}, "QW_dh_anticommutator_on_connecting_generators": {"const": "NOT_COMPUTED"}, "Gamma_action_on_W_two_form": {"const": "NOT_COMPUTED"}}},
+            "source_to_project_identity_map": {"type": "object"},
+            "claim_boundary": {"type": "object"},
+            "preflight_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
         }
       }
     },
     "euler_full_diff_completed_tower": {"type": "object", "additionalProperties": false, "required": ["counterterm_tower_sha256", "anomaly_tower_sha256", "coefficients"], "properties": {"counterterm_tower_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "anomaly_tower_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "coefficients": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object"}}}},
-    "canonical_hashes": {"type": "object", "additionalProperties": false, "required": ["source_manifest_sha256", "curvature_sha256", "theta_sha256", "zero_variational_residual_sha256", "generalized_connection_dictionary_sha256", "normalization_contract_sha256", "bidegree_manifest_set_sha256", "intrinsic_component_expansion_sha256"], "properties": {"source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "curvature_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "theta_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "zero_variational_residual_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "generalized_connection_dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "normalization_contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "bidegree_manifest_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "intrinsic_component_expansion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "canonical_hashes": {"type": "object", "additionalProperties": false, "required": ["source_manifest_sha256", "curvature_sha256", "theta_sha256", "zero_variational_residual_sha256", "generalized_connection_dictionary_sha256", "normalization_contract_sha256", "bidegree_manifest_set_sha256", "intrinsic_component_expansion_sha256", "connecting_identity_preflight_sha256"], "properties": {"source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "curvature_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "theta_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "zero_variational_residual_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "generalized_connection_dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "normalization_contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "bidegree_manifest_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "intrinsic_component_expansion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "connecting_identity_preflight_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
     "assumptions": {"type": "array", "minItems": 4, "items": {"type": "string"}},
     "not_computed": {"type": "array", "minItems": 3, "items": {"type": "string"}}
   }

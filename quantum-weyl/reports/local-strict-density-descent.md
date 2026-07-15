@@ -130,6 +130,34 @@ Euler certificate.  Separate regression gates cover the verified top
 transgression, the retained `d omega wedge Theta_E` source, and the still-open
 complete lower-descendant cancellation.
 
+The connecting-identity preflight now separates coefficient parity from total
+form parity in an indexed carrier algebra and applies `Q_W` rather than merely
+inspecting factor counts.  It independently reproduces zero for the bottom
+representative and verifies `Q_W^2=0` on every generator whose row is
+available.  The Weyl-two-form and Cotton rows remain explicitly
+`NOT_COMPUTED`; they are not silently interpreted as zero.
+
+There is also a nontrivial source/project convention bridge.  With the project
+definition
+
+```text
+A_project[a,b,c] = nabla_b P_ca - nabla_c P_ba,
+```
+
+the source convention is exactly
+
+```text
+C_source[a,b,c] = -A_project[a,b,c].
+```
+
+This sign is proved against the existing Schouten derivative relation and is
+now inserted in the pending horizontal Weyl identity.  Finally, the Ricci
+decomposition engine permits an explicitly bounded two-Riemann expansion:
+the exact 25 branches split into `1` Weyl--Weyl, `8` Weyl--Schouten, and `16`
+Schouten--Schouten terms.  The epsilon-contracted comparison is still open,
+so the earlier top check has been narrowed to a carrier-polynomial statement
+rather than presented as a completed tensor identity.
+
 The generic quotient engine's exhaustiveness proof is also fail-closed at the
 artifact layer.  Promotion to `COMPLETE_NONTRIVIALITY_WITNESS` now requires
 seven embedded canonical artifacts: the basis manifest, declared bounds,
@@ -208,6 +236,20 @@ Tier 3 and the classical pipeline were again not triggered.  Ordinary
 bidegree expansion is now verified, but the two connecting identities and
 the AFN0 quotient theorem remain open; no lifecycle state or `d_quotient`
 verdict was promoted.
+
+### Connecting-identity preflight addendum
+
+| Tier | Command/rail | Elapsed | Result |
+|---|---|---:|---|
+| 0 | Euler certificate reproduction/check, strict nested schema, scoped diff check | under 3 s | pass |
+| 1 | focused Euler preflight, intrinsic expansion, certificate, and Weyl decomposition rail | 0.7 s | 13 pass |
+| 2 | complete `quantum-weyl/local_bv/tests` discovery rail | 28.4 s wall | 179 pass in 28.0 s |
+| 2 | Euler preflight hash under seeds `1,7,123`; affected Weyl decomposition, Schouten-zero image, and dimension-four catalogue certificates | under 15 s | pass |
+
+The complete local rail remains below 60 seconds.  Tier 3 and the classical
+pipeline were not triggered because this preflight deliberately leaves the
+horizontal generator rows, epsilon contraction, connecting cancellations,
+AFN0 theorem, and `d_quotient` verdict unpromoted.
 
 ## Next local gate
 
