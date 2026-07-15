@@ -192,10 +192,9 @@ def build_tex(project: Path, relative_source: str, timeout: int) -> dict[str, An
             timeout=timeout,
             env=env,
         )
-        output = str(record["output_tail"])
-        bad = [marker for marker in BAD_TEX_MARKERS if marker in output]
-        if bad:
-            raise RuntimeError(f"{name} has release-blocking TeX warnings: {bad}")
+        # Undefined-reference and rerun notices are expected on intermediate
+        # passes of a clean build.  ``pdflatex`` already fails hard errors;
+        # warning discipline is checked against the final stabilized log.
         passes.append(record)
     pdf = paper / (Path(name).stem + ".pdf")
     if not pdf.is_file() or pdf.stat().st_size == 0:
