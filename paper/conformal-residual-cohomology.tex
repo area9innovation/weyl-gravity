@@ -4020,10 +4020,15 @@ were frozen at
 \end{center}
 The companion snapshot
 records all three layers, the environment, hashes, expected-failure guards, and
-command lines.  The complete paper verification is run with
+command lines.  The exhaustive publication verification is run with
 \begin{verbatim}
-python3 symbolic/verify_conformal_paper_free.py
+python3 symbolic/verify_conformal_paper_free.py --reproduce --timeout 1800
 \end{verbatim}
+The generated
+\path{covariant_completion/generated/covariant_H4_proof_ledger.md}
+is the claim/evidence index for the terminal covariant theorem; it binds each
+required claim to its authoritative certificate digest and reproduction
+command.
 
 {\scriptsize
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.25\textwidth}

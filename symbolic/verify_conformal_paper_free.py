@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""One-command verification runner for the free conformal paper draft.
+"""Verification runner for the free conformal paper draft.
 
-The default run executes every positive certificate used by the manuscript.
-Use ``--guards`` to execute the declared fail-closed overclaim tests as well.
-``--quick`` omits the slow exact matrix calculations.
+Use ``--required`` for the fast required rail (fast positive certificates and
+all overclaim guards).  Use ``--reproduce`` for the exhaustive publication
+rail (every positive certificate and every guard).  The older ``--quick`` and
+``--guards`` switches remain available for focused local runs.
 """
 
 from __future__ import annotations
@@ -285,6 +286,17 @@ CERTIFICATES = (
         "COVARIANT FINAL CLAIM DEPENDENCY REPORT: ALL LOGIC CHECKS PASS",
     ),
     Certificate(
+        "shared certificate provenance mutation guards",
+        "verify_conformal_certificate_provenance.py",
+        "CERTIFICATE PROVENANCE GUARDS: 11/11 PASS",
+    ),
+    Certificate(
+        "covariant H4 proof-ledger freshness and guards",
+        "verify_conformal_covariant_H4_proof_ledger.py",
+        "COVARIANT H4 PROOF LEDGER: ALL CHECKS PASS",
+        ("--check", "--guards"),
+    ),
+    Certificate(
         "transport-only final covariant H4 gate",
         "verify_conformal_final_covariant_transport.py",
         "FINAL COVARIANT TRANSPORT: ALL IMPLEMENTED LOGIC CHECKS PASS",
@@ -376,7 +388,6 @@ GUARDS = (
     ("the auxiliary symbol witness is not a direct causal homotopy on H", "verify_conformal_auxiliary_green_realization.py", ("--claim-direct-original-causal-homotopy",)),
     ("the symbol witness is not the curved global witness", "verify_conformal_auxiliary_green_realization.py", ("--claim-curved-globalization",)),
     ("the recognition identity is not a constructed causal homotopy", "verify_conformal_auxiliary_green_realization.py", ("--claim-causal-homotopy",)),
-    ("the covariant theorem waits for the selected curvature propagation and causal Green system", "verify_conformal_covariant_bv_last_mile.py", ("--claim-complete-covariant-theorem",)),
     ("the final theorem transports rather than recomputes auxiliary H4", "verify_conformal_final_covariant_transport.py", ("--recompute-auxiliary-h4",)),
     ("the vector field residue has elliptic order two", "verify_conformal_cauchy_sobolev.py", ("--claim-vector-residue-order-zero",)),
     ("the vector Cauchy space is not H half plus H minus half", "verify_conformal_cauchy_sobolev.py", ("--claim-vector-h-half",)),
@@ -457,6 +468,17 @@ def run_guards(timeout: int, verbose: bool) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
+    rail = parser.add_mutually_exclusive_group()
+    rail.add_argument(
+        "--required",
+        action="store_true",
+        help="run the fast required rail: non-slow certificates plus all guards",
+    )
+    rail.add_argument(
+        "--reproduce",
+        action="store_true",
+        help="run the exhaustive publication rail: every certificate and guard",
+    )
     parser.add_argument(
         "--quick",
         action="store_true",
@@ -477,6 +499,19 @@ def main() -> None:
     parser.add_argument("--list", action="store_true", help="list jobs without running them")
     args = parser.parse_args()
 
+    if (args.required or args.reproduce) and (
+        args.quick or args.guards or args.guards_only
+    ):
+        parser.error(
+            "--required/--reproduce already select quick/full and guard policy"
+        )
+    if args.required:
+        args.quick = True
+        args.guards = True
+    elif args.reproduce:
+        args.quick = False
+        args.guards = True
+
     if args.list:
         for certificate in CERTIFICATES:
             suffix = " [slow]" if certificate.slow else ""
@@ -491,6 +526,14 @@ def main() -> None:
     print("algebraic BV-BFV snapshot:", ALGEBRAIC_BV_BFV_SNAPSHOT_COMMIT)
     print("python:", sys.version.split()[0])
     print("sympy:", sp.__version__)
+    selected_rail = (
+        "fast-required"
+        if args.required
+        else "exhaustive-reproduction"
+        if args.reproduce
+        else "custom"
+    )
+    print("verification rail:", selected_rail)
     if not args.guards_only:
         run_positive(args.quick, args.verbose, args.timeout)
     if args.guards or args.guards_only:

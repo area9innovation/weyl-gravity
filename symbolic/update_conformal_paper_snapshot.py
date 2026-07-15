@@ -25,6 +25,7 @@ def dependencies() -> tuple[Path, ...]:
         ROOT.parent.parent / ".github" / "workflows" / "conformal-bridge.yml",
         ROOT / "README.md",
         ROOT / "notes" / "conformal-paper-snapshot.md",
+        ROOT / "notes" / "conformal-publication-reproduction.md",
         ROOT / "paper" / "conformal-residual-cohomology.tex",
         ROOT / "paper" / "conformal-residual-cohomology.pdf",
         ROOT / "paper" / "ghosts-geometry-reality.tex",

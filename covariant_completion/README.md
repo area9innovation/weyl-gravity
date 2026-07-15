@@ -53,6 +53,11 @@ canonical endpoint inverse or the earlier monolithic prolonged witness:
 `prolonged_green_witness=false` remain scoped legacy flags.  The package also
 does not claim a direct same-bundle factorization of `H=B_lin+K T/2`.
 
+For the required and exhaustive verification rails, publication artifact
+procedure, and a compact separation of completed, historical, and future
+claims, see
+[`../notes/conformal-publication-reproduction.md`](../notes/conformal-publication-reproduction.md).
+
 ## Exact minimal ghost witness
 
 On the complete trace-free metric bundle, not merely on harmonics, the

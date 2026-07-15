@@ -43,6 +43,11 @@ particle-number-diagonal Krein lift does not make that block null.
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.
 
+Publication and reproduction instructions for Paper 7 are collected in
+[`notes/conformal-publication-reproduction.md`](notes/conformal-publication-reproduction.md),
+including the fast required rail, exhaustive scheduled rail, scoped legacy
+flags, and publication artifact procedure.
+
 General-audience article:
 [`Before Worrying About a Gravitational Ghost, Ask Whether It Is Really There`](paper/before-worrying-about-a-gravitational-ghost.md)
 explains the completed classical pure-Weyl BV–BFV result without assuming
@@ -333,8 +338,10 @@ its three spatial first-order coefficients, and the scalar diagonal still
 lacks its cyclic all-row lift.  Thus the arbitrary-covector symbol,
 characteristics, positive
 symmetrizer and lower-order completion remain open.
-These are diagnostics, not theorem promotions: at that intermediate stage
-the six causal/transport flags remained false on this route.
+**Historical checkpoint.** These are diagnostics, not theorem promotions: at
+that intermediate stage the six causal/transport flags remained false on
+this superseded route.  The direct tractor route described above subsequently
+closed the causal theorem.
 
 The complete equivariant `R6sharp` audit now finds 22 temporal and 46
 spatial parameters.  With the certified temporal normalization fixed, the
@@ -560,9 +567,10 @@ infinite-index energy-mode Krein completion, its symmetric bosonic Fock
 space has fundamental symmetry `Gamma_s(J)`, and the residual differential
 has a closed maximal block realization.  A bounded Cartan contraction
 proves closed range and reduces completed cohomology to the unchanged finite
-centered block.  This is not a positive graviton Hilbert-space theorem, a
-quantum anomaly result, or a full covariant BV Green-complex theorem.  At the
-reduced one-particle level, the Lorentzian tensor/vector fields now have an
+centered block.  This is not a positive graviton Hilbert-space theorem or a
+quantum anomaly result.  The separate direct tractor construction now proves
+the full free covariant BV causal theorem, but not a canonical endpoint Green
+inverse or Hadamard theory.  At the reduced one-particle level, the Lorentzian tensor/vector fields have an
 exact Cauchy--Sobolev realization: the TT branches use
 `H^1 + L^2`, the vector branch uses `H^(3/2) + H^(1/2)`, and the resulting
 harmonic transform is Krein-unitary onto the completed `E/A/L` module.
@@ -679,7 +687,8 @@ cd symbolic && python3 verify_gravity_reduction.py   # paper 4, G1–G7
 cd symbolic && python3 verify_gravity_completion.py  # paper 4, G8–G9
 cd symbolic && python3 verify_gravity_spectral.py    # paper 4, G10–G12
 cd symbolic && python3 verify_gravity_paper6.py       # paper 6, full suite
-cd symbolic && python3 verify_conformal_paper_free.py --guards  # paper 7, full suite
+cd symbolic && python3 verify_conformal_paper_free.py --required   # paper 7, fast required rail
+cd symbolic && python3 verify_conformal_paper_free.py --reproduce  # paper 7, exhaustive publication rail
 cd numeric  && python3 regression.py && python3 distortion_scan.py && python3 cartan_checks.py
 cd lean     && lake exe cache get && lake build    # zero sorry
 cd symbolic && for f in verify_interaction_deformation verify_interaction_order3 verify_pt_breaking verify_perfect_square verify_two_field verify_sector_obstruction verify_hardening verify_doubled_theory verify_51_order4 verify_obstruction_null; do python3 $f.py; done   # paper 5
