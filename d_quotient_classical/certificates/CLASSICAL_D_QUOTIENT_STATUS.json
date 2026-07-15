@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split and the homogeneous neutral two-scalar clock sector on their separately declared reduced-mode phase spaces. The neutral clock uses opposite-sign reference matter; no inhomogeneous healthy-matter, interacting, boundary, quantum, or universal D verdict is promoted. Yang-Mills, deformed backgrounds, dS/AdS boundaries, null infinity, and all-order nonlinear integrability remain open or not tested.",
+  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split and the homogeneous neutral two-scalar clock sector on their separately declared reduced-mode phase spaces. A local health audit proves that the neutral clock's opposite-sign ratio sector is not globally positive or entirely contractible; this does not alter the scoped homogeneous D_GAUGE verdict. No healthy inhomogeneous matter, interacting, boundary, quantum, or universal D verdict is promoted.",
   "claim_state": "PARTIAL",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -82,12 +82,22 @@
       "evidence_id": "neutral_conformal_clock_pair",
       "path": "d_quotient_classical/certificates/NEUTRAL_CONFORMAL_CLOCK_PAIR.json",
       "sha256": "c68921ec717de842052350238cfb3cb65f950a05197dd213691b5b4bb1b14e03"
+    },
+    {
+      "claim_scope": "Exact polar/Weyl reduction and neutral-orbit obstruction showing that the opposite-sign ratio mode is derivative, changes kinetic sign, and crosses four degeneracy surfaces per compact D period.",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "evidence_id": "neutral_clock_bv_health_audit",
+      "path": "d_quotient_classical/certificates/NEUTRAL_CLOCK_BV_HEALTH_AUDIT.json",
+      "sha256": "182488e9efd280ed09c0c6d76a7699c64f822f23e79d0a877c5b439b66d56392"
     }
   ],
   "open_fields": [
     "sufficiency of the quadratic Taub zero fibre for all-order nonlinear integrability",
     "closure and possible algebroid structure of zero-charge transformations",
-    "support-local inhomogeneous BV completion and health of the neutral two-field clock pair",
+    "positive-energy clock on a genuinely non-conformally-flat Bach-sourced background or a regular stress-free stealth clock",
     "Yang-Mills matter contribution",
     "quantitative weak-background stability radius",
     "Lorentzian dS/AdS boundary charges",
@@ -574,6 +584,22 @@
       "higher_tiers_not_run": "Inhomogeneous, nonlinear, causal, and quantum clock-pair tests are explicitly open.",
       "status": "PASS",
       "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/composite_clock/neutral_clock_bv_health.py --check --guards",
+      "elapsed_seconds": 1.2,
+      "escalation_criterion": "Escalate if the polar target metric, conserved neutral-orbit identity, kinetic-sign crossings, support-local incidence, or overclaim guards change.",
+      "higher_tiers_not_run": "The result is a scoped local/reduced-mode health obstruction, not a constructed all-row causal BV complex.",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_clock_bv_health",
+      "elapsed_seconds": 1.5,
+      "escalation_criterion": "Escalate if the ratio derivative mode, four null-cone crossings, homogeneous-clock retention, or scoped obstruction changes.",
+      "higher_tiers_not_run": "Positive-energy non-conformally-flat and stealth alternatives are separate future models.",
+      "status": "PASS",
+      "test_tier": 1
     }
   ],
   "work_packages": {
@@ -606,7 +632,7 @@
       "evidence_refs": [
         "compact_d_charge"
       ],
-      "next_gate": "Construct the support-local inhomogeneous neutral-clock BV complex and determine whether the opposite-sign reference direction is gauge/contractible.",
+      "next_gate": "Construct a positive-energy clock on a non-conformally-flat Bach-sourced background or a regular stress-free stealth clock.",
       "result": "The compact vacuum cylinder is sector-dependent: D is charged on P_lin and gauge only after restriction to and quotient by the full Taub-zero derived sector.",
       "status": "CERTIFIED"
     },
@@ -617,11 +643,12 @@
       ],
       "evidence_refs": [
         "scalar_clock_vertical_slice",
-        "neutral_conformal_clock_pair"
+        "neutral_conformal_clock_pair",
+        "neutral_clock_bv_health_audit"
       ],
-      "next_gate": "Construct the full support-local inhomogeneous BV completion of the neutral pair and test whether its opposite-sign reference sector is entirely gauge/contractible.",
-      "result": "The one-real-scalar exact-cylinder candidate is obstructed. A minimal two-field replacement with internal signature (+,-) has an exact nonzero neutral sector: H_D=0 cancels the improved stress, W!=0 is conserved, the projective angle is a global compact-D clock, and the Diff x Weyl incidence has full rank. D is gauge on this declared homogeneous zero-level phase space.",
-      "status": "CERTIFIED"
+      "next_gate": "Construct a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background or a regular stress-free stealth clock.",
+      "result": "The one-real-scalar candidate is obstructed. The neutral (+,-) pair is an exact homogeneous compact-D clock with scoped D_GAUGE verdict, but its Weyl-reduced ratio mode retains derivatives and every neutral winding orbit crosses four kinetic-sign degeneracies. The homogeneous reference theorem survives; promotion to a healthy local physical clock is obstructed.",
+      "status": "PARTIAL"
     }
   }
 }

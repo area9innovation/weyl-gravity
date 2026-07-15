@@ -40,8 +40,13 @@ point, and the raw two-field Diff \(\times\) Weyl incidence has determinant
 of the pulled-back symplectic form and is therefore `D_GAUGE`.
 
 This is reference/Krein matter, not a positive-energy matter completion. Its
-support-local inhomogeneous BV theory and the fate of the negative direction
-remain open.
+local health audit is now decisive: after Weyl reduction the ratio field keeps
+a derivative term with coefficient \(-\rho^2\cos(2\theta)\). Every neutral
+winding clock crosses its zero four times per compact period, so the sign
+alternates and the local kinetic sector degenerates. Temporal unitary gauge
+transfers this dynamics to metric/constraint rows rather than deleting it.
+Thus the homogeneous reference clock remains valid, but its promotion to a
+globally regular positive local matter clock is obstructed.
 
 The present charge audit composes the exact reduced-mode moment map with the
 already-certified Lorentzian current comparison, so it is tagged
@@ -119,9 +124,9 @@ status promotion.
 
 ## Next gates
 
-1. Construct the support-local inhomogeneous BV completion of the neutral
-   two-field clock and decide whether its opposite-sign reference direction is
-   entirely gauge/contractible.
+1. Construct either a positive-energy clock on a genuinely
+   non-conformally-flat Bach-sourced background or a regular stress-free
+   conformal/stealth clock.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
 3. Compute the first background-deformation obstruction and a quantitative
@@ -145,6 +150,8 @@ python3 d_quotient_classical/scalar_clock/conformal_scalar_clock.py --check --gu
 python3 -m unittest d_quotient_classical.scalar_clock.tests.test_conformal_scalar_clock
 python3 d_quotient_classical/composite_clock/neutral_conformal_clock.py --check --guards
 python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_conformal_clock
+python3 d_quotient_classical/composite_clock/neutral_clock_bv_health.py --check --guards
+python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_clock_bv_health
 ```
 
 No full-suite result is implied by the scoped checks.

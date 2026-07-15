@@ -367,12 +367,13 @@ def validate_record(record: object) -> list[str]:
             ),
             None,
         )
-        if isinstance(clock, dict) and clock.get("status") == "CERTIFIED":
+        if isinstance(clock, dict) and clock.get("status") == "PARTIAL":
             if clock.get("evidence_refs") != [
                 "scalar_clock_vertical_slice",
                 "neutral_conformal_clock_pair",
+                "neutral_clock_bv_health_audit",
             ]:
-                errors.append("$.work_packages.relational_clock: certified replacement requires both clock certificates")
+                errors.append("$.work_packages.relational_clock: partial replacement requires the obstruction, clock, and health certificates")
             if not isinstance(scalar_setting, dict):
                 errors.append("$.settings: missing scalar-clock setting")
             elif scalar_setting.get("verdict") is not None or scalar_setting.get("assessment_status") != "OPEN":

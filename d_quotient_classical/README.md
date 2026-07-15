@@ -34,6 +34,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/NEUTRAL_CONFORMAL_CLOCK_PAIR.json`](certificates/NEUTRAL_CONFORMAL_CLOCK_PAIR.json)
 - Neutral two-field clock report:
   [`reports/neutral-conformal-clock-pair.md`](reports/neutral-conformal-clock-pair.md)
+- Neutral clock BV/health obstruction:
+  [`certificates/NEUTRAL_CLOCK_BV_HEALTH_AUDIT.json`](certificates/NEUTRAL_CLOCK_BV_HEALTH_AUDIT.json)
+- Neutral clock BV/health report:
+  [`reports/neutral-clock-bv-health-audit.md`](reports/neutral-clock-bv-health-audit.md)
 
 The only scientific verdicts are:
 
@@ -60,13 +64,16 @@ python3 d_quotient_classical/scalar_clock/conformal_scalar_clock.py --check --gu
 python3 -m unittest d_quotient_classical.scalar_clock.tests.test_conformal_scalar_clock
 python3 d_quotient_classical/composite_clock/neutral_conformal_clock.py --check --guards
 python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_conformal_clock
+python3 d_quotient_classical/composite_clock/neutral_clock_bv_health.py --check --guards
+python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_clock_bv_health
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
 complex inventories, verdict prerequisites, and mutation guards. It does not
 rerun the mathematical producers. The remaining commands are the scoped
 producer checks for the compact charge, alternative residual complexes, and
-the one-real-scalar obstruction and neutral two-field replacement.
+the one-real-scalar obstruction, neutral two-field replacement, and its local
+positive-health obstruction.
 
 ## Promotion rule
 
