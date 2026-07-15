@@ -84,6 +84,24 @@ def main() -> int:
         "single primal open rank nine": (
             certificate["channel_ledger"]["single_primal_open_operator_rank"] == 9
         ),
+        "tracefree principal symbol exact": (
+            certificate["tracefree_channel"][
+                "principal_symbol_checked_coefficientwise"
+            ]
+            is True
+            and certificate["tracefree_channel"][
+                "principal_symbol_defect_nonzero_entries"
+            ]
+            == 0
+            and certificate["tracefree_channel"][
+                "principal_multiindices_checked"
+            ]
+            == 35
+            and certificate["tracefree_channel"]["temporal_SO3_channels"][
+                "defect_nonzero_entries"
+            ]
+            == 0
+        ),
         "curvature source remains equation-cone typed": (
             certificate["curvature_route"]["equation_cone_required"] is True
             and certificate["curvature_route"][
@@ -117,7 +135,7 @@ def main() -> int:
             "its equation-adjoint trace are also pointwise triangular identity "
             "extensions.\n\n"
             "The sole primal analytic gap is therefore the rank-nine trace-free "
-            "operator `D_TF=2H`; its rank-nine adjoint copy is the only other "
+            "operator `D_TF=H_end`; its rank-nine adjoint copy is the only other "
             "open endpoint channel. A same-bundle factorization or a causal "
             "metric-potential lift from the full equation-cone Weyl--Cotton "
             "source would close it. No top-level causal flag is promoted.\n"

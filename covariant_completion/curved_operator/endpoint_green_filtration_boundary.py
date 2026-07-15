@@ -11,11 +11,11 @@ certified vector biwave by the Weyl-scalar identity.  The metric block is a
 pointwise triangular extension of its trace-free restriction by the trace
 identity.  The equation and identity blocks are the corresponding formal
 adjoints.  Hence the only unsolved analytic operator is the trace-free
-nine-component block ``2H`` and its adjoint copy.
+nine-component block ``H_end`` and its adjoint copy.
 
 The reduction is coefficientwise on the exact curved tables.  It does not
-claim a Green inverse for ``2H``.  The two remaining sufficient routes are a
-same-bundle local factorization of ``2H`` or a causal metric-potential lift
+claim a Green inverse for ``H_end``.  The two remaining sufficient routes are
+a same-bundle local factorization of ``H_end`` or a causal metric-potential lift
 from the certified Weyl--Cotton compatibility complex.
 """
 
@@ -55,6 +55,20 @@ def _certificate_digest(certificate: Mapping[str, object]) -> str:
 
 def _nonzero_count(table: CoefficientTable) -> int:
     return sum(int(value != 0) for _, matrix in table for value in matrix)
+
+
+def _wave_square_coefficient(multiindex: tuple[int, int, int, int]) -> sp.Expr:
+    """Coefficient of ``(-z0^2+z1^2+z2^2+z3^2)^2``."""
+
+    if sum(multiindex) != 4 or any(value not in (0, 2, 4) for value in multiindex):
+        return sp.Integer(0)
+    support = [axis for axis, value in enumerate(multiindex) if value]
+    if len(support) == 1 and multiindex[support[0]] == 4:
+        return sp.Integer(1)
+    if len(support) == 2 and all(multiindex[axis] == 2 for axis in support):
+        signature = (-1, 1, 1, 1)
+        return sp.Integer(2 * signature[support[0]] * signature[support[1]])
+    return sp.Integer(0)
 
 
 SmallMatrix = list[list[OperatorPolynomial]]
@@ -116,6 +130,8 @@ class EndpointGreenFiltrationBoundary:
     tracefree_projector: sp.Matrix
     tracefree_field_coefficients: CoefficientTable
     trace_coupling_coefficients: CoefficientTable
+    tracefree_principal_defects: tuple[sp.Matrix, ...]
+    temporal_principal_SO3_defects: tuple[sp.Matrix, ...]
     ghost_green_formula_left: bool
     ghost_green_formula_right: bool
     field_green_formula_left: bool
@@ -148,6 +164,33 @@ class EndpointGreenFiltrationBoundary:
             )
             for multiindex, coefficient in witness.field_block_coefficients
         )
+        principal_defects = tuple(
+            (
+                p_tracefree * coefficient * p_tracefree
+                - _wave_square_coefficient(multiindex) * p_tracefree
+            ).applyfunc(sp.expand)
+            for multiindex, coefficient in witness.field_block_coefficients
+            if sum(multiindex) == 4
+        )
+
+        temporal = (
+            p_tracefree
+            * dict(witness.field_block_coefficients)[(4, 0, 0, 0)]
+            * p_tracefree
+        ).applyfunc(sp.expand)
+        spin_zero = sp.Matrix([3, 0, 0, 0, 1, 0, 0, 1, 0, 1])
+        spin_one = sp.eye(10)[:, [1, 2, 3]]
+        spatial_trace = sp.Matrix([[1, 0, 0, 1, 0, 1]])
+        spatial_stf_small = sp.Matrix.hstack(*spatial_trace.nullspace())
+        spatial_slots = (4, 5, 6, 7, 8, 9)
+        spin_two = sp.zeros(10, 5)
+        for local_row, global_row in enumerate(spatial_slots):
+            spin_two[global_row, :] = spatial_stf_small[local_row, :]
+        temporal_so3_defects = (
+            (temporal * spin_zero - spin_zero).applyfunc(sp.expand),
+            (temporal * spin_one - spin_one).applyfunc(sp.expand),
+            (temporal * spin_two - spin_two).applyfunc(sp.expand),
+        )
 
         one = OperatorPolynomial.identity()
         zero = OperatorPolynomial.zero()
@@ -176,6 +219,8 @@ class EndpointGreenFiltrationBoundary:
             tracefree_projector=p_tracefree,
             tracefree_field_coefficients=tracefree,
             trace_coupling_coefficients=coupling,
+            tracefree_principal_defects=principal_defects,
+            temporal_principal_SO3_defects=temporal_so3_defects,
             ghost_green_formula_left=left,
             ghost_green_formula_right=right,
             field_green_formula_left=field_left,
@@ -213,6 +258,15 @@ class EndpointGreenFiltrationBoundary:
         pairing = self.endpoint.field_pairing
         if pairing.inv() * self.trace_projector.T * pairing != self.trace_projector:
             raise AssertionError("the trace split is not pairing self-adjoint")
+        if len(self.tracefree_principal_defects) != 35 or any(
+            defect != sp.zeros(10) for defect in self.tracefree_principal_defects
+        ):
+            raise AssertionError("the exact trace-free fourth-order symbol is not scalar")
+        if any(
+            defect != sp.zeros(defect.rows, defect.cols)
+            for defect in self.temporal_principal_SO3_defects
+        ):
+            raise AssertionError("the temporal symbol is not identity on an SO(3) channel")
         if not all(
             (
                 self.ghost_green_formula_left,
@@ -232,7 +286,7 @@ class EndpointGreenFiltrationBoundary:
         schemas = {
             "endpoint": "pure-weyl-prolonged-metric-endpoint-complex-v1",
             "backward_witness": (
-                "pure-weyl-prolonged-metric-endpoint-backward-witness-v1"
+                "pure-weyl-prolonged-metric-endpoint-backward-witness-v2"
             ),
             "saddle_nilpotence": (
                 "pure-weyl-endpoint-relative-saddle-nilpotence-v1"
@@ -293,7 +347,7 @@ class EndpointGreenFiltrationBoundary:
                 "decomposition": "M=S2_0 direct-sum trace",
                 "projectors_pointwise_parallel": True,
                 "D_M_matrix": "[[D_TF,0],[r_trace,1]]",
-                "D_TF": "P_TF D_M P_TF=2H on S2_0",
+                "D_TF": "P_TF D_M P_TF=H_end on S2_0",
                 "trace_to_tracefree_defect": 0,
                 "trace_diagonal_defect": 0,
                 "trace_coupling_nonzero_coefficients": trace_coupling_nonzero,
@@ -303,8 +357,28 @@ class EndpointGreenFiltrationBoundary:
             },
             "tracefree_channel": {
                 "rank": 9,
-                "operator": "D_TF=2H=2B_lin+K_TF T",
+                "operator": "D_TF=H_end=Bach_bar+K_TF T",
                 "principal_symbol": "(zeta^2)^2 I_9",
+                "principal_symbol_checked_coefficientwise": True,
+                "principal_symbol_defect_nonzero_entries": sum(
+                    int(value != 0)
+                    for defect in self.tracefree_principal_defects
+                    for value in defect
+                ),
+                "principal_multiindices_checked": len(
+                    self.tracefree_principal_defects
+                ),
+                "temporal_SO3_channels": {
+                    "spin_0_dimension": 1,
+                    "spin_1_dimension": 3,
+                    "spin_2_dimension": 5,
+                    "eigenvalue_on_each": 1,
+                    "defect_nonzero_entries": sum(
+                        int(value != 0)
+                        for defect in self.temporal_principal_SO3_defects
+                        for value in defect
+                    ),
+                },
                 "gauge_intertwiner": "D_TF K_TF=K_TF Box(Box+2)",
                 "reduced_physical_factors_known": True,
                 "complete_lower_order_same_bundle_factorization": False,
@@ -332,7 +406,7 @@ class EndpointGreenFiltrationBoundary:
                 "green_components": 12,
                 "open_components_including_adjoint_copy": 18,
                 "single_primal_open_operator_rank": 9,
-                "open_operator": "2H on trace-free symmetric tensors",
+                "open_operator": "H_end on trace-free symmetric tensors",
             },
             "next_exact_tests": [
                 "factor D_TF on the same trace-free bundle into causal second-order factors",

@@ -3,7 +3,7 @@
   "channel_ledger": {
     "green_components": 12,
     "open_components_including_adjoint_copy": 18,
-    "open_operator": "2H on trace-free symmetric tensors",
+    "open_operator": "H_end on trace-free symmetric tensors",
     "single_primal_open_operator_rank": 9,
     "total_endpoint_components": 30
   },
@@ -17,7 +17,7 @@
     "remaining_map": "a retarded/advanced metric-potential lift from compatible Weyl--Cotton curvature plus gauge data to S2_0"
   },
   "dependency_sha256": {
-    "backward_witness": "81f69172807baef49c92e20151a6bf5b216055762a060f802fa10f8b3adb143a",
+    "backward_witness": "f96ae76717f2be4edc39ff233137e4420cb1693efbbb8225053de7fa411570ec",
     "curvature_chain": "78164e0c98d27819dbea2cc1597c387b6496a5ef47e67d196fcc9b34a8cdff15",
     "curvature_green": "b068819251fd2211d545697fe2ac8f9fa240922b8f01b480db9e4db790ec8889",
     "curvature_pde": "b553072a21ba550a44b0b5737e3fa0eafcc513195fbac83ed09cd2fab05216d1",
@@ -53,7 +53,7 @@
   },
   "metric_trace_filtration": {
     "D_M_matrix": "[[D_TF,0],[r_trace,1]]",
-    "D_TF": "P_TF D_M P_TF=2H on S2_0",
+    "D_TF": "P_TF D_M P_TF=H_end on S2_0",
     "conditional_green": "[[G_TF,0],[-r_trace G_TF,1]]",
     "conditional_left_inverse": true,
     "conditional_right_inverse": true,
@@ -84,12 +84,22 @@
   "tracefree_channel": {
     "complete_lower_order_same_bundle_factorization": false,
     "gauge_intertwiner": "D_TF K_TF=K_TF Box(Box+2)",
-    "operator": "D_TF=2H=2B_lin+K_TF T",
+    "operator": "D_TF=H_end=Bach_bar+K_TF T",
+    "principal_multiindices_checked": 35,
     "principal_symbol": "(zeta^2)^2 I_9",
+    "principal_symbol_checked_coefficientwise": true,
+    "principal_symbol_defect_nonzero_entries": 0,
     "rank": 9,
     "reduced_physical_factors_known": true,
     "status": "OPEN",
-    "support_local_curvature_to_metric_green_lift": false
+    "support_local_curvature_to_metric_green_lift": false,
+    "temporal_SO3_channels": {
+      "defect_nonzero_entries": 0,
+      "eigenvalue_on_each": 1,
+      "spin_0_dimension": 1,
+      "spin_1_dimension": 3,
+      "spin_2_dimension": 5
+    }
   },
   "warranted_atomic_flags": [
     "endpoint_ghost_identity_green_channels_exact",
