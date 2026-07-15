@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-afn0-ambient-tensor-graph-realization-v1.json",
+  "title": "AFN0 ambient tensor-graph realization",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope_label", "ambient_signature_source", "factor_profile_bundle", "totals", "counts_by_sector", "rejected_signature_manifest_sha256", "realized_signature_summaries", "checks", "next_gates", "claim_boundary", "analysis_sha256", "canonical_hashes", "certificate_sha256"],
+  "properties": {
+    "result_id": {"const": "AFN0_AMBIENT_TENSOR_GRAPH_REALIZATION_CERTIFICATE"},
+    "result_state": {"const": "AMBIENT_TENSOR_GRAPH_REALIZATION_COMPLETE_QUOTIENT_OPEN"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope_label": {"const": "AFN0_ONLY"},
+    "ambient_signature_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "analysis_sha256"],
+      "properties": {
+        "result_id": {"const": "AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE"},
+        "analysis_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "factor_profile_bundle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bundle_sha256", "realization_count", "path"],
+      "properties": {
+        "bundle_sha256": {"$ref": "#/$defs/hash"},
+        "realization_count": {"const": 720},
+        "path": {"type": "string", "pattern": "^ambient_tensor_graph_manifests/[0-9a-f]{64}\\.json$"}
+      }
+    },
+    "totals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coarse_signature_count", "rejected_signature_count", "refined_signature_count", "factor_profile_count", "total_raw_graph_count", "factored_count_only_signature_count"],
+      "properties": {
+        "coarse_signature_count": {"const": 2480},
+        "rejected_signature_count": {"const": 1760},
+        "refined_signature_count": {"const": 720},
+        "factor_profile_count": {"const": 1224},
+        "total_raw_graph_count": {"const": 2860932903},
+        "factored_count_only_signature_count": {"type": "integer", "minimum": 1, "maximum": 720}
+      }
+    },
+    "counts_by_sector": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["parity", "total_degree", "refined_signature_count", "factor_profile_count", "total_raw_graph_count"],
+        "properties": {
+          "parity": {"enum": ["even", "odd"]},
+          "total_degree": {"enum": [3, 4, 5, 6]},
+          "refined_signature_count": {"type": "integer", "minimum": 1},
+          "factor_profile_count": {"type": "integer", "minimum": 1},
+          "total_raw_graph_count": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "rejected_signature_manifest_sha256": {"$ref": "#/$defs/hash"},
+    "realized_signature_summaries": {
+      "type": "array",
+      "minItems": 720,
+      "maxItems": 720,
+      "items": {"$ref": "#/$defs/summary"}
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["all_ambient_signatures_accounted_for", "every_refined_signature_has_factor_profile", "every_factor_profile_reproduces_index_slots", "Weyl_scalar_Grassmann_zero_profiles_removed", "epsilon_and_metric_graph_counts_exact", "no_raw_graph_materialization_claim"],
+      "properties": {
+        "all_ambient_signatures_accounted_for": {"const": "VERIFIED"},
+        "every_refined_signature_has_factor_profile": {"const": "VERIFIED"},
+        "every_factor_profile_reproduces_index_slots": {"const": "VERIFIED"},
+        "Weyl_scalar_Grassmann_zero_profiles_removed": {"const": "VERIFIED"},
+        "epsilon_and_metric_graph_counts_exact": {"const": "VERIFIED"},
+        "no_raw_graph_materialization_claim": {"const": "VERIFIED"}
+      }
+    },
+    "next_gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["factor_permutation_actions", "Bianchi_and_Grassmann_quotient", "integration_by_parts_quotient", "dimension_specific_antisymmetrization", "production_Q_dh_matrices"],
+      "properties": {
+        "factor_permutation_actions": {"const": "NOT_COMPUTED"},
+        "Bianchi_and_Grassmann_quotient": {"const": "NOT_COMPUTED"},
+        "integration_by_parts_quotient": {"const": "NOT_COMPUTED"},
+        "dimension_specific_antisymmetrization": {"const": "NOT_COMPUTED"},
+        "production_Q_dh_matrices": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "claim_boundary": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "analysis_sha256": {"$ref": "#/$defs/hash"},
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest_sha256", "analysis_sha256", "bundle_sha256"],
+      "properties": {
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "analysis_sha256": {"$ref": "#/$defs/hash"},
+        "bundle_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "certificate_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["signature_sha256", "parity", "total_degree", "ghost_number", "form_degree", "total_index_slots_with_dx", "factor_profile_count", "factor_profile_manifest_sha256", "raw_graph_count_per_profile", "total_raw_graph_count", "graph_storage_mode", "realization_sha256"],
+      "properties": {
+        "signature_sha256": {"$ref": "#/$defs/hash"},
+        "parity": {"enum": ["even", "odd"]},
+        "total_degree": {"enum": [3, 4, 5, 6]},
+        "ghost_number": {"type": "integer", "minimum": 0},
+        "form_degree": {"type": "integer", "minimum": 0, "maximum": 4},
+        "total_index_slots_with_dx": {"type": "integer", "minimum": 2, "maximum": 18},
+        "factor_profile_count": {"type": "integer", "minimum": 1},
+        "factor_profile_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "raw_graph_count_per_profile": {"type": "integer", "minimum": 1},
+        "total_raw_graph_count": {"type": "integer", "minimum": 1},
+        "graph_storage_mode": {"enum": ["EXPLICIT_MATERIALIZATION_ADMISSIBLE", "FACTORED_COUNT_ONLY"]},
+        "realization_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

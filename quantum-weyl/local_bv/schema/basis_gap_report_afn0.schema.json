@@ -124,13 +124,18 @@
     "ambient_lower_form_signature_inventory": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["result_id", "analysis_sha256", "totals", "integer_grading_status", "tensor_graph_realizability"],
+      "required": ["result_id", "analysis_sha256", "totals", "integer_grading_status", "tensor_graph_realizability", "tensor_graph_result_id", "tensor_graph_analysis_sha256", "factor_profile_bundle_sha256", "factor_profile_count", "total_raw_graph_count"],
       "properties": {
         "result_id": {"const": "AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE"},
         "analysis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "totals": {"type": "object"},
         "integer_grading_status": {"const": "EXHAUSTIVE_UNDER_DECLARED_GENERATOR_ALGEBRA"},
-        "tensor_graph_realizability": {"const": "NOT_COMPUTED"}
+        "tensor_graph_realizability": {"const": "COMPLETE_FACTORED"},
+        "tensor_graph_result_id": {"const": "AFN0_AMBIENT_TENSOR_GRAPH_REALIZATION_CERTIFICATE"},
+        "tensor_graph_analysis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "factor_profile_bundle_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "factor_profile_count": {"const": 1224},
+        "total_raw_graph_count": {"const": 2860932903}
       }
     },
     "total_complex_gates": {

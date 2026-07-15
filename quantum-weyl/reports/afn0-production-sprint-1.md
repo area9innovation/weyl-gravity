@@ -88,15 +88,20 @@ The current candidate, intrinsic Euler, and explicit exact-boundary
 lower-form carriers are now assembled and content-addressed: 64 carriers in
 all, 55 below top form degree. The ambient integer solver separately produces
 2,480 coarse signatures and 720 refined signatures across total degrees three
-through six. Construct and quotient their tensor graphs, then assemble exact
-`Q` and `d_h` matrices and only then solve the full boundary-membership
-problem.
+through six. The refined set is now realized as 1,224 exact derivative-factor
+profiles representing 2,860,932,903 raw graphs without materializing them.
+Construct the signed factor actions and quotient these factored graphs, then
+assemble exact `Q` and `d_h` matrices and only then solve the full
+boundary-membership problem.
 
 Machine receipt:
 `quantum-weyl/local_bv/certificates/AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE.json`.
 
 Ambient grading receipt:
 `quantum-weyl/local_bv/certificates/AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE.json`.
+
+Ambient tensor-graph receipt:
+`quantum-weyl/local_bv/certificates/AFN0_AMBIENT_TENSOR_GRAPH_REALIZATION_CERTIFICATE.json`.
 
 ### Lower-form production receipt
 

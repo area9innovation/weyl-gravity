@@ -277,3 +277,12 @@ Next admissible local steps are tensor-graph realization of the 720 refined
 ambient signatures, their canonical quotient, assembly of exact `Q` and
 `d_h` matrices, and the higher-derivative Weyl--Cotton jet quotient. Only the
 antifield/Koszul--Tate extension waits for the frozen classical schema.
+
+The tensor-graph realization layer is now certified by
+[`certificates/AFN0_AMBIENT_TENSOR_GRAPH_REALIZATION_CERTIFICATE.json`](certificates/AFN0_AMBIENT_TENSOR_GRAPH_REALIZATION_CERTIFICATE.json).
+The 720 refined signatures split into 1,224 exact derivative-distribution
+profiles representing 2,860,932,903 raw contraction graphs.  The large graph
+sets are deliberately stored in a factored, content-addressed manifest rather
+than materialized.  This closes tensor-slot realizability, while signed factor
+actions, Bianchi/jet relations, integration by parts, the four-dimensional
+quotient, and production matrices remain open.

@@ -146,6 +146,18 @@ class AfnZeroProductionTests(unittest.TestCase):
             ],
             "EXHAUSTIVE",
         )
+        self.assertEqual(
+            certificate["checks"][
+                "ambient_lower_form_tensor_graph_realizability"
+            ],
+            "COMPLETE_FACTORED",
+        )
+        self.assertRegex(
+            certificate["result_hashes"][
+                "AFN0_AMBIENT_TENSOR_GRAPH_PROFILE_BUNDLE"
+            ],
+            r"^[0-9a-f]{64}$",
+        )
 
     def test_eight_standalone_slice_receipts(self) -> None:
         slices = afn0_slice_results()

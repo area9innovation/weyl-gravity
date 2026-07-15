@@ -1,6 +1,6 @@
 {
   "canonical_hashes": {
-    "source_manifest_sha256": "d4553342b31ac2a6e1c42c339a85eca90835343fcc50df797791491f20c6807d"
+    "source_manifest_sha256": "d26ecfaf2356e402d18e850d02911a3b814f5fcd2e39aaedcaf99bcc97ea90ac"
   },
   "checks": {
     "BoxR_explicit_primitive": "VERIFIED",
@@ -11,7 +11,10 @@
     "H04_odd_top_signature_resolution": "VERIFIED",
     "H14_AFN0_EVEN_complete_candidate_closure": "VERIFIED",
     "H14_AFN0_ODD_started": "VERIFIED",
+    "ambient_derivative_distribution_profiles": "EXHAUSTIVE",
     "ambient_lower_form_integer_signature_enumeration": "EXHAUSTIVE",
+    "ambient_lower_form_tensor_graph_realizability": "COMPLETE_FACTORED",
+    "ambient_raw_graph_count_without_materialization": "VERIFIED",
     "basis_gap_report_emitted": "VERIFIED",
     "closure_and_truncated_quotient_outputs_separated": "VERIFIED",
     "closure_witness_artifact_hashes": "VERIFIED",
@@ -41,8 +44,8 @@
     "LOCAL-ALGEBRAIC"
   ],
   "next_required_computation": [
-    "construct tensor graphs for all 720 refined ambient lower-form signatures and resolve realizability",
-    "canonically quotient the pending raw contraction graphs by tensor identities and integration by parts",
+    "construct signed factor-permutation actions on the 1,224 factored derivative-distribution profiles",
+    "canonically quotient the factored contraction graphs by tensor identities and integration by parts",
     "resolve every remaining top-form and Diff signature with a terminal status",
     "compare the forward canonical span with reverse signature coverage",
     "assemble the production Q and d_h sparse matrices",
@@ -51,8 +54,10 @@
   ],
   "result_hashes": {
     "AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE": "69c8e606576dda275983508f98882957365bf8b9bde9d82dd9febabbd0ae2066",
+    "AFN0_AMBIENT_TENSOR_GRAPH_PROFILE_BUNDLE": "8e36546e7ecac6872d38f771a6292f3dde6f3afb9b143bda58a018d3ca47a48d",
+    "AFN0_AMBIENT_TENSOR_GRAPH_REALIZATION_CERTIFICATE": "333c940d219049891dcdc7c504cdbcbd585ad7fc9d0078a2b89274ba05e1505f",
     "AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE": "f03847f59d2ed2995cabf32d82e67ffc0ea4cefa5d4ea42dff61af70a2d1ebd1",
-    "BASIS_GAP_REPORT_AFN0": "49b10da1111724b2cc9183d3067dfe7ae46f391fb26ebff023823f885c8d2593",
+    "BASIS_GAP_REPORT_AFN0": "c638f8d17a8ef9eb065bf596d561cc445dcda5b1fcfce0b94db89c6f4cbb94b7",
     "H04_AFN0_EVEN_CLOSURE": "6ca36cf5ddc063a43f46f4eca7aad636d8b5cf5457c2f5bdac6876e9c1a67295",
     "H04_AFN0_EVEN_TRUNCATED_QUOTIENT": "283b26d5314b987aa2d9187a8e27722dcb8309dff1e180901a5f032ccd0b1be4",
     "H04_AFN0_ODD_CLOSURE": "e7fa8f30d690a1975690cdff416175b36117cdd0827da1ece0077aecb3e916eb",

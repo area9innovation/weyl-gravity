@@ -99,6 +99,18 @@ class BasisGapTests(unittest.TestCase):
                 "rejected_signature_count": 1760,
             },
         )
+        self.assertEqual(
+            report["ambient_lower_form_signature_inventory"][
+                "tensor_graph_realizability"
+            ],
+            "COMPLETE_FACTORED",
+        )
+        self.assertEqual(
+            report["ambient_lower_form_signature_inventory"][
+                "factor_profile_count"
+            ],
+            1224,
+        )
 
     def test_raw_matching_does_not_promote_tensor_realizability(self) -> None:
         records = [

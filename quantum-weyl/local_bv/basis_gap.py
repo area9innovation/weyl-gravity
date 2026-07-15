@@ -5,6 +5,7 @@ from __future__ import annotations
 from functools import lru_cache
 
 from .algebra import canonical_sha256
+from .ambient_tensor_graphs import ambient_tensor_graph_analysis
 from .basis_exhaustiveness import grading_signature_manifest, refine_top_form_signature
 from .dimension_four_candidates import dimension_four_candidate_analysis
 from .lower_form_basis import lower_form_carrier_analysis
@@ -327,6 +328,7 @@ def basis_gap_report() -> dict[str, object]:
     bundle = basis_gap_graph_bundle()
     lower_form = lower_form_carrier_analysis()
     ambient_lower_form = ambient_lower_form_signature_analysis()
+    ambient_tensor_graphs, ambient_tensor_bundle = ambient_tensor_graph_analysis()
     payload = {
         "result_id": "BASIS_GAP_REPORT_AFN0",
         "result_state": "BASIS_GAPS_PARTIALLY_RESOLVED",
@@ -357,8 +359,17 @@ def basis_gap_report() -> dict[str, object]:
             "integer_grading_status": ambient_lower_form["checks"][
                 "integer_grading_enumeration"
             ],
-            "tensor_graph_realizability": ambient_lower_form["next_gates"][
-                "tensor_graph_realizability"
+            "tensor_graph_realizability": "COMPLETE_FACTORED",
+            "tensor_graph_result_id": ambient_tensor_graphs["result_id"],
+            "tensor_graph_analysis_sha256": ambient_tensor_graphs[
+                "analysis_sha256"
+            ],
+            "factor_profile_bundle_sha256": ambient_tensor_bundle["bundle_sha256"],
+            "factor_profile_count": ambient_tensor_graphs["totals"][
+                "factor_profile_count"
+            ],
+            "total_raw_graph_count": ambient_tensor_graphs["totals"][
+                "total_raw_graph_count"
             ],
         },
         "total_complex_gates": {
@@ -376,7 +387,7 @@ def basis_gap_report() -> dict[str, object]:
                 "and dimension-specific antisymmetrization remain open"
             ),
             "PENDING is not a terminal signature resolution",
-            "the universal Diff and intrinsic Euler candidate carriers are now complete, but the separate Diff top-form ledger and unrestricted ambient lower-form basis remain open",
+            "the universal Diff and intrinsic Euler candidate carriers and factored ambient tensor-graph realizations are complete, but the separate Diff top-form ledger and canonical ambient quotient remain open",
             "this report cannot promote a complete nontriviality witness",
         ],
     }

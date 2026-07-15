@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-afn0-ambient-tensor-graph-bundle-v1.json",
+  "title": "AFN0 ambient tensor-graph profile bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "dependency_tags", "ambient_analysis_sha256", "realization_count", "realizations", "bundle_sha256"],
+  "properties": {
+    "result_id": {"const": "AFN0_AMBIENT_TENSOR_GRAPH_PROFILE_BUNDLE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "ambient_analysis_sha256": {"$ref": "#/$defs/hash"},
+    "realization_count": {"const": 720},
+    "realizations": {
+      "type": "array",
+      "minItems": 720,
+      "maxItems": 720,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["signature_sha256", "realization_status", "reason", "factor_profile_count", "factor_profiles", "factor_profile_manifest_sha256", "raw_graph_count_per_profile", "total_raw_graph_count", "graph_storage_mode", "raw_graph_count_formula", "quotient_status", "realization_sha256"],
+        "properties": {
+          "signature_sha256": {"$ref": "#/$defs/hash"},
+          "realization_status": {"const": "FACTORED_TENSOR_GRAPH_REALIZABLE"},
+          "reason": {"type": "string", "minLength": 1},
+          "factor_profile_count": {"type": "integer", "minimum": 1},
+          "factor_profiles": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+          "factor_profile_manifest_sha256": {"$ref": "#/$defs/hash"},
+          "raw_graph_count_per_profile": {"type": "integer", "minimum": 1},
+          "total_raw_graph_count": {"type": "integer", "minimum": 1},
+          "graph_storage_mode": {"enum": ["EXPLICIT_MATERIALIZATION_ADMISSIBLE", "FACTORED_COUNT_ONLY"]},
+          "raw_graph_count_formula": {"enum": ["(N-1)!!", "binomial(N,4)*(N-5)!!"]},
+          "quotient_status": {"type": "object"},
+          "realization_sha256": {"$ref": "#/$defs/hash"}
+        }
+      }
+    },
+    "bundle_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
