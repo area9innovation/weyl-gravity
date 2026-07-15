@@ -28,6 +28,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import hashlib
+import json
+from typing import Mapping
 
 import sympy as sp
 
@@ -42,6 +44,25 @@ def _digest(matrix: sp.MatrixBase) -> str:
 
 def _columns(vectors: list[sp.Matrix], rows: int) -> sp.Matrix:
     return sp.Matrix.hstack(*vectors) if vectors else sp.zeros(rows, 0)
+
+
+def _certificate_digest(certificate: Mapping[str, object]) -> str:
+    payload = json.dumps(
+        certificate, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
+
+
+def validate_promotion_boundary(certificate: Mapping[str, object]) -> None:
+    """Reject any use of the endpoint no-go as a positive Green theorem."""
+
+    for flag in (
+        "prolonged_green_witness",
+        "curvature_causal_green_operators",
+        "causal_green_homotopy",
+    ):
+        if certificate.get(flag) is not False:
+            raise AssertionError(f"endpoint no-go cannot promote {flag}")
 
 
 @dataclass(frozen=True)
@@ -96,10 +117,33 @@ class Rank14StrictLocalContractionNoGo:
         if self.identity_left_null.rank() != 2:
             raise AssertionError("identity left-null witnesses are dependent")
 
-    def certificate(self) -> dict[str, object]:
+    def certificate(
+        self, *, rees_certificate: Mapping[str, object]
+    ) -> dict[str, object]:
         self.verify()
-        return {
+        if rees_certificate.get("schema") != (
+            "pure-weyl-rank14-corrected-rees-weights-v2"
+        ):
+            raise AssertionError("wrong corrected rank-14 Rees certificate")
+        decision = rees_certificate.get("decision")
+        if not isinstance(decision, Mapping) or not all(
+            (
+                decision.get("degree_zero_associated_graded_is_a_complex")
+                is True,
+                decision.get("degree_minus_one_multicomplex_relation") is True,
+                decision.get("null_PBW_E2_page_is_exact") is True,
+                decision.get("support_local_contraction_constructed") is False,
+                decision.get("prolonged_green_witness") is False,
+            )
+        ):
+            raise AssertionError("corrected Rees dependency boundary drifted")
+        certificate = {
             "schema": "pure-weyl-rank14-strict-local-contraction-no-go-v1",
+            "input_certificate_sha256": {
+                "curved_rank14_corrected_rees_weights": _certificate_digest(
+                    rees_certificate
+                )
+            },
             "scope": (
                 "finite-order polynomial contraction of the corrected five-term "
                 "relative equation cone with algebraic identity anticommutator"
@@ -158,3 +202,5 @@ class Rank14StrictLocalContractionNoGo:
             "status_flags_promoted": [],
             "fail_closed": True,
         }
+        validate_promotion_boundary(certificate)
+        return certificate
