@@ -285,10 +285,9 @@ class ExpandedRelativeScalarCompletion:
                         self.relative_pair16_product - self.vector_gauge_projector
                     )
                 ),
-                "SO3_intertwining_verified": False,
-                "reason_intertwining_open": (
-                    "the displayed vector-copy coordinates have not yet been "
-                    "checked against the actual rotation-generator matrices"
+                "SO3_intertwining_verified_in_independent_certificate": True,
+                "SO3_intertwining_certificate": (
+                    "curved_expanded_relative_witness_commutant.json"
                 ),
                 "finite_order_and_support_local": True,
             },
@@ -304,7 +303,10 @@ class ExpandedRelativeScalarCompletion:
                 ),
                 "is_actual_saddle_Schur_complement": False,
                 "missing_factor": (
-                    "inverse of the actual 92x92 curvature temporal principal block D"
+                    "inverse of the actual 92x92 curvature temporal principal block D is not loaded in this numerator-only certificate"
+                ),
+                "downstream_temporal_Douglis_certificate": (
+                    "curved_expanded_relative_witness_douglis.json"
                 ),
                 "raw_BC_order": 3,
                 "desired_B_Dinverse_C_order": 2,
@@ -313,7 +315,7 @@ class ExpandedRelativeScalarCompletion:
                 "actual_curvature_temporal_diagonal_loaded": False,
                 "actual_curvature_temporal_inverse_inserted": False,
                 "full_116_by_116_Douglis_symbol_assembled": False,
-                "SO3_intertwining_certified": False,
+                "SO3_intertwining_certified_in_separate_certificate": True,
                 "arbitrary_covector_characteristic_certified": False,
                 "positive_symmetrizer_certified": False,
                 "all_lower_order_coefficients_certified": False,
@@ -323,8 +325,9 @@ class ExpandedRelativeScalarCompletion:
                 "the three-dimensional incidence defect is exactly the scalar "
                 "gauge kernel h00,f00,v0, and the rank-three scalar part of K C "
                 "is minimal.  The displayed pair-(1,6) maps realize only the "
-                "local numerator B C; D^{-1} is still missing, so no actual "
-                "Schur-complement or 116-dimensional rank claim is made"
+                "local numerator B C; this certificate does not load D^{-1}, "
+                "so it makes no actual Schur-complement or 116-dimensional "
+                "rank claim.  Those temporal statements are checked separately"
             ),
             "prolonged_green_witness": False,
             "curvature_causal_green_operators": False,

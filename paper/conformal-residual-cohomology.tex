@@ -1382,6 +1382,19 @@ minimal split, not other first-order splits, the complete $421$-variable
 system, or the $214$-parameter sharp subfamily.
 Thus the cubic gate proves neither a factorization nor a Green theorem.
 
+As a further exact screen, multiplying the $179$ reduced sharp quadrics by
+constants and all $114$ degree-one variables gives a sparse Macaulay matrix
+with $136585$ monomial rows and $20585$ multiplier columns.  A deterministic
+minor over a prime avoiding every input denominator yields the rigorous
+characteristic-zero degree-three bound
+\begin{equation}\label{eq:sharp-macaulay-rank-bounds}
+ 12861\leq \rank_{\mathbb Q} M_3\leq14136.
+\end{equation}
+The upper bound is $124\cdot114$, from the exact dimension of the quadratic
+coefficient space.  The full rational ranks have not been computed, so this
+screen decides neither membership of a nonzero constant in the ideal nor the
+low-degree quotient dimensions.  It promotes no no-go or Green flag.
+
 The exhaustive relative-incidence ledger contains nine possible odd-adjoint
 pairs.  No single pair yields reciprocal coupling, and the smallest physical
 two-way candidate is the pair $4+5$.  On the ordered core
@@ -1425,9 +1438,13 @@ central auxiliary diagonal subprincipal has temporal rank defect at least
 three.  A viable expanded witness must retain or locally prolong these scalar
 directions.  This is a scoped design theorem; coefficient tables,
 characteristics and a symmetrizer remain open, and no flag is promoted.
-The corresponding rotation-generator commutants have not yet been generated
-coefficientwise, so completeness of the $162$-dimensional family is scoped
-to that multiplicity ledger.
+An independent coefficientwise calculation constructs the three rotation
+generators in the actual component bases of all sixteen blocks.  The nine
+relative Hom equations have nullities
+$4,18,4,36,14,14,22,36,14$, whose sum is $162$.  The explicit pair-$1+6$
+maps, the temporal $K$ and $N_{\rm curv}^{\sharp}$ coefficients, the induced
+vector projector, and the retained scalar diagonal all have zero
+rotation-generator intertwining defect.
 
 The three uncovered scalar coordinates are exactly $h_{00}$, $f_{00}$ and
 $v_0$.  The restriction of the existing $KC$ coefficient to these directions
@@ -1439,11 +1456,22 @@ identity
  K R_1 N_{\rm curv}^{\sharp}R_6^{\sharp}=\Pi_{\rm vector}.
 \end{equation}
 
-This is not yet the saddle Schur term $BD^{-1}C$.  The actual
-$92$-component curvature temporal diagonal, its Douglis inverse, and the
-complete $116\times116$ weighted symbol have not been assembled.  Thus no
-full-rank temporal-saddle or hyperbolicity claim follows from
-\eqref{eq:relative-pair16-numerator}.
+To pass from this numerator to the saddle Schur term $BD^{-1}C$, the actual
+$92$-component curvature temporal diagonal is needed.  In the normalized curvature
+equations and their formal-adjoint rows,
+\begin{equation}\label{eq:relative-curvature-temporal-diagonal}
+ D(dt)=\operatorname{diag}(I_{26},-I_{40},-I_{26}),
+ \qquad D(dt)^{-1}=D(dt).
+\end{equation}
+Consequently the exact pair-$1+6$ Schur term is
+$BD^{-1}C=-\Pi_{\rm vector}$.  Retaining the rank-three scalar diagonal gives
+an assembled $116\times116$ temporal Douglis symbol of exact rank $116$ and
+determinant one.  This closes the temporal-invertibility gate only.  The
+scalar diagonal has not been lifted to a cyclic all-row witness, and the
+arbitrary-covector characteristic polynomial, positive symmetrizer,
+lower-order completion and every-degree Green identities remain open.  Thus
+no Green-theoretic flag follows from
+\eqref{eq:relative-pair16-numerator}--\eqref{eq:relative-curvature-temporal-diagonal}.
 
 The selected causal route therefore has the following explicit flags:
 \begin{equation}\label{eq:open-curvature-flags}

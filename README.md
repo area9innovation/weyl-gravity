@@ -219,6 +219,13 @@ left-null witness on `nabla_(0)nabla_(1): h_22 -> f_01` and right-hand side
 16.  This is a no-go only for that fixed minimal split, not for the general
 421-variable family or its 214-parameter sharp subfamily.
 
+For that sharp subfamily, the exact degree-one Macaulay screen has 136,585
+monomial rows and 20,585 multiplier columns.  A denominator-safe
+finite-field minor proves the degree-three rational-rank bounds
+`12861 <= rank_Q <= 14136`.  The full rational ranks, constant-ideal question,
+and low-degree elimination dimensions remain undecided; the screen promotes
+no factorization or Green claim.
+
 Among the nine
 allowed odd-adjoint relative pairs, no single pair gives reciprocal
 coupling; the smallest two-way saddle uses pairs 4 and 5.  Its exact core is
@@ -232,22 +239,30 @@ exactly: its balanced Douglis temporal principal matrix has rank at most
 no positive symmetrizer.  This no-go applies only to that smallest pair-4+5
 ansatz, not to larger relative witnesses or an additional local first-order
 prolongation.  The expanded-relative audit now exhausts all nine
-odd-adjoint pairs and the 162-dimensional Hom family determined by the
-declared cylinder `SO(3)` multiplicities.  It finds
+odd-adjoint pairs and the 162-dimensional Hom family.  An independent exact
+commutant calculation now constructs all three rotation generators on every
+one of the sixteen blocks and recovers the nine Hom nullities
+`4/18/4/36/14/14/22/36/14` coefficientwise.  It finds
 three reciprocal two-pair candidates (`1+6`, `1+7`, `2+7`), but the maximum
 central cross-ranks are only `21/24` on each of the two central blocks.  The
 three missing directions are rotation scalars.  Consequently a witness that
 demotes the entire central auxiliary diagonal has temporal rank defect at
 least three; a viable expanded witness must retain or locally prolong those
 scalar directions.  This is a scoped design theorem, not a Green no-go.
-An independent coefficientwise rotation-generator commutant certificate for
-the 162-dimensional ledger remains open.
+The displayed pair-`1+6` maps, the temporal `K` and `Ncurvsharp` coefficients,
+their vector projector and the retained scalar diagonal all have zero
+rotation-generator intertwining defect.
 The scalar directions are now identified exactly as `h_00`, `f_00`, and
 `v_0`; the corresponding rank-three restriction of `K C` has determinant
 `-1`.  Explicit pair-`1+6` coefficient maps satisfy the local numerator
-identity `K R1 Ncurv^sharp R6^sharp = Pi_vector`.  This is not yet the saddle
-Schur term: the actual 92-component curvature temporal block and its inverse
-must still be inserted, so no `116 x 116` rank or hyperbolicity claim follows.
+identity `K R1 Ncurv^sharp R6^sharp = Pi_vector`.  Inserting the actual
+curvature temporal diagonal
+`D(dt)=diag(I_26,-I_40,-I_26)` gives `D^-1=D` and the exact Schur term
+`B D^-1 C=-Pi_vector`.  With the retained scalar diagonal, the complete
+`116 x 116` temporal Douglis matrix has rank 116 and determinant one.  This
+closes only the timelike temporal-invertibility gate: the scalar diagonal's
+cyclic all-row lift, arbitrary-covector characteristics, positive
+symmetrizer and lower-order completion remain open.
 These are diagnostics, not theorem promotions: the same six
 causal/transport flags remain false.
 

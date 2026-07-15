@@ -213,7 +213,11 @@ bilinear channel shows why this is not a general no-go: the support-minimal
 split `A_- = e_11-e_66`, `A_+=-A_-` repairs that entire `SO(3)` orbit exactly.
 That fixed repair nevertheless fails the full order-two gate with rank
 `100/101` in the distinct channel `h_22 -> f_01`; other first-order splits
-remain open.  The exhaustive odd-adjoint incidence search finds no one-pair
+remain open.  The exact degree-one Macaulay screen for the 179 sharp quadrics
+has shape `136585 x 20585` and rigorously bounds the degree-three rational
+rank by `12861 <= rank_Q <= 14136`; it does not decide constant ideal
+membership or the low-degree quotient dimensions.  The exhaustive
+odd-adjoint incidence search finds no one-pair
 reciprocal coupling.  The earlier pairs 4 and 5 give the smallest physical
 core `(M_aux,X_U,Y_U_sharp)`, whose exact Schur complement is nonlocal because it contains the
 curvature Green operators, while the unreduced order-two saddle still lacks
@@ -222,8 +226,9 @@ a local first-order reduction.  Its natural realization
 rank at most `107/116`, hence defect at least nine, zero temporal leading
 coefficient and no positive symmetrizer.  This rules out only that smallest
 pair-4+5 ansatz.  Exhausting all nine odd-adjoint pairs and the
-162-dimensional Hom family from the declared `SO(3)` multiplicity ledger
-finds three all-degree reciprocal
+162-dimensional Hom family, independently recovered from exact rotation
+generators on all sixteen component blocks with commutant nullities
+`4/18/4/36/14/14/22/36/14`, finds three all-degree reciprocal
 two-pair candidates, `(1,6)`, `(1,7)`, and `(2,7)`.  If the central auxiliary
 diagonal is entirely demoted, their invariant cross rank is at most `21/24`,
 so the temporal block has rank at most `113/116`; a successful construction
@@ -231,9 +236,12 @@ must retain or prolong three scalar directions.  These are fail-closed
 diagnostics only.  The missing directions are exactly `h00`, `f00`, and
 `v0`; their rank-three `KC` restriction has determinant `-1`.  Explicit
 pair-`1+6` maps realize the numerator
-`K R1 Ncurvsharp R6sharp=Pi_vector`, but the actual curvature diagonal inverse
-needed for `B D^-1 C` and the full 116-dimensional Douglis symbol remain
-unassembled.  The remaining blockers
+`K R1 Ncurvsharp R6sharp=Pi_vector`.  The actual temporal curvature diagonal
+is `diag(I26,-I40,-I26)`, is its own inverse, and gives
+`B D^-1 C=-Pi_vector`; with the scalar complement the exact 116-dimensional
+temporal Douglis symbol has rank 116 and determinant one.  This does not yet
+give the cyclic all-row witness, arbitrary characteristics, a symmetrizer or
+lower-order completion.  The remaining blockers
 are the prolonged Green theorem, causal chain homotopy, residual endpoint
 recovery, and `SO(4,2)` equivariance.  The complete cyclic mapping cylinder
 now gives the all-row quadratic BV parent and exact prolonged/auxiliary

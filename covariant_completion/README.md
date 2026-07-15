@@ -433,6 +433,12 @@ required value 16.  This rejects only the fixed minimal split; other splits,
 the general 421-variable system and the 214-parameter sharp branch remain
 open.
 
+The exact degree-one Macaulay screen for this sharp branch has 136,585 rows
+and 20,585 columns.  An exact modular minor over a denominator-safe prime
+proves `12861 <= rank_Q(degree 3) <= 14136`.  Full rational ranks were not
+computed, so neither constant ideal membership nor exact low-degree
+elimination dimensions are inferred.
+
 The exhaustive relative-incidence search also identifies, without promoting
 a flag, the smallest reciprocal saddle: odd-adjoint pairs 4 and 5.  On the
 core ordered as `(M_aux,X_U,Y_U_sharp)` its degree-zero block is
@@ -457,9 +463,10 @@ positive temporal symmetrizer exists.  This is an exact no-go only for that
 smallest pair-4+5 realization; it does not exclude larger relative witnesses
 or an added support-local first-order prolongation.
 
-The expanded-relative incidence problem is complete relative to the declared
-cylinder `SO(3)` block multiplicities.  The nine odd-adjoint pairs span a
-162-dimensional Hom family in that ledger, and
+The expanded-relative incidence problem is coefficientwise complete.  Exact
+rotation generators in the actual component bases of all sixteen blocks give
+the nine commutant nullities `4/18/4/36/14/14/22/36/14`, hence a
+162-dimensional Hom family, and
 exact incidence finds three minimal reciprocal two-pair candidates: `1+6`,
 `1+7`, and `2+7`.  Even after all reciprocal curvature partners are included,
 the maximum ranks on the two 24-dimensional central auxiliary blocks are
@@ -468,17 +475,21 @@ ansatz which makes the complete central auxiliary diagonal subprincipal has
 temporal rank defect at least three.  A viable expanded witness must retain
 or support-locally prolong those scalar directions.  Coefficients,
 characteristics and a symmetrizer remain open; no Green flag is promoted.
-The actual rotation-generator commutants have not yet been generated
-coefficientwise, so the 162-dimensional completeness statement is scoped to
-that multiplicity ledger.
+The explicit pair-`1+6` maps and the `K`, `Ncurvsharp`, vector-projector and
+scalar-diagonal coefficients all have zero rotation-generator defect.
 The three uncovered scalar coordinates are exactly `h_00`, `f_00`, and
 `v_0`.  Restricting the existing `K C` coefficient to them gives a rank-three
 triangular matrix of determinant `-1`.  For pair `1+6`, explicit local
 coefficient maps verify
-`K R1 Ncurvsharp R6sharp = Pi_vector` coefficientwise.  This is only the
-numerator `B C`, not the saddle Schur term `B D^-1 C`: the actual
-92-component curvature temporal diagonal, its Douglis inverse, and the full
-`116 x 116` symbol remain unassembled.
+`K R1 Ncurvsharp R6sharp = Pi_vector` coefficientwise.  The actual temporal
+curvature diagonal is
+`D(dt)=diag(I_26,-I_40,-I_26)`, so `D^-1=D` and the exact saddle Schur term is
+`B D^-1 C=-Pi_vector`.  After retaining the scalar diagonal, the assembled
+`116 x 116` temporal Douglis symbol has exact rank 116 and determinant one.
+This is a temporal-invertibility certificate only: the rank-three diagonal
+still needs a cyclic all-row witness lift, and arbitrary-covector
+characteristics, a positive symmetrizer, lower-order coefficients and every
+BV degree remain open.
 
 The remaining six flags isolate that prolonged Green witness, the actual
 causal chain homotopy, residual endpoint recovery, and `SO(4,2)` equivariance.

@@ -1,0 +1,81 @@
+{
+  "Douglis_weights": {
+    "all_four_blocks_principal": true,
+    "column_weights": {
+      "M_aux": 1,
+      "curvature": 0
+    },
+    "principal_orders": {
+      "A": 2,
+      "B": 1,
+      "C": 2,
+      "D": 1
+    },
+    "row_weights": {
+      "M_aux": 1,
+      "curvature": 1
+    }
+  },
+  "actual_curvature_temporal_diagonal": {
+    "determinant": 1,
+    "formula": "diag(+I_26,-I_40,-I_26)",
+    "inverse_equals_itself": true,
+    "rank": 92,
+    "sha256": "150db1e57e9d007ef00b3998820b051aa6dea412e199348f04c896233984a556",
+    "shape": [
+      92,
+      92
+    ],
+    "source": "constraint-adjusted L_26 and S_14 temporal identities; minus signs from first-order formal adjoints on Eq# and U#"
+  },
+  "actual_pair16_Schur_term": {
+    "B_shape": [
+      24,
+      92
+    ],
+    "C_shape": [
+      92,
+      24
+    ],
+    "defect": 0,
+    "differential_order": 2,
+    "equals_minus_vector_gauge_projector": true,
+    "formula": "B D^-1 C",
+    "rank": 6,
+    "sha256": "7e7a7f5f1929ecdf9edf104c2031e35363b47c1869f035e7188b747f2845abd6"
+  },
+  "assembled_temporal_Douglis_symbol": {
+    "determinant": 1,
+    "field_Schur_determinant": 1,
+    "field_Schur_rank": 24,
+    "rank": 116,
+    "rank_defect": 0,
+    "sha256": "37fc454a660d1df405ca5683dd38489d6d255c54ef4a0b8f7d4f03fac070491d",
+    "shape": [
+      116,
+      116
+    ]
+  },
+  "block_order": [
+    "M_aux[24]",
+    "X_U[26]",
+    "X_Eq_sharp[40]",
+    "Y_U_sharp[26]"
+  ],
+  "causal_green_homotopy": false,
+  "constructive_conclusion": "with the explicit rank-three scalar diagonal ansatz, the actual curvature temporal inverse corrects the pair-(1,6) numerator sign and yields a nonsingular 116-dimensional temporal Douglis symbol; the all-row cyclic lift and hyperbolicity tests remain open",
+  "curvature_causal_green_operators": false,
+  "fail_closed": true,
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-expanded-relative-witness-douglis-temporal-v1",
+  "scope_and_open_work": {
+    "SO3_intertwining_certificate": "curved_expanded_relative_witness_commutant.json",
+    "all_BV_degrees_certified": false,
+    "arbitrary_covector_characteristic_certified": false,
+    "lower_order_completion_certified": false,
+    "positive_symmetrizer_certified": false,
+    "rank3_scalar_diagonal_lifted_to_cyclic_all_row_witness": false
+  },
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": []
+}

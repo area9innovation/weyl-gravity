@@ -37,14 +37,14 @@ def main() -> None:
     certificate = audit.certificate()
     checks = {
         "nine_pair_coverage": certificate["complete_relative_space"]["odd_adjoint_pairs"] == 9,
-        "declared_multiplicity_family": (
+        "declared_multiplicity_family_has_independent_commutant": (
             certificate["complete_relative_space"][
                 "SO3_invariant_parameter_dimension"
             ]
             == 162
-            and not certificate["complete_relative_space"][
-                "rotation_generator_commutants_constructed"
-            ]
+            and certificate["complete_relative_space"][
+                "independent_commutant_certificate"
+            ] == "curved_expanded_relative_witness_commutant.json"
         ),
         "three_minimal_global_saddles": certificate["minimal_all_auxiliary_degree_reciprocal_saddles"]["pair_sets"] == ["1+6", "1+7", "2+7"],
         "central_cross_rank21": certificate["invariant_cross_rank"]["maximum_ranks_through_all_reciprocal_curvature_partners"] == [9, 21, 21, 9],

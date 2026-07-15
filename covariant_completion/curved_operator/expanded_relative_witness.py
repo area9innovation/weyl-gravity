@@ -201,9 +201,13 @@ class ExpandedRelativeWitnessAudit:
                 "each_pair_odd_BV_cyclic": True,
                 "incidence_linear_combinations_exhausted": True,
                 "SO3_family_scope": (
-                    "complete relative to the declared block multiplicities"
+                    "incidence calculation uses the declared block multiplicities; "
+                    "the independent coefficientwise commutant certificate recovers them"
                 ),
-                "rotation_generator_commutants_constructed": False,
+                "rotation_generator_commutants_constructed_in_this_certificate": False,
+                "independent_commutant_certificate": (
+                    "curved_expanded_relative_witness_commutant.json"
+                ),
             },
             "minimal_all_auxiliary_degree_reciprocal_saddles": {
                 "pair_sets_zero_based": [list(pair) for pair in self.minimal_global_saddles],
@@ -255,8 +259,8 @@ class ExpandedRelativeWitnessAudit:
             "scope": (
                 "exact incidence/rank theorem relative to the declared SO(3) "
                 "multiplicity ledger, and a no-go only for demoting the complete "
-                "central auxiliary diagonal; an independent coefficientwise "
-                "rotation-generator commutant certificate remains open"
+                "central auxiliary diagonal; the separate coefficientwise "
+                "rotation-generator certificate exactly recovers that ledger"
             ),
             "prolonged_green_witness": False,
             "curvature_causal_green_operators": False,

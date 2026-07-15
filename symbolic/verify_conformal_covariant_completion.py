@@ -73,8 +73,40 @@ GUARDS = (
         "verify_conformal_general_nonlinear_factor_sharp_order2_reduction.py",
         "--claim-left-ideal-no-go",
     ),
+    (
+        "verify_conformal_general_nonlinear_factor_sharp_macaulay_screen.py",
+        "--claim-constant-no-go",
+    ),
+    (
+        "verify_conformal_general_nonlinear_factor_sharp_macaulay_screen.py",
+        "--claim-low-degree-elimination",
+    ),
+    (
+        "verify_conformal_general_nonlinear_factor_sharp_macaulay_screen.py",
+        "--claim-full-factorization",
+    ),
+    (
+        "verify_conformal_general_nonlinear_factor_sharp_macaulay_screen.py",
+        "--claim-green",
+    ),
+    (
+        "verify_conformal_general_nonlinear_factor_sharp_macaulay_screen.py",
+        "--promote-flag",
+    ),
     ("verify_conformal_quadratic_obstruction_channel.py", "--claim-factorization"),
     ("verify_conformal_expanded_relative_witness.py", "--claim-green"),
+    (
+        "verify_conformal_expanded_relative_witness_commutant.py",
+        "--claim-douglis",
+    ),
+    (
+        "verify_conformal_expanded_relative_witness_commutant.py",
+        "--claim-green",
+    ),
+    (
+        "verify_conformal_expanded_relative_witness_commutant.py",
+        "--promote-flag",
+    ),
     (
         "verify_conformal_expanded_relative_witness_scalar_completion.py",
         "--claim-green",
@@ -86,6 +118,18 @@ GUARDS = (
     (
         "verify_conformal_expanded_relative_witness_scalar_completion.py",
         "--claim-rank116",
+    ),
+    (
+        "verify_conformal_expanded_relative_witness_douglis.py",
+        "--claim-green",
+    ),
+    (
+        "verify_conformal_expanded_relative_witness_douglis.py",
+        "--claim-symmetrizer",
+    ),
+    (
+        "verify_conformal_expanded_relative_witness_douglis.py",
+        "--promote-flag",
     ),
     (
         "verify_conformal_quadratic_obstruction_channel_fixed_branch.py",
@@ -197,6 +241,10 @@ def main() -> None:
                 "verify_conformal_general_nonlinear_factor_sharp_order2_reduction.py",
                 emit_args,
             ),
+            (
+                "verify_conformal_general_nonlinear_factor_sharp_macaulay_screen.py",
+                emit_args,
+            ),
             ("verify_conformal_quadratic_obstruction_channel.py", emit_args),
             (
                 "verify_conformal_quadratic_obstruction_channel_fixed_branch.py",
@@ -206,7 +254,15 @@ def main() -> None:
             ("verify_conformal_relative_saddle_witness.py", guarded_args),
             ("verify_conformal_expanded_relative_witness.py", emit_args),
             (
+                "verify_conformal_expanded_relative_witness_commutant.py",
+                guarded_args,
+            ),
+            (
                 "verify_conformal_expanded_relative_witness_scalar_completion.py",
+                guarded_args,
+            ),
+            (
+                "verify_conformal_expanded_relative_witness_douglis.py",
                 guarded_args,
             ),
             ("verify_conformal_curvature_prolongation_sdr.py", ()),

@@ -271,6 +271,25 @@ an additional support-local first-order prolongation.  No flag follows.
 
 ## Adjoint and support requirements
 
+### Expanded pair-1+6 temporal gate
+
+The coefficientwise $SO(3)$ commutant calculation recovers the complete
+162-dimensional relative Hom family in the actual component bases.  For the
+pair-1+6 candidate, the normalized curvature and formal-adjoint rows give
+
+```text
+D(dt) = diag(I26,-I40,-I26),   D(dt)^-1 = D(dt),
+B D(dt)^-1 C = -Pi_vector.
+```
+
+Together with the retained rank-three scalar diagonal, the complete
+116-dimensional temporal Douglis matrix has exact rank 116 and determinant
+one.  This closes the timelike invertibility check that the numerator-only
+certificate left open.  It does not construct the scalar diagonal as a
+cyclic all-row contribution to `W`; nor does it determine arbitrary-covector
+characteristics, a positive symmetrizer, lower-order completion, or Green
+operators.  No causal flag is promoted.
+
 The positive symmetrizers of `L` and `S` are PDE energy forms; they are not the
 action/Krein pairing.  The formal BV/Krein adjoint convention is encoded by
 the oriented odd incidence form.  Together with the coefficientwise complete

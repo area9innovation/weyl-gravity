@@ -1,17 +1,18 @@
 {
   "algebraic_numerator_target": {
     "desired_B_Dinverse_C_order": 2,
+    "downstream_temporal_Douglis_certificate": "curved_expanded_relative_witness_douglis.json",
     "field_diagonal": "Eaux_2(dt)+minimal_scalar_diagonal",
     "field_diagonal_rank": 18,
     "formal_target": "Eaux_2+D_scalar-Pi_vector_gauge",
     "formal_target_determinant": 1,
     "formal_target_rank": 24,
     "is_actual_saddle_Schur_complement": false,
-    "missing_factor": "inverse of the actual 92x92 curvature temporal principal block D",
+    "missing_factor": "inverse of the actual 92x92 curvature temporal principal block D is not loaded in this numerator-only certificate",
     "raw_BC_order": 3
   },
   "analytic_boundary": {
-    "SO3_intertwining_certified": false,
+    "SO3_intertwining_certified_in_separate_certificate": true,
     "actual_curvature_temporal_diagonal_loaded": false,
     "actual_curvature_temporal_inverse_inserted": false,
     "all_BV_degrees_green_certified": false,
@@ -28,7 +29,7 @@
     "tr_spatial_f",
     "v_0"
   ],
-  "constructive_conclusion": "the three-dimensional incidence defect is exactly the scalar gauge kernel h00,f00,v0, and the rank-three scalar part of K C is minimal.  The displayed pair-(1,6) maps realize only the local numerator B C; D^{-1} is still missing, so no actual Schur-complement or 116-dimensional rank claim is made",
+  "constructive_conclusion": "the three-dimensional incidence defect is exactly the scalar gauge kernel h00,f00,v0, and the rank-three scalar part of K C is minimal.  The displayed pair-(1,6) maps realize only the local numerator B C; this certificate does not load D^{-1}, so it makes no actual Schur-complement or 116-dimensional rank claim.  Those temporal statements are checked separately",
   "curvature_causal_green_operators": false,
   "exact_missing_scalar_directions": [
     "h_00",
@@ -267,7 +268,8 @@
       14,
       24
     ],
-    "SO3_intertwining_verified": false,
+    "SO3_intertwining_certificate": "curved_expanded_relative_witness_commutant.json",
+    "SO3_intertwining_verified_in_independent_certificate": true,
     "certified_Ncurv_temporal_matrix": "[0_(14x26),I_14]",
     "certified_Ncurv_temporal_shape": [
       14,
@@ -284,7 +286,6 @@
       6,
       7
     ],
-    "reason_intertwining_open": "the displayed vector-copy coordinates have not yet been checked against the actual rotation-generator matrices",
     "relative_orders": {
       "R1": 0,
       "R6": 1

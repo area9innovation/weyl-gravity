@@ -39,7 +39,8 @@ def main() -> None:
     ):
         raise SystemExit(
             "REFUSED: the verified pair-(1,6) product is the numerator B C, "
-            "not B D^-1 C; no 116-rank, symmetrizer, or Green claim follows"
+            "not B D^-1 C; this certificate alone proves no 116-rank, "
+            "symmetrizer, or Green claim"
         )
     completion = ExpandedRelativeScalarCompletion.build()
     certificate = completion.certificate()
@@ -55,9 +56,20 @@ def main() -> None:
         "algebraic_target_only": target["formal_target_rank"] == 24
         and target["formal_target_determinant"] == 1
         and not target["is_actual_saddle_Schur_complement"],
-        "curvature_inverse_missing": target["missing_factor"].startswith("inverse of the actual 92x92"),
+        "curvature_inverse_scoped_to_downstream_certificate": (
+            "not loaded in this numerator-only certificate" in target["missing_factor"]
+            and target["downstream_temporal_Douglis_certificate"]
+            == "curved_expanded_relative_witness_douglis.json"
+        ),
         "no_rank116_claim": "complete_temporal_rank" not in target,
-        "analytic_boundary_open": not any(boundary.values()),
+        "analytic_boundary_open": (
+            boundary["SO3_intertwining_certified_in_separate_certificate"]
+            and not any(
+                value
+                for key, value in boundary.items()
+                if key != "SO3_intertwining_certified_in_separate_certificate"
+            )
+        ),
         "fail_closed": certificate["fail_closed"] and not certificate["status_flags_promoted"],
     }
     if not all(checks.values()):

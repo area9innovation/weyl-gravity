@@ -748,6 +748,9 @@ class CurvatureProlongationStatus:
                 "sharp_order_two_reduction_certificate": (
                     "curved_general_nonlinear_factor_sharp_order2_reduction.json"
                 ),
+                "sharp_degree_one_macaulay_screen_certificate": (
+                    "curved_general_nonlinear_factor_sharp_macaulay_screen.json"
+                ),
                 "repaired_channel_certificate": (
                     "quadratic_obstruction_channel.json"
                 ),
@@ -757,8 +760,14 @@ class CurvatureProlongationStatus:
                 "expanded_relative_certificate": (
                     "curved_expanded_relative_witness.json"
                 ),
+                "expanded_relative_commutant_certificate": (
+                    "curved_expanded_relative_witness_commutant.json"
+                ),
                 "expanded_scalar_completion_certificate": (
                     "curved_expanded_relative_witness_scalar_completion.json"
+                ),
+                "expanded_temporal_douglis_certificate": (
+                    "curved_expanded_relative_witness_douglis.json"
                 ),
                 "factorization_certificate": (
                     "pure-weyl-mixed-order-factorization-v1 (not currently emitted)"

@@ -1,0 +1,76 @@
+{
+  "degree_three_exact_bounds": {
+    "deterministic_matched_minor_nonzero_entries": 145857,
+    "effective_nonconstant_multiplier_columns": 20406,
+    "matching_sha256": "5249e94cdb1fc7e8f2a8700f064d2e4a25c5fe6472d1943bc21617b68a3a86db",
+    "modular_minor_rank": 12861,
+    "prime": 1000003,
+    "prime_avoids_all_input_denominators": true,
+    "rational_rank_lower_bound": 12861,
+    "rational_rank_upper_bound": 14136,
+    "upper_bound_derivation": "rank(Q_2)*114=124*114"
+  },
+  "exact_sparse_matrix": {
+    "blocks": {
+      "all": {
+        "nonzero_entries": 536360,
+        "shape": [
+          136585,
+          20585
+        ],
+        "structural_rank_upper_bound": 20585
+      },
+      "degree=3": {
+        "nonzero_entries": 516420,
+        "shape": [
+          133777,
+          20585
+        ],
+        "structural_rank_upper_bound": 20406
+      },
+      "degree>=1": {
+        "nonzero_entries": 536319,
+        "shape": [
+          136584,
+          20585
+        ],
+        "structural_rank_upper_bound": 20585
+      },
+      "degree>=2": {
+        "nonzero_entries": 531552,
+        "shape": [
+          136470,
+          20585
+        ],
+        "structural_rank_upper_bound": 20585
+      }
+    },
+    "content_sha256": "3c8573fa64a6cbbd5cb09a717fbde0fa2999e9dadfc8778e18748f8d9ca4da56",
+    "nonzero_entries": 536360,
+    "rows_by_degree_0_to_3": [
+      1,
+      114,
+      2693,
+      133777
+    ],
+    "total_rows": 136585
+  },
+  "input": {
+    "multiplier_columns": 20585,
+    "multipliers": "constants plus all degree-one monomials",
+    "quadrics": 179,
+    "variables": 114
+  },
+  "outcome": {
+    "constant_contradiction_decided": false,
+    "constant_contradiction_found": false,
+    "degree_one_Macaulay_matrix_assembled": true,
+    "flag_promoted": false,
+    "full_rational_rank_computation_completed": false,
+    "general_factorization_disproved": false,
+    "green_realization_proved": false,
+    "low_degree_ideal_dimensions_decided": false
+  },
+  "schema": "pure-weyl-general-nonlinear-factor-sharp-macaulay-screen-v1",
+  "theorem_boundary": "the exact degree-one Macaulay matrix and all structural rank bounds are assembled.  A deterministic modular minor gives a rigorous characteristic-zero lower bound for the degree-three block, but the rational ranks of the full and truncated blocks remain undetermined.  Therefore neither a constant ideal contradiction nor a low-degree elimination theorem is claimed"
+}
