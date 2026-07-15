@@ -28,6 +28,10 @@ SCHEMA_PATH = (
 )
 
 INPUTS = {
+    "bondi_bach_indicial": ROOT
+    / "bridge"
+    / "certificates"
+    / "bondi_bach_indicial.json",
     "flat_tt_bach": ROOT
     / "bridge"
     / "certificates"
@@ -109,6 +113,18 @@ def _validate_contract(payload: dict[str, Any]) -> None:
         flags.get("linearized_minkowski_einstein_data_invariant") is True,
         "linearized Einstein invariant-subspace theorem is absent",
     )
+    _require(
+        flags.get("bondi_bach_radiative_indicial_roots_classified") is True,
+        "Bondi/Bach radiative indicial roots are absent",
+    )
+    _require(
+        flags.get("p0_boundary_metric_branch_identified") is True,
+        "leading p=0 boundary-metric branch is absent",
+    )
+    _require(
+        flags.get("fixed_boundary_metric_excludes_p0_kinematically") is True,
+        "kinematic p=0 boundary-selection result is absent",
+    )
     full_claims = {
         "full_asymptotically_flat_function_space_admissible",
         "null_infinity_green_complex_constructed",
@@ -130,6 +146,29 @@ def _matrix_rows(matrix: sp.MatrixBase) -> list[list[str]]:
 
 
 def _verify_scope_inputs(records: dict[str, dict[str, Any]]) -> None:
+    indicial = records["bondi_bach_indicial"]
+    _require(
+        indicial.get("radiative_indicial_roots") == ["0", "1"],
+        "Bondi/Bach radiative indicial roots changed",
+    )
+    _require(
+        indicial.get("p0_extra_bach_falloff", {}).get("boundary_metric_changed")
+        is True,
+        "p=0 branch no longer changes the unphysical boundary metric",
+    )
+    _require(
+        indicial.get("kinematic_boundary_selection", {}).get("status")
+        == "KINEMATIC_ONLY",
+        "p=0 boundary selection was promoted beyond its certificate",
+    )
+    _require(
+        indicial.get("claim_flags", {}).get(
+            "boundary_condition_preserved_by_causal_green_operators"
+        )
+        is False,
+        "upstream indicial certificate claims unproved causal preservation",
+    )
+
     flat = records["flat_tt_bach"]
     _require(
         flat.get("operator_identity") == "B_1(h_TT)=-(1/4) Box^2 h_TT",
@@ -270,14 +309,14 @@ def build_certificate() -> dict[str, Any]:
     linearized = _linearized_tt_identity()
 
     obligations = [
-        ("AF-E1", "PARTIAL", "linearized TT data fixed; nonlinear weighted Bondi/Bach spaces open", "REDUCED-MODE"),
+        ("AF-E1", "PARTIAL", "linearized TT data and radiative p=0,1 falloff rails fixed; full tensor weighted spaces open", "REDUCED-MODE"),
         ("AF-E2", "OPEN", "no retarded/advanced null-infinity complex", None),
         ("AF-E3", "PARTIAL", "charge criterion fixed; pure-Weyl charges not computed", "LOCAL-ALGEBRAIC"),
-        ("AF-E4", "OPEN", "no causal exclusion of the non-Einstein branch", None),
+        ("AF-E4", "PARTIAL", "fixed boundary metric excludes the leading p=0 branch kinematically; causal preservation open", "REDUCED-MODE"),
         ("AF-E5", "PARTIAL", "linearized fixed-mode closure proved; nonlinear closure open", "REDUCED-MODE"),
         ("AF-E6", "OPEN", "no null-infinity current/flux comparison", None),
         ("AF-E7", "OPEN", "no asymptotic scattering cohomology", None),
-        ("AF-E8", "OPEN", "extra Bach-flat asymptotic channels unclassified", None),
+        ("AF-E8", "PARTIAL", "leading p=0 Bach radiative branch identified; remaining tensor, soft, and Coulombic channels open", "REDUCED-MODE"),
     ]
 
     certificate = {
@@ -285,11 +324,29 @@ def build_certificate() -> dict[str, Any]:
         "schema_path": "bridge/einstein_sector/schema/asymptotic_bootstrap.schema.json",
         "schema_sha256": _sha256(SCHEMA_PATH),
         "result_id": "ASYMPTOTICALLY_FLAT_EINSTEIN_SECTOR_BOOTSTRAP",
-        "result_state": "PARTIAL_EXACT_LINEARIZED_RAIL",
-        "source_commit": "439a8e6bcc42a2458a7e1adf96ff0a5bb0dcac78",
+        "result_state": "PARTIAL_EXACT_LINEARIZED_AND_INDICIAL_RAILS",
+        "source_commit": "69fa30d57db708627e86687289c1b5d241565f5e",
         "dependency_tags": ["REDUCED-MODE"],
         "required_promotion_tag": "LORENTZIAN-CAUSAL",
         "linearized_minkowski_theorem": linearized,
+        "bondi_bach_indicial_theorem": {
+            "sector": "scalar amplitude of each flat Cartesian TT polarization",
+            "retarded_series": "phi=sum_(n>=0) r^(-p-n) f_n(u) Y_L(x)",
+            "radiative_indicial_polynomial": records["bondi_bach_indicial"][
+                "radiative_indicial_polynomial"
+            ],
+            "radiative_indicial_roots": records["bondi_bach_indicial"][
+                "radiative_indicial_roots"
+            ],
+            "einstein_branch": records["bondi_bach_indicial"]["p1_einstein_falloff"],
+            "extra_bach_branch": records["bondi_bach_indicial"][
+                "p0_extra_bach_falloff"
+            ],
+            "boundary_selection": records["bondi_bach_indicial"][
+                "kinematic_boundary_selection"
+            ],
+            "scope_guards": records["bondi_bach_indicial"]["scope_guards"],
+        },
         "asymptotic_data_seed": {
             "status": "SPECIFIED_NOT_ADMISSIBILITY_PROVED",
             "conformal_completion": {
@@ -401,6 +458,9 @@ def build_certificate() -> dict[str, Any]:
         "claim_flags": {
             "flat_tt_bach_operator_derived": True,
             "linearized_minkowski_einstein_data_invariant": True,
+            "bondi_bach_radiative_indicial_roots_classified": True,
+            "p0_boundary_metric_branch_identified": True,
+            "fixed_boundary_metric_excludes_p0_kinematically": True,
             "full_asymptotically_flat_function_space_admissible": False,
             "null_infinity_green_complex_constructed": False,
             "pure_weyl_surface_charges_computed": False,
@@ -413,6 +473,9 @@ def build_certificate() -> dict[str, Any]:
         "claim_dependency_tags": {
             "flat_tt_bach_operator_derived": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
             "linearized_minkowski_einstein_data_invariant": ["REDUCED-MODE"],
+            "bondi_bach_radiative_indicial_roots_classified": ["REDUCED-MODE"],
+            "p0_boundary_metric_branch_identified": ["REDUCED-MODE"],
+            "fixed_boundary_metric_excludes_p0_kinematically": ["REDUCED-MODE"],
             "all_false_asymptotic_claims_require": ["LORENTZIAN-CAUSAL"],
         },
         "sources": [

@@ -4,15 +4,20 @@
 
 This is the first executable step toward the commissioned asymptotically flat
 Einstein-sector theorem.  It establishes an exact `REDUCED-MODE` result for
-linearized transverse-traceless fields on Minkowski space and defines the
-null-infinity data and charge questions that must be solved next.  It does
-not promote the full theorem to `LORENTZIAN-CAUSAL`.
+linearized transverse-traceless fields on Minkowski space, classifies the
+two leading radiative Bondi/Bach indicial roots in that reduced channel, and
+defines the null-infinity data and charge questions that must be solved
+next.  It does not promote the full theorem to `LORENTZIAN-CAUSAL`.
 
 The certificate is
 `bridge/certificates/asymptotically_flat_einstein_bootstrap.json`; its builder
 and verifier are `bridge/einstein_sector/asymptotic_bootstrap.py`.  The exact
 operator premise has its own certificate,
 `bridge/certificates/flat_tt_bach_operator.json`.
+
+The radial calculation has its own certificate,
+`bridge/certificates/bondi_bach_indicial.json`, and is derived in
+`notes/conformal-bondi-bach-indicial.md`.
 
 ## Exact flat TT Bach reduction
 
@@ -114,6 +119,26 @@ The earlier shorthand “`q=0` soft/Coulombic sector” is therefore retired.
 The next Bondi calculation concerns the latter two boundary sectors, not
 merely substitution of zero into the oscillator matrix.
 
+## First exact radial boundary rail
+
+For each flat Cartesian TT polarization, the certified equation is
+`Box^2 phi=0`.  In retarded coordinates, the series
+
+```text
+phi=sum_(n>=0) r^(-p-n) f_n(u)Y_L
+```
+
+has radiative indicial polynomial `4p(p-1)` and therefore roots `p=0,1`.
+The `p=1` branch has ordinary Einstein `1/r` Cartesian falloff and does not
+change the unphysical boundary metric.  The `p=0` branch has `O(1)`
+Cartesian amplitude, produces `h_AB=O(r^2)`, and changes that boundary
+metric.  Fixing the unphysical boundary metric therefore removes `p=0`
+kinematically while retaining `p=1` radiation.
+
+This does not prove causal preservation, a full tensor recursion, a charge
+classification, or scattering equivalence.  It moves `AF-E4` and `AF-E8`
+from `OPEN` to `PARTIAL` without promoting either full claim.
+
 ## First null-infinity data declaration
 
 The bootstrap selects a smooth conformal-completion rail
@@ -196,20 +221,20 @@ asymptotic claim.
 
 | Obligation | Status after this bootstrap |
 |---|---|
-| `AF-E1` | `PARTIAL`: exact linearized TT data plus a declared Bondi seed; full weighted Bach space open. |
+| `AF-E1` | `PARTIAL`: exact linearized TT data and `p=0,1` radiative falloff rails plus a declared Bondi seed; full tensor weighted Bach space open. |
 | `AF-E2` | `OPEN`: no null-infinity retarded/advanced complex. |
 | `AF-E3` | `PARTIAL`: gauge/charge criterion fixed; conformal-gravity charges open. |
-| `AF-E4` | `OPEN`: no causal boundary exclusion of the extra branch. |
+| `AF-E4` | `PARTIAL`: fixed boundary metric excludes the leading `p=0` branch kinematically; causal preservation open. |
 | `AF-E5` | `PARTIAL`: exact linearized fixed-mode closure; nonlinear closure open. |
 | `AF-E6` | `OPEN`: no Green/current-to-radiative-flux comparison. |
 | `AF-E7` | `OPEN`: no scattering cohomology or helicity theorem. |
-| `AF-E8` | `OPEN`: extra asymptotic Weyl channels unclassified. |
+| `AF-E8` | `PARTIAL`: the leading `p=0` Bach radiative branch is identified; remaining tensor, soft, and Coulombic channels open. |
 
-The next mathematical target should be the soft/Coulombic completion and a
-linearized Bondi expansion of the Bach equation.  That calculation will say
-which extra fourth-order data reach null infinity and will turn the
-provisional function space into an operator-tested one.  Charge
-renormalization can then be performed on the resulting boundary fields.
+The next mathematical target is the full tensor Bondi-gauge recursion,
+including the exceptional harmonics and the soft/Coulombic completion.
+That calculation must test whether the reduced `p=0,1` classification
+survives all constraints.  Charge renormalization and causal Green-operator
+preservation can then be tested on the resulting boundary fields.
 
 ## Sources
 
@@ -229,5 +254,6 @@ renormalization can then be performed on the resulting boundary fields.
 ```bash
 python3 -m bridge.einstein_sector.asymptotic_bootstrap --verify bridge/certificates/asymptotically_flat_einstein_bootstrap.json
 python3 -m bridge.einstein_sector.flat_tt_bach --verify bridge/certificates/flat_tt_bach_operator.json
+python3 -m bridge.einstein_sector.bondi_bach_indicial --verify bridge/certificates/bondi_bach_indicial.json
 python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bootstrap
 ```

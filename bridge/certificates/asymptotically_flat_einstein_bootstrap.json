@@ -53,9 +53,54 @@
     },
     "status": "SPECIFIED_NOT_ADMISSIBILITY_PROVED"
   },
+  "bondi_bach_indicial_theorem": {
+    "boundary_selection": {
+      "condition": "fix h_tilde_AB at null infinity, equivalently require Cartesian TT h=O(r^-1)",
+      "effect": "excludes the p=0 leading boundary-metric deformation while retaining p=1 radiation",
+      "locality": "radial falloff condition at null infinity, not a future endpoint condition",
+      "status": "KINEMATIC_ONLY"
+    },
+    "einstein_branch": {
+      "bondi_angular_metric": "h_AB=r C_AB+O(1)",
+      "boundary_metric_changed": false,
+      "cartesian_amplitude": "phi=r^-1 f_0(u,x)+O(r^-2)",
+      "interpretation": "ordinary Einstein radiative falloff after the wave constraint",
+      "leading_wave_constraint": "2 d_u f_1-L f_0=0",
+      "unphysical_angular_metric": "h_tilde_AB=r^-1 C_AB+O(r^-2)"
+    },
+    "extra_bach_branch": {
+      "bondi_angular_metric": "h_AB=r^2 A_AB+O(r)",
+      "boundary_metric_changed": true,
+      "cartesian_amplitude": "phi=f_0(u,x)+O(r^-1)",
+      "interpretation": "additional leading Bach radiative branch",
+      "non_einstein_if": "d_u f_0 is nonzero",
+      "unphysical_angular_metric": "h_tilde_AB=A_AB+O(r^-1)",
+      "wave_image": "Box phi=-2 r^-1 d_u f_0-L r^-2 f_0+O(r^-3 from f_1)"
+    },
+    "radiative_indicial_polynomial": "4*p*(p - 1)",
+    "radiative_indicial_roots": [
+      "0",
+      "1"
+    ],
+    "retarded_series": "phi=sum_(n>=0) r^(-p-n) f_n(u) Y_L(x)",
+    "scope_guards": [
+      "exact for the scalar amplitude of each flat Cartesian TT polarization",
+      "leading radiative indicial roots only",
+      "not the complete tensor Bondi gauge or BV complex",
+      "no surface-charge or symplectic-flux classification",
+      "no nonlinear or global scattering theorem"
+    ],
+    "sector": "scalar amplitude of each flat Cartesian TT polarization"
+  },
   "claim_dependency_tags": {
     "all_false_asymptotic_claims_require": [
       "LORENTZIAN-CAUSAL"
+    ],
+    "bondi_bach_radiative_indicial_roots_classified": [
+      "REDUCED-MODE"
+    ],
+    "fixed_boundary_metric_excludes_p0_kinematically": [
+      "REDUCED-MODE"
     ],
     "flat_tt_bach_operator_derived": [
       "LOCAL-ALGEBRAIC",
@@ -63,10 +108,15 @@
     ],
     "linearized_minkowski_einstein_data_invariant": [
       "REDUCED-MODE"
+    ],
+    "p0_boundary_metric_branch_identified": [
+      "REDUCED-MODE"
     ]
   },
   "claim_flags": {
+    "bondi_bach_radiative_indicial_roots_classified": true,
     "extra_weyl_channels_classified": false,
+    "fixed_boundary_metric_excludes_p0_kinematically": true,
     "flat_tt_bach_operator_derived": true,
     "full_asymptotically_flat_function_space_admissible": false,
     "helicity_two_scattering_space_recovered": false,
@@ -74,6 +124,7 @@
     "non_einstein_branch_causally_excluded": false,
     "nonlinear_einstein_constraint_preserved": false,
     "null_infinity_green_complex_constructed": false,
+    "p0_boundary_metric_branch_identified": true,
     "pure_weyl_surface_charges_computed": false,
     "radiative_symplectic_form_matched": false
   },
@@ -114,6 +165,10 @@
     "status": "CRITERION_FIXED_ASSIGNMENTS_OPEN"
   },
   "inputs": {
+    "bondi_bach_indicial": {
+      "path": "bridge/certificates/bondi_bach_indicial.json",
+      "sha256": "635e41fdc11745fb7185d2561b35e9f0d45bf37704f4407bab98dbb180e03652"
+    },
     "closed_universe_bfv": {
       "path": "bridge/certificates/closed_universe_bfv.json",
       "sha256": "37eda8319d7fbe69e6b0838677b3d7fd4aecddd8b6274c281fefc2cf3f612ceb"
@@ -251,7 +306,7 @@
     {
       "id": "AF-E1",
       "partial_receipt_tag": "REDUCED-MODE",
-      "receipt": "linearized TT data fixed; nonlinear weighted Bondi/Bach spaces open",
+      "receipt": "linearized TT data and radiative p=0,1 falloff rails fixed; full tensor weighted spaces open",
       "required_closure_tag": "LORENTZIAN-CAUSAL",
       "status": "PARTIAL"
     },
@@ -271,10 +326,10 @@
     },
     {
       "id": "AF-E4",
-      "partial_receipt_tag": null,
-      "receipt": "no causal exclusion of the non-Einstein branch",
+      "partial_receipt_tag": "REDUCED-MODE",
+      "receipt": "fixed boundary metric excludes the leading p=0 branch kinematically; causal preservation open",
       "required_closure_tag": "LORENTZIAN-CAUSAL",
-      "status": "OPEN"
+      "status": "PARTIAL"
     },
     {
       "id": "AF-E5",
@@ -299,19 +354,19 @@
     },
     {
       "id": "AF-E8",
-      "partial_receipt_tag": null,
-      "receipt": "extra Bach-flat asymptotic channels unclassified",
+      "partial_receipt_tag": "REDUCED-MODE",
+      "receipt": "leading p=0 Bach radiative branch identified; remaining tensor, soft, and Coulombic channels open",
       "required_closure_tag": "LORENTZIAN-CAUSAL",
-      "status": "OPEN"
+      "status": "PARTIAL"
     }
   ],
   "required_promotion_tag": "LORENTZIAN-CAUSAL",
   "result_id": "ASYMPTOTICALLY_FLAT_EINSTEIN_SECTOR_BOOTSTRAP",
-  "result_state": "PARTIAL_EXACT_LINEARIZED_RAIL",
+  "result_state": "PARTIAL_EXACT_LINEARIZED_AND_INDICIAL_RAILS",
   "schema": "pure-weyl-asymptotically-flat-einstein-bootstrap-v1",
   "schema_path": "bridge/einstein_sector/schema/asymptotic_bootstrap.schema.json",
-  "schema_sha256": "0f752f4bbd533371f3b48d8e5907ba5287ae84257a5289d62c28eb98577325cc",
-  "source_commit": "439a8e6bcc42a2458a7e1adf96ff0a5bb0dcac78",
+  "schema_sha256": "cfcc9d4493007933c5c6111acf0fc7d97c1386c9c555b1aea4ae32c750253d38",
+  "source_commit": "69fa30d57db708627e86687289c1b5d241565f5e",
   "sources": [
     {
       "citation": "Ashtekar and Streubel, Proc. Roy. Soc. A 376 (1981) 585",

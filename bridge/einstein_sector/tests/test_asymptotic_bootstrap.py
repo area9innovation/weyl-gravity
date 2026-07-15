@@ -23,6 +23,13 @@ class AsymptoticBootstrapTests(unittest.TestCase):
         self.assertIn("also holds at q=0", theorem["algebraic_q_zero_extension"])
         self.assertTrue(result["claim_flags"]["flat_tt_bach_operator_derived"])
         self.assertTrue(result["claim_flags"]["linearized_minkowski_einstein_data_invariant"])
+        self.assertTrue(
+            result["claim_flags"]["bondi_bach_radiative_indicial_roots_classified"]
+        )
+        self.assertTrue(result["claim_flags"]["p0_boundary_metric_branch_identified"])
+        self.assertTrue(
+            result["claim_flags"]["fixed_boundary_metric_excludes_p0_kinematically"]
+        )
         self.assertFalse(result["claim_flags"]["nonlinear_einstein_constraint_preserved"])
         self.assertFalse(result["claim_flags"]["helicity_two_scattering_space_recovered"])
         self.assertEqual(
@@ -34,6 +41,13 @@ class AsymptoticBootstrapTests(unittest.TestCase):
             result["conformal_freedom_split"]["status"],
             "DISTINCTION_FIXED_BOUNDARY_INTERSECTION_OPEN",
         )
+        self.assertEqual(
+            result["bondi_bach_indicial_theorem"]["radiative_indicial_roots"],
+            ["0", "1"],
+        )
+        obligations = {row["id"]: row for row in result["obligation_status"]}
+        self.assertEqual(obligations["AF-E4"]["status"], "PARTIAL")
+        self.assertEqual(obligations["AF-E8"]["status"], "PARTIAL")
 
     def test_compact_cylinder_scope_is_required(self) -> None:
         original_load = asymptotic_bootstrap._load
@@ -43,6 +57,22 @@ class AsymptoticBootstrapTests(unittest.TestCase):
             if path == asymptotic_bootstrap.INPUTS["cylinder_causal_transport"]:
                 payload = copy.deepcopy(payload)
                 payload["cylinder_specialization"]["cauchy_surface_compact"] = False
+            return payload
+
+        with patch.object(asymptotic_bootstrap, "_load", side_effect=forged_load):
+            with self.assertRaises(asymptotic_bootstrap.AsymptoticBootstrapError):
+                asymptotic_bootstrap.build_certificate()
+
+    def test_indicial_causal_scope_is_required(self) -> None:
+        original_load = asymptotic_bootstrap._load
+
+        def forged_load(path: Path):
+            payload = original_load(path)
+            if path == asymptotic_bootstrap.INPUTS["bondi_bach_indicial"]:
+                payload = copy.deepcopy(payload)
+                payload["claim_flags"][
+                    "boundary_condition_preserved_by_causal_green_operators"
+                ] = True
             return payload
 
         with patch.object(asymptotic_bootstrap, "_load", side_effect=forged_load):
