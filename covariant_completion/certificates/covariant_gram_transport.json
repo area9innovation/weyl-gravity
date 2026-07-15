@@ -29,12 +29,11 @@
         "EAL_curvature_spectrum_match",
         "support_local_prolongation_retract",
         "prolonged_BV_operator_identity",
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
+        "direct_tractor_causal_homotopy",
         "causal_green_homotopy",
         "causal_quasi_isomorphism"
       ],
-      "status": false
+      "status": true
     },
     {
       "map": "Gamma(C_prol) -> C_Sigma -> K_energy",
@@ -52,7 +51,7 @@
         "residual_endpoint_recovery",
         "SO42_equivariant_transport"
       ],
-      "status": false
+      "status": true
     },
     {
       "map": "Omega_prol -> Omega_aux -> Omega_met -> Omega_energy -> G_res",
@@ -77,14 +76,7 @@
   "selected_claim": "prolonged_current_comparison",
   "status": true,
   "terminal_gate": {
-    "blocking_dependencies": [
-      "prolonged_green_witness",
-      "curvature_causal_green_operators",
-      "causal_green_homotopy",
-      "causal_quasi_isomorphism",
-      "residual_endpoint_recovery",
-      "SO42_equivariant_transport"
-    ],
+    "blocking_dependencies": [],
     "derived_not_manually_set": true,
     "requires": [
       "curved_operator_identity",
@@ -100,8 +92,7 @@
       "EAL_curvature_spectrum_match",
       "support_local_prolongation_retract",
       "prolonged_BV_operator_identity",
-      "prolonged_green_witness",
-      "curvature_causal_green_operators",
+      "direct_tractor_causal_homotopy",
       "causal_green_homotopy",
       "causal_quasi_isomorphism",
       "residual_endpoint_recovery",
@@ -110,7 +101,7 @@
       "residual_H4_is_C2",
       "residual_gram_is_I2"
     ],
-    "status": false
+    "status": true
   },
   "transported_result_when_gate_passes": {
     "Gram": [
