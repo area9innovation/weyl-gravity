@@ -226,8 +226,13 @@ average to a forbidden charged homogeneous tangent. Consequently
 for every smooth fixed-coupling linearized tangent, and the scoped verdict is
 `D_GAUGE`.  The nonzero background momentum is fixed by the compact lapse
 constraint; its pullback differential vanishes.
-`BERGER_RETAINED_MINIMAL_OPERATOR` is now complete. The replacement gate is
-`BERGER_NONMINIMAL_COMPLETION`, followed by the causal and stability parts of
+`BERGER_RETAINED_MINIMAL_OPERATOR` is now complete. The exact local companion
+`T=alpha_B Box_1 F_spatial` also makes the ghost and identity endpoints Green
+hyperbolic as compositions of normally hyperbolic vector operators. The
+fourth-order metric block has rank eight plus a two-dimensional polynomial
+clock/constraint kernel. Thus the immediate gate is
+`BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION`, followed by the total causal
+homotopy, nonminimal reattachment, and the stability part of
 `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
 
 ### Parked nonlinear support-local export

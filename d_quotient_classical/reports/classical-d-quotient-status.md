@@ -196,7 +196,7 @@ generators are not a Lie subalgebra. The exact obstruction is
 | Vacuum cylinder | `SECTOR_DEPENDENT` on the declared sectors | certified baseline | certified baseline | zero only in selected absolute residual \(H^4\) | \(I_2\) on centered degree-four classes | open in this challenge record |
 | Cylinder + scalar clock | one-real-scalar exact-cylinder candidate `OBSTRUCTED` | `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` |
 | Cylinder + neutral clock pair | `D_GAUGE` on `compact_neutral_clock_pair_homogeneous` | `OPEN` | `OPEN` | `OPEN` | unrestricted reference pairing is indefinite | `OPEN` |
-| Positive Berger clock | `D_GAUGE` on the smooth fixed-coupling linearized phase space | complete support-local cyclic 26-row minimal (q_1) certified | `OPEN` | `OPEN` | helical current and complete minimal cyclic pairing exact; full transport open | `OPEN` |
+| Positive Berger clock | `D_GAUGE` on the smooth fixed-coupling linearized phase space | complete support-local cyclic 26-row minimal (q_1) and backward witness certified | ghost/identity endpoints Green hyperbolic; metric and total homotopy `OPEN` | `OPEN` | helical current and complete minimal cyclic pairing exact; full transport open | `OPEN` |
 | Cylinder + Yang--Mills | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Weakly deformed background | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Lorentzian dS/AdS | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
@@ -207,13 +207,16 @@ status promotion.
 
 ## Next gates
 
-1. Complete `BERGER_NONMINIMAL_COMPLETION` around the now-certified 26-row
-   minimal differential, then construct the all-row causal Green contraction.
-   The retained nonzero-Weyl Bach PBW expansion, full minimal coefficients,
-   spatial Noether identities, formal adjointness, cyclicity, and
-   \(q_1^2=0\) are complete. The fixed-coupling linearized \(D\)-charge
-   sub-gate is also complete. Nonlinear \(q_2\) and the arity-two
-   \(D\)-Cartan contraction follow only after the causal export is stable.
+1. Complete `BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION`. The retained
+   nonzero-Weyl Bach PBW expansion, full minimal coefficients, spatial Noether
+   identities, formal adjointness, cyclicity, \(q_1^2=0\), and the local
+   backward witness are complete. The ghost and identity endpoints already
+   factor into normally hyperbolic vector operators. The remaining metric
+   symbol is rank eight plus a two-direction clock/constraint kernel. Prove
+   its sourced causal propagation, assemble the total 26-row homotopy, and
+   then reattach the nonminimal direct summands. Nonlinear \(q_2\) and the
+   arity-two \(D\)-Cartan contraction follow only after that causal export is
+   stable.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
 3. Compute the first background-deformation obstruction and a quantitative
@@ -253,6 +256,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_ret
 python3 d_quotient_classical/backreacted_clock/berger_linearized_bach_pbw.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_operator.py
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_linearized_bach_pbw
+python3 d_quotient_classical/backreacted_clock/berger_causal_witness_preflight.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_causal_witness_preflight.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_causal_witness_preflight
 ```
 
 No full-suite result is implied by the scoped checks.

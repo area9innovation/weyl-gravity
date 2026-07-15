@@ -72,6 +72,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json`](certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json)
 - Complete retained minimal-operator report:
   [`reports/berger-retained-minimal-operator.md`](reports/berger-retained-minimal-operator.md)
+- Berger causal-witness endpoint preflight:
+  [`certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json`](certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json)
+- Berger causal-witness preflight report:
+  [`reports/berger-causal-witness-preflight.md`](reports/berger-causal-witness-preflight.md)
 
 The only scientific verdicts are:
 
@@ -123,6 +127,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_ret
 python3 d_quotient_classical/backreacted_clock/berger_linearized_bach_pbw.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_operator.py
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_linearized_bach_pbw
+python3 d_quotient_classical/backreacted_clock/berger_causal_witness_preflight.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_causal_witness_preflight.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_causal_witness_preflight
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -159,6 +166,15 @@ the full 26-row relation (q_1^2=0). The immediate gate is now the separate
 `BERGER_NONMINIMAL_COMPLETION`, followed by the causal Green contraction.
 Nonlinear (q_2), arity-two (D)-Cartan stability, and the combined classical
 support-local export remain open.
+
+The causal witness is now fixed as
+`T=alpha_B Box_1 F_spatial`. Its ghost and dual identity blocks factor exactly
+into two normally hyperbolic vector operators and are Green hyperbolic. The
+metric block is the sole remaining analytic carrier: its fourth-order symbol
+has rank eight and an exact two-dimensional polynomial clock/constraint
+kernel. The immediate gate is `BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION`;
+the total causal homotopy remains false until that block has sourced causal
+propagation.
 
 ## Promotion rule
 

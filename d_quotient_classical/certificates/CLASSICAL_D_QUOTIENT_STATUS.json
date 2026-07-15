@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split, the homogeneous neutral two-scalar clock sector, and the smooth fixed-coupling linearized positive-Berger sector on their separately declared phase spaces. Local audits prove that the neutral clock's opposite-sign ratio sector is not globally positive, while the complete standard one-field conformal stealth family has no globally regular everywhere-timelike clock. On the exact positive Berger background, the lapse constraint and compact spatial averaging force delta Q_R=0 for every allowed fixed-coupling linearized tangent; with Omega_total(delta,L_D)=omega delta Q_R this gives the scoped verdict D_GAUGE. The eight temporal/Weyl field, ghost, and minimal-dual rows admit a support-local cyclic SDR. The complete retained 26-row minimal differential is coefficientwise exact in the invariant-frame PBW algebra and satisfies the Noether, adjoint, cyclicity, and nilpotency identities. No nonminimal, causal, stability, interacting, boundary, or quantum verdict is promoted.",
+  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split, the homogeneous neutral two-scalar clock sector, and the smooth fixed-coupling linearized positive-Berger sector on their separately declared phase spaces. Local audits prove that the neutral clock's opposite-sign ratio sector is not globally positive, while the complete standard one-field conformal stealth family has no globally regular everywhere-timelike clock. On the exact positive Berger background, the lapse constraint and compact spatial averaging force delta Q_R=0 for every allowed fixed-coupling linearized tangent; with Omega_total(delta,L_D)=omega delta Q_R this gives the scoped verdict D_GAUGE. The eight temporal/Weyl field, ghost, and minimal-dual rows admit a support-local cyclic SDR. The complete retained 26-row minimal differential is coefficientwise exact in the invariant-frame PBW algebra. A local backward witness gives Green-hyperbolic ghost and identity endpoints, while the rank-eight-plus-two metric Green realization remains open. No total causal, nonminimal, stability, interacting, boundary, or quantum verdict is promoted.",
   "claim_state": "PARTIAL",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -178,12 +178,22 @@
       "evidence_id": "berger_retained_minimal_operator",
       "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
       "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    },
+    {
+      "claim_scope": "Exact local backward witness T=alpha_B Box_1 F_spatial, QW+WQ assembly, and Green-hyperbolic ghost and identity endpoint factorizations; the rank-eight-plus-two metric Green realization and total causal homotopy remain open.",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "evidence_id": "berger_causal_witness_preflight",
+      "path": "d_quotient_classical/certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json",
+      "sha256": "da24c9734e1950fab9a730ea69bc46b35dcc5f95a4af7e1d9aa3aa57404d1ea4"
     }
   ],
   "open_fields": [
     "sufficiency of the quadratic Taub zero fibre for all-order nonlinear integrability",
     "closure and possible algebroid structure of zero-charge transformations",
-    "nonminimal rows, stability, causal Green theory, q2, and arity-two D-Cartan contraction for the matter-coupled Berger branch",
+    "rank-eight-plus-two metric Green realization, total causal homotopy, nonminimal rows, stability, q2, and arity-two D-Cartan contraction for the matter-coupled Berger branch",
     "Yang-Mills matter contribution",
     "quantitative weak-background stability radius",
     "Lorentzian dS/AdS boundary charges",
@@ -628,7 +638,7 @@
       "verdict_dependency_tags": []
     }
   ],
-  "source_commit": "b37bf3bd504a7745fbe80448cd0ab578a3a135ea",
+  "source_commit": "b6caaddde5bce3480ef4d91e6b0c2824b98050dd",
   "verification_receipts": [
     {
       "command": "python3 symbolic/verify_compact_cylinder_d_charge_audit.py --check",
@@ -869,6 +879,30 @@
       "higher_tiers_not_run": "The next declared gate is BERGER_NONMINIMAL_COMPLETION.",
       "status": "PASS",
       "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/berger_causal_witness_preflight.py --check --guards",
+      "elapsed_seconds": 10.1,
+      "escalation_criterion": "Escalate if the companion, QW+WQ block assembly, endpoint factorization, normally hyperbolic factors, metric rank, polynomial kernel carriers, or fail-closed flags change.",
+      "higher_tiers_not_run": "The endpoint theorem does not construct the metric Green realization or total causal chain homotopy.",
+      "status": "PASS",
+      "test_tier": 2
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_causal_witness_preflight.py",
+      "elapsed_seconds": 10.9,
+      "escalation_criterion": "Escalate if the independent PBW consumer fails QW+WQ reconstruction, the ghost biwave, or the rank-eight-plus-two boundary.",
+      "higher_tiers_not_run": "The checker consumes only the frozen witness and does not infer Green operators for the metric block.",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_causal_witness_preflight",
+      "elapsed_seconds": 11.0,
+      "escalation_criterion": "Escalate if endpoint promotions or downstream false gates drift.",
+      "higher_tiers_not_run": "The next gate is BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION.",
+      "status": "PASS",
+      "test_tier": 1
     }
   ],
   "work_packages": {
@@ -922,10 +956,11 @@
         "berger_minimal_bv_clock_sdr",
         "berger_retained_minimal_layout",
         "berger_retained_minimal_operator_preflight",
-        "berger_retained_minimal_operator"
+        "berger_retained_minimal_operator",
+        "berger_causal_witness_preflight"
       ],
-      "next_gate": "Complete BERGER_NONMINIMAL_COMPLETION, then construct the causal 26-row Berger BV contraction; q2 and the support-local arity-two D-Cartan contraction follow.",
-      "result": "The vacuum one-real-scalar and complete standard one-field stealth routes are obstructed. The neutral (+,-) pair gives a scoped homogeneous D_GAUGE reference-clock theorem but fails the global positive-health audit. The exact Berger-cylinder family supplies healthy standard-sign matter and nonzero clock momentum. At fixed alpha_B and lambda, the exact lapse row is proportional to delta Q_R; compact spatial averaging forces delta Q_R=0 in every smooth linearized mode. The helical presymplectic identity therefore gives D_GAUGE on the declared fixed-coupling Berger phase space. The eight temporal/Weyl clock and minimal-dual rows contract support-locally and cyclically, leaving a 26-component retained minimal complex. Its full nonzero-Weyl Bach PBW expansion and matter Hessian are now coefficientwise exact, and the complete q1 satisfies both spatial Noether compositions, formal adjointness, cyclicity, and nilpotency. Nonminimal rows, causal Green theory, nonlinear q2, and arity-two D-Cartan stability remain open.",
+      "next_gate": "Complete BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION and the total causal 26-row homotopy; then reattach nonminimal rows and export q2 for the support-local arity-two D-Cartan contraction.",
+      "result": "The vacuum one-real-scalar and complete standard one-field stealth routes are obstructed. The neutral (+,-) pair gives a scoped homogeneous D_GAUGE reference-clock theorem but fails the global positive-health audit. The exact Berger-cylinder family supplies healthy standard-sign matter and nonzero clock momentum. At fixed alpha_B and lambda, the exact lapse row is proportional to delta Q_R; compact spatial averaging forces delta Q_R=0 in every smooth linearized mode. The helical presymplectic identity therefore gives D_GAUGE on the declared fixed-coupling Berger phase space. The eight temporal/Weyl clock and minimal-dual rows contract support-locally and cyclically, leaving a 26-component retained minimal complex. Its complete q1 is coefficientwise exact and cyclic. The local backward witness is also fixed; the ghost and identity endpoints are Green hyperbolic as compositions of normally hyperbolic vector operators. The remaining metric block has a rank-eight fourth-order symbol plus a two-dimensional polynomial clock/constraint kernel. Its Green realization, total causal homotopy, nonminimal reattachment, nonlinear q2, and arity-two D-Cartan stability remain open.",
       "status": "PARTIAL"
     }
   }
