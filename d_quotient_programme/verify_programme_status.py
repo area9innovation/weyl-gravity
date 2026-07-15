@@ -31,6 +31,7 @@ CLASSICAL_BERGER_RETAINED_MINIMAL_LAYOUT_CONTRIBUTION = PACKAGE / "contributions
 NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
 EINSTEIN_ED1A_CONTRIBUTION = PACKAGE / "contributions" / "einstein-ed1a-asymptotic-generator-gate.json"
 EINSTEIN_BERGER_INCIDENCE_CONTRIBUTION = PACKAGE / "contributions" / "einstein-berger-incidence.json"
+EINSTEIN_MAXWELL_PRODUCT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-product-incidence.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -128,6 +129,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
             "berger_retained_minimal_operator",
             "berger_causal_witness_preflight",
             "berger_clock_reattached_principal_witness",
+            "berger_minimal_34_portable_contraction",
         ]
     ):
         raise AssertionError("classical scalar-clock obstruction scope drifted")
@@ -581,6 +583,33 @@ def _einstein_berger_incidence_contribution() -> dict[str, Any]:
     return contribution
 
 
+def _einstein_maxwell_product_contribution() -> dict[str, Any]:
+    contribution = _load(EINSTEIN_MAXWELL_PRODUCT_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "einstein_boundary"
+        and contribution.get("setting_id")
+        == "compact_einstein_maxwell_product_background"
+        and contribution.get("generator_id") == "H_product"
+        and contribution.get("phase_space_id")
+        == "einstein_maxwell_product_background"
+        and contribution.get("lifecycle_layer") == "CLASSICAL_BV"
+        and contribution.get("claim_status") == "CERTIFIED"
+        and contribution.get("verdict")
+        == "COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND"
+        and contribution.get("dependency_tags") == ["LOCAL-ALGEBRAIC"]
+    ):
+        raise AssertionError("Einstein--Maxwell product contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path = evidence.get("path")
+    commit = evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("Einstein--Maxwell product evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("Einstein--Maxwell product evidence hash drifted")
+    return contribution
+
+
 def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     team_data = {team: _load_team_input(path) for team, path in TEAM_PATHS.items()}
     _assert_team_inputs(team_data)
@@ -603,6 +632,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     )
     ed1a_contribution = _einstein_ed1a_contribution()
     berger_incidence_contribution = _einstein_berger_incidence_contribution()
+    maxwell_product_contribution = _einstein_maxwell_product_contribution()
     nd1_contribution = _nonlinear_nd1_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
@@ -683,6 +713,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": berger_incidence_contribution,
             },
             {
+                "path": str(EINSTEIN_MAXWELL_PRODUCT_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_PRODUCT_CONTRIBUTION),
+                "payload": maxwell_product_contribution,
+            },
+            {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
@@ -698,15 +733,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "team_id": "classical",
                 "result_state": "BERGER_MINIMAL_Q1_AND_REATTACHED_BIWAVE_PRINCIPAL_CLOSED_CURVED_CAUSAL_OPEN",
                 "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE",
-                "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The complete retained minimal q1 is exact and cyclic; the retained causal endpoints are Green-hyperbolic and reattaching the clock rows gives a full scalar-biwave principal witness.",
+                "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The complete retained minimal q1 is exact and cyclic; its 34-row unary operator and exact clock contraction are frozen portably for downstream consumers. The retained causal endpoints are Green-hyperbolic and reattaching the clock rows gives a full scalar-biwave principal witness.",
                 "next_gate": "construct the curved clock-reattached witness and total causal homotopy, then reattach nonminimal rows and export q2",
             },
             {
                 "team_id": "einstein_boundary",
-                "result_state": "KINEMATICS_PROVED_PHASE_SPACE_OPEN",
+                "result_state": "COMMON_MATTER_BACKGROUND_CERTIFIED_TANGENT_PHASE_SPACE_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is exactly classified as a non-Einstein Weyl--matter branch, so its same-base-point Einstein tangent gate is not applicable.",
-                "next_gate": "complete a boundary-preserving full Bach phase space and calculate charge and flux; use a different common matter background for any Einstein tangent comparison",
+                "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is a non-Einstein Weyl--matter branch. A separate positive Einstein--Maxwell/Weyl--Maxwell product background now supplies an exact common base point without yet supplying a tangent phase space.",
+                "next_gate": "construct the two minimal metric--Maxwell BV complexes, chain map, cohomology, and presymplectic comparison at the certified product base point; independently complete the asymptotic Bach phase space and charge audit",
             },
             {
                 "team_id": "nonlinear",
@@ -851,6 +886,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND",
             },
             {
+                "setting_id": "compact_einstein_maxwell_product_background",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_background",
+                "boundary_conditions": "R_t x S1_L x S2_r flat-critical product; aligned source-free Maxwell flux; tangent phase spaces and charges open",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -921,6 +965,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "the zero-charge transformations close as a Lie algebra or declared algebroid",
             "the classical Cartan and causal homotopies exist in the declared support category",
             "Berger retained minimal q1 and the reattached scalar-biwave principal witness are complete; curved witness terms, total causal homotopy, nonminimal rows, q2, and arity-two stability remain open",
+            "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
             "interacting promotion requires a corrected Cartan homotopy",
             "quantum promotion requires a restored QME and renormalized Ward identity",
         ],
@@ -990,6 +1035,7 @@ def validate(data: dict[str, Any]) -> list[str]:
     if einstein_contributions != {
         "asymptotic_real_cylinder_time",
         "compact_positive_berger_clock_einstein_incidence",
+        "compact_einstein_maxwell_product_background",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1008,6 +1054,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_positive_berger_clock_minimal_bv_sdr": "MINIMAL_CLOCK_SECTOR_SDR",
         "compact_positive_berger_clock_retained_minimal_layout": "RETAINED_MINIMAL_LAYOUT_FROZEN",
         "compact_positive_berger_clock_einstein_incidence": "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND",
+        "compact_einstein_maxwell_product_background": "COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -1034,6 +1081,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("minimal Berger clock BV SDR was dropped")
     if ledger.get("compact_positive_berger_clock_einstein_incidence", {}).get("status") != "CERTIFIED":
         errors.append("Berger Einstein-incidence classification was dropped")
+    if ledger.get("compact_einstein_maxwell_product_background", {}).get("status") != "CERTIFIED":
+        errors.append("Einstein--Maxwell product common background was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -1266,6 +1315,15 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         != "compact_positive_berger_clock_einstein_incidence"
     ]
     reject("drop_Berger_Einstein_incidence_contribution", mutant)
+
+    mutant = deepcopy(data)
+    mutant["team_contributions"] = [
+        record
+        for record in mutant["team_contributions"]
+        if record["payload"]["setting_id"]
+        != "compact_einstein_maxwell_product_background"
+    ]
+    reject("drop_Einstein_Maxwell_product_contribution", mutant)
 
     mutant = deepcopy(data)
     mutant["publication_plan"]["paper_IX"]["status"] = "ACTIVE_THEOREM_PAPER"

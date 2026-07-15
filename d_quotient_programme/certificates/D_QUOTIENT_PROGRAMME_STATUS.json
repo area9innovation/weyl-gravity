@@ -13,6 +13,7 @@
     "the zero-charge transformations close as a Lie algebra or declared algebroid",
     "the classical Cartan and causal homotopies exist in the declared support category",
     "Berger retained minimal q1 and the reattached scalar-biwave principal witness are complete; curved witness terms, total causal homotopy, nonminimal rows, q2, and arity-two stability remain open",
+    "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
     "interacting promotion requires a corrected Cartan homotopy",
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
@@ -26,7 +27,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate, clock SDR, complete retained minimal q1, causal endpoint factors, and reattached scalar-biwave principal witness are complete. Construct the curved lower-order witness and total causal homotopy without weakening the separate nonminimal, q2, arity-two, or Einstein-incidence gates."
   },
-  "programme_base_commit": "82c569772bb38ef568828aabd11b522295e3233c",
+  "programme_base_commit": "88c2c17d493012256f3e417809886779ea059fd7",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -42,8 +43,8 @@
     "papers_VII_VIII": "completed theorem retained with explicit compact phase-space scope"
   },
   "registry_hashes": {
-    "generator_registry": "1df39af78cdd49eeb64faa2d46134542e9bb75a598f0dde98932657a682525de",
-    "phase_space_registry": "1ec6388422e9fad814f5095d2740770dc7bc646e807d6debf0cb3616050e7452"
+    "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
+    "phase_space_registry": "f6059ba38558d487d1868a02c8b4cddebce313e9945e63ab8faec2ca373c47c2"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -174,6 +175,15 @@
       "setting_id": "compact_positive_berger_clock_einstein_incidence",
       "status": "CERTIFIED",
       "verdict": "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND"
+    },
+    {
+      "boundary_conditions": "R_t x S1_L x S2_r flat-critical product; aligned source-free Maxwell flux; tangent phase spaces and charges open",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_background",
+      "setting_id": "compact_einstein_maxwell_product_background",
+      "status": "CERTIFIED",
+      "verdict": "COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -763,6 +773,47 @@
       "sha256": "18c97ec0f09c2c920f811c9ff954f1c0a705e8471bbb7282deecd7451df60804"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-product-incidence.json",
+      "payload": {
+        "boundary_conditions": "R_t x S1_L x S2_r flat-critical product; positive alpha_B and kappa; aligned source-free Maxwell flux; no asymptotic region",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC"
+        ],
+        "established": [
+          "an exact positive same-metric and same-Maxwell-field intersection of cosmological Einstein--Maxwell and pure Weyl--Maxwell solution loci exists",
+          "the nondegenerate incidence equations are Lambda=(k_1+k_2)/2, rho=(k_2-k_1)/(2*kappa), and alpha_B*kappa*(k_1+k_2)=3",
+          "the flat critical branch R^(1,1) x S2 admits a smooth spatial quotient with compact Cauchy topology S1 x S2",
+          "optional U(1) flux quantization discretizes alpha_B in the declared canonical Maxwell normalization"
+        ],
+        "evidence": {
+          "commit": "88c2c17d493012256f3e417809886779ea059fd7",
+          "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+          "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "construct and compare the minimal Einstein--Maxwell and Diff x Weyl--Maxwell BV complexes, cohomology, and presymplectic currents at this identical base point",
+        "not_established": [
+          "a relational matter clock or a D-quotient verdict",
+          "a tangent BV chain map or Einstein observable embedding",
+          "an asymptotically flat, causal Green, stability, scattering, or quantum theorem",
+          "equivalence of Einstein gravity and Weyl gravity"
+        ],
+        "phase_space_id": "einstein_maxwell_product_background",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_product_background",
+        "team_id": "einstein_boundary",
+        "verdict": "COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_product_incidence --verify bridge/certificates/einstein_maxwell_product_incidence.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_product_incidence.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_product_incidence"
+        ]
+      },
+      "sha256": "775bced8a1d29625809a3fc3af11767728ce41c39d6f69cf1927523f34eb06db"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -850,9 +901,9 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "5744d923b898a49bea884e5127768e05cb574b94",
+      "commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "761b50bf5bacee37aa100709cb49817499605a2745113801380ee7d707fd3456"
+      "sha256": "f4f1b07b4a212ab453d9270744691d8554df36ef8bc24d456d6a7a4a5bc77ec6"
     },
     "einstein_boundary": {
       "commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
@@ -860,9 +911,9 @@
       "sha256": "ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685"
     },
     "nonlinear": {
-      "commit": "cf322df7abc0125ad1e68dc2b2da110a717a5c75",
+      "commit": "3ff7608b8a8e855f365db6628672301f65d17d81",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "504b14dd188aa01831c232296bd8beeffcdeccd6a20dcfd9a421b73ac0bf0a79"
+      "sha256": "fc7bbe05b5ea7c2c89a55b305677e019a9e7e9b146ae064606128025a2707b12"
     },
     "quantum": {
       "commit": "2aec6ed91793d136c9a6d80a0f74b2b233775d49",
@@ -872,16 +923,16 @@
   },
   "team_status": [
     {
-      "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The complete retained minimal q1 is exact and cyclic; the retained causal endpoints are Green-hyperbolic and reattaching the clock rows gives a full scalar-biwave principal witness.",
+      "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The complete retained minimal q1 is exact and cyclic; its 34-row unary operator and exact clock contraction are frozen portably for downstream consumers. The retained causal endpoints are Green-hyperbolic and reattaching the clock rows gives a full scalar-biwave principal witness.",
       "next_gate": "construct the curved clock-reattached witness and total causal homotopy, then reattach nonminimal rows and export q2",
       "result_state": "BERGER_MINIMAL_Q1_AND_REATTACHED_BIWAVE_PRINCIPAL_CLOSED_CURVED_CAUSAL_OPEN",
       "team_id": "classical",
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is exactly classified as a non-Einstein Weyl--matter branch, so its same-base-point Einstein tangent gate is not applicable.",
-      "next_gate": "complete a boundary-preserving full Bach phase space and calculate charge and flux; use a different common matter background for any Einstein tangent comparison",
-      "result_state": "KINEMATICS_PROVED_PHASE_SPACE_OPEN",
+      "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is a non-Einstein Weyl--matter branch. A separate positive Einstein--Maxwell/Weyl--Maxwell product background now supplies an exact common base point without yet supplying a tangent phase space.",
+      "next_gate": "construct the two minimal metric--Maxwell BV complexes, chain map, cohomology, and presymplectic comparison at the certified product base point; independently complete the asymptotic Bach phase space and charge audit",
+      "result_state": "COMMON_MATTER_BACKGROUND_CERTIFIED_TANGENT_PHASE_SPACE_OPEN",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },

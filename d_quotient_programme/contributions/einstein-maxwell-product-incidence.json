@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2_r flat-critical product; positive alpha_B and kappa; aligned source-free Maxwell flux; no asymptotic region",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "established": [
+    "an exact positive same-metric and same-Maxwell-field intersection of cosmological Einstein--Maxwell and pure Weyl--Maxwell solution loci exists",
+    "the nondegenerate incidence equations are Lambda=(k_1+k_2)/2, rho=(k_2-k_1)/(2*kappa), and alpha_B*kappa*(k_1+k_2)=3",
+    "the flat critical branch R^(1,1) x S2 admits a smooth spatial quotient with compact Cauchy topology S1 x S2",
+    "optional U(1) flux quantization discretizes alpha_B in the declared canonical Maxwell normalization"
+  ],
+  "evidence": {
+    "commit": "88c2c17d493012256f3e417809886779ea059fd7",
+    "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+    "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "construct and compare the minimal Einstein--Maxwell and Diff x Weyl--Maxwell BV complexes, cohomology, and presymplectic currents at this identical base point",
+  "not_established": [
+    "a relational matter clock or a D-quotient verdict",
+    "a tangent BV chain map or Einstein observable embedding",
+    "an asymptotically flat, causal Green, stability, scattering, or quantum theorem",
+    "equivalence of Einstein gravity and Weyl gravity"
+  ],
+  "phase_space_id": "einstein_maxwell_product_background",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_product_background",
+  "team_id": "einstein_boundary",
+  "verdict": "COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_product_incidence --verify bridge/certificates/einstein_maxwell_product_incidence.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_product_incidence.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_product_incidence"
+  ]
+}

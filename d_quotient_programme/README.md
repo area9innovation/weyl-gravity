@@ -45,6 +45,8 @@ because the existing results concern different objects:
 - [`reports/einstein-ed1a-registration-receipt.md`](reports/einstein-ed1a-registration-receipt.md)
 - [`contributions/einstein-berger-incidence.json`](contributions/einstein-berger-incidence.json)
 - [`reports/einstein-berger-incidence-registration-receipt.md`](reports/einstein-berger-incidence-registration-receipt.md)
+- [`contributions/einstein-maxwell-product-incidence.json`](contributions/einstein-maxwell-product-incidence.json)
+- [`reports/einstein-maxwell-product-registration-receipt.md`](reports/einstein-maxwell-product-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
