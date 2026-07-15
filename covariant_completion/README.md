@@ -383,9 +383,15 @@ No single allowed pair is two-way.  Eliminating the curvature diagonal gives
 an exact finite-block Schur formula, but its complement contains the Green
 operators of `L_26` and `L_26sharp`, hence is nonlocal and is not an accepted
 support-local witness proof.  The unreduced saddle has order two; explicit
-coefficient tables for `R,S`, a local first-order reduction of every
-`E_aux` occurrence, and a positive temporal symmetrizer for the full coupled
-principal matrix are still required.
+coefficient tables for a more general `R,S` family and a local first-order
+reduction of every `E_aux` occurrence are still required.  In particular, the
+natural exact choice `A_F=p_F A_equation`, `S=A_F^sharp`,
+`R=A_F^sharp J_U` fails the balanced Douglis timelike test.  The complete
+degree-zero principal matrix has rank at most `107/116` (defect at least
+nine), so its temporal characteristic leading coefficient is zero and no
+positive temporal symmetrizer exists.  This is an exact no-go only for that
+smallest pair-4+5 realization; it does not exclude larger relative witnesses
+or an added support-local first-order prolongation.
 The remaining seven flags isolate that prolonged Green witness, the actual causal chain homotopy, residual
 endpoint recovery, `SO(4,2)` equivariance, and prolonged current transport.
 The terminal stage transports the existing `H4 = C^2`, `G = I2`; it must not

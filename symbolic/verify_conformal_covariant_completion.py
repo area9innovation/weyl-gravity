@@ -50,6 +50,7 @@ GUARDS = (
     ("verify_conformal_auxiliary_lower_order_factor_ansatz.py", "--claim-green"),
     ("verify_conformal_auxiliary_lower_order_factor_ansatz.py", "--skip-quadratic-curvature"),
     ("verify_conformal_auxiliary_lower_order_factor_ansatz.py", "--promote-flag"),
+    ("verify_conformal_parallel_operator_composition.py", "--claim-quadratic-solve"),
     ("verify_conformal_covariant_bv_last_mile.py", "--claim-complete-covariant-theorem"),
     (
         "verify_conformal_covariant_dependency_report.py",
@@ -138,6 +139,7 @@ def main() -> None:
             ("verify_conformal_weyl_cotton_block_green_witness.py", guarded_args),
             ("verify_conformal_auxiliary_prenormal_symbol.py", emit_args),
             ("verify_conformal_auxiliary_lower_order_factor_ansatz.py", emit_args),
+            ("verify_conformal_parallel_operator_composition.py", emit_args),
             ("verify_conformal_relative_saddle_witness.py", guarded_args),
             ("verify_conformal_curvature_prolongation_sdr.py", ()),
             ("verify_conformal_curvature_state_gauge_chain_map.py", ()),
@@ -155,6 +157,7 @@ def main() -> None:
         "verify_conformal_curvature_mapping_cylinder_witness.py",
         *guarded_args,
     )
+    _run("verify_conformal_relative_saddle_principal.py", *guarded_args)
     _run("verify_conformal_curvature_prolongation_status.py", *guarded_args)
     _run("verify_conformal_prolonged_green_bridge.py", *guarded_args)
     _run("verify_conformal_covariant_bv_last_mile.py", *guarded_args)

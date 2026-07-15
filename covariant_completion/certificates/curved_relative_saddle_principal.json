@@ -1,0 +1,84 @@
+{
+  "balanced_Douglis_weights": {
+    "A_absent_from_balanced_principal_symbol": true,
+    "auxiliary_A_actual_order": 2,
+    "auxiliary_A_weighted_order": 5,
+    "column_weights": {
+      "M": 3,
+      "U": 0
+    },
+    "no_weights_make_A_B_C_D_all_principal": true,
+    "principal_blocks": [
+      "B_order2",
+      "C_order4",
+      "D_order1"
+    ],
+    "row_weights": {
+      "M": 2,
+      "U": 1
+    },
+    "shift_freedom": "t_U may be shifted with the displayed affine family"
+  },
+  "causal_green_homotopy": false,
+  "characteristic_and_symmetrizer": {
+    "Douglis_characteristic_temporal_leading_coefficient": "zero",
+    "causal_characteristic_polynomial_exists": false,
+    "positive_temporal_symmetrizer_exists": false,
+    "reason": "at zeta=dt the curvature blocks are invertible, while the field Schur block factors through rank(Eaux)=15<24",
+    "symmetric_hyperbolicity_obstruction": "the balanced temporal principal matrix has rank defect at least nine"
+  },
+  "curvature_causal_green_operators": false,
+  "differential_order_matrix": {
+    "block_order": [
+      "M_aux[24]",
+      "U[26]+Usharp[26]"
+    ],
+    "explanation": {
+      "A": "Eaux+K C, order 2",
+      "B": "[R,S], order 2",
+      "C": "[Ssharp Eaux,Rsharp Eaux]^T, order 4",
+      "D": "diag(L_26,L_26sharp), order 1"
+    },
+    "orders": [
+      [
+        2,
+        2
+      ],
+      [
+        4,
+        1
+      ]
+    ]
+  },
+  "fail_closed": true,
+  "instantiated_local_maps": {
+    "A_F": "p_F A_equation: Ebar_aux[24] -> F_curv[26]",
+    "A_F_order": 2,
+    "J_U": "positive pointwise rank-26 Weyl-Cotton symmetrizer",
+    "R": "A_F^sharp J_U: U -> M_aux",
+    "R_order": 2,
+    "S": "A_F^sharp: U^sharp -> M_aux",
+    "S_order": 2,
+    "T_state_order": 3,
+    "all_constraint_and_identity_rows_retained": true,
+    "formal_adjoints_from_same_oriented_pairings": true,
+    "source_compatibility_relation": "A_F Eaux=L_26 T_state"
+  },
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-relative-saddle-principal-obstruction-v1",
+  "scope": "exact no-go for the smallest pair-4+5 ansatz with R,S induced by p_F A_equation and J_U; not a no-go for larger relative witnesses or an additional local first-order prolongation",
+  "status_flags_promoted": [],
+  "timelike_principal_test": {
+    "Eaux_principal_rank": 15,
+    "complete_degree_zero_dimension": 116,
+    "complete_degree_zero_rank_upper_bound": 107,
+    "covector": "dt",
+    "curvature_temporal_blocks_invertible_rank": 52,
+    "equation_dual_triangular_rank": 40,
+    "field_Schur_rank_upper_bound": 15,
+    "invertible": false,
+    "reduced_76_rank_upper_bound": 67,
+    "timelike_rank_defect_lower_bound": 9
+  },
+  "warranted_atomic_flags": []
+}

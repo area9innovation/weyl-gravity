@@ -1309,10 +1309,24 @@ $(M_{\rm aux},X_U,Y_U^\sharp)$ it gives
 The finite-block Schur formula is exact, but its Schur complement contains
 the Green operators of $L_{26}$ and $L_{26}^\sharp$ and is therefore
 nonlocal.  Conversely, the unreduced saddle is order two, so the certified
-first-order symmetric-hyperbolic theorem does not apply to it.  Explicit
-coefficient tables for $R,S$, a support-local first-order reduction of every
-$E_{\rm aux}$ occurrence, and a positive temporal symmetrizer for the full
-coupled principal matrix remain open.  Neither diagnostic promotes a flag.
+first-order symmetric-hyperbolic theorem does not apply to it.  Moreover, its
+natural local instantiation
+\begin{equation}\label{eq:minimal-saddle-instantiation}
+ A_F=p_F A_{\rm eq},
+ \qquad S=A_F^\sharp,
+ \qquad R=A_F^\sharp J_U
+\end{equation}
+has an exact balanced Douglis temporal rank obstruction:
+\begin{equation}\label{eq:minimal-saddle-rank-no-go}
+ \rank\sigma_{\rm DN}(dt)\leq107<116,
+ \qquad \operatorname{defect}\sigma_{\rm DN}(dt)\geq9.
+\end{equation}
+The temporal leading coefficient of the characteristic determinant therefore
+vanishes and no positive temporal symmetrizer exists for this realization.
+This is a no-go only for the smallest pair-$4+5$ ansatz with
+\eqref{eq:minimal-saddle-instantiation}; it does not exclude larger relative
+witnesses or an additional support-local first-order prolongation.  No flag
+is promoted.
 
 The selected causal route therefore has the following explicit flags:
 \begin{equation}\label{eq:open-curvature-flags}
@@ -3359,8 +3373,11 @@ simultaneous $DP/PD$ cubic divisibility leaves a $45$-parameter family and
 hence no cubic obstruction, while the curvature-corrected nonlinear
 quadratic and lower solve remains open.
 The smallest reciprocal relative saddle is the odd-adjoint pair $4+5$.
-Its Schur complement is nonlocal, while its unreduced order-two form still
-lacks a support-local first-order reduction and full positive symmetrizer.\\
+Its Schur complement is nonlocal.  The natural
+$A_F=p_FA_{\rm eq}$, $S=A_F^\sharp$, $R=A_F^\sharp J_U$ realization has
+balanced timelike rank at most $107/116$, zero temporal leading coefficient
+and no positive symmetrizer.  This excludes only that realization, not larger
+relative witnesses or a support-local first-order prolongation.\\
 Curvature causal realization and final covariant $H^4$ & Open, fail-closed &
 The first eight flags in \eqref{eq:open-curvature-flags} are true and the other
 seven remain false.  They require the prolonged Green witness and actual BV

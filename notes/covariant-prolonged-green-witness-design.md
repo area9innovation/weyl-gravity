@@ -55,6 +55,91 @@ factorization: it must give advanced and retarded inverses for every compact
 source in the complete auxiliary field and cotangent rows, with the paired
 adjoint relation and without a nonlocal decomposition of the source.
 
+### Mixed-order square-root acceptance criterion
+
+The precise usable statement from `BaerGreenHyperbolic` is stronger than the
+prenormal symbol identity.  Let
+
+```text
+P : Gamma(E1) -> Gamma(E2),
+D : Gamma(E2) -> Gamma(E1)
+```
+
+be local differential operators.  To infer that `P` is Green hyperbolic, the
+full operator products `D P` on `E1` and `P D` on `E2` must both be Green
+hyperbolic.  In Bär's definition this means that each product **and its formal
+dual** has advanced and retarded Green operators satisfying both inverse
+identities on compact sections and metric-causal support.  Principal-symbol
+divisibility, a one-sided parametrix, or a Green inverse only on compatible
+sources is insufficient.
+
+A sufficient certificate in the present ansatz is the pair of exact operator
+identities
+
+```text
+D P = L_minus L_plus,
+P D = R_minus R_plus,
+```
+
+where every displayed second-order factor is normally hyperbolic (or is
+independently Green hyperbolic), and the same is true for the reversed formal
+dual products.  Bär's Corollary 3.13 then gives Green operators for `D P` and
+`P D`;
+for example the Green operator of `L_minus L_plus` is the causally ordered
+composition `G_Lplus^+/- G_Lminus^+/-`, using the standard extension to
+past/future-compact sections.
+
+Indeed, on `E1 direct_sum E2` set
+
+```text
+A = [ 0  D ]
+    [ P  0 ].
+```
+
+Then `A^2=diag(D P,P D)` is Green hyperbolic by Lemma 3.17, so the square-root
+result, Corollary 3.15, makes `A` Green hyperbolic.  The upper-right block of
+`G_A^+/-` is a two-sided Green operator for `P`; equivalently,
+
+```text
+G_P^+/- = D G_PD^+/- = G_DP^+/- D,
+```
+
+with equality understood on the extended support spaces.  Locality of `D`
+does not enlarge support, so these maps inherit the required `J^+/-` support.
+The lower-left block similarly gives the Green operators of `D`.
+
+There is one terminology mismatch to keep out of certificates: Bär calls the
+`J^+`-supported operator "advanced", whereas this repository calls
+`G_plus`, supported in `J^+`, retarded and calls `G_minus` advanced.  Every
+identity here is indexed by the support sign, not by that word choice.
+
+If `D=P^sharp` (on this degree-zero block, after the project's nondegenerate
+fibre identification), this is exactly Bär's Corollary 3.19: both
+`P^sharp P` and `P P^sharp` must be Green hyperbolic.  The current project does
+not yet have `D=P^sharp`; its complement is an independent mixed-order
+operator.  The block argument still proves Green hyperbolicity of `P` once
+both products and their formal duals pass, but it does not by itself give BV
+self-adjointness or the current pairing.  Those require the repository's
+Koszul `sharp` convention separately.  With `P^sharp=P`, formal-dual
+uniqueness gives the project relation `G_plus^sharp=G_minus`; without that
+identity an explicitly paired adjoint witness is required.
+
+Thus the open quadratic/lower-order solve must emit exact `D P` and `P D`
+factorizations, certify all primal and formal-dual factors, and check both
+left/right Green identities and causal support.  The existing 45-parameter
+cubic family satisfies none of these analytic conclusions by itself.
+
+One prerequisite for that solve has now landed: the component-aware parallel
+operator composer on the full `h[10]+f[10]+v[4]` bundle.  It canonicalizes
+covariant derivative words while applying curvature both to the inner
+derivative slots and to every tensor input slot.  Its exact regression sends
+`Box^2` to derivative orders `4,2,0`, with a nonzero order-two curvature
+piece.  Frozen Fourier-polynomial matrix multiplication misses precisely
+these commutator contributions at orders two and zero.  The backend can now
+assemble the curvature-corrected equations, but it has not yet been applied
+to solve the nonlinear quadratic system on the 45-parameter cubic family.
+This prerequisite promotes no theorem flag.
+
 ## Route B: a two-way auxiliary--curvature saddle
 
 The preferred route is to add relative degree-`-1` entries to the witness and
@@ -106,6 +191,37 @@ and `S`, not first project sources into `ker K_src`.  The identity `S K=R L`
 then proves that compatible sources evolve into constrained fields, while the
 equation and identity rows handle arbitrary compact sources in the complete
 BV operator.
+
+### Scoped no-go for the smallest instantiated saddle
+
+The coefficient-free pair-4+5 incidence can be instantiated from the exact
+chain map without a fit:
+
+```text
+A_F = pF A_eq,
+S   = A_F^sharp,
+R   = A_F^sharp J_U,
+```
+
+where `J_U` is the positive pointwise Weyl--Cotton symmetrizer used only as a
+fibre identification.  This concrete local ansatz fails the required
+principal test.  The balanced Douglis weights retain the order-two reciprocal
+blocks, the order-four adjoint--Hessian blocks and the first-order curvature
+evolution, but push the old auxiliary diagonal below principal order.  At
+`zeta=dt` the curvature temporal blocks have rank 52, while the field Schur
+block factors through the rank-15 auxiliary Hessian.  Including the
+independently invertible 40-component equation-dual block gives
+
+```text
+rank sigma_DN(dt) <= 40 + 52 + 15 = 107 < 116.
+```
+
+Thus the temporal rank defect is at least nine, the leading temporal
+coefficient of the Douglis characteristic determinant is zero, and no
+positive temporal symmetrizer exists for this realization.  This is an exact
+no-go only for the smallest pair-4+5 ansatz with the displayed `R,S`.  It is
+not a no-go for a larger relative witness, different local relative maps, or
+an additional support-local first-order prolongation.  No flag follows.
 
 ## Adjoint and support requirements
 

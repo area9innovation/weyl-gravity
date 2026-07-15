@@ -168,8 +168,13 @@ coupling; the smallest two-way saddle uses pairs 4 and 5.  Its exact core is
 the coupled `(M_aux,X_U,Y_U_sharp)` block with off-diagonal maps `R,S` and
 their odd adjoints.  Its formal Schur complement contains curvature Green
 operators and is therefore nonlocal, while the unreduced saddle is order two
-and still lacks the required local first-order reduction and positive
-symmetrizer.  These are diagnostics, not theorem promotions: the same seven
+and still lacks the required local first-order reduction.  The natural local
+instantiation `A_F=pF A_eq`, `S=A_F^sharp`, `R=A_F^sharp J_U` is now ruled out
+exactly: its balanced Douglis temporal principal matrix has rank at most
+`107/116`, hence defect at least nine, zero temporal leading coefficient and
+no positive symmetrizer.  This no-go applies only to that smallest pair-4+5
+ansatz, not to larger relative witnesses or an additional local first-order
+prolongation.  These are diagnostics, not theorem promotions: the same seven
 causal/transport flags remain false.
 
 The residual calculation is already complete: `residual_H4_is_C2` and

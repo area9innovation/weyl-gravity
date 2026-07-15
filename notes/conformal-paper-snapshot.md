@@ -188,8 +188,12 @@ finds no one-pair reciprocal coupling; its smallest two-way saddle is pairs
 4 and 5, with core `(M_aux,X_U,Y_U_sharp)` and couplings `R,S` plus their odd
 adjoints.  Its exact Schur complement is nonlocal because it contains the
 curvature Green operators, while the unreduced order-two saddle still lacks
-a local first-order reduction and positive full-system symmetrizer.  These
-are fail-closed diagnostics only.  The remaining blockers
+a local first-order reduction.  Its natural realization
+`A_F=pF A_eq`, `S=A_F^sharp`, `R=A_F^sharp J_U` has balanced Douglis timelike
+rank at most `107/116`, hence defect at least nine, zero temporal leading
+coefficient and no positive symmetrizer.  This rules out only that smallest
+pair-4+5 ansatz, not larger relative witnesses or an added local first-order
+prolongation.  These are fail-closed diagnostics only.  The remaining blockers
 are the prolonged Green theorem, causal chain homotopy, residual endpoint
 recovery, `SO(4,2)` equivariance, and prolonged current comparison.
 Distributional/Hadamard
@@ -260,7 +264,7 @@ Five statements are kept separate throughout the manuscript:
 | Curved auxiliary canonical split | Exact local theorem | The BV-canonical cotangent lift conjugates the complete curved `Q`; the all-row SDR includes trace/nonminimal rows and preserves compact, spacelike-compact, and smooth support |
 | Curved current workstream | Exact off-shell comparison, Green-gated | Both curved potentials and their `d+Q` improvement are certified, together with the Cauchy and `E/A/L` regressions; Green/current equality awaits the repaired Green-hyperbolic operator |
 | Covariant final-claim dependency DAG | Exact fail-closed meta-certificate | `curved_operator_identity`, `curved_deformation_retract`, and `curved_current_comparison` are true; `final_covariant_H4` remains false pending a causal Green realization |
-| Prenormal symbol and relative-saddle diagnostics | Exact fail-closed diagnostics; no flag promotion | The generic symbol obeys `(P2-q I)^2=0` with Smith multiplicities `6/12/6`, but the naive frozen lower completion has a nonzero lower-order remainder. The complete invariant correction spaces have `dim D0=38`, `dim D1=93`, and a 45-parameter simultaneous `DP/PD` cubic family, so there is no cubic obstruction; the curvature-corrected nonlinear quadratic/lower solve remains open. The smallest reciprocal odd-adjoint saddle is pairs 4 and 5; its Schur complement is nonlocal, while its unreduced order-two form still lacks a support-local first-order reduction and positive full-system symmetrizer. |
+| Prenormal symbol and relative-saddle diagnostics | Exact fail-closed diagnostics; no flag promotion | The generic symbol obeys `(P2-q I)^2=0` with Smith multiplicities `6/12/6`, but the naive frozen lower completion has a nonzero lower-order remainder. The complete invariant correction spaces have `dim D0=38`, `dim D1=93`, and a 45-parameter simultaneous `DP/PD` cubic family, so there is no cubic obstruction; the curvature-corrected nonlinear quadratic/lower solve remains open. The smallest reciprocal odd-adjoint saddle is pairs 4 and 5. Its natural `A_F=pF A_eq`, `S=A_F^sharp`, `R=A_F^sharp J_U` realization has balanced timelike rank at most `107/116`, zero temporal leading coefficient and no positive symmetrizer. This excludes only that realization, not larger relative witnesses or a local first-order prolongation. |
 | Curvature-prolonged causal BV bridge | Exact constrained hyperbolic PDE, all-level spectrum, and all-row local BV prolongation; Green bridge open | The curved Weyl--Cotton system is exactly derived: 26 state components, 34 covariant rows, temporal rank 26, eight primary plus six secondary constraints, and 150/150 Weyl two-jets. The first eight curvature flags through the support-local prolongation and prolonged BV operator identity are true. The apparent rank-six pointwise defect is generated differentially by the secondary constraints; compatible sources preserve all fourteen. The remaining seven flags require the prolonged BV Green witness, causal chain homotopy, residual endpoint recovery, `SO(4,2)`-equivariant transfer, and prolonged current comparison. The residual `H4=C2`, `G=I2` theorem is already exact and is only transported. |
 | Descent to `C^2` and `C Ctilde` | Exact residual/local descent | Lorentzian `i` phase is convention-dependent |
 | Dynamical representative quotient `I1` | Exact locally | Pontryagin is only locally variationally trivial; global theta effects retained |
