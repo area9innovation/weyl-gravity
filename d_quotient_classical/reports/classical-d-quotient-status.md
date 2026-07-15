@@ -86,9 +86,9 @@ coupled Bach--scalar equations on
 
 Their target metric is positive, their phase has timelike gradient, the
 quartic potential is bounded below, and their stationary stress satisfies the
-dominant energy inequalities. This passes the healthy-background gate but
-does not assign a \(D\) verdict: the perturbative covariant charge and all-row
-BV reduction remain open.
+dominant energy inequalities. This passes the healthy-background gate.  The
+all-row BV reduction remains open, but the fixed-coupling linearized charge
+verdict is now exact.
 
 The first charge seed shows that the phase is not a cost-free gauge marker.
 The scalar pair has an exact conserved global \(O(2)\) charge
@@ -98,9 +98,8 @@ Q_R=16\pi^2\alpha_Bq\sqrt{1-4q}>0,
 \]
 
 and obeys \(\mathcal L_D T=\omega RT\) on the background. This establishes
-genuine clock momentum, but not the total \(D\) charge: the pure-Weyl and
-improved scalar presymplectic currents must still be combined on the complete
-fixed-coupling linearized solution space.
+genuine clock momentum.  The pure-Weyl and improved scalar presymplectic
+currents combine on the background as follows.
 
 That structural combination is now reduced exactly to
 
@@ -109,10 +108,27 @@ That structural combination is now reduced exactly to
 \]
 
 The stationary background relation has nonzero \(q\)-derivative at fixed
-\(\alpha_B\lambda\), so \(\delta q=0\): the open squashing interval is not a
-physical tangent inside one theory. The remaining charge gate is to construct
-or exclude an allowed fixed-coupling linearized solution with
-\(\delta Q_R\ne0\).
+\(\alpha_B\lambda\), so the open squashing interval is not a physical tangent
+inside one theory.  More decisively, varying the exact time-dependent reduced
+action before fixing the lapse gives
+
+\[
+\delta E_N=-\frac{\alpha_Bq^{3/2}}2\frac{\delta Q_R}{Q_R}.
+\]
+
+Thus every homogeneous constraint-satisfying tangent has \(\delta Q_R=0\).
+Compact \(SU(2)_L\times U(1)_R\) averaging preserves both the linearized
+equations and \(\delta Q_R\), so the conclusion holds for the complete smooth
+fixed-coupling linearized solution space.  Hence
+
+\[
+\Omega_{\rm total}(\delta,\mathcal L_D)=0,
+\qquad D_{\rm compact}=D_{\rm GAUGE}
+\]
+
+on this declared Berger phase space.  The background value \(Q_R>0\) is not
+contradictory: its differential vanishes after pullback to the allowed
+tangent space.
 
 The present charge audit composes the exact reduced-mode moment map with the
 already-certified Lorentzian current comparison, so it is tagged
@@ -180,7 +196,7 @@ generators are not a Lie subalgebra. The exact obstruction is
 | Vacuum cylinder | `SECTOR_DEPENDENT` on the declared sectors | certified baseline | certified baseline | zero only in selected absolute residual \(H^4\) | \(I_2\) on centered degree-four classes | open in this challenge record |
 | Cylinder + scalar clock | one-real-scalar exact-cylinder candidate `OBSTRUCTED` | `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` |
 | Cylinder + neutral clock pair | `D_GAUGE` on `compact_neutral_clock_pair_homogeneous` | `OPEN` | `OPEN` | `OPEN` | unrestricted reference pairing is indefinite | `OPEN` |
-| Positive Berger clock | exact healthy background; charge verdict `OPEN` | `OPEN` | `OPEN` | `OPEN` | action current not yet reduced | `OPEN` |
+| Positive Berger clock | `D_GAUGE` on the smooth fixed-coupling linearized phase space | `OPEN` | `OPEN` | `OPEN` | helical current contraction exact; full all-row transport open | `OPEN` |
 | Cylinder + Yang--Mills | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Weakly deformed background | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Lorentzian dS/AdS | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
@@ -191,9 +207,10 @@ status promotion.
 
 ## Next gates
 
-1. Run `FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT`: compute the normalized
-   covariant \(D\) charge, support-local all-row clock contraction, causal
-   propagation, and stability on the exact positive Berger branch.
+1. Run `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`: construct the support-local
+   all-row clock contraction, causal propagation, and stability theorem on the
+   exact positive Berger branch.  The fixed-coupling linearized \(D\)-charge
+   sub-gate is complete.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
 3. Compute the first background-deformation obstruction and a quantitative

@@ -52,6 +52,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`reports/positive-berger-clock-background.md`](reports/positive-berger-clock-background.md)
 - Berger clock reduced-charge seed:
   [`certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json`](certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json)
+- Fixed-coupling Berger delta-charge theorem:
+  [`certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json`](certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json)
+- Fixed-coupling Berger delta-charge report:
+  [`reports/berger-fixed-coupling-delta-charge.md`](reports/berger-fixed-coupling-delta-charge.md)
 
 The only scientific verdicts are:
 
@@ -88,6 +92,9 @@ python3 d_quotient_classical/backreacted_clock/positive_berger_clock.py --check 
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_positive_berger_clock
 python3 d_quotient_classical/backreacted_clock/berger_clock_charge_seed.py --check --guards
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_clock_charge_seed
+python3 d_quotient_classical/backreacted_clock/fixed_coupling_delta_charge.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_fixed_coupling_delta_charge_independent.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_fixed_coupling_delta_charge
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -102,8 +109,16 @@ background while keeping the covariant charge and all-row BV verdict open.
 The charge-seed pair additionally proves that the phase carries nonzero
 conserved internal momentum and derives
 \(\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\delta Q_R\). The fixed-coupling
-audit prevents use of the open \(q\)-family as a tangent; an actual allowed
-linearized \(\delta Q_R\) direction remains the decisive charge gate.
+audit then closes the decisive tangent gate.  The exact lapse equation is
+
+\[
+\delta E_N=-\frac{\alpha_Bq^{3/2}}2\frac{\delta Q_R}{Q_R},
+\]
+
+so every homogeneous allowed tangent has \(\delta Q_R=0\). Compact spatial
+averaging proves the same for every smooth fixed-coupling linearized tangent.
+Thus `D_GAUGE` holds on this declared Berger phase space.  The all-row BV,
+causal, and nonlinear-stability gates remain open.
 
 ## Promotion rule
 

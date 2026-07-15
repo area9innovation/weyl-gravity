@@ -1,0 +1,104 @@
+{
+  "branch": {
+    "background_reduced_equations_zero": true,
+    "c": "sqrt(q)",
+    "interval": "(5-sqrt(21))/2 < q < 1/4",
+    "lambda": "-(q^2-5q+1)/[6 alpha_B (1-4q)^2]",
+    "omega": "sqrt(q/[4(1-4q)])",
+    "rho": "sqrt(2 alpha_B (1-4q))"
+  },
+  "claim_boundary": "At fixed alpha_B and lambda, the exact lapse constraint and compact spatial averaging prove delta Q_R=0 for every smooth linearized solution about the positive Berger clock background. Together with the certified helical current identity this gives D_GAUGE on that declared linearized phase space. The theorem does not supply the all-row BV retract, causal propagation, nonlinear stability, or any boundary or quantum result.",
+  "claim_status": "CERTIFIED",
+  "conventions": {
+    "action": "S/(16 pi^2)=int dt N c{alpha_B C^2/8+(dot rho^2+rho^2 dot theta^2)/(2N^2)-R rho^2/12-lambda rho^4/4}",
+    "charge": "Q_R=16 pi^2 c rho^2 dot(theta)/N in conformal gauge",
+    "conformal_gauge": "a(t)=1; the removed common scale is pure Weyl gauge and Q_R is scale independent",
+    "couplings_held_fixed": [
+      "alpha_B",
+      "lambda"
+    ],
+    "matter": "(T_1,T_2)=rho(t)(cos(theta(t)),sin(theta(t)))",
+    "metric": "ds^2=-N(t)^2 dt^2+sigma_1^2+sigma_2^2+c(t)^2 sigma_3^2",
+    "metric_signature": "(-,+,+,+)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flags": {
+    "fixed_coupling_linearized_delta_Q_tangent_exists": false,
+    "full_mode_average_argument_exact": true,
+    "homogeneous_lapse_constraint_exact": true,
+    "nonlinear_stability_proved": false,
+    "scoped_D_verdict_promoted": true,
+    "support_local_all_row_BV_retract_constructed": false,
+    "total_helical_presymplectic_contraction_zero": true
+  },
+  "full_mode_upgrade": {
+    "argument": "if any smooth allowed tangent had delta Q_R nonzero, compact group averaging would give an allowed homogeneous tangent with the same delta Q_R, contradicting the lapse constraint",
+    "compact_group": "SU(2)_L x U(1)_R",
+    "conclusion": "delta Q_R=0 on the complete smooth fixed-coupling linearized solution space",
+    "delta_Q_R_is_invariant_linear_functional": true,
+    "group_average_preserves_fixed_coupling_solutions": true,
+    "linearized_operator_equivariant": true
+  },
+  "generator_id": "D_compact",
+  "interpretation": {
+    "background_charge_nonzero": true,
+    "charge_variation_zero": true,
+    "not_a_contradiction": "Q_R itself is nonzero while its pullback differential vanishes on the allowed tangent space",
+    "statement": "the rotating phase has nonzero clock momentum, but the compact lapse constraint fixes that momentum to first order; it is a relational clock coordinate, not a new freely variable D charge in this phase space"
+  },
+  "invariant_shift_audit": {
+    "possible_shift": "N^3(t) along the U(1)_R Berger fibre",
+    "reason": "the background metric is U(1)_R invariant and the homogeneous scalars have zero spatial derivative; the shift is removed by a time-dependent U(1)_R coordinate change and does not alter the lapse row or Q_R",
+    "status": "PURE_COORDINATE_GAUGE"
+  },
+  "linearized_lapse_constraint": {
+    "coefficient_nonzero_on_branch": true,
+    "fixed_coupling_consequence": "delta Q_R=0 for every homogeneous constraint-satisfying tangent",
+    "identity": "delta E_N=-(alpha_B q^(3/2)/2)(delta Q_R/Q_R)",
+    "relative_charge_variation": "delta Q_R/Q_R=delta c/sqrt(q)+2 delta rho/rho+delta omega/omega-delta N"
+  },
+  "next_gate": "FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT",
+  "not_established": [
+    "a support-local all-row Diff x Weyl clock contraction",
+    "causal Green homotopies for the matter-coupled Berger complex",
+    "nonlinear stability or global deparametrization",
+    "a verdict for different boundaries, couplings, or clock actions",
+    "the parked CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT requested by the nonlinear team"
+  ],
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "presymplectic_conclusion": {
+    "imported_identity": "Omega_total(delta,L_D)=omega delta Q_R",
+    "result": "Omega_total(delta,L_D)=0 for every allowed fixed-coupling linearized tangent",
+    "scope": "the smooth fixed-coupling linearized covariant phase space about the positive Berger clock background on closed S3",
+    "verdict": "D_GAUGE"
+  },
+  "rational_fixture": {
+    "alpha_B": "5",
+    "c": "3 sqrt(10)/20",
+    "constraint_identity": "delta E_N=-(27 sqrt(10)/320)(delta Q_R/Q_R)",
+    "lambda": "119/480",
+    "lapse_row": {
+      "delta_N": "27*sqrt(10)/320",
+      "delta_c": "-9/16",
+      "delta_omega": "-9*sqrt(10)/80",
+      "delta_rho": "-27*sqrt(10)/160"
+    },
+    "omega": "3/4",
+    "q": "9/40",
+    "rho": "1"
+  },
+  "result_id": "BERGER_FIXED_COUPLING_DELTA_CHARGE",
+  "schema": "pure-weyl-berger-fixed-coupling-delta-charge-v1",
+  "scientific_verdict": "D_GAUGE",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "time_dependent_geometry": {
+    "metric_derivative_order": 2,
+    "reduced_action_derived_before_lapse_gauge_fixing": true,
+    "scalar_curvature": "-(c0**3*n0**3 - 4*c0*n0**3 + 4*c1*n1 - 4*c2*n0)/(2*c0*n0**3)",
+    "static_limits_verified": true,
+    "weyl_squared": "4*(c0**3*n0**3 - 3*c0*c1*n0**2 - c0*n0**3 + c1*n1 - c2*n0)*(c0**3*n0**3 + 3*c0*c1*n0**2 - c0*n0**3 + c1*n1 - c2*n0)/(3*c0**2*n0**6)"
+  }
+}

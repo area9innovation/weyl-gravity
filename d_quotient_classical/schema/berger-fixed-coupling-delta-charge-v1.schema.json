@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-fixed-coupling-delta-charge-v1.schema.json",
+  "title": "Fixed-coupling Berger delta-charge theorem",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "generator_id", "phase_space_id",
+    "claim_status", "scientific_verdict", "dependency_tags", "conventions",
+    "time_dependent_geometry", "branch", "linearized_lapse_constraint",
+    "rational_fixture", "invariant_shift_audit", "full_mode_upgrade",
+    "presymplectic_conclusion", "interpretation", "flags", "next_gate",
+    "not_established", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-fixed-coupling-delta-charge-v1"},
+    "result_id": {"const": "BERGER_FIXED_COUPLING_DELTA_CHARGE"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "generator_id": {"const": "D_compact"},
+    "phase_space_id": {"const": "positive_berger_fixed_coupling_linearized_solutions"},
+    "claim_status": {"const": "CERTIFIED"},
+    "scientific_verdict": {"const": "D_GAUGE"},
+    "dependency_tags": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+    "conventions": {"type": "object"},
+    "time_dependent_geometry": {"type": "object"},
+    "branch": {"type": "object"},
+    "linearized_lapse_constraint": {"type": "object"},
+    "rational_fixture": {"type": "object"},
+    "invariant_shift_audit": {"type": "object"},
+    "full_mode_upgrade": {"type": "object"},
+    "presymplectic_conclusion": {"type": "object"},
+    "interpretation": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT"},
+    "not_established": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

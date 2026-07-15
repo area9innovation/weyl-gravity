@@ -159,13 +159,11 @@ on
 \frac{5-\sqrt{21}}2<q=\frac{c^2}{a^2}<\frac14.
 \]
 
-This proves a credible healthy clock *background*, not yet a physical
-reduction theorem. The replacement gate is
-`FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT`: derive the normalized covariant
-\(D\) charge on perturbations, the support-local all-row clock contraction,
-causal Green homotopies, and stability. Generalized non-Noetherian or
-higher-derivative scalar actions remain separate theories with independent
-health and BV gates.
+This proves a credible healthy clock *background*.  Its fixed-coupling
+linearized charge gate is now also closed, while the support-local all-row
+clock contraction, causal Green homotopies, and stability remain separate.
+Generalized non-Noetherian or higher-derivative scalar actions remain
+separate theories with independent health and BV gates.
 
 The first reduced charge seed is also exact. If
 \(R(T_1,T_2)=(-T_2,T_1)\), then
@@ -176,11 +174,9 @@ The first reduced charge seed is also exact. If
 Q_R=16\pi^2\alpha_Bq\sqrt{1-4q}>0.
 \]
 
-Thus the phase has genuine conserved matter momentum. The next immediate
-calculation is `TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT`, which must combine the
-pure-Weyl and improved scalar currents on the complete fixed-coupling
-linearized solution space. Do not infer the total \(D\) verdict from
-\(Q_R\) alone.
+Thus the phase has genuine conserved matter momentum.  The pure-Weyl and
+improved scalar currents combine on the background to give the exact decision
+identity below; \(Q_R\ne0\) alone is not the verdict.
 
 The action and tangent conventions are now frozen. In the producer curvature
 convention,
@@ -199,8 +195,31 @@ one theory. The helical current calculation gives the exact decision identity
 \Omega_{\rm total}(\delta,\mathcal L_D)=\omega\,\delta Q_R.
 \]
 
-Thus the next concrete sub-gate is to construct or rule out a genuine allowed
-fixed-coupling linearized tangent with \(\delta Q_R\ne0\).
+The tangent gate is now decided by varying the exact lapse before fixing it.
+In conformal gauge for the common spatial scale, the full time-dependent
+biaxial reduced action gives
+
+\[
+\boxed{
+\delta E_N=-\frac{\alpha_Bq^{3/2}}2\frac{\delta Q_R}{Q_R}.
+}
+\]
+
+The coefficient is nonzero on the complete positive branch, so every
+homogeneous fixed-coupling solution tangent has \(\delta Q_R=0\).  This also
+settles the inhomogeneous question without a harmonic cutoff: compact
+\(SU(2)_L\times U(1)_R\) averaging preserves the linearized equations and the
+invariant functional \(\delta Q_R\). Any charged tangent would therefore
+average to a forbidden charged homogeneous tangent. Consequently
+
+\[
+\Omega_{\rm total}(\delta,\mathcal L_D)=0
+\]
+
+for every smooth fixed-coupling linearized tangent, and the scoped verdict is
+`D_GAUGE`.  The nonzero background momentum is fixed by the compact lapse
+constraint; its pullback differential vanishes. The replacement gate is now
+`FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
 
 ### Parked nonlinear support-local export
 
