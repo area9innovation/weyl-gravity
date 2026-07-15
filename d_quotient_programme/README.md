@@ -47,6 +47,8 @@ because the existing results concern different objects:
 - [`reports/einstein-berger-incidence-registration-receipt.md`](reports/einstein-berger-incidence-registration-receipt.md)
 - [`contributions/einstein-maxwell-product-incidence.json`](contributions/einstein-maxwell-product-incidence.json)
 - [`reports/einstein-maxwell-product-registration-receipt.md`](reports/einstein-maxwell-product-registration-receipt.md)
+- [`contributions/einstein-maxwell-product-tangent-preflight.json`](contributions/einstein-maxwell-product-tangent-preflight.json)
+- [`reports/einstein-maxwell-product-tangent-registration-receipt.md`](reports/einstein-maxwell-product-tangent-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)

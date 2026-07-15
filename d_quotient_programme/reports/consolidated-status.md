@@ -30,8 +30,8 @@ separately classifies this background as a non-Einstein Weyl--matter branch.
 
 | Team | Current verdict | Established | Next gate |
 |---|---|---|---|
-| classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The complete retained minimal q1 is exact and cyclic; its 34-row unary operator and exact clock contraction are frozen portably for downstream consumers. The retained causal endpoints are Green-hyperbolic and reattaching the clock rows gives a full scalar-biwave principal witness. | construct the curved clock-reattached witness and total causal homotopy, then reattach nonminimal rows and export q2 |
-| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is a non-Einstein Weyl--matter branch. A separate positive Einstein--Maxwell/Weyl--Maxwell product background now supplies an exact common base point without yet supplying a tangent phase space. | construct the two minimal metric--Maxwell BV complexes, chain map, cohomology, and presymplectic comparison at the certified product base point; independently complete the asymptotic Bach phase space and charge audit |
+| classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 is exact and cyclic; its 34-row minimal contraction is portable. Five nonminimal antighost--multiplier quartets extend it to an exact pointwise cyclic unfixed 54-to-26 contraction, and the curved five-direction companion is derived from one source. | apply the gauge-fermion canonical transform coefficientwise on all 54 rows, then construct the causal homotopy and export q2 |
+| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is a non-Einstein branch. A positive Einstein--Maxwell/Weyl--Maxwell product supplies an exact common base point; its action-normalized principal BV chain map injects the ordinary Einstein null-symbol classes and leaves two additional simple-symbol Weyl metric classes. | complete the curved product Hessians, lower-order chain map, cyclic and presymplectic comparison, and prolonged fourth-order characteristic complex; independently complete the asymptotic Bach phase space and charge audit |
 | nonlinear | `INPUT_GATE_BLOCKED` | selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked | complete support-local q2 export and solve for iota_D^(2) or retain its obstruction |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered | complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion |
 
@@ -54,6 +54,7 @@ separately classifies this background as a non-Einstein Weyl--matter branch.
 | compact_positive_berger_clock_retained_minimal_layout | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_BV | `CERTIFIED` | `RETAINED_MINIMAL_LAYOUT_FROZEN` |
 | compact_positive_berger_clock_einstein_incidence | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_BV | `CERTIFIED` | `EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND` |
 | compact_einstein_maxwell_product_background | `H_product` | `einstein_maxwell_product_background` | CLASSICAL_BV | `CERTIFIED` | `COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND` |
+| compact_einstein_maxwell_product_tangent_preflight | `H_product` | `einstein_maxwell_product_principal_tangent_complex` | CLASSICAL_BV | `PARTIAL` | `PRINCIPAL_TANGENT_CHAIN_MAP_WITH_EXTRA_WEYL_CLASSES` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `INPUT_GATE_BLOCKED` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
@@ -69,10 +70,11 @@ separately classifies this background as a non-Einstein Weyl--matter branch.
 3. the charge vanishes on the exact sector proposed for quotienting
 4. the zero-charge transformations close as a Lie algebra or declared algebroid
 5. the classical Cartan and causal homotopies exist in the declared support category
-6. Berger retained minimal q1 and the reattached scalar-biwave principal witness are complete; curved witness terms, total causal homotopy, nonminimal rows, q2, and arity-two stability remain open
+6. Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and unfixed cyclic 54-to-26 nonminimal contraction are complete; the gauge-fermion shear, total causal homotopy, q2, and arity-two stability remain open
 7. the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open
-8. interacting promotion requires a corrected Cartan homotopy
-9. quantum promotion requires a restored QME and renormalized Ward identity
+8. the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; curved lower-order completion, prolonged modes, cyclicity, presymplectic comparison, and all D/charge questions remain open
+9. interacting promotion requires a corrected Cartan homotopy
+10. quantum promotion requires a restored QME and renormalized Ward identity
 
 ## Registered scoped contributions
 
@@ -91,6 +93,7 @@ separately classifies this background as a non-Einstein Weyl--matter branch.
 | einstein_boundary | `asymptotic_real_cylinder_time` | `H_ESU` | `asymptotically_flat_full_Bach` | `PARTIAL` | `PHASE_SPACE_NOT_CLOSED` |
 | einstein_boundary | `compact_positive_berger_clock_einstein_incidence` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND` |
 | einstein_boundary | `compact_einstein_maxwell_product_background` | `H_product` | `einstein_maxwell_product_background` | `CERTIFIED` | `COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND` |
+| einstein_boundary | `compact_einstein_maxwell_product_tangent_preflight` | `H_product` | `einstein_maxwell_product_principal_tangent_complex` | `PARTIAL` | `PRINCIPAL_TANGENT_CHAIN_MAP_WITH_EXTRA_WEYL_CLASSES` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | quantum | `vacuum_cylinder` | `D_compact` | `compact_quantum` | `BLOCKED` | `NO_VERDICT` |
 
@@ -106,9 +109,9 @@ The immediate shared calculation is
 
 ## Imported evidence
 
-- `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `9278ba7dffa2e8d85292c2a8cc25b03f0ca47847`, SHA-256 `f4f1b07b4a212ab453d9270744691d8554df36ef8bc24d456d6a7a4a5bc77ec6`
+- `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `0629a381eeffca10beb229fd6cbf2cc28d476182`, SHA-256 `2d72ef0f037c0c9cc3b259b06051df042375ab9b4f39499f38ec105616d04c7b`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `7e87281c416f4c4f98edfe61ae05829f4b48593a`, SHA-256 `ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685`
-- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `3ff7608b8a8e855f365db6628672301f65d17d81`, SHA-256 `fc7bbe05b5ea7c2c89a55b305677e019a9e7e9b146ae064606128025a2707b12`
+- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `c19426ee1f35057c95169d4a6e2e3bed40b1c2a6`, SHA-256 `04dd6d48462af152d11ad9a4605a48136d80b4223f815839803eb4e29c10bfe3`
 - `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `2aec6ed91793d136c9a6d80a0f74b2b233775d49`, SHA-256 `d4c235dd3b28bc9c2934feff035d358855212fd176d5f7da0dedac3a09ef5d9e`
 
 ## Claim boundary
