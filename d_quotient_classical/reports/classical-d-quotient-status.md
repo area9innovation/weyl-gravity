@@ -54,7 +54,20 @@ stress-free trajectory requires a negative quartic and is, up to sign and
 time translation, \(T=\sqrt{-2/\kappa}\sec(t-t_0)\). It has positive kinetic
 sign but an unbounded potential, a turning point, and finite-time poles.
 Hence no globally regular homogeneous positive-sign stealth clock exists.
-Inhomogeneous stealth and non-conformally-flat backreaction remain open.
+The inhomogeneous extension is now classified as well.  Every nowhere-zero
+clock candidate has
+
+\[
+T^{-1}=A\cos t+B\sin t+C\cdot n,
+\qquad
+\kappa=2(|C|^2-A^2-B^2).
+\]
+
+Every nontrivial denominator vanishes somewhere on the cylinder, and every
+time-dependent member has a regular point where its gradient is spacelike or
+zero.  Thus the complete standard one-field stealth-clock branch is
+obstructed. Generalized scalar actions and genuinely non-conformally-flat
+backreaction remain open.
 
 The present charge audit composes the exact reduced-mode moment map with the
 already-certified Lorentzian current comparison, so it is tagged
@@ -132,9 +145,9 @@ status promotion.
 
 ## Next gates
 
-1. Construct either a positive-energy clock on a genuinely
-   non-conformally-flat Bach-sourced background or an inhomogeneous
-   stress-free clock with timelike nonvanishing gradient.
+1. Construct a positive-energy clock on a genuinely non-conformally-flat
+   Bach-sourced background. Treat a generalized non-Noetherian or
+   higher-derivative scalar as a new theory with separate health and BV gates.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
 3. Compute the first background-deformation obstruction and a quantitative
@@ -162,6 +175,8 @@ python3 d_quotient_classical/composite_clock/neutral_clock_bv_health.py --check 
 python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_clock_bv_health
 python3 d_quotient_classical/scalar_clock/homogeneous_stealth_clock.py --check --guards
 python3 -m unittest d_quotient_classical.scalar_clock.tests.test_homogeneous_stealth_clock
+python3 d_quotient_classical/scalar_clock/inhomogeneous_stealth_clock.py --check --guards
+python3 -m unittest d_quotient_classical.scalar_clock.tests.test_inhomogeneous_stealth_clock
 ```
 
 No full-suite result is implied by the scoped checks.

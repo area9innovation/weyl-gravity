@@ -42,6 +42,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/HOMOGENEOUS_POSITIVE_CONFORMAL_STEALTH_CLOCK.json`](certificates/HOMOGENEOUS_POSITIVE_CONFORMAL_STEALTH_CLOCK.json)
 - Homogeneous positive-sign stealth-clock report:
   [`reports/homogeneous-positive-conformal-stealth-clock.md`](reports/homogeneous-positive-conformal-stealth-clock.md)
+- Complete standard one-field stealth-clock no-go certificate:
+  [`certificates/INHOMOGENEOUS_CONFORMAL_STEALTH_CLOCK_NO_GO.json`](certificates/INHOMOGENEOUS_CONFORMAL_STEALTH_CLOCK_NO_GO.json)
+- Complete standard one-field stealth-clock no-go report:
+  [`reports/inhomogeneous-conformal-stealth-clock-no-go.md`](reports/inhomogeneous-conformal-stealth-clock-no-go.md)
 
 The only scientific verdicts are:
 
@@ -72,6 +76,8 @@ python3 d_quotient_classical/composite_clock/neutral_clock_bv_health.py --check 
 python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_clock_bv_health
 python3 d_quotient_classical/scalar_clock/homogeneous_stealth_clock.py --check --guards
 python3 -m unittest d_quotient_classical.scalar_clock.tests.test_homogeneous_stealth_clock
+python3 d_quotient_classical/scalar_clock/inhomogeneous_stealth_clock.py --check --guards
+python3 -m unittest d_quotient_classical.scalar_clock.tests.test_inhomogeneous_stealth_clock
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -79,8 +85,9 @@ complex inventories, verdict prerequisites, and mutation guards. It does not
 rerun the mathematical producers. The remaining commands are the scoped
 producer checks for the compact charge, alternative residual complexes, and
 the one-real-scalar obstruction, neutral two-field replacement, its local
-positive-health obstruction, and the homogeneous positive-sign stealth
-classification.
+positive-health obstruction, the homogeneous positive-sign stealth
+classification, and the complete standard one-field inhomogeneous stealth
+no-go.
 
 ## Promotion rule
 
