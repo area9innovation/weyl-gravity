@@ -33,7 +33,9 @@ because the existing results concern different objects:
 - [`reports/classical-homogeneous-stealth-registration-receipt.md`](reports/classical-homogeneous-stealth-registration-receipt.md)
 - [`reports/classical-standard-stealth-no-go-registration-receipt.md`](reports/classical-standard-stealth-no-go-registration-receipt.md)
 - [`contributions/classical-positive-berger-clock-background.json`](contributions/classical-positive-berger-clock-background.json)
+- [`contributions/classical-berger-clock-charge-seed.json`](contributions/classical-berger-clock-charge-seed.json)
 - [`reports/classical-positive-berger-clock-registration-receipt.md`](reports/classical-positive-berger-clock-registration-receipt.md)
+- [`reports/classical-berger-clock-charge-seed-registration-receipt.md`](reports/classical-berger-clock-charge-seed-registration-receipt.md)
 - [`reports/einstein-ed1a-registration-receipt.md`](reports/einstein-ed1a-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -70,3 +72,7 @@ full raw clock incidence. This is a healthy background theorem, not yet a
 charge theorem. The immediate gate is
 `FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT`. Downstream teams must import all
 scoped clock results by content hash.
+The first sub-gate is now exact: the phase carries nonzero conserved global
+\(O(2)\) momentum and satisfies \(\mathcal L_D=\omega R\) on the background.
+The total \(D\) verdict still awaits the combined gravitational-plus-matter
+presymplectic audit.

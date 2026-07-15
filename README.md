@@ -83,7 +83,12 @@ non-conformally-flat Berger cylinder sourced by two standard-sign rotating
 conformal scalars with positive quartic potential, dominant-energy stress,
 timelike phase, and full raw Diff `x` Weyl clock incidence. This is not yet a
 `D_GAUGE` theorem; the perturbative covariant charge and support-local all-row
-BV audit remain open.
+BV audit remain open. The first charge seed nevertheless shows that the phase
+has genuine matter momentum:
+\(Q_R=V_0\alpha_Bq\sqrt{1-4q}>0\) and
+\(\mathcal L_D=\omega R\) on the background. It is therefore a plausible
+physical clock, while the total gravitational-plus-matter \(D\) verdict stays
+open.
 Paper IX still waits for at least one complete
 boundary or interaction theorem.
 

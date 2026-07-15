@@ -1,0 +1,38 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_positive_berger_clock_reduced_charge",
+  "generator_id": "D_compact",
+  "phase_space_id": "positive_rotating_scalar_berger_background",
+  "boundary_conditions": "closed Berger S3; exact stationary scalar background; reduced homogeneous current only",
+  "lifecycle_layer": "CLASSICAL_CHARGE",
+  "claim_status": "CERTIFIED",
+  "verdict": "NONZERO_INTERNAL_CLOCK_MOMENTUM_TOTAL_D_OPEN",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "the scalar phase has conserved O(2) charge density rho^2 omega",
+    "the integrated charge is Q_R=V_0 alpha_B q sqrt(1-4q) and is nonzero throughout the exact Berger interval",
+    "time translation acts helically on the background as L_D=omega R",
+    "the phase is canonically paired with genuine standard-sign matter momentum"
+  ],
+  "not_established": [
+    "equality of Q_R with the total D charge",
+    "the combined pure-Weyl and improved scalar presymplectic current",
+    "a D_GAUGE, D_CHARGED, SECTOR_DEPENDENT, or NOT_HAMILTONIAN verdict",
+    "the support-local all-row BV reduction"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+    "commit": "332bc1744aecc3ec450860d09a5b07d362bb7278",
+    "sha256": "aae64f16411d4cef24cb2e1ad93adaef98658727b4027ee96328a96b41af545f"
+  },
+  "verification_commands": [
+    "python3 d_quotient_classical/backreacted_clock/berger_clock_charge_seed.py --check --guards",
+    "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_clock_charge_seed",
+    "python3 d_quotient_classical/verify_classical_status.py --guards"
+  ],
+  "next_gate": "TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT"
+}

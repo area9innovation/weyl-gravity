@@ -24,6 +24,7 @@ CLASSICAL_NEUTRAL_CLOCK_HEALTH_CONTRIBUTION = PACKAGE / "contributions" / "class
 CLASSICAL_HOMOGENEOUS_STEALTH_CONTRIBUTION = PACKAGE / "contributions" / "classical-homogeneous-positive-stealth-clock.json"
 CLASSICAL_STANDARD_STEALTH_NO_GO_CONTRIBUTION = PACKAGE / "contributions" / "classical-standard-conformal-stealth-clock-no-go.json"
 CLASSICAL_POSITIVE_BERGER_CLOCK_CONTRIBUTION = PACKAGE / "contributions" / "classical-positive-berger-clock-background.json"
+CLASSICAL_BERGER_CLOCK_CHARGE_SEED_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-clock-charge-seed.json"
 NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
 EINSTEIN_ED1A_CONTRIBUTION = PACKAGE / "contributions" / "einstein-ed1a-asymptotic-generator-gate.json"
 
@@ -108,6 +109,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
             "homogeneous_positive_conformal_stealth_clock",
             "inhomogeneous_conformal_stealth_clock_no_go",
             "positive_berger_clock_background",
+            "berger_clock_reduced_charge_seed",
         ]
     ):
         raise AssertionError("classical scalar-clock obstruction scope drifted")
@@ -372,6 +374,34 @@ def _classical_positive_berger_clock_contribution() -> dict[str, Any]:
     return contribution
 
 
+def _classical_berger_clock_charge_seed_contribution() -> dict[str, Any]:
+    contribution = _load(CLASSICAL_BERGER_CLOCK_CHARGE_SEED_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "classical"
+        and contribution.get("setting_id")
+        == "compact_positive_berger_clock_reduced_charge"
+        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("phase_space_id")
+        == "positive_rotating_scalar_berger_background"
+        and contribution.get("lifecycle_layer") == "CLASSICAL_CHARGE"
+        and contribution.get("claim_status") == "CERTIFIED"
+        and contribution.get("verdict")
+        == "NONZERO_INTERNAL_CLOCK_MOMENTUM_TOTAL_D_OPEN"
+        and contribution.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    ):
+        raise AssertionError("classical Berger charge-seed contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path = evidence.get("path")
+    commit = evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("classical Berger charge-seed evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("classical Berger charge-seed evidence hash drifted")
+    return contribution
+
+
 def _einstein_ed1a_contribution() -> dict[str, Any]:
     contribution = _load(EINSTEIN_ED1A_CONTRIBUTION)
     if not (
@@ -407,6 +437,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     homogeneous_stealth_contribution = _classical_homogeneous_stealth_contribution()
     standard_stealth_no_go_contribution = _classical_standard_stealth_no_go_contribution()
     positive_berger_clock_contribution = _classical_positive_berger_clock_contribution()
+    berger_clock_charge_seed_contribution = _classical_berger_clock_charge_seed_contribution()
     ed1a_contribution = _einstein_ed1a_contribution()
     nd1_contribution = _nonlinear_nd1_contribution()
     return {
@@ -457,6 +488,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": positive_berger_clock_contribution,
             },
             {
+                "path": str(CLASSICAL_BERGER_CLOCK_CHARGE_SEED_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(CLASSICAL_BERGER_CLOCK_CHARGE_SEED_CONTRIBUTION),
+                "payload": berger_clock_charge_seed_contribution,
+            },
+            {
                 "path": str(EINSTEIN_ED1A_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(EINSTEIN_ED1A_CONTRIBUTION),
                 "payload": ed1a_contribution,
@@ -472,7 +508,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "team_id": "classical",
                 "result_state": "PARTIAL_WITH_HEALTHY_BERGER_CLOCK_BACKGROUND",
                 "verdict": "POSITIVE_CLOCK_BACKGROUND_EXISTS_CHARGE_OPEN",
-                "established": "The standard one-field stealth route is ruled out, while an exact non-conformally-flat Berger-cylinder family carries a standard-sign rotating two-scalar phase clock with positive quartic and dominant-energy stress. The perturbative D charge remains open.",
+                "established": "The standard one-field stealth route is ruled out, while an exact non-conformally-flat Berger-cylinder family carries a healthy rotating two-scalar phase clock. Its conserved O(2) momentum is nonzero and L_D=omega R on the background; the total perturbative D charge remains open.",
                 "next_gate": "full Berger-clock covariant charge and all-row BV audit",
             },
             {
@@ -578,6 +614,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "lifecycle_layer": "CLASSICAL_CHARGE",
                 "status": "PARTIAL",
                 "verdict": "POSITIVE_BERGER_CLOCK_BACKGROUND_EXISTS",
+            },
+            {
+                "setting_id": "compact_positive_berger_clock_reduced_charge",
+                "generator_id": "D_compact",
+                "phase_space_id": "positive_rotating_scalar_berger_background",
+                "boundary_conditions": "closed Berger S3; exact stationary background; reduced homogeneous scalar current only",
+                "lifecycle_layer": "CLASSICAL_CHARGE",
+                "status": "PARTIAL",
+                "verdict": "NONZERO_INTERNAL_CLOCK_MOMENTUM_TOTAL_D_OPEN",
             },
             {
                 "setting_id": "compact_selected_residual_HT1_q2",
@@ -709,6 +754,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_homogeneous_positive_stealth_clock": "HOMOGENEOUS_STEALTH_CLOCK_OBSTRUCTED",
         "compact_standard_conformal_stealth_clock": "STANDARD_ONE_FIELD_STEALTH_CLOCK_NO_GO",
         "compact_positive_berger_clock": "POSITIVE_BERGER_CLOCK_BACKGROUND_EXISTS",
+        "compact_positive_berger_clock_reduced_charge": "NONZERO_INTERNAL_CLOCK_MOMENTUM_TOTAL_D_OPEN",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -725,6 +771,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("full interacting verdict promoted before local export")
     if ledger.get("compact_positive_berger_clock", {}).get("status") != "PARTIAL":
         errors.append("positive Berger background promoted before charge/BV audit")
+    if ledger.get("compact_positive_berger_clock_reduced_charge", {}).get("status") != "PARTIAL":
+        errors.append("Berger internal charge seed promoted to a total D verdict")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -881,6 +929,16 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
     reject("promote_Berger_background_before_charge", mutant)
 
     mutant = deepcopy(data)
+    charge_seed = next(
+        row
+        for row in mutant["setting_ledger"]
+        if row["setting_id"] == "compact_positive_berger_clock_reduced_charge"
+    )
+    charge_seed["status"] = "CERTIFIED"
+    charge_seed["verdict"] = "D_CHARGED"
+    reject("promote_internal_clock_charge_to_total_D", mutant)
+
+    mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_quantum")["verdict"] = "CARTAN_QUANTUM_EXACT"
     reject("promote_quantum_before_QME", mutant)
 
@@ -936,7 +994,7 @@ def main() -> int:
         failures = mutation_guards(data)
         if failures:
             raise AssertionError("mutation guards failed: " + ", ".join(failures))
-        print("mutation guards: 12/12 PASS")
+        print("mutation guards: 13/13 PASS")
     print(CERTIFICATE, "PASS")
     return 0
 
