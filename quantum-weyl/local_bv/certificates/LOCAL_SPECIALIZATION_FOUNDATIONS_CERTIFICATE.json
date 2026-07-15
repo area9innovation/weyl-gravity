@@ -1,0 +1,941 @@
+{
+  "assumptions": [
+    "The specialization tower keeps one canonical ambient monomial basis and only appends named relation families.",
+    "The controlled projection witness tests infrastructure and is never included in a geometric quotient.",
+    "The epsilon convention is epsilon_abcd epsilon^{efgh}=sigma delta_abcd^{efgh}, with sigma fixed by signature.",
+    "The tracefree Weyl replacement is a tensor specialization primitive, not yet the full map from Riemann invariant coordinates to Weyl invariant coordinates."
+  ],
+  "canonical_hashes": {
+    "controlled_tower_sha256": "7833eae7f4f60b3185b0ded87cc4fd105d414b05894fbf32f8d37f4dcdc398cd",
+    "source_manifest_sha256": "c15341d66c691a33c19d903642407da426acc883f4db1880590ecc4af6d30de0",
+    "universal_tower_sha256": "7732f8c301ae06eed95adfc1add1cf35fd8f1faf9f98ecfeecff6017c4b96c46"
+  },
+  "checks": {
+    "epsilon_pair_elimination": "VERIFIED",
+    "exact_nullspace": "VERIFIED",
+    "five_index_antisymmetrization_primitive": "VERIFIED",
+    "four_dimensional_schouten_quotient": "NOT_COMPUTED",
+    "four_dimensional_weyl_invariant_basis": "NOT_COMPUTED",
+    "immutable_specialization_tower": "VERIFIED",
+    "local_cohomology_H_s_mod_d": "NOT_COMPUTED",
+    "named_representative_coordinates": "VERIFIED",
+    "parity_block_preservation": "VERIFIED",
+    "projection_rank_nullity": "VERIFIED",
+    "projection_surjectivity": "VERIFIED",
+    "relation_family_provenance": "VERIFIED",
+    "signature_separation": "VERIFIED",
+    "tracefree_weyl_reduction": "VERIFIED"
+  },
+  "classical_commit": "UNFROZEN",
+  "controlled_projection_witness": {
+    "role": "INFRASTRUCTURE_ONLY_NOT_GEOMETRIC_INPUT",
+    "stage_dimensions": [
+      4,
+      3,
+      2
+    ],
+    "tower": {
+      "ambient_basis_dimension": 4,
+      "ambient_basis_sha256": "7f679db373296c8c1d82529ab033240240ae512bfc6dbf64f2d6ac14d373e21e",
+      "stages": [
+        {
+          "dimension": 4,
+          "families": [],
+          "name": "controlled_raw",
+          "new_family_names": [],
+          "parity_block_dimensions": {
+            "even": 3,
+            "odd": 1
+          },
+          "projection": null,
+          "relation_rank": 0,
+          "source_name": null
+        },
+        {
+          "dimension": 3,
+          "families": [
+            {
+              "assumptions": [],
+              "name": "controlled_universal_relation",
+              "provenance": "controlled algebraic witness; not a geometric identity",
+              "relation_count": 1,
+              "relation_hashes": [
+                "2c9e834adc76a8d0e6b81d1f764fec141fc8e0685e49b14a8ef8d352d0526660"
+              ]
+            }
+          ],
+          "name": "controlled_universal",
+          "new_family_names": [
+            "controlled_universal_relation"
+          ],
+          "parity_block_dimensions": {
+            "even": 2,
+            "odd": 1
+          },
+          "projection": {
+            "kernel_basis": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": -1
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "kernel_dimension": 1,
+            "matrix": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                }
+              ]
+            ],
+            "rank": 3,
+            "source_dimension": 4,
+            "target_dimension": 3
+          },
+          "relation_rank": 1,
+          "source_name": "controlled_raw"
+        },
+        {
+          "dimension": 2,
+          "families": [
+            {
+              "assumptions": [],
+              "name": "controlled_universal_relation",
+              "provenance": "controlled algebraic witness; not a geometric identity",
+              "relation_count": 1,
+              "relation_hashes": [
+                "2c9e834adc76a8d0e6b81d1f764fec141fc8e0685e49b14a8ef8d352d0526660"
+              ]
+            },
+            {
+              "assumptions": [
+                "infrastructure test only"
+              ],
+              "name": "controlled_dimension_relation",
+              "provenance": "controlled specialization witness; not a Schouten identity",
+              "relation_count": 1,
+              "relation_hashes": [
+                "bcc4bf543be4ef2b24322ec3d72b45935d66798befe190660d6a33b08cd9075b"
+              ]
+            }
+          ],
+          "name": "controlled_specialized",
+          "new_family_names": [
+            "controlled_dimension_relation"
+          ],
+          "parity_block_dimensions": {
+            "even": 1,
+            "odd": 1
+          },
+          "projection": {
+            "kernel_basis": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": -1
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "kernel_dimension": 1,
+            "matrix": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                }
+              ]
+            ],
+            "rank": 2,
+            "source_dimension": 3,
+            "target_dimension": 2
+          },
+          "relation_rank": 2,
+          "source_name": "controlled_universal"
+        }
+      ],
+      "tower_sha256": "7833eae7f4f60b3185b0ded87cc4fd105d414b05894fbf32f8d37f4dcdc398cd"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "epsilon_reduction": {
+    "complete_contraction_payloads": {
+      "EUCLIDEAN": {
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 24
+            },
+            "monomial": {
+              "factors": []
+            }
+          }
+        ]
+      },
+      "LORENTZIAN": {
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -24
+            },
+            "monomial": {
+              "factors": []
+            }
+          }
+        ]
+      }
+    },
+    "complete_contraction_values": {
+      "EUCLIDEAN": 24,
+      "LORENTZIAN": -24
+    },
+    "euclidean_matching_sha256": "76defeecc5909e27eee7797248886ed7f5edf4ada3f5e9a3a4e48b24becb3803",
+    "lorentzian_matching_sha256": "60b6e397d0d5c4fdae93913cbe7881962cdd7ab2c491c7155d14ee4a3e309d42",
+    "matching_count": 24
+  },
+  "not_computed": [
+    "generated four-dimensional Schouten relation family on the order-six curvature basis",
+    "four-dimensional quotient ranks and named conventional invariant basis",
+    "parity-odd Weyl invariant enumeration",
+    "Weyl BRST closure, antifield descent, and H^{g,4}(s|d)"
+  ],
+  "result_id": "LOCAL_SPECIALIZATION_FOUNDATIONS_CERTIFICATE",
+  "result_state": "SPECIALIZATION_INFRASTRUCTURE_VERIFIED",
+  "schouten_primitive": {
+    "antisymmetrized_occurrence_count": 5,
+    "dimension": 4,
+    "generated_permutation_count": 120,
+    "relation_sha256": "f56302fcca4598da137965d3040f0381075df1264dc96fa9f8e0dbf85d2b2032",
+    "relation_term_count_after_canonicalization": 120
+  },
+  "scope": "Exact staged quotient projections, kernels, relation provenance, named coordinates, dimension-checked antisymmetrization, tracefree Weyl reduction, and signature-aware epsilon-pair elimination.",
+  "tracefree_weyl": {
+    "traced_riemann_input_sha256": "713a5c4dce7d0d47f8dcbd03c2a4d066ddbe36b01aae95364df2f472e2bd064a",
+    "traced_weyl_status": "ZERO",
+    "untraced_weyl_sha256": "0c2fbab707b7ec90c9bc88730d594ff62f6fded4e9f67c80f4550a7d2247bb5a",
+    "untraced_weyl_status": "NONZERO"
+  },
+  "universal_import": {
+    "ambient_dimension": 39,
+    "family_names": [
+      "R3_bianchi",
+      "nablaR_nablaR_bianchi",
+      "R_nabla2R_bianchi",
+      "integration_by_parts",
+      "covariant_commutators"
+    ],
+    "named_representatives": {
+      "universal_free_00": {
+        "coordinates": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "expression_sha256": "3544ec290f0b4c7fcea6f552b135fd82ce6b29d46317460a4d247f67016623c5",
+        "status": "NONZERO"
+      },
+      "universal_free_01": {
+        "coordinates": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "expression_sha256": "d6cd3f186f74341577af9b7216c324d0420b82ba01578ff64dd01b36fe109a5b",
+        "status": "NONZERO"
+      },
+      "universal_free_02": {
+        "coordinates": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "expression_sha256": "f1f52fc43e5ceb9df60a408da34f7c15eaf5a7d3d46e945db8cf7f97b5b7adff",
+        "status": "NONZERO"
+      },
+      "universal_free_03": {
+        "coordinates": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "expression_sha256": "aec7d0fd989511516b14793ede79bfcf04f4c74a74fda00526053016e69b26fd",
+        "status": "NONZERO"
+      },
+      "universal_free_04": {
+        "coordinates": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "expression_sha256": "3f5a48d137369bff703bac2c8bd8af5e2d98ef3d596dfbe835677001408ba3e2",
+        "status": "NONZERO"
+      },
+      "universal_free_05": {
+        "coordinates": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "expression_sha256": "d94f79003bf0a9e83348911f0744abefb460e27fcf6746109bc8cfdc9cf7a7f1",
+        "status": "NONZERO"
+      },
+      "universal_free_06": {
+        "coordinates": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "expression_sha256": "3235ae1bfae0b5144d7c6ef171b8c18132684eb8a10615166249f3152c6a14b1",
+        "status": "NONZERO"
+      },
+      "universal_free_07": {
+        "coordinates": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "expression_sha256": "e8881eb1acab0242f49b60ae8b9f5843f9b00f36d696858d0742d8f16583eade",
+        "status": "NONZERO"
+      },
+      "universal_free_08": {
+        "coordinates": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "expression_sha256": "4df2f6c7fbb205c03bba1e2d1d386379f86ce395dda83b2ec7a6f66e69ae768c",
+        "status": "NONZERO"
+      },
+      "universal_free_09": {
+        "coordinates": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "expression_sha256": "f926eed6c980fea3415a3028cbdf3c958069701cb224b346ce3041cd4de377a8",
+        "status": "NONZERO"
+      }
+    },
+    "parity_block_dimensions": {
+      "even": 10,
+      "odd": 0
+    },
+    "quotient_dimension": 10,
+    "tower": {
+      "ambient_basis_dimension": 39,
+      "ambient_basis_sha256": "8ec9ed90859d355fbf113c2c6379eb0ce71017a7acd85281d2eea751d006842b",
+      "stages": [
+        {
+          "dimension": 10,
+          "families": [
+            {
+              "assumptions": [],
+              "name": "R3_bianchi",
+              "provenance": "generated algebraic Bianchi action on all cubic pairing orbits",
+              "relation_count": 10,
+              "relation_hashes": [
+                "22dbaca3c66fc5eec16ab906270e07717504702ae267667f0880cf16a9ac4b29",
+                "73f296324657a77f4e59f1923b7b7d0113bbc09c05a445a6d318441d5304f9dc",
+                "7b4f8549a9b109cf0801494fe1f623c87723684a583895b50d3be3cb39d0ac9c",
+                "ab8a145984d981712d24ba5ddb0dcb25f3c381ab4361704d40e61da819fe10a2",
+                "b2651fcdbe580b35696e6855e957b78254e0a6dddab8732cd824b87897262764",
+                "c14bf3ebaa5444babdb5dd3bda11666e776d28232ea82f23014d254bcaec1ebb",
+                "dc5ce7c6a65da071182b80493787c4e0782b296472c5357a5d0d7241ea3dbecd",
+                "e59fb3636bd2f8e19cf180b4b85cdb1378cf35da1ff43165cfd47171cb390ce8",
+                "f1f427ad5a36d5c95c02f094d60c5307d6e601d202f7c8de92cfe81eee4b5e3b",
+                "f49efb4a4f41b6b0b65379374f6f47b3a2c3bac359c1caa5ed3cd26969b628a8"
+              ]
+            },
+            {
+              "assumptions": [],
+              "name": "nablaR_nablaR_bianchi",
+              "provenance": "generated algebraic and differential Bianchi action on the once-differentiated sector",
+              "relation_count": 20,
+              "relation_hashes": [
+                "0ca5fec5c03077c86101c0bed309fb585cc671c1a6e58fac3df5938fecd81070",
+                "1c5d9f7e733751e7f15767b39e6847e3bec2ca7c8e34e385d163687e8fb5e004",
+                "1e3a8e8c9e4503ed012d325c391a17c06b058c1fcf41c16c326734dac4ba43e9",
+                "22a8bf0ed547ce35cc018bfda1e6581fbfd89f5f50fc45a65edf1e5d705b8d54",
+                "2ebd36f36863128530f6299501bfa06821272600cb531f946cbfb8777f99568e",
+                "38c674258261100083f2ec43af7d7a7a26946657aeeaaeff42b60fc9349531db",
+                "3be3213f10e0bc9eb73bc1221b74f538f66c06dcce575b87d9308af7589b0721",
+                "4f3f0a2dd41b36fd0ebc081d476d1d4a1d186a70136e9e5248cddc33e33f28be",
+                "6464aff7470e92e38a97a7fec3106c82dfde4b39369e50ae6b3d2db2e3edfc71",
+                "71a7a339b8d83f5ee627c3a49240fcce986ff2662042369ed7cd98f93f5cfa3a",
+                "7926029b77d78e9f7f1013e298c84c1e2ed61638d5fa2e8322ed223ef6479d8a",
+                "881454adbd88b2bc4805063a49458890c74a6556144b4ee81f2ffe3fa902237c",
+                "a248a48031f4c6199804bcfc7b5ea8a57206517f8560c9184f0112d5c6ff989f",
+                "a76d0350795b71e3bfc45f8da3193d7f2dbdcb162765da8b9582a37a40bb3a02",
+                "b2f3d8a713d39829531bdc1b2354de18ac72918328094486b0dbbb712b35d4eb",
+                "b33f34cb8c9777d9964f6e049213f9064c4bbcbcc0af6a8a47d000cf5e79106e",
+                "ba974cee5b798ff69d4bb30dda9b72ebe3936b1307920296ff92a73128c5d696",
+                "bea64aa8b2e882e64c59c0919d4aa87ea3a2058a9aaacfb9878a819d9f8b8f26",
+                "d8ddaa805c10133b3272578d3abb6e4a8db193ce477f970399cde996ba6822d2",
+                "f2c53e25cbd0127ef5a44e5315db82c88012a1158d7a0430db779cd693351bb9"
+              ]
+            },
+            {
+              "assumptions": [],
+              "name": "R_nabla2R_bianchi",
+              "provenance": "generated algebraic and outer-differential Bianchi action on the second-derivative bridge",
+              "relation_count": 20,
+              "relation_hashes": [
+                "16e7ebce09173f69f59744f47fda9c19201b85f4ff4390683d2f1000b2a0413c",
+                "18b2228411ebe0f297ac8593f6fe29a2a632b9a39235b5954b0c0a7924f548c6",
+                "1d943896f8b778a22a8f76e2c44c16867191a61fd724ec347d4eb4a129695a73",
+                "2116ba59819fad57a1fb8728e60749056c4476ca336476f931adfedb4662151b",
+                "22776cd192b39b6a23e6e26208486c8fdf29b18209eec4f1afbc68ef5462a57b",
+                "2a8af0017b4eba4ad048f2f98ee2b8a9bf43db588a5f85684b919e96f89df774",
+                "2c36a11f11a4754cd69aa092904e7aacf2d8e638231db9e6345bdb8c04bdb95d",
+                "3bfe2f9ba1116eca65499ca93f4b7588bd775cdd54bb84ea555f126573d65cee",
+                "418e947fb06c1a39e8dc5cbfe8dafaa2364d67a69df803c9892fb391c88f6358",
+                "4fa2f81cb650eea4073ec1c5412c71dee55acb80c72a2a28f2ce7da6ec682239",
+                "7e6b7e4be2015865a403e9926e1dbaefed12c71aa7703ba9a2464738ed7aff5b",
+                "b1c483b95c1067aa07fd1dbdc96f1e3e2197726e0620ba3a53b10dbfd63bc412",
+                "b221162f6cd23c663deb19f6f0ef397eb7901418a818542c30ba3f06ca96992e",
+                "cbb865887239007574fa698515a63df1a1b790a1b76c88c9e6180950bc86d9f6",
+                "cf1941b38cd8c3760552f2c79eabb8bb230caed18378dcee2d543274073eaa71",
+                "dbb2456e9ee02c8fa0cfd7e9302a853c5ec20743bded688f925730e51ca655c9",
+                "de3a039c9371b01be8bc955d217e8316fd3a6ed99888bef1577b49f924040b07",
+                "e0e6f961a59af886ada70cbcf18168d921071bc24102f5228203084fd309b91a",
+                "ee58cb15523f69d9c197725a620ace4358ca85ed58c577f69aa2f3f0acce4524",
+                "fde44c8af9d41200c57bdfb0f633943699ea5717fd66ac11ad01c5b24299ae00"
+              ]
+            },
+            {
+              "assumptions": [],
+              "name": "integration_by_parts",
+              "provenance": "generated covariant total divergences",
+              "relation_count": 28,
+              "relation_hashes": [
+                "001149860c0fd2e0b0fc7f80e1f01dd638000570049402213d263a909ea8d04c",
+                "03d698ec55db5dc8e205938868cd1fbfc17a6e505598bc212e1a34af53d643fa",
+                "0a5c4379b30ce5b738ccb2c067debf0de26b6125b3ad64721eaad57d9cffe603",
+                "11db4de13fc920521f1b5a0a2d1de5febe7bb23aa7539d19ab6719d852972abf",
+                "1ccc0d07a5df04296b1300b79d00ee4c1c177c2fa8310add0aa08dce588573d2",
+                "24054c9a588def158fba1fccef699465fa8ecbc71b6eb9308e070c32a64e8544",
+                "264ba6c9c47fc2ef3fe87eb2a9595f67ddf6a0bdb5298c405c6d643465ce16be",
+                "28f6f5e5426cb3241785e2f71ce94f5d7d8c5bf303ffae2ec11cd9415d91da00",
+                "3b2f88bb2c6d9e5cc75ef9c109178139f1e615c46995daa78f3b63a2bd6123b6",
+                "489ca879d6f49e90e18666661c843e5c67bd6dbe9152db1fe7d3265f9b229cee",
+                "4c6b1346c1f200f8bdc8e47c129f3991b599630ff5306a55a979c0a03508d51d",
+                "4e6dab78cbfc8aee67743715ab3671c893edfbb377b34a0548bc9dd98f28ceaa",
+                "512941b95ab648c05598c9e8e44034f2673388ac4f187e0927b5b42dc1ba4f6b",
+                "56c68ae36211c35349d83130fd41688a7824c5b9c9dbbb299cb391d8c110d97d",
+                "6718289eacc2ab58eee329edeafd08f526240f5eff8332ecbbd2b3fb1a67f86f",
+                "6b776dcf548ade060cfeefc985856adbf41d5ede035c934c93cefeaad823ac3e",
+                "750de80c9c6f434dd6ccbb76fee2c8db1abadd43faf68e230509e18c5d298376",
+                "952217a3c8bc6c16b7b08182a1423142876d8e1ac2a36139f9875ccc58545e0a",
+                "a241ffcbedec22caf199717281ceb50a2f4a2e8e4140fe62d748564881539603",
+                "b20d7406c05a1a434df2444950c74ef6cea41ca17f7b0e37de61de49bfcda646",
+                "bcf4cba1f387d23ced9acde798602fcfb58c94a47a2087ffbf54e900db54b6b8",
+                "d3f72995da38991fa478fe86848f7972d3f39816f0c83934b115f677784f1b16",
+                "d7252b752039592d90df66b2ee0716e85cafcc336ef3596dc3243cbc25c728e2",
+                "e8615587eb72cf4c6fb8708adf5c36a08e6964c05ce12b8184ff8459758b994f",
+                "e8e897c0c15f680cea25ddc033d1c099118efc94eb6c65951600e8bff3762453",
+                "edb2d5dc569ad45a7e4066624135b96f39c80975d5c2c1a53598fb3a847e9b8e",
+                "eebe79611cf973cef277d00ae6d234dbf0e1acbc4ee5cb7d461808d81dcf9d9f",
+                "fc25955090c5a353af46922c88b7037e8e24cd71f5bfb05688f322b1c2d88473"
+              ]
+            },
+            {
+              "assumptions": [],
+              "name": "covariant_commutators",
+              "provenance": "generated declared-sign contracted derivative commutators",
+              "relation_count": 6,
+              "relation_hashes": [
+                "708de34134f0fd8dd5ff593cf9edcc524892078e9eaac34e7ac3624fb432b0cc",
+                "927b993a15ea2af2ece4bbfb7ee20e13256676a194199660026bbdd20cef6691",
+                "aaedf5f79319e0dd2f2ee20f5c0413df9170fa686c056e7f8509a2ceb731073d",
+                "b87ca385ee1824d7cb334aa67cb4db58b5c6afd0225a81f966ba643d386083c6",
+                "c1527a09a24b74e2a98371451f3f27b07c63bb90b854c861696ae85952553dc1",
+                "fbffb008ef0e78dba88f9c1a91f3f92fbfcab9437b954df47bd4fdac48eaa2fd"
+              ]
+            }
+          ],
+          "name": "dimension_independent_integrated",
+          "new_family_names": [
+            "R3_bianchi",
+            "nablaR_nablaR_bianchi",
+            "R_nabla2R_bianchi",
+            "integration_by_parts",
+            "covariant_commutators"
+          ],
+          "parity_block_dimensions": {
+            "even": 10,
+            "odd": 0
+          },
+          "projection": null,
+          "relation_rank": 29,
+          "source_name": null
+        }
+      ],
+      "tower_sha256": "7732f8c301ae06eed95adfc1add1cf35fd8f1faf9f98ecfeecff6017c4b96c46"
+    }
+  }
+}

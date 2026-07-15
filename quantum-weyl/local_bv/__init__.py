@@ -16,6 +16,19 @@ from .hodge import Signature, TwoFormHodge
 from .metadata import FieldSpec, IndexVariance, SpacetimeParity, minimal_registry
 from .pairing_orbits import PairingOrbit, signed_pairing_orbits
 from .six_derivative import six_derivative_curvature_analysis
+from .specialization import (
+    RelationFamily,
+    SpecializationStage,
+    SpecializationTower,
+    TensorOccurrence,
+    WEYL,
+    antisymmetrize_occurrences,
+    epsilon_pair_expansion,
+    reduce_epsilon_pair_in_monomial,
+    replace_riemann_by_weyl,
+    schouten_antisymmetrization,
+    tracefree_weyl_reduce,
+)
 from .tensors import TensorExpression, TensorFactor, TensorMonomial, TensorSpec
 
 __all__ = [
@@ -27,15 +40,26 @@ __all__ = [
     "MinimalBRSTDifferential",
     "PairingOrbit",
     "SpacetimeParity",
+    "SpecializationStage",
+    "SpecializationTower",
     "Signature",
     "TensorExpression",
     "TensorFactor",
     "TensorMonomial",
+    "TensorOccurrence",
     "TensorSpec",
     "TwoFormHodge",
+    "WEYL",
+    "RelationFamily",
+    "antisymmetrize_occurrences",
     "covariant_commutator_relation",
     "covariant_commutator_relation_in_monomial",
+    "epsilon_pair_expansion",
+    "reduce_epsilon_pair_in_monomial",
     "minimal_registry",
+    "replace_riemann_by_weyl",
+    "schouten_antisymmetrization",
     "signed_pairing_orbits",
     "six_derivative_curvature_analysis",
+    "tracefree_weyl_reduce",
 ]

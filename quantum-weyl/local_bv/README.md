@@ -51,15 +51,25 @@ Eight cubic directions survive, while two derivative directions lie outside
 their span.  The omitted degree-one total divergence restores the standard
 17-element local order-six normal form before quotienting total derivatives.
 
+The specialization foundation keeps this universal quotient immutable while
+adding named relation families in exact stages.  Every stage emits its
+projection matrix, kernel witnesses, parity-block dimensions, provenance,
+and deterministic named-representative coordinates.  A dimension-checked
+occurrence antisymmetrizer supplies the five-index Schouten primitive; Weyl
+is a distinct tracefree tensor specification; and paired epsilon tensors
+reduce through a signature-aware 24-term generalized-delta expansion.  These
+are verified primitives only: no four-dimensional Schouten relation has yet
+been applied to the order-six basis.
+
 This is not Gate A or Gate B.  In particular, the classical commit is
 `NOT_FROZEN`; antifield and nonminimal rows have not been imported; and
 general covariant curvature reduction remains incomplete.  The
 once-differentiated quotient does not apply integration by parts or commute
 derivatives, because those operations mix `(nabla Riemann)^2` with cubic
-curvature.  The complete six-derivative quotient, dimension-dependent
-Schouten identities, Weyl-tensor tracefree Hodge action, descent, and both
-`H^{0,4}(s|d)` and `H^{1,4}(s|d)` remain unavailable.  Neither curvature
-certificate may be cited as a complete covariant jet normal form or
+curvature.  The dimension-dependent Schouten identities, Weyl-tensor
+tracefree Hodge action, descent, and both
+`H^{0,4}(s|d)` and `H^{1,4}(s|d)` remain unavailable.  These curvature
+certificates may not be cited as a complete covariant jet normal form or
 cohomology calculation.
 
 Run the exact tests and reproduce the receipt from the repository root:
@@ -71,10 +81,12 @@ PYTHONPATH=quantum-weyl python -m local_bv.curvature_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.differential_hodge_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.scaling_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.six_derivative_certificate --check
+PYTHONPATH=quantum-weyl python -m local_bv.specialization_certificate --check
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_CURVATURE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT.json
+python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_SPECIALIZATION_FOUNDATIONS.json
 ```
 
 The certificate is
@@ -103,6 +115,11 @@ The mixed order-six receipt is
 [`certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT_CERTIFICATE.json`](certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT_CERTIFICATE.json),
 with its common result envelope at
 [`../certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT.json`](../certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT.json).
+
+The specialization-foundation receipt is
+[`certificates/LOCAL_SPECIALIZATION_FOUNDATIONS_CERTIFICATE.json`](certificates/LOCAL_SPECIALIZATION_FOUNDATIONS_CERTIFICATE.json),
+with its common result envelope at
+[`../certificates/LOCAL_SPECIALIZATION_FOUNDATIONS.json`](../certificates/LOCAL_SPECIALIZATION_FOUNDATIONS.json).
 
 Next admissible local steps are the four-dimensional Schouten and tracefree
 Weyl specializations, Weyl BRST curvature rows, and a derivative-bounded

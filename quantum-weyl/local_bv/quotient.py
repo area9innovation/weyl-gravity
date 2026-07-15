@@ -51,6 +51,44 @@ def exact_rank(rows: Sequence[Sequence[Fraction]]) -> int:
     return len(_rref(rows)[1])
 
 
+def exact_nullspace(
+    rows: Sequence[Sequence[Fraction | int]],
+    *,
+    column_count: int | None = None,
+) -> tuple[tuple[Fraction, ...], ...]:
+    """Return a deterministic exact basis for the right nullspace.
+
+    ``column_count`` is required only for an empty matrix, where the number of
+    columns cannot otherwise be inferred. Free columns are visited in their
+    ambient order, so the resulting basis is stable across hash seeds.
+    """
+
+    if rows:
+        inferred = len(rows[0])
+        if any(len(row) != inferred for row in rows):
+            raise ValueError("matrix is ragged")
+        if column_count is not None and column_count != inferred:
+            raise ValueError("declared column count disagrees with matrix")
+        width = inferred
+    elif column_count is not None:
+        width = column_count
+    else:
+        raise ValueError("column_count is required for an empty matrix")
+    if width < 0:
+        raise ValueError("column_count must be nonnegative")
+
+    rref, pivots = _rref(rows)
+    free_columns = tuple(column for column in range(width) if column not in pivots)
+    basis: list[tuple[Fraction, ...]] = []
+    for free in free_columns:
+        vector = [Fraction() for _ in range(width)]
+        vector[free] = Fraction(1)
+        for row, pivot in zip(rref, pivots):
+            vector[pivot] = -row[free]
+        basis.append(tuple(vector))
+    return tuple(basis)
+
+
 class RelationQuotient:
     """A finite exact vector-space quotient with deterministic normal forms."""
 
