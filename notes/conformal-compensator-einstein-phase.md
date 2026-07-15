@@ -163,6 +163,14 @@ compatible with the exact vacuum cylinder.  The only compatible background is
 zero, where the scalar has no linearized clock incidence.  Its next gate is
 `BACKREACTED_OR_COMPOSITE_CLOCK_MODEL`.
 
+That gate has subsequently been passed in the distinct scoped homogeneous
+sector certified by
+`d_quotient_classical/certificates/NEUTRAL_CONFORMAL_CLOCK_PAIR.json`.  The
+two-field reference clock has internal signature `(+,-)` and a neutral
+`D_GAUGE` zero-level sector.  Its current gate is
+`FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION`; it is not a healthy inhomogeneous
+matter completion and does not alter the compensator phase theorem.
+
 The constant Stueckelberg compensator supplies no relational time and must not
 be relabeled as `compact_scalar_clock`.  Conversely, the imported clock
 obstruction does not invalidate the compensator's local Einstein-Hilbert scale
@@ -171,12 +179,16 @@ questions.
 
 ## What remains
 
-The next theorem should decide whether the massive spin-2 branch can be
-excluded by local causal initial/boundary conditions while retaining the
-nondegenerate massless Einstein pairing.  It must also complete the scalar BV
-count, determine nonlinear preservation of the Einstein submanifold, and
-construct the asymptotic charge/scattering comparison.  No such claim follows
-from the reduced factorization.
+The first causal theorem is now complete in
+`notes/conformal-compensated-einstein-causal-subsector.md`.  On the source-free
+flat TT Schwartz domain, the local data `chi=0` and `n.chi=0` eliminate the
+massive branch, propagate causally, retain the nondegenerate Einstein-Hilbert
+pairing, and recover both classical helicities without future boundary data.
+
+What remains is the full metric Diff x Weyl BV lift, source-compatible Green
+complex, nonlinear preservation of the Einstein submanifold, and the
+null-infinity charge/scattering comparison.  The reduced free theorem does not
+promote any of those claims.
 
 Machine certificate:
 `bridge/certificates/compensator_einstein_phase.json`.

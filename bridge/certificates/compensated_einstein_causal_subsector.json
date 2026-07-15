@@ -1,0 +1,190 @@
+{
+  "causal_constraint_theorem": {
+    "branch_basis_determinant": "det[I_E I_M]=M2^2",
+    "causal_propagation": "source-free Klein-Gordon uniqueness for (D_q+M2)chi=0 sends zero Cauchy data (chi,d_t chi) to chi=0 on the full domain of dependence",
+    "constraint_intertwining": "C A_4=A_chi C",
+    "constraint_matrix": [
+      [
+        "q",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "q",
+        "0",
+        "1"
+      ]
+    ],
+    "constraint_rank": 2,
+    "defect_equation": "(D_q+M2)chi=0",
+    "einstein_defect": "chi=D_q h",
+    "einstein_embedding": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ],
+      [
+        "-q",
+        "0"
+      ],
+      [
+        "0",
+        "-q"
+      ]
+    ],
+    "einstein_intertwining": "A_4 I_E=I_E A_E",
+    "equation": "D_q(D_q+M2)h=0",
+    "fourth_order_cauchy_vector": "X=(h,d_t h,d_t^2 h,d_t^3 h)",
+    "future_boundary_data": "NOT_REQUIRED",
+    "kernel_identity": "ker C=im I_E",
+    "local_constraints": [
+      "chi|_Sigma=d_t^2 h+q h=0",
+      "d_t chi|_Sigma=d_t^3 h+q d_t h=0"
+    ],
+    "massive_embedding_defect": "C I_M=-M2 I_2",
+    "status": "PASS",
+    "wave_operator": "D_q=d_t^2+q with q=|k|^2"
+  },
+  "claim_flags": {
+    "P0_energy_matches_einstein_hilbert": true,
+    "bondi_charge_and_flux_match_proved": false,
+    "both_tt_helicities_recovered_classically": true,
+    "constraint_compatible_with_arbitrary_sources": false,
+    "constraint_intertwining_exact": true,
+    "constraint_rank_two": true,
+    "einstein_embedding_intertwines": true,
+    "einstein_scattering_equivalence_proved": false,
+    "full_metric_diff_weyl_bv_complex_constructed": false,
+    "local_einstein_cauchy_constraints_derived": true,
+    "massive_branch_absent_from_full_theory": false,
+    "massive_branch_eliminated_on_selected_free_solutions": true,
+    "no_future_boundary_data_required": true,
+    "nonlinear_einstein_constraint_propagation_proved": false,
+    "null_infinity_boundary_complex_constructed": false,
+    "projected_retarded_green_operator_constructed": false,
+    "pure_weyl_limit_recovers_zero_pairing": true,
+    "quantum_one_particle_hilbert_space_constructed": false,
+    "restricted_current_equals_einstein_hilbert": true,
+    "restricted_pairing_nondegenerate": true,
+    "source_free_causal_propagation_proved": true,
+    "unitarity_proved": false
+  },
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "domain": {
+    "boundary": "complete spacelike Cauchy surface; no future boundary condition",
+    "cauchy_class": "real TT Schwartz data obtained from smooth compactly supported Fourier data away from k=0, duplicated for the two helicities",
+    "parameters": "c1!=0, alpha!=0, M2=c1/alpha>0",
+    "sector": "free transverse-traceless metric perturbations, both helicities +/-2",
+    "spacetime": "four-dimensional Minkowski space",
+    "theory": "constant-compensator Einstein-Weyl phase with lambda=0"
+  },
+  "helicity_interpretation": {
+    "before_selection": "each TT helicity contains a massless Einstein solution and a massive spin-2 solution",
+    "selected_data": "chi=0 and n.chi=0 leave one ordinary massless wave Cauchy pair per helicity",
+    "selected_phase_space": "the direct sum of the two real TT Einstein wave-packet phase spaces with nondegenerate Einstein-Hilbert symplectic form",
+    "where_the_graviton_is": "the conventional helicity +/-2 graviton is the massless simple root with nonzero c1 normalization; it becomes zero-normalized only as c1->0 and the simple roots coalesce in pure Weyl gravity"
+  },
+  "inputs": {
+    "compensator_phase": {
+      "path": "bridge/certificates/compensator_einstein_phase.json",
+      "sha256": "b5c9f6caa05a263cdb006c33e6bbf60139139d8c30303706e073948a62e7a6b4"
+    },
+    "pure_weyl_restriction": {
+      "path": "bridge/certificates/flat_einstein_symplectic_restriction.json",
+      "sha256": "8e3e690b5a1f62d79cdd587c2fa35c9f958604c01ce4f2a08749c367d5ab8f6d"
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/compensated_einstein_causal_subsector.py",
+    "generator_sha256": "dea4089dded7078b9ddc178d11a3af9e17b1575ae5d138043329dbfe1424b4ad",
+    "input_base_commit": "0c200a2805f1085f44e466987dc126001035585b"
+  },
+  "result_id": "COMPENSATED_EINSTEIN_CAUSAL_SUBSECTOR",
+  "result_state": "LINEAR_FLAT_TT_CAUSAL_AND_SYMPLECTIC_SUBSECTOR_CERTIFIED",
+  "schema": "compensated-einstein-causal-subsector-v1",
+  "schema_path": "bridge/einstein_sector/schema/compensated_einstein_causal_subsector.schema.json",
+  "schema_sha256": "c4e4c28bf648baac86b25bbaf456fe4cc6e6b2bd80b8819a13b5830cfff0a773",
+  "scope_guards": [
+    "the LORENTZIAN-CAUSAL tag is restricted to the source-free real-time flat TT Cauchy problem",
+    "the local constraints select a subspace of solutions; they do not delete the massive branch from the full Einstein-Weyl theory",
+    "the result is not a full tensor Diff x Weyl BV-BFV or gauge-fixing theorem",
+    "the result is not a null-infinity, Bondi, soft, memory, corner, or scattering theorem",
+    "generic sources and nonlinear interactions may excite the Einstein defect until separately excluded",
+    "the pure-Weyl c1=0 theory remains governed by the zero-pairing obstruction"
+  ],
+  "source_and_interaction_boundary": {
+    "arbitrary_source_equation": "D_q(D_q+M2)h=J generally gives (D_q+M2)chi=J",
+    "consequence": "generic sources can excite chi; a source-compatible Einstein subcomplex or projected retarded Green operator is not constructed",
+    "nonlinear_consequence": "linear closure does not prove that generic Einstein-Weyl interactions preserve the selected constraints or exclude massive internal channels",
+    "source_free_result": "CERTIFIED"
+  },
+  "symplectic_restriction_theorem": {
+    "action_density": "L_TT=(alpha/4)(Box h)^2-(c1/4)partial_mu h partial^mu h",
+    "cauchy_coordinates": [
+      "h",
+      "d_t h",
+      "d_t^2 h",
+      "d_t^3 h"
+    ],
+    "cross_branch_matrix": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "einstein_defect": "chi=Box h",
+    "einstein_restriction": "chi1=chi2=0 implies omega^mu=(c1/2)omega_EH^mu",
+    "pure_weyl_limit": "c1->0 makes the restricted Einstein matrix rank zero",
+    "relative_signature": "massless and massive spin-2 branches have opposite symplectic normalization",
+    "restricted_einstein_matrix": [
+      [
+        "0",
+        "c1/2"
+      ],
+      [
+        "-c1/2",
+        "0"
+      ]
+    ],
+    "restricted_massive_matrix": [
+      [
+        "0",
+        "-c1/2"
+      ],
+      [
+        "c1/2",
+        "0"
+      ]
+    ],
+    "restricted_ranks": {
+      "einstein": 2,
+      "massive": 2
+    },
+    "status": "PASS",
+    "total_current": "omega^mu=(alpha/2)[chi1 partial^mu h2-(partial^mu chi1)h2-chi2 partial^mu h1+(partial^mu chi2)h1]+(c1/2)[h1 partial^mu h2-h2 partial^mu h1]"
+  },
+  "time_translation_theorem": {
+    "einstein_hilbert_match": "exact with the action normalization c1 R",
+    "generator": "P_0=partial_t",
+    "hamiltonian_convention": "delta H=Omega(delta h,L_P0 h)",
+    "repository_healthy_sign": "c1=-1 gives positive H_P0",
+    "restricted_hamiltonian_per_polarization": "H_P0=-(c1/4)[(d_t h)^2+|grad h|^2]",
+    "status": "PASS",
+    "two_helicity_energy": "sum of the identical positive helicity +2 and -2 contributions for c1=-1"
+  },
+  "verdict": "LINEAR_FLAT_TT_EINSTEIN_SECTOR_CAUSALLY_CLOSED_AND_SYMPLECTIC",
+  "verification_command": "python3 -m bridge.einstein_sector.compensated_einstein_causal_subsector --verify bridge/certificates/compensated_einstein_causal_subsector.json"
+}

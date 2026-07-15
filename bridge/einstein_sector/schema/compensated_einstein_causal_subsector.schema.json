@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "compensated-einstein-causal-subsector-v1",
+  "title": "Linear compensated Einstein causal subsector certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "provenance",
+    "inputs",
+    "domain",
+    "causal_constraint_theorem",
+    "symplectic_restriction_theorem",
+    "time_translation_theorem",
+    "helicity_interpretation",
+    "source_and_interaction_boundary",
+    "verdict",
+    "claim_flags",
+    "scope_guards",
+    "verification_command"
+  ],
+  "properties": {
+    "schema": {"const": "compensated-einstein-causal-subsector-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/compensated_einstein_causal_subsector.schema.json"},
+    "result_id": {"const": "COMPENSATED_EINSTEIN_CAUSAL_SUBSECTOR"},
+    "result_state": {"const": "LINEAR_FLAT_TT_CAUSAL_AND_SYMPLECTIC_SUBSECTOR_CERTIFIED"},
+    "dependency_tags": {"const": ["REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "verdict": {"const": "LINEAR_FLAT_TT_EINSTEIN_SECTOR_CAUSALLY_CLOSED_AND_SYMPLECTIC"},
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "local_einstein_cauchy_constraints_derived",
+        "constraint_rank_two",
+        "constraint_intertwining_exact",
+        "source_free_causal_propagation_proved",
+        "massive_branch_eliminated_on_selected_free_solutions",
+        "no_future_boundary_data_required",
+        "einstein_embedding_intertwines",
+        "restricted_current_equals_einstein_hilbert",
+        "restricted_pairing_nondegenerate",
+        "P0_energy_matches_einstein_hilbert",
+        "both_tt_helicities_recovered_classically",
+        "pure_weyl_limit_recovers_zero_pairing",
+        "full_metric_diff_weyl_bv_complex_constructed",
+        "constraint_compatible_with_arbitrary_sources",
+        "projected_retarded_green_operator_constructed",
+        "null_infinity_boundary_complex_constructed",
+        "bondi_charge_and_flux_match_proved",
+        "nonlinear_einstein_constraint_propagation_proved",
+        "massive_branch_absent_from_full_theory",
+        "einstein_scattering_equivalence_proved",
+        "quantum_one_particle_hilbert_space_constructed",
+        "unitarity_proved"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

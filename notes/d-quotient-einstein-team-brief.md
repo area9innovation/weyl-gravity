@@ -135,6 +135,20 @@ If the conditions require future data, nonlocal projection, or loss of a
 well-posed symplectic phase space, issue a no-go result instead of weakening the
 meaning of “causal.”
 
+### Compensated flat TT result
+
+The separate certificate
+`bridge/certificates/compensated_einstein_causal_subsector.json` proves the
+target at source-free linear flat TT level in the constant-compensator phase.
+The local conditions `chi=0` and `n.chi=0` propagate by massive Klein--Gordon
+uniqueness, remove the massive Cauchy branch, and retain the nondegenerate
+Einstein-Hilbert current and positive `P_0` energy for both helicities.  No
+future boundary condition is used.
+
+Keep the scope separate from pure Weyl gravity and from the full E-D2 target.
+The full metric BV lift, arbitrary sources, nonlinear propagation, null
+infinity, and scattering remain open.
+
 ## Work package E-D3: observables, charges, and scattering
 
 Compare the selected sector with Einstein gravity by constructing explicit
@@ -205,8 +219,11 @@ Do not register that result as `compact_scalar_clock`.  A constant compensator
 is not monotone and supplies no relational time.  The classical team's
 `SCALAR_CLOCK_VERTICAL_SLICE` certificate is now imported by the compensator
 certificate: it proves local clock charts but obstructs a nonzero homogeneous
-one-scalar clock on the exact vacuum cylinder.  The shared next gate is
-`BACKREACTED_OR_COMPOSITE_CLOCK_MODEL`; any later total `D` calculation must
+one-scalar clock on the exact vacuum cylinder.  The classical team has since
+passed `BACKREACTED_OR_COMPOSITE_CLOCK_MODEL` in the distinct homogeneous
+neutral two-field sector, with internal signature `(+,-)` and scoped verdict
+`D_GAUGE`.  The current shared gate is
+`FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION`; any later total `D` calculation must
 continue to import the classical action and BV data by hash.
 
 ## Common background matrix

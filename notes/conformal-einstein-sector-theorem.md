@@ -220,6 +220,14 @@ gravity.  It does not define the D-quotient programme's monotone scalar clock
 and does not establish causal removal of the extra branch, nonlinear closure,
 scattering equivalence, anomaly cancellation, or spontaneous breaking.
 
+The subsequent flat TT theorem in
+`notes/conformal-compensated-einstein-causal-subsector.md` now establishes a
+scoped causal removal: on source-free real-time Schwartz data, the local
+constraints `chi=0` and `n.chi=0` propagate and select a nondegenerate
+Einstein-Hilbert helicity-`+/-2` phase space.  This does not remove the massive
+branch from the full theory or establish sourced, nonlinear, BV, boundary, or
+scattering closure.
+
 ## Background inventory
 
 All smooth four-dimensional Einstein metrics survive the pure-Weyl equation,
