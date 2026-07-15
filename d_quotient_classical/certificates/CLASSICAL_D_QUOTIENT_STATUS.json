@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split and the homogeneous neutral two-scalar clock sector on their separately declared reduced-mode phase spaces. Local audits prove that the neutral clock's opposite-sign ratio sector is not globally positive or entirely contractible, while the complete standard one-field conformal stealth family has no globally regular everywhere-timelike clock. A new exact open family of non-conformally-flat Berger-cylinder backgrounds carries a standard-sign rotating two-scalar phase clock, positive quartic potential, and dominant-energy stress. This is a healthy background theorem, not a D-charge or all-row BV theorem. No new interacting, boundary, quantum, or universal D verdict is promoted.",
+  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split and the homogeneous neutral two-scalar clock sector on their separately declared reduced-mode phase spaces. Local audits prove that the neutral clock's opposite-sign ratio sector is not globally positive or entirely contractible, while the complete standard one-field conformal stealth family has no globally regular everywhere-timelike clock. A new exact non-conformally-flat Berger-cylinder background family carries a healthy rotating two-scalar phase clock. Its action normalization, SU(2) volume, covariant O(2) current, fixed-coupling stationary tangent structure, and helical identity Omega_total(delta,L_D)=omega delta Q_R are exact. Existence of an allowed fixed-coupling linearized tangent with delta Q_R nonzero remains open, so no new D, interacting, boundary, or quantum verdict is promoted.",
   "claim_state": "PARTIAL",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -121,17 +121,17 @@
       ],
       "evidence_id": "positive_berger_clock_background",
       "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
-      "sha256": "fd7419b3a5985d83593de83824263c320b8fe44e47c69c473e7db5e30040b192"
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"
     },
     {
-      "claim_scope": "Exact global O(2) matter charge and helical L_D=omega R identity on the positive Berger background; proves genuine clock momentum but not the total gravitational-plus-matter D charge.",
+      "claim_scope": "Action-derived global O(2) matter charge, fixed SU(2) volume, fixed-coupling stationary tangent audit, and helical Omega_total(delta,L_D)=omega delta Q_R identity on the positive Berger background; the decisive allowed delta-Q tangent remains open.",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "REDUCED-MODE"
       ],
       "evidence_id": "berger_clock_reduced_charge_seed",
       "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
-      "sha256": "aae64f16411d4cef24cb2e1ad93adaef98658727b4027ee96328a96b41af545f"
+      "sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9"
     }
   ],
   "open_fields": [
@@ -583,7 +583,7 @@
       "verdict_dependency_tags": []
     }
   ],
-  "source_commit": "332bc1744aecc3ec450860d09a5b07d362bb7278",
+  "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db",
   "verification_receipts": [
     {
       "command": "python3 symbolic/verify_compact_cylinder_d_charge_audit.py --check",
@@ -779,7 +779,7 @@
         "berger_clock_reduced_charge_seed"
       ],
       "next_gate": "Run TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT, then complete the all-row BV and causal parts of FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT.",
-      "result": "The vacuum one-real-scalar and complete standard one-field stealth routes are obstructed. The neutral (+,-) pair gives a scoped homogeneous D_GAUGE reference-clock theorem but fails the global positive-health audit. A new exact Berger-cylinder family passes the coupled Bach-scalar equations with two standard-sign rotating conformal scalars, full raw Diff x Weyl clock incidence, positive quartic potential, and dominant-energy stress. Its phase carries the exact nonzero conserved O(2) charge Q_R=V_0 alpha_B q sqrt(1-4q), and L_D=omega R on the background, so it is a genuine physical-clock candidate rather than a cost-free gauge label. The total covariant D charge and support-local all-row BV reduction remain open.",
+      "result": "The vacuum one-real-scalar and complete standard one-field stealth routes are obstructed. The neutral (+,-) pair gives a scoped homogeneous D_GAUGE reference-clock theorem but fails the global positive-health audit. A new exact Berger-cylinder family passes the coupled equations with healthy standard-sign matter. In the frozen convention S_W=(alpha_B/8) integral C^2 and Vol(S3_Berger)=16 pi^2 a^3 sqrt(q). The action-derived clock charge is Q_R=16 pi^2 alpha_B q sqrt(1-4q), and Omega_total(delta,L_D)=omega delta Q_R. At fixed alpha_B lambda, q is isolated, so the open q interval is not a one-theory tangent. The decisive fixed-coupling linearized delta-Q tangent and the all-row BV reduction remain open.",
       "status": "PARTIAL"
     }
   }

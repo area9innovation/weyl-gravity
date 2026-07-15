@@ -94,13 +94,25 @@ The first charge seed shows that the phase is not a cost-free gauge marker.
 The scalar pair has an exact conserved global \(O(2)\) charge
 
 \[
-Q_R=V_0\alpha_Bq\sqrt{1-4q}>0,
+Q_R=16\pi^2\alpha_Bq\sqrt{1-4q}>0,
 \]
 
 and obeys \(\mathcal L_D T=\omega RT\) on the background. This establishes
 genuine clock momentum, but not the total \(D\) charge: the pure-Weyl and
 improved scalar presymplectic currents must still be combined on the complete
 fixed-coupling linearized solution space.
+
+That structural combination is now reduced exactly to
+
+\[
+\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\,\delta Q_R.
+\]
+
+The stationary background relation has nonzero \(q\)-derivative at fixed
+\(\alpha_B\lambda\), so \(\delta q=0\): the open squashing interval is not a
+physical tangent inside one theory. The remaining charge gate is to construct
+or exclude an allowed fixed-coupling linearized solution with
+\(\delta Q_R\ne0\).
 
 The present charge audit composes the exact reduced-mode moment map with the
 already-certified Lorentzian current comparison, so it is tagged

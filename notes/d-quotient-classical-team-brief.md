@@ -173,7 +173,7 @@ The first reduced charge seed is also exact. If
 \[
 \mathcal L_D(T_1,T_2)=\omega R(T_1,T_2),
 \qquad
-Q_R=V_0\alpha_Bq\sqrt{1-4q}>0.
+Q_R=16\pi^2\alpha_Bq\sqrt{1-4q}>0.
 \]
 
 Thus the phase has genuine conserved matter momentum. The next immediate
@@ -181,6 +181,26 @@ calculation is `TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT`, which must combine the
 pure-Weyl and improved scalar currents on the complete fixed-coupling
 linearized solution space. Do not infer the total \(D\) verdict from
 \(Q_R\) alone.
+
+The action and tangent conventions are now frozen. In the producer curvature
+convention,
+
+\[
+\delta\int\sqrt{-g}\,C^2
+=4\int\sqrt{-g}\,B_{\mu\nu}\delta g^{\mu\nu},
+\]
+
+so the coefficient producing \(\alpha_BB=T\) is \(\alpha_B/8\). At fixed
+\(\alpha_B\lambda\), the stationary relation forces \(\delta q=0\); the open
+\(q\) interval labels different coupling products, not perturbations within
+one theory. The helical current calculation gives the exact decision identity
+
+\[
+\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\,\delta Q_R.
+\]
+
+Thus the next concrete sub-gate is to construct or rule out a genuine allowed
+fixed-coupling linearized tangent with \(\delta Q_R\ne0\).
 
 ### Parked nonlinear support-local export
 

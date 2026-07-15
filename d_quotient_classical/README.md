@@ -100,7 +100,10 @@ classification, and the complete standard one-field inhomogeneous stealth
 no-go. The final pair certifies the exact positive-matter Berger-clock
 background while keeping the covariant charge and all-row BV verdict open.
 The charge-seed pair additionally proves that the phase carries nonzero
-conserved internal momentum, without equating it to the total \(D\) charge.
+conserved internal momentum and derives
+\(\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\delta Q_R\). The fixed-coupling
+audit prevents use of the open \(q\)-family as a tangent; an actual allowed
+linearized \(\delta Q_R\) direction remains the decisive charge gate.
 
 ## Promotion rule
 
