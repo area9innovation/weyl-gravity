@@ -21,15 +21,22 @@ No downstream claim can become true while any required node remains false.
 from __future__ import annotations
 
 from dataclasses import dataclass
-import hashlib
 import json
 from pathlib import Path
 from typing import Any, Mapping
+
+from covariant_completion.certificate_provenance import (
+    DigestMode,
+    ProvenanceInput,
+    digest_inputs,
+    validate_digest_ledger,
+)
 
 COVARIANT_ROOT = Path(__file__).resolve().parents[1]
 CERTIFICATE_DIR = COVARIANT_ROOT / "certificates"
 ANALYTIC_CERTIFICATE_DIR = COVARIANT_ROOT.parent / "analytic_completion" / "certificates"
 BRIDGE_CERTIFICATE_DIR = COVARIANT_ROOT.parent / "bridge" / "certificates"
+PROVENANCE_ROOT = COVARIANT_ROOT.parent
 
 DIRECT_CAUSAL_PAIRING_INPUTS = {
     "curved_pbw": "adjoint_tractor_bgg_curved_pbw.json",
@@ -40,17 +47,6 @@ DIRECT_CAUSAL_PAIRING_INPUTS = {
     "green_current_theorem": "curved_green_current_pairing.json",
     "EAL_regression": "curved_EAL_pairing_regression.json",
 }
-
-
-def _file_sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
-
-def _json_certificate_digest(path: Path) -> str:
-    value = json.loads(path.read_text(encoding="utf-8"))
-    return hashlib.sha256(
-        json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
-    ).hexdigest()
 
 
 def _authoritative_so42_input_sha256() -> dict[str, str]:
@@ -79,7 +75,15 @@ def _authoritative_so42_input_sha256() -> dict[str, str]:
             CERTIFICATE_DIR / "curved_EAL_spectrum_all_level.json"
         ),
     }
-    return {name: _json_certificate_digest(path) for name, path in paths.items()}
+    keys = tuple(paths)
+    return digest_inputs(
+        {
+            name: ProvenanceInput(path, DigestMode.CANONICAL_JSON)
+            for name, path in paths.items()
+        },
+        expected_keys=keys,
+        root=PROVENANCE_ROOT,
+    )
 
 
 def so42_authoritative_certificate_passes(
@@ -106,7 +110,12 @@ def so42_authoritative_certificate_passes(
     if not all(isinstance(value, Mapping) for value in sections):
         return False
     theorem, cutoff, local, module, residual, boundary, hashes = sections
-    if dict(hashes) != _authoritative_so42_input_sha256():
+    expected_hashes = _authoritative_so42_input_sha256()
+    if not validate_digest_ledger(
+        hashes,
+        expected_hashes,
+        expected_keys=tuple(expected_hashes),
+    ):
         return False
     return all(
         (
@@ -164,12 +173,21 @@ def direct_causal_pairing_certificate_passes(
         for value in (recorded, guards, causal, pairing, normalization)
     ):
         return False
-    if set(recorded) != set(DIRECT_CAUSAL_PAIRING_INPUTS):
-        return False
-    if any(
-        recorded.get(role)
-        != _file_sha256(CERTIFICATE_DIR / filename)
-        for role, filename in DIRECT_CAUSAL_PAIRING_INPUTS.items()
+    expected_pairing_hashes = digest_inputs(
+        {
+            role: ProvenanceInput(
+                CERTIFICATE_DIR / filename,
+                DigestMode.RAW_FILE,
+            )
+            for role, filename in DIRECT_CAUSAL_PAIRING_INPUTS.items()
+        },
+        expected_keys=tuple(DIRECT_CAUSAL_PAIRING_INPUTS),
+        root=PROVENANCE_ROOT,
+    )
+    if not validate_digest_ledger(
+        recorded,
+        expected_pairing_hashes,
+        expected_keys=tuple(DIRECT_CAUSAL_PAIRING_INPUTS),
     ):
         return False
     required_guards = {

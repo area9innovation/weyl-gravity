@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 from copy import deepcopy
-import hashlib
 import json
 from pathlib import Path
 import sys
@@ -16,6 +15,14 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from covariant_completion.final_transport import FinalCovariantTransportStatus
+from covariant_completion.certificate_provenance import (
+    DigestMode,
+    ProvenanceInput,
+    digest_inputs,
+    digest_json_object,
+    load_json_object,
+    validate_digest_ledger,
+)
 
 
 CERTIFICATE_DIR = ROOT / "covariant_completion" / "certificates"
@@ -64,25 +71,24 @@ SO42_UNDERLYING_INPUTS = {
 }
 
 
-def _sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
-
 def _authoritative_input_hashes() -> dict[str, str]:
-    return {name: _sha256(path) for name, path in AUTHORITATIVE_INPUTS.items()}
+    keys = tuple(AUTHORITATIVE_INPUTS)
+    return digest_inputs(
+        {
+            name: ProvenanceInput(path, DigestMode.RAW_FILE)
+            for name, path in AUTHORITATIVE_INPUTS.items()
+        },
+        expected_keys=keys,
+        root=ROOT,
+    )
 
 
 def _load_json(path: Path) -> dict[str, object]:
-    value = json.loads(path.read_text(encoding="utf-8"))
-    if not isinstance(value, dict):
-        raise AssertionError(f"{path.name} is not a JSON certificate object")
-    return value
+    return load_json_object(path, root=ROOT)
 
 
 def _canonical_certificate_sha256(value: dict[str, object]) -> str:
-    return hashlib.sha256(
-        json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
-    ).hexdigest()
+    return digest_json_object(value)
 
 
 def _so42_underlying_certificates() -> dict[str, dict[str, object]]:
@@ -101,8 +107,11 @@ def _so42_underlying_hashes(
 def _so42_receipt_matches_inputs(
     certificate: dict[str, object], inputs: dict[str, dict[str, object]]
 ) -> bool:
-    return certificate.get("input_certificate_sha256") == _so42_underlying_hashes(
-        inputs
+    expected = _so42_underlying_hashes(inputs)
+    return validate_digest_ledger(
+        certificate.get("input_certificate_sha256"),
+        expected,
+        expected_keys=tuple(SO42_UNDERLYING_INPUTS),
     )
 
 
@@ -116,8 +125,11 @@ def _transport_receipt_passes(
     return bool(
         payload.get("schema") == "pure-weyl-final-covariant-transport-status-v1"
         and payload.get("dependency_tag") == "LORENTZIAN-CAUSAL"
-        and isinstance(recorded, dict)
-        and recorded == expected_hashes
+        and validate_digest_ledger(
+            recorded,
+            expected_hashes,
+            expected_keys=tuple(AUTHORITATIVE_INPUTS),
+        )
         and payload.get("transitive_input_certificate_sha256")
         == {"SO42_equivariant_transport": expected_so42_underlying_hashes}
         and isinstance(terminal, dict)

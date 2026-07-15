@@ -11,10 +11,12 @@ promote a full covariant claim.
 from __future__ import annotations
 
 from dataclasses import dataclass, fields
-import hashlib
-import json
 from typing import Mapping
 
+from covariant_completion.certificate_provenance import (
+    digest_json_object,
+    is_sha256,
+)
 from covariant_completion.green_homotopy.causal_transport import (
     SCHEMA as CAUSAL_TRANSPORT_SCHEMA,
     recognition_certificate_passes,
@@ -28,22 +30,9 @@ from .mixed_order_green_promotion import coefficient_certificate_passes
 from .null_symbol_quotient import CurvedNullSymbolQuotient
 
 
-def _certificate_digest(certificate: Mapping[str, object]) -> str:
-    payload = json.dumps(
-        certificate, sort_keys=True, separators=(",", ":")
-    ).encode("utf-8")
-    return hashlib.sha256(payload).hexdigest()
-
-
 DIRECT_TRACTOR_CAUSAL_SCHEMA = (
     "pure-weyl-full-prolonged-green-homotopy-assembly-v1"
 )
-
-
-def _is_sha256(value: object) -> bool:
-    return isinstance(value, str) and len(value) == 64 and all(
-        character in "0123456789abcdef" for character in value
-    )
 
 
 def direct_tractor_causal_certificate_passes(
@@ -141,11 +130,11 @@ def direct_tractor_causal_certificate_passes(
         return False
     if gate.get("all_row_causal_homotopy_ready") is not True:
         return False
-    if gate.get("upstream_curved_PBW_sha256") != _certificate_digest(
+    if gate.get("upstream_curved_PBW_sha256") != digest_json_object(
         curved_bgg_pbw_certificate
     ):
         return False
-    if not all(_is_sha256(value) for value in inputs.values()):
+    if not all(is_sha256(value) for value in inputs.values()):
         return False
     return all(
         (
@@ -523,7 +512,7 @@ class CurvatureProlongationStatus:
                     isinstance(inputs, Mapping),
                     curved_core_chain_certificate is not None,
                     inputs.get("curved_core_chain_map")
-                    == _certificate_digest(curved_core_chain_certificate),
+                    == digest_json_object(curved_core_chain_certificate),
                     bool(
                         mapping_cylinder_certificate.get(
                             "coefficientwise_complete_prolonged_Q"
@@ -613,7 +602,11 @@ class CurvatureProlongationStatus:
                     isinstance(current_inputs, Mapping),
                     mapping_cylinder_certificate is not None,
                     current_inputs.get("mapping_cylinder_sha256")
-                    == _certificate_digest(mapping_cylinder_certificate),
+                    == (
+                        digest_json_object(mapping_cylinder_certificate)
+                        if isinstance(mapping_cylinder_certificate, Mapping)
+                        else None
+                    ),
                     isinstance(mapping_inputs, Mapping),
                     current_inputs.get("curved_core_chain_map_sha256")
                     == mapping_inputs.get("curved_core_chain_map"),

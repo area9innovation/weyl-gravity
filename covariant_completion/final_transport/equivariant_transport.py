@@ -25,9 +25,13 @@ conditional on the actual causal quasi-isomorphism.
 from __future__ import annotations
 
 from dataclasses import dataclass
-import hashlib
-import json
 from typing import Mapping
+
+from covariant_completion.certificate_provenance import (
+    digest_json_object,
+    is_sha256,
+    validate_digest_ledger,
+)
 
 
 SCHEMA = "pure-weyl-so42-causal-transport-recognition-v1"
@@ -42,14 +46,6 @@ INPUT_DIGEST_KEYS = (
     "cylinder_metric_preimages",
     "curvature_EAL_spectrum",
 )
-
-
-def _certificate_digest(certificate: Mapping[str, object]) -> str:
-    return hashlib.sha256(
-        json.dumps(certificate, sort_keys=True, separators=(",", ":")).encode(
-            "utf-8"
-        )
-    ).hexdigest()
 
 
 def _mapping(value: object, name: str) -> Mapping[str, object]:
@@ -119,17 +115,14 @@ def recognition_certificate_passes(
         )
     except AssertionError:
         return False
-    hashes_well_formed = (
-        tuple(sorted(input_hashes)) == tuple(sorted(INPUT_DIGEST_KEYS))
-        and all(
-            isinstance(input_hashes[key], str)
-            and len(input_hashes[key]) == 64
-            and all(character in "0123456789abcdef" for character in input_hashes[key])
-            for key in INPUT_DIGEST_KEYS
-        )
+    hashes_well_formed = bool(
+        set(input_hashes) == set(INPUT_DIGEST_KEYS)
+        and all(is_sha256(input_hashes[key]) for key in INPUT_DIGEST_KEYS)
     )
-    hashes_match_inputs = expected_input_sha256 is None or dict(input_hashes) == dict(
-        expected_input_sha256
+    hashes_match_inputs = expected_input_sha256 is None or validate_digest_ledger(
+        input_hashes,
+        expected_input_sha256,
+        expected_keys=INPUT_DIGEST_KEYS,
     )
     return bool(
         hashes_well_formed
@@ -328,22 +321,22 @@ class SO42CausalTransportRecognition:
             "schema": SCHEMA,
             "dependency_tag": "LORENTZIAN-CAUSAL",
             "input_certificate_sha256": {
-                "actual_causal_quasi_isomorphism": _certificate_digest(
+                "actual_causal_quasi_isomorphism": digest_json_object(
                     self.causal_transport
                 ),
-                "auxiliary_retract": _certificate_digest(self.auxiliary_retract),
-                "curvature_mapping_cylinder": _certificate_digest(
+                "auxiliary_retract": digest_json_object(self.auxiliary_retract),
+                "curvature_mapping_cylinder": digest_json_object(
                     self.curvature_mapping_cylinder
                 ),
-                "curvature_causal_pde": _certificate_digest(
+                "curvature_causal_pde": digest_json_object(
                     self.curvature_causal_pde
                 ),
-                "raw_bv_transfer": _certificate_digest(self.raw_bv_transfer),
-                "cylinder_bgg_blocks": _certificate_digest(self.bgg_blocks),
-                "cylinder_metric_preimages": _certificate_digest(
+                "raw_bv_transfer": digest_json_object(self.raw_bv_transfer),
+                "cylinder_bgg_blocks": digest_json_object(self.bgg_blocks),
+                "cylinder_metric_preimages": digest_json_object(
                     self.metric_preimages
                 ),
-                "curvature_EAL_spectrum": _certificate_digest(self.eal_spectrum),
+                "curvature_EAL_spectrum": digest_json_object(self.eal_spectrum),
             },
             "conditional_theorem": {
                 "recognition_exact": True,

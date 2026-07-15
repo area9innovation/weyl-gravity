@@ -5,13 +5,23 @@ from __future__ import annotations
 
 import argparse
 from copy import deepcopy
-import hashlib
 import json
 from pathlib import Path
+import sys
 from typing import Mapping
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from covariant_completion.certificate_provenance import (
+    DigestMode,
+    digest_file,
+    load_json_object,
+)
+
+
 CERTIFICATES = ROOT / "covariant_completion" / "certificates"
 GENERATED = ROOT / "covariant_completion" / "generated"
 OUTPUT = CERTIFICATES / "curved_direct_causal_pairing_transport.json"
@@ -29,14 +39,15 @@ INPUTS = {
 
 
 def _load(filename: str) -> dict[str, object]:
-    value = json.loads((CERTIFICATES / filename).read_text(encoding="utf-8"))
-    if not isinstance(value, dict):
-        raise AssertionError(f"{filename} is not a JSON object")
-    return value
+    return load_json_object(CERTIFICATES / filename, root=ROOT)
 
 
 def _sha256(filename: str) -> str:
-    return hashlib.sha256((CERTIFICATES / filename).read_bytes()).hexdigest()
+    return digest_file(
+        CERTIFICATES / filename,
+        mode=DigestMode.RAW_FILE,
+        root=ROOT,
+    )
 
 
 def _require_inputs(inputs: Mapping[str, Mapping[str, object]]) -> None:

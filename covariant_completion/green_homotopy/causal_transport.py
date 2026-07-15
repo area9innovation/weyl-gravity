@@ -20,7 +20,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import hashlib
-import json
 from typing import Mapping
 
 import sympy as sp
@@ -30,17 +29,10 @@ from field_bv_identification.polarized_state import (
     AlgebraicZeroModeTransgression,
 )
 from field_bv_identification.zero_modes import DualEndpointCokernel
+from covariant_completion.certificate_provenance import digest_json_object
 
 
 SCHEMA = "pure-weyl-causal-transport-recognition-v1"
-
-
-def _certificate_digest(certificate: Mapping[str, object]) -> str:
-    return hashlib.sha256(
-        json.dumps(certificate, sort_keys=True, separators=(",", ":")).encode(
-            "utf-8"
-        )
-    ).hexdigest()
 
 
 def _matrix_digest(matrix: sp.MatrixBase) -> str:
@@ -349,15 +341,15 @@ class CausalTransportRecognition:
                 "curved_adjoint_tractor_PBW": "e47bdf54",
             },
             "input_certificate_sha256": {
-                "full_prolonged_causal_homotopy": _certificate_digest(
+                "full_prolonged_causal_homotopy": digest_json_object(
                     self.full_causal_homotopy
                 ),
-                "green_recognition": _certificate_digest(self.green_recognition),
-                "cutoff_recovery": _certificate_digest(self.cutoff_recovery),
-                "residual_no_duplication": _certificate_digest(
+                "green_recognition": digest_json_object(self.green_recognition),
+                "cutoff_recovery": digest_json_object(self.cutoff_recovery),
+                "residual_no_duplication": digest_json_object(
                     self.residual_no_duplication
                 ),
-                "curvature_mapping_cylinder": _certificate_digest(
+                "curvature_mapping_cylinder": digest_json_object(
                     self.curvature_mapping_cylinder
                 ),
             },

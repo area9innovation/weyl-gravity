@@ -34,29 +34,18 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
-import hashlib
-import json
 from typing import Mapping
 
 import sympy as sp
 
+from covariant_completion.certificate_provenance import (
+    digest_json_object,
+    is_sha256,
+)
+
 from covariant_completion.minimal_witness.formal_operators import (
     OperatorPolynomial,
 )
-
-
-def _certificate_digest(certificate: Mapping[str, object]) -> str:
-    return hashlib.sha256(
-        json.dumps(certificate, sort_keys=True, separators=(",", ":")).encode(
-            "utf-8"
-        )
-    ).hexdigest()
-
-
-def _is_sha256(value: object) -> bool:
-    return isinstance(value, str) and len(value) == 64 and all(
-        character in "0123456789abcdef" for character in value
-    )
 
 
 def _endpoint_normal_form(
@@ -332,18 +321,18 @@ class FullProlongedGreenHomotopyAssembly:
         transfer_ready = self._validate_transfer(green_transfer_certificate)
 
         dependencies = {
-            "hybrid_algebraic_projector": _certificate_digest(hybrid_certificate),
-            "metric_endpoint_complex": _certificate_digest(endpoint_certificate),
-            "endpoint_backward_witness": _certificate_digest(
+            "hybrid_algebraic_projector": digest_json_object(hybrid_certificate),
+            "metric_endpoint_complex": digest_json_object(endpoint_certificate),
+            "endpoint_backward_witness": digest_json_object(
                 backward_witness_certificate
             ),
-            "endpoint_green_filtration": _certificate_digest(
+            "endpoint_green_filtration": digest_json_object(
                 filtration_certificate
             ),
-            "curved_trace_Weyl_rows": _certificate_digest(
+            "curved_trace_Weyl_rows": digest_json_object(
                 curved_chain_maps_certificate
             ),
-            "adjoint_tractor_green_transfer": _certificate_digest(
+            "adjoint_tractor_green_transfer": digest_json_object(
                 green_transfer_certificate
             ),
         }
@@ -635,7 +624,7 @@ class FullProlongedGreenHomotopyAssembly:
                     endpoint.get("complete_30_row_endpoint_causal_homotopy")
                     is False,
                     certificate.get("causal_green_homotopy") is False,
-                    _is_sha256(curved_hash),
+                    is_sha256(curved_hash),
                     dependencies.get("curved_bgg") == curved_hash,
                 )
             ):

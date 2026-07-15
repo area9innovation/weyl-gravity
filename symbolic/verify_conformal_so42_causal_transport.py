@@ -17,9 +17,12 @@ if str(ROOT) not in sys.path:
 from covariant_completion.final_transport.equivariant_transport import (
     INPUT_DIGEST_KEYS,
     SO42CausalTransportRecognition,
-    _certificate_digest,
     cutoff_equivariance_defect,
     recognition_certificate_passes,
+)
+from covariant_completion.certificate_provenance import (
+    digest_json_object,
+    load_json_object,
 )
 
 
@@ -29,10 +32,7 @@ OUTPUT = CERT / "curved_SO42_causal_transport_recognition.json"
 
 
 def _load(path: Path) -> dict[str, object]:
-    value = json.loads(path.read_text(encoding="utf-8"))
-    if not isinstance(value, dict):
-        raise AssertionError(f"{path.name} is not a certificate object")
-    return value
+    return load_json_object(path, root=ROOT)
 
 
 def _build(**overrides: dict[str, object]) -> SO42CausalTransportRecognition:
@@ -71,18 +71,18 @@ def main() -> int:
     proof = _build()
     certificate = proof.certificate()
     expected_input_sha256 = {
-        "actual_causal_quasi_isomorphism": _certificate_digest(
+        "actual_causal_quasi_isomorphism": digest_json_object(
             proof.causal_transport
         ),
-        "auxiliary_retract": _certificate_digest(proof.auxiliary_retract),
-        "curvature_mapping_cylinder": _certificate_digest(
+        "auxiliary_retract": digest_json_object(proof.auxiliary_retract),
+        "curvature_mapping_cylinder": digest_json_object(
             proof.curvature_mapping_cylinder
         ),
-        "curvature_causal_pde": _certificate_digest(proof.curvature_causal_pde),
-        "raw_bv_transfer": _certificate_digest(proof.raw_bv_transfer),
-        "cylinder_bgg_blocks": _certificate_digest(proof.bgg_blocks),
-        "cylinder_metric_preimages": _certificate_digest(proof.metric_preimages),
-        "curvature_EAL_spectrum": _certificate_digest(proof.eal_spectrum),
+        "curvature_causal_pde": digest_json_object(proof.curvature_causal_pde),
+        "raw_bv_transfer": digest_json_object(proof.raw_bv_transfer),
+        "cylinder_bgg_blocks": digest_json_object(proof.bgg_blocks),
+        "cylinder_metric_preimages": digest_json_object(proof.metric_preimages),
+        "curvature_EAL_spectrum": digest_json_object(proof.eal_spectrum),
     }
     if args.emit:
         OUTPUT.write_text(
