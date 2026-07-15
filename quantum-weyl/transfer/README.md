@@ -159,13 +159,21 @@ rows use the rational coordinate \(c=c_0(1+u)\) and normalized action density
 The consumer reconstructs `classical_unary_q1`, `classical_binary_q2`, the
 cyclic pairing, and the centered weight-zero `D_action_cl`, then runs the ND2
 arity-two engine.  All identities pass and the Cartan classification is
-`ZERO_SOURCE`.  This certifies an immediately executable `REDUCED-MODE`
-ingestion fixture only; full support-local q2, nonzero-weight D equivariance,
-and physical ND2 execution remain false.  Reproduce it with
+`ZERO_SOURCE`.  The verdict layer then sends that exact zero source through
+the existing boundary solver and retains the admissible primitive
+`iota_D^(2)=0`.  The six-row Koszul--Tate block is acyclic, so the primitive
+introduces no negative physical direction; the two negative directions of
+the unreduced stationary Hessian do not survive as cohomology.  Einstein/extra-
+Weyl radiative coupling is not applicable at this non-Einstein Berger base
+point.  This is an executable `REDUCED-MODE` result only; full support-local
+q2, nonzero-weight D equivariance, and physical ND2 execution remain false.
+Reproduce it with
 
 ```bash
 python3 quantum-weyl/transfer/berger_rational_fixture_q2_d_import_certificate.py --check
 python3 -m unittest quantum-weyl/transfer/tests/test_berger_rational_fixture_q2_d_import.py
+python3 quantum-weyl/transfer/berger_reduced_mode_cartan_certificate.py --check
+python3 -m unittest quantum-weyl/transfer/tests/test_berger_reduced_mode_cartan.py
 ```
 
 The arity-two solve also has a block-sparse exact rail.  Declared additive

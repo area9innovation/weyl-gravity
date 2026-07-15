@@ -89,7 +89,7 @@ schema/             machine-readable result contracts
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
 | F | one-loop Slavnov breaking and QME status | `NOT_COMPUTED` |
 | G | residual quantum transfer and pairing correction | `NOT_COMPUTED` |
-| N | nonlinear classical transfer prerequisite | `HT1_SELECTED_MODEL_COMPUTED`; complete gauge-fixed 54-row unary BV complex and contraction imported, but support-local classical `q2`, local `D` action/equivariance, and admissibility remain absent |
+| N | nonlinear classical transfer prerequisite | `FIRST_REDUCED_MODE_CARTAN_VERDICT`; complete gauge-fixed 54-row unary BV complex and contraction imported, and the centered action-derived six-row `q2/D` block has exact primitive `iota_D^(2)=0`; support-local `q2`, nonzero-weight `D` action/equivariance, and full admissibility remain absent |
 
 The precursor audits
 [`verify_conformal_descent_anomaly.py`](../symbolic/verify_conformal_descent_anomaly.py)

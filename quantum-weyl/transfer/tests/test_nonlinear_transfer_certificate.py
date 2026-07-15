@@ -41,7 +41,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             "BLOCKED_PENDING_QME_RESTORED",
         )
         self.assertIn(
-            "COMPLETE_MINIMAL_CONTRACTION",
+            "COMPLETE_54_ROW_UNARY_CONTRACTION",
             certificate["programme_stages"][1]["status"],
         )
         self.assertIn(
@@ -53,12 +53,9 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             for item in certificate["question_ledger"]
             if item["question_id"] == "D_quotient_interaction_stability"
         )
-        self.assertIn("SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED", d_question["status"])
-        self.assertIn("SCOPED_D_GAUGE_COMPLETE_34_ROW_MINIMAL_CONTRACTION", d_question["status"])
-        self.assertIn("RETAINED_Q1", d_question["status"])
-        self.assertIn("ARITY_ONE_PBW_BACKEND_READY", d_question["status"])
-        self.assertIn("Q2_D_ADMISSIBILITY_INPUT_BLOCKED", d_question["status"])
-        self.assertIn("ND2_ROUTER_AND_ND3_SOLVER_READY", d_question["status"])
+        self.assertIn("FIRST_ACTION_DERIVED_REDUCED_MODE_CARTAN_EXACT_PRIMITIVE", d_question["status"])
+        self.assertIn("D_WEIGHT_ZERO_ONLY", d_question["status"])
+        self.assertIn("FULL_SUPPORT_LOCAL_Q2_D_INPUT_BLOCKED", d_question["status"])
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
         certificate = CERTIFICATE.build_certificate()
@@ -82,6 +79,14 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             "berger_minimal_34_contraction_import_sha256",
             certificate["provenance"],
         )
+        self.assertIn(
+            "berger_gauge_fixed_nonminimal_import_sha256",
+            certificate["provenance"],
+        )
+        self.assertIn(
+            "berger_first_arity_two_cartan_verdict_sha256",
+            certificate["provenance"],
+        )
         self.assertIn("berger_total_D_disposition_sha256", certificate["provenance"])
         self.assertIn("nd3_arity_three_cartan_engine_sha256", certificate["provenance"])
         self.assertTrue(
@@ -102,21 +107,13 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             item["export_id"]
             for item in CERTIFICATE.build_certificate()["input_blockers"]
         }
-        self.assertIn("local_classical_bv_differential_q0", blocked)
+        self.assertNotIn("local_classical_bv_differential_q0", blocked)
         self.assertIn("support_local_classical_bv_q2", blocked)
         self.assertIn("local_D_action_on_bv_generators", blocked)
         self.assertNotIn("classical_projection_pi_cl", blocked)
         self.assertNotIn("classical_inclusion_iota_cl", blocked)
         self.assertNotIn("classical_homotopy_s_cl", blocked)
-        rows = {
-            item["export_id"]: item
-            for item in CERTIFICATE.build_certificate()["input_blockers"]
-        }
-        self.assertEqual(rows["local_classical_bv_differential_q0"]["status"], "INCOMPLETE")
-        self.assertIn(
-            "34-row minimal Berger unary differential",
-            rows["local_classical_bv_differential_q0"]["reason"],
-        )
+        self.assertNotIn("cyclic_pairing", blocked)
 
 
 if __name__ == "__main__":

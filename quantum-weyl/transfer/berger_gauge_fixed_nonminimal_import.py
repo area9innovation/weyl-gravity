@@ -33,6 +33,9 @@ PRODUCER_RELATIVE = "d_quotient_classical/backreacted_clock/berger_gauge_fixed_n
 VERIFIER_RELATIVE = "d_quotient_classical/backreacted_clock/verify_berger_gauge_fixed_nonminimal_completion.py"
 TEST_RELATIVE = "d_quotient_classical/backreacted_clock/tests/test_berger_gauge_fixed_nonminimal_completion.py"
 REPORT_RELATIVE = "d_quotient_classical/reports/berger-gauge-fixed-nonminimal-completion.md"
+UNFIXED_RELATIVE = "d_quotient_classical/certificates/BERGER_NONMINIMAL_ALGEBRAIC_COMPLETION.json"
+MINIMAL_RELATIVE = "d_quotient_classical/certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json"
+RETAINED_RELATIVE = "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json"
 SCHEMA_ID = "quantum-weyl-berger-gauge-fixed-nonminimal-import-v1"
 
 ScalarOperator = dict[tuple[int, ...], sp.Expr]
@@ -106,6 +109,12 @@ def _adjoint_transpose(matrix: OperatorMatrix) -> OperatorMatrix:
     return [[_adjoint(matrix[column][row]) for column in range(len(matrix))] for row in range(len(matrix[0]))]
 
 
+def _embed(target: OperatorMatrix, block: OperatorMatrix, row_offset: int, column_offset: int) -> None:
+    for row, values in enumerate(block):
+        for column, operator in enumerate(values):
+            target[row + row_offset][column + column_offset] = operator
+
+
 def _load_record(name: str, record: object, shape: tuple[int, int]) -> OperatorMatrix:
     if not isinstance(record, dict) or set(record) != {"shape", "entries", "sha256"}:
         raise ValueError(f"{name} record fields drifted")
@@ -116,14 +125,35 @@ def _load_record(name: str, record: object, shape: tuple[int, int]) -> OperatorM
         raise ValueError(f"{name} record hash mismatch")
     output = _zero(*shape)
     seen: set[tuple[int, int]] = set()
-    for item in record["entries"]:
+    entries = record["entries"]
+    if not isinstance(entries, list):
+        raise ValueError(f"{name} entries are not a list")
+    for item in entries:
         if not isinstance(item, list) or len(item) != 3:
             raise ValueError(f"{name} malformed entry")
         row, column, terms = item
-        if not 0 <= row < shape[0] or not 0 <= column < shape[1] or (row, column) in seen:
+        if (
+            type(row) is not int
+            or type(column) is not int
+            or not 0 <= row < shape[0]
+            or not 0 <= column < shape[1]
+            or (row, column) in seen
+            or not isinstance(terms, list)
+            or not terms
+        ):
             raise ValueError(f"{name} duplicate or out-of-range entry")
         operator: ScalarOperator = {}
-        for exponents, coefficient in terms:
+        for term in terms:
+            if not isinstance(term, list) or len(term) != 2:
+                raise ValueError(f"{name} malformed PBW term")
+            exponents, coefficient = term
+            if (
+                not isinstance(exponents, list)
+                or len(exponents) != 4
+                or any(type(count) is not int or count < 0 for count in exponents)
+                or not isinstance(coefficient, str)
+            ):
+                raise ValueError(f"{name} malformed PBW monomial")
             word = tuple(axis for axis, count in enumerate(exponents) for _ in range(count))
             if word in operator:
                 raise ValueError(f"{name} repeats a PBW monomial")
@@ -138,10 +168,44 @@ def _is_zero(matrix: OperatorMatrix) -> bool:
 
 
 def validate_import(payload: dict[str, Any], schema: dict[str, Any]) -> dict[str, object]:
-    if schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema" or schema.get("additionalProperties") is not False:
+    if (
+        schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema"
+        or schema.get("$id")
+        != "https://area9.dk/schemas/pure-weyl-berger-gauge-fixed-nonminimal-completion-v1.schema.json"
+        or schema.get("additionalProperties") is not False
+    ):
         raise ValueError("classical gauge-fixed schema identity or strictness drifted")
-    if payload.get("result_id") != "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION" or payload.get("claim_status") != "CERTIFIED_COMPLETE_GAUGE_FIXED_UNARY_CONTRACTION":
+    if set(payload) != {
+        "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+        "dependency_refs", "operator_semantics", "row_layout", "gauge_fermion",
+        "classical_unary_q1", "contraction", "exact_checks", "flags",
+        "quantum_handoff", "next_gate", "claim_boundary",
+    }:
+        raise ValueError("classical gauge-fixed payload fields drifted")
+    if (
+        payload.get("schema")
+        != "pure-weyl-berger-gauge-fixed-nonminimal-completion-v1"
+        or payload.get("result_id") != "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION"
+        or payload.get("claim_status")
+        != "CERTIFIED_COMPLETE_GAUGE_FIXED_UNARY_CONTRACTION"
+        or payload.get("dependency_tags") != ["LOCAL-ALGEBRAIC"]
+    ):
         raise ValueError("classical gauge-fixed result identity drifted")
+    refs = payload["dependency_refs"]
+    if not isinstance(refs, dict) or set(refs) != {"minimal_34", "unfixed_nonminimal"}:
+        raise ValueError("classical gauge-fixed dependency inventory drifted")
+    for name, relative, result_id in (
+        ("minimal_34", MINIMAL_RELATIVE, "BERGER_MINIMAL_34_PORTABLE_CONTRACTION"),
+        ("unfixed_nonminimal", UNFIXED_RELATIVE, "BERGER_NONMINIMAL_ALGEBRAIC_COMPLETION"),
+    ):
+        reference = refs[name]
+        if (
+            not isinstance(reference, dict)
+            or set(reference) != {"result_id", "sha256"}
+            or reference["result_id"] != result_id
+            or reference["sha256"] != hashlib.sha256(_git_blob(relative)).hexdigest()
+        ):
+            raise ValueError(f"classical gauge-fixed dependency drifted: {name}")
     semantics = payload["operator_semantics"]
     if semantics["portable_name"] != "classical_unary_q1" or semantics["not_quantum_loop_operator"] is not True:
         raise ValueError("classical unary operator was conflated with quantum Q1")
@@ -176,6 +240,20 @@ def validate_import(payload: dict[str, Any], schema: dict[str, Any]) -> dict[str
     homotopy = _load_record("S_cl", contraction["S_cl"], (54, 54))
     if not _is_zero(_multiply(q1, q1)):
         raise ValueError("imported classical_unary_q1 is not nilpotent")
+    if not _is_zero(_matrix_add(_multiply(_adjoint_transpose(q1), omega), _multiply(omega, q1))):
+        raise ValueError("imported classical_unary_q1 is not cyclic")
+    retained = _git_json(RETAINED_RELATIVE)
+    gauge = _load_record("retained K_spatial", retained["q1_blocks"]["K_spatial"], (10, 3))
+    hessian = _load_record("retained H", retained["q1_blocks"]["H_retained"], (10, 10))
+    noether = _load_record("retained minus_K_sharp", retained["q1_blocks"]["minus_K_spatial_sharp"], (3, 10))
+    q_retained = _zero(26, 26)
+    _embed(q_retained, gauge, 3, 0)
+    _embed(q_retained, hessian, 13, 3)
+    _embed(q_retained, noether, 23, 13)
+    if not _is_zero(_subtract(_multiply(q1, iota), _multiply(iota, q_retained))):
+        raise ValueError("imported iota_cl is not a chain map")
+    if not _is_zero(_subtract(_multiply(projection, q1), _multiply(q_retained, projection))):
+        raise ValueError("imported pi_cl is not a chain map")
     if not _is_zero(_subtract(_multiply(projection, iota), _identity(26))):
         raise ValueError("imported pi_cl iota_cl identity failed")
     boundary = _matrix_add(_multiply(q1, homotopy), _multiply(homotopy, q1))
@@ -183,6 +261,8 @@ def validate_import(payload: dict[str, Any], schema: dict[str, Any]) -> dict[str
         raise ValueError("imported contraction identity failed")
     if not _is_zero(_multiply(homotopy, homotopy)) or not _is_zero(_multiply(projection, homotopy)) or not _is_zero(_multiply(homotopy, iota)):
         raise ValueError("imported contraction side condition failed")
+    if not _is_zero(_matrix_add(_multiply(_adjoint_transpose(homotopy), omega), _multiply(omega, homotopy))):
+        raise ValueError("imported S_cl is not cyclic")
 
     return {
         "q1_sha256": payload["classical_unary_q1"]["matrix"]["sha256"],
@@ -191,6 +271,7 @@ def validate_import(payload: dict[str, Any], schema: dict[str, Any]) -> dict[str
         "S_sha256": contraction["S_cl"]["sha256"],
         "pairing_sha256": contraction["cyclic_pairing"]["sha256"],
         "maximum_differential_order": contraction["maximum_differential_order"],
+        "retained_q1_sha256": hashlib.sha256(_git_blob(RETAINED_RELATIVE)).hexdigest(),
     }
 
 
@@ -217,10 +298,10 @@ def _build_cached() -> dict[str, Any]:
         "classical_result": {"result_id": payload["result_id"], "claim_status": payload["claim_status"], "commit": CLASSICAL_COMMIT, "certificate_sha256": sources["classical_certificate"]["sha256"]},
         "coverage": {"total_rows": 54, "minimal_rows": 34, "nonminimal_rows": 20, "retained_rows": 26, "gauge_fixed_classical_unary_complete": True, "support_local_contraction_complete": True, "cyclic_pairing_complete": True},
         "map_hashes": summary,
-        "independent_checks": {"strict_classical_schema": True, "all_54_rows_typed": True, "PBW_record_hashes": True, "canonical_shear_nilpotent_and_invertible": True, "canonical_shear_pairing_preserving": True, "classical_unary_q1_squared_zero": True, "pi_cl_iota_cl_identity": True, "all_row_contraction_identity": True, "contraction_side_conditions": True},
+        "independent_checks": {"strict_classical_schema": True, "classical_dependency_hashes": True, "all_54_rows_typed": True, "PBW_record_hashes": True, "canonical_shear_nilpotent_and_invertible": True, "canonical_shear_pairing_preserving": True, "classical_unary_q1_squared_zero": True, "classical_unary_q1_cyclic": True, "iota_cl_chain_map": True, "pi_cl_chain_map": True, "pi_cl_iota_cl_identity": True, "all_row_contraction_identity": True, "contraction_side_conditions": True, "homotopy_cyclic": True, "retained_complex_cohomology_preserved_by_SDR": True},
         "classical_freeze_gate": {"status": "FAIL_CLOSED", "reason": "complete unary/nonminimal prerequisite imported; support-local q2 and local D action/equivariance are still absent"},
         "nd2_gate": {"unary_nonminimal_prerequisite_satisfied": True, "support_local_classical_binary_q2": "NOT_AVAILABLE", "local_D_action_and_equivariance": "NOT_AVAILABLE", "general_nonlinear_Koszul_Tate": "NOT_AVAILABLE", "causal_green_hadamard": "NOT_AVAILABLE", "physical_execution_authorized": False, "next_gate": "IMPORT_SUPPORT_LOCAL_Q2_AND_D_ACTION"},
-        "provenance": {"classical_sources": sources, "classical_sources_sha256": _canonical_hash(sources)},
+        "provenance": {"classical_sources": {**sources, "retained_q1_dependency": _artifact(RETAINED_RELATIVE)}, "classical_sources_sha256": _canonical_hash({**sources, "retained_q1_dependency": _artifact(RETAINED_RELATIVE)})},
         "claim_boundary": "The complete gauge-fixed 54-row classical_unary_q1, cyclic pairing, and support-local contraction are independently imported. This is classical unary evidence, not hbar Q1. No nonlinear q2, local D-equivariance, nonlinear Koszul-Tate, causal/Hadamard, ND2 physical, or quantum claim is authorized.",
     }
 

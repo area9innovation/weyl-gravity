@@ -117,6 +117,42 @@ def _zero_tensor(rank: int) -> list[list[list[Fraction]]]:
     return [[[Fraction() for _ in range(rank)] for _ in range(rank)] for _ in range(rank)]
 
 
+def assemble_cartan_data() -> ArityTwoCartanData:
+    """Return the fully validated exact Cartan input behind the import receipt."""
+
+    # Keep the public solver input behind the same fail-closed import checks;
+    # downstream verdicts must not reconstruct a competing classical payload.
+    build_import()
+    payload = _git_json(CERTIFICATE_RELATIVE)
+    rows = payload["row_layout"]
+    degrees = tuple(row["degree"] for row in rows)
+    parities = tuple(row["parity"] for row in rows)
+    q1 = LinearOperator.from_rows(
+        "classical_unary_q1",
+        1,
+        _matrix(payload["classical_unary_q1"]["matrix"], 6),
+    )
+    lie_d = LinearOperator.from_rows(
+        "D_action_cl",
+        0,
+        _matrix(payload["D_action_cl"]["matrix"], 6),
+    )
+    complex_ = ArityTwoComplex(degrees, parities, q1)
+    tensor = _zero_tensor(6)
+    for entry in payload["classical_binary_q2"]["entries"]:
+        output, left, right = entry["output"], entry["left"], entry["right"]
+        coefficient = _fraction(entry["coefficient"])
+        tensor[output][left][right] = coefficient
+        tensor[output][right][left] = coefficient
+    return ArityTwoCartanData(
+        complex=complex_,
+        q2=BilinearOperator.from_entries("classical_binary_q2", 1, tensor),
+        iota_D=LinearOperator.zero("iota_D_centered", -1, 6),
+        lie_D=lie_d,
+        lie_D2=BilinearOperator.zero("D_action_cl_arity_two", 0, 6),
+    )
+
+
 def build_import() -> dict[str, Any]:
     payload = _git_json(CERTIFICATE_RELATIVE)
     schema = _git_json(SCHEMA_RELATIVE)

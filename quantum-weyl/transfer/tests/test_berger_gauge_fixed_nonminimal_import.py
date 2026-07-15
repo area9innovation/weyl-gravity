@@ -42,6 +42,17 @@ class BergerGaugeFixedNonminimalImportTests(unittest.TestCase):
         self.assertEqual(gate["local_D_action_and_equivariance"], "NOT_AVAILABLE")
         self.assertEqual(gate["next_gate"], "IMPORT_SUPPORT_LOCAL_Q2_AND_D_ACTION")
 
+    def test_chain_cyclic_and_sdr_checks_are_explicit(self) -> None:
+        checks = CERT.build_certificate()["independent_checks"]
+        for check in (
+            "classical_unary_q1_cyclic",
+            "iota_cl_chain_map",
+            "pi_cl_chain_map",
+            "homotopy_cyclic",
+            "retained_complex_cohomology_preserved_by_SDR",
+        ):
+            self.assertTrue(checks[check])
+
     def test_tampered_map_and_promotion_are_rejected(self) -> None:
         forged = deepcopy(self.payload)
         forged["classical_unary_q1"]["matrix"]["entries"][0][2][0][1] = "2"
@@ -50,6 +61,10 @@ class BergerGaugeFixedNonminimalImportTests(unittest.TestCase):
         forged = deepcopy(self.payload)
         forged["flags"]["CLASSICAL_SUPPORT_LOCAL_Q2"] = True
         with self.assertRaisesRegex(ValueError, "boundary was crossed"):
+            IMPORT.validate_import(forged, self.schema)
+        forged = deepcopy(self.payload)
+        forged["dependency_refs"]["minimal_34"]["sha256"] = "0" * 64
+        with self.assertRaisesRegex(ValueError, "dependency drifted"):
             IMPORT.validate_import(forged, self.schema)
 
 

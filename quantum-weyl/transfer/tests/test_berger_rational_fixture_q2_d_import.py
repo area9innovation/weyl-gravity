@@ -29,6 +29,17 @@ class BergerRationalFixtureQ2DImportTests(unittest.TestCase):
         self.assertEqual(payload["nd2_classification"]["status"], "ZERO_SOURCE")
         self.assertEqual(payload["imported_block"]["coefficient_domain"], "Q")
 
+    def test_validated_input_exposes_exact_zero_primitive(self) -> None:
+        importer = sys.modules[CERTIFICATE.build_import.__module__]
+        data = importer.assemble_cartan_data()
+        classification = data.classify()
+        primitive = data.complex.solve_boundary(
+            classification.source.scaled(-1, name="minus_A_D_2")
+        )
+        self.assertEqual(classification.status, "ZERO_SOURCE")
+        self.assertIsNotNone(primitive)
+        self.assertTrue(primitive.is_zero())
+
     def test_scope_remains_reduced_mode(self) -> None:
         authorization = CERTIFICATE.build_certificate()["authorization"]
         self.assertTrue(authorization["reduced_mode_solver_input"])

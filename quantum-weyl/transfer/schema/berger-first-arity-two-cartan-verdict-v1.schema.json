@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-first-arity-two-cartan-verdict-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "scientific_input", "adapter", "cartan_equation", "field_and_weight_content", "physical_interpretation", "claim_flags", "reduced_mode_limitation", "next_gate", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-first-arity-two-cartan-verdict-v1"},
+    "result_id": {"const": "BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT"},
+    "result_state": {"const": "INTERACTING_CARTAN_EXISTS_ON_CENTERED_REDUCED_MODE_BLOCK"},
+    "lifecycle_layer": {"const": "INTERACTING"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "setting_id": {"const": "compact_positive_berger_clock_rational_fixture_stationary_homogeneous"},
+    "scientific_input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "result_id", "classical_commit", "certificate_sha256", "synthetic_fixture_used_for_verdict"],
+      "properties": {
+        "status": {"const": "IMPORTED_EXACT_ACTION_DERIVED_BLOCK"},
+        "result_id": {"const": "ND2_REDUCED_MODE_FIXTURE_IMPORT"},
+        "classical_commit": {"$ref": "#/$defs/commit"},
+        "certificate_sha256": {"$ref": "#/$defs/hash"},
+        "synthetic_fixture_used_for_verdict": {"const": false}
+      }
+    },
+    "adapter": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "source_coefficient_ring", "solver_coefficient_ring", "basis_change", "rational_q1", "rational_q1_sha256", "q1_rank", "q2_independent_nonzero_count", "rational_q2", "general_PBW_engine_extended"],
+      "properties": {
+        "scope": {"type": "string", "minLength": 1},
+        "source_coefficient_ring": {"const": "Q"},
+        "solver_coefficient_ring": {"const": "Q"},
+        "basis_change": {"const": "IDENTITY_AFTER_CLASSICAL_RATIONAL_COORDINATE_u"},
+        "rational_q1": {"$ref": "#/$defs/matrix6"},
+        "rational_q1_sha256": {"$ref": "#/$defs/hash"},
+        "q1_rank": {"const": 3},
+        "q2_independent_nonzero_count": {"const": 18},
+        "rational_q2": {"$ref": "#/$defs/sparse"},
+        "general_PBW_engine_extended": {"const": false}
+      }
+    },
+    "cartan_equation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_definition", "equation", "iota_D", "L_D", "L_D_2", "engine_classification", "source", "binary_verdict", "primitive", "obstruction_witness", "exact_checks"],
+      "properties": {
+        "source_definition": {"const": "A_D^(2)=[q2,iota_D]-L_D^(2)"},
+        "equation": {"const": "[q1,iota_D^(2)]=-A_D^(2)"},
+        "iota_D": {"type": "string", "minLength": 1},
+        "L_D": {"type": "string", "minLength": 1},
+        "L_D_2": {"type": "string", "minLength": 1},
+        "engine_classification": {"const": "ZERO_SOURCE"},
+        "source": {"allOf": [{"$ref": "#/$defs/sparse"}, {"type": "object", "properties": {"degree": {"const": 0}, "nonzero_entries": {"type": "array", "maxItems": 0}}}]},
+        "binary_verdict": {"const": "ADMISSIBLE_EXACT_PRIMITIVE"},
+        "primitive": {
+          "allOf": [
+            {"$ref": "#/$defs/sparse"},
+            {
+              "type": "object",
+              "required": ["operator", "D_weight", "field_support", "admissibility"],
+              "properties": {
+                "degree": {"const": -1},
+                "nonzero_entries": {"type": "array", "maxItems": 0},
+                "operator": {"const": "iota_D^(2)=0"},
+                "D_weight": {"const": 0},
+                "field_support": {"const": []},
+                "admissibility": {"const": "AUTOMATIC_ZERO_IN_EVERY_HOMOGENEOUS_LINEAR_ADMISSIBILITY_SUBSPACE"}
+              }
+            }
+          ]
+        },
+        "obstruction_witness": {"type": "null"},
+        "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}}
+      }
+    },
+    "field_and_weight_content": {
+      "type": "object", "additionalProperties": false,
+      "required": ["D_weight", "fields", "equations", "all_row_weights", "q2_mixes_metric_lapse_clock"],
+      "properties": {
+        "D_weight": {"const": 0},
+        "fields": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "equations": {"const": ["E_u", "E_N", "E_rho"]},
+        "all_row_weights": {"const": [0, 0, 0, 0, 0, 0]},
+        "q2_mixes_metric_lapse_clock": {"const": true}
+      }
+    },
+    "physical_interpretation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["degree_zero_cohomology_dimension", "degree_one_cohomology_dimension", "unreduced_stationary_hessian_inertia", "introduces_negative_physical_direction", "negative_direction_reason", "einstein_extra_weyl_coupling"],
+      "properties": {
+        "degree_zero_cohomology_dimension": {"const": 0},
+        "degree_one_cohomology_dimension": {"const": 0},
+        "unreduced_stationary_hessian_inertia": {"const": {"positive": 1, "negative": 2, "zero": 0}},
+        "introduces_negative_physical_direction": {"const": false},
+        "negative_direction_reason": {"type": "string", "minLength": 1},
+        "einstein_extra_weyl_coupling": {
+          "type": "object", "additionalProperties": false,
+          "required": ["status", "coupling_established", "reason"],
+          "properties": {
+            "status": {"const": "NOT_APPLICABLE_AT_NON_EINSTEIN_BERGER_BASE_POINT"},
+            "coupling_established": {"const": false},
+            "reason": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_REDUCED_MODE_ARITY_TWO_CARTAN_EXISTS", "BERGER_SUPPORT_LOCAL_ARITY_TWO_CARTAN_EXISTS", "NONZERO_WEIGHT_D_OBSTRUCTION_TESTED", "EINSTEIN_EXTRA_WEYL_BRANCH_COUPLING_CLASSIFIED", "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED", "ND2_FULL_PHYSICAL_EXECUTION_AUTHORIZED", "QME_RESTORED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "BERGER_REDUCED_MODE_ARITY_TWO_CARTAN_EXISTS": {"const": true},
+        "BERGER_SUPPORT_LOCAL_ARITY_TWO_CARTAN_EXISTS": {"const": false},
+        "NONZERO_WEIGHT_D_OBSTRUCTION_TESTED": {"const": false},
+        "EINSTEIN_EXTRA_WEYL_BRANCH_COUPLING_CLASSIFIED": {"const": false},
+        "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED": {"const": false},
+        "ND2_FULL_PHYSICAL_EXECUTION_AUTHORIZED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "reduced_mode_limitation": {"type": "string", "minLength": 100},
+    "next_gate": {"const": "IMPORT_A_NONZERO_D_WEIGHT_OR_SUPPORT_LOCAL_Q2_BLOCK_AND_REPEAT_THE_EXACT_CARTAN_CLASSIFICATION"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["classical_sources", "classical_sources_sha256", "reduced_mode_quantum_import", "unary_quantum_import", "einstein_incidence", "source_manifest", "source_manifest_sha256", "schema"],
+      "properties": {
+        "classical_sources": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/gitArtifact"}},
+        "classical_sources_sha256": {"$ref": "#/$defs/hash"},
+        "reduced_mode_quantum_import": {"$ref": "#/$defs/artifact"},
+        "unary_quantum_import": {"$ref": "#/$defs/artifact"},
+        "einstein_incidence": {"$ref": "#/$defs/gitArtifact"},
+        "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/berger-first-arity-two-cartan-verdict-v1.schema.json"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "rational": {"type": "string", "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"},
+    "matrix6": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/rational"}}},
+    "entry": {"type": "array", "minItems": 4, "maxItems": 4, "prefixItems": [{"type": "integer", "minimum": 0, "maximum": 5}, {"type": "integer", "minimum": 0, "maximum": 5}, {"type": "integer", "minimum": 0, "maximum": 5}, {"$ref": "#/$defs/rational"}], "items": false},
+    "sparse": {
+      "type": "object",
+      "required": ["degree", "coordinate_convention", "coordinate_count", "coordinate_sha256", "nonzero_entries"],
+      "properties": {
+        "degree": {"type": "integer"},
+        "coordinate_convention": {"const": "graded-symmetric i<=j; odd diagonal omitted"},
+        "coordinate_count": {"type": "integer", "minimum": 0},
+        "coordinate_sha256": {"$ref": "#/$defs/hash"},
+        "nonzero_entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}
+      }
+    },
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "gitArtifact": {"type": "object", "additionalProperties": false, "required": ["commit", "path", "sha256"], "properties": {"commit": {"$ref": "#/$defs/commit"}, "path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}
