@@ -77,7 +77,7 @@ schema/             machine-readable result contracts
 | Gate | Deliverable | Bootstrap status |
 |---|---|---|
 | A | `CLASSICAL_IMPORT_CERTIFICATE` | `FAIL_CLOSED`; artifact integrity verified, but 15 of 18 export categories remain incomplete or unavailable |
-| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; generated dimension-four catalogues, universal Diff towers, explicit type-D primitives, and the Euler variational transgression, but no complete intrinsic `omega E4` descent, antifield completion, or BRST-cohomology quotient |
+| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; generated dimension-four catalogues, universal Diff towers, explicit type-D primitives, Euler variational transgression, and an exact mapping-cone engine, but no complete intrinsic `omega E4` descent, antifield completion, or production BRST-cohomology quotient |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `IN_PROGRESS` import/projection infrastructure only |
 | D | reduced and Euclidean coefficient ledgers | `IN_PROGRESS` bookkeeping only; no BV coefficient claimed |
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
@@ -136,6 +136,9 @@ or quantum-master-equation result.
   records the exact horizontal-form algebra, generated four-step universal
   Diff towers, explicit type-D primitives, the Euler variational current,
   and the still-open intrinsic type-A and antifield boundaries.
+- [`reports/relative-cohomology-engine.md`](reports/relative-cohomology-engine.md)
+  records the exact sparse totalization, quotient proof fields, passing
+  fixture, and the uncomputed production-basis boundary.
 - [`reports/branch-c-spectral-bootstrap.md`](reports/branch-c-spectral-bootstrap.md)
   records the reduced `E/A/L` character, residues, and determinant boundary.
 - [`reports/bootstrap-integration.md`](reports/bootstrap-integration.md)

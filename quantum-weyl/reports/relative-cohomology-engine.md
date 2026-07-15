@@ -1,0 +1,57 @@
+# Exact relative-cohomology engine receipt
+
+Date: 2026-07-15
+
+Dependency tag: `LOCAL-ALGEBRAIC`
+
+Result state: `ENGINE_VERIFIED_PRODUCTION_BASES_PENDING`
+
+## Outcome
+
+The local algebra now contains an exact sparse bicomplex and mapping-cone
+engine.  A finite input supplies labelled spaces `V^p_g` and row-by-column
+matrices for
+
+```text
+Q:   V^p_g -> V^p_(g+1)
+d_h: V^p_g -> V^(p+1)_g.
+```
+
+The coordinate convention is `Q d_h = d_h Q`.  Totalization inserts the
+grading sign
+
+```text
+D = Q + (-1)^ghost_number d_h,
+```
+
+and independently verifies `D^2=0`.  At a requested total degree the engine
+computes, with exact rational arithmetic:
+
+- the total ansatz basis and reproducible hash;
+- the cocycle matrix rank and kernel basis;
+- the coboundary matrix rank;
+- the quotient dimension;
+- deterministic representative coordinates; and
+- a proof hash binding the adjacent differentials and representatives.
+
+The certification fixture is a commuting square plus one isolated class.  It
+has total-degree-one ansatz dimension three, cocycle dimension two,
+coboundary rank one, and quotient dimension one.  A deliberately
+noncommuting square fails closed.
+
+## Claim boundary
+
+The receipt
+`quantum-weyl/local_bv/certificates/RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE.json`
+certifies the linear-algebra engine, not a pure-Weyl cohomology result.  Still
+`NOT_COMPUTED` are the production derivative-bounded bases, production `Q`
+and `d_h` matrices, the dimensions of `H^{0,4}(s|d)` and `H^{1,4}(s|d)`, and
+the antifield-dependent quotient.  `NONTRIVIAL` will be emitted only after a
+candidate survives the complete production coboundary space.
+
+## Next input
+
+Generate the finite canonical bases at fixed ghost number, form degree,
+derivative bound, and antifield number.  The antifield-independent curvature
+and ghost sectors can be connected first; the Koszul--Tate blocks attach only
+after a classical export passes the antifield preflight.

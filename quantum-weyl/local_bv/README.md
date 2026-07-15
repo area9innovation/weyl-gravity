@@ -210,6 +210,10 @@ The explicit type-D primitives are in
 [`certificates/TRIVIALITY_CERTIFICATE.json`](certificates/TRIVIALITY_CERTIFICATE.json),
 and the derived Levi-Civita/Chern--Weil Euler current is in
 [`certificates/EULER_TRANSGRESSION_CERTIFICATE.json`](certificates/EULER_TRANSGRESSION_CERTIFICATE.json).
+The exact sparse totalization and quotient engine is certified by
+[`certificates/RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE.json`](certificates/RELATIVE_COHOMOLOGY_ENGINE_CERTIFICATE.json);
+its fixture passes, while the production `H^{0,4}` and `H^{1,4}` bases and
+matrices remain uncomputed.
 
 Next admissible local steps are the continuation of the intrinsic type-A
 descent from `omega E4` and the unrestricted higher-derivative
