@@ -38,6 +38,10 @@ of cylinder boundary problem.
   signature `(2,0)` and is normalized to `I2` in the stated basis.
 - The classical BV complex is distinguished from its polarized completed
   free/linearized Fock representation.
+- Authorship now follows the programme convention: GPT-5.6.sol is the sole
+  technical/model author; Asger Alstrup Palm commissioned and directed the
+  work and is identified as non-technical orchestrator and corresponding
+  human contact.
 - The unrelated quantum local-invariant research log is reduced to a short
   outlook paragraph.
 - The conclusion is shortened to the theorem, its interpretation, and its
@@ -61,18 +65,15 @@ cosmetic split that silently breaks cross-references or certificate scope.
 
 1. Extract and independently build Papers A and B and the supplement; the
    roadmap alone is not the requested final split.
-2. Replace anonymous-review authorship with final author names,
-   affiliations, contribution statements, and responsibility for the
-   computer-assisted proofs.
-3. Freeze a public repository release and archival identifier containing all
+2. Freeze a public repository release and archival identifier containing all
    generated inputs, manifests, certificates, and minimal checkers.
-4. Obtain independent reviews from conformal/BGG geometry, BV--BFV,
+3. Obtain independent reviews from conformal/BGG geometry, BV--BFV,
    Lorentzian PDE, and BRST representation theory.  Repository hashes and
    internal mutation tests are not substitutes for those reviews.
-5. Independently rederive the large one-particle absolute ranks and the
+4. Independently rederive the large one-particle absolute ranks and the
    central covariant all-row identities.  The new rank-53 checker addresses
    only the smallest two-particle calculation.
-6. Decide and state the target journal's policy for computer-assisted proofs,
+5. Decide and state the target journal's policy for computer-assisted proofs,
    artifact review, anonymous code, and supplementary data.
 
 ## Evidence commands
