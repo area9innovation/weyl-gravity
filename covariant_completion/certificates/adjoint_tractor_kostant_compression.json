@@ -1,0 +1,76 @@
+{
+  "claim": "The standard adjoint-tractor Kostant rows compress exactly and cyclically from 15/60/60/15 to 4/9/9/4.  This establishes the pointwise BGG carrier but does not yet identify its differential detour operator with the curved metric endpoint.",
+  "construction": {
+    "adjoint_grading_dimensions": [
+      4,
+      7,
+      4
+    ],
+    "ambient_algebra": "so(4,2)",
+    "compressed_endpoint_row_ranks": [
+      4,
+      9,
+      9,
+      4
+    ],
+    "homology_dimensions": [
+      4,
+      9
+    ],
+    "homology_one_carrier": "V^* tensor g_-1 symmetric-tracefree kernel",
+    "kostant_differential_ranks": [
+      11,
+      40
+    ],
+    "parent_detour_row_ranks": [
+      15,
+      60,
+      60,
+      15
+    ],
+    "tractor_signature": [
+      4,
+      2
+    ]
+  },
+  "dependency_tag": "LOCAL-ALGEBRAIC",
+  "exact_identities": {
+    "cyclic_projector_defects": 0,
+    "d1_h0_plus_i0_p0": "I_15",
+    "d2_h1_plus_h0_d1_plus_i1_p1": "I_60",
+    "dual_rows_forced_by_pairing": true,
+    "field_equation_pairing_pullback": "J_endpoint",
+    "ghost_identity_pairing_pullback": "Y_endpoint",
+    "kostant_square_zero": true,
+    "p0_i0": "I_4",
+    "p1_i1": "I_9"
+  },
+  "fail_closed_guards": {
+    "manual_certificate_promotion_detected": true,
+    "tampered_cyclic_dual_rejected": true,
+    "tampered_kostant_matrix_rejected": true,
+    "unproved_Bach_promotion_absent": true,
+    "unproved_Green_transfer_absent": true
+  },
+  "payload_sha256": "6959cb31fad909b88d92a55689e06d9740f715cf9296fea032f8f387ed768f26",
+  "result": "PASS",
+  "schema_version": 1,
+  "support": {
+    "contains_green_operator": false,
+    "contains_helicity_or_TT_projector": false,
+    "contains_inverse_curl": false,
+    "contains_inverse_laplacian": false,
+    "pointwise_kostant_maps_support_local": true
+  },
+  "theorem_boundary": {
+    "conditional_transfer_statement": "If finite-order differential BGG inclusion/projection maps intertwining the parent detour operator are certified, then p Lambda_pm i is causal because differential pre/postcomposition does not enlarge support.  The present pointwise SDR alone is not such an intertwiner.",
+    "cyclic_algebraic_compression_exact": true,
+    "differential_BGG_splitting_operators_constructed": false,
+    "endpoint_Bach_operator_match": false,
+    "endpoint_green_homotopy": false,
+    "parent_YM_detour_to_endpoint_intertwiner_coefficientwise": false,
+    "parent_green_homotopy_support_local_transfer_certified": false,
+    "pointwise_kostant_sdr_exact": true
+  },
+  "verification_rail": "exact_rational_content_addressed"
+}
