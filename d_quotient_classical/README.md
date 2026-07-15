@@ -26,6 +26,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`reports/classical-d-quotient-status.md`](reports/classical-d-quotient-status.md)
 - Dependency-free verifier:
   [`verify_classical_status.py`](verify_classical_status.py)
+- Scalar-clock obstruction certificate:
+  [`certificates/SCALAR_CLOCK_VERTICAL_SLICE.json`](certificates/SCALAR_CLOCK_VERTICAL_SLICE.json)
+- Scalar-clock report:
+  [`reports/scalar-clock-vertical-slice.md`](reports/scalar-clock-vertical-slice.md)
 
 The only scientific verdicts are:
 
@@ -48,13 +52,15 @@ python3 d_quotient_classical/verify_classical_status.py --guards
 python3 symbolic/verify_compact_cylinder_d_charge_audit.py --check
 python3 -m unittest bridge.taub_moment_map.tests.test_compact_d_charge
 python3 symbolic/verify_conformal_d_global_alternatives.py --check-result
+python3 d_quotient_classical/scalar_clock/conformal_scalar_clock.py --check --guards
+python3 -m unittest d_quotient_classical.scalar_clock.tests.test_conformal_scalar_clock
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
-complex inventories, verdict prerequisites, and six mutation guards.  It
-does not rerun the mathematical producers.  The next three commands are the
-scoped producer checks for the compact charge and alternative residual
-complexes.
+complex inventories, verdict prerequisites, and mutation guards. It does not
+rerun the mathematical producers. The remaining commands are the scoped
+producer checks for the compact charge, alternative residual complexes, and
+the one-real-scalar exact-cylinder clock obstruction.
 
 ## Promotion rule
 

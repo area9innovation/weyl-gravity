@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-scalar-clock-vertical-slice-v1.schema.json",
+  "title": "Single conformal-scalar clock vertical-slice certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "generator_id",
+    "phase_space_id",
+    "claim_status",
+    "scientific_verdict",
+    "dependency_tags",
+    "conventions",
+    "homogeneous_clock",
+    "gauge_incidence",
+    "improved_charge",
+    "coupled_background_test",
+    "local_relational_fixture",
+    "gate_result",
+    "flags",
+    "not_established",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-scalar-clock-vertical-slice-v1"},
+    "result_id": {"const": "SCALAR_CLOCK_VERTICAL_SLICE"},
+    "setting_id": {"const": "compact_scalar_clock"},
+    "generator_id": {"const": "D_compact"},
+    "phase_space_id": {"const": "compact_scalar_clock"},
+    "claim_status": {"const": "CERTIFIED_OBSTRUCTION"},
+    "scientific_verdict": {"type": "null"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "conventions": {"type": "object"},
+    "homogeneous_clock": {
+      "type": "object",
+      "required": [
+        "equation",
+        "general_solution",
+        "conserved_radius_squared",
+        "nontrivial_global_monotone_solution_exists",
+        "local_chart_condition",
+        "local_clock_range",
+        "turning_points",
+        "maximum_monotone_interval_length",
+        "multiple_crossing_guard"
+      ],
+      "properties": {
+        "nontrivial_global_monotone_solution_exists": {"const": false}
+      }
+    },
+    "gauge_incidence": {
+      "type": "object",
+      "required": [
+        "raw_scalar_variation",
+        "raw_incidence_row",
+        "raw_incidence_generic_rank",
+        "raw_stabilizer",
+        "raw_T_slice_transverse_to_time_diff_and_weyl",
+        "invariant_clock_variation",
+        "invariant_clock_fixes_time_diff_locally",
+        "independent_weyl_gauge_still_required"
+      ],
+      "properties": {
+        "raw_T_slice_transverse_to_time_diff_and_weyl": {"const": false},
+        "invariant_clock_fixes_time_diff_locally": {"const": true}
+      }
+    },
+    "improved_charge": {
+      "type": "object",
+      "required": [
+        "symplectic_form",
+        "D_vector_field",
+        "hamiltonian",
+        "reference_normalization",
+        "radial_variation",
+        "nonzero_on_every_clock_orbit",
+        "compact_spatial_flux",
+        "integrability",
+        "conservation",
+        "unrestricted_test_field_verdict"
+      ],
+      "properties": {
+        "nonzero_on_every_clock_orbit": {"const": true},
+        "unrestricted_test_field_verdict": {"const": "D_CHARGED"}
+      }
+    },
+    "coupled_background_test": {
+      "type": "object",
+      "required": [
+        "cylinder_bach_tensor",
+        "stress_tensor_formula",
+        "energy_split",
+        "homogeneous_energy_density",
+        "homogeneous_pressure",
+        "stress_trace",
+        "nonzero_clock_stress_vanishes",
+        "nonzero_homogeneous_clock_on_exact_vacuum_cylinder_exists",
+        "only_compatible_homogeneous_scalar_background",
+        "linearized_diff_weyl_variation_at_T_bar_zero",
+        "linearized_scalar_fixes_D_at_T_bar_zero"
+      ],
+      "properties": {
+        "cylinder_bach_tensor": {"const": "ZERO"},
+        "nonzero_homogeneous_clock_on_exact_vacuum_cylinder_exists": {"const": false},
+        "only_compatible_homogeneous_scalar_background": {"const": "T_bar=0"},
+        "linearized_scalar_fixes_D_at_T_bar_zero": {"const": false}
+      }
+    },
+    "local_relational_fixture": {"type": "object"},
+    "gate_result": {
+      "type": "object",
+      "required": ["shared_gate", "status", "reason", "next_gate", "allowed_repairs"],
+      "properties": {
+        "shared_gate": {"const": "SCALAR_CLOCK_VERTICAL_SLICE"},
+        "status": {"const": "OBSTRUCTED_ON_EXACT_VACUUM_CYLINDER"},
+        "next_gate": {"const": "BACKREACTED_OR_COMPOSITE_CLOCK_MODEL"}
+      }
+    },
+    "flags": {"type": "object"},
+    "not_established": {"type": "array", "items": {"type": "string"}},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

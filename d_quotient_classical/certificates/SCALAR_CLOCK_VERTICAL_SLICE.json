@@ -1,0 +1,135 @@
+{
+  "claim_boundary": "This certificate proves a scoped obstruction for one real conformally coupled scalar on the exact vacuum cylinder. The positive test-field charge is not promoted to a verdict on a nonexistent coupled clock phase space.",
+  "claim_status": "CERTIFIED_OBSTRUCTION",
+  "conventions": {
+    "metric": "g=-dt^2+dOmega_3^2 on the unit cylinder",
+    "normalized_constant_harmonic": "integral_S3 Y0^2=1",
+    "scalar_action": "S_T=-1/2 integral sqrt(-g)[(nabla T)^2+(R/6)T^2]",
+    "scalar_curvature": 6,
+    "scalar_equation": "(Box-R/6)T=0",
+    "weyl_invariant_homogeneous_clock": "chi=a*T",
+    "weyl_weight": -1
+  },
+  "coupled_background_test": {
+    "cylinder_bach_tensor": "ZERO",
+    "energy_split": "rho_can=dot(chi)^2/(2 Vol(S3)); rho_imp=chi^2/(2 Vol(S3))",
+    "homogeneous_energy_density": "rho=(dot(chi)^2+chi^2)/(2 Vol(S3))",
+    "homogeneous_pressure": "p=rho/3",
+    "linearized_diff_weyl_variation_at_T_bar_zero": "ZERO",
+    "linearized_scalar_fixes_D_at_T_bar_zero": false,
+    "nonzero_clock_stress_vanishes": false,
+    "nonzero_homogeneous_clock_on_exact_vacuum_cylinder_exists": false,
+    "only_compatible_homogeneous_scalar_background": "T_bar=0",
+    "stress_tensor_formula": "d_mu T d_nu T-(1/2)g_mu_nu(dT)^2+(1/6)[G_mu_nu T^2+g_mu_nu Box(T^2)-nabla_mu nabla_nu(T^2)]",
+    "stress_trace": "ZERO"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flags": {
+    "exact_vacuum_cylinder_clock_background_exists": false,
+    "full_backreacted_clock_phase_space_constructed": false,
+    "global_monotone_single_scalar_clock": false,
+    "homogeneous_equation_exact": true,
+    "improved_scalar_D_charge_nonzero": true,
+    "linearized_single_scalar_clock_exists": false,
+    "local_monotone_charts_exist": true,
+    "local_relational_fixture_exact": true,
+    "raw_scalar_slice_is_full_gauge_transverse": false,
+    "weyl_invariant_local_clock_constructed": true
+  },
+  "gate_result": {
+    "allowed_repairs": [
+      "solve a genuinely backreacted scalar-pure-Weyl background",
+      "use a Weyl-invariant composite or two-field clock",
+      "use a separately declared reference-matter clock model"
+    ],
+    "next_gate": "BACKREACTED_OR_COMPOSITE_CLOCK_MODEL",
+    "reason": "the only compatible homogeneous scalar background is zero, which has no linearized clock incidence",
+    "shared_gate": "SCALAR_CLOCK_VERTICAL_SLICE",
+    "status": "OBSTRUCTED_ON_EXACT_VACUUM_CYLINDER"
+  },
+  "gauge_incidence": {
+    "independent_weyl_gauge_still_required": true,
+    "invariant_clock_fixes_time_diff_locally": true,
+    "invariant_clock_variation": "delta chi=epsilon*dot(chi)",
+    "raw_T_slice_transverse_to_time_diff_and_weyl": false,
+    "raw_incidence_generic_rank": 1,
+    "raw_incidence_row": [
+      "dot(T)",
+      "-T"
+    ],
+    "raw_scalar_variation": "delta T=epsilon*dot(T)-sigma*T",
+    "raw_stabilizer": [
+      "epsilon=T",
+      "sigma=dot(T)"
+    ]
+  },
+  "generator_id": "D_compact",
+  "homogeneous_clock": {
+    "conserved_radius_squared": "A^2+B^2=chi^2+dot(chi)^2",
+    "equation": "ddot(chi)+chi=0",
+    "general_solution": "chi(t)=A*cos(t)+B*sin(t)",
+    "local_chart_condition": "dot(chi)!=0",
+    "local_clock_range": "|tau|<r on a branch sign(dot(chi))=+/-1",
+    "maximum_monotone_interval_length": "pi",
+    "multiple_crossing_guard": "branch sign(dot(chi)) and interval are required",
+    "nontrivial_global_monotone_solution_exists": false,
+    "turning_points": "chi=+/-r and dot(chi)=0"
+  },
+  "improved_charge": {
+    "D_vector_field": [
+      "dot(chi)=pi",
+      "dot(pi)=-chi"
+    ],
+    "compact_spatial_flux": "ZERO",
+    "conservation": "CONSERVED",
+    "hamiltonian": "H_D^T=(pi^2+chi^2)/2",
+    "integrability": "INTEGRABLE",
+    "nonzero_on_every_clock_orbit": true,
+    "radial_variation": "delta H_D^T=chi^2+pi^2",
+    "reference_normalization": "H_D^T[0,0]=0",
+    "symplectic_form": "Omega_T=dchi wedge dpi",
+    "unrestricted_test_field_verdict": "D_CHARGED"
+  },
+  "local_relational_fixture": {
+    "bracket_on_C_zero": "{I1,I2}=-2*r^2",
+    "branch_relation": "p_tau=epsilon*sqrt(r^2-tau^2)",
+    "complete_observable_x": "x_epsilon(tau)=(I1*tau-I2*p_tau)/r^2",
+    "complete_observable_y": "y_epsilon(tau)=(I1*p_tau+I2*tau)/r^2",
+    "constraint": "C=(q^2+p^2-x^2-y^2)/2",
+    "flow": [
+      "dot(q)=p",
+      "dot(p)=-q",
+      "dot(x)=y",
+      "dot(y)=-x"
+    ],
+    "gauge_invariance": "PASS",
+    "invariant_bracket": "{I1,I2}=-(q^2+p^2+x^2+y^2)",
+    "invariants": [
+      "I1=q*x+p*y",
+      "I2=q*y-p*x"
+    ],
+    "nontrivial_tau_evolution": "PASS",
+    "scope": "REDUCED_MODE_OFF_SHELL_FIXTURE",
+    "symplectic_form": "dq wedge dp-dx wedge dy"
+  },
+  "not_established": [
+    "a backreacted scalar-pure-Weyl solution space",
+    "a full coupled BV deformation retract or causal Green complex",
+    "a global scalar clock chart",
+    "an interacting, boundary, or quantum D verdict",
+    "a D_GAUGE or D_CHARGED verdict on a consistent backreacted scalar-clock phase space"
+  ],
+  "phase_space_id": "compact_scalar_clock",
+  "provenance": {
+    "generator_path": "d_quotient_classical/scalar_clock/conformal_scalar_clock.py",
+    "input_base_commit": "fc751539810e9c8191e455c4fcd715ba6d39a41a",
+    "schema_path": "d_quotient_classical/schema/scalar-clock-vertical-slice-v1.schema.json"
+  },
+  "result_id": "SCALAR_CLOCK_VERTICAL_SLICE",
+  "schema": "pure-weyl-scalar-clock-vertical-slice-v1",
+  "scientific_verdict": null,
+  "setting_id": "compact_scalar_clock"
+}

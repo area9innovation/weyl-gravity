@@ -338,12 +338,32 @@ def validate_record(record: object) -> list[str]:
                 continue
             certified = package.get("status") == "CERTIFIED"
             partial = package.get("status") == "PARTIAL"
-            _check_tags(package.get("dependency_tags"), f"{path}.dependency_tags", errors, allow_empty=not (certified or partial))
-            _check_evidence_refs(package.get("evidence_refs"), f"{path}.evidence_refs", errors, evidence_ids, required=certified or partial)
-            if (certified or partial) and not isinstance(package.get("result"), str):
-                errors.append(f"{path}.result: certified/partial package requires a result")
-            if not certified and not partial and package.get("result") is not None:
+            obstructed = package.get("status") == "OBSTRUCTED"
+            evidenced = certified or partial or obstructed
+            _check_tags(package.get("dependency_tags"), f"{path}.dependency_tags", errors, allow_empty=not evidenced)
+            _check_evidence_refs(package.get("evidence_refs"), f"{path}.evidence_refs", errors, evidence_ids, required=evidenced)
+            if evidenced and not isinstance(package.get("result"), str):
+                errors.append(f"{path}.result: certified/partial/obstructed package requires a result")
+            if not evidenced and package.get("result") is not None:
                 errors.append(f"{path}.result: noncertified package must remain null")
+
+        clock = packages.get("relational_clock")
+        scalar_setting = next(
+            (
+                setting
+                for setting in settings
+                if isinstance(setting, dict)
+                and setting.get("setting_id") == "cylinder_scalar_clock"
+            ),
+            None,
+        )
+        if isinstance(clock, dict) and clock.get("status") == "OBSTRUCTED":
+            if clock.get("evidence_refs") != ["scalar_clock_vertical_slice"]:
+                errors.append("$.work_packages.relational_clock: obstruction requires the scalar-clock certificate")
+            if not isinstance(scalar_setting, dict):
+                errors.append("$.settings: missing scalar-clock setting")
+            elif scalar_setting.get("verdict") is not None or scalar_setting.get("assessment_status") != "OPEN":
+                errors.append("$.settings.cylinder_scalar_clock: obstructed candidate must remain open without a D verdict")
 
     receipts = record.get("verification_receipts")
     if not isinstance(receipts, list) or not receipts:
