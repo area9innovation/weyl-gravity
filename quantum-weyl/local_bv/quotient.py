@@ -41,7 +41,10 @@ def _rref(
         pivot_row += 1
         if pivot_row == len(matrix):
             break
-    return matrix, tuple(pivots)
+    # Dependent input relations reduce to trailing zero rows.  Excluding them
+    # keeps the stored RREF itself a rank-sized proof object, which matters for
+    # large generated relation sets and their machine certificates.
+    return matrix[:pivot_row], tuple(pivots)
 
 
 def exact_rank(rows: Sequence[Sequence[Fraction]]) -> int:

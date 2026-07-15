@@ -3,9 +3,12 @@ import unittest
 from local_bv.covariant_derivatives import (
     COMMUTATOR_CONVENTION,
     covariant_commutator_relation,
+    covariant_commutator_relation_in_monomial,
 )
+from local_bv.curvature import RIEMANN
 from local_bv.quotient import RelationQuotient
 from local_bv.tensors import TensorFactor, TensorSpec
+from local_bv.tensors import TensorMonomial
 
 
 class CovariantDerivativeTests(unittest.TestCase):
@@ -53,6 +56,19 @@ class CovariantDerivativeTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError, "no existing derivatives"):
             covariant_commutator_relation(factor, 2, 3)
+
+    def test_contraction_aware_commutator_can_mix_quadratic_and_cubic_terms(self) -> None:
+        base = TensorMonomial(
+            (
+                TensorFactor(RIEMANN, (0, 1, 1, 2)),
+                TensorFactor(RIEMANN, (2, 4, 3, 4)),
+            )
+        )
+        relation = covariant_commutator_relation_in_monomial(base, 0, 0, 3)
+        self.assertTrue(relation)
+        self.assertTrue(all(term.is_complete_contraction() for term in relation.terms))
+        factor_counts = {len(term.factors) for term in relation.terms}
+        self.assertEqual(factor_counts, {2, 3})
 
 
 if __name__ == "__main__":

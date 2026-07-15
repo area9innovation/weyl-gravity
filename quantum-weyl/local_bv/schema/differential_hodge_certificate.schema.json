@@ -26,14 +26,181 @@
     "scope": {"type": "string", "minLength": 1},
     "checks": {
       "type": "object",
-      "additionalProperties": {"enum": ["VERIFIED", "NOT_COMPUTED", "BLOCKED"]}
+      "additionalProperties": false,
+      "required": [
+        "one_derivative_pairing_generation",
+        "algebraic_bianchi_on_derivative_sector",
+        "differential_bianchi_quotient",
+        "exact_rational_relation_reduction",
+        "covariant_commutator_declared_sign",
+        "commutator_antisymmetry",
+        "hodge_signature_square",
+        "chiral_projectors",
+        "parity_exchanges_chiralities",
+        "ibp_commutator_mixing_with_cubic_curvature",
+        "dimension_dependent_schouten_quotient",
+        "local_cohomology_H_s_mod_d",
+        "antifield_rows"
+      ],
+      "properties": {
+        "one_derivative_pairing_generation": {"const": "VERIFIED"},
+        "algebraic_bianchi_on_derivative_sector": {"const": "VERIFIED"},
+        "differential_bianchi_quotient": {"const": "VERIFIED"},
+        "exact_rational_relation_reduction": {"const": "VERIFIED"},
+        "covariant_commutator_declared_sign": {"const": "VERIFIED"},
+        "commutator_antisymmetry": {"const": "VERIFIED"},
+        "hodge_signature_square": {"const": "VERIFIED"},
+        "chiral_projectors": {"const": "VERIFIED"},
+        "parity_exchanges_chiralities": {"const": "VERIFIED"},
+        "ibp_commutator_mixing_with_cubic_curvature": {"const": "NOT_COMPUTED"},
+        "dimension_dependent_schouten_quotient": {"const": "NOT_COMPUTED"},
+        "local_cohomology_H_s_mod_d": {"const": "NOT_COMPUTED"},
+        "antifield_rows": {"const": "BLOCKED"}
+      }
     },
-    "one_derivative_curvature": {"type": "object"},
-    "covariant_commutator": {"type": "object"},
-    "hodge": {"type": "object"},
+    "one_derivative_curvature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generator",
+        "raw_pairing_count",
+        "symmetry_canonical_monomial_count",
+        "algebraic_bianchi_relation_count",
+        "algebraic_bianchi_rank",
+        "differential_bianchi_relation_count",
+        "differential_bianchi_rank",
+        "combined_relation_rank",
+        "quotient_dimension",
+        "canonical_basis",
+        "relation_rref",
+        "pivot_columns",
+        "free_columns",
+        "basis_was_generated",
+        "ibp_or_commutator_reduction_applied"
+      ],
+      "properties": {
+        "generator": {"type": "string", "minLength": 1},
+        "raw_pairing_count": {"const": 945},
+        "symmetry_canonical_monomial_count": {"const": 12},
+        "algebraic_bianchi_relation_count": {"const": 6},
+        "algebraic_bianchi_rank": {"const": 3},
+        "differential_bianchi_relation_count": {"const": 16},
+        "differential_bianchi_rank": {"const": 8},
+        "combined_relation_rank": {"const": 8},
+        "quotient_dimension": {"const": 4},
+        "canonical_basis": {
+          "type": "array",
+          "minItems": 12,
+          "maxItems": 12,
+          "uniqueItems": true,
+          "items": {"type": "object"}
+        },
+        "relation_rref": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "array",
+            "minItems": 12,
+            "maxItems": 12,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["numerator", "denominator"],
+              "properties": {
+                "numerator": {"type": "integer"},
+                "denominator": {"type": "integer", "minimum": 1}
+              }
+            }
+          }
+        },
+        "pivot_columns": {"const": [0, 1, 2, 3, 4, 8, 9, 10]},
+        "free_columns": {"const": [5, 6, 7, 11]},
+        "basis_was_generated": {"const": true},
+        "ibp_or_commutator_reduction_applied": {"const": false}
+      }
+    },
+    "covariant_commutator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["convention", "all_tensor_slots", "witnesses"],
+      "properties": {
+        "convention": {"const": "[nabla_a,nabla_b] T_{c1...cr} = -sum_i R^d{}_{ci ab} T_{c1...d...cr}"},
+        "all_tensor_slots": {"const": "COVARIANT"},
+        "witnesses": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["covariant_rank_0", "covariant_rank_1", "covariant_rank_2"],
+          "properties": {
+            "covariant_rank_0": {"type": "object"},
+            "covariant_rank_1": {"type": "object"},
+            "covariant_rank_2": {"type": "object"}
+          }
+        }
+      }
+    },
+    "hodge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["EUCLIDEAN", "LORENTZIAN"],
+      "properties": {
+        "EUCLIDEAN": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["signature", "star_square_sign", "epsilon_contraction_coefficient", "eigenvalues", "star_matrix", "parity_matrix", "positive_projector", "negative_projector", "checks"],
+          "properties": {
+            "signature": {"const": "EUCLIDEAN"},
+            "star_square_sign": {"const": 1},
+            "epsilon_contraction_coefficient": {"const": 2},
+            "eigenvalues": {"const": ["1", "-1"]},
+            "star_matrix": {"const": [["0", "1"], ["1", "0"]]},
+            "parity_matrix": {"const": [["1", "0"], ["0", "-1"]]},
+            "positive_projector": {"const": [["1/2", "1/2"], ["1/2", "1/2"]]},
+            "negative_projector": {"const": [["1/2", "-1/2"], ["-1/2", "1/2"]]},
+            "checks": {"type": "object", "additionalProperties": {"const": true}}
+          }
+        },
+        "LORENTZIAN": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["signature", "star_square_sign", "epsilon_contraction_coefficient", "eigenvalues", "star_matrix", "parity_matrix", "positive_projector", "negative_projector", "checks"],
+          "properties": {
+            "signature": {"const": "LORENTZIAN"},
+            "star_square_sign": {"const": -1},
+            "epsilon_contraction_coefficient": {"const": -2},
+            "eigenvalues": {"const": ["I", "-I"]},
+            "star_matrix": {"const": [["0", "-1"], ["1", "0"]]},
+            "parity_matrix": {"const": [["1", "0"], ["0", "-1"]]},
+            "positive_projector": {"const": [["1/2", "I/2"], ["-I/2", "1/2"]]},
+            "negative_projector": {"const": [["1/2", "-I/2"], ["I/2", "1/2"]]},
+            "checks": {"type": "object", "additionalProperties": {"const": true}}
+          }
+        }
+      }
+    },
     "canonical_hashes": {
       "type": "object",
-      "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      "additionalProperties": false,
+      "required": [
+        "one_derivative_basis_sha256",
+        "algebraic_bianchi_relations_sha256",
+        "differential_bianchi_relations_sha256",
+        "hodge_receipt_sha256",
+        "source_manifest_sha256",
+        "commutator_rank_0_sha256",
+        "commutator_rank_1_sha256",
+        "commutator_rank_2_sha256"
+      ],
+      "properties": {
+        "one_derivative_basis_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "algebraic_bianchi_relations_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "differential_bianchi_relations_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "hodge_receipt_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "source_manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "commutator_rank_0_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "commutator_rank_1_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "commutator_rank_2_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
     },
     "not_computed": {
       "type": "array",

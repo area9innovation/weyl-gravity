@@ -18,6 +18,7 @@ from .algebra import canonical_sha256
 
 
 SignedPermutation = tuple[tuple[int, ...], int]
+CANONICALIZATION_CACHE_MAXSIZE = 65_536
 
 
 def signed_permutation_group(
@@ -182,7 +183,57 @@ def _first_occurrence_relabel(
 class TensorMonomial:
     factors: tuple[TensorFactor, ...]
 
-    @lru_cache(maxsize=None)
+    def tensor_product(
+        self,
+        other: "TensorMonomial",
+        *,
+        index_map: Mapping[int, int] | None = None,
+    ) -> "TensorMonomial":
+        """Return a product with explicit, collision-safe index handling.
+
+        Indices on ``other`` are alpha-renamed disjointly by default.  Entries
+        in ``index_map`` deliberately identify right-hand indices with labels
+        in this monomial, making every cross-factor contraction auditable.
+        """
+
+        right_indices = sorted(
+            {index for factor in other.factors for index in factor.all_indices}
+        )
+        requested = dict(index_map or {})
+        unknown = sorted(set(requested) - set(right_indices))
+        if unknown:
+            raise ValueError(f"index map contains unknown right indices: {unknown}")
+        if any(not isinstance(value, int) or value < 0 for value in requested.values()):
+            raise ValueError("mapped abstract indices must be nonnegative integers")
+
+        left_indices = {
+            index for factor in self.factors for index in factor.all_indices
+        }
+        used = left_indices | set(requested.values())
+        next_index = max(used, default=-1) + 1
+        remapping = dict(requested)
+        for index in right_indices:
+            if index not in remapping:
+                while next_index in used:
+                    next_index += 1
+                remapping[index] = next_index
+                used.add(next_index)
+                next_index += 1
+
+        right_factors = tuple(
+            TensorFactor(
+                factor.spec,
+                tuple(remapping[index] for index in factor.slots),
+                tuple(remapping[index] for index in factor.derivatives),
+            )
+            for factor in other.factors
+        )
+        result = TensorMonomial(self.factors + right_factors)
+        if any(count > 2 for count in result.index_multiplicities().values()):
+            raise ValueError("tensor product makes an abstract index occur over twice")
+        return result
+
+    @lru_cache(maxsize=CANONICALIZATION_CACHE_MAXSIZE)
     def canonicalize(self) -> tuple[int, "TensorMonomial | None"]:
         """Return the signed canonical orbit representative.
 
@@ -298,6 +349,31 @@ class TensorExpression:
 
     def __rmul__(self, coefficient: Fraction | int) -> "TensorExpression":
         return self * coefficient
+
+    def tensor_product(
+        self,
+        other: "TensorExpression | TensorMonomial",
+        *,
+        index_map: Mapping[int, int] | None = None,
+    ) -> "TensorExpression":
+        """Return the bilinear tensor product with explicit index identifications."""
+
+        right = (
+            other
+            if isinstance(other, TensorExpression)
+            else TensorExpression.monomial(other)
+        )
+        terms: dict[TensorMonomial, Fraction] = {}
+        for left_monomial, left_coefficient in self._terms.items():
+            for right_monomial, right_coefficient in right._terms.items():
+                monomial = left_monomial.tensor_product(
+                    right_monomial, index_map=index_map
+                )
+                terms[monomial] = (
+                    terms.get(monomial, Fraction())
+                    + left_coefficient * right_coefficient
+                )
+        return TensorExpression(terms)
 
     def canonical_payload(self) -> dict[str, object]:
         return {

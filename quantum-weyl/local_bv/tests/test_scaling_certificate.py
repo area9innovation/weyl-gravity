@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from local_bv.differential_hodge_certificate import (
+from local_bv.scaling_certificate import (
     DETAILED_PATH,
     RESULT_PATH,
     SCHEMA_PATH,
@@ -11,7 +11,7 @@ from local_bv.differential_hodge_certificate import (
 from local_bv.schema_validation import validate_instance
 
 
-class DifferentialHodgeCertificateTests(unittest.TestCase):
+class ScalingCertificateTests(unittest.TestCase):
     def test_detailed_certificate_is_reproducible(self) -> None:
         self.assertEqual(
             json.loads(DETAILED_PATH.read_text(encoding="utf-8")),
@@ -26,28 +26,25 @@ class DifferentialHodgeCertificateTests(unittest.TestCase):
 
     def test_detailed_certificate_satisfies_enforced_schema(self) -> None:
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
-        self.assertEqual(validate_instance(build_certificate(), schema), [])
-
-        drifted = build_certificate()
-        drifted["one_derivative_curvature"]["quotient_dimension"] = 5
+        certificate = build_certificate()
+        self.assertEqual(validate_instance(certificate, schema), [])
+        certificate["cubic_orbits"]["covered_pairing_count"] -= 1
         self.assertIn(
-            "$.one_derivative_curvature.quotient_dimension: value differs from const",
-            validate_instance(drifted, schema),
+            "$.cubic_orbits.covered_pairing_count: value differs from const",
+            validate_instance(certificate, schema),
         )
 
-    def test_certificate_is_fail_closed(self) -> None:
+    def test_claim_boundary_remains_fail_closed(self) -> None:
         certificate = build_certificate()
-        derivative = certificate["one_derivative_curvature"]
-        self.assertEqual(certificate["dependency_tags"], ["LOCAL-ALGEBRAIC"])
         self.assertEqual(certificate["classical_commit"], "UNFROZEN")
-        self.assertEqual(derivative["raw_pairing_count"], 945)
-        self.assertEqual(derivative["quotient_dimension"], 4)
-        self.assertFalse(derivative["ibp_or_commutator_reduction_applied"])
+        self.assertEqual(
+            certificate["checks"]["six_derivative_mixed_quotient"],
+            "NOT_COMPUTED",
+        )
         self.assertEqual(
             certificate["checks"]["local_cohomology_H_s_mod_d"],
             "NOT_COMPUTED",
         )
-        self.assertEqual(certificate["checks"]["antifield_rows"], "BLOCKED")
 
 
 if __name__ == "__main__":

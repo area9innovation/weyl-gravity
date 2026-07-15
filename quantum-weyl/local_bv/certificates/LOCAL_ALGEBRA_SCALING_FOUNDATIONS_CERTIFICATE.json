@@ -1,0 +1,1762 @@
+{
+  "assumptions": [
+    "The Riemann tensor has the declared eight-element signed intrinsic symmetry group.",
+    "All three cubic Riemann factors are Grassmann even and interchangeable.",
+    "Orbit-first generation changes enumeration cost, not the exact contraction space.",
+    "The bounded monomial canonicalization cache may evict entries without changing canonical results."
+  ],
+  "canonical_hashes": {
+    "contracted_commutator_relation_sha256": "fbffb008ef0e78dba88f9c1a91f3f92fbfcab9437b954df47bd4fdac48eaa2fd",
+    "nonzero_cubic_representatives_sha256": "baad490bb42b41b23f7ba1b7efda2a12e918a0b08fe592ea942f375a128fe157",
+    "signed_group_sha256": "422b7c6ae0e9720085ea7a665069edd61da4f47b022b54ac2a296105a1197794",
+    "signed_orbit_partition_sha256": "52c97a3ae4d992ec041ec836b147f059af76b18d3f8ced2e563935cb073dc3f0",
+    "source_manifest_sha256": "0677fdf9e6c214507766d8eb872351c90086625d27280ab816cdd7489860c36d"
+  },
+  "checks": {
+    "algebraic_bianchi_cubic_quotient": "NOT_COMPUTED",
+    "contracted_commutator_Rnabla2R_R3_mixing": "VERIFIED",
+    "cubic_pairing_exhaustion": "VERIFIED",
+    "explicit_index_contraction": "VERIFIED",
+    "local_cohomology_H_s_mod_d": "NOT_COMPUTED",
+    "orbit_representative_canonicalizer_crosscheck": "VERIFIED",
+    "signed_orbit_partition": "VERIFIED",
+    "six_derivative_mixed_quotient": "NOT_COMPUTED",
+    "tensor_product_alpha_renaming": "VERIFIED"
+  },
+  "classical_commit": "UNFROZEN",
+  "cubic_orbits": {
+    "canonicalization_cache_max_entries": 65536,
+    "covered_pairing_count": 10395,
+    "nonvanishing_orbit_count": 13,
+    "nonzero_canonical_representatives": [
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              3,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              4,
+              5,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              3,
+              2,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              3,
+              5,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              4,
+              3,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              2
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              3,
+              2,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              3,
+              5,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              2
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              3,
+              3,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              5,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              2
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              3,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              2
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              3,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              4,
+              3,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              4,
+              3,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              2,
+              4,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              4,
+              3,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              4,
+              2,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              4,
+              3,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              4,
+              2,
+              5
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              5,
+              3,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      }
+    ],
+    "orbit_count": 33,
+    "orbit_ledger": [
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ],
+        "orbit_size": 1,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 6,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ],
+        "orbit_size": 24,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 96,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 12,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 96,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 24,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 48,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 48,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ],
+        "orbit_size": 96,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 384,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 192,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ],
+        "orbit_size": 192,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 768,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            10,
+            11
+          ]
+        ],
+        "orbit_size": 384,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 768,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            10,
+            11
+          ]
+        ],
+        "orbit_size": 64,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 384,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 768,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 8,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 192,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 48,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 96,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 384,
+        "vanishes": true
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 768,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "orbit_size": 512,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 768,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 1536,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 64,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 384,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 768,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            7,
+            11
+          ]
+        ],
+        "orbit_size": 256,
+        "vanishes": false
+      },
+      {
+        "canonical_pairing": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            7,
+            9
+          ]
+        ],
+        "orbit_size": 256,
+        "vanishes": false
+      }
+    ],
+    "orbit_size_histogram": {
+      "1": 1,
+      "12": 1,
+      "1536": 1,
+      "192": 3,
+      "24": 2,
+      "256": 2,
+      "384": 5,
+      "48": 3,
+      "512": 1,
+      "6": 1,
+      "64": 2,
+      "768": 6,
+      "8": 1,
+      "96": 4
+    },
+    "raw_monomial_canonicalizations_avoided": 10362,
+    "raw_pairing_count": 10395,
+    "representatives_cross_checked": 33,
+    "signed_group_order": 3072,
+    "vanishing_orbit_count": 20
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "not_computed": [
+    "algebraic Bianchi quotient of the thirteen nonzero cubic symmetry orbits",
+    "integration-by-parts and commutator quotient joining R^3 to (nabla Riemann)^2",
+    "dimension-dependent Schouten identities",
+    "Weyl BRST curvature rows, antifields, descent, and H^{g,4}(s|d)"
+  ],
+  "result_id": "LOCAL_ALGEBRA_SCALING_FOUNDATIONS_CERTIFICATE",
+  "result_state": "INFRASTRUCTURE_VERIFIED",
+  "scope": "Collision-safe tensor products; contraction-aware commutators; signed orbit-first exhaustive generation of cubic Riemann contractions.",
+  "tensor_product": {
+    "contracted_commutator_all_terms_complete": true,
+    "contracted_commutator_factor_counts": [
+      2,
+      3
+    ],
+    "contracted_commutator_relation": {
+      "terms": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "monomial": {
+            "factors": [
+              {
+                "derivatives": [],
+                "grassmann_parity": 0,
+                "slots": [
+                  0,
+                  1,
+                  0,
+                  2
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Riemann"
+              },
+              {
+                "derivatives": [],
+                "grassmann_parity": 0,
+                "slots": [
+                  1,
+                  3,
+                  2,
+                  4
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Riemann"
+              },
+              {
+                "derivatives": [],
+                "grassmann_parity": 0,
+                "slots": [
+                  3,
+                  5,
+                  4,
+                  5
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Riemann"
+              }
+            ]
+          }
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "monomial": {
+            "factors": [
+              {
+                "derivatives": [],
+                "grassmann_parity": 0,
+                "slots": [
+                  0,
+                  1,
+                  0,
+                  2
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Riemann"
+              },
+              {
+                "derivatives": [],
+                "grassmann_parity": 0,
+                "slots": [
+                  1,
+                  3,
+                  3,
+                  4
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Riemann"
+              },
+              {
+                "derivatives": [],
+                "grassmann_parity": 0,
+                "slots": [
+                  2,
+                  5,
+                  4,
+                  5
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Riemann"
+              }
+            ]
+          }
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "monomial": {
+            "factors": [
+              {
+                "derivatives": [],
+                "grassmann_parity": 0,
+                "slots": [
+                  0,
+                  1,
+                  0,
+                  2
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Riemann"
+              },
+              {
+                "derivatives": [
+                  1,
+                  3
+                ],
+                "grassmann_parity": 0,
+                "slots": [
+                  3,
+                  4,
+                  2,
+                  4
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Riemann"
+              }
+            ]
+          }
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "monomial": {
+            "factors": [
+              {
+                "derivatives": [],
+                "grassmann_parity": 0,
+                "slots": [
+                  0,
+                  1,
+                  0,
+                  2
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Riemann"
+              },
+              {
+                "derivatives": [
+                  3,
+                  1
+                ],
+                "grassmann_parity": 0,
+                "slots": [
+                  3,
+                  4,
+                  2,
+                  4
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Riemann"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "contracted_commutator_term_count": 4,
+    "default_index_policy": "ALPHA_RENAME_RIGHT_DISJOINTLY",
+    "default_product_complete_contraction": false,
+    "explicit_contraction_policy": "RIGHT_INDEX_MAP_REQUIRED",
+    "mapped_product_complete_contraction": true
+  }
+}

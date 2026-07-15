@@ -31,6 +31,7 @@ RESULT_PATH = (
     / "certificates"
     / "LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json"
 )
+SCHEMA_PATH = PACKAGE_ROOT / "schema" / "differential_hodge_certificate.schema.json"
 
 
 def _source_manifest() -> dict[str, str]:
@@ -41,12 +42,14 @@ def _source_manifest() -> dict[str, str]:
         "differential_hodge_certificate.py",
         "hodge.py",
         "quotient.py",
+        "schema_validation.py",
         "tensors.py",
         "schema/differential_hodge_certificate.schema.json",
         "tests/test_covariant_derivatives.py",
         "tests/test_differential_curvature.py",
         "tests/test_differential_hodge_certificate.py",
         "tests/test_hodge.py",
+        "tests/test_schema_validation.py",
     )
     return {
         path: hashlib.sha256((PACKAGE_ROOT / path).read_bytes()).hexdigest()

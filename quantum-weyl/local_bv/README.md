@@ -32,6 +32,15 @@ algebra verifies `star^2=+1` in Euclidean signature, `star^2=-1` in Lorentzian
 signature, the corresponding real/complex chiral projectors, and their
 exchange under parity.
 
+Before cubic generation, the scaling layer adds collision-safe tensor
+products with explicit index maps, contraction-aware commutator relations,
+and signed orbit-first enumeration.  The full 10,395 raw `Riemann^3`
+pairings partition exactly into 33 signed symmetry orbits: 20 vanish by
+intrinsic symmetry and 13 are nonzero before algebraic Bianchi reduction.
+Only the 33 orbit representatives require the general monomial canonicalizer.
+Detailed certificate schemas are now executable contracts rather than
+unvalidated documentation.
+
 This is not Gate A or Gate B.  In particular, the classical commit is
 `NOT_FROZEN`; antifield and nonminimal rows have not been imported; and
 general covariant curvature reduction remains incomplete.  The
@@ -50,8 +59,10 @@ PYTHONPATH=quantum-weyl python -m unittest discover -s quantum-weyl/local_bv/tes
 PYTHONPATH=quantum-weyl python -m local_bv.certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.curvature_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.differential_hodge_certificate --check
+PYTHONPATH=quantum-weyl python -m local_bv.scaling_certificate --check
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_CURVATURE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json
+python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json
 ```
 
 The certificate is
@@ -71,7 +82,13 @@ The differential-curvature/Hodge receipt is
 with its common result envelope at
 [`../certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json`](../certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json).
 
-Next admissible local steps are the complete six-derivative invariant space
-with its IBP/commutator mixing, Weyl BRST curvature rows, and a
+The scaling-foundations receipt is
+[`certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS_CERTIFICATE.json`](certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS_CERTIFICATE.json),
+with its common result envelope at
+[`../certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json`](../certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json).
+
+Next admissible local steps are algebraic-Bianchi reduction of the 13
+nonzero cubic orbits and the complete six-derivative invariant space with its
+IBP/commutator mixing, Weyl BRST curvature rows, and a
 derivative-bounded ghost-number ansatz.  The antifield and
 relative-cohomology layers still wait for the frozen classical schema.

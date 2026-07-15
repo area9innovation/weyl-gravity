@@ -58,21 +58,36 @@ def pair_partitions(items: tuple[int, ...]) -> Iterable[tuple[tuple[int, int], .
             yield ((first, partner),) + rest
 
 
-def contraction_from_pairing(
-    pairing: tuple[tuple[int, int], ...]
+def riemann_product_contraction_from_pairing(
+    pairing: tuple[tuple[int, int], ...], factor_count: int
 ) -> TensorMonomial:
-    if sorted(position for pair in pairing for position in pair) != list(range(8)):
-        raise ValueError("quadratic Riemann pairing must cover eight slots once")
-    labels = [0] * 8
+    """Build a Riemann product from a complete contraction of its slots."""
+
+    if factor_count < 1:
+        raise ValueError("Riemann factor count must be positive")
+    slot_count = 4 * factor_count
+    if sorted(position for pair in pairing for position in pair) != list(
+        range(slot_count)
+    ):
+        raise ValueError(f"Riemann pairing must cover {slot_count} slots once")
+    labels = [0] * slot_count
     for index, (left, right) in enumerate(pairing):
         labels[left] = index
         labels[right] = index
     return TensorMonomial(
-        (
-            TensorFactor(RIEMANN, tuple(labels[:4])),
-            TensorFactor(RIEMANN, tuple(labels[4:])),
+        tuple(
+            TensorFactor(RIEMANN, tuple(labels[4 * index : 4 * index + 4]))
+            for index in range(factor_count)
         )
     )
+
+
+def contraction_from_pairing(
+    pairing: tuple[tuple[int, int], ...]
+) -> TensorMonomial:
+    """Build one quadratic Riemann monomial from an eight-slot pairing."""
+
+    return riemann_product_contraction_from_pairing(pairing, 2)
 
 
 def one_derivative_contraction_from_pairing(

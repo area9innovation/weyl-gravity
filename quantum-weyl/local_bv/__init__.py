@@ -8,9 +8,13 @@ imported or implemented before the package can make local-cohomology claims.
 
 from .algebra import Expression, JetVariable, LocalJetAlgebra
 from .brst import MinimalBRSTDifferential
-from .covariant_derivatives import covariant_commutator_relation
+from .covariant_derivatives import (
+    covariant_commutator_relation,
+    covariant_commutator_relation_in_monomial,
+)
 from .hodge import Signature, TwoFormHodge
 from .metadata import FieldSpec, IndexVariance, SpacetimeParity, minimal_registry
+from .pairing_orbits import PairingOrbit, signed_pairing_orbits
 from .tensors import TensorExpression, TensorFactor, TensorMonomial, TensorSpec
 
 __all__ = [
@@ -20,6 +24,7 @@ __all__ = [
     "JetVariable",
     "LocalJetAlgebra",
     "MinimalBRSTDifferential",
+    "PairingOrbit",
     "SpacetimeParity",
     "Signature",
     "TensorExpression",
@@ -28,5 +33,7 @@ __all__ = [
     "TensorSpec",
     "TwoFormHodge",
     "covariant_commutator_relation",
+    "covariant_commutator_relation_in_monomial",
     "minimal_registry",
+    "signed_pairing_orbits",
 ]
