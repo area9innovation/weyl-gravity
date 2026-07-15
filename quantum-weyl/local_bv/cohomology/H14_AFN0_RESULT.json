@@ -9,7 +9,7 @@
   "full_bv_promotion_status": "BLOCKED_CLASSICAL_ANTIFIELD_EXPORT",
   "ghost_number": 1,
   "production_boundary": [
-    "intrinsic omega-Euler tower is incomplete",
+    "the complete intrinsic omega-Euler tower is included, but its relative class is undecided",
     "lower-form mapping-cone and pure-Diff ghost bases are not yet exhaustive",
     "dual nontriviality witnesses will be emitted only against that complete boundary space"
   ],
@@ -27,9 +27,10 @@
           "adjoin Box R with its explicit divergence primitive",
           "for ghost number one multiply carriers by the undifferentiated Weyl ghost"
         ],
-        "basis_manifest_hash": "acc04d036cea3f844365ef925fb869adf924d270ce62ef2391022265c564d996",
+        "basis_manifest_hash": "585f9752a82b3b387af634432c849d4114ccb5f2404b6b86f4a7c1b5acf23477",
         "candidate_ids": [
           "ANOM_OMEGA_C2",
+          "ANOM_OMEGA_E4",
           "ANOM_OMEGA_BOX_R"
         ],
         "canonical_basis_count": 4,
@@ -1017,6 +1018,15 @@
             "closure_status": "CLOSED",
             "closure_witness": {
               "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
+              "intrinsic_certificate": "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json"
+            },
+            "representative_id": "ANOM_OMEGA_E4",
+            "representative_sha256": "84f0735eb6d8db92b966c977ba9ed626d4d9e39d6f742a169c4b686a2e94ddd3"
+          },
+          {
+            "closure_status": "CLOSED",
+            "closure_witness": {
+              "certificate": "quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json",
               "intrinsic_certificate": "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json"
             },
             "representative_id": "ANOM_OMEGA_BOX_R",
@@ -1024,15 +1034,12 @@
           }
         ],
         "closure_scope": "TOP_RELATIVE_CLOSURE",
-        "result_id": "H14_AFN0_EVEN_NO_EULER_CLOSURE",
+        "result_id": "H14_AFN0_EVEN_CLOSURE",
         "result_state": "CLOSURE_RESULT"
       },
-      "excluded_required_candidate": {
-        "reason": "intrinsic Euler descent is in progress",
-        "representative_id": "ANOM_OMEGA_E4"
-      },
+      "excluded_required_candidate": null,
       "parity": "even",
-      "slice_id": "H14_AFN0_EVEN_WITHOUT_EULER",
+      "slice_id": "H14_AFN0_EVEN",
       "truncated_quotient_result": {
         "basis_exhaustiveness_status": "TRUNCATED",
         "candidates": [
@@ -1043,6 +1050,14 @@
             "relative_cohomology_status": "UNDECIDED",
             "representative_id": "ANOM_OMEGA_C2",
             "representative_sha256": "183c7e6e0075f06cfc9431037fc6123752886e669c3db0177e332ea9bf043150"
+          },
+          {
+            "exactness_witness": null,
+            "nonmembership_witness": null,
+            "permitted_nonmembership_witness_type": "TRUNCATED_NONMEMBERSHIP_WITNESS",
+            "relative_cohomology_status": "UNDECIDED",
+            "representative_id": "ANOM_OMEGA_E4",
+            "representative_sha256": "84f0735eb6d8db92b966c977ba9ed626d4d9e39d6f742a169c4b686a2e94ddd3"
           },
           {
             "exactness_witness": {
@@ -1058,7 +1073,7 @@
           }
         ],
         "relative_cohomology_status": "UNDECIDED",
-        "result_id": "H14_AFN0_EVEN_NO_EULER_TRUNCATED_QUOTIENT",
+        "result_id": "H14_AFN0_EVEN_TRUNCATED_QUOTIENT",
         "result_state": "TRUNCATED_QUOTIENT_RESULT"
       }
     },

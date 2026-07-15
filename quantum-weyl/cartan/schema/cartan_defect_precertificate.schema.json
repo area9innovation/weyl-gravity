@@ -121,7 +121,7 @@
     "classical_D_import": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["artifact", "sha256", "source_commit", "claim_state", "vacuum_assessment_status", "vacuum_verdict", "required_sector_verdicts", "semantic_validation"],
+      "required": ["artifact", "sha256", "source_commit", "claim_state", "vacuum_assessment_status", "vacuum_verdict", "required_sector_verdicts", "additional_setting_ids", "semantic_validation"],
       "properties": {
         "artifact": {"const": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json"},
         "sha256": {"$ref": "#/$defs/hash"},
@@ -134,6 +134,11 @@
           "additionalProperties": false,
           "required": ["P_lin", "P_Taub0"],
           "properties": {"P_lin": {"const": "D_CHARGED"}, "P_Taub0": {"const": "D_GAUGE"}}
+        },
+        "additional_setting_ids": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
         },
         "semantic_validation": {"const": "VERIFIED"}
       }
@@ -174,8 +179,19 @@
     },
     "input_gates": {
       "type": "object",
-      "additionalProperties": {"type": "string", "minLength": 1},
-      "required": ["classical_freeze", "classical_D_charge_setting_ledger", "AFN0_local_relative_basis", "Euler_intrinsic_descent", "minimal_BV_antifield_completion", "renormalized_operator_algebra", "pure_weyl_QME", "boundary_BFV_complex", "scalar_clock_extension"]
+      "additionalProperties": false,
+      "required": ["classical_freeze", "classical_D_charge_setting_ledger", "AFN0_local_relative_basis", "Euler_intrinsic_descent", "minimal_BV_antifield_completion", "renormalized_operator_algebra", "pure_weyl_QME", "boundary_BFV_complex", "scalar_clock_extension"],
+      "properties": {
+        "classical_freeze": {"const": "BLOCKED_UNFROZEN"},
+        "classical_D_charge_setting_ledger": {"const": "IMPORTED_HASH_PINNED_NOT_A_QUANTUM_PROMOTION"},
+        "AFN0_local_relative_basis": {"const": "IN_PROGRESS"},
+        "Euler_intrinsic_descent": {"const": "NONTRIVIAL_COMPLETE_LOCAL_ALGEBRAIC"},
+        "minimal_BV_antifield_completion": {"const": "BLOCKED_PENDING_CLASSICAL_EXPORT"},
+        "renormalized_operator_algebra": {"const": "NOT_CONSTRUCTED"},
+        "pure_weyl_QME": {"const": "NOT_RESTORED"},
+        "boundary_BFV_complex": {"const": "NOT_IMPORTED"},
+        "scalar_clock_extension": {"const": "NOT_IMPLEMENTED"}
+      }
     },
     "claim_boundary": {
       "type": "object",

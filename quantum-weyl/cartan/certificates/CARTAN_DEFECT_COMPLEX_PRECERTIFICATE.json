@@ -126,6 +126,10 @@
     ]
   },
   "classical_D_import": {
+    "additional_setting_ids": [
+      "cylinder_neutral_clock_pair",
+      "positive_berger_clock"
+    ],
     "artifact": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
     "claim_state": "PARTIAL",
     "required_sector_verdicts": {
@@ -133,8 +137,8 @@
       "P_lin": "D_CHARGED"
     },
     "semantic_validation": "VERIFIED",
-    "sha256": "495de6865c8aa7bceb32a55769cd4f912da6d67035e899b8571843ab504457af",
-    "source_commit": "4a2e94986b849bfc1b9efca5c9fae825289eb55a",
+    "sha256": "ca4a6f632aaf6d5cc903fcf1dee9a0c69d1d935b1b174df590ffcc430b59c776",
+    "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db",
     "vacuum_assessment_status": "CERTIFIED",
     "vacuum_verdict": "SECTOR_DEPENDENT"
   },
@@ -144,7 +148,7 @@
   ],
   "input_gates": {
     "AFN0_local_relative_basis": "IN_PROGRESS",
-    "Euler_intrinsic_descent": "IN_PROGRESS",
+    "Euler_intrinsic_descent": "NONTRIVIAL_COMPLETE_LOCAL_ALGEBRAIC",
     "boundary_BFV_complex": "NOT_IMPORTED",
     "classical_D_charge_setting_ledger": "IMPORTED_HASH_PINNED_NOT_A_QUANTUM_PROMOTION",
     "classical_freeze": "BLOCKED_UNFROZEN",
@@ -318,28 +322,28 @@
   },
   "provenance": {
     "dependency_manifest": {
-      "afn0_production_certificate": "4b9f3db669c8349b8417210b238a718e95eaa8b615864a2b5acb713c4cedc859",
-      "classical_D_quotient_status": "495de6865c8aa7bceb32a55769cd4f912da6d67035e899b8571843ab504457af",
+      "afn0_production_certificate": "9c1e6770eb769dfd56960895e50e89e2f1d2b35c4e8761843d4beb138e9577e0",
+      "classical_D_quotient_status": "ca4a6f632aaf6d5cc903fcf1dee9a0c69d1d935b1b174df590ffcc430b59c776",
       "classical_cartan_note": "6cfa7f0f6a47d4c7648985e4251eff7ab7a4f250728e3f06315bbfec06f9ad92",
       "classical_cartan_verifier": "1eb4b966a90b5f84edab52beddc00b89162cc16154e9de83688c1c8ed50b04e2",
-      "classical_import_certificate": "3c6f540286ca0cda0e4c6663d31f68bf66a8a7cea40891dc65b60c43f4673213",
+      "classical_import_certificate": "eb48675fb36489e7d33724b2d06f1f0ebfe6867d043bf71d1536015f9862b2d6",
       "commission": "13686970143132c3b91e19c5f3cb4e3caa2bc95f996edac72d7fa915ece9cf2e",
-      "euler_transgression_certificate": "d9a90714b96ebc40c1048edce1156e604f0767f19711f408b115fa2754a4f972"
+      "euler_transgression_certificate": "080c6493f5270a26e9e6ac5154149e4cae38a604ad61253ceaab739010d4ec00"
     },
-    "dependency_manifest_sha256": "6cb41b26024e62f0115e4365c97771504ec19e0437cd61f8f326feca5dbd43a8",
+    "dependency_manifest_sha256": "1a9b62bcc8b571a257277749036bcb5a6c0a5b750ef72c5651d17d0bccee4314",
     "schema": "quantum-weyl/cartan/schema/cartan_defect_precertificate.schema.json",
     "source_manifest": {
-      "README.md": "405238120cef23db9aef03fa15b9cbfa824641062e1fdbefa4d1183413bd812e",
+      "README.md": "f35855e3f4733ee87bfa9e062763793aa1bf8887198d68b5b8170329fd1d18df",
       "__init__.py": "cb58b22f4ecc525df804b0059715239d2d3d70f2c7046cc3db4c0b79f458fc1e",
-      "certificate.py": "a79c13ebaa97a7d892078fe490fbf833fe982610fd60ec6b6b33f699dcf4b6b5",
-      "classical_import.py": "825b4f9d1160b5b3de4ac134001d3523b8a2874eb6e8be96bdde81fd4c148ebe",
+      "certificate.py": "36f1ff050665246403fa11951396732a2bda6b74a3fba8b1f7709fd59bb65be2",
+      "classical_import.py": "d45fe37ad83eed3a77e28fdabcf16c9db2bd0008175c78247402fb51c642c57e",
       "defect_complex.py": "8ed616e0a2bb66f1282cafc491ae23e98a7068702a71e3775472bafda7f06313",
-      "schema/cartan_defect_precertificate.schema.json": "f47fb15f5429ea9eb228b7052d243a5f8817348de1af7807d4ea9b44c9127b75",
-      "tests/test_certificate.py": "560bc27eb960bd710fdc5cd9178cc9e341465dd68e39e09d23f09d29a8672ad4",
-      "tests/test_classical_import.py": "67047af3fa67c516ada82de097f24989192c664d77ba2518a59ca51f8341fb61",
+      "schema/cartan_defect_precertificate.schema.json": "9367be69a1bef4afb24aa780c4e8a8433cb99045d1652cdf59a9e5664e54cc84",
+      "tests/test_certificate.py": "942cc9ff9558a987cb7505d3c5b2d91c5c4833a347932fe63f064680fde62904",
+      "tests/test_classical_import.py": "6a903e86c42129689213ac46cfcde08ea57a528326e58210e33f66f17cdcf704",
       "tests/test_defect_complex.py": "648a259aa39a2a3164c746423049bcdb61f67809a6e348d2886825f80d0632d2"
     },
-    "source_manifest_sha256": "c3f7f4d000510a1179b4c60a53bb37fca2d3890d50063420e36582ee2a84fa48"
+    "source_manifest_sha256": "61885e0242165327ad9de5b8b60e7fab345bfde1a19b6aa23bee56aeee544a45"
   },
   "result_id": "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE",
   "result_state": "ALGEBRAIC_ENGINE_READY_PHYSICAL_CANDIDATES_INPUT_BLOCKED",

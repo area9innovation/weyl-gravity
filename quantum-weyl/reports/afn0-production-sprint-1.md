@@ -15,7 +15,7 @@ modes and emit deterministic receipts:
 
 - `H04_AFN0_EVEN`;
 - `H04_AFN0_ODD`;
-- `H14_AFN0_EVEN_WITHOUT_EULER`;
+- `H14_AFN0_EVEN`;
 - `H14_AFN0_ODD`.
 
 Each slice contains a named `CLOSURE_RESULT` and a separately named
@@ -38,10 +38,10 @@ This is not yet the antifield-independent obstruction classification.  The
 top curvature-density carrier basis is complete under its declared rules,
 but the lower-form ghost/generalized-connection bases required by the total
 complex are still `IN_PROGRESS`.  The pure-Diff ghost basis at ghost number
-one is likewise incomplete.  The checked-in even anomaly slice still excludes
-`omega E4`: its intrinsic tower now passes independently, but it has not yet
-been integrated into a complete lower-form production basis and rerun through
-the mapping cone.
+one is likewise incomplete.  The even anomaly closure slice now includes
+`omega E4` with its completed intrinsic tower.  Its quotient result remains
+truncated because the lower-form production and boundary bases are not yet
+exhaustive.
 
 Consequently the run emits no nontriviality claim and no dual witness for a
 physical representative.  The only permitted provisional witness label is
@@ -105,3 +105,24 @@ The full classical certificate pipeline was not rerun: no classical input,
 freeze state, or published theorem changed.  The complete affected local-BV
 suite and the classical-import boundary regression were run because the
 relative quotient and filtration interfaces are shared within that package.
+
+### Completed-Euler slice integration
+
+The historical `H14_AFN0_EVEN_WITHOUT_EULER` slice has been replaced by
+`H14_AFN0_EVEN`.  Its closure receipt now contains `omega C2`, `omega E4`,
+and `omega Box R`; the Euler row points to the completed intrinsic Euler
+certificate.  In the truncated quotient, `omega E4` remains `UNDECIDED`,
+`omega Box R` remains `EXACT`, and no nonmembership witness is promoted.
+Reverse signature coverage records `omega C2` and `omega E4` as two generated
+candidates with the same quadratic-curvature signature, without inflating the
+number of realizable signatures.
+
+| Rail | Result |
+|---|---:|
+| AFN0, basis-gap, tensor-graph, and exhaustiveness consumers | 16 pass in 13.11 s |
+| complete local-BV suite | 188 pass in about 28 s |
+| Cartan consumers excluding the intentionally commit-pinned dossier contribution | 28 pass in 0.17 s |
+| basis-gap, AFN0, and Cartan artifact reproduction checks | pass |
+
+The Cartan contribution is repinned only after this updated certificate has a
+commit hash; its blocked lifecycle and null verdict are unchanged.

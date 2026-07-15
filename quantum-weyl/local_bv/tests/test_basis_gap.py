@@ -29,10 +29,10 @@ class BasisGapTests(unittest.TestCase):
         )
         self.assertEqual(
             (
-                by_slice["H14_AFN0_EVEN_WITHOUT_EULER"][
+                by_slice["H14_AFN0_EVEN"][
                     "coarse_grading_signature_count"
                 ],
-                by_slice["H14_AFN0_EVEN_WITHOUT_EULER"][
+                by_slice["H14_AFN0_EVEN"][
                     "refined_grading_signature_count"
                 ],
             ),
@@ -43,7 +43,7 @@ class BasisGapTests(unittest.TestCase):
             "COMPLETE",
         )
         self.assertEqual(
-            by_slice["H14_AFN0_EVEN_WITHOUT_EULER"][
+            by_slice["H14_AFN0_EVEN"][
                 "pending_resolution_count"
             ],
             2,

@@ -1,15 +1,15 @@
 {
   "canonical_hashes": {
-    "source_manifest_sha256": "1a3ed2290ac368c1e8de1afcb09098df4e36d93935fab8af368482c99b8f6731"
+    "source_manifest_sha256": "5c882fab27a377ced3d2622a9951e7aee2560615c884d60618a0f591f9d24565"
   },
   "checks": {
     "BoxR_explicit_primitive": "VERIFIED",
-    "Euler_intrinsic_tower": "IN_PROGRESS",
+    "Euler_intrinsic_tower": "NONTRIVIAL_COMPLETE",
     "H04_AFN0_EVEN_started": "VERIFIED",
     "H04_AFN0_ODD_started": "VERIFIED",
     "H04_even_top_signature_resolution": "VERIFIED",
     "H04_odd_top_signature_resolution": "VERIFIED",
-    "H14_AFN0_EVEN_WITHOUT_EULER_started": "VERIFIED",
+    "H14_AFN0_EVEN_complete_candidate_closure": "VERIFIED",
     "H14_AFN0_ODD_started": "VERIFIED",
     "basis_gap_report_emitted": "VERIFIED",
     "closure_and_truncated_quotient_outputs_separated": "VERIFIED",
@@ -41,21 +41,21 @@
     "resolve every remaining top-form and Diff signature with a terminal status",
     "compare the forward canonical span with reverse signature coverage",
     "assemble the production Q and d_h sparse matrices",
-    "complete the omega-Euler intrinsic tower",
+    "integrate the completed omega-Euler tower into the production Q and d_h matrices",
     "emit COMPLETE_NONTRIVIALITY_WITNESS only after the complete boundary rank and exhaustiveness proof are frozen"
   ],
   "result_hashes": {
-    "BASIS_GAP_REPORT_AFN0": "dbf6835558cb95d586f4e18e4e017083c670c01865c532b0926eb2aa5bce13fc",
+    "BASIS_GAP_REPORT_AFN0": "13c79a64be1bce222904f738896dca0228ba4d9e2bd4a2b315e486ab8a0b3712",
     "H04_AFN0_EVEN_CLOSURE": "09a0901a88ed2bf357a7a17d660486a6379300ec3f4d7df9981c921e4a1f655d",
     "H04_AFN0_EVEN_TRUNCATED_QUOTIENT": "283b26d5314b987aa2d9187a8e27722dcb8309dff1e180901a5f032ccd0b1be4",
     "H04_AFN0_ODD_CLOSURE": "d92e244cf3be12b33c5b1e821b29939e3ca66821a74d8ee128f5479d6692229d",
     "H04_AFN0_ODD_TRUNCATED_QUOTIENT": "a4e65329ab0f8f35372a2f0cfc23bca393e2e5113b61f068b64840558b1227f5",
     "H04_AFN0_RESULT": "fcb95ea46816ee53912c82c82dcc61704f582ad6ace55754d72ee8e44c092ac0",
-    "H14_AFN0_EVEN_NO_EULER_CLOSURE": "19363c2557887a0b837fdcbe4452ea3c01b10a2dae7f33c4d6710ae66dc86aa0",
-    "H14_AFN0_EVEN_NO_EULER_TRUNCATED_QUOTIENT": "a5169ad88bedb5ddde19b3b50b9d9c0dd7e60d8f0f408e1efb16ec5678eda441",
+    "H14_AFN0_EVEN_CLOSURE": "de4198a505da8dcb935acdbf0a5bfb051ba6fd0a99193bbe0b95477de0229c11",
+    "H14_AFN0_EVEN_TRUNCATED_QUOTIENT": "59c357fdd24fb30b2ba037249e42f0e99e3f1e5dcc58f93c15d6054cd3084f97",
     "H14_AFN0_ODD_CLOSURE": "e4e35a21b59204070828d91ab4d87cb766c5dc150925d2e1e5d35aefb64a4555",
     "H14_AFN0_ODD_TRUNCATED_QUOTIENT": "b82261512933aa41108c72914fe0d5ed1f0bd3159da63464419f304142adb124",
-    "H14_AFN0_RESULT": "e118bd1901f18d59b5f693d6d3cfc2f8b612a86ea3ce421348a37984024da25f"
+    "H14_AFN0_RESULT": "642d894686cd206034ffa61845b1298738f98d50bed9a7f91b45b3c0cc128fcb"
   },
   "result_id": "AFN0_PRODUCTION_RUN_CERTIFICATE",
   "result_state": "SPRINT_1_IN_PROGRESS",

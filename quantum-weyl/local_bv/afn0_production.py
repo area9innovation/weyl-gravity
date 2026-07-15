@@ -152,7 +152,11 @@ def afn0_production_results() -> dict[str, dict[str, object]]:
 
     h04_even_ids = ("CT_C2", "CT_E4", "CT_BOX_R")
     h04_odd_ids = ("CT_C_DUAL_C",)
-    h14_even_ids = ("ANOM_OMEGA_C2", "ANOM_OMEGA_BOX_R")
+    h14_even_ids = (
+        "ANOM_OMEGA_C2",
+        "ANOM_OMEGA_E4",
+        "ANOM_OMEGA_BOX_R",
+    )
     h14_odd_ids = ("ANOM_OMEGA_C_DUAL_C",)
 
     common = {
@@ -188,17 +192,13 @@ def afn0_production_results() -> dict[str, dict[str, object]]:
     h14_slices = [
         _slice(
             analysis=analysis,
-            slice_id="H14_AFN0_EVEN_WITHOUT_EULER",
-            closure_result_id="H14_AFN0_EVEN_NO_EULER_CLOSURE",
-            quotient_result_id="H14_AFN0_EVEN_NO_EULER_TRUNCATED_QUOTIENT",
+            slice_id="H14_AFN0_EVEN",
+            closure_result_id="H14_AFN0_EVEN_CLOSURE",
+            quotient_result_id="H14_AFN0_EVEN_TRUNCATED_QUOTIENT",
             ghost_number=1,
             parity="even",
             records=anomalies,
             candidate_ids=h14_even_ids,
-            excluded_required_candidate={
-                "representative_id": "ANOM_OMEGA_E4",
-                "reason": "intrinsic Euler descent is in progress",
-            },
         ),
         _slice(
             analysis=analysis,
@@ -231,7 +231,7 @@ def afn0_production_results() -> dict[str, dict[str, object]]:
         "antifield_number": 0,
         "slices": h14_slices,
         "production_boundary": [
-            "intrinsic omega-Euler tower is incomplete",
+            "the complete intrinsic omega-Euler tower is included, but its relative class is undecided",
             "lower-form mapping-cone and pure-Diff ghost bases are not yet exhaustive",
             "dual nontriviality witnesses will be emitted only against that complete boundary space",
         ],

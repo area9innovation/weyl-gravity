@@ -72,7 +72,7 @@ def build_certificate() -> dict[str, Any]:
         "checks": {
             "H04_AFN0_EVEN_started": "VERIFIED",
             "H04_AFN0_ODD_started": "VERIFIED",
-            "H14_AFN0_EVEN_WITHOUT_EULER_started": "VERIFIED",
+            "H14_AFN0_EVEN_complete_candidate_closure": "VERIFIED",
             "H14_AFN0_ODD_started": "VERIFIED",
             "top_curvature_carrier_generation": "VERIFIED",
             "parity_split": "VERIFIED",
@@ -96,7 +96,7 @@ def build_certificate() -> dict[str, Any]:
             "forward_reverse_span_agreement": "NOT_COMPUTED",
             "total_complex_exhaustiveness": "NOT_COMPUTED",
             "complete_lower_form_basis": "IN_PROGRESS",
-            "Euler_intrinsic_tower": "IN_PROGRESS",
+            "Euler_intrinsic_tower": "NONTRIVIAL_COMPLETE",
         },
         "result_hashes": {
             "H04_AFN0_RESULT": canonical_sha256(h04),
@@ -116,7 +116,7 @@ def build_certificate() -> dict[str, Any]:
             "resolve every remaining top-form and Diff signature with a terminal status",
             "compare the forward canonical span with reverse signature coverage",
             "assemble the production Q and d_h sparse matrices",
-            "complete the omega-Euler intrinsic tower",
+            "integrate the completed omega-Euler tower into the production Q and d_h matrices",
             "emit COMPLETE_NONTRIVIALITY_WITNESS only after the complete boundary rank and exhaustiveness proof are frozen",
         ],
     }

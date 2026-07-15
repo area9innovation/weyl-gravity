@@ -23,7 +23,7 @@ class AfnZeroProductionTests(unittest.TestCase):
         )
         self.assertEqual(
             [slice_["slice_id"] for slice_ in h14["slices"]],
-            ["H14_AFN0_EVEN_WITHOUT_EULER", "H14_AFN0_ODD"],
+            ["H14_AFN0_EVEN", "H14_AFN0_ODD"],
         )
         self.assertTrue(
             all(
@@ -36,7 +36,7 @@ class AfnZeroProductionTests(unittest.TestCase):
         expected = {
             "H04_AFN0_EVEN_CLOSURE",
             "H04_AFN0_ODD_CLOSURE",
-            "H14_AFN0_EVEN_NO_EULER_CLOSURE",
+            "H14_AFN0_EVEN_CLOSURE",
             "H14_AFN0_ODD_CLOSURE",
         }
         self.assertEqual(
@@ -47,6 +47,16 @@ class AfnZeroProductionTests(unittest.TestCase):
             },
             expected,
         )
+        even_anomaly = h14["slices"][0]
+        closure_ids = {
+            row["representative_id"]
+            for row in even_anomaly["closure_result"]["candidates"]
+        }
+        self.assertEqual(
+            closure_ids,
+            {"ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_BOX_R"},
+        )
+        self.assertIsNone(even_anomaly["excluded_required_candidate"])
 
     def test_known_exact_classes_keep_explicit_witnesses(self) -> None:
         candidates = {

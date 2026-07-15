@@ -57,12 +57,16 @@ def validate_classical_d_status(record: object) -> dict[str, Any]:
         for setting in settings
     ]
     _require(
+        all(isinstance(identifier, str) and identifier for identifier in identifiers),
+        "classical D setting identifier is invalid",
+    )
+    _require(
         len(identifiers) == len(set(identifiers)),
         "classical D settings contain a duplicate identifier",
     )
     _require(
-        set(identifiers) == set(EXPECTED_SETTINGS),
-        "classical D setting inventory differs from the quantum challenge",
+        set(EXPECTED_SETTINGS).issubset(identifiers),
+        "classical D setting inventory is missing a required quantum setting",
     )
     by_id = {setting["setting_id"]: setting for setting in settings}
     vacuum = by_id["vacuum_cylinder"]
@@ -93,7 +97,7 @@ def validate_classical_d_status(record: object) -> dict[str, Any]:
         sectors.get("P_Taub0", {}).get("verdict") == "D_GAUGE",
         "P_Taub0 is not certified as D_GAUGE",
     )
-    for setting_id in EXPECTED_SETTINGS:
+    for setting_id in identifiers:
         setting = by_id[setting_id]
         _require(
             setting.get("assessment_status") in {"NOT_TESTED", "OPEN", "CERTIFIED"},
@@ -149,5 +153,9 @@ def import_receipt(path: Path = DEFAULT_STATUS_PATH) -> dict[str, Any]:
             for sector in vacuum["sector_results"]
             if sector["sector_id"] in {"P_lin", "P_Taub0"}
         },
+        "additional_setting_ids": sorted(
+            set(setting["setting_id"] for setting in data["settings"])
+            - set(EXPECTED_SETTINGS)
+        ),
         "semantic_validation": "VERIFIED",
     }

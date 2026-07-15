@@ -94,6 +94,14 @@ class CartanDefectCertificateTests(unittest.TestCase):
             certificate["lifecycle_gates"]["RESIDUAL_TRANSFERRED"],
             "BLOCKED_PENDING_QME_RESTORED",
         )
+        self.assertEqual(
+            certificate["input_gates"]["Euler_intrinsic_descent"],
+            "NONTRIVIAL_COMPLETE_LOCAL_ALGEBRAIC",
+        )
+        self.assertEqual(
+            certificate["input_gates"]["AFN0_local_relative_basis"],
+            "IN_PROGRESS",
+        )
 
     def test_source_and_dependency_hashes_reproduce(self) -> None:
         certificate = build_certificate()

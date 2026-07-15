@@ -290,6 +290,38 @@ def _dependency_manifest() -> dict[str, str]:
     return {name: _sha256(path) for name, path in paths.items()}
 
 
+def _local_obstruction_gate_status() -> tuple[str, str]:
+    afn0 = json.loads(
+        (
+            QUANTUM_ROOT
+            / "local_bv"
+            / "certificates"
+            / "AFN0_PRODUCTION_RUN_CERTIFICATE.json"
+        ).read_text()
+    )
+    euler = json.loads(
+        (
+            QUANTUM_ROOT
+            / "local_bv"
+            / "certificates"
+            / "EULER_TRANSGRESSION_CERTIFICATE.json"
+        ).read_text()
+    )
+    if (
+        euler.get("checks", {}).get("omega_E4_intrinsic_descent_continuation")
+        != "NONTRIVIAL_COMPLETE"
+    ):
+        raise ValueError("Cartan input lost the completed intrinsic Euler tower")
+    if (
+        afn0.get("checks", {}).get("H14_AFN0_EVEN_complete_candidate_closure")
+        != "VERIFIED"
+    ):
+        raise ValueError("Cartan input lost the complete even-anomaly closure slice")
+    if afn0.get("checks", {}).get("complete_lower_form_basis") != "IN_PROGRESS":
+        raise ValueError("Cartan AFN0 lower-form gate drifted")
+    return "IN_PROGRESS", "NONTRIVIAL_COMPLETE_LOCAL_ALGEBRAIC"
+
+
 def build_certificate() -> dict[str, Any]:
     fixtures = (
         _fixture_receipt("zero_defect", _acyclic_fixture(corrected=False)),
@@ -326,6 +358,7 @@ def build_certificate() -> dict[str, Any]:
 
     source_manifest = _source_manifest()
     dependency_manifest = _dependency_manifest()
+    afn0_status, euler_status = _local_obstruction_gate_status()
     return {
         "schema_version": "cartan-defect-precertificate-v1",
         "result_id": "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE",
@@ -413,8 +446,8 @@ def build_certificate() -> dict[str, Any]:
         "input_gates": {
             "classical_freeze": "BLOCKED_UNFROZEN",
             "classical_D_charge_setting_ledger": "IMPORTED_HASH_PINNED_NOT_A_QUANTUM_PROMOTION",
-            "AFN0_local_relative_basis": "IN_PROGRESS",
-            "Euler_intrinsic_descent": "IN_PROGRESS",
+            "AFN0_local_relative_basis": afn0_status,
+            "Euler_intrinsic_descent": euler_status,
             "minimal_BV_antifield_completion": "BLOCKED_PENDING_CLASSICAL_EXPORT",
             "renormalized_operator_algebra": "NOT_CONSTRUCTED",
             "pure_weyl_QME": "NOT_RESTORED",

@@ -64,8 +64,10 @@ operator construction, and coefficient computation.  The bulk algebraic
 basis is `IN_PROGRESS`; every analytic operator is
 `UNDEFINED_ANALYTICALLY`; every coefficient is `NOT_COMPUTED`.
 There is no renormalized `Q_1`, `iota_1`, or `L_D^(1)`, the classical import
-is unfrozen, the AFN0 lower-form and Euler bases are incomplete, and the local
-QME has not been restored.  Boundary/corner, scalar-clock, measure, and
+is unfrozen, and the AFN0 lower-form basis is incomplete.  The completed
+intrinsic Euler tower is included in the truncated even-anomaly closure slice,
+but its relative class remains undecided and the local QME has not been
+restored.  Boundary/corner, scalar-clock, measure, and
 Lorentzian observable algebras are also absent.  Consequently this package
 does not establish anomaly freedom, an anomaly coefficient, residual quantum
 transfer, or a quantum pairing correction.

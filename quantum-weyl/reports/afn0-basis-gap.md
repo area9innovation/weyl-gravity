@@ -25,7 +25,7 @@ epsilon-availability constraints gives:
 |---|---:|---:|---:|---:|---:|---:|
 | `H04_AFN0_EVEN` | 3 | 2 | 2 | 2 | 2 | 0 |
 | `H04_AFN0_ODD` | 3 | 2 | 2 | 1 | 1 | 0 |
-| `H14_AFN0_EVEN_WITHOUT_EULER` | 9 | 5 | 5 | 2 | 2 | 2 |
+| `H14_AFN0_EVEN` | 9 | 5 | 5 | 2 | 2 | 2 |
 | `H14_AFN0_ODD` | 9 | 5 | 5 | 1 | 1 | 3 |
 
 The eliminated signatures attempted to apply covariant tensor derivatives

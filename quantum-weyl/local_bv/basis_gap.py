@@ -23,7 +23,7 @@ TERMINAL_RESOLUTIONS = (
 _SLICE_SPECS = (
     ("H04_AFN0_EVEN", 0, "even"),
     ("H04_AFN0_ODD", 0, "odd"),
-    ("H14_AFN0_EVEN_WITHOUT_EULER", 1, "even"),
+    ("H14_AFN0_EVEN", 1, "even"),
     ("H14_AFN0_ODD", 1, "odd"),
 )
 
@@ -68,8 +68,6 @@ def _generated_candidates(slice_id: str) -> dict[tuple[int, int, int], tuple[str
     grouped: dict[tuple[int, int, int], list[str]] = {}
     for record in source:
         if record["ghost_number"] != ghost_number or record["parity"] != parity:
-            continue
-        if slice_id.endswith("WITHOUT_EULER") and record["class_id"] == "ANOM_OMEGA_E4":
             continue
         grouped.setdefault(_representative_signature(record), []).append(
             str(record["class_id"])
