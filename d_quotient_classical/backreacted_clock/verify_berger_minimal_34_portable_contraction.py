@@ -82,14 +82,13 @@ def verify_certificate() -> dict[str, object]:
     expected_l[4][10] = {(): 1}
 
     frozen = payload["classical_unary_q1"]
-    assert _load_matrix(frozen["K_full"]) == expected_k
-    assert _load_matrix(frozen["H_full"]) == expected_h
-    assert _load_matrix(frozen["minus_K_full_sharp"]) == expected_l
-    expected_q = _zero(34, 34)
-    _embed(expected_q, expected_k, 5, 0)
-    _embed(expected_q, expected_h, 17, 5)
-    _embed(expected_q, expected_l, 29, 17)
-    assert _load_matrix(frozen["total_matrix"]) == expected_q
+    assert frozen["retained_blocks_ref"] == "dependency_refs.retained_classical_unary_q1"
+    assert frozen["full_shape"] == [34, 34]
+    assert frozen["degree_ranks"] == [5, 12, 12, 5]
+    assembly = frozen["assembly"]
+    assert assembly["K_spatial_embedding"] == {"row_offset": 5, "column_offset": 0}
+    assert assembly["H_retained_embedding"] == {"row_offset": 17, "column_offset": 5}
+    assert assembly["minus_K_spatial_sharp_embedding"] == {"row_offset": 29, "column_offset": 17}
 
     contraction = payload["contraction"]
     iota = _numeric_constant(_load_matrix(contraction["iota_cl"]))
@@ -113,6 +112,7 @@ def verify_certificate() -> dict[str, object]:
     q_clock[16, 3] = 1
     q_clock[32, 28] = -1
     q_clock[33, 27] = 1
+    assert _numeric_constant(_load_matrix(frozen["clock_extension"])) == q_clock
     assert q_clock * homotopy + homotopy * q_clock == p_clock
     assert homotopy * homotopy == sp.zeros(34)
     assert projection * homotopy == sp.zeros(26, 34)

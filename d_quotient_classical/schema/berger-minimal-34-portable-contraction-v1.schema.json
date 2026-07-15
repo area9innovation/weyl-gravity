@@ -7,7 +7,7 @@
   "required": [
     "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
     "dependency_refs", "operator_semantics", "row_layout",
-    "classical_unary_q1", "retained_unary", "contraction", "exact_checks",
+    "classical_unary_q1", "contraction", "exact_checks",
     "flags", "next_gate", "claim_boundary"
   ],
   "properties": {
@@ -22,15 +22,15 @@
     "classical_unary_q1": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["K_full", "H_full", "minus_K_full_sharp", "total_matrix"],
+      "required": ["retained_blocks_ref", "full_shape", "degree_ranks", "assembly", "clock_extension"],
       "properties": {
-        "K_full": {"$ref": "#/$defs/operator12x5"},
-        "H_full": {"$ref": "#/$defs/operator12x12"},
-        "minus_K_full_sharp": {"$ref": "#/$defs/operator5x12"},
-        "total_matrix": {"$ref": "#/$defs/operator34x34"}
+        "retained_blocks_ref": {"const": "dependency_refs.retained_classical_unary_q1"},
+        "full_shape": {"const": [34, 34]},
+        "degree_ranks": {"const": [5, 12, 12, 5]},
+        "assembly": {"type": "object"},
+        "clock_extension": {"$ref": "#/$defs/operator34x34"}
       }
     },
-    "retained_unary": {"$ref": "#/$defs/operator26x26"},
     "contraction": {
       "type": "object",
       "additionalProperties": false,
@@ -58,11 +58,7 @@
     "claim_boundary": {"type": "string", "minLength": 1}
   },
   "$defs": {
-    "operator12x5": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [12, 5]}}}]},
-    "operator12x12": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [12, 12]}}}]},
-    "operator5x12": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [5, 12]}}}]},
     "operator34x34": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [34, 34]}}}]},
-    "operator26x26": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [26, 26]}}}]},
     "operator34x26": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [34, 26]}}}]},
     "operator26x34": {"allOf": [{"$ref": "#/$defs/pbwOperatorRecord"}, {"type": "object", "properties": {"shape": {"const": [26, 34]}}}]},
     "pbwOperatorRecord": {

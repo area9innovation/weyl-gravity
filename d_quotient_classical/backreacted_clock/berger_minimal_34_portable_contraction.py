@@ -130,6 +130,12 @@ def _exact_matrices() -> dict[str, object]:
     _embed_block(q_retained, h_retained, 13, 3)
     _embed_block(q_retained, l_retained, 23, 13)
 
+    q_clock_extension = _zero(34, 34)
+    q_clock_extension[15][4] = _one(-1)
+    q_clock_extension[16][3] = _one(1)
+    q_clock_extension[32][28] = _one(-1)
+    q_clock_extension[33][27] = _one(1)
+
     inclusion = _zero(34, 26)
     projection = _zero(26, 34)
     for retained_index, full_index in enumerate(RETAINED_TO_FULL):
@@ -204,6 +210,7 @@ def _exact_matrices() -> dict[str, object]:
         "l_full": l_full,
         "q_full": q_full,
         "q_retained": q_retained,
+        "q_clock_extension": q_clock_extension,
         "inclusion": inclusion,
         "projection": projection,
         "homotopy": homotopy,
@@ -262,12 +269,22 @@ class BergerMinimal34PortableContraction:
                 "ghost_clock_order": ["tau", "sigma"],
             },
             "classical_unary_q1": {
-                "K_full": _matrix_record(matrices["k_full"]),
-                "H_full": _matrix_record(matrices["h_full"]),
-                "minus_K_full_sharp": _matrix_record(matrices["l_full"]),
-                "total_matrix": _matrix_record(matrices["q_full"]),
+                "retained_blocks_ref": "dependency_refs.retained_classical_unary_q1",
+                "full_shape": [34, 34],
+                "degree_ranks": [5, 12, 12, 5],
+                "assembly": {
+                    "K_spatial_embedding": {"row_offset": 5, "column_offset": 0},
+                    "H_retained_embedding": {"row_offset": 17, "column_offset": 5},
+                    "minus_K_spatial_sharp_embedding": {"row_offset": 29, "column_offset": 17},
+                    "clock_extension_meaning": [
+                        "ell_1 sigma=-R",
+                        "ell_1 tau=Theta",
+                        "ell_1 Theta_star=-tau_star",
+                        "ell_1 R_star=sigma_star"
+                    ]
+                },
+                "clock_extension": _matrix_record(matrices["q_clock_extension"]),
             },
-            "retained_unary": _matrix_record(matrices["q_retained"]),
             "contraction": {
                 "iota_cl": _matrix_record(matrices["inclusion"]),
                 "pi_cl": _matrix_record(matrices["projection"]),
