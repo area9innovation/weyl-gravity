@@ -50,6 +50,8 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json`](certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json)
 - Positive Berger-clock background report:
   [`reports/positive-berger-clock-background.md`](reports/positive-berger-clock-background.md)
+- Berger clock reduced-charge seed:
+  [`certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json`](certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json)
 
 The only scientific verdicts are:
 
@@ -84,6 +86,8 @@ python3 d_quotient_classical/scalar_clock/inhomogeneous_stealth_clock.py --check
 python3 -m unittest d_quotient_classical.scalar_clock.tests.test_inhomogeneous_stealth_clock
 python3 d_quotient_classical/backreacted_clock/positive_berger_clock.py --check --guards
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_positive_berger_clock
+python3 d_quotient_classical/backreacted_clock/berger_clock_charge_seed.py --check --guards
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_clock_charge_seed
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -95,6 +99,8 @@ positive-health obstruction, the homogeneous positive-sign stealth
 classification, and the complete standard one-field inhomogeneous stealth
 no-go. The final pair certifies the exact positive-matter Berger-clock
 background while keeping the covariant charge and all-row BV verdict open.
+The charge-seed pair additionally proves that the phase carries nonzero
+conserved internal momentum, without equating it to the total \(D\) charge.
 
 ## Promotion rule
 

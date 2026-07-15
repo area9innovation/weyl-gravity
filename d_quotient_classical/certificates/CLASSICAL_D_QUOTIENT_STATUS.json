@@ -122,6 +122,16 @@
       "evidence_id": "positive_berger_clock_background",
       "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
       "sha256": "fd7419b3a5985d83593de83824263c320b8fe44e47c69c473e7db5e30040b192"
+    },
+    {
+      "claim_scope": "Exact global O(2) matter charge and helical L_D=omega R identity on the positive Berger background; proves genuine clock momentum but not the total gravitational-plus-matter D charge.",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "evidence_id": "berger_clock_reduced_charge_seed",
+      "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+      "sha256": "aae64f16411d4cef24cb2e1ad93adaef98658727b4027ee96328a96b41af545f"
     }
   ],
   "open_fields": [
@@ -573,7 +583,7 @@
       "verdict_dependency_tags": []
     }
   ],
-  "source_commit": "77c4108b6a7e8d4aedb6ef6ddaaa5772c4636851",
+  "source_commit": "332bc1744aecc3ec450860d09a5b07d362bb7278",
   "verification_receipts": [
     {
       "command": "python3 symbolic/verify_compact_cylinder_d_charge_audit.py --check",
@@ -702,6 +712,22 @@
       "higher_tiers_not_run": "The next gate is the full Berger-clock charge and BV audit on perturbations.",
       "status": "PASS",
       "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/berger_clock_charge_seed.py --check --guards",
+      "elapsed_seconds": 0.3,
+      "escalation_criterion": "Escalate if the helical D/O(2) identity, conserved charge, rational fixture, or fail-closed total-D boundary changes.",
+      "higher_tiers_not_run": "The seed does not combine the pure-Weyl and matter presymplectic currents on the complete fixed-coupling linearized solution space.",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_clock_charge_seed",
+      "elapsed_seconds": 0.11,
+      "escalation_criterion": "Escalate if the nonzero matter momentum or open total-D verdict changes.",
+      "higher_tiers_not_run": "The next gate is TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT.",
+      "status": "PASS",
+      "test_tier": 1
     }
   ],
   "work_packages": {
@@ -749,10 +775,11 @@
         "neutral_clock_bv_health_audit",
         "homogeneous_positive_conformal_stealth_clock",
         "inhomogeneous_conformal_stealth_clock_no_go",
-        "positive_berger_clock_background"
+        "positive_berger_clock_background",
+        "berger_clock_reduced_charge_seed"
       ],
-      "next_gate": "Run FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT: derive the perturbative covariant D charge, support-local all-row clock contraction, causal propagation, and stability on the positive Berger branch.",
-      "result": "The vacuum one-real-scalar and complete standard one-field stealth routes are obstructed. The neutral (+,-) pair gives a scoped homogeneous D_GAUGE reference-clock theorem but fails the global positive-health audit. A new exact Berger-cylinder family passes the coupled Bach-scalar equations with two standard-sign rotating conformal scalars, full raw Diff x Weyl clock incidence, positive quartic potential, and dominant-energy stress. This establishes a credible healthy physical-clock background, but not yet a D charge verdict or support-local all-row BV reduction.",
+      "next_gate": "Run TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT, then complete the all-row BV and causal parts of FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT.",
+      "result": "The vacuum one-real-scalar and complete standard one-field stealth routes are obstructed. The neutral (+,-) pair gives a scoped homogeneous D_GAUGE reference-clock theorem but fails the global positive-health audit. A new exact Berger-cylinder family passes the coupled Bach-scalar equations with two standard-sign rotating conformal scalars, full raw Diff x Weyl clock incidence, positive quartic potential, and dominant-energy stress. Its phase carries the exact nonzero conserved O(2) charge Q_R=V_0 alpha_B q sqrt(1-4q), and L_D=omega R on the background, so it is a genuine physical-clock candidate rather than a cost-free gauge label. The total covariant D charge and support-local all-row BV reduction remain open.",
       "status": "PARTIAL"
     }
   }

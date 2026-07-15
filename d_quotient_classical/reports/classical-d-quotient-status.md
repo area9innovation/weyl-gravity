@@ -90,6 +90,18 @@ dominant energy inequalities. This passes the healthy-background gate but
 does not assign a \(D\) verdict: the perturbative covariant charge and all-row
 BV reduction remain open.
 
+The first charge seed shows that the phase is not a cost-free gauge marker.
+The scalar pair has an exact conserved global \(O(2)\) charge
+
+\[
+Q_R=V_0\alpha_Bq\sqrt{1-4q}>0,
+\]
+
+and obeys \(\mathcal L_D T=\omega RT\) on the background. This establishes
+genuine clock momentum, but not the total \(D\) charge: the pure-Weyl and
+improved scalar presymplectic currents must still be combined on the complete
+fixed-coupling linearized solution space.
+
 The present charge audit composes the exact reduced-mode moment map with the
 already-certified Lorentzian current comparison, so it is tagged
 `REDUCED-MODE` and `LORENTZIAN-CAUSAL`. This does not classify any new
@@ -201,6 +213,8 @@ python3 d_quotient_classical/scalar_clock/inhomogeneous_stealth_clock.py --check
 python3 -m unittest d_quotient_classical.scalar_clock.tests.test_inhomogeneous_stealth_clock
 python3 d_quotient_classical/backreacted_clock/positive_berger_clock.py --check --guards
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_positive_berger_clock
+python3 d_quotient_classical/backreacted_clock/berger_clock_charge_seed.py --check --guards
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_clock_charge_seed
 ```
 
 No full-suite result is implied by the scoped checks.
