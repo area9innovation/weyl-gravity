@@ -14,6 +14,9 @@ TRANSFER_ROOT = Path(__file__).resolve().parent
 ROOT = TRANSFER_ROOT.parents[1]
 INPUT_PATH = ROOT / "quantum-weyl" / "classical_import" / "exports" / "ND2_PHYSICAL_RUN_INPUT.json"
 OUTPUT_PATH = TRANSFER_ROOT / "certificates" / "ND2_PHYSICAL_RUN.json"
+CONTRACTION_IMPORT_PATH = (
+    TRANSFER_ROOT / "certificates" / "BERGER_MINIMAL_34_CONTRACTION_IMPORT.json"
+)
 
 try:
     from .arity_two_cartan import build_exact_correction_fixture
@@ -43,6 +46,8 @@ def _source_manifest() -> dict[str, str]:
         "operator_backend_registry.py",
         "berger_pbw_backend.py",
         "berger_pbw_backend_certificate.py",
+        "berger_minimal_contraction_import.py",
+        "berger_minimal_contraction_import_certificate.py",
         "berger_retained_q1_import.py",
         "berger_retained_q1_import_certificate.py",
         "evaluator_registry.py",
@@ -55,16 +60,34 @@ def _source_manifest() -> dict[str, str]:
         "schema/nd2-physical-run-input-v1.schema.json",
         "schema/nd2-physical-run-certificate-v1.schema.json",
         "schema/berger-pbw-operator-backend-v1.schema.json",
+        "schema/berger-minimal-34-contraction-import-v1.schema.json",
         "schema/total-d-disposition-v1.schema.json",
         "tests/test_evaluator_registry.py",
         "tests/test_nd2_physical_run.py",
         "tests/test_berger_pbw_backend.py",
+        "tests/test_berger_minimal_contraction_import.py",
         "tests/test_total_d_disposition.py",
     )
     return {path: _sha256(TRANSFER_ROOT / path) for path in paths}
 
 
 def build_certificate() -> dict[str, Any]:
+    contraction_import = json.loads(CONTRACTION_IMPORT_PATH.read_text(encoding="utf-8"))
+    if (
+        contraction_import.get("schema")
+        != "quantum-weyl-berger-minimal-34-contraction-import-v1"
+        or contraction_import.get("result_state")
+        != "COMPLETE_34_ROW_MINIMAL_UNARY_CONTRACTION_IMPORTED_ND2_NONLINEAR_INPUT_BLOCKED"
+        or contraction_import.get("nd2_gate", {}).get(
+            "classical_contraction_artifact_satisfied"
+        )
+        is not True
+        or contraction_import.get("nd2_gate", {}).get(
+            "physical_execution_authorized"
+        )
+        is not False
+    ):
+        raise ValueError("Berger minimal contraction import was promoted or removed")
     registry = build_evaluator_registry(repository_root=ROOT)
     operator_registry = build_operator_backend_registry(repository_root=ROOT)
     adapter_registry = AssemblyAdapterRegistry(ROOT)
@@ -94,7 +117,11 @@ def build_certificate() -> dict[str, Any]:
             "status": "INPUT_NOT_AVAILABLE",
             "manifest_path": str(INPUT_PATH.relative_to(ROOT)),
             "manifest_sha256": None,
-            "reason": "no pinned total-D disposition, support-local q1/q2/D, contraction, and admissibility manifest is present",
+            "reason": (
+                "the complete minimal contraction is available, but no combined "
+                "manifest pins support-local q1/q2/D, admissibility, total-D "
+                "disposition, evaluator, and assembly adapter inputs"
+            ),
         }
 
     self_test = execute_evaluated_cartan(build_exact_correction_fixture())
@@ -134,6 +161,15 @@ def build_certificate() -> dict[str, Any]:
         "registered_assembly_adapters": [
             descriptor.to_payload() for descriptor in adapter_registry.descriptors()
         ],
+        "prerequisite_gate": {
+            "classical_contraction_artifact_satisfied": True,
+            "classical_contraction_path": "quantum-weyl/transfer/certificates/BERGER_MINIMAL_34_CONTRACTION_IMPORT.json",
+            "classical_contraction_sha256": _sha256(CONTRACTION_IMPORT_PATH),
+            "support_local_q1_q2_D_satisfied": False,
+            "admissibility_policy_satisfied": False,
+            "compatible_cartan_coefficient_domain_satisfied": False,
+            "physical_execution_authorized": False,
+        },
         "engine_self_test": {
             "classification": self_test["classification"],
             "all_checks_pass": all(self_test["checks"].values()),
@@ -151,6 +187,7 @@ def build_certificate() -> dict[str, Any]:
             "the Cartan executor accepts only an opaque verified-manifest token",
             "exact assembled inputs return a retained correction or normalized obstruction witness",
             "the retained Berger q1 has a content-addressed arity-one PBW operator backend",
+            "the exact support-local cyclic 34-row minimal Berger contraction is an available verified prerequisite",
         ],
         "not_established": [
             "a registered conformal-gravity expression evaluator",
@@ -160,7 +197,7 @@ def build_certificate() -> dict[str, Any]:
             "a physical conformal-gravity arity-two Cartan execution",
             "cyclic, real, boundary-compatible, or causal admissibility in a physical setting",
         ],
-        "next_gate": "extend the registered Berger PBW backend to q2/D and a declared Cartan coefficient domain, then install the all-row contraction and admissibility artifacts",
+        "next_gate": "extend the registered Berger PBW backend to q2/D and a declared Cartan coefficient domain, then install the admissibility artifact and assembly adapter",
         "provenance": {
             "source_manifest": source_manifest,
             "source_manifest_sha256": _canonical_hash(source_manifest),

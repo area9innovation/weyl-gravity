@@ -63,10 +63,12 @@ rehashing.
 ## Fail-closed boundary
 
 This result supplies the complete retained minimal `q1` only.  The existing
-clock theorem remains a separate 8-of-34 partial SDR import whose portable
-maps and `D`-equivariance are absent.  Nonminimal rows, the complete all-row
-contraction, `q2`, the `D` action, admissibility, causal Green theory, and all
-interacting and quantum verdicts remain open.  Consequently
+clock theorem remains a separate 8-of-34 partial SDR import in this receipt.
+A later portable export now supplies and independently verifies the complete
+34-row minimal contraction, while `D`-equivariance remains absent.  Nonminimal
+rows, `q2`, the `D` action, admissibility, causal Green theory, and all
+interacting and quantum verdicts remain open.  At the boundary of this
+retained-`q1` receipt itself,
 
 ```text
 retained_minimal_q1 = AVAILABLE_VERIFIED_PREREQUISITE
@@ -84,6 +86,7 @@ one in the PBW coefficient domain and is validation-only; it is not the
 
 - `quantum-weyl/transfer/certificates/BERGER_RETAINED_MINIMAL_Q1_IMPORT.json`
 - `quantum-weyl/transfer/certificates/BERGER_PBW_OPERATOR_BACKEND.json`
+- `quantum-weyl/transfer/certificates/BERGER_MINIMAL_34_CONTRACTION_IMPORT.json`
 
 ## Verification commands
 

@@ -56,11 +56,10 @@ sparse rational elimination inside occupied blocks.
 The positive Berger-clock background, reduced internal charge, and scoped
 fixed-coupling `D_GAUGE` theorem are now imported with exact classical
 provenance.  The registered exact cyclic clock-sector SDR is also imported on
-its precise 8-of-34-row boundary.  Its present certificate carries formulas
-and fingerprints, so the new portable receiving schema leaves the map payload,
-grading/symbol bridge, and `D`-equivariance fail-closed.  The physical Cartan
-run remains blocked on the distinct complete contraction and nonlinear tensor
-inputs.
+its precise 8-of-34-row boundary.  That earlier evidence receipt remains
+historically valid, but the later portable 34-row export now supplies the map
+payload and closes the complete minimal-unary contraction.  Local
+`D`-equivariance and nonlinear tensor inputs remain fail-closed.
 
 The complete retained 26-row minimal `q1` is now independently imported as a
 third classical prerequisite.  The consumer pins the theorem, its classical
@@ -68,8 +67,8 @@ promotion, and the later strict-schema repair separately; parses 891 exact PBW
 coefficients; and reconstructs the noncommutative invariant-frame algebra.  It
 reproduces `H^sharp=H`, `-K_spatial^sharp`, both Noether compositions,
 cyclicity, and `q1^2=0`.  This does not fill the separate clock-map payload,
-nonminimal rows, complete contraction, `q2`, or `D` action, and therefore does
-not authorize an ND2 physical run.
+nonminimal rows, `q2`, or `D` action, and therefore does not authorize an ND2
+physical run by itself.
 
 The retained operator is now registered behind a content-addressed arity-one
 PBW backend.  This closes the reusable operator-validation interface, not the
@@ -78,6 +77,14 @@ Cartan assembly gate: its coefficients lie in the noncommutative
 finite and `Fraction`-valued.  A PBW-module Cartan extension or a separately
 certified exact `REDUCED-MODE` specialization is still required before this
 backend can participate in a physical run.
+
+The portable 34-row contraction at `9278ba7d` is now independently imported.
+Exact PBW composition verifies the full unary nilpotency and both chain maps;
+exact rational matrices verify `pi_cl iota_cl=1`, the complementary
+projectors, the SDR identity and side conditions, homotopy cyclicity, pairing
+nondegeneracy, and projection/pairing compatibility.  This satisfies ND2's
+standalone `classical_contraction` artifact.  It does not supply `q2/D`, local
+`D`-equivariance, admissibility, or a compatible physical assembly adapter.
 
 ND3 additionally implements the next Cartan recurrence.  It retains the
 direct `[q3,iota_D]` and exchange `[q2,iota_D^(2)]` tensors separately, checks
@@ -115,7 +122,7 @@ transferred before `QME_RESTORED`.
 | Stage | Exact deliverable | Status |
 |---|---|---|
 | HT0 | Engine, convention, schema, blocker ledger | Ready |
-| HT1 | Import classical Taylor data; compute `ell_2` | Retained minimal `q1` and its arity-one PBW backend, residual cubic bracket, local Bach seeds, selected residual `D`-derivation, and ND2 Cartan solver computed; full support-local `q2/D`, compatible coefficient-domain assembly, and contraction blocked |
+| HT1 | Import classical Taylor data; compute `ell_2` | Complete 34-row minimal contraction, retained `q1` and its arity-one PBW backend, residual cubic bracket, local Bach seeds, selected residual `D`-derivation, and ND2 Cartan solver computed; support-local `q2/D`, admissibility, and compatible coefficient-domain assembly blocked |
 | HT2 | Compute `ell_3`; dynamical/topological mixing and centrality ledgers | Arity-three Cartan recurrence engine ready; physical `q3` and mixing input blocked |
 | HT3 | Higher arities and particle-filtration spectral sequence | Not computed |
 | HT4 | Cyclic minimal action and formal moduli/deformation interpretation | Not computed |
@@ -156,6 +163,11 @@ transferred before `QME_RESTORED`.
 | Focused Berger PBW backend, ND2, and aggregate tests | 11.41 | PASS (14 tests) | 2 |
 | Backend-era complete transfer suite | 69.45 | FAIL (119 tests pass; the same stale ND1 reproduction remains) | 2 |
 | Independent current ND1 drift audit | 6.60 | PASS (two hash-only differences) | 2 |
+| Portable 34-row contraction classical source checks | 4.21 | PASS (3 tests) | 1 |
+| Contraction, ND2, ND1, and aggregate certificate checks | 34.39 | PASS | 2 |
+| Contraction and ND2 schemas under strict AJV Draft-2020-12 | 4.44 | PASS (2 receipts) | 0 |
+| Focused contraction, ND2, and aggregate tests | 27.93 | PASS (15 tests) | 2 |
+| Final complete transfer suite after ND1 provenance refresh | 109.19 | PASS (125 tests) | 2 |
 
 An optional Draft-2020-12 meta-schema check was attempted but was **not
 run** because the environment does not provide the `jsonschema` module.  It
@@ -169,6 +181,12 @@ status dependency without regenerating the ND1 receipt.  All seven remaining
 ND1 semantic and mutation tests pass, and the retained-`q1` chain does not
 consume that stale certificate.
 
+The later 34-row contraction import re-audited that drift as exactly two hash
+fields and refreshed the quantum-owned ND1 receipt after the classical status
+commit stabilized.  Its analysis payload is unchanged, and the final
+125-test transfer suite passes cleanly.
+
 The nonlinear bootstrap regeneration is the affected Tier-2 consumer check.
-Tier 3 was not run: this changes no imported classical mathematical input or
-shared algebra and promotes no lifecycle or paper claim.
+Tier 3 was not run: the contraction is an affected-chain classical input, but
+this change promotes neither the full classical freeze, a shared core algebra,
+a paper theorem, nor any quantum or Lorentzian lifecycle state.

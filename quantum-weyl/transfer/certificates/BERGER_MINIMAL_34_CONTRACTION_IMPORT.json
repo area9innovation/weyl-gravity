@@ -1,0 +1,134 @@
+{
+  "claim_boundary": "The exact support-local cyclic contraction of the complete 34-row minimal Berger unary complex onto its retained 26-row complex is independently imported. This satisfies the standalone ND2 classical-contraction artifact only. It supplies no q2, local D action or equivariance, nonminimal completion, admissibility policy, causal or Hadamard structure, physical Cartan assembly, or quantum result.",
+  "classical_freeze_gate": {
+    "reason": "minimal unary contraction only; nonlinear, D-equivariant, nonminimal, and admissibility inputs remain open",
+    "status": "FAIL_CLOSED"
+  },
+  "classical_result": {
+    "certificate_sha256": "f69d8664fb139860fb3bcb89bdf82ee1659e158f6f925535b17e2de364060db4",
+    "claim_status": "CERTIFIED_COMPLETE_MINIMAL_UNARY_CONTRACTION",
+    "export_commit": "7ddcaaf32185583d47510b4b528b67dde1e3064d",
+    "portable_commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847",
+    "result_id": "BERGER_MINIMAL_34_PORTABLE_CONTRACTION",
+    "schema_sha256": "423e82b5e5a08d07295be94ed4340af1f39800571fbc38d79925e63d9275f5aa"
+  },
+  "coverage": {
+    "complete_minimal_classical_contraction": true,
+    "contracted_clock_rows": 8,
+    "full_minimal_rows": 34,
+    "nonminimal_rows_complete": false,
+    "retained_minimal_rows": 26
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "independent_checks": {
+    "all_row_contraction_identity": true,
+    "authoritative_34_row_layout": true,
+    "classical_unary_q1_squared_zero": true,
+    "complementary_chain_projectors": true,
+    "contraction_side_conditions": true,
+    "dependency_hashes": true,
+    "exact_order_zero_map_records": true,
+    "full_classical_unary_q1_cyclic": true,
+    "full_pairing_nondegenerate": true,
+    "homotopy_cyclic": true,
+    "iota_cl_chain_map": true,
+    "pi_cl_chain_map": true,
+    "pi_cl_iota_cl_identity": true,
+    "projection_pairing_compatible": true,
+    "retained_complex_cohomology_preserved_by_SDR": true,
+    "retained_pairing_nondegenerate": true,
+    "retained_q1_independently_reverified": true,
+    "strict_portable_schema_subset": true
+  },
+  "lifecycle_layer": "CLASSICAL_BV",
+  "maps": {
+    "clock_extension_sha256": "2845d06025c348039918cf8c329913e3570796336340a9e579b0e40bdeae9af3",
+    "coefficient_domain": "Q embedded in Q[alpha_B,u,v] tensor U(e_Berger)",
+    "cyclic": true,
+    "full_pairing_rank": 34,
+    "map_hashes": {
+      "P_clock": "26bc32df8c946b412b0d77465c8723a6c811122578a08a4239622c51d65b61ce",
+      "P_retained": "840352f1c3470338922dabbacd7a937faff81fa4cd012009dc13c2cf71fd0795",
+      "S_cl": "014300093139b431ad5bb059bcbbb99ba1c1ae611f70ec5e8695ae1bfe1c5b60",
+      "iota_cl": "1baeec9bb27d1dcae75d73061ea50cca8ef03ed3395ad7c48ff8880d2211c99c",
+      "pi_cl": "bced302b6e147cb7b9087bb66c19372884b7d576d8e0ab5952c0da4330286957"
+    },
+    "maximum_differential_order": 0,
+    "retained_pairing_rank": 26,
+    "support_local": true
+  },
+  "nd2_gate": {
+    "D_equivariance": "NOT_COMPUTED",
+    "admissibility_policy": "NOT_AVAILABLE",
+    "classical_contraction_artifact_satisfied": true,
+    "compatible_cartan_coefficient_domain": "NOT_AVAILABLE",
+    "next_gate": "SUPPORT_LOCAL_Q2_D_ADMISSIBILITY_AND_COMPATIBLE_CARTAN_ASSEMBLY",
+    "physical_execution_authorized": false,
+    "support_local_q1_q2_D": "NOT_AVAILABLE"
+  },
+  "provenance": {
+    "classical_sources": {
+      "classical_independent_verifier": {
+        "commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_minimal_34_portable_contraction.py",
+        "sha256": "1ef7953be87f0f0e3ea3377d50c57b9e57782aa36b372d514c0a4b516a631c23"
+      },
+      "classical_producer": {
+        "commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847",
+        "path": "d_quotient_classical/backreacted_clock/berger_minimal_34_portable_contraction.py",
+        "sha256": "5df5a41c293caa5d18db660d58dbda3d9c204f9e630437926e82a634fc2fc84c"
+      },
+      "classical_report": {
+        "commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847",
+        "path": "d_quotient_classical/reports/berger-minimal-34-portable-contraction.md",
+        "sha256": "fbbffb3fa134b271bc711386e532c8c299c0631cca8e42506a3b5af8f338c0aa"
+      },
+      "classical_test": {
+        "commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_minimal_34_portable_contraction.py",
+        "sha256": "306a8a94342fb60f601a38a83d03c5c1e16350f5e9156aae55fc8aba984506f5"
+      },
+      "clock_sdr_dependency": {
+        "commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847",
+        "path": "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
+        "sha256": "9e7503ed7fd6082b4164ae7b03d350c753f941cc45d639ffb02598ba8f262422"
+      },
+      "portable_certificate": {
+        "commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847",
+        "path": "d_quotient_classical/certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json",
+        "sha256": "f69d8664fb139860fb3bcb89bdf82ee1659e158f6f925535b17e2de364060db4"
+      },
+      "portable_schema": {
+        "commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847",
+        "path": "d_quotient_classical/schema/berger-minimal-34-portable-contraction-v1.schema.json",
+        "sha256": "423e82b5e5a08d07295be94ed4340af1f39800571fbc38d79925e63d9275f5aa"
+      },
+      "retained_layout_dependency": {
+        "commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847",
+        "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json",
+        "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
+      },
+      "retained_q1_dependency": {
+        "commit": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847",
+        "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+        "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+      }
+    },
+    "classical_sources_sha256": "a19538dcb177f28b44e7eccd5acd035a586d0a724a5b2d88922702991481b398",
+    "schema": "quantum-weyl/transfer/schema/berger-minimal-34-contraction-import-v1.schema.json",
+    "source_manifest": {
+      "berger_minimal_contraction_import.py": "05a4277e163701ec6d52345a5bc5c5977cc060a6bd45efafb46ecebf2c87922b",
+      "berger_minimal_contraction_import_certificate.py": "a3f9d6a4ff21abb7359bee4927dfd460f4a7dd680f089883d0fc0cff9e1b56ca",
+      "berger_retained_q1_import.py": "4f08026476c9bf102b6dcf58a060b3356109e825484d6966e89b9265ebb1aea7",
+      "schema/berger-minimal-34-contraction-import-v1.schema.json": "e91a759befc6d201722664ea56fc13fb29b187a2acf715168ac11ff873d90d06",
+      "tests/test_berger_minimal_contraction_import.py": "64c0d68e275550b22ece93d25ce0be22abbb6d25904fb0f5269dc0065a3026ed"
+    },
+    "source_manifest_sha256": "f588277f5a5cfed20bccde97ec5cd11fc103da3b5499b9362bdcd51b8e14ab86"
+  },
+  "result_id": "BERGER_MINIMAL_34_CONTRACTION_IMPORT",
+  "result_state": "COMPLETE_34_ROW_MINIMAL_UNARY_CONTRACTION_IMPORTED_ND2_NONLINEAR_INPUT_BLOCKED",
+  "schema": "quantum-weyl-berger-minimal-34-contraction-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

@@ -184,6 +184,11 @@ class ND2PhysicalRunTests(unittest.TestCase):
         self.assertEqual(backend["supported_arities"], [1])
         self.assertEqual(backend["assembly_mode"], "OPERATOR_VALIDATION_ONLY")
         self.assertFalse(backend["nd2_physical_assembly_authorized"])
+        gate = rebuilt["prerequisite_gate"]
+        self.assertTrue(gate["classical_contraction_artifact_satisfied"])
+        self.assertFalse(gate["support_local_q1_q2_D_satisfied"])
+        self.assertFalse(gate["admissibility_policy_satisfied"])
+        self.assertFalse(gate["physical_execution_authorized"])
 
     def test_evaluated_exact_fixture_returns_retained_correction(self) -> None:
         result = RUN.execute_evaluated_cartan(ENGINE.build_exact_correction_fixture())

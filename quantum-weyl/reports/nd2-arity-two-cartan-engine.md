@@ -80,10 +80,11 @@ downstream of a separate `QME_RESTORED` certificate.
 
 ## Next exact gate
 
-Extend the PBW backend through `q2/D` and either equip ND2 with the declared
-PBW-module coefficient domain or import an exact `REDUCED-MODE`
-specialization.  Then import the complete contraction and admissibility
-policy, recompute the physical identities, and retain either the admissible
+The complete 34-row minimal contraction is now an independently verified ND2
+prerequisite.  Extend the PBW backend through `q2/D` and either equip ND2 with
+the declared PBW-module coefficient domain or import an exact `REDUCED-MODE`
+specialization.  Then import the admissibility policy, register the assembly
+adapter, recompute the physical identities, and retain either the admissible
 `iota_D^(2)` primitive or its normalized obstruction witness.
 
 ## Machine receipt
@@ -93,6 +94,8 @@ policy, recompute the physical identities, and retain either the admissible
 `quantum-weyl/transfer/certificates/ND2_PHYSICAL_RUN.json`
 
 `quantum-weyl/transfer/certificates/BERGER_PBW_OPERATOR_BACKEND.json`
+
+`quantum-weyl/transfer/certificates/BERGER_MINIMAL_34_CONTRACTION_IMPORT.json`
 
 ## Verification receipt
 
@@ -105,12 +108,19 @@ policy, recompute the physical identities, and retain either the admissible
 | Berger PBW backend, ND2, and aggregate focused tests | 11.41 | PASS (14 tests) | 2 |
 | Extended ND2 schema under strict AJV Draft-2020-12 | 1.27 | PASS | 0 |
 | Backend-era complete transfer suite | 69.45 | FAIL (119 tests pass; pre-existing ND1 reproduction receipt is stale) | 2 |
+| Portable contraction, ND2, and aggregate focused tests | 27.93 | PASS (15 tests) | 2 |
+| Contraction and extended ND2 schemas under strict AJV Draft-2020-12 | 4.44 | PASS (2 receipts) | 0 |
+| Final complete transfer suite after ND1 provenance refresh | 109.19 | PASS (125 tests) | 2 |
 
 The current AJV run validates the extended ND2 receipt.  The complete-suite
 failure is not counted as a pass: an unrelated ND1 reproduction receipt has
 two hash-only differences after its live classical-status dependency moved.
 All other transfer tests, including the seven ND1 semantic and mutation tests,
 pass.
+
+After the classical portable-contraction commit stabilized, the ND1
+provenance receipt was refreshed with an unchanged analysis payload.  The
+final complete transfer suite now passes cleanly.
 
 Tier 3 was not run.  ND2 adds an exact fixture engine and consumer contract,
 but changes no imported classical mathematical input, shared core algebra,

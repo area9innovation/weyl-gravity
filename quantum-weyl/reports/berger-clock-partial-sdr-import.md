@@ -59,6 +59,11 @@ It cannot be substituted for the ND2 `classical_contraction` artifact.  The
 retained 26-row operator, nonminimal rows, complete contraction, support-local
 `q2/D` export, and admissibility policy must still arrive independently.
 
+Historical note: the later portable export at `9278ba7d` supplies exact map
+entries and closes the complete 34-row minimal contraction.  This partial
+evidence receipt remains the provenance record for the earlier 8-row theorem;
+its original fail-closed verdict is not retroactively rewritten.
+
 ## Machine receipts
 
 - `quantum-weyl/transfer/certificates/BERGER_CLOCK_PARTIAL_SDR_IMPORT.json`

@@ -120,10 +120,10 @@ classical registration, and repaired Draft-2020-12 schema are pinned at
 separate commits.  The quantum consumer parses all exact polynomial PBW
 coefficients, reconstructs the noncommutative invariant-frame operators, and
 independently reproduces formal self-adjointness, the dual Noether row, both
-Noether compositions, cyclicity, and nilpotency.  This closes the retained
-minimal-`q1` prerequisite only.  The portable clock maps, nonminimal/all-row
-`q1`, complete `classical_contraction`, `q2/D`, and admissibility artifacts
-remain absent, so no physical ND2 Cartan execution has occurred.
+Noether compositions, cyclicity, and nilpotency.  At that import stage this
+closed the retained minimal-`q1` prerequisite only; the portable clock maps,
+nonminimal/all-row `q1`, complete `classical_contraction`, `q2/D`, and
+admissibility artifacts were still absent.
 
 That retained operator is now exposed through a separate content-addressed
 PBW backend.  It declares the coefficient domain
@@ -133,6 +133,15 @@ not registered as the current `Fraction`-valued Cartan evaluator.  Physical
 assembly therefore remains false until either the Cartan solver is extended
 to the PBW-module domain or an exact finite specialization is supplied with a
 `REDUCED-MODE` tag.
+
+The later portable contraction export supersedes the earlier map-payload
+blocker.  The quantum consumer now independently verifies the complete
+34-row minimal unary differential and exact order-zero `iota_cl`, `pi_cl`,
+and `S_cl`: nilpotency, both chain maps, the SDR identity and side conditions,
+cyclicity, and the full/retained pairings all pass.  Thus the standalone ND2
+`classical_contraction` artifact is satisfied.  Nonminimal rows and the
+separate `q2/D`, `D`-equivariance, admissibility, compatible Cartan assembly,
+and causal inputs remain open, so physical execution is still false.
 
 The arity-two solve also has a block-sparse exact rail.  Declared additive
 labels such as `D` weight, momentum, or jet filtration must be preserved by
@@ -189,6 +198,7 @@ python3 quantum-weyl/transfer/total_d_disposition_certificate.py --check
 python3 quantum-weyl/transfer/berger_clock_import_certificate.py --check
 python3 quantum-weyl/transfer/berger_retained_q1_import_certificate.py --check
 python3 quantum-weyl/transfer/berger_pbw_backend_certificate.py --check
+python3 quantum-weyl/transfer/berger_minimal_contraction_import_certificate.py --check
 python3 quantum-weyl/transfer/arity_three_cartan_certificate.py --check
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check

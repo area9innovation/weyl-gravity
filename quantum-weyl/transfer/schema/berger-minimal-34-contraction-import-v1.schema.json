@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-minimal-34-contraction-import-v1.schema.json",
+  "title": "Quantum import of the portable 34-row minimal Berger contraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer",
+    "dependency_tags", "setting_id", "classical_result", "coverage", "maps",
+    "independent_checks", "nd2_gate", "classical_freeze_gate", "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-minimal-34-contraction-import-v1"},
+    "result_id": {"const": "BERGER_MINIMAL_34_CONTRACTION_IMPORT"},
+    "result_state": {"const": "COMPLETE_34_ROW_MINIMAL_UNARY_CONTRACTION_IMPORTED_ND2_NONLINEAR_INPUT_BLOCKED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "classical_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "claim_status", "export_commit", "portable_commit", "certificate_sha256", "schema_sha256"],
+      "properties": {
+        "result_id": {"const": "BERGER_MINIMAL_34_PORTABLE_CONTRACTION"},
+        "claim_status": {"const": "CERTIFIED_COMPLETE_MINIMAL_UNARY_CONTRACTION"},
+        "export_commit": {"const": "7ddcaaf32185583d47510b4b528b67dde1e3064d"},
+        "portable_commit": {"const": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847"},
+        "certificate_sha256": {"$ref": "#/$defs/hash"},
+        "schema_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["full_minimal_rows", "retained_minimal_rows", "contracted_clock_rows", "complete_minimal_classical_contraction", "nonminimal_rows_complete"],
+      "properties": {
+        "full_minimal_rows": {"const": 34},
+        "retained_minimal_rows": {"const": 26},
+        "contracted_clock_rows": {"const": 8},
+        "complete_minimal_classical_contraction": {"const": true},
+        "nonminimal_rows_complete": {"const": false}
+      }
+    },
+    "maps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient_domain", "maximum_differential_order", "support_local", "cyclic", "map_hashes", "clock_extension_sha256", "full_pairing_rank", "retained_pairing_rank"],
+      "properties": {
+        "coefficient_domain": {"const": "Q embedded in Q[alpha_B,u,v] tensor U(e_Berger)"},
+        "maximum_differential_order": {"const": 0},
+        "support_local": {"const": true},
+        "cyclic": {"const": true},
+        "map_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["iota_cl", "pi_cl", "S_cl", "P_retained", "P_clock"],
+          "properties": {
+            "iota_cl": {"$ref": "#/$defs/hash"},
+            "pi_cl": {"$ref": "#/$defs/hash"},
+            "S_cl": {"$ref": "#/$defs/hash"},
+            "P_retained": {"$ref": "#/$defs/hash"},
+            "P_clock": {"$ref": "#/$defs/hash"}
+          }
+        },
+        "clock_extension_sha256": {"$ref": "#/$defs/hash"},
+        "full_pairing_rank": {"const": 34},
+        "retained_pairing_rank": {"const": 26}
+      }
+    },
+    "independent_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strict_portable_schema_subset", "dependency_hashes",
+        "authoritative_34_row_layout", "exact_order_zero_map_records",
+        "retained_q1_independently_reverified",
+        "classical_unary_q1_squared_zero", "full_classical_unary_q1_cyclic",
+        "iota_cl_chain_map",
+        "pi_cl_chain_map", "pi_cl_iota_cl_identity",
+        "all_row_contraction_identity", "complementary_chain_projectors",
+        "contraction_side_conditions", "homotopy_cyclic",
+        "full_pairing_nondegenerate", "retained_pairing_nondegenerate",
+        "projection_pairing_compatible",
+        "retained_complex_cohomology_preserved_by_SDR"
+      ],
+      "properties": {
+        "strict_portable_schema_subset": {"const": true},
+        "dependency_hashes": {"const": true},
+        "authoritative_34_row_layout": {"const": true},
+        "exact_order_zero_map_records": {"const": true},
+        "retained_q1_independently_reverified": {"const": true},
+        "classical_unary_q1_squared_zero": {"const": true},
+        "full_classical_unary_q1_cyclic": {"const": true},
+        "iota_cl_chain_map": {"const": true},
+        "pi_cl_chain_map": {"const": true},
+        "pi_cl_iota_cl_identity": {"const": true},
+        "all_row_contraction_identity": {"const": true},
+        "complementary_chain_projectors": {"const": true},
+        "contraction_side_conditions": {"const": true},
+        "homotopy_cyclic": {"const": true},
+        "full_pairing_nondegenerate": {"const": true},
+        "retained_pairing_nondegenerate": {"const": true},
+        "projection_pairing_compatible": {"const": true},
+        "retained_complex_cohomology_preserved_by_SDR": {"const": true}
+      }
+    },
+    "nd2_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classical_contraction_artifact_satisfied", "support_local_q1_q2_D", "D_equivariance", "admissibility_policy", "compatible_cartan_coefficient_domain", "physical_execution_authorized", "next_gate"],
+      "properties": {
+        "classical_contraction_artifact_satisfied": {"const": true},
+        "support_local_q1_q2_D": {"const": "NOT_AVAILABLE"},
+        "D_equivariance": {"const": "NOT_COMPUTED"},
+        "admissibility_policy": {"const": "NOT_AVAILABLE"},
+        "compatible_cartan_coefficient_domain": {"const": "NOT_AVAILABLE"},
+        "physical_execution_authorized": {"const": false},
+        "next_gate": {"const": "SUPPORT_LOCAL_Q2_D_ADMISSIBILITY_AND_COMPATIBLE_CARTAN_ASSEMBLY"}
+      }
+    },
+    "classical_freeze_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reason"],
+      "properties": {
+        "status": {"const": "FAIL_CLOSED"},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classical_sources", "classical_sources_sha256", "source_manifest", "source_manifest_sha256", "schema"],
+      "properties": {
+        "classical_sources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "portable_certificate", "portable_schema", "classical_producer",
+            "classical_independent_verifier", "classical_test",
+            "classical_report", "retained_q1_dependency",
+            "clock_sdr_dependency", "retained_layout_dependency"
+          ],
+          "properties": {
+            "portable_certificate": {"$ref": "#/$defs/artifact"},
+            "portable_schema": {"$ref": "#/$defs/artifact"},
+            "classical_producer": {"$ref": "#/$defs/artifact"},
+            "classical_independent_verifier": {"$ref": "#/$defs/artifact"},
+            "classical_test": {"$ref": "#/$defs/artifact"},
+            "classical_report": {"$ref": "#/$defs/artifact"},
+            "retained_q1_dependency": {"$ref": "#/$defs/artifact"},
+            "clock_sdr_dependency": {"$ref": "#/$defs/artifact"},
+            "retained_layout_dependency": {"$ref": "#/$defs/artifact"}
+          }
+        },
+        "classical_sources_sha256": {"$ref": "#/$defs/hash"},
+        "source_manifest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "berger_retained_q1_import.py",
+            "berger_minimal_contraction_import.py",
+            "berger_minimal_contraction_import_certificate.py",
+            "schema/berger-minimal-34-contraction-import-v1.schema.json",
+            "tests/test_berger_minimal_contraction_import.py"
+          ],
+          "properties": {
+            "berger_retained_q1_import.py": {"$ref": "#/$defs/hash"},
+            "berger_minimal_contraction_import.py": {"$ref": "#/$defs/hash"},
+            "berger_minimal_contraction_import_certificate.py": {"$ref": "#/$defs/hash"},
+            "schema/berger-minimal-34-contraction-import-v1.schema.json": {"$ref": "#/$defs/hash"},
+            "tests/test_berger_minimal_contraction_import.py": {"$ref": "#/$defs/hash"}
+          }
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/berger-minimal-34-contraction-import-v1.schema.json"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "commit": {"const": "9278ba7dffa2e8d85292c2a8cc25b03f0ca47847"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

@@ -14,6 +14,7 @@
     "registered_evaluators",
     "registered_operator_backends",
     "registered_assembly_adapters",
+    "prerequisite_gate",
     "engine_self_test",
     "input_gate",
     "established",
@@ -35,6 +36,26 @@
       "items": {"$ref": "#/$defs/operatorBackend"}
     },
     "registered_assembly_adapters": {"type": "array", "items": {"type": "object"}},
+    "prerequisite_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classical_contraction_artifact_satisfied", "classical_contraction_path",
+        "classical_contraction_sha256", "support_local_q1_q2_D_satisfied",
+        "admissibility_policy_satisfied",
+        "compatible_cartan_coefficient_domain_satisfied",
+        "physical_execution_authorized"
+      ],
+      "properties": {
+        "classical_contraction_artifact_satisfied": {"const": true},
+        "classical_contraction_path": {"const": "quantum-weyl/transfer/certificates/BERGER_MINIMAL_34_CONTRACTION_IMPORT.json"},
+        "classical_contraction_sha256": {"$ref": "#/$defs/hash"},
+        "support_local_q1_q2_D_satisfied": {"const": false},
+        "admissibility_policy_satisfied": {"const": false},
+        "compatible_cartan_coefficient_domain_satisfied": {"const": false},
+        "physical_execution_authorized": {"const": false}
+      }
+    },
     "engine_self_test": {
       "type": "object",
       "additionalProperties": false,
