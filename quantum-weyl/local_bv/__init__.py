@@ -15,6 +15,7 @@ from .covariant_derivatives import (
 from .hodge import Signature, TwoFormHodge
 from .metadata import FieldSpec, IndexVariance, SpacetimeParity, minimal_registry
 from .pairing_orbits import PairingOrbit, signed_pairing_orbits
+from .six_derivative import six_derivative_curvature_analysis
 from .tensors import TensorExpression, TensorFactor, TensorMonomial, TensorSpec
 
 __all__ = [
@@ -36,4 +37,5 @@ __all__ = [
     "covariant_commutator_relation_in_monomial",
     "minimal_registry",
     "signed_pairing_orbits",
+    "six_derivative_curvature_analysis",
 ]

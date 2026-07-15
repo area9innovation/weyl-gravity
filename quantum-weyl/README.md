@@ -77,7 +77,7 @@ schema/             machine-readable result contracts
 | Gate | Deliverable | Bootstrap status |
 |---|---|---|
 | A | `CLASSICAL_IMPORT_CERTIFICATE` | `FAIL_CLOSED`; artifact integrity verified, but 15 of 18 export categories remain incomplete or unavailable |
-| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; exact quadratic and once-differentiated curvature/Bianchi, commutator, IBP, parity, Hodge, and orbit-first cubic infrastructure, but no cubic Bianchi quotient or cohomology classification |
+| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; exact dimension-independent parity-even order-six curvature quotient, but no four-dimensional Weyl/Schouten specialization or BRST-cohomology classification |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `IN_PROGRESS` import/projection infrastructure only |
 | D | reduced and Euclidean coefficient ledgers | `IN_PROGRESS` bookkeeping only; no BV coefficient claimed |
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
@@ -109,6 +109,10 @@ or quantum-master-equation result.
 - [`reports/local-algebra-scaling-foundations.md`](reports/local-algebra-scaling-foundations.md)
   records explicit tensor products, contraction-aware commutators, executable
   detailed schemas, and the complete signed cubic pairing-orbit ledger.
+- [`reports/local-six-derivative-curvature-quotient.md`](reports/local-six-derivative-curvature-quotient.md)
+  records the cubic Bianchi quotient, second-derivative bridge, mixed
+  IBP/commutator quotient, independent FKWC cross-check, and remaining
+  four-dimensional specialization boundary.
 - [`reports/branch-c-spectral-bootstrap.md`](reports/branch-c-spectral-bootstrap.md)
   records the reduced `E/A/L` character, residues, and determinant boundary.
 - [`reports/bootstrap-integration.md`](reports/bootstrap-integration.md)

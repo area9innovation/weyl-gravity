@@ -41,6 +41,16 @@ Only the 33 orbit representatives require the general monomial canonicalizer.
 Detailed certificate schemas are now executable contracts rather than
 unvalidated documentation.
 
+The first mixed order-six layer is now complete in the dimension-independent,
+parity-even curvature sector.  The 13 nonzero cubic symmetry orbits reduce by
+five generated algebraic-Bianchi relations to eight cubic classes.  A
+generated 14-monomial `Riemann nabla^2 Riemann` bridge, the 12-monomial
+`(nabla Riemann)^2` sector, exact total divergences, and contracted
+commutators give a 39-column, rank-29 integrated quotient of dimension ten.
+Eight cubic directions survive, while two derivative directions lie outside
+their span.  The omitted degree-one total divergence restores the standard
+17-element local order-six normal form before quotienting total derivatives.
+
 This is not Gate A or Gate B.  In particular, the classical commit is
 `NOT_FROZEN`; antifield and nonminimal rows have not been imported; and
 general covariant curvature reduction remains incomplete.  The
@@ -60,9 +70,11 @@ PYTHONPATH=quantum-weyl python -m local_bv.certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.curvature_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.differential_hodge_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.scaling_certificate --check
+PYTHONPATH=quantum-weyl python -m local_bv.six_derivative_certificate --check
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_CURVATURE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json
+python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT.json
 ```
 
 The certificate is
@@ -87,8 +99,12 @@ The scaling-foundations receipt is
 with its common result envelope at
 [`../certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json`](../certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json).
 
-Next admissible local steps are algebraic-Bianchi reduction of the 13
-nonzero cubic orbits and the complete six-derivative invariant space with its
-IBP/commutator mixing, Weyl BRST curvature rows, and a
-derivative-bounded ghost-number ansatz.  The antifield and
-relative-cohomology layers still wait for the frozen classical schema.
+The mixed order-six receipt is
+[`certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT_CERTIFICATE.json`](certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT_CERTIFICATE.json),
+with its common result envelope at
+[`../certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT.json`](../certificates/LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT.json).
+
+Next admissible local steps are the four-dimensional Schouten and tracefree
+Weyl specializations, Weyl BRST curvature rows, and a derivative-bounded
+ghost-number ansatz.  The antifield and relative-cohomology layers still wait
+for the frozen classical schema.

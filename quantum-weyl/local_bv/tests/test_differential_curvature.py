@@ -46,7 +46,7 @@ class DifferentialCurvatureTests(unittest.TestCase):
         no_derivative = TensorMonomial(
             (TensorFactor(RIEMANN, (0, 1, 2, 3)),)
         )
-        with self.assertRaisesRegex(ValueError, "one derivative"):
+        with self.assertRaisesRegex(ValueError, "a derivative"):
             differential_bianchi_relation(no_derivative, 0)
 
 

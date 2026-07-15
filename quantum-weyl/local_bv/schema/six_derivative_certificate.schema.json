@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-local-six-derivative-v1.json",
+  "title": "Pure-Weyl six-derivative curvature quotient certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id", "result_state", "classical_commit", "dependency_tags",
+    "scope", "checks", "cubic_R3", "second_derivative_bridge", "combined",
+    "independent_crosscheck", "canonical_hashes", "not_computed", "assumptions"
+  ],
+  "properties": {
+    "result_id": {"const": "LOCAL_SIX_DERIVATIVE_CURVATURE_QUOTIENT_CERTIFICATE"},
+    "result_state": {"const": "INVARIANT_QUOTIENT_VERIFIED"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "string", "minLength": 1},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cubic_pairing_exhaustion", "cubic_algebraic_bianchi_quotient",
+        "second_derivative_bridge_exhaustion", "outer_differential_bianchi",
+        "integration_by_parts_relations", "contracted_commutator_relations",
+        "commutator_collision_regression", "local_order_six_normal_form",
+        "integrated_six_derivative_quotient", "four_dimensional_schouten_quotient",
+        "weyl_tracefree_specialization", "local_cohomology_H_s_mod_d"
+      ],
+      "properties": {
+        "cubic_pairing_exhaustion": {"const": "VERIFIED"},
+        "cubic_algebraic_bianchi_quotient": {"const": "VERIFIED"},
+        "second_derivative_bridge_exhaustion": {"const": "VERIFIED"},
+        "outer_differential_bianchi": {"const": "VERIFIED"},
+        "integration_by_parts_relations": {"const": "VERIFIED"},
+        "contracted_commutator_relations": {"const": "VERIFIED"},
+        "commutator_collision_regression": {"const": "VERIFIED"},
+        "local_order_six_normal_form": {"const": "VERIFIED"},
+        "integrated_six_derivative_quotient": {"const": "VERIFIED"},
+        "four_dimensional_schouten_quotient": {"const": "NOT_COMPUTED"},
+        "weyl_tracefree_specialization": {"const": "NOT_COMPUTED"},
+        "local_cohomology_H_s_mod_d": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "cubic_R3": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_pairing_count", "signed_orbit_count", "symmetry_vanishing_orbit_count",
+        "symmetry_nonzero_orbit_count", "generated_nonzero_bianchi_relation_count",
+        "bianchi_relation_rank", "quotient_dimension"
+      ],
+      "properties": {
+        "raw_pairing_count": {"const": 10395},
+        "signed_orbit_count": {"const": 33},
+        "symmetry_vanishing_orbit_count": {"const": 20},
+        "symmetry_nonzero_orbit_count": {"const": 13},
+        "generated_nonzero_bianchi_relation_count": {"const": 10},
+        "bianchi_relation_rank": {"const": 5},
+        "quotient_dimension": {"const": 8}
+      }
+    },
+    "second_derivative_bridge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_pairing_count", "symmetry_canonical_monomial_count",
+        "algebraic_bianchi_relation_count", "algebraic_bianchi_rank",
+        "differential_bianchi_relation_count", "differential_bianchi_rank",
+        "combined_relation_rank", "quotient_dimension"
+      ],
+      "properties": {
+        "raw_pairing_count": {"const": 945},
+        "symmetry_canonical_monomial_count": {"const": 14},
+        "algebraic_bianchi_relation_count": {"const": 6},
+        "algebraic_bianchi_rank": {"const": 3},
+        "differential_bianchi_relation_count": {"const": 16},
+        "differential_bianchi_rank": {"const": 8},
+        "combined_relation_rank": {"const": 8},
+        "quotient_dimension": {"const": 6}
+      }
+    },
+    "combined": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sector_basis_dimensions_before_relations", "total_basis_dimension_before_relations",
+        "relation_counts", "cumulative_reduction", "local_normal_form_before_total_derivatives",
+        "combined_relation_rank", "quotient_dimension", "final_sector_ranks",
+        "final_derivative_union_rank", "derivative_classes_outside_cubic_span",
+        "canonical_basis", "relation_rref_sparse", "pivot_columns", "free_columns"
+      ],
+      "properties": {
+        "sector_basis_dimensions_before_relations": {"const": {"R3": 13, "nablaR_nablaR": 12, "R_nabla2R": 14}},
+        "total_basis_dimension_before_relations": {"const": 39},
+        "relation_counts": {"const": {"R3_bianchi": 10, "nablaR_nablaR_bianchi": 22, "R_nabla2R_bianchi": 22, "integration_by_parts": 28, "covariant_commutators": 6}},
+        "cumulative_reduction": {"type": "object"},
+        "local_normal_form_before_total_derivatives": {"const": {"relation_rank": 23, "quotient_dimension": 16, "omitted_degree_one_total_divergence_dimension": 1, "dimension_with_degree_one_sector": 17}},
+        "combined_relation_rank": {"const": 29},
+        "quotient_dimension": {"const": 10},
+        "final_sector_ranks": {"const": {"R3": 8, "nablaR_nablaR": 4, "R_nabla2R": 4}},
+        "final_derivative_union_rank": {"const": 4},
+        "derivative_classes_outside_cubic_span": {"const": 2},
+        "canonical_basis": {"type": "array", "minItems": 39, "maxItems": 39, "uniqueItems": true, "items": {"type": "object"}},
+        "relation_rref_sparse": {
+          "type": "array", "minItems": 29, "maxItems": 29,
+          "items": {
+            "type": "array", "minItems": 1, "maxItems": 39,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["column", "numerator", "denominator"],
+              "properties": {
+                "column": {"type": "integer", "minimum": 0, "maximum": 38},
+                "numerator": {"type": "integer"},
+                "denominator": {"type": "integer", "minimum": 1}
+              }
+            }
+          }
+        },
+        "pivot_columns": {"const": [2, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 35, 36, 37]},
+        "free_columns": {"const": [0, 1, 3, 7, 18, 19, 32, 33, 34, 38]}
+      }
+    },
+    "independent_crosscheck": {
+      "const": {
+        "reference": "https://arxiv.org/abs/0805.1595",
+        "reference_basis": "dimension-independent FKWC rank-zero order-six basis",
+        "local_dimension_including_omitted_degree_one_sector": 17,
+        "integrated_dimension_modulo_total_divergences": 10,
+        "status": "MATCH",
+        "role": "INDEPENDENT_CROSSCHECK_NOT_PROOF_INPUT"
+      }
+    },
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+      "required": [
+        "combined_basis_sha256", "combined_rref_sha256", "source_manifest_sha256",
+        "R3_bianchi_sha256", "nablaR_nablaR_bianchi_sha256",
+        "R_nabla2R_bianchi_sha256", "integration_by_parts_sha256",
+        "covariant_commutators_sha256"
+      ]
+    },
+    "not_computed": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "assumptions": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  }
+}
