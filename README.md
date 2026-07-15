@@ -90,8 +90,11 @@ couplings the exact lapse equation is
 \(\delta E_N=-(\alpha_Bq^{3/2}/2)\delta Q_R/Q_R\). Compact spatial averaging
 therefore rules out a charged tangent in every mode and gives the scoped
 verdict `D_GAUGE` on the smooth fixed-coupling linearized Berger phase space.
-The support-local all-row BV, causal, and nonlinear-stability audit remains
-open.
+The minimal temporal/Weyl BV clock sector now has an exact first-order
+support-local cyclic contraction, including all four minimal dual rows.  This
+contracts 8 of 34 minimal rows and leaves the dressed-metric/spatial-
+diffeomorphism core.  The retained coefficientwise operator, nonminimal
+rows, causal Green homotopy, and nonlinear-stability audit remain open.
 Paper IX still waits for at least one complete
 boundary or interaction theorem.
 

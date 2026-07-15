@@ -56,6 +56,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json`](certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json)
 - Fixed-coupling Berger delta-charge report:
   [`reports/berger-fixed-coupling-delta-charge.md`](reports/berger-fixed-coupling-delta-charge.md)
+- Support-local minimal Berger-clock BV contraction:
+  [`certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json`](certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json)
+- Minimal Berger-clock BV contraction report:
+  [`reports/berger-minimal-bv-clock-sdr.md`](reports/berger-minimal-bv-clock-sdr.md)
 
 The only scientific verdicts are:
 
@@ -95,6 +99,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_clo
 python3 d_quotient_classical/backreacted_clock/fixed_coupling_delta_charge.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_fixed_coupling_delta_charge_independent.py
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_fixed_coupling_delta_charge
+python3 d_quotient_classical/backreacted_clock/berger_minimal_bv_clock_sdr.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_minimal_bv_clock_sdr_independent.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_minimal_bv_clock_sdr
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -117,8 +124,12 @@ audit then closes the decisive tangent gate.  The exact lapse equation is
 
 so every homogeneous allowed tangent has \(\delta Q_R=0\). Compact spatial
 averaging proves the same for every smooth fixed-coupling linearized tangent.
-Thus `D_GAUGE` holds on this declared Berger phase space.  The all-row BV,
-causal, and nonlinear-stability gates remain open.
+Thus `D_GAUGE` holds on this declared Berger phase space.  The temporal/Weyl
+clock doublets and all four minimal BV-dual rows now also admit an exact
+first-order support-local cyclic contraction: 8 of the 34 minimal rows
+contract, leaving a 26-row dressed-metric/spatial-diffeomorphism complex.
+The coefficientwise retained operator, nonminimal gauge-fixing rows, causal
+Green homotopies, and nonlinear stability remain open.
 
 ## Promotion rule
 

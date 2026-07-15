@@ -196,7 +196,7 @@ generators are not a Lie subalgebra. The exact obstruction is
 | Vacuum cylinder | `SECTOR_DEPENDENT` on the declared sectors | certified baseline | certified baseline | zero only in selected absolute residual \(H^4\) | \(I_2\) on centered degree-four classes | open in this challenge record |
 | Cylinder + scalar clock | one-real-scalar exact-cylinder candidate `OBSTRUCTED` | `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` |
 | Cylinder + neutral clock pair | `D_GAUGE` on `compact_neutral_clock_pair_homogeneous` | `OPEN` | `OPEN` | `OPEN` | unrestricted reference pairing is indefinite | `OPEN` |
-| Positive Berger clock | `D_GAUGE` on the smooth fixed-coupling linearized phase space | `OPEN` | `OPEN` | `OPEN` | helical current contraction exact; full all-row transport open | `OPEN` |
+| Positive Berger clock | `D_GAUGE` on the smooth fixed-coupling linearized phase space | minimal temporal/Weyl clock SDR certified; retained complex open | `OPEN` | `OPEN` | helical current and minimal cyclic pairing exact; full transport open | `OPEN` |
 | Cylinder + Yang--Mills | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Weakly deformed background | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Lorentzian dS/AdS | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
@@ -207,10 +207,12 @@ status promotion.
 
 ## Next gates
 
-1. Run `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`: construct the support-local
-   all-row clock contraction, causal propagation, and stability theorem on the
-   exact positive Berger branch.  The fixed-coupling linearized \(D\)-charge
-   sub-gate is complete.
+1. Run `BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`: the support-local
+   cyclic SDR of the eight temporal/Weyl minimal clock rows is complete, but
+   the 26-row retained coefficients and nonminimal gauge-fixing rows are not.
+   Then construct causal propagation and stability on the exact positive
+   Berger branch.  The fixed-coupling linearized \(D\)-charge sub-gate is
+   complete.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
 3. Compute the first background-deformation obstruction and a quantitative

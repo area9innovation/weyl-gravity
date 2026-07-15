@@ -160,8 +160,11 @@ on
 \]
 
 This proves a credible healthy clock *background*.  Its fixed-coupling
-linearized charge gate is now also closed, while the support-local all-row
-clock contraction, causal Green homotopies, and stability remain separate.
+linearized charge gate is now closed.  The minimal temporal/Weyl clock sector
+also contracts support-locally and cyclically on all eight field/ghost and
+minimal-dual rows, leaving a 26-row dressed-metric/spatial-diffeomorphism
+complex.  The retained coefficientwise operator, nonminimal rows, causal
+Green homotopies, and stability remain separate.
 Generalized non-Noetherian or higher-derivative scalar actions remain
 separate theories with independent health and BV gates.
 
@@ -219,7 +222,8 @@ average to a forbidden charged homogeneous tangent. Consequently
 for every smooth fixed-coupling linearized tangent, and the scoped verdict is
 `D_GAUGE`.  The nonzero background momentum is fixed by the compact lapse
 constraint; its pullback differential vanishes. The replacement gate is now
-`FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
+`BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`, followed by the causal and
+stability parts of `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
 
 ### Parked nonlinear support-local export
 
