@@ -13,7 +13,11 @@ from typing import Literal
 
 from .curvature import EPSILON, RIEMANN
 from .hodge import Signature
-from .specialization import WEYL, reduce_epsilon_pair_in_monomial
+from .specialization import (
+    WEYL,
+    reduce_epsilon_pair_in_monomial,
+    tracefree_weyl_reduce,
+)
 from .tensors import (
     TensorExpression,
     TensorFactor,
@@ -175,6 +179,130 @@ def expand_cotton_definitions(expression: TensorExpression) -> TensorExpression:
             term = TensorMonomial(factors)
             output[term] = output.get(term, Fraction()) + value
     return TensorExpression(output)
+
+
+def expand_riemann_factors(expression: TensorExpression) -> TensorExpression:
+    """Expand one Riemann factor as ``Weyl + metric wedge Schouten``.
+
+    Derivative labels stay on the Weyl or Schouten factor while the metric is
+    undifferentiated.  This is the explicit derivative-safe replacement that
+    the narrower algebraic shortcut cannot provide.  Products with several
+    Riemann factors require a staged target engine; materializing their full
+    generic canonical expansion is intentionally rejected.
+    """
+
+    if any(
+        sum(factor.spec == RIEMANN for factor in monomial.factors) > 1
+        for monomial in expression.terms
+    ):
+        raise ValueError(
+            "multi-Riemann expansion requires a staged target engine; use "
+            "the factorized Schouten-zero projection when applicable"
+        )
+    output: dict[TensorMonomial, Fraction] = {}
+    for monomial, coefficient in expression.terms.items():
+        partial: list[tuple[Fraction, tuple[TensorFactor, ...]]] = [
+            (coefficient, ())
+        ]
+        for factor in monomial.factors:
+            if factor.spec != RIEMANN:
+                partial = [
+                    (value, factors + (factor,)) for value, factors in partial
+                ]
+                continue
+            a, b, c, d = factor.slots
+            choices = (
+                (
+                    Fraction(1),
+                    (TensorFactor(WEYL, factor.slots, factor.derivatives),),
+                ),
+                (
+                    Fraction(1),
+                    (
+                        TensorFactor(METRIC, (a, c)),
+                        TensorFactor(SCHOUTEN, (b, d), factor.derivatives),
+                    ),
+                ),
+                (
+                    Fraction(-1),
+                    (
+                        TensorFactor(METRIC, (a, d)),
+                        TensorFactor(SCHOUTEN, (b, c), factor.derivatives),
+                    ),
+                ),
+                (
+                    Fraction(-1),
+                    (
+                        TensorFactor(METRIC, (b, c)),
+                        TensorFactor(SCHOUTEN, (a, d), factor.derivatives),
+                    ),
+                ),
+                (
+                    Fraction(1),
+                    (
+                        TensorFactor(METRIC, (b, d)),
+                        TensorFactor(SCHOUTEN, (a, c), factor.derivatives),
+                    ),
+                ),
+            )
+            partial = [
+                (value * choice_coefficient, factors + replacements)
+                for value, factors in partial
+                for choice_coefficient, replacements in choices
+            ]
+        for value, factors in partial:
+            term = TensorMonomial(factors)
+            output[term] = output.get(term, Fraction()) + value
+    return TensorExpression(output)
+
+
+def schouten_zero_projection(expression: TensorExpression) -> TensorExpression:
+    """Set Schouten and all of its covariant derivatives to zero exactly."""
+
+    if any(
+        factor.spec == RIEMANN
+        for monomial in expression.terms
+        for factor in monomial.factors
+    ):
+        raise ValueError("expand Riemann factors before Schouten-zero projection")
+    projected = TensorExpression(
+        {
+            monomial: coefficient
+            for monomial, coefficient in expression.terms.items()
+            if not any(
+                factor.spec == SCHOUTEN for factor in monomial.factors
+            )
+        }
+    )
+    return tracefree_weyl_reduce(projected)
+
+
+def riemann_to_schouten_zero_weyl(
+    expression: TensorExpression,
+) -> TensorExpression:
+    """Restrict through the explicit decomposition, evaluated factorwise.
+
+    After setting Schouten and every derivative of it to zero, only the Weyl
+    choice in each five-term Riemann expansion can survive.  Evaluating that
+    unique branch directly avoids canonicalizing the exponentially many terms
+    that the projection immediately kills; it is exactly the composite
+    ``schouten_zero_projection(expand_riemann_factors(expression))``.
+    """
+
+    terms: dict[TensorMonomial, Fraction] = {}
+    for monomial, coefficient in expression.terms.items():
+        if any(factor.spec == SCHOUTEN for factor in monomial.factors):
+            continue
+        projected = TensorMonomial(
+            tuple(
+                TensorFactor(WEYL, factor.slots, factor.derivatives)
+                if factor.spec == RIEMANN
+                else factor
+                for factor in monomial.factors
+            )
+        )
+        terms[projected] = terms.get(projected, Fraction()) + coefficient
+    return tracefree_weyl_reduce(TensorExpression(terms))
 
 
 def weyl_differential_bianchi_relation(

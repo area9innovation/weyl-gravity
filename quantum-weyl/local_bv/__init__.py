@@ -31,6 +31,7 @@ from .specialization import (
     tracefree_weyl_reduce,
 )
 from .tensors import TensorExpression, TensorFactor, TensorMonomial, TensorSpec
+from .weyl_image import schouten_zero_weyl_image_analysis
 from .weyl_decomposition import (
     COTTON,
     METRIC,
@@ -39,8 +40,11 @@ from .weyl_decomposition import (
     cotton_definition_relation,
     differentiated_ricci_decomposition_relation,
     expand_cotton_definitions,
+    expand_riemann_factors,
     hodge_dualize_weyl_factor,
     ricci_decomposition_relation,
+    riemann_to_schouten_zero_weyl,
+    schouten_zero_projection,
     tracefree_cotton_reduce,
     weyl_differential_bianchi_relation,
     weyl_hodge_square_contraction,
@@ -77,13 +81,17 @@ __all__ = [
     "differentiated_ricci_decomposition_relation",
     "epsilon_pair_expansion",
     "expand_cotton_definitions",
+    "expand_riemann_factors",
     "four_dimensional_schouten_analysis",
     "hodge_dualize_weyl_factor",
     "reduce_epsilon_pair_in_monomial",
     "minimal_registry",
     "replace_riemann_by_weyl",
     "ricci_decomposition_relation",
+    "riemann_to_schouten_zero_weyl",
+    "schouten_zero_projection",
     "schouten_antisymmetrization",
+    "schouten_zero_weyl_image_analysis",
     "signed_pairing_orbits",
     "six_derivative_curvature_analysis",
     "tracefree_weyl_reduce",

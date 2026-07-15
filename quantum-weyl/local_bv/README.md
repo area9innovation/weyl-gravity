@@ -81,6 +81,17 @@ Full-Weyl Hodge dualization flips the explicit parity block, with exact
 `star^2=+1` in Euclidean and `star^2=-1` in Lorentzian signature on a complete
 Weyl contraction.
 
+The first derivative-safe Weyl image is now computed.  Expanding every
+Riemann factor as `Weyl + metric wedge Schouten` and then setting Schouten and
+all of its covariant derivatives to zero induces an exact surjection from the
+eight-dimensional four-dimensional quotient onto a one-dimensional target,
+with a seven-dimensional stored kernel.  The target begins with 17 nonzero
+Weyl monomials; 106 mapped relations have rank 16.  The cubic,
+`(nabla Weyl)^2`, and `Weyl nabla^2 Weyl` sectors each reach that same class.
+An explicit odd Hodge companion is constructed.  Because this restriction
+also sets Cotton to zero, it is a Schouten-flat image theorem rather than the
+unrestricted Weyl-jet quotient or a complete parity-odd enumeration.
+
 This is not Gate A or Gate B.  In particular, the classical commit is
 `NOT_FROZEN`; antifield and nonminimal rows have not been imported; and
 general covariant curvature reduction remains incomplete.  The
@@ -103,6 +114,7 @@ PYTHONPATH=quantum-weyl python -m local_bv.six_derivative_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.specialization_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.four_dimensional_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.weyl_decomposition_certificate --check
+PYTHONPATH=quantum-weyl python -m local_bv.weyl_image_certificate --check
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_CURVATURE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json
@@ -110,6 +122,7 @@ python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_S
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_SPECIALIZATION_FOUNDATIONS.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_FOUR_DIMENSIONAL_SCHOUTEN_QUOTIENT.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS.json
+python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE.json
 ```
 
 The certificate is
@@ -154,7 +167,12 @@ The Weyl--Schouten--Cotton hardening receipt is
 with its common result envelope at
 [`../certificates/LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS.json`](../certificates/LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS.json).
 
-Next admissible local steps are the tracefree-Weyl and parity-odd
-specializations, Weyl BRST curvature rows, and a derivative-bounded
-ghost-number ansatz.  The antifield and relative-cohomology layers still wait
-for the frozen classical schema.
+The Schouten-zero Weyl-image receipt is
+[`certificates/LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE_CERTIFICATE.json`](certificates/LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE_CERTIFICATE.json),
+with its common result envelope at
+[`../certificates/LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE.json`](../certificates/LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE.json).
+
+Next admissible local steps are the unrestricted Weyl--Cotton jet quotient,
+the exhaustive parity-odd specialization, Weyl BRST curvature rows, and a
+derivative-bounded ghost-number ansatz.  The antifield and
+relative-cohomology layers still wait for the frozen classical schema.

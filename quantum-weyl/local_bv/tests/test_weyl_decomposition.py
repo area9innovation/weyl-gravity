@@ -10,8 +10,11 @@ from local_bv.weyl_decomposition import (
     cotton_definition_relation,
     differentiated_ricci_decomposition_relation,
     expand_cotton_definitions,
+    expand_riemann_factors,
     hodge_dualize_weyl_factor,
     ricci_decomposition_relation,
+    riemann_to_schouten_zero_weyl,
+    schouten_zero_projection,
     tracefree_cotton_reduce,
     weyl_differential_bianchi_relation,
     weyl_hodge_square_contraction,
@@ -38,6 +41,52 @@ class WeylDecompositionTests(unittest.TestCase):
             ),
             1,
         )
+
+    def test_riemann_expansion_is_derivative_safe(self) -> None:
+        for expression, relation in (
+            (
+                TensorExpression.monomial(
+                    TensorMonomial((TensorFactor(RIEMANN, (0, 1, 2, 3)),))
+                ),
+                ricci_decomposition_relation(),
+            ),
+            (
+                TensorExpression.monomial(
+                    TensorMonomial(
+                        (TensorFactor(RIEMANN, (0, 1, 2, 3), (4,)),)
+                    )
+                ),
+                differentiated_ricci_decomposition_relation(),
+            ),
+        ):
+            expanded = expand_riemann_factors(expression)
+            self.assertEqual(expression - expanded, relation)
+            projected = riemann_to_schouten_zero_weyl(expression)
+            self.assertTrue(projected)
+            self.assertTrue(
+                all(
+                    factor.spec == WEYL
+                    for monomial in projected.terms
+                    for factor in monomial.factors
+                )
+            )
+        with self.assertRaisesRegex(ValueError, "expand Riemann"):
+            schouten_zero_projection(
+                TensorExpression.monomial(
+                    TensorMonomial((TensorFactor(RIEMANN, (0, 1, 2, 3)),))
+                )
+            )
+        with self.assertRaisesRegex(ValueError, "multi-Riemann"):
+            expand_riemann_factors(
+                TensorExpression.monomial(
+                    TensorMonomial(
+                        (
+                            TensorFactor(RIEMANN, (0, 1, 2, 3)),
+                            TensorFactor(RIEMANN, (0, 1, 2, 3)),
+                        )
+                    )
+                )
+            )
 
     def test_cotton_convention_is_antisymmetric_cyclic_and_tracefree(self) -> None:
         definition = cotton_definition_relation()

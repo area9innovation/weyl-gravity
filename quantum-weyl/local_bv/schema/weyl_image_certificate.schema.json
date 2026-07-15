@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-schouten-zero-weyl-image-v1.json",
+  "title": "Pure-Weyl Schouten-zero image certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope", "checks", "image", "kernel", "odd_companion", "decomposition_projection_audit", "canonical_hashes", "not_computed", "assumptions"],
+  "properties": {
+    "result_id": {"const": "LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE_CERTIFICATE"},
+    "result_state": {"const": "SCHOUTEN_ZERO_IMAGE_VERIFIED"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "string", "minLength": 1},
+    "checks": {
+      "const": {
+        "explicit_riemann_decomposition": "VERIFIED",
+        "differentiated_projection_factorization": "VERIFIED",
+        "mapped_relation_closure": "VERIFIED",
+        "induced_map_surjectivity": "VERIFIED",
+        "exact_kernel_witnesses": "VERIFIED",
+        "all_sector_image_ranks": "VERIFIED",
+        "odd_hodge_companion": "CONSTRUCTED",
+        "unrestricted_weyl_jet_quotient": "NOT_COMPUTED",
+        "parity_odd_single_epsilon_enumeration": "NOT_COMPUTED",
+        "local_cohomology_H_s_mod_d": "NOT_COMPUTED"
+      }
+    },
+    "image": {
+      "type": "object",
+      "required": ["source_dimension", "target_ambient_dimension", "mapped_relation_count", "target_relation_rank", "target_dimension", "induced_map_rank", "kernel_dimension", "sector_image_ranks", "sector_nonzero_ambient_images", "mapped_family_counts", "cumulative_reduction", "induced_map", "target_representative", "target_representative_sha256"],
+      "properties": {
+        "source_dimension": {"const": 8},
+        "target_ambient_dimension": {"const": 17},
+        "mapped_relation_count": {"const": 106},
+        "target_relation_rank": {"const": 16},
+        "target_dimension": {"const": 1},
+        "induced_map_rank": {"const": 1},
+        "kernel_dimension": {"const": 7},
+        "sector_image_ranks": {"const": {"R3": 1, "nablaR_nablaR": 1, "R_nabla2R": 1}},
+        "sector_nonzero_ambient_images": {"const": {"R3": 5, "nablaR_nablaR": 6, "R_nabla2R": 6}},
+        "mapped_family_counts": {"const": {"R3_bianchi": 6, "nablaR_nablaR_bianchi": 14, "R_nabla2R_bianchi": 14, "integration_by_parts": 12, "covariant_commutators": 4, "dimension_4_schouten": 56}},
+        "cumulative_reduction": {"type": "array", "minItems": 6},
+        "induced_map": {"type": "array", "minItems": 1},
+        "target_representative": {"type": "object"},
+        "target_representative_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "kernel": {
+      "type": "object",
+      "required": ["dimension", "coordinate_vectors", "witnesses"],
+      "properties": {
+        "dimension": {"const": 7},
+        "coordinate_vectors": {"type": "array", "minItems": 7},
+        "witnesses": {"type": "array", "minItems": 7}
+      }
+    },
+    "odd_companion": {
+      "type": "object",
+      "required": ["status", "parity", "sha256", "expression"],
+      "properties": {
+        "status": {"const": "CONSTRUCTED_NOT_A_COMPLETE_BASIS"},
+        "parity": {"const": "odd"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "expression": {"type": "object"}
+      }
+    },
+    "decomposition_projection_audit": {
+      "type": "object",
+      "required": ["algebraic", "differentiated"],
+      "properties": {
+        "algebraic": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "differentiated": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "canonical_hashes": {
+      "type": "object",
+      "required": ["mapped_relations_sha256", "induced_map_sha256", "kernel_sha256", "source_manifest_sha256"],
+      "properties": {
+        "mapped_relations_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "induced_map_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "kernel_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "source_manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "not_computed": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "assumptions": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  }
+}

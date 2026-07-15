@@ -1,0 +1,912 @@
+{
+  "assumptions": [
+    "The source is the certified eight-dimensional four-dimensional integrated Riemann quotient.",
+    "Schouten and every covariant derivative of Schouten are set to zero after the exact Ricci decomposition.",
+    "The resulting differential Bianchi identities also impose Cotton=0, so this image is narrower than unrestricted Weyl-jet algebra.",
+    "The odd Hodge companion proves existence of a nonzero odd expression but not completeness of the odd sector."
+  ],
+  "canonical_hashes": {
+    "induced_map_sha256": "91a1bb0e23937d79eac74020bbbd860892e7ff88ac7c88abc946a1f5794e17db",
+    "kernel_sha256": "8dd73b01bf8d223253df8f664723fcadbea873e8983a510e277c0fb85d9bfefd",
+    "mapped_relations_sha256": "3bea2f46a942d384e2990fcaf2b9145f66dfc0a223e6bfd792f0f77fb47f66c0",
+    "source_manifest_sha256": "6641765482ad0e55d33cd2af705781dedaee9e3ed1c0532afa0bcdd4cdd907e9"
+  },
+  "checks": {
+    "all_sector_image_ranks": "VERIFIED",
+    "differentiated_projection_factorization": "VERIFIED",
+    "exact_kernel_witnesses": "VERIFIED",
+    "explicit_riemann_decomposition": "VERIFIED",
+    "induced_map_surjectivity": "VERIFIED",
+    "local_cohomology_H_s_mod_d": "NOT_COMPUTED",
+    "mapped_relation_closure": "VERIFIED",
+    "odd_hodge_companion": "CONSTRUCTED",
+    "parity_odd_single_epsilon_enumeration": "NOT_COMPUTED",
+    "unrestricted_weyl_jet_quotient": "NOT_COMPUTED"
+  },
+  "classical_commit": "UNFROZEN",
+  "decomposition_projection_audit": {
+    "algebraic": "0c2fbab707b7ec90c9bc88730d594ff62f6fded4e9f67c80f4550a7d2247bb5a",
+    "differentiated": "deb2abbfcfaaae840a1ae73b5b8912c6f542d29447d42c8cd55410f0b45a44e4"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "image": {
+    "cumulative_reduction": [
+      {
+        "cumulative_quotient_dimension": 14,
+        "cumulative_relation_rank": 3,
+        "family": "R3_bianchi",
+        "mapped_relation_count": 6
+      },
+      {
+        "cumulative_quotient_dimension": 9,
+        "cumulative_relation_rank": 8,
+        "family": "nablaR_nablaR_bianchi",
+        "mapped_relation_count": 14
+      },
+      {
+        "cumulative_quotient_dimension": 4,
+        "cumulative_relation_rank": 13,
+        "family": "R_nabla2R_bianchi",
+        "mapped_relation_count": 14
+      },
+      {
+        "cumulative_quotient_dimension": 3,
+        "cumulative_relation_rank": 14,
+        "family": "integration_by_parts",
+        "mapped_relation_count": 12
+      },
+      {
+        "cumulative_quotient_dimension": 2,
+        "cumulative_relation_rank": 15,
+        "family": "covariant_commutators",
+        "mapped_relation_count": 4
+      },
+      {
+        "cumulative_quotient_dimension": 1,
+        "cumulative_relation_rank": 16,
+        "family": "dimension_4_schouten",
+        "mapped_relation_count": 56
+      }
+    ],
+    "induced_map": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 6,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "induced_map_rank": 1,
+    "kernel_dimension": 7,
+    "mapped_family_counts": {
+      "R3_bianchi": 6,
+      "R_nabla2R_bianchi": 14,
+      "covariant_commutators": 4,
+      "dimension_4_schouten": 56,
+      "integration_by_parts": 12,
+      "nablaR_nablaR_bianchi": 14
+    },
+    "mapped_relation_count": 106,
+    "sector_image_ranks": {
+      "R3": 1,
+      "R_nabla2R": 1,
+      "nablaR_nablaR": 1
+    },
+    "sector_nonzero_ambient_images": {
+      "R3": 5,
+      "R_nabla2R": 6,
+      "nablaR_nablaR": 6
+    },
+    "source_dimension": 8,
+    "target_ambient_dimension": 17,
+    "target_dimension": 1,
+    "target_relation_rank": 16,
+    "target_representative": {
+      "factors": [
+        {
+          "derivatives": [
+            4
+          ],
+          "grassmann_parity": 0,
+          "slots": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "spacetime_parity": 0,
+          "tensor": "Weyl"
+        },
+        {
+          "derivatives": [
+            4
+          ],
+          "grassmann_parity": 0,
+          "slots": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "spacetime_parity": 0,
+          "tensor": "Weyl"
+        }
+      ]
+    },
+    "target_representative_sha256": "da265a84a5c388955018590963f4b30638b29acb28401535ffd904e92e39162c"
+  },
+  "kernel": {
+    "coordinate_vectors": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -3
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "dimension": 7,
+    "witnesses": [
+      {
+        "expression": {
+          "terms": [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      1,
+                      0,
+                      1
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      2,
+                      3,
+                      4,
+                      5
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      2,
+                      4,
+                      3,
+                      5
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "sha256": "f1f52fc43e5ceb9df60a408da34f7c15eaf5a7d3d46e945db8cf7f97b5b7adff"
+      },
+      {
+        "expression": {
+          "terms": [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      1,
+                      0,
+                      2
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      1,
+                      3,
+                      3,
+                      4
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      2,
+                      5,
+                      4,
+                      5
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "sha256": "aec7d0fd989511516b14793ede79bfcf04f4c74a74fda00526053016e69b26fd"
+      },
+      {
+        "expression": {
+          "terms": [
+            {
+              "coefficient": {
+                "denominator": 2,
+                "numerator": -1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      1,
+                      2,
+                      3
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      4,
+                      2,
+                      5
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      1,
+                      4,
+                      3,
+                      5
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  }
+                ]
+              }
+            },
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      1,
+                      2,
+                      3
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      4,
+                      2,
+                      5
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      1,
+                      5,
+                      3,
+                      4
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "sha256": "644827c1a92b339fe4554b384570a054919af57fa234af1e4920ac0e4c38b44e"
+      },
+      {
+        "expression": {
+          "terms": [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [
+                      2
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      1,
+                      0,
+                      1
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [
+                      2
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      3,
+                      4,
+                      3,
+                      4
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "sha256": "3235ae1bfae0b5144d7c6ef171b8c18132684eb8a10615166249f3152c6a14b1"
+      },
+      {
+        "expression": {
+          "terms": [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [
+                      3
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      1,
+                      0,
+                      2
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [
+                      1
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      2,
+                      4,
+                      3,
+                      4
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "sha256": "e8881eb1acab0242f49b60ae8b9f5843f9b00f36d696858d0742d8f16583eade"
+      },
+      {
+        "expression": {
+          "terms": [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [
+                      3
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      1,
+                      0,
+                      2
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [
+                      3
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      1,
+                      4,
+                      2,
+                      4
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "sha256": "4df2f6c7fbb205c03bba1e2d1d386379f86ce395dda83b2ec7a6f66e69ae768c"
+      },
+      {
+        "expression": {
+          "terms": [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": -3
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      1,
+                      2,
+                      3
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      4,
+                      2,
+                      5
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      1,
+                      4,
+                      3,
+                      5
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  }
+                ]
+              }
+            },
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [
+                      4
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      1,
+                      2,
+                      3
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [
+                      4
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      2,
+                      1,
+                      3
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "sha256": "a7d5dafecc37a346388dc711d135612f07b4f6bb6b21e21ae736efb5063b084e"
+      }
+    ]
+  },
+  "not_computed": [
+    "the unrestricted local Weyl-jet quotient with nonzero Cotton completion",
+    "an exhaustive parity-odd single-epsilon basis and its relations",
+    "Weyl-BRST closure, antifield descent, and H^{g,4}(s|d)",
+    "counterterm or anomaly coefficients, QME restoration, and residual transfer"
+  ],
+  "odd_companion": {
+    "expression": {
+      "terms": [
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "monomial": {
+            "factors": [
+              {
+                "derivatives": [
+                  4
+                ],
+                "grassmann_parity": 0,
+                "slots": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Weyl"
+              },
+              {
+                "derivatives": [
+                  4
+                ],
+                "grassmann_parity": 0,
+                "slots": [
+                  0,
+                  2,
+                  5,
+                  6
+                ],
+                "spacetime_parity": 0,
+                "tensor": "Weyl"
+              },
+              {
+                "derivatives": [],
+                "grassmann_parity": 0,
+                "slots": [
+                  1,
+                  3,
+                  5,
+                  6
+                ],
+                "spacetime_parity": 1,
+                "tensor": "epsilon"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "parity": "odd",
+    "sha256": "916756c11723dc370635d46cc782db6d58955f31fe7bd2121689a10625f630b5",
+    "status": "CONSTRUCTED_NOT_A_COMPLETE_BASIS"
+  },
+  "result_id": "LOCAL_SCHOUTEN_ZERO_WEYL_IMAGE_CERTIFICATE",
+  "result_state": "SCHOUTEN_ZERO_IMAGE_VERIFIED",
+  "scope": "Exact induced image of the certified four-dimensional integrated order-six Riemann quotient after setting the Schouten tensor and all of its covariant derivatives to zero."
+}
