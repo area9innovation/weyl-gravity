@@ -32,6 +32,23 @@ nontrivial result carries a normalized dual witness annihilating every
 generated boundary.  The checked fixtures prove these classification
 mechanics only; they are not models of the pure-Weyl local BV complex.
 
+The engine also retains the sourced identity before imposing anomaly freedom:
+
+\[
+[Q,\mathcal A_D^{(1)}]
+=
+[[Q,Q_1],\iota_D]
+-\left([Q,\mathcal L_D^{(1)}]+[Q_1,\mathcal L_D]\right).
+\]
+
+This keeps a QME source separate from a Ward-algebra source.  Exactness may
+be computed in a declared linear-constraint subcomplex of admissible
+operators.  The implementation verifies that the constraints are preserved
+by `[Q,-]`; a primitive in the full endomorphism space is not accepted when
+it violates those constraints.  The certificate includes a regression where
+an ambient `EXACT_REMOVABLE` defect becomes `NONTRIVIAL_ANOMALY` after its
+only primitive is excluded.
+
 ## Claim boundary
 
 The physical candidate ledgers currently read `UNDEFINED_ANALYTICALLY`.
@@ -42,7 +59,8 @@ Lorentzian observable algebras are also absent.  Consequently this package
 does not establish anomaly freedom, an anomaly coefficient, residual quantum
 transfer, or a quantum pairing correction.
 
-The classical D-quotient handoff is imported by content hash.  It records a
+The classical D-quotient handoff is parsed, semantically verified, and
+imported by content hash.  It records a
 sector-dependent compact-cylinder result: `D_CHARGED` on the unrestricted
 locally reduced linearized space `P_lin`, and `D_GAUGE` only on the declared
 full Taub/moment-map zero fibre `P_Taub0`.  This restricts the quantum question

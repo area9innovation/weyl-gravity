@@ -14,6 +14,9 @@
     "operator_complex",
     "allowed_candidate_statuses",
     "mechanics_fixtures",
+    "sourced_consistency_fixture",
+    "admissibility_fixture",
+    "classical_D_import",
     "candidate_sector_ledger",
     "setting_ledger",
     "input_gates",
@@ -42,7 +45,7 @@
     "operator_complex": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["defect_degree", "differential", "ambient_obstruction_group", "local_relative_realization", "first_order_defect", "consistency_hypotheses", "consistency_conclusion", "removability_criterion"],
+      "required": ["defect_degree", "differential", "ambient_obstruction_group", "local_relative_realization", "first_order_defect", "consistency_hypotheses", "consistency_conclusion", "sourced_consistency_identity", "admissible_subcomplex_policy", "removability_criterion"],
       "properties": {
         "defect_degree": {"const": 0},
         "differential": {"const": "delta_End(T) = [Q,T]_graded"},
@@ -51,6 +54,8 @@
         "first_order_defect": {"type": "string", "minLength": 1},
         "consistency_hypotheses": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}},
         "consistency_conclusion": {"const": "[Q,A_D^(1)]=0"},
+        "sourced_consistency_identity": {"const": "[Q,A_D^(1)]=[[Q,Q_1],iota_D]-([Q,L_D^(1)]+[Q_1,L_D])"},
+        "admissible_subcomplex_policy": {"type": "string", "minLength": 1},
         "removability_criterion": {"type": "string", "minLength": 1}
       }
     },
@@ -62,6 +67,57 @@
       "minItems": 3,
       "maxItems": 3,
       "items": {"$ref": "#/$defs/fixture"}
+    },
+    "sourced_consistency_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture_id", "scope", "qme_source", "ward_source", "consistency_left", "consistency_right", "qme_source_status", "ward_source_status", "defect_closure_status", "sourced_identity"],
+      "properties": {
+        "fixture_id": {"const": "nonzero_qme_source"},
+        "scope": {"const": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY"},
+        "qme_source": {"$ref": "#/$defs/operator"},
+        "ward_source": {"$ref": "#/$defs/operator"},
+        "consistency_left": {"$ref": "#/$defs/operator"},
+        "consistency_right": {"$ref": "#/$defs/operator"},
+        "qme_source_status": {"const": "NONZERO"},
+        "ward_source_status": {"const": "ZERO"},
+        "defect_closure_status": {"const": "SOURCED_NONZERO"},
+        "sourced_identity": {"const": "VERIFIED"}
+      }
+    },
+    "admissibility_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture_id", "scope", "ambient_classification", "admissible_classification", "ambient_primitive", "admissible_dual_witness", "admissible_complex_manifest"],
+      "properties": {
+        "fixture_id": {"const": "ambient_exact_primitive_inadmissible"},
+        "scope": {"const": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY"},
+        "ambient_classification": {"const": "EXACT_REMOVABLE"},
+        "admissible_classification": {"const": "NONTRIVIAL_ANOMALY"},
+        "ambient_primitive": {"$ref": "#/$defs/operator"},
+        "admissible_dual_witness": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/rational"}},
+        "admissible_complex_manifest": {"$ref": "#/$defs/admissibleManifest"}
+      }
+    },
+    "classical_D_import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "sha256", "source_commit", "claim_state", "vacuum_assessment_status", "vacuum_verdict", "required_sector_verdicts", "semantic_validation"],
+      "properties": {
+        "artifact": {"const": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "claim_state": {"enum": ["OPEN_FAIL_CLOSED", "PARTIAL", "COMPLETE"]},
+        "vacuum_assessment_status": {"const": "CERTIFIED"},
+        "vacuum_verdict": {"const": "SECTOR_DEPENDENT"},
+        "required_sector_verdicts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["P_lin", "P_Taub0"],
+          "properties": {"P_lin": {"const": "D_CHARGED"}, "P_Taub0": {"const": "D_GAUGE"}}
+        },
+        "semantic_validation": {"const": "VERIFIED"}
+      }
     },
     "candidate_sector_ledger": {
       "type": "array",
@@ -171,6 +227,31 @@
         "endomorphism_H0_dimension": {"type": "integer", "minimum": 0},
         "primitive": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/operator"}]},
         "dual_witness": {"oneOf": [{"type": "null"}, {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/rational"}}]}
+      }
+    },
+    "admissibleManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["certified_source_degrees", "constraints", "ambient_dimensions", "admissible_dimensions", "subcomplex_status"],
+      "properties": {
+        "certified_source_degrees": {"type": "array", "minItems": 1, "items": {"type": "integer"}},
+        "constraints": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "degree", "row"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "degree": {"type": "integer"},
+              "row": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+            }
+          }
+        },
+        "ambient_dimensions": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "admissible_dimensions": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "subcomplex_status": {"const": "VERIFIED"}
       }
     }
   }

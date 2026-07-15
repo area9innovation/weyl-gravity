@@ -9,11 +9,14 @@ from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
+from .classical_import import import_receipt, imported_setting_ledger, load_classical_d_status
 from .defect_complex import (
+    AdmissibleOperatorComplex,
     ExactMatrix,
     FiniteGradedComplex,
     FirstOrderCartanData,
     HomogeneousOperator,
+    LinearConstraint,
     classify_closed_defect,
 )
 
@@ -98,6 +101,83 @@ def _nontrivial_fixture() -> FirstOrderCartanData:
     )
 
 
+def _sourced_consistency_fixture() -> FirstOrderCartanData:
+    q = HomogeneousOperator(
+        "Q", 1, ExactMatrix.from_rows(((0, 0, 0), (1, 0, 0), (0, 0, 0)))
+    )
+    complex_ = FiniteGradedComplex((0, 1, 2), q)
+    iota = HomogeneousOperator(
+        "iota_D",
+        -1,
+        ExactMatrix.from_rows(((0, 0, 0), (0, 0, 1), (0, 0, 0))),
+    )
+    q_1 = HomogeneousOperator(
+        "Q_1",
+        1,
+        ExactMatrix.from_rows(((0, 0, 0), (0, 0, 0), (0, 1, 0))),
+    )
+    zero_lie = HomogeneousOperator("L_D", 0, ExactMatrix.zero(3, 3))
+    return FirstOrderCartanData(
+        complex=complex_,
+        iota_0=iota,
+        lie_0=zero_lie,
+        q_1=q_1,
+        iota_1=HomogeneousOperator("iota_1", -1, ExactMatrix.zero(3, 3)),
+        lie_1=zero_lie,
+    )
+
+
+def _sourced_consistency_receipt() -> dict[str, Any]:
+    data = _sourced_consistency_fixture()
+    checks = data.checks()
+    if checks["first_order_QME_linearization"]:
+        raise AssertionError("sourced fixture unexpectedly has zero QME source")
+    if checks["defect_consistency_Q_closed"]:
+        raise AssertionError("sourced fixture unexpectedly has a closed defect")
+    if not checks["sourced_consistency_identity"]:
+        raise AssertionError("sourced consistency identity failed")
+    return {
+        "fixture_id": "nonzero_qme_source",
+        "scope": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY",
+        "qme_source": _operator_payload(data.qme_source()),
+        "ward_source": _operator_payload(data.ward_source()),
+        "consistency_left": _operator_payload(data.consistency_left()),
+        "consistency_right": _operator_payload(data.consistency_right()),
+        "qme_source_status": "NONZERO",
+        "ward_source_status": "ZERO",
+        "defect_closure_status": "SOURCED_NONZERO",
+        "sourced_identity": "VERIFIED",
+    }
+
+
+def _admissibility_receipt() -> dict[str, Any]:
+    data = _acyclic_fixture(corrected=True)
+    ambient = classify_closed_defect(data.complex, data.defect())
+    admissible_complex = AdmissibleOperatorComplex(
+        ambient=data.complex,
+        constraints=(
+            LinearConstraint.from_row("forbid_iota_direction", -1, (1,)),
+        ),
+        certified_source_degrees=(-1, 0),
+    )
+    admissible = classify_closed_defect(admissible_complex, data.defect())
+    if ambient.status != "EXACT_REMOVABLE" or admissible.status != "NONTRIVIAL_ANOMALY":
+        raise AssertionError("admissibility fixture did not expose false removability")
+    if ambient.primitive is None or admissible.dual_witness is None:
+        raise AssertionError("admissibility fixture is missing its exact witnesses")
+    return {
+        "fixture_id": "ambient_exact_primitive_inadmissible",
+        "scope": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY",
+        "ambient_classification": ambient.status,
+        "admissible_classification": admissible.status,
+        "ambient_primitive": _operator_payload(ambient.primitive),
+        "admissible_dual_witness": [
+            _rational(value) for value in admissible.dual_witness or ()
+        ],
+        "admissible_complex_manifest": admissible_complex.manifest(),
+    }
+
+
 def _fixture_receipt(fixture_id: str, data: FirstOrderCartanData) -> dict[str, Any]:
     checks = data.checks()
     if not all(checks.values()):
@@ -129,9 +209,11 @@ def _source_manifest() -> dict[str, str]:
         "README.md",
         "__init__.py",
         "certificate.py",
+        "classical_import.py",
         "defect_complex.py",
         "schema/cartan_defect_precertificate.schema.json",
         "tests/test_certificate.py",
+        "tests/test_classical_import.py",
         "tests/test_defect_complex.py",
     )
     return {path: _sha256(PACKAGE_ROOT / path) for path in paths}
@@ -163,6 +245,27 @@ def build_certificate() -> dict[str, Any]:
     ):
         raise AssertionError("the three exact classification fixtures did not separate")
 
+    classical_record = load_classical_d_status()
+    classical_settings = imported_setting_ledger(classical_record)
+    setting_reasons = {
+        "vacuum_cylinder": "no renormalized Q_1, Ward operator, or restored local QME",
+        "cylinder_scalar_clock": "scalar BV and relational observable extensions are absent",
+        "cylinder_yang_mills": "matter extension is outside the current execution gate",
+        "weakly_deformed_background": "background-dependent causal and renormalized complexes are absent",
+        "lorentzian_ds_ads": "boundary observable algebra and BRST-compatible Hadamard construction are absent",
+        "asymptotically_flat": "renormalized asymptotic charge algebra is absent; contraction is not assumed",
+    }
+    setting_ledger = [
+        {
+            "setting": item["setting_id"],
+            "D_charge": item["D_charge"],
+            "classical_input_status": item["classical_input_status"],
+            "verdict": "ANALYTIC_FRAMEWORK_MISSING",
+            "reason": setting_reasons[item["setting_id"]],
+        }
+        for item in classical_settings
+    ]
+
     source_manifest = _source_manifest()
     dependency_manifest = _dependency_manifest()
     return {
@@ -191,6 +294,8 @@ def build_certificate() -> dict[str, Any]:
                 "[Q,L_D^(1)]+[Q_1,L_D]=0",
             ],
             "consistency_conclusion": "[Q,A_D^(1)]=0",
+            "sourced_consistency_identity": "[Q,A_D^(1)]=[[Q,Q_1],iota_D]-([Q,L_D^(1)]+[Q_1,L_D])",
+            "admissible_subcomplex_policy": "classify only after locality, derivation, cyclicity, reality, parity, boundary, and Ward-preservation constraints form a verified delta_End-stable subcomplex",
             "removability_criterion": "A_D^(1)=[Q,X] for an admissible degree-minus-one finite renormalization X preserving the other declared Ward identities",
         },
         "allowed_candidate_statuses": [
@@ -200,6 +305,9 @@ def build_certificate() -> dict[str, Any]:
             "UNDEFINED_ANALYTICALLY",
         ],
         "mechanics_fixtures": list(fixtures),
+        "sourced_consistency_fixture": _sourced_consistency_receipt(),
+        "admissibility_fixture": _admissibility_receipt(),
+        "classical_D_import": import_receipt(),
         "candidate_sector_ledger": [
             {
                 "sector": "bulk_local_pure_weyl",
@@ -232,50 +340,7 @@ def build_certificate() -> dict[str, Any]:
                 "missing_input": "clock field/antifield rows, relational observable algebra, and measure",
             },
         ],
-        "setting_ledger": [
-            {
-                "setting": "vacuum_cylinder",
-                "D_charge": "SECTOR_DEPENDENT_CLASSICALLY_P_LIN_CHARGED_P_TAUB0_GAUGE",
-                "classical_input_status": "CERTIFIED_HASH_PINNED_NOT_A_QUANTUM_VERDICT",
-                "verdict": "ANALYTIC_FRAMEWORK_MISSING",
-                "reason": "no renormalized Q_1, Ward operator, or restored local QME",
-            },
-            {
-                "setting": "cylinder_scalar_clock",
-                "D_charge": "OPEN",
-                "classical_input_status": "OPEN",
-                "verdict": "ANALYTIC_FRAMEWORK_MISSING",
-                "reason": "scalar BV and relational observable extensions are absent",
-            },
-            {
-                "setting": "cylinder_yang_mills",
-                "D_charge": "OPEN_NOT_TESTED_BEFORE_SCALAR",
-                "classical_input_status": "NOT_TESTED",
-                "verdict": "ANALYTIC_FRAMEWORK_MISSING",
-                "reason": "matter extension is outside the current execution gate",
-            },
-            {
-                "setting": "weakly_deformed_background",
-                "D_charge": "OPEN",
-                "classical_input_status": "NOT_TESTED",
-                "verdict": "ANALYTIC_FRAMEWORK_MISSING",
-                "reason": "background-dependent causal and renormalized complexes are absent",
-            },
-            {
-                "setting": "lorentzian_dS_AdS",
-                "D_charge": "BOUNDARY_DEPENDENT",
-                "classical_input_status": "NOT_TESTED",
-                "verdict": "ANALYTIC_FRAMEWORK_MISSING",
-                "reason": "boundary observable algebra and BRST-compatible Hadamard construction are absent",
-            },
-            {
-                "setting": "asymptotically_flat",
-                "D_charge": "PHYSICAL_CHARGE_EXPECTED_NOT_CERTIFIED",
-                "classical_input_status": "NOT_TESTED",
-                "verdict": "ANALYTIC_FRAMEWORK_MISSING",
-                "reason": "renormalized asymptotic charge algebra is absent; contraction is not assumed",
-            },
-        ],
+        "setting_ledger": setting_ledger,
         "input_gates": {
             "classical_freeze": "BLOCKED_UNFROZEN",
             "classical_D_charge_setting_ledger": "IMPORTED_HASH_PINNED_NOT_A_QUANTUM_PROMOTION",
@@ -290,10 +355,11 @@ def build_certificate() -> dict[str, Any]:
         "claim_boundary": {
             "established": [
                 "the exact first-order Cartan-defect formula and its degree",
-                "the Jacobi/Ward consistency implication in finite exact complexes",
+                "the sourced Jacobi/Ward consistency identity in finite exact complexes, including nonzero QME or Ward sources",
                 "exact ZERO, EXACT_REMOVABLE, and NONTRIVIAL_ANOMALY classification mechanics with primitive or dual witnesses",
+                "exact admissible-subcomplex classification that rejects an ambient but forbidden primitive",
                 "fail-closed lifecycle, setting, and candidate-sector ledgers",
-                "hash-pinned import of the classical compact-cylinder sector split without quantum promotion",
+                "semantically verified and hash-pinned import of the classical compact-cylinder sector split without quantum promotion",
             ],
             "not_established": [
                 "a complete pure-Weyl Cartan-obstruction candidate basis",

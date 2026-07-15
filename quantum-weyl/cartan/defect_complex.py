@@ -246,6 +246,49 @@ def _matrix_rank(rows: Sequence[Sequence[Fraction]], variable_count: int) -> int
     return rank
 
 
+def _nullspace_basis(
+    rows: Sequence[Sequence[Fraction]], variable_count: int
+) -> tuple[tuple[Fraction, ...], ...]:
+    """Return a deterministic exact basis for the kernel of a row matrix."""
+
+    if any(len(row) != variable_count for row in rows):
+        raise ValueError("constraint width differs from ambient dimension")
+    reduced = [list(row) for row in rows]
+    pivot_row = 0
+    pivots: list[int] = []
+    for column in range(variable_count):
+        selected = next(
+            (row for row in range(pivot_row, len(reduced)) if reduced[row][column]),
+            None,
+        )
+        if selected is None:
+            continue
+        reduced[pivot_row], reduced[selected] = reduced[selected], reduced[pivot_row]
+        pivot = reduced[pivot_row][column]
+        reduced[pivot_row] = [value / pivot for value in reduced[pivot_row]]
+        for row in range(len(reduced)):
+            if row == pivot_row or not reduced[row][column]:
+                continue
+            factor = reduced[row][column]
+            reduced[row] = [
+                value - factor * pivot_value
+                for value, pivot_value in zip(reduced[row], reduced[pivot_row])
+            ]
+        pivots.append(column)
+        pivot_row += 1
+        if pivot_row == len(reduced):
+            break
+    free_columns = [column for column in range(variable_count) if column not in pivots]
+    basis = []
+    for free in free_columns:
+        vector = [Fraction(0) for _ in range(variable_count)]
+        vector[free] = Fraction(1)
+        for row, pivot in reversed(list(enumerate(pivots))):
+            vector[pivot] = -reduced[row][free]
+        basis.append(tuple(vector))
+    return tuple(basis)
+
+
 @dataclass(frozen=True)
 class FiniteGradedComplex:
     """A finite graded complex and its homogeneous endomorphism complex."""
@@ -386,6 +429,218 @@ class FiniteGradedComplex:
 
 
 @dataclass(frozen=True)
+class LinearConstraint:
+    """One named homogeneous linear admissibility condition."""
+
+    name: str
+    degree: int
+    row: tuple[Fraction, ...]
+
+    @classmethod
+    def from_row(
+        cls,
+        name: str,
+        degree: int,
+        row: Sequence[int | Fraction],
+    ) -> "LinearConstraint":
+        return cls(name, degree, tuple(_fraction(value) for value in row))
+
+
+@dataclass(frozen=True)
+class AdmissibleOperatorComplex:
+    """A differential-stable exact subcomplex of homogeneous endomorphisms.
+
+    Constraints act on ambient homogeneous-operator coordinates.  The
+    admissible basis is computed as their exact kernel.  Exactness is then
+    solved only using admissible degree-minus-one primitives, preventing an
+    illegal full-endomorphism primitive from being reported as a removable
+    physical counterterm.
+    """
+
+    ambient: FiniteGradedComplex
+    constraints: tuple[LinearConstraint, ...]
+    certified_source_degrees: tuple[int, ...]
+
+    def __post_init__(self) -> None:
+        seen: set[tuple[int, str]] = set()
+        for constraint in self.constraints:
+            key = (constraint.degree, constraint.name)
+            if key in seen:
+                raise ValueError(f"duplicate admissibility constraint {key}")
+            seen.add(key)
+            expected = len(self.ambient.endomorphism_pairs(constraint.degree))
+            if len(constraint.row) != expected:
+                raise ValueError(
+                    f"constraint {constraint.name} has width {len(constraint.row)}, expected {expected}"
+                )
+        for degree in self.certified_source_degrees:
+            self.endomorphism_differential_columns(degree)
+
+    @property
+    def q(self) -> HomogeneousOperator:
+        return self.ambient.q
+
+    def constraint_rows(self, degree: int) -> tuple[tuple[Fraction, ...], ...]:
+        return tuple(
+            constraint.row
+            for constraint in self.constraints
+            if constraint.degree == degree
+        )
+
+    def coordinate_basis(self, degree: int) -> tuple[tuple[Fraction, ...], ...]:
+        dimension = len(self.ambient.endomorphism_pairs(degree))
+        return _nullspace_basis(self.constraint_rows(degree), dimension)
+
+    def dimension(self, degree: int) -> int:
+        return len(self.coordinate_basis(degree))
+
+    def operator_from_coordinates(
+        self,
+        degree: int,
+        coordinates: Sequence[Fraction],
+        *,
+        name: str,
+    ) -> HomogeneousOperator:
+        basis = self.coordinate_basis(degree)
+        if len(coordinates) != len(basis):
+            raise ValueError("coordinate count does not match the admissible operator space")
+        ambient_dimension = len(self.ambient.endomorphism_pairs(degree))
+        ambient_coordinates = tuple(
+            sum(
+                (coefficient * vector[index] for coefficient, vector in zip(coordinates, basis)),
+                Fraction(0),
+            )
+            for index in range(ambient_dimension)
+        )
+        return self.ambient.operator_from_coordinates(
+            degree, ambient_coordinates, name=name
+        )
+
+    def coordinates(self, operator: HomogeneousOperator) -> tuple[Fraction, ...]:
+        self.ambient.validate_operator(operator)
+        basis = self.coordinate_basis(operator.degree)
+        ambient_coordinates = self.ambient.coordinates(operator)
+        rows = tuple(
+            tuple(vector[row] for vector in basis)
+            for row in range(len(ambient_coordinates))
+        )
+        solution = _rref_solve(rows, ambient_coordinates, len(basis))
+        if solution is None:
+            raise ValueError(f"{operator.name} is not in the admissible operator space")
+        return solution
+
+    def validate_operator(self, operator: HomogeneousOperator) -> None:
+        self.coordinates(operator)
+
+    def endomorphism_differential_columns(
+        self, degree: int
+    ) -> tuple[tuple[Fraction, ...], ...]:
+        columns = []
+        source_basis = self.coordinate_basis(degree)
+        for index in range(len(source_basis)):
+            coordinates = [Fraction(0) for _ in source_basis]
+            coordinates[index] = Fraction(1)
+            source = self.operator_from_coordinates(
+                degree, coordinates, name=f"A_{degree}_{index}"
+            )
+            image = graded_commutator(self.q, source, name="delta_admissible")
+            try:
+                columns.append(self.coordinates(image))
+            except ValueError as error:
+                raise ValueError(
+                    f"admissibility constraints do not form a subcomplex at degree {degree}"
+                ) from error
+        return tuple(columns)
+
+    def differential_rank(self, degree: int) -> int:
+        columns = self.endomorphism_differential_columns(degree)
+        row_count = self.dimension(degree + 1)
+        rows = tuple(
+            tuple(column[row] for column in columns)
+            for row in range(row_count)
+        )
+        return _matrix_rank(rows, len(columns))
+
+    def cohomology_dimension(self, degree: int) -> int:
+        return (
+            self.dimension(degree)
+            - self.differential_rank(degree)
+            - self.differential_rank(degree - 1)
+        )
+
+    def solve_boundary(
+        self, cocycle: HomogeneousOperator
+    ) -> HomogeneousOperator | None:
+        self.validate_operator(cocycle)
+        degree = cocycle.degree
+        columns = self.endomorphism_differential_columns(degree - 1)
+        target_coordinates = self.coordinates(cocycle)
+        rows = tuple(
+            tuple(column[row] for column in columns)
+            for row in range(len(target_coordinates))
+        )
+        solution = _rref_solve(rows, target_coordinates, len(columns))
+        if solution is None:
+            return None
+        primitive = self.operator_from_coordinates(
+            degree - 1, solution, name=f"admissible_primitive_for_{cocycle.name}"
+        )
+        if graded_commutator(self.q, primitive).matrix != cocycle.matrix:
+            raise AssertionError("the admissible boundary solver returned an invalid primitive")
+        return primitive
+
+    def dual_nontriviality_witness(
+        self, cocycle: HomogeneousOperator
+    ) -> tuple[Fraction, ...]:
+        degree = cocycle.degree
+        boundary_columns = self.endomorphism_differential_columns(degree - 1)
+        cocycle_coordinates = self.coordinates(cocycle)
+        equations = [tuple(column) for column in boundary_columns]
+        equations.append(tuple(cocycle_coordinates))
+        rhs = [Fraction(0) for _ in boundary_columns] + [Fraction(1)]
+        witness = _rref_solve(equations, rhs, len(cocycle_coordinates))
+        if witness is None:
+            raise ValueError("no normalized admissible dual witness exists")
+        if any(
+            sum((left * right for left, right in zip(witness, column)), Fraction(0))
+            for column in boundary_columns
+        ):
+            raise AssertionError("admissible dual witness does not annihilate boundaries")
+        normalization = sum(
+            (left * right for left, right in zip(witness, cocycle_coordinates)),
+            Fraction(0),
+        )
+        if normalization != 1:
+            raise AssertionError("admissible dual witness is not normalized")
+        return witness
+
+    def manifest(self) -> dict[str, object]:
+        degrees = sorted(
+            set(self.certified_source_degrees)
+            | {degree + 1 for degree in self.certified_source_degrees}
+        )
+        return {
+            "certified_source_degrees": list(self.certified_source_degrees),
+            "constraints": [
+                {
+                    "name": constraint.name,
+                    "degree": constraint.degree,
+                    "row": [str(value) for value in constraint.row],
+                }
+                for constraint in self.constraints
+            ],
+            "ambient_dimensions": {
+                str(degree): len(self.ambient.endomorphism_pairs(degree))
+                for degree in degrees
+            },
+            "admissible_dimensions": {
+                str(degree): self.dimension(degree) for degree in degrees
+            },
+            "subcomplex_status": "VERIFIED",
+        }
+
+
+@dataclass(frozen=True)
 class FirstOrderCartanData:
     """The complete first-order data entering the quantum Cartan defect."""
 
@@ -418,23 +673,53 @@ class FirstOrderCartanData:
             name="A_D_1",
         )
 
+    def qme_source(self) -> HomogeneousOperator:
+        """Return the first-order nilpotency/QME source ``[Q,Q_1]``."""
+
+        return graded_commutator(self.complex.q, self.q_1, name="[Q,Q_1]")
+
+    def ward_source(self) -> HomogeneousOperator:
+        """Return the first-order Ward source before imposing compatibility."""
+
+        return add_operators(
+            graded_commutator(
+                self.complex.q, self.lie_1, name="[Q,L_D_1]"
+            ),
+            graded_commutator(self.q_1, self.lie_0, name="[Q_1,L_D]"),
+            name="W_D_1",
+        )
+
+    def consistency_left(self) -> HomogeneousOperator:
+        return graded_commutator(
+            self.complex.q, self.defect(), name="[Q,A_D_1]"
+        )
+
+    def consistency_right(self) -> HomogeneousOperator:
+        """Return ``[[Q,Q_1],iota_D] - W_D^(1)`` exactly."""
+
+        return add_operators(
+            graded_commutator(
+                self.qme_source(), self.iota_0, name="[[Q,Q_1],iota_D]"
+            ),
+            self.ward_source().scaled(-1, name="-W_D_1"),
+            name="sourced_consistency_rhs",
+        )
+
     def checks(self) -> dict[str, bool]:
         q = self.complex.q
-        q1_q = graded_commutator(q, self.q_1, name="[Q,Q_1]")
         classical_cartan = graded_commutator(q, self.iota_0, name="[Q,iota_D]")
-        ward_first_order = add_operators(
-            graded_commutator(q, self.lie_1, name="[Q,L_D_1]"),
-            graded_commutator(self.q_1, self.lie_0, name="[Q_1,L_D]"),
-            name="ward_first_order",
-        )
-        consistency = graded_commutator(q, self.defect(), name="[Q,A_D_1]")
+        qme_source = self.qme_source()
+        ward_source = self.ward_source()
+        consistency = self.consistency_left()
+        sourced_rhs = self.consistency_right()
         return {
             "Q_squared_zero": (q.matrix @ q.matrix).is_zero(),
             "classical_Cartan_identity": classical_cartan.matrix == self.lie_0.matrix,
-            "first_order_QME_linearization": q1_q.matrix.is_zero(),
-            "first_order_Ward_compatibility": ward_first_order.matrix.is_zero(),
+            "first_order_QME_linearization": qme_source.matrix.is_zero(),
+            "first_order_Ward_compatibility": ward_source.matrix.is_zero(),
             "defect_has_degree_zero": self.defect().degree == 0,
             "defect_consistency_Q_closed": consistency.matrix.is_zero(),
+            "sourced_consistency_identity": consistency.matrix == sourced_rhs.matrix,
         }
 
 
@@ -447,7 +732,7 @@ class DefectClassification:
 
 
 def classify_closed_defect(
-    complex_: FiniteGradedComplex,
+    complex_: FiniteGradedComplex | AdmissibleOperatorComplex,
     defect: HomogeneousOperator,
 ) -> DefectClassification:
     """Classify a closed defect in the declared finite operator complex."""

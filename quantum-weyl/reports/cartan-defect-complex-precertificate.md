@@ -24,6 +24,20 @@ the implementation independently verifies
 [Q,\mathcal A_D^{(1)}]=0.
 \]
 
+Before either source is set to zero, the engine now verifies the stronger
+identity
+
+\[
+[Q,\mathcal A_D^{(1)}]
+=
+[[Q,Q_1],\iota_D]
+-\left([Q,\mathcal L_D^{(1)}]+[Q_1,\mathcal L_D]\right).
+\]
+
+A finite fixture retains a nonzero QME source and verifies the equality term
+by term.  Thus failure of defect closure is no longer reported without its
+QME and Ward provenance.
+
 Thus the universal algebraic obstruction belongs to
 
 \[
@@ -35,13 +49,20 @@ degree-minus-one primitives, and nonzero quotient classes with normalized
 dual witnesses.  Three finite fixtures exercise all three outcomes.  They
 certify implementation mechanics, not a physical Weyl-gravity anomaly.
 
+Exactness can now be restricted by named rational linear constraints.  The
+admissible kernel must be closed under `[Q,-]`.  A regression fixture is exact
+in the full endomorphism complex but nontrivial in the admissible subcomplex
+because its sole degree-minus-one primitive is forbidden.  This prevents an
+illegal finite counterterm from producing a false `EXACT_REMOVABLE` result.
+
 ## Fail-closed physical status
 
 Every bulk, residual, boundary/corner, measure, and scalar-clock candidate
 sector is `UNDEFINED_ANALYTICALLY`.  Every requested physical setting has
 verdict `ANALYTIC_FRAMEWORK_MISSING`.  In particular:
 
-- the classical compact-cylinder handoff is imported by hash and says that
+- the classical compact-cylinder handoff is parsed with mutation guards and
+  imported by hash; it says that
   `D` is charged on `P_lin` but gauge on the declared `P_Taub0` derived zero
   fibre; this phase-space split is not promoted to a quantum verdict;
 - the classical import remains unfrozen;
@@ -61,15 +82,21 @@ them is a later computation after both admissible complexes are declared.
 ```text
 command:
   PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -q
-elapsed_seconds: 0.09
-status: PASS (12 tests)
+elapsed_seconds: 0.15
+status: PASS (22 tests)
 test_tier: 1
 
 command:
   PYTHONPATH=quantum-weyl python3 -m cartan.certificate --check
-elapsed_seconds: 0.04
+elapsed_seconds: 0.08
 status: PASS
 test_tier: 1
+
+command:
+  python3 d_quotient_classical/verify_classical_status.py --guards
+elapsed_seconds: 0.05
+status: PASS (6/6 mutation guards and artifact validation)
+test_tier: 2 targeted imported-certificate audit
 
 command:
   python3 symbolic/verify_conformal_cartan_contraction.py
@@ -86,7 +113,7 @@ test_tier: 0
 command:
   PYTHONHASHSEED={1,7,123} PYTHONPATH=quantum-weyl python3 -m cartan.certificate | sha256sum
 status: PASS
-certificate_sha256: a0cb9a832449dfd513d51a79ba74cdf4fd4b8c610a410d57ae84d926713662e0
+certificate_sha256: 8314dc2048ea1f0e3179395f2b25b80dd9cf278064ae6af90c9351080ab0a2cb
 test_tier: 0
 ```
 

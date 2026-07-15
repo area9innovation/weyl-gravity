@@ -28,6 +28,28 @@ class CartanDefectCertificateTests(unittest.TestCase):
         self.assertIsNotNone(exact["primitive"])
         self.assertIsNotNone(nontrivial["dual_witness"])
 
+    def test_sourced_consistency_is_retained_when_qme_source_is_nonzero(self) -> None:
+        fixture = build_certificate()["sourced_consistency_fixture"]
+        self.assertEqual(fixture["qme_source_status"], "NONZERO")
+        self.assertEqual(fixture["defect_closure_status"], "SOURCED_NONZERO")
+        self.assertEqual(fixture["sourced_identity"], "VERIFIED")
+        for field in ("degree", "shape", "entries"):
+            self.assertEqual(
+                fixture["consistency_left"][field],
+                fixture["consistency_right"][field],
+            )
+
+    def test_admissibility_can_reject_an_ambient_primitive(self) -> None:
+        fixture = build_certificate()["admissibility_fixture"]
+        self.assertEqual(fixture["ambient_classification"], "EXACT_REMOVABLE")
+        self.assertEqual(
+            fixture["admissible_classification"], "NONTRIVIAL_ANOMALY"
+        )
+        self.assertEqual(
+            fixture["admissible_complex_manifest"]["subcomplex_status"],
+            "VERIFIED",
+        )
+
     def test_physical_ledgers_fail_closed(self) -> None:
         certificate = build_certificate()
         self.assertEqual(certificate["classical_commit"], "UNFROZEN")
@@ -58,7 +80,8 @@ class CartanDefectCertificateTests(unittest.TestCase):
         self.assertEqual(len(certificate["provenance"]["dependency_manifest"]), 7)
 
     def test_classical_sector_split_is_imported_without_quantum_promotion(self) -> None:
-        vacuum = build_certificate()["setting_ledger"][0]
+        certificate = build_certificate()
+        vacuum = certificate["setting_ledger"][0]
         self.assertEqual(
             vacuum["D_charge"],
             "SECTOR_DEPENDENT_CLASSICALLY_P_LIN_CHARGED_P_TAUB0_GAUGE",
@@ -68,6 +91,15 @@ class CartanDefectCertificateTests(unittest.TestCase):
             "CERTIFIED_HASH_PINNED_NOT_A_QUANTUM_VERDICT",
         )
         self.assertEqual(vacuum["verdict"], "ANALYTIC_FRAMEWORK_MISSING")
+        self.assertEqual(
+            certificate["classical_D_import"]["semantic_validation"], "VERIFIED"
+        )
+        self.assertEqual(
+            certificate["classical_D_import"]["sha256"],
+            certificate["provenance"]["dependency_manifest"][
+                "classical_D_quotient_status"
+            ],
+        )
 
     def test_schema_contract_is_fail_closed(self) -> None:
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))

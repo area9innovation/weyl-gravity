@@ -4,10 +4,12 @@ import unittest
 from fractions import Fraction
 
 from cartan.defect_complex import (
+    AdmissibleOperatorComplex,
     ExactMatrix,
     FiniteGradedComplex,
     FirstOrderCartanData,
     HomogeneousOperator,
+    LinearConstraint,
     classify_closed_defect,
     graded_commutator,
 )
@@ -99,6 +101,76 @@ class ExactCartanDefectTests(unittest.TestCase):
         checks = broken.checks()
         self.assertFalse(checks["first_order_Ward_compatibility"])
         self.assertFalse(checks["defect_consistency_Q_closed"])
+        self.assertTrue(checks["sourced_consistency_identity"])
+
+    def test_qme_source_appears_in_sourced_consistency_identity(self) -> None:
+        q = HomogeneousOperator(
+            "Q", 1, ExactMatrix.from_rows(((0, 0, 0), (1, 0, 0), (0, 0, 0)))
+        )
+        complex_ = FiniteGradedComplex((0, 1, 2), q)
+        iota = HomogeneousOperator(
+            "iota_D",
+            -1,
+            ExactMatrix.from_rows(((0, 0, 0), (0, 0, 1), (0, 0, 0))),
+        )
+        q_1 = HomogeneousOperator(
+            "Q_1",
+            1,
+            ExactMatrix.from_rows(((0, 0, 0), (0, 0, 0), (0, 1, 0))),
+        )
+        zero_degree_zero = HomogeneousOperator(
+            "L", 0, ExactMatrix.zero(3, 3)
+        )
+        zero_degree_minus_one = HomogeneousOperator(
+            "iota_1", -1, ExactMatrix.zero(3, 3)
+        )
+        data = FirstOrderCartanData(
+            complex=complex_,
+            iota_0=iota,
+            lie_0=zero_degree_zero,
+            q_1=q_1,
+            iota_1=zero_degree_minus_one,
+            lie_1=zero_degree_zero,
+        )
+        checks = data.checks()
+        self.assertFalse(checks["first_order_QME_linearization"])
+        self.assertFalse(checks["defect_consistency_Q_closed"])
+        self.assertTrue(checks["sourced_consistency_identity"])
+        self.assertFalse(data.qme_source().matrix.is_zero())
+        self.assertEqual(
+            data.consistency_left().matrix,
+            data.consistency_right().matrix,
+        )
+
+    def test_inadmissible_primitive_does_not_remove_defect(self) -> None:
+        data = acyclic_data(iota_correction=True)
+        ambient = classify_closed_defect(data.complex, data.defect())
+        admissible = AdmissibleOperatorComplex(
+            ambient=data.complex,
+            constraints=(
+                LinearConstraint.from_row(
+                    "forbid_iota_direction", -1, (1,)
+                ),
+            ),
+            certified_source_degrees=(-1, 0),
+        )
+        restricted = classify_closed_defect(admissible, data.defect())
+        self.assertEqual(ambient.status, "EXACT_REMOVABLE")
+        self.assertEqual(restricted.status, "NONTRIVIAL_ANOMALY")
+        self.assertEqual(admissible.dimension(-1), 0)
+        self.assertEqual(admissible.cohomology_dimension(0), 1)
+        self.assertEqual(admissible.manifest()["subcomplex_status"], "VERIFIED")
+
+    def test_constraints_must_be_closed_under_endomorphism_differential(self) -> None:
+        data = acyclic_data(iota_correction=False)
+        with self.assertRaisesRegex(ValueError, "do not form a subcomplex"):
+            AdmissibleOperatorComplex(
+                ambient=data.complex,
+                constraints=(
+                    LinearConstraint.from_row("forbid_degree_one", 1, (1,)),
+                ),
+                certified_source_degrees=(0,),
+            )
 
     def test_nonhomogeneous_operator_is_rejected(self) -> None:
         data = acyclic_data(iota_correction=False)
