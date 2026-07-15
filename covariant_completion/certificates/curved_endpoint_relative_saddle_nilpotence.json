@@ -1,0 +1,37 @@
+{
+  "causal_green_homotopy": false,
+  "dependency_sha256": {
+    "mapping_cylinder": "b56ba739afdd05548e40c351721e8a39e4776ecb7581a8213e9540faa6c06797",
+    "metric_endpoint": "584e875444f303643d0408874a92bbe65ce61c07fc78122f00d037d776367771",
+    "saddle_feasibility": "f346d6bfe78b27bc956ba0d780f12b73fb23b3d302a04b4dbacb1c282804c488"
+  },
+  "fail_closed": true,
+  "interpretation": {
+    "negative": "the minimal saddle cannot improve Green invertibility of the endpoint diagonal D",
+    "positive": "the rank-five A_F incidence is triangular/nilpotent at Schur level and introduces no new endpoint obstruction",
+    "remaining_theorem": "construct and prove a Green realization for the exact thirty-row endpoint diagonal"
+  },
+  "minimal_AF_relative_operator": {
+    "algebraic_to_endpoint_nonzero_entries": 6,
+    "endpoint_to_algebraic_nonzero_entries": 6,
+    "finite_order_support_local": true,
+    "formula": "L_AF=Q_prol W_AF+W_AF Q_prol",
+    "identity_attachment_occurs_in_L_AF": false,
+    "nonzero_entries": 10,
+    "purely_off_diagonal": true
+  },
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-endpoint-relative-saddle-nilpotence-v1",
+  "schur_calculation": {
+    "B": "P_alg L_AF P_end",
+    "C": "P_end L_AF P_alg",
+    "Tsharp_L_T_correction_survives": false,
+    "correction": "C B",
+    "correction_is_zero_before_chain_reduction": true,
+    "correction_nonzero_entries": 0,
+    "endpoint_schur_operator": "S_end=D-CB=D",
+    "expanded_formula": "P_end L_AF P_alg L_AF P_end"
+  },
+  "scope_guard": "this is a no-effect theorem for the minimal projected A_F relative witness only; it is neither a no-go theorem for larger relative witnesses nor a Green theorem for D",
+  "status_flags_promoted": []
+}
