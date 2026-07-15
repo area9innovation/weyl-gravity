@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-antifield-export-v1.json",
+  "title": "Portable classical antifield and Koszul-Tate export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "classical_commit", "dependency_tags", "expression_schema_version", "generators", "filtration_checks", "canonical_hashes"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-antifield-export-v1"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "expression_schema_version": {"type": "string", "minLength": 1},
+    "generators": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"$ref": "#/$defs/generator"}
+    },
+    "filtration_checks": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"$ref": "#/$defs/filtrationCheck"}
+    },
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generator_dictionary_hash", "q_image_hash", "filtration_hash"],
+      "properties": {
+        "generator_dictionary_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "q_image_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "filtration_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  },
+  "$defs": {
+    "exactNumber": {
+      "oneOf": [
+        {"type": "integer"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["numerator", "denominator"],
+          "properties": {
+            "numerator": {"type": "integer"},
+            "denominator": {"type": "integer", "not": {"const": 0}}
+          }
+        }
+      ]
+    },
+    "generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["symbol", "role", "sector", "tensor_type", "ghost_number", "antifield_number", "form_degree", "Grassmann_parity", "mass_dimension", "Weyl_weight", "Q_image", "Q_decomposition", "canonical_index_symmetry", "equation_or_identity_row"],
+      "properties": {
+        "symbol": {"type": "string", "minLength": 1},
+        "role": {"enum": ["metric_antifield", "diffeomorphism_ghost_antifield", "weyl_ghost_antifield", "other_antifield"]},
+        "sector": {"enum": ["minimal", "nonminimal", "auxiliary"]},
+        "tensor_type": {"type": "object"},
+        "ghost_number": {"type": "integer"},
+        "antifield_number": {"type": "integer", "minimum": 1},
+        "form_degree": {"type": "integer", "minimum": 0, "maximum": 4},
+        "Grassmann_parity": {"enum": [0, 1]},
+        "mass_dimension": {"$ref": "#/$defs/exactNumber"},
+        "Weyl_weight": {"$ref": "#/$defs/exactNumber"},
+        "Q_image": {"type": "object"},
+        "Q_decomposition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["delta", "gamma", "Q_gt0"],
+          "properties": {
+            "delta": {"$ref": "#/$defs/filteredRow"},
+            "gamma": {"$ref": "#/$defs/filteredRow"},
+            "Q_gt0": {"$ref": "#/$defs/filteredRow"}
+          }
+        },
+        "canonical_index_symmetry": {"type": "object"},
+        "equation_or_identity_row": {"type": "object"}
+      }
+    },
+    "filteredRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["antifield_number_shift", "image"],
+      "properties": {
+        "antifield_number_shift": {"type": "integer"},
+        "image": {"type": "object"}
+      }
+    },
+    "proofArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "filtrationCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "status", "proof_artifact"],
+      "properties": {
+        "check_id": {"enum": ["delta_squared_zero", "delta_gamma_anticommutator_zero", "Q_squared_zero"]},
+        "status": {"const": "VERIFIED"},
+        "proof_artifact": {"$ref": "#/$defs/proofArtifact"}
+      }
+    }
+  }
+}

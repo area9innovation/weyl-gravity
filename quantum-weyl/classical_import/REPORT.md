@@ -61,6 +61,37 @@ top-level dictionary, differential, zero-mode, pairing, and representative
 hash fields are present but null.  A null is not a hash of absence; it means
 there is no accepted complete payload to hash yet.
 
+## Antifield/Koszul--Tate handoff contract
+
+The required shape of the local antifield export is now executable rather
+than implicit.  The schema
+[`schema/antifield_export.schema.json`](schema/antifield_export.schema.json)
+and fail-closed preflight
+[`verify_antifield_export.py`](verify_antifield_export.py) require the metric,
+diffeomorphism-ghost, and Weyl-ghost antifields, as well as every retained
+nonminimal or auxiliary antifield.  Every generator carries tensor type,
+all gradings, exact mass dimension and Weyl weight, its complete `Q_image`,
+canonical index symmetry, and the equation or Noether-identity row from
+which its Koszul--Tate image arises.
+
+The preflight also requires the explicit split
+
+```text
+Q = delta + gamma + Q_gt0
+```
+
+with antifield-number shifts `-1`, `0`, and positive, respectively.  It
+rejects floating-point data, missing minimal roles, unsafe proof paths,
+unverified filtration identities, and non-reproducing canonical hashes.
+Proof artifacts are required for `delta^2=0`,
+`delta gamma + gamma delta=0`, and `Q^2=0`.
+
+The receipt
+[`certificates/ANTIFIELD_EXPORT_CONTRACT.json`](certificates/ANTIFIELD_EXPORT_CONTRACT.json)
+is deliberately `CONTRACT_READY_AWAITING_CLASSICAL_EXPORT`.  It certifies the
+handoff format and preflight behavior, not the absent classical rows and not
+their independent quantum-side verification.
+
 ## Cylinder branch
 
 [`../cylinder/bootstrap.json`](../cylinder/bootstrap.json) imports only this
@@ -82,7 +113,7 @@ Run from `physics/symplectic-reconstruction/` on 2026-07-15:
 | 0 | Scoped Python EOF/trailing-whitespace check over all eight new text files | 0.02 s | pass |
 | 0 | `git diff --check -- quantum-weyl/classical_import quantum-weyl/cylinder` | <0.01 s | pass; integration staging remains with the root agent |
 | 1 | `python3 quantum-weyl/classical_import/verify_snapshot.py --check` | 0.12 s | pass |
-| 1 | `python3 -m unittest discover -s quantum-weyl/classical_import/tests -v` | 0.31 s | pass (4 tests) |
+| 1 | `python3 -m unittest discover -s quantum-weyl/classical_import/tests -v` | under 1 s | pass (13 tests, including 9 antifield-contract tests) |
 
 The tests include attempted false promotion of Gate A and an artifact-hash
 mutation; both fail closed.  Tier 2 was not triggered because no classical
@@ -95,6 +126,7 @@ was run or represented as passing.
 ## Next classical handoff
 
 The next snapshot should replace partial evidence with versioned portable
-payloads, populate the five required top-level hashes, and let the quantum
-verifier independently execute the six freeze identities.  Until then, the
-correct state is a verified import inventory with Gate A closed.
+payloads, run the antifield preflight, populate the five required top-level
+hashes, and let the quantum verifier independently execute the filtration and
+six freeze identities.  Until then, the correct state is a verified import
+inventory with Gate A closed.

@@ -1,0 +1,62 @@
+{
+  "assumptions": [
+    "This is a format and exactness preflight, not an independent proof of the exported Q rows.",
+    "Gate A remains fail-closed until a pinned classical export passes this preflight and the quantum repository independently evaluates the filtration identities."
+  ],
+  "canonical_hashes": {
+    "required_generator_fields_sha256": "9166ed8a0d9c8f7120714c3693b6bdf735cf72417222cd54e0171dd3419a644f",
+    "source_manifest_sha256": "3e292951fff52492c3e747d89c6722fb12735329df655d461095b7276075263c"
+  },
+  "checks": {
+    "canonical_hash_reproduction": "ENFORCED",
+    "classical_export_imported": "NOT_AVAILABLE",
+    "exact_required_field_set": "ENFORCED",
+    "filtration_degree_rows": "ENFORCED",
+    "filtration_identities_independently_reverified": "NOT_COMPUTED",
+    "minimal_antifield_metadata": "ENFORCED",
+    "no_floating_point_payloads": "ENFORCED",
+    "proof_artifact_inventory": "ENFORCED"
+  },
+  "classical_commit": "UNFROZEN",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "preflight": "quantum-weyl/classical_import/verify_antifield_export.py",
+  "required_filtration_checks": [
+    "delta_squared_zero",
+    "delta_gamma_anticommutator_zero",
+    "Q_squared_zero"
+  ],
+  "required_filtration_rows": {
+    "Q_gt0": {
+      "minimum_antifield_number_shift": 1
+    },
+    "delta": {
+      "antifield_number_shift": -1
+    },
+    "gamma": {
+      "antifield_number_shift": 0
+    }
+  },
+  "required_generator_fields": [
+    "symbol",
+    "tensor_type",
+    "ghost_number",
+    "antifield_number",
+    "form_degree",
+    "Grassmann_parity",
+    "mass_dimension",
+    "Weyl_weight",
+    "Q_image",
+    "canonical_index_symmetry",
+    "equation_or_identity_row"
+  ],
+  "required_minimal_roles": [
+    "metric_antifield",
+    "diffeomorphism_ghost_antifield",
+    "weyl_ghost_antifield"
+  ],
+  "result_id": "ANTIFIELD_EXPORT_CONTRACT",
+  "result_state": "CONTRACT_READY_AWAITING_CLASSICAL_EXPORT",
+  "schema": "quantum-weyl/classical_import/schema/antifield_export.schema.json"
+}

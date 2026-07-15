@@ -3771,7 +3771,13 @@ $Q E_4+d_ha^3=0$.  For the anomaly lift, however, the first attempted step
 leaves $d_h\omega\wedge\Theta_E$; the complete intrinsic type-A continuation
 is therefore still recorded as \path{NOT_COMPUTED}.  This distinction is
 certified by \path{EULER_TRANSGRESSION_CERTIFICATE}.  Antifield completion
-remains blocked on the portable classical export.
+remains blocked on the portable classical export.  The quantum repository now
+provides an executable \path{ANTIFIELD_EXPORT_CONTRACT} requiring the three
+minimal antifields, all retained nonminimal rows, the exact split
+$Q=\delta+\gamma+Q_{>0}$, and proof artifacts for $\delta^2=0$,
+$\delta\gamma+\gamma\delta=0$, and $Q^2=0$.  This is a fail-closed handoff
+schema, not a substitute for the missing rows or their independent import
+verification.
 \paragraph{Vertex versus dynamics.}
 The two residual classes do not define two independent local gravitational
 dynamics.  The parity-even class is the Weyl action direction; the

@@ -95,8 +95,8 @@ or quantum-master-equation result.
 ## Bootstrap receipts
 
 - [`classical_import/REPORT.md`](classical_import/REPORT.md) inventories the
-  pinned classical handoff and the exact missing exports keeping Gate A
-  closed.
+  pinned classical handoff, the executable antifield/Koszul--Tate export
+  contract, and the exact missing exports keeping Gate A closed.
 - [`reports/branch-a-local-bv-bootstrap.md`](reports/branch-a-local-bv-bootstrap.md)
   records the exact minimal jet/BRST substrate and its uncomputed quotients.
 - [`reports/local-curvature-canonicalization.md`](reports/local-curvature-canonicalization.md)
