@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bondi-bach-indicial-v2",
+  "title": "Pure-Weyl Bondi/Bach reduced radiative indicial certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "provenance",
+    "dependency_tags",
+    "input",
+    "retarded_coordinates",
+    "biwave_single_term",
+    "series_recursions",
+    "radiative_root_definition",
+    "radiative_indicial_polynomial",
+    "radiative_indicial_roots",
+    "p1_einstein_compatible_falloff",
+    "p0_extra_bach_falloff",
+    "kinematic_boundary_selection",
+    "exceptional_and_coupled_sectors",
+    "full_tensor_completion_gate",
+    "claim_flags",
+    "scope_guards",
+    "verification_command"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-bondi-bach-indicial-v2"
+    },
+    "schema_path": {
+      "const": "bridge/einstein_sector/schema/bondi_bach_indicial.schema.json"
+    },
+    "schema_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "result_id": {
+      "const": "BONDI_BACH_RADIAL_INDICIAL_ROOTS"
+    },
+    "result_state": {
+      "const": "PROVED_REDUCED_RADIATIVE_CHANNEL_WITH_P1_OBSTRUCTION"
+    },
+    "dependency_tags": {
+      "const": ["REDUCED-MODE"]
+    },
+    "radiative_indicial_roots": {
+      "const": ["0", "1"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "radiative_indicial_roots_classified",
+        "p0_branch_changes_unphysical_boundary_metric",
+        "p0_nonzero_L_wave_kernel_trivial",
+        "p1_non_einstein_obstruction_identified",
+        "fixed_boundary_metric_excludes_leading_p0_kinematically",
+        "p1_falloff_proved_einstein",
+        "fixed_boundary_metric_isolates_full_einstein_sector",
+        "full_tensor_bondi_recursion_constructed",
+        "boundary_condition_preserved_by_causal_green_operators",
+        "p0_branch_proved_non_gauge",
+        "all_extra_weyl_channels_classified",
+        "einstein_scattering_sector_recovered"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

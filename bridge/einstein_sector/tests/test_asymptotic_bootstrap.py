@@ -28,7 +28,12 @@ class AsymptoticBootstrapTests(unittest.TestCase):
         )
         self.assertTrue(result["claim_flags"]["p0_boundary_metric_branch_identified"])
         self.assertTrue(
-            result["claim_flags"]["fixed_boundary_metric_excludes_p0_kinematically"]
+            result["claim_flags"][
+                "fixed_boundary_metric_excludes_leading_p0_kinematically"
+            ]
+        )
+        self.assertTrue(
+            result["claim_flags"]["p1_same_falloff_bach_obstruction_identified"]
         )
         self.assertFalse(result["claim_flags"]["nonlinear_einstein_constraint_preserved"])
         self.assertFalse(result["claim_flags"]["helicity_two_scattering_space_recovered"])
@@ -44,6 +49,11 @@ class AsymptoticBootstrapTests(unittest.TestCase):
         self.assertEqual(
             result["bondi_bach_indicial_theorem"]["radiative_indicial_roots"],
             ["0", "1"],
+        )
+        self.assertEqual(
+            result["bondi_bach_indicial_theorem"]["einstein_compatible_falloff"]
+            ["einstein_subconstraint"],
+            "kappa=0",
         )
         obligations = {row["id"]: row for row in result["obligation_status"]}
         self.assertEqual(obligations["AF-E4"]["status"], "PARTIAL")
@@ -79,6 +89,22 @@ class AsymptoticBootstrapTests(unittest.TestCase):
             with self.assertRaises(asymptotic_bootstrap.AsymptoticBootstrapError):
                 asymptotic_bootstrap.build_certificate()
 
+    def test_indicial_full_selection_promotion_is_rejected(self) -> None:
+        original_load = asymptotic_bootstrap._load
+
+        def forged_load(path: Path):
+            payload = original_load(path)
+            if path == asymptotic_bootstrap.INPUTS["bondi_bach_indicial"]:
+                payload = copy.deepcopy(payload)
+                payload["claim_flags"][
+                    "fixed_boundary_metric_isolates_full_einstein_sector"
+                ] = True
+            return payload
+
+        with patch.object(asymptotic_bootstrap, "_load", side_effect=forged_load):
+            with self.assertRaises(asymptotic_bootstrap.AsymptoticBootstrapError):
+                asymptotic_bootstrap.build_certificate()
+
     def test_false_scattering_promotion_is_rejected(self) -> None:
         payload = asymptotic_bootstrap.build_certificate()
         payload["claim_flags"]["helicity_two_scattering_space_recovered"] = True
@@ -91,6 +117,12 @@ class AsymptoticBootstrapTests(unittest.TestCase):
     def test_schema_contract_rejects_missing_obligation(self) -> None:
         payload = asymptotic_bootstrap.build_certificate()
         payload["obligation_status"].pop()
+        with self.assertRaises(asymptotic_bootstrap.AsymptoticBootstrapError):
+            asymptotic_bootstrap._validate_contract(payload)
+
+    def test_schema_contract_rejects_forged_generator_hash(self) -> None:
+        payload = asymptotic_bootstrap.build_certificate()
+        payload["provenance"]["generator_sha256"] = "0" * 64
         with self.assertRaises(asymptotic_bootstrap.AsymptoticBootstrapError):
             asymptotic_bootstrap._validate_contract(payload)
 

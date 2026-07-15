@@ -84,6 +84,25 @@ def _validate_contract(payload: dict[str, Any]) -> None:
         payload.get("schema") == schema.get("$id"),
         "bootstrap payload/schema identifier mismatch",
     )
+    _require(
+        payload.get("schema_path")
+        == "bridge/einstein_sector/schema/asymptotic_bootstrap.schema.json",
+        "bootstrap schema path mismatch",
+    )
+    _require(
+        payload.get("schema_sha256") == _sha256(SCHEMA_PATH),
+        "bootstrap schema hash mismatch",
+    )
+    provenance = payload.get("provenance", {})
+    _require(
+        provenance.get("generator_path")
+        == "bridge/einstein_sector/asymptotic_bootstrap.py",
+        "bootstrap generator path mismatch",
+    )
+    _require(
+        provenance.get("generator_sha256") == _sha256(Path(__file__)),
+        "bootstrap generator hash mismatch",
+    )
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     _require(
         set(payload.get("dependency_tags", [])) <= allowed_tags,
@@ -122,7 +141,11 @@ def _validate_contract(payload: dict[str, Any]) -> None:
         "leading p=0 boundary-metric branch is absent",
     )
     _require(
-        flags.get("fixed_boundary_metric_excludes_p0_kinematically") is True,
+        flags.get("p1_same_falloff_bach_obstruction_identified") is True,
+        "same-falloff p=1 Bach obstruction is absent",
+    )
+    _require(
+        flags.get("fixed_boundary_metric_excludes_leading_p0_kinematically") is True,
         "kinematic p=0 boundary-selection result is absent",
     )
     full_claims = {
@@ -148,6 +171,10 @@ def _matrix_rows(matrix: sp.MatrixBase) -> list[list[str]]:
 def _verify_scope_inputs(records: dict[str, dict[str, Any]]) -> None:
     indicial = records["bondi_bach_indicial"]
     _require(
+        indicial.get("schema") == "pure-weyl-bondi-bach-indicial-v2",
+        "Bondi/Bach indicial schema changed",
+    )
+    _require(
         indicial.get("radiative_indicial_roots") == ["0", "1"],
         "Bondi/Bach radiative indicial roots changed",
     )
@@ -158,8 +185,27 @@ def _verify_scope_inputs(records: dict[str, dict[str, Any]]) -> None:
     )
     _require(
         indicial.get("kinematic_boundary_selection", {}).get("status")
-        == "KINEMATIC_ONLY",
+        == "KINEMATIC_LEADING_BRANCH_ONLY",
         "p=0 boundary selection was promoted beyond its certificate",
+    )
+    _require(
+        indicial.get("p1_einstein_compatible_falloff", {}).get(
+            "einstein_subconstraint"
+        )
+        == "kappa=0",
+        "p=1 Einstein subconstraint changed",
+    )
+    _require(
+        indicial.get("claim_flags", {}).get("p1_non_einstein_obstruction_identified")
+        is True,
+        "p=1 same-falloff Bach obstruction is not certified",
+    )
+    _require(
+        indicial.get("claim_flags", {}).get(
+            "fixed_boundary_metric_isolates_full_einstein_sector"
+        )
+        is False,
+        "upstream certificate incorrectly isolates the full Einstein sector",
     )
     _require(
         indicial.get("claim_flags", {}).get(
@@ -309,14 +355,14 @@ def build_certificate() -> dict[str, Any]:
     linearized = _linearized_tt_identity()
 
     obligations = [
-        ("AF-E1", "PARTIAL", "linearized TT data and radiative p=0,1 falloff rails fixed; full tensor weighted spaces open", "REDUCED-MODE"),
+        ("AF-E1", "PARTIAL", "linearized TT data and reduced p=0,1 recursions fixed; full tensor weighted spaces open", "REDUCED-MODE"),
         ("AF-E2", "OPEN", "no retarded/advanced null-infinity complex", None),
         ("AF-E3", "PARTIAL", "charge criterion fixed; pure-Weyl charges not computed", "LOCAL-ALGEBRAIC"),
-        ("AF-E4", "PARTIAL", "fixed boundary metric excludes the leading p=0 branch kinematically; causal preservation open", "REDUCED-MODE"),
+        ("AF-E4", "PARTIAL", "fixed boundary metric excludes leading p=0 only; a p=1 kappa datum survives and causal preservation is open", "REDUCED-MODE"),
         ("AF-E5", "PARTIAL", "linearized fixed-mode closure proved; nonlinear closure open", "REDUCED-MODE"),
         ("AF-E6", "OPEN", "no null-infinity current/flux comparison", None),
         ("AF-E7", "OPEN", "no asymptotic scattering cohomology", None),
-        ("AF-E8", "PARTIAL", "leading p=0 Bach radiative branch identified; remaining tensor, soft, and Coulombic channels open", "REDUCED-MODE"),
+        ("AF-E8", "PARTIAL", "leading p=0 branch and same-falloff p=1 kappa datum identified; tensor, soft, and Coulombic channels open", "REDUCED-MODE"),
     ]
 
     certificate = {
@@ -325,7 +371,11 @@ def build_certificate() -> dict[str, Any]:
         "schema_sha256": _sha256(SCHEMA_PATH),
         "result_id": "ASYMPTOTICALLY_FLAT_EINSTEIN_SECTOR_BOOTSTRAP",
         "result_state": "PARTIAL_EXACT_LINEARIZED_AND_INDICIAL_RAILS",
-        "source_commit": "69fa30d57db708627e86687289c1b5d241565f5e",
+        "provenance": {
+            "input_base_commit": "1f87e38d3282defef2e69867dd53f7deac70bec6",
+            "generator_path": "bridge/einstein_sector/asymptotic_bootstrap.py",
+            "generator_sha256": _sha256(Path(__file__)),
+        },
         "dependency_tags": ["REDUCED-MODE"],
         "required_promotion_tag": "LORENTZIAN-CAUSAL",
         "linearized_minkowski_theorem": linearized,
@@ -338,7 +388,9 @@ def build_certificate() -> dict[str, Any]:
             "radiative_indicial_roots": records["bondi_bach_indicial"][
                 "radiative_indicial_roots"
             ],
-            "einstein_branch": records["bondi_bach_indicial"]["p1_einstein_falloff"],
+            "einstein_compatible_falloff": records["bondi_bach_indicial"][
+                "p1_einstein_compatible_falloff"
+            ],
             "extra_bach_branch": records["bondi_bach_indicial"][
                 "p0_extra_bach_falloff"
             ],
@@ -460,7 +512,8 @@ def build_certificate() -> dict[str, Any]:
             "linearized_minkowski_einstein_data_invariant": True,
             "bondi_bach_radiative_indicial_roots_classified": True,
             "p0_boundary_metric_branch_identified": True,
-            "fixed_boundary_metric_excludes_p0_kinematically": True,
+            "p1_same_falloff_bach_obstruction_identified": True,
+            "fixed_boundary_metric_excludes_leading_p0_kinematically": True,
             "full_asymptotically_flat_function_space_admissible": False,
             "null_infinity_green_complex_constructed": False,
             "pure_weyl_surface_charges_computed": False,
@@ -475,7 +528,8 @@ def build_certificate() -> dict[str, Any]:
             "linearized_minkowski_einstein_data_invariant": ["REDUCED-MODE"],
             "bondi_bach_radiative_indicial_roots_classified": ["REDUCED-MODE"],
             "p0_boundary_metric_branch_identified": ["REDUCED-MODE"],
-            "fixed_boundary_metric_excludes_p0_kinematically": ["REDUCED-MODE"],
+            "p1_same_falloff_bach_obstruction_identified": ["REDUCED-MODE"],
+            "fixed_boundary_metric_excludes_leading_p0_kinematically": ["REDUCED-MODE"],
             "all_false_asymptotic_claims_require": ["LORENTZIAN-CAUSAL"],
         },
         "sources": [
@@ -494,6 +548,15 @@ def build_certificate() -> dict[str, Any]:
                 "citation": "Lovrekovic, arXiv:1505.05820",
                 "url": "https://arxiv.org/abs/1505.05820",
                 "scope_guard": "generalized Fefferman-Graham boundaries, not an asymptotically flat theorem",
+            },
+            {
+                "role": "linearized Minkowski boundary-condition control",
+                "citation": "Hell, Lust, and Zoupanos, arXiv:2306.13714",
+                "url": "https://arxiv.org/abs/2306.13714",
+                "scope_guard": (
+                    "temporal perturbative boundary analysis, not a null-infinity "
+                    "Bondi or Lorentzian-causal theorem"
+                ),
             },
         ],
         "inputs": {

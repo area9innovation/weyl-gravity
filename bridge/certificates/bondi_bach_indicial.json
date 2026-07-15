@@ -8,76 +8,149 @@
     "all_extra_weyl_channels_classified": false,
     "boundary_condition_preserved_by_causal_green_operators": false,
     "einstein_scattering_sector_recovered": false,
-    "fixed_boundary_metric_excludes_p0_kinematically": true,
+    "fixed_boundary_metric_excludes_leading_p0_kinematically": true,
+    "fixed_boundary_metric_isolates_full_einstein_sector": false,
     "full_tensor_bondi_recursion_constructed": false,
     "p0_branch_changes_unphysical_boundary_metric": true,
     "p0_branch_proved_non_gauge": false,
+    "p0_nonzero_L_wave_kernel_trivial": true,
+    "p1_falloff_proved_einstein": false,
+    "p1_non_einstein_obstruction_identified": true,
     "radiative_indicial_roots_classified": true
   },
   "dependency_tags": [
     "REDUCED-MODE"
   ],
   "exceptional_and_coupled_sectors": [
-    "angular values L=0 and L=2 make displayed subleading scalar coefficients degenerate",
+    "L=0 and L=2 are scalar-recurrence degeneracies, not certified physical spin-2 exceptional modes",
     "TT constraints couple angular components and must be imposed in the full tensor recursion",
+    "the physical angular spectrum must be recomputed with tensor or spin-weighted harmonics",
     "soft/memory and Coulombic data are not exhausted by the p=0 scalar-amplitude branch"
   ],
+  "full_tensor_completion_gate": {
+    "promotion_rule": "full_tensor_bondi_recursion_constructed remains false until all required objects have exact machine checks",
+    "reason": "Cartesian TT scalar amplitudes do not supply the Bondi radial constraint hierarchy, residual gauge action, or physical spin-2 angular spectrum",
+    "required_objects": [
+      "linear Bondi-gauge ansatz for h_uu, h_ur, h_uA, and trace-free h_AB",
+      "all independent linearized Bach rows expanded in inverse radius",
+      "radial constraint and supplementary-equation hierarchy",
+      "tensor or spin-weighted spherical-harmonic angular operators",
+      "boundary-preserving residual Diff x Weyl transformations",
+      "decision whether the reduced p=1 kappa datum survives the tensor constraints"
+    ],
+    "status": "OPEN_FAIL_CLOSED"
+  },
   "input": {
     "operator": "B_1(h_TT)=-(1/4) Box^2 h_TT",
     "path": "bridge/certificates/flat_tt_bach_operator.json",
     "sha256": "a4aa604755c3a6adecdd747e0411d555b82d8bcdfd483c451c7bdb42ee920242"
   },
   "kinematic_boundary_selection": {
-    "condition": "fix h_tilde_AB at null infinity, equivalently require Cartesian TT h=O(r^-1)",
-    "effect": "excludes the p=0 leading boundary-metric deformation while retaining p=1 radiation",
+    "condition": "delta h_tilde_AB restricted to null infinity is zero in the selected completion",
+    "does_not_exclude": "the u-independent kappa datum inside the p=1 Bach recursion",
+    "effect": "excludes the leading p=0 boundary-metric deformation while retaining p=1 falloff",
+    "gauge_invariant_equivalence_to_representative_falloff_proved": false,
     "locality": "radial falloff condition at null infinity, not a future endpoint condition",
-    "status": "KINEMATIC_ONLY"
+    "representative_falloff": "in the chosen flat Cartesian TT representative, h_ij=O(r^-1)",
+    "status": "KINEMATIC_LEADING_BRANCH_ONLY"
   },
   "p0_extra_bach_falloff": {
     "bondi_angular_metric": "h_AB=r^2 A_AB+O(r)",
     "boundary_metric_changed": true,
     "cartesian_amplitude": "phi=f_0(u,x)+O(r^-1)",
     "interpretation": "additional leading Bach radiative branch",
-    "non_einstein_if": "d_u f_0 is nonzero",
+    "scalar_exception": "L=0 permits only u-independent leading f_0 at these orders",
     "unphysical_angular_metric": "h_tilde_AB=A_AB+O(r^-1)",
-    "wave_image": "Box phi=-2 r^-1 d_u f_0-L r^-2 f_0+O(r^-3 from f_1)"
+    "wave_image": "Box phi=-2 r^-1 d_u f_0-L r^-2 f_0+O(r^-3 from f_1)",
+    "wave_kernel_conclusion": "for L nonzero, a nonzero p=0 leading datum cannot lie in the wave kernel",
+    "wave_recursion_first_two_orders": [
+      "d_u f_0=0",
+      "L f_0=0"
+    ]
   },
-  "p1_einstein_falloff": {
+  "p1_einstein_compatible_falloff": {
+    "bach_allows": "kappa is arbitrary u-independent angular data in this scalar recursion",
+    "bach_next_recursion": "4 d_u kappa=0",
     "bondi_angular_metric": "h_AB=r C_AB+O(1)",
     "boundary_metric_changed": false,
     "cartesian_amplitude": "phi=r^-1 f_0(u,x)+O(r^-2)",
-    "interpretation": "ordinary Einstein radiative falloff after the wave constraint",
-    "leading_wave_constraint": "2 d_u f_1-L f_0=0",
+    "einstein_subconstraint": "kappa=0",
+    "formal_extension": "for every later j>=1 the coefficient of d_u^2 f_j is 4(j+1)j, which is nonzero, so the scalar recursion can be continued without imposing an algebraic condition on kappa",
+    "interpretation": "Einstein-compatible falloff containing both the Einstein wave subspace and a same-falloff non-Einstein Bach datum",
+    "kappa_definition": "kappa(x)=2 d_u f_1-L f_0",
     "unphysical_angular_metric": "h_tilde_AB=r^-1 C_AB+O(r^-2)"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/bondi_bach_indicial.py",
+    "generator_sha256": "eaea583865be13681e2965e76c808fbb732af745c3524360ffa7043f8a2aaafe",
+    "input_base_commit": "1f87e38d3282defef2e69867dd53f7deac70bec6"
   },
   "radiative_indicial_polynomial": "4*p*(p - 1)",
   "radiative_indicial_roots": [
     "0",
     "1"
   ],
+  "radiative_root_definition": "f_0(u,x) is treated as freely variable radiative data, so the coefficient of d_u^2 f_0 must vanish identically",
   "result_id": "BONDI_BACH_RADIAL_INDICIAL_ROOTS",
-  "result_state": "PROVED_REDUCED_RADIATIVE_CHANNEL",
+  "result_state": "PROVED_REDUCED_RADIATIVE_CHANNEL_WITH_P1_OBSTRUCTION",
   "retarded_coordinates": {
     "action": "Box[r^(-s)fY]=2(s-1)r^(-s-1)f'Y+[s(s-1)-L]r^(-s-2)fY",
     "angular_eigenmode": "Delta_S2 Y_L=-L Y_L",
+    "direct_biwave_check": "PASS",
     "metric": "ds^2=-du^2-2 du dr+r^2 q_AB dx^A dx^B",
     "series": "phi=sum_(n>=0) r^(-p-n) f_n(u) Y_L(x)",
     "wave_operator": "-2 d_u d_r+d_r^2+(2/r)(d_r-d_u)+(1/r^2) Delta_S2"
   },
-  "schema": "pure-weyl-bondi-bach-indicial-v1",
+  "schema": "pure-weyl-bondi-bach-indicial-v2",
+  "schema_path": "bridge/einstein_sector/schema/bondi_bach_indicial.schema.json",
+  "schema_sha256": "115d9323589607d7c1652d131c12abcf8c906a6c284f3fe3c3cf5984f9690f75",
   "scope_guards": [
     "exact for the scalar amplitude of each flat Cartesian TT polarization",
     "leading radiative indicial roots only",
+    "p=1 is Einstein-compatible falloff, not an Einstein-sector equivalence",
     "not the complete tensor Bondi gauge or BV complex",
     "no surface-charge or symplectic-flux classification",
     "no nonlinear or global scattering theorem"
   ],
   "series_recursions": {
-    "biwave": "4 s_j(s_j-1) d_u^2 f_j+4 s_(j-1)[s_(j-1)^2-1-L] d_u f_(j-1)+[s_(j-2)(s_(j-2)-1)-L][(s_(j-2)+1)(s_(j-2)+2)-L] f_(j-2)=0",
+    "biwave_terms": [
+      {
+        "coefficient": "4*(j + p)*(j + p - 1)",
+        "field": "d_u^2 f_j"
+      },
+      {
+        "coefficient": "4*(j + p - 1)*(-L + j**2 + 2*j*p - 2*j + p**2 - 2*p)",
+        "field": "d_u f_(j-1)"
+      },
+      {
+        "coefficient": "(-L + j**2 + 2*j*p - j + p**2 - p)*(-L + j**2 + 2*j*p - 5*j + p**2 - 5*p + 6)",
+        "field": "f_(j-2)"
+      }
+    ],
+    "equation_rule": "sum of the listed terms equals zero",
     "index_convention": "f_j=0 for j<0; s_j=p+j",
     "leading_radiative_equation": "4p(p-1) d_u^2 f_0=0",
-    "wave": "2(s_j-1) d_u f_j+[s_(j-1)(s_(j-1)-1)-L] f_(j-1)=0"
+    "machine_check": {
+      "biwave_recurrence": "PASS",
+      "checked_integer_weights": [
+        0,
+        1,
+        3
+      ],
+      "method": "direct coefficient extraction from finite retarded series",
+      "terms_per_weight": 5,
+      "wave_recurrence": "PASS"
+    },
+    "wave_terms": [
+      {
+        "coefficient": "2*(j + p - 1)",
+        "field": "d_u f_j"
+      },
+      {
+        "coefficient": "-L + j**2 + 2*j*p - 3*j + p**2 - 3*p + 2",
+        "field": "f_(j-1)"
+      }
+    ]
   },
-  "source_commit": "69fa30d57db708627e86687289c1b5d241565f5e",
   "verification_command": "python3 -m bridge.einstein_sector.bondi_bach_indicial --verify bridge/certificates/bondi_bach_indicial.json"
 }

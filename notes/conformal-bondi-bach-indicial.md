@@ -81,22 +81,30 @@ indicial roots:
 p=0, p=1.
 ```
 
-## Which root is Einstein?
+## Which root is Einstein-compatible?
 
 | Root | Cartesian TT amplitude | Bondi angular perturbation | Unphysical angular perturbation | Role |
 |---|---|---|---|---|
-| `p=1` | `r^-1 f_0+O(r^-2)` | `h_AB=r C_AB+O(1)` | `h_tilde_AB=r^-1 C_AB+O(r^-2)` | Einstein radiative falloff. |
+| `p=1` | `r^-1 f_0+O(r^-2)` | `h_AB=r C_AB+O(1)` | `h_tilde_AB=r^-1 C_AB+O(r^-2)` | Einstein-compatible falloff, but not automatically Einstein. |
 | `p=0` | `f_0+O(r^-1)` | `h_AB=r^2 A_AB+O(r)` | `h_tilde_AB=A_AB+O(r^-1)` | Extra leading Bach branch. |
 
-For `p=1`, imposing the second-order Einstein wave equation starts with
+For `p=1`, define
 
 ```text
-2 d_u f_1 - L f_0 = 0.
+kappa(x) = 2 d_u f_1 - L f_0.
 ```
 
-Thus the Einstein branch is not merely the `p=1` falloff: its subleading
-coefficients also obey the wave recursion inside the larger biwave
-recursion.
+The next Bach recursion is only
+
+```text
+4 d_u kappa = 0.
+```
+
+It therefore permits arbitrary `u`-independent angular data `kappa(x)`.
+The Einstein wave subspace is the stricter condition `kappa=0`.  Consequently
+`p=1` is an Einstein-compatible falloff containing both the Einstein wave
+subspace and a same-falloff non-Einstein Bach datum.  Radial falloff alone
+does not distinguish them.
 
 For `p=0`,
 
@@ -104,43 +112,80 @@ For `p=0`,
 Box phi = -2r^-1 d_u f_0 - Lr^-2 f_0 + O(r^-3 from f_1).
 ```
 
-Consequently a time-dependent `f_0` is outside the Einstein wave kernel.
-It also changes the leading unphysical boundary metric.
+The first two wave recursions require
+
+```text
+d_u f_0=0,
+L f_0=0.
+```
+
+Thus for `L` nonzero, every nonzero `p=0` leading datum lies outside the wave
+kernel, even when it is time-independent.  The scalar `L=0` case permits only
+a time-independent leading datum at these orders.  A nonzero `p=0` datum
+also changes the leading unphysical boundary metric.
 
 ## Boundary selection—and its exact limitation
 
-Fixing the unphysical angular metric at null infinity, equivalently imposing
-Cartesian TT falloff `h=O(r^-1)` in this channel, excludes the `p=0` leading
-boundary-metric deformation while retaining `p=1` radiation.  This is a
-radial falloff condition at null infinity, not a condition imposed at a
+The geometric candidate condition is
+
+```text
+delta h_tilde_AB restricted to null infinity = 0
+```
+
+in the selected conformal completion.  In the chosen flat Cartesian TT
+representative this corresponds to the diagnostic falloff `h_ij=O(r^-1)`;
+gauge-invariant equivalence between those formulations is not yet proved.
+The condition excludes the leading `p=0` boundary-metric deformation while
+retaining `p=1` falloff.  It does **not** remove the `kappa(x)` datum within
+that falloff.  It is radial data at null infinity, not a condition at a
 future endpoint in retarded time.
 
 This establishes only a **kinematic boundary selection**.  It does not yet
 prove that:
 
+- the surviving `p=1` datum `kappa(x)` is excluded;
 - the full tensor Bach evolution preserves the selected phase space;
 - retarded and advanced Green operators preserve it;
 - the `p=0` data have nonzero surface charge rather than being proper gauge;
 - all extra Weyl channels have been found;
 - the resulting symplectic or scattering space equals Einstein's.
 
-Accordingly `AF-E4` is only `PARTIAL`: a concrete selection condition is now
-known, while causal closure remains open.  `AF-E8` is also only `PARTIAL`:
-one extra radiative branch is identified, but tensor-coupled, soft, memory,
-and Coulombic channels remain.
+Accordingly `AF-E4` is only `PARTIAL`: a concrete selection condition removes
+the leading `p=0` branch, but it does not isolate Einstein even in the reduced
+recursion.  `AF-E8` is also only `PARTIAL`: the leading `p=0` branch and the
+same-falloff `p=1` obstruction are identified, while tensor-coupled, soft,
+memory, and Coulombic channels remain.
 
 ## Exceptional and coupled sectors
 
-The displayed scalar coefficients degenerate at special angular values,
-including `L=0` and `L=2`.  In the actual metric problem, transverse-traceless
-constraints couple angular components and restrict which harmonics exist.
-The scalar-amplitude calculation therefore must not be used to classify the
-exceptional tensor modes by itself.
+The displayed scalar coefficients degenerate at `L=0` and `L=2`.  These are
+scalar-recurrence degeneracies, not certified physical spin-2 exceptional
+modes.  In the actual metric problem, transverse-traceless constraints couple
+angular components and the angular spectrum must be recomputed with tensor
+or spin-weighted harmonics.  The scalar-amplitude calculation therefore must
+not classify exceptional tensor modes by itself.
+
+## Machine hardening
+
+The version-2 certificate does not trust the displayed recurrence strings.
+It directly applies `Box` and `Box^2` to a symbolic radial term, then extracts
+coefficients from finite five-term series at three integer radial weights and
+compares them with both recursions.  It also binds a JSON schema, the schema
+hash, the generator path and hash, the base commit, and the imported flat-TT
+operator hash.
 
 The next closure step is the full tensor Bondi-gauge recursion, followed by
 the renormalized presymplectic flux and surface charges of the surviving
 boundary fields.  Only then can the kinematic selection be tested for
 `LORENTZIAN-CAUSAL` preservation.
+
+The certificate now carries an `OPEN_FAIL_CLOSED` tensor-completion gate.  It
+requires the full Bondi metric ansatz, every independent inverse-radius Bach
+row, the radial and supplementary constraints, tensor or spin-weighted
+angular operators, residual Diff x Weyl transformations, and a decision on
+whether `kappa` survives those tensor constraints.  The existing local and
+cylinder Bach machinery does not itself supply this null-boundary hierarchy,
+so `full_tensor_bondi_recursion_constructed` remains false.
 
 ## Verification
 

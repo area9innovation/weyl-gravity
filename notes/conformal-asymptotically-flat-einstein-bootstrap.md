@@ -129,11 +129,14 @@ phi=sum_(n>=0) r^(-p-n) f_n(u)Y_L
 ```
 
 has radiative indicial polynomial `4p(p-1)` and therefore roots `p=0,1`.
-The `p=1` branch has ordinary Einstein `1/r` Cartesian falloff and does not
-change the unphysical boundary metric.  The `p=0` branch has `O(1)`
+The `p=1` branch has Einstein-compatible `1/r` Cartesian falloff and does not
+change the unphysical boundary metric, but Bach permits an additional
+`u`-independent datum `kappa=2 d_u f_1-Lf_0`; Einstein requires `kappa=0`.
+The `p=0` branch has `O(1)`
 Cartesian amplitude, produces `h_AB=O(r^2)`, and changes that boundary
-metric.  Fixing the unphysical boundary metric therefore removes `p=0`
-kinematically while retaining `p=1` radiation.
+metric.  Fixing the unphysical boundary metric therefore removes leading
+`p=0` data kinematically while retaining both Einstein radiation and the
+same-falloff `p=1` Bach obstruction.
 
 This does not prove causal preservation, a full tensor recursion, a charge
 classification, or scattering equivalence.  It moves `AF-E4` and `AF-E8`
@@ -221,14 +224,14 @@ asymptotic claim.
 
 | Obligation | Status after this bootstrap |
 |---|---|
-| `AF-E1` | `PARTIAL`: exact linearized TT data and `p=0,1` radiative falloff rails plus a declared Bondi seed; full tensor weighted Bach space open. |
+| `AF-E1` | `PARTIAL`: exact linearized TT data and reduced `p=0,1` recursions plus a declared Bondi seed; full tensor weighted Bach space open. |
 | `AF-E2` | `OPEN`: no null-infinity retarded/advanced complex. |
 | `AF-E3` | `PARTIAL`: gauge/charge criterion fixed; conformal-gravity charges open. |
-| `AF-E4` | `PARTIAL`: fixed boundary metric excludes the leading `p=0` branch kinematically; causal preservation open. |
+| `AF-E4` | `PARTIAL`: fixed boundary metric excludes leading `p=0` only; the `p=1` `kappa` datum survives and causal preservation is open. |
 | `AF-E5` | `PARTIAL`: exact linearized fixed-mode closure; nonlinear closure open. |
 | `AF-E6` | `OPEN`: no Green/current-to-radiative-flux comparison. |
 | `AF-E7` | `OPEN`: no scattering cohomology or helicity theorem. |
-| `AF-E8` | `PARTIAL`: the leading `p=0` Bach radiative branch is identified; remaining tensor, soft, and Coulombic channels open. |
+| `AF-E8` | `PARTIAL`: leading `p=0` and same-falloff `p=1` Bach data are identified; tensor, soft, and Coulombic channels remain open. |
 
 The next mathematical target is the full tensor Bondi-gauge recursion,
 including the exceptional harmonics and the soft/Coulombic completion.
@@ -248,6 +251,11 @@ preservation can then be tested on the resulting boundary fields.
   dimensional conformal gravity*, <https://arxiv.org/abs/1505.05820>.  This
   is a charge-method control with generalized Fefferman--Graham boundaries,
   not an asymptotically flat result.
+- A. Hell, D. Lust, and G. Zoupanos, *On the Ghost Problem of Conformal
+  Gravity*, <https://arxiv.org/abs/2306.13714>.  Its flat-space perturbative
+  boundary analysis is a control showing that a simple boundary condition
+  need not recover the general Einstein solution; it is not a Bondi or
+  `LORENTZIAN-CAUSAL` theorem.
 
 ## Verification
 
