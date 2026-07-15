@@ -10,7 +10,30 @@ not promote the full theorem to `LORENTZIAN-CAUSAL`.
 
 The certificate is
 `bridge/certificates/asymptotically_flat_einstein_bootstrap.json`; its builder
-and verifier are `bridge/einstein_sector/asymptotic_bootstrap.py`.
+and verifier are `bridge/einstein_sector/asymptotic_bootstrap.py`.  The exact
+operator premise has its own certificate,
+`bridge/certificates/flat_tt_bach_operator.json`.
+
+## Exact flat TT Bach reduction
+
+The bootstrap no longer assumes the flat TT equation.  Starting from the
+linearized Riemann and Weyl tensors with signature `(-,+,+,+)`, the off-shell
+two-polarization calculation verifies
+
+```text
+tr(h)=0,
+div(h)=0,
+R_1=0,
+Ric_1=-Box h_TT/2,
+tr(C_1)=0,
+B_1(h_TT)=-(1/4) Box^2 h_TT.
+```
+
+The Bach convention here is
+`B_mn=partial^r partial^s C_mrns`.  Both `h_plus` and `h_cross` carry the same
+operator, and its exact commutator with the helicity generator vanishes.  An
+action variation may rescale the geometric Bach tensor; a nonzero overall
+factor does not change its kernel.
 
 ## Exact linearized closure theorem
 
@@ -63,7 +86,7 @@ the defining two-jet constraint is explicitly evolution-invariant.
 
 The theorem is modewise.  It does not yet establish:
 
-- the `q=0` soft, Coulombic, or memory sectors;
+- the soft, Coulombic, or memory sectors;
 - radial falloffs or regularity at null infinity;
 - retarded/advanced support properties on the asymptotically flat complex;
 - nonlinear preservation of `Ric(g)=0` inside `B(g)=0`;
@@ -72,6 +95,24 @@ The theorem is modewise.  It does not yet establish:
 
 In particular, modewise temporal invariance is not a Green-operator support
 theorem.
+
+### Three distinct zero-mode questions
+
+The polynomial matrix identity also holds after the algebraic substitution
+`q=0`.  This describes the spatially homogeneous Fourier oscillator
+`d_t^4 h=0`; such a plane wave is normally excluded by asymptotically flat
+spatial falloff.
+
+It is not the same as either:
+
+- the zero-frequency limit of radiative data, with memory and large-gauge
+  structure; or
+- Coulombic mass and angular-momentum aspects constrained along null
+  infinity.
+
+The earlier shorthand “`q=0` soft/Coulombic sector” is therefore retired.
+The next Bondi calculation concerns the latter two boundary sectors, not
+merely substitution of zero into the oscillator matrix.
 
 ## First null-infinity data declaration
 
@@ -85,13 +126,14 @@ I^+ ~= R x S^2 ~= I^-.
 
 The Einstein seed fields are the sphere metric `q_AB`, trace-free Bondi
 shear `C_AB`, news `N_AB=d_u C_AB`, mass aspect, and angular-momentum aspect.
-The provisional radiative class allows memory and requires:
+No single provisional topology is prematurely declared physical.  Three
+rails are kept separate:
 
-```text
-C_AB has finite H^s(S^2) limits as u -> +/- infinity,
-N_AB belongs to L^1_u H^s intersect L^2_u H^s,
-s > 3 (declared, not claimed sharp).
-```
+| Rail | Candidate condition | Status |
+|---|---|---|
+| Finite-flux completion | `N_AB in L^2_u H^s(S^2)`, with `s>3` declared but not sharp | Candidate; endpoint shear not required. |
+| Strong scattering core | `N_AB in L^1_u H^s intersect L^2_u H^s`, with finite endpoint shear | Candidate dense core; density not proved. |
+| Soft/memory extension | Completion by soft, memory, and possibly distributional endpoint data | Topology open. |
 
 This is a specified seed, not yet an admissibility theorem.  The missing
 fourth-order Bach data are the second radiative canonical pair and its
@@ -126,6 +168,30 @@ cylinder.  `AF-E3` remains `PARTIAL` until the pure-Weyl presymplectic
 potential, boundary counterterms, finite charges, flux law, and charge
 algebra are computed.
 
+## Two conformal freedoms
+
+Two transformations must not be conflated:
+
+```text
+physical Weyl gauge:       g -> exp(2 sigma) g,
+compactification frame:   (g_tilde,Omega) -> (omega^2 g_tilde,omega Omega).
+```
+
+The first acts on the physical field and is gauge only for boundary-preserving
+parameters with zero renormalized charge.  The second changes the unphysical
+representative of the same conformal completion.  They remain distinct until
+an explicit boundary map identifies a common zero-charge action.  The
+intersection is open and is part of `AF-E3`.
+
+## Machine contract
+
+The bootstrap now has a versioned JSON schema at
+`bridge/einstein_sector/schema/asymptotic_bootstrap.schema.json`.  Every
+obligation carries both the dependency tag of its partial receipt, when one
+exists, and the required `LORENTZIAN-CAUSAL` tag for closure.  The verifier
+rejects a missing obligation, an unknown tag, or promotion of any full
+asymptotic claim.
+
 ## Obligation status
 
 | Obligation | Status after this bootstrap |
@@ -139,7 +205,7 @@ algebra are computed.
 | `AF-E7` | `OPEN`: no scattering cohomology or helicity theorem. |
 | `AF-E8` | `OPEN`: extra asymptotic Weyl channels unclassified. |
 
-The next mathematical target should be the `q=0`/soft completion and a
+The next mathematical target should be the soft/Coulombic completion and a
 linearized Bondi expansion of the Bach equation.  That calculation will say
 which extra fourth-order data reach null infinity and will turn the
 provisional function space into an operator-tested one.  Charge
@@ -162,5 +228,6 @@ renormalization can then be performed on the resulting boundary fields.
 
 ```bash
 python3 -m bridge.einstein_sector.asymptotic_bootstrap --verify bridge/certificates/asymptotically_flat_einstein_bootstrap.json
+python3 -m bridge.einstein_sector.flat_tt_bach --verify bridge/certificates/flat_tt_bach_operator.json
 python3 -m unittest bridge.einstein_sector.tests.test_asymptotic_bootstrap
 ```

@@ -20,9 +20,20 @@ class AsymptoticBootstrapTests(unittest.TestCase):
         self.assertEqual(theorem["intertwining_defect"], [["0"] * 4, ["0"] * 4])
         self.assertEqual(theorem["bach_data_dimension_per_helicity"], 4)
         self.assertEqual(theorem["einstein_data_dimension_per_helicity"], 2)
+        self.assertIn("also holds at q=0", theorem["algebraic_q_zero_extension"])
+        self.assertTrue(result["claim_flags"]["flat_tt_bach_operator_derived"])
         self.assertTrue(result["claim_flags"]["linearized_minkowski_einstein_data_invariant"])
         self.assertFalse(result["claim_flags"]["nonlinear_einstein_constraint_preserved"])
         self.assertFalse(result["claim_flags"]["helicity_two_scattering_space_recovered"])
+        self.assertEqual(
+            result["asymptotic_data_seed"]["radiative_class_rails"]
+            ["soft_memory_extension"]["status"],
+            "OPEN",
+        )
+        self.assertEqual(
+            result["conformal_freedom_split"]["status"],
+            "DISTINCTION_FIXED_BOUNDARY_INTERSECTION_OPEN",
+        )
 
     def test_compact_cylinder_scope_is_required(self) -> None:
         original_load = asymptotic_bootstrap._load
@@ -46,6 +57,12 @@ class AsymptoticBootstrapTests(unittest.TestCase):
             path.write_text(json.dumps(payload), encoding="utf-8")
             with self.assertRaises(asymptotic_bootstrap.AsymptoticBootstrapError):
                 asymptotic_bootstrap.verify_certificate(path)
+
+    def test_schema_contract_rejects_missing_obligation(self) -> None:
+        payload = asymptotic_bootstrap.build_certificate()
+        payload["obligation_status"].pop()
+        with self.assertRaises(asymptotic_bootstrap.AsymptoticBootstrapError):
+            asymptotic_bootstrap._validate_contract(payload)
 
 
 if __name__ == "__main__":

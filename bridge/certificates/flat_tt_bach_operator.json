@@ -1,0 +1,108 @@
+{
+  "assumptions": [
+    "flat four-dimensional background",
+    "signature (-,+,+,+)",
+    "trace-free and transverse reduced metric perturbation",
+    "commuting formal derivatives evaluated off shell"
+  ],
+  "bach_convention": "B_mn=partial^r partial^s C_m r n s on flat space",
+  "background": {
+    "box_symbol": "(k - omega)*(k + omega)",
+    "derivative_covector": [
+      "omega",
+      "0",
+      "0",
+      "k"
+    ],
+    "dimension": 4,
+    "metric": "diag(-1,1,1,1)"
+  },
+  "curvature_identities": {
+    "linearized_ricci": "Ric_1=-Box h_TT/2",
+    "linearized_scalar": "0",
+    "weyl_trace_matrix": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "equation_consequence": "B_1=0 iff Box^2 h_TT=0",
+  "gauge_hypotheses": {
+    "divergence": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "off_shell": true,
+    "polarizations": [
+      "h_plus=h_11=-h_22",
+      "h_cross=h_12=h_21"
+    ],
+    "trace": "0"
+  },
+  "helicity_commutator_zero": true,
+  "helicity_generator": [
+    [
+      "0",
+      "2"
+    ],
+    [
+      "-2",
+      "0"
+    ]
+  ],
+  "nonzero_bach_components": {
+    "11": "-h_plus*(k - omega)**2*(k + omega)**2/4",
+    "12": "-h_cross*(k - omega)**2*(k + omega)**2/4",
+    "21": "-h_cross*(k - omega)**2*(k + omega)**2/4",
+    "22": "h_plus*(k - omega)**2*(k + omega)**2/4"
+  },
+  "normalization_guard": "an action Euler-Lagrange tensor may rescale this geometric Bach tensor; any nonzero overall rescaling leaves the kernel unchanged",
+  "not_proved": [
+    "TT reduced physical block only",
+    "not a complete gauge-fixed BV operator",
+    "not a null-infinity falloff or support theorem"
+  ],
+  "operator_identity": "B_1(h_TT)=-(1/4) Box^2 h_TT",
+  "polarization_operator": [
+    [
+      "-(k - omega)**2*(k + omega)**2/4",
+      "0"
+    ],
+    [
+      "0",
+      "-(k - omega)**2*(k + omega)**2/4"
+    ]
+  ],
+  "result_id": "FLAT_TT_LINEARIZED_BACH_OPERATOR",
+  "result_state": "PROVED",
+  "schema": "pure-weyl-flat-tt-bach-operator-v1",
+  "source_commit": "439a8e6bcc42a2458a7e1adf96ff0a5bb0dcac78",
+  "verification_command": "python3 -m bridge.einstein_sector.flat_tt_bach --verify bridge/certificates/flat_tt_bach_operator.json"
+}

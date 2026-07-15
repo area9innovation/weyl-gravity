@@ -23,8 +23,15 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_OUTPUT = (
     ROOT / "bridge" / "certificates" / "asymptotically_flat_einstein_bootstrap.json"
 )
+SCHEMA_PATH = (
+    ROOT / "bridge" / "einstein_sector" / "schema" / "asymptotic_bootstrap.schema.json"
+)
 
 INPUTS = {
+    "flat_tt_bach": ROOT
+    / "bridge"
+    / "certificates"
+    / "flat_tt_bach_operator.json",
     "einstein_sector": ROOT
     / "bridge"
     / "certificates"
@@ -61,11 +68,78 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _validate_contract(payload: dict[str, Any]) -> None:
+    schema = _load(SCHEMA_PATH)
+    _require(
+        schema.get("$id") == "pure-weyl-asymptotically-flat-einstein-bootstrap-v1",
+        "wrong asymptotic bootstrap schema id",
+    )
+    for key in schema.get("required", []):
+        _require(key in payload, f"bootstrap certificate is missing required field {key}")
+    _require(
+        payload.get("schema") == schema.get("$id"),
+        "bootstrap payload/schema identifier mismatch",
+    )
+    allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
+    _require(
+        set(payload.get("dependency_tags", [])) <= allowed_tags,
+        "bootstrap contains an unknown dependency tag",
+    )
+    obligations = payload.get("obligation_status", [])
+    _require(
+        [row.get("id") for row in obligations] == [f"AF-E{index}" for index in range(1, 9)],
+        "bootstrap obligation inventory is incomplete or reordered",
+    )
+    _require(
+        all(
+            row.get("status") in {"OPEN", "PARTIAL"}
+            and row.get("required_closure_tag") == "LORENTZIAN-CAUSAL"
+            and row.get("partial_receipt_tag") in allowed_tags | {None}
+            and (
+                (row.get("status") == "PARTIAL" and row.get("partial_receipt_tag") is not None)
+                or (row.get("status") == "OPEN" and row.get("partial_receipt_tag") is None)
+            )
+            for row in obligations
+        ),
+        "bootstrap obligation status or closure tag is invalid",
+    )
+    flags = payload.get("claim_flags", {})
+    _require(flags.get("flat_tt_bach_operator_derived") is True, "flat TT premise is not closed")
+    _require(
+        flags.get("linearized_minkowski_einstein_data_invariant") is True,
+        "linearized Einstein invariant-subspace theorem is absent",
+    )
+    full_claims = {
+        "full_asymptotically_flat_function_space_admissible",
+        "null_infinity_green_complex_constructed",
+        "pure_weyl_surface_charges_computed",
+        "non_einstein_branch_causally_excluded",
+        "nonlinear_einstein_constraint_preserved",
+        "radiative_symplectic_form_matched",
+        "helicity_two_scattering_space_recovered",
+        "extra_weyl_channels_classified",
+    }
+    _require(
+        all(flags.get(name) is False for name in full_claims),
+        "a full asymptotic claim was promoted without its Lorentzian certificate",
+    )
+
+
 def _matrix_rows(matrix: sp.MatrixBase) -> list[list[str]]:
     return [[str(sp.factor(entry)) for entry in matrix.row(row)] for row in range(matrix.rows)]
 
 
 def _verify_scope_inputs(records: dict[str, dict[str, Any]]) -> None:
+    flat = records["flat_tt_bach"]
+    _require(
+        flat.get("operator_identity") == "B_1(h_TT)=-(1/4) Box^2 h_TT",
+        "flat TT Bach operator has not been derived with the expected normalization",
+    )
+    _require(
+        flat.get("helicity_commutator_zero") is True,
+        "flat TT Bach operator does not preserve both helicities",
+    )
+
     theorem = records["einstein_sector"]
     commission = theorem.get("next_theorem_commission", {})
     _require(
@@ -112,7 +186,7 @@ def _verify_scope_inputs(records: dict[str, dict[str, Any]]) -> None:
 
 
 def _linearized_tt_identity() -> dict[str, Any]:
-    q = sp.symbols("q", positive=True, real=True)
+    q = sp.symbols("q", real=True)
 
     # State x=(h, h_dot, h_ddot, h_dddot) for
     # (d_t^2+q)^2 h=0, one TT polarization at fixed |k|^2=q.
@@ -150,11 +224,16 @@ def _linearized_tt_identity() -> dict[str, Any]:
         evolution * kernel_basis == kernel_basis * induced,
         "Bach evolution does not restrict to Einstein wave evolution",
     )
+    _require(
+        defect.subs(q, 0) == sp.zeros(2, 4),
+        "polynomial intertwining identity fails at the homogeneous q=0 value",
+    )
 
     return {
         "background": "four-dimensional Minkowski space",
         "sector": "one transverse-traceless polarization at fixed spatial q=|k|^2>0",
         "bach_equation": "(d_t^2+q)^2 h=0",
+        "bach_operator_provenance": "flat_tt_bach_operator.json",
         "einstein_equation": "(d_t^2+q) h=0",
         "state_order": ["h", "d_t h", "d_t^2 h", "d_t^3 h"],
         "bach_evolution_matrix": _matrix_rows(evolution),
@@ -171,8 +250,13 @@ def _linearized_tt_identity() -> dict[str, Any]:
             "the linearized Einstein initial-data kernel is exactly invariant under "
             "fixed-mode Bach evolution"
         ),
+        "algebraic_q_zero_extension": (
+            "the polynomial intertwining identity also holds at q=0, but a spatially "
+            "homogeneous TT plane wave is not an admissible asymptotically flat mode"
+        ),
         "scope_guards": [
-            "q=0 soft and Coulombic sectors are not classified",
+            "the homogeneous q=0 Fourier value is not identified with soft or Coulombic data",
+            "soft limits, memory zero modes, and Coulombic sectors are not classified",
             "no statement about radial falloff or null-infinity flux",
             "no nonlinear constraint-preservation theorem",
             "modewise evolution invariance is not a support theorem for Green operators",
@@ -186,21 +270,23 @@ def build_certificate() -> dict[str, Any]:
     linearized = _linearized_tt_identity()
 
     obligations = [
-        ("AF-E1", "PARTIAL", "linearized TT data fixed; nonlinear weighted Bondi/Bach spaces open"),
-        ("AF-E2", "OPEN", "no retarded/advanced null-infinity complex"),
-        ("AF-E3", "PARTIAL", "charge criterion fixed; pure-Weyl charges not computed"),
-        ("AF-E4", "OPEN", "no causal exclusion of the non-Einstein branch"),
-        ("AF-E5", "PARTIAL", "linearized fixed-mode closure proved; nonlinear closure open"),
-        ("AF-E6", "OPEN", "no null-infinity current/flux comparison"),
-        ("AF-E7", "OPEN", "no asymptotic scattering cohomology"),
-        ("AF-E8", "OPEN", "extra Bach-flat asymptotic channels unclassified"),
+        ("AF-E1", "PARTIAL", "linearized TT data fixed; nonlinear weighted Bondi/Bach spaces open", "REDUCED-MODE"),
+        ("AF-E2", "OPEN", "no retarded/advanced null-infinity complex", None),
+        ("AF-E3", "PARTIAL", "charge criterion fixed; pure-Weyl charges not computed", "LOCAL-ALGEBRAIC"),
+        ("AF-E4", "OPEN", "no causal exclusion of the non-Einstein branch", None),
+        ("AF-E5", "PARTIAL", "linearized fixed-mode closure proved; nonlinear closure open", "REDUCED-MODE"),
+        ("AF-E6", "OPEN", "no null-infinity current/flux comparison", None),
+        ("AF-E7", "OPEN", "no asymptotic scattering cohomology", None),
+        ("AF-E8", "OPEN", "extra Bach-flat asymptotic channels unclassified", None),
     ]
 
-    return {
+    certificate = {
         "schema": "pure-weyl-asymptotically-flat-einstein-bootstrap-v1",
+        "schema_path": "bridge/einstein_sector/schema/asymptotic_bootstrap.schema.json",
+        "schema_sha256": _sha256(SCHEMA_PATH),
         "result_id": "ASYMPTOTICALLY_FLAT_EINSTEIN_SECTOR_BOOTSTRAP",
         "result_state": "PARTIAL_EXACT_LINEARIZED_RAIL",
-        "source_commit": "cab0e805238440d9d6e9ec39e1f3cf10624fae5e",
+        "source_commit": "439a8e6bcc42a2458a7e1adf96ff0a5bb0dcac78",
         "dependency_tags": ["REDUCED-MODE"],
         "required_promotion_tag": "LORENTZIAN-CAUSAL",
         "linearized_minkowski_theorem": linearized,
@@ -222,14 +308,42 @@ def build_certificate() -> dict[str, Any]:
                 "Bondi mass aspect m(u,x)",
                 "angular-momentum aspect N_A(u,x)",
             ],
-            "candidate_radiative_class": [
-                "C_AB is smooth and has finite H^s(S^2) endpoint limits as u tends to plus/minus infinity",
-                "N_AB lies in L^1_u H^s(S^2) intersect L^2_u H^s(S^2), with s>3 declared but not sharp",
-                "memory Delta C_AB is allowed and equals the difference of the endpoint shears",
-            ],
+            "radiative_class_rails": {
+                "finite_flux_completion": {
+                    "news": "N_AB in L^2_u H^s(S^2), s>3 declared but not sharp",
+                    "endpoint_shear_required": False,
+                    "status": "CANDIDATE",
+                },
+                "strong_scattering_core": {
+                    "news": "N_AB in L^1_u H^s(S^2) intersect L^2_u H^s(S^2)",
+                    "shear": "C_AB has finite H^s endpoint limits",
+                    "memory": "Delta C_AB=C_AB(+infinity)-C_AB(-infinity) is allowed",
+                    "status": "CANDIDATE_DENSE_CORE_NOT_PROVED",
+                },
+                "soft_memory_extension": {
+                    "purpose": "complete the finite-flux/core spaces by soft and memory data",
+                    "topology": "OPEN",
+                    "distributional_endpoints": "NOT_CLASSIFIED",
+                    "status": "OPEN",
+                },
+            },
+            "sector_distinctions": {
+                "homogeneous_fourier_zero": (
+                    "q=0 in the fixed-mode oscillator identity; algebraically invariant "
+                    "but normally excluded by asymptotically flat spatial falloff"
+                ),
+                "soft_sector": (
+                    "zero-frequency limit of radiative data, including memory/large-gauge "
+                    "structure; not a single homogeneous Fourier mode"
+                ),
+                "coulombic_sector": (
+                    "non-radiative mass and angular-momentum aspects constrained along "
+                    "null infinity; not part of the TT oscillator q=0 substitution"
+                ),
+            },
             "missing_bach_data": [
                 "falloffs and regularity for the second fourth-order radiative pair",
-                "Coulombic and q=0 soft sectors",
+                "soft/memory and Coulombic boundary sectors",
                 "corner matching through spatial infinity",
                 "closure of the Bach operator on weighted/polyhomogeneous spaces",
                 "constraint-compatible gauge and ghost falloffs",
@@ -251,6 +365,21 @@ def build_certificate() -> dict[str, Any]:
                 "generator-by-generator proper/charged classification",
             ],
         },
+        "conformal_freedom_split": {
+            "physical_weyl_gauge": {
+                "action": "g -> exp(2 sigma) g on the physical metric",
+                "boundary_question": "which sigma preserve the phase space and have zero renormalized charge",
+            },
+            "compactification_frame": {
+                "action": "(g_tilde,Omega) -> (omega^2 g_tilde, omega Omega)",
+                "role": "redundancy of the unphysical conformal completion",
+            },
+            "non_identification_rule": (
+                "physical Weyl gauge and compactification-frame rescaling are distinct "
+                "until an explicit boundary map identifies a common zero-charge action"
+            ),
+            "status": "DISTINCTION_FIXED_BOUNDARY_INTERSECTION_OPEN",
+        },
         "cylinder_non_reuse": {
             "established": True,
             "reasons": [
@@ -260,10 +389,17 @@ def build_certificate() -> dict[str, Any]:
             ],
         },
         "obligation_status": [
-            {"id": identifier, "status": status, "receipt": receipt}
-            for identifier, status, receipt in obligations
+            {
+                "id": identifier,
+                "status": status,
+                "receipt": receipt,
+                "partial_receipt_tag": partial_tag,
+                "required_closure_tag": "LORENTZIAN-CAUSAL",
+            }
+            for identifier, status, receipt, partial_tag in obligations
         ],
         "claim_flags": {
+            "flat_tt_bach_operator_derived": True,
             "linearized_minkowski_einstein_data_invariant": True,
             "full_asymptotically_flat_function_space_admissible": False,
             "null_infinity_green_complex_constructed": False,
@@ -273,6 +409,11 @@ def build_certificate() -> dict[str, Any]:
             "radiative_symplectic_form_matched": False,
             "helicity_two_scattering_space_recovered": False,
             "extra_weyl_channels_classified": False,
+        },
+        "claim_dependency_tags": {
+            "flat_tt_bach_operator_derived": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+            "linearized_minkowski_einstein_data_invariant": ["REDUCED-MODE"],
+            "all_false_asymptotic_claims_require": ["LORENTZIAN-CAUSAL"],
         },
         "sources": [
             {
@@ -301,6 +442,8 @@ def build_certificate() -> dict[str, Any]:
             "bridge/certificates/asymptotically_flat_einstein_bootstrap.json"
         ),
     }
+    _validate_contract(certificate)
+    return certificate
 
 
 def verify_certificate(path: Path = DEFAULT_OUTPUT) -> None:

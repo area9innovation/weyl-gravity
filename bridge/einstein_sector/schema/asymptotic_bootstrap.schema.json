@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-asymptotically-flat-einstein-bootstrap-v1",
+  "title": "Pure-Weyl asymptotically flat Einstein-sector bootstrap",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "source_commit",
+    "dependency_tags",
+    "required_promotion_tag",
+    "linearized_minkowski_theorem",
+    "asymptotic_data_seed",
+    "gauge_charge_rule",
+    "conformal_freedom_split",
+    "cylinder_non_reuse",
+    "obligation_status",
+    "claim_flags",
+    "claim_dependency_tags",
+    "sources",
+    "inputs",
+    "verification_command"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-asymptotically-flat-einstein-bootstrap-v1"
+    },
+    "schema_path": {
+      "const": "bridge/einstein_sector/schema/asymptotic_bootstrap.schema.json"
+    },
+    "schema_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "result_id": {
+      "const": "ASYMPTOTICALLY_FLAT_EINSTEIN_SECTOR_BOOTSTRAP"
+    },
+    "result_state": {
+      "const": "PARTIAL_EXACT_LINEARIZED_RAIL"
+    },
+    "dependency_tags": {
+      "const": ["REDUCED-MODE"]
+    },
+    "required_promotion_tag": {
+      "const": "LORENTZIAN-CAUSAL"
+    },
+    "obligation_status": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "receipt",
+          "partial_receipt_tag",
+          "required_closure_tag"
+        ],
+        "properties": {
+          "id": {"pattern": "^AF-E[1-8]$"},
+          "status": {"enum": ["OPEN", "PARTIAL"]},
+          "partial_receipt_tag": {
+            "type": ["string", "null"]
+          },
+          "required_closure_tag": {
+            "const": "LORENTZIAN-CAUSAL"
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "flat_tt_bach_operator_derived",
+        "linearized_minkowski_einstein_data_invariant",
+        "full_asymptotically_flat_function_space_admissible",
+        "null_infinity_green_complex_constructed",
+        "pure_weyl_surface_charges_computed",
+        "non_einstein_branch_causally_excluded",
+        "nonlinear_einstein_constraint_preserved",
+        "radiative_symplectic_form_matched",
+        "helicity_two_scattering_space_recovered",
+        "extra_weyl_channels_classified"
+      ]
+    }
+  }
+}
