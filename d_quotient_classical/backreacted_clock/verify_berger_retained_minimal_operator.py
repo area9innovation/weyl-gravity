@@ -13,7 +13,75 @@ import sympy as sp
 
 ROOT = Path(__file__).resolve().parents[2]
 CERTIFICATE = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json"
+SCHEMA = ROOT / "d_quotient_classical/schema/berger-retained-minimal-operator-v1.schema.json"
 U, V, ALPHA_B = sp.symbols("u v alpha_B", nonzero=True, real=True)
+
+
+def validate_portable_schema_contract(
+    schema: dict[str, object], payload: dict[str, object]
+) -> None:
+    """Check the strict PBW subset without relying on an optional package.
+
+    Release CI may additionally run a general Draft 2020-12 validator.  This
+    local check deliberately covers the exact structural bug that once made
+    ``q1_blocks`` impossible to validate: required keys must also be declared
+    when ``additionalProperties`` is false.
+    """
+
+    q1_schema = schema["properties"]["q1_blocks"]
+    required = q1_schema["required"]
+    properties = q1_schema.get("properties", {})
+    if q1_schema.get("additionalProperties") is False and any(
+        key not in properties for key in required
+    ):
+        raise AssertionError("q1_blocks requires undeclared properties")
+    definitions = schema.get("$defs", {})
+    for name in ("pbwOperatorRecord", "pbwMatrixEntry", "pbwTerm"):
+        if name not in definitions:
+            raise AssertionError(f"missing strict PBW schema definition: {name}")
+
+    expected_shapes = {
+        "K_spatial": [10, 3],
+        "H_retained": [10, 10],
+        "minus_K_spatial_sharp": [3, 10],
+    }
+    blocks = payload["q1_blocks"]
+    if set(blocks) != set(expected_shapes):
+        raise AssertionError("q1 block keys are not exact")
+    for name, expected_shape in expected_shapes.items():
+        record = blocks[name]
+        if set(record) != {"shape", "entries", "sha256"}:
+            raise AssertionError(f"{name}: PBW record keys are not strict")
+        if record["shape"] != expected_shape:
+            raise AssertionError(f"{name}: PBW shape drifted")
+        rows, columns = expected_shape
+        digest = record["sha256"]
+        if not isinstance(digest, str) or len(digest) != 64 or any(
+            character not in "0123456789abcdef" for character in digest
+        ):
+            raise AssertionError(f"{name}: invalid sha256")
+        for entry in record["entries"]:
+            if not isinstance(entry, list) or len(entry) != 3:
+                raise AssertionError(f"{name}: malformed PBW matrix entry")
+            row, column, terms = entry
+            if not isinstance(row, int) or not 0 <= row < rows:
+                raise AssertionError(f"{name}: PBW row out of range")
+            if not isinstance(column, int) or not 0 <= column < columns:
+                raise AssertionError(f"{name}: PBW column out of range")
+            if not isinstance(terms, list) or not terms:
+                raise AssertionError(f"{name}: empty PBW entry")
+            for term in terms:
+                if not isinstance(term, list) or len(term) != 2:
+                    raise AssertionError(f"{name}: malformed PBW term")
+                exponents, coefficient = term
+                if (
+                    not isinstance(exponents, list)
+                    or len(exponents) != 4
+                    or any(not isinstance(value, int) or value < 0 for value in exponents)
+                ):
+                    raise AssertionError(f"{name}: invalid PBW exponent vector")
+                if not isinstance(coefficient, str) or not coefficient:
+                    raise AssertionError(f"{name}: invalid PBW coefficient")
 
 
 def _structure(first: int, second: int) -> dict[int, sp.Expr]:
@@ -123,6 +191,8 @@ def _multiply(outer, inner):
 
 def verify_certificate() -> dict[str, object]:
     payload = json.loads(CERTIFICATE.read_text())
+    schema = json.loads(SCHEMA.read_text())
+    validate_portable_schema_contract(schema, payload)
     blocks = payload["q1_blocks"]
     gauge = _load_matrix(blocks["K_spatial"])
     hessian = _load_matrix(blocks["H_retained"])
@@ -152,7 +222,7 @@ def verify_certificate() -> dict[str, object]:
 def main() -> None:
     verify_certificate()
     print("BERGER_RETAINED_MINIMAL_OPERATOR_INDEPENDENT: PASS")
-    print("block digests, H^sharp=H, -K^sharp row, and both q1^2 compositions: PASS")
+    print("strict PBW schema, block digests, H^sharp=H, -K^sharp row, and both q1^2 compositions: PASS")
     print("nonminimal, causal, q2, and arity-two gates: OPEN")
 
 

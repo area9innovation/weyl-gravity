@@ -23,12 +23,95 @@
     "q1_blocks": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["K_spatial", "H_retained", "minus_K_spatial_sharp"]
+      "required": ["K_spatial", "H_retained", "minus_K_spatial_sharp"],
+      "properties": {
+        "K_spatial": {
+          "allOf": [
+            {"$ref": "#/$defs/pbwOperatorRecord"},
+            {"type": "object", "properties": {"shape": {"const": [10, 3]}}}
+          ]
+        },
+        "H_retained": {
+          "allOf": [
+            {"$ref": "#/$defs/pbwOperatorRecord"},
+            {"type": "object", "properties": {"shape": {"const": [10, 10]}}}
+          ]
+        },
+        "minus_K_spatial_sharp": {
+          "allOf": [
+            {"$ref": "#/$defs/pbwOperatorRecord"},
+            {"type": "object", "properties": {"shape": {"const": [3, 10]}}}
+          ]
+        }
+      }
     },
     "bach_PBW_term_counts_by_order": {"type": "object"},
     "exact_checks": {"type": "object"},
     "flags": {"type": "object"},
     "next_gate": {"const": "BERGER_NONMINIMAL_COMPLETION"},
     "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "pbwOperatorRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {
+          "type": "array",
+          "prefixItems": [
+            {"type": "integer", "minimum": 1},
+            {"type": "integer", "minimum": 1}
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "entries": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/pbwMatrixEntry"}
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "pbwMatrixEntry": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "integer", "minimum": 0},
+        {"type": "integer", "minimum": 0},
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/pbwTerm"}
+        }
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "pbwTerm": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "array",
+          "prefixItems": [
+            {"type": "integer", "minimum": 0},
+            {"type": "integer", "minimum": 0},
+            {"type": "integer", "minimum": 0},
+            {"type": "integer", "minimum": 0}
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        },
+        {"type": "string", "minLength": 1}
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    }
   }
 }
