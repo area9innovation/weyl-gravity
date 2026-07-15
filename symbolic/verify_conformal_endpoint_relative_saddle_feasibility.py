@@ -16,6 +16,9 @@ if str(ROOT) not in sys.path:
 from covariant_completion.curved_operator.endpoint_relative_saddle_feasibility import (
     EndpointRelativeSaddleFeasibility,
 )
+from covariant_completion.curved_operator.prolonged_metric_endpoint_complex import (
+    ProlongedMetricEndpointComplex,
+)
 
 
 CERTIFICATES = ROOT / "covariant_completion" / "certificates"
@@ -32,7 +35,10 @@ def main() -> int:
     parser.add_argument("--guards", action="store_true")
     args = parser.parse_args()
 
-    result = EndpointRelativeSaddleFeasibility.build()
+    endpoint = ProlongedMetricEndpointComplex.from_coefficient_payload(
+        _load("curved_prolonged_metric_endpoint_coefficients.json")
+    )
+    result = EndpointRelativeSaddleFeasibility.build(endpoint)
     certificate = result.certificate(
         hybrid_certificate=_load(
             "curved_prolonged_hybrid_algebraic_projector.json"
@@ -43,6 +49,9 @@ def main() -> int:
         mapping_certificate=_load(
             "curved_curvature_mapping_cylinder_substitution.json"
         ),
+        endpoint_certificate=_load(
+            "curved_prolonged_metric_endpoint_complex.json"
+        ),
         curvature_witness_certificate=_load(
             "curved_weyl_cotton_block_green_witness.json"
         ),
@@ -51,7 +60,18 @@ def main() -> int:
 
     if args.guards:
         decision = certificate["decision"]
+        scope = certificate["rank_five_relative_incidence"][
+            "full_hybrid_scope_audit"
+        ]
         checks = {
+            "full 386-to-30 seed scope": (
+                scope["A_F_p_E_fixed_by_auxiliary_endpoint_projector"] is True
+                and scope[
+                    "cyclic_i_M_A_F_sharp_fixed_by_auxiliary_endpoint_projector"
+                ]
+                is True
+                and scope["p_E_i_M_cyclic_adjoint_defect"] == 0
+            ),
             "rank-five relative incidence": (
                 decision["A_F_obstruction_couples_through_relative_cone"] is True
             ),
@@ -91,7 +111,10 @@ def main() -> int:
             "The rank-five `A_F` obstruction has an exact support-local two-way "
             "incidence through the algebraic curvature cone.  The projected "
             "witness `P_alg w P_end + P_end w P_alg` is odd cyclic and has no "
-            "diagonal part.\n\n"
+            "diagonal part.  The 386-to-66 mapping projector is checked "
+            "explicitly, while the typed `A_F p_E` leg and its cyclic adjoint "
+            "are checked coefficientwise to be fixed by the 66-to-30 metric "
+            "projector.\n\n"
             "This does not yet give Green operators.  The remaining operator is "
             "the endpoint Schur complement `S_end=D-CB`; arbitrary compact-source, "
             "two-sided, causal-support and graded-adjoint theorems remain open.  "

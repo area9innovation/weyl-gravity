@@ -44,6 +44,8 @@ import hashlib
 import json
 from typing import Mapping
 
+import sympy as sp
+
 from covariant_completion.minimal_witness.formal_operators import (
     OperatorPolynomial,
 )
@@ -51,6 +53,11 @@ from covariant_completion.curved_retract import curvature_mapping_cylinder_kerne
 from covariant_completion.curved_operator.endpoint_curvature_graph_lift_boundary import (
     EndpointCurvatureGraphLiftBoundary,
 )
+from covariant_completion.curved_operator.prolonged_metric_endpoint_complex import (
+    ProlongedMetricEndpointComplex,
+    ZERO,
+)
+from covariant_completion.curved_operator.conventions import _ordinary_system
 
 
 Matrix = cmc.Matrix
@@ -168,6 +175,7 @@ class EndpointRelativeSaddleFeasibility:
 
     mapping: cmc.CurvatureMappingCylinderKernel
     boundary: EndpointCurvatureGraphLiftBoundary
+    endpoint: ProlongedMetricEndpointComplex
     p_alg: Matrix
     p_end: Matrix
     raw_cyclic_seed: Matrix
@@ -178,7 +186,9 @@ class EndpointRelativeSaddleFeasibility:
     saddle_green: SmallMatrix
 
     @staticmethod
-    def build() -> "EndpointRelativeSaddleFeasibility":
+    def build(
+        endpoint: ProlongedMetricEndpointComplex,
+    ) -> "EndpointRelativeSaddleFeasibility":
         mapping = cmc.CurvatureMappingCylinderKernel.build()
         boundary = EndpointCurvatureGraphLiftBoundary.build()
         p_end = cmc._multiply(mapping.inclusion, mapping.projection)
@@ -213,6 +223,7 @@ class EndpointRelativeSaddleFeasibility:
         result = EndpointRelativeSaddleFeasibility(
             mapping=mapping,
             boundary=boundary,
+            endpoint=endpoint,
             p_alg=p_alg,
             p_end=p_end,
             raw_cyclic_seed=seed,
@@ -227,6 +238,7 @@ class EndpointRelativeSaddleFeasibility:
 
     def verify(self) -> None:
         self.mapping.verify()
+        self.endpoint.verify()
         # EndpointCurvatureGraphLiftBoundary.build() already performs its
         # comparatively expensive all-stratum exact rank audit.  Do not
         # repeat that audit in each downstream certificate pass.
@@ -234,6 +246,40 @@ class EndpointRelativeSaddleFeasibility:
             raise AssertionError("A_F rank drifted")
         if not cmc._is_zero(cmc._multiply(self.p_alg, self.p_end)):
             raise AssertionError("hybrid projectors overlap")
+
+        # Scope audit for the *second* SDR, auxiliary[66] -> metric[30].
+        # The mapping-cylinder calculation below only sees the 386->66
+        # projector.  Prove coefficientwise that the typed AF=A_F p_E seed
+        # and its cyclic adjoint are fixed by the 66->30 metric projector.
+        equation_inclusion = sp.zeros(24, 10)
+        equation_inclusion[10:20, :] = sp.eye(10)
+        field_projection = sp.zeros(10, 24)
+        field_projection[:, :10] = sp.eye(10)
+        auxiliary_pairing = _ordinary_system().field_fibre_pairing
+        for (multiindex, shift), (other, projection) in zip(
+            self.endpoint.shift_metric_coefficients,
+            self.endpoint.equation_projection_coefficients,
+            strict=True,
+        ):
+            if multiindex != other:
+                raise AssertionError("endpoint inclusion/projection order drifted")
+            expected = sp.eye(10) if multiindex == ZERO else sp.zeros(10)
+            if projection * equation_inclusion != expected:
+                raise AssertionError("p_E i_E is not the metric equation identity")
+            field_inclusion = sp.zeros(24, 10)
+            if multiindex == ZERO:
+                field_inclusion[:10, :] = sp.eye(10)
+            field_inclusion[10:20, :] = shift
+            if field_projection * field_inclusion != expected:
+                raise AssertionError("p_M i_M is not the metric field identity")
+            adjoint_defect = (
+                ((-1) ** sum(multiindex))
+                * field_inclusion.T
+                * auxiliary_pairing
+                - self.endpoint.field_pairing * projection
+            ).applyfunc(sp.expand)
+            if adjoint_defect != sp.zeros(10, 24):
+                raise AssertionError("p_E and i_M are not cyclic adjoints")
 
         zero = OperatorPolynomial.zero()
         if self.endpoint_to_algebraic[4][2] != OperatorPolynomial.atom("AF"):
@@ -278,6 +324,7 @@ class EndpointRelativeSaddleFeasibility:
         hybrid_certificate: Mapping[str, object],
         boundary_certificate: Mapping[str, object],
         mapping_certificate: Mapping[str, object],
+        endpoint_certificate: Mapping[str, object],
         curvature_witness_certificate: Mapping[str, object],
         green_bridge_certificate: Mapping[str, object],
     ) -> dict[str, object]:
@@ -315,6 +362,22 @@ class EndpointRelativeSaddleFeasibility:
             "pure-weyl-curvature-mapping-cylinder-substitution-v1"
         ) or mapping_certificate.get("coefficientwise_complete_prolonged_Q") is not True:
             raise AssertionError("expanded mapping cylinder is unavailable")
+        if endpoint_certificate.get("schema") != (
+            "pure-weyl-prolonged-metric-endpoint-complex-v1"
+        ):
+            raise AssertionError("wrong coefficient-complete endpoint input")
+        graph_maps = endpoint_certificate.get("local_graph_maps")
+        if not isinstance(graph_maps, Mapping):
+            raise AssertionError("missing coefficient-complete endpoint graph")
+        graph_identities = graph_maps.get("identities")
+        if not isinstance(graph_identities, Mapping) or not all(
+            (
+                graph_identities.get("p_end_j_end") == "identity_30",
+                graph_identities.get("j_end_p_end") == "P_end",
+                graph_identities.get("P_end_squared") == "P_end",
+            )
+        ):
+            raise AssertionError("full 386-to-30 endpoint projector is unavailable")
         if curvature_witness_certificate.get("schema") != (
             "pure-weyl-cotton-block-green-witness-v1"
         ) or curvature_witness_certificate.get("prolonged_green_witness") is not False:
@@ -333,6 +396,7 @@ class EndpointRelativeSaddleFeasibility:
                     boundary_certificate
                 ),
                 "mapping_cylinder": _certificate_digest(mapping_certificate),
+                "metric_endpoint": _certificate_digest(endpoint_certificate),
                 "weyl_cotton_witness": _certificate_digest(
                     curvature_witness_certificate
                 ),
@@ -351,6 +415,15 @@ class EndpointRelativeSaddleFeasibility:
                 "finite_order_after_projection": 3,
                 "support_local": True,
                 "inverse_Weyl_or_spatial_projector_used": False,
+                "full_hybrid_scope_audit": {
+                    "mapping_projector_explicitly_used_below": "386->66",
+                    "auxiliary_projector_checked_coefficientwise": "66->30",
+                    "A_F_p_E_fixed_by_auxiliary_endpoint_projector": True,
+                    "cyclic_i_M_A_F_sharp_fixed_by_auxiliary_endpoint_projector": True,
+                    "p_E_i_E": "identity_10 coefficientwise",
+                    "p_M_i_M": "identity_10 coefficientwise",
+                    "p_E_i_M_cyclic_adjoint_defect": 0,
+                },
             },
             "cyclic_two_way_witness": {
                 "formula": (
