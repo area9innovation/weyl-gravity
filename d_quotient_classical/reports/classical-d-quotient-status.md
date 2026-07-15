@@ -196,7 +196,7 @@ generators are not a Lie subalgebra. The exact obstruction is
 | Vacuum cylinder | `SECTOR_DEPENDENT` on the declared sectors | certified baseline | certified baseline | zero only in selected absolute residual \(H^4\) | \(I_2\) on centered degree-four classes | open in this challenge record |
 | Cylinder + scalar clock | one-real-scalar exact-cylinder candidate `OBSTRUCTED` | `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` |
 | Cylinder + neutral clock pair | `D_GAUGE` on `compact_neutral_clock_pair_homogeneous` | `OPEN` | `OPEN` | `OPEN` | unrestricted reference pairing is indefinite | `OPEN` |
-| Positive Berger clock | `D_GAUGE` on the smooth fixed-coupling linearized phase space | minimal temporal/Weyl clock SDR certified; retained complex open | `OPEN` | `OPEN` | helical current and minimal cyclic pairing exact; full transport open | `OPEN` |
+| Positive Berger clock | `D_GAUGE` on the smooth fixed-coupling linearized phase space | minimal temporal/Weyl clock SDR certified; retained gauge/adjoint rows, matter Hessian, and Bach principal block certified; full retained complex open | `OPEN` | `OPEN` | helical current and minimal cyclic pairing exact; full transport open | `OPEN` |
 | Cylinder + Yang--Mills | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Weakly deformed background | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Lorentzian dS/AdS | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
@@ -207,12 +207,15 @@ status promotion.
 
 ## Next gates
 
-1. Run `BERGER_RETAINED_MINIMAL_OPERATOR` against the authoritative
+1. Complete `BERGER_LINEARIZED_BACH_PBW_EXPANSION` against the authoritative
    26-component layout. The support-local cyclic SDR of the eight
-   temporal/Weyl minimal clock rows is complete, but the retained coefficients
-   are not. Then run the separate `BERGER_NONMINIMAL_COMPLETION` gate before
-   constructing causal propagation and stability on the exact positive
-   Berger branch. The fixed-coupling linearized \(D\)-charge sub-gate is
+   temporal/Weyl minimal clock rows, retained spatial gauge/adjoint rows,
+   action-derived matter Hessian, and fourth-order Bach principal block are
+   complete. The order-three-and-lower Bach coefficients on the nonzero-Weyl
+   Berger background are not. Only after that expansion may
+   `BERGER_RETAINED_MINIMAL_OPERATOR` promote. Then run the separate
+   `BERGER_NONMINIMAL_COMPLETION` gate before constructing causal propagation
+   and stability. The fixed-coupling linearized \(D\)-charge sub-gate is
    complete.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
@@ -247,6 +250,9 @@ python3 d_quotient_classical/backreacted_clock/positive_berger_clock.py --check 
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_positive_berger_clock
 python3 d_quotient_classical/backreacted_clock/berger_clock_charge_seed.py --check --guards
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_clock_charge_seed
+python3 d_quotient_classical/backreacted_clock/berger_retained_minimal_operator.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_operator_independent.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_minimal_operator
 ```
 
 No full-suite result is implied by the scoped checks.

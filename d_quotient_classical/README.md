@@ -64,6 +64,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json`](certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json)
 - Retained minimal-BV layout report:
   [`reports/berger-retained-minimal-layout.md`](reports/berger-retained-minimal-layout.md)
+- Retained minimal-operator preflight:
+  [`certificates/BERGER_RETAINED_MINIMAL_OPERATOR_PREFLIGHT.json`](certificates/BERGER_RETAINED_MINIMAL_OPERATOR_PREFLIGHT.json)
+- Retained minimal-operator preflight report:
+  [`reports/berger-retained-minimal-operator-preflight.md`](reports/berger-retained-minimal-operator-preflight.md)
 
 The only scientific verdicts are:
 
@@ -109,6 +113,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_min
 python3 d_quotient_classical/backreacted_clock/berger_retained_minimal_layout.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_layout_independent.py
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_minimal_layout
+python3 d_quotient_classical/backreacted_clock/berger_retained_minimal_operator.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_operator_independent.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_minimal_operator
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -137,9 +144,14 @@ first-order support-local cyclic contraction: 8 of the 34 minimal rows
 contract, leaving a 26-row dressed-metric/spatial-diffeomorphism complex.
 Its component IDs, degree ranks, duality, pairing conventions, support rules,
 and three allowed (q_1) blocks are now frozen by one authoritative layout.
-The immediate gate is `BERGER_RETAINED_MINIMAL_OPERATOR`; nonminimal
-gauge-fixing is the separate `BERGER_NONMINIMAL_COMPLETION` gate. Causal Green
-homotopies and nonlinear stability remain open.
+The retained-operator preflight additionally completes the full spatial gauge
+generator, its formal-adjoint identity row, the action-derived matter Hessian,
+and the fourth-order Bach principal block. It does not reuse the invalid
+round-cylinder lower-order Hessian on the nonzero-Weyl Berger background. The
+immediate exact gate is `BERGER_LINEARIZED_BACH_PBW_EXPANSION`; completing it
+is required before `BERGER_RETAINED_MINIMAL_OPERATOR` can promote.
+Nonminimal gauge-fixing is the separate `BERGER_NONMINIMAL_COMPLETION` gate.
+Causal Green homotopies and nonlinear stability remain open.
 
 ## Promotion rule
 

@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split, the homogeneous neutral two-scalar clock sector, and the smooth fixed-coupling linearized positive-Berger sector on their separately declared phase spaces. Local audits prove that the neutral clock's opposite-sign ratio sector is not globally positive, while the complete standard one-field conformal stealth family has no globally regular everywhere-timelike clock. On the exact positive Berger background, the lapse constraint and compact spatial averaging force delta Q_R=0 for every allowed fixed-coupling linearized tangent; with Omega_total(delta,L_D)=omega delta Q_R this gives the scoped verdict D_GAUGE. The eight temporal/Weyl field, ghost, and minimal-dual rows admit a support-local cyclic SDR. No retained coefficientwise, nonminimal, causal, stability, interacting, boundary, or quantum verdict is promoted.",
+  "claim_boundary": "The promoted classifications are the compact vacuum-cylinder sector split, the homogeneous neutral two-scalar clock sector, and the smooth fixed-coupling linearized positive-Berger sector on their separately declared phase spaces. Local audits prove that the neutral clock's opposite-sign ratio sector is not globally positive, while the complete standard one-field conformal stealth family has no globally regular everywhere-timelike clock. On the exact positive Berger background, the lapse constraint and compact spatial averaging force delta Q_R=0 for every allowed fixed-coupling linearized tangent; with Omega_total(delta,L_D)=omega delta Q_R this gives the scoped verdict D_GAUGE. The eight temporal/Weyl field, ghost, and minimal-dual rows admit a support-local cyclic SDR. The retained spatial gauge and adjoint rows, action-derived matter Hessian, and fourth-order Bach principal block are exact, but the nonzero-Weyl lower-order Bach PBW expansion is open. No complete retained, nonminimal, causal, stability, interacting, boundary, or quantum verdict is promoted.",
   "claim_state": "PARTIAL",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -160,12 +160,21 @@
       "evidence_id": "berger_retained_minimal_layout",
       "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json",
       "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
+    },
+    {
+      "claim_scope": "Action-derived retained-operator preflight completing the full spatial gauge generator, formal-adjoint identity row, matter Hessian, and fourth-order Bach principal block while keeping every lower-order Berger Bach and parent operator gate false.",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "evidence_id": "berger_retained_minimal_operator_preflight",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR_PREFLIGHT.json",
+      "sha256": "721691d7d32f03df85222289a06e03d77fa049b6c8c5beff6dcb5e9c0be1da16"
     }
   ],
   "open_fields": [
     "sufficiency of the quadratic Taub zero fibre for all-order nonlinear integrability",
     "closure and possible algebroid structure of zero-charge transformations",
-    "coefficientwise retained q1, nonminimal rows, stability, and causal Green theory for the matter-coupled Berger branch",
+    "order-three-and-lower Berger linearized-Bach PBW coefficients, complete retained q1, nonminimal rows, stability, and causal Green theory for the matter-coupled Berger branch",
     "Yang-Mills matter contribution",
     "quantitative weak-background stability radius",
     "Lorentzian dS/AdS boundary charges",
@@ -610,7 +619,7 @@
       "verdict_dependency_tags": []
     }
   ],
-  "source_commit": "46d95a1f6f04e446a4d5290ec5666af3af6cd392",
+  "source_commit": "bcea3371a1ba16964a728ab867bb251a8a0eec75",
   "verification_receipts": [
     {
       "command": "python3 symbolic/verify_compact_cylinder_d_charge_audit.py --check",
@@ -803,6 +812,30 @@
       "higher_tiers_not_run": "The next gate is BERGER_RETAINED_MINIMAL_OPERATOR.",
       "status": "PASS",
       "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/berger_retained_minimal_operator.py --check --guards",
+      "elapsed_seconds": 3.57,
+      "escalation_criterion": "Escalate if any retained gauge/adjoint coefficient, matter Hessian coefficient, Bach principal coefficient, nonzero-Weyl guard, or open parent gate changes.",
+      "higher_tiers_not_run": "The order-three-and-lower Berger Bach PBW expansion is explicitly absent, so no complete retained, nonminimal, or causal theorem is promoted.",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_operator_independent.py",
+      "elapsed_seconds": 3.57,
+      "escalation_criterion": "Escalate if the independent digest, adjoint, principal symmetry, gauge-kernel, rank, or fail-closed checks fail.",
+      "higher_tiers_not_run": "The independent consumer checks only the declared preflight matrices and cannot close the missing lower-order Bach calculation.",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_minimal_operator",
+      "elapsed_seconds": 3.56,
+      "escalation_criterion": "Escalate if the 26-row layout reference, exact preflight rows, principal identities, or open parent flags drift.",
+      "higher_tiers_not_run": "The next mathematical gate is BERGER_LINEARIZED_BACH_PBW_EXPANSION.",
+      "status": "PASS",
+      "test_tier": 1
     }
   ],
   "work_packages": {
@@ -854,10 +887,11 @@
         "berger_clock_reduced_charge_seed",
         "berger_fixed_coupling_delta_charge",
         "berger_minimal_bv_clock_sdr",
-        "berger_retained_minimal_layout"
+        "berger_retained_minimal_layout",
+        "berger_retained_minimal_operator_preflight"
       ],
-      "next_gate": "Complete BERGER_RETAINED_MINIMAL_OPERATOR, then BERGER_NONMINIMAL_COMPLETION, followed by the causal and stability gates.",
-      "result": "The vacuum one-real-scalar and complete standard one-field stealth routes are obstructed. The neutral (+,-) pair gives a scoped homogeneous D_GAUGE reference-clock theorem but fails the global positive-health audit. The exact Berger-cylinder family supplies healthy standard-sign matter and nonzero clock momentum. At fixed alpha_B and lambda, the exact lapse row is proportional to delta Q_R; compact spatial averaging forces delta Q_R=0 in every smooth linearized mode. The helical presymplectic identity therefore gives D_GAUGE on the declared fixed-coupling Berger phase space. The eight temporal/Weyl clock and minimal-dual rows contract support-locally and cyclically, leaving a 26-component retained minimal complex whose authoritative row layout and pairing conventions are frozen. Its coefficientwise operator, nonminimal rows, causal theory, and nonlinear stability remain open.",
+      "next_gate": "Complete BERGER_LINEARIZED_BACH_PBW_EXPANSION, then promote BERGER_RETAINED_MINIMAL_OPERATOR; BERGER_NONMINIMAL_COMPLETION and the causal and stability gates follow.",
+      "result": "The vacuum one-real-scalar and complete standard one-field stealth routes are obstructed. The neutral (+,-) pair gives a scoped homogeneous D_GAUGE reference-clock theorem but fails the global positive-health audit. The exact Berger-cylinder family supplies healthy standard-sign matter and nonzero clock momentum. At fixed alpha_B and lambda, the exact lapse row is proportional to delta Q_R; compact spatial averaging forces delta Q_R=0 in every smooth linearized mode. The helical presymplectic identity therefore gives D_GAUGE on the declared fixed-coupling Berger phase space. The eight temporal/Weyl clock and minimal-dual rows contract support-locally and cyclically, leaving a 26-component retained minimal complex whose authoritative row layout and pairing conventions are frozen. The full spatial gauge and adjoint rows, action-derived matter Hessian, and fourth-order Bach principal block are now exact. The order-three-and-lower Berger Bach PBW coefficients, complete retained q1, nonminimal rows, causal theory, and nonlinear stability remain open.",
       "status": "PARTIAL"
     }
   }
