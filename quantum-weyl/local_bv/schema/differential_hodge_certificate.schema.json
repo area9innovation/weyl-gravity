@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-local-differential-hodge-v1.json",
+  "title": "Pure-Weyl differential curvature and Hodge certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id",
+    "result_state",
+    "classical_commit",
+    "dependency_tags",
+    "scope",
+    "checks",
+    "one_derivative_curvature",
+    "covariant_commutator",
+    "hodge",
+    "canonical_hashes",
+    "not_computed",
+    "assumptions"
+  ],
+  "properties": {
+    "result_id": {"const": "LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION_CERTIFICATE"},
+    "result_state": {"const": "INFRASTRUCTURE_VERIFIED"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "string", "minLength": 1},
+    "checks": {
+      "type": "object",
+      "additionalProperties": {"enum": ["VERIFIED", "NOT_COMPUTED", "BLOCKED"]}
+    },
+    "one_derivative_curvature": {"type": "object"},
+    "covariant_commutator": {"type": "object"},
+    "hodge": {"type": "object"},
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+    },
+    "not_computed": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "assumptions": {"type": "array", "items": {"type": "string"}}
+  }
+}

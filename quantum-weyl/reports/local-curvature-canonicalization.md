@@ -75,12 +75,14 @@ normalization and chiral projectors are not part of this certificate.
 ## Claim boundary
 
 The common result envelope remains `cohomology_status: NOT_COMPUTED`.  This
-work does not classify `H^{0,4}(s|d)` or `H^{1,4}(s|d)`.  It does not yet
-implement:
+work does not classify `H^{0,4}(s|d)` or `H^{1,4}(s|d)`.  The certificate does
+not cover:
 
-- differential Bianchi identities or covariant-derivative commutators;
+- differential Bianchi identities or covariant-derivative commutators (now
+  covered in the separate follow-on differential/Hodge receipt);
 - dimension-dependent Schouten relations outside the generated sector;
-- Hodge/chiral normalization;
+- Hodge/chiral normalization (now covered for formal two-forms in that
+  follow-on receipt);
 - Weyl-BRST curvature transformations;
 - a general derivative-bounded invariant ansatz;
 - antifield/Koszul--Tate rows or descent;
@@ -112,10 +114,11 @@ scoped infrastructure result, not a classical/quantum freeze, paper theorem,
 lifecycle promotion, shared-core release or QME claim.  The full repository
 suite was not run and is not represented as passing.
 
-## Next local gate
+## Follow-on local gate
 
-The next productive layer is the covariant derivative algebra: differential
-Bianchi identities, commutator curvature terms and Hodge/chiral normalization.
-That will make it possible to generate the complete derivative-bounded
-antifield-independent curvature ansatz while the classical contraction remains
-unfrozen.
+The covariant derivative and formal two-form Hodge layer is recorded in
+`local-differential-hodge-canonicalization.md`.  Its next productive gate is
+the complete six-derivative `R^3` plus `(nabla R)^2` quotient, including their
+IBP/commutator mixing, followed by the derivative-bounded
+antifield-independent curvature ansatz while the classical contraction
+remains unfrozen.

@@ -77,7 +77,7 @@ schema/             machine-readable result contracts
 | Gate | Deliverable | Bootstrap status |
 |---|---|---|
 | A | `CLASSICAL_IMPORT_CERTIFICATE` | `FAIL_CLOSED`; artifact integrity verified, but 15 of 18 export categories remain incomplete or unavailable |
-| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; exact quadratic curvature/Bianchi/IBP infrastructure, but no cohomology classification |
+| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; exact quadratic and once-differentiated curvature/Bianchi, commutator, IBP, parity, and Hodge infrastructure, but no cohomology classification |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `IN_PROGRESS` import/projection infrastructure only |
 | D | reduced and Euclidean coefficient ledgers | `IN_PROGRESS` bookkeeping only; no BV coefficient claimed |
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
@@ -102,6 +102,10 @@ or quantum-master-equation result.
 - [`reports/local-curvature-canonicalization.md`](reports/local-curvature-canonicalization.md)
   records the generated quadratic curvature quotient, Bianchi and IBP rails,
   and the remaining local-algebra gates.
+- [`reports/local-differential-hodge-canonicalization.md`](reports/local-differential-hodge-canonicalization.md)
+  records the generated once-differentiated curvature quotient, commutator
+  convention, signature-aware Hodge projectors, and the six-derivative
+  mixing boundary.
 - [`reports/branch-c-spectral-bootstrap.md`](reports/branch-c-spectral-bootstrap.md)
   records the reduced `E/A/L` character, residues, and determinant boundary.
 - [`reports/bootstrap-integration.md`](reports/bootstrap-integration.md)

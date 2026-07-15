@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
+from functools import lru_cache
 from itertools import permutations, product
 from typing import Iterable, Mapping, Sequence
 
@@ -181,6 +182,7 @@ def _first_occurrence_relabel(
 class TensorMonomial:
     factors: tuple[TensorFactor, ...]
 
+    @lru_cache(maxsize=None)
     def canonicalize(self) -> tuple[int, "TensorMonomial | None"]:
         """Return the signed canonical orbit representative.
 

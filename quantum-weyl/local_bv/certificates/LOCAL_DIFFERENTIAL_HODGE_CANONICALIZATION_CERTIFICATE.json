@@ -1,0 +1,1957 @@
+{
+  "assumptions": [
+    "Riemann convention is fixed by the displayed covariant commutator formula.",
+    "All commutator witness tensor slots are covariant and initially undifferentiated.",
+    "The epsilon contraction convention is epsilon_abcd epsilon^{cdef} = 2 sigma delta_ab^{ef}, with sigma=+1 Euclidean and -1 Lorentzian.",
+    "The finite derivative quotient contains exactly two once-differentiated Riemann factors before IBP/commutator mixing."
+  ],
+  "canonical_hashes": {
+    "algebraic_bianchi_relations_sha256": "5897002fc5aa833591837d89a9c5e7302cf057280e7925f1bd6d4a65146baaba",
+    "commutator_rank_0_sha256": "fb584982b5f9c7c538d52524d74ec8a84f9e97942b94b747cc3dd3be2c1ca13c",
+    "commutator_rank_1_sha256": "9d760430ce697bfbc3e8009f2b88bb2c83a83e64ac7384e820d36122e057dc1c",
+    "commutator_rank_2_sha256": "0464d1096a0c0cf6e6f895f108f0cd74278a6e3280f68704c56239afc412991d",
+    "differential_bianchi_relations_sha256": "d955dce5cdab0f6bc08708d20727e0f3570fbb702ce9f06ba116f56c30814584",
+    "hodge_receipt_sha256": "01b2b1ba5e1d1b4d980c063a785ffdf0a4d96c2d37a4e2aaf5d12e2a58d51a1d",
+    "one_derivative_basis_sha256": "2a5690189c877cd13b26d5bf8c3f46af8234bd4d5e3e4df81a435f48f609a842",
+    "source_manifest_sha256": "d6af2de20cd14bd48894d9f717c0d8eb4349cd8d789ddf599f145804d2f4716b"
+  },
+  "checks": {
+    "algebraic_bianchi_on_derivative_sector": "VERIFIED",
+    "antifield_rows": "BLOCKED",
+    "chiral_projectors": "VERIFIED",
+    "commutator_antisymmetry": "VERIFIED",
+    "covariant_commutator_declared_sign": "VERIFIED",
+    "differential_bianchi_quotient": "VERIFIED",
+    "dimension_dependent_schouten_quotient": "NOT_COMPUTED",
+    "exact_rational_relation_reduction": "VERIFIED",
+    "hodge_signature_square": "VERIFIED",
+    "ibp_commutator_mixing_with_cubic_curvature": "NOT_COMPUTED",
+    "local_cohomology_H_s_mod_d": "NOT_COMPUTED",
+    "one_derivative_pairing_generation": "VERIFIED",
+    "parity_exchanges_chiralities": "VERIFIED"
+  },
+  "classical_commit": "UNFROZEN",
+  "covariant_commutator": {
+    "all_tensor_slots": "COVARIANT",
+    "convention": "[nabla_a,nabla_b] T_{c1...cr} = -sum_i R^d{}_{ci ab} T_{c1...d...cr}",
+    "witnesses": {
+      "covariant_rank_0": {
+        "antisymmetric_in_derivative_indices": true,
+        "curvature_action_term_count": 0,
+        "quotient_dimension": 1,
+        "relation": {
+          "terms": [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [
+                      0,
+                      1
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [],
+                    "spacetime_parity": 0,
+                    "tensor": "T0"
+                  }
+                ]
+              }
+            },
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": -1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [
+                      1,
+                      0
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [],
+                    "spacetime_parity": 0,
+                    "tensor": "T0"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "relation_rank": 1,
+        "term_count": 2
+      },
+      "covariant_rank_1": {
+        "antisymmetric_in_derivative_indices": true,
+        "curvature_action_term_count": 1,
+        "quotient_dimension": 2,
+        "relation": {
+          "terms": [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": -1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      3,
+                      1,
+                      2
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      3
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "T1"
+                  }
+                ]
+              }
+            },
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [
+                      1,
+                      2
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "T1"
+                  }
+                ]
+              }
+            },
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": -1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [
+                      2,
+                      1
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "T1"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "relation_rank": 1,
+        "term_count": 3
+      },
+      "covariant_rank_2": {
+        "antisymmetric_in_derivative_indices": true,
+        "curvature_action_term_count": 2,
+        "quotient_dimension": 3,
+        "relation": {
+          "terms": [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": -1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      4,
+                      2,
+                      3
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      4,
+                      1
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "T2"
+                  }
+                ]
+              }
+            },
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": -1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      1,
+                      4,
+                      2,
+                      3
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "Riemann"
+                  },
+                  {
+                    "derivatives": [],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      4
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "T2"
+                  }
+                ]
+              }
+            },
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [
+                      2,
+                      3
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      1
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "T2"
+                  }
+                ]
+              }
+            },
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": -1
+              },
+              "monomial": {
+                "factors": [
+                  {
+                    "derivatives": [
+                      3,
+                      2
+                    ],
+                    "grassmann_parity": 0,
+                    "slots": [
+                      0,
+                      1
+                    ],
+                    "spacetime_parity": 0,
+                    "tensor": "T2"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "relation_rank": 1,
+        "term_count": 4
+      }
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "hodge": {
+    "EUCLIDEAN": {
+      "checks": {
+        "epsilon_contraction_normalization": true,
+        "negative_eigenvalue": true,
+        "negative_idempotent": true,
+        "parity_exchanges_projectors": true,
+        "parity_involution": true,
+        "parity_reverses_star": true,
+        "positive_eigenvalue": true,
+        "positive_idempotent": true,
+        "projector_orthogonality": true,
+        "projector_sum": true,
+        "star_square": true
+      },
+      "eigenvalues": [
+        "1",
+        "-1"
+      ],
+      "epsilon_contraction_coefficient": 2,
+      "negative_projector": [
+        [
+          "1/2",
+          "-1/2"
+        ],
+        [
+          "-1/2",
+          "1/2"
+        ]
+      ],
+      "parity_matrix": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "positive_projector": [
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ]
+      ],
+      "signature": "EUCLIDEAN",
+      "star_matrix": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "star_square_sign": 1
+    },
+    "LORENTZIAN": {
+      "checks": {
+        "epsilon_contraction_normalization": true,
+        "negative_eigenvalue": true,
+        "negative_idempotent": true,
+        "parity_exchanges_projectors": true,
+        "parity_involution": true,
+        "parity_reverses_star": true,
+        "positive_eigenvalue": true,
+        "positive_idempotent": true,
+        "projector_orthogonality": true,
+        "projector_sum": true,
+        "star_square": true
+      },
+      "eigenvalues": [
+        "I",
+        "-I"
+      ],
+      "epsilon_contraction_coefficient": -2,
+      "negative_projector": [
+        [
+          "1/2",
+          "-I/2"
+        ],
+        [
+          "I/2",
+          "1/2"
+        ]
+      ],
+      "parity_matrix": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "positive_projector": [
+        [
+          "1/2",
+          "I/2"
+        ],
+        [
+          "-I/2",
+          "1/2"
+        ]
+      ],
+      "signature": "LORENTZIAN",
+      "star_matrix": [
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "star_square_sign": -1
+    }
+  },
+  "not_computed": [
+    "integration-by-parts and commutator reduction mixing (nabla Riemann)^2 with cubic curvature",
+    "complete six-derivative scalar invariant quotient",
+    "dimension-dependent Schouten identities",
+    "Hodge action on the complete Weyl tensor with tracefree quotient",
+    "Weyl BRST variations and derivative-bounded ghost-number ansatz",
+    "antifield and Koszul-Tate differential",
+    "counterterm or anomaly cohomology H^{g,4}(s|d)",
+    "descent, cylinder restriction, coefficients, QME, and Lorentzian causal products"
+  ],
+  "one_derivative_curvature": {
+    "algebraic_bianchi_rank": 3,
+    "algebraic_bianchi_relation_count": 6,
+    "basis_was_generated": true,
+    "canonical_basis": [
+      {
+        "factors": [
+          {
+            "derivatives": [
+              0
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              1,
+              2
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              2
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              3,
+              4,
+              3,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              0
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              1,
+              2
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              3
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              3,
+              4,
+              2,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              0
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              2
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              4,
+              3,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              0
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              4
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              0
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              4
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              4,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              2
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              2
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              3,
+              4,
+              3,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              3
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              2
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              1
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              2,
+              4,
+              3,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              3
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              2
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              3
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              4,
+              2,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              4
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              0
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              4
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              0
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              1,
+              4,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              4
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              4
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              4
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [
+              4
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              2,
+              1,
+              3
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          }
+        ]
+      }
+    ],
+    "combined_relation_rank": 8,
+    "differential_bianchi_rank": 8,
+    "differential_bianchi_relation_count": 16,
+    "free_columns": [
+      5,
+      6,
+      7,
+      11
+    ],
+    "generator": "all perfect matchings of ten slots in (nabla Riemann)(nabla Riemann)",
+    "ibp_or_commutator_reduction_applied": false,
+    "pivot_columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      9,
+      10
+    ],
+    "quotient_dimension": 4,
+    "raw_pairing_count": 945,
+    "relation_rref": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "symmetry_canonical_monomial_count": 12
+  },
+  "result_id": "LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION_CERTIFICATE",
+  "result_state": "INFRASTRUCTURE_VERIFIED",
+  "scope": "Finite exact (nabla Riemann)^2 contractions modulo intrinsic, algebraic-Bianchi, and differential-Bianchi relations; declared-sign covariant commutator witnesses; Euclidean/Lorentzian two-form Hodge and chiral-projector algebra with parity exchange."
+}

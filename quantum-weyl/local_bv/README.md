@@ -22,14 +22,26 @@ three-dimensional parity-even quadratic curvature quotient.  The conventional
 `Riemann_squared`, `Ricci_squared`, and `scalar_curvature_squared`
 representatives independently span it.
 
+The third scoped layer generates all 945 complete contractions of two
+once-differentiated Riemann tensors.  Intrinsic symmetries leave 12 canonical
+monomials.  Generated algebraic and differential Bianchi relations have
+combined exact rank eight, leaving a four-dimensional finite quotient.  A
+separate declared-sign constructor verifies covariant derivative commutators
+on scalar, covector, and rank-two tensor witnesses.  Exact two-form Hodge
+algebra verifies `star^2=+1` in Euclidean signature, `star^2=-1` in Lorentzian
+signature, the corresponding real/complex chiral projectors, and their
+exchange under parity.
+
 This is not Gate A or Gate B.  In particular, the classical commit is
 `NOT_FROZEN`; antifield and nonminimal rows have not been imported; and
-general covariant curvature reduction remains incomplete.  Only the generated
-two-Riemann algebraic-Bianchi quotient and an exact total-divergence/IBP rail
-are certified.  Differential Bianchi identities, derivative commutators,
-Hodge-star normalization, descent, and both `H^{0,4}(s|d)` and
-`H^{1,4}(s|d)` remain unavailable.  The curvature certificate must not be
-cited as a complete covariant jet normal form or cohomology calculation.
+general covariant curvature reduction remains incomplete.  The
+once-differentiated quotient does not apply integration by parts or commute
+derivatives, because those operations mix `(nabla Riemann)^2` with cubic
+curvature.  The complete six-derivative quotient, dimension-dependent
+Schouten identities, Weyl-tensor tracefree Hodge action, descent, and both
+`H^{0,4}(s|d)` and `H^{1,4}(s|d)` remain unavailable.  Neither curvature
+certificate may be cited as a complete covariant jet normal form or
+cohomology calculation.
 
 Run the exact tests and reproduce the receipt from the repository root:
 
@@ -37,7 +49,9 @@ Run the exact tests and reproduce the receipt from the repository root:
 PYTHONPATH=quantum-weyl python -m unittest discover -s quantum-weyl/local_bv/tests -v
 PYTHONPATH=quantum-weyl python -m local_bv.certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.curvature_certificate --check
+PYTHONPATH=quantum-weyl python -m local_bv.differential_hodge_certificate --check
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_CURVATURE_CANONICALIZATION.json
+python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json
 ```
 
 The certificate is
@@ -52,7 +66,12 @@ The detailed curvature receipt is
 with its common result envelope at
 [`../certificates/LOCAL_CURVATURE_CANONICALIZATION.json`](../certificates/LOCAL_CURVATURE_CANONICALIZATION.json).
 
-Next admissible local steps are the differential Bianchi/derivative-commutator
-relations, Hodge/chiral normalization, Weyl BRST curvature rows, and a
-derivative-bounded invariant ansatz.  The antifield and relative-cohomology
-layers still wait for the frozen classical schema.
+The differential-curvature/Hodge receipt is
+[`certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION_CERTIFICATE.json`](certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION_CERTIFICATE.json),
+with its common result envelope at
+[`../certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json`](../certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json).
+
+Next admissible local steps are the complete six-derivative invariant space
+with its IBP/commutator mixing, Weyl BRST curvature rows, and a
+derivative-bounded ghost-number ansatz.  The antifield and
+relative-cohomology layers still wait for the frozen classical schema.
