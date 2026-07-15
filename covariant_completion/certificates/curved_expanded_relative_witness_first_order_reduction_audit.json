@@ -1,0 +1,75 @@
+{
+  "aligned_determinant_audit": {
+    "block_elimination_identity": "S=[P_field/tau,P_curvature] after p1=(rho/tau)p0, p2=p3=0",
+    "column_permutation_parity": 0,
+    "definition_and_gradient_pivot_power": 96,
+    "field_column_scaling_power": -24,
+    "identity": "det(tau A0+rho A1)=tau^72 det(P_weighted(tau,rho))",
+    "net_tau_power": 72,
+    "polynomial_extension_across_tau_zero": true,
+    "schur_elimination_defect": 0,
+    "sign": "+1"
+  },
+  "causal_green_homotopy": false,
+  "curvature_causal_green_operators": false,
+  "fail_closed": true,
+  "intrinsic_polynomial_Jordan_chain": {
+    "Q1_a0_defect": 0,
+    "Q1_a1_plus_Qprime1_a0_defect": 0,
+    "a0_nonzero_entries": [
+      [
+        18,
+        "2"
+      ]
+    ],
+    "a1_nonzero_entries": [
+      [
+        8,
+        "1"
+      ]
+    ],
+    "constraint_artifact": false,
+    "fixed_image_constraint_defect_nonzero_entries": [
+      [
+        18,
+        "-2"
+      ]
+    ],
+    "original_pencil": "Q(z)=P_weighted((-z,1,0,0))",
+    "spectral_intertwining_defect": 0,
+    "spectral_intertwining_identity": "(A1-z A0)T(z)=0_[96] direct-sum Q(z)",
+    "spectral_prolongation": "T(z)(m,x)=(0,-z m,m,0,0,x)",
+    "u_equals_T1_a0_defect": 0,
+    "u_in_fixed_spectral_prolongation_image": true,
+    "v_equals_T1_a1_plus_Tprime1_a0_defect": 0,
+    "v_in_first_spectral_jet": true,
+    "v_in_fixed_spectral_prolongation_image": false
+  },
+  "positive_symmetrizer_scope": {
+    "arbitrary_support_local_first_order_realizations_obstructed": false,
+    "explicit_212_reduction_obstructed": true,
+    "full_invariant_spatial_R6sharp_family_obstructed": false,
+    "generalized_or_compositional_Green_hyperbolicity_obstructed": false,
+    "intrinsic_polynomial_elementary_divisor_length_at_least": 2,
+    "reason": "nontrivial +1 Jordan chain in A0^-1 A1",
+    "strong_polynomial_linearizations_preserving_finite_elementary_divisors_obstructed": true
+  },
+  "principal_model_operator_intertwining": {
+    "coefficientwise_defect": 0,
+    "curved_lower_order_completion_included": false,
+    "identity": "L_op(zeta) T_op(zeta)=0_[96] direct-sum P_weighted(zeta)",
+    "operator": "tau A0+xi_i Ai+Azeroth",
+    "prolongation": "T_op(m,x)=(m,tau m,xi_1 m,xi_2 m,xi_3 m,x)",
+    "prolongation_sha256": "45f4ef345547600d18a5177231e8cabaec92f228b3a2d7922c6d15cbe20fbb48"
+  },
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-expanded-relative-first-order-reduction-audit-v1",
+  "scope": {
+    "R6sharp_extension": "R6sharp_0 nabla_0 (spatial coefficients zero)",
+    "full_invariant_spatial_R6sharp_family_tested": false,
+    "relative_branch": "pair-(1,6)",
+    "scalar_branch": "D_alt=-2 Pi_(h00,f00,v0)"
+  },
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": []
+}

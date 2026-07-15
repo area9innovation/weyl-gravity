@@ -1453,7 +1453,7 @@ candidate, explicit finite-order coefficient maps give the exact numerator
 identity
 
 \begin{equation}\label{eq:relative-pair16-numerator}
- K R_1 N_{\rm curv}^{\sharp}R_6^{\sharp}=\Pi_{\rm vector}.
+ K R_1 N_{\rm curv}^{\sharp}R_6^{\sharp}=-\Pi_{\rm vector}.
 \end{equation}
 
 To pass from this numerator to the saddle Schur term $BD^{-1}C$, the actual
@@ -1463,15 +1463,93 @@ equations and their formal-adjoint rows,
  D(dt)=\operatorname{diag}(I_{26},-I_{40},-I_{26}),
  \qquad D(dt)^{-1}=D(dt).
 \end{equation}
-Consequently the exact pair-$1+6$ Schur term is
-$BD^{-1}C=-\Pi_{\rm vector}$.  Retaining the rank-three scalar diagonal gives
+Here the first-order compact-support convention
+$N_{{\rm curv},\mu}^{\sharp}=-N_{{\rm curv},\mu}^{T}$ is used both in the
+middle diagonal and in $C$.  Consequently the exact pair-$1+6$ Schur term is
+$BD^{-1}C=+\Pi_{\rm vector}$, and the field Schur block is
+$E_{{\rm aux},2}+D_{\rm scalar}-\Pi_{\rm vector}$.  Retaining the rank-three scalar diagonal gives
 an assembled $116\times116$ temporal Douglis symbol of exact rank $116$ and
 determinant one.  This closes the temporal-invertibility gate only.  The
 scalar diagonal has not been lifted to a cyclic all-row witness, and the
-arbitrary-covector characteristic polynomial, positive symmetrizer,
+three spatial first-order coefficients of $R_6^{\sharp}$ have not yet been
+constructed.  Hence the arbitrary-covector relative symbol itself, its
+characteristic polynomial, positive symmetrizer,
 lower-order completion and every-degree Green identities remain open.  Thus
 no Green-theoretic flag follows from
 \eqref{eq:relative-pair16-numerator}--\eqref{eq:relative-curvature-temporal-diagonal}.
+
+The subsequent complete $SO(3)$-equivariant audit makes this boundary
+sharper.  The actual $R_6^\sharp$ coefficient equations have a
+$22$-dimensional temporal commutant and a $46$-dimensional spatial-vector
+commutant.  After fixing the temporal normalization above, all $46$ spatial
+parameters were retained.  Nevertheless, for the intrinsic aligned pencil
+$Q(z)=P_{\rm weighted}((-z,1,0,0))$ the vectors
+$a_0=2f_{23}$ and $a_1=h_{23}$ obey
+\[
+ Q(1)a_0=0,\qquad Q(1)a_1+Q'(1)a_0=0,
+\]
+and the two parameter-sensitivity maps have exact rank zero.  Hence every
+regular member of this fixed-temporal pair-$1+6$, cyclic $-2\Pi$ family
+retains a length-two elementary divisor.  This rules out a semisimple
+faithful strong linearization, and therefore a positive symmetric-hyperbolic
+symmetrizer, within this family.  It is not a no-go for another relative
+incidence, a changed temporal normalization, a larger witness, or generalized
+Green hyperbolicity.  In particular the causal and final covariant
+$H^4$ flags remain fail-closed.
+
+This non-semisimplicity is not itself a Green obstruction.  An independent
+BV-row audit identifies $2f_{23}$ with the already contractible shifted
+auxiliary summand, while $h_{23}$ has nonzero Weyl helicity two; the
+extension splits after the certified support-local auxiliary shift and dies
+as an extension on $Q$-cohomology.  Moreover, on the aligned physical
+principal quotient the exact block is
+\[
+ \begin{pmatrix}qI_2&0\\4\rho^2I_2&qI_2\end{pmatrix},
+ \qquad q=\rho^2-\tau^2,
+\]
+whose abstract operator form $\left(\begin{smallmatrix}D&0\\R&D\end{smallmatrix}\right)$
+has the two-sided same-sided Green inverse
+$\left(\begin{smallmatrix}G&0\\-GRG&G\end{smallmatrix}\right)$.  Thus the
+remaining task is a projector-free local exact-extension construction, not
+removal of the physical Jordan chain.  Refining the bundle support graph by
+the evolution/subsidiary equation-dual split leaves a reciprocal rank-$34$
+$(h,f,C^\sharp)$ component; the other curvature tails are triangular
+singletons.  This aligned principal calculation does not yet promote the
+full physical biwave or prolonged Green flags, since the local curvature
+quotient and lower-order intertwining remain open.
+On this aligned channel the certified BV shift is explicit as well: writing
+$L=1-z^2$, it conjugates the complex block to
+$\operatorname{diag}(L^2,-1)$, while the witness remains the closed block
+$\left(\begin{smallmatrix}L&0\\4&L\end{smallmatrix}\right)$ with exact
+same-sided inverse
+$\left(\begin{smallmatrix}G&0\\-4G^2&G\end{smallmatrix}\right)$.  No inverse
+curl, Laplacian, TT projector or helicity projector occurs in this formula;
+what remains open is its support-local realization in the complete
+$116$-row exact extension.
+On the exact TT-plus-shifted-auxiliary operator subcomplex one can therefore
+promote the scoped statements that the physical biwave block is Green
+hyperbolic and its Jordan extension is causal: the restricted witness is
+$\operatorname{diag}(B_{\rm TT},1,B_{\rm TT},1)$ and the corresponding
+restricted $Q\Lambda_\pm+\Lambda_\pm Q=1$ identity is exact.  These are not
+the complete prolonged Green statements, because no support-local map from
+arbitrary sources to the TT block, rank-$34$ reciprocal inverse, or
+rank-$4$ vector inverse has yet been constructed.
+The first alternative-incidence screen is also exact: pairs $1+7$ and
+$2+7$ have a nonzero joint intrinsic-sensitivity image of rank $16$.
+Their smallest temporally regular slices have determinant $8$ and entirely
+real causal roots, but are non-semisimple at speeds $0$ and $\pm1$; the first
+directly sensitive spatial correction does not repair either slice.  This is
+not a no-go for the complete alternative families.
+A projector-free differential-module analysis reduces the reciprocal
+rank-$34$ component further.  The six vector-gauge columns together with the
+$q^\sharp/r^\sharp$ subsidiary coordinates present a rank-$12$ invariant
+submodule with an exact recursive Green inverse.  The rank-$22$ quotient
+contains a closed rank-$8$ symmetric-hyperbolic constraint quotient and an
+unresolved rank-$14$ field cokernel.  Since
+$(C_1,\operatorname{div}C_1)K=0$, curvature descends locally to this
+cokernel; constructing its induced biwave intertwiner and inverse is the
+remaining central block problem.  The raw off-diagonal ideal is not
+nilpotent, so the inverse does not follow from a naive finite Neumann series.
 
 The selected causal route therefore has the following explicit flags:
 \begin{equation}\label{eq:open-curvature-flags}

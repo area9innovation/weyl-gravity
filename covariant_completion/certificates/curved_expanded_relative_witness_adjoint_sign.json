@@ -1,0 +1,97 @@
+{
+  "causal_green_homotopy": false,
+  "central_block_order": [
+    "M_aux[24]",
+    "X_U[26]",
+    "X_Eq_sharp[40]",
+    "Y_U_sharp[26]"
+  ],
+  "corrected_temporal_Schur_calculation": {
+    "BC": "-Pi_vector_gauge",
+    "B_Dinverse_C": "+Pi_vector_gauge",
+    "complete_determinant": 1,
+    "complete_rank": 116,
+    "complete_shape": [
+      116,
+      116
+    ],
+    "field_Schur": "Eaux_2(dt)+Dscalar_2(dt)-Pi_vector_gauge",
+    "field_Schur_determinant": 1,
+    "field_Schur_rank": 24,
+    "sha256": "de9909bb0300ac4eeb9aecacb60fe3b072a8b803481ed83403b2fb841efd5daf"
+  },
+  "curvature_causal_green_operators": false,
+  "exact_full_covector_block_formula": {
+    "A": "Eaux_2(zeta)+Dscalar_2(zeta)",
+    "B": "[0, K_1(zeta) R1, 0]",
+    "C": "[0, Ncurv_1^sharp(zeta) R6sharp_1(zeta), 0]^T",
+    "D": "diag(L_26(zeta), -diag(L_26(zeta)^T,S_14(zeta)^T), -L_26(zeta)^T)",
+    "Douglis_orders": {
+      "A": 2,
+      "B": 1,
+      "C": 2,
+      "D": 1
+    },
+    "types": {
+      "A": "M_aux[24] -> M_aux[24]",
+      "B": "X_U+X_Eq_sharp+Y_U_sharp[92] -> M_aux[24]",
+      "C": "M_aux[24] -> X_U+X_Eq_sharp+Y_U_sharp[92]",
+      "D": "curvature_central[92] -> curvature_central[92]"
+    }
+  },
+  "fail_closed": true,
+  "formal_adjoint_convention": {
+    "NcurvSharp_coefficients_equal_minus_transpose": true,
+    "Ncurv_order": 1,
+    "coefficient_count": 4,
+    "rule": "A_I^sharp=(-1)^|I| A_I^T for parallel coefficients",
+    "temporal_Ncurv": "[0_(14x26),I_14]",
+    "temporal_NcurvSharp": "-[0_(14x26),I_14]^T",
+    "temporal_sha256": "3290f2cf94c7882f543ea44a941c4b8eb3d7b50cea1cb35d2806e4fbca0a3182"
+  },
+  "known_arbitrary_covector_curvature_diagonal": {
+    "coefficient_count": 4,
+    "coefficient_sha256": [
+      "150db1e57e9d007ef00b3998820b051aa6dea412e199348f04c896233984a556",
+      "35affd42c181cd99d38c3113e987a31ca89e92a82664581270725e15f5f6f8ae",
+      "0e8a22af60e55be34104eae809104708a07004ed821324acdbea6ce9df40a18c",
+      "8bdee2fdece4704a6b08a4b5cde6bab4324831ebef89c868aa02924ac353f6cd"
+    ],
+    "coefficient_shapes": [
+      [
+        92,
+        92
+      ],
+      [
+        92,
+        92
+      ],
+      [
+        92,
+        92
+      ],
+      [
+        92,
+        92
+      ]
+    ],
+    "derived_from_exact_L_and_S_tables": true
+  },
+  "operator_coverage_boundary": {
+    "Dscalar_coefficients_currently_constructed": 1,
+    "Dscalar_cyclic_witness_lift_constructed": false,
+    "Dscalar_order_two_coefficients_required": 10,
+    "R1_order_zero_full_bundle_map": true,
+    "R1_spatial_coefficients_required": 0,
+    "R6sharp_coefficients_currently_constructed": 1,
+    "R6sharp_covariant_formula_constructed": false,
+    "R6sharp_missing_spatial_coefficients": 3,
+    "R6sharp_order_one_coefficients_required": 4,
+    "arbitrary_covector_relative_symbol_defined": false,
+    "reason": "a temporal coefficient does not determine the three spatial coefficients of R6sharp or the remaining order-two scalar table"
+  },
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-expanded-relative-witness-adjoint-sign-audit-v1",
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": []
+}

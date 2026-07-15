@@ -678,6 +678,27 @@ class CurvatureProlongationStatus:
             ),
             **obligations,
             "atomic_open_obligations": obligations,
+            "fixed_temporal_16_diagnostic_flags": {
+                "fixed_temporal_16_family_complete": True,
+                "intrinsic_sensitivity_matrix_zero": True,
+                "parameter_uniform_Jordan_chain": True,
+                "strong_hyperbolicity_in_16_family": False,
+                "symmetric_hyperbolicity_in_16_family": False,
+                "fixed_temporal_16_no_go": True,
+                "aligned_physical_biwave_recursive_formula_exact": True,
+                "aligned_physical_Jordan_extension_causal": True,
+                "physical_biwave_block_green_hyperbolic": True,
+                "physical_Jordan_extension_causal": True,
+                "physical_green_flag_scope": (
+                    "exact restricted TT plus shifted-auxiliary operator subcomplex"
+                ),
+                "alternative_17_27_intrinsic_sensitivity_nonzero": True,
+                "alternative_17_27_minimal_regular_slices_semisimple": False,
+                "alternative_17_27_full_family_no_go": False,
+                "rank34_presented_rank12_submodule_green": True,
+                "rank34_rank8_constraint_quotient_hyperbolic": True,
+                "rank34_rank14_field_cokernel_green": False,
+            },
             "phase1_evidence": {
                 "certificate": "curved_weyl_cotton_jet_comparison.json",
                 "exhaustive_Weyl_two_jets": 150,
@@ -768,6 +789,36 @@ class CurvatureProlongationStatus:
                 ),
                 "expanded_temporal_douglis_certificate": (
                     "curved_expanded_relative_witness_douglis.json"
+                ),
+                "expanded_adjoint_sign_audit_certificate": (
+                    "curved_expanded_relative_witness_adjoint_sign.json"
+                ),
+                "fixed_temporal_16_family_certificate": (
+                    "curved_expanded_relative_witness_r6_family.json"
+                ),
+                "fixed_temporal_16_no_go_certificate": (
+                    "curved_expanded_relative_witness_r6_first_order_no_go.json"
+                ),
+                "fixed_temporal_16_triangular_audit_certificate": (
+                    "curved_expanded_relative_witness_triangular_green_audit.json"
+                ),
+                "fixed_temporal_16_jordan_homology_certificate": (
+                    "curved_expanded_relative_witness_jordan_homology.json"
+                ),
+                "fixed_temporal_16_jordan_triangular_certificate": (
+                    "curved_expanded_relative_witness_jordan_triangular.json"
+                ),
+                "shifted_physical_green_filtration_certificate": (
+                    "curved_expanded_relative_witness_shifted_green_filtration.json"
+                ),
+                "rank34_differential_module_certificate": (
+                    "curved_expanded_relative_witness_rank34_module.json"
+                ),
+                "alternative_incidence_screen_certificate": (
+                    "curved_expanded_relative_witness_incidence_screen.json"
+                ),
+                "alternative_semisimplicity_certificate": (
+                    "curved_expanded_relative_witness_alternative_semisimplicity.json"
                 ),
                 "factorization_certificate": (
                     "pure-weyl-mixed-order-factorization-v1 (not currently emitted)"

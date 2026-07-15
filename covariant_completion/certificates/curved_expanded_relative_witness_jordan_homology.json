@@ -1,0 +1,195 @@
+{
+  "BV_differential_at_aligned_anchor": {
+    "a0_is_BV_cocycle": false,
+    "a0_is_gauge_symbol": false,
+    "a1_is_aligned_BV_cocycle": true,
+    "a1_is_gauge_symbol": false,
+    "full_QBV_a0": [
+      [
+        8,
+        "-2"
+      ]
+    ],
+    "full_QBV_a1": [],
+    "full_field_differential_sha256": "8466e0638d7350745e66aa44bd9778bbbfd160108b51ed5eecd23c72c5898526",
+    "identities": [
+      "Q_BV(2 f23)=-2 Ebar_h23",
+      "Q_BV(h23)=0",
+      "sigma_2(Q_BV)(2 f23)=0",
+      "sigma_2(Q_BV)(h23)=4 Ebar_f23",
+      "Q_BV(Ebar_h23)=0"
+    ],
+    "principal_QBV_a0": [],
+    "principal_QBV_a1": [
+      [
+        18,
+        "4"
+      ]
+    ],
+    "principal_field_symbol_sha256": "3343f24682ba29dca36b2d276b2cf863b08c05d5052810bbfbda784db1adc8fa"
+  },
+  "architectural_consequence": {
+    "Jordan_block_entirely_contractible": false,
+    "Jordan_block_touches_physical_curvature_through_a1": true,
+    "Jordan_eigenvector_is_contractible": true,
+    "candidate_next_route": "a block-triangular Green construction may contract the f_hat pair and propagate the retained curvature block separately",
+    "changing_temporal_incidence_still_available": true,
+    "triangular_Green_inverse_constructed_here": false
+  },
+  "causal_green_homotopy": false,
+  "causal_quasi_isomorphism": false,
+  "component_ledger": {
+    "M_aux_order": [
+      "h[10]",
+      "f[10]",
+      "v[4]"
+    ],
+    "a0": {
+      "BV_degree": 0,
+      "M_aux_index": 18,
+      "formula": "2 f_23",
+      "shifted_block": "f_hat[10] generalized auxiliary"
+    },
+    "a1": {
+      "BV_degree": 0,
+      "M_aux_index": 8,
+      "formula": "h_23",
+      "shifted_block": "h[10] retained metric"
+    },
+    "equation_partner_of_a0": {
+      "BV_degree": 1,
+      "Ebar_aux_index": 8,
+      "formula": "Ebar_h23",
+      "reason": "the action fibre pairing exchanges the tensor rows"
+    },
+    "symmetric_tensor_order": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ]
+    ]
+  },
+  "curvature_and_constraints": {
+    "Weyl_symbol_on_a0": 0,
+    "Weyl_symbol_on_a1_nonzero": true,
+    "a0_is_curvature_mapping_cone_coordinate": false,
+    "a1_is_curvature_mapping_cone_coordinate": false,
+    "curvature_graph_lift_of_a0": "zero (T_state depends on retained h)",
+    "curvature_graph_lift_of_a1": "Psi=sigma(C1)h23, nonzero",
+    "intrinsic_116_polynomial_chain_independent_of_that_lift": true,
+    "linearized_Weyl_target": "physical helicity (+2) plus (-2)",
+    "standard_212_Jordan_lift_satisfies_gradient_constraints": false
+  },
+  "curvature_causal_green_operators": false,
+  "existing_contractible_pair": {
+    "a0_is_in_Q_contractible_summand": true,
+    "a0_projection_to_metric_core": 0,
+    "a1_is_in_Q_contractible_summand": false,
+    "a1_projection_to_metric_core": "h23",
+    "additional_acyclic_pair_required_for_homological_split": false,
+    "arrow": "f_hat23 -> -Ebar_h23",
+    "homotopy": "k(Ebar_h23)=f_hat23",
+    "identity": "Qk+kQ=-Pi_(f_hat23,Ebar_h23)",
+    "identity_defect": 0
+  },
+  "fail_closed": true,
+  "prolonged_green_witness": false,
+  "representation_and_extension": {
+    "Jordan_extension_survives_Q_cohomology": false,
+    "bundle_representation": "H_(+-2) direct-sum H_(+-2)",
+    "cohomology_contribution": "a0 contributes zero; the retained a1 channel maps to the physical Weyl helicity-two quotient",
+    "extension_type": "off-shell triangular coupling between an existing contractible auxiliary pair and the retained physical metric block",
+    "generator_square": "-4 I4",
+    "little_group_generator": [
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        -2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        -2,
+        0
+      ]
+    ],
+    "real_helicity_basis": [
+      "h22-h33",
+      "h23",
+      "f22-f33",
+      "f23"
+    ],
+    "splits_as_QBV_complex_after_existing_local_shift": true,
+    "splits_as_SO2_bundle_representation": true,
+    "splits_as_fixed_witness_pencil_module": false
+  },
+  "schema": "pure-weyl-expanded-relative-jordan-homology-v1",
+  "scope": {
+    "aligned_covector": [
+      -1,
+      1,
+      0,
+      0
+    ],
+    "classification_level": "exact flat Fourier anchor plus the certified global support-local curved BV split",
+    "polynomial_Q_is_not_BV_Q": true,
+    "relative_branch": "fixed-temporal pair-(1,6)",
+    "scalar_branch": "BV-cyclic D_alt=-2 Pi_(h00,f00,v0)"
+  },
+  "source_certificate_sha256": {
+    "curved_deformation_retract_status.json": "4e09bec901e2863d430e0a158a893c95442e3ef387b6235f10cad34b1fa8c15d",
+    "curved_expanded_relative_witness_r6_first_order_no_go.json": "253964ca422718b2200957e59a4df318844340959ae2090b2eff801e62a90e77",
+    "curved_helicity_two_channel.json": "530636a9dd76db6277fe35f336859353ecd5b7b10d45569519ef5d35006d3917"
+  },
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": []
+}

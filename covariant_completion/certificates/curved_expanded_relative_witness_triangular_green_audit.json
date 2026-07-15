@@ -1,0 +1,190 @@
+{
+  "aligned_physical_reducing_block": {
+    "Jordan_chains": [
+      "h22-h33 -> 4 rho^2 (f22-f33) -> 0",
+      "h23 -> 4 rho^2 f23 -> 0"
+    ],
+    "basis": [
+      "h22-h33",
+      "h23",
+      "f22-f33",
+      "f23"
+    ],
+    "block_sha256": "be9db877291d65600630959e4b7cbbc32b153ccd91c98f20c6595bbb852ab4eb",
+    "classification": "physical helicity(+2)+helicity(-2)",
+    "coinvariance_defect": 0,
+    "commuting_projector_defect": 0,
+    "covector": "(tau,rho,0,0)",
+    "entirely_Q_contractible": false,
+    "formula": "[[q I2,0],[4 rho^2 I2,q I2]]",
+    "inclusion_projection_identity_defect": 0,
+    "invariance_defect": 0,
+    "linearized_Weyl_symbol_isomorphism": true,
+    "null_block_rank": 2,
+    "null_block_square_zero": true,
+    "pure_constraint_extension": false,
+    "q": "rho^2-tau^2",
+    "uniform_certificate_chain": "a0=2 f23, a1=h23"
+  },
+  "causal_green_homotopy": false,
+  "cross_certificates": {
+    "generic_triangular_Green_theorem": "curved_prolonged_green_bridge.json",
+    "helicity_two": "curved_helicity_two_channel.json",
+    "reduced_TT_factorization": "tt_local_factorization.json",
+    "uniform_Jordan_no_go": "curved_expanded_relative_witness_r6_first_order_no_go.json"
+  },
+  "curvature_causal_green_operators": false,
+  "fail_closed": true,
+  "finite_recursive_Green_candidate": {
+    "abstract_operator": "[[D,0],[R,D]]",
+    "formula": "[[G,0],[-G R G,G]]",
+    "hypothesis": "D G_plus/minus=G_plus/minus D=1",
+    "interpretation": "the physical Jordan block is compatible with a biwave/triangular Green inverse and is not itself a Green no-go",
+    "left_inverse_defect": 0,
+    "right_inverse_defect": 0,
+    "same_sided_causal_support": true,
+    "support_reason": "R is differential and finite compositions of same-sided Green operators preserve J^+ or J^- support"
+  },
+  "natural_bundle_filtration": {
+    "central_SCC_Green_inverse_constructed": false,
+    "central_reciprocal_component": [
+      "h",
+      "f",
+      "C_sharp"
+    ],
+    "central_reciprocal_rank": 34,
+    "certified_symmetric_hyperbolic_singletons": [
+      "U",
+      "F_sharp",
+      "U_sharp"
+    ],
+    "dimensions": [
+      10,
+      10,
+      4,
+      26,
+      26,
+      14,
+      26
+    ],
+    "directed_edges_source_to_target": [
+      [
+        "h",
+        "h"
+      ],
+      [
+        "h",
+        "f"
+      ],
+      [
+        "h",
+        "F_sharp"
+      ],
+      [
+        "h",
+        "C_sharp"
+      ],
+      [
+        "f",
+        "f"
+      ],
+      [
+        "f",
+        "F_sharp"
+      ],
+      [
+        "f",
+        "C_sharp"
+      ],
+      [
+        "v",
+        "v"
+      ],
+      [
+        "U",
+        "U"
+      ],
+      [
+        "F_sharp",
+        "F_sharp"
+      ],
+      [
+        "C_sharp",
+        "h"
+      ],
+      [
+        "C_sharp",
+        "f"
+      ],
+      [
+        "C_sharp",
+        "C_sharp"
+      ],
+      [
+        "U_sharp",
+        "U_sharp"
+      ]
+    ],
+    "finite_triangular_recursion_closes_curvature_tails_if_open_blocks_inverted": true,
+    "ledger": [
+      "h",
+      "f",
+      "v",
+      "U",
+      "F_sharp",
+      "C_sharp",
+      "U_sharp"
+    ],
+    "open_singleton_blocks": [
+      "v"
+    ],
+    "strong_components": [
+      [
+        "h",
+        "f",
+        "C_sharp"
+      ],
+      [
+        "v"
+      ],
+      [
+        "U"
+      ],
+      [
+        "F_sharp"
+      ],
+      [
+        "U_sharp"
+      ]
+    ]
+  },
+  "precise_remaining_obstruction": {
+    "QLambda_plus_LambdaQ_verified": false,
+    "aligned_helicity_projection_is_covector_dependent": true,
+    "coefficientwise_curved_rank34_Green_inverse_constructed": false,
+    "coefficientwise_curved_rank4_vector_Green_inverse_constructed": false,
+    "pointwise_SO3_invariant_rank_two_projector_exists": false,
+    "reason": "STF2 is an irreducible SO(3) fibre module, so an invariant pointwise idempotent has rank zero or five, not two",
+    "statement": "the existing natural six-bundle filtration leaves the reciprocal rank-34 (h,f,C#) component and the independent rank-four vector singleton; the generic finite triangular theorem cannot invert diagonal components for which no Green theorem has been supplied",
+    "support_local_full_bundle_split_constructed": false
+  },
+  "prolonged_green_witness": false,
+  "route_A_conclusion": {
+    "Jordan_block_can_be_tolerated_by_generalized_Green_method": true,
+    "full_route_A_green_realization_complete": false,
+    "next_exact_target": "split or directly invert the rank-34 reciprocal component and rank-four vector singleton without TT/transverse projectors, or change incidence so the physical Weyl block is an explicit diagonal factor",
+    "physical_channel_recursive_formula_exact": true
+  },
+  "schema": "pure-weyl-expanded-relative-triangular-green-audit-v1",
+  "scope": "fixed-temporal pair-(1,6), cyclic -2Pi branch; exact aligned principal symbol and natural six-bundle filtration",
+  "status_flags_promoted": [
+    "fixed_temporal_16_physical_Jordan_classified",
+    "fixed_temporal_16_physical_triangular_Green_formula",
+    "fixed_temporal_16_natural_filtration_audited"
+  ],
+  "warranted_atomic_flags": [
+    "fixed_temporal_16_physical_Jordan_classified",
+    "fixed_temporal_16_physical_triangular_Green_formula",
+    "fixed_temporal_16_natural_filtration_audited"
+  ]
+}

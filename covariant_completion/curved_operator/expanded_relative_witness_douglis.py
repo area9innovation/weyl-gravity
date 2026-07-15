@@ -9,8 +9,9 @@ split mapping-cylinder coordinates the three central curvature blocks are
 ``EcurvSharp pFsharp = -I_26``.
 
 The minus signs are the principal first-order formal-adjoint signs.  Thus
-``D=diag(I_26,-I_40,-I_26)`` and the pair-(1,6) Schur term is genuinely
-``B D^{-1} C=-Pi_vector``, not the previously certified numerator ``B C``.
+``D=diag(I_26,-I_40,-I_26)``.  The first-order formal-adjoint sign also
+occurs in ``C=NcurvSharp R6sharp``: the numerator is ``B C=-Pi_vector``
+and the actual pair-(1,6) Schur term is ``B D^{-1} C=+Pi_vector``.
 With the rank-three scalar auxiliary diagonal ansatz, the assembled exact
 temporal Douglis matrix is nonsingular.  This remains only a temporal-symbol
 candidate: the scalar diagonal has not been lifted to a complete cyclic
@@ -113,10 +114,10 @@ class ExpandedRelativeDouglisCandidate:
             != sp.eye(92)
         ):
             raise AssertionError("curvature temporal diagonal has no inverse")
-        if self.actual_schur_term != -scalar.vector_gauge_projector:
-            raise AssertionError("B D^-1 C is not minus the vector projector")
+        if self.actual_schur_term != scalar.vector_gauge_projector:
+            raise AssertionError("B D^-1 C is not the vector projector")
         if self.field_schur_complement != (
-            self.field_diagonal + scalar.vector_gauge_projector
+            self.field_diagonal - scalar.vector_gauge_projector
         ):
             raise AssertionError("actual field Schur sign drifted")
         if self.field_schur_complement.rank() != 24:
@@ -164,12 +165,12 @@ class ExpandedRelativeDouglisCandidate:
                 "B_shape": list(self.off_diagonal_b.shape),
                 "C_shape": list(self.off_diagonal_c.shape),
                 "rank": self.actual_schur_term.rank(),
-                "equals_minus_vector_gauge_projector": True,
+                "equals_vector_gauge_projector": True,
                 "defect": sum(
                     int(value != 0)
                     for value in (
                         self.actual_schur_term
-                        + self.scalar_completion.vector_gauge_projector
+                        - self.scalar_completion.vector_gauge_projector
                     )
                 ),
                 "differential_order": 2,
@@ -198,7 +199,7 @@ class ExpandedRelativeDouglisCandidate:
             },
             "constructive_conclusion": (
                 "with the explicit rank-three scalar diagonal ansatz, the actual "
-                "curvature temporal inverse corrects the pair-(1,6) numerator sign "
+                "the two first-order adjoint signs give the pair-(1,6) Schur sign "
                 "and yields a nonsingular 116-dimensional temporal Douglis symbol; "
                 "the all-row cyclic lift and hyperbolicity tests remain open"
             ),

@@ -46,7 +46,7 @@ def main() -> None:
         and diagonal["formula"] == "diag(+I_26,-I_40,-I_26)",
         "actual_D_inverse": diagonal["inverse_equals_itself"],
         "actual_BDinvC": schur["defect"] == 0
-        and schur["equals_minus_vector_gauge_projector"],
+        and schur["equals_vector_gauge_projector"],
         "actual_order2": schur["differential_order"] == 2,
         "full_rank116": complete["rank"] == 116
         and complete["rank_defect"] == 0,

@@ -1,0 +1,133 @@
+{
+  "auxiliary_BV_shift": {
+    "cotangent_shift_new_to_old": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "jordan_triangular_z**2 - 1",
+        "1"
+      ]
+    ],
+    "field_shift_finite_order_local": true,
+    "field_shift_new_to_old": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "1 - jordan_triangular_z**2",
+        "1"
+      ]
+    ],
+    "generalized_auxiliary_block": "-1 (pointwise invertible)",
+    "off_diagonal_defect": 0,
+    "physical_metric_block": "L^2 (biwave)",
+    "shifted_QBV_after_equation_reorder": [
+      [
+        "(jordan_triangular_z**2 - 1)**2",
+        "0"
+      ],
+      [
+        "0",
+        "-1"
+      ]
+    ],
+    "shifted_QBV_before_equation_reorder": [
+      [
+        "0",
+        "-1"
+      ],
+      [
+        "(jordan_triangular_z**2 - 1)**2",
+        "0"
+      ]
+    ],
+    "unshifted_QBV_block": [
+      [
+        "1 - jordan_triangular_z**2",
+        "-1"
+      ],
+      [
+        "0",
+        "1 - jordan_triangular_z**2"
+      ]
+    ],
+    "wave_polynomial_L": "1 - jordan_triangular_z**2"
+  },
+  "causal_green_homotopy": false,
+  "curvature_causal_green_operators": false,
+  "fail_closed": true,
+  "fixed_witness_block": {
+    "associated_graded_blocks": [
+      "L on f_hat",
+      "L on h quotient"
+    ],
+    "conjugated_by_auxiliary_field_shift": [
+      [
+        "1 - jordan_triangular_z**2",
+        "0"
+      ],
+      [
+        "4",
+        "1 - jordan_triangular_z**2"
+      ]
+    ],
+    "contractible_filtration_invariant": true,
+    "field_shift_removes_Jordan_extension": false,
+    "formula": "[[L,0],[4,L]]",
+    "full_116_column_leakage": 0,
+    "full_116_row_leakage": 0,
+    "matrix": [
+      [
+        "1 - jordan_triangular_z**2",
+        "0"
+      ],
+      [
+        "4",
+        "1 - jordan_triangular_z**2"
+      ]
+    ],
+    "matrix_sha256": "5752250fad11a50450a25c9caa42a69b18d8bd6e86818cf7ade58bef7445a960",
+    "reason": "U=I+L N commutes with P=L I+4 N"
+  },
+  "interpretation": {
+    "next_required_certificate": "a support-local filtration of all 116 rows (and their BV partners) whose associated graded diagonal blocks are Green hyperbolic",
+    "reason": "a triangular extension of Green-hyperbolic wave blocks can have a defective combined first-order symbol while retaining finite recursive advanced/retarded inverses",
+    "strong_hyperbolicity_obstruction_and_Green_recursion_compatible": true
+  },
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-expanded-relative-jordan-triangular-v1",
+  "scope": {
+    "aligned_covector": [
+      "-jordan_triangular_z",
+      "1",
+      "0",
+      "0"
+    ],
+    "full_116_support_local_filtration_certified": false,
+    "helicity_basis": [
+      "h23",
+      "f23"
+    ],
+    "relative_branch": "fixed-temporal pair-(1,6)",
+    "scalar_branch": "BV-cyclic D_alt=-2 Pi_(h00,f00,v0)"
+  },
+  "status_flags_promoted": [],
+  "triangular_Green_recursion": {
+    "TT_projector_used_in_recursion": false,
+    "assumption": "G_+ or G_- is a two-sided Green inverse of L on its standard one-sided support extension",
+    "candidate": "[[G,0],[-4 G^2,G]]",
+    "causal_support_identity": "J^+J^+(K)=J^+(K), J^-J^-(K)=J^-(K)",
+    "helicity_projector_used_in_recursion": false,
+    "inverse_Laplacian_used": false,
+    "inverse_curl_used": false,
+    "left_inverse_defect": 0,
+    "off_diagonal_formula": "-G (4) G",
+    "projector_free_full_BV_embedding_certified": false,
+    "right_inverse_defect": 0,
+    "same_sign_composition_only": true
+  },
+  "warranted_atomic_flags": []
+}

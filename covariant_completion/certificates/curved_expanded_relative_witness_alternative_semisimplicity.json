@@ -1,0 +1,181 @@
+{
+  "coefficient_basis": {
+    "R1_temporal_dimension": 18,
+    "R2_algebraic_dimension": 4,
+    "R7sharp_spatial_dimension": 86,
+    "R7sharp_temporal_dimension": 36,
+    "pair_1_plus_7_slice": {
+      "R1": "basis[0]-basis[3]",
+      "R7sharp_temporal": "basis[2]-basis[17]",
+      "raw_basis_support": 4
+    },
+    "pair_2_plus_7_slice": {
+      "R2": "basis[0]-basis[3]",
+      "R7sharp_temporal": "basis[2]-basis[17]",
+      "raw_basis_support": 4
+    },
+    "selected_spatial_direct_sensitivity_rank": 1,
+    "selected_spatial_perturbation": "R7sharp spatial basis[1]",
+    "source": "exact nullspaces of actual SO(3) rotation-generator equations"
+  },
+  "fail_closed": true,
+  "pair_1_plus_7": {
+    "aligned_determinant": "alternative_relative_z**52*(alternative_relative_z - 1)**28*(alternative_relative_z + 1)**28*(2*alternative_relative_z - 1)**10*(2*alternative_relative_z + 1)**10*(3*alternative_relative_z**2 - 1)**6/95551488",
+    "all_characteristic_roots_real": true,
+    "polynomial_semisimple": false,
+    "polynomial_sha256": "d66118450eb96f6db77496a021b587d7c3dc2246a7d459b1c50072307a4e0f13",
+    "root_ledger": [
+      {
+        "defect": 19,
+        "determinant_valuation": 52,
+        "kernel_dimension": 33,
+        "root": "0",
+        "semisimple": false
+      },
+      {
+        "defect": 2,
+        "determinant_valuation": 28,
+        "kernel_dimension": 26,
+        "root": "+1",
+        "semisimple": false
+      },
+      {
+        "defect": 2,
+        "determinant_valuation": 28,
+        "kernel_dimension": 26,
+        "root": "-1",
+        "semisimple": false
+      },
+      {
+        "defect": 0,
+        "determinant_valuation": 10,
+        "kernel_dimension": 10,
+        "root": "+1/2",
+        "semisimple": true
+      },
+      {
+        "defect": 0,
+        "determinant_valuation": 10,
+        "kernel_dimension": 10,
+        "root": "-1/2",
+        "semisimple": true
+      },
+      {
+        "defect": 0,
+        "determinant_valuation": 6,
+        "kernel_dimension": 6,
+        "root": "+1/sqrt(3)",
+        "semisimple": true
+      },
+      {
+        "defect": 0,
+        "determinant_valuation": 6,
+        "kernel_dimension": 6,
+        "root": "-1/sqrt(3)",
+        "semisimple": true
+      }
+    ],
+    "spatial_basis1_nullities": [
+      33,
+      26,
+      26,
+      8,
+      8,
+      6,
+      6
+    ],
+    "spatial_basis1_repairs_semisimplicity": false
+  },
+  "pair_2_plus_7": {
+    "aligned_determinant": "alternative_relative_z**48*(alternative_relative_z - 1)**30*(alternative_relative_z + 1)**30*(2*alternative_relative_z - 1)**8*(2*alternative_relative_z + 1)**8*(3*alternative_relative_z**2 - 1)**8/53747712",
+    "all_characteristic_roots_real": true,
+    "direct_R7sharp_row_weighted_principal": false,
+    "polynomial_semisimple": false,
+    "polynomial_sha256": "70fd861651ca0b089c3f9d469b4cb3d9a2c323668e497dab28e1027ebd2ab000",
+    "reason": "for orders (R2,R7sharp)=(0,1), the direct order-one X_Eq_sharp<-M row is subprincipal; the leading reciprocal row is -EcurvSharp R7sharp of order two",
+    "root_ledger": [
+      {
+        "defect": 19,
+        "determinant_valuation": 48,
+        "kernel_dimension": 29,
+        "root": "0",
+        "semisimple": false
+      },
+      {
+        "defect": 2,
+        "determinant_valuation": 30,
+        "kernel_dimension": 28,
+        "root": "+1",
+        "semisimple": false
+      },
+      {
+        "defect": 2,
+        "determinant_valuation": 30,
+        "kernel_dimension": 28,
+        "root": "-1",
+        "semisimple": false
+      },
+      {
+        "defect": 0,
+        "determinant_valuation": 8,
+        "kernel_dimension": 8,
+        "root": "+1/2",
+        "semisimple": true
+      },
+      {
+        "defect": 0,
+        "determinant_valuation": 8,
+        "kernel_dimension": 8,
+        "root": "-1/2",
+        "semisimple": true
+      },
+      {
+        "defect": 0,
+        "determinant_valuation": 8,
+        "kernel_dimension": 8,
+        "root": "+1/sqrt(3)",
+        "semisimple": true
+      },
+      {
+        "defect": 0,
+        "determinant_valuation": 8,
+        "kernel_dimension": 8,
+        "root": "-1/sqrt(3)",
+        "semisimple": true
+      }
+    ],
+    "spatial_basis1_nullities": [
+      29,
+      28,
+      28,
+      8,
+      8,
+      8,
+      8
+    ],
+    "spatial_basis1_repairs_semisimplicity": false
+  },
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-expanded-relative-alternative-semisimplicity-v1",
+  "scope": "exact rejection of the displayed smallest temporally regular coefficient slices and one direct-sensitivity spatial direction; not a no-go for the complete alternative-incidence families",
+  "screening_conclusion": {
+    "complete_pair_1_plus_7_family_ruled_out": false,
+    "complete_pair_2_plus_7_family_ruled_out": false,
+    "next_if_route_B_continues": "solve coefficient conditions that increase the zero/unit-root kernel dimensions to their determinant valuations before any full-family symmetrizer search",
+    "pair_1_plus_7_minimal_slice_rejected": true,
+    "pair_2_plus_7_minimal_slice_rejected": true,
+    "rejection_stage": "polynomial semisimplicity",
+    "symmetrizer_attempt_warranted": false
+  },
+  "status_flags_promoted": [],
+  "strong_hyperbolicity_pair_1_plus_7": false,
+  "strong_hyperbolicity_pair_2_plus_7": false,
+  "temporal_regularity": {
+    "both_temporal_symbols_invertible": true,
+    "pair_1_plus_7_Schur_sha256": "179ea588d5159e41968bf3b1f9ffbddf13bbbbcbe53828db88dfe3620abb57bf",
+    "pair_1_plus_7_field_Schur_determinant": 8,
+    "pair_2_plus_7_Schur_sha256": "179ea588d5159e41968bf3b1f9ffbddf13bbbbcbe53828db88dfe3620abb57bf",
+    "pair_2_plus_7_field_Schur_determinant": 8
+  },
+  "warranted_atomic_flags": []
+}

@@ -64,8 +64,8 @@
     "uses_parallel_cylinder_time_normal_only": true
   },
   "pair_1_plus_6_explicit_temporal_maps": {
-    "NcurvSharp_R6sharp": "S_vector (K_vector^T K_vector)^-1 K_vector^T",
-    "NcurvSharp_sha256": "0178c8d680375feb49b8e13dcb051149f28d23fae7dba1e36e204011f9d05219",
+    "NcurvSharp_R6sharp": "-S_vector (K_vector^T K_vector)^-1 K_vector^T",
+    "NcurvSharp_sha256": "3290f2cf94c7882f543ea44a941c4b8eb3d7b50cea1cb35d2806e4fbca0a3182",
     "R1": "J_vector S_vector^T: X_Eq_sharp[40] -> G_aux[9]",
     "R1_nonzero_coordinates": [
       [
@@ -278,6 +278,7 @@
     "coefficientwise_product_defect": 0,
     "curvature_identity_vector_coordinates": "q[3] plus r[3]",
     "finite_order_and_support_local": true,
+    "formal_adjoint_rule": "NcurvSharp_mu=(-1)^1 Ncurv_mu^T=-Ncurv_mu^T",
     "ghost_vector_columns": [
       1,
       2,
@@ -290,7 +291,7 @@
       "R1": 0,
       "R6": 1
     },
-    "verified_local_numerator": "K R1 NcurvSharp R6sharp=Pi_vector_gauge"
+    "verified_local_numerator": "K R1 NcurvSharp R6sharp=-Pi_vector_gauge"
   },
   "paired_hessian_scalar_matrix": [
     [

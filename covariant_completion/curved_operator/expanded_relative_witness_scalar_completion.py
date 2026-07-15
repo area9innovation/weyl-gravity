@@ -8,7 +8,9 @@ At ``zeta=dt`` the paired Hessian has scalar kernel
 ``span(h_00,f_00,v_0)``.  The scalar restriction of the existing local gauge
 completion ``K_1 C_1`` is a rank-three triangular isomorphism on precisely
 that kernel.  Explicit pair-(1,6) coefficients also give the local numerator
-``K R1 NcurvSharp R6sharp=Pi_vector``.  This is not the saddle Schur term
+``K R1 NcurvSharp R6sharp=-Pi_vector``.  The minus sign is forced by the
+first-order compact-support adjoint
+``NcurvSharp_mu=-Ncurv_mu^T``.  This is not the saddle Schur term
 ``B D^{-1} C``: the actual curvature temporal diagonal and its Douglis
 inverse have not been inserted.  No saddle-rank, characteristic or
 symmetrizer claim is made here.
@@ -125,16 +127,17 @@ class ExpandedRelativeScalarCompletion:
 
         # Use the certified temporal curvature identity row N=(0,I_14), not
         # an abstract incidence replacement.  Its cotangent coefficient is
-        # the coordinate-dual transpose in the mapping-cylinder pairing.
+        # the compact-support formal adjoint -N^T.  Keep the positive
+        # coordinate-dual embedding separate when defining R1.
         identity_chain = CurvatureAuxiliaryIdentityChainMap.build()
         curvature_identity = identity_chain.curvature_identity_coefficients[0]
-        curvature_identity_sharp = curvature_identity.T
+        curvature_identity_sharp = -curvature_identity.T
         ghost_vector = sp.zeros(9, 6)
         for column, row in enumerate(VECTOR_GHOST_COLUMNS):
             ghost_vector[row, column] = 1
         identity_vector = sp.zeros(14, 6)
         identity_vector[:6, :] = sp.eye(6)  # q[3] plus r[3]
-        equation_vector = curvature_identity_sharp * identity_vector
+        equation_vector = -curvature_identity_sharp * identity_vector
         relative_r1 = ghost_vector * equation_vector.T
         relative_r6_sharp = identity_vector * vector_left_inverse
         relative_product = (
@@ -143,7 +146,10 @@ class ExpandedRelativeScalarCompletion:
             * curvature_identity_sharp
             * relative_r6_sharp
         )
-        completed = paired_hessian + scalar_diagonal - relative_product
+        # The middle temporal curvature block is -I, so
+        # B D^{-1} C=-B C=+Pi_vector and the actual field Schur block is
+        # A-Pi_vector=A+BC.
+        completed = paired_hessian + scalar_diagonal + relative_product
 
         result = ExpandedRelativeScalarCompletion(
             paired_hessian_temporal=paired_hessian,
@@ -206,9 +212,9 @@ class ExpandedRelativeScalarCompletion:
             raise AssertionError("vector gauge complement is not a projector")
         if self.curvature_identity_temporal != sp.zeros(14, 26).row_join(sp.eye(14)):
             raise AssertionError("certified temporal Ncurv table drifted")
-        if self.curvature_identity_sharp_temporal != self.curvature_identity_temporal.T:
-            raise AssertionError("Ncurv-sharp coordinate dual drifted")
-        if self.equation_vector_embedding != self.curvature_identity_sharp_temporal * self.identity_vector_embedding:
+        if self.curvature_identity_sharp_temporal != -self.curvature_identity_temporal.T:
+            raise AssertionError("first-order Ncurv-sharp sign drifted")
+        if self.equation_vector_embedding != -self.curvature_identity_sharp_temporal * self.identity_vector_embedding:
             raise AssertionError("q/r vectors were not embedded through Ncurv-sharp")
         if self.relative_r1_temporal.shape != (9, 40):
             raise AssertionError("R1 temporal coefficient has wrong shape")
@@ -222,9 +228,9 @@ class ExpandedRelativeScalarCompletion:
         )
         if recomputed_product != self.relative_pair16_product:
             raise AssertionError("stored pair-(1,6) product is not coefficientwise")
-        if self.relative_pair16_product != self.vector_gauge_projector:
+        if self.relative_pair16_product != -self.vector_gauge_projector:
             raise AssertionError(
-                "K R1 NcurvSharp R6sharp does not equal the vector projector"
+                "K R1 NcurvSharp R6sharp does not equal minus the vector projector"
             )
         if (self.paired_hessian_temporal + self.gauge_scalar_diagonal).rank() != 18:
             raise AssertionError("scalar-retained diagonal rank drifted")
@@ -263,8 +269,9 @@ class ExpandedRelativeScalarCompletion:
                 "curvature_identity_vector_coordinates": "q[3] plus r[3]",
                 "R1": "J_vector S_vector^T: X_Eq_sharp[40] -> G_aux[9]",
                 "R6sharp": "I_vector (K_vector^T K_vector)^-1 K_vector^T: M_aux[24] -> X_Id_sharp[14]",
-                "NcurvSharp_R6sharp": "S_vector (K_vector^T K_vector)^-1 K_vector^T",
-                "verified_local_numerator": "K R1 NcurvSharp R6sharp=Pi_vector_gauge",
+                "NcurvSharp_R6sharp": "-S_vector (K_vector^T K_vector)^-1 K_vector^T",
+                "formal_adjoint_rule": "NcurvSharp_mu=(-1)^1 Ncurv_mu^T=-Ncurv_mu^T",
+                "verified_local_numerator": "K R1 NcurvSharp R6sharp=-Pi_vector_gauge",
                 "certified_Ncurv_temporal_shape": list(self.curvature_identity_temporal.shape),
                 "certified_Ncurv_temporal_matrix": "[0_(14x26),I_14]",
                 "NcurvSharp_sha256": _digest(self.curvature_identity_sharp_temporal),
@@ -282,7 +289,7 @@ class ExpandedRelativeScalarCompletion:
                 "coefficientwise_product_defect": sum(
                     int(value != 0)
                     for value in (
-                        self.relative_pair16_product - self.vector_gauge_projector
+                        self.relative_pair16_product + self.vector_gauge_projector
                     )
                 ),
                 "SO3_intertwining_verified_in_independent_certificate": True,

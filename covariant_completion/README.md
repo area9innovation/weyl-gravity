@@ -481,15 +481,65 @@ The three uncovered scalar coordinates are exactly `h_00`, `f_00`, and
 `v_0`.  Restricting the existing `K C` coefficient to them gives a rank-three
 triangular matrix of determinant `-1`.  For pair `1+6`, explicit local
 coefficient maps verify
-`K R1 Ncurvsharp R6sharp = Pi_vector` coefficientwise.  The actual temporal
+`K R1 Ncurvsharp R6sharp = -Pi_vector` coefficientwise; the sign is the
+first-order compact-support adjoint sign.  The actual temporal
 curvature diagonal is
 `D(dt)=diag(I_26,-I_40,-I_26)`, so `D^-1=D` and the exact saddle Schur term is
-`B D^-1 C=-Pi_vector`.  After retaining the scalar diagonal, the assembled
+`B D^-1 C=+Pi_vector`, so the field Schur block is
+`Eaux_2+Dscalar-Pi_vector`.  After retaining the scalar diagonal, the assembled
 `116 x 116` temporal Douglis symbol has exact rank 116 and determinant one.
-This is a temporal-invertibility certificate only: the rank-three diagonal
-still needs a cyclic all-row witness lift, and arbitrary-covector
+This is a temporal-invertibility certificate only: `R6sharp` still needs its
+three spatial first-order coefficients, the rank-three diagonal still needs
+a cyclic all-row witness lift, and the arbitrary-covector
 characteristics, a positive symmetrizer, lower-order coefficients and every
 BV degree remain open.
+
+The exact equivariant completion has dimensions 22 (temporal) and 46
+(spatial-vector).  Fixing the certified temporal coefficient leaves all 46
+spatial parameters, but their direct intrinsic pencil sensitivities on
+`a0=2 f_23`, `a1=h_23` vanish identically.  Every regular member therefore
+retains the length-two root at `z=1`; this fixed-temporal pair-`1+6`, cyclic
+`-2 Pi` family cannot furnish a semisimple faithful strong reduction or a
+positive symmetrizer.  No broader Green-hyperbolicity no-go is claimed.
+
+The Jordan chain is now classified homologically: `2 f_23` lies in the
+existing shifted-auxiliary contraction, whereas `h_23` is the physical Weyl
+helicity-two class.  The extension splits after the support-local BV shift.
+On the aligned physical principal block it is a triangular biwave and has
+the exact recursive same-sided Green formula `[[G,0],[-G R G,G]]`; hence the
+Jordan chain itself is causal, not a Green obstruction.  Refining the
+operator support ledger leaves one reciprocal rank-34 `(h,f,Csharp)` block
+plus a rank-four vector singleton.  Exposing their physical quotient by
+local curvature/Bianchi maps, with full lower-order coefficients and no
+helicity projector, is the current Route-A gate.  Pairs `1+7` and `2+7`
+have nonzero intrinsic sensitivity (joint rank 16) and remain live Route-B
+incidences.  The smallest temporally regular slices for both have determinant
+`8` and real causal roots but fail semisimplicity at `0,+1,-1`; the first
+direct-sensitive spatial correction does not fix either slice.  The full
+alternative families remain open.
+
+For the aligned channel the support-local BV shift itself is also explicit:
+with `L=1-z^2`, the complex block becomes `diag(L^2,-1)`, while the fixed
+witness remains `[[L,0],[4,L]]` and has exact same-sided inverse
+`[[G,0],[-4 G^2,G]]`.  This separates the retained physical biwave from the
+pointwise auxiliary contraction without using a nonlocal projector; the
+remaining gate is its full 116-row local exact-extension realization.
+
+The exact TT-plus-`fhat` operator subcomplex now warrants the scoped positive
+flags `physical_biwave_block_green_hyperbolic=true` and
+`physical_Jordan_extension_causal=true`.  Its witness is
+`diag(B_TT,1,B_TT,1)` and its restricted Green homotopy identity is exact.
+The complete prolonged flags remain false because arbitrary-source local
+access to this block and inverses for the rank-34 and rank-four blocks have
+not yet been constructed.
+
+The rank-34 reciprocal block now has a projector-free differential
+filtration.  Its rank-12 gauge/subsidiary submodule has an exact recursive
+Green inverse, and the rank-22 quotient contains a closed rank-8
+symmetric-hyperbolic constraint quotient plus an unresolved rank-14 field
+cokernel.  Curvature descends to the latter by `(C1,div C1) K=0`; the induced
+biwave quotient intertwiner remains open.  The raw coupling ideal is not
+nilpotent, excluding the simplest finite-Neumann shortcut.
 
 The remaining six flags isolate that prolonged Green witness, the actual
 causal chain homotopy, residual endpoint recovery, and `SO(4,2)` equivariance.

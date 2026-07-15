@@ -1,0 +1,112 @@
+{
+  "causal_green_homotopy": false,
+  "cross_certificates": {
+    "Bianchi_Bach_identity_square": "curved_curvature_identity_chain_map.json",
+    "C1_gauge_annihilation": "curved_curvature_state_gauge_chain_map.json",
+    "sourced_subsidiary_system": "curved_weyl_cotton_hyperbolic.json"
+  },
+  "curvature_causal_green_operators": false,
+  "differential_identity_ledger": {
+    "T_state_K_aux": "zero",
+    "all_maps_local_differential": true,
+    "curvature_state_map": "T_state=(C1,div C1)",
+    "identity_square": "N_curv A_equation=B_identity C_aux",
+    "sourced_subsidiary_identity": true
+  },
+  "fail_closed": true,
+  "local_differential_submodule": {
+    "Bianchi_origin": "C factors through the formal adjoint of the local curvature identity N=(-R,S)",
+    "Noether_origin": "B_vector factors through local K",
+    "coordinates": [
+      "vector_gauge_parameter[6]",
+      "qsharp,rsharp[6]"
+    ],
+    "defining_relations": {
+      "A_B": "zero",
+      "C_B": "partial_t^2 D_qr",
+      "D_i_qr": "i_qr D_qr"
+    },
+    "embedding": "J=diag(B_vector,i_(qsharp,rsharp))",
+    "embedding_differential_order": 1,
+    "embedding_sha256": "c52edd6518ff4e79e2f60bbd3b56febc604daf5d5157b974c977324fc6e1f6d3",
+    "intertwining_defect": 0,
+    "intertwining_identity": "L_34 J=J L_12",
+    "operator": "[[0,I6],[partial_t^2 D_qr,D_qr]]",
+    "pointwise_or_helicity_projector_used": false,
+    "presentation_rank": 12,
+    "support_local": true
+  },
+  "off_diagonal_algebra": {
+    "R_squared_trace": "-12*rank34_tau**3",
+    "cycle_relation": "C B=partial_t^2 D_qr",
+    "finite_naive_Neumann_series_available": false,
+    "interpretation": "the reciprocal cycle is controlled by the subsidiary operator but does not vanish in the raw operator algebra",
+    "raw_generator": "R=[[0,B],[C,0]]",
+    "raw_ideal_nilpotent": false
+  },
+  "precise_remaining_obstruction": {
+    "all_BV_rows_included": false,
+    "coefficientwise_lower_order_extension_verified": false,
+    "rank34_Green_inverse_constructed": false,
+    "statement": "construct a local induced intertwiner and Green inverse for the rank-fourteen field cokernel (or a further exact filtration), then lift it through the nonsplit extension"
+  },
+  "presented_submodule_recursive_inverse": {
+    "D_qr_characteristic": "rank34_tau**2*(4*rank34_tau**2 - rank34_xi1**2 - rank34_xi2**2 - rank34_xi3**2)**2/16",
+    "D_qr_symmetric_hyperbolic": true,
+    "D_qr_system": "q_t+(1/2)curl r=0; r_t-(1/2)curl q=0",
+    "T": "partial_t^2",
+    "boundary": "this is an inverse of the presented rank-twelve module, not an inverse or splitting of the rank-34 bundle operator",
+    "causal_support_candidate": true,
+    "inverse_formula": "[[-G_T,G_T G_D],[I,0]]",
+    "left_inverse_defect": 0,
+    "right_inverse_defect": 0,
+    "same_sided_compositions_only": true
+  },
+  "prolonged_green_witness": false,
+  "quotient_presentation": {
+    "C1_descends_to_field_cokernel": true,
+    "C1_induced_biwave_intertwiner_constructed": false,
+    "abstract_sequence": "0 -> presented F12 -> F34 -> coker(J) -> 0",
+    "bundle_split_or_local_retraction_constructed": false,
+    "constraint_quotient_characteristic": "rank34_tau**4*(rank34_rho**2 - 3*rank34_tau**2)**2/9",
+    "constraint_quotient_positive_symmetrizer": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/3",
+      "1",
+      "1"
+    ],
+    "constraint_quotient_rank": 8,
+    "constraint_quotient_symmetric_hyperbolic": true,
+    "field_cokernel_characteristic": "4*rank34_tau**8*(rank34_rho - rank34_tau)**10*(rank34_rho + rank34_tau)**10",
+    "field_cokernel_rank": 14,
+    "full_quotient_characteristic": "4*rank34_tau**12*(rank34_rho - rank34_tau)**10*(rank34_rho + rank34_tau)**10*(rank34_rho**2 - 3*rank34_tau**2)**2/9",
+    "multiplicative_characteristic_identity_exact": true,
+    "projector_free_physical_quotient_inverse_constructed": false,
+    "quotient_rank": 22,
+    "reason": "the exact local identity (C1,div C1) K_aux=0"
+  },
+  "rank34_component": {
+    "arbitrary_spatial_covector": [
+      "rank34_xi1",
+      "rank34_xi2",
+      "rank34_xi3"
+    ],
+    "bundle_order": [
+      "h[10]",
+      "f[10]",
+      "Csharp[14]"
+    ],
+    "matrix_sha256": "e8f34065fe40ecc0292dfa7ffa42519403a3f26e028eb5fe96cf94cd91074048",
+    "nonzero_coefficients": 277,
+    "rank": 34,
+    "reciprocal_vector_rank": 6
+  },
+  "schema": "pure-weyl-expanded-relative-rank34-module-v1",
+  "scope": "arbitrary-covector principal differential module, with aligned characteristic determinants, of the fixed-temporal pair-(1,6), cyclic -2Pi rank-34 (h,f,Csharp) component",
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": []
+}

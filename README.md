@@ -255,16 +255,68 @@ rotation-generator intertwining defect.
 The scalar directions are now identified exactly as `h_00`, `f_00`, and
 `v_0`; the corresponding rank-three restriction of `K C` has determinant
 `-1`.  Explicit pair-`1+6` coefficient maps satisfy the local numerator
-identity `K R1 Ncurv^sharp R6^sharp = Pi_vector`.  Inserting the actual
+identity `K R1 Ncurv^sharp R6^sharp = -Pi_vector`, with the minus sign forced
+by the first-order compact-support adjoint.  Inserting the actual
 curvature temporal diagonal
 `D(dt)=diag(I_26,-I_40,-I_26)` gives `D^-1=D` and the exact Schur term
-`B D^-1 C=-Pi_vector`.  With the retained scalar diagonal, the complete
+`B D^-1 C=+Pi_vector`; the field Schur block is therefore
+`Eaux_2+Dscalar-Pi_vector`.  With the retained scalar diagonal, the complete
 `116 x 116` temporal Douglis matrix has rank 116 and determinant one.  This
-closes only the timelike temporal-invertibility gate: the scalar diagonal's
-cyclic all-row lift, arbitrary-covector characteristics, positive
+closes only the timelike temporal-invertibility gate: `R6sharp` still lacks
+its three spatial first-order coefficients, and the scalar diagonal still
+lacks its cyclic all-row lift.  Thus the arbitrary-covector symbol,
+characteristics, positive
 symmetrizer and lower-order completion remain open.
 These are diagnostics, not theorem promotions: the same six
 causal/transport flags remain false.
+
+The complete equivariant `R6sharp` audit now finds 22 temporal and 46
+spatial parameters.  With the certified temporal normalization fixed, the
+intrinsic aligned polynomial Jordan chain survives all 46 spatial
+directions (both exact sensitivity maps have rank zero).  Thus this specific
+pair-`1+6`, cyclic `-2 Pi` family has no semisimple faithful strong
+linearization or positive symmetrizer.  The result is deliberately scoped;
+other incidences, temporal normalizations, larger witnesses, and generalized
+Green realizations remain open.
+
+The follow-up homological and triangular audits locate the rigid chain
+precisely.  Its `f_23` vector belongs to the already contractible shifted
+auxiliary pair, while `h_23` carries nonzero physical Weyl helicity two; the
+extension splits after the certified support-local BV shift and vanishes as
+an extension on cohomology.  On the aligned physical symbol it is the usual
+triangular biwave block, which has an exact recursive causal inverse.  Thus
+the Jordan block is not itself a Green no-go.  A local full-bundle split is
+still missing: the refined unsplit support graph retains a reciprocal
+rank-34 `(h,f,C#)` component.  Alternative incidences `1+7` and `2+7` pass
+the first sensitivity screen (joint rank 16) and proceed to semisimplicity
+testing.  Their smallest temporally regular slices have determinant `8` and
+only real causal roots, but remain nonsemisimple at speeds `0,+1,-1`; one
+directly sensitive spatial perturbation does not repair them.  This rejects
+those slices only, not the complete alternative families.
+
+On the same aligned channel, the certified BV shift gives the exact complex
+split `diag(L^2,-1)` with `L=1-z^2`, while the witness remains the closed
+triangular block `[[L,0],[4,L]]`.  Its inverse
+`[[G,0],[-4 G^2,G]]` is exact and uses no inverse curl, Laplacian, TT, or
+helicity projector.  Embedding this filtration into all 116 rows remains the
+open local-extension step.
+
+On the exact TT-plus-shifted-auxiliary operator subcomplex this promotes
+`physical_biwave_block_green_hyperbolic=true` and
+`physical_Jordan_extension_causal=true`: the restricted witness has
+`P=diag(B_TT,1,B_TT,1)` and an exact restricted
+`Q Lambda + Lambda Q=1`.  The all-row Green flags stay false because a
+support-local arbitrary-source TT realization, the rank-34 reciprocal block,
+and the rank-four vector block remain open.
+
+A projector-free differential-module audit further reduces the reciprocal
+rank-34 block.  A presented rank-12 gauge/subsidiary submodule has an exact
+recursive Green inverse; its rank-22 quotient contains a closed rank-8
+symmetric-hyperbolic constraint quotient and one unresolved rank-14 field
+cokernel.  The local identity `(C1,div C1) K=0` makes curvature descend to
+that cokernel.  Constructing its induced biwave intertwiner/inverse is now
+the central Route-A problem.  The raw off-diagonal ideal is not nilpotent, so
+a naive finite Neumann series is unavailable.
 
 The residual calculation is already complete: `residual_H4_is_C2` and
 `residual_gram_is_I2` are inputs to the terminal transport gate.  The missing

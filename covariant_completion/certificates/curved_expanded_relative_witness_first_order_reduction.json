@@ -1,0 +1,147 @@
+{
+  "aligned_characteristic": {
+    "algebraic_multiplicities": [
+      120,
+      8,
+      8,
+      30,
+      30,
+      8,
+      8
+    ],
+    "all_characteristic_speeds_absolute_value_at_most_one": true,
+    "all_characteristic_speeds_real": true,
+    "determinant_relation": "det(tau A0+rho A1)=tau^72 det(P_weighted(tau,rho))",
+    "diagonalizable": false,
+    "eigenvalue_order": [
+      "0",
+      "+1/2",
+      "-1/2",
+      "+1",
+      "-1",
+      "+1/sqrt(3)",
+      "-1/sqrt(3)"
+    ],
+    "geometric_multiplicities": [
+      96,
+      6,
+      6,
+      28,
+      28,
+      8,
+      8
+    ]
+  },
+  "causal_green_homotopy": false,
+  "curvature_causal_green_operators": false,
+  "exact_equivalence": {
+    "coefficientwise_defect": 0,
+    "constraint_identity": "partial_t G_i=E_i-nabla_i E_0",
+    "constraint_propagation_defect": 0,
+    "equivalence_requires_constraint_initial_data": true,
+    "gradient_constraints": "G_i=p_i-nabla_i m",
+    "prolongation": "p_mu=nabla_mu m, x=x",
+    "reduction_times_prolongation": "0_[96] direct-sum P_weighted_[116]",
+    "unconstrained_212_state_system_identified_with_original": false
+  },
+  "exact_positive_symmetrizer_obstruction": {
+    "aligned_eigenvalue": "+1",
+    "chain_identity": "(V-I)u=0, (V-I)v=u",
+    "contradiction": "u^T H u=v^T H(V-I)u=0, contrary to H>0",
+    "displayed_linear_equalities": 67098,
+    "eigenvector_nonzero_entries": [
+      [
+        42,
+        "-2"
+      ],
+      [
+        66,
+        "2"
+      ]
+    ],
+    "equations": "H=H^T, H V_i=V_i^T H (i=1,2,3), H>0",
+    "generalized_vector_nonzero_entries": [
+      [
+        32,
+        "-1"
+      ],
+      [
+        42,
+        "-2"
+      ],
+      [
+        56,
+        "1"
+      ]
+    ],
+    "one_direction_already_obstructs_simultaneous_system": true,
+    "positive_feasible_set_empty": true,
+    "symmetric_unknowns": 22578
+  },
+  "fail_closed": true,
+  "forced_adjoint_row": {
+    "alternative_partner_equals_Jinverse_Dtranspose_J": true,
+    "formal_adjoint_first_order_generator_is_transpose_similar": true,
+    "same_Jordan_obstruction": true
+  },
+  "intrinsic_weighted_symbol_chain": {
+    "aligned_pencil": "Q(z)=P_weighted((-z,+1,0,0))",
+    "aligned_root": "z=+1",
+    "defect": 0,
+    "eigenvector_nonzero_entries": [
+      [
+        18,
+        "2"
+      ]
+    ],
+    "generalized_vector_nonzero_entries": [
+      [
+        8,
+        "1"
+      ]
+    ],
+    "gradient_constraint_artifact": false,
+    "identity": "Q a0=0, Q a1+(partial_z Q)a0=0",
+    "reduced_chain_lift": "u=T(1)a0, v=T(1)a1+T'(1)a0",
+    "strong_polynomial_linearizations_preserving_finite_elementary_divisors_preserve_chain": true,
+    "tangent_constraint_compatible": true
+  },
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-expanded-relative-first-order-reduction-v1",
+  "scope": {
+    "R6sharp_extension": "R6sharp_0 nabla_0 (spatial coefficients zero)",
+    "full_invariant_spatial_R6sharp_family_tested": false,
+    "paired_scalar_row": "forced action-formal-adjoint partner",
+    "relative_branch": "pair-(1,6)",
+    "scalar_branch": "D_alt=-2 Pi_(h00,f00,v0)"
+  },
+  "scoped_conclusion": "the explicit time-only R6sharp and cyclic -2Pi scalar branch has causal real characteristic roots but is weakly, not symmetrically, hyperbolic under this reduction; its intrinsic polynomial Jordan chain also obstructs every strong polynomial linearization preserving the finite elementary divisors of this same weighted symbol; the full invariant spatial R6sharp family remains open",
+  "status_flags_promoted": [],
+  "support_local_first_order_reduction": {
+    "equation_order": [
+      "p0_definition[24]",
+      "gradient_evolution[72]",
+      "weighted_core[116]"
+    ],
+    "finite_order": true,
+    "spatial_sha256": [
+      "1557170112cabc0001c327795c13374d720ced879e58d8e88a2da89268973a7f",
+      "8d385df9c468ab0d037c8d5ac466ec469074f18fad896968cf2d83c9d91ee9d1",
+      "38c8d788a5f65fb8e6ca132bd5ab829943bfa4148fe848c63a16ef6460cf1cd1"
+    ],
+    "state_order": [
+      "m[24]",
+      "p0[24]",
+      "p1[24]",
+      "p2[24]",
+      "p3[24]",
+      "x[92]"
+    ],
+    "state_rank": 212,
+    "support_local": true,
+    "temporal_determinant": 8,
+    "temporal_rank": 212,
+    "temporal_sha256": "9858192147dbfd17e88a2959288532661e38d4dc718ede82392708a9df34b445"
+  },
+  "warranted_atomic_flags": []
+}

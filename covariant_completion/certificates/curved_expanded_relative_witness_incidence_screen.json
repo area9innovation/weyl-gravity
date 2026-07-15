@@ -1,0 +1,94 @@
+{
+  "alternative_common_map": {
+    "actual_blocks": {
+      "source": 1,
+      "target": 14
+    },
+    "formal_incidence_checked_coefficientwise": true,
+    "map": "R7sharp: M_aux[24] -> Y_Eq_sharp[40]",
+    "pair_1_plus_7_direct_rows": [
+      "X_Eq_sharp <- M_aux: R7sharp",
+      "Y_U_sharp <- M_aux: -EcurvSharp R7sharp",
+      "M_aux <- X_Eq_sharp: K R1"
+    ],
+    "pair_2_plus_7_direct_rows": [
+      "X_Eq_sharp <- M_aux: R7sharp",
+      "Y_U_sharp <- M_aux: -EcurvSharp R7sharp",
+      "M_aux <- Y_U_sharp: K R2"
+    ]
+  },
+  "complete_first_order_R7sharp_family": {
+    "complete_under_SO3_equivariance": true,
+    "spatial_equations_nonzero_entries": 19440,
+    "spatial_equations_sha256": "947648c16549ce0438e11c8af18a165331d533b841781a98759ca9a7e032d76e",
+    "spatial_equations_shape": [
+      8640,
+      2880
+    ],
+    "spatial_nullity": 86,
+    "spatial_rank": 2794,
+    "temporal_equations_nonzero_entries": 4560,
+    "temporal_equations_sha256": "e3d00929251690efb14ecd4b800de22307831fafd230b8fb0489395288ddbfa5",
+    "temporal_equations_shape": [
+      2880,
+      960
+    ],
+    "temporal_nullity": 36,
+    "temporal_rank": 924
+  },
+  "complete_minimal_incidence_list": {
+    "complete": true,
+    "pair_1_plus_6_certificate": "curved_expanded_relative_witness_r6_chain_obstruction.json",
+    "pair_1_plus_6_status": "fixed-temporal cyclic -2Pi family ruled out by the separate parameter-uniform R6sharp Jordan certificate",
+    "pair_sets": [
+      "1+6",
+      "1+7",
+      "2+7"
+    ]
+  },
+  "fail_closed": true,
+  "intrinsic_Jordan_obstruction_sensitivity": {
+    "aligned_covector": "(-z,+1,0,0)",
+    "chain": "a0=2 f_23, a1=h_23",
+    "conditions": "R7sharp(1)a0 and R7sharp(1)a1+R7sharp'(1)a0",
+    "joint_matrix_shape": [
+      80,
+      122
+    ],
+    "joint_nonzero_entries": 28,
+    "joint_rank": 16,
+    "joint_sha256": "089458a6414ea4e3005485740283fc1e6ea24631ae8301e5401cfabea6e28dce",
+    "root": "+1",
+    "secondary_row_adds_no_independent_conditions": "for S=-Esharp R, the two chain defects are S1=-Esharp C1 and S2=-Esharp C2-(Esharp)' C1",
+    "spatial_matrix_shape": [
+      80,
+      86
+    ],
+    "spatial_rank": 8,
+    "spatial_sha256": "c82195c365728112ff0e26bc8945b149535eeb0caa14f2805d2ffa73ba2951e3",
+    "temporal_matrix_shape": [
+      80,
+      36
+    ],
+    "temporal_rank": 8,
+    "temporal_sha256": "6047ddde5b1ab498d5c51a81ee5157d2b6b99f64db4df0e9ffd489d292ed9b1c"
+  },
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-expanded-relative-incidence-screen-v1",
+  "scope": "exact sensitivity-first screen for the complete first-order SO(3)-equivariant R7sharp coefficient family shared by pairs (1,7) and (2,7); it proves only that these incidences are not parameter-rigid in the manner of the fixed (1,6) branch",
+  "screening_result": {
+    "both_alternatives_act_on_obstruction_quotient": true,
+    "next_required_order": [
+      "choose actual temporal R1/R2/R7sharp coefficients",
+      "assemble the exact arbitrary-covector polynomial",
+      "test temporal regularity and polynomial semisimplicity",
+      "only then solve a symmetrizer"
+    ],
+    "pair_1_plus_7_rejected_by_zero_sensitivity": false,
+    "pair_2_plus_7_rejected_by_zero_sensitivity": false
+  },
+  "status_flags_promoted": [],
+  "strong_hyperbolicity_pair_1_plus_7": false,
+  "strong_hyperbolicity_pair_2_plus_7": false,
+  "warranted_atomic_flags": []
+}

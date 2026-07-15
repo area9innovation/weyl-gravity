@@ -149,6 +149,27 @@ def main() -> int:
         "prolonged_current_comparison",
     )
     checks = {name: bool(certificate[name]) for name in promoted}
+    fixed16 = certificate["fixed_temporal_16_diagnostic_flags"]
+    checks["fixed_temporal_16_positive_no_go_recorded"] = (
+        fixed16["fixed_temporal_16_family_complete"]
+        and fixed16["intrinsic_sensitivity_matrix_zero"]
+        and fixed16["parameter_uniform_Jordan_chain"]
+        and not fixed16["strong_hyperbolicity_in_16_family"]
+        and not fixed16["symmetric_hyperbolicity_in_16_family"]
+        and fixed16["fixed_temporal_16_no_go"]
+        and fixed16["aligned_physical_biwave_recursive_formula_exact"]
+        and fixed16["aligned_physical_Jordan_extension_causal"]
+        and fixed16["physical_biwave_block_green_hyperbolic"]
+        and fixed16["physical_Jordan_extension_causal"]
+        and fixed16["physical_green_flag_scope"]
+        == "exact restricted TT plus shifted-auxiliary operator subcomplex"
+        and fixed16["alternative_17_27_intrinsic_sensitivity_nonzero"]
+        and not fixed16["alternative_17_27_minimal_regular_slices_semisimple"]
+        and not fixed16["alternative_17_27_full_family_no_go"]
+        and fixed16["rank34_presented_rank12_submodule_green"]
+        and fixed16["rank34_rank8_constraint_quotient_hyperbolic"]
+        and not fixed16["rank34_rank14_field_cokernel_green"]
+    )
     without_mapping = _build(
         include_mapping_cylinder=False, quotient=status.quotient
     )

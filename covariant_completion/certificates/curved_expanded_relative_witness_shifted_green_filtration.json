@@ -1,0 +1,168 @@
+{
+  "actual_local_physical_replacement_witness": {
+    "B_TT_factorization": "P_minus P_plus=P_plus P_minus",
+    "Green_operator": "diag(G_BTT,1,G_BTT,1)",
+    "Lambda": "W G",
+    "P_equals_QW_plus_WQ": "diag(B_TT,1,B_TT,1)",
+    "P_identity_defect": 0,
+    "Q": "h_TT -> B_TT E_h_TT; f_hat_TT -> A_g E_f_hat_TT",
+    "Q_Lambda_plus_Lambda_Q_defect": 0,
+    "Q_squared_defect": 0,
+    "TT_constraint_preserved_by_both_factors": true,
+    "W": "E_h_TT -> h_TT; E_f_hat_TT -> A_g^-1 f_hat_TT",
+    "advanced_retarded_support": true,
+    "block_order": [
+      "h_TT",
+      "f_hat_TT",
+      "E_h_TT",
+      "E_f_hat_TT"
+    ],
+    "factor_green_operators": "G_BTT_plus/minus=G_Pplus_plus/minus G_Pminus_plus/minus",
+    "left_Green_defect": 0,
+    "operator_level_not_principal_symbol": true,
+    "right_Green_defect": 0,
+    "uses_TT_projector_inside_restricted_block": false
+  },
+  "auxiliary_shift": {
+    "BV_canonical": true,
+    "actual_curved_Q_conjugation_verified": true,
+    "contractible_tensor_block": "f_hat -> A_g f_hat_star",
+    "finite_order": 2,
+    "polynomial_inverse": true,
+    "retained_metric_block": "h -> B_lin h_star",
+    "support_local": true,
+    "transformed_Q_off_diagonal_blocks": 0
+  },
+  "causal_green_homotopy": false,
+  "curvature_causal_green_operators": false,
+  "fail_closed": true,
+  "fixed_witness_after_shift": {
+    "directed_edges_source_to_target": [
+      [
+        "h",
+        "h"
+      ],
+      [
+        "h",
+        "f"
+      ],
+      [
+        "h",
+        "F_sharp"
+      ],
+      [
+        "h",
+        "C_sharp"
+      ],
+      [
+        "f",
+        "f"
+      ],
+      [
+        "f",
+        "F_sharp"
+      ],
+      [
+        "f",
+        "C_sharp"
+      ],
+      [
+        "v",
+        "f"
+      ],
+      [
+        "v",
+        "v"
+      ],
+      [
+        "v",
+        "F_sharp"
+      ],
+      [
+        "v",
+        "C_sharp"
+      ],
+      [
+        "U",
+        "U"
+      ],
+      [
+        "F_sharp",
+        "F_sharp"
+      ],
+      [
+        "C_sharp",
+        "h"
+      ],
+      [
+        "C_sharp",
+        "f"
+      ],
+      [
+        "C_sharp",
+        "C_sharp"
+      ],
+      [
+        "U_sharp",
+        "U_sharp"
+      ]
+    ],
+    "f_hat_shift_splits_fixed_witness_SCC": false,
+    "maximum_aligned_polynomial_degree": 4,
+    "physical_aligned_block_unchanged": true,
+    "reason": "the polynomial lower-triangular physical coupling commutes with the auxiliary EOM shear; Q-splitting does not imply splitting of a separately selected W",
+    "reciprocal_component": [
+      "h",
+      "f",
+      "C_sharp"
+    ],
+    "reciprocal_component_rank": 34,
+    "strong_components": [
+      [
+        "h",
+        "f",
+        "C_sharp"
+      ],
+      [
+        "v"
+      ],
+      [
+        "U"
+      ],
+      [
+        "F_sharp"
+      ],
+      [
+        "U_sharp"
+      ]
+    ]
+  },
+  "full_complex_boundary": {
+    "all_BV_rows_included_in_restricted_homotopy": false,
+    "arbitrary_source_TT_projection_support_local": false,
+    "complete_QLambda_identity": false,
+    "rank34_reciprocal_component_Green_inverse": false,
+    "rank4_vector_singleton_Green_inverse": false
+  },
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-expanded-relative-shifted-green-filtration-v1",
+  "scope": "actual local shifted TT plus generalized-auxiliary subcomplex, and aligned complete-symbol filtration of the fixed pair-(1,6) witness",
+  "status_flags_promoted": {
+    "auxiliary_shifted_fixed_witness_filtration_audited": true,
+    "physical_Jordan_extension_causal": true,
+    "physical_biwave_block_green_hyperbolic": true
+  },
+  "transport_to_unshifted_sector": {
+    "Green_homotopy_preserved_by_conjugation": true,
+    "Jordan_eigenleg_contracts_in_f_hat_pair": true,
+    "Jordan_generalized_leg_propagates_in_B_TT": true,
+    "formula": "G_old=U_shift G_split U_shift^-1",
+    "homotopy_formula": "Lambda_old=U_shift Lambda_split U_shift^-1",
+    "support_preserved": true
+  },
+  "warranted_atomic_flags": {
+    "auxiliary_shifted_fixed_witness_filtration_audited": true,
+    "physical_Jordan_extension_causal": true,
+    "physical_biwave_block_green_hyperbolic": true
+  }
+}

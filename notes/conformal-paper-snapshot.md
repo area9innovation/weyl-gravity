@@ -236,12 +236,32 @@ must retain or prolong three scalar directions.  These are fail-closed
 diagnostics only.  The missing directions are exactly `h00`, `f00`, and
 `v0`; their rank-three `KC` restriction has determinant `-1`.  Explicit
 pair-`1+6` maps realize the numerator
-`K R1 Ncurvsharp R6sharp=Pi_vector`.  The actual temporal curvature diagonal
+`K R1 Ncurvsharp R6sharp=-Pi_vector`, with the sign fixed by first-order
+formal adjunction.  The actual temporal curvature diagonal
 is `diag(I26,-I40,-I26)`, is its own inverse, and gives
-`B D^-1 C=-Pi_vector`; with the scalar complement the exact 116-dimensional
-temporal Douglis symbol has rank 116 and determinant one.  This does not yet
-give the cyclic all-row witness, arbitrary characteristics, a symmetrizer or
-lower-order completion.  The remaining blockers
+`B D^-1 C=+Pi_vector`; the field Schur block is
+`Eaux_2+Dscalar-Pi_vector`, and with the scalar complement the exact 116-dimensional
+temporal Douglis symbol has rank 116 and determinant one.  The complete
+equivariant `R6sharp` family has 22 temporal and 46 spatial parameters.
+After fixing this temporal normalization, the intrinsic aligned Jordan-chain
+sensitivity is the zero `232 x 46` matrix.  Hence every regular member of
+the fixed-temporal pair-`1+6`, cyclic `-2 Pi` family is non-semisimple and
+admits no positive symmetrizer.  This is a positive scoped no-go, not a
+no-go for generalized Green hyperbolicity or other incidence data.  The
+chain is homologically split by the existing auxiliary contraction, and its
+physical aligned principal quotient is a triangular biwave with an exact
+recursive causal inverse.  The remaining projector-free local problem is
+the reciprocal rank-34 `(h,f,Csharp)` component (plus the vector singleton),
+not the Jordan chain itself.  Alternative pairs `1+7` and `2+7` have joint
+intrinsic sensitivity rank 16 and survive the first screen.  On the exact
+smallest regular slices, however, both remain non-semisimple at `0,+1,-1`;
+this is not a full-family no-go.  On the exact
+TT-plus-shifted-auxiliary operator subcomplex the physical biwave and causal
+Jordan-extension flags are now true, with an exact restricted Green homotopy;
+the all-row flags remain false.  The analytic core has been reduced further:
+a rank-12 gauge/subsidiary submodule and rank-8
+constraint quotient are Green controlled, leaving a rank-14 field cokernel
+for the projector-free curvature/biwave intertwiner.  The remaining blockers
 are the prolonged Green theorem, causal chain homotopy, residual endpoint
 recovery, and `SO(4,2)` equivariance.  The complete cyclic mapping cylinder
 now gives the all-row quadratic BV parent and exact prolonged/auxiliary
