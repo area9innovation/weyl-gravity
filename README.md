@@ -77,8 +77,13 @@ healthy physical clock: the Weyl-reduced ratio mode keeps a derivative term,
 changes kinetic sign, and becomes degenerate four times per compact winding.
 The complete standard positive-sign one-field stealth repair, including
 inhomogeneous configurations, is now classified and obstructed by global
-poles and failure of the everywhere-timelike-gradient condition. The next
-candidate must use positive-energy Bach-sourced non-conformally-flat geometry.
+poles and failure of the everywhere-timelike-gradient condition. That search
+has now produced an exact healthy background candidate: a static
+non-conformally-flat Berger cylinder sourced by two standard-sign rotating
+conformal scalars with positive quartic potential, dominant-energy stress,
+timelike phase, and full raw Diff `x` Weyl clock incidence. This is not yet a
+`D_GAUGE` theorem; the perturbative covariant charge and support-local all-row
+BV audit remain open.
 Paper IX still waits for at least one complete
 boundary or interaction theorem.
 

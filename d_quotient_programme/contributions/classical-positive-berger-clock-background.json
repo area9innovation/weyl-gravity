@@ -1,0 +1,40 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_positive_berger_clock",
+  "generator_id": "D_compact",
+  "phase_space_id": "positive_rotating_scalar_berger_background",
+  "boundary_conditions": "static Berger cylinder with closed S3; q in ((5-sqrt(21))/2,1/4); exact stationary Bach-sourced background; perturbative phase space not yet reduced",
+  "lifecycle_layer": "CLASSICAL_CHARGE",
+  "claim_status": "CERTIFIED",
+  "verdict": "POSITIVE_BERGER_CLOCK_BACKGROUND_EXISTS",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "the exact Berger Ricci, scalar-curvature, Weyl, and Bach tensors are derived in an orthonormal left-invariant frame",
+    "two standard-sign conformal scalars of constant modulus and phase theta=omega t solve the scalar and Bach-source equations on an exact open q interval",
+    "the scalar target metric is positive, the quartic potential is bounded below, and the stationary stress satisfies the dominant-energy inequalities",
+    "the phase gradient is everywhere timelike and the raw temporal-diffeomorphism/Weyl incidence determinant rho^2 omega is nonzero",
+    "the rational fixture a=1, q=9/40, alpha_B=5, rho=1, omega=3/4, lambda=119/480 satisfies every independent field equation"
+  ],
+  "not_established": [
+    "the normalized covariant D charge on the perturbative Berger-clock phase space",
+    "a support-local all-row BV clock contraction",
+    "causal Green homotopies for the matter-coupled Berger background",
+    "linear, nonlinear, or quantum stability",
+    "a D_GAUGE verdict"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+    "commit": "77c4108b6a7e8d4aedb6ef6ddaaa5772c4636851",
+    "sha256": "fd7419b3a5985d83593de83824263c320b8fe44e47c69c473e7db5e30040b192"
+  },
+  "verification_commands": [
+    "python3 d_quotient_classical/backreacted_clock/positive_berger_clock.py --check --guards",
+    "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_positive_berger_clock",
+    "python3 d_quotient_classical/verify_classical_status.py --guards"
+  ],
+  "next_gate": "FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT: derive the normalized covariant D charge, support-local all-row clock contraction, causal propagation, and stability on perturbations of the exact Berger branch"
+}

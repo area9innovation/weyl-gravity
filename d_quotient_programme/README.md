@@ -32,6 +32,8 @@ because the existing results concern different objects:
 - [`reports/classical-neutral-clock-health-registration-receipt.md`](reports/classical-neutral-clock-health-registration-receipt.md)
 - [`reports/classical-homogeneous-stealth-registration-receipt.md`](reports/classical-homogeneous-stealth-registration-receipt.md)
 - [`reports/classical-standard-stealth-no-go-registration-receipt.md`](reports/classical-standard-stealth-no-go-registration-receipt.md)
+- [`contributions/classical-positive-berger-clock-background.json`](contributions/classical-positive-berger-clock-background.json)
+- [`reports/classical-positive-berger-clock-registration-receipt.md`](reports/classical-positive-berger-clock-registration-receipt.md)
 - [`reports/einstein-ed1a-registration-receipt.md`](reports/einstein-ed1a-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -60,10 +62,11 @@ A possible Paper X is reserved for interaction and quantum stability after the
 applicable classical export and QME gates pass.
 
 The neutral pair remains a valid homogeneous reference clock, but its local
-positive-health promotion is obstructed: the ratio kinetic term changes sign
-and degenerates on every winding orbit. The complete standard positive-sign
-one-field stealth family is now exhausted too, including inhomogeneous
-configurations: every reciprocal denominator has a global zero, and every
-time-dependent gradient fails the everywhere-timelike test. The immediate
-gate is `POSITIVE_ENERGY_NONCONFORMALLY_FLAT_BACH_SOURCED_CLOCK`. Downstream
-teams must import all scoped clock results by content hash.
+positive-health promotion is obstructed. The complete standard one-field
+stealth family is exhausted as well. The replacement is now concrete: an exact
+Berger-cylinder family carries two standard-sign rotating conformal scalars
+with positive quartic potential, dominant-energy stress, timelike phase, and
+full raw clock incidence. This is a healthy background theorem, not yet a
+charge theorem. The immediate gate is
+`FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT`. Downstream teams must import all
+scoped clock results by content hash.

@@ -16,16 +16,16 @@
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
   "next_shared_gate": {
-    "gate_id": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_BACH_SOURCED_CLOCK",
+    "gate_id": "FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT",
     "owner_order": [
       "classical",
       "nonlinear",
       "quantum",
       "einstein_boundary"
     ],
-    "rule": "Retain the neutral pair only as a scoped homogeneous reference clock and the complete standard one-field stealth family as a no-go; construct a positive-energy clock on a genuinely Bach-sourced non-conformally-flat background. Generalized scalar actions are new theories with separate health and BV gates."
+    "rule": "Treat the exact positive Berger family as a background candidate only. Derive the normalized covariant D charge on perturbations, construct the support-local all-row BV clock contraction and causal Green theory, and audit stability before assigning any D verdict."
   },
-  "programme_base_commit": "26d10404b96fdf0721b7325ecefabf295dfe2a83",
+  "programme_base_commit": "be39ddec1ce4f70116c44acf7f9608da94f64801",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -42,7 +42,7 @@
   },
   "registry_hashes": {
     "generator_registry": "1df39af78cdd49eeb64faa2d46134542e9bb75a598f0dde98932657a682525de",
-    "phase_space_registry": "dc942f3d3c7cad9f2f61ea7fe08c739143c141cb1fcab3d117610fc63edaeb5a"
+    "phase_space_registry": "578b673a288d103246d81607bf929230c9fd94cc146a724c781323170f5913ab"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -119,6 +119,15 @@
       "setting_id": "compact_standard_conformal_stealth_clock",
       "status": "BLOCKED",
       "verdict": "STANDARD_ONE_FIELD_STEALTH_CLOCK_NO_GO"
+    },
+    {
+      "boundary_conditions": "closed Berger S3; q in ((5-sqrt(21))/2,1/4); exact stationary Bach-sourced background; perturbative reduction open",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_CHARGE",
+      "phase_space_id": "positive_rotating_scalar_berger_background",
+      "setting_id": "compact_positive_berger_clock",
+      "status": "PARTIAL",
+      "verdict": "POSITIVE_BERGER_CLOCK_BACKGROUND_EXISTS"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -404,6 +413,50 @@
       "sha256": "3eae146312bea69edbd8cefa0abc2440a508f1bb5e75ff4447722a4ac50e9f52"
     },
     {
+      "path": "d_quotient_programme/contributions/classical-positive-berger-clock-background.json",
+      "payload": {
+        "boundary_conditions": "static Berger cylinder with closed S3; q in ((5-sqrt(21))/2,1/4); exact stationary Bach-sourced background; perturbative phase space not yet reduced",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the exact Berger Ricci, scalar-curvature, Weyl, and Bach tensors are derived in an orthonormal left-invariant frame",
+          "two standard-sign conformal scalars of constant modulus and phase theta=omega t solve the scalar and Bach-source equations on an exact open q interval",
+          "the scalar target metric is positive, the quartic potential is bounded below, and the stationary stress satisfies the dominant-energy inequalities",
+          "the phase gradient is everywhere timelike and the raw temporal-diffeomorphism/Weyl incidence determinant rho^2 omega is nonzero",
+          "the rational fixture a=1, q=9/40, alpha_B=5, rho=1, omega=3/4, lambda=119/480 satisfies every independent field equation"
+        ],
+        "evidence": {
+          "commit": "77c4108b6a7e8d4aedb6ef6ddaaa5772c4636851",
+          "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+          "sha256": "fd7419b3a5985d83593de83824263c320b8fe44e47c69c473e7db5e30040b192"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "CLASSICAL_CHARGE",
+        "next_gate": "FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT: derive the normalized covariant D charge, support-local all-row clock contraction, causal propagation, and stability on perturbations of the exact Berger branch",
+        "not_established": [
+          "the normalized covariant D charge on the perturbative Berger-clock phase space",
+          "a support-local all-row BV clock contraction",
+          "causal Green homotopies for the matter-coupled Berger background",
+          "linear, nonlinear, or quantum stability",
+          "a D_GAUGE verdict"
+        ],
+        "phase_space_id": "positive_rotating_scalar_berger_background",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_positive_berger_clock",
+        "team_id": "classical",
+        "verdict": "POSITIVE_BERGER_CLOCK_BACKGROUND_EXISTS",
+        "verification_commands": [
+          "python3 d_quotient_classical/backreacted_clock/positive_berger_clock.py --check --guards",
+          "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_positive_berger_clock",
+          "python3 d_quotient_classical/verify_classical_status.py --guards"
+        ]
+      },
+      "sha256": "35f3f45fafa095021239cb6a8a450e8519eaa13336f99a95daf9e41d5e61c0d2"
+    },
+    {
       "path": "d_quotient_programme/contributions/einstein-ed1a-asymptotic-generator-gate.json",
       "payload": {
         "boundary_conditions": "fixed Minkowski conformal completion at null infinity; full Bach radiative, Coulombic, soft, corner, ghost, and antifield phase space not yet closed",
@@ -489,9 +542,9 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "26d10404b96fdf0721b7325ecefabf295dfe2a83",
+      "commit": "be39ddec1ce4f70116c44acf7f9608da94f64801",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "d28b8a7ba353d90b24b78ad64cc27bde08a1ec52c2bec84c020435ced887480f"
+      "sha256": "9b8b6d8c3b0768715aed1c0e9164e2f8ede5f27553dd003722680902d8e6db3f"
     },
     "einstein_boundary": {
       "commit": "89acca36479ebaea069c21eb23517dc6b1b49389",
@@ -499,9 +552,9 @@
       "sha256": "359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663"
     },
     "nonlinear": {
-      "commit": "b21d0244b108286b979c25d70ec593aa44587771",
+      "commit": "84dd459381bc4bc6219c5012594b018992b636c8",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "0af0703b8d8162c959b34d1672108937984088b2c121aa11731d76c47828adc4"
+      "sha256": "466db529891e3d306b704f2ceb119598386f74893274b051a56babba409a2cd8"
     },
     "quantum": {
       "commit": "04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61",
@@ -511,11 +564,11 @@
   },
   "team_status": [
     {
-      "established": "D_compact is gauge on the exact homogeneous neutral clock sector, but that model has a sign-changing ratio mode; the complete standard positive-sign one-field stealth family, including inhomogeneous configurations, has no globally regular everywhere-timelike clock.",
-      "next_gate": "positive-energy non-conformally-flat Bach-sourced clock",
-      "result_state": "PARTIAL_WITH_STANDARD_ONE_FIELD_CLOCK_ALTERNATIVES_CLASSIFIED",
+      "established": "The standard one-field stealth route is ruled out, while an exact non-conformally-flat Berger-cylinder family carries a standard-sign rotating two-scalar phase clock with positive quartic and dominant-energy stress. The perturbative D charge remains open.",
+      "next_gate": "full Berger-clock covariant charge and all-row BV audit",
+      "result_state": "PARTIAL_WITH_HEALTHY_BERGER_CLOCK_BACKGROUND",
       "team_id": "classical",
-      "verdict": "SCOPED_NEUTRAL_CLOCK_D_GAUGE_STANDARD_STEALTH_NO_GO"
+      "verdict": "POSITIVE_CLOCK_BACKGROUND_EXISTS_CHARGE_OPEN"
     },
     {
       "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem.",
