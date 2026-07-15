@@ -149,6 +149,15 @@ Keep the scope separate from pure Weyl gravity and from the full E-D2 target.
 The full metric BV lift, arbitrary sources, nonlinear propagation, null
 infinity, and scattering remain open.
 
+The follow-on local-projector certificate
+`bridge/certificates/compensated_einstein_local_projectors.json` constructs
+the complementary on-shell differential projectors `Pi_E=1+Box/M^2` and
+`Pi_M=-Box/M^2`.  They commute with free evolution, are support-nonincreasing,
+and reproduce the symplectic block split.  Their locality begins only after TT
+reduction, and the source audit shows that a generic source excites both
+branches.  The next E-D2 object is therefore a gauge-covariant sourced
+Einstein-defect subcomplex on the unreduced metric BV fields.
+
 ## Work package E-D3: observables, charges, and scattering
 
 Compare the selected sector with Einstein gravity by constructing explicit

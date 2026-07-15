@@ -1,0 +1,172 @@
+{
+  "cauchy_projector_theorem": {
+    "branch_action": [
+      "P_E I_E=I_E",
+      "P_E I_M=0",
+      "P_M I_M=I_M",
+      "P_M I_E=0"
+    ],
+    "cauchy_vector": "X=(h,d_t h,d_t^2 h,d_t^3 h)",
+    "einstein_projector_matrix": [
+      [
+        "(q+M2)/M2",
+        "0",
+        "1/M2",
+        "0"
+      ],
+      [
+        "0",
+        "(q+M2)/M2",
+        "0",
+        "1/M2"
+      ],
+      [
+        "-q(q+M2)/M2",
+        "0",
+        "-q/M2",
+        "0"
+      ],
+      [
+        "0",
+        "-q(q+M2)/M2",
+        "0",
+        "-q/M2"
+      ]
+    ],
+    "evolution": [
+      "[P_E,A_4]=0",
+      "[P_M,A_4]=0"
+    ],
+    "field_form": [
+      "Pi_E h=h+chi/M2",
+      "Pi_M h=-chi/M2",
+      "chi=Box h"
+    ],
+    "identities": [
+      "P_E^2=P_E",
+      "P_M^2=P_M",
+      "P_E P_M=P_M P_E=0",
+      "P_E+P_M=I_4"
+    ],
+    "massive_projector": "P_M=I_4-P_E",
+    "status": "PASS"
+  },
+  "claim_flags": {
+    "einstein_scattering_equivalence_proved": false,
+    "full_metric_diff_weyl_bv_projector_constructed": false,
+    "generic_source_excites_massive_branch": true,
+    "generic_source_preserves_einstein_only_sector": false,
+    "local_projector_on_unreduced_metric_bv_complex": false,
+    "nonlinear_projector_constructed": false,
+    "null_infinity_projector_constructed": false,
+    "on_shell_projectors_derived": true,
+    "projector_completeness_exact": true,
+    "projector_idempotence_exact": true,
+    "projector_orthogonality_exact": true,
+    "projectors_commute_with_free_evolution": true,
+    "projectors_regular_at_q_zero_for_nonzero_M2": true,
+    "projectors_support_nonincreasing_in_reduced_tt": true,
+    "pure_weyl_limit_singular": true,
+    "reduced_retarded_green_split_constructed": false,
+    "source_compatible_einstein_defect_complex_constructed": false,
+    "sourced_branch_equations_derived": true,
+    "spatial_tt_projection_proved_local": false,
+    "symplectic_block_decomposition_exact": true,
+    "tt_locality_boundary_declared": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "domain": {
+    "field_domain": "already transverse-traceless reduced metric amplitudes",
+    "operator_domain": "smooth or distributional TT solutions on which constant-coefficient differential operators act",
+    "parameters": "M2=c1/alpha is nonzero; causal massive interpretation additionally assumes M2>0",
+    "spacetime": "four-dimensional Minkowski space",
+    "theory": "source-free constant-compensator Einstein-Weyl TT equation unless the source audit is invoked"
+  },
+  "inputs": {
+    "causal_subsector": {
+      "path": "bridge/certificates/compensated_einstein_causal_subsector.json",
+      "sha256": "ec91bb684fc0b306517de5d1bcd9763a5b69b1520fe3bd4a6b61de7e697b73b9"
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/compensated_einstein_local_projectors.py",
+    "generator_sha256": "0a18a853398568149e3e8d437cc9f95fa7892c45157d6ef0373a98ba871c228b",
+    "input_base_commit": "4eecb219843281d0375b835d37e5b25e7b067039"
+  },
+  "quotient_polynomial_theorem": {
+    "completeness": "Pi_E+Pi_M=1 exactly",
+    "einstein_projector": "Pi_E=1+y/M2",
+    "equation_ideal": "L(y)=y(y+M2)",
+    "image_equations": [
+      "y Pi_E=0 mod L",
+      "(y+M2)Pi_M=0 mod L"
+    ],
+    "massive_projector": "Pi_M=-y/M2",
+    "on_shell_idempotence": [
+      "Pi_E^2=Pi_E mod L",
+      "Pi_M^2=Pi_M mod L"
+    ],
+    "on_shell_orthogonality": "Pi_E Pi_M=0 mod L",
+    "quotient_ring": "Q(M2)[y]/(y(y+M2)), with M2!=0",
+    "status": "PASS"
+  },
+  "result_id": "COMPENSATED_EINSTEIN_LOCAL_PROJECTORS",
+  "result_state": "LOCAL_ON_SHELL_TT_BRANCH_SPLITTING_CERTIFIED",
+  "schema": "compensated-einstein-local-projectors-v1",
+  "schema_path": "bridge/einstein_sector/schema/compensated_einstein_local_projectors.schema.json",
+  "schema_sha256": "452afa4a63dcbb6ad9cfd87ccfbbb774ad565a86ee25edb2136e4691f9e7cbef",
+  "scope_guards": [
+    "the algebraic identities hold on shell modulo Box(Box+M2)",
+    "support-nonincreasing locality applies to Pi_E and Pi_M on already-TT fields",
+    "no locality claim is made for the spatial TT reduction of a general metric perturbation",
+    "q=0 regularity of the branch projectors does not define a global helicity frame at zero momentum",
+    "a generic source splits into oppositely sourced branches and does not preserve Pi_M h=0",
+    "the M2->0 pure-Weyl limit is singular and retains the certified zero-pairing obstruction",
+    "no full BV, nonlinear, boundary, scattering, or quantum projector is claimed"
+  ],
+  "source_audit": {
+    "einstein_only_condition": "Pi_M h=0 is compatible with the displayed scalar TT source equation only when J=0",
+    "interpretation": "the projectors split a sourced response but a generic source excites both branches; a sourced Einstein defect must be defined relative to the sourced Einstein equation",
+    "projected_equations": [
+      "Box(Pi_E h)=J/M2",
+      "(Box+M2)(Pi_M h)=-J/M2"
+    ],
+    "sourced_equation": "Box(Box+M2)h=J",
+    "status": "PASS"
+  },
+  "support_and_ir_audit": {
+    "causal_consequence": "the free solution splitting introduces no spacelike or future-boundary tail",
+    "differential_order": 2,
+    "existing_q_zero_exclusion": "the prior helicity-wave-packet domain excludes k=0 because a global helicity frame and radiative polarization basis degenerate there, not because Pi_E or Pi_M is singular",
+    "position_space_operators": [
+      "Pi_E=1+Box/M2",
+      "Pi_M=-Box/M2"
+    ],
+    "pure_weyl_limit": "M2->0 makes both projectors singular as the simple roots coalesce",
+    "q_zero": "the projectors contain no inverse q or inverse |k| and are algebraically regular at q=0 for M2!=0",
+    "support_property": "supp(Pi_E f) subset supp(f) and supp(Pi_M f) subset supp(f)"
+  },
+  "symplectic_projector_theorem": {
+    "conclusion": "the local branch splitting is the certified symplectic block decomposition",
+    "cross_block": "P_E^T Omega P_M=0",
+    "einstein_block": "I_E^T Omega I_E=(c1/2)J_2",
+    "massive_block": "I_M^T Omega I_M=-(c1/2)J_2",
+    "self_adjointness": [
+      "P_E^T Omega=Omega P_E",
+      "P_M^T Omega=Omega P_M"
+    ],
+    "status": "PASS"
+  },
+  "tt_locality_audit": {
+    "consequence": "this certificate cannot be promoted to a local projector on the unreduced metric BV complex",
+    "local_statement": "Pi_E and Pi_M are local differential operators on already-TT fields",
+    "next_required_object": "a gauge-covariant Einstein-defect subcomplex on the full Diff x Weyl BV fields, avoiding reliance on a nonlocal TT projection",
+    "nonlocal_step_not_used": "constructing a spatial TT representative from a general metric perturbation can require inverse elliptic operators"
+  },
+  "verdict": "LOCAL_ON_SHELL_EINSTEIN_MASSIVE_PROJECTORS_CERTIFIED_TT_SCOPE",
+  "verification_command": "python3 -m bridge.einstein_sector.compensated_einstein_local_projectors --verify bridge/certificates/compensated_einstein_local_projectors.json"
+}

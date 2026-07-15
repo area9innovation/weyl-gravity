@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "compensated-einstein-local-projectors-v1",
+  "title": "Local compensated Einstein branch-projector certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "provenance",
+    "inputs",
+    "domain",
+    "quotient_polynomial_theorem",
+    "cauchy_projector_theorem",
+    "symplectic_projector_theorem",
+    "support_and_ir_audit",
+    "source_audit",
+    "tt_locality_audit",
+    "verdict",
+    "claim_flags",
+    "scope_guards",
+    "verification_command"
+  ],
+  "properties": {
+    "schema": {"const": "compensated-einstein-local-projectors-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/compensated_einstein_local_projectors.schema.json"},
+    "result_id": {"const": "COMPENSATED_EINSTEIN_LOCAL_PROJECTORS"},
+    "result_state": {"const": "LOCAL_ON_SHELL_TT_BRANCH_SPLITTING_CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "verdict": {"const": "LOCAL_ON_SHELL_EINSTEIN_MASSIVE_PROJECTORS_CERTIFIED_TT_SCOPE"},
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "on_shell_projectors_derived",
+        "projector_idempotence_exact",
+        "projector_completeness_exact",
+        "projector_orthogonality_exact",
+        "projectors_commute_with_free_evolution",
+        "projectors_support_nonincreasing_in_reduced_tt",
+        "symplectic_block_decomposition_exact",
+        "projectors_regular_at_q_zero_for_nonzero_M2",
+        "pure_weyl_limit_singular",
+        "sourced_branch_equations_derived",
+        "generic_source_excites_massive_branch",
+        "tt_locality_boundary_declared",
+        "local_projector_on_unreduced_metric_bv_complex",
+        "spatial_tt_projection_proved_local",
+        "generic_source_preserves_einstein_only_sector",
+        "source_compatible_einstein_defect_complex_constructed",
+        "reduced_retarded_green_split_constructed",
+        "full_metric_diff_weyl_bv_projector_constructed",
+        "nonlinear_projector_constructed",
+        "null_infinity_projector_constructed",
+        "einstein_scattering_equivalence_proved"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

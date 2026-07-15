@@ -171,5 +171,13 @@ retarded Green operator, full Diff x Weyl BV--BFV lift, null-infinity charge
 theorem, nonlinear constraint propagation theorem, and scattering
 equivalence remain open.
 
+The local projector hardening is now certified separately in
+`notes/conformal-compensated-einstein-local-projectors.md`.  It constructs
+`Pi_E=1+Box/M^2` and `Pi_M=-Box/M^2`, proves their on-shell projector,
+evolution, support, and symplectic identities, and separates the harmless
+`q=0` branch algebra from the singular helicity frame.  It also proves that a
+generic scalar TT source excites both projected branches.  It does not promote
+a local TT reduction or a full BV projector.
+
 Machine certificate:
 `bridge/certificates/compensated_einstein_causal_subsector.json`.

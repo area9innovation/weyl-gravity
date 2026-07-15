@@ -228,6 +228,14 @@ Einstein-Hilbert helicity-`+/-2` phase space.  This does not remove the massive
 branch from the full theory or establish sourced, nonlinear, BV, boundary, or
 scattering closure.
 
+The local projector hardening in
+`notes/conformal-compensated-einstein-local-projectors.md` further gives the
+explicit on-shell differential splitting
+`Pi_E=1+Box/M^2`, `Pi_M=-Box/M^2`.  It is support-nonincreasing and
+symplectically block diagonal on already-TT fields, but it neither makes the
+spatial TT reduction local nor preserves an Einstein-only sector under a
+generic source.
+
 ## Background inventory
 
 All smooth four-dimensional Einstein metrics survive the pure-Weyl equation,
