@@ -10,6 +10,7 @@ also reads the emitted certificate only to check the scoped claim boundary.
 from __future__ import annotations
 
 import json
+import hashlib
 from pathlib import Path
 
 import sympy as sp
@@ -21,6 +22,12 @@ CERTIFICATE = (
     / "d_quotient_classical"
     / "certificates"
     / "BERGER_MINIMAL_BV_CLOCK_SDR.json"
+)
+LAYOUT_CERTIFICATE = (
+    ROOT
+    / "d_quotient_classical"
+    / "certificates"
+    / "BERGER_RETAINED_MINIMAL_LAYOUT.json"
 )
 
 
@@ -96,9 +103,16 @@ def main() -> None:
     assert homotopy.T * clock_pairing + clock_pairing * homotopy == zero
 
     payload = json.loads(CERTIFICATE.read_text())
+    layout = json.loads(LAYOUT_CERTIFICATE.read_text())
+    layout_digest = hashlib.sha256(
+        json.dumps(layout, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
     assert payload["claim_status"] == "CERTIFIED_MINIMAL_CLOCK_SECTOR_SDR"
     assert payload["sdr"]["contracted_clock_dimension"] == 8
     assert payload["sdr"]["retained_minimal_dimension"] == 26
+    assert payload["retained_layout_ref"]["payload_sha256"] == layout_digest
+    assert payload["retained_layout_ref"]["component_count"] == 26
+    assert payload["next_gate"] == "BERGER_RETAINED_MINIMAL_OPERATOR"
     flags = payload["flags"]
     assert flags["support_local_clock_SDR_exact"] is True
     for open_flag in (

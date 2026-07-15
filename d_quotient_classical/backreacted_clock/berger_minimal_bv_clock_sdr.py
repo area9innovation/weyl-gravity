@@ -37,6 +37,13 @@ from typing import Any
 
 import sympy as sp
 
+try:
+    from d_quotient_classical.backreacted_clock.berger_retained_minimal_layout import (
+        BergerRetainedMinimalLayout,
+    )
+except ModuleNotFoundError:  # Direct script execution from its own directory.
+    from berger_retained_minimal_layout import BergerRetainedMinimalLayout
+
 
 ROOT = Path(__file__).resolve().parents[2]
 CERTIFICATE_PATH = (
@@ -202,6 +209,7 @@ class BergerMinimalBVClockSDR:
     @classmethod
     def build(cls) -> "BergerMinimalBVClockSDR":
         matrices = _exact_matrices()
+        retained_layout = BergerRetainedMinimalLayout.build()
         payload: dict[str, Any] = {
             "schema": "pure-weyl-berger-minimal-bv-clock-sdr-v1",
             "result_id": "BERGER_MINIMAL_BV_CLOCK_SDR",
@@ -301,6 +309,14 @@ class BergerMinimalBVClockSDR:
                 "support_preservation": "all entries are algebraic or first-order differential operators and obey supp(Tu) subset supp(u)",
                 "support_categories": ["compact", "spacelike-compact", "smooth"],
             },
+            "retained_layout_ref": {
+                "result_id": retained_layout.payload["result_id"],
+                "schema": retained_layout.payload["schema"],
+                "payload_sha256": retained_layout.digest,
+                "component_count": len(retained_layout.payload["component_rows"]),
+                "immediate_gate": retained_layout.payload["gate_split"]["immediate_gate"],
+                "subsequent_gate": retained_layout.payload["gate_split"]["subsequent_gate"],
+            },
             "operator_fingerprints": {
                 name: _matrix_digest(matrices[name])
                 for name in (
@@ -334,7 +350,7 @@ class BergerMinimalBVClockSDR:
                 "causal_green_homotopy_constructed": False,
                 "full_Berger_clock_BV_theorem": False,
             },
-            "next_gate": "BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION",
+            "next_gate": "BERGER_RETAINED_MINIMAL_OPERATOR",
             "not_established": [
                 "the coefficientwise ten-component dressed-metric Hessian and its Noether row",
                 "the gauge-fixed antighost, multiplier, and auxiliary rows",
@@ -356,7 +372,7 @@ class BergerMinimalBVClockSDR:
             "field_coordinates", "gauge_incidence", "canonical_antifield_lift",
             "minimal_row_layout", "clock_block", "hessian_split_argument",
             "sdr", "operator_fingerprints", "rational_fixture", "flags",
-            "next_gate", "not_established", "claim_boundary",
+            "retained_layout_ref", "next_gate", "not_established", "claim_boundary",
         }
         if set(p) != required:
             raise AssertionError("Berger minimal clock SDR key set drifted")
@@ -382,7 +398,14 @@ class BergerMinimalBVClockSDR:
             raise AssertionError("minimal row dimension drifted")
         if p["sdr"]["contracted_clock_dimension"] != 8:
             raise AssertionError("clock contraction dimension drifted")
-        if p["next_gate"] != "BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION":
+        layout = BergerRetainedMinimalLayout.build()
+        if p["retained_layout_ref"]["payload_sha256"] != layout.digest:
+            raise AssertionError("retained layout fingerprint drifted")
+        if p["retained_layout_ref"]["component_count"] != 26:
+            raise AssertionError("retained layout component count drifted")
+        if p["retained_layout_ref"]["subsequent_gate"] != "BERGER_NONMINIMAL_COMPLETION":
+            raise AssertionError("retained/nonminimal gate split drifted")
+        if p["next_gate"] != "BERGER_RETAINED_MINIMAL_OPERATOR":
             raise AssertionError("Berger clock next gate drifted")
 
     def certificate_text(self) -> str:
@@ -482,7 +505,8 @@ full 34-dimensional minimal complex therefore retracts support-locally onto a
 This is the complete minimal clock-sector SDR, not the complete Berger BV
 theorem.  The retained ten-component dressed-metric Hessian, nonminimal
 gauge-fixed rows, stability analysis, and causal Green homotopies remain the
-next gate: `BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`.
+next gate: `BERGER_RETAINED_MINIMAL_OPERATOR`.  The nonminimal rows are a
+separate subsequent gate, `BERGER_NONMINIMAL_COMPLETION`.
 """
 
 

@@ -8,7 +8,7 @@
     "schema", "result_id", "setting_id", "phase_space_id", "claim_status",
     "dependency_tags", "background_inputs", "field_coordinates",
     "gauge_incidence", "canonical_antifield_lift", "minimal_row_layout",
-    "clock_block", "hessian_split_argument", "sdr", "operator_fingerprints",
+    "clock_block", "hessian_split_argument", "sdr", "retained_layout_ref", "operator_fingerprints",
     "rational_fixture", "flags", "next_gate", "not_established",
     "claim_boundary"
   ],
@@ -27,10 +27,11 @@
     "clock_block": {"type": "object"},
     "hessian_split_argument": {"type": "object"},
     "sdr": {"type": "object"},
+    "retained_layout_ref": {"type": "object"},
     "operator_fingerprints": {"type": "object"},
     "rational_fixture": {"type": "object"},
     "flags": {"type": "object"},
-    "next_gate": {"const": "BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION"},
+    "next_gate": {"const": "BERGER_RETAINED_MINIMAL_OPERATOR"},
     "not_established": {"type": "array", "items": {"type": "string"}, "minItems": 1},
     "claim_boundary": {"type": "string", "minLength": 1}
   }

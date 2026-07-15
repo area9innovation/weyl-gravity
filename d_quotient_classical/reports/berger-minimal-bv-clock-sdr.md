@@ -91,4 +91,5 @@ full 34-dimensional minimal complex therefore retracts support-locally onto a
 This is the complete minimal clock-sector SDR, not the complete Berger BV
 theorem.  The retained ten-component dressed-metric Hessian, nonminimal
 gauge-fixed rows, stability analysis, and causal Green homotopies remain the
-next gate: `BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION`.
+next gate: `BERGER_RETAINED_MINIMAL_OPERATOR`.  The nonminimal rows are a
+separate subsequent gate, `BERGER_NONMINIMAL_COMPLETION`.

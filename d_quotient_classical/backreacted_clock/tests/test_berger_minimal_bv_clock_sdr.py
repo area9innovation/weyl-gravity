@@ -29,6 +29,10 @@ class BergerMinimalBVClockSDRTests(unittest.TestCase):
         )
         self.assertTrue(self.payload["field_coordinates"]["support_local"])
         self.assertEqual(self.payload["sdr"]["retained_minimal_dimension"], 26)
+        layout = self.payload["retained_layout_ref"]
+        self.assertEqual(layout["component_count"], 26)
+        self.assertEqual(layout["immediate_gate"], "BERGER_RETAINED_MINIMAL_OPERATOR")
+        self.assertEqual(layout["subsequent_gate"], "BERGER_NONMINIMAL_COMPLETION")
 
     def test_open_work_is_not_promoted(self) -> None:
         flags = self.payload["flags"]

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-retained-minimal-layout-v1.schema.json",
+  "title": "Authoritative retained Berger minimal-BV layout",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "phase_space_id", "claim_status",
+    "dependency_tags", "coordinate_conventions", "bundle_rows",
+    "component_rows", "pairing_conventions", "q1_block_contract",
+    "required_operator_identities", "support_and_order_contract",
+    "gate_split", "nonlinear_export_compatibility", "flags",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-minimal-layout-v1"},
+    "result_id": {"const": "BERGER_RETAINED_MINIMAL_LAYOUT"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "phase_space_id": {"const": "positive_berger_fixed_coupling_linearized_solutions"},
+    "claim_status": {"const": "CERTIFIED_TYPED_LAYOUT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "coordinate_conventions": {"type": "object"},
+    "bundle_rows": {"type": "array", "minItems": 4, "maxItems": 4},
+    "component_rows": {
+      "type": "array", "minItems": 26, "maxItems": 26,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["index", "row_id", "degree", "parity", "bundle_id", "component", "dual_row_id"],
+        "properties": {
+          "index": {"type": "integer", "minimum": 0, "maximum": 25},
+          "row_id": {"type": "string", "minLength": 1},
+          "degree": {"enum": [-1, 0, 1, 2]},
+          "parity": {"enum": ["even", "odd"]},
+          "bundle_id": {"type": "string", "minLength": 1},
+          "component": {"type": "string", "minLength": 1},
+          "dual_row_id": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "pairing_conventions": {"type": "object"},
+    "q1_block_contract": {"type": "array", "minItems": 3, "maxItems": 3},
+    "required_operator_identities": {"type": "array", "minItems": 6},
+    "support_and_order_contract": {"type": "object"},
+    "gate_split": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["immediate_gate", "subsequent_gate", "later_gates"],
+      "properties": {
+        "immediate_gate": {"const": "BERGER_RETAINED_MINIMAL_OPERATOR"},
+        "subsequent_gate": {"const": "BERGER_NONMINIMAL_COMPLETION"},
+        "later_gates": {"type": "array", "minItems": 2, "maxItems": 2}
+      }
+    },
+    "nonlinear_export_compatibility": {"type": "object"},
+    "flags": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
