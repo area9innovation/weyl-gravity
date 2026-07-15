@@ -163,13 +163,12 @@ This proves a credible healthy clock *background*.  Its fixed-coupling
 linearized charge gate is now closed.  The minimal temporal/Weyl clock sector
 also contracts support-locally and cyclically on all eight field/ghost and
 minimal-dual rows, leaving a 26-row dressed-metric/spatial-diffeomorphism
-complex. Its full spatial gauge generator, adjoint identity row,
-action-derived matter Hessian, and fourth-order Bach principal block are now
-certified. Because the Berger background has nonzero Weyl curvature, the
-remaining order-three-and-lower Bach coefficients require a new invariant PBW
-expansion and cannot be imported from the round cylinder. The complete
-retained operator, nonminimal rows, causal Green homotopies, and stability
-remain separate.
+complex. The complete retained operator is now certified coefficientwise.
+The nonzero-Weyl Berger Bach variation has been expanded at every differential
+order in the invariant-frame PBW algebra; together with the matter Hessian it
+obeys the exact spatial Noether identities, formal self-adjointness, cyclicity,
+and (q_1^2=0) on all 26 rows. Nonminimal rows, causal Green homotopies, and
+nonlinear stability remain separate.
 Generalized non-Noetherian or higher-derivative scalar actions remain
 separate theories with independent health and BV gates.
 
@@ -226,12 +225,9 @@ average to a forbidden charged homogeneous tangent. Consequently
 
 for every smooth fixed-coupling linearized tangent, and the scoped verdict is
 `D_GAUGE`.  The nonzero background momentum is fixed by the compact lapse
-constraint; its pullback differential vanishes. The replacement gate is now
-`BERGER_LINEARIZED_BACH_PBW_EXPANSION`, using the authoritative 26-component
-row layout and retained-operator preflight. It must provide every
-order-three-and-lower curved Bach coefficient before
-`BERGER_RETAINED_MINIMAL_OPERATOR` can promote. `BERGER_NONMINIMAL_COMPLETION`
-follows as a separate gate, then the causal and stability parts of
+constraint; its pullback differential vanishes.
+`BERGER_RETAINED_MINIMAL_OPERATOR` is now complete. The replacement gate is
+`BERGER_NONMINIMAL_COMPLETION`, followed by the causal and stability parts of
 `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
 
 ### Parked nonlinear support-local export

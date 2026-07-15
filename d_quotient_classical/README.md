@@ -68,6 +68,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RETAINED_MINIMAL_OPERATOR_PREFLIGHT.json`](certificates/BERGER_RETAINED_MINIMAL_OPERATOR_PREFLIGHT.json)
 - Retained minimal-operator preflight report:
   [`reports/berger-retained-minimal-operator-preflight.md`](reports/berger-retained-minimal-operator-preflight.md)
+- Complete retained 26-row minimal operator:
+  [`certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json`](certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json)
+- Complete retained minimal-operator report:
+  [`reports/berger-retained-minimal-operator.md`](reports/berger-retained-minimal-operator.md)
 
 The only scientific verdicts are:
 
@@ -116,6 +120,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_ret
 python3 d_quotient_classical/backreacted_clock/berger_retained_minimal_operator.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_operator_independent.py
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_minimal_operator
+python3 d_quotient_classical/backreacted_clock/berger_linearized_bach_pbw.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_retained_minimal_operator.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_linearized_bach_pbw
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -144,14 +151,14 @@ first-order support-local cyclic contraction: 8 of the 34 minimal rows
 contract, leaving a 26-row dressed-metric/spatial-diffeomorphism complex.
 Its component IDs, degree ranks, duality, pairing conventions, support rules,
 and three allowed (q_1) blocks are now frozen by one authoritative layout.
-The retained-operator preflight additionally completes the full spatial gauge
-generator, its formal-adjoint identity row, the action-derived matter Hessian,
-and the fourth-order Bach principal block. It does not reuse the invalid
-round-cylinder lower-order Hessian on the nonzero-Weyl Berger background. The
-immediate exact gate is `BERGER_LINEARIZED_BACH_PBW_EXPANSION`; completing it
-is required before `BERGER_RETAINED_MINIMAL_OPERATOR` can promote.
-Nonminimal gauge-fixing is the separate `BERGER_NONMINIMAL_COMPLETION` gate.
-Causal Green homotopies and nonlinear stability remain open.
+The retained operator is now complete. Its Bach block is expanded through all
+orders in the exact invariant-frame PBW algebra on the nonzero-Weyl Berger
+background; no round-cylinder lower-order term is reused. Exact composition
+proves the spatial Noether identities, formal self-adjointness, cyclicity, and
+the full 26-row relation (q_1^2=0). The immediate gate is now the separate
+`BERGER_NONMINIMAL_COMPLETION`, followed by the causal Green contraction.
+Nonlinear (q_2), arity-two (D)-Cartan stability, and the combined classical
+support-local export remain open.
 
 ## Promotion rule
 
