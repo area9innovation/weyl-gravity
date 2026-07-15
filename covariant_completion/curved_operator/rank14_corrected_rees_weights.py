@@ -19,6 +19,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import hashlib
+from typing import Mapping
 
 import sympy as sp
 
@@ -149,12 +150,33 @@ def _minimal_weights(
     return weights
 
 
+def _columns(vectors: list[sp.Matrix], rows: int) -> sp.Matrix:
+    return sp.Matrix.hstack(*vectors) if vectors else sp.zeros(rows, 0)
+
+
+def _complement(boundaries: sp.Matrix, cycles: sp.Matrix) -> sp.Matrix:
+    """Choose deterministic quotient representatives column by column."""
+
+    current = boundaries.copy()
+    output: list[sp.Matrix] = []
+    rank = current.rank()
+    for column in range(cycles.cols):
+        candidate = current.row_join(cycles[:, column])
+        new_rank = candidate.rank()
+        if new_rank > rank:
+            output.append(cycles[:, column])
+            current = candidate
+            rank = new_rank
+    return _columns(output, cycles.rows)
+
+
 @dataclass(frozen=True)
 class Rank14CorrectedReesWeights:
     covector: tuple[sp.Symbol, ...]
     weights: dict[str, tuple[int, ...]]
     map_components: dict[str, dict[int, sp.Matrix]]
     differentials: tuple[sp.Matrix, ...]
+    lower_differentials: tuple[sp.Matrix, ...]
     t_lower_order_bound_certified: bool
 
     @staticmethod
@@ -215,11 +237,33 @@ class Rank14CorrectedReesWeights:
             sp.zeros(9, 26).row_join(-leading["C"])
         )
         d_one = leading["N"].row_join(leading["B"])
+
+        def layer(name: str, degree: int, rows: int, columns: int) -> sp.Matrix:
+            return components[name].get(degree, sp.zeros(rows, columns))
+
+        lower_minus_two = layer("K", -1, 24, 9)
+        lower_minus_one = layer("T", -1, 26, 24).col_join(
+            -layer("E", -1, 24, 24)
+        )
+        lower_zero = layer("Ewc", -1, 40, 26).row_join(
+            layer("A", -1, 40, 24)
+        ).col_join(
+            sp.zeros(9, 26).row_join(-layer("C", -1, 9, 24))
+        )
+        lower_one = layer("N", -1, 14, 40).row_join(
+            layer("B", -1, 14, 9)
+        )
         result = Rank14CorrectedReesWeights(
             covector=zeta,
             weights=weights,
             map_components=components,
             differentials=(d_minus_two, d_minus_one, d_zero, d_one),
+            lower_differentials=(
+                lower_minus_two,
+                lower_minus_one,
+                lower_zero,
+                lower_one,
+            ),
             # Exact Tnew has E/B order <=2 and Cotton order <=3.  With
             # M=1 and U=(3^10,4^16), every omitted curved lower coefficient
             # is strictly negative degree; the emitted state symbol is the
@@ -228,6 +272,98 @@ class Rank14CorrectedReesWeights:
         )
         result.verify()
         return result
+
+    def _null_page(self) -> dict[str, object]:
+        """Compute the differential induced by degree -1 on null E0."""
+
+        value = (1, 1, 0, 0)
+        substitution = dict(zip(self.covector, value, strict=True))
+        d_zero = tuple(matrix.subs(substitution) for matrix in self.differentials)
+        d_lower = tuple(
+            matrix.subs(substitution) for matrix in self.lower_differentials
+        )
+        dimensions = (9, 24, 50, 49, 14)
+        boundaries: list[sp.Matrix] = []
+        representatives: list[sp.Matrix] = []
+        for degree, dimension in enumerate(dimensions):
+            outgoing = (
+                d_zero[degree] if degree < 4 else sp.zeros(0, dimension)
+            )
+            cycles = _columns(outgoing.nullspace(), dimension)
+            boundary = (
+                _columns(d_zero[degree - 1].columnspace(), dimension)
+                if degree > 0
+                else sp.zeros(dimension, 0)
+            )
+            boundaries.append(boundary)
+            representatives.append(_complement(boundary, cycles))
+
+        induced: list[sp.Matrix] = []
+        for degree in range(4):
+            source_representatives = representatives[degree]
+            if source_representatives.cols == 0:
+                induced.append(sp.zeros(representatives[degree + 1].cols, 0))
+                continue
+            quotient_basis = boundaries[degree + 1].row_join(
+                representatives[degree + 1]
+            )
+            coordinates = quotient_basis.gauss_jordan_solve(
+                d_lower[degree] * source_representatives
+            )[0]
+            induced.append(coordinates[boundaries[degree + 1].cols :, :])
+
+        # E1 representatives inside each E0 cohomology group.
+        page_one_ambient: list[sp.Matrix] = []
+        for degree in range(5):
+            incoming = (
+                _columns(induced[degree - 1].columnspace(), representatives[degree].cols)
+                if degree > 0
+                else sp.zeros(representatives[degree].cols, 0)
+            )
+            outgoing = (
+                induced[degree]
+                if degree < 4
+                else sp.zeros(0, representatives[degree].cols)
+            )
+            cycles = _columns(outgoing.nullspace(), representatives[degree].cols)
+            page_one_coordinates = _complement(incoming, cycles)
+            page_one_ambient.append(
+                representatives[degree] * page_one_coordinates
+            )
+
+        # The two directions removed from H^{-1}_{E0} are a pure-v pair.
+        first_induced = induced[1]
+        first_kernel = _columns(first_induced.nullspace(), first_induced.cols)
+        killed_coordinates = _complement(first_kernel, sp.eye(first_induced.cols))
+        killed_fields = representatives[1] * killed_coordinates
+        surviving_fields = page_one_ambient[1]
+        middle = page_one_ambient[2]
+        upper = page_one_ambient[3]
+
+        return {
+            "E0_cohomology_ranks": [matrix.cols for matrix in representatives],
+            "induced_matrices": induced,
+            "induced_ranks": [matrix.rank() for matrix in induced],
+            "E1_cohomology_ranks": [matrix.cols for matrix in page_one_ambient],
+            "field_page": {
+                "surviving_f_rank": surviving_fields[10:20, :].rank(),
+                "surviving_h_rank": surviving_fields[:10, :].rank(),
+                "surviving_v_rank": surviving_fields[20:24, :].rank(),
+                "killed_f_rank": killed_fields[10:20, :].rank(),
+                "killed_h_rank": killed_fields[:10, :].rank(),
+                "killed_v_rank": killed_fields[20:24, :].rank(),
+            },
+            "middle_page": {
+                "curvature_U_rank": middle[:26, :].rank(),
+                "paired_equation_E_rank": middle[26:, :].rank(),
+                "Weyl_EB_rank": middle[:10, :].rank(),
+                "Cotton_rank": middle[10:26, :].rank(),
+            },
+            "upper_page": {
+                "curvature_equation_Q_rank": upper[:40, :].rank(),
+                "auxiliary_identity_I_rank": upper[40:, :].rank(),
+            },
+        }
 
     def _sample(self, value: tuple[int, int, int, int]) -> dict[str, object]:
         substitution = dict(zip(self.covector, value, strict=True))
@@ -284,12 +420,28 @@ class Rank14CorrectedReesWeights:
             (14, 49),
         ]:
             raise AssertionError("corrected cone dimension ledger drifted")
+        if [matrix.shape for matrix in self.lower_differentials] != [
+            (24, 9),
+            (50, 24),
+            (49, 50),
+            (14, 49),
+        ]:
+            raise AssertionError("degree-minus-one cone ledger drifted")
         for index, (left, right) in enumerate(
             zip(self.differentials[:-1], self.differentials[1:], strict=True)
         ):
             square = (right * left).applyfunc(sp.expand)
             if square != sp.zeros(square.rows, square.cols):
                 raise AssertionError(f"corrected cone square {index} failed")
+        for index in range(3):
+            mixed = (
+                self.differentials[index + 1] * self.lower_differentials[index]
+                + self.lower_differentials[index + 1] * self.differentials[index]
+            ).applyfunc(sp.expand)
+            if mixed != sp.zeros(mixed.rows, mixed.cols):
+                raise AssertionError(
+                    f"degree-minus-one multicomplex relation {index} failed"
+                )
         expected = {
             (2, 1, 3, 5): ([9, 15, 35, 14], [0, 0, 0, 0, 0]),
             (2, 1, 0, 0): ([9, 15, 35, 14], [0, 0, 0, 0, 0]),
@@ -306,8 +458,49 @@ class Rank14CorrectedReesWeights:
             if sample["cohomology_ranks"] != cohomology:
                 raise AssertionError(f"cohomology ranks drifted at {covector}")
 
-    def certificate(self) -> dict[str, object]:
+        page = self._null_page()
+        if page["E0_cohomology_ranks"] != [0, 4, 8, 4, 0]:
+            raise AssertionError("null E0 page drifted")
+        if page["induced_ranks"] != [0, 2, 2, 0]:
+            raise AssertionError("null degree-minus-one ranks drifted")
+        if page["E1_cohomology_ranks"] != [0, 2, 4, 2, 0]:
+            raise AssertionError("null E1 page drifted")
+        if page["field_page"] != {
+            "surviving_f_rank": 2,
+            "surviving_h_rank": 0,
+            "surviving_v_rank": 0,
+            "killed_f_rank": 0,
+            "killed_h_rank": 0,
+            "killed_v_rank": 2,
+        }:
+            raise AssertionError("null algebraic f/v classification drifted")
+        if page["middle_page"] != {
+            "curvature_U_rank": 2,
+            "paired_equation_E_rank": 2,
+            "Weyl_EB_rank": 2,
+            "Cotton_rank": 0,
+        }:
+            raise AssertionError("null middle helicity classification drifted")
+        if page["upper_page"] != {
+            "curvature_equation_Q_rank": 2,
+            "auxiliary_identity_I_rank": 0,
+        }:
+            raise AssertionError("null upper algebraic classification drifted")
+
+    def certificate(
+        self, *, helicity_certificate: Mapping[str, object]
+    ) -> dict[str, object]:
         self.verify()
+        if helicity_certificate.get("schema") != (
+            "pure-weyl-curved-helicity-two-channel-v1"
+        ):
+            raise AssertionError("wrong helicity-two certificate")
+        weyl = helicity_certificate.get("linearized_Weyl_symbol")
+        if not isinstance(weyl, Mapping) or weyl.get(
+            "induced_quotient_matrix"
+        ) != [["1/4", "0"], ["0", "1/4"]]:
+            raise AssertionError("reduced Weyl (1/4)I2 certificate unavailable")
+        page = self._null_page()
         samples = {
             name: self._sample(value)
             for name, value in {
@@ -365,6 +558,67 @@ class Rank14CorrectedReesWeights:
                 "is_complex": True,
                 "cohomology_computed_after_d2": True,
             },
+            "degree_minus_one_multicomplex": {
+                "relation": "D[0]D[-1]+D[-1]D[0]=0",
+                "square_nonzero_entries": [
+                    _nonzero_count(
+                        (
+                            self.differentials[index + 1]
+                            * self.lower_differentials[index]
+                            + self.lower_differentials[index + 1]
+                            * self.differentials[index]
+                        ).applyfunc(sp.expand)
+                    )
+                    for index in range(3)
+                ],
+                "exact": True,
+                "PBW_degree_minus_two_checked": False,
+            },
+            "null_spectral_sequence": {
+                "E0_cohomology_ranks": page["E0_cohomology_ranks"],
+                "induced_d_minus_one_shapes": [
+                    list(matrix.shape) for matrix in page["induced_matrices"]
+                ],
+                "induced_d_minus_one_ranks": page["induced_ranks"],
+                "induced_d_minus_one_matrices": [
+                    [[str(value) for value in matrix.row(row)] for row in range(matrix.rows)]
+                    for matrix in page["induced_matrices"]
+                ],
+                "E1_cohomology_ranks": page["E1_cohomology_ranks"],
+                "Euler_characteristic": 0,
+            },
+            "null_representative_classification": {
+                "degree_minus_one": {
+                    **page["field_page"],
+                    "interpretation": (
+                        "E0 splits into algebraic f[2] and v[2]; d[-1] "
+                        "kills the v pair and retains the f pair"
+                    ),
+                },
+                "degree_zero": {
+                    **page["middle_page"],
+                    "interpretation": (
+                        "two Weyl E/B curvature representatives carry the "
+                        "physical helicities; two paired-equation representatives "
+                        "are algebraic"
+                    ),
+                },
+                "degree_plus_one": {
+                    **page["upper_page"],
+                    "interpretation": "two algebraic curvature-equation duals",
+                },
+            },
+            "helicity_two_cross_binding": {
+                "certificate": "curved_helicity_two_channel.json",
+                "middle_Weyl_EB_rank": page["middle_page"]["Weyl_EB_rank"],
+                "target_quotient_dimension": weyl.get(
+                    "target_quotient_dimension"
+                ),
+                "induced_quotient_matrix": weyl.get(
+                    "induced_quotient_matrix"
+                ),
+                "isomorphism": True,
+            },
             "causal_strata": samples,
             "interpretation": {
                 "generic_noncharacteristic_acyclic": True,
@@ -380,6 +634,9 @@ class Rank14CorrectedReesWeights:
                 "common_integer_Rees_weights_found": True,
                 "all_terms_filtered_degree_nonpositive": True,
                 "degree_zero_associated_graded_is_a_complex": True,
+                "degree_minus_one_multicomplex_relation": True,
+                "null_E1_page_is_02420": True,
+                "PBW_degree_minus_two_completed": False,
                 "support_local_contraction_constructed": False,
                 "prolonged_green_witness": False,
                 "causal_green_homotopy": False,
@@ -387,9 +644,8 @@ class Rank14CorrectedReesWeights:
             },
             "status_flags_promoted": [],
             "next_exact_step": (
-                "identify the 4-8-4 null module under the little group and "
-                "lift the corrected filtration through curved PBW composition"
+                "verify the PBW/Rees degree-minus-two relation, including "
+                "curvature commutators, before any full cone or Green promotion"
             ),
             "fail_closed": True,
         }
-
