@@ -42,7 +42,8 @@
       "the exact first-order Cartan-defect formula and its degree",
       "the Jacobi/Ward consistency implication in finite exact complexes",
       "exact ZERO, EXACT_REMOVABLE, and NONTRIVIAL_ANOMALY classification mechanics with primitive or dual witnesses",
-      "fail-closed lifecycle, setting, and candidate-sector ledgers"
+      "fail-closed lifecycle, setting, and candidate-sector ledgers",
+      "hash-pinned import of the classical compact-cylinder sector split without quantum promotion"
     ],
     "not_established": [
       "a complete pure-Weyl Cartan-obstruction candidate basis",
@@ -60,6 +61,7 @@
     "AFN0_local_relative_basis": "IN_PROGRESS",
     "Euler_intrinsic_descent": "IN_PROGRESS",
     "boundary_BFV_complex": "NOT_IMPORTED",
+    "classical_D_charge_setting_ledger": "IMPORTED_HASH_PINNED_NOT_A_QUANTUM_PROMOTION",
     "classical_freeze": "BLOCKED_UNFROZEN",
     "minimal_BV_antifield_completion": "BLOCKED_PENDING_CLASSICAL_EXPORT",
     "pure_weyl_QME": "NOT_RESTORED",
@@ -227,61 +229,68 @@
   "provenance": {
     "dependency_manifest": {
       "afn0_production_certificate": "4b9f3db669c8349b8417210b238a718e95eaa8b615864a2b5acb713c4cedc859",
+      "classical_D_quotient_status": "495de6865c8aa7bceb32a55769cd4f912da6d67035e899b8571843ab504457af",
       "classical_cartan_note": "6cfa7f0f6a47d4c7648985e4251eff7ab7a4f250728e3f06315bbfec06f9ad92",
       "classical_cartan_verifier": "1eb4b966a90b5f84edab52beddc00b89162cc16154e9de83688c1c8ed50b04e2",
       "classical_import_certificate": "3c6f540286ca0cda0e4c6663d31f68bf66a8a7cea40891dc65b60c43f4673213",
       "commission": "aca1d6bb10e1a98df5cc3aeaf17ff0178f51c1c523e9dc0cadeb12e9715a3ab7",
       "euler_transgression_certificate": "d9a90714b96ebc40c1048edce1156e604f0767f19711f408b115fa2754a4f972"
     },
-    "dependency_manifest_sha256": "042f79d424932ea1093c5d30a93b073d48eb0945a08acbf742b6ed3958b87ebd",
+    "dependency_manifest_sha256": "adb977339e836c5a9b85f08898fbbe99a46c985deaa077b0aae9b771b328021a",
     "schema": "quantum-weyl/cartan/schema/cartan_defect_precertificate.schema.json",
     "source_manifest": {
-      "README.md": "14b91c56755739312d3b77a970bfa60509df820476fb0ae1a520638fdad07483",
+      "README.md": "f331432ba700cf38c250f28153fd7da586607d96ad03b0a0fb6bd57a93ee28ab",
       "__init__.py": "3f353f86e435c05dbd469ff5fcb6c90abcbd2e0793b8cf2851a725502cc06444",
-      "certificate.py": "44cb1c2f1a54c751285964aad165e4a2f20202042cb54543bc4994f98d066634",
+      "certificate.py": "0137785c214fea1a03ff79b72f8398f76e90cbdafdbbef7c1c6174f25f190d3b",
       "defect_complex.py": "04fb387db00516d5e330d20daa79ea3676e561276c9bc5d6979cd6650b985523",
-      "schema/cartan_defect_precertificate.schema.json": "03556aa8340fab841645e9f28fa4ebf476afa52632fd357e9d0537e1a5d0cc8b",
-      "tests/test_certificate.py": "91c728d724d21179c8a9e76629ce7b48c9c162f0cf88e8e1d3be4d2fc75cdb97",
+      "schema/cartan_defect_precertificate.schema.json": "509dadc5724b42adfef17d6853a4a1a90553bc3514b0a9583b16dca3b663f705",
+      "tests/test_certificate.py": "7b96d5dc3312baa7de907804a2c4c6ed80abd8a77d75bcea9c2fdf894705f09b",
       "tests/test_defect_complex.py": "f01a9d0e10bc440b884d9844ed43a447ef8ee4bcb066cf75e2426ca225120aca"
     },
-    "source_manifest_sha256": "81dd8b84f131a31f1d521e96cdcd4ce3fbbd20916e00a8ea017906ca751501e4"
+    "source_manifest_sha256": "709e3590953853d445022a31bde7b7d350811e91b56294983160d9d95120120e"
   },
   "result_id": "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE",
   "result_state": "ALGEBRAIC_ENGINE_READY_PHYSICAL_CANDIDATES_INPUT_BLOCKED",
   "schema_version": "cartan-defect-precertificate-v1",
   "setting_ledger": [
     {
-      "D_charge": "CLASSICAL_GAUGE_TARGET_CONDITIONAL_GLOBAL_ONLY",
+      "D_charge": "SECTOR_DEPENDENT_CLASSICALLY_P_LIN_CHARGED_P_TAUB0_GAUGE",
+      "classical_input_status": "CERTIFIED_HASH_PINNED_NOT_A_QUANTUM_VERDICT",
       "reason": "no renormalized Q_1, Ward operator, or restored local QME",
       "setting": "vacuum_cylinder",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"
     },
     {
       "D_charge": "OPEN",
+      "classical_input_status": "OPEN",
       "reason": "scalar BV and relational observable extensions are absent",
       "setting": "cylinder_scalar_clock",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"
     },
     {
       "D_charge": "OPEN_NOT_TESTED_BEFORE_SCALAR",
+      "classical_input_status": "NOT_TESTED",
       "reason": "matter extension is outside the current execution gate",
       "setting": "cylinder_yang_mills",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"
     },
     {
       "D_charge": "OPEN",
+      "classical_input_status": "NOT_TESTED",
       "reason": "background-dependent causal and renormalized complexes are absent",
       "setting": "weakly_deformed_background",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"
     },
     {
       "D_charge": "BOUNDARY_DEPENDENT",
+      "classical_input_status": "NOT_TESTED",
       "reason": "boundary observable algebra and BRST-compatible Hadamard construction are absent",
       "setting": "lorentzian_dS_AdS",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"
     },
     {
       "D_charge": "PHYSICAL_CHARGE_EXPECTED_NOT_CERTIFIED",
+      "classical_input_status": "NOT_TESTED",
       "reason": "renormalized asymptotic charge algebra is absent; contraction is not assumed",
       "setting": "asymptotically_flat",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"

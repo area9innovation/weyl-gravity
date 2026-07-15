@@ -42,6 +42,12 @@ Lorentzian observable algebras are also absent.  Consequently this package
 does not establish anomaly freedom, an anomaly coefficient, residual quantum
 transfer, or a quantum pairing correction.
 
+The classical D-quotient handoff is imported by content hash.  It records a
+sector-dependent compact-cylinder result: `D_CHARGED` on the unrestricted
+locally reduced linearized space `P_lin`, and `D_GAUGE` only on the declared
+full Taub/moment-map zero fibre `P_Taub0`.  This restricts the quantum question
+to a declared phase space; it does not supply a quantum Ward identity.
+
 The universal ambient obstruction group is recorded as
 
 \[

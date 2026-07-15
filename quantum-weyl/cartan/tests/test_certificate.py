@@ -55,7 +55,19 @@ class CartanDefectCertificateTests(unittest.TestCase):
                 hashlib.sha256((PACKAGE_ROOT / relative).read_bytes()).hexdigest(),
                 expected,
             )
-        self.assertEqual(len(certificate["provenance"]["dependency_manifest"]), 6)
+        self.assertEqual(len(certificate["provenance"]["dependency_manifest"]), 7)
+
+    def test_classical_sector_split_is_imported_without_quantum_promotion(self) -> None:
+        vacuum = build_certificate()["setting_ledger"][0]
+        self.assertEqual(
+            vacuum["D_charge"],
+            "SECTOR_DEPENDENT_CLASSICALLY_P_LIN_CHARGED_P_TAUB0_GAUGE",
+        )
+        self.assertEqual(
+            vacuum["classical_input_status"],
+            "CERTIFIED_HASH_PINNED_NOT_A_QUANTUM_VERDICT",
+        )
+        self.assertEqual(vacuum["verdict"], "ANALYTIC_FRAMEWORK_MISSING")
 
     def test_schema_contract_is_fail_closed(self) -> None:
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))

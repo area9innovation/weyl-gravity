@@ -143,6 +143,7 @@ def _dependency_manifest() -> dict[str, str]:
         "classical_cartan_note": REPOSITORY_ROOT / "notes" / "conformal-cartan-contraction.md",
         "classical_cartan_verifier": REPOSITORY_ROOT / "symbolic" / "verify_conformal_cartan_contraction.py",
         "classical_import_certificate": QUANTUM_ROOT / "classical_import" / "certificates" / "CLASSICAL_IMPORT_CERTIFICATE.json",
+        "classical_D_quotient_status": REPOSITORY_ROOT / "d_quotient_classical" / "certificates" / "CLASSICAL_D_QUOTIENT_STATUS.json",
         "afn0_production_certificate": QUANTUM_ROOT / "local_bv" / "certificates" / "AFN0_PRODUCTION_RUN_CERTIFICATE.json",
         "euler_transgression_certificate": QUANTUM_ROOT / "local_bv" / "certificates" / "EULER_TRANSGRESSION_CERTIFICATE.json",
     }
@@ -234,43 +235,50 @@ def build_certificate() -> dict[str, Any]:
         "setting_ledger": [
             {
                 "setting": "vacuum_cylinder",
-                "D_charge": "CLASSICAL_GAUGE_TARGET_CONDITIONAL_GLOBAL_ONLY",
+                "D_charge": "SECTOR_DEPENDENT_CLASSICALLY_P_LIN_CHARGED_P_TAUB0_GAUGE",
+                "classical_input_status": "CERTIFIED_HASH_PINNED_NOT_A_QUANTUM_VERDICT",
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
                 "reason": "no renormalized Q_1, Ward operator, or restored local QME",
             },
             {
                 "setting": "cylinder_scalar_clock",
                 "D_charge": "OPEN",
+                "classical_input_status": "OPEN",
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
                 "reason": "scalar BV and relational observable extensions are absent",
             },
             {
                 "setting": "cylinder_yang_mills",
                 "D_charge": "OPEN_NOT_TESTED_BEFORE_SCALAR",
+                "classical_input_status": "NOT_TESTED",
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
                 "reason": "matter extension is outside the current execution gate",
             },
             {
                 "setting": "weakly_deformed_background",
                 "D_charge": "OPEN",
+                "classical_input_status": "NOT_TESTED",
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
                 "reason": "background-dependent causal and renormalized complexes are absent",
             },
             {
                 "setting": "lorentzian_dS_AdS",
                 "D_charge": "BOUNDARY_DEPENDENT",
+                "classical_input_status": "NOT_TESTED",
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
                 "reason": "boundary observable algebra and BRST-compatible Hadamard construction are absent",
             },
             {
                 "setting": "asymptotically_flat",
                 "D_charge": "PHYSICAL_CHARGE_EXPECTED_NOT_CERTIFIED",
+                "classical_input_status": "NOT_TESTED",
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
                 "reason": "renormalized asymptotic charge algebra is absent; contraction is not assumed",
             },
         ],
         "input_gates": {
             "classical_freeze": "BLOCKED_UNFROZEN",
+            "classical_D_charge_setting_ledger": "IMPORTED_HASH_PINNED_NOT_A_QUANTUM_PROMOTION",
             "AFN0_local_relative_basis": "IN_PROGRESS",
             "Euler_intrinsic_descent": "IN_PROGRESS",
             "minimal_BV_antifield_completion": "BLOCKED_PENDING_CLASSICAL_EXPORT",
@@ -285,6 +293,7 @@ def build_certificate() -> dict[str, Any]:
                 "the Jacobi/Ward consistency implication in finite exact complexes",
                 "exact ZERO, EXACT_REMOVABLE, and NONTRIVIAL_ANOMALY classification mechanics with primitive or dual witnesses",
                 "fail-closed lifecycle, setting, and candidate-sector ledgers",
+                "hash-pinned import of the classical compact-cylinder sector split without quantum promotion",
             ],
             "not_established": [
                 "a complete pure-Weyl Cartan-obstruction candidate basis",

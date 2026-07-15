@@ -85,10 +85,11 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["setting", "D_charge", "verdict", "reason"],
+        "required": ["setting", "D_charge", "classical_input_status", "verdict", "reason"],
         "properties": {
           "setting": {"type": "string", "minLength": 1},
           "D_charge": {"type": "string", "minLength": 1},
+          "classical_input_status": {"enum": ["CERTIFIED_HASH_PINNED_NOT_A_QUANTUM_VERDICT", "OPEN", "NOT_TESTED"]},
           "verdict": {"enum": ["CARTAN_QUANTUM_EXACT", "CARTAN_RESTORED", "CARTAN_ANOMALOUS", "ANALYTIC_FRAMEWORK_MISSING"]},
           "reason": {"type": "string", "minLength": 1}
         }
@@ -97,7 +98,7 @@
     "input_gates": {
       "type": "object",
       "additionalProperties": {"type": "string", "minLength": 1},
-      "required": ["classical_freeze", "AFN0_local_relative_basis", "Euler_intrinsic_descent", "minimal_BV_antifield_completion", "renormalized_operator_algebra", "pure_weyl_QME", "boundary_BFV_complex", "scalar_clock_extension"]
+      "required": ["classical_freeze", "classical_D_charge_setting_ledger", "AFN0_local_relative_basis", "Euler_intrinsic_descent", "minimal_BV_antifield_completion", "renormalized_operator_algebra", "pure_weyl_QME", "boundary_BFV_complex", "scalar_clock_extension"]
     },
     "claim_boundary": {
       "type": "object",

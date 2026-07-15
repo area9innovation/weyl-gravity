@@ -41,6 +41,9 @@ Every bulk, residual, boundary/corner, measure, and scalar-clock candidate
 sector is `UNDEFINED_ANALYTICALLY`.  Every requested physical setting has
 verdict `ANALYTIC_FRAMEWORK_MISSING`.  In particular:
 
+- the classical compact-cylinder handoff is imported by hash and says that
+  `D` is charged on `P_lin` but gauge on the declared `P_Taub0` derived zero
+  fibre; this phase-space split is not promoted to a quantum verdict;
 - the classical import remains unfrozen;
 - AFN0 lower-form exhaustiveness and the intrinsic Euler tower remain open;
 - the minimal antifield/Koszul--Tate rows have not been imported;
@@ -59,12 +62,12 @@ them is a later computation after both admissible complexes are declared.
 command:
   PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -q
 elapsed_seconds: 0.09
-status: PASS (11 tests)
+status: PASS (12 tests)
 test_tier: 1
 
 command:
   PYTHONPATH=quantum-weyl python3 -m cartan.certificate --check
-elapsed_seconds: 0.06
+elapsed_seconds: 0.04
 status: PASS
 test_tier: 1
 
@@ -83,7 +86,7 @@ test_tier: 0
 command:
   PYTHONHASHSEED={1,7,123} PYTHONPATH=quantum-weyl python3 -m cartan.certificate | sha256sum
 status: PASS
-certificate_sha256: c1cd80a9e6040c542c50dc559374ae31bd86e0239bcc235a323f1b3ca4d1ef2a
+certificate_sha256: a0cb9a832449dfd513d51a79ba74cdf4fd4b8c610a410d57ae84d926713662e0
 test_tier: 0
 ```
 
