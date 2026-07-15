@@ -245,6 +245,16 @@ The next exact gate is the same-base-point minimal Einstein--Maxwell versus
 Diff x Weyl--Maxwell BV comparison described in
 `notes/conformal-common-einstein-maxwell-product-background.md`.
 
+Its principal part is now complete. The exact four-stage symbol complexes
+have dimensions `5 -> 14 -> 14 -> 5` and `6 -> 14 -> 14 -> 6`, including the
+Maxwell gauge ghost and identity. The action-normalized equation-row map
+`diag(alpha_B kappa Q_p,identity_Maxwell)` gives an exact chain map. At a null
+covector the two Einstein metric and two photon classes inject into the
+Weyl--Maxwell simple-symbol cohomology, leaving two additional metric classes.
+This is a `LOCAL-ALGEBRAIC` principal theorem only: curvature/flux lower-order
+completion, generalized fourth-order modes, cyclicity, helicities, and the
+presymplectic map remain open.
+
 ## Einstein-Hilbert scale
 
 Pure four-dimensional Weyl gravity has a dimensionless coupling and no

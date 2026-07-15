@@ -1,0 +1,1057 @@
+{
+  "background": {
+    "coupling_relation": "alpha_B*kappa*(k_1+k_2)=3",
+    "field": "aligned source-free Maxwell flux",
+    "geometry": "R^(1,1) x S^2 and its R_t x S^1_L x S^2_r quotient",
+    "same_base_point": true
+  },
+  "claim_boundary": "This certificate freezes the two minimal BV layouts and proves their exact principal-symbol chain map, noncharacteristic exactness, and injective ordinary null-symbol cohomology map at the common product base point. It does not certify the curvature/flux lower-order Hessians, a full differential chain map, cyclic pairing, product-space helicities, generalized fourth-order modes, causal propagation, observables, scattering, or quantum equivalence.",
+  "claim_flags": {
+    "full_minimal_bv_operator_certificate": false,
+    "local_algebraic_principal_result": true,
+    "lorentzian_causal_claim": false,
+    "observable_embedding_claim": false,
+    "quantum_claim": false,
+    "scattering_claim": false
+  },
+  "classification": {
+    "additional_simple_symbol_weyl_metric_classes": 2,
+    "both_minimal_bv_layouts_frozen": true,
+    "covariant_presymplectic_map_constructed": false,
+    "full_curved_tangent_chain_map_constructed": false,
+    "generalized_fourth_order_modes_classified": false,
+    "helicity_assignment_on_product_background_completed": false,
+    "maxwell_ghost_and_identity_included": true,
+    "ordinary_null_einstein_symbol_cohomology_injects": true,
+    "principal_bv_chain_map_constructed": true
+  },
+  "curved_completion_gate": {
+    "missing_terms": [
+      "all curvature-dependent order-three-and-lower terms in delta B",
+      "background-flux metric/Maxwell Hessian mixing",
+      "the lower-order i_xi Fbar part of the bundle-covariant diffeomorphism generator",
+      "formal adjoints and cyclic BV pairing with the product volume form",
+      "global patching across the magnetic U(1) bundle",
+      "prolonged null complex for fourth-order generalized modes"
+    ],
+    "required_identity": "construct full differential operators F_2,F_3 with F_2 H_EM=H_WM and F_3 N_EM=N_WM F_2, or produce an exact curvature/flux obstruction",
+    "status": "OPEN"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "minimal_complex_layouts": {
+    "covariant_gauge_generators": {
+      "maxwell_potential": "delta a_m=(i_xi Fbar)_m+nabla_m lambda in a bundle-covariant splitting",
+      "metric": "delta h_mn=2 nabla_(m xi_n)+2 sigma gbar_mn (sigma absent in Einstein-Maxwell)",
+      "principal_maxwell_generator": "delta a_m=p_m lambda; i_xi Fbar is lower order"
+    },
+    "einstein_maxwell": {
+      "dimensions": [
+        5,
+        14,
+        14,
+        5
+      ],
+      "equations": [
+        "delta Einstein-Maxwell metric equation (10)",
+        "delta Maxwell equation (4)"
+      ],
+      "fields": [
+        "h_mn (10)",
+        "a_m (4)"
+      ],
+      "ghosts": [
+        "xi^0",
+        "xi^1",
+        "xi^2",
+        "xi^3",
+        "lambda_U1"
+      ],
+      "identities": [
+        "Diff Noether identities (4)",
+        "U(1) identity (1)"
+      ]
+    },
+    "weyl_maxwell": {
+      "dimensions": [
+        6,
+        14,
+        14,
+        6
+      ],
+      "equations": [
+        "delta pure-Weyl-Maxwell metric equation (10)",
+        "delta Maxwell equation (4)"
+      ],
+      "fields": [
+        "h_mn (10)",
+        "a_m (4)"
+      ],
+      "ghosts": [
+        "xi^0",
+        "xi^1",
+        "xi^2",
+        "xi^3",
+        "lambda_U1",
+        "sigma_Weyl"
+      ],
+      "identities": [
+        "Diff Noether identities (4)",
+        "U(1) identity (1)",
+        "Weyl trace identity (1)"
+      ]
+    }
+  },
+  "principal_chain_map": {
+    "einstein_nilpotency_rows": "PASS",
+    "equation_identity_square": "PASS",
+    "equation_map": "diag(alpha_B*kappa Q_p, identity_Maxwell)",
+    "field_equation_square": "PASS",
+    "field_map": "identity on (h,a)",
+    "ghost_field_square": "PASS",
+    "ghost_map": "(xi,lambda) -> (xi,lambda,sigma=0)",
+    "identity_map": "diag((alpha_B*kappa p^2/2) identity_Diff, identity_U1, zero_Weyl)",
+    "weyl_nilpotency_rows": "PASS"
+  },
+  "principal_operators": {
+    "bach_from_einstein": "Q_p(S)_mn=(p^2/2)S_mn-(eta_mn p^2-p_m p_n)tr(S)/6",
+    "covector_convention": "p_m; p^2=eta^mn p_m p_n; symmetric metric basis (00,01,02,03,11,12,13,22,23,33)",
+    "einstein_metric": "sigma_2(delta G)/kappa in the action-normalized Euler row",
+    "exact_symbol_matrices_at_nonnull_fixture": {
+      "gauge_e": [
+        [
+          "2",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "2",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "3",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "5",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "4",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "3",
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "5",
+          "0",
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "6",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "5",
+          "3",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "10",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "2"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "3"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "5"
+        ]
+      ],
+      "gauge_w": [
+        [
+          "2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-2"
+        ],
+        [
+          "2",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "3",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "5",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "4",
+          "0",
+          "0",
+          "0",
+          "2"
+        ],
+        [
+          "0",
+          "3",
+          "2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "5",
+          "0",
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "6",
+          "0",
+          "0",
+          "2"
+        ],
+        [
+          "0",
+          "0",
+          "5",
+          "3",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "10",
+          "0",
+          "2"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "3",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "5",
+          "0"
+        ]
+      ],
+      "hessian_e": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "-17/kappa",
+          "6/kappa",
+          "10/kappa",
+          "-29/(2*kappa)",
+          "15/kappa",
+          "-13/(2*kappa)",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-17/kappa",
+          "3/kappa",
+          "5/kappa",
+          "0",
+          "3/(2*kappa)",
+          "5/(2*kappa)",
+          "-1/kappa",
+          "0",
+          "-1/kappa",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "3/kappa",
+          "-29/(2*kappa)",
+          "15/(2*kappa)",
+          "-3/(2*kappa)",
+          "1/kappa",
+          "0",
+          "0",
+          "5/(2*kappa)",
+          "-3/(2*kappa)",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "5/kappa",
+          "15/(2*kappa)",
+          "-13/(2*kappa)",
+          "-5/(2*kappa)",
+          "0",
+          "1/kappa",
+          "-5/(2*kappa)",
+          "3/(2*kappa)",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-17/kappa",
+          "0",
+          "3/kappa",
+          "5/kappa",
+          "0",
+          "0",
+          "0",
+          "12/kappa",
+          "-15/kappa",
+          "4/kappa",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "3/kappa",
+          "-3/(2*kappa)",
+          "-1/kappa",
+          "0",
+          "0",
+          "-12/kappa",
+          "15/(2*kappa)",
+          "0",
+          "5/kappa",
+          "-3/kappa",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "5/kappa",
+          "-5/(2*kappa)",
+          "0",
+          "-1/kappa",
+          "0",
+          "15/(2*kappa)",
+          "-4/kappa",
+          "-5/kappa",
+          "3/kappa",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-29/(2*kappa)",
+          "2/kappa",
+          "0",
+          "5/kappa",
+          "12/kappa",
+          "0",
+          "-10/kappa",
+          "0",
+          "0",
+          "3/(2*kappa)",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "15/(2*kappa)",
+          "0",
+          "-5/(2*kappa)",
+          "-3/(2*kappa)",
+          "-15/(2*kappa)",
+          "5/kappa",
+          "3/kappa",
+          "0",
+          "-3/(2*kappa)",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-13/(2*kappa)",
+          "2/kappa",
+          "3/kappa",
+          "0",
+          "4/kappa",
+          "-6/kappa",
+          "0",
+          "3/(2*kappa)",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-38",
+          "2",
+          "3",
+          "5"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "2",
+          "33",
+          "-6",
+          "-10"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "3",
+          "-6",
+          "28",
+          "-15"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "5",
+          "-10",
+          "-15",
+          "12"
+        ]
+      ],
+      "hessian_w": [
+        [
+          "-722*alpha_B/3",
+          "76*alpha_B/3",
+          "38*alpha_B",
+          "190*alpha_B/3",
+          "-211*alpha_B/2",
+          "35*alpha_B",
+          "175*alpha_B/3",
+          "-1091*alpha_B/12",
+          "175*alpha_B/2",
+          "-177*alpha_B/4",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-38*alpha_B/3",
+          "-1879*alpha_B/6",
+          "115*alpha_B/2",
+          "575*alpha_B/6",
+          "11*alpha_B",
+          "95*alpha_B/4",
+          "475*alpha_B/12",
+          "-55*alpha_B/6",
+          "-10*alpha_B",
+          "-29*alpha_B/2",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-19*alpha_B",
+          "115*alpha_B/2",
+          "-1061*alpha_B/4",
+          "575*alpha_B/4",
+          "-45*alpha_B/4",
+          "25*alpha_B/2",
+          "-10*alpha_B",
+          "14*alpha_B",
+          "125*alpha_B/4",
+          "-87*alpha_B/4",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-95*alpha_B/3",
+          "575*alpha_B/6",
+          "575*alpha_B/4",
+          "-1343*alpha_B/12",
+          "-75*alpha_B/4",
+          "-10*alpha_B",
+          "11*alpha_B/6",
+          "-275*alpha_B/12",
+          "11*alpha_B/4",
+          "10*alpha_B",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-211*alpha_B/2",
+          "-22*alpha_B",
+          "45*alpha_B/2",
+          "75*alpha_B/2",
+          "-363*alpha_B/2",
+          "66*alpha_B",
+          "110*alpha_B",
+          "68*alpha_B",
+          "-225*alpha_B/2",
+          "8*alpha_B",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "35*alpha_B/2",
+          "-95*alpha_B/4",
+          "-25*alpha_B/2",
+          "10*alpha_B",
+          "33*alpha_B",
+          "-234*alpha_B",
+          "475*alpha_B/4",
+          "28*alpha_B",
+          "125*alpha_B/2",
+          "-87*alpha_B/2",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "175*alpha_B/6",
+          "-475*alpha_B/12",
+          "10*alpha_B",
+          "-11*alpha_B/6",
+          "55*alpha_B",
+          "475*alpha_B/4",
+          "-322*alpha_B/3",
+          "-275*alpha_B/6",
+          "11*alpha_B/2",
+          "20*alpha_B",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-1091*alpha_B/12",
+          "55*alpha_B/3",
+          "-28*alpha_B",
+          "275*alpha_B/6",
+          "68*alpha_B",
+          "56*alpha_B",
+          "-275*alpha_B/3",
+          "-392*alpha_B/3",
+          "140*alpha_B",
+          "-113*alpha_B/4",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "175*alpha_B/4",
+          "10*alpha_B",
+          "-125*alpha_B/4",
+          "-11*alpha_B/4",
+          "-225*alpha_B/4",
+          "125*alpha_B/2",
+          "11*alpha_B/2",
+          "70*alpha_B",
+          "-411*alpha_B/4",
+          "30*alpha_B",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-177*alpha_B/4",
+          "29*alpha_B",
+          "87*alpha_B/2",
+          "-20*alpha_B",
+          "8*alpha_B",
+          "-87*alpha_B",
+          "40*alpha_B",
+          "-113*alpha_B/4",
+          "60*alpha_B",
+          "-24*alpha_B",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-38",
+          "2",
+          "3",
+          "5"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "2",
+          "33",
+          "-6",
+          "-10"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "3",
+          "-6",
+          "28",
+          "-15"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "5",
+          "-10",
+          "-15",
+          "12"
+        ]
+      ],
+      "noether_e": [
+        [
+          "-1",
+          "2",
+          "3",
+          "5",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1",
+          "0",
+          "0",
+          "2",
+          "3",
+          "5",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "2",
+          "0",
+          "3",
+          "5",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "2",
+          "0",
+          "3",
+          "5",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "2",
+          "3",
+          "5"
+        ]
+      ],
+      "noether_w": [
+        [
+          "-1",
+          "2",
+          "3",
+          "5",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1",
+          "0",
+          "0",
+          "2",
+          "3",
+          "5",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "2",
+          "0",
+          "3",
+          "5",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "2",
+          "0",
+          "3",
+          "5",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "2",
+          "3",
+          "5"
+        ],
+        [
+          "-1",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "p": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "p_squared": "37"
+    },
+    "maxwell": "sigma_2(delta M)^nu_mu=p^2 eta^nu_mu-p^nu p^mu",
+    "weyl_metric": "sigma_4(alpha_B delta B)=alpha_B Q_p sigma_2(delta G)"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_product_tangent_preflight.py",
+    "generator_sha256": "3f4808d0f02f1bd10460d590a32eb2b4ac409ec8be5c5aeecfe9177aaad65898",
+    "inputs": {
+      "common_background": {
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_PRODUCT_TANGENT_PREFLIGHT",
+  "result_state": "PRINCIPAL_BV_CHAIN_MAP_CERTIFIED_CURVED_LOWER_ORDER_OPEN",
+  "schema": "einstein-maxwell-product-tangent-preflight-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_product_tangent_preflight.schema.json",
+  "schema_sha256": "2c63f5b984cdbcc993384fafb0ef407d0a0e6cbada341993c9bca57b48ea4314",
+  "symbol_cohomology": {
+    "noncharacteristic_fixture": {
+      "cohomology_dimensions": {
+        "einstein_equation": 0,
+        "einstein_field": 0,
+        "weyl_equation": 0,
+        "weyl_field": 0
+      },
+      "ranks": {
+        "H_E": 9,
+        "H_W": 8,
+        "N_E": 5,
+        "N_W": 6,
+        "R_E": 5,
+        "R_W": 6
+      },
+      "verdict": "both principal complexes exact away from the characteristic cone"
+    },
+    "null_fixture": {
+      "block_field_cohomology": {
+        "einstein_metric": 2,
+        "photon_in_einstein_maxwell": 2,
+        "photon_in_weyl_maxwell": 2,
+        "weyl_metric_simple_symbol": 4
+      },
+      "induced_field_cohomology_map": {
+        "cokernel_dimension": 2,
+        "induced_kernel_dimension": 0,
+        "induced_map_injective": true,
+        "intersection_ker_HE_with_im_RW": 5,
+        "source_dimension": 4,
+        "target_dimension": 6
+      },
+      "interpretation": "the ordinary Einstein graviton-plus-photon symbol classes inject; two additional simple-symbol Weyl metric classes remain",
+      "p": [
+        "1",
+        "0",
+        "0",
+        "1"
+      ],
+      "ranks": {
+        "H_E": 5,
+        "H_W": 2,
+        "N_E": 5,
+        "N_W": 6,
+        "R_E": 5,
+        "R_W": 6
+      },
+      "total_cohomology_dimensions": {
+        "einstein_equation": 4,
+        "einstein_field": 4,
+        "weyl_equation": 6,
+        "weyl_field": 6
+      },
+      "warning": "a fourth-order generalized/Jordan mode count requires a prolonged characteristic complex and is not inferred from this simple null symbol"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_product_tangent_preflight --verify bridge/certificates/einstein_maxwell_product_tangent_preflight.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_product_tangent_preflight.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_product_tangent_preflight"
+  ]
+}

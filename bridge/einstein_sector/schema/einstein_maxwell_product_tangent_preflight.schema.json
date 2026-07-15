@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-product-tangent-preflight-v1",
+  "title": "Principal BV comparison at the common Einstein-Maxwell/Weyl-Maxwell product",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "provenance",
+    "background",
+    "minimal_complex_layouts",
+    "principal_operators",
+    "principal_chain_map",
+    "symbol_cohomology",
+    "curved_completion_gate",
+    "classification",
+    "claim_flags",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-product-tangent-preflight-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_product_tangent_preflight.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_PRODUCT_TANGENT_PREFLIGHT"},
+    "result_state": {"const": "PRINCIPAL_BV_CHAIN_MAP_CERTIFIED_CURVED_LOWER_ORDER_OPEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "provenance": {"type": "object"},
+    "background": {"type": "object"},
+    "minimal_complex_layouts": {"type": "object"},
+    "principal_operators": {"type": "object"},
+    "principal_chain_map": {
+      "type": "object",
+      "required": [
+        "ghost_map",
+        "field_map",
+        "equation_map",
+        "identity_map",
+        "ghost_field_square",
+        "field_equation_square",
+        "equation_identity_square",
+        "einstein_nilpotency_rows",
+        "weyl_nilpotency_rows"
+      ]
+    },
+    "symbol_cohomology": {"type": "object"},
+    "curved_completion_gate": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "both_minimal_bv_layouts_frozen",
+        "maxwell_ghost_and_identity_included",
+        "principal_bv_chain_map_constructed",
+        "ordinary_null_einstein_symbol_cohomology_injects",
+        "additional_simple_symbol_weyl_metric_classes",
+        "full_curved_tangent_chain_map_constructed",
+        "covariant_presymplectic_map_constructed",
+        "helicity_assignment_on_product_background_completed",
+        "generalized_fourth_order_modes_classified"
+      ]
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "local_algebraic_principal_result",
+        "full_minimal_bv_operator_certificate",
+        "lorentzian_causal_claim",
+        "observable_embedding_claim",
+        "scattering_claim",
+        "quantum_claim"
+      ]
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

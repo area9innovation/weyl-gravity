@@ -241,6 +241,17 @@ tangent BV map. E-D2 should next build both minimal metric--Maxwell complexes
 at this identical base point and either certify the chain map and pairing or
 record their exact obstruction.
 
+The principal part of that comparison is now certified by
+`EINSTEIN_MAXWELL_PRODUCT_TANGENT_PREFLIGHT`. Both four-stage minimal layouts,
+including the Maxwell ghost and identity, are frozen, and the exact
+action-normalized symbol chain map uses
+`diag(alpha_B kappa Q_p,identity_Maxwell)` on equation rows. The
+ordinary null Einstein symbol cohomology has two metric and two photon classes
+and injects into Weyl--Maxwell with a two-dimensional additional metric
+cokernel. E-D2 must not promote this to the full tangent theorem until the
+curvature/flux lower-order chain squares, cyclic pairing, magnetic-bundle
+patching, and prolonged fourth-order characteristic complex are complete.
+
 ## Work package E-D3: observables, charges, and scattering
 
 Compare the selected sector with Einstein gravity by constructing explicit

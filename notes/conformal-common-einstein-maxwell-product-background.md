@@ -159,6 +159,36 @@ a relational matter clock, and it is not asymptotically flat.
 
 ## Next gate
 
+### Principal tangent preflight completed
+
+The certificate
+`bridge/certificates/einstein_maxwell_product_tangent_preflight.json` now
+freezes the two minimal layouts
+
+```text
+Einstein--Maxwell: 5 -> 14 -> 14 -> 5
+Weyl--Maxwell:     6 -> 14 -> 14 -> 6
+```
+
+and constructs their exact principal chain map. In the normalization inherited
+from the two frozen actions, the field map is the identity, the metric equation
+map is `alpha_B kappa Q_p`, and the Maxwell equation map is the identity. The
+final identity map multiplies the four Diff identities by
+`alpha_B kappa p^2/2`, preserves the Maxwell identity, and has zero component
+in the additional Weyl trace identity. All chain squares pass.
+
+At a nonzero null covector the Einstein symbol cohomology splits into two
+metric and two photon classes. It injects into the Weyl--Maxwell simple-symbol
+cohomology, which has four metric and two photon classes. Thus the ordinary
+Einstein graviton-plus-photon symbol sector is present, with a two-dimensional
+additional Weyl metric cokernel at this level.
+
+This is not yet a complete spectrum statement: generalized solutions of the
+fourth-order operator require a prolonged characteristic complex, and the
+curved lower-order chain squares have not been established.
+
+### Curved completion
+
 Construct the minimal Einstein--Maxwell and Diff x Weyl--Maxwell BV complexes
 at this identical base point. The comparison must include the Maxwell ghost
 and antifield rows and must certify:
