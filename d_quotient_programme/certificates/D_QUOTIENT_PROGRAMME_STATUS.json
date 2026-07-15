@@ -23,9 +23,9 @@
       "quantum",
       "einstein_boundary"
     ],
-    "rule": "Treat the exact positive Berger family as a background candidate only. Derive the normalized covariant D charge on perturbations, construct the support-local all-row BV clock contraction and causal Green theory, and audit stability before assigning any D verdict."
+    "rule": "Use the exact identity Omega_total(delta,L_D)=omega delta Q_R. Construct or exclude an allowed fixed-coupling linearized tangent with delta Q_R nonzero; only then classify D and proceed to the support-local all-row BV clock contraction, causal theory, and stability audit."
   },
-  "programme_base_commit": "f14e0d6229f9716592431380266e4f03683af4ba",
+  "programme_base_commit": "958f51a700a839baf4d526c6a207c893048dfe62",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -435,12 +435,13 @@
           "two standard-sign conformal scalars of constant modulus and phase theta=omega t solve the scalar and Bach-source equations on an exact open q interval",
           "the scalar target metric is positive, the quartic potential is bounded below, and the stationary stress satisfies the dominant-energy inequalities",
           "the phase gradient is everywhere timelike and the raw temporal-diffeomorphism/Weyl incidence determinant rho^2 omega is nonzero",
+          "the action convention is frozen by delta integral C^2=4 integral B_mn delta g^mn, so S_W=(alpha_B/8) integral C^2 produces alpha_B B=T",
           "the rational fixture a=1, q=9/40, alpha_B=5, rho=1, omega=3/4, lambda=119/480 satisfies every independent field equation"
         ],
         "evidence": {
-          "commit": "77c4108b6a7e8d4aedb6ef6ddaaa5772c4636851",
+          "commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db",
           "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
-          "sha256": "fd7419b3a5985d83593de83824263c320b8fe44e47c69c473e7db5e30040b192"
+          "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"
         },
         "generator_id": "D_compact",
         "lifecycle_layer": "CLASSICAL_CHARGE",
@@ -463,7 +464,7 @@
           "python3 d_quotient_classical/verify_classical_status.py --guards"
         ]
       },
-      "sha256": "35f3f45fafa095021239cb6a8a450e8519eaa13336f99a95daf9e41d5e61c0d2"
+      "sha256": "b70148dc1d4573d5dca1369c77db3b0c248c49d0d1e5a97db10c72433ed640b9"
     },
     {
       "path": "d_quotient_programme/contributions/classical-berger-clock-charge-seed.json",
@@ -476,21 +477,23 @@
         ],
         "established": [
           "the scalar phase has conserved O(2) charge density rho^2 omega",
-          "the integrated charge is Q_R=V_0 alpha_B q sqrt(1-4q) and is nonzero throughout the exact Berger interval",
+          "the normalized SU(2) volume is 16 pi^2 and the integrated charge is Q_R=16 pi^2 alpha_B q sqrt(1-4q)",
           "time translation acts helically on the background as L_D=omega R",
-          "the phase is canonically paired with genuine standard-sign matter momentum"
+          "the covariant current gives Omega_total(delta,L_D)=omega delta Q_R",
+          "at fixed alpha_B lambda the stationary relation forces delta q=0, so the open q family is not a one-theory charge tangent"
         ],
         "evidence": {
-          "commit": "332bc1744aecc3ec450860d09a5b07d362bb7278",
+          "commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db",
           "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
-          "sha256": "aae64f16411d4cef24cb2e1ad93adaef98658727b4027ee96328a96b41af545f"
+          "sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9"
         },
         "generator_id": "D_compact",
         "lifecycle_layer": "CLASSICAL_CHARGE",
         "next_gate": "TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT",
         "not_established": [
           "equality of Q_R with the total D charge",
-          "the combined pure-Weyl and improved scalar presymplectic current",
+          "the complete coefficientwise pure-Weyl plus matter current away from its certified helical contraction",
+          "an allowed fixed-coupling linearized tangent with delta Q_R nonzero",
           "a D_GAUGE, D_CHARGED, SECTOR_DEPENDENT, or NOT_HAMILTONIAN verdict",
           "the support-local all-row BV reduction"
         ],
@@ -505,7 +508,7 @@
           "python3 d_quotient_classical/verify_classical_status.py --guards"
         ]
       },
-      "sha256": "f180aa9ecaec4bc72cb31d8da5e423173c06b4680fa1e2fe94975b8adb95987c"
+      "sha256": "25b9df1173aadb2dbc2b23e7fa73b64ab996e7e1d8dddb73d9738ad950ee5518"
     },
     {
       "path": "d_quotient_programme/contributions/einstein-ed1a-asymptotic-generator-gate.json",
@@ -593,9 +596,9 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "f14e0d6229f9716592431380266e4f03683af4ba",
+      "commit": "958f51a700a839baf4d526c6a207c893048dfe62",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "a7ab4ae6bd795d229a1b87b86f78eca1cd95ff07371cf7763ad5596092248ab6"
+      "sha256": "ca4a6f632aaf6d5cc903fcf1dee9a0c69d1d935b1b174df590ffcc430b59c776"
     },
     "einstein_boundary": {
       "commit": "89acca36479ebaea069c21eb23517dc6b1b49389",
@@ -615,8 +618,8 @@
   },
   "team_status": [
     {
-      "established": "The standard one-field stealth route is ruled out, while an exact non-conformally-flat Berger-cylinder family carries a healthy rotating two-scalar phase clock. Its conserved O(2) momentum is nonzero and L_D=omega R on the background; the total perturbative D charge remains open.",
-      "next_gate": "full Berger-clock covariant charge and all-row BV audit",
+      "established": "The standard one-field stealth route is ruled out, while an exact non-conformally-flat Berger-cylinder family carries a healthy rotating two-scalar phase clock. The action and SU(2) volume are frozen, Q_R is nonzero, and Omega_total(delta,L_D)=omega delta Q_R. Fixed couplings force delta q=0 in the stationary family.",
+      "next_gate": "construct or exclude an allowed fixed-coupling linearized delta-Q_R tangent, then complete the all-row BV audit",
       "result_state": "PARTIAL_WITH_HEALTHY_BERGER_CLOCK_BACKGROUND",
       "team_id": "classical",
       "verdict": "POSITIVE_CLOCK_BACKGROUND_EXISTS_CHARGE_OPEN"

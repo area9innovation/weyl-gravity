@@ -508,8 +508,8 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "team_id": "classical",
                 "result_state": "PARTIAL_WITH_HEALTHY_BERGER_CLOCK_BACKGROUND",
                 "verdict": "POSITIVE_CLOCK_BACKGROUND_EXISTS_CHARGE_OPEN",
-                "established": "The standard one-field stealth route is ruled out, while an exact non-conformally-flat Berger-cylinder family carries a healthy rotating two-scalar phase clock. Its conserved O(2) momentum is nonzero and L_D=omega R on the background; the total perturbative D charge remains open.",
-                "next_gate": "full Berger-clock covariant charge and all-row BV audit",
+                "established": "The standard one-field stealth route is ruled out, while an exact non-conformally-flat Berger-cylinder family carries a healthy rotating two-scalar phase clock. The action and SU(2) volume are frozen, Q_R is nonzero, and Omega_total(delta,L_D)=omega delta Q_R. Fixed couplings force delta q=0 in the stationary family.",
+                "next_gate": "construct or exclude an allowed fixed-coupling linearized delta-Q_R tangent, then complete the all-row BV audit",
             },
             {
                 "team_id": "einstein_boundary",
@@ -714,7 +714,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "next_shared_gate": {
             "gate_id": "FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT",
             "owner_order": ["classical", "nonlinear", "quantum", "einstein_boundary"],
-            "rule": "Treat the exact positive Berger family as a background candidate only. Derive the normalized covariant D charge on perturbations, construct the support-local all-row BV clock contraction and causal Green theory, and audit stability before assigning any D verdict.",
+            "rule": "Use the exact identity Omega_total(delta,L_D)=omega delta Q_R. Construct or exclude an allowed fixed-coupling linearized tangent with delta Q_R nonzero; only then classify D and proceed to the support-local all-row BV clock contraction, causal theory, and stability audit.",
         },
         "claim_boundary": (
             "The dossier consolidates sector-indexed results. It does not promote a "

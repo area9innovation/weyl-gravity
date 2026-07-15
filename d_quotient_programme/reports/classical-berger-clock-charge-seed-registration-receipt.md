@@ -3,11 +3,14 @@
 The positive Berger clock carries the exact conserved matter charge
 
 \[
-Q_R=V_0\alpha_Bq\sqrt{1-4q}>0,
+Q_R=16\pi^2\alpha_Bq\sqrt{1-4q}>0,
 \]
 
-and obeys \(\mathcal L_D T=\omega RT\) on the background. This registers a
-genuine physical-clock momentum, not a verdict for the total \(D\) charge.
+and the covariant current obeys
+\(\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\delta Q_R\). At fixed theory
+couplings the stationary family has \(\delta q=0\); an allowed linearized
+\(\delta Q_R\) tangent remains open. This registers a genuine physical-clock
+momentum, not a verdict for the total \(D\) charge.
 
 ```text
 generator_id: D_compact
@@ -17,5 +20,5 @@ next_gate: TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT
 ```
 
 Evidence is frozen at commit
-`332bc1744aecc3ec450860d09a5b07d362bb7278`, SHA-256
-`aae64f16411d4cef24cb2e1ad93adaef98658727b4027ee96328a96b41af545f`.
+`bb5738d6e3e30a68adcc9a70c35dac089079e3db`, SHA-256
+`573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9`.

@@ -14,20 +14,22 @@
   ],
   "established": [
     "the scalar phase has conserved O(2) charge density rho^2 omega",
-    "the integrated charge is Q_R=V_0 alpha_B q sqrt(1-4q) and is nonzero throughout the exact Berger interval",
+    "the normalized SU(2) volume is 16 pi^2 and the integrated charge is Q_R=16 pi^2 alpha_B q sqrt(1-4q)",
     "time translation acts helically on the background as L_D=omega R",
-    "the phase is canonically paired with genuine standard-sign matter momentum"
+    "the covariant current gives Omega_total(delta,L_D)=omega delta Q_R",
+    "at fixed alpha_B lambda the stationary relation forces delta q=0, so the open q family is not a one-theory charge tangent"
   ],
   "not_established": [
     "equality of Q_R with the total D charge",
-    "the combined pure-Weyl and improved scalar presymplectic current",
+    "the complete coefficientwise pure-Weyl plus matter current away from its certified helical contraction",
+    "an allowed fixed-coupling linearized tangent with delta Q_R nonzero",
     "a D_GAUGE, D_CHARGED, SECTOR_DEPENDENT, or NOT_HAMILTONIAN verdict",
     "the support-local all-row BV reduction"
   ],
   "evidence": {
     "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
-    "commit": "332bc1744aecc3ec450860d09a5b07d362bb7278",
-    "sha256": "aae64f16411d4cef24cb2e1ad93adaef98658727b4027ee96328a96b41af545f"
+    "commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db",
+    "sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9"
   },
   "verification_commands": [
     "python3 d_quotient_classical/backreacted_clock/berger_clock_charge_seed.py --check --guards",

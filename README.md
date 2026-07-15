@@ -85,10 +85,12 @@ timelike phase, and full raw Diff `x` Weyl clock incidence. This is not yet a
 `D_GAUGE` theorem; the perturbative covariant charge and support-local all-row
 BV audit remain open. The first charge seed nevertheless shows that the phase
 has genuine matter momentum:
-\(Q_R=V_0\alpha_Bq\sqrt{1-4q}>0\) and
-\(\mathcal L_D=\omega R\) on the background. It is therefore a plausible
-physical clock, while the total gravitational-plus-matter \(D\) verdict stays
-open.
+\(Q_R=16\pi^2\alpha_Bq\sqrt{1-4q}>0\). The frozen action and current audit
+gives \(\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\delta Q_R\). At fixed
+couplings \(q\) is isolated, so the open squashing interval cannot be used as
+a charge variation. The candidate becomes charged precisely if an allowed
+fixed-coupling linearized tangent with \(\delta Q_R\ne0\) exists; that is the
+remaining presymplectic gate.
 Paper IX still waits for at least one complete
 boundary or interaction theorem.
 

@@ -73,6 +73,8 @@ charge theorem. The immediate gate is
 `FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT`. Downstream teams must import all
 scoped clock results by content hash.
 The first sub-gate is now exact: the phase carries nonzero conserved global
-\(O(2)\) momentum and satisfies \(\mathcal L_D=\omega R\) on the background.
-The total \(D\) verdict still awaits the combined gravitational-plus-matter
-presymplectic audit.
+\(O(2)\) momentum and the full helical contraction satisfies
+\(\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\delta Q_R\). The fixed-coupling
+audit also proves \(\delta q=0\) in the stationary family. The total \(D\)
+verdict now turns on constructing or excluding a genuine allowed linearized
+\(\delta Q_R\) direction.

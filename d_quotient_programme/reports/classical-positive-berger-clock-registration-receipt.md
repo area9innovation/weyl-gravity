@@ -30,8 +30,8 @@ status: PARTIAL
 
 - Certificate: `d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json`
 - Producer: `d_quotient_classical/backreacted_clock/positive_berger_clock.py`
-- Evidence commit: `77c4108b6a7e8d4aedb6ef6ddaaa5772c4636851`
-- SHA-256: `fd7419b3a5985d83593de83824263c320b8fe44e47c69c473e7db5e30040b192`
+- Evidence commit: `bb5738d6e3e30a68adcc9a70c35dac089079e3db`
+- SHA-256: `35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687`
 
 ## Next gate
 

@@ -24,7 +24,7 @@ charge, all-row BV reduction, causal propagation, and stability remain open.
 
 | Team | Current verdict | Established | Next gate |
 |---|---|---|---|
-| classical | `POSITIVE_CLOCK_BACKGROUND_EXISTS_CHARGE_OPEN` | The standard one-field stealth route is ruled out, while an exact non-conformally-flat Berger-cylinder family carries a healthy rotating two-scalar phase clock. Its conserved O(2) momentum is nonzero and L_D=omega R on the background; the total perturbative D charge remains open. | full Berger-clock covariant charge and all-row BV audit |
+| classical | `POSITIVE_CLOCK_BACKGROUND_EXISTS_CHARGE_OPEN` | The standard one-field stealth route is ruled out, while an exact non-conformally-flat Berger-cylinder family carries a healthy rotating two-scalar phase clock. The action and SU(2) volume are frozen, Q_R is nonzero, and Omega_total(delta,L_D)=omega delta Q_R. Fixed couplings force delta q=0 in the stationary family. | construct or exclude an allowed fixed-coupling linearized delta-Q_R tangent, then complete the all-row BV audit |
 | einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. | complete a boundary-preserving full Bach phase space and calculate charge and flux |
 | nonlinear | `INPUT_GATE_BLOCKED` | selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked | complete support-local q2 export and solve for iota_D^(2) or retain its obstruction |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the pre-scalar classical compact split is imported by content hash without quantum promotion; the new scalar no-go is not yet imported | import the scalar-clock obstruction hash, then construct the renormalized observable algebra and classify the first D-Ward obstruction |
@@ -83,11 +83,11 @@ Paper X remains reserved for interaction/quantum stability after its separate
 classical-export and QME gates.
 
 The immediate shared calculation is
-`FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT`: Treat the exact positive Berger family as a background candidate only. Derive the normalized covariant D charge on perturbations, construct the support-local all-row BV clock contraction and causal Green theory, and audit stability before assigning any D verdict.
+`FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT`: Use the exact identity Omega_total(delta,L_D)=omega delta Q_R. Construct or exclude an allowed fixed-coupling linearized tangent with delta Q_R nonzero; only then classify D and proceed to the support-local all-row BV clock contraction, causal theory, and stability audit.
 
 ## Imported evidence
 
-- `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `f14e0d6229f9716592431380266e4f03683af4ba`, SHA-256 `a7ab4ae6bd795d229a1b87b86f78eca1cd95ff07371cf7763ad5596092248ab6`
+- `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `958f51a700a839baf4d526c6a207c893048dfe62`, SHA-256 `ca4a6f632aaf6d5cc903fcf1dee9a0c69d1d935b1b174df590ffcc430b59c776`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `89acca36479ebaea069c21eb23517dc6b1b49389`, SHA-256 `359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663`
 - `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `84dd459381bc4bc6219c5012594b018992b636c8`, SHA-256 `466db529891e3d306b704f2ceb119598386f74893274b051a56babba409a2cd8`
 - `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61`, SHA-256 `aa7edc21c7250349531559657d4ec69eee2dd9100de3eedf242a8e29829e874c`
