@@ -1,0 +1,53 @@
+{
+  "causal_quasi_isomorphism": {
+    "causal_map_is_chain_map": true,
+    "chain_defect": 0,
+    "cutoff_quasi_inverse": "[u] -> [Q(chi_plus u)]",
+    "cutoff_quasi_inverse_well_defined": true,
+    "extended_domains": [
+      "past-compact",
+      "future-compact"
+    ],
+    "left_cohomology_inverse": true,
+    "map": "Lambda=Lambda_plus-Lambda_minus: Gamma_c(C)[1] -> Gamma_sc(C)",
+    "right_cohomology_inverse": true,
+    "support_lemma": "supp([Q,chi_plus]u) lies in a compact time slab intersected with the causal hull of compact Cauchy data",
+    "support_lemmas_exact": true
+  },
+  "conditional_theorem": {
+    "input": "degreewise causal Lambda_plus/minus with Q Lambda_plus/minus+Lambda_plus/minus Q=1",
+    "recognition_exact": true,
+    "requires_actual_causal_green_homotopy": true
+  },
+  "cylinder_specialization": {
+    "Gamma_sc_equals_Gamma_smooth": true,
+    "J_of_cauchy_surface": "R x S^3",
+    "cauchy_surface": "S^3",
+    "cauchy_surface_compact": true,
+    "spacetime": "R x S^3"
+  },
+  "no_duplication": {
+    "I_P_minus_identity": "QH+HQ",
+    "P_I": "identity",
+    "curvature_mapping_cylinder_contractible": true,
+    "moment_map_is_function_not_coordinate": true,
+    "one_bfv_momentum_copy": 15,
+    "one_residual_ghost_copy": 15
+  },
+  "promotion_boundary": {
+    "SO42_equivariant_transport_proved": false,
+    "does_not_construct_Green_operators": true,
+    "does_not_promote_without_three_Green_flags": true,
+    "prolonged_current_comparison_proved": false
+  },
+  "residual_endpoint_recovery": {
+    "causal_recovery_identity": "[Lambda j_a]=[xi_a]",
+    "compact_cutoff_sources": true,
+    "compact_types": "4_-1 + 7_0 + 4_+1",
+    "dual_endpoint_rank": 15,
+    "endpoint_suspension_sign": 1,
+    "ghost_rank": 15,
+    "source": "j_a=Q(chi xi_a)"
+  },
+  "schema": "pure-weyl-causal-transport-recognition-v1"
+}

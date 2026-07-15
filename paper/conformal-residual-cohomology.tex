@@ -138,10 +138,13 @@ two-dimensional quotient is the helicity-$\pm2$ module, and the reduced
   all-level symbolic audit recovers precisely the parity-complete $E/A/L$
   module.  A degree-resolved odd BV mapping cylinder also proves the
   support-local all-row prolongation retract and nilpotence of the prolonged
-  differential.  The first eight curvature flags are therefore true.  The
+  differential.  The complete odd cyclic mapping cylinder also supplies a
+  local quadratic BV parent on all sixteen blocks.  Its current pulls back
+  to the auxiliary current off shell up to an explicit finite Lagrange
+  concomitant, so the prolonged current-comparison flag is true.  The
   prolonged Green witness, causal Green operators and BV Green homotopies,
   causal quasi-isomorphism, residual endpoint recovery,
-  $SO(4,2)$-equivariant transport, prolonged current comparison, and a
+  $SO(4,2)$-equivariant transport, Green/current identification, and a
   Hadamard theory remain open.  The
 residual $H^4$ calculation itself is complete: the missing theorem is the
 causal bridge identifying the covariant complex with that already-certified
@@ -201,7 +204,7 @@ variables rather than hide it in a $24$-component scalar-wave block.  The
   BV differential are exact as well.  What remains is the prolonged Green
   witness, causal operators and BV Green homotopies, the causal
   quasi-isomorphism, residual endpoint recovery, equivariant pairing
-  transport, prolonged current comparison, distributional/Hadamard
+  transport, Green/current identification, distributional/Hadamard
   completion, and alternative boundary polarizations.  A direct same-bundle metric factorization is an
 optional strengthening.
 
@@ -323,9 +326,9 @@ it does not supply causal Green homotopies.
 module and the reduced Weyl symbol is $\frac14 I_2$.  The exact $26$-state
 Weyl--Cotton equations, constraint-adjusted symmetric hyperbolicity, sourced
 constraint propagation, all-level $E/A/L$ spectrum, and all-row prolonged BV
-differential are certified.  The first eight curvature flags are true; the
-remaining seven causal-transport flags keep the final covariant $H^4$ flag
-false.
+differential and all-row prolonged current comparison are certified.  Nine
+curvature flags are true; the remaining six causal-transport flags keep the
+final covariant $H^4$ flag false.
 \item Calling the resulting classes physical states additionally requires a
 boundary and gauge principle which makes all fifteen conformal generators,
 including $D$, gauge rather than global charges.  We call them
@@ -1292,8 +1295,47 @@ The exact cubic divisibility equations for both $DP$ and $PD$ have a
 simultaneous $45$-parameter solution family.  There is therefore no cubic
 obstruction.  The curvature-corrected quadratic and lower equations, which
 also contain nonlinear products of the two factor first-order matrices,
-remain unassembled and unsolved.  Thus this gate proves neither a
-factorization nor a Green theorem.
+remain unassembled and unsolved.  Restoring the two independent factor
+splittings and all algebraic coefficients gives
+\begin{equation}\label{eq:lower-factor-full-variable-count}
+ 45+2\cdot93+5\cdot38=421
+\end{equation}
+nonlinear unknowns after the cubic gate.  The scalar principal normalization
+$qI_{24}$ loses no invariant solutions, since a parallel invertible
+$qH/qH^{-1}$ pair may be redistributed between the two factors.
+
+A convention audit corrected the covector commutator: its raised curvature
+index uses the spatial projector, not a four-dimensional Kronecker delta, so
+all mixed time--space curvature components vanish.  Independent
+coordinate-jet commutator, Weitzenb\"ock and focused $\Box^2$ composition
+tests now pass.  Exact triangular symmetrized-jet PBW inversion exhausts all
+$1680$ four-jet basis elements, passes $504$ ordered-word round trips and
+certifies associativity, so the quadratic-factor composition backend is
+ready.  A naive transpose/reversal of the already sorted
+$\Box^2$ component table nevertheless leaves a $48$-entry defect.  This is
+not an independent primal-composition counterexample: the sorted coefficient
+matrices no longer individually carry their derivative-index slots.  It does
+show that the naive table adjoint is invalid.  A pairing-aware general
+formal-adjoint backend and the $421$-variable coefficient solve remain
+prerequisites for a trusted quadratic/lower certificate.
+
+The complete bare-wave subfamily can nevertheless be decided exactly.  If
+one factor in each of $DP$ and $PD$ is the literal rough $Box$, the four
+inner/outer orientations give rational systems with $159$ unknowns and
+
+\begin{equation}\label{eq:bare-box-factor-obstruction}
+ \rank A=159,
+ \qquad
+ \rank[A\mid b]=160.
+\end{equation}
+
+All four have the same one-row left-null certificate: the coefficient of
+$\nabla_{(0}\nabla_{1)}$ mapping $f_{01}$ to $f_{00}$ is $-8$ in the
+required right-hand side and vanishes in every correction column.  This is
+a no-go only for the bare-$\Box$ subfamily.  When both factors have nonzero
+first-order coefficients, the quadratic product $A_-A_+$ changes the
+order-two equations and remains to be solved.
+Thus the cubic gate proves neither a factorization nor a Green theorem.
 
 The exhaustive relative-incidence ledger contains nine possible odd-adjoint
 pairs.  No single pair yields reciprocal coupling, and the smallest physical
@@ -1348,8 +1390,9 @@ The selected causal route therefore has the following explicit flags:
  &\texttt{prolonged\_current\_comparison}.&&
  \end{aligned}
 \end{equation}
-The first eight flags in \eqref{eq:open-curvature-flags} are true; the remaining
-seven remain false.  In particular, the paper now constructs the complete
+Nine flags in \eqref{eq:open-curvature-flags} are true: the first eight and
+\texttt{prolonged\_current\_comparison}.  The six causal/transport flags remain
+false.  In particular, the paper now constructs the complete
 support-local prolonged BV rows, but not yet $G_\pm$ or degree-$(-1)$ maps
 $\Lambda_\pm$ satisfying
 \begin{equation}\label{eq:open-green-homotopy}
@@ -1362,8 +1405,33 @@ would not prove \eqref{eq:open-green-homotopy}: compatible inhomogeneous
 sources must be shown to generate constrained retarded and advanced
 solutions.  Nor would a nonequivariant vector-space identification suffice;
 the causal/Cauchy bridge must preserve the residual $SO(4,2)$ action up to a
-certified chain homotopy and compare the prolonged current with the auxiliary
-current by a $d+Q$ improvement.  The known
+certified chain homotopy.  The prolonged/auxiliary current comparison is now
+exact independently: odd cyclicity of the coefficientwise complete mapping
+cylinder gives the quadratic parent
+\begin{equation}
+ S_{\rm prol}=\frac12\langle\Phi,D\Omega Q_{\rm prol}\Phi\rangle,
+ \qquad I^*\omega_{\rm prol}-\omega_{\rm aux}=d\beta+Q\gamma,
+ \qquad \beta=\delta Y_I,\quad\gamma=0,
+\end{equation}
+where $Y_I$ is the finite Lagrange concomitant of the $T$ and $A$ shears
+(the $B$ shear is order zero).  A compatible potential representative makes
+$\beta=0$.  This does not infer equality with a Green pairing before the
+causal homotopy exists.  The equivariance defect of the Cauchy
+cutoff is nevertheless now controlled conditionally and exactly.  If
+$\rho$ is any of the fifteen local conformal chain generators and
+$\kappa=[Q,\chi]$ is the standard temporal-cutoff inverse to the causal map,
+then
+\begin{equation}\label{eq:causal-cutoff-equivariance}
+ [\kappa,\rho]=[Q,[\chi,\rho]].
+\end{equation}
+The displayed homotopy has compact support on a spacelike-compact section,
+because $d\chi$ lies in a compact time slab and $S^3$ is compact.  Together
+with the natural curvature mapping cylinder, smooth global BGG
+equivariance, and the all-level $E/A/L$ exhaustion, this proves that
+full $SO(4,2)$ transport will follow automatically once the actual causal
+quasi-isomorphism and endpoint recovery exist.  It does not make the chosen
+Cauchy split strictly equivariant, and the corresponding repository flag
+remains false while the Green homotopy is absent.  The known
 obstruction to factorizing the gauge-invariant spin-two conformal operator
 away from Einstein backgrounds is relevant context \cite{NutmaTaronna}, but
 is not used as the no-go theorem \eqref{eq:null-rank-no-go}.
@@ -3116,7 +3184,7 @@ physical helicities; the reduced Weyl symbol \eqref{eq:reduced-Weyl-symbol}
 is an isomorphism.  The exact $26$-state Weyl--Cotton equations, their
 constraint-adjusted symmetric-hyperbolic closure, sourced subsidiary
 identity, all-level $E/A/L$ spectrum, and complete all-row BV prolongation
-are now proved.  The remaining seven false flags in
+are now proved.  The remaining six false causal/transport flags in
 \eqref{eq:open-curvature-flags}, the resulting causal
 quasi-isomorphism, Hadamard completion, and uniqueness among boundary or
 deparametrized polarizations remain separate analytic questions.  The final
@@ -3175,7 +3243,8 @@ constraint identity and propagation, all-level $E/A/L$ spectrum, all-row
 local prolongation retract, and prolonged BV operator are proved.  The
 prolonged Green witness and causal Green operators, causal BV Green homotopy
 and quasi-isomorphism, endpoint recovery, $SO(4,2)$-equivariant transport,
-and prolonged current comparison remain open.
+remain open.  The all-row prolonged/auxiliary current comparison is exact;
+only its later identification with the causal Green pairing is pending.
 Alternative boundary polarizations,
 quantum consistency, and interaction descent are also separate questions.
 At the reduced one-particle level, however,
@@ -3371,7 +3440,14 @@ but the naive frozen lower completion has nonzero lower-order remainder.
 The complete invariant ansatz has $\dim D_0=38$ and $\dim D_1=93$;
 simultaneous $DP/PD$ cubic divisibility leaves a $45$-parameter family and
 hence no cubic obstruction, while the curvature-corrected nonlinear
-quadratic and lower solve remains open.
+quadratic and lower solve has $421$ post-cubic variables and remains open.
+The corrected spatial-projector curvature sign passes focused primal
+coordinate-jet tests, and exact symmetrized-jet PBW inversion certifies the
+composition backend.  The $48$-entry naive sorted-table defect instead leaves
+the pairing-aware general adjoint and the coefficient solve open.  The four
+bare-$\Box$ orientations are exactly inconsistent with rank $159/160$ and a
+common one-row $f_{01}\to f_{00}$ obstruction; the two-nontrivial-factor
+branch remains open.
 The smallest reciprocal relative saddle is the odd-adjoint pair $4+5$.
 Its Schur complement is nonlocal.  The natural
 $A_F=p_FA_{\rm eq}$, $S=A_F^\sharp$, $R=A_F^\sharp J_U$ realization has
@@ -3379,10 +3455,11 @@ balanced timelike rank at most $107/116$, zero temporal leading coefficient
 and no positive symmetrizer.  This excludes only that realization, not larger
 relative witnesses or a support-local first-order prolongation.\\
 Curvature causal realization and final covariant $H^4$ & Open, fail-closed &
-The first eight flags in \eqref{eq:open-curvature-flags} are true and the other
-seven remain false.  They require the prolonged Green witness and actual BV
-Green homotopy, residual endpoint recovery, equivariance, and
-prolonged current comparison.  Consequently the causal quasi-isomorphism
+Nine flags in \eqref{eq:open-curvature-flags} are true and the six
+causal/transport flags remain false.  They require the prolonged Green
+witness and actual BV Green homotopy, residual endpoint recovery, and
+equivariance.  The prolonged current comparison is already exact off shell;
+Green/current equality is downstream.  Consequently the causal quasi-isomorphism
 and \texttt{final\_covariant\_H4} remain false; the already-complete residual
 $H^4=\C^2$ and $G=I_2$ are not being recomputed;
 no Hadamard theorem, group exponentiation, or uniqueness among boundary,

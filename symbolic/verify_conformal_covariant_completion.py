@@ -51,6 +51,13 @@ GUARDS = (
     ("verify_conformal_auxiliary_lower_order_factor_ansatz.py", "--skip-quadratic-curvature"),
     ("verify_conformal_auxiliary_lower_order_factor_ansatz.py", "--promote-flag"),
     ("verify_conformal_parallel_operator_composition.py", "--claim-quadratic-solve"),
+    ("verify_conformal_symmetrized_pbw_composition.py", "--claim-quadratic-solve"),
+    (
+        "verify_conformal_auxiliary_triangular_box_factor.py",
+        "--claim-general-factorization-no-go",
+    ),
+    ("verify_conformal_auxiliary_triangular_box_factor.py", "--claim-green"),
+    ("verify_conformal_auxiliary_triangular_box_factor.py", "--promote-flag"),
     ("verify_conformal_covariant_bv_last_mile.py", "--claim-complete-covariant-theorem"),
     (
         "verify_conformal_covariant_dependency_report.py",
@@ -140,6 +147,8 @@ def main() -> None:
             ("verify_conformal_auxiliary_prenormal_symbol.py", emit_args),
             ("verify_conformal_auxiliary_lower_order_factor_ansatz.py", emit_args),
             ("verify_conformal_parallel_operator_composition.py", emit_args),
+            ("verify_conformal_symmetrized_pbw_composition.py", emit_args),
+            ("verify_conformal_auxiliary_triangular_box_factor.py", emit_args),
             ("verify_conformal_relative_saddle_witness.py", guarded_args),
             ("verify_conformal_curvature_prolongation_sdr.py", ()),
             ("verify_conformal_curvature_state_gauge_chain_map.py", ()),
@@ -153,13 +162,17 @@ def main() -> None:
     )
     _run("verify_conformal_curvature_identity_chain_map.py", *guarded_args)
     _run("verify_conformal_curvature_mapping_cylinder_substitution.py")
+    _run("verify_conformal_prolonged_current_comparison.py")
     _run(
         "verify_conformal_curvature_mapping_cylinder_witness.py",
         *guarded_args,
     )
     _run("verify_conformal_relative_saddle_principal.py", *guarded_args)
-    _run("verify_conformal_curvature_prolongation_status.py", *guarded_args)
     _run("verify_conformal_prolonged_green_bridge.py", *guarded_args)
+    _run("verify_conformal_mixed_order_green_promotion.py", *guarded_args)
+    _run("verify_conformal_causal_transport_recognition.py", *guarded_args)
+    _run("verify_conformal_so42_causal_transport.py", *guarded_args)
+    _run("verify_conformal_curvature_prolongation_status.py", *guarded_args)
     _run("verify_conformal_covariant_bv_last_mile.py", *guarded_args)
     _run("verify_conformal_covariant_dependency_report.py", *guarded_args)
     _run_parallel(

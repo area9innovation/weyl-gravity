@@ -369,6 +369,41 @@ equations, together with nonlinear products of the two factor first-order
 matrices.  Those equations have not yet been assembled and solved, so this
 gate proves neither factorization nor Green hyperbolicity.
 
+The cubic kernel is not the complete nonlinear variable space.  The cubic
+equations see only the sums of the two first-order factor coefficients.
+Restoring one 93-parameter splitting for each of `D P` and `P D`, plus the
+38-parameter `X0` and four independent 38-parameter factor potentials, gives
+`45+2*93+5*38=421` unknowns after the cubic gate.  The normalization of each
+factor principal symbol to `q I24` is without loss for invariant factors: a
+parallel invertible `q H/q H^-1` pair can be redistributed algebraically.
+Formal-adjoint factors introduce no independent variables, but must be
+generated before derivative-index slots are suppressed.
+
+An independent backend audit corrected the covector curvature action from a
+four-dimensional delta to the required raised spatial projector; mixed
+time--space curvature now vanishes and the exact coordinate-jet commutator
+and `div symgrad=Box+grad div+Ric` identities pass.  Symmetrized order-two
+conversion and focused vector/tensor `Box^2` coordinate-jet compositions also
+pass.  Exact triangular symmetrized-jet PBW inversion exhausts the 1,680
+four-jet basis elements, passes 504 ordered-word round trips and certifies
+associativity, so the quadratic-factor composition backend is ready.
+However, componentwise transpose/reversal of an already sorted `Box^2` table
+leaves 48 entries.  This diagnoses an invalid naive adjoint—the sorted
+coefficient matrices do not individually retain their derivative-index
+slots—not an independent counterexample to primal composition.  A
+pairing-aware general formal-adjoint backend and the 421-variable coefficient
+solve are still required before the full quadratic/lower factor certificate
+is trusted.
+
+The exact bare-`Box` subfamily is now decided.  For each of the four choices
+of whether the bare wave factor is inner or outer in `D P` and `P D`, the
+complete symmetrized-PBW system has 159 unknowns, coefficient rank 159 and
+augmented rank 160.  A common one-row left-null certificate is the
+`nabla_(0)nabla_(1)` coefficient `f_01 -> f_00`: its right-hand side is `-8`
+and all 159 correction columns are zero.  This is a scoped no-go only.  The
+general branch has nonzero first-order terms in both factors, so its
+quadratic `A_minus A_plus` contribution can alter that channel.
+
 The exhaustive relative-incidence search also identifies, without promoting
 a flag, the smallest reciprocal saddle: odd-adjoint pairs 4 and 5.  On the
 core ordered as `(M_aux,X_U,Y_U_sharp)` its degree-zero block is
@@ -392,8 +427,10 @@ nine), so its temporal characteristic leading coefficient is zero and no
 positive temporal symmetrizer exists.  This is an exact no-go only for that
 smallest pair-4+5 realization; it does not exclude larger relative witnesses
 or an added support-local first-order prolongation.
-The remaining seven flags isolate that prolonged Green witness, the actual causal chain homotopy, residual
-endpoint recovery, `SO(4,2)` equivariance, and prolonged current transport.
+The remaining six flags isolate that prolonged Green witness, the actual
+causal chain homotopy, residual endpoint recovery, and `SO(4,2)` equivariance.
+The all-row prolonged current transport is exact off shell; its equality with
+the Green pairing remains a downstream causal consequence.
 The terminal stage transports the existing `H4 = C^2`, `G = I2`; it must not
 recompute the residual CE complex.
 
@@ -467,9 +504,11 @@ exact.  The local equation and identity chain maps are now exact as well:
 the equation square is exhaustive on all 700 metric four-jets, and the
 sparse identity square retains the differentially generated secondary rows.
 Their common degree/sign-resolved odd BV mapping cylinder, Koszul adjoints,
-nilpotent differential, and support-local SDR are now exact.  The prolonged
-Green witness and homotopy, residual endpoints, equivariance, and current comparison remain
-open.  A genuinely
+nilpotent differential, and support-local SDR are now exact.  The same odd
+cyclic pairing gives a coefficientwise complete quadratic BV parent on all
+sixteen blocks and the local off-shell identity
+`I^* omega_prol-omega_aux=d beta+Q gamma`.  The prolonged Green witness and
+homotopy, residual endpoints, and equivariance remain open.  A genuinely
 curvature-prolonged realization is now the selected final dependency gate.
 
 The compact four-flag view is reproduced with

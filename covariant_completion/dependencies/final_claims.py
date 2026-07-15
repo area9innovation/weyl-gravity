@@ -364,11 +364,14 @@ class FinalClaimDependencyReport:
                 "curved_auxiliary_prenormal_symbol.json",
                 "curved_auxiliary_lower_order_factor_ansatz.json",
                 "parallel_operator_composition.json",
+                "symmetrized_pbw_composition.json",
+                "curved_auxiliary_triangular_box_factor.json",
+                "curved_mixed_order_green_promotion.json",
                 "curved_relative_saddle_witness.json",
                 "curved_relative_saddle_principal.json",
                 "curved_curvature_prolongation_status.json",
             ),
-            "The canonical coefficientwise W has exact QW+WQ and fourteen Green blocks.  The auxiliary symbol has an exact prenormal complement and no invariant cubic obstruction, but the quadratic curvature/lower equations or a locally hyperbolic two-way curvature saddle remain open.",
+            "The canonical coefficientwise W has exact QW+WQ and fourteen Green blocks.  The auxiliary symbol has an exact prenormal complement and no invariant cubic obstruction.  All four branches with one literal bare-Box factor are exactly obstructed, but the general two-nontrivial-factor quadratic equations or a locally hyperbolic two-way curvature saddle remain open.",
         )
         atomic(
             "curvature_causal_green_operators",
@@ -388,7 +391,10 @@ class FinalClaimDependencyReport:
             "causal_quasi_isomorphism",
             bool(curvature_prolongation.get("causal_quasi_isomorphism", False)),
             "open_analytic_obligation",
-            ("curved_curvature_prolongation_status.json",),
+            (
+                "curved_causal_transport_recognition.json",
+                "curved_curvature_prolongation_status.json",
+            ),
             "Prove that the causal map Gamma_c(C_prol)[1] -> Gamma_sc(C_prol) is a quasi-isomorphism and specialize it to all smooth cylinder solutions.",
         )
         atomic(
@@ -396,6 +402,7 @@ class FinalClaimDependencyReport:
             bool(curvature_prolongation.get("residual_endpoint_recovery", False)),
             "open_analytic_obligation",
             (
+                "curved_causal_transport_recognition.json",
                 "curved_curvature_prolongation_status.json",
                 "residual_bfv_comparison.json",
             ),
@@ -405,7 +412,10 @@ class FinalClaimDependencyReport:
             "SO42_equivariant_transport",
             bool(curvature_prolongation.get("SO42_equivariant_transport", False)),
             "open_analytic_obligation",
-            ("curved_curvature_prolongation_status.json",),
+            (
+                "curved_SO42_causal_transport_recognition.json",
+                "curved_curvature_prolongation_status.json",
+            ),
             "Prove that the causal/Cauchy identification transfers the full SO(4,2) action, strictly or by an explicit chain homotopy.",
         )
         atomic(
@@ -414,9 +424,10 @@ class FinalClaimDependencyReport:
             "open_analytic_obligation",
             (
                 "curved_curvature_prolongation_status.json",
+                "curved_prolonged_current_comparison.json",
                 "curved_current_comparison.json",
             ),
-            "Compare the prolonged and auxiliary currents by d+Q improvements and identify the Green, Cauchy, energy, and residual pairings.",
+            "The all-row cyclic quadratic parent compares prolonged and auxiliary currents off shell by a local d+Q improvement. Green/current equality remains a separate consequence of the causal Green homotopy.",
         )
         atomic(
             "candidate_curvature_principal_symmetric_hyperbolicity",

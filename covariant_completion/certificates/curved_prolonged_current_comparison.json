@@ -1,0 +1,110 @@
+{
+  "all_row_ledger": {
+    "antifield_and_identity_antifield_rows": true,
+    "degree_ledger_complete": true,
+    "equation_and_identity_rows": true,
+    "fields_and_curvature_fields": true,
+    "mapping_cylinder_blocks": 16,
+    "silent_rows_dropped": 0,
+    "trace_Weyl_and_nonminimal_rows": true
+  },
+  "exact_matrix_identities": {
+    "Isharp_Hprol_I_minus_Haux": "zero",
+    "Qprol_odd_cyclicity_defect": "zero",
+    "Qprol_squared": "zero",
+    "canonical_master_action_congruence_defect": "zero"
+  },
+  "fail_closed": true,
+  "inputs": {
+    "auxiliary_current_sha256": "c7b738fbab6fbac0a4751fe143a6f1f5c33bd17c86007b3a87fd48a388e1287b",
+    "graph_current_sha256": "2344e467e85f7923b139cd591889f4dc292a6efe50767d3c3f5811d908f360bc",
+    "mapping_cylinder_sha256": "924b683106bf5e6bacda9e82fa1ecf9964ece52d55c8ba8862724cfcfa4f29b9"
+  },
+  "matrix_sha256": {
+    "prolonged_master_hessian": "d38dc1137778cd91cc3fada133a4e69ffd9b8da58ad71a712a663c14a35af24a",
+    "pulled_back_master_hessian": "090488fc063380de7facc1d2675ad5dfa21cd6b5aa3c029de6c74dfe162bbe22",
+    "split_master_hessian": "bf71dc0247a7903aa17f01a8c2c6f407e913a8d2f0109d0af7a81d5c5c1e467c"
+  },
+  "pairing_separation": {
+    "action_BV_Krein_current": "inherited from S_aux by the cyclic canonical cone",
+    "identified_with_each_other": false,
+    "positive_PDE_symmetrizer": "not used"
+  },
+  "prolonged_current_comparison": true,
+  "quadratic_BV_parent": {
+    "all_16_blocks": [
+      "G_aux",
+      "M_aux",
+      "Ebar_aux",
+      "I_aux",
+      "X_U",
+      "X_Eq",
+      "X_Id",
+      "Y_U",
+      "Y_Eq",
+      "Y_Id",
+      "X_Id_sharp",
+      "X_Eq_sharp",
+      "X_U_sharp",
+      "Y_Id_sharp",
+      "Y_Eq_sharp",
+      "Y_U_sharp"
+    ],
+    "canonical_coordinates": "Q_prol=U Q_split U^-1",
+    "coefficientwise_complete": true,
+    "formula": "S_prol=1/2<Phi,D Omega Q_prol Phi>",
+    "inclusion": "I=U i_aux",
+    "master_equation": "(S_prol,S_prol)=0 from Q_prol^2=0",
+    "odd_cyclicity_defect": 0,
+    "retained_auxiliary_direct_summands": [
+      "trace/Weyl doublets",
+      "diffeomorphism nonminimal rows",
+      "Weyl nonminimal rows"
+    ],
+    "split_formula": "S_aux+S_Cone(id_curv)+S_Cone(id_curv)^sharp"
+  },
+  "schema": "pure-weyl-prolonged-current-comparison-v1",
+  "support": {
+    "Green_operator": false,
+    "compact": true,
+    "finite_differential_orders_only": true,
+    "inverse_Laplacian": false,
+    "inverse_curl": false,
+    "maximum_shear_order": 3,
+    "smooth_global": true,
+    "spacelike_compact": true,
+    "spectral_projector": false
+  },
+  "theorem_boundary": "the off-shell prolonged/auxiliary current comparison is exact; Green/current equality remains conditional on the separate causal Green homotopy theorem",
+  "variational_transgression": {
+    "Y_I": "the finite Lagrange concomitant of the T_state, A_equation and their BV-forced formal-adjoint shears; B_identity has order zero and no boundary concomitant",
+    "compatible_current_identity": "I^*omega_prol^comp-omega_aux=0",
+    "compatible_representative": "theta_prol^comp=theta_prol-dY_U; then I^*theta_prol^comp=theta_aux+delta F_I",
+    "concomitant_rows": [
+      "T_state",
+      "A_equation",
+      "B_identity (order zero, J_B=0)",
+      "T_state^sharp",
+      "A_equation^sharp",
+      "B_identity^sharp (order zero, J_Bsharp=0)"
+    ],
+    "d_plus_Q_form": "I^*omega_prol-omega_aux=d beta+Q gamma, beta=delta Y_I, gamma=0",
+    "lagrange_concomitant_identity": "d J_R(u,v)=<u,Rv>-<R^sharp u,v> for each finite-order parallel-coefficient shear R",
+    "off_shell": true,
+    "operator_orders": {
+      "A_equation": 2,
+      "B_identity": 0,
+      "T_state": 3
+    },
+    "operator_table_sha256": {
+      "A_equation": "a60f3b6143b45667057a3ecaae5e6e361c0791721a7b55f0f1b69d8706bde9b7",
+      "B_identity": "52b01d99ad2f7cdf59ab295cdcc4cedd74f1d809b3781f6b51a5b7152f0b58e0",
+      "T_state": "ca86a296fca48e3526690c8c0e94730fc5a8bcd438544306ab2dcdae7c7181ca"
+    },
+    "raw_current_identity": "I^*omega_prol-omega_aux=d beta, beta=delta Y_I",
+    "raw_potential_identity": "I^*theta_prol-theta_aux=delta F_I+d Y_I"
+  },
+  "warranted_atomic_flags": [
+    "prolonged_current_comparison"
+  ]
+}

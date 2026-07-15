@@ -1,6 +1,13 @@
 {
   "EAL_curvature_spectrum_match": true,
   "SO42_equivariant_transport": false,
+  "SO42_transport_evidence": {
+    "certificate": "curved_SO42_causal_transport_recognition.json",
+    "conditional_recognition_exact": true,
+    "cutoff_inverse_homotopy": "[kappa,rho]=[Q,[chi,rho]]",
+    "promoted": false,
+    "requires_causal_quasi_isomorphism": true
+  },
   "all_level_spectrum_evidence": {
     "certificate": "curved_EAL_spectrum_all_level.json",
     "cotton_no_duplication": true,
@@ -28,13 +35,22 @@
     "curved_constraint_propagation": true,
     "curved_sourced_constraint_identity": true,
     "prolonged_BV_operator_identity": true,
-    "prolonged_current_comparison": false,
+    "prolonged_current_comparison": true,
     "prolonged_green_witness": false,
     "residual_endpoint_recovery": false,
     "support_local_prolongation_retract": true
   },
   "causal_green_homotopy": false,
   "causal_quasi_isomorphism": false,
+  "causal_transport_evidence": {
+    "SO42_equivariant_transport_not_inferred": true,
+    "causal_quasi_isomorphism_promoted": false,
+    "certificate": "curved_causal_transport_recognition.json",
+    "conditional_recognition_exact": true,
+    "prolonged_current_comparison_independent_of_Green": true,
+    "requires_three_actual_Green_flags": true,
+    "residual_endpoint_recovery_promoted": false
+  },
   "curvature_causal_green_operators": false,
   "curvature_green_realization": false,
   "curvature_prolonged_complex_exact": true,
@@ -69,6 +85,14 @@
     "prolonged_BV_operator_identity_promoted": true,
     "support_local_prolongation_retract_promoted": true
   },
+  "mixed_order_green_evidence": {
+    "actual_factorization_exact": false,
+    "factorization_certificate": "pure-weyl-mixed-order-factorization-v1 (not currently emitted)",
+    "promoted": false,
+    "promotion_certificate": "curved_mixed_order_green_promotion.json",
+    "promotion_theorem_exact": true,
+    "three_flags_promote_together_only": true
+  },
   "next_exact_step": "construct the coefficientwise degree-minus-one prolonged Green witness and certify its support-local triangular Green blocks",
   "phase1_evidence": {
     "certificate": "curved_weyl_cotton_jet_comparison.json",
@@ -76,7 +100,13 @@
     "exhaustive_Weyl_two_jets": 150
   },
   "prolonged_BV_operator_identity": true,
-  "prolonged_current_comparison": false,
+  "prolonged_current_comparison": true,
+  "prolonged_current_evidence": {
+    "Green_current_equality_is_separate": true,
+    "all_row_cyclic_quadratic_parent": true,
+    "certificate": "curved_prolonged_current_comparison.json",
+    "off_shell_d_plus_Q_comparison": true
+  },
   "prolonged_green_witness": false,
   "proof_boundary": {
     "curvature_only_potential_reconstruction_is_support_local": false,

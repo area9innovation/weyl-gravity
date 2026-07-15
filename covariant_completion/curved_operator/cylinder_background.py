@@ -122,20 +122,45 @@ class CylinderBackground:
                         if self.weyl_covariant[a, b, c, d] != 0:
                             raise AssertionError("the conformal cylinder is not Weyl flat")
 
+        # Audit the covector commutator directly against
+        # -R^d{}_{cab}.  In particular the product connection has no mixed
+        # time--space curvature.
+        for a in range(4):
+            for b in range(4):
+                commutator = self.covector_commutator(a, b)
+                for c in range(4):
+                    for d in range(4):
+                        expected = -sum(
+                            self.inverse_metric[d, e]
+                            * self.riemann_covariant[e, c, a, b]
+                            for e in range(4)
+                        )
+                        if sp.simplify(commutator[c, d] - expected) != 0:
+                            raise AssertionError(
+                                "covector commutator/Riemann sign mismatch"
+                            )
+        for spatial_axis in range(1, 4):
+            if self.covector_commutator(0, spatial_axis) != sp.zeros(4):
+                raise AssertionError("mixed cylinder curvature must vanish")
+
     def covector_commutator(self, a: int, b: int) -> sp.Matrix:
         """Matrix for ``[nabla_a,nabla_b]`` on covectors.
 
         With the convention above,
 
-        ``[nabla_a,nabla_b] v_c = s_ca v_b-s_cb v_a``.
+        ``[nabla_a,nabla_b] v_c = s_ca s_b^d v_d-s_cb s_a^d v_d``.
+
+        The spatial projectors on the raised indices are essential: every
+        mixed time--space curvature component of the product cylinder
+        vanishes.
         """
 
         matrix = sp.zeros(4)
         for c in range(4):
             for d in range(4):
                 matrix[c, d] = (
-                    self.spatial[c, a] * int(d == b)
-                    - self.spatial[c, b] * int(d == a)
+                    self.spatial[c, a] * self.spatial[b, d]
+                    - self.spatial[c, b] * self.spatial[a, d]
                 )
         return matrix
 
@@ -153,4 +178,6 @@ class CylinderBackground:
             "auxiliary_formula": "phi_bar=-2 Ric+(R/3)g",
             "riemann_symmetries_verified": True,
             "algebraic_Bianchi_verified": True,
+            "covector_commutator_matches_minus_raised_Riemann": True,
+            "mixed_time_space_curvature": "zero",
         }

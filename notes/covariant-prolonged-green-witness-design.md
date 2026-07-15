@@ -129,16 +129,62 @@ factorizations, certify all primal and formal-dual factors, and check both
 left/right Green identities and causal support.  The existing 45-parameter
 cubic family satisfies none of these analytic conclusions by itself.
 
-One prerequisite for that solve has now landed: the component-aware parallel
-operator composer on the full `h[10]+f[10]+v[4]` bundle.  It canonicalizes
-covariant derivative words while applying curvature both to the inner
-derivative slots and to every tensor input slot.  Its exact regression sends
-`Box^2` to derivative orders `4,2,0`, with a nonzero order-two curvature
-piece.  Frozen Fourier-polynomial matrix multiplication misses precisely
-these commutator contributions at orders two and zero.  The backend can now
-assemble the curvature-corrected equations, but it has not yet been applied
-to solve the nonlinear quadratic system on the 45-parameter cubic family.
-This prerequisite promotes no theorem flag.
+The backend audit found and fixed one real sign defect: the covector
+commutator had used a four-dimensional delta on a raised curvature index
+where the cylinder requires the spatial projector.  Mixed time--space
+curvature now vanishes.  Independent coordinate-jet commutators,
+`div symgrad=Box+grad div+Ric`, symmetrized order-two conversion, and focused
+vector/tensor `Box^2` compositions pass.  Frozen Fourier multiplication still
+misses the genuine order-two and order-zero curvature terms.
+
+Exact triangular symmetrized-jet PBW inversion now exhausts all 1,680
+four-jet basis elements, passes 504 ordered-word round trips and certifies
+associativity.  Thus the quadratic-factor composition backend is ready.  If the
+already sorted `Box^2` component table is naively transposed and its words
+reversed, its putative adjoint differs in 48 entries.  This does not prove
+that the primal composition is nonconfluent: the sorted coefficient matrices
+have suppressed derivative-index slots and therefore are not individually
+parallel endomorphisms to which that adjoint rule may be applied.  It does
+prove that a pairing-aware formal adjoint must be formed before reduction, or
+inside the symmetrized-jet/PBW representation.  The remaining backend gap is
+therefore the general pairing-aware adjoint, not composition; the
+quadratic/lower outputs also remain provisional until the 421-variable
+coefficient system is assembled and solved.
+
+One exact linear slice of that system has been exhausted.  If one factor in
+each of `D P` and `P D` is the literal rough `Box`, all four inner/outer
+orientations reduce to 159-variable rational systems.  Their coefficient
+ranks are 159 and their augmented ranks are 160.  The same one-row left-null
+witness appears in every orientation: the symmetrized
+`nabla_(0)nabla_(1)` coefficient `f_01 -> f_00` is `-8` on the required
+right-hand side and zero in every correction column.  The two-nontrivial-
+factor branch is not constrained by this result because its
+`A_minus A_plus` term contributes at quadratic order.
+
+The nonlinear variable ledger is also larger than the cubic kernel.  The
+45-dimensional kernel describes `X1` and the two factor *sums*.  Independent
+left and right splittings contribute `2*93` variables, while `X0` and the
+four factor potentials contribute `5*38`.  Thus the full post-cubic solve has
+`45+2*93+5*38=421` unknowns.  The principal normalization to `q I` is without
+loss for invariant factors because a parallel invertible `q H/q H^-1` pair
+can be redistributed.  Formal adjoints add no variables, but require the
+missing pairing-aware backend.
+
+The conditional promotion theorem itself has landed.  If a future
+coefficient certificate proves exact global `D P=L_minus L_plus` and
+`P D=R_minus R_plus`, with all factors and formal duals Green hyperbolic, the
+B\"ar construction gives
+
+```text
+G_P^+/- = G_Lplus^+/- G_Lminus^+/- D
+         = D G_Rplus^+/- G_Rminus^+/-.
+```
+
+The two-sided identities, metric-causal support, reversed formal adjoints and
+insertion into all sixteen split BV blocks are already certified
+conditionally.  Only after the missing coefficient certificate passes may
+`prolonged_green_witness`, `curvature_causal_green_operators`, and
+`causal_green_homotopy` promote; all three remain false now.
 
 ## Route B: a two-way auxiliary--curvature saddle
 
@@ -227,9 +273,11 @@ an additional support-local first-order prolongation.  No flag follows.
 
 The positive symmetrizers of `L` and `S` are PDE energy forms; they are not the
 action/Krein pairing.  The formal BV/Krein adjoint convention is encoded by
-the oriented odd incidence form, so the relative witness can preserve it by
-construction.  This algebraic cyclicity does not by itself prove the open
-prolonged-current comparison.  A successful coupled operator should first
+the oriented odd incidence form.  Together with the coefficientwise complete
+mapping-cylinder differential, this now defines the local quadratic parent
+`S_prol=<Phi,D Omega Q_prol Phi>/2`; its finite canonical transgression proves
+the prolonged/auxiliary current comparison off shell.  It does not by itself
+prove equality with a causal Green pairing.  A successful coupled operator should first
 prove, with the repository orientation conventions,
 
 ```text

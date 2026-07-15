@@ -13,6 +13,16 @@ from __future__ import annotations
 from dataclasses import dataclass, fields
 from typing import Mapping
 
+from covariant_completion.green_homotopy.causal_transport import (
+    SCHEMA as CAUSAL_TRANSPORT_SCHEMA,
+    recognition_certificate_passes,
+)
+from covariant_completion.final_transport.equivariant_transport import (
+    SCHEMA as SO42_TRANSPORT_SCHEMA,
+    recognition_certificate_passes as so42_recognition_certificate_passes,
+)
+
+from .mixed_order_green_promotion import coefficient_certificate_passes
 from .null_symbol_quotient import CurvedNullSymbolQuotient
 
 
@@ -53,6 +63,10 @@ class CurvatureProlongationStatus:
     residual_endpoint_recovery: bool = False
     SO42_equivariant_transport: bool = False
     prolonged_current_comparison: bool = False
+    mixed_order_promotion_theorem_exact: bool = False
+    mixed_order_factorization_exact: bool = False
+    causal_transport_recognition_exact: bool = False
+    SO42_transport_recognition_exact: bool = False
 
     @staticmethod
     def build(
@@ -63,7 +77,16 @@ class CurvatureProlongationStatus:
         differential_ideal_certificate: Mapping[str, object] | None = None,
         formal_integrability_certificate: Mapping[str, object] | None = None,
         mapping_cylinder_certificate: Mapping[str, object] | None = None,
+        prolonged_current_certificate: Mapping[str, object] | None = None,
+        mixed_order_promotion_certificate: Mapping[str, object] | None = None,
+        mixed_order_factorization_certificate: Mapping[str, object] | None = None,
+        causal_transport_recognition_certificate: Mapping[str, object] | None = None,
+        SO42_transport_recognition_certificate: Mapping[str, object] | None = None,
     ) -> "CurvatureProlongationStatus":
+        formal_promotion_exact = False
+        coefficient_exact = False
+        transport_recognition_exact = False
+        so42_recognition_exact = False
         phase1_flags = {
             "curved_EB_equations": False,
             "curved_EB_first_order_closure": False,
@@ -73,6 +96,11 @@ class CurvatureProlongationStatus:
             "curved_constraint_propagation": False,
             "support_local_prolongation_retract": False,
             "prolonged_BV_operator_identity": False,
+            "prolonged_green_witness": False,
+            "curvature_causal_green_operators": False,
+            "causal_green_homotopy": False,
+            "causal_quasi_isomorphism": False,
+            "residual_endpoint_recovery": False,
         }
         if phase1_certificate is not None:
             if phase1_certificate.get("schema") != (
@@ -278,6 +306,190 @@ class CurvatureProlongationStatus:
             )
             phase1_flags["support_local_prolongation_retract"] = mapping_exact
             phase1_flags["prolonged_BV_operator_identity"] = mapping_exact
+        if prolonged_current_certificate is not None:
+            if prolonged_current_certificate.get("schema") != (
+                "pure-weyl-prolonged-current-comparison-v1"
+            ):
+                raise AssertionError("wrong prolonged current comparison schema")
+            exact = prolonged_current_certificate.get(
+                "exact_matrix_identities", {}
+            )
+            transgression = prolonged_current_certificate.get(
+                "variational_transgression", {}
+            )
+            rows = prolonged_current_certificate.get("all_row_ledger", {})
+            support = prolonged_current_certificate.get("support", {})
+            warranted = prolonged_current_certificate.get(
+                "warranted_atomic_flags"
+            )
+            current_exact = all(
+                (
+                    isinstance(exact, Mapping),
+                    exact.get("Isharp_Hprol_I_minus_Haux") == "zero",
+                    exact.get("Qprol_squared") == "zero",
+                    exact.get("Qprol_odd_cyclicity_defect") == "zero",
+                    exact.get("canonical_master_action_congruence_defect")
+                    == "zero",
+                    isinstance(transgression, Mapping),
+                    bool(transgression.get("off_shell")),
+                    transgression.get("compatible_current_identity")
+                    == "I^*omega_prol^comp-omega_aux=0",
+                    isinstance(rows, Mapping),
+                    int(rows.get("mapping_cylinder_blocks", -1)) == 16,
+                    bool(rows.get("degree_ledger_complete")),
+                    bool(rows.get("fields_and_curvature_fields")),
+                    bool(rows.get("equation_and_identity_rows")),
+                    bool(rows.get("antifield_and_identity_antifield_rows")),
+                    bool(rows.get("trace_Weyl_and_nonminimal_rows")),
+                    int(rows.get("silent_rows_dropped", -1)) == 0,
+                    isinstance(support, Mapping),
+                    bool(support.get("finite_differential_orders_only")),
+                    support.get("inverse_Laplacian") is False,
+                    support.get("inverse_curl") is False,
+                    support.get("spectral_projector") is False,
+                    support.get("Green_operator") is False,
+                    prolonged_current_certificate.get(
+                        "prolonged_current_comparison"
+                    ) is True,
+                    warranted == ["prolonged_current_comparison"],
+                    phase1_flags.get(
+                        "support_local_prolongation_retract", False
+                    ),
+                    phase1_flags.get("prolonged_BV_operator_identity", False),
+                )
+            )
+            phase1_flags["prolonged_current_comparison"] = current_exact
+        if (
+            mixed_order_factorization_certificate is not None
+            and mixed_order_promotion_certificate is None
+        ):
+            raise AssertionError(
+                "mixed-order factorization cannot promote without the promotion theorem"
+            )
+        if mixed_order_promotion_certificate is not None:
+            if mixed_order_promotion_certificate.get("schema") != (
+                "pure-weyl-mixed-order-green-promotion-v1"
+            ):
+                raise AssertionError("wrong mixed-order Green promotion schema")
+            formal = mixed_order_promotion_certificate.get(
+                "exact_formal_construction", {}
+            )
+            causal = mixed_order_promotion_certificate.get("causal_support", {})
+            adjoint = mixed_order_promotion_certificate.get(
+                "formal_adjoint_handling", {}
+            )
+            insertion = mixed_order_promotion_certificate.get(
+                "sixteen_block_insertion", {}
+            )
+            homological = mixed_order_promotion_certificate.get(
+                "homological_consequence_if_coefficients_pass", {}
+            )
+            formal_promotion_exact = all(
+                (
+                    isinstance(formal, Mapping),
+                    int(formal.get("right_inverse_defect", -1)) == 0,
+                    int(formal.get("left_inverse_defect", -1)) == 0,
+                    int(formal.get("formula_equality_defect", -1)) == 0,
+                    bool(formal.get("two_sided")),
+                    isinstance(causal, Mapping),
+                    bool(causal.get("same_sided_factor_composition")),
+                    bool(causal.get("D_does_not_enlarge_support")),
+                    causal.get("retarded_intermediate_domains")
+                    == "past-compact extensions",
+                    causal.get("advanced_intermediate_domains")
+                    == "future-compact extensions",
+                    isinstance(adjoint, Mapping),
+                    bool(adjoint.get("operator_order_reversal_checked")),
+                    adjoint.get("mixed_block_rule")
+                    == "(G_P_plus)^sharp=G_Psharp_minus",
+                    isinstance(insertion, Mapping),
+                    int(insertion.get("existing_green_blocks", -1)) == 14,
+                    insertion.get("replaced_open_blocks")
+                    == ["M_aux P", "Ebar_aux Psharp"],
+                    bool(
+                        insertion.get(
+                            "conditional_all_16_blocks_two_sided_and_causal"
+                        )
+                    ),
+                    bool(insertion.get("S_and_Sinverse_support_local")),
+                    isinstance(homological, Mapping),
+                    bool(homological.get("QG_equals_GQ")),
+                    homological.get("Q_Lambda_plus_Lambda_Q") == "identity",
+                )
+            )
+            coefficient_exact = (
+                mixed_order_factorization_certificate is not None
+                and coefficient_certificate_passes(
+                    mixed_order_factorization_certificate
+                )
+            )
+            green_prerequisites = all(
+                (
+                    phase1_flags["curved_EB_symmetric_hyperbolicity"],
+                    phase1_flags["curved_sourced_constraint_identity"],
+                    phase1_flags["curved_constraint_propagation"],
+                    phase1_flags.get("support_local_prolongation_retract", False),
+                    phase1_flags.get("prolonged_BV_operator_identity", False),
+                )
+            )
+            green_exact = bool(
+                formal_promotion_exact
+                and coefficient_exact
+                and green_prerequisites
+            )
+            phase1_flags["prolonged_green_witness"] = green_exact
+            phase1_flags["curvature_causal_green_operators"] = green_exact
+            phase1_flags["causal_green_homotopy"] = green_exact
+        if causal_transport_recognition_certificate is not None:
+            if causal_transport_recognition_certificate.get("schema") != (
+                CAUSAL_TRANSPORT_SCHEMA
+            ):
+                raise AssertionError("wrong causal transport recognition schema")
+            transport_recognition_exact = recognition_certificate_passes(
+                causal_transport_recognition_certificate
+            )
+        transport_prerequisites = all(
+            (
+                phase1_flags.get("prolonged_green_witness", False),
+                phase1_flags.get("curvature_causal_green_operators", False),
+                phase1_flags.get("causal_green_homotopy", False),
+                phase1_flags.get("support_local_prolongation_retract", False),
+                phase1_flags.get("prolonged_BV_operator_identity", False),
+            )
+        )
+        phase1_flags["causal_quasi_isomorphism"] = bool(
+            transport_recognition_exact and transport_prerequisites
+        )
+        phase1_flags["residual_endpoint_recovery"] = bool(
+            transport_recognition_exact
+            and transport_prerequisites
+            and phase1_flags["causal_quasi_isomorphism"]
+        )
+        if SO42_transport_recognition_certificate is not None:
+            if SO42_transport_recognition_certificate.get("schema") != (
+                SO42_TRANSPORT_SCHEMA
+            ):
+                raise AssertionError("wrong SO(4,2) transport recognition schema")
+            so42_recognition_exact = so42_recognition_certificate_passes(
+                SO42_transport_recognition_certificate
+            )
+        phase1_flags["SO42_equivariant_transport"] = bool(
+            so42_recognition_exact
+            and phase1_flags["causal_quasi_isomorphism"]
+            and phase1_flags["residual_endpoint_recovery"]
+            and phase1_flags["EAL_curvature_spectrum_match"]
+            and phase1_flags["support_local_prolongation_retract"]
+        )
+        phase1_flags["mixed_order_promotion_theorem_exact"] = bool(
+            formal_promotion_exact
+        )
+        phase1_flags["mixed_order_factorization_exact"] = bool(coefficient_exact)
+        phase1_flags["causal_transport_recognition_exact"] = bool(
+            transport_recognition_exact
+        )
+        phase1_flags["SO42_transport_recognition_exact"] = bool(
+            so42_recognition_exact
+        )
         result = CurvatureProlongationStatus(
             quotient if quotient is not None else CurvedNullSymbolQuotient.build(),
             **phase1_flags,
@@ -331,6 +543,13 @@ class CurvatureProlongationStatus:
 
     def verify(self) -> None:
         self.quotient.verify()
+        if (
+            self.mixed_order_factorization_exact
+            and not self.mixed_order_promotion_theorem_exact
+        ):
+            raise AssertionError(
+                "mixed-order coefficients accepted without the promotion theorem"
+            )
         dataclass_names = {item.name for item in fields(self)}
         missing_fields = set(OPEN_OBLIGATION_FIELDS) - dataclass_names
         if missing_fields:
@@ -390,16 +609,26 @@ class CurvatureProlongationStatus:
             "prolonged_green_witness",
             "curvature_causal_green_operators",
         )
-        self._require("causal_quasi_isomorphism", "causal_green_homotopy")
+        self._require(
+            "causal_quasi_isomorphism",
+            "prolonged_green_witness",
+            "curvature_causal_green_operators",
+            "causal_green_homotopy",
+            "causal_transport_recognition_exact",
+        )
         self._require(
             "residual_endpoint_recovery",
             "causal_quasi_isomorphism",
             "support_local_prolongation_retract",
+            "causal_transport_recognition_exact",
         )
         self._require(
             "SO42_equivariant_transport",
             "causal_quasi_isomorphism",
+            "residual_endpoint_recovery",
             "EAL_curvature_spectrum_match",
+            "support_local_prolongation_retract",
+            "SO42_transport_recognition_exact",
         )
         self._require(
             "prolonged_current_comparison",
@@ -496,6 +725,54 @@ class CurvatureProlongationStatus:
                 "prolonged_BV_operator_identity_promoted": (
                     self.prolonged_BV_operator_identity
                 ),
+            },
+            "prolonged_current_evidence": {
+                "certificate": "curved_prolonged_current_comparison.json",
+                "all_row_cyclic_quadratic_parent": (
+                    self.prolonged_current_comparison
+                ),
+                "off_shell_d_plus_Q_comparison": (
+                    self.prolonged_current_comparison
+                ),
+                "Green_current_equality_is_separate": True,
+            },
+            "mixed_order_green_evidence": {
+                "promotion_certificate": "curved_mixed_order_green_promotion.json",
+                "factorization_certificate": (
+                    "pure-weyl-mixed-order-factorization-v1 (not currently emitted)"
+                ),
+                "promotion_theorem_exact": (
+                    self.mixed_order_promotion_theorem_exact
+                ),
+                "actual_factorization_exact": (
+                    self.mixed_order_factorization_exact
+                ),
+                "three_flags_promote_together_only": True,
+                "promoted": self.prolonged_green_witness,
+            },
+            "causal_transport_evidence": {
+                "certificate": "curved_causal_transport_recognition.json",
+                "conditional_recognition_exact": (
+                    self.causal_transport_recognition_exact
+                ),
+                "requires_three_actual_Green_flags": True,
+                "causal_quasi_isomorphism_promoted": (
+                    self.causal_quasi_isomorphism
+                ),
+                "residual_endpoint_recovery_promoted": (
+                    self.residual_endpoint_recovery
+                ),
+                "SO42_equivariant_transport_not_inferred": True,
+                "prolonged_current_comparison_independent_of_Green": True,
+            },
+            "SO42_transport_evidence": {
+                "certificate": "curved_SO42_causal_transport_recognition.json",
+                "conditional_recognition_exact": (
+                    self.SO42_transport_recognition_exact
+                ),
+                "cutoff_inverse_homotopy": "[kappa,rho]=[Q,[chi,rho]]",
+                "requires_causal_quasi_isomorphism": True,
+                "promoted": self.SO42_equivariant_transport,
             },
             "curvature_prolonged_complex_exact": (
                 self.curvature_prolonged_complex_exact

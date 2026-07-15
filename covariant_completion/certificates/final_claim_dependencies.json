@@ -6,8 +6,7 @@
       "causal_green_homotopy",
       "causal_quasi_isomorphism",
       "residual_endpoint_recovery",
-      "SO42_equivariant_transport",
-      "prolonged_current_comparison"
+      "SO42_equivariant_transport"
     ],
     "required_flags": [
       "curved_operator_identity",
@@ -82,6 +81,7 @@
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [
+        "curved_SO42_causal_transport_recognition.json",
         "curved_curvature_prolongation_status.json"
       ],
       "note": "Prove that the causal/Cauchy identification transfers the full SO(4,2) action, strictly or by an explicit chain homotopy.",
@@ -141,6 +141,7 @@
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [
+        "curved_causal_transport_recognition.json",
         "curved_curvature_prolongation_status.json"
       ],
       "note": "Prove that the causal map Gamma_c(C_prol)[1] -> Gamma_sc(C_prol) is a quasi-isomorphism and specialize it to all smooth cylinder solutions.",
@@ -644,8 +645,7 @@
         "causal_green_homotopy",
         "causal_quasi_isomorphism",
         "residual_endpoint_recovery",
-        "SO42_equivariant_transport",
-        "prolonged_current_comparison"
+        "SO42_equivariant_transport"
       ],
       "classification": "terminal_theorem_claim",
       "dependency_mode": "all",
@@ -786,18 +786,17 @@
       "status": true
     },
     "prolonged_current_comparison": {
-      "blocking_dependencies": [
-        "prolonged_current_comparison"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [
         "curved_curvature_prolongation_status.json",
+        "curved_prolonged_current_comparison.json",
         "curved_current_comparison.json"
       ],
-      "note": "Compare the prolonged and auxiliary currents by d+Q improvements and identify the Green, Cauchy, energy, and residual pairings.",
+      "note": "The all-row cyclic quadratic parent compares prolonged and auxiliary currents off shell by a local d+Q improvement. Green/current equality remains a separate consequence of the causal Green homotopy.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "prolonged_green_witness": {
       "blocking_dependencies": [
@@ -810,11 +809,14 @@
         "curved_auxiliary_prenormal_symbol.json",
         "curved_auxiliary_lower_order_factor_ansatz.json",
         "parallel_operator_composition.json",
+        "symmetrized_pbw_composition.json",
+        "curved_auxiliary_triangular_box_factor.json",
+        "curved_mixed_order_green_promotion.json",
         "curved_relative_saddle_witness.json",
         "curved_relative_saddle_principal.json",
         "curved_curvature_prolongation_status.json"
       ],
-      "note": "The canonical coefficientwise W has exact QW+WQ and fourteen Green blocks.  The auxiliary symbol has an exact prenormal complement and no invariant cubic obstruction, but the quadratic curvature/lower equations or a locally hyperbolic two-way curvature saddle remain open.",
+      "note": "The canonical coefficientwise W has exact QW+WQ and fourteen Green blocks.  The auxiliary symbol has an exact prenormal complement and no invariant cubic obstruction.  All four branches with one literal bare-Box factor are exactly obstructed, but the general two-nontrivial-factor quadratic equations or a locally hyperbolic two-way curvature saddle remain open.",
       "requires": [],
       "status": false
     },
@@ -836,6 +838,7 @@
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [
+        "curved_causal_transport_recognition.json",
         "curved_curvature_prolongation_status.json",
         "residual_bfv_comparison.json"
       ],
@@ -985,8 +988,7 @@
     "causal_green_homotopy",
     "causal_quasi_isomorphism",
     "residual_endpoint_recovery",
-    "SO42_equivariant_transport",
-    "prolonged_current_comparison"
+    "SO42_equivariant_transport"
   ],
   "honest_status": "The algebraic/structural scaffold is certified. The final covariant H4 transport remains false exactly where the reported curved atomic dependencies remain open.",
   "policy": "derived claims use their declared all/any dependency mode; atomic statuses are read from owning certificates",
@@ -996,8 +998,8 @@
     "energy_H4_is_C2": true,
     "energy_gram_is_I2": true,
     "final_covariant_H4": false,
-    "implemented_or_derived_true": 52,
-    "open_or_blocked": 18,
+    "implemented_or_derived_true": 53,
+    "open_or_blocked": 17,
     "pairing_compatibility": false,
     "residual_H4_is_C2": true,
     "residual_gram_is_I2": true,

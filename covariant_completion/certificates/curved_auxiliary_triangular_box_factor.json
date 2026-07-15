@@ -1,0 +1,152 @@
+{
+  "ansatz": {
+    "bare_factor": "exact rough Box with no first- or zeroth-order term",
+    "bundle_order": "h[0:10]+f[10:20]+v[20:24]",
+    "complement": "D=D_naive+X_1^mu nabla_mu+X_0",
+    "invariant_algebraic_dimension": 38,
+    "orientation_count": 4,
+    "parallel_globalization": true,
+    "simultaneous_cubic_family_dimension": 45,
+    "symmetrized_PBW_curvature_exact": true,
+    "unknowns": {
+      "B_L": 38,
+      "B_R": 38,
+      "X0": 38,
+      "cubic_X1_SL_SR_family": 45,
+      "total": 159
+    }
+  },
+  "orientations": [
+    {
+      "augmented_rank": 160,
+      "consistent": false,
+      "equation_shape": [
+        2553,
+        159
+      ],
+      "left_factorization": "DP=Box o (Box+S_L.nabla+B_L)",
+      "left_null_obstruction": {
+        "lT_A_is_zero": true,
+        "lT_b": "-8",
+        "support": [
+          {
+            "coefficient": "1",
+            "equation_row": 346,
+            "input_component": 11,
+            "output_component": 10,
+            "side": "DP",
+            "symmetric_derivative_word": [
+              0,
+              1
+            ]
+          }
+        ],
+        "support_size": 1
+      },
+      "rank": 159,
+      "right_factorization": "PD=Box o (Box+S_R.nabla+B_R)",
+      "solution_dimension": null
+    },
+    {
+      "augmented_rank": 160,
+      "consistent": false,
+      "equation_shape": [
+        2547,
+        159
+      ],
+      "left_factorization": "DP=Box o (Box+S_L.nabla+B_L)",
+      "left_null_obstruction": {
+        "lT_A_is_zero": true,
+        "lT_b": "-8",
+        "support": [
+          {
+            "coefficient": "1",
+            "equation_row": 346,
+            "input_component": 11,
+            "output_component": 10,
+            "side": "DP",
+            "symmetric_derivative_word": [
+              0,
+              1
+            ]
+          }
+        ],
+        "support_size": 1
+      },
+      "rank": 159,
+      "right_factorization": "PD=(Box+S_R.nabla+B_R) o Box",
+      "solution_dimension": null
+    },
+    {
+      "augmented_rank": 160,
+      "consistent": false,
+      "equation_shape": [
+        2541,
+        159
+      ],
+      "left_factorization": "DP=(Box+S_L.nabla+B_L) o Box",
+      "left_null_obstruction": {
+        "lT_A_is_zero": true,
+        "lT_b": "-8",
+        "support": [
+          {
+            "coefficient": "1",
+            "equation_row": 346,
+            "input_component": 11,
+            "output_component": 10,
+            "side": "DP",
+            "symmetric_derivative_word": [
+              0,
+              1
+            ]
+          }
+        ],
+        "support_size": 1
+      },
+      "rank": 159,
+      "right_factorization": "PD=Box o (Box+S_R.nabla+B_R)",
+      "solution_dimension": null
+    },
+    {
+      "augmented_rank": 160,
+      "consistent": false,
+      "equation_shape": [
+        2535,
+        159
+      ],
+      "left_factorization": "DP=(Box+S_L.nabla+B_L) o Box",
+      "left_null_obstruction": {
+        "lT_A_is_zero": true,
+        "lT_b": "-8",
+        "support": [
+          {
+            "coefficient": "1",
+            "equation_row": 346,
+            "input_component": 11,
+            "output_component": 10,
+            "side": "DP",
+            "symmetric_derivative_word": [
+              0,
+              1
+            ]
+          }
+        ],
+        "support_size": 1
+      },
+      "rank": 159,
+      "right_factorization": "PD=(Box+S_R.nabla+B_R) o Box",
+      "solution_dimension": null
+    }
+  ],
+  "outcome": {
+    "all_four_orientations_obstructed": true,
+    "common_obstruction_channel": "the DP coefficient of nabla_(0 nabla_1) mapping f_01 to f_00 is -8 in the required right-hand side and zero in all 159 correction columns",
+    "consistent_orientation_count": 0,
+    "flag_promoted": false,
+    "general_two_nontrivial_factor_branch_decided": false,
+    "green_realization_proved": false,
+    "mixed_order_factorization_proved": false
+  },
+  "schema": "pure-weyl-auxiliary-triangular-bare-box-factor-v1",
+  "theorem_boundary": "This exact linear solve exhausts only the branch in which one factor of DP and one factor of PD is the literal rough Box.  It does not constrain the complete branch with nonzero first-order coefficients in both factors, whose A_- A_+ term changes the quadratic equations."
+}

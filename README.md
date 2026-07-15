@@ -88,7 +88,9 @@ speeds, and has a complete sourced subsidiary identity.  The odd BV mapping
 cylinder now gives the complete support-local all-row prolongation and its
 nilpotent prolonged differential.  The prolonged Green witness and actual
 BV Green homotopy, residual endpoint recovery, `SO(4,2)`-equivariant
-transport, and prolonged current comparison are not yet proved.  Hadamard
+transport are not yet proved.  The cyclic all-row quadratic parent proves
+the prolonged/auxiliary current comparison off shell; Green/current equality
+still depends on the causal homotopy.  Hadamard
 theory also remains open.  A direct same-bundle
 factorization of `B_lin+K T/2` is an optional strengthening, not a hidden
 premise.
@@ -125,8 +127,15 @@ causal_green_homotopy              = false
 causal_quasi_isomorphism           = false
 residual_endpoint_recovery         = false
 SO42_equivariant_transport         = false
-prolonged_current_comparison       = false
+prolonged_current_comparison       = true
 ```
+
+The `SO(4,2)` item is now an exact conditional recognition theorem rather
+than an independent coefficient calculation.  For the cutoff inverse
+`kappa=[Q,chi]` and every local conformal chain generator `rho`, the explicit
+homotopy is `[kappa,rho]=[Q,[chi,rho]]`; its support is compact on the
+cylinder.  The flag stays false until the actual causal quasi-isomorphism
+and residual endpoint recovery promote.
 
 The exact all-level curvature audit is also complete: symbolic BGG rank and
 character identities show that the 26-state covariant equations carry
@@ -162,7 +171,26 @@ complete invariant correction spaces have `dim D0=38` and `dim D1=93`.
 Exact simultaneous cubic divisibility of both `DP` and `PD` leaves a
 45-parameter family, so there is no cubic obstruction.  The
 curvature-corrected quadratic and lower equations, including nonlinear
-products of the first-order factor matrices, remain open.  Among the nine
+products of the first-order factor matrices, remain open.  Restoring the two
+independent 93-parameter factor splittings and the five 38-parameter
+algebraic terms gives 421 nonlinear unknowns after the cubic gate.  A backend
+audit corrected a mixed time--space curvature sign: raised curvature indices
+must use the spatial projector.  Focused `Box^2` and Weitzenbock coordinate-jet
+tests now pass.  Exact triangular symmetrized-jet PBW inversion exhausts all
+1,680 four-jet basis elements, passes 504 ordered-word round trips and
+certifies associativity, so the quadratic-factor composition backend is
+ready.  A naive transpose/reversal of the already sorted table has a 48-entry
+defect because derivative-index slots were suppressed.  This is not a
+primal-composition counterexample; a pairing-aware general formal-adjoint
+backend and the 421-variable coefficient solve remain required before the
+quadratic/lower factor certificate is trusted.  A first exact lower-order
+branch has now been exhausted: in all four left/right orientations with one
+factor equal to the literal rough `Box`, the 159-variable system has
+`rank(A)=159` and `rank([A|b])=160`.  The common obstruction is the
+symmetrized `nabla_(0)nabla_(1)` coefficient mapping `f_01` to `f_00`, whose
+required value is `-8` while every correction column vanishes.  This rules
+out only the bare-`Box` branch; two nontrivial factors retain the quadratic
+`A_minus A_plus` term and remain open.  Among the nine
 allowed odd-adjoint relative pairs, no single pair gives reciprocal
 coupling; the smallest two-way saddle uses pairs 4 and 5.  Its exact core is
 the coupled `(M_aux,X_U,Y_U_sharp)` block with off-diagonal maps `R,S` and

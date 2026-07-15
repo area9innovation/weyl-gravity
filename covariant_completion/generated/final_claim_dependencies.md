@@ -80,13 +80,12 @@ exact curved equations, and the 26-state first-order closure are
 true. The remaining analytic, causal, endpoint, equivariance, and
 pairing-transport flags below remain open.
 
-- `prolonged_green_witness` — The canonical coefficientwise W has exact QW+WQ and fourteen Green blocks.  The auxiliary symbol has an exact prenormal complement and no invariant cubic obstruction, but the quadratic curvature/lower equations or a locally hyperbolic two-way curvature saddle remain open.
+- `prolonged_green_witness` — The canonical coefficientwise W has exact QW+WQ and fourteen Green blocks.  The auxiliary symbol has an exact prenormal complement and no invariant cubic obstruction.  All four branches with one literal bare-Box factor are exactly obstructed, but the general two-nontrivial-factor quadratic equations or a locally hyperbolic two-way curvature saddle remain open.
 - `curvature_causal_green_operators` — Construct retarded and advanced operators for the exact constrained curvature system and assemble the full BV blocks.
 - `causal_green_homotopy` — Verify Q Lambda_+/- + Lambda_+/- Q=1 on the complete prolonged BV complex with causal support.
 - `causal_quasi_isomorphism` — Prove that the causal map Gamma_c(C_prol)[1] -> Gamma_sc(C_prol) is a quasi-isomorphism and specialize it to all smooth cylinder solutions.
 - `residual_endpoint_recovery` — Realize the fifteen cutoff CKV classes and their dual endpoints through the actual causal map, with no prolongation copy and suspension sign +1.
 - `SO42_equivariant_transport` — Prove that the causal/Cauchy identification transfers the full SO(4,2) action, strictly or by an explicit chain homotopy.
-- `prolonged_current_comparison` — Compare the prolonged and auxiliary currents by d+Q improvements and identify the Green, Cauchy, energy, and residual pairings.
 
 > The algebraic and energy-mode result is independently certified:
 > `H^4 = C^2` with Gram matrix `I_2`. This report tracks its

@@ -142,6 +142,33 @@ class ParallelCylinderNormalForm:
         if direct != expected:
             raise AssertionError("covector commutator normalization failed")
 
+        # Independent coordinate-jet audit of the curvature sign, including
+        # the vanishing mixed time--space commutators.  This catches replacing
+        # the spatial raised-index projector by a four-dimensional Kronecker
+        # delta.
+        from covariant_completion.minimal_witness.cylinder_jets import Jet
+        from .covariant_jets import CovariantJetBasis
+
+        jet_basis = CovariantJetBasis.build(verify=False)
+        for input_index in range(4):
+            covector = {
+                (index,): Jet.constant(int(index == input_index))
+                for index in range(4)
+            }
+            second = jet_basis._covariant_derivatives(covector, 2)
+            for a in range(4):
+                for b in range(4):
+                    commutator = self.background.covector_commutator(a, b)
+                    for output_index in range(4):
+                        actual = sp.expand(
+                            second[(a, b, output_index)].value
+                            - second[(b, a, output_index)].value
+                        )
+                        if actual != commutator[output_index, input_index]:
+                            raise AssertionError(
+                                "coordinate-jet curvature commutator mismatch"
+                            )
+
         # Normalization is idempotent, including curvature acting on an
         # inner derivative slot of a rank-two tensor.
         sample = {((3, 1, 2, 0), (1, 3)): sp.Integer(1)}

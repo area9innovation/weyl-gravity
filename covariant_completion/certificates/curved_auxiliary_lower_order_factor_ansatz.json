@@ -18,6 +18,7 @@
     "factor_first_order_matrices_allowed": true,
     "factor_principal_symbols": "q I_24",
     "left_factorization": "DP=L_- L_+",
+    "principal_normalization": "q I is a gauge choice: any parallel invertible q H / q H^-1 pair is redistributed algebraically between the factors",
     "right_factorization": "PD=R_- R_+"
   },
   "exact_cubic_gate": {
@@ -51,13 +52,29 @@
     "simultaneous_cubic_solution_family_dimension": 45
   },
   "remaining_exact_solve": {
+    "composition_backend_certificate": "symmetrized_pbw_composition.json",
     "curvature_commutators_required": true,
+    "first_order_factor_split_freedom": {
+      "left_difference_parameters": 93,
+      "reason": "the cubic equations determine only A_Lminus+A_Lplus and A_Rminus+A_Rplus",
+      "right_difference_parameters": 93,
+      "total": 186
+    },
+    "formal_adjoint_variables": "no independent variables; apply the certified fibre-pairing sharp to the unreduced covariant coefficient tensors and reverse factor order before sorted-word reduction",
     "full_lower_order_solution_found": false,
     "left_null_obstruction_found": false,
     "nonlinear_terms": "products of the two factor first-order matrices",
+    "quadratic_factor_composition_backend_ready": true,
     "quadratic_factor_equations_assembled": false,
-    "zeroth_and_first_order_factor_coefficients_required": true
+    "remaining_adjoint_backend_requirement": "a pairing-aware general formal adjoint formed before derivative-index slots are suppressed",
+    "total_parameters_after_cubic_gate": 421,
+    "zeroth_and_first_order_factor_coefficients_required": true,
+    "zeroth_order_variables": {
+      "complement_X0": 38,
+      "four_factor_B0_matrices": 152,
+      "total": 190
+    }
   },
   "schema": "pure-weyl-auxiliary-lower-order-factor-ansatz-v1",
-  "theorem_boundary": "the complete invariant first-order family passes the exact simultaneous cubic divisibility gate with a 45-parameter family; the curvature-corrected nonlinear quadratic and lower equations remain unsolved, so no factorization or Green theorem follows"
+  "theorem_boundary": "the complete invariant first-order family passes the exact simultaneous cubic divisibility gate with a 45-parameter family; the full nonlinear solve has 421 parameters after restoring the factor splittings and algebraic terms. Exact symmetrized-jet PBW composition is certified, but a pairing-aware general formal-adjoint backend and the coefficient solve remain open; no factorization or Green theorem follows"
 }

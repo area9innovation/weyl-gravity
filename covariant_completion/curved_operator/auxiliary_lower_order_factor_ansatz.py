@@ -101,6 +101,9 @@ class AuxiliaryLowerOrderFactorAnsatz:
     simultaneous_correction_projection_rank: int
     simultaneous_left_sum_projection_rank: int
     simultaneous_right_sum_projection_rank: int
+    factor_first_order_split_parameters: int
+    factor_zeroth_order_parameters: int
+    nonlinear_parameters_after_cubic_gate: int
 
     @staticmethod
     def build() -> "AuxiliaryLowerOrderFactorAnsatz":
@@ -188,6 +191,18 @@ class AuxiliaryLowerOrderFactorAnsatz:
             simultaneous_right_sum_projection_rank=DomainMatrix.from_Matrix(
                 simultaneous_kernel[2 * basis.cols :, :]
             ).rank(),
+            # The cubic gate sees only the sums of the two first-order
+            # coefficients in each factor product.  Each left/right split
+            # therefore retains one full 93-parameter difference.  The
+            # complement and all four factors also have independent
+            # 38-parameter algebraic coefficients.
+            factor_first_order_split_parameters=2 * basis.cols,
+            factor_zeroth_order_parameters=5 * 38,
+            nonlinear_parameters_after_cubic_gate=(
+                simultaneous.cols - simultaneous_rank
+                + 2 * basis.cols
+                + 5 * 38
+            ),
         )
         result.verify()
         return result
@@ -218,6 +233,12 @@ class AuxiliaryLowerOrderFactorAnsatz:
             self.simultaneous_right_sum_projection_rank,
         ) != ((23040, 279), 234, 45, 45, 45, 45):
             raise AssertionError("simultaneous cubic divisibility solve drifted")
+        if (
+            self.factor_first_order_split_parameters,
+            self.factor_zeroth_order_parameters,
+            self.nonlinear_parameters_after_cubic_gate,
+        ) != (186, 190, 421):
+            raise AssertionError("nonlinear factor-variable ledger drifted")
 
     def certificate(self) -> dict[str, object]:
         self.verify()
@@ -243,6 +264,10 @@ class AuxiliaryLowerOrderFactorAnsatz:
                 "right_factorization": "PD=R_- R_+",
                 "factor_principal_symbols": "q I_24",
                 "factor_first_order_matrices_allowed": True,
+                "principal_normalization": (
+                    "q I is a gauge choice: any parallel invertible q H / "
+                    "q H^-1 pair is redistributed algebraically between the factors"
+                ),
             },
             "exact_cubic_gate": {
                 "reason_curvature_does_not_enter": (
@@ -271,6 +296,34 @@ class AuxiliaryLowerOrderFactorAnsatz:
                 "curvature_commutators_required": True,
                 "zeroth_and_first_order_factor_coefficients_required": True,
                 "nonlinear_terms": "products of the two factor first-order matrices",
+                "first_order_factor_split_freedom": {
+                    "left_difference_parameters": 93,
+                    "right_difference_parameters": 93,
+                    "total": self.factor_first_order_split_parameters,
+                    "reason": (
+                        "the cubic equations determine only A_Lminus+A_Lplus "
+                        "and A_Rminus+A_Rplus"
+                    ),
+                },
+                "zeroth_order_variables": {
+                    "complement_X0": 38,
+                    "four_factor_B0_matrices": 4 * 38,
+                    "total": self.factor_zeroth_order_parameters,
+                },
+                "total_parameters_after_cubic_gate": (
+                    self.nonlinear_parameters_after_cubic_gate
+                ),
+                "formal_adjoint_variables": (
+                    "no independent variables; apply the certified fibre-pairing "
+                    "sharp to the unreduced covariant coefficient tensors and "
+                    "reverse factor order before sorted-word reduction"
+                ),
+                "composition_backend_certificate": "symmetrized_pbw_composition.json",
+                "quadratic_factor_composition_backend_ready": True,
+                "remaining_adjoint_backend_requirement": (
+                    "a pairing-aware general formal adjoint formed before "
+                    "derivative-index slots are suppressed"
+                ),
                 "full_lower_order_solution_found": False,
                 "left_null_obstruction_found": False,
             },
@@ -286,7 +339,10 @@ class AuxiliaryLowerOrderFactorAnsatz:
             "theorem_boundary": (
                 "the complete invariant first-order family passes the exact "
                 "simultaneous cubic divisibility gate with a 45-parameter family; "
-                "the curvature-corrected nonlinear quadratic and lower equations "
-                "remain unsolved, so no factorization or Green theorem follows"
+                "the full nonlinear solve has 421 parameters after restoring the "
+                "factor splittings and algebraic terms. Exact symmetrized-jet "
+                "PBW composition is certified, but a pairing-aware general "
+                "formal-adjoint backend and the coefficient solve remain open; "
+                "no factorization or Green theorem follows"
             ),
         }
