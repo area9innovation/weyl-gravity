@@ -1,0 +1,88 @@
+{
+  "conditional_saddle_green_formula": {
+    "B": "Q_alg U+U Q_end",
+    "C": "Q_end V+V Q_alg",
+    "L_total": "[[1,B],[C,D]]",
+    "Schur_endpoint": "S_end=D-CB",
+    "W_total": "H_alg+W_AF+W_0",
+    "causal_support_if_G_S_is_causal": true,
+    "inverse": "[[1+B G_S C,-B G_S],[-G_S C,G_S]]",
+    "left_inverse_mod_G_S_S_end_equals_1": true,
+    "right_inverse_mod_S_end_G_S_equals_1": true
+  },
+  "cyclic_two_way_witness": {
+    "algebraic_diagonal": "zero",
+    "algebraic_to_endpoint_entries": [
+      [
+        1,
+        12,
+        "AFsharp"
+      ],
+      [
+        4,
+        12,
+        "T AFsharp"
+      ]
+    ],
+    "consequence": "the canonical graph-internal lift no-go does not extend to the two-way relative incidence",
+    "endpoint_diagonal": "zero",
+    "endpoint_to_algebraic_entries": [
+      [
+        4,
+        2,
+        "AF"
+      ],
+      [
+        4,
+        12,
+        "AF Tsharp"
+      ]
+    ],
+    "formula": "W_AF=P_alg w P_end+P_end w P_alg, w=(A_F,A_F^sharp)",
+    "odd_cyclicity_defect": 0
+  },
+  "decision": {
+    "A_F_obstruction_couples_through_relative_cone": true,
+    "Schur_endpoint_green_hyperbolic": false,
+    "arbitrary_compact_sources_solved": false,
+    "causal_green_homotopy": false,
+    "curvature_causal_green_operators": false,
+    "graded_adjoint_Green_identity": false,
+    "prolonged_green_witness": false,
+    "two_sided_Green_operators_constructed": false,
+    "two_way_saddle_incidence_feasible": true
+  },
+  "dependency_tag": "LORENTZIAN-CAUSAL",
+  "fail_closed": true,
+  "input_certificate_sha256": {
+    "endpoint_graph_lift_boundary": "27fd6663315ea9e8b7e2defd5d8d87daac2d1e7f0ca3c7d7b497ac05a5592779",
+    "green_bridge": "7454da862803de62f25b6387553fc269daf1bc8ac605013448c4c4e028499da4",
+    "hybrid_projector": "c3867f2de2c3bff40f36d5ce8d8875119202acc24f4085f5905bede1ae0c5ade",
+    "mapping_cylinder": "b56ba739afdd05548e40c351721e8a39e4776ecb7581a8213e9540faa6c06797",
+    "weyl_cotton_witness": "b068819251fd2211d545697fe2ac8f9fa240922b8f01b480db9e4db790ec8889"
+  },
+  "minimum_missing_operator": {
+    "currently_certified": false,
+    "object": "an endpoint-diagonal W_0",
+    "required_adjoint_theorem": "G_S,+^sharp equals the graded G_S,- and the block Schur inverse obeys the prolonged BV adjoint convention",
+    "required_identity": "S_end=(Q_end W_0+W_0 Q_end)-CB is a finite filtered extension of L_26, S_14, ghost waves and the physical biwave",
+    "required_source_theorem": "for every compact endpoint source, both same-sided Schur solutions satisfy the curvature-graph and sourced-subsidiary rows"
+  },
+  "rank_five_relative_incidence": {
+    "A_F_support": "A_STF[5] state rows",
+    "finite_order_after_projection": 3,
+    "inverse_Weyl_or_spatial_projector_used": false,
+    "map": "A_F p_E:Ebar_aux[24]->X_U,relative[26]",
+    "projected_component": "the X_U<-Ebar component of P_alg w P_end is A_F p_E; the full map also contains the forced graph-cotangent term",
+    "rank": 5,
+    "rank_reason": "p_E i_E=1 and rank(A_F)=5",
+    "support_local": true,
+    "typed_atom_convention": "AF denotes A_F p_E"
+  },
+  "schema": "pure-weyl-endpoint-relative-saddle-feasibility-v1",
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": [
+    "endpoint_relative_rank5_incidence_exact",
+    "endpoint_relative_cyclic_saddle_feasible"
+  ]
+}
