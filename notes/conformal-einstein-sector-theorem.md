@@ -221,6 +221,30 @@ subcomplex is `NOT_APPLICABLE`; a different common background is required.
 This is a `LOCAL-ALGEBRAIC`, `REDUCED-MODE` statement and does not alter the
 asymptotically flat causal commission.
 
+## Common matter-coupled base point
+
+The missing-background gate is now passed by the separate
+`EINSTEIN_MAXWELL_PRODUCT_INCIDENCE` certificate. For aligned Maxwell flux on
+`M_2(k_1) x Sigma_2(k_2)`, the same metric and the same Maxwell field solve
+cosmological Einstein--Maxwell and pure Weyl--Maxwell exactly when
+
+\[
+\Lambda=\frac{k_1+k_2}{2},\qquad
+\rho=\frac{k_2-k_1}{2\kappa},\qquad
+\alpha_B\kappa(k_1+k_2)=3
+\]
+
+on the declared positive nondegenerate branch. The specialization
+`R^(1,1) x S^2`, and its spatial `S^1` quotient, gives a positive-energy
+common background with compact Cauchy topology `S^1 x S^2`.
+
+This establishes background incidence only. The Maxwell configuration is not
+a relational clock, the background is not asymptotically flat, and no
+linearized tangent-complex or observable inclusion has yet been constructed.
+The next exact gate is the same-base-point minimal Einstein--Maxwell versus
+Diff x Weyl--Maxwell BV comparison described in
+`notes/conformal-common-einstein-maxwell-product-background.md`.
+
 ## Einstein-Hilbert scale
 
 Pure four-dimensional Weyl gravity has a dimensionless coupling and no

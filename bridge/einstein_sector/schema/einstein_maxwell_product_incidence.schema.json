@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-product-incidence-v1",
+  "title": "Common Einstein-Maxwell and pure-Weyl-Maxwell product background",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "provenance",
+    "conventions",
+    "ansatz",
+    "exact_tensors",
+    "common_incidence_theorem",
+    "degenerate_branches",
+    "flat_critical_branch",
+    "u1_flux_quantization",
+    "rational_fixture",
+    "classification",
+    "next_gate",
+    "claim_flags",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-product-incidence-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_product_incidence.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_PRODUCT_INCIDENCE"},
+    "result_state": {"const": "CERTIFIED_EXACT_COMMON_BACKGROUND_TANGENT_COMPLEX_OPEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "provenance": {"type": "object"},
+    "conventions": {"type": "object"},
+    "ansatz": {"type": "object"},
+    "exact_tensors": {"type": "object"},
+    "common_incidence_theorem": {
+      "type": "object",
+      "required": [
+        "branch_assumptions",
+        "cosmological_constant",
+        "maxwell_energy_density",
+        "aligned_field_norm",
+        "coupling_curvature_incidence",
+        "einstein_maxwell_equation",
+        "pure_weyl_maxwell_equation",
+        "same_metric",
+        "same_maxwell_field",
+        "not_a_gauge_equivalence"
+      ]
+    },
+    "degenerate_branches": {"type": "object"},
+    "flat_critical_branch": {
+      "type": "object",
+      "required": [
+        "local_geometry",
+        "compact_spatial_quotient",
+        "curvatures",
+        "positive_energy_for_positive_couplings",
+        "smooth_spatial_quotient",
+        "compact_cauchy_topology",
+        "relational_matter_clock",
+        "asymptotically_flat"
+      ]
+    },
+    "u1_flux_quantization": {"type": "object"},
+    "rational_fixture": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exact_common_einstein_maxwell_weyl_maxwell_background_exists",
+        "positive_energy_common_branch_exists",
+        "compact_cauchy_spatial_quotient_exists",
+        "common_background_is_a_relational_clock_background",
+        "common_background_is_asymptotically_flat",
+        "linearized_tangent_complex_map_constructed",
+        "einstein_observable_embedding_constructed",
+        "theories_proved_equivalent"
+      ]
+    },
+    "next_gate": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exact_nonlinear_background_incidence_certified",
+        "same_metric_and_maxwell_field_certified",
+        "positive_flat_critical_specialization_certified",
+        "u1_flux_quantization_relation_certified",
+        "tangent_bv_inclusion_certified",
+        "relational_clock_certified",
+        "lorentzian_green_complex_certified",
+        "scattering_sector_certified",
+        "quantum_claim"
+      ]
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

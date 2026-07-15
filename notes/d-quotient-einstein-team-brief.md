@@ -219,6 +219,28 @@ a same-base-point Einstein tangent inclusion is `NOT_APPLICABLE`, not merely
 open.  The classical Berger rail continues independently with nonminimal and
 causal completion.
 
+### Common-background replacement selected
+
+The exact `EINSTEIN_MAXWELL_PRODUCT_INCIDENCE` certificate now supplies the
+different common background required by the Berger non-incidence result. An
+aligned Maxwell field on `M_2(k_1) x Sigma_2(k_2)` solves both frozen
+Einstein--Maxwell and pure Weyl--Maxwell equations with the same metric and
+field on the branch
+
+```text
+Lambda=(k_1+k_2)/2
+rho=(k_2-k_1)/(2*kappa)
+alpha_B*kappa*(k_1+k_2)=3.
+```
+
+The positive flat specialization `R^(1,1) x S^2` admits a smooth spatial
+`S^1` quotient with compact Cauchy topology `S^1 x S^2`. This is a
+`LOCAL-ALGEBRAIC`, lifecycle-`CLASSIFIED` background theorem only. It is not
+a clock or asymptotically flat background and does not yet establish a
+tangent BV map. E-D2 should next build both minimal metric--Maxwell complexes
+at this identical base point and either certify the chain map and pairing or
+record their exact obstruction.
+
 ## Work package E-D3: observables, charges, and scattering
 
 Compare the selected sector with Einstein gravity by constructing explicit

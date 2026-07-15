@@ -1,0 +1,485 @@
+{
+  "ansatz": {
+    "energy_density": "(E**2 + P**2)/2",
+    "field_strength": "F=E vol(M_2)+P vol(Sigma_2)",
+    "first_factor": "oriented Lorentzian constant-curvature surface",
+    "maxwell_equations": "PASS because both factor volume forms are parallel, hence closed and coclosed",
+    "second_factor": "oriented Riemannian constant-curvature surface",
+    "spacetime": "M_2(k_1) x Sigma_2(k_2)"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC certificate proves an exact nonlinear same-metric, same-Maxwell-field intersection of cosmological Einstein--Maxwell and pure Weyl--Maxwell solution loci, including a positive R^(1,1) x S^2 branch and its smooth spatial S^1 quotient. It proves no tangent BV inclusion, relational clock, stability, Green complex, asymptotic-flatness, observable embedding, scattering statement, or quantum equivalence.",
+  "claim_flags": {
+    "exact_nonlinear_background_incidence_certified": true,
+    "lorentzian_green_complex_certified": false,
+    "positive_flat_critical_specialization_certified": true,
+    "quantum_claim": false,
+    "relational_clock_certified": false,
+    "same_metric_and_maxwell_field_certified": true,
+    "scattering_sector_certified": false,
+    "tangent_bv_inclusion_certified": false,
+    "u1_flux_quantization_relation_certified": true
+  },
+  "classification": {
+    "common_background_is_a_relational_clock_background": false,
+    "common_background_is_asymptotically_flat": false,
+    "compact_cauchy_spatial_quotient_exists": true,
+    "einstein_observable_embedding_constructed": false,
+    "exact_common_einstein_maxwell_weyl_maxwell_background_exists": true,
+    "linearized_tangent_complex_map_constructed": false,
+    "positive_energy_common_branch_exists": true,
+    "theories_proved_equivalent": false
+  },
+  "common_incidence_theorem": {
+    "aligned_field_norm": "E^2+P^2=(k_2-k_1)/kappa",
+    "branch_assumptions": [
+      "alpha_B>0",
+      "kappa>0",
+      "k_2>k_1",
+      "k_1+k_2>0"
+    ],
+    "cosmological_constant": "(k_1+k_2)/2",
+    "coupling_curvature_incidence": "alpha_B*kappa*(k_1+k_2)=3",
+    "einstein_maxwell_equation": "PASS componentwise",
+    "maxwell_energy_density": "(k_2-k_1)/(2*kappa)",
+    "not_a_gauge_equivalence": true,
+    "pure_weyl_maxwell_equation": "PASS componentwise",
+    "same_maxwell_field": true,
+    "same_metric": true
+  },
+  "conventions": {
+    "bach": "B_ac=P^bd C_abcd because nabla P=0 on the locally symmetric product",
+    "curvature": "R_abcd=k(g_ac g_bd-g_ad g_bc) on each two-dimensional factor",
+    "einstein_maxwell_action": "S_EM=int sqrt(-g)[(R-2Lambda)/(2kappa)-(1/4)F_ab F^ab]",
+    "einstein_maxwell_equations": "G_ab+Lambda g_ab=kappa T_ab; nabla_a F^ab=0; dF=0",
+    "signature": "(-,+,+,+)",
+    "stress": "T_ab=F_ac F_b^c-(1/4)g_ab F_cd F^cd",
+    "weyl_maxwell_action": "S_WM=int sqrt(-g)[(alpha_B/8) C_abcd C^abcd-(1/4)F_ab F^ab]",
+    "weyl_maxwell_equations": "alpha_B B_ab=T_ab; nabla_a F^ab=0; dF=0"
+  },
+  "degenerate_branches": {
+    "k_1_equals_k_2": {
+      "classification": "flux-free Einstein product in the common vacuum locus",
+      "reason": "Einstein--Maxwell incidence forces rho=0 and the Bach tensor vanishes"
+    },
+    "k_1_plus_k_2_equals_zero_with_unequal_curvatures": {
+      "classification": "no same-field incidence with nonzero Maxwell flux",
+      "reason": "B=0 forces T=0 in pure Weyl--Maxwell, while Einstein--Maxwell requires rho=(k_2-k_1)/(2kappa)"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_tensors": {
+    "bach_block_amplitude": "(k_1 - k_2)*(k_1 + k_2)/6",
+    "bach_orthonormal": [
+      [
+        "-(k_1 - k_2)*(k_1 + k_2)/6",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "(k_1 - k_2)*(k_1 + k_2)/6",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-(k_1 - k_2)*(k_1 + k_2)/6",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-(k_1 - k_2)*(k_1 + k_2)/6"
+      ]
+    ],
+    "einstein_tensor_orthonormal": [
+      [
+        "k_2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-k_2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-k_1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-k_1"
+      ]
+    ],
+    "field_squared": "-2*(E - P)*(E + P)",
+    "field_strength_orthonormal": [
+      [
+        "0",
+        "E",
+        "0",
+        "0"
+      ],
+      [
+        "-E",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "P"
+      ],
+      [
+        "0",
+        "0",
+        "-P",
+        "0"
+      ]
+    ],
+    "maxwell_stress_orthonormal": [
+      [
+        "(E**2 + P**2)/2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-(E**2 + P**2)/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "(E**2 + P**2)/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "(E**2 + P**2)/2"
+      ]
+    ],
+    "metric_orthonormal": [
+      [
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "ricci_orthonormal": [
+      [
+        "-k_1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "k_1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "k_2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "k_2"
+      ]
+    ],
+    "scalar_curvature": "2*(k_1 + k_2)",
+    "schouten_orthonormal": [
+      [
+        "-(2*k_1 - k_2)/6",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "(2*k_1 - k_2)/6",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-(k_1 - 2*k_2)/6",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-(k_1 - 2*k_2)/6"
+      ]
+    ]
+  },
+  "flat_critical_branch": {
+    "asymptotically_flat": false,
+    "compact_cauchy_topology": "S^1 x S^2",
+    "compact_spatial_quotient": "R_t x S^1_L x S^2_r",
+    "cosmological_constant": "3/(2*alpha_B*kappa)",
+    "curvatures": {
+      "k_1": "0",
+      "k_2": "3/(alpha_B*kappa)"
+    },
+    "energy_density": "3/(2*alpha_B*kappa**2)",
+    "global_timelike_killing_field": "partial_t",
+    "local_geometry": "R^(1,1) x S^2",
+    "positive_energy_for_positive_couplings": true,
+    "pure_magnetic_field_squared": "3/(alpha_B*kappa**2)",
+    "relational_matter_clock": false,
+    "smooth_spatial_quotient": true,
+    "sphere_radius_squared": "alpha_B*kappa/3"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": {
+    "required_checks": [
+      "freeze both Hessians and gauge generators",
+      "verify nilpotency, Noether identities, cyclicity, and Maxwell gauge rows",
+      "construct an explicit tangent chain map or exact obstruction",
+      "compare the helicity-two and photon cohomology before any residual quotient",
+      "compare covariant presymplectic currents and charges"
+    ],
+    "status": "OPEN",
+    "target": "construct and compare the minimal Einstein--Maxwell and Diff x Weyl--Maxwell BV complexes at the certified identical base point"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_product_incidence.py",
+    "generator_sha256": "132fb01d3eb93cfa2e39943bf006b72c7f2ce60f12c4925efbe63309d0966044",
+    "literature_context": {
+      "arxiv": "2604.19168",
+      "role": "context only; every certified tensor identity is derived independently by this generator",
+      "title": "The Flat Critical Branch Between Nariai and Bertotti-Robinson Geometries as a Solution of Cosmological Einstein-Maxwell Theory"
+    }
+  },
+  "rational_fixture": {
+    "bach_orthonormal": [
+      [
+        "1/6",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/6",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1/6",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1/6"
+      ]
+    ],
+    "both_metric_equations": "PASS",
+    "einstein_residual": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "einstein_tensor_orthonormal": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "maxwell_stress_orthonormal": [
+      [
+        "1/2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1/2"
+      ]
+    ],
+    "parameters": {
+      "E": "0",
+      "Lambda": "1/2",
+      "P": "1",
+      "alpha_B": "3",
+      "k_1": "0",
+      "k_2": "1",
+      "kappa": "1"
+    },
+    "ricci_orthonormal": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "weyl_residual": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "result_id": "EINSTEIN_MAXWELL_PRODUCT_INCIDENCE",
+  "result_state": "CERTIFIED_EXACT_COMMON_BACKGROUND_TANGENT_COMPLEX_OPEN",
+  "schema": "einstein-maxwell-product-incidence-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_product_incidence.schema.json",
+  "schema_sha256": "5b79a485c84353929cd2fed9646e720ba8c16a2edcdaed9d8a761c1b629af57c",
+  "u1_flux_quantization": {
+    "flat_branch_discrete_coupling": "alpha_B=3*N**2/(4*q_min**2)",
+    "magnetic_amplitude": "N*k_2/(2*q_min)",
+    "normalization": "q_min/(2*pi) integral_(S^2) F=N in Z",
+    "rational_fixture": "q_min=1, N=2 gives alpha_B=3 and P=1",
+    "sphere_area": "4*pi/k_2",
+    "status": "OPTIONAL_GLOBAL_REFINEMENT",
+    "warning": "changing the Maxwell kinetic normalization changes this coupling formula but not the local incidence theorem"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_product_incidence --verify bridge/certificates/einstein_maxwell_product_incidence.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_product_incidence.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_product_incidence"
+  ]
+}
