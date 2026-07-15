@@ -53,6 +53,15 @@ Video orientation:
 is a guided viewing and reading route through the main competing approaches
 to the higher-derivative ghost problem and their relation to this programme.
 
+Quantum programme:
+[`quantum-weyl/README.md`](quantum-weyl/README.md) separates the classical
+import gate, exact local BV/cohomology work, cylinder restriction, reduced
+and Euclidean spectral checks, Lorentzian causal construction, and eventual
+quantum residual transfer.  The bootstrap is deliberately fail-closed:
+Gate A is not frozen, the local package currently certifies only the minimal
+Diff `x` Weyl coordinate-jet rows, and the reduced `E/A/L` ledger computes no
+determinant or one-loop coefficient.
+
 Energy-mode analytic completion:
 [`analytic_completion/README.md`](analytic_completion/README.md) documents
 the infinite-index one-particle and bosonic Krein completions, closed

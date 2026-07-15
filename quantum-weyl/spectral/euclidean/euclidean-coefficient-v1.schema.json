@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-euclidean-coefficient-v1",
+  "title": "Pure-Weyl Euclidean spectral coefficient record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_stage",
+    "dependency_tags",
+    "classical_commit",
+    "coefficient",
+    "normalization",
+    "signature",
+    "gauge",
+    "regularization",
+    "zero_mode_policy",
+    "contour_policy",
+    "proof_certificate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-euclidean-coefficient-v1"
+    },
+    "result_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result_stage": {
+      "const": "COEFFICIENT_COMPUTED"
+    },
+    "dependency_tags": {
+      "const": [
+        "EUCLIDEAN-SPECTRAL"
+      ]
+    },
+    "classical_commit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "coefficient": {
+      "type": "string",
+      "description": "Exact rational or algebraic expression; never a bare float."
+    },
+    "normalization": {
+      "type": "string",
+      "minLength": 1
+    },
+    "signature": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gauge": {
+      "type": "string",
+      "minLength": 1
+    },
+    "regularization": {
+      "type": "string",
+      "minLength": 1
+    },
+    "zero_mode_policy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contour_policy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "proof_certificate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lorentzian_causal_claim",
+        "qme_claim",
+        "anomaly_cancellation_claim"
+      ],
+      "properties": {
+        "lorentzian_causal_claim": {
+          "const": false
+        },
+        "qme_claim": {
+          "const": false
+        },
+        "anomaly_cancellation_claim": {
+          "const": false
+        }
+      }
+    }
+  }
+}

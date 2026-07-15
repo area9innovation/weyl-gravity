@@ -1,0 +1,117 @@
+{
+  "assumptions": [
+    "The three hashed upstream certificates are the current reduced-field inputs.",
+    "The overall Weyl-action convention is the one recorded by the branch-residue certificate."
+  ],
+  "branches": [
+    {
+      "compact_frequency": "N",
+      "determinant_contribution_status": "NOT_COMPUTED",
+      "determinant_phase_status": "NOT_COMPUTED",
+      "family": "E",
+      "field_origin": "lower-frequency TT Bach branch",
+      "kinetic_eigenvalue_status": "NOT_COMPUTED",
+      "krein_sign": 1,
+      "minimum_energy": 2,
+      "parity_complete_multiplicity": "2*(N - 1)*(N + 3)",
+      "positive_residue": "4*(N + 1)",
+      "residue_elliptic_order": 1,
+      "zero_mode_exclusion": "NONE_WITHIN_REDUCED_E_BRANCH"
+    },
+    {
+      "compact_frequency": "N",
+      "determinant_contribution_status": "NOT_COMPUTED",
+      "determinant_phase_status": "NOT_COMPUTED",
+      "family": "A",
+      "field_origin": "transverse-vector metric branch",
+      "kinetic_eigenvalue_status": "NOT_COMPUTED",
+      "krein_sign": -1,
+      "minimum_energy": 3,
+      "parity_complete_multiplicity": "2*(N - 1)*(N + 1)",
+      "positive_residue": "2*(N - 2)*(N + 2)",
+      "residue_elliptic_order": 2,
+      "zero_mode_exclusion": "N=2 TRANSVERSE-VECTOR KILLING BAND EXCLUDED: symgrad(Killing)=0"
+    },
+    {
+      "compact_frequency": "N",
+      "determinant_contribution_status": "NOT_COMPUTED",
+      "determinant_phase_status": "NOT_COMPUTED",
+      "family": "L",
+      "field_origin": "upper-frequency TT Bach branch",
+      "kinetic_eigenvalue_status": "NOT_COMPUTED",
+      "krein_sign": -1,
+      "minimum_energy": 4,
+      "parity_complete_multiplicity": "2*(N - 3)*(N + 1)",
+      "positive_residue": "4*(N - 1)",
+      "residue_elliptic_order": 1,
+      "zero_mode_exclusion": "NONE_WITHIN_REDUCED_L_BRANCH"
+    }
+  ],
+  "calculation_kind": "BOOKKEEPING_BOOTSTRAP",
+  "character": {
+    "branch_characters": {
+      "A": "-2*q**3*(3*q**2 - 9*q + 8)/(q - 1)**3",
+      "E": "2*q**2*(3*q - 5)/(q - 1)**3",
+      "L": "2*q**4*(3*q - 5)/(q - 1)**3"
+    },
+    "coefficient_regression_range": [
+      2,
+      40
+    ],
+    "exact_arithmetic": true,
+    "low_energy_dimensions": {
+      "2": 10,
+      "3": 40,
+      "4": 82,
+      "5": 136,
+      "6": 202
+    },
+    "parity_complete": true,
+    "signed": "-2*q**2*(4*q**2 - 11*q + 5)/(q - 1)**3",
+    "unsigned": "2*q**2*(4*q**2 - 5*q - 5)/(q - 1)**3"
+  },
+  "claim_boundary": {
+    "anomaly_cancellation_claim": false,
+    "euclidean_ellipticity_claim": false,
+    "gauge_fixing_independence_claim": false,
+    "lorentzian_causal_claim": false,
+    "qme_claim": false
+  },
+  "classical_commit": "UNFROZEN",
+  "classical_freeze_status": "NOT_IMPORTED",
+  "coefficient_status": "NOT_COMPUTED",
+  "cohomology_status": "NOT_APPLICABLE",
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "global_bookkeeping": {
+    "analytic_extrapolation": "NOT_COMPUTED",
+    "auxiliary_multiplicities": "NOT_COMPUTED",
+    "complete_zero_mode_policy": "NOT_COMPUTED",
+    "contour_policy": "NOT_COMPUTED",
+    "ghost_multiplicities": "NOT_COMPUTED",
+    "measure_normalization": "NOT_COMPUTED",
+    "rational_reconstruction": "NOT_COMPUTED"
+  },
+  "notes": "This result classifies exact reduced branch bookkeeping only. CLASSIFIED here is not a classification of H^(0,4)(s|d) or H^(1,4)(s|d), and no determinant or one-loop coefficient has been computed.",
+  "proof_certificate": "quantum-weyl/spectral/reduced_modes/certificates/eal_branch_ledger.json",
+  "publishable_quantum_result": false,
+  "regularization_status": "NOT_COMPUTED",
+  "result_id": "REDUCED_MODE_SPECTRAL_BOOTSTRAP",
+  "result_stage": "CLASSIFIED",
+  "schema": "quantum-weyl-reduced-mode-ledger-v1",
+  "upstream_receipts": [
+    {
+      "path": "covariant_completion/certificates/EAL_multiplicity_match.json",
+      "sha256": "cd02bd44c10a75b164e9df614688475f828a85f1b0965353062cc1d73f44e350"
+    },
+    {
+      "path": "covariant_completion/certificates/curved_EAL_spectrum_all_level.json",
+      "sha256": "253b13da55b1e139ed7af0d1af32a142a6824f8c515ef6d82296a162fa9ef16d"
+    },
+    {
+      "path": "covariant_completion/certificates/branch_residue_operators.json",
+      "sha256": "e9ab15b1b9462341b4576a7838bc5d4f119815aa8424cd5f165542954e73b7d9"
+    }
+  ]
+}

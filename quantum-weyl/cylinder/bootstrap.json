@@ -1,0 +1,109 @@
+{
+  "result_id": "CYLINDER_IMPORT_BOOTSTRAP",
+  "schema": "quantum-weyl-cylinder-bootstrap-v1",
+  "classical_commit": "a3fc926cc289e5a545933a43331e395328580e0e",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "claim_state": "CLASSICAL_IMPORT_PENDING",
+  "gate_a_status": "FAIL_CLOSED",
+  "inputs": [
+    {
+      "path": "quantum-weyl/classical_import/snapshots/bootstrap-v1.json",
+      "sha256": "01e4b2188695f901a77a5bd1921454dc57c19b2d8047c835a83646cbabd74a26"
+    },
+    {
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_CERTIFICATE.json",
+      "sha256": "3c6f540286ca0cda0e4c6663d31f68bf66a8a7cea40891dc65b60c43f4673213"
+    }
+  ],
+  "imported_evidence": {
+    "conformal_generator_ledger": {
+      "status": "EVIDENCE_INTEGRITY_VERIFIED",
+      "dimension": 15,
+      "accepted_as_complete_export": false
+    },
+    "positive_frequency_state_ledger": {
+      "status": "AVAILABLE",
+      "state_complex": "Sym(W_+ direct-sum W_-) tensor Lambda^bullet so(4,2)^*",
+      "accepted_for_quantum_transfer": false
+    },
+    "centered_h4": {
+      "status": "EVIDENCE_INTEGRITY_VERIFIED",
+      "classes": [
+        "W_+^2",
+        "W_-^2"
+      ],
+      "normalized_gram": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "interpretation": "classical deformation/vertex classes, not one-particle states",
+      "accepted_for_quantum_transfer": false
+    }
+  },
+  "centered_degree_ledger": {
+    "H3": "NOT_AVAILABLE",
+    "H4": "EVIDENCE_ONLY_NOT_FROZEN",
+    "H5": "NOT_AVAILABLE"
+  },
+  "parity_bootstrap": {
+    "chiral_basis": [
+      "W_+^2",
+      "W_-^2"
+    ],
+    "even_odd_basis_formula": [
+      "e=(W_+^2+W_-^2)/sqrt(2)",
+      "o=(W_+^2-W_-^2)/sqrt(2)"
+    ],
+    "parity_operator_status": "NOT_AVAILABLE",
+    "ward_identity_status": "NOT_COMPUTED"
+  },
+  "projection_pipeline": [
+    {
+      "stage": "local_expression",
+      "status": "NOT_COMPUTED"
+    },
+    {
+      "stage": "cylinder_background_expansion_O_h0_h1_h2",
+      "status": "BLOCKED_GATE_A"
+    },
+    {
+      "stage": "cylinder_tensor_harmonics",
+      "status": "BLOCKED_GATE_A"
+    },
+    {
+      "stage": "E_A_L_variables",
+      "status": "BLOCKED_GATE_A"
+    },
+    {
+      "stage": "positive_frequency_ledger",
+      "status": "IMPORTED_EVIDENCE_ONLY"
+    },
+    {
+      "stage": "residual_ghost_basis",
+      "status": "IMPORTED_EVIDENCE_ONLY"
+    },
+    {
+      "stage": "pi_cl_projection",
+      "status": "BLOCKED_MISSING_PI_CL"
+    },
+    {
+      "stage": "centered_cohomology_coordinates",
+      "status": "BLOCKED_MISSING_H3_H5_BASES"
+    }
+  ],
+  "local_to_cylinder_map_status": "NOT_COMPUTED",
+  "residual_projection_status": "NOT_COMPUTED",
+  "publishable_result": false,
+  "assumptions": [
+    "The selected closed-cylinder boundary problem is the intended classical source once Gate A is frozen."
+  ],
+  "notes": "This file is a dependency-aware bootstrap only. It does not reconstruct conformal generators, compute a local-to-cylinder map, or promote existing evidence to a frozen classical import."
+}

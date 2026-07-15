@@ -1,0 +1,279 @@
+{
+  "schema": "quantum-weyl-classical-import-v1",
+  "classical_commit": "a3fc926cc289e5a545933a43331e395328580e0e",
+  "classical_schema_version": "UNFROZEN-MULTI-CERTIFICATE-BOOTSTRAP-v1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "claim_state": "CLASSICAL_IMPORT_PENDING",
+  "required_hashes": {
+    "field_dictionary_hash": null,
+    "differential_hash": null,
+    "zero_mode_basis_hash": null,
+    "pairing_hash": null,
+    "representative_hash": null
+  },
+  "required_exports": [
+    {
+      "export_id": "field_ghost_antifield_dictionary",
+      "status": "INCOMPLETE",
+      "artifacts": [
+        {
+          "path": "field_bv_identification/certificates/minimal_bv_dictionary.tsv",
+          "sha256": "7aa473c21e31a9b2430fc3d4f97f6ca6cde94a5da763269d822b533e137dd9f1",
+          "role": "Finite cylinder-mode minimal BV basis dictionary."
+        },
+        {
+          "path": "field_bv_identification/gauge_fixed_equivalence/certificates/gauge_fixed_dictionary.tsv",
+          "sha256": "704137de8bb86712ac2efc26fbd2363feb55af6079ece34f6c7fc1c1362b73c2",
+          "role": "Finite cylinder-mode gauge-fixed coordinate dictionary."
+        }
+      ],
+      "reason": "The existing dictionaries are exact in a finite D-eigenmode cylinder category, not a versioned complete local field/ghost/antifield export."
+    },
+    {
+      "export_id": "field_gradings",
+      "status": "INCOMPLETE",
+      "artifacts": [
+        {
+          "path": "field_bv_identification/certificates/minimal_bv_dictionary.tsv",
+          "sha256": "7aa473c21e31a9b2430fc3d4f97f6ca6cde94a5da763269d822b533e137dd9f1",
+          "role": "Carries ghost, antifield, tangent, compact, weight, and polynomial degrees for the finite basis."
+        }
+      ],
+      "reason": "No single export carries all required ghost number, antifield number, form degree, parity, and compact degree fields for every local generator."
+    },
+    {
+      "export_id": "local_classical_bv_differential_q0",
+      "status": "INCOMPLETE",
+      "artifacts": [
+        {
+          "path": "field_bv_identification/certificates/minimal_bv_chain.json",
+          "sha256": "3f9d04dd729c911fbe07768158d96ae411634b7a91bf70a139e8c7cf1dcd8c64",
+          "role": "Certified quadratic tangent differential in finite cylinder-mode buffers."
+        }
+      ],
+      "reason": "The certificate explicitly excludes nonlinear terms from q and does not serialize the complete support-local classical BV differential."
+    },
+    {
+      "export_id": "gauge_fixed_nonminimal_contractions",
+      "status": "INCOMPLETE",
+      "artifacts": [
+        {
+          "path": "field_bv_identification/gauge_fixed_equivalence/certificates/contraction.json",
+          "sha256": "e8fac79d9737fc565d5b1ae0e6b32ed8ef5931a50b982cd21d781a112c5adccf",
+          "role": "Exact gauge-fixed SDR certificate in the finite algebraic cylinder category."
+        },
+        {
+          "path": "field_bv_identification/gauge_fixed_equivalence/certificates/nonminimal_pairs.json",
+          "sha256": "07836a183fc8dbf020713a1dde52eb605f6b1057563920b080657377aa1aa889",
+          "role": "Nonminimal pair ledger and coordinate BRST rules."
+        }
+      ],
+      "reason": "Exact finite-mode evidence exists, but the contraction maps are represented by internal hashes rather than a complete portable classical export."
+    },
+    {
+      "export_id": "trace_sector_contraction",
+      "status": "INCOMPLETE",
+      "artifacts": [
+        {
+          "path": "field_bv_identification/certificates/minimal_bv_chain.json",
+          "sha256": "3f9d04dd729c911fbe07768158d96ae411634b7a91bf70a139e8c7cf1dcd8c64",
+          "role": "Certifies the trace projector and contraction within the finite polynomial buffers."
+        }
+      ],
+      "reason": "The portable projector and homotopy matrices or local operator formulas are not exported."
+    },
+    {
+      "export_id": "conformal_killing_zero_modes_15",
+      "status": "INCOMPLETE",
+      "artifacts": [
+        {
+          "path": "field_bv_identification/gauge_fixed_equivalence/certificates/zero_mode_preservation.json",
+          "sha256": "391a4bb49e1b0bf56d241ada375ab08e14de13c7c3151522ff5c6aa604779fe0",
+          "role": "Fifteen labels, compact grading, projector digest, and preservation identities."
+        },
+        {
+          "path": "field_bv_identification/zero_modes/certificates/dual_zero_modes.json",
+          "sha256": "ccf4bef0f49088893645831a0540e151fa7e0fac9400b4bfec151b9e56773ecb",
+          "role": "Dual endpoint quotient labels and matrix digests."
+        }
+      ],
+      "reason": "The certificates identify all fifteen modes and internal matrix hashes, but do not export the complete zero-mode basis vectors themselves."
+    },
+    {
+      "export_id": "residual_representation_matrices",
+      "status": "NOT_AVAILABLE",
+      "artifacts": [],
+      "reason": "No portable rho(G_a) matrix payload covering the required residual complex was found."
+    },
+    {
+      "export_id": "so42_structure_constants",
+      "status": "INCOMPLETE",
+      "artifacts": [
+        {
+          "path": "bridge/certificates/residual_bfv.json",
+          "sha256": "f7c73355ec9712283e30693ca6f4b53a67ed0638ae366bee76c0c10e632a81ac",
+          "role": "Certifies the ordered 15-generator CE/BFV package and Jacobi identity."
+        }
+      ],
+      "reason": "The explicit exact structure-constant tensor is constructed in code but is not serialized as an import payload."
+    },
+    {
+      "export_id": "classical_inclusion_iota_cl",
+      "status": "NOT_AVAILABLE",
+      "artifacts": [],
+      "reason": "Existing certificates report finite-mode inclusion hashes but do not export the full classical inclusion."
+    },
+    {
+      "export_id": "classical_projection_pi_cl",
+      "status": "NOT_AVAILABLE",
+      "artifacts": [],
+      "reason": "Existing certificates report finite-mode projection hashes but do not export the full classical homological projection."
+    },
+    {
+      "export_id": "classical_homotopy_s_cl",
+      "status": "NOT_AVAILABLE",
+      "artifacts": [],
+      "reason": "Existing certificates report finite-mode homotopy hashes but do not export the full classical homotopy."
+    },
+    {
+      "export_id": "cyclic_pairing",
+      "status": "INCOMPLETE",
+      "artifacts": [
+        {
+          "path": "bridge/certificates/cyclic_bv_retract.json",
+          "sha256": "ddbe5acecdcb42f7d8ec4371e9d331e04db17801a0e18d483d46e1bb0f56d8a3",
+          "role": "Finite BGG-split cyclic retract identities and signatures."
+        },
+        {
+          "path": "field_bv_identification/polarized_state/certificates/pairing_transfer.json",
+          "sha256": "bd786276d48051cff0bb98143b219c026ee4f9a019c5ab4aa410472279e04de4",
+          "role": "Selected algebraic BV-BFV pairing normalization and residual Gram matrix."
+        }
+      ],
+      "reason": "Pairing identities and normalizations are certified, but the full portable cyclic pairing needed for independent Gate A checks is absent."
+    },
+    {
+      "export_id": "taub_moment_map_normalization",
+      "status": "AVAILABLE",
+      "artifacts": [
+        {
+          "path": "bridge/certificates/taub_moment_map.json",
+          "sha256": "84fb8d94043f89fcd70e8fdd2940b266ea6f9006c3ff94cb55884b1b4ceb46e1",
+          "role": "Exact all-energy reduced coefficients, action scale, and fifteen-component normalization identities."
+        }
+      ],
+      "reason": "The certificate is a portable exact normalization ledger within its stated D-finite E/A/L scope."
+    },
+    {
+      "export_id": "bfv_suspension_convention",
+      "status": "AVAILABLE",
+      "artifacts": [
+        {
+          "path": "field_bv_identification/polarized_state/certificates/zero_mode_transgression.json",
+          "sha256": "dfe70f8bf6ad6820178e67247a06b1c27fefba3c5b7396ba42fd14e96db82b53",
+          "role": "Selected closed-cylinder BFV suspension, orientation, and lambda=+1 convention."
+        }
+      ],
+      "reason": "The selected algebraic boundary convention is explicit and portable; it is not asserted to be unique."
+    },
+    {
+      "export_id": "positive_frequency_state_ledger",
+      "status": "AVAILABLE",
+      "artifacts": [
+        {
+          "path": "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
+          "sha256": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1",
+          "role": "Positive-frequency sector ledger and resulting algebraic state complex."
+        }
+      ],
+      "reason": "The selected D-finite algebraic polarization ledger is explicit, with its non-uniqueness and analytic limitations recorded."
+    },
+    {
+      "export_id": "normalized_weyl_square_representatives",
+      "status": "INCOMPLETE",
+      "artifacts": [
+        {
+          "path": "analytic_completion/certificates/completed_gram.json",
+          "sha256": "046640040e6a4c84213df4f4824f6a774523d213cbd033d4630ac3e1a91471f0",
+          "role": "Names W_+^2 and W_-^2 and certifies their completed Gram matrix."
+        },
+        {
+          "path": "bridge/certificates/metric_to_residual.json",
+          "sha256": "25bd2b6c3ac31139bda9bcee6ad18f2df69a73cea3ec102b66ff310b1644f8c3",
+          "role": "Provides exact raw and normalized two-class Gram data and parity labels."
+        }
+      ],
+      "reason": "Class names, parity, and normalization are present, but coefficient vectors for normalized representatives W_+^2 v_- and W_-^2 v_- are not exported."
+    },
+    {
+      "export_id": "centered_cohomology_bases_h3_h4_h5",
+      "status": "INCOMPLETE",
+      "artifacts": [
+        {
+          "path": "analytic_completion/certificates/completed_H4.json",
+          "sha256": "4cffa654fe753327fd317341e0682abca936fd1c8a992cb80be941f64e9e5b3c",
+          "role": "Certifies centered H4 classes and cochain dimensions in degrees 3, 4, and 5."
+        },
+        {
+          "path": "bridge/certificates/metric_to_residual.json",
+          "sha256": "25bd2b6c3ac31139bda9bcee6ad18f2df69a73cea3ec102b66ff310b1644f8c3",
+          "role": "Independent algebraic finite-window H4 and parity/Gram certificate."
+        }
+      ],
+      "reason": "The H4 basis and C3/C4/C5 dimensions are certified, but explicit centered H3 and H5 bases are not exported."
+    },
+    {
+      "export_id": "residual_differential_q_res_0",
+      "status": "INCOMPLETE",
+      "artifacts": [
+        {
+          "path": "bridge/certificates/full_hpl_transfer.json",
+          "sha256": "18acc197a45ba9256e0979e7b04c0cd5e7ca36de94b7540aa2038fc1f9e3511a",
+          "role": "Certifies the strict transferred CE differential in the centered finite coefficient window."
+        },
+        {
+          "path": "bridge/certificates/residual_bfv.json",
+          "sha256": "f7c73355ec9712283e30693ca6f4b53a67ed0638ae366bee76c0c10e632a81ac",
+          "role": "Certifies intrinsic CE/BFV identities for the fifteen residual ghosts."
+        }
+      ],
+      "reason": "The form and finite-window identities are certified, but the full matrix/action payload is not exported independently of implementation code."
+    }
+  ],
+  "freeze_checks": [
+    {
+      "check_id": "q0_squared_zero",
+      "status": "BLOCKED_MISSING_EXPORT",
+      "reason": "Complete local Q0 generator rows are unavailable."
+    },
+    {
+      "check_id": "pi_cl_iota_cl_identity",
+      "status": "BLOCKED_MISSING_EXPORT",
+      "reason": "Portable pi_cl and iota_cl payloads are unavailable."
+    },
+    {
+      "check_id": "classical_contraction_identity",
+      "status": "BLOCKED_MISSING_EXPORT",
+      "reason": "Portable Q0, S_cl, iota_cl, and pi_cl payloads are unavailable."
+    },
+    {
+      "check_id": "q0_iota_intertwining",
+      "status": "BLOCKED_MISSING_EXPORT",
+      "reason": "Portable Q0, iota_cl, and Q_res^(0) payloads are unavailable."
+    },
+    {
+      "check_id": "pi_q0_intertwining",
+      "status": "BLOCKED_MISSING_EXPORT",
+      "reason": "Portable pi_cl, Q0, and Q_res^(0) payloads are unavailable."
+    },
+    {
+      "check_id": "cyclic_compatibility",
+      "status": "BLOCKED_MISSING_EXPORT",
+      "reason": "The complete pairing and contraction maps are not exported."
+    }
+  ],
+  "gate_a_status": "FAIL_CLOSED",
+  "notes": "This bootstrap inventories existing certificates without promoting their internal claims to an independently verified classical freeze. Null required hashes mean that no complete accepted payload exists yet; they are not hashes of absence."
+}

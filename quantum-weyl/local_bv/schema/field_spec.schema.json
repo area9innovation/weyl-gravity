@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/local-bv/field-spec.schema.json",
+  "title": "Quantum Weyl local-BV field metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "index_variance",
+    "symmetric_index_pairs",
+    "ghost_number",
+    "antifield_number",
+    "form_degree",
+    "mass_dimension",
+    "grassmann_parity",
+    "spacetime_parity",
+    "weyl_weight",
+    "provenance"
+  ],
+  "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "index_variance": {
+      "type": "array",
+      "items": {"enum": ["covariant", "contravariant"]}
+    },
+    "symmetric_index_pairs": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}],
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "ghost_number": {"type": "integer"},
+    "antifield_number": {"type": "integer", "minimum": 0},
+    "form_degree": {"type": "integer", "minimum": 0},
+    "mass_dimension": {"$ref": "#/$defs/rational"},
+    "grassmann_parity": {"enum": [0, 1]},
+    "spacetime_parity": {"enum": ["even", "odd"]},
+    "weyl_weight": {"$ref": "#/$defs/rational"},
+    "provenance": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

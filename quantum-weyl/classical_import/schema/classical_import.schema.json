@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-classical-import-v1",
+  "title": "Pure Weyl quantum classical import snapshot",
+  "type": "object",
+  "required": [
+    "schema",
+    "classical_commit",
+    "classical_schema_version",
+    "dependency_tags",
+    "claim_state",
+    "required_hashes",
+    "required_exports",
+    "freeze_checks",
+    "gate_a_status"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-v1"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "classical_schema_version": {"type": "string", "minLength": 1},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL",
+          "REDUCED-MODE",
+          "LORENTZIAN-CAUSAL"
+        ]
+      }
+    },
+    "claim_state": {"const": "CLASSICAL_IMPORT_PENDING"},
+    "gate_a_status": {"enum": ["FAIL_CLOSED", "VERIFIED"]},
+    "required_hashes": {
+      "type": "object",
+      "required": [
+        "field_dictionary_hash",
+        "differential_hash",
+        "zero_mode_basis_hash",
+        "pairing_hash",
+        "representative_hash"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "field_dictionary_hash": {"type": ["string", "null"]},
+        "differential_hash": {"type": ["string", "null"]},
+        "zero_mode_basis_hash": {"type": ["string", "null"]},
+        "pairing_hash": {"type": ["string", "null"]},
+        "representative_hash": {"type": ["string", "null"]}
+      }
+    },
+    "required_exports": {
+      "type": "array",
+      "minItems": 18,
+      "items": {"$ref": "#/$defs/exportRecord"}
+    },
+    "freeze_checks": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"$ref": "#/$defs/freezeCheck"}
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "required": ["path", "sha256", "role"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "role": {"type": "string", "minLength": 1}
+      }
+    },
+    "exportRecord": {
+      "type": "object",
+      "required": ["export_id", "status", "artifacts", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "export_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+        "status": {"enum": ["AVAILABLE", "INCOMPLETE", "NOT_AVAILABLE"]},
+        "artifacts": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/artifact"}
+        },
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "freezeCheck": {
+      "type": "object",
+      "required": ["check_id", "status", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "check_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+        "status": {"enum": ["VERIFIED", "BLOCKED_MISSING_EXPORT", "FAILED"]},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

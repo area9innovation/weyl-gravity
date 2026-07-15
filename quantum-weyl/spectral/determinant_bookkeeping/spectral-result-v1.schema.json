@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-spectral-result-v1",
+  "title": "Pure-Weyl spectral result envelope",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema",
+    "result_id",
+    "result_stage",
+    "calculation_kind",
+    "dependency_tags",
+    "classical_freeze_status",
+    "coefficient_status",
+    "claim_boundary",
+    "proof_certificate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-reduced-mode-ledger-v1"
+    },
+    "result_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result_stage": {
+      "const": "CLASSIFIED"
+    },
+    "calculation_kind": {
+      "const": "BOOKKEEPING_BOOTSTRAP"
+    },
+    "dependency_tags": {
+      "const": [
+        "REDUCED-MODE"
+      ]
+    },
+    "classical_freeze_status": {
+      "const": "NOT_IMPORTED"
+    },
+    "coefficient_status": {
+      "const": "NOT_COMPUTED"
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "lorentzian_causal_claim",
+        "qme_claim",
+        "anomaly_cancellation_claim"
+      ],
+      "properties": {
+        "lorentzian_causal_claim": {
+          "const": false
+        },
+        "qme_claim": {
+          "const": false
+        },
+        "anomaly_cancellation_claim": {
+          "const": false
+        }
+      }
+    },
+    "proof_certificate": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

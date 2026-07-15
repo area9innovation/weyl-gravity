@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-result.schema.json",
+  "title": "Pure-Weyl quantum programme result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id",
+    "classical_commit",
+    "dependency_tags",
+    "lifecycle_status",
+    "ghost_number",
+    "form_degree",
+    "antifield_number",
+    "parity",
+    "representative",
+    "cohomology_status",
+    "descent_status",
+    "coefficient_status",
+    "residual_projection_status",
+    "proof_certificate",
+    "assumptions",
+    "notes"
+  ],
+  "properties": {
+    "result_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "classical_commit": {
+      "type": "string",
+      "pattern": "^(UNFROZEN|[0-9a-f]{40})$"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL",
+          "REDUCED-MODE",
+          "LORENTZIAN-CAUSAL"
+        ]
+      }
+    },
+    "lifecycle_status": {
+      "enum": [
+        "CLASSIFIED",
+        "COEFFICIENT_COMPUTED",
+        "QME_RESTORED",
+        "RESIDUAL_TRANSFERRED",
+        "LORENTZIAN_CERTIFIED"
+      ]
+    },
+    "ghost_number": {
+      "type": "integer"
+    },
+    "form_degree": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4
+    },
+    "antifield_number": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "parity": {
+      "enum": ["even", "odd", "mixed", "not_applicable", "not_computed"]
+    },
+    "representative": {
+      "type": "string"
+    },
+    "cohomology_status": {
+      "enum": ["NOT_COMPUTED", "TRIVIAL", "NONTRIVIAL", "OBSTRUCTED"]
+    },
+    "descent_status": {
+      "enum": ["TRIVIAL", "NONTRIVIAL", "OBSTRUCTED", "NOT_COMPUTED"]
+    },
+    "coefficient_status": {
+      "enum": ["NOT_COMPUTED", "COMPUTED"]
+    },
+    "residual_projection_status": {
+      "enum": ["NOT_COMPUTED", "COMPUTED", "NOT_DEFINED", "OBSTRUCTED"]
+    },
+    "proof_certificate": {
+      "type": "string"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
