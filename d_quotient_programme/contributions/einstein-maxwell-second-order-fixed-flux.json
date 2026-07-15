@@ -1,0 +1,39 @@
+{
+  "boundary_conditions": "compact R_t x S1_L x S2 product; smooth periodic corrections; magnetic flux fixed through epsilon squared; constant radion and global Maxwell-duality tangents",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "the constant radion quadratic source has constant-lapse pairing -2L",
+    "the Maxwell duality tangent quadratic source has constant-lapse pairing -L/2",
+    "the averaged linearized tt row is a periodic total derivative plus the forbidden magnetic-flux shift",
+    "neither tangent admits a smooth periodic second-order correction at fixed magnetic flux",
+    "both obstructions disappear when the explicitly computed magnetic-flux shift is allowed"
+  ],
+  "evidence": {
+    "commit": "05695ffe3b4082c629e3e632ac5f53e8b70e8601",
+    "path": "bridge/certificates/einstein_maxwell_second_order_inclusion.json",
+    "sha256": "493059b1bf77c2a94e68d69fe23593dcb4d8be41e93ff22ae8ee18f674f79c8b"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute the adjoint pairings for periodic nonzero-frequency graviton and photon harmonics at fixed electric and magnetic charges",
+  "not_established": [
+    "a second-order obstruction for every Einstein--Maxwell tangent",
+    "a no-go when magnetic charge is allowed to vary",
+    "general nonlinear closure or failure",
+    "a causal, observable, scattering, or quantum verdict"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_fixed_flux_second_order",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_second_order_fixed_flux",
+  "team_id": "einstein_boundary",
+  "verdict": "SECOND_ORDER_FIXED_FLUX_OBSTRUCTION_FOR_RADION_AND_DUALITY",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_second_order_inclusion --verify bridge/certificates/einstein_maxwell_second_order_inclusion.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_second_order_inclusion.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_second_order_inclusion"
+  ]
+}

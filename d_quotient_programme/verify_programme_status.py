@@ -34,6 +34,8 @@ EINSTEIN_BERGER_INCIDENCE_CONTRIBUTION = PACKAGE / "contributions" / "einstein-b
 EINSTEIN_MAXWELL_PRODUCT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-product-incidence.json"
 EINSTEIN_MAXWELL_TANGENT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-product-tangent-preflight.json"
 EINSTEIN_MAXWELL_CHEVRETON_TANGENT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-chevreton-tangent.json"
+EINSTEIN_MAXWELL_SECOND_ORDER_FIXED_FLUX_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-second-order-fixed-flux.json"
+EINSTEIN_MAXWELL_SECOND_ORDER_NULL_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-second-order-null-extension.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -134,6 +136,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
             "berger_minimal_34_portable_contraction",
             "berger_nonminimal_algebraic_completion",
             "berger_gauge_fixed_nonminimal_completion",
+            "berger_rational_fixture_q2_d_block",
         ]
     ):
         raise AssertionError("classical scalar-clock obstruction scope drifted")
@@ -668,6 +671,33 @@ def _einstein_maxwell_chevreton_tangent_contribution() -> dict[str, Any]:
     return contribution
 
 
+def _einstein_maxwell_second_order_contribution(
+    path: Path, setting_id: str, phase_space_id: str, verdict: str
+) -> dict[str, Any]:
+    contribution = _load(path)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "einstein_boundary"
+        and contribution.get("setting_id") == setting_id
+        and contribution.get("generator_id") == "H_product"
+        and contribution.get("phase_space_id") == phase_space_id
+        and contribution.get("lifecycle_layer") == "CLASSICAL_BV"
+        and contribution.get("claim_status") == "CERTIFIED"
+        and contribution.get("verdict") == verdict
+        and contribution.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    ):
+        raise AssertionError(f"Einstein--Maxwell second-order scope drifted: {setting_id}")
+    evidence = contribution.get("evidence", {})
+    evidence_path = evidence.get("path")
+    commit = evidence.get("commit")
+    if not isinstance(evidence_path, str) or not isinstance(commit, str):
+        raise AssertionError(f"Einstein--Maxwell second-order evidence incomplete: {setting_id}")
+    if _sha256_bytes(_committed_bytes(commit, evidence_path)) != evidence.get("sha256"):
+        raise AssertionError(f"Einstein--Maxwell second-order evidence hash drifted: {setting_id}")
+    return contribution
+
+
 def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     team_data = {team: _load_team_input(path) for team, path in TEAM_PATHS.items()}
     _assert_team_inputs(team_data)
@@ -694,6 +724,22 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     maxwell_tangent_contribution = _einstein_maxwell_tangent_contribution()
     maxwell_chevreton_tangent_contribution = (
         _einstein_maxwell_chevreton_tangent_contribution()
+    )
+    maxwell_second_order_fixed_flux_contribution = (
+        _einstein_maxwell_second_order_contribution(
+            EINSTEIN_MAXWELL_SECOND_ORDER_FIXED_FLUX_CONTRIBUTION,
+            "compact_einstein_maxwell_second_order_fixed_flux",
+            "einstein_maxwell_product_compact_fixed_flux_second_order",
+            "SECOND_ORDER_FIXED_FLUX_OBSTRUCTION_FOR_RADION_AND_DUALITY",
+        )
+    )
+    maxwell_second_order_null_contribution = (
+        _einstein_maxwell_second_order_contribution(
+            EINSTEIN_MAXWELL_SECOND_ORDER_NULL_CONTRIBUTION,
+            "universal_cover_einstein_maxwell_second_order_null_extension",
+            "einstein_maxwell_product_universal_cover_null_second_order",
+            "NONZERO_CHEVRETON_NULL_TANGENT_EXTENDS_AT_SECOND_ORDER",
+        )
     )
     nd1_contribution = _nonlinear_nd1_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
@@ -790,6 +836,16 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": maxwell_chevreton_tangent_contribution,
             },
             {
+                "path": str(EINSTEIN_MAXWELL_SECOND_ORDER_FIXED_FLUX_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_SECOND_ORDER_FIXED_FLUX_CONTRIBUTION),
+                "payload": maxwell_second_order_fixed_flux_contribution,
+            },
+            {
+                "path": str(EINSTEIN_MAXWELL_SECOND_ORDER_NULL_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_SECOND_ORDER_NULL_CONTRIBUTION),
+                "payload": maxwell_second_order_null_contribution,
+            },
+            {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
@@ -810,10 +866,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "einstein_boundary",
-                "result_state": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CERTIFIED_OFF_SHELL_BV_AND_CAUSAL_PHASE_SPACE_OPEN",
+                "result_state": "SECOND_ORDER_TANGENT_AND_CHARGE_SECTOR_DEPENDENCE_CERTIFIED_GENERAL_CLOSURE_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. The positive Berger clock is a non-Einstein branch. A positive Einstein--Maxwell/Weyl--Maxwell product supplies an exact common base point and principal BV chain map. The Bach/Chevreton factorization now proves that every complete Einstein--Maxwell linear solution tangent, including curvature and flux lower-order terms, survives in Weyl--Maxwell before quotient.",
-                "next_gate": "construct the curved off-shell BV row maps, cyclic and presymplectic comparison, magnetic-bundle gluing, prolonged fourth-order characteristic complex, and second-order Chevreton obstruction; independently complete the asymptotic Bach phase space and charge audit",
+                "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. At second order, the compact fixed-flux constant radion and Maxwell duality directions have adjoint obstructions, while a universal-cover null tangent with nonzero Chevreton defect has an explicit correction. The outcomes are tangent- and charge-sector-dependent.",
+                "next_gate": "test periodic nonzero-frequency graviton and photon harmonics at fixed electric and magnetic charges; independently complete the asymptotic Bach phase space and charge audit",
             },
             {
                 "team_id": "nonlinear",
@@ -985,6 +1041,24 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CHEVRETON",
             },
             {
+                "setting_id": "compact_einstein_maxwell_second_order_fixed_flux",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_fixed_flux_second_order",
+                "boundary_conditions": "compact periodic product; magnetic flux fixed through epsilon squared; constant-radion and Maxwell-duality fixtures",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "SECOND_ORDER_FIXED_FLUX_OBSTRUCTION_FOR_RADION_AND_DUALITY",
+            },
+            {
+                "setting_id": "universal_cover_einstein_maxwell_second_order_null_extension",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_universal_cover_null_second_order",
+                "boundary_conditions": "polynomial null tangent on R^(1,1) x S2; nonperiodic and without causal/asymptotic completion",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "NONZERO_CHEVRETON_NULL_TANGENT_EXTENDS_AT_SECOND_ORDER",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1057,6 +1131,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and the support-local cyclic gauge-fixed 54-to-26 contraction are complete; total causal homotopy, q2, local D-equivariance, and arity-two stability remain open",
             "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
             "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open",
+            "second-order product inclusion is charge- and tangent-dependent: compact fixed-flux radion and duality directions are obstructed, while one nonperiodic null tangent with nonzero Chevreton defect extends explicitly; periodic nonzero-frequency graviton/photon modes remain open",
             "interacting promotion requires a corrected Cartan homotopy",
             "quantum promotion requires a restored QME and renormalized Ward identity",
         ],
@@ -1129,6 +1204,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_product_background",
         "compact_einstein_maxwell_product_tangent_preflight",
         "compact_einstein_maxwell_product_on_shell_tangent",
+        "compact_einstein_maxwell_second_order_fixed_flux",
+        "universal_cover_einstein_maxwell_second_order_null_extension",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1150,6 +1227,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_product_background": "COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND",
         "compact_einstein_maxwell_product_tangent_preflight": "PRINCIPAL_TANGENT_CHAIN_MAP_WITH_EXTRA_WEYL_CLASSES",
         "compact_einstein_maxwell_product_on_shell_tangent": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CHEVRETON",
+        "compact_einstein_maxwell_second_order_fixed_flux": "SECOND_ORDER_FIXED_FLUX_OBSTRUCTION_FOR_RADION_AND_DUALITY",
+        "universal_cover_einstein_maxwell_second_order_null_extension": "NONZERO_CHEVRETON_NULL_TANGENT_EXTENDS_AT_SECOND_ORDER",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -1182,6 +1261,10 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Einstein--Maxwell product tangent preflight was promoted or dropped")
     if ledger.get("compact_einstein_maxwell_product_on_shell_tangent", {}).get("status") != "CERTIFIED":
         errors.append("Einstein--Maxwell full on-shell tangent theorem was dropped")
+    if ledger.get("compact_einstein_maxwell_second_order_fixed_flux", {}).get("status") != "CERTIFIED":
+        errors.append("Einstein--Maxwell fixed-flux second-order obstruction was dropped")
+    if ledger.get("universal_cover_einstein_maxwell_second_order_null_extension", {}).get("status") != "CERTIFIED":
+        errors.append("Einstein--Maxwell null second-order extension was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -1441,6 +1524,24 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         != "compact_einstein_maxwell_product_on_shell_tangent"
     ]
     reject("drop_Einstein_Maxwell_Chevreton_tangent_contribution", mutant)
+
+    for setting_id, guard_name in (
+        (
+            "compact_einstein_maxwell_second_order_fixed_flux",
+            "drop_Einstein_Maxwell_fixed_flux_second_order_contribution",
+        ),
+        (
+            "universal_cover_einstein_maxwell_second_order_null_extension",
+            "drop_Einstein_Maxwell_null_second_order_contribution",
+        ),
+    ):
+        mutant = deepcopy(data)
+        mutant["team_contributions"] = [
+            record
+            for record in mutant["team_contributions"]
+            if record["payload"]["setting_id"] != setting_id
+        ]
+        reject(guard_name, mutant)
 
     mutant = deepcopy(data)
     mutant["publication_plan"]["paper_IX"]["status"] = "ACTIVE_THEOREM_PAPER"

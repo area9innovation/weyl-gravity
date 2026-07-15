@@ -51,6 +51,9 @@ because the existing results concern different objects:
 - [`reports/einstein-maxwell-product-tangent-registration-receipt.md`](reports/einstein-maxwell-product-tangent-registration-receipt.md)
 - [`contributions/einstein-maxwell-chevreton-tangent.json`](contributions/einstein-maxwell-chevreton-tangent.json)
 - [`reports/einstein-maxwell-chevreton-tangent-registration-receipt.md`](reports/einstein-maxwell-chevreton-tangent-registration-receipt.md)
+- [`contributions/einstein-maxwell-second-order-fixed-flux.json`](contributions/einstein-maxwell-second-order-fixed-flux.json)
+- [`contributions/einstein-maxwell-second-order-null-extension.json`](contributions/einstein-maxwell-second-order-null-extension.json)
+- [`reports/einstein-maxwell-second-order-registration-receipt.md`](reports/einstein-maxwell-second-order-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -118,3 +121,11 @@ Chevreton defect, so every Einstein--Maxwell solution tangent survives in
 Weyl--Maxwell before residual quotient. This does not yet supply the curved
 off-shell BV map, quotient injection, nonlinear closure, or causal scattering
 sector.
+
+The second-order product test is also phase-space split. On the compact
+periodic product at fixed magnetic flux, the constant radion and Maxwell
+duality directions have certified adjoint-cokernel obstructions. On the
+universal cover, a polynomial null tangent with nonzero Chevreton defect has
+an explicit correction. Neither result is a general nonlinear verdict; the
+next Einstein-sector gate is the fixed-charge test for periodic
+nonzero-frequency graviton and photon harmonics.

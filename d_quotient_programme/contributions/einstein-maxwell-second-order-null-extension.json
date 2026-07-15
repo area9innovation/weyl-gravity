@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "universal cover R^(1,1) x S2; polynomial null radiative tangent and correction; no S1 periodicity, causal support category, or asymptotic falloff imposed",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "the declared null tangent solves the complete reduced linearized Einstein--Maxwell equations",
+    "its convention-adjusted Chevreton coefficient is the nonzero pure-null tensor 4(dt-dx) tensor (dt-dx)",
+    "the explicit correction D=u^3 v(5uv-24)/24 cancels the complete quadratic Weyl--Maxwell source componentwise",
+    "nonzero Chevreton defect is not by itself a second-order obstruction"
+  ],
+  "evidence": {
+    "commit": "05695ffe3b4082c629e3e632ac5f53e8b70e8601",
+    "path": "bridge/certificates/einstein_maxwell_second_order_inclusion.json",
+    "sha256": "493059b1bf77c2a94e68d69fe23593dcb4d8be41e93ff22ae8ee18f674f79c8b"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "replace the polynomial universal-cover fixture by periodic nonzero-frequency graviton and photon modes with fixed charges and explicit adjoint tests",
+  "not_established": [
+    "a compact periodic radiative extension",
+    "general nonlinear Einstein-sector closure",
+    "a general second-order no-go",
+    "a causal, observable, scattering, or quantum verdict"
+  ],
+  "phase_space_id": "einstein_maxwell_product_universal_cover_null_second_order",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "universal_cover_einstein_maxwell_second_order_null_extension",
+  "team_id": "einstein_boundary",
+  "verdict": "NONZERO_CHEVRETON_NULL_TANGENT_EXTENDS_AT_SECOND_ORDER",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_second_order_inclusion --verify bridge/certificates/einstein_maxwell_second_order_inclusion.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_second_order_inclusion.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_second_order_inclusion"
+  ]
+}
