@@ -51,6 +51,13 @@ A terminal certificate must contain:
 - exact checks, source hashes, source commit, and test receipts;
 - a sector ledger when and only when the verdict is `SECTOR_DEPENDENT`.
 
+The theorem, classical-ledger registration, and programme-ledger registration
+are now read from their immutable Git commits.  Each source-artifact row carries
+its own `git_commit` and SHA-256 digest; later unrelated additions to the
+aggregate ledgers neither invalidate the theorem nor get silently absorbed.
+The physical verifier reconstructs those historical blobs before accepting a
+run.
+
 The ND2 manifest additionally binds the certificate to its setting, phase
 space, boundary-condition hash, classical commit, dependency-tag union, and
 all provenance files.  Directly constructed manifests cannot execute the

@@ -176,6 +176,20 @@ class TotalDDispositionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "canonical hash mismatch"):
             CONTRACT.validate_total_d_disposition(payload)
 
+    def test_source_artifacts_require_immutable_git_commits(self) -> None:
+        payload = CERTIFICATE.build_certificate()
+        payload["provenance"]["source_artifacts"][0].pop("git_commit")
+        with self.assertRaisesRegex(ValueError, "wrong field set"):
+            CONTRACT.validate_total_d_disposition(payload)
+        payload = CERTIFICATE.build_certificate()
+        payload["provenance"]["source_artifacts"][0]["git_commit"] = "bad"
+        with self.assertRaisesRegex(ValueError, "commit is invalid"):
+            CONTRACT.validate_total_d_disposition(payload)
+        payload = CERTIFICATE.build_certificate()
+        payload["provenance"]["source_artifacts"][0]["path"] = "../../escape.json"
+        with self.assertRaisesRegex(ValueError, "escapes the repository"):
+            CONTRACT.validate_total_d_disposition(payload)
+
 
 if __name__ == "__main__":
     unittest.main()

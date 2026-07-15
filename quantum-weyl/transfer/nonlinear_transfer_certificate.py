@@ -17,6 +17,9 @@ BERGER_IMPORT_PATH = TRANSFER_ROOT / "certificates" / "BERGER_CLOCK_NONLINEAR_IM
 TOTAL_D_DISPOSITION_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_TOTAL_D_DISPOSITION.json"
 )
+BERGER_PARTIAL_SDR_PATH = (
+    TRANSFER_ROOT / "certificates" / "BERGER_CLOCK_PARTIAL_SDR_IMPORT.json"
+)
 
 
 REQUIRED_EXPORTS = (
@@ -58,6 +61,8 @@ def _source_manifest() -> dict[str, str]:
         "nd2_physical_run_certificate.py",
         "berger_clock_import.py",
         "berger_clock_import_certificate.py",
+        "berger_clock_sdr_import.py",
+        "berger_clock_sdr_import_certificate.py",
         "total_d_disposition.py",
         "total_d_disposition_certificate.py",
         "arity_three_cartan.py",
@@ -73,6 +78,8 @@ def _source_manifest() -> dict[str, str]:
         "schema/nd2-physical-run-input-v1.schema.json",
         "schema/nd2-physical-run-certificate-v1.schema.json",
         "schema/berger-clock-nonlinear-import-v1.schema.json",
+        "schema/berger-clock-partial-sdr-import-v1.schema.json",
+        "schema/berger-clock-partial-sdr-portable-v1.schema.json",
         "schema/total-d-disposition-v1.schema.json",
         "schema/arity-three-cartan-engine-v1.schema.json",
         "schema/nonlinear_classical_export.schema.json",
@@ -88,6 +95,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_nd2_arity_two_certificate.py",
         "tests/test_nd2_physical_run.py",
         "tests/test_berger_clock_import.py",
+        "tests/test_berger_clock_sdr_import.py",
         "tests/test_total_d_disposition.py",
         "tests/test_arity_three_cartan.py",
         "tests/test_arity_three_cartan_certificate.py",
@@ -105,9 +113,12 @@ def build_certificate() -> dict[str, Any]:
     total_D_disposition = json.loads(
         TOTAL_D_DISPOSITION_PATH.read_text(encoding="utf-8")
     )
+    berger_partial_sdr = json.loads(
+        BERGER_PARTIAL_SDR_PATH.read_text(encoding="utf-8")
+    )
     if (
         berger_import.get("result_state")
-        != "BACKGROUND_REDUCED_CHARGE_AND_SCOPED_D_GAUGE_IMPORTED_BV_OPEN"
+        != "BACKGROUND_CHARGE_SCOPED_D_GAUGE_AND_PARTIAL_CLOCK_SDR_IMPORTED_FULL_BV_OPEN"
         or berger_import.get("D_disposition", {}).get("status") != "D_GAUGE"
     ):
         raise ValueError("Berger nonlinear import is absent or has crossed its certified boundary")
@@ -119,11 +130,43 @@ def build_certificate() -> dict[str, Any]:
         is not True
     ):
         raise ValueError("Berger total-D disposition contract was promoted or removed")
+    if (
+        berger_partial_sdr.get("schema")
+        != "quantum-weyl-berger-clock-partial-sdr-import-v1"
+        or berger_partial_sdr.get("result_state")
+        != "PARTIAL_CLOCK_SECTOR_SDR_AVAILABLE_PORTABLE_MAPS_BLOCKED"
+        or berger_partial_sdr.get("coverage", {}).get("contracted_clock_dimension")
+        != 8
+        or berger_partial_sdr.get("coverage", {}).get("full_minimal_dimension")
+        != 34
+        or berger_partial_sdr.get("nd2_gate", {}).get(
+            "classical_contraction_artifact_satisfied"
+        )
+        is not False
+    ):
+        raise ValueError("Berger partial SDR evidence import was promoted or removed")
     exports = {item["export_id"]: item for item in snapshot["required_exports"]}
     blockers = []
     for export_id in REQUIRED_EXPORTS:
         item = exports[export_id]
         if item["status"] != "AVAILABLE":
+            if export_id in {
+                "classical_inclusion_iota_cl",
+                "classical_projection_pi_cl",
+                "classical_homotopy_s_cl",
+            }:
+                blockers.append(
+                    {
+                        "export_id": export_id,
+                        "status": "INCOMPLETE",
+                        "reason": (
+                            "The exact 8/34 Berger clock-sector SDR is certified and "
+                            "registered, but only formulas and fingerprints are portable; "
+                            "the retained 26-row and nonminimal maps remain absent."
+                        ),
+                    }
+                )
+                continue
             blockers.append(
                 {
                     "export_id": export_id,
@@ -156,6 +199,8 @@ def build_certificate() -> dict[str, Any]:
                 "ND2 canonical exact local-expression consumer and full arity-two Cartan primitive/obstruction engine",
                 "ND2 stable physical-run contract with content-addressed evaluator registry and block-sparse exact solving",
                 "content-addressed Berger healthy-background, reduced-clock-momentum, and scoped fixed-coupling D_GAUGE import",
+                "registered exact 8/34 support-local cyclic Berger clock-sector SDR evidence import",
+                "strict portable partial-SDR receiving contract with explicit coefficient-ring, grading, derivative-symbol, coverage, and D-equivariance fields",
                 "total-D disposition router that permits Cartan contraction only for a certified D_GAUGE result",
                 "strict total-D presymplectic audit schema with canonical D_CHARGED vocabulary, sector ledger, and exact verdict signatures",
                 "phase-space, boundary-condition, classical-commit, dependency-scope, and source-hash binding before physical execution",
@@ -183,7 +228,7 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_BERGER_SCOPED_FIXED_COUPLING_D_GAUGE_IMPORTED_ND2_VERIFIED_MANIFEST_ROUTER_READY_BV_CONTRACTION_AND_FULL_LOCAL_INPUT_GATE_BLOCKED_ND3_CARTAN_SOLVER_READY",
+                "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_BERGER_SCOPED_D_GAUGE_AND_8_OF_34_CLOCK_SDR_EVIDENCE_IMPORTED_PORTABLE_FULL_CONTRACTION_AND_LOCAL_INPUT_BLOCKED_ND2_ROUTER_AND_ND3_SOLVER_READY",
                 "next_certificate": "ND1_COMPLETE_SUPPORT_LOCAL_D_DERIVATION_AND_IOTA_D2",
             },
             {
@@ -260,6 +305,10 @@ def build_certificate() -> dict[str, Any]:
             ),
             "berger_clock_nonlinear_import_certificate": "quantum-weyl/transfer/certificates/BERGER_CLOCK_NONLINEAR_IMPORT.json",
             "berger_clock_nonlinear_import_sha256": _sha256(BERGER_IMPORT_PATH),
+            "berger_clock_partial_sdr_import_certificate": "quantum-weyl/transfer/certificates/BERGER_CLOCK_PARTIAL_SDR_IMPORT.json",
+            "berger_clock_partial_sdr_import_sha256": _sha256(
+                BERGER_PARTIAL_SDR_PATH
+            ),
             "berger_total_D_disposition_certificate": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json",
             "berger_total_D_disposition_sha256": _sha256(
                 TOTAL_D_DISPOSITION_PATH
@@ -279,6 +328,7 @@ def build_certificate() -> dict[str, Any]:
             "The vanishing selected residual D-derivation defect does not construct the full support-local interacting Cartan homotopy.",
             "ND2 fixture primitives and obstruction witnesses certify the exact solver branches only; they contain no conformal-gravity interaction coefficient.",
             "The Berger D_GAUGE theorem is scoped to the smooth fixed-coupling linearized phase space; it does not construct the support-local all-row BV contraction required by ND2.",
+            "The registered Berger clock SDR contracts exactly 8 of 34 minimal rows; its current certificate carries formulas and fingerprints, not a portable map payload, and D-equivariance is not computed.",
             "D_CHARGED is the canonical classical verdict; EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT is a route label, not a fifth scientific disposition.",
             "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics only; physical q3 and iota_D^(2) remain absent.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",

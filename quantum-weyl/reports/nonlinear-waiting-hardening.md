@@ -62,7 +62,10 @@ Fifth, the exact positive Berger background, reduced O(2) clock momentum, and
 fixed-coupling tangent theorem are imported content-addressedly from the
 classical and programme ledgers.  The exact lapse row and compact averaging
 give `delta Q_R=0` for every allowed smooth tangent, so the scoped disposition
-is `D_GAUGE`.  The support-local all-row BV contraction remains absent.
+is `D_GAUGE`.  The subsequently registered minimal theorem contracts exactly
+8 of 34 clock-sector rows.  That evidence is imported without using it as the
+complete physical contraction: portable entries, the retained/nonminimal
+maps, and `D`-equivariance remain absent.
 
 ## Claim boundary
 
@@ -82,6 +85,7 @@ quartic stability, a relational-clock result, a quantum correction, or a
 - `quantum-weyl/transfer/certificates/ND3_ARITY_THREE_CARTAN_ENGINE.json`
 - `quantum-weyl/transfer/certificates/BERGER_CLOCK_NONLINEAR_IMPORT.json`
 - `quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json`
+- `quantum-weyl/transfer/certificates/BERGER_CLOCK_PARTIAL_SDR_IMPORT.json`
 
 ## Next gate
 

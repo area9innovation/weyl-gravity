@@ -106,9 +106,16 @@ before classification.
 The positive Berger-clock result is now imported on its actual boundary.  In
 addition to the healthy exact background and nonzero reduced internal clock
 momentum, the exact fixed-coupling lapse constraint and compact averaging prove
-`D_GAUGE` on the declared smooth linearized phase space.  The support-local
-all-row BV contraction, `q1/q2/D` tensor, and admissibility artifacts remain
-absent, so no physical ND2 Cartan execution has occurred.
+`D_GAUGE` on the declared smooth linearized phase space.  A second immutable
+import recognizes the registered exact cyclic clock-sector SDR: 8 of 34
+minimal rows contract and 26 remain.  Its source exports formulas and operator
+fingerprints rather than independently consumable map entries, and it does not
+certify `D`-equivariance.  The companion portable receiving schema fixes the
+coefficient ring, derivative-symbol convention, grading bridge, basis order,
+partial maps, coverage, hashes, and the four `D` commutators required for the
+next handoff.  The complete `classical_contraction`, `q1/q2/D` tensor, and
+admissibility artifacts remain absent, so no physical ND2 Cartan execution has
+occurred.
 
 The arity-two solve also has a block-sparse exact rail.  Declared additive
 labels such as `D` weight, momentum, or jet filtration must be preserved by

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit or check the nonlinear import of the Berger clock candidate."""
+"""Emit or check the partial Berger clock-SDR evidence import."""
 
 from __future__ import annotations
 
@@ -9,14 +9,14 @@ import json
 from pathlib import Path
 from typing import Any
 
+try:
+    from .berger_clock_sdr_import import build_partial_sdr_import
+except ImportError:
+    from berger_clock_sdr_import import build_partial_sdr_import
+
 
 TRANSFER_ROOT = Path(__file__).resolve().parent
-OUTPUT_PATH = TRANSFER_ROOT / "certificates" / "BERGER_CLOCK_NONLINEAR_IMPORT.json"
-
-try:
-    from .berger_clock_import import build_import
-except ImportError:
-    from berger_clock_import import build_import
+OUTPUT_PATH = TRANSFER_ROOT / "certificates" / "BERGER_CLOCK_PARTIAL_SDR_IMPORT.json"
 
 
 def _sha256(path: Path) -> str:
@@ -31,35 +31,27 @@ def _canonical_hash(value: object) -> str:
 
 def _source_manifest() -> dict[str, str]:
     paths = (
-        "berger_clock_import.py",
-        "berger_clock_import_certificate.py",
         "berger_clock_sdr_import.py",
         "berger_clock_sdr_import_certificate.py",
-        "total_d_disposition.py",
-        "total_d_disposition_certificate.py",
-        "schema/berger-clock-nonlinear-import-v1.schema.json",
         "schema/berger-clock-partial-sdr-import-v1.schema.json",
         "schema/berger-clock-partial-sdr-portable-v1.schema.json",
-        "schema/total-d-disposition-v1.schema.json",
-        "tests/test_berger_clock_import.py",
         "tests/test_berger_clock_sdr_import.py",
-        "tests/test_total_d_disposition.py",
     )
     return {path: _sha256(TRANSFER_ROOT / path) for path in paths}
 
 
 def build_certificate() -> dict[str, Any]:
-    certificate = build_import()
-    source_manifest = _source_manifest()
-    certificate["provenance"]["source_manifest"] = source_manifest
-    certificate["provenance"]["source_manifest_sha256"] = _canonical_hash(source_manifest)
+    certificate = build_partial_sdr_import()
+    manifest = _source_manifest()
+    certificate["provenance"]["source_manifest"] = manifest
+    certificate["provenance"]["source_manifest_sha256"] = _canonical_hash(manifest)
     certificate["provenance"]["schema"] = (
-        "quantum-weyl/transfer/schema/berger-clock-nonlinear-import-v1.schema.json"
+        "quantum-weyl/transfer/schema/berger-clock-partial-sdr-import-v1.schema.json"
     )
     return certificate
 
 
-def _render(value: dict[str, Any]) -> str:
+def _render(value: object) -> str:
     return json.dumps(value, indent=2, sort_keys=True) + "\n"
 
 
@@ -70,13 +62,16 @@ def main() -> int:
     args = parser.parse_args()
     content = _render(build_certificate())
     if args.emit:
+        OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT_PATH.write_text(content, encoding="utf-8")
-    if args.check and (not OUTPUT_PATH.exists() or OUTPUT_PATH.read_text(encoding="utf-8") != content):
-        raise SystemExit(f"Berger nonlinear import certificate is stale: {OUTPUT_PATH}")
+    if args.check and (
+        not OUTPUT_PATH.exists() or OUTPUT_PATH.read_text(encoding="utf-8") != content
+    ):
+        raise SystemExit(f"Berger partial SDR import is stale: {OUTPUT_PATH}")
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("BERGER CLOCK: SCOPED D_GAUGE AND PARTIAL CLOCK SDR IMPORTED, FULL BV INPUT OPEN")
+        print("BERGER CLOCK SDR: 8/34 EVIDENCE IMPORTED, PORTABLE MAPS BLOCKED")
     return 0
 
 

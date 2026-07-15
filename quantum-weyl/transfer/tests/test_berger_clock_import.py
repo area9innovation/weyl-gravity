@@ -44,11 +44,28 @@ class BergerClockImportTests(unittest.TestCase):
             any("all-row" in claim for claim in certificate["not_established"])
         )
 
+    def test_partial_clock_sdr_does_not_satisfy_complete_contraction(self) -> None:
+        certificate = CERTIFICATE.build_certificate()
+        partial = certificate["partial_clock_sdr"]
+        self.assertEqual(partial["status"], "AVAILABLE_EVIDENCE_ONLY")
+        self.assertEqual(partial["contracted_rows"], 8)
+        self.assertEqual(partial["full_minimal_rows"], 34)
+        self.assertFalse(partial["complete_classical_contraction"])
+        self.assertEqual(
+            certificate["physical_run_gate"]["partial_clock_sector_sdr"],
+            "AVAILABLE_EVIDENCE_ONLY",
+        )
+        self.assertEqual(
+            certificate["physical_run_gate"]["classical_contraction"],
+            "NOT_AVAILABLE",
+        )
+
     def test_imported_bytes_are_pinned_to_classical_contributions(self) -> None:
         provenance = CERTIFICATE.build_certificate()["provenance"]
         self.assertEqual(len(provenance["background"]["sha256"]), 64)
         self.assertEqual(len(provenance["reduced_charge"]["sha256"]), 64)
         self.assertEqual(provenance["background"]["commit"], provenance["reduced_charge"]["commit"])
+        self.assertEqual(len(provenance["partial_clock_sdr"]["sha256"]), 64)
 
 
 if __name__ == "__main__":

@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import hashlib
 import json
+from pathlib import PurePosixPath
 from typing import Any
 
 
@@ -78,6 +79,15 @@ def _require_commit(value: object, label: str) -> str:
     return value
 
 
+def _require_relative_path(value: object, label: str) -> str:
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"{label} path is required")
+    path = PurePosixPath(value)
+    if path.is_absolute() or ".." in path.parts or path.as_posix() != value:
+        raise ValueError(f"{label} path is noncanonical or escapes the repository")
+    return value
+
+
 @dataclass(frozen=True)
 class TotalDDisposition:
     result_id: str
@@ -93,7 +103,7 @@ class TotalDDisposition:
     dependency_tags: tuple[str, ...]
     sector_ids: tuple[str, ...]
     D_quotient_authorized: bool
-    source_artifacts: tuple[tuple[str, str], ...]
+    source_artifacts: tuple[tuple[str, str, str], ...]
     source_manifest: tuple[tuple[str, str], ...]
 
     @property
@@ -280,10 +290,14 @@ class TotalDDisposition:
             raise ValueError("total-D source artifacts are required")
         artifact_paths: list[str] = []
         for item in artifacts:
-            artifact = _require_fields(item, {"path", "sha256"}, "total-D source artifact")
-            if not isinstance(artifact["path"], str) or not artifact["path"]:
-                raise ValueError("total-D source artifact path is required")
+            artifact = _require_fields(
+                item,
+                {"path", "sha256", "git_commit"},
+                "total-D source artifact",
+            )
+            _require_relative_path(artifact["path"], "total-D source artifact")
             _require_hash(artifact["sha256"], "total-D source artifact")
+            _require_commit(artifact["git_commit"], "total-D source artifact")
             artifact_paths.append(artifact["path"])
         if len(artifact_paths) != len(set(artifact_paths)):
             raise ValueError("total-D source artifact paths are duplicated")
@@ -291,8 +305,7 @@ class TotalDDisposition:
         if not isinstance(source_manifest, dict) or not source_manifest:
             raise ValueError("total-D source manifest is required")
         for path, digest in source_manifest.items():
-            if not isinstance(path, str) or not path:
-                raise ValueError("total-D source manifest is invalid")
+            _require_relative_path(path, "total-D source manifest")
             _require_hash(digest, "total-D source manifest")
         if _require_hash(
             provenance["source_manifest_sha256"],
@@ -369,7 +382,10 @@ class TotalDDisposition:
             tags,
             tuple(sector_ids),
             fail_closed["D_quotient_authorized"],
-            tuple((item["path"], item["sha256"]) for item in artifacts),
+            tuple(
+                (item["path"], item["sha256"], item["git_commit"])
+                for item in artifacts
+            ),
             tuple(sorted(source_manifest.items())),
         )
 

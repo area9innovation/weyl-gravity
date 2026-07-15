@@ -28,8 +28,16 @@ transfers or that the quotient is interaction-stable.
 The healthy Berger-clock branch now carries a certified scoped classical
 verdict: the fixed-coupling lapse equation and compact averaging prove
 `D_GAUGE` on `positive_berger_fixed_coupling_linearized_solutions`.  This
-settles the charge classification only.  The support-local all-row BV
-contraction and nonlinear tensor export remain separate required inputs.
+settles the charge classification only.  The registered minimal clock-sector
+theorem now contracts exactly 8 of 34 minimal rows and retains 26 dressed-
+metric/spatial-diffeomorphism rows.  The quantum import records this as
+`PARTIAL_CLOCK_SECTOR_SDR_AVAILABLE`: the current handoff carries formulas and
+operator fingerprints, not portable map entries, and does not compute
+`D`-equivariance.  It therefore does not satisfy the ND2
+`classical_contraction` artifact.  The strict receiving contract is
+`quantum-weyl/transfer/schema/berger-clock-partial-sdr-portable-v1.schema.json`.
+The retained/nonminimal contraction and nonlinear tensor export remain
+separate required inputs.
 
 ## Work package N-D1: transfer the full low-arity structure
 

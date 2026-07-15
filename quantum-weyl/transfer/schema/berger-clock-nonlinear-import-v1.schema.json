@@ -7,17 +7,17 @@
   "required": [
     "schema", "result_id", "result_state", "setting_id", "phase_space_id",
     "generator_id", "lifecycle_layer", "dependency_tags", "setting_verdict",
-    "imported_background", "imported_reduced_charge", "D_disposition",
+    "imported_background", "imported_reduced_charge", "D_disposition", "partial_clock_sdr",
     "physical_run_gate", "established", "not_established", "provenance"
   ],
   "properties": {
     "schema": {"const": "quantum-weyl-berger-clock-nonlinear-import-v1"},
     "result_id": {"const": "BERGER_CLOCK_NONLINEAR_IMPORT"},
-    "result_state": {"const": "BACKGROUND_REDUCED_CHARGE_AND_SCOPED_D_GAUGE_IMPORTED_BV_OPEN"},
+    "result_state": {"const": "BACKGROUND_CHARGE_SCOPED_D_GAUGE_AND_PARTIAL_CLOCK_SDR_IMPORTED_FULL_BV_OPEN"},
     "setting_id": {"const": "compact_positive_berger_clock"},
     "phase_space_id": {"const": "positive_rotating_scalar_berger_background"},
     "generator_id": {"const": "D_compact"},
-    "lifecycle_layer": {"const": "CLASSICAL_CHARGE"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
     "setting_verdict": {"const": "INPUT_GATE_BLOCKED"},
     "imported_background": {
@@ -62,12 +62,27 @@
         "next_gate": {"const": "FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT"}
       }
     },
+    "partial_clock_sdr": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "contracted_rows", "full_minimal_rows", "retained_rows", "portable_map_payload", "D_equivariance", "complete_classical_contraction"],
+      "properties": {
+        "status": {"const": "AVAILABLE_EVIDENCE_ONLY"},
+        "contracted_rows": {"const": 8},
+        "full_minimal_rows": {"const": 34},
+        "retained_rows": {"const": 26},
+        "portable_map_payload": {"const": "NOT_AVAILABLE"},
+        "D_equivariance": {"const": "NOT_COMPUTED"},
+        "complete_classical_contraction": {"const": false}
+      }
+    },
     "physical_run_gate": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["total_D_disposition_certificate", "support_local_q1_q2_D", "classical_contraction", "admissibility_policy", "support_local_q3", "route"],
+      "required": ["total_D_disposition_certificate", "partial_clock_sector_sdr", "support_local_q1_q2_D", "classical_contraction", "admissibility_policy", "support_local_q3", "route"],
       "properties": {
         "total_D_disposition_certificate": {"const": "AVAILABLE_SCOPED_D_GAUGE"},
+        "partial_clock_sector_sdr": {"const": "AVAILABLE_EVIDENCE_ONLY"},
         "support_local_q1_q2_D": {"const": "NOT_AVAILABLE"},
         "classical_contraction": {"const": "NOT_AVAILABLE"},
         "admissibility_policy": {"const": "NOT_AVAILABLE"},
@@ -80,28 +95,30 @@
     "provenance": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["background", "reduced_charge", "classical_status", "programme_status", "total_D_disposition", "source_manifest", "source_manifest_sha256", "schema"],
+      "required": ["background", "reduced_charge", "classical_status", "programme_status", "total_D_disposition", "partial_clock_sdr", "source_manifest", "source_manifest_sha256", "schema"],
       "properties": {
         "background": {"$ref": "#/$defs/evidence"},
         "reduced_charge": {"$ref": "#/$defs/evidence"},
         "classical_status": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["path", "sha256", "source_commit"],
+          "required": ["path", "sha256", "source_commit", "ledger_commit"],
           "properties": {
             "path": {"const": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json"},
             "sha256": {"$ref": "#/$defs/hash"},
-            "source_commit": {"$ref": "#/$defs/commit"}
+            "source_commit": {"$ref": "#/$defs/commit"},
+            "ledger_commit": {"$ref": "#/$defs/commit"}
           }
         },
         "programme_status": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["path", "sha256", "programme_base_commit"],
+          "required": ["path", "sha256", "programme_base_commit", "ledger_commit"],
           "properties": {
             "path": {"const": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json"},
             "sha256": {"$ref": "#/$defs/hash"},
-            "programme_base_commit": {"$ref": "#/$defs/commit"}
+            "programme_base_commit": {"$ref": "#/$defs/commit"},
+            "ledger_commit": {"$ref": "#/$defs/commit"}
           }
         },
         "total_D_disposition": {
@@ -112,6 +129,16 @@
             "path": {"const": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json"},
             "sha256": {"$ref": "#/$defs/hash"},
             "classical_commit": {"$ref": "#/$defs/commit"}
+          }
+        },
+        "partial_clock_sdr": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256", "classical_theorem_commit"],
+          "properties": {
+            "path": {"const": "quantum-weyl/transfer/certificates/BERGER_CLOCK_PARTIAL_SDR_IMPORT.json"},
+            "sha256": {"$ref": "#/$defs/hash"},
+            "classical_theorem_commit": {"$ref": "#/$defs/commit"}
           }
         },
         "source_manifest": {

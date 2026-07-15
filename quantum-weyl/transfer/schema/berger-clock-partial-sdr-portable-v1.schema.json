@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-clock-partial-sdr-portable-v1.schema.json",
+  "title": "Portable classical handoff for the partial Berger clock-sector SDR",
+  "description": "This contract makes the certified 8/34 clock SDR independently consumable without promoting it to a complete Berger contraction.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "theorem_source_commit", "setting_id",
+    "phase_space_id", "generator_id", "boundary_conditions_sha256",
+    "dependency_tags", "convention", "coefficient_ring", "basis",
+    "coverage", "operators", "D_equivariance", "proof_checks",
+    "canonical_hashes", "source_manifest", "source_manifest_sha256", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-clock-partial-sdr-portable-v1"},
+    "result_id": {"const": "BERGER_CLOCK_PARTIAL_SDR_PORTABLE_EXPORT"},
+    "theorem_source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "phase_space_id": {"const": "positive_berger_fixed_coupling_linearized_solutions"},
+    "generator_id": {"const": "D_compact"},
+    "boundary_conditions_sha256": {"$ref": "#/$defs/sha256"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "convention": {
+      "type": "object", "additionalProperties": false,
+      "required": ["classical_grading", "transfer_suspension", "parity_rule", "derivative_symbol", "formal_adjoint", "basis_order_is_authoritative"],
+      "properties": {
+        "classical_grading": {"const": "shifted-bv-cohomological-v1"},
+        "transfer_suspension": {"const": "suspended-graded-symmetric-factorial-v1"},
+        "parity_rule": {"const": "cohomological-degree-mod-2"},
+        "derivative_symbol": {"enum": ["p_mu=partial_mu", "p_mu=i_partial_mu"]},
+        "formal_adjoint": {"type": "string", "minLength": 1},
+        "basis_order_is_authoritative": {"const": true}
+      }
+    },
+    "coefficient_ring": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ring", "localized_units", "assumptions", "floating_point_forbidden"],
+      "properties": {
+        "ring": {"const": "Q[rho_bar,omega,rho_bar^-1,omega^-1]"},
+        "localized_units": {"const": ["rho_bar", "omega"]},
+        "assumptions": {"const": ["rho_bar!=0", "omega!=0"]},
+        "floating_point_forbidden": {"const": true}
+      }
+    },
+    "basis": {
+      "type": "array", "minItems": 34, "maxItems": 34,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["index", "symbol", "cohomological_degree", "parity", "sector", "retained"],
+        "properties": {
+          "index": {"type": "integer", "minimum": 0, "maximum": 33},
+          "symbol": {"type": "string", "minLength": 1},
+          "cohomological_degree": {"type": "integer"},
+          "parity": {"enum": [0, 1]},
+          "sector": {"enum": ["spatial-diffeomorphism", "dressed-metric", "clock-contractible"]},
+          "retained": {"type": "boolean"}
+        }
+      }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["full_minimal_dimension", "contracted_clock_dimension", "retained_minimal_dimension", "contracted_basis_indices", "complete_classical_contraction"],
+      "properties": {
+        "full_minimal_dimension": {"const": 34},
+        "contracted_clock_dimension": {"const": 8},
+        "retained_minimal_dimension": {"const": 26},
+        "contracted_basis_indices": {"type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 33}},
+        "complete_classical_contraction": {"const": false}
+      }
+    },
+    "operators": {
+      "type": "object", "additionalProperties": false,
+      "required": ["field_map", "field_map_inverse", "canonical_cotangent_lift", "q1_clock", "s_clock", "iota_cl_partial", "pi_cl_partial", "cyclic_pairing_clock"],
+      "properties": {
+        "field_map": {"$ref": "#/$defs/operator"},
+        "field_map_inverse": {"$ref": "#/$defs/operator"},
+        "canonical_cotangent_lift": {"$ref": "#/$defs/operator"},
+        "q1_clock": {"$ref": "#/$defs/operator"},
+        "s_clock": {"$ref": "#/$defs/operator"},
+        "iota_cl_partial": {"$ref": "#/$defs/operator"},
+        "pi_cl_partial": {"$ref": "#/$defs/operator"},
+        "cyclic_pairing_clock": {"$ref": "#/$defs/operator"}
+      }
+    },
+    "D_equivariance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "D_action", "commutators", "nd2_equivariant_use_authorized"],
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "OPEN"}}, "required": ["status"]},
+          "then": {
+            "properties": {
+              "D_action": {"type": "null"},
+              "commutators": {
+                "properties": {
+                  "D_q1": {"const": "OPEN"}, "D_s_cl": {"const": "OPEN"},
+                  "D_pi_cl": {"const": "OPEN"}, "D_iota_cl": {"const": "OPEN"}
+                }
+              },
+              "nd2_equivariant_use_authorized": {"const": false}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"status": {"const": "VERIFIED"}}, "required": ["status"]},
+          "then": {
+            "properties": {
+              "D_action": {"$ref": "#/$defs/operator"},
+              "commutators": {
+                "properties": {
+                  "D_q1": {"const": "ZERO_EXACT"}, "D_s_cl": {"const": "ZERO_EXACT"},
+                  "D_pi_cl": {"const": "ZERO_EXACT"}, "D_iota_cl": {"const": "ZERO_EXACT"}
+                }
+              },
+              "nd2_equivariant_use_authorized": {"const": true}
+            }
+          }
+        }
+      ],
+      "properties": {
+        "status": {"enum": ["OPEN", "VERIFIED"]},
+        "D_action": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/operator"}]},
+        "commutators": {
+          "type": "object", "additionalProperties": false,
+          "required": ["D_q1", "D_s_cl", "D_pi_cl", "D_iota_cl"],
+          "properties": {
+            "D_q1": {"enum": ["OPEN", "ZERO_EXACT"]},
+            "D_s_cl": {"enum": ["OPEN", "ZERO_EXACT"]},
+            "D_pi_cl": {"enum": ["OPEN", "ZERO_EXACT"]},
+            "D_iota_cl": {"enum": ["OPEN", "ZERO_EXACT"]}
+          }
+        },
+        "nd2_equivariant_use_authorized": {"type": "boolean"}
+      }
+    },
+    "proof_checks": {
+      "type": "array", "minItems": 10, "uniqueItems": true,
+      "items": {"enum": ["field_map_inverse", "canonical_cotangent_lift", "q1_squared_zero", "q1_iota_chain_map", "pi_q1_chain_map", "pi_iota_identity", "partial_contraction_identity", "s_squared_zero", "q1_cyclicity", "s_cyclicity", "row_completeness", "support_locality", "D_equivariance"]}
+    },
+    "canonical_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["basis", "operators", "coefficient_ring", "convention", "proof_checks"],
+      "properties": {
+        "basis": {"$ref": "#/$defs/sha256"}, "operators": {"$ref": "#/$defs/sha256"},
+        "coefficient_ring": {"$ref": "#/$defs/sha256"}, "convention": {"$ref": "#/$defs/sha256"},
+        "proof_checks": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "source_manifest": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+    "source_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "exactCoefficient": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "string", "pattern": "^-?[0-9]+(\\*[a-zA-Z_][a-zA-Z0-9_]*(\\^-?[0-9]+)?)*$"},
+        "denominator": {"type": "string", "pattern": "^[1-9][0-9]*(\\*[a-zA-Z_][a-zA-Z0-9_]*(\\^[1-9][0-9]*)?)*$"}
+      }
+    },
+    "operator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operator_id", "domain_basis_indices", "codomain_basis_indices", "cohomological_degree", "maximum_differential_order", "entries", "canonical_sha256"],
+      "properties": {
+        "operator_id": {"type": "string", "minLength": 1},
+        "domain_basis_indices": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 33}},
+        "codomain_basis_indices": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 33}},
+        "cohomological_degree": {"type": "integer"},
+        "maximum_differential_order": {"type": "integer", "minimum": 0, "maximum": 1},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["output", "input", "multiindex", "coefficient"],
+            "properties": {
+              "output": {"type": "integer", "minimum": 0, "maximum": 33},
+              "input": {"type": "integer", "minimum": 0, "maximum": 33},
+              "multiindex": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0, "maximum": 1}},
+              "coefficient": {"$ref": "#/$defs/exactCoefficient"}
+            }
+          }
+        },
+        "canonical_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 from typing import Any
 
 
@@ -20,6 +21,13 @@ PROGRAMME_STATUS_PATH = PROGRAMME_ROOT / "certificates" / "D_QUOTIENT_PROGRAMME_
 BACKGROUND_CONTRIBUTION_PATH = PROGRAMME_ROOT / "contributions" / "classical-positive-berger-clock-background.json"
 CHARGE_CONTRIBUTION_PATH = PROGRAMME_ROOT / "contributions" / "classical-berger-clock-charge-seed.json"
 TOTAL_D_PATH = TRANSFER_ROOT / "certificates" / "BERGER_TOTAL_D_DISPOSITION.json"
+PARTIAL_SDR_PATH = (
+    TRANSFER_ROOT / "certificates" / "BERGER_CLOCK_PARTIAL_SDR_IMPORT.json"
+)
+BACKGROUND_THEOREM_COMMIT = "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+CHARGE_THEOREM_COMMIT = "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+CLASSICAL_LEDGER_COMMIT = "09844b4299a263ff99792397ce8c06c74e3921a6"
+PROGRAMME_LEDGER_COMMIT = "c4a1d28bab4d716a281db1c5428a83e515f6a822"
 
 try:
     from .total_d_disposition import validate_total_d_disposition
@@ -36,6 +44,34 @@ def _load(path: Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise ValueError(f"Berger import object is not a mapping: {path}")
     return value
+
+
+def _git_blob(path: Path, *, commit: str) -> bytes:
+    relative = path.relative_to(ROOT).as_posix()
+    prefix = subprocess.run(
+        ["git", "rev-parse", "--show-prefix"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    return subprocess.run(
+        ["git", "show", f"{commit}:{prefix}{relative}"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout
+
+
+def _load_git(path: Path, *, commit: str) -> dict[str, Any]:
+    value = json.loads(_git_blob(path, commit=commit))
+    if not isinstance(value, dict):
+        raise ValueError(f"pinned Berger object is not a mapping: {path}")
+    return value
+
+
+def _git_sha256(path: Path, *, commit: str) -> str:
+    return hashlib.sha256(_git_blob(path, commit=commit)).hexdigest()
 
 
 def _require_commit(value: object, label: str) -> str:
@@ -58,23 +94,39 @@ def _require_exact_evidence(
     if not isinstance(evidence, dict) or set(evidence) != {"path", "commit", "sha256"}:
         raise ValueError("Berger contribution evidence ledger is invalid")
     relative = expected_path.relative_to(ROOT).as_posix()
-    if evidence["path"] != relative or evidence["sha256"] != _sha256(expected_path):
-        raise ValueError("Berger contribution evidence does not match the imported bytes")
     commit = _require_commit(evidence["commit"], "Berger contribution source")
+    if evidence["path"] != relative or evidence["sha256"] != _git_sha256(
+        expected_path,
+        commit=commit,
+    ):
+        raise ValueError("Berger contribution evidence does not match the imported bytes")
     if contribution.get("claim_status") != "CERTIFIED" or contribution.get("verdict") != expected_verdict:
         raise ValueError("Berger contribution claim status or verdict drifted")
     return {"path": relative, "commit": commit, "sha256": evidence["sha256"]}
 
 
 def build_import() -> dict[str, Any]:
-    background = _load(BACKGROUND_PATH)
-    charge = _load(CHARGE_PATH)
-    classical_status = _load(CLASSICAL_STATUS_PATH)
-    programme_status = _load(PROGRAMME_STATUS_PATH)
-    background_contribution = _load(BACKGROUND_CONTRIBUTION_PATH)
-    charge_contribution = _load(CHARGE_CONTRIBUTION_PATH)
+    background = _load_git(BACKGROUND_PATH, commit=BACKGROUND_THEOREM_COMMIT)
+    charge = _load_git(CHARGE_PATH, commit=CHARGE_THEOREM_COMMIT)
+    classical_status = _load_git(
+        CLASSICAL_STATUS_PATH,
+        commit=CLASSICAL_LEDGER_COMMIT,
+    )
+    programme_status = _load_git(
+        PROGRAMME_STATUS_PATH,
+        commit=PROGRAMME_LEDGER_COMMIT,
+    )
+    background_contribution = _load_git(
+        BACKGROUND_CONTRIBUTION_PATH,
+        commit=PROGRAMME_LEDGER_COMMIT,
+    )
+    charge_contribution = _load_git(
+        CHARGE_CONTRIBUTION_PATH,
+        commit=PROGRAMME_LEDGER_COMMIT,
+    )
     total_D_payload = _load(TOTAL_D_PATH)
     total_D = validate_total_d_disposition(total_D_payload)
+    partial_sdr = _load(PARTIAL_SDR_PATH)
 
     if background.get("result_id") != "POSITIVE_BERGER_CLOCK_BACKGROUND":
         raise ValueError("Berger background result id drifted")
@@ -182,6 +234,25 @@ def build_import() -> dict[str, Any]:
         raise ValueError("programme Berger charge scope was promoted or removed")
     if total_D.status != "D_GAUGE" or not total_D.D_quotient_authorized:
         raise ValueError("Berger fixed-coupling D_GAUGE disposition was lost")
+    if (
+        partial_sdr.get("schema")
+        != "quantum-weyl-berger-clock-partial-sdr-import-v1"
+        or partial_sdr.get("result_state")
+        != "PARTIAL_CLOCK_SECTOR_SDR_AVAILABLE_PORTABLE_MAPS_BLOCKED"
+        or partial_sdr.get("setting_id") != total_D.setting_id
+        or partial_sdr.get("phase_space_id") != total_D.phase_space_id
+        or partial_sdr.get("boundary_conditions_sha256")
+        != total_D.boundary_conditions_sha256
+        or partial_sdr.get("coverage", {}).get("contracted_clock_dimension") != 8
+        or partial_sdr.get("coverage", {}).get("full_minimal_dimension") != 34
+        or partial_sdr.get("nd2_gate", {}).get(
+            "classical_contraction_artifact_satisfied"
+        )
+        is not False
+        or partial_sdr.get("nd2_gate", {}).get("physical_execution_authorized")
+        is not False
+    ):
+        raise ValueError("Berger partial clock SDR import crossed its evidence boundary")
     programme_contributions = {
         row.get("path"): row
         for row in programme_status.get("team_contributions", [])
@@ -195,7 +266,8 @@ def build_import() -> dict[str, Any]:
         row = programme_contributions.get(relative)
         if (
             row is None
-            or row.get("sha256") != _sha256(path)
+            or row.get("sha256")
+            != _git_sha256(path, commit=PROGRAMME_LEDGER_COMMIT)
             or row.get("payload") != payload
         ):
             raise ValueError(f"programme Berger contribution registration drifted: {relative}")
@@ -212,11 +284,11 @@ def build_import() -> dict[str, Any]:
     return {
         "schema": "quantum-weyl-berger-clock-nonlinear-import-v1",
         "result_id": "BERGER_CLOCK_NONLINEAR_IMPORT",
-        "result_state": "BACKGROUND_REDUCED_CHARGE_AND_SCOPED_D_GAUGE_IMPORTED_BV_OPEN",
+        "result_state": "BACKGROUND_CHARGE_SCOPED_D_GAUGE_AND_PARTIAL_CLOCK_SDR_IMPORTED_FULL_BV_OPEN",
         "setting_id": "compact_positive_berger_clock",
         "phase_space_id": "positive_rotating_scalar_berger_background",
         "generator_id": "D_compact",
-        "lifecycle_layer": "CLASSICAL_CHARGE",
+        "lifecycle_layer": "CLASSICAL_BV",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "setting_verdict": "INPUT_GATE_BLOCKED",
         "imported_background": {
@@ -242,8 +314,18 @@ def build_import() -> dict[str, Any]:
             "reason": "the exact fixed-coupling lapse constraint and compact averaging force delta Q_R=0, hence Omega_total(delta,L_D)=0 on the declared linearized phase space",
             "next_gate": "FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT",
         },
+        "partial_clock_sdr": {
+            "status": "AVAILABLE_EVIDENCE_ONLY",
+            "contracted_rows": 8,
+            "full_minimal_rows": 34,
+            "retained_rows": 26,
+            "portable_map_payload": "NOT_AVAILABLE",
+            "D_equivariance": "NOT_COMPUTED",
+            "complete_classical_contraction": False,
+        },
         "physical_run_gate": {
             "total_D_disposition_certificate": "AVAILABLE_SCOPED_D_GAUGE",
+            "partial_clock_sector_sdr": "AVAILABLE_EVIDENCE_ONLY",
             "support_local_q1_q2_D": "NOT_AVAILABLE",
             "classical_contraction": "NOT_AVAILABLE",
             "admissibility_policy": "NOT_AVAILABLE",
@@ -255,8 +337,11 @@ def build_import() -> dict[str, Any]:
             "the clock phase carries nonzero conserved standard-sign matter momentum",
             "D acts helically with the internal O(2) rotation on the exact background",
             "D is presymplectically null on the smooth fixed-coupling linearized Berger phase space",
+            "the eight minimal temporal-diffeomorphism/Weyl clock rows form an exact support-local cyclic SDR",
         ],
         "not_established": [
+            "portable coefficient-level clock maps consumable by the ND2 assembler",
+            "D-equivariance of the partial clock-sector SDR",
             "a support-local all-row matter-coupled BV contraction",
             "a physical nonlinear Cartan correction or obstruction on the Berger background",
             "causal propagation, stability, quantum admissibility, or a Lorentzian quantum theorem",
@@ -266,18 +351,31 @@ def build_import() -> dict[str, Any]:
             "reduced_charge": charge_evidence,
             "classical_status": {
                 "path": CLASSICAL_STATUS_PATH.relative_to(ROOT).as_posix(),
-                "sha256": _sha256(CLASSICAL_STATUS_PATH),
+                "sha256": _git_sha256(
+                    CLASSICAL_STATUS_PATH,
+                    commit=CLASSICAL_LEDGER_COMMIT,
+                ),
                 "source_commit": classical_status_commit,
+                "ledger_commit": CLASSICAL_LEDGER_COMMIT,
             },
             "programme_status": {
                 "path": PROGRAMME_STATUS_PATH.relative_to(ROOT).as_posix(),
-                "sha256": _sha256(PROGRAMME_STATUS_PATH),
+                "sha256": _git_sha256(
+                    PROGRAMME_STATUS_PATH,
+                    commit=PROGRAMME_LEDGER_COMMIT,
+                ),
                 "programme_base_commit": programme_base_commit,
+                "ledger_commit": PROGRAMME_LEDGER_COMMIT,
             },
             "total_D_disposition": {
                 "path": TOTAL_D_PATH.relative_to(ROOT).as_posix(),
                 "sha256": _sha256(TOTAL_D_PATH),
                 "classical_commit": total_D.classical_commit,
+            },
+            "partial_clock_sdr": {
+                "path": PARTIAL_SDR_PATH.relative_to(ROOT).as_posix(),
+                "sha256": _sha256(PARTIAL_SDR_PATH),
+                "classical_theorem_commit": partial_sdr["classical_theorem_commit"],
             },
         },
     }

@@ -55,8 +55,12 @@ sparse rational elimination inside occupied blocks.
 
 The positive Berger-clock background, reduced internal charge, and scoped
 fixed-coupling `D_GAUGE` theorem are now imported with exact classical
-provenance.  The physical Cartan run remains blocked on the distinct
-support-local all-row BV contraction and nonlinear tensor inputs.
+provenance.  The registered exact cyclic clock-sector SDR is also imported on
+its precise 8-of-34-row boundary.  Its present certificate carries formulas
+and fingerprints, so the new portable receiving schema leaves the map payload,
+grading/symbol bridge, and `D`-equivariance fail-closed.  The physical Cartan
+run remains blocked on the distinct complete contraction and nonlinear tensor
+inputs.
 
 ND3 additionally implements the next Cartan recurrence.  It retains the
 direct `[q3,iota_D]` and exchange `[q2,iota_D^(2)]` tensors separately, checks

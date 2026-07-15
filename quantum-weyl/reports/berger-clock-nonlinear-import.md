@@ -4,7 +4,7 @@ Date: 2026-07-15
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`
 
-Lifecycle state: `CLASSICAL_CHARGE`
+Lifecycle state: `CLASSICAL_BV` (partial clock-sector evidence)
 
 Setting verdict: `INPUT_GATE_BLOCKED`
 
@@ -39,7 +39,19 @@ delta E_N = -(alpha_B q^(3/2)/2)(delta Q_R/Q_R),
 and compact `SU(2)_L x U(1)_R` averaging excludes a smooth charged tangent in
 every spatial mode.  Hence `Omega_total(delta,L_D)=0` on the declared smooth
 fixed-coupling linearized phase space and the scoped verdict is `D_GAUGE`.
-The next classical gate is `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
+The registered minimal clock-sector theorem additionally proves an exact
+support-local cyclic contraction of 8 of the 34 minimal rows, leaving a
+26-row dressed-metric/spatial-diffeomorphism complex.  The theorem is imported
+from immutable commit `f6e8a2b0`; its programme registration is pinned at
+`5530cb20`.
+
+This is evidence-only for the transfer programme.  The v1 classical
+certificate exposes formulas and operator fingerprints, not portable sparse
+map entries, and it does not compute the `D` action or the commutators with
+`q1`, `s_cl`, `pi_cl`, and `iota_cl`.  Consequently the complete
+`classical_contraction` artifact remains unavailable.  The next receiving
+contract is
+`quantum-weyl/transfer/schema/berger-clock-partial-sdr-portable-v1.schema.json`.
 
 ## Physical-run routing
 
@@ -64,15 +76,17 @@ clock cannot be silently removed from the physical complex.
 ## Claim boundary
 
 This establishes a healthy exact background, nonzero reduced internal clock
-momentum, and scoped fixed-coupling linearized `D_GAUGE`.  It does not
-establish a support-local matter-coupled BV retract, a physical arity-two
-Cartan correction, nonlinear stability, causal Green theory, quantum
+momentum, scoped fixed-coupling linearized `D_GAUGE`, and the exact partial
+8/34 minimal clock-sector SDR.  It does not establish portable clock maps,
+`D`-equivariance of that SDR, the retained/nonminimal matter-coupled BV
+retract, a physical arity-two Cartan correction, nonlinear stability, causal Green theory, quantum
 admissibility, or any `LORENTZIAN-CAUSAL` or quantum-master-equation theorem.
 
 ## Machine receipts
 
 - `quantum-weyl/transfer/certificates/BERGER_CLOCK_NONLINEAR_IMPORT.json`
 - `quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json`
+- `quantum-weyl/transfer/certificates/BERGER_CLOCK_PARTIAL_SDR_IMPORT.json`
 - `quantum-weyl/transfer/certificates/ND2_PHYSICAL_RUN.json`
 - `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json`
 

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-clock-partial-sdr-import-v1.schema.json",
+  "title": "Fail-closed evidence import of the partial Berger clock-sector SDR",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "lifecycle_layer", "claim_status", "result_state",
+    "dependency_tags", "setting_id", "phase_space_id", "generator_id",
+    "boundary_conditions_sha256", "classical_theorem_commit", "coverage",
+    "verified_evidence", "portable_map_gate", "nd2_gate", "provenance",
+    "not_established", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-clock-partial-sdr-import-v1"},
+    "result_id": {"const": "BERGER_CLOCK_PARTIAL_SDR_IMPORT"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "claim_status": {"const": "IMPORTED_EVIDENCE_ONLY"},
+    "result_state": {"const": "PARTIAL_CLOCK_SECTOR_SDR_AVAILABLE_PORTABLE_MAPS_BLOCKED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "phase_space_id": {"const": "positive_berger_fixed_coupling_linearized_solutions"},
+    "generator_id": {"const": "D_compact"},
+    "boundary_conditions_sha256": {"$ref": "#/$defs/sha256"},
+    "classical_theorem_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["full_minimal_dimension", "contracted_clock_dimension", "retained_minimal_dimension", "contracted_rows", "coverage_status"],
+      "properties": {
+        "full_minimal_dimension": {"const": 34},
+        "contracted_clock_dimension": {"const": 8},
+        "retained_minimal_dimension": {"const": 26},
+        "contracted_rows": {"const": ["tau", "sigma", "Theta", "R", "Theta*", "R*", "tau*", "sigma*"]},
+        "coverage_status": {"const": "PARTIAL_CLOCK_SECTOR_ONLY"}
+      }
+    },
+    "verified_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["support_local", "cyclic", "canonical_cotangent_lift", "q1_squared_zero", "contraction_identity_on_clock_block", "homotopy_squared_zero", "operator_fingerprints"],
+      "properties": {
+        "support_local": {"const": true},
+        "cyclic": {"const": true},
+        "canonical_cotangent_lift": {"const": true},
+        "q1_squared_zero": {"const": true},
+        "contraction_identity_on_clock_block": {"const": true},
+        "homotopy_squared_zero": {"const": true},
+        "operator_fingerprints": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["canonical_map", "canonical_pairing", "field_map", "fixture_field_map", "homotopy", "new_gauge", "old_gauge", "omega_clock", "q_clock"],
+          "properties": {
+            "canonical_map": {"$ref": "#/$defs/sha256"},
+            "canonical_pairing": {"$ref": "#/$defs/sha256"},
+            "field_map": {"$ref": "#/$defs/sha256"},
+            "fixture_field_map": {"$ref": "#/$defs/sha256"},
+            "homotopy": {"$ref": "#/$defs/sha256"},
+            "new_gauge": {"$ref": "#/$defs/sha256"},
+            "old_gauge": {"$ref": "#/$defs/sha256"},
+            "omega_clock": {"$ref": "#/$defs/sha256"},
+            "q_clock": {"$ref": "#/$defs/sha256"}
+          }
+        }
+      }
+    },
+    "portable_map_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["map_payload_status", "operator_fingerprint_reconstruction_check", "coefficient_ring_declared", "differential_symbol_convention_declared", "grading_bridge_declared", "portable_q1_clock", "portable_s_clock", "portable_iota_cl", "portable_pi_cl", "portable_pairing", "D_action_on_clock_block", "D_equivariance_checks"],
+      "properties": {
+        "map_payload_status": {"const": "FINGERPRINTS_AND_FORMULAS_ONLY"},
+        "operator_fingerprint_reconstruction_check": {"const": "NOT_COMPUTED"},
+        "coefficient_ring_declared": {"const": false},
+        "differential_symbol_convention_declared": {"const": false},
+        "grading_bridge_declared": {"const": false},
+        "portable_q1_clock": {"const": "NOT_AVAILABLE"},
+        "portable_s_clock": {"const": "NOT_AVAILABLE"},
+        "portable_iota_cl": {"const": "NOT_AVAILABLE"},
+        "portable_pi_cl": {"const": "NOT_AVAILABLE"},
+        "portable_pairing": {"const": "NOT_AVAILABLE"},
+        "D_action_on_clock_block": {"const": "NOT_AVAILABLE"},
+        "D_equivariance_checks": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "nd2_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["partial_clock_sector_sdr", "complete_classical_contraction", "classical_contraction_artifact_satisfied", "physical_execution_authorized", "next_gate"],
+      "properties": {
+        "partial_clock_sector_sdr": {"const": "AVAILABLE_EVIDENCE_ONLY"},
+        "complete_classical_contraction": {"const": "NOT_AVAILABLE"},
+        "classical_contraction_artifact_satisfied": {"const": false},
+        "physical_execution_authorized": {"const": false},
+        "next_gate": {"const": "PORTABLE_CLOCK_SDR_MAP_EXPORT_THEN_BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classical_source_artifacts", "programme_registration", "total_D_disposition", "portable_receiving_schema", "source_manifest", "source_manifest_sha256", "schema"],
+      "properties": {
+        "classical_source_artifacts": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {"$ref": "#/$defs/artifact"}
+        },
+        "programme_registration": {
+          "type": "object", "additionalProperties": false,
+          "required": ["status", "registration_commit", "contribution_path", "contribution_sha256", "programme_status_path", "programme_status_sha256"],
+          "properties": {
+            "status": {"const": "VERIFIED"},
+            "registration_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+            "contribution_path": {"const": "d_quotient_programme/contributions/classical-berger-minimal-bv-clock-sdr.json"},
+            "contribution_sha256": {"$ref": "#/$defs/sha256"},
+            "programme_status_path": {"const": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json"},
+            "programme_status_sha256": {"$ref": "#/$defs/sha256"}
+          }
+        },
+        "total_D_disposition": {
+          "type": "object", "additionalProperties": false,
+          "required": ["path", "sha256", "classical_commit"],
+          "properties": {
+            "path": {"const": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json"},
+            "sha256": {"$ref": "#/$defs/sha256"},
+            "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+          }
+        },
+        "portable_receiving_schema": {"const": "quantum-weyl/transfer/schema/berger-clock-partial-sdr-portable-v1.schema.json"},
+        "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "schema": {"const": "quantum-weyl/transfer/schema/berger-clock-partial-sdr-import-v1.schema.json"}
+      }
+    },
+    "not_established": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}}
+    }
+  }
+}

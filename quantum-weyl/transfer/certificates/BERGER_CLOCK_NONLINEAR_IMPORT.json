@@ -16,7 +16,8 @@
     "a healthy exact positive-energy Berger clock background exists on an open parameter interval",
     "the clock phase carries nonzero conserved standard-sign matter momentum",
     "D acts helically with the internal O(2) rotation on the exact background",
-    "D is presymplectically null on the smooth fixed-coupling linearized Berger phase space"
+    "D is presymplectically null on the smooth fixed-coupling linearized Berger phase space",
+    "the eight minimal temporal-diffeomorphism/Weyl clock rows form an exact support-local cyclic SDR"
   ],
   "generator_id": "D_compact",
   "imported_background": {
@@ -33,16 +34,28 @@
     "helical_action": "L_D(T_1,T_2)=omega R(T_1,T_2)",
     "integrated_charge": "Q_R=16 pi^2 alpha_B q sqrt(1-4q)"
   },
-  "lifecycle_layer": "CLASSICAL_CHARGE",
+  "lifecycle_layer": "CLASSICAL_BV",
   "not_established": [
+    "portable coefficient-level clock maps consumable by the ND2 assembler",
+    "D-equivariance of the partial clock-sector SDR",
     "a support-local all-row matter-coupled BV contraction",
     "a physical nonlinear Cartan correction or obstruction on the Berger background",
     "causal propagation, stability, quantum admissibility, or a Lorentzian quantum theorem"
   ],
+  "partial_clock_sdr": {
+    "D_equivariance": "NOT_COMPUTED",
+    "complete_classical_contraction": false,
+    "contracted_rows": 8,
+    "full_minimal_rows": 34,
+    "portable_map_payload": "NOT_AVAILABLE",
+    "retained_rows": 26,
+    "status": "AVAILABLE_EVIDENCE_ONLY"
+  },
   "phase_space_id": "positive_rotating_scalar_berger_background",
   "physical_run_gate": {
     "admissibility_policy": "NOT_AVAILABLE",
     "classical_contraction": "NOT_AVAILABLE",
+    "partial_clock_sector_sdr": "AVAILABLE_EVIDENCE_ONLY",
     "route": "D_GAUGE_CERTIFIED_BV_INPUT_BLOCKED",
     "support_local_q1_q2_D": "NOT_AVAILABLE",
     "support_local_q3": "NOT_AVAILABLE",
@@ -55,14 +68,21 @@
       "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"
     },
     "classical_status": {
+      "ledger_commit": "09844b4299a263ff99792397ce8c06c74e3921a6",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
       "sha256": "54b2843e6258a36603929f5845dee7a6b00b5cc070fa02b448c8ff300dac31c0",
       "source_commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17"
     },
+    "partial_clock_sdr": {
+      "classical_theorem_commit": "f6e8a2b0802b99f323382e4b7d494a41ca571e47",
+      "path": "quantum-weyl/transfer/certificates/BERGER_CLOCK_PARTIAL_SDR_IMPORT.json",
+      "sha256": "c21c7497cade85ecc3f10844c1bc29001f16a652ca76a091ce92eec6e82ff122"
+    },
     "programme_status": {
+      "ledger_commit": "c4a1d28bab4d716a281db1c5428a83e515f6a822",
       "path": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json",
-      "programme_base_commit": "b4f5fe6cbfa42dde7296c3e8000de358b4609366",
-      "sha256": "1bfcb2a75df3f04c467ac6bde0f0c97dc060bce841f821a501e0c6f232fee358"
+      "programme_base_commit": "958f51a700a839baf4d526c6a207c893048dfe62",
+      "sha256": "996f153fb0224f4cf4c211a4bf7a96c208fff5a8a393cbcda716b572c998b7fd"
     },
     "reduced_charge": {
       "commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db",
@@ -71,24 +91,29 @@
     },
     "schema": "quantum-weyl/transfer/schema/berger-clock-nonlinear-import-v1.schema.json",
     "source_manifest": {
-      "berger_clock_import.py": "e96aed2d9a8bcd8222ca9306fd6939e0e605bd32ced1d42bf02c37a8ee48b0f1",
-      "berger_clock_import_certificate.py": "09311e189695d880980a4cff2f645b851a9ca196d1078552f4786b83769d87bc",
-      "schema/berger-clock-nonlinear-import-v1.schema.json": "3a195cf017e16ffae50976ab0e41918697310400df3f7b32660bcdc36cb90d44",
-      "schema/total-d-disposition-v1.schema.json": "e467697c9df742a61d7c12deac078c6d3cd0b1cba487352e2bc82d062a29edce",
-      "tests/test_berger_clock_import.py": "55bb4731840f515bfc254ebb53fe33a23ff8f1ab6ccc67ab3aa7fc5d5d8ca70f",
-      "tests/test_total_d_disposition.py": "6079b9ba6155579b28ec061b3b5b4f8616d053d0f587d0f6ab948d24bdc4bc49",
-      "total_d_disposition.py": "f5d9a77305da27bb2a70d28d1c0258961871ed787791cc16cedc95bddac2453c",
-      "total_d_disposition_certificate.py": "9d03ef2e9145065229e9c51fd02c40353a5cce31630cf9db861a8186f2fcc3b7"
+      "berger_clock_import.py": "d74cc66dabd5dc80dc4d07dd71946b25e89c89438d8c8604d689c08e38940a19",
+      "berger_clock_import_certificate.py": "239e246d3c5ca7589bbd99f040a110889f86a1e1c78972d74aa716a4d56f51e3",
+      "berger_clock_sdr_import.py": "9d00234cf2a5001e0f14b09fbe45af1e629d5b1284c216be851689cd76356560",
+      "berger_clock_sdr_import_certificate.py": "88cf2bee64176a42fd61a6d16fe6445bbe1a86dc7b068517d546e5f8eaf2bb70",
+      "schema/berger-clock-nonlinear-import-v1.schema.json": "28614723c9983974261e9dfdd4cd783ef190b765daa39da06948501b6e66d91d",
+      "schema/berger-clock-partial-sdr-import-v1.schema.json": "c0110ac788b090e28368f220390dc21c00e37554d355655673740324361781eb",
+      "schema/berger-clock-partial-sdr-portable-v1.schema.json": "20535ab2cd98b0ac20694a1fb579930b55526aa22378e3545f65e41306952775",
+      "schema/total-d-disposition-v1.schema.json": "b4be4fe52c2f2345ff8c28758565724b5a6901190411cc884f63ea45f8ed8807",
+      "tests/test_berger_clock_import.py": "9d80c022c28a15ce6dd336a6e2a70250b12c4452482c1c03e0502dac2e2aa052",
+      "tests/test_berger_clock_sdr_import.py": "960a16b54ddc3e15406cdf3d5072e482156cc44d077c1a1ada3500b350908d9e",
+      "tests/test_total_d_disposition.py": "def20c048991bff2c206f99e31bad07fec27877f36aad320d3a7acc9f180e0e7",
+      "total_d_disposition.py": "e81da4b928c7d69c7581bce68a7103972123e7e114b06d31bb38c8f648aad6f2",
+      "total_d_disposition_certificate.py": "4aa33b5b6343bf7c107db120b1e610ca6a436fc60b656e45080b405e4fa47eb7"
     },
-    "source_manifest_sha256": "420c33f68f9ab3ae8a915b1b843ed01e10bd4c924fab13d77f9ebbe68fc0698b",
+    "source_manifest_sha256": "a01695790ba4aea51a20eafa9c69d5ec1d970a3fe721a01aa5936543a907e9c7",
     "total_D_disposition": {
       "classical_commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17",
       "path": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json",
-      "sha256": "3d0bebbe27d77f6572a1ae25d1893720cad104426d2b3e1e89e2c9cefc9e8b89"
+      "sha256": "27c91dee3b0293c66b73a0ba2e21c3e7579de3c70d080685043729da3d6b62e4"
     }
   },
   "result_id": "BERGER_CLOCK_NONLINEAR_IMPORT",
-  "result_state": "BACKGROUND_REDUCED_CHARGE_AND_SCOPED_D_GAUGE_IMPORTED_BV_OPEN",
+  "result_state": "BACKGROUND_CHARGE_SCOPED_D_GAUGE_AND_PARTIAL_CLOCK_SDR_IMPORTED_FULL_BV_OPEN",
   "schema": "quantum-weyl-berger-clock-nonlinear-import-v1",
   "setting_id": "compact_positive_berger_clock",
   "setting_verdict": "INPUT_GATE_BLOCKED"

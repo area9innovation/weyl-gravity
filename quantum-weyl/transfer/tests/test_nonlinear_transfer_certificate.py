@@ -54,11 +54,9 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             if item["question_id"] == "D_quotient_interaction_stability"
         )
         self.assertIn("SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED", d_question["status"])
-        self.assertIn("ND2_VERIFIED_MANIFEST_ROUTER", d_question["status"])
-        self.assertIn("SCOPED_FIXED_COUPLING_D_GAUGE_IMPORTED", d_question["status"])
-        self.assertIn("BV_CONTRACTION_AND_FULL_LOCAL_INPUT_GATE_BLOCKED", d_question["status"])
-        self.assertIn("ND3_CARTAN_SOLVER_READY", d_question["status"])
-        self.assertIn("INPUT_GATE_BLOCKED", d_question["status"])
+        self.assertIn("SCOPED_D_GAUGE_AND_8_OF_34_CLOCK_SDR_EVIDENCE_IMPORTED", d_question["status"])
+        self.assertIn("PORTABLE_FULL_CONTRACTION_AND_LOCAL_INPUT_BLOCKED", d_question["status"])
+        self.assertIn("ND2_ROUTER_AND_ND3_SOLVER_READY", d_question["status"])
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
         certificate = CERTIFICATE.build_certificate()
@@ -71,6 +69,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn("nd2_physical_run_contract_sha256", certificate["provenance"])
         self.assertIn("berger_clock_nonlinear_import_sha256", certificate["provenance"])
+        self.assertIn("berger_clock_partial_sdr_import_sha256", certificate["provenance"])
         self.assertIn("berger_total_D_disposition_sha256", certificate["provenance"])
         self.assertIn("nd3_arity_three_cartan_engine_sha256", certificate["provenance"])
         self.assertTrue(
@@ -91,6 +90,12 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("classical_projection_pi_cl", blocked)
         self.assertIn("classical_inclusion_iota_cl", blocked)
         self.assertIn("classical_homotopy_s_cl", blocked)
+        rows = {
+            item["export_id"]: item
+            for item in CERTIFICATE.build_certificate()["input_blockers"]
+        }
+        self.assertEqual(rows["classical_projection_pi_cl"]["status"], "INCOMPLETE")
+        self.assertIn("8/34", rows["classical_homotopy_s_cl"]["reason"])
 
 
 if __name__ == "__main__":

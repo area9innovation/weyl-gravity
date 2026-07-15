@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 from typing import Any
 
 
@@ -31,6 +32,9 @@ CLASSICAL_STATUS_PATH = (
     ROOT / "d_quotient_classical" / "certificates" / "CLASSICAL_D_QUOTIENT_STATUS.json"
 )
 OUTPUT_PATH = TRANSFER_ROOT / "certificates" / "BERGER_TOTAL_D_DISPOSITION.json"
+THEOREM_COMMIT = "cc5df8d547f7d2119282590a824ce92cd1d76d17"
+PROGRAMME_REGISTRATION_COMMIT = "dd4c2fc014d23e7f0596ff278dceb99e4f5624b0"
+CLASSICAL_LEDGER_COMMIT = "09844b4299a263ff99792397ce8c06c74e3921a6"
 
 try:
     from .total_d_disposition import validate_total_d_disposition
@@ -40,6 +44,34 @@ except ImportError:
 
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _git_blob(path: Path, *, commit: str) -> bytes:
+    relative = path.relative_to(ROOT).as_posix()
+    prefix = subprocess.run(
+        ["git", "rev-parse", "--show-prefix"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    return subprocess.run(
+        ["git", "show", f"{commit}:{prefix}{relative}"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout
+
+
+def _git_json(path: Path, *, commit: str) -> dict[str, Any]:
+    value = json.loads(_git_blob(path, commit=commit))
+    if not isinstance(value, dict):
+        raise ValueError(f"pinned Berger total-D input is not an object: {path}")
+    return value
+
+
+def _git_sha256(path: Path, *, commit: str) -> str:
+    return hashlib.sha256(_git_blob(path, commit=commit)).hexdigest()
 
 
 def _sha256_text(value: str) -> str:
@@ -66,10 +98,19 @@ def _source_manifest() -> dict[str, str]:
 
 
 def build_certificate() -> dict[str, Any]:
-    fixed_charge = json.loads(FIXED_CHARGE_PATH.read_text(encoding="utf-8"))
-    contribution = json.loads(CONTRIBUTION_PATH.read_text(encoding="utf-8"))
-    programme = json.loads(PROGRAMME_STATUS_PATH.read_text(encoding="utf-8"))
-    classical_status = json.loads(CLASSICAL_STATUS_PATH.read_text(encoding="utf-8"))
+    fixed_charge = _git_json(FIXED_CHARGE_PATH, commit=THEOREM_COMMIT)
+    contribution = _git_json(
+        CONTRIBUTION_PATH,
+        commit=PROGRAMME_REGISTRATION_COMMIT,
+    )
+    programme = _git_json(
+        PROGRAMME_STATUS_PATH,
+        commit=PROGRAMME_REGISTRATION_COMMIT,
+    )
+    classical_status = _git_json(
+        CLASSICAL_STATUS_PATH,
+        commit=CLASSICAL_LEDGER_COMMIT,
+    )
     if (
         fixed_charge.get("schema")
         != "pure-weyl-berger-fixed-coupling-delta-charge-v1"
@@ -114,8 +155,9 @@ def build_certificate() -> dict[str, Any]:
         or contribution.get("phase_space_id") != fixed_charge.get("phase_space_id")
         or contribution.get("generator_id") != fixed_charge.get("generator_id")
         or evidence.get("path") != FIXED_CHARGE_PATH.relative_to(ROOT).as_posix()
-        or evidence.get("sha256") != _sha256(FIXED_CHARGE_PATH)
-        or evidence.get("commit") != "cc5df8d547f7d2119282590a824ce92cd1d76d17"
+        or evidence.get("sha256")
+        != _git_sha256(FIXED_CHARGE_PATH, commit=THEOREM_COMMIT)
+        or evidence.get("commit") != THEOREM_COMMIT
     ):
         raise ValueError("Berger fixed-coupling contribution evidence drifted")
     registered = next(
@@ -129,7 +171,11 @@ def build_certificate() -> dict[str, Any]:
     if (
         registered is None
         or registered.get("payload") != contribution
-        or registered.get("sha256") != _sha256(CONTRIBUTION_PATH)
+        or registered.get("sha256")
+        != _git_sha256(
+            CONTRIBUTION_PATH,
+            commit=PROGRAMME_REGISTRATION_COMMIT,
+        )
     ):
         raise ValueError("Berger fixed-coupling contribution is not registered")
     setting = next(
@@ -158,8 +204,13 @@ def build_certificate() -> dict[str, Any]:
         ),
         None,
     )
+    # This is the immutable classical ledger registration of the D_GAUGE
+    # theorem, not the evolving aggregate ledger at the working-tree head.
+    status_source_commit = classical_status.get("source_commit")
     if (
-        classical_status.get("source_commit") != evidence["commit"]
+        not isinstance(status_source_commit, str)
+        or len(status_source_commit) != 40
+        or any(char not in "0123456789abcdef" for char in status_source_commit)
         or classical_evidence is None
         or classical_evidence.get("path") != evidence["path"]
         or classical_evidence.get("sha256") != evidence["sha256"]
@@ -175,24 +226,34 @@ def build_certificate() -> dict[str, Any]:
     source_artifacts = [
         {
             "path": FIXED_CHARGE_PATH.relative_to(ROOT).as_posix(),
-            "sha256": _sha256(FIXED_CHARGE_PATH),
+            "sha256": _git_sha256(FIXED_CHARGE_PATH, commit=THEOREM_COMMIT),
+            "git_commit": THEOREM_COMMIT,
         },
         {
             "path": CONTRIBUTION_PATH.relative_to(ROOT).as_posix(),
-            "sha256": _sha256(CONTRIBUTION_PATH),
+            "sha256": _git_sha256(
+                CONTRIBUTION_PATH,
+                commit=PROGRAMME_REGISTRATION_COMMIT,
+            ),
+            "git_commit": PROGRAMME_REGISTRATION_COMMIT,
         },
         {
             "path": PROGRAMME_STATUS_PATH.relative_to(ROOT).as_posix(),
-            "sha256": _sha256(PROGRAMME_STATUS_PATH),
+            "sha256": _git_sha256(
+                PROGRAMME_STATUS_PATH,
+                commit=PROGRAMME_REGISTRATION_COMMIT,
+            ),
+            "git_commit": PROGRAMME_REGISTRATION_COMMIT,
         },
         {
             "path": CLASSICAL_STATUS_PATH.relative_to(ROOT).as_posix(),
-            "sha256": _sha256(CLASSICAL_STATUS_PATH),
+            "sha256": _git_sha256(
+                CLASSICAL_STATUS_PATH,
+                commit=CLASSICAL_LEDGER_COMMIT,
+            ),
+            "git_commit": CLASSICAL_LEDGER_COMMIT,
         },
     ]
-    for artifact in source_artifacts:
-        if _sha256(ROOT / artifact["path"]) != artifact["sha256"]:
-            raise ValueError(f"Berger total-D source artifact drifted: {artifact['path']}")
     source_manifest = _source_manifest()
     receipt_elapsed_seconds = {
         "python3 d_quotient_classical/backreacted_clock/fixed_coupling_delta_charge.py --check --guards": 0.85,

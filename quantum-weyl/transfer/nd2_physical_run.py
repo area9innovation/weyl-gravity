@@ -15,6 +15,7 @@ from dataclasses import dataclass
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 from typing import Any
 from typing import Callable
 
@@ -308,7 +309,28 @@ class PhysicalRunManifest:
         disposition: TotalDDisposition,
     ) -> None:
         root = repository_root.resolve()
-        for relative, expected in disposition.source_artifacts + disposition.source_manifest:
+        prefix = subprocess.run(
+            ["git", "rev-parse", "--show-prefix"],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+        for relative, expected, commit in disposition.source_artifacts:
+            result = subprocess.run(
+                ["git", "show", f"{commit}:{prefix}{relative}"],
+                cwd=root,
+                check=False,
+                capture_output=True,
+            )
+            if (
+                result.returncode != 0
+                or hashlib.sha256(result.stdout).hexdigest() != expected
+            ):
+                raise ValueError(
+                    f"total-D pinned provenance hash mismatch: {relative}"
+                )
+        for relative, expected in disposition.source_manifest:
             path = (root / relative).resolve()
             try:
                 path.relative_to(root)

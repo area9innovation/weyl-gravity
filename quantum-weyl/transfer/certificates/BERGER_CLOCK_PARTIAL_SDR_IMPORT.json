@@ -1,0 +1,132 @@
+{
+  "boundary_conditions_sha256": "0e4b200dd1446d78e18cf61928b9c36522125f7eb9d0117591f95096e81b70e8",
+  "claim_boundary": "This import recognizes the exact cyclic eight-row clock-sector SDR and its 34-to-26 coverage statement. The source certificate exports formulas and fingerprints rather than portable operator entries, so it cannot satisfy the ND2 classical_contraction artifact or authorize physical execution.",
+  "claim_status": "IMPORTED_EVIDENCE_ONLY",
+  "classical_theorem_commit": "f6e8a2b0802b99f323382e4b7d494a41ca571e47",
+  "coverage": {
+    "contracted_clock_dimension": 8,
+    "contracted_rows": [
+      "tau",
+      "sigma",
+      "Theta",
+      "R",
+      "Theta*",
+      "R*",
+      "tau*",
+      "sigma*"
+    ],
+    "coverage_status": "PARTIAL_CLOCK_SECTOR_ONLY",
+    "full_minimal_dimension": 34,
+    "retained_minimal_dimension": 26
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "generator_id": "D_compact",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "nd2_gate": {
+    "classical_contraction_artifact_satisfied": false,
+    "complete_classical_contraction": "NOT_AVAILABLE",
+    "next_gate": "PORTABLE_CLOCK_SDR_MAP_EXPORT_THEN_BERGER_RETAINED_Q1_AND_NONMINIMAL_COMPLETION",
+    "partial_clock_sector_sdr": "AVAILABLE_EVIDENCE_ONLY",
+    "physical_execution_authorized": false
+  },
+  "not_established": [
+    "portable coefficient-level clock maps independently consumable by ND2",
+    "independent comparison of reconstructed operators with all emitted fingerprints",
+    "D-equivariance of q1, s_cl, pi_cl, and iota_cl on the clock block",
+    "the retained dressed-metric q1 coefficients and Noether row",
+    "the nonminimal gauge-fixed contraction",
+    "the complete Berger classical contraction artifact",
+    "nonlinear q2, admissibility, stability, or a causal Green homotopy"
+  ],
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "portable_map_gate": {
+    "D_action_on_clock_block": "NOT_AVAILABLE",
+    "D_equivariance_checks": "NOT_COMPUTED",
+    "coefficient_ring_declared": false,
+    "differential_symbol_convention_declared": false,
+    "grading_bridge_declared": false,
+    "map_payload_status": "FINGERPRINTS_AND_FORMULAS_ONLY",
+    "operator_fingerprint_reconstruction_check": "NOT_COMPUTED",
+    "portable_iota_cl": "NOT_AVAILABLE",
+    "portable_pairing": "NOT_AVAILABLE",
+    "portable_pi_cl": "NOT_AVAILABLE",
+    "portable_q1_clock": "NOT_AVAILABLE",
+    "portable_s_clock": "NOT_AVAILABLE"
+  },
+  "provenance": {
+    "classical_source_artifacts": [
+      {
+        "path": "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
+        "sha256": "552b7fc975e1c98be909fe9082e2781d60bbe70f0cc6cf19f45ea0e28c154ffd"
+      },
+      {
+        "path": "d_quotient_classical/schema/berger-minimal-bv-clock-sdr-v1.schema.json",
+        "sha256": "961dc892bd6152a8574d86d9a6feb37c277503fa5f506568d0dffe25c540cd4f"
+      },
+      {
+        "path": "d_quotient_classical/backreacted_clock/berger_minimal_bv_clock_sdr.py",
+        "sha256": "51d4fff530f650ed00a2a491ff77a4e4ad7202c28e9791cf904f1083a02232d5"
+      },
+      {
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_minimal_bv_clock_sdr_independent.py",
+        "sha256": "47075e6eb30289b0c15335bc0f257d2eaad68f601abbd81de116cb759ba59ab8"
+      },
+      {
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_minimal_bv_clock_sdr.py",
+        "sha256": "83a64fc8116794ac8a988c2469f08b78323b2a528f9f842fc894024a96efe129"
+      },
+      {
+        "path": "d_quotient_classical/reports/berger-minimal-bv-clock-sdr.md",
+        "sha256": "5b5e33de77371c8cb9103a87b314ec590d3e51a578bd7336e3de1f433d7788d2"
+      }
+    ],
+    "portable_receiving_schema": "quantum-weyl/transfer/schema/berger-clock-partial-sdr-portable-v1.schema.json",
+    "programme_registration": {
+      "contribution_path": "d_quotient_programme/contributions/classical-berger-minimal-bv-clock-sdr.json",
+      "contribution_sha256": "57bdbd275138f7e1e687b8d53a58a62586bf692220b1ab138e26f4a42534d454",
+      "programme_status_path": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json",
+      "programme_status_sha256": "b720f887ccd319a37111c0050cde098479f4f3d2cbf4dcc3c8deac7cad4d0d7d",
+      "registration_commit": "5530cb209359ba158aa8dda4743c6c9c9b171985",
+      "status": "VERIFIED"
+    },
+    "schema": "quantum-weyl/transfer/schema/berger-clock-partial-sdr-import-v1.schema.json",
+    "source_manifest": {
+      "berger_clock_sdr_import.py": "9d00234cf2a5001e0f14b09fbe45af1e629d5b1284c216be851689cd76356560",
+      "berger_clock_sdr_import_certificate.py": "88cf2bee64176a42fd61a6d16fe6445bbe1a86dc7b068517d546e5f8eaf2bb70",
+      "schema/berger-clock-partial-sdr-import-v1.schema.json": "c0110ac788b090e28368f220390dc21c00e37554d355655673740324361781eb",
+      "schema/berger-clock-partial-sdr-portable-v1.schema.json": "20535ab2cd98b0ac20694a1fb579930b55526aa22378e3545f65e41306952775",
+      "tests/test_berger_clock_sdr_import.py": "960a16b54ddc3e15406cdf3d5072e482156cc44d077c1a1ada3500b350908d9e"
+    },
+    "source_manifest_sha256": "08323a67e0a120bc3bf2bf55d61cefde0cfee466e6a0e0977e7849ede1e35fab",
+    "total_D_disposition": {
+      "classical_commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17",
+      "path": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json",
+      "sha256": "27c91dee3b0293c66b73a0ba2e21c3e7579de3c70d080685043729da3d6b62e4"
+    }
+  },
+  "result_id": "BERGER_CLOCK_PARTIAL_SDR_IMPORT",
+  "result_state": "PARTIAL_CLOCK_SECTOR_SDR_AVAILABLE_PORTABLE_MAPS_BLOCKED",
+  "schema": "quantum-weyl-berger-clock-partial-sdr-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "verified_evidence": {
+    "canonical_cotangent_lift": true,
+    "contraction_identity_on_clock_block": true,
+    "cyclic": true,
+    "homotopy_squared_zero": true,
+    "operator_fingerprints": {
+      "canonical_map": "e40c77a7718ab4a537350d0eb5e33c4e925527374aaa405ebf7ee640ec9e9bac",
+      "canonical_pairing": "d3aac8840613b84e7dc3bf54bcacf09beeb56306d97ec15eddefe4eda1066775",
+      "field_map": "9c0d9bde04cf43290458c48e2047e673c8c8ccf8d9743a1dfc8be91ef72cf4d3",
+      "fixture_field_map": "16a0479c032fec49096c0a2874136d243e3357afcaee5c0094e477ef33b4c08e",
+      "homotopy": "cb8ff1517c8fb11845cdd82a3e73581463268de0283e7de03e1ea0e091f2b568",
+      "new_gauge": "b30bc753e1f7f32bf63bb7d9d726056c410017cbfae7900b7d430fc1d5ec3836",
+      "old_gauge": "aefd5a88a0a935c595b01c8f9d077ee5e2ad2469499a05b7a429f5689c61f07e",
+      "omega_clock": "1ededba7f333b88ee631254db686f09c3b204388b6d14c370ccdac06537f8b98",
+      "q_clock": "3973ca6b0998ef7f7362bc6159cd941f7fd9e34ce6ede072fe702f4642a92197"
+    },
+    "q1_squared_zero": true,
+    "support_local": true
+  }
+}

@@ -114,10 +114,11 @@
     "artifact": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["path", "sha256"],
+      "required": ["path", "sha256", "git_commit"],
       "properties": {
         "path": {"type": "string", "minLength": 1},
-        "sha256": {"$ref": "#/$defs/hash"}
+        "sha256": {"$ref": "#/$defs/hash"},
+        "git_commit": {"$ref": "#/$defs/commit"}
       }
     },
     "receipt": {
