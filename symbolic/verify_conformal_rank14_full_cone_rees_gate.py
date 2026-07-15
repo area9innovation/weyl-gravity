@@ -31,6 +31,7 @@ def _checks(certificate: dict[str, object]) -> dict[str, bool]:
     maps = certificate["map_components"]
     cone = certificate["degree_zero_cone"]
     correction = certificate["coordinate_correction"]
+    diagnosis = certificate["coordinate_diagnosis"]
     decision = certificate["decision"]
     strata = certificate["causal_strata"]
     return {
@@ -74,6 +75,54 @@ def _checks(certificate: dict[str, object]) -> dict[str, bool]:
             "row_types": "a[3],s[1]",
             "rank_on_all_tested_strata": 4,
         },
+        "coordinate_mismatch_located": diagnosis[
+            "core_identity_vs_hand_metric_identity"
+        ]["defect_nonzero_entries"]
+        == 34
+        and diagnosis["core_identity_vs_hand_metric_identity"][
+            "generic_defect_rank"
+        ]
+        == 5
+        and diagnosis["core_identity_vs_hand_metric_identity"][
+            "projection_chain_defect_nonzero_entries"
+        ]
+        == 84
+        and diagnosis["core_identity_vs_hand_metric_identity"][
+            "projection_chain_generic_rank"
+        ]
+        == 5,
+        "minimal_core_repair": diagnosis["minimal_core_repair"][
+            "B_core_nonzero_entries"
+        ]
+        == 8
+        and diagnosis["minimal_core_repair"][
+            "N_Acore_minus_Bcore_Ccore_nonzero_entries"
+        ]
+        == 0
+        and diagnosis["minimal_core_repair"][
+            "unique_within_order_one_ansatz"
+        ],
+        "lifted_repair_scoped": diagnosis["lifted_repair"][
+            "second_square_nonzero_entries"
+        ]
+        == 0
+        and diagnosis["lifted_repair"][
+            "A_new_minus_A_old_nonzero_entries"
+        ]
+        == 15
+        and diagnosis["lifted_repair"]["A_new_minus_A_old_generic_rank"] == 9
+        and diagnosis["lifted_repair"]["A_leading_degree_zero_unchanged"]
+        and diagnosis["lifted_repair"]["B_new_emitted_degrees"] == [4, 2, 0]
+        and diagnosis["lifted_repair"]["B_new_nonzero_entries_by_degree"]
+        == {"4": 16, "2": 4, "0": 4},
+        "B_only_repair_rejected": not diagnosis[
+            "B_only_repair_with_A_old_possible"
+        ]
+        and all(
+            item
+            == {"Caux_rank": 9, "residual_rank": 4, "stacked_row_rank": 13}
+            for item in diagnosis["B_only_rowspace_test"].values()
+        ),
         "cohomology_refused": not cone["is_complex"]
         and not cone["cohomology_computed"]
         and all(

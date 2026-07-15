@@ -39,6 +39,7 @@ from .rank14_weyl_cotton_incoming_map_ledger import (
     _bach_to_curvature,
 )
 from .rank14_weyl_cotton_symbol_audit import Rank14WeylCottonSymbolAudit
+from .weyl_3plus1 import tracefree_symmetric_spacetime_basis
 
 
 REES_LEADING_DEGREES = {**MAP_DEGREES, "C": 0}
@@ -289,6 +290,183 @@ class Rank14FullConeReesGate:
             "cohomology_ranks": cohomology,
         }
 
+    def _coordinate_diagnosis(self) -> dict[str, object]:
+        """Locate the inferred second-chain-square coordinate mismatch."""
+
+        zeta = self.covector
+        source = _ordinary_system()
+        source_substitution = dict(zip(source.covector, zeta, strict=True))
+        negative = {entry: -entry for entry in zeta}
+        equation = source.gauge_invariant_flat_hessian.subs(source_substitution)
+        mass = equation[10:20, 10:20]
+
+        field_new_to_old = sp.eye(24)
+        field_new_to_old[10:20, :10] = -mass.inv() * equation[10:20, :10]
+        field_new_to_old[10:20, 20:24] = (
+            -mass.inv() * equation[10:20, 20:24]
+        )
+        field_pairing = source.field_fibre_pairing
+        field_dual_new_to_old = (
+            field_pairing.inv()
+            * field_new_to_old.subs(negative).inv().T
+            * field_pairing
+        ).applyfunc(sp.expand)
+        equation_inclusion = field_dual_new_to_old[:, 10:20]
+        equation_projection = (
+            sp.eye(24)[10:20, :] * field_dual_new_to_old.inv()
+        ).applyfunc(sp.expand)
+
+        ghost_new_to_old = sp.eye(9)
+        ghost_new_to_old[4:8, 8] = sp.Matrix(zeta)
+        ghost_pairing = source.gauge_fixing_pairing
+        ghost_dual_new_to_old = (
+            ghost_pairing.inv()
+            * ghost_new_to_old.subs(negative).inv().T
+            * ghost_pairing
+        ).applyfunc(sp.expand)
+        identity_projection = (
+            sp.eye(9)[4:9, :] * ghost_dual_new_to_old.inv()
+        ).applyfunc(sp.expand)
+
+        c_aux = sum(self.map_components["C"].values(), sp.zeros(9, 24))
+        c_core = (
+            identity_projection * c_aux * equation_inclusion
+        ).applyfunc(sp.expand)
+
+        # This is the table used by curvature_identity_chain_map.py.  It is
+        # expressed in action-Bach components, not in the actual core
+        # symmetric equation coordinates induced above.
+        hand_metric_identity = sp.zeros(5, 10)
+        signature = (-1, 1, 1, 1)
+        for derivative in range(4):
+            coefficient = sp.zeros(5, 10)
+            for column, tensor in enumerate(
+                tracefree_symmetric_spacetime_basis()
+            ):
+                for output in range(4):
+                    coefficient[output, column] = (
+                        -2 * signature[derivative] * tensor[derivative, output]
+                    )
+            hand_metric_identity += zeta[derivative] * coefficient
+        hand_core_defect = (c_core - hand_metric_identity).applyfunc(sp.expand)
+        projection_defect = (
+            identity_projection * c_aux
+            - hand_metric_identity * equation_projection
+        ).applyfunc(sp.expand)
+
+        a_old = sum(self.map_components["A"].values(), sp.zeros(40, 24))
+        n_curv = sum(self.map_components["N"].values(), sp.zeros(14, 40))
+        a_core = (a_old * equation_inclusion).applyfunc(sp.expand)
+
+        # Unique order-one factor through the actual core identity block.
+        b_core = sp.zeros(14, 5)
+        b_core[6, 1] = b_core[7, 2] = b_core[8, 3] = sp.Rational(1, 4)
+        b_core[12, 0] = sp.Rational(1, 4)
+        b_core[6, 4] = zeta[1] / 8
+        b_core[7, 4] = zeta[2] / 8
+        b_core[8, 4] = zeta[3] / 8
+        b_core[12, 4] = zeta[0] / 8
+        core_square = (n_curv * a_core - b_core * c_core).applyfunc(sp.expand)
+
+        a_corrected = (a_core * equation_projection).applyfunc(sp.expand)
+        b_corrected = (b_core * identity_projection).applyfunc(sp.expand)
+        corrected_second = (
+            n_curv * a_corrected - b_corrected * c_aux
+        ).applyfunc(sp.expand)
+        a_correction = (a_corrected - a_old).applyfunc(sp.expand)
+        corrected_a_components = _weighted_components(
+            a_corrected,
+            zeta,
+            OBJECT_WEIGHTS["E"],
+            OBJECT_WEIGHTS["Q"],
+        )
+        corrected_b_components = _weighted_components(
+            b_corrected,
+            zeta,
+            OBJECT_WEIGHTS["I"],
+            OBJECT_WEIGHTS["J"],
+        )
+
+        # Keeping A_old cannot be repaired by B alone: the residual adds four
+        # rows to the row space of Caux at every tested covector.
+        b_only_residual = (
+            n_curv * a_old - b_corrected * c_aux
+        ).applyfunc(sp.expand)
+        samples = {}
+        for name, value in {
+            "generic": (2, 1, 3, 5),
+            "timelike": (2, 1, 0, 0),
+            "spacelike": (0, 1, 0, 0),
+            "temporal": (1, 0, 0, 0),
+            "null": (1, 1, 0, 0),
+        }.items():
+            substitution = dict(zip(zeta, value, strict=True))
+            c_value = c_aux.subs(substitution)
+            residual_value = b_only_residual.subs(substitution)
+            samples[name] = {
+                "Caux_rank": c_value.rank(),
+                "residual_rank": residual_value.rank(),
+                "stacked_row_rank": c_value.col_join(residual_value).rank(),
+            }
+        return {
+            "core_identity_vs_hand_metric_identity": {
+                "defect_nonzero_entries": _nonzero_count(hand_core_defect),
+                "generic_defect_rank": hand_core_defect.subs(
+                    dict(zip(zeta, (2, 1, 3, 5), strict=True))
+                ).rank(),
+                "projection_chain_defect_nonzero_entries": _nonzero_count(
+                    projection_defect
+                ),
+                "projection_chain_generic_rank": projection_defect.subs(
+                    dict(zip(zeta, (2, 1, 3, 5), strict=True))
+                ).rank(),
+                "cause": (
+                    "hand C_met uses action-Bach tracefree components; the "
+                    "66-to-30 conjugation induces symmetric fibre-paired "
+                    "core equation coordinates"
+                ),
+            },
+            "minimal_core_repair": {
+                "B_core_nonzero_entries": _nonzero_count(b_core),
+                "formula": [
+                    "B_core[a_i,div_i]=+1/4",
+                    "B_core[a_i,Weyl]=(1/8) partial_i",
+                    "B_core[s,div_0]=+1/4",
+                    "B_core[s,Weyl]=(1/8) partial_t",
+                ],
+                "N_Acore_minus_Bcore_Ccore_nonzero_entries": _nonzero_count(
+                    core_square
+                ),
+                "unique_within_order_one_ansatz": True,
+            },
+            "lifted_repair": {
+                "A_new": "A_core p_equation",
+                "B_new": "B_core p_identity",
+                "second_square_nonzero_entries": _nonzero_count(
+                    corrected_second
+                ),
+                "A_new_minus_A_old_nonzero_entries": _nonzero_count(a_correction),
+                "A_new_minus_A_old_generic_rank": a_correction.subs(
+                    dict(zip(zeta, (2, 1, 3, 5), strict=True))
+                ).rank(),
+                "A_leading_degree_zero_unchanged": (
+                    corrected_a_components[0] == self.map_components["A"][0]
+                ),
+                "B_new_emitted_degrees": list(corrected_b_components),
+                "B_new_nonzero_entries_by_degree": {
+                    str(degree): _nonzero_count(matrix)
+                    for degree, matrix in corrected_b_components.items()
+                },
+            },
+            "B_only_repair_with_A_old_possible": False,
+            "B_only_rowspace_test": samples,
+            "remaining_task": (
+                "reconcile the lower A_new correction with the exact first "
+                "chain relation and solve component weights for the corrected "
+                "B_new degrees before rebuilding the cone"
+            ),
+        }
+
     def verify(self) -> None:
         if [matrix.shape for matrix in self.leading_differentials] != [
             (24, 9),
@@ -367,6 +545,7 @@ class Rank14FullConeReesGate:
         ).applyfunc(sp.expand)
         b_c = (b_zero * c_zero).applyfunc(sp.expand)
         final_defect = (n_a - b_c).applyfunc(sp.expand)
+        coordinate_diagnosis = self._coordinate_diagnosis()
         return {
             "schema": "pure-weyl-rank14-full-cone-rees-gate-v1",
             "scope": (
@@ -438,6 +617,7 @@ class Rank14FullConeReesGate:
                     "their filtration"
                 ),
             },
+            "coordinate_diagnosis": coordinate_diagnosis,
             "decision": {
                 "leading_associated_graded_cone_is_a_complex": False,
                 "leading_associated_graded_cohomology_computed": False,

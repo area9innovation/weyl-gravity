@@ -88,6 +88,73 @@
     "raw_action_dual_is_the_fibre_identified_Q_block": false,
     "raw_action_dual_row": "K(-zeta)^T J"
   },
+  "coordinate_diagnosis": {
+    "B_only_repair_with_A_old_possible": false,
+    "B_only_rowspace_test": {
+      "generic": {
+        "Caux_rank": 9,
+        "residual_rank": 4,
+        "stacked_row_rank": 13
+      },
+      "null": {
+        "Caux_rank": 9,
+        "residual_rank": 4,
+        "stacked_row_rank": 13
+      },
+      "spacelike": {
+        "Caux_rank": 9,
+        "residual_rank": 4,
+        "stacked_row_rank": 13
+      },
+      "temporal": {
+        "Caux_rank": 9,
+        "residual_rank": 4,
+        "stacked_row_rank": 13
+      },
+      "timelike": {
+        "Caux_rank": 9,
+        "residual_rank": 4,
+        "stacked_row_rank": 13
+      }
+    },
+    "core_identity_vs_hand_metric_identity": {
+      "cause": "hand C_met uses action-Bach tracefree components; the 66-to-30 conjugation induces symmetric fibre-paired core equation coordinates",
+      "defect_nonzero_entries": 34,
+      "generic_defect_rank": 5,
+      "projection_chain_defect_nonzero_entries": 84,
+      "projection_chain_generic_rank": 5
+    },
+    "lifted_repair": {
+      "A_leading_degree_zero_unchanged": true,
+      "A_new": "A_core p_equation",
+      "A_new_minus_A_old_generic_rank": 9,
+      "A_new_minus_A_old_nonzero_entries": 15,
+      "B_new": "B_core p_identity",
+      "B_new_emitted_degrees": [
+        4,
+        2,
+        0
+      ],
+      "B_new_nonzero_entries_by_degree": {
+        "0": 4,
+        "2": 4,
+        "4": 16
+      },
+      "second_square_nonzero_entries": 0
+    },
+    "minimal_core_repair": {
+      "B_core_nonzero_entries": 8,
+      "N_Acore_minus_Bcore_Ccore_nonzero_entries": 0,
+      "formula": [
+        "B_core[a_i,div_i]=+1/4",
+        "B_core[a_i,Weyl]=(1/8) partial_i",
+        "B_core[s,div_0]=+1/4",
+        "B_core[s,Weyl]=(1/8) partial_t"
+      ],
+      "unique_within_order_one_ansatz": true
+    },
+    "remaining_task": "reconcile the lower A_new correction with the exact first chain relation and solve component weights for the corrected B_new degrees before rebuilding the cone"
+  },
   "decision": {
     "causal_green_homotopy": false,
     "complete_Rees_PBW_cone_constructed": false,
