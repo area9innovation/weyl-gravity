@@ -1,0 +1,381 @@
+{
+  "claim_boundary": "Exact oscillator/CE comparisons after certified local reduction. Not a covariant D-charge calculation and not evidence for LORENTZIAN-CAUSAL claims.",
+  "dependency_tags": [
+    "REDUCED-MODE",
+    "LOCAL-ALGEBRAIC"
+  ],
+  "flags": {
+    "D_charge_computed_here": false,
+    "delete_D_only_is_valid_Lie_algebra": false,
+    "full_EAL_one_particle_module_survives": true,
+    "lowering_subalgebra_closed": true,
+    "lowering_subalgebra_physical": false,
+    "negative_norm_one_particle_branches_survive": true,
+    "no_residual_gauging_complex_exact": true
+  },
+  "illustrative_lowering_subalgebra": {
+    "D_action": "global; [D,K^-_a]=-K^-_a, so D normalizes n_-",
+    "additional_centered_weight_four": {
+      "two_particle_number_2": {
+        "dimension": 55,
+        "ghost_degree": 0
+      },
+      "vacuum_particle_number_0": {
+        "dimension": 1,
+        "ghost_degree": 4
+      },
+      "weyl_square_gram": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "weyl_square_subspace_dimension": 2
+    },
+    "certified_pairing": {
+      "H0_D_weight_2_basis": "E2^+ followed by E2^- magnetic basis",
+      "gram_diagonal": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "higher_ghost_degree_pairing": "NOT_COMPUTED"
+    },
+    "cutoff_complete_total_D_weights": [
+      2,
+      3,
+      4
+    ],
+    "one_particle_table": [
+      {
+        "cochain_dimensions_q0_to_q4": [
+          10,
+          0,
+          0,
+          0,
+          0
+        ],
+        "cohomology_dimensions_q0_to_q4": [
+          10,
+          0,
+          0,
+          0,
+          0
+        ],
+        "differential_ranks_d0_to_d3": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "particle_number": 1,
+        "total_D_weight": 2
+      },
+      {
+        "cochain_dimensions_q0_to_q4": [
+          40,
+          40,
+          0,
+          0,
+          0
+        ],
+        "cohomology_dimensions_q0_to_q4": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "differential_ranks_d0_to_d3": [
+          40,
+          0,
+          0,
+          0
+        ],
+        "particle_number": 1,
+        "total_D_weight": 3
+      },
+      {
+        "cochain_dimensions_q0_to_q4": [
+          82,
+          160,
+          60,
+          0,
+          0
+        ],
+        "cohomology_dimensions_q0_to_q4": [
+          0,
+          18,
+          0,
+          0,
+          0
+        ],
+        "differential_ranks_d0_to_d3": [
+          82,
+          60,
+          0,
+          0
+        ],
+        "particle_number": 1,
+        "total_D_weight": 4
+      }
+    ],
+    "open": [
+      "all-weight n_- cohomology beyond the cutoff-complete weight-four window",
+      "complementary-degree ghost pairing outside the displayed H0 classes",
+      "physical justification for gauging n_- rather than another closed subgroup"
+    ],
+    "status": "ILLUSTRATIVE_CLOSED_SUBALGEBRA_NOT_A_PHYSICAL_SELECTION",
+    "subalgebra": "n_- = span(K^-_{a}), abelian of dimension 4"
+  },
+  "invalid_delete_D_comparison": {
+    "closed": false,
+    "consequence": "there is no CE complex obtained by deleting only the D ghost",
+    "exact_witness": "(1/4) sum_a [K^-_a,K^+_a] = 2 D",
+    "invalid_proposal": "span of all certified residual generators except D"
+  },
+  "no_residual_gauging": {
+    "Weyl_squares": {
+      "D_weight": 4,
+      "fate": "survive as ordinary degree-zero vectors inside the 55-dimensional Sym^2(E2^+ + E2^-) space; without residual gauging they are not cohomologically singled out",
+      "gram": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "particle_number": 2,
+      "span_dimension": 2
+    },
+    "cohomological_degree": 0,
+    "cohomology_through_weight_four": [
+      {
+        "D_weight": 0,
+        "cohomological_degree": 0,
+        "dimension": 1,
+        "gram_signature": [
+          1,
+          0
+        ],
+        "particle_number": 0
+      },
+      {
+        "D_weight": 2,
+        "branches": [
+          {
+            "D_weight": 2,
+            "branch": "E",
+            "dimension": 10,
+            "gram_sign": 1
+          }
+        ],
+        "cohomological_degree": 0,
+        "dimension": 10,
+        "gram_signature": [
+          10,
+          0
+        ],
+        "particle_number": 1
+      },
+      {
+        "D_weight": 3,
+        "branches": [
+          {
+            "D_weight": 3,
+            "branch": "E",
+            "dimension": 24,
+            "gram_sign": 1
+          },
+          {
+            "D_weight": 3,
+            "branch": "A",
+            "dimension": 16,
+            "gram_sign": -1
+          }
+        ],
+        "cohomological_degree": 0,
+        "dimension": 40,
+        "gram_signature": [
+          24,
+          16
+        ],
+        "particle_number": 1
+      },
+      {
+        "D_weight": 4,
+        "branches": [
+          {
+            "D_weight": 4,
+            "branch": "E",
+            "dimension": 42,
+            "gram_sign": 1
+          },
+          {
+            "D_weight": 4,
+            "branch": "A",
+            "dimension": 30,
+            "gram_sign": -1
+          },
+          {
+            "D_weight": 4,
+            "branch": "L",
+            "dimension": 10,
+            "gram_sign": -1
+          }
+        ],
+        "cohomological_degree": 0,
+        "dimension": 82,
+        "gram_signature": [
+          42,
+          40
+        ],
+        "particle_number": 1
+      },
+      {
+        "D_weight": 4,
+        "basis": "normalized occupation basis of Sym^2(E2^+ + E2^-)",
+        "cohomological_degree": 0,
+        "dimension": 55,
+        "gram_signature": [
+          55,
+          0
+        ],
+        "particle_number": 2
+      }
+    ],
+    "complex": "H_local with zero residual differential; no residual CE ghosts",
+    "differential": "0",
+    "full_weight_four_gram": {
+      "basis_order": "E4, A4, L4 in both chiralities, then Sym^2(E2^+ + E2^-)",
+      "diagonal_blocks": [
+        "+I_42",
+        "-I_30",
+        "-I_10",
+        "+I_55"
+      ],
+      "signature": [
+        97,
+        40
+      ]
+    },
+    "helicity_plus_minus_2": {
+      "dimension": 10,
+      "gram": "I_10",
+      "lowest_D_weight": 2,
+      "returns": true
+    },
+    "one_particle_all_level_formula": {
+      "A_n": {
+        "dimension": "2(n-1)(n+1)",
+        "gram_sign": -1,
+        "range": "n>=3"
+      },
+      "E_n": {
+        "dimension": "2(n-1)(n+3)",
+        "gram_sign": 1,
+        "range": "n>=2"
+      },
+      "L_n": {
+        "dimension": "2(n-3)(n+1)",
+        "gram_sign": -1,
+        "range": "n>=4"
+      }
+    },
+    "one_particle_through_weight_four": [
+      {
+        "D_weight": 2,
+        "branches": [
+          {
+            "D_weight": 2,
+            "branch": "E",
+            "dimension": 10,
+            "gram_sign": 1
+          }
+        ],
+        "dimension": 10,
+        "gram_signature": [
+          10,
+          0
+        ],
+        "particle_number": 1
+      },
+      {
+        "D_weight": 3,
+        "branches": [
+          {
+            "D_weight": 3,
+            "branch": "E",
+            "dimension": 24,
+            "gram_sign": 1
+          },
+          {
+            "D_weight": 3,
+            "branch": "A",
+            "dimension": 16,
+            "gram_sign": -1
+          }
+        ],
+        "dimension": 40,
+        "gram_signature": [
+          24,
+          16
+        ],
+        "particle_number": 1
+      },
+      {
+        "D_weight": 4,
+        "branches": [
+          {
+            "D_weight": 4,
+            "branch": "E",
+            "dimension": 42,
+            "gram_sign": 1
+          },
+          {
+            "D_weight": 4,
+            "branch": "A",
+            "dimension": 30,
+            "gram_sign": -1
+          },
+          {
+            "D_weight": 4,
+            "branch": "L",
+            "dimension": 10,
+            "gram_sign": -1
+          }
+        ],
+        "dimension": 82,
+        "gram_signature": [
+          42,
+          40
+        ],
+        "particle_number": 1
+      }
+    ],
+    "one_particle_verdict": "FULL_E_A_L_MODULE_SURVIVES",
+    "residual_role": "SO(4,2) acts globally"
+  },
+  "physical_selection": "OPEN_PENDING_COVARIANT_D_CHARGE",
+  "provenance": {
+    "symbolic/verify_conformal_generator_all_levels.py": "9b7f90e8377d794cd2fa4cde8b34a88baf2cba90c41074cb1a4a0fde4c77a6a0",
+    "symbolic/verify_conformal_global_brst_window.py": "3b38f85295430ae5b67138b29ade1aef0583b1a9f0e22ea9602e5738055b5614",
+    "symbolic/verify_conformal_relative_brst_weight4.py": "a2aee27db8bf2a389733770f006d29f640902b17cd16d9ef598bf41038be6ec3"
+  },
+  "schema": "conformal-d-global-alternatives-v1",
+  "verification_command": "python3 symbolic/verify_conformal_d_global_alternatives.py --write-result"
+}
