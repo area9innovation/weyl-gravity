@@ -1,0 +1,219 @@
+{
+  "ansatz": {
+    "PBW_curvature_exact": true,
+    "first_order_sums": "the exact 45-dimensional simultaneous cubic kernel",
+    "left": "DP=(Box+A_L^-+B_L^-)(Box+A_L^++B_L^+)",
+    "right": "PD=(Box+A_R^-+B_R^-)(Box+A_R^++B_R^+)",
+    "total_variables": 421,
+    "variables": {
+      "B_L_minus": {
+        "dimension": 38,
+        "offset": 269
+      },
+      "B_L_plus": {
+        "dimension": 38,
+        "offset": 307
+      },
+      "B_R_minus": {
+        "dimension": 38,
+        "offset": 345
+      },
+      "B_R_plus": {
+        "dimension": 38,
+        "offset": 383
+      },
+      "X0": {
+        "dimension": 38,
+        "offset": 231
+      },
+      "cubic_kernel": {
+        "dimension": 45,
+        "offset": 0
+      },
+      "left_first_order_split": {
+        "dimension": 93,
+        "offset": 45
+      },
+      "right_first_order_split": {
+        "dimension": 93,
+        "offset": 138
+      }
+    }
+  },
+  "outcome": {
+    "complete_421_variable_system_assembled": true,
+    "exact_obstruction_found": false,
+    "exact_solution_found": false,
+    "flag_promoted": false,
+    "green_realization_proved": false,
+    "mixed_order_factorization_proved": false,
+    "order_two_schur_projection_completed": true
+  },
+  "quadratic_order_schur_gate": {
+    "cokernel_dimension": 2384,
+    "constant_polynomial_obstruction": false,
+    "determined_linear_variables": 100,
+    "exact_schur_elimination_feasible": true,
+    "free_algebraic_variables_after_order_two": 90,
+    "linear_variable_count": 190,
+    "linear_variables": [
+      "X0",
+      "B_L_minus",
+      "B_L_plus",
+      "B_R_minus",
+      "B_R_plus"
+    ],
+    "matrix_shape": [
+      2484,
+      190
+    ],
+    "nonzero_projected_constraints": 2130,
+    "pivot_columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      114,
+      115,
+      119,
+      122,
+      123,
+      124,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      149
+    ],
+    "pivot_rows_sha256": "cc6c9078b08af5103f93db1f5bc512bccb250358d1df8254ff8b9322abccfba0",
+    "projected_content_sha256": "3b57306ec54db2f927be135dd84c4a230b980655d4d44c51376503c746ccafab",
+    "projected_monomial_occurrences_by_degree_0_to_2": [
+      363,
+      1188,
+      50568
+    ],
+    "projected_term_count": 52119,
+    "pure_split_only_reduction_available": false,
+    "rank": 100,
+    "reason_free_algebraic_variables_remain": "the fixed order-two linear matrix has rank 100, leaving 90 algebraic variables; at orders one and zero the B blocks also occur bilinearly in A B and B B products",
+    "residual_constant_or_split_polynomial_terms": 34340,
+    "schur_polynomial_projection_completed": true,
+    "unique_constraints_up_to_scale": 365
+  },
+  "schema": "pure-weyl-general-nonlinear-mixed-order-factor-system-v1",
+  "sparse_system": {
+    "content_sha256_by_derivative_order_0_to_4": [
+      "968b990b01ca85171146e7d910d117a45fec4f0aa7d6f5c9aafb1dac6d61c2ff",
+      "c8649eeeef9033a48963252a1bd4cfc079e896008dc34e46bce5c2cfceeceee6",
+      "de1da6b876effbe0ede63ba989a69c6d190d966744eb357ccc3402fb0bd3c7bf",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "maximum_polynomial_degree": 2,
+    "monomial_occurrences_by_degree_0_to_2": [
+      953,
+      8158,
+      50628
+    ],
+    "row_counts_by_derivative_order_0_to_4": [
+      240,
+      960,
+      2484,
+      0,
+      0
+    ],
+    "term_counts_by_derivative_order_0_to_4": [
+      4945,
+      16263,
+      38531,
+      0,
+      0
+    ]
+  },
+  "theorem_boundary": "the complete general two-nontrivial-factor coefficient system is assembled exactly as a sparse quadratic PBW system.  The fixed order-two algebraic-variable Schur gate is classified, but its polynomial cokernel equations and the lower-order equations have not yet been solved; no factorization or Green theorem follows"
+}

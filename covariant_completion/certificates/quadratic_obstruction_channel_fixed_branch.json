@@ -1,0 +1,71 @@
+{
+  "complete_order_two_system": {
+    "augmented_rank": 101,
+    "coefficient_rank": 100,
+    "consistent": false,
+    "equation_shape": [
+      1377,
+      190
+    ],
+    "invariant_channel": {
+      "all_190_variable_coefficients": 0,
+      "map": "h_22 -> f_01",
+      "required_right_hand_side": "16",
+      "side": "DP",
+      "symmetric_derivative": "nabla_(0 nabla_1)"
+    },
+    "kernel_dimension_of_coefficient_matrix": 90,
+    "left_null_obstruction": {
+      "lT_A_is_zero": true,
+      "lT_b": "16",
+      "support": [
+        {
+          "coefficient": "1",
+          "equation_row": 133,
+          "input_component": 7,
+          "output_component": 11,
+          "side": "DP",
+          "symmetric_derivative_word": [
+            0,
+            1
+          ]
+        }
+      ],
+      "support_size": 1
+    },
+    "sides": [
+      "DP",
+      "PD"
+    ],
+    "symmetrized_PBW_curvature_exact": true,
+    "variables": {
+      "B_L_minus": 38,
+      "B_L_plus": 38,
+      "B_R_minus": 38,
+      "B_R_plus": 38,
+      "shared_X0": 38,
+      "total": 190
+    }
+  },
+  "fixed_first_order_split": {
+    "left_A_minus": "e_11-e_66",
+    "left_A_plus": "-e_11+e_66",
+    "left_sum": 0,
+    "right_instantiation": "same split",
+    "right_split_independence_of_obstruction": "the exact left-null witness is supported only on DP",
+    "source_certificate": "quadratic_obstruction_channel.json"
+  },
+  "outcome": {
+    "flag_promoted": false,
+    "general_two_nontrivial_factor_branch_decided": false,
+    "green_realization_proved": false,
+    "minimal_rational_channel_split_extends_to_order_two": false,
+    "mixed_order_factorization_proved": false,
+    "obstructed_before_order_one_and_zero": true,
+    "order_one_system_assembled": false,
+    "order_zero_system_assembled": false,
+    "other_first_order_splits_decided": false
+  },
+  "schema": "pure-weyl-quadratic-obstruction-channel-fixed-branch-v1",
+  "theorem_boundary": "The support-minimal rational split which repairs the old f_0i-to-f_00 orbit fails the complete simultaneous DP/PD order-two equations after exhausting all 190 invariant algebraic variables.  This is a no-go only for that fixed left split; it neither obstructs other nonzero cubic sums nor the complete 421-parameter nonlinear family."
+}

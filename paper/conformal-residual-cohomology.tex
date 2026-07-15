@@ -1293,16 +1293,22 @@ $SO(3)$ cylinder-holonomy decomposition gives
 \end{equation}
 The exact cubic divisibility equations for both $DP$ and $PD$ have a
 simultaneous $45$-parameter solution family.  There is therefore no cubic
-obstruction.  The curvature-corrected quadratic and lower equations, which
-also contain nonlinear products of the two factor first-order matrices,
-remain unassembled and unsolved.  Restoring the two independent factor
-splittings and all algebraic coefficients gives
+obstruction.  Restoring the two independent factor splittings and all
+algebraic coefficients gives
 \begin{equation}\label{eq:lower-factor-full-variable-count}
  45+2\cdot93+5\cdot38=421
 \end{equation}
 nonlinear unknowns after the cubic gate.  The scalar principal normalization
 $qI_{24}$ loses no invariant solutions, since a parallel invertible
 $qH/qH^{-1}$ pair may be redistributed between the two factors.
+The complete $421$-variable problem is now assembled as an exact sparse
+quadratic symmetrized-PBW system.  Its order-zero, order-one and order-two
+row counts are respectively $240$, $960$ and $2484$.  At order two, the
+$2484\times190$ matrix multiplying the algebraic variables has rank $100$,
+so its cokernel has dimension $2384$ and $90$ algebraic variables remain
+free.  Exact Schur projection gives $2130$ nonzero polynomial constraints,
+$365$ up to scale, and no constant polynomial obstruction.  These projected
+equations and the lower orders have not been solved.
 
 A convention audit corrected the covector commutator: its raised curvature
 index uses the spatial projector, not a four-dimensional Kronecker delta, so
@@ -1315,9 +1321,31 @@ ready.  A naive transpose/reversal of the already sorted
 $\Box^2$ component table nevertheless leaves a $48$-entry defect.  This is
 not an independent primal-composition counterexample: the sorted coefficient
 matrices no longer individually carry their derivative-index slots.  It does
-show that the naive table adjoint is invalid.  A pairing-aware general
-formal-adjoint backend and the $421$-variable coefficient solve remain
-prerequisites for a trusted quadratic/lower certificate.
+show that the naive table adjoint is invalid.  The required pairing-aware
+adjoint has now been constructed on the symmetrized-PBW coefficient tensors.
+With the action pairing it verifies
+
+\begin{equation}\label{eq:general-factor-sharp-reduction}
+ P^\sharp=P,\qquad D_{\rm naive}^\sharp=D_{\rm naive},\qquad
+ (DP)^\sharp=PD.
+\end{equation}
+
+Requiring $D^\sharp=D$ reduces the invariant first-order family from $93$ to
+$44$ dimensions and its algebraic family from $38$ to $24$.  The resulting
+cubic matrix has size $11520\times137$, rank $116$, and a $21$-dimensional
+kernel.  Taking $R_-=L_+^\sharp$ and $R_+=L_-^\sharp$ makes the right
+factorization the adjoint of the left rather than an independent system.
+Restoring the left splitting and algebraic coefficients leaves a
+$214$-parameter nonlinear problem.  Its complete order-two gate has $1242$
+rows; the $1242\times100$ algebraic matrix has rank $52$, leaving $48$ free
+algebraic directions.  Exact cokernel projection gives $1050$ nonzero
+constraints, $179$ up to scale, with no constant polynomial obstruction.
+The projected quadratic constraints and orders one and zero remain unsolved
+and unpromoted.  All $179$ normalized constraints have maximal degree two.
+Their $1497$ quadratic monomials have coefficient rank $124$; the resulting
+$55$ left-kernel combinations have zero affine part.  Hence exact
+vector-space reduction eliminates no variable, and the next step is a
+genuinely nonlinear ideal calculation rather than further linear algebra.
 
 The complete bare-wave subfamily can nevertheless be decided exactly.  If
 one factor in each of $DP$ and $PD$ is the literal rough $Box$, the four
@@ -1334,7 +1362,24 @@ $\nabla_{(0}\nabla_{1)}$ mapping $f_{01}$ to $f_{00}$ is $-8$ in the
 required right-hand side and vanishes in every correction column.  This is
 a no-go only for the bare-$\Box$ subfamily.  When both factors have nonzero
 first-order coefficients, the quadratic product $A_-A_+$ changes the
-order-two equations and remains to be solved.
+order-two equations.  In fact, a support-minimal rational zero-sum split
+using two invariant directions repairs this row together with its full
+$SO(3)$ orbit $f_{0i}\to f_{00}$.  The old bare-wave obstruction therefore
+does not extend to the general family.  Fixing that minimal split nevertheless
+produces a new scoped order-two obstruction after all $190$ invariant
+algebraic variables are admitted:
+
+\begin{equation}\label{eq:fixed-minimal-split-rank-no-go}
+ \rank A=100,
+ \qquad
+ \rank[A\mid b]=101.
+\end{equation}
+
+Its one-row left-null witness is the coefficient of
+$\nabla_{(0}\nabla_{1)}:h_{22}\to f_{01}$, whose required value is $16$ and
+whose $190$ variable coefficients vanish.  This rules out only that fixed
+minimal split, not other first-order splits, the complete $421$-variable
+system, or the $214$-parameter sharp subfamily.
 Thus the cubic gate proves neither a factorization nor a Green theorem.
 
 The exhaustive relative-incidence ledger contains nine possible odd-adjoint
@@ -1367,8 +1412,38 @@ The temporal leading coefficient of the characteristic determinant therefore
 vanishes and no positive temporal symmetrizer exists for this realization.
 This is a no-go only for the smallest pair-$4+5$ ansatz with
 \eqref{eq:minimal-saddle-instantiation}; it does not exclude larger relative
-witnesses or an additional support-local first-order prolongation.  No flag
-is promoted.
+witnesses or an additional support-local first-order prolongation.
+
+The expanded-relative incidence audit exhausts all nine odd-adjoint pairs
+and the $162$-dimensional Hom family determined by the declared cylinder
+$SO(3)$ multiplicities.  It finds exactly
+three minimal reciprocal two-pair candidates, labelled $1+6$, $1+7$ and
+$2+7$.  Even using all reciprocal curvature partners, the maximum cross-rank
+on each central $24$-component auxiliary block is $21$.  The three missing
+directions are rotation scalars.  Hence any ansatz which makes the entire
+central auxiliary diagonal subprincipal has temporal rank defect at least
+three.  A viable expanded witness must retain or locally prolong these scalar
+directions.  This is a scoped design theorem; coefficient tables,
+characteristics and a symmetrizer remain open, and no flag is promoted.
+The corresponding rotation-generator commutants have not yet been generated
+coefficientwise, so completeness of the $162$-dimensional family is scoped
+to that multiplicity ledger.
+
+The three uncovered scalar coordinates are exactly $h_{00}$, $f_{00}$ and
+$v_0$.  The restriction of the existing $KC$ coefficient to these directions
+is triangular of rank three and determinant $-1$.  For the pair-$1+6$
+candidate, explicit finite-order coefficient maps give the exact numerator
+identity
+
+\begin{equation}\label{eq:relative-pair16-numerator}
+ K R_1 N_{\rm curv}^{\sharp}R_6^{\sharp}=\Pi_{\rm vector}.
+\end{equation}
+
+This is not yet the saddle Schur term $BD^{-1}C$.  The actual
+$92$-component curvature temporal diagonal, its Douglis inverse, and the
+complete $116\times116$ weighted symbol have not been assembled.  Thus no
+full-rank temporal-saddle or hyperbolicity claim follows from
+\eqref{eq:relative-pair16-numerator}.
 
 The selected causal route therefore has the following explicit flags:
 \begin{equation}\label{eq:open-curvature-flags}
@@ -3439,21 +3514,35 @@ $(P_2-qI)^2=0$ with algebraic/wave/biwave Smith multiplicities $6/12/6$,
 but the naive frozen lower completion has nonzero lower-order remainder.
 The complete invariant ansatz has $\dim D_0=38$ and $\dim D_1=93$;
 simultaneous $DP/PD$ cubic divisibility leaves a $45$-parameter family and
-hence no cubic obstruction, while the curvature-corrected nonlinear
-quadratic and lower solve has $421$ post-cubic variables and remains open.
+hence no cubic obstruction.  The complete $421$-variable sparse quadratic
+PBW system is assembled; its order-two $2484\times190$ algebraic matrix has
+rank $100$, and exact cokernel projection yields $2130$ nonzero polynomial
+constraints with no constant obstruction.  The projected and lower-order
+systems remain open.
 The corrected spatial-projector curvature sign passes focused primal
 coordinate-jet tests, and exact symmetrized-jet PBW inversion certifies the
-composition backend.  The $48$-entry naive sorted-table defect instead leaves
-the pairing-aware general adjoint and the coefficient solve open.  The four
+composition backend.  The $48$-entry naive sorted-table defect is resolved by
+the pairing-aware symmetrized-PBW adjoint: imposing $D^\sharp=D$ leaves
+$44/24$ first/zeroth-order complement dimensions, a $21$-dimensional cubic
+family and a $214$-parameter nonlinear sharp branch.  Its exact order-two
+Schur gate has rank $52/100$ and $1050$ nonzero projected constraints, but
+no constant obstruction or affine-linear consequence.  The four
 bare-$\Box$ orientations are exactly inconsistent with rank $159/160$ and a
-common one-row $f_{01}\to f_{00}$ obstruction; the two-nontrivial-factor
-branch remains open.
+common one-row $f_{01}\to f_{00}$ obstruction.  A two-direction bilinear
+split repairs its full $SO(3)$ orbit, but that fixed minimal split fails the
+complete order-two system with rank $100/101$ and a one-row
+$h_{22}\to f_{01}$ obstruction.  This does not decide the general
+two-nontrivial-factor branch.
 The smallest reciprocal relative saddle is the odd-adjoint pair $4+5$.
 Its Schur complement is nonlocal.  The natural
 $A_F=p_FA_{\rm eq}$, $S=A_F^\sharp$, $R=A_F^\sharp J_U$ realization has
 balanced timelike rank at most $107/116$, zero temporal leading coefficient
 and no positive symmetrizer.  This excludes only that realization, not larger
-relative witnesses or a support-local first-order prolongation.\\
+relative witnesses or a support-local first-order prolongation.  The complete
+$162$-dimensional expanded-relative family contains three reciprocal
+two-pair candidates, but its central cross-ranks are only $21/24$; the three
+missing directions are rotation scalars which must be retained or locally
+prolonged.\\
 Curvature causal realization and final covariant $H^4$ & Open, fail-closed &
 Nine flags in \eqref{eq:open-curvature-flags} are true and the six
 causal/transport flags remain false.  They require the prolonged Green

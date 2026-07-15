@@ -1,0 +1,160 @@
+{
+  "exact_channel_polynomial": {
+    "defect_correction": "-C(T,S_L-T)",
+    "factor_coefficient": "C(T,S_L-T)=sum_ij T_i (S_L_j-T_j) M_ij",
+    "matrix_rank": 8,
+    "matrix_shape": [
+      93,
+      93
+    ],
+    "nonzero_monomial_count": 10,
+    "nonzero_monomials": [
+      {
+        "coefficient": "4",
+        "inner_basis": 65,
+        "outer_basis": 2
+      },
+      {
+        "coefficient": "8",
+        "inner_basis": 66,
+        "outer_basis": 11
+      },
+      {
+        "coefficient": "4",
+        "inner_basis": 67,
+        "outer_basis": 11
+      },
+      {
+        "coefficient": "4",
+        "inner_basis": 68,
+        "outer_basis": 17
+      },
+      {
+        "coefficient": "8",
+        "inner_basis": 69,
+        "outer_basis": 26
+      },
+      {
+        "coefficient": "4",
+        "inner_basis": 70,
+        "outer_basis": 26
+      },
+      {
+        "coefficient": "4",
+        "inner_basis": 71,
+        "outer_basis": 32
+      },
+      {
+        "coefficient": "4",
+        "inner_basis": 20,
+        "outer_basis": 47
+      },
+      {
+        "coefficient": "4",
+        "inner_basis": 21,
+        "outer_basis": 68
+      },
+      {
+        "coefficient": "4",
+        "inner_basis": 22,
+        "outer_basis": 89
+      }
+    ]
+  },
+  "minimal_rational_assignment": {
+    "A_minus": [
+      {
+        "basis": 11,
+        "coefficient": "1"
+      },
+      {
+        "basis": 66,
+        "coefficient": "-1"
+      }
+    ],
+    "A_minus_plus_A_plus": 0,
+    "A_plus": [
+      {
+        "basis": 11,
+        "coefficient": "-1"
+      },
+      {
+        "basis": 66,
+        "coefficient": "1"
+      }
+    ],
+    "defect_correction_value": "-8",
+    "factor_bilinear_channel_value": "8",
+    "independent_invariant_basis_directions": 2,
+    "minimality_within_zero_sum_branch": "all 93 diagonal entries M_ii vanish, so one invariant basis direction gives zero; the displayed two-direction assignment is therefore support-minimal in the canonical basis",
+    "required_minus_eight_attained": true,
+    "simultaneous_cubic_solution": "X_1=S_L=S_R=0"
+  },
+  "outcome": {
+    "bare_Box_common_obstruction_survives_general_branch": false,
+    "common_SO3_orbit_repaired": true,
+    "flag_promoted": false,
+    "full_quadratic_system_solved": false,
+    "green_realization_proved": false,
+    "minus_eight_attainable": true,
+    "mixed_order_factorization_proved": false,
+    "remaining_baseline_minus_bilinear_order_two_entries_before_other_corrections": 315
+  },
+  "schema": "pure-weyl-quadratic-obstruction-channel-v1",
+  "scope": {
+    "common_bare_Box_row": {
+      "baseline_defect": "8",
+      "input": "f_01",
+      "output": "f_00",
+      "required_correction": "-8",
+      "symmetric_derivative_word": [
+        0,
+        1
+      ]
+    },
+    "complete_invariant_first_order_dimension": 93,
+    "cubic_parameterization": "A_-=T, A_+=S_L-T; the simultaneous cubic equations restrict S_L but leave T in the complete 93-dimensional invariant family",
+    "derivative_order": 2,
+    "factorization_side": "DP only"
+  },
+  "smallest_SO3_coupled_orbit": {
+    "additional_bilinear_rows": 0,
+    "bilinear_order_two_support_exhausted": true,
+    "rows": [
+      {
+        "baseline": "8",
+        "corrected_defect": "0",
+        "factor_bilinear": "8",
+        "input": "f_01",
+        "output": "f_00",
+        "symmetric_derivative_word": [
+          0,
+          1
+        ]
+      },
+      {
+        "baseline": "8",
+        "corrected_defect": "0",
+        "factor_bilinear": "8",
+        "input": "f_02",
+        "output": "f_00",
+        "symmetric_derivative_word": [
+          0,
+          2
+        ]
+      },
+      {
+        "baseline": "8",
+        "corrected_defect": "0",
+        "factor_bilinear": "8",
+        "input": "f_03",
+        "output": "f_00",
+        "symmetric_derivative_word": [
+          0,
+          3
+        ]
+      }
+    ]
+  },
+  "theorem_boundary": "The bilinear A_- A_+ term exactly repairs the one-row left-null obstruction of every bare-Box branch, together with its two SO(3)-related rows.  Therefore that obstruction does not extend to the full two-nontrivial-factor family.  The other quadratic and all lower-order equations are not solved here, so no factorization, Green operator, homotopy, or top-level flag follows."
+}

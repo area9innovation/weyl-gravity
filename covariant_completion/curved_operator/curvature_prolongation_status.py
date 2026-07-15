@@ -738,6 +738,28 @@ class CurvatureProlongationStatus:
             },
             "mixed_order_green_evidence": {
                 "promotion_certificate": "curved_mixed_order_green_promotion.json",
+                "general_system_certificate": (
+                    "curved_general_nonlinear_factor_system.json"
+                ),
+                "adjoint_reduction_certificate": "general_adjoint_factor.json",
+                "sharp_order_two_certificate": (
+                    "curved_general_nonlinear_factor_sharp_order2.json"
+                ),
+                "sharp_order_two_reduction_certificate": (
+                    "curved_general_nonlinear_factor_sharp_order2_reduction.json"
+                ),
+                "repaired_channel_certificate": (
+                    "quadratic_obstruction_channel.json"
+                ),
+                "fixed_repair_no_go_certificate": (
+                    "quadratic_obstruction_channel_fixed_branch.json"
+                ),
+                "expanded_relative_certificate": (
+                    "curved_expanded_relative_witness.json"
+                ),
+                "expanded_scalar_completion_certificate": (
+                    "curved_expanded_relative_witness_scalar_completion.json"
+                ),
                 "factorization_certificate": (
                     "pure-weyl-mixed-order-factorization-v1 (not currently emitted)"
                 ),
@@ -787,8 +809,10 @@ class CurvatureProlongationStatus:
                 "positive_PDE_symmetrizer_is_action_Krein_pairing": False,
             },
             "next_exact_step": (
-                "construct the coefficientwise degree-minus-one prolonged Green "
-                "witness and certify its support-local triangular Green blocks"
+                "solve the 214-parameter action-adjoint factor branch, or retain/"
+                "prolong the three central scalar directions in one of the exact "
+                "expanded-relative two-pair candidates, then certify the resulting "
+                "degree-minus-one witness and its support-local Green blocks"
                 if self.prolonged_BV_operator_identity
                 else "insert the certified curvature equations, fourteen constraint "
                 "rows, and their cotangent/identity partners into the support-local "

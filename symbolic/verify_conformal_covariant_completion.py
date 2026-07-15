@@ -52,6 +52,45 @@ GUARDS = (
     ("verify_conformal_auxiliary_lower_order_factor_ansatz.py", "--promote-flag"),
     ("verify_conformal_parallel_operator_composition.py", "--claim-quadratic-solve"),
     ("verify_conformal_symmetrized_pbw_composition.py", "--claim-quadratic-solve"),
+    ("verify_conformal_general_nonlinear_factor_system.py", "--claim-factorization"),
+    ("verify_conformal_general_nonlinear_factor_system.py", "--claim-obstruction"),
+    ("verify_conformal_general_nonlinear_factor_system.py", "--claim-green"),
+    ("verify_conformal_general_adjoint_factor.py", "--claim-factorization"),
+    ("verify_conformal_general_adjoint_factor.py", "--use-naive-word-adjoint"),
+    (
+        "verify_conformal_general_nonlinear_factor_sharp_order2.py",
+        "--claim-full-factorization",
+    ),
+    (
+        "verify_conformal_general_nonlinear_factor_sharp_order2.py",
+        "--claim-general-no-go",
+    ),
+    (
+        "verify_conformal_general_nonlinear_factor_sharp_order2_reduction.py",
+        "--claim-quadratic-ideal-solved",
+    ),
+    (
+        "verify_conformal_general_nonlinear_factor_sharp_order2_reduction.py",
+        "--claim-left-ideal-no-go",
+    ),
+    ("verify_conformal_quadratic_obstruction_channel.py", "--claim-factorization"),
+    ("verify_conformal_expanded_relative_witness.py", "--claim-green"),
+    (
+        "verify_conformal_expanded_relative_witness_scalar_completion.py",
+        "--claim-green",
+    ),
+    (
+        "verify_conformal_expanded_relative_witness_scalar_completion.py",
+        "--claim-symmetric-hyperbolic",
+    ),
+    (
+        "verify_conformal_expanded_relative_witness_scalar_completion.py",
+        "--claim-rank116",
+    ),
+    (
+        "verify_conformal_quadratic_obstruction_channel_fixed_branch.py",
+        "--claim-general-factorization-no-go",
+    ),
     (
         "verify_conformal_auxiliary_triangular_box_factor.py",
         "--claim-general-factorization-no-go",
@@ -148,8 +187,28 @@ def main() -> None:
             ("verify_conformal_auxiliary_lower_order_factor_ansatz.py", emit_args),
             ("verify_conformal_parallel_operator_composition.py", emit_args),
             ("verify_conformal_symmetrized_pbw_composition.py", emit_args),
+            ("verify_conformal_general_nonlinear_factor_system.py", emit_args),
+            ("verify_conformal_general_adjoint_factor.py", emit_args),
+            (
+                "verify_conformal_general_nonlinear_factor_sharp_order2.py",
+                emit_args,
+            ),
+            (
+                "verify_conformal_general_nonlinear_factor_sharp_order2_reduction.py",
+                emit_args,
+            ),
+            ("verify_conformal_quadratic_obstruction_channel.py", emit_args),
+            (
+                "verify_conformal_quadratic_obstruction_channel_fixed_branch.py",
+                emit_args,
+            ),
             ("verify_conformal_auxiliary_triangular_box_factor.py", emit_args),
             ("verify_conformal_relative_saddle_witness.py", guarded_args),
+            ("verify_conformal_expanded_relative_witness.py", emit_args),
+            (
+                "verify_conformal_expanded_relative_witness_scalar_completion.py",
+                guarded_args,
+            ),
             ("verify_conformal_curvature_prolongation_sdr.py", ()),
             ("verify_conformal_curvature_state_gauge_chain_map.py", ()),
             ("verify_conformal_curvature_auxiliary_chain_map.py", guarded_args),

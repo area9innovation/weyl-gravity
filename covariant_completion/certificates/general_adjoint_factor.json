@@ -1,0 +1,68 @@
+{
+  "complete_sharp_dimensions": {
+    "first_invariant": 93,
+    "first_self_adjoint_operator": 44,
+    "zeroth_invariant": 38,
+    "zeroth_self_adjoint": 24
+  },
+  "exact_cubic_gate": {
+    "cubic_obstruction": false,
+    "equation": "X_1 P_2=q(A_-+A_+)",
+    "evaluation_determinant": 3623878656,
+    "matrix_shape": [
+      11520,
+      137
+    ],
+    "polynomial_identity_method": "evaluation on an exact 20-point unisolvent basis for homogeneous cubics in four variables",
+    "projection_rank_X1": 21,
+    "projection_rank_factor_sum": 21,
+    "rank": 116,
+    "reason": "it is the formal adjoint of the left equation",
+    "right_cubic_equation_independent": false,
+    "solution_dimension": 21
+  },
+  "outcome": {
+    "flag_promoted": false,
+    "general_factorization_disproved": false,
+    "general_factorization_proved": false,
+    "mixed_order_green_realization": false,
+    "pairing_aware_adjoint_backend_complete": true,
+    "sharp_reduced_cubic_family_dimension": 21
+  },
+  "pairing_aware_adjoint": {
+    "D_naive_sharp_minus_D_naive_nonzero_entries": 0,
+    "P_sharp_minus_P_nonzero_entries": 0,
+    "formula": "(A^I nabla_(I))^sharp=(-1)^|I| J^-1 (A^I)^T J nabla_(I)",
+    "naive_ordered_word_box_square_defect": 48,
+    "naive_ordered_word_transpose_rejected": true,
+    "normal_form": "symmetrized covariant-jet/PBW",
+    "sharp_DP_minus_PD_nonzero_entries": 0
+  },
+  "remaining_nonlinear_problem": {
+    "cubic_family_parameters": 21,
+    "exact_lower_order_no_go_found": false,
+    "exact_lower_order_solution_found": false,
+    "left_factor_zeroth_parameters": 76,
+    "left_first_order_split_parameters": 93,
+    "quadratic_products": "A_-^mu A_+^nu",
+    "remaining_orders": [
+      2,
+      1,
+      0
+    ],
+    "right_equations_need_not_be_solved_separately": true,
+    "self_adjoint_X0_parameters": 24,
+    "total_parameters": 214
+  },
+  "schema": "pure-weyl-general-adjoint-factor-reduction-v1",
+  "scope": {
+    "complement": "D=D_naive+X_1.nabla+X_0 with D^sharp=D",
+    "field_operator": "P^sharp=P",
+    "isotropy": "complete parallel SO(3)-invariant families",
+    "left_product": "DP=L_- L_+",
+    "pairing": "exact action field pairing J_act",
+    "right_factors": "R_-=L_+^sharp, R_+=L_-^sharp",
+    "right_product": "PD=(DP)^sharp=R_- R_+"
+  },
+  "theorem_boundary": "The natural action-pairing adjoint removes all independent right-factor variables and reduces the complete cubic family to 21 dimensions.  Restoring the left factor split and algebraic terms leaves an exact 214-parameter nonlinear orders-2/1/0 solve.  This certificate neither solves nor obstructs that remaining system."
+}

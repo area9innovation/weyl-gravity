@@ -1,0 +1,337 @@
+{
+  "algebraic_numerator_target": {
+    "desired_B_Dinverse_C_order": 2,
+    "field_diagonal": "Eaux_2(dt)+minimal_scalar_diagonal",
+    "field_diagonal_rank": 18,
+    "formal_target": "Eaux_2+D_scalar-Pi_vector_gauge",
+    "formal_target_determinant": 1,
+    "formal_target_rank": 24,
+    "is_actual_saddle_Schur_complement": false,
+    "missing_factor": "inverse of the actual 92x92 curvature temporal principal block D",
+    "raw_BC_order": 3
+  },
+  "analytic_boundary": {
+    "SO3_intertwining_certified": false,
+    "actual_curvature_temporal_diagonal_loaded": false,
+    "actual_curvature_temporal_inverse_inserted": false,
+    "all_BV_degrees_green_certified": false,
+    "all_lower_order_coefficients_certified": false,
+    "arbitrary_covector_characteristic_certified": false,
+    "full_116_by_116_Douglis_symbol_assembled": false,
+    "positive_symmetrizer_certified": false
+  },
+  "causal_green_homotopy": false,
+  "central_scalar_basis": [
+    "h_00",
+    "tr_spatial_h",
+    "f_00",
+    "tr_spatial_f",
+    "v_0"
+  ],
+  "constructive_conclusion": "the three-dimensional incidence defect is exactly the scalar gauge kernel h00,f00,v0, and the rank-three scalar part of K C is minimal.  The displayed pair-(1,6) maps realize only the local numerator B C; D^{-1} is still missing, so no actual Schur-complement or 116-dimensional rank claim is made",
+  "curvature_causal_green_operators": false,
+  "exact_missing_scalar_directions": [
+    "h_00",
+    "f_00",
+    "v_0"
+  ],
+  "fail_closed": true,
+  "minimal_support_local_scalar_diagonal": {
+    "determinant": -1,
+    "differential_order": 2,
+    "fibre_order": 0,
+    "operator": "Pi_(h00,f00,v0) K_1(dt) C_1(dt) Pi_(h00,f00,v0)",
+    "rank": 3,
+    "restricted_matrix": [
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        -4,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ]
+    ],
+    "support_local": true,
+    "uses_parallel_cylinder_time_normal_only": true
+  },
+  "pair_1_plus_6_explicit_temporal_maps": {
+    "NcurvSharp_R6sharp": "S_vector (K_vector^T K_vector)^-1 K_vector^T",
+    "NcurvSharp_sha256": "0178c8d680375feb49b8e13dcb051149f28d23fae7dba1e36e204011f9d05219",
+    "R1": "J_vector S_vector^T: X_Eq_sharp[40] -> G_aux[9]",
+    "R1_nonzero_coordinates": [
+      [
+        1,
+        26,
+        1
+      ],
+      [
+        2,
+        27,
+        1
+      ],
+      [
+        3,
+        28,
+        1
+      ],
+      [
+        5,
+        29,
+        1
+      ],
+      [
+        6,
+        30,
+        1
+      ],
+      [
+        7,
+        31,
+        1
+      ]
+    ],
+    "R1_sha256": "86983fede61afbdcdc7260e8f8c426040900f95b1fc387e3f99a5a21c0daf3d7",
+    "R1_shape": [
+      9,
+      40
+    ],
+    "R6sharp": "I_vector (K_vector^T K_vector)^-1 K_vector^T: M_aux[24] -> X_Id_sharp[14]",
+    "R6sharp_first_six_rows": [
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "R6sharp_sha256": "6cf1e568609c38b8211a9cf47dd92f45cc9cdd17c193aa1f301103c3d6948bd1",
+    "R6sharp_shape": [
+      14,
+      24
+    ],
+    "SO3_intertwining_verified": false,
+    "certified_Ncurv_temporal_matrix": "[0_(14x26),I_14]",
+    "certified_Ncurv_temporal_shape": [
+      14,
+      40
+    ],
+    "coefficientwise_product_defect": 0,
+    "curvature_identity_vector_coordinates": "q[3] plus r[3]",
+    "finite_order_and_support_local": true,
+    "ghost_vector_columns": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7
+    ],
+    "reason_intertwining_open": "the displayed vector-copy coordinates have not yet been checked against the actual rotation-generator matrices",
+    "relative_orders": {
+      "R1": 0,
+      "R6": 1
+    },
+    "verified_local_numerator": "K R1 NcurvSharp R6sharp=Pi_vector_gauge"
+  },
+  "paired_hessian_scalar_matrix": [
+    [
+      0,
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      -1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      3,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      -1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "paired_hessian_scalar_rank": 2,
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-expanded-relative-witness-scalar-completion-v1",
+  "status_flags_promoted": [],
+  "temporal_covector": "dt",
+  "warranted_atomic_flags": []
+}

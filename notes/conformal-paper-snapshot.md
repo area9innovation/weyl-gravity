@@ -188,26 +188,52 @@ corrected the covector commutator to use the raised spatial projector, so
 mixed time--space curvature vanishes.  Focused coordinate-jet composition
 tests pass.  Exact triangular symmetrized-jet PBW inversion exhausts all 1,680
 four-jet basis elements, passes 504 ordered-word round trips and certifies
-associativity, so the quadratic-factor composition backend is ready.  Naive
+associativity, so the quadratic-factor composition backend is ready.  The
+complete 421-variable coefficient system is now assembled as 3,684 exact
+sparse PBW equations with 59,739 monomial occurrences.  At order two its
+190 algebraic variables have rank 100; exact Schur projection leaves 2,130
+nonzero polynomial constraints (365 up to scale), 90 free algebraic
+directions, and no constant obstruction.  Naive
 transpose/reversal of an already sorted `Box^2` table still has a 48-entry
 defect because derivative-index slots are suppressed.  This is an invalid
-adjoint rule, not a primal-composition failure; a pairing-aware general
-formal-adjoint backend and the 421-variable solve remain open.  The
+adjoint rule, not a primal-composition failure.  The pairing-aware
+symmetrized-PBW adjoint is now exact: `P#=P`, `D#=D`, and `(DP)#=PD`.
+It reduces the independent nonlinear branch to 214 parameters (21 cubic,
+93 first-order split, 24 self-adjoint `X0`, and 76 factor potentials).
+At order two its algebraic matrix has rank `52/100`; exact Schur projection
+leaves 1,050 nonzero constraints (179 up to scale), 48 algebraic directions,
+and no constant obstruction.  All 179 normalized constraints are quadratic;
+their 1,497 quadratic monomials have rank 124, and the 55 left-kernel
+combinations yield no affine-linear consequence.  Those quadratics and
+orders one and zero remain unsolved.  The
 bare-`Box` linear slice is exactly inconsistent in all four orientations:
 each system has rank `159/160`, with a common `nabla_(0)nabla_(1)`
-`f_01 -> f_00` left-null obstruction of value `-8`.  This does not decide
-the two-nontrivial-factor branch, where `A_minus A_plus` is present.  The
-exhaustive odd-adjoint incidence search
-finds no one-pair reciprocal coupling; its smallest two-way saddle is pairs
-4 and 5, with core `(M_aux,X_U,Y_U_sharp)` and couplings `R,S` plus their odd
-adjoints.  Its exact Schur complement is nonlocal because it contains the
+`f_01 -> f_00` left-null obstruction of value `-8`.  The complete invariant
+bilinear channel shows why this is not a general no-go: the support-minimal
+split `A_- = e_11-e_66`, `A_+=-A_-` repairs that entire `SO(3)` orbit exactly.
+That fixed repair nevertheless fails the full order-two gate with rank
+`100/101` in the distinct channel `h_22 -> f_01`; other first-order splits
+remain open.  The exhaustive odd-adjoint incidence search finds no one-pair
+reciprocal coupling.  The earlier pairs 4 and 5 give the smallest physical
+core `(M_aux,X_U,Y_U_sharp)`, whose exact Schur complement is nonlocal because it contains the
 curvature Green operators, while the unreduced order-two saddle still lacks
 a local first-order reduction.  Its natural realization
 `A_F=pF A_eq`, `S=A_F^sharp`, `R=A_F^sharp J_U` has balanced Douglis timelike
 rank at most `107/116`, hence defect at least nine, zero temporal leading
 coefficient and no positive symmetrizer.  This rules out only that smallest
-pair-4+5 ansatz, not larger relative witnesses or an added local first-order
-prolongation.  These are fail-closed diagnostics only.  The remaining blockers
+pair-4+5 ansatz.  Exhausting all nine odd-adjoint pairs and the
+162-dimensional Hom family from the declared `SO(3)` multiplicity ledger
+finds three all-degree reciprocal
+two-pair candidates, `(1,6)`, `(1,7)`, and `(2,7)`.  If the central auxiliary
+diagonal is entirely demoted, their invariant cross rank is at most `21/24`,
+so the temporal block has rank at most `113/116`; a successful construction
+must retain or prolong three scalar directions.  These are fail-closed
+diagnostics only.  The missing directions are exactly `h00`, `f00`, and
+`v0`; their rank-three `KC` restriction has determinant `-1`.  Explicit
+pair-`1+6` maps realize the numerator
+`K R1 Ncurvsharp R6sharp=Pi_vector`, but the actual curvature diagonal inverse
+needed for `B D^-1 C` and the full 116-dimensional Douglis symbol remain
+unassembled.  The remaining blockers
 are the prolonged Green theorem, causal chain homotopy, residual endpoint
 recovery, and `SO(4,2)` equivariance.  The complete cyclic mapping cylinder
 now gives the all-row quadratic BV parent and exact prolonged/auxiliary
@@ -280,7 +306,7 @@ Five statements are kept separate throughout the manuscript:
 | Curved auxiliary canonical split | Exact local theorem | The BV-canonical cotangent lift conjugates the complete curved `Q`; the all-row SDR includes trace/nonminimal rows and preserves compact, spacelike-compact, and smooth support |
 | Curved current workstream | Exact off-shell comparison, Green-gated | Both curved potentials and their `d+Q` improvement are certified, together with the Cauchy and `E/A/L` regressions; Green/current equality awaits the repaired Green-hyperbolic operator |
 | Covariant final-claim dependency DAG | Exact fail-closed meta-certificate | `curved_operator_identity`, `curved_deformation_retract`, and `curved_current_comparison` are true; `final_covariant_H4` remains false pending a causal Green realization |
-| Prenormal symbol and relative-saddle diagnostics | Exact fail-closed diagnostics; no flag promotion | The generic symbol obeys `(P2-q I)^2=0` with Smith multiplicities `6/12/6`, but the naive frozen lower completion has a nonzero lower-order remainder. The complete invariant correction spaces have `dim D0=38`, `dim D1=93`, and a 45-parameter simultaneous `DP/PD` cubic family, so there is no cubic obstruction. Restoring factor splittings and algebraic terms gives 421 post-cubic unknowns. The curvature sign is corrected, focused primal jet tests pass, and exact symmetrized-jet PBW inversion certifies the composition backend. The 48-entry naive sorted-table defect instead leaves the pairing-aware general adjoint and coefficient solve open. The smallest reciprocal odd-adjoint saddle is pairs 4 and 5. Its natural `A_F=pF A_eq`, `S=A_F^sharp`, `R=A_F^sharp J_U` realization has balanced timelike rank at most `107/116`, zero temporal leading coefficient and no positive symmetrizer. This excludes only that realization, not larger relative witnesses or a local first-order prolongation. |
+| Prenormal symbol and relative-saddle diagnostics | Exact fail-closed diagnostics; no flag promotion | The complete 421-variable PBW system has 3,684 rows. Its order-two algebraic Schur matrix has rank `100/190`, leaving 2,130 nonzero projected polynomial constraints and no constant obstruction. The exact action-adjoint reduction induces the right factors and leaves a 214-parameter branch whose order-two Schur gate has rank `52/100` and 1,050 nonzero projected constraints. The old bare-Box orbit is exactly repairable by a two-direction first-order split, but that fixed repair fails another order-two channel with rank `100/101`; the general branch remains open. Across the complete 162-dimensional relative family, three reciprocal two-pair candidates exist, but a fully demoted central auxiliary diagonal leaves a `113/116` temporal-rank ceiling. A successful relative witness must retain or prolong three scalar directions. |
 | Curvature-prolonged causal BV bridge | Exact constrained hyperbolic PDE, all-level spectrum, all-row local cyclic BV prolongation/current, and conditional conformal transport; Green bridge open | The curved Weyl--Cotton system is exactly derived: 26 state components, 34 covariant rows, temporal rank 26, eight primary plus six secondary constraints, and 150/150 Weyl two-jets. The first eight curvature flags through the support-local prolongation and prolonged BV operator identity are true, and the all-row prolonged current comparison is true. The apparent rank-six pointwise defect is generated differentially by the secondary constraints; compatible sources preserve all fourteen. Equivariance of the cutoff inverse is now explicit, `[kappa,rho]=[Q,[chi,rho]]`, and composes with global BGG and all-level E/A/L data once the causal quasi-isomorphism exists. The remaining flags require the prolonged BV Green witness, causal chain homotopy, and endpoint/equivariant promotion. The residual `H4=C2`, `G=I2` theorem is already exact and is only transported. |
 | Descent to `C^2` and `C Ctilde` | Exact residual/local descent | Lorentzian `i` phase is convention-dependent |
 | Dynamical representative quotient `I1` | Exact locally | Pontryagin is only locally variationally trivial; global theta effects retained |
