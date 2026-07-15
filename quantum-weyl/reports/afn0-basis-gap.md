@@ -25,7 +25,7 @@ epsilon-availability constraints gives:
 |---|---:|---:|---:|---:|---:|---:|
 | `H04_AFN0_EVEN` | 3 | 2 | 2 | 2 | 2 | 0 |
 | `H04_AFN0_ODD` | 3 | 2 | 2 | 1 | 1 | 0 |
-| `H14_AFN0_EVEN` | 9 | 5 | 5 | 2 | 2 | 2 |
+| `H14_AFN0_EVEN` | 9 | 5 | 5 | 4 | 4 | 0 |
 | `H14_AFN0_ODD` | 9 | 5 | 5 | 1 | 1 | 3 |
 
 The eliminated signatures attempted to apply covariant tensor derivatives
@@ -40,8 +40,12 @@ position zero declared outermost.  For every raw graph the machine stores a
 current that replaces that derivative slot by the current's free index and
 then verifies that covariant divergence reconstructs the original graph.
 The witness count must equal the raw graph count.  Metric and epsilon
-covariant constancy are stored inputs.  The mixed curvature/ghost-derivative
-signatures remain pending.
+covariant constancy are stored inputs. The two even mixed
+curvature/ghost-derivative signatures are now terminal. Orbit-first reduction
+materializes only their 30 pairings: the Hessian sector has canonical
+dimension two, while differential Bianchi reduces the gradient sector to one
+carrier. Generated divergences and `Q(R^2)` place all three carriers in the
+`omega Box R` boundary sector. The odd mixed signatures remain pending.
 
 The Diff top-form sector is deliberately separate from the Weyl-anomaly
 count.  It has 12 coarse signatures and seven refined signatures in each
@@ -65,8 +69,9 @@ not obstruct it are applied to form symmetry-canonical graph orbits.  An
 independent double-factorial/binomial count must agree with the forward raw
 enumeration.
 
-Raw contraction is no longer called tensor realizability.  Without an
-already generated representative, its status is
+Raw contraction is no longer called tensor realizability. Except for the two
+completed even mixed signatures, without an already generated representative
+its status is
 `UNDECIDED_PENDING_BIANCHI_AND_DIMENSION_IDENTITIES`.  Algebraic and
 differential Bianchi quotients, derivative-distribution factor permutations,
 Grassmann relations, integration by parts beyond the certified single-factor
@@ -105,25 +110,35 @@ identity quotienting, and `TOTAL_COMPLEX_EXHAUSTIVE` remain `NOT_COMPUTED`.
 
 ## Claim boundary
 
-Both `H04` parity slices have terminal resolution for every coarse top-form
-signature.  Even there, `TOP_FORM_BASIS_EXHAUSTIVE` remains `IN_PROGRESS`
-until the canonical forward span is compared with reverse signature coverage.
+Both `H04` parity slices and `H14_AFN0_EVEN` have terminal resolution for
+every coarse top-form signature. The even-H14 forward/reverse top span agrees
+and its standalone candidate quotient is complete. The global
+`TOP_FORM_BASIS_EXHAUSTIVE` remains `IN_PROGRESS` because the other slices
+and ambient total complex remain open.
 The current candidate and exact-boundary lower-form carrier sectors are
 complete, but the ambient cocycle and boundary bases are not exhaustive, so
-`TOTAL_COMPLEX_EXHAUSTIVE` is still `NOT_COMPUTED`. The report cannot produce
-a `COMPLETE_NONTRIVIALITY_WITNESS`.
+`TOTAL_COMPLEX_EXHAUSTIVE` is still `NOT_COMPUTED`. Complete witnesses are
+therefore scoped to the standalone even-H14 candidate quotient.
 
 Machine receipt:
 `quantum-weyl/local_bv/certificates/BASIS_GAP_REPORT_AFN0.json`.
 
 ## Next computation
 
-Canonicalize the pending raw contraction graphs under factor permutations,
+Canonicalize the remaining odd and Diff raw contraction graphs under factor permutations,
 dummy-index renaming, curvature symmetries, Bianchi identities, Grassmann
 relations, integration by parts, and dimension-specific antisymmetrization.
 Then construct tensor graphs for all 720 refined ambient signatures, quotient
 them by Bianchi, Grassmann, integration-by-parts, and dimension-specific
 identities, and assemble the production `Q` and `d_h` matrices.
+
+### Even-H14 orbit-first completion
+
+The two formerly pending even mixed signatures are now certified by
+`AFN0_H14_EVEN_CANONICAL_QUOTIENT`. Forward/reverse top-form coverage agrees,
+the exact projected boundary and closure ranks are four and six, and the
+candidate quotient has dimension two. This scoped completion does not close
+the odd, Diff, or ambient total-complex gates.
 
 ### Lower-form extension verification
 

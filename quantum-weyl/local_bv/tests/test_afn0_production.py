@@ -131,6 +131,18 @@ class AfnZeroProductionTests(unittest.TestCase):
             "VERIFIED",
         )
         self.assertEqual(
+            certificate["checks"][
+                "H14_AFN0_EVEN_complete_candidate_quotient"
+            ],
+            "VERIFIED",
+        )
+        self.assertRegex(
+            certificate["result_hashes"][
+                "AFN0_H14_EVEN_CANONICAL_QUOTIENT"
+            ],
+            r"^[0-9a-f]{64}$",
+        )
+        self.assertEqual(
             certificate["checks"]["lower_form_candidate_carrier_coverage"],
             "COMPLETE",
         )

@@ -12,6 +12,7 @@ from .afn0_production import afn0_production_results, afn0_slice_results
 from .algebra import canonical_sha256
 from .ambient_tensor_graphs import ambient_tensor_graph_analysis
 from .basis_gap import basis_gap_report
+from .h14_even_canonical_quotient import canonical_quotient_payload
 from .lower_form_basis import lower_form_carrier_analysis
 from .lower_form_ambient import ambient_lower_form_signature_analysis
 
@@ -31,6 +32,8 @@ def _source_manifest() -> dict[str, str]:
         "ambient_tensor_graph_certificate.py",
         "basis_exhaustiveness.py",
         "basis_gap.py",
+        "h14_even_canonical_quotient.py",
+        "h14_even_canonical_quotient_certificate.py",
         "lower_form_basis.py",
         "lower_form_basis_certificate.py",
         "lower_form_ambient.py",
@@ -46,6 +49,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_afn0_production.py",
         "tests/test_basis_exhaustiveness.py",
         "tests/test_basis_gap.py",
+        "tests/test_h14_even_canonical_quotient.py",
         "tests/test_lower_form_basis.py",
         "tests/test_lower_form_ambient.py",
         "tests/test_ambient_tensor_graphs.py",
@@ -61,6 +65,7 @@ def build_certificate() -> dict[str, Any]:
     results = afn0_production_results()
     slice_results = afn0_slice_results()
     gap_report = basis_gap_report()
+    h14_even_quotient = canonical_quotient_payload()
     lower_form = lower_form_carrier_analysis()
     ambient_lower_form = ambient_lower_form_signature_analysis()
     ambient_tensor_graphs, ambient_tensor_bundle = ambient_tensor_graph_analysis()
@@ -92,6 +97,7 @@ def build_certificate() -> dict[str, Any]:
             "H04_AFN0_EVEN_started": "VERIFIED",
             "H04_AFN0_ODD_started": "VERIFIED",
             "H14_AFN0_EVEN_complete_candidate_closure": "VERIFIED",
+            "H14_AFN0_EVEN_complete_candidate_quotient": "VERIFIED",
             "H14_AFN0_ODD_started": "VERIFIED",
             "top_curvature_carrier_generation": "VERIFIED",
             "parity_split": "VERIFIED",
@@ -114,6 +120,9 @@ def build_certificate() -> dict[str, Any]:
             "basis_gap_report_emitted": "VERIFIED",
             "H04_even_top_signature_resolution": "VERIFIED",
             "H04_odd_top_signature_resolution": "VERIFIED",
+            "H14_even_top_signature_resolution": "VERIFIED",
+            "H14_even_orbit_first_no_ambient_expansion": "VERIFIED",
+            "H14_even_complete_dual_witnesses": "VERIFIED",
             "forward_reverse_span_agreement": "NOT_COMPUTED",
             "total_complex_exhaustiveness": "NOT_COMPUTED",
             "complete_lower_form_basis": "IN_PROGRESS",
@@ -129,6 +138,9 @@ def build_certificate() -> dict[str, Any]:
             "H04_AFN0_RESULT": canonical_sha256(h04),
             "H14_AFN0_RESULT": canonical_sha256(h14),
             "BASIS_GAP_REPORT_AFN0": gap_report["report_hash"],
+            "AFN0_H14_EVEN_CANONICAL_QUOTIENT": h14_even_quotient[
+                "analysis_sha256"
+            ],
             "AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE": lower_form[
                 "analysis_sha256"
             ],
@@ -152,9 +164,9 @@ def build_certificate() -> dict[str, Any]:
         "next_required_computation": [
             "construct signed factor-permutation actions on the 1,224 factored derivative-distribution profiles",
             "canonically quotient the factored contraction graphs by tensor identities and integration by parts",
-            "resolve every remaining top-form and Diff signature with a terminal status",
+            "resolve every remaining odd top-form and separate Diff signature with a terminal status",
             "compare the forward canonical span with reverse signature coverage",
-            "assemble the production Q and d_h sparse matrices",
+            "extend the completed even H14 Q and d_h matrices to the remaining slices",
             "integrate the now-inventoried omega-Euler and universal Diff carriers into the production Q and d_h matrices",
             "emit COMPLETE_NONTRIVIALITY_WITNESS only after the complete boundary rank and exhaustiveness proof are frozen",
         ],

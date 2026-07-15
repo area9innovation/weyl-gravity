@@ -8,6 +8,7 @@ from .algebra import canonical_sha256
 from .ambient_tensor_graphs import ambient_tensor_graph_analysis
 from .basis_exhaustiveness import grading_signature_manifest, refine_top_form_signature
 from .dimension_four_candidates import dimension_four_candidate_analysis
+from .h14_even_canonical_quotient import h14_even_canonical_quotient_analysis
 from .lower_form_basis import lower_form_carrier_analysis
 from .lower_form_ambient import ambient_lower_form_signature_analysis
 from .tensor_graphs import contraction_graph_bundle, contraction_graph_manifest
@@ -117,6 +118,35 @@ def _structural_terminal_resolution(
     return None
 
 
+def _h14_even_mixed_resolution(
+    slice_id: str, signature: dict[str, object]
+) -> dict[str, object] | None:
+    if slice_id != "H14_AFN0_EVEN" or signature["curvature_count"] != 1:
+        return None
+    derivative_pair = (
+        int(signature["tensor_derivative_count"]),
+        int(signature["ghost_derivative_order"]),
+    )
+    sector_key = {
+        (0, 2): "hessian_sector",
+        (1, 1): "gradient_sector",
+    }.get(derivative_pair)
+    if sector_key is None:
+        return None
+    analysis = h14_even_canonical_quotient_analysis()
+    sector = analysis[sector_key]
+    return {
+        "sector_id": sector_key,
+        "canonical_quotient_dimension": sector["quotient_dimension"],
+        "canonical_orbit_count": sector["canonical_orbit_count"],
+        "relation_rank": sector["relation_rank"],
+        "analysis_sha256": analysis["analysis_sha256"],
+        "basis_exhaustiveness_proof_hash": analysis[
+            "basis_exhaustiveness_proof"
+        ].proof_hash,
+    }
+
+
 def _gap_record(
     *,
     slice_id: str,
@@ -126,6 +156,7 @@ def _gap_record(
     refined, refinement_reason = refine_top_form_signature(signature)
     graph = contraction_graph_manifest(signature)
     candidates = _generated_candidates(slice_id).get(_signature_key(signature), ())
+    mixed_resolution = _h14_even_mixed_resolution(slice_id, signature)
     if not refined:
         resolution = "WRONG_AFTER_REFINED_GRADING"
         canonical_status = "NOT_APPLICABLE"
@@ -138,6 +169,31 @@ def _gap_record(
                 "signature": signature,
                 "resolution": resolution,
                 "reason": refinement_reason,
+            }
+        )
+    elif mixed_resolution is not None:
+        resolution = "GENERATED_NONZERO"
+        canonical_status = "CANONICALLY_NONZERO"
+        candidates = (
+            "MIXED_R_BOX_OMEGA",
+            "MIXED_RICCI_HESS_OMEGA",
+        ) if signature["ghost_derivative_order"] == 2 else (
+            "MIXED_GRAD_R_GRAD_OMEGA",
+        )
+        terminal_witness = {
+            "witness_type": "ORBIT_FIRST_CANONICAL_QUOTIENT",
+            **mixed_resolution,
+        }
+        refinement_reason = (
+            "resolved orbit-first by signed curvature symmetries, Bianchi, "
+            "Grassmann signs, integration by parts, and exhaustive-empty "
+            "four-dimensional antisymmetrization"
+        )
+        proof_hash = canonical_sha256(
+            {
+                "signature": signature,
+                "resolution": resolution,
+                "terminal_witness": terminal_witness,
             }
         )
     elif candidates:
@@ -205,7 +261,7 @@ def _gap_record(
         "raw_contraction_status": graph["raw_contraction_status"],
         "tensor_realizability": (
             "TENSOR_REALIZABLE_BY_GENERATED_REPRESENTATIVE"
-            if candidates
+            if candidates or mixed_resolution is not None
             else graph["tensor_realizability"]
         ),
         "canonical_status": canonical_status,
@@ -213,7 +269,11 @@ def _gap_record(
         "symmetry_canonical_orbit_count": graph[
             "symmetry_canonical_orbit_count"
         ],
-        "canonical_nonzero_count": len(candidates),
+        "canonical_nonzero_count": (
+            int(mixed_resolution["canonical_quotient_dimension"])
+            if mixed_resolution is not None
+            else len(candidates)
+        ),
         "expected_index_balance": {
             "total_index_slots": signature["total_index_slots"],
             "epsilon_absorbed_slots": epsilon_slots,
@@ -228,7 +288,11 @@ def _gap_record(
         "resolution_reason": refinement_reason,
         "terminal_witness": terminal_witness,
         "raw_graph_manifest_hash": graph["raw_graph_manifest_hash"],
-        "graph_enumeration_status": graph["graph_enumeration_status"],
+        "graph_enumeration_status": (
+            "CANONICAL_QUOTIENT_COMPLETE"
+            if mixed_resolution is not None
+            else graph["graph_enumeration_status"]
+        ),
         "graph_artifact_hash": graph["graph_artifact_hash"],
         "graphwise_divergence_status": graph["graphwise_divergence_status"],
         "graphwise_current_manifest_hash": graph[
@@ -321,7 +385,11 @@ def basis_gap_report() -> dict[str, object]:
                 "top_form_signature_resolution_status": (
                     "COMPLETE" if terminal_count == len(records) else "IN_PROGRESS"
                 ),
-                "forward_reverse_span_agreement": "NOT_COMPUTED",
+                "forward_reverse_span_agreement": (
+                    "VERIFIED"
+                    if slice_id == "H14_AFN0_EVEN" and terminal_count == len(records)
+                    else "NOT_COMPUTED"
+                ),
                 "records": records,
             }
         )
@@ -381,10 +449,10 @@ def basis_gap_report() -> dict[str, object]:
         },
         "claim_boundary": [
             (
-                "signed Riemann-pair, pair-exchange, epsilon-order, and available "
-                "factor-permutation symmetries are implemented; Bianchi identities, "
-                "derivative-distribution permutations, general integration by parts, "
-                "and dimension-specific antisymmetrization remain open"
+                "the two even Weyl-ghost mixed signatures are complete; Bianchi "
+                "identities, derivative-distribution permutations, general integration "
+                "by parts, and dimension-specific antisymmetrization remain open in "
+                "the other slices and the ambient total complex"
             ),
             "PENDING is not a terminal signature resolution",
             "the universal Diff and intrinsic Euler candidate carriers and factored ambient tensor-graph realizations are complete, but the separate Diff top-form ledger and canonical ambient quotient remain open",

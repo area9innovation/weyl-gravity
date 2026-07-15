@@ -35,7 +35,7 @@
           "terminal_resolution_count": {"type": "integer", "minimum": 0},
           "pending_resolution_count": {"type": "integer", "minimum": 0},
           "top_form_signature_resolution_status": {"enum": ["COMPLETE", "IN_PROGRESS"]},
-          "forward_reverse_span_agreement": {"const": "NOT_COMPUTED"},
+          "forward_reverse_span_agreement": {"enum": ["NOT_COMPUTED", "VERIFIED"]},
           "records": {
             "type": "array",
             "minItems": 1,
@@ -87,7 +87,7 @@
                 "resolution_reason": {"type": "string", "minLength": 1},
                 "terminal_witness": {"type": ["object", "null"]},
                 "raw_graph_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-                "graph_enumeration_status": {"enum": ["SYMMETRY_CANONICALIZED_BIANCHI_PENDING", "NOT_APPLICABLE"]},
+                "graph_enumeration_status": {"enum": ["SYMMETRY_CANONICALIZED_BIANCHI_PENDING", "CANONICAL_QUOTIENT_COMPLETE", "NOT_APPLICABLE"]},
                 "graph_artifact_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
                 "graphwise_divergence_status": {"enum": ["VERIFIED_EVERY_RAW_GRAPH", "NOT_APPLICABLE"]},
                 "graphwise_current_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},

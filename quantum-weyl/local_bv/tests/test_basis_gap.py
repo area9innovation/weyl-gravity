@@ -46,7 +46,15 @@ class BasisGapTests(unittest.TestCase):
             by_slice["H14_AFN0_EVEN"][
                 "pending_resolution_count"
             ],
-            2,
+            0,
+        )
+        self.assertEqual(
+            by_slice["H14_AFN0_EVEN"]["top_form_signature_resolution_status"],
+            "COMPLETE",
+        )
+        self.assertEqual(
+            by_slice["H14_AFN0_EVEN"]["forward_reverse_span_agreement"],
+            "VERIFIED",
         )
         self.assertEqual(
             by_slice["H04_AFN0_ODD"]["top_form_signature_resolution_status"],
@@ -122,6 +130,7 @@ class BasisGapTests(unittest.TestCase):
             record for record in records
             if not record["candidate_ids"]
             and record["refined_grading_status"] == "REFINED_ADMISSIBLE"
+            and record["resolution"] != "GENERATED_NONZERO"
         ]
         self.assertTrue(unresolved)
         self.assertTrue(

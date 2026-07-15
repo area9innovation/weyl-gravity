@@ -1,0 +1,787 @@
+{
+  "analysis_sha256": "c6dcf9eeb604ded0033c3b35afb46029306756102125959f7542e2b29dee1471",
+  "basis_exhaustiveness_proof": {
+    "basis_manifest_hash": "b700d47655c302462f4291c9d84693a372842c6364cecc01fe9916c7ba41b382",
+    "bound_artifacts": [
+      {
+        "payload_json": "{\"basis\":[\"ANOM_OMEGA_C2\",\"ANOM_OMEGA_E4\",\"ANOM_OMEGA_R2\",\"ANOM_OMEGA_BOX_R\",\"MIXED_R_BOX_OMEGA\",\"MIXED_RICCI_HESS_OMEGA\",\"MIXED_GRAD_R_GRAD_OMEGA\"],\"derivation\":{\"pending_mixed_gradient_sector\":\"one carrier after differential Bianchi\",\"pending_mixed_hessian_sector\":\"two orbit-first carriers\",\"quadratic_curvature_ghost_sector\":\"three four-dimensional scalar curvature-square carriers: C2, E4, R2\",\"single_curvature_two_tensor_derivatives\":\"omega BoxR modulo differential Bianchi\"}}",
+        "role": "basis_manifest",
+        "sha256": "b700d47655c302462f4291c9d84693a372842c6364cecc01fe9916c7ba41b382"
+      },
+      {
+        "payload_json": "{\"antifield_number\":0,\"engineering_dimension\":4,\"form_degree\":4,\"ghost_number\":1,\"ghost_species\":\"WEYL\",\"parity\":\"even\",\"spacetime_dimension\":4}",
+        "role": "declared_bounds",
+        "sha256": "68390296ac73174b6c46936f01da8edf85c1c70909983e54d95e9e83873d2b55"
+      },
+      {
+        "payload_json": "{\"lower_form_generators\":[\"R_squared\",\"CURRENT_R_GRAD_OMEGA\",\"CURRENT_RICCI_GRAD_OMEGA\",\"CURRENT_OMEGA_GRAD_R\"],\"top_generators\":[\"Riemann\",\"covariant_derivative\",\"omega\",\"metric\"],\"universal_diff_completion\":\"FACTORED_HASH_BOUND_EXISTING_TOWERS\"}",
+        "role": "generator_algebra",
+        "sha256": "2898672c6a873ff79d24e379714ba7cca6f1009c96c33ee28d85a5d9f43dfed5"
+      },
+      {
+        "payload_json": "{\"coarse_signature_count\":9,\"refined_signature_count\":5,\"two_pending_mixed_signatures_resolved\":true}",
+        "role": "grading_solution",
+        "sha256": "08810fd4d9081c41c198bd0d0761b1dfd80b4684a612eb05dfcad4410c8b166a"
+      },
+      {
+        "payload_json": "{\"ambient_raw_graphs_materialized\":0,\"gradient\":{\"canonical_orbit_count\":2,\"differential_bianchi_rank\":1,\"quotient_dimension\":1,\"raw_pairing_count\":15},\"hessian\":{\"canonical_orbit_count\":2,\"quotient_dimension\":2,\"raw_pairing_count\":15},\"raw_graphs_materialized\":30}",
+        "role": "orbit_enumeration",
+        "sha256": "2ad705d3be8ff084e94ba07857475ef6af0d9dee5a81b13c65f3fd1ec901764c"
+      },
+      {
+        "payload_json": "{\"boundary_rank\":4,\"closure_obstruction\":{\"column_count\":7,\"entries\":[{\"coefficient\":{\"denominator\":1,\"numerator\":-12},\"column\":2,\"row\":0}],\"row_count\":1},\"closure_rank\":6,\"contracted_differential_bianchi\":\"div_Ricci_grad_omega = -1/2 grad_R_grad_omega in canonical convention\",\"dh_matrix\":{\"column_count\":3,\"entries\":[{\"coefficient\":{\"denominator\":1,\"numerator\":1},\"column\":2,\"row\":3},{\"coefficient\":{\"denominator\":1,\"numerator\":1},\"column\":0,\"row\":4},{\"coefficient\":{\"denominator\":1,\"numerator\":1},\"column\":1,\"row\":5},{\"coefficient\":{\"denominator\":1,\"numerator\":1},\"column\":0,\"row\":6},{\"coefficient\":{\"denominator\":2,\"numerator\":1},\"column\":1,\"row\":6},{\"coefficient\":{\"denominator\":1,\"numerator\":1},\"column\":2,\"row\":6}],\"row_count\":7},\"ibp_coordinates\":[[{\"denominator\":1,\"numerator\":0},{\"denominator\":1,\"numerator\":1},{\"denominator\":1,\"numerator\":0},{\"denominator\":1,\"numerator\":1}],[{\"denominator\":1,\"numerator\":0},{\"denominator\":1,\"numerator\":0},{\"denominator\":1,\"numerator\":1},{\"denominator\":2,\"numerator\":1}],[{\"denominator\":1,\"numerator\":1},{\"denominator\":1,\"numerator\":0},{\"denominator\":1,\"numerator\":0},{\"denominator\":1,\"numerator\":1}]],\"outgoing_Q_matrix\":{\"column_count\":7,\"entries\":[{\"coefficient\":{\"denominator\":1,\"numerator\":12},\"column\":2,\"row\":0}],\"row_count\":2},\"outgoing_dh_matrix\":{\"column_count\":1,\"entries\":[{\"coefficient\":{\"denominator\":1,\"numerator\":1},\"column\":0,\"row\":0},{\"coefficient\":{\"denominator\":1,\"numerator\":1},\"column\":0,\"row\":1}],\"row_count\":2},\"outgoing_dh_quotient_dimension\":1,\"q_matrix\":{\"column_count\":1,\"entries\":[{\"coefficient\":{\"denominator\":1,\"numerator\":-12},\"column\":0,\"row\":4}],\"row_count\":7}}",
+        "role": "identity_quotient",
+        "sha256": "baaab36b634c04094c514746bc5a02005a48cd3b035e3376f9a10524e8ba06fc"
+      },
+      {
+        "payload_json": "{\"boundary_rank\":4,\"closure_rank\":6,\"dual_pairings\":[{\"denominator\":1,\"numerator\":1},{\"denominator\":1,\"numerator\":1}],\"quotient_dimension\":2,\"top_kernel_equals_boundary_plus_representatives\":true}",
+        "role": "proof_artifact",
+        "sha256": "4a3adbfaacf0c012509f3f4266fce21ea3b4c8d9ccfe43ddb2ffe80884cde047"
+      }
+    ],
+    "declared_bounds_hash": "68390296ac73174b6c46936f01da8edf85c1c70909983e54d95e9e83873d2b55",
+    "generator_algebra_hash": "2898672c6a873ff79d24e379714ba7cca6f1009c96c33ee28d85a5d9f43dfed5",
+    "grading_solution_hash": "08810fd4d9081c41c198bd0d0761b1dfd80b4684a612eb05dfcad4410c8b166a",
+    "identity_quotient_hash": "baaab36b634c04094c514746bc5a02005a48cd3b035e3376f9a10524e8ba06fc",
+    "orbit_enumeration_hash": "2ad705d3be8ff084e94ba07857475ef6af0d9dee5a81b13c65f3fd1ec901764c",
+    "proof_artifact_hash": "4a3adbfaacf0c012509f3f4266fce21ea3b4c8d9ccfe43ddb2ffe80884cde047",
+    "proof_hash": "99e56d7d0b45fad5044bd56c05ad89b2af8d52ef6c2f6bcf2455e2b046e4bf26",
+    "verification_status": "VERIFIED_ARTIFACT_BOUND"
+  },
+  "bounds": {
+    "antifield_number": 0,
+    "engineering_dimension": 4,
+    "form_degree": 4,
+    "ghost_number": 1,
+    "ghost_species": "WEYL",
+    "parity": "even",
+    "spacetime_dimension": 4
+  },
+  "canonical_sectors": [
+    {
+      "bianchi_relation_rank": 0,
+      "canonical_basis": [
+        {
+          "factors": [
+            {
+              "derivatives": [],
+              "grassmann_parity": 0,
+              "slots": [
+                0,
+                1,
+                0,
+                1
+              ],
+              "spacetime_parity": 0,
+              "tensor": "Riemann"
+            },
+            {
+              "derivatives": [
+                2,
+                2
+              ],
+              "grassmann_parity": 1,
+              "slots": [],
+              "spacetime_parity": 0,
+              "tensor": "omega"
+            }
+          ]
+        },
+        {
+          "factors": [
+            {
+              "derivatives": [],
+              "grassmann_parity": 0,
+              "slots": [
+                0,
+                1,
+                0,
+                2
+              ],
+              "spacetime_parity": 0,
+              "tensor": "Riemann"
+            },
+            {
+              "derivatives": [
+                1,
+                2
+              ],
+              "grassmann_parity": 1,
+              "slots": [],
+              "spacetime_parity": 0,
+              "tensor": "omega"
+            }
+          ]
+        }
+      ],
+      "canonical_quotient_dimension": 2,
+      "identity_status": {
+        "curvature_bianchi": "EXHAUSTIVE_GENERATED",
+        "four_dimensional_antisymmetrization": "EXHAUSTIVE_EMPTY_FEWER_THAN_FIVE_CONTRACTION_PAIRS",
+        "grassmann_signs": "PLUS_ONE_SINGLE_WEYL_GHOST_FACTOR",
+        "signed_identical_factor_permutations": "VACUOUS_NO_REPEATED_TENSOR_FACTOR"
+      },
+      "raw_pairing_count": 15,
+      "sector_id": "RIEMANN_TIMES_HESSIAN_OMEGA",
+      "signature": {
+        "curvature_count": 1,
+        "epsilon_count": 0,
+        "form_degree": 4,
+        "generalized_connection_degree": 0,
+        "ghost_derivative_order": 2,
+        "ghost_factor_count": 1,
+        "ghost_index_slots": 2,
+        "ghost_species": "WEYL",
+        "tensor_derivative_count": 0,
+        "tensor_index_slots": 4,
+        "total_index_slots": 6
+      },
+      "signed_symmetry_orbit_count": 2
+    },
+    {
+      "bianchi_relation_rank": 1,
+      "canonical_basis": [
+        {
+          "factors": [
+            {
+              "derivatives": [
+                0
+              ],
+              "grassmann_parity": 0,
+              "slots": [
+                0,
+                1,
+                1,
+                2
+              ],
+              "spacetime_parity": 0,
+              "tensor": "Riemann"
+            },
+            {
+              "derivatives": [
+                2
+              ],
+              "grassmann_parity": 1,
+              "slots": [],
+              "spacetime_parity": 0,
+              "tensor": "omega"
+            }
+          ]
+        },
+        {
+          "factors": [
+            {
+              "derivatives": [
+                2
+              ],
+              "grassmann_parity": 0,
+              "slots": [
+                0,
+                1,
+                0,
+                1
+              ],
+              "spacetime_parity": 0,
+              "tensor": "Riemann"
+            },
+            {
+              "derivatives": [
+                2
+              ],
+              "grassmann_parity": 1,
+              "slots": [],
+              "spacetime_parity": 0,
+              "tensor": "omega"
+            }
+          ]
+        }
+      ],
+      "canonical_quotient_dimension": 1,
+      "contracted_differential_bianchi_coefficient": {
+        "denominator": 2,
+        "numerator": -1
+      },
+      "identity_status": {
+        "curvature_bianchi": "EXHAUSTIVE_GENERATED",
+        "differential_bianchi": "EXHAUSTIVE_GENERATED",
+        "four_dimensional_antisymmetrization": "EXHAUSTIVE_EMPTY_FEWER_THAN_FIVE_CONTRACTION_PAIRS",
+        "grassmann_signs": "PLUS_ONE_SINGLE_WEYL_GHOST_FACTOR",
+        "signed_identical_factor_permutations": "VACUOUS_NO_REPEATED_TENSOR_FACTOR"
+      },
+      "raw_pairing_count": 15,
+      "sector_id": "GRAD_RIEMANN_TIMES_GRAD_OMEGA",
+      "signature": {
+        "curvature_count": 1,
+        "epsilon_count": 0,
+        "form_degree": 4,
+        "generalized_connection_degree": 0,
+        "ghost_derivative_order": 1,
+        "ghost_factor_count": 1,
+        "ghost_index_slots": 1,
+        "ghost_species": "WEYL",
+        "tensor_derivative_count": 1,
+        "tensor_index_slots": 5,
+        "total_index_slots": 6
+      },
+      "signed_symmetry_orbit_count": 2
+    }
+  ],
+  "certificate_hash": "ebb7c12fa281e231062d4fa280201e0fe1b86cd16cd7c518833078b8f5bc76db",
+  "checks": {
+    "closure_kernel_equals_boundaries_plus_two_classes": "VERIFIED",
+    "curvature_and_differential_bianchi": "VERIFIED",
+    "dual_witnesses_normalized": "VERIFIED",
+    "exact_Q_and_d_h_matrices": "VERIFIED",
+    "four_dimensional_antisymmetrization": "VERIFIED_EXHAUSTIVE_EMPTY",
+    "grassmann_signs": "VERIFIED",
+    "integration_by_parts": "VERIFIED",
+    "orbit_first_no_ambient_expansion": "VERIFIED",
+    "two_pending_mixed_signatures_resolved": "VERIFIED"
+  },
+  "claim_boundary": [
+    "This is the complete even Weyl-ghost AFN0 candidate quotient at dimension four.",
+    "It does not include antifield-dependent classes or promote the full minimal BV quotient.",
+    "It is LOCAL-ALGEBRAIC and is not a D-anomaly, anomaly coefficient, restored QME, residual transfer, or Lorentzian result."
+  ],
+  "classes": [
+    {
+      "dual_pairing": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "dual_witness_coordinates": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "dual_witness_type": "COMPLETE_NONTRIVIALITY_WITNESS",
+      "relative_cohomology_status": "NONTRIVIAL",
+      "representative_coordinates": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "representative_id": "ANOM_OMEGA_C2"
+    },
+    {
+      "dual_pairing": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "dual_witness_coordinates": [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "dual_witness_type": "COMPLETE_NONTRIVIALITY_WITNESS",
+      "relative_cohomology_status": "NONTRIVIAL",
+      "representative_coordinates": [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "representative_id": "ANOM_OMEGA_E4"
+    }
+  ],
+  "classical_commit": "UNFROZEN",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "enumeration_policy": {
+    "ambient_raw_graph_count": 2860932903,
+    "ambient_raw_graphs_materialized": 0,
+    "mode": "ORBIT_FIRST_TWO_PENDING_MIXED_SIGNATURES",
+    "target_raw_pairings_materialized": 30
+  },
+  "exact_classes": [
+    {
+      "current_id": "CURRENT_R_GRAD_OMEGA_MINUS_OMEGA_GRAD_R",
+      "primitive_coefficient": {
+        "denominator": 12,
+        "numerator": -1
+      },
+      "primitive_id": "R_SQUARED",
+      "relative_cohomology_status": "EXACT",
+      "representative_id": "ANOM_OMEGA_BOX_R"
+    }
+  ],
+  "provenance": {
+    "implementation": "quantum-weyl/local_bv/h14_even_canonical_quotient.py",
+    "schema": "quantum-weyl/local_bv/schema/afn0_h14_even_canonical_quotient.schema.json",
+    "source_manifest_sha256": "5605c22c7e25a202b34ae0d894306904bf4cba6aef59a1ba88ed4ae99f80a261",
+    "source_sha256": {
+      "quantum-weyl/local_bv/certificates/BASIS_GAP_REPORT_AFN0.json": "0fd0c91172143eb8f813c44f179f69913e78b9ec7c27f4b3ae49c70847f5a35e",
+      "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json": "2c03b184f27d6f0054ed12029b052834ef08aa8bf4f2c42663f84617f0e63063",
+      "quantum-weyl/local_bv/certificates/LOCAL_DIMENSION_FOUR_CANDIDATE_CATALOGUE_CERTIFICATE.json": "193e24683e1583d08b081f82b5fbdc7949cd5bc6e4df0f61d38f8fbcecceb8e6",
+      "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json": "b712a4745e7424baf1fa4a52fb1efc192196a95bdea939619052a6c9f7031685",
+      "quantum-weyl/local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR.json": "2e575a449cc7e2469c1ba3816ce82e739162ac69c13ce07c8ef3b9b6e6c4fd8e"
+    }
+  },
+  "result_id": "AFN0_H14_EVEN_CANONICAL_QUOTIENT",
+  "result_state": "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT",
+  "scope_label": "AFN0_ONLY",
+  "smallest_relative_sector": {
+    "Q_matrix": {
+      "column_count": 1,
+      "entries": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -12
+          },
+          "column": 0,
+          "row": 4
+        }
+      ],
+      "row_count": 7
+    },
+    "boundary_rank": 4,
+    "closure_obstruction_matrix": {
+      "column_count": 7,
+      "entries": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -12
+          },
+          "column": 2,
+          "row": 0
+        }
+      ],
+      "row_count": 1
+    },
+    "closure_rank": 6,
+    "combined_boundary_matrix": {
+      "column_count": 4,
+      "entries": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 3,
+          "row": 3
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -12
+          },
+          "column": 0,
+          "row": 4
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 1,
+          "row": 4
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 2,
+          "row": 5
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 1,
+          "row": 6
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "column": 2,
+          "row": 6
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 3,
+          "row": 6
+        }
+      ],
+      "row_count": 7
+    },
+    "d_h_matrix": {
+      "column_count": 3,
+      "entries": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 2,
+          "row": 3
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 0,
+          "row": 4
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 1,
+          "row": 5
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 0,
+          "row": 6
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "column": 1,
+          "row": 6
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 2,
+          "row": 6
+        }
+      ],
+      "row_count": 7
+    },
+    "incoming_dh_basis": [
+      "CURRENT_R_GRAD_OMEGA",
+      "CURRENT_RICCI_GRAD_OMEGA",
+      "CURRENT_OMEGA_GRAD_R"
+    ],
+    "incoming_q_basis": [
+      "R_SQUARED"
+    ],
+    "integration_by_parts_coordinates": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "outgoing_Q_matrix": {
+      "column_count": 7,
+      "entries": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 12
+          },
+          "column": 2,
+          "row": 0
+        }
+      ],
+      "row_count": 2
+    },
+    "outgoing_current": {
+      "factors": [
+        {
+          "derivatives": [],
+          "grassmann_parity": 1,
+          "slots": [],
+          "spacetime_parity": 0,
+          "tensor": "omega"
+        },
+        {
+          "derivatives": [],
+          "grassmann_parity": 0,
+          "slots": [
+            1,
+            2,
+            1,
+            2
+          ],
+          "spacetime_parity": 0,
+          "tensor": "Riemann"
+        },
+        {
+          "derivatives": [
+            0
+          ],
+          "grassmann_parity": 1,
+          "slots": [],
+          "spacetime_parity": 0,
+          "tensor": "omega"
+        }
+      ]
+    },
+    "outgoing_d_h_matrix": {
+      "column_count": 1,
+      "entries": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 0,
+          "row": 0
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "column": 0,
+          "row": 1
+        }
+      ],
+      "row_count": 2
+    },
+    "outgoing_d_h_quotient_dimension": 1,
+    "outgoing_target_basis": [
+      {
+        "factors": [
+          {
+            "derivatives": [],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 1,
+            "slots": [],
+            "spacetime_parity": 0,
+            "tensor": "omega"
+          },
+          {
+            "derivatives": [
+              2,
+              2
+            ],
+            "grassmann_parity": 1,
+            "slots": [],
+            "spacetime_parity": 0,
+            "tensor": "omega"
+          }
+        ]
+      },
+      {
+        "factors": [
+          {
+            "derivatives": [
+              2
+            ],
+            "grassmann_parity": 0,
+            "slots": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "spacetime_parity": 0,
+            "tensor": "Riemann"
+          },
+          {
+            "derivatives": [],
+            "grassmann_parity": 1,
+            "slots": [],
+            "spacetime_parity": 0,
+            "tensor": "omega"
+          },
+          {
+            "derivatives": [
+              2
+            ],
+            "grassmann_parity": 1,
+            "slots": [],
+            "spacetime_parity": 0,
+            "tensor": "omega"
+          }
+        ]
+      }
+    ],
+    "quotient_dimension": 2,
+    "reduced_omega_R2_obstruction_coefficient": {
+      "denominator": 1,
+      "numerator": -12
+    }
+  },
+  "top_basis": [
+    "ANOM_OMEGA_C2",
+    "ANOM_OMEGA_E4",
+    "ANOM_OMEGA_R2",
+    "ANOM_OMEGA_BOX_R",
+    "MIXED_R_BOX_OMEGA",
+    "MIXED_RICCI_HESS_OMEGA",
+    "MIXED_GRAD_R_GRAD_OMEGA"
+  ]
+}

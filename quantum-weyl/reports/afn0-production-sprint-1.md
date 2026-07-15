@@ -29,13 +29,15 @@ spaces are generated and reduced independently.  Every slice records its
 rules, bounds, raw and canonical counts, identity ranks, and manifest hash.
 
 The run also imports the exact primitives for `Box R` and `omega Box R`.
-Those two entries are `EXACT`; all other relative class statuses remain
-`UNDECIDED`.
+Those two entries are `EXACT`. The standalone even-H14 quotient now promotes
+`omega C2` and `omega E4` with complete normalized dual witnesses; all other
+relative class statuses remain `UNDECIDED`.
 
 ## Deliberate fail-closed boundary
 
-This is not yet the antifield-independent obstruction classification.  The
-top curvature-density carrier basis is complete under its declared rules,
+This is not yet the full antifield-independent obstruction classification.
+The even Weyl-ghost H14 candidate quotient is complete, but the top
+curvature-density carrier basis in the remaining slices,
 but the lower-form ghost/generalized-connection bases required by the total
 complex are still `IN_PROGRESS`.  The pure-Diff ghost basis at ghost number
 one is likewise incomplete.  The even anomaly closure slice now includes
@@ -43,8 +45,9 @@ one is likewise incomplete.  The even anomaly closure slice now includes
 truncated because the lower-form production and boundary bases are not yet
 exhaustive.
 
-Consequently the run emits no nontriviality claim and no dual witness for a
-physical representative.  The only permitted provisional witness label is
+Consequently the aggregate Sprint-1 receipts remain provisional outside the
+standalone completed even-H14 certificate. The only permitted provisional
+witness label elsewhere is
 `TRUNCATED_NONMEMBERSHIP_WITNESS`.  The generic exact engine constructs a dual
 functional `lambda` satisfying
 
@@ -69,9 +72,10 @@ zero and from `9` to `5` at ghost number one.  A separate Diff top-form ledger
 refines from `12` to `7` signatures per parity sector.  The earlier combined
 count `21=9+12` remains stored for provenance, but is no longer presented as
 the top Weyl-anomaly count.  Generalized-connection degree is tracked as a
-separate pending expansion gate.  Raw index-contraction graphs and their
-hashes are now emitted for every refined row; their canonical quotient is
-still pending.
+separate pending expansion gate. Raw index-contraction graphs and their
+hashes are now emitted for every refined row. The two even-H14 mixed
+signatures are canonically quotiented orbit-first; the remaining odd, Diff,
+and ambient quotients are still pending.
 
 ## Machine receipts
 
@@ -80,6 +84,7 @@ still pending.
 - `quantum-weyl/local_bv/cohomology/slices/*.json` (eight mode-specific receipts);
 - `quantum-weyl/local_bv/certificates/AFN0_PRODUCTION_RUN_CERTIFICATE.json`;
 - `quantum-weyl/local_bv/certificates/BASIS_GAP_REPORT_AFN0.json`;
+- `quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json`;
 - `quantum-weyl/local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR.json`.
 
 ## Next computation
@@ -90,9 +95,9 @@ all, 55 below top form degree. The ambient integer solver separately produces
 2,480 coarse signatures and 720 refined signatures across total degrees three
 through six. The refined set is now realized as 1,224 exact derivative-factor
 profiles representing 2,860,932,903 raw graphs without materializing them.
-Construct the signed factor actions and quotient these factored graphs, then
-assemble exact `Q` and `d_h` matrices and only then solve the full
-boundary-membership problem.
+Extend the completed even-H14 orbit quotient and exact `Q`, `d_h` matrices to
+the remaining odd and Diff slices. The 2.86-billion-graph ambient expansion
+remains unnecessary for the completed candidate slice.
 
 Machine receipt:
 `quantum-weyl/local_bv/certificates/AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE.json`.
@@ -165,3 +170,12 @@ commit hash; its blocked lifecycle and null verdict are unchanged.
 
 The dossier contribution remains intentionally pinned to the preceding
 certificate commit until this strengthened certificate chain is committed.
+
+### Even-H14 canonical quotient
+
+The orbit-first completion resolves both pending even mixed signatures
+without expanding the ambient graph inventory. The standalone certificate
+emits complete dual witnesses for `omega C2` and `omega E4`, retains
+`omega Box R` as exact, and excludes `omega R^2` by its nonzero reduced
+Wess--Zumino defect. The aggregate production state remains `IN_PROGRESS`
+for the other parity, Diff, and antifield sectors.

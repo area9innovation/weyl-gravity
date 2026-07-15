@@ -286,3 +286,15 @@ sets are deliberately stored in a factored, content-addressed manifest rather
 than materialized.  This closes tensor-slot realizability, while signed factor
 actions, Bianchi/jet relations, integration by parts, the four-dimensional
 quotient, and production matrices remain open.
+
+The first completed candidate quotient is the even Weyl-ghost AFN0 slice,
+certified by
+[`certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json`](certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json).
+It resolves only the two pending mixed top-form signatures, orbit-first: 30
+pairings are materialized, while none of the 2,860,932,903 ambient raw graphs
+is expanded. Differential Bianchi and integration by parts place all mixed
+carriers in the explicit `omega Box R` boundary sector. The resulting exact
+projected relative matrices have closure rank six, boundary rank four, and
+quotient dimension two, with complete normalized dual witnesses for
+`omega C2` and `omega E4`. This is an `AFN0_ONLY`, `LOCAL-ALGEBRAIC`
+candidate quotient, not a full-BV anomaly theorem or QME result.
