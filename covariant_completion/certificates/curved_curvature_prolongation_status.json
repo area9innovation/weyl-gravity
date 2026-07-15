@@ -34,11 +34,11 @@
     "curved_EB_symmetric_hyperbolicity": true,
     "curved_constraint_propagation": true,
     "curved_sourced_constraint_identity": true,
-    "prolonged_BV_operator_identity": true,
-    "prolonged_current_comparison": true,
+    "prolonged_BV_operator_identity": false,
+    "prolonged_current_comparison": false,
     "prolonged_green_witness": false,
     "residual_endpoint_recovery": false,
-    "support_local_prolongation_retract": true
+    "support_local_prolongation_retract": false
   },
   "causal_green_homotopy": false,
   "causal_quasi_isomorphism": false,
@@ -53,7 +53,7 @@
   },
   "curvature_causal_green_operators": false,
   "curvature_green_realization": false,
-  "curvature_prolonged_complex_exact": true,
+  "curvature_prolonged_complex_exact": false,
   "curved_EB_equations": true,
   "curved_EB_first_order_closure": true,
   "curved_EB_symmetric_hyperbolicity": true,
@@ -96,7 +96,7 @@
     "physical_Jordan_extension_causal": true,
     "physical_biwave_block_green_hyperbolic": true,
     "physical_green_flag_scope": "exact restricted TT plus shifted-auxiliary operator subcomplex",
-    "rank14_Weyl_Cotton_input_manifest_complete": true,
+    "rank14_Weyl_Cotton_input_manifest_complete": false,
     "rank14_common_Douglis_filtration_required": true,
     "rank14_common_Douglis_weight_constraints_feasible": true,
     "rank14_compatible_source_kernel_rank": 12,
@@ -104,14 +104,17 @@
     "rank14_curved_Caux_Rees_layer_unresolved": true,
     "rank14_equation_SDR_constructed": false,
     "rank14_equation_SDR_required": true,
-    "rank14_equation_cone_exact": true,
+    "rank14_equation_cone_exact": false,
     "rank14_fake_V7_quotient_defined": false,
     "rank14_fake_state_SDR_rejected": true,
+    "rank14_fibre_identified_second_square_exact": false,
+    "rank14_full_Rees_final_square_defect_rank": 4,
     "rank14_full_equation_cone_required": true,
     "rank14_full_symbol_cone_cohomology_computed": false,
     "rank14_full_symbol_cone_is_complex": false,
     "rank14_generic_curvature_compatibility_defect_rank": 3,
     "rank14_green_operators_constructed": false,
+    "rank14_identity_attachment_requires_repair": true,
     "rank14_lower_order_PBW_may_resume": false,
     "rank14_mixed_symbol_cone_rejected": true,
     "rank14_null_B3_H2_quotient_distinguished_from_constraint_kernel": true,
@@ -123,7 +126,7 @@
     "rank14_raw_curvature_image_is_source_compatible": false,
     "rank14_raw_curvature_image_rank": 5,
     "rank14_raw_curvature_kernel_rank": 9,
-    "rank14_typed_incoming_map_ledger_complete": true,
+    "rank14_typed_incoming_map_ledger_complete": false,
     "rank14_witness_companion_cycle_gate_exact": true,
     "rank34_presented_rank12_submodule_green": true,
     "rank34_rank14_field_cokernel_green": false,
@@ -136,9 +139,12 @@
   },
   "mapping_cylinder_evidence": {
     "certificate": "curved_curvature_mapping_cylinder_substitution.json",
-    "coefficientwise_complete": true,
-    "prolonged_BV_operator_identity_promoted": true,
-    "support_local_prolongation_retract_promoted": true
+    "coefficientwise_complete": false,
+    "executable_Rees_gate": "curved_rank14_full_cone_rees_gate.json",
+    "fibre_identified_second_square_exact": false,
+    "final_square_defect_rank": 4,
+    "prolonged_BV_operator_identity_promoted": false,
+    "support_local_prolongation_retract_promoted": false
   },
   "mixed_order_green_evidence": {
     "actual_factorization_exact": false,
@@ -179,19 +185,19 @@
     "shifted_rank4_vector_certificate": "curved_expanded_relative_witness_vector_contraction.json",
     "three_flags_promote_together_only": true
   },
-  "next_exact_step": "extract every coefficient in the certified common Douglis/Rees filtration, especially lower A and weighted zeroth Weyl--Cotton blocks; verify all associated-graded cone squares before computing its causal-stratum cohomology or any Green homotopy",
+  "next_exact_step": "repair or replace the identity attachment/filtration so the executable fibre-identified square N0 A0-B0 C0 vanishes; only then assemble the support-local all-row prolongation and current",
   "phase1_evidence": {
     "certificate": "curved_weyl_cotton_jet_comparison.json",
     "curved_equations_and_first_order_closure_promoted_from_certificate": true,
     "exhaustive_Weyl_two_jets": 150
   },
-  "prolonged_BV_operator_identity": true,
-  "prolonged_current_comparison": true,
+  "prolonged_BV_operator_identity": false,
+  "prolonged_current_comparison": false,
   "prolonged_current_evidence": {
     "Green_current_equality_is_separate": true,
-    "all_row_cyclic_quadratic_parent": true,
+    "all_row_cyclic_quadratic_parent": false,
     "certificate": "curved_prolonged_current_comparison.json",
-    "off_shell_d_plus_Q_comparison": true
+    "off_shell_d_plus_Q_comparison": false
   },
   "prolonged_green_witness": false,
   "proof_boundary": {
@@ -204,6 +210,6 @@
   },
   "residual_endpoint_recovery": false,
   "schema": "pure-weyl-curvature-prolongation-status-v2",
-  "support_local_prolongation_retract": true,
+  "support_local_prolongation_retract": false,
   "weyl_symbol_helicity_isomorphism": true
 }

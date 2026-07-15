@@ -222,8 +222,6 @@ def main() -> None:
             "curved_sourced_constraint_identity",
             "curved_constraint_propagation",
             "EAL_curvature_spectrum_match",
-            "support_local_prolongation_retract",
-            "prolonged_BV_operator_identity",
         }
         for open_obligation in OPEN_OBLIGATION_FIELDS:
             expected = open_obligation in promoted
@@ -232,8 +230,10 @@ def main() -> None:
                     "curvature obligation promotion mismatch: "
                     f"{open_obligation}={prolongation_certificate[open_obligation]}"
                 )
-        if not prolongation_certificate["curvature_prolonged_complex_exact"]:
-            raise AssertionError("exact curvature prolonged complex regressed")
+        if prolongation_certificate["curvature_prolonged_complex_exact"]:
+            raise AssertionError(
+                "rank-four Rees defect was bypassed in the prolonged complex"
+            )
         if prolongation_certificate["curvature_green_realization"]:
             raise AssertionError("curvature Green realization was inferred")
         if any(prolongation_certificate["proof_boundary"].values()):

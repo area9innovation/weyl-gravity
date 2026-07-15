@@ -1,12 +1,15 @@
 {
   "causal_transport_gate": {
     "blocking_atomic_dependencies": [
+      "support_local_prolongation_retract",
+      "prolonged_BV_operator_identity",
       "prolonged_green_witness",
       "curvature_causal_green_operators",
       "causal_green_homotopy",
       "causal_quasi_isomorphism",
       "residual_endpoint_recovery",
-      "SO42_equivariant_transport"
+      "SO42_equivariant_transport",
+      "prolonged_current_comparison"
     ],
     "required_flags": [
       "curved_operator_identity",
@@ -37,6 +40,8 @@
   "claims": {
     "CKV_recovery": {
       "blocking_dependencies": [
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity",
         "prolonged_green_witness",
         "curvature_causal_green_operators",
         "causal_green_homotopy"
@@ -172,6 +177,8 @@
     },
     "compact_to_global_quasi_isomorphism": {
       "blocking_dependencies": [
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity",
         "prolonged_green_witness",
         "curvature_causal_green_operators",
         "causal_green_homotopy"
@@ -188,6 +195,8 @@
     },
     "complete_bv_green_hyperbolicity": {
       "blocking_dependencies": [
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity",
         "prolonged_green_witness",
         "curvature_causal_green_operators",
         "causal_green_homotopy"
@@ -221,6 +230,8 @@
     },
     "curvature_green_realization": {
       "blocking_dependencies": [
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity",
         "prolonged_green_witness",
         "curvature_causal_green_operators",
         "causal_green_homotopy"
@@ -239,7 +250,10 @@
       "status": false
     },
     "curvature_prolonged_complex_exact": {
-      "blocking_dependencies": [],
+      "blocking_dependencies": [
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity"
+      ],
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [],
@@ -253,7 +267,7 @@
         "support_local_prolongation_retract",
         "prolonged_BV_operator_identity"
       ],
-      "status": true
+      "status": false
     },
     "curved_EB_equations": {
       "blocking_dependencies": [],
@@ -640,12 +654,15 @@
     },
     "final_covariant_H4": {
       "blocking_dependencies": [
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity",
         "prolonged_green_witness",
         "curvature_causal_green_operators",
         "causal_green_homotopy",
         "causal_quasi_isomorphism",
         "residual_endpoint_recovery",
-        "SO42_equivariant_transport"
+        "SO42_equivariant_transport",
+        "prolonged_current_comparison"
       ],
       "classification": "terminal_theorem_claim",
       "dependency_mode": "all",
@@ -679,6 +696,8 @@
     },
     "formal_compact_to_global_consequence": {
       "blocking_dependencies": [
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity",
         "prolonged_green_witness",
         "curvature_causal_green_operators",
         "causal_green_homotopy",
@@ -696,6 +715,8 @@
     },
     "green_homotopies": {
       "blocking_dependencies": [
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity",
         "prolonged_green_witness",
         "curvature_causal_green_operators",
         "causal_green_homotopy"
@@ -724,6 +745,8 @@
     },
     "pairing_compatibility": {
       "blocking_dependencies": [
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity",
         "prolonged_green_witness",
         "curvature_causal_green_operators",
         "causal_green_homotopy"
@@ -774,19 +797,24 @@
       "status": true
     },
     "prolonged_BV_operator_identity": {
-      "blocking_dependencies": [],
-      "classification": "implemented_structural_fact",
+      "blocking_dependencies": [
+        "prolonged_BV_operator_identity"
+      ],
+      "classification": "open_structural_obligation",
       "dependency_mode": "all",
       "evidence": [
         "curved_curvature_mapping_cylinder_substitution.json",
+        "curved_rank14_full_cone_rees_gate.json",
         "curved_curvature_prolongation_status.json"
       ],
-      "note": "Every prolonged BV row is assembled and Q_prol^2=0 is exact, including curvature equations, identities, antifields, and contractible rows.",
+      "note": "The abstract sixteen-block cone is assembled, but the emitted fibre-identified attachment has N0 A0-B0 C0 of rank four, so Q_prol^2=0 is not yet an operator-level theorem.",
       "requires": [],
-      "status": true
+      "status": false
     },
     "prolonged_current_comparison": {
-      "blocking_dependencies": [],
+      "blocking_dependencies": [
+        "prolonged_current_comparison"
+      ],
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [
@@ -794,9 +822,9 @@
         "curved_prolonged_current_comparison.json",
         "curved_current_comparison.json"
       ],
-      "note": "The all-row cyclic quadratic parent compares prolonged and auxiliary currents off shell by a local d+Q improvement. Green/current equality remains a separate consequence of the causal Green homotopy.",
+      "note": "A conditional cyclic quadratic-parent formula exists for a valid mapping cylinder, but the rank-four final-square defect prevents promotion of the actual prolonged/auxiliary current comparison.",
       "requires": [],
-      "status": true
+      "status": false
     },
     "prolonged_green_witness": {
       "blocking_dependencies": [
@@ -890,6 +918,8 @@
     },
     "residual_no_duplication": {
       "blocking_dependencies": [
+        "support_local_prolongation_retract",
+        "prolonged_BV_operator_identity",
         "prolonged_green_witness",
         "curvature_causal_green_operators",
         "causal_green_homotopy"
@@ -917,16 +947,19 @@
       "status": true
     },
     "support_local_prolongation_retract": {
-      "blocking_dependencies": [],
-      "classification": "implemented_structural_fact",
+      "blocking_dependencies": [
+        "support_local_prolongation_retract"
+      ],
+      "classification": "open_structural_obligation",
       "dependency_mode": "all",
       "evidence": [
         "curved_curvature_mapping_cylinder_substitution.json",
+        "curved_rank14_full_cone_rees_gate.json",
         "curved_curvature_prolongation_status.json"
       ],
-      "note": "The complete odd BV mapping cylinder gives a support-local prolongation SDR without inverse curl, Laplacian, or helicity projector.",
+      "note": "The graph SDR and first two attachment squares are local, but the fibre-identified final Rees square has rank-four defect; a complete support-local all-row prolongation SDR is not yet certified.",
       "requires": [],
-      "status": true
+      "status": false
     },
     "support_preservation": {
       "blocking_dependencies": [],
@@ -994,6 +1027,8 @@
   },
   "curvature_propagation_gate": {
     "blocking_dependencies": [
+      "support_local_prolongation_retract",
+      "prolonged_BV_operator_identity",
       "prolonged_green_witness",
       "curvature_causal_green_operators",
       "causal_green_homotopy"
@@ -1014,12 +1049,15 @@
     "status": false
   },
   "final_claim_atomic_blockers": [
+    "support_local_prolongation_retract",
+    "prolonged_BV_operator_identity",
     "prolonged_green_witness",
     "curvature_causal_green_operators",
     "causal_green_homotopy",
     "causal_quasi_isomorphism",
     "residual_endpoint_recovery",
-    "SO42_equivariant_transport"
+    "SO42_equivariant_transport",
+    "prolonged_current_comparison"
   ],
   "honest_status": "The algebraic/structural scaffold is certified. The final covariant H4 transport remains false exactly where the reported curved atomic dependencies remain open.",
   "policy": "derived claims use their declared all/any dependency mode; atomic statuses are read from owning certificates",
@@ -1029,8 +1067,8 @@
     "energy_H4_is_C2": true,
     "energy_gram_is_I2": true,
     "final_covariant_H4": false,
-    "implemented_or_derived_true": 53,
-    "open_or_blocked": 17,
+    "implemented_or_derived_true": 49,
+    "open_or_blocked": 21,
     "pairing_compatibility": false,
     "residual_H4_is_C2": true,
     "residual_gram_is_I2": true,

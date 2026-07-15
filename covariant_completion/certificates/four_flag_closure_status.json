@@ -1,20 +1,26 @@
 {
   "atomic_blockers": [
+    "support_local_prolongation_retract",
+    "prolonged_BV_operator_identity",
     "prolonged_green_witness",
     "curvature_causal_green_operators",
     "causal_green_homotopy",
     "causal_quasi_isomorphism",
     "residual_endpoint_recovery",
-    "SO42_equivariant_transport"
+    "SO42_equivariant_transport",
+    "prolonged_current_comparison"
   ],
   "causal_transport_gate": {
     "blocking_atomic_dependencies": [
+      "support_local_prolongation_retract",
+      "prolonged_BV_operator_identity",
       "prolonged_green_witness",
       "curvature_causal_green_operators",
       "causal_green_homotopy",
       "causal_quasi_isomorphism",
       "residual_endpoint_recovery",
-      "SO42_equivariant_transport"
+      "SO42_equivariant_transport",
+      "prolonged_current_comparison"
     ],
     "required_flags": [
       "curved_operator_identity",
@@ -45,6 +51,8 @@
   "complete": false,
   "curvature_propagation_gate": {
     "blocking_dependencies": [
+      "support_local_prolongation_retract",
+      "prolonged_BV_operator_identity",
       "prolonged_green_witness",
       "curvature_causal_green_operators",
       "causal_green_homotopy"

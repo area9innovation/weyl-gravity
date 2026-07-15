@@ -334,12 +334,13 @@ class FinalClaimDependencyReport:
         atomic(
             "support_local_prolongation_retract",
             bool(curvature_prolongation["support_local_prolongation_retract"]),
-            "implemented_structural_fact",
+            "open_structural_obligation",
             (
                 "curved_curvature_mapping_cylinder_substitution.json",
+                "curved_rank14_full_cone_rees_gate.json",
                 "curved_curvature_prolongation_status.json",
             ),
-            "The complete odd BV mapping cylinder gives a support-local prolongation SDR without inverse curl, Laplacian, or helicity projector.",
+            "The graph SDR and first two attachment squares are local, but the fibre-identified final Rees square has rank-four defect; a complete support-local all-row prolongation SDR is not yet certified.",
         )
         atomic(
             "prolonged_BV_operator_identity",
@@ -348,12 +349,13 @@ class FinalClaimDependencyReport:
                     "prolonged_BV_operator_identity", False
                 )
             ),
-            "implemented_structural_fact",
+            "open_structural_obligation",
             (
                 "curved_curvature_mapping_cylinder_substitution.json",
+                "curved_rank14_full_cone_rees_gate.json",
                 "curved_curvature_prolongation_status.json",
             ),
-            "Every prolonged BV row is assembled and Q_prol^2=0 is exact, including curvature equations, identities, antifields, and contractible rows.",
+            "The abstract sixteen-block cone is assembled, but the emitted fibre-identified attachment has N0 A0-B0 C0 of rank four, so Q_prol^2=0 is not yet an operator-level theorem.",
         )
         atomic(
             "prolonged_green_witness",
@@ -458,7 +460,7 @@ class FinalClaimDependencyReport:
                 "curved_prolonged_current_comparison.json",
                 "curved_current_comparison.json",
             ),
-            "The all-row cyclic quadratic parent compares prolonged and auxiliary currents off shell by a local d+Q improvement. Green/current equality remains a separate consequence of the causal Green homotopy.",
+            "A conditional cyclic quadratic-parent formula exists for a valid mapping cylinder, but the rank-four final-square defect prevents promotion of the actual prolonged/auxiliary current comparison.",
         )
         atomic(
             "candidate_curvature_principal_symmetric_hyperbolicity",

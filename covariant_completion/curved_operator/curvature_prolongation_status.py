@@ -77,6 +77,7 @@ class CurvatureProlongationStatus:
         differential_ideal_certificate: Mapping[str, object] | None = None,
         formal_integrability_certificate: Mapping[str, object] | None = None,
         mapping_cylinder_certificate: Mapping[str, object] | None = None,
+        rank14_full_cone_rees_certificate: Mapping[str, object] | None = None,
         prolonged_current_certificate: Mapping[str, object] | None = None,
         mixed_order_promotion_certificate: Mapping[str, object] | None = None,
         mixed_order_factorization_certificate: Mapping[str, object] | None = None,
@@ -269,6 +270,40 @@ class CurvatureProlongationStatus:
             phase1_flags["curved_constraint_propagation"] = (
                 prerequisites and sourced_exact and propagation_exact
             )
+        rees_gate_allows_mapping_promotion = False
+        if rank14_full_cone_rees_certificate is not None:
+            if rank14_full_cone_rees_certificate.get("schema") != (
+                "pure-weyl-rank14-full-cone-rees-gate-v1"
+            ):
+                raise AssertionError("wrong rank-14 full-cone Rees-gate schema")
+            degree_zero = rank14_full_cone_rees_certificate.get(
+                "degree_zero_cone", {}
+            )
+            final_square = (
+                degree_zero.get("last_square", {})
+                if isinstance(degree_zero, Mapping)
+                else {}
+            )
+            square_counts = (
+                degree_zero.get("square_nonzero_entries", [])
+                if isinstance(degree_zero, Mapping)
+                else []
+            )
+            is_complex = bool(
+                degree_zero.get("is_complex")
+                if isinstance(degree_zero, Mapping)
+                else False
+            )
+            defect_entries = int(final_square.get("defect_nonzero_entries", -1))
+            defect_rank = int(final_square.get("rank_on_all_tested_strata", -1))
+            square_is_zero = (
+                square_counts == [0, 0, 0]
+                and defect_entries == 0
+                and defect_rank == 0
+            )
+            if is_complex != square_is_zero:
+                raise AssertionError("rank-14 Rees gate is internally inconsistent")
+            rees_gate_allows_mapping_promotion = is_complex
         if mapping_cylinder_certificate is not None:
             if mapping_cylinder_certificate.get("schema") != (
                 "pure-weyl-curvature-mapping-cylinder-substitution-v1"
@@ -302,6 +337,7 @@ class CurvatureProlongationStatus:
                         "support_local_prolongation_retract",
                         "prolonged_BV_operator_identity",
                     ],
+                    rees_gate_allows_mapping_promotion,
                 )
             )
             phase1_flags["support_local_prolongation_retract"] = mapping_exact
@@ -704,7 +740,7 @@ class CurvatureProlongationStatus:
                 "shifted_rank4_vector_replacement_Green_inverse": True,
                 "shifted_rank4_vector_Green_homotopy": True,
                 "all_row_Green_assembly_conditional_on_rank14": True,
-                "rank14_Weyl_Cotton_input_manifest_complete": True,
+                "rank14_Weyl_Cotton_input_manifest_complete": False,
                 "rank14_principal_projector_free_presentation": True,
                 "rank14_principal_green_algebra": True,
                 "direct_rank14_curvature_retraction_no_go": True,
@@ -715,7 +751,7 @@ class CurvatureProlongationStatus:
                 "rank14_raw_curvature_image_is_source_compatible": False,
                 "rank14_generic_curvature_compatibility_defect_rank": 3,
                 "rank14_fake_V7_quotient_defined": False,
-                "rank14_equation_cone_exact": True,
+                "rank14_equation_cone_exact": False,
                 "rank14_null_B3_H2_quotient_distinguished_from_constraint_kernel": True,
                 "rank14_witness_companion_cycle_gate_exact": True,
                 "rank14_fake_state_SDR_rejected": True,
@@ -727,9 +763,12 @@ class CurvatureProlongationStatus:
                 "rank14_common_Douglis_weight_constraints_feasible": True,
                 "rank14_full_symbol_cone_is_complex": False,
                 "rank14_full_symbol_cone_cohomology_computed": False,
+                "rank14_full_Rees_final_square_defect_rank": 4,
+                "rank14_fibre_identified_second_square_exact": False,
+                "rank14_identity_attachment_requires_repair": True,
                 "rank14_equation_SDR_constructed": False,
                 "rank14_green_operators_constructed": False,
-                "rank14_typed_incoming_map_ledger_complete": True,
+                "rank14_typed_incoming_map_ledger_complete": False,
                 "rank14_plain_state_kernel_quotient_is_target": False,
                 "rank14_principal_H7_contraction_certified": False,
                 "rank14_corrected_equation_source_map_typed": True,
@@ -772,6 +811,11 @@ class CurvatureProlongationStatus:
                 "certificate": (
                     "curved_curvature_mapping_cylinder_substitution.json"
                 ),
+                "executable_Rees_gate": (
+                    "curved_rank14_full_cone_rees_gate.json"
+                ),
+                "fibre_identified_second_square_exact": False,
+                "final_square_defect_rank": 4,
                 "coefficientwise_complete": (
                     self.support_local_prolongation_retract
                     and self.prolonged_BV_operator_identity
@@ -940,9 +984,9 @@ class CurvatureProlongationStatus:
                 "blocks; verify all associated-graded cone squares before computing "
                 "its causal-stratum cohomology or any Green homotopy"
                 if self.prolonged_BV_operator_identity
-                else "insert the certified curvature equations, fourteen constraint "
-                "rows, and their cotangent/identity partners into the support-local "
-                "graph SDR and certify the complete prolonged BV differential"
+                else "repair or replace the identity attachment/filtration so the "
+                "executable fibre-identified square N0 A0-B0 C0 vanishes; only "
+                "then assemble the support-local all-row prolongation and current"
                 if self.curved_constraint_propagation
                 else "construct and certify the constraint-adjusted symmetric-hyperbolic "
                 "26-state Weyl--Cotton evolution and its sourced subsidiary identity"

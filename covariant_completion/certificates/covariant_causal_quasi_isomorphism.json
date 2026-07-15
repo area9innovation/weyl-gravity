@@ -15,7 +15,7 @@
         "support_local_prolongation_retract",
         "prolonged_BV_operator_identity"
       ],
-      "status": true
+      "status": false
     },
     {
       "map": "Gamma_c(C_prol)[1] -> Gamma_sc(C_prol)=Gamma(C_prol)",
@@ -62,7 +62,7 @@
         "prolonged_current_comparison",
         "residual_gram_is_I2"
       ],
-      "status": true
+      "status": false
     }
   ],
   "guard": "the displayed result is not promoted until every terminal-gate dependency is true",
@@ -77,12 +77,15 @@
   "selected_arrow": "causal",
   "terminal_gate": {
     "blocking_dependencies": [
+      "support_local_prolongation_retract",
+      "prolonged_BV_operator_identity",
       "prolonged_green_witness",
       "curvature_causal_green_operators",
       "causal_green_homotopy",
       "causal_quasi_isomorphism",
       "residual_endpoint_recovery",
-      "SO42_equivariant_transport"
+      "SO42_equivariant_transport",
+      "prolonged_current_comparison"
     ],
     "derived_not_manually_set": true,
     "requires": [

@@ -53,8 +53,6 @@ flowchart TD
 - `curved_sourced_constraint_identity` — The curvature-corrected sourced subsidiary identity and its six compatible-source rows are exact.
 - `curved_constraint_propagation` — All fourteen primary and secondary constraints propagate in a causal symmetric-hyperbolic subsidiary system for compatible sources.
 - `EAL_curvature_spectrum_match` — The exact covariant Weyl--Cotton equations carry precisely the parity-complete E, A, and L towers at every energy; symbolic BGG rank and character identities prove exhaustion and the Cotton graph adds no modes.
-- `support_local_prolongation_retract` — The complete odd BV mapping cylinder gives a support-local prolongation SDR without inverse curl, Laplacian, or helicity projector.
-- `prolonged_BV_operator_identity` — Every prolonged BV row is assembled and Q_prol^2=0 is exact, including curvature equations, identities, antifields, and contractible rows.
 - `candidate_curvature_principal_symmetric_hyperbolicity` — The legacy candidate electric/magnetic Weyl principal block has a positive symmetrizer and the two physical characteristic speeds in each direction. This certificate alone is principal-symbol evidence; the exact curved derivation is certified separately by the curved E/B, first-order, sourced-constraint, and propagation nodes.
 - `candidate_curvature_principal_constraints_propagate` — The principal divergence constraints close through div(curl_2 h)=(1/2)curl_1(div h).
 - `support_preservation` — The displayed finite differential and pointwise maps do not enlarge support.
@@ -80,12 +78,15 @@ exact curved equations, and the 26-state first-order closure are
 true. The remaining analytic, causal, endpoint, equivariance, and
 pairing-transport flags below remain open.
 
+- `support_local_prolongation_retract` — The graph SDR and first two attachment squares are local, but the fibre-identified final Rees square has rank-four defect; a complete support-local all-row prolongation SDR is not yet certified.
+- `prolonged_BV_operator_identity` — The abstract sixteen-block cone is assembled, but the emitted fibre-identified attachment has N0 A0-B0 C0 of rank four, so Q_prol^2=0 is not yet an operator-level theorem.
 - `prolonged_green_witness` — The canonical coefficientwise W has exact QW+WQ and fourteen Green blocks.  The complete 421-variable two-factor PBW system and its order-two Schur projection are exact; the 214-parameter action-adjoint branch has an exact rank-52/100 order-two Schur gate with 1,050 projected constraints.  Its 179 independent quadratics have no nonzero affine-linear consequence.  The exact degree-one Macaulay matrix has 136,585 rows and 20,585 multiplier columns; its degree-three rational rank is rigorously bounded between 12,861 and 14,136, but the full rational ranks and constant-ideal question remain undecided.  The expanded relative route now has a projector-free rank-14 principal presentation and same-sided Green algebra.  Its raw curvature map has rank five and kernel rank nine, while the compatible Weyl--Cotton source kernel has rank twelve; the generic off-shell compatibility defect has rank three, so the proposed K12/I5 quotient is not defined.  The exact operator chain square defines the canonical equation cone, but the first full BV symbol-cone audit shows that the presently mixed principal tables are not one associated-graded complex: the two internal square defects have ranks 11 and 4 generically (7 and 4 at null).  The ordinary BV identity layer is K_ordinary(-zeta)^T J, not the Green-witness companion; the exact curved identity differs by a rank-four background block.  Integer Douglis weights are feasible, but all associated-graded coefficients must be extracted before cone cohomology, the equation SDR or Green operators can be promoted.
 - `curvature_causal_green_operators` — Construct retarded and advanced operators for the exact constrained curvature system and assemble the full BV blocks.
 - `causal_green_homotopy` — Verify Q Lambda_+/- + Lambda_+/- Q=1 on the complete prolonged BV complex with causal support.
 - `causal_quasi_isomorphism` — Prove that the causal map Gamma_c(C_prol)[1] -> Gamma_sc(C_prol) is a quasi-isomorphism and specialize it to all smooth cylinder solutions.
 - `residual_endpoint_recovery` — Realize the fifteen cutoff CKV classes and their dual endpoints through the actual causal map, with no prolongation copy and suspension sign +1.
 - `SO42_equivariant_transport` — Prove that the causal/Cauchy identification transfers the full SO(4,2) action, strictly or by an explicit chain homotopy.
+- `prolonged_current_comparison` — A conditional cyclic quadratic-parent formula exists for a valid mapping cylinder, but the rank-four final-square defect prevents promotion of the actual prolonged/auxiliary current comparison.
 
 > The algebraic and energy-mode result is independently certified:
 > `H^4 = C^2` with Gram matrix `I_2`. This report tracks its

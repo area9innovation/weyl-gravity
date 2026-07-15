@@ -166,14 +166,13 @@ realization.  The residual `H4=C2`, `G=I2` calculation itself is complete;
 the missing theorem is the pairing-compatible causal BV bridge to that
 module.  The BV-canonical graph SDR, autonomous `26 -> 40 -> 14` curvature
 complex with cotangent adjoint, and analytic block witness are exact.  The
-local chain maps are now exact as well:
-`E_curv T=A_eq E_aux` on all 700 metric four-jets and
-`N_curv A_eq=B_id C_aux` coefficientwise, including the secondary rows.
-The degree/sign-resolved odd BV mapping cylinder is now exact, including
-Koszul adjoints, cyclicity, nilpotence and the support-local all-row SDR.
-Its canonical direct-sum/conjugated witness satisfies the exact operator
-identity and has fourteen Green split blocks, but `E_aux+K C` and its
-cotangent copy retain the scalar-wave obstruction.  The next witness must
+state/equation chain map is exact:
+`E_curv T=A_eq E_aux` on all 700 metric four-jets.  The inferred order-zero
+identity attachment fails in the fibre-identified coordinates:
+`N0 A0-B0 C0` has exact rank four on the common Rees page.  Consequently the
+degree/sign-resolved odd BV mapping cylinder, nilpotent prolonged operator,
+support-local all-row SDR, and prolonged current comparison are not yet
+promoted.  After repairing that attachment, the next witness must
 use a genuinely coupled two-way relative auxiliary--curvature block, unless
 the auxiliary diagonal is independently repaired.  The generic prenormal
 principal symbol now gives the exact identity `(P2-q I)^2=0` and Smith ledger
@@ -280,9 +279,9 @@ extraction of all associated-graded coefficients, especially lower `A` and
 weighted zeroth WC blocks, followed by exact square and cohomology checks.
 The remaining blockers
 are the prolonged Green theorem, causal chain homotopy, residual endpoint
-recovery, and `SO(4,2)` equivariance.  The complete cyclic mapping cylinder
-now gives the all-row quadratic BV parent and exact prolonged/auxiliary
-off-shell current comparison; Green/current equality remains downstream.
+recovery, and `SO(4,2)` equivariance.  The all-row quadratic BV parent and
+prolonged/auxiliary off-shell current comparison remain conditional on a
+valid cyclic mapping cylinder; Green/current equality is further downstream.
 Distributional/Hadamard
 completion remains open, and a direct same-bundle factorization is optional.
 
@@ -352,7 +351,7 @@ Five statements are kept separate throughout the manuscript:
 | Curved current workstream | Exact off-shell comparison, Green-gated | Both curved potentials and their `d+Q` improvement are certified, together with the Cauchy and `E/A/L` regressions; Green/current equality awaits the repaired Green-hyperbolic operator |
 | Covariant final-claim dependency DAG | Exact fail-closed meta-certificate | `curved_operator_identity`, `curved_deformation_retract`, and `curved_current_comparison` are true; `final_covariant_H4` remains false pending a causal Green realization |
 | Prenormal symbol and relative-saddle diagnostics | Exact fail-closed diagnostics; no flag promotion | The complete 421-variable PBW system has 3,684 rows. Its order-two algebraic Schur matrix has rank `100/190`, leaving 2,130 nonzero projected polynomial constraints and no constant obstruction. The exact action-adjoint reduction induces the right factors and leaves a 214-parameter branch whose order-two Schur gate has rank `52/100` and 1,050 nonzero projected constraints. The old bare-Box orbit is exactly repairable by a two-direction first-order split, but that fixed repair fails another order-two channel with rank `100/101`; the general branch remains open. Across the complete 162-dimensional relative family, three reciprocal two-pair candidates exist, but a fully demoted central auxiliary diagonal leaves a `113/116` temporal-rank ceiling. A successful relative witness must retain or prolong three scalar directions. |
-| Curvature-prolonged causal BV bridge | Exact constrained hyperbolic PDE, all-level spectrum, all-row local cyclic BV prolongation/current, and conditional conformal transport; Green bridge open | The curved Weyl--Cotton system is exactly derived: 26 state components, 34 covariant rows, temporal rank 26, eight primary plus six secondary constraints, and 150/150 Weyl two-jets. The first eight curvature flags through the support-local prolongation and prolonged BV operator identity are true, and the all-row prolonged current comparison is true. The apparent rank-six pointwise defect is generated differentially by the secondary constraints; compatible sources preserve all fourteen. Equivariance of the cutoff inverse is now explicit, `[kappa,rho]=[Q,[chi,rho]]`, and composes with global BGG and all-level E/A/L data once the causal quasi-isomorphism exists. The remaining flags require the prolonged BV Green witness, causal chain homotopy, and endpoint/equivariant promotion. The residual `H4=C2`, `G=I2` theorem is already exact and is only transported. |
+| Curvature-prolonged causal BV bridge | Exact constrained hyperbolic PDE and all-level spectrum; all-row prolongation/current and Green bridge open | The curved Weyl--Cotton system is exactly derived: 26 state components, 34 covariant rows, temporal rank 26, eight primary plus six secondary constraints, and 150/150 Weyl two-jets. The first six curvature/PDE flags are true. The proposed identity attachment leaves an exact rank-four final-square defect, so the support-local all-row prolongation, prolonged BV operator identity, and prolonged current comparison remain false. Equivariance of the cutoff inverse is an exact conditional formula, `[kappa,rho]=[Q,[chi,rho]]`, but promotion still requires the repaired mapping cylinder, causal homotopy, and endpoint recovery. The residual `H4=C2`, `G=I2` theorem is already exact and is only transported. |
 | Descent to `C^2` and `C Ctilde` | Exact residual/local descent | Lorentzian `i` phase is convention-dependent |
 | Dynamical representative quotient `I1` | Exact locally | Pontryagin is only locally variationally trivial; global theta effects retained |
 | Full field-theoretic pure-Weyl local-plus-residual algebraic BV/BFV result | Exact selected-category theorem | Minimal dictionary, gauge-fixed contraction, zero-mode suspension, polarized ledger and pairing transfer are certified; alternative boundary choices remain separate |

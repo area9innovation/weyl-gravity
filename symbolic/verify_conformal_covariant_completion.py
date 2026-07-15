@@ -319,6 +319,7 @@ def main() -> None:
             ("verify_conformal_rank14_equation_cycle_gate.py", guarded_args),
             ("verify_conformal_rank14_equation_sdr_boundary.py", guarded_args),
             ("verify_conformal_rank14_full_cone_symbol_gate.py", guarded_args),
+            ("verify_conformal_rank14_full_cone_rees_gate.py", guarded_args),
             ("verify_conformal_rank14_weyl_cotton_incoming_map_ledger.py", guarded_args),
             ("verify_conformal_expanded_relative_witness_incidence_screen.py", guarded_args),
             ("verify_conformal_expanded_relative_witness_alternative_semisimplicity.py", guarded_args),

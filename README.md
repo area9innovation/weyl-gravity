@@ -99,13 +99,12 @@ constraints, and exhaustive comparison on all 150 Weyl two-jets proves the
 curved equations and this local first-order closure.  Formal integrability
 adds six secondary constraints.  The constraint-adjusted 26-state system is
 exactly equivalent as a differential ideal, symmetric hyperbolic with causal
-speeds, and has a complete sourced subsidiary identity.  The odd BV mapping
-cylinder now gives the complete support-local all-row prolongation and its
-nilpotent prolonged differential.  The prolonged Green witness and actual
-BV Green homotopy, residual endpoint recovery, `SO(4,2)`-equivariant
-transport are not yet proved.  The cyclic all-row quadratic parent proves
-the prolonged/auxiliary current comparison off shell; Green/current equality
-still depends on the causal homotopy.  Hadamard
+speeds, and has a complete sourced subsidiary identity.  The proposed odd BV
+mapping cylinder is not yet a complex in the fibre-identified coordinates:
+its final associated-graded square has exact rank four.  Hence the all-row
+prolongation retract, prolonged BV operator identity, and
+prolonged/auxiliary current comparison remain open together with the Green
+witness, causal homotopy, endpoint recovery, and `SO(4,2)` transport.  Hadamard
 theory also remains open.  A direct same-bundle
 factorization of `B_lin+K T/2` is an optional strengthening, not a hidden
 premise.
@@ -134,15 +133,15 @@ curved_EB_symmetric_hyperbolicity = true
 curved_sourced_constraint_identity= true
 curved_constraint_propagation     = true
 EAL_curvature_spectrum_match       = true
-support_local_prolongation_retract= true
-prolonged_BV_operator_identity     = true
+support_local_prolongation_retract= false
+prolonged_BV_operator_identity     = false
 prolonged_green_witness            = false
 curvature_causal_green_operators  = false
 causal_green_homotopy              = false
 causal_quasi_isomorphism           = false
 residual_endpoint_recovery         = false
 SO42_equivariant_transport         = false
-prolonged_current_comparison       = true
+prolonged_current_comparison       = false
 ```
 
 The `SO(4,2)` item is now an exact conditional recognition theorem rather
@@ -160,17 +159,16 @@ second copy.  This is not inferred from a finite harmonic cutoff.
 The BV-canonical Weyl/Cotton graph SDR, autonomous curvature compatibility
 complex `26 -> 40 -> 14` with cotangent adjoint, causal curvature-block
 solution operators, and analytic block Green witness are exact subtheorems.
-The complete graded mapping cylinder is now exact.  The state map
+The state map
 `T=(C1,div C1)` and an order-two equation map satisfy
 `E_curv T=A_eq E_aux` on the exhaustive 700-dimensional metric four-jet
-fibre.  A sparse order-zero identity map satisfies
-`N_curv A_eq=B_id C_aux`, including the differentially generated secondary
-rows.  Their odd BV incidence, Koszul adjoints, canonical shears, nilpotent
-all-row differential, and support-local SDR are certified, so both
-`support_local_prolongation_retract` and `prolonged_BV_operator_identity` are
-true.  The canonical direct-sum/conjugated degree-minus-one witness is also
-an exact operator identity, and fourteen of its sixteen split diagonal
-blocks are Green hyperbolic.  It does not close the theorem: the auxiliary
+fibre.  However, the sparse order-zero identity attachment does not satisfy
+`N_curv A_eq=B_id C_aux` in the actual fibre-identified coordinates: the
+executable common-Rees gate finds a rank-four defect on the `a[3],s[1]`
+identity rows.  The abstract sixteen-block cone and its canonical shear are
+therefore conditional templates; they do not yet certify a nilpotent all-row
+differential, support-local SDR, or prolonged current.  Even after this
+attachment defect is repaired, the auxiliary
 field block $E_{\rm aux}+KC$ and its cotangent copy are the two remaining
 blocks and retain the scalar-wave rank obstruction.  The final witness must
 therefore go beyond direct-sum conjugation, using two-way relative
