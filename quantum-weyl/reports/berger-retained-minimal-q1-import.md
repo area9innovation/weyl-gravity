@@ -75,9 +75,15 @@ classical_contraction = NOT_AVAILABLE
 physical_execution_authorized = false
 ```
 
+A subsequent content-addressed backend now exposes this verified object to
+operator-aware consumers without crossing that boundary.  It supports arity
+one in the PBW coefficient domain and is validation-only; it is not the
+`Fraction`-valued ND2 evaluator or a physical assembly adapter.
+
 ## Machine receipt
 
 - `quantum-weyl/transfer/certificates/BERGER_RETAINED_MINIMAL_Q1_IMPORT.json`
+- `quantum-weyl/transfer/certificates/BERGER_PBW_OPERATOR_BACKEND.json`
 
 ## Verification commands
 

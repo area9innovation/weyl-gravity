@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-pbw-operator-backend-v1.schema.json",
+  "title": "Registered Berger PBW operator backend",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer",
+    "dependency_tags", "descriptor", "verified_import", "nd2_compatibility",
+    "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-pbw-operator-backend-v1"},
+    "result_id": {"const": "BERGER_PBW_OPERATOR_BACKEND"},
+    "result_state": {"const": "ARITY_ONE_OPERATOR_BACKEND_READY_ND2_ASSEMBLY_BLOCKED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "descriptor": {"$ref": "#/$defs/descriptor"},
+    "verified_import": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path", "sha256", "result_id", "retained_rows", "block_hashes",
+        "pbw_term_count", "maximum_differential_order"
+      ],
+      "properties": {
+        "path": {"const": "quantum-weyl/transfer/certificates/BERGER_RETAINED_MINIMAL_Q1_IMPORT.json"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "result_id": {"const": "BERGER_RETAINED_MINIMAL_Q1_IMPORT"},
+        "retained_rows": {"const": 26},
+        "block_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["H_retained", "K_spatial", "minus_K_spatial_sharp"],
+          "properties": {
+            "H_retained": {"$ref": "#/$defs/hash"},
+            "K_spatial": {"$ref": "#/$defs/hash"},
+            "minus_K_spatial_sharp": {"$ref": "#/$defs/hash"}
+          }
+        },
+        "pbw_term_count": {"const": 891},
+        "maximum_differential_order": {"const": 4}
+      }
+    },
+    "nd2_compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operator_backend_registered", "supported_arities",
+        "finite_cartan_evaluator_registered", "assembly_adapter_registered",
+        "physical_execution_authorized", "blocker", "reason", "allowed_routes"
+      ],
+      "properties": {
+        "operator_backend_registered": {"const": true},
+        "supported_arities": {"const": [1]},
+        "finite_cartan_evaluator_registered": {"const": false},
+        "assembly_adapter_registered": {"const": false},
+        "physical_execution_authorized": {"const": false},
+        "blocker": {"const": "COEFFICIENT_DOMAIN_AND_ARITY_MISMATCH"},
+        "reason": {"type": "string", "minLength": 1},
+        "allowed_routes": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256", "schema"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "operator_backend_registry.py", "berger_pbw_backend.py",
+            "berger_pbw_backend_certificate.py",
+            "schema/berger-pbw-operator-backend-v1.schema.json",
+            "tests/test_berger_pbw_backend.py"
+          ],
+          "properties": {
+            "operator_backend_registry.py": {"$ref": "#/$defs/hash"},
+            "berger_pbw_backend.py": {"$ref": "#/$defs/hash"},
+            "berger_pbw_backend_certificate.py": {"$ref": "#/$defs/hash"},
+            "schema/berger-pbw-operator-backend-v1.schema.json": {"$ref": "#/$defs/hash"},
+            "tests/test_berger_pbw_backend.py": {"$ref": "#/$defs/hash"}
+          }
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/berger-pbw-operator-backend-v1.schema.json"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "descriptor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "backend_id", "expression_schema_version", "coefficient_domain",
+        "supported_arities", "capabilities", "implementation_manifest",
+        "implementation_manifest_sha256", "assembly_mode",
+        "nd2_physical_assembly_authorized"
+      ],
+      "properties": {
+        "backend_id": {"const": "berger-invariant-pbw-linear-v1"},
+        "expression_schema_version": {"const": "quantum-weyl-berger-retained-minimal-q1-import-v1"},
+        "coefficient_domain": {"const": "Q[alpha_B,u,v] tensor U(e_Berger) in ordered PBW normal form"},
+        "supported_arities": {"const": [1]},
+        "capabilities": {"const": ["exact_polynomial_coefficient_parse", "formal_adjoint", "matrix_composition", "noncommutative_pbw_reduction", "support_local_order_audit"]},
+        "implementation_manifest": {"$ref": "#/$defs/backendImplementationManifest"},
+        "implementation_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "assembly_mode": {"const": "OPERATOR_VALIDATION_ONLY"},
+        "nd2_physical_assembly_authorized": {"const": false}
+      }
+    },
+    "backendImplementationManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quantum-weyl/transfer/berger_pbw_backend.py",
+        "quantum-weyl/transfer/berger_retained_q1_import.py",
+        "quantum-weyl/transfer/berger_retained_q1_import_certificate.py",
+        "quantum-weyl/transfer/operator_backend_registry.py"
+      ],
+      "properties": {
+        "quantum-weyl/transfer/berger_pbw_backend.py": {"$ref": "#/$defs/hash"},
+        "quantum-weyl/transfer/berger_retained_q1_import.py": {"$ref": "#/$defs/hash"},
+        "quantum-weyl/transfer/berger_retained_q1_import_certificate.py": {"$ref": "#/$defs/hash"},
+        "quantum-weyl/transfer/operator_backend_registry.py": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

@@ -125,6 +125,15 @@ minimal-`q1` prerequisite only.  The portable clock maps, nonminimal/all-row
 `q1`, complete `classical_contraction`, `q2/D`, and admissibility artifacts
 remain absent, so no physical ND2 Cartan execution has occurred.
 
+That retained operator is now exposed through a separate content-addressed
+PBW backend.  It declares the coefficient domain
+`Q[alpha_B,u,v] tensor U(e_Berger)`, supports arity one, and replays the exact
+import verification before returning a typed payload.  It is deliberately
+not registered as the current `Fraction`-valued Cartan evaluator.  Physical
+assembly therefore remains false until either the Cartan solver is extended
+to the PBW-module domain or an exact finite specialization is supplied with a
+`REDUCED-MODE` tag.
+
 The arity-two solve also has a block-sparse exact rail.  Declared additive
 labels such as `D` weight, momentum, or jet filtration must be preserved by
 `q1`; the differential then splits by
@@ -179,6 +188,7 @@ python3 quantum-weyl/transfer/nd2_physical_run_certificate.py --check
 python3 quantum-weyl/transfer/total_d_disposition_certificate.py --check
 python3 quantum-weyl/transfer/berger_clock_import_certificate.py --check
 python3 quantum-weyl/transfer/berger_retained_q1_import_certificate.py --check
+python3 quantum-weyl/transfer/berger_pbw_backend_certificate.py --check
 python3 quantum-weyl/transfer/arity_three_cartan_certificate.py --check
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check

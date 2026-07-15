@@ -56,6 +56,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED", d_question["status"])
         self.assertIn("SCOPED_D_GAUGE_8_OF_34_CLOCK_SDR", d_question["status"])
         self.assertIn("RETAINED_26_ROW_MINIMAL_Q1_IMPORTED", d_question["status"])
+        self.assertIn("ARITY_ONE_PBW_BACKEND_READY", d_question["status"])
         self.assertIn("FULL_CONTRACTION_Q2_D_INPUT_BLOCKED", d_question["status"])
         self.assertIn("ND2_ROUTER_AND_ND3_SOLVER_READY", d_question["status"])
 
@@ -74,11 +75,20 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn(
             "berger_retained_minimal_q1_import_sha256", certificate["provenance"]
         )
+        self.assertIn(
+            "berger_pbw_operator_backend_sha256", certificate["provenance"]
+        )
         self.assertIn("berger_total_D_disposition_sha256", certificate["provenance"])
         self.assertIn("nd3_arity_three_cartan_engine_sha256", certificate["provenance"])
         self.assertTrue(
             any(
                 "complete conformal-gravity q2" in claim
+                for claim in certificate["scope"]["not_established"]
+            )
+        )
+        self.assertTrue(
+            any(
+                "PBW-module-valued Cartan solver" in claim
                 for claim in certificate["scope"]["not_established"]
             )
         )

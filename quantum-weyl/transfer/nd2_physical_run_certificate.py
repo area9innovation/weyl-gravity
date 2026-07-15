@@ -17,10 +17,12 @@ OUTPUT_PATH = TRANSFER_ROOT / "certificates" / "ND2_PHYSICAL_RUN.json"
 
 try:
     from .arity_two_cartan import build_exact_correction_fixture
+    from .berger_pbw_backend import build_operator_backend_registry
     from .nd2_physical_run import AssemblyAdapterRegistry, MANIFEST_SCHEMA, TERMINAL_STATES, execute_evaluated_cartan, load_manifest
     from .support_local_q2_consumer import build_evaluator_registry
 except ImportError:
     from arity_two_cartan import build_exact_correction_fixture
+    from berger_pbw_backend import build_operator_backend_registry
     from nd2_physical_run import AssemblyAdapterRegistry, MANIFEST_SCHEMA, TERMINAL_STATES, execute_evaluated_cartan, load_manifest
     from support_local_q2_consumer import build_evaluator_registry
 
@@ -38,6 +40,11 @@ def _canonical_hash(value: object) -> str:
 def _source_manifest() -> dict[str, str]:
     paths = (
         "arity_two_cartan.py",
+        "operator_backend_registry.py",
+        "berger_pbw_backend.py",
+        "berger_pbw_backend_certificate.py",
+        "berger_retained_q1_import.py",
+        "berger_retained_q1_import_certificate.py",
         "evaluator_registry.py",
         "local_expression_ast.py",
         "support_local_q2_consumer.py",
@@ -47,9 +54,11 @@ def _source_manifest() -> dict[str, str]:
         "total_d_disposition_certificate.py",
         "schema/nd2-physical-run-input-v1.schema.json",
         "schema/nd2-physical-run-certificate-v1.schema.json",
+        "schema/berger-pbw-operator-backend-v1.schema.json",
         "schema/total-d-disposition-v1.schema.json",
         "tests/test_evaluator_registry.py",
         "tests/test_nd2_physical_run.py",
+        "tests/test_berger_pbw_backend.py",
         "tests/test_total_d_disposition.py",
     )
     return {path: _sha256(TRANSFER_ROOT / path) for path in paths}
@@ -57,8 +66,12 @@ def _source_manifest() -> dict[str, str]:
 
 def build_certificate() -> dict[str, Any]:
     registry = build_evaluator_registry(repository_root=ROOT)
+    operator_registry = build_operator_backend_registry(repository_root=ROOT)
     adapter_registry = AssemblyAdapterRegistry(ROOT)
     descriptors = [descriptor.to_payload() for descriptor in registry.descriptors()]
+    operator_descriptors = [
+        descriptor.to_payload() for descriptor in operator_registry.descriptors()
+    ]
     if INPUT_PATH.exists():
         try:
             verified_run = load_manifest(INPUT_PATH, repository_root=ROOT, registry=registry)
@@ -117,6 +130,7 @@ def build_certificate() -> dict[str, Any]:
             "unregistered_assembly_adapter_policy": "REJECT",
         },
         "registered_evaluators": descriptors,
+        "registered_operator_backends": operator_descriptors,
         "registered_assembly_adapters": [
             descriptor.to_payload() for descriptor in adapter_registry.descriptors()
         ],
@@ -136,15 +150,17 @@ def build_certificate() -> dict[str, Any]:
             "the manifest dependency tags must equal the canonical union declared by all four pinned artifacts",
             "the Cartan executor accepts only an opaque verified-manifest token",
             "exact assembled inputs return a retained correction or normalized obstruction witness",
+            "the retained Berger q1 has a content-addressed arity-one PBW operator backend",
         ],
         "not_established": [
             "a registered conformal-gravity expression evaluator",
+            "a PBW-module-valued Cartan solver or exact REDUCED-MODE specialization for the registered Berger backend",
             "a registered classical contraction assembly adapter",
             "an installed Berger physical-run manifest combining the scoped D_GAUGE theorem with the missing BV artifacts",
             "a physical conformal-gravity arity-two Cartan execution",
             "cyclic, real, boundary-compatible, or causal admissibility in a physical setting",
         ],
-        "next_gate": "install the pinned Berger support-local tensor, all-row contraction, and admissibility artifacts, then register their exact evaluator and assembly adapter",
+        "next_gate": "extend the registered Berger PBW backend to q2/D and a declared Cartan coefficient domain, then install the all-row contraction and admissibility artifacts",
         "provenance": {
             "source_manifest": source_manifest,
             "source_manifest_sha256": _canonical_hash(source_manifest),

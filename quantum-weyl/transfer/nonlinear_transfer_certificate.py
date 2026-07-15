@@ -23,6 +23,9 @@ BERGER_PARTIAL_SDR_PATH = (
 BERGER_RETAINED_Q1_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_RETAINED_MINIMAL_Q1_IMPORT.json"
 )
+BERGER_PBW_BACKEND_PATH = (
+    TRANSFER_ROOT / "certificates" / "BERGER_PBW_OPERATOR_BACKEND.json"
+)
 
 
 REQUIRED_EXPORTS = (
@@ -68,6 +71,9 @@ def _source_manifest() -> dict[str, str]:
         "berger_clock_sdr_import_certificate.py",
         "berger_retained_q1_import.py",
         "berger_retained_q1_import_certificate.py",
+        "operator_backend_registry.py",
+        "berger_pbw_backend.py",
+        "berger_pbw_backend_certificate.py",
         "total_d_disposition.py",
         "total_d_disposition_certificate.py",
         "arity_three_cartan.py",
@@ -86,6 +92,7 @@ def _source_manifest() -> dict[str, str]:
         "schema/berger-clock-partial-sdr-import-v1.schema.json",
         "schema/berger-clock-partial-sdr-portable-v1.schema.json",
         "schema/berger-retained-minimal-q1-import-v1.schema.json",
+        "schema/berger-pbw-operator-backend-v1.schema.json",
         "schema/total-d-disposition-v1.schema.json",
         "schema/arity-three-cartan-engine-v1.schema.json",
         "schema/nonlinear_classical_export.schema.json",
@@ -103,6 +110,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_berger_clock_import.py",
         "tests/test_berger_clock_sdr_import.py",
         "tests/test_berger_retained_q1_import.py",
+        "tests/test_berger_pbw_backend.py",
         "tests/test_total_d_disposition.py",
         "tests/test_arity_three_cartan.py",
         "tests/test_arity_three_cartan_certificate.py",
@@ -125,6 +133,9 @@ def build_certificate() -> dict[str, Any]:
     )
     berger_retained_q1 = json.loads(
         BERGER_RETAINED_Q1_PATH.read_text(encoding="utf-8")
+    )
+    berger_pbw_backend = json.loads(
+        BERGER_PBW_BACKEND_PATH.read_text(encoding="utf-8")
     )
     if (
         berger_import.get("result_state")
@@ -176,6 +187,31 @@ def build_certificate() -> dict[str, Any]:
         is not False
     ):
         raise ValueError("Berger retained minimal-q1 import was promoted or removed")
+    if (
+        berger_pbw_backend.get("schema")
+        != "quantum-weyl-berger-pbw-operator-backend-v1"
+        or berger_pbw_backend.get("result_state")
+        != "ARITY_ONE_OPERATOR_BACKEND_READY_ND2_ASSEMBLY_BLOCKED"
+        or berger_pbw_backend.get("descriptor", {}).get("supported_arities")
+        != [1]
+        or berger_pbw_backend.get("nd2_compatibility", {}).get(
+            "operator_backend_registered"
+        )
+        is not True
+        or berger_pbw_backend.get("nd2_compatibility", {}).get(
+            "finite_cartan_evaluator_registered"
+        )
+        is not False
+        or berger_pbw_backend.get("nd2_compatibility", {}).get(
+            "assembly_adapter_registered"
+        )
+        is not False
+        or berger_pbw_backend.get("nd2_compatibility", {}).get(
+            "physical_execution_authorized"
+        )
+        is not False
+    ):
+        raise ValueError("Berger PBW operator backend was promoted or removed")
     exports = {item["export_id"]: item for item in snapshot["required_exports"]}
     blockers = []
     for export_id in REQUIRED_EXPORTS:
@@ -247,6 +283,7 @@ def build_certificate() -> dict[str, Any]:
                 "registered exact 8/34 support-local cyclic Berger clock-sector SDR evidence import",
                 "strict portable partial-SDR receiving contract with explicit coefficient-ring, grading, derivative-symbol, coverage, and D-equivariance fields",
                 "independently reconstructed exact 26-row retained Berger minimal q1 in the noncommutative invariant-frame PBW algebra",
+                "content-addressed arity-one Berger PBW operator backend with validation-only ND2 capability",
                 "total-D disposition router that permits Cartan contraction only for a certified D_GAUGE result",
                 "strict total-D presymplectic audit schema with canonical D_CHARGED vocabulary, sector ledger, and exact verdict signatures",
                 "phase-space, boundary-condition, classical-commit, dependency-scope, and source-hash binding before physical execution",
@@ -259,6 +296,7 @@ def build_certificate() -> dict[str, Any]:
                 "closure or centrality of either Weyl-square direction",
                 "absence of higher-bracket sector re-entry",
                 "the support-local all-row Berger matter-coupled BV contraction",
+                "a PBW-module-valued Cartan solver or exact REDUCED-MODE specialization for the Berger backend",
                 "an interacting particle or deformation-theory theorem",
                 "a quantum correction or residual quantum transfer",
                 "any LORENTZIAN-CAUSAL claim",
@@ -274,7 +312,7 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_BERGER_SCOPED_D_GAUGE_8_OF_34_CLOCK_SDR_AND_RETAINED_26_ROW_MINIMAL_Q1_IMPORTED_FULL_CONTRACTION_Q2_D_INPUT_BLOCKED_ND2_ROUTER_AND_ND3_SOLVER_READY",
+                "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_BERGER_SCOPED_D_GAUGE_8_OF_34_CLOCK_SDR_RETAINED_26_ROW_MINIMAL_Q1_IMPORTED_AND_ARITY_ONE_PBW_BACKEND_READY_FULL_CONTRACTION_Q2_D_INPUT_BLOCKED_ND2_ROUTER_AND_ND3_SOLVER_READY",
                 "next_certificate": "ND1_COMPLETE_SUPPORT_LOCAL_D_DERIVATION_AND_IOTA_D2",
             },
             {
@@ -359,6 +397,10 @@ def build_certificate() -> dict[str, Any]:
             "berger_retained_minimal_q1_import_sha256": _sha256(
                 BERGER_RETAINED_Q1_PATH
             ),
+            "berger_pbw_operator_backend_certificate": "quantum-weyl/transfer/certificates/BERGER_PBW_OPERATOR_BACKEND.json",
+            "berger_pbw_operator_backend_sha256": _sha256(
+                BERGER_PBW_BACKEND_PATH
+            ),
             "berger_total_D_disposition_certificate": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json",
             "berger_total_D_disposition_sha256": _sha256(
                 TOTAL_D_DISPOSITION_PATH
@@ -380,6 +422,7 @@ def build_certificate() -> dict[str, Any]:
             "The Berger D_GAUGE theorem is scoped to the smooth fixed-coupling linearized phase space; it does not construct the support-local all-row BV contraction required by ND2.",
             "The registered Berger clock SDR contracts exactly 8 of 34 minimal rows; its current certificate carries formulas and fingerprints, not a portable map payload, and D-equivariance is not computed.",
             "The retained Berger minimal q1 is complete on 26 rows and independently reconstructed from exact PBW entries; it supplies neither the separate clock maps nor nonminimal rows, q2, D action, or a contraction.",
+            "The registered Berger backend validates arity-one PBW-operator data only; the Fraction-valued ND2 engine cannot consume it without either a declared PBW-module extension or an exact REDUCED-MODE specialization.",
             "D_CHARGED is the canonical classical verdict; EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT is a route label, not a fifth scientific disposition.",
             "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics only; physical q3 and iota_D^(2) remain absent.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",

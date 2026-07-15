@@ -1,0 +1,73 @@
+{
+  "claim_boundary": "This certificate registers an exact arity-one LOCAL-ALGEBRAIC operator backend for the imported retained Berger q1. It does not register a Fraction-valued physical evaluator or assembly adapter, does not supply q2, D, contraction, or admissibility data, and authorizes no ND2 run.",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "descriptor": {
+    "assembly_mode": "OPERATOR_VALIDATION_ONLY",
+    "backend_id": "berger-invariant-pbw-linear-v1",
+    "capabilities": [
+      "exact_polynomial_coefficient_parse",
+      "formal_adjoint",
+      "matrix_composition",
+      "noncommutative_pbw_reduction",
+      "support_local_order_audit"
+    ],
+    "coefficient_domain": "Q[alpha_B,u,v] tensor U(e_Berger) in ordered PBW normal form",
+    "expression_schema_version": "quantum-weyl-berger-retained-minimal-q1-import-v1",
+    "implementation_manifest": {
+      "quantum-weyl/transfer/berger_pbw_backend.py": "86426702f6fbeb312bc0f07c8aeed3312e0c27375fb3279ceb65c9a445414a3d",
+      "quantum-weyl/transfer/berger_retained_q1_import.py": "4f08026476c9bf102b6dcf58a060b3356109e825484d6966e89b9265ebb1aea7",
+      "quantum-weyl/transfer/berger_retained_q1_import_certificate.py": "a5ec24b430f90fcc21636d4efae51d2b094918c42c23d22530c016987755808d",
+      "quantum-weyl/transfer/operator_backend_registry.py": "8c5e74f36656488e7060b47426b501c5582f13969522a53a090bf822288c8845"
+    },
+    "implementation_manifest_sha256": "8308d7cfcfa7298a06db5cc623182f0611f72788d458de79171642a72779bda0",
+    "nd2_physical_assembly_authorized": false,
+    "supported_arities": [
+      1
+    ]
+  },
+  "lifecycle_layer": "CLASSICAL_BV",
+  "nd2_compatibility": {
+    "allowed_routes": [
+      "extend ND2 to a declared PBW-module-valued Cartan complex",
+      "provide an exact finite specialization tagged REDUCED-MODE"
+    ],
+    "assembly_adapter_registered": false,
+    "blocker": "COEFFICIENT_DOMAIN_AND_ARITY_MISMATCH",
+    "finite_cartan_evaluator_registered": false,
+    "operator_backend_registered": true,
+    "physical_execution_authorized": false,
+    "reason": "The retained q1 is PBW-operator-valued over Q[alpha_B,u,v], while the current ND2 finite Cartan engine is Fraction-valued and also requires q2, D, contraction, and admissibility inputs.",
+    "supported_arities": [
+      1
+    ]
+  },
+  "provenance": {
+    "schema": "quantum-weyl/transfer/schema/berger-pbw-operator-backend-v1.schema.json",
+    "source_manifest": {
+      "berger_pbw_backend.py": "86426702f6fbeb312bc0f07c8aeed3312e0c27375fb3279ceb65c9a445414a3d",
+      "berger_pbw_backend_certificate.py": "8ebd9cbe9b2616caa176231e422934d178dff13747074274f8c7a70eca9f9283",
+      "operator_backend_registry.py": "8c5e74f36656488e7060b47426b501c5582f13969522a53a090bf822288c8845",
+      "schema/berger-pbw-operator-backend-v1.schema.json": "c76aa161f68d5ffb060a03304b0dadf8424926b8795f2f71709d698b7ec8937f",
+      "tests/test_berger_pbw_backend.py": "8b434f65e12a4512a094b7864470a41f4cc5e41052226dd6045723cf9d552145"
+    },
+    "source_manifest_sha256": "e1a8344a2f5e6cb5a757b04778f19125d308cb99896eada5d9110779c18110ee"
+  },
+  "result_id": "BERGER_PBW_OPERATOR_BACKEND",
+  "result_state": "ARITY_ONE_OPERATOR_BACKEND_READY_ND2_ASSEMBLY_BLOCKED",
+  "schema": "quantum-weyl-berger-pbw-operator-backend-v1",
+  "verified_import": {
+    "block_hashes": {
+      "H_retained": "271d3102ecabbc18c8b573cc275761e75a332f9a1820fa434e5d508d13668cd3",
+      "K_spatial": "71107e1385af35c4809bba139d1fba2c056c56868b4ab29d8ee250adb14acfbf",
+      "minus_K_spatial_sharp": "76c54b8b018f0e967eb0e1bc8a22b90a363798642c418874bf82b3698f6b5460"
+    },
+    "maximum_differential_order": 4,
+    "path": "quantum-weyl/transfer/certificates/BERGER_RETAINED_MINIMAL_Q1_IMPORT.json",
+    "pbw_term_count": 891,
+    "result_id": "BERGER_RETAINED_MINIMAL_Q1_IMPORT",
+    "retained_rows": 26,
+    "sha256": "f07124e84ac76347e7a24dbd2cb3977693eb299a5bf1607fd626b02bee7df6b5"
+  }
+}

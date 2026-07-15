@@ -71,6 +71,14 @@ cyclicity, and `q1^2=0`.  This does not fill the separate clock-map payload,
 nonminimal rows, complete contraction, `q2`, or `D` action, and therefore does
 not authorize an ND2 physical run.
 
+The retained operator is now registered behind a content-addressed arity-one
+PBW backend.  This closes the reusable operator-validation interface, not the
+Cartan assembly gate: its coefficients lie in the noncommutative
+`Q[alpha_B,u,v] tensor U(e_Berger)` domain, whereas the current ND2 solver is
+finite and `Fraction`-valued.  A PBW-module Cartan extension or a separately
+certified exact `REDUCED-MODE` specialization is still required before this
+backend can participate in a physical run.
+
 ND3 additionally implements the next Cartan recurrence.  It retains the
 direct `[q3,iota_D]` and exchange `[q2,iota_D^(2)]` tensors separately, checks
 the arity-three `Q^2`, Cartan, and `D` identities, and returns either an exact
@@ -107,7 +115,7 @@ transferred before `QME_RESTORED`.
 | Stage | Exact deliverable | Status |
 |---|---|---|
 | HT0 | Engine, convention, schema, blocker ledger | Ready |
-| HT1 | Import classical Taylor data; compute `ell_2` | Retained minimal `q1`, residual cubic bracket, local Bach seeds, selected residual `D`-derivation, and ND2 Cartan solver computed; full support-local `q2/D` and contraction blocked |
+| HT1 | Import classical Taylor data; compute `ell_2` | Retained minimal `q1` and its arity-one PBW backend, residual cubic bracket, local Bach seeds, selected residual `D`-derivation, and ND2 Cartan solver computed; full support-local `q2/D`, compatible coefficient-domain assembly, and contraction blocked |
 | HT2 | Compute `ell_3`; dynamical/topological mixing and centrality ledgers | Arity-three Cartan recurrence engine ready; physical `q3` and mixing input blocked |
 | HT3 | Higher arities and particle-filtration spectral sequence | Not computed |
 | HT4 | Cyclic minimal action and formal moduli/deformation interpretation | Not computed |
@@ -143,6 +151,11 @@ transferred before `QME_RESTORED`.
 | Affected transfer suite excluding stale ND1 reproduction receipt | 72.64 | PASS (108 tests) | 2 |
 | Remaining ND1 semantic and mutation tests | 9.05 | PASS (7 tests) | 2 |
 | ND1 checked-in certificate reproduction | 3.43 | FAIL (concurrent classical-status dependency hash drift) | 2 |
+| Berger PBW backend, ND2, and aggregate certificate checks | 10.48 | PASS | 2 |
+| Backend and ND2 schemas under strict AJV Draft-2020-12 | 5.88 | PASS (2 receipts) | 0 |
+| Focused Berger PBW backend, ND2, and aggregate tests | 11.41 | PASS (14 tests) | 2 |
+| Backend-era complete transfer suite | 69.45 | FAIL (119 tests pass; the same stale ND1 reproduction remains) | 2 |
+| Independent current ND1 drift audit | 6.60 | PASS (two hash-only differences) | 2 |
 
 An optional Draft-2020-12 meta-schema check was attempted but was **not
 run** because the environment does not provide the `jsonschema` module.  It

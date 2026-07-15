@@ -44,7 +44,8 @@
     "phase space, boundary conditions, classical commit, dependency scope, and disposition source hashes are bound before execution",
     "the manifest dependency tags must equal the canonical union declared by all four pinned artifacts",
     "the Cartan executor accepts only an opaque verified-manifest token",
-    "exact assembled inputs return a retained correction or normalized obstruction witness"
+    "exact assembled inputs return a retained correction or normalized obstruction witness",
+    "the retained Berger q1 has a content-addressed arity-one PBW operator backend"
   ],
   "input_gate": {
     "manifest_path": "quantum-weyl/classical_import/exports/ND2_PHYSICAL_RUN_INPUT.json",
@@ -53,9 +54,10 @@
     "status": "INPUT_NOT_AVAILABLE"
   },
   "lifecycle_layer": "INTERACTING",
-  "next_gate": "install the pinned Berger support-local tensor, all-row contraction, and admissibility artifacts, then register their exact evaluator and assembly adapter",
+  "next_gate": "extend the registered Berger PBW backend to q2/D and a declared Cartan coefficient domain, then install the all-row contraction and admissibility artifacts",
   "not_established": [
     "a registered conformal-gravity expression evaluator",
+    "a PBW-module-valued Cartan solver or exact REDUCED-MODE specialization for the registered Berger backend",
     "a registered classical contraction assembly adapter",
     "an installed Berger physical-run manifest combining the scoped D_GAUGE theorem with the missing BV artifacts",
     "a physical conformal-gravity arity-two Cartan execution",
@@ -65,21 +67,28 @@
     "schema": "quantum-weyl/transfer/schema/nd2-physical-run-certificate-v1.schema.json",
     "source_manifest": {
       "arity_two_cartan.py": "656ad3fc3e94846ab06ab9da6bcce0b79510eda5388d48d034492cb64c9440bf",
+      "berger_pbw_backend.py": "86426702f6fbeb312bc0f07c8aeed3312e0c27375fb3279ceb65c9a445414a3d",
+      "berger_pbw_backend_certificate.py": "8ebd9cbe9b2616caa176231e422934d178dff13747074274f8c7a70eca9f9283",
+      "berger_retained_q1_import.py": "4f08026476c9bf102b6dcf58a060b3356109e825484d6966e89b9265ebb1aea7",
+      "berger_retained_q1_import_certificate.py": "a5ec24b430f90fcc21636d4efae51d2b094918c42c23d22530c016987755808d",
       "evaluator_registry.py": "3394aa39631e20346cad4c7a09050df043cf8a7ebdff7432928688516e066c1e",
       "local_expression_ast.py": "747e6ece20cc3be5f2904c130cd8e5821b0a9e375c34d88f8eea231a7e69cf68",
       "nd2_physical_run.py": "9fe6d7988932b3543c8347ef3f83c7b80ab93d18ca0d6306c45b5875d3152d50",
-      "nd2_physical_run_certificate.py": "393f4f5cd4c1a864c5c42863b4853a6fec47fa1c2e2545ccbfaf07765d70c31d",
-      "schema/nd2-physical-run-certificate-v1.schema.json": "ecc2ef94ee0a26e843fd704efdbdd16e428369bd76ccaf4bdd82149b2d571634",
+      "nd2_physical_run_certificate.py": "848f221a8adb0fb54331111970dc620650d8c5d5f89c66d68930021a9ce6095a",
+      "operator_backend_registry.py": "8c5e74f36656488e7060b47426b501c5582f13969522a53a090bf822288c8845",
+      "schema/berger-pbw-operator-backend-v1.schema.json": "c76aa161f68d5ffb060a03304b0dadf8424926b8795f2f71709d698b7ec8937f",
+      "schema/nd2-physical-run-certificate-v1.schema.json": "ef8f8957601f4246ef59dff78e1984c112f59a72d22e928844aaefefaee47d62",
       "schema/nd2-physical-run-input-v1.schema.json": "0b9e773dc7fcfc634ddf6ddbb52ad7c505df823d691ab22900029120590c9b58",
       "schema/total-d-disposition-v1.schema.json": "b4be4fe52c2f2345ff8c28758565724b5a6901190411cc884f63ea45f8ed8807",
       "support_local_q2_consumer.py": "8b27f10caabdef0595cda3a02fd47f3dd8bd0fd4e0caf19f0e532ef1c17e91be",
+      "tests/test_berger_pbw_backend.py": "8b434f65e12a4512a094b7864470a41f4cc5e41052226dd6045723cf9d552145",
       "tests/test_evaluator_registry.py": "ec273ff62f913a0ed197a4a04337ee493f4e98590e79ef739cbb3694d7048074",
-      "tests/test_nd2_physical_run.py": "f830b046566ec9547b6f0ae10a58981eba750a4d87efbcedc561615a184b3aea",
+      "tests/test_nd2_physical_run.py": "f6aeea807f4ddbbfde1eec5c780b33705edd0386aace469f574fc3fa29c5f9e0",
       "tests/test_total_d_disposition.py": "def20c048991bff2c206f99e31bad07fec27877f36aad320d3a7acc9f180e0e7",
       "total_d_disposition.py": "e81da4b928c7d69c7581bce68a7103972123e7e114b06d31bb38c8f648aad6f2",
       "total_d_disposition_certificate.py": "4aa33b5b6343bf7c107db120b1e610ca6a436fc60b656e45080b405e4fa47eb7"
     },
-    "source_manifest_sha256": "0246308cf5d825edffcaee25a17ba07c4d1aa11140cf73066a16a0d7b4a13912"
+    "source_manifest_sha256": "754c1744f317fa3593ecbfd74e7b71b3be8f15ea889c7024b6307495563f2669"
   },
   "registered_assembly_adapters": [],
   "registered_evaluators": [
@@ -94,6 +103,32 @@
         "quantum-weyl/transfer/support_local_q2_consumer.py": "8b27f10caabdef0595cda3a02fd47f3dd8bd0fd4e0caf19f0e532ef1c17e91be"
       },
       "implementation_manifest_sha256": "e7a7f885539e59c126739a0eeb56a5fcdbce1c1368361bc9c36485c8c0273849"
+    }
+  ],
+  "registered_operator_backends": [
+    {
+      "assembly_mode": "OPERATOR_VALIDATION_ONLY",
+      "backend_id": "berger-invariant-pbw-linear-v1",
+      "capabilities": [
+        "exact_polynomial_coefficient_parse",
+        "formal_adjoint",
+        "matrix_composition",
+        "noncommutative_pbw_reduction",
+        "support_local_order_audit"
+      ],
+      "coefficient_domain": "Q[alpha_B,u,v] tensor U(e_Berger) in ordered PBW normal form",
+      "expression_schema_version": "quantum-weyl-berger-retained-minimal-q1-import-v1",
+      "implementation_manifest": {
+        "quantum-weyl/transfer/berger_pbw_backend.py": "86426702f6fbeb312bc0f07c8aeed3312e0c27375fb3279ceb65c9a445414a3d",
+        "quantum-weyl/transfer/berger_retained_q1_import.py": "4f08026476c9bf102b6dcf58a060b3356109e825484d6966e89b9265ebb1aea7",
+        "quantum-weyl/transfer/berger_retained_q1_import_certificate.py": "a5ec24b430f90fcc21636d4efae51d2b094918c42c23d22530c016987755808d",
+        "quantum-weyl/transfer/operator_backend_registry.py": "8c5e74f36656488e7060b47426b501c5582f13969522a53a090bf822288c8845"
+      },
+      "implementation_manifest_sha256": "8308d7cfcfa7298a06db5cc623182f0611f72788d458de79171642a72779bda0",
+      "nd2_physical_assembly_authorized": false,
+      "supported_arities": [
+        1
+      ]
     }
   ],
   "result_id": "ND2_PHYSICAL_RUN_CONTRACT",

@@ -66,11 +66,13 @@ files are content-addressed and rechecked at dispatch.
 
 These are engine fixtures, not conformal-gravity coefficients.  The current
 classical snapshot still marks the support-local `q2`, local `D` action, and
-`iota_cl/pi_cl/s_cl` as `NOT_AVAILABLE`.  No physical expression evaluator is
-registered because the authoritative expression schema has not yet arrived.
-Accordingly this result does not compute the conformal-gravity Cartan source,
-construct a physical `iota_D^(2)`, or decide cyclic, real, boundary, or causal
-admissibility.
+`iota_cl/pi_cl/s_cl` as `NOT_AVAILABLE`.  The exact retained Berger `q1` now
+has a content-addressed, validation-only PBW backend, but it supports arity one
+over `Q[alpha_B,u,v] tensor U(e_Berger)`.  It is not a physical expression
+evaluator for the finite `Fraction`-valued Cartan engine, and authorizes no
+assembly.  Accordingly this result does not compute the conformal-gravity
+Cartan source, construct a physical `iota_D^(2)`, or decide cyclic, real,
+boundary, or causal admissibility.
 
 It also does not address `q3`, higher transferred brackets, quantum
 corrections, or any `LORENTZIAN-CAUSAL` theorem.  A quantum correction remains
@@ -78,16 +80,19 @@ downstream of a separate `QME_RESTORED` certificate.
 
 ## Next exact gate
 
-Import the pinned classical `q1/q2/D` action and contraction, register the
-declared exact expression evaluator, recompute the physical identities, and
-then retain either the admissible `iota_D^(2)` primitive or its normalized
-obstruction witness.
+Extend the PBW backend through `q2/D` and either equip ND2 with the declared
+PBW-module coefficient domain or import an exact `REDUCED-MODE`
+specialization.  Then import the complete contraction and admissibility
+policy, recompute the physical identities, and retain either the admissible
+`iota_D^(2)` primitive or its normalized obstruction witness.
 
 ## Machine receipt
 
 `quantum-weyl/transfer/certificates/ND2_ARITY_TWO_CARTAN_ENGINE.json`
 
 `quantum-weyl/transfer/certificates/ND2_PHYSICAL_RUN.json`
+
+`quantum-weyl/transfer/certificates/BERGER_PBW_OPERATOR_BACKEND.json`
 
 ## Verification receipt
 
@@ -97,10 +102,15 @@ obstruction witness.
 | `python3 -m unittest discover -s quantum-weyl/transfer/tests -q` | 57.99 | PASS (85 tests after physical-run, sparse, and arity-three hardening) | 2 |
 | ND2, ND1, support-local contract, nonlinear aggregate, ND3, and snapshot certificate checks | 6.01 | PASS | 2 |
 | Python compile, JSON/YAML parsing, and scoped `git diff --check` | recorded at commit | PASS | 0 |
+| Berger PBW backend, ND2, and aggregate focused tests | 11.41 | PASS (14 tests) | 2 |
+| Extended ND2 schema under strict AJV Draft-2020-12 | 1.27 | PASS | 0 |
+| Backend-era complete transfer suite | 69.45 | FAIL (119 tests pass; pre-existing ND1 reproduction receipt is stale) | 2 |
 
-Draft-2020-12 schema validation was attempted but was **not run** because the
-environment does not provide the `jsonschema` module.  It is not counted as a
-pass; deterministic JSON parsing did pass.
+The current AJV run validates the extended ND2 receipt.  The complete-suite
+failure is not counted as a pass: an unrelated ND1 reproduction receipt has
+two hash-only differences after its live classical-status dependency moved.
+All other transfer tests, including the seven ND1 semantic and mutation tests,
+pass.
 
 Tier 3 was not run.  ND2 adds an exact fixture engine and consumer contract,
 but changes no imported classical mathematical input, shared core algebra,
