@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-causal-witness-preflight-v1.schema.json",
+  "title": "Berger causal witness preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "q1_ref", "companion_definition", "witness_blocks",
+    "degreewise_P_blocks", "endpoint_factorization",
+    "metric_mixed_order_boundary", "exact_checks", "flags", "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-causal-witness-preflight-v1"},
+    "result_id": {"const": "BERGER_CAUSAL_WITNESS_PREFLIGHT"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "claim_status": {"const": "CERTIFIED_ENDPOINT_FACTORS_METRIC_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "q1_ref": {"type": "object"},
+    "companion_definition": {"type": "string"},
+    "witness_blocks": {"type": "object"},
+    "degreewise_P_blocks": {"type": "object"},
+    "endpoint_factorization": {"type": "object"},
+    "metric_mixed_order_boundary": {"type": "object"},
+    "exact_checks": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION"},
+    "claim_boundary": {"type": "string"}
+  }
+}
