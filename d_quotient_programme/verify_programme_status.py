@@ -38,6 +38,9 @@ TEAM_PATHS = {
 PRE_SCALAR_CLASSICAL_STATUS_HASH = (
     "495de6865c8aa7bceb32a55769cd4f912da6d67035e899b8571843ab504457af"
 )
+PRE_BERGER_DELTA_CLASSICAL_STATUS_HASH = (
+    "ca4a6f632aaf6d5cc903fcf1dee9a0c69d1d935b1b174df590ffcc430b59c776"
+)
 
 
 def _sha256_bytes(data: bytes) -> str:
@@ -111,6 +114,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
             "inhomogeneous_conformal_stealth_clock_no_go",
             "positive_berger_clock_background",
             "berger_clock_reduced_charge_seed",
+            "berger_fixed_coupling_delta_charge",
         ]
     ):
         raise AssertionError("classical scalar-clock obstruction scope drifted")
@@ -133,15 +137,15 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
         if row["setting_id"] == "positive_berger_clock"
     )
     if not (
-        berger_setting["assessment_status"] == "OPEN"
-        and berger_setting["verdict"] is None
+        berger_setting["assessment_status"] == "CERTIFIED"
+        and berger_setting["verdict"] == "D_GAUGE"
         and berger_setting["claim_scope"] == "REDUCED_MODE"
-        and berger_setting["charge_test"]["status"] == "OPEN"
+        and berger_setting["charge_test"]["status"] == "CERTIFIED"
         and berger_setting["phase_space"].startswith(
-            "positive_rotating_scalar_berger_background"
+            "positive_berger_fixed_coupling_linearized_solutions"
         )
     ):
-        raise AssertionError("classical positive Berger background was promoted to a charge verdict")
+        raise AssertionError("classical positive Berger fixed-coupling verdict drifted")
 
     einstein = data["einstein_boundary"]
     if not (
@@ -180,8 +184,12 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
     imported_hash = quantum["provenance"]["dependency_manifest"].get(
         "classical_D_quotient_status"
     )
-    if imported_hash not in {classical_hash, PRE_SCALAR_CLASSICAL_STATUS_HASH}:
-        raise AssertionError("quantum team classical import is neither current nor the certified pre-scalar baseline")
+    if imported_hash not in {
+        classical_hash,
+        PRE_SCALAR_CLASSICAL_STATUS_HASH,
+        PRE_BERGER_DELTA_CLASSICAL_STATUS_HASH,
+    }:
+        raise AssertionError("quantum team classical import is neither current nor a certified historical baseline")
     if imported_hash != classical_hash and quantum["setting_ledger"][0]["verdict"] != "ANALYTIC_FRAMEWORK_MISSING":
         raise AssertionError("quantum result promoted without importing the current scalar-clock status")
 
