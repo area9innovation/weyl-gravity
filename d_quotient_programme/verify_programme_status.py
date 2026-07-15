@@ -18,6 +18,7 @@ CERTIFICATE = PACKAGE / "certificates" / "D_QUOTIENT_PROGRAMME_STATUS.json"
 REPORT = PACKAGE / "reports" / "consolidated-status.md"
 GENERATOR_REGISTRY = PACKAGE / "registry" / "generators.json"
 PHASE_REGISTRY = PACKAGE / "registry" / "phase_spaces.json"
+NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
 
 TEAM_PATHS = {
     "classical": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
@@ -121,10 +122,37 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
         raise AssertionError("quantum team has not imported the current classical split")
 
 
+def _nonlinear_nd1_contribution() -> dict[str, Any]:
+    contribution = _load(NONLINEAR_ND1_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "nonlinear"
+        and contribution.get("setting_id") == "compact_selected_residual_HT1_q2"
+        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("phase_space_id") == "compact_selected_residual_HT1"
+        and contribution.get("lifecycle_layer") == "INTERACTING"
+        and contribution.get("claim_status") == "PARTIAL"
+        and contribution.get("verdict")
+        == "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO"
+        and contribution.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    ):
+        raise AssertionError("nonlinear ND1 contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path = evidence.get("path")
+    commit = evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("nonlinear ND1 contribution evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("nonlinear ND1 contribution evidence hash drifted")
+    return contribution
+
+
 def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     team_data = {team: _load_team_input(path) for team, path in TEAM_PATHS.items()}
     _assert_team_inputs(team_data)
     inputs = {team: _team_input(path) for team, path in TEAM_PATHS.items()}
+    nd1_contribution = _nonlinear_nd1_contribution()
     return {
         "schema": "pure-weyl-d-quotient-programme-status-v1",
         "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
@@ -141,6 +169,13 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "phase_space_registry": _sha256(PHASE_REGISTRY),
         },
         "team_inputs": inputs,
+        "team_contributions": [
+            {
+                "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
+                "payload": nd1_contribution,
+            }
+        ],
         "team_status": [
             {
                 "team_id": "classical",
@@ -160,8 +195,8 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "team_id": "nonlinear",
                 "result_state": "ENGINE_READY_INPUT_BLOCKED",
                 "verdict": "INPUT_GATE_BLOCKED",
-                "established": "exact transfer engine, selected residual cubic bracket, and local Bach seeds",
-                "next_gate": "complete support-local q2 export and compute the interacting D-Cartan defect",
+                "established": "selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked",
+                "next_gate": "complete support-local q2 export and solve for iota_D^(2) or retain its obstruction",
             },
             {
                 "team_id": "quantum",
@@ -207,6 +242,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "lifecycle_layer": "CLASSICAL_CHARGE",
                 "status": "OPEN",
                 "verdict": None,
+            },
+            {
+                "setting_id": "compact_selected_residual_HT1_q2",
+                "generator_id": "D_compact",
+                "phase_space_id": "compact_selected_residual_HT1",
+                "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
+                "lifecycle_layer": "INTERACTING",
+                "status": "PARTIAL",
+                "verdict": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
             },
             {
                 "setting_id": "compact_interacting",
@@ -323,12 +367,15 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_unrestricted": "D_CHARGED",
         "compact_taub_zero": "D_GAUGE",
         "compact_derived_residual": "D_GAUGE",
+        "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
     }
     for setting, verdict in required.items():
         if ledger.get(setting, {}).get("verdict") != verdict:
             errors.append(f"{setting} verdict drifted")
     if ledger.get("compact_quantum", {}).get("verdict") != "ANALYTIC_FRAMEWORK_MISSING":
         errors.append("quantum verdict promoted before QME")
+    if ledger.get("compact_interacting", {}).get("verdict") != "INPUT_GATE_BLOCKED":
+        errors.append("full interacting verdict promoted before local export")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -436,6 +483,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
     reject("promote_quantum_before_QME", mutant)
 
     mutant = deepcopy(data)
+    next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_selected_residual_HT1_q2")["verdict"] = "INTERACTING_CARTAN_EXISTS"
+    reject("promote_selected_residual_to_full_cartan", mutant)
+
+    mutant = deepcopy(data)
     mutant["publication_plan"]["paper_IX"]["status"] = "ACTIVE_THEOREM_PAPER"
     reject("promote_paper_IX_before_gate", mutant)
 
@@ -479,7 +530,7 @@ def main() -> int:
         failures = mutation_guards(data)
         if failures:
             raise AssertionError("mutation guards failed: " + ", ".join(failures))
-        print("mutation guards: 4/4 PASS")
+        print("mutation guards: 5/5 PASS")
     print(CERTIFICATE, "PASS")
     return 0
 

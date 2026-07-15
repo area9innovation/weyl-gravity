@@ -1,0 +1,36 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "nonlinear",
+  "setting_id": "compact_selected_residual_HT1_q2",
+  "generator_id": "D_compact",
+  "phase_space_id": "compact_selected_residual_HT1",
+  "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
+  "lifecycle_layer": "INTERACTING",
+  "claim_status": "PARTIAL",
+  "verdict": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "all 529470 coefficients of the four selected residual arity-two D-derivation defect tensors vanish",
+    "all 3976 nonzero selected residual q2 components preserve D weight",
+    "the selected ghost-momentum and bra-ket pairing weights are D-neutral"
+  ],
+  "not_established": [
+    "the support-local interacting BV D-derivation identity",
+    "an explicit correction iota_D^(2) or a full deformation-complex obstruction class",
+    "q3, boundary, scalar-clock, quantum, or Lorentzian causal stability"
+  ],
+  "evidence": {
+    "path": "quantum-weyl/transfer/certificates/ND1_SELECTED_RESIDUAL_D_DERIVATION.json",
+    "commit": "1d3917394a03c6f5f288ef213d1b90dd98f9097f",
+    "sha256": "69516596f2c30adaa6a20849f9c25b6d113de11abdff424245041cb0b5356e46"
+  },
+  "verification_commands": [
+    "python3 quantum-weyl/transfer/d_derivation_certificate.py --check",
+    "python3 -m unittest quantum-weyl/transfer/tests/test_d_derivation_defect.py -v",
+    "python3 quantum-weyl/transfer/residual_cubic_certificate.py --check"
+  ],
+  "next_gate": "import complete support-local q2 with ghost/antifield rows and pi_cl/iota_cl/s_cl, recompute the full defect, then solve for iota_D^(2) or retain its obstruction"
+}

@@ -19,7 +19,7 @@ Boundary, nonlinear, and quantum questions are separate gates.
 |---|---|---|---|
 | classical | `SECTOR_DEPENDENT` | D_compact is charged on compact_P_lin and gauge on compact_P_Taub0/compact_P_der. | canonical conformal-scalar clock model and total improved D charge |
 | einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. | complete a boundary-preserving full Bach phase space and calculate charge and flux |
-| nonlinear | `INPUT_GATE_BLOCKED` | exact transfer engine, selected residual cubic bracket, and local Bach seeds | complete support-local q2 export and compute the interacting D-Cartan defect |
+| nonlinear | `INPUT_GATE_BLOCKED` | selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked | complete support-local q2 export and solve for iota_D^(2) or retain its obstruction |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | classical sector split imported by content hash without quantum promotion | construct the renormalized observable algebra and classify the first D-Ward obstruction |
 
 ## Setting ledger
@@ -30,6 +30,7 @@ Boundary, nonlinear, and quantum questions are separate gates.
 | compact_taub_zero | `D_compact` | `compact_P_Taub0` | CLASSICAL_CHARGE | `CERTIFIED` | `D_GAUGE` |
 | compact_derived_residual | `D_compact` | `compact_P_der` | CLASSICAL_CARTAN | `CERTIFIED` | `D_GAUGE` |
 | compact_scalar_clock | `D_compact` | `compact_scalar_clock` | CLASSICAL_CHARGE | `OPEN` | `OPEN` |
+| compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `INPUT_GATE_BLOCKED` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
 | asymptotic_real_cylinder_time | `H_ESU` | `asymptotically_flat_full_Bach` | LORENTZIAN_CAUSAL | `OPEN` | `PHASE_SPACE_NOT_CLOSED` |
@@ -61,9 +62,9 @@ BV/clock model, then make every downstream team import it by content hash.
 ## Imported evidence
 
 - `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `926e03ce07b3bff437cd942587837504a44fc8fb`, SHA-256 `495de6865c8aa7bceb32a55769cd4f912da6d67035e899b8571843ab504457af`
-- `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `52c86d386d5442d31a25aa28ed660fcd1bffddfc`, SHA-256 `82831a22108b88590bac1fd5b4d1ccead3a462505a3072a4fa981844b4990d84`
-- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `ed5ada08f4dbe0dca929fc49957770b4a8a99fd0`, SHA-256 `e92381966794d0f7b08dcc3551b2a655faf9b82c80c085afa82ad8102c7d2738`
-- `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `9a3497a2b68d5f70a19ba788d44e647ba20e1f86`, SHA-256 `8314dc2048ea1f0e3179395f2b25b80dd9cf278064ae6af90c9351080ab0a2cb`
+- `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `89acca36479ebaea069c21eb23517dc6b1b49389`, SHA-256 `359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663`
+- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `1d3917394a03c6f5f288ef213d1b90dd98f9097f`, SHA-256 `b18db8505b652640a7777d678eb67f1847e9b129d6ea0a965dae2ba2ca313618`
+- `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61`, SHA-256 `aa7edc21c7250349531559657d4ec69eee2dd9100de3eedf242a8e29829e874c`
 
 ## Claim boundary
 

@@ -26,6 +26,8 @@ because the existing results concern different objects:
 - [`registry/phase_spaces.json`](registry/phase_spaces.json)
 - [`schema/programme-status-v1.schema.json`](schema/programme-status-v1.schema.json)
 - [`schema/team-contribution-v1.schema.json`](schema/team-contribution-v1.schema.json)
+- [`contributions/`](contributions/)
+- [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
 
 ## Verification

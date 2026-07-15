@@ -25,7 +25,7 @@
     ],
     "rule": "Define one canonical conformal-scalar BV model and clock domain; downstream teams import it by hash rather than rebuilding it."
   },
-  "programme_base_commit": "9a3497a2b68d5f70a19ba788d44e647ba20e1f86",
+  "programme_base_commit": "5f59680a8d5358cccebb044ed0cb2f6298551918",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -42,7 +42,7 @@
   },
   "registry_hashes": {
     "generator_registry": "1df39af78cdd49eeb64faa2d46134542e9bb75a598f0dde98932657a682525de",
-    "phase_space_registry": "fd8d8884e25af7723b6f9c1101a2ddc79a584d8bb9a8fae4da3127593f9e7482"
+    "phase_space_registry": "947726ced24f415c741bd597ef3513c384745997832ec8e6cccf819af305eeeb"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -83,6 +83,15 @@
       "setting_id": "compact_scalar_clock",
       "status": "OPEN",
       "verdict": null
+    },
+    {
+      "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "INTERACTING",
+      "phase_space_id": "compact_selected_residual_HT1",
+      "setting_id": "compact_selected_residual_HT1_q2",
+      "status": "PARTIAL",
+      "verdict": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO"
     },
     {
       "boundary_conditions": "closed S3; support-local nonlinear export incomplete",
@@ -139,6 +148,48 @@
       "verdict": null
     }
   ],
+  "team_contributions": [
+    {
+      "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
+      "payload": {
+        "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
+        "claim_status": "PARTIAL",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "all 529470 coefficients of the four selected residual arity-two D-derivation defect tensors vanish",
+          "all 3976 nonzero selected residual q2 components preserve D weight",
+          "the selected ghost-momentum and bra-ket pairing weights are D-neutral"
+        ],
+        "evidence": {
+          "commit": "1d3917394a03c6f5f288ef213d1b90dd98f9097f",
+          "path": "quantum-weyl/transfer/certificates/ND1_SELECTED_RESIDUAL_D_DERIVATION.json",
+          "sha256": "69516596f2c30adaa6a20849f9c25b6d113de11abdff424245041cb0b5356e46"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "INTERACTING",
+        "next_gate": "import complete support-local q2 with ghost/antifield rows and pi_cl/iota_cl/s_cl, recompute the full defect, then solve for iota_D^(2) or retain its obstruction",
+        "not_established": [
+          "the support-local interacting BV D-derivation identity",
+          "an explicit correction iota_D^(2) or a full deformation-complex obstruction class",
+          "q3, boundary, scalar-clock, quantum, or Lorentzian causal stability"
+        ],
+        "phase_space_id": "compact_selected_residual_HT1",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_selected_residual_HT1_q2",
+        "team_id": "nonlinear",
+        "verdict": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
+        "verification_commands": [
+          "python3 quantum-weyl/transfer/d_derivation_certificate.py --check",
+          "python3 -m unittest quantum-weyl/transfer/tests/test_d_derivation_defect.py -v",
+          "python3 quantum-weyl/transfer/residual_cubic_certificate.py --check"
+        ]
+      },
+      "sha256": "5ebd9b3814336028b4fc83335015cc7c5806fed5b4d3206f13ac59aca82438fe"
+    }
+  ],
   "team_inputs": {
     "classical": {
       "commit": "926e03ce07b3bff437cd942587837504a44fc8fb",
@@ -146,19 +197,19 @@
       "sha256": "495de6865c8aa7bceb32a55769cd4f912da6d67035e899b8571843ab504457af"
     },
     "einstein_boundary": {
-      "commit": "52c86d386d5442d31a25aa28ed660fcd1bffddfc",
+      "commit": "89acca36479ebaea069c21eb23517dc6b1b49389",
       "path": "bridge/certificates/d_quotient_asymptotic_seed.json",
-      "sha256": "82831a22108b88590bac1fd5b4d1ccead3a462505a3072a4fa981844b4990d84"
+      "sha256": "359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663"
     },
     "nonlinear": {
-      "commit": "ed5ada08f4dbe0dca929fc49957770b4a8a99fd0",
+      "commit": "1d3917394a03c6f5f288ef213d1b90dd98f9097f",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "e92381966794d0f7b08dcc3551b2a655faf9b82c80c085afa82ad8102c7d2738"
+      "sha256": "b18db8505b652640a7777d678eb67f1847e9b129d6ea0a965dae2ba2ca313618"
     },
     "quantum": {
-      "commit": "9a3497a2b68d5f70a19ba788d44e647ba20e1f86",
+      "commit": "04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61",
       "path": "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json",
-      "sha256": "8314dc2048ea1f0e3179395f2b25b80dd9cf278064ae6af90c9351080ab0a2cb"
+      "sha256": "aa7edc21c7250349531559657d4ec69eee2dd9100de3eedf242a8e29829e874c"
     }
   },
   "team_status": [
@@ -177,8 +228,8 @@
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },
     {
-      "established": "exact transfer engine, selected residual cubic bracket, and local Bach seeds",
-      "next_gate": "complete support-local q2 export and compute the interacting D-Cartan defect",
+      "established": "selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked",
+      "next_gate": "complete support-local q2 export and solve for iota_D^(2) or retain its obstruction",
       "result_state": "ENGINE_READY_INPUT_BLOCKED",
       "team_id": "nonlinear",
       "verdict": "INPUT_GATE_BLOCKED"
