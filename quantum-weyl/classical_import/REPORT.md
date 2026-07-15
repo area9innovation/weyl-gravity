@@ -21,9 +21,9 @@ The checked-in machine result is
 Its source snapshot is
 [`snapshots/bootstrap-v1.json`](snapshots/bootstrap-v1.json).  Their SHA-256
 digests at this bootstrap are respectively
-`3c6f540286ca0cda0e4c6663d31f68bf66a8a7cea40891dc65b60c43f4673213`
+`eb48675fb36489e7d33724b2d06f1f0ebfe6867d043bf71d1536015f9862b2d6`
 and
-`01e4b2188695f901a77a5bd1921454dc57c19b2d8047c835a83646cbabd74a26`.
+`459f46e3a8d233754ceec2593c858b1996ead38ec52622678bf5a7c7ec3a61e9`.
 
 ## Required export ledger
 
@@ -38,6 +38,8 @@ such payload was found and no substitute was reconstructed.
 | Complete field, ghost, and antifield dictionary | `INCOMPLETE` | Existing dictionaries are finite D-eigenmode cylinder dictionaries. |
 | All field gradings | `INCOMPLETE` | No export has form degree and parity together with every other required grading. |
 | Complete local classical BV differential `Q0` | `INCOMPLETE` | The imported tangent certificate explicitly excludes nonlinear terms. |
+| Support-local classical BV `q2` | `NOT_AVAILABLE` | No arbitrary-support local-polydifferential payload with complete field, ghost, and antifield rows was found. |
+| Local `D` action on all BV generators | `NOT_AVAILABLE` | No portable support-local action covering fields, ghosts, and antifields was found. |
 | Gauge-fixed and nonminimal contractions | `INCOMPLETE` | Identities and internal map hashes exist, not a complete portable map payload. |
 | Trace-sector contraction | `INCOMPLETE` | The finite-buffer certificate does not export the local projector/homotopy. |
 | Fifteen conformal-Killing zero modes | `INCOMPLETE` | Labels, gradings, and matrix digests exist; basis vectors are not serialized. |
@@ -55,11 +57,38 @@ such payload was found and no substitute was reconstructed.
 | Residual differential `Q_res^(0)` | `INCOMPLETE` | The finite-window transfer is certified; a full portable action payload is absent. |
 
 Consequently every independent freeze identity remains
-`BLOCKED_MISSING_EXPORT`: `Q0^2=0`, `pi_cl iota_cl=1`, the contraction
-identity, both chain-map identities, and cyclic compatibility.  The required
-top-level dictionary, differential, zero-mode, pairing, and representative
+`BLOCKED_MISSING_EXPORT`.  In addition to the free contraction identities,
+the ledger now names arity-two nilpotency, `[D,q1]=0`, the full `D` derivation
+identity for `q2`, and `q2` cyclicity explicitly.  The required top-level
+dictionary, `q1`, `q2`, `D`-action, zero-mode, pairing, and representative
 hash fields are present but null.  A null is not a hash of absence; it means
 there is no accepted complete payload to hash yet.
+
+## Support-local `q2` handoff contract
+
+The former generic sparse-tensor schema was insufficient to distinguish an
+arbitrary-support local bidifferential operator from a finite-mode matrix.
+The executable contract now consists of
+[`schema/support_local_q2_export.schema.json`](schema/support_local_q2_export.schema.json),
+[`verify_support_local_q2_export.py`](verify_support_local_q2_export.py), and
+the machine receipt
+[`certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json`](certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json).
+
+It requires the metric, Diff/Weyl ghosts, and all three minimal antifield
+roles; complete output-row ledgers for `q1`, `q2`, and the local `D` action;
+the suspended factorial convention; exact local-expression payloads and jet
+bounds; and a declared support/test-function category.  It rejects endpoint
+or finite-mode locality labels, floating-point coefficients, parity-degree
+violations, incomplete rows, unknown generators, unverified proof receipts,
+and non-reproducing canonical hashes.  When a repository root is supplied,
+every proof artifact must match both the working tree and the pinned classical
+commit.
+
+The seven required proof receipts are `q1^2=0`, arity-two nilpotency,
+Koszul symmetry, row completeness, `[D,q1]=0`, the `D`-derivation identity for
+`q2`, and BV cyclicity of `q2`.  The contract is
+`CONTRACT_READY_AWAITING_CLASSICAL_EXPORT`; it does not certify any missing
+coefficient or replace independent quantum-side evaluation of the expressions.
 
 ## Antifield/Koszul--Tate handoff contract
 
@@ -112,25 +141,29 @@ Run from `physics/symplectic-reconstruction/` on 2026-07-15:
 
 | Tier | Command | Elapsed | Status |
 |---|---|---:|---:|
-| 0 | `python3 -m py_compile quantum-weyl/classical_import/verify_snapshot.py quantum-weyl/classical_import/tests/test_verify_snapshot.py` | 0.03 s | pass |
-| 0 | Parse every JSON file below `quantum-weyl/classical_import` and `quantum-weyl/cylinder` with Python `json` | 0.02 s | pass (4 files) |
-| 0 | Scoped Python EOF/trailing-whitespace check over all eight new text files | 0.02 s | pass |
-| 0 | `git diff --check -- quantum-weyl/classical_import quantum-weyl/cylinder` | <0.01 s | pass; integration staging remains with the root agent |
-| 1 | `python3 quantum-weyl/classical_import/verify_snapshot.py --check` | 0.12 s | pass |
-| 1 | `python3 -m unittest discover -s quantum-weyl/classical_import/tests -v` | under 1 s | pass (16 tests, including 12 antifield-contract tests) |
+| 0 | `python3 -m py_compile` on the changed classical-import and nonlinear-consumer Python files | 0.03 s | pass |
+| 0 | Parse all classical-import and transfer certificate/schema JSON files with Python `json` | 0.02 s | pass (17 files) |
+| 0 | Parse `.github/workflows/conformal-bridge.yml` with Python `yaml.safe_load` | <0.01 s | pass |
+| 1 | `python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check` | 0.04 s | pass |
+| 1 | `python3 quantum-weyl/classical_import/verify_snapshot.py --check` | 0.14 s | pass |
+| 1 | `python3 -m unittest discover -s quantum-weyl/classical_import/tests -v` | 0.46 s | pass (28 tests) |
+| 2 | `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check` | 0.04 s | pass |
+| 2 | Focused ND1 and nonlinear aggregate consumer tests | 8.08 s | pass (11 tests) |
+| 2 | `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 47.76 s | pass (42 tests) |
 
-The tests include attempted false promotion of Gate A and an artifact-hash
-mutation; both fail closed.  Tier 2 was not triggered because no classical
-mathematical input or certificate chain changed: the imported inputs are
-unchanged and content-addressed.  Tier 3 was not triggered because this work
-does not freeze a theorem, promote a lifecycle state, alter shared core
-algebra, or prepare a release.  No full classical or repository-wide suite
-was run or represented as passing.
+The tests include attempted false promotion of Gate A, finite-mode
+substitution, missing antifield roles, incomplete rows, parity and exactness
+violations, unverified identities, hash mutations, and proof-artifact drift;
+all fail closed.  The affected nonlinear chain was regenerated after its
+first run correctly detected the changed snapshot dependency, and the final
+full transfer suite passes.  Tier 3 was not triggered because no classical
+mathematical tensor was imported, no shared algebra changed, and no complete
+interacting, quantum, Lorentzian, or paper lifecycle state was promoted.
 
 ## Next classical handoff
 
 The next snapshot should replace partial evidence with versioned portable
-payloads, run the antifield preflight, populate the five required top-level
-hashes, and let the quantum verifier independently execute the filtration and
-six freeze identities.  Until then, the correct state is a verified import
-inventory with Gate A closed.
+payloads, run both executable preflights, populate the seven required
+top-level hashes, and let the quantum verifier independently execute the
+filtration and ten freeze identities.  Until then, the correct state is a
+verified import inventory with Gate A closed.

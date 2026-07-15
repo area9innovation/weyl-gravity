@@ -89,12 +89,16 @@
     }
   },
   "blocked_or_failed_freeze_checks": [
+    "D_q1_commutator_zero",
+    "D_q2_derivation",
     "classical_contraction_identity",
     "cyclic_compatibility",
     "pi_cl_iota_cl_identity",
     "pi_q0_intertwining",
     "q0_iota_intertwining",
-    "q0_squared_zero"
+    "q0_squared_zero",
+    "q1_q2_arity_two_nilpotency",
+    "q2_cyclic_compatibility"
   ],
   "claim_state": "CLASSICAL_IMPORT_PENDING",
   "classical_commit": "a3fc926cc289e5a545933a43331e395328580e0e",
@@ -131,24 +135,28 @@
     "field_ghost_antifield_dictionary",
     "field_gradings",
     "gauge_fixed_nonminimal_contractions",
+    "local_D_action_on_bv_generators",
     "local_classical_bv_differential_q0",
     "normalized_weyl_square_representatives",
     "residual_differential_q_res_0",
     "residual_representation_matrices",
     "so42_structure_constants",
+    "support_local_classical_bv_q2",
     "trace_sector_contraction"
   ],
   "notes": "Artifact integrity is verified at the pinned classical commit and in the working tree. Gate A remains fail-closed because this is not an independent verification of the missing complete classical exports.",
   "publishable_quantum_results_allowed": false,
   "required_hashes": {
+    "D_action_hash": null,
     "differential_hash": null,
     "field_dictionary_hash": null,
     "pairing_hash": null,
+    "q2_hash": null,
     "representative_hash": null,
     "zero_mode_basis_hash": null
   },
   "result_id": "CLASSICAL_IMPORT_CERTIFICATE",
   "schema": "quantum-weyl-classical-import-certificate-v1",
   "snapshot": "quantum-weyl/classical_import/snapshots/bootstrap-v1.json",
-  "snapshot_sha256": "01e4b2188695f901a77a5bd1921454dc57c19b2d8047c835a83646cbabd74a26"
+  "snapshot_sha256": "459f46e3a8d233754ceec2593c858b1996ead38ec52622678bf5a7c7ec3a61e9"
 }

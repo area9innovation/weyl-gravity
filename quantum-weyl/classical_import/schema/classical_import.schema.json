@@ -38,6 +38,8 @@
       "required": [
         "field_dictionary_hash",
         "differential_hash",
+        "q2_hash",
+        "D_action_hash",
         "zero_mode_basis_hash",
         "pairing_hash",
         "representative_hash"
@@ -46,6 +48,8 @@
       "properties": {
         "field_dictionary_hash": {"type": ["string", "null"]},
         "differential_hash": {"type": ["string", "null"]},
+        "q2_hash": {"type": ["string", "null"]},
+        "D_action_hash": {"type": ["string", "null"]},
         "zero_mode_basis_hash": {"type": ["string", "null"]},
         "pairing_hash": {"type": ["string", "null"]},
         "representative_hash": {"type": ["string", "null"]}
@@ -53,12 +57,12 @@
     },
     "required_exports": {
       "type": "array",
-      "minItems": 18,
+      "minItems": 20,
       "items": {"$ref": "#/$defs/exportRecord"}
     },
     "freeze_checks": {
       "type": "array",
-      "minItems": 6,
+      "minItems": 10,
       "items": {"$ref": "#/$defs/freezeCheck"}
     }
   },

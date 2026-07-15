@@ -1,0 +1,71 @@
+{
+  "assumptions": [
+    "The expression payload is versioned and content-addressed but remains opaque to the format preflight until its declared expression evaluator is imported.",
+    "A complete row ledger is a provider completeness declaration; the quantum-side import gate must still independently recompute the identities.",
+    "The contract does not convert endpoint, finite-mode, or selected Bach seeds into an arbitrary-support local tensor.",
+    "The interacting D-quotient remains INPUT_GATE_BLOCKED until a pinned export and the contraction maps pass their independent checks."
+  ],
+  "canonical_hashes": {
+    "required_proof_checks_sha256": "046869772649be9880a9b2446a961a40e28b10ce75487a962b25d7a745b93868",
+    "required_roles_sha256": "0cab65bb3c88a8f8cfb12521f27cafb8284cac4724bc019f3466747b8b5fd373",
+    "source_manifest_sha256": "8107ae4374f830ebf6c1684b1b51536812a7c4bcaeaad9ff2c00bddf06134ee5"
+  },
+  "checks": {
+    "canonical_hash_reproduction": "ENFORCED",
+    "classical_export_imported": "NOT_AVAILABLE",
+    "complete_output_row_ledgers": "ENFORCED",
+    "exact_required_field_sets": "ENFORCED",
+    "full_D_derivation_defect_computed": "NOT_COMPUTED",
+    "identities_independently_recomputed": "NOT_COMPUTED",
+    "iota_D2_solved_or_obstructed": "NOT_COMPUTED",
+    "minimal_field_ghost_antifield_roles": "ENFORCED",
+    "no_floating_point_payloads": "ENFORCED",
+    "operator_arity_degree_and_parity": "ENFORCED",
+    "pinned_proof_artifact_integrity": "ENFORCED_WHEN_REPOSITORY_ROOT_SUPPLIED",
+    "proof_artifact_inventory": "ENFORCED",
+    "support_locality_not_finite_mode": "ENFORCED"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "finite_mode_substitution_allowed": false,
+  "lifecycle_layer": "INTERACTING",
+  "preflight": "quantum-weyl/classical_import/verify_support_local_q2_export.py",
+  "required_minimal_roles": [
+    "metric",
+    "diffeomorphism_ghost",
+    "weyl_ghost",
+    "metric_antifield",
+    "diffeomorphism_ghost_antifield",
+    "weyl_ghost_antifield"
+  ],
+  "required_proof_checks": [
+    "q1_squared_zero",
+    "q1_q2_arity_two_nilpotency",
+    "q2_koszul_symmetry",
+    "q2_row_completeness",
+    "D_q1_commutator_zero",
+    "D_q2_derivation",
+    "BV_cyclicity_q2"
+  ],
+  "required_support_category": "SUPPORT_LOCAL_POLYDIFFERENTIAL",
+  "required_taylor_data": {
+    "D_action": {
+      "arity": 1,
+      "degree": 0
+    },
+    "complete_output_row_ledger": true,
+    "convention": "suspended-graded-symmetric-factorial-v1",
+    "q1": {
+      "arity": 1,
+      "degree": 1
+    },
+    "q2": {
+      "arity": 2,
+      "degree": 1
+    }
+  },
+  "result_id": "SUPPORT_LOCAL_Q2_EXPORT_CONTRACT",
+  "result_state": "CONTRACT_READY_AWAITING_CLASSICAL_EXPORT",
+  "schema": "quantum-weyl/classical_import/schema/support_local_q2_export.schema.json"
+}

@@ -3,6 +3,7 @@
     "The low-arity engine uses a finite exact basis and the declared suspended convention.",
     "The engine fixture tests implementation mechanics only and carries no conformal-gravity coefficient claim.",
     "The classical import remains fail-closed until portable tensors and maps are independently verified.",
+    "The support-local q2 preflight validates format, completeness declarations, exactness, provenance, and hashes; it does not independently prove an opaque local-expression payload.",
     "The certified endpoint projection computes the residual matter-matter Kuranishi bracket but does not substitute for a portable support-local q2 tensor.",
     "The two local Bach density seeds test selected matrix elements only; they do not substitute for an arbitrary-input bilinear Bach tensor or its BV completions.",
     "The vanishing selected residual D-derivation defect does not construct the full support-local interacting Cartan homotopy.",
@@ -30,6 +31,16 @@
       "export_id": "local_classical_bv_differential_q0",
       "reason": "The certificate explicitly excludes nonlinear terms from q and does not serialize the complete support-local classical BV differential.",
       "status": "INCOMPLETE"
+    },
+    {
+      "export_id": "support_local_classical_bv_q2",
+      "reason": "No portable arbitrary-support local-polydifferential q2 payload with complete field, ghost, and antifield rows was found; endpoint and mode-specialized Bach data are not substitutes.",
+      "status": "NOT_AVAILABLE"
+    },
+    {
+      "export_id": "local_D_action_on_bv_generators",
+      "reason": "No portable support-local D-action covering every field, ghost, and antifield generator was found.",
+      "status": "NOT_AVAILABLE"
     },
     {
       "export_id": "classical_inclusion_iota_cl",
@@ -91,39 +102,42 @@
   ],
   "provenance": {
     "classical_snapshot": "quantum-weyl/classical_import/snapshots/bootstrap-v1.json",
-    "classical_snapshot_sha256": "01e4b2188695f901a77a5bd1921454dc57c19b2d8047c835a83646cbabd74a26",
+    "classical_snapshot_sha256": "459f46e3a8d233754ceec2593c858b1996ead38ec52622678bf5a7c7ec3a61e9",
     "ht1_selected_residual_certificate": "quantum-weyl/transfer/certificates/HT1_RESIDUAL_CUBIC_BLOCK.json",
     "ht1_selected_residual_sha256": "802ea86e1bb807476c7e1bbbe25f33435fa1a79ba433c1b0943b19c4986eefc4",
     "ht1b_direct_curvature_audit": "quantum-weyl/transfer/certificates/HT1B_DIRECT_CURVATURE_AUDIT.json",
     "ht1b_direct_curvature_audit_sha256": "f04cb4d64144b95fce2690ca0db56c835daacb44bb82311b7d81beaf9bc63257",
     "ht1b_local_bach_seed_certificate": "quantum-weyl/transfer/certificates/HT1B_LOCAL_BACH_SEED_LIFT.json",
     "ht1b_local_bach_seed_sha256": "f08976200d4e07dc4fb349fa785c960ab4aa8a0d685fc82fe1a2cb30c5ff26c5",
-    "input_schema": "quantum-weyl/transfer/schema/nonlinear_classical_export.schema.json",
+    "input_schema": "quantum-weyl/classical_import/schema/support_local_q2_export.schema.json",
+    "legacy_finite_tensor_schema": "quantum-weyl/transfer/schema/nonlinear_classical_export.schema.json",
     "nd1_selected_residual_D_derivation_certificate": "quantum-weyl/transfer/certificates/ND1_SELECTED_RESIDUAL_D_DERIVATION.json",
-    "nd1_selected_residual_D_derivation_sha256": "69516596f2c30adaa6a20849f9c25b6d113de11abdff424245041cb0b5356e46",
+    "nd1_selected_residual_D_derivation_sha256": "a3bcd3b5b3eb7f62078c6686a1f01a8b04e352c51593db6b49109597464bb159",
     "source_manifest": {
       "__init__.py": "fdc68a01877d182c2ab4a8ce9af4dbff2c0840b0bf7e75dad54c3d6f28a7cafc",
       "d_derivation_certificate.py": "e3ed675ea360ee3d4033a46143b701b5ecb4b250fdf75e7ed131a0619bba07a0",
-      "d_derivation_defect.py": "d1a6e3c75c4752d558f1b219c1f51d48ac4ef578fa87fc3f3b84780551fb3ee7",
+      "d_derivation_defect.py": "5c6e740c2bd0e92b3e7110661260b3dab3b00d2fb8ef7ca8d79aa7cc24333508",
       "homological_transfer.py": "2a39337ddbede21ee299e9c9c83282f5039f84fe032026967e8d33fd51e6f54a",
       "local_bach_seed_certificate.py": "14df89758e07bf495f054608d9159cc1d49d032ec79be429515a8720038f4bf3",
       "local_bach_seed_direct_audit.py": "4abb22dcf527787a25204ac4ab06cdd357f5df24cfda90b09945d5c916937ca1",
       "local_bach_seed_lift.py": "5b9de00f940f67e105320f3816434540caad79cd3bdc4081b5dcb43e7f0fe9d4",
-      "nonlinear_transfer_certificate.py": "c0167a997025a6ca439804c78f700fb73f56cc62e8b1dee7a079f18eaa0f1b17",
+      "nonlinear_transfer_certificate.py": "798bd86dd5f48c51468bf0f14c1c0d1300b6fa98125005e4727f5b68a0b32a19",
       "residual_cubic_block.py": "d8e5a5100ea81b85a3a9b70ff8a683707ba358cc757308e705dd56c127bf3aa2",
       "residual_cubic_certificate.py": "597a47905f5bddef720459672c5b10504fc66826b8b4b3ab332b16c4063ec5b9",
       "schema/local-bach-seed-direct-audit-v1.schema.json": "22ecd9efb3d4f7edf01845e4971733c29782ec5fdc337aae95921fd44eea6876",
       "schema/local-bach-seed-lift-v2.schema.json": "fdc249e774785068e73f0e6197b2e6995bab33f373e040771105e849fb454b2d",
       "schema/nonlinear_classical_export.schema.json": "c476d0e1b3f4c30937100a58622c87b611afdb0224b9ffedea35ae376398ac79",
       "schema/selected-residual-d-derivation-v1.schema.json": "7a385f4d81c46c38c6eece5ba7f133ed77d85230875a722b97229e4e67cf2aad",
-      "tests/test_d_derivation_defect.py": "163adad03235ff996b2c5f7612a70e56bad41f30ba3f6b992d706a31e15ed337",
+      "tests/test_d_derivation_defect.py": "a5db339f19ae35dc63d1df2a25d77bdbbbc3a17f5f70a10f484089a9872df1d1",
       "tests/test_homological_transfer.py": "369354c95a8e4209c0ab1f1d5d877535c86ae39e19421ce0398cbd61ae394783",
       "tests/test_local_bach_seed_direct_audit.py": "2b9a918aebd8123ad2c62ec3c8607238006a660b16b34ddebfbe0a7630fa86a6",
       "tests/test_local_bach_seed_lift.py": "e24646cc61ccebeb8b9ecff7fd057ef220ed747ba8ae0d30aee6cfb3f2b05d99",
-      "tests/test_nonlinear_transfer_certificate.py": "e4c78fc8494a4b89e624f0272e974e74a56d058d1883dc905ea0c1380730e65f",
+      "tests/test_nonlinear_transfer_certificate.py": "330a8841bb6f4d243207205a901079e2a2ffe8ed6b54ccbc945eac876df687d8",
       "tests/test_residual_cubic_block.py": "d279660e15cd7e0c12b7da2c514a6ba566db0505dd03c9c44e3a696454d618cb"
     },
-    "source_manifest_sha256": "66c6166c639afa2dc1f0b44502d53f397dbbc14c863131affbec1f3afa33cc03"
+    "source_manifest_sha256": "8aa4c23cde418ed25fc01f31a4a470bcd15f91741d137e4aff273f989ab05f31",
+    "support_local_q2_contract": "quantum-weyl/classical_import/certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json",
+    "support_local_q2_contract_sha256": "139d1f176a4e0b2288459b4b481d3e0d24ec7d8f7190ecfcd76bb9c8f33d02a8"
   },
   "question_ledger": [
     {
@@ -166,6 +180,8 @@
     "field_ghost_antifield_dictionary",
     "field_gradings",
     "local_classical_bv_differential_q0",
+    "support_local_classical_bv_q2",
+    "local_D_action_on_bv_generators",
     "classical_inclusion_iota_cl",
     "classical_projection_pi_cl",
     "classical_homotopy_s_cl",
@@ -182,6 +198,7 @@
       "full and transferred coderivation-square checks through arity three",
       "floating-point rejection",
       "portable nonlinear classical export schema",
+      "executable support-local q1/q2 and D-action import preflight",
       "HT1 selected residual cubic bracket including the matter-matter Kuranishi output",
       "HT1b two mode-specialized local quadratic-Bach density seeds matched to residual q2 entries",
       "HT1b direct curvature reevaluation of six forward probes and two reverse slice probes",

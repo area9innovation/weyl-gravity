@@ -62,6 +62,8 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             for item in CERTIFICATE.build_certificate()["input_blockers"]
         }
         self.assertIn("local_classical_bv_differential_q0", blocked)
+        self.assertIn("support_local_classical_bv_q2", blocked)
+        self.assertIn("local_D_action_on_bv_generators", blocked)
         self.assertIn("classical_projection_pi_cl", blocked)
         self.assertIn("classical_inclusion_iota_cl", blocked)
         self.assertIn("classical_homotopy_s_cl", blocked)

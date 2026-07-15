@@ -19,6 +19,8 @@ REQUIRED_EXPORTS = (
     "field_ghost_antifield_dictionary",
     "field_gradings",
     "local_classical_bv_differential_q0",
+    "support_local_classical_bv_q2",
+    "local_D_action_on_bv_generators",
     "classical_inclusion_iota_cl",
     "classical_projection_pi_cl",
     "classical_homotopy_s_cl",
@@ -93,6 +95,7 @@ def build_certificate() -> dict[str, Any]:
                 "full and transferred coderivation-square checks through arity three",
                 "floating-point rejection",
                 "portable nonlinear classical export schema",
+                "executable support-local q1/q2 and D-action import preflight",
                 "HT1 selected residual cubic bracket including the matter-matter Kuranishi output",
                 "HT1b two mode-specialized local quadratic-Bach density seeds matched to residual q2 entries",
                 "HT1b direct curvature reevaluation of six forward probes and two reverse slice probes",
@@ -160,7 +163,15 @@ def build_certificate() -> dict[str, Any]:
             "classical_snapshot_sha256": _sha256(SNAPSHOT_PATH),
             "source_manifest": source_manifest,
             "source_manifest_sha256": _canonical_hash(source_manifest),
-            "input_schema": "quantum-weyl/transfer/schema/nonlinear_classical_export.schema.json",
+            "input_schema": "quantum-weyl/classical_import/schema/support_local_q2_export.schema.json",
+            "legacy_finite_tensor_schema": "quantum-weyl/transfer/schema/nonlinear_classical_export.schema.json",
+            "support_local_q2_contract": "quantum-weyl/classical_import/certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json",
+            "support_local_q2_contract_sha256": _sha256(
+                QUANTUM_ROOT
+                / "classical_import"
+                / "certificates"
+                / "SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json"
+            ),
             "ht1_selected_residual_certificate": "quantum-weyl/transfer/certificates/HT1_RESIDUAL_CUBIC_BLOCK.json",
             "ht1_selected_residual_sha256": _sha256(
                 TRANSFER_ROOT / "certificates" / "HT1_RESIDUAL_CUBIC_BLOCK.json"
@@ -182,6 +193,7 @@ def build_certificate() -> dict[str, Any]:
             "The low-arity engine uses a finite exact basis and the declared suspended convention.",
             "The engine fixture tests implementation mechanics only and carries no conformal-gravity coefficient claim.",
             "The classical import remains fail-closed until portable tensors and maps are independently verified.",
+            "The support-local q2 preflight validates format, completeness declarations, exactness, provenance, and hashes; it does not independently prove an opaque local-expression payload.",
             "The certified endpoint projection computes the residual matter-matter Kuranishi bracket but does not substitute for a portable support-local q2 tensor.",
             "The two local Bach density seeds test selected matrix elements only; they do not substitute for an arbitrary-input bilinear Bach tensor or its BV completions.",
             "The vanishing selected residual D-derivation defect does not construct the full support-local interacting Cartan homotopy.",

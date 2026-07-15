@@ -33,6 +33,8 @@ REQUIRED_EXPORT_IDS = {
     "field_ghost_antifield_dictionary",
     "field_gradings",
     "local_classical_bv_differential_q0",
+    "support_local_classical_bv_q2",
+    "local_D_action_on_bv_generators",
     "gauge_fixed_nonminimal_contractions",
     "trace_sector_contraction",
     "conformal_killing_zero_modes_15",
@@ -51,6 +53,10 @@ REQUIRED_EXPORT_IDS = {
 }
 REQUIRED_FREEZE_CHECKS = {
     "q0_squared_zero",
+    "q1_q2_arity_two_nilpotency",
+    "D_q1_commutator_zero",
+    "D_q2_derivation",
+    "q2_cyclic_compatibility",
     "pi_cl_iota_cl_identity",
     "classical_contraction_identity",
     "q0_iota_intertwining",
@@ -60,6 +66,8 @@ REQUIRED_FREEZE_CHECKS = {
 REQUIRED_HASH_KEYS = {
     "field_dictionary_hash",
     "differential_hash",
+    "q2_hash",
+    "D_action_hash",
     "zero_mode_basis_hash",
     "pairing_hash",
     "representative_hash",
@@ -350,13 +358,21 @@ def main(argv: list[str] | None = None) -> int:
         help="compare generated output with the checked-in certificate",
     )
     parser.add_argument(
+        "--emit",
+        action="store_true",
+        help="write the generated certificate to --certificate",
+    )
+    parser.add_argument(
         "--certificate", type=Path, default=DEFAULT_CERTIFICATE
     )
     args = parser.parse_args(argv)
 
     try:
         rendered = _canonical_json(build_certificate(args.snapshot))
-        if args.check:
+        if args.emit:
+            args.certificate.write_text(rendered, encoding="utf-8")
+            print(f"wrote {args.certificate}")
+        elif args.check:
             try:
                 checked_in = args.certificate.read_text(encoding="utf-8")
             except OSError as exc:

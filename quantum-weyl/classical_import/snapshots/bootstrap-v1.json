@@ -9,6 +9,8 @@
   "required_hashes": {
     "field_dictionary_hash": null,
     "differential_hash": null,
+    "q2_hash": null,
+    "D_action_hash": null,
     "zero_mode_basis_hash": null,
     "pairing_hash": null,
     "representative_hash": null
@@ -54,6 +56,18 @@
         }
       ],
       "reason": "The certificate explicitly excludes nonlinear terms from q and does not serialize the complete support-local classical BV differential."
+    },
+    {
+      "export_id": "support_local_classical_bv_q2",
+      "status": "NOT_AVAILABLE",
+      "artifacts": [],
+      "reason": "No portable arbitrary-support local-polydifferential q2 payload with complete field, ghost, and antifield rows was found; endpoint and mode-specialized Bach data are not substitutes."
+    },
+    {
+      "export_id": "local_D_action_on_bv_generators",
+      "status": "NOT_AVAILABLE",
+      "artifacts": [],
+      "reason": "No portable support-local D-action covering every field, ghost, and antifield generator was found."
     },
     {
       "export_id": "gauge_fixed_nonminimal_contractions",
@@ -247,6 +261,26 @@
       "check_id": "q0_squared_zero",
       "status": "BLOCKED_MISSING_EXPORT",
       "reason": "Complete local Q0 generator rows are unavailable."
+    },
+    {
+      "check_id": "q1_q2_arity_two_nilpotency",
+      "status": "BLOCKED_MISSING_EXPORT",
+      "reason": "The complete support-local q2 is unavailable."
+    },
+    {
+      "check_id": "D_q1_commutator_zero",
+      "status": "BLOCKED_MISSING_EXPORT",
+      "reason": "The support-local D-action and complete q1 rows are unavailable."
+    },
+    {
+      "check_id": "D_q2_derivation",
+      "status": "BLOCKED_MISSING_EXPORT",
+      "reason": "The support-local D-action and complete q2 rows are unavailable."
+    },
+    {
+      "check_id": "q2_cyclic_compatibility",
+      "status": "BLOCKED_MISSING_EXPORT",
+      "reason": "The complete support-local q2 and portable cyclic pairing are unavailable."
     },
     {
       "check_id": "pi_cl_iota_cl_identity",

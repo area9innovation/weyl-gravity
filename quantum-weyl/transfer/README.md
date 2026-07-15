@@ -24,8 +24,13 @@ Taylor tensors through arity three, and absence of floating-point data.
 ## Current boundary
 
 The general engine is ready, but the complete conformal-gravity calculation
-is blocked.  HT1 nevertheless imports one genuine classical block already
-certified by the bridge.  The endpoint Taub map, selected BV--BFV suspension,
+is blocked.  The import layer now has an executable support-local `q1`/`q2`
+and `D`-action preflight that rejects finite-mode substitution and requires
+complete field/ghost/antifield row ledgers, exact local-expression payloads,
+pinned proof artifacts, and reproducible hashes.  No authoritative payload
+currently passes that contract.  HT1 nevertheless imports one genuine
+classical block already certified by the bridge.  The endpoint Taub map,
+selected BV--BFV suspension,
 all-energy moment map, and strict centered HPL transfer determine
 
 ```text
@@ -95,6 +100,8 @@ python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check
 python3 quantum-weyl/transfer/residual_cubic_certificate.py --check
 python3 quantum-weyl/transfer/local_bach_seed_certificate.py --check
 python3 quantum-weyl/transfer/d_derivation_certificate.py --check
+python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
+python3 quantum-weyl/classical_import/verify_snapshot.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v
 ```
 

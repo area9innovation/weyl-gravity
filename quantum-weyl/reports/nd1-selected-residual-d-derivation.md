@@ -46,7 +46,10 @@ The selected residual bracket is downstream of endpoint projection and does
 not serialize the arbitrary-input support-local `q2`.  The Diff/Weyl
 ghost-metric rows, antifield rows, full `q1`, portable cyclic pairing, and the
 classical contraction maps `pi_cl`, `iota_cl`, and `s_cl` have not passed the
-import gate.  Consequently no correction `iota_D^(2)` has been constructed
+import gate.  The support-local `q1`/`q2` and `D`-action preflight is now
+executable and content-addressed, but no authoritative classical payload
+passes it; finite-mode and endpoint data are rejected explicitly.
+Consequently no correction `iota_D^(2)` has been constructed
 and no obstruction class in the full deformation complex has been
 trivialized.
 

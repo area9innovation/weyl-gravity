@@ -58,6 +58,14 @@ class DDerivationDefectTests(unittest.TestCase):
 
     def test_full_interacting_D_quotient_remains_input_gated(self) -> None:
         self.assertEqual(self.certificate["setting_verdict"], "INPUT_GATE_BLOCKED")
+        self.assertEqual(
+            self.certificate["input_gates"]["support_local_q2_preflight"],
+            "BLOCKED_CONTRACT_READY_EXPORT_ABSENT",
+        )
+        self.assertEqual(
+            self.certificate["input_gates"]["support_local_D_action"],
+            "BLOCKED_MISSING_CLASSICAL_EXPORT",
+        )
         self.assertTrue(
             all(
                 status.startswith(("BLOCKED", "NOT_"))

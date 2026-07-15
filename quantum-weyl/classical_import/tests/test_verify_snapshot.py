@@ -38,6 +38,19 @@ class ClassicalImportSnapshotTests(unittest.TestCase):
             set(record["export_id"] for record in snapshot["required_exports"]),
             VERIFY.REQUIRED_EXPORT_IDS,
         )
+        self.assertIn("support_local_classical_bv_q2", expected)
+        self.assertIn("local_D_action_on_bv_generators", expected)
+        self.assertIsNone(certificate["required_hashes"]["q2_hash"])
+        self.assertIsNone(certificate["required_hashes"]["D_action_hash"])
+        self.assertTrue(
+            {
+                "q1_q2_arity_two_nilpotency",
+                "D_q1_commutator_zero",
+                "D_q2_derivation",
+                "q2_cyclic_compatibility",
+            }
+            <= set(certificate["blocked_or_failed_freeze_checks"])
+        )
 
     def test_manifest_cannot_promote_gate_with_missing_exports(self) -> None:
         snapshot = json.loads(VERIFY.DEFAULT_SNAPSHOT.read_text(encoding="utf-8"))

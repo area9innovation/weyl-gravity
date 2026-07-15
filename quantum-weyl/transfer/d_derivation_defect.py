@@ -39,6 +39,7 @@ DEPENDENCY_PATHS = (
     "notes/d-quotient-nonlinear-team-brief.md",
     "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
     "quantum-weyl/classical_import/snapshots/bootstrap-v1.json",
+    "quantum-weyl/classical_import/certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json",
     "quantum-weyl/transfer/certificates/HT1_RESIDUAL_CUBIC_BLOCK.json",
 )
 
@@ -365,6 +366,8 @@ def build_certificate() -> dict[str, Any]:
         ],
         "input_gates": {
             "support_local_q2": "BLOCKED_MISSING_ARBITRARY_INPUT_TENSOR",
+            "support_local_q2_preflight": "BLOCKED_CONTRACT_READY_EXPORT_ABSENT",
+            "support_local_D_action": "BLOCKED_MISSING_CLASSICAL_EXPORT",
             "ghost_metric_q2_rows": "BLOCKED_MISSING_CLASSICAL_EXPORT",
             "antifield_q2_rows": "BLOCKED_MISSING_CLASSICAL_EXPORT",
             "q1_and_contraction_pi_cl_iota_cl_s_cl": "BLOCKED_UNFROZEN_IMPORT_GATE",
@@ -406,6 +409,8 @@ def validate_certificate(certificate: object) -> None:
     gates = certificate.get("input_gates")
     expected_gates = {
         "support_local_q2",
+        "support_local_q2_preflight",
+        "support_local_D_action",
         "ghost_metric_q2_rows",
         "antifield_q2_rows",
         "q1_and_contraction_pi_cl_iota_cl_s_cl",

@@ -33,11 +33,14 @@ the selected residual BFV model, but does not construct the full interacting
 Cartan homotopy because the support-local BV tensor and contraction remain
 outside the import gate.
 
-The portable input schema requires full and residual graded bases, `q1`,
-`q2`, `q3`, `iota_cl`, `pi_cl`, `s_cl`, the cyclic pairing, normalized
-Weyl-square representative vectors, verification artifacts, and canonical
-hashes.  It therefore cannot silently substitute class names or expected
-answers for coefficient data.
+The support-local `q2` handoff is now executable rather than implicit.  Its
+preflight requires a declared local-polydifferential support category, all
+minimal field/ghost/antifield roles, complete output-row ledgers for `q1`,
+`q2`, and the local `D` action, exact expression payloads, seven proof
+receipts, and reproducible hashes.  It explicitly rejects finite-mode or
+endpoint data as a support-local substitute.  The broader arity-three schema
+continues to require `q3`, `iota_cl`, `pi_cl`, `s_cl`, the cyclic pairing, and
+the normalized Weyl-square representatives for the later transfer gate.
 
 ## Not established
 
@@ -72,9 +75,13 @@ transferred before `QME_RESTORED`.
 | `python3 quantum-weyl/transfer/local_bach_seed_certificate.py --emit` | 3.77 | PASS | 1 |
 | `python3 quantum-weyl/transfer/local_bach_seed_direct_audit.py --emit --jobs 4` | 665.68 | PASS (8 direct probes) | 2 |
 | `python3 quantum-weyl/transfer/d_derivation_certificate.py --emit` | 3.37 | PASS | 1 |
+| `python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check` | 0.04 | PASS | 1 |
+| `python3 quantum-weyl/classical_import/verify_snapshot.py --check` | 0.14 | PASS | 2 |
+| `python3 -m unittest discover -s quantum-weyl/classical_import/tests -v` | 0.46 | PASS (28 tests) | 1 |
+| Focused ND1 and nonlinear aggregate consumer tests | 8.08 | PASS (11 tests) | 2 |
 | `python3 quantum-weyl/transfer/residual_cubic_certificate.py --check` | 46.20 | PASS | 2 |
 | `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check` | 0.04 | PASS | 2 |
-| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 46.87 | PASS (42 tests) | 1 |
+| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 47.76 | PASS (42 tests) | 2 |
 | Compile, JSON/YAML parsing, and scoped `git diff --check` | 0.24 | PASS | 0 |
 
 An optional Draft-2020-12 meta-schema check was attempted but was **not

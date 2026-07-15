@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-support-local-q2-export-v1.json",
+  "title": "Portable support-local classical BV q1/q2 export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "classical_commit", "dependency_tags", "convention",
+    "expression_schema_version", "support_category", "generators",
+    "q1", "q2", "D_action", "proof_checks", "canonical_hashes"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-support-local-q2-export-v1"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "expression_schema_version": {"type": "string", "minLength": 1},
+    "support_category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spacetime_dimension", "background_id", "boundary_conditions",
+        "locality", "test_function_space", "integration_by_parts_quotient",
+        "maximum_jet_order"
+      ],
+      "properties": {
+        "spacetime_dimension": {"const": 4},
+        "background_id": {"type": "string", "minLength": 1},
+        "boundary_conditions": {"type": "string", "minLength": 1},
+        "locality": {"const": "SUPPORT_LOCAL_POLYDIFFERENTIAL"},
+        "test_function_space": {"type": "string", "minLength": 1},
+        "integration_by_parts_quotient": {"type": "boolean"},
+        "maximum_jet_order": {"type": "integer", "minimum": 0}
+      }
+    },
+    "generators": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"$ref": "#/$defs/generator"}
+    },
+    "q1": {"$ref": "#/$defs/localOperator"},
+    "q2": {"$ref": "#/$defs/localOperator"},
+    "D_action": {"$ref": "#/$defs/localOperator"},
+    "proof_checks": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {"$ref": "#/$defs/proofCheck"}
+    },
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "support_metadata_hash", "generator_dictionary_hash", "q1_hash",
+        "q2_hash", "D_action_hash", "proof_checks_hash"
+      ],
+      "properties": {
+        "support_metadata_hash": {"$ref": "#/$defs/sha256"},
+        "generator_dictionary_hash": {"$ref": "#/$defs/sha256"},
+        "q1_hash": {"$ref": "#/$defs/sha256"},
+        "q2_hash": {"$ref": "#/$defs/sha256"},
+        "D_action_hash": {"$ref": "#/$defs/sha256"},
+        "proof_checks_hash": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "exactNumber": {
+      "oneOf": [
+        {"type": "integer"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["numerator", "denominator"],
+          "properties": {
+            "numerator": {"type": "integer"},
+            "denominator": {"type": "integer", "not": {"const": 0}}
+          }
+        }
+      ]
+    },
+    "generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "symbol", "role", "sector", "tensor_type", "ghost_number",
+        "antifield_number", "form_degree", "Grassmann_parity",
+        "mass_dimension", "Weyl_weight", "canonical_index_symmetry"
+      ],
+      "properties": {
+        "symbol": {"type": "string", "minLength": 1},
+        "role": {
+          "enum": [
+            "metric", "diffeomorphism_ghost", "weyl_ghost",
+            "metric_antifield", "diffeomorphism_ghost_antifield",
+            "weyl_ghost_antifield", "other_field", "other_ghost",
+            "other_antifield"
+          ]
+        },
+        "sector": {"enum": ["minimal", "nonminimal", "auxiliary"]},
+        "tensor_type": {"type": "object", "minProperties": 1},
+        "ghost_number": {"type": "integer"},
+        "antifield_number": {"type": "integer", "minimum": 0},
+        "form_degree": {"type": "integer", "minimum": 0, "maximum": 4},
+        "Grassmann_parity": {"enum": [0, 1]},
+        "mass_dimension": {"$ref": "#/$defs/exactNumber"},
+        "Weyl_weight": {"$ref": "#/$defs/exactNumber"},
+        "canonical_index_symmetry": {"type": "object", "minProperties": 1}
+      }
+    },
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component_id", "output", "inputs", "max_jet_orders", "expression"
+      ],
+      "properties": {
+        "component_id": {"type": "string", "minLength": 1},
+        "output": {"type": "string", "minLength": 1},
+        "inputs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "max_jet_orders": {
+          "type": "array", "minItems": 1,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "expression": {"type": "object", "minProperties": 1}
+      }
+    },
+    "rowCompleteness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["output", "status", "component_ids"],
+      "properties": {
+        "output": {"type": "string", "minLength": 1},
+        "status": {"const": "COMPLETE"},
+        "component_ids": {
+          "type": "array", "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "localOperator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "arity", "degree", "factorial_convention", "components",
+        "row_completeness"
+      ],
+      "properties": {
+        "arity": {"type": "integer", "minimum": 1, "maximum": 2},
+        "degree": {"type": "integer", "minimum": 0, "maximum": 1},
+        "factorial_convention": {
+          "const": "suspended-graded-symmetric-factorial-v1"
+        },
+        "components": {"type": "array", "items": {"$ref": "#/$defs/component"}},
+        "row_completeness": {
+          "type": "array", "minItems": 6,
+          "items": {"$ref": "#/$defs/rowCompleteness"}
+        }
+      }
+    },
+    "proofArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "proofCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "status", "proof_artifact"],
+      "properties": {
+        "check_id": {
+          "enum": [
+            "q1_squared_zero", "q1_q2_arity_two_nilpotency",
+            "q2_koszul_symmetry", "q2_row_completeness",
+            "D_q1_commutator_zero", "D_q2_derivation", "BV_cyclicity_q2"
+          ]
+        },
+        "status": {"const": "VERIFIED"},
+        "proof_artifact": {"$ref": "#/$defs/proofArtifact"}
+      }
+    }
+  }
+}
