@@ -325,8 +325,12 @@ module and the reduced Weyl symbol is $\frac14 I_2$.  The exact $26$-state
 Weyl--Cotton equations, constraint-adjusted symmetric hyperbolicity, sourced
 constraint propagation and all-level $E/A/L$ spectrum are certified.  The
 support-local all-row prolongation and BV operator identity are also exact.
-Nine curvature/current flags are true; the remaining six causal flags keep the
-final covariant $H^4$ flag false.
+The retained $30$-row metric endpoint is coefficient-complete.  Its canonical
+upper curvature lift is exact, the canonical middle graph lift is obstructed,
+and the minimal cyclic relative saddle has zero Schur correction.  Thus the
+metric endpoint Green witness remains open.  Nine curvature/current flags are
+true; the remaining six causal flags keep the final covariant $H^4$ flag
+false.
 \item Calling the resulting classes physical states additionally requires a
 boundary and gauge principle which makes all fifteen conformal generators,
 including $D$, gauge rather than global charges.  We call them
@@ -1627,9 +1631,49 @@ $[N,B]H_4=I_{14}$ with $\rank[N,B]=13$.  The certified composite SDR instead
 gives $P_{\rm alg}=DH_{\rm alg}+H_{\rm alg}D$ as a support-local cyclic
 idempotent chain projector, with $P_{\rm end}=1-P_{\rm alg}$.  It contracts
 $356$ prolonged components and retains the $30$-component metric--curvature
-graph.  The displayed $66\to30$ component hashes are a flat-Fourier regression
-of the universal pointwise summand; curved exactness comes from the factorized
-curved-$Q$ certificate, not an expanded $30\times30$ coefficient table.
+graph.  The endpoint has now also been reconstructed coefficientwise in the
+ordered rows
+\begin{equation}\label{eq:exact-thirty-row-endpoint}
+ G_{\rm met}[5]\xrightarrow{K_{\rm met}}h[10]
+ \xrightarrow{\bar B} \bar E_{\rm met}[10]
+ \xrightarrow{C_{\rm met}} I_{\rm met}[5],
+ \qquad \operatorname{ord}(K_{\rm met},\bar B,C_{\rm met})=(1,4,1).
+\end{equation}
+All curved lower-order coefficients are emitted.  Direct coefficient checks
+give $Q_{\rm end}^2=0$, the two formal-adjoint identities and odd cyclicity;
+the local graph maps satisfy $p_{\rm end}j_{\rm end}=1$ and strictly
+intertwine $Q_{\rm prol}$ and $Q_{\rm end}$.  Thus the earlier $66\to30$
+flat-Fourier hashes remain only a dimension/order/sign regression and are no
+longer the source of the curved endpoint claim.
+
+The canonical curvature backward-map audit identifies a precise boundary.
+The upper row lifts locally: there is a rank-four algebraic map $R$ with
+\begin{equation}
+ A_{\rm core}R=i_C B_{\rm core}.
+\end{equation}
+The analogous canonical middle lift would require
+$T_{\rm core}S=A_F$.  But the exact factorization
+$T_{\rm core}=J_{\rm WC}W_{EB}$ obeys
+$\pi_{EB}J_{\rm WC}=1$, whereas $\pi_{EB}A_F=0$ and
+$\rank A_F=5$.  Hence such an $S$ is impossible on the leading Douglis
+page.  Equivalently, the two rank-five symbol images have zero intersection
+on the certified generic, timelike, spacelike, null and temporal
+representatives.  This is a no-go only for restricting the canonical
+zeroth-order middle map to the endpoint graph, not for a relative witness.
+
+Indeed, the rank-five $A_F$ incidence has an exact support-local cyclic lift
+through the algebraic complement of the full $386$-component complex.  Its
+two off-diagonal legs are nonzero and fixed by the $386\to66\to30$
+projectors.  However the minimal projected saddle has the stronger exact
+identity
+\begin{equation}\label{eq:endpoint-minimal-saddle-nilpotence}
+ P_{\rm end}L_{A_F}P_{\rm alg}L_{A_F}P_{\rm end}=0.
+\end{equation}
+Thus its Schur endpoint is unchanged: $S_{\rm end}=D-CB=D$.  The relative
+incidence introduces no new endpoint obstruction, but it also cannot improve
+Green invertibility of the exact thirty-row diagonal.  Larger relative
+witnesses are not excluded.
+
 What remains is
 $L_{\rm end}=DW_{\rm end}+W_{\rm end}D$ and
 $\Gamma_\pm=W_{\rm end}G_{\rm end,\pm}P_{\rm end}$.
@@ -1683,10 +1727,10 @@ quadratic parent
  \qquad \beta=\delta Y_I,\quad\gamma=0,
 \end{equation}
 where $Y_I$ is the finite Lagrange concomitant of the $T$ and $A$ shears.
-The corrected mapping cylinder makes this a well-typed candidate, but its
-current certificate does not yet bind the corrected core-chain digest;
-therefore \texttt{prolonged\_current\_comparison} remains false until that
-provenance and the associated pullback are checked explicitly.  The equivariance defect of the Cauchy
+The current certificate now binds the corrected core-chain digest and checks
+this pullback explicitly.  Hence
+\texttt{prolonged\_current\_comparison} is true; equality with the causal
+Green pairing remains downstream.  The equivariance defect of the Cauchy
 cutoff is nevertheless now controlled conditionally and exactly.  If
 $\rho$ is any of the fifteen local conformal chain generators and
 $\kappa=[Q,\chi]$ is the standard temporal-cutoff inverse to the causal map,
@@ -3540,6 +3584,13 @@ local prolongation retract and prolonged BV operator identity; the formerly
 reported rank-four associated-graded defect used mixed coordinates.  The
 support-local cyclic hybrid projector now contracts $356$ components and
 retains the $30$-component endpoint graph.  The
+complete curved endpoint is the exact $5\to10\to10\to5$ complex
+\eqref{eq:exact-thirty-row-endpoint}.  The canonical upper curvature lift is
+local and exact, while the canonical middle graph lift has the scoped
+rank-five obstruction described above.  Passing to the full relative saddle
+does restore a cyclic two-way incidence, but its minimal Schur correction
+vanishes identically by \eqref{eq:endpoint-minimal-saddle-nilpotence}; hence
+the still-missing object is the endpoint-diagonal witness $W_0$ itself.  The
 off-shell prolonged/auxiliary current comparison is exact; its identification
 with a causal Green pairing remains downstream.  The prolonged Green witness
 and causal Green operators, causal BV Green homotopy
@@ -3772,8 +3823,13 @@ Curvature causal realization and final covariant $H^4$ & Open, fail-closed &
 Nine flags in \eqref{eq:open-curvature-flags} are true and the six
 causal/transport flags remain false.  The local all-row prolongation, BV
 differential, off-shell current comparison, and $356/30$ hybrid algebraic
-projector are complete.  The remaining work is the endpoint Green
-witness and actual BV Green homotopy, residual endpoint recovery, and
+projector are complete.  The retained $5\to10\to10\to5$ endpoint is
+coefficient-complete and cyclic.  Its upper curvature graph lift is exact;
+the canonical middle lift is obstructed.  The minimal cyclic relative saddle
+exists on all $386$ rows but has zero endpoint Schur correction, so it neither
+helps nor obstructs the still-open endpoint-diagonal Green problem.  The
+remaining work is the endpoint witness $W_0$ and actual BV Green homotopy,
+residual endpoint recovery, and
 equivariance; Green/current equality is further downstream.  Consequently the causal quasi-isomorphism
 and \texttt{final\_covariant\_H4} remain false; the already-complete residual
 $H^4=\C^2$ and $G=I_2$ are not being recomputed;

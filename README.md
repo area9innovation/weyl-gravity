@@ -108,6 +108,16 @@ theory also remains open.  A direct same-bundle
 factorization of `B_lin+K T/2` is an optional strengthening, not a hidden
 premise.
 
+The retained metric endpoint is now coefficient-complete as the exact curved
+complex `G_met[5] -> h[10] -> Ebar_met[10] -> I_met[5]`, with differential
+orders `1/4/1`, nilpotency, formal adjoints, odd cyclicity, and the local graph
+intertwiners checked coefficientwise.  Its canonical upper curvature lift is
+exact.  The canonical middle Weyl--Cotton lift is obstructed at rank five,
+while the corresponding full relative cyclic saddle exists but has exactly
+zero endpoint Schur correction.  Therefore the canonical metric endpoint
+diagonal witness `W_0` and its Green operators remain the analytic gap; no
+causal or final flag moves.
+
 The generated
 [`final_claim_dependencies.md`](covariant_completion/generated/final_claim_dependencies.md)
 records the current fail-closed boundary:
@@ -174,12 +184,24 @@ certificate is rebound to the curved core-chain provenance and proves the
 off-shell `d+Q` comparison exactly; Green/current equality remains
 downstream.  The support-local cyclic hybrid projector also contracts 356
 prolonged components and retains the 30-component metric--curvature graph.
-Only its endpoint Green witness and inverses remain open.  The construction
+The exact curved endpoint is emitted coefficientwise in the ordered
+`5 -> 10 -> 10 -> 5` metric rows, rather than inferred from the flat-Fourier
+regression hashes; its graph maps and all three curved arrows intertwine
+exactly.  Only its endpoint Green witness and inverses remain open.  The
+construction
 does not use the scalar-wave-obstructed auxiliary block $E_{\rm aux}+KC$ as
 an endpoint witness; the next operator is
 $L_{\rm end}=QW_{\rm end}+W_{\rm end}Q$ on the retained metric--curvature
-graph.  Two further fail-closed diagnostics sharpen this
-open step.  At an arbitrary covector the auxiliary prenormal principal symbol
+graph.  The upper canonical curvature backward map lifts exactly by a
+support-local rank-four algebraic map.  The middle canonical map does not:
+`T_core=J_WC W_EB`, `pi_EB J_WC=1`, `pi_EB A_F=0`, and `rank(A_F)=5`
+give an exact leading-page contradiction to `T_core S=A_F`.  This scoped
+graph-lift no-go does not extend to relative witnesses.  In fact the full
+`386 -> 30` projectors admit the rank-five cyclic two-way relative incidence,
+but its minimal Schur correction is identically zero:
+`P_end L_AF P_alg L_AF P_end=0`.  It introduces no new obstruction and
+cannot improve the endpoint diagonal.  Two further fail-closed diagnostics
+sharpen this open step.  At an arbitrary covector the auxiliary prenormal principal symbol
 satisfies `(P2-q I)^2=0`, with Smith multiplicities `6/12/6` for the
 algebraic/wave/biwave factors.  The formal lower factor `2q I-P2` is exact at
 principal level, but its naive frozen lower-order completion has nonzero

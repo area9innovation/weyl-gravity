@@ -29,7 +29,8 @@ an actual BV Green homotopy, residual endpoint recovery, or equivariant
 transport.  The all-row curvature
 prolongation is now exact: the corrected curved cotangent projections remove
 the spurious rank-four Rees defect, and the complete sixteen-block local SDR
-and prolonged BV differential are certified.  This package also does not claim a
+and prolonged BV differential are certified.  Its retained 30-row endpoint is
+also coefficient-complete, but its metric Green witness remains open.  This package also does not claim a
 direct same-bundle factorization of `H=B_lin+K T/2`.
 
 ## Exact minimal ghost witness
@@ -621,11 +622,45 @@ Lambda_+- = H_alg + Gamma_+-
 The composite SDR proves that `P_alg` and `P_end` are complementary,
 support-local, cyclic chain projectors.  It contracts 356 of the 386
 prolonged components and retains the 30-component metric--curvature graph.
-The component hashes of the `66 -> 30` auxiliary contraction are a
-flat-Fourier regression of its universal pointwise summand; curved exactness
-is supplied by the factorized curved-`Q` certificate, not by an expanded
-`30 x 30` curved coefficient table.  The endpoint `W_end`, `L_end`, and
-`G_end,+-` are not constructed, so no causal flag is promoted.
+The retained endpoint has now been reconstructed coefficientwise as
+
+```text
+G_met[5] --K_met--> h[10] --Bach_bar--> Ebar_met[10]
+         --C_met--> I_met[5]
+orders:        1                 4                  1
+```
+
+All curved lower-order coefficients are emitted.  The exact receipt verifies
+`Q_end^2=0`, the formal adjoints, odd cyclicity, `p_end j_end=1`, and both
+graph intertwining identities.  The old component hashes of the `66 -> 30`
+auxiliary contraction remain a flat-Fourier dimension/order/sign regression;
+they are not used as curved coefficient tables.
+
+The canonical curvature graph-lift audit then gives two different outcomes.
+The upper backward map has a support-local rank-four algebraic lift satisfying
+`A_core R=i_C B_core`.  The canonical middle lift would require
+`T_core S=A_F`, but `T_core=J_WC W_EB`, `pi_EB J_WC=1`,
+`pi_EB A_F=0`, and `rank(A_F)=5` prove this impossible on the leading
+Douglis page.  The sampled exact ranks confirm zero intersection on generic,
+timelike, spacelike, null, and temporal representatives.  This is scoped to
+the canonical graph-internal middle map.
+
+The full `386 -> 66 -> 30` projectors nevertheless admit a support-local
+rank-five two-way relative incidence.  Its projected witness is odd cyclic
+and purely off diagonal.  For the minimal `A_F` incidence, the Schur
+correction vanishes before any chain reduction:
+
+```text
+P_end L_AF P_alg L_AF P_end = 0,
+S_end = D-CB = D.
+```
+
+Thus the relative saddle introduces no new endpoint obstruction but cannot
+improve Green invertibility of the endpoint diagonal.  Larger relative
+witnesses are not excluded.  The still-missing object is the endpoint
+diagonal witness `W_0`, together with its same-sided Green operators and
+graded-adjoint/source-compatibility theorem.  No causal or final flag is
+promoted.
 
 The two scoped receipts are regenerated with
 
@@ -633,6 +668,10 @@ The two scoped receipts are regenerated with
 python3 symbolic/verify_conformal_rank14_corrected_rees_weights.py --guards
 python3 symbolic/verify_conformal_rank14_strict_local_contraction_no_go.py --guards
 python3 symbolic/verify_conformal_prolonged_hybrid_algebraic_projector.py --guards
+python3 symbolic/verify_conformal_prolonged_metric_endpoint_complex.py --guards
+python3 symbolic/verify_conformal_endpoint_curvature_graph_lift_boundary.py --guards
+python3 symbolic/verify_conformal_endpoint_relative_saddle_feasibility.py --guards
+python3 symbolic/verify_conformal_endpoint_relative_saddle_nilpotence.py --guards
 ```
 
 The remaining flags are the prolonged Green witness, causal chain homotopy,
