@@ -167,10 +167,26 @@ exact conserved traceless counterexample is certified.  Arbitrary same-source
 closure is therefore refuted at linearized flat level.
 
 Do not call a fixed-external-source solution locus a BV subcomplex: it is
-affine.  E-D2 must first freeze the compensated metric--scalar quadratic BV
-complex, then construct or refute a defect chain map for a declared dynamical
-matter/source complex.  A higher-derivative dressed source is a separately
-labelled coupling, not conventional Einstein equivalence.
+affine.  The certificate
+`bridge/certificates/compensated_quadratic_minimal_bv.json` now constructs the
+local minimal compensated complex in invariant variables and proves exact
+nilpotency, formal cyclicity, and contraction of the Weyl Stueckelberg doublet.
+It reduces to the 28-dimensional Einstein--Weyl metric--Diff minimal complex.
+
+This is not yet the complete classical import freeze: physical cohomology,
+global zero modes, a gauge-fixed nonminimal domain, and causal Green data are
+open.  E-D2 must complete that stricter freeze, then construct or refute a
+defect chain map for a declared dynamical matter/source complex.  A
+higher-derivative dressed source is a separately labelled coupling, not
+conventional Einstein equivalence.
+
+The same certificate imports the classical Berger-clock background and
+reduced charge seed by hash.  They establish an exact positive-energy rotating
+clock and nonzero internal matter momentum on a compact squashed background.
+They do not yet establish the total covariant `D` charge, support-local all-row
+BV retract, or causal complex, and they are not identified with the flat
+Stueckelberg compensator.  The Berger gate remains
+`TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT`.
 
 ## Work package E-D3: observables, charges, and scattering
 

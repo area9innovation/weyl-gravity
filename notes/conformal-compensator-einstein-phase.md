@@ -177,6 +177,20 @@ obstruction does not invalidate the compensator's local Einstein-Hilbert scale
 generation: they are different scalar roles and different background
 questions.
 
+The classical team has now also certified the distinct positive Berger-clock
+background and its reduced internal-charge seed.  This is a positive-energy
+rotating scalar pair on a compact non-conformally-flat squashed background,
+not the constant compensator.  Its internal clock momentum is nonzero, while
+the total gravitational-plus-matter `D` charge, all-row BV retract, causal
+complex, and stability remain open.  Its current gate is
+`TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT`.
+
+The flat compensator's local minimal BV completion is separately certified in
+`notes/conformal-compensated-quadratic-minimal-bv.md`: the invariant metric
+supports the Einstein--Weyl Diff complex and the Weyl Stueckelberg coordinate
+forms an exact contractible doublet.  This does not transfer the result to the
+Berger background or complete the classical import freeze.
+
 ## What remains
 
 The first causal theorem is now complete in
@@ -185,10 +199,10 @@ flat TT Schwartz domain, the local data `chi=0` and `n.chi=0` eliminate the
 massive branch, propagate causally, retain the nondegenerate Einstein-Hilbert
 pairing, and recover both classical helicities without future boundary data.
 
-What remains is the full metric Diff x Weyl BV lift, source-compatible Green
-complex, nonlinear preservation of the Einstein submanifold, and the
-null-infinity charge/scattering comparison.  The reduced free theorem does not
-promote any of those claims.
+What remains is the stricter classical import freeze, source-compatible defect
+chain map and Green complex, nonlinear preservation of the Einstein
+submanifold, and the null-infinity charge/scattering comparison.  The local
+minimal BV theorem does not promote any of those claims.
 
 Machine certificate:
 `bridge/certificates/compensator_einstein_phase.json`.

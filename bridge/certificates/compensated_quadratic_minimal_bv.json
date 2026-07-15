@@ -1,0 +1,243 @@
+{
+  "action_and_field_theorem": {
+    "action_representative": "S=S_W+int sqrt(-g) zeta(phi^2 R-6 phi Box phi), with lambda=0 on the flat v!=0 phase",
+    "background_stationarity": "phi=v!=0, g=eta, lambda=0 has zero tadpole by the imported phase certificate",
+    "boundary_rule": "compact-support formal adjoints may discard the divergence; any BFV lift must restore and track it",
+    "bulk_integration_by_parts": "zeta(phi^2 R+6 partial_phi.partial^phi) differs by -6 zeta nabla_m(phi nabla^m phi)",
+    "chart_boundary": "the field map and Weyl contraction are singular at v=0",
+    "field_map_determinant": "det F=1/v",
+    "invariant_fields": [
+      "h_hat_mn=h_mn+2(varphi/v)eta_mn",
+      "rho=varphi/v"
+    ],
+    "metric_euler_operator": "K_EW h=c1 G1(h)+2 alpha B1(h)",
+    "operator_fingerprints": {
+      "field_map": "b4891aea0cc3b33f1fe4c6cfaf3622166ff350abc7b34fa74c625f3e3096f379",
+      "metric_operator": "b329ac10880e12752d5cab193c213debc6a78a7055cfffa29ad44ae596d28aed",
+      "original_action_hessian": "ffb66733f8969f66161a6fdbc67239ec33839f232d731cf0a6c4e3a6a51e2c13"
+    },
+    "original_fields": [
+      "symmetric h_mn",
+      "varphi"
+    ],
+    "quadratic_split": "S2=(1/2)<h_hat,K_EW h_hat>; rho is absent from the Hessian and is pure Weyl gauge",
+    "status": "PASS"
+  },
+  "berger_clock_coordination": {
+    "background_result": "CERTIFIED_EXACT_BACKGROUND",
+    "background_verdict": "positive-energy rotating scalar clock on a compact squashed Berger background exists",
+    "charge_result": "CERTIFIED_REDUCED_CHARGE_SEED",
+    "charge_verdict": "nonzero internal O(2) clock momentum; total covariant D charge remains open",
+    "convention_guard": "the Berger certificates use signature (-,+,+,+), while this flat compensated complex uses (+,-,-,-); no Berger sign formula is imported into K_EW",
+    "effect_on_this_theorem": "contextual import only; Berger operators are not inserted into the flat compensated BV differential",
+    "next_gate": "TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT",
+    "separation_rule": "the Berger phase clock is a dynamical relational matter clock on a non-flat compact background; rho here is a flat-phase Weyl Stueckelberg coordinate and supplies no relational time"
+  },
+  "claim_flags": {
+    "action_representative_and_boundary_divergence_declared": true,
+    "berger_background_status_imported": true,
+    "berger_charge_seed_status_imported": true,
+    "berger_support_local_bv_retract_constructed": false,
+    "berger_total_covariant_D_charge_computed": false,
+    "classical_import_freeze_complete": false,
+    "compensator_and_berger_clock_roles_separated": true,
+    "diff_and_weyl_gauge_maps_constructed": true,
+    "flat_background_stationarity_imported": true,
+    "formal_cyclicity_exact": true,
+    "gauge_fixed_nonminimal_complex_constructed": false,
+    "green_hyperbolic_complex_constructed": false,
+    "hessian_gauge_annihilation_exact": true,
+    "invariant_field_map_exact_and_invertible_for_v_nonzero": true,
+    "lorentzian_causal_claim": false,
+    "matter_inclusive_bv_complex_constructed": false,
+    "minimal_bv_nilpotency_exact": true,
+    "noether_identity_exact": true,
+    "on_shell_one_particle_cohomology_computed": false,
+    "p_zero_global_modes_classified": false,
+    "physical_residual_cohomology_computed": false,
+    "quantum_claim": false,
+    "reduced_metric_diff_chain_equivalence_exact": true,
+    "reduced_pairing_nondegenerate": true,
+    "sourced_defect_chain_map_constructed": false,
+    "symmetric_tensor_pairing_exact": true,
+    "weyl_invariant_metric_hessian_constructed": true,
+    "weyl_stueckelberg_doublet_contracted": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "domain": {
+    "curvature_convention": "metric Euler row K_EW=c1 G1+2 alpha B1",
+    "phase": "phi=v!=0, lambda=0, c1=zeta v^2 nonzero, alpha nonzero",
+    "spacetime": "four-dimensional Minkowski space",
+    "test_sections": "compactly supported smooth formal fields, or polynomial Fourier symbols with p->-p formal adjoint",
+    "zero_mode_rule": "generic-symbol ranks do not classify p=0 Killing or global cylinder residual modes"
+  },
+  "inputs": {
+    "berger_charge_seed": {
+      "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+      "sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9"
+    },
+    "compensator_phase": {
+      "path": "bridge/certificates/compensator_einstein_phase.json",
+      "sha256": "b5c9f6caa05a263cdb006c33e6bbf60139139d8c30303706e073948a62e7a6b4"
+    },
+    "positive_berger_clock": {
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"
+    },
+    "pure_weyl_free_bv_reference": {
+      "path": "bridge/certificates/free_bv_complex.json",
+      "sha256": "015d829312c2d4337d6dc4a2212e4ab81a5ec699a1e8c79c76c3fe5128ce4bde"
+    },
+    "sourced_defect_preflight": {
+      "path": "bridge/certificates/compensated_einstein_sourced_defect_preflight.json",
+      "sha256": "169555bea3a34d1797933804c212a4dc70b854fbda02711291ac9dc1c2c77625"
+    }
+  },
+  "lifecycle_boundary": {
+    "certified_now": "local minimal vacuum BV complex and exact Weyl-doublet contraction",
+    "freeze_requirements": [
+      "declare the target residual or local cohomology result kind",
+      "compute exact cohomology representatives and pairing",
+      "certify all required chain maps and contractions",
+      "add a complete provenance and missing-object ledger",
+      "keep gauge-fixed nonminimal and causal Green data in separate promotions"
+    ],
+    "next_gate": "COMPENSATED_CLASSICAL_IMPORT_FREEZE"
+  },
+  "minimal_bv_theorem": {
+    "differential_blocks": [
+      "R:(xi,sigma)->(2 partial_(m xi_n),-sigma)",
+      "H:(h_hat,rho)->(K_EW h_hat,0)",
+      "N=-R^dagger from field antifields to ghost antifields in the declared cyclic sign convention"
+    ],
+    "exact_identities": [
+      "H R=0",
+      "R^T G_field H=0",
+      "q^2=0",
+      "q(-p)^T Omega+Omega q(p)=0"
+    ],
+    "field_slices": [
+      {
+        "degree": -1,
+        "dimension": 4,
+        "name": "diff_ghost"
+      },
+      {
+        "degree": -1,
+        "dimension": 1,
+        "name": "weyl_ghost"
+      },
+      {
+        "degree": 0,
+        "dimension": 10,
+        "name": "h_hat"
+      },
+      {
+        "degree": 0,
+        "dimension": 1,
+        "name": "rho"
+      },
+      {
+        "degree": 1,
+        "dimension": 10,
+        "name": "h_hat_antifield"
+      },
+      {
+        "degree": 1,
+        "dimension": 1,
+        "name": "rho_antifield"
+      },
+      {
+        "degree": 2,
+        "dimension": 4,
+        "name": "diff_ghost_antifield"
+      },
+      {
+        "degree": 2,
+        "dimension": 1,
+        "name": "weyl_ghost_antifield"
+      }
+    ],
+    "generic_off_shell_fixture": {
+      "gauge_rank": 5,
+      "hessian_rank": 6,
+      "interpretation": "rank fixture only; not an on-shell physical cohomology calculation",
+      "parameters": "p=(2,1,0,0), c1=-1, alpha=-1",
+      "q_rank": 16
+    },
+    "grading_convention": "chain degree equals repository ghost number: ghosts -1, fields 0, antifields 1, ghost antifields 2",
+    "operator_fingerprints": {
+      "gauge": "88606164b2c5965116207a11b79e416c98754af195df28a8fdbfe35a1c96bce1",
+      "hessian": "f822cc441cb37a4bc686644238c7d5462b1cea4e53dfe026db0f5d97ef366c3b",
+      "noether": "56088df8f6e1574cb7ab05e47c52f05d933ef49178a4e95d7d0dd452d9dea0b6",
+      "pairing": "0b80ea6d46353688871a36e36f25ee498a299e61cce2cb080cbf8faa643b8dde",
+      "q": "a421dff74dc17f392567f8d4c496cce504dfdd22e4f7ce4c3e30169fa3b2732b"
+    },
+    "pairing": {
+      "diff_ghost": "eta_mn",
+      "full_rank": 32,
+      "rho_and_weyl_ghost": "unit scalar pairing",
+      "symmetric_tensor": "<h,k>=h_mn k^mn with off-diagonal multiplicity two"
+    },
+    "status": "PASS",
+    "total_dimension": 32
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/compensated_quadratic_minimal_bv.py",
+    "generator_sha256": "be159378f57eb21f403336e1cad790f40cd3f9cdf5b6646656f8b78f9006c4f8",
+    "input_base_commit": "c4a1d28bab4d716a281db1c5428a83e515f6a822"
+  },
+  "result_id": "COMPENSATED_FLAT_QUADRATIC_MINIMAL_BV_COMPLEX",
+  "result_state": "LOCAL_MINIMAL_BV_CERTIFIED_CLASSICAL_IMPORT_FREEZE_OPEN",
+  "schema": "compensated-flat-quadratic-minimal-bv-v1",
+  "schema_path": "bridge/einstein_sector/schema/compensated_quadratic_minimal_bv.schema.json",
+  "schema_sha256": "fe5e0466d48befc3e1d15de2551c1cb7feff576955ed0d5a7fc11d9c5a43e36e",
+  "scope_guards": [
+    "all proved identities are LOCAL-ALGEBRAIC and exact over Q(c1,alpha,v,v^-1)[p0,p1,p2,p3]",
+    "compact support justifies formal integration by parts; the discarded divergence is retained in the boundary ledger",
+    "the v!=0 invariant chart and Weyl contraction are not extended through v=0",
+    "generic off-shell rank is not physical or residual cohomology",
+    "the pure-Weyl D-finite BV fixture is architectural context, not the compensated local field complex",
+    "the Berger clock imports do not identify its relational phase with the Stueckelberg compensator",
+    "no gauge-fixed, causal, nonlinear, boundary, scattering, quantum, or complete classical-freeze claim is made"
+  ],
+  "verdict": "COMPENSATED_FLAT_MINIMAL_BV_SPLITS_EW_DIFF_PLUS_WEYL_DOUBLET",
+  "verification_command": "python3 -m bridge.einstein_sector.compensated_quadratic_minimal_bv --verify bridge/certificates/compensated_quadratic_minimal_bv.json",
+  "weyl_doublet_contraction": {
+    "contractible_coordinates": [
+      "weyl_ghost",
+      "rho",
+      "rho_antifield",
+      "weyl_ghost_antifield"
+    ],
+    "doublet_maps": [
+      "q(weyl_ghost)=-rho",
+      "q(rho_antifield)=weyl_ghost_antifield"
+    ],
+    "homotopy_maps": [
+      "s(rho)=-weyl_ghost",
+      "s(weyl_ghost_antifield)=rho_antifield"
+    ],
+    "identities": [
+      "pi_cl i=1",
+      "i pi_cl=1-q s-s q",
+      "s^2=0",
+      "s i=0",
+      "pi_cl s=0",
+      "q i=i q_red",
+      "pi_cl q=q_red pi_cl"
+    ],
+    "operator_fingerprints": {
+      "homotopy": "f7638d21e11db2bb2cfbde1cf85470ea37bc4e7eeaababf8b8830ea922a8793f",
+      "inclusion": "883cb375ab009c560e14c6c12020be9fc37f136b3f4d11ea714f94a0ee5588c8",
+      "pi_cl": "baa5b1aae03d9c095e9142d0a9b833029a32f7d810e756f47638a0cc4f71cbfe",
+      "reduced_pairing": "a53f3cbacd00e1211cfa1d266d93da3d112f3277c1c94fa8dd4524b4543ad7fb",
+      "reduced_q": "ab8dab767009d7e9d3b441cb7e6f36b8c4574f622168f534248908f7f8845ec1"
+    },
+    "pairing_restriction": "i^T Omega i is nondegenerate on the reduced complex",
+    "reduced_complex": "28-dimensional Einstein-Weyl metric-diffeomorphism minimal BV complex",
+    "status": "PASS"
+  }
+}

@@ -243,8 +243,17 @@ same-source Einstein closure is equivalent to the independent differential
 condition `Q(T)=0`; stress-tensor conservation and the Weyl trace Ward identity
 are not sufficient.  Arbitrary same-source closure is therefore refuted on
 flat space.  Fixed-source solutions form an affine sector, so a genuine BV
-subcomplex must include the matter fields and await a compensated quadratic BV
-freeze.
+subcomplex must include the matter fields and extend the now-certified vacuum
+minimal complex.
+
+The local minimal compensated BV theorem in
+`notes/conformal-compensated-quadratic-minimal-bv.md` now supplies the vacuum
+metric--scalar complex.  In the `v!=0` invariant chart it splits exactly into
+the Einstein--Weyl metric--Diff minimal complex and a contractible Weyl
+Stueckelberg doublet, with nilpotency, formal cyclicity, chain contraction, and
+nondegenerate reduced pairing certified.  Physical cohomology, global zero
+modes, the nonminimal causal complex, dynamical matter, and the full classical
+import freeze remain open.
 
 ## Background inventory
 

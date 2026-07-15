@@ -202,12 +202,16 @@ reported as conventional same-source Einstein equivalence.
 
 ## Revised E-D2 sequence
 
-1. Freeze the quadratic compensated metric--scalar BV complex: Hessian, gauge
-   maps, ghosts, antifields, Noether rows, nilpotency, cyclicity, and the Weyl
-   Stueckelberg contraction.
-2. Lift \(\Delta\) to a chain map and classify the admissible source complex.
-3. Construct retarded and advanced defect propagation on declared spaces.
-4. Compute the first nonlinear obstruction and only then pass to null infinity
+1. Certify the local quadratic minimal BV complex: Hessian, gauge maps, ghosts,
+   antifields, Noether rows, nilpotency, cyclicity, and the Weyl Stueckelberg
+   contraction.  This is now complete in
+   `notes/conformal-compensated-quadratic-minimal-bv.md`.
+2. Complete the stricter classical import freeze with a declared cohomology
+   result kind, exact representatives, pairing, chain maps, provenance, and a
+   missing-object ledger.
+3. Lift \(\Delta\) to a chain map and classify the admissible source complex.
+4. Construct retarded and advanced defect propagation on declared spaces.
+5. Compute the first nonlinear obstruction and only then pass to null infinity
    and scattering.
 
 The target is explicitly disjunctive: construct a same-source sector on a
