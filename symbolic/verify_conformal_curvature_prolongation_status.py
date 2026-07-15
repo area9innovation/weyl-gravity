@@ -166,9 +166,47 @@ def main() -> int:
         and fixed16["alternative_17_27_intrinsic_sensitivity_nonzero"]
         and not fixed16["alternative_17_27_minimal_regular_slices_semisimple"]
         and not fixed16["alternative_17_27_full_family_no_go"]
+        and fixed16["alternative_minimal_sensitivity_family_complete"]
+        and fixed16["alternative_minimal_family_zero_root_no_go"]
         and fixed16["rank34_presented_rank12_submodule_green"]
         and fixed16["rank34_rank8_constraint_quotient_hyperbolic"]
         and not fixed16["rank34_rank14_field_cokernel_green"]
+        and fixed16["shifted_rank4_vector_block_contractible"]
+        and fixed16["shifted_rank4_vector_replacement_Green_inverse"]
+        and fixed16["shifted_rank4_vector_Green_homotopy"]
+        and fixed16["all_row_Green_assembly_conditional_on_rank14"]
+        and fixed16["rank14_Weyl_Cotton_input_manifest_complete"]
+        and fixed16["rank14_principal_projector_free_presentation"]
+        and fixed16["rank14_principal_green_algebra"]
+        and fixed16["direct_rank14_curvature_retraction_no_go"]
+        and fixed16["rank14_equation_SDR_required"]
+        and fixed16["rank14_raw_curvature_image_rank"] == 5
+        and fixed16["rank14_raw_curvature_kernel_rank"] == 9
+        and fixed16["rank14_compatible_source_kernel_rank"] == 12
+        and not fixed16["rank14_raw_curvature_image_is_source_compatible"]
+        and fixed16["rank14_generic_curvature_compatibility_defect_rank"] == 3
+        and not fixed16["rank14_fake_V7_quotient_defined"]
+        and fixed16["rank14_equation_cone_exact"]
+        and fixed16[
+            "rank14_null_B3_H2_quotient_distinguished_from_constraint_kernel"
+        ]
+        and fixed16["rank14_witness_companion_cycle_gate_exact"]
+        and fixed16["rank14_fake_state_SDR_rejected"]
+        and fixed16["rank14_full_equation_cone_required"]
+        and fixed16["rank14_ordinary_BV_Caux_layer_identified"]
+        and fixed16["rank14_curved_Caux_Rees_layer_unresolved"]
+        and fixed16["rank14_mixed_symbol_cone_rejected"]
+        and fixed16["rank14_common_Douglis_filtration_required"]
+        and fixed16["rank14_common_Douglis_weight_constraints_feasible"]
+        and not fixed16["rank14_full_symbol_cone_is_complex"]
+        and not fixed16["rank14_full_symbol_cone_cohomology_computed"]
+        and not fixed16["rank14_equation_SDR_constructed"]
+        and not fixed16["rank14_green_operators_constructed"]
+        and fixed16["rank14_typed_incoming_map_ledger_complete"]
+        and not fixed16["rank14_plain_state_kernel_quotient_is_target"]
+        and not fixed16["rank14_principal_H7_contraction_certified"]
+        and fixed16["rank14_corrected_equation_source_map_typed"]
+        and not fixed16["rank14_lower_order_PBW_may_resume"]
     )
     without_mapping = _build(
         include_mapping_cylinder=False, quotient=status.quotient

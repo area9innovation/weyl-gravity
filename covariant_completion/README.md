@@ -516,7 +516,11 @@ have nonzero intrinsic sensitivity (joint rank 16) and remain live Route-B
 incidences.  The smallest temporally regular slices for both have determinant
 `8` and real causal roots but fail semisimplicity at `0,+1,-1`; the first
 direct-sensitive spatial correction does not fix either slice.  The full
-alternative families remain open.
+alternative families remain open.  The minimal 16-parameter subfamily that
+surjects onto the complete sensitivity image is now ruled out uniformly as
+well: the zero-root valuation/kernel bounds are `40/33` for pair `1+7` and
+`48/47` for pair `2+7`.  This is not a no-go for the raw 122-parameter
+families or for generalized Green extensions.
 
 For the aligned channel the support-local BV shift itself is also explicit:
 with `L=1-z^2`, the complex block becomes `diag(L^2,-1)`, while the fixed
@@ -540,6 +544,52 @@ symmetric-hyperbolic constraint quotient plus an unresolved rank-14 field
 cokernel.  Curvature descends to the latter by `(C1,div C1) K=0`; the induced
 biwave quotient intertwiner remains open.  The raw coupling ideal is not
 nilpotent, excluding the simplest finite-Neumann shortcut.
+
+The separate rank-four vector singleton is solved exactly as the shifted
+`(eta,v,vsharp,etasharp)` contraction.  A replacement witness yields
+`P=I_16`, same-sided inverses `G_+=G_-=I_16`, and exact homotopies
+`Lambda_+=Lambda_-=W`; its causal propagator is zero.  The corresponding
+scoped atomic flags are true.  Only the rank-14 field cokernel and all-row
+assembly remain on this filtration.
+
+The all-row assembly is now an exact conditional theorem.  Its rank ledgers
+`116=34+4+26+26+26` and `34=12+8+14` cover every analytic component once;
+all 16 mapping-cylinder BV rows, cotangent tails and the canonical shear are
+bound coefficientwise.  Conditional on the rank-14 curved operator/adjoint,
+compatible-source Green maps and two source-lift equations, the formal
+assembly proves two-sided `G`, chain commutation and the complete Green
+homotopy identity.  No other analytic block is missing.
+
+The final input package is
+`certificates/curved_rank14_weyl_cotton_input_manifest.json`.  It references,
+by path and SHA-256, the exact quotient maps, full 26-state evolution/lower
+tables, 14 constraints and subsidiary system, source compatibility,
+symmetrizers, BV row order, adjoints and current conventions.  Large matrices
+remain single-source rather than being copied into the manifest.
+
+The principal rank-14 quotient is now explicit and projector free.  It has a
+local rank-10 wave/rank-4 temporal filtration, exact same-sided Green algebra
+and causal source lifting modulo the certified gauge image.  The direct
+curvature map nevertheless has symbol rank `5` and kernel rank `9`, while
+the compatible Weyl--Cotton source kernel has rank `12`.  The raw curvature
+image is not a submodule of that kernel off shell: the generic defect of the
+weighted compatibility symbol has rank `3`, falling to rank `1` on the
+aligned null cone.  Consequently `K12/I5` is not a legitimate rank-seven
+quotient.  The exact operator chain-square replacement is the equation cone
+`That=(T,E_aux)`, `Khat=(K_state,-A_C)`, with `Khat That=0`; the full bridge
+must be an SDR of the complete `(L_WC,K_state)` equation complex.  The full
+graded audit restores the incoming gauge row, giving ranks
+`9 -> 24 -> 50 -> 49 -> 14`, and uses the ordinary BV identity layer rather
+than the Green-witness companion.  The exact curved identity differs by a
+rank-four background block that must be placed by the same Rees filtration.
+With the currently mixed principal extractions, the internal cone squares
+have ranks `11,4` generically and `7,4` at null.  They are not yet a symbol
+complex, so no cone cohomology is claimed.  The next gate is a common
+componentwise Douglis/Rees filtration.  Its integer weight constraints are
+feasible; what remains is the complete associated-graded coefficient
+extraction, especially lower `A` and weighted zeroth WC blocks.  Curved
+lower terms, `V14`, cotangent adjoints, the equation SDR and all-row Green
+insertion remain open.
 
 The remaining six flags isolate that prolonged Green witness, the actual
 causal chain homotopy, residual endpoint recovery, and `SO(4,2)` equivariance.

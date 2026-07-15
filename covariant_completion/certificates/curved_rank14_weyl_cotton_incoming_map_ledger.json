@@ -1,0 +1,161 @@
+{
+  "bases": {
+    "C_constraint_14": [
+      "q[3]",
+      "r[3]",
+      "a[3]",
+      "c[3]",
+      "s[1]",
+      "t[1]"
+    ],
+    "F_source_26": [
+      "E_STF[5]",
+      "B_STF[5]",
+      "A_STF[5]",
+      "C_STF[5]",
+      "x[3]",
+      "y[3]"
+    ],
+    "I_identity_14": [
+      "q[3]",
+      "r[3]",
+      "a[3]",
+      "c[3]",
+      "s[1]",
+      "t[1]"
+    ],
+    "U_state_26": [
+      "E_STF[5]",
+      "B_STF[5]",
+      "A_STF[5]",
+      "C_STF[5]",
+      "x[3]",
+      "y[3]"
+    ],
+    "action_Bach_9": [
+      "scalar[1]",
+      "mixed[3]",
+      "spatial_STF[5]"
+    ],
+    "auxiliary_fields_and_paired_equations_24": [
+      "h[10]",
+      "f[10]",
+      "v[4]"
+    ],
+    "auxiliary_identities_9": [
+      "xi_minus_2_star[4]",
+      "xi_0_star[4]",
+      "sigma_star[1]"
+    ]
+  },
+  "causal_green_homotopy": false,
+  "constant_equation_row_map": {
+    "C_component_rank": 4,
+    "C_component_support": "a[3]+s[1]",
+    "F_component_rank": 5,
+    "F_component_support": "A_STF[5]",
+    "rank": 9,
+    "sha256": "92246ac129846b9d240d462ec06a82ef1def327514e62ca63f12277851fd9c7a",
+    "shape": [
+      40,
+      9
+    ]
+  },
+  "correct_principal_target": {
+    "A_F_is_independently_R_src_closed": false,
+    "candidate_F_component": "A_F restricted to ker C_aux",
+    "candidate_corrected_equation_source_map": "e |-> [(A_F e,A_C e)] for e in ker C_aux",
+    "closed_image": "A(e) in ker Ncurv because N A=B C_aux",
+    "equation_cycles": "e in ker C_aux",
+    "lower_order_PBW_work_may_resume": false,
+    "plain_state_kernel_quotient_is_the_target": false,
+    "principal_H7_contraction_certified": false,
+    "quotient": "ker Ncurv / im Ecurv with the auxiliary equation rows",
+    "reason": "the exact closure relation is R_src A_F=S A_C on ker C_aux; the constraint-source component cannot be dropped",
+    "required_H7_task": "contract or lift A_C inside the derived equation quotient, then identify the resulting compatible F-source class"
+  },
+  "cross_certificates": {
+    "equation_chain_map": "curved_curvature_auxiliary_chain_map.json",
+    "identity_chain_map": "curved_curvature_identity_chain_map.json",
+    "mapping_cylinder_tables": "curved_curvature_mapping_cylinder_substitution.json",
+    "raw_symbol_audit": "curved_rank14_weyl_cotton_symbol_audit.json"
+  },
+  "curvature_causal_green_operators": false,
+  "fail_closed": true,
+  "identity_row_map": {
+    "rank": 4,
+    "sha256": "e277b7497971429b3f4e43d92f74f05c85df9d3f2ecd25c8aba4ce51e6aac8f7",
+    "shape": [
+      14,
+      9
+    ],
+    "support": "I_a[3]+I_s[1] from xi_0_star[4]"
+  },
+  "incoming_auxiliary_chain_map": {
+    "A": "Ebar_aux[24] -> F[26]+C[14], order 2",
+    "B": "I_aux[9] -> I[14], order 0",
+    "T": "M_aux[24] -> U[26], order 3",
+    "cotangent_rows": [
+      "Tsharp",
+      "Asharp",
+      "Bsharp"
+    ],
+    "cotangent_rows_forced_by_same_BV_pairings": true,
+    "first_square": "(L,K_state) T=A E_aux",
+    "first_square_split": [
+      "L T=A_F E_aux",
+      "K_state T=A_C E_aux"
+    ],
+    "second_square": "(-R_src,S) A=B C_aux"
+  },
+  "prolonged_green_witness": false,
+  "purpose": "typed exact inputs for the principal H7/equation-SDR decision; no lower-order PBW solve or Green promotion",
+  "raw_curvature_compatibility_diagnostic": {
+    "K_weighted_raw_map_defect_rank": 3,
+    "compatible_kernel_rank": 12,
+    "raw_common_core_rank": 2,
+    "raw_descended_map_rank": 5,
+    "raw_map_may_instantiate_compatible_source_inclusion": false,
+    "reason": "its other three directions source secondary constraints",
+    "typed_warning": "do not replace K_state by R_src or discard A_C; a corrected source inclusion may still define a V7 quotient"
+  },
+  "schema": "pure-weyl-rank14-weyl-cotton-incoming-map-ledger-v1",
+  "status_flags_promoted": [],
+  "typed_curvature_complex": {
+    "K_state_and_R_src_coefficients_equal": true,
+    "K_state_and_R_src_types_equal": false,
+    "K_state_table_sha256": "90e4a3b8fb64e1ac6bee1ea8b5e392e438fbcbf21d729df99e33a61f632baa9f",
+    "R_src_table_sha256": "90e4a3b8fb64e1ac6bee1ea8b5e392e438fbcbf21d729df99e33a61f632baa9f",
+    "commuting_symbol_defect": "-unit-S3 curvature correction",
+    "commuting_symbol_defect_rank": 6,
+    "exact_operator_identity": "Ncurv Ecurv=0",
+    "first_arrow": "Ecurv=(L_26,K_state):U_26 -> F_26+C_14",
+    "sample_symbol_ranks": {
+      "(0, 1, 0, 0)": {
+        "Ecurv_kernel_rank": 0,
+        "Ecurv_rank": 26,
+        "Ncurv_kernel_rank": 26,
+        "Ncurv_rank": 14
+      },
+      "(1, 0, 0, 0)": {
+        "Ecurv_kernel_rank": 0,
+        "Ecurv_rank": 26,
+        "Ncurv_kernel_rank": 26,
+        "Ncurv_rank": 14
+      },
+      "(1, 1, 0, 0)": {
+        "Ecurv_kernel_rank": 0,
+        "Ecurv_rank": 26,
+        "Ncurv_kernel_rank": 26,
+        "Ncurv_rank": 14
+      },
+      "(2, 1, 0, 0)": {
+        "Ecurv_kernel_rank": 0,
+        "Ecurv_rank": 26,
+        "Ncurv_kernel_rank": 26,
+        "Ncurv_rank": 14
+      }
+    },
+    "second_arrow": "Ncurv=(-R_src,S_14):F_26+C_14 -> I_14"
+  }
+}

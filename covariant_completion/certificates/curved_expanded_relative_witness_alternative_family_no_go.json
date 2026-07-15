@@ -1,0 +1,95 @@
+{
+  "fail_closed": true,
+  "minimal_sensitivity_surjection": {
+    "complete_raw_parameter_count": 122,
+    "complete_sensitivity_image_dimension": 16,
+    "contains_temporal_and_spatial_directions": true,
+    "minimal_by_rank": true,
+    "selected_matrix_rank": 16,
+    "selected_matrix_sha256": "7e9896f71a373173f4aa835df17bf31907b5686c5cd3836270f6a193d97de0d5",
+    "selected_matrix_shape": [
+      80,
+      16
+    ],
+    "selected_parameter_count": 16,
+    "spatial_pivot_columns": [
+      1,
+      3,
+      6,
+      8,
+      11,
+      13,
+      16,
+      18
+    ],
+    "temporal_pivot_columns": [
+      8,
+      9,
+      10,
+      11,
+      22,
+      23,
+      24,
+      25
+    ]
+  },
+  "pair_1_plus_7": {
+    "column_dual_sha256": "3ae9d43beadb5b3a4ac16db85bb10860b31ab125db943743c06067a7012d869e",
+    "defect_lower_bound": 7,
+    "determinant_active_parameters": [
+      "t2",
+      "t3",
+      "t6",
+      "t7",
+      "x4",
+      "x5",
+      "x6",
+      "x7"
+    ],
+    "determinant_sha256": "75876c375ea1140961b456e128d425c02c9042a3f97214215088831646049407",
+    "leading_z40_coefficient": "-(t2*t7 - t3*t6)*(x4*x7 - x5*x6)**2/13759414272",
+    "matching_sha256": "56e3a570e61788ca631c49c78f4062f35e07aa2dc5e8c42b5110559e110ab3a1",
+    "rank_A": 15,
+    "rank_D": 68,
+    "regular_specializations_semisimple_at_zero": false,
+    "row_dual_sha256": "ef999fc5289de200cd5ab51e5f70f38206c4df28e95ca7600ab658d3746fd8f5",
+    "tropical_primal_dual_objective": 26,
+    "uniform_kernel_upper_bound": 33,
+    "uniform_rank_lower_bound": 83,
+    "universal_zero_root_valuation": 40,
+    "valuation_proof": "exact multivariate DomainMatrix determinant",
+    "zero_root_block_form": "[[A,0],[C(theta),D]]"
+  },
+  "pair_2_plus_7": {
+    "defect_lower_bound": 1,
+    "determinant": "alternative_family_z**48*(alternative_family_z - 1)**30*(alternative_family_z + 1)**30*(2*alternative_family_z - 1)**8*(2*alternative_family_z + 1)**8*(3*alternative_family_z**2 - 1)**8/53747712",
+    "determinant_parameter_independent": true,
+    "determinant_sha256": "e754679b0c8a87e9477eef5ca7ac47146f3829a2f271ec0212df80b21062effd",
+    "fixed_row_rank": 69,
+    "parameter_independent_row_range": "0:90",
+    "semisimple_at_zero": false,
+    "tropical_matching_sha256": "d69dfd0ada1a36e235b81d87ac0a55a8e15ac7129cf93a774eb5cc976f0340dc",
+    "tropical_primal_dual_objective": 22,
+    "uniform_kernel_upper_bound": 47,
+    "universal_zero_root_valuation": 48
+  },
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-expanded-relative-alternative-family-no-go-v1",
+  "scope": "exact no-go for the deterministic 16-parameter temporal-plus-spatial subfamily minimally spanning the complete known Jordan-sensitivity image; not a no-go for either raw 122-parameter family",
+  "screening_conclusion": {
+    "complete_pair_1_plus_7_family_ruled_out": false,
+    "complete_pair_2_plus_7_family_ruled_out": false,
+    "generalized_green_extension_ruled_out": false,
+    "pair_1_plus_7_minimal_spanning_family_semisimple": false,
+    "pair_2_plus_7_minimal_spanning_family_semisimple": false,
+    "parameter_uniform_zero_root_obstruction": true,
+    "symmetrizer_attempt_warranted": false
+  },
+  "status_flags_promoted": [],
+  "strong_hyperbolicity_on_minimal_pair_1_plus_7_family": false,
+  "strong_hyperbolicity_on_minimal_pair_2_plus_7_family": false,
+  "warranted_atomic_flags": [
+    "alternative_minimal_sensitivity_family_complete",
+    "alternative_minimal_family_zero_root_no_go"
+  ]
+}

@@ -1,0 +1,678 @@
+{
+  "adjoint_and_current_conventions": {
+    "adjoint_table_index": {
+      "A_equation_sharp": {
+        "derived_sha256": "41217f45dab4c2c297d9017b81ffa8c1247352a93ead3245faceca046d764f68",
+        "maximum_order": 2,
+        "primal_sha256": "a60f3b6143b45667057a3ecaae5e6e361c0791721a7b55f0f1b69d8706bde9b7",
+        "source_pairing_sha256": "f608d7c29d1404288616f0e62d56d6b0491e532a333552ed3d4be0130b071321",
+        "target_pairing_sha256": "dcdea384620b0313b53218b60f3a7f5e223cf6ffb6794ab216fdb2f709108802"
+      },
+      "B_identity_sharp": {
+        "derived_sha256": "74ae93cf9ae4d567d40fa4facfc9190bc3ac5e2f23e4e9182bd8d8745bc4398a",
+        "maximum_order": 0,
+        "primal_sha256": "52b01d99ad2f7cdf59ab295cdcc4cedd74f1d809b3781f6b51a5b7152f0b58e0",
+        "source_pairing_sha256": "c8f53deced6f6fbaaca9fd2232bae7554c8b0d062aa3b8681526752572d50b16",
+        "target_pairing_sha256": "dcdea384620b0313b53218b60f3a7f5e223cf6ffb6794ab216fdb2f709108802"
+      },
+      "T_state_sharp": {
+        "derived_sha256": "3fd9a84a101242ad8f17dcc4e352028c2fd6ad734e2e3d8e2119588543767cb6",
+        "maximum_order": 3,
+        "primal_sha256": "ca86a296fca48e3526690c8c0e94730fc5a8bcd438544306ab2dcdae7c7181ca",
+        "source_pairing_sha256": "f608d7c29d1404288616f0e62d56d6b0491e532a333552ed3d4be0130b071321",
+        "target_pairing_sha256": "dcdea384620b0313b53218b60f3a7f5e223cf6ffb6794ab216fdb2f709108802"
+      }
+    },
+    "current_concomitant_convention": "d J_R(u,v)=<u,Rv>-<R^sharp u,v>",
+    "current_pairing_separation": {
+      "action_BV_Krein_current": "inherited from S_aux by the cyclic canonical cone",
+      "identified_with_each_other": false,
+      "positive_PDE_symmetrizer": "not used"
+    },
+    "current_reference": {
+      "canonical_sha256": "2cb121290cacbacc4da8c4940ce9b0afd43bb9500237b72d9959fa17526c17d7",
+      "certificate": "covariant_completion/certificates/curved_prolonged_current_comparison.json",
+      "json_pointer": "/variational_transgression"
+    },
+    "formal_adjoint_rule": "parallel coefficients: A_I^sharp=(-1)^|I| A_I^T, conjugated by the content-addressed source/target pairings",
+    "odd_pairing_reference": {
+      "canonical_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "certificate": "covariant_completion/certificates/curved_curvature_mapping_cylinder_substitution.json",
+      "json_pointer": "/kernel/odd_BV_cyclicity_defect"
+    }
+  },
+  "authoritative_registry": {
+    "curvature_identity_map": {
+      "certificate": "covariant_completion/certificates/curved_curvature_identity_chain_map.json",
+      "certificate_sha256": "ea598af769682747e1e8e0572c571773bf5db74f6e5192c5fa524806e0d36277",
+      "schema": "pure-weyl-curvature-auxiliary-identity-chain-map-v1",
+      "source": "covariant_completion/curved_retract/curvature_identity_chain_map.py",
+      "source_sha256": "37a6f1182b7145c1cb78de9ce676f6eb1baaf4691b1d7ff917efc92ffa5386aa",
+      "verifier": "symbolic/verify_conformal_curvature_identity_chain_map.py",
+      "verifier_sha256": "25c0bf9330fc5e03a4e41ad5af1b7ebaa68f077b9526a0997bb076b1ae4701fc"
+    },
+    "curvature_state_gauge_map": {
+      "certificate": "covariant_completion/certificates/curved_curvature_state_gauge_chain_map.json",
+      "certificate_sha256": "0013fc6573a4f2b78b71b49feb58f60f2f3bf86c7f8102684624e35a20385d18",
+      "schema": "pure-weyl-curvature-state-gauge-chain-map-v1",
+      "source": "covariant_completion/curved_retract/curvature_state_gauge_chain_map.py",
+      "source_sha256": "5d3843c782a8fa9df436b7e0c04deaebbf41edb2c5f64c45df827f6e410146e2",
+      "verifier": "symbolic/verify_conformal_curvature_state_gauge_chain_map.py",
+      "verifier_sha256": "248c896d616947a1a1bd268f2fa5f171ce141e538e76f11394f56af498a0e5af"
+    },
+    "curved_current": {
+      "certificate": "covariant_completion/certificates/curved_current_comparison.json",
+      "certificate_sha256": "c98211f74ae81b5b2d8acaadbd61d20e3cfa58bf0b24ef4077e29677457812bc",
+      "schema": "pure-weyl-curved-current-comparison-status-v1",
+      "source": "covariant_completion/curved_current/bv_current_closure.py",
+      "source_sha256": "8526c4080250919f1f12074b3584e67b45ee1e9b1ec4685cf8217736caf4d12c",
+      "verifier": "symbolic/verify_conformal_curved_current.py",
+      "verifier_sha256": "0cc067e74f3e7b11f06b296cac87f3da02f2de20c662db458d19c699e4187cf8"
+    },
+    "mapping_cylinder_substitution": {
+      "certificate": "covariant_completion/certificates/curved_curvature_mapping_cylinder_substitution.json",
+      "certificate_sha256": "cbcf10eef59a40805ffdccef736e550bbba91910242b5ed48d5350541a2abaae",
+      "schema": "pure-weyl-curvature-mapping-cylinder-substitution-v1",
+      "source": "covariant_completion/curved_retract/curvature_mapping_cylinder_substitution.py",
+      "source_sha256": "56204b375ad2921d9668fafcf74108618c0de1fe2c0dd94bd42d0edfb13c4d70",
+      "verifier": "symbolic/verify_conformal_curvature_mapping_cylinder_substitution.py",
+      "verifier_sha256": "d9aa0d7dafa65fffb6506e56de9893cae6f4da673a600645b155821dacdad46e"
+    },
+    "prolonged_current": {
+      "certificate": "covariant_completion/certificates/curved_prolonged_current_comparison.json",
+      "certificate_sha256": "e3e99380baa5278c5f79005f613290f108920dfdbf2efea73cc240530dc27299",
+      "schema": "pure-weyl-prolonged-current-comparison-v1",
+      "source": "covariant_completion/curved_current/prolonged_current_comparison.py",
+      "source_sha256": "cfb406de954e36987344b6c98f8cc794fb7b68b112c6c2f602fd1b20cc3a5597",
+      "verifier": "symbolic/verify_conformal_prolonged_current_comparison.py",
+      "verifier_sha256": "d973a3257f8d4aef463d374abe49cdd8a456578d9f09c257d8be639b4604ea6a"
+    },
+    "promoted_constraints": {
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_promoted_constraints.json",
+      "certificate_sha256": "aa22bf0284978e35cd9635ee2ecb3680c511996868f702446a0ae1e71fd0c23c",
+      "schema": "pure-weyl-cotton-promoted-constraint-candidate-v1",
+      "source": "covariant_completion/curved_operator/weyl_cotton_promoted_constraints.py",
+      "source_sha256": "31b85d7b6ec3045ee50ccce0326594909fc5f690ca2590e1d3d05278347f4c71",
+      "verifier": "symbolic/verify_conformal_weyl_cotton_promoted_constraints.py",
+      "verifier_sha256": "146d8967190f65c9de44a8a60700c614043b9a6e8ac32966ec549e73a6fc536a"
+    },
+    "rank34_filtration": {
+      "certificate": "covariant_completion/certificates/curved_expanded_relative_witness_rank34_module.json",
+      "certificate_sha256": "8598bc15bfbf52dfe455f74398e2885c6d9f3674c7b77e31c3f2e28df021842e",
+      "schema": "pure-weyl-expanded-relative-rank34-module-v1",
+      "source": "covariant_completion/curved_operator/expanded_relative_witness_rank34_module.py",
+      "source_sha256": "f0b1a87abfb5d0369c325712580f0edb1ee18534bc2116a5f3f56012d68be280",
+      "verifier": "symbolic/verify_conformal_expanded_relative_witness_rank34_module.py",
+      "verifier_sha256": "b065ae60b2d79be04607fcb24d03fc85e7ef9f00ca7c32fc120b6456e2171e63"
+    },
+    "weyl_cotton_3plus1": {
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_3plus1.json",
+      "certificate_sha256": "638e813133f9ed00a079a859f8d77d6afabba39344029d2b958c1893843cddd9",
+      "schema": "pure-weyl-cotton-3plus1-algebra-v1",
+      "source": "covariant_completion/curved_operator/weyl_3plus1.py",
+      "source_sha256": "c7ebf0f88e2bb4853bb2442336cc0a8d081accdf9ea5127db1456f278a5c6718",
+      "verifier": "symbolic/verify_conformal_weyl_cotton_3plus1.py",
+      "verifier_sha256": "1e034a9ab5744a70f94f06bfc62596cded13f327748075b61bb2ec0fc7c06896"
+    },
+    "weyl_cotton_bach_first_order": {
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_bach_first_order.json",
+      "certificate_sha256": "93b24485fb23b6a0e3254f845c8e2fa4ca2994caa23b1395dd604d1c21a7fe4a",
+      "schema": "pure-weyl-cotton-bach-first-order-v1",
+      "source": "covariant_completion/curved_operator/weyl_3plus1.py",
+      "source_sha256": "c7ebf0f88e2bb4853bb2442336cc0a8d081accdf9ea5127db1456f278a5c6718",
+      "verifier": "symbolic/verify_conformal_weyl_cotton_3plus1.py",
+      "verifier_sha256": "1e034a9ab5744a70f94f06bfc62596cded13f327748075b61bb2ec0fc7c06896"
+    },
+    "weyl_cotton_block_witness": {
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_block_green_witness.json",
+      "certificate_sha256": "47951a4268d379f72e930c5185b18a12467dead747742ccd4865705c7f6172a4",
+      "schema": "pure-weyl-cotton-block-green-witness-v1",
+      "source": "covariant_completion/curved_operator/weyl_cotton_block_green_witness.py",
+      "source_sha256": "fb9d31e4ba488504d3df50bfba8afee33f5ec9be84bbc85135e6622ce5c15a6b",
+      "verifier": "symbolic/verify_conformal_weyl_cotton_block_green_witness.py",
+      "verifier_sha256": "70c6346d97b399e66edab378ecdd0d95d908fd4edd581c34cd65fb9f8aef8c08"
+    },
+    "weyl_cotton_causal_pde": {
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_causal_pde.json",
+      "certificate_sha256": "dbf777879f7f25df91c41cc544af37ec51fef35f7f61f9e68b1af8f7f8d5c35c",
+      "schema": "pure-weyl-cotton-causal-pde-v1",
+      "source": "covariant_completion/curved_operator/weyl_cotton_causal_pde.py",
+      "source_sha256": "53e41df024e68ff3a200fa5172d429f2902bc4eb651bf90f474b9f9c33ccbd93",
+      "verifier": "symbolic/verify_conformal_weyl_cotton_causal_pde.py",
+      "verifier_sha256": "d0b42c6f251e17cbdc38b992fc606e9a031578cc876b272ecc4fa699e70c471b"
+    },
+    "weyl_cotton_hyperbolic": {
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_hyperbolic.json",
+      "certificate_sha256": "9b512e7bb9604ac30902aa074fa13293f5cbca96e71d6f760a554a773e7562f4",
+      "schema": "pure-weyl-cotton-constraint-adjusted-hyperbolic-v1",
+      "source": "covariant_completion/curved_operator/weyl_cotton_hyperbolic.py",
+      "source_sha256": "c9fb5402ab8842cec279148dffabdeec941a800222fd19f2a04f60f467b9214b",
+      "verifier": "symbolic/verify_conformal_weyl_cotton_hyperbolic.py",
+      "verifier_sha256": "70ce3680fafebf900d04253a1f5be721a8242c2dca24292066325f3ef2e449dc"
+    }
+  },
+  "availability": {
+    "all_authoritative_files_present": true,
+    "all_cross_hashes_recomputed": true,
+    "all_schemas_match": true,
+    "large_matrices_duplicated_in_manifest": false,
+    "rank14_backward_witness_constructed": false,
+    "rank14_green_operators_constructed": false,
+    "rank14_operator_constructed": false,
+    "rank14_source_lift_constructed": false
+  },
+  "causal_green_homotopy": false,
+  "coefficient_table_index": {
+    "A_equation": {
+      "authoritative_certificate": "covariant_completion/certificates/curved_curvature_mapping_cylinder_substitution.json",
+      "coefficient_multiindices": 15,
+      "input_row": "paired Ebar=J_aux^-1 E_raw",
+      "json_pointer": "/coefficient_tables/A_equation",
+      "maximum_order": 2,
+      "raw_to_paired_conversion": "A_equation=A_raw J_aux",
+      "sha256": "a60f3b6143b45667057a3ecaae5e6e361c0791721a7b55f0f1b69d8706bde9b7",
+      "shape": [
+        40,
+        24
+      ]
+    },
+    "B_identity": {
+      "authoritative_certificate": "covariant_completion/certificates/curved_curvature_mapping_cylinder_substitution.json",
+      "coefficient_multiindices": 1,
+      "json_pointer": "/coefficient_tables/B_identity",
+      "maximum_order": 0,
+      "rank": 4,
+      "sha256": "52b01d99ad2f7cdf59ab295cdcc4cedd74f1d809b3781f6b51a5b7152f0b58e0",
+      "shape": [
+        14,
+        9
+      ]
+    },
+    "T_state": {
+      "authoritative_certificate": "covariant_completion/certificates/curved_curvature_mapping_cylinder_substitution.json",
+      "coefficient_multiindices": 35,
+      "json_pointer": "/coefficient_tables/T_state",
+      "maximum_order": 3,
+      "sha256": "ca86a296fca48e3526690c8c0e94730fc5a8bcd438544306ab2dcdae7c7181ca",
+      "shape": [
+        26,
+        24
+      ]
+    }
+  },
+  "curvature_causal_green_operators": false,
+  "evolution_constraint_source_package": {
+    "constraints_14": {
+      "operator": "K_WC",
+      "rank": 14,
+      "reference": {
+        "canonical_sha256": "1c36aea00c39a052430c50b204fd1038db718f45b6e84d002f03d37d72881c17",
+        "certificate": "covariant_completion/certificates/curved_weyl_cotton_causal_pde.json",
+        "json_pointer": "/constraint_operator"
+      }
+    },
+    "evolution_26": {
+      "operator": "L_WC",
+      "reference": {
+        "canonical_sha256": "7c08edf1915ff1fc55847b33614414d1c36c34ad4785ae9ac5c0df9a612fa343",
+        "certificate": "covariant_completion/certificates/curved_weyl_cotton_causal_pde.json",
+        "json_pointer": "/operator"
+      },
+      "state_rank": 26
+    },
+    "promoted_constraint_reference": {
+      "canonical_sha256": "9f5fa9b8177dfd4c6a9c93202b775d266b2eb237b0ebe03e677c035fa8333256",
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_promoted_constraints.json",
+      "json_pointer": "/retained_constraints"
+    },
+    "source_compatibility": {
+      "identity": "L_K K_WC=K_src L_WC",
+      "reference": {
+        "canonical_sha256": "c8aea4097cd1733a937ab3837b1f4588d1e891b0c9ae1f109c4a5a8503dfb4a1",
+        "certificate": "covariant_completion/certificates/curved_weyl_cotton_causal_pde.json",
+        "json_pointer": "/source_compatibility"
+      }
+    },
+    "subsidiary": {
+      "operator": "L_K",
+      "reference": {
+        "canonical_sha256": "444befa64efde77a8284fd82df919ad84e05b8927e8bf5a3a2be34d8ff99b8c8",
+        "certificate": "covariant_completion/certificates/curved_weyl_cotton_hyperbolic.json",
+        "json_pointer": "/sourced_subsidiary_equations"
+      },
+      "symmetric_hyperbolic": true
+    },
+    "symmetrizers": {
+      "evolution_positive": true,
+      "reference": {
+        "canonical_sha256": "7083e8946b87a29ef0ce848cb0ccf18174e45f677cffdc05c2c24649c34cc8ae",
+        "certificate": "covariant_completion/certificates/curved_weyl_cotton_hyperbolic.json",
+        "json_pointer": "/evolution_symmetrizer_diagonal"
+      },
+      "subsidiary_positive": true
+    }
+  },
+  "exact_matrix_table_hashes": {
+    "authoritative_source": "covariant_completion/curved_operator/weyl_cotton_hyperbolic.py::ConstraintAdjustedWeylCottonEvolution.build",
+    "constraint_spatial_3x14x26": {
+      "sha256": "ee5209bbd90fed22388bb169db1fba311cd82ac608b77a414f0072628fb676ea",
+      "shape": [
+        3,
+        14,
+        26
+      ]
+    },
+    "constraint_zeroth_14x26": {
+      "sha256": "df6fcbf0b44dd7cee2e38ee8e274a8fa2e33512b0ab0e34ba8b31401052dd434",
+      "shape": [
+        14,
+        26
+      ]
+    },
+    "evolution_spatial_3x26x26": {
+      "sha256": "dd0970aa76735f2a5a1af522c02bd1d3283a5257d8197c55af6c857bb4b1320a",
+      "shape": [
+        3,
+        26,
+        26
+      ]
+    },
+    "evolution_symmetrizer_26x26": {
+      "sha256": "ff00a9557cc1c0f6210dfc04413891a6a5638420fa7eab0b31fccc055f3cd31a",
+      "shape": [
+        26,
+        26
+      ]
+    },
+    "evolution_zeroth_26x26": {
+      "sha256": "872585b0405847eb01d4c412ec0b4e36939ede47a3e29b8720073455ae971ed2",
+      "shape": [
+        26,
+        26
+      ]
+    },
+    "matrices_embedded": false,
+    "subsidiary_spatial_3x14x14": {
+      "sha256": "71aee46dcc299210e7683bf102d0e8828d93593874a4a34728d144c0c4df005b",
+      "shape": [
+        3,
+        14,
+        14
+      ]
+    },
+    "subsidiary_symmetrizer_14x14": {
+      "sha256": "6d031d1b13bad4083b909da12cefe6e13fc62ca943ef41a8035a08ecf57ce214",
+      "shape": [
+        14,
+        14
+      ]
+    },
+    "subsidiary_zeroth_14x14": {
+      "sha256": "e69a734ce29566415e4ea9e6e89874e498def43b24fd501f73f306f58ab4aec6",
+      "shape": [
+        14,
+        14
+      ]
+    }
+  },
+  "fail_closed": true,
+  "large_table_references": {
+    "bach_derivative_4x9x16": {
+      "canonical_sha256": "17d8da9257626aa1d08b647ca73776794071180bb30873a9e889958c44829ba9",
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_bach_first_order.json",
+      "json_pointer": "/bach_derivative_tables",
+      "shape": [
+        4,
+        9,
+        16
+      ]
+    },
+    "bach_zeroth_9x10": {
+      "canonical_sha256": "018b25db8b070fc971ff48e44a5a66a4967c309af743b9226fef151650bc7728",
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_bach_first_order.json",
+      "json_pointer": "/bach_zeroth_table",
+      "shape": [
+        9,
+        10
+      ]
+    },
+    "compatibility_derivative_4x9x16": {
+      "canonical_sha256": "192a9e3a2d123ab9443ee7f89dd19056e5a528590e887a31dd47faac59a3cdc4",
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_bach_first_order.json",
+      "json_pointer": "/compatibility_derivative_tables",
+      "shape": [
+        4,
+        9,
+        16
+      ]
+    },
+    "compatibility_zeroth_9x10": {
+      "canonical_sha256": "4192b34bfae59958d96cb793b703750a92332536540a27a440389042bf21f15c",
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_bach_first_order.json",
+      "json_pointer": "/compatibility_zeroth_table",
+      "shape": [
+        9,
+        10
+      ]
+    },
+    "cotton_first_order_4x16x10": {
+      "canonical_sha256": "6085cca41c0f691b08c3d959ee2754ff214595cf57f06a6388385bd914c9f80e",
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_3plus1.json",
+      "json_pointer": "/cotton_first_order_tables",
+      "shape": [
+        4,
+        16,
+        10
+      ]
+    },
+    "evolution_symmetrizer_26": {
+      "canonical_sha256": "7083e8946b87a29ef0ce848cb0ccf18174e45f677cffdc05c2c24649c34cc8ae",
+      "certificate": "covariant_completion/certificates/curved_weyl_cotton_hyperbolic.json",
+      "json_pointer": "/evolution_symmetrizer_diagonal",
+      "shape": [
+        26
+      ]
+    }
+  },
+  "missing_output_contract": {
+    "consume": [
+      "ordered_bases",
+      "quotient_and_filtration_maps",
+      "coefficient_table_index",
+      "evolution_constraint_source_package",
+      "prolonged_BV_rows",
+      "adjoint_and_current_conventions"
+    ],
+    "produce": [
+      "projector-free local rank-14 presentation pi14",
+      "complete curved L14 and degree-minus-one V14",
+      "P14=Q14 V14+V14 Q14 on primal and cotangent rows",
+      "compatible-source G14_plus/minus with causal support",
+      "residual source lifts through rank8 and rank12"
+    ]
+  },
+  "ordered_bases": {
+    "auxiliary_ghost_9": [
+      "diffeomorphism[4]",
+      "conformal_boost[4]",
+      "Weyl_scalar[1]"
+    ],
+    "auxiliary_identity_9": "xi_minus_2_star[4],xi_0_star[4],sigma_star[1]",
+    "component_basis_conventions": {
+      "Cotton_16": "X_STF[5],X_antisymmetric(e_1,e_2,e_3),Y_STF[5],Y_antisymmetric(e_1,e_2,e_3)",
+      "STF_5": [
+        "diag(1,-1,0)",
+        "diag(1,1,-2)",
+        "e_12+e_21",
+        "e_13+e_31",
+        "e_23+e_32"
+      ],
+      "authoritative_definition": "covariant_completion/curved_operator/weyl_3plus1.py::stf_basis,tracefree_matrix_basis",
+      "vector_3": [
+        "e_1",
+        "e_2",
+        "e_3"
+      ]
+    },
+    "constraint_14": [
+      "q[3]",
+      "r[3]",
+      "a[3]",
+      "c[3]",
+      "s[1]",
+      "t[1]"
+    ],
+    "cotton_16": "X_ij=V_i0j and Y_ij=(1/2)epsilon_j^kl V_ikl; each is a trace-free 3x3 matrix",
+    "curvature_block_BV": [
+      "U[26]",
+      "F[26]",
+      "C[14]",
+      "I[14]",
+      "G[26]",
+      "G_star[26]"
+    ],
+    "prolonged_BV_16": [
+      "G_aux",
+      "M_aux",
+      "Ebar_aux",
+      "I_aux",
+      "X_U",
+      "X_Eq",
+      "X_Id",
+      "Y_U",
+      "Y_Eq",
+      "Y_Id",
+      "X_Id_sharp",
+      "X_Eq_sharp",
+      "X_U_sharp",
+      "Y_Id_sharp",
+      "Y_Eq_sharp",
+      "Y_U_sharp"
+    ],
+    "promoted_state_32": [
+      "E_STF[5]",
+      "B_STF[5]",
+      "A_STF[5]",
+      "C_STF[5]",
+      "x[3]",
+      "y[3]",
+      "a[3]",
+      "c[3]"
+    ],
+    "rank12_coordinates": [
+      "vector_gauge_parameter[6]",
+      "qsharp,rsharp[6]"
+    ],
+    "rank34_bundle": [
+      "h[10]",
+      "f[10]",
+      "Csharp[14]"
+    ],
+    "raw_first_order_rows_34": {
+      "constraint_rows": [
+        5,
+        6,
+        7,
+        13,
+        14,
+        15,
+        16,
+        25
+      ],
+      "independent_temporal_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        8,
+        9,
+        10,
+        11,
+        12,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "order": [
+        "Cotton_definition[0:16]",
+        "Bach_STF[16:25]",
+        "dual_compatibility_STF[25:34]"
+      ]
+    },
+    "state_26": [
+      "E_STF[5]",
+      "B_STF[5]",
+      "A_STF[5]",
+      "C_STF[5]",
+      "x[3]",
+      "y[3]"
+    ],
+    "weyl_10": "E_STF(5) + B_STF(5)"
+  },
+  "prolonged_BV_rows": {
+    "coefficientwise_complete": true,
+    "cotangent_attachments": [
+      "Ebar_aux += -T_state^sharp X_U^sharp",
+      "M_aux += -A_equation^sharp X_Eq^sharp",
+      "G_aux += -B_identity^sharp X_Id^sharp"
+    ],
+    "degree_ledger": [
+      {
+        "block": "G_aux",
+        "degree": -1,
+        "index": 0
+      },
+      {
+        "block": "M_aux",
+        "degree": 0,
+        "index": 1
+      },
+      {
+        "block": "Ebar_aux",
+        "degree": 1,
+        "index": 2
+      },
+      {
+        "block": "I_aux",
+        "degree": 2,
+        "index": 3
+      },
+      {
+        "block": "X_U",
+        "degree": 0,
+        "index": 4
+      },
+      {
+        "block": "X_Eq",
+        "degree": 1,
+        "index": 5
+      },
+      {
+        "block": "X_Id",
+        "degree": 2,
+        "index": 6
+      },
+      {
+        "block": "Y_U",
+        "degree": 1,
+        "index": 7
+      },
+      {
+        "block": "Y_Eq",
+        "degree": 2,
+        "index": 8
+      },
+      {
+        "block": "Y_Id",
+        "degree": 3,
+        "index": 9
+      },
+      {
+        "block": "X_Id_sharp",
+        "degree": -1,
+        "index": 10
+      },
+      {
+        "block": "X_Eq_sharp",
+        "degree": 0,
+        "index": 11
+      },
+      {
+        "block": "X_U_sharp",
+        "degree": 1,
+        "index": 12
+      },
+      {
+        "block": "Y_Id_sharp",
+        "degree": -2,
+        "index": 13
+      },
+      {
+        "block": "Y_Eq_sharp",
+        "degree": -1,
+        "index": 14
+      },
+      {
+        "block": "Y_U_sharp",
+        "degree": 0,
+        "index": 15
+      }
+    ],
+    "primal_attachments": [
+      "X_U += T_state M_aux",
+      "X_Eq += A_equation Ebar_aux",
+      "X_Id += B_identity I_aux"
+    ],
+    "reference": {
+      "canonical_sha256": "b6bdc9d824f71f6fb0166a117c72bedd2d142a8caa31a0e4d86686338310dbd5",
+      "certificate": "covariant_completion/certificates/curved_curvature_mapping_cylinder_substitution.json",
+      "json_pointer": "/kernel/complete_16_block_degree_ledger"
+    }
+  },
+  "prolonged_green_witness": false,
+  "purpose": "content-addressed authoritative inputs for constructing the projector-free rank-14 field-cokernel Weyl--Cotton bridge",
+  "quotient_and_filtration_maps": {
+    "equation_and_identity_maps": {
+      "A_equation": "E_curv T_state=A_equation Ebar_aux",
+      "B_identity": "N_curv A_equation=B_identity C_aux",
+      "reference": {
+        "canonical_sha256": "7b836b04ba47a38ba1c9be8e18e323758378f375a671061b14af677c0f8b71a0",
+        "certificate": "covariant_completion/certificates/curved_curvature_identity_chain_map.json",
+        "json_pointer": "/full_auxiliary_chain_relation"
+      }
+    },
+    "metric_to_state": {
+      "formula": "T_state=(C1,div C1)",
+      "gauge_annihilation": "T_state K_aux=0",
+      "reference": {
+        "canonical_sha256": "b7ce3f814d0e14e74eb1dc742ad4a2c7a798413fb9771560f107cad87ef46402",
+        "certificate": "covariant_completion/certificates/curved_curvature_state_gauge_chain_map.json",
+        "json_pointer": "/T_state_K_aux"
+      }
+    },
+    "rank12_embedding": {
+      "canonical_sha256": "3ab9fcf28bde8206fc9ed0fa866a0bf343d0420893cb28b9f4019505f25e0a00",
+      "certificate": "covariant_completion/certificates/curved_expanded_relative_witness_rank34_module.json",
+      "coefficient_sha256": "c52edd6518ff4e79e2f60bbd3b56febc604daf5d5157b974c977324fc6e1f6d3",
+      "formula": "J=diag(B_vector,i_(qsharp,rsharp))",
+      "intertwining_identity": "L_34 J=J L_12",
+      "json_pointer": "/local_differential_submodule"
+    },
+    "rank14_field_cokernel": {
+      "C1_descends": true,
+      "induced_biwave_intertwiner_constructed": false,
+      "rank": 14,
+      "reference": {
+        "canonical_sha256": "4de7b8d3d7b5933174c2a8e8f196a9544f14f47502a127828de47d5747a556c0",
+        "certificate": "covariant_completion/certificates/curved_expanded_relative_witness_rank34_module.json",
+        "json_pointer": "/quotient_presentation"
+      }
+    },
+    "rank22_quotient": {
+      "canonical_sha256": "4de7b8d3d7b5933174c2a8e8f196a9544f14f47502a127828de47d5747a556c0",
+      "certificate": "covariant_completion/certificates/curved_expanded_relative_witness_rank34_module.json",
+      "json_pointer": "/quotient_presentation"
+    },
+    "rank34_component": {
+      "canonical_sha256": "69bbe81b8be44d59643173b8d1443d7c53379675523370023df10da8f7e3830f",
+      "certificate": "covariant_completion/certificates/curved_expanded_relative_witness_rank34_module.json",
+      "json_pointer": "/rank34_component"
+    }
+  },
+  "schema": "pure-weyl-rank14-weyl-cotton-input-manifest-v1",
+  "status_flags_promoted": []
+}

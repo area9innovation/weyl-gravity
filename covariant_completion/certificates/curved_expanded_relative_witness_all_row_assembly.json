@@ -1,0 +1,253 @@
+{
+  "all_BV_row_coverage": {
+    "BV_pairing_defect": 0,
+    "Q_squared_defect": 0,
+    "coefficientwise_Q": true,
+    "curvature_cone_primal_and_cotangent_rows": true,
+    "formal_adjoint_tails_present": true,
+    "mapping_cylinder_blocks": 16,
+    "rank4_field_closes_to_vector_BV_rank": 16,
+    "support_local_SDR": true,
+    "vector_primal_and_cotangent_rows": true
+  },
+  "analytic_116_coverage": {
+    "disjoint_ledger": [
+      {
+        "rank": 34,
+        "sector": "rank34_SCC"
+      },
+      {
+        "rank": 4,
+        "sector": "vector_singleton"
+      },
+      {
+        "rank": 26,
+        "sector": "curvature_U"
+      },
+      {
+        "rank": 26,
+        "sector": "curvature_Fsharp"
+      },
+      {
+        "rank": 26,
+        "sector": "curvature_Usharp"
+      }
+    ],
+    "rank34_filtration": "12 presented + 8 constraint quotient + 14 field cokernel",
+    "rank34_filtration_sum": 34,
+    "rank_sum": 116,
+    "reason": "its aligned/covariant restricted theorem has no support-local projector from arbitrary rank-14 sources",
+    "restricted_TT_biwave_plus_fhat_is_inside_rank14": true,
+    "restricted_TT_block_counted_as_disjoint_sector": false
+  },
+  "blockwise_witness_ledger": [
+    {
+      "Green_input_supplied": true,
+      "P_equation": "D0 V0",
+      "P_source": "V0 D0",
+      "Q": "D0: source_0->equation_0",
+      "QW_plus_WQ_defect": 0,
+      "W": "V0: equation_0->source_0",
+      "coverage": "known_overlap",
+      "rank": 4,
+      "sector": "physical_biwave_restricted"
+    },
+    {
+      "Green_input_supplied": true,
+      "P_equation": "D1 V1",
+      "P_source": "V1 D1",
+      "Q": "D1: source_1->equation_1",
+      "QW_plus_WQ_defect": 0,
+      "W": "V1: equation_1->source_1",
+      "coverage": "known_overlap",
+      "rank": 4,
+      "sector": "shifted_fhat_contractible"
+    },
+    {
+      "Green_input_supplied": true,
+      "P_equation": "D2 V2",
+      "P_source": "V2 D2",
+      "Q": "D2: source_2->equation_2",
+      "QW_plus_WQ_defect": 0,
+      "W": "V2: equation_2->source_2",
+      "coverage": "known_disjoint",
+      "rank": 12,
+      "sector": "rank12_gauge_subsidiary"
+    },
+    {
+      "Green_input_supplied": true,
+      "P_equation": "D3 V3",
+      "P_source": "V3 D3",
+      "Q": "D3: source_3->equation_3",
+      "QW_plus_WQ_defect": 0,
+      "W": "V3: equation_3->source_3",
+      "coverage": "known_disjoint",
+      "rank": 8,
+      "sector": "rank8_constraint_quotient"
+    },
+    {
+      "Green_input_supplied": false,
+      "P_equation": "D4 V4",
+      "P_source": "V4 D4",
+      "Q": "D4: source_4->equation_4",
+      "QW_plus_WQ_defect": 0,
+      "W": "V4: equation_4->source_4",
+      "coverage": "missing_disjoint",
+      "rank": 14,
+      "sector": "rank14_field_cokernel"
+    },
+    {
+      "Green_input_supplied": true,
+      "P_equation": "D5 V5",
+      "P_source": "V5 D5",
+      "Q": "D5: source_5->equation_5",
+      "QW_plus_WQ_defect": 0,
+      "W": "V5: equation_5->source_5",
+      "coverage": "known_BV_closure",
+      "rank": 16,
+      "sector": "shifted_vector_BV_contraction"
+    },
+    {
+      "Green_input_supplied": true,
+      "P_equation": "D6 V6",
+      "P_source": "V6 D6",
+      "Q": "D6: source_6->equation_6",
+      "QW_plus_WQ_defect": 0,
+      "W": "V6: equation_6->source_6",
+      "coverage": "known_disjoint",
+      "rank": 26,
+      "sector": "curvature_U_tail"
+    },
+    {
+      "Green_input_supplied": true,
+      "P_equation": "D7 V7",
+      "P_source": "V7 D7",
+      "Q": "D7: source_7->equation_7",
+      "QW_plus_WQ_defect": 0,
+      "W": "V7: equation_7->source_7",
+      "coverage": "known_disjoint",
+      "rank": 26,
+      "sector": "curvature_Fsharp_tail"
+    },
+    {
+      "Green_input_supplied": true,
+      "P_equation": "D8 V8",
+      "P_source": "V8 D8",
+      "Q": "D8: source_8->equation_8",
+      "QW_plus_WQ_defect": 0,
+      "W": "V8: equation_8->source_8",
+      "coverage": "known_disjoint",
+      "rank": 26,
+      "sector": "curvature_Usharp_tail"
+    },
+    {
+      "Green_input_supplied": true,
+      "P_equation": "D9 V9",
+      "P_source": "V9 D9",
+      "Q": "D9: source_9->equation_9",
+      "QW_plus_WQ_defect": 0,
+      "W": "V9: equation_9->source_9",
+      "coverage": "known_all_row",
+      "rank": 12,
+      "sector": "mapping_cone_contractible_rows"
+    }
+  ],
+  "causal_green_homotopy": false,
+  "conditional_closure_theorem": {
+    "hypothesis": "rank14_required_package.supplied=true with every displayed identity exact",
+    "no_additional_analytic_block_after_rank14": true,
+    "then_Lambda_equals_WG": true,
+    "then_P_equals_QW_plus_WQ": true,
+    "then_QG_equals_GQ": true,
+    "then_Q_Lambda_plus_Lambda_Q_equals_identity": true,
+    "then_all_row_W_exists": true,
+    "then_same_sided_Green_operators_exist_by_finite_recursion": true
+  },
+  "conditional_formal_assembly": {
+    "P_equals_QW_plus_WQ_defect": 0,
+    "Q_squared_defect": 0,
+    "conditional_G_left_defect": 0,
+    "conditional_G_right_defect": 0,
+    "conditional_G_sha256": "fa518936ecd598362e89ae41ccadd6fd2c4183af521d6da464e72cd22508d173",
+    "conditional_QG_minus_GQ_defect": 0,
+    "conditional_QWG_plus_WGQ_minus_identity_defect": 0,
+    "conjugation": "Q_prol=S Q_split S^-1, W_prol=S W_split S^-1, P_prol=S P_split S^-1",
+    "conjugation_identity_already_coefficientwise": true,
+    "formal_matrix_rank": 20,
+    "interpretation": "this is the associated-graded recognition algebra after the displayed filtration/source-lift package is supplied; the coefficientwise unsplit 16-block identity is supplied independently by the mapping-cylinder witness certificate",
+    "sector_pairs": 10,
+    "split_P_sha256": "f9bd7253616fff658a042ab6ba04858031e024d0f34e7ec5f7c9f62b2d3e3e58",
+    "split_Q_sha256": "bbd4289de1f1922b87806e33f660b434b85fb65b6135c495ee8c100cbe780159",
+    "split_W_sha256": "8620dec8fd1a32aa35c158109c8d808459d5e107de6ebfc4ed25acb323bd6b7f"
+  },
+  "current_boundary": {
+    "coefficientwise_all_row_replacement_W_realized": false,
+    "coefficientwise_existing_mapping_W_QW_identity": true,
+    "complete_all_row_Green_homotopy_realized": false,
+    "complete_all_row_Green_operator_realized": false,
+    "only_remaining_analytic_assembly_input": "projector-free rank-14 field-cokernel operator/Green/source-lift package",
+    "rank12_and_rank8_are_filtration_subquotients_not_split_W_blocks": true,
+    "rank14_required_package_supplied": false
+  },
+  "curvature_causal_green_operators": false,
+  "fail_closed": true,
+  "known_green_blocks": {
+    "finite_triangular_extension_theorem": true,
+    "mapping_cylinder_contractible_rows": true,
+    "rank12_presented_gauge_subsidiary": true,
+    "rank16_shifted_vector_contraction": true,
+    "rank26_curvature_tails_and_adjoints": true,
+    "rank8_constraint_quotient": true,
+    "restricted_physical_biwave_and_fhat": true
+  },
+  "prolonged_green_witness": false,
+  "rank14_required_package": {
+    "acceptable_realizations": [
+      "a support-local filtration chart with triangular L12,L8,L14 diagonal",
+      "a mapping-cone presentation with explicit residual-source lifts",
+      "a constrained curvature extension whose compatible Green map lands directly in F34"
+    ],
+    "field_cokernel_rank": 14,
+    "forbidden_shortcuts": [
+      "covector-dependent helicity projector",
+      "inverse Laplacian or inverse curl",
+      "claiming the restricted TT inverse acts on arbitrary rank-14 sources"
+    ],
+    "must_be_projector_free": true,
+    "required_green_data": [
+      "same-sided G14_plus/minus on every compatible compact source",
+      "L14 G14_plus/minus=1 and G14_plus/minus L14=1",
+      "retarded/advanced causal support",
+      "D14 G14_source=G14_equation D14 (the sector chain-commutation identity)"
+    ],
+    "required_operator_data": [
+      "a local differential presentation pi14 of the field cokernel",
+      "the complete curved induced operator L14, including lower-order coefficients",
+      "a degree-minus-one V14 on the corresponding BV rows with P14=Q14 V14+V14 Q14",
+      "a local intertwiner pi14 L22=L14 pi14 modulo the certified constraint row",
+      "the cotangent/formal-adjoint presentation with project fibre pairings"
+    ],
+    "required_source_lift_equations": [
+      "K14_src f14=0",
+      "K14 L14=L_K14 K14 and K14_src L14=L_K14 K14",
+      "K14 G14_plus/minus f14=0 for K14_src f14=0",
+      "L34 J12=J12 L12",
+      "pi22 L34=L22 pi22",
+      "L22 J8=J8 L8",
+      "pi14 L22=L14 pi14",
+      "for lifted u14, f22-L22 u14 lies in im(J8)",
+      "for lifted u22, f34-L34 u22 lies in im(J12)",
+      "the two residual-source lifts are local differential maps and preserve support"
+    ],
+    "supplied": false
+  },
+  "schema": "pure-weyl-expanded-relative-all-row-assembly-v1",
+  "scope": "conditional exact all-row assembly in the certified shifted and curvature-mapping-cylinder filtrations",
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": {
+    "all_row_conditional_QW_identity_exact": true,
+    "all_row_conditional_green_recursion_exact": true,
+    "all_row_green_assembly_reduced_to_rank14": true,
+    "all_row_green_block_ledger_complete": true
+  }
+}

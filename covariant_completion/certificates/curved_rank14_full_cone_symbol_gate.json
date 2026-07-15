@@ -1,0 +1,343 @@
+{
+  "causal_strata": {
+    "generic_(2,1,3,5)": {
+      "cohomology_defined": false,
+      "differential_ranks": [
+        9,
+        15,
+        36,
+        14
+      ],
+      "is_complex": false,
+      "square_ranks": [
+        0,
+        11,
+        4
+      ]
+    },
+    "null_(1,1,0,0)": {
+      "cohomology_defined": false,
+      "differential_ranks": [
+        9,
+        15,
+        32,
+        14
+      ],
+      "is_complex": false,
+      "square_ranks": [
+        0,
+        7,
+        4
+      ]
+    },
+    "spacelike_(0,1,0,0)": {
+      "cohomology_defined": false,
+      "differential_ranks": [
+        9,
+        15,
+        36,
+        14
+      ],
+      "is_complex": false,
+      "square_ranks": [
+        0,
+        11,
+        4
+      ]
+    },
+    "temporal_(1,0,0,0)": {
+      "cohomology_defined": false,
+      "differential_ranks": [
+        9,
+        15,
+        36,
+        14
+      ],
+      "is_complex": false,
+      "square_ranks": [
+        0,
+        11,
+        4
+      ]
+    },
+    "timelike_(2,1,0,0)": {
+      "cohomology_defined": false,
+      "differential_ranks": [
+        9,
+        15,
+        36,
+        14
+      ],
+      "is_complex": false,
+      "square_ranks": [
+        0,
+        11,
+        4
+      ]
+    }
+  },
+  "certificate_corrections": {
+    "rank14_equation_cycle_gate": "uses gauge_companion and is a witness-cycle diagnostic, not the full BV ker(Caux) gate",
+    "rank14_equation_sdr_boundary": "its canonical operator cone remains exact, but any validation through the companion-based J_id must be demoted"
+  },
+  "curved_identity_comparison": {
+    "Caux_curved": "K_curved(-zeta)^T J_aux",
+    "Caux_curved_sha256": "56868e5c371a0e004848c176a93c594dec6ce722fc1a9dbe4233450259759bb1",
+    "curved_minus_ordinary_rank_on_all_tested_strata": 4,
+    "interpretation": "the background-induced f<-xi derivative block occupies a different layer until the common Rees filtration is fixed"
+  },
+  "decision": {
+    "causal_green_homotopy": false,
+    "principal_full_cone_acyclic": false,
+    "principal_full_cone_residual_rank": "undefined until d^2=0",
+    "prolonged_green_witness": false,
+    "support_local_contraction_constructed": false
+  },
+  "degree_ledger": {
+    "degrees": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "differential_shapes": [
+      [
+        24,
+        9
+      ],
+      [
+        50,
+        24
+      ],
+      [
+        49,
+        50
+      ],
+      [
+        14,
+        49
+      ]
+    ],
+    "incoming_gauge_row_included": true,
+    "ranks": [
+      9,
+      24,
+      50,
+      49,
+      14
+    ]
+  },
+  "fail_closed": true,
+  "full_cone_symbol_cohomology_computed": false,
+  "full_cone_symbol_is_a_complex": false,
+  "ordinary_auxiliary_BV_layer": {
+    "Caux": "K_ordinary(-zeta)^T J_aux",
+    "Caux_Eaux_defect": 0,
+    "Caux_sha256": "506e78df3a66e108aa5ca22262c3538ec52bfb59cb0a730a9138d3a520702136",
+    "Eaux": "J_aux^-1 H_aux",
+    "Eaux_K_defect": 0,
+    "exact_curved_K_used": false,
+    "gauge_companion_is_Caux": false,
+    "gauge_companion_role": "Green-witness companion",
+    "scope": "ordinary/Douglis representative before common Rees lift"
+  },
+  "reason": "T, Eaux, A, B, Ecurv and Ncurv were extracted with incompatible ordinary/Douglis leading layers; the exact curved K also differs from the ordinary K layer, so the two internal cone squares are nonzero",
+  "required_repair": {
+    "all_currently_retained_monomials_have_required_weight": true,
+    "integer_weight_constraints_feasible": true,
+    "must_emit": [
+      "weights for every auxiliary and Weyl--Cotton component",
+      "associated-graded T,Eaux,Caux,A,B,Ecurv,Ncurv",
+      "three exact associated-graded chain squares"
+    ],
+    "object": "one componentwise Douglis/Rees filtration",
+    "only_then": "compute degree-by-degree cone cohomology",
+    "refined_boundary": "weights exist; the missing object is the complete associated-graded coefficient extraction, especially lower A and weighted zeroth Weyl--Cotton blocks",
+    "representative_map_degrees": {
+      "A": 0,
+      "B": 0,
+      "C": -2,
+      "E": 0,
+      "Ewc": 0,
+      "K": 0,
+      "N": 0,
+      "T": 0
+    },
+    "representative_object_weights": {
+      "E": [
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -2,
+        -2,
+        -2,
+        -2
+      ],
+      "G": [
+        -6,
+        -6,
+        -6,
+        -6,
+        -4,
+        -4,
+        -4,
+        -4,
+        -5
+      ],
+      "I": [
+        2,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "J": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "M": [
+        -5,
+        -5,
+        -5,
+        -5,
+        -5,
+        -5,
+        -5,
+        -5,
+        -5,
+        -5,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -4,
+        -4,
+        -4,
+        -4
+      ],
+      "Q": [
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "U": [
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2
+      ]
+    }
+  },
+  "schema": "pure-weyl-rank14-full-cone-symbol-gate-v1",
+  "scope": "full degree ledger and exact failure of the currently mixed principal extractions; no symbol cohomology is claimed",
+  "status_flags_promoted": [],
+  "valid_subcomplex_squares": {
+    "Ncurv_Ecurv_defect": 0,
+    "T_K_defect": 0,
+    "incoming_cone_square_defect": 0
+  },
+  "warranted_atomic_flags": {
+    "rank14_common_Douglis_filtration_required": true,
+    "rank14_mixed_symbol_cone_rejected": true,
+    "rank14_ordinary_BV_Caux_layer_identified": true
+  }
+}

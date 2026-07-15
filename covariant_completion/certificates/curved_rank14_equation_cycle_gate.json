@@ -1,0 +1,123 @@
+{
+  "auxiliary_identity_kernel": {
+    "C_aux_J_id_defect": 0,
+    "J_id_polynomial": true,
+    "J_id_sha256": "0f740fec08bc5be41f650251f50ff2d7ac843dfc126cdfa06f02400556d3778a",
+    "J_id_shape": [
+      24,
+      15
+    ],
+    "generic_rank": 9,
+    "kernel_generic_rank": 15,
+    "operator": "C_witness,1(zeta):Ebar_aux[24] -> G[9]",
+    "pivot_columns": [
+      0,
+      1,
+      2,
+      3,
+      10,
+      11,
+      12,
+      13,
+      20
+    ],
+    "pivot_denominator": "-rank14_cycle_z0**9/4 + rank14_cycle_z0**7*rank14_cycle_z1**2/2 + rank14_cycle_z0**7*rank14_cycle_z2**2/2 + rank14_cycle_z0**7*rank14_cycle_z3**2/2 - rank14_cycle_z0**5*rank14_cycle_z1**4/4 - rank14_cycle_z0**5*rank14_cycle_z1**2*rank14_cycle_z2**2/2 - rank14_cycle_z0**5*rank14_cycle_z1**2*rank14_cycle_z3**2/2 - rank14_cycle_z0**5*rank14_cycle_z2**4/4 - rank14_cycle_z0**5*rank14_cycle_z2**2*rank14_cycle_z3**2/2 - rank14_cycle_z0**5*rank14_cycle_z3**4/4"
+  },
+  "canonical_equation_cone": {
+    "Ncurv_cycle_defect": 0,
+    "generic_rank": 5,
+    "map": "J_id e |-> (A_F J_id e,A_C J_id e)",
+    "sha256": "d025dd20f47db9a89577d62a0715da95f3781caad9a67c252c27622b5dc14ee1",
+    "shape": [
+      40,
+      15
+    ]
+  },
+  "causal_green_homotopy": false,
+  "causal_strata": {
+    "(0, 1, 0, 0)": {
+      "A_C_on_cycles_rank": 3,
+      "A_F_on_cycles_rank": 3,
+      "C_aux_rank": 9,
+      "J_id_columns": 15,
+      "cone_cycle_rank": 5,
+      "literal_degree_three_rank": 1,
+      "typed_cycle_defect_rank": 0
+    },
+    "(1, 0, 0, 0)": {
+      "A_C_on_cycles_rank": 0,
+      "A_F_on_cycles_rank": 5,
+      "C_aux_rank": 9,
+      "J_id_columns": 15,
+      "cone_cycle_rank": 5,
+      "literal_degree_three_rank": 0,
+      "typed_cycle_defect_rank": 0
+    },
+    "(1, 1, 0, 0)": {
+      "A_C_on_cycles_rank": 1,
+      "A_F_on_cycles_rank": 1,
+      "C_aux_rank": 9,
+      "J_id_columns": 15,
+      "cone_cycle_rank": 1,
+      "literal_degree_three_rank": 1,
+      "typed_cycle_defect_rank": 0
+    },
+    "(2, 1, 0, 0)": {
+      "A_C_on_cycles_rank": 3,
+      "A_F_on_cycles_rank": 5,
+      "C_aux_rank": 9,
+      "J_id_columns": 15,
+      "cone_cycle_rank": 5,
+      "literal_degree_three_rank": 3,
+      "typed_cycle_defect_rank": 0
+    }
+  },
+  "curvature_causal_green_operators": false,
+  "decision": {
+    "canonical_equation_cone_certified": true,
+    "principal_H7_contraction_certified": false,
+    "resume_curved_lower_order_PBW": false,
+    "strict_F_only_lift_certified": false
+  },
+  "fail_closed": true,
+  "literal_shorthand_audit": {
+    "becomes_shorthand_only_if_A_C_is_redefined": "A_C_tilde=S A_C",
+    "correct_replacement": "R_src A_F=S A_C on ker C_aux",
+    "degree_three_term_generic_rank": 3,
+    "degree_three_term_on_J_id_is_zero": false,
+    "left_order": 3,
+    "left_target": "C_state[14] after identifying F coordinates with U",
+    "literally_well_typed": false,
+    "proposal": "K_state A_F=A_C",
+    "right_order": 2,
+    "right_target": "C_source[14]"
+  },
+  "principal_ranks": {
+    "A_C": 4,
+    "A_F": 5,
+    "A_total": 6,
+    "R_src": 14,
+    "S": 14,
+    "sample_covector": [
+      2,
+      1,
+      3,
+      5
+    ]
+  },
+  "prolonged_green_witness": false,
+  "schema": "pure-weyl-rank14-equation-cycle-gate-v1",
+  "scope": "exact arbitrary-covector Green-witness companion-cycle diagnostic; full BV cone, curved PBW and Green work excluded",
+  "status_flags_promoted": [],
+  "typed_translation": {
+    "K_state_and_R_src_tables_identified_only_after_typing": true,
+    "attachment": "A=(A_F,A_C):Ebar_aux -> F+C",
+    "curvature_complex": "U --(L,K_state)--> F+C --(-R_src,S)--> I",
+    "cycle_relation": "(R_src A_F-S A_C)J_id=0",
+    "cycle_relation_defect": 0,
+    "exact_chain_relation": "(-R_src,S)A=B C_aux"
+  },
+  "warranted_atomic_flags": {
+    "rank14_witness_companion_cycle_gate_exact": true
+  }
+}

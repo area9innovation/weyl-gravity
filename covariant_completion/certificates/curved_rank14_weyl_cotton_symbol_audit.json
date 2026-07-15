@@ -1,0 +1,123 @@
+{
+  "causal_strata": {
+    "generic_timelike_(2,1,0,0)": {
+      "compatibility_curvature_defect_rank": 3,
+      "compatibility_rank": 14,
+      "compatible_kernel_rank": 12,
+      "compatible_mod_common_core_rank": 10,
+      "curvature_compatible_intersection_rank": 2,
+      "curvature_rank": 5
+    },
+    "null_(1,1,0,0)": {
+      "compatibility_curvature_defect_rank": 1,
+      "compatibility_rank": 14,
+      "compatible_kernel_rank": 12,
+      "compatible_mod_common_core_rank": 8,
+      "curvature_compatible_intersection_rank": 4,
+      "curvature_rank": 5
+    },
+    "spacelike_(0,1,0,0)": {
+      "compatibility_curvature_defect_rank": 3,
+      "compatibility_rank": 14,
+      "compatible_kernel_rank": 12,
+      "compatible_mod_common_core_rank": 10,
+      "curvature_compatible_intersection_rank": 2,
+      "curvature_rank": 5
+    },
+    "temporal_axis_(1,0,0,0)": {
+      "compatibility_curvature_defect_rank": 0,
+      "compatibility_rank": 6,
+      "compatible_kernel_rank": 20,
+      "compatible_mod_common_core_rank": 15,
+      "curvature_compatible_intersection_rank": 5,
+      "curvature_rank": 5
+    }
+  },
+  "compatible_source_symbol": {
+    "derivative_only_Ksrc_R_generic_defect_rank": 3,
+    "derivative_only_symbol_rank": 14,
+    "generic_kernel_rank": 12,
+    "generic_row_rank": 14,
+    "operator": "K_src^(D)=K_src,0+xi_i K_src,i",
+    "polynomial_syzygy_basis_emitted": false,
+    "reason": "the strict containment required for the proposed V7 is false; an expensive quotient-basis computation would not define the requested deformation retract",
+    "weighted_Ksrc_R_generic_defect_rank": 3,
+    "why_zeroth_block_is_principal": "x,y have one higher Douglis state weight than E,B"
+  },
+  "decision": {
+    "SDR_requires_additional_rows_or_a_different_map": true,
+    "full_rank14_green_problem_solved": false,
+    "reason": "raw R is not contained in the fourteen-row compatible kernel and has rank 5 rather than 12",
+    "strict_differential_equivalence_SR_equals_1_possible_for_this_R": false
+  },
+  "descended_curvature_map": {
+    "fraction_field_factor": "T_state=R_rat P14",
+    "fraction_field_factor_defect": 0,
+    "generic_kernel_rank_on_F14": 9,
+    "generic_rank": 5,
+    "local_factor": "partial_t T_state=R_local P14",
+    "local_factor_defect": 0,
+    "local_factor_maximum_order": 3,
+    "matrix_sha256": "22df1dc5a62bb0a5e89e1d97ddb23c797134e4587186408baa02ae63b6590f25",
+    "unprolonged_factor_is_polynomial": false
+  },
+  "dimension_ledger": {
+    "H2_generic_common_core": 2,
+    "I5_raw_curvature_image": 5,
+    "K12_compatible_kernel": 12,
+    "U14_domain": 14,
+    "U9_kernel_of_raw_curvature_map": 9,
+    "V10_compatible_mod_common_core": 10,
+    "proposed_V7_equals_K12_mod_I5_is_defined": false,
+    "reason": "I5 is not a submodule of K12 off shell"
+  },
+  "exact_chain_square_replacement": {
+    "consequence": "T lands in the constraint kernel only on shell; the full 40-row equation complex, not raw T, is the correct object for a deformation retract",
+    "curvature_equation_operator": "E_curv=(L_WC,K_state)",
+    "equation_cone": {
+      "Khat": "(K_state,-A_C)",
+      "That": "(T,E_aux)",
+      "cross_certificate": "curved_curvature_auxiliary_chain_map.json",
+      "exact": true,
+      "identity": "Khat That=K_state T-A_C E_aux=0"
+    },
+    "first_square": [
+      "L_WC T=A_F E_aux",
+      "K_state T=A_C E_aux"
+    ],
+    "identity_operator": "N=(-K_src,L_K)",
+    "second_square": "N A_equation=B_identity C_aux",
+    "state_map": "T=(C1,div C1)"
+  },
+  "fail_closed": true,
+  "image_kernel_comparison": {
+    "K_weighted_R_generic_defect_rank": 3,
+    "V10_basis_not_emitted": "the proposed V7 route is invalid off shell; no unnecessary fraction-field projector is introduced",
+    "explicit_polynomial_K12_basis": "not emitted after failed containment gate",
+    "generic_common_core_rank": 2,
+    "generic_compatible_mod_common_core_rank": 10,
+    "generic_compatible_rank": 12,
+    "generic_image_rank": 5,
+    "image_equals_compatible_kernel": false,
+    "image_is_contained_in_compatible_kernel": false,
+    "interpretation": "the natural curvature state has a rank-two generic common core with the rank-twelve compatible module; its other three directions source secondary a/c/s constraints"
+  },
+  "null_common_core_audit": {
+    "B3_Weyl_gauge_preimage_rank": 3,
+    "H2_Weyl_target_quotient_rank": 2,
+    "authoritative_Weyl_image_rank": 5,
+    "induced_H2_map": "(1/4) I2",
+    "raw_curvature_intersection_with_K_at_null": 4,
+    "warning": "the certified B3+H2 quotient is modulo Weyl images of gauge preimages; it is not the same quotient as ker K"
+  },
+  "rank14_domain": {
+    "curvature_operator": "(C1,div C1) on h; zero on f",
+    "gauge_annihilation_defect": 0,
+    "generic_rank": 14,
+    "presentation": "coker(K_vector) on (h[10],f[10])"
+  },
+  "schema": "pure-weyl-rank14-weyl-cotton-symbol-audit-v1",
+  "scope": "arbitrary-covector Douglis principal symbol; no curved lower-order Green or BV identity is claimed",
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": []
+}

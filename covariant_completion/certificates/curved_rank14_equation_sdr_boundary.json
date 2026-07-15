@@ -1,0 +1,76 @@
+{
+  "auxiliary_derived_closure": {
+    "first_square_exact": true,
+    "second_square_exact": true
+  },
+  "canonical_relative_cone": {
+    "carrier": "U_WC[26] plus Ebar_aux[24]",
+    "closure_exact": true,
+    "constraint": "Khat(s,e)=K_state(s)-A_C(e)",
+    "graph_map": "That(phi)=(T(phi),E_aux(phi))",
+    "requires_projector": false,
+    "support_local": true
+  },
+  "correct_equation_complex": {
+    "all_curvature_lower_order_terms_included": true,
+    "commuting_symbol_defect_nonzero": true,
+    "equation_adjoint_sha256": "17e95f8d525c7520dcc00ba5877f5f9088b8e18f175aa03149fbbf4642a53f8e",
+    "equation_table_sha256": "ca04d34256213938ca8a2d0dafa17c97b624aa0b601924d4e24c1326cd523302",
+    "formal_adjoints_included": true,
+    "identity": "N_curv E_curv=0",
+    "identity_adjoint_sha256": "33eda26557cc155d4db539ba125ba96e71b0edb0f4cad325bcf7649d32959823",
+    "identity_table_sha256": "cf1b4c4d49496cc5514dc99dc2b4bfb00fa8c9993ae5f530d7b82473f98c5319",
+    "objects": [
+      "U_WC[26]",
+      "F_WC[26]+C_WC[14]",
+      "I_WC[14]"
+    ],
+    "unit_S3_PBW_correction_exact": true
+  },
+  "decision": {
+    "rank14_equation_SDR_constructed": false,
+    "rank14_green_operators_constructed": false
+  },
+  "fail_closed": true,
+  "minimum_mapping_cone_ledger": {
+    "field_kernel_requiring_equation_homotopy_rank": 9,
+    "generic_compatible_complement_after_true_common_core": 10,
+    "minimum_cyclic_dual_rows_in_that_case": 3,
+    "minimum_new_primal_rows_if_auxiliary_equation_rows_are_not_reused": 3,
+    "off_shell_constraint_directions_that_must_be_retained": 3
+  },
+  "null_physical_regression": {
+    "H2_rank": 2,
+    "R_restricted_to_H2": "(1/4) I2",
+    "R_restricted_to_H2_invertible": true,
+    "is_not_identified_with_ker_K_quotient": true
+  },
+  "proposed_state_SDR_audit": {
+    "F14_rank": 14,
+    "K12_compatible_kernel_rank": 12,
+    "K12_mod_common_core_rank": 10,
+    "K_R_generic_defect_rank": 3,
+    "K_source_row_rank": 14,
+    "R_rank": 5,
+    "U9_equals_kernel_R_rank": 9,
+    "claimed_V7_equals_K12_mod_imR_is_defined": false,
+    "im_R_intersection_K12_rank": 2,
+    "strict_SR_state_retraction_rejected": true
+  },
+  "requested_AF_candidate_type_audit": {
+    "A_F_alone_is_R_src_closed": false,
+    "candidate_T_rel_defined": false,
+    "correct_formula_on_equation_cycles": "R_src A_F=S A_C on ker C_aux",
+    "corrected_pair_is_N_closed": true,
+    "cycle_gate_cross_certificate": "curved_rank14_equation_cycle_gate.json",
+    "literally_typed": false,
+    "requested_formula": "K_state A_F=A_C on ker C_aux"
+  },
+  "schema": "pure-weyl-rank14-equation-sdr-boundary-v1",
+  "scope": "compositional exact equation-cone boundary; no Green promotion",
+  "status_flags_promoted": [],
+  "warranted_atomic_flags": {
+    "rank14_fake_state_SDR_rejected": true,
+    "rank14_full_equation_cone_required": true
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "causal_green_homotopy": false,
+  "cross_certificates": {
+    "actual_curved_Q_split": "curved_deformation_retract_status.json",
+    "canonical_shift": "curved_auxiliary_canonical_split.json",
+    "open_singleton_ledger": "curved_expanded_relative_witness_shifted_green_filtration.json"
+  },
+  "curvature_causal_green_operators": false,
+  "exact_local_operator": {
+    "Green_hyperbolic": true,
+    "classification": "pointwise invertible contractible block",
+    "complete_zeroth_order_coefficient": "I_16",
+    "curvature_lower_order_terms": 0,
+    "formal_adjoint_defect": 0,
+    "identity": "P_vec=Q_vec W_vec+W_vec Q_vec=I_16",
+    "matrix_sha256": "660bdc363cee8b2bc1e919963a838a8d63ffec3cba1710c2aa3b8ba5ac8e4c8b",
+    "normally_hyperbolic": false,
+    "operator_identity_defect": 0,
+    "order": 0,
+    "principal_derivative_coefficients": 0,
+    "reason_not_normally_hyperbolic": "the replacement is an invertible order-zero operator, not a second-order wave operator"
+  },
+  "fail_closed": true,
+  "full_complex_boundary": {
+    "all_BV_rows_complete_QLambda_identity": false,
+    "fixed_witness_second_order_vector_block_inverted": false,
+    "rank34_reciprocal_component_Green_inverse": false,
+    "reason": "the Green witness is replaced on an exact Q-direct summand; no claim is made about the fixed candidate's lower-order second-order singleton",
+    "replacement_inserted_into_complete_prolonged_W": false
+  },
+  "green_homotopy_contribution": {
+    "Lambda_minus": "W_vec",
+    "Lambda_plus": "W_vec",
+    "Q_Lambda_minus_plus_Lambda_minus_Q_defect": 0,
+    "Q_Lambda_plus_plus_Lambda_plus_Q_defect": 0,
+    "causal_propagator_on_contractible_vector_summand": 0,
+    "support_local": true
+  },
+  "prolonged_green_witness": false,
+  "replacement_witness": {
+    "W_squared_defect": 0,
+    "cotangent_partner_included": true,
+    "differential_order": 0,
+    "formula": "W(v)=-eta; W(eta_sharp)=-v_sharp",
+    "matrix_sha256": "33544529c43148c980532a8bca91ce38128eddba870da5e9414146a46daea986"
+  },
+  "same_sided_green_operators": {
+    "G_minus": "I_16",
+    "G_plus": "I_16",
+    "G_plus_sharp_equals_G_minus": true,
+    "advanced_left_defect": 0,
+    "advanced_right_defect": 0,
+    "finite_propagation": true,
+    "retarded_left_defect": 0,
+    "retarded_right_defect": 0,
+    "support": "supp(G_plus/minus f)=supp(f) subset J_plus/minus(supp f)"
+  },
+  "schema": "pure-weyl-expanded-relative-vector-contraction-v1",
+  "scope": "exact shifted generalized-auxiliary vector cotangent summand; replacement witness, not inversion of the fixed second-order principal singleton",
+  "shifted_vector_complex": {
+    "Q_squared_defect": 0,
+    "all_primal_and_cotangent_vector_rows_included": true,
+    "block_order": [
+      "eta[4]",
+      "v[4]",
+      "v_sharp[4]",
+      "eta_sharp[4]"
+    ],
+    "curvature_coefficients": 0,
+    "differential": "eta -> -v; v_sharp -> -eta_sharp",
+    "differential_order": 0,
+    "dimension": 16,
+    "direct_summand_of_actual_curved_Q": true,
+    "field_singleton_rank": 4,
+    "matrix_sha256": "e6f01a591dee91b9503de6b62fd348756c31e69a2788b268cb503d9135d46b73"
+  },
+  "status_flags_promoted": {
+    "shifted_rank4_vector_Green_homotopy": true,
+    "shifted_rank4_vector_block_contractible": true,
+    "shifted_rank4_vector_replacement_Green_inverse": true
+  },
+  "warranted_atomic_flags": {
+    "shifted_rank4_vector_Green_homotopy": true,
+    "shifted_rank4_vector_block_contractible": true,
+    "shifted_rank4_vector_replacement_Green_inverse": true
+  }
+}

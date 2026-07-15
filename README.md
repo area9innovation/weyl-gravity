@@ -292,7 +292,11 @@ the first sensitivity screen (joint rank 16) and proceed to semisimplicity
 testing.  Their smallest temporally regular slices have determinant `8` and
 only real causal roots, but remain nonsemisimple at speeds `0,+1,-1`; one
 directly sensitive spatial perturbation does not repair them.  This rejects
-those slices only, not the complete alternative families.
+those slices only.  The canonical 16-parameter subfamily spanning the full
+sensitivity image is also uniformly non-semisimple: pair `1+7` has zero-root
+valuation at least `40` but kernel dimension at most `33`, while pair `2+7`
+has valuation `48` and kernel dimension at most `47`.  This still does not
+rule out the raw 122-parameter families or generalized Green extensions.
 
 On the same aligned channel, the certified BV shift gives the exact complex
 split `diag(L^2,-1)` with `L=1-z^2`, while the witness remains the closed
@@ -317,6 +321,52 @@ cokernel.  The local identity `(C1,div C1) K=0` makes curvature descend to
 that cokernel.  Constructing its induced biwave intertwiner/inverse is now
 the central Route-A problem.  The raw off-diagonal ideal is not nilpotent, so
 a naive finite Neumann series is unavailable.
+
+The remaining rank-four vector singleton is completely contractible after
+the same shift.  On `(eta,v,v#,eta#)` a replacement witness gives
+`P=I_16`, `G_+=G_-=I_16`, and `Lambda_+=Lambda_-=W`, with both Green
+homotopy defects zero.  Its causal propagator vanishes.  These scoped vector
+flags are true; the all-row problem is now concentrated in the rank-14 field
+cokernel and its insertion into the complete witness.
+
+That insertion is now formalized as an exact conditional all-row theorem.
+The ledgers `116=34+4+26+26+26` and `34=12+8+14` cover every analytic row
+once, and all 16 mapping-cylinder BV blocks are bound coefficientwise.  Given
+the rank-14 package, the assembled algebra already verifies two-sided `G`,
+`QG=GQ`, and `Q(WG)+(WG)Q=1`.  The only missing package is the complete
+curved rank-14 operator and adjoint, compatible-source Green maps, and the
+two residual source lifts through the rank-8/rank-12 extension.
+
+`curved_rank14_weyl_cotton_input_manifest.json` is the compact handoff for
+that last calculation.  It content-addresses the ordered rank-14 filtration
+maps, complete 26-state evolution and lower-order matrices, 14 source
+constraints and subsidiary operators, both symmetrizers, all 16 BV rows,
+formal adjoints, and current conventions without duplicating the large
+tables.  Its verifier checks 36 cross-hash and mutation guards.
+
+The first rank-14 calculation is positive but changes the target.  A local
+projector-free principal presentation splits into rank-10 light and rank-4
+zero-speed sectors and has exact same-sided Green algebra with causal
+temporal source lifting.  The raw `(C1,div C1)` symbol has rank `5` and
+kernel rank `9` on the rank-14 cokernel, whereas the weighted Weyl--Cotton
+compatible-source kernel has rank `12`.  More decisively, the raw image is
+not contained in that kernel off shell: its generic compatibility defect has
+rank `3` (rank `1` on the aligned null cone).  Thus the tempting quotient
+`V7=K12/I5` is not defined.  The exact operator replacement is the equation cone
+`That=(T,E_aux)`, `Khat=(K_state,-A_C)`, for which
+`Khat That=K_state T-A_C E_aux=0`.  The required bridge is therefore an
+equation-level SDR using the full `(L_WC,K_state)` rows, not a direct state
+retraction.  The full graded audit restores the incoming gauge row and has
+degree ranks `9 -> 24 -> 50 -> 49 -> 14`.  It also distinguishes the
+ordinary BV identity layer `K_ordinary(-zeta)^T J` from both the exact curved
+identity and the Green-witness companion.  The currently mixed leading
+tables do not yet form one associated-graded complex: the internal square
+defects have ranks `11,4` generically and `7,4` at null.  Symbol cohomology
+is therefore deliberately left undefined.  A common componentwise
+Douglis/Rees weight system is already feasible and an integer representative
+is certified.  The next gate is complete associated-graded coefficient
+extraction, especially lower `A` and weighted zeroth WC blocks; the equation
+SDR, curved `L14`, `V14`, adjoint completion and Green operators remain false.
 
 The residual calculation is already complete: `residual_H4_is_C2` and
 `residual_gram_is_I2` are inputs to the terminal transport gate.  The missing

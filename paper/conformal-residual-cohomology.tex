@@ -1531,15 +1531,22 @@ promote the scoped statements that the physical biwave block is Green
 hyperbolic and its Jordan extension is causal: the restricted witness is
 $\operatorname{diag}(B_{\rm TT},1,B_{\rm TT},1)$ and the corresponding
 restricted $Q\Lambda_\pm+\Lambda_\pm Q=1$ identity is exact.  These are not
-the complete prolonged Green statements, because no support-local map from
-arbitrary sources to the TT block, rank-$34$ reciprocal inverse, or
-rank-$4$ vector inverse has yet been constructed.
+the complete prolonged Green statements.  The rank-$4$ vector sector is
+contracted below, but the rank-$14$ equation-cone extension and a
+support-local map from arbitrary sources into its physical biwave carrier
+remain open.
 The first alternative-incidence screen is also exact: pairs $1+7$ and
 $2+7$ have a nonzero joint intrinsic-sensitivity image of rank $16$.
 Their smallest temporally regular slices have determinant $8$ and entirely
 real causal roots, but are non-semisimple at speeds $0$ and $\pm1$; the first
 directly sensitive spatial correction does not repair either slice.  This is
 not a no-go for the complete alternative families.
+The canonical $16$-parameter subfamily spanning the full intrinsic
+sensitivity image is nevertheless uniformly non-semisimple: the zero-root
+valuation and kernel-dimension bounds are respectively $40$ versus at most
+$33$ for pair $1+7$, and $48$ versus at most $47$ for pair $2+7$.  This
+still does not rule out the raw $122$-parameter families or generalized
+Green extensions.
 A projector-free differential-module analysis reduces the reciprocal
 rank-$34$ component further.  The six vector-gauge columns together with the
 $q^\sharp/r^\sharp$ subsidiary coordinates present a rank-$12$ invariant
@@ -1550,6 +1557,61 @@ $(C_1,\operatorname{div}C_1)K=0$, curvature descends locally to this
 cokernel; constructing its induced biwave intertwiner and inverse is the
 remaining central block problem.  The raw off-diagonal ideal is not
 nilpotent, so the inverse does not follow from a naive finite Neumann series.
+The remaining rank-$4$ vector field singleton, together with its mandatory
+primal/cotangent closure of rank $16$, is already the shifted
+$(\eta,v,v^\sharp,\eta^\sharp)$ contractible summand.  Replacing its witness
+locally gives $P_{\rm vec}=I_{16}$, $G_+=G_-=I_{16}$ and
+$\Lambda_+=\Lambda_-=W$, with both homotopy defects zero and vanishing causal
+propagator.  Thus the unresolved analytic content of this filtration is the
+rank-$14$ curvature field cokernel and its all-row insertion.
+For reproducibility, the rank-$14$ handoff is persisted as a compact
+content-addressed manifest: it records the ordered quotient and filtration
+maps, full $26$-state evolution and lower-order tables, all fourteen source
+constraints and subsidiary matrices, symmetrizers, BV row layout, formal
+adjoints and current conventions by authoritative path and hash rather than
+duplicating the large matrices.
+The principal rank-$14$ quotient itself now has a projector-free local
+presentation with rank-$10$ light and rank-$4$ temporal subquotients, exact
+same-sided Green algebra and causal temporal source lifting modulo the
+certified vector-gauge image.  The raw
+$T=(C_1,\operatorname{div}C_1)$ symbol has rank $5$ and kernel rank $9$ on
+this cokernel, whereas the weighted Weyl--Cotton compatible-source kernel
+has rank $12$.  More importantly, $\operatorname{im}T$ is not contained in
+that kernel off shell: the generic compatibility defect has rank $3$ (and
+rank $1$ at the aligned null covector).  Hence the tempting rank-seven
+quotient $K_{12}/I_5$ is not defined.  This does not contradict the exact
+null-cone split of the Weyl image into a rank-three gauge-preimage module and
+the rank-two helicity module, on which the reduced Weyl map is
+$\frac14 I_2$; that quotient is different from the full constraint kernel.
+
+The exact replacement is the equation cone
+\begin{equation}
+ \widehat T=(T,E_{\rm aux}),\qquad
+ \widehat K=(K_{\rm state},-A_C),\qquad
+ \widehat K\widehat T
+ =K_{\rm state}T-A_CE_{\rm aux}=0,
+\end{equation}
+which is the constraint component of the certified chain square for
+$E_{\rm curv}=(L_{\rm WC},K_{\rm state})$.  Thus a direct state retraction is
+the wrong target; the full bridge must be an equation-level deformation
+retract using the auxiliary $f$ equation and all forty curvature rows.
+
+The first full graded cone audit keeps the incoming gauge row and has degree
+ranks
+\[
+ 9\longrightarrow24\longrightarrow50\longrightarrow49\longrightarrow14.
+\]
+It also separates the ordinary BV identity layer
+$K_{\rm ordinary}(-\zeta)^T J_{\rm aux}$ from both the exact curved identity
+and the Green-witness companion.  With the presently mixed leading tables,
+the two internal square defects have ranks $11,4$ at generic, timelike,
+spacelike and temporal covectors, and ranks $7,4$ at a null covector.
+Consequently these tables do not yet form one associated-graded complex and
+no cone-cohomology rank is assigned.  The integer Douglis weight constraints
+are feasible and an explicit representative is certified; the missing step
+is the complete associated-graded extraction, especially the lower $A$
+terms and weighted zeroth-order Weyl--Cotton blocks.  Neither the
+equation-level SDR nor its Green operators has been constructed.
 
 The selected causal route therefore has the following explicit flags:
 \begin{equation}\label{eq:open-curvature-flags}

@@ -695,9 +695,45 @@ class CurvatureProlongationStatus:
                 "alternative_17_27_intrinsic_sensitivity_nonzero": True,
                 "alternative_17_27_minimal_regular_slices_semisimple": False,
                 "alternative_17_27_full_family_no_go": False,
+                "alternative_minimal_sensitivity_family_complete": True,
+                "alternative_minimal_family_zero_root_no_go": True,
                 "rank34_presented_rank12_submodule_green": True,
                 "rank34_rank8_constraint_quotient_hyperbolic": True,
                 "rank34_rank14_field_cokernel_green": False,
+                "shifted_rank4_vector_block_contractible": True,
+                "shifted_rank4_vector_replacement_Green_inverse": True,
+                "shifted_rank4_vector_Green_homotopy": True,
+                "all_row_Green_assembly_conditional_on_rank14": True,
+                "rank14_Weyl_Cotton_input_manifest_complete": True,
+                "rank14_principal_projector_free_presentation": True,
+                "rank14_principal_green_algebra": True,
+                "direct_rank14_curvature_retraction_no_go": True,
+                "rank14_equation_SDR_required": True,
+                "rank14_raw_curvature_image_rank": 5,
+                "rank14_raw_curvature_kernel_rank": 9,
+                "rank14_compatible_source_kernel_rank": 12,
+                "rank14_raw_curvature_image_is_source_compatible": False,
+                "rank14_generic_curvature_compatibility_defect_rank": 3,
+                "rank14_fake_V7_quotient_defined": False,
+                "rank14_equation_cone_exact": True,
+                "rank14_null_B3_H2_quotient_distinguished_from_constraint_kernel": True,
+                "rank14_witness_companion_cycle_gate_exact": True,
+                "rank14_fake_state_SDR_rejected": True,
+                "rank14_full_equation_cone_required": True,
+                "rank14_ordinary_BV_Caux_layer_identified": True,
+                "rank14_curved_Caux_Rees_layer_unresolved": True,
+                "rank14_mixed_symbol_cone_rejected": True,
+                "rank14_common_Douglis_filtration_required": True,
+                "rank14_common_Douglis_weight_constraints_feasible": True,
+                "rank14_full_symbol_cone_is_complex": False,
+                "rank14_full_symbol_cone_cohomology_computed": False,
+                "rank14_equation_SDR_constructed": False,
+                "rank14_green_operators_constructed": False,
+                "rank14_typed_incoming_map_ledger_complete": True,
+                "rank14_plain_state_kernel_quotient_is_target": False,
+                "rank14_principal_H7_contraction_certified": False,
+                "rank14_corrected_equation_source_map_typed": True,
+                "rank14_lower_order_PBW_may_resume": False,
             },
             "phase1_evidence": {
                 "certificate": "curved_weyl_cotton_jet_comparison.json",
@@ -814,11 +850,41 @@ class CurvatureProlongationStatus:
                 "rank34_differential_module_certificate": (
                     "curved_expanded_relative_witness_rank34_module.json"
                 ),
+                "shifted_rank4_vector_certificate": (
+                    "curved_expanded_relative_witness_vector_contraction.json"
+                ),
+                "all_row_conditional_assembly_certificate": (
+                    "curved_expanded_relative_witness_all_row_assembly.json"
+                ),
+                "rank14_Weyl_Cotton_input_manifest": (
+                    "curved_rank14_weyl_cotton_input_manifest.json"
+                ),
+                "rank14_principal_curvature_presentation_certificate": (
+                    "curved_expanded_relative_witness_rank14_curvature_presentation.json"
+                ),
+                "rank14_Weyl_Cotton_symbol_audit_certificate": (
+                    "curved_rank14_weyl_cotton_symbol_audit.json"
+                ),
+                "rank14_equation_cycle_gate_certificate": (
+                    "curved_rank14_equation_cycle_gate.json"
+                ),
+                "rank14_equation_SDR_boundary_certificate": (
+                    "curved_rank14_equation_sdr_boundary.json"
+                ),
+                "rank14_full_cone_symbol_gate_certificate": (
+                    "curved_rank14_full_cone_symbol_gate.json"
+                ),
+                "rank14_typed_incoming_map_ledger_certificate": (
+                    "curved_rank14_weyl_cotton_incoming_map_ledger.json"
+                ),
                 "alternative_incidence_screen_certificate": (
                     "curved_expanded_relative_witness_incidence_screen.json"
                 ),
                 "alternative_semisimplicity_certificate": (
                     "curved_expanded_relative_witness_alternative_semisimplicity.json"
+                ),
+                "alternative_sensitivity_family_no_go_certificate": (
+                    "curved_expanded_relative_witness_alternative_family_no_go.json"
                 ),
                 "factorization_certificate": (
                     "pure-weyl-mixed-order-factorization-v1 (not currently emitted)"
@@ -869,10 +935,10 @@ class CurvatureProlongationStatus:
                 "positive_PDE_symmetrizer_is_action_Krein_pairing": False,
             },
             "next_exact_step": (
-                "solve the 214-parameter action-adjoint factor branch, or retain/"
-                "prolong the three central scalar directions in one of the exact "
-                "expanded-relative two-pair candidates, then certify the resulting "
-                "degree-minus-one witness and its support-local Green blocks"
+                "extract every coefficient in the certified common Douglis/Rees "
+                "filtration, especially lower A and weighted zeroth Weyl--Cotton "
+                "blocks; verify all associated-graded cone squares before computing "
+                "its causal-stratum cohomology or any Green homotopy"
                 if self.prolonged_BV_operator_identity
                 else "insert the certified curvature equations, fourteen constraint "
                 "rows, and their cotangent/identity partners into the support-local "

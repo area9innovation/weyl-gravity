@@ -1,0 +1,146 @@
+{
+  "causal_green_homotopy": false,
+  "compatible_source_lifting": {
+    "P14_R_plus_minus": "identity",
+    "global_zero_mode_boundary": "the formula is on the standard retarded/advanced support spaces; unrestricted temporal constants require endpoint rows",
+    "left_defect": "1-R_plus/minus P14=K_sp G_dt extract(s0i)",
+    "left_defect_lies_in_certified_gauge_submodule": true,
+    "one_sided_lift": "R_plus/minus(a,Q)=(s00=G_dt a,s0i=0,sij=G_dt Qij)",
+    "same_sided_support": true,
+    "source_compatibility_preserved": true,
+    "spatial_or_elliptic_inverse_used": false
+  },
+  "cross_certificates": {
+    "Weyl_helicity_quotient": "curved_helicity_two_channel.json",
+    "curvature_state_chain_map": "curved_curvature_auxiliary_chain_map.json",
+    "rank34_module": "curved_expanded_relative_witness_rank34_module.json"
+  },
+  "curvature_causal_green_operators": false,
+  "curvature_presentation": {
+    "C1_EB_symbol_rank": 5,
+    "C1_annihilates_vector_gauge": true,
+    "R_C_maximum_order": 2,
+    "descended_R_ranks_generic_timelike_spacelike_null": [
+      5,
+      5,
+      5,
+      5
+    ],
+    "divergence_consequence": "partial_t div(C1)=div(R_C P7), since [partial_t,D_i]=0",
+    "local_prolonged_identity": "partial_t C1=R_C P7",
+    "local_prolonged_identity_defect": 0,
+    "nonlocal_helicity_reconstruction_used": false,
+    "unprolonged_C1_factor_requires_compatible_temporal_lifting": true
+  },
+  "direct_Weyl_Cotton_retraction_obstruction": {
+    "F14_rank": 14,
+    "SDR_constructed_here": false,
+    "descended_R_equals_C1_divC1_principal_rank": 5,
+    "direct_SR_equals_identity_possible": false,
+    "rank_obstruction": "5 < 14",
+    "reason": "div C1 is a differential consequence of C1 and the certified state map depends on the retained metric h, while the independent f quotient is removed only by the auxiliary equations",
+    "required_repair": "construct SDR with SR=1+P14 H+H P14 on the sourced-compatible equation quotient, using the auxiliary f equation"
+  },
+  "fail_closed": true,
+  "induced_operator": {
+    "aligned_determinant": "4*rank34_tau**8*(rank34_rho - rank34_tau)**10*(rank34_rho + rank34_tau)**10",
+    "block_form": "[[L7,0],[R7,L7]]",
+    "identity": "P14 A_field=L14 P14",
+    "identity_defect": 0,
+    "matrix_sha256": "5f7ea86038e79250e296a91d42ad58ad1cc7f87fc2fb73996fcb75847a1a8a5a",
+    "maximum_order": 2,
+    "polynomial_coefficients": true,
+    "shape": [
+      14,
+      14
+    ]
+  },
+  "physical_biwave_restriction": {
+    "Weyl_helicity_isomorphism": true,
+    "aligned_covector": [
+      "-rank34_tau",
+      "rank34_rho",
+      "0",
+      "0"
+    ],
+    "basis": [
+      "Qh22-Qh33",
+      "Qh23",
+      "Qf22-Qf33",
+      "Qf23"
+    ],
+    "classification": "physical triangular biwave extension",
+    "identity_defect": 0,
+    "matrix": "[[q I2,0],[4 rho^2 I2,q I2]]"
+  },
+  "precise_boundary": {
+    "QLambda_identity_verified": false,
+    "all_BV_rows_inserted": false,
+    "curved_lower_order_L14_derived": false,
+    "principal_module_only": true,
+    "rank34_extension_lift_inserted": false,
+    "rank4_vector_singleton_inserted": false
+  },
+  "presented_quotient_green_algebra": {
+    "full_curved_rank14_green_inverse": false,
+    "principal_presented_quotient_green_inverse": true,
+    "rank14_formula": "[[G7,0],[-G7 R7 G7,G7]]",
+    "rank14_left_defect": 0,
+    "rank14_right_defect": 0,
+    "rank7_formula": "finite upper-triangular Green recursion",
+    "rank7_left_defect": 0,
+    "rank7_right_defect": 0,
+    "same_sided_causal_support": true,
+    "same_sided_compositions_only": true,
+    "scalar_inverse": "1/(2T^2)[[-T,-T],[Delta,Delta-2T]]",
+    "temporal_inverse": "G_T_plus/minus for T=partial_t^2",
+    "wave_inverse": "G_Box_plus/minus on STF2"
+  },
+  "projector_free_quotient": {
+    "P14_B_vector_defect": 0,
+    "finite_order": 1,
+    "formula_per_tensor": [
+      "a=partial_t s_00",
+      "Q_ij=partial_t s_ij-D_i s_0j-D_j s_0i"
+    ],
+    "gauge_basis_change_determinant": 1,
+    "generic_rank": 14,
+    "helicity_projector_used": false,
+    "kernel_equals_certified_vector_gauge_image_over_polynomial_fraction_field": true,
+    "kernel_rank": 6,
+    "map_shape": [
+      14,
+      20
+    ],
+    "sha256": "66a600bec4735b4b53958abb0f216d3f09a1b55c0c2d182c55d58007dd427872",
+    "support_local": true,
+    "transverse_projector_used": false
+  },
+  "prolonged_green_witness": false,
+  "rank7_local_filtration": {
+    "STF_operator": "(Delta-partial_t^2) I5",
+    "STF_submodule_invariant": true,
+    "covector_dependent_projector_used": false,
+    "light_sector_algebraic_multiplicity": 10,
+    "local_STF_projector_only": true,
+    "pointwise_decomposition": "STF2[5] plus (a,tr Q)[2]",
+    "pointwise_inverse_exact": true,
+    "scalar_determinant": "2 partial_t^4",
+    "scalar_quotient_operator": "[[Delta-2 partial_t^2,partial_t^2],[-Delta,-partial_t^2]]",
+    "zero_speed_algebraic_multiplicity": 4
+  },
+  "schema": "pure-weyl-expanded-relative-rank14-curvature-presentation-v1",
+  "scope": "arbitrary-covector principal field-cokernel presentation and same-sided Green algebra; curved lower-order insertion is open",
+  "status_flags_promoted": {
+    "direct_rank14_curvature_retraction_no_go": true,
+    "rank14_equation_SDR_required": true,
+    "rank14_principal_green_algebra": true,
+    "rank14_principal_projector_free_presentation": true
+  },
+  "warranted_atomic_flags": {
+    "direct_rank14_curvature_retraction_no_go": true,
+    "rank14_equation_SDR_required": true,
+    "rank14_principal_green_algebra": true,
+    "rank14_principal_projector_free_presentation": true
+  }
+}

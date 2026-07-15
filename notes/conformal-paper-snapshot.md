@@ -255,13 +255,30 @@ the reciprocal rank-34 `(h,f,Csharp)` component (plus the vector singleton),
 not the Jordan chain itself.  Alternative pairs `1+7` and `2+7` have joint
 intrinsic sensitivity rank 16 and survive the first screen.  On the exact
 smallest regular slices, however, both remain non-semisimple at `0,+1,-1`;
-this is not a full-family no-go.  On the exact
+the 16-parameter subfamily spanning the full sensitivity image is uniformly
+non-semisimple as well, but this is not a raw-family no-go.  On the exact
 TT-plus-shifted-auxiliary operator subcomplex the physical biwave and causal
 Jordan-extension flags are now true, with an exact restricted Green homotopy;
 the all-row flags remain false.  The analytic core has been reduced further:
 a rank-12 gauge/subsidiary submodule and rank-8
 constraint quotient are Green controlled, leaving a rank-14 field cokernel
-for the projector-free curvature/biwave intertwiner.  The remaining blockers
+for the projector-free curvature/biwave intertwiner.  The separate rank-four
+vector singleton is exactly contractible with `P=G_+=G_-=I16` and zero causal
+propagator.  A content-addressed manifest now binds every rank-14,
+Weyl--Cotton, BV-row, adjoint and current input needed for the last algebra.
+The principal rank-14 quotient has exact local Green algebra, but the
+raw curvature symbol has rank `5` with kernel rank `9`, while the compatible
+Weyl--Cotton source kernel has rank `12`.  Its off-shell compatibility defect
+has generic rank `3` (rank `1` at the aligned null covector), so the proposed
+`K12/I5` rank-seven quotient is not defined.  The exact operator replacement
+is the equation cone `That=(T,E_aux)`, `Khat=(K_state,-A_C)`.  The full BV
+cone has degree ranks `9 -> 24 -> 50 -> 49 -> 14` after retaining the
+incoming gauge row.  The currently mixed symbol tables have internal square
+defects `11,4` generically and `7,4` at null, so cone cohomology is not yet
+defined.  A common integer Douglis weight system exists; the next gate is
+extraction of all associated-graded coefficients, especially lower `A` and
+weighted zeroth WC blocks, followed by exact square and cohomology checks.
+The remaining blockers
 are the prolonged Green theorem, causal chain homotopy, residual endpoint
 recovery, and `SO(4,2)` equivariance.  The complete cyclic mapping cylinder
 now gives the all-row quadratic BV parent and exact prolonged/auxiliary
