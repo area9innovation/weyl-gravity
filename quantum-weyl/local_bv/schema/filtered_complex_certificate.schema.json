@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-filtered-complex-certificate-v1.json",
+  "title": "Antifield-filtered local complex interface certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "checks", "block_manifest", "afn0_to_minimal_comparison_statuses", "canonical_hashes", "not_computed"],
+  "properties": {
+    "result_id": {"const": "AFN_FILTRATION_INTERFACE_CERTIFICATE"},
+    "result_state": {"const": "INTERFACE_READY_EXPORT_PENDING"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "checks": {
+      "type": "object",
+      "additionalProperties": {"const": "VERIFIED"},
+      "required": ["filtered_Q_squared_zero", "filtered_d_h_squared_zero", "filtered_Q_dh_commutator_zero"]
+    },
+    "block_manifest": {"type": "object"},
+    "afn0_to_minimal_comparison_statuses": {
+      "const": ["LIFTS_UNCHANGED", "REQUIRES_ANTIFIELD_COMPLETION", "BECOMES_EXACT", "IS_OBSTRUCTED"]
+    },
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest_sha256"],
+      "properties": {
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "not_computed": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  }
+}

@@ -77,7 +77,9 @@ def _basis_manifest(
             "weyl_target_relation_rank": target["relation_rank"],
             "weyl_target_quotient_dimension": target["quotient_dimension"],
         },
-        "structural_grading_enumeration": grading_signature_manifest(ghost_number),
+        "structural_grading_enumeration": grading_signature_manifest(
+            ghost_number, parity
+        ),
         "candidate_ids": list(candidate_ids),
         "top_curvature_carrier_basis_status": "COMPLETE",
         "full_top_form_basis_status": "IN_PROGRESS",
@@ -90,7 +92,9 @@ def _basis_manifest(
     return {**manifest, "basis_manifest_hash": canonical_sha256(manifest)}
 
 
-def _select(records: tuple[dict[str, object], ...], ids: tuple[str, ...]) -> tuple[dict[str, object], ...]:
+def _select(
+    records: tuple[dict[str, object], ...], ids: tuple[str, ...]
+) -> tuple[dict[str, object], ...]:
     by_id = {str(record["class_id"]): record for record in records}
     if set(ids) - set(by_id):
         raise AssertionError("AFN0 slice requested an unknown candidate")
@@ -233,3 +237,30 @@ def afn0_production_results() -> dict[str, dict[str, object]]:
         ],
     }
     return {"H04_AFN0_RESULT": h04, "H14_AFN0_RESULT": h14}
+
+
+def afn0_slice_results() -> dict[str, dict[str, object]]:
+    """Return independently addressable closure and provisional quotient receipts."""
+
+    outputs: dict[str, dict[str, object]] = {}
+    for parent_id, parent in afn0_production_results().items():
+        for slice_ in parent["slices"]:
+            shared = {
+                "parent_result_id": parent_id,
+                "slice_id": slice_["slice_id"],
+                "classical_commit": parent["classical_commit"],
+                "dependency_tags": parent["dependency_tags"],
+                "scope_label": parent["scope_label"],
+                "ghost_number": parent["ghost_number"],
+                "form_degree": parent["form_degree"],
+                "antifield_number": parent["antifield_number"],
+                "parity": slice_["parity"],
+                "basis_manifest_hash": slice_["basis_completeness"][
+                    "basis_manifest_hash"
+                ],
+            }
+            for key in ("closure_result", "truncated_quotient_result"):
+                payload = slice_[key]
+                result_id = str(payload["result_id"])
+                outputs[result_id] = {**shared, **payload}
+    return outputs

@@ -172,12 +172,12 @@ def _derived_weyl_connection_variation() -> dict[str, Fraction]:
 
 
 def _four_dimensional_generalized_connection_template() -> dict[str, object]:
-    """Return the exact ``n=4`` specialization of Boulanger's total form.
+    """Return the project ``n=4`` generalized-connection ansatz candidate.
 
-    For ``m=n/2`` and ``p=m-r`` the coefficient of
-    ``Phi^[n-r]_r`` is ``(-1)^p 2^p m!/(r! p!)``.  This fixes the finite
-    generalized-connection ansatz before expanding
-    ``tilde_omega_a = partial_a omega - K_ab dx^b`` into bidegrees.
+    The project's symbolic carrier convention currently produces
+    ``(-1)^p 2^p m!/(r! p!)``.  Boulanger's printed coefficient instead
+    contains ``2^-p``.  The two vectors are kept separate until the carrier
+    normalization map is verified; this function does not certify that map.
     """
 
     n = 4
@@ -210,6 +210,7 @@ def _four_dimensional_generalized_connection_template() -> dict[str, object]:
         "spacetime_dimension": n,
         "m": m,
         "generalized_connection": "tilde_omega_a = partial_a omega - Schouten_ab dx^b",
+        "project_candidate_coefficient_formula": "(-1)^p 2^p m!/(r! p!)",
         "components": tuple(components),
         "type_a_component_indices": (1, 2),
         "type_b_component_indices": (0,),

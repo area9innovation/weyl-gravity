@@ -29,27 +29,69 @@
           "parity": {"enum": ["even", "odd"]},
           "basis_completeness": {
             "type": "object",
+            "additionalProperties": false,
             "required": ["basis_generation_rules", "dimension_and_bidegree_bounds", "raw_monomial_count", "canonical_basis_count", "identity_quotient_ranks", "structural_grading_enumeration", "basis_manifest_hash", "top_curvature_carrier_basis_status", "full_top_form_basis_status", "lower_form_mapping_cone_basis_status", "complete_relative_ansatz_status"],
             "properties": {
               "basis_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "basis_generation_rules": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+              "dimension_and_bidegree_bounds": {"type": "object"},
+              "raw_monomial_count": {"type": "integer", "minimum": 0},
+              "canonical_basis_count": {"type": "integer", "minimum": 0},
+              "identity_quotient_ranks": {"type": "object"},
+              "structural_grading_enumeration": {
+                "type": "object",
+                "required": ["grading_manifest_hash", "integer_solution_count", "multigrading_status", "exhaustiveness_status"],
+                "properties": {
+                  "grading_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                  "integer_solution_count": {"type": "integer", "minimum": 0},
+                  "multigrading_status": {"const": "ENGINEERING_FORM_GHOST_PARITY_INDEX_BALANCE_ENUMERATED"},
+                  "exhaustiveness_status": {"const": "IN_PROGRESS"}
+                }
+              },
+              "candidate_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
               "top_curvature_carrier_basis_status": {"const": "COMPLETE"},
               "full_top_form_basis_status": {"const": "IN_PROGRESS"},
               "lower_form_mapping_cone_basis_status": {"const": "IN_PROGRESS"},
+              "pure_diff_ghost_basis_status": {"enum": ["NOT_APPLICABLE", "IN_PROGRESS"]},
               "complete_relative_ansatz_status": {"const": "IN_PROGRESS"}
             }
           },
           "closure_result": {
             "type": "object",
+            "additionalProperties": false,
             "required": ["result_id", "result_state", "closure_scope", "candidates"],
             "properties": {
               "result_id": {"type": "string", "pattern": "^.*_CLOSURE$"},
               "result_state": {"const": "CLOSURE_RESULT"},
               "closure_scope": {"const": "TOP_RELATIVE_CLOSURE"},
-              "candidates": {"type": "array", "minItems": 1, "items": {"type": "object"}}
+              "candidates": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["representative_id", "representative_sha256", "closure_status", "closure_witness"],
+                  "properties": {
+                    "representative_id": {"type": "string", "minLength": 1},
+                    "representative_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                    "closure_status": {"const": "CLOSED"},
+                    "closure_witness": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": ["certificate", "intrinsic_certificate"],
+                      "properties": {
+                        "certificate": {"type": "string", "minLength": 1},
+                        "intrinsic_certificate": {"type": "string", "minLength": 1}
+                      }
+                    }
+                  }
+                }
+              }
             }
           },
           "truncated_quotient_result": {
             "type": "object",
+            "additionalProperties": false,
             "required": ["result_id", "result_state", "basis_exhaustiveness_status", "relative_cohomology_status", "candidates"],
             "properties": {
               "result_id": {"type": "string", "pattern": "^.*_TRUNCATED_QUOTIENT$"},

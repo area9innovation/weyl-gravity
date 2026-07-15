@@ -20,6 +20,12 @@ the classical export can populate higher blocks without changing the
 relative-cohomology API.  Shapes, forbidden shifts, and the AFN0 projection
 fail closed.
 
+The interface now also composes every compatible block and independently
+checks `Q^2=0` at each total antifield-number shift, `d_h^2=0` on every
+layer, and blockwise commutation of `Q` with `d_h`.  A deliberately nonzero
+diagonal square is rejected by regression test.  These checks validate the
+fixture wiring; the imported classical rows remain pending.
+
 The comparison ledger is frozen to:
 
 ```text

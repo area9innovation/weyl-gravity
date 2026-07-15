@@ -80,14 +80,18 @@ For `omega E4`, the first attempted intrinsic step leaves the exact residual
 kept `IN_PROGRESS` rather than silently identified with the variational
 current.  The generalized connection
 `tilde_omega_a = partial_a omega - Schouten_ab dx^b` has now been admitted.
-The exact four-dimensional total-form coefficients derived from Theorem 1 of
-Boulanger's [Wess--Zumino classification](https://doi.org/10.1088/1126-6708/2007/07/069)
-are `(4,-4,1)` for generalized-connection degrees `r=(0,1,2)`.  The `r=0`
-component is recorded separately as type B; the
-`r=1,2` components form the type-A template.  Machine expansion into every
-ordinary bidegree and verification of all residuals is still pending.
-The receipt stores the source formula, the project convention map, the
-four-dimensional specialization, and the derived coefficient vector.  Its
+Theorem 1 of Boulanger's
+[Wess--Zumino classification](https://arxiv.org/abs/0704.2472) prints the
+coefficient `(-1)^p 2^(-p) m!/(r!p!)`, which specializes to
+`(1/4,-1,1)` for `r=(0,1,2)`.  The existing project-carrier candidate is
+`(4,-4,1)`.  These are now stored as distinct vectors: their mismatch is an
+explicit normalization gate, not silently absorbed.  The convention map
+also freezes the source definitions of the total differential,
+`tilde_omega`, the Schouten tensor, the Weyl two-form, and the top Euler
+factor `e^4_1=(1/4) omega E4`.  Machine expansion into every ordinary
+bidegree, reconciliation of the carrier normalization, and verification of
+all residuals are still pending.  The `r=0` component is recorded separately
+as type B; the `r=1,2` components form the type-A template.  Its
 status is `TEMPLATE_CANDIDATE_NOT_YET_VERIFIED_TOWER`, not a completed Euler
 certificate.  Separate regression gates cover the verified top
 transgression, the retained `d omega wedge Theta_E` source, and the still-open

@@ -8,12 +8,13 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .afn0_production import afn0_production_results
+from .afn0_production import afn0_production_results, afn0_slice_results
 from .algebra import canonical_sha256
 
 
 PACKAGE_ROOT = Path(__file__).resolve().parent
 RESULT_DIR = PACKAGE_ROOT / "cohomology"
+SLICE_RESULT_DIR = RESULT_DIR / "slices"
 CERTIFICATE_PATH = PACKAGE_ROOT / "certificates" / "AFN0_PRODUCTION_RUN_CERTIFICATE.json"
 SCHEMA_PATH = PACKAGE_ROOT / "schema" / "afn0_result.schema.json"
 
@@ -24,6 +25,8 @@ def _source_manifest() -> dict[str, str]:
         "afn0_production_certificate.py",
         "basis_exhaustiveness.py",
         "schema/afn0_result.schema.json",
+        "schema/afn0_closure_result.schema.json",
+        "schema/afn0_truncated_quotient_result.schema.json",
         "tests/test_afn0_production.py",
         "tests/test_basis_exhaustiveness.py",
     )
@@ -35,6 +38,7 @@ def _source_manifest() -> dict[str, str]:
 
 def build_certificate() -> dict[str, Any]:
     results = afn0_production_results()
+    slice_results = afn0_slice_results()
     h04 = results["H04_AFN0_RESULT"]
     h14 = results["H14_AFN0_RESULT"]
     exact_ids = {
@@ -78,6 +82,10 @@ def build_certificate() -> dict[str, Any]:
         "result_hashes": {
             "H04_AFN0_RESULT": canonical_sha256(h04),
             "H14_AFN0_RESULT": canonical_sha256(h14),
+            **{
+                result_id: canonical_sha256(result)
+                for result_id, result in sorted(slice_results.items())
+            },
         },
         "canonical_hashes": {
             "source_manifest_sha256": canonical_sha256(_source_manifest()),
@@ -105,6 +113,12 @@ def main() -> int:
         RESULT_DIR / f"{result_id}.json": _render(result)
         for result_id, result in results.items()
     }
+    outputs.update(
+        {
+            SLICE_RESULT_DIR / f"{result_id}.json": _render(result)
+            for result_id, result in afn0_slice_results().items()
+        }
+    )
     outputs[CERTIFICATE_PATH] = _render(build_certificate())
     if args.emit:
         for path, content in outputs.items():

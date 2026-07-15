@@ -27,7 +27,7 @@
           "adjoin Box R with its explicit divergence primitive",
           "for ghost number one multiply carriers by the undifferentiated Weyl ghost"
         ],
-        "basis_manifest_hash": "1ea4e2f13966a5c58eab637ec6d5e1784eea37846e9259d677b96d913898171d",
+        "basis_manifest_hash": "55a754cb28ffb350172004480814063df1ea9c169ab6d60ec6b3bf0d4e3758ce",
         "candidate_ids": [
           "ANOM_OMEGA_C2",
           "ANOM_OMEGA_BOX_R"
@@ -57,16 +57,26 @@
           "currently_generated_signature_count": 2,
           "currently_generated_signatures": [
             {
+              "covariant_index_count_after_diff_ghost": 6,
               "curvature_count": 1,
-              "tensor_derivative_count": 2,
-              "weyl_ghost_derivative_order": 0,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 2
             },
             {
+              "covariant_index_count_after_diff_ghost": 8,
               "curvature_count": 2,
-              "tensor_derivative_count": 0,
-              "weyl_ghost_derivative_order": 0,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 0
             }
           ],
           "excluded_types_with_reason": [
@@ -75,7 +85,7 @@
               "type": "pure_metric_derivatives"
             },
             {
-              "reason": "engineering convention and index-orbit enumeration are pending",
+              "reason": "signatures are enumerated; index-orbit generation and BRST quotient are pending",
               "type": "pure_diffeomorphism_ghost_signatures"
             },
             {
@@ -94,6 +104,12 @@
               "engineering_dimension": 2,
               "ghost_number": 0
             },
+            "diffeomorphism_ghost": {
+              "contravariant_rank": 1,
+              "derivative_cost": 1,
+              "engineering_dimension": -1,
+              "ghost_number": 1
+            },
             "metric_inverse_metric_levi_civita": {
               "engineering_dimension": 0,
               "ghost_number": 0
@@ -105,68 +121,249 @@
             }
           },
           "grading_equations": [
-            "2*n_curvature + n_tensor_derivative + n_ghost_derivative = 4",
-            "n_weyl_ghost = 1",
+            "2*n_curvature + n_tensor_derivative + n_ghost_derivative + ghost_engineering_offset = 4",
+            "n_total_ghost = 1",
+            "covariant index balance after contracting a Diff-ghost vector is even",
+            "epsilon_count = 0 for even parity and 1 for odd parity",
+            "ordinary top-form carrier has form_degree = 4 and generalized_connection_degree = 0",
             "all signature variables are nonnegative integers"
           ],
-          "grading_manifest_hash": "f81068a2daa7c2f932421080f3c8e6042867f004ce02dd9d4a0bc76ab9a5f010",
-          "integer_solution_count": 9,
+          "grading_manifest_hash": "ac6a7400b02e472c17e3ae5761548f14cb7124e27a039fb22c3d5661f61f3fac",
+          "integer_solution_count": 21,
           "integer_solutions_for_monomial_types": [
             {
+              "covariant_index_count_after_diff_ghost": 4,
               "curvature_count": 0,
-              "tensor_derivative_count": 0,
-              "weyl_ghost_derivative_order": 4,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 5
             },
             {
+              "covariant_index_count_after_diff_ghost": 4,
               "curvature_count": 0,
-              "tensor_derivative_count": 1,
-              "weyl_ghost_derivative_order": 3,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 4
             },
             {
+              "covariant_index_count_after_diff_ghost": 4,
               "curvature_count": 0,
-              "tensor_derivative_count": 2,
-              "weyl_ghost_derivative_order": 2,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 1,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 4
             },
             {
+              "covariant_index_count_after_diff_ghost": 4,
               "curvature_count": 0,
-              "tensor_derivative_count": 3,
-              "weyl_ghost_derivative_order": 1,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 1,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 3
             },
             {
+              "covariant_index_count_after_diff_ghost": 4,
               "curvature_count": 0,
-              "tensor_derivative_count": 4,
-              "weyl_ghost_derivative_order": 0,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 2,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 3
             },
             {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 2,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 2
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 3,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 2
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 3,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 1
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 4,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 1
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 4,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 0
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 5,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 0
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 6,
               "curvature_count": 1,
-              "tensor_derivative_count": 0,
-              "weyl_ghost_derivative_order": 2,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 3
             },
             {
+              "covariant_index_count_after_diff_ghost": 6,
               "curvature_count": 1,
-              "tensor_derivative_count": 1,
-              "weyl_ghost_derivative_order": 1,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 2
             },
             {
+              "covariant_index_count_after_diff_ghost": 6,
               "curvature_count": 1,
-              "tensor_derivative_count": 2,
-              "weyl_ghost_derivative_order": 0,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 1,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 2
             },
             {
+              "covariant_index_count_after_diff_ghost": 6,
+              "curvature_count": 1,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 1,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 1
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 6,
+              "curvature_count": 1,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 2,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 1
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 6,
+              "curvature_count": 1,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 2,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 0
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 6,
+              "curvature_count": 1,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 3,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 0
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 8,
               "curvature_count": 2,
-              "tensor_derivative_count": 0,
-              "weyl_ghost_derivative_order": 0,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 1
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 8,
+              "curvature_count": 2,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 0
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 8,
+              "curvature_count": 2,
+              "epsilon_count": 0,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 1,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 0
             }
-          ]
+          ],
+          "multigrading_status": "ENGINEERING_FORM_GHOST_PARITY_INDEX_BALANCE_ENUMERATED"
         },
         "top_curvature_carrier_basis_status": "COMPLETE"
       },
@@ -240,7 +437,7 @@
           "adjoin Box R with its explicit divergence primitive",
           "for ghost number one multiply carriers by the undifferentiated Weyl ghost"
         ],
-        "basis_manifest_hash": "efc6ff5d09d60774a43626d99cea48fffd6be6603501280d3e9e82b48883c19f",
+        "basis_manifest_hash": "48af1fa1e670baa9cb92815051de79d764d7b6efd62776c6e322a0dd71cbbce8",
         "candidate_ids": [
           "ANOM_OMEGA_C_DUAL_C"
         ],
@@ -269,16 +466,26 @@
           "currently_generated_signature_count": 2,
           "currently_generated_signatures": [
             {
+              "covariant_index_count_after_diff_ghost": 6,
               "curvature_count": 1,
-              "tensor_derivative_count": 2,
-              "weyl_ghost_derivative_order": 0,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 2
             },
             {
+              "covariant_index_count_after_diff_ghost": 8,
               "curvature_count": 2,
-              "tensor_derivative_count": 0,
-              "weyl_ghost_derivative_order": 0,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 0
             }
           ],
           "excluded_types_with_reason": [
@@ -287,7 +494,7 @@
               "type": "pure_metric_derivatives"
             },
             {
-              "reason": "engineering convention and index-orbit enumeration are pending",
+              "reason": "signatures are enumerated; index-orbit generation and BRST quotient are pending",
               "type": "pure_diffeomorphism_ghost_signatures"
             },
             {
@@ -306,6 +513,12 @@
               "engineering_dimension": 2,
               "ghost_number": 0
             },
+            "diffeomorphism_ghost": {
+              "contravariant_rank": 1,
+              "derivative_cost": 1,
+              "engineering_dimension": -1,
+              "ghost_number": 1
+            },
             "metric_inverse_metric_levi_civita": {
               "engineering_dimension": 0,
               "ghost_number": 0
@@ -317,68 +530,249 @@
             }
           },
           "grading_equations": [
-            "2*n_curvature + n_tensor_derivative + n_ghost_derivative = 4",
-            "n_weyl_ghost = 1",
+            "2*n_curvature + n_tensor_derivative + n_ghost_derivative + ghost_engineering_offset = 4",
+            "n_total_ghost = 1",
+            "covariant index balance after contracting a Diff-ghost vector is even",
+            "epsilon_count = 0 for even parity and 1 for odd parity",
+            "ordinary top-form carrier has form_degree = 4 and generalized_connection_degree = 0",
             "all signature variables are nonnegative integers"
           ],
-          "grading_manifest_hash": "f81068a2daa7c2f932421080f3c8e6042867f004ce02dd9d4a0bc76ab9a5f010",
-          "integer_solution_count": 9,
+          "grading_manifest_hash": "54eeb13fc01d0c9cc5ea0b22bad68146e153954193d2d9095ce2714eafd9e33a",
+          "integer_solution_count": 21,
           "integer_solutions_for_monomial_types": [
             {
+              "covariant_index_count_after_diff_ghost": 4,
               "curvature_count": 0,
-              "tensor_derivative_count": 0,
-              "weyl_ghost_derivative_order": 4,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 5
             },
             {
+              "covariant_index_count_after_diff_ghost": 4,
               "curvature_count": 0,
-              "tensor_derivative_count": 1,
-              "weyl_ghost_derivative_order": 3,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 4
             },
             {
+              "covariant_index_count_after_diff_ghost": 4,
               "curvature_count": 0,
-              "tensor_derivative_count": 2,
-              "weyl_ghost_derivative_order": 2,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 1,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 4
             },
             {
+              "covariant_index_count_after_diff_ghost": 4,
               "curvature_count": 0,
-              "tensor_derivative_count": 3,
-              "weyl_ghost_derivative_order": 1,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 1,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 3
             },
             {
+              "covariant_index_count_after_diff_ghost": 4,
               "curvature_count": 0,
-              "tensor_derivative_count": 4,
-              "weyl_ghost_derivative_order": 0,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 2,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 3
             },
             {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 2,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 2
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 3,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 2
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 3,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 1
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 4,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 1
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 4,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 0
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 4,
+              "curvature_count": 0,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 5,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 0
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 6,
               "curvature_count": 1,
-              "tensor_derivative_count": 0,
-              "weyl_ghost_derivative_order": 2,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 3
             },
             {
+              "covariant_index_count_after_diff_ghost": 6,
               "curvature_count": 1,
-              "tensor_derivative_count": 1,
-              "weyl_ghost_derivative_order": 1,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 2
             },
             {
+              "covariant_index_count_after_diff_ghost": 6,
               "curvature_count": 1,
-              "tensor_derivative_count": 2,
-              "weyl_ghost_derivative_order": 0,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 1,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 2
             },
             {
+              "covariant_index_count_after_diff_ghost": 6,
+              "curvature_count": 1,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 1,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 1
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 6,
+              "curvature_count": 1,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 2,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 1
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 6,
+              "curvature_count": 1,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 2,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 0
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 6,
+              "curvature_count": 1,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 3,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 0
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 8,
               "curvature_count": 2,
-              "tensor_derivative_count": 0,
-              "weyl_ghost_derivative_order": 0,
-              "weyl_ghost_factor_count": 1
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 1
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 8,
+              "curvature_count": 2,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 0,
+              "ghost_factor_count": 1,
+              "ghost_species": "WEYL",
+              "tensor_derivative_count": 0
+            },
+            {
+              "covariant_index_count_after_diff_ghost": 8,
+              "curvature_count": 2,
+              "epsilon_count": 1,
+              "form_degree": 4,
+              "generalized_connection_degree": 0,
+              "ghost_derivative_order": 1,
+              "ghost_factor_count": 1,
+              "ghost_species": "DIFF",
+              "tensor_derivative_count": 0
             }
-          ]
+          ],
+          "multigrading_status": "ENGINEERING_FORM_GHOST_PARITY_INDEX_BALANCE_ENUMERATED"
         },
         "top_curvature_carrier_basis_status": "COMPLETE"
       },

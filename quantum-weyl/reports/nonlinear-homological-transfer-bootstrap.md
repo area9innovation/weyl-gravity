@@ -55,19 +55,15 @@ transferred before `QME_RESTORED`.
 
 | Command | Elapsed seconds | Status | Tier |
 |---|---:|---|---:|
-| `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --emit` | 0.03 | PASS | 1 |
-| `python3 quantum-weyl/transfer/residual_cubic_certificate.py --emit` | 5.51 | PASS | 1 |
-| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 5.61 | PASS (12 tests) | 1 |
-| `python3 -m json.tool quantum-weyl/transfer/schema/nonlinear_classical_export.schema.json` | 0.02 | PASS | 0 |
-| `python3 -m py_compile quantum-weyl/transfer/*.py quantum-weyl/transfer/tests/*.py` | 0.03 | PASS | 0 |
-| `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check` | 0.03 | PASS | 1 |
-| `git diff --check -- quantum-weyl/README.md quantum-weyl/transfer quantum-weyl/reports/nonlinear-homological-transfer-bootstrap.md` | <0.01 | PASS | 0 |
+| `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --emit` | 0.04 | PASS | 2 |
+| `python3 quantum-weyl/transfer/residual_cubic_certificate.py --emit` | 45.79 | PASS | 1 |
+| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 36.05 | PASS (19 tests) | 1 |
+| Compile, JSON-parse three artifacts, and scoped `git diff --check` | 0.12 | PASS | 0 |
 
 An optional Draft-2020-12 meta-schema check was attempted but was **not
 run** because the environment does not provide the `jsonschema` module.  It
 is not counted as a pass; deterministic JSON parsing did pass.
 
-Tiers 2 and 3 were not run.  Their escalation criteria are not met: this
-work adds an isolated engine and contract, changes no imported classical
-mathematical input or shared algebra, and promotes no lifecycle or paper
-claim.
+The nonlinear bootstrap regeneration is the affected Tier-2 consumer check.
+Tier 3 was not run: this changes no imported classical mathematical input or
+shared algebra and promotes no lifecycle or paper claim.

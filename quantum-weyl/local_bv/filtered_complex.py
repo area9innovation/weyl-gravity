@@ -110,6 +110,107 @@ class FilteredLocalComplex:
             "comparison_statuses": list(LIFT_COMPARISON_STATUSES),
         }
 
+    def q_block(self, source: FilteredDegree, shift: int) -> SparseMatrix:
+        target_afn = source.antifield_number + shift
+        if target_afn < 0:
+            return SparseMatrix.zero(0, self._dimension(source))
+        target = FilteredDegree(
+            target_afn, source.ghost_number + 1, source.form_degree
+        )
+        return self.q_blocks.get(
+            (source, shift),
+            SparseMatrix.zero(self._dimension(target), self._dimension(source)),
+        )
+
+    def d_map(self, source: FilteredDegree) -> SparseMatrix:
+        if source.form_degree == 4:
+            return SparseMatrix.zero(0, self._dimension(source))
+        target = FilteredDegree(
+            source.antifield_number,
+            source.ghost_number,
+            source.form_degree + 1,
+        )
+        return self.d_maps.get(
+            source,
+            SparseMatrix.zero(self._dimension(target), self._dimension(source)),
+        )
+
+    def verify_filtered_identities(self) -> dict[str, str]:
+        """Verify ``Q^2=0``, ``d_h^2=0`` and ``[Q,d_h]=0`` blockwise."""
+
+        shifts = sorted({shift for _, shift in self.q_blocks})
+        total_shifts = sorted(
+            {left + right for left in shifts for right in shifts}
+        )
+        for source in self.spaces:
+            for total_shift in total_shifts:
+                target_afn = source.antifield_number + total_shift
+                if target_afn < 0:
+                    continue
+                final = FilteredDegree(
+                    target_afn, source.ghost_number + 2, source.form_degree
+                )
+                square = SparseMatrix.zero(
+                    self._dimension(final), self._dimension(source)
+                )
+                for first_shift in shifts:
+                    second_shift = total_shift - first_shift
+                    intermediate_afn = source.antifield_number + first_shift
+                    if intermediate_afn < 0:
+                        continue
+                    intermediate = FilteredDegree(
+                        intermediate_afn,
+                        source.ghost_number + 1,
+                        source.form_degree,
+                    )
+                    square = square + self.q_block(
+                        intermediate, second_shift
+                    ).compose(self.q_block(source, first_shift))
+                if square.entries:
+                    raise ValueError(
+                        f"filtered Q^2 != 0 at {source}, shift {total_shift}"
+                    )
+
+            if source.form_degree <= 3:
+                d_target = FilteredDegree(
+                    source.antifield_number,
+                    source.ghost_number,
+                    source.form_degree + 1,
+                )
+                if self.d_map(d_target).compose(self.d_map(source)).entries:
+                    raise ValueError(f"filtered d_h^2 != 0 at {source}")
+
+            if source.form_degree < 4:
+                d_target = FilteredDegree(
+                    source.antifield_number,
+                    source.ghost_number,
+                    source.form_degree + 1,
+                )
+                for shift in shifts:
+                    q_target_afn = source.antifield_number + shift
+                    if q_target_afn < 0:
+                        continue
+                    q_target = FilteredDegree(
+                        q_target_afn,
+                        source.ghost_number + 1,
+                        source.form_degree,
+                    )
+                    q_then_d = self.d_map(q_target).compose(
+                        self.q_block(source, shift)
+                    )
+                    d_then_q = self.q_block(d_target, shift).compose(
+                        self.d_map(source)
+                    )
+                    if q_then_d.entries != d_then_q.entries:
+                        raise ValueError(
+                            f"filtered Q and d_h do not commute at {source}, shift {shift}"
+                        )
+        return {
+            "filtered_Q_squared_zero": "VERIFIED",
+            "filtered_d_h_squared_zero": "VERIFIED",
+            "filtered_Q_dh_commutator_zero": "VERIFIED",
+        }
+
     def afn0_view(self) -> FiniteBicomplex:
         spaces = {
             Bidegree(degree.ghost_number, degree.form_degree): labels

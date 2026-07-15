@@ -1,5 +1,8 @@
 import unittest
+from dataclasses import replace
 
+from local_bv.algebra import canonical_sha256
+from local_bv.basis_exhaustiveness import BasisExhaustivenessProof
 from local_bv.relative_cohomology import (
     Bidegree,
     FiniteBicomplex,
@@ -9,6 +12,23 @@ from local_bv.relative_cohomology import (
 
 
 class RelativeCohomologyTests(unittest.TestCase):
+    @staticmethod
+    def _fixture_proof() -> BasisExhaustivenessProof:
+        complex_ = certification_bicomplex()
+        basis_hash = complex_.cohomology(
+            1, max_form_degree=1
+        )["exhaustiveness_manifest_hash"]
+        hashes = [canonical_sha256({"fixture": name}) for name in range(6)]
+        return BasisExhaustivenessProof.create(
+            basis_manifest_hash=basis_hash,
+            declared_bounds_hash=hashes[0],
+            generator_algebra_hash=hashes[1],
+            grading_solution_hash=hashes[2],
+            orbit_enumeration_hash=hashes[3],
+            identity_quotient_hash=hashes[4],
+            proof_artifact_hash=hashes[5],
+        )
+
     def test_sparse_composition_and_totalization_sign(self) -> None:
         complex_ = certification_bicomplex()
         self.assertEqual(
@@ -59,14 +79,22 @@ class RelativeCohomologyTests(unittest.TestCase):
 
     def test_complete_witness_requires_explicit_exhaustiveness(self) -> None:
         result = certification_bicomplex().relative_cohomology(
-            0, 1, basis_exhaustiveness_status="EXHAUSTIVE"
+            0, 1, exhaustiveness_proof=self._fixture_proof()
         )
         self.assertEqual(
             result["dual_witness_type"], "COMPLETE_NONTRIVIALITY_WITNESS"
         )
-        with self.assertRaisesRegex(ValueError, "exhaustiveness"):
+        with self.assertRaises(TypeError):
             certification_bicomplex().relative_cohomology(
                 0, 1, basis_exhaustiveness_status="ASSUMED"
+            )
+        with self.assertRaisesRegex(ValueError, "hash"):
+            certification_bicomplex().relative_cohomology(
+                0,
+                1,
+                exhaustiveness_proof=replace(
+                    self._fixture_proof(), proof_hash="0" * 64
+                ),
             )
 
     def test_lower_anchor_sees_the_lower_only_class(self) -> None:

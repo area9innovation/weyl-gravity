@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-afn0-truncated-quotient-result-v1.json",
+  "title": "Standalone antifield-zero truncated quotient result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "parent_result_id", "slice_id", "classical_commit", "dependency_tags", "scope_label", "ghost_number", "form_degree", "antifield_number", "parity", "basis_manifest_hash", "result_state", "basis_exhaustiveness_status", "relative_cohomology_status", "candidates"],
+  "properties": {
+    "result_id": {"type": "string", "pattern": "^.*_TRUNCATED_QUOTIENT$"},
+    "parent_result_id": {"enum": ["H04_AFN0_RESULT", "H14_AFN0_RESULT"]},
+    "slice_id": {"type": "string", "minLength": 1},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope_label": {"const": "AFN0_ONLY"},
+    "ghost_number": {"enum": [0, 1]},
+    "form_degree": {"const": 4},
+    "antifield_number": {"const": 0},
+    "parity": {"enum": ["even", "odd"]},
+    "basis_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_state": {"const": "TRUNCATED_QUOTIENT_RESULT"},
+    "basis_exhaustiveness_status": {"const": "TRUNCATED"},
+    "relative_cohomology_status": {"const": "UNDECIDED"},
+    "candidates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["representative_id", "representative_sha256", "relative_cohomology_status", "exactness_witness", "nonmembership_witness", "permitted_nonmembership_witness_type"],
+        "properties": {
+          "representative_id": {"type": "string", "minLength": 1},
+          "representative_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "relative_cohomology_status": {"enum": ["EXACT", "UNDECIDED"]},
+          "exactness_witness": {"type": ["object", "string", "null"]},
+          "nonmembership_witness": {"type": "null"},
+          "permitted_nonmembership_witness_type": {"enum": ["TRUNCATED_NONMEMBERSHIP_WITNESS", "NOT_APPLICABLE_EXACT"]}
+        }
+      }
+    }
+  }
+}

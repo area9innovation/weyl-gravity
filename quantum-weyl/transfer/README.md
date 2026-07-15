@@ -34,11 +34,14 @@ Omega_3 = c^A mu_A(Phi,Phi) - f^A_BC c^B c^C b_A/2.
 
 The Hamiltonian vector field therefore computes and exactly normalizes
 `ell_2(matter,matter)` into the residual ghost momentum,
-`ell_2(ghost,matter)`, and the universal ghost brackets.  This selected
-residual cubic bracket is chirality diagonal and closes as the strict CE
-differential.  What remains absent is a portable support-local `q2` tensor
-before endpoint projection and any extra rows outside the selected algebraic
-field domain.
+`ell_2(ghost,matter)`, and the universal ghost brackets.  The portable exact
+payload uses one ordered magnetic basis for the Taub generators and fitted
+BRST structure constants, serializes all selected `q2` blocks, and verifies
+the cubic BFV master equation directly with the action-scaled symplectic
+pairing.  This selected residual cubic bracket is chirality diagonal and
+closes as the strict CE differential.  What remains absent is a portable
+support-local `q2` tensor before endpoint projection and any extra rows
+outside the selected algebraic field domain.
 
 The parity combinations
 
@@ -47,11 +50,13 @@ e = (W_+^2 + W_-^2)/sqrt(2)   dynamical Weyl-square direction
 o = (W_+^2 - W_-^2)/sqrt(2)   topological/Pontryagin direction
 ```
 
-are analysis outputs, not hard-coded bracket answers.  Once the classical
-export passes the schema, HT1 computes `ell_2` in the chiral basis and then
-changes basis to `(e,o)`.  HT2 computes the direct `q3` contact term and the
-`q2 s_cl q2` exchange trees separately, so centrality, inertness, and
-cancellations remain auditable.
+are analysis outputs, not hard-coded bracket answers.  They are
+particle-number-two, ghost-dressed deformation classes, so their interacting
+brackets are obtained from the induced coderivation on `Sym(H)` and a
+subsequent deformation-cohomology projection; they are not a two-dimensional
+basis rotation on the one-particle inputs of `q2`.  HT2 computes the direct
+`q3` contact term and the `q2 s_cl q2` exchange trees separately, so
+centrality, inertness, and cancellations remain auditable.
 
 The one-particle question is formulated as a particle-number filtration
 question.  Interactions need not preserve particle number, so the relevant

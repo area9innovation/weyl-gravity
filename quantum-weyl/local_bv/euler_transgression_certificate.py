@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from fractions import Fraction
 import hashlib
 import json
 from pathlib import Path
@@ -58,6 +59,8 @@ def build_certificate() -> dict[str, Any]:
             "closed_manifold_integrated_variation": "VERIFIED_BY_STOKES",
             "euler_full_diff_completed_tower": "VERIFIED",
             "omega_E4_generalized_connection_template": "VERIFIED",
+            "euler_primary_source_convention_map": "VERIFIED",
+            "source_project_carrier_normalization": "IN_PROGRESS",
             "omega_E4_intrinsic_descent_continuation": "IN_PROGRESS",
             "euler_top_transgression_regression": "VERIFIED",
             "unresolved_domega_theta_regression": "VERIFIED",
@@ -95,20 +98,42 @@ def build_certificate() -> dict[str, Any]:
                     "title": "General solutions of the Wess-Zumino consistency condition for the Weyl anomalies",
                     "journal": "JHEP 07 (2007) 069",
                     "doi": "10.1088/1126-6708/2007/07/069",
-                    "formula": "Theorem 1, equations (3.16)-(3.20)",
+                    "formula": "Theorems 1 and 2",
+                    "arxiv": "0704.2472",
+                    "source_version": "v1 (2007-04-19)",
                 },
                 "generalized_connection": generalized["generalized_connection"],
-                "source_formula": "Phi^[n-r]_r = (-1)^p 2^p m!/(r!p!) psi_(2p) W^p, p=m-r, m=n/2",
+                "source_formula": "Phi^[n-r]_r = (-1)^p/2^p * m!/(r!p!) psi_(2p) W^p, p=m-r, m=n/2",
+                "source_dimension_four_coefficients": [
+                    _fraction(value)
+                    for value in (Fraction(1, 4), Fraction(-1), Fraction(1))
+                ],
                 "source_convention_map": {
-                    "source_s_tilde_W": "project_total_D = Q_W + signed d_h",
-                    "source_tilde_omega_alpha": generalized[
+                    "source_total_differential": "s_tilde_W = s_W + d",
+                    "project_total_differential": "D = Q_W + (-1)^ghost_number d_h",
+                    "component_sign_translation": "PENDING_BIDEGREE_EXPANSION",
+                    "source_generalized_connections": [
+                        "2 omega",
+                        "dx^nu",
+                        "Gamma^nu_(mu rho) dx^rho",
+                        "tilde_omega_alpha"
+                    ],
+                    "source_tilde_omega_alpha": "partial_alpha omega - K_(alpha rho) dx^rho",
+                    "project_tilde_omega_alpha": generalized[
                         "generalized_connection"
                     ],
-                    "source_W_mu_nu": "project Weyl tensor-valued two-form",
-                    "source_omega": "project odd Weyl ghost",
-                    "normalization_status": "PENDING_TOP_EULER_MATCH",
+                    "schouten_dimension_four": "K_ab = 1/2 (Ric_ab - R g_ab/6)",
+                    "source_W_mu_nu": "W^(mu nu) = (1/2) dx^rho dx^sigma W^mu_(lambda rho sigma) g^(lambda nu)",
+                    "source_euler_top_component": "e^4_1 = (1/4) omega epsilon_abcd R^ab wedge R^cd",
+                    "project_euler_density": "E4 = epsilon_abcd R^ab wedge R^cd",
+                    "source_to_project_top_factor": _fraction(Fraction(1, 4)),
+                    "orientation": "epsilon_abcd follows the frozen project orientation",
+                    "carrier_normalization_status": "UNRESOLVED_SOURCE_PROJECT_COEFFICIENT_MISMATCH",
                 },
                 "dimension_specialization": 4,
+                "project_candidate_coefficient_formula": generalized[
+                    "project_candidate_coefficient_formula"
+                ],
                 "derived_coefficients": [
                     _fraction(component["coefficient"])
                     for component in generalized["components"]

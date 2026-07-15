@@ -7,6 +7,7 @@ from fractions import Fraction
 from typing import Mapping, Sequence
 
 from .algebra import canonical_sha256
+from .basis_exhaustiveness import BasisExhaustivenessProof
 
 
 @dataclass(frozen=True, order=True)
@@ -454,10 +455,8 @@ class FiniteBicomplex:
         total_degree: int,
         *,
         max_form_degree: int | None = None,
-        basis_exhaustiveness_status: str = "TRUNCATED",
+        exhaustiveness_proof: BasisExhaustivenessProof | None = None,
     ) -> dict[str, object]:
-        if basis_exhaustiveness_status not in {"TRUNCATED", "EXHAUSTIVE"}:
-            raise ValueError("unknown basis exhaustiveness status")
         self.verify_bicomplex()
         differential = self.total_differential(
             total_degree, max_form_degree=max_form_degree
@@ -490,6 +489,43 @@ class FiniteBicomplex:
                 total_degree, max_form_degree=max_form_degree
             )
         ]
+        ansatz_basis_hash = canonical_sha256(basis_payload)
+        exhaustiveness_manifest = {
+            "total_degree": total_degree,
+            "max_form_degree": max_form_degree,
+            "previous_basis": [
+                {
+                    "ghost_number": degree.ghost_number,
+                    "form_degree": degree.form_degree,
+                    "label": label,
+                }
+                for degree, _, label in self.total_basis(
+                    total_degree - 1, max_form_degree=max_form_degree
+                )
+            ],
+            "ansatz_basis": basis_payload,
+            "next_basis": [
+                {
+                    "ghost_number": degree.ghost_number,
+                    "form_degree": degree.form_degree,
+                    "label": label,
+                }
+                for degree, _, label in self.total_basis(
+                    total_degree + 1, max_form_degree=max_form_degree
+                )
+            ],
+            "incoming_differential": previous.canonical_payload(),
+            "cocycle_differential": differential.canonical_payload(),
+            "outgoing_differential": next_differential.canonical_payload(),
+        }
+        exhaustiveness_manifest_hash = canonical_sha256(exhaustiveness_manifest)
+        if exhaustiveness_proof is not None:
+            exhaustiveness_proof.verify(
+                expected_basis_manifest_hash=exhaustiveness_manifest_hash
+            )
+        basis_exhaustiveness_status = (
+            "EXHAUSTIVE" if exhaustiveness_proof is not None else "TRUNCATED"
+        )
         representative_coordinates = _coordinates_payload(representatives)
         dual_witness_coordinates = _coordinates_payload(dual_witnesses)
         witness_type = (
@@ -501,7 +537,8 @@ class FiniteBicomplex:
             "total_degree": total_degree,
             "max_form_degree": max_form_degree,
             "ansatz_dimension": differential.column_count,
-            "ansatz_basis_hash": canonical_sha256(basis_payload),
+            "ansatz_basis_hash": ansatz_basis_hash,
+            "exhaustiveness_manifest_hash": exhaustiveness_manifest_hash,
             "cocycle_matrix_rank": differential.rank(),
             "cocycle_dimension": len(cocycles),
             "coboundary_matrix_rank": len(coboundaries),
@@ -509,6 +546,11 @@ class FiniteBicomplex:
             "representatives": representatives,
             "representative_coordinates": representative_coordinates,
             "basis_exhaustiveness_status": basis_exhaustiveness_status,
+            "basis_exhaustiveness_proof": (
+                exhaustiveness_proof.canonical_payload()
+                if exhaustiveness_proof is not None
+                else None
+            ),
             "dual_witness_type": witness_type,
             "dual_nontriviality_witness_coordinates": dual_witness_coordinates,
             "dual_witness_pairings": [
@@ -521,10 +563,16 @@ class FiniteBicomplex:
             "proof_hash": canonical_sha256(
                 {
                     "basis": basis_payload,
+                    "exhaustiveness_manifest_hash": exhaustiveness_manifest_hash,
                     "differential": differential.canonical_payload(),
                     "previous": previous.canonical_payload(),
                     "representatives": representative_coordinates,
                     "dual_nontriviality_witnesses": dual_witness_coordinates,
+                    "basis_exhaustiveness_proof": (
+                        exhaustiveness_proof.canonical_payload()
+                        if exhaustiveness_proof is not None
+                        else None
+                    ),
                 }
             ),
         }
@@ -534,7 +582,7 @@ class FiniteBicomplex:
         ghost_number: int,
         form_degree: int,
         *,
-        basis_exhaustiveness_status: str = "TRUNCATED",
+        exhaustiveness_proof: BasisExhaustivenessProof | None = None,
     ) -> dict[str, object]:
         """Project complete total cocycles onto the requested top bidegree.
 
@@ -545,8 +593,6 @@ class FiniteBicomplex:
         ``H^{ghost_number,form_degree}(Q|d_h)``.
         """
 
-        if basis_exhaustiveness_status not in {"TRUNCATED", "EXHAUSTIVE"}:
-            raise ValueError("unknown basis exhaustiveness status")
         anchor = Bidegree(ghost_number, form_degree)
         if not 0 <= form_degree <= 4:
             raise ValueError("anchor form degree is outside 0,...,4")
@@ -606,8 +652,9 @@ class FiniteBicomplex:
         total = self.cohomology(
             total_degree,
             max_form_degree=form_degree,
-            basis_exhaustiveness_status=basis_exhaustiveness_status,
+            exhaustiveness_proof=exhaustiveness_proof,
         )
+        basis_exhaustiveness_status = total["basis_exhaustiveness_status"]
         quotient_dimension = len(relative_representatives)
         lower_only_dimension = total["quotient_dimension"] - quotient_dimension
         if lower_only_dimension < 0:
@@ -637,6 +684,7 @@ class FiniteBicomplex:
             "total_degree": total_degree,
             "descent_completion_status": "COMPLETE_WITHIN_SUPPLIED_BICOMPLEX",
             "basis_exhaustiveness_status": basis_exhaustiveness_status,
+            "basis_exhaustiveness_proof": total["basis_exhaustiveness_proof"],
             "top_ansatz_dimension": self._dimension(anchor),
             "top_ansatz_basis_hash": canonical_sha256(top_basis_payload),
             "complete_total_cocycle_dimension": len(cocycle_lifts),
@@ -672,6 +720,9 @@ class FiniteBicomplex:
                         "form_degree": form_degree,
                     },
                     "basis_exhaustiveness_status": basis_exhaustiveness_status,
+                    "basis_exhaustiveness_proof": total[
+                        "basis_exhaustiveness_proof"
+                    ],
                     "top_basis": top_basis_payload,
                     "total_basis_hash": total["ansatz_basis_hash"],
                     "top_cocycles": _coordinates_payload(top_cocycles),

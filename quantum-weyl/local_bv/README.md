@@ -221,10 +221,16 @@ top curvature-carrier bases are generated, but lower-form production bases
 and matrices remain `IN_PROGRESS`, so no familiar representative has been
 promoted to a nontrivial relative class.
 Each slice now stores a closure result separately from its truncated quotient
-result.  The structural grading enumerator is in
+result, and the eight mode-specific receipts live under
+[`cohomology/slices/`](cohomology/slices/).  Complete-witness promotion now
+requires a hash-bound `BasisExhaustivenessProof` covering all three adjacent
+total degrees and their differentials; a bare status string is rejected.
+The structural multigrading enumerator is in
 [`basis_exhaustiveness.py`](basis_exhaustiveness.py), and the empty
 antifield-filtration block interface is certified by
 [`certificates/AFN_FILTRATION_INTERFACE_CERTIFICATE.json`](certificates/AFN_FILTRATION_INTERFACE_CERTIFICATE.json).
+That interface checks the filtered `Q^2`, `d_h^2`, and `Q`--`d_h` identities
+blockwise before imported rows can be accepted.
 
 Next admissible local steps are the continuation of the intrinsic type-A
 descent from `omega E4`, completion of the AFN0 lower-form mapping-cone basis,

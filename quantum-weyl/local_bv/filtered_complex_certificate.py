@@ -15,12 +15,14 @@ from .relative_cohomology import SparseMatrix
 
 PACKAGE_ROOT = Path(__file__).resolve().parent
 OUTPUT_PATH = PACKAGE_ROOT / "certificates" / "AFN_FILTRATION_INTERFACE_CERTIFICATE.json"
+SCHEMA_PATH = PACKAGE_ROOT / "schema" / "filtered_complex_certificate.schema.json"
 
 
 def _source_manifest() -> dict[str, str]:
     paths = (
         "filtered_complex.py",
         "filtered_complex_certificate.py",
+        "schema/filtered_complex_certificate.schema.json",
         "tests/test_filtered_complex.py",
     )
     return {
@@ -46,6 +48,7 @@ def build_certificate() -> dict[str, Any]:
         (x, 1): SparseMatrix.from_dense(((0,),)),
     }
     complex_ = FilteredLocalComplex(spaces, blocks, {})
+    filtered_checks = complex_.verify_filtered_identities()
     afn0_checks = complex_.afn0_view().verify_bicomplex()
     return {
         "result_id": "AFN_FILTRATION_INTERFACE_CERTIFICATE",
@@ -57,6 +60,7 @@ def build_certificate() -> dict[str, Any]:
             "delta_minus_one_block": "VERIFIED",
             "positive_Q_gt0_block": "VERIFIED",
             "afn0_view_reuses_relative_cohomology_API": "VERIFIED",
+            **filtered_checks,
             **afn0_checks,
         },
         "block_manifest": complex_.block_manifest(),

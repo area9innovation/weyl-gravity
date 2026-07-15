@@ -40,6 +40,22 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         ]
         self.assertEqual(template["dimension_specialization"], 4)
         self.assertEqual(
+            template["source_dimension_four_coefficients"],
+            [
+                {"numerator": 1, "denominator": 4},
+                {"numerator": -1, "denominator": 1},
+                {"numerator": 1, "denominator": 1},
+            ],
+        )
+        self.assertEqual(
+            template["source_convention_map"]["carrier_normalization_status"],
+            "UNRESOLVED_SOURCE_PROJECT_COEFFICIENT_MISMATCH",
+        )
+        self.assertEqual(
+            template["source_convention_map"]["source_to_project_top_factor"],
+            {"numerator": 1, "denominator": 4},
+        )
+        self.assertEqual(
             template["certificate_status"],
             "TEMPLATE_CANDIDATE_NOT_YET_VERIFIED_TOWER",
         )

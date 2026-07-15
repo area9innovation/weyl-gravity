@@ -4,7 +4,12 @@ from __future__ import annotations
 
 import argparse
 
-from residual_cubic_block import OUTPUT_PATH, build_certificate, render_certificate
+from residual_cubic_block import (
+    OUTPUT_PATH,
+    build_certificate,
+    render_certificate,
+    validate_certificate,
+)
 
 
 def main() -> int:
@@ -13,7 +18,9 @@ def main() -> int:
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--max-energy", type=int, default=4)
     args = parser.parse_args()
-    content = render_certificate(build_certificate(args.max_energy))
+    certificate = build_certificate(args.max_energy)
+    validate_certificate(certificate)
+    content = render_certificate(certificate)
     if args.emit:
         OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT_PATH.write_text(content, encoding="utf-8")

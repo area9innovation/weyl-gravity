@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "residual-cubic-block-v2.schema.json",
+  "title": "Portable selected residual cubic q2 payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scalar_format",
+    "basis",
+    "structure_constants",
+    "matter_phase_space",
+    "q2"
+  ],
+  "properties": {
+    "schema_version": {"const": 2},
+    "scalar_format": {"const": "sympy-srepr-exact-v1"},
+    "basis": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "index",
+          "name",
+          "generator_degree",
+          "ghost_degree",
+          "generator_parity",
+          "ghost_parity",
+          "ghost_momentum_parity"
+        ],
+        "properties": {
+          "index": {"type": "integer", "minimum": 0, "maximum": 14},
+          "name": {"type": "string"},
+          "generator_degree": {"type": "integer", "minimum": -1, "maximum": 1},
+          "ghost_degree": {"type": "integer", "minimum": -1, "maximum": 1},
+          "generator_parity": {"const": "even"},
+          "ghost_parity": {"const": "odd"},
+          "ghost_momentum_parity": {"const": "odd"}
+        }
+      }
+    },
+    "structure_constants": {"$ref": "#/$defs/sparseTensor3"},
+    "matter_phase_space": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis",
+        "ordered_basis",
+        "polarization",
+        "dimension",
+        "chiral_dimension",
+        "finite_regression_maximum_energy",
+        "master_equation_source_indices",
+        "canonical_action_scale",
+        "action_scaled_symplectic_form",
+        "poisson_inverse"
+      ],
+      "properties": {
+        "basis": {"type": "string"},
+        "ordered_basis": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "index",
+              "chirality",
+              "tower",
+              "energy",
+              "left_spin",
+              "right_spin",
+              "magnetic_left",
+              "magnetic_right"
+            ],
+            "properties": {
+              "index": {"type": "integer", "minimum": 0},
+              "chirality": {"enum": [-1, 1]},
+              "tower": {"enum": ["E", "A", "L"]},
+              "energy": {"type": "integer", "minimum": 2},
+              "left_spin": {"$ref": "#/$defs/exactScalar"},
+              "right_spin": {"$ref": "#/$defs/exactScalar"},
+              "magnetic_left": {"$ref": "#/$defs/exactScalar"},
+              "magnetic_right": {"$ref": "#/$defs/exactScalar"}
+            }
+          }
+        },
+        "polarization": {"type": "string"},
+        "dimension": {"type": "integer", "minimum": 1},
+        "chiral_dimension": {"type": "integer", "minimum": 1},
+        "finite_regression_maximum_energy": {"type": "integer", "minimum": 4},
+        "master_equation_source_indices": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "integer", "minimum": 0},
+          "uniqueItems": true
+        },
+        "canonical_action_scale": {"type": "string", "pattern": "^(?!.*Float).+$"},
+        "action_scaled_symplectic_form": {"$ref": "#/$defs/sparseMatrix"},
+        "poisson_inverse": {"$ref": "#/$defs/sparseMatrix"}
+      }
+    },
+    "q2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ghost_ghost_to_ghost",
+        "ghost_matter_to_matter",
+        "matter_matter_to_ghost_momentum",
+        "ghost_ghost_momentum_to_ghost_momentum"
+      ],
+      "properties": {
+        "ghost_ghost_to_ghost": {
+          "type": "object",
+          "required": ["convention", "tensor"],
+          "properties": {
+            "convention": {"type": "string"},
+            "tensor": {"$ref": "#/$defs/sparseTensor3"}
+          }
+        },
+        "ghost_matter_to_matter": {"$ref": "#/$defs/matrixFamily"},
+        "matter_matter_to_ghost_momentum": {"$ref": "#/$defs/matrixFamily"},
+        "ghost_ghost_momentum_to_ghost_momentum": {
+          "type": "object",
+          "required": ["convention", "tensor_reference"],
+          "properties": {
+            "convention": {"type": "string"},
+            "tensor_reference": {"const": "structure_constants"}
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "exactScalar": {"type": "string", "pattern": "^(?!.*Float).+$"},
+    "sparseMatrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "scalar_format", "entries"],
+      "properties": {
+        "shape": {
+          "type": "array",
+          "prefixItems": [
+            {"type": "integer", "minimum": 0},
+            {"type": "integer", "minimum": 0}
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "scalar_format": {"const": "sympy-srepr-exact-v1"},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {"type": "integer", "minimum": 0},
+              {"type": "integer", "minimum": 0},
+              {"$ref": "#/$defs/exactScalar"}
+            ],
+            "minItems": 3,
+            "maxItems": 3
+          }
+        }
+      }
+    },
+    "sparseTensor3": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "scalar_format", "entries"],
+      "properties": {
+        "shape": {
+          "type": "array",
+          "prefixItems": [
+            {"type": "integer", "const": 15},
+            {"type": "integer", "const": 15},
+            {"type": "integer", "const": 15}
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "scalar_format": {"const": "sympy-srepr-exact-v1"},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {"type": "integer", "minimum": 0, "maximum": 14},
+              {"type": "integer", "minimum": 0, "maximum": 14},
+              {"type": "integer", "minimum": 0, "maximum": 14},
+              {"$ref": "#/$defs/exactScalar"}
+            ],
+            "minItems": 4,
+            "maxItems": 4
+          }
+        }
+      }
+    },
+    "matrixFamily": {
+      "type": "object",
+      "required": ["convention", "matrices"],
+      "properties": {
+        "convention": {"type": "string"},
+        "matrices": {
+          "type": "object",
+          "minProperties": 15,
+          "maxProperties": 15,
+          "additionalProperties": {"$ref": "#/$defs/sparseMatrix"}
+        }
+      }
+    }
+  }
+}

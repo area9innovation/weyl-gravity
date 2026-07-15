@@ -70,11 +70,13 @@ candidate survives the complete production coboundary space.
 If the boundary rows are `B` and the representative is `a`, the engine stores
 exact coordinates for `lambda` with `B lambda = 0` and `lambda(a) = 1`.
 The default label is `TRUNCATED_NONMEMBERSHIP_WITNESS`: it proves only
-non-membership in the supplied boundary space.  The API emits
-`COMPLETE_NONTRIVIALITY_WITNESS` only when its caller explicitly supplies
-`basis_exhaustiveness_status=EXHAUSTIVE`.  Production code must bind that
-promotion to a manifest proving exhaustiveness under the declared locality,
-dimension, and bidegree bounds.
+non-membership in the supplied boundary space.  There is no caller-controlled
+`EXHAUSTIVE` switch.  The API emits `COMPLETE_NONTRIVIALITY_WITNESS` only when
+it receives a verified `BasisExhaustivenessProof`.  That proof is hash-bound
+to the previous, current, and next total-degree bases and their incoming,
+cocycle, and outgoing differentials.  It separately binds the declared
+bounds, generator algebra, grading solutions, index-orbit enumeration,
+identity quotient, and proof artifact.
 
 ## Next input
 

@@ -19,7 +19,8 @@ modes and emit deterministic receipts:
 - `H14_AFN0_ODD`.
 
 Each slice contains a named `CLOSURE_RESULT` and a separately named
-`TRUNCATED_QUOTIENT_RESULT`.  They reuse the exhaustive top-level
+`TRUNCATED_QUOTIENT_RESULT`; all eight are also emitted as independently
+schema-validated result files.  They reuse the exhaustive top-level
 quadratic-curvature carrier generator.
 That generator starts from 105 pairings, reduces to four symmetry-canonical
 monomials, applies the rank-one algebraic-Bianchi quotient, and recovers the
@@ -53,22 +54,27 @@ lambda(representative) = 1
 and promotes its label to `COMPLETE_NONTRIVIALITY_WITNESS` only after the
 complete boundary space and an exhaustiveness proof are frozen.
 
-An independent integer-grading enumerator now solves
+An independent multigrading enumerator now solves
 
 ```text
-2*n_curvature + n_tensor_derivative + n_ghost_derivative = 4
+2*n_curvature + n_tensor_derivative + n_ghost_derivative
+  + ghost_engineering_offset = 4
 ```
 
-over nonnegative signatures.  It finds three ghost-number-zero and nine
-ghost-number-one signatures.  Only two in each sector are covered by the
-current curvature-carrier generator.  The missing derivative-ghost,
-pure-Diff, generalized-connection, and index-orbit gates are recorded rather
-than inferred away.
+alongside form degree, spacetime parity, ghost species, and covariant-index
+balance.  It finds three signatures in each ghost-number-zero parity slice
+and 21 in each ghost-number-one parity slice once both Weyl and Diff ghosts
+are admitted.  Only two signatures in each slice are covered by the current
+curvature-carrier generator.  Generalized-connection degree is tracked as a
+separate pending expansion gate.  The missing derivative-ghost, pure-Diff,
+generalized-connection, and index-orbit gates are recorded rather than
+inferred away.
 
 ## Machine receipts
 
 - `quantum-weyl/local_bv/cohomology/H04_AFN0_RESULT.json`;
 - `quantum-weyl/local_bv/cohomology/H14_AFN0_RESULT.json`;
+- `quantum-weyl/local_bv/cohomology/slices/*.json` (eight mode-specific receipts);
 - `quantum-weyl/local_bv/certificates/AFN0_PRODUCTION_RUN_CERTIFICATE.json`;
 - `quantum-weyl/local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR.json`.
 
@@ -84,8 +90,14 @@ membership problem.
 
 | Rail | Result |
 |---|---:|
-| focused AFN0, descent, Euler, and quotient tests | pass |
-| complete local-BV suite | 159 pass in 23.24 s |
-| generic result schemas | 6 pass |
-| classical-import regression | 16 pass |
-| five affected certificate builders under hash seeds `1,7,123` | identical |
+| focused proof, AFN0, filtration, Euler, and quotient tests | 23 pass in 1.20 s |
+| complete local-BV suite | 163 pass in 22.15 s |
+| generic result schemas | 6 pass in 0.001 s |
+| classical-import regression | 16 pass in 0.317 s |
+| four affected certificate builders under hash seeds `1,7,123` | identical in 7.8 s |
+| changed Python compile rail | pass |
+
+The full classical certificate pipeline was not rerun: no classical input,
+freeze state, or published theorem changed.  The complete affected local-BV
+suite and the classical-import boundary regression were run because the
+relative quotient and filtration interfaces are shared within that package.

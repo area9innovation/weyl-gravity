@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from .algebra import canonical_sha256
+from .basis_exhaustiveness import BasisExhaustivenessProof
 from .relative_cohomology import certification_bicomplex
 
 
@@ -19,6 +20,7 @@ SCHEMA_PATH = PACKAGE_ROOT / "schema" / "relative_cohomology_certificate.schema.
 
 def _source_manifest() -> dict[str, str]:
     paths = (
+        "basis_exhaustiveness.py",
         "quotient.py",
         "relative_cohomology.py",
         "relative_cohomology_certificate.py",
@@ -35,11 +37,41 @@ def _source_manifest() -> dict[str, str]:
 def build_certificate() -> dict[str, Any]:
     complex_ = certification_bicomplex()
     checks = complex_.verify_bicomplex()
+    truncated = complex_.cohomology(1, max_form_degree=1)
+    exhaustiveness_proof = BasisExhaustivenessProof.create(
+        basis_manifest_hash=truncated["exhaustiveness_manifest_hash"],
+        declared_bounds_hash=canonical_sha256(
+            {"total_degree": 1, "form_degree_bounds": [0, 1]}
+        ),
+        generator_algebra_hash=canonical_sha256(
+            [
+                {
+                    "ghost_number": degree.ghost_number,
+                    "form_degree": degree.form_degree,
+                    "labels": list(labels),
+                }
+                for degree, labels in sorted(complex_.spaces.items())
+            ]
+        ),
+        grading_solution_hash=canonical_sha256(
+            [degree.total_degree for degree in complex_.spaces]
+        ),
+        orbit_enumeration_hash=canonical_sha256(
+            [label for labels in complex_.spaces.values() for label in labels]
+        ),
+        identity_quotient_hash=canonical_sha256(
+            {
+                "Q": [matrix.canonical_payload() for matrix in complex_.q_maps.values()],
+                "d_h": [matrix.canonical_payload() for matrix in complex_.d_maps.values()],
+            }
+        ),
+        proof_artifact_hash=canonical_sha256(_source_manifest()),
+    )
     total_cohomology = complex_.cohomology(
-        1, basis_exhaustiveness_status="EXHAUSTIVE"
+        1, max_form_degree=1, exhaustiveness_proof=exhaustiveness_proof
     )
     relative = complex_.relative_cohomology(
-        0, 1, basis_exhaustiveness_status="EXHAUSTIVE"
+        0, 1, exhaustiveness_proof=exhaustiveness_proof
     )
     if total_cohomology["quotient_dimension"] != 2:
         raise AssertionError("mapping-cone fixture total quotient drifted")
@@ -65,6 +97,7 @@ def build_certificate() -> dict[str, Any]:
             "dual_witness_boundary_annihilation": "VERIFIED",
             "dual_witness_unit_pairing": "VERIFIED",
             "witness_promotion_requires_exhaustive_basis": "VERIFIED",
+            "exhaustiveness_proof_hash_binding": "VERIFIED",
             "sparse_exact_rank_and_nullspace": "VERIFIED",
             "incremental_quotient_independence": "VERIFIED",
         },

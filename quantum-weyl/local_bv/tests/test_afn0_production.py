@@ -1,10 +1,11 @@
 import json
 import unittest
 
-from local_bv.afn0_production import afn0_production_results
+from local_bv.afn0_production import afn0_production_results, afn0_slice_results
 from local_bv.afn0_production_certificate import (
     CERTIFICATE_PATH,
     RESULT_DIR,
+    SLICE_RESULT_DIR,
     SCHEMA_PATH,
     build_certificate,
 )
@@ -72,6 +73,30 @@ class AfnZeroProductionTests(unittest.TestCase):
             checked = json.loads((RESULT_DIR / f"{result_id}.json").read_text())
             self.assertEqual(checked, result)
         self.assertEqual(json.loads(CERTIFICATE_PATH.read_text()), build_certificate())
+
+    def test_eight_standalone_slice_receipts(self) -> None:
+        slices = afn0_slice_results()
+        self.assertEqual(len(slices), 8)
+        closure_schema = json.loads(
+            (SCHEMA_PATH.parent / "afn0_closure_result.schema.json").read_text()
+        )
+        quotient_schema = json.loads(
+            (
+                SCHEMA_PATH.parent
+                / "afn0_truncated_quotient_result.schema.json"
+            ).read_text()
+        )
+        for result_id, result in slices.items():
+            schema = (
+                closure_schema
+                if result["result_state"] == "CLOSURE_RESULT"
+                else quotient_schema
+            )
+            self.assertFalse(validate_instance(result, schema))
+            checked = json.loads(
+                (SLICE_RESULT_DIR / f"{result_id}.json").read_text()
+            )
+            self.assertEqual(checked, result)
 
 
 if __name__ == "__main__":
