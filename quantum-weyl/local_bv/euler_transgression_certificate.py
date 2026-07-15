@@ -11,6 +11,7 @@ from typing import Any
 
 from .algebra import canonical_sha256
 from .chern_weil import euler_transgression_analysis
+from .euler_intrinsic_expansion import euler_intrinsic_component_expansion
 from .generalized_connection import (
     euler_bidegree_manifests,
     euler_normalization_contract,
@@ -29,10 +30,12 @@ def _source_manifest() -> dict[str, str]:
     paths = (
         "chern_weil.py",
         "euler_transgression_certificate.py",
+        "euler_intrinsic_expansion.py",
         "generalized_connection.py",
         "schema/euler_transgression_certificate.schema.json",
         "tests/test_chern_weil.py",
         "tests/test_euler_transgression_certificate.py",
+        "tests/test_euler_intrinsic_expansion.py",
         "tests/test_generalized_connection.py",
     )
     return {
@@ -54,6 +57,7 @@ def build_certificate() -> dict[str, Any]:
     dictionary = generalized_connection_dictionary()
     normalization_contract = euler_normalization_contract()
     bidegree_manifests = euler_bidegree_manifests()
+    intrinsic_expansion = euler_intrinsic_component_expansion()
     return {
         "result_id": "EULER_TRANSGRESSION_CERTIFICATE",
         "result_state": "VARIATIONAL_TRANSGRESSION_VERIFIED",
@@ -76,7 +80,10 @@ def build_certificate() -> dict[str, Any]:
             "all_five_euler_bidegrees_enumerated": "VERIFIED",
             "bidegree_manifests_content_addressed": "VERIFIED",
             "total_differential_component_signs": "VERIFIED",
-            "omega_E4_intrinsic_descent_continuation": "IN_PROGRESS",
+            "omega_E4_intrinsic_component_expansion": "VERIFIED",
+            "omega_E4_intrinsic_descent_continuation": "PARTIAL_CONNECTING_IDENTITIES_PENDING",
+            "intrinsic_bottom_QW_closure": "VERIFIED",
+            "intrinsic_terminal_slots_zero": "VERIFIED",
             "euler_top_transgression_regression": "VERIFIED",
             "unresolved_domega_theta_regression": "VERIFIED",
             "lower_descendant_complete_cancellation": "IN_PROGRESS",
@@ -166,8 +173,8 @@ def build_certificate() -> dict[str, Any]:
                 ],
                 "type_a_component_indices": list(generalized["type_a_component_indices"]),
                 "type_b_component_indices": list(generalized["type_b_component_indices"]),
-                "expansion_status": generalized["expansion_status"],
-                "certificate_status": "NORMALIZED_TEMPLATE_NOT_YET_VERIFIED_TOWER",
+                "expansion_status": "ORDINARY_BIDEGREE_COMPONENTS_VERIFIED",
+                "certificate_status": "COMPONENT_EXPANSION_VERIFIED_CONNECTING_IDENTITIES_PENDING",
                 "generalized_connection_dictionary": dictionary,
                 "bidegree_manifests": [
                     {
@@ -199,6 +206,7 @@ def build_certificate() -> dict[str, Any]:
                     }
                 ),
             },
+            "ordinary_bidegree_expansion": intrinsic_expansion,
         },
         "euler_full_diff_completed_tower": {
             "counterterm_tower_sha256": universal["counterterm"]["tower_sha256"],
@@ -221,6 +229,9 @@ def build_certificate() -> dict[str, Any]:
             "bidegree_manifest_set_sha256": canonical_sha256(
                 [manifest["manifest_sha256"] for manifest in bidegree_manifests]
             ),
+            "intrinsic_component_expansion_sha256": intrinsic_expansion[
+                "expansion_sha256"
+            ],
         },
         "assumptions": [
             "The invariant bilinear polynomial is epsilon_abcd X^ab wedge Y^cd in the stated normalization.",
@@ -229,7 +240,7 @@ def build_certificate() -> dict[str, Any]:
             "The source total form is mapped to project normalization by one global factor fixed by its top component; no bidegree-dependent carrier rescaling is allowed.",
         ],
         "not_computed": [
-            "machine expansion and closure of the generalized-connection type-A total form beginning at omega E4",
+            "the two connecting intrinsic descent identities requiring the Cotton and Gamma generator actions",
             "antifield/Koszul-Tate completion",
             "relative cohomology nontriviality of the Euler anomaly",
         ],

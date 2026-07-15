@@ -14,6 +14,13 @@ from .algebra import canonical_sha256
 
 
 EULER_BIDEGREES = ((1, 4), (2, 3), (3, 2), (4, 1), (5, 0))
+LEGACY_COARSE_MANIFEST_HASHES = {
+    (1, 4): "50cd0ab8e9222bcb27b219d507d81938cae7400edf9bdbe96848f3052baaa16f",
+    (2, 3): "1b26138b1b97644b28134ba14980ac1344e332b15f0ce5553f1414d2934f28c3",
+    (3, 2): "5353aef4bf87c5f602bd5376b8de0c76f4d594f01a4a821f291d115bee13feb0",
+    (4, 1): "26560ae4e8929c1090b372acc1ce618948f57b8c8c5b2130596bc35e0aee4eef",
+    (5, 0): "21d52e1826b275167771f59e5a63ca406f11b54d45f2e9cc09b92459342c7968",
+}
 
 
 def _fraction(value: Fraction | int) -> dict[str, int]:
@@ -157,34 +164,43 @@ def euler_normalization_contract() -> dict[str, Any]:
     return {**payload, "normalization_sha256": canonical_sha256(payload)}
 
 
-def _carrier_signatures(ghost_number: int, form_degree: int) -> list[dict[str, int]]:
+def _carrier_signatures(
+    ghost_number: int, form_degree: int
+) -> list[dict[str, object]]:
     """Enumerate coarse total-degree-five Euler carrier signatures.
 
-    A signature contains one explicit anomaly ghost, zero or more copies of
-    the inhomogeneous total-degree-one ``tilde_omega``, and Weyl two-forms.
-    This is exhaustive for that frozen carrier algebra, not for the complete
+    Theorem 1 of arXiv:0704.2472 has ``0 <= r <= m=n/2`` and
+    ``p=m-r``.  In four dimensions this means at most two copies of the
+    inhomogeneous total-degree-one ``tilde_omega``.  The enumeration is
+    exhaustive for that frozen theorem carrier algebra, not for the complete
     tensor quotient.
     """
 
-    signatures: list[dict[str, int]] = []
-    for tilde_count in range(5):
-        for weyl_count in range(3):
-            if 1 + tilde_count + 2 * weyl_count != 5:
+    project_coefficients = euler_normalization_contract()["project_coefficients"]
+    signatures: list[dict[str, object]] = []
+    for r in range(3):
+        p = 2 - r
+        for ghost_tilde_count in range(r + 1):
+            form_tilde_count = r - ghost_tilde_count
+            computed_ghost_number = 1 + ghost_tilde_count
+            computed_form_degree = r + form_tilde_count + 2 * p
+            if (computed_ghost_number, computed_form_degree) != (
+                ghost_number,
+                form_degree,
+            ):
                 continue
-            for ghost_tilde_count in range(tilde_count + 1):
-                form_tilde_count = tilde_count - ghost_tilde_count
-                if 1 + ghost_tilde_count != ghost_number:
-                    continue
-                if form_tilde_count + 2 * weyl_count != form_degree:
-                    continue
-                signatures.append(
-                    {
-                        "explicit_omega_count": 1,
-                        "tilde_omega_ghost_component_count": ghost_tilde_count,
-                        "tilde_omega_form_component_count": form_tilde_count,
-                        "weyl_two_form_count": weyl_count,
-                    }
-                )
+            signatures.append(
+                {
+                    "r": r,
+                    "p": p,
+                    "explicit_omega_count": 1,
+                    "explicit_dx_count": r,
+                    "tilde_omega_ghost_component_count": ghost_tilde_count,
+                    "tilde_omega_form_component_count": form_tilde_count,
+                    "weyl_two_form_count": p,
+                    "normalized_phi_r_coefficient": project_coefficients[r],
+                }
+            )
     return signatures
 
 
@@ -192,13 +208,16 @@ def euler_bidegree_manifests() -> tuple[dict[str, Any], ...]:
     """Return content-addressable manifests for every Euler descent bidegree."""
 
     normalization = euler_normalization_contract()
-    coefficients = normalization["project_coefficients"]
     manifests: list[dict[str, Any]] = []
     for index, (ghost_number, form_degree) in enumerate(EULER_BIDEGREES):
         d_sign = 1 if ghost_number % 2 == 0 else -1
         signatures = _carrier_signatures(ghost_number, form_degree)
         payload = {
             "manifest_version": "euler-bidegree-v1",
+            "supersedes_manifest_sha256": LEGACY_COARSE_MANIFEST_HASHES[
+                (ghost_number, form_degree)
+            ],
+            "supersession_reason": "the earlier coarse total-degree count omitted the theorem bound 0 <= r <= n/2",
             "dependency_tags": ["LOCAL-ALGEBRAIC"],
             "ghost_number": ghost_number,
             "form_degree": form_degree,
@@ -212,14 +231,18 @@ def euler_bidegree_manifests() -> tuple[dict[str, Any], ...]:
                 f"{'+' if (ghost_number + 1) % 2 == 0 else '-'} "
                 f"d_h a^{form_degree - 1}_{ghost_number + 1} = 0"
             ),
-            "source_template_coefficient": coefficients[index] if index < 3 else None,
             "coarse_carrier_signatures": signatures,
             "coarse_carrier_signature_count": len(signatures),
             "dictionary_sha256": generalized_connection_dictionary()[
                 "dictionary_sha256"
             ],
             "normalization_sha256": normalization["normalization_sha256"],
-            "coverage_scope": "FROZEN_GENERALIZED_CONNECTION_CARRIER_ALGEBRA",
+            "coverage_scope": "BOULANGER_THEOREM_1_CARRIERS_WITH_R_LE_N_OVER_2",
+            "intrinsic_component_status": (
+                "ENUMERATED_PRECANONICAL"
+                if signatures
+                else "STRUCTURALLY_ZERO_BY_R_LE_N_OVER_2"
+            ),
             "tensor_orbit_status": "NOT_COMPUTED",
             "canonical_quotient_status": "NOT_COMPUTED",
             "closure_status": "NOT_COMPUTED",
@@ -229,4 +252,12 @@ def euler_bidegree_manifests() -> tuple[dict[str, Any], ...]:
         raise AssertionError("Euler bidegree coverage drifted")
     if any(row["total_degree"] != 5 for row in manifests):
         raise AssertionError("Euler total degree drifted")
+    if tuple(row["coarse_carrier_signature_count"] for row in manifests) != (
+        3,
+        2,
+        1,
+        0,
+        0,
+    ):
+        raise AssertionError("Euler theorem carrier counts drifted")
     return tuple(manifests)

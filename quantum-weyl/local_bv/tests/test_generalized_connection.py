@@ -35,7 +35,17 @@ class GeneralizedConnectionContractTests(unittest.TestCase):
             [(1, 4), (2, 3), (3, 2), (4, 1), (5, 0)],
         )
         self.assertTrue(all(row["total_degree"] == 5 for row in manifests))
-        self.assertTrue(all(row["coarse_carrier_signature_count"] for row in manifests))
+        self.assertEqual(
+            [row["coarse_carrier_signature_count"] for row in manifests],
+            [3, 2, 1, 0, 0],
+        )
+        self.assertEqual(
+            [row["intrinsic_component_status"] for row in manifests[-2:]],
+            [
+                "STRUCTURALLY_ZERO_BY_R_LE_N_OVER_2",
+                "STRUCTURALLY_ZERO_BY_R_LE_N_OVER_2",
+            ],
+        )
         self.assertEqual(
             [row["d_h_sign_on_this_component"] for row in manifests],
             [-1, 1, -1, 1, -1],

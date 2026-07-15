@@ -15,7 +15,7 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         self.assertFalse(validate_instance(certificate, json.loads(SCHEMA_PATH.read_text())))
         self.assertEqual(
             certificate["checks"]["omega_E4_intrinsic_descent_continuation"],
-            "IN_PROGRESS",
+            "PARTIAL_CONNECTING_IDENTITIES_PENDING",
         )
         self.assertEqual(
             [
@@ -60,7 +60,7 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         )
         self.assertEqual(
             template["certificate_status"],
-            "NORMALIZED_TEMPLATE_NOT_YET_VERIFIED_TOWER",
+            "COMPONENT_EXPANSION_VERIFIED_CONNECTING_IDENTITIES_PENDING",
         )
         self.assertEqual(
             template["normalization_contract"]["global_source_to_project_scale"],
@@ -70,7 +70,15 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
             [(row["ghost_number"], row["form_degree"]) for row in template["bidegree_manifests"]],
             [(1, 4), (2, 3), (3, 2), (4, 1), (5, 0)],
         )
-        self.assertIn("omega E4", " ".join(certificate["not_computed"]))
+        expansion = certificate["euler_intrinsic_transgression"][
+            "ordinary_bidegree_expansion"
+        ]
+        self.assertEqual(
+            [row["term_count"] for row in expansion["components"]],
+            [3, 2, 1, 0, 0],
+        )
+        self.assertEqual(expansion["checks"]["bottom_QW_closure"], "VERIFIED")
+        self.assertIn("connecting intrinsic descent", " ".join(certificate["not_computed"]))
 
     def test_schema_fails_closed_on_unknown_nested_claim(self) -> None:
         certificate = deepcopy(build_certificate())

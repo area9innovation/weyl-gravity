@@ -98,11 +98,35 @@ freezes the source definitions of the total differential,
 `tilde_omega`, the Schouten tensor, the Weyl two-form, and the top Euler
 factor `e^4_1=(1/4) omega E4`.  All five tower slots `(1,4)` through `(5,0)`
 now have content-addressed coarse carrier manifests and explicit alternating
-signs for `D=Q_W+(-1)^ghost_number d_h`.  Tensor-orbit generation, canonical
-quotienting, and closure remain `NOT_COMPUTED`.  The `r=0` component is
+signs for `D=Q_W+(-1)^ghost_number d_h`.  A primary-source reread sharpened
+the carrier bound to `0 <= r <= m=n/2=2`: the intrinsic four-dimensional
+tower therefore has term counts `(3,2,1,0,0)`, and the `(4,1)` and `(5,0)`
+slots are structurally zero.  The earlier coarse manifests that omitted this
+bound remain immutable historical receipts, but every corrected manifest
+names and supersedes its predecessor.
+
+Expanding `tilde_omega=U-P`, with `U_a=partial_a omega` and
+`P_a=K_ab dx^b`, gives exact normalized coefficient rows
+
+```text
+(1,4):  1,  4,  4
+(2,3): -4, -8
+(3,2):  4
+(4,1):  zero
+(5,0):  zero.
+```
+
+The top row reconstructs `omega epsilon (W+2X)(W+2X)=omega E4`, while the
+bottom `4 omega epsilon U U dx dx` is `Q_W`-closed directly from
+`Q_W omega=Q_W U=Q_W dx=0`.  These are now verified component statements.
+The two connecting identities remain open until the machine implements the
+Cotton identity, the `Gamma_a` action on the Weyl two-form, and the exact
+`Q_W P_a` row.  Tensor-orbit generation and canonical quotienting of the
+full production basis likewise remain `NOT_COMPUTED`.  The `r=0` component is
 recorded separately as type B; the `r=1,2` components form the type-A
-template.  Its status is `NORMALIZED_TEMPLATE_NOT_YET_VERIFIED_TOWER`, not a
-completed Euler certificate.  Separate regression gates cover the verified top
+template.  Its status is
+`COMPONENT_EXPANSION_VERIFIED_CONNECTING_IDENTITIES_PENDING`, not a completed
+Euler certificate.  Separate regression gates cover the verified top
 transgression, the retained `d omega wedge Theta_E` source, and the still-open
 complete lower-descendant cancellation.
 
@@ -171,9 +195,25 @@ this change neither freezes a classical snapshot nor promotes the intrinsic
 Euler tower, an AFN0 quotient theorem, a QME state, or a `d_quotient`
 contribution verdict.
 
+### Intrinsic component-expansion addendum
+
+| Tier | Command/rail | Elapsed | Result |
+|---|---|---:|---|
+| 0 | compile expansion modules, strict schema validation, certificate reproduction, scoped diff check | under 3 s | pass |
+| 1 | Euler/generalized-connection plus AFN0 and basis-gap consumers | 5.7 s | 17 pass |
+| 2 | complete `quantum-weyl/local_bv/tests` discovery rail | 28.2 s | 177 pass |
+| 2 | Euler certificate under hash seeds `1,7,123` | 1.8 s | pass |
+
+Tier 3 and the classical pipeline were again not triggered.  Ordinary
+bidegree expansion is now verified, but the two connecting identities and
+the AFN0 quotient theorem remain open; no lifecycle state or `d_quotient`
+verdict was promoted.
+
 ## Next local gate
 
 Continue the intrinsic type-A anomaly descent from the certified
-`d_h(omega) wedge Theta_E` residual, then formulate the exact mapping-cone
-coboundary matrices.  Antifield completion remains blocked until the
-classical team exports the portable Koszul--Tate rows.
+`d_h(omega) wedge Theta_E` residual by implementing the Cotton and `Gamma`
+generator actions and checking the two remaining connecting equations term
+by term.  Then formulate the exact mapping-cone coboundary matrices.
+Antifield completion remains blocked until the classical team exports the
+portable Koszul--Tate rows.
