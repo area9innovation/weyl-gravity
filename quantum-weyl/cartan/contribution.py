@@ -19,7 +19,7 @@ OUTPUT_PATH = PACKAGE_ROOT / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 SCHEMA_PATH = PROGRAMME_ROOT / "schema" / "team-contribution-v1.schema.json"
 GENERATOR_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "generators.json"
 PHASE_SPACE_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "phase_spaces.json"
-EVIDENCE_COMMIT = "04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61"
+EVIDENCE_COMMIT = "0e919d434ce09c4dbab042c0c2aa708126409685"
 EVIDENCE_PATH = (
     "physics/symplectic-reconstruction/quantum-weyl/cartan/"
     "certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json"
@@ -87,6 +87,7 @@ def build_contribution() -> dict[str, Any]:
             "admissible-operator quotient mechanics with primitive and dual witnesses",
             "first-order scheme covariance with illegal scheme shifts rejected",
             "semantic import of the classical compact-cylinder sector split without quantum promotion",
+            "complete intrinsic Euler descent included in the truncated AFN0 even-anomaly closure slice",
         ],
         "not_established": [
             "a complete bulk pure-Weyl Cartan-obstruction candidate basis",
@@ -105,7 +106,7 @@ def build_contribution() -> dict[str, Any]:
             "PYTHONPATH=quantum-weyl python3 -m cartan.contribution --check",
             "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -v",
         ],
-        "next_gate": "complete the intrinsic Euler descent and AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis; consume SCALAR_CLOCK_VERTICAL_SLICE when the shared classical export lands",
+        "next_gate": "complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis; consume separately gated clock inputs only after their total-D and shared classical BV exports land",
     }
 
 

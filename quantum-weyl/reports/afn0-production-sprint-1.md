@@ -123,6 +123,7 @@ number of realizable signatures.
 | complete local-BV suite | 188 pass in about 28 s |
 | Cartan consumers excluding the intentionally commit-pinned dossier contribution | 28 pass in 0.17 s |
 | basis-gap, AFN0, and Cartan artifact reproduction checks | pass |
+| AFN0, basis-gap, Cartan-import, certificate, and contribution consumers under hash seeds `1,7,123`, parallel | 29 pass per seed in under 15 s wall |
 
-The Cartan contribution is repinned only after this updated certificate has a
+The Cartan contribution was repinned only after the updated certificate had a
 commit hash; its blocked lifecycle and null verdict are unchanged.

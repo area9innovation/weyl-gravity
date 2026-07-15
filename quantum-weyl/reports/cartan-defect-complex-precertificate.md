@@ -95,7 +95,7 @@ them is a later computation after both admissible complexes are declared.
 command:
   PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -q
 elapsed_seconds: 0.23
-status: PASS (32 tests, including dossier contribution guards)
+status: PASS (33 tests, including dossier contribution guards)
 test_tier: 1
 
 command:
@@ -140,8 +140,8 @@ The quantum team contribution is emitted at
 `generator_id = D_compact`, `phase_space_id = compact_quantum`, and lifecycle
 `QUANTUM`.  Its claim status is `BLOCKED` and its verdict is null.  The
 evidence certificate is pinned to commit
-`04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61` and SHA-256
-`aa7edc21c7250349531559657d4ec69eee2dd9100de3eedf242a8e29829e874c`.
+`0e919d434ce09c4dbab042c0c2aa708126409685` and SHA-256
+`fd2e84a211f750f6e00ea313b7730f4fa22f933a2c7e5235c82cdbf0e727638d`.
 
 ```text
 command:
@@ -149,9 +149,9 @@ command:
 elapsed_seconds: 0.08
 status: PASS
 test_tier: 1
-
-command:
-  python3 d_quotient_programme/verify_programme_status.py --check --guards
-status: PASS (5/5 mutation guards)
-test_tier: 2 targeted dossier-contract audit
 ```
+
+The cross-programme status builder was not rerun in this repin because the
+classical team was concurrently integrating the Berger fixed-coupling
+contribution in the same dossier files.  The quantum contribution remains
+schema-valid, `BLOCKED`, and verdict-free.
