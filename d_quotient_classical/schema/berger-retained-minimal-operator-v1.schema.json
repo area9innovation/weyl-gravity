@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-retained-minimal-operator-v1.schema.json",
+  "title": "Complete retained Berger minimal BV operator",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "layout_ref", "coefficient_ring", "pbw_convention", "action_inputs",
+    "q1_blocks", "bach_PBW_term_counts_by_order", "exact_checks", "flags",
+    "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-minimal-operator-v1"},
+    "result_id": {"const": "BERGER_RETAINED_MINIMAL_OPERATOR"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "claim_status": {"const": "CERTIFIED_COMPLETE_MINIMAL_Q1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "layout_ref": {"type": "object"},
+    "coefficient_ring": {"type": "string", "minLength": 1},
+    "pbw_convention": {"type": "object"},
+    "action_inputs": {"type": "object"},
+    "q1_blocks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["K_spatial", "H_retained", "minus_K_spatial_sharp"]
+    },
+    "bach_PBW_term_counts_by_order": {"type": "object"},
+    "exact_checks": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "BERGER_NONMINIMAL_COMPLETION"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
