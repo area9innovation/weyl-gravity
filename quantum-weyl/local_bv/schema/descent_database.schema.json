@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-strict-descent-database-v1.json",
+  "title": "Pure-Weyl partial descent database",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "classical_commit", "dependency_tags", "result_state", "scope", "entry_count", "entries", "proof_certificate", "not_computed"],
+  "properties": {
+    "result_id": {"const": "DESCENT_DATABASE_DIMENSION_FOUR_STRICT"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "result_state": {"const": "PARTIAL_DESCENT_DATABASE"},
+    "scope": {"type": "string", "minLength": 1},
+    "entry_count": {"type": "integer", "const": 8},
+    "entries": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["class_id", "ghost_number", "form_degree", "antifield_number", "descent_status", "descent_length", "tower_id", "cohomology_status", "proof_certificate", "notes"],
+        "properties": {
+          "class_id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "ghost_number": {"type": "integer"},
+          "form_degree": {"type": "integer", "const": 4},
+          "antifield_number": {"type": "integer", "const": 0},
+          "descent_status": {"enum": ["TRIVIAL", "NONTRIVIAL", "OBSTRUCTED", "NOT_COMPUTED"]},
+          "descent_length": {},
+          "tower_id": {"type": "string", "minLength": 1},
+          "cohomology_status": {"const": "NOT_COMPUTED"},
+          "proof_certificate": {"type": "string", "minLength": 1},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "proof_certificate": {"type": "string", "minLength": 1},
+    "not_computed": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}
+  }
+}

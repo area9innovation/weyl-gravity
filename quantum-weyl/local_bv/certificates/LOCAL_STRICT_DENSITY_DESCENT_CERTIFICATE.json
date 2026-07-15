@@ -1,0 +1,3493 @@
+{
+  "assumptions": [
+    "C^2 and C dual C are covariant strict Weyl-invariant top densities.",
+    "NONTRIVIAL descent status means the stored descent tower is nonzero; it does not assert a nontrivial BV cohomology class.",
+    "The Euler density is excluded because its Weyl variation has a separate nontrivial current descent.",
+    "The coordinate BRST and horizontal differential commute; bicomplex totalization supplies the conventional grading sign."
+  ],
+  "canonical_hashes": {
+    "anomaly_tower_sha256": "3450fe7916c338feb3ef190f05504b371100bbd8d4bddb4cc83ed35039d7e219",
+    "counterterm_tower_sha256": "0a595f7c9017e039138b9fd88b4ce7cf0e39c6f3127f208810282e31edb41145",
+    "source_manifest_sha256": "c2e41286bc566f81fb4b69d9e037dc79937d14cbd398d0ed4cf424d11b2b91c6"
+  },
+  "checks": {
+    "anomaly_tower_equations": "VERIFIED",
+    "antifield_descent": "BLOCKED_CLASSICAL_EXPORT",
+    "bottom_brst_closure": "VERIFIED",
+    "brst_horizontal_commutation": "VERIFIED",
+    "counterterm_tower_equations": "VERIFIED",
+    "density_brst_nilpotency": "VERIFIED",
+    "euler_weyl_descent": "NOT_COMPUTED",
+    "horizontal_d_squared": "VERIFIED"
+  },
+  "classical_commit": "UNFROZEN",
+  "database": {
+    "entry_count": 8,
+    "result_id": "DESCENT_DATABASE_DIMENSION_FOUR_STRICT",
+    "sha256": "8c0b57b99c129ba55b16e7b32eeb8814f90aab2714c19393e18461004f91d030"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "not_computed": [
+    "Euler Weyl-current descent",
+    "antifield/Koszul-Tate completion",
+    "cohomological nontriviality of strict candidates",
+    "coefficients, QME status, and residual transfer"
+  ],
+  "result_id": "LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE",
+  "result_state": "PARTIAL_DESCENT_DATABASE",
+  "scope": "Universal Diff descent for strict Weyl-invariant dimension-four densities and their Weyl-ghost lifts.",
+  "towers": {
+    "STRICT_ANOMALY_DIFF_TOWER": {
+      "brst_to_horizontal_ratios": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 4,
+          "numerator": 1
+        }
+      ],
+      "coefficients": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 6,
+          "numerator": -1
+        },
+        {
+          "denominator": 24,
+          "numerator": 1
+        }
+      ],
+      "descent_length": 4,
+      "form_degrees": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "ghost_lift": true,
+      "ghost_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "tower": [
+        {
+          "dimension": 4,
+          "terms": [
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                1,
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "dimension": 4,
+          "terms": [
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                1,
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "dimension": 4,
+          "terms": [
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                3
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                1,
+                3
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "dimension": 4,
+          "terms": [
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                1
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                2
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "dimension": 4,
+          "terms": [
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "omega",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 0
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": []
+            }
+          ]
+        }
+      ],
+      "tower_sha256": "3450fe7916c338feb3ef190f05504b371100bbd8d4bddb4cc83ed35039d7e219"
+    },
+    "STRICT_COUNTERTERM_DIFF_TOWER": {
+      "brst_to_horizontal_ratios": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 4,
+          "numerator": 1
+        }
+      ],
+      "coefficients": [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 6,
+          "numerator": -1
+        },
+        {
+          "denominator": 24,
+          "numerator": 1
+        }
+      ],
+      "descent_length": 4,
+      "form_degrees": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "ghost_lift": false,
+      "ghost_numbers": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "tower": [
+        {
+          "dimension": 4,
+          "terms": [
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                1,
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "dimension": 4,
+          "terms": [
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                1,
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "dimension": 4,
+          "terms": [
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0,
+                3
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                1,
+                3
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "dimension": 4,
+          "terms": [
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                0
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                1
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": -1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                2
+              ]
+            },
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": [
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "dimension": 4,
+          "terms": [
+            {
+              "coefficient": {
+                "terms": [
+                  {
+                    "coefficient": {
+                      "denominator": 1,
+                      "numerator": 1
+                    },
+                    "monomial": [
+                      {
+                        "antifield_number": 0,
+                        "components": [],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "strict_density",
+                        "form_degree": 0,
+                        "ghost_number": 0,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": 4
+                        },
+                        "parity": 0,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          0
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          1
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          2
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      },
+                      {
+                        "antifield_number": 0,
+                        "components": [
+                          3
+                        ],
+                        "derivatives": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "field": "xi",
+                        "form_degree": 0,
+                        "ghost_number": 1,
+                        "mass_dimension": {
+                          "denominator": 1,
+                          "numerator": -1
+                        },
+                        "parity": 1,
+                        "spacetime_parity": "even",
+                        "weyl_weight": {
+                          "denominator": 1,
+                          "numerator": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "form_indices": []
+            }
+          ]
+        }
+      ],
+      "tower_sha256": "0a595f7c9017e039138b9fd88b4ce7cf0e39c6f3127f208810282e31edb41145"
+    }
+  }
+}

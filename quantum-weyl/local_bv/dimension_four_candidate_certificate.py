@@ -46,12 +46,16 @@ CATALOGUE_SCHEMA_PATH = PACKAGE_ROOT / "schema" / "candidate_catalogue.schema.js
 def _source_manifest() -> dict[str, str]:
     paths = (
         "algebra.py",
+        "brst.py",
         "curvature.py",
         "dimension_four_candidates.py",
         "dimension_four_candidate_certificate.py",
         "hodge.py",
+        "horizontal_forms.py",
+        "metadata.py",
         "quotient.py",
         "specialization.py",
+        "strict_descent.py",
         "tensors.py",
         "weyl_decomposition.py",
         "weyl_target.py",
@@ -163,6 +167,22 @@ def build_certificate() -> dict[str, Any]:
     ]
     if counterterm_ids != expected_counterterms or anomaly_ids != expected_anomalies:
         raise AssertionError("candidate identifier ledger drifted")
+    descent_statuses = {
+        record["class_id"]: record["descent_status"]
+        for record in counterterms["candidates"] + anomalies["candidates"]
+    }
+    expected_descent_statuses = {
+        "CT_C2": "NONTRIVIAL",
+        "CT_E4": "NOT_COMPUTED",
+        "CT_C_DUAL_C": "NONTRIVIAL",
+        "CT_BOX_R": "TRIVIAL",
+        "ANOM_OMEGA_C2": "NONTRIVIAL",
+        "ANOM_OMEGA_E4": "NOT_COMPUTED",
+        "ANOM_OMEGA_C_DUAL_C": "NONTRIVIAL",
+        "ANOM_OMEGA_BOX_R": "TRIVIAL",
+    }
+    if descent_statuses != expected_descent_statuses:
+        raise AssertionError("partial descent status ledger drifted")
 
     source_manifest = _source_manifest()
     return {
@@ -185,6 +205,7 @@ def build_certificate() -> dict[str, Any]:
             "dimension_four_cotton_scalar_absence": "VERIFIED",
             "box_r_divergence_witness": "VERIFIED",
             "omega_box_r_trivialization": "VERIFIED_MOD_D",
+            "strict_density_diff_descent": "VERIFIED",
             "full_local_bv_cohomology": "NOT_COMPUTED",
         },
         "target_native_quotients": {

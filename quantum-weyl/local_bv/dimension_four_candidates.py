@@ -22,6 +22,7 @@ from .tensors import (
 )
 from .weyl_target import DUAL_WEYL, WEYL_GHOST, dimension_four_weyl_target_analysis
 from .specialization import WEYL, replace_riemann_by_weyl
+from .strict_descent import strict_candidate_descent_analysis
 
 
 def _linear_combination(
@@ -83,6 +84,8 @@ def _candidate_record(
         "mass_dimension": 4,
         "parity": parity,
         "descent_length": "NOT_COMPUTED",
+        "descent_status": "NOT_COMPUTED",
+        "descent_certificate": "NOT_COMPUTED",
         "topological_status": topological_status,
         "local_triviality": local_triviality,
         "integrated_triviality": integrated_triviality,
@@ -96,6 +99,30 @@ def _candidate_record(
         "residual_restriction_status": "NOT_COMPUTED",
         "notes": notes,
     }
+
+
+def _attach_descent_status(
+    record: dict[str, object], descent: dict[str, object]
+) -> dict[str, object]:
+    result = dict(record)
+    class_id = str(result["class_id"])
+    certificate = (
+        "quantum-weyl/local_bv/certificates/"
+        "LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE.json"
+    )
+    if class_id in descent["computed_candidates"]:
+        result.update(
+            descent_length=4,
+            descent_status="NONTRIVIAL",
+            descent_certificate=certificate,
+        )
+    elif class_id in descent["trivialized_candidates"]:
+        result.update(
+            descent_length=0,
+            descent_status="TRIVIAL",
+            descent_certificate=certificate,
+        )
+    return result
 
 
 @lru_cache(maxsize=1)
@@ -168,7 +195,7 @@ def dimension_four_candidate_analysis() -> dict[str, object]:
     if not any(odd_quotient.free_coordinates(odd_representative)):
         raise AssertionError("Pontryagin carrier vanished in the odd quotient")
 
-    counterterms = (
+    counterterms_without_descent = (
         _candidate_record(
             class_id="CT_C2",
             representative=c2,
@@ -219,6 +246,12 @@ def dimension_four_candidate_analysis() -> dict[str, object]:
         ),
     )
 
+    descent = strict_candidate_descent_analysis()
+    counterterms = tuple(
+        _attach_descent_status(record, descent)
+        for record in counterterms_without_descent
+    )
+
     anomaly_sources = {
         "ANOM_OMEGA_C2": c2,
         "ANOM_OMEGA_E4": e4,
@@ -266,6 +299,10 @@ def dimension_four_candidate_analysis() -> dict[str, object]:
             )
         )
 
+    anomalies_with_descent = tuple(
+        _attach_descent_status(record, descent) for record in anomalies
+    )
+
     return {
         "quadratic_curvature_analysis": curvature,
         "quadratic_ansatz_dimension": quotient.quotient_dimension,
@@ -288,7 +325,8 @@ def dimension_four_candidate_analysis() -> dict[str, object]:
         "e4_weyl_restriction": e4_weyl_restriction,
         "target_analysis": target,
         "counterterms": counterterms,
-        "anomalies": tuple(anomalies),
+        "anomalies": anomalies_with_descent,
+        "descent_analysis": descent,
         "box_anomaly_trivialization_coefficient": Fraction(-1, 12),
         "fraction_payload": _fraction_payload,
     }

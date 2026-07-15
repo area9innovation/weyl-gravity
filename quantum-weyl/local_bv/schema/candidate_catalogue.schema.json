@@ -20,7 +20,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["class_id", "representative", "representative_sha256", "ghost_number", "antifield_number", "form_degree", "mass_dimension", "parity", "descent_length", "topological_status", "local_triviality", "integrated_triviality", "closure_status", "cohomology_status", "proof_status", "proof_certificate", "residual_restriction_status", "notes"],
+        "required": ["class_id", "representative", "representative_sha256", "ghost_number", "antifield_number", "form_degree", "mass_dimension", "parity", "descent_length", "descent_status", "descent_certificate", "topological_status", "local_triviality", "integrated_triviality", "closure_status", "cohomology_status", "proof_status", "proof_certificate", "residual_restriction_status", "notes"],
         "properties": {
           "class_id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
           "representative": {"type": "object"},
@@ -30,7 +30,9 @@
           "form_degree": {"type": "integer", "const": 4},
           "mass_dimension": {"type": "integer", "const": 4},
           "parity": {"enum": ["even", "odd"]},
-          "descent_length": {"const": "NOT_COMPUTED"},
+          "descent_length": {},
+          "descent_status": {"enum": ["TRIVIAL", "NONTRIVIAL", "OBSTRUCTED", "NOT_COMPUTED"]},
+          "descent_certificate": {"type": "string", "minLength": 1},
           "topological_status": {"type": "string", "minLength": 1},
           "local_triviality": {"type": "string", "minLength": 1},
           "integrated_triviality": {"type": "string", "minLength": 1},

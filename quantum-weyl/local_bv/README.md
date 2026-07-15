@@ -103,6 +103,15 @@ explicit divergence witness, while `omega Box R` has the integrated
 trivialization `-(1/12) s(R^2)`.  These are candidate catalogues; full
 Diff--Weyl descent, antifield completion, and cohomology remain open.
 
+The first descent layer is now exact.  A horizontal exterior algebra over the
+coordinate jets verifies `d_h^2=0`, the density Lie-derivative BRST row,
+nilpotency, and commutation of `Q` with `d_h`.  Repeated contraction with the
+odd diffeomorphism ghost generates the full form-degree `4 -> 0` tower for a
+strict Weyl density and its Weyl-ghost lift.  Exact row solving derives the
+coefficients `1,-1,1/2,-1/6,1/24`.  This computes the nonzero Diff descents of
+`C^2`, `C dual C`, `omega C^2`, and `omega C dual C`; it does not compute the
+separate Euler Weyl-current descent or establish cohomological nontriviality.
+
 This is not Gate A or Gate B.  In particular, the classical commit is
 `NOT_FROZEN`; antifield and nonminimal rows have not been imported; and
 general covariant curvature reduction remains incomplete.  The
@@ -127,6 +136,7 @@ PYTHONPATH=quantum-weyl python -m local_bv.four_dimensional_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.weyl_decomposition_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.weyl_image_certificate --check
 PYTHONPATH=quantum-weyl python -m local_bv.dimension_four_candidate_certificate --check
+PYTHONPATH=quantum-weyl python -m local_bv.strict_descent_certificate --check
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_CURVATURE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_DIFFERENTIAL_HODGE_CANONICALIZATION.json
 python3 quantum-weyl/schema/validate_result.py quantum-weyl/certificates/LOCAL_ALGEBRA_SCALING_FOUNDATIONS.json
@@ -192,7 +202,11 @@ with catalogues under [`../counterterms/`](../counterterms/) and
 [`../anomalies/`](../anomalies/) and separate ghost-number-zero and
 ghost-number-one common result envelopes under [`../certificates/`](../certificates/).
 
-Next admissible local steps are the full longitudinal Diff--Weyl descent on
-the generated dimension-four carriers and the unrestricted higher-derivative
-Weyl--Cotton jet quotient.  The antifield and relative-cohomology layers still
-wait for the frozen classical schema.
+The strict-density descent receipt is
+[`certificates/LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE.json`](certificates/LOCAL_STRICT_DENSITY_DESCENT_CERTIFICATE.json),
+with the partial database at
+[`descent/DESCENT_DATABASE_DIMENSION_FOUR_STRICT.json`](descent/DESCENT_DATABASE_DIMENSION_FOUR_STRICT.json).
+
+Next admissible local steps are the Euler Weyl-current descent and the
+unrestricted higher-derivative Weyl--Cotton jet quotient.  The antifield and
+relative-cohomology layers still wait for the frozen classical schema.
