@@ -209,9 +209,16 @@ intrinsic Einstein-Hilbert mass scale.  A scale can arise in an enlarged
 model from a Weyl compensator with a `phi^2 R` coupling and a nonzero
 gauge-fixed value, from matter expectation values/spontaneous Weyl breaking,
 or from boundary/background curvature data.  None of those mechanisms is
-part of pure Weyl gravity, and none is certified by this theorem.  Each must
-declare its matter/compensator graph, vacuum, anomaly status, and induced
-Newton constant.
+part of pure Weyl gravity.
+
+The minimal compensator mechanism is now certified separately in
+`notes/conformal-compensator-einstein-phase.md`.  A constant nonzero
+Stueckelberg frame generates `c1=zeta v^2`, restores the flat TT massless-root
+pairing, and leaves an opposite-residue massive spin-2 branch.  The exact
+gauge-fixed theory is therefore Einstein--Weyl gravity, not pure Einstein
+gravity.  It does not define the D-quotient programme's monotone scalar clock
+and does not establish causal removal of the extra branch, nonlinear closure,
+scattering equivalence, anomaly cancellation, or spontaneous breaking.
 
 ## Background inventory
 

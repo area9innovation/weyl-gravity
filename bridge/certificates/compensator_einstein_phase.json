@@ -1,0 +1,170 @@
+{
+  "claim_flags": {
+    "asymptotically_flat_scattering_equivalence_proved": false,
+    "background_equations_derived": true,
+    "backreacted_or_composite_clock_model_constructed": false,
+    "compensator_distinguished_from_scalar_clock": true,
+    "constant_compensator_is_monotone_clock": false,
+    "constant_nonzero_unitary_frame_accessible": true,
+    "extra_massive_spin2_branch_present": true,
+    "flat_vacuum_requires_lambda_zero_without_cancellation": true,
+    "full_bv_scalar_constraint_count_completed": false,
+    "full_theory_equals_pure_einstein_gravity": false,
+    "induced_eh_coefficient_derived": true,
+    "massive_branch_causally_excluded": false,
+    "massless_einstein_pairing_nonzero_for_c1_nonzero": true,
+    "nonlinear_einstein_truncation_proved": false,
+    "opposite_branch_residues_derived": true,
+    "positive_quantum_hilbert_space_constructed": false,
+    "pure_weyl_limit_coalesces_and_pairing_vanishes": true,
+    "scalar_clock_vertical_slice_imported": true,
+    "spontaneous_local_weyl_breaking_proved": false,
+    "tt_operator_factorized": true,
+    "weyl_anomaly_cancelled": false,
+    "weyl_uplift_identity_derived": true
+  },
+  "constant_background_theorem": {
+    "consistency_identity": "R=4 Lambda_eff=2 lambda v^2/zeta",
+    "constant_frame": "phi=v with v!=0",
+    "effective_cosmological_constant": "Lambda_eff=lambda v^2/(2 zeta)",
+    "flat_vacuum": "lambda=0 when zeta and v are nonzero and no additional vacuum-energy source cancels lambda v^4",
+    "induced_eh_coefficient": "c1=zeta v^2",
+    "induced_planck_scale": "M_P^2=-2 zeta v^2",
+    "metric_equation": "zeta v^2 G_mn+(1/2)lambda v^4 g_mn=0",
+    "repository_planck_definition": "c1=-M_P^2/2",
+    "scalar_equation": "2 zeta v R-4 lambda v^3=0",
+    "status": "PASS",
+    "surviving_einstein_backgrounds": "every four-dimensional Einstein metric Ric=Lambda_eff g satisfies the constant-compensator equations and is Bach-flat"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flat_tt_factorization": {
+    "branch_symplectic_normalizations": {
+      "massive": "K'(-M2)=-c1/2=-zeta v^2/2",
+      "massless": "K'(0)=c1/2=zeta v^2/2"
+    },
+    "inverse_kernel": "1/K=(2/c1)[1/y-1/(y+M2)]",
+    "mass_parameter": "M2=c1/alpha=zeta v^2/alpha",
+    "one_polarization_lagrangian": "L_TT=(alpha/4)(A_ddot+k^2 A)^2-(c1/4)(A_dot^2-k^2 A^2) modulo a divergence",
+    "pure_weyl_limit": "v->0 at fixed zeta and alpha gives c1->0, M2->0, K->(alpha/2)y^2, and both simple-root normalizations vanish before the Jordan recombination",
+    "relative_signature": "the two simple spin-2 branches have opposite residues",
+    "repo_conventions": "signature (+---); L=sqrt(-g)(c1 R+alpha Ric^2+beta R^2); alpha=-3 beta; healthy massless-graviton convention c1=-1",
+    "repository_healthy_sign": "c1=-1 and alpha<0 give M2>0, a healthy massless branch, and a massive ghost branch",
+    "roots": [
+      "y=0 (massless Einstein helicity +/-2)",
+      "y=-M2 (massive spin-2 branch)"
+    ],
+    "status": "PASS",
+    "symbol": "K(y)=(1/2)y(c1+alpha y)=(alpha/2)y(y+M2)",
+    "symbol_variable": "y is the second-order massless wave symbol"
+  },
+  "inputs": {
+    "einstein_weyl_reduction_source": {
+      "path": "symbolic/verify_gravity_reduction.py",
+      "sha256": "fb8445e4f590dc706f3c5b0aecc1596b3001d1bdc5e09511039b22874446fcb3"
+    },
+    "pure_weyl_restriction": {
+      "path": "bridge/certificates/flat_einstein_symplectic_restriction.json",
+      "sha256": "8e3e690b5a1f62d79cdd587c2fa35c9f958604c01ce4f2a08749c367d5ab8f6d"
+    },
+    "scalar_clock_vertical_slice": {
+      "path": "d_quotient_classical/certificates/SCALAR_CLOCK_VERTICAL_SLICE.json",
+      "sha256": "de30ec828943d8c20be7e36bb523deb4d31f74e817bce92cf6d9374e80ab2948"
+    }
+  },
+  "model_definition": {
+    "action": "S=S_W+int sqrt(-g)[zeta(phi^2 R-6 phi Box phi)-lambda phi^4]",
+    "assumptions": [
+      "zeta is nonzero",
+      "the local frame chart has phi=v nonzero",
+      "the flat TT theorem uses alpha=-3 beta and lambda=0",
+      "no additional matter vacuum energy is included"
+    ],
+    "dimension": 4,
+    "fields": [
+      "metric g_mn",
+      "Weyl Stueckelberg compensator phi"
+    ],
+    "literature_comparisons": [
+      {
+        "non_use": "not imported as this certificate's sign or spectrum calculation",
+        "reference": "https://arxiv.org/abs/2307.13531",
+        "use": "primary comparison for the invariant metric and four-dimensional Yamabe uplift"
+      },
+      {
+        "non_use": "its AdS critical theory is not a flat compensator certificate",
+        "reference": "https://arxiv.org/abs/1101.1971",
+        "use": "primary comparison for the massless plus massive spin-2 structure of curvature-squared gravity"
+      },
+      {
+        "non_use": "its Georgi-Glashow matter vacuum is not the minimal Stueckelberg model used here",
+        "reference": "https://arxiv.org/abs/hep-th/0603131",
+        "use": "primary example of conformal matter supplying a scale and an Einstein effective action"
+      }
+    ]
+  },
+  "phase_classification": {
+    "boundary_selected_statement": "an exact Einstein phase would require independent causal or boundary conditions eliminating the massive branch while preserving the Einstein symplectic form",
+    "exact_einstein_solution_sector": "Einstein metrics with Ric=Lambda_eff g form a solution sector because their Bach tensor vanishes",
+    "exact_full_theory_after_constant_frame": "Einstein-Weyl gravity with a cosmological term",
+    "low_energy_statement": "Einstein gravity is a conditional effective sector for wave symbols |alpha y/c1|<<1 after a declared prescription for the massive branch",
+    "nonlinear_extra_solutions": "the flat massive spin-2 branch proves extra local solutions; a complete nonlinear classification of non-Einstein Einstein-Weyl solutions remains open",
+    "not_exactly_einstein_gravity": "the massive spin-2 root remains whenever alpha is nonzero and c1 is finite"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/compensator_einstein_phase.py",
+    "generator_sha256": "239d4e5aec5446e520d099f6a6ea53a72d0156e93994b1743136b73273b6edea",
+    "input_base_commit": "704787c06de9e3746c1230e130bb652cb787a825"
+  },
+  "result_id": "COMPENSATOR_EINSTEIN_PHASE",
+  "result_state": "EINSTEIN_WEYL_PHASE_CERTIFIED_FULL_EINSTEIN_EQUIVALENCE_OPEN",
+  "scalar_clock_coordination": {
+    "canonical_model_owner": "classical D-quotient team",
+    "d_quotient_gate": "SCALAR_CLOCK_VERTICAL_SLICE",
+    "import_rule": "this theorem must not be registered as compact_scalar_clock or used as a replacement for the imported clock certificate",
+    "imported_certificate": "d_quotient_classical/certificates/SCALAR_CLOCK_VERTICAL_SLICE.json",
+    "imported_result": "the canonical homogeneous scalar has exact local monotone charts, but no nonzero homogeneous clock is compatible with the exact vacuum cylinder and the zero background has no linearized clock incidence",
+    "imported_status": "OBSTRUCTED_ON_EXACT_VACUUM_CYLINDER",
+    "next_shared_gate": "BACKREACTED_OR_COMPOSITE_CLOCK_MODEL",
+    "this_compensator": "constant-frame Stueckelberg scalar",
+    "why_not_a_clock": "phi=v is constant and therefore supplies no monotone relational time variable"
+  },
+  "schema": "pure-weyl-compensator-einstein-phase-v1",
+  "schema_path": "bridge/einstein_sector/schema/compensator_einstein_phase.schema.json",
+  "schema_sha256": "2ba7424e30e7efceef3f72e85b81df3a07caba05996b259ed9679cc342024495",
+  "scope_guards": [
+    "the covariant compensator and constant-background identities are LOCAL-ALGEBRAIC",
+    "the spin-2 factorization and pairing repair are REDUCED-MODE flat TT statements",
+    "no result in this certificate carries the LORENTZIAN-CAUSAL tag",
+    "constant compensator gauge is not spontaneous breaking without additional gauge-invariant vacuum data",
+    "the result repairs the massless pairing but retains an opposite-residue massive spin-2 branch",
+    "the exact-cylinder one-scalar clock obstruction is imported; its backreacted/composite repair, total coupled D verdict, nonlinear closure, boundary selection, scattering, and quantum theory remain open"
+  ],
+  "sign_and_degree_of_freedom_audit": {
+    "consequence_for_compensator": "zeta=-1/v^2 and the integrated scalar kinetic coefficient 6 zeta is negative",
+    "healthy_graviton_choice": "c1=-1 in the repository curvature convention",
+    "interpretation": "the wrong-sign scalar coordinate is locally removed by Weyl gauge on phi!=0; this is not a proof of full BV positivity",
+    "remaining_problem": "the massive spin-2 branch has the opposite residue and is the conventional ghost branch"
+  },
+  "symplectic_repair": {
+    "compensated_result": "for c1=zeta v^2 nonzero the massless-root normalization is c1/2, so the Einstein TT branch is no longer a zero-pairing subspace",
+    "meaning": "the compensator-generated Einstein-Hilbert term repairs the specific reduced pairing obstruction, but does not remove the extra fourth-order branch",
+    "pure_weyl_input": "on the flat TT Schwartz Einstein core the pure-Weyl current restricts to zero"
+  },
+  "verdict": "EINSTEIN_WEYL_PHASE_REPAIRS_MASSLESS_PAIRING_BUT_RETAINS_EXTRA_SPIN2",
+  "verification_command": "python3 -m bridge.einstein_sector.compensator_einstein_phase --verify bridge/certificates/compensator_einstein_phase.json",
+  "weyl_frame_theorem": {
+    "integrated_bulk_density": "zeta(phi^2 R+6 partial_phi.partial_phi) modulo a boundary term",
+    "interpretation": "the constant value is a Weyl frame for a Stueckelberg compensator, not by itself an order parameter proving spontaneous breaking of a local gauge symmetry",
+    "invariant_linear_metric": "h_hat_mn=h_mn+2(varphi/v)eta_mn",
+    "invariant_metric": "g_hat_mn=(phi/mu)^2 g_mn",
+    "linearized_transformations": "delta h_mn=2 sigma eta_mn; delta varphi=-v sigma",
+    "local_residual_weyl": "none after varphi=0 on the v!=0 chart",
+    "status": "PASS",
+    "unitary_frame": "sigma=varphi/v sets varphi to zero locally when v!=0",
+    "weyl_action": "g_mn -> exp(2 sigma) g_mn; phi -> exp(-sigma) phi",
+    "yamabe_density": "zeta(phi^2 R-6 phi Box phi)"
+  }
+}

@@ -139,8 +139,11 @@ The programme now forks cleanly:
 
 1. complete the full tensor/null-infinity calculation and test whether a
    justified corner extension changes the flat result; or
-2. introduce a conformal compensator and test whether its vacuum value
-   generates an Einstein-Hilbert symplectic form and Planck scale.
+2. The compensator test is now complete at local/background and flat TT
+   quadratic order: `notes/conformal-compensator-einstein-phase.md` proves
+   that `c1=zeta v^2` repairs the Einstein-root pairing but leaves an
+   opposite-residue massive spin-2 branch.  The next test is causal removal
+   of that branch, not another scale-generation calculation.
 
 The first route tests pure Weyl gravity.  The second tests a broken or
 matter-completed conformal theory.
