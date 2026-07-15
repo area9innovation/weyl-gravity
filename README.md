@@ -38,7 +38,7 @@ particle-number-diagonal Krein lift does not make that block null.
 | 4 | `fourth-order-gravity.tex` / `.pdf` | **Gauge Reduction and the Completion Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the Conformal Jordan Boundary** | frozen, tag `paper4-v1.1` (15 pp.) |
 | 5 | `interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions, Resonant PT Breaking, and Doubled Jordan Symmetry in Fourth-Order Theories** | frozen, tag `paper5-v1.1` (17 pp.; accepted by team referee, then extended: 5:1 confirmation, Krein separation, literature repositioning, charge-null lemma + regulated-embedding proposition) |
 | 6 | `einstein-weyl-interaction-obstructions.tex` / `.pdf` | **Interaction Obstructions in Einstein–Weyl Gravity: Cubic Protection, Second-Order Metric Failure, and Krein Visibility** | draft, major-review revision (30 pp.) |
-| 7 | `conformal-residual-cohomology.tex` / `.pdf` | **Residual $SO(4,2)$ Cohomology of Free Weyl Gravity on the Conformal Cylinder** | draft; classical algebraic BV--BFV chain and energy-mode Krein completion certified |
+| 7 | `conformal-residual-cohomology.tex` / `.pdf` | **Residual $SO(4,2)$ Cohomology of Free Weyl Gravity on the Conformal Cylinder** | draft; covariant causal BV bridge, residual $H^4\cong\mathbb C^2$, and $I_2$ pairing certified |
 
 Also: `theorem_statements.tex` — paper-1 theorem list with verification
 cross-references.
@@ -102,11 +102,16 @@ exactly equivalent as a differential ideal, symmetric hyperbolic with causal
 speeds, and has a complete sourced subsidiary identity.  The corrected
 fibre-identified curved projections close the odd BV mapping cylinder.  Its
 all-row prolongation retract, prolonged BV operator identity, and off-shell
-prolonged/auxiliary current comparison are exact.  The Green witness, causal
-homotopy, endpoint recovery, and `SO(4,2)` transport remain open.  Hadamard
-theory also remains open.  A direct same-bundle
-factorization of `B_lin+K T/2` is an optional strengthening, not a hidden
-premise.
+prolonged/auxiliary current comparison are exact.  A local cyclic projector
+contracts 356 of 386 prolonged components to the 30-component
+metric--curvature graph.  Curved adjoint-tractor BGG/HPL transfer, followed by
+the explicit trace/Weyl shear, gives retarded and advanced all-row homotopies
+with `Q Lambda_± + Lambda_± Q = 1` and the graded adjoint relation.  The causal
+quasi-isomorphism, recovery of the fifteen residual endpoints,
+`SO(4,2)`-equivariant transfer, and causal/current pairing comparison are now
+certified.  Distributional/Hadamard theory remains open.  A direct
+same-bundle factorization of `B_lin+K T/2` is an optional strengthening, not a
+hidden premise.
 
 The retained metric endpoint is now coefficient-complete as the exact curved
 complex `G_met[5] -> h[10] -> Ebar_met[10] -> I_met[5]`, with differential
@@ -115,23 +120,25 @@ intertwiners checked coefficientwise.  Its canonical upper curvature lift is
 exact.  The canonical middle Weyl--Cotton lift is obstructed at rank five,
 while the corresponding full relative cyclic saddle exists but has exactly
 zero endpoint Schur correction.  Therefore the canonical metric endpoint
-diagonal witness `W_0` and its Green operators remain the analytic gap; no
-causal or final flag moves.
+diagonal witness `W_0` still has no certified same-sided inverse.  The proved
+direct tractor causal route does not require or assert that stronger
+implementation.
 
 The generated
 [`final_claim_dependencies.md`](covariant_completion/generated/final_claim_dependencies.md)
-records the current fail-closed boundary:
+records the current fail-closed result:
 
 ```text
 curved_operator_identity       = true
 curved_deformation_retract     = true
 curved_current_comparison      = true
-final_covariant_H4             = false
+final_covariant_H4             = true
 ```
 
-The final flag remains false while the complete causal BV Green bridge is
-absent.  The negative rank certificate and the positive reduced
-Weyl-symbol isomorphism are both exposed independently.
+There are zero atomic blockers.  The transported theorem is
+`H^4_cov=span{[W_+^2],[W_-^2]}` with Gram matrix `I_2`.  The negative rank
+certificate and the positive reduced Weyl-symbol isomorphism remain exposed
+independently.
 
 The selected curvature route is split into explicit fail-closed flags:
 
@@ -146,19 +153,23 @@ support_local_prolongation_retract= true
 prolonged_BV_operator_identity     = true
 prolonged_green_witness            = false
 curvature_causal_green_operators  = false
-causal_green_homotopy              = false
-causal_quasi_isomorphism           = false
-residual_endpoint_recovery         = false
-SO42_equivariant_transport         = false
+direct_tractor_causal_homotopy     = true
+causal_green_homotopy              = true
+causal_quasi_isomorphism           = true
+residual_endpoint_recovery         = true
+SO42_equivariant_transport         = true
 prolonged_current_comparison       = true
 ```
 
-The `SO(4,2)` item is now an exact conditional recognition theorem rather
-than an independent coefficient calculation.  For the cutoff inverse
+The two false flags are scoped legacy implementation flags: the direct
+tractor route proves the required causal homotopy without claiming a
+canonical endpoint inverse or monolithic prolonged witness.  The `SO(4,2)`
+item is an exact recognition/transport theorem rather than an independent
+coefficient calculation.  For the cutoff inverse
 `kappa=[Q,chi]` and every local conformal chain generator `rho`, the explicit
 homotopy is `[kappa,rho]=[Q,[chi,rho]]`; its support is compact on the
-cylinder.  The flag stays false until the actual causal quasi-isomorphism
-and residual endpoint recovery promote.
+cylinder.  The causal quasi-isomorphism and residual endpoint recovery now
+supply its certified premises.
 
 The exact all-level curvature audit is also complete: symbolic BGG rank and
 character identities show that the 26-state covariant equations carry
@@ -181,14 +192,14 @@ every field/equation/identity and dual row, and satisfies
 `PI=1`, `IP-1=QH+HQ` by finite-order local maps.  Thus the all-row local
 prolongation and BV operator flags are now true.  The prolonged current
 certificate is rebound to the curved core-chain provenance and proves the
-off-shell `d+Q` comparison exactly; Green/current equality remains
-downstream.  The support-local cyclic hybrid projector also contracts 356
+off-shell `d+Q` comparison exactly; the direct causal pairing certificate
+now proves Green/current equality.  The support-local cyclic hybrid projector also contracts 356
 prolonged components and retains the 30-component metric--curvature graph.
 The exact curved endpoint is emitted coefficientwise in the ordered
 `5 -> 10 -> 10 -> 5` metric rows, rather than inferred from the flat-Fourier
 regression hashes; its graph maps and all three curved arrows intertwine
-exactly.  Only its endpoint Green witness and inverses remain open.  The
-construction
+exactly.  Its canonical endpoint witness and same-sided inverses remain
+unconstructed, but are not required by the direct tractor homotopy.  The construction
 does not use the scalar-wave-obstructed auxiliary block $E_{\rm aux}+KC$ as
 an endpoint witness; the next operator is
 $L_{\rm end}=QW_{\rm end}+W_{\rm end}Q$ on the retained metric--curvature
@@ -201,7 +212,16 @@ graph-lift no-go does not extend to relative witnesses.  In fact the full
 but its minimal Schur correction is identically zero:
 `P_end L_AF P_alg L_AF P_end=0`.  It introduces no new obstruction and
 cannot improve the endpoint diagonal.  Two further fail-closed diagnostics
-sharpen this open step.  At an arbitrary covector the auxiliary prenormal principal symbol
+sharpen this optional canonical-witness step.
+
+### Historical alternative-witness diagnostics
+
+The following factorization, saddle and first-order searches remain useful
+scoped no-go/design receipts.  Their open or false flags refer to those
+stronger implementations, not to the certified direct tractor causal route
+or the final covariant theorem.
+
+At an arbitrary covector the auxiliary prenormal principal symbol
 satisfies `(P2-q I)^2=0`, with Smith multiplicities `6/12/6` for the
 algebraic/wave/biwave factors.  The formal lower factor `2q I-P2` is exact at
 principal level, but its naive frozen lower-order completion has nonzero
@@ -306,8 +326,8 @@ its three spatial first-order coefficients, and the scalar diagonal still
 lacks its cyclic all-row lift.  Thus the arbitrary-covector symbol,
 characteristics, positive
 symmetrizer and lower-order completion remain open.
-These are diagnostics, not theorem promotions: the same six
-causal/transport flags remain false.
+These are diagnostics, not theorem promotions: at that intermediate stage
+the six causal/transport flags remained false on this route.
 
 The complete equivariant `R6sharp` audit now finds 22 temporal and 46
 spatial parameters.  With the certified temporal normalization fixed, the
@@ -348,9 +368,9 @@ On the exact TT-plus-shifted-auxiliary operator subcomplex this promotes
 `physical_biwave_block_green_hyperbolic=true` and
 `physical_Jordan_extension_causal=true`: the restricted witness has
 `P=diag(B_TT,1,B_TT,1)` and an exact restricted
-`Q Lambda + Lambda Q=1`.  The all-row Green flags stay false because the
-projector-free relative rank-14 equation-cone contraction inside the
-rank-34 reciprocal block remains open.
+`Q Lambda + Lambda Q=1`.  That intermediate route did not promote the
+all-row Green flags because its projector-free relative rank-14 equation-cone
+contraction inside the rank-34 reciprocal block remained open.
 
 A projector-free differential-module audit further reduces the reciprocal
 rank-34 block.  A presented rank-12 gauge/subsidiary submodule has an exact

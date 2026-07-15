@@ -24,14 +24,34 @@ The fifth layer includes the exact scalar-wave no-go theorem, the reduced
 helicity-two Weyl-symbol isomorphism, the exact 26-state Weyl--Cotton system,
 the symbolic all-level `E/A/L` curvature audit, and the formally integrable
 constraint-adjusted symmetric-hyperbolic realization with compatible
-sources.  It does **not** yet include the complete prolonged Green witness or
-an actual BV Green homotopy, residual endpoint recovery, or equivariant
-transport.  The all-row curvature
-prolongation is now exact: the corrected curved cotangent projections remove
-the spurious rank-four Rees defect, and the complete sixteen-block local SDR
-and prolonged BV differential are certified.  Its retained 30-row endpoint is
-also coefficient-complete, but its metric Green witness remains open.  This package also does not claim a
-direct same-bundle factorization of `H=B_lin+K T/2`.
+sources.  The all-row curvature prolongation is exact: a local cyclic
+projector contracts 356 of its 386 components and retains the 30-component
+metric--curvature graph.  Curved adjoint-tractor BGG/HPL compression supplies
+the trace-free endpoint causal homotopy; the explicit trace/Weyl shear and
+pointwise doublets complete it on all 30 endpoint rows.  Thus
+
+```text
+Lambda_full,+/-=H_alg+i_end Lambda_end,+/- p_end,
+Q Lambda_full,+/-+Lambda_full,+/- Q=1,
+Lambda_full,+^sharp=Lambda_full,-.
+```
+
+All maps outside the propagating endpoint are finite-order local, and the
+endpoint maps have retarded/advanced metric-causal support.  The resulting
+causal quasi-isomorphism, cutoff recovery of all fifteen residual endpoints,
+`SO(4,2)`-equivariant transfer, and direct causal/current pairing comparison
+are certified.  Consequently the covariant residual theorem is now exact:
+
+```text
+H^4_cov = span{[W_+^2],[W_-^2]},
+G_cov = I_2.
+```
+
+This direct tractor route deliberately does **not** assert the stronger
+canonical endpoint inverse or the earlier monolithic prolonged witness:
+`curvature_causal_green_operators=false` and
+`prolonged_green_witness=false` remain scoped legacy flags.  The package also
+does not claim a direct same-bundle factorization of `H=B_lin+K T/2`.
 
 ## Exact minimal ghost witness
 
@@ -282,23 +302,21 @@ python3 symbolic/verify_conformal_covariant_dependency_report.py --emit --guards
 
 Its machine-readable form is
 `certificates/final_claim_dependencies.json`; the human report is
-`generated/final_claim_dependencies.md`.  The graph distinguishes the three
-proved curved lemmas from the remaining terminal transport gate:
+`generated/final_claim_dependencies.md`.  The graph now has zero atomic
+blockers and certifies all four terminal flags:
 
 ```text
 curved_operator_identity       = true
 curved_deformation_retract     = true
 curved_current_comparison      = true
-final_covariant_H4             = false
+final_covariant_H4             = true
 ```
 
 Every downstream claim is computed from its declared dependencies.
-`support_preserving_metric_equivalence` is already true;
 `complete_bv_green_hyperbolicity`, `pairing_compatibility`, and
-`final_covariant_H4` remain false until a non-scalar Green realization is
-certified.  The already-proved algebraic and energy-mode result
-`H4 = C^2`, `G = I2` is an
-independent theorem and is not downgraded by this covariant status report.
+`final_covariant_H4` are true through the direct tractor causal route.  The
+independently proved residual result `H4 = C^2`, `G = I2` is transported, not
+recomputed in the auxiliary or prolonged variables.
 
 The terminal layer is transport-only:
 
@@ -323,8 +341,7 @@ and curved_constraint_propagation
 and EAL_curvature_spectrum_match
 and support_local_prolongation_retract
 and prolonged_BV_operator_identity
-and prolonged_green_witness
-and curvature_causal_green_operators
+and direct_tractor_causal_homotopy
 and causal_green_homotopy
 and causal_quasi_isomorphism
 and residual_endpoint_recovery
@@ -333,6 +350,23 @@ and prolonged_current_comparison
 and residual_H4_is_C2
 and residual_gram_is_I2.
 ```
+
+The selected status split is intentionally asymmetric:
+
+```text
+prolonged_green_witness             = false
+curvature_causal_green_operators   = false
+direct_tractor_causal_homotopy     = true
+causal_green_homotopy              = true
+causal_quasi_isomorphism           = true
+residual_endpoint_recovery         = true
+SO42_equivariant_transport         = true
+prolonged_current_comparison       = true
+```
+
+The two false flags encode stronger implementation-specific constructions;
+they are not mathematical prerequisites of the certified causal chain
+homotopy.
 
 The algebraic residual theorem, curved operator/retract/current lemmas,
 scalar-wave no-go, reduced Weyl-symbol theorem, exact curved `E/B` equations,
@@ -351,11 +385,19 @@ actual curved cotangent maps `p_E` and `p_I`, the identities
 `N A_aux=B_aux C_aux` are exact.  Conjugating the complete sixteen-block
 cotangent cone therefore proves `Q_prol^2=0`, odd cyclicity, `PI=1`, and
 `IP-1=QH+HQ` on every row using finite-order support-local maps.  The
-prolonged current certificate now binds the corrected curved core chain map
-and proves the off-shell `d+Q` comparison exactly.  Closing the witness now
-means constructing `W_end`, `L_end`, and the causal inverses on the retained
-metric--curvature graph; the scalar-wave-obstructed auxiliary diagonal is not
-used as the endpoint witness.
+prolonged current certificate binds the corrected curved core chain map and
+proves the off-shell `d+Q` comparison exactly.  The retained endpoint is
+closed instead by curved adjoint-tractor transfer and an explicit local
+trace/Weyl shear.  This yields the all-row causal homotopy without constructing
+`W_end G_end` for the canonical endpoint diagonal; the scalar-wave-obstructed
+auxiliary diagonal is not used as the endpoint witness.
+
+### Historical alternative-witness diagnostics
+
+The following factorization, saddle, and first-order searches are retained as
+scoped design/no-go receipts.  Their open or false flags describe those
+stronger implementations, not the now-certified direct tractor causal route
+or the terminal covariant theorem.
 
 The generic prenormal-symbol diagnostic is nevertheless exact.  Writing
 `q=g^{-1}(zeta,zeta)` and `P2=J_act^{-1} E2+K1 C1`, it proves
@@ -540,9 +582,9 @@ The exact TT-plus-`fhat` operator subcomplex now warrants the scoped positive
 flags `physical_biwave_block_green_hyperbolic=true` and
 `physical_Jordan_extension_causal=true`.  Its witness is
 `diag(B_TT,1,B_TT,1)` and its restricted Green homotopy identity is exact.
-The complete prolonged flags remain false because arbitrary-source local
-access to this block and inverses for the rank-34 and rank-four blocks have
-not yet been constructed.
+At that intermediate stage the complete prolonged flags remained false
+because arbitrary-source local access to this block and inverses for the
+rank-34 and rank-four blocks had not yet been constructed.
 
 The rank-34 reciprocal block now has a projector-free differential
 filtration.  Its rank-12 gauge/subsidiary submodule has an exact recursive
@@ -659,8 +701,8 @@ Thus the relative saddle introduces no new endpoint obstruction but cannot
 improve Green invertibility of the endpoint diagonal.  Larger relative
 witnesses are not excluded.  The still-missing object is the endpoint
 diagonal witness `W_0`, together with its same-sided Green operators and
-graded-adjoint/source-compatibility theorem.  No causal or final flag is
-promoted.
+graded-adjoint/source-compatibility theorem.  That canonical saddle route
+promotes no causal or final flag.
 
 The two scoped receipts are regenerated with
 
@@ -674,10 +716,11 @@ python3 symbolic/verify_conformal_endpoint_relative_saddle_feasibility.py --guar
 python3 symbolic/verify_conformal_endpoint_relative_saddle_nilpotence.py --guards
 ```
 
-The remaining flags are the prolonged Green witness, causal chain homotopy,
-residual endpoint recovery, and `SO(4,2)` equivariance.
-The terminal stage transports the existing `H4 = C^2`, `G = I2`; it must not
-recompute the residual CE complex.
+The historical canonical-witness branch still leaves its endpoint inverse and
+monolithic prolonged witness false.  The direct tractor branch instead
+certifies the causal chain homotopy, residual endpoint recovery and
+`SO(4,2)` equivariance.  The terminal stage transports the existing
+`H4 = C^2`, `G = I2`; it does not recompute the residual CE complex.
 
 ### Four-flag closure workstreams
 
@@ -734,25 +777,18 @@ support preservation in all three support categories.
 
 The current workstream derives both curved presymplectic potentials and the
 exact off-shell `d + Q` improvement under the same BV-canonical shift.  The
-Cauchy current and `E/A/L` regression close; the Green/current equality
-remains downstream of whichever Green-hyperbolic repair replaces the
-impossible scalar-symbol witness.
+Cauchy current and `E/A/L` regression close, and the direct causal pairing
+transport now identifies this current pairing with the Green pairing.
 
-These exact results appear as true scaffold nodes in the generated dependency
-report.  Three requested flags are true; only `final_covariant_H4` remains
-false.  The certified local Weyl-curvature prolongation propagates the
-helicity-two quotient rather than cancelling it as gauge.  What is missing is
-its complete causal BV Green realization, not the curvature propagation
-theorem.  The curvature compatibility complex and cotangent adjoint, the
-BV-canonical Weyl/Cotton graph SDR, and the analytic block witness are also
-exact.  The local state/equation chain map is exhaustive on all 700 metric
-four-jets.  The old sparse identity-square defect used a flat-Fourier
-projection in the curved cotangent row.  The reconstructed curved `p_E/p_I`
-maps now give the exact degree/sign-resolved odd BV mapping cylinder,
-nilpotent all-row differential, and support-local SDR.  The prolonged current
-comparison now binds that corrected digest and is exact off shell; its
-identification with a causal Green pairing remains downstream.  A genuinely
-curvature-prolonged realization is now the selected final dependency gate.
+These exact results appear as true nodes in the generated dependency report.
+All four requested flags are true.  The certified local Weyl-curvature
+prolongation propagates the helicity-two quotient rather than cancelling it as
+gauge.  The local state/equation chain map is exhaustive on all 700 metric
+four-jets; the reconstructed curved `p_E/p_I` maps give the exact
+degree/sign-resolved odd BV mapping cylinder, nilpotent all-row differential,
+and support-local SDR.  The direct adjoint-tractor homotopy, causal transport,
+endpoint recovery, equivariant transfer, and pairing comparison complete the
+selected dependency gate.
 
 The compact four-flag view is reproduced with
 
@@ -762,7 +798,7 @@ python3 symbolic/verify_conformal_four_flag_closure.py --emit --guards
 
 and is stored in `certificates/four_flag_closure_status.json`.
 
-## Remaining covariant comparison
+## Completed covariant comparison and remaining scope
 
 The general Green-hyperbolic-complex framework says that a local Green's
 witness yields retarded/advanced Green homotopies and comparison of
@@ -770,20 +806,14 @@ covariant and fixed-time Poisson structures up to homotopy; see
 [Benini, Musante, and Schenkel](https://arxiv.org/abs/2207.04069).
 
 For pure Weyl gravity the curved operator identities, support-local retract,
-and off-shell current comparison are discharged.  The remaining analytic
-task is to construct a local curvature-prolonged complex and prove a
-pairing-compatible causal BV bridge, not merely causal evolution of its
-physical Weyl helicities.  The electric/magnetic candidate has now been
-derived as the exact 26-state Weyl--Cotton system; its curved lower-order
-terms, sourced constraints, formal integrability, and all-level `E/A/L`
-audit are exact.  The all-row BV-canonical mapping cylinder is now exact in
-the corrected curved cotangent coordinates.  The remaining work is to
-construct the Green witness and homotopy, endpoint recovery, and equivariant
-transport.  Only
-after that theorem can the causal
-quasi-isomorphism and Green/current pairing equality be promoted.  A
-direct same-bundle metric factorization is an optional strengthening, not an
-input to the prolongation route.
+off-shell current comparison, all-row causal BV homotopy, causal
+quasi-isomorphism, endpoint recovery, equivariant transport, and Green/current
+pairing equality are discharged.  The exact 26-state Weyl--Cotton system and
+the all-row BV-canonical mapping cylinder supply the local curvature
+prolongation; curved adjoint-tractor transfer supplies the causal endpoint
+without a nonlocal helicity projector.  A canonical same-sided inverse for
+the endpoint witness and a direct same-bundle metric factorization remain
+optional strengthenings, not inputs to the proved theorem.
 
 This package does not claim arbitrary backgrounds, a direct same-bundle
 factorization of `H`, a local TT projector, a causal `E/L` branch split, a
