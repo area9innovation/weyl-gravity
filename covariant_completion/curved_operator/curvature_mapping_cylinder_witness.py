@@ -41,6 +41,7 @@ from covariant_completion.curved_retract.curvature_mapping_cylinder_kernel impor
     SIZE,
     _add,
     _identity,
+    _is_zero_mod_complex,
     _multiply,
     _scale,
     _zero,
@@ -203,6 +204,26 @@ class CurvatureMappingCylinderWitness:
         if not _matrix_equal(direct_identity, _zero()):
             raise AssertionError("P_prol=QW+WQ failed")
 
+        # Check chain commutation directly in the same noncommutative
+        # coefficient algebra.  Although it follows formally from Q^2=0 and
+        # P=QW+WQ, keeping it executable here guards the block ordering,
+        # cotangent signs and the direction of the canonical conjugation.
+        chain_commutator = _add(
+            _multiply(
+                self.kernel.prolonged_differential,
+                self.prolonged_witness_operator,
+            ),
+            _scale(
+                _multiply(
+                    self.prolonged_witness_operator,
+                    self.kernel.prolonged_differential,
+                ),
+                -1,
+            ),
+        )
+        if not _is_zero_mod_complex(chain_commutator):
+            raise AssertionError("Q_prol P_prol=P_prol Q_prol failed")
+
         identity = _identity()
         if not _matrix_equal(
             _multiply(self.kernel.new_to_old, self.kernel.old_to_new), identity
@@ -265,10 +286,29 @@ class CurvatureMappingCylinderWitness:
             "exact_identities": {
                 "W_has_degree_minus_one": True,
                 "P_prol_equals_QW_plus_WQ": True,
+                "Q_prol_P_prol_equals_P_prol_Q_prol": True,
                 "P_prol_equals_S_Psplit_Sinverse": True,
                 "support_local_diagonalization_inverse_exact": True,
                 "split_off_diagonal_blocks": 0,
             },
+            "dimension_resolved_block_order": [
+                {"block": "G_aux", "dimension": 9, "degree": -1},
+                {"block": "M_aux", "dimension": 24, "degree": 0},
+                {"block": "Ebar_aux", "dimension": 24, "degree": 1},
+                {"block": "I_aux", "dimension": 9, "degree": 2},
+                {"block": "X_U", "dimension": 26, "degree": 0},
+                {"block": "X_Eq", "dimension": 40, "degree": 1},
+                {"block": "X_Id", "dimension": 14, "degree": 2},
+                {"block": "Y_U", "dimension": 26, "degree": 1},
+                {"block": "Y_Eq", "dimension": 40, "degree": 2},
+                {"block": "Y_Id", "dimension": 14, "degree": 3},
+                {"block": "X_Id_sharp", "dimension": 14, "degree": -1},
+                {"block": "X_Eq_sharp", "dimension": 40, "degree": 0},
+                {"block": "X_U_sharp", "dimension": 26, "degree": 1},
+                {"block": "Y_Id_sharp", "dimension": 14, "degree": -2},
+                {"block": "Y_Eq_sharp", "dimension": 40, "degree": -1},
+                {"block": "Y_U_sharp", "dimension": 26, "degree": 0},
+            ],
             "split_diagonal_ledger": [
                 {
                     "block": BLOCK_NAMES[index],

@@ -79,6 +79,9 @@ def main() -> int:
         "QW_identity": certificate["exact_identities"][
             "P_prol_equals_QW_plus_WQ"
         ],
+        "QP_chain_commutation": certificate["exact_identities"][
+            "Q_prol_P_prol_equals_P_prol_Q_prol"
+        ],
         "canonical_diagonalization": certificate["exact_identities"][
             "P_prol_equals_S_Psplit_Sinverse"
         ],
