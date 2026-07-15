@@ -20,6 +20,7 @@ GENERATOR_REGISTRY = PACKAGE / "registry" / "generators.json"
 PHASE_REGISTRY = PACKAGE / "registry" / "phase_spaces.json"
 CLASSICAL_SCALAR_CLOCK_CONTRIBUTION = PACKAGE / "contributions" / "classical-scalar-clock-vertical-slice.json"
 CLASSICAL_NEUTRAL_CLOCK_CONTRIBUTION = PACKAGE / "contributions" / "classical-neutral-conformal-clock-pair.json"
+CLASSICAL_NEUTRAL_CLOCK_HEALTH_CONTRIBUTION = PACKAGE / "contributions" / "classical-neutral-clock-bv-health.json"
 NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
 EINSTEIN_ED1A_CONTRIBUTION = PACKAGE / "contributions" / "einstein-ed1a-asymptotic-generator-gate.json"
 
@@ -95,9 +96,13 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
         scalar_setting["assessment_status"] == "OPEN"
         and scalar_setting["verdict"] is None
         and classical["work_packages"]["relational_clock"]["status"]
-        == "CERTIFIED"
+        == "PARTIAL"
         and classical["work_packages"]["relational_clock"]["evidence_refs"]
-        == ["scalar_clock_vertical_slice", "neutral_conformal_clock_pair"]
+        == [
+            "scalar_clock_vertical_slice",
+            "neutral_conformal_clock_pair",
+            "neutral_clock_bv_health_audit",
+        ]
     ):
         raise AssertionError("classical scalar-clock obstruction scope drifted")
     neutral_setting = next(
@@ -235,6 +240,34 @@ def _classical_neutral_clock_contribution() -> dict[str, Any]:
     return contribution
 
 
+def _classical_neutral_clock_health_contribution() -> dict[str, Any]:
+    contribution = _load(CLASSICAL_NEUTRAL_CLOCK_HEALTH_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "classical"
+        and contribution.get("setting_id")
+        == "compact_neutral_clock_pair_local_health"
+        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("phase_space_id")
+        == "compact_neutral_clock_pair_local_extension"
+        and contribution.get("lifecycle_layer") == "CLASSICAL_CHARGE"
+        and contribution.get("claim_status") == "CERTIFIED"
+        and contribution.get("verdict")
+        == "OPPOSITE_SIGN_LOCAL_HEALTH_OBSTRUCTED"
+        and contribution.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    ):
+        raise AssertionError("classical neutral-clock health contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path = evidence.get("path")
+    commit = evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("classical neutral-clock health evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("classical neutral-clock health evidence hash drifted")
+    return contribution
+
+
 def _einstein_ed1a_contribution() -> dict[str, Any]:
     contribution = _load(EINSTEIN_ED1A_CONTRIBUTION)
     if not (
@@ -266,6 +299,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     inputs = {team: _team_input(path) for team, path in TEAM_PATHS.items()}
     scalar_clock_contribution = _classical_scalar_clock_contribution()
     neutral_clock_contribution = _classical_neutral_clock_contribution()
+    neutral_clock_health_contribution = _classical_neutral_clock_health_contribution()
     ed1a_contribution = _einstein_ed1a_contribution()
     nd1_contribution = _nonlinear_nd1_contribution()
     return {
@@ -296,6 +330,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": neutral_clock_contribution,
             },
             {
+                "path": str(CLASSICAL_NEUTRAL_CLOCK_HEALTH_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(CLASSICAL_NEUTRAL_CLOCK_HEALTH_CONTRIBUTION),
+                "payload": neutral_clock_health_contribution,
+            },
+            {
                 "path": str(EINSTEIN_ED1A_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(EINSTEIN_ED1A_CONTRIBUTION),
                 "payload": ed1a_contribution,
@@ -309,10 +348,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "team_status": [
             {
                 "team_id": "classical",
-                "result_state": "PARTIAL_WITH_COMPACT_SPLIT_AND_NEUTRAL_CLOCK_PAIR",
-                "verdict": "SECTOR_DEPENDENT_WITH_SCOPED_NEUTRAL_CLOCK_D_GAUGE",
-                "established": "D_compact is charged on compact_P_lin, gauge on compact_P_Taub0/compact_P_der, and gauge on the exact homogeneous neutral two-field clock sector; the one-real-scalar candidate remains obstructed.",
-                "next_gate": "support-local inhomogeneous neutral-clock BV completion and health audit of its opposite-sign reference sector",
+                "result_state": "PARTIAL_WITH_NEUTRAL_CLOCK_AND_LOCAL_HEALTH_OBSTRUCTION",
+                "verdict": "SCOPED_NEUTRAL_CLOCK_D_GAUGE_WITH_LOCAL_HEALTH_OBSTRUCTION",
+                "established": "D_compact is gauge on the exact homogeneous neutral clock sector, but its opposite-sign ratio mode survives Weyl reduction and crosses kinetic-sign degeneracies on every winding orbit.",
+                "next_gate": "positive-energy non-conformally-flat Bach-sourced clock or regular stress-free stealth clock",
             },
             {
                 "team_id": "einstein_boundary",
@@ -381,6 +420,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "lifecycle_layer": "CLASSICAL_CHARGE",
                 "status": "CERTIFIED",
                 "verdict": "D_GAUGE",
+            },
+            {
+                "setting_id": "compact_neutral_clock_pair_local_health",
+                "generator_id": "D_compact",
+                "phase_space_id": "compact_neutral_clock_pair_local_extension",
+                "boundary_conditions": "local cylinder neighborhoods of the neutral winding orbit; all-row causal complex absent",
+                "lifecycle_layer": "CLASSICAL_CHARGE",
+                "status": "BLOCKED",
+                "verdict": "OPPOSITE_SIGN_LOCAL_HEALTH_OBSTRUCTED",
             },
             {
                 "setting_id": "compact_selected_residual_HT1_q2",
@@ -470,9 +518,9 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
         },
         "next_shared_gate": {
-            "gate_id": "FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION",
+            "gate_id": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK",
             "owner_order": ["classical", "nonlinear", "quantum", "einstein_boundary"],
-            "rule": "Import the certified neutral two-field homogeneous sector by hash, construct its support-local inhomogeneous BV complex, and determine whether the opposite-sign reference direction is entirely gauge or contractible.",
+            "rule": "Retain the neutral pair only as a scoped homogeneous reference clock; construct either a positive-energy clock on a genuinely Bach-sourced non-conformally-flat background or a regular stress-free stealth clock.",
         },
         "claim_boundary": (
             "The dossier consolidates sector-indexed results. It does not promote a "
@@ -508,6 +556,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_derived_residual": "D_GAUGE",
         "compact_scalar_clock": "SINGLE_SCALAR_CLOCK_BACKGROUND_OBSTRUCTED",
         "compact_neutral_clock_pair": "D_GAUGE",
+        "compact_neutral_clock_pair_local_health": "OPPOSITE_SIGN_LOCAL_HEALTH_OBSTRUCTED",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -567,8 +616,9 @@ to the full Taub/moment-map zero fibre and the selected derived quotient.
 The first one-real-scalar exact-cylinder clock candidate is obstructed before
 a coupled phase space exists.  A distinct neutral two-field reference sector
 now supplies an exact homogeneous clock and a scoped `D_GAUGE` reduction, but
-its inhomogeneous BV and health questions remain open. Boundary, nonlinear,
-and quantum questions are separate gates.
+its local health audit proves that the opposite-sign ratio mode is not
+globally positive or entirely contractible. Boundary, nonlinear, and quantum
+questions are separate gates.
 
 ## Four-team ledger
 
@@ -653,6 +703,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
     reject("erase_neutral_clock_scope", mutant)
 
     mutant = deepcopy(data)
+    next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_neutral_clock_pair_local_health")["verdict"] = "D_GAUGE"
+    reject("erase_neutral_clock_health_obstruction", mutant)
+
+    mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_quantum")["verdict"] = "CARTAN_QUANTUM_EXACT"
     reject("promote_quantum_before_QME", mutant)
 
@@ -708,7 +762,7 @@ def main() -> int:
         failures = mutation_guards(data)
         if failures:
             raise AssertionError("mutation guards failed: " + ", ".join(failures))
-        print("mutation guards: 8/8 PASS")
+        print("mutation guards: 9/9 PASS")
     print(CERTIFICATE, "PASS")
     return 0
 

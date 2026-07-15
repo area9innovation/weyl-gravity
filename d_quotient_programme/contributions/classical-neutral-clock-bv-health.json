@@ -1,0 +1,40 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_neutral_clock_pair_local_health",
+  "generator_id": "D_compact",
+  "phase_space_id": "compact_neutral_clock_pair_local_extension",
+  "boundary_conditions": "local neighborhoods of the exact neutral winding clock on the closed cylinder; no boundary flux; all-row causal complex not constructed",
+  "lifecycle_layer": "CLASSICAL_CHARGE",
+  "claim_status": "CERTIFIED",
+  "verdict": "OPPOSITE_SIGN_LOCAL_HEALTH_OBSTRUCTED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "the temporal-diffeomorphism/Weyl scalar incidence is pointwise invertible on W nonzero and its inverse is support local",
+    "after Weyl reduction the ratio field retains a derivative term with target coefficient -rho^2 cos(2 theta)",
+    "for every neutral winding clock N=T_1^2-T_2^2 is a sinusoid proportional to W and crosses zero four times per compact D period",
+    "the remaining kinetic direction changes sign and becomes degenerate; temporal unitary gauge transfers rather than deletes its dynamics",
+    "the exact homogeneous reference-clock theorem and its scoped D_GAUGE verdict remain valid"
+  ],
+  "not_established": [
+    "a complete all-row coupled BV differential or causal Green complex",
+    "a positive-energy local matter completion",
+    "a no-go theorem for non-conformally-flat Bach-sourced clocks",
+    "a no-go theorem for regular stress-free stealth clocks",
+    "interacting, boundary, or quantum stability"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/NEUTRAL_CLOCK_BV_HEALTH_AUDIT.json",
+    "commit": "e040aa66aaef9ba9858db9391afd553e55bdc0ae",
+    "sha256": "182488e9efd280ed09c0c6d76a7699c64f822f23e79d0a877c5b439b66d56392"
+  },
+  "verification_commands": [
+    "python3 d_quotient_classical/composite_clock/neutral_clock_bv_health.py --check --guards",
+    "python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_clock_bv_health",
+    "python3 d_quotient_classical/verify_classical_status.py --guards"
+  ],
+  "next_gate": "construct a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background or a regular stress-free conformal/stealth clock"
+}

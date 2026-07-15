@@ -72,9 +72,12 @@ reserved. The one-real-scalar exact-cylinder clock gate is a certified no-go,
 but a distinct neutral two-field reference sector now works homogeneously:
 opposite improved stresses cancel, the projective angle is an everywhere
 monotone compact-\(D\) clock, and \(D\) is gauge on the declared regular
-zero-charge phase space. The result is deliberately scoped because the second
-scalar has opposite sign and its full inhomogeneous BV health is open. Paper IX
-still waits for at least one complete boundary or interaction theorem.
+zero-charge phase space. A subsequent local audit shows why this is not yet a
+healthy physical clock: the Weyl-reduced ratio mode keeps a derivative term,
+changes kinetic sign, and becomes degenerate four times per compact winding.
+The next candidate must use positive-energy Bach-sourced geometry or a regular
+stress-free stealth mechanism. Paper IX still waits for at least one complete
+boundary or interaction theorem.
 
 General-audience article:
 [`Before Worrying About a Gravitational Ghost, Ask Whether It Is Really There`](paper/before-worrying-about-a-gravitational-ghost.md)

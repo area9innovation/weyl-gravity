@@ -16,16 +16,16 @@
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
   "next_shared_gate": {
-    "gate_id": "FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION",
+    "gate_id": "POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK",
     "owner_order": [
       "classical",
       "nonlinear",
       "quantum",
       "einstein_boundary"
     ],
-    "rule": "Import the certified neutral two-field homogeneous sector by hash, construct its support-local inhomogeneous BV complex, and determine whether the opposite-sign reference direction is entirely gauge or contractible."
+    "rule": "Retain the neutral pair only as a scoped homogeneous reference clock; construct either a positive-energy clock on a genuinely Bach-sourced non-conformally-flat background or a regular stress-free stealth clock."
   },
-  "programme_base_commit": "a558ecf6eae7259ebd9dfef048602b83f9ccf9e4",
+  "programme_base_commit": "b21d0244b108286b979c25d70ec593aa44587771",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -42,7 +42,7 @@
   },
   "registry_hashes": {
     "generator_registry": "1df39af78cdd49eeb64faa2d46134542e9bb75a598f0dde98932657a682525de",
-    "phase_space_registry": "b63d3387accd084e844e8337c9b79a81f332c7f40b147695b58d4aa9cb466cc2"
+    "phase_space_registry": "f08243fbec809b283a9acfc4a6a9390402e084fff902df73f17f7f5ee4f2d934"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -92,6 +92,15 @@
       "setting_id": "compact_neutral_clock_pair",
       "status": "CERTIFIED",
       "verdict": "D_GAUGE"
+    },
+    {
+      "boundary_conditions": "local cylinder neighborhoods of the neutral winding orbit; all-row causal complex absent",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_CHARGE",
+      "phase_space_id": "compact_neutral_clock_pair_local_extension",
+      "setting_id": "compact_neutral_clock_pair_local_health",
+      "status": "BLOCKED",
+      "verdict": "OPPOSITE_SIGN_LOCAL_HEALTH_OBSTRUCTED"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -244,7 +253,51 @@
           "python3 d_quotient_classical/verify_classical_status.py --guards"
         ]
       },
-      "sha256": "831e8765d32ea301b24b0c78b50ac667b2ff8bc5e6bd4d5c087f94fd384d3e6e"
+      "sha256": "e53f4d88805413d55b205dd7a02a5cdf6850855f9de92115a5e8f113be76ef9c"
+    },
+    {
+      "path": "d_quotient_programme/contributions/classical-neutral-clock-bv-health.json",
+      "payload": {
+        "boundary_conditions": "local neighborhoods of the exact neutral winding clock on the closed cylinder; no boundary flux; all-row causal complex not constructed",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the temporal-diffeomorphism/Weyl scalar incidence is pointwise invertible on W nonzero and its inverse is support local",
+          "after Weyl reduction the ratio field retains a derivative term with target coefficient -rho^2 cos(2 theta)",
+          "for every neutral winding clock N=T_1^2-T_2^2 is a sinusoid proportional to W and crosses zero four times per compact D period",
+          "the remaining kinetic direction changes sign and becomes degenerate; temporal unitary gauge transfers rather than deletes its dynamics",
+          "the exact homogeneous reference-clock theorem and its scoped D_GAUGE verdict remain valid"
+        ],
+        "evidence": {
+          "commit": "e040aa66aaef9ba9858db9391afd553e55bdc0ae",
+          "path": "d_quotient_classical/certificates/NEUTRAL_CLOCK_BV_HEALTH_AUDIT.json",
+          "sha256": "182488e9efd280ed09c0c6d76a7699c64f822f23e79d0a877c5b439b66d56392"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "CLASSICAL_CHARGE",
+        "next_gate": "construct a positive-energy clock on a genuinely non-conformally-flat Bach-sourced background or a regular stress-free conformal/stealth clock",
+        "not_established": [
+          "a complete all-row coupled BV differential or causal Green complex",
+          "a positive-energy local matter completion",
+          "a no-go theorem for non-conformally-flat Bach-sourced clocks",
+          "a no-go theorem for regular stress-free stealth clocks",
+          "interacting, boundary, or quantum stability"
+        ],
+        "phase_space_id": "compact_neutral_clock_pair_local_extension",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_neutral_clock_pair_local_health",
+        "team_id": "classical",
+        "verdict": "OPPOSITE_SIGN_LOCAL_HEALTH_OBSTRUCTED",
+        "verification_commands": [
+          "python3 d_quotient_classical/composite_clock/neutral_clock_bv_health.py --check --guards",
+          "python3 -m unittest d_quotient_classical.composite_clock.tests.test_neutral_clock_bv_health",
+          "python3 d_quotient_classical/verify_classical_status.py --guards"
+        ]
+      },
+      "sha256": "320a87351d2201937fb3936ef53ed17601a4af3a2bdd931e72c0e9aede36ca67"
     },
     {
       "path": "d_quotient_programme/contributions/einstein-ed1a-asymptotic-generator-gate.json",
@@ -332,9 +385,9 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "a558ecf6eae7259ebd9dfef048602b83f9ccf9e4",
+      "commit": "556486504a5ce687e02a035d6f0dc0eef02d233a",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "592ec58f7604fda6a7702f6e9898b0044da657aeb28e5253a408096c2c5cb4d9"
+      "sha256": "3f8e1bbbcda764df824134ddd4c59b7bd8a80b9492291cd05ad2bad7468b8c10"
     },
     "einstein_boundary": {
       "commit": "89acca36479ebaea069c21eb23517dc6b1b49389",
@@ -342,9 +395,9 @@
       "sha256": "359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663"
     },
     "nonlinear": {
-      "commit": "b49e055fcba87540343c97f9736887b5321f6062",
+      "commit": "b21d0244b108286b979c25d70ec593aa44587771",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "87ab515cf19a29077af086d3d0c3d32f204ae31f77c42a75ae72fa6473162592"
+      "sha256": "0af0703b8d8162c959b34d1672108937984088b2c121aa11731d76c47828adc4"
     },
     "quantum": {
       "commit": "04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61",
@@ -354,11 +407,11 @@
   },
   "team_status": [
     {
-      "established": "D_compact is charged on compact_P_lin, gauge on compact_P_Taub0/compact_P_der, and gauge on the exact homogeneous neutral two-field clock sector; the one-real-scalar candidate remains obstructed.",
-      "next_gate": "support-local inhomogeneous neutral-clock BV completion and health audit of its opposite-sign reference sector",
-      "result_state": "PARTIAL_WITH_COMPACT_SPLIT_AND_NEUTRAL_CLOCK_PAIR",
+      "established": "D_compact is gauge on the exact homogeneous neutral clock sector, but its opposite-sign ratio mode survives Weyl reduction and crosses kinetic-sign degeneracies on every winding orbit.",
+      "next_gate": "positive-energy non-conformally-flat Bach-sourced clock or regular stress-free stealth clock",
+      "result_state": "PARTIAL_WITH_NEUTRAL_CLOCK_AND_LOCAL_HEALTH_OBSTRUCTION",
       "team_id": "classical",
-      "verdict": "SECTOR_DEPENDENT_WITH_SCOPED_NEUTRAL_CLOCK_D_GAUGE"
+      "verdict": "SCOPED_NEUTRAL_CLOCK_D_GAUGE_WITH_LOCAL_HEALTH_OBSTRUCTION"
     },
     {
       "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem.",

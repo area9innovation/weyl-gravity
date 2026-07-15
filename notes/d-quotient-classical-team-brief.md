@@ -136,10 +136,17 @@ monotone compact-\(D\) clock and the raw Diff \(\times\) Weyl incidence has
 full rank. The scoped verdict is `D_GAUGE` on
 `compact_neutral_clock_pair_homogeneous`.
 
-The replacement uses opposite-sign reference matter. The next gate is
-`FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION`, not an unrestricted health claim.
-Construct the support-local inhomogeneous complex and prove that the negative
-direction is gauge/contractible, or record the obstruction.
+The replacement uses opposite-sign reference matter. Its local health audit
+is now complete and obstructs an unrestricted promotion: after Weyl reduction
+the ratio mode retains a derivative term with sign-changing coefficient, and
+every neutral winding orbit crosses four kinetic degeneracies. The homogeneous
+clock theorem remains valid, but `FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION` fails
+as a globally regular positive clock.
+
+The next clock gate is
+`POSITIVE_ENERGY_NONCONFORMALLY_FLAT_OR_STEALTH_CLOCK`: use a genuinely
+Bach-sourced non-conformally-flat background or a regular stress-free stealth
+field, without a freely propagating opposite-sign reference scalar.
 
 ### Parked nonlinear support-local export
 
