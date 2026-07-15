@@ -194,3 +194,10 @@ Every material result must carry at least one exact dependency tag:
 `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, `REDUCED-MODE`, or
 `LORENTZIAN-CAUSAL`.  A reduced-mode or Euclidean calculation is not evidence
 for a Lorentzian-causal claim.
+
+## Live handoff
+
+The fail-closed status matrix, schema, report, and verification commands live
+in [`d_quotient_classical/`](../d_quotient_classical/README.md).  Untested
+settings remain `OPEN` or `NOT_TESTED`; the machine record never assigns a
+scientific verdict without its declared charge evidence and dependency tags.

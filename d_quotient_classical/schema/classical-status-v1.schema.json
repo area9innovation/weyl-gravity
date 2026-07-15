@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-classical-d-quotient-status-v1.schema.json",
+  "title": "Pure-Weyl classical D-quotient challenge status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "source_commit",
+    "claim_state",
+    "dependency_tags",
+    "scientific_verdicts",
+    "settings",
+    "residual_complexes",
+    "work_packages",
+    "evidence_artifacts",
+    "verification_receipts",
+    "open_fields",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-classical-d-quotient-status-v1"},
+    "result_id": {"const": "CLASSICAL_D_QUOTIENT_STATUS"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "claim_state": {"enum": ["OPEN_FAIL_CLOSED", "PARTIAL", "COMPLETE"]},
+    "dependency_tags": {"$ref": "#/$defs/dependencyTags"},
+    "scientific_verdicts": {
+      "const": ["D_GAUGE", "D_CHARGED", "SECTOR_DEPENDENT", "NOT_HAMILTONIAN"]
+    },
+    "settings": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {"$ref": "#/$defs/setting"}
+    },
+    "residual_complexes": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/residualComplex"}
+    },
+    "work_packages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["charge", "alternative_complexes", "relational_clock", "background_deformation"],
+      "properties": {
+        "charge": {"$ref": "#/$defs/workPackage"},
+        "alternative_complexes": {"$ref": "#/$defs/workPackage"},
+        "relational_clock": {"$ref": "#/$defs/workPackage"},
+        "background_deformation": {"$ref": "#/$defs/workPackage"}
+      }
+    },
+    "evidence_artifacts": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidenceArtifact"}
+    },
+    "verification_receipts": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/verificationReceipt"}
+    },
+    "open_fields": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "dependencyTags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]
+      }
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[a-z0-9_]+$"}
+    },
+    "matrixCell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "result", "dependency_tags", "evidence_refs"],
+      "properties": {
+        "status": {"enum": ["NOT_TESTED", "OPEN", "NOT_APPLICABLE", "CERTIFIED_BASELINE", "CERTIFIED"]},
+        "result": {"type": ["string", "null"]},
+        "dependency_tags": {"type": "array", "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    },
+    "chargeTest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status", "delta_H_D", "integrability", "flux", "conservation",
+        "reference_normalization", "phase_space_preserved", "surface_corner_terms",
+        "strongest_counterexample", "evidence_refs"
+      ],
+      "properties": {
+        "status": {"enum": ["NOT_TESTED", "OPEN", "CERTIFIED"]},
+        "delta_H_D": {"enum": ["NOT_TESTED", "OPEN", "IDENTICALLY_ZERO", "NONZERO_EXAMPLE"]},
+        "integrability": {"enum": ["NOT_TESTED", "OPEN", "INTEGRABLE", "NONINTEGRABLE"]},
+        "flux": {"enum": ["NOT_TESTED", "OPEN", "ZERO", "NONZERO"]},
+        "conservation": {"enum": ["NOT_TESTED", "OPEN", "CONSERVED", "NOT_CONSERVED", "NOT_APPLICABLE"]},
+        "reference_normalization": {"enum": ["NOT_TESTED", "OPEN", "DECLARED", "NOT_APPLICABLE"]},
+        "phase_space_preserved": {"enum": ["NOT_TESTED", "OPEN", "YES", "NO"]},
+        "surface_corner_terms": {"enum": ["NOT_TESTED", "OPEN", "COMPLETE", "NOT_APPLICABLE"]},
+        "strongest_counterexample": {"type": ["string", "null"]},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    },
+    "setting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "setting_id", "claim_scope", "phase_space_status", "phase_space", "boundary_conditions",
+        "assessment_status", "verdict", "verdict_dependency_tags", "sector_restrictions", "sector_results",
+        "charge_test", "cartan_contraction", "causal_homotopy", "one_particle_sector",
+        "pairing", "einstein_sector", "assumptions"
+      ],
+      "properties": {
+        "setting_id": {"enum": ["vacuum_cylinder", "cylinder_scalar_clock", "cylinder_yang_mills", "weakly_deformed_background", "lorentzian_ds_ads", "asymptotically_flat"]},
+        "claim_scope": {"enum": ["NOT_TESTED", "REDUCED_MODE", "COVARIANT_SMOOTH", "LORENTZIAN_BOUNDARY"]},
+        "phase_space_status": {"enum": ["NOT_SPECIFIED", "PARTIALLY_SPECIFIED", "SPECIFIED"]},
+        "phase_space": {"type": ["string", "null"]},
+        "boundary_conditions": {"type": ["string", "null"]},
+        "assessment_status": {"enum": ["NOT_TESTED", "OPEN", "CERTIFIED"]},
+        "verdict": {"type": ["string", "null"], "enum": [null, "D_GAUGE", "D_CHARGED", "SECTOR_DEPENDENT", "NOT_HAMILTONIAN"]},
+        "verdict_dependency_tags": {"type": "array", "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+        "sector_restrictions": {"type": "array", "items": {"type": "string"}},
+        "sector_results": {"type": "array", "items": {"$ref": "#/$defs/sectorResult"}},
+        "charge_test": {"$ref": "#/$defs/chargeTest"},
+        "cartan_contraction": {"$ref": "#/$defs/matrixCell"},
+        "causal_homotopy": {"$ref": "#/$defs/matrixCell"},
+        "one_particle_sector": {"$ref": "#/$defs/matrixCell"},
+        "pairing": {"$ref": "#/$defs/matrixCell"},
+        "einstein_sector": {"$ref": "#/$defs/matrixCell"},
+        "assumptions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "sectorResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sector_id", "phase_space", "verdict", "charge_result", "linearizability", "dependency_tags", "evidence_refs"],
+      "properties": {
+        "sector_id": {"type": "string", "pattern": "^[A-Za-z0-9_]+$"},
+        "phase_space": {"type": "string", "minLength": 1},
+        "verdict": {"enum": ["D_GAUGE", "D_CHARGED", "NOT_HAMILTONIAN"]},
+        "charge_result": {"type": "string", "minLength": 1},
+        "linearizability": {"enum": ["NOT_TESTED", "LINEARIZABLE", "TAUB_OBSTRUCTED", "NOT_APPLICABLE"]},
+        "dependency_tags": {"$ref": "#/$defs/dependencyTags"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    },
+    "residualComplex": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["complex_id", "definition_status", "computation_status", "definition", "dependency_tags", "cohomology_dimensions", "one_particle_result", "gram_matrix", "representatives", "trivializations", "evidence_refs", "open_fields"],
+      "properties": {
+        "complex_id": {"enum": ["absolute_so42", "D_global_symmetry", "zero_charge_transformations", "local_gauge_only"]},
+        "definition_status": {"enum": ["NOT_DEFINED", "OPEN", "DEFINED", "CERTIFIED_BASELINE"]},
+        "computation_status": {"enum": ["NOT_TESTED", "OPEN", "PARTIAL", "CERTIFIED_BASELINE", "CERTIFIED"]},
+        "definition": {"type": ["string", "null"]},
+        "dependency_tags": {"type": "array", "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+        "cohomology_dimensions": {"type": ["object", "null"]},
+        "one_particle_result": {"type": ["string", "null"]},
+        "gram_matrix": {"type": ["array", "object", "null"]},
+        "representatives": {"type": "array", "items": {"type": "string"}},
+        "trivializations": {"type": "array", "items": {"type": "string"}},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"},
+        "open_fields": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "workPackage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "dependency_tags", "result", "evidence_refs", "next_gate"],
+      "properties": {
+        "status": {"enum": ["NOT_TESTED", "OPEN", "IN_PROGRESS", "PARTIAL", "CERTIFIED", "OBSTRUCTED"]},
+        "dependency_tags": {"type": "array", "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+        "result": {"type": ["string", "null"]},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"},
+        "next_gate": {"type": "string", "minLength": 1}
+      }
+    },
+    "evidenceArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "path", "sha256", "dependency_tags", "claim_scope"],
+      "properties": {
+        "evidence_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "dependency_tags": {"$ref": "#/$defs/dependencyTags"},
+        "claim_scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "verificationReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "elapsed_seconds", "status", "test_tier", "higher_tiers_not_run", "escalation_criterion"],
+      "properties": {
+        "command": {"type": "string", "minLength": 1},
+        "elapsed_seconds": {"type": ["number", "null"], "minimum": 0},
+        "status": {"enum": ["NOT_RUN", "PASS", "FAIL", "TIMEOUT"]},
+        "test_tier": {"enum": [0, 1, 2, 3]},
+        "higher_tiers_not_run": {"type": "string"},
+        "escalation_criterion": {"type": "string"}
+      }
+    }
+  }
+}

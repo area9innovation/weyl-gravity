@@ -62,6 +62,12 @@ The itemized response, including what remains genuinely open before
 submission, is
 [`notes/conformal-referee-major-revision.md`](notes/conformal-referee-major-revision.md).
 
+Classical $D$-quotient challenge:
+[`d_quotient_classical/README.md`](d_quotient_classical/README.md) tracks the
+compact-cylinder charge audit, mathematically valid alternative residual
+complexes, and the still-open clock/background/boundary settings with
+fail-closed verdicts and dependency tags.
+
 General-audience article:
 [`Before Worrying About a Gravitational Ghost, Ask Whether It Is Really There`](paper/before-worrying-about-a-gravitational-ghost.md)
 explains the completed classical pure-Weyl BV–BFV result without assuming
