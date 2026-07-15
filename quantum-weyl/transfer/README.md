@@ -89,12 +89,22 @@ conformal-gravity coefficient: the physical evaluator and classical
 `q1/q2/D/iota_cl/pi_cl/s_cl` payload remain absent.
 
 The permanent ND2 engine is now separated from a versioned physical-run
-contract.  A physical execution must pin three independently hashed artifacts:
-the support-local `q1/q2/D` export, the classical contraction, and the
-admissibility policy.  Expression evaluators are registered by schema version,
-operator inventory, and implementation-manifest hash.  Unknown evaluators,
-schema mismatches, changed evaluator source, missing assembly adapters, and
-artifact hash drift all stop before classification.
+contract.  A physical execution must pin four independently hashed artifacts:
+the total-`D` disposition certificate, support-local `q1/q2/D` export,
+classical contraction, and admissibility policy.  The declared disposition is
+checked against the certificate bytes.  Only `D_GAUGE` reaches the Cartan
+solver; `OPEN`, `D_CHARGED_NO_QUOTIENT`, `SECTOR_DEPENDENT`, and
+`NOT_HAMILTONIAN` terminate on distinct non-contraction routes.  Expression
+evaluators are registered by schema version, operator inventory, and
+implementation-manifest hash.  Unknown evaluators, schema mismatches, changed
+evaluator source, missing assembly adapters, and artifact hash drift all stop
+before classification.
+
+The positive Berger-clock result is now imported on its actual boundary.  It
+provides a healthy exact background and nonzero reduced internal clock
+momentum, while the combined gravitational-plus-matter `D` disposition remains
+`OPEN`.  It therefore selects the blocked route before Cartan classification;
+it is not evidence that `D` is gauge.
 
 The arity-two solve also has a block-sparse exact rail.  Declared additive
 labels such as `D` weight, momentum, or jet filtration must be preserved by
@@ -147,6 +157,7 @@ python3 quantum-weyl/transfer/local_bach_seed_certificate.py --check
 python3 quantum-weyl/transfer/d_derivation_certificate.py --check
 python3 quantum-weyl/transfer/nd2_arity_two_certificate.py --check
 python3 quantum-weyl/transfer/nd2_physical_run_certificate.py --check
+python3 quantum-weyl/transfer/berger_clock_import_certificate.py --check
 python3 quantum-weyl/transfer/arity_three_cartan_certificate.py --check
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check

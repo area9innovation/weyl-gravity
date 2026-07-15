@@ -1,0 +1,89 @@
+{
+  "D_disposition": {
+    "allowed_terminal_dispositions": [
+      "D_GAUGE",
+      "D_CHARGED_NO_QUOTIENT",
+      "SECTOR_DEPENDENT",
+      "NOT_HAMILTONIAN"
+    ],
+    "next_gate": "TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT",
+    "reason": "the reduced O(2) clock momentum is nonzero, but the combined gravitational-plus-matter covariant D charge has not been computed",
+    "status": "OPEN"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "a healthy exact positive-energy Berger clock background exists on an open parameter interval",
+    "the clock phase carries nonzero conserved standard-sign matter momentum",
+    "D acts helically with the internal O(2) rotation on the exact background"
+  ],
+  "generator_id": "D_compact",
+  "imported_background": {
+    "bounded_below_quartic": true,
+    "dominant_energy_condition": true,
+    "everywhere_timelike_phase_clock": true,
+    "full_diff_weyl_incidence": true,
+    "parameter_interval": "(5-sqrt(21))/2 < q < 1/4",
+    "positive_standard_scalar_kinetic": true
+  },
+  "imported_reduced_charge": {
+    "canonical_phase_momentum": "p_theta=Q_R",
+    "charge_nonzero_on_open_interval": true,
+    "helical_action": "L_D(T_1,T_2)=omega R(T_1,T_2)",
+    "integrated_charge": "Q_R=16 pi^2 alpha_B q sqrt(1-4q)"
+  },
+  "lifecycle_layer": "CLASSICAL_CHARGE",
+  "not_established": [
+    "the total gravitational-plus-matter covariant D charge",
+    "a D_GAUGE, D_CHARGED_NO_QUOTIENT, SECTOR_DEPENDENT, or NOT_HAMILTONIAN disposition",
+    "a support-local all-row matter-coupled BV contraction",
+    "a physical nonlinear Cartan correction or obstruction on the Berger background",
+    "causal propagation, stability, quantum admissibility, or a Lorentzian quantum theorem"
+  ],
+  "phase_space_id": "positive_rotating_scalar_berger_background",
+  "physical_run_gate": {
+    "admissibility_policy": "NOT_AVAILABLE",
+    "classical_contraction": "NOT_AVAILABLE",
+    "route": "BLOCKED_BEFORE_CARTAN_CLASSIFICATION",
+    "support_local_q1_q2_D": "NOT_AVAILABLE",
+    "support_local_q3": "NOT_AVAILABLE",
+    "total_D_disposition_certificate": "NOT_AVAILABLE"
+  },
+  "provenance": {
+    "background": {
+      "commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db",
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"
+    },
+    "classical_status": {
+      "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
+      "sha256": "ca4a6f632aaf6d5cc903fcf1dee9a0c69d1d935b1b174df590ffcc430b59c776",
+      "source_commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db"
+    },
+    "programme_status": {
+      "path": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json",
+      "programme_base_commit": "958f51a700a839baf4d526c6a207c893048dfe62",
+      "sha256": "996f153fb0224f4cf4c211a4bf7a96c208fff5a8a393cbcda716b572c998b7fd"
+    },
+    "reduced_charge": {
+      "commit": "bb5738d6e3e30a68adcc9a70c35dac089079e3db",
+      "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+      "sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9"
+    },
+    "schema": "quantum-weyl/transfer/schema/berger-clock-nonlinear-import-v1.schema.json",
+    "source_manifest": {
+      "berger_clock_import.py": "cb18244d1741f60f1366fa4fa5ed6d16d18fa5c4da0b1bcbcb91b27aa9328e12",
+      "berger_clock_import_certificate.py": "61a6e09f8edcc27d21b1bb3c3d874bd2ca921040086c53e877aa86be5f69e3c4",
+      "schema/berger-clock-nonlinear-import-v1.schema.json": "b66241aaf1ecabcd7ab4d2bce86b320a2a1161dcd66f425fb537fc1d1c65daad",
+      "tests/test_berger_clock_import.py": "5de77521e6ff3741dc7bf2b5ba7eb93e801f8569c5e98d1b54c159f9812f2781"
+    },
+    "source_manifest_sha256": "73ba7619e221e814c5df1417ebb596dd83d38d4b50e9f34d75a07faa4dc407c9"
+  },
+  "result_id": "BERGER_CLOCK_NONLINEAR_IMPORT",
+  "result_state": "BACKGROUND_AND_REDUCED_CHARGE_IMPORTED_TOTAL_D_OPEN",
+  "schema": "quantum-weyl-berger-clock-nonlinear-import-v1",
+  "setting_id": "compact_positive_berger_clock",
+  "setting_verdict": "INPUT_GATE_BLOCKED"
+}

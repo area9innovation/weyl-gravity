@@ -44,10 +44,18 @@ absent.
 
 The waiting-time hardening now separates the stable ND2 engine from the
 physical execution receipt.  A content-addressed evaluator registry and
-three-artifact physical-run manifest reject unknown expression semantics,
-source drift, incomplete contraction data, and missing admissibility policy.
+four-artifact physical-run manifest reject unknown expression semantics,
+source drift, incomplete contraction data, missing admissibility policy, and
+an absent or mismatched total-`D` disposition.  Only a certified `D_GAUGE`
+route reaches contraction.
 The exact arity-two solver can partition by conserved additive labels and use
 sparse rational elimination inside occupied blocks.
+
+The positive Berger-clock background and reduced internal charge are now
+imported with their exact classical provenance.  They establish a healthy
+rotating clock and nonzero reduced O(2) momentum, but leave the total
+gravitational-plus-matter `D` disposition open.  The physical Cartan run is
+therefore blocked before classification.
 
 ND3 additionally implements the next Cartan recurrence.  It retains the
 direct `[q3,iota_D]` and exchange `[q2,iota_D^(2)]` tensors separately, checks
@@ -109,6 +117,9 @@ transferred before `QME_RESTORED`.
 | Waiting hardening: ND1/ND2/ND3/aggregate certificate chain | 6.01 | PASS | 2 |
 | Waiting hardening: complete transfer suite | 57.99 | PASS (85 tests) | 2 |
 | Waiting hardening: classical import suite | 0.36 | PASS (28 tests) | 1 |
+| Berger import: classical and programme mutation guards | 2.26 | PASS (44/44 guards) | 2 |
+| Berger import: affected nonlinear certificate chain | 5.80 | PASS | 2 |
+| Berger import: updated complete transfer suite | 66.03 | PASS (90 tests) | 2 |
 
 An optional Draft-2020-12 meta-schema check was attempted but was **not
 run** because the environment does not provide the `jsonschema` module.  It

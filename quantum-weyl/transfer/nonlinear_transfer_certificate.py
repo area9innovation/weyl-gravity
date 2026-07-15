@@ -13,6 +13,7 @@ TRANSFER_ROOT = Path(__file__).resolve().parent
 QUANTUM_ROOT = TRANSFER_ROOT.parent
 SNAPSHOT_PATH = QUANTUM_ROOT / "classical_import" / "snapshots" / "bootstrap-v1.json"
 OUTPUT_PATH = TRANSFER_ROOT / "certificates" / "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json"
+BERGER_IMPORT_PATH = TRANSFER_ROOT / "certificates" / "BERGER_CLOCK_NONLINEAR_IMPORT.json"
 
 
 REQUIRED_EXPORTS = (
@@ -52,6 +53,8 @@ def _source_manifest() -> dict[str, str]:
         "nd2_arity_two_certificate.py",
         "nd2_physical_run.py",
         "nd2_physical_run_certificate.py",
+        "berger_clock_import.py",
+        "berger_clock_import_certificate.py",
         "arity_three_cartan.py",
         "arity_three_cartan_certificate.py",
         "local_bach_seed_lift.py",
@@ -64,6 +67,7 @@ def _source_manifest() -> dict[str, str]:
         "schema/nd2-arity-two-cartan-engine-v1.schema.json",
         "schema/nd2-physical-run-input-v1.schema.json",
         "schema/nd2-physical-run-certificate-v1.schema.json",
+        "schema/berger-clock-nonlinear-import-v1.schema.json",
         "schema/arity-three-cartan-engine-v1.schema.json",
         "schema/nonlinear_classical_export.schema.json",
         "residual_cubic_block.py",
@@ -77,6 +81,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_support_local_q2_consumer.py",
         "tests/test_nd2_arity_two_certificate.py",
         "tests/test_nd2_physical_run.py",
+        "tests/test_berger_clock_import.py",
         "tests/test_arity_three_cartan.py",
         "tests/test_arity_three_cartan_certificate.py",
         "tests/test_local_bach_seed_lift.py",
@@ -89,6 +94,13 @@ def _source_manifest() -> dict[str, str]:
 
 def build_certificate() -> dict[str, Any]:
     snapshot = json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
+    berger_import = json.loads(BERGER_IMPORT_PATH.read_text(encoding="utf-8"))
+    if (
+        berger_import.get("result_state")
+        != "BACKGROUND_AND_REDUCED_CHARGE_IMPORTED_TOTAL_D_OPEN"
+        or berger_import.get("D_disposition", {}).get("status") != "OPEN"
+    ):
+        raise ValueError("Berger nonlinear import is absent or has crossed its certified boundary")
     exports = {item["export_id"]: item for item in snapshot["required_exports"]}
     blockers = []
     for export_id in REQUIRED_EXPORTS:
@@ -125,6 +137,8 @@ def build_certificate() -> dict[str, Any]:
                 "ND1 exact arity-two D-derivation defect vanishes on all four selected residual HT1 q2 blocks",
                 "ND2 canonical exact local-expression consumer and full arity-two Cartan primitive/obstruction engine",
                 "ND2 stable physical-run contract with content-addressed evaluator registry and block-sparse exact solving",
+                "content-addressed Berger healthy-background and reduced-clock-momentum import with total D explicitly open",
+                "total-D disposition router that permits Cartan contraction only for a certified D_GAUGE result",
                 "ND3 exact arity-three Cartan recurrence engine with separate direct q3 and exchange sources",
             ],
             "not_established": [
@@ -132,6 +146,7 @@ def build_certificate() -> dict[str, Any]:
                 "the complete support-local conformal-gravity q2 lift before endpoint projection",
                 "closure or centrality of either Weyl-square direction",
                 "absence of higher-bracket sector re-entry",
+                "the total gravitational-plus-matter D disposition on the Berger clock branch",
                 "an interacting particle or deformation-theory theorem",
                 "a quantum correction or residual quantum transfer",
                 "any LORENTZIAN-CAUSAL claim",
@@ -147,7 +162,7 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_ND2_PHYSICAL_RUN_CONTRACT_AND_ND3_CARTAN_SOLVER_READY_FULL_LOCAL_VERDICT_INPUT_GATE_BLOCKED",
+                "status": "SELECTED_RESIDUAL_Q2_D_DERIVATION_VERIFIED_BERGER_HEALTHY_CLOCK_AND_REDUCED_MOMENTUM_IMPORTED_TOTAL_D_OPEN_ND2_DISPOSITION_ROUTER_AND_ND3_CARTAN_SOLVER_READY_FULL_LOCAL_VERDICT_INPUT_GATE_BLOCKED",
                 "next_certificate": "ND1_COMPLETE_SUPPORT_LOCAL_D_DERIVATION_AND_IOTA_D2",
             },
             {
@@ -222,6 +237,8 @@ def build_certificate() -> dict[str, Any]:
             "nd2_physical_run_contract_sha256": _sha256(
                 TRANSFER_ROOT / "certificates" / "ND2_PHYSICAL_RUN.json"
             ),
+            "berger_clock_nonlinear_import_certificate": "quantum-weyl/transfer/certificates/BERGER_CLOCK_NONLINEAR_IMPORT.json",
+            "berger_clock_nonlinear_import_sha256": _sha256(BERGER_IMPORT_PATH),
             "nd3_arity_three_cartan_engine_certificate": "quantum-weyl/transfer/certificates/ND3_ARITY_THREE_CARTAN_ENGINE.json",
             "nd3_arity_three_cartan_engine_sha256": _sha256(
                 TRANSFER_ROOT / "certificates" / "ND3_ARITY_THREE_CARTAN_ENGINE.json"
@@ -236,6 +253,7 @@ def build_certificate() -> dict[str, Any]:
             "The two local Bach density seeds test selected matrix elements only; they do not substitute for an arbitrary-input bilinear Bach tensor or its BV completions.",
             "The vanishing selected residual D-derivation defect does not construct the full support-local interacting Cartan homotopy.",
             "ND2 fixture primitives and obstruction witnesses certify the exact solver branches only; they contain no conformal-gravity interaction coefficient.",
+            "The Berger import certifies a healthy background and nonzero reduced O(2) momentum, not the total D charge; OPEN and non-gauge dispositions never enter Cartan contraction.",
             "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics only; physical q3 and iota_D^(2) remain absent.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",
         ],

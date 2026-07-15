@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-clock-nonlinear-import-v1.schema.json",
+  "title": "Content-addressed nonlinear import of the Berger clock candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "setting_id", "phase_space_id",
+    "generator_id", "lifecycle_layer", "dependency_tags", "setting_verdict",
+    "imported_background", "imported_reduced_charge", "D_disposition",
+    "physical_run_gate", "established", "not_established", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-clock-nonlinear-import-v1"},
+    "result_id": {"const": "BERGER_CLOCK_NONLINEAR_IMPORT"},
+    "result_state": {"const": "BACKGROUND_AND_REDUCED_CHARGE_IMPORTED_TOTAL_D_OPEN"},
+    "setting_id": {"const": "compact_positive_berger_clock"},
+    "phase_space_id": {"const": "positive_rotating_scalar_berger_background"},
+    "generator_id": {"const": "D_compact"},
+    "lifecycle_layer": {"const": "CLASSICAL_CHARGE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "setting_verdict": {"const": "INPUT_GATE_BLOCKED"},
+    "imported_background": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parameter_interval", "positive_standard_scalar_kinetic",
+        "bounded_below_quartic", "dominant_energy_condition",
+        "everywhere_timelike_phase_clock", "full_diff_weyl_incidence"
+      ],
+      "properties": {
+        "parameter_interval": {"const": "(5-sqrt(21))/2 < q < 1/4"},
+        "positive_standard_scalar_kinetic": {"const": true},
+        "bounded_below_quartic": {"const": true},
+        "dominant_energy_condition": {"const": true},
+        "everywhere_timelike_phase_clock": {"const": true},
+        "full_diff_weyl_incidence": {"const": true}
+      }
+    },
+    "imported_reduced_charge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["integrated_charge", "helical_action", "charge_nonzero_on_open_interval", "canonical_phase_momentum"],
+      "properties": {
+        "integrated_charge": {"const": "Q_R=16 pi^2 alpha_B q sqrt(1-4q)"},
+        "helical_action": {"const": "L_D(T_1,T_2)=omega R(T_1,T_2)"},
+        "charge_nonzero_on_open_interval": {"const": true},
+        "canonical_phase_momentum": {"const": "p_theta=Q_R"}
+      }
+    },
+    "D_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "allowed_terminal_dispositions", "reason", "next_gate"],
+      "properties": {
+        "status": {"const": "OPEN"},
+        "allowed_terminal_dispositions": {"const": ["D_GAUGE", "D_CHARGED_NO_QUOTIENT", "SECTOR_DEPENDENT", "NOT_HAMILTONIAN"]},
+        "reason": {"type": "string", "minLength": 1},
+        "next_gate": {"const": "TOTAL_BERGER_D_PRESYMPLECTIC_AUDIT"}
+      }
+    },
+    "physical_run_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_D_disposition_certificate", "support_local_q1_q2_D", "classical_contraction", "admissibility_policy", "support_local_q3", "route"],
+      "properties": {
+        "total_D_disposition_certificate": {"const": "NOT_AVAILABLE"},
+        "support_local_q1_q2_D": {"const": "NOT_AVAILABLE"},
+        "classical_contraction": {"const": "NOT_AVAILABLE"},
+        "admissibility_policy": {"const": "NOT_AVAILABLE"},
+        "support_local_q3": {"const": "NOT_AVAILABLE"},
+        "route": {"const": "BLOCKED_BEFORE_CARTAN_CLASSIFICATION"}
+      }
+    },
+    "established": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "not_established": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["background", "reduced_charge", "classical_status", "programme_status", "source_manifest", "source_manifest_sha256", "schema"],
+      "properties": {
+        "background": {"$ref": "#/$defs/evidence"},
+        "reduced_charge": {"$ref": "#/$defs/evidence"},
+        "classical_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256", "source_commit"],
+          "properties": {
+            "path": {"const": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json"},
+            "sha256": {"$ref": "#/$defs/hash"},
+            "source_commit": {"$ref": "#/$defs/commit"}
+          }
+        },
+        "programme_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256", "programme_base_commit"],
+          "properties": {
+            "path": {"const": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json"},
+            "sha256": {"$ref": "#/$defs/hash"},
+            "programme_base_commit": {"$ref": "#/$defs/commit"}
+          }
+        },
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/berger-clock-nonlinear-import-v1.schema.json"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "commit": {"$ref": "#/$defs/commit"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

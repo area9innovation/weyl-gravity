@@ -2,8 +2,9 @@
 
 The permanent engine certificate is separate from a physical execution.  A
 physical run pins the classical support-local export, contraction supplement,
-admissibility policy, evaluator, and assembly adapter.  Missing or mismatched
-objects stop before classification.  Once assembled into exact
+admissibility policy, total-D disposition, evaluator, and assembly adapter.
+Missing or mismatched objects stop before classification.  Only a certified
+``D_GAUGE`` disposition reaches Cartan contraction.  Once assembled into exact
 ``ArityTwoCartanData``, this module returns either the retained correction or a
 normalized obstruction witness.
 """
@@ -31,6 +32,20 @@ except ImportError:
 
 MANIFEST_SCHEMA = "quantum-weyl-nd2-physical-run-input-v1"
 TERMINAL_STATES = ("EXACT_CORRECTION", "NONTRIVIAL_OBSTRUCTION", "ZERO_SOURCE")
+D_DISPOSITIONS = (
+    "OPEN",
+    "D_GAUGE",
+    "D_CHARGED_NO_QUOTIENT",
+    "SECTOR_DEPENDENT",
+    "NOT_HAMILTONIAN",
+)
+D_ROUTES = {
+    "OPEN": "BLOCKED_PENDING_TOTAL_D_DISPOSITION",
+    "D_GAUGE": "CARTAN_CONTRACTION_EXECUTED",
+    "D_CHARGED_NO_QUOTIENT": "EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT",
+    "SECTOR_DEPENDENT": "SCOPED_DISPOSITION_REQUIRED",
+    "NOT_HAMILTONIAN": "CARTAN_CONTRACTION_NOT_APPLICABLE",
+}
 
 
 def _sha256(path: Path) -> str:
@@ -70,6 +85,54 @@ class PinnedArtifact:
         if _sha256(path) != self.sha256:
             raise ValueError(f"physical-run artifact hash mismatch: {self.artifact_id}")
 
+    def resolved_path(self, repository_root: Path) -> Path:
+        root = repository_root.resolve()
+        path = (root / self.path).resolve()
+        try:
+            path.relative_to(root)
+        except ValueError as exc:
+            raise ValueError(f"physical-run artifact escapes repository: {self.artifact_id}") from exc
+        return path
+
+
+@dataclass(frozen=True)
+class DDisposition:
+    status: str
+    setting_id: str
+    generator_id: str
+
+    @classmethod
+    def from_payload(cls, payload: object) -> "DDisposition":
+        if not isinstance(payload, dict) or set(payload) != {
+            "status",
+            "setting_id",
+            "generator_id",
+        }:
+            raise ValueError("ND2 total-D disposition has the wrong field set")
+        disposition = cls(payload["status"], payload["setting_id"], payload["generator_id"])
+        if disposition.status not in D_DISPOSITIONS:
+            raise ValueError("ND2 total-D disposition status is invalid")
+        if not disposition.setting_id or disposition.generator_id != "D_compact":
+            raise ValueError("ND2 total-D disposition scope is invalid")
+        return disposition
+
+    def verify_certificate(self, path: Path) -> None:
+        try:
+            certificate = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise ValueError("total-D disposition certificate is not readable JSON") from exc
+        if not isinstance(certificate, dict):
+            raise ValueError("total-D disposition certificate is not a mapping")
+        certified = certificate.get("D_disposition")
+        if not isinstance(certified, dict) or certified.get("status") != self.status:
+            raise ValueError("manifest total-D disposition disagrees with its certificate")
+        if certificate.get("setting_id") != self.setting_id:
+            raise ValueError("manifest total-D setting disagrees with its certificate")
+        if certificate.get("generator_id") != self.generator_id:
+            raise ValueError("manifest total-D generator disagrees with its certificate")
+        if self.status != "OPEN" and certificate.get("claim_status") != "CERTIFIED":
+            raise ValueError("terminal total-D disposition is not certified")
+
 
 @dataclass(frozen=True)
 class PhysicalRunManifest:
@@ -80,6 +143,7 @@ class PhysicalRunManifest:
     expression_schema_version: str
     evaluator_implementation_sha256: str
     assembly_adapter_id: str
+    D_disposition: DDisposition
 
     @classmethod
     def from_payload(cls, payload: object) -> "PhysicalRunManifest":
@@ -91,6 +155,7 @@ class PhysicalRunManifest:
             "artifacts",
             "evaluator",
             "assembly_adapter_id",
+            "D_disposition",
         }
         if not isinstance(payload, dict) or set(payload) != fields:
             raise ValueError("ND2 physical-run manifest has the wrong field set")
@@ -104,7 +169,12 @@ class PhysicalRunManifest:
             raise ValueError("ND2 physical-run artifacts must be a list")
         artifacts = tuple(PinnedArtifact.from_payload(item) for item in raw_artifacts)
         ids = [artifact.artifact_id for artifact in artifacts]
-        required_ids = ["admissibility_policy", "classical_contraction", "support_local_q1_q2_D"]
+        required_ids = [
+            "D_disposition_certificate",
+            "admissibility_policy",
+            "classical_contraction",
+            "support_local_q1_q2_D",
+        ]
         if sorted(ids) != required_ids:
             raise ValueError("ND2 physical-run artifact inventory is incomplete or duplicated")
         evaluator = payload["evaluator"]
@@ -118,6 +188,7 @@ class PhysicalRunManifest:
             raise ValueError("ND2 physical-run id is required")
         if not isinstance(payload["assembly_adapter_id"], str) or not payload["assembly_adapter_id"]:
             raise ValueError("ND2 physical-run assembly adapter id is required")
+        disposition = DDisposition.from_payload(payload["D_disposition"])
         return cls(
             payload["run_id"],
             commit,
@@ -126,11 +197,18 @@ class PhysicalRunManifest:
             evaluator["expression_schema_version"],
             evaluator["implementation_manifest_sha256"],
             payload["assembly_adapter_id"],
+            disposition,
         )
 
     def verify(self, repository_root: Path, registry: EvaluatorRegistry) -> None:
         for artifact in self.artifacts:
             artifact.verify(repository_root)
+        disposition_artifact = next(
+            artifact
+            for artifact in self.artifacts
+            if artifact.artifact_id == "D_disposition_certificate"
+        )
+        self.D_disposition.verify_certificate(disposition_artifact.resolved_path(repository_root))
         descriptor = registry.descriptor(self.evaluator_id)
         if descriptor.expression_schema_version != self.expression_schema_version:
             raise ValueError("physical-run evaluator schema mismatch")
@@ -297,7 +375,22 @@ def execute_verified_manifest(
     *,
     adapter_registry: AssemblyAdapterRegistry,
 ) -> dict[str, Any]:
-    """Assemble a verified manifest and execute its exact Cartan run."""
+    """Route on total-D status; only ``D_GAUGE`` executes Cartan contraction."""
+
+    route = D_ROUTES[manifest.D_disposition.status]
+    if manifest.D_disposition.status != "D_GAUGE":
+        return {
+            "D_disposition": manifest.D_disposition.status,
+            "disposition_route": route,
+            "cartan_execution": None,
+        }
 
     data, admissible = adapter_registry.assemble(manifest)
-    return execute_evaluated_cartan(data, admissible_complex=admissible)
+    return {
+        "D_disposition": manifest.D_disposition.status,
+        "disposition_route": route,
+        "cartan_execution": execute_evaluated_cartan(
+            data,
+            admissible_complex=admissible,
+        ),
+    }

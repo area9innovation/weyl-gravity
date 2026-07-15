@@ -11,7 +11,8 @@
     "dependency_tags",
     "artifacts",
     "evaluator",
-    "assembly_adapter_id"
+    "assembly_adapter_id",
+    "D_disposition"
   ],
   "properties": {
     "schema": {"const": "quantum-weyl-nd2-physical-run-input-v1"},
@@ -20,13 +21,14 @@
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
     "artifacts": {
       "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
+      "minItems": 4,
+      "maxItems": 4,
       "items": {"$ref": "#/$defs/artifact"},
       "allOf": [
         {"contains": {"properties": {"artifact_id": {"const": "support_local_q1_q2_D"}}, "required": ["artifact_id"]}, "minContains": 1, "maxContains": 1},
         {"contains": {"properties": {"artifact_id": {"const": "classical_contraction"}}, "required": ["artifact_id"]}, "minContains": 1, "maxContains": 1},
-        {"contains": {"properties": {"artifact_id": {"const": "admissibility_policy"}}, "required": ["artifact_id"]}, "minContains": 1, "maxContains": 1}
+        {"contains": {"properties": {"artifact_id": {"const": "admissibility_policy"}}, "required": ["artifact_id"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"properties": {"artifact_id": {"const": "D_disposition_certificate"}}, "required": ["artifact_id"]}, "minContains": 1, "maxContains": 1}
       ]
     },
     "evaluator": {
@@ -39,7 +41,17 @@
         "implementation_manifest_sha256": {"$ref": "#/$defs/hash"}
       }
     },
-    "assembly_adapter_id": {"type": "string", "minLength": 1}
+    "assembly_adapter_id": {"type": "string", "minLength": 1},
+    "D_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "setting_id", "generator_id"],
+      "properties": {
+        "status": {"enum": ["OPEN", "D_GAUGE", "D_CHARGED_NO_QUOTIENT", "SECTOR_DEPENDENT", "NOT_HAMILTONIAN"]},
+        "setting_id": {"type": "string", "minLength": 1},
+        "generator_id": {"const": "D_compact"}
+      }
+    }
   },
   "$defs": {
     "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
@@ -48,7 +60,7 @@
       "additionalProperties": false,
       "required": ["artifact_id", "path", "sha256"],
       "properties": {
-        "artifact_id": {"enum": ["support_local_q1_q2_D", "classical_contraction", "admissibility_policy"]},
+        "artifact_id": {"enum": ["support_local_q1_q2_D", "classical_contraction", "admissibility_policy", "D_disposition_certificate"]},
         "path": {"type": "string", "minLength": 1},
         "sha256": {"$ref": "#/$defs/hash"}
       }

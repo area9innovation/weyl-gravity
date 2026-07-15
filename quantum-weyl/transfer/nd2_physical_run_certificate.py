@@ -77,7 +77,7 @@ def build_certificate() -> dict[str, Any]:
             "status": "INPUT_NOT_AVAILABLE",
             "manifest_path": str(INPUT_PATH.relative_to(ROOT)),
             "manifest_sha256": None,
-            "reason": "no pinned support-local q1/q2/D, contraction, and admissibility manifest is present",
+            "reason": "no pinned total-D disposition, support-local q1/q2/D, contraction, and admissibility manifest is present",
         }
 
     self_test = execute_evaluated_cartan(build_exact_correction_fixture())
@@ -95,7 +95,17 @@ def build_certificate() -> dict[str, Any]:
                 "support_local_q1_q2_D",
                 "classical_contraction",
                 "admissibility_policy",
+                "D_disposition_certificate",
             ],
+            "D_disposition_routes": {
+                "OPEN": "BLOCKED_PENDING_TOTAL_D_DISPOSITION",
+                "D_GAUGE": "CARTAN_CONTRACTION_EXECUTED",
+                "D_CHARGED_NO_QUOTIENT": "EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT",
+                "SECTOR_DEPENDENT": "SCOPED_DISPOSITION_REQUIRED",
+                "NOT_HAMILTONIAN": "CARTAN_CONTRACTION_NOT_APPLICABLE",
+            },
+            "cartan_execution_policy": "D_GAUGE_ONLY",
+            "terminal_disposition_claim_status": "CERTIFIED",
             "accepted_terminal_states": list(TERMINAL_STATES),
             "unregistered_evaluator_policy": "REJECT",
             "unregistered_assembly_adapter_policy": "REJECT",
@@ -114,16 +124,18 @@ def build_certificate() -> dict[str, Any]:
         "established": [
             "stable content-addressed physical-run manifest contract",
             "pinned evaluator identity and implementation hashes are verified before dispatch",
-            "support-local, contraction, and admissibility artifacts must all be present and hashed",
+            "support-local, contraction, admissibility, and total-D disposition artifacts must all be present and hashed",
+            "only a certified D_GAUGE disposition is routed into Cartan contraction",
             "exact assembled inputs return a retained correction or normalized obstruction witness",
         ],
         "not_established": [
             "a registered conformal-gravity expression evaluator",
             "a registered classical contraction assembly adapter",
+            "a terminal total-D disposition for the Berger clock setting",
             "a physical conformal-gravity arity-two Cartan execution",
             "cyclic, real, boundary-compatible, or causal admissibility in a physical setting",
         ],
-        "next_gate": "install the pinned classical input manifest and register its exact evaluator plus contraction assembly adapter",
+        "next_gate": "certify the total-D disposition, then install the pinned classical input manifest and register its exact evaluator plus contraction assembly adapter",
         "provenance": {
             "source_manifest": source_manifest,
             "source_manifest_sha256": _canonical_hash(source_manifest),
