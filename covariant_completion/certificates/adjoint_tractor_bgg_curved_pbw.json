@@ -1,0 +1,177 @@
+{
+  "Bach_comparison": {
+    "every_derivative_order_compared": true,
+    "identity": "compressed_parent_middle=-2 S^T J_met Bach_bar S",
+    "normalization": "-2",
+    "order_ledger": {
+      "0": {
+        "Bach_nonzero_entries": 8,
+        "compressed_nonzero_entries": 8,
+        "defect_entries": 0
+      },
+      "1": {
+        "Bach_nonzero_entries": 0,
+        "compressed_nonzero_entries": 0,
+        "defect_entries": 0
+      },
+      "2": {
+        "Bach_nonzero_entries": 112,
+        "compressed_nonzero_entries": 112,
+        "defect_entries": 0
+      },
+      "3": {
+        "Bach_nonzero_entries": 0,
+        "compressed_nonzero_entries": 0,
+        "defect_entries": 0
+      },
+      "4": {
+        "Bach_nonzero_entries": 354,
+        "compressed_nonzero_entries": 354,
+        "defect_entries": 0
+      }
+    },
+    "total_defect_entries": 0
+  },
+  "PBW": {
+    "canonical_derivative_order": "nondecreasing",
+    "curvature_acts_on_derivative_suffix": true,
+    "curvature_acts_on_form_slots": true,
+    "curvature_acts_on_graded_adjoint_tractor": true,
+    "normal_tractor_curvature": "zero after LC plus algebraic connection cancellation",
+    "normal_tractor_exterior_square_defects": 0
+  },
+  "claim": "The adjoint-tractor Yang-Mills detour complex compresses by finite support-local curved BGG HPL maps to the metric deformation detour endpoint, with exact middle normalization -2.  This file does not itself import or transfer parent Green homotopies.",
+  "curved_HPL": {
+    "cyclic_dual_defects": [
+      0,
+      0
+    ],
+    "homotopy_defects": [
+      0,
+      0
+    ],
+    "inclusion_chain_defects": 0,
+    "orders": {
+      "h0": 1,
+      "h1": 1,
+      "i0": 2,
+      "i1": 2,
+      "middle": 4,
+      "p1": 0
+    },
+    "projection_chain_defects": 0,
+    "row_ranks_compressed": [
+      4,
+      9,
+      9,
+      4
+    ],
+    "row_ranks_parent": [
+      15,
+      60,
+      60,
+      15
+    ],
+    "support_local": true
+  },
+  "dependencies": {
+    "adjoint_tractor_bgg_differential_screen_matrices.json": "29de74d959eff856ebbdd46be1c2522727ce824e817cb5ab1159857ee843e022",
+    "adjoint_tractor_kostant_compression_matrices.json": "6959cb31fad909b88d92a55689e06d9740f715cf9296fea032f8f387ed768f26",
+    "curved_prolonged_metric_endpoint_coefficients.json": "2d3e6857e42b38a7f68e0c1ecb90adfa621ffa87038fa44f3e37c14f6938e9f6"
+  },
+  "dependency_tag": "LORENTZIAN-CAUSAL",
+  "fail_closed": true,
+  "fail_closed_guards": {
+    "Green_transfer_not_promoted": true,
+    "former_48_entries_cancelled": true,
+    "full_Bach_orders_zero": true,
+    "manual_Green_promotion_detected": true,
+    "no_nonlocal_support_operation": true
+  },
+  "former_48_entry_defect": {
+    "PBW_corrected_defect_entries": 0,
+    "algebraic_Hom_closed": true,
+    "channels": {
+      "Dspatial_form0_K0_dot": {
+        "SO3_generator_defects": 0,
+        "coefficient_sha256": "028eb46ec53e364a5af0bd48381db95f4b30f5be754d8e6ca3f22a7ee216e35b",
+        "combined_rank": 1,
+        "nonzero_entries": 3
+      },
+      "Dspatial_form0_Kspatial_time": {
+        "SO3_generator_defects": 0,
+        "coefficient_sha256": "19d8a1320e589d9936993eeec34dda01dc938f7682de5bf3d977f99793f0b071",
+        "combined_rank": 3,
+        "nonzero_entries": 3
+      },
+      "Dspatial_formspatial_K0_time": {
+        "SO3_generator_defects": 0,
+        "coefficient_sha256": "05582e8fdc92e84672c5518bba1aae0826b9af6adf283d033e2ce54a89a9ed8c",
+        "combined_rank": 3,
+        "nonzero_entries": 3
+      },
+      "Dspatial_spatial_antisymmetric": {
+        "SO3_generator_defects": 0,
+        "coefficient_sha256": "18ffd21a863e40bbda7c42cbef589566d618b22dbf84cd4fd15c6fa609620cc8",
+        "combined_rank": 3,
+        "nonzero_entries": 12
+      },
+      "Dspatial_spatial_trace_dot": {
+        "SO3_generator_defects": 0,
+        "coefficient_sha256": "6b182aa8cf08490d4209be838c1f01f2074d9f955fd6f67b644ff633e3c70874",
+        "combined_rank": 1,
+        "nonzero_entries": 9
+      },
+      "dt_form0_Kspatial": {
+        "SO3_generator_defects": 0,
+        "coefficient_sha256": "bf61447608738c9001c8c58949e3d9328a65422b83a4daa74b21ee8d9213ee58",
+        "combined_rank": 3,
+        "nonzero_entries": 3
+      },
+      "dt_formspatial_K0": {
+        "SO3_generator_defects": 0,
+        "coefficient_sha256": "7d3a91e11eb17b959b737060c31ba3cd60b1eb919be7c180a4af41da9c0ae531",
+        "combined_rank": 3,
+        "nonzero_entries": 3
+      },
+      "order0_form0_boost": {
+        "SO3_generator_defects": 0,
+        "coefficient_sha256": "b03114948e6ffd0b1c420950383e90a96c409d516c289864d3ba41e47a16af0d",
+        "combined_rank": 3,
+        "nonzero_entries": 3
+      },
+      "order0_spatial_dilation": {
+        "SO3_generator_defects": 0,
+        "coefficient_sha256": "b988952a135936418f54f068697fa9220ea3fe9d5ac9acaf51795ce8f1462113",
+        "combined_rank": 3,
+        "nonzero_entries": 3
+      },
+      "order0_spatial_rotation": {
+        "SO3_generator_defects": 0,
+        "coefficient_sha256": "a9ade81d400e59221e43e1ee108cfb52ae9611f0e6a31bd9ccf193053a70216d",
+        "combined_rank": 3,
+        "nonzero_entries": 6
+      }
+    },
+    "correction_source": "certified Kostant Q and finite HPL compositions; no fitted coefficients",
+    "defect_SO3_invariant_Hom_basis_dimension": 10,
+    "orders": {
+      "0": 12,
+      "1": 36
+    },
+    "original_entry_count": 48,
+    "reconstruction_exact": true
+  },
+  "payload_sha256": "c924494392357f6858dc5247551ba3f48d32a12f7e0bde649aa40378f3ddbf2f",
+  "result": "PASS",
+  "schema_version": 1,
+  "theorem_boundary": {
+    "curved_BGG_chain_maps_exact": true,
+    "curved_differential_homotopy_exact": true,
+    "cyclic_i_sharp_equals_p": true,
+    "endpoint_Bach_operator_match": true,
+    "parent_green_homotopy_transferred": false,
+    "support_local": true
+  },
+  "verification_rail": "exact_rational_curvature_aware_PBW"
+}
