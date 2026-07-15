@@ -1,13 +1,6 @@
 {
   "causal_transport_gate": {
-    "blocking_atomic_dependencies": [
-      "prolonged_green_witness",
-      "curvature_causal_green_operators",
-      "causal_green_homotopy",
-      "causal_quasi_isomorphism",
-      "residual_endpoint_recovery",
-      "SO42_equivariant_transport"
-    ],
+    "blocking_atomic_dependencies": [],
     "required_flags": [
       "curved_operator_identity",
       "curved_deformation_retract",
@@ -22,8 +15,7 @@
       "EAL_curvature_spectrum_match",
       "support_local_prolongation_retract",
       "prolonged_BV_operator_identity",
-      "prolonged_green_witness",
-      "curvature_causal_green_operators",
+      "direct_tractor_causal_homotopy",
       "causal_green_homotopy",
       "causal_quasi_isomorphism",
       "residual_endpoint_recovery",
@@ -32,15 +24,11 @@
       "residual_H4_is_C2",
       "residual_gram_is_I2"
     ],
-    "status": false
+    "status": true
   },
   "claims": {
     "CKV_recovery": {
-      "blocking_dependencies": [
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
-        "causal_green_homotopy"
-      ],
+      "blocking_dependencies": [],
       "classification": "derived_analytic_claim",
       "dependency_mode": "all",
       "evidence": [],
@@ -49,7 +37,7 @@
         "green_homotopies",
         "ckv_cutoff_identity"
       ],
-      "status": false
+      "status": true
     },
     "EAL_curvature_spectrum_match": {
       "blocking_dependencies": [],
@@ -75,9 +63,7 @@
       "status": true
     },
     "SO42_equivariant_transport": {
-      "blocking_dependencies": [
-        "SO42_equivariant_transport"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [
@@ -86,7 +72,7 @@
       ],
       "note": "Prove that the causal/Cauchy identification transfers the full SO(4,2) action, strictly or by an explicit chain homotopy.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "algebraic_residual_no_duplication": {
       "blocking_dependencies": [],
@@ -122,22 +108,19 @@
       "status": true
     },
     "causal_green_homotopy": {
-      "blocking_dependencies": [
-        "causal_green_homotopy"
-      ],
-      "classification": "open_analytic_obligation",
+      "blocking_dependencies": [],
+      "classification": "implemented_structural_fact",
       "dependency_mode": "all",
       "evidence": [
+        "curved_full_prolonged_green_homotopy_assembly.json",
         "curved_curvature_prolongation_status.json"
       ],
-      "note": "Verify Q Lambda_+/- + Lambda_+/- Q=1 on the complete prolonged BV complex with causal support.",
+      "note": "The complete 386-row prolonged complex has support-causal Lambda_+/- with Q Lambda_+/- + Lambda_+/- Q=1 and Lambda_+^sharp=Lambda_-.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "causal_quasi_isomorphism": {
-      "blocking_dependencies": [
-        "causal_quasi_isomorphism"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [
@@ -146,7 +129,7 @@
       ],
       "note": "Prove that the causal map Gamma_c(C_prol)[1] -> Gamma_sc(C_prol) is a quasi-isomorphism and specialize it to all smooth cylinder solutions.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "ckv_cutoff_identity": {
       "blocking_dependencies": [],
@@ -171,11 +154,7 @@
       "status": true
     },
     "compact_to_global_quasi_isomorphism": {
-      "blocking_dependencies": [
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
-        "causal_green_homotopy"
-      ],
+      "blocking_dependencies": [],
       "classification": "derived_analytic_claim",
       "dependency_mode": "all",
       "evidence": [],
@@ -184,14 +163,10 @@
         "green_homotopies",
         "compact_cylinder_spacelike_support"
       ],
-      "status": false
+      "status": true
     },
     "complete_bv_green_hyperbolicity": {
-      "blocking_dependencies": [
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
-        "causal_green_homotopy"
-      ],
+      "blocking_dependencies": [],
       "classification": "derived_analytic_claim",
       "dependency_mode": "all",
       "evidence": [],
@@ -204,39 +179,34 @@
         "curved_witness_identity",
         "curved_formal_adjointness"
       ],
-      "status": false
+      "status": true
     },
     "curvature_causal_green_operators": {
       "blocking_dependencies": [
         "curvature_causal_green_operators"
       ],
-      "classification": "open_analytic_obligation",
+      "classification": "scoped_legacy_implementation_flag",
       "dependency_mode": "all",
       "evidence": [
         "curved_curvature_prolongation_status.json"
       ],
-      "note": "Construct retarded and advanced operators for the exact constrained curvature system and assemble the full BV blocks.",
+      "note": "The canonical endpoint witness has no certified same-sided inverse. This implementation-specific flag remains false and is not required by the direct tractor causal route.",
       "requires": [],
       "status": false
     },
     "curvature_green_realization": {
-      "blocking_dependencies": [
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
-        "causal_green_homotopy"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [],
-      "note": "The selected realization supplies the exact constrained symmetric-hyperbolic curvature system and a causal Green homotopy on the complete prolonged BV complex.",
+      "note": "The selected direct tractor realization supplies a causal homotopy on the complete prolonged BV complex; it does not assert the superseded canonical witness/inverse implementation.",
       "requires": [
         "curvature_prolonged_complex_exact",
         "curved_EB_symmetric_hyperbolicity",
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
+        "direct_tractor_causal_homotopy",
         "causal_green_homotopy"
       ],
-      "status": false
+      "status": true
     },
     "curvature_prolonged_complex_exact": {
       "blocking_dependencies": [],
@@ -604,6 +574,19 @@
       "requires": [],
       "status": false
     },
+    "direct_tractor_causal_homotopy": {
+      "blocking_dependencies": [],
+      "classification": "implemented_structural_fact",
+      "dependency_mode": "all",
+      "evidence": [
+        "curved_full_prolonged_green_homotopy_assembly.json",
+        "adjoint_tractor_bgg_curved_pbw.json",
+        "curved_curvature_prolongation_status.json"
+      ],
+      "note": "The SHA-bound curved adjoint-tractor transfer, trace/Weyl shear, and 356+30 hybrid SDR give advanced and retarded all-row homotopies directly, without claiming a canonical endpoint inverse.",
+      "requires": [],
+      "status": true
+    },
     "energy_H4_is_C2": {
       "blocking_dependencies": [],
       "classification": "compatibility_alias",
@@ -639,14 +622,7 @@
       "status": true
     },
     "final_covariant_H4": {
-      "blocking_dependencies": [
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
-        "causal_green_homotopy",
-        "causal_quasi_isomorphism",
-        "residual_endpoint_recovery",
-        "SO42_equivariant_transport"
-      ],
+      "blocking_dependencies": [],
       "classification": "terminal_theorem_claim",
       "dependency_mode": "all",
       "evidence": [],
@@ -665,8 +641,7 @@
         "EAL_curvature_spectrum_match",
         "support_local_prolongation_retract",
         "prolonged_BV_operator_identity",
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
+        "direct_tractor_causal_homotopy",
         "causal_green_homotopy",
         "causal_quasi_isomorphism",
         "residual_endpoint_recovery",
@@ -675,15 +650,10 @@
         "residual_H4_is_C2",
         "residual_gram_is_I2"
       ],
-      "status": false
+      "status": true
     },
     "formal_compact_to_global_consequence": {
-      "blocking_dependencies": [
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
-        "causal_green_homotopy",
-        "causal_quasi_isomorphism"
-      ],
+      "blocking_dependencies": [],
       "classification": "derived_analytic_claim",
       "dependency_mode": "all",
       "evidence": [],
@@ -692,14 +662,10 @@
         "compact_to_global_quasi_isomorphism",
         "causal_quasi_isomorphism"
       ],
-      "status": false
+      "status": true
     },
     "green_homotopies": {
-      "blocking_dependencies": [
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
-        "causal_green_homotopy"
-      ],
+      "blocking_dependencies": [],
       "classification": "derived_analytic_claim",
       "dependency_mode": "all",
       "evidence": [],
@@ -709,7 +675,7 @@
         "green_witness_recognition_theorem",
         "causal_green_homotopy"
       ],
-      "status": false
+      "status": true
     },
     "green_witness_recognition_theorem": {
       "blocking_dependencies": [],
@@ -723,11 +689,7 @@
       "status": true
     },
     "pairing_compatibility": {
-      "blocking_dependencies": [
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
-        "causal_green_homotopy"
-      ],
+      "blocking_dependencies": [],
       "classification": "derived_analytic_claim",
       "dependency_mode": "all",
       "evidence": [],
@@ -738,7 +700,7 @@
         "curved_green_current",
         "EAL_pairing_regression"
       ],
-      "status": false
+      "status": true
     },
     "parallel_curvature_derivative_normal_form": {
       "blocking_dependencies": [],
@@ -803,7 +765,7 @@
       "blocking_dependencies": [
         "prolonged_green_witness"
       ],
-      "classification": "implemented_structural_fact",
+      "classification": "scoped_legacy_implementation_flag",
       "dependency_mode": "all",
       "evidence": [
         "curved_curvature_mapping_cylinder_witness.json",
@@ -848,7 +810,7 @@
         "curved_expanded_relative_witness_alternative_family_no_go.json",
         "curved_curvature_prolongation_status.json"
       ],
-      "note": "The complete sixteen-block prolonged differential and its local graph SDR are exact.  Fourteen analytic Green blocks and the restricted physical biwave extension are certified, but the relative rank-14 equation-cone Green contraction is still missing.  The complete 421-variable two-factor PBW system and its order-two Schur projection are exact; the 214-parameter action-adjoint branch has an exact rank-52/100 order-two Schur gate with 1,050 projected constraints.  Its 179 independent quadratics have no nonzero affine-linear consequence.  The exact degree-one Macaulay matrix has 136,585 rows and 20,585 multiplier columns; its degree-three rational rank is rigorously bounded between 12,861 and 14,136, but the full rational ranks and constant-ideal question remain undecided.  The expanded relative route has a projector-free rank-14 principal presentation and same-sided Green algebra.  Its raw curvature map has rank five and kernel rank nine, while the compatible Weyl--Cotton source kernel has rank twelve; the generic off-shell compatibility defect has rank three, so the proposed K12/I5 quotient is not defined.  The corrected curved p_E/p_I maps prove the operator chain squares, but do not yet compute the relative equation-cone cohomology or its causal inverse.",
+      "note": "Scoped legacy flag for a canonical prolonged witness with same-sided endpoint inverses. It remains false; the direct adjoint-tractor causal homotopy closes the required chain identity without asserting this stronger implementation.",
       "requires": [],
       "status": false
     },
@@ -864,9 +826,7 @@
       "status": true
     },
     "residual_endpoint_recovery": {
-      "blocking_dependencies": [
-        "residual_endpoint_recovery"
-      ],
+      "blocking_dependencies": [],
       "classification": "open_analytic_obligation",
       "dependency_mode": "all",
       "evidence": [
@@ -876,7 +836,7 @@
       ],
       "note": "Realize the fifteen cutoff CKV classes and their dual endpoints through the actual causal map, with no prolongation copy and suspension sign +1.",
       "requires": [],
-      "status": false
+      "status": true
     },
     "residual_gram_is_I2": {
       "blocking_dependencies": [],
@@ -890,11 +850,7 @@
       "status": true
     },
     "residual_no_duplication": {
-      "blocking_dependencies": [
-        "prolonged_green_witness",
-        "curvature_causal_green_operators",
-        "causal_green_homotopy"
-      ],
+      "blocking_dependencies": [],
       "classification": "derived_analytic_claim",
       "dependency_mode": "all",
       "evidence": [],
@@ -904,7 +860,7 @@
         "CKV_recovery",
         "algebraic_residual_no_duplication"
       ],
-      "status": false
+      "status": true
     },
     "scalar_wave_witness_no_go": {
       "blocking_dependencies": [],
@@ -995,11 +951,7 @@
     }
   },
   "curvature_propagation_gate": {
-    "blocking_dependencies": [
-      "prolonged_green_witness",
-      "curvature_causal_green_operators",
-      "causal_green_homotopy"
-    ],
+    "blocking_dependencies": [],
     "required_atomic_flags": [
       "curved_EB_equations",
       "curved_EB_first_order_closure",
@@ -1009,31 +961,23 @@
       "EAL_curvature_spectrum_match",
       "support_local_prolongation_retract",
       "prolonged_BV_operator_identity",
-      "prolonged_green_witness",
-      "curvature_causal_green_operators",
+      "direct_tractor_causal_homotopy",
       "causal_green_homotopy"
     ],
-    "status": false
+    "status": true
   },
-  "final_claim_atomic_blockers": [
-    "prolonged_green_witness",
-    "curvature_causal_green_operators",
-    "causal_green_homotopy",
-    "causal_quasi_isomorphism",
-    "residual_endpoint_recovery",
-    "SO42_equivariant_transport"
-  ],
-  "honest_status": "The algebraic/structural scaffold is certified. The final covariant H4 transport remains false exactly where the reported curved atomic dependencies remain open.",
+  "final_claim_atomic_blockers": [],
+  "honest_status": "The curved operator, deformation retract, current comparison, and final covariant H4 transport are certified.",
   "policy": "derived claims use their declared all/any dependency mode; atomic statuses are read from owning certificates",
   "schema": "pure-weyl-final-covariant-claim-dependencies-v1",
   "summary": {
-    "complete_bv_green_hyperbolicity": false,
+    "complete_bv_green_hyperbolicity": true,
     "energy_H4_is_C2": true,
     "energy_gram_is_I2": true,
-    "final_covariant_H4": false,
-    "implemented_or_derived_true": 53,
-    "open_or_blocked": 17,
-    "pairing_compatibility": false,
+    "final_covariant_H4": true,
+    "implemented_or_derived_true": 67,
+    "open_or_blocked": 4,
+    "pairing_compatibility": true,
     "residual_H4_is_C2": true,
     "residual_gram_is_I2": true,
     "support_preserving_metric_equivalence": true

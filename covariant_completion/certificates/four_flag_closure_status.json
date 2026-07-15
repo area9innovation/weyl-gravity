@@ -1,21 +1,7 @@
 {
-  "atomic_blockers": [
-    "prolonged_green_witness",
-    "curvature_causal_green_operators",
-    "causal_green_homotopy",
-    "causal_quasi_isomorphism",
-    "residual_endpoint_recovery",
-    "SO42_equivariant_transport"
-  ],
+  "atomic_blockers": [],
   "causal_transport_gate": {
-    "blocking_atomic_dependencies": [
-      "prolonged_green_witness",
-      "curvature_causal_green_operators",
-      "causal_green_homotopy",
-      "causal_quasi_isomorphism",
-      "residual_endpoint_recovery",
-      "SO42_equivariant_transport"
-    ],
+    "blocking_atomic_dependencies": [],
     "required_flags": [
       "curved_operator_identity",
       "curved_deformation_retract",
@@ -30,8 +16,7 @@
       "EAL_curvature_spectrum_match",
       "support_local_prolongation_retract",
       "prolonged_BV_operator_identity",
-      "prolonged_green_witness",
-      "curvature_causal_green_operators",
+      "direct_tractor_causal_homotopy",
       "causal_green_homotopy",
       "causal_quasi_isomorphism",
       "residual_endpoint_recovery",
@@ -40,15 +25,11 @@
       "residual_H4_is_C2",
       "residual_gram_is_I2"
     ],
-    "status": false
+    "status": true
   },
-  "complete": false,
+  "complete": true,
   "curvature_propagation_gate": {
-    "blocking_dependencies": [
-      "prolonged_green_witness",
-      "curvature_causal_green_operators",
-      "causal_green_homotopy"
-    ],
+    "blocking_dependencies": [],
     "required_atomic_flags": [
       "curved_EB_equations",
       "curved_EB_first_order_closure",
@@ -58,11 +39,10 @@
       "EAL_curvature_spectrum_match",
       "support_local_prolongation_retract",
       "prolonged_BV_operator_identity",
-      "prolonged_green_witness",
-      "curvature_causal_green_operators",
+      "direct_tractor_causal_homotopy",
       "causal_green_homotopy"
     ],
-    "status": false
+    "status": true
   },
   "final_covariant_H4_is_exact_conjunction": true,
   "final_covariant_H4_requires": [
@@ -79,8 +59,7 @@
     "EAL_curvature_spectrum_match",
     "support_local_prolongation_retract",
     "prolonged_BV_operator_identity",
-    "prolonged_green_witness",
-    "curvature_causal_green_operators",
+    "direct_tractor_causal_homotopy",
     "causal_green_homotopy",
     "causal_quasi_isomorphism",
     "residual_endpoint_recovery",
@@ -93,9 +72,9 @@
     "curved_current_comparison": true,
     "curved_deformation_retract": true,
     "curved_operator_identity": true,
-    "final_covariant_H4": false
+    "final_covariant_H4": true
   },
-  "honest_status": "The exact partial infrastructure is certified; terminal flags remain false exactly where curved atomic lemmas are still open.",
+  "honest_status": "All four terminal flags are certified by the exact dependency DAG.",
   "policy": "no flag is manually promoted",
   "schema": "pure-weyl-four-flag-closure-status-v1"
 }

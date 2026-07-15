@@ -91,7 +91,7 @@ class FinalClaimDependencyReport:
         )
         curvature_prolongation = _load(
             "curved_curvature_prolongation_status.json",
-            "pure-weyl-curvature-prolongation-status-v2",
+            "pure-weyl-curvature-prolongation-status-v3",
         )
         curvature_evolution_symbol = _load(
             "curved_curvature_evolution_principal_symbol.json",
@@ -360,7 +360,7 @@ class FinalClaimDependencyReport:
         atomic(
             "prolonged_green_witness",
             bool(curvature_prolongation.get("prolonged_green_witness", False)),
-            "implemented_structural_fact",
+            "scoped_legacy_implementation_flag",
             (
                 "curved_curvature_mapping_cylinder_witness.json",
                 "curved_auxiliary_prenormal_symbol.json",
@@ -404,21 +404,39 @@ class FinalClaimDependencyReport:
                 "curved_expanded_relative_witness_alternative_family_no_go.json",
                 "curved_curvature_prolongation_status.json",
             ),
-            "The complete sixteen-block prolonged differential and its local graph SDR are exact.  Fourteen analytic Green blocks and the restricted physical biwave extension are certified, but the relative rank-14 equation-cone Green contraction is still missing.  The complete 421-variable two-factor PBW system and its order-two Schur projection are exact; the 214-parameter action-adjoint branch has an exact rank-52/100 order-two Schur gate with 1,050 projected constraints.  Its 179 independent quadratics have no nonzero affine-linear consequence.  The exact degree-one Macaulay matrix has 136,585 rows and 20,585 multiplier columns; its degree-three rational rank is rigorously bounded between 12,861 and 14,136, but the full rational ranks and constant-ideal question remain undecided.  The expanded relative route has a projector-free rank-14 principal presentation and same-sided Green algebra.  Its raw curvature map has rank five and kernel rank nine, while the compatible Weyl--Cotton source kernel has rank twelve; the generic off-shell compatibility defect has rank three, so the proposed K12/I5 quotient is not defined.  The corrected curved p_E/p_I maps prove the operator chain squares, but do not yet compute the relative equation-cone cohomology or its causal inverse.",
+            "Scoped legacy flag for a canonical prolonged witness with same-sided endpoint inverses. It remains false; the direct adjoint-tractor causal homotopy closes the required chain identity without asserting this stronger implementation.",
         )
         atomic(
             "curvature_causal_green_operators",
             bool(curvature_prolongation["curvature_causal_green_operators"]),
-            "open_analytic_obligation",
+            "scoped_legacy_implementation_flag",
             ("curved_curvature_prolongation_status.json",),
-            "Construct retarded and advanced operators for the exact constrained curvature system and assemble the full BV blocks.",
+            "The canonical endpoint witness has no certified same-sided inverse. This implementation-specific flag remains false and is not required by the direct tractor causal route.",
+        )
+        atomic(
+            "direct_tractor_causal_homotopy",
+            bool(
+                curvature_prolongation.get(
+                    "direct_tractor_causal_homotopy", False
+                )
+            ),
+            "implemented_structural_fact",
+            (
+                "curved_full_prolonged_green_homotopy_assembly.json",
+                "adjoint_tractor_bgg_curved_pbw.json",
+                "curved_curvature_prolongation_status.json",
+            ),
+            "The SHA-bound curved adjoint-tractor transfer, trace/Weyl shear, and 356+30 hybrid SDR give advanced and retarded all-row homotopies directly, without claiming a canonical endpoint inverse.",
         )
         atomic(
             "causal_green_homotopy",
             bool(curvature_prolongation.get("causal_green_homotopy", False)),
-            "open_analytic_obligation",
-            ("curved_curvature_prolongation_status.json",),
-            "Verify Q Lambda_+/- + Lambda_+/- Q=1 on the complete prolonged BV complex with causal support.",
+            "implemented_structural_fact",
+            (
+                "curved_full_prolonged_green_homotopy_assembly.json",
+                "curved_curvature_prolongation_status.json",
+            ),
+            "The complete 386-row prolonged complex has support-causal Lambda_+/- with Q Lambda_+/- + Lambda_+/- Q=1 and Lambda_+^sharp=Lambda_-.",
         )
         atomic(
             "causal_quasi_isomorphism",
@@ -823,12 +841,11 @@ class FinalClaimDependencyReport:
             (
                 "curvature_prolonged_complex_exact",
                 "curved_EB_symmetric_hyperbolicity",
-                "prolonged_green_witness",
-                "curvature_causal_green_operators",
+                "direct_tractor_causal_homotopy",
                 "causal_green_homotopy",
             ),
             "open_analytic_obligation",
-            "The selected realization supplies the exact constrained symmetric-hyperbolic curvature system and a causal Green homotopy on the complete prolonged BV complex.",
+            "The selected direct tractor realization supplies a causal homotopy on the complete prolonged BV complex; it does not assert the superseded canonical witness/inverse implementation.",
         )
         derived(
             "complete_bv_green_hyperbolicity",
@@ -934,8 +951,7 @@ class FinalClaimDependencyReport:
                 "EAL_curvature_spectrum_match",
                 "support_local_prolongation_retract",
                 "prolonged_BV_operator_identity",
-                "prolonged_green_witness",
-                "curvature_causal_green_operators",
+                "direct_tractor_causal_homotopy",
                 "causal_green_homotopy",
                 "causal_quasi_isomorphism",
                 "residual_endpoint_recovery",
@@ -1074,8 +1090,7 @@ class FinalClaimDependencyReport:
                     "EAL_curvature_spectrum_match",
                     "support_local_prolongation_retract",
                     "prolonged_BV_operator_identity",
-                    "prolonged_green_witness",
-                    "curvature_causal_green_operators",
+                    "direct_tractor_causal_homotopy",
                     "causal_green_homotopy",
                 ],
                 "blocking_dependencies": list(
@@ -1117,7 +1132,7 @@ class FinalClaimDependencyReport:
             "  E[exact curved first-order E/B system] --> F",
             "  S[sourced constraints and E/A/L audit] --> F",
             "  P[all-row support-local prolongation] --> F",
-            "  G[prolonged witness and causal Green homotopy] --> F",
+            "  G[direct tractor causal Green homotopy] --> F",
             "  T[endpoint, SO(4,2), and pairing transport] --> F",
             "  R[curved_deformation_retract] --> F[final_covariant_H4]",
             "  C[curved_current_comparison] --> F",
@@ -1176,7 +1191,8 @@ class FinalClaimDependencyReport:
                 "The selected final gate is the constrained symmetric-hyperbolic",
                 "Weyl-curvature realization. The reduced Weyl-symbol theorem, the",
                 "exact curved equations, and the 26-state first-order closure are",
-                "true. The remaining analytic, causal, endpoint, equivariance, and",
+                "true, and the direct all-row causal homotopy is now exact. The",
+                "remaining quasi-isomorphism, endpoint, equivariance, and",
                 "pairing-transport flags below remain open.",
                 "",
             ]

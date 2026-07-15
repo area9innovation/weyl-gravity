@@ -1,11 +1,11 @@
 {
   "EAL_curvature_spectrum_match": true,
-  "SO42_equivariant_transport": false,
+  "SO42_equivariant_transport": true,
   "SO42_transport_evidence": {
     "certificate": "curved_SO42_causal_transport_recognition.json",
     "conditional_recognition_exact": true,
     "cutoff_inverse_homotopy": "[kappa,rho]=[Q,[chi,rho]]",
-    "promoted": false,
+    "promoted": true,
     "requires_causal_quasi_isomorphism": true
   },
   "all_level_spectrum_evidence": {
@@ -25,40 +25,53 @@
   },
   "atomic_open_obligations": {
     "EAL_curvature_spectrum_match": true,
-    "SO42_equivariant_transport": false,
-    "causal_green_homotopy": false,
-    "causal_quasi_isomorphism": false,
+    "SO42_equivariant_transport": true,
+    "causal_green_homotopy": true,
+    "causal_quasi_isomorphism": true,
     "curvature_causal_green_operators": false,
     "curved_EB_equations": true,
     "curved_EB_first_order_closure": true,
     "curved_EB_symmetric_hyperbolicity": true,
     "curved_constraint_propagation": true,
     "curved_sourced_constraint_identity": true,
+    "direct_tractor_causal_homotopy": true,
     "prolonged_BV_operator_identity": true,
     "prolonged_current_comparison": true,
     "prolonged_green_witness": false,
-    "residual_endpoint_recovery": false,
+    "residual_endpoint_recovery": true,
     "support_local_prolongation_retract": true
   },
-  "causal_green_homotopy": false,
-  "causal_quasi_isomorphism": false,
+  "causal_green_homotopy": true,
+  "causal_quasi_isomorphism": true,
   "causal_transport_evidence": {
     "SO42_equivariant_transport_not_inferred": true,
-    "causal_quasi_isomorphism_promoted": false,
+    "causal_quasi_isomorphism_promoted": true,
     "certificate": "curved_causal_transport_recognition.json",
     "conditional_recognition_exact": true,
+    "direct_tractor_route_recognized": true,
     "prolonged_current_comparison_independent_of_Green": true,
-    "requires_three_actual_Green_flags": true,
-    "residual_endpoint_recovery_promoted": false
+    "requires_implementation_neutral_causal_homotopy": true,
+    "residual_endpoint_recovery_promoted": true
   },
   "curvature_causal_green_operators": false,
-  "curvature_green_realization": false,
+  "curvature_green_realization": true,
   "curvature_prolonged_complex_exact": true,
   "curved_EB_equations": true,
   "curved_EB_first_order_closure": true,
   "curved_EB_symmetric_hyperbolicity": true,
   "curved_constraint_propagation": true,
   "curved_sourced_constraint_identity": true,
+  "direct_tractor_causal_evidence": {
+    "authoritative_curved_PBW_certificate": "adjoint_tractor_bgg_curved_pbw.json",
+    "canonical_endpoint_Green_operators_not_inferred": true,
+    "canonical_prolonged_green_witness_not_inferred": true,
+    "certificate": "curved_full_prolonged_green_homotopy_assembly.json",
+    "direct_tractor_causal_homotopy_promoted": true,
+    "generic_causal_green_homotopy_promoted": true,
+    "identity": "Q Lambda_+/-+Lambda_+/- Q=1 on all 386 prolonged rows",
+    "recognition_exact": true
+  },
+  "direct_tractor_causal_homotopy": true,
   "exact_symbol_reduction": {
     "domain": "(F/ker N_2)/(N_2^{-1} im K_1/ker N_2)",
     "domain_dimension": 2,
@@ -161,6 +174,8 @@
     "alternative_incidence_screen_certificate": "curved_expanded_relative_witness_incidence_screen.json",
     "alternative_semisimplicity_certificate": "curved_expanded_relative_witness_alternative_semisimplicity.json",
     "alternative_sensitivity_family_no_go_certificate": "curved_expanded_relative_witness_alternative_family_no_go.json",
+    "canonical_route_is_not_required_by_direct_tractor_route": true,
+    "canonical_route_three_flags_promote_together_only": true,
     "expanded_adjoint_sign_audit_certificate": "curved_expanded_relative_witness_adjoint_sign.json",
     "expanded_relative_certificate": "curved_expanded_relative_witness.json",
     "expanded_relative_commutant_certificate": "curved_expanded_relative_witness_commutant.json",
@@ -176,7 +191,7 @@
     "general_system_certificate": "curved_general_nonlinear_factor_system.json",
     "promoted": false,
     "promotion_certificate": "curved_mixed_order_green_promotion.json",
-    "promotion_theorem_exact": true,
+    "promotion_theorem_exact": false,
     "rank14_Weyl_Cotton_input_manifest": "curved_rank14_weyl_cotton_input_manifest.json",
     "rank14_Weyl_Cotton_symbol_audit_certificate": "curved_rank14_weyl_cotton_symbol_audit.json",
     "rank14_equation_SDR_boundary_certificate": "curved_rank14_equation_sdr_boundary.json",
@@ -190,8 +205,7 @@
     "sharp_order_two_certificate": "curved_general_nonlinear_factor_sharp_order2.json",
     "sharp_order_two_reduction_certificate": "curved_general_nonlinear_factor_sharp_order2_reduction.json",
     "shifted_physical_green_filtration_certificate": "curved_expanded_relative_witness_shifted_green_filtration.json",
-    "shifted_rank4_vector_certificate": "curved_expanded_relative_witness_vector_contraction.json",
-    "three_flags_promote_together_only": true
+    "shifted_rank4_vector_certificate": "curved_expanded_relative_witness_vector_contraction.json"
   },
   "next_exact_step": "insert the exact prolonged differential into the generalized mixed-order Green witness and certify two-sided causal inverses, Q-commutation and the Green homotopy on all sixteen blocks",
   "phase1_evidence": {
@@ -216,8 +230,8 @@
     "principal_symbol_results_are_full_curved_equations": false,
     "symmetric_hyperbolicity_is_chain_green_homotopy": false
   },
-  "residual_endpoint_recovery": false,
-  "schema": "pure-weyl-curvature-prolongation-status-v2",
+  "residual_endpoint_recovery": true,
+  "schema": "pure-weyl-curvature-prolongation-status-v3",
   "support_local_prolongation_retract": true,
   "weyl_symbol_helicity_isomorphism": true
 }

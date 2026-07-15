@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from copy import deepcopy
 from dataclasses import replace
 import json
 from pathlib import Path
@@ -131,6 +132,36 @@ CURVED_CORE_CHAIN_CERTIFICATE = (
 )
 PREIMAGE_CERTIFICATE = ROOT / "bridge" / "certificates" / "cylinder_metric_preimages.json"
 BGG_CERTIFICATE = ROOT / "bridge" / "certificates" / "cylinder_bgg_blocks.json"
+DIRECT_TRACTOR_CAUSAL_CERTIFICATE = (
+    ROOT
+    / "covariant_completion"
+    / "certificates"
+    / "curved_full_prolonged_green_homotopy_assembly.json"
+)
+CURVED_BGG_PBW_CERTIFICATE = (
+    ROOT
+    / "covariant_completion"
+    / "certificates"
+    / "adjoint_tractor_bgg_curved_pbw.json"
+)
+PROLONGED_CURRENT_CERTIFICATE = (
+    ROOT
+    / "covariant_completion"
+    / "certificates"
+    / "curved_prolonged_current_comparison.json"
+)
+CAUSAL_TRANSPORT_RECOGNITION_CERTIFICATE = (
+    ROOT
+    / "covariant_completion"
+    / "certificates"
+    / "curved_causal_transport_recognition.json"
+)
+SO42_TRANSPORT_RECOGNITION_CERTIFICATE = (
+    ROOT
+    / "covariant_completion"
+    / "certificates"
+    / "curved_SO42_causal_transport_recognition.json"
+)
 
 
 def _write(path: Path, payload: dict[str, object]) -> None:
@@ -163,7 +194,13 @@ def main() -> None:
         preimage_certificate=json.loads(PREIMAGE_CERTIFICATE.read_text(encoding="utf-8")),
         bgg_certificate=json.loads(BGG_CERTIFICATE.read_text(encoding="utf-8")),
     ).certificate()
-    prolongation = CurvatureProlongationStatus.build(
+    direct_tractor_certificate = json.loads(
+        DIRECT_TRACTOR_CAUSAL_CERTIFICATE.read_text(encoding="utf-8")
+    )
+    curved_bgg_pbw_certificate = json.loads(
+        CURVED_BGG_PBW_CERTIFICATE.read_text(encoding="utf-8")
+    )
+    prolongation_inputs = dict(
         phase1_certificate=jet_certificate,
         eal_certificate=eal_certificate,
         hyperbolic_certificate=hyperbolic_certificate,
@@ -175,7 +212,25 @@ def main() -> None:
         curved_core_chain_certificate=json.loads(
             CURVED_CORE_CHAIN_CERTIFICATE.read_text(encoding="utf-8")
         ),
+        direct_tractor_causal_homotopy_certificate=(
+            direct_tractor_certificate
+        ),
+        curved_bgg_pbw_certificate=curved_bgg_pbw_certificate,
+        prolonged_current_certificate=json.loads(
+            PROLONGED_CURRENT_CERTIFICATE.read_text(encoding="utf-8")
+        ),
+        causal_transport_recognition_certificate=json.loads(
+            CAUSAL_TRANSPORT_RECOGNITION_CERTIFICATE.read_text(
+                encoding="utf-8"
+            )
+        ),
+        SO42_transport_recognition_certificate=json.loads(
+            SO42_TRANSPORT_RECOGNITION_CERTIFICATE.read_text(
+                encoding="utf-8"
+            )
+        ),
     )
+    prolongation = CurvatureProlongationStatus.build(**prolongation_inputs)
     prolongation_certificate = prolongation.certificate()
     if args.emit:
         _write(CERTIFICATE, certificate)
@@ -233,6 +288,12 @@ def main() -> None:
             "EAL_curvature_spectrum_match",
             "support_local_prolongation_retract",
             "prolonged_BV_operator_identity",
+            "direct_tractor_causal_homotopy",
+            "causal_green_homotopy",
+            "causal_quasi_isomorphism",
+            "residual_endpoint_recovery",
+            "SO42_equivariant_transport",
+            "prolonged_current_comparison",
         }
         for open_obligation in OPEN_OBLIGATION_FIELDS:
             expected = open_obligation in promoted
@@ -243,8 +304,20 @@ def main() -> None:
                 )
         if not prolongation_certificate["curvature_prolonged_complex_exact"]:
             raise AssertionError("the exact local prolonged complex regressed")
-        if prolongation_certificate["curvature_green_realization"]:
-            raise AssertionError("curvature Green realization was inferred")
+        if not prolongation_certificate["curvature_green_realization"]:
+            raise AssertionError("direct tractor Green realization regressed")
+        if prolongation_certificate["prolonged_green_witness"]:
+            raise AssertionError("canonical prolonged witness was inferred")
+        if prolongation_certificate["curvature_causal_green_operators"]:
+            raise AssertionError("canonical endpoint Green inverse was inferred")
+        if not prolongation_certificate["causal_quasi_isomorphism"]:
+            raise AssertionError("certified causal quasi-isomorphism regressed")
+        if not prolongation_certificate["residual_endpoint_recovery"]:
+            raise AssertionError("certified residual endpoint recovery regressed")
+        if not prolongation_certificate["SO42_equivariant_transport"]:
+            raise AssertionError("certified SO(4,2) transport regressed")
+        if not prolongation_certificate["prolonged_current_comparison"]:
+            raise AssertionError("certified prolonged current comparison regressed")
         if any(prolongation_certificate["proof_boundary"].values()):
             raise AssertionError("a fail-closed proof boundary was crossed")
         if jet_certificate["tested_two_jets"] != 150:
@@ -287,13 +360,54 @@ def main() -> None:
                 raise AssertionError(
                     f"dependency guard accepted premature flag: {premature_flag}"
                 )
+        forged_cases = []
+
+        bad_schema = deepcopy(direct_tractor_certificate)
+        bad_schema["schema"] = "forged-schema"
+        forged_cases.append(bad_schema)
+
+        bad_digest = deepcopy(direct_tractor_certificate)
+        bad_digest["future_gate"]["upstream_curved_PBW_sha256"] = "0" * 64
+        forged_cases.append(bad_digest)
+
+        bad_support = deepcopy(direct_tractor_certificate)
+        bad_support["full_hybrid_assembly"][
+            "causal_support_exact_conditionally"
+        ] = False
+        forged_cases.append(bad_support)
+
+        bad_adjoint = deepcopy(direct_tractor_certificate)
+        bad_adjoint["full_hybrid_assembly"][
+            "graded_adjoint_exact_conditionally"
+        ] = False
+        forged_cases.append(bad_adjoint)
+
+        bad_identity = deepcopy(direct_tractor_certificate)
+        bad_identity["full_hybrid_assembly"][
+            "algebraic_identity_exact_conditionally"
+        ] = False
+        forged_cases.append(bad_identity)
+
+        illicit_legacy = deepcopy(direct_tractor_certificate)
+        illicit_legacy["prolonged_green_witness"] = True
+        forged_cases.append(illicit_legacy)
+
+        for forged in forged_cases:
+            forged_inputs = dict(prolongation_inputs)
+            forged_inputs["direct_tractor_causal_homotopy_certificate"] = forged
+            forged_status = CurvatureProlongationStatus.build(**forged_inputs)
+            if forged_status.direct_tractor_causal_homotopy:
+                raise AssertionError("forged direct tractor certificate was accepted")
+            if forged_status.causal_green_homotopy:
+                raise AssertionError("forged generic causal homotopy was accepted")
         guard_count = (
             2
             + len(evolution_false_obligations)
             + 1
             + len(OPEN_OBLIGATION_FIELDS)
-            + 14
+            + 20
             + len(dependent_obligations)
+            + 2 * len(forged_cases)
         )
         print(f"CURVATURE EVOLUTION GUARDS: {guard_count}/{guard_count} PASS")
     print(

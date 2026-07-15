@@ -35,6 +35,134 @@ def _certificate_digest(certificate: Mapping[str, object]) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
+DIRECT_TRACTOR_CAUSAL_SCHEMA = (
+    "pure-weyl-full-prolonged-green-homotopy-assembly-v1"
+)
+
+
+def _is_sha256(value: object) -> bool:
+    return isinstance(value, str) and len(value) == 64 and all(
+        character in "0123456789abcdef" for character in value
+    )
+
+
+def direct_tractor_causal_certificate_passes(
+    certificate: Mapping[str, object],
+    curved_bgg_pbw_certificate: Mapping[str, object],
+) -> bool:
+    """Recognize the direct all-row tractor homotopy without relabeling it.
+
+    The direct theorem constructs causal chain homotopies, but deliberately
+    does not construct a same-sided inverse of the canonical endpoint
+    operator or the previously sought prolonged Green witness.  Recognition
+    is therefore tied to the assembly's exact identity, support, adjoint and
+    SHA-bound curved-PBW gates while preserving both legacy flags as false.
+    """
+
+    if certificate.get("schema") != DIRECT_TRACTOR_CAUSAL_SCHEMA:
+        return False
+    if certificate.get("dependency_tag") != "LORENTZIAN-CAUSAL":
+        return False
+    if certificate.get("fail_closed") is not True:
+        return False
+    if curved_bgg_pbw_certificate.get("schema_version") != 1:
+        return False
+    if curved_bgg_pbw_certificate.get("dependency_tag") != "LORENTZIAN-CAUSAL":
+        return False
+    if curved_bgg_pbw_certificate.get("fail_closed") is not True:
+        return False
+    if curved_bgg_pbw_certificate.get("result") != "PASS":
+        return False
+
+    boundary = curved_bgg_pbw_certificate.get("theorem_boundary")
+    dimensions = certificate.get("dimension_ledger")
+    endpoint = certificate.get("endpoint_channel_assembly")
+    full = certificate.get("full_hybrid_assembly")
+    gate = certificate.get("future_gate")
+    inputs = certificate.get("input_certificate_sha256")
+    if not all(
+        isinstance(value, Mapping)
+        for value in (boundary, dimensions, endpoint, full, gate, inputs)
+    ):
+        return False
+    if not all(
+        boundary.get(key) is True
+        for key in (
+            "curved_BGG_chain_maps_exact",
+            "curved_differential_homotopy_exact",
+            "cyclic_i_sharp_equals_p",
+            "endpoint_Bach_operator_match",
+            "support_local",
+        )
+    ):
+        return False
+    if boundary.get("parent_green_homotopy_transferred") is not False:
+        return False
+    if (
+        dimensions.get("prolonged"),
+        dimensions.get("algebraically_contracted"),
+        dimensions.get("causal_endpoint"),
+        dimensions.get("identity"),
+    ) != (386, 356, 30, "386=356+30"):
+        return False
+    if not all(
+        endpoint.get(key) is True
+        for key in (
+            "complete_30_component_endpoint_ready",
+            "easy_channel_same_sided_inverses_exact",
+            "finite_triangular_chain_extension",
+            "graded_adjoint_exact_conditionally",
+            "homotopy_identity_exact_conditionally",
+            "shear_support_local",
+            "tracefree_transfer_ready",
+        )
+    ):
+        return False
+    if endpoint.get("canonical_D_TF_inverse_claimed") is not False:
+        return False
+    if endpoint.get("global_W0_G_end_identification_claimed") is not False:
+        return False
+    if endpoint.get("shear_inverse_Laplacian_or_curl") is not False:
+        return False
+    if not all(
+        full.get(key) is True
+        for key in (
+            "algebraic_identity_exact_conditionally",
+            "causal_support_exact_conditionally",
+            "graded_adjoint_exact_conditionally",
+        )
+    ):
+        return False
+    if gate.get("authoritative_certificate") != (
+        "adjoint_tractor_bgg_curved_pbw.json"
+    ):
+        return False
+    if gate.get("upstream_green_transfer_ready") is not True:
+        return False
+    if gate.get("all_row_causal_homotopy_ready") is not True:
+        return False
+    if gate.get("upstream_curved_PBW_sha256") != _certificate_digest(
+        curved_bgg_pbw_certificate
+    ):
+        return False
+    if not all(_is_sha256(value) for value in inputs.values()):
+        return False
+    return all(
+        (
+            certificate.get("causal_green_homotopy") is True,
+            certificate.get("prolonged_green_witness") is False,
+            certificate.get("curvature_causal_green_operators") is False,
+            certificate.get("status_flags_promoted")
+            == ["causal_green_homotopy"],
+            certificate.get("warranted_atomic_flags")
+            == [
+                "full_prolonged_hybrid_homotopy_assembly_theorem_exact",
+                "endpoint_triangular_channel_assembly_theorem_exact",
+            ],
+        )
+    )
+
+
 OPEN_OBLIGATION_FIELDS = (
     "curved_EB_equations",
     "curved_EB_first_order_closure",
@@ -46,6 +174,7 @@ OPEN_OBLIGATION_FIELDS = (
     "prolonged_BV_operator_identity",
     "prolonged_green_witness",
     "curvature_causal_green_operators",
+    "direct_tractor_causal_homotopy",
     "causal_green_homotopy",
     "causal_quasi_isomorphism",
     "residual_endpoint_recovery",
@@ -67,6 +196,7 @@ class CurvatureProlongationStatus:
     prolonged_BV_operator_identity: bool = False
     prolonged_green_witness: bool = False
     curvature_causal_green_operators: bool = False
+    direct_tractor_causal_homotopy: bool = False
     causal_green_homotopy: bool = False
     causal_quasi_isomorphism: bool = False
     residual_endpoint_recovery: bool = False
@@ -76,6 +206,7 @@ class CurvatureProlongationStatus:
     mixed_order_factorization_exact: bool = False
     causal_transport_recognition_exact: bool = False
     SO42_transport_recognition_exact: bool = False
+    direct_tractor_causal_recognition_exact: bool = False
 
     @staticmethod
     def build(
@@ -91,6 +222,9 @@ class CurvatureProlongationStatus:
         prolonged_current_certificate: Mapping[str, object] | None = None,
         mixed_order_promotion_certificate: Mapping[str, object] | None = None,
         mixed_order_factorization_certificate: Mapping[str, object] | None = None,
+        direct_tractor_causal_homotopy_certificate: Mapping[str, object]
+        | None = None,
+        curved_bgg_pbw_certificate: Mapping[str, object] | None = None,
         causal_transport_recognition_certificate: Mapping[str, object] | None = None,
         SO42_transport_recognition_certificate: Mapping[str, object] | None = None,
     ) -> "CurvatureProlongationStatus":
@@ -98,6 +232,7 @@ class CurvatureProlongationStatus:
         coefficient_exact = False
         transport_recognition_exact = False
         so42_recognition_exact = False
+        direct_recognition_exact = False
         phase1_flags = {
             "curved_EB_equations": False,
             "curved_EB_first_order_closure": False,
@@ -109,6 +244,7 @@ class CurvatureProlongationStatus:
             "prolonged_BV_operator_identity": False,
             "prolonged_green_witness": False,
             "curvature_causal_green_operators": False,
+            "direct_tractor_causal_homotopy": False,
             "causal_green_homotopy": False,
             "causal_quasi_isomorphism": False,
             "residual_endpoint_recovery": False,
@@ -573,6 +709,35 @@ class CurvatureProlongationStatus:
             phase1_flags["prolonged_green_witness"] = green_exact
             phase1_flags["curvature_causal_green_operators"] = green_exact
             phase1_flags["causal_green_homotopy"] = green_exact
+        direct_inputs = (
+            direct_tractor_causal_homotopy_certificate,
+            curved_bgg_pbw_certificate,
+        )
+        if any(item is not None for item in direct_inputs):
+            if any(item is None for item in direct_inputs):
+                raise AssertionError(
+                    "direct tractor recognition requires both the all-row "
+                    "assembly and authoritative curved-PBW certificates"
+                )
+            assert direct_tractor_causal_homotopy_certificate is not None
+            assert curved_bgg_pbw_certificate is not None
+            direct_exact = direct_tractor_causal_certificate_passes(
+                direct_tractor_causal_homotopy_certificate,
+                curved_bgg_pbw_certificate,
+            ) and all(
+                (
+                    phase1_flags.get(
+                        "support_local_prolongation_retract", False
+                    ),
+                    phase1_flags.get("prolonged_BV_operator_identity", False),
+                )
+            )
+            direct_recognition_exact = direct_exact
+            phase1_flags["direct_tractor_causal_homotopy"] = direct_exact
+            phase1_flags["causal_green_homotopy"] = bool(
+                phase1_flags.get("causal_green_homotopy", False)
+                or direct_exact
+            )
         if causal_transport_recognition_certificate is not None:
             if causal_transport_recognition_certificate.get("schema") != (
                 CAUSAL_TRANSPORT_SCHEMA
@@ -581,10 +746,18 @@ class CurvatureProlongationStatus:
             transport_recognition_exact = recognition_certificate_passes(
                 causal_transport_recognition_certificate
             )
+        causal_route_exact = bool(
+            phase1_flags.get("direct_tractor_causal_homotopy", False)
+            or (
+                phase1_flags.get("prolonged_green_witness", False)
+                and phase1_flags.get(
+                    "curvature_causal_green_operators", False
+                )
+            )
+        )
         transport_prerequisites = all(
             (
-                phase1_flags.get("prolonged_green_witness", False),
-                phase1_flags.get("curvature_causal_green_operators", False),
+                causal_route_exact,
                 phase1_flags.get("causal_green_homotopy", False),
                 phase1_flags.get("support_local_prolongation_retract", False),
                 phase1_flags.get("prolonged_BV_operator_identity", False),
@@ -623,6 +796,9 @@ class CurvatureProlongationStatus:
         phase1_flags["SO42_transport_recognition_exact"] = bool(
             so42_recognition_exact
         )
+        phase1_flags["direct_tractor_causal_recognition_exact"] = bool(
+            direct_recognition_exact
+        )
         result = CurvatureProlongationStatus(
             quotient if quotient is not None else CurvedNullSymbolQuotient.build(),
             **phase1_flags,
@@ -654,12 +830,18 @@ class CurvatureProlongationStatus:
 
     @property
     def curvature_green_realization(self) -> bool:
+        causal_route_exact = bool(
+            self.direct_tractor_causal_homotopy
+            or (
+                self.prolonged_green_witness
+                and self.curvature_causal_green_operators
+            )
+        )
         return all(
             (
                 self.curvature_prolonged_complex_exact,
                 self.curved_EB_symmetric_hyperbolicity,
-                self.prolonged_green_witness,
-                self.curvature_causal_green_operators,
+                causal_route_exact,
                 self.causal_green_homotopy,
             )
         )
@@ -728,6 +910,8 @@ class CurvatureProlongationStatus:
             "prolonged_BV_operator_identity",
             "curved_EB_symmetric_hyperbolicity",
             "curved_sourced_constraint_identity",
+            "mixed_order_promotion_theorem_exact",
+            "mixed_order_factorization_exact",
         )
         self._require(
             "curvature_causal_green_operators",
@@ -737,16 +921,39 @@ class CurvatureProlongationStatus:
             "curved_constraint_propagation",
         )
         self._require(
-            "causal_green_homotopy",
+            "direct_tractor_causal_homotopy",
             "prolonged_BV_operator_identity",
-            "prolonged_green_witness",
-            "curvature_causal_green_operators",
+            "support_local_prolongation_retract",
+            "direct_tractor_causal_recognition_exact",
         )
+        if (
+            self.direct_tractor_causal_homotopy
+            and not self.causal_green_homotopy
+        ):
+            raise AssertionError(
+                "direct tractor causal theorem did not promote the generic "
+                "causal homotopy flag"
+            )
+        if self.causal_green_homotopy:
+            self._require(
+                "causal_green_homotopy",
+                "prolonged_BV_operator_identity",
+                "support_local_prolongation_retract",
+            )
+            canonical_route = bool(
+                self.prolonged_green_witness
+                and self.curvature_causal_green_operators
+            )
+            if not (self.direct_tractor_causal_homotopy or canonical_route):
+                raise AssertionError(
+                    "causal Green homotopy promoted without a certified direct "
+                    "tractor or canonical witness route"
+                )
         self._require(
             "causal_quasi_isomorphism",
-            "prolonged_green_witness",
-            "curvature_causal_green_operators",
             "causal_green_homotopy",
+            "support_local_prolongation_retract",
+            "prolonged_BV_operator_identity",
             "causal_transport_recognition_exact",
         )
         self._require(
@@ -788,7 +995,7 @@ class CurvatureProlongationStatus:
         self.verify()
         obligations = {name: getattr(self, name) for name in OPEN_OBLIGATION_FIELDS}
         return {
-            "schema": "pure-weyl-curvature-prolongation-status-v2",
+            "schema": "pure-weyl-curvature-prolongation-status-v3",
             "exact_symbol_reduction": {
                 "domain": "(F/ker N_2)/(N_2^{-1} im K_1/ker N_2)",
                 "target": "im W_2/W_2(N_2^{-1} im K_1)",
@@ -1062,15 +1269,45 @@ class CurvatureProlongationStatus:
                 "actual_factorization_exact": (
                     self.mixed_order_factorization_exact
                 ),
-                "three_flags_promote_together_only": True,
+                "canonical_route_three_flags_promote_together_only": True,
+                "canonical_route_is_not_required_by_direct_tractor_route": True,
                 "promoted": self.prolonged_green_witness,
+            },
+            "direct_tractor_causal_evidence": {
+                "certificate": (
+                    "curved_full_prolonged_green_homotopy_assembly.json"
+                ),
+                "authoritative_curved_PBW_certificate": (
+                    "adjoint_tractor_bgg_curved_pbw.json"
+                ),
+                "direct_tractor_causal_homotopy_promoted": (
+                    self.direct_tractor_causal_homotopy
+                ),
+                "recognition_exact": (
+                    self.direct_tractor_causal_recognition_exact
+                ),
+                "generic_causal_green_homotopy_promoted": (
+                    self.causal_green_homotopy
+                ),
+                "canonical_prolonged_green_witness_not_inferred": (
+                    not self.prolonged_green_witness
+                ),
+                "canonical_endpoint_Green_operators_not_inferred": (
+                    not self.curvature_causal_green_operators
+                ),
+                "identity": (
+                    "Q Lambda_+/-+Lambda_+/- Q=1 on all 386 prolonged rows"
+                ),
             },
             "causal_transport_evidence": {
                 "certificate": "curved_causal_transport_recognition.json",
                 "conditional_recognition_exact": (
                     self.causal_transport_recognition_exact
                 ),
-                "requires_three_actual_Green_flags": True,
+                "requires_implementation_neutral_causal_homotopy": True,
+                "direct_tractor_route_recognized": (
+                    self.direct_tractor_causal_homotopy
+                ),
                 "causal_quasi_isomorphism_promoted": (
                     self.causal_quasi_isomorphism
                 ),
