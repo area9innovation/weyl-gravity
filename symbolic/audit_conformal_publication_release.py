@@ -41,15 +41,16 @@ GIT_ROOT = Path(
 PROJECT_REL = PROJECT.relative_to(GIT_ROOT)
 
 PUBLICATIONS = (
-    "paper/conformal-residual-cohomology-krein.tex",
-    "paper/conformal-covariant-causal-transport.tex",
-    "paper/conformal-residual-cohomology-computational-supplement.tex",
-    "paper/conformal-residual-cohomology.tex",
+    "paper/07-conformal-residual-cohomology-krein.tex",
+    "paper/08-conformal-covariant-causal-transport.tex",
+    "paper/07-08-conformal-residual-cohomology-computational-supplement.tex",
+    "paper/07-08-conformal-residual-cohomology-archive.tex",
 )
 TRACKED_PDFS = tuple(path[:-4] + ".pdf" for path in PUBLICATIONS)
 ACTIVE_GENERATED_INPUT = "paper/generated/endpoint_factorization_nullstellensatz.tex"
 ARCHIVE_PATHS = (
     ".github/workflows/conformal-bridge.yml",
+    ".github/workflows/paper-naming.yml",
     str(PROJECT_REL),
 )
 

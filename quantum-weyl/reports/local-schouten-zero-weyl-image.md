@@ -95,7 +95,7 @@ Gate A remains fail-closed pending the portable classical contraction export.
 | 1 | complete local-BV unit rail, quiet mode | 22.56 s wall | 112 pass in 22.11 s |
 | 2 | nine local certificate reproduction checks, parallel | 18.76 s wall | pass |
 | 2 | new certificate under hash seeds `1,7,123`, parallel | 14.58 s wall | pass |
-| 2 | two-pass `conformal-residual-cohomology.tex` build | 1.23 s | pass; no unresolved references on final pass |
+| 2 | two-pass `07-08-conformal-residual-cohomology-archive.tex` build | 1.23 s | pass; no unresolved references on final pass |
 
 The complete local rail remains below the agreed 60-second escalation
 threshold.  Independent certificate checks and hash-seed checks run in

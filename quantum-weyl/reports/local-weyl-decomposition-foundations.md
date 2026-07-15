@@ -85,7 +85,7 @@ classical export and contraction certificate.
 | 1 | focused specialization and Weyl-decomposition tests | 0.16 s | 13 pass |
 | 1 | complete local-BV unit rail, quiet mode | 22.91 s wall | 103 pass in 22.48 s |
 | 2 | affected certificate reproduction, parallel by independent receipt | 12.83 s wall | 8 pass |
-| 2 | two-pass `conformal-residual-cohomology.tex` build | 1.21 s | pass; no unresolved references on final pass |
+| 2 | two-pass `07-08-conformal-residual-cohomology-archive.tex` build | 1.21 s | pass; no unresolved references on final pass |
 
 The full local rail remains well below the agreed 60-second escalation
 threshold.  No test subdivision is needed yet.  Independent certificate

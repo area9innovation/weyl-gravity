@@ -26,10 +26,46 @@ import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "paper" / "ghosts-geometry-reality.tex"
+SOURCE = ROOT / "paper" / "00-ghosts-geometry-reality.tex"
 README = ROOT / "README.md"
 JSON_REPORT = ROOT / "symbolic" / "programme-introduction-language-report.json"
 TSV_REPORT = ROOT / "symbolic" / "programme-introduction-language-report.tsv"
+
+SERIES_ENTRYPOINTS = (
+    ("00", "00-ghosts-geometry-reality"),
+    ("01", "01-symplectic-diagonalization"),
+    ("02", "02-variational-fock"),
+    ("03", "03-fourth-order-vacuum"),
+    ("04", "04-fourth-order-gravity"),
+    ("05", "05-interaction-obstructions"),
+    ("06", "06-einstein-weyl-interaction-obstructions"),
+    ("07", "07-conformal-residual-cohomology-krein"),
+    ("08", "08-conformal-covariant-causal-transport"),
+)
+
+SHARED_PUBLICATION_ENTRYPOINTS = (
+    "07-08-conformal-residual-cohomology-computational-supplement",
+    "07-08-conformal-residual-cohomology-archive",
+)
+
+LEGACY_PAPER_BASENAMES = (
+    "ghosts-geometry-reality",
+    "symplectic-diagonalization",
+    "variational-fock",
+    "fourth-order-vacuum",
+    "fourth-order-gravity",
+    "interaction-obstructions",
+    "einstein-weyl-interaction-obstructions",
+    "conformal-residual-cohomology-krein",
+    "conformal-covariant-causal-transport",
+    "conformal-residual-cohomology-computational-supplement",
+    "conformal-residual-cohomology",
+)
+
+NUMBERED_PAPER_ARTIFACT = re.compile(
+    r"^(?:\d{2}|\d{2}-\d{2})-[a-z0-9]+(?:-[a-z0-9]+)*\.(?:tex|pdf)$"
+)
+UNNUMBERED_SUPPORT_TEX = {"theorem_statements.tex"}
 
 
 REQUIRED_SNIPPETS = {
@@ -562,13 +598,28 @@ def readme_errors(text: str) -> list[str]:
     errors: list[str] = []
     if "one expository introduction and eight technical papers" not in flat:
         errors.append("README metadata: expected one introduction plus eight technical papers")
-    required_rows = (
-        (r"\| 7 \|[^\n]*conformal-residual-cohomology-krein\.tex", "Paper VII"),
-        (r"\| 8 \|[^\n]*conformal-covariant-causal-transport\.tex", "Paper VIII"),
-    )
-    for pattern, label in required_rows:
-        if not re.search(pattern, text):
-            errors.append(f"README metadata: missing numbered {label} row")
+    paper_dir = ROOT / "paper"
+    for number, basename in SERIES_ENTRYPOINTS:
+        if not re.search(rf"\| {number} \|[^\n]*{re.escape(basename)}\.tex", text):
+            errors.append(f"README metadata: missing numbered {number} row for {basename}")
+        for suffix in (".tex", ".pdf"):
+            if not (paper_dir / f"{basename}{suffix}").is_file():
+                errors.append(f"paper naming: missing {basename}{suffix}")
+    for basename in SHARED_PUBLICATION_ENTRYPOINTS:
+        for suffix in (".tex", ".pdf"):
+            if not (paper_dir / f"{basename}{suffix}").is_file():
+                errors.append(f"paper naming: missing shared artifact {basename}{suffix}")
+    for basename in LEGACY_PAPER_BASENAMES:
+        for suffix in (".tex", ".pdf"):
+            if (paper_dir / f"{basename}{suffix}").exists():
+                errors.append(f"paper naming: obsolete unnumbered artifact remains: {basename}{suffix}")
+    for path in paper_dir.iterdir():
+        if not path.is_file() or path.suffix not in {".tex", ".pdf"}:
+            continue
+        if path.name in UNNUMBERED_SUPPORT_TEX:
+            continue
+        if not NUMBERED_PAPER_ARTIFACT.fullmatch(path.name):
+            errors.append(f"paper naming: top-level publication artifact lacks a two-digit prefix: {path.name}")
     if re.search(r"\| 7[AB] \|", text):
         errors.append("README metadata: obsolete 7A/7B numbering remains")
     if "**Paper 7** (the residual state-side theorem)" not in text:
@@ -757,6 +808,12 @@ Interacting probability and unitarity remain open.
         fixture_errors = architecture_errors(fixture)
         if not any(expected in error for error in fixture_errors):
             failures.append(f"architecture guard fixture did not trigger: {name}")
+    for valid_name in ("09-future-paper.tex", "10-future-paper.pdf", "07-08-shared-supplement.tex"):
+        if not NUMBERED_PAPER_ARTIFACT.fullmatch(valid_name):
+            failures.append(f"paper naming guard rejected valid future name: {valid_name}")
+    for invalid_name in ("9-future-paper.tex", "future-paper.tex", "paper-10-future.pdf"):
+        if NUMBERED_PAPER_ARTIFACT.fullmatch(invalid_name):
+            failures.append(f"paper naming guard accepted invalid name: {invalid_name}")
     return failures
 
 

@@ -4,14 +4,14 @@
 
 Primary manuscripts:
 
-- `paper/conformal-residual-cohomology-krein.tex`
-- `paper/conformal-covariant-causal-transport.tex`
-- `paper/conformal-residual-cohomology-computational-supplement.tex`
+- `paper/07-conformal-residual-cohomology-krein.tex`
+- `paper/08-conformal-covariant-causal-transport.tex`
+- `paper/07-08-conformal-residual-cohomology-computational-supplement.tex`
 
 Archival combined manuscript:
 
-- `paper/conformal-residual-cohomology.tex`
-- generated review PDF: `paper/conformal-residual-cohomology.pdf`
+- `paper/07-08-conformal-residual-cohomology-archive.tex`
+- generated review PDF: `paper/07-08-conformal-residual-cohomology-archive.pdf`
 
 Review title:
 

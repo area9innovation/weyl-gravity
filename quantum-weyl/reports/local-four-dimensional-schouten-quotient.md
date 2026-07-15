@@ -88,7 +88,7 @@ needed for the classical freeze.
 | 1 | complete local-BV unit suite, quiet mode | 36.89 s | 93 pass |
 | 1 | four-dimensional certificate reproduction | 12.03 s | pass |
 | 1 | four-dimensional certificate under hash seeds `1,7,123` | 13.51 s concurrent | pass |
-| 2 | two-pass `conformal-residual-cohomology.tex` build | 1.29 s | pass; no unresolved references on final pass |
+| 2 | two-pass `07-08-conformal-residual-cohomology-archive.tex` build | 1.29 s | pass; no unresolved references on final pass |
 
 The full local suite remains below the agreed 60-second escalation threshold,
 so it does not yet require subdivision.  The affected pre-existing local

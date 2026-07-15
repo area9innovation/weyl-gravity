@@ -14,10 +14,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAPER = ROOT / "paper"
-MONOLITH = PAPER / "conformal-residual-cohomology.tex"
-PAPER_A = PAPER / "conformal-residual-cohomology-krein.tex"
-PAPER_B = PAPER / "conformal-covariant-causal-transport.tex"
-SUPPLEMENT = PAPER / "conformal-residual-cohomology-computational-supplement.tex"
+MONOLITH = PAPER / "07-08-conformal-residual-cohomology-archive.tex"
+PAPER_A = PAPER / "07-conformal-residual-cohomology-krein.tex"
+PAPER_B = PAPER / "08-conformal-covariant-causal-transport.tex"
+SUPPLEMENT = PAPER / "07-08-conformal-residual-cohomology-computational-supplement.tex"
 
 
 def check(label: str, condition: object) -> None:

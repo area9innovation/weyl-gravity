@@ -14,7 +14,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PAPER = ROOT / "paper" / "conformal-residual-cohomology.tex"
+PAPER = ROOT / "paper" / "07-08-conformal-residual-cohomology-archive.tex"
 
 
 def words(tex: str) -> int:

@@ -1,7 +1,7 @@
 # Paper 7 major-revision response ledger
 
 This ledger records the response to the first external-style mathematical
-review of `paper/conformal-residual-cohomology.tex`.  It distinguishes edits
+review of `paper/07-08-conformal-residual-cohomology-archive.tex`.  It distinguishes edits
 already made in the archival manuscript from work still required before an
 external submission.  A passing verification rail does not close an item
 that requires independent expert judgment.
@@ -56,8 +56,8 @@ of cylinder boundary problem.
 
 The section-level split into a residual-cohomology article, a covariant
 causal-completion article, and a versioned computational supplement is
-implemented as `paper/conformal-residual-cohomology-krein.tex`,
-`paper/conformal-covariant-causal-transport.tex`, and the computational
+implemented as `paper/07-conformal-residual-cohomology-krein.tex`,
+`paper/08-conformal-covariant-causal-transport.tex`, and the computational
 supplement.  Both articles compile standalone and carry focused claim
 ledgers.  The current monolith remains an archival theorem/label source.
 Split-publication editorial guards and the isolated tracked-snapshot release

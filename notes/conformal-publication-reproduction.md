@@ -3,12 +3,12 @@
 This guide is the public entry point for reproducing the free pure-Weyl
 publication pair:
 
-- Paper A: `paper/conformal-residual-cohomology-krein.tex`;
-- Paper B: `paper/conformal-covariant-causal-transport.tex`.
+- Paper A: `paper/07-conformal-residual-cohomology-krein.tex`;
+- Paper B: `paper/08-conformal-covariant-causal-transport.tex`.
 
 The versioned supplement is
-`paper/conformal-residual-cohomology-computational-supplement.tex`.  The
-combined `paper/conformal-residual-cohomology.tex` is archival: it preserves
+`paper/07-08-conformal-residual-cohomology-computational-supplement.tex`.  The
+combined `paper/07-08-conformal-residual-cohomology-archive.tex` is archival: it preserves
 the original equation labels and implementation chronology but is no longer
 the primary submission.  Commands are run from
 `physics/symplectic-reconstruction/` unless stated otherwise.
@@ -46,7 +46,7 @@ manuscript repairs from submission gates that still require a public artifact
 release or independent expert review.
 The split is implemented by the two standalone entrypoints above.  The
 versioned computational supplement is tracked at
-[`paper/conformal-residual-cohomology-computational-supplement.tex`](../paper/conformal-residual-cohomology-computational-supplement.tex).
+[`paper/07-08-conformal-residual-cohomology-computational-supplement.tex`](../paper/07-08-conformal-residual-cohomology-computational-supplement.tex).
 
 ## Scoped legacy and no-go routes
 
@@ -142,14 +142,14 @@ To rebuild the paper after the exact rail passes:
 
 ```bash
 cd paper
-pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology-krein.tex
-pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology-krein.tex
-pdflatex -interaction=nonstopmode -halt-on-error conformal-covariant-causal-transport.tex
-pdflatex -interaction=nonstopmode -halt-on-error conformal-covariant-causal-transport.tex
-pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology.tex
-pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology.tex
-pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology-computational-supplement.tex
-pdflatex -interaction=nonstopmode -halt-on-error conformal-residual-cohomology-computational-supplement.tex
+pdflatex -interaction=nonstopmode -halt-on-error 07-conformal-residual-cohomology-krein.tex
+pdflatex -interaction=nonstopmode -halt-on-error 07-conformal-residual-cohomology-krein.tex
+pdflatex -interaction=nonstopmode -halt-on-error 08-conformal-covariant-causal-transport.tex
+pdflatex -interaction=nonstopmode -halt-on-error 08-conformal-covariant-causal-transport.tex
+pdflatex -interaction=nonstopmode -halt-on-error 07-08-conformal-residual-cohomology-archive.tex
+pdflatex -interaction=nonstopmode -halt-on-error 07-08-conformal-residual-cohomology-archive.tex
+pdflatex -interaction=nonstopmode -halt-on-error 07-08-conformal-residual-cohomology-computational-supplement.tex
+pdflatex -interaction=nonstopmode -halt-on-error 07-08-conformal-residual-cohomology-computational-supplement.tex
 cd ..
 python3 symbolic/update_conformal_paper_snapshot.py --write
 python3 symbolic/update_conformal_paper_snapshot.py --check

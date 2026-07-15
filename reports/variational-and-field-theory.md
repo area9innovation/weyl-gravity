@@ -3,7 +3,7 @@
 Continuation of `verification.md` (2026-07-12, second session). Machine
 verification: `symbolic/verify_variational_fock.py` (20 checks, ALL PASS),
 `numeric/distortion_scan.py` (global optimization + invariant cross-checks).
-Paper draft: `paper/variational-fock.tex`.
+Paper draft: `paper/02-variational-fock.tex`.
 
 ## A. Minimum-distortion theorem — PROVED (conjecture confirmed)
 
@@ -312,7 +312,7 @@ PASS), outcome favorable exactly as conjectured:
 - H6: WF(W₁₂⁺) = 𝒞⁺ (recorded argument: forward-cone support ⊆; nonzero
   log coefficient ⇒ equality); difference theorem recorded.
 
-Paper 3 drafted: `paper/fourth-order-vacuum.tex` (9 pp., compiles clean):
+Paper 3 drafted: `paper/03-fourth-order-vacuum.tex` (9 pp., compiles clean):
 "The Universal Vacuum of the Fourth-Order Scalar Field: Metric Orbits,
 Fock Sectors, and the Krein Boundary". Arc: three-geometries separation /
 parabolic decoupling → orbit constancy + universal Fock obstruction →
@@ -524,7 +524,7 @@ continues (TT Jordan + massless vectors + Weyl-null scalar).
 
 ## Paper 4 drafted (2026-07-12)
 
-`paper/fourth-order-gravity.tex` — **Gauge Reduction and the Completion
+`paper/04-fourth-order-gravity.tex` — **Gauge Reduction and the Completion
 Problem in Fourth-Order Gravity: PU Pairing, Covariant Real Forms, and the
 Conformal Jordan Boundary** (8 pp., compiles clean).
 
@@ -665,7 +665,7 @@ Referee claims first machine-verified in symbolic/verify_paper3_referee.py
   (r/2,r/2); the papers' μ(S₊)=(r,r) is the Gram convention
   μ = log spec(S†S) = 2μ_std — the only one consistent with F = 2‖μ‖².
 
-All 20 points applied to fourth-order-vacuum.tex (now 13 pp., clean):
+All 20 points applied to 03-fourth-order-vacuum.tex (now 13 pp., clean):
 bridge restructured as three statements (split / massive BT-type
 resonance / doubly-massless with action-sign reversal, explicit ε);
 explicit action S = (ε/2)∫φ(□+m₁²)(□+m₂²)φ with ε=+1 and the complex
@@ -719,7 +719,7 @@ Referee's two concrete errors machine-verified first
   D-transformed problem for EVERY D (S3c) and is Hermitian iff
   d_xd_y = γω₁ω₂ (S3d).
 
-All 16 points applied to symplectic-diagonalization.tex (now 17 pp.,
+All 16 points applied to 01-symplectic-diagonalization.tex (now 17 pp.,
 clean): new Prop (Spectrum of Q) + corrected rem:twospaces + invariant
 algebraic Fock domain F_alg as common core; corrected Prop
 (Hermiticity requires the normalization) with the transported
@@ -786,7 +786,7 @@ already auxiliary-scoped from its own pass.
 
 ## Paper 0 drafted (2026-07-12): expository introduction
 
-`paper/ghosts-geometry-reality.tex` — **Ghosts, Geometry, and Reality in
+`paper/00-ghosts-geometry-reality.tex` — **Ghosts, Geometry, and Reality in
 Fourth-Order Quantum Theories: A guided introduction to the
 Pais–Uhlenbeck oscillator, Krein quantization, and higher-derivative
 gravity** (17 pp., compiles clean, zero overfull). Audience: knows some
@@ -1114,7 +1114,7 @@ Theorem hardening (verify_hardening.py HX1–HX3 ALL PASS):
   parity converges on the doubled space to the exact U↔V involution.
   CONFLUENT PARITY THEOREM proved.
 
-**PAPER 5 DRAFTED**: paper/interaction-obstructions.tex (12 pp., clean)
+**PAPER 5 DRAFTED**: paper/05-interaction-obstructions.tex (12 pp., clean)
 — "Interaction Obstructions and Resonant Breakdown of the Positive
 Pais–Uhlenbeck Metric". Structure: deformation complex (with ζ vs λ
 bookkeeping fixed) → oscillator first/second order → exact 3:1

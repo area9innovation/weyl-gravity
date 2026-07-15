@@ -104,7 +104,7 @@ The machine receipts are:
 | 1 | three enforced detailed-schema checks | 1.76 s | pass |
 | 1 | five common result-envelope checks | 0.06 s | pass |
 | 1 | six-derivative certificate under hash seeds `1,7,123` | 44.50 s | pass |
-| 2 | two-pass `conformal-residual-cohomology.tex` build | 2.00 s | pass; no unresolved warning on final pass |
+| 2 | two-pass `07-08-conformal-residual-cohomology-archive.tex` build | 2.00 s | pass; no unresolved warning on final pass |
 
 Every exact Tier-1 rail remains below the 60-second escalation threshold.
 Tier 2 was limited to the affected paper because the classical import and

@@ -80,7 +80,7 @@ future geometric quotient.
 | 1 | complete local-BV unit suite | 19.14 s | 85 pass |
 | 1 | specialization certificate reproduction | 12.13 s | pass |
 | 1 | specialization certificate under hash seeds `1,7,123` | 11.87 s concurrent | pass |
-| 2 | two-pass `conformal-residual-cohomology.tex` build | 1.39 s | pass; no unresolved references on final pass |
+| 2 | two-pass `07-08-conformal-residual-cohomology-archive.tex` build | 1.39 s | pass; no unresolved references on final pass |
 
 The affected pre-existing local receipts were regenerated because the exact
 quotient source manifest changed; their reproducibility tests are included in

@@ -3,14 +3,14 @@
 This records the implemented editorial split, not a new theorem or a change
 to the certified dependency graph.  The primary entrypoints are now Paper A,
 Paper B, and the versioned computational supplement.  The combined
-`paper/conformal-residual-cohomology.tex` remains a buildable archival source
+`paper/07-08-conformal-residual-cohomology-archive.tex` remains a buildable archival source
 for stable equation labels and implementation-history cross-references.
 
 ## Publication units
 
 ### Paper A — residual cohomology and pairing
 
-Primary entrypoint: `paper/conformal-residual-cohomology-krein.tex`.
+Primary entrypoint: `paper/07-conformal-residual-cohomology-krein.tex`.
 
 Its mathematical spine should be:
 
@@ -36,7 +36,7 @@ Lorentzian causal BV theorem.
 
 ### Paper B — covariant causal bridge
 
-Primary entrypoint: `paper/conformal-covariant-causal-transport.tex`.
+Primary entrypoint: `paper/08-conformal-covariant-causal-transport.tex`.
 
 Its mathematical spine should be:
 
@@ -65,7 +65,7 @@ remain scoped legacy implementation flags and are not premises of Paper B.
 ### Computational supplement
 
 The repository-linked, versioned companion shared by Papers A and B is
-`paper/conformal-residual-cohomology-computational-supplement.tex`.  It
+`paper/07-08-conformal-residual-cohomology-computational-supplement.tex`.  It
 contains or indexes:
 
 - convention tables and finite-jet globalization audits;

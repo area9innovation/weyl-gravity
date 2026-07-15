@@ -111,7 +111,7 @@ holds only open items.
       rational CM point (open-subset genericity); CONFLUENT PARITY
       THEOREM (P_δ unbounded in one sector; δ-independent sector
       exchange on the oppositely-oriented doubling). **PAPER 5 DRAFTED**
-      (interaction-obstructions.tex, 12 pp.).
+      (05-interaction-obstructions.tex, 12 pp.).
     - DONE (step 8): paper-5 referee pass applied (matrix convention,
       ρ±=∓δ/(2g), ω₂^{−13/2} scale, PT proposition, exact Sturm
       certificate, narrowed genericity, truncation lemma, chart

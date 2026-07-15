@@ -1,7 +1,7 @@
 # Field-theoretic BV identification
 
 This package addresses the remaining classical claim boundary in
-`paper/conformal-residual-cohomology.tex`: how the certified algebraic bulk
+`paper/07-08-conformal-residual-cohomology-archive.tex`: how the certified algebraic bulk
 BV model passes through time-slice BFV reduction and positive-frequency
 polarization to the residual state complex used in the paper.
 
