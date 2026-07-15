@@ -27,6 +27,34 @@ bootstrap inputs only.  They do not establish a full Lorentzian off-shell BV
 propagator, support-compatible Green complex, null-infinity charge theorem, or
 scattering equivalence.
 
+## E-D1a status: generator identification completed
+
+The exact seed certificate
+`bridge/certificates/d_quotient_asymptotic_seed.json` corrects a necessary
+ambiguity before the charge computation.  Three generators must be kept
+separate:
+
+```text
+H_ESU = real Einstein-cylinder time translation d_T,
+D_M   = real Lorentzian Minkowski dilation t d_t+r d_r,
+D_rad = compact radial-quantization grading used in the residual module.
+```
+
+Under the real Penrose map, `H_ESU` becomes `(P_0+K_0)/2` in the stated
+convention and crosses the null boundary of a fixed Minkowski patch.  It is
+not a boundary-preserving generator there.  `D_M` is tangent to null infinity
+and restricts to `u d_u`, but it is not `P_0=d_u`.  The compact identification
+`D_rad=D_M` uses the radial-quantization Cayley/Wick continuation, not the
+real Lorentzian Penrose push-forward.
+
+Consequently “time-translation/`D` charge” must be split into distinct
+charge questions.  Nonzero ADM/Bondi `P_0` charge does not compute the charge
+of `D_M` or `H_ESU`.  The current asymptotically flat verdict is
+`PHASE_SPACE_NOT_CLOSED`, not `D_GAUGE` or `D_CHARGED`; the Einstein verdict
+is `EINSTEIN_OPEN`.  See `notes/conformal-d-quotient-asymptotic-seed.md` for
+the exact dictionary, reduced shear/news action, and triangular `(h,chi)`
+operator seed.
+
 ## Work package E-D1: asymptotically flat Lorentzian BV--BFV complex
 
 Construct the retarded/advanced linear BV complex with declared spaces and
@@ -167,13 +195,14 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | stability open |
 | Lorentzian dS/AdS | boundary-dependent; compute | open | open | open | open | selected sector to certify |
-| Asymptotically flat | physical charge expected; decisive computation | likely unavailable for charged \(D\) | primary task | expected nonzero | primary task | decisive |
+| Asymptotically flat | `PHASE_SPACE_NOT_CLOSED`; `H_ESU` crosses fixed \(\mathscr I\), `D_M` charge open | `NOT APPLICABLE` until a boundary-preserving generator and phase space are chosen | formal triangular seed only; causal complex open | `OPEN` | `OPEN` | `EINSTEIN_OPEN`; reduced `chi=0` seed only |
 
 ## Priority and stop/go decisions
 
 1. Complete the asymptotically flat linear causal complex and boundary phase
    space.
-2. Compute the time-translation/\(D\) charge and radiative pairing.
+2. Choose a real boundary-preserving image, then compute its charge separately
+   from the ADM/Bondi time-translation charge and radiative pairing.
 3. Prove or refute linear causal preservation of the Einstein branch.
 4. Classify the extra radiative branch and its norm.
 5. Compare Bondi observables and tree amplitudes.

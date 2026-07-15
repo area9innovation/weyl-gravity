@@ -1,0 +1,184 @@
+{
+  "asymptotic_symmetry_gate": {
+    "BMSW_or_extended_phase_space_membership": "OPEN",
+    "charge_normalization": "OPEN",
+    "flux": "OPEN",
+    "integrability": "OPEN",
+    "physical_weyl_compensator_status": "OPEN_AT_BOUNDARY",
+    "reason": "boundary preservation of a reduced shear core is weaker than preservation of the full Bach phase space and does not establish presymplectic degeneracy",
+    "required_charge_test": "delta H=Omega_Sigma(delta phi,delta_(xi,sigma) phi) including boundary and corner terms",
+    "standard_fixed_frame_BMS_membership": "NOT_ESTABLISHED"
+  },
+  "claim_flags": {
+    "BMSW_embedding_proved": false,
+    "D_proved_charged": false,
+    "D_proved_proper_gauge": false,
+    "H_ESU_preserves_fixed_minkowski_scri": false,
+    "candidate_radiative_core_preserved_by_flat_dilation": true,
+    "cylinder_D_has_unique_real_asymptotic_image": false,
+    "einstein_causal_selection_proved": false,
+    "einstein_scattering_equivalence_proved": false,
+    "flat_dilation_tangent_to_scri": true,
+    "formal_triangular_green_identity_derived": true,
+    "full_asymptotically_flat_phase_space_closed": false,
+    "helicity_two_scattering_space_recovered": false,
+    "lorentzian_bv_bfv_complex_constructed": false,
+    "null_infinity_green_complex_constructed": false,
+    "pure_weyl_D_charge_computed": false,
+    "real_penrose_generator_dictionary_derived": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flat_dilation_radiative_seed": {
+    "action_convention": "T_s(g)=exp(-2s) Phi_s^*g with Phi_s(u,r)=(exp(s)u,exp(s)r)",
+    "background": "T_s(g_Minkowski)=g_Minkowski",
+    "bondi_news": "N_s(u,x)=N(exp(s)u,x)",
+    "bondi_shear": "C_s(u,x)=exp(-s) C(exp(s)u,x)",
+    "infinitesimal_news": "delta_D N=u d_u N",
+    "infinitesimal_shear": "delta_D C=u d_u C-C",
+    "kinematic_conclusion": "the candidate strong radiative core is mapped into itself for finite real s",
+    "norm_scaling": {
+      "L1_news": "||N_s||_L1=exp(-s)||N||_L1",
+      "L2_news_squared": "||N_s||_L2^2=exp(-s)||N||_L2^2",
+      "memory": "Delta C_s=exp(-s) Delta C"
+    },
+    "not_checked": [
+      "Bach constraints and the second fourth-order radiative pair",
+      "mass and angular-momentum aspects",
+      "soft completion and i0 corner matching",
+      "presymplectic form, counterterms, charge, and flux"
+    ],
+    "status": "PASS_REDUCED_KINEMATICS",
+    "strong_core": "N in L1_u Hs(S2) intersect L2_u Hs(S2), C has finite Hs endpoint limits"
+  },
+  "generator_dictionary": {
+    "D_M_I_plus_tangency": "D_M(T+R-pi)=0 on T+R=pi",
+    "D_M_action_on_inverse_radius": "D_M(Omega)=-Omega",
+    "D_M_cylinder_pullback": [
+      "sin(T)*cos(R)",
+      "sin(R)*cos(T)"
+    ],
+    "D_M_scri_restriction": "u d_u",
+    "H_ESU_action_on_inverse_radius": "-(r + u)/r",
+    "H_ESU_scri_test": "at Omega=0, H_ESU(Omega)=-1; a fixed Minkowski I_plus is not preserved",
+    "bondi_metric": "ds^2=-du^2-2 du dr+r^2 q_AB dx^A dx^B",
+    "bracket": "[D_M,P_0]=-P_0",
+    "compensating_physical_weyl": "sigma=-1 in delta g=L_D g+2 sigma g",
+    "flat_time_translation": "P_0=d_u=d_t",
+    "lie_D_metric": "2 g",
+    "lie_P0_metric": "0",
+    "minkowski_dilation": "D_M=u d_u+r d_r=t d_t+r d_r",
+    "penrose_coordinates": [
+      "u=tan(U), v=tan(V)",
+      "U=(T-R)/2, V=(T+R)/2"
+    ],
+    "penrose_factor": "Omega_P=cos(T)+cos(R)=2 cos(U) cos(V)",
+    "real_cylinder_time_pushforward": "H_ESU=(1+u^2)/2 d_u+r(u+r) d_r=(P_0+K_0)/2 in the stated convention",
+    "status": "PASS"
+  },
+  "inputs": {
+    "asymptotic_bootstrap": {
+      "path": "bridge/certificates/asymptotically_flat_einstein_bootstrap.json",
+      "sha256": "26d3b88e0fcf9971e3a928b2860b3e83c7b40e4dffe714d207c2fae2b951502d"
+    },
+    "closed_universe_bfv": {
+      "path": "bridge/certificates/closed_universe_bfv.json",
+      "sha256": "37eda8319d7fbe69e6b0838677b3d7fd4aecddd8b6274c281fefc2cf3f612ceb"
+    },
+    "einstein_defect": {
+      "path": "bridge/certificates/einstein_defect_asymptotics.json",
+      "sha256": "75780eb8b9800ff035897b725d67a099d658c0a7779c2ecd878bf730725639a0"
+    }
+  },
+  "literature_scope": [
+    {
+      "non_use": "not imported as a pure-Weyl null-infinity charge computation",
+      "reference": "https://arxiv.org/abs/2104.05793",
+      "use": "primary comparison showing that a BMSW extension requires an enlarged renormalized null-infinity phase space and carries charges"
+    },
+    {
+      "non_use": "not a substitute for deriving the pure-Weyl Bach boundary complex",
+      "reference": "https://arxiv.org/abs/2311.03130",
+      "use": "primary source for the fully nonlinear BMSW action on Bondi data"
+    },
+    {
+      "non_use": "its boundary conditions are not an asymptotically-flat null-infinity certificate",
+      "reference": "https://arxiv.org/abs/1412.7508",
+      "use": "primary evidence that conformal-gravity Weyl and diffeomorphism charges depend on declared boundary conditions"
+    }
+  ],
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/d_quotient_asymptotic_seed.py",
+    "generator_sha256": "69a9a43827b2dbd901e69cb1b32a96cf7d153ab390b0a3c99e0cc696a4bdcb52",
+    "input_base_commit": "69b2b240d9a06a5473d275a16ed41d6df12687f8"
+  },
+  "radial_quantization_warning": {
+    "consequence": "a real form, conformal chart, and boundary-preserving lift must be declared before asking for the asymptotic charge of cylinder D",
+    "statement": "the compact grading called D in radial quantization is related to Minkowski dilation by a Cayley/Wick continuation; it is not, without that continuation, the real Penrose push-forward of H_ESU=partial_T",
+    "time_translation_charge_rule": "nonzero ADM/Bondi P_0 charge does not decide the charge of D_M or H_ESU"
+  },
+  "result_id": "E_D1A_D_GENERATOR_ASYMPTOTIC_SEED",
+  "result_state": "KINEMATICS_PROVED_PHASE_SPACE_OPEN",
+  "schema": "pure-weyl-d-quotient-asymptotic-seed-v1",
+  "schema_path": "bridge/einstein_sector/schema/d_quotient_asymptotic_seed.schema.json",
+  "schema_sha256": "a1feac2bbd71d557cec16504c039863c8630a3d59df1a8004726e579878f3de6",
+  "scope_guards": [
+    "the Penrose generator dictionary is exact real Lorentzian coordinate algebra",
+    "the shear transformation is a reduced Bondi kinematic calculation",
+    "the triangular Green matrix is conditional on a two-sided wave Green operator on a common invariant domain",
+    "no result in this certificate carries the LORENTZIAN-CAUSAL tag",
+    "no charge, symplectic form, BRST cohomology, one-particle space, or scattering map is computed",
+    "PHASE_SPACE_NOT_CLOSED is a fail-closed verdict, not evidence that D is charged or gauge"
+  ],
+  "triangular_einstein_defect_seed": {
+    "einstein_subspace": "chi=0 with zero chi source and zero chi Cauchy data",
+    "equations": [
+      "Box h-chi=f_h",
+      "Box chi=f_chi"
+    ],
+    "field_order": [
+      "h",
+      "chi"
+    ],
+    "formal_green": [
+      [
+        "G^+/-",
+        "G^+/- G^+/-"
+      ],
+      [
+        "0",
+        "G^+/-"
+      ]
+    ],
+    "inverse_remainder": [
+      [
+        "Box G-1",
+        "G(Box G-1)"
+      ],
+      [
+        "0",
+        "Box G-1"
+      ]
+    ],
+    "open_domain_problem": "no weighted/polyhomogeneous domain, constraint-compatible tensor Green operator, or null-infinity corner map has been constructed",
+    "operator": [
+      [
+        "Box",
+        "-1"
+      ],
+      [
+        "0",
+        "Box"
+      ]
+    ],
+    "status": "FORMAL_OPERATOR_IDENTITY_ONLY",
+    "support_identity": "J^+/- (J^+/-(K))=J^+/-(K) by causal transitivity"
+  },
+  "verdicts": {
+    "asymptotically_flat_D": "PHASE_SPACE_NOT_CLOSED",
+    "einstein_sector": "EINSTEIN_OPEN"
+  },
+  "verification_command": "python3 -m bridge.einstein_sector.d_quotient_asymptotic_seed --verify bridge/certificates/d_quotient_asymptotic_seed.json"
+}

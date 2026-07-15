@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-compact-cylinder-d-charge-audit-v1",
+  "title": "Compact-cylinder D-charge audit",
+  "type": "object",
+  "required": [
+    "schema",
+    "dependency_tags",
+    "setting",
+    "charge",
+    "phase_spaces",
+    "strongest_counterexample_scope",
+    "compact_vacuum_verdict",
+    "exact_checks",
+    "fail_closed",
+    "open_settings",
+    "verification_receipts",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-compact-cylinder-d-charge-audit-v1"
+    },
+    "dependency_tags": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL",
+          "REDUCED-MODE",
+          "LORENTZIAN-CAUSAL"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "setting": {"type": "object"},
+    "charge": {"type": "object"},
+    "phase_spaces": {
+      "type": "object",
+      "required": ["P_lin", "P_Taub0", "P_der"]
+    },
+    "strongest_counterexample_scope": {"type": "object"},
+    "compact_vacuum_verdict": {
+      "enum": ["D_GAUGE", "D_CHARGED", "SECTOR_DEPENDENT", "NOT_HAMILTONIAN"]
+    },
+    "exact_checks": {"type": "object"},
+    "fail_closed": {"type": "object"},
+    "open_settings": {"type": "array", "items": {"type": "string"}},
+    "verification_receipts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["command", "elapsed_seconds", "status", "test_tier", "recorded_date"]
+      }
+    },
+    "provenance": {"type": "object"}
+  }
+}
