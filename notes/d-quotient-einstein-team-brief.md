@@ -260,6 +260,18 @@ presymplectic comparison, and prolonged fourth-order characteristic complex.
 Nonlinear closure is not certified; the first possible Chevreton obstruction
 is at second order.
 
+That second-order test is now partially closed by
+`EINSTEIN_MAXWELL_SECOND_ORDER_INCLUSION_TEST`. On the compact product at
+fixed magnetic flux, the constant radion and Maxwell duality tangent have
+explicit constant-lapse adjoint pairings, so no periodic second-order
+correction exists. Both become extendible when their required magnetic-flux
+shift is admitted. On the universal cover, a null radiative tangent has
+nonzero pure-null `C_Ch^(2)` and nevertheless admits an explicit local metric
+correction. The result is therefore charge- and tangent-dependent: it is
+neither general nonlinear closure nor a general no-go. E-D2 should next test
+periodic nonzero-frequency graviton and photon harmonics at fixed electric and
+magnetic charges.
+
 ## Work package E-D3: observables, charges, and scattering
 
 Compare the selected sector with Einstein gravity by constructing explicit

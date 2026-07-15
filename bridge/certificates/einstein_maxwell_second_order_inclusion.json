@@ -1,0 +1,491 @@
+{
+  "adjoint_cokernel_reduction": {
+    "adjoint_pairing": "Pair with the constant spatial lapse and integrate over S1: derivatives vanish, so <1,L_tt>=0.",
+    "averaging": "The source is invariant under the compact spatial group S1 x SO(3). If any periodic correction exists, averaging it gives an invariant correction because the linearized Weyl--Maxwell operator is equivariant.",
+    "fixed_flux_condition": "p=0",
+    "gauge_complete_invariant_metric": "After invariant Diff x Weyl gauge fixing, the averaged metric correction is represented by base and sphere factors A(t,x),R(t,x), with D=A-R.",
+    "linearized_tt_row": "(L_WM Phi2)_tt=(1/2)*partial_x^2*box(D)-p",
+    "maxwell_zero_mode": "p is the epsilon^2 magnetic-flux coefficient; an averaged electric correction has zero linear stress pairing with the purely magnetic background",
+    "scope": "This promotes the invariant calculation to a no-solution result for arbitrary smooth periodic corrections in the declared fixed-magnetic-flux sector."
+  },
+  "certified_constant_radion": {
+    "affine_quadratic_weyl_maxwell_source": [
+      [
+        "-2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "34",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-18",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-18*sin(theta)**2"
+      ]
+    ],
+    "charge_relaxed_extension": {
+      "corrected_residual": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "fixed_flux_metric_only_residual": [
+        [
+          "-2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-2*sin(theta)**2"
+        ]
+      ],
+      "magnetic_flux_shift": "P(epsilon)=1-2*epsilon^2",
+      "maxwell_correction": "f2=-2*sin(theta)*dtheta wedge dphi",
+      "metric_correction": "h2=(8/3)*t^4*(-dt^2+dx^2)",
+      "status": "EXPLICIT_SECOND_ORDER_EXTENSION_IF_FLUX_MAY_SHIFT"
+    },
+    "chevreton_H_second_order": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "compact_fixed_flux_adjoint_witness": {
+      "averaged_linear_tt_row": "<L_WM Phi2>_tt=(1/2L)*integral_S1 partial_x^2(box D) dx=0",
+      "conclusion": "NO_PERIODIC_SECOND_ORDER_CORRECTION_AT_FIXED_MAGNETIC_FLUX",
+      "dual_test": "constant spatial lapse / homogeneous tt row",
+      "nonzero_for_L_positive": true,
+      "source_pairing": "integral_S1 S2_tt dx=-2*L"
+    },
+    "convention_adjusted_C_Ch_second_order": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "first_order_tangent": {
+      "magnetic_flux_condition": "delta P=0",
+      "maxwell": "f1=0",
+      "metric": "h1=2*t^2*(-dt^2+dx^2)+2*dOmega_2^2"
+    }
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC and REDUCED-MODE certificate classifies three explicit second-order directions at the certified product background. On the compact S1 quotient it proves fixed-magnetic-flux adjoint obstructions for the constant radion and Maxwell duality tangent, and it exhibits their charge-relaxed extensions. On the universal cover it constructs an explicit correction for a null radiative tangent with nonzero Chevreton defect. It proves neither general nonlinear closure nor a general second-order no-go, and makes no causal, observable, scattering, or quantum claim.",
+  "claim_flags": {
+    "general_nonlinear_closure_claim": false,
+    "general_second_order_no_go_claim": false,
+    "local_algebraic_second_order_classification": true,
+    "lorentzian_causal_claim": false,
+    "observable_embedding_claim": false,
+    "quantum_claim": false,
+    "reduced_mode_fixed_flux_obstruction": true,
+    "scattering_claim": false
+  },
+  "classification": {
+    "constant_radion_charge_relaxed_extension_constructed": true,
+    "constant_radion_compact_fixed_flux_adjoint_obstruction_certified": true,
+    "constant_radion_compact_fixed_flux_extension_exists": false,
+    "general_nonlinear_einstein_sector_closure_certified": false,
+    "general_second_order_no_go_certified": false,
+    "maxwell_duality_charge_relaxed_exact_extension_constructed": true,
+    "maxwell_duality_compact_fixed_flux_adjoint_obstruction_certified": true,
+    "maxwell_duality_compact_fixed_flux_extension_exists": false,
+    "nonzero_chevreton_defect_is_by_itself_an_obstruction": false,
+    "nonzero_chevreton_radiative_fixture_extension_constructed": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": {
+    "main": "Second-order inclusion is tangent- and charge-sector dependent. The compact fixed-flux constant radion and Maxwell duality directions fail by an averaged constraint, while allowing the required magnetic-charge shift removes both failures. A nonzero pure-null Chevreton defect on the universal cover is explicitly removable by a local Weyl metric correction.",
+    "where_the_graviton_went": "No linear graviton or photon class is removed here. The obstruction is a second-order compact fixed-charge integrability condition on two declared zero/charge modes, not a vanishing local radiative spectrum."
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "maxwell_duality_tangent": {
+    "affine_fixed_magnetic_flux_source": [
+      [
+        "-1/2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-sin(theta)**2/2"
+      ]
+    ],
+    "charge_relaxed_extension": {
+      "all_order_family": "F(epsilon)=cos(epsilon)*Fbar+sin(epsilon)*(*Fbar)",
+      "corrected_residual": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "second_order_correction": "f2=-(1/2)*Fbar",
+      "status": "EXACT_ALL_ORDER_DUALITY_EXTENSION_IF_MAGNETIC_FLUX_MAY_SHIFT",
+      "stress_identity": "cos(epsilon)^2+sin(epsilon)^2=1"
+    },
+    "chevreton_H_second_order": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "compact_fixed_flux_adjoint_witness": {
+      "conclusion": "NO_PERIODIC_SECOND_ORDER_CORRECTION_AT_FIXED_MAGNETIC_FLUX",
+      "dual_test": "constant spatial lapse / homogeneous tt row",
+      "source_pairing": "integral_S1 S2_tt dx=-L/2"
+    },
+    "convention_adjusted_C_Ch_second_order": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "first_order_tangent": {
+      "interpretation": "global Maxwell duality tangent; Maxwell-sector but not a radiative wave packet",
+      "maxwell": "f1=dt wedge dx=*Fbar",
+      "metric": "h1=0"
+    }
+  },
+  "next_gate": {
+    "do_not_infer": [
+      "general nonlinear closure from the removable null fixture",
+      "a universal nonlinear no-go from the two fixed-flux charge-sector obstructions",
+      "asymptotically flat scattering or Lorentzian-causal closure"
+    ],
+    "status": "OPEN",
+    "target": "test periodic nonzero-frequency graviton and photon harmonics at fixed electric and magnetic charges, using their exact adjoint pairings"
+  },
+  "null_radiative_tangent": {
+    "affine_quadratic_weyl_maxwell_source": [
+      [
+        "-4*(-10*t*x + 10*x**2 + 3)",
+        "4*(-5*t**2 + 5*x**2 + 3)",
+        "0",
+        "0"
+      ],
+      [
+        "4*(-5*t**2 + 5*x**2 + 3)",
+        "-4*(-10*t**2 + 10*t*x + 3)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-20*(-t + x)**2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-20*(-t + x)**2*sin(theta)**2"
+      ]
+    ],
+    "chevreton_H_second_order": [
+      [
+        "2",
+        "-2",
+        "0",
+        "0"
+      ],
+      [
+        "-2",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "chevreton_type": "pure null: C_Ch^(2)=4*(dt-dx) tensor (dt-dx)",
+    "convention_adjusted_C_Ch_second_order": [
+      [
+        "4",
+        "-4",
+        "0",
+        "0"
+      ],
+      [
+        "-4",
+        "4",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "domain": "universal cover R^(1,1) x S2; polynomial null representative, not periodic on the S1 quotient",
+    "explicit_extension": {
+      "D": "u^3*v*(5*u*v-24)/24",
+      "box_D": "4*(-t + x)**2*(-5*t**2 + 5*x**2 + 9)/3",
+      "corrected_residual": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "maxwell_correction": "f2=0",
+      "metric_correction": "h2=D(t,x)*(-dt^2+dx^2)",
+      "status": "EXPLICIT_SECOND_ORDER_EXTENSION_WITH_NONZERO_CHEVRETON_DEFECT"
+    },
+    "first_order_tangent": {
+      "base_conformal_mode": "psi1=u^2*v/4",
+      "linearized_einstein_maxwell_checks": [
+        "box(phi1)=0",
+        "Hessian(phi1)=0",
+        "box(psi1)+2*phi1=0"
+      ],
+      "maxwell": "f1=0 with metric-induced nonparallel first Maxwell jet",
+      "radion": "phi1=u",
+      "u": "t-x",
+      "v": "t+x"
+    }
+  },
+  "perturbative_convention": {
+    "affine_source": "S2=(1/2)D^2 E[Phi1,Phi1]",
+    "extension_equation": "L Phi2=-S2",
+    "fields": "Phi(epsilon)=Phibar+epsilon*Phi1+epsilon^2*Phi2+O(epsilon^3)",
+    "relation_to_requested_sign": "the requested right-hand source -1/2 D^2E equals -S2"
+  },
+  "provenance": {
+    "chevreton_tensor_formula": {
+      "formula": "H_ab=nabla_c F_ad nabla^c F_b^d-(1/4)g_ab nabla_c F_de nabla^c F^de",
+      "repository_fixture_translation": "C_Ch^(2)=2*H^(2) at kappa=1",
+      "source": "G. Bergqvist, I. Eriksson, and J. M. M. Senovilla, gr-qc/0303036"
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_second_order_inclusion.py",
+    "generator_sha256": "3862369f88fc94efd626ceaec0d1c75720c3bde7fd5fa7b02d4069e01bee8476",
+    "inputs": {
+      "common_background": {
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      "linear_tangent_theorem": {
+        "path": "bridge/certificates/einstein_maxwell_chevreton_tangent.json",
+        "sha256": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead"
+      }
+    },
+    "primary_identity": {
+      "arxiv": "gr-qc/0703073v2",
+      "authors": "G. Bergqvist and I. Eriksson",
+      "source_equation": "Eq. (66): B_ab=2 H_ab+(2/3) lambda T_ab"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_SECOND_ORDER_INCLUSION_TEST",
+  "result_state": "TANGENT_AND_CHARGE_SECTOR_DEPENDENT_SECOND_ORDER_EXTENSION_CLASSIFIED",
+  "schema": "einstein-maxwell-second-order-inclusion-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_second_order_inclusion.schema.json",
+  "schema_sha256": "4a6cbd353d99f5597ac1b8fa6260332da179efc327133bdaec5c0339fff825ed",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_second_order_inclusion --verify bridge/certificates/einstein_maxwell_second_order_inclusion.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_second_order_inclusion.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_second_order_inclusion"
+  ]
+}

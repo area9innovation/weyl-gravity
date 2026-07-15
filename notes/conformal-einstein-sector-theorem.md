@@ -262,7 +262,21 @@ This is still not an off-shell curved BV chain map or observable injection.
 Generalized fourth-order modes, equation/identity row maps, cyclicity,
 magnetic-bundle patching, helicities on the product, and the presymplectic map
 remain open. The first possible Chevreton obstruction to nonlinear closure is
-second order and has not been computed on physical representatives.
+second order.
+
+The scoped second-order certificate now gives a mixed answer. The constant
+radion and Maxwell duality directions are obstructed on the compact product
+when magnetic flux is fixed: their quadratic `tt` sources pair nontrivially
+with the constant spatial lapse, while the periodic linearized row is a total
+`x` derivative. Allowing magnetic charge to shift supplies explicit
+extensions, so the obstruction belongs to the fixed-charge phase space.
+
+A separate null radiative tangent on the universal cover has nonzero
+pure-null `C_Ch^(2)` but admits an explicit Weyl metric correction. Thus the
+Chevreton tensor detects the first possible mismatch, but nonvanishing alone
+does not decide removability. General nonlinear closure and a general no-go
+both remain open; the next target is periodic nonzero-frequency graviton and
+photon harmonics at fixed electric and magnetic charges.
 
 ## Einstein-Hilbert scale
 

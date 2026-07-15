@@ -209,7 +209,23 @@ The ordinary graviton-plus-photon tangents therefore survive before the
 residual quotient. This remains an on-shell solution-tangent inclusion, not a
 curved off-shell BV chain map or an observable embedding. Since the
 Chevreton defect is quadratic, the first possible nonlinear obstruction is
-at second order and has not yet been evaluated on physical representatives.
+at second order.
+
+### Second-order tangent test completed
+
+`EINSTEIN_MAXWELL_SECOND_ORDER_INCLUSION_TEST` now separates three outcomes.
+On the compact `S1 x S2` quotient at fixed magnetic flux, the certified
+constant radion and the Maxwell duality tangent have nonzero constant-lapse
+pairings (`-2L` and `-L/2`), proving that no smooth periodic second-order
+correction exists. Both extend if the required second-order magnetic-flux
+shift is allowed, so these are charge-sector obstructions.
+
+On the universal cover, a null radiative tangent has the nonzero pure-null
+coefficient `C_Ch^(2)=4(dt-dx) tensor (dt-dx)`, but the explicit correction
+`h2=D(-dt^2+dx^2)`, `D=u^3 v(5uv-24)/24`, cancels the complete quadratic
+source. Nonzero Chevreton defect is therefore not by itself an obstruction.
+Neither fixture settles periodic nonzero-frequency graviton/photon harmonics
+or general nonlinear closure.
 
 ### Curved completion
 
