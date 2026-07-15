@@ -43,6 +43,15 @@ closes as the strict CE differential.  What remains absent is a portable
 support-local `q2` tensor before endpoint projection and any extra rows
 outside the selected algebraic field domain.
 
+HT1b has now started from the opposite, local side.  Two independent mixed
+curvature channels retain their exact stereographic radial
+`B^(2)(h_1,h_2)` densities before integration.  Their integrals equal the
+corresponding raw-normalized entries of the portable HT1 residual kernels
+entry by entry.  The reverse/dagger channels are available only after
+integration.  This is a mode-specialized local metric-sector seed, not the
+arbitrary-input tensor `B^(2)_{mu nu}[h_1,h_2]`; the Diff/Weyl ghost rows,
+antifield rows, and local arity-two classical-master identity remain absent.
+
 The parity combinations
 
 ```text
@@ -72,5 +81,6 @@ this package is a quantum or `LORENTZIAN-CAUSAL` result.
 ```bash
 python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check
 python3 quantum-weyl/transfer/residual_cubic_certificate.py --check
+python3 quantum-weyl/transfer/local_bach_seed_certificate.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v
 ```

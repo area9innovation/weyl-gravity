@@ -23,7 +23,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(
             certificate["result_state"],
-            "ENGINE_READY_HT1_SELECTED_MODEL_COMPUTED_INPUT_BLOCKED",
+            "ENGINE_READY_HT1_RESIDUAL_AND_LOCAL_SEEDS_COMPUTED_INPUT_BLOCKED",
         )
         self.assertEqual(certificate["dependency_tags"], ["LOCAL-ALGEBRAIC"])
         self.assertTrue(certificate["input_blockers"])
@@ -39,7 +39,11 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertEqual(
             certificate["programme_stages"][1]["status"],
-            "SELECTED_RESIDUAL_CUBIC_COMPUTED_FULL_LOCAL_EXPORT_PENDING",
+            "RESIDUAL_CUBIC_AND_TWO_LOCAL_BACH_SEEDS_COMPUTED_FULL_LOCAL_EXPORT_PENDING",
+        )
+        self.assertIn(
+            "TWO_DIRECT_LOCAL_SEEDS",
+            certificate["question_ledger"][0]["status"],
         )
 
     def test_missing_nonlinear_and_contraction_exports_are_named(self) -> None:

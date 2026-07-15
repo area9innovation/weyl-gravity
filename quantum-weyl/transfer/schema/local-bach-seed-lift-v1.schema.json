@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "local-bach-seed-lift-v1.schema.json",
+  "title": "HT1b mode-specialized local quadratic-Bach seed certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id",
+    "result_state",
+    "classical_commit",
+    "dependency_tags",
+    "category",
+    "seed_payload",
+    "seed_payload_sha256",
+    "checks",
+    "established",
+    "claim_guards",
+    "next_required_exports",
+    "provenance"
+  ],
+  "properties": {
+    "result_id": {"const": "HT1B_LOCAL_BACH_SEED_LIFT"},
+    "result_state": {"const": "LOCAL_METRIC_SEEDS_COMPUTED_FULL_BV_LIFT_BLOCKED"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "category": {"type": "string"},
+    "seed_payload": {"$ref": "#/$defs/seedPayload"},
+    "seed_payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "checks": {
+      "type": "object",
+      "required": [
+        "direct_local_density_channel_count",
+        "integrated_raw_kernel_entry_count",
+        "selected_projection_to_residual_q2",
+        "selected_residual_cubic_master_equation",
+        "local_q1_q2_chain_identity",
+        "full_support_local_q2",
+        "ghost_completion",
+        "antifield_completion"
+      ],
+      "properties": {
+        "direct_local_density_channel_count": {"const": 2},
+        "integrated_raw_kernel_entry_count": {"const": 4},
+        "selected_projection_to_residual_q2": {"const": "VERIFIED_2_DIRECT_LOCAL_CHANNELS"},
+        "selected_residual_cubic_master_equation": {"const": "VERIFIED_UPSTREAM"},
+        "local_q1_q2_chain_identity": {"const": "NOT_COMPUTED_MISSING_ARBITRARY_INPUT_Q2_AND_COMPLETIONS"},
+        "full_support_local_q2": {"const": "NOT_COMPUTED"},
+        "ghost_completion": {"const": "NOT_COMPUTED"},
+        "antifield_completion": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "established": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "claim_guards": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_required_exports": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": [
+        "upstream_sha256",
+        "upstream_manifest_sha256",
+        "implementation_sha256",
+        "implementation_manifest_sha256",
+        "schema"
+      ],
+      "properties": {
+        "upstream_sha256": {"$ref": "#/$defs/hashManifest"},
+        "upstream_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "implementation_sha256": {"$ref": "#/$defs/hashManifest"},
+        "implementation_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/local-bach-seed-lift-v1.schema.json"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hashManifest": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/hash"}
+    },
+    "exactScalar": {"type": "string", "pattern": "^(?!.*Float).+$"},
+    "sparseMatrix": {
+      "type": "object",
+      "required": ["shape", "scalar_format", "entries"],
+      "properties": {
+        "shape": {
+          "type": "array",
+          "prefixItems": [{"type": "integer"}, {"type": "integer"}],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "scalar_format": {"const": "sympy-srepr-exact-v1"},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [
+              {"type": "integer"},
+              {"type": "integer"},
+              {"$ref": "#/$defs/exactScalar"}
+            ],
+            "minItems": 3,
+            "maxItems": 3
+          }
+        }
+      }
+    },
+    "seedChannel": {
+      "type": "object",
+      "required": [
+        "channel_id",
+        "support_scope",
+        "bilinear_taylor_convention",
+        "external_modes",
+        "ck_scalar_magnetic",
+        "kernel_magnetic_component",
+        "residual_kernel_label",
+        "residual_matrix_coordinate",
+        "local_radial_density",
+        "measured_stereographic_integrand",
+        "slice_coefficient",
+        "integrated_taub_charge",
+        "canonical_residual_kernel_entry",
+        "raw_ck_to_canonical_scale",
+        "raw_residual_kernel_entry",
+        "checks"
+      ],
+      "properties": {
+        "channel_id": {"type": "string"},
+        "support_scope": {"type": "string"},
+        "bilinear_taylor_convention": {"type": "string"},
+        "external_modes": {"type": "array", "minItems": 2, "maxItems": 2},
+        "ck_scalar_magnetic": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/exactScalar"}},
+        "kernel_magnetic_component": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/exactScalar"}},
+        "residual_kernel_label": {"enum": ["K-_1/2_-1/2", "K+_1/2_-1/2"]},
+        "residual_matrix_coordinate": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer"}},
+        "local_radial_density": {"$ref": "#/$defs/exactScalar"},
+        "measured_stereographic_integrand": {"$ref": "#/$defs/exactScalar"},
+        "slice_coefficient": {"$ref": "#/$defs/exactScalar"},
+        "integrated_taub_charge": {"$ref": "#/$defs/exactScalar"},
+        "canonical_residual_kernel_entry": {"$ref": "#/$defs/exactScalar"},
+        "raw_ck_to_canonical_scale": {"$ref": "#/$defs/exactScalar"},
+        "raw_residual_kernel_entry": {"$ref": "#/$defs/exactScalar"},
+        "checks": {"type": "object"}
+      }
+    },
+    "seedPayload": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "scalar_format",
+        "radial_coordinate",
+        "s3_integration_formula",
+        "direct_local_channels",
+        "integrated_reverse_completion"
+      ],
+      "properties": {
+        "schema_version": {"const": 1},
+        "scalar_format": {"const": "sympy-srepr-exact-v1"},
+        "radial_coordinate": {"type": "string"},
+        "s3_integration_formula": {"type": "string"},
+        "direct_local_channels": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/seedChannel"}
+        },
+        "integrated_reverse_completion": {
+          "type": "object",
+          "required": [
+            "ordered_basis",
+            "K_minus_raw_matrix",
+            "K_plus_raw_matrix",
+            "dagger_relation",
+            "parity_seed_equality",
+            "support_local_density_available_for_reverse_channels"
+          ],
+          "properties": {
+            "ordered_basis": {"const": ["E_+", "A_+", "A_-", "L_-"]},
+            "K_minus_raw_matrix": {"$ref": "#/$defs/sparseMatrix"},
+            "K_plus_raw_matrix": {"$ref": "#/$defs/sparseMatrix"},
+            "dagger_relation": {"const": "VERIFIED_EXACT"},
+            "parity_seed_equality": {"const": "VERIFIED_EXACT"},
+            "support_local_density_available_for_reverse_channels": {"const": false}
+          }
+        }
+      }
+    }
+  }
+}

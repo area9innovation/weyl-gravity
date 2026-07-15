@@ -74,10 +74,13 @@ claim.
 
 ## Next exact target
 
-HT1b should lift the certified residual bracket by serializing the bilinear
-Bach source `B^(2)(h_1,h_2)`, its ghost/antifield completions required by the
-classical master equation, and the compatible endpoint projection.  The
-acceptance test is equality of the direct transfer tensor
+HT1b has started with two independent mode-specialized local Bach-density
+seeds.  Their exact integrals reproduce two entries of the portable residual
+bracket; see `ht1b-local-bach-seed-lift.md`.  The next step is the
+arbitrary-input bilinear Bach source `B^(2)(h_1,h_2)`, its ghost/antifield
+completions required by the classical master equation, and the compatible
+endpoint projection.  The acceptance test is equality of the direct transfer
+tensor
 
 ```text
 pi_cl q2(iota_cl(-), iota_cl(-))

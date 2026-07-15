@@ -2,7 +2,7 @@
 
 Dependency tag: `LOCAL-ALGEBRAIC`
 
-Result state: `ENGINE_READY_HT1_SELECTED_MODEL_COMPUTED_INPUT_BLOCKED`
+Result state: `ENGINE_READY_HT1_RESIDUAL_AND_LOCAL_SEEDS_COMPUTED_INPUT_BLOCKED`
 
 ## Established
 
@@ -18,6 +18,13 @@ closed-cylinder BV--BFV suspension, all-energy moment map, and strict
 centered HPL transfer.  The Hamiltonian vector field computes the selected
 residual matter--matter Kuranishi output, ghost--matter action, ghost bracket,
 and ghost-momentum coadjoint action exactly.
+
+HT1b now begins the reverse comparison from the curvature side.  Two
+independent mode-specialized mixed `B^(2)` channels retain exact local radial
+densities.  Their exact integrals reproduce two raw-normalized entries of the
+portable residual `q2` tensor.  This establishes real local lift seeds while
+leaving the arbitrary-input Bach tensor and all ghost/antifield completions
+fail-closed.
 
 The portable input schema requires full and residual graded bases, `q1`,
 `q2`, `q3`, `iota_cl`, `pi_cl`, `s_cl`, the cyclic pairing, normalized
@@ -45,7 +52,7 @@ transferred before `QME_RESTORED`.
 | Stage | Exact deliverable | Status |
 |---|---|---|
 | HT0 | Engine, convention, schema, blocker ledger | Ready |
-| HT1 | Import classical Taylor data; compute `ell_2` | Selected residual cubic/Kuranishi bracket computed; complete support-local lift blocked on export |
+| HT1 | Import classical Taylor data; compute `ell_2` | Residual cubic bracket and two direct local Bach-density seeds computed; complete support-local lift blocked on export |
 | HT2 | Compute `ell_3`; dynamical/topological mixing and centrality ledgers | Not computed |
 | HT3 | Higher arities and particle-filtration spectral sequence | Not computed |
 | HT4 | Cyclic minimal action and formal moduli/deformation interpretation | Not computed |
@@ -55,10 +62,10 @@ transferred before `QME_RESTORED`.
 
 | Command | Elapsed seconds | Status | Tier |
 |---|---:|---|---:|
-| `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --emit` | 0.04 | PASS | 2 |
-| `python3 quantum-weyl/transfer/residual_cubic_certificate.py --emit` | 45.79 | PASS | 1 |
-| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 36.05 | PASS (19 tests) | 1 |
-| Compile, JSON-parse three artifacts, and scoped `git diff --check` | 0.12 | PASS | 0 |
+| `python3 quantum-weyl/transfer/local_bach_seed_certificate.py --emit` | 6.27 | PASS | 1 |
+| `python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --emit` | 0.03 | PASS | 2 |
+| `python3 -m unittest discover -s quantum-weyl/transfer/tests -v` | 48.20 | PASS (27 tests) | 1 |
+| Compile, JSON parsing, and scoped `git diff --check` | 0.13 | PASS | 0 |
 
 An optional Draft-2020-12 meta-schema check was attempted but was **not
 run** because the environment does not provide the `jsonschema` module.  It

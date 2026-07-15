@@ -39,11 +39,15 @@ def _canonical_hash(value: object) -> str:
 def _source_manifest() -> dict[str, str]:
     paths = (
         "homological_transfer.py",
+        "local_bach_seed_lift.py",
+        "local_bach_seed_certificate.py",
         "nonlinear_transfer_certificate.py",
+        "schema/local-bach-seed-lift-v1.schema.json",
         "schema/nonlinear_classical_export.schema.json",
         "residual_cubic_block.py",
         "residual_cubic_certificate.py",
         "tests/test_homological_transfer.py",
+        "tests/test_local_bach_seed_lift.py",
         "tests/test_nonlinear_transfer_certificate.py",
         "tests/test_residual_cubic_block.py",
     )
@@ -68,7 +72,7 @@ def build_certificate() -> dict[str, Any]:
     source_manifest = _source_manifest()
     return {
         "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-        "result_state": "ENGINE_READY_HT1_SELECTED_MODEL_COMPUTED_INPUT_BLOCKED",
+        "result_state": "ENGINE_READY_HT1_RESIDUAL_AND_LOCAL_SEEDS_COMPUTED_INPUT_BLOCKED",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "classical_snapshot_commit": snapshot["classical_commit"],
         "classical_freeze_gate": snapshot["gate_a_status"],
@@ -82,6 +86,7 @@ def build_certificate() -> dict[str, Any]:
                 "floating-point rejection",
                 "portable nonlinear classical export schema",
                 "HT1 selected residual cubic bracket including the matter-matter Kuranishi output",
+                "HT1b two direct mode-specialized local quadratic-Bach density seeds matched to residual q2 entries",
             ],
             "not_established": [
                 "the complete conformal-gravity q2 or q3 Taylor tensors",
@@ -98,8 +103,8 @@ def build_certificate() -> dict[str, Any]:
         "question_ledger": [
             {
                 "question_id": "transferred_cubic_bracket",
-                "status": "COMPUTED_SELECTED_RESIDUAL_MODEL_FULL_FIELD_DOMAIN_PENDING",
-                "next_certificate": "HT1_TRANSFERRED_BINARY_BRACKET",
+                "status": "COMPUTED_SELECTED_RESIDUAL_MODEL_TWO_DIRECT_LOCAL_SEEDS_FULL_FIELD_DOMAIN_PENDING",
+                "next_certificate": "HT1B_COMPLETE_SUPPORT_LOCAL_Q2",
             },
             {
                 "question_id": "positive_dynamical_direction_closure",
@@ -129,7 +134,7 @@ def build_certificate() -> dict[str, Any]:
         ],
         "programme_stages": [
             {"stage": "HT0", "deliverable": "exact transfer engine and input contract", "status": "READY"},
-            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "SELECTED_RESIDUAL_CUBIC_COMPUTED_FULL_LOCAL_EXPORT_PENDING"},
+            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "RESIDUAL_CUBIC_AND_TWO_LOCAL_BACH_SEEDS_COMPUTED_FULL_LOCAL_EXPORT_PENDING"},
             {"stage": "HT2", "deliverable": "compute ell3 and dynamical/topological mixing table", "status": "NOT_COMPUTED"},
             {"stage": "HT3", "deliverable": "higher-arity and particle-filtration obstruction ledger", "status": "NOT_COMPUTED"},
             {"stage": "HT4", "deliverable": "cyclic minimal action and formal moduli interpretation", "status": "NOT_COMPUTED"},
@@ -145,12 +150,17 @@ def build_certificate() -> dict[str, Any]:
             "ht1_selected_residual_sha256": _sha256(
                 TRANSFER_ROOT / "certificates" / "HT1_RESIDUAL_CUBIC_BLOCK.json"
             ),
+            "ht1b_local_bach_seed_certificate": "quantum-weyl/transfer/certificates/HT1B_LOCAL_BACH_SEED_LIFT.json",
+            "ht1b_local_bach_seed_sha256": _sha256(
+                TRANSFER_ROOT / "certificates" / "HT1B_LOCAL_BACH_SEED_LIFT.json"
+            ),
         },
         "assumptions": [
             "The low-arity engine uses a finite exact basis and the declared suspended convention.",
             "The engine fixture tests implementation mechanics only and carries no conformal-gravity coefficient claim.",
             "The classical import remains fail-closed until portable tensors and maps are independently verified.",
             "The certified endpoint projection computes the residual matter-matter Kuranishi bracket but does not substitute for a portable support-local q2 tensor.",
+            "The two local Bach density seeds test selected matrix elements only; they do not substitute for an arbitrary-input bilinear Bach tensor or its BV completions.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",
         ],
     }
@@ -175,7 +185,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: HT1 RESIDUAL BRACKET COMPUTED, FULL LOCAL INPUT BLOCKED")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: HT1 RESIDUAL BRACKET AND TWO LOCAL BACH SEEDS COMPUTED, FULL LOCAL INPUT BLOCKED")
     return 0
 
 

@@ -1,0 +1,222 @@
+{
+  "category": "mode-specialized local metric-sector quadratic Bach seeds",
+  "checks": {
+    "antifield_completion": "NOT_COMPUTED",
+    "direct_local_density_channel_count": 2,
+    "full_support_local_q2": "NOT_COMPUTED",
+    "ghost_completion": "NOT_COMPUTED",
+    "integrated_raw_kernel_entry_count": 4,
+    "local_q1_q2_chain_identity": "NOT_COMPUTED_MISSING_ARBITRARY_INPUT_Q2_AND_COMPLETIONS",
+    "selected_projection_to_residual_q2": "VERIFIED_2_DIRECT_LOCAL_CHANNELS",
+    "selected_residual_cubic_master_equation": "VERIFIED_UPSTREAM"
+  },
+  "claim_guards": [
+    "mode-specialized radial densities are not the arbitrary-support tensor B^(2)_{mu nu}[h1,h2]",
+    "equivariant reconstruction of fifteen residual kernels is not direct local evaluation of fifteen Bach-source components",
+    "the quadratic classical-master identity is not claimed without the full q1, q2 ghost rows, and antifield rows",
+    "HT1b is not complete and HT2 transfer is not unblocked by this seed certificate alone",
+    "this is not a quantum correction or a LORENTZIAN-CAUSAL result"
+  ],
+  "classical_commit": "UNFROZEN",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "two independent mixed B^(2) curvature channels retain exact local radial densities before integration",
+    "each local density integrates exactly to its action-normalized Taub charge",
+    "both direct charges equal the corresponding raw-normalized entries of the checked-in HT1 residual q2 payload",
+    "the four integrated forward/reverse entries obey the exact dagger relation and parity-seed equality"
+  ],
+  "next_required_exports": [
+    "arbitrary-input bilinear Bach tensor B^(2)_{mu nu}[h1,h2] in a portable local basis",
+    "Diff and Weyl ghost-metric q2 rows",
+    "antifield q2 rows fixed by the classical master equation",
+    "portable local q1 and contraction maps pi_cl, iota_cl, s_cl",
+    "exact arity-two chain identity and full projection comparison"
+  ],
+  "provenance": {
+    "implementation_manifest_sha256": "925eb7db46d35d59f75efde1b414d78c6bfb8594d63a7d9c672dd7fd65040bf5",
+    "implementation_sha256": {
+      "local_bach_seed_certificate.py": "14df89758e07bf495f054608d9159cc1d49d032ec79be429515a8720038f4bf3",
+      "local_bach_seed_lift.py": "ed0431e65ad0615c848177442b87adb8f7f9077a8d850494f1d7c3638d55c235",
+      "schema/local-bach-seed-lift-v1.schema.json": "a5c1b8648dff48fa0519d54fb9f46ead3bb4e730e7ac60c68cd5c7405048fe85",
+      "tests/test_local_bach_seed_lift.py": "e712524e73bddd81a94f756d2c4de33c5b7e564a526efaeb892c304343dbac65"
+    },
+    "schema": "quantum-weyl/transfer/schema/local-bach-seed-lift-v1.schema.json",
+    "upstream_manifest_sha256": "d3acbb305345f54bfaac49c91a08ec62fcd3624c7375d1e03f8bc9d499713c47",
+    "upstream_sha256": {
+      "bridge/certificates/taub_moment_map.json": "84fb8d94043f89fcd70e8fdd2940b266ea6f9006c3ff94cb55884b1b4ceb46e1",
+      "bridge/taub_moment_map/all_energy.py": "29d3549c4bdba06dc65a971e4e29f6f983554cbb7b98883c9c0882099d50c67f",
+      "field_bv_identification/polarized_state/certificates/zero_mode_transgression.json": "dfe70f8bf6ad6820178e67247a06b1c27fefba3c5b7396ba42fd14e96db82b53",
+      "field_bv_identification/zero_modes/certificates/taub_obstruction_map.json": "72ac747c0b15c85c75f7a86d983960f305e486c96ab594c056f9b3377cfbf540",
+      "quantum-weyl/transfer/certificates/HT1_RESIDUAL_CUBIC_BLOCK.json": "802ea86e1bb807476c7e1bbbe25f33435fa1a79ba433c1b0943b19c4986eefc4",
+      "symbolic/verify_conformal_quartic_contact.py": "20e68a01cad0e9eb4ddaee12e6fab4662de84d4e732ae6b10941be7c3ca10ef0",
+      "symbolic/verify_conformal_quartic_currents.py": "dff704561af3ad7c3dfab8c888c8e5c62c409d6ba943d1b232fafd5f52236d46",
+      "symbolic/verify_conformal_quartic_exchange.py": "a29f3aa9076daf381bf0c241610a1aa5f5e7c7a6b44977f778af6194fd2cf86c",
+      "symbolic/verify_conformal_quartic_hessian.py": "9058f46eecb9e964de835ab460ef361919a9ac030d1150c0fc8f557f098a5f54",
+      "symbolic/verify_conformal_taub_charge.py": "7909156d1a0791b9d58be7b1b5e07b2b4b771b92a82ee1b780e276167641faf0",
+      "symbolic/verify_conformal_taub_moment_map_all_levels.py": "a68ee506fff37922bebf518fd551592058bf851ef2b5c2d55ea80859a13b51e7"
+    }
+  },
+  "result_id": "HT1B_LOCAL_BACH_SEED_LIFT",
+  "result_state": "LOCAL_METRIC_SEEDS_COMPUTED_FULL_BV_LIFT_BLOCKED",
+  "seed_payload": {
+    "direct_local_channels": [
+      {
+        "bilinear_taylor_convention": "coefficient of a*b in E(gbar+a*h1+b*h2)",
+        "canonical_residual_kernel_entry": "Mul(Integer(-1), Rational(1, 5), Pow(Integer(10), Rational(1, 2)))",
+        "channel_id": "negative_A3_to_E2",
+        "checks": {
+          "checked_in_ht1_payload_entry_equals_regenerated_kernel": "VERIFIED_EXACT",
+          "local_density_integrates_to_taub_charge": "VERIFIED_EXACT",
+          "raw_residual_kernel_entry_equals_taub_charge": "VERIFIED_EXACT"
+        },
+        "ck_scalar_magnetic": [
+          "Rational(-1, 2)",
+          "Rational(1, 2)"
+        ],
+        "external_modes": [
+          {
+            "chirality": "Integer(1)",
+            "energy": 2,
+            "family": "E",
+            "magnetic_left": "Integer(2)",
+            "magnetic_right": "Integer(0)",
+            "polarization": "bra",
+            "signed_frequency": 2
+          },
+          {
+            "chirality": "Rational(1, 2)",
+            "energy": 3,
+            "family": "A",
+            "magnetic_left": "Rational(3, 2)",
+            "magnetic_right": "Rational(1, 2)",
+            "polarization": "ket",
+            "signed_frequency": -3
+          }
+        ],
+        "integrated_taub_charge": "Mul(Integer(-1), Rational(1, 5), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-1)))",
+        "kernel_magnetic_component": [
+          "Rational(1, 2)",
+          "Rational(-1, 2)"
+        ],
+        "local_radial_density": "Mul(Integer(-1), Rational(1, 240), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(11), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(1)))",
+        "measured_stereographic_integrand": "Mul(Integer(-1), Rational(1, 120), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-3)), Add(Mul(Integer(11), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(1)))",
+        "raw_ck_to_canonical_scale": "Mul(Rational(1, 2), Pow(Integer(2), Rational(1, 2)), Pow(pi, Integer(-1)))",
+        "raw_residual_kernel_entry": "Mul(Integer(-1), Rational(1, 5), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-1)))",
+        "residual_kernel_label": "K-_1/2_-1/2",
+        "residual_matrix_coordinate": [
+          0,
+          17
+        ],
+        "slice_coefficient": "Mul(Rational(1, 5), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-1)))",
+        "support_scope": "mode-specialized local stereographic radial density before S3 integration"
+      },
+      {
+        "bilinear_taylor_convention": "coefficient of a*b in E(gbar+a*h1+b*h2)",
+        "canonical_residual_kernel_entry": "Mul(Rational(2, 5), Pow(Integer(5), Rational(1, 2)))",
+        "channel_id": "positive_A3_to_L4",
+        "checks": {
+          "checked_in_ht1_payload_entry_equals_regenerated_kernel": "VERIFIED_EXACT",
+          "local_density_integrates_to_taub_charge": "VERIFIED_EXACT",
+          "raw_residual_kernel_entry_equals_taub_charge": "VERIFIED_EXACT"
+        },
+        "ck_scalar_magnetic": [
+          "Rational(-1, 2)",
+          "Rational(1, 2)"
+        ],
+        "external_modes": [
+          {
+            "chirality": "Integer(-1)",
+            "energy": 4,
+            "family": "L",
+            "magnetic_left": "Integer(0)",
+            "magnetic_right": "Integer(2)",
+            "polarization": "bra",
+            "signed_frequency": 4
+          },
+          {
+            "chirality": "Rational(-1, 2)",
+            "energy": 3,
+            "family": "A",
+            "magnetic_left": "Rational(1, 2)",
+            "magnetic_right": "Rational(3, 2)",
+            "polarization": "ket",
+            "signed_frequency": -3
+          }
+        ],
+        "integrated_taub_charge": "Mul(Rational(1, 5), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-1)))",
+        "kernel_magnetic_component": [
+          "Rational(1, 2)",
+          "Rational(-1, 2)"
+        ],
+        "local_radial_density": "Mul(Rational(1, 480), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(35), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-11)))",
+        "measured_stereographic_integrand": "Mul(Rational(1, 240), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-3)), Add(Mul(Integer(35), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-11)))",
+        "raw_ck_to_canonical_scale": "Mul(Rational(1, 2), Pow(Integer(2), Rational(1, 2)), Pow(pi, Integer(-1)))",
+        "raw_residual_kernel_entry": "Mul(Rational(1, 5), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-1)))",
+        "residual_kernel_label": "K+_1/2_-1/2",
+        "residual_matrix_coordinate": [
+          127,
+          83
+        ],
+        "slice_coefficient": "Mul(Rational(1, 5), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-1)))",
+        "support_scope": "mode-specialized local stereographic radial density before S3 integration"
+      }
+    ],
+    "integrated_reverse_completion": {
+      "K_minus_raw_matrix": {
+        "entries": [
+          [
+            0,
+            1,
+            "Mul(Integer(-1), Rational(1, 5), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-1)))"
+          ],
+          [
+            2,
+            3,
+            "Mul(Rational(1, 5), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-1)))"
+          ]
+        ],
+        "scalar_format": "sympy-srepr-exact-v1",
+        "shape": [
+          4,
+          4
+        ]
+      },
+      "K_plus_raw_matrix": {
+        "entries": [
+          [
+            1,
+            0,
+            "Mul(Integer(-1), Rational(1, 5), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-1)))"
+          ],
+          [
+            3,
+            2,
+            "Mul(Rational(1, 5), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-1)))"
+          ]
+        ],
+        "scalar_format": "sympy-srepr-exact-v1",
+        "shape": [
+          4,
+          4
+        ]
+      },
+      "dagger_relation": "VERIFIED_EXACT",
+      "ordered_basis": [
+        "E_+",
+        "A_+",
+        "A_-",
+        "L_-"
+      ],
+      "parity_seed_equality": "VERIFIED_EXACT",
+      "support_local_density_available_for_reverse_channels": false
+    },
+    "radial_coordinate": "t=tan(beta/2), t in (0,infinity)",
+    "s3_integration_formula": "8*pi^2*integral_0^infinity measured_stereographic_integrand dt",
+    "scalar_format": "sympy-srepr-exact-v1",
+    "schema_version": 1
+  },
+  "seed_payload_sha256": "3bee9761abccf2d8c87a8c6b20ac141edc41a49cc43cedddf80ebcd42c00218c"
+}

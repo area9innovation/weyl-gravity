@@ -1,0 +1,31 @@
+"""Emit or check the HT1b local quadratic-Bach seed certificate."""
+
+from __future__ import annotations
+
+import argparse
+
+from local_bach_seed_lift import OUTPUT_PATH, build_certificate, render_certificate
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--emit", action="store_true")
+    parser.add_argument("--check", action="store_true")
+    parser.add_argument("--max-energy", type=int, default=4)
+    args = parser.parse_args()
+    content = render_certificate(build_certificate(args.max_energy))
+    if args.emit:
+        OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+        OUTPUT_PATH.write_text(content, encoding="utf-8")
+    if args.check:
+        if not OUTPUT_PATH.exists() or OUTPUT_PATH.read_text(encoding="utf-8") != content:
+            raise SystemExit(f"HT1b local Bach seed certificate is stale: {OUTPUT_PATH}")
+    if not args.emit and not args.check:
+        print(content, end="")
+    else:
+        print("HT1B LOCAL BACH SEEDS: TWO DIRECT METRIC CHANNELS COMPUTED, FULL BV LIFT BLOCKED")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
