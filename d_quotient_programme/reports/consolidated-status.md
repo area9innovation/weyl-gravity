@@ -17,14 +17,16 @@ scoped homogeneous `D_GAUGE` theorem but fails its positive-health audit. The
 first healthy background candidate is now exact: a non-conformally-flat Berger
 cylinder supports two standard-sign rotating conformal scalars with positive
 quartic potential, dominant-energy stress, timelike phase, and full raw clock
-incidence. This is a background theorem only; its perturbative covariant
-charge, all-row BV reduction, causal propagation, and stability remain open.
+incidence. Its fixed-coupling linearized charge gate is also closed: the lapse
+constraint fixes \(\delta Q_R=0\), compact averaging excludes an inhomogeneous
+escape, and the scoped verdict is `D_GAUGE`. The all-row BV reduction, causal
+propagation, and stability remain open.
 
 ## Four-team ledger
 
 | Team | Current verdict | Established | Next gate |
 |---|---|---|---|
-| classical | `POSITIVE_CLOCK_BACKGROUND_EXISTS_CHARGE_OPEN` | The standard one-field stealth route is ruled out, while an exact non-conformally-flat Berger-cylinder family carries a healthy rotating two-scalar phase clock. The action and SU(2) volume are frozen, Q_R is nonzero, and Omega_total(delta,L_D)=omega delta Q_R. Fixed couplings force delta q=0 in the stationary family. | construct or exclude an allowed fixed-coupling linearized delta-Q_R tangent, then complete the all-row BV audit |
+| classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has Q_R nonzero, but its exact fixed-coupling lapse constraint gives delta E_N=-(alpha_B q^(3/2)/2) delta Q_R/Q_R. Compact averaging excludes a charged tangent in every spatial mode, so Omega_total(delta,L_D)=0 on the declared linearized phase space. | construct the all-row support-local Berger clock BV contraction, causal theory, and stability audit |
 | einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem. | complete a boundary-preserving full Bach phase space and calculate charge and flux |
 | nonlinear | `INPUT_GATE_BLOCKED` | selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked | complete support-local q2 export and solve for iota_D^(2) or retain its obstruction |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the pre-scalar classical compact split is imported by content hash without quantum promotion; the new scalar no-go is not yet imported | import the scalar-clock obstruction hash, then construct the renormalized observable algebra and classify the first D-Ward obstruction |
@@ -43,6 +45,7 @@ charge, all-row BV reduction, causal propagation, and stability remain open.
 | compact_standard_conformal_stealth_clock | `D_compact` | `standard_conformal_scalar_stealth_clock_sector` | CLASSICAL_CHARGE | `BLOCKED` | `STANDARD_ONE_FIELD_STEALTH_CLOCK_NO_GO` |
 | compact_positive_berger_clock | `D_compact` | `positive_rotating_scalar_berger_background` | CLASSICAL_CHARGE | `PARTIAL` | `POSITIVE_BERGER_CLOCK_BACKGROUND_EXISTS` |
 | compact_positive_berger_clock_reduced_charge | `D_compact` | `positive_rotating_scalar_berger_background` | CLASSICAL_CHARGE | `PARTIAL` | `NONZERO_INTERNAL_CLOCK_MOMENTUM_TOTAL_D_OPEN` |
+| compact_positive_berger_clock_fixed_coupling_linearized | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_CHARGE | `CERTIFIED` | `D_GAUGE` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `INPUT_GATE_BLOCKED` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
@@ -72,6 +75,7 @@ charge, all-row BV reduction, causal propagation, and stability remain open.
 | classical | `compact_standard_conformal_stealth_clock` | `D_compact` | `standard_conformal_scalar_stealth_clock_sector` | `CERTIFIED` | `STANDARD_ONE_FIELD_STEALTH_CLOCK_NO_GO` |
 | classical | `compact_positive_berger_clock` | `D_compact` | `positive_rotating_scalar_berger_background` | `CERTIFIED` | `POSITIVE_BERGER_CLOCK_BACKGROUND_EXISTS` |
 | classical | `compact_positive_berger_clock_reduced_charge` | `D_compact` | `positive_rotating_scalar_berger_background` | `CERTIFIED` | `NONZERO_INTERNAL_CLOCK_MOMENTUM_TOTAL_D_OPEN` |
+| classical | `compact_positive_berger_clock_fixed_coupling_linearized` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `D_GAUGE` |
 | einstein_boundary | `asymptotic_real_cylinder_time` | `H_ESU` | `asymptotically_flat_full_Bach` | `PARTIAL` | `PHASE_SPACE_NOT_CLOSED` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 
@@ -83,14 +87,14 @@ Paper X remains reserved for interaction/quantum stability after its separate
 classical-export and QME gates.
 
 The immediate shared calculation is
-`FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT`: Use the exact identity Omega_total(delta,L_D)=omega delta Q_R. Construct or exclude an allowed fixed-coupling linearized tangent with delta Q_R nonzero; only then classify D and proceed to the support-local all-row BV clock contraction, causal theory, and stability audit.
+`FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`: The fixed-coupling linearized charge gate is complete with D_GAUGE. Construct the support-local all-row Berger clock contraction, causal Green homotopies, and stability theorem without weakening the separate CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT requested by the nonlinear team.
 
 ## Imported evidence
 
 - `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `958f51a700a839baf4d526c6a207c893048dfe62`, SHA-256 `ca4a6f632aaf6d5cc903fcf1dee9a0c69d1d935b1b174df590ffcc430b59c776`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `89acca36479ebaea069c21eb23517dc6b1b49389`, SHA-256 `359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663`
-- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `84dd459381bc4bc6219c5012594b018992b636c8`, SHA-256 `466db529891e3d306b704f2ceb119598386f74893274b051a56babba409a2cd8`
-- `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61`, SHA-256 `aa7edc21c7250349531559657d4ec69eee2dd9100de3eedf242a8e29829e874c`
+- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `23fedad35121fc9ad1f037809ae9efd4a20a9537`, SHA-256 `204fe87e9e9f5eb15b970b4b4cddf540c63c58c4fbeb3ad212f4a67c09c65a12`
+- `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `0e919d434ce09c4dbab042c0c2aa708126409685`, SHA-256 `fd2e84a211f750f6e00ea313b7730f4fa22f933a2c7e5235c82cdbf0e727638d`
 
 ## Claim boundary
 

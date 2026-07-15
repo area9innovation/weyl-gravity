@@ -1,0 +1,42 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "generator_id": "D_compact",
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "boundary_conditions": "closed Berger S3; smooth fixed-coupling linearized solutions about the positive rotating scalar background; no spatial boundary",
+  "lifecycle_layer": "CLASSICAL_CHARGE",
+  "claim_status": "CERTIFIED",
+  "verdict": "D_GAUGE",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "established": [
+    "the exact time-dependent biaxial Weyl-plus-scalar action is derived with the lapse retained before variation",
+    "at fixed alpha_B and lambda the linearized lapse equation is delta E_N=-(alpha_B q^(3/2)/2)(delta Q_R/Q_R)",
+    "the coefficient is nonzero on the complete positive Berger branch, so every homogeneous allowed tangent has delta Q_R=0",
+    "compact SU(2)_L x U(1)_R averaging preserves the linearized equations and delta Q_R, excluding a charged tangent in every spatial mode",
+    "Omega_total(delta,L_D)=omega delta Q_R therefore vanishes on the declared linearized phase space and gives the scoped verdict D_GAUGE",
+    "an independent non-holonomic frame reconstruction verifies the time-dependent scalar curvature, Weyl square, and rational lapse row"
+  ],
+  "not_established": [
+    "the support-local all-row Diff x Weyl clock contraction",
+    "causal Green homotopies for the matter-coupled Berger complex",
+    "nonlinear stability or global deparametrization",
+    "a verdict for different boundaries, couplings, or clock actions",
+    "the separately parked CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
+    "commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17",
+    "sha256": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786"
+  },
+  "verification_commands": [
+    "python3 d_quotient_classical/backreacted_clock/fixed_coupling_delta_charge.py --check --guards",
+    "python3 d_quotient_classical/backreacted_clock/verify_fixed_coupling_delta_charge_independent.py",
+    "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_fixed_coupling_delta_charge",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ],
+  "next_gate": "FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT"
+}

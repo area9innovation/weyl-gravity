@@ -16,16 +16,16 @@
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
   "next_shared_gate": {
-    "gate_id": "FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT",
+    "gate_id": "FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT",
     "owner_order": [
       "classical",
       "nonlinear",
       "quantum",
       "einstein_boundary"
     ],
-    "rule": "Use the exact identity Omega_total(delta,L_D)=omega delta Q_R. Construct or exclude an allowed fixed-coupling linearized tangent with delta Q_R nonzero; only then classify D and proceed to the support-local all-row BV clock contraction, causal theory, and stability audit."
+    "rule": "The fixed-coupling linearized charge gate is complete with D_GAUGE. Construct the support-local all-row Berger clock contraction, causal Green homotopies, and stability theorem without weakening the separate CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT requested by the nonlinear team."
   },
-  "programme_base_commit": "958f51a700a839baf4d526c6a207c893048dfe62",
+  "programme_base_commit": "0e919d434ce09c4dbab042c0c2aa708126409685",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -42,7 +42,7 @@
   },
   "registry_hashes": {
     "generator_registry": "1df39af78cdd49eeb64faa2d46134542e9bb75a598f0dde98932657a682525de",
-    "phase_space_registry": "578b673a288d103246d81607bf929230c9fd94cc146a724c781323170f5913ab"
+    "phase_space_registry": "1ec6388422e9fad814f5095d2740770dc7bc646e807d6debf0cb3616050e7452"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -137,6 +137,15 @@
       "setting_id": "compact_positive_berger_clock_reduced_charge",
       "status": "PARTIAL",
       "verdict": "NONZERO_INTERNAL_CLOCK_MOMENTUM_TOTAL_D_OPEN"
+    },
+    {
+      "boundary_conditions": "closed Berger S3; smooth fixed-coupling linearized coupled solutions; no spatial boundary",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_CHARGE",
+      "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+      "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+      "status": "CERTIFIED",
+      "verdict": "D_GAUGE"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -511,6 +520,52 @@
       "sha256": "25b9df1173aadb2dbc2b23e7fa73b64ab996e7e1d8dddb73d9738ad950ee5518"
     },
     {
+      "path": "d_quotient_programme/contributions/classical-berger-fixed-coupling-delta-charge.json",
+      "payload": {
+        "boundary_conditions": "closed Berger S3; smooth fixed-coupling linearized solutions about the positive rotating scalar background; no spatial boundary",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the exact time-dependent biaxial Weyl-plus-scalar action is derived with the lapse retained before variation",
+          "at fixed alpha_B and lambda the linearized lapse equation is delta E_N=-(alpha_B q^(3/2)/2)(delta Q_R/Q_R)",
+          "the coefficient is nonzero on the complete positive Berger branch, so every homogeneous allowed tangent has delta Q_R=0",
+          "compact SU(2)_L x U(1)_R averaging preserves the linearized equations and delta Q_R, excluding a charged tangent in every spatial mode",
+          "Omega_total(delta,L_D)=omega delta Q_R therefore vanishes on the declared linearized phase space and gives the scoped verdict D_GAUGE",
+          "an independent non-holonomic frame reconstruction verifies the time-dependent scalar curvature, Weyl square, and rational lapse row"
+        ],
+        "evidence": {
+          "commit": "cc5df8d547f7d2119282590a824ce92cd1d76d17",
+          "path": "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
+          "sha256": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "CLASSICAL_CHARGE",
+        "next_gate": "FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT",
+        "not_established": [
+          "the support-local all-row Diff x Weyl clock contraction",
+          "causal Green homotopies for the matter-coupled Berger complex",
+          "nonlinear stability or global deparametrization",
+          "a verdict for different boundaries, couplings, or clock actions",
+          "the separately parked CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT"
+        ],
+        "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+        "team_id": "classical",
+        "verdict": "D_GAUGE",
+        "verification_commands": [
+          "python3 d_quotient_classical/backreacted_clock/fixed_coupling_delta_charge.py --check --guards",
+          "python3 d_quotient_classical/backreacted_clock/verify_fixed_coupling_delta_charge_independent.py",
+          "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_fixed_coupling_delta_charge",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "6ccbaa84d2e385ebaa77a6c2769494edd4af05e11f3ae2a1fe24c9e9aaa1633e"
+    },
+    {
       "path": "d_quotient_programme/contributions/einstein-ed1a-asymptotic-generator-gate.json",
       "payload": {
         "boundary_conditions": "fixed Minkowski conformal completion at null infinity; full Bach radiative, Coulombic, soft, corner, ghost, and antifield phase space not yet closed",
@@ -606,23 +661,23 @@
       "sha256": "359914fbb0122ee49e8351b5b87d62c536adbfeb4d754a3deebf87ac3ecb6663"
     },
     "nonlinear": {
-      "commit": "84dd459381bc4bc6219c5012594b018992b636c8",
+      "commit": "23fedad35121fc9ad1f037809ae9efd4a20a9537",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "466db529891e3d306b704f2ceb119598386f74893274b051a56babba409a2cd8"
+      "sha256": "204fe87e9e9f5eb15b970b4b4cddf540c63c58c4fbeb3ad212f4a67c09c65a12"
     },
     "quantum": {
-      "commit": "04e9d20c2c5dd7b2d3fa62492fdc7e12e2fe1f61",
+      "commit": "0e919d434ce09c4dbab042c0c2aa708126409685",
       "path": "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json",
-      "sha256": "aa7edc21c7250349531559657d4ec69eee2dd9100de3eedf242a8e29829e874c"
+      "sha256": "fd2e84a211f750f6e00ea313b7730f4fa22f933a2c7e5235c82cdbf0e727638d"
     }
   },
   "team_status": [
     {
-      "established": "The standard one-field stealth route is ruled out, while an exact non-conformally-flat Berger-cylinder family carries a healthy rotating two-scalar phase clock. The action and SU(2) volume are frozen, Q_R is nonzero, and Omega_total(delta,L_D)=omega delta Q_R. Fixed couplings force delta q=0 in the stationary family.",
-      "next_gate": "construct or exclude an allowed fixed-coupling linearized delta-Q_R tangent, then complete the all-row BV audit",
-      "result_state": "PARTIAL_WITH_HEALTHY_BERGER_CLOCK_BACKGROUND",
+      "established": "The healthy positive Berger background has Q_R nonzero, but its exact fixed-coupling lapse constraint gives delta E_N=-(alpha_B q^(3/2)/2) delta Q_R/Q_R. Compact averaging excludes a charged tangent in every spatial mode, so Omega_total(delta,L_D)=0 on the declared linearized phase space.",
+      "next_gate": "construct the all-row support-local Berger clock BV contraction, causal theory, and stability audit",
+      "result_state": "BERGER_LINEARIZED_CHARGE_CLOSED_BV_STABILITY_OPEN",
       "team_id": "classical",
-      "verdict": "POSITIVE_CLOCK_BACKGROUND_EXISTS_CHARGE_OPEN"
+      "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
       "established": "H_ESU, D_M, D_rad, and P_0 cannot be silently identified in the real asymptotic problem.",

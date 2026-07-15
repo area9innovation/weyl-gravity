@@ -82,15 +82,16 @@ has now produced an exact healthy background candidate: a static
 non-conformally-flat Berger cylinder sourced by two standard-sign rotating
 conformal scalars with positive quartic potential, dominant-energy stress,
 timelike phase, and full raw Diff `x` Weyl clock incidence. This is not yet a
-`D_GAUGE` theorem; the perturbative covariant charge and support-local all-row
-BV audit remain open. The first charge seed nevertheless shows that the phase
+complete all-row clock theorem. The first charge seed shows that the phase
 has genuine matter momentum:
 \(Q_R=16\pi^2\alpha_Bq\sqrt{1-4q}>0\). The frozen action and current audit
 gives \(\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\delta Q_R\). At fixed
-couplings \(q\) is isolated, so the open squashing interval cannot be used as
-a charge variation. The candidate becomes charged precisely if an allowed
-fixed-coupling linearized tangent with \(\delta Q_R\ne0\) exists; that is the
-remaining presymplectic gate.
+couplings the exact lapse equation is
+\(\delta E_N=-(\alpha_Bq^{3/2}/2)\delta Q_R/Q_R\). Compact spatial averaging
+therefore rules out a charged tangent in every mode and gives the scoped
+verdict `D_GAUGE` on the smooth fixed-coupling linearized Berger phase space.
+The support-local all-row BV, causal, and nonlinear-stability audit remains
+open.
 Paper IX still waits for at least one complete
 boundary or interaction theorem.
 

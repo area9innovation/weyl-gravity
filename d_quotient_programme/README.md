@@ -34,8 +34,10 @@ because the existing results concern different objects:
 - [`reports/classical-standard-stealth-no-go-registration-receipt.md`](reports/classical-standard-stealth-no-go-registration-receipt.md)
 - [`contributions/classical-positive-berger-clock-background.json`](contributions/classical-positive-berger-clock-background.json)
 - [`contributions/classical-berger-clock-charge-seed.json`](contributions/classical-berger-clock-charge-seed.json)
+- [`contributions/classical-berger-fixed-coupling-delta-charge.json`](contributions/classical-berger-fixed-coupling-delta-charge.json)
 - [`reports/classical-positive-berger-clock-registration-receipt.md`](reports/classical-positive-berger-clock-registration-receipt.md)
 - [`reports/classical-berger-clock-charge-seed-registration-receipt.md`](reports/classical-berger-clock-charge-seed-registration-receipt.md)
+- [`reports/classical-berger-fixed-coupling-registration-receipt.md`](reports/classical-berger-fixed-coupling-registration-receipt.md)
 - [`reports/einstein-ed1a-registration-receipt.md`](reports/einstein-ed1a-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -69,12 +71,17 @@ stealth family is exhausted as well. The replacement is now concrete: an exact
 Berger-cylinder family carries two standard-sign rotating conformal scalars
 with positive quartic potential, dominant-energy stress, timelike phase, and
 full raw clock incidence. This is a healthy background theorem, not yet a
-charge theorem. The immediate gate is
-`FULL_BERGER_CLOCK_CHARGE_AND_BV_AUDIT`. Downstream teams must import all
-scoped clock results by content hash.
+complete all-row clock theorem. Downstream teams must import all scoped clock
+results by content hash.
 The first sub-gate is now exact: the phase carries nonzero conserved global
 \(O(2)\) momentum and the full helical contraction satisfies
 \(\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\delta Q_R\). The fixed-coupling
-audit also proves \(\delta q=0\) in the stationary family. The total \(D\)
-verdict now turns on constructing or excluding a genuine allowed linearized
-\(\delta Q_R\) direction.
+audit closes the tangent question exactly:
+
+\[
+\delta E_N=-\frac{\alpha_Bq^{3/2}}2\frac{\delta Q_R}{Q_R}.
+\]
+
+Compact spatial averaging excludes an inhomogeneous escape, so `D_GAUGE`
+holds on the declared smooth fixed-coupling linearized Berger phase space.
+The immediate gate is now `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT`.
