@@ -39,33 +39,25 @@ def build_certificate() -> dict[str, Any]:
     checks = complex_.verify_bicomplex()
     truncated = complex_.cohomology(1, max_form_degree=1)
     exhaustiveness_proof = BasisExhaustivenessProof.create(
-        basis_manifest_hash=truncated["exhaustiveness_manifest_hash"],
-        declared_bounds_hash=canonical_sha256(
-            {"total_degree": 1, "form_degree_bounds": [0, 1]}
-        ),
-        generator_algebra_hash=canonical_sha256(
-            [
+        basis_manifest=truncated["exhaustiveness_manifest"],
+        declared_bounds={"total_degree": 1, "form_degree_bounds": [0, 1]},
+        generator_algebra=[
                 {
                     "ghost_number": degree.ghost_number,
                     "form_degree": degree.form_degree,
                     "labels": list(labels),
                 }
                 for degree, labels in sorted(complex_.spaces.items())
-            ]
-        ),
-        grading_solution_hash=canonical_sha256(
-            [degree.total_degree for degree in complex_.spaces]
-        ),
-        orbit_enumeration_hash=canonical_sha256(
-            [label for labels in complex_.spaces.values() for label in labels]
-        ),
-        identity_quotient_hash=canonical_sha256(
-            {
-                "Q": [matrix.canonical_payload() for matrix in complex_.q_maps.values()],
-                "d_h": [matrix.canonical_payload() for matrix in complex_.d_maps.values()],
-            }
-        ),
-        proof_artifact_hash=canonical_sha256(_source_manifest()),
+            ],
+        grading_solution=[degree.total_degree for degree in complex_.spaces],
+        orbit_enumeration=[
+            label for labels in complex_.spaces.values() for label in labels
+        ],
+        identity_quotient={
+            "Q": [matrix.canonical_payload() for matrix in complex_.q_maps.values()],
+            "d_h": [matrix.canonical_payload() for matrix in complex_.d_maps.values()],
+        },
+        proof_artifact={"source_manifest": _source_manifest()},
     )
     total_cohomology = complex_.cohomology(
         1, max_form_degree=1, exhaustiveness_proof=exhaustiveness_proof
@@ -98,6 +90,7 @@ def build_certificate() -> dict[str, Any]:
             "dual_witness_unit_pairing": "VERIFIED",
             "witness_promotion_requires_exhaustive_basis": "VERIFIED",
             "exhaustiveness_proof_hash_binding": "VERIFIED",
+            "exhaustiveness_proof_artifact_binding": "VERIFIED",
             "sparse_exact_rank_and_nullspace": "VERIFIED",
             "incremental_quotient_independence": "VERIFIED",
         },

@@ -1,7 +1,6 @@
 import unittest
 from dataclasses import replace
 
-from local_bv.algebra import canonical_sha256
 from local_bv.basis_exhaustiveness import BasisExhaustivenessProof
 from local_bv.relative_cohomology import (
     Bidegree,
@@ -15,18 +14,15 @@ class RelativeCohomologyTests(unittest.TestCase):
     @staticmethod
     def _fixture_proof() -> BasisExhaustivenessProof:
         complex_ = certification_bicomplex()
-        basis_hash = complex_.cohomology(
-            1, max_form_degree=1
-        )["exhaustiveness_manifest_hash"]
-        hashes = [canonical_sha256({"fixture": name}) for name in range(6)]
+        result = complex_.cohomology(1, max_form_degree=1)
         return BasisExhaustivenessProof.create(
-            basis_manifest_hash=basis_hash,
-            declared_bounds_hash=hashes[0],
-            generator_algebra_hash=hashes[1],
-            grading_solution_hash=hashes[2],
-            orbit_enumeration_hash=hashes[3],
-            identity_quotient_hash=hashes[4],
-            proof_artifact_hash=hashes[5],
+            basis_manifest=result["exhaustiveness_manifest"],
+            declared_bounds={"fixture": "declared_bounds"},
+            generator_algebra={"fixture": "generator_algebra"},
+            grading_solution={"fixture": "grading_solution"},
+            orbit_enumeration={"fixture": "orbit_enumeration"},
+            identity_quotient={"fixture": "identity_quotient"},
+            proof_artifact={"fixture": "proof_artifact"},
         )
 
     def test_sparse_composition_and_totalization_sign(self) -> None:

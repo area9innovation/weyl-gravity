@@ -2,16 +2,22 @@
   "assumptions": [
     "The invariant bilinear polynomial is epsilon_abcd X^ab wedge Y^cd in the stated normalization.",
     "The descent descendant is minus the variational transgression, fixing the sign in Q E4 + d_h a3 = 0.",
-    "The universal Diff completion is independent of the intrinsic Weyl transgression."
+    "The universal Diff completion is independent of the intrinsic Weyl transgression.",
+    "The source total form is mapped to project normalization by one global factor fixed by its top component; no bidegree-dependent carrier rescaling is allowed."
   ],
   "canonical_hashes": {
+    "bidegree_manifest_set_sha256": "1644aa054ccaf9379260f38fc9876d0f85ae0db2831a498fd8746377bf7bbc4f",
     "curvature_sha256": "dbfaad8d3cd29aed54c944cc764fe2d4298cdc9ec3e55e46c8829d9c261e28eb",
-    "source_manifest_sha256": "0a8cc234dd6007b97140b83e95c481731ab7457f5d084427c7e76f62a39f68a3",
+    "generalized_connection_dictionary_sha256": "2bbb92c660f15c592004e5717d5a99fe4d535dee17ddd84f57f5b4a18566ea39",
+    "normalization_contract_sha256": "3ee9bb04638c2327e675dc2e8793627784fcba584e4fcd963ff2fe1d9801b46f",
+    "source_manifest_sha256": "7f99ddf8f1d48ea4660ef1b1debbbafe6902da5af4b3cc3efe2700c1184b7967",
     "theta_sha256": "0bfe7489b59dc61839ffd718426243b997b18dec70c3c810386c4f0602b4362b",
     "zero_variational_residual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
   },
   "checks": {
     "QE4_plus_d_descent_descendant": "VERIFIED",
+    "all_five_euler_bidegrees_enumerated": "VERIFIED",
+    "bidegree_manifests_content_addressed": "VERIFIED",
     "closed_manifold_integrated_variation": "VERIFIED_BY_STOKES",
     "coordinate_euler_current": "VERIFIED",
     "curvature_bianchi_identity": "VERIFIED",
@@ -20,11 +26,13 @@
     "euler_full_diff_completed_tower": "VERIFIED",
     "euler_primary_source_convention_map": "VERIFIED",
     "euler_top_transgression_regression": "VERIFIED",
+    "generalized_connection_dictionary": "VERIFIED",
     "levi_civita_variation_derived_from_qg": "VERIFIED",
     "lower_descendant_complete_cancellation": "IN_PROGRESS",
     "omega_E4_generalized_connection_template": "VERIFIED",
     "omega_E4_intrinsic_descent_continuation": "IN_PROGRESS",
-    "source_project_carrier_normalization": "IN_PROGRESS",
+    "source_project_carrier_normalization": "VERIFIED",
+    "total_differential_component_signs": "VERIFIED",
     "unresolved_domega_theta_regression": "VERIFIED"
   },
   "classical_commit": "UNFROZEN",
@@ -182,12 +190,44 @@
     ],
     "descent_equation": "Q E4 + d_h(-Theta_E(Q)) = 0",
     "generalized_connection_total_form": {
-      "certificate_status": "TEMPLATE_CANDIDATE_NOT_YET_VERIFIED_TOWER",
+      "bidegree_manifests": [
+        {
+          "form_degree": 4,
+          "ghost_number": 1,
+          "manifest_sha256": "50cd0ab8e9222bcb27b219d507d81938cae7400edf9bdbe96848f3052baaa16f",
+          "path": "certificates/euler_bidegree_manifests/50cd0ab8e9222bcb27b219d507d81938cae7400edf9bdbe96848f3052baaa16f.json"
+        },
+        {
+          "form_degree": 3,
+          "ghost_number": 2,
+          "manifest_sha256": "1b26138b1b97644b28134ba14980ac1344e332b15f0ce5553f1414d2934f28c3",
+          "path": "certificates/euler_bidegree_manifests/1b26138b1b97644b28134ba14980ac1344e332b15f0ce5553f1414d2934f28c3.json"
+        },
+        {
+          "form_degree": 2,
+          "ghost_number": 3,
+          "manifest_sha256": "5353aef4bf87c5f602bd5376b8de0c76f4d594f01a4a821f291d115bee13feb0",
+          "path": "certificates/euler_bidegree_manifests/5353aef4bf87c5f602bd5376b8de0c76f4d594f01a4a821f291d115bee13feb0.json"
+        },
+        {
+          "form_degree": 1,
+          "ghost_number": 4,
+          "manifest_sha256": "26560ae4e8929c1090b372acc1ce618948f57b8c8c5b2130596bc35e0aee4eef",
+          "path": "certificates/euler_bidegree_manifests/26560ae4e8929c1090b372acc1ce618948f57b8c8c5b2130596bc35e0aee4eef.json"
+        },
+        {
+          "form_degree": 0,
+          "ghost_number": 5,
+          "manifest_sha256": "21d52e1826b275167771f59e5a63ca406f11b54d45f2e9cc09b92459342c7968",
+          "path": "certificates/euler_bidegree_manifests/21d52e1826b275167771f59e5a63ca406f11b54d45f2e9cc09b92459342c7968.json"
+        }
+      ],
+      "certificate_status": "NORMALIZED_TEMPLATE_NOT_YET_VERIFIED_TOWER",
       "components": [
         {
           "coefficient": {
             "denominator": 1,
-            "numerator": 4
+            "numerator": 1
           },
           "explicit_form_degree": 4,
           "generalized_connection_degree": 0,
@@ -211,7 +251,7 @@
         {
           "coefficient": {
             "denominator": 1,
-            "numerator": 1
+            "numerator": 4
           },
           "explicit_form_degree": 2,
           "generalized_connection_degree": 2,
@@ -224,7 +264,7 @@
       "derived_coefficients": [
         {
           "denominator": 1,
-          "numerator": 4
+          "numerator": 1
         },
         {
           "denominator": 1,
@@ -232,12 +272,223 @@
         },
         {
           "denominator": 1,
-          "numerator": 1
+          "numerator": 4
         }
       ],
       "dimension_specialization": 4,
-      "expansion_status": "IN_PROGRESS",
+      "expansion_status": "NORMALIZATION_RESOLVED_TOWER_NOT_EXPANDED",
       "generalized_connection": "tilde_omega_a = partial_a omega - Schouten_ab dx^b",
+      "generalized_connection_dictionary": {
+        "coordinate_engineering_convention": "[dx] = -1",
+        "dictionary_sha256": "2bbb92c660f15c592004e5717d5a99fe4d535dee17ddd84f57f5b4a18566ea39",
+        "dictionary_status": "FROZEN_FOR_BIDEGREE_EXPANSION",
+        "generators": [
+          {
+            "bidegrees": [
+              {
+                "form_degree": 0,
+                "ghost_number": 1
+              }
+            ],
+            "engineering_dimension": 0,
+            "grassmann_parity": "odd",
+            "index_symmetries": [],
+            "role": "weyl_ghost",
+            "symbol": "omega",
+            "tensor_type": "scalar",
+            "total_degree": 1,
+            "weyl_weight": 0
+          },
+          {
+            "bidegrees": [
+              {
+                "form_degree": 1,
+                "ghost_number": 0
+              }
+            ],
+            "engineering_dimension": -1,
+            "grassmann_parity": "odd_total_degree",
+            "index_symmetries": [],
+            "role": "horizontal_form_carrier",
+            "symbol": "dx^mu",
+            "tensor_type": "contravariant_coordinate_label",
+            "total_degree": 1,
+            "weyl_weight": 0
+          },
+          {
+            "bidegrees": [
+              {
+                "form_degree": 0,
+                "ghost_number": 1
+              }
+            ],
+            "engineering_dimension": 1,
+            "grassmann_parity": "odd",
+            "index_symmetries": [],
+            "role": "ghost_component_of_tilde_omega",
+            "symbol": "partial_mu omega",
+            "tensor_type": "covector",
+            "total_degree": 1,
+            "weyl_weight": 0
+          },
+          {
+            "bidegrees": [
+              {
+                "form_degree": 1,
+                "ghost_number": 0
+              }
+            ],
+            "engineering_dimension": 1,
+            "grassmann_parity": "odd_total_degree",
+            "index_symmetries": [
+              "K_mu_nu = K_nu_mu"
+            ],
+            "role": "form_component_of_tilde_omega",
+            "symbol": "K_mu_nu dx^nu",
+            "tensor_type": "covector_valued_one_form",
+            "total_degree": 1,
+            "weyl_weight": 0
+          },
+          {
+            "bidegrees": [
+              {
+                "form_degree": 0,
+                "ghost_number": 1
+              },
+              {
+                "form_degree": 1,
+                "ghost_number": 0
+              }
+            ],
+            "definition": "partial_mu omega - K_mu_nu dx^nu",
+            "engineering_dimension": 1,
+            "grassmann_parity": "odd_total_degree",
+            "index_symmetries": [],
+            "role": "generalized_connection",
+            "symbol": "tilde_omega_mu",
+            "tensor_type": "inhomogeneous_covector_total_form",
+            "total_degree": 1,
+            "weyl_weight": 0
+          },
+          {
+            "bidegrees": [
+              {
+                "form_degree": 1,
+                "ghost_number": 0
+              }
+            ],
+            "engineering_dimension": 0,
+            "grassmann_parity": "odd_total_degree",
+            "index_symmetries": [
+              "Gamma^mu_(nu rho) = Gamma^mu_(rho nu)"
+            ],
+            "role": "levi_civita_connection_one_form",
+            "symbol": "Gamma^mu_(nu rho) dx^rho",
+            "tensor_type": "endomorphism_valued_one_form",
+            "total_degree": 1,
+            "weyl_weight": "INHOMOGENEOUS_CONNECTION"
+          },
+          {
+            "bidegrees": [
+              {
+                "form_degree": 2,
+                "ghost_number": 0
+              }
+            ],
+            "definition": "(1/2) dx^rho dx^sigma W^mu_(lambda rho sigma) g^(lambda nu)",
+            "engineering_dimension": 0,
+            "grassmann_parity": "even_total_degree",
+            "index_symmetries": [
+              "Weyl tensor algebraic symmetries",
+              "algebraic Bianchi"
+            ],
+            "role": "weyl_curvature_two_form",
+            "symbol": "W^mu_nu",
+            "tensor_type": "endomorphism_valued_two_form",
+            "total_degree": 2,
+            "weyl_weight": 0
+          },
+          {
+            "bidegrees": [
+              {
+                "form_degree": 0,
+                "ghost_number": 0
+              }
+            ],
+            "engineering_dimension": 0,
+            "grassmann_parity": "even",
+            "index_symmetries": [
+              "total antisymmetry"
+            ],
+            "role": "orientation_tensor",
+            "symbol": "epsilon_mu_nu_rho_sigma",
+            "tensor_type": "totally_antisymmetric_covariant_rank_four",
+            "total_degree": 0,
+            "weyl_weight": 4
+          }
+        ],
+        "orientation_convention": "frozen project epsilon orientation",
+        "schema_version": "generalized-connection-v1",
+        "schouten_convention": "K_ab = 1/2 (Ric_ab - R g_ab/6)",
+        "spacetime_dimension": 4
+      },
+      "normalization_contract": {
+        "component_order": "increasing r = 0,1,2; bidegrees (1,4),(2,3),(3,2)",
+        "global_source_to_project_scale": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "legacy_unverified_vector": [
+          {
+            "denominator": 1,
+            "numerator": 4
+          },
+          {
+            "denominator": 1,
+            "numerator": -4
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "legacy_vector_status": "REJECTED_AS_UNDERIVED_CARRIER_RESCALING",
+        "normalization_rule": "one global rescaling fixed by the top component; no r-dependent carrier rescaling",
+        "normalization_sha256": "3ee9bb04638c2327e675dc2e8793627784fcba584e4fcd963ff2fe1d9801b46f",
+        "normalization_status": "RESOLVED_FOR_FROZEN_SOURCE_CARRIERS",
+        "project_coefficients": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": -4
+          },
+          {
+            "denominator": 1,
+            "numerator": 4
+          }
+        ],
+        "project_top_component": "omega E4, E4 = epsilon_abcd R^ab wedge R^cd",
+        "source_coefficients": [
+          {
+            "denominator": 4,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "source_formula": "(-1)^p/2^p * m!/(r!p!), p=m-r, m=2",
+        "source_top_component": "(1/4) omega epsilon_abcd R^ab wedge R^cd",
+        "tower_closure_status": "NOT_COMPUTED"
+      },
       "primary_reference": {
         "arxiv": "0704.2472",
         "doi": "10.1088/1126-6708/2007/07/069",
@@ -246,10 +497,9 @@
         "source_version": "v1 (2007-04-19)",
         "title": "General solutions of the Wess-Zumino consistency condition for the Weyl anomalies"
       },
-      "project_candidate_coefficient_formula": "(-1)^p 2^p m!/(r! p!)",
       "source_convention_map": {
-        "carrier_normalization_status": "UNRESOLVED_SOURCE_PROJECT_COEFFICIENT_MISMATCH",
-        "component_sign_translation": "PENDING_BIDEGREE_EXPANSION",
+        "carrier_normalization_status": "RESOLVED_BY_GLOBAL_TOP_COMPONENT_SCALE",
+        "component_sign_translation": "VERIFIED_BY_BIDEGREE_MANIFESTS",
         "orientation": "epsilon_abcd follows the frozen project orientation",
         "project_euler_density": "E4 = epsilon_abcd R^ab wedge R^cd",
         "project_tilde_omega_alpha": "tilde_omega_a = partial_a omega - Schouten_ab dx^b",
@@ -264,7 +514,7 @@
           "tilde_omega_alpha"
         ],
         "source_tilde_omega_alpha": "partial_alpha omega - K_(alpha rho) dx^rho",
-        "source_to_project_top_factor": {
+        "source_top_coefficient_in_project_density": {
           "denominator": 4,
           "numerator": 1
         },
@@ -285,7 +535,7 @@
         }
       ],
       "source_formula": "Phi^[n-r]_r = (-1)^p/2^p * m!/(r!p!) psi_(2p) W^p, p=m-r, m=n/2",
-      "template_sha256": "345361a124ad5e36a04cd39e4a74375269eb838fdf42820c93e11022dd0610c0",
+      "template_sha256": "e79477a24f32cff00425ef4f743c7266215f791d9097f8211ec6120104ac69a7",
       "type_a_component_indices": [
         1,
         2

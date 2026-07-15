@@ -11,21 +11,29 @@ from typing import Any
 
 from .algebra import canonical_sha256
 from .chern_weil import euler_transgression_analysis
+from .generalized_connection import (
+    euler_bidegree_manifests,
+    euler_normalization_contract,
+    generalized_connection_dictionary,
+)
 from .strict_descent import strict_candidate_descent_analysis
 
 
 PACKAGE_ROOT = Path(__file__).resolve().parent
 OUTPUT_PATH = PACKAGE_ROOT / "certificates" / "EULER_TRANSGRESSION_CERTIFICATE.json"
 SCHEMA_PATH = PACKAGE_ROOT / "schema" / "euler_transgression_certificate.schema.json"
+MANIFEST_DIR = PACKAGE_ROOT / "certificates" / "euler_bidegree_manifests"
 
 
 def _source_manifest() -> dict[str, str]:
     paths = (
         "chern_weil.py",
         "euler_transgression_certificate.py",
+        "generalized_connection.py",
         "schema/euler_transgression_certificate.schema.json",
         "tests/test_chern_weil.py",
         "tests/test_euler_transgression_certificate.py",
+        "tests/test_generalized_connection.py",
     )
     return {
         path: hashlib.sha256((PACKAGE_ROOT / path).read_bytes()).hexdigest()
@@ -43,6 +51,9 @@ def build_certificate() -> dict[str, Any]:
     pair_payload = analysis["pair_payload"]
     expression_payload = analysis["expression_payload"]
     generalized = analysis["generalized_connection_template"]
+    dictionary = generalized_connection_dictionary()
+    normalization_contract = euler_normalization_contract()
+    bidegree_manifests = euler_bidegree_manifests()
     return {
         "result_id": "EULER_TRANSGRESSION_CERTIFICATE",
         "result_state": "VARIATIONAL_TRANSGRESSION_VERIFIED",
@@ -60,7 +71,11 @@ def build_certificate() -> dict[str, Any]:
             "euler_full_diff_completed_tower": "VERIFIED",
             "omega_E4_generalized_connection_template": "VERIFIED",
             "euler_primary_source_convention_map": "VERIFIED",
-            "source_project_carrier_normalization": "IN_PROGRESS",
+            "generalized_connection_dictionary": "VERIFIED",
+            "source_project_carrier_normalization": "VERIFIED",
+            "all_five_euler_bidegrees_enumerated": "VERIFIED",
+            "bidegree_manifests_content_addressed": "VERIFIED",
+            "total_differential_component_signs": "VERIFIED",
             "omega_E4_intrinsic_descent_continuation": "IN_PROGRESS",
             "euler_top_transgression_regression": "VERIFIED",
             "unresolved_domega_theta_regression": "VERIFIED",
@@ -111,7 +126,7 @@ def build_certificate() -> dict[str, Any]:
                 "source_convention_map": {
                     "source_total_differential": "s_tilde_W = s_W + d",
                     "project_total_differential": "D = Q_W + (-1)^ghost_number d_h",
-                    "component_sign_translation": "PENDING_BIDEGREE_EXPANSION",
+                    "component_sign_translation": "VERIFIED_BY_BIDEGREE_MANIFESTS",
                     "source_generalized_connections": [
                         "2 omega",
                         "dx^nu",
@@ -126,14 +141,14 @@ def build_certificate() -> dict[str, Any]:
                     "source_W_mu_nu": "W^(mu nu) = (1/2) dx^rho dx^sigma W^mu_(lambda rho sigma) g^(lambda nu)",
                     "source_euler_top_component": "e^4_1 = (1/4) omega epsilon_abcd R^ab wedge R^cd",
                     "project_euler_density": "E4 = epsilon_abcd R^ab wedge R^cd",
-                    "source_to_project_top_factor": _fraction(Fraction(1, 4)),
+                    "source_top_coefficient_in_project_density": _fraction(
+                        Fraction(1, 4)
+                    ),
                     "orientation": "epsilon_abcd follows the frozen project orientation",
-                    "carrier_normalization_status": "UNRESOLVED_SOURCE_PROJECT_COEFFICIENT_MISMATCH",
+                    "carrier_normalization_status": "RESOLVED_BY_GLOBAL_TOP_COMPONENT_SCALE",
                 },
                 "dimension_specialization": 4,
-                "project_candidate_coefficient_formula": generalized[
-                    "project_candidate_coefficient_formula"
-                ],
+                "normalization_contract": normalization_contract,
                 "derived_coefficients": [
                     _fraction(component["coefficient"])
                     for component in generalized["components"]
@@ -152,7 +167,21 @@ def build_certificate() -> dict[str, Any]:
                 "type_a_component_indices": list(generalized["type_a_component_indices"]),
                 "type_b_component_indices": list(generalized["type_b_component_indices"]),
                 "expansion_status": generalized["expansion_status"],
-                "certificate_status": "TEMPLATE_CANDIDATE_NOT_YET_VERIFIED_TOWER",
+                "certificate_status": "NORMALIZED_TEMPLATE_NOT_YET_VERIFIED_TOWER",
+                "generalized_connection_dictionary": dictionary,
+                "bidegree_manifests": [
+                    {
+                        "ghost_number": manifest["ghost_number"],
+                        "form_degree": manifest["form_degree"],
+                        "manifest_sha256": manifest["manifest_sha256"],
+                        "path": str(
+                            Path("certificates")
+                            / "euler_bidegree_manifests"
+                            / f"{manifest['manifest_sha256']}.json"
+                        ),
+                    }
+                    for manifest in bidegree_manifests
+                ],
                 "template_sha256": canonical_sha256(
                     {
                         "connection": generalized["generalized_connection"],
@@ -183,11 +212,21 @@ def build_certificate() -> dict[str, Any]:
             "curvature_sha256": canonical_sha256(expression_payload(analysis["curvature"])),
             "theta_sha256": canonical_sha256(pair_payload(analysis["theta_variation"])),
             "zero_variational_residual_sha256": canonical_sha256(pair_payload(analysis["variational_residual"])),
+            "generalized_connection_dictionary_sha256": dictionary[
+                "dictionary_sha256"
+            ],
+            "normalization_contract_sha256": normalization_contract[
+                "normalization_sha256"
+            ],
+            "bidegree_manifest_set_sha256": canonical_sha256(
+                [manifest["manifest_sha256"] for manifest in bidegree_manifests]
+            ),
         },
         "assumptions": [
             "The invariant bilinear polynomial is epsilon_abcd X^ab wedge Y^cd in the stated normalization.",
             "The descent descendant is minus the variational transgression, fixing the sign in Q E4 + d_h a3 = 0.",
             "The universal Diff completion is independent of the intrinsic Weyl transgression.",
+            "The source total form is mapped to project normalization by one global factor fixed by its top component; no bidegree-dependent carrier rescaling is allowed.",
         ],
         "not_computed": [
             "machine expansion and closure of the generalized-connection type-A total form beginning at omega E4",
@@ -210,8 +249,17 @@ def main() -> int:
     if args.emit:
         OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT_PATH.write_text(content, encoding="utf-8")
-    if args.check and OUTPUT_PATH.read_text(encoding="utf-8") != content:
-        raise SystemExit(f"Euler transgression artifact is stale: {OUTPUT_PATH}")
+        MANIFEST_DIR.mkdir(parents=True, exist_ok=True)
+        for manifest in euler_bidegree_manifests():
+            path = MANIFEST_DIR / f"{manifest['manifest_sha256']}.json"
+            path.write_text(_render(manifest), encoding="utf-8")
+    if args.check:
+        if OUTPUT_PATH.read_text(encoding="utf-8") != content:
+            raise SystemExit(f"Euler transgression artifact is stale: {OUTPUT_PATH}")
+        for manifest in euler_bidegree_manifests():
+            path = MANIFEST_DIR / f"{manifest['manifest_sha256']}.json"
+            if not path.is_file() or path.read_text(encoding="utf-8") != _render(manifest):
+                raise SystemExit(f"Euler bidegree manifest is stale or missing: {path}")
     if not args.emit and not args.check:
         print(content, end="")
     else:

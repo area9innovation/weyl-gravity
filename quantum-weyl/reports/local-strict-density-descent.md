@@ -83,19 +83,37 @@ current.  The generalized connection
 Theorem 1 of Boulanger's
 [Wess--Zumino classification](https://arxiv.org/abs/0704.2472) prints the
 coefficient `(-1)^p 2^(-p) m!/(r!p!)`, which specializes to
-`(1/4,-1,1)` for `r=(0,1,2)`.  The existing project-carrier candidate is
-`(4,-4,1)`.  These are now stored as distinct vectors: their mismatch is an
-explicit normalization gate, not silently absorbed.  The convention map
-also freezes the source definitions of the total differential,
+`(1/4,-1,1)` for `r=(0,1,2)`.  The project top component is `omega E4`, so a
+single global factor of four fixed by that top component gives the normalized
+project vector `(1,-4,4)`.  The older `(4,-4,1)` vector is retained only as a
+rejected, underived carrier rescaling.  No bidegree-dependent normalization
+is allowed.  This resolves the convention map without claiming that the
+intrinsic tower closes.
+
+The generalized-connection dictionary now freezes total degree, ordinary
+ghost/form bidegree components, parity, engineering dimension, Weyl weight,
+tensor type, and index symmetries for `omega`, `dx`, `partial omega`,
+`K dx`, `tilde_omega`, `Gamma dx`, the Weyl two-form, and epsilon.  It also
+freezes the source definitions of the total differential,
 `tilde_omega`, the Schouten tensor, the Weyl two-form, and the top Euler
-factor `e^4_1=(1/4) omega E4`.  Machine expansion into every ordinary
-bidegree, reconciliation of the carrier normalization, and verification of
-all residuals are still pending.  The `r=0` component is recorded separately
-as type B; the `r=1,2` components form the type-A template.  Its
-status is `TEMPLATE_CANDIDATE_NOT_YET_VERIFIED_TOWER`, not a completed Euler
-certificate.  Separate regression gates cover the verified top
+factor `e^4_1=(1/4) omega E4`.  All five tower slots `(1,4)` through `(5,0)`
+now have content-addressed coarse carrier manifests and explicit alternating
+signs for `D=Q_W+(-1)^ghost_number d_h`.  Tensor-orbit generation, canonical
+quotienting, and closure remain `NOT_COMPUTED`.  The `r=0` component is
+recorded separately as type B; the `r=1,2` components form the type-A
+template.  Its status is `NORMALIZED_TEMPLATE_NOT_YET_VERIFIED_TOWER`, not a
+completed Euler certificate.  Separate regression gates cover the verified top
 transgression, the retained `d omega wedge Theta_E` source, and the still-open
 complete lower-descendant cancellation.
+
+The generic quotient engine's exhaustiveness proof is also fail-closed at the
+artifact layer.  Promotion to `COMPLETE_NONTRIVIALITY_WITNESS` now requires
+seven embedded canonical artifacts: the basis manifest, declared bounds,
+generator algebra, grading solution, orbit enumeration, identity quotient
+including the exact `Q` and `d_h` matrices, and the proof/source artifact.
+Every payload is reparsed, canonically serialized, rehashed, and cross-checked
+against its named proof field.  Well-formed but unsupported hash strings no
+longer suffice.
 
 ## Claim boundary
 
@@ -117,6 +135,7 @@ anticommuting presentations.
 
 - `quantum-weyl/local_bv/certificates/HORIZONTAL_BICOMPLEX_CERTIFICATE.json`;
 - `quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json`;
+- `quantum-weyl/local_bv/certificates/euler_bidegree_manifests/*.json`;
 - `quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json`;
 - `quantum-weyl/local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR.json`.
 
@@ -134,6 +153,23 @@ The complete local rail remains below the agreed 60-second threshold.  Tier
 3 was not triggered: this is a partial local descent database, not the full
 cohomology theorem, a classical freeze, a lifecycle promotion to coefficient
 or QME status, or a release.
+
+### Pre-production hardening addendum
+
+The generalized-connection normalization, five bidegree manifests, strict
+Euler schema, and artifact-bound exhaustiveness proof were verified with:
+
+| Tier | Command/rail | Elapsed | Result |
+|---|---|---:|---|
+| 0 | `py_compile` for six changed modules; JSON parse; scoped `git diff --check` | under 1 s | pass |
+| 1 | focused generalized-connection, Euler, quotient, AFN0, and basis-gap consumers | 5.0 s | 29 pass |
+| 2 | complete `quantum-weyl/local_bv/tests` discovery rail | 26.6 s | 175 pass |
+| 2 | Euler, quotient, AFN0, and basis-gap checks under hash seeds `1,7,123` | 23.7 s | pass |
+
+The complete classical pipeline and repository Tier 3 suite were not run:
+this change neither freezes a classical snapshot nor promotes the intrinsic
+Euler tower, an AFN0 quotient theorem, a QME state, or a `d_quotient`
+contribution verdict.
 
 ## Next local gate
 

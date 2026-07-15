@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://area9.dk/schemas/quantum-weyl-euler-transgression-v1.json",
+  "$id": "https://area9.dk/schemas/quantum-weyl-euler-transgression-v2.json",
   "title": "Pure-Weyl Euler Chern-Weil transgression certificate",
   "type": "object",
   "additionalProperties": false,
@@ -10,13 +10,92 @@
     "result_state": {"const": "VARIATIONAL_TRANSGRESSION_VERIFIED"},
     "classical_commit": {"const": "UNFROZEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
-    "normalization": {"type": "string", "minLength": 1},
-    "checks": {"type": "object"},
-    "derived_rows": {"type": "object"},
-    "euler_intrinsic_transgression": {"type": "object"},
-    "euler_full_diff_completed_tower": {"type": "object"},
-    "canonical_hashes": {"type": "object"},
-    "assumptions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
-    "not_computed": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+    "normalization": {"const": "E4 = epsilon_abcd R^ab wedge R^cd"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["levi_civita_variation_derived_from_qg", "delta_curvature_equals_D_delta_connection", "curvature_bianchi_identity", "delta_E4_minus_dTheta", "QE4_plus_d_descent_descendant", "coordinate_euler_current", "closed_manifold_integrated_variation", "euler_full_diff_completed_tower", "omega_E4_generalized_connection_template", "euler_primary_source_convention_map", "generalized_connection_dictionary", "source_project_carrier_normalization", "all_five_euler_bidegrees_enumerated", "bidegree_manifests_content_addressed", "total_differential_component_signs", "omega_E4_intrinsic_descent_continuation", "euler_top_transgression_regression", "unresolved_domega_theta_regression", "lower_descendant_complete_cancellation"],
+      "properties": {
+        "levi_civita_variation_derived_from_qg": {"const": "VERIFIED"},
+        "delta_curvature_equals_D_delta_connection": {"const": "VERIFIED"},
+        "curvature_bianchi_identity": {"const": "VERIFIED"},
+        "delta_E4_minus_dTheta": {"const": "VERIFIED"},
+        "QE4_plus_d_descent_descendant": {"const": "VERIFIED"},
+        "coordinate_euler_current": {"const": "VERIFIED"},
+        "closed_manifold_integrated_variation": {"const": "VERIFIED_BY_STOKES"},
+        "euler_full_diff_completed_tower": {"const": "VERIFIED"},
+        "omega_E4_generalized_connection_template": {"const": "VERIFIED"},
+        "euler_primary_source_convention_map": {"const": "VERIFIED"},
+        "generalized_connection_dictionary": {"const": "VERIFIED"},
+        "source_project_carrier_normalization": {"const": "VERIFIED"},
+        "all_five_euler_bidegrees_enumerated": {"const": "VERIFIED"},
+        "bidegree_manifests_content_addressed": {"const": "VERIFIED"},
+        "total_differential_component_signs": {"const": "VERIFIED"},
+        "omega_E4_intrinsic_descent_continuation": {"const": "IN_PROGRESS"},
+        "euler_top_transgression_regression": {"const": "VERIFIED"},
+        "unresolved_domega_theta_regression": {"const": "VERIFIED"},
+        "lower_descendant_complete_cancellation": {"const": "IN_PROGRESS"}
+      }
+    },
+    "derived_rows": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["weyl_connection_variation", "local_euler_weyl_variation", "coordinate_current_divergence"],
+      "properties": {
+        "weyl_connection_variation": {"type": "object", "additionalProperties": {"type": "object"}},
+        "local_euler_weyl_variation": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object"}},
+        "coordinate_current_divergence": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object"}}
+      }
+    },
+    "euler_intrinsic_transgression": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["curvature", "curvature_variation", "theta_variation", "descent_descendant", "variational_equation", "descent_equation", "omega_E4_first_step", "generalized_connection_total_form"],
+      "properties": {
+        "curvature": {"type": "array"},
+        "curvature_variation": {"type": "array"},
+        "theta_variation": {"type": "array"},
+        "descent_descendant": {"type": "array"},
+        "variational_equation": {"const": "delta E4 - d_h Theta_E(delta) = 0"},
+        "descent_equation": {"const": "Q E4 + d_h(-Theta_E(Q)) = 0"},
+        "omega_E4_first_step": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["equation", "residual", "continuation_status"],
+          "properties": {
+            "equation": {"const": "Q(omega E4) + d_h(omega Theta_E) = d_h(omega) wedge Theta_E"},
+            "residual": {"type": "object", "additionalProperties": {"type": "object"}},
+            "continuation_status": {"const": "IN_PROGRESS"}
+          }
+        },
+        "generalized_connection_total_form": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["primary_reference", "generalized_connection", "source_formula", "source_dimension_four_coefficients", "source_convention_map", "dimension_specialization", "normalization_contract", "derived_coefficients", "components", "type_a_component_indices", "type_b_component_indices", "expansion_status", "certificate_status", "generalized_connection_dictionary", "bidegree_manifests", "template_sha256"],
+          "properties": {
+            "primary_reference": {"type": "object", "additionalProperties": false, "required": ["title", "journal", "doi", "formula", "arxiv", "source_version"], "properties": {"title": {"type": "string"}, "journal": {"type": "string"}, "doi": {"type": "string"}, "formula": {"type": "string"}, "arxiv": {"const": "0704.2472"}, "source_version": {"type": "string"}}},
+            "generalized_connection": {"type": "string"},
+            "source_formula": {"type": "string"},
+            "source_dimension_four_coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}},
+            "source_convention_map": {"type": "object", "additionalProperties": false, "required": ["source_total_differential", "project_total_differential", "component_sign_translation", "source_generalized_connections", "source_tilde_omega_alpha", "project_tilde_omega_alpha", "schouten_dimension_four", "source_W_mu_nu", "source_euler_top_component", "project_euler_density", "source_top_coefficient_in_project_density", "orientation", "carrier_normalization_status"], "properties": {"source_total_differential": {"type": "string"}, "project_total_differential": {"type": "string"}, "component_sign_translation": {"const": "VERIFIED_BY_BIDEGREE_MANIFESTS"}, "source_generalized_connections": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}}, "source_tilde_omega_alpha": {"type": "string"}, "project_tilde_omega_alpha": {"type": "string"}, "schouten_dimension_four": {"type": "string"}, "source_W_mu_nu": {"type": "string"}, "source_euler_top_component": {"type": "string"}, "project_euler_density": {"type": "string"}, "source_top_coefficient_in_project_density": {"type": "object"}, "orientation": {"type": "string"}, "carrier_normalization_status": {"const": "RESOLVED_BY_GLOBAL_TOP_COMPONENT_SCALE"}}},
+            "dimension_specialization": {"const": 4},
+            "normalization_contract": {"type": "object", "additionalProperties": false, "required": ["source_formula", "component_order", "source_coefficients", "source_top_component", "project_top_component", "global_source_to_project_scale", "project_coefficients", "legacy_unverified_vector", "legacy_vector_status", "normalization_rule", "normalization_status", "tower_closure_status", "normalization_sha256"], "properties": {"source_formula": {"type": "string"}, "component_order": {"type": "string"}, "source_coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}}, "source_top_component": {"type": "string"}, "project_top_component": {"type": "string"}, "global_source_to_project_scale": {"type": "object"}, "project_coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}}, "legacy_unverified_vector": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}}, "legacy_vector_status": {"const": "REJECTED_AS_UNDERIVED_CARRIER_RESCALING"}, "normalization_rule": {"type": "string"}, "normalization_status": {"const": "RESOLVED_FOR_FROZEN_SOURCE_CARRIERS"}, "tower_closure_status": {"const": "NOT_COMPUTED"}, "normalization_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+            "derived_coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}},
+            "components": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["r", "p", "explicit_form_degree", "generalized_connection_degree", "weyl_two_form_count", "sector", "coefficient"], "properties": {"r": {"type": "integer", "minimum": 0, "maximum": 2}, "p": {"type": "integer", "minimum": 0, "maximum": 2}, "explicit_form_degree": {"type": "integer", "minimum": 2, "maximum": 4}, "generalized_connection_degree": {"type": "integer", "minimum": 0, "maximum": 2}, "weyl_two_form_count": {"type": "integer", "minimum": 0, "maximum": 2}, "sector": {"enum": ["TYPE_A", "TYPE_B_SEPARATELY_CLOSED"]}, "coefficient": {"type": "object"}}}},
+            "type_a_component_indices": {"const": [1, 2]},
+            "type_b_component_indices": {"const": [0]},
+            "expansion_status": {"const": "NORMALIZATION_RESOLVED_TOWER_NOT_EXPANDED"},
+            "certificate_status": {"const": "NORMALIZED_TEMPLATE_NOT_YET_VERIFIED_TOWER"},
+            "generalized_connection_dictionary": {"type": "object", "additionalProperties": false, "required": ["schema_version", "spacetime_dimension", "coordinate_engineering_convention", "schouten_convention", "orientation_convention", "generators", "dictionary_status", "dictionary_sha256"], "properties": {"schema_version": {"const": "generalized-connection-v1"}, "spacetime_dimension": {"const": 4}, "coordinate_engineering_convention": {"type": "string"}, "schouten_convention": {"type": "string"}, "orientation_convention": {"type": "string"}, "generators": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object"}}, "dictionary_status": {"const": "FROZEN_FOR_BIDEGREE_EXPANSION"}, "dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+            "bidegree_manifests": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["ghost_number", "form_degree", "manifest_sha256", "path"], "properties": {"ghost_number": {"type": "integer", "minimum": 1, "maximum": 5}, "form_degree": {"type": "integer", "minimum": 0, "maximum": 4}, "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "path": {"type": "string", "minLength": 1}}}},
+            "template_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        }
+      }
+    },
+    "euler_full_diff_completed_tower": {"type": "object", "additionalProperties": false, "required": ["counterterm_tower_sha256", "anomaly_tower_sha256", "coefficients"], "properties": {"counterterm_tower_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "anomaly_tower_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "coefficients": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object"}}}},
+    "canonical_hashes": {"type": "object", "additionalProperties": false, "required": ["source_manifest_sha256", "curvature_sha256", "theta_sha256", "zero_variational_residual_sha256", "generalized_connection_dictionary_sha256", "normalization_contract_sha256", "bidegree_manifest_set_sha256"], "properties": {"source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "curvature_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "theta_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "zero_variational_residual_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "generalized_connection_dictionary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "normalization_contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "bidegree_manifest_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "assumptions": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "not_computed": {"type": "array", "minItems": 3, "items": {"type": "string"}}
   }
 }

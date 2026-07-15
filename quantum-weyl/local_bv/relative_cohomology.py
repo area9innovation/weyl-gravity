@@ -538,6 +538,7 @@ class FiniteBicomplex:
             "max_form_degree": max_form_degree,
             "ansatz_dimension": differential.column_count,
             "ansatz_basis_hash": ansatz_basis_hash,
+            "exhaustiveness_manifest": exhaustiveness_manifest,
             "exhaustiveness_manifest_hash": exhaustiveness_manifest_hash,
             "cocycle_matrix_rank": differential.rank(),
             "cocycle_dimension": len(cocycles),

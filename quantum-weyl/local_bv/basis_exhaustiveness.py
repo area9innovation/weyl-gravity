@@ -3,17 +3,54 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
 import re
 
-from .algebra import canonical_sha256
+from .algebra import canonical_json, canonical_sha256
 
 
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
 
 
 @dataclass(frozen=True)
+class BoundProofArtifact:
+    """Canonical payload carried by, and cryptographically bound to, a proof."""
+
+    role: str
+    payload_json: str
+    sha256: str
+
+    @classmethod
+    def create(cls, role: str, payload: object) -> "BoundProofArtifact":
+        return cls(
+            role=role,
+            payload_json=canonical_json(payload),
+            sha256=canonical_sha256(payload),
+        )
+
+    def verify(self) -> None:
+        try:
+            payload = json.loads(self.payload_json)
+        except json.JSONDecodeError as error:
+            raise ValueError(f"proof artifact {self.role} is not canonical JSON") from error
+        if canonical_json(payload) != self.payload_json:
+            raise ValueError(f"proof artifact {self.role} is not canonically serialized")
+        if _SHA256.fullmatch(self.sha256) is None:
+            raise ValueError(f"proof artifact {self.role} contains a malformed hash")
+        if canonical_sha256(payload) != self.sha256:
+            raise ValueError(f"proof artifact {self.role} hash does not reproduce")
+
+    def canonical_payload(self) -> dict[str, str]:
+        return {
+            "role": self.role,
+            "payload_json": self.payload_json,
+            "sha256": self.sha256,
+        }
+
+
+@dataclass(frozen=True)
 class BasisExhaustivenessProof:
-    """Hash-bound proof object required for complete witness promotion."""
+    """Artifact-bound proof object required for complete witness promotion."""
 
     basis_manifest_hash: str
     declared_bounds_hash: str
@@ -22,38 +59,57 @@ class BasisExhaustivenessProof:
     orbit_enumeration_hash: str
     identity_quotient_hash: str
     proof_artifact_hash: str
+    bound_artifacts: tuple[BoundProofArtifact, ...]
     proof_hash: str
-    verification_status: str = "VERIFIED"
+    verification_status: str = "VERIFIED_ARTIFACT_BOUND"
 
     @classmethod
     def create(
         cls,
         *,
-        basis_manifest_hash: str,
-        declared_bounds_hash: str,
-        generator_algebra_hash: str,
-        grading_solution_hash: str,
-        orbit_enumeration_hash: str,
-        identity_quotient_hash: str,
-        proof_artifact_hash: str,
+        basis_manifest: object,
+        declared_bounds: object,
+        generator_algebra: object,
+        grading_solution: object,
+        orbit_enumeration: object,
+        identity_quotient: object,
+        proof_artifact: object,
     ) -> "BasisExhaustivenessProof":
+        artifacts = tuple(
+            BoundProofArtifact.create(role, artifact)
+            for role, artifact in (
+                ("basis_manifest", basis_manifest),
+                ("declared_bounds", declared_bounds),
+                ("generator_algebra", generator_algebra),
+                ("grading_solution", grading_solution),
+                ("orbit_enumeration", orbit_enumeration),
+                ("identity_quotient", identity_quotient),
+                ("proof_artifact", proof_artifact),
+            )
+        )
+        hashes = {artifact.role: artifact.sha256 for artifact in artifacts}
         payload = {
-            "basis_manifest_hash": basis_manifest_hash,
-            "declared_bounds_hash": declared_bounds_hash,
-            "generator_algebra_hash": generator_algebra_hash,
-            "grading_solution_hash": grading_solution_hash,
-            "orbit_enumeration_hash": orbit_enumeration_hash,
-            "identity_quotient_hash": identity_quotient_hash,
-            "proof_artifact_hash": proof_artifact_hash,
-            "verification_status": "VERIFIED",
+            "basis_manifest_hash": hashes["basis_manifest"],
+            "declared_bounds_hash": hashes["declared_bounds"],
+            "generator_algebra_hash": hashes["generator_algebra"],
+            "grading_solution_hash": hashes["grading_solution"],
+            "orbit_enumeration_hash": hashes["orbit_enumeration"],
+            "identity_quotient_hash": hashes["identity_quotient"],
+            "proof_artifact_hash": hashes["proof_artifact"],
+            "bound_artifacts": artifacts,
+            "verification_status": "VERIFIED_ARTIFACT_BOUND",
         }
-        return cls(**payload, proof_hash=canonical_sha256(payload))
+        proof_payload = {
+            **{key: value for key, value in payload.items() if key != "bound_artifacts"},
+            "bound_artifacts": [artifact.canonical_payload() for artifact in artifacts],
+        }
+        return cls(**payload, proof_hash=canonical_sha256(proof_payload))
 
     def verify(self, *, expected_basis_manifest_hash: str) -> None:
         payload = self.canonical_payload(include_proof_hash=False)
         hashes = [value for key, value in payload.items() if key.endswith("_hash")]
-        if self.verification_status != "VERIFIED":
-            raise ValueError("basis exhaustiveness proof is not verified")
+        if self.verification_status != "VERIFIED_ARTIFACT_BOUND":
+            raise ValueError("basis exhaustiveness proof is not artifact-bound and verified")
         if any(
             not isinstance(value, str) or _SHA256.fullmatch(value) is None
             for value in hashes
@@ -61,10 +117,28 @@ class BasisExhaustivenessProof:
             raise ValueError("basis exhaustiveness proof contains a malformed hash")
         if self.basis_manifest_hash != expected_basis_manifest_hash:
             raise ValueError("basis exhaustiveness proof does not bind the supplied basis")
+        required_roles = {
+            "basis_manifest",
+            "declared_bounds",
+            "generator_algebra",
+            "grading_solution",
+            "orbit_enumeration",
+            "identity_quotient",
+            "proof_artifact",
+        }
+        artifacts = {artifact.role: artifact for artifact in self.bound_artifacts}
+        if set(artifacts) != required_roles or len(artifacts) != len(self.bound_artifacts):
+            raise ValueError("basis exhaustiveness proof artifact roles are incomplete or duplicated")
+        for artifact in artifacts.values():
+            artifact.verify()
+        for role in required_roles:
+            field_hash = getattr(self, f"{role}_hash")
+            if field_hash != artifacts[role].sha256:
+                raise ValueError(f"basis exhaustiveness proof {role} artifact is not bound")
         if self.proof_hash != canonical_sha256(payload):
             raise ValueError("basis exhaustiveness proof hash does not reproduce")
 
-    def canonical_payload(self, *, include_proof_hash: bool = True) -> dict[str, str]:
+    def canonical_payload(self, *, include_proof_hash: bool = True) -> dict[str, object]:
         payload = {
             "basis_manifest_hash": self.basis_manifest_hash,
             "declared_bounds_hash": self.declared_bounds_hash,
@@ -73,6 +147,9 @@ class BasisExhaustivenessProof:
             "orbit_enumeration_hash": self.orbit_enumeration_hash,
             "identity_quotient_hash": self.identity_quotient_hash,
             "proof_artifact_hash": self.proof_artifact_hash,
+            "bound_artifacts": [
+                artifact.canonical_payload() for artifact in self.bound_artifacts
+            ],
             "verification_status": self.verification_status,
         }
         if include_proof_hash:

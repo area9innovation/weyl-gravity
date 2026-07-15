@@ -1,5 +1,6 @@
 import json
 import unittest
+from copy import deepcopy
 
 from local_bv.euler_transgression_certificate import OUTPUT_PATH, SCHEMA_PATH, build_certificate
 from local_bv.schema_validation import validate_instance
@@ -24,9 +25,9 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
                 ]["components"]
             ],
             [
-                {"numerator": 4, "denominator": 1},
-                {"numerator": -4, "denominator": 1},
                 {"numerator": 1, "denominator": 1},
+                {"numerator": -4, "denominator": 1},
+                {"numerator": 4, "denominator": 1},
             ],
         )
         checks = certificate["checks"]
@@ -49,17 +50,33 @@ class EulerTransgressionCertificateTests(unittest.TestCase):
         )
         self.assertEqual(
             template["source_convention_map"]["carrier_normalization_status"],
-            "UNRESOLVED_SOURCE_PROJECT_COEFFICIENT_MISMATCH",
+            "RESOLVED_BY_GLOBAL_TOP_COMPONENT_SCALE",
         )
         self.assertEqual(
-            template["source_convention_map"]["source_to_project_top_factor"],
+            template["source_convention_map"][
+                "source_top_coefficient_in_project_density"
+            ],
             {"numerator": 1, "denominator": 4},
         )
         self.assertEqual(
             template["certificate_status"],
-            "TEMPLATE_CANDIDATE_NOT_YET_VERIFIED_TOWER",
+            "NORMALIZED_TEMPLATE_NOT_YET_VERIFIED_TOWER",
+        )
+        self.assertEqual(
+            template["normalization_contract"]["global_source_to_project_scale"],
+            {"numerator": 4, "denominator": 1},
+        )
+        self.assertEqual(
+            [(row["ghost_number"], row["form_degree"]) for row in template["bidegree_manifests"]],
+            [(1, 4), (2, 3), (3, 2), (4, 1), (5, 0)],
         )
         self.assertIn("omega E4", " ".join(certificate["not_computed"]))
+
+    def test_schema_fails_closed_on_unknown_nested_claim(self) -> None:
+        certificate = deepcopy(build_certificate())
+        certificate["checks"]["tower_secretly_complete"] = "VERIFIED"
+        errors = validate_instance(certificate, json.loads(SCHEMA_PATH.read_text()))
+        self.assertTrue(any("additional property is forbidden" in error for error in errors))
 
 
 if __name__ == "__main__":

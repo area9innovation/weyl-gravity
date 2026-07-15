@@ -22,7 +22,7 @@ class EulerChernWeilTests(unittest.TestCase):
                 component["coefficient"]
                 for component in analysis["generalized_connection_template"]["components"]
             ),
-            (4, -4, 1),
+            (1, -4, 4),
         )
 
 
