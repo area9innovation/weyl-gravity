@@ -1,0 +1,274 @@
+{
+  "analytic_boundary": {
+    "certified_Green_diagonal_blocks": 5,
+    "general_mixed_order_Green_theorem_available": false,
+    "minimal_certified_map_ansatz_closes_full_Green_theorem": false,
+    "new_reciprocal_relative_maps_or_an_independent_field_block_Green_theorem_required": true,
+    "open_Green_diagonal_blocks": 2,
+    "open_blocks": [
+      "M",
+      "E"
+    ],
+    "open_operator": "Eaux+Kaux Caux",
+    "scalar_normally_hyperbolic_realization_ruled_out": true,
+    "triangular_couplings_cannot_repair_a_diagonal_block": true
+  },
+  "cone": {
+    "D_squared": "zero",
+    "PBW_interpretation": "noncommutative chain relations cross-bound to the exact curved-core coefficient certificate",
+    "block_dimensions": [
+      9,
+      24,
+      26,
+      24,
+      40,
+      9,
+      14
+    ],
+    "block_order": [
+      "G",
+      "M",
+      "U",
+      "E",
+      "Q",
+      "I",
+      "J"
+    ],
+    "cochain_dimensions": [
+      9,
+      24,
+      50,
+      49,
+      14
+    ]
+  },
+  "correct_two_operator_architecture": {
+    "H_alg_constructed_on_completed_mapping_cylinder": true,
+    "H_alg_formula": "-H_cone",
+    "P_alg_P_end": "zero both ways",
+    "P_alg_and_P_end_commute_with_D": true,
+    "P_alg_and_P_end_cyclic_adjoint": true,
+    "P_alg_formula": "1-I P",
+    "P_alg_idempotent": true,
+    "P_end_formula": "I P",
+    "P_end_idempotent": true,
+    "P_end_is_30_component_metric_core": false,
+    "P_end_retained_object": "66-component auxiliary base",
+    "W_end_constructed_here": false,
+    "algebraic_operator": "P_alg=D H_alg+H_alg D",
+    "algebraic_requirements": [
+      "P_alg^2=P_alg",
+      "D P_alg=P_alg D",
+      "P_end=1-P_alg"
+    ],
+    "causal_correction": "Gamma_plus/minus=W_end G_end_plus/minus P_end",
+    "composite_projector_role": "further contracts the retained auxiliary base to the 30-component metric core",
+    "endpoint_green_operator": "L_end=D W_end+W_end D on im(P_end)",
+    "endpoint_green_operator_is_a_projector": false,
+    "five_term_H_alg_constructed_without_dual_completion": false,
+    "matrix_sha256": {
+      "H_alg": "41c3db2fde79d449bc42a585124ed26385b445c0c001a989105b867cc74b9f7b",
+      "P_alg": "7a6248a9a967a4e0c469b0cf1a99377610c6cc22fbcbcba6a8dccb6122d67a4a",
+      "P_end": "28607346de68f1e09be364d23687e3c5cda52ae8d4cad5aa6b87bc77e9fa264c"
+    },
+    "separate_composite_projector_cross_reference": "curved_prolonged_hybrid_algebraic_projector.json",
+    "separation_of_roles_required": true,
+    "total_homotopy": "Lambda_plus/minus=H_alg+Gamma_plus/minus"
+  },
+  "cyclic_adjoint_boundary": {
+    "H_alg_cyclicity_defect": 0,
+    "P_alg_cyclic_adjoint_defect": 0,
+    "P_end_cyclic_adjoint_defect": 0,
+    "completed_mapping_cylinder_pairing_nondegenerate": true,
+    "cyclicity_can_be_audited_without_cotangent_dual_cone": false,
+    "five_term_carrier_is_self_dual": false,
+    "nondegenerate_odd_pairing_on_this_carrier": false,
+    "opposite_degree_dimension_pairs": [
+      [
+        9,
+        14
+      ],
+      [
+        24,
+        49
+      ]
+    ],
+    "required_completion": "adjoin the cotangent-dual equation cone and use the certified all-row BV pairing before testing W sharp"
+  },
+  "decision": {
+    "causal_green_homotopy": false,
+    "certified_backward_maps_alone_are_sufficient": false,
+    "completed_mapping_cylinder_algebraic_chain_projector_constructed": true,
+    "endpoint_complete_generalized_witness_identity": true,
+    "endpoint_residual_green_witness_constructed": false,
+    "five_term_algebraic_chain_projector_constructed": false,
+    "green_witness_is_chain_projector": false,
+    "middle_diagonal_classification_exact": true,
+    "prolonged_green_witness": false,
+    "rank14_green_operators_constructed": false,
+    "two_operator_hybrid_architecture_required": true
+  },
+  "endpoint_targets": {
+    "both_certified_Green_hyperbolic": true,
+    "gauge": "Caux Kaux",
+    "subsidiary": "N iC"
+  },
+  "fail_closed": true,
+  "forced_diagonal_blocks": [
+    {
+      "block": "G",
+      "green": true,
+      "operator": "Caux Kaux"
+    },
+    {
+      "block": "M",
+      "green": false,
+      "operator": "Eaux+Kaux Caux"
+    },
+    {
+      "block": "U",
+      "green": true,
+      "operator": "pF Ewc=L_26"
+    },
+    {
+      "block": "E",
+      "green": false,
+      "operator": "Eaux+Kaux Caux"
+    },
+    {
+      "block": "Q",
+      "green": true,
+      "operator": "Ewc pF+iC N=diag(L_26,S_14)"
+    },
+    {
+      "block": "I",
+      "green": true,
+      "operator": "Caux Kaux"
+    },
+    {
+      "block": "J",
+      "green": true,
+      "operator": "N iC=S_14"
+    }
+  ],
+  "forced_triangular_couplings": {
+    "both_nonzero": true,
+    "local_couplings_preserve_causal_support_if_diagonals_are_Green": true,
+    "operators": [
+      "pF A-T",
+      "iC B-A K"
+    ],
+    "sample_order": [
+      "generic",
+      "null",
+      "zero"
+    ],
+    "sample_ranks": {
+      "iC_B_minus_A_K": [
+        7,
+        7,
+        4
+      ],
+      "pF_A_minus_T": [
+        10,
+        10,
+        5
+      ]
+    }
+  },
+  "matrix_sha256": {
+    "Caux_Kaux": "a07a39f29ba26c034f7ae28f380b90ca59a4ee941c60e2549ab1d7160762cd8a",
+    "L_26": "7f9a665010226787c5f42dd6dddcf3b472f8547de7190dad38b02117047dfd46",
+    "S_14": "954b8b0bb68027da69e29a56e871544595a760fd5e217928664aa861e95113cc",
+    "WC_middle_40": "23842323d1f70e3f2b4f41963d756aaf81ed67f88e77fecc26477887df906d9d",
+    "auxiliary_field_block": "f10c2f7a0169112617441105d64cc949483d0807a1b15949d7a3159164637113"
+  },
+  "projector_incompatibility": {
+    "degree_leading_endpoint_witnesses": {
+      "Caux_Kaux": {
+        "generic_rank": 9,
+        "nonzero_entries": 13,
+        "polynomial_degree": 4,
+        "sha256": "631a4046956ccae00573d43d8c3b806bdfe6945b01267a61cb4a92a3c7b0e3cc"
+      },
+      "N_iC": {
+        "generic_rank": 14,
+        "nonzero_entries": 62,
+        "polynomial_degree": 2,
+        "sha256": "ad15a1facfd8cbe2f762ec5005e934dc3e6054c340b74c976b5e5fc13229166d"
+      }
+    },
+    "full_P_squared_minus_P_nonzero": true,
+    "full_defect_endpoint_block_witnesses": [
+      "(P^2-P)|_G=(Caux Kaux)^2-Caux Kaux",
+      "(P^2-P)|_J=(N iC)^2-N iC"
+    ],
+    "full_defect_sample_rank_lower_bounds": [
+      23,
+      14,
+      10
+    ],
+    "idempotency_defect_nonzero_entries": {
+      "Caux_Kaux": 45,
+      "N_iC": 86
+    },
+    "idempotency_defect_ranks": {
+      "Caux_Kaux": [
+        9,
+        6,
+        4
+      ],
+      "N_iC": [
+        14,
+        8,
+        6
+      ]
+    },
+    "reason": "the required endpoint Green blocks Caux Kaux and N iC are not idempotent polynomial operators",
+    "same_operator_can_be_green_witness_and_chain_projector": false,
+    "sample_order": [
+      "generic",
+      "null",
+      "zero"
+    ]
+  },
+  "schema": "pure-weyl-rank14-endpoint-green-witness-boundary-v1",
+  "scope": "exact smallest endpoint-complete witness using only the already-certified auxiliary and Weyl--Cotton backward maps",
+  "status_flags_promoted": [],
+  "verification_receipt": {
+    "higher_tiers_not_required_because": "this adds a fail-closed boundary/projector certificate without promoting a causal or paper theorem",
+    "higher_tiers_run": false,
+    "tier_0": [
+      "python3 -m py_compile covariant_completion/curved_operator/rank14_endpoint_green_witness_boundary.py symbolic/verify_conformal_rank14_endpoint_green_witness_boundary.py",
+      "git diff --check on the four scoped paths"
+    ],
+    "tier_1_exhaustive": {
+      "command": "python3 -u symbolic/verify_conformal_rank14_endpoint_green_witness_boundary.py --guards",
+      "elapsed_seconds": 71.32,
+      "result": "PASS"
+    },
+    "tier_1_fast_rail": {
+      "command": "python3 -u symbolic/verify_conformal_rank14_endpoint_green_witness_boundary.py --smoke --guards",
+      "elapsed_seconds": 0.67,
+      "result": "PASS"
+    }
+  },
+  "warranted_atomic_flags": [
+    "rank14_endpoint_generalized_witness_identity",
+    "rank14_minimal_certified_map_witness_boundary"
+  ],
+  "weyl_cotton_middle": {
+    "K_minus_R_block": "zero coefficientwise",
+    "L_26_symmetric_hyperbolic": true,
+    "Q_diagonal_block": "diag(L_26,S_14)",
+    "S_14_symmetric_hyperbolic": true
+  },
+  "witness": {
+    "D_P_equals_P_D": true,
+    "P_equals_DH_plus_HD": true,
+    "finite_differential_order": true,
+    "formula": "H={M->G:C, E->M:-1, Q->U:pF, I->E:-K, J->Q:iC}",
+    "new_relative_maps_introduced": 0,
+    "support_local": true
+  }
+}
