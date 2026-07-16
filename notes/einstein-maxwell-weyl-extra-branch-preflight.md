@@ -31,3 +31,8 @@ in 1.31 s; the mixed-current direct replay took 16.92 s and the independent
 mixed, assembly, and preflight verifiers passed. Tier 3 was not run because
 this is a reduced-mode preflight with unchanged content-addressed current
 engine and no lifecycle or release promotion.
+
+The generic axial child preflight has now landed. It contracts the six
+ungauged odd-parity coefficients to four invariants over the exact differential
+ring using only the constant pivot `2`; it does not invert `D`, `k`, or a
+dispersion factor. The target operator remains the next missing object.

@@ -1,0 +1,333 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE preflight certifies the axial coefficient/gauge contraction and freezes exact operator-module, adjoint, pivot, and fixture rules. It does not construct the target axial operator, pass its Hessian/Noether/Green checks, compute an extra quotient or dispersion, or establish causal, particle, or quantum physics.",
+  "classification": {
+    "canonical_extra_quotient_computed": false,
+    "differential_module_solution_functor_frozen": true,
+    "ell2_full_tensor_replay_passed": false,
+    "exact_gauge_contraction_without_D_or_k_inverse": true,
+    "extra_solution_or_particle_certified": false,
+    "formal_adjoint_involution_frozen": true,
+    "full_ungauged_axial_coefficient_module_frozen": true,
+    "independent_ell2_replay_contract_frozen": true,
+    "lorentzian_causal_or_quantum_theorem": false,
+    "pivot_and_exceptional_locus_ledger_frozen": true,
+    "target_Hessian_Noether_Green_rails_passed": false,
+    "target_axial_gauge_module_frozen": true,
+    "target_axial_operator_constructed": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "generic axial ell>=2 coefficient complex for the candidate full fixed-bundle Weyl-Maxwell harmonic tangent, symbolic S1 momentum and exact temporal differential algebra, before final residual quotient",
+  "gauge_module_contraction": {
+    "algebraic_slice": "h_2=0 and b=0",
+    "denominators_introduced": [
+      "2"
+    ],
+    "gauge_homotopy_H": [
+      [
+        "0",
+        "0",
+        "1/2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1/2",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "gauge_map_G": [
+      [
+        "D",
+        "0"
+      ],
+      [
+        "I*k",
+        "0"
+      ],
+      [
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "D"
+      ],
+      [
+        "0",
+        "I*k"
+      ],
+      [
+        "1",
+        "1"
+      ]
+    ],
+    "gauge_parameter_order": [
+      "s",
+      "r"
+    ],
+    "identities": {
+      "H_G": "I_2",
+      "I_6_minus_J_K": "G_H",
+      "K_G": "0",
+      "K_J": "I_4"
+    },
+    "invariant_order": [
+      "H_t",
+      "H_x",
+      "Q_t",
+      "Q_x"
+    ],
+    "invariants": [
+      "H_t=h_t-(D/2)h_2",
+      "H_x=h_x-(I*k/2)h_2",
+      "Q_t=q_t-D*(b-h_2/2)",
+      "Q_x=q_x-I*k*(b-h_2/2)"
+    ],
+    "no_dispersion_denominator": true,
+    "no_inverse_D": true,
+    "no_inverse_k": true,
+    "projection_K": [
+      [
+        "1",
+        "0",
+        "-D/2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "-I*k/2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "D/2",
+        "1",
+        "0",
+        "-D"
+      ],
+      [
+        "0",
+        "0",
+        "I*k/2",
+        "0",
+        "1",
+        "-I*k"
+      ]
+    ],
+    "ring_symbols": {
+      "D": "partial_t",
+      "I": "sqrt(-1)",
+      "k": "S1 Fourier momentum"
+    },
+    "scope": "ell>=2, where h_2 X_(ab) is nonzero; ell=1 is a separate exceptional complex",
+    "slice_determinant": "2",
+    "slice_inclusion_J": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "slice_parameter_matrix": [
+      [
+        "2",
+        "0"
+      ],
+      [
+        "1",
+        "1"
+      ]
+    ],
+    "target_axial_Weyl_parameter": "none: a scalar Weyl variation is even parity and has zero projection to the odd axial block",
+    "ungauged_coefficient_order": [
+      "h_t",
+      "h_x",
+      "h_2",
+      "q_t",
+      "q_x",
+      "b"
+    ]
+  },
+  "generality_level": "G2_GENERIC_AXIAL_OPERATOR_MODULE_PREFLIGHT",
+  "hessian_noether_green_rail": {
+    "Green_identity_verified": false,
+    "Hessian_equation_equality_verified": false,
+    "Noether_identities_verified": false,
+    "independent_derivations": {
+      "Hessian_route": "take the exact second variation of the declared Weyl-Maxwell action and project to the ungauged axial coefficient basis",
+      "equation_route": "linearize the Bach-Maxwell Euler-Lagrange tensors independently and project the complete odd-parity tensor rows",
+      "required_equality": "the two coefficient operators agree exactly after the declared row normalization"
+    },
+    "normalization_requirements": [
+      "record harmonic norms and every integration-by-parts factor",
+      "retain background-flux metric/Maxwell mixing",
+      "match the already certified on-shell Einstein restriction when both arguments lie in the source image"
+    ],
+    "required_identities": [
+      "L_WM,ax*G=0 coefficientwise",
+      "G^dagger*L_WM,ax=0 coefficientwise",
+      "L_WM,ax=L_WM,ax^dagger after the field/equation density pairing is declared",
+      "the Einstein source-image reconstruction is annihilated modulo its certified source equations",
+      "d_t omega^t+I*k*omega^x=u^T L_WM,ax v-(L_WM,ax u)^T v for arbitrary off-shell coefficient jets"
+    ],
+    "source_image_annihilation_replayed": false,
+    "target_operator_inserted": false
+  },
+  "interpretation": "The generic axial target solve now has an exact algebraic chassis. The odd-parity gauge module contracts from six coefficients to four invariants using only the harmless constant pivot 2, so no zero-momentum or zero-frequency modes can be lost by gauge fixing. The future fourth-order operator must pass independent Hessian, Noether, Green-identity, pivot-stratification, and full-tensor ell=2 rails before any frequency roots are interpreted.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "derive and insert the complete generic axial Weyl-Maxwell Hessian/operator in the frozen six-coefficient basis, pass the Noether and Green rails, and replay the independent full-tensor ell=2 fixture before quotient/root extraction",
+  "operator_module_contract": {
+    "base_ring_before_localization": "A=Q[I,lambda,k][D], D=partial_t",
+    "forbidden": [
+      "solving only det L(-I*omega)=0",
+      "dividing by D, k, omega, a branch polynomial, or an unrecorded minor",
+      "counting roots without geometric multiplicities and gauge quotient witnesses",
+      "calling coker(L) the solution space without the declared solution functor"
+    ],
+    "gauge_fixed_operator": "L_red is obtained through the certified K,J contraction without inverting D or k",
+    "generic_PID_for_invariant_factors": "R=Frac(Q[I,lambda,k])[D]",
+    "involution_for_formal_adjoint": [
+      "D^dagger=-D",
+      "(I*k)^dagger=-I*k",
+      "lambda^dagger=lambda"
+    ],
+    "module_presentation": "compute exact invariant factors/Smith data of the gauge-fixed differential presentation over R, while retaining every localization denominator in A",
+    "solution_cohomology": "ker(L_WM,ax on the declared temporal function space)/im(G); it is not identified with a bare matrix cokernel",
+    "solution_extraction_order": [
+      "construct and verify the differential presentation",
+      "compute invariant factors, torsion, free parts, multiplicities, and primary decomposition",
+      "stratify all localization and rank-exception loci in (lambda,k)",
+      "only then substitute D=-I*omega to report dispersions and generalized/Jordan solutions"
+    ],
+    "ungauged_complex": "A^2 --G--> A^6 --L_WM,ax--> A^r with L_WM,ax*G=0"
+  },
+  "pivot_and_fixture_contract": {
+    "current_guardrail_denominator_ledger": [
+      {
+        "factor": "2",
+        "source": "algebraic (h_2,b) gauge slice",
+        "zero_locus": "empty over characteristic zero"
+      }
+    ],
+    "denominator_ledger_rule": "store every factor inverted during row/column reduction with its source minor and solve its zero locus separately",
+    "ell2_independent_replay": {
+      "branch_substitution_allowed": false,
+      "completed": false,
+      "harmonic": "Y_20=P_2(cos theta)",
+      "momentum": "symbolic k",
+      "required_comparisons": [
+        "all target coefficient rows at lambda=6",
+        "gauge and Noether identities",
+        "operator invariant factors and exceptional denominators",
+        "Einstein-image annihilation and the complete mixed Lee-Wald matrix"
+      ],
+      "route": "full four-dimensional tensor linearization, independent of the arbitrary-lambda harmonic reduction",
+      "temporal_variable": "off-shell D, or equivalently symbolic omega before any branch substitution"
+    },
+    "generic_locus": "lambda*(lambda-2) != 0; k remains symbolic and may equal zero unless an explicitly recorded target minor requires a separate stratum",
+    "mandatory_strata": [
+      {
+        "locus": "lambda=0",
+        "meaning": "homogeneous ell=0; different tensor basis"
+      },
+      {
+        "locus": "lambda=2",
+        "meaning": "ell=1; h_2 absent and residual/global gauge changes"
+      },
+      {
+        "locus": "k=0",
+        "meaning": "zero Fourier block; retain twists and polynomial/Jordan solutions"
+      },
+      {
+        "locus": "each target pivot numerator or denominator=0",
+        "meaning": "rank/localization stratum to solve without the invalid pivot"
+      },
+      {
+        "locus": "resultant/discriminant=0",
+        "meaning": "colliding primary factors or enhanced Jordan multiplicity"
+      }
+    ],
+    "rank_rule": "certify generic and exceptional ranks by exact minors or normal forms, never by numerical samples"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_operator_module_preflight.py",
+    "generator_sha256": "af83d90c2c02c5e5506d74b2957725d474f83d2214ec53330c14e0c782c1998d",
+    "inputs": {
+      "background": {
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      "extra_branch_preflight": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_extra_branch_preflight.json",
+        "sha256": "28924d27b8bcd11cde9d4aabef84709744a85d8604e6dc8a507b2e014869bd8a"
+      },
+      "linear_inclusion": {
+        "path": "bridge/certificates/einstein_maxwell_chevreton_tangent.json",
+        "sha256": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead"
+      },
+      "source_axial_complex": {
+        "path": "bridge/certificates/einstein_maxwell_axial_master_complex.json",
+        "sha256": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02"
+      },
+      "target_principal_complex": {
+        "path": "bridge/certificates/einstein_maxwell_product_tangent_preflight.json",
+        "sha256": "cbae5417348975b9ceee8b04be7b6214c7ca8bf5f2c3778b4527de461569512b"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT",
+  "result_state": "EXACT_AXIAL_GAUGE_MODULE_CONTRACTED_OPERATOR_NOETHER_PIVOT_AND_ELL2_RAILS_FROZEN",
+  "schema": "einstein-maxwell-weyl-axial-operator-module-preflight-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_operator_module_preflight.schema.json",
+  "schema_sha256": "a00c3fd6d02480c1ce51ec1f8fbdde373e0af26e8227f60fdcd1c6279c743250",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_operator_module_preflight --verify bridge/certificates/einstein_maxwell_weyl_axial_operator_module_preflight.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_operator_module_preflight.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_operator_module_preflight"
+  ]
+}

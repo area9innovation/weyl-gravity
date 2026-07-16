@@ -808,6 +808,15 @@ classes, adjoint cokernels, presymplectic radicals, and gauge classes separate.
 The first solve is the complete generic axial target block at symbolic
 `lambda,k`, including its full Einstein/extra Lee--Wald matrix.
 
+`EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT` now freezes that first
+solve over `Q[I,lambda,k][D]`, with `D=partial_t`.  For `ell>=2` the ungauged
+coefficient module `(h_t,h_x,h_2,q_t,q_x,b)` contracts exactly to four
+gauge-invariant coefficients.  The identities `KG=0`, `KJ=I`, `I-JK=GH`, and
+`HG=I` hold with only the constant denominator `2`; neither `D` nor `k` is
+inverted.  The target Hessian must next pass independent equation, Noether,
+formal-adjoint, off-shell Green, source-image, pivot-stratification, and full
+tensor `Y_20` replay rails before any frequency root is interpreted.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally
