@@ -823,35 +823,41 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Positive Berger clock | `D_GAUGE` on fixed-coupling linearized phase space | minimal clock SDR and retained `q1` complete; arity two open | principal endpoint factors only; curved/Green gates open | open | minimal cyclic pairing exact | `NOT_APPLICABLE` at this base point: certified non-Einstein Weyl--matter branch |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | stability open |
+| Compact Einstein--Maxwell product | sector-indexed; not a universal D verdict | `OPEN` | `NOT TESTED` | no positive-frequency Hilbert space constructed | standard `ell>=2` Weyl--Maxwell pullback is nondegenerate with relative branch-coefficient signature `(2,2)` per real spatial harmonic | all standard radiative tangents survive target Weyl gauge before final residual quotient; identity inclusion is not symplectic |
 | Lorentzian dS/AdS | boundary-dependent; compute | open | open | open | open | selected sector to certify |
 | Asymptotically flat | `PHASE_SPACE_NOT_CLOSED`; `H_ESU` crosses fixed \(\mathscr I\), `D_M` charge open | `NOT APPLICABLE` until a boundary-preserving generator and phase space are chosen | formal triangular seed only; causal complex open | `OPEN` | `OPEN` | `EINSTEIN_OPEN`; reduced `chi=0` seed only |
 
 ## Priority and stop/go decisions
 
-1. Close the compact global symplectic sectors: the `ell=0`
-   radion/circumference/electric-charge pairs and the axial `ell=1` twist pair.
-2. Compute the Weyl--Maxwell presymplectic pullback to the certified
-   Einstein--Maxwell wave quotient, including exact improvements and corners.
-3. Classify the extra fourth-order adjoint/radiative directions and separate
+1. Compute the Weyl--Maxwell pullback on the physical `ell=1` quotient using
+   its certified representatives, then on the homogeneous `ell=0` and axial
+   twist generalized global solutions by direct Lee--Wald currents.
+2. Classify the extra fourth-order adjoint/radiative directions and separate
    them from the standard Einstein wave directions.
-4. Run the quadratic Taub/extension test on the compact wave directions and
-   construct a relational detector or geodesic-deviation observable.
-5. Complete the asymptotically flat linear causal complex and boundary phase
+3. Run the quadratic Taub/extension test on the remaining compact wave
+   directions and construct a relational detector or geodesic-deviation
+   observable.
+4. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
-6. Choose a real boundary-preserving image, then compute its charge separately
+5. Choose a real boundary-preserving image, then compute its charge separately
    from the ADM/Bondi time-translation charge and radiative pairing.
-7. Prove or refute linear causal preservation of the Einstein branch, classify
+6. Prove or refute linear causal preservation of the Einstein branch, classify
    the extra asymptotic branch, and only then compare Bondi observables, black
    holes, and tree amplitudes.
-8. Seek a different common scalar background for an Einstein--matter tangent
+7. Seek a different common scalar background for an Einstein--matter tangent
    comparison; retain the Berger clock as the certified non-Einstein control
    branch.  Add Yang--Mills only after that distinction is stable.
 
-The regular compact radiative modes and physical `ell=1` quotient now have a
-positive action-normalized covariant pairing.  The global sectors and the
-Weyl--Maxwell pullback are the nearest remaining compact gates; black holes and
-scattering require their own boundary phase space.  The handoff criteria are
-recorded in
+The regular compact radiative modes, physical `ell=1` quotient, and generalized
+global modes have a certified Einstein--Maxwell covariant pairing.  The
+Weyl--Maxwell pullback is now closed on the complete standard axial-plus-polar
+`ell>=2` block by the common spectral operator
+`1+(3/2)(M-lambda)`: all such modes remain nonnull, but the relative
+branch-coefficient signature is `(2,2)` and the identity inclusion is not
+symplectic.  This is not a quantum negative-norm theorem.  The physical
+`ell=1`, homogeneous, twist, and extra fourth-order target restrictions are
+the nearest remaining compact gates; black holes and scattering require their
+own boundary phase space.  The handoff criteria are recorded in
 [`universe-building-roadmap.md`](universe-building-roadmap.md).
 
 Escalate immediately if the Einstein selection is nonlocal or future-dependent,

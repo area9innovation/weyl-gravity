@@ -83,6 +83,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-axial-all-ell-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-all-ell-restriction-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-polar-all-ell-restriction.json`](contributions/einstein-maxwell-weyl-polar-all-ell-restriction.json)
 - [`reports/einstein-maxwell-weyl-polar-all-ell-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-polar-all-ell-restriction-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-radiative-restriction.json`](contributions/einstein-maxwell-weyl-radiative-restriction.json)
+- [`reports/einstein-maxwell-weyl-radiative-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-radiative-restriction-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -244,16 +246,24 @@ time-linear generalized solution.  Together with the radiative theorem this
 completes the standard fixed-bundle Einstein--Maxwell harmonic symplectic
 phase space before final residual quotient.  The next compact gate is the
 independent Weyl--Maxwell Lee--Wald restriction, followed by the extra
-fourth-order adjoint blocks.  Its preflight now proves that the induced linear
+fourth-order adjoint blocks.  The restriction preflight proves that the induced linear
 tangent quotient map is injective: a putative pure-Weyl kernel has harmonic
 coefficient `3 ell(ell+1)+2` and therefore vanishes.  The remaining issue is
 the Weyl--Maxwell pairing itself, not loss of the Einstein modes to target
-Weyl gauge.  The actual restriction matrices remain open.
+Weyl gauge; the subsequent standard-radiative theorem below closes that issue
+for `ell>=2`.
 
-The first restriction matrix is now closed on the axial `ell=2,m=0`
-symbolic-momentum kill test.  Both physical branches are nonnull, but their
-exact factors relative to the positive Einstein--Maxwell form are
-`1+3*sqrt(3)` and `1-3*sqrt(3)`.  The second is negative.  Hence the scoped
-restriction is nondegenerate but relatively indefinite and cannot equal one
-universal nonzero multiple of the Einstein--Maxwell form.  Arbitrary axial
-`ell`, polar, physical `ell=1`, and global restriction blocks remain open.
+The Weyl--Maxwell restriction is now complete on the full standard radiative
+`ell>=2` Einstein--Maxwell subspace.  Direct arbitrary-harmonic current
+calculations close both axial and polar parities.  On their direct sum the
+pullback has the parity-independent spectral form
+`Omega_WM(u,v)=Omega_EM(u,[1+(3/2)(M-lambda)]v)`.  Its exact branch factors are
+`1+(3/2)*sqrt(2lambda)` and `1-(3/2)*sqrt(2lambda)`, giving rank four and
+relative coefficient signature `(2,2)` per independent real spatial
+harmonic.  Branch, parity, harmonic, and Fourier orthogonality and the
+real/complex multiplicities are explicit.  Thus all ordinary radiative
+directions remain nonnull before the final residual quotient, but the identity
+inclusion is not symplectic.  This classical relative signature is not a
+one-particle negative-norm or quantum ghost theorem.  Physical `ell=1`,
+homogeneous `ell=0`, axial twist, and extra fourth-order restriction blocks
+remain open.

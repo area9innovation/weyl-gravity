@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle P_N with N=2; direct sum of every standard axial and polar ell>=2 Einstein-Maxwell radiative tangent, all real harmonic multiplicities, arbitrary periodic momentum, both master branches; before final residual SO(4,2) quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the complete standard axial-plus-polar ell>=2 Weyl-Maxwell restriction is the Einstein-Maxwell form composed with the single spectral polynomial p_lambda(M)=1+(3/2)*(M-lambda)",
+    "self-adjointness of both parity master operators and the exact parity and harmonic selection rules certify the full direct-sum identity, including vanishing cross-branch and cross-parity pairings",
+    "the common relative eigenvalues are 1+(3/2)*sqrt(2*lambda) and 1-(3/2)*sqrt(2*lambda)",
+    "for each independent real spatial harmonic the branch-coefficient form has rank four and relative signature (2,2)",
+    "the real/complex multiplicity convention is fixed without double counting n,-n or m,-m conjugates",
+    "the identity tangent inclusion is target-nondegenerate but not symplectic; no one-particle negative-norm, ghost, unitarity, causal, or scattering claim is promoted"
+  ],
+  "evidence": {
+    "commit": "e3c44396c3d7c489a360ffb28c381c0aa07065e5",
+    "path": "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
+    "sha256": "25a798211bea52cbf9d8becae64672ac327be7a09adb50e30e45fa8287a608b7"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute the physical ell=1 Weyl-Maxwell restriction with the certified quotient representatives, then the homogeneous ell=0 and axial-twist generalized global restrictions by direct Lee-Wald currents",
+  "not_established": [
+    "the physical ell=1, homogeneous ell=0, or axial-twist Weyl-Maxwell restriction blocks",
+    "the complete fourth-order Weyl-Maxwell phase space or its extra adjoint classes",
+    "a nonlinear Einstein-Maxwell solution-space embedding or final SO(4,2) quotient",
+    "a positive-frequency one-particle norm, quantum ghost or unitarity result, Lorentzian-causal theorem, or scattering sector"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_standard_radiative_restriction",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_radiative_restriction",
+  "team_id": "einstein_boundary",
+  "verdict": "G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_radiative_symplectic_restriction --verify bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_radiative_symplectic_restriction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_radiative_symplectic_restriction"
+  ]
+}

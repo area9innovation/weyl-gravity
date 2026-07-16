@@ -56,6 +56,7 @@ EINSTEIN_MAXWELL_WEYL_SYMPLECTIC_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributio
 EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_RESTRICTION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-ell2-restriction.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_ALL_ELL_RESTRICTION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-all-ell-restriction.json"
 EINSTEIN_MAXWELL_WEYL_POLAR_ALL_ELL_RESTRICTION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-polar-all-ell-restriction.json"
+EINSTEIN_MAXWELL_WEYL_RADIATIVE_RESTRICTION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-radiative-restriction.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -907,6 +908,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "einstein_maxwell_product_compact_weyl_polar_all_ell_restriction",
         "G2_POLAR_ALL_ELL_GE2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
     )
+    maxwell_weyl_radiative_restriction_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_WEYL_RADIATIVE_RESTRICTION_CONTRIBUTION,
+        "compact_einstein_maxwell_weyl_radiative_restriction",
+        "einstein_maxwell_product_compact_weyl_standard_radiative_restriction",
+        "G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION",
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     berger_retained_q2_contribution = _nonlinear_berger_retained_q2_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
@@ -1086,6 +1093,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "path": str(EINSTEIN_MAXWELL_WEYL_POLAR_ALL_ELL_RESTRICTION_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_POLAR_ALL_ELL_RESTRICTION_CONTRIBUTION),
                 "payload": maxwell_weyl_polar_all_ell_restriction_contribution,
+            },
+            {
+                "path": str(EINSTEIN_MAXWELL_WEYL_RADIATIVE_RESTRICTION_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_RADIATIVE_RESTRICTION_CONTRIBUTION),
+                "payload": maxwell_weyl_radiative_restriction_contribution,
             },
             {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
@@ -1441,6 +1453,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G2_POLAR_ALL_ELL_GE2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
             },
             {
+                "setting_id": "compact_einstein_maxwell_weyl_radiative_restriction",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_standard_radiative_restriction",
+                "boundary_conditions": "fixed-P_N compact product; direct sum of every standard axial and polar ell>=2 Einstein-Maxwell tangent, all real harmonic multiplicities, arbitrary periodic momentum, both branches; before final residual SO(4,2) quotient",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1622,6 +1643,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_axial_ell2_restriction",
         "compact_einstein_maxwell_weyl_axial_all_ell_restriction",
         "compact_einstein_maxwell_weyl_polar_all_ell_restriction",
+        "compact_einstein_maxwell_weyl_radiative_restriction",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1660,6 +1682,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_axial_ell2_restriction": "G1_AXIAL_ELL2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
         "compact_einstein_maxwell_weyl_axial_all_ell_restriction": "G1_AXIAL_ALL_ELL_GE2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
         "compact_einstein_maxwell_weyl_polar_all_ell_restriction": "G2_POLAR_ALL_ELL_GE2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
+        "compact_einstein_maxwell_weyl_radiative_restriction": "G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "compact_positive_berger_clock_retained_q2_26": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
@@ -1733,6 +1756,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("all-ell axial Weyl--Maxwell restriction theorem was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_polar_all_ell_restriction", {}).get("status") != "CERTIFIED":
         errors.append("all-ell polar Weyl--Maxwell restriction theorem was dropped")
+    if ledger.get("compact_einstein_maxwell_weyl_radiative_restriction", {}).get("status") != "CERTIFIED":
+        errors.append("combined standard radiative Weyl--Maxwell restriction theorem was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -2087,6 +2112,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_weyl_polar_all_ell_restriction",
             "drop_Einstein_Maxwell_Weyl_polar_all_ell_restriction_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_weyl_radiative_restriction",
+            "drop_Einstein_Maxwell_Weyl_combined_radiative_restriction_contribution",
         ),
     ):
         mutant = deepcopy(data)
