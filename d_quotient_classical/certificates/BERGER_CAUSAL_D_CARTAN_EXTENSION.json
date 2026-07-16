@@ -1,6 +1,13 @@
 {
   "arity_two_contraction": {
     "closure": "delta A_D,cyc^(2)=0 from delta q2=0 and [D54,q2]=0",
+    "concrete_Koszul_audit": {
+      "C3_group_law_defects": 0,
+      "admissible_degree_zero_row_triples": 25543,
+      "odd_Darboux_dual_slots": 27,
+      "rotation_sign": "(-1)^(dual(second)+degree(first)*degree(second))",
+      "total_rows": 54
+    },
     "cyclic_projector": "Cyc_3=(I+tau+tau^2)/3 with the frozen Koszul signs and BV pairing",
     "cyclicity": "A_D,cyc^(2) is a cyclic trilinear tensor because q2 and iota_D,cyc^(1) are cyclic coderivations",
     "identity": "delta iota_D,cyc^(2)=Cyc_3 delta R^(2)=-Cyc_3 A_D,cyc^(2)=-A_D,cyc^(2)",
@@ -25,6 +32,10 @@
       "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
       "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
     },
+    "odd_Darboux_pairing": {
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
     "support_local_q2": {
       "result_id": "BERGER_SUPPORT_LOCAL_Q2",
       "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
@@ -36,6 +47,7 @@
   ],
   "exact_checks": {
     "D_derivation_imported": true,
+    "actual_54_row_C3_group_law": true,
     "all_54_rows_included": true,
     "arity_two_Cartan_identity": true,
     "arity_two_cyclic_primitive": true,

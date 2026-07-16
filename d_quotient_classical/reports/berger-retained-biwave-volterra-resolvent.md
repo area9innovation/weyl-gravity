@@ -36,6 +36,26 @@ estimate gives
 \|(G_{0,\pm}N)^n\|\le\frac{C_T^n}{n!}.
 \]
 
+More explicitly, for every integer \(s\) use source and solution scales
+
+\[
+Y_s=H^s\oplus H^{s-1},\qquad
+X_s=H^{s+1}\oplus H^s.
+\]
+
+The tensor-wave energy estimate gives
+\(G_{\Box,\pm}:H^r\to H^{r+1}\) on a finite slab. Hence
+\(G_{0,\pm}:Y_s\to X_s\): the apparently dangerous entry
+\(G_{\Box,\pm}V_2G_{\Box,\pm}\) loses two derivatives through \(V_2\)
+and gains them back through the two wave integrations. Meanwhile
+\(N:X_s\to Y_s\) uses only the second component and is order zero.
+Successive same-sided integrations range over an ordered time simplex of
+volume \(T^n/n!\), which yields the displayed factorial estimate with a
+slab-dependent energy constant. The argument applies at every \(s\), and
+intersection over \(s\) gives smooth solutions. This is the functional-
+analytic input; the PBW certificates separately establish the exact operator
+and graph identities to which it is applied.
+
 Therefore the Volterra series converges in every Sobolev energy norm:
 
 \[

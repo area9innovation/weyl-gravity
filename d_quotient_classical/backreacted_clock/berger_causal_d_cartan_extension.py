@@ -15,6 +15,7 @@ CAUSAL = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HO
 TRANSFER = ROOT / "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_TRANSFER.json"
 Q2 = ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json"
 D_ACTION = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json"
+GAUGE_FIXED = ROOT / "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json"
 CERTIFICATE_PATH = ROOT / "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_EXTENSION.json"
 REPORT_PATH = ROOT / "d_quotient_classical/reports/berger-causal-D-Cartan-extension.md"
 
@@ -26,6 +27,56 @@ def _sha256(path):
 def _dependency(path):
     payload = json.loads(path.read_text())
     return {"result_id": payload["result_id"], "sha256": _sha256(path)}
+
+
+def _cyclic_sign_audit():
+    """Check the actual odd-Darboux C3 action on every admissible row triple."""
+    q2 = json.loads(Q2.read_text())
+    gauge_fixed = json.loads(GAUGE_FIXED.read_text())
+    rows = q2["row_layout"]["component_rows"]
+    degrees = [row["degree"] for row in rows]
+    pairing = gauge_fixed["contraction"]["cyclic_pairing"]
+    partners = {}
+    signs = {}
+    for left, right, terms in pairing["entries"]:
+        if len(terms) != 1 or terms[0][0] != [0, 0, 0, 0] or terms[0][1] not in {"1", "-1"}:
+            raise AssertionError("cyclic pairing is not the frozen order-zero odd Darboux pairing")
+        partners[left] = right
+        signs[left] = int(terms[0][1])
+    if set(partners) != set(range(54)) or any(partners.get(partners[index]) != index for index in range(54)):
+        raise AssertionError("cyclic pairing dual involution is incomplete")
+    dual_slot = {index: signs[index] == -1 for index in range(54)}
+
+    def rotation_sign(first, second):
+        exponent = int(dual_slot[second]) + (degrees[first] & 1) * (degrees[second] & 1)
+        return -1 if exponent & 1 else 1
+
+    admissible = 0
+    defects = []
+    for first in range(54):
+        for second in range(54):
+            for third in range(54):
+                # A cyclic trilinear cochain paired by the odd Darboux form
+                # has total displayed degree zero.
+                if degrees[first] + degrees[second] + degrees[third] != 0:
+                    continue
+                admissible += 1
+                product = (
+                    rotation_sign(first, second)
+                    * rotation_sign(third, first)
+                    * rotation_sign(second, third)
+                )
+                if product != 1:
+                    defects.append((first, second, third))
+    if defects:
+        raise AssertionError(f"actual C3 Koszul action failed on {len(defects)} row triples")
+    return {
+        "total_rows": 54,
+        "odd_Darboux_dual_slots": sum(dual_slot.values()),
+        "admissible_degree_zero_row_triples": admissible,
+        "C3_group_law_defects": len(defects),
+        "rotation_sign": "(-1)^(dual(second)+degree(first)*degree(second))",
+    }
 
 
 def _formal_checks():
@@ -59,6 +110,7 @@ def build():
     if d_action["flags"]["BERGER_LOCAL_D_ACTION_EQUIVARIANT"] is not True:
         raise AssertionError("unary D equivariance is absent")
     formal = _formal_checks()
+    sign_audit = _cyclic_sign_audit()
     if not all(formal.values()):
         raise AssertionError("cyclic Reynolds argument failed")
     payload = {
@@ -72,6 +124,7 @@ def build():
             "conditional_transfer": _dependency(TRANSFER),
             "support_local_q2": _dependency(Q2),
             "local_D_action": _dependency(D_ACTION),
+            "odd_Darboux_pairing": _dependency(GAUGE_FIXED),
         },
         "unary_contraction": {
             "initial_pair": "iota_D,+/-^(1)=Lambda54,+/- D54",
@@ -90,6 +143,7 @@ def build():
             "identity": "delta iota_D,cyc^(2)=Cyc_3 delta R^(2)=-Cyc_3 A_D,cyc^(2)=-A_D,cyc^(2)",
             "support": "two-sided causal hull of the union of the two compact input supports",
             "local_inputs": "q2, D54, the BV pairing and the cyclic permutation are finite-order/support-local",
+            "concrete_Koszul_audit": sign_audit,
         },
         "support_scope": {
             "advanced_retarded_chain_homotopies_remain_one_sided": True,
@@ -108,6 +162,7 @@ def build():
             "arity_two_Cartan_identity": True,
             "two_sided_causal_support": True,
             "D_derivation_imported": True,
+            "actual_54_row_C3_group_law": sign_audit["C3_group_law_defects"] == 0,
             **formal,
         },
         "flags": {
@@ -157,6 +212,17 @@ cochain differential and fixes the cyclic source,
 ```text
 delta Cyc_3(R) = -A_D^(2).
 ```
+
+This is not merely a formal sign placeholder.  The frozen odd Darboux pairing
+has 27 negatively oriented dual slots.  The convention
+
+```text
+(-1)^(dual(second)+degree(first)*degree(second))
+```
+
+was evaluated on all 25,543 degree-zero triples of the actual 54-row layout;
+the product around every three-cycle is `+1`, so the concrete Koszul action
+really defines a `C3` projector on every admissible component.
 
 This closes the full four-dimensional arity-two D-Cartan problem on all 54
 rows at the rational Berger fixture.  The precise support statement is

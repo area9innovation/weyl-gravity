@@ -25,6 +25,17 @@ cochain differential and fixes the cyclic source,
 delta Cyc_3(R) = -A_D^(2).
 ```
 
+This is not merely a formal sign placeholder.  The frozen odd Darboux pairing
+has 27 negatively oriented dual slots.  The convention
+
+```text
+(-1)^(dual(second)+degree(first)*degree(second))
+```
+
+was evaluated on all 25,543 degree-zero triples of the actual 54-row layout;
+the product around every three-cycle is `+1`, so the concrete Koszul action
+really defines a `C3` projector on every admissible component.
+
 This closes the full four-dimensional arity-two D-Cartan problem on all 54
 rows at the rational Berger fixture.  The precise support statement is
 two-sided causal-hull support—not separate retarded cyclicity.  Arity three,
