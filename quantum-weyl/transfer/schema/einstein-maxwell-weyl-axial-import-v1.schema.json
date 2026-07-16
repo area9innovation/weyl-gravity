@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-einstein-maxwell-weyl-axial-import-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "bridge_source",
+    "exact_import_checks",
+    "linearized_coupled_branch",
+    "reduced_pairing_verdict",
+    "direct_Lee_Wald_verdict",
+    "physical_interpretation",
+    "claim_flags",
+    "claim_boundary",
+    "next_gate",
+    "consumer_provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-einstein-maxwell-weyl-axial-import-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_MODULE_IMPORT"},
+    "result_state": {"const": "GENERIC_AXIAL_EXTRA_MODULE_AND_DIRECT_LEE_WALD_PAIRING_IMPORTED_CAUSAL_RESIDUAL_AND_INTERACTING_GATES_OPEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "bridge_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit", "artifacts"],
+      "properties": {
+        "commit": {"const": "e2b7e20bdf545dafeb1059d627c33c07bee91040"},
+        "artifacts": {"type": "object", "minProperties": 21}
+      }
+    },
+    "exact_import_checks": {
+      "type": "object",
+      "minProperties": 13,
+      "additionalProperties": {"const": true}
+    },
+    "linearized_coupled_branch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["setting", "field_order", "Einstein_Maxwell_solution_module_is_proper_submodule", "canonical_extra_module", "extra_algebraic_polarizations", "extra_shell", "off_shell_reduced_and_ungauged_Green_identities"],
+      "properties": {
+        "setting": {"type": "string", "minLength": 1},
+        "field_order": {"const": ["H_t", "H_x", "Q_t", "Q_x"]},
+        "Einstein_Maxwell_solution_module_is_proper_submodule": {"const": true},
+        "canonical_extra_module": {"const": "(F[omega]/(p))^2"},
+        "extra_algebraic_polarizations": {"const": 2},
+        "extra_shell": {"const": "omega^2=k^2+lambda-2/3"},
+        "off_shell_reduced_and_ungauged_Green_identities": {"const": true}
+      }
+    },
+    "reduced_pairing_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["normalization", "determinant", "physical_domain", "signature", "nonradical", "direct_four_dimensional_Lee_Wald_match"],
+      "properties": {
+        "normalization": {"type": "string", "minLength": 1},
+        "determinant": {"const": "lambda**4*(lambda - 2)*(9*lambda - 2)/3"},
+        "physical_domain": {"const": "lambda=ell(ell+1)>=6, real k, positive omega"},
+        "signature": {"const": [2, 0]},
+        "nonradical": {"const": true},
+        "direct_four_dimensional_Lee_Wald_match": {"const": true}
+      }
+    },
+    "direct_Lee_Wald_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Einstein_extra_symplectic_orthogonality", "extra_signature", "Einstein_signature", "complete_generic_axial_target_signature", "negative_direction_location", "final_residual_quotient_computed"],
+      "properties": {
+        "Einstein_extra_symplectic_orthogonality": {"const": true},
+        "extra_signature": {"const": [2, 0]},
+        "Einstein_signature": {"const": [1, 1]},
+        "complete_generic_axial_target_signature": {"const": [3, 1]},
+        "negative_direction_location": {"const": "one Einstein-image master branch, not the extra block"},
+        "final_residual_quotient_computed": {"const": false}
+      }
+    },
+    "physical_interpretation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["linearized_coupled_metric_Maxwell_branch_available", "direct_compact_Lee_Wald_pairing_available", "interacting_light_model_available", "mixed_gravity_photon_q2_or_q3_transferred", "extra_particle_certified", "extra_physical_norm_or_ghost_classified", "Lorentzian_causal_boundary_selected", "quantum_claim"],
+      "properties": {
+        "linearized_coupled_metric_Maxwell_branch_available": {"const": true},
+        "direct_compact_Lee_Wald_pairing_available": {"const": true},
+        "interacting_light_model_available": {"const": false},
+        "mixed_gravity_photon_q2_or_q3_transferred": {"const": false},
+        "extra_particle_certified": {"const": false},
+        "extra_physical_norm_or_ghost_classified": {"const": false},
+        "Lorentzian_causal_boundary_selected": {"const": false},
+        "quantum_claim": {"const": false}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["GENERIC_AXIAL_WEYL_MAXWELL_OPERATOR_IMPORTED", "GENERIC_AXIAL_EXTRA_MODULE_IMPORTED", "REDUCED_GREEN_EXTRA_MODULE_NONRADICAL", "DIRECT_FOUR_DIMENSIONAL_LEE_WALD_MATCH", "MIXED_GRAVITY_MAXWELL_NONLINEAR_VERTEX", "PHYSICAL_PARTICLE_OR_GHOST_CLASSIFICATION", "LORENTZIAN_CAUSAL_CERTIFIED", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "GENERIC_AXIAL_WEYL_MAXWELL_OPERATOR_IMPORTED": {"const": true},
+        "GENERIC_AXIAL_EXTRA_MODULE_IMPORTED": {"const": true},
+        "REDUCED_GREEN_EXTRA_MODULE_NONRADICAL": {"const": true},
+        "DIRECT_FOUR_DIMENSIONAL_LEE_WALD_MATCH": {"const": true},
+        "MIXED_GRAVITY_MAXWELL_NONLINEAR_VERTEX": {"const": false},
+        "PHYSICAL_PARTICLE_OR_GHOST_CLASSIFICATION": {"const": false},
+        "LORENTZIAN_CAUSAL_CERTIFIED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "next_gate": {"const": "EINSTEIN_MAXWELL_WEYL_AXIAL_MIXED_VERTEX_RESIDUAL_AND_CAUSAL_IMPORT"},
+    "consumer_provenance": {"type": "object"}
+  }
+}

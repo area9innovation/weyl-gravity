@@ -84,6 +84,18 @@ BERGER_HADAMARD_GATE_PATH = (
 BERGER_BASE_HADAMARD_PARAMETRIX_PATH = (
     QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX.json"
 )
+BERGER_TYPED_COMPANION_MOLLER_PATH = (
+    QUANTUM_ROOT
+    / "lorentzian"
+    / "certificates"
+    / "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT.json"
+)
+BERGER_COMPANION_DECOMPOSABILITY_PATH = (
+    QUANTUM_ROOT
+    / "lorentzian"
+    / "certificates"
+    / "BERGER_COMPANION_DECOMPOSABILITY_PREFLIGHT.json"
+)
 BERGER_REDUCED_CARTAN_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json"
 )
@@ -100,6 +112,11 @@ PPWAVE_BRANCH_TRANSFER_PATH = (
 )
 EINSTEIN_MHV_FIXTURE_PATH = (
     TRANSFER_ROOT / "certificates" / "EINSTEIN_PROJECTION_MHV_FIXTURE.json"
+)
+EINSTEIN_MAXWELL_WEYL_AXIAL_IMPORT_PATH = (
+    TRANSFER_ROOT
+    / "certificates"
+    / "EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_MODULE_IMPORT.json"
 )
 
 
@@ -209,6 +226,20 @@ def _source_manifest() -> dict[str, str]:
         "einstein_projection_amplitude_fixture.py",
         "einstein_projection_amplitude_fixture_certificate.py",
         "../reports/einstein-projection-amplitude-fixture.md",
+        "einstein_maxwell_weyl_axial_import.py",
+        "einstein_maxwell_weyl_axial_import_certificate.py",
+        "verify_einstein_maxwell_weyl_axial_import.py",
+        "../reports/einstein-maxwell-weyl-axial-import.md",
+        "../lorentzian/berger_typed_companion_moller_preflight.py",
+        "../lorentzian/berger_typed_companion_moller_preflight_certificate.py",
+        "../lorentzian/verify_berger_typed_companion_moller_preflight.py",
+        "../lorentzian/tests/test_berger_typed_companion_moller_preflight.py",
+        "../reports/berger-typed-companion-moller-preflight.md",
+        "../lorentzian/berger_companion_decomposability_preflight.py",
+        "../lorentzian/berger_companion_decomposability_preflight_certificate.py",
+        "../lorentzian/verify_berger_companion_decomposability_preflight.py",
+        "../lorentzian/tests/test_berger_companion_decomposability_preflight.py",
+        "../reports/berger-companion-decomposability-preflight.md",
         "total_d_disposition.py",
         "total_d_disposition_certificate.py",
         "arity_three_cartan.py",
@@ -249,6 +280,9 @@ def _source_manifest() -> dict[str, str]:
         "schema/berger-all-weight-arity-two-cartan-import-v1.schema.json",
         "schema/ppwave-branch-transfer-import-v1.schema.json",
         "schema/einstein-projection-amplitude-fixture-v1.schema.json",
+        "schema/einstein-maxwell-weyl-axial-import-v1.schema.json",
+        "../lorentzian/schema/berger-typed-companion-moller-preflight-v1.schema.json",
+        "../lorentzian/schema/berger-companion-decomposability-preflight-v1.schema.json",
         "schema/total-d-disposition-v1.schema.json",
         "schema/arity-three-cartan-engine-v1.schema.json",
         "schema/nonlinear_classical_export.schema.json",
@@ -282,6 +316,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_berger_all_weight_cartan_import.py",
         "tests/test_ppwave_branch_transfer_import.py",
         "tests/test_einstein_projection_amplitude_fixture.py",
+        "tests/test_einstein_maxwell_weyl_axial_import.py",
         "tests/test_total_d_disposition.py",
         "tests/test_arity_three_cartan.py",
         "tests/test_arity_three_cartan_certificate.py",
@@ -362,6 +397,12 @@ def build_certificate() -> dict[str, Any]:
     berger_base_hadamard_parametrix = json.loads(
         BERGER_BASE_HADAMARD_PARAMETRIX_PATH.read_text(encoding="utf-8")
     )
+    berger_typed_companion_moller = json.loads(
+        BERGER_TYPED_COMPANION_MOLLER_PATH.read_text(encoding="utf-8")
+    )
+    berger_companion_decomposability = json.loads(
+        BERGER_COMPANION_DECOMPOSABILITY_PATH.read_text(encoding="utf-8")
+    )
     berger_reduced_cartan = json.loads(
         BERGER_REDUCED_CARTAN_PATH.read_text(encoding="utf-8")
     )
@@ -376,6 +417,9 @@ def build_certificate() -> dict[str, Any]:
     )
     einstein_mhv_fixture = json.loads(
         EINSTEIN_MHV_FIXTURE_PATH.read_text(encoding="utf-8")
+    )
+    einstein_maxwell_weyl_axial_import = json.loads(
+        EINSTEIN_MAXWELL_WEYL_AXIAL_IMPORT_PATH.read_text(encoding="utf-8")
     )
     if (
         berger_import.get("result_state")
@@ -848,6 +892,88 @@ def build_certificate() -> dict[str, Any]:
     ):
         raise ValueError("Berger base Hadamard parametrix drifted or was over-promoted")
     if (
+        berger_typed_companion_moller.get("result_id")
+        != "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT"
+        or berger_typed_companion_moller.get("result_state")
+        != "TYPED_MOLLER_ALGEBRA_CERTIFIED_MICROLOCAL_KERNEL_ACTION_OPEN"
+        or berger_typed_companion_moller.get("dependency_refs", {})
+        .get("base_hadamard_parametrix", {})
+        .get("sha256")
+        != _sha256(BERGER_BASE_HADAMARD_PARAMETRIX_PATH)
+        or not all(
+            berger_typed_companion_moller.get("typed_transport", {})
+            .get("checks", {})
+            .values()
+        )
+        or berger_typed_companion_moller.get("microlocal_diagnosis", {}).get(
+            "maximum_order_V2"
+        )
+        != 2
+        or berger_typed_companion_moller.get("microlocal_diagnosis", {}).get(
+            "smooth_potential_Moller_theorem_applies_directly"
+        )
+        is not False
+        or set(berger_typed_companion_moller.get("microlocal_obligations", {}).values())
+        != {"OPEN"}
+        or berger_typed_companion_moller.get("claim_flags", {}).get(
+            "BERGER_TYPED_COMPANION_MOLLER_ALGEBRA"
+        )
+        is not True
+        or berger_typed_companion_moller.get("claim_flags", {}).get(
+            "BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT"
+        )
+        is not False
+        or berger_typed_companion_moller.get("claim_flags", {}).get(
+            "BERGER_TYPED_COMPANION_HADAMARD_PARAMETRIX"
+        )
+        is not False
+        or berger_typed_companion_moller.get("claim_flags", {}).get("QUANTUM_CLAIM")
+        is not False
+        or berger_typed_companion_moller.get("next_gate")
+        != "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION"
+    ):
+        raise ValueError("Berger typed companion Moller preflight drifted or was over-promoted")
+    decomposability_ledger = berger_companion_decomposability.get(
+        "obligation_ledger", {}
+    )
+    if (
+        berger_companion_decomposability.get("result_id")
+        != "BERGER_COMPANION_DECOMPOSABILITY_PREFLIGHT"
+        or berger_companion_decomposability.get("result_state")
+        != "NULL_CHARACTERISTIC_CONE_CERTIFIED_PAULI_JORDAN_DECOMPOSITION_OPEN"
+        or berger_companion_decomposability.get("dependency_refs", {})
+        .get("typed_moller_algebra", {})
+        .get("sha256")
+        != _sha256(BERGER_TYPED_COMPANION_MOLLER_PATH)
+        or decomposability_ledger.get("characteristic_set_is_metric_null_cone")
+        != "CERTIFIED"
+        or decomposability_ledger.get("typed_advanced_retarded_support")
+        != "CERTIFIED"
+        or decomposability_ledger.get("WF_EC_has_only_opposite_null_orientations")
+        != "OPEN"
+        or decomposability_ledger.get("null_bicharacteristic_and_polarization_propagation")
+        != "OPEN"
+        or berger_companion_decomposability.get("claim_flags", {}).get(
+            "BERGER_COMPANION_METRIC_NULL_CHARACTERISTIC_SET"
+        )
+        is not True
+        or berger_companion_decomposability.get("claim_flags", {}).get(
+            "BERGER_COMPANION_NULL_CONE_DECOMPOSABLE"
+        )
+        is not False
+        or berger_companion_decomposability.get("claim_flags", {}).get(
+            "BERGER_COMPANION_PAULI_JORDAN_WAVEFRONT_THEOREM"
+        )
+        is not False
+        or berger_companion_decomposability.get("claim_flags", {}).get(
+            "QUANTUM_CLAIM"
+        )
+        is not False
+        or berger_companion_decomposability.get("next_gate")
+        != "BERGER_COMPANION_PAULI_JORDAN_WAVEFRONT_THEOREM"
+    ):
+        raise ValueError("Berger companion decomposability preflight drifted or was over-promoted")
+    if (
         berger_retained_26_q2_transfer.get("schema")
         != "quantum-weyl-berger-retained-26-q2-transfer-v1"
         or berger_retained_26_q2_transfer.get("result_state")
@@ -983,6 +1109,52 @@ def build_certificate() -> dict[str, Any]:
         is not False
     ):
         raise ValueError("Einstein-projection MHV fixture was promoted or removed")
+    if (
+        einstein_maxwell_weyl_axial_import.get("schema")
+        != "quantum-weyl-einstein-maxwell-weyl-axial-import-v1"
+        or einstein_maxwell_weyl_axial_import.get("result_state")
+        != "GENERIC_AXIAL_EXTRA_MODULE_AND_DIRECT_LEE_WALD_PAIRING_IMPORTED_CAUSAL_RESIDUAL_AND_INTERACTING_GATES_OPEN"
+        or not all(
+            einstein_maxwell_weyl_axial_import.get("exact_import_checks", {}).values()
+        )
+        or einstein_maxwell_weyl_axial_import.get("linearized_coupled_branch", {}).get(
+            "extra_algebraic_polarizations"
+        )
+        != 2
+        or einstein_maxwell_weyl_axial_import.get("reduced_pairing_verdict", {}).get(
+            "signature"
+        )
+        != [2, 0]
+        or einstein_maxwell_weyl_axial_import.get("physical_interpretation", {}).get(
+            "linearized_coupled_metric_Maxwell_branch_available"
+        )
+        is not True
+        or einstein_maxwell_weyl_axial_import.get("physical_interpretation", {}).get(
+            "interacting_light_model_available"
+        )
+        is not False
+        or einstein_maxwell_weyl_axial_import.get("claim_flags", {}).get(
+            "DIRECT_FOUR_DIMENSIONAL_LEE_WALD_MATCH"
+        )
+        is not True
+        or einstein_maxwell_weyl_axial_import.get("direct_Lee_Wald_verdict", {}).get(
+            "complete_generic_axial_target_signature"
+        )
+        != [3, 1]
+        or einstein_maxwell_weyl_axial_import.get("claim_flags", {}).get(
+            "MIXED_GRAVITY_MAXWELL_NONLINEAR_VERTEX"
+        )
+        is not False
+        or einstein_maxwell_weyl_axial_import.get("claim_flags", {}).get(
+            "PHYSICAL_PARTICLE_OR_GHOST_CLASSIFICATION"
+        )
+        is not False
+        or einstein_maxwell_weyl_axial_import.get("claim_flags", {}).get(
+            "QUANTUM_CLAIM"
+        )
+        is not False
+    ):
+        raise ValueError("axial Weyl--Maxwell import was promoted or removed")
     exports = {item["export_id"]: item for item in snapshot["required_exports"]}
     blockers = []
     for export_id in REQUIRED_EXPORTS:
@@ -1012,7 +1184,7 @@ def build_certificate() -> dict[str, Any]:
     source_manifest = _source_manifest()
     return {
         "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-        "result_state": "CAUSAL_CHAIN_D_CARTAN_ARITY_TWO_AND_BASE_HADAMARD_PARAMETRIX_IMPORTED_Q3_AND_GLOBAL_HADAMARD_OPEN",
+        "result_state": "CAUSAL_D_CARTAN_ARITY_TWO_HADAMARD_MOLLER_NULL_CONE_AND_AXIAL_WEYL_MAXWELL_IMPORTED_Q3_PAULI_JORDAN_AND_GLOBAL_HADAMARD_OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "classical_snapshot_commit": snapshot["classical_commit"],
         "classical_freeze_gate": snapshot["gate_a_status"],
@@ -1053,11 +1225,14 @@ def build_certificate() -> dict[str, Any]:
                 "pinned independent replay of the full 13-row Douglis metric-cone inverse no-go and its hybrid retained-chain architectural consequence",
                 "exact projection P26=pi_cl P34_raw iota_cl identifies P26_metric=A10 and gives a 20-row local companion with a two-sided graph SDR, principal determinant q^20, no extra characteristic cone, and the corrected mixed raw-polarization interpretation",
                 "repaired advanced and retarded Green homotopies imported on all 26 retained and all 54 gauge-fixed rows, with cyclic two-sided-causal D-Cartan contraction through arity two",
+                "typed companion Moller source/solution algebra and formal local-kernel candidate certified, with distributional microlocal composition explicitly open",
+                "companion metric-null characteristic set and typed causal support certified, with the nonzero rank-seven square-zero null-symbol obstruction retained",
                 "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
                 "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
                 "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
                 "arbitrary-profile aligned Brinkmann pp-wave branch block with genuine Einstein and extra-Weyl representatives, vanishing restricted q2, and homotopy-independent transferred ell2=0",
                 "exact complex Einstein three-graviton (--+)/(++-) parity-pair reference fixture with strict setting, defect-tangency, and normalization gates",
+                "independently replayed generic axial Weyl--Maxwell operator, two extra p-shell algebraic polarizations, reduced and ungauged off-shell Green identities, direct compact Lee--Wald matching, Einstein/extra orthogonality, and complete signature (3,1)",
                 "total-D disposition router that permits Cartan contraction only for a certified D_GAUGE result",
                 "strict total-D presymplectic audit schema with canonical D_CHARGED vocabulary, sector ledger, and exact verdict signatures",
                 "phase-space, boundary-condition, classical-commit, dependency-scope, and source-hash binding before physical execution",
@@ -1066,9 +1241,12 @@ def build_certificate() -> dict[str, Any]:
             ],
             "not_established": [
                 "the complete conformal-gravity q3 Taylor tensor and explicit L_D^(3) declaration",
+                "the six typed-companion Moller distributional/microlocal composition obligations and a companion Hadamard parametrix",
+                "the companion Pauli--Jordan kernel wavefront decomposition and propagation of its nilpotent-symbol polarizations",
                 "closure or centrality of either Weyl-square direction",
                 "nonaligned Einstein/extra-Weyl branch mixing outside the Brinkmann pp-wave sector",
                 "setting-matched projection of the physical conformal-gravity cubic tensor onto the Einstein helicity sector or matching its normalized coefficient to the parity-pair reference",
+                "mixed gravity--Maxwell q2/q3 transfer, final residual descent, causal boundary selection, or interacting-light particle interpretation",
                 "absence of higher-bracket sector re-entry",
                 "the further minimal residual/cohomology ell2 beyond the retained 26-row q2_26 operation",
                 "the arity-three D-Cartan contraction or its obstruction witness",
@@ -1094,6 +1272,11 @@ def build_certificate() -> dict[str, Any]:
                 "question_id": "einstein_projection_amplitude_fixture",
                 "status": "REFERENCE_PARITY_PAIR_EXACT_SETTING_DEFECT_NORMALIZATION_GATES_READY_SETTING_MATCHED_PROJECTION_PENDING",
                 "next_certificate": "N_G5_PROJECT_TRANSFERRED_ELL2_AND_COMPARE_MHV",
+            },
+            {
+                "question_id": "interacting_light_axial_weyl_maxwell",
+                "status": "LINEARIZED_COUPLED_METRIC_MAXWELL_OPERATOR_DIRECT_LEE_WALD_COMPLETE_SIGNATURE_THREE_ONE_TWO_NONRADICAL_EXTRA_DIRECTIONS_MIXED_Q2_Q3_RESIDUAL_CAUSAL_AND_PARTICLE_GATES_OPEN",
+                "next_certificate": "EINSTEIN_MAXWELL_WEYL_AXIAL_MIXED_VERTEX_RESIDUAL_AND_CAUSAL_IMPORT",
             },
             {
                 "question_id": "D_quotient_interaction_stability",
@@ -1133,7 +1316,8 @@ def build_certificate() -> dict[str, Any]:
             {"stage": "HT3", "deliverable": "higher-arity and particle-filtration obstruction ledger", "status": "NOT_COMPUTED"},
             {"stage": "HT4", "deliverable": "cyclic minimal action and formal moduli interpretation", "status": "NOT_COMPUTED"},
             {"stage": "N-G5", "deliverable": "Einstein projection and one helicity/twistor amplitude fixture", "status": "REFERENCE_PARITY_PAIR_AND_SETTING_DEFECT_NORMALIZATION_GATES_READY_PHYSICAL_Q2_PROJECTION_BLOCKED"},
-            {"stage": "HTH", "deliverable": "construct BRST-compatible distributional Hadamard two-point function", "status": "BASE_WAVE_HADAMARD_PARAMETRIX_CERTIFIED_TYPED_COMPANION_MOLLER_TRANSPORT_NEXT"},
+            {"stage": "N-M1", "deliverable": "import coupled Maxwell branch and mixed gravity--photon vertices", "status": "LINEARIZED_AXIAL_OPERATOR_GREEN_CURRENT_AND_DIRECT_LEE_WALD_PAIRING_IMPORTED_MIXED_Q2_Q3_RESIDUAL_AND_CAUSAL_GATES_OPEN"},
+            {"stage": "HTH", "deliverable": "construct BRST-compatible distributional Hadamard two-point function", "status": "COMPANION_NULL_CHARACTERISTIC_CONE_CERTIFIED_PAULI_JORDAN_WAVEFRONT_THEOREM_NEXT"},
             {"stage": "HTQ", "deliverable": "transfer restored quantum Q corrections", "status": "BLOCKED_PENDING_QME_RESTORED"},
         ],
         "provenance": {
@@ -1260,6 +1444,14 @@ def build_certificate() -> dict[str, Any]:
             "berger_base_hadamard_parametrix_sha256": _sha256(
                 BERGER_BASE_HADAMARD_PARAMETRIX_PATH
             ),
+            "berger_typed_companion_Moller_preflight_certificate": "quantum-weyl/lorentzian/certificates/BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT.json",
+            "berger_typed_companion_Moller_preflight_sha256": _sha256(
+                BERGER_TYPED_COMPANION_MOLLER_PATH
+            ),
+            "berger_companion_decomposability_preflight_certificate": "quantum-weyl/lorentzian/certificates/BERGER_COMPANION_DECOMPOSABILITY_PREFLIGHT.json",
+            "berger_companion_decomposability_preflight_sha256": _sha256(
+                BERGER_COMPANION_DECOMPOSABILITY_PATH
+            ),
             "berger_first_arity_two_cartan_verdict_certificate": "quantum-weyl/transfer/certificates/BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json",
             "berger_first_arity_two_cartan_verdict_sha256": _sha256(
                 BERGER_REDUCED_CARTAN_PATH
@@ -1279,6 +1471,10 @@ def build_certificate() -> dict[str, Any]:
             "einstein_projection_MHV_fixture_certificate": "quantum-weyl/transfer/certificates/EINSTEIN_PROJECTION_MHV_FIXTURE.json",
             "einstein_projection_MHV_fixture_sha256": _sha256(
                 EINSTEIN_MHV_FIXTURE_PATH
+            ),
+            "einstein_maxwell_weyl_axial_extra_module_import_certificate": "quantum-weyl/transfer/certificates/EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_MODULE_IMPORT.json",
+            "einstein_maxwell_weyl_axial_extra_module_import_sha256": _sha256(
+                EINSTEIN_MAXWELL_WEYL_AXIAL_IMPORT_PATH
             ),
             "berger_total_D_disposition_certificate": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json",
             "berger_total_D_disposition_sha256": _sha256(
@@ -1308,12 +1504,13 @@ def build_certificate() -> dict[str, Any]:
             "The bare full-dimensional unary Cartan problem is exactly obstructed on the local 26/54-row complex. The repaired causal extension now supplies advanced and retarded Green homotopies on all 26 and 54 rows and a cyclic two-sided-causal D-Cartan contraction through arity two; arity three remains open.",
             "The principal-compatible raw endpoint, companion construction, repaired Volterra theorem, 26/54-row causal chain, and cyclic D-Cartan completion are imported in the v2 chain. These classical causal results do not supply Hadamard data, renormalized products, QME restoration, or a quantum claim.",
             "The Hadamard construction gate consumes the v2 causal commutator and keeps reduced positive-frequency/Krein ledgers separate from a distributional 54-row covariance; its original base-parametrix next gate is superseded by the landed input recorded next.",
-            "The base tensor/ghost Hadamard singularity is now instantiated with a flat-space i0/C-plus/CCR normalization witness. It remains a local parametrix modulo smooth kernels; typed companion transport, global completion, BRST covariance, zero modes, and positivity remain open.",
+            "The base tensor/ghost Hadamard singularity is instantiated with a flat-space i0/C-plus/CCR normalization witness. The typed companion Moller algebra, metric-null characteristic set, and causal support are exact, but the nonzero rank-seven square-zero null symbol prevents determinant data from proving polarization propagation. The Pauli--Jordan wavefront theorem and remaining distributional compositions are open; no companion parametrix, global completion, BRST covariance, zero-mode covariance, or positivity is promoted.",
             "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
             "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
             "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
             "The pp-wave branch block uses arbitrary smooth aligned Brinkmann profiles and genuine Einstein/non-Einstein metric representatives, but exact linearity on that sector does not determine nonaligned support-local vertices, the centered Weyl-square deformation classes, or the complete BV q2.",
             "The exact (--+)/(++-) parity pair is a stripped reference fixture, not a conformal-gravity calculation. Berger reduced-mode data are setting-incompatible with this flat scattering rail. The imported compensated defect is linearized preflight, and the available nonzero-M2 projectors act only after TT reduction and are singular in the pure-Weyl limit; no full-BV nonlinear defect map, observable embedding, or scattering-state map exists. G5 remains unpromoted until a setting-matched complete physical q2 passes the defect gate and receives a complete normalization dictionary.",
+            "The generic axial Weyl--Maxwell import establishes a linearized coupled metric--Maxwell operator and direct compact Lee--Wald pairing: the extra block is nonradical with signature (2,0), is orthogonal to the Einstein image, and the complete generic axial block has signature (3,1), with the negative direction in an Einstein-image branch. Without mixed gravity--Maxwell q2/q3 transfer, final residual descent, causal boundary conditions, and a Hadamard/QME construction, this is not an interacting-light, positive-frequency particle, ghost, scattering, or quantum theorem.",
             "D_CHARGED is the canonical classical verdict; EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT is a route label, not a fifth scientific disposition.",
             "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics. The complete support-local q2, retained transfer, causal SDR, and cyclic two-sided-causal iota_D^(2) are now pinned as the lower physical chain; a versioned support-local q3 and explicit L_D^(3) declaration remain absent.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",
@@ -1340,7 +1537,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: BASE HADAMARD PARAMETRIX IMPORTED; Q3/GLOBAL HADAMARD OPEN")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: AXIAL WEYL--MAXWELL AND COMPANION NULL CONE IMPORTED; Q3/PAULI-JORDAN/GLOBAL HADAMARD OPEN")
     return 0
 
 

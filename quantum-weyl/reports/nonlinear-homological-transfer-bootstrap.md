@@ -2,7 +2,7 @@
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`, `LORENTZIAN-CAUSAL`
 
-Result state: `CAUSAL_CHAIN_D_CARTAN_ARITY_TWO_AND_BASE_HADAMARD_PARAMETRIX_IMPORTED_Q3_AND_GLOBAL_HADAMARD_OPEN`
+Result state: `CAUSAL_D_CARTAN_ARITY_TWO_HADAMARD_MOLLER_NULL_CONE_AND_AXIAL_WEYL_MAXWELL_IMPORTED_Q3_PAULI_JORDAN_AND_GLOBAL_HADAMARD_OPEN`
 
 ## Established
 
@@ -96,9 +96,28 @@ and QME restoration remain separate open gates.
 The base tensor/ghost Hadamard parametrix is now certified locally. Its
 theorem-instantiation ledgers are paired with an exact flat-space witness for
 the `(-,+,+,+)`, `E=G_ret-G_adv`, `C^+`, and graded-CCR sign conventions.
-Typed companion/Møller transport is next; global exact completion, BRST
-covariance, zero-frequency covariance, Krein policy, and positivity remain
-open.
+The typed companion Møller source/solution algebra and formal transported
+kernel are now exact. Distributional kernel composition remains open because
+the order-two triangular incidence is outside the smooth-potential theorem and
+the Volterra bounds do not yet give uniform wavefront control. The later
+decomposability preflight now certifies the metric-null characteristic set and
+typed causal support, while retaining a nonzero rank-seven square-zero null
+principal symbol. The named next theorem must construct the Pauli--Jordan
+kernel wavefront decomposition and propagate those polarizations. Global exact
+completion, BRST covariance, zero-frequency covariance, Krein policy, and
+positivity remain open.
+
+The generic axial Weyl--Maxwell classical handoff is now independently
+imported. The exact operator contains the Einstein--Maxwell image plus two
+additional algebraic polarizations; reduced and ungauged local Green identities
+replay off shell, and the extra two-dimensional reduced pairing is nonradical
+with signature `(2,0)` for every physical `ell>=2`. The landed direct compact
+Lee--Wald calculation now matches that reduced current, proves Einstein/extra
+orthogonality, and gives complete generic axial signature `(3,1)`. The
+negative direction lies in an Einstein-image master branch, not in either new
+extra direction. This is still a linearized coupled metric--Maxwell branch,
+not interacting light: mixed gravity--Maxwell `q2/q3`, final residual descent,
+causal boundary conditions, particles, and quantum claims remain open.
 
 ND3 additionally implements the next Cartan recurrence.  It retains the
 direct `[q3,iota_D]` and exchange `[q2,iota_D^(2)]` tensors separately, checks
@@ -129,6 +148,11 @@ topological direction is central or inert, exclude sector re-entry by higher
 brackets, or establish a complete interacting particle/deformation
 interpretation.
 
+The imported axial Weyl--Maxwell extra module is not yet a physical photon or
+ghost sector. Its direct classical Lee--Wald signature cannot be promoted to a
+positive-frequency particle norm without residual and causal selection, and
+no nonlinear mixed vertex has yet been imported.
+
 The centered free statement must be tested through a particle-number
 filtration once interactions are present.  It is not promoted merely by
 reusing the free cohomology basis.  Likewise, no quantum operation is
@@ -143,13 +167,18 @@ transferred before `QME_RESTORED`.
 | HT2 | Compute `ell_3`; dynamical/topological mixing and centrality ledgers | Arity-three Cartan recurrence engine ready; physical `q3` and mixing input blocked |
 | HT3 | Higher arities and particle-filtration spectral sequence | Not computed |
 | HT4 | Cyclic minimal action and formal moduli/deformation interpretation | Not computed |
-| HTH | BRST-compatible distributional Hadamard two-point function | Base tensor/ghost parametrix certified with flat normalization witness; typed companion/Møller transport next |
+| N-M1 | Coupled Maxwell branch and mixed gravity--photon vertices | Linearized axial operator and direct Lee--Wald pairing imported; mixed `q2/q3`, residual descent, and causal selection open |
+| HTH | BRST-compatible distributional Hadamard two-point function | Companion metric-null characteristic cone certified; Pauli--Jordan wavefront theorem next |
 | HTQ | Transfer renormalized corrections | Blocked pending `QME_RESTORED` |
 
 ## Verification receipt
 
 | Command | Elapsed seconds | Status | Tier |
 |---|---:|---|---:|
+| Axial Weyl--Maxwell import, Møller/decomposability preflights, aggregate replay, three independent verifiers, and 25 focused tests | 28.33 | PASS | 2 |
+| Axial Weyl--Maxwell import schema under strict AJV Draft 2020-12 | 1.31 | PASS | 0 |
+| Companion decomposability schema under strict AJV Draft 2020-12 | 1.16 | PASS | 0 |
+| Typed companion Møller schema under strict AJV Draft 2020-12 | 1.47 | PASS | 0 |
 | `python3 quantum-weyl/transfer/local_bach_seed_certificate.py --emit` | 3.77 | PASS | 1 |
 | `python3 quantum-weyl/transfer/local_bach_seed_direct_audit.py --emit --jobs 4` | 665.68 | PASS (8 direct probes) | 2 |
 | `python3 quantum-weyl/transfer/d_derivation_certificate.py --emit` | 3.37 | PASS | 1 |

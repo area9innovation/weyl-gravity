@@ -23,7 +23,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(
             certificate["result_state"],
-            "CAUSAL_CHAIN_D_CARTAN_ARITY_TWO_AND_BASE_HADAMARD_PARAMETRIX_IMPORTED_Q3_AND_GLOBAL_HADAMARD_OPEN",
+            "CAUSAL_D_CARTAN_ARITY_TWO_HADAMARD_MOLLER_NULL_CONE_AND_AXIAL_WEYL_MAXWELL_IMPORTED_Q3_PAULI_JORDAN_AND_GLOBAL_HADAMARD_OPEN",
         )
         self.assertEqual(
             certificate["dependency_tags"],
@@ -73,6 +73,14 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             "SETTING_DEFECT_NORMALIZATION_GATES_READY", amplitude_question["status"]
         )
         self.assertIn("SETTING_MATCHED_PROJECTION_PENDING", amplitude_question["status"])
+        light_question = next(
+            item
+            for item in certificate["question_ledger"]
+            if item["question_id"] == "interacting_light_axial_weyl_maxwell"
+        )
+        self.assertIn("DIRECT_LEE_WALD_COMPLETE", light_question["status"])
+        self.assertIn("TWO_NONRADICAL_EXTRA_DIRECTIONS", light_question["status"])
+        self.assertIn("MIXED_Q2_Q3", light_question["status"])
         d_question = next(
             item
             for item in certificate["question_ledger"]
@@ -166,12 +174,21 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("berger_causal_chain_v2_import_sha256", certificate["provenance"])
         self.assertIn("berger_hadamard_construction_gate_sha256", certificate["provenance"])
         self.assertIn("berger_base_hadamard_parametrix_sha256", certificate["provenance"])
+        self.assertIn("berger_typed_companion_Moller_preflight_sha256", certificate["provenance"])
+        self.assertIn(
+            "berger_companion_decomposability_preflight_sha256",
+            certificate["provenance"],
+        )
+        self.assertIn(
+            "einstein_maxwell_weyl_axial_extra_module_import_sha256",
+            certificate["provenance"],
+        )
         hadamard_stage = next(
             item for item in certificate["programme_stages"] if item["stage"] == "HTH"
         )
         self.assertEqual(
             hadamard_stage["status"],
-            "BASE_WAVE_HADAMARD_PARAMETRIX_CERTIFIED_TYPED_COMPANION_MOLLER_TRANSPORT_NEXT",
+            "COMPANION_NULL_CHARACTERISTIC_CONE_CERTIFIED_PAULI_JORDAN_WAVEFRONT_THEOREM_NEXT",
         )
         self.assertTrue(
             any(
