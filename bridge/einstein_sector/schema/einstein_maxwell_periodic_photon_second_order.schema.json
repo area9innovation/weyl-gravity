@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Einstein-Maxwell periodic photon second-order certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "provenance",
+    "domain",
+    "first_order_mode",
+    "chevreton_second_order",
+    "quadratic_weyl_maxwell_source",
+    "adjoint_cokernel_witness",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-periodic-photon-second-order-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_PERIODIC_PHOTON_SECOND_ORDER"},
+    "result_state": {"const": "PERIODIC_NONZERO_FREQUENCY_PHOTON_FIXED_CHARGE_OBSTRUCTED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "provenance": {"type": "object"},
+    "domain": {"type": "object"},
+    "first_order_mode": {"type": "object"},
+    "chevreton_second_order": {"type": "object"},
+    "quadratic_weyl_maxwell_source": {"type": "object"},
+    "adjoint_cokernel_witness": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "periodic_nonzero_frequency_photon_tangent_certified",
+        "fixed_charge_second_order_extension_exists",
+        "adjoint_cokernel_obstruction_certified",
+        "general_photon_harmonic_no_go_certified",
+        "periodic_helicity_two_result_certified",
+        "general_nonlinear_closure_certified"
+      ]
+    },
+    "interpretation": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}}
+  }
+}

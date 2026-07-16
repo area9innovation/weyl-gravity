@@ -1,0 +1,148 @@
+{
+  "adjoint_cokernel_witness": {
+    "averaged_linear_tt_row": "<L_WM Phi2>_tt=-p because all spatial total derivatives integrate to zero",
+    "averaging_group": "S1 x SO(3)",
+    "conclusion": "NO_SMOOTH_PERIODIC_SECOND_ORDER_CORRECTION_AT_FIXED_ELECTRIC_AND_MAGNETIC_CHARGES",
+    "fixed_charge_condition": "p=0; an averaged electric correction has zero linear stress pairing with the magnetic background",
+    "normalized_source_pairing": "-16/3",
+    "unnormalized_spatial_pairing": "-(64*pi*L)/3"
+  },
+  "chevreton_second_order": {
+    "convention": "C_Ch^(2)=2*H^(2)",
+    "nonzero": true,
+    "normalized_sphere_average_tt": "-8/3",
+    "tensor_matrix": [
+      [
+        "8*(6*sin(t)**4*sin(theta)**2 - 4*sin(t)**4 - 6*sin(t)**2*sin(theta)**2 + 4*sin(t)**2 + sin(theta)**2 - 1)",
+        "0",
+        "-2*(-cos(4*t - 2*theta) + cos(4*t + 2*theta))",
+        "0"
+      ],
+      [
+        "0",
+        "6*(cos(2*t)**2*cos(2*theta) + 3*cos(2*t)**2 - 2*cos(2*t)*cos(2*theta) + cos(2*theta) + cos(2*t - 2*theta) + cos(2*t + 2*theta) - 1)",
+        "0",
+        "0"
+      ],
+      [
+        "-2*(-cos(4*t - 2*theta) + cos(4*t + 2*theta))",
+        "0",
+        "8*(11*sin(t)**4*sin(theta)**2 - 8*sin(t)**4 - 11*sin(t)**2*sin(theta)**2 + 8*sin(t)**2 + 2*sin(theta)**2 - 2)",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "(28*sin(2*t)**2*sin(theta)**4 + 32*sin(theta)**2*cos(t)**2*cos(theta)**2 - 40*sin(theta)**2*cos(2*t)**2*cos(theta)**2 + sin(2*t - 2*theta)**2 - 2*sin(2*t - 2*theta)*sin(2*t + 2*theta) + sin(2*t + 2*theta)**2 + cos(2*t)**2*cos(4*theta) - cos(2*t)**2 + 2*cos(2*t)*cos(4*theta) - 2*cos(2*t) + 2*cos(4*theta) - 2)/2"
+      ]
+    ],
+    "tt_simplified": "8*(sin(theta)^2-1)+(8-12*sin(theta)^2)*sin(2*t)^2"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC and REDUCED-MODE certificate proves a second-order fixed-electric-and-magnetic-charge obstruction for one smooth periodic nonzero-frequency l=1 Einstein--Maxwell photon--metric tangent on R_t x S1 x S2. It does not prove a no-go for every photon or graviton harmonic, general nonlinear failure, causal or asymptotically flat failure, observable non-embedding, scattering inequivalence, or a quantum statement.",
+  "classification": {
+    "adjoint_cokernel_obstruction_certified": true,
+    "fixed_charge_second_order_extension_exists": false,
+    "general_nonlinear_closure_certified": false,
+    "general_photon_harmonic_no_go_certified": false,
+    "periodic_helicity_two_result_certified": false,
+    "periodic_nonzero_frequency_photon_tangent_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": {
+    "charges": "electric and magnetic Maxwell charges fixed through second order",
+    "quotient": "before any final residual SO(4,2) quotient",
+    "smoothness": "cos(theta) is the l=1 scalar harmonic and sin(theta)^2 dphi is the smooth axial Killing one-form",
+    "spacetime": "R_t x S1_L x S2 with the certified unit-radius product metric"
+  },
+  "first_order_mode": {
+    "electric_charge_variation": "integral_S2 cos(theta) dOmega=0",
+    "frequency_squared_matrix": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "linearized_einstein_residual": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "linearized_maxwell_residual": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "magnetic_charge_variation": "f1_theta_phi=0",
+    "maxwell_field": "f1=-2*sin(2*t)*cos(theta)*dt wedge dx+cos(2*t)*sin(theta)*dx wedge dtheta",
+    "metric": "h1=2*cos(2*t)*sin(theta)^2*dx*dphi",
+    "physical_eigenvector": [
+      1,
+      1
+    ],
+    "physical_frequency_squared": 4,
+    "potential": "a1=cos(2*t)*cos(theta)*dx",
+    "reduced_equations": [
+      "H''+2*H+2*q=0",
+      "q''+2*q+2*H=0"
+    ]
+  },
+  "interpretation": "The earlier compact obstruction is not confined to zero modes: a genuine l=1 photon--metric normal mode at omega=2 has a non-removable second-order fixed-charge source. This is an integrability obstruction in the compact charge sector, not a loss of the linear photon state.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "test one periodic helicity-two harmonic, then state the compact fixed-charge theorem for the declared radion, duality, photon, and graviton sectors",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_periodic_photon_second_order.py",
+    "generator_sha256": "801bd2ea66675d8b8db075c3499f28ef83909749efc4f2b3240da681f3fea8d9",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_chevreton_tangent.json": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead",
+      "bridge/certificates/einstein_maxwell_product_incidence.json": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8",
+      "bridge/certificates/einstein_maxwell_second_order_inclusion.json": "493059b1bf77c2a94e68d69fe23593dcb4d8be41e93ff22ae8ee18f674f79c8b"
+    }
+  },
+  "quadratic_weyl_maxwell_source": {
+    "equation": "S2_tt=[epsilon^2](3*B_tt-T_tt)",
+    "full_source_needed_for_no_go": false,
+    "normalized_sphere_average_tt": "-16/3",
+    "reason": "one nonzero pairing with an adjoint-cokernel element already excludes every correction",
+    "tt_projection": "(63*sin(theta)**2/2 - 21)*sin(2*t)**2 - 19*sin(theta)**2/2 + 1"
+  },
+  "result_id": "EINSTEIN_MAXWELL_PERIODIC_PHOTON_SECOND_ORDER",
+  "result_state": "PERIODIC_NONZERO_FREQUENCY_PHOTON_FIXED_CHARGE_OBSTRUCTED",
+  "schema": "einstein-maxwell-periodic-photon-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_periodic_photon_second_order.schema.json",
+  "schema_sha256": "f5e30c483692944a55a73ba9afe45dd4a046573c413948fc3b7a2db191731dd3",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_periodic_photon_second_order --verify bridge/certificates/einstein_maxwell_periodic_photon_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_periodic_photon_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_periodic_photon_second_order"
+  ]
+}
