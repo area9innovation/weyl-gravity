@@ -64,6 +64,11 @@ ROOT = Path(__file__).resolve().parents[2]
 CLOCK_PRINCIPAL_IMPORT = (
     ROOT / "quantum-weyl/lorentzian/certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT.json"
 )
+CURVED_WITNESS_IMPORT = (
+    ROOT
+    / "quantum-weyl/lorentzian/certificates/"
+    "BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT.json"
+)
 
 
 def _sha256(path: Path) -> str:
@@ -281,11 +286,35 @@ def build_contract_receipt() -> dict[str, Any]:
         or principal_import.get("next_gate") != "BERGER_CURVED_CLOCK_REATTACHED_WITNESS"
     ):
         raise ValueError("checked clock principal import identity or boundary drifted")
+    curved_import = json.loads(CURVED_WITNESS_IMPORT.read_text(encoding="utf-8"))
+    curved_checks = curved_import.get("independent_exact_checks", {})
+    expected_curved_checks = {
+        "export_schema_valid",
+        "coordinate_transport_hashes_match",
+        "q34_nilpotent",
+        "pairing34_nondegenerate",
+        "q34_cyclic",
+        "q34_W34_plus_W34_q34_equals_P34",
+        "W34_cyclic",
+    }
+    if (
+        not isinstance(curved_import, dict)
+        or curved_import.get("result_id")
+        != "BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT"
+        or curved_import.get("result_state")
+        != "CURVED_34_ROW_WITNESS_IMPORTED_AND_EXACTLY_REPLAYED_GREEN_OPEN"
+        or curved_import.get("curved_witness_certified") is not True
+        or curved_import.get("green_execution_authorized") is not False
+        or not isinstance(curved_checks, dict)
+        or set(curved_checks) != expected_curved_checks
+        or not all(value is True for value in curved_checks.values())
+    ):
+        raise ValueError("checked curved-witness import identity or boundary drifted")
     return deepcopy(
         {
             "schema": "quantum-weyl-berger-metric-mixed-order-green-contract-v1",
             "result_id": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION_CONTRACT",
-            "result_state": "INTERFACE_READY_CLOCK_PRINCIPAL_IMPORTED_CURVED_OPEN",
+            "result_state": "INTERFACE_READY_CLOCK_CURVED_WITNESS_IMPORTED_GREEN_REALIZATION_OPEN",
             "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
             "setting_id": SETTING_ID,
             "accepted_export_schema": SCHEMA_ID,
@@ -307,17 +336,30 @@ def build_contract_receipt() -> dict[str, Any]:
                     "sha256": _sha256(CLOCK_PRINCIPAL_IMPORT),
                 },
             },
-            "physical_input_status": "CLOCK_REATTACHED_PRINCIPAL_IMPORTED_CURVED_OPEN",
+            "current_curved_boundary": {
+                "status": "IMPORTED_AND_EXACTLY_REPLAYED",
+                "path": "quantum-weyl/lorentzian/certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT.json",
+                "sha256": _sha256(CURVED_WITNESS_IMPORT),
+                "certified_identities": [
+                    "q34^2=0",
+                    "pairing34_nondegenerate",
+                    "q34_cyclic",
+                    "q34_W34+W34_q34=P34",
+                    "W34_cyclic",
+                ],
+            },
+            "physical_input_status": "CLOCK_REATTACHED_PRINCIPAL_AND_CURVED_WITNESS_IMPORTED_GREEN_OPEN",
             "metric_green_status": "NOT_CONSTRUCTED",
             "metric_antifield_green_status": "NOT_CONSTRUCTED",
             "full_26_row_green_status": "NOT_CONSTRUCTED",
             "quantum_execution_authorized": False,
-            "next_gate": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
+            "next_gate": "CONSTRUCT_ADVANCED_RETARDED_GREEN_OPERATORS_FOR_P34_WITH_CAUSAL_SUPPORT_AND_CYCLIC_ADJOINTNESS",
             "claim_boundary": (
                 "Imports the preferred clock-reattached scalar-biwave principal route and "
-                "defines conditional acceptance for direct retained or support-local SDR "
-                "realizations. It constructs no curved lower-order witness, physical Green "
-                "operator, full 26-row homotopy, Hadamard state, QME restoration, or "
+                "the exact cyclic curved 34-row witness, then defines conditional "
+                "acceptance for direct retained or support-local SDR realizations. It "
+                "constructs no advanced or retarded Green operator, causal support "
+                "theorem, full 26-row homotopy, Hadamard state, QME restoration, or "
                 "Lorentzian quantum theory."
             ),
         }

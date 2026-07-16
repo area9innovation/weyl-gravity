@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-curved-witness-import-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags",
+    "setting_id", "coverage", "independent_exact_checks", "exact_primitive",
+    "obstruction_witness", "input_gate_update", "curved_witness_certified",
+    "green_execution_authorized", "quantum_execution_authorized", "next_gate",
+    "provenance", "claim_boundary", "consumer_provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-curved-witness-import-v1"},
+    "result_id": {"const": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT"},
+    "result_state": {"const": "CURVED_34_ROW_WITNESS_IMPORTED_AND_EXACTLY_REPLAYED_GREEN_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "coverage": {
+      "const": {
+        "total_rows": 34,
+        "degree_ranks": [5, 12, 12, 5],
+        "coefficient_domain": "EXACT_RATIONAL_PBW"
+      }
+    },
+    "independent_exact_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "export_schema_valid", "coordinate_transport_hashes_match", "q34_nilpotent",
+        "pairing34_nondegenerate", "q34_cyclic",
+        "q34_W34_plus_W34_q34_equals_P34", "W34_cyclic"
+      ],
+      "properties": {
+        "export_schema_valid": {"const": true},
+        "coordinate_transport_hashes_match": {"const": true},
+        "q34_nilpotent": {"const": true},
+        "pairing34_nondegenerate": {"const": true},
+        "q34_cyclic": {"const": true},
+        "q34_W34_plus_W34_q34_equals_P34": {"const": true},
+        "W34_cyclic": {"const": true}
+      }
+    },
+    "exact_primitive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["W34_sha256", "P34_sha256", "pairing34_sha256"],
+      "properties": {
+        "W34_sha256": {"$ref": "#/$defs/hash"},
+        "P34_sha256": {"$ref": "#/$defs/hash"},
+        "pairing34_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "obstruction_witness": {"type": "null"},
+    "input_gate_update": {
+      "const": {
+        "BERGER_CURVED_CLOCK_REATTACHED_WITNESS": "IMPORTED_AND_EXACTLY_REPLAYED",
+        "BERGER_CAUSAL_GREEN_HOMOTOPY": "NOT_CONSTRUCTED",
+        "BERGER_HADAMARD_DATA": "NOT_CONSTRUCTED"
+      }
+    },
+    "curved_witness_certified": {"const": true},
+    "green_execution_authorized": {"const": false},
+    "quantum_execution_authorized": {"const": false},
+    "next_gate": {"const": "CONSTRUCT_ADVANCED_RETARDED_GREEN_OPERATORS_FOR_P34_WITH_CAUSAL_SUPPORT_AND_CYCLIC_ADJOINTNESS"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["export_commit", "generator_classical_commit", "artifacts"],
+      "properties": {
+        "export_commit": {"$ref": "#/$defs/commit"},
+        "generator_classical_commit": {"$ref": "#/$defs/commit"},
+        "artifacts": {
+          "type": "array",
+          "minItems": 6,
+          "items": {"$ref": "#/$defs/artifact"}
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "consumer_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "commit": {"$ref": "#/$defs/commit"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@
     "FILTERED_MIXED_ORDER",
     "FIRST_ORDER_DIFFERENTIAL_ALGEBRAIC"
   ],
-  "claim_boundary": "Imports the preferred clock-reattached scalar-biwave principal route and defines conditional acceptance for direct retained or support-local SDR realizations. It constructs no curved lower-order witness, physical Green operator, full 26-row homotopy, Hadamard state, QME restoration, or Lorentzian quantum theory.",
+  "claim_boundary": "Imports the preferred clock-reattached scalar-biwave principal route and the exact cyclic curved 34-row witness, then defines conditional acceptance for direct retained or support-local SDR realizations. It constructs no advanced or retarded Green operator, causal support theorem, full 26-row homotopy, Hadamard state, QME restoration, or Lorentzian quantum theory.",
   "common_proof_checks": [
     "D_equivariance",
     "advanced_left_inverse",
@@ -22,6 +22,18 @@
     "row_completeness",
     "zero_mode_policy_applied"
   ],
+  "current_curved_boundary": {
+    "certified_identities": [
+      "q34^2=0",
+      "pairing34_nondegenerate",
+      "q34_cyclic",
+      "q34_W34+W34_q34=P34",
+      "W34_cyclic"
+    ],
+    "path": "quantum-weyl/lorentzian/certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT.json",
+    "sha256": "fc86660f1a7dfef50f8a800dfc32602877194b32f3deb8ebca3a84d132e2dbd9",
+    "status": "IMPORTED_AND_EXACTLY_REPLAYED"
+  },
   "current_principal_boundary": {
     "generic_fourth_order_rank": 8,
     "polynomial_kernel_dimension": 2,
@@ -45,18 +57,19 @@
   "full_26_row_green_status": "NOT_CONSTRUCTED",
   "metric_antifield_green_status": "NOT_CONSTRUCTED",
   "metric_green_status": "NOT_CONSTRUCTED",
-  "next_gate": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
-  "physical_input_status": "CLOCK_REATTACHED_PRINCIPAL_IMPORTED_CURVED_OPEN",
+  "next_gate": "CONSTRUCT_ADVANCED_RETARDED_GREEN_OPERATORS_FOR_P34_WITH_CAUSAL_SUPPORT_AND_CYCLIC_ADJOINTNESS",
+  "physical_input_status": "CLOCK_REATTACHED_PRINCIPAL_AND_CURVED_WITNESS_IMPORTED_GREEN_OPEN",
   "provenance": {
     "source_manifest": {
-      "../reports/berger-metric-mixed-order-green-contract.md": "55919da5a5ecddb35241e29fc4fd8f2261d6bf66e7d797999e93f1f5e88b394e",
-      "metric_mixed_order_green_contract.py": "0bafba00797ff32b92da04ad90b18ee77280cc7fbf5ec26c3fbbb88adecf6b2a",
-      "metric_mixed_order_green_contract_certificate.py": "ccac530f333cce8c4264f1cec939a5829a668656a56fda3ee067f16a5335d8ab",
-      "schema/berger-metric-mixed-order-green-contract-v1.schema.json": "7dd2f7338ec5af69909f2833470a92a1cfb78f620123766e8bf8be4ac4ae0cae",
+      "../reports/berger-metric-mixed-order-green-contract.md": "f451118c5cadd4d625c2972d8325b0677abe55631c0c65ec29b460d08dcb470d",
+      "certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT.json": "fc86660f1a7dfef50f8a800dfc32602877194b32f3deb8ebca3a84d132e2dbd9",
+      "metric_mixed_order_green_contract.py": "57ab914be3abbaf09b4cc63e81fe8fb81cfc94355f3b35df7e9f3a8f11ea57e4",
+      "metric_mixed_order_green_contract_certificate.py": "5be35fbebbac1376c58fa389d5b2d76be2a3e00c194fc816b4de39b0825a7fd6",
+      "schema/berger-metric-mixed-order-green-contract-v1.schema.json": "39000ed2344134db0de9a3b36e613e0aab81fc3040630e6d5f4eafcf84bfcde7",
       "schema/berger-metric-mixed-order-green-export-v1.schema.json": "4aafad99f5ccbc84d19d2bb0d61e6b07c6209535e656857f79f7b8b23c84062a",
-      "tests/test_metric_mixed_order_green_contract.py": "c2f5cab8b98ce8cf4163a6900226eccecca45e3fad04f306ab8b665f4efe7449"
+      "tests/test_metric_mixed_order_green_contract.py": "7c6f1551f2e541ca97d3367e3d8d1d829b8b1bd55b639a664d72a2d18cf52e1c"
     },
-    "source_manifest_sha256": "91f9109fbe79a690c4115bea045fb3f5fcf879989b288a64a7637a8905a3ebc4"
+    "source_manifest_sha256": "eef8ded5a2e77246a521c8a96210939d9855ee11acc41bf584fa9f4de131aa02"
   },
   "quantum_execution_authorized": false,
   "required_operator_ids": [
@@ -70,7 +83,7 @@
     "realization_forward"
   ],
   "result_id": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION_CONTRACT",
-  "result_state": "INTERFACE_READY_CLOCK_PRINCIPAL_IMPORTED_CURVED_OPEN",
+  "result_state": "INTERFACE_READY_CLOCK_CURVED_WITNESS_IMPORTED_GREEN_REALIZATION_OPEN",
   "route_specific_proof_checks": {
     "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR": [
       "clock_reattached_principal_import",

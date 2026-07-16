@@ -6,7 +6,7 @@
   "required": [
     "schema", "result_id", "result_state", "dependency_tags", "setting_id",
     "accepted_export_schema", "accepted_realization_kinds", "required_operator_ids",
-    "downstream_endpoint_factor_record_ids", "common_proof_checks", "route_specific_proof_checks", "current_principal_boundary",
+    "downstream_endpoint_factor_record_ids", "common_proof_checks", "route_specific_proof_checks", "current_principal_boundary", "current_curved_boundary",
     "physical_input_status", "metric_green_status", "metric_antifield_green_status",
     "full_26_row_green_status", "quantum_execution_authorized", "next_gate",
     "claim_boundary", "provenance"
@@ -14,7 +14,7 @@
   "properties": {
     "schema": {"const": "quantum-weyl-berger-metric-mixed-order-green-contract-v1"},
     "result_id": {"const": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION_CONTRACT"},
-    "result_state": {"const": "INTERFACE_READY_CLOCK_PRINCIPAL_IMPORTED_CURVED_OPEN"},
+    "result_state": {"const": "INTERFACE_READY_CLOCK_CURVED_WITNESS_IMPORTED_GREEN_REALIZATION_OPEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
     "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
     "accepted_export_schema": {"const": "quantum-weyl-berger-metric-mixed-order-green-export-v1"},
@@ -46,12 +46,22 @@
         }
       }
     },
-    "physical_input_status": {"const": "CLOCK_REATTACHED_PRINCIPAL_IMPORTED_CURVED_OPEN"},
+    "current_curved_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "path", "sha256", "certified_identities"],
+      "properties": {
+        "status": {"const": "IMPORTED_AND_EXACTLY_REPLAYED"},
+        "path": {"const": "quantum-weyl/lorentzian/certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT.json"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "certified_identities": {"const": ["q34^2=0", "pairing34_nondegenerate", "q34_cyclic", "q34_W34+W34_q34=P34", "W34_cyclic"]}
+      }
+    },
+    "physical_input_status": {"const": "CLOCK_REATTACHED_PRINCIPAL_AND_CURVED_WITNESS_IMPORTED_GREEN_OPEN"},
     "metric_green_status": {"const": "NOT_CONSTRUCTED"},
     "metric_antifield_green_status": {"const": "NOT_CONSTRUCTED"},
     "full_26_row_green_status": {"const": "NOT_CONSTRUCTED"},
     "quantum_execution_authorized": {"const": false},
-    "next_gate": {"const": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS"},
+    "next_gate": {"const": "CONSTRUCT_ADVANCED_RETARDED_GREEN_OPERATORS_FOR_P34_WITH_CAUSAL_SUPPORT_AND_CYCLIC_ADJOINTNESS"},
     "claim_boundary": {"type": "string", "minLength": 1},
     "provenance": {"type": "object"}
   }

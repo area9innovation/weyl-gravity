@@ -1,0 +1,94 @@
+{
+  "claim_boundary": "Pins and independently replays the authoritative 34-row curved BV witness, including the nondegenerate pairing and cyclic q34/W34 identities. The LORENTZIAN-CAUSAL tag records the geometric target, not a causal theorem: no advanced or retarded inverse, support property, Hadamard state, time-ordered product, or Lorentzian QME is constructed.",
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-curved-witness-adapter.md": "0183d9560a5b7e84ce1d007f54ec7622755a49e5542c12743858d8c2e8d81e68",
+      "README.md": "d832beb0509ec5f4e10bbdf9c2c73f5887d16ad4bf12d9be935f6bc875bfdd7e",
+      "curved_witness_adapter.py": "778c37ded774edff7492ff2113ef68f4033327193aba8bcd37666f223eb7bfa5",
+      "curved_witness_import_certificate.py": "27d01a193ba6f63bc5128e0cec129bcb7051bc669a97db074c658453eee59bdf",
+      "schema/berger-curved-witness-export-v1.schema.json": "1c8cabe50fd4ae38967288dfbad1047fdb272315c24bea51d2ca2d5ab55a8572",
+      "schema/berger-curved-witness-import-v1.schema.json": "9ed3bd6cc329052f9a454ee940e73c044ee27837ecb14761814b3f54480e29af",
+      "tests/test_curved_witness_import.py": "7fe47309b8c537c6597a0b17c1524f44f1eee419ef9d306e2838db8d5cc19114"
+    },
+    "source_manifest_sha256": "a3ec933e09f0eaaae703a53fbbed6b25822ee6eca169b05d987e65b56d34a65f"
+  },
+  "coverage": {
+    "coefficient_domain": "EXACT_RATIONAL_PBW",
+    "degree_ranks": [
+      5,
+      12,
+      12,
+      5
+    ],
+    "total_rows": 34
+  },
+  "curved_witness_certified": true,
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_primitive": {
+    "P34_sha256": "a59ac9a4e64ee1d5ae5d7bf6f777e93479f4780a3d58ddd1faae7c7db2b19953",
+    "W34_sha256": "9585c1e9e99efc64f54374a6ea1a95c2975b3ac4832c72e312f5116da4f2a7c3",
+    "pairing34_sha256": "cedcbc90522c7b5b5ca7fa3bd3ed8885d872ec6723bb04364e42e26f9dfe45fd"
+  },
+  "green_execution_authorized": false,
+  "independent_exact_checks": {
+    "W34_cyclic": true,
+    "coordinate_transport_hashes_match": true,
+    "export_schema_valid": true,
+    "pairing34_nondegenerate": true,
+    "q34_W34_plus_W34_q34_equals_P34": true,
+    "q34_cyclic": true,
+    "q34_nilpotent": true
+  },
+  "input_gate_update": {
+    "BERGER_CAUSAL_GREEN_HOMOTOPY": "NOT_CONSTRUCTED",
+    "BERGER_CURVED_CLOCK_REATTACHED_WITNESS": "IMPORTED_AND_EXACTLY_REPLAYED",
+    "BERGER_HADAMARD_DATA": "NOT_CONSTRUCTED"
+  },
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "CONSTRUCT_ADVANCED_RETARDED_GREEN_OPERATORS_FOR_P34_WITH_CAUSAL_SUPPORT_AND_CYCLIC_ADJOINTNESS",
+  "obstruction_witness": null,
+  "provenance": {
+    "artifacts": [
+      {
+        "commit": "96c28b554f1d1eb548edb2b12def0a9ff853473b",
+        "path": "d_quotient_classical/certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS.json",
+        "sha256": "bf30e4677264e58ee252fa6b3c98f5cd0a7d3e0c065365843b70c66deb08c573"
+      },
+      {
+        "commit": "96c28b554f1d1eb548edb2b12def0a9ff853473b",
+        "path": "d_quotient_classical/generated/berger_curved_clock_reattached_witness/W34.json",
+        "sha256": "9585c1e9e99efc64f54374a6ea1a95c2975b3ac4832c72e312f5116da4f2a7c3"
+      },
+      {
+        "commit": "96c28b554f1d1eb548edb2b12def0a9ff853473b",
+        "path": "d_quotient_classical/generated/berger_curved_clock_reattached_witness/P34.json",
+        "sha256": "a59ac9a4e64ee1d5ae5d7bf6f777e93479f4780a3d58ddd1faae7c7db2b19953"
+      },
+      {
+        "commit": "96c28b554f1d1eb548edb2b12def0a9ff853473b",
+        "path": "d_quotient_classical/generated/berger_curved_clock_reattached_witness/pairing34.json",
+        "sha256": "cedcbc90522c7b5b5ca7fa3bd3ed8885d872ec6723bb04364e42e26f9dfe45fd"
+      },
+      {
+        "commit": "96c28b554f1d1eb548edb2b12def0a9ff853473b",
+        "path": "d_quotient_classical/backreacted_clock/berger_curved_witness_export.py",
+        "sha256": "ed14f6727b24fb912fd4ac4bc3ad861e1529a0fc6bd6ae1aebb1bd02c5a392ef"
+      },
+      {
+        "commit": "96c28b554f1d1eb548edb2b12def0a9ff853473b",
+        "path": "d_quotient_classical/reports/berger-curved-clock-reattached-witness.md",
+        "sha256": "6f677fd863a3a84f2b5cd4347d175bb8998c572245f85528d3968c21ede05772"
+      }
+    ],
+    "export_commit": "96c28b554f1d1eb548edb2b12def0a9ff853473b",
+    "generator_classical_commit": "3f940ce7e76a27962dd5479051c79a40ce38a79d"
+  },
+  "quantum_execution_authorized": false,
+  "result_id": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT",
+  "result_state": "CURVED_34_ROW_WITNESS_IMPORTED_AND_EXACTLY_REPLAYED_GREEN_OPEN",
+  "schema": "quantum-weyl-berger-curved-witness-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

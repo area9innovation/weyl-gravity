@@ -131,6 +131,11 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
         )
         self.assertFalse(validate_instance(certificate, schema))
         self.assertFalse(certificate["quantum_execution_authorized"])
+        self.assertEqual(
+            certificate["current_curved_boundary"]["status"],
+            "IMPORTED_AND_EXACTLY_REPLAYED",
+        )
+        self.assertEqual(certificate["metric_green_status"], "NOT_CONSTRUCTED")
         forged = deepcopy(certificate)
         forged["common_proof_checks"][0] = "invented_check"
         self.assertTrue(validate_instance(forged, schema))
@@ -195,6 +200,11 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
             root = Path(directory)
             result = validate_metric_green_export(self._payload(root), repository_root=root)
         self.assertEqual(result["metric_green_status"], "CERTIFIED")
+
+    def test_next_gate_is_green_realization_not_curved_algebra(self) -> None:
+        certificate = build_certificate()
+        self.assertIn("GREEN_OPERATORS_FOR_P34", certificate["next_gate"])
+        self.assertFalse(certificate["quantum_execution_authorized"])
 
     def test_unverified_constraint_proof_fails_closed(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
