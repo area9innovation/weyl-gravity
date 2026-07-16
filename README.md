@@ -109,8 +109,8 @@ clocks, redshift, interactions, and its symbolic reproducibility system
 without assuming advanced mathematics or physics.
 
 Physicist-facing live summary:
-[`Pure-Weyl gravity programme: executive summary for physicists`](notes/physicist-executive-summary.md)
-([PDF](notes/physicist-executive-summary.pdf)) gives the ten-minute claim map,
+[`Pure-Weyl gravity programme: executive summary for physicists`](paper/98-physicist-executive-summary.md)
+([PDF](paper/98-physicist-executive-summary.pdf)) gives the ten-minute claim map,
 audience-specific highlights, strongest limitations, decisive next tests, and
 links to the papers and certificates.
 

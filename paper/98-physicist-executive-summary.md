@@ -5,7 +5,7 @@ Last substantive update: 16 July 2026.
 This is the short, live front door to the programme. It is written for a
 physicist deciding whether the work intersects their own. It summarizes
 results; it does not replace the technical manuscripts, certificate ledgers,
-or the [universe-building roadmap](universe-building-roadmap.md).
+or the [universe-building roadmap](../notes/universe-building-roadmap.md).
 
 ## The sixty-second version
 
@@ -307,15 +307,15 @@ precise obstruction, not to protect a preferred interpretation.
 ## Reading and verification map
 
 - [Series overview and papers](../README.md)
-- [Paper 7: residual cohomology](../paper/07-conformal-residual-cohomology-krein.pdf)
-- [Paper 8: covariant causal transport](../paper/08-conformal-covariant-causal-transport.pdf)
-- [Papers 7--8 computational supplement](../paper/07-08-conformal-residual-cohomology-computational-supplement.pdf)
+- [Paper 7: residual cohomology](07-conformal-residual-cohomology-krein.pdf)
+- [Paper 8: covariant causal transport](08-conformal-covariant-causal-transport.pdf)
+- [Papers 7--8 computational supplement](07-08-conformal-residual-cohomology-computational-supplement.pdf)
 - [Clean publication-release audit](../conformal-publication-release-audit.json)
 - [Live \(D\)-quotient status ledger](../d_quotient_programme/reports/consolidated-status.md)
-- [Generic axial extra-branch and pairing report](einstein-maxwell-weyl-axial-operator-report.md)
+- [Generic axial extra-branch and pairing report](../notes/einstein-maxwell-weyl-axial-operator-report.md)
 - [Berger typed Møller and microlocal-gate report](../quantum-weyl/reports/berger-typed-companion-moller-preflight.md)
-- [Long-term programme and publication gates](universe-building-roadmap.md)
-- [General-audience introduction](../paper/99-how-to-build-a-universe.md)
+- [Long-term programme and publication gates](../notes/universe-building-roadmap.md)
+- [General-audience introduction](99-how-to-build-a-universe.md)
 
 Papers 7--8 are `ARTIFACT_READY`: the manuscripts, supplements, hashes, and
 clean reproduction audit pass. They are not `SUBMISSION_READY` until human

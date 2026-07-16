@@ -368,10 +368,10 @@ This article is the general-audience front door. The specialist continuation
 is maintained separately so that this explanation does not gradually turn
 into a technical paper.
 
-The [physicist executive summary](../notes/physicist-executive-summary.md)
+The [physicist executive summary](98-physicist-executive-summary.md)
 gives the claim-by-claim result spine, audience-specific connections,
 lifecycle labels and direct links to the papers and certificates. A
-[PDF version](../notes/physicist-executive-summary.pdf) is available as a
+[PDF version](98-physicist-executive-summary.pdf) is available as a
 short technical briefing.
 
 The central research question is:
