@@ -31,6 +31,16 @@ PBW algebra.  This closes the curved-witness algebraic gate.  It does not
 construct advanced or retarded inverses of `P34`, causal support, Hadamard
 data, or a Lorentzian quantum theory.
 
+The subsequent coordinate audit found that the first submitted witness mixed
+raw and dressed clock coordinates.  Classical commit `3147774e` repairs the
+package coherently.  The quantum consumer now pins and independently replays
+`F12`, `C12`, `q34_raw`, `W34_raw`, `P34_raw`, and `pairing34_raw`.  The four
+raw principal blocks are exactly `I5,I10,I10,I5`, and the transport is
+BV-canonical.  The exact `10+2` preflight identifies a nonzero rank-one,
+wave-divisible order-six Schur term under naive clock elimination.  This is a
+filtered-extension target, not a Green theorem; all causal and Hadamard flags
+remain false.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -46,4 +56,7 @@ PYTHONPATH=quantum-weyl python3 -m lorentzian.curved_witness_import_certificate 
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_curved_witness_import.py -v
 PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_mixed_order_green_contract_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_mixed_order_green_contract.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.raw_endpoint_import_certificate --check
+PYTHONPATH=quantum-weyl python3 -m lorentzian.raw_endpoint_import_certificate --replay-check
+PYTHONPATH=quantum-weyl python3 -m unittest lorentzian.tests.test_raw_endpoint_import -v
 ```

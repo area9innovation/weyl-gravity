@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-raw-endpoint-import-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags",
+    "setting_id", "coverage", "scientific_replay", "input_gate_update",
+    "principal_compatibility_certified", "filtered_extension_preflight_certified",
+    "green_execution_authorized", "quantum_execution_authorized", "next_gate",
+    "provenance", "consumer_provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-raw-endpoint-import-v1"},
+    "result_id": {"const": "BERGER_RAW_ENDPOINT_INPUT_IMPORT"},
+    "result_state": {"const": "RAW_ENDPOINT_IMPORTED_EXACT_REPLAY_FILTERED_GREEN_EXTENSION_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "coverage": {
+      "const": {
+        "total_rows": 34,
+        "degree_ranks": [5, 12, 12, 5],
+        "coordinate_presentation": "RAW_CLOCK_REATTACHED",
+        "coefficient_domain": "EXACT_Q(alpha_B,u,v)_PBW"
+      }
+    },
+    "scientific_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "independent_exact_checks", "coordinate_hashes", "operator_hashes",
+        "raw_principal_audit", "filtered_endpoint_preflight"
+      ],
+      "properties": {
+        "independent_exact_checks": {
+          "type": "object",
+          "minProperties": 18,
+          "maxProperties": 18,
+          "additionalProperties": {"const": true}
+        },
+        "coordinate_hashes": {"$ref": "#/$defs/named_hashes"},
+        "operator_hashes": {"$ref": "#/$defs/named_hashes"},
+        "raw_principal_audit": {
+          "const": {
+            "comparison_covector": [1, 0, 0, 0],
+            "ghost_block": "I5",
+            "metric_block": "I10",
+            "metric_antifield_block": "I10",
+            "identity_block": "I5",
+            "clock_diagonal_order_four_rank": 0,
+            "metric_to_clock_order_four_rank": 1
+          }
+        },
+        "filtered_endpoint_preflight": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "layout", "differential_orders", "order_six_polynomial_gcd",
+            "rank_fixtures", "interpretation"
+          ],
+          "properties": {
+            "layout": {"const": "raw_metric_10 plus contractible_clock_2"},
+            "differential_orders": {
+              "const": {
+                "A_metric": 4,
+                "B_clock_to_metric": 2,
+                "C_metric_to_clock": 4,
+                "D_clock": 0,
+                "BC_schur_correction": 6
+              }
+            },
+            "order_six_polynomial_gcd": {"type": "string", "minLength": 1},
+            "rank_fixtures": {
+              "const": {"timelike": 1, "spacelike": 1, "null": 0, "generic": 1}
+            },
+            "interpretation": {"const": "rank-one wave-divisible gauge/clock extension"}
+          }
+        }
+      }
+    },
+    "input_gate_update": {
+      "const": {
+        "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT": "IMPORTED_AND_EXACTLY_REPLAYED",
+        "BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT": "IMPORTED_AND_EXACTLY_REPLAYED",
+        "BERGER_RAW_ENDPOINT_FILTERED_GREEN_EXTENSION": "NOT_CONSTRUCTED",
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": "NOT_CONSTRUCTED",
+        "BERGER_HADAMARD_DATA": "NOT_CONSTRUCTED"
+      }
+    },
+    "principal_compatibility_certified": {"const": true},
+    "filtered_extension_preflight_certified": {"const": true},
+    "green_execution_authorized": {"const": false},
+    "quantum_execution_authorized": {"const": false},
+    "next_gate": {"const": "CONSTRUCT_RANK_ONE_WAVE_FILTERED_GREEN_EXTENSION_FOR_RAW_ENDPOINT"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classical_commit", "artifacts"],
+      "properties": {
+        "classical_commit": {"const": "3147774e10fe6b01e4f482783014ddc39f3de0ff"},
+        "artifacts": {
+          "type": "array",
+          "minItems": 18,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/artifact"}
+        }
+      }
+    },
+    "consumer_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_manifest", "source_manifest_sha256", "fast_check_command",
+        "scientific_replay_command"
+      ],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 7,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "fast_check_command": {"type": "string", "minLength": 1},
+        "scientific_replay_command": {"type": "string", "minLength": 1}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "named_hashes": {
+      "type": "object",
+      "minProperties": 2,
+      "additionalProperties": {"$ref": "#/$defs/hash"}
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "commit": {"$ref": "#/$defs/commit"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

@@ -86,10 +86,10 @@ schema/             machine-readable result contracts
 | B | counterterm/anomaly bases and descent database | `AFN0_CANDIDATE_QUOTIENTS_COMPLETE`; the covariant ghost-zero quotient has even/odd dimensions `2/1`, the Weyl-ghost quotient has even/odd dimensions `2/1`, and all carry exact normalized witnesses; minimal-BV antifield completion remains open |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `STRUCTURAL_PREFLIGHT_VERIFIED_PROJECTION_BLOCKED`; conformal-flat order counting and even/odd support are exact, but normalized `pi_cl` projection and adjacent H3/H5 bases remain unavailable |
 | D | reduced and Euclidean coefficient ledgers | `IN_PROGRESS` bookkeeping only; no BV coefficient claimed |
-| E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `INPUT_CONTRACT_READY`; physical certificate `NOT_COMPUTED` |
+| E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `RAW_ENDPOINT_IMPORTED_FILTERED_EXTENSION_OPEN`; the corrected raw 34-row endpoint, cyclic witness identities, BV-canonical coordinate transport, principal identity blocks, and rank-one wave-divisible Schur preflight are independently replayed; no Green inverse or Hadamard certificate exists |
 | F | one-loop Slavnov breaking and QME status | `WARD_INPUT_CONTRACT_READY`; physical breaking and QME `NOT_COMPUTED` |
 | G | residual quantum transfer and pairing correction | `NOT_COMPUTED` |
-| N | nonlinear classical transfer prerequisite | `54_ROW_LOCAL_D_AND_UNARY_COMPLETE_Q2_BLOCKED`; the full gauge-fixed unary contraction and support-local helical `D` action pass exact checks on all 54 rows; an aligned pp-wave block has zero mixed transferred `ell2`; the exact Einstein $(--+)$ MHV reference fixture and fail-closed projection contract are ready; the full four-dimensional support-local `q2`, actual Einstein projection, nonaligned/Weyl-square mixing, and complete 54-row arity-two Cartan verdict remain absent |
+| N | nonlinear classical transfer prerequisite | `RETAINED_26_ROW_CLASSICAL_Q2_TRANSFERRED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_PENDING`; the complete 54-row support-local `q2` is independently replayed and transferred to retained `q2_26` with 54,236 canonical coefficients and zero arity-two/cyclicity defects; this is not the minimal residual `ell2`, and the bare local unary `D`-Cartan homotopy is obstructed, so residual/BFV or causal extension remains required |
 
 The precursor audits
 [`verify_conformal_descent_anomaly.py`](../symbolic/verify_conformal_descent_anomaly.py)
