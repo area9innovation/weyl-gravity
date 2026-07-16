@@ -113,6 +113,18 @@ Hörmander composition and wavefront statements. Accordingly the companion
 Hadamard-parametrix flag remains false and the next gate is microlocal
 composition, not global state selection.
 
+The decomposability preflight now resolves the first half of that microlocal
+gate.  The companion determinant is `q^20`, so its characteristic set is
+exactly the metric null cone, and the typed causal Green operators are
+available.  However, on the null cone the principal symbol is a nonzero
+square-zero block of rank seven at the exact rational fixture.  Thus the
+characteristic-set calculation does not imply propagation of the singular
+polarizations.  In Fewster's terminology, null-cone decomposability remains
+open until the Schwartz kernel of the companion Pauli--Jordan operator is
+shown to obey the future/past null wavefront decomposition.  The named next
+gate is `BERGER_COMPANION_PAULI_JORDAN_WAVEFRONT_THEOREM`; no Hadamard or
+quantum flag is promoted by this preflight.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -145,4 +157,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_b
 PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_typed_companion_moller_preflight_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_typed_companion_moller_preflight
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_typed_companion_moller_preflight.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_companion_decomposability_preflight_certificate --check
+PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_companion_decomposability_preflight
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_companion_decomposability_preflight.py -v
 ```
