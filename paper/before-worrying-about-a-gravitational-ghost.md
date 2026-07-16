@@ -1,6 +1,6 @@
 # Before Worrying About a Gravitational Ghost, Ask Whether It Is Really There
 
-*Updated 16 July 2026 to include the completed causal-cylinder bridge, the
+*Updated 16 July 2026 to include the completed causal closed-universe bridge, the
 clock/charge audit and the first interaction and Einstein-sector tests.*
 
 Einstein changed our picture of gravity completely. Gravity is not an
@@ -115,23 +115,38 @@ What survives both tests is called cohomology. In ordinary language,
 cohomology is the part of the theory that remains after every certified
 redundancy has been removed.
 
-## Why put conformal gravity on a cylinder?
+## Why model the whole universe without an edge?
 
 Our new result concerns free pure-Weyl gravity, a particularly symmetric form
 of four-dimensional conformal gravity.
 
-We study it on a mathematical spacetime called the conformal cylinder: time
-runs along an infinite line, while each spatial slice is a three-dimensional
-sphere.
+We make one deliberately clean choice: instead of cutting out a region of
+space and giving it an artificial outer edge, we model an entire closed
+universe at once.
 
-This is not a claim that the real universe literally has this shape. The
-cylinder is a powerful lens for studying conformal symmetry.
+At each moment, space is a three-dimensional sphere. It is finite but has no
+boundary. The closest everyday analogy is the two-dimensional surface of the
+Earth: it has a finite area, yet a traveler can keep moving without ever
+reaching an edge. A three-dimensional sphere is the same closed idea one
+dimension higher.
 
-Because the spatial sphere is compact, the gravitational field breaks into a
-discrete collection of modes instead of a continuous range of momenta. The
-cylinder also organizes all fifteen conformal transformations—translations,
+Now let that whole spherical universe evolve through time. Stacking all of
+its successive spatial spheres produces the spacetime that mathematicians
+call the conformal cylinder. The word *cylinder* describes this history of a
+closed universe; it does not mean that the universe sits inside a pipe or has
+a cylindrical spatial shape.
+
+This gives us an exact model of a complete universe without spatial boundary
+conditions. Because its space is closed, the gravitational field breaks into
+a discrete collection of modes instead of a continuous range of momenta. The
+same setting also organizes all fifteen conformal transformations—translations,
 rotations, scale transformations and their relatives—into one geometric
 structure.
+
+Whether the observed universe has this global shape is a separate empirical
+question. Here the spherical universe is valuable because it lets us study
+the full constraint system without first adding an exterior region or an
+edge where extra charges can live.
 
 There is then an important physical choice.
 
@@ -141,10 +156,11 @@ spatial boundary, one may treat all fifteen as residual gauge transformations
 and impose their charges as constraints.
 
 Our theorem studies the second choice, but a later charge calculation makes
-the restriction sharper. On the unrestricted compact phase space, cylinder
-time translation carries a charge and is not gauge. The theorem applies on
-the full zero-charge, or Taub, sector and its selected derived quotient. In
-that sector the time-translation generator is a constraint.
+the restriction sharper. On the unrestricted compact phase space, translation
+along the universe's time direction carries a charge and is not gauge. The
+theorem applies on the full zero-charge, or Taub, sector and its selected
+derived quotient. In that sector the time-translation generator is a
+constraint.
 
 If time translation is instead retained as a physical Hamiltonian—for
 example because one introduces a boundary, an external clock or an asymptotic
@@ -157,12 +173,12 @@ translation into a physical symmetry. We tested that directly rather than
 assuming an answer.
 
 Several simple clock constructions fail. A single standard scalar cannot
-provide the required exact cylinder background, and a two-field cancellation
-can make the total charge vanish only by introducing an unhealthy local
-degree of freedom.
+provide the required exact closed-universe background, and a two-field
+cancellation can make the total charge vanish only by introducing an
+unhealthy local degree of freedom.
 
-The first healthy counterexample uses a Berger cylinder: the spatial
-three-sphere is smoothly squashed rather than perfectly round. Two
+The first healthy counterexample uses a Berger version of this universe: the
+spatial three-sphere is smoothly squashed rather than perfectly round. Two
 standard-sign rotating scalar fields support this background and provide a
 monotone internal clock. The matter clock has genuine nonzero internal
 momentum. Nevertheless, at fixed couplings and to linear order, the full
@@ -203,14 +219,14 @@ The resulting state complex is no longer a hand-selected collection of
 curvature modes. It is derived from the metric field theory through an
 explicit, verified chain.
 
-## The causal bridge is now complete on the cylinder
+## The causal bridge is now complete for this closed universe
 
 An algebraic reduction is not enough by itself. A field theory must also say
 how disturbances propagate and whether its gauge constraints remain
 consistent under that propagation.
 
-The second cylinder paper now supplies that bridge for the complete free
-classical theory. After the fields, gauge transformations, equations,
+The second paper now supplies that bridge for the complete free classical
+theory. After the fields, gauge transformations, equations,
 identities, curvatures and auxiliary variables are organized into one large
 complex, we construct retarded and advanced chain homotopies on every row.
 In ordinary language, the full gauge system has consistent past- and
@@ -224,9 +240,9 @@ Green pairing, the covariant current pairing and the residual pairing into
 one another, and it reproduces the same two curvature-square classes with
 the same positive matrix.
 
-This is a causal theorem on the conformal cylinder. It is not yet a theorem
-on arbitrary curved spacetimes, at black-hole horizons or at the boundary of
-an asymptotically flat universe.
+This is a causal theorem for the complete boundary-free spherical universe
+described above. It is not yet a theorem on arbitrary curved spacetimes, at
+black-hole horizons or at the boundary of an asymptotically flat universe.
 
 ## What survives?
 
@@ -292,7 +308,7 @@ we should first ask:
 > reduction, what is the physical object on which a positivity question should
 > be asked?
 
-For the closed-cylinder reduction studied here, the answer is not a
+For the closed-universe reduction studied here, the answer is not a
 one-particle conformal-graviton space. It is a two-dimensional space of
 classical curvature-square deformation classes.
 
@@ -330,15 +346,15 @@ Einstein sector is the complete or stable physical sector.
 ## What has not been proved
 
 The core result is classical and free. It began with finite combinations of
-definite cylinder-energy modes in a specified closed-universe polarization.
-That mode space has now also been completed to allow controlled infinite
-energy-mode sums, without changing the two surviving classes. The reduced
-field equations have a matching fixed-time wave description.
+definite energy modes in a specified closed-universe polarization. That mode
+space has now also been completed to allow controlled infinite energy-mode
+sums, without changing the two surviving classes. The reduced field
+equations have a matching fixed-time wave description.
 
 It does not yet provide:
 
-- an extension of the covariant causal theorem beyond the conformal cylinder
-  to generic globally hyperbolic backgrounds;
+- an extension of the covariant causal theorem beyond this spherical
+  conformal universe to generic globally hyperbolic backgrounds;
 - a general distributional or Hadamard-state construction;
 - a proof that the construction survives nonlinear gravitational evolution;
 - a solution of the quantum master equation;
@@ -355,7 +371,7 @@ quantum theories of gravity.
 
 ## The next question
 
-The free classical chain is now complete in its stated cylinder domain:
+The free classical chain is now complete in its stated closed-universe domain:
 
 > gravitational fields → BV gauge complex → residual BFV constraints →
 > causal propagation and pairing → polarized state complex → two
