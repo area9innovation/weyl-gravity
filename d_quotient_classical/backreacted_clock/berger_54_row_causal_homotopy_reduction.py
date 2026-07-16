@@ -145,7 +145,7 @@ class Berger54RowCausalHomotopyReduction:
                 ],
                 "conditional_endpoint_identity": "q_26 Lambda_26,+/-+Lambda_26,+/- q_26=1_26",
                 "lifted_formula": "Lambda_54,+/-=S+i Lambda_26,+/- p",
-                "lifted_derivation": "q_54 Lambda_54,+/-+Lambda_54,+/- q_54=(1-i p)+i(p i)p=1_54",
+                "lifted_derivation": "q_54 Lambda_54,+/-+Lambda_54,+/- q_54=(1-i p)+i 1_26 p=1_54",
                 "support_argument": "S,i,p are finite-order differential operators; composing them with a retarded/advanced Lambda_26 preserves J^+/- support",
                 "cyclic_argument": "the imported contraction is cyclic; endpoint advanced/retarded adjointness transfers through the cyclic inclusion/projection",
                 "inverse_laplacian_or_curl": False,
