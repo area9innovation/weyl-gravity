@@ -1,0 +1,36 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle P_N with N=2; exceptional polar ell=0,1; every periodic S1 momentum; smooth identity-component gauge; before residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "every nonzero ell=0 Fourier block is pure gauge and carries no local propagating scalar mode",
+    "the generalized homogeneous ell=0 block contains the radion and S1-circumference Jordan pairs plus constant electric charge",
+    "uniform magnetic variation is excluded by the fixed Chern class",
+    "the ell=1 gauge-invariant master Psi=U-K/2 has omega_squared=k_n_squared+4 for every m",
+    "the apparent ell=1 zero branch is exactly the smooth residual diffeomorphism"
+  ],
+  "evidence": {
+    "commit": "29097c01c07c7769b1568a96824d8a02526ad224",
+    "path": "bridge/certificates/einstein_maxwell_polar_exceptional_complex.json",
+    "sha256": "e725a87ea6ab22699a5d25e4ba6ff145e0f2bf7eeefbcd737cfdde0ffc334da3"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "match the complete axial and polar reduced currents, including exceptional global modes, to the covariant Einstein--Maxwell presymplectic form and solve extra fourth-order adjoint classes",
+  "not_established": [
+    "covariant Einstein--Maxwell symplectic normalization or physical norm signs",
+    "the complete fourth-order Weyl--Maxwell adjoint cokernel",
+    "quadratic obstruction coefficients for the full harmonic tower",
+    "a Lorentzian-causal, scattering, or quantum theorem"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_polar_exceptional_complex",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_polar_exceptional_complex",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_POLAR_ALL_ELL_LINEAR_COMPLEX",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_polar_exceptional_complex --verify bridge/certificates/einstein_maxwell_polar_exceptional_complex.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_polar_exceptional_complex.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_polar_exceptional_complex"
+  ]
+}

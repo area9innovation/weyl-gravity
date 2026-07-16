@@ -70,6 +70,8 @@ because the existing results concern different objects:
 - [`reports/einstein-maxwell-polar-master-preflight-registration-receipt.md`](reports/einstein-maxwell-polar-master-preflight-registration-receipt.md)
 - [`contributions/einstein-maxwell-polar-master-complex.json`](contributions/einstein-maxwell-polar-master-complex.json)
 - [`reports/einstein-maxwell-polar-master-registration-receipt.md`](reports/einstein-maxwell-polar-master-registration-receipt.md)
+- [`contributions/einstein-maxwell-polar-exceptional-complex.json`](contributions/einstein-maxwell-polar-exceptional-complex.json)
+- [`reports/einstein-maxwell-polar-exceptional-registration-receipt.md`](reports/einstein-maxwell-polar-exceptional-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)

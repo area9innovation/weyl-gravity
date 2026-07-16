@@ -44,6 +44,7 @@ EINSTEIN_MAXWELL_HARMONIC_ADJOINT_BLOCK_CONTRIBUTION = PACKAGE / "contributions"
 EINSTEIN_MAXWELL_AXIAL_MASTER_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-axial-master-complex.json"
 EINSTEIN_MAXWELL_POLAR_MASTER_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-polar-master-preflight.json"
 EINSTEIN_MAXWELL_POLAR_MASTER_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-polar-master-complex.json"
+EINSTEIN_MAXWELL_POLAR_EXCEPTIONAL_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-polar-exceptional-complex.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -818,6 +819,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "einstein_maxwell_product_compact_polar_master_complex",
         "G2_POLAR_ELL_GE2_ARBITRARY_LAMBDA_TENSOR_IDENTITY",
     )
+    maxwell_polar_exceptional_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_POLAR_EXCEPTIONAL_CONTRIBUTION,
+        "compact_einstein_maxwell_polar_exceptional_complex",
+        "einstein_maxwell_product_compact_polar_exceptional_complex",
+        "G2_POLAR_ALL_ELL_LINEAR_COMPLEX",
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
@@ -963,6 +970,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": maxwell_polar_master_contribution,
             },
             {
+                "path": str(EINSTEIN_MAXWELL_POLAR_EXCEPTIONAL_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_POLAR_EXCEPTIONAL_CONTRIBUTION),
+                "payload": maxwell_polar_exceptional_contribution,
+            },
+            {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
@@ -983,10 +995,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "einstein_boundary",
-                "result_state": "G2_AXIAL_AND_POLAR_ELL_GE2_MASTER_COMPLEXES_CERTIFIED_EXCEPTIONS_SYMPLECTIC_AND_ADJOINT_OPEN",
+                "result_state": "G2_COMPLETE_AXIAL_AND_POLAR_LINEAR_COMPLEXES_CERTIFIED_SYMPLECTIC_AND_ADJOINT_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "The fixed compact U(1) domain and relative Taub descent are certified. Both axial and polar ell>=2 harmonic gauge quotients are reduced to two masters for every S1 momentum and m, with identical exact dispersions. The polar theorem includes an arbitrary-lambda full-tensor identity, complete gauge rank, corrected Maxwell volume density, and a full-rank s=0 audit.",
-                "next_gate": "classify exceptional polar ell=0,1, match axial and polar reduced currents to the covariant symplectic form, and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
+                "established": "The fixed compact U(1) domain and relative Taub descent are certified. The complete standard axial and polar harmonic quotients are classified for all ell, momenta, and m. Polar ell=0 contains only homogeneous radion/circumference/electric-charge data, while ell=1 contains one physical triplet and an exactly gauge zero branch.",
+                "next_gate": "match the complete axial and polar reduced currents, including exceptional global modes, to the covariant symplectic form and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
             },
             {
                 "team_id": "nonlinear",
@@ -1248,6 +1260,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G2_POLAR_ELL_GE2_ARBITRARY_LAMBDA_TENSOR_IDENTITY",
             },
             {
+                "setting_id": "compact_einstein_maxwell_polar_exceptional_complex",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_polar_exceptional_complex",
+                "boundary_conditions": "fixed-P_N compact product; exceptional polar ell=0,1; all periodic S1 momenta; smooth periodic identity-component gauge; before residual quotient",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G2_POLAR_ALL_ELL_LINEAR_COMPLEX",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1403,6 +1424,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_axial_master_complex",
         "compact_einstein_maxwell_polar_master_preflight",
         "compact_einstein_maxwell_polar_master_complex",
+        "compact_einstein_maxwell_polar_exceptional_complex",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1434,6 +1456,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_axial_master_complex": "G1_AXIAL_ALL_MOMENTA_MASTER_COMPLEX",
         "compact_einstein_maxwell_polar_master_preflight": "G1_POLAR_ELL_GE2_MATRIX_PREFLIGHT",
         "compact_einstein_maxwell_polar_master_complex": "G2_POLAR_ELL_GE2_ARBITRARY_LAMBDA_TENSOR_IDENTITY",
+        "compact_einstein_maxwell_polar_exceptional_complex": "G2_POLAR_ALL_ELL_LINEAR_COMPLEX",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -1486,6 +1509,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Einstein--Maxwell polar master preflight was dropped")
     if ledger.get("compact_einstein_maxwell_polar_master_complex", {}).get("status") != "CERTIFIED":
         errors.append("Einstein--Maxwell polar master complex was dropped")
+    if ledger.get("compact_einstein_maxwell_polar_exceptional_complex", {}).get("status") != "CERTIFIED":
+        errors.append("Einstein--Maxwell polar exceptional complex was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -1786,6 +1811,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_polar_master_complex",
             "drop_Einstein_Maxwell_polar_master_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_polar_exceptional_complex",
+            "drop_Einstein_Maxwell_polar_exceptional_contribution",
         ),
     ):
         mutant = deepcopy(data)

@@ -29,7 +29,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "9c9e78d16b3cf2d8c2568f4b26cb446907086366",
+  "programme_base_commit": "29097c01c07c7769b1568a96824d8a02526ad224",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -46,7 +46,7 @@
   },
   "registry_hashes": {
     "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-    "phase_space_registry": "9a51d0463972163a9c80d911ddf6b4de75768a8bc9ded4d0ec09216319a4a098"
+    "phase_space_registry": "338aead3b242d81abf613148832b5b7fb1a3f40261415bf5ef8a2f9e49129e7e"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -294,6 +294,15 @@
       "setting_id": "compact_einstein_maxwell_polar_master_complex",
       "status": "CERTIFIED",
       "verdict": "G2_POLAR_ELL_GE2_ARBITRARY_LAMBDA_TENSOR_IDENTITY"
+    },
+    {
+      "boundary_conditions": "fixed-P_N compact product; exceptional polar ell=0,1; all periodic S1 momenta; smooth periodic identity-component gauge; before residual quotient",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_polar_exceptional_complex",
+      "setting_id": "compact_einstein_maxwell_polar_exceptional_complex",
+      "status": "CERTIFIED",
+      "verdict": "G2_POLAR_ALL_ELL_LINEAR_COMPLEX"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -1448,6 +1457,49 @@
       "sha256": "a443d3498c2b7021f563f87fcc8045fa593bcb368930f5a6768f2e1aa9a0bbc7"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-polar-exceptional-complex.json",
+      "payload": {
+        "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle P_N with N=2; exceptional polar ell=0,1; every periodic S1 momentum; smooth identity-component gauge; before residual quotient",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "every nonzero ell=0 Fourier block is pure gauge and carries no local propagating scalar mode",
+          "the generalized homogeneous ell=0 block contains the radion and S1-circumference Jordan pairs plus constant electric charge",
+          "uniform magnetic variation is excluded by the fixed Chern class",
+          "the ell=1 gauge-invariant master Psi=U-K/2 has omega_squared=k_n_squared+4 for every m",
+          "the apparent ell=1 zero branch is exactly the smooth residual diffeomorphism"
+        ],
+        "evidence": {
+          "commit": "29097c01c07c7769b1568a96824d8a02526ad224",
+          "path": "bridge/certificates/einstein_maxwell_polar_exceptional_complex.json",
+          "sha256": "e725a87ea6ab22699a5d25e4ba6ff145e0f2bf7eeefbcd737cfdde0ffc334da3"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "match the complete axial and polar reduced currents, including exceptional global modes, to the covariant Einstein--Maxwell presymplectic form and solve extra fourth-order adjoint classes",
+        "not_established": [
+          "covariant Einstein--Maxwell symplectic normalization or physical norm signs",
+          "the complete fourth-order Weyl--Maxwell adjoint cokernel",
+          "quadratic obstruction coefficients for the full harmonic tower",
+          "a Lorentzian-causal, scattering, or quantum theorem"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_polar_exceptional_complex",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_polar_exceptional_complex",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_POLAR_ALL_ELL_LINEAR_COMPLEX",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_polar_exceptional_complex --verify bridge/certificates/einstein_maxwell_polar_exceptional_complex.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_polar_exceptional_complex.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_polar_exceptional_complex"
+        ]
+      },
+      "sha256": "dbc1042d5750b5508c7d3fb711350a1d132f11bbf09cf64fe7fe47eee909fc29"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -1577,9 +1629,9 @@
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "The fixed compact U(1) domain and relative Taub descent are certified. Both axial and polar ell>=2 harmonic gauge quotients are reduced to two masters for every S1 momentum and m, with identical exact dispersions. The polar theorem includes an arbitrary-lambda full-tensor identity, complete gauge rank, corrected Maxwell volume density, and a full-rank s=0 audit.",
-      "next_gate": "classify exceptional polar ell=0,1, match axial and polar reduced currents to the covariant symplectic form, and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
-      "result_state": "G2_AXIAL_AND_POLAR_ELL_GE2_MASTER_COMPLEXES_CERTIFIED_EXCEPTIONS_SYMPLECTIC_AND_ADJOINT_OPEN",
+      "established": "The fixed compact U(1) domain and relative Taub descent are certified. The complete standard axial and polar harmonic quotients are classified for all ell, momenta, and m. Polar ell=0 contains only homogeneous radion/circumference/electric-charge data, while ell=1 contains one physical triplet and an exactly gauge zero branch.",
+      "next_gate": "match the complete axial and polar reduced currents, including exceptional global modes, to the covariant symplectic form and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
+      "result_state": "G2_COMPLETE_AXIAL_AND_POLAR_LINEAR_COMPLEXES_CERTIFIED_SYMPLECTIC_AND_ADJOINT_OPEN",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },
