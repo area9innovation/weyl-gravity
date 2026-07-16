@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-typed-companion-moller-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "operator_filtration", "typed_transport", "formal_kernel_candidate", "microlocal_obligations", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-typed-companion-moller-preflight-v1"},
+    "result_id": {"const": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT"},
+    "result_state": {"const": "TYPED_MOLLER_ALGEBRA_CERTIFIED_MICROLOCAL_KERNEL_ACTION_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_MICROLOCAL_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"const": "743183594a7a33dbb869154dafd7eb2c3482bac0"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["base_hadamard_parametrix", "typed_volterra_v2", "companion_graph"],
+      "properties": {
+        "base_hadamard_parametrix": {"$ref": "#/$defs/dependency"},
+        "typed_volterra_v2": {"$ref": "#/$defs/dependency"},
+        "companion_graph": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "operator_filtration": {
+      "const": {
+        "B": "diag(Box_2,Box_2)",
+        "V": "[[0,0],[V_2,0]], differential order two",
+        "C0": "B+V=[[Box_2,0],[V_2,Box_2]]",
+        "N": "[[0,-I10],[0,0]], differential order zero",
+        "C": "C0+N=[[Box_2,-I10],[V_2,Box_2]]"
+      }
+    },
+    "typed_transport": {
+      "type": "object", "additionalProperties": false,
+      "required": ["checks", "triangular_solution_map", "triangular_source_map", "full_solution_map", "full_source_map", "intertwiners", "adjoint_reversal"],
+      "properties": {
+        "checks": {
+          "const": {
+            "V_G_V_zero_by_block_incidence": true,
+            "Tsol_inverse_finite": true,
+            "Tsrc_inverse_finite": true,
+            "C0_Tsol_equals_B": true,
+            "Tsrc_C0_equals_B": true,
+            "Tsol_ret_sharp_equals_Tsrc_sharp_adv": true,
+            "C_Msol_equals_B": true,
+            "Msrc_C_equals_B": true
+          }
+        },
+        "triangular_solution_map": {"const": "T_sol^pm=I-G_diag^pm V"},
+        "triangular_source_map": {"const": "T_src^pm=I-V G_diag^pm"},
+        "full_solution_map": {"const": "M_sol^pm=R_sol^pm T_sol^pm:X_B,s(I)->X_C,s(I)"},
+        "full_source_map": {"const": "M_src^pm=T_src^pm R_src^pm:Y_C,s(I)->Y_B,s(I)"},
+        "intertwiners": {"const": ["C M_sol^pm=B", "M_src^pm C=B"]},
+        "adjoint_reversal": {"const": "(M_sol,C,retarded)^sharp=M_src,Csharp,advanced"}
+      }
+    },
+    "formal_kernel_candidate": {
+      "const": {
+        "formula": "H_C,loc^+=M_sol,C,retarded H_B^+ M_src,Csharp,advanced",
+        "left_defect_reduction": "C_x H_C,loc^+=B_x H_B^+ M_src,Csharp,advanced",
+        "right_defect_reduction": "Csharp_xprime H_C,loc^+=M_sol,C,retarded H_B^+ Bsharp_xprime",
+        "status": "FORMAL_UNTIL_DISTRIBUTIONAL_COMPOSITION_IS_CERTIFIED"
+      }
+    },
+    "microlocal_obligations": {
+      "const": {
+        "Hörmander_kernel_compositions_defined": "OPEN",
+        "Volterra_series_extend_to_the_required_distribution_spaces": "OPEN",
+        "C_plus_wavefront_relation_preserved": "OPEN",
+        "smooth_left_and_right_defects_remain_smooth": "OPEN",
+        "ghost_biwave_factor_transport_included": "OPEN",
+        "A10_graph_pullback_wavefront_safe": "OPEN"
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_TYPED_COMPANION_MOLLER_ALGEBRA": true,
+        "BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT": false,
+        "BERGER_TYPED_COMPANION_HADAMARD_PARAMETRIX": false,
+        "BERGER_TYPED_COMPANION_GLOBAL_HADAMARD": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_HADAMARD_DATA": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["base_result_id", "volterra_result_id", "companion_result_id", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "base_result_id": {"const": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX"},
+        "volterra_result_id": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT"},
+        "companion_result_id": {"const": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT"},
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {"result_id": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}
+    }
+  }
+}

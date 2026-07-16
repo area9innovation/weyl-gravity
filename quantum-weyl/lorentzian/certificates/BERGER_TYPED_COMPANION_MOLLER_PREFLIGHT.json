@@ -1,0 +1,94 @@
+{
+  "claim_boundary": "Proves the finite triangular source/solution maps, their exact intertwiners, the combined Volterra M\u00f8ller intertwiners and the advanced/retarded formal-adjoint reversal. The displayed action on the local Hadamard kernel remains formal until the six distributional and microlocal composition obligations pass. No companion, 26-row or 54-row Hadamard parametrix, global state, QME or quantum claim is made.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT": false,
+    "BERGER_TYPED_COMPANION_GLOBAL_HADAMARD": false,
+    "BERGER_TYPED_COMPANION_HADAMARD_PARAMETRIX": false,
+    "BERGER_TYPED_COMPANION_MOLLER_ALGEBRA": true,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "dependency_refs": {
+    "base_hadamard_parametrix": {
+      "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "597457fffd3244acfc5cc1aec55e13430a2c7453bce397a5ad7f46f0c8de94da"
+    },
+    "companion_graph": {
+      "result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+      "sha256": "b32360a37bd020e357e95821ace94273b9c25a127b8379e7e436e15c6e521e47"
+    },
+    "typed_volterra_v2": {
+      "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT",
+      "sha256": "f943ba218772f003c0c0ed87d699a87418f94dc9f978fb08e1cc0e63519ddbaa"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "formal_kernel_candidate": {
+    "formula": "H_C,loc^+=M_sol,C,retarded H_B^+ M_src,Csharp,advanced",
+    "left_defect_reduction": "C_x H_C,loc^+=B_x H_B^+ M_src,Csharp,advanced",
+    "right_defect_reduction": "Csharp_xprime H_C,loc^+=M_sol,C,retarded H_B^+ Bsharp_xprime",
+    "status": "FORMAL_UNTIL_DISTRIBUTIONAL_COMPOSITION_IS_CERTIFIED"
+  },
+  "lifecycle_layer": "LORENTZIAN_MICROLOCAL_PREFLIGHT",
+  "microlocal_obligations": {
+    "A10_graph_pullback_wavefront_safe": "OPEN",
+    "C_plus_wavefront_relation_preserved": "OPEN",
+    "H\u00f6rmander_kernel_compositions_defined": "OPEN",
+    "Volterra_series_extend_to_the_required_distribution_spaces": "OPEN",
+    "ghost_biwave_factor_transport_included": "OPEN",
+    "smooth_left_and_right_defects_remain_smooth": "OPEN"
+  },
+  "next_gate": "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION",
+  "operator_filtration": {
+    "B": "diag(Box_2,Box_2)",
+    "C": "C0+N=[[Box_2,-I10],[V_2,Box_2]]",
+    "C0": "B+V=[[Box_2,0],[V_2,Box_2]]",
+    "N": "[[0,-I10],[0,0]], differential order zero",
+    "V": "[[0,0],[V_2,0]], differential order two"
+  },
+  "provenance": {
+    "base_result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+    "companion_result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+    "source_manifest": {
+      "../reports/berger-typed-companion-moller-preflight.md": "be209cdb3cb0e6ff3024f224e15e807888c23f46b5b4251c3267e12232e09fda",
+      "berger_typed_companion_moller_preflight.py": "974e1e9880a2f145159c9928356e5b6273a141477f3bc1eec167f97b33d8b95a",
+      "berger_typed_companion_moller_preflight_certificate.py": "8afe51f19883985c1ad46bc6a0404ae7a71cf55575f88b02dee0b126a5189714",
+      "schema/berger-typed-companion-moller-preflight-v1.schema.json": "d37a57bdff834484124d6c8e046a6af185b68f2154665d7d3205936fdfd01b7d",
+      "tests/test_berger_typed_companion_moller_preflight.py": "632773eca3fce05ac7a8e9a576decdb7a7422c6b7faee2abebbc59963401ca9c",
+      "verify_berger_typed_companion_moller_preflight.py": "f361bc50b4daed9b3cfe34ed9c93df9bf143a25b4251f1ca74d9f48da2caf6f3"
+    },
+    "source_manifest_sha256": "2763dfcebd3dea2753b2ef11bbbe1e5a086a3edf63602aa293cc67b64aea1d54",
+    "volterra_result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT"
+  },
+  "result_id": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT",
+  "result_state": "TYPED_MOLLER_ALGEBRA_CERTIFIED_MICROLOCAL_KERNEL_ACTION_OPEN",
+  "schema": "quantum-weyl-berger-typed-companion-moller-preflight-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "typed_transport": {
+    "adjoint_reversal": "(M_sol,C,retarded)^sharp=M_src,Csharp,advanced",
+    "checks": {
+      "C0_Tsol_equals_B": true,
+      "C_Msol_equals_B": true,
+      "Msrc_C_equals_B": true,
+      "Tsol_inverse_finite": true,
+      "Tsol_ret_sharp_equals_Tsrc_sharp_adv": true,
+      "Tsrc_C0_equals_B": true,
+      "Tsrc_inverse_finite": true,
+      "V_G_V_zero_by_block_incidence": true
+    },
+    "full_solution_map": "M_sol^pm=R_sol^pm T_sol^pm:X_B,s(I)->X_C,s(I)",
+    "full_source_map": "M_src^pm=T_src^pm R_src^pm:Y_C,s(I)->Y_B,s(I)",
+    "intertwiners": [
+      "C M_sol^pm=B",
+      "M_src^pm C=B"
+    ],
+    "triangular_solution_map": "T_sol^pm=I-G_diag^pm V",
+    "triangular_source_map": "T_src^pm=I-V G_diag^pm"
+  }
+}
