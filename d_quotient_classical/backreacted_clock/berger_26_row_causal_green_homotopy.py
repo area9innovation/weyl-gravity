@@ -21,7 +21,7 @@ CAUSAL_REDUCTION = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSA
 CERTIFICATE_PATH = ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json"
 PROOF_PATH = ROOT / "d_quotient_classical/generated/berger_26_row_causal_green_homotopy_v2/causal_proof.json"
 REPORT_PATH = ROOT / "d_quotient_classical/reports/berger-26-row-causal-green-homotopy-v2.md"
-CLASSICAL_INPUT_COMMIT = "c2f4bf65556ff2592f5e6c2610a4f54272b3b130"
+CLASSICAL_INPUT_COMMIT = "eb56d5aff7d622de423d4994051b0e048c4fb4bf"
 
 
 def _sha256(path: Path) -> str:
