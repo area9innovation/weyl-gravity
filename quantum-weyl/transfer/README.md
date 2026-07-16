@@ -192,6 +192,41 @@ python3 quantum-weyl/transfer/berger_54_row_q2_replay_certificate.py --check
 python3 -m unittest quantum-weyl/transfer/tests/test_berger_54_row_q2_replay.py
 ```
 
+The scientific support-local q2 has now landed and is pinned independently at
+classical commit `7b352307`. Its specialized `Q(sqrt(10))` payload contains
+150,305 exact PBW terms across 39 nonzero output rows, with maximum total jet
+order six. The quantum importer reproduces both hashes, binds the unary and
+`D` dependencies, checks all 54 rows, degree, PBW ordering, statistics, and
+graded Koszul symmetry, and records the exact specialization from the older
+symbolic Berger ring. That import gate is now followed by the independent
+scientific replay below.
+
+That scientific replay is now complete. A dedicated exact `Q(sqrt(10))`
+backend evaluates all 150,305 landed coefficients without generic symbolic
+simplification. The `q1/q2`, `D/q2`, and odd-Darboux BV-cyclicity defects all
+vanish. This authorizes transfer of the classical `ell2` and the full
+four-dimensional Cartan programme; it does not itself compute either result
+or promote a quantum claim. The classical gate requires the unary equation
+`q1 iota_D^(1)+iota_D^(1) q1=D` to be solved before forming the arity-two
+source.
+
+```bash
+PYTHONPATH=quantum-weyl python3 -m transfer.berger_support_local_q2_replay_certificate --check
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_support_local_q2_scientific_replay.py -v
+```
+
+The two commands above validate the checked receipt and run fast mutation
+fixtures. Recompute the entire 150,305-term exact replay explicitly with
+
+```bash
+PYTHONPATH=quantum-weyl python3 -m transfer.berger_support_local_q2_replay_certificate --replay-check
+```
+
+```bash
+python3 quantum-weyl/transfer/berger_support_local_q2_import_certificate.py --check
+python3 -m unittest quantum-weyl/transfer/tests/test_berger_support_local_q2_import.py
+```
+
 A separate pinned consumer now imports the first action-derived nonlinear
 Berger block without crossing that boundary.  The six stationary homogeneous
 rows use the rational coordinate \(c=c_0(1+u)\) and normalized action density

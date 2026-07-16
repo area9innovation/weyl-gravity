@@ -23,7 +23,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(
             certificate["result_state"],
-            "ENGINE_READY_HT1_SELECTED_PPWAVE_AND_54_ROW_D_IMPORTED_Q2_BLOCKED",
+            "COMPLETE_54_ROW_CLASSICAL_Q2_IMPORTED_AND_REPLAYED_TRANSFER_AND_D_CARTAN_PENDING",
         )
         self.assertEqual(
             certificate["dependency_tags"],
@@ -68,7 +68,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn(
             "SETTING_DEFECT_NORMALIZATION_GATES_READY", amplitude_question["status"]
         )
-        self.assertIn("PROJECTION_AND_Q2_INPUT_BLOCKED", amplitude_question["status"])
+        self.assertIn("SETTING_MATCHED_PROJECTION_PENDING", amplitude_question["status"])
         d_question = next(
             item
             for item in certificate["question_ledger"]
@@ -78,9 +78,9 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("EXACT_NONZERO_PRIMITIVE", d_question["status"])
         self.assertIn("FINITE_TRUNCATIONS_OBSTRUCTED", d_question["status"])
         self.assertIn("54_ROW_LOCAL_D_IMPORTED", d_question["status"])
-        self.assertIn("Q2_ARRIVAL_ADAPTER_READY", d_question["status"])
-        self.assertIn("EXACT_REPLAY_ENGINE_READY", d_question["status"])
-        self.assertIn("FULL_4D_SUPPORT_LOCAL_Q2_BLOCKED", d_question["status"])
+        self.assertIn("SUPPORT_LOCAL_Q2_IMPORTED", d_question["status"])
+        self.assertIn("ALL_IDENTITIES_REPLAYED", d_question["status"])
+        self.assertIn("UNARY_D_CARTAN_AND_TRANSFER_PENDING", d_question["status"])
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
         certificate = CERTIFICATE.build_certificate()
@@ -118,6 +118,14 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn(
             "berger_54_row_q2_replay_engine_sha256",
+            certificate["provenance"],
+        )
+        self.assertIn(
+            "berger_support_local_q2_import_sha256",
+            certificate["provenance"],
+        )
+        self.assertIn(
+            "berger_support_local_q2_scientific_replay_sha256",
             certificate["provenance"],
         )
         self.assertIn(
@@ -161,7 +169,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             for item in CERTIFICATE.build_certificate()["input_blockers"]
         }
         self.assertNotIn("local_classical_bv_differential_q0", blocked)
-        self.assertIn("support_local_classical_bv_q2", blocked)
+        self.assertNotIn("support_local_classical_bv_q2", blocked)
         self.assertNotIn("local_D_action_on_bv_generators", blocked)
         self.assertNotIn("classical_projection_pi_cl", blocked)
         self.assertNotIn("classical_inclusion_iota_cl", blocked)

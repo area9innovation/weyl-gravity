@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-support-local-q2-scientific-replay-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags",
+    "setting_id", "import_certificate", "replay", "claim_flags", "next_gate",
+    "claim_boundary", "consumer_provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-support-local-q2-scientific-replay-v1"},
+    "result_id": {"const": "BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY"},
+    "result_state": {"const": "COMPLETE_SUPPORT_LOCAL_Q2_IMPORTED_IDENTITIES_INDEPENDENTLY_REPLAYED_TRANSFER_PENDING"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_IMPORT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "import_certificate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"const": "quantum-weyl/transfer/certificates/BERGER_SUPPORT_LOCAL_Q2_IMPORT.json"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "replay": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "backend", "arithmetic", "cyclicity_convention", "input",
+        "operator_counts", "results", "all_identities_pass"
+      ],
+      "properties": {
+        "backend": {"const": "two-rational-component-Q(sqrt(10))-v1"},
+        "arithmetic": {"type": "string", "minLength": 1},
+        "cyclicity_convention": {
+          "type": "object", "additionalProperties": false,
+          "required": ["pairing", "identity", "integration_by_parts"],
+          "properties": {
+            "pairing": {"const": "imported odd Darboux matrix with primal/dual polarization"},
+            "identity": {"const": "T(a,b,c)=(-1)^(dual(b)+parity(a)*parity(b))*T(c,a,b)"},
+            "integration_by_parts": {"type": "string", "minLength": 1}
+          }
+        },
+        "input": {
+          "type": "object", "additionalProperties": false,
+          "required": ["classical_commit", "q2_sha256", "q2_term_count", "maximum_total_jet_order", "specialization"],
+          "properties": {
+            "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+            "q2_sha256": {"$ref": "#/$defs/hash"},
+            "q2_term_count": {"const": 150305},
+            "maximum_total_jet_order": {"const": 6},
+            "specialization": {"const": {"alpha_B": "5", "u": "3*sqrt(10)/20", "v": "2*sqrt(10)/3"}}
+          }
+        },
+        "operator_counts": {
+          "const": {
+            "q1_PBW_coefficients": 1807,
+            "D_PBW_coefficients": 54,
+            "q2_PBW_coefficients": 150305,
+            "pairing_PBW_coefficients": 54
+          }
+        },
+        "results": {
+          "type": "object", "additionalProperties": false,
+          "required": ["q1_q2_arity_two_nilpotency", "D_q2_derivation", "BV_cyclicity_q2"],
+          "properties": {
+            "q1_q2_arity_two_nilpotency": {"$ref": "#/$defs/zeroDefect"},
+            "D_q2_derivation": {"$ref": "#/$defs/zeroDefect"},
+            "BV_cyclicity_q2": {"$ref": "#/$defs/zeroDefect"}
+          }
+        },
+        "all_identities_pass": {"const": true}
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED": true,
+        "SCIENTIFIC_ARITY_TWO_IDENTITIES_INDEPENDENTLY_REPLAYED": true,
+        "TRANSFERRED_ELL2_COMPUTED": false,
+        "INTERACTING_CARTAN_VERDICT": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "TRANSFER_ELL2_AND_SOLVE_FULL_4D_UNARY_D_CARTAN_EXISTENCE"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "consumer_provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {
+          "type": "object", "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "zeroDefect": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "nonzero_coefficient_count", "defect_sha256", "localized_sample", "sample_truncated"],
+      "properties": {
+        "status": {"const": "PASS"},
+        "nonzero_coefficient_count": {"const": 0},
+        "defect_sha256": {"const": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"},
+        "localized_sample": {"const": []},
+        "sample_truncated": {"const": false}
+      }
+    }
+  }
+}

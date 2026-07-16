@@ -112,7 +112,12 @@ def _add(
         target[key] = total
 
 
-def _parse_matrix(matrix: Mapping[str, Any], *, name: str) -> dict[LinearKey, sp.Expr]:
+def _parse_matrix(
+    matrix: Mapping[str, Any],
+    *,
+    name: str,
+    coefficient_substitution: Mapping[sp.Symbol, sp.Expr] | None = None,
+) -> dict[LinearKey, sp.Expr]:
     if matrix.get("shape") != [54, 54] or not isinstance(matrix.get("entries"), list):
         raise ValueError(f"{name} matrix shape drifted")
     output: dict[LinearKey, sp.Expr] = {}
@@ -134,8 +139,22 @@ def _parse_matrix(matrix: Mapping[str, Any], *, name: str) -> dict[LinearKey, sp
             raw_exponents, raw_coefficient = term
             word = _word(raw_exponents)
             coefficient = arrival.parse_coefficient(raw_coefficient)
+            if coefficient_substitution:
+                coefficient = _simp(coefficient.subs(coefficient_substitution))
             for reduced, pbw_coefficient in pbw_word(word):
                 _add(output, (target, source, reduced), coefficient * pbw_coefficient)
+    return output
+
+
+def _specialize_map(
+    values: Mapping[tuple[Any, ...], sp.Expr],
+    substitution: Mapping[sp.Symbol, sp.Expr] | None,
+) -> dict[tuple[Any, ...], sp.Expr]:
+    if not substitution:
+        return dict(values)
+    output: dict[tuple[Any, ...], sp.Expr] = {}
+    for key, coefficient in values.items():
+        _add(output, key, coefficient.subs(substitution))
     return output
 
 
@@ -189,16 +208,20 @@ def _leibniz(
 
 
 def _normalize_bilinear(
-    raw: Mapping[BilinearKey, sp.Expr]
+    raw: Mapping[BilinearKey, sp.Expr],
+    coefficient_substitution: Mapping[sp.Symbol, sp.Expr] | None = None,
 ) -> dict[BilinearKey, sp.Expr]:
     output: dict[BilinearKey, sp.Expr] = {}
     for (target, left, right, left_word, right_word), coefficient in raw.items():
         for left_reduced, left_pbw in pbw_word(left_word):
             for right_reduced, right_pbw in pbw_word(right_word):
+                value = coefficient * left_pbw * right_pbw
+                if coefficient_substitution:
+                    value = value.subs(coefficient_substitution)
                 _add(
                     output,
                     (target, left, right, left_reduced, right_reduced),
-                    coefficient * left_pbw * right_pbw,
+                    value,
                 )
     return output
 
@@ -207,6 +230,7 @@ def arity_two_defect(
     q1: Mapping[LinearKey, sp.Expr],
     q2: Mapping[BilinearKey, sp.Expr],
     degrees: tuple[int, ...],
+    coefficient_substitution: Mapping[sp.Symbol, sp.Expr] | None = None,
 ) -> dict[BilinearKey, sp.Expr]:
     """Compute the exact arity-two coefficient of ``Q^2``."""
 
@@ -247,12 +271,13 @@ def arity_two_defect(
                 (target, left, source, left_word, outer_right + inner_word),
                 sign * q2_coefficient * q1_coefficient,
             )
-    return _normalize_bilinear(raw)
+    return _normalize_bilinear(raw, coefficient_substitution)
 
 
 def derivation_defect(
     d_action: Mapping[LinearKey, sp.Expr],
     q2: Mapping[BilinearKey, sp.Expr],
+    coefficient_substitution: Mapping[sp.Symbol, sp.Expr] | None = None,
 ) -> dict[BilinearKey, sp.Expr]:
     """Compute ``D q2 - q2(D,-) - q2(-,D)`` exactly."""
 
@@ -288,7 +313,7 @@ def derivation_defect(
                 (target, left, source, left_word, outer_right + inner_word),
                 -q2_coefficient * d_coefficient,
             )
-    return _normalize_bilinear(raw)
+    return _normalize_bilinear(raw, coefficient_substitution)
 
 
 def _pairing_terms(pairing: Mapping[str, Any]) -> dict[tuple[int, int], sp.Expr]:
@@ -318,7 +343,8 @@ def _integrate_third_slot(
 
 
 def _normalize_trilinear(
-    raw: Iterable[tuple[int, int, int, Word, Word, Word, sp.Expr]]
+    raw: Iterable[tuple[int, int, int, Word, Word, Word, sp.Expr]],
+    coefficient_substitution: Mapping[sp.Symbol, sp.Expr] | None = None,
 ) -> dict[TrilinearKey, sp.Expr]:
     output: dict[TrilinearKey, sp.Expr] = {}
     for first, second, third, first_word, second_word, third_word, coefficient in raw:
@@ -327,10 +353,13 @@ def _normalize_trilinear(
         ).items():
             for first_reduced, first_pbw in pbw_word(new_first):
                 for second_reduced, second_pbw in pbw_word(new_second):
+                    value = coefficient * ibp_coefficient * first_pbw * second_pbw
+                    if coefficient_substitution:
+                        value = value.subs(coefficient_substitution)
                     _add(
                         output,
                         (first, second, third, first_reduced, second_reduced),
-                        coefficient * ibp_coefficient * first_pbw * second_pbw,
+                        value,
                     )
     return output
 
@@ -339,29 +368,48 @@ def cyclicity_defect(
     q2: Mapping[BilinearKey, sp.Expr],
     pairing: Mapping[str, Any],
     degrees: tuple[int, ...],
+    coefficient_substitution: Mapping[sp.Symbol, sp.Expr] | None = None,
 ) -> dict[TrilinearKey, sp.Expr]:
     """Check graded cyclicity of ``<q2(x,y),z>`` modulo total derivatives."""
 
     pair = _pairing_terms(pairing)
+    pair_by_left: dict[int, list[tuple[int, sp.Expr]]] = defaultdict(list)
+    for (left, right), coefficient in pair.items():
+        pair_by_left[left].append((right, coefficient))
+    if (
+        len(pair_by_left) != 54
+        or any(len(values) != 1 for values in pair_by_left.values())
+        or any(
+            coefficient not in {sp.S.One, -sp.S.One}
+            or pair.get((right, left)) != -coefficient
+            for left, ((right, coefficient),) in pair_by_left.items()
+        )
+    ):
+        raise ValueError("cyclic pairing is not the declared odd Darboux pairing")
+    dual_slot = {
+        index: values[0][1] == -sp.S.One
+        for index, values in pair_by_left.items()
+    }
     raw: list[tuple[int, int, int, Word, Word, Word, sp.Expr]] = []
     rotated: list[tuple[int, int, int, Word, Word, Word, sp.Expr]] = []
     for (output, first, second, first_word, second_word), q2_coefficient in q2.items():
-        for (paired_output, third), pair_coefficient in pair.items():
-            if paired_output != output:
-                continue
+        for third, pair_coefficient in pair_by_left.get(output, []):
             coefficient = q2_coefficient * pair_coefficient
             raw.append((first, second, third, first_word, second_word, (), coefficient))
-            sign = -1 if (degrees[third] * (degrees[first] + degrees[second])) & 1 else 1
-            # T(A,B,C)=(-1)^(|A|(|B|+|C|)) T(B,C,A), rewritten
-            # in the original term's variables as (A,B,C)=(third,first,second).
             rotated.append(
-                (third, first, second, (), first_word, second_word, sign * coefficient)
+                (third, first, second, (), first_word, second_word, coefficient)
             )
-    lhs = _normalize_trilinear(raw)
-    rhs = _normalize_trilinear(rotated)
-    defect = dict(lhs)
-    for key, coefficient in rhs.items():
-        _add(defect, key, -coefficient)
+    lhs = _normalize_trilinear(raw, coefficient_substitution)
+    unsigned_rhs = _normalize_trilinear(rotated, coefficient_substitution)
+    defect: dict[TrilinearKey, sp.Expr] = {}
+    for key in set(lhs) | set(unsigned_rhs):
+        first, second, _third, _first_word, _second_word = key
+        coefficient = unsigned_rhs.get(key, sp.S.Zero)
+        if dual_slot[second] ^ bool(
+            (degrees[first] & 1) * (degrees[second] & 1)
+        ):
+            coefficient = -coefficient
+        _add(defect, key, lhs.get(key, sp.S.Zero) - coefficient)
     return defect
 
 
@@ -421,6 +469,7 @@ def replay_parsed_q2(
     q1_matrix: Mapping[str, Any] | None = None,
     d_matrix: Mapping[str, Any] | None = None,
     pairing_matrix: Mapping[str, Any] | None = None,
+    coefficient_substitution: Mapping[sp.Symbol, sp.Expr] | None = None,
 ) -> dict[str, Any]:
     """Replay all exact identities and return localized defect certificates."""
 
@@ -428,12 +477,27 @@ def replay_parsed_q2(
     q1_raw = q1_matrix or committed_q1
     d_raw = d_matrix or committed_d
     pairing_raw = pairing_matrix or committed_pairing
-    q1 = _parse_matrix(q1_raw, name="q1")
-    d_action = _parse_matrix(d_raw, name="D")
+    q1 = _parse_matrix(
+        q1_raw, name="q1", coefficient_substitution=coefficient_substitution
+    )
+    d_action = _parse_matrix(
+        d_raw, name="D", coefficient_substitution=coefficient_substitution
+    )
     q2 = _parse_q2(parsed)
-    q1_q2 = arity_two_defect(q1, q2, parsed.degrees)
-    d_q2 = derivation_defect(d_action, q2)
-    cyclic = cyclicity_defect(q2, pairing_raw, parsed.degrees)
+    q1_q2 = _specialize_map(
+        arity_two_defect(q1, q2, parsed.degrees, coefficient_substitution),
+        coefficient_substitution,
+    )
+    d_q2 = _specialize_map(
+        derivation_defect(d_action, q2, coefficient_substitution),
+        coefficient_substitution,
+    )
+    cyclic = _specialize_map(
+        cyclicity_defect(
+            q2, pairing_raw, parsed.degrees, coefficient_substitution
+        ),
+        coefficient_substitution,
+    )
     results = {
         "q1_q2_arity_two_nilpotency": _defect_summary(q1_q2, kind="q1_q2"),
         "D_q2_derivation": _defect_summary(d_q2, kind="D_q2"),
@@ -445,13 +509,23 @@ def replay_parsed_q2(
         "identity_conventions": {
             "arity_two": "q1*q2 + q2(q1,-) + (-1)^degree(left)*q2(-,q1)",
             "D_derivation": "D*q2 - q2(D,-) - q2(-,D)",
-            "cyclicity": "T(a,b,c)=(-1)^(degree(a)*(degree(b)+degree(c)))*T(b,c,a), T=<q2(a,b),c>",
+            "cyclicity": "T(a,b,c)=(-1)^(dual(b)+parity(a)*parity(b))*T(c,a,b) for the imported odd Darboux polarization",
             "integration_by_parts": "all derivatives on the third pairing slot are formally adjointed onto the first two slots",
         },
         "input": {
             "q2_sha256": parsed.q2_sha256,
             "q2_term_count": parsed.term_count,
             "maximum_total_jet_order": parsed.maximum_total_jet_order,
+            "coefficient_specialization": (
+                {
+                    str(symbol): _coefficient_text(value)
+                    for symbol, value in sorted(
+                        (coefficient_substitution or {}).items(), key=lambda item: str(item[0])
+                    )
+                }
+                if coefficient_substitution
+                else None
+            ),
         },
         "operator_counts": {
             "q1_PBW_coefficients": len(q1),

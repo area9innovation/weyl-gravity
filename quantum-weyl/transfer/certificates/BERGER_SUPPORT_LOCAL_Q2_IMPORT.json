@@ -1,0 +1,118 @@
+{
+  "claim_boundary": "This pinned LOCAL-ALGEBRAIC consumer independently validates and imports the complete 150305-term support-local classical q2 payload over Q(sqrt(10)), including its exact row, grading, PBW, hash, and Koszul structure. The producer's arity-two proof ledger is retained as provenance but the quantum consumer has not yet independently replayed q1/q2, D/q2, or BV cyclicity; no transfer, Cartan, causal, anomaly, QME, or quantum claim is authorized.",
+  "claim_flags": {
+    "CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED": true,
+    "INTERACTING_CARTAN_VERDICT": false,
+    "QUANTUM_CLAIM": false,
+    "SCIENTIFIC_ARITY_TWO_IDENTITIES_INDEPENDENTLY_REPLAYED": false,
+    "TRANSFERRED_ELL2_COMPUTED": false
+  },
+  "classical_result": {
+    "certificate_sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874",
+    "commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
+    "payload_canonical_sha256": "172c73cfee1161b54298a7d3b521e377627a762b2ee3b56db05ff73c5f7e2b3f",
+    "payload_file_sha256": "c6c4891d384add5e1afbf6e0cfe3ec920fff0496e02d5514833f3e0adeab07cf",
+    "result_id": "BERGER_SUPPORT_LOCAL_Q2"
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-support-local-q2-import.md": "ef4cc70143f37069b91d0b29ec1331f18105b25f3d7718c9d68d27f35a3c8ec8",
+      "README.md": "64e631db51e54249ae80c2f456f887bdb6fd1e371eadd7f787334404a802c68d",
+      "berger_54_row_local_d_import.py": "2b0a4efcfc329ddb126a5f956fd6697fd264b5a481d58629cbea714ae8f9c71d",
+      "berger_54_row_q2_arrival.py": "cb8d0661ccd927887b3b60271eff810e67163ec4a181c2accb9a1791b34ba359",
+      "berger_gauge_fixed_nonminimal_import.py": "04fadba982dde6a55bb595e7d058dab8197373c76f042723ce08494cae793127",
+      "berger_support_local_q2_import.py": "defcc9a33d48a15aeccfe188e75cf11c448c3f6b706738f480e89b9dd96f2f74",
+      "berger_support_local_q2_import_certificate.py": "3fea6c4f23ccb7e43092f2abf76ee6593ef79175aa0ab6323c80927978a8c784",
+      "schema/berger-support-local-q2-import-v1.schema.json": "bc344cd235ac62706c099ba97e43b0e4a58ccb79169484950ed98d20cb390be5",
+      "tests/test_berger_support_local_q2_import.py": "67ad1cb8ff7d65cb2f47011740689ca9352e42ab90f1339f13559f4bae72f548"
+    },
+    "source_manifest_sha256": "7adcc36f7218a995b9789b1ad7fd2ab8e1d739f2e486d451506a9ee0f05d323c"
+  },
+  "coverage": {
+    "coefficient_field": "Q(sqrt(10))",
+    "maximum_total_jet_order": 6,
+    "nonzero_output_rows": 39,
+    "specialization": {
+      "alpha_B": "5",
+      "u": "3*sqrt(10)/20",
+      "v": "2*sqrt(10)/3"
+    },
+    "term_count": 150305,
+    "total_rows": 54
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "independent_checks": {
+    "PBW_record_order_and_jet_bound": true,
+    "all_54_rows_match_authoritative_layout": true,
+    "cohomological_degree_one": true,
+    "dependency_hashes_match_frozen_quantum_imports": true,
+    "graded_Koszul_symmetry": true,
+    "payload_canonical_hash": true,
+    "payload_file_hash": true,
+    "pinned_classical_artifacts": true,
+    "quadratic_field_exactness": true,
+    "row_and_term_statistics": true,
+    "strict_classical_schema_identities": true
+  },
+  "lifecycle_layer": "CLASSICAL_BV_IMPORT",
+  "next_gate": "INDEPENDENT_EXACT_Q1_Q2_D_Q2_AND_BV_CYCLICITY_REPLAY",
+  "provenance": {
+    "classical_certificate": {
+      "commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
+      "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
+    },
+    "classical_certificate_schema": {
+      "commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
+      "path": "d_quotient_classical/schema/berger-support-local-q2-v1.schema.json",
+      "sha256": "0fb0a4b916d2af200ffc30c1fae006ed5506a574b0e843eff2d07863f40259f5"
+    },
+    "classical_exporter": {
+      "commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
+      "path": "d_quotient_classical/backreacted_clock/berger_support_local_q2_export.py",
+      "sha256": "4805808f692ed864652f5175260ccee5586ac28c6f9b5e7d5b3177735c7f9054"
+    },
+    "classical_geometry_producer": {
+      "commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
+      "path": "d_quotient_classical/backreacted_clock/berger_support_local_q2.py",
+      "sha256": "a8afe6099730e08bca98a73cb6e285eb9e7b172048011df503037e46a8f6f09f"
+    },
+    "classical_independent_verifier": {
+      "commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
+      "path": "d_quotient_classical/backreacted_clock/verify_berger_support_local_q2_independent.py",
+      "sha256": "f373f4cd8ac30ecedf718b10492736423ffae2e2c490b2609d2f685a3a5c4a65"
+    },
+    "classical_payload": {
+      "commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json",
+      "sha256": "c6c4891d384add5e1afbf6e0cfe3ec920fff0496e02d5514833f3e0adeab07cf"
+    },
+    "classical_payload_schema": {
+      "commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
+      "path": "d_quotient_classical/schema/berger-support-local-q2-payload-v1.schema.json",
+      "sha256": "4ecfe5ba6e3414412127377b2766f671ef086b00891550a8a87daa84b0b1e313"
+    },
+    "classical_report": {
+      "commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
+      "path": "d_quotient_classical/reports/berger-support-local-q2.md",
+      "sha256": "7abcdda1061a2317fdf15ba9abd85bf463e6979564f353249e326461ab780dea"
+    },
+    "classical_test": {
+      "commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
+      "path": "d_quotient_classical/backreacted_clock/tests/test_berger_support_local_q2.py",
+      "sha256": "b75d4520705ccb5942c897b87d0a21003e760e5736e962531a2701546245f4f9"
+    }
+  },
+  "result_id": "BERGER_SUPPORT_LOCAL_Q2_IMPORT",
+  "result_state": "COMPLETE_SUPPORT_LOCAL_Q2_IMPORTED_SCIENTIFIC_REPLAY_PENDING",
+  "schema": "quantum-weyl-berger-support-local-q2-import-v1",
+  "scientific_replay_gate": {
+    "BV_cyclicity_replayed": false,
+    "D_q2_replayed": false,
+    "q1_q2_replayed": false,
+    "status": "REPLAY_PENDING"
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

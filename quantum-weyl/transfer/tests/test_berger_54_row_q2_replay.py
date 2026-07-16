@@ -43,6 +43,7 @@ class Berger54RowQ2ReplayTests(unittest.TestCase):
     def test_nonzero_fixture_replays_all_three_identities(self) -> None:
         fixture = self.payload["implementation_fixture"]
         self.assertTrue(fixture["all_identities_pass"])
+        self.assertIsNone(fixture["input"]["coefficient_specialization"])
         self.assertEqual(
             {name: result["nonzero_coefficient_count"] for name, result in fixture["results"].items()},
             {

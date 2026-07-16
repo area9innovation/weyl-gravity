@@ -11,13 +11,13 @@
   "consumer_provenance": {
     "source_manifest": {
       "../reports/berger-54-row-q2-replay-engine.md": "e0d552fb0f05343847f6b8af8137cb40df90fe435816e2405569ce00ebfb7dc5",
-      "README.md": "94bde378bc766829c6f9860841f95174ec7755cfdd1b7b245fb7ce5d550351e5",
-      "berger_54_row_q2_replay.py": "d1c84d97d4712a5725d27ced72e0647f00f2d44f5e6e90de86ffd7f26098e28e",
+      "README.md": "64e631db51e54249ae80c2f456f887bdb6fd1e371eadd7f787334404a802c68d",
+      "berger_54_row_q2_replay.py": "84bc262e757eff7422798e3d19a15f46b9172c674f1bbbf9a376ca92d8b4971d",
       "berger_54_row_q2_replay_certificate.py": "b4b99a93099d6dcdb56b2fdbc55b33a775c42b469b3a3b31fccf8183b32c7814",
-      "schema/berger-54-row-q2-replay-engine-v1.schema.json": "9a0250c55e6c864e50425dba51070da9e66e0ac55f4f6d7a778a21a5703b1ac3",
-      "tests/test_berger_54_row_q2_replay.py": "5125c252ca17f71402712bf6d7939df99a87c1e27b9e6e947e8d289f86865e48"
+      "schema/berger-54-row-q2-replay-engine-v1.schema.json": "51c89a8e70fcab9a02a10dce09bb436481ca0d5b88a701c1a0e18f7341c4f968",
+      "tests/test_berger_54_row_q2_replay.py": "e04f7cecfccb61166a7aebb4b37fd4a580d5ec01f287c720f295b93911e03078"
     },
-    "source_manifest_sha256": "f200866da81c083727c8aeca282760601e8d62397b255ddc6f2e5e9eecc3d58a"
+    "source_manifest_sha256": "b55b9741e7cc9123f6389896fd0179ca02c05678a24ee2802a588f68368bb804"
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
@@ -37,10 +37,11 @@
     "identity_conventions": {
       "D_derivation": "D*q2 - q2(D,-) - q2(-,D)",
       "arity_two": "q1*q2 + q2(q1,-) + (-1)^degree(left)*q2(-,q1)",
-      "cyclicity": "T(a,b,c)=(-1)^(degree(a)*(degree(b)+degree(c)))*T(b,c,a), T=<q2(a,b),c>",
+      "cyclicity": "T(a,b,c)=(-1)^(dual(b)+parity(a)*parity(b))*T(c,a,b) for the imported odd Darboux polarization",
       "integration_by_parts": "all derivatives on the third pairing slot are formally adjointed onto the first two slots"
     },
     "input": {
+      "coefficient_specialization": null,
       "maximum_total_jet_order": 0,
       "q2_sha256": "f3c4a0cfc135ca54a3a3ac9becf59d5e94e522e0e264f6f6d9a3186d2c8db8c5",
       "q2_term_count": 1

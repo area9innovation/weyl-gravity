@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-support-local-q2-import-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer",
+    "dependency_tags", "setting_id", "classical_result", "coverage",
+    "independent_checks", "scientific_replay_gate", "claim_flags",
+    "provenance", "consumer_provenance", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-support-local-q2-import-v1"},
+    "result_id": {"const": "BERGER_SUPPORT_LOCAL_Q2_IMPORT"},
+    "result_state": {"const": "COMPLETE_SUPPORT_LOCAL_Q2_IMPORTED_SCIENTIFIC_REPLAY_PENDING"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_IMPORT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "classical_result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "commit", "certificate_sha256", "payload_file_sha256", "payload_canonical_sha256"],
+      "properties": {
+        "result_id": {"const": "BERGER_SUPPORT_LOCAL_Q2"},
+        "commit": {"pattern": "^[0-9a-f]{40}$"},
+        "certificate_sha256": {"$ref": "#/$defs/hash"},
+        "payload_file_sha256": {"$ref": "#/$defs/hash"},
+        "payload_canonical_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_rows", "nonzero_output_rows", "term_count", "maximum_total_jet_order", "coefficient_field", "specialization"],
+      "properties": {
+        "total_rows": {"const": 54},
+        "nonzero_output_rows": {"const": 39},
+        "term_count": {"const": 150305},
+        "maximum_total_jet_order": {"const": 6},
+        "coefficient_field": {"const": "Q(sqrt(10))"},
+        "specialization": {
+          "const": {"alpha_B": "5", "u": "3*sqrt(10)/20", "v": "2*sqrt(10)/3"}
+        }
+      }
+    },
+    "independent_checks": {
+      "type": "object", "minProperties": 11,
+      "additionalProperties": {"const": true}
+    },
+    "scientific_replay_gate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q1_q2_replayed", "D_q2_replayed", "BV_cyclicity_replayed", "status"],
+      "properties": {
+        "q1_q2_replayed": {"const": false},
+        "D_q2_replayed": {"const": false},
+        "BV_cyclicity_replayed": {"const": false},
+        "status": {"const": "REPLAY_PENDING"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED", "SCIENTIFIC_ARITY_TWO_IDENTITIES_INDEPENDENTLY_REPLAYED", "TRANSFERRED_ELL2_COMPUTED", "INTERACTING_CARTAN_VERDICT", "QUANTUM_CLAIM"],
+      "properties": {
+        "CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED": {"const": true},
+        "SCIENTIFIC_ARITY_TWO_IDENTITIES_INDEPENDENTLY_REPLAYED": {"const": false},
+        "TRANSFERRED_ELL2_COMPUTED": {"const": false},
+        "INTERACTING_CARTAN_VERDICT": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "provenance": {
+      "type": "object", "minProperties": 9,
+      "additionalProperties": {"$ref": "#/$defs/artifact"}
+    },
+    "consumer_provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "next_gate": {"const": "INDEPENDENT_EXACT_Q1_Q2_D_Q2_AND_BV_CYCLICITY_REPLAY"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "commit": {"pattern": "^[0-9a-f]{40}$"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

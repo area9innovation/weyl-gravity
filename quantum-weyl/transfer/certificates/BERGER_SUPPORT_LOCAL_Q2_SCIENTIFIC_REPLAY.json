@@ -1,0 +1,88 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC consumer independently replays q1/q2, D/q2, and BV cyclicity for the complete landed 54-row Berger tensor using exact Q(sqrt(10)) arithmetic, noncommutative PBW reduction, formal integration by parts, and the imported odd Darboux polarization. It does not yet transfer ell2, solve the prerequisite unary D-Cartan equation or the interacting arity-two D-Cartan equation, construct causal/Hadamard data, restore a QME, or make a quantum claim.",
+  "claim_flags": {
+    "CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED": true,
+    "INTERACTING_CARTAN_VERDICT": false,
+    "QUANTUM_CLAIM": false,
+    "SCIENTIFIC_ARITY_TWO_IDENTITIES_INDEPENDENTLY_REPLAYED": true,
+    "TRANSFERRED_ELL2_COMPUTED": false
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-support-local-q2-scientific-replay.md": "12864d1ac0c6c6f538a5ffdcaa09b2033f7148a4b15773fa847da3c1ef67b884",
+      "README.md": "64e631db51e54249ae80c2f456f887bdb6fd1e371eadd7f787334404a802c68d",
+      "berger_54_row_local_d_import.py": "2b0a4efcfc329ddb126a5f956fd6697fd264b5a481d58629cbea714ae8f9c71d",
+      "berger_54_row_q2_arrival.py": "cb8d0661ccd927887b3b60271eff810e67163ec4a181c2accb9a1791b34ba359",
+      "berger_54_row_q2_replay.py": "84bc262e757eff7422798e3d19a15f46b9172c674f1bbbf9a376ca92d8b4971d",
+      "berger_qsqrt10_replay.py": "a9da38f0ced97d921b3c93f41f9da7969b76dd7774877e41303b26ee7ca26036",
+      "berger_support_local_q2_import.py": "defcc9a33d48a15aeccfe188e75cf11c448c3f6b706738f480e89b9dd96f2f74",
+      "berger_support_local_q2_replay_certificate.py": "65b33c3113d2bae1dbeee078ef3c148476d62dd5def678f4dc62fe74da880203",
+      "schema/berger-support-local-q2-scientific-replay-v1.schema.json": "b2090cd6b6a62a05dde204b760dc29d8505896c742aa467ea6afaf4c066155c8",
+      "tests/test_berger_support_local_q2_scientific_replay.py": "12d8cda31ab6bdd7eb184dd6ef5a7903a5a472ae8047f709e8d4a8d827179471"
+    },
+    "source_manifest_sha256": "951e9ed00d06e6945c8b065347cfff9971893bfbee521ffdc31cdba2b98e7dfe"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "import_certificate": {
+    "path": "quantum-weyl/transfer/certificates/BERGER_SUPPORT_LOCAL_Q2_IMPORT.json",
+    "sha256": "58a4ed6a85a3e3539d7eb19a98eccf6c9c2b1b4e59a49a65c658231ac6fef07f"
+  },
+  "lifecycle_layer": "CLASSICAL_BV_IMPORT",
+  "next_gate": "TRANSFER_ELL2_AND_SOLVE_FULL_4D_UNARY_D_CARTAN_EXISTENCE",
+  "replay": {
+    "all_identities_pass": true,
+    "arithmetic": "(a,b)*(c,d)=(ac+10bd,ad+bc), representing a+b*sqrt(10)",
+    "backend": "two-rational-component-Q(sqrt(10))-v1",
+    "cyclicity_convention": {
+      "identity": "T(a,b,c)=(-1)^(dual(b)+parity(a)*parity(b))*T(c,a,b)",
+      "integration_by_parts": "all derivatives in the paired third slot are formally adjointed onto the first two slots",
+      "pairing": "imported odd Darboux matrix with primal/dual polarization"
+    },
+    "input": {
+      "classical_commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
+      "maximum_total_jet_order": 6,
+      "q2_sha256": "172c73cfee1161b54298a7d3b521e377627a762b2ee3b56db05ff73c5f7e2b3f",
+      "q2_term_count": 150305,
+      "specialization": {
+        "alpha_B": "5",
+        "u": "3*sqrt(10)/20",
+        "v": "2*sqrt(10)/3"
+      }
+    },
+    "operator_counts": {
+      "D_PBW_coefficients": 54,
+      "pairing_PBW_coefficients": 54,
+      "q1_PBW_coefficients": 1807,
+      "q2_PBW_coefficients": 150305
+    },
+    "results": {
+      "BV_cyclicity_q2": {
+        "defect_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "localized_sample": [],
+        "nonzero_coefficient_count": 0,
+        "sample_truncated": false,
+        "status": "PASS"
+      },
+      "D_q2_derivation": {
+        "defect_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "localized_sample": [],
+        "nonzero_coefficient_count": 0,
+        "sample_truncated": false,
+        "status": "PASS"
+      },
+      "q1_q2_arity_two_nilpotency": {
+        "defect_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "localized_sample": [],
+        "nonzero_coefficient_count": 0,
+        "sample_truncated": false,
+        "status": "PASS"
+      }
+    }
+  },
+  "result_id": "BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY",
+  "result_state": "COMPLETE_SUPPORT_LOCAL_Q2_IMPORTED_IDENTITIES_INDEPENDENTLY_REPLAYED_TRANSFER_PENDING",
+  "schema": "quantum-weyl-berger-support-local-q2-scientific-replay-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

@@ -194,11 +194,15 @@
         "input": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["q2_sha256", "q2_term_count", "maximum_total_jet_order"],
+          "required": ["q2_sha256", "q2_term_count", "maximum_total_jet_order", "coefficient_specialization"],
           "properties": {
             "q2_sha256": {"$ref": "#/$defs/hash"},
             "q2_term_count": {"type": "integer", "minimum": 1},
-            "maximum_total_jet_order": {"type": "integer", "minimum": 0}
+            "maximum_total_jet_order": {"type": "integer", "minimum": 0},
+            "coefficient_specialization": {
+              "type": ["object", "null"],
+              "additionalProperties": {"type": "string", "minLength": 1}
+            }
           }
         },
         "operator_counts": {
