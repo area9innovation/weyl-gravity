@@ -148,6 +148,18 @@ propagator, not a state: the next gate is
 `BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION`, and all Hadamard-state, BRST,
 QME and quantum flags remain false.
 
+Before constructing that two-point function, the graded state-space contract
+is now frozen on the complete 54-row BV complex.  An exact replay gives
+degree ranks `5,22,22,5`, 27 even and 27 odd rows, 27 odd Darboux pairs, and
+pairing rank 54.  The difference of the advanced and retarded chain
+homotopies is `q54`-closed and, with cyclic adjointness, defines the even
+graded causal form.  Its quantization uses one graded relation, specializing
+to commutators on even rows and anticommutators on odd rows.  Spatial causal
+zero modes, the fifteen residual BFV generators, and reduced Krein data are
+kept in separate ledgers.  A 54-row distributional covariance, weak
+nondegeneracy of the completed BRST quotient, and physical positivity remain
+open; the contract does not promote any Hadamard or quantum flag.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -189,4 +201,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_b
 PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_companion_stationary_decomposability_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_companion_stationary_decomposability
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_companion_stationary_decomposability.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_graded_causal_state_space_contract_certificate --check
+PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_graded_causal_state_space_contract
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_graded_causal_state_space_contract.py -v
 ```

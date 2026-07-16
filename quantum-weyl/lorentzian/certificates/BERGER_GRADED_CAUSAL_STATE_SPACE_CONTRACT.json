@@ -1,0 +1,189 @@
+{
+  "brst_descent": {
+    "closed_source_pairing": "sigma_54 descends algebraically to q54-cohomology",
+    "distributional_quotient_weak_nondegeneracy": "NOT_COMPUTED",
+    "operator_Ward_identity": "q54 Delta_54+Delta_54 q54=0",
+    "pairing_Ward_identity": "sigma_54(q54 f,h) plus the frozen Koszul-signed sigma_54(f,q54 h) equals zero",
+    "status": "ALGEBRAIC_DESCENT_CERTIFIED_ANALYTIC_NONDEGENERACY_OPEN"
+  },
+  "causal_commutator_contract": {
+    "causal_chain_map": "Delta_54=Lambda_54,retarded-Lambda_54,advanced",
+    "causal_pairing": "sigma_54(f,h)=<f,Delta_54 h>_BV",
+    "causal_pairing_degree": "even after the degree-minus-one causal homotopy is combined with the degree-one BV pairing",
+    "chain_identity": "q54 Delta_54+Delta_54 q54=0",
+    "checks": {
+      "causal_difference_is_graded_skew_for_odd_pairing": true,
+      "chain_identity_difference_is_q_closed": true,
+      "cyclic_advanced_retarded_adjointness_imported": true,
+      "odd_pairing_plus_degree_minus_one_homotopy_gives_even_commutator": true
+    },
+    "cyclic_identity": "Delta_54 is graded skew-adjoint in the frozen odd BV pairing"
+  },
+  "claim_boundary": "Certifies the complete 54-row parity ledger, nondegenerate odd Darboux pairing, even graded causal commutator, its algebraic BRST descent, real structure, flat CCR sign and distinct causal/BFV zero-mode policies. Reduced positive-frequency and Krein results remain REDUCED-MODE evidence. No distributional covariance, Hadamard state, analytic quotient nondegeneracy, physical positivity, renormalized product, QME restoration or quantum result is claimed.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_BRST_CAUSAL_PAIRING_DESCENT": true,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_GRADED_CAUSAL_COMMUTATOR": true,
+    "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "QUANTUM_CLAIM": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "dependency_refs": {
+    "base_hadamard_parametrix": {
+      "artifact_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "ac60c5ef1c31ff665611b480b3360a7856a6f5813953cb95671c3104f483c5dd"
+    },
+    "causal_chain_v2": {
+      "artifact_id": "BERGER_CAUSAL_CHAIN_V2_IMPORT",
+      "sha256": "2afa06f34d29f9103164d22c9865d4899d5b28d53c6a5a3ce002c89f71c8f1da"
+    },
+    "flat_CCR_normalization": {
+      "artifact_id": "BERGER_FLAT_HADAMARD_NORMALIZATION",
+      "sha256": "7b8e22d21a5975585da9c1f57d147f83a2319824e6e3aa7fc89cd74338cbc7a1"
+    },
+    "full_54_causal_chain": {
+      "artifact_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b"
+    },
+    "gauge_fixed_pairing": {
+      "artifact_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "reduced_Krein": {
+      "artifact_id": "pure-weyl-one-particle-krein-v1",
+      "sha256": "c52f8b2fcee6573e55e72402008779fd706311b77e2463a774b9eb16ce12b374"
+    },
+    "reduced_polarization": {
+      "artifact_id": "pure-weyl-polarized-state-complex-v1",
+      "sha256": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1"
+    },
+    "retained_layout": {
+      "artifact_id": "BERGER_RETAINED_MINIMAL_LAYOUT",
+      "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
+    },
+    "stationary_decomposability": {
+      "artifact_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY",
+      "sha256": "378557c35c412922bd2175ee57c8a1981b59c5d72ea1900fe2f2911f08e80d0e"
+    },
+    "zero_mode_transgression": {
+      "artifact_id": "pure-weyl-algebraic-zero-mode-transgression-v1",
+      "sha256": "dfe70f8bf6ad6820178e67247a06b1c27fefba3c5b7396ba42fd14e96db82b53"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "graded_quantization_policy": {
+    "even_rows": "graded commutator specializes to the bosonic commutator",
+    "odd_rows": "graded commutator specializes to the fermionic anticommutator",
+    "status": "TARGET_CONVENTION_FROZEN",
+    "unified_relation": "[Phi(f),Phi(h)]_graded=i sigma_54(f,h) 1",
+    "warning": "the 20-row companion is an analytic realization, not the complete graded BV state space"
+  },
+  "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT",
+  "next_gate": "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION",
+  "positivity_and_krein_policy": {
+    "covariant_distributional_policy": "NOT_CONSTRUCTED",
+    "full_BV_positive_state": "NOT_CLAIMED",
+    "reduced_Krein_evidence": "+1 on E and -1 on A,L in both chiralities",
+    "reduced_Krein_status": "REDUCED-MODE_EVIDENCE_ONLY_NOT_DISTRIBUTIONAL",
+    "required_physical_statement": "positivity only after passage to the ghost-number-zero BRST observable quotient, or an explicit weaker Krein statement",
+    "selected_positive_frequency_status": "REDUCED-MODE_EVIDENCE_ONLY"
+  },
+  "provenance": {
+    "Krein_schema": "pure-weyl-one-particle-krein-v1",
+    "base_result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+    "causal_result_id": "BERGER_CAUSAL_CHAIN_V2_IMPORT",
+    "decomposability_result_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY",
+    "full_causal_result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+    "gauge_fixed_result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+    "polarized_schema": "pure-weyl-polarized-state-complex-v1",
+    "retained_layout_result_id": "BERGER_RETAINED_MINIMAL_LAYOUT",
+    "source_manifest": {
+      "../reports/berger-graded-causal-state-space-contract.md": "b8fc21779db7faa4e030eff4007b6517acaacb836bf2e6c4b4fdd16773fd266f",
+      "berger_graded_causal_state_space_contract.py": "09de9b7f6d80f88396d6f6c8f1d6d6337d9f61a55a71b9eb591b951444ff963a",
+      "berger_graded_causal_state_space_contract_certificate.py": "4b5c35146991b3af29264f7d73e39dc49b04c88fb74e1712bd07b8e9363c34fa",
+      "schema/berger-graded-causal-state-space-contract-v1.schema.json": "01abe8323acc7494ab8bac34d7f3bf8222084ec08fa7207e2093870116dc5705",
+      "tests/test_berger_graded_causal_state_space_contract.py": "34ea9a6b9072703a7c700ab59c33704eced0d47c357981627cbbc7ec5caf2c72",
+      "verify_berger_graded_causal_state_space_contract.py": "c28903579ae8d39c0bac414a3c949e7e646584c2f273ead0535ce1cbcd507557"
+    },
+    "source_manifest_sha256": "45686d82f096a0e63155b52f8916b7b86f99a95aef8d1c22c9e39740808e8a93",
+    "zero_mode_schema": "pure-weyl-algebraic-zero-mode-transgression-v1"
+  },
+  "readiness_ledger": {
+    "BRST_algebraic_descent": "CERTIFIED",
+    "companion_null_cone_decomposability": "CERTIFIED",
+    "complete_54_row_inventory_and_parity": "CERTIFIED",
+    "distributional_two_point_kernel": "OPEN",
+    "flat_i0_and_CCR_sign": "CERTIFIED",
+    "graded_causal_commutator": "CERTIFIED",
+    "nondegenerate_odd_Darboux_pairing": "CERTIFIED",
+    "physical_positivity_or_covariant_Krein_policy": "OPEN",
+    "smooth_spatial_zero_mode_completion": "OPEN"
+  },
+  "real_structure": {
+    "causal_compatibility": "complex conjugation commutes with Delta_54",
+    "involution": "componentwise complex conjugation on the real Berger row basis",
+    "operator_compatibility": "q54, the odd Darboux pairing and Lambda_54,advanced/retarded have real Berger coefficients",
+    "status": "CERTIFIED_FROM_REAL_CLASSICAL_OPERATOR_AND_UNIQUENESS"
+  },
+  "result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+  "result_state": "GRADED_CAUSAL_BRST_ALGEBRA_CONTRACT_CERTIFIED_COVARIANCE_OPEN",
+  "row_pairing_replay": {
+    "checks": {
+      "degree_ranks_5_22_22_5": true,
+      "odd_Darboux_pair_count_27": true,
+      "pairing_has_total_displayed_degree_one": true,
+      "pairing_is_antisymmetric": true,
+      "pairing_is_nondegenerate": true,
+      "parity_even_27_odd_27": true
+    },
+    "degree_order": [
+      -1,
+      0,
+      1,
+      2
+    ],
+    "degree_ranks": [
+      5,
+      22,
+      22,
+      5
+    ],
+    "even_rows": 27,
+    "odd_Darboux_dual_pairs": 27,
+    "odd_rows": 27,
+    "pairing_nonzero_degree_sum": 1,
+    "pairing_rank": 54,
+    "parity_rule": "Grassmann parity equals displayed degree modulo two",
+    "total_rows": 54
+  },
+  "schema": "quantum-weyl-berger-graded-causal-state-space-contract-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "two_point_target": {
+    "antisymmetric_part": "omega2_plus_54-(omega2_plus_54)^sharp_graded=i Delta_54",
+    "flat_normalization": "W_0^+(x,x')-W_0^+(x',x)=i E(x,x')",
+    "kernel": "omega2_plus_54 on the complete 54-row graded distributional complex",
+    "left_Ward": "q54_x omega2_plus_54=0 in the graded kernel convention",
+    "required_WF": "positive-frequency null relation on every propagating block; smooth on contractible algebraic rows",
+    "right_Ward": "q54sharp_xprime omega2_plus_54=0 in the graded kernel convention",
+    "status": "NOT_CONSTRUCTED"
+  },
+  "zero_mode_policy": {
+    "BFV_suspension": "tau=suspension o Theta",
+    "BFV_suspension_lambda": "1",
+    "causal_spatial_zero_mode_covariance": "NOT_SELECTED",
+    "causal_spatial_zero_modes": "retained in global Cauchy evolution; no inverse Laplacian, curl or harmonic projector",
+    "no_conflation": "massless spatial zero frequencies and the fifteen residual BFV generators are distinct ledgers",
+    "residual_conformal_generators": 15,
+    "residual_scope": "LOCAL-ALGEBRAIC selected boundary polarization, not an analytic covariance"
+  }
+}

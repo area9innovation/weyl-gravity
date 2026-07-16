@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-graded-causal-state-space-contract-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "row_pairing_replay", "real_structure", "causal_commutator_contract", "brst_descent", "graded_quantization_policy", "two_point_target", "zero_mode_policy", "positivity_and_krein_policy", "readiness_ledger", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-graded-causal-state-space-contract-v1"},
+    "result_id": {"const": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT"},
+    "result_state": {"const": "GRADED_CAUSAL_BRST_ALGEBRA_CONTRACT_CERTIFIED_COVARIANCE_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "minLength": 40},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["causal_chain_v2", "stationary_decomposability", "base_hadamard_parametrix", "flat_CCR_normalization", "full_54_causal_chain", "gauge_fixed_pairing", "retained_layout", "reduced_polarization", "reduced_Krein", "zero_mode_transgression"],
+      "properties": {
+        "causal_chain_v2": {"$ref": "#/$defs/dependency"},
+        "stationary_decomposability": {"$ref": "#/$defs/dependency"},
+        "base_hadamard_parametrix": {"$ref": "#/$defs/dependency"},
+        "flat_CCR_normalization": {"$ref": "#/$defs/dependency"},
+        "full_54_causal_chain": {"$ref": "#/$defs/dependency"},
+        "gauge_fixed_pairing": {"$ref": "#/$defs/dependency"},
+        "retained_layout": {"$ref": "#/$defs/dependency"},
+        "reduced_polarization": {"$ref": "#/$defs/dependency"},
+        "reduced_Krein": {"$ref": "#/$defs/dependency"},
+        "zero_mode_transgression": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "row_pairing_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_rows", "degree_order", "degree_ranks", "parity_rule", "even_rows", "odd_rows", "odd_Darboux_dual_pairs", "pairing_rank", "pairing_nonzero_degree_sum", "checks"],
+      "properties": {
+        "total_rows": {"const": 54},
+        "degree_order": {"const": [-1, 0, 1, 2]},
+        "degree_ranks": {"const": [5, 22, 22, 5]},
+        "parity_rule": {"type": "string", "minLength": 1},
+        "even_rows": {"const": 27},
+        "odd_rows": {"const": 27},
+        "odd_Darboux_dual_pairs": {"const": 27},
+        "pairing_rank": {"const": 54},
+        "pairing_nonzero_degree_sum": {"const": 1},
+        "checks": {"$ref": "#/$defs/all_true_checks"}
+      }
+    },
+    "real_structure": {"$ref": "#/$defs/nonempty_object"},
+    "causal_commutator_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["causal_chain_map", "chain_identity", "cyclic_identity", "causal_pairing", "causal_pairing_degree", "checks"],
+      "properties": {
+        "causal_chain_map": {"const": "Delta_54=Lambda_54,retarded-Lambda_54,advanced"},
+        "chain_identity": {"const": "q54 Delta_54+Delta_54 q54=0"},
+        "cyclic_identity": {"type": "string", "minLength": 1},
+        "causal_pairing": {"const": "sigma_54(f,h)=<f,Delta_54 h>_BV"},
+        "causal_pairing_degree": {"type": "string", "minLength": 1},
+        "checks": {"$ref": "#/$defs/all_true_checks"}
+      }
+    },
+    "brst_descent": {"$ref": "#/$defs/nonempty_object"},
+    "graded_quantization_policy": {"$ref": "#/$defs/nonempty_object"},
+    "two_point_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kernel", "antisymmetric_part", "flat_normalization", "required_WF", "left_Ward", "right_Ward", "status"],
+      "properties": {
+        "kernel": {"type": "string", "minLength": 1},
+        "antisymmetric_part": {"type": "string", "minLength": 1},
+        "flat_normalization": {"type": "string", "minLength": 1},
+        "required_WF": {"type": "string", "minLength": 1},
+        "left_Ward": {"type": "string", "minLength": 1},
+        "right_Ward": {"type": "string", "minLength": 1},
+        "status": {"const": "NOT_CONSTRUCTED"}
+      }
+    },
+    "zero_mode_policy": {"$ref": "#/$defs/nonempty_object"},
+    "positivity_and_krein_policy": {"$ref": "#/$defs/nonempty_object"},
+    "readiness_ledger": {"$ref": "#/$defs/nonempty_object"},
+    "claim_flags": {
+      "const": {
+        "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT": true,
+        "BERGER_GRADED_CAUSAL_COMMUTATOR": true,
+        "BERGER_BRST_CAUSAL_PAIRING_DESCENT": true,
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+        "BERGER_HADAMARD_DATA": false,
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": false,
+        "LORENTZIAN_QME_RESTORED": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION"},
+    "provenance": {
+      "type": "object",
+      "required": ["causal_result_id", "decomposability_result_id", "base_result_id", "full_causal_result_id", "gauge_fixed_result_id", "retained_layout_result_id", "polarized_schema", "Krein_schema", "zero_mode_schema", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      },
+      "additionalProperties": {"type": ["string", "object"]}
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "all_true_checks": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}},
+    "nonempty_object": {"type": "object", "minProperties": 3}
+  }
+}
