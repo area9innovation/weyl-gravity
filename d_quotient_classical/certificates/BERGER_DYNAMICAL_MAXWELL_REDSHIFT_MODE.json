@@ -1,0 +1,175 @@
+{
+  "claim_boundary": "This exact G0 theorem replaces the prescribed null ray by a genuine positive-energy source-free Maxwell mode and constructs a Diff-, Weyl-, Maxwell-gauge-, and total-D-invariant compact spatially averaged frequency ratio on the rational Berger clock fixture. It does not construct localized endpoints, a retarded compact source, the Maxwell BV/q2 semidirect extension, backreaction, a complete G1 signal sector, phenomenology, or a quantum result.",
+  "claim_status": "CERTIFIED_G0_DYNAMICAL_MAXWELL_MODE_LOCALIZED_RETARDED_DRESSING_OPEN",
+  "dependency_refs": {
+    "clock_background": {
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"
+    },
+    "relational_preflight": {
+      "path": "d_quotient_classical/certificates/BERGER_RELATIONAL_REDSHIFT_PREFLIGHT.json",
+      "result_id": "BERGER_RELATIONAL_REDSHIFT_PREFLIGHT",
+      "sha256": "f5d1abfae9720debad35e4e0ecfc8f9cba06254d3f7e45d957ef51b16e53faa2"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_mode_checks": {
+    "Bianchi_identity": true,
+    "clock_slice_spatial_average_diffeomorphism_invariant": true,
+    "frequency_observable_Maxwell_gauge_invariant": true,
+    "frequency_observable_Weyl_invariant": true,
+    "future_null_energy_flux": true,
+    "left_invariant_mode_divergence_free": true,
+    "null_field": true,
+    "positive_Maxwell_energy": true,
+    "source_free_Maxwell_equation": true,
+    "two_phase_solution_pairing_nondegenerate": true
+  },
+  "flags": {
+    "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE": true,
+    "BERGER_G1_COMPLETE_SIGNAL_SECTOR": false,
+    "BERGER_GRAVITY_MAXWELL_Q2_DRESSING": false,
+    "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": false,
+    "BERGER_MAXWELL_BACKREACTION": false,
+    "BERGER_REDSHIFT_PHENOMENOLOGY": false,
+    "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL": false,
+    "BERGER_SPATIALLY_AVERAGED_RELATIONAL_FREQUENCY": true,
+    "QUANTUM_CLAIM": false
+  },
+  "generality_level": "G0",
+  "health_and_pairing": {
+    "energy": "H(x A_c+y A_s)=beta^2 Vol(S3_Berger)(x^2+y^2)",
+    "energy_signature": [
+      2,
+      0,
+      0
+    ],
+    "energy_signature_convention": "[positive,negative,zero]",
+    "negative_physical_direction_introduced": false,
+    "solution_block": "span_R{A_c,A_s}",
+    "symplectic_form": "Omega(A_c,A_s)=-2 beta Vol(S3_Berger), up to the declared Cauchy orientation",
+    "symplectic_rank": 2
+  },
+  "higher_tiers_not_run": {
+    "tier_2": "The imported clock and relational certificates are unchanged content-addressed inputs; their hashes are replayed independently.",
+    "tier_3": "This is a G0 probe-mode theorem with no classical freeze, lifecycle promotion, or shared-core algebra change."
+  },
+  "maxwell_probe": {
+    "action": "S_M=-1/4 int sqrt(-g_hat) F_ab F^ab",
+    "coframe": "g_hat=-e0^2+e1^2+e2^2+e3^2 at the rho=1 rational fixture",
+    "curl_spectrum": "curl(e1)=-(1/c)e1, curl(e2)=-(1/c)e2, curl(e3)=-(c/a^2)e3",
+    "field_strength": "F=dA; all observables below use F or T_Maxwell and are Maxwell-gauge invariant",
+    "maurer_cartan": [
+      "de1=-(1/c)e2 wedge e3",
+      "de2=-(1/c)e3 wedge e1",
+      "de3=-(c/a^2)e1 wedge e2"
+    ],
+    "maxwell_equations": "dF=0 identically and d star F=0 because ddot A+curl^2 A=0 and div A=0",
+    "null_invariants": [
+      "E^2-B^2=0",
+      "E dot B=0"
+    ],
+    "order": "probe amplitude epsilon; stress/backreaction starts at epsilon^2",
+    "phase_partner": "A_s=-sin(beta t)e1+cos(beta t)e2",
+    "potential": "A_c=cos(beta t)e1+sin(beta t)e2 with beta=1/c",
+    "signal_direction": "s=-e3; Poynting=beta^2 s and (L_n+L_s)A_c=0",
+    "weyl_behavior": "F has Weyl weight zero in four dimensions and g_hat=rho^2 g is Weyl invariant"
+  },
+  "next_gate": "BERGER_LOCALIZED_RETARDED_MAXWELL_REDSHIFT_AND_Q2_DRESSING",
+  "not_established": [
+    "a localized emitter and receiver rather than the compact spatially averaged congruence observable",
+    "a compactly supported source and retarded Maxwell pulse",
+    "the Maxwell BV complex and its semidirect q2 coupling to the 54-row gravity-clock complex",
+    "the first gravity-Maxwell homological dressing or an obstruction witness",
+    "Maxwell stress backreaction on the Berger clock background",
+    "the complete Hopf harmonic signal sector, caustics after wrapping, or multiple-path interference",
+    "a gravitational/cosmological redshift, phenomenology, or quantum theorem"
+  ],
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/backreacted_clock/berger_dynamical_maxwell_redshift.py": "c4ed4a0b548d1f110f192b7f89109318d6266c15fea74eede097de2ff86df707",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_dynamical_maxwell_redshift.py": "b148896683ded11ee42bc523ea7553b6a0219ffe37a6939948f9df2a134d3abc",
+      "d_quotient_classical/backreacted_clock/verify_berger_dynamical_maxwell_redshift.py": "6d165f4e93d7c643c09695403d704827f7b52aebe4e81c4036f87f79c33427bb",
+      "d_quotient_classical/schema/berger-dynamical-maxwell-redshift-v1.schema.json": "d3e42af56fec9cb7f136cdc9950702e642448c8e4c70bd36350f57984cfbbf87"
+    }
+  },
+  "rational_fixture": {
+    "background": {
+      "a": "1",
+      "c^2": "9/40",
+      "omega": "3/4",
+      "rho": "1"
+    },
+    "chart_and_path_domain": "theta_receive=3/8<pi and travel distance 1/2 is below the half Hopf-fibre length 2 pi c",
+    "interpretation": "the exact Maxwell mode is measured at half the emitter frequency by the receding relational observer, so 1+z=2",
+    "observers": {
+      "initial_physical_separation": "1/5",
+      "v_emit": "0",
+      "v_receive": "3/5"
+    },
+    "results": {
+      "averaged_energy_emit": "40/9",
+      "averaged_energy_receive": "10/9",
+      "beta": "2*sqrt(10)/3",
+      "frequency_emit": "2*sqrt(10)/3",
+      "frequency_receive": "sqrt(10)/3",
+      "gamma_emit": "1",
+      "gamma_receive": "5/4",
+      "one_plus_z": "2",
+      "phase_slope_emit": "-8*sqrt(10)/9",
+      "phase_slope_receive": "-16*sqrt(10)/45",
+      "positive_energy_coefficient": "32*sqrt(10)*pi**2/3",
+      "spatial_volume": "12*sqrt(10)*pi**2/5",
+      "symplectic_pairing": "-32*pi**2",
+      "theta_receive": "3/8",
+      "travel_time": "1/2",
+      "z": "1"
+    }
+  },
+  "relational_observable": {
+    "causal_relation": "the null stress propagates along n+s; for initial physical separation L and receiver speed v, Delta t_hat=L/(1-v)",
+    "clock_slice": "Sigma_tau={theta=tau} on the lifted chart -pi<tau-theta<pi",
+    "diffeomorphism_invariance": "the clock-defined compact slice integral removes the arbitrary Berger base point",
+    "frequency_ratio": "1+z=sqrt(E_v_emit(tau_emit)/E_v_receive(tau_receive))",
+    "local_energy_reading": "epsilon_v=T_ab[F,g_hat]u^a(v)u^b(v)=beta^2 gamma(v)^2(1-v)^2",
+    "maxwell_gauge_invariance": "the observable depends on F and T, not on the potential representative",
+    "observer": "u(v)=gamma(v)(n+v s)",
+    "spatial_dressing": "E_v(tau)=Vol(Sigma_tau)^-1 int_{Sigma_tau} epsilon_v dmu_g_hat",
+    "total_D_invariance": "relational evaluation fixes theta=tau; the compact spatial average is invariant under the residual Berger isometry generated by the traveling pattern",
+    "weyl_invariance": "theta, g_hat, u, F, T[F,g_hat], and the normalized integral are Weyl invariant"
+  },
+  "result_id": "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
+  "schema": "pure-weyl-berger-dynamical-maxwell-redshift-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "verification_receipts": [
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/berger_dynamical_maxwell_redshift.py --check --guards",
+      "elapsed_seconds": 0.81,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_dynamical_maxwell_redshift.py",
+      "elapsed_seconds": 0.47,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_dynamical_maxwell_redshift",
+      "elapsed_seconds": 1.45,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-dynamical-maxwell-redshift-v1.schema.json -d d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
+      "elapsed_seconds": 1.2,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}
