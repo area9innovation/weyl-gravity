@@ -47,6 +47,15 @@ physical next gate is therefore a hybrid chain construction: apply its
 support-local contraction first and build causal propagation only on retained
 sources.
 
+That projection has now been executed exactly. The retained endpoint is
+block diagonal with degree ranks `3|10|10|3`, and its ten-row metric block is
+precisely `A10`. The exact local companion
+`C20=[[Box_2,-I10],[V_2,Box_2]]` has graph identity
+`C20(h,Box_2 h)=(0,A10 h)` and principal determinant `q^20`; it introduces no
+extra characteristic cone. The remaining analytic gate is now the causal
+Volterra resolvent and its global support proof, not identification of the
+retained PDE.
+
 All routes require exact proofs of both left and right inverse identities,
 advanced/retarded support, propagation of constraints, formal-adjoint and
 cyclic compatibility, `D`-equivariance, row completeness, and a zero-mode
@@ -67,6 +76,8 @@ PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_mixed_order_green_contract_
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_mixed_order_green_contract.py -v
 PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_equal_connection_factor_screen_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_equal_connection_factor_screen.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.retained_biwave_companion_preflight_certificate --check
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_retained_biwave_companion_preflight.py -v
 ```
 
 The certificate records the exact commands and elapsed time of the current

@@ -66,6 +66,7 @@ RAW_ROUTE_IMPORT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPO
 RAW_EXTENSION_IMPORT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json"
 CYCLIC_REALIZATION_IMPORT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json"
 EQUAL_CONNECTION_SCREEN = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json"
+RETAINED_COMPANION_PREFLIGHT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT.json"
 
 
 def _sha256(path: Path) -> str:
@@ -280,6 +281,9 @@ def build_contract_receipt() -> dict[str, Any]:
     extension_import = json.loads(RAW_EXTENSION_IMPORT.read_text(encoding="utf-8"))
     cyclic_import = json.loads(CYCLIC_REALIZATION_IMPORT.read_text(encoding="utf-8"))
     factor_screen = json.loads(EQUAL_CONNECTION_SCREEN.read_text(encoding="utf-8"))
+    retained_companion = json.loads(
+        RETAINED_COMPANION_PREFLIGHT.read_text(encoding="utf-8")
+    )
     if (
         not isinstance(raw_import, dict)
         or raw_import.get("result_id") != "BERGER_RAW_ENDPOINT_INPUT_IMPORT"
@@ -350,6 +354,36 @@ def build_contract_receipt() -> dict[str, Any]:
         != "1"
     ):
         raise ValueError("equal-connection factor screen identity or boundary drifted")
+    if (
+        not isinstance(retained_companion, dict)
+        or retained_companion.get("result_id")
+        != "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT"
+        or retained_companion.get("result_state")
+        != "RETAINED_METRIC_IDENTIFIED_COMPANION_EXACT_CAUSAL_RESOLVENT_OPEN"
+        or retained_companion.get("retained_endpoint", {}).get("metric_identity")
+        != "P26_metric=A10=Box_2^2+V_2"
+        or retained_companion.get("companion_system", {}).get(
+            "principal_determinant"
+        )
+        != "q^20"
+        or retained_companion.get("companion_system", {}).get(
+            "extra_characteristic_cone"
+        )
+        is not False
+        or retained_companion.get("claim_flags", {}).get(
+            "BERGER_RETAINED_BIWAVE_COMPANION_EXACT"
+        )
+        is not True
+        or retained_companion.get("claim_flags", {}).get(
+            "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT"
+        )
+        is not False
+        or retained_companion.get("claim_flags", {}).get("QUANTUM_CLAIM")
+        is not False
+        or retained_companion.get("next_gate")
+        != "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT"
+    ):
+        raise ValueError("retained biwave companion identity or boundary drifted")
     return deepcopy(
         {
             "schema": "quantum-weyl-berger-metric-mixed-order-green-contract-v1",
@@ -389,7 +423,7 @@ def build_contract_receipt() -> dict[str, Any]:
                 ],
             },
             "current_extension_boundary": {
-                "status": "FULL_L13_METRIC_CONE_INVERSE_OBSTRUCTED_HYBRID_RETAINED_CHAIN_ROUTE_REQUIRED",
+                "status": "FULL_L13_METRIC_CONE_INVERSE_OBSTRUCTED_RETAINED_BIWAVE_COMPANION_EXACT_VOLTERRA_RESOLVENT_OPEN",
                 "authoritative_BV_rows": 34,
                 "analytic_rows": 36,
                 "wave_extension_path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json",
@@ -399,22 +433,26 @@ def build_contract_receipt() -> dict[str, Any]:
                 "factor_screen_path": "quantum-weyl/lorentzian/certificates/BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json",
                 "factor_screen_sha256": _sha256(EQUAL_CONNECTION_SCREEN),
                 "factor_screen_verdict": "EQUAL_CONNECTION_LAPLACE_FACTOR_ANSATZ_OBSTRUCTED",
+                "retained_companion_path": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT.json",
+                "retained_companion_sha256": _sha256(RETAINED_COMPANION_PREFLIGHT),
+                "retained_metric_identity": "P26_metric=A10=Box_2^2+V_2",
+                "retained_companion_principal_determinant": "q^20",
                 "lower_by_two_normal_form": "A10=Box_2^2+V_2",
                 "lower_by_two_next_gate": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT",
                 "full_L13_metric_cone_verdict": "EXACT_NO_GO_EXTRA_SPEED_SQRT2",
                 "extra_characteristic": "p0^2=2|p_spatial|^2",
                 "viable_next_architectures": [
-                    "HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+                    "RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
                     "WIDER_CHARACTERISTIC_CONE_GREEN_INVERSE_NONPHYSICAL_OPTION",
                 ],
                 "triangular_reduction": "E13 L13 U13^{-1}=L12 direct sum I1",
             },
-            "physical_input_status": "RAW_ENDPOINT_FULL_L13_METRIC_CONE_INVERSE_NO_GO_IMPORTED_HYBRID_ROUTE_OPEN",
+            "physical_input_status": "FULL_L13_METRIC_CONE_NO_GO_IMPORTED_RETAINED_COMPANION_EXACT_VOLTERRA_OPEN",
             "metric_green_status": "NOT_CONSTRUCTED",
             "metric_antifield_green_status": "NOT_CONSTRUCTED",
             "full_26_row_green_status": "NOT_CONSTRUCTED",
             "quantum_execution_authorized": False,
-            "next_gate": "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+            "next_gate": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
             "claim_boundary": (
                 "Rejects the dressed cyclic witness as a Green endpoint, imports the "
                 "principal-compatible raw cyclic 34-row route, the rank-one scalar-wave "
@@ -425,7 +463,9 @@ def build_contract_receipt() -> dict[str, Any]:
                 "architectures open. The full 13-row endpoint additionally has a genuine "
                 "sqrt(2) characteristic outside the metric cone, so a metric-causal inverse "
                 "on arbitrary 13-row sources is ruled out and the hybrid retained chain route "
-                "is required. It "
+                "is required. Exact projection identifies its metric block with A10, and the "
+                "local 20-row companion has principal determinant q^20 with no extra cone. "
+                "The causal Volterra resolvent remains open. It "
                 "constructs no advanced or retarded Green operator, causal support "
                 "theorem, full 26-row homotopy, Hadamard state, QME restoration, or "
                 "Lorentzian quantum theory."

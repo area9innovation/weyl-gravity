@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-biwave-companion-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "retained_endpoint", "companion_system", "exact_checks", "causal_policy", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-biwave-companion-preflight-v1"},
+    "result_id": {"const": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT"},
+    "result_state": {"const": "RETAINED_METRIC_IDENTIFIED_COMPANION_EXACT_CAUSAL_RESOLVENT_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_CAUSAL_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "retained_endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["degree_ranks", "identity", "metric_identity", "metric_rows", "metric_antifield_rows"],
+      "properties": {
+        "degree_ranks": {"const": [3, 10, 10, 3]},
+        "identity": {"const": "P26=pi_cl P34_raw iota_cl"},
+        "metric_identity": {"const": "P26_metric=A10=Box_2^2+V_2"},
+        "metric_rows": {"const": 10},
+        "metric_antifield_rows": {"const": 10}
+      }
+    },
+    "companion_system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rows", "fields", "operator", "graph_inclusion", "graph_identity", "principal_symbol", "principal_determinant", "extra_characteristic_cone", "rational_fixture", "principal_ranks"],
+      "properties": {
+        "rows": {"const": 20},
+        "fields": {"const": ["h_10", "y_10=Box_2 h_10"]},
+        "operator": {"const": "C20=[[Box_2,-I10],[V_2,Box_2]]"},
+        "graph_inclusion": {"const": "J20x10(h)=(h,Box_2 h)"},
+        "graph_identity": {"const": "C20 J20x10(h)=(0,A10 h)"},
+        "principal_symbol": {"const": "[[q I10,0],[sigma_2(V_2),q I10]]"},
+        "principal_determinant": {"const": "q^20"},
+        "extra_characteristic_cone": {"const": false},
+        "rational_fixture": {"const": {"u": "2", "v": "3"}},
+        "principal_ranks": {"const": {"metric_null_fixture": 7, "off_metric_cone_fixture": 20}}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "causal_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_route", "diagonal_blocks", "off_diagonal_local_orders", "inverse_spatial_laplacian", "spatial_mode_projector", "volterra_convergence_and_global_support_proof", "advanced_retarded_operators"],
+      "properties": {
+        "candidate_route": {"const": "CAUSAL_VOLTERRA_RESOLVENT_FOR_LOWER_BY_TWO_BIWAVE_COMPANION"},
+        "diagonal_blocks": {"const": "normally hyperbolic tensor rough waves Box_2"},
+        "off_diagonal_local_orders": {"const": {"lower_left": 2, "upper_right": 0}},
+        "inverse_spatial_laplacian": {"const": false},
+        "spatial_mode_projector": {"const": false},
+        "volterra_convergence_and_global_support_proof": {"const": "NOT_CONSTRUCTED"},
+        "advanced_retarded_operators": {"const": "NOT_CONSTRUCTED"}
+      }
+    },
+    "claim_flags": {"const": {"BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false, "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY": false, "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT": false, "BERGER_RETAINED_BIWAVE_COMPANION_EXACT": true, "BERGER_RETAINED_METRIC_EQUALS_RAW_A10": true, "QUANTUM_CLAIM": false}},
+    "next_gate": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dependencies", "imported_boundary_states", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "dependencies": {"type": "object", "minProperties": 4},
+        "imported_boundary_states": {"type": "object", "minProperties": 4},
+        "source_manifest": {"type": "object", "minProperties": 5},
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

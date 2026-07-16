@@ -208,15 +208,25 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
         certificate = build_certificate()
         self.assertEqual(
             certificate["next_gate"],
-            "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+            "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
         )
         self.assertEqual(
             certificate["current_extension_boundary"]["factor_screen_verdict"],
             "EQUAL_CONNECTION_LAPLACE_FACTOR_ANSATZ_OBSTRUCTED",
         )
         self.assertIn(
-            "HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+            "RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
             certificate["current_extension_boundary"]["viable_next_architectures"],
+        )
+        self.assertEqual(
+            certificate["current_extension_boundary"]["retained_metric_identity"],
+            "P26_metric=A10=Box_2^2+V_2",
+        )
+        self.assertEqual(
+            certificate["current_extension_boundary"][
+                "retained_companion_principal_determinant"
+            ],
+            "q^20",
         )
         self.assertEqual(
             certificate["current_extension_boundary"]["lower_by_two_normal_form"],

@@ -41,6 +41,7 @@ def build_certificate() -> dict[str, object]:
         "certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json",
         "certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json",
         "certificates/BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json",
+        "certificates/BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT.json",
     )
     manifest = {path: _hash(ROOT / path) for path in paths}
     return {
@@ -65,7 +66,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("BERGER METRIC GREEN CONTRACT: CYCLIC ANALYTIC REALIZATION IMPORTED; GREEN OPERATORS OPEN")
+        print("BERGER METRIC GREEN CONTRACT: RETAINED COMPANION EXACT; VOLTERRA RESOLVENT OPEN")
     return 0
 
 

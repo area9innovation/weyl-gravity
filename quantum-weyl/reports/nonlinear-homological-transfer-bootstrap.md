@@ -86,6 +86,15 @@ nondegeneracy, and projection/pairing compatibility.  This satisfies ND2's
 standalone `classical_contraction` artifact.  It does not supply `q2/D`, local
 `D`-equivariance, admissibility, or a compatible physical assembly adapter.
 
+The Lorentzian causal branch has also been narrowed without promoting a Green
+theorem. The complete 13-row clock/graph endpoint has an exact extra
+characteristic outside the metric cone, so arbitrary-source metric-causal
+inversion there is ruled out. Projection through the support-local
+contraction now proves `P26_metric=A10=Box_2^2+V_2`, and the exact local 20-row
+companion has principal determinant `q^20` with no extra cone. The remaining
+gate is its causal Volterra resolvent and global support proof; the retained
+and full chain homotopies remain open.
+
 ND3 additionally implements the next Cartan recurrence.  It retains the
 direct `[q3,iota_D]` and exchange `[q2,iota_D^(2)]` tensors separately, checks
 the arity-three `Q^2`, Cartan, and `D` identities, and returns either an exact

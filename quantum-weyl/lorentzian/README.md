@@ -58,6 +58,13 @@ incidence, so this is not a physical superluminality claim. The active route
 is hybrid: contract that incidence support-locally, then construct the causal
 chain homotopy on the retained complex.
 
+The first hybrid step is now exact. Projection by the certified classical
+contraction gives `P26_metric=A10=Box_2^2+V_2`. The associated local 20-row
+companion has principal determinant `q^20` and no extra characteristic cone.
+This identifies the correct retained PDE and reduces the live analytic gate
+to a causal Volterra resolvent with global support control. No advanced or
+retarded operator has yet been constructed.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -75,6 +82,8 @@ PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_mixed_order_green_contract_
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_mixed_order_green_contract.py -v
 PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_equal_connection_factor_screen_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_equal_connection_factor_screen.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.retained_biwave_companion_preflight_certificate --check
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_retained_biwave_companion_preflight.py -v
 PYTHONPATH=quantum-weyl python3 -m lorentzian.raw_endpoint_import_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.raw_endpoint_import_certificate --replay-check
 PYTHONPATH=quantum-weyl python3 -m unittest lorentzian.tests.test_raw_endpoint_import -v

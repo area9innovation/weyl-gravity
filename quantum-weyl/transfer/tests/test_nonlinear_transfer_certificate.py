@@ -84,10 +84,11 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED", d_question["status"])
         self.assertIn("LOWER_BY_TWO_BIWAVE_IMPORTED", d_question["status"])
         self.assertIn("FULL_L13_METRIC_CONE_INVERSE_EXACTLY_OBSTRUCTED", d_question["status"])
-        self.assertIn("HYBRID_RETAINED_CHAIN_HOMOTOPY_REQUIRED", d_question["status"])
+        self.assertIn("RETAINED_METRIC_PROJECTION_AND_20_ROW_COMPANION_EXACT", d_question["status"])
+        self.assertIn("VOLTERRA_RESOLVENT_REQUIRED", d_question["status"])
         self.assertEqual(
             d_question["next_certificate"],
-            "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+            "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
         )
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:

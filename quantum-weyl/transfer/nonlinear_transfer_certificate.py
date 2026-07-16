@@ -72,6 +72,9 @@ BERGER_RAW_ENDPOINT_CYCLIC_PATH = (
 BERGER_METRIC_FACTOR_SCREEN_PATH = (
     QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json"
 )
+BERGER_RETAINED_COMPANION_PATH = (
+    QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT.json"
+)
 BERGER_REDUCED_CARTAN_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json"
 )
@@ -181,6 +184,10 @@ def _source_manifest() -> dict[str, str]:
         "../lorentzian/metric_equal_connection_factor_screen_certificate.py",
         "../lorentzian/tests/test_metric_equal_connection_factor_screen.py",
         "../reports/berger-metric-equal-connection-factor-screen.md",
+        "../lorentzian/retained_biwave_companion_preflight.py",
+        "../lorentzian/retained_biwave_companion_preflight_certificate.py",
+        "../lorentzian/tests/test_retained_biwave_companion_preflight.py",
+        "../reports/berger-retained-biwave-companion-preflight.md",
         "berger_reduced_mode_cartan.py",
         "berger_reduced_mode_cartan_certificate.py",
         "berger_nonzero_weight_no_go_import.py",
@@ -332,6 +339,9 @@ def build_certificate() -> dict[str, Any]:
     )
     berger_metric_factor_screen = json.loads(
         BERGER_METRIC_FACTOR_SCREEN_PATH.read_text(encoding="utf-8")
+    )
+    berger_retained_companion = json.loads(
+        BERGER_RETAINED_COMPANION_PATH.read_text(encoding="utf-8")
     )
     berger_reduced_cartan = json.loads(
         BERGER_REDUCED_CARTAN_PATH.read_text(encoding="utf-8")
@@ -701,6 +711,35 @@ def build_certificate() -> dict[str, Any]:
     ):
         raise ValueError("Berger metric factor screen drifted or was over-promoted")
     if (
+        berger_retained_companion.get("result_state")
+        != "RETAINED_METRIC_IDENTIFIED_COMPANION_EXACT_CAUSAL_RESOLVENT_OPEN"
+        or berger_retained_companion.get("retained_endpoint", {}).get(
+            "metric_identity"
+        )
+        != "P26_metric=A10=Box_2^2+V_2"
+        or berger_retained_companion.get("companion_system", {}).get(
+            "principal_determinant"
+        )
+        != "q^20"
+        or berger_retained_companion.get("companion_system", {}).get(
+            "extra_characteristic_cone"
+        )
+        is not False
+        or berger_retained_companion.get("claim_flags", {}).get(
+            "BERGER_RETAINED_BIWAVE_COMPANION_EXACT"
+        )
+        is not True
+        or berger_retained_companion.get("claim_flags", {}).get(
+            "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT"
+        )
+        is not False
+        or berger_retained_companion.get("claim_flags", {}).get("QUANTUM_CLAIM")
+        is not False
+        or berger_retained_companion.get("next_gate")
+        != "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT"
+    ):
+        raise ValueError("Berger retained biwave companion drifted or was over-promoted")
+    if (
         berger_retained_26_q2_transfer.get("schema")
         != "quantum-weyl-berger-retained-26-q2-transfer-v1"
         or berger_retained_26_q2_transfer.get("result_state")
@@ -904,6 +943,7 @@ def build_certificate() -> dict[str, Any]:
                 "independently imported the cyclic 36-row analytic Green realization with exact source/solution graph SDRs and unchanged 34-row BV cohomology",
                 "pinned independent replay of the exact Berger lower-by-two tensor-biwave normal form and canonical rough-wave factor no-go, followed by a normalized obstruction to the equal-connection scalar-principal ansatz",
                 "pinned independent replay of the full 13-row Douglis metric-cone inverse no-go and its hybrid retained-chain architectural consequence",
+                "exact projection P26=pi_cl P34_raw iota_cl identifies P26_metric=A10 and gives a 20-row local companion with principal determinant q^20 and no extra characteristic cone",
                 "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
                 "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
                 "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
@@ -952,8 +992,8 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED_CONDITIONAL_CAUSAL_UNARY_AND_RAW_ARITY_TWO_TRANSFER_THEOREM_IMPORTED_BINARY_CYCLIC_COMPLETION_AND_ENDPOINT_GREEN_HOMOTOPY_OPEN_RAW_PRINCIPAL_COMPATIBLE_RANK_ONE_WAVE_EXTENSION_IMPORTED_CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_LOWER_BY_TWO_BIWAVE_IMPORTED_FULL_L13_METRIC_CONE_INVERSE_EXACTLY_OBSTRUCTED_HYBRID_RETAINED_CHAIN_HOMOTOPY_REQUIRED",
-                "next_certificate": "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+                "status": "BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED_CONDITIONAL_CAUSAL_UNARY_AND_RAW_ARITY_TWO_TRANSFER_THEOREM_IMPORTED_BINARY_CYCLIC_COMPLETION_AND_ENDPOINT_GREEN_HOMOTOPY_OPEN_RAW_PRINCIPAL_COMPATIBLE_RANK_ONE_WAVE_EXTENSION_IMPORTED_CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_LOWER_BY_TWO_BIWAVE_IMPORTED_FULL_L13_METRIC_CONE_INVERSE_EXACTLY_OBSTRUCTED_RETAINED_METRIC_PROJECTION_AND_20_ROW_COMPANION_EXACT_VOLTERRA_RESOLVENT_REQUIRED",
+                "next_certificate": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
             },
             {
                 "question_id": "positive_dynamical_direction_closure",
@@ -1098,6 +1138,10 @@ def build_certificate() -> dict[str, Any]:
             "berger_metric_equal_connection_factor_screen_sha256": _sha256(
                 BERGER_METRIC_FACTOR_SCREEN_PATH
             ),
+            "berger_retained_biwave_companion_preflight_certificate": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT.json",
+            "berger_retained_biwave_companion_preflight_sha256": _sha256(
+                BERGER_RETAINED_COMPANION_PATH
+            ),
             "berger_first_arity_two_cartan_verdict_certificate": "quantum-weyl/transfer/certificates/BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json",
             "berger_first_arity_two_cartan_verdict_sha256": _sha256(
                 BERGER_REDUCED_CARTAN_PATH
@@ -1144,7 +1188,7 @@ def build_certificate() -> dict[str, Any]:
             "The complete 54-row local D action is independently imported and unary/contraction/cyclic equivariance is exact. The later scientific q2 replay now also proves the arity-two D-derivation identity; it does not solve the unary or interacting Cartan equations.",
             "The Berger 54-row q2 arrival adapter fixes and mutation-tests the portable bilinear PBW structure and binds it to the authoritative unary, D, contraction, and pairing hashes. The complete classical tensor is now independently imported, and the specialized exact Q(sqrt(10)) backend replays q1/q2, D/q2, and odd-Darboux cyclicity coefficientwise. Full ell2 transfer and Cartan execution remain absent.",
             "The bare full-dimensional unary Cartan problem is exactly obstructed on the 26/54-row complex. A conditional causal transfer theorem is now imported, but its retained Green-homotopy hypothesis and cyclic arity-two completion remain unconstructed.",
-            "The first dressed cyclic witness is not principal-compatible with the Green contract. The raw BV-canonical endpoint, its 13-row scalar-wave prolongation, and the paired 36-row cyclic analytic realization are independently replayed. The exact lower-by-two tensor-biwave normal form and canonical rough-wave factor no-go are imported, and the equal-connection scalar-principal two-factor ansatz is also exactly obstructed. The full L13 endpoint has a genuine sqrt(2) characteristic outside the metric cone, so a background-metric-causal inverse on arbitrary 13-row sources is ruled out; the support-local hybrid contraction followed by a retained causal chain homotopy remains open.",
+            "The first dressed cyclic witness is not principal-compatible with the Green contract. The raw BV-canonical endpoint, its 13-row scalar-wave prolongation, and the paired 36-row cyclic analytic realization are independently replayed. The exact lower-by-two tensor-biwave normal form and canonical rough-wave factor no-go are imported, and the equal-connection scalar-principal two-factor ansatz is also exactly obstructed. The full L13 endpoint has a genuine sqrt(2) characteristic outside the metric cone, so a background-metric-causal inverse on arbitrary 13-row sources is ruled out. Exact projection identifies P26_metric=A10, and its local 20-row companion has determinant q^20 with no extra cone; the causal Volterra resolvent and retained chain homotopy remain open.",
             "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
             "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
             "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
@@ -1176,7 +1220,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: CYCLIC ANALYTIC REALIZATION IMPORTED; GREEN OPERATORS OPEN")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: RETAINED COMPANION EXACT; VOLTERRA RESOLVENT OPEN")
     return 0
 
 
