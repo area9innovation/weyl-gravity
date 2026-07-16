@@ -286,13 +286,18 @@ def _scale(operator: ScalarOperator, coefficient: sp.Expr) -> ScalarOperator:
 
 
 def _compose(outer: ScalarOperator, inner: ScalarOperator) -> ScalarOperator:
-    return _normalize(
-        {
-            outer_word + inner_word: outer_coefficient * inner_coefficient
-            for outer_word, outer_coefficient in outer.items()
-            for inner_word, inner_coefficient in inner.items()
-        }
-    )
+    # Distinct pairs of monomials can produce the same concatenated word.
+    # Accumulate those products before PBW reduction; a dict comprehension
+    # would silently retain only the final cross term.
+    products: ScalarOperator = {}
+    for outer_word, outer_coefficient in outer.items():
+        for inner_word, inner_coefficient in inner.items():
+            word = outer_word + inner_word
+            products[word] = (
+                products.get(word, sp.S.Zero)
+                + outer_coefficient * inner_coefficient
+            )
+    return _normalize(products)
 
 
 def _adjoint(operator: ScalarOperator) -> ScalarOperator:

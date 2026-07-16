@@ -7,6 +7,8 @@ import sys
 import unittest
 from pathlib import Path
 
+import sympy as sp
+
 
 TRANSFER_ROOT = Path(__file__).resolve().parents[1]
 if str(TRANSFER_ROOT) not in sys.path:
@@ -92,6 +94,16 @@ class BergerRetainedQ1ImportTests(unittest.TestCase):
         record["sha256"] = IMPORT._canonical_hash(body)
         with self.assertRaisesRegex(ValueError, "Noether row"):
             IMPORT.validate_classical_retained_q1(mutant, self.schema, self.layout)
+
+    def test_scalar_composition_accumulates_colliding_cross_terms(self) -> None:
+        # (1 + e0)^2 has two independent contributions to e0.  This is the
+        # smallest regression for the collision exposed by the tensor-biwave
+        # replay, and it does not depend on a commuting-frame specialization.
+        operator = {(): sp.S.One, (0,): sp.S.One}
+        self.assertEqual(
+            IMPORT._compose(operator, operator),
+            {(): sp.S.One, (0,): sp.Integer(2), (0, 0): sp.S.One},
+        )
 
 
 if __name__ == "__main__":

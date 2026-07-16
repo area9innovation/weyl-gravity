@@ -1,0 +1,150 @@
+{
+  "canonical_factor_obstruction": {
+    "left_factorization_ruled_out": "A10=Box_2 V",
+    "nondivisible_degree_two_entries": 92,
+    "nonzero_degree_two_entries": 92,
+    "not_ruled_out": [
+      "mixed-bundle factorization",
+      "first-order-corrected factors not fixing Box_2",
+      "higher-rank local prolongation",
+      "causal Volterra or Levi construction"
+    ],
+    "reason": "absence of order-three defect forces V-Box_2 to be order zero, but every nonzero entry of sigma_2(V_2) is nondivisible by the scalar wave polynomial",
+    "right_factorization_ruled_out": "A10=V Box_2",
+    "scope": "same 10-component symmetric-tensor bundle with one factor fixed to the certified covariant rough wave Box_2 and the other having scalar wave-leading symbol"
+  },
+  "claim_boundary": "Pins and independently replays the exact ten-row identity A10=Box_2^2+V_2, the order-two remainder ledger, exact rational rank fixtures, and the scoped obstruction to a fixed canonical rough-wave factor. It does not construct a causal resolvent, invert the coupled clock endpoint, produce advanced/retarded Green operators, establish Hadamard data, restore a QME, or make a quantum claim.",
+  "claim_flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_CANONICAL_ROUGH_WAVE_FACTOR_NO_GO": true,
+    "BERGER_METRIC_LOWER_BY_TWO_BIWAVE": true,
+    "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": false,
+    "QUANTUM_CLAIM": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "fast_receipt": {
+    "checks": {
+      "degree_two_entries_92": true,
+      "degree_two_entries_all_nondivisible_by_scalar_wave": true,
+      "remainder_entry_count_98": true,
+      "remainder_order_ledger_reproduced": true,
+      "remainder_order_two": true,
+      "rough_tensor_wave_order_two": true
+    },
+    "next_gate": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT",
+    "operator_hashes": {
+      "lower_by_two_remainder": "2286d276d86d432d6329cbe125bd3e1303183aaeb2bebb11a159cdedfdd2120a",
+      "rough_tensor_wave": "f8596762cf8c555bd715b9b80cf3580ce47d8f9a495418159b587ed15fe7a410"
+    },
+    "source_claim_status": "CERTIFIED_EXACT_NORMAL_FORM_CANONICAL_FACTOR_NO_GO_GREEN_OPEN"
+  },
+  "independent_exact_replay": {
+    "checks": {
+      "exact_A10_equals_Box2_squared_plus_V2": true,
+      "order_four_and_three_defects_zero": true,
+      "rational_fixture_rank_ledger_reproduced": true
+    },
+    "degree_two_symbol_ranks": {
+      "generic": 10,
+      "null": 7,
+      "spacelike": 10,
+      "timelike": 9
+    },
+    "rational_background_fixture": {
+      "u": "2",
+      "v": "3"
+    }
+  },
+  "lifecycle_layer": "CLASSICAL_BV_CAUSAL_PREFLIGHT",
+  "next_gate": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT",
+  "normal_form": {
+    "Box_2": "covariant rough wave on the full symmetric-two-tensor bundle",
+    "artifacts": {
+      "lower_by_two_remainder": {
+        "format": "JSON_EXACT_SPARSE_OPERATOR",
+        "path": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/lower_by_two_remainder.json",
+        "sha256": "2286d276d86d432d6329cbe125bd3e1303183aaeb2bebb11a159cdedfdd2120a"
+      },
+      "rough_tensor_wave": {
+        "format": "JSON_EXACT_SPARSE_OPERATOR",
+        "path": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/rough_tensor_wave.json",
+        "sha256": "f8596762cf8c555bd715b9b80cf3580ce47d8f9a495418159b587ed15fe7a410"
+      }
+    },
+    "degree_two_symbol_ranks": {
+      "generic": 10,
+      "null": 7,
+      "spacelike": 10,
+      "timelike": 9
+    },
+    "identity": "A10=Box_2^2+V_2",
+    "maximum_order_A10": 4,
+    "maximum_order_V2": 2,
+    "order_four_defect": 0,
+    "order_three_defect": 0,
+    "remainder_entries_by_order": {
+      "0": 22,
+      "1": 40,
+      "2": 92,
+      "3": 0,
+      "4": 0
+    },
+    "remainder_nonzero_matrix_entries": 98
+  },
+  "provenance": {
+    "classical_commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+    "classical_sources": {
+      "d_quotient_classical/backreacted_clock/berger_metric_lower_by_two_biwave.py": {
+        "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+        "path": "d_quotient_classical/backreacted_clock/berger_metric_lower_by_two_biwave.py",
+        "sha256": "7d5fd32ba292dde9ead710dc9142f671322142678da036b7b823779c9b30c6f0"
+      },
+      "d_quotient_classical/backreacted_clock/tests/test_berger_metric_lower_by_two_biwave.py": {
+        "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_metric_lower_by_two_biwave.py",
+        "sha256": "6b1d1bcf6c15ae0bee74d5735b7bbadd68893d4989200905860029d66363e05f"
+      },
+      "d_quotient_classical/certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE.json": {
+        "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+        "path": "d_quotient_classical/certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE.json",
+        "sha256": "0add3e518b7384cd653161b1f9db44d13c71f5c8349cd013027057e0d2ff7c8b"
+      },
+      "d_quotient_classical/certificates/BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT.json": {
+        "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+        "path": "d_quotient_classical/certificates/BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT.json",
+        "sha256": "cb69a3eba6d3e81eec519adca51aa35f15d7250a2fc2be496230e55852c4950c"
+      },
+      "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/lower_by_two_remainder.json": {
+        "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+        "path": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/lower_by_two_remainder.json",
+        "sha256": "2286d276d86d432d6329cbe125bd3e1303183aaeb2bebb11a159cdedfdd2120a"
+      },
+      "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/rough_tensor_wave.json": {
+        "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+        "path": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/rough_tensor_wave.json",
+        "sha256": "f8596762cf8c555bd715b9b80cf3580ce47d8f9a495418159b587ed15fe7a410"
+      },
+      "d_quotient_classical/reports/berger-metric-lower-by-two-biwave.md": {
+        "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+        "path": "d_quotient_classical/reports/berger-metric-lower-by-two-biwave.md",
+        "sha256": "5a7e8c4b735a2755f3c02764fc8297758ad634af7b788b239be966822bd8229c"
+      }
+    },
+    "source_contract_mode": "STRICT_CONSUMER_FIELD_SET",
+    "source_manifest": {
+      "../reports/berger-metric-lower-by-two-biwave-import.md": "bf18f0cfd3ffd91875fd8c69e3df57f298a1b4270a03bfe06b99602548772c1e",
+      "metric_lower_by_two_biwave_import.py": "cb7c5a1b97c2b347ca427d4d937545c03a97a5526d42bba86bdfd70a6aeffff0",
+      "metric_lower_by_two_biwave_import_certificate.py": "1e7303b143097b5327501df81d864132ea41a1fce4faf982b30eaa2178a7f4c0",
+      "schema/berger-metric-lower-by-two-biwave-import-v1.schema.json": "68d215fcf180bdc59d304b962df6aef2e5c49e718c0cdab69284334cc2359758",
+      "tests/test_metric_lower_by_two_biwave_import.py": "4a87b0000a3f91ec4bec750200fcc5bdfb9e18a71a104d64928a9b1ad3cc9696"
+    },
+    "source_manifest_sha256": "8a81824fa87a2f2cb337409d513a331c650699756e0799b0af767e5fbcb8cb22"
+  },
+  "result_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT",
+  "result_state": "LOWER_BY_TWO_TENSOR_BIWAVE_IMPORTED_CAUSAL_RESOLVENT_OPEN",
+  "schema": "quantum-weyl-berger-metric-lower-by-two-biwave-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-metric-lower-by-two-biwave-import-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "setting_id",
+    "normal_form",
+    "canonical_factor_obstruction",
+    "fast_receipt",
+    "independent_exact_replay",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-metric-lower-by-two-biwave-import-v1"},
+    "result_id": {"const": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT"},
+    "result_state": {"const": "LOWER_BY_TWO_TENSOR_BIWAVE_IMPORTED_CAUSAL_RESOLVENT_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_CAUSAL_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "normal_form": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identity", "Box_2", "maximum_order_A10", "maximum_order_V2", "order_four_defect", "order_three_defect", "remainder_nonzero_matrix_entries", "remainder_entries_by_order", "degree_two_symbol_ranks", "artifacts"],
+      "properties": {
+        "identity": {"const": "A10=Box_2^2+V_2"},
+        "Box_2": {"const": "covariant rough wave on the full symmetric-two-tensor bundle"},
+        "maximum_order_A10": {"const": 4},
+        "maximum_order_V2": {"const": 2},
+        "order_four_defect": {"const": 0},
+        "order_three_defect": {"const": 0},
+        "remainder_nonzero_matrix_entries": {"const": 98},
+        "remainder_entries_by_order": {"const": {"0": 22, "1": 40, "2": 92, "3": 0, "4": 0}},
+        "degree_two_symbol_ranks": {"const": {"generic": 10, "null": 7, "spacelike": 10, "timelike": 9}},
+        "artifacts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rough_tensor_wave", "lower_by_two_remainder"],
+          "properties": {
+            "rough_tensor_wave": {"$ref": "#/$defs/operatorArtifact"},
+            "lower_by_two_remainder": {"$ref": "#/$defs/operatorArtifact"}
+          }
+        }
+      }
+    },
+    "canonical_factor_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope", "left_factorization_ruled_out", "right_factorization_ruled_out", "reason", "nonzero_degree_two_entries", "nondivisible_degree_two_entries", "not_ruled_out"],
+      "properties": {
+        "scope": {"type": "string", "minLength": 1},
+        "left_factorization_ruled_out": {"const": "A10=Box_2 V"},
+        "right_factorization_ruled_out": {"const": "A10=V Box_2"},
+        "reason": {"type": "string", "minLength": 1},
+        "nonzero_degree_two_entries": {"const": 92},
+        "nondivisible_degree_two_entries": {"const": 92},
+        "not_ruled_out": {"const": ["mixed-bundle factorization", "first-order-corrected factors not fixing Box_2", "higher-rank local prolongation", "causal Volterra or Levi construction"]}
+      }
+    },
+    "fast_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["checks", "operator_hashes", "source_claim_status", "next_gate"],
+      "properties": {
+        "checks": {"type": "object", "minProperties": 6, "additionalProperties": {"const": true}},
+        "operator_hashes": {"type": "object", "minProperties": 2},
+        "source_claim_status": {"const": "CERTIFIED_EXACT_NORMAL_FORM_CANONICAL_FACTOR_NO_GO_GREEN_OPEN"},
+        "next_gate": {"const": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT"}
+      }
+    },
+    "independent_exact_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["checks", "rational_background_fixture", "degree_two_symbol_ranks"],
+      "properties": {
+        "checks": {"type": "object", "minProperties": 3, "additionalProperties": {"const": true}},
+        "rational_background_fixture": {"const": {"u": "2", "v": "3"}},
+        "degree_two_symbol_ranks": {"const": {"generic": 10, "null": 7, "spacelike": 10, "timelike": 9}}
+      }
+    },
+    "claim_flags": {"const": {"BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false, "BERGER_CANONICAL_ROUGH_WAVE_FACTOR_NO_GO": true, "BERGER_METRIC_LOWER_BY_TWO_BIWAVE": true, "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": false, "QUANTUM_CLAIM": false}},
+    "next_gate": {"const": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classical_commit", "source_contract_mode", "classical_sources", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "classical_commit": {"const": "db099319b79b7fa9e107347fe24fc534a104c09c"},
+        "source_contract_mode": {"const": "STRICT_CONSUMER_FIELD_SET"},
+        "classical_sources": {"type": "object", "minProperties": 7},
+        "source_manifest": {"type": "object", "minProperties": 5},
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "operatorArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {
+        "format": {"const": "JSON_EXACT_SPARSE_OPERATOR"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
