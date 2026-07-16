@@ -12,6 +12,9 @@ class BergerDynamicalMaxwellRedshiftTest(unittest.TestCase):
         payload = result.build()
         result.verify(payload)
         self.assertEqual(payload["rational_fixture"]["results"]["one_plus_z"], "2")
+        self.assertEqual(payload["rational_fixture"]["results"]["stress_frequency_crosscheck_residual"], "0")
+        self.assertEqual(payload["hardening_audit"]["direct_exterior_form"]["dF_components"], {})
+        self.assertEqual(payload["hardening_audit"]["direct_exterior_form"]["d_star_F_components"], {})
         self.assertEqual(payload["health_and_pairing"]["energy_signature"], [2, 0, 0])
         self.assertEqual(json.loads(result.CERTIFICATE_PATH.read_text()), payload)
         self.assertEqual(result.REPORT_PATH.read_text(), result._report(payload))
@@ -27,6 +30,10 @@ class BergerDynamicalMaxwellRedshiftTest(unittest.TestCase):
             Draft202012Validator(schema).validate(mutant)
         mutant = deepcopy(payload)
         mutant["health_and_pairing"]["energy_signature"] = [1, 1, 0]
+        with self.assertRaises(ValidationError):
+            Draft202012Validator(schema).validate(mutant)
+        mutant = deepcopy(payload)
+        mutant["hardening_audit"]["gauge_invariant_frequency"]["potential_independent"] = False
         with self.assertRaises(ValidationError):
             Draft202012Validator(schema).validate(mutant)
 

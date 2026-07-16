@@ -23,6 +23,11 @@ The horizontal coframe is a curl eigenspace with eigenvalue `-beta`, so
 equations.  Its electric and magnetic fields have equal norm and zero inner
 product, while its Poynting vector is the null Hopf direction `s=-e3`.
 
+The hardened verifier also constructs `F` as a four-dimensional exterior
+form with signature `(-,+,+,+)`, applies the Lorentzian Hodge star, and finds
+both component dictionaries `dF={}` and `d star F={}`.  Thus the
+field-equation result no longer relies only on the curl reduction.
+
 ## Relational observable
 
 The local detector energy is
@@ -44,6 +49,19 @@ invariant.  The frequency ratio is extracted without a potential gauge:
 1+z=\sqrt{\mathcal E_e(\tau_e)/\mathcal E_r(\tau_r)}.
 \]
 
+Independently, the gauge-invariant complex field strength
+`F_+=F_c+i F_s` obeys
+
+\[
+\star F_+=-iF_+,
+\qquad
+\mathcal L_{u(v)}F_+=-i\beta\gamma(v)(1-v)F_+.
+\]
+
+Squaring this Lie-derivative frequency reproduces `T_ab u^a u^b` exactly,
+so the stress-energy ratio carries no untracked potential-amplitude
+normalization.
+
 At the rational fixture the exact values are
 
 - `beta=2*sqrt(10)/3`;
@@ -51,6 +69,13 @@ At the rational fixture the exact values are
 - `E_e=40/9` and `E_r=10/9`;
 - `1+z=2`, hence `z=1`;
 - reception at `theta=3/8`, before a clock recrossing or Hopf wrap.
+
+The SU(2) generator normalization gives primitive Hopf period `4 pi c`, not
+`2 pi c`.  At the fixture the full fibre length is
+`3*sqrt(10)*pi/5` and the half-fibre length is
+`3*sqrt(10)*pi/10`.  The signal path has exact margin
+`(-5 + 3*sqrt(10)*pi)/10>7/4`; the lifted clock chart has margin
+`(-3 + 8*pi)/8>21/8`.
 
 The real two-phase Maxwell block has nondegenerate symplectic pairing
 `-32*pi**2` and positive energy coefficient

@@ -1,6 +1,6 @@
 {
-  "claim_boundary": "This exact G0 theorem replaces the prescribed null ray by a genuine positive-energy source-free Maxwell mode and constructs a Diff-, Weyl-, Maxwell-gauge-, and total-D-invariant compact spatially averaged frequency ratio on the rational Berger clock fixture. It does not construct localized endpoints, a retarded compact source, the Maxwell BV/q2 semidirect extension, backreaction, a complete G1 signal sector, phenomenology, or a quantum result.",
-  "claim_status": "CERTIFIED_G0_DYNAMICAL_MAXWELL_MODE_LOCALIZED_RETARDED_DRESSING_OPEN",
+  "claim_boundary": "This hardened exact G0 theorem verifies the positive-energy source-free Maxwell mode directly in four-dimensional exterior algebra, matches the gauge-invariant field-strength Lie frequency to the stress-energy ratio, derives the primitive Hopf period and exact no-wrap margins, and retains the Diff-, Weyl-, Maxwell-gauge-, and total-D-invariant compact spatially averaged redshift fixture. It does not construct localized endpoints, a retarded compact source, the Maxwell BV/q2 semidirect extension, backreaction, a complete G1 signal sector, phenomenology, or a quantum result.",
+  "claim_status": "CERTIFIED_G0_DYNAMICAL_MAXWELL_MODE_HARDENED_LOCALIZED_RETARDED_DRESSING_OPEN",
   "dependency_refs": {
     "clock_background": {
       "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
@@ -20,11 +20,17 @@
   ],
   "exact_mode_checks": {
     "Bianchi_identity": true,
+    "Hopf_primitive_period_derived": true,
     "clock_slice_spatial_average_diffeomorphism_invariant": true,
+    "direct_four_form_Bianchi_identity": true,
+    "direct_four_form_Maxwell_equation": true,
+    "field_strength_stress_frequency_match": true,
     "frequency_observable_Maxwell_gauge_invariant": true,
     "frequency_observable_Weyl_invariant": true,
     "future_null_energy_flux": true,
+    "gauge_invariant_field_strength_frequency": true,
     "left_invariant_mode_divergence_free": true,
+    "no_wrap_inequality_exact": true,
     "null_field": true,
     "positive_Maxwell_energy": true,
     "source_free_Maxwell_equation": true,
@@ -42,6 +48,45 @@
     "QUANTUM_CLAIM": false
   },
   "generality_level": "G0",
+  "hardening_audit": {
+    "direct_exterior_form": {
+      "dF_components": {},
+      "d_star_F_components": {},
+      "dual_field_strength_components": {
+        "e01": "-beta*cos(beta*t)",
+        "e02": "-beta*sin(beta*t)",
+        "e13": "beta*cos(beta*t)",
+        "e23": "beta*sin(beta*t)"
+      },
+      "field_strength_components": {
+        "e01": "-beta*sin(beta*t)",
+        "e02": "beta*cos(beta*t)",
+        "e13": "beta*sin(beta*t)",
+        "e23": "-beta*cos(beta*t)"
+      },
+      "hodge_definition": "eI wedge star(eI)=<eI,eI> volume",
+      "orientation": "e0 wedge e1 wedge e2 wedge e3",
+      "signature": "(-,+,+,+)",
+      "verdict": "dF=0 AND d_star_F=0"
+    },
+    "gauge_invariant_frequency": {
+      "complex_field": "F_+=F_c+i F_s",
+      "duality": "star F_+=-i F_+",
+      "observer_eigenvalue": "L_u(v) F_+=-i beta gamma(v)(1-v) F_+",
+      "potential_independent": true,
+      "signal_eigenvalue": "L_s F_+=+i beta F_+",
+      "stress_crosscheck": "[beta gamma(v)(1-v)]^2=T_ab u^a u^b",
+      "time_eigenvalue": "L_n F_+=-i beta F_+"
+    },
+    "hopf_domain": {
+      "clock_witness": "pi-3/8>21/8 using pi>3",
+      "fixture_witness": "2 pi c=3 pi/sqrt(10)>9/4>1/2 using pi>3 and sqrt(10)<4",
+      "generator_normalization": "J3=diag(-i/2,+i/2), matching [e_i,e_j]=epsilon_ij^k e_k at a=c=1",
+      "half_fibre_length": "2 pi c",
+      "metric_fibre_period": "4 pi c",
+      "primitive_group_period": "exp(4 pi J3)=I while exp(2 pi J3)=-I"
+    }
+  },
   "health_and_pairing": {
     "energy": "H(x A_c+y A_s)=beta^2 Vol(S3_Berger)(x^2+y^2)",
     "energy_signature": [
@@ -69,7 +114,7 @@
       "de2=-(1/c)e3 wedge e1",
       "de3=-(c/a^2)e1 wedge e2"
     ],
-    "maxwell_equations": "dF=0 identically and d star F=0 because ddot A+curl^2 A=0 and div A=0",
+    "maxwell_equations": "dF=0 and d star F=0 directly in the four-dimensional exterior algebra; the curl/divergence reduction is an independent cross-check",
     "null_invariants": [
       "E^2-B^2=0",
       "E dot B=0"
@@ -92,10 +137,10 @@
   ],
   "provenance": {
     "source_manifest": {
-      "d_quotient_classical/backreacted_clock/berger_dynamical_maxwell_redshift.py": "c4ed4a0b548d1f110f192b7f89109318d6266c15fea74eede097de2ff86df707",
-      "d_quotient_classical/backreacted_clock/tests/test_berger_dynamical_maxwell_redshift.py": "b148896683ded11ee42bc523ea7553b6a0219ffe37a6939948f9df2a134d3abc",
-      "d_quotient_classical/backreacted_clock/verify_berger_dynamical_maxwell_redshift.py": "6d165f4e93d7c643c09695403d704827f7b52aebe4e81c4036f87f79c33427bb",
-      "d_quotient_classical/schema/berger-dynamical-maxwell-redshift-v1.schema.json": "d3e42af56fec9cb7f136cdc9950702e642448c8e4c70bd36350f57984cfbbf87"
+      "d_quotient_classical/backreacted_clock/berger_dynamical_maxwell_redshift.py": "c2f4a9945f68c2f45b725508e0366ac78d79a21be3ec73daea99901e60b5097d",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_dynamical_maxwell_redshift.py": "16ffb694e672ed2aa8094ede3b361069d2654ba4268fb418b76774ffedf4a6c8",
+      "d_quotient_classical/backreacted_clock/verify_berger_dynamical_maxwell_redshift.py": "791b5dc0a3fe43cba24cf5f8dd36f1e24a96556441b52f79e735ea2f29003263",
+      "d_quotient_classical/schema/berger-dynamical-maxwell-redshift-v2.schema.json": "81e5d28bca77003c5aa1e3eafbaf90b9205040096218a0a24fe742daceb8a3ba"
     }
   },
   "rational_fixture": {
@@ -105,7 +150,7 @@
       "omega": "3/4",
       "rho": "1"
     },
-    "chart_and_path_domain": "theta_receive=3/8<pi and travel distance 1/2 is below the half Hopf-fibre length 2 pi c",
+    "chart_and_path_domain": "theta_receive=3/8<pi and travel distance 1/2 is below 2 pi c=3 pi/sqrt(10), with explicit positive margins",
     "interpretation": "the exact Maxwell mode is measured at half the emitter frequency by the receding relational observer, so 1+z=2",
     "observers": {
       "initial_physical_separation": "1/5",
@@ -116,15 +161,24 @@
       "averaged_energy_emit": "40/9",
       "averaged_energy_receive": "10/9",
       "beta": "2*sqrt(10)/3",
+      "clock_chart_margin": "(-3 + 8*pi)/8",
+      "clock_chart_margin_lower_bound": "21/8",
+      "field_strength_frequency_emit": "2*sqrt(10)/3",
+      "field_strength_frequency_receive": "sqrt(10)/3",
       "frequency_emit": "2*sqrt(10)/3",
       "frequency_receive": "sqrt(10)/3",
       "gamma_emit": "1",
       "gamma_receive": "5/4",
+      "half_hopf_fibre_length": "3*sqrt(10)*pi/10",
+      "hopf_fibre_period": "3*sqrt(10)*pi/5",
+      "no_wrap_margin": "(-5 + 3*sqrt(10)*pi)/10",
+      "no_wrap_margin_lower_bound": "7/4",
       "one_plus_z": "2",
       "phase_slope_emit": "-8*sqrt(10)/9",
       "phase_slope_receive": "-16*sqrt(10)/45",
       "positive_energy_coefficient": "32*sqrt(10)*pi**2/3",
       "spatial_volume": "12*sqrt(10)*pi**2/5",
+      "stress_frequency_crosscheck_residual": "0",
       "symplectic_pairing": "-32*pi**2",
       "theta_receive": "3/8",
       "travel_time": "1/2",
@@ -144,30 +198,30 @@
     "weyl_invariance": "theta, g_hat, u, F, T[F,g_hat], and the normalized integral are Weyl invariant"
   },
   "result_id": "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
-  "schema": "pure-weyl-berger-dynamical-maxwell-redshift-v1",
+  "schema": "pure-weyl-berger-dynamical-maxwell-redshift-v2",
   "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
   "verification_receipts": [
     {
       "command": "python3 d_quotient_classical/backreacted_clock/berger_dynamical_maxwell_redshift.py --check --guards",
-      "elapsed_seconds": 0.81,
+      "elapsed_seconds": 6.69,
       "status": "PASS",
       "test_tier": 1
     },
     {
       "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_dynamical_maxwell_redshift.py",
-      "elapsed_seconds": 0.47,
+      "elapsed_seconds": 0.86,
       "status": "PASS",
       "test_tier": 1
     },
     {
       "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_dynamical_maxwell_redshift",
-      "elapsed_seconds": 1.45,
+      "elapsed_seconds": 12.57,
       "status": "PASS",
       "test_tier": 1
     },
     {
-      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-dynamical-maxwell-redshift-v1.schema.json -d d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
-      "elapsed_seconds": 1.2,
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-dynamical-maxwell-redshift-v2.schema.json -d d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
+      "elapsed_seconds": 1.38,
       "status": "PASS",
       "test_tier": 1
     }

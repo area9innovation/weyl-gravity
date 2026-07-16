@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schema/berger-dynamical-maxwell-redshift-v2.schema.json",
+  "title": "Hardened Berger dynamical Maxwell redshift mode",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "generality_level",
+    "dependency_tags", "dependency_refs", "maxwell_probe", "hardening_audit",
+    "relational_observable", "exact_mode_checks", "rational_fixture",
+    "health_and_pairing", "flags", "not_established", "next_gate",
+    "provenance", "verification_receipts", "higher_tiers_not_run", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-dynamical-maxwell-redshift-v2"},
+    "result_id": {"const": "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "claim_status": {"const": "CERTIFIED_G0_DYNAMICAL_MAXWELL_MODE_HARDENED_LOCALIZED_RETARDED_DRESSING_OPEN"},
+    "generality_level": {"const": "G0"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["relational_preflight", "clock_background"],
+      "properties": {
+        "relational_preflight": {"$ref": "#/$defs/dependency"},
+        "clock_background": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "maxwell_probe": {
+      "type": "object", "additionalProperties": false,
+      "required": ["action", "order", "weyl_behavior", "coframe", "maurer_cartan", "potential", "phase_partner", "field_strength", "curl_spectrum", "maxwell_equations", "null_invariants", "signal_direction"],
+      "properties": {
+        "action": {"type": "string"},
+        "order": {"type": "string"},
+        "weyl_behavior": {"type": "string"},
+        "coframe": {"type": "string"},
+        "maurer_cartan": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "potential": {"type": "string"},
+        "phase_partner": {"type": "string"},
+        "field_strength": {"type": "string"},
+        "curl_spectrum": {"type": "string"},
+        "maxwell_equations": {"type": "string"},
+        "null_invariants": {"const": ["E^2-B^2=0", "E dot B=0"]},
+        "signal_direction": {"type": "string"}
+      }
+    },
+    "hardening_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["direct_exterior_form", "gauge_invariant_frequency", "hopf_domain"],
+      "properties": {
+        "direct_exterior_form": {
+          "type": "object", "additionalProperties": false,
+          "required": ["signature", "orientation", "hodge_definition", "field_strength_components", "dual_field_strength_components", "dF_components", "d_star_F_components", "verdict"],
+          "properties": {
+            "signature": {"const": "(-,+,+,+)"},
+            "orientation": {"const": "e0 wedge e1 wedge e2 wedge e3"},
+            "hodge_definition": {"type": "string"},
+            "field_strength_components": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string"}},
+            "dual_field_strength_components": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string"}},
+            "dF_components": {"type": "object", "maxProperties": 0},
+            "d_star_F_components": {"type": "object", "maxProperties": 0},
+            "verdict": {"const": "dF=0 AND d_star_F=0"}
+          }
+        },
+        "gauge_invariant_frequency": {
+          "type": "object", "additionalProperties": false,
+          "required": ["complex_field", "duality", "time_eigenvalue", "signal_eigenvalue", "observer_eigenvalue", "stress_crosscheck", "potential_independent"],
+          "properties": {
+            "complex_field": {"const": "F_+=F_c+i F_s"},
+            "duality": {"const": "star F_+=-i F_+"},
+            "time_eigenvalue": {"type": "string"},
+            "signal_eigenvalue": {"type": "string"},
+            "observer_eigenvalue": {"type": "string"},
+            "stress_crosscheck": {"type": "string"},
+            "potential_independent": {"const": true}
+          }
+        },
+        "hopf_domain": {
+          "type": "object", "additionalProperties": false,
+          "required": ["generator_normalization", "primitive_group_period", "metric_fibre_period", "half_fibre_length", "fixture_witness", "clock_witness"],
+          "properties": {
+            "generator_normalization": {"type": "string"},
+            "primitive_group_period": {"type": "string"},
+            "metric_fibre_period": {"const": "4 pi c"},
+            "half_fibre_length": {"const": "2 pi c"},
+            "fixture_witness": {"type": "string"},
+            "clock_witness": {"type": "string"}
+          }
+        }
+      }
+    },
+    "relational_observable": {
+      "type": "object", "additionalProperties": false,
+      "required": ["clock_slice", "observer", "local_energy_reading", "spatial_dressing", "diffeomorphism_invariance", "weyl_invariance", "maxwell_gauge_invariance", "total_D_invariance", "frequency_ratio", "causal_relation"],
+      "properties": {
+        "clock_slice": {"type": "string"},
+        "observer": {"type": "string"},
+        "local_energy_reading": {"type": "string"},
+        "spatial_dressing": {"type": "string"},
+        "diffeomorphism_invariance": {"type": "string"},
+        "weyl_invariance": {"type": "string"},
+        "maxwell_gauge_invariance": {"type": "string"},
+        "total_D_invariance": {"type": "string"},
+        "frequency_ratio": {"type": "string"},
+        "causal_relation": {"type": "string"}
+      }
+    },
+    "exact_mode_checks": {"type": "object", "minProperties": 16, "additionalProperties": {"const": true}},
+    "rational_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["background", "observers", "results", "chart_and_path_domain", "interpretation"],
+      "properties": {
+        "background": {
+          "type": "object", "additionalProperties": false,
+          "required": ["a", "c^2", "rho", "omega"],
+          "properties": {"a": {"const": "1"}, "c^2": {"const": "9/40"}, "rho": {"const": "1"}, "omega": {"const": "3/4"}}
+        },
+        "observers": {
+          "type": "object", "additionalProperties": false,
+          "required": ["v_emit", "v_receive", "initial_physical_separation"],
+          "properties": {"v_emit": {"const": "0"}, "v_receive": {"const": "3/5"}, "initial_physical_separation": {"const": "1/5"}}
+        },
+        "results": {
+          "type": "object", "additionalProperties": false,
+          "required": ["beta", "spatial_volume", "gamma_emit", "gamma_receive", "frequency_emit", "frequency_receive", "field_strength_frequency_emit", "field_strength_frequency_receive", "stress_frequency_crosscheck_residual", "averaged_energy_emit", "averaged_energy_receive", "one_plus_z", "z", "travel_time", "theta_receive", "phase_slope_emit", "phase_slope_receive", "symplectic_pairing", "positive_energy_coefficient", "hopf_fibre_period", "half_hopf_fibre_length", "no_wrap_margin", "no_wrap_margin_lower_bound", "clock_chart_margin", "clock_chart_margin_lower_bound"],
+          "properties": {
+            "beta": {"const": "2*sqrt(10)/3"},
+            "spatial_volume": {"const": "12*sqrt(10)*pi**2/5"},
+            "gamma_emit": {"const": "1"},
+            "gamma_receive": {"const": "5/4"},
+            "frequency_emit": {"const": "2*sqrt(10)/3"},
+            "frequency_receive": {"const": "sqrt(10)/3"},
+            "field_strength_frequency_emit": {"const": "2*sqrt(10)/3"},
+            "field_strength_frequency_receive": {"const": "sqrt(10)/3"},
+            "stress_frequency_crosscheck_residual": {"const": "0"},
+            "averaged_energy_emit": {"const": "40/9"},
+            "averaged_energy_receive": {"const": "10/9"},
+            "one_plus_z": {"const": "2"},
+            "z": {"const": "1"},
+            "travel_time": {"const": "1/2"},
+            "theta_receive": {"const": "3/8"},
+            "phase_slope_emit": {"const": "-8*sqrt(10)/9"},
+            "phase_slope_receive": {"const": "-16*sqrt(10)/45"},
+            "symplectic_pairing": {"const": "-32*pi**2"},
+            "positive_energy_coefficient": {"const": "32*sqrt(10)*pi**2/3"},
+            "hopf_fibre_period": {"const": "3*sqrt(10)*pi/5"},
+            "half_hopf_fibre_length": {"const": "3*sqrt(10)*pi/10"},
+            "no_wrap_margin": {"const": "(-5 + 3*sqrt(10)*pi)/10"},
+            "no_wrap_margin_lower_bound": {"const": "7/4"},
+            "clock_chart_margin": {"const": "(-3 + 8*pi)/8"},
+            "clock_chart_margin_lower_bound": {"const": "21/8"}
+          }
+        },
+        "chart_and_path_domain": {"type": "string"},
+        "interpretation": {"type": "string"}
+      }
+    },
+    "health_and_pairing": {
+      "type": "object", "additionalProperties": false,
+      "required": ["solution_block", "symplectic_form", "symplectic_rank", "energy", "energy_signature_convention", "energy_signature", "negative_physical_direction_introduced"],
+      "properties": {
+        "solution_block": {"type": "string"},
+        "symplectic_form": {"type": "string"},
+        "symplectic_rank": {"const": 2},
+        "energy": {"type": "string"},
+        "energy_signature_convention": {"const": "[positive,negative,zero]"},
+        "energy_signature": {"const": [2, 0, 0]},
+        "negative_physical_direction_introduced": {"const": false}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE", "BERGER_SPATIALLY_AVERAGED_RELATIONAL_FREQUENCY", "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE", "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL", "BERGER_GRAVITY_MAXWELL_Q2_DRESSING", "BERGER_MAXWELL_BACKREACTION", "BERGER_G1_COMPLETE_SIGNAL_SECTOR", "BERGER_REDSHIFT_PHENOMENOLOGY", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE": {"const": true},
+        "BERGER_SPATIALLY_AVERAGED_RELATIONAL_FREQUENCY": {"const": true},
+        "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": {"const": false},
+        "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL": {"const": false},
+        "BERGER_GRAVITY_MAXWELL_Q2_DRESSING": {"const": false},
+        "BERGER_MAXWELL_BACKREACTION": {"const": false},
+        "BERGER_G1_COMPLETE_SIGNAL_SECTOR": {"const": false},
+        "BERGER_REDSHIFT_PHENOMENOLOGY": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "not_established": {"type": "array", "minItems": 7, "items": {"type": "string"}},
+    "next_gate": {"const": "BERGER_LOCALIZED_RETARDED_MAXWELL_REDSHIFT_AND_Q2_DRESSING"},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_manifest"],
+      "properties": {"source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+    },
+    "verification_receipts": {
+      "type": "array", "minItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["test_tier", "command", "elapsed_seconds", "status"],
+        "properties": {
+          "test_tier": {"const": 1},
+          "command": {"type": "string", "minLength": 10},
+          "elapsed_seconds": {"type": "number", "minimum": 0},
+          "status": {"const": "PASS"}
+        }
+      }
+    },
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false, "required": ["tier_2", "tier_3"],
+      "properties": {"tier_2": {"type": "string", "minLength": 20}, "tier_3": {"type": "string", "minLength": 20}}
+    },
+    "claim_boundary": {"type": "string", "minLength": 150}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
