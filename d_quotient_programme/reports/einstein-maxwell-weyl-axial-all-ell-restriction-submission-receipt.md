@@ -4,8 +4,8 @@ The Einstein team has submitted
 `d_quotient_programme/contributions/einstein-maxwell-weyl-axial-all-ell-restriction.json`
 for aggregate programme import. It binds
 `bridge/certificates/einstein_maxwell_weyl_axial_all_ell_symplectic_restriction.json`
-at source commit `ba2d8ca1a276c170a03fdab8f3c0552da4e22c17`, SHA-256
-`1a60ff359727e1bf83aff4cc7f4bfff0c07a0b556476c9e0991cab2e1ab95fed`.
+at source commit `de98a1dab30d285bb120819adcec4febe4af6f9f`, SHA-256
+`b0854ac65f2a9c525492eef33fd543611ea78c24623769c7e02eeeee8b0eb22a`.
 
 The submitted verdict is
 `G1_AXIAL_ALL_ELL_GE2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION`. It records the
