@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "compact R_t x S1_L x S2 fixed-P_N product; complex positive-frequency sum of axisymmetric ell=2,k=0 axial and polar Einstein-Maxwell minus-branch modes; axial ell=2 sum-frequency output; four independent gauge-fixed target rows; before final residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "both declared axial and polar first-order inputs solve their exact Einstein-Maxwell minus-branch coefficient systems",
+    "the direct second coordinate expansion of 3B_ab-T_ab and div(F)^b gives an exact nonzero mixed axial-polar quadratic source in the axial ell=2 sum-frequency block",
+    "the density-weighted source vector is (0,-72(-187+111sqrt(3))/7,0,-24(-17+5sqrt(3))/7)",
+    "the exact correction (H_t,H_x,Q_t,Q_x)=(0,-4(-1+2sqrt(3))/21,0,4(5sqrt(3)+24)/21) has zero remainder in all four independent gauge-fixed target rows",
+    "this selected nonzero quadratic defect is removable and does not produce a homogeneous axial extra normal mode"
+  ],
+  "evidence": {
+    "commit": "24f8f3ddc847c17a702a41c3d2ff26fb50ae9c46",
+    "path": "bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json",
+    "sha256": "1355b39e523ba4385c8871a4a02772ed32920bede920b6242d4c5068ce44fbcc"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute the even axial-axial and polar-polar outputs and the conjugate/difference-frequency blocks for the same real tangent, then combine their corrections or exhibit a target-adjoint obstruction",
+  "not_established": [
+    "a complete second-order correction for the corresponding real tangent",
+    "the even AA and PP output blocks or conjugate/difference-frequency blocks",
+    "a direct replay of the dependent angular rows beyond the imported Noether identities",
+    "general nonlinear closure of the Einstein sector",
+    "final residual, causal, asymptotic, scattering, particle, ghost, unitarity, or quantum conclusions"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_axial_ee_ell2_sum_frequency_block",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_axial_ee_ell2_source",
+  "team_id": "einstein_boundary",
+  "verdict": "G1_MIXED_EE_AXIAL_ELL2_SUM_FREQUENCY_BLOCK_EXPLICITLY_REMOVABLE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ee_ell2_source --verify bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ee_ell2_source --verify-exhaustive bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_ee_ell2_source",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}
