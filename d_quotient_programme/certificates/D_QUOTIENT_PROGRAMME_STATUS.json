@@ -29,7 +29,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "dc7a199ba89aaea6189103a8ebdad991ecd51429",
+  "programme_base_commit": "eda065250c1b6b4f6ae7997b133bea310e3e94a3",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -321,6 +321,15 @@
       "setting_id": "compact_einstein_maxwell_exceptional_global_symplectic",
       "status": "CERTIFIED",
       "verdict": "G2_EXCEPTIONAL_GLOBAL_SYMPLECTIC_COMPLETION"
+    },
+    {
+      "boundary_conditions": "fixed-P_N compact product; complete standard harmonic Einstein-Maxwell tangent including generalized global modes; smooth periodic identity-component gauges; before final residual SO(4,2) quotient",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_symplectic_preflight",
+      "setting_id": "compact_einstein_maxwell_weyl_symplectic_preflight",
+      "status": "CERTIFIED",
+      "verdict": "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -1611,6 +1620,49 @@
       "sha256": "350d802e17498b4d98b9835e797600e8b616b3cf6a398cbe739191a29d65c06a"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-symplectic-preflight.json",
+      "payload": {
+        "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle P_N with N=2; complete standard harmonic Einstein-Maxwell tangent including generalized global modes; smooth periodic identity-component gauges; before final residual SO(4,2) quotient",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the next Weyl-Maxwell calculation is a linear tangent symplectic restriction, not a nonlinear solution-space pullback",
+          "the induced map from the Einstein-Maxwell Diff x U(1) tangent quotient to the Weyl-Maxwell Diff x Weyl x U(1) tangent quotient is injective",
+          "a putative pure-Weyl kernel obeys [3 ell(ell+1)+2] sigma_lm=0 and therefore vanishes for every smooth harmonic",
+          "the action normalization, flat control, improvement rules, and five-block output inventory are frozen fail-closed"
+        ],
+        "evidence": {
+          "commit": "eda065250c1b6b4f6ae7997b133bea310e3e94a3",
+          "path": "bridge/certificates/einstein_maxwell_weyl_symplectic_preflight.json",
+          "sha256": "22a948d0ef54efd0c4f2b9b8dd4c57a47a731f1511f40d6a6afbba780dd00591"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "derive the full Weyl-Maxwell Lee-Wald current and compute the exact linear restriction matrices on radiative, physical ell=1, homogeneous ell=0, and axial-twist blocks",
+        "not_established": [
+          "the Weyl-Maxwell symplectic restriction matrices or their ranks",
+          "universal nonzero proportionality to the Einstein-Maxwell form",
+          "a nonlinear Einstein-Maxwell solution-space embedding",
+          "the extra fourth-order Weyl-Maxwell phase space or final SO(4,2) quotient",
+          "a Lorentzian-causal, scattering, or quantum theorem"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_symplectic_preflight",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_symplectic_preflight",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symplectic_preflight --verify bridge/certificates/einstein_maxwell_weyl_symplectic_preflight.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symplectic_preflight.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symplectic_preflight"
+        ]
+      },
+      "sha256": "7cfea97a8972519e7803e3bf50ff99eb5503a923565066e55bcfccc1a9cb53aa"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -1711,9 +1763,9 @@
   ],
   "team_inputs": {
     "classical": {
-      "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+      "commit": "7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "89da9c898736fdcd6d21d68b6e53c523f036911702547baa6341a5bee6bd45c5"
+      "sha256": "35d75f22d9cb6703b2cd4283c5e1ccde296045dc42fcc3bf177308c9ce76f5b3"
     },
     "einstein_boundary": {
       "commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
@@ -1740,9 +1792,9 @@
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient. Radiative blocks have positive kinetic forms; the homogeneous global block has rank six; electric charge pairs with S1 holonomy; and each real axial ell=1 twist has a generalized canonical partner. No one-particle Hilbert norm is claimed.",
-      "next_gate": "compare the Weyl--Maxwell Lee--Wald pullback on the complete radiative and global blocks, then solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
-      "result_state": "G2_COMPLETE_STANDARD_EM_HARMONIC_SYMPLECTIC_PHASE_SPACE_WEYL_PULLBACK_OPEN",
+      "established": "The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient. The induced linear tangent quotient map into Weyl--Maxwell is injective: target Weyl gauge removes no declared Einstein class. The action, flat-control, ambiguity, and complete block contract for the symplectic restriction are frozen. No restriction matrix or one-particle Hilbert norm is yet claimed.",
+      "next_gate": "derive the full Weyl--Maxwell Lee--Wald current and compute its exact restriction on the complete radiative and generalized-global Einstein blocks, then solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
+      "result_state": "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE_CURRENT_OPEN",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },

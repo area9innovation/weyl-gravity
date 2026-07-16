@@ -31,7 +31,7 @@ this background as a non-Einstein Weyl--matter branch.
 | Team | Current verdict | Established | Next gate |
 |---|---|---|---|
 | classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 is exact and cyclic; its 34-row minimal contraction is portable. Five nonminimal antighost--multiplier quartets extend it to 54 rows, and the selected gauge fermion acts by an exact finite BV-canonical shear, producing a complete support-local cyclic gauge-fixed 54-to-26 contraction. | construct the total causal homotopy for the gauge-fixed 54-row complex, then export q2 and test local D-equivariance |
-| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient. Radiative blocks have positive kinetic forms; the homogeneous global block has rank six; electric charge pairs with S1 holonomy; and each real axial ell=1 twist has a generalized canonical partner. No one-particle Hilbert norm is claimed. | compare the Weyl--Maxwell Lee--Wald pullback on the complete radiative and global blocks, then solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit |
+| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient. The induced linear tangent quotient map into Weyl--Maxwell is injective: target Weyl gauge removes no declared Einstein class. The action, flat-control, ambiguity, and complete block contract for the symplectic restriction are frozen. No restriction matrix or one-particle Hilbert norm is yet claimed. | derive the full Weyl--Maxwell Lee--Wald current and compute its exact restriction on the complete radiative and generalized-global Einstein blocks, then solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit |
 | nonlinear | `INPUT_GATE_BLOCKED` | selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked | complete support-local q2 export and solve for iota_D^(2) or retain its obstruction |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered | complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion |
 
@@ -69,6 +69,7 @@ this background as a non-Einstein Weyl--matter branch.
 | compact_einstein_maxwell_polar_exceptional_complex | `H_product` | `einstein_maxwell_product_compact_polar_exceptional_complex` | CLASSICAL_BV | `CERTIFIED` | `G2_POLAR_ALL_ELL_LINEAR_COMPLEX` |
 | compact_einstein_maxwell_radiative_symplectic_matching | `H_product` | `einstein_maxwell_product_compact_radiative_symplectic` | CLASSICAL_BV | `CERTIFIED` | `G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHING` |
 | compact_einstein_maxwell_exceptional_global_symplectic | `H_product` | `einstein_maxwell_product_compact_exceptional_global_symplectic` | CLASSICAL_BV | `CERTIFIED` | `G2_EXCEPTIONAL_GLOBAL_SYMPLECTIC_COMPLETION` |
+| compact_einstein_maxwell_weyl_symplectic_preflight | `H_product` | `einstein_maxwell_product_compact_weyl_symplectic_preflight` | CLASSICAL_BV | `CERTIFIED` | `G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `INPUT_GATE_BLOCKED` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
@@ -123,6 +124,7 @@ this background as a non-Einstein Weyl--matter branch.
 | einstein_boundary | `compact_einstein_maxwell_polar_exceptional_complex` | `H_product` | `einstein_maxwell_product_compact_polar_exceptional_complex` | `CERTIFIED` | `G2_POLAR_ALL_ELL_LINEAR_COMPLEX` |
 | einstein_boundary | `compact_einstein_maxwell_radiative_symplectic_matching` | `H_product` | `einstein_maxwell_product_compact_radiative_symplectic` | `CERTIFIED` | `G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHING` |
 | einstein_boundary | `compact_einstein_maxwell_exceptional_global_symplectic` | `H_product` | `einstein_maxwell_product_compact_exceptional_global_symplectic` | `CERTIFIED` | `G2_EXCEPTIONAL_GLOBAL_SYMPLECTIC_COMPLETION` |
+| einstein_boundary | `compact_einstein_maxwell_weyl_symplectic_preflight` | `H_product` | `einstein_maxwell_product_compact_weyl_symplectic_preflight` | `CERTIFIED` | `G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | quantum | `vacuum_cylinder` | `D_compact` | `compact_quantum` | `BLOCKED` | `NO_VERDICT` |
 
@@ -138,7 +140,7 @@ The immediate shared calculation is
 
 ## Imported evidence
 
-- `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `46208d7c1c845da2b1959bf0799abcc92d856499`, SHA-256 `89da9c898736fdcd6d21d68b6e53c523f036911702547baa6341a5bee6bd45c5`
+- `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d`, SHA-256 `35d75f22d9cb6703b2cd4283c5e1ccde296045dc42fcc3bf177308c9ce76f5b3`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `7e87281c416f4c4f98edfe61ae05829f4b48593a`, SHA-256 `ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685`
 - `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `9c9e78d16b3cf2d8c2568f4b26cb446907086366`, SHA-256 `42862224d16b69ff5602166011b6a9060cf4d573971f0ea784b634200f99cd3e`
 - `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6`, SHA-256 `9f450477532a24edbd02282f29593876a13ea886808a6c9ba06b41004653f8da`

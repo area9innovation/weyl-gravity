@@ -47,6 +47,7 @@ EINSTEIN_MAXWELL_POLAR_MASTER_CONTRIBUTION = PACKAGE / "contributions" / "einste
 EINSTEIN_MAXWELL_POLAR_EXCEPTIONAL_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-polar-exceptional-complex.json"
 EINSTEIN_MAXWELL_RADIATIVE_SYMPLECTIC_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-radiative-symplectic-matching.json"
 EINSTEIN_MAXWELL_EXCEPTIONAL_GLOBAL_SYMPLECTIC_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-exceptional-global-symplectic.json"
+EINSTEIN_MAXWELL_WEYL_SYMPLECTIC_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-symplectic-preflight.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -66,6 +67,9 @@ PRE_BERGER_MINIMAL_SDR_CLASSICAL_STATUS_HASH = (
 )
 PRE_BERGER_NONZERO_WEIGHT_CLASSICAL_STATUS_HASH = (
     "64cd7e14f5a92cba1933185afd5bfc5d79a05941f6f160121c966bc1f6a69c44"
+)
+PRE_BERGER_SUPPORT_LOCAL_Q2_CLASSICAL_STATUS_HASH = (
+    "89da9c898736fdcd6d21d68b6e53c523f036911702547baa6341a5bee6bd45c5"
 )
 
 
@@ -154,6 +158,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
             "berger_nonzero_d_weight_finite_block_no_go",
             "berger_all_weight_arity_two_d_cartan",
             "berger_54_row_local_d_action",
+            "berger_support_local_q2",
             "berger_54_row_causal_homotopy_reduction",
         ]
     ):
@@ -230,6 +235,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
         PRE_BERGER_DELTA_CLASSICAL_STATUS_HASH,
         PRE_BERGER_MINIMAL_SDR_CLASSICAL_STATUS_HASH,
         PRE_BERGER_NONZERO_WEIGHT_CLASSICAL_STATUS_HASH,
+        PRE_BERGER_SUPPORT_LOCAL_Q2_CLASSICAL_STATUS_HASH,
     }:
         raise AssertionError("quantum team classical import is neither current nor a certified historical baseline")
     if imported_hash != classical_hash and quantum["setting_ledger"][0]["verdict"] != "ANALYTIC_FRAMEWORK_MISSING":
@@ -839,6 +845,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "einstein_maxwell_product_compact_exceptional_global_symplectic",
         "G2_EXCEPTIONAL_GLOBAL_SYMPLECTIC_COMPLETION",
     )
+    maxwell_weyl_symplectic_preflight_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_WEYL_SYMPLECTIC_PREFLIGHT_CONTRIBUTION,
+        "compact_einstein_maxwell_weyl_symplectic_preflight",
+        "einstein_maxwell_product_compact_weyl_symplectic_preflight",
+        "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE",
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
@@ -999,6 +1011,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": maxwell_exceptional_global_symplectic_contribution,
             },
             {
+                "path": str(EINSTEIN_MAXWELL_WEYL_SYMPLECTIC_PREFLIGHT_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_SYMPLECTIC_PREFLIGHT_CONTRIBUTION),
+                "payload": maxwell_weyl_symplectic_preflight_contribution,
+            },
+            {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
@@ -1019,10 +1036,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "einstein_boundary",
-                "result_state": "G2_COMPLETE_STANDARD_EM_HARMONIC_SYMPLECTIC_PHASE_SPACE_WEYL_PULLBACK_OPEN",
+                "result_state": "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE_CURRENT_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient. Radiative blocks have positive kinetic forms; the homogeneous global block has rank six; electric charge pairs with S1 holonomy; and each real axial ell=1 twist has a generalized canonical partner. No one-particle Hilbert norm is claimed.",
-                "next_gate": "compare the Weyl--Maxwell Lee--Wald pullback on the complete radiative and global blocks, then solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
+                "established": "The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient. The induced linear tangent quotient map into Weyl--Maxwell is injective: target Weyl gauge removes no declared Einstein class. The action, flat-control, ambiguity, and complete block contract for the symplectic restriction are frozen. No restriction matrix or one-particle Hilbert norm is yet claimed.",
+                "next_gate": "derive the full Weyl--Maxwell Lee--Wald current and compute its exact restriction on the complete radiative and generalized-global Einstein blocks, then solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
             },
             {
                 "team_id": "nonlinear",
@@ -1311,6 +1328,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G2_EXCEPTIONAL_GLOBAL_SYMPLECTIC_COMPLETION",
             },
             {
+                "setting_id": "compact_einstein_maxwell_weyl_symplectic_preflight",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_symplectic_preflight",
+                "boundary_conditions": "fixed-P_N compact product; complete standard harmonic Einstein-Maxwell tangent including generalized global modes; smooth periodic identity-component gauges; before final residual SO(4,2) quotient",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1469,6 +1495,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_polar_exceptional_complex",
         "compact_einstein_maxwell_radiative_symplectic_matching",
         "compact_einstein_maxwell_exceptional_global_symplectic",
+        "compact_einstein_maxwell_weyl_symplectic_preflight",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1503,6 +1530,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_polar_exceptional_complex": "G2_POLAR_ALL_ELL_LINEAR_COMPLEX",
         "compact_einstein_maxwell_radiative_symplectic_matching": "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHING",
         "compact_einstein_maxwell_exceptional_global_symplectic": "G2_EXCEPTIONAL_GLOBAL_SYMPLECTIC_COMPLETION",
+        "compact_einstein_maxwell_weyl_symplectic_preflight": "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -1561,6 +1589,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Einstein--Maxwell radiative symplectic theorem was dropped")
     if ledger.get("compact_einstein_maxwell_exceptional_global_symplectic", {}).get("status") != "CERTIFIED":
         errors.append("Einstein--Maxwell exceptional global symplectic theorem was dropped")
+    if ledger.get("compact_einstein_maxwell_weyl_symplectic_preflight", {}).get("status") != "CERTIFIED":
+        errors.append("Einstein--Maxwell/Weyl--Maxwell symplectic preflight was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -1873,6 +1903,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_exceptional_global_symplectic",
             "drop_Einstein_Maxwell_exceptional_global_symplectic_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_weyl_symplectic_preflight",
+            "drop_Einstein_Maxwell_Weyl_symplectic_preflight_contribution",
         ),
     ):
         mutant = deepcopy(data)
