@@ -2,8 +2,8 @@
 
 The aggregate programme ledger imports
 `bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json`
-at source commit `de8e23d477831b67386a7e5699b18f03e3efe4d4`, SHA-256
-`fb7ef6a4f4cc41aaf80552388d7cd8a46df566f33a49770a804612c27149160d`.
+at source commit `fdbfc0c169441fcc02ff2ed5100ff2b11b321448`, SHA-256
+`f2d061870314baf8e09726d7d054ad67985a0bb31be0a4bb0230c7c6590ae221`.
 
 The registered G4 verdict is that the Weyl–Maxwell pullback is nondegenerate on
 the complete certified fixed-bundle standard Einstein–Maxwell harmonic tangent
