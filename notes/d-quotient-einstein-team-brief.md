@@ -655,7 +655,30 @@ Thus the standard fixed-bundle Einstein--Maxwell harmonic symplectic phase
 space is now complete before final residual quotient.  This statement permits
 polynomial-in-time Jordan solutions; a bounded-in-time phase space would be a
 different theorem.  The next compact gate is the Weyl--Maxwell Lee--Wald
-pullback on radiative and global blocks separately.
+restriction on radiative and global blocks separately.
+
+`EINSTEIN_MAXWELL_WEYL_SYMPLECTIC_PREFLIGHT` now freezes that gate as a
+linear tangent restriction, not a nonlinear solution-space pullback.  The
+distinction is mandatory because linear on-shell inclusion is complete while
+fixed-flux second-order extension already fails for declared tangents.
+
+The same preflight closes quotient injectivity.  If an Einstein class becomes
+target `Diff x Weyl x U(1)` gauge, subtracting its common `Diff x U(1)` part
+leaves `(h_ab,a_a)=(2 sigma gbar_ab,0)`.  The linearized Einstein--Maxwell
+rows imply
+
+```text
+-3 Delta_S2 sigma+2 sigma=0.
+```
+
+Since `Delta_S2 Y_lm=-ell(ell+1)Y_lm`, every coefficient is multiplied by
+`3 ell(ell+1)+2`, so smoothness forces `sigma=0`.  The induced linear tangent
+quotient map is therefore injective.  Target Weyl gauge cannot explain a
+vanishing restriction; any degeneration must instead come from the
+Weyl--Maxwell Lee--Wald pairing itself.  The calculation must retain full
+background-flux metric/potential mixing, reproduce the flat zero-gravitational
+restriction control, and evaluate the radiative, physical `ell=1`, rank-six
+homogeneous, and axial-twist blocks separately.
 
 ### Work package E-G4: open background classes and scattering
 

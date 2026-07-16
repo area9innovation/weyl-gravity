@@ -1,0 +1,175 @@
+{
+  "action_and_current_contract": {
+    "calculation_level": "exact second variation of each declared action at the common background, evaluated on certified linear solutions",
+    "einstein_maxwell_action": "S_EM=int sqrt(-g)[(R-2*Lambda)/(2*kappa)-(1/4)F_ab F^ab]",
+    "fixture": {
+      "Lambda": "1/2",
+      "N": "2",
+      "P": "1",
+      "alpha_B": "3",
+      "k_1": "0",
+      "k_2": "1",
+      "kappa": "1"
+    },
+    "forbidden_shortcuts": [
+      "principal-symbol-only current",
+      "adding a pure metric Weyl current to a decoupled photon current while dropping flux mixing",
+      "setting t=0 before proving current conservation"
+    ],
+    "lee_wald_convention": "omega^mu(delta1,delta2)=delta1 theta^mu(delta2)-delta2 theta^mu(delta1); Omega_Sigma uses the future normal on S1 x S2",
+    "mandatory_terms": [
+      "the complete C^2 metric current",
+      "the complete Maxwell current including background-flux metric/potential mixing",
+      "all curvature lower-order terms",
+      "symbolic time dependence of generalized zero-frequency representatives"
+    ],
+    "signature": "(-,+,+,+)",
+    "weyl_maxwell_action": "S_WM=int sqrt(-g)[(alpha_B/8)C_abcd C^abcd-(1/4)F_ab F^ab]"
+  },
+  "ambiguity_and_corner_contract": {
+    "bundle_rule": "at fixed P_N, differences of Maxwell connections are global one-forms; any claimed Cech corner must be exhibited explicitly and cannot be inferred from the monopole potential alone",
+    "closed_slice_rule": "a globally defined local dY integrates to zero on the closed Cauchy slice S1 x S2; delta B cancels after antisymmetrization",
+    "potential_ambiguity": "theta -> theta+dY+delta B",
+    "required_output": "state separately the bulk restriction, exact improvement, and any genuinely non-global corner contribution"
+  },
+  "block_inventory": [
+    {
+      "block": "axial radiative",
+      "range": "all Fourier n, m, ell>=2",
+      "required_output": "exact matrix, rank, kernel, Einstein-form comparison"
+    },
+    {
+      "block": "polar radiative",
+      "range": "all Fourier n, m, ell>=2",
+      "required_output": "exact matrix, rank, kernel, Einstein-form comparison"
+    },
+    {
+      "block": "physical ell=1 quotient",
+      "range": "both parities after ordinary gauge quotient",
+      "required_output": "exact quotient matrix and kernel audit"
+    },
+    {
+      "block": "homogeneous ell=0",
+      "range": "(a,b,c,d,Q_e,W_x)",
+      "required_output": "symbolic-t 6x6 matrix, rank, determinant, conservation"
+    },
+    {
+      "block": "axial ell=1 twist",
+      "range": "three real pairs (A_m,B_m)",
+      "required_output": "one SO(3)-equivariant 2x2 block, rank, conservation"
+    }
+  ],
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE preflight certifies the calculation domain, terminology, action conventions, complete block ledger, and injectivity of the induced linear tangent quotient map. It does not compute the Weyl-Maxwell symplectic restriction, construct a nonlinear solution embedding, classify the extra fourth-order phase space, perform the final SO(4,2) quotient, or establish causal scattering or quantum theory.",
+  "classification": {
+    "complete_einstein_maxwell_reference_form_imported": true,
+    "complete_linear_on_shell_tangent_domain_imported": true,
+    "final_residual_SO42_quotient_computed": false,
+    "flat_zero_gravitational_restriction_control_imported": true,
+    "induced_linear_tangent_quotient_map_injective": true,
+    "lorentzian_causal_or_scattering_theorem": false,
+    "nonlinear_solution_space_embedding_certified": false,
+    "universal_nonzero_proportionality_certified": false,
+    "weyl_maxwell_symplectic_restriction_computed": false
+  },
+  "comparison_contract": {
+    "admissible_verdicts": [
+      "UNIVERSAL_NONZERO_PROPORTIONAL_LINEAR_RESTRICTION",
+      "BLOCK_DEPENDENT_NONDEGENERATE_LINEAR_RESTRICTION",
+      "PARTIALLY_DEGENERATE_LINEAR_RESTRICTION",
+      "ZERO_LINEAR_RESTRICTION"
+    ],
+    "embedding_language_gate": "only universal nonzero proportionality plus the certified quotient injection permits 'linear symplectic embedding'; no verdict here proves nonlinear closure",
+    "matrix_tests": [
+      "rank",
+      "kernel",
+      "Pfaffian/determinant where applicable",
+      "blockwise proportionality factor",
+      "single-factor compatibility across all blocks"
+    ],
+    "target_gauge_loss": "excluded on the declared smooth fixed-bundle tangent domain by the quotient-injectivity theorem; a computed loss is a failed invariant, not an admissible reinterpretation"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "complete standard Einstein-Maxwell harmonic tangent on R_t x S1_L x S2 at fixed P_N with N=2, including radiative modes and generalized ell=0/axial-ell=1 global modes; smooth periodic identity-component gauges; before the final residual SO(4,2) quotient",
+  "flat_control_contract": {
+    "imported_verdict": "REDUCED_FLAT_EINSTEIN_SYMPLECTIC_EMBEDDING_REFUTED",
+    "interpretation": "a nonzero product-background gravitational restriction must be carried by curvature and/or background-flux terms, not by the flat biwave root",
+    "required_gravitational_limit": "on Fbar=0 and flat curvature, the restricted pure-Weyl TT current vanishes pointwise on Einstein waves",
+    "required_maxwell_limit": "with metric variations disabled, reproduce the standard Maxwell Lee-Wald current with the action normalization -F^2/4"
+  },
+  "generality_level": "G2_FIXED_BUNDLE_STANDARD_HARMONIC_PREFLIGHT",
+  "interpretation": "Ordinary Einstein-Maxwell radiative and global tangent classes survive the target Diff x Weyl x U(1) quotient at the common product background. The remaining question is not whether Weyl gauge removes them, but whether the Weyl-Maxwell Lee-Wald form restricts nondegenerately and with the Einstein-Maxwell normalization on those classes.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "derive the full Weyl-Maxwell Lee-Wald current and evaluate the exact radiative and generalized-global restriction matrices under this contract",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_symplectic_preflight.py",
+    "generator_sha256": "a355a1493468dc62bf2da289afba11887deee89804f310ad8a724531dbda40f4",
+    "inputs": {
+      "common_background": {
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      "flat_restriction_control": {
+        "path": "bridge/certificates/flat_einstein_symplectic_restriction.json",
+        "sha256": "8e3e690b5a1f62d79cdd587c2fa35c9f958604c01ce4f2a08749c367d5ab8f6d"
+      },
+      "global_einstein_form": {
+        "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+        "sha256": "ee677574b8295169ebb89360fe4ac03ab58f0d7a8273ab395e0087ee0d50ef18"
+      },
+      "linear_tangent_inclusion": {
+        "path": "bridge/certificates/einstein_maxwell_chevreton_tangent.json",
+        "sha256": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead"
+      },
+      "radiative_einstein_form": {
+        "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+        "sha256": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
+      },
+      "second_order_extension": {
+        "path": "bridge/certificates/einstein_maxwell_second_order_inclusion.json",
+        "sha256": "493059b1bf77c2a94e68d69fe23593dcb4d8be41e93ff22ae8ee18f674f79c8b"
+      }
+    }
+  },
+  "quotient_injectivity_theorem": {
+    "common_gauge_subtraction": "if an Einstein class maps to zero, subtract the same Diff x U(1) transformation; the remaining representative is (h_ab,a_a)=(2*sigma*gbar_ab,0)",
+    "conclusion": "3*ell*(ell+1)+2 is strictly positive for every integer ell>=0, hence sigma=0 and the induced linear tangent quotient map is injective",
+    "conformal_stress_variation": "delta_sigma T_ab=-2*sigma*T_ab for fixed F in four dimensions",
+    "elimination": "-3*Delta_S2_sigma + 2*sigma",
+    "fixture": {
+      "Lambda": "1/2",
+      "kappa": "1",
+      "rho": "1/2"
+    },
+    "harmonic_coefficient": "3*ell**2 + 3*ell + 2",
+    "harmonic_convention": "Delta_S2 Y_ellm=-ell*(ell+1)Y_ellm",
+    "independent_component_equations": {
+      "sphere_trace": "Delta_S2_sigma + 2*sigma - 2*sigma_tt + 2*sigma_xx",
+      "tt": "-Delta_S2_sigma - sigma_xx",
+      "xx": "Delta_S2_sigma - sigma_tt"
+    },
+    "linearized_metric_row": "delta E_ab/2=-nabla_a nabla_b sigma+gbar_ab Box sigma+Lambda*sigma*gbar_ab+kappa*sigma*T_ab",
+    "source_quotient": "ker(L_EM)/(identity-component Diff x U(1)) on fixed P_N",
+    "status": "CERTIFIED",
+    "target_quotient": "ker(L_WM)/(identity-component Diff x Weyl x U(1)) on fixed P_N"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_SYMPLECTIC_PREFLIGHT",
+  "result_state": "LINEAR_RESTRICTION_DOMAIN_AND_QUOTIENT_INJECTION_CERTIFIED_CURRENT_OPEN",
+  "schema": "einstein-maxwell-weyl-symplectic-preflight-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_symplectic_preflight.schema.json",
+  "schema_sha256": "83fc06715040a6eb82c744e65a503696aab11b1b5e384e0b19ab30a53fe47317",
+  "terminology_contract": {
+    "certified_map": "the identity field map i_1:(h,a)_EM -> (h,a)_WM on complete linear on-shell tangent spaces",
+    "forbidden_promotion": "do not call i_1 a nonlinear solution-space embedding or the restriction a nonlinear pullback",
+    "object_to_compute": "Omega_WM restricted along i_1 at the common background",
+    "preferred_name": "linear tangent symplectic restriction",
+    "reason": "fixed-flux radion and Maxwell-duality tangents have certified second-order extension obstructions, while general nonlinear closure remains open"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_symplectic_preflight --verify bridge/certificates/einstein_maxwell_weyl_symplectic_preflight.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_symplectic_preflight.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_symplectic_preflight"
+  ]
+}
