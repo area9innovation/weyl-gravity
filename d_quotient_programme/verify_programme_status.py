@@ -207,8 +207,10 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
     nonlinear = data["nonlinear"]
     if not (
         nonlinear.get("result_state")
-        == "ENGINE_READY_HT1_SELECTED_PPWAVE_AND_54_ROW_D_IMPORTED_Q2_BLOCKED"
+        == "COMPLETE_54_ROW_CLASSICAL_Q2_IMPORTED_AND_REPLAYED_TRANSFER_AND_D_CARTAN_PENDING"
         and nonlinear.get("classical_freeze_gate") == "FAIL_CLOSED"
+        and nonlinear["programme_stages"][1]["status"]
+        == "COMPLETE_54_ROW_UNARY_CONTRACTION_LOCAL_D_AND_SUPPORT_LOCAL_Q2_IMPORTED_ALL_Q2_IDENTITIES_REPLAYED_FULL_TRANSFERRED_ELL2_PENDING"
     ):
         raise AssertionError("nonlinear transfer gate drifted")
 
@@ -1055,10 +1057,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "nonlinear",
-                "result_state": "ENGINE_READY_INPUT_BLOCKED",
+                "result_state": "COMPLETE_54_ROW_Q2_REPLAY_TRANSFER_AND_CARTAN_PENDING",
                 "verdict": "INPUT_GATE_BLOCKED",
-                "established": "selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked",
-                "next_gate": "complete support-local q2 export and solve for iota_D^(2) or retain its obstruction",
+                "established": "The complete classical 54-row support-local q2 tensor is independently imported and replayed over Q(sqrt(10)); q1/q2, D/q2, and odd-Darboux cyclicity identities pass coefficientwise. Full transferred ell2 and the interacting Cartan solve remain pending.",
+                "next_gate": "compute the full transferred ell2 on the imported 54-row q2 data, then execute the interacting Cartan equation without promoting the still fail-closed quantum gate",
             },
             {
                 "team_id": "quantum",
