@@ -62,6 +62,12 @@ pipe or that the universe sits inside one.
   gravitational wave patterns solve the linear equations and carry a nonzero
   physical comparison rule. This establishes classical waves, not quantum
   photons, quantum gravitons or a detector prediction.
+- **A dynamical redshift fixture now works.** A positive-energy, source-free
+  Maxwell wave is read by relational observers on the Berger clock
+  background. The compact spatially averaged frequency ratio is invariant
+  under coordinate, conformal, Maxwell-gauge and total-time relabelings; one
+  exact fixture gives \(1+z=2\). Localized emitter and receiver endpoints, a
+  retarded pulse, backreaction and phenomenology remain open.
 - **The larger theory also has two extra classical wave directions in one
   tested family.** They are not disguised Einstein waves, and an exact local
   comparison between them is nonzero and positive at the current reduced
@@ -90,9 +96,20 @@ classical causal propagation, clocks, classical electromagnetic and
 gravitational wave directions, two classified extra fourth-order directions
 in a separate compact gravity-and-electromagnetism setting, and a first
 controlled interaction layer. It does not yet have a certified relational
-redshift, electrons, quantum particles, gravitational lensing, black-hole
-boundaries, a scattering experiment, or a dark-matter or dark-energy
-prediction.
+redshift with localized endpoints, electrons, quantum particles,
+gravitational lensing, black-hole boundaries, a scattering experiment, or a
+dark-matter or dark-energy prediction.
+
+The map below shows how these pieces depend on one another. Green boxes are
+foundations that have passed their stated mathematical tests, amber boxes are
+areas where real results exist but the larger physical claim is not finished,
+and gray boxes are still open. The arrows matter: for example, a classical
+wave is a prerequisite for a quantum particle, but it is not itself a quantum
+particle. Behind every green or amber box is a named computational receipt.
+
+![How the candidate universe is being built](../certificate_graph/universe-building-dag.png)
+
+[Open the scalable construction map](../certificate_graph/universe-building-dag.svg).
 
 ## What "gauge" means
 
@@ -206,7 +223,10 @@ A clock must change steadily, have healthy energy and couple consistently to
 gravity. Time dilation requires comparing two such physical clocks.
 Gravitational redshift requires an emitter, a light signal and a receiver; the
 observable is the ratio of the frequencies measured by the two clocks, stated
-without relying on arbitrary coordinate labels.
+without relying on arbitrary coordinate labels. The present Berger fixture
+passes this test for a dynamical Maxwell wave and compact spatially averaged
+relational observers, with an exact ratio \(1+z=2\). Turning that global
+fixture into localized endpoints and a retarded signal is the next rung.
 
 ### Gravitational lensing
 
@@ -264,7 +284,7 @@ quantum theory.
 | **Spacetime and curvature** | **Scoped pass.** Exact boundary-free spherical and Berger backgrounds solve their declared classical equations. | Extend causal control to broader globally hyperbolic backgrounds. |
 | **Causality** | **Scoped pass.** Retarded responses in the complete 386-part gravity system and 54-part clock system do not let future sources alter the past. | Construct the corresponding global quantum state and quantum causality theorem. |
 | **Clocks and time dilation** | **Partial.** A healthy matter clock changes internally while total time shift can remain gauge in the fixed-coupling, linear, zero-charge sector. | Compare two physical clocks and calculate an observable time-dilation law. |
-| **Gravitational redshift** | **Open, with ingredients present.** The model has curvature, causal propagation, light-like paths and a matter clock. | Connect emitter, light signal and receiver into one gauge-invariant frequency ratio. |
+| **Gravitational redshift** | **Scoped partial pass.** A positive-energy dynamical Maxwell mode and invariant compact spatially averaged relational frequency ratio are certified; one exact fixture gives \(1+z=2\). | Localize emitter and receiver, construct a compact retarded pulse, include gravity--Maxwell interaction dressing and backreaction, then test phenomenology. |
 | **Classical light** | **Partial.** Standard electromagnetic wave directions occur in the compact Einstein--Maxwell inclusion. | Build physical sources, detectors, energy flux and boundary conditions. |
 | **Electrons and charged matter** | **Open.** No certified charged spin-one-half matter sector exists in the current universe. | Add a Dirac field, a physical mass/scale mechanism, causal propagation and stable interactions. |
 | **Gravitational waves** | **Partial.** Standard linear gravitational wave directions occur with a nonzero physical pairing, and the pure-gravity complex propagates causally. In a separate compact axial family, two extra fourth-order directions survive the reduced equation and local-pairing tests. | Match the extra directions to the direct four-dimensional physical current, impose causal boundary conditions, and produce measurable waveforms, flux and detector response. |

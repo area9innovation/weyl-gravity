@@ -108,6 +108,12 @@ universe-building programme through spacetime, light, gravitational waves,
 clocks, redshift, interactions, and its symbolic reproducibility system
 without assuming advanced mathematics or physics.
 
+Certificate construction maps:
+[`public universe-building DAG`](certificate_graph/universe-building-dag.svg)
+and [`complete technical DAG`](certificate_graph/certificate-dag.svg). The
+[generator and receipts](certificate_graph/README.md) keep both views tied to
+the repository's declared certificate dependencies.
+
 Physicist-facing live summary:
 [`Pure-Weyl gravity programme: executive summary for physicists`](paper/98-physicist-executive-summary.md)
 ([PDF](paper/98-physicist-executive-summary.pdf)) gives the ten-minute claim map,

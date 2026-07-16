@@ -1,0 +1,194 @@
+{
+  "schema": "pure-weyl-public-universe-milestones-v1",
+  "nodes": [
+    {
+      "id": "gauge_complex",
+      "tier": "foundation",
+      "label": "Spacetime and gauge complex",
+      "detail": "exact classical equations",
+      "status": "certified",
+      "evidence": [
+        "field_bv_identification/certificates/minimal_bv_chain.json",
+        "covariant_completion/certificates/curved_Q_nilpotency.json"
+      ]
+    },
+    {
+      "id": "causality",
+      "tier": "core",
+      "label": "Classical causality",
+      "detail": "future sources do not alter the past",
+      "status": "certified",
+      "evidence": [
+        "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+        "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2"
+      ]
+    },
+    {
+      "id": "residual",
+      "tier": "core",
+      "label": "Gauge reduction and pairing",
+      "detail": "physical descriptions counted once",
+      "status": "certified",
+      "evidence": [
+        "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
+        "field_bv_identification/polarized_state/certificates/pairing_transfer.json"
+      ]
+    },
+    {
+      "id": "clock",
+      "tier": "core",
+      "label": "Healthy matter clock",
+      "detail": "relational change with total D gauge",
+      "status": "certified",
+      "evidence": [
+        "POSITIVE_BERGER_CLOCK_BACKGROUND",
+        "CLASSICAL_D_QUOTIENT_STATUS"
+      ]
+    },
+    {
+      "id": "interactions",
+      "tier": "classical_physics",
+      "label": "First interaction layer",
+      "detail": "complete q2 and Cartan through arity two",
+      "status": "certified",
+      "evidence": [
+        "BERGER_SUPPORT_LOCAL_Q2",
+        "BERGER_CAUSAL_D_CARTAN_V2"
+      ]
+    },
+    {
+      "id": "light",
+      "tier": "classical_physics",
+      "label": "Classical light",
+      "detail": "Einstein--Maxwell wave directions",
+      "status": "partial",
+      "evidence": [
+        "EINSTEIN_MAXWELL_CHEVRETON_TANGENT"
+      ]
+    },
+    {
+      "id": "gravity_waves",
+      "tier": "classical_physics",
+      "label": "Gravitational waves",
+      "detail": "standard and extra axial directions classified",
+      "status": "partial",
+      "evidence": [
+        "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+        "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION"
+      ]
+    },
+    {
+      "id": "redshift",
+      "tier": "observers",
+      "label": "Relational redshift",
+      "detail": "dynamical Maxwell frequency ratio; localization open",
+      "status": "partial",
+      "evidence": [
+        "BERGER_RELATIONAL_REDSHIFT_PREFLIGHT",
+        "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE"
+      ]
+    },
+    {
+      "id": "detector",
+      "tier": "observers",
+      "label": "Wave detector response",
+      "detail": "next observer-level wave test",
+      "status": "open",
+      "evidence": [
+        "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION"
+      ]
+    },
+    {
+      "id": "hadamard",
+      "tier": "quantum_inputs",
+      "label": "Hadamard quantum state",
+      "detail": "local singularity controlled; global state open",
+      "status": "partial",
+      "evidence": [
+        "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+        "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY"
+      ]
+    },
+    {
+      "id": "anomalies",
+      "tier": "quantum_inputs",
+      "label": "Quantum anomaly and QME",
+      "detail": "candidate classes known; restoration open",
+      "status": "partial",
+      "evidence": [
+        "ANOMALY_CANDIDATES_DIMENSION_FOUR",
+        "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON"
+      ]
+    },
+    {
+      "id": "lensing",
+      "tier": "observers",
+      "label": "Gravitational lensing",
+      "detail": "localized observable not yet built",
+      "status": "open",
+      "evidence": []
+    },
+    {
+      "id": "mass",
+      "tier": "future_physics",
+      "label": "Massive matter and E=mc^2",
+      "detail": "physical mass scale not yet built",
+      "status": "open",
+      "evidence": []
+    },
+    {
+      "id": "particles",
+      "tier": "future_physics",
+      "label": "Quantum particles",
+      "detail": "physical state and scattering interpretation open",
+      "status": "open",
+      "evidence": []
+    },
+    {
+      "id": "black_holes",
+      "tier": "future_physics",
+      "label": "Black holes",
+      "detail": "horizon phase space and stability open",
+      "status": "open",
+      "evidence": []
+    },
+    {
+      "id": "cosmology",
+      "tier": "cosmology",
+      "label": "Cosmology and dark sector",
+      "detail": "stable observable model not yet built",
+      "status": "open",
+      "evidence": []
+    }
+  ],
+  "edges": [
+    {"from": "gauge_complex", "to": "causality", "label": "constrains propagation"},
+    {"from": "gauge_complex", "to": "residual", "label": "identifies redundancy"},
+    {"from": "gauge_complex", "to": "clock", "label": "couples matter"},
+    {"from": "gauge_complex", "to": "light", "label": "supports fields"},
+    {"from": "gauge_complex", "to": "gravity_waves", "label": "linearizes"},
+    {"from": "residual", "to": "interactions", "label": "defines physical transfer"},
+    {"from": "causality", "to": "interactions", "label": "limits influence"},
+    {"from": "clock", "to": "redshift", "label": "supplies readings"},
+    {"from": "light", "to": "redshift", "label": "carries frequency"},
+    {"from": "interactions", "to": "redshift", "label": "preserves observable"},
+    {"from": "gravity_waves", "to": "detector", "label": "drives tidal response"},
+    {"from": "causality", "to": "detector", "label": "retards response"},
+    {"from": "light", "to": "lensing", "label": "traces null paths"},
+    {"from": "gravity_waves", "to": "lensing", "label": "supplies curvature"},
+    {"from": "causality", "to": "hadamard", "label": "fixes commutator"},
+    {"from": "residual", "to": "hadamard", "label": "selects observables"},
+    {"from": "interactions", "to": "anomalies", "label": "feeds quantum identities"},
+    {"from": "hadamard", "to": "particles", "label": "supplies short-distance state"},
+    {"from": "anomalies", "to": "particles", "label": "restores quantum gauge identity"},
+    {"from": "clock", "to": "mass", "label": "can supply a scale"},
+    {"from": "interactions", "to": "mass", "label": "stabilizes matter"},
+    {"from": "mass", "to": "particles", "label": "creates rest excitations"},
+    {"from": "gravity_waves", "to": "black_holes", "label": "tests perturbations"},
+    {"from": "causality", "to": "black_holes", "label": "defines horizons"},
+    {"from": "redshift", "to": "cosmology", "label": "builds observations"},
+    {"from": "lensing", "to": "cosmology", "label": "maps matter"},
+    {"from": "mass", "to": "cosmology", "label": "supplies matter"},
+    {"from": "black_holes", "to": "cosmology", "label": "tests strong gravity"}
+  ]
+}

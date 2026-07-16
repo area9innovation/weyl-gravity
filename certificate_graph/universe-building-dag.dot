@@ -1,0 +1,57 @@
+digraph UniverseBuilding {
+  graph [rankdir=TB, bgcolor="white", pad=0.35, nodesep=0.28, ranksep=0.58, splines=polyline, fontname="Helvetica"];
+  node [style="rounded,filled", fontname="Helvetica", fontsize=11, penwidth=1.5, margin="0.13,0.08"];
+  edge [fontname="Helvetica", fontsize=8, color="#667085", arrowsize=0.7];
+  label="How the candidate universe is being built";
+  labelloc=t; fontsize=22;
+  legend [shape=plaintext, label="Arrows show what each result enables\nGreen = certified | amber = partial | red = obstruction | gray = open", fontsize=10];
+  "gauge_complex" [shape=box, label="Spacetime and gauge\ncomplex\nexact classical equations", fillcolor="#d9f2df", color="#287a3d", tooltip="Spacetime and gauge\ncomplex\nexact classical equations"];
+  "causality" [shape=box, label="Classical causality\nfuture sources do not alter\nthe past", fillcolor="#d9f2df", color="#287a3d", tooltip="Classical causality\nfuture sources do not alter\nthe past"];
+  "residual" [shape=box, label="Gauge reduction and\npairing\nphysical descriptions\ncounted once", fillcolor="#d9f2df", color="#287a3d", tooltip="Gauge reduction and\npairing\nphysical descriptions\ncounted once"];
+  "clock" [shape=box, label="Healthy matter clock\nrelational change with total\nD gauge", fillcolor="#d9f2df", color="#287a3d", tooltip="Healthy matter clock\nrelational change with total\nD gauge"];
+  "interactions" [shape=box, label="First interaction layer\ncomplete q2 and Cartan\nthrough arity two", fillcolor="#d9f2df", color="#287a3d", tooltip="First interaction layer\ncomplete q2 and Cartan\nthrough arity two"];
+  "light" [shape=box, label="Classical light\nEinstein--Maxwell wave\ndirections", fillcolor="#fff0bf", color="#9a6a00", tooltip="Classical light\nEinstein--Maxwell wave\ndirections"];
+  "gravity_waves" [shape=box, label="Gravitational waves\nstandard and extra axial\ndirections classified", fillcolor="#fff0bf", color="#9a6a00", tooltip="Gravitational waves\nstandard and extra axial\ndirections classified"];
+  "redshift" [shape=box, label="Relational redshift\ndynamical Maxwell frequency\nratio; localization open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Relational redshift\ndynamical Maxwell frequency\nratio; localization open"];
+  "detector" [shape=box, label="Wave detector response\nnext observer-level wave\ntest", fillcolor="#eceff3", color="#667085", tooltip="Wave detector response\nnext observer-level wave\ntest"];
+  "hadamard" [shape=box, label="Hadamard quantum state\nlocal singularity\ncontrolled; global state\nopen", fillcolor="#fff0bf", color="#9a6a00", tooltip="Hadamard quantum state\nlocal singularity\ncontrolled; global state\nopen"];
+  "anomalies" [shape=box, label="Quantum anomaly and QME\ncandidate classes known;\nrestoration open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Quantum anomaly and QME\ncandidate classes known;\nrestoration open"];
+  "lensing" [shape=box, label="Gravitational lensing\nlocalized observable not yet\nbuilt", fillcolor="#eceff3", color="#667085", tooltip="Gravitational lensing\nlocalized observable not yet\nbuilt"];
+  "mass" [shape=box, label="Massive matter and\nE=mc^2\nphysical mass scale not yet\nbuilt", fillcolor="#eceff3", color="#667085", tooltip="Massive matter and\nE=mc^2\nphysical mass scale not yet\nbuilt"];
+  "particles" [shape=box, label="Quantum particles\nphysical state and\nscattering interpretation\nopen", fillcolor="#eceff3", color="#667085", tooltip="Quantum particles\nphysical state and\nscattering interpretation\nopen"];
+  "black_holes" [shape=box, label="Black holes\nhorizon phase space and\nstability open", fillcolor="#eceff3", color="#667085", tooltip="Black holes\nhorizon phase space and\nstability open"];
+  "cosmology" [shape=box, label="Cosmology and dark\nsector\nstable observable model not\nyet built", fillcolor="#eceff3", color="#667085", tooltip="Cosmology and dark\nsector\nstable observable model not\nyet built"];
+  { rank=same; "causality"; "residual"; "clock"; }
+  { rank=same; "interactions"; "light"; "gravity_waves"; }
+  { rank=same; "redshift"; "detector"; "lensing"; }
+  { rank=same; "hadamard"; "anomalies"; }
+  { rank=same; "mass"; "particles"; "black_holes"; }
+  "gauge_complex" -> "causality" [tooltip="constrains propagation"];
+  "gauge_complex" -> "residual" [tooltip="identifies redundancy"];
+  "gauge_complex" -> "clock" [tooltip="couples matter"];
+  "gauge_complex" -> "light" [tooltip="supports fields"];
+  "gauge_complex" -> "gravity_waves" [tooltip="linearizes"];
+  "residual" -> "interactions" [tooltip="defines physical transfer"];
+  "causality" -> "interactions" [tooltip="limits influence"];
+  "clock" -> "redshift" [tooltip="supplies readings"];
+  "light" -> "redshift" [tooltip="carries frequency"];
+  "interactions" -> "redshift" [tooltip="preserves observable"];
+  "gravity_waves" -> "detector" [tooltip="drives tidal response"];
+  "causality" -> "detector" [tooltip="retards response"];
+  "light" -> "lensing" [tooltip="traces null paths"];
+  "gravity_waves" -> "lensing" [tooltip="supplies curvature"];
+  "causality" -> "hadamard" [tooltip="fixes commutator"];
+  "residual" -> "hadamard" [tooltip="selects observables"];
+  "interactions" -> "anomalies" [tooltip="feeds quantum identities"];
+  "hadamard" -> "particles" [tooltip="supplies short-distance state"];
+  "anomalies" -> "particles" [tooltip="restores quantum gauge identity"];
+  "clock" -> "mass" [tooltip="can supply a scale"];
+  "interactions" -> "mass" [tooltip="stabilizes matter"];
+  "mass" -> "particles" [tooltip="creates rest excitations"];
+  "gravity_waves" -> "black_holes" [tooltip="tests perturbations"];
+  "causality" -> "black_holes" [tooltip="defines horizons"];
+  "redshift" -> "cosmology" [tooltip="builds observations"];
+  "lensing" -> "cosmology" [tooltip="maps matter"];
+  "mass" -> "cosmology" [tooltip="supplies matter"];
+  "black_holes" -> "cosmology" [tooltip="tests strong gravity"];
+}

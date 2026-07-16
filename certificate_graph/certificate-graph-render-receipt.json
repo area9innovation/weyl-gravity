@@ -1,0 +1,41 @@
+{
+  "artifacts": {
+    "certificate-dag.dot": {
+      "bytes": 256449,
+      "sha256": "40087ba19f9fa8ed4fd76785e99766818f22affae3664ab3d387fe8e29b1e649"
+    },
+    "certificate-dag.svg": {
+      "bytes": 1303571,
+      "sha256": "f44bfa7bcfcf4606f772bc6333cf64d19b0912fc8f8f5dedfa4f73c4bac2a14a"
+    },
+    "universe-building-dag.dot": {
+      "bytes": 5926,
+      "sha256": "a7033f7d8986039523b351497413b9847301291e1f7c4edd259150bd72037ffe"
+    },
+    "universe-building-dag.pdf": {
+      "bytes": 12706,
+      "sha256": "880dcff5774332c763625a899bab9eccafffbcab7060df8f011c609f85121b15"
+    },
+    "universe-building-dag.png": {
+      "bytes": 275431,
+      "sha256": "f5ad33325593790c13b7cf97a1fa893ac7ef27dc3a19b9498de14305c5eff86e"
+    },
+    "universe-building-dag.svg": {
+      "bytes": 31125,
+      "sha256": "b4870db7ef3f86b910a02efeae4dadb3dc45b7ced6f0cbfa165728308fec8e07"
+    }
+  },
+  "authoritative_inputs": [
+    "certificate-dag.dot",
+    "universe-building-dag.dot"
+  ],
+  "claim_boundary": "Rendered files are publication views. The JSON/DOT graph and underlying certificates determine all scientific content.",
+  "claim_scope": "PRESENTATION-ONLY",
+  "renderer": {
+    "graphviz": "15.0.0",
+    "interface": "@viz-js/viz 3.28.0",
+    "pdf_conversion": "ps2pdf -dEPSCrop",
+    "png_conversion": "pdftocairo -png -singlefile -r 120"
+  },
+  "schema_version": "certificate-graph-render-receipt-v1"
+}

@@ -62,6 +62,17 @@ convention. This is not yet a physical norm or particle theorem: the direct
 four-dimensional action Hessian, complete Lee--Wald matrix, causal boundary
 conditions, and final quotient are still required.
 
+The construction graph below makes the dependency structure explicit. Green
+nodes are certified foundations in a declared setting, amber nodes are active
+frontiers with genuine partial results, and gray nodes remain open physical
+milestones. Every colored node points back to named machine-verifiable
+certificates; an arrow means that the lower claim depends on the upper one.
+
+![Certificate-backed construction map for the candidate universe](../certificate_graph/universe-building-dag.png)
+
+[Open the scalable public graph](../certificate_graph/universe-building-dag.svg)
+or the [complete technical certificate DAG](../certificate_graph/certificate-dag.svg).
+
 ## How claims are typed
 
 Every physical conclusion is indexed by
@@ -93,6 +104,7 @@ In particular, `LOCAL-ALGEBRAIC` and `REDUCED-MODE` results are not reported as
 | Is that residual calculation connected to the covariant field theory? | The complete free metric BV--BFV complex has causal retarded/advanced chain homotopies, compact-to-spacelike-compact transport, residual endpoint recovery, and matching Green/current/residual pairings. | **Certified; Paper 8 artifact-ready** | Conformal cylinder, free classical theory, selected polarization; no Hadamard or quantum construction. |
 | Must \(D\) be gauge? | No. It is charged on the unrestricted compact phase space and gauge on the Taub-zero derived sector. | **Certified** | The answer is sector- and boundary-dependent. |
 | Can a healthy clock coexist with total \(D\)-gauge? | On one positive Berger-cylinder background, fixed-coupling linearized constraints force \(\delta Q_D=0\) although the matter clock has nonzero internal momentum. | **Certified in the stated linear sector** | Relational observables, nearby backgrounds, nonlinear closure, and quantum stability are not all complete. |
+| Is there a clock-defined redshift observable? | A positive-energy source-free Maxwell mode gives a Diff-, Weyl-, Maxwell-gauge-, and total-\(D\)-invariant compact spatially averaged relational frequency ratio; the exact fixture has \(1+z=2\). | **Certified G0 fixture; local-algebraic/reduced-mode/causal inputs** | Localized endpoints, compact retarded source, Maxwell BV/\(q_2\) dressing, backreaction, phenomenology, and quantum interpretation are open. |
 | Does the Berger nonlinear Cartan mechanism survive first contact with interactions? | The complete retained \(q_2\) is exact and cyclic; a causal cyclic \(D\)-Cartan contraction has been constructed through arity two on all 54 rows. | **Certified algebraically and at the stated classical causal level** | Arity three, QME restoration, and quantum claims are open. The formal source/solution transport algebra is certified, but its distributional microlocal realization remains fail-closed. |
 | Is ordinary Einstein--Maxwell radiation present inside the Weyl--Maxwell system? | The complete standard fixed-bundle harmonic Einstein--Maxwell tangent injects on shell before the final residual quotient, and its Weyl--Maxwell pullback is nondegenerate. | **Certified, reduced-mode/local-algebraic** | The pullback is not generally the Einstein symplectic form; radiative blocks are relatively indefinite, and the complementary branch has only been classified in the generic axial block. |
 | Is the complementary fourth-order axial branch real at the reduced equation level? | For generic compact axial \(\ell\geq2\), the quotient by the Einstein--Maxwell image consists of two exact extra polarizations. Their reduced-Hessian Green pairing is nonradical with signature \((2,0)\). | **Classified, local-algebraic/reduced-mode** | Direct four-dimensional action-Hessian and Lee--Wald matching, causal boundary admissibility, the final quotient, and particle interpretation are open. The signature is not yet a physical norm. |
@@ -214,10 +226,12 @@ vanishes. The Berger construction adds a healthy rotating scalar reference
 system and shows, at fixed couplings and linear order, that nontrivial matter
 clock momentum need not make the total \(D\) transformation physical.
 
-To connect this to the relational-observable literature, the remaining task
-is to construct explicit observables \(\mathcal O_A(\tau)\), prove their
-gauge invariance and causal dependence, and calculate an actual clock-defined
-redshift or response.
+The first explicit observable now uses a positive-energy source-free Maxwell
+mode and clock-defined compact spatial averages. Its frequency ratio is
+Diff-, Weyl-, Maxwell-gauge-, and total-\(D\)-invariant, with \(1+z=2\) on the
+exact fixture. This is a G0 dynamical redshift theorem, not yet localized
+signal physics: emitter/receiver endpoints, a compact retarded source,
+gravity--Maxwell \(q_2\) dressing, backreaction and phenomenology remain open.
 
 ### Amplitudes, twistors, and Einstein from conformal gravity
 
@@ -280,8 +294,8 @@ stability is now the subject of the programme.
 
 A strong positive change would be any of:
 
-- a certified Berger relational observable with nontrivial redshift while
-  total \(D\) remains gauge;
+- a localized retarded Berger redshift signal whose gravity--Maxwell
+  interaction dressing and backreaction preserve the relational observable;
 - arity-three and first resonant-channel survival of the interacting Cartan
   contraction;
 - a direct four-dimensional Lee--Wald match that controls the two extra axial
