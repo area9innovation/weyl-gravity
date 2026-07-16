@@ -86,8 +86,8 @@ schema/             machine-readable result contracts
 | B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; generated dimension-four catalogues, universal Diff towers, explicit type-D primitives, a complete Lorentzian intrinsic Euler tower, and a mapping-cone engine, but no exhaustive production BRST-cohomology quotient or antifield completion |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `IN_PROGRESS` import/projection infrastructure only |
 | D | reduced and Euclidean coefficient ledgers | `IN_PROGRESS` bookkeeping only; no BV coefficient claimed |
-| E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
-| F | one-loop Slavnov breaking and QME status | `NOT_COMPUTED` |
+| E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `INPUT_CONTRACT_READY`; physical certificate `NOT_COMPUTED` |
+| F | one-loop Slavnov breaking and QME status | `WARD_INPUT_CONTRACT_READY`; physical breaking and QME `NOT_COMPUTED` |
 | G | residual quantum transfer and pairing correction | `NOT_COMPUTED` |
 | N | nonlinear classical transfer prerequisite | `54_ROW_LOCAL_D_AND_UNARY_COMPLETE_Q2_BLOCKED`; the full gauge-fixed unary contraction and support-local helical `D` action pass exact checks on all 54 rows; an aligned pp-wave block has zero mixed transferred `ell2`; the exact Einstein $(--+)$ MHV reference fixture and fail-closed projection contract are ready; the full four-dimensional support-local `q2`, actual Einstein projection, nonaligned/Weyl-square mixing, and complete 54-row arity-two Cartan verdict remain absent |
 
@@ -151,6 +151,12 @@ or quantum-master-equation result.
   production-basis boundary.
 - [`reports/branch-c-spectral-bootstrap.md`](reports/branch-c-spectral-bootstrap.md)
   records the reduced `E/A/L` character, residues, and determinant boundary.
+- [`reports/berger-26-row-green-hadamard-endpoint-contract.md`](reports/berger-26-row-green-hadamard-endpoint-contract.md)
+  records the strict retained-endpoint Green/Hadamard import socket and its
+  still-missing physical analytic data.
+- [`reports/renormalized-D-ward-insertion-contract.md`](reports/renormalized-D-ward-insertion-contract.md)
+  records the sourced/restored Ward-operator lifecycle and the prohibition on
+  a Cartan classification before QME restoration.
 - [`reports/bootstrap-integration.md`](reports/bootstrap-integration.md)
   records the integrated scoped test run and why the full classical suite was
   not triggered.

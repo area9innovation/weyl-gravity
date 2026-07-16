@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-26-row-green-endpoint-contract-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "setting_id", "accepted_export_schema", "required_green_checks", "conditional_hadamard_checks", "mechanics_fixture", "physical_input_status", "green_endpoint_status", "hadamard_status", "quantum_execution_authorized", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-26-row-green-endpoint-contract-v1"},
+    "result_id": {"const": "BERGER_26_ROW_GREEN_HADAMARD_ENDPOINT_CONTRACT"},
+    "result_state": {"const": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "accepted_export_schema": {"const": "quantum-weyl-berger-26-row-green-endpoint-export-v1"},
+    "required_green_checks": {"type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true},
+    "conditional_hadamard_checks": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true},
+    "mechanics_fixture": {"type": "object"},
+    "physical_input_status": {"const": "NOT_RECEIVED"},
+    "green_endpoint_status": {"const": "NOT_CONSTRUCTED"},
+    "hadamard_status": {"const": "NOT_CONSTRUCTED"},
+    "quantum_execution_authorized": {"const": false},
+    "next_gate": {"const": "IMPORT_CERTIFIED_BERGER_26_ROW_GREEN_ENDPOINT"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

@@ -77,12 +77,12 @@ def comparison_analysis() -> dict[str, object]:
         {
             "carrier_id": "LOCAL_INSERTION_TO_ADMISSIBLE_DERIVATION_MAP",
             "required_for": "map H14 local anomaly densities to H0 admissible endomorphisms",
-            "status": "NOT_CONSTRUCTED",
+            "status": "CONTRACT_READY_OPERATOR_DATA_NOT_RECEIVED",
         },
         {
             "carrier_id": "REGULATED_SLAVNOV_BREAKING",
             "required_for": "match background trace coefficients to the repository BV anomaly",
-            "status": "NOT_COMPUTED",
+            "status": "CONTRACT_READY_NOT_COMPUTED",
         },
     )
     source_target_audit = {
@@ -155,6 +155,19 @@ def comparison_payload() -> dict[str, object]:
                 "cartan_classification_status": "NO_VERDICT",
             }
         ],
+        "prepared_input_contracts": {
+            "berger_26_row_green_hadamard_endpoint": {
+                "status": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED",
+                "physical_green_status": "NOT_CONSTRUCTED",
+                "hadamard_status": "NOT_CONSTRUCTED",
+            },
+            "renormalized_D_Ward_insertion": {
+                "status": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED",
+                "regulated_breaking_status": "NOT_COMPUTED",
+                "local_to_cartan_map_status": "NOT_CONSTRUCTED",
+                "quantum_cartan_status": "NO_VERDICT",
+            },
+        },
         "one_generator_pullback_maps": {
             "target_basis": list(D_LOCAL_TARGET_BASIS),
             "vacuum_cylinder": {
@@ -199,6 +212,8 @@ def comparison_payload() -> dict[str, object]:
             "source_target_degree_mismatch_recorded": "VERIFIED",
             "missing_arrow_fail_closed": "VERIFIED",
             "berger_classical_D_input_setting_specific": "VERIFIED",
+            "green_endpoint_contract_fail_closed": "VERIFIED",
+            "ward_insertion_contract_fail_closed": "VERIFIED",
         },
         "claim_boundary": [
             "The coefficient vector is the standard Euclidean background conformal-spin-two trace anomaly, not a computed repository BV Slavnov breaking.",

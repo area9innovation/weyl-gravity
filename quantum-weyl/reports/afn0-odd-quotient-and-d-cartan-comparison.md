@@ -79,6 +79,19 @@ carrier, but not the renormalized Ward-insertion carrier. Its quantum Cartan
 status remains `NO_VERDICT`; this does not alter the vacuum-cylinder local
 pullback calculation.
 
+## Prepared analytic input contracts
+
+The retained 26-row Green/Hadamard endpoint and the renormalized Ward
+insertion now have strict content-addressed input contracts.  The former
+requires both chain identities, causal support, cyclic adjointness,
+`D`-equivariance, zero-mode policy, and a separately gated Hadamard ledger.
+The latter accepts a sourced QME-open branch without classification and a
+QME-restored branch with an explicit primitive or dual witness as required.
+
+Both receipts are `INTERFACE_READY_PHYSICAL_INPUT_BLOCKED`.  This changes the
+engineering gate from an unspecified missing carrier to a declared missing
+payload; it does not construct either payload or alter `NO_VERDICT`.
+
 ## Receipts
 
 - `local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json`

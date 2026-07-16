@@ -1,0 +1,62 @@
+{
+  "accepted_export_schema": "quantum-weyl-renormalized-D-ward-insertion-export-v1",
+  "claim_boundary": "The content-addressed Ward-operator socket and its sourced/restored lifecycle rules are ready. The finite fixture verifies mechanics only. No regulated Slavnov breaking, physical Q1, restored QME, local-to-Cartan map, coefficient, or quantum D verdict is supplied.",
+  "defect_formula": "A_D^(1)=[Q0,iota_D1]+[Q1,iota_D0]-L_D1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "local_to_cartan_map_status": "NOT_CONSTRUCTED",
+  "mechanics_fixture": {
+    "closed_branch": {
+      "all_consistency_checks": "VERIFIED",
+      "classification": "ZERO"
+    },
+    "fixture_id": "first_order_D_Ward_interface_mechanics",
+    "scope": "FINITE_EXACT_MECHANICS_FIXTURE_ONLY",
+    "sourced_branch": {
+      "classification": "UNDEFINED_ANALYTICALLY",
+      "defect_closure": "SOURCED_NONZERO",
+      "qme_source": "NONZERO",
+      "sourced_consistency_identity": "VERIFIED"
+    }
+  },
+  "next_gate": "IMPORT_REGULATED_SLAVNOV_BREAKING_AND_RENORMALIZED_WARD_OPERATORS",
+  "operator_degrees": {
+    "L_D0": 0,
+    "L_D1": 0,
+    "Q0": 1,
+    "Q1": 1,
+    "iota_D0": -1,
+    "iota_D1": -1
+  },
+  "physical_input_status": "NOT_RECEIVED",
+  "provenance": {
+    "certificate_schema": "quantum-weyl/cartan/schema/renormalized-D-ward-insertion-contract-v1.schema.json",
+    "export_schema": "quantum-weyl/cartan/schema/renormalized-D-ward-insertion-export-v1.schema.json",
+    "source_manifest": {
+      "../reports/renormalized-D-ward-insertion-contract.md": "9a82dad9770a77ff61659b1ac13df0af56c0d308258c47a65180cf71bbb42557",
+      "defect_complex.py": "8ed616e0a2bb66f1282cafc491ae23e98a7068702a71e3775472bafda7f06313",
+      "schema/renormalized-D-ward-insertion-contract-v1.schema.json": "f7b3c37375c2e327dc478596072ee8e4da7be3cb57b9aba2f359fd478d84736b",
+      "schema/renormalized-D-ward-insertion-export-v1.schema.json": "0166f136a175e17ccb1619539ac8ae800795ee6de55cc8add7e601ff3825a311",
+      "tests/test_defect_complex.py": "648a259aa39a2a3164c746423049bcdb61f67809a6e348d2886825f80d0632d2",
+      "tests/test_ward_insertion_contract.py": "30e9cc91da6adc8b83de4c0ee16a062ddd22c989b879d274e812e8af249597b9",
+      "ward_insertion_contract.py": "facf5b28a1c660d02b7088b63f93d7324c33a04b0c971d659d9dae534a4642d7",
+      "ward_insertion_contract_certificate.py": "89b9a5a1009a1adc30cd3950895a80563556127800d0e54d27e29027420d480e"
+    },
+    "source_manifest_sha256": "724c4b2e2d9b62ff8485fbd73a438cc0e557721b68396182f2ddc53b3029bd46"
+  },
+  "qme_status": "NOT_COMPUTED",
+  "quantum_cartan_status": "NO_VERDICT",
+  "required_consistency_checks": [
+    "Q0_squared_zero",
+    "classical_Cartan_identity",
+    "defect_consistency_Q_closed",
+    "first_order_QME_linearization",
+    "first_order_Ward_compatibility",
+    "sourced_consistency_identity"
+  ],
+  "result_id": "RENORMALIZED_D_WARD_INSERTION_CONTRACT",
+  "result_state": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED",
+  "schema": "quantum-weyl-renormalized-D-ward-insertion-contract-v1",
+  "sourced_identity": "[Q0,A_D^(1)]=[[Q0,Q1],iota_D0]-([Q0,L_D1]+[Q1,L_D0])"
+}

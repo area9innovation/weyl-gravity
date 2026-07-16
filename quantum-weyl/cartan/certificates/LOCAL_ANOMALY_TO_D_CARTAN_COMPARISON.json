@@ -1,20 +1,22 @@
 {
-  "analysis_sha256": "ccbb99ecf2607361e484dee20ad1a53e4cd4659bafe276620b53c13426dd1687",
+  "analysis_sha256": "fb51d06026f77bb4a6d4d86d2ad3549fdeb6cbb307547cd1dc2a4e293f558215",
   "cartan_defect_comparison": {
     "classification_status": "NO_VERDICT",
     "map_status": "UNDEFINED_MISSING_RENORMALIZED_LOCAL_WARD_INSERTION",
     "zero_local_pullback_implies_zero_cartan_defect": false
   },
-  "certificate_hash": "35716ac5695a19c47a706749f9b9ee3360b37dbdf4ba5e30e9d8bd2549b483a1",
+  "certificate_hash": "59d8d3b6274d0bb8acba889c799ffe3302150ba030853689b3d11d2f3024b9e3",
   "checks": {
     "berger_classical_D_input_setting_specific": "VERIFIED",
     "cylinder_pullback_matrix_zero": "VERIFIED",
     "cylinder_sigma_D_zero": "VERIFIED",
+    "green_endpoint_contract_fail_closed": "VERIFIED",
     "local_even_source_basis_complete_at_AFN0": "VERIFIED",
     "local_odd_source_basis_complete_at_AFN0": "VERIFIED",
     "minkowski_sigma_D_minus_one": "VERIFIED",
     "missing_arrow_fail_closed": "VERIFIED",
-    "source_target_degree_mismatch_recorded": "VERIFIED"
+    "source_target_degree_mismatch_recorded": "VERIFIED",
+    "ward_insertion_contract_fail_closed": "VERIFIED"
   },
   "claim_boundary": [
     "The coefficient vector is the standard Euclidean background conformal-spin-two trace anomaly, not a computed repository BV Slavnov breaking.",
@@ -52,12 +54,12 @@
       {
         "carrier_id": "LOCAL_INSERTION_TO_ADMISSIBLE_DERIVATION_MAP",
         "required_for": "map H14 local anomaly densities to H0 admissible endomorphisms",
-        "status": "NOT_CONSTRUCTED"
+        "status": "CONTRACT_READY_OPERATOR_DATA_NOT_RECEIVED"
       },
       {
         "carrier_id": "REGULATED_SLAVNOV_BREAKING",
         "required_for": "match background trace coefficients to the repository BV anomaly",
-        "status": "NOT_COMPUTED"
+        "status": "CONTRACT_READY_NOT_COMPUTED"
       }
     ],
     "conclusion": "the ordinary bulk trace anomaly has zero direct local D_compact insertion on the closed vacuum cylinder; a nonzero quantum D-Cartan defect, if present, must enter through the unconstructed renormalized Ward/operator map, measure, boundary/corner, zero-mode, or antifield-completion data",
@@ -123,17 +125,32 @@
     }
   },
   "phase_space_id": "compact_quantum",
+  "prepared_input_contracts": {
+    "berger_26_row_green_hadamard_endpoint": {
+      "hadamard_status": "NOT_CONSTRUCTED",
+      "physical_green_status": "NOT_CONSTRUCTED",
+      "status": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"
+    },
+    "renormalized_D_Ward_insertion": {
+      "local_to_cartan_map_status": "NOT_CONSTRUCTED",
+      "quantum_cartan_status": "NO_VERDICT",
+      "regulated_breaking_status": "NOT_COMPUTED",
+      "status": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"
+    }
+  },
   "provenance": {
     "implementation": "quantum-weyl/cartan/local_anomaly_comparison.py",
-    "registry_commit": "137c6dc301c0665873b77d45338368987fa9f76c",
+    "registry_commit": "b1b6d6f658ecf7cc48e3d109b570baa02c7c3e04",
     "schema": "quantum-weyl/cartan/schema/local_anomaly_to_d_cartan_comparison.schema.json",
-    "source_manifest_sha256": "acb82c7cc6ab120f135aa0f19e8ecf043b36afde9dd592a5ed5483949ad8a9fa",
+    "source_manifest_sha256": "1e17142f462be110aa34bfe27034b0030ddf8c4521c28f26c3a70434c3476eae",
     "source_sha256": {
       "d_quotient_programme/registry/generators.json": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-      "d_quotient_programme/registry/phase_spaces.json": "186b71f96098f729ad77021fea745eb58afbb522bc78e4b27397835f421c4185",
-      "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json": "9c04d552a0ab243aff0403a51622f6d892ca77f4b0fbd04efdcf3d8ccc31c8bf",
+      "d_quotient_programme/registry/phase_spaces.json": "3a5101be8eb1216afa77668024ed0876b320883895f3a769b0ef4a85a61786f9",
+      "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json": "9f450477532a24edbd02282f29593876a13ea886808a6c9ba06b41004653f8da",
+      "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json": "b33bd90c2455d8b7e545e5835ffd96d627f784171bdc57ce5d697b8820d4c441",
       "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json": "6bf8b7ef099ce40bef3e65bd78ba06d8ec138c8228b3991bf49a00fd5eef8d67",
       "quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json": "0134e28cf3fd0bf425c30e368a24dab5c7b8375dcc03a8ff517b34eb56da0681",
+      "quantum-weyl/lorentzian/certificates/BERGER_26_ROW_GREEN_HADAMARD_ENDPOINT_CONTRACT.json": "055429d30de3cdd6965857f655236807cfdaa4283e7f381c155224d579c199eb",
       "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json": "6bb95e61932400728577d0109480a4861857aaa49a036220904080fb680399d7",
       "quantum-weyl/transfer/certificates/BERGER_54_ROW_D_CAUSAL_INPUT_IMPORT.json": "df24dbe40780f37d5548f4bdc8ad74146be678e5f20716982e99ca574a14ed1f"
     }

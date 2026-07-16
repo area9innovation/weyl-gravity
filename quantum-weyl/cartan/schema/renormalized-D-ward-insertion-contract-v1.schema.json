@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-renormalized-D-ward-insertion-contract-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "accepted_export_schema", "operator_degrees", "required_consistency_checks", "defect_formula", "sourced_identity", "mechanics_fixture", "physical_input_status", "qme_status", "local_to_cartan_map_status", "quantum_cartan_status", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-renormalized-D-ward-insertion-contract-v1"},
+    "result_id": {"const": "RENORMALIZED_D_WARD_INSERTION_CONTRACT"},
+    "result_state": {"const": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "accepted_export_schema": {"const": "quantum-weyl-renormalized-D-ward-insertion-export-v1"},
+    "operator_degrees": {"type": "object"},
+    "required_consistency_checks": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true},
+    "defect_formula": {"type": "string", "minLength": 1},
+    "sourced_identity": {"type": "string", "minLength": 1},
+    "mechanics_fixture": {"type": "object"},
+    "physical_input_status": {"const": "NOT_RECEIVED"},
+    "qme_status": {"const": "NOT_COMPUTED"},
+    "local_to_cartan_map_status": {"const": "NOT_CONSTRUCTED"},
+    "quantum_cartan_status": {"const": "NO_VERDICT"},
+    "next_gate": {"const": "IMPORT_REGULATED_SLAVNOV_BREAKING_AND_RENORMALIZED_WARD_OPERATORS"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

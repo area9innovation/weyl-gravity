@@ -50,6 +50,15 @@ class LocalAnomalyComparisonTests(unittest.TestCase):
         self.assertEqual(berger["retained_26_row_green_homotopy"], "NOT_CONSTRUCTED")
         self.assertEqual(berger["cartan_classification_status"], "NO_VERDICT")
 
+    def test_analytic_interfaces_are_ready_without_physical_promotion(self) -> None:
+        contracts = comparison_payload()["prepared_input_contracts"]
+        green = contracts["berger_26_row_green_hadamard_endpoint"]
+        ward = contracts["renormalized_D_Ward_insertion"]
+        self.assertEqual(green["status"], "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED")
+        self.assertEqual(green["physical_green_status"], "NOT_CONSTRUCTED")
+        self.assertEqual(ward["status"], "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED")
+        self.assertEqual(ward["quantum_cartan_status"], "NO_VERDICT")
+
     def test_schema_and_checked_in_certificate_reproduce(self) -> None:
         certificate = build_certificate()
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))

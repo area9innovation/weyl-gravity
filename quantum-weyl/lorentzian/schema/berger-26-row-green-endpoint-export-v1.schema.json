@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-26-row-green-endpoint-export-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "classical_commit", "dependency_tags", "setting_id", "row_layout", "support_category", "operators", "green_proof_checks", "hadamard", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-26-row-green-endpoint-export-v1"},
+    "result_id": {"const": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY"},
+    "result_state": {"enum": ["GREEN_CERTIFIED_HADAMARD_OPEN", "GREEN_AND_HADAMARD_CERTIFIED"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "row_layout": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_rows", "degree_ranks", "row_ids"],
+      "properties": {
+        "total_rows": {"const": 26},
+        "degree_ranks": {"const": [3, 10, 10, 3]},
+        "row_ids": {"type": "array", "minItems": 26, "maxItems": 26, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "support_category": {
+      "type": "object", "additionalProperties": false,
+      "required": ["spacetime_dimension", "globally_hyperbolic", "test_function_space", "boundary_conditions", "zero_mode_policy"],
+      "properties": {
+        "spacetime_dimension": {"const": 4},
+        "globally_hyperbolic": {"const": true},
+        "test_function_space": {"type": "string", "minLength": 1},
+        "boundary_conditions": {"type": "string", "minLength": 1},
+        "zero_mode_policy": {"type": "string", "minLength": 1}
+      }
+    },
+    "operators": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q26", "Lambda_plus", "Lambda_minus", "pairing26", "D26"],
+      "properties": {
+        "q26": {"$ref": "#/$defs/artifact"},
+        "Lambda_plus": {"$ref": "#/$defs/artifact"},
+        "Lambda_minus": {"$ref": "#/$defs/artifact"},
+        "pairing26": {"$ref": "#/$defs/artifact"},
+        "D26": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "green_proof_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["D_equivariance", "advanced_chain_homotopy_identity", "advanced_support", "cyclic_advanced_retarded_adjointness", "retarded_chain_homotopy_identity", "retarded_support", "row_completeness", "zero_mode_policy_applied"],
+      "properties": {
+        "D_equivariance": {"$ref": "#/$defs/proof"},
+        "advanced_chain_homotopy_identity": {"$ref": "#/$defs/proof"},
+        "advanced_support": {"$ref": "#/$defs/proof"},
+        "cyclic_advanced_retarded_adjointness": {"$ref": "#/$defs/proof"},
+        "retarded_chain_homotopy_identity": {"$ref": "#/$defs/proof"},
+        "retarded_support": {"$ref": "#/$defs/proof"},
+        "row_completeness": {"$ref": "#/$defs/proof"},
+        "zero_mode_policy_applied": {"$ref": "#/$defs/proof"}
+      }
+    },
+    "hadamard": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "proof_checks"],
+      "properties": {
+        "status": {"enum": ["NOT_CONSTRUCTED", "CERTIFIED"]},
+        "proof_checks": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "BRST_compatibility": {"$ref": "#/$defs/proof"},
+            "CCR_antisymmetric_part": {"$ref": "#/$defs/proof"},
+            "Hadamard_wavefront_set": {"$ref": "#/$defs/proof"},
+            "bisolution_modulo_smooth": {"$ref": "#/$defs/proof"},
+            "positivity_or_Krein_policy": {"$ref": "#/$defs/proof"}
+          }
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {
+        "format": {"enum": ["JSON_EXACT_SPARSE_OPERATOR", "JSON_PROOF_CERTIFICATE", "TEXT_PROOF_CERTIFICATE"]},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "proof": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "proof_artifact"],
+      "properties": {
+        "status": {"const": "VERIFIED"},
+        "proof_artifact": {"$ref": "#/$defs/artifact"}
+      }
+    }
+  }
+}

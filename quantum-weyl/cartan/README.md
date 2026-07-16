@@ -57,6 +57,13 @@ the representative itself.  Simultaneous similarity redefinitions of
 The engine rejects a scheme generator that is outside the declared
 admissible subcomplex.
 
+The physical Ward-operator socket is specified separately by
+[`ward_insertion_contract.py`](ward_insertion_contract.py). It requires a
+content-addressed observable complex, admissibility policy, all six
+order-zero/one operators, regulator and boundary provenance, the regulated
+Slavnov breaking, and proof artifacts for the sourced consistency identity.
+A sourced QME-open payload cannot emit a Cartan class or local-to-Cartan map.
+
 ## Claim boundary
 
 The physical sector ledger separates algebraic classification, analytic
@@ -99,6 +106,7 @@ From the repository root:
 ```bash
 PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -v
 PYTHONPATH=quantum-weyl python3 -m cartan.certificate --check
+PYTHONPATH=quantum-weyl python3 -m cartan.ward_insertion_contract_certificate --check
 python3 -m py_compile quantum-weyl/cartan/*.py quantum-weyl/cartan/tests/*.py
 ```
 

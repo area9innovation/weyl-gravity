@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": [
     "result_id", "result_state", "dependency_tags", "setting_id",
-    "generator_id", "phase_space_id", "source_local_cohomology", "setting_specific_classical_inputs",
+    "generator_id", "phase_space_id", "source_local_cohomology", "setting_specific_classical_inputs", "prepared_input_contracts",
     "one_generator_pullback_maps", "source_target_degree_audit",
     "minimal_missing_carrier_theorem", "cartan_defect_comparison", "checks",
     "claim_boundary", "analysis_sha256", "provenance", "certificate_hash"
@@ -45,6 +45,31 @@
           "retained_26_row_green_homotopy": {"const": "NOT_CONSTRUCTED"},
           "renormalized_local_Ward_insertion": {"const": "NOT_CONSTRUCTED"},
           "cartan_classification_status": {"const": "NO_VERDICT"}
+        }
+      }
+    },
+    "prepared_input_contracts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["berger_26_row_green_hadamard_endpoint", "renormalized_D_Ward_insertion"],
+      "properties": {
+        "berger_26_row_green_hadamard_endpoint": {
+          "type": "object", "additionalProperties": false,
+          "required": ["status", "physical_green_status", "hadamard_status"],
+          "properties": {
+            "status": {"const": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"},
+            "physical_green_status": {"const": "NOT_CONSTRUCTED"},
+            "hadamard_status": {"const": "NOT_CONSTRUCTED"}
+          }
+        },
+        "renormalized_D_Ward_insertion": {
+          "type": "object", "additionalProperties": false,
+          "required": ["status", "regulated_breaking_status", "local_to_cartan_map_status", "quantum_cartan_status"],
+          "properties": {
+            "status": {"const": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"},
+            "regulated_breaking_status": {"const": "NOT_COMPUTED"},
+            "local_to_cartan_map_status": {"const": "NOT_CONSTRUCTED"},
+            "quantum_cartan_status": {"const": "NO_VERDICT"}
+          }
         }
       }
     },

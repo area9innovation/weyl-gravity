@@ -23,6 +23,8 @@ DEPENDENCIES = (
     "quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
     "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
     "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json",
+    "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json",
+    "quantum-weyl/lorentzian/certificates/BERGER_26_ROW_GREEN_HADAMARD_ENDPOINT_CONTRACT.json",
     "quantum-weyl/transfer/certificates/BERGER_54_ROW_D_CAUSAL_INPUT_IMPORT.json",
     "d_quotient_programme/registry/generators.json",
     "d_quotient_programme/registry/phase_spaces.json",
@@ -61,9 +63,11 @@ def _semantic_input_checks() -> tuple[dict[str, str], str]:
     odd = _load(DEPENDENCIES[1])
     coefficients = _load(DEPENDENCIES[2])
     cartan = _load(DEPENDENCIES[3])
-    berger = _load(DEPENDENCIES[4])
-    generators = _load(DEPENDENCIES[5], commit=registry_commit)["generators"]
-    phase_spaces = _load(DEPENDENCIES[6], commit=registry_commit)["phase_spaces"]
+    ward_contract = _load(DEPENDENCIES[4])
+    green_contract = _load(DEPENDENCIES[5])
+    berger = _load(DEPENDENCIES[6])
+    generators = _load(DEPENDENCIES[7], commit=registry_commit)["generators"]
+    phase_spaces = _load(DEPENDENCIES[8], commit=registry_commit)["phase_spaces"]
     if even["result_state"] != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT":
         raise ValueError("even AFN0 quotient input is not complete")
     if odd["result_state"] != "COMPLETE_AFN0_ODD_CANDIDATE_QUOTIENT":
@@ -72,6 +76,21 @@ def _semantic_input_checks() -> tuple[dict[str, str], str]:
         raise ValueError("coefficient input does not certify the cylinder pullback")
     if cartan["result_state"] != "ALGEBRAIC_ENGINE_READY_PHYSICAL_CANDIDATES_INPUT_BLOCKED":
         raise ValueError("Cartan input no longer has the expected fail-closed state")
+    if (
+        ward_contract.get("result_state")
+        != "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"
+        or ward_contract.get("qme_status") != "NOT_COMPUTED"
+        or ward_contract.get("quantum_cartan_status") != "NO_VERDICT"
+    ):
+        raise ValueError("Ward insertion contract crossed its input boundary")
+    if (
+        green_contract.get("result_state")
+        != "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"
+        or green_contract.get("green_endpoint_status") != "NOT_CONSTRUCTED"
+        or green_contract.get("hadamard_status") != "NOT_CONSTRUCTED"
+        or green_contract.get("quantum_execution_authorized") is not False
+    ):
+        raise ValueError("Green endpoint contract crossed its input boundary")
     if (
         berger.get("result_state")
         != "CLASSICAL_D_ACTION_IMPORTED_CAUSAL_ENDPOINT_REDUCED"
