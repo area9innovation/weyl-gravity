@@ -83,7 +83,7 @@ schema/             machine-readable result contracts
 | Gate | Deliverable | Bootstrap status |
 |---|---|---|
 | A | `CLASSICAL_IMPORT_CERTIFICATE` | `FAIL_CLOSED`; artifact integrity verified, but 15 of 18 export categories remain incomplete or unavailable |
-| B | counterterm/anomaly bases and descent database | `IN_PROGRESS`; generated dimension-four catalogues, universal Diff towers, explicit type-D primitives, a complete Lorentzian intrinsic Euler tower, and a mapping-cone engine, but no exhaustive production BRST-cohomology quotient or antifield completion |
+| B | counterterm/anomaly bases and descent database | `AFN0_CANDIDATE_QUOTIENTS_COMPLETE`; the covariant ghost-zero quotient has even/odd dimensions `2/1`, the Weyl-ghost quotient has even/odd dimensions `2/1`, and all carry exact normalized witnesses; minimal-BV antifield completion remains open |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `IN_PROGRESS` import/projection infrastructure only |
 | D | reduced and Euclidean coefficient ledgers | `IN_PROGRESS` bookkeeping only; no BV coefficient claimed |
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `INPUT_CONTRACT_READY`; physical certificate `NOT_COMPUTED` |
@@ -145,6 +145,10 @@ or quantum-master-equation result.
   exact ordinary-bidegree type-A connecting equations and the independent
   Lorentzian Euler-head reconstruction, together with the still-open quotient
   and antifield boundaries.
+- [`reports/afn0-h04-canonical-quotient.md`](reports/afn0-h04-canonical-quotient.md)
+  records the complete covariant ghost-zero AFN0 candidate quotient, the
+  exact `Box R` boundary, the nonclosed `R^2` carrier, normalized dual
+  witnesses, and the global-topological scope of Euler and Pontryagin.
 - [`reports/relative-cohomology-engine.md`](reports/relative-cohomology-engine.md)
   records the exact sparse totalization, anchored top-form projection,
   lower-only class exclusion, quotient proof fields, and the uncomputed

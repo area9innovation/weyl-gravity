@@ -12,7 +12,8 @@ from .afn0_production import afn0_production_results, afn0_slice_results
 from .algebra import canonical_sha256
 from .ambient_tensor_graphs import ambient_tensor_graph_analysis
 from .basis_gap import basis_gap_report
-from .h14_even_canonical_quotient import canonical_quotient_payload
+from .h04_canonical_quotient import canonical_quotient_payload as h04_quotient_payload
+from .h14_even_canonical_quotient import canonical_quotient_payload as h14_even_quotient_payload
 from .lower_form_basis import lower_form_carrier_analysis
 from .lower_form_ambient import ambient_lower_form_signature_analysis
 
@@ -32,6 +33,8 @@ def _source_manifest() -> dict[str, str]:
         "ambient_tensor_graph_certificate.py",
         "basis_exhaustiveness.py",
         "basis_gap.py",
+        "h04_canonical_quotient.py",
+        "h04_canonical_quotient_certificate.py",
         "h14_even_canonical_quotient.py",
         "h14_even_canonical_quotient_certificate.py",
         "lower_form_basis.py",
@@ -40,6 +43,7 @@ def _source_manifest() -> dict[str, str]:
         "lower_form_ambient_certificate.py",
         "tensor_graphs.py",
         "schema/afn0_result.schema.json",
+        "schema/afn0_h04_canonical_quotient.schema.json",
         "schema/afn0_closure_result.schema.json",
         "schema/afn0_truncated_quotient_result.schema.json",
         "schema/afn0_lower_form_carrier_precertificate.schema.json",
@@ -49,6 +53,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_afn0_production.py",
         "tests/test_basis_exhaustiveness.py",
         "tests/test_basis_gap.py",
+        "tests/test_h04_canonical_quotient.py",
         "tests/test_h14_even_canonical_quotient.py",
         "tests/test_lower_form_basis.py",
         "tests/test_lower_form_ambient.py",
@@ -65,7 +70,8 @@ def build_certificate() -> dict[str, Any]:
     results = afn0_production_results()
     slice_results = afn0_slice_results()
     gap_report = basis_gap_report()
-    h14_even_quotient = canonical_quotient_payload()
+    h04_quotient = h04_quotient_payload()
+    h14_even_quotient = h14_even_quotient_payload()
     lower_form = lower_form_carrier_analysis()
     ambient_lower_form = ambient_lower_form_signature_analysis()
     ambient_tensor_graphs, ambient_tensor_bundle = ambient_tensor_graph_analysis()
@@ -96,6 +102,9 @@ def build_certificate() -> dict[str, Any]:
         "checks": {
             "H04_AFN0_EVEN_started": "VERIFIED",
             "H04_AFN0_ODD_started": "VERIFIED",
+            "H04_AFN0_covariant_candidate_quotient": "VERIFIED",
+            "H04_AFN0_even_complete_dual_witnesses": "VERIFIED",
+            "H04_AFN0_odd_complete_dual_witness": "VERIFIED",
             "H14_AFN0_EVEN_complete_candidate_closure": "VERIFIED",
             "H14_AFN0_EVEN_complete_candidate_quotient": "VERIFIED",
             "H14_AFN0_ODD_started": "VERIFIED",
@@ -138,6 +147,7 @@ def build_certificate() -> dict[str, Any]:
             "H04_AFN0_RESULT": canonical_sha256(h04),
             "H14_AFN0_RESULT": canonical_sha256(h14),
             "BASIS_GAP_REPORT_AFN0": gap_report["report_hash"],
+            "AFN0_H04_CANONICAL_QUOTIENT": h04_quotient["analysis_sha256"],
             "AFN0_H14_EVEN_CANONICAL_QUOTIENT": h14_even_quotient[
                 "analysis_sha256"
             ],
@@ -166,7 +176,7 @@ def build_certificate() -> dict[str, Any]:
             "canonically quotient the factored contraction graphs by tensor identities and integration by parts",
             "resolve every remaining odd top-form and separate Diff signature with a terminal status",
             "compare the forward canonical span with reverse signature coverage",
-            "extend the completed even H14 Q and d_h matrices to the remaining slices",
+            "extend the completed standalone H04 and H14 candidate matrices to the exhaustive ambient total complex",
             "integrate the now-inventoried omega-Euler and universal Diff carriers into the production Q and d_h matrices",
             "emit COMPLETE_NONTRIVIALITY_WITNESS only after the complete boundary rank and exhaustiveness proof are frozen",
         ],

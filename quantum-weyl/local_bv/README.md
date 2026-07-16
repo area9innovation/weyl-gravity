@@ -231,7 +231,15 @@ receipts are
 [`cohomology/H14_AFN0_RESULT.json`](cohomology/H14_AFN0_RESULT.json).  Their
 top curvature-carrier bases are generated, but lower-form production bases
 and matrices remain `IN_PROGRESS`, so no familiar representative has been
-promoted to a nontrivial relative class.
+promoted to a nontrivial relative class in those historical production-run
+envelopes. The newer standalone
+[`certificates/AFN0_H04_CANONICAL_QUOTIENT.json`](certificates/AFN0_H04_CANONICAL_QUOTIENT.json)
+closes the declared covariant ghost-zero candidate quotient: its even sector
+has normalized classes `C2` and `E4`, its odd sector has normalized class
+`C dual C`, `Box R` is exact with the explicit `nabla R` current, and `R2`
+is not closed. This is deliberately scoped to AFN0 covariant tensor
+polynomials; Euler/Pontryagin global topology and the pending minimal-BV
+antifield completion remain explicit claim boundaries.
 Each slice now stores a closure result separately from its truncated quotient
 result, and the eight mode-specific receipts live under
 [`cohomology/slices/`](cohomology/slices/).  Complete-witness promotion now
