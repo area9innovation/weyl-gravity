@@ -306,6 +306,17 @@ scope is only `REDUCED-MODE`. It neither satisfies
 \(D\)-obstruction. The full 54-row support-local nonlinear export therefore
 remains an independent gate.
 
+The first nonzero-weight extension has now been decided as a scoped no-go.
+For the rational Berger cubic tensor the square map
+\(Q(x)=q_2(x,x)\) is anisotropic over both \(\mathbb R\) and \(\mathbb C\).
+Therefore a finite, pairing-nondegenerate, q2-closed homogeneous block
+containing any field mode of weight \(w\ne0\) would have to contain the
+unbounded sequence \(w,-2w,4w,-8w,\ldots\). The attempted
+\((-1,0,+1)\) block fails first at \(E_{u,+2}\), with normalized leakage
+witness \((80/27,0,0)\). This rules out finite nonzero-weight truncations; it
+does not rule out the infinite all-weight complex and is not a Cartan
+cohomology obstruction.
+
 Begin with a conformally coupled scalar \(T\).  Define a domain on which it is a
 valid clock and construct complete observables
 

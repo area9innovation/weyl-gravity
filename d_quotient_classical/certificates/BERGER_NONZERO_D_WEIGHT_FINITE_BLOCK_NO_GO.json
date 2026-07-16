@@ -1,0 +1,183 @@
+{
+  "D_weight_convention": {
+    "cyclic_pairing": "<x_w,E_v> can be nonzero only when w+v=0",
+    "equation_action": "D E_w = w E_w",
+    "field_action": "D x_w = w x_w",
+    "q2_additivity": "q2(x_w,y_v) lies in E_(w+v)"
+  },
+  "action_derivation": {
+    "normalized_reduced_lagrangian": "(u + 1)*(-119*N**2*rho**4 + 18*N**2*rho**2*u**2 + 36*N**2*rho**2*u - 302*N**2*rho**2 + 81*N**2*u**4 + 324*N**2*u**3 - 234*N**2*u**2 - 1116*N**2*u + 961*N**2 + 960*omega**2*rho**2)/(1920*N)",
+    "q2_square_rule": "Q_i(x)=d_i d_j d_k L_bar x_j x_k at the rational fixture",
+    "residual_fit_used": false,
+    "variables": [
+      "x_u",
+      "x_N",
+      "x_rho"
+    ]
+  },
+  "claim_boundary": "This exact theorem rules out finite pairing-nondegenerate homogeneous nonzero-D-weight blocks closed under the action-derived Berger q2. It does not rule out the infinite all-weight complex, does not construct the full support-local q2, and is not a Cartan-cohomology obstruction.",
+  "claim_status": "CERTIFIED_REDUCED_MODE_CLOSURE_OBSTRUCTION",
+  "complex_anisotropy_certificate": {
+    "conclusion": "Q(x)=0 over C implies x=0",
+    "identities": [
+      "sum_i multiplier[target,i] Q_i = target",
+      "sum_i multiplier[target,i] Q_i = target",
+      "sum_i multiplier[target,i] Q_i = target"
+    ],
+    "multipliers_by_target": [
+      [
+        "-2*(4567450967153019*x_N**2 + 680084951613948*x_N*x_rho + 2144928055727952*x_N*x_u + 7832501848122743*x_rho**2 + 4221949293008226*x_rho*x_u)/18573442278900065",
+        "2*(3304507217168421*x_N**2 - 6429806351043444*x_N*x_rho - 536232013931988*x_N*x_u - 7947893835274447*x_rho**2 - 298343774404098*x_rho*x_u)/18573442278900065",
+        "18*(804498478814349*x_N**2 - 431195496778380*x_N*x_rho + 536723570416201*x_rho**2 + 1009524731797278*x_rho*x_u)/18573442278900065"
+      ],
+      [
+        "760/891",
+        "-1720/2673",
+        "-1240/891"
+      ],
+      [
+        "-296/297",
+        "-136/891",
+        "344/297"
+      ]
+    ],
+    "targets": [
+      "x_rho**4",
+      "3230*x_N*x_rho/2673 + 21829*x_rho**2/8019 + 7664*x_rho*x_u/2673 + x_u**2",
+      "x_N**2 - 1720*x_N*x_rho/891 - 2723*x_rho**2/2673 - 850*x_rho*x_u/891"
+    ],
+    "triangular_conclusion": "rho^4=0; then target_u=u^2=0 and target_N=N^2=0"
+  },
+  "dependency_ref": {
+    "path": "d_quotient_classical/certificates/BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK.json",
+    "result_id": "BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK",
+    "sha256": "5beef963f45d73b4100e175acd057c41a5a7c0bd7ae9c4d356a4eaceeef42cbe"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_checks": {
+    "action_stationary": true,
+    "all_coefficients_rational": true,
+    "complex_ideal_memberships_exact": true,
+    "complex_square_map_anisotropic": true,
+    "first_leakage_exact": true,
+    "forced_weight_sequence_unbounded": true,
+    "normalized_leakage_witness_exact": true,
+    "q2_derived_from_action": true,
+    "real_positive_combination_exact": true,
+    "real_sylvester_minors_positive": true
+  },
+  "finite_block_no_go": {
+    "conclusion": "no such finite nonzero-weight cyclic q2-closed block exists",
+    "forced_weight_recurrence": "w_(n+1)=-2 w_n",
+    "hypotheses": [
+      "the block contains a nonzero field mode x_w with w!=0",
+      "the block is closed under the action-derived q2",
+      "the cyclic field-equation pairing restricted to the block is nondegenerate",
+      "the block contains only finitely many D weights"
+    ],
+    "proof": "anisotropy gives q2(x_w,x_w)!=0 in E_(2w); nondegenerate cyclic pairing forces a nonzero field at -2w; iteration gives unbounded |w_n|",
+    "sample_forced_weights": [
+      1,
+      -2,
+      4,
+      -8,
+      16,
+      -32,
+      64,
+      -128
+    ]
+  },
+  "first_failed_block": {
+    "declared_field_weights": [
+      -1,
+      0,
+      1
+    ],
+    "first_failed_coefficient": "27/80",
+    "first_failed_row": "E_u_(+2)",
+    "input": [
+      "u_(+1)",
+      "u_(+1)"
+    ],
+    "leakage_output_basis": [
+      "E_u_(+2)",
+      "E_N_(+2)",
+      "E_rho_(+2)"
+    ],
+    "leakage_vector": [
+      "27/80",
+      "-27/20",
+      "9/80"
+    ],
+    "missing_output_weight": 2,
+    "normalized_dual_witness": [
+      "80/27",
+      "0",
+      "0"
+    ],
+    "witness_evaluation": "1"
+  },
+  "flags": {
+    "BERGER_NONZERO_WEIGHT_FINITE_BLOCK_NO_GO": true,
+    "BERGER_Q2_SQUARE_MAP_ANISOTROPIC": true,
+    "CLASSICAL_SUPPORT_LOCAL_Q2": false,
+    "ND2_PHYSICAL_EXECUTION_AUTHORIZED": false,
+    "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION": false,
+    "NONZERO_WEIGHT_MODE_CLOSURE_OBSTRUCTION": true
+  },
+  "next_gate": "INFINITE_WEIGHT_COMPLETION_OR_FULL_SUPPORT_LOCAL_Q2",
+  "real_anisotropy_certificate": {
+    "combination_coefficients": [
+      "-2",
+      "-2",
+      "1"
+    ],
+    "conclusion": "Q(x)=0 over R implies x=0",
+    "gram_matrix": [
+      [
+        "171/80",
+        "39/80",
+        "179/120"
+      ],
+      [
+        "39/80",
+        "27/8",
+        "-407/240"
+      ],
+      [
+        "179/120",
+        "-407/240",
+        "641/240"
+      ]
+    ],
+    "leading_principal_minors": [
+      "171/80",
+      "44649/6400",
+      "38549/15360"
+    ],
+    "positive_quadratic": "(810*x_N**2 - 814*x_N*x_rho + 234*x_N*x_u + 641*x_rho**2 + 716*x_rho*x_u + 513*x_u**2)/240"
+  },
+  "result_id": "BERGER_NONZERO_D_WEIGHT_FINITE_BLOCK_NO_GO",
+  "schema": "pure-weyl-berger-nonzero-D-weight-finite-block-no-go-v1",
+  "setting_id": "compact_positive_berger_clock_rational_fixture_homogeneous_weight_lift",
+  "square_map": {
+    "components": [
+      "(135*x_N**2 - 522*x_N*x_rho - 648*x_N*x_u - 110*x_rho**2 + 54*x_rho*x_u + 81*x_u**2)/240",
+      "-(405*x_N**2 - 540*x_N*x_rho - 270*x_N*x_u + 389*x_rho**2 + 522*x_rho*x_u + 324*x_u**2)/240",
+      "(270*x_N**2 - 778*x_N*x_rho - 522*x_N*x_u - 357*x_rho**2 - 220*x_rho*x_u + 27*x_u**2)/240"
+    ],
+    "input_basis": [
+      "u",
+      "N",
+      "rho"
+    ],
+    "output_basis": [
+      "E_u",
+      "E_N",
+      "E_rho"
+    ]
+  }
+}

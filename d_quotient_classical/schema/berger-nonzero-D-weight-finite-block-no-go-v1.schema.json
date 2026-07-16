@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-nonzero-D-weight-finite-block-no-go-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_ref", "action_derivation", "D_weight_convention", "square_map", "real_anisotropy_certificate", "complex_anisotropy_certificate", "first_failed_block", "finite_block_no_go", "exact_checks", "flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-nonzero-D-weight-finite-block-no-go-v1"},
+    "result_id": {"const": "BERGER_NONZERO_D_WEIGHT_FINITE_BLOCK_NO_GO"},
+    "setting_id": {"const": "compact_positive_berger_clock_rational_fixture_homogeneous_weight_lift"},
+    "claim_status": {"const": "CERTIFIED_REDUCED_MODE_CLOSURE_OBSTRUCTION"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_ref": {"type": "object"},
+    "action_derivation": {"type": "object"},
+    "D_weight_convention": {"type": "object"},
+    "square_map": {"type": "object"},
+    "real_anisotropy_certificate": {
+      "type": "object",
+      "required": ["combination_coefficients", "positive_quadratic", "gram_matrix", "leading_principal_minors", "conclusion"],
+      "properties": {
+        "combination_coefficients": {"const": ["-2", "-2", "1"]},
+        "positive_quadratic": {"type": "string", "minLength": 1},
+        "gram_matrix": {"type": "array", "minItems": 3, "maxItems": 3},
+        "leading_principal_minors": {"const": ["171/80", "44649/6400", "38549/15360"]},
+        "conclusion": {"const": "Q(x)=0 over R implies x=0"}
+      },
+      "additionalProperties": false
+    },
+    "complex_anisotropy_certificate": {"type": "object"},
+    "first_failed_block": {
+      "type": "object",
+      "required": ["declared_field_weights", "input", "missing_output_weight", "leakage_output_basis", "leakage_vector", "first_failed_row", "first_failed_coefficient", "normalized_dual_witness", "witness_evaluation"],
+      "properties": {
+        "declared_field_weights": {"const": [-1, 0, 1]},
+        "input": {"const": ["u_(+1)", "u_(+1)"]},
+        "missing_output_weight": {"const": 2},
+        "leakage_output_basis": {"type": "array", "minItems": 3, "maxItems": 3},
+        "leakage_vector": {"const": ["27/80", "-27/20", "9/80"]},
+        "first_failed_row": {"const": "E_u_(+2)"},
+        "first_failed_coefficient": {"const": "27/80"},
+        "normalized_dual_witness": {"const": ["80/27", "0", "0"]},
+        "witness_evaluation": {"const": "1"}
+      },
+      "additionalProperties": false
+    },
+    "finite_block_no_go": {"type": "object"},
+    "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["BERGER_Q2_SQUARE_MAP_ANISOTROPIC", "BERGER_NONZERO_WEIGHT_FINITE_BLOCK_NO_GO", "NONZERO_WEIGHT_MODE_CLOSURE_OBSTRUCTION", "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION", "CLASSICAL_SUPPORT_LOCAL_Q2", "ND2_PHYSICAL_EXECUTION_AUTHORIZED"],
+      "properties": {
+        "BERGER_Q2_SQUARE_MAP_ANISOTROPIC": {"const": true},
+        "BERGER_NONZERO_WEIGHT_FINITE_BLOCK_NO_GO": {"const": true},
+        "NONZERO_WEIGHT_MODE_CLOSURE_OBSTRUCTION": {"const": true},
+        "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION": {"const": false},
+        "CLASSICAL_SUPPORT_LOCAL_Q2": {"const": false},
+        "ND2_PHYSICAL_EXECUTION_AUTHORIZED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "INFINITE_WEIGHT_COMPLETION_OR_FULL_SUPPORT_LOCAL_Q2"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

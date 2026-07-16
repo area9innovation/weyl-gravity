@@ -235,12 +235,22 @@
       "evidence_id": "berger_rational_fixture_q2_d_block",
       "path": "d_quotient_classical/certificates/BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK.json",
       "sha256": "5beef963f45d73b4100e175acd057c41a5a7c0bd7ae9c4d356a4eaceeef42cbe"
+    },
+    {
+      "claim_scope": "Exact action-derived no-go for finite pairing-nondegenerate homogeneous nonzero-D-weight mode blocks closed under the rational Berger q2. The cubic square map is anisotropic and the first {-1,0,+1} truncation leaks at E_u,+2 with a normalized witness. Infinite all-weight and full support-local complexes remain open.",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "evidence_id": "berger_nonzero_d_weight_finite_block_no_go",
+      "path": "d_quotient_classical/certificates/BERGER_NONZERO_D_WEIGHT_FINITE_BLOCK_NO_GO.json",
+      "sha256": "40b036eebb91e86a178d1f887d544d400f83f654275a4498dfaa488abd26a7fc"
     }
   ],
   "open_fields": [
     "sufficiency of the quadratic Taub zero fibre for all-order nonlinear integrability",
     "closure and possible algebroid structure of zero-charge transformations",
-    "full support-local q2, nonzero-weight local D-equivariance, total causal homotopy, and physical arity-two D-Cartan contraction for the matter-coupled Berger branch",
+    "infinite all-weight or full support-local q2, local D-equivariance, total causal homotopy, and physical arity-two D-Cartan contraction for the matter-coupled Berger branch",
     "Yang-Mills matter contribution",
     "quantitative weak-background stability radius",
     "Lorentzian dS/AdS boundary charges",
@@ -1009,10 +1019,11 @@
         "berger_minimal_34_portable_contraction",
         "berger_nonminimal_algebraic_completion",
         "berger_gauge_fixed_nonminimal_completion",
-        "berger_rational_fixture_q2_d_block"
+        "berger_rational_fixture_q2_d_block",
+        "berger_nonzero_d_weight_finite_block_no_go"
       ],
-      "next_gate": "Import the exact six-row REDUCED-MODE q2/D fixture into ND2; independently export the complete support-local classical_binary_q2 and nonzero-weight local D_action_cl on the same 54-row complex.",
-      "result": "The exact Berger-cylinder family supplies healthy standard-sign clock matter and the fixed-coupling tangent theorem gives D_GAUGE on the declared smooth linearized phase space. The retained 26-row classical unary operator and all-34 minimal contraction are exact. Five nonminimal quartets extend this to 54 rows. The selected gauge fermion is now applied by a finite-order BV-canonical shear, producing a complete portable gauge-fixed classical_unary_q1, cyclic pairing, and support-local 54-to-26 contraction. An action-derived rational six-row stationary homogeneous fixture now supplies exact q1, q2, cyclic pairing, and the weight-zero D action for immediate reduced-mode ND2 ingestion. It does not promote full support-local q2, nonzero-weight D-equivariance, the general nonlinear Koszul-Tate export, total causal homotopy, or Hadamard data.",
+      "next_gate": "Construct the infinite all-weight completion or export the complete support-local classical_binary_q2 and local D_action_cl on the same 54-row complex; finite nonzero-weight cyclic truncations are now ruled out.",
+      "result": "The exact Berger-cylinder family supplies healthy standard-sign clock matter and the fixed-coupling tangent theorem gives D_GAUGE on the declared smooth linearized phase space. The retained 26-row classical unary operator and all-34 minimal contraction are exact. Five nonminimal quartets extend this to 54 rows. The selected gauge fermion is now applied by a finite-order BV-canonical shear, producing a complete portable gauge-fixed classical_unary_q1, cyclic pairing, and support-local 54-to-26 contraction. An action-derived rational six-row stationary homogeneous fixture supplies exact q1, q2, cyclic pairing, and the weight-zero D action for immediate reduced-mode ND2 ingestion. Its cubic square map is anisotropic over R and C, which exactly rules out every finite pairing-nondegenerate nonzero-weight mode block closed under q2; the first {-1,0,+1} block leaks at E_u,+2 with a normalized witness. These results do not promote the infinite all-weight or full support-local q2, local D-equivariance, the general nonlinear Koszul-Tate export, total causal homotopy, or Hadamard data.",
       "status": "PARTIAL"
     }
   }

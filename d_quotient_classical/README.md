@@ -96,6 +96,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK.json`](certificates/BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK.json)
 - Rational Berger reduced-mode q2/D report:
   [`reports/berger-rational-fixture-q2-d-block.md`](reports/berger-rational-fixture-q2-d-block.md)
+- Nonzero-D-weight finite-mode closure no-go:
+  [`certificates/BERGER_NONZERO_D_WEIGHT_FINITE_BLOCK_NO_GO.json`](certificates/BERGER_NONZERO_D_WEIGHT_FINITE_BLOCK_NO_GO.json)
+- Nonzero-weight no-go report:
+  [`reports/berger-nonzero-D-weight-finite-block-no-go.md`](reports/berger-nonzero-D-weight-finite-block-no-go.md)
 
 The only scientific verdicts are:
 
@@ -159,6 +163,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_gau
 python3 d_quotient_classical/backreacted_clock/berger_rational_fixture_q2_d_block.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_rational_fixture_q2_d_block.py
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_rational_fixture_q2_d_block
+python3 d_quotient_classical/backreacted_clock/berger_nonzero_weight_finite_block_no_go.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_nonzero_weight_finite_block_no_go.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_nonzero_weight_finite_block_no_go
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -252,6 +259,18 @@ cyclic pairing is canonical, and all declared
 \(q^2\) identity, cyclicity, and block closure. This is deliberately tagged
 `REDUCED-MODE`: it is an ingestion and identity fixture, not the full
 support-local \(q_2\) and not a nonzero-weight \(D\)-equivariance theorem.
+
+The natural finite nonzero-weight extension is now ruled out exactly. The
+action-derived square map \(Q(x)=q_2(x,x)\) has no nonzero zero over either
+\(\mathbb R\) or \(\mathbb C\). A short real certificate is the
+positive-definite combination \(-2Q_u-2Q_N+Q_\rho\); exact ideal-membership
+identities certify the complex statement. Consequently cyclic
+nondegeneracy and q2 closure force the unbounded weight sequence
+\(w,-2w,4w,-8w,\ldots\). The smallest \((-1,0,+1)\) block first leaks at
+\(E_{u,+2}\) with coefficient \(27/80\) and normalized dual witness
+\((80/27,0,0)\). This is a finite-mode closure obstruction, not a Cartan
+cohomology obstruction. The next honest target is the infinite all-weight
+completion or the full support-local complex.
 
 ## Promotion rule
 
