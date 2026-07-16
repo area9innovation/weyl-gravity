@@ -841,11 +841,11 @@ Q_extra_ax=(F[omega]/(p))^2.
 ```
 
 This proves two additional algebraic target solution polarizations before the
-final residual quotient; it does not certify two particles or ghosts.  The
-direct four-dimensional action Hessian and complete Einstein/extra Lee--Wald
-matrix remain open.  Those rails must decide
-whether either extra summand is nonradical and with which sign before any
-one-particle interpretation.
+final residual quotient; it does not certify two particles or ghosts.  At
+this operator stage the direct four-dimensional action Hessian and complete
+Einstein/extra Lee--Wald matrix remained open.  The later Lee--Wald completion
+below now proves nonradicality and the compact classical signs; the
+action-density cross-check and one-particle interpretation remain open.
 
 `EINSTEIN_MAXWELL_WEYL_AXIAL_GREEN_CURRENT` now closes the off-shell local
 Green-identity rail on both the four invariant coefficients and the six-field
@@ -858,9 +858,9 @@ partial_t J^t+partial_x J^x=u^T L v-(L u)^T v
 
 for arbitrary off-shell jets, without using a dispersion relation or
 inverting `D`, `k`, or `omega`.  This is not a Green-function or causal
-propagator theorem.  The direct four-dimensional action-Hessian match and the
-complete Einstein/extra Lee--Wald matrix are now the remaining local pairing
-gates.
+propagator theorem.  At this stage the direct four-dimensional Lee--Wald
+comparison and the action-density Hessian were the remaining local pairing
+gates; the former is completed below.
 
 `EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING` evaluates the certified
 local current on the two extra representatives.  With
@@ -898,6 +898,16 @@ direction lies on one Einstein-image master branch.  This is not yet a
 one-particle ghost theorem: final residual descent, causal boundary
 admissibility, a positive-frequency Hilbert space, and quantum unitarity remain
 open.
+
+Keep three forms separate.  `Omega_EM` is the source form obtained from the
+independent Einstein--Maxwell action.  The pullback `iota^*Omega_WM` is the
+Weyl--Maxwell form evaluated on the Einstein image; relative to `Omega_EM` its
+two regular branches carry factors
+`1 +/- (3/2)sqrt(2lambda)`, so the identity inclusion is not symplectic.
+Finally, `Omega_WM` on the full target adds the orthogonal extra block and has
+signature `(3,1)`.  The negative sign is therefore a classical target-current
+sign, not an automatic negative norm in the independent Einstein--Maxwell
+theory and not a quantum ghost certificate.
 
 ### Work package E-G4: open background classes and scattering
 

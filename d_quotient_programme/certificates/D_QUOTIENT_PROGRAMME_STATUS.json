@@ -29,7 +29,7 @@
     ],
     "rule": "The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and the conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported. Construct advanced/retarded Green operators with causal support and transport them to the retained endpoint without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "2d33257bab38f40693d63133fd6f4677fd6a7bd6",
+  "programme_base_commit": "3e316f32d92606bc904e4211738144c55cf8349f",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -46,7 +46,7 @@
   },
   "registry_hashes": {
     "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-    "phase_space_registry": "18b49ffee98f4794af6bb406b17966307c9c5103a6e2b10ba66f9b65053e8c64"
+    "phase_space_registry": "e1eace59402f62514dff1804c805f6e89b079f92259b2c61e5b10e164b6a4ae4"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -420,6 +420,15 @@
       "setting_id": "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
       "status": "CERTIFIED",
       "verdict": "G2_GENERIC_AXIAL_EXTRA_NONRADICAL_REDUCED_GREEN_SIGNATURE_POSITIVE_TWO"
+    },
+    {
+      "boundary_conditions": "complete generic compact axial direct Lee-Wald solution block; before final residual quotient and causal boundary selection",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_direct_lee_wald_block",
+      "setting_id": "compact_einstein_maxwell_weyl_axial_lee_wald_completion",
+      "status": "CERTIFIED",
+      "verdict": "G2_GENERIC_AXIAL_DIRECT_LEE_WALD_BLOCK_SIGNATURE_THREE_ONE"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -2210,6 +2219,52 @@
       "sha256": "12f92fea229d71fe4848079294ceced334878cdb7aee2bec7da9a19037b75e69"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json",
+      "payload": {
+        "boundary_conditions": "complete generic axial ell>=2 Weyl-Maxwell harmonic solution module on R_t x S1_L x S2 at fixed P_N, equipped with the directly varied four-dimensional Lee-Wald current; before final residual quotient or causal boundary selection",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the complete direct four-dimensional off-shell axial Lee-Wald coefficient matrix equals the positive spherical harmonic norm times the reduced Green matrix for every ell>=2,m",
+          "three exact independent-frequency coordinate matrices at lambda=6,12,20 and the spectral degree-two bound certify the generic-lambda promotion",
+          "both Einstein/extra mixed Lee-Wald blocks vanish on the exact primary shells without inverting a frequency difference",
+          "the two extra directions are nonradical with direct Lee-Wald signature (2,0) in the declared action convention",
+          "the two Einstein-image master branches have direct target signature (1,1), so the complete generic axial target signature is (3,1)",
+          "the independent Einstein-Maxwell source form, the pulled-back Weyl-Maxwell target form, and the full Weyl-Maxwell target form are distinct; the negative target-current direction is not by itself an Einstein-Maxwell particle norm or quantum ghost statement"
+        ],
+        "evidence": {
+          "commit": "e2b7e20bdf545dafeb1059d627c33c07bee91040",
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+          "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "compute the action-density second variation as a normalization cross-check, then perform final residual descent and test causal boundary admissibility of the extra primary factor",
+        "not_established": [
+          "the final residual SO(4,2) quotient of the generic axial target block",
+          "a causal compact or asymptotic phase space admitting the extra primary factor",
+          "a positive-frequency Hilbert space or particle interpretation",
+          "an identification of the negative target-current direction with a physical negative-norm Einstein-Maxwell state",
+          "a quantum ghost, unitarity, scattering, or Hadamard-state theorem"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_direct_lee_wald_block",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_axial_lee_wald_completion",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_GENERIC_AXIAL_DIRECT_LEE_WALD_BLOCK_SIGNATURE_THREE_ONE",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_lee_wald_completion --verify bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_lee_wald_completion",
+          "python3 -m bridge.einstein_sector.weyl_maxwell_axial_general_lee_wald_fixture --verify bridge/certificates/weyl_maxwell_axial_general_lee_wald_fixture.json",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "32458f8bf669c8309a54343c7924254ca06afe3d9451d2d101c88c4ec3fd2586"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -2362,9 +2417,9 @@
       "sha256": "ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685"
     },
     "nonlinear": {
-      "commit": "0c9914e1fc79b97de6fccc17c25d211f4a952407",
+      "commit": "3e316f32d92606bc904e4211738144c55cf8349f",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "cc1736ee6cfa30f0b9e6b46804a4bba548912c8c2d41deccc36bdd9f4401e8e5"
+      "sha256": "5f5a08eb590330b70301afc1a3cddb52a074dc4bb70af94d55fcac4703ca2195"
     },
     "quantum": {
       "commit": "a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6",

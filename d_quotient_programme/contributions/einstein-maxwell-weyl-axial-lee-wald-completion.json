@@ -1,0 +1,39 @@
+{
+  "boundary_conditions": "complete generic axial ell>=2 Weyl-Maxwell harmonic solution module on R_t x S1_L x S2 at fixed P_N, equipped with the directly varied four-dimensional Lee-Wald current; before final residual quotient or causal boundary selection",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the complete direct four-dimensional off-shell axial Lee-Wald coefficient matrix equals the positive spherical harmonic norm times the reduced Green matrix for every ell>=2,m",
+    "three exact independent-frequency coordinate matrices at lambda=6,12,20 and the spectral degree-two bound certify the generic-lambda promotion",
+    "both Einstein/extra mixed Lee-Wald blocks vanish on the exact primary shells without inverting a frequency difference",
+    "the two extra directions are nonradical with direct Lee-Wald signature (2,0) in the declared action convention",
+    "the two Einstein-image master branches have direct target signature (1,1), so the complete generic axial target signature is (3,1)",
+    "the independent Einstein-Maxwell source form, the pulled-back Weyl-Maxwell target form, and the full Weyl-Maxwell target form are distinct; the negative target-current direction is not by itself an Einstein-Maxwell particle norm or quantum ghost statement"
+  ],
+  "evidence": {
+    "commit": "e2b7e20bdf545dafeb1059d627c33c07bee91040",
+    "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+    "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute the action-density second variation as a normalization cross-check, then perform final residual descent and test causal boundary admissibility of the extra primary factor",
+  "not_established": [
+    "the final residual SO(4,2) quotient of the generic axial target block",
+    "a causal compact or asymptotic phase space admitting the extra primary factor",
+    "a positive-frequency Hilbert space or particle interpretation",
+    "an identification of the negative target-current direction with a physical negative-norm Einstein-Maxwell state",
+    "a quantum ghost, unitarity, scattering, or Hadamard-state theorem"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_direct_lee_wald_block",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_axial_lee_wald_completion",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_GENERIC_AXIAL_DIRECT_LEE_WALD_BLOCK_SIGNATURE_THREE_ONE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_lee_wald_completion --verify bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_lee_wald_completion",
+    "python3 -m bridge.einstein_sector.weyl_maxwell_axial_general_lee_wald_fixture --verify bridge/certificates/weyl_maxwell_axial_general_lee_wald_fixture.json",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}

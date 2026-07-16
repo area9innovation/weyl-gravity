@@ -91,14 +91,17 @@ Einstein--Maxwell axial solution module
 Weyl--Maxwell axial solution module.
 ```
 
-The two extra summands are not yet certified particles or ghosts.  No direct
-four-dimensional action-Hessian match, full Einstein/extra Lee--Wald matrix,
-presymplectic radical test, positive-frequency Hilbert space, causal boundary
-condition, or scattering construction has been supplied.  In particular, the
-result does not say that an observer sees two additional gravitons.  It says
-that the unreduced fourth-order classical equations possess two additional
-generic axial solution polarizations which cannot be identified with the
-Einstein image by the declared gauge quotient.
+The two extra summands are not certified particles or ghosts.  The later
+Lee--Wald completion below supplies the full Einstein/extra matrix and proves
+that the extra block is nonradical in the directly varied compact current.
+The action-density second variation, final residual quotient,
+positive-frequency Hilbert space, causal boundary condition, and scattering
+construction remain open.  In particular, the result does not say that an
+observer sees two additional gravitons.  It says that the unreduced
+fourth-order classical equations possess two additional generic axial
+solution polarizations which cannot be identified with the Einstein image by
+the declared gauge quotient and do not disappear as a radical of the declared
+compact Lee--Wald form.
 
 The subsequent `EINSTEIN_MAXWELL_WEYL_AXIAL_GREEN_CURRENT` certificate now
 constructs the off-shell local concomitant directly from the polynomial
@@ -159,6 +162,20 @@ new extra block.  This remains a classical compact harmonic statement: the
 action-density second variation, final residual quotient, causal boundary
 admissibility, positive-frequency Hilbert space, and quantum ghost/unitarity
 questions remain separate.
+
+Three symplectic objects must not be conflated:
+
+| object | theory and domain | certified statement |
+|---|---|---|
+| `Omega_EM` | independent Einstein--Maxwell action on its solution tangent | reference source form for the inclusion problem |
+| `iota^* Omega_WM` | pullback of the Weyl--Maxwell target form to the Einstein image | differs from `Omega_EM` by branch factors `1 +/- (3/2)sqrt(2lambda)` and has target signature `(1,1)` |
+| `Omega_WM` | full generic axial Weyl--Maxwell target, including the extra module | orthogonal Einstein/extra decomposition with signature `(1,1) + (2,0) = (3,1)` |
+
+Consequently the negative target-current direction does not, by itself,
+assign a negative Einstein--Maxwell particle norm.  It shows that the identity
+solution inclusion is not symplectic for the two independently normalized
+actions.  A ghost claim additionally requires residual and boundary descent,
+a physical positive-frequency space, and its quantization.
 
 ## Receipts
 

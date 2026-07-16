@@ -97,6 +97,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-axial-operator-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-operator-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)
+- [`reports/einstein-maxwell-weyl-axial-lee-wald-completion-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-lee-wald-completion-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -327,13 +329,25 @@ Einstein--Maxwell master factor and
 `(F[omega]/(p))^2`.  This certifies two extra algebraic classical solution
 polarizations before final residual quotient.  The direct action Hessian,
 local Green current, Einstein/extra Lee--Wald matrix, presymplectic radical,
-norm, particle, causal-boundary, and quantum questions remain open.
+norm, particle, causal-boundary, and quantum questions were open at that
+operator stage; the following results close the local-current and radical
+rails.
 
 The reduced and ungauged local Green identities are now explicit for arbitrary
 off-shell jets.  On the two extra representatives the normalized reduced
 Gram determinant is `lambda^4*(lambda-2)*(9lambda-2)/3`; its first principal
 minor is also positive for every physical `lambda>=6`.  Thus the generic
 extra module is nonradical with reduced-Green signature `(2,0)`.  This does
-not settle the physical sign: the direct four-dimensional action/Lee--Wald
-match, improvement terms, causal phase space, and particle interpretation
-remain open.
+not by itself settle the physical sign: the subsequent direct
+four-dimensional Lee--Wald result supplies the required current match and
+vanishing integrated improvement.
+
+The direct four-dimensional Lee--Wald match is now exact on the complete
+generic axial block.  The Einstein and extra primary modules are orthogonal;
+the Einstein-image branches have signature `(1,1)`, the extra block `(2,0)`,
+and the complete target `(3,1)` in the declared compact action convention.
+The independent Einstein--Maxwell source form, its pulled-back Weyl--Maxwell
+target form, and the full Weyl--Maxwell target form remain distinct objects.
+The final residual quotient, action-density cross-check, causal boundary
+admissibility, positive-frequency Hilbert space, and quantum ghost/unitarity
+questions remain open.
