@@ -19,7 +19,7 @@ OUTPUT_PATH = PACKAGE_ROOT / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 SCHEMA_PATH = PROGRAMME_ROOT / "schema" / "team-contribution-v1.schema.json"
 GENERATOR_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "generators.json"
 PHASE_SPACE_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "phase_spaces.json"
-EVIDENCE_COMMIT = "db533d49e7644fc2482f472a8ed2f41e06469314"
+EVIDENCE_COMMIT = "faceb39e5427443320395f961107ba74b4800890"
 EVIDENCE_PATH = (
     "quantum-weyl/cartan/certificates/"
     "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json"
@@ -82,7 +82,11 @@ def build_contribution() -> dict[str, Any]:
         "lifecycle_layer": "QUANTUM",
         "claim_status": "BLOCKED",
         "verdict": None,
-        "dependency_tags": ["LOCAL-ALGEBRAIC"],
+        "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "EUCLIDEAN-SPECTRAL",
+            "LORENTZIAN-CAUSAL",
+        ],
         "established": [
             "exact first-order sourced Cartan-defect identity",
             "admissible-operator quotient mechanics with primitive and dual witnesses",
@@ -94,6 +98,8 @@ def build_contribution() -> dict[str, Any]:
             "complete odd Weyl-ghost AFN0 candidate quotient with a normalized dual witness for omega C dual C",
             "zero direct local bulk D_compact anomaly pullback on the closed vacuum cylinder because sigma_D=0",
             "source/target degree audit and minimal missing-carrier theorem for the renormalized local Ward-insertion map",
+            "setting-specific import of the complete 54-row Berger helical D action with exact unary, contraction, and cyclic equivariance",
+            "conditional support-local and cyclic reduction of the Berger 54-row causal homotopy problem to the retained 26-row endpoint",
         ],
         "not_established": [
             "a complete Diff and antifield-dependent pure-Weyl anomaly basis",
@@ -102,6 +108,8 @@ def build_contribution() -> dict[str, Any]:
             "a restored local quantum master equation",
             "a residual quantum transfer, coefficient, or pairing correction",
             "a scalar-clock, boundary, corner, or Lorentzian causal quantum theorem",
+            "the retained 26-row Berger Green homotopy, Hadamard data, or a full Lorentzian quantum construction",
+            "the full four-dimensional support-local q2 and arity-two D-Cartan verdict",
         ],
         "evidence": {
             "path": EVIDENCE_PATH,
@@ -113,7 +121,7 @@ def build_contribution() -> dict[str, Any]:
             "PYTHONPATH=quantum-weyl python3 -m cartan.contribution --check",
             "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -v",
         ],
-        "next_gate": "import the full classical antifield/Koszul-Tate and D-action export, compute the regulated Slavnov breaking, and construct the renormalized local Ward-insertion map into the admissible D-Cartan complex; consume separately gated clock inputs only after their total-D and shared classical BV exports land",
+        "next_gate": "import the full classical antifield/Koszul-Tate and support-local q2 exports, construct the retained 26-row Berger Green/Hadamard endpoint, compute the regulated Slavnov breaking, and construct the renormalized local Ward-insertion map into the admissible D-Cartan complex",
     }
 
 
@@ -131,7 +139,11 @@ def validate_contribution(record: object) -> None:
     for field in ("team_id", "lifecycle_layer", "claim_status"):
         if record[field] not in properties[field]["enum"]:
             raise ValueError(f"team contribution has invalid {field}")
-    if record["dependency_tags"] != ["LOCAL-ALGEBRAIC"]:
+    if record["dependency_tags"] != [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "LORENTZIAN-CAUSAL",
+    ]:
         raise ValueError("quantum contribution dependency tags are not fail-closed")
     if record["verdict"] is not None:
         raise ValueError("blocked quantum contribution must not emit a verdict")

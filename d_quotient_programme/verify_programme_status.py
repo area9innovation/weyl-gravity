@@ -265,7 +265,8 @@ def _quantum_cartan_contribution() -> dict[str, Any]:
         and contribution.get("lifecycle_layer") == "QUANTUM"
         and contribution.get("claim_status") == "BLOCKED"
         and contribution.get("verdict") is None
-        and contribution.get("dependency_tags") == ["LOCAL-ALGEBRAIC"]
+        and contribution.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"]
     ):
         raise AssertionError("quantum Cartan contribution scope drifted")
     evidence = contribution.get("evidence", {})

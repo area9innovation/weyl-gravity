@@ -31,6 +31,10 @@ class QuantumDContributionTests(unittest.TestCase):
         self.assertEqual(contribution["lifecycle_layer"], "QUANTUM")
         self.assertEqual(contribution["claim_status"], "BLOCKED")
         self.assertIsNone(contribution["verdict"])
+        self.assertEqual(
+            contribution["dependency_tags"],
+            ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"],
+        )
 
     def test_evidence_commit_and_hash_are_content_addressed(self) -> None:
         contribution = build_contribution()
