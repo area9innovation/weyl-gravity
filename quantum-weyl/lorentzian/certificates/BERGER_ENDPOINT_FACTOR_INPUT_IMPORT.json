@@ -1,0 +1,103 @@
+{
+  "causal_endpoint_status": {
+    "gauge_fixed_54_row_chain_homotopy": "NOT_CONSTRUCTED",
+    "ghost_endpoint": "GREEN_HYPERBOLIC_BY_TWO_NORMALLY_HYPERBOLIC_FACTORS",
+    "hadamard_data": "NOT_CONSTRUCTED",
+    "identity_endpoint": "GREEN_HYPERBOLIC_BY_FORMAL_ADJOINT_FACTORIZATION",
+    "metric_antifield_endpoint": "NOT_CONSTRUCTED_RANK_EIGHT_PLUS_TWO_MIXED_ORDER",
+    "metric_endpoint": "NOT_CONSTRUCTED_RANK_EIGHT_PLUS_TWO_MIXED_ORDER",
+    "retained_26_row_chain_homotopy": "NOT_CONSTRUCTED"
+  },
+  "claim_boundary": "Imports and independently replays the certified ghost and identity endpoint factor theorem in the compact positive Berger reduced mode. It does not construct the metric or metric-antifield Green operators, the retained 26-row or lifted 54-row causal chain homotopy, Hadamard data, renormalized time-ordered products, or a full Lorentzian quantum theory.",
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-endpoint-factor-import.md": "5f0e168852da96a57dad88360e0dbff6a73cd0adee58ac0679fb32fd68146bdf",
+      "README.md": "c7befd4223c9ce35f2780d23d20cebc0d839fe23e6f14b1366c67ffd866a941c",
+      "berger_endpoint_factor_import.py": "c60fee9d5efbf731786276e10319a0df7c19f7375fc6ad349c04e3c2ef072c64",
+      "berger_endpoint_factor_import_certificate.py": "55c6491558284fcd5a241223ce609bb6cac8941c3479a942584d23fd618c938d",
+      "schema/berger-endpoint-factor-import-v1.schema.json": "1c8a72080a3a7071513517bbcd455fe7d99a9894388f58091a95f582f962acb0",
+      "tests/test_berger_endpoint_factor_import.py": "16f4792b2c8fe163fa7cbc86ef355499a12caf65857a94b943de51f0235b33d9"
+    },
+    "source_manifest_sha256": "6b5c7e557eb4b4743c9769d9473346a327b9ed38baf0f2e3f4f65c47df4d879c"
+  },
+  "coverage": {
+    "ghost_rows": 3,
+    "identity_rows": 3,
+    "metric_antifield_rows": 10,
+    "metric_rows": 10,
+    "retained_rows": 26
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "green_endpoint_contract_update": "PARTIAL_INPUT_ONLY_FULL_26_ROW_EXPORT_STILL_BLOCKED",
+  "independent_exact_checks": {
+    "ghost_biwave_principal_symbol": true,
+    "ghost_block_reconstructed": true,
+    "identity_block_reconstructed": true,
+    "metric_antifield_block_reconstructed": true,
+    "metric_block_reconstructed": true,
+    "metric_kernel_carriers_exact": true,
+    "metric_kernel_rank_two_at_exact_fixture": true,
+    "metric_rank_eight_at_exact_fixture": true,
+    "middle_witness_identity": true
+  },
+  "lifecycle_layer": "CLASSICAL_BV",
+  "metric_boundary": {
+    "fourth_order_rank": 8,
+    "interpretation": "principal clock/constraint carriers, not residual particle states",
+    "kernel_field_content": [
+      "temporal_diffeomorphism_clock",
+      "weyl_constraint"
+    ],
+    "negative_physical_direction_introduced": false,
+    "polynomial_kernel_dimension": 2
+  },
+  "next_gate": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION",
+  "provenance": {
+    "artifacts": [
+      {
+        "commit": "b6caaddde5bce3480ef4d91e6b0c2824b98050dd",
+        "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+        "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+      },
+      {
+        "commit": "b6caaddde5bce3480ef4d91e6b0c2824b98050dd",
+        "path": "d_quotient_classical/certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json",
+        "sha256": "da24c9734e1950fab9a730ea69bc46b35dcc5f95a4af7e1d9aa3aa57404d1ea4"
+      },
+      {
+        "commit": "b6caaddde5bce3480ef4d91e6b0c2824b98050dd",
+        "path": "d_quotient_classical/schema/berger-causal-witness-preflight-v1.schema.json",
+        "sha256": "1849efe9f8a051190400b859e343719e5cd40fd03a65100da87fd916216f1530"
+      },
+      {
+        "commit": "b6caaddde5bce3480ef4d91e6b0c2824b98050dd",
+        "path": "d_quotient_classical/backreacted_clock/berger_causal_witness_preflight.py",
+        "sha256": "1ba0a4e4bbbdd2146442f2ef7f3a127d5022e40511386c5b409eed14e75142b1"
+      },
+      {
+        "commit": "b6caaddde5bce3480ef4d91e6b0c2824b98050dd",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_causal_witness_preflight.py",
+        "sha256": "d16b8c50f2d4695ad4def19a37300cc481400571c742dc58e3a18a52b0a2336a"
+      },
+      {
+        "commit": "b6caaddde5bce3480ef4d91e6b0c2824b98050dd",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_causal_witness_preflight.py",
+        "sha256": "14551911c57ad645bb3038aa2dd241b87c2b972f338e98abcd914d48ee7ac969"
+      },
+      {
+        "commit": "b6caaddde5bce3480ef4d91e6b0c2824b98050dd",
+        "path": "d_quotient_classical/reports/berger-causal-witness-preflight.md",
+        "sha256": "ad846b1891567b2e2234a0d797b9c92b3afe5b4a0f20de082468784cab643efa"
+      }
+    ],
+    "classical_commit": "b6caaddde5bce3480ef4d91e6b0c2824b98050dd"
+  },
+  "quantum_execution_authorized": false,
+  "result_id": "BERGER_ENDPOINT_FACTOR_INPUT_IMPORT",
+  "result_state": "PARTIAL_LORENTZIAN_ENDPOINT_FACTORS_IMPORTED_METRIC_OPEN",
+  "schema": "quantum-weyl-berger-endpoint-factor-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-endpoint-factor-import-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer",
+    "dependency_tags", "setting_id", "coverage", "independent_exact_checks",
+    "causal_endpoint_status", "metric_boundary", "green_endpoint_contract_update",
+    "quantum_execution_authorized", "next_gate", "provenance", "claim_boundary",
+    "consumer_provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-endpoint-factor-import-v1"},
+    "result_id": {"const": "BERGER_ENDPOINT_FACTOR_INPUT_IMPORT"},
+    "result_state": {"const": "PARTIAL_LORENTZIAN_ENDPOINT_FACTORS_IMPORTED_METRIC_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["retained_rows", "ghost_rows", "metric_rows", "metric_antifield_rows", "identity_rows"],
+      "properties": {
+        "retained_rows": {"const": 26},
+        "ghost_rows": {"const": 3},
+        "metric_rows": {"const": 10},
+        "metric_antifield_rows": {"const": 10},
+        "identity_rows": {"const": 3}
+      }
+    },
+    "independent_exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "middle_witness_identity", "ghost_block_reconstructed", "metric_block_reconstructed",
+        "metric_antifield_block_reconstructed", "identity_block_reconstructed",
+        "ghost_biwave_principal_symbol", "metric_kernel_carriers_exact",
+        "metric_rank_eight_at_exact_fixture", "metric_kernel_rank_two_at_exact_fixture"
+      ],
+      "properties": {
+        "middle_witness_identity": {"const": true},
+        "ghost_block_reconstructed": {"const": true},
+        "metric_block_reconstructed": {"const": true},
+        "metric_antifield_block_reconstructed": {"const": true},
+        "identity_block_reconstructed": {"const": true},
+        "ghost_biwave_principal_symbol": {"const": true},
+        "metric_kernel_carriers_exact": {"const": true},
+        "metric_rank_eight_at_exact_fixture": {"const": true},
+        "metric_kernel_rank_two_at_exact_fixture": {"const": true}
+      }
+    },
+    "causal_endpoint_status": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "ghost_endpoint", "identity_endpoint", "metric_endpoint", "metric_antifield_endpoint",
+        "retained_26_row_chain_homotopy", "gauge_fixed_54_row_chain_homotopy", "hadamard_data"
+      ],
+      "properties": {
+        "ghost_endpoint": {"const": "GREEN_HYPERBOLIC_BY_TWO_NORMALLY_HYPERBOLIC_FACTORS"},
+        "identity_endpoint": {"const": "GREEN_HYPERBOLIC_BY_FORMAL_ADJOINT_FACTORIZATION"},
+        "metric_endpoint": {"const": "NOT_CONSTRUCTED_RANK_EIGHT_PLUS_TWO_MIXED_ORDER"},
+        "metric_antifield_endpoint": {"const": "NOT_CONSTRUCTED_RANK_EIGHT_PLUS_TWO_MIXED_ORDER"},
+        "retained_26_row_chain_homotopy": {"const": "NOT_CONSTRUCTED"},
+        "gauge_fixed_54_row_chain_homotopy": {"const": "NOT_CONSTRUCTED"},
+        "hadamard_data": {"const": "NOT_CONSTRUCTED"}
+      }
+    },
+    "metric_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fourth_order_rank", "polynomial_kernel_dimension", "kernel_field_content", "negative_physical_direction_introduced", "interpretation"],
+      "properties": {
+        "fourth_order_rank": {"const": 8},
+        "polynomial_kernel_dimension": {"const": 2},
+        "kernel_field_content": {"const": ["temporal_diffeomorphism_clock", "weyl_constraint"]},
+        "negative_physical_direction_introduced": {"const": false},
+        "interpretation": {"type": "string", "minLength": 1}
+      }
+    },
+    "green_endpoint_contract_update": {"const": "PARTIAL_INPUT_ONLY_FULL_26_ROW_EXPORT_STILL_BLOCKED"},
+    "quantum_execution_authorized": {"const": false},
+    "next_gate": {"const": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION"},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "consumer_provenance": {"type": "object"}
+  }
+}
