@@ -242,6 +242,32 @@ JH_4+K_1T=(\zeta^2)^2I_{10},\qquad
 TK_1=(\zeta^2)^2I_5.
 \]
 
+The first curved \(W_{34}\) candidate nevertheless mixed coordinate
+conventions: it retained the dressed unary differential and companion but
+used an untransported identity middle map. The exact compatibility audit
+records the resulting rank-eight dressed subblock and rejects only that
+candidate. The coherent repair is now certified. With \(F\) the local
+raw-to-dressed clock shear, the corrected middle map is
+
+\[
+J_{\rm dressed}=FJ_{\rm raw}F^\sharp,
+\qquad
+J_{\rm raw}=\frac4{\alpha_B}R_{\rm raise},
+\]
+
+and \(q,W,P\), antifields, the companion, and the pairing are transported
+together. In raw coordinates the exact principal blocks are
+\(I_5,I_{10},I_{10},I_5\); the two clock rows form a triangular algebraic
+extension rather than an additional wave sector. This closes
+`BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT`, but not Green inversion.
+
+The follow-up \(10+2\) block audit finds an exact \(I_2\) clock diagonal.
+Eliminating it directly produces a nonzero order-six Schur correction, so the
+clock pair must not simply be discarded analytically. Its top symbol is only
+rank one and has an exact \(\zeta^2\) factor; it vanishes on the null cone.
+Thus the narrowed analytic object is a rank-one wave-divisible extension of
+the fourth-order metric block, not a new physical characteristic sector.
+
 The all-row analytic bookkeeping is now finished. Exact chain maps prove
 
 \[
@@ -251,10 +277,13 @@ The all-row analytic bookkeeping is now finished. Exact chain maps prove
 
 so 28 clock/nonminimal/gauge-fixing rows introduce no independent causal
 obstruction. The immediate gate is therefore
-`BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY`: construct the advanced and retarded
-homotopies for the retained mixed-order metric core. The formula above then
-lifts them support-locally and cyclically to all 54 rows. The total causal
-flag remains false until that endpoint theorem passes.
+`BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION`: classify the complete
+lower-order raw endpoint operator as an exact Green-hyperbolic factor,
+triangular extension, or finite filtered extension and construct its
+advanced/retarded operators. Transport through the certified clock SDR then
+gives `BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY`, and the formula above lifts it
+support-locally and cyclically to all 54 rows. The total causal flag remains
+false until that endpoint theorem passes.
 
 The endpoint consumer now receives the complete minimal records
 

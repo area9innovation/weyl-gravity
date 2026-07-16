@@ -84,6 +84,18 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS.json`](certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS.json)
 - Curved-witness candidate report:
   [`reports/berger-curved-clock-reattached-witness.md`](reports/berger-curved-clock-reattached-witness.md)
+- Submitted-candidate/principal compatibility audit:
+  [`certificates/BERGER_CURVED_WITNESS_PRINCIPAL_COMPATIBILITY.json`](certificates/BERGER_CURVED_WITNESS_PRINCIPAL_COMPATIBILITY.json)
+- Compatibility-audit report:
+  [`reports/berger-curved-witness-principal-compatibility.md`](reports/berger-curved-witness-principal-compatibility.md)
+- Coherent raw clock-reattached witness transport:
+  [`certificates/BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT.json`](certificates/BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT.json)
+- Raw witness-transport report:
+  [`reports/berger-raw-clock-reattached-witness-transport.md`](reports/berger-raw-clock-reattached-witness-transport.md)
+- Raw endpoint Green preflight:
+  [`certificates/BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT.json`](certificates/BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT.json)
+- Raw endpoint Green-preflight report:
+  [`reports/berger-raw-endpoint-green-preflight.md`](reports/berger-raw-endpoint-green-preflight.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:
@@ -266,10 +278,18 @@ J H_4 + K_1 T = (zeta^2)^2 I_10
 T K_1           = (zeta^2)^2 I_5.
 ```
 
-The immediate gate is therefore `BERGER_CURVED_CLOCK_REATTACHED_WITNESS`:
-lift this completion through all lower PBW orders, construct its causal Green
-homotopy on 34 rows, and transport it back through the clock SDR. Principal
-symbol agreement alone does not promote the causal theorem.
+The first submitted curved witness is algebraically exact but uses an
+untransported identity middle map in dressed coordinates.  An independent
+comparison finds the resulting ten-row dressed principal rank to be eight;
+that rejects only that submitted presentation.  Coherently transporting the
+entire BV package resolves the mismatch.  In raw coordinates the corrected
+ghost, metric, metric-antifield, and identity principal blocks are exactly
+\(I_5,I_{10},I_{10},I_5\), while the clock diagonal remains algebraic and the
+metric-to-clock term is triangular.  The immediate gate is now
+`BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION`: exhibit an exact
+Green-hyperbolic factor or finite filtered extension for the complete
+lower-order raw endpoint operator. Principal agreement alone still does not
+promote the causal theorem.
 
 ### Unary-operator naming and audit boundary
 
@@ -363,6 +383,23 @@ The minimal causal handoff now also freezes one authoritative
 previously missing consumer input; it does not prove causal invertibility. A
 failed downstream test rejects this candidate only and is not a global
 nonexistence theorem for all curved witnesses.
+
+That downstream test has now been run. It exposes a coordinate mismatch in
+the first candidate, not a propagation obstruction. The replacement export
+uses the certified first-order BV-canonical raw/dressed clock map and the
+action-normalized raw fibre identification. Exact PBW replay proves raw
+\(q^2=0\), cyclicity, \(P=qW+Wq\), all transport identities, and the full
+scalar-biwave principal blocks. Advanced/retarded inversion of the complete
+lower-order raw operator is still open and is the remaining analytic gate
+before the retained 26-row causal homotopy can be promoted.
+
+The exact \(10+2\) block preflight further shows that the clock diagonal is
+\(I_2\). Naive clock elimination is not the answer: its Schur correction is
+nonzero and raises the metric operator from order four to order six. The
+order-six symbol is nevertheless rank one off characteristic and divisible
+by the metric wave symbol, hence vanishes on the null stratum. The next gate
+is therefore `BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION`, not a generic
+sixth-order inversion.
 
 The full causal problem has also been reduced exactly. The same 54-to-26 SDR
 proves that a retained causal homotopy lifts by

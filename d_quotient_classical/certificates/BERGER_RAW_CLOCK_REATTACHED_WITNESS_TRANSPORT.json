@@ -1,0 +1,100 @@
+{
+  "claim_boundary": "This certificate repairs the coordinate mismatch in the submitted W34 candidate. It proves a coherent support-local BV-canonical raw/dressed transport, exact cyclic witness identities, and the independently required raw scalar-biwave principal blocks. It does not prove Green hyperbolicity of the complete lower-order curved operator, construct advanced/retarded inverses, or promote the retained 26-row causal homotopy.",
+  "claim_status": "CERTIFIED_RAW_BV_TRANSPORT_PRINCIPAL_COMPATIBLE_GREEN_OPEN",
+  "coordinate_transport": {
+    "BV_canonical": true,
+    "C12_F12_identity": true,
+    "F12_C12_identity": true,
+    "artifacts": {
+      "dressed_to_raw_C12": {
+        "format": "JSON_EXACT_SPARSE_OPERATOR",
+        "path": "d_quotient_classical/generated/berger_raw_clock_reattached_witness/dressed_to_raw_C12.json",
+        "sha256": "d96453d38ce0ca2ac9a48fb961422e0cb0613de21a4fdc69e8f9c6fb085358c3"
+      },
+      "raw_to_dressed_F12": {
+        "format": "JSON_EXACT_SPARSE_OPERATOR",
+        "path": "d_quotient_classical/generated/berger_raw_clock_reattached_witness/raw_to_dressed_F12.json",
+        "sha256": "53e7d1277a7429ccca214ca85a8a1480706fc16d24f9df5a2c66a66d45548955"
+      }
+    },
+    "direction": "F12 maps raw fields to dressed fields; C12=F12^{-1}",
+    "maximum_order": 1,
+    "support_local": true
+  },
+  "dependency_refs": {
+    "candidate_compatibility_audit": {
+      "result_id": "BERGER_CURVED_WITNESS_PRINCIPAL_COMPATIBILITY",
+      "sha256": "d00cebeac13d152a45007547fc470216eb2e351c0f5ff01e4b3d8f017d8715b3"
+    },
+    "clock_reattached_principal": {
+      "result_id": "BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS",
+      "sha256": "83eaaffefcc0c60ecef8d5c19838e70a3f751c6510c387027b92d158233d32d7"
+    },
+    "submitted_curved_candidate": {
+      "result_id": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
+      "sha256": "bf30e4677264e58ee252fa6b3c98f5cd0a7d3e0c065365843b70c66deb08c573"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "antifield_transport_exact": true,
+    "clock_diagonal_remains_nonpropagating_at_order_four": true,
+    "companion_transport_exact": true,
+    "field_transport_exact": true,
+    "raw_P_equals_qW_plus_Wq": true,
+    "raw_W_cyclic": true,
+    "raw_q_cyclic": true,
+    "raw_q_squared_zero": true,
+    "raw_scalar_biwave_principal_exact": true
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_RAW_CLOCK_REATTACHED_GREEN_INVERSION": false,
+    "BERGER_RAW_CLOCK_REATTACHED_PRINCIPAL_COMPATIBILITY": true,
+    "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT": true
+  },
+  "next_gate": "BERGER_RAW_ENDPOINT_GREEN_FACTOR_OR_EXTENSION",
+  "operators": {
+    "P34_raw": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_clock_reattached_witness/P34_raw.json",
+      "sha256": "272abd3d4fb3f01fc622feec8be425ff82a89183c493ac82aa7916d928c19119"
+    },
+    "W34_raw": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_clock_reattached_witness/W34_raw.json",
+      "sha256": "45f69c39f85c9436b54584ad6d0fd9d288368826ba792ee39f7018f452ce730e"
+    },
+    "pairing34_raw": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_clock_reattached_witness/pairing34_raw.json",
+      "sha256": "cedcbc90522c7b5b5ca7fa3bd3ed8885d872ec6723bb04364e42e26f9dfe45fd"
+    },
+    "q34_raw": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_clock_reattached_witness/q34_raw.json",
+      "sha256": "7f3269ed0bcfe3e37df085d2bea68be9de69f87f1ee6ea531f792214b3aa6349"
+    }
+  },
+  "raw_principal_audit": {
+    "clock_diagonal_order_four_rank": 0,
+    "comparison_covector": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "ghost_block_equals_I5": true,
+    "identity_block_equals_I5": true,
+    "interpretation": "the rank-eight dressed metric subblock is a differential-coordinate presentation effect; raw coordinates expose a triangular metric-to-clock extension",
+    "metric_antifield_block_equals_I10": true,
+    "metric_block_equals_I10": true,
+    "metric_to_clock_order_four_rank": 1
+  },
+  "result_id": "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT",
+  "schema": "pure-weyl-berger-raw-clock-reattached-witness-transport-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

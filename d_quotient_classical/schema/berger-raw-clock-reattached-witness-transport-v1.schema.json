@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-raw-clock-reattached-witness-transport-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "coordinate_transport", "operators", "raw_principal_audit",
+    "exact_checks", "flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-raw-clock-reattached-witness-transport-v1"},
+    "result_id": {"const": "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "CERTIFIED_RAW_BV_TRANSPORT_PRINCIPAL_COMPATIBLE_GREEN_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["submitted_curved_candidate", "candidate_compatibility_audit", "clock_reattached_principal"],
+      "properties": {
+        "submitted_curved_candidate": {"$ref": "#/$defs/dependency"},
+        "candidate_compatibility_audit": {"$ref": "#/$defs/dependency"},
+        "clock_reattached_principal": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "coordinate_transport": {
+      "type": "object", "additionalProperties": false,
+      "required": ["direction", "maximum_order", "support_local", "BV_canonical", "F12_C12_identity", "C12_F12_identity", "artifacts"],
+      "properties": {
+        "direction": {"type": "string", "minLength": 1},
+        "maximum_order": {"const": 1},
+        "support_local": {"const": true},
+        "BV_canonical": {"const": true},
+        "F12_C12_identity": {"const": true},
+        "C12_F12_identity": {"const": true},
+        "artifacts": {
+          "type": "object", "additionalProperties": false,
+          "required": ["raw_to_dressed_F12", "dressed_to_raw_C12"],
+          "properties": {
+            "raw_to_dressed_F12": {"$ref": "#/$defs/artifact"},
+            "dressed_to_raw_C12": {"$ref": "#/$defs/artifact"}
+          }
+        }
+      }
+    },
+    "operators": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q34_raw", "W34_raw", "P34_raw", "pairing34_raw"],
+      "properties": {
+        "q34_raw": {"$ref": "#/$defs/artifact"},
+        "W34_raw": {"$ref": "#/$defs/artifact"},
+        "P34_raw": {"$ref": "#/$defs/artifact"},
+        "pairing34_raw": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "raw_principal_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["comparison_covector", "ghost_block_equals_I5", "metric_block_equals_I10", "metric_antifield_block_equals_I10", "identity_block_equals_I5", "clock_diagonal_order_four_rank", "metric_to_clock_order_four_rank", "interpretation"],
+      "properties": {
+        "comparison_covector": {"const": [1, 0, 0, 0]},
+        "ghost_block_equals_I5": {"const": true},
+        "metric_block_equals_I10": {"const": true},
+        "metric_antifield_block_equals_I10": {"const": true},
+        "identity_block_equals_I5": {"const": true},
+        "clock_diagonal_order_four_rank": {"const": 0},
+        "metric_to_clock_order_four_rank": {"const": 1},
+        "interpretation": {"type": "string", "minLength": 1}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 9, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT", "BERGER_RAW_CLOCK_REATTACHED_PRINCIPAL_COMPATIBILITY", "BERGER_RAW_CLOCK_REATTACHED_GREEN_INVERSION", "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY"],
+      "properties": {
+        "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT": {"const": true},
+        "BERGER_RAW_CLOCK_REATTACHED_PRINCIPAL_COMPATIBILITY": {"const": true},
+        "BERGER_RAW_CLOCK_REATTACHED_GREEN_INVERSION": {"const": false},
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RAW_ENDPOINT_GREEN_FACTOR_OR_EXTENSION"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {
+        "format": {"const": "JSON_EXACT_SPARSE_OPERATOR"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "claim_boundary": "The exact 10+2 audit proves that the clock block is I2 and that naive elimination adds a nonzero rank-one, wave-divisible order-six Schur term. This identifies a filtered gauge/clock extension but does not construct its Green operators or prove that the complete lower-order Schur complement is Green hyperbolic.",
+  "claim_status": "EXACT_FILTER_PREFLIGHT_GREEN_INVERSION_OPEN",
+  "dependency_ref": {
+    "result_id": "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT",
+    "sha256": "cb69a3eba6d3e81eec519adca51aa35f15d7250a2fc2be496230e55852c4950c"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "clock_diagonal_pointwise_invertible": true,
+    "off_diagonal_schur_correction_nonzero": true,
+    "order_six_correction_rank_one_off_characteristic": true,
+    "order_six_correction_wave_divisible": true,
+    "order_six_correction_zero_on_tested_null_covector": true,
+    "schur_correction_order_six": true
+  },
+  "field_block_decomposition": {
+    "clock_diagonal": "I2",
+    "differential_orders": {
+      "A_metric": 4,
+      "BC_schur_correction": 6,
+      "B_clock_to_metric": 2,
+      "C_metric_to_clock": 4,
+      "D_clock": 0,
+      "schur_complement": 6
+    },
+    "layout": "raw_metric_10 plus contractible_clock_2",
+    "nonzero_entry_counts": {
+      "A_metric": 98,
+      "BC_schur_correction": 100,
+      "B_clock_to_metric": 17,
+      "C_metric_to_clock": 20,
+      "D_clock": 2
+    }
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_RAW_ENDPOINT_DIRECT_SCHUR_GREEN_THEOREM": false,
+    "BERGER_RAW_ENDPOINT_FILTERED_GREEN_EXTENSION": false,
+    "BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT": true
+  },
+  "next_gate": "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION",
+  "result_id": "BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT",
+  "schema": "pure-weyl-berger-raw-endpoint-green-preflight-v1",
+  "schur_audit": {
+    "BC_nonzero": true,
+    "formula": "S=A-B*C because D=I2",
+    "naive_elimination_raises_order_from_4_to_6": true,
+    "null_symbol_vanishes": true,
+    "order_six_has_wave_factor": true,
+    "order_six_polynomial_gcd": "u*(4*u - v)*(p0**2 - p1**2 - p2**2 - p3**2)/4",
+    "rank_fixtures": {
+      "generic": 1,
+      "null": 0,
+      "spacelike": 1,
+      "timelike": 1
+    },
+    "wave_divided_symbol_rank": 1,
+    "wave_symbol": "-p0**2+p1**2+p2**2+p3**2"
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

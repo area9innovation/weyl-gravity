@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-raw-endpoint-green-preflight-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_ref", "field_block_decomposition", "schur_audit", "exact_checks", "flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-raw-endpoint-green-preflight-v1"},
+    "result_id": {"const": "BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "EXACT_FILTER_PREFLIGHT_GREEN_INVERSION_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_ref": {"$ref": "#/$defs/dependency"},
+    "field_block_decomposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["layout", "clock_diagonal", "differential_orders", "nonzero_entry_counts"],
+      "properties": {
+        "layout": {"const": "raw_metric_10 plus contractible_clock_2"},
+        "clock_diagonal": {"const": "I2"},
+        "differential_orders": {
+          "type": "object", "additionalProperties": false,
+          "required": ["A_metric", "B_clock_to_metric", "C_metric_to_clock", "D_clock", "BC_schur_correction", "schur_complement"],
+          "properties": {
+            "A_metric": {"const": 4}, "B_clock_to_metric": {"const": 2},
+            "C_metric_to_clock": {"const": 4}, "D_clock": {"const": 0},
+            "BC_schur_correction": {"const": 6}, "schur_complement": {"const": 6}
+          }
+        },
+        "nonzero_entry_counts": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "integer", "minimum": 1}}
+      }
+    },
+    "schur_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "BC_nonzero", "naive_elimination_raises_order_from_4_to_6", "order_six_polynomial_gcd", "order_six_has_wave_factor", "wave_symbol", "wave_divided_symbol_rank", "rank_fixtures", "null_symbol_vanishes"],
+      "properties": {
+        "formula": {"const": "S=A-B*C because D=I2"},
+        "BC_nonzero": {"const": true},
+        "naive_elimination_raises_order_from_4_to_6": {"const": true},
+        "order_six_polynomial_gcd": {"type": "string", "minLength": 1},
+        "order_six_has_wave_factor": {"const": true},
+        "wave_symbol": {"const": "-p0**2+p1**2+p2**2+p3**2"},
+        "wave_divided_symbol_rank": {"const": 1},
+        "rank_fixtures": {
+          "type": "object", "additionalProperties": false,
+          "required": ["timelike", "spacelike", "null", "generic"],
+          "properties": {"timelike": {"const": 1}, "spacelike": {"const": 1}, "null": {"const": 0}, "generic": {"const": 1}}
+        },
+        "null_symbol_vanishes": {"const": true}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 6, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT", "BERGER_RAW_ENDPOINT_DIRECT_SCHUR_GREEN_THEOREM", "BERGER_RAW_ENDPOINT_FILTERED_GREEN_EXTENSION", "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY"],
+      "properties": {
+        "BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT": {"const": true},
+        "BERGER_RAW_ENDPOINT_DIRECT_SCHUR_GREEN_THEOREM": {"const": false},
+        "BERGER_RAW_ENDPOINT_FILTERED_GREEN_EXTENSION": {"const": false},
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"const": "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

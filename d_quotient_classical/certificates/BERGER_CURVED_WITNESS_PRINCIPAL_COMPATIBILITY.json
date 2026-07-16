@@ -1,0 +1,144 @@
+{
+  "claim_boundary": "This exact comparison rejects the submitted W34/P34 candidate as a realization of the separately certified scalar metric principal block. It does not reject the algebraic identity P34=q34 W34+W34 q34, and it is not a no-go theorem for other witnesses, raw-coordinate BV-canonical transports, auxiliary-field realizations, or the retained 26-row Green homotopy.",
+  "claim_status": "SUBMITTED_W34_PRINCIPAL_INCOMPATIBLE_REPAIR_REQUIRED",
+  "comparison_covector": {
+    "frame_covector": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "reason": "a single exact noncharacteristic covector suffices to reject equality of polynomial principal symbols",
+    "wave_symbol_squared": "1"
+  },
+  "degree_block_audit": {
+    "dressed_metric_rank": 8,
+    "full_field_rank_with_two_clock_rows": 10,
+    "full_field_size": 12,
+    "ghost_equals_scalar_biwave_I5": true,
+    "ghost_rank": 5,
+    "identity_equals_scalar_biwave_I5": true,
+    "identity_rank": 5,
+    "metric_antifield_rank": 8,
+    "required_metric_rank": 10
+  },
+  "dependency_refs": {
+    "clock_reattached_principal": {
+      "result_id": "BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS",
+      "sha256": "83eaaffefcc0c60ecef8d5c19838e70a3f751c6510c387027b92d158233d32d7"
+    },
+    "curved_W34_candidate": {
+      "result_id": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
+      "sha256": "bf30e4677264e58ee252fa6b3c98f5cd0a7d3e0c065365843b70c66deb08c573"
+    },
+    "minimal_34_layout": {
+      "result_id": "BERGER_MINIMAL_34_PORTABLE_CONTRACTION",
+      "sha256": "f69d8664fb139860fb3bcb89bdf82ee1659e158f6f925535b17e2de364060db4"
+    },
+    "retained_q1": {
+      "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "J_only_repair_fails": true,
+    "candidate_scope_not_global_nonexistence": true,
+    "clock_rows_raise_full_field_rank_only_to_10_of_12": true,
+    "dressed_metric_principal_rank_is_8_not_10": true,
+    "ghost_principal_compatible": true,
+    "identity_principal_compatible": true,
+    "normalized_coefficient_obstruction_nonzero": true,
+    "principal_metric_target_imported": true,
+    "submitted_qW_plus_Wq_identity_imported": true
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_CURVED_WITNESS_ALGEBRAIC_IDENTITY": true,
+    "BERGER_CURVED_WITNESS_GREEN_EXECUTION": false,
+    "BERGER_CURVED_WITNESS_PRINCIPAL_COMPATIBILITY": false,
+    "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT": false
+  },
+  "next_gate": "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT",
+  "normalization_test": {
+    "J_only_corrected_metric_rank": 8,
+    "J_only_equals_scalar_biwave_I10": false,
+    "candidate_middle_map": "identity on the first ten middle rows",
+    "conclusion": "changing the middle fibre map alone does not repair the dressed incidence; the raw/dressed BV-canonical transport must be applied coherently to q, W, P and the pairing",
+    "principal_theorem_middle_map": "J=(4/alpha_B) R_raise"
+  },
+  "normalized_obstruction": {
+    "block": "degree_zero_dressed_metric",
+    "defect": "-1",
+    "derivative_exponents": [
+      4,
+      0,
+      0,
+      0
+    ],
+    "dual_pairing_on_defect": "1",
+    "input_row": "h_hat_00",
+    "normalized_dual_functional": "minus coefficient extraction at (h_hat_00,h_hat_00,e0^4)",
+    "output_row": "h_hat_00",
+    "required_coefficient": "1",
+    "submitted_coefficient": "0"
+  },
+  "rank_witnesses": {
+    "dressed_metric_rank8_minor": {
+      "columns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "determinant": "alpha_B**5/384",
+      "rows": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "full_field_rank10_minor": {
+      "columns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11
+      ],
+      "determinant": "-alpha_B**5/768",
+      "rows": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11
+      ]
+    }
+  },
+  "result_id": "BERGER_CURVED_WITNESS_PRINCIPAL_COMPATIBILITY",
+  "schema": "pure-weyl-berger-curved-witness-principal-compatibility-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

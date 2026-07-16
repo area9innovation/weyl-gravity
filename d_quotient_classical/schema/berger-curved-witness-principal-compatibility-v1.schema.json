@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-curved-witness-principal-compatibility-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "comparison_covector", "degree_block_audit",
+    "rank_witnesses", "normalized_obstruction", "normalization_test",
+    "exact_checks", "flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-curved-witness-principal-compatibility-v1"},
+    "result_id": {"const": "BERGER_CURVED_WITNESS_PRINCIPAL_COMPATIBILITY"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "SUBMITTED_W34_PRINCIPAL_INCOMPATIBLE_REPAIR_REQUIRED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["curved_W34_candidate", "clock_reattached_principal", "retained_q1", "minimal_34_layout"],
+      "properties": {
+        "curved_W34_candidate": {"$ref": "#/$defs/dependency"},
+        "clock_reattached_principal": {"$ref": "#/$defs/dependency"},
+        "retained_q1": {"$ref": "#/$defs/dependency"},
+        "minimal_34_layout": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "comparison_covector": {
+      "type": "object", "additionalProperties": false,
+      "required": ["frame_covector", "wave_symbol_squared", "reason"],
+      "properties": {
+        "frame_covector": {"const": [1, 0, 0, 0]},
+        "wave_symbol_squared": {"const": "1"},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "degree_block_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "ghost_rank", "ghost_equals_scalar_biwave_I5", "dressed_metric_rank",
+        "required_metric_rank", "full_field_rank_with_two_clock_rows",
+        "full_field_size", "metric_antifield_rank", "identity_rank",
+        "identity_equals_scalar_biwave_I5"
+      ],
+      "properties": {
+        "ghost_rank": {"const": 5},
+        "ghost_equals_scalar_biwave_I5": {"const": true},
+        "dressed_metric_rank": {"const": 8},
+        "required_metric_rank": {"const": 10},
+        "full_field_rank_with_two_clock_rows": {"const": 10},
+        "full_field_size": {"const": 12},
+        "metric_antifield_rank": {"const": 8},
+        "identity_rank": {"const": 5},
+        "identity_equals_scalar_biwave_I5": {"const": true}
+      }
+    },
+    "rank_witnesses": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dressed_metric_rank8_minor", "full_field_rank10_minor"],
+      "properties": {
+        "dressed_metric_rank8_minor": {"$ref": "#/$defs/minor"},
+        "full_field_rank10_minor": {"$ref": "#/$defs/minor"}
+      }
+    },
+    "normalized_obstruction": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "block", "output_row", "input_row", "derivative_exponents",
+        "submitted_coefficient", "required_coefficient", "defect",
+        "normalized_dual_functional", "dual_pairing_on_defect"
+      ],
+      "properties": {
+        "block": {"const": "degree_zero_dressed_metric"},
+        "output_row": {"const": "h_hat_00"},
+        "input_row": {"const": "h_hat_00"},
+        "derivative_exponents": {"const": [4, 0, 0, 0]},
+        "submitted_coefficient": {"const": "0"},
+        "required_coefficient": {"const": "1"},
+        "defect": {"const": "-1"},
+        "normalized_dual_functional": {"type": "string", "minLength": 1},
+        "dual_pairing_on_defect": {"const": "1"}
+      }
+    },
+    "normalization_test": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "candidate_middle_map", "principal_theorem_middle_map",
+        "J_only_corrected_metric_rank", "J_only_equals_scalar_biwave_I10",
+        "conclusion"
+      ],
+      "properties": {
+        "candidate_middle_map": {"type": "string", "minLength": 1},
+        "principal_theorem_middle_map": {"type": "string", "minLength": 1},
+        "J_only_corrected_metric_rank": {"const": 8},
+        "J_only_equals_scalar_biwave_I10": {"const": false},
+        "conclusion": {"type": "string", "minLength": 1}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 9, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "BERGER_CURVED_WITNESS_ALGEBRAIC_IDENTITY",
+        "BERGER_CURVED_WITNESS_PRINCIPAL_COMPATIBILITY",
+        "BERGER_CURVED_WITNESS_GREEN_EXECUTION",
+        "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT",
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY"
+      ],
+      "properties": {
+        "BERGER_CURVED_WITNESS_ALGEBRAIC_IDENTITY": {"const": true},
+        "BERGER_CURVED_WITNESS_PRINCIPAL_COMPATIBILITY": {"const": false},
+        "BERGER_CURVED_WITNESS_GREEN_EXECUTION": {"const": false},
+        "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT": {"const": false},
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "minor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rows", "columns", "determinant"],
+      "properties": {
+        "rows": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+        "columns": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+        "determinant": {"type": "string", "minLength": 1, "not": {"const": "0"}}
+      }
+    }
+  }
+}
