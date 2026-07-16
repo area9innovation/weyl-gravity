@@ -60,6 +60,7 @@ EINSTEIN_MAXWELL_WEYL_RADIATIVE_RESTRICTION_CONTRIBUTION = PACKAGE / "contributi
 EINSTEIN_MAXWELL_WEYL_ELL1_PHYSICAL_RESTRICTION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-ell1-physical-restriction.json"
 EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_INCLUSION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-standard-harmonic-inclusion.json"
 EINSTEIN_MAXWELL_WEYL_EXTRA_BRANCH_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-extra-branch-preflight.json"
+EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-operator-module-preflight.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -935,6 +936,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "einstein_maxwell_product_compact_weyl_extra_branch_preflight",
         "G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT",
     )
+    maxwell_weyl_axial_operator_module_preflight_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT_CONTRIBUTION,
+        "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
+        "einstein_maxwell_product_compact_weyl_axial_operator_module_preflight",
+        "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS",
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     berger_retained_q2_contribution = _nonlinear_berger_retained_q2_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
@@ -1134,6 +1141,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "path": str(EINSTEIN_MAXWELL_WEYL_EXTRA_BRANCH_PREFLIGHT_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_EXTRA_BRANCH_PREFLIGHT_CONTRIBUTION),
                 "payload": maxwell_weyl_extra_branch_preflight_contribution,
+            },
+            {
+                "path": str(EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT_CONTRIBUTION),
+                "payload": maxwell_weyl_axial_operator_module_preflight_contribution,
             },
             {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
@@ -1525,6 +1537,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT",
             },
             {
+                "setting_id": "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_axial_operator_module_preflight",
+                "boundary_conditions": "generic axial ell>=2 exact differential coefficient/gauge module; symbolic k; exceptional loci retained; target operator not yet inserted",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1710,6 +1731,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_ell1_physical_restriction",
         "compact_einstein_maxwell_weyl_standard_harmonic_inclusion",
         "compact_einstein_maxwell_weyl_extra_branch_preflight",
+        "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1752,6 +1774,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_ell1_physical_restriction": "G3_PHYSICAL_ELL1_ALL_N_M_FACTOR_FOUR_QUOTIENT_RESTRICTION",
         "compact_einstein_maxwell_weyl_standard_harmonic_inclusion": "G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT",
         "compact_einstein_maxwell_weyl_extra_branch_preflight": "G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT",
+        "compact_einstein_maxwell_weyl_axial_operator_module_preflight": "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "compact_positive_berger_clock_retained_q2_26": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
@@ -1833,6 +1856,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("complete standard-harmonic Weyl--Maxwell inclusion theorem was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_extra_branch_preflight", {}).get("status") != "CERTIFIED":
         errors.append("Weyl--Maxwell extra-branch preflight was dropped")
+    if ledger.get("compact_einstein_maxwell_weyl_axial_operator_module_preflight", {}).get("status") != "CERTIFIED":
+        errors.append("Weyl--Maxwell axial operator-module preflight was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -2203,6 +2228,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_weyl_extra_branch_preflight",
             "drop_Einstein_Maxwell_Weyl_extra_branch_preflight_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
+            "drop_Einstein_Maxwell_Weyl_axial_operator_module_preflight_contribution",
         ),
     ):
         mutant = deepcopy(data)

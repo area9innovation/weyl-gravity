@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "generic axial ell>=2 coefficient complex on R_t x S1_L x S2 at fixed P_N; symbolic k and exact temporal differential algebra; before final residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the generic axial ungauged coefficient module (h_t,h_x,h_2,q_t,q_x,b) and target odd-parity gauge module (s,r) are frozen over Q[I,lambda,k][D]",
+    "an exact contraction to four invariants satisfies KG=0, KJ=I_4, I_6-JK=GH, and HG=I_2",
+    "the algebraic h_2=b=0 slice uses only the constant pivot 2 and introduces no inverse of D, k, omega, or a dispersion factor",
+    "the differential-module solution functor and formal-adjoint involution are frozen before frequency substitution",
+    "the Hessian/equation, Noether, formal-self-adjoint, off-shell Green, source-image, denominator-ledger, exceptional-stratum, and independent full-tensor ell=2 replay rails are mandatory",
+    "lambda=0, lambda=2, k=0, every target pivot locus, and every resultant/discriminant locus must be solved separately"
+  ],
+  "evidence": {
+    "commit": "9c5478a235272c884df2cd44201852c57a5a9e7d",
+    "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator_module_preflight.json",
+    "sha256": "d532bc7d340d86ed99139348cd5ecb0ab6e224a659fe02682ced6ef7df0b723a"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "insert the complete generic axial Weyl-Maxwell Hessian/operator, pass the Noether and Green rails, and replay the independent full-tensor ell=2 fixture before quotient or root extraction",
+  "not_established": [
+    "the complete generic axial target operator or any passed Hessian, Noether, Green, or source-image rail",
+    "the independent ell=2 full-tensor replay",
+    "a canonical extra quotient, dispersion, multiplicity, Jordan chain, norm, or particle",
+    "boundary selection, final residual descent, causal scattering, or quantum unitarity"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_axial_operator_module_preflight",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_operator_module_preflight --verify bridge/certificates/einstein_maxwell_weyl_axial_operator_module_preflight.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_operator_module_preflight.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_operator_module_preflight",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}

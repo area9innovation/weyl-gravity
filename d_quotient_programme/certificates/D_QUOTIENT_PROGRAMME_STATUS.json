@@ -29,7 +29,7 @@
     ],
     "rule": "The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and the conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported. Construct advanced/retarded Green operators with causal support and transport them to the retained endpoint without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "987cba7a478e76b3f7a060e76faf9945e7f372bf",
+  "programme_base_commit": "9c5478a235272c884df2cd44201852c57a5a9e7d",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -46,7 +46,7 @@
   },
   "registry_hashes": {
     "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-    "phase_space_registry": "ac15dfeba028ca4bd272fa8fe9781af4733f19c1c3e9e3e5149fd80e373a862c"
+    "phase_space_registry": "8582c9cd26257c615bb022f246cf9e0213afd1a112a45ac5530f0802407d648e"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -393,6 +393,15 @@
       "setting_id": "compact_einstein_maxwell_weyl_extra_branch_preflight",
       "status": "CERTIFIED",
       "verdict": "G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT"
+    },
+    {
+      "boundary_conditions": "generic axial ell>=2 exact differential coefficient/gauge module; symbolic k; exceptional loci retained; target operator not yet inserted",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_axial_operator_module_preflight",
+      "setting_id": "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
+      "status": "CERTIFIED",
+      "verdict": "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -2047,6 +2056,51 @@
         ]
       },
       "sha256": "f1621980cb41d335a336b633d2bbe54812891aa63e6eab87776c10c1575f87f9"
+    },
+    {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-axial-operator-module-preflight.json",
+      "payload": {
+        "boundary_conditions": "generic axial ell>=2 coefficient complex on R_t x S1_L x S2 at fixed P_N; symbolic k and exact temporal differential algebra; before final residual quotient",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the generic axial ungauged coefficient module (h_t,h_x,h_2,q_t,q_x,b) and target odd-parity gauge module (s,r) are frozen over Q[I,lambda,k][D]",
+          "an exact contraction to four invariants satisfies KG=0, KJ=I_4, I_6-JK=GH, and HG=I_2",
+          "the algebraic h_2=b=0 slice uses only the constant pivot 2 and introduces no inverse of D, k, omega, or a dispersion factor",
+          "the differential-module solution functor and formal-adjoint involution are frozen before frequency substitution",
+          "the Hessian/equation, Noether, formal-self-adjoint, off-shell Green, source-image, denominator-ledger, exceptional-stratum, and independent full-tensor ell=2 replay rails are mandatory",
+          "lambda=0, lambda=2, k=0, every target pivot locus, and every resultant/discriminant locus must be solved separately"
+        ],
+        "evidence": {
+          "commit": "9c5478a235272c884df2cd44201852c57a5a9e7d",
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator_module_preflight.json",
+          "sha256": "d532bc7d340d86ed99139348cd5ecb0ab6e224a659fe02682ced6ef7df0b723a"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "insert the complete generic axial Weyl-Maxwell Hessian/operator, pass the Noether and Green rails, and replay the independent full-tensor ell=2 fixture before quotient or root extraction",
+        "not_established": [
+          "the complete generic axial target operator or any passed Hessian, Noether, Green, or source-image rail",
+          "the independent ell=2 full-tensor replay",
+          "a canonical extra quotient, dispersion, multiplicity, Jordan chain, norm, or particle",
+          "boundary selection, final residual descent, causal scattering, or quantum unitarity"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_axial_operator_module_preflight",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_operator_module_preflight --verify bridge/certificates/einstein_maxwell_weyl_axial_operator_module_preflight.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_operator_module_preflight.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_operator_module_preflight",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "e9ae271a355d2a5556fafe7311159a9f895b8e565f4d9ce2875819e6717c3adf"
     },
     {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",

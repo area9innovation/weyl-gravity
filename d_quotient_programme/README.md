@@ -91,6 +91,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-standard-harmonic-inclusion-registration-receipt.md`](reports/einstein-maxwell-weyl-standard-harmonic-inclusion-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-extra-branch-preflight.json`](contributions/einstein-maxwell-weyl-extra-branch-preflight.json)
 - [`reports/einstein-maxwell-weyl-extra-branch-preflight-registration-receipt.md`](reports/einstein-maxwell-weyl-extra-branch-preflight-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-axial-operator-module-preflight.json`](contributions/einstein-maxwell-weyl-axial-operator-module-preflight.json)
+- [`reports/einstein-maxwell-weyl-axial-operator-module-preflight-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-operator-module-preflight-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -304,3 +306,10 @@ quotient `Q_extra=H^0(C_WM^full)/i_*H^0(C_EM^std)`, not a chosen complement.
 Solution classes, adjoint cokernels, presymplectic radicals, and gauge classes
 remain distinct. The generic axial target block is first; no extra dispersion,
 mode, particle, boundary, causal, or quantum result has yet been registered.
+
+The axial child preflight now gives the first solve an exact differential-ring
+chassis. Its six ungauged coefficients contract to four invariants using only
+the constant pivot `2`, with `KG=0`, `KJ=I`, `I-JK=GH`, and `HG=I`; neither
+`D` nor `k` is inverted. The target operator must still pass the independent
+Hessian/equation, Noether, Green, source-image, pivot-stratification, and full
+tensor `ell=2` rails before any root or extra mode is reported.
