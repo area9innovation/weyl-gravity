@@ -1,0 +1,89 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC readiness certificate fixes and tests the portable 54-row bilinear PBW arrival contract against the authoritative unary, D, pairing, and contraction hashes. Its nonzero fixture is implementation-only. No classical q2 is imported, no operator-valued arity-two identity is independently replayed, and no transfer, Cartan, physical, causal, or quantum verdict is authorized.",
+  "claim_flags": {
+    "ARITY_TWO_IDENTITIES_INDEPENDENTLY_REPLAYED": false,
+    "ARRIVAL_ADAPTER_READY": true,
+    "CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED": false,
+    "INTERACTING_CARTAN_VERDICT": false,
+    "QUANTUM_CLAIM": false,
+    "TRANSFERRED_ELL2_COMPUTED": false
+  },
+  "consumer_capabilities": {
+    "ND2_physical_execution": false,
+    "all_54_rows_bound_to_authoritative_layout": true,
+    "canonical_record_hash_verification": true,
+    "cohomological_degree_check": true,
+    "exact_PBW_coefficient_parser": true,
+    "graded_Koszul_symmetry_check": true,
+    "independent_BV_cyclicity_execution": false,
+    "independent_D_q2_derivation_execution": false,
+    "independent_q1_q2_identity_execution": false,
+    "nonzero_field_field_to_equation_fixture": true,
+    "proof_artifact_hash_verification": true,
+    "strict_portable_schema": true,
+    "total_jet_bound_check": true
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-54-row-q2-arrival-readiness.md": "56a68e81635f51405efd39fc1a1781663f777f2e25b636a677ec4b2f2c3d2aad",
+      "README.md": "2101f7cfe6658c19c8d0e33d34927e924e2e9a40689556bf90bfcfc43fcf0d7a",
+      "berger_54_row_q2_arrival.py": "cb8d0661ccd927887b3b60271eff810e67163ec4a181c2accb9a1791b34ba359",
+      "berger_54_row_q2_arrival_certificate.py": "484c84b7db6be4ce44a814b69a8019e5e2b1655cde245d4c8da26696051c7837",
+      "schema/berger-54-row-q2-arrival-readiness-v1.schema.json": "d18f5df64ff171c9b86cf4c6df04e7fb002978118b0bd8a396874d7193a19d8e",
+      "schema/berger-54-row-support-local-q2-portable-v1.schema.json": "2899fc871e5d786dfccdf21b03a3ee5dbd9128cefb064a1a14d5f4df1a57d5c2",
+      "tests/test_berger_54_row_q2_arrival.py": "3de9bce0c7698eb49f2dfb9602dc6d519a8161e0be3ca7a922bf7ea7bc249e90"
+    },
+    "source_manifest_sha256": "02873bb66b19ad9b65ab19abab43185a753afe6423e6f5ea21a8a9a25e5d48b0"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "generality_assessment": {
+    "achieved": "G2_INPUT_CONSUMER_READINESS_ONLY",
+    "promotion_to_G2_authorized": false,
+    "target": "G2_FULL_SUPPORT_LOCAL_LOW_ARITY_COMPLEX_ON_ONE_BACKGROUND"
+  },
+  "input_gate": {
+    "classical_q2_export_available": false,
+    "next_action_on_arrival": "pin committed classical export, parse and bind it, then implement and run the exact operator-valued q1/q2, D/q2, cyclicity, transfer, and Cartan chain",
+    "scientific_fixture_substitution_allowed": false,
+    "status": "INPUT_BLOCKED"
+  },
+  "lifecycle_layer": "CLASSICAL_BV_IMPORT",
+  "next_gate": "IMPORT_COMMITTED_BERGER_54_ROW_SUPPORT_LOCAL_Q2",
+  "prerequisite_binding": {
+    "dependency_refs": {
+      "gauge_fixed_54_row": {
+        "certificate_sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+        "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION"
+      },
+      "local_D_54_row": {
+        "certificate_sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49",
+        "result_id": "BERGER_54_ROW_LOCAL_D_ACTION"
+      },
+      "operator_hashes": {
+        "D54_sha256": "5e96986dd482c18d539ffc80c32f4a5285ae9d26c830d0c2beb26d5d8316b677",
+        "S_sha256": "cbc91d3d1c3a91b531740aa8c1d8f607cf9b5eecb9974bcc2293745da780a818",
+        "iota_sha256": "1fe5497885baff3d525796736786138735f3f6b53dc7eb7e2cc7b9659d1d3f99",
+        "pairing_sha256": "29ec141213a9a2ffcffb48072468c0bd58bc10c0a3069cc49065be3196d3dd0b",
+        "pi_sha256": "9f65d2e92484079985862e04ece6da1c8b1d30f92e063034c4e69941081d91c5",
+        "q1_sha256": "286a53b9082398baeb4e033cec48c0eee520b044523d716cb57a52baa272ef51"
+      }
+    },
+    "row_ids_sha256": "571a98f793aa433940971d12d02a8c32710eb5ce7bf34f3bbea541df5b8576cd",
+    "total_rows": 54,
+    "unary_and_D_hashes_consistent": true
+  },
+  "provenance": {
+    "D_import_certificate": "quantum-weyl/transfer/certificates/BERGER_54_ROW_LOCAL_D_IMPORT.json",
+    "D_import_sha256": "f443fd5f9a44de7b5e9402b4c12773a3a43adbe5676f25c94da5bf6f27fc1657",
+    "portable_input_schema": "quantum-weyl/transfer/schema/berger-54-row-support-local-q2-portable-v1.schema.json",
+    "portable_input_schema_sha256": "2899fc871e5d786dfccdf21b03a3ee5dbd9128cefb064a1a14d5f4df1a57d5c2",
+    "unary_import_certificate": "quantum-weyl/transfer/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_IMPORT.json",
+    "unary_import_sha256": "37e41a6bed5d9490bc0287b9da0331b1b0e150d224c4ecbdcd41571ddc0f21eb"
+  },
+  "result_id": "BERGER_54_ROW_Q2_ARRIVAL_READINESS",
+  "result_state": "PORTABLE_CONSUMER_AND_MUTATION_RAIL_READY_CLASSICAL_Q2_INPUT_BLOCKED",
+  "schema": "quantum-weyl-berger-54-row-q2-arrival-readiness-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

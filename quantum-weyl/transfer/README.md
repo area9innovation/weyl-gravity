@@ -161,6 +161,22 @@ python3 quantum-weyl/transfer/berger_54_row_local_d_import_certificate.py --chec
 python3 -m unittest quantum-weyl/transfer/tests/test_berger_54_row_local_d_import.py
 ```
 
+The complete-q2 arrival rail is prepared but remains `INPUT_BLOCKED`.  Its
+strict portable contract accepts a sparse `[54,54,54]` bilinear PBW record in
+the same Berger invariant frame and coefficient ring as the unary package.
+The independent consumer binds every row and the `q1`, `D54`, `iota_cl`,
+`pi_cl`, `S_cl`, and pairing hashes; it checks exact coefficients, canonical
+record hashes, cohomological degree, jet bounds, output completeness, graded
+symmetry, and proof-artifact hashes.  A nonzero field--field-to-equation
+fixture tests the implementation only.  It cannot substitute for the
+committed classical tensor, and operator-valued arity-two replay, transfer,
+and the Cartan verdict remain false until that tensor arrives.
+
+```bash
+python3 quantum-weyl/transfer/berger_54_row_q2_arrival_certificate.py --check
+python3 -m unittest quantum-weyl/transfer/tests/test_berger_54_row_q2_arrival.py
+```
+
 A separate pinned consumer now imports the first action-derived nonlinear
 Berger block without crossing that boundary.  The six stationary homogeneous
 rows use the rational coordinate \(c=c_0(1+u)\) and normalized action density

@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-54-row-q2-arrival-readiness-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "generality_assessment", "prerequisite_binding", "consumer_capabilities", "input_gate", "claim_flags", "provenance", "consumer_provenance", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-54-row-q2-arrival-readiness-v1"},
+    "result_id": {"const": "BERGER_54_ROW_Q2_ARRIVAL_READINESS"},
+    "result_state": {"const": "PORTABLE_CONSUMER_AND_MUTATION_RAIL_READY_CLASSICAL_Q2_INPUT_BLOCKED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_IMPORT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "generality_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target", "achieved", "promotion_to_G2_authorized"],
+      "properties": {
+        "target": {"const": "G2_FULL_SUPPORT_LOCAL_LOW_ARITY_COMPLEX_ON_ONE_BACKGROUND"},
+        "achieved": {"const": "G2_INPUT_CONSUMER_READINESS_ONLY"},
+        "promotion_to_G2_authorized": {"const": false}
+      }
+    },
+    "prerequisite_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_rows", "row_ids_sha256", "dependency_refs", "unary_and_D_hashes_consistent"],
+      "properties": {
+        "total_rows": {"const": 54},
+        "row_ids_sha256": {"$ref": "#/$defs/hash"},
+        "dependency_refs": {"type": "object", "minProperties": 3},
+        "unary_and_D_hashes_consistent": {"const": true}
+      }
+    },
+    "consumer_capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strict_portable_schema", "exact_PBW_coefficient_parser", "canonical_record_hash_verification", "all_54_rows_bound_to_authoritative_layout", "cohomological_degree_check", "total_jet_bound_check", "graded_Koszul_symmetry_check", "proof_artifact_hash_verification", "nonzero_field_field_to_equation_fixture", "independent_q1_q2_identity_execution", "independent_D_q2_derivation_execution", "independent_BV_cyclicity_execution", "ND2_physical_execution"],
+      "properties": {
+        "strict_portable_schema": {"const": true},
+        "exact_PBW_coefficient_parser": {"const": true},
+        "canonical_record_hash_verification": {"const": true},
+        "all_54_rows_bound_to_authoritative_layout": {"const": true},
+        "cohomological_degree_check": {"const": true},
+        "total_jet_bound_check": {"const": true},
+        "graded_Koszul_symmetry_check": {"const": true},
+        "proof_artifact_hash_verification": {"const": true},
+        "nonzero_field_field_to_equation_fixture": {"const": true},
+        "independent_q1_q2_identity_execution": {"const": false},
+        "independent_D_q2_derivation_execution": {"const": false},
+        "independent_BV_cyclicity_execution": {"const": false},
+        "ND2_physical_execution": {"const": false}
+      }
+    },
+    "input_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classical_q2_export_available", "scientific_fixture_substitution_allowed", "status", "next_action_on_arrival"],
+      "properties": {
+        "classical_q2_export_available": {"const": false},
+        "scientific_fixture_substitution_allowed": {"const": false},
+        "status": {"const": "INPUT_BLOCKED"},
+        "next_action_on_arrival": {"type": "string", "minLength": 1}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ARRIVAL_ADAPTER_READY", "CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED", "ARITY_TWO_IDENTITIES_INDEPENDENTLY_REPLAYED", "TRANSFERRED_ELL2_COMPUTED", "INTERACTING_CARTAN_VERDICT", "QUANTUM_CLAIM"],
+      "properties": {
+        "ARRIVAL_ADAPTER_READY": {"const": true},
+        "CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED": {"const": false},
+        "ARITY_TWO_IDENTITIES_INDEPENDENTLY_REPLAYED": {"const": false},
+        "TRANSFERRED_ELL2_COMPUTED": {"const": false},
+        "INTERACTING_CARTAN_VERDICT": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["portable_input_schema", "portable_input_schema_sha256", "unary_import_certificate", "unary_import_sha256", "D_import_certificate", "D_import_sha256"],
+      "properties": {
+        "portable_input_schema": {"const": "quantum-weyl/transfer/schema/berger-54-row-support-local-q2-portable-v1.schema.json"},
+        "portable_input_schema_sha256": {"$ref": "#/$defs/hash"},
+        "unary_import_certificate": {"const": "quantum-weyl/transfer/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_IMPORT.json"},
+        "unary_import_sha256": {"$ref": "#/$defs/hash"},
+        "D_import_certificate": {"const": "quantum-weyl/transfer/certificates/BERGER_54_ROW_LOCAL_D_IMPORT.json"},
+        "D_import_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "consumer_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "next_gate": {"const": "IMPORT_COMMITTED_BERGER_54_ROW_SUPPORT_LOCAL_Q2"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

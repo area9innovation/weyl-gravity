@@ -78,6 +78,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("EXACT_NONZERO_PRIMITIVE", d_question["status"])
         self.assertIn("FINITE_TRUNCATIONS_OBSTRUCTED", d_question["status"])
         self.assertIn("54_ROW_LOCAL_D_IMPORTED", d_question["status"])
+        self.assertIn("Q2_ARRIVAL_ADAPTER_READY", d_question["status"])
         self.assertIn("FULL_4D_SUPPORT_LOCAL_Q2_BLOCKED", d_question["status"])
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
@@ -108,6 +109,10 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn(
             "berger_54_row_local_D_import_sha256",
+            certificate["provenance"],
+        )
+        self.assertIn(
+            "berger_54_row_q2_arrival_readiness_sha256",
             certificate["provenance"],
         )
         self.assertIn(

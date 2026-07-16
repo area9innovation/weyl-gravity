@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-54-row-support-local-q2-portable-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "classical_commit", "dependency_tags", "dependency_refs", "operator_semantics", "support_category", "row_layout", "q2", "proof_checks", "canonical_hashes", "flags", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-54-row-support-local-q2-portable-v1"},
+    "result_id": {"const": "BERGER_54_ROW_SUPPORT_LOCAL_Q2"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "claim_status": {"const": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_Q2_ARITY_TWO_IDENTITIES"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gauge_fixed_54_row", "local_D_54_row", "operator_hashes"],
+      "properties": {
+        "gauge_fixed_54_row": {"$ref": "#/$defs/resultReference"},
+        "local_D_54_row": {"$ref": "#/$defs/resultReference"},
+        "operator_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["q1_sha256", "D54_sha256", "iota_sha256", "pi_sha256", "S_sha256", "pairing_sha256"],
+          "properties": {
+            "q1_sha256": {"$ref": "#/$defs/hash"},
+            "D54_sha256": {"$ref": "#/$defs/hash"},
+            "iota_sha256": {"$ref": "#/$defs/hash"},
+            "pi_sha256": {"$ref": "#/$defs/hash"},
+            "S_sha256": {"$ref": "#/$defs/hash"},
+            "pairing_sha256": {"$ref": "#/$defs/hash"}
+          }
+        }
+      }
+    },
+    "operator_semantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["portable_name", "arity", "degree", "factorial_convention", "coefficient_ring", "ordered_pbw_basis", "not_quantum_loop_operator"],
+      "properties": {
+        "portable_name": {"const": "classical_binary_q2"},
+        "arity": {"const": 2},
+        "degree": {"const": 1},
+        "factorial_convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+        "coefficient_ring": {"const": "Q(alpha_B,u,v)[e0,e1,e2,e3]_PBW with u=c/a^2, v=1/c"},
+        "ordered_pbw_basis": {"const": "e0^n0 e1^n1 e2^n2 e3^n3"},
+        "not_quantum_loop_operator": {"const": true}
+      }
+    },
+    "support_category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spacetime_dimension", "locality", "invariant_frame", "maximum_total_jet_order"],
+      "properties": {
+        "spacetime_dimension": {"const": 4},
+        "locality": {"const": "SUPPORT_LOCAL_POLYDIFFERENTIAL"},
+        "invariant_frame": {"const": "berger_left_invariant_frame"},
+        "maximum_total_jet_order": {"type": "integer", "minimum": 0}
+      }
+    },
+    "row_layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_rows", "degree_ranks", "row_ids"],
+      "properties": {
+        "total_rows": {"const": 54},
+        "degree_ranks": {"const": [5, 22, 22, 5]},
+        "row_ids": {"type": "array", "minItems": 54, "maxItems": 54, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "q2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "entries", "row_completeness", "sha256"],
+      "properties": {
+        "shape": {"const": [54, 54, 54]},
+        "entries": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/entry"}},
+        "row_completeness": {"type": "array", "minItems": 54, "maxItems": 54, "items": {"$ref": "#/$defs/rowCompleteness"}},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "proof_checks": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "prefixItems": [
+        {"$ref": "#/$defs/proofCheckRowCompleteness"},
+        {"$ref": "#/$defs/proofCheckSymmetry"},
+        {"$ref": "#/$defs/proofCheckNilpotency"},
+        {"$ref": "#/$defs/proofCheckDerivation"},
+        {"$ref": "#/$defs/proofCheckCyclicity"}
+      ],
+      "items": false
+    },
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_layout_sha256", "q2_sha256", "proof_checks_sha256"],
+      "properties": {
+        "row_layout_sha256": {"$ref": "#/$defs/hash"},
+        "q2_sha256": {"$ref": "#/$defs/hash"},
+        "proof_checks_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["CLASSICAL_SUPPORT_LOCAL_Q2_COMPLETE_54_ROWS", "ARITY_TWO_IDENTITIES_CLASSICALLY_VERIFIED", "RESIDUAL_TRANSFER_EXECUTED", "QUANTUM_CORRECTION_INCLUDED"],
+      "properties": {
+        "CLASSICAL_SUPPORT_LOCAL_Q2_COMPLETE_54_ROWS": {"const": true},
+        "ARITY_TWO_IDENTITIES_CLASSICALLY_VERIFIED": {"const": true},
+        "RESIDUAL_TRANSFER_EXECUTED": {"const": false},
+        "QUANTUM_CORRECTION_INCLUDED": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "resultReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "certificate_sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "certificate_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "exponents": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}},
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["left_exponents", "right_exponents", "coefficient"],
+      "properties": {
+        "left_exponents": {"$ref": "#/$defs/exponents"},
+        "right_exponents": {"$ref": "#/$defs/exponents"},
+        "coefficient": {"type": "string", "minLength": 1}
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["output", "left", "right", "terms"],
+      "properties": {
+        "output": {"type": "integer", "minimum": 0, "maximum": 53},
+        "left": {"type": "integer", "minimum": 0, "maximum": 53},
+        "right": {"type": "integer", "minimum": 0, "maximum": 53},
+        "terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/term"}}
+      }
+    },
+    "rowCompleteness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["output", "status", "entry_count"],
+      "properties": {
+        "output": {"type": "string", "minLength": 1},
+        "status": {"const": "COMPLETE"},
+        "entry_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "proofArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "proofCheckBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "status", "proof_artifact"],
+      "properties": {
+        "check_id": {"type": "string", "minLength": 1},
+        "status": {"const": "VERIFIED"},
+        "proof_artifact": {"$ref": "#/$defs/proofArtifact"}
+      }
+    },
+    "proofCheckRowCompleteness": {"allOf": [{"$ref": "#/$defs/proofCheckBase"}, {"type": "object", "properties": {"check_id": {"const": "q2_row_completeness"}}}]},
+    "proofCheckSymmetry": {"allOf": [{"$ref": "#/$defs/proofCheckBase"}, {"type": "object", "properties": {"check_id": {"const": "q2_koszul_symmetry"}}}]},
+    "proofCheckNilpotency": {"allOf": [{"$ref": "#/$defs/proofCheckBase"}, {"type": "object", "properties": {"check_id": {"const": "q1_q2_arity_two_nilpotency"}}}]},
+    "proofCheckDerivation": {"allOf": [{"$ref": "#/$defs/proofCheckBase"}, {"type": "object", "properties": {"check_id": {"const": "D_q2_derivation"}}}]},
+    "proofCheckCyclicity": {"allOf": [{"$ref": "#/$defs/proofCheckBase"}, {"type": "object", "properties": {"check_id": {"const": "BV_cyclicity_q2"}}}]}
+  }
+}

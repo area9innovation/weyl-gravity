@@ -209,6 +209,13 @@ arity-two (Q^2=0) identity, support-local admissibility, and an ND2 primitive
 or normalized obstruction.  This is the first result allowed to support a
 full interacting Berger Cartan verdict.
 
+The prepared receiving contract is
+`quantum-weyl/transfer/schema/berger-54-row-support-local-q2-portable-v1.schema.json`.
+It binds the sparse bilinear PBW tensor to the certified 54-row layout and the
+existing `q1`, `D54`, `iota_cl`, `pi_cl`, `S_cl`, and cyclic-pairing hashes.
+The readiness receipt remains `INPUT_BLOCKED`; its nonzero test fixture is not
+scientific input and cannot substitute for the committed classical export.
+
 ### Work package N-G3: uniform background-interaction obstruction
 
 Let the background and interaction vary together.  Compute the first mixed
