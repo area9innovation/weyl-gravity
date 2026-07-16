@@ -289,6 +289,19 @@ nonzero invariant defect \(K_{\rm clock}(P_{\rm ghost}-I_5)\). Thus further
 middle-block tuning is closed in that architecture; the causal inverse must
 use the exposed scalar-wave extension.
 
+The extension is now cyclic and all-row at the analytic level. The original
+34-row BV complex and its cohomology remain unchanged, with degree ranks
+\([5,12,12,5]\). The propagation realization adds \(y\) in degree zero and
+its pairing-dual \(y^*\) in degree one, giving \([5,13,13,5]\). Exact
+solution and source graph SDRs, the formal-adjoint 13-row antifield operator,
+and a nondegenerate 36-row cyclic pairing are exported. The future causal
+operators must satisfy \(G_{13,+}^\sharp=G_{13,-}\), and their zero-mode
+policy is causal Cauchy evolution without a spatial projector.
+
+Consumer contracts must distinguish the authoritative BV ranks from these
+analytic realization ranks. In particular, a contract hard-coded only to
+\([5,12,12,5]\) does not yet describe the one-pair wave prolongation.
+
 The all-row analytic bookkeeping is now finished. Exact chain maps prove
 
 \[

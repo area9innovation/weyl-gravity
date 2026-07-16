@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-raw-endpoint-cyclic-green-realization-v1.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "row_layout", "graph_SDR", "cyclic_realization", "causal_policy", "artifacts", "exact_checks", "flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-raw-endpoint-cyclic-green-realization-v1"},
+    "result_id": {"const": "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "CERTIFIED_CYCLIC_ANALYTIC_REALIZATION_GREEN_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "additionalProperties": false, "required": ["raw_witness_transport", "rank_one_wave_extension"], "properties": {"raw_witness_transport": {"$ref": "#/$defs/dependency"}, "rank_one_wave_extension": {"$ref": "#/$defs/dependency"}}},
+    "row_layout": {
+      "type": "object", "additionalProperties": false,
+      "required": ["authoritative_BV_degree_ranks", "analytic_realization_degree_ranks", "authoritative_BV_total_rows", "analytic_total_rows", "added_rows", "added_rows_are_analytic_not_new_cohomology"],
+      "properties": {
+        "authoritative_BV_degree_ranks": {"const": [5, 12, 12, 5]},
+        "analytic_realization_degree_ranks": {"const": [5, 13, 13, 5]},
+        "authoritative_BV_total_rows": {"const": 34}, "analytic_total_rows": {"const": 36},
+        "added_rows": {"const": ["degree_0:y", "degree_1:y_star"]},
+        "added_rows_are_analytic_not_new_cohomology": {"const": true}
+      }
+    },
+    "graph_SDR": {
+      "type": "object", "additionalProperties": false,
+      "required": ["solution_identity", "source_identity", "field_homotopy", "source_homotopy", "intertwining", "support_local", "maximum_map_order"],
+      "properties": {
+        "solution_identity": {"const": "p_sol i_sol=I12"}, "source_identity": {"const": "p_src i_src=I12"},
+        "field_homotopy": {"const": "I13-i_sol p_sol=H13 L13"}, "source_homotopy": {"const": "I13-i_src p_src=L13 H13"},
+        "intertwining": {"const": ["L13 i_sol=i_src L12", "p_src L13=L12 p_sol"]},
+        "support_local": {"const": true}, "maximum_map_order": {"const": 2}
+      }
+    },
+    "cyclic_realization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["metric_antifield_operator", "formal_adjoint_reduction", "pairing", "P36_self_adjoint_for_pairing", "green_adjoint_target"],
+      "properties": {
+        "metric_antifield_operator": {"const": "L13_sharp"},
+        "formal_adjoint_reduction": {"type": "string", "minLength": 1}, "pairing": {"type": "string", "minLength": 1},
+        "P36_self_adjoint_for_pairing": {"const": true}, "green_adjoint_target": {"const": "G13_plus^sharp=G13_minus"}
+      }
+    },
+    "causal_policy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["support_categories", "spatial_zero_mode_projector", "zero_mode_policy", "conditional_green_formula", "conditional_pullback_formula"],
+      "properties": {
+        "support_categories": {"const": ["compact", "spacelike_compact", "smooth"]},
+        "spatial_zero_mode_projector": {"const": false}, "zero_mode_policy": {"type": "string", "minLength": 1},
+        "conditional_green_formula": {"const": "G13_pm=C13 (G12_pm direct_sum I1) E13"},
+        "conditional_pullback_formula": {"const": "G12_pm=p_sol G13_pm i_src"}
+      }
+    },
+    "artifacts": {"type": "object", "minProperties": 8, "additionalProperties": {"$ref": "#/$defs/artifact"}},
+    "exact_checks": {"type": "object", "minProperties": 6, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION", "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS", "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY", "BERGER_ARITY_TWO_CAUSAL_D_CARTAN"],
+      "properties": {
+        "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION": {"const": true}, "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": {"const": false},
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": {"const": false}, "BERGER_ARITY_TWO_CAUSAL_D_CARTAN": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["result_id", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["format", "path", "sha256"], "properties": {"format": {"const": "JSON_EXACT_SPARSE_OPERATOR"}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}

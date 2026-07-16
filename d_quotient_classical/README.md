@@ -100,6 +100,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION.json`](certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION.json)
 - Rank-one wave-extension report:
   [`reports/berger-raw-endpoint-rank-one-wave-extension.md`](reports/berger-raw-endpoint-rank-one-wave-extension.md)
+- Cyclic all-row analytic Green realization:
+  [`certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION.json`](certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION.json)
+- Cyclic Green-realization report:
+  [`reports/berger-raw-endpoint-cyclic-green-realization.md`](reports/berger-raw-endpoint-cyclic-green-realization.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:
@@ -409,6 +413,14 @@ Adding one scalar \(y=F_2h\) replaces the order-six Schur presentation by a
 give \(E_{13}L_{13}U_{13}^{-1}=L_{12}\oplus I_1\). The remaining gate is
 `BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS`, not a generic sixth-order
 inversion.
+
+The prolongation is also complete on the paired analytic presentation. The
+authoritative BV complex remains \([5,12,12,5]\); the Green realization has
+ranks \([5,13,13,5]\), adding only \(y\) and its pairing-dual \(y^*\).
+Exact solution/source graph contractions, the formal-adjoint antifield block,
+and the extended cyclic pairing are certified. The eventual Green operators
+must obey \(G_{13,+}^\sharp=G_{13,-}\). Scalar zero modes are handled by
+causal Cauchy evolution—no inverse Laplacian or spatial projector is allowed.
 
 The full causal problem has also been reduced exactly. The same 54-to-26 SDR
 proves that a retained causal homotopy lifts by

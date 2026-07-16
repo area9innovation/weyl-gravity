@@ -1,0 +1,129 @@
+{
+  "artifacts": {
+    "analytic_P36": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_endpoint_cyclic_green_realization/analytic_P36.json",
+      "sha256": "0ca4ac07e098dece4e0307c61e7a424e0d62efed644881a71ce483ca7fd1db12"
+    },
+    "analytic_pairing36": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_endpoint_cyclic_green_realization/analytic_pairing36.json",
+      "sha256": "e626d01f3c5ef489504f9f906703a02b93b455d7579dd121beff858ead9e7e37"
+    },
+    "field_solution_inclusion": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_endpoint_cyclic_green_realization/field_solution_inclusion.json",
+      "sha256": "7bf02f24027fd0781fa5f979f7374d2237ad96e9154bcf4501a4ec635d3bece7"
+    },
+    "field_solution_projection": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_endpoint_cyclic_green_realization/field_solution_projection.json",
+      "sha256": "f325d907cd757542751fbc4d9c94459879f4cfc7af86700381626c81f7391808"
+    },
+    "field_source_inclusion": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_endpoint_cyclic_green_realization/field_source_inclusion.json",
+      "sha256": "9c38f4517c3294c9da25377ef788d43a54cfc663858aebad6284fc4f31e3b936"
+    },
+    "field_source_projection": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_endpoint_cyclic_green_realization/field_source_projection.json",
+      "sha256": "a31b200e8910d896aa4b552da540dd1d1fa9a97961b8def8a5eb9f0eebe2dcf7"
+    },
+    "graph_homotopy_H13": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_endpoint_cyclic_green_realization/graph_homotopy_H13.json",
+      "sha256": "f08b876949ce915ca3a55d4348e5ec022aa0d2eb963960aa75215ecc1d5ad9f6"
+    },
+    "metric_antifield_L13_sharp": {
+      "format": "JSON_EXACT_SPARSE_OPERATOR",
+      "path": "d_quotient_classical/generated/berger_raw_endpoint_cyclic_green_realization/metric_antifield_L13_sharp.json",
+      "sha256": "2818ce5cf667ee18d91a254326a0592273e20c75c46c0c3a7598f108dc6ae906"
+    }
+  },
+  "causal_policy": {
+    "conditional_green_formula": "G13_pm=C13 (G12_pm direct_sum I1) E13",
+    "conditional_pullback_formula": "G12_pm=p_sol G13_pm i_src",
+    "spatial_zero_mode_projector": false,
+    "support_categories": [
+      "compact",
+      "spacelike_compact",
+      "smooth"
+    ],
+    "zero_mode_policy": "massless scalar zero modes are evolved by the causal Cauchy problem; no inverse Laplacian or spatial projector is allowed"
+  },
+  "claim_boundary": "This certificate completes the cyclic all-row analytic realization needed to seek Green operators. The y,y* rows are support-local graph variables and do not alter the authoritative 34-row BV cohomology. No advanced/retarded inverse, causal chain homotopy, Hadamard state, or arity-two D-Cartan theorem is claimed.",
+  "claim_status": "CERTIFIED_CYCLIC_ANALYTIC_REALIZATION_GREEN_OPEN",
+  "cyclic_realization": {
+    "P36_self_adjoint_for_pairing": true,
+    "formal_adjoint_reduction": "C13^sharp L13^sharp E13^sharp=(L12 direct_sum I1)^sharp",
+    "green_adjoint_target": "G13_plus^sharp=G13_minus",
+    "metric_antifield_operator": "L13_sharp",
+    "pairing": "canonical degree-0/degree-1 and ghost/identity pairing on 36 analytic rows"
+  },
+  "dependency_refs": {
+    "rank_one_wave_extension": {
+      "result_id": "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION",
+      "sha256": "ec469c9f114c4663e0bd8f5c5de28529974c09d63d90e4cae8f34428fe37f815"
+    },
+    "raw_witness_transport": {
+      "result_id": "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT",
+      "sha256": "cb69a3eba6d3e81eec519adca51aa35f15d7250a2fc2be496230e55852c4950c"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "analytic_P36_cyclic": true,
+    "analytic_pairing_nondegenerate": true,
+    "field_and_source_graph_SDR_exact": true,
+    "metric_antifield_formal_adjoint_exact": true,
+    "original_34_row_BV_complex_unchanged": true,
+    "support_local_maps_only": true
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_ARITY_TWO_CAUSAL_D_CARTAN": false,
+    "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION": true,
+    "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": false
+  },
+  "graph_SDR": {
+    "field_homotopy": "I13-i_sol p_sol=H13 L13",
+    "intertwining": [
+      "L13 i_sol=i_src L12",
+      "p_src L13=L12 p_sol"
+    ],
+    "maximum_map_order": 2,
+    "solution_identity": "p_sol i_sol=I12",
+    "source_homotopy": "I13-i_src p_src=L13 H13",
+    "source_identity": "p_src i_src=I12",
+    "support_local": true
+  },
+  "next_gate": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS",
+  "result_id": "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION",
+  "row_layout": {
+    "added_rows": [
+      "degree_0:y",
+      "degree_1:y_star"
+    ],
+    "added_rows_are_analytic_not_new_cohomology": true,
+    "analytic_realization_degree_ranks": [
+      5,
+      13,
+      13,
+      5
+    ],
+    "analytic_total_rows": 36,
+    "authoritative_BV_degree_ranks": [
+      5,
+      12,
+      12,
+      5
+    ],
+    "authoritative_BV_total_rows": 34
+  },
+  "schema": "pure-weyl-berger-raw-endpoint-cyclic-green-realization-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}
