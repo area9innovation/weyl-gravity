@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-biwave-volterra-import-readiness-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "exact_compatibility", "source_audit", "realization_policy", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-biwave-volterra-import-readiness-v1"},
+    "result_id": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_IMPORT_READINESS"},
+    "result_state": {"const": "SOURCE_LANDED_REJECTED_ANALYTIC_CONTRACT_D_ADJOINT_GRAPH_READY"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_CAUSAL_IMPORT_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "exact_compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["D10", "D20", "metric_operator", "companion_operator", "formal_adjoint_metric", "formal_adjoint_companion", "checks"],
+      "properties": {
+        "D10": {"const": "diag(e_0)_10"},
+        "D20": {"const": "diag(D10,D10)"},
+        "metric_operator": {"const": "A10=Box_2^2+V_2"},
+        "companion_operator": {"const": "C20=[[Box_2,-I10],[V_2,Box_2]]"},
+        "formal_adjoint_metric": {"const": "A10^sharp=(Box_2^sharp)^2+V_2^sharp"},
+        "formal_adjoint_companion": {"const": "C20^sharp=[[Box_2^sharp,V_2^sharp],[-I10,Box_2^sharp]]"},
+        "checks": {"type": "object", "minProperties": 15, "additionalProperties": {"const": true}}
+      }
+    },
+    "source_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "source_result_id", "source_schema_version", "source_commit", "source_dependency_tags", "structural_checks", "defects", "blocked_claims"],
+      "properties": {
+        "status": {"const": "REJECTED_FAIL_CLOSED"},
+        "source_result_id": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT"},
+        "source_schema_version": {"const": "pure-weyl-berger-retained-biwave-volterra-resolvent-v1"},
+        "source_commit": {"const": "512545b781d4b0aff474bc5dc224890b246b070c"},
+        "source_dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL", "FUNCTIONAL-ANALYTIC"]},
+        "structural_checks": {"type": "object", "minProperties": 7, "additionalProperties": {"const": true}},
+        "defects": {
+          "type": "array", "minItems": 8, "maxItems": 8,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["defect_id", "observed", "required", "repair"],
+            "properties": {
+              "defect_id": {"type": "string", "minLength": 1},
+              "observed": {},
+              "required": {},
+              "repair": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "blocked_claims": {"type": "array", "minItems": 8, "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      }
+    },
+    "realization_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["accepted_when_repaired", "rejected_routes"],
+      "properties": {
+        "accepted_when_repaired": {"const": "RETAINED_BIWAVE_COMPANION_VOLTERRA_GRAPH_PULLBACK"},
+        "rejected_routes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["RAW_CLOCK_RANK_ONE_WAVE_EXTENSION", "FULL_G13_ARBITRARY_SOURCE_METRIC_CONE", "PROJECT_RAW_L13_SOLUTIONS_TO_RETAINED_ROWS"],
+          "properties": {
+            "RAW_CLOCK_RANK_ONE_WAVE_EXTENSION": {"type": "string", "minLength": 1},
+            "FULL_G13_ARBITRARY_SOURCE_METRIC_CONE": {"type": "string", "minLength": 1},
+            "PROJECT_RAW_L13_SOLUTIONS_TO_RETAINED_ROWS": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_RETAINED_BIWAVE_D_EQUIVARIANT": true,
+        "BERGER_RETAINED_BIWAVE_FORMAL_ADJOINT_BUNDLE_READY": true,
+        "BERGER_RETAINED_BIWAVE_COMPANION_CYCLIC_PAIRING": false,
+        "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT_IMPORTED": false,
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+        "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+        "BERGER_CAUSAL_D_CARTAN": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "REPAIR_CLASSICAL_BERGER_RETAINED_BIWAVE_VOLTERRA_CERTIFICATE"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dependencies", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "dependencies": {"type": "object", "minProperties": 8},
+        "source_manifest": {"type": "object", "minProperties": 5},
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

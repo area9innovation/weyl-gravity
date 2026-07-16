@@ -1,0 +1,207 @@
+{
+  "claim_boundary": "Exact PBW arithmetic proves that the retained metric biwave, its twenty-row companion, both graph source/solution maps and their formal-adjoint operators are equivariant for D=e_0. This exact algebraic replay accompanies a pinned audit of the landed classical retained Volterra package. The analytic source is rejected fail-closed because its resolvents are type-conflated, its adjoint identity is malformed, its dependency vocabulary is invalid, and its analytic booleans lack strict schema/proof/provenance receipts. It does not import advanced or retarded metric Green operators, assemble the 26- or 54-row causal BV homotopy, prove causal D-Cartan, establish Hadamard data or make a quantum claim.",
+  "claim_flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_CAUSAL_D_CARTAN": false,
+    "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT_IMPORTED": false,
+    "BERGER_RETAINED_BIWAVE_COMPANION_CYCLIC_PAIRING": false,
+    "BERGER_RETAINED_BIWAVE_D_EQUIVARIANT": true,
+    "BERGER_RETAINED_BIWAVE_FORMAL_ADJOINT_BUNDLE_READY": true,
+    "QUANTUM_CLAIM": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_compatibility": {
+    "D10": "diag(e_0)_10",
+    "D20": "diag(D10,D10)",
+    "checks": {
+      "A10_sharp_equals_Box2_sharp_squared_plus_V2_sharp": true,
+      "C20_sharp_block_formula_exact": true,
+      "D10_commutes_with_A10": true,
+      "D10_commutes_with_A10_sharp": true,
+      "D10_commutes_with_Box2": true,
+      "D10_commutes_with_V2": true,
+      "D10_is_formally_skew_adjoint": true,
+      "D20_commutes_with_C20": true,
+      "D20_commutes_with_C20_sharp": true,
+      "D_equivariant_graph_homotopy": true,
+      "D_equivariant_solution_inclusion": true,
+      "D_equivariant_solution_projection": true,
+      "D_equivariant_source_inclusion": true,
+      "D_equivariant_source_projection": true,
+      "retained_metric_D10_is_diagonal_e0": true
+    },
+    "companion_operator": "C20=[[Box_2,-I10],[V_2,Box_2]]",
+    "formal_adjoint_companion": "C20^sharp=[[Box_2^sharp,V_2^sharp],[-I10,Box_2^sharp]]",
+    "formal_adjoint_metric": "A10^sharp=(Box_2^sharp)^2+V_2^sharp",
+    "metric_operator": "A10=Box_2^2+V_2"
+  },
+  "lifecycle_layer": "CLASSICAL_BV_CAUSAL_IMPORT_PREFLIGHT",
+  "next_gate": "REPAIR_CLASSICAL_BERGER_RETAINED_BIWAVE_VOLTERRA_CERTIFICATE",
+  "provenance": {
+    "dependencies": {
+      "D_action_classical": {
+        "commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3",
+        "path": "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+        "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+      },
+      "D_import": {
+        "path": "quantum-weyl/transfer/certificates/BERGER_54_ROW_LOCAL_D_IMPORT.json",
+        "result_id": "BERGER_54_ROW_LOCAL_D_ACTION_IMPORT",
+        "sha256": "f443fd5f9a44de7b5e9402b4c12773a3a43adbe5676f25c94da5bf6f27fc1657"
+      },
+      "companion_preflight": {
+        "path": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT.json",
+        "result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+        "sha256": "b32360a37bd020e357e95821ace94273b9c25a127b8379e7e436e15c6e521e47"
+      },
+      "lower_by_two_classical": {
+        "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+        "path": "d_quotient_classical/certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE.json",
+        "sha256": "0add3e518b7384cd653161b1f9db44d13c71f5c8349cd013027057e0d2ff7c8b"
+      },
+      "volterra_certificate_classical": {
+        "commit": "512545b781d4b0aff474bc5dc224890b246b070c",
+        "path": "d_quotient_classical/certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT.json",
+        "sha256": "7423ad5c52eac94a2420f4096621a895466cd764136b01406eec6102620ffc9f"
+      },
+      "volterra_producer_classical": {
+        "commit": "512545b781d4b0aff474bc5dc224890b246b070c",
+        "path": "d_quotient_classical/backreacted_clock/berger_retained_biwave_volterra_resolvent.py",
+        "sha256": "dc9d06057d1bba656b028da565bae052eded663533f90497f45a3ac6ad6e69bd"
+      },
+      "volterra_report_classical": {
+        "commit": "512545b781d4b0aff474bc5dc224890b246b070c",
+        "path": "d_quotient_classical/reports/berger-retained-biwave-volterra-resolvent.md",
+        "sha256": "2c57bfba958d96231763b03ee071bbf866173397705075da93633bc2c8f79600"
+      },
+      "volterra_test_classical": {
+        "commit": "512545b781d4b0aff474bc5dc224890b246b070c",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_retained_biwave_volterra_resolvent.py",
+        "sha256": "df38d5704e1a7af633eb483e3bf36df1935d03922ba64fdf5e174a0c98f4f313"
+      }
+    },
+    "source_manifest": {
+      "../reports/berger-retained-biwave-volterra-import-readiness.md": "4b9abd8bfd72309144c8ae9d6168257a480907df1efecc3c6c742505995cfc06",
+      "retained_biwave_volterra_import_readiness.py": "720e37ec106f918c9a07bce9ba106e9767546b4bb918d76e030171bb6559459c",
+      "retained_biwave_volterra_import_readiness_certificate.py": "bb06ae2377686afdf6b905650f400e249be7d96c6fb268cdd214ce5f00c86f8c",
+      "schema/berger-retained-biwave-volterra-import-readiness-v1.schema.json": "941ae62b3bd376cc12019f116a03aaf205856d3db0e3d0e82f33d77502ed5bd8",
+      "tests/test_retained_biwave_volterra_import_readiness.py": "f0285f26f048b8b6174f87727582b7773bfaf72bf5f46ba4f0b25725a7d9cbc0"
+    },
+    "source_manifest_sha256": "e141aae043d1cbea5c57d8075d3547408885aa9ff3aaa6b6ac0fef9449528161"
+  },
+  "realization_policy": {
+    "accepted_when_repaired": "RETAINED_BIWAVE_COMPANION_VOLTERRA_GRAPH_PULLBACK",
+    "rejected_routes": {
+      "FULL_G13_ARBITRARY_SOURCE_METRIC_CONE": "incompatible with the certified raw principal-symbol obstruction",
+      "PROJECT_RAW_L13_SOLUTIONS_TO_RETAINED_ROWS": "the raw extra polarization mixes metric and clock components; apply the BV SDR and construct the retained witness",
+      "RAW_CLOCK_RANK_ONE_WAVE_EXTENSION": "raw L13 carries an additional real characteristic and is not a metric-cone Green realization"
+    }
+  },
+  "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_IMPORT_READINESS",
+  "result_state": "SOURCE_LANDED_REJECTED_ANALYTIC_CONTRACT_D_ADJOINT_GRAPH_READY",
+  "schema": "quantum-weyl-berger-retained-biwave-volterra-import-readiness-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "source_audit": {
+    "blocked_claims": [
+      "finite-slab factorial Volterra estimate in declared graded energy spaces",
+      "advanced and retarded convergence in every declared Sobolev grade",
+      "globalization by causal uniqueness",
+      "closed causal-support passage to the limit",
+      "both same-sided inverse identities for C20",
+      "both inverse identities for the graph pullback G_A10,+/-",
+      "formal-adjoint sign reversal for A10 and A10^sharp",
+      "no inverse spatial Laplacian or spatial-mode projector"
+    ],
+    "defects": [
+      {
+        "defect_id": "UNDECLARED_DEPENDENCY_TAG",
+        "observed": [
+          "LOCAL-ALGEBRAIC",
+          "LORENTZIAN-CAUSAL",
+          "FUNCTIONAL-ANALYTIC"
+        ],
+        "repair": "remove FUNCTIONAL-ANALYTIC and encode analytic hypotheses under LORENTZIAN-CAUSAL",
+        "required": [
+          "LOCAL-ALGEBRAIC",
+          "LORENTZIAN-CAUSAL"
+        ]
+      },
+      {
+        "defect_id": "MISSING_STRICT_SOURCE_SCHEMA",
+        "observed": "ABSENT_AT_PINNED_COMMIT",
+        "repair": "add a strict Draft 2020-12 schema with additionalProperties=false",
+        "required": "d_quotient_classical/schema/berger-retained-biwave-volterra-resolvent-v1.schema.json"
+      },
+      {
+        "defect_id": "CONFLATED_SOURCE_AND_SOLUTION_RESOLVENTS",
+        "observed": "one R_pm node equates sum(-G0 N)^n with sum(-N G0)^n",
+        "repair": "state G=R_sol G0=G0 R_src and prove convergence for both sides",
+        "required": "R_sol=(I+G0 N)^-1 and R_src=(I+N G0)^-1 as distinct endomorphisms"
+      },
+      {
+        "defect_id": "MALFORMED_FORMAL_ADJOINT_IDENTITY",
+        "observed": "G_A10,+^sharp=G_A10^sharp,-",
+        "repair": "bind the metric/antifield pairing and record the correctly typed adjoint reversal",
+        "required": "(G_A,+)^sharp=G_(A^sharp),-; simplify only after proving A=A^sharp in the declared pairing"
+      },
+      {
+        "defect_id": "UNREFERENCED_ANALYTIC_BOOLEAN_ASSERTIONS",
+        "observed": [
+          "advanced_resolvent_converges",
+          "both_same_sided_inverse_identities",
+          "companion_graph_SDR_exact",
+          "formal_adjoint_reversal",
+          "metric_causal_support",
+          "metric_graph_pullback_both_inverses",
+          "no_spatial_projector",
+          "retained_metric_projection_exact",
+          "retarded_resolvent_converges",
+          "triangular_base_green_formula_exact",
+          "volterra_factorial_bound_closes_in_graded_energy"
+        ],
+        "repair": "replace bare true values by theorem/proof artifacts and independently checkable hypotheses",
+        "required": "proof-artifact references for convergence, support, inverse, and adjoint claims"
+      },
+      {
+        "defect_id": "MISSING_SOURCE_PROVENANCE_AND_VERIFICATION_RECEIPT",
+        "observed": "no source manifest, immutable producer hashes, commands, or elapsed-time receipt",
+        "repair": "record certificate, schema, producer, verifier, tests, report, commands, and timings",
+        "required": "content-addressed source manifest and scoped verification receipt"
+      },
+      {
+        "defect_id": "SOURCE_SIDE_FACTORIAL_BOUND_NOT_STATED",
+        "observed": "norm((G_C0,pm N)^n)<=C_T^n/n! on every compact causal slab",
+        "repair": "state domain/codomain-correct two-sided Volterra estimates",
+        "required": "bounds for both (G0 N)^n and (N G0)^n on their respective spaces"
+      },
+      {
+        "defect_id": "GRADED_ENERGY_MAPPING_UNDERSPECIFIED",
+        "observed": "sources H^s direct_sum H^(s-1); solutions carry one additional derivative in the first component",
+        "repair": "supply the energy proposition and hypotheses rather than a one-line description",
+        "required": "precise slab spaces, time regularity, source/solution norms, coefficient bounds, and derivative mapping orders"
+      }
+    ],
+    "source_commit": "512545b781d4b0aff474bc5dc224890b246b070c",
+    "source_dependency_tags": [
+      "LOCAL-ALGEBRAIC",
+      "LORENTZIAN-CAUSAL",
+      "FUNCTIONAL-ANALYTIC"
+    ],
+    "source_result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
+    "source_schema_version": "pure-weyl-berger-retained-biwave-volterra-resolvent-v1",
+    "status": "REJECTED_FAIL_CLOSED",
+    "structural_checks": {
+      "advanced_and_retarded_DAGs": true,
+      "dependency_hashes": true,
+      "exact_check_ledger": true,
+      "graph_SDR_boundary": true,
+      "identity_and_lifecycle": true,
+      "strict_top_level_fields": true,
+      "zero_mode_policy": true
+    }
+  }
+}
