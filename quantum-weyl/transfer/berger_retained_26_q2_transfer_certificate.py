@@ -115,9 +115,13 @@ def _render(value: object) -> str:
     return json.dumps(value, indent=2, sort_keys=True) + "\n"
 
 
+def _render_payload(value: object) -> str:
+    return json.dumps(value, sort_keys=True, separators=(",", ":")) + "\n"
+
+
 def emit() -> None:
     payload, certificate = build_certificate()
-    PAYLOAD.write_text(_render(payload), encoding="utf-8")
+    PAYLOAD.write_text(_render_payload(payload), encoding="utf-8")
     certificate["payload"]["file_sha256"] = _hash(PAYLOAD)
     OUTPUT.write_text(_render(certificate), encoding="utf-8")
 
@@ -165,7 +169,7 @@ def main() -> int:
         validate_checked_receipt()
     if args.replay_check:
         payload, certificate = build_certificate()
-        expected_payload = _render(payload)
+        expected_payload = _render_payload(payload)
         if PAYLOAD.read_text(encoding="utf-8") != expected_payload:
             raise SystemExit("stale retained q2_26 payload")
         certificate["payload"]["file_sha256"] = hashlib.sha256(
