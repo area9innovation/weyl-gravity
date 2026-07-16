@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "weyl-maxwell-axial-general-lee-wald-fixture-v1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "provenance", "domain", "samples", "classification", "interpretation", "claim_boundary", "verification_commands"],
+  "properties": {
+    "schema": {"const": "weyl-maxwell-axial-general-lee-wald-fixture-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/weyl_maxwell_axial_general_lee_wald_fixture.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "WEYL_MAXWELL_AXIAL_GENERAL_LEE_WALD_FIXTURE"},
+    "result_state": {"const": "DIRECT_4D_LEE_WALD_EQUALS_HARMONIC_NORM_TIMES_REDUCED_GREEN_AT_ELL2_ELL3_ELL4"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"const": "G2_AXIAL_DIRECT_LEE_WALD_SPECTRAL_SAMPLES"},
+    "provenance": {"type": "object"}, "domain": {"type": "string"},
+    "samples": {"type": "object", "required": ["2", "3", "4"]},
+    "classification": {"type": "object"}, "interpretation": {"type": "string"},
+    "claim_boundary": {"type": "string"}, "verification_commands": {"type": "array", "minItems": 2}
+  }
+}

@@ -876,6 +876,29 @@ The first principal minor and determinant are positive for every physical
 four-dimensional Lee--Wald norm: the action-Hessian/current match remains the
 last barrier before any physical sign or ghost interpretation.
 
+`EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION` now matches the complete
+off-shell reduced current to the directly varied four-dimensional
+Weyl--Maxwell Lee--Wald current.  Exact `ell=2,3,4` coordinate matrices retain
+independent frequencies and satisfy
+
+```text
+integral_(S2) J^t_4D=N_(ell,m) J^t_reduced,
+N_(ell,m)>0.
+```
+
+The spectral degree-two bound and `SO(3)` irreducibility promote this to every
+`ell>=2,m`.  Both Einstein/extra mixed blocks vanish directly on their exact
+primary shells, without a frequency inverse.  In the normalized direct-current
+convention the Einstein branches have signature `(1,1)`, the two extra
+directions have `(2,0)`, and the complete generic axial target has `(3,1)`.
+
+Therefore the extra directions do not disappear under the direct compact
+Lee--Wald pairing and are not its negative direction.  The negative target
+direction lies on one Einstein-image master branch.  This is not yet a
+one-particle ghost theorem: final residual descent, causal boundary
+admissibility, a positive-frequency Hilbert space, and quantum unitarity remain
+open.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally

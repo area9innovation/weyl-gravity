@@ -1,0 +1,310 @@
+{
+  "claim_boundary": "This slow LOCAL-ALGEBRAIC/REDUCED-MODE fixture supplies exact spectral samples. Generic-lambda promotion and all physical interpretations are separate theorems.",
+  "classification": {
+    "branch_or_equations_of_motion_used": false,
+    "ell2_ell3_ell4_direct_coordinate_checks": true,
+    "full_four_by_four_coefficient_matrix_checked": true,
+    "generic_lambda_promotion_in_this_fixture": false,
+    "independent_frequencies_checked": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "arbitrary off-shell axial coefficient pairs with independent temporal frequencies and common symbolic compact momentum, direct four-dimensional Weyl-Maxwell Lee-Wald current",
+  "generality_level": "G2_AXIAL_DIRECT_LEE_WALD_SPECTRAL_SAMPLES",
+  "interpretation": "At three exact spherical eigenvalues, the complete directly varied four-dimensional Weyl-Maxwell Lee-Wald current equals the positive Legendre harmonic norm times the independently constructed reduced Green current for arbitrary off-shell axial coefficients and independent frequencies.",
+  "lifecycle_state": "CLASSIFIED",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/weyl_maxwell_axial_general_lee_wald_fixture.py",
+    "generator_sha256": "52d2da0acb35764d3925b0c73805c9bc2972baf51b3512ed79d94d44678b0eac",
+    "input": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_axial_green_current.json",
+      "sha256": "1422d98625646d2e2de94db66fe6f30038ac5508b7aec5fb8a422c9bc302698d"
+    }
+  },
+  "result_id": "WEYL_MAXWELL_AXIAL_GENERAL_LEE_WALD_FIXTURE",
+  "result_state": "DIRECT_4D_LEE_WALD_EQUALS_HARMONIC_NORM_TIMES_REDUCED_GREEN_AT_ELL2_ELL3_ELL4",
+  "samples": {
+    "2": {
+      "coefficient_order": [
+        "h_t",
+        "h_x",
+        "q_t",
+        "q_x"
+      ],
+      "direct_integrated_matrix": [
+        [
+          "-18*I*pi*(k**2 + 4)*(omega1 + omega2)/5",
+          "6*I*pi*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 22)/5",
+          "0",
+          "0"
+        ],
+        [
+          "6*I*pi*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 22)/5",
+          "6*I*pi*(omega1 + omega2)*(3*k**2 - 3*omega1**2 - 3*omega2**2 + 34)/5",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-4*I*pi*k/5"
+        ],
+        [
+          "0",
+          "0",
+          "-4*I*pi*k/5",
+          "-4*I*pi*(omega1 + omega2)/5"
+        ]
+      ],
+      "direct_minus_norm_times_reduced": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "ell": 2,
+      "harmonic": "P_2(cos(theta))",
+      "harmonic_norm": "4*pi/5",
+      "independent_frequencies_retained": true,
+      "lambda": 6,
+      "reduced_Green_matrix": [
+        [
+          "-9*I*(k**2 + 4)*(omega1 + omega2)/2",
+          "3*I*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 22)/2",
+          "0",
+          "0"
+        ],
+        [
+          "3*I*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 22)/2",
+          "3*I*(omega1 + omega2)*(3*k**2 - 3*omega1**2 - 3*omega2**2 + 34)/2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-I*k"
+        ],
+        [
+          "0",
+          "0",
+          "-I*k",
+          "-I*(omega1 + omega2)"
+        ]
+      ]
+    },
+    "3": {
+      "coefficient_order": [
+        "h_t",
+        "h_x",
+        "q_t",
+        "q_x"
+      ],
+      "direct_integrated_matrix": [
+        [
+          "-36*I*pi*(k**2 + 10)*(omega1 + omega2)/7",
+          "12*I*pi*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 40)/7",
+          "0",
+          "0"
+        ],
+        [
+          "12*I*pi*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 40)/7",
+          "12*I*pi*(omega1 + omega2)*(3*k**2 - 3*omega1**2 - 3*omega2**2 + 70)/7",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-4*I*pi*k/7"
+        ],
+        [
+          "0",
+          "0",
+          "-4*I*pi*k/7",
+          "-4*I*pi*(omega1 + omega2)/7"
+        ]
+      ],
+      "direct_minus_norm_times_reduced": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "ell": 3,
+      "harmonic": "P_3(cos(theta))",
+      "harmonic_norm": "4*pi/7",
+      "independent_frequencies_retained": true,
+      "lambda": 12,
+      "reduced_Green_matrix": [
+        [
+          "-9*I*(k**2 + 10)*(omega1 + omega2)",
+          "3*I*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 40)",
+          "0",
+          "0"
+        ],
+        [
+          "3*I*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 40)",
+          "3*I*(omega1 + omega2)*(3*k**2 - 3*omega1**2 - 3*omega2**2 + 70)",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-I*k"
+        ],
+        [
+          "0",
+          "0",
+          "-I*k",
+          "-I*(omega1 + omega2)"
+        ]
+      ]
+    },
+    "4": {
+      "coefficient_order": [
+        "h_t",
+        "h_x",
+        "q_t",
+        "q_x"
+      ],
+      "direct_integrated_matrix": [
+        [
+          "-20*I*pi*(k**2 + 18)*(omega1 + omega2)/3",
+          "20*I*pi*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 64)/9",
+          "0",
+          "0"
+        ],
+        [
+          "20*I*pi*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 64)/9",
+          "20*I*pi*(omega1 + omega2)*(3*k**2 - 3*omega1**2 - 3*omega2**2 + 118)/9",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-4*I*pi*k/9"
+        ],
+        [
+          "0",
+          "0",
+          "-4*I*pi*k/9",
+          "-4*I*pi*(omega1 + omega2)/9"
+        ]
+      ],
+      "direct_minus_norm_times_reduced": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "ell": 4,
+      "harmonic": "P_4(cos(theta))",
+      "harmonic_norm": "4*pi/9",
+      "independent_frequencies_retained": true,
+      "lambda": 20,
+      "reduced_Green_matrix": [
+        [
+          "-15*I*(k**2 + 18)*(omega1 + omega2)",
+          "5*I*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 64)",
+          "0",
+          "0"
+        ],
+        [
+          "5*I*k*(3*k**2 - 3*omega1**2 - 3*omega1*omega2 - 3*omega2**2 + 64)",
+          "5*I*(omega1 + omega2)*(3*k**2 - 3*omega1**2 - 3*omega2**2 + 118)",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-I*k"
+        ],
+        [
+          "0",
+          "0",
+          "-I*k",
+          "-I*(omega1 + omega2)"
+        ]
+      ]
+    }
+  },
+  "schema": "weyl-maxwell-axial-general-lee-wald-fixture-v1",
+  "schema_path": "bridge/einstein_sector/schema/weyl_maxwell_axial_general_lee_wald_fixture.schema.json",
+  "schema_sha256": "097570e5eabf714c4e4a5522de7d40c8b6e69498d80f1fdea02244b61f5c3da8",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.weyl_maxwell_axial_general_lee_wald_fixture --verify bridge/certificates/weyl_maxwell_axial_general_lee_wald_fixture.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_weyl_maxwell_axial_general_lee_wald_fixture"
+  ]
+}

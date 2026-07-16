@@ -128,10 +128,37 @@ The first principal minor and determinant are positive for every physical
 `(2,0)` for the reduced-Hessian Green current.  This rules out disappearance
 as a radical at that declared layer.
 
-The next load-bearing gate is the direct four-dimensional action-Hessian match
-and complete Einstein/extra Lee--Wald matrix.  Until that normalization and
-all improvement terms agree, the reduced signature is not a physical norm,
-ghost, or particle statement.
+`EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION` now closes the direct-current
+part of that gate.  Direct four-dimensional coordinate calculations at
+`ell=2,3,4`, retaining independent frequencies for the two arguments, give
+
+```text
+integral_(S2) J^t_Lee-Wald
+  =N_(ell,m) J^t_reduced-Green
+```
+
+on the complete four-coefficient off-shell axial block.  The current has
+spectral degree at most two, so the three exact eigenvalues uniquely promote
+the identity to every `ell>=2`; `SO(3)` irreducibility promotes the `m=0`
+samples to every `m`.  The integrated improvement remainder is zero.
+
+The Einstein and extra primary modules are symplectically orthogonal in both
+directions without inverting a frequency difference.  In the convention
+`J^t/(-i*omega*N_(ell,m))`, the two Einstein master branches have signature
+`(1,1)`, the extra block has `(2,0)`, and the complete generic axial target
+block has
+
+```text
+signature=(3,1).
+```
+
+Thus the two extra directions are genuine nonradical positive directions in
+the directly varied compact Lee--Wald current.  The negative direction in
+this target convention lies in one Einstein-image master branch, not in the
+new extra block.  This remains a classical compact harmonic statement: the
+action-density second variation, final residual quotient, causal boundary
+admissibility, positive-frequency Hilbert space, and quantum ghost/unitarity
+questions remain separate.
 
 ## Receipts
 
@@ -158,21 +185,29 @@ python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_green_current \
   --verify bridge/certificates/einstein_maxwell_weyl_axial_green_current.json
 python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_extra_green_pairing \
   --verify bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json
+python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_lee_wald_completion \
+  --verify bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json
 ```
 
 The scoped operator seven-test rail passed in about 16 seconds; its generator
 and independent verifier passed.  The Green-current and extra-pairing
 three-test rails each passed in under one second.
+The generic Lee--Wald completion five-test fast rail also passed in under one
+second.
 
 Tier 2:
 
 ```text
 python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ell2_full_tensor \
   --verify bridge/certificates/einstein_maxwell_weyl_axial_ell2_full_tensor.json
+python3 -m bridge.einstein_sector.weyl_maxwell_axial_general_lee_wald_fixture \
+  --verify bridge/certificates/weyl_maxwell_axial_general_lee_wald_fixture.json
 ```
 
 The exhaustive direct-tensor `ell=2,3,4` regeneration passed in about 116
 seconds.  It is intentionally separated from the fast unit rail.
+The direct independent-frequency Lee--Wald `ell=2,3,4` regeneration also
+passed; it is retained as a separate slow affected-chain rail.
 
 Tier 3 was not run: this change does not freeze a release, promote a causal or
 quantum lifecycle, or alter shared core algebra.
