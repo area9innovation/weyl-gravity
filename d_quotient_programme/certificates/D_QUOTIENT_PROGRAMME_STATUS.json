@@ -29,7 +29,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "476c390d9008cbfee5993348cb0f0e046c8c9f48",
+  "programme_base_commit": "95bdcc71e5410036abab18a86c6e841f42cc7d6b",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -46,7 +46,7 @@
   },
   "registry_hashes": {
     "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-    "phase_space_registry": "c9046600fe16b8186ed7aaa51e1fd9b208ff39555efab72ec8ef4e6b6a29adde"
+    "phase_space_registry": "179006f56fe2fcf5ef99fc52e21d9ebfe0ebfe7eb55ceac96f9860acae608899"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -276,6 +276,15 @@
       "setting_id": "compact_einstein_maxwell_axial_master_complex",
       "status": "CERTIFIED",
       "verdict": "G1_AXIAL_ALL_MOMENTA_MASTER_COMPLEX"
+    },
+    {
+      "boundary_conditions": "fixed-P_N compact product; standard polar Regge--Wheeler gauge; generic ell>=2 matrix; one full-tensor ell=2 plus-branch fixture; before residual quotient",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_polar_master_preflight",
+      "setting_id": "compact_einstein_maxwell_polar_master_preflight",
+      "status": "CERTIFIED",
+      "verdict": "G1_POLAR_ELL_GE2_MATRIX_PREFLIGHT"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -1340,6 +1349,51 @@
       "sha256": "ce749514ee098d25a63c2a8aa95abceaf1adc1148eef8c3ee8cdfa4b560810f2"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-polar-master-preflight.json",
+      "payload": {
+        "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle P_N with N=2; standard polar Regge--Wheeler gauge; generic ell>=2 Fourier matrix; one full-tensor ell=2 plus-branch fixture; before residual quotient",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the generic ell>=2 polar Fourier coefficient matrix reduces exactly to two master variables",
+          "the polar master eigenvalues are lambda+/-sqrt(2 lambda), matching the certified axial dispersion for every Fourier momentum",
+          "the perturbed metric volume density supplies the required Maxwell term (A-C)/2+K",
+          "one full-tensor ell=2 plus-branch fixture has exactly zero linearized Einstein and Maxwell density residuals",
+          "the reduced polar master matrix has symmetrizer diag(1,2 lambda)"
+        ],
+        "evidence": {
+          "commit": "95bdcc71e5410036abab18a86c6e841f42cc7d6b",
+          "path": "bridge/certificates/einstein_maxwell_polar_master_preflight.json",
+          "sha256": "bf7eefe8033e14bc13c055bc8c2210c68748f0707d1614d51ddd162a5f101705"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "promote the generic polar matrix to an arbitrary-lambda full-tensor identity, classify exceptional ell=0,1, then match axial and polar reduced currents to the covariant symplectic form and solve extra fourth-order adjoint classes",
+        "not_established": [
+          "an arbitrary-lambda full-tensor polar derivation",
+          "the exceptional polar ell=0 and ell=1 sectors",
+          "covariant Einstein--Maxwell symplectic normalization",
+          "the complete fourth-order Weyl--Maxwell adjoint cokernel",
+          "quadratic obstruction coefficients for the full harmonic tower",
+          "a Lorentzian-causal, scattering, or quantum theorem"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_polar_master_preflight",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_polar_master_preflight",
+        "team_id": "einstein_boundary",
+        "verdict": "G1_POLAR_ELL_GE2_MATRIX_PREFLIGHT",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_polar_master_preflight --verify bridge/certificates/einstein_maxwell_polar_master_preflight.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_polar_master_preflight.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_polar_master_preflight"
+        ]
+      },
+      "sha256": "8de46d0935cb38f13275e18c6d656a16dde2d1a495a3411a7307e67a28204fb6"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -1450,9 +1504,9 @@
       "sha256": "ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685"
     },
     "nonlinear": {
-      "commit": "959a400112b8b25834bd3f13a306651cb930c6a5",
+      "commit": "7f1b8d4e485641c61dea5cf9321cd5ef90dc4048",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "84cd5e5ac7d0089b490aa036d2fc7378499307e3dc962f5472e8dcb5a4934d19"
+      "sha256": "824e12d1234af2688e380ef448bb73079dd0b251c3e0c98a36111533967d8ce2"
     },
     "quantum": {
       "commit": "a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6",
@@ -1469,9 +1523,9 @@
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "The fixed compact U(1) domain and relative Taub descent are certified. The complete standard axial harmonic gauge quotient is reduced to two masters for every S1 momentum and ell>=2, with exact dispersion, ell=1 residual quotient, global zero twist, and local reduced current.",
-      "next_gate": "derive the polar/even master complex, match both reduced currents to the covariant symplectic form, and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
-      "result_state": "G1_AXIAL_ALL_MOMENTA_MASTER_COMPLEX_CERTIFIED_POLAR_AND_ADJOINT_OPEN",
+      "established": "The fixed compact U(1) domain and relative Taub descent are certified. The complete standard axial harmonic gauge quotient is reduced to two masters for every S1 momentum and ell>=2. The generic polar ell>=2 coefficient matrix has an exact two-master reduction with the same dispersion and a full-tensor ell=2 plus-branch fixture, including the corrected Maxwell volume density.",
+      "next_gate": "promote the polar matrix to an arbitrary-lambda full-tensor identity, classify exceptional polar ell=0,1, match both reduced currents to the covariant symplectic form, and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
+      "result_state": "G1_AXIAL_MASTER_AND_POLAR_MATRIX_PREFLIGHT_CERTIFIED_EXCEPTIONAL_POLAR_AND_ADJOINT_OPEN",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },
