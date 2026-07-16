@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-axial-operator-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "provenance", "domain", "generic_equation_rows", "spectral_polynomial_reconstruction", "operator_algebra", "ungauged_Noether_lift", "source_and_extra_modules", "denominator_and_exceptional_loci", "rails", "classification", "interpretation", "next_gate", "claim_boundary", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-axial-operator-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_operator.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR"},
+    "result_state": {"const": "GENERIC_AXIAL_OPERATOR_NOETHER_SMITH_AND_EXTRA_SOLUTION_MODULE_CERTIFIED_GREEN_AND_PAIRING_OPEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"const": "G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_MODULE"},
+    "provenance": {"type": "object"},
+    "domain": {"type": "string"},
+    "generic_equation_rows": {"type": "object"},
+    "spectral_polynomial_reconstruction": {"type": "object"},
+    "operator_algebra": {"type": "object"},
+    "ungauged_Noether_lift": {"type": "object"},
+    "source_and_extra_modules": {"type": "object"},
+    "denominator_and_exceptional_loci": {"type": "object"},
+    "rails": {"type": "object"},
+    "classification": {"type": "object"},
+    "interpretation": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 4}
+  }
+}

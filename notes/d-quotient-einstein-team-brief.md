@@ -817,6 +817,36 @@ inverted.  The target Hessian must next pass independent equation, Noether,
 formal-adjoint, off-shell Green, source-image, pivot-stratification, and full
 tensor `Y_20` replay rails before any frequency root is interpreted.
 
+`EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR` now closes the operator, Noether,
+formal-adjoint, source-image, Smith-module, and independent full-tensor rails.
+The direct `Y_20` coordinate replay retains arbitrary off-shell `(omega,k)`,
+all unlisted rows vanish, and exact `ell=3,4` samples uniquely reconstruct the
+degree-at-most-two `lambda` dependence.  Over
+`F[omega]`, `F=Frac(Q(lambda,k))`, the target invariant factors are
+
+```text
+1, 1, p, p*q,
+p=omega^2-k^2-lambda+2/3,
+q=(omega^2-k^2-lambda)^2-2lambda.
+```
+
+Here `q` is the certified Einstein--Maxwell master factor.  The polynomial
+identity `P_W=(3lambda-2-3s)E_EM-6M_EM`, with
+`s=omega^2-k^2`, replays the complete Einstein image.  Away from the
+nonphysical collision `lambda=2/9`, the canonical generic axial quotient is
+therefore
+
+```text
+Q_extra_ax=(F[omega]/(p))^2.
+```
+
+This proves two additional algebraic target solution polarizations before the
+final residual quotient; it does not certify two particles or ghosts.  The
+direct four-dimensional action Hessian, off-shell local Green current, and
+complete Einstein/extra Lee--Wald matrix remain open.  Those rails must decide
+whether either extra summand is nonradical and with which sign before any
+one-particle interpretation.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally

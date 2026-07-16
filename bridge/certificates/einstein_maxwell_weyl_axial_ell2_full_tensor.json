@@ -1,0 +1,82 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE certificate is a direct coordinate tensor fixture. It does not by itself prove the generic-lambda operator, a covariant Green identity, a causal phase space, a norm, or a particle spectrum.",
+  "classification": {
+    "Green_identity_or_particle_claim": false,
+    "all_unlisted_rows_zero": true,
+    "ell2_full_tensor_replay_passed": true,
+    "ell3_ell4_reconstruction_samples_passed": true,
+    "generic_lambda_operator_inferred_here": false,
+    "no_branch_substitution": true,
+    "off_shell_frequency_and_momentum_retained": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G2_AXIAL_FULL_TENSOR_SAMPLES",
+  "interpretation": "The required Y_20 replay is now independent of the arbitrary-lambda harmonic reduction and exposes the complete off-shell fourth-order metric rows together with the unchanged Maxwell rows. Ell=3 and ell=4 are retained as exact spectral-polynomial reconstruction samples; this fixture alone does not infer or interpret a generic extra branch.",
+  "lifecycle_state": "CLASSIFIED",
+  "normalization": {
+    "harmonic": "Y_ell0=P_ell(cos(theta))",
+    "maxwell_rows": "coordinate Maxwell divergence divided by the matching scalar/vector harmonic",
+    "metric_angular": "delta(3B-T)_(theta,phi)/(i*exp(i(kx-omega t))*X_(theta,phi))",
+    "metric_t": "delta(3B-T)_(t,phi)/(exp(i(kx-omega t))*X_phi)",
+    "metric_x": "delta(3B-T)_(x,phi)/(exp(i(kx-omega t))*X_phi)"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_ell2_full_tensor.py",
+    "generator_sha256": "e688393e9fb31bb55972f243554544c4ecac8409c6cf2d4fa5c8f039cd98aa25",
+    "method": "direct coordinate linearization of 3*B_ab-T_ab and div(F)^b on R_t x S1 x S2 with explicit Legendre harmonics"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_FULL_TENSOR",
+  "result_state": "ELL2_INDEPENDENT_REPLAY_WITH_ELL3_ELL4_SPECTRAL_RECONSTRUCTION_SAMPLES",
+  "samples": {
+    "2": {
+      "all_unlisted_maxwell_rows_zero": true,
+      "all_unlisted_metric_rows_zero": true,
+      "lambda": 6,
+      "rows": {
+        "maxwell_angular": "h_t*omega + h_x*k + k*q_x + omega*q_t",
+        "maxwell_t": "6*h_t + k**2*q_t + k*omega*q_x + 6*q_t",
+        "maxwell_x": "-6*h_x + k*omega*q_t + omega**2*q_x - 6*q_x",
+        "metric_angular": "-(h_t*omega + h_x*k)*(3*k**2 - 3*omega**2 + 16)/2",
+        "metric_t": "-(3*h_t*k**4 - 3*h_t*k**2*omega**2 + 34*h_t*k**2 - 12*h_t*omega**2 + 60*h_t + 3*h_x*k**3*omega - 3*h_x*k*omega**3 + 22*h_x*k*omega - 4*q_t)/4",
+        "metric_x": "(3*h_t*k**3*omega - 3*h_t*k*omega**3 + 22*h_t*k*omega + 3*h_x*k**2*omega**2 - 12*h_x*k**2 - 3*h_x*omega**4 + 34*h_x*omega**2 - 60*h_x + 4*q_x)/4"
+      }
+    },
+    "3": {
+      "all_unlisted_maxwell_rows_zero": true,
+      "all_unlisted_metric_rows_zero": true,
+      "lambda": 12,
+      "rows": {
+        "maxwell_angular": "h_t*omega + h_x*k + k*q_x + omega*q_t",
+        "maxwell_t": "12*h_t + k**2*q_t + k*omega*q_x + 12*q_t",
+        "maxwell_x": "-12*h_x + k*omega*q_t + omega**2*q_x - 12*q_x",
+        "metric_angular": "-(h_t*omega + h_x*k)*(3*k**2 - 3*omega**2 + 34)/2",
+        "metric_t": "-(3*h_t*k**4 - 3*h_t*k**2*omega**2 + 70*h_t*k**2 - 30*h_t*omega**2 + 336*h_t + 3*h_x*k**3*omega - 3*h_x*k*omega**3 + 40*h_x*k*omega - 4*q_t)/4",
+        "metric_x": "(3*h_t*k**3*omega - 3*h_t*k*omega**3 + 40*h_t*k*omega + 3*h_x*k**2*omega**2 - 30*h_x*k**2 - 3*h_x*omega**4 + 70*h_x*omega**2 - 336*h_x + 4*q_x)/4"
+      }
+    },
+    "4": {
+      "all_unlisted_maxwell_rows_zero": true,
+      "all_unlisted_metric_rows_zero": true,
+      "lambda": 20,
+      "rows": {
+        "maxwell_angular": "h_t*omega + h_x*k + k*q_x + omega*q_t",
+        "maxwell_t": "20*h_t + k**2*q_t + k*omega*q_x + 20*q_t",
+        "maxwell_x": "-20*h_x + k*omega*q_t + omega**2*q_x - 20*q_x",
+        "metric_angular": "-(h_t*omega + h_x*k)*(3*k**2 - 3*omega**2 + 58)/2",
+        "metric_t": "-(3*h_t*k**4 - 3*h_t*k**2*omega**2 + 118*h_t*k**2 - 54*h_t*omega**2 + 1040*h_t + 3*h_x*k**3*omega - 3*h_x*k*omega**3 + 64*h_x*k*omega - 4*q_t)/4",
+        "metric_x": "(3*h_t*k**3*omega - 3*h_t*k*omega**3 + 64*h_t*k*omega + 3*h_x*k**2*omega**2 - 54*h_x*k**2 - 3*h_x*omega**4 + 118*h_x*omega**2 - 1040*h_x + 4*q_x)/4"
+      }
+    }
+  },
+  "schema": "einstein-maxwell-weyl-axial-ell2-full-tensor-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_ell2_full_tensor.schema.json",
+  "schema_sha256": "2169bd3750756fe42d097e65391c0bd0621f4143003b15141800f5b577a9ee04",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ell2_full_tensor --verify bridge/certificates/einstein_maxwell_weyl_axial_ell2_full_tensor.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_ell2_full_tensor.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_ell2_full_tensor"
+  ]
+}
