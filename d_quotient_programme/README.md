@@ -18,6 +18,12 @@ because the existing results concern different objects:
 - nonlinear homological transfer and interacting Cartan stability;
 - the renormalized quantum Ward/QME obstruction.
 
+The cross-team dependency order from these certificates to clocks/redshift,
+waves, particles, black holes, galaxy phenomenology, and cosmology is recorded
+in [`../notes/universe-building-roadmap.md`](../notes/universe-building-roadmap.md).
+It also defines the triggers for moving capacity between teams; it does not
+change the verdict or lifecycle rules in this dossier.
+
 ## Authoritative artifacts
 
 - [`certificates/D_QUOTIENT_PROGRAMME_STATUS.json`](certificates/D_QUOTIENT_PROGRAMME_STATUS.json)

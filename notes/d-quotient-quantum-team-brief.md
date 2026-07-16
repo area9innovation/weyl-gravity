@@ -298,6 +298,15 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 6. Add Yang--Mills and broader matter spectra only after the scalar rail is
    understood.
 
+Keep the quantum construction representation-neutral until the physical
+pairing is computed: a Hilbert, Krein, BRST, or Fock completion is an outcome
+to certify, not an input to assume.  Particle and graviton claims remain
+inactive until the local QME/Ward gate, a Lorentzian causal state framework,
+physical cohomology, and its pairing all pass.  Cosmological or dark-sector
+quantum work begins only after a stable classical clocked cosmology exists.
+The complete activation sequence is in
+[`universe-building-roadmap.md`](universe-building-roadmap.md).
+
 Escalate immediately on a nontrivial \(D\)-anomaly, a conflict between Ward
 identities, or a negative/non-Hermitian pairing correction.  A certified
 obstruction is a successful result.

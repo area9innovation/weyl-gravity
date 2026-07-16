@@ -284,12 +284,21 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Complete and verify the imported support-local cubic BV tensor.
-2. Compute the full \(\ell_2\) and the arity-two Cartan defect.
-3. Solve for \(\iota_D^{(2)}\) or certify its obstruction.
-4. Compute \(\ell_3\), the quartic identity, and the first instability channel.
-5. Add the conformal scalar clock and repeat the same gates.
-6. Add Yang--Mills only after the scalar rail is understood.
+1. While the classical \(q_2\) producer is active, import the certified ghost
+   endpoint factorization, solve the metric/metric-antifield mixed-order Green
+   realization, complete the retained 26-row advanced/retarded homotopy, and
+   lift it through the certified 54-to-26 contraction.
+2. On `BERGER_Q2_EXPORTED`, import the support-local cubic BV tensor by content
+   hash and verify it independently.
+3. Compute the full \(\ell_2\) and the arity-two Cartan defect.
+4. Solve for \(\iota_D^{(2)}\) or certify its obstruction.
+5. Compute \(\ell_3\), the quartic identity, and the first resonant
+   \(+\lambda,-\lambda\to0\) instability channel.
+6. Add Yang--Mills only after the scalar-clock rail is understood.
+
+The Green assignment is a temporary parallelization and does not promote an
+interacting claim.  The handback and later physical activation gates are in
+[`universe-building-roadmap.md`](universe-building-roadmap.md).
 
 Escalate immediately if the cubic defect is nontrivial, if cyclicity fails, or
 if a negative physical channel survives transfer.  A no-go certificate is a

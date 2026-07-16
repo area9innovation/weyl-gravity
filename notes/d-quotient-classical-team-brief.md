@@ -512,14 +512,21 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 1. Export the complete support-local four-dimensional Berger \(q_2\), including
    antifield/Koszul--Tate rows and exact cyclicity.
-2. Construct the retained 26-row mixed-order causal Green homotopy and lift it
-   through the certified 54-to-26 contraction.
-3. Combine the completed \(q_2\) with the frozen local \(D\)-action to run the
-   support-local all-row arity-two Cartan test.
-4. Construct a complete Berger relational observable only after the nonlinear
-   and causal gates above have frozen its admissible clock domain.
+2. Hand the frozen export to the nonlinear team by content hash and support its
+   independent replay; do not duplicate the retained Green construction now
+   owned there in parallel.
+3. Combine the completed \(q_2\) with the frozen local \(D\)-action and the
+   imported Green-domain certificate to run the support-local all-row
+   arity-two Cartan test.
+4. After those gates freeze the admissible domain, construct a Berger
+   relational observable and an operational redshift fixture.
 5. Continue the deformation, Yang--Mills, and boundary-condition rails as
    independent generality tests rather than prerequisites for the Berger gate.
+
+The physical activation sequence and reassignment triggers are recorded in
+[`universe-building-roadmap.md`](universe-building-roadmap.md).  The classical
+team remains the authoritative \(q_2\) producer until `BERGER_Q2_EXPORTED`;
+after that trigger its next primary ownership is the clock/redshift rail.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a

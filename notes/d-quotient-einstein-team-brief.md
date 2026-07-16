@@ -649,16 +649,31 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Complete the asymptotically flat linear causal complex and boundary phase
-   space.
-2. Choose a real boundary-preserving image, then compute its charge separately
+1. Close the compact global symplectic sectors: the `ell=0`
+   radion/circumference/electric-charge pairs and the axial `ell=1` twist pair.
+2. Compute the Weyl--Maxwell presymplectic pullback to the certified
+   Einstein--Maxwell wave quotient, including exact improvements and corners.
+3. Classify the extra fourth-order adjoint/radiative directions and separate
+   them from the standard Einstein wave directions.
+4. Run the quadratic Taub/extension test on the compact wave directions and
+   construct a relational detector or geodesic-deviation observable.
+5. Complete the asymptotically flat linear causal complex and boundary phase
+   space without importing the compact result as a boundary theorem.
+6. Choose a real boundary-preserving image, then compute its charge separately
    from the ADM/Bondi time-translation charge and radiative pairing.
-3. Prove or refute linear causal preservation of the Einstein branch.
-4. Classify the extra radiative branch and its norm.
-5. Compare Bondi observables and tree amplitudes.
-6. Seek a different common scalar background for an Einstein--matter tangent
+7. Prove or refute linear causal preservation of the Einstein branch, classify
+   the extra asymptotic branch, and only then compare Bondi observables, black
+   holes, and tree amplitudes.
+8. Seek a different common scalar background for an Einstein--matter tangent
    comparison; retain the Berger clock as the certified non-Einstein control
    branch.  Add Yang--Mills only after that distinction is stable.
+
+The regular compact radiative modes and physical `ell=1` quotient now have a
+positive action-normalized covariant pairing.  The global sectors and the
+Weyl--Maxwell pullback are the nearest remaining compact gates; black holes and
+scattering require their own boundary phase space.  The handoff criteria are
+recorded in
+[`universe-building-roadmap.md`](universe-building-roadmap.md).
 
 Escalate immediately if the Einstein selection is nonlocal or future-dependent,
 if a negative-norm radiative mode is unavoidable, or if the selected sector
