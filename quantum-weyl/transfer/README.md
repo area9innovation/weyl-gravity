@@ -85,8 +85,8 @@ witness.  Admissibility constraints are part of the solve, so an ambient
 primitive can be rejected when it is not cyclic, real, boundary-compatible,
 or otherwise allowed.  Executable nonzero fixtures exercise the correction,
 obstruction, mutation, and inadmissible-primitive branches.  They carry no
-conformal-gravity coefficient: the physical evaluator and classical
-`q1/q2/D/iota_cl/pi_cl/s_cl` payload remain absent.
+conformal-gravity coefficient: the support-local `q2` payload and combined
+physical assembly remain absent.
 
 The permanent ND2 engine is now separated from a versioned physical-run
 contract.  A physical execution must pin four independently hashed artifacts:
@@ -140,17 +140,26 @@ blocker.  The quantum consumer now independently verifies the complete
 and `S_cl`: nilpotency, both chain maps, the SDR identity and side conditions,
 cyclicity, and the full/retained pairings all pass.  Thus the standalone ND2
 `classical_contraction` artifact is satisfied.  Nonminimal rows and the
-separate `q2/D`, `D`-equivariance, admissibility, compatible Cartan assembly,
-and causal inputs remain open, so physical execution is still false.
+separate `q2/D` package, admissibility, compatible Cartan assembly, and causal
+inputs remained open at that stage, so physical execution was still false.
 
 The subsequent gauge-fixed export now closes the unary/nonminimal prerequisite
 as well. A pinned quantum-side consumer independently parses the complete
 54-row `classical_unary_q1`, verifies the finite-order BV-canonical shear,
 cyclic pairing, nilpotency, and the transformed 54-to-26 contraction. This is
 classical unary evidence, not the quantum correction \(\hbar Q_1\). The
-decisive nonlinear input remains absent: a complete support-local
-`classical_binary_q2` together with the local `D_action_cl` and its
-equivariance. ND2 therefore remains fail-closed.
+complete support-local helical `D_action_cl` has now also landed.  Its pinned
+consumer reconstructs the order-one PBW operator on all 54 rows and verifies
+unary, contraction, and cyclic equivariance coefficientwise.  The decisive
+nonlinear input remains absent: the complete support-local
+`classical_binary_q2`. ND2 therefore remains fail-closed.
+
+Reproduce the local-D import with
+
+```bash
+python3 quantum-weyl/transfer/berger_54_row_local_d_import_certificate.py --check
+python3 -m unittest quantum-weyl/transfer/tests/test_berger_54_row_local_d_import.py
+```
 
 A separate pinned consumer now imports the first action-derived nonlinear
 Berger block without crossing that boundary.  The six stationary homogeneous
@@ -165,8 +174,9 @@ the existing boundary solver and retains the admissible primitive
 introduces no negative physical direction; the two negative directions of
 the unreduced stationary Hessian do not survive as cohomology.  Einstein/extra-
 Weyl radiative coupling is not applicable at this non-Einstein Berger base
-point.  This is an executable `REDUCED-MODE` result only; full support-local
-q2, nonzero-weight D equivariance, and physical ND2 execution remain false.
+point.  This is an executable `REDUCED-MODE` result only; within that fixture,
+support-local q2 and nonzero-weight D equivariance remain absent, and full
+physical ND2 execution remains false.
 Reproduce it with
 
 ```bash
@@ -276,6 +286,7 @@ python3 quantum-weyl/transfer/berger_retained_q1_import_certificate.py --check
 python3 quantum-weyl/transfer/berger_pbw_backend_certificate.py --check
 python3 quantum-weyl/transfer/berger_minimal_contraction_import_certificate.py --check
 python3 quantum-weyl/transfer/berger_gauge_fixed_nonminimal_import_certificate.py --check
+python3 quantum-weyl/transfer/berger_54_row_local_d_import_certificate.py --check
 python3 quantum-weyl/transfer/arity_three_cartan_certificate.py --check
 python3 quantum-weyl/transfer/ppwave_branch_transfer_import_certificate.py --check
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check

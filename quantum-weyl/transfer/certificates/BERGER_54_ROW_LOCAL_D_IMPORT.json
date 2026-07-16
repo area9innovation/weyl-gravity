@@ -1,0 +1,114 @@
+{
+  "claim_boundary": "This pinned LOCAL-ALGEBRAIC consumer independently imports the complete support-local order-one helical D action on all 54 gauge-fixed Berger BV rows and verifies unary, contraction, and cyclic equivariance in the exact PBW algebra. It is only a G2 prerequisite: the full four-dimensional support-local q2, its arity-two D-derivation identity, the interacting Cartan source, causal propagation, and quantum corrections remain unavailable.",
+  "classical_result": {
+    "certificate_sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49",
+    "claim_status": "CERTIFIED_COMPLETE_LOCAL_D_ACTION_UNARY_EQUIVARIANCE",
+    "commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3",
+    "result_id": "BERGER_54_ROW_LOCAL_D_ACTION"
+  },
+  "coverage": {
+    "contraction_equivariance_complete": true,
+    "cyclicity_complete": true,
+    "local_D_action_complete": true,
+    "retained_rows": 26,
+    "support_local_order": 1,
+    "support_local_q2_available": false,
+    "total_rows": 54,
+    "unary_equivariance_complete": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "generality_assessment": {
+    "achieved": "G2_PREREQUISITE_COMPLETE_54_ROW_LOCAL_D_ACTION",
+    "missing_for_promotion": "complete support-local four-dimensional q2 and arity-two identities",
+    "promotion_to_G2_authorized": false,
+    "target": "G2_FULL_SUPPORT_LOCAL_LOW_ARITY_COMPLEX_ON_ONE_BACKGROUND"
+  },
+  "independent_checks": {
+    "D_formally_skew_adjoint": true,
+    "D_homotopy_equivariant": true,
+    "D_iota_equivariant": true,
+    "D_preserves_cyclic_pairing": true,
+    "D_projection_equivariant": true,
+    "PBW_record_hashes": true,
+    "all_54_rows_match_gauge_fixed_layout": true,
+    "claim_boundary_fail_closed": true,
+    "classical_dependency_hash": true,
+    "q1_D_commutator_zero": true,
+    "strict_classical_schema_identity": true
+  },
+  "lifecycle_layer": "CLASSICAL_BV",
+  "nd2_gate": {
+    "arity_two_Cartan_source": "INPUT_BLOCKED",
+    "arity_two_D_derivation_test": "INPUT_BLOCKED",
+    "local_D_action_and_unary_equivariance": "AVAILABLE",
+    "next_gate": "IMPORT_COMPLETE_SUPPORT_LOCAL_Q2",
+    "physical_execution_authorized": false,
+    "support_local_classical_binary_q2": "NOT_AVAILABLE",
+    "unary_nonminimal_prerequisite_satisfied": true
+  },
+  "operator_hashes": {
+    "D26_sha256": "b23b53299462363c4eb08b56603418c42e4a08e998e23a39ce079615f802f197",
+    "D54_sha256": "5e96986dd482c18d539ffc80c32f4a5285ae9d26c830d0c2beb26d5d8316b677",
+    "S_sha256": "cbc91d3d1c3a91b531740aa8c1d8f607cf9b5eecb9974bcc2293745da780a818",
+    "gauge_fixed_54_row_sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+    "iota_sha256": "1fe5497885baff3d525796736786138735f3f6b53dc7eb7e2cc7b9659d1d3f99",
+    "pairing_sha256": "29ec141213a9a2ffcffb48072468c0bd58bc10c0a3069cc49065be3196d3dd0b",
+    "pi_sha256": "9f65d2e92484079985862e04ece6da1c8b1d30f92e063034c4e69941081d91c5",
+    "q1_sha256": "286a53b9082398baeb4e033cec48c0eee520b044523d716cb57a52baa272ef51"
+  },
+  "provenance": {
+    "classical_sources": {
+      "classical_certificate": {
+        "commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3",
+        "path": "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+        "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+      },
+      "classical_independent_verifier": {
+        "commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_54_row_local_d_action.py",
+        "sha256": "2cf447dbe5f7c2d6a75e28c75ab4850f566f4ba7c0e41f94140053cee910173e"
+      },
+      "classical_producer": {
+        "commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3",
+        "path": "d_quotient_classical/backreacted_clock/berger_54_row_local_d_action.py",
+        "sha256": "3b5f7efd5858bd93a5c83e67fa1638fc6554b472a99f3b2bb51a8118e144856a"
+      },
+      "classical_report": {
+        "commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3",
+        "path": "d_quotient_classical/reports/berger-54-row-local-D-action.md",
+        "sha256": "a19fa8364e9365025135fc5deb3ffef2d1e9d8ea60904f8ee9be47d0ed6998f9"
+      },
+      "classical_schema": {
+        "commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3",
+        "path": "d_quotient_classical/schema/berger-54-row-local-D-action-v1.schema.json",
+        "sha256": "d1adcbb836a8aeaaa093c17857a9bdda4143da50c92bfa7d24d02af02abaa49a"
+      },
+      "classical_test": {
+        "commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_54_row_local_d_action.py",
+        "sha256": "f009ccf361a3484920bdba292be8646ba5a8470da55cd5058362e2437075e500"
+      },
+      "gauge_fixed_54_row_dependency": {
+        "commit": "90bd7d3f3d2b13573ef527400ecd731096babbe3",
+        "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+        "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+      }
+    },
+    "classical_sources_sha256": "b16b482fdabe33cf06f0d66deada072da8a0b9669ad2501c057b1e0905501539",
+    "schema": "quantum-weyl/transfer/schema/berger-54-row-local-d-import-v1.schema.json",
+    "source_manifest": {
+      "../reports/berger-54-row-local-d-import.md": "67f1673f03b26653f3ed603807b403ac99a9f6c04309b22004b38b2b7d950943",
+      "berger_54_row_local_d_import.py": "2b0a4efcfc329ddb126a5f956fd6697fd264b5a481d58629cbea714ae8f9c71d",
+      "berger_54_row_local_d_import_certificate.py": "0ec3401a2888a3c8d030791e4739605a8c36b02feca5cc22a29f8c9146eb6c7f",
+      "schema/berger-54-row-local-d-import-v1.schema.json": "1f41617ab76c6c9e5b9fcb74d19022d7ec917a79451f28bb00158d130188674c",
+      "tests/test_berger_54_row_local_d_import.py": "c0fa96bbc6d2016cf979eb240ba314f6a1d26c8bcf78b3e641d0540354395a16"
+    },
+    "source_manifest_sha256": "811711a30419ee1b20ac241b0c9fd3aaf0b0710cc0668897b551e0c728b47b56"
+  },
+  "result_id": "BERGER_54_ROW_LOCAL_D_ACTION_IMPORT",
+  "result_state": "COMPLETE_54_ROW_LOCAL_D_ACTION_IMPORTED_SUPPORT_LOCAL_Q2_BLOCKED",
+  "schema": "quantum-weyl-berger-54-row-local-d-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

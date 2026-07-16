@@ -23,7 +23,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(
             certificate["result_state"],
-            "ENGINE_READY_HT1_SELECTED_AND_PPWAVE_BLOCKS_COMPUTED_INPUT_BLOCKED",
+            "ENGINE_READY_HT1_SELECTED_PPWAVE_AND_54_ROW_D_IMPORTED_Q2_BLOCKED",
         )
         self.assertEqual(
             certificate["dependency_tags"],
@@ -67,7 +67,8 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("ALL_INTEGER_WEIGHT_HOMOGENEOUS_NONZERO_SOURCE_CARTAN", d_question["status"])
         self.assertIn("EXACT_NONZERO_PRIMITIVE", d_question["status"])
         self.assertIn("FINITE_TRUNCATIONS_OBSTRUCTED", d_question["status"])
-        self.assertIn("FULL_4D_SUPPORT_LOCAL_54_ROW_INPUT_BLOCKED", d_question["status"])
+        self.assertIn("54_ROW_LOCAL_D_IMPORTED", d_question["status"])
+        self.assertIn("FULL_4D_SUPPORT_LOCAL_Q2_BLOCKED", d_question["status"])
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
         certificate = CERTIFICATE.build_certificate()
@@ -93,6 +94,10 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn(
             "berger_gauge_fixed_nonminimal_import_sha256",
+            certificate["provenance"],
+        )
+        self.assertIn(
+            "berger_54_row_local_D_import_sha256",
             certificate["provenance"],
         )
         self.assertIn(
@@ -133,7 +138,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         }
         self.assertNotIn("local_classical_bv_differential_q0", blocked)
         self.assertIn("support_local_classical_bv_q2", blocked)
-        self.assertIn("local_D_action_on_bv_generators", blocked)
+        self.assertNotIn("local_D_action_on_bv_generators", blocked)
         self.assertNotIn("classical_projection_pi_cl", blocked)
         self.assertNotIn("classical_inclusion_iota_cl", blocked)
         self.assertNotIn("classical_homotopy_s_cl", blocked)

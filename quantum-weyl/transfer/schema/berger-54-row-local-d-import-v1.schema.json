@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-54-row-local-d-import-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "classical_result", "coverage", "operator_hashes", "independent_checks", "generality_assessment", "nd2_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-54-row-local-d-import-v1"},
+    "result_id": {"const": "BERGER_54_ROW_LOCAL_D_ACTION_IMPORT"},
+    "result_state": {"const": "COMPLETE_54_ROW_LOCAL_D_ACTION_IMPORTED_SUPPORT_LOCAL_Q2_BLOCKED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "classical_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "claim_status", "commit", "certificate_sha256"],
+      "properties": {
+        "result_id": {"const": "BERGER_54_ROW_LOCAL_D_ACTION"},
+        "claim_status": {"const": "CERTIFIED_COMPLETE_LOCAL_D_ACTION_UNARY_EQUIVARIANCE"},
+        "commit": {"const": "90bd7d3f3d2b13573ef527400ecd731096babbe3"},
+        "certificate_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_rows", "retained_rows", "support_local_order", "local_D_action_complete", "unary_equivariance_complete", "contraction_equivariance_complete", "cyclicity_complete", "support_local_q2_available"],
+      "properties": {
+        "total_rows": {"const": 54},
+        "retained_rows": {"const": 26},
+        "support_local_order": {"const": 1},
+        "local_D_action_complete": {"const": true},
+        "unary_equivariance_complete": {"const": true},
+        "contraction_equivariance_complete": {"const": true},
+        "cyclicity_complete": {"const": true},
+        "support_local_q2_available": {"const": false}
+      }
+    },
+    "operator_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["D54_sha256", "D26_sha256", "gauge_fixed_54_row_sha256", "q1_sha256", "iota_sha256", "pi_sha256", "S_sha256", "pairing_sha256"],
+      "properties": {
+        "D54_sha256": {"$ref": "#/$defs/hash"},
+        "D26_sha256": {"$ref": "#/$defs/hash"},
+        "gauge_fixed_54_row_sha256": {"$ref": "#/$defs/hash"},
+        "q1_sha256": {"$ref": "#/$defs/hash"},
+        "iota_sha256": {"$ref": "#/$defs/hash"},
+        "pi_sha256": {"$ref": "#/$defs/hash"},
+        "S_sha256": {"$ref": "#/$defs/hash"},
+        "pairing_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "independent_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strict_classical_schema_identity", "classical_dependency_hash", "all_54_rows_match_gauge_fixed_layout", "PBW_record_hashes", "q1_D_commutator_zero", "D_iota_equivariant", "D_projection_equivariant", "D_homotopy_equivariant", "D_formally_skew_adjoint", "D_preserves_cyclic_pairing", "claim_boundary_fail_closed"],
+      "properties": {
+        "strict_classical_schema_identity": {"const": true},
+        "classical_dependency_hash": {"const": true},
+        "all_54_rows_match_gauge_fixed_layout": {"const": true},
+        "PBW_record_hashes": {"const": true},
+        "q1_D_commutator_zero": {"const": true},
+        "D_iota_equivariant": {"const": true},
+        "D_projection_equivariant": {"const": true},
+        "D_homotopy_equivariant": {"const": true},
+        "D_formally_skew_adjoint": {"const": true},
+        "D_preserves_cyclic_pairing": {"const": true},
+        "claim_boundary_fail_closed": {"const": true}
+      }
+    },
+    "generality_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target", "achieved", "promotion_to_G2_authorized", "missing_for_promotion"],
+      "properties": {
+        "target": {"const": "G2_FULL_SUPPORT_LOCAL_LOW_ARITY_COMPLEX_ON_ONE_BACKGROUND"},
+        "achieved": {"const": "G2_PREREQUISITE_COMPLETE_54_ROW_LOCAL_D_ACTION"},
+        "promotion_to_G2_authorized": {"const": false},
+        "missing_for_promotion": {"type": "string", "minLength": 1}
+      }
+    },
+    "nd2_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unary_nonminimal_prerequisite_satisfied", "local_D_action_and_unary_equivariance", "support_local_classical_binary_q2", "arity_two_D_derivation_test", "arity_two_Cartan_source", "physical_execution_authorized", "next_gate"],
+      "properties": {
+        "unary_nonminimal_prerequisite_satisfied": {"const": true},
+        "local_D_action_and_unary_equivariance": {"const": "AVAILABLE"},
+        "support_local_classical_binary_q2": {"const": "NOT_AVAILABLE"},
+        "arity_two_D_derivation_test": {"const": "INPUT_BLOCKED"},
+        "arity_two_Cartan_source": {"const": "INPUT_BLOCKED"},
+        "physical_execution_authorized": {"const": false},
+        "next_gate": {"const": "IMPORT_COMPLETE_SUPPORT_LOCAL_Q2"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classical_sources", "classical_sources_sha256", "source_manifest", "source_manifest_sha256", "schema"],
+      "properties": {
+        "classical_sources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["classical_certificate", "classical_schema", "classical_producer", "classical_independent_verifier", "classical_test", "classical_report", "gauge_fixed_54_row_dependency"],
+          "properties": {
+            "classical_certificate": {"$ref": "#/$defs/artifact"},
+            "classical_schema": {"$ref": "#/$defs/artifact"},
+            "classical_producer": {"$ref": "#/$defs/artifact"},
+            "classical_independent_verifier": {"$ref": "#/$defs/artifact"},
+            "classical_test": {"$ref": "#/$defs/artifact"},
+            "classical_report": {"$ref": "#/$defs/artifact"},
+            "gauge_fixed_54_row_dependency": {"$ref": "#/$defs/artifact"}
+          }
+        },
+        "classical_sources_sha256": {"$ref": "#/$defs/hash"},
+        "source_manifest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["berger_54_row_local_d_import.py", "berger_54_row_local_d_import_certificate.py", "schema/berger-54-row-local-d-import-v1.schema.json", "tests/test_berger_54_row_local_d_import.py", "../reports/berger-54-row-local-d-import.md"],
+          "properties": {
+            "berger_54_row_local_d_import.py": {"$ref": "#/$defs/hash"},
+            "berger_54_row_local_d_import_certificate.py": {"$ref": "#/$defs/hash"},
+            "schema/berger-54-row-local-d-import-v1.schema.json": {"$ref": "#/$defs/hash"},
+            "tests/test_berger_54_row_local_d_import.py": {"$ref": "#/$defs/hash"},
+            "../reports/berger-54-row-local-d-import.md": {"$ref": "#/$defs/hash"}
+          }
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "schema": {"const": "quantum-weyl/transfer/schema/berger-54-row-local-d-import-v1.schema.json"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "commit": {"const": "90bd7d3f3d2b13573ef527400ecd731096babbe3"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}
