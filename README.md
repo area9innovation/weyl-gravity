@@ -104,8 +104,9 @@ boundary or interaction theorem.
 General-audience article:
 [`Before Worrying About a Gravitational Ghost, Ask Whether It Is Really There`](paper/before-worrying-about-a-gravitational-ghost.md)
 ([PDF](paper/before-worrying-about-a-gravitational-ghost.pdf)) explains the
-completed classical pure-Weyl BV–BFV result without assuming advanced
-mathematics or physics.
+universe-building programme through spacetime, light, gravitational waves,
+clocks, redshift, interactions, and its symbolic reproducibility system
+without assuming advanced mathematics or physics.
 
 Physicist-facing live summary:
 [`Pure-Weyl gravity programme: executive summary for physicists`](notes/physicist-executive-summary.md)
