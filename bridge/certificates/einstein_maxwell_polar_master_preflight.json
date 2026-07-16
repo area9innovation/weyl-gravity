@@ -1,0 +1,194 @@
+{
+  "algebraic_master_reduction": {
+    "branch_reduced_norm": "2",
+    "characteristic": "lambda**2 - 2*lambda*s - 2*lambda + s**2",
+    "coefficient_matrix": [
+      [
+        "0",
+        "0",
+        "lambda/2",
+        "(2*k**2 + lambda)/2",
+        "-lambda"
+      ],
+      [
+        "0",
+        "lambda/2",
+        "0",
+        "-k*omega",
+        "0"
+      ],
+      [
+        "lambda/2",
+        "0",
+        "0",
+        "-(lambda - 2*omega**2)/2",
+        "lambda"
+      ],
+      [
+        "0",
+        "I*k/2",
+        "I*omega/2",
+        "I*omega/2",
+        "-I*omega"
+      ],
+      [
+        "I*k/2",
+        "I*omega/2",
+        "0",
+        "-I*k/2",
+        "I*k"
+      ],
+      [
+        "(2*k**2 + lambda)/4",
+        "k*omega",
+        "-(lambda - 2*omega**2)/4",
+        "-(k**2 - omega**2 - 2)/2",
+        "-lambda"
+      ],
+      [
+        "1/2",
+        "0",
+        "-1/2",
+        "0",
+        "0"
+      ],
+      [
+        "1/2",
+        "0",
+        "-1/2",
+        "1",
+        "-k**2 - lambda + omega**2"
+      ]
+    ],
+    "column_order": [
+      "A",
+      "B",
+      "C",
+      "K",
+      "U"
+    ],
+    "constraints": [
+      "A=C",
+      "omega*(A+K-2U)+k*B=0",
+      "k*(A-K+2U)+omega*B=0"
+    ],
+    "dispersion": "omega^2=k_n^2+lambda+/-sqrt(2*lambda)",
+    "master_matrix": [
+      [
+        "lambda",
+        "-2*lambda"
+      ],
+      [
+        "-1",
+        "lambda"
+      ]
+    ],
+    "polar_eigenvectors": {
+      "minus": "U/K=1/sqrt(2*lambda)",
+      "plus": "U/K=-1/sqrt(2*lambda)"
+    },
+    "reconstruction": [
+      "R=K-2U",
+      "A=C=-(omega^2+k^2)R/(omega^2-k^2)",
+      "B=2k*omega*R/(omega^2-k^2)"
+    ],
+    "reduced_nonzero_rows": [
+      "k**2*(K*k**2 + K*lambda - K*omega**2 - 2*U*lambda)/((k - omega)*(k + omega))",
+      "-k*omega*(K*k**2 + K*lambda - K*omega**2 - 2*U*lambda)/((k - omega)*(k + omega))",
+      "omega**2*(K*k**2 + K*lambda - K*omega**2 - 2*U*lambda)/((k - omega)*(k + omega))",
+      "0*I",
+      "0*I",
+      "K - U*k**2 - U*lambda + U*omega**2",
+      "0",
+      "K - U*k**2 - U*lambda + U*omega**2"
+    ],
+    "row_order": [
+      "E00",
+      "E01",
+      "E11",
+      "E0a",
+      "E1a",
+      "sphere_trace",
+      "sphere_tracefree",
+      "Maxwell_axial"
+    ],
+    "symmetrizer": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "2*lambda"
+      ]
+    ]
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE preflight certifies the generic ell>=2 polar coefficient matrix, its exact two-master algebraic reduction, isospectral dispersion, corrected Maxwell volume term, reduced symmetrizer, and one full-tensor l=2 plus-branch solution. It does not yet certify an arbitrary-lambda full-tensor polar identity, exceptional ell=0,1 sectors, covariant symplectic normalization, the complete fourth-order adjoint cokernel, quadratic obstruction coefficients, causal evolution, scattering, or quantum theory.",
+  "classification": {
+    "all_ell_arbitrary_lambda_tensor_derivation": false,
+    "complete_fourth_order_adjoint": false,
+    "covariant_symplectic_matching": false,
+    "ell0_ell1_complete": false,
+    "exact_l2_plus_tensor_solution": true,
+    "full_polar_master_theorem": false,
+    "generic_polar_matrix": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "fixed-P_N compact product; standard polar Regge--Wheeler gauge; ell>=2 generic matrix",
+  "exact_tensor_fixture": {
+    "A_equals_C": "-(sqrt(3) + 3)/3",
+    "Einstein_residual": "0",
+    "K": "1",
+    "Maxwell_density_residual": "0",
+    "U": "-sqrt(3)/6",
+    "branch": "plus",
+    "chart_convention": "0<theta<pi, so sqrt(det(g_S2))=sin(theta); polar axes by smooth continuation",
+    "ell": 2,
+    "omega_squared": "6+2*sqrt(3)",
+    "volume_density": "sqrt(-det(g(epsilon))) retained through first order"
+  },
+  "exceptional_ledger": {
+    "ell0": "OPEN homogeneous scalar/radion/charge block",
+    "ell1": "OPEN because the polar tensor harmonic vanishes and Regge--Wheeler gauge changes rank"
+  },
+  "gauge_fixed_coefficients": [
+    "h_AB=(A,B,C)Y",
+    "h_ab=K g_ab Y",
+    "a_a=U X_a"
+  ],
+  "generality_level": "G1_POLAR_ELL_GE2_MATRIX_PREFLIGHT",
+  "isospectral_relation": "the generic polar master eigenvalues equal the certified axial eigenvalues lambda+/-sqrt(2lambda), with different reconstruction maps",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "promote the generic matrix to an arbitrary-lambda full-tensor identity, classify ell=0,1, and then match axial/polar reduced currents to the covariant symplectic form",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_polar_master_preflight.py",
+    "generator_sha256": "3a88268438ce89e2c651530193c6df0b1cdcf91e1af4470b8bff9541f6c13732",
+    "inputs": {
+      "bridge/certificates/compact_harmonic_domain_taub_descent.json": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09",
+      "bridge/certificates/einstein_maxwell_axial_master_complex.json": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02"
+    }
+  },
+  "reduced_pairing": {
+    "covariant_symplectic_matching": false,
+    "current": "j^A=u^T W partial^A v-(partial^A u)^T W v",
+    "symmetrizer": "diag(1,2lambda)"
+  },
+  "result_id": "COMPACT_EM_POLAR_MASTER_PREFLIGHT",
+  "result_state": "GENERIC_POLAR_MASTER_MATRIX_AND_L2_FIXTURE_CERTIFIED_EXCEPTIONAL_AND_FULL_TENSOR_OPEN",
+  "schema": "einstein-maxwell-polar-master-preflight-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_polar_master_preflight.schema.json",
+  "schema_sha256": "9a586d58bc03267a9a69b7de70b11459c768935789e8126c58383c9d5b70a063",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_polar_master_preflight --verify bridge/certificates/einstein_maxwell_polar_master_preflight.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_polar_master_preflight.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_polar_master_preflight"
+  ],
+  "volume_density_correction": {
+    "consequence": "the corrected Maxwell row is (A-C)/2+K+(omega^2-k^2-lambda)U=0",
+    "correct_operator": "M^nu=(1/sqrt(-g)) partial_mu(sqrt(-g) F^(mu nu)) with the perturbed determinant retained",
+    "issue": "the background-volume Maxwell divergence used by trace-free axial fixtures is invalid when delta sqrt(-g) is nonzero"
+  }
+}

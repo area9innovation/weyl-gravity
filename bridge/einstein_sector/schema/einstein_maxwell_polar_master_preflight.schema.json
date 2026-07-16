@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema","schema_path","schema_sha256","result_id","result_state","lifecycle_state","dependency_tags","generality_level","provenance","domain","volume_density_correction","gauge_fixed_coefficients","algebraic_master_reduction","exact_tensor_fixture","isospectral_relation","reduced_pairing","exceptional_ledger","classification","next_gate","claim_boundary","verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-polar-master-preflight-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string","pattern":"^[0-9a-f]{64}$"},
+    "result_id": {"const":"COMPACT_EM_POLAR_MASTER_PREFLIGHT"},
+    "result_state": {"const":"GENERIC_POLAR_MASTER_MATRIX_AND_L2_FIXTURE_CERTIFIED_EXCEPTIONAL_AND_FULL_TENSOR_OPEN"},
+    "lifecycle_state": {"const":"CLASSIFIED"},
+    "dependency_tags": {"const":["LOCAL-ALGEBRAIC","REDUCED-MODE"]},
+    "generality_level": {"const":"G1_POLAR_ELL_GE2_MATRIX_PREFLIGHT"},
+    "provenance":{"type":"object"},"domain":{"type":"string"},"volume_density_correction":{"type":"object"},"gauge_fixed_coefficients":{"type":"array"},"algebraic_master_reduction":{"type":"object"},"exact_tensor_fixture":{"type":"object"},"isospectral_relation":{"type":"string"},"reduced_pairing":{"type":"object"},"exceptional_ledger":{"type":"object"},"classification":{"type":"object"},"next_gate":{"type":"string"},"claim_boundary":{"type":"string"},"verification_commands":{"type":"array"}
+  }
+}

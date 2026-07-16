@@ -527,6 +527,29 @@ symplectic normalization is still open.  The next block is the polar/even
 master complex, followed by symplectic matching and the extra fourth-order
 adjoint problem.
 
+`COMPACT_EM_POLAR_MASTER_PREFLIGHT` now supplies the complementary generic
+`ell>=2` polar coefficient matrix. Retaining the first-order variation of
+`sqrt(-g)` in the Maxwell divergence is essential: it produces the corrected
+row
+
+```text
+(A-C)/2+K+(omega^2-k^2-lambda)U=0.
+```
+
+After the polar constraints are solved, the two masters `(K,U)` have matrix
+
+```text
+[[lambda,-2lambda],[-1,lambda]],
+```
+
+and hence the same two dispersions
+`omega^2=k_n^2+lambda+/-sqrt(2lambda)` as the axial masters. An exact full
+tensor `ell=2` plus-branch fixture, including the perturbed volume density,
+has zero Einstein and Maxwell residuals. This remains a preflight: the
+arbitrary-`lambda` full-tensor identity, exceptional polar `ell=0,1` blocks,
+and covariant symplectic matching are open. Do not promote it to the full
+polar theorem or begin unrestricted source enumeration yet.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally
