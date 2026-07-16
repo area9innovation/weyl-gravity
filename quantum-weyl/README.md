@@ -84,7 +84,7 @@ schema/             machine-readable result contracts
 |---|---|---|
 | A | `CLASSICAL_IMPORT_CERTIFICATE` | `FAIL_CLOSED`; artifact integrity verified, but 15 of 18 export categories remain incomplete or unavailable |
 | B | counterterm/anomaly bases and descent database | `AFN0_CANDIDATE_QUOTIENTS_COMPLETE`; the covariant ghost-zero quotient has even/odd dimensions `2/1`, the Weyl-ghost quotient has even/odd dimensions `2/1`, and all carry exact normalized witnesses; minimal-BV antifield completion remains open |
-| C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `IN_PROGRESS` import/projection infrastructure only |
+| C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `STRUCTURAL_PREFLIGHT_VERIFIED_PROJECTION_BLOCKED`; conformal-flat order counting and even/odd support are exact, but normalized `pi_cl` projection and adjacent H3/H5 bases remain unavailable |
 | D | reduced and Euclidean coefficient ledgers | `IN_PROGRESS` bookkeeping only; no BV coefficient claimed |
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `INPUT_CONTRACT_READY`; physical certificate `NOT_COMPUTED` |
 | F | one-loop Slavnov breaking and QME status | `WARD_INPUT_CONTRACT_READY`; physical breaking and QME `NOT_COMPUTED` |
@@ -149,6 +149,10 @@ or quantum-master-equation result.
   records the complete covariant ghost-zero AFN0 candidate quotient, the
   exact `Box R` boundary, the nonclosed `R^2` carrier, normalized dual
   witnesses, and the global-topological scope of Euler and Pontryagin.
+- [`reports/afn0-cylinder-restriction-preflight.md`](reports/afn0-cylinder-restriction-preflight.md)
+  records the exact conformal-flat expansion orders, quadratic `C1` carriers,
+  parity support matrix, and the deliberately null normalization/projection
+  fields pending the frozen classical handoff.
 - [`reports/relative-cohomology-engine.md`](reports/relative-cohomology-engine.md)
   records the exact sparse totalization, anchored top-form projection,
   lower-only class exclusion, quotient proof fields, and the uncomputed

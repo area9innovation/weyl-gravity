@@ -22,6 +22,15 @@ vectors, or centered bases in both adjacent degrees 3 and 5.  The displayed
 even/odd basis formula is only a convention ledger; an explicit parity
 operator and its Ward identity remain `NOT_AVAILABLE`/`NOT_COMPUTED`.
 
+The exact structural work that is possible before those exports arrive is
+now certified by
+[`certificates/AFN0_CYLINDER_RESTRICTION_PREFLIGHT.json`](certificates/AFN0_CYLINDER_RESTRICTION_PREFLIGHT.json).
+It independently verifies conformal flatness and `E4(bar g)=0`, proves that
+`C2` and `C dual C` begin at quadratic order as the `C1` pairing and its
+Hodge companion, and derives the diagonal even/odd support pattern from the
+orientation-reversing cylinder parity. Its normalization matrix is
+deliberately `null`; it is a preflight, not `r_cyl` or a residual projection.
+
 Run the import verifier before using this directory:
 
 ```bash
