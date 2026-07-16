@@ -124,7 +124,11 @@ def comparison_payload() -> dict[str, object]:
     return {
         "result_id": "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON",
         "result_state": "LOCAL_D_PULLBACK_COMPUTED_TARGET_CHAIN_MAP_UNDEFINED",
-        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+        "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "EUCLIDEAN-SPECTRAL",
+            "LORENTZIAN-CAUSAL",
+        ],
         "setting_id": "vacuum_cylinder",
         "generator_id": "D_compact",
         "phase_space_id": "compact_quantum",

@@ -37,6 +37,10 @@ class LocalAnomalyComparisonTests(unittest.TestCase):
 
     def test_berger_classical_input_is_setting_specific(self) -> None:
         payload = comparison_payload()
+        self.assertEqual(
+            payload["dependency_tags"],
+            ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"],
+        )
         berger = payload["setting_specific_classical_inputs"][0]
         self.assertEqual(
             berger["classical_D_action"],
