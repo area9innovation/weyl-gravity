@@ -116,22 +116,26 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION.json`](certificates/BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION.json)
 - Extra-cone localization report:
   [`reports/berger-extra-cone-microlocal-localization.md`](reports/berger-extra-cone-microlocal-localization.md)
-- Retained metric causal Volterra resolvent:
-  [`certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT.json`](certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT.json)
-- Volterra construction and graph-pullback proof:
-  [`reports/berger-retained-biwave-volterra-resolvent.md`](reports/berger-retained-biwave-volterra-resolvent.md)
-- Complete retained 26-row causal Green homotopy:
-  [`certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY.json`](certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY.json)
-- Degreewise assembly, support, cyclicity and D-equivariance proof:
-  [`reports/berger-26-row-causal-green-homotopy.md`](reports/berger-26-row-causal-green-homotopy.md)
-- Complete 54-row causal lift:
-  [`certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY.json`](certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY.json)
-- Full gauge-fixed causal-homotopy proof:
-  [`reports/berger-54-row-causal-green-homotopy.md`](reports/berger-54-row-causal-green-homotopy.md)
-- Cyclic causal D-Cartan contraction through arity two:
-  [`certificates/BERGER_CAUSAL_D_CARTAN_EXTENSION.json`](certificates/BERGER_CAUSAL_D_CARTAN_EXTENSION.json)
-- Causal-hull and cyclic-Reynolds proof:
-  [`reports/berger-causal-D-Cartan-extension.md`](reports/berger-causal-D-Cartan-extension.md)
+- Typed retained metric causal Volterra resolvent (V2):
+  [`certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2.json`](certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2.json)
+- Typed Volterra construction, estimates and adjoint-reversal proof:
+  [`reports/berger-retained-biwave-volterra-resolvent-v2.md`](reports/berger-retained-biwave-volterra-resolvent-v2.md)
+- Strict schema, source manifest and timed verification receipt:
+  [`schema/berger-retained-biwave-volterra-resolvent-v2.schema.json`](schema/berger-retained-biwave-volterra-resolvent-v2.schema.json),
+  [`manifests/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2_SOURCE_MANIFEST.json`](manifests/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2_SOURCE_MANIFEST.json),
+  [`certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2_VERIFICATION_RECEIPT.json`](certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2_VERIFICATION_RECEIPT.json)
+- Complete retained 26-row causal Green homotopy pinned to Volterra V2:
+  [`certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json`](certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json)
+- Degreewise V2 assembly, support, cyclicity and D-equivariance proof:
+  [`reports/berger-26-row-causal-green-homotopy-v2.md`](reports/berger-26-row-causal-green-homotopy-v2.md)
+- Complete 54-row causal V2 lift:
+  [`certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json`](certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json)
+- Full gauge-fixed causal-homotopy V2 proof:
+  [`reports/berger-54-row-causal-green-homotopy-v2.md`](reports/berger-54-row-causal-green-homotopy-v2.md)
+- Cyclic causal D-Cartan V2 contraction through arity two:
+  [`certificates/BERGER_CAUSAL_D_CARTAN_V2.json`](certificates/BERGER_CAUSAL_D_CARTAN_V2.json)
+- Causal-hull and cyclic-Reynolds V2 proof:
+  [`reports/berger-causal-D-Cartan-v2.md`](reports/berger-causal-D-Cartan-v2.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:

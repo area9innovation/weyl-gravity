@@ -12,10 +12,10 @@ from d_quotient_classical.backreacted_clock.berger_linearized_bach_pbw import RO
 
 
 REDUCTION = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json"
-ENDPOINT = ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY.json"
+ENDPOINT = ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json"
 D_ACTION = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json"
-CERTIFICATE_PATH = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY.json"
-REPORT_PATH = ROOT / "d_quotient_classical/reports/berger-54-row-causal-green-homotopy.md"
+CERTIFICATE_PATH = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json"
+REPORT_PATH = ROOT / "d_quotient_classical/reports/berger-54-row-causal-green-homotopy-v2.md"
 
 
 def _sha256(path):
@@ -38,8 +38,8 @@ def build():
     if d_action["flags"]["BERGER_LOCAL_D_ACTION_EQUIVARIANT"] is not True:
         raise AssertionError("54-row D action is not equivariant")
     payload = {
-        "schema": "pure-weyl-berger-54-row-causal-green-homotopy-v1",
-        "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY",
+        "schema": "pure-weyl-berger-54-row-causal-green-homotopy-v2",
+        "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
         "setting_id": reduction["setting_id"],
         "claim_status": "CERTIFIED_COMPLETE_GAUGE_FIXED_CAUSAL_GREEN_HOMOTOPY_HADAMARD_OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
@@ -75,14 +75,14 @@ def build():
             "no_nonlocal_spatial_projector": True,
         },
         "flags": {
-            "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": True,
+            "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2": True,
             "BERGER_54_ROW_CAUSAL_REDUCTION": True,
-            "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY": True,
-            "BERGER_CAUSAL_GREEN_HOMOTOPY": True,
-            "BERGER_CAUSAL_D_CARTAN_EXTENSION": False,
+            "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2": True,
+            "BERGER_CAUSAL_GREEN_HOMOTOPY_V2": True,
+            "BERGER_CAUSAL_D_CARTAN_V2": False,
             "BERGER_HADAMARD_DATA": False,
         },
-        "next_gate": "BERGER_CAUSAL_D_CARTAN_EXTENSION",
+        "next_gate": "BERGER_CAUSAL_D_CARTAN_V2",
         "claim_boundary": "This theorem constructs D-equivariant advanced and retarded chain contractions on every row of the complete 54-row gauge-fixed classical Berger BV complex. It does not construct Hadamard two-point functions, the cyclic arity-two D-Cartan contraction, renormalized composites, a QME solution, or a quantum theorem.",
     }
     return payload
@@ -125,13 +125,13 @@ def verify(payload):
         raise AssertionError("a complete causal check dropped")
     if payload["dimension_ledger"]["complete_rows"] != payload["dimension_ledger"]["algebraically_contracted_rows"] + payload["dimension_ledger"]["causally_propagating_rows"]:
         raise AssertionError("54-row dimension ledger failed")
-    for key in ("BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY", "BERGER_54_ROW_CAUSAL_REDUCTION", "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY", "BERGER_CAUSAL_GREEN_HOMOTOPY"):
+    for key in ("BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2", "BERGER_54_ROW_CAUSAL_REDUCTION", "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2", "BERGER_CAUSAL_GREEN_HOMOTOPY_V2"):
         if payload["flags"][key] is not True:
             raise AssertionError(f"causal theorem dropped: {key}")
-    for key in ("BERGER_CAUSAL_D_CARTAN_EXTENSION", "BERGER_HADAMARD_DATA"):
+    for key in ("BERGER_CAUSAL_D_CARTAN_V2", "BERGER_HADAMARD_DATA"):
         if payload["flags"][key] is not False:
             raise AssertionError(f"downstream theorem promoted: {key}")
-    if payload["next_gate"] != "BERGER_CAUSAL_D_CARTAN_EXTENSION":
+    if payload["next_gate"] != "BERGER_CAUSAL_D_CARTAN_V2":
         raise AssertionError("next gate drifted")
 
 
@@ -150,7 +150,7 @@ def main():
         raise AssertionError("54-row causal outputs drifted")
     if args.guards:
         mutants = (
-            ("drop endpoint", ("flags", "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY"), False),
+            ("drop endpoint", ("flags", "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2"), False),
             ("promote Hadamard", ("flags", "BERGER_HADAMARD_DATA"), True),
             ("wrong dimension", ("dimension_ledger", "complete_rows"), 53),
         )
@@ -162,7 +162,7 @@ def main():
             except AssertionError:
                 continue
             raise AssertionError(f"mutation guard accepted: {name}")
-    print("BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY: PASS")
+    print("BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2: PASS")
 
 
 if __name__ == "__main__":

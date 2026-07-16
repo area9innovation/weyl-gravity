@@ -11,13 +11,13 @@ import json
 from d_quotient_classical.backreacted_clock.berger_linearized_bach_pbw import ROOT
 
 
-CAUSAL = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY.json"
+CAUSAL = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json"
 TRANSFER = ROOT / "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_TRANSFER.json"
 Q2 = ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json"
 D_ACTION = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json"
 GAUGE_FIXED = ROOT / "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json"
-CERTIFICATE_PATH = ROOT / "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_EXTENSION.json"
-REPORT_PATH = ROOT / "d_quotient_classical/reports/berger-causal-D-Cartan-extension.md"
+CERTIFICATE_PATH = ROOT / "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_V2.json"
+REPORT_PATH = ROOT / "d_quotient_classical/reports/berger-causal-D-Cartan-v2.md"
 
 
 def _sha256(path):
@@ -101,7 +101,7 @@ def build():
     transfer = json.loads(TRANSFER.read_text())
     q2 = json.loads(Q2.read_text())
     d_action = json.loads(D_ACTION.read_text())
-    if causal["flags"]["BERGER_CAUSAL_GREEN_HOMOTOPY"] is not True:
+    if causal["flags"]["BERGER_CAUSAL_GREEN_HOMOTOPY_V2"] is not True:
         raise AssertionError("complete causal contraction is absent")
     if transfer["flags"]["BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM"] is not True:
         raise AssertionError("conditional Cartan transfer theorem is absent")
@@ -114,8 +114,8 @@ def build():
     if not all(formal.values()):
         raise AssertionError("cyclic Reynolds argument failed")
     payload = {
-        "schema": "pure-weyl-berger-causal-D-Cartan-extension-v1",
-        "result_id": "BERGER_CAUSAL_D_CARTAN_EXTENSION",
+        "schema": "pure-weyl-berger-causal-D-Cartan-extension-v2",
+        "result_id": "BERGER_CAUSAL_D_CARTAN_V2",
         "setting_id": causal["setting_id"],
         "claim_status": "CERTIFIED_CAUSAL_UNARY_AND_CYCLIC_ARITY_TWO_D_CARTAN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
@@ -166,11 +166,11 @@ def build():
             **formal,
         },
         "flags": {
-            "BERGER_CAUSAL_GREEN_HOMOTOPY": True,
+            "BERGER_CAUSAL_GREEN_HOMOTOPY_V2": True,
             "BERGER_CAUSAL_UNARY_D_CARTAN": True,
             "BERGER_CAUSAL_ARITY_TWO_SOURCE_CLOSED": True,
             "BERGER_CAUSAL_ARITY_TWO_CYCLIC_COMPLETION": True,
-            "BERGER_CAUSAL_D_CARTAN_EXTENSION": True,
+            "BERGER_CAUSAL_D_CARTAN_V2": True,
             "BERGER_ARITY_THREE_D_CARTAN": False,
             "BERGER_HADAMARD_DATA": False,
             "QUANTUM_CLAIM": False,
@@ -234,7 +234,7 @@ Hadamard data, QME restoration and quantum claims remain open.
 def verify(payload):
     if not all(payload["exact_checks"].values()):
         raise AssertionError("a causal Cartan check dropped")
-    for key in ("BERGER_CAUSAL_GREEN_HOMOTOPY", "BERGER_CAUSAL_UNARY_D_CARTAN", "BERGER_CAUSAL_ARITY_TWO_SOURCE_CLOSED", "BERGER_CAUSAL_ARITY_TWO_CYCLIC_COMPLETION", "BERGER_CAUSAL_D_CARTAN_EXTENSION"):
+    for key in ("BERGER_CAUSAL_GREEN_HOMOTOPY_V2", "BERGER_CAUSAL_UNARY_D_CARTAN", "BERGER_CAUSAL_ARITY_TWO_SOURCE_CLOSED", "BERGER_CAUSAL_ARITY_TWO_CYCLIC_COMPLETION", "BERGER_CAUSAL_D_CARTAN_V2"):
         if payload["flags"][key] is not True:
             raise AssertionError(f"Cartan theorem dropped: {key}")
     for key in ("BERGER_ARITY_THREE_D_CARTAN", "BERGER_HADAMARD_DATA", "QUANTUM_CLAIM"):
@@ -273,7 +273,7 @@ def main():
             except AssertionError:
                 continue
             raise AssertionError(f"mutation guard accepted: {name}")
-    print("BERGER_CAUSAL_D_CARTAN_EXTENSION: PASS")
+    print("BERGER_CAUSAL_D_CARTAN_V2: PASS")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,92 @@
+{
+  "arity_two_contraction": {
+    "closure": "delta A_D,cyc^(2)=0 from delta q2=0 and [D54,q2]=0",
+    "concrete_Koszul_audit": {
+      "C3_group_law_defects": 0,
+      "admissible_degree_zero_row_triples": 25543,
+      "odd_Darboux_dual_slots": 27,
+      "rotation_sign": "(-1)^(dual(second)+degree(first)*degree(second))",
+      "total_rows": 54
+    },
+    "cyclic_projector": "Cyc_3=(I+tau+tau^2)/3 with the frozen Koszul signs and BV pairing",
+    "cyclicity": "A_D,cyc^(2) is a cyclic trilinear tensor because q2 and iota_D,cyc^(1) are cyclic coderivations",
+    "identity": "delta iota_D,cyc^(2)=Cyc_3 delta R^(2)=-Cyc_3 A_D,cyc^(2)=-A_D,cyc^(2)",
+    "local_inputs": "q2, D54, the BV pairing and the cyclic permutation are finite-order/support-local",
+    "primitive": "iota_D,cyc^(2)=Cyc_3 R^(2)",
+    "raw_primitive": "R^(2)=-Lambda54,+ A_D,cyc^(2)",
+    "source": "A_D,cyc^(2)=[q2,iota_D,cyc^(1)]",
+    "support": "two-sided causal hull of the union of the two compact input supports"
+  },
+  "claim_boundary": "This theorem constructs a cyclic two-sided-causal D-Cartan contraction through arity two on all 54 rows at the frozen rational Berger fixture. The q2 and D inputs are support-local, while the homotopies have causal-hull support. It does not claim a separately retarded cyclic binary primitive, arity-three closure, Hadamard data, anomaly cancellation, a QME solution, or a quantum result.",
+  "claim_status": "CERTIFIED_CAUSAL_UNARY_AND_CYCLIC_ARITY_TWO_D_CARTAN",
+  "dependency_refs": {
+    "complete_causal_contraction": {
+      "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "e1e5de9d1648e2f4f00f7b75cc71332ac604b41ba954c7118ee093c651452e31"
+    },
+    "conditional_transfer": {
+      "result_id": "BERGER_CAUSAL_D_CARTAN_TRANSFER",
+      "sha256": "0eb4a17ea7dd44e01f7fed1f48065e91d9419131d4cab6a6b1cb29c5cc64e520"
+    },
+    "local_D_action": {
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    },
+    "odd_Darboux_pairing": {
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "support_local_q2": {
+      "result_id": "BERGER_SUPPORT_LOCAL_Q2",
+      "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "D_derivation_imported": true,
+    "actual_54_row_C3_group_law": true,
+    "all_54_rows_included": true,
+    "arity_two_Cartan_identity": true,
+    "arity_two_cyclic_primitive": true,
+    "arity_two_source_closed": true,
+    "arity_two_source_cyclic": true,
+    "cyclic_primitive_identity": true,
+    "cyclic_projector_commutes_with_delta": true,
+    "cyclic_projector_idempotent": true,
+    "cyclic_source_fixed": true,
+    "two_sided_causal_support": true,
+    "unary_Cartan_identity": true,
+    "unary_cyclic_completion": true
+  },
+  "flags": {
+    "BERGER_ARITY_THREE_D_CARTAN": false,
+    "BERGER_CAUSAL_ARITY_TWO_CYCLIC_COMPLETION": true,
+    "BERGER_CAUSAL_ARITY_TWO_SOURCE_CLOSED": true,
+    "BERGER_CAUSAL_D_CARTAN_V2": true,
+    "BERGER_CAUSAL_GREEN_HOMOTOPY_V2": true,
+    "BERGER_CAUSAL_UNARY_D_CARTAN": true,
+    "BERGER_HADAMARD_DATA": false,
+    "QUANTUM_CLAIM": false
+  },
+  "next_gate": "BERGER_ARITY_THREE_D_CARTAN_OR_HADAMARD",
+  "result_id": "BERGER_CAUSAL_D_CARTAN_V2",
+  "schema": "pure-weyl-berger-causal-D-Cartan-extension-v2",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "support_scope": {
+    "advanced_retarded_chain_homotopies_remain_one_sided": true,
+    "cyclic_Cartan_primitives_are_two_sided_causal": true,
+    "incorrect_claim_rejected": "a nontrivial cyclic primitive is not claimed to be separately retarded or advanced",
+    "inverse_spatial_laplacian": false,
+    "mode_projector": false
+  },
+  "unary_contraction": {
+    "cyclic_identity": "[q1,iota_D,cyc^(1)]=D54",
+    "cyclic_primitive": "iota_D,cyc^(1)=1/2(iota_D,+^(1)+(iota_D,+^(1))^dagger_cyc)",
+    "initial_pair": "iota_D,+/-^(1)=Lambda54,+/- D54",
+    "one_sided_identities": "[q1,iota_D,+/-^(1)]=D54",
+    "support": "two-sided causal hull J(supp f)=J^+(supp f) union J^-(supp f)"
+  }
+}

@@ -13,14 +13,14 @@ from d_quotient_classical.backreacted_clock.berger_linearized_bach_pbw import RO
 
 
 PREFLIGHT = ROOT / "d_quotient_classical/certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json"
-VOLTERRA = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT.json"
+VOLTERRA = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2.json"
 RETAINED_Q = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json"
 LAYOUT = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json"
 D_ACTION = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json"
 CAUSAL_REDUCTION = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json"
-CERTIFICATE_PATH = ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY.json"
-PROOF_PATH = ROOT / "d_quotient_classical/generated/berger_26_row_causal_green_homotopy/causal_proof.json"
-REPORT_PATH = ROOT / "d_quotient_classical/reports/berger-26-row-causal-green-homotopy.md"
+CERTIFICATE_PATH = ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json"
+PROOF_PATH = ROOT / "d_quotient_classical/generated/berger_26_row_causal_green_homotopy_v2/causal_proof.json"
+REPORT_PATH = ROOT / "d_quotient_classical/reports/berger-26-row-causal-green-homotopy-v2.md"
 CLASSICAL_INPUT_COMMIT = "c2f4bf65556ff2592f5e6c2610a4f54272b3b130"
 
 
@@ -66,7 +66,7 @@ def _load_dependencies() -> dict[str, dict]:
 def _proof(dependencies: dict[str, dict]) -> dict:
     return {
         "schema": "pure-weyl-berger-26-row-causal-green-proof-v1",
-        "result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_PROOF",
+        "result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2_PROOF",
         "setting_id": dependencies["volterra"]["setting_id"],
         "dependency_refs": {
             "causal_witness_preflight": _dependency(PREFLIGHT),
@@ -89,7 +89,7 @@ def _proof(dependencies: dict[str, dict]) -> dict:
             "degree_1_metric_antifield": {
                 "operator": "A10^sharp",
                 "green": "G_A10sharp,+/-=(G_A10,-/+)^sharp",
-                "reason": "formal-adjoint Green duality in complementary degree",
+                "reason": "typed reversal (G_A,+)^sharp=G_(A^sharp),- in the metric-antifield pairing; A=A^sharp is not assumed",
             },
             "degree_2_identity": {
                 "operator": "P_gh^sharp",
@@ -154,11 +154,14 @@ def build() -> tuple[dict, dict]:
     proof_artifact = _artifact(PROOF_PATH)
     proof_row = {"status": "VERIFIED", "proof_artifact": proof_artifact}
     payload = {
-        "schema": "quantum-weyl-berger-26-row-green-endpoint-export-v1",
-        "result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY",
+        "schema": "quantum-weyl-berger-26-row-green-endpoint-export-v2",
+        "result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
         "result_state": "GREEN_CERTIFIED_HADAMARD_OPEN",
         "classical_commit": CLASSICAL_INPUT_COMMIT,
         "dependency_tags": ["LORENTZIAN-CAUSAL"],
+        "dependency_refs": {
+            "retained_metric_volterra_v2": _dependency(VOLTERRA),
+        },
         "setting_id": dependencies["volterra"]["setting_id"],
         "row_layout": {
             "total_rows": 26, "degree_ranks": [3, 10, 10, 3],
@@ -260,7 +263,7 @@ def main() -> int:
             except AssertionError:
                 continue
             raise AssertionError(f"mutation guard accepted: {name}")
-    print("BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY: PASS")
+    print("BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2: PASS")
     return 0
 
 

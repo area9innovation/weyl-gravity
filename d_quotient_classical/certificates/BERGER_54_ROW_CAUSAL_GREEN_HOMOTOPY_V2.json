@@ -1,0 +1,67 @@
+{
+  "claim_boundary": "This theorem constructs D-equivariant advanced and retarded chain contractions on every row of the complete 54-row gauge-fixed classical Berger BV complex. It does not construct Hadamard two-point functions, the cyclic arity-two D-Cartan contraction, renormalized composites, a QME solution, or a quantum theorem.",
+  "claim_status": "CERTIFIED_COMPLETE_GAUGE_FIXED_CAUSAL_GREEN_HOMOTOPY_HADAMARD_OPEN",
+  "construction": {
+    "D_equivariance": "[D54,S_cl]=0, D54 iota=iota D26, pi D54=D26 pi and [D26,Lambda26,+/-]=0",
+    "chain_identity": "q54 Lambda54,+/-+Lambda54,+/- q54=(I54-iota pi)+iota I26 pi=I54",
+    "cyclicity": "the cyclic SDR transports the complementary-degree advanced/retarded adjoint relation",
+    "formula": "Lambda54,+/-=S_cl+iota_cl Lambda26,+/- pi_cl",
+    "inverse_curl": false,
+    "inverse_spatial_laplacian": false,
+    "mode_projector": false,
+    "support": "S_cl, iota_cl and pi_cl are finite-order support-local; Lambda26,+/- is same-sided causal"
+  },
+  "dependency_refs": {
+    "local_D_action": {
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    },
+    "retained_endpoint_green_homotopy": {
+      "result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "6a71b05e1c9fdf8a8673b28076ab88e56007047db0c98d77a55f2df02e69cd94"
+    },
+    "support_local_cyclic_reduction": {
+      "result_id": "BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION",
+      "sha256": "8893fa0457e513913e0a71c5e0f1923ff06cb8c32f7a662808c5c9ee37f7e521"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "dimension_ledger": {
+    "algebraically_contracted_rows": 28,
+    "causally_propagating_rows": 26,
+    "complete_rows": 54,
+    "degree_ranks": [
+      5,
+      22,
+      22,
+      5
+    ],
+    "identity": "54=28+26"
+  },
+  "exact_checks": {
+    "D_equivariance": true,
+    "advanced_chain_homotopy_identity": true,
+    "advanced_support": true,
+    "all_54_rows_included": true,
+    "cyclic_advanced_retarded_adjointness": true,
+    "no_nonlocal_spatial_projector": true,
+    "retarded_chain_homotopy_identity": true,
+    "retarded_support": true,
+    "zero_modes_retained": true
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2": true,
+    "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2": true,
+    "BERGER_54_ROW_CAUSAL_REDUCTION": true,
+    "BERGER_CAUSAL_D_CARTAN_V2": false,
+    "BERGER_CAUSAL_GREEN_HOMOTOPY_V2": true,
+    "BERGER_HADAMARD_DATA": false
+  },
+  "next_gate": "BERGER_CAUSAL_D_CARTAN_V2",
+  "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+  "schema": "pure-weyl-berger-54-row-causal-green-homotopy-v2",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}
