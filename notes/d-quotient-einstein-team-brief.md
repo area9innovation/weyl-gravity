@@ -586,6 +586,36 @@ exactly the smooth residual diffeomorphism. The standard polar linear complex
 is therefore complete for all `ell`; symplectic matching and extra adjoint
 blocks are the remaining compact linear gates.
 
+`COMPACT_EM_RADIATIVE_SYMPLECTIC_MATCHING` now closes the radiative part of
+the symplectic gate.  The exact arbitrary-function second variation gives the
+polar action matrix
+
+```text
+G_P=(N_lm/2)[[1,-2],[-2,2lambda]],
+```
+
+and the axial transverse-coefficient matrix
+`W_A=(N_lm/2)diag(lambda,2)`.  Because the certified axial potentials enter
+through the covariant curl, their action-normalized master form is
+
+```text
+G_A=(N_lm/2)W_A M_A
+   =(N_lm/2)[[lambda^2,2lambda],[2lambda,2lambda]].
+```
+
+Both forms are positive for every `ell>=2`.  At `ell=1` they become rank one
+with exactly the respective residual gauge branch as kernel, leaving a
+positive physical quotient.  On the closed Cauchy surface their Wronskians
+equal the integrated Einstein--Maxwell Lee--Wald form; fixed-bundle Maxwell
+variations are global one-forms, so no Cech corner term occurs.  This also
+corrects the provisional polar `Psi` weight to bracket weight `4`, or
+`2N_1m` after the common factor.
+
+Do not infer a Weyl--Maxwell symplectic embedding from this result.  The next
+compact gates are the homogeneous `ell=0` and axial `ell=1` twist global
+pairs, followed independently by the Weyl--Maxwell Lee--Wald pullback and the
+extra fourth-order adjoint blocks.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally

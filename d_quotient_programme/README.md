@@ -207,3 +207,13 @@ null vector is periodic gauge for nonzero Fourier modes, while the constant
 twist remains globally.  A local reduced current is exact; polar modes,
 covariant symplectic matching, extra fourth-order adjoint classes, and the
 quadratic coefficient theorem remain open.
+
+The complete polar tower and its exceptional blocks are now classified, and
+the radiative symplectic gate is closed on the fixed bundle.  The exact
+Einstein--Maxwell second variation gives positive action-normalized axial and
+polar forms for every `ell>=2`; at `ell=1` their kernels are exactly the
+declared residual gauge branches, with positive physical quotients.  On the
+closed `S1 x S2` Cauchy surface these reduced Wronskians equal the integrated
+Einstein--Maxwell Lee--Wald form.  The remaining compact gates are the
+homogeneous `ell=0` and axial-twist global pairs, the independent
+Weyl--Maxwell pullback, and the extra fourth-order adjoint classes.

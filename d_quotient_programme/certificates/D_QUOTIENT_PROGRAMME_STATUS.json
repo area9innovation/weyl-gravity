@@ -29,7 +29,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "29097c01c07c7769b1568a96824d8a02526ad224",
+  "programme_base_commit": "054b6ed7ac99628dc006e8a54c9bb27aee9b19eb",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -303,6 +303,15 @@
       "setting_id": "compact_einstein_maxwell_polar_exceptional_complex",
       "status": "CERTIFIED",
       "verdict": "G2_POLAR_ALL_ELL_LINEAR_COMPLEX"
+    },
+    {
+      "boundary_conditions": "fixed-P_N compact product; all periodic S1 momenta and m; radiative ell>=2 plus physical ell=1 quotient; before final residual quotient",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_radiative_symplectic",
+      "setting_id": "compact_einstein_maxwell_radiative_symplectic_matching",
+      "status": "CERTIFIED",
+      "verdict": "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHING"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -1500,6 +1509,52 @@
       "sha256": "dbc1042d5750b5508c7d3fb711350a1d132f11bbf09cf64fe7fe47eee909fc29"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-radiative-symplectic-matching.json",
+      "payload": {
+        "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle P_N with N=2; every periodic S1 momentum and m; radiative ell>=2 plus the physical ell=1 quotient; smooth identity-component gauge; before final residual quotient",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the exact arbitrary-harmonic Einstein-Maxwell second variation fixes the axial transverse-coefficient and polar master kinetic Hessians",
+          "pullback through the axial curl potentials gives G_A=diag(lambda,2)M_A, while G_P=[[1,-2],[-2,2lambda]]",
+          "both action-normalized forms are positive on every ell>=2 radiative block",
+          "at ell=1 both forms have exactly the declared gauge branch as kernel and are positive on the physical quotient",
+          "the integrated reduced Wronskians equal the Einstein-Maxwell Lee-Wald form on closed S1 x S2",
+          "fixed-bundle Maxwell variations are global one-forms and produce no Cech corner term"
+        ],
+        "evidence": {
+          "commit": "054b6ed7ac99628dc006e8a54c9bb27aee9b19eb",
+          "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+          "sha256": "b111de279f808033bbd5bc8decec194c8f5d27e9abc38793abf35e07a14c2acb"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "compute the homogeneous ell=0 and axial ell=1 twist global presymplectic pairs, then independently compare the Weyl-Maxwell Lee-Wald pullback to the certified Einstein-Maxwell form",
+        "not_established": [
+          "the homogeneous ell=0 radion/circumference/electric-charge pairing",
+          "the axial ell=1 global twist pairing",
+          "the Weyl-Maxwell pullback or a symplectic embedding of the Einstein sector",
+          "the complete fourth-order Weyl-Maxwell adjoint cokernel",
+          "a Lorentzian-causal, scattering, or quantum theorem"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_radiative_symplectic",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_radiative_symplectic_matching",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHING",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_radiative_symplectic_action_check --verify",
+          "python3 -m bridge.einstein_sector.einstein_maxwell_radiative_symplectic_matching --verify bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_radiative_symplectic_matching.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_radiative_symplectic_matching"
+        ]
+      },
+      "sha256": "cd6d6ce6d964f7ac384b74bd05b6e79e9fba590f1dd2f377a3a1769c565a7600"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -1629,9 +1684,9 @@
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "The fixed compact U(1) domain and relative Taub descent are certified. The complete standard axial and polar harmonic quotients are classified for all ell, momenta, and m. Polar ell=0 contains only homogeneous radion/circumference/electric-charge data, while ell=1 contains one physical triplet and an exactly gauge zero branch.",
-      "next_gate": "match the complete axial and polar reduced currents, including exceptional global modes, to the covariant symplectic form and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
-      "result_state": "G2_COMPLETE_AXIAL_AND_POLAR_LINEAR_COMPLEXES_CERTIFIED_SYMPLECTIC_AND_ADJOINT_OPEN",
+      "established": "The fixed compact U(1) domain, complete standard axial/polar harmonic quotients, and action-normalized Einstein--Maxwell covariant symplectic form are certified on every radiative block. Both ell=1 gauge branches are exact presymplectic kernels and the physical quotients are positive.",
+      "next_gate": "compute the homogeneous ell=0 and axial ell=1 twist global presymplectic pairs, then compare the Weyl--Maxwell pullback and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
+      "result_state": "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHED_GLOBAL_AND_WEYL_PULLBACK_OPEN",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },
