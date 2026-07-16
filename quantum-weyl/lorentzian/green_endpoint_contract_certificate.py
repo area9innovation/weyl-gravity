@@ -64,7 +64,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("BERGER 26-ROW GREEN/HADAMARD CONTRACT: PARTIAL FACTORS RECEIVED; METRIC OPEN")
+        print("BERGER 26-ROW GREEN CONTRACT: FACTORS AND CLOCK PRINCIPAL RECEIVED; CURVED OPEN")
     return 0
 
 

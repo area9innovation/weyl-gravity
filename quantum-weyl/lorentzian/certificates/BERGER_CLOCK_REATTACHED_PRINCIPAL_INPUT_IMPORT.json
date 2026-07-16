@@ -1,0 +1,107 @@
+{
+  "claim_boundary": "Imports and independently replays the scalar-biwave principal completion on the support-locally clock-reattached 34-row minimal presentation. It does not construct the curved lower-order QW+WQ witness, advanced or retarded Green operators, the transported 26-row homotopy, Hadamard data, or a Lorentzian quantum theory.",
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-clock-reattached-principal-import.md": "f91f3cee8ba12165dec14427c4075096fe12542155dbdf4eedc7104270668ebe",
+      "clock_reattached_principal_import.py": "4d32ff7627e7b8d2acbb7c78f3fd897f1e1f901c359b6f053654cdfc6b850797",
+      "clock_reattached_principal_import_certificate.py": "b3be0064fd682e1192c2c2650cd90cb39881f9e6bd8aff1da0575ee90fa31b55",
+      "schema/berger-clock-reattached-principal-import-v1.schema.json": "08b3571d8791193c4e0a3b09aae6764cc2a869527226c12361ed184b455fb7ae",
+      "tests/test_clock_reattached_principal_import.py": "584d39111de1d8a7c0f418499d322a6b5865fe8f3d5dddd762e015bfb94cea7a"
+    },
+    "source_manifest_sha256": "9c233adb8c83d039485760f3e27342c04e75fcab7f3c2d5c1bef184c539e5fb1"
+  },
+  "coverage": {
+    "clock_reattached_minimal_rows": 34,
+    "degree_ranks": [
+      5,
+      12,
+      12,
+      5
+    ],
+    "gauge_rank": 5,
+    "metric_rank": 10,
+    "retained_rows": 26
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "independent_exact_checks": {
+    "clock_rows_remain_contractible": true,
+    "diffeomorphism_weyl_cross_terms_zero": true,
+    "fibre_identification_nondegenerate": true,
+    "frozen_ghost_matrix_replayed": true,
+    "frozen_metric_matrix_replayed": true,
+    "full_five_generator_gauge_reconstructed": true,
+    "ghost_scalar_biwave_identity": true,
+    "metric_scalar_biwave_identity": true,
+    "normalized_companion_reconstructed": true,
+    "support_local_clock_reattachment": true
+  },
+  "input_gate_update": {
+    "BERGER_CAUSAL_GREEN_HOMOTOPY": "NOT_CONSTRUCTED",
+    "BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS": "IMPORTED_AND_REPLAYED",
+    "BERGER_CURVED_CLOCK_REATTACHED_WITNESS": "NOT_CONSTRUCTED",
+    "BERGER_HADAMARD_DATA": "NOT_CONSTRUCTED"
+  },
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
+  "preferred_realization": {
+    "kind": "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR",
+    "principal_ghost_operator": "(zeta^2)^2 I_5",
+    "principal_metric_operator": "(zeta^2)^2 I_10",
+    "retained_rank_eight_interpretation": "PRESENTATION_EFFECT_RESOLVED_UPSTAIRS",
+    "scalar_characteristic_set": "zeta^2=0",
+    "transport_target": "retained_26_row_complex"
+  },
+  "provenance": {
+    "artifacts": [
+      {
+        "commit": "5744d923b898a49bea884e5127768e05cb574b94",
+        "path": "d_quotient_classical/certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS.json",
+        "sha256": "83eaaffefcc0c60ecef8d5c19838e70a3f751c6510c387027b92d158233d32d7"
+      },
+      {
+        "commit": "5744d923b898a49bea884e5127768e05cb574b94",
+        "path": "d_quotient_classical/schema/berger-clock-reattached-principal-witness-v1.schema.json",
+        "sha256": "fb9d98fe204edcfd86fdff0a80f7004d0848e961d8175230806af56a299549ec"
+      },
+      {
+        "commit": "5744d923b898a49bea884e5127768e05cb574b94",
+        "path": "d_quotient_classical/backreacted_clock/berger_clock_reattached_principal_witness.py",
+        "sha256": "50fd377c0d4f9528aaff15111632a3c4f1f3689a62cea813eb2c62ee05ade3cc"
+      },
+      {
+        "commit": "5744d923b898a49bea884e5127768e05cb574b94",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_clock_reattached_principal_witness.py",
+        "sha256": "c9612c9affa9f49221abf911cdc08f9748638ba95f6408649bd33bc9f38bf28f"
+      },
+      {
+        "commit": "5744d923b898a49bea884e5127768e05cb574b94",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_clock_reattached_principal_witness.py",
+        "sha256": "d4d5af2f479ee39ff1ee0f024310b56b02d7de549c864f9669be24a025653d38"
+      },
+      {
+        "commit": "5744d923b898a49bea884e5127768e05cb574b94",
+        "path": "d_quotient_classical/reports/berger-clock-reattached-principal-witness.md",
+        "sha256": "b61a95f37eb92b7dd08d953c1c6d1cffa02e8daf19d9b342d59b06da7314fa6b"
+      },
+      {
+        "commit": "5744d923b898a49bea884e5127768e05cb574b94",
+        "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+        "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+      },
+      {
+        "commit": "5744d923b898a49bea884e5127768e05cb574b94",
+        "path": "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
+        "sha256": "9e7503ed7fd6082b4164ae7b03d350c753f941cc45d639ffb02598ba8f262422"
+      }
+    ],
+    "classical_commit": "5744d923b898a49bea884e5127768e05cb574b94"
+  },
+  "quantum_execution_authorized": false,
+  "result_id": "BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT",
+  "result_state": "PRINCIPAL_WITNESS_IMPORTED_CURVED_LOWER_ORDERS_OPEN",
+  "schema": "quantum-weyl-berger-clock-reattached-principal-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

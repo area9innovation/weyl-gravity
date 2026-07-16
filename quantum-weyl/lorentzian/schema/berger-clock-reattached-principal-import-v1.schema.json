@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-clock-reattached-principal-import-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags",
+    "setting_id", "coverage", "independent_exact_checks", "preferred_realization",
+    "input_gate_update", "quantum_execution_authorized", "next_gate", "provenance",
+    "claim_boundary", "consumer_provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-clock-reattached-principal-import-v1"},
+    "result_id": {"const": "BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT"},
+    "result_state": {"const": "PRINCIPAL_WITNESS_IMPORTED_CURVED_LOWER_ORDERS_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "coverage": {
+      "const": {
+        "retained_rows": 26,
+        "clock_reattached_minimal_rows": 34,
+        "degree_ranks": [5, 12, 12, 5],
+        "metric_rank": 10,
+        "gauge_rank": 5
+      }
+    },
+    "independent_exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "support_local_clock_reattachment", "clock_rows_remain_contractible",
+        "full_five_generator_gauge_reconstructed", "normalized_companion_reconstructed",
+        "metric_scalar_biwave_identity", "ghost_scalar_biwave_identity",
+        "frozen_metric_matrix_replayed", "frozen_ghost_matrix_replayed",
+        "fibre_identification_nondegenerate", "diffeomorphism_weyl_cross_terms_zero"
+      ],
+      "properties": {
+        "support_local_clock_reattachment": {"const": true},
+        "clock_rows_remain_contractible": {"const": true},
+        "full_five_generator_gauge_reconstructed": {"const": true},
+        "normalized_companion_reconstructed": {"const": true},
+        "metric_scalar_biwave_identity": {"const": true},
+        "ghost_scalar_biwave_identity": {"const": true},
+        "frozen_metric_matrix_replayed": {"const": true},
+        "frozen_ghost_matrix_replayed": {"const": true},
+        "fibre_identification_nondegenerate": {"const": true},
+        "diffeomorphism_weyl_cross_terms_zero": {"const": true}
+      }
+    },
+    "preferred_realization": {
+      "const": {
+        "kind": "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR",
+        "principal_metric_operator": "(zeta^2)^2 I_10",
+        "principal_ghost_operator": "(zeta^2)^2 I_5",
+        "scalar_characteristic_set": "zeta^2=0",
+        "retained_rank_eight_interpretation": "PRESENTATION_EFFECT_RESOLVED_UPSTAIRS",
+        "transport_target": "retained_26_row_complex"
+      }
+    },
+    "input_gate_update": {
+      "const": {
+        "BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS": "IMPORTED_AND_REPLAYED",
+        "BERGER_CURVED_CLOCK_REATTACHED_WITNESS": "NOT_CONSTRUCTED",
+        "BERGER_CAUSAL_GREEN_HOMOTOPY": "NOT_CONSTRUCTED",
+        "BERGER_HADAMARD_DATA": "NOT_CONSTRUCTED"
+      }
+    },
+    "quantum_execution_authorized": {"const": false},
+    "next_gate": {"const": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS"},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "consumer_provenance": {"type": "object"}
+  }
+}

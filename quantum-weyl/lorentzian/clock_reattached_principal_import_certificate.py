@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit or check the Berger metric mixed-order Green contract."""
+"""Emit the pinned clock-reattached principal import certificate."""
 
 from __future__ import annotations
 
@@ -7,18 +7,16 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+from typing import Any
 
-try:
-    from .metric_mixed_order_green_contract import build_contract_receipt
-except ImportError:
-    from metric_mixed_order_green_contract import build_contract_receipt
+from .clock_reattached_principal_import import build_import
 
 
-ROOT = Path(__file__).resolve().parent
-OUTPUT = ROOT / "certificates" / "BERGER_METRIC_MIXED_ORDER_GREEN_CONTRACT.json"
+LORENTZIAN_ROOT = Path(__file__).resolve().parent
+OUTPUT = LORENTZIAN_ROOT / "certificates" / "BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT.json"
 
 
-def _hash(path: Path) -> str:
+def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
@@ -28,20 +26,19 @@ def _canonical_hash(value: object) -> str:
     ).hexdigest()
 
 
-def build_certificate() -> dict[str, object]:
-    payload = build_contract_receipt()
+def build_certificate() -> dict[str, Any]:
+    payload = build_import()
     paths = (
-        "metric_mixed_order_green_contract.py",
-        "metric_mixed_order_green_contract_certificate.py",
-        "schema/berger-metric-mixed-order-green-contract-v1.schema.json",
-        "schema/berger-metric-mixed-order-green-export-v1.schema.json",
-        "tests/test_metric_mixed_order_green_contract.py",
-        "../reports/berger-metric-mixed-order-green-contract.md",
+        "clock_reattached_principal_import.py",
+        "clock_reattached_principal_import_certificate.py",
+        "schema/berger-clock-reattached-principal-import-v1.schema.json",
+        "tests/test_clock_reattached_principal_import.py",
+        "../reports/berger-clock-reattached-principal-import.md",
     )
-    manifest = {path: _hash(ROOT / path) for path in paths}
+    manifest = {path: _sha256(LORENTZIAN_ROOT / path) for path in paths}
     return {
         **payload,
-        "provenance": {
+        "consumer_provenance": {
             "source_manifest": manifest,
             "source_manifest_sha256": _canonical_hash(manifest),
         },
@@ -57,11 +54,11 @@ def main() -> int:
     if args.emit:
         OUTPUT.write_text(content, encoding="utf-8")
     if args.check and (not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != content):
-        raise SystemExit(f"stale metric mixed-order Green contract: {OUTPUT}")
+        raise SystemExit(f"stale clock-reattached principal import: {OUTPUT}")
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("BERGER METRIC GREEN CONTRACT: CLOCK PRINCIPAL IMPORTED; CURVED WITNESS OPEN")
+        print("BERGER CLOCK-REATTACHED PRINCIPAL WITNESS IMPORTED; CURVED ORDERS OPEN")
     return 0
 
 

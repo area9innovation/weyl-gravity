@@ -2,15 +2,35 @@
   "accepted_export_schema": "quantum-weyl-berger-metric-mixed-order-green-export-v1",
   "accepted_realization_kinds": [
     "AUXILIARY_FIELD_REDUCTION",
+    "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR",
     "FILTERED_MIXED_ORDER",
     "FIRST_ORDER_DIFFERENTIAL_ALGEBRAIC"
   ],
-  "claim_boundary": "Defines the exact portable acceptance boundary for the rank-eight-plus-two metric and metric-antifield Green problem. It constructs no physical Green operator, full 26-row homotopy, Hadamard state, causal product, QME restoration, or Lorentzian quantum theory.",
+  "claim_boundary": "Imports the preferred clock-reattached scalar-biwave principal route and defines conditional acceptance for direct retained or support-local SDR realizations. It constructs no curved lower-order witness, physical Green operator, full 26-row homotopy, Hadamard state, QME restoration, or Lorentzian quantum theory.",
+  "common_proof_checks": [
+    "D_equivariance",
+    "advanced_left_inverse",
+    "advanced_right_inverse",
+    "advanced_support",
+    "constraint_compatibility",
+    "cyclic_advanced_retarded_adjointness",
+    "metric_antifield_formal_adjoint",
+    "realization_equivalence",
+    "retarded_left_inverse",
+    "retarded_right_inverse",
+    "retarded_support",
+    "row_completeness",
+    "zero_mode_policy_applied"
+  ],
   "current_principal_boundary": {
-    "characteristic_rank_stratification": "NOT_CLASSIFIED",
     "generic_fourth_order_rank": 8,
     "polynomial_kernel_dimension": 2,
-    "rank_drop_on_characteristic_covectors_excluded": false
+    "preferred_principal_import": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT.json",
+      "sha256": "0f1a6eb3cfa0de9624381c40bdddd023d3ecf70047875526500ac6c2879fcec0"
+    },
+    "preferred_scalar_characteristic_set": "zeta^2=0",
+    "retained_characteristic_status": "PRESENTATION_EFFECT"
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -25,18 +45,18 @@
   "full_26_row_green_status": "NOT_CONSTRUCTED",
   "metric_antifield_green_status": "NOT_CONSTRUCTED",
   "metric_green_status": "NOT_CONSTRUCTED",
-  "next_gate": "IMPORT_CERTIFIED_BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION",
-  "physical_input_status": "NOT_RECEIVED",
+  "next_gate": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
+  "physical_input_status": "CLOCK_REATTACHED_PRINCIPAL_IMPORTED_CURVED_OPEN",
   "provenance": {
     "source_manifest": {
-      "../reports/berger-metric-mixed-order-green-contract.md": "41442e7054220b52e1e993dc55f970148a2462cbd5d1038adaf0c89fec91dd6e",
-      "metric_mixed_order_green_contract.py": "f38a62d061f95ab402133da0ca23009d034a0f0ddd2d6db7cfac2bfd60edd922",
-      "metric_mixed_order_green_contract_certificate.py": "b86fe9681206e2dfc504f6669a739c3f4e41adc87e9eb46499afc46ead4053f2",
-      "schema/berger-metric-mixed-order-green-contract-v1.schema.json": "eca71e44e0b307ddd306a93a5c0c1b1e72b939a66763d61bdde25d691e45931d",
+      "../reports/berger-metric-mixed-order-green-contract.md": "55919da5a5ecddb35241e29fc4fd8f2261d6bf66e7d797999e93f1f5e88b394e",
+      "metric_mixed_order_green_contract.py": "0bafba00797ff32b92da04ad90b18ee77280cc7fbf5ec26c3fbbb88adecf6b2a",
+      "metric_mixed_order_green_contract_certificate.py": "ccac530f333cce8c4264f1cec939a5829a668656a56fda3ee067f16a5335d8ab",
+      "schema/berger-metric-mixed-order-green-contract-v1.schema.json": "7dd2f7338ec5af69909f2833470a92a1cfb78f620123766e8bf8be4ac4ae0cae",
       "schema/berger-metric-mixed-order-green-export-v1.schema.json": "4aafad99f5ccbc84d19d2bb0d61e6b07c6209535e656857f79f7b8b23c84062a",
-      "tests/test_metric_mixed_order_green_contract.py": "2eca2ec3ae87bf831e4e9c6cb02e876c0751f35ae6e75e7399233d4d85f28448"
+      "tests/test_metric_mixed_order_green_contract.py": "c2f5cab8b98ce8cf4163a6900226eccecca45e3fad04f306ab8b665f4efe7449"
     },
-    "source_manifest_sha256": "dbe2ea8c39c65bbb7e8d5b295cb1e8855a929b43fee415f37de40569a42f307d"
+    "source_manifest_sha256": "91f9109fbe79a690c4115bea045fb3f5fcf879989b288a64a7637a8905a3ebc4"
   },
   "quantum_execution_authorized": false,
   "required_operator_ids": [
@@ -49,25 +69,21 @@
     "realization_backward",
     "realization_forward"
   ],
-  "required_proof_checks": [
-    "D_equivariance",
-    "advanced_left_inverse",
-    "advanced_right_inverse",
-    "advanced_support",
-    "characteristic_rank_stratification",
-    "constraint_compatibility",
-    "cyclic_advanced_retarded_adjointness",
-    "generic_rank_and_kernel",
-    "metric_antifield_formal_adjoint",
-    "realization_equivalence",
-    "retarded_left_inverse",
-    "retarded_right_inverse",
-    "retarded_support",
-    "row_completeness",
-    "zero_mode_policy_applied"
-  ],
   "result_id": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION_CONTRACT",
-  "result_state": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED",
+  "result_state": "INTERFACE_READY_CLOCK_PRINCIPAL_IMPORTED_CURVED_OPEN",
+  "route_specific_proof_checks": {
+    "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR": [
+      "clock_reattached_principal_import",
+      "clock_sdr_green_transport",
+      "clock_sdr_support_local",
+      "curved_clock_reattached_QW_plus_WQ",
+      "scalar_biwave_characteristic_set"
+    ],
+    "DIRECT_RETAINED": [
+      "characteristic_rank_stratification",
+      "generic_rank_and_kernel"
+    ]
+  },
   "schema": "quantum-weyl-berger-metric-mixed-order-green-contract-v1",
   "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
 }

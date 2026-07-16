@@ -82,7 +82,7 @@ class GreenEndpointContractTests(unittest.TestCase):
         self.assertFalse(validate_instance(certificate, schema))
         self.assertEqual(
             certificate["physical_input_status"],
-            "PARTIAL_ENDPOINT_FACTORS_RECEIVED_METRIC_OPEN",
+            "PARTIAL_FACTORS_AND_CLOCK_PRINCIPAL_RECEIVED_CURVED_OPEN",
         )
         self.assertEqual(certificate["partial_input"]["certified_blocks"], ["ghost", "identity"])
         factor_path = ROOT.parents[1] / certificate["partial_input"]["certificate"]["path"]
@@ -91,6 +91,19 @@ class GreenEndpointContractTests(unittest.TestCase):
             certificate["partial_input"]["certificate"]["sha256"],
         )
         self.assertFalse(certificate["quantum_execution_authorized"])
+        self.assertEqual(
+            certificate["partial_input"]["preferred_metric_principal_route"]["kind"],
+            "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR",
+        )
+        clock_record = certificate["partial_input"]["preferred_metric_principal_route"][
+            "certificate"
+        ]
+        clock_path = ROOT.parents[1] / clock_record["path"]
+        self.assertEqual(
+            hashlib.sha256(clock_path.read_bytes()).hexdigest(),
+            clock_record["sha256"],
+        )
+        self.assertEqual(certificate["next_gate"], "BERGER_CURVED_CLOCK_REATTACHED_WITNESS")
         forged = deepcopy(certificate)
         forged["required_green_checks"][0] = "invented_check"
         self.assertTrue(validate_instance(forged, schema))
@@ -103,6 +116,16 @@ class GreenEndpointContractTests(unittest.TestCase):
             path.write_text(json.dumps(payload), encoding="utf-8")
             with patch.object(CONTRACT, "PARTIAL_INPUT_CERTIFICATE", path):
                 with self.assertRaisesRegex(ValueError, "input identity or boundary"):
+                    CONTRACT.build_contract_receipt()
+
+    def test_clock_principal_input_cannot_promote_curved_stage(self) -> None:
+        payload = json.loads(CONTRACT.CLOCK_PRINCIPAL_CERTIFICATE.read_text())
+        payload["result_state"] = "CURVED_WITNESS_CERTIFIED"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "forged-clock-principal.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            with patch.object(CONTRACT, "CLOCK_PRINCIPAL_CERTIFICATE", path):
+                with self.assertRaisesRegex(ValueError, "principal input identity"):
                     CONTRACT.build_contract_receipt()
 
     def test_complete_green_open_hadamard_payload_validates(self) -> None:

@@ -17,13 +17,14 @@ promotion to a Green-plus-Hadamard result additionally requires the wavefront,
 bisolution, CCR, BRST, and positivity/Krein checks.
 
 The checked-in receipt is
-`INTERFACE_READY_PARTIAL_ENDPOINT_FACTORS_RECEIVED`. The ghost and identity
-endpoint factors have landed, while the metric and metric-antifield blocks
-remain open. The receipt pins the partial-input certificate and records the
-still-missing explicit PBW records for both normally hyperbolic factors and
-their formal adjoints.
+`INTERFACE_READY_PARTIAL_FACTORS_CLOCK_PRINCIPAL_RECEIVED`. The ghost and
+identity endpoint factors have landed, and the clock-reattached scalar-biwave
+principal witness is pinned. Curved lower orders and the metric and
+metric-antifield Green operators remain open. The receipt also records the
+still-missing explicit PBW records for both endpoint factors and their formal
+adjoints.
 
 The two-row exact fixture tests only the algebraic chain, adjoint, and
 equivariance mechanics. It has no causal geometry and supplies no complete
 physical propagator. The full 26-row Green homotopy and Hadamard stage remain
-blocked.
+blocked. The immediate gate is `BERGER_CURVED_CLOCK_REATTACHED_WITNESS`.

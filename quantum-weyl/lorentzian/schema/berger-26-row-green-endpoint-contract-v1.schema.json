@@ -7,17 +7,17 @@
   "properties": {
     "schema": {"const": "quantum-weyl-berger-26-row-green-endpoint-contract-v1"},
     "result_id": {"const": "BERGER_26_ROW_GREEN_HADAMARD_ENDPOINT_CONTRACT"},
-    "result_state": {"const": "INTERFACE_READY_PARTIAL_ENDPOINT_FACTORS_RECEIVED"},
+    "result_state": {"const": "INTERFACE_READY_PARTIAL_FACTORS_CLOCK_PRINCIPAL_RECEIVED"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
     "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
     "accepted_export_schema": {"const": "quantum-weyl-berger-26-row-green-endpoint-export-v1"},
     "required_green_checks": {"const": ["D_equivariance", "advanced_chain_homotopy_identity", "advanced_support", "cyclic_advanced_retarded_adjointness", "retarded_chain_homotopy_identity", "retarded_support", "row_completeness", "zero_mode_policy_applied"]},
     "conditional_hadamard_checks": {"const": ["BRST_compatibility", "CCR_antisymmetric_part", "Hadamard_wavefront_set", "bisolution_modulo_smooth", "positivity_or_Krein_policy"]},
     "mechanics_fixture": {"type": "object"},
-    "physical_input_status": {"const": "PARTIAL_ENDPOINT_FACTORS_RECEIVED_METRIC_OPEN"},
+    "physical_input_status": {"const": "PARTIAL_FACTORS_AND_CLOCK_PRINCIPAL_RECEIVED_CURVED_OPEN"},
     "partial_input": {
       "type": "object", "additionalProperties": false,
-      "required": ["result_id", "certificate", "certified_blocks", "open_blocks", "explicit_factor_records", "required_factor_record_ids"],
+      "required": ["result_id", "certificate", "certified_blocks", "open_blocks", "explicit_factor_records", "required_factor_record_ids", "preferred_metric_principal_route"],
       "properties": {
         "result_id": {"const": "BERGER_ENDPOINT_FACTOR_INPUT_IMPORT"},
         "certificate": {
@@ -31,13 +31,30 @@
         "certified_blocks": {"const": ["ghost", "identity"]},
         "open_blocks": {"const": ["metric", "metric_antifield"]},
         "explicit_factor_records": {"const": "REQUESTED_FROM_CLASSICAL_SOURCE_NOT_YET_EXPORTED"},
-        "required_factor_record_ids": {"const": ["F_spatial_K_spatial", "Box_1_spatial_covector", "F_spatial_K_spatial_formal_adjoint", "Box_1_spatial_covector_formal_adjoint"]}
+        "required_factor_record_ids": {"const": ["F_spatial_K_spatial", "Box_1_spatial_covector", "F_spatial_K_spatial_formal_adjoint", "Box_1_spatial_covector_formal_adjoint"]},
+        "preferred_metric_principal_route": {
+          "type": "object", "additionalProperties": false,
+          "required": ["result_id", "certificate", "kind", "status"],
+          "properties": {
+            "result_id": {"const": "BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT"},
+            "certificate": {
+              "type": "object", "additionalProperties": false,
+              "required": ["path", "sha256"],
+              "properties": {
+                "path": {"const": "quantum-weyl/lorentzian/certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT.json"},
+                "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+              }
+            },
+            "kind": {"const": "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR"},
+            "status": {"const": "PRINCIPAL_IMPORTED_CURVED_LOWER_ORDERS_OPEN"}
+          }
+        }
       }
     },
     "green_endpoint_status": {"const": "NOT_CONSTRUCTED"},
     "hadamard_status": {"const": "NOT_CONSTRUCTED"},
     "quantum_execution_authorized": {"const": false},
-    "next_gate": {"const": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION"},
+    "next_gate": {"const": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS"},
     "claim_boundary": {"type": "string", "minLength": 1},
     "provenance": {"type": "object"}
   }

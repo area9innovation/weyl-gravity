@@ -40,6 +40,9 @@ ROOT = Path(__file__).resolve().parents[2]
 PARTIAL_INPUT_CERTIFICATE = (
     ROOT / "quantum-weyl/lorentzian/certificates/BERGER_ENDPOINT_FACTOR_INPUT_IMPORT.json"
 )
+CLOCK_PRINCIPAL_CERTIFICATE = (
+    ROOT / "quantum-weyl/lorentzian/certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT.json"
+)
 
 
 def _sha256(path: Path) -> str:
@@ -293,19 +296,32 @@ def build_contract_receipt() -> dict[str, Any]:
         ) != "NOT_CLASSIFIED"
     ):
         raise ValueError("partial endpoint-factor input identity or boundary drifted")
+    clock_payload = json.loads(CLOCK_PRINCIPAL_CERTIFICATE.read_text(encoding="utf-8"))
+    if (
+        not isinstance(clock_payload, dict)
+        or clock_payload.get("result_id")
+        != "BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT"
+        or clock_payload.get("result_state")
+        != "PRINCIPAL_WITNESS_IMPORTED_CURVED_LOWER_ORDERS_OPEN"
+        or clock_payload.get("preferred_realization", {}).get("kind")
+        != "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR"
+        or clock_payload.get("next_gate") != "BERGER_CURVED_CLOCK_REATTACHED_WITNESS"
+        or clock_payload.get("quantum_execution_authorized") is not False
+    ):
+        raise ValueError("clock-reattached principal input identity or boundary drifted")
     partial_input_hash = _sha256(PARTIAL_INPUT_CERTIFICATE)
     return deepcopy(
         {
             "schema": "quantum-weyl-berger-26-row-green-endpoint-contract-v1",
             "result_id": "BERGER_26_ROW_GREEN_HADAMARD_ENDPOINT_CONTRACT",
-            "result_state": "INTERFACE_READY_PARTIAL_ENDPOINT_FACTORS_RECEIVED",
+            "result_state": "INTERFACE_READY_PARTIAL_FACTORS_CLOCK_PRINCIPAL_RECEIVED",
             "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
             "setting_id": SETTING_ID,
             "accepted_export_schema": SCHEMA_ID,
             "required_green_checks": list(GREEN_CHECKS),
             "conditional_hadamard_checks": list(HADAMARD_CHECKS),
             "mechanics_fixture": green_mechanics_fixture(),
-            "physical_input_status": "PARTIAL_ENDPOINT_FACTORS_RECEIVED_METRIC_OPEN",
+            "physical_input_status": "PARTIAL_FACTORS_AND_CLOCK_PRINCIPAL_RECEIVED_CURVED_OPEN",
             "partial_input": {
                 "result_id": "BERGER_ENDPOINT_FACTOR_INPUT_IMPORT",
                 "certificate": {
@@ -321,17 +337,26 @@ def build_contract_receipt() -> dict[str, Any]:
                     "F_spatial_K_spatial_formal_adjoint",
                     "Box_1_spatial_covector_formal_adjoint",
                 ],
+                "preferred_metric_principal_route": {
+                    "result_id": "BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT",
+                    "certificate": {
+                        "path": "quantum-weyl/lorentzian/certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT.json",
+                        "sha256": _sha256(CLOCK_PRINCIPAL_CERTIFICATE),
+                    },
+                    "kind": "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR",
+                    "status": "PRINCIPAL_IMPORTED_CURVED_LOWER_ORDERS_OPEN",
+                },
             },
             "green_endpoint_status": "NOT_CONSTRUCTED",
             "hadamard_status": "NOT_CONSTRUCTED",
             "quantum_execution_authorized": False,
-            "next_gate": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION",
+            "next_gate": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS",
             "claim_boundary": (
                 "The ghost and identity endpoint factor theorem is imported, while "
-                "the metric and metric-antifield Green operators remain open. The "
-                "portable full-endpoint validator is ready, but no complete retained "
-                "Green homotopy, Hadamard state, causal product, QME, or quantum "
-                "Cartan verdict is constructed."
+                "the preferred clock-reattached scalar-biwave principal theorem is "
+                "also imported. Curved lower orders and metric Green operators remain "
+                "open. No complete retained Green homotopy, Hadamard state, causal "
+                "product, QME, or quantum Cartan verdict is constructed."
             ),
         }
     )
