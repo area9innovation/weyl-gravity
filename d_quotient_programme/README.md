@@ -81,6 +81,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`contributions/einstein-maxwell-weyl-axial-all-ell-restriction.json`](contributions/einstein-maxwell-weyl-axial-all-ell-restriction.json)
 - [`reports/einstein-maxwell-weyl-axial-all-ell-restriction-submission-receipt.md`](reports/einstein-maxwell-weyl-axial-all-ell-restriction-submission-receipt.md)
 - [`reports/einstein-maxwell-weyl-axial-all-ell-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-all-ell-restriction-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-polar-all-ell-restriction.json`](contributions/einstein-maxwell-weyl-polar-all-ell-restriction.json)
+- [`reports/einstein-maxwell-weyl-polar-all-ell-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-polar-all-ell-restriction-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
