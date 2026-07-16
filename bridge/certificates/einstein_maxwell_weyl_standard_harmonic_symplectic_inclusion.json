@@ -1,0 +1,146 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE assembly theorem is linear, fixed-bundle, compact-cylinder, and pre-final-quotient. It proves nondegeneracy of the target pullback on the complete certified standard Einstein-Maxwell harmonic tangent. It does not prove nonlinear closure, equality of theories, a full observable-algebra embedding, removal of extra Weyl solutions, asymptotically flat boundary selection, a causal scattering theorem, or quantum unitarity.",
+  "classification": {
+    "all_standard_tangent_directions_survive_before_final_residual_quotient": true,
+    "asymptotically_flat_boundary_conditions_constructed": false,
+    "axial_twist_included": true,
+    "complete_standard_harmonic_linear_restriction": true,
+    "extra_fourth_order_target_solutions_classified": false,
+    "final_residual_quotient_computed": false,
+    "full_target_observable_embedding_certified": false,
+    "homogeneous_ell0_included": true,
+    "identity_inclusion_symplectic": false,
+    "lorentzian_causal_or_scattering_theorem": false,
+    "nonlinear_inclusion_or_closure_certified": false,
+    "one_particle_or_quantum_theorem": false,
+    "physical_ell1_included": true,
+    "radiative_ell_ge2_included": true,
+    "restricted_target_form_nondegenerate": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "the complete certified fixed-bundle standard-harmonic linearized Einstein-Maxwell solution tangent on R_t x S1_L x S2, including radiative and generalized global blocks, before the final residual SO(4,2) quotient",
+  "generality_level": "G4_COMPLETE_FIXED_BUNDLE_STANDARD_HARMONIC_LINEAR_TANGENT",
+  "interpretation": "At linear order on the closed cylinder and before the final residual quotient, the complete certified standard Einstein-Maxwell tangent is retained inside Weyl-Maxwell theory without any symplectic null directions. This is stronger than solution inclusion but weaker than equivalence: the identity map changes the Hamiltonian structure block by block, additional fourth-order target solutions remain open, and neither full observable descent nor asymptotically flat scattering follows. Thus the graviton has not disappeared at this stage; any vanishing final residual one-particle cohomology belongs to a later global quotient and a different physical question.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify the complementary fourth-order Weyl-Maxwell solution branches and then test whether Lorentzian boundary conditions select a dynamically closed Einstein scattering sector; separately compute descent through the final residual quotient",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.py",
+    "generator_sha256": "d572915e4ff2ad7baa53013f939c495341867ff425209b79109bd6ecddcfe1fa",
+    "inputs": {
+      "einstein_global": {
+        "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+        "sha256": "ee677574b8295169ebb89360fe4ac03ab58f0d7a8273ab395e0087ee0d50ef18"
+      },
+      "einstein_radiative": {
+        "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+        "sha256": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
+      },
+      "homogeneous_restriction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
+        "sha256": "c18f747bb27757f72249f998626fc0f5a02c6a612cb91aa02d49c190b8f49556"
+      },
+      "physical_ell1_restriction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
+        "sha256": "2596e01ea18030ffeced787629b3d5eba3f6a3d14c3e881e1a4dffd82405e674"
+      },
+      "preflight": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symplectic_preflight.json",
+        "sha256": "22a948d0ef54efd0c4f2b9b8dd4c57a47a731f1511f40d6a6afbba780dd00591"
+      },
+      "radiative_restriction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
+        "sha256": "25a798211bea52cbf9d8becae64672ac327be7a09adb50e30e45fa8287a608b7"
+      },
+      "twist_restriction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
+        "sha256": "c230db105f4282820ec731418771e95f1fe489fa35ee8add2a7311691de5b7cd"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+  "result_state": "COMPLETE_FIXED_BUNDLE_STANDARD_EINSTEIN_TANGENT_PULLBACK_NONDEGENERATE_BEFORE_FINAL_RESIDUAL_QUOTIENT",
+  "schema": "einstein-maxwell-weyl-standard-harmonic-symplectic-inclusion-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.schema.json",
+  "schema_sha256": "1655cf2e9ea536e7f191fe90d0bcff601bb07148e158a43bd2f832820de60b11",
+  "theorem": {
+    "block_table": [
+      {
+        "block": "standard axial plus polar radiative",
+        "certificate": "EINSTEIN_MAXWELL_WEYL_RADIATIVE_SYMPLECTIC_RESTRICTION",
+        "labels": "ell>=2, all m and periodic n, both master branches",
+        "nondegeneracy": true,
+        "pullback_relative_operator": "p_lambda(M_rad), with common parity-independent branch weights 3*sqrt(2)*sqrt(lam)/2 + 1, -3*sqrt(2)*sqrt(lam)/2 + 1",
+        "special_feature": "relative coefficient signature (2,2) per real spatial harmonic"
+      },
+      {
+        "block": "physical axial plus polar ell=1 quotient",
+        "certificate": "EINSTEIN_MAXWELL_WEYL_ELL1_PHYSICAL_SYMPLECTIC_RESTRICTION",
+        "labels": "all m and periodic n",
+        "nondegeneracy": true,
+        "pullback_relative_operator": "4*I in source-normalized parity coordinates",
+        "special_feature": "literal exceptional current has zero residual-gauge rows and columns"
+      },
+      {
+        "block": "homogeneous generalized global",
+        "certificate": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_GLOBAL_SYMPLECTIC_RESTRICTION",
+        "labels": "(a,b,c,d,Q_e,W_x)",
+        "nondegeneracy": true,
+        "pullback_relative_operator": "I+N, rank(N)=2, N^2=0",
+        "special_feature": "identity is not symplectic; S=I+N/2 gives S^T Omega_EM S=Omega_WM"
+      },
+      {
+        "block": "axial ell=1 generalized twist",
+        "certificate": "EINSTEIN_MAXWELL_WEYL_AXIAL_TWIST_SYMPLECTIC_RESTRICTION",
+        "labels": "three real m, each (A_m,B_m)",
+        "nondegeneracy": true,
+        "pullback_relative_operator": "-2*I",
+        "special_feature": "zero-frequency Jordan block computed directly, not by a radiative limit"
+      }
+    ],
+    "cross_block_orthogonality": {
+      "axial_vs_polar": "spatial parity invariance",
+      "conclusion": "the target pullback is the displayed block-diagonal direct sum",
+      "different_ell_or_m": "SO(3) invariance and real-harmonic orthogonality",
+      "different_periodic_momentum": "S1 Fourier orthogonality",
+      "homogeneous_vs_nonzero_ell": "SO(3) harmonic orthogonality",
+      "radiative_branches": "the master operator is Omega_EM-self-adjoint and has distinct eigenvalues",
+      "twist_vs_physical_axial_ell1": "time-translation invariance of the conserved bilinear form pairs neither the generalized zero-eigenspace nor its Jordan partner with the nonzero-frequency eigenspaces"
+    },
+    "graviton_interpretation": {
+      "before_final_residual_quotient": "the usual helicity-like axial and polar radiative modes occur in the physical ell=1 and ell>=2 oscillator blocks and have nonzero target pullback pairings",
+      "closed_cylinder_vs_scattering": "the present compact Cauchy surface has no null infinity and certifies no asymptotically flat scattering space",
+      "vanishing_final_one_particle_residual_cohomology_not_in_conflict": "that statement concerns a later global SO(4,2) quotient on the closed cylinder, not the existence of these local/reduced-mode radiative solutions before that quotient and not asymptotically flat radiation"
+    },
+    "inclusion_theorem": {
+      "identity_inclusion_is_a_presymplectic_immersion": true,
+      "identity_inclusion_is_symplectic": false,
+      "kernel_of_pullback_on_standard_tangent": "0",
+      "meaning": "the linear solution inclusion retains all certified standard Einstein-Maxwell tangent directions and equips them with another nondegenerate form; it does not identify the two Hamiltonian structures under the identity map",
+      "ordinary_Einstein_Maxwell_tangent_removed_before_final_residual_quotient": false,
+      "restricted_target_form_nondegenerate_on_complete_standard_tangent": true,
+      "restricted_target_form_nondegenerate_on_every_block": true
+    },
+    "observable_consequence_and_limit": {
+      "automatic_embedding_into_full_target_observable_algebra": false,
+      "linear_observables_on_the_restricted_subspace": "because the pullback is nondegenerate, every linear source observable has a unique Hamiltonian vector with respect to the restricted target form after applying the invertible relative operator",
+      "reason": "extension away from the Einstein subspace and descent through the final SO(4,2) quotient are separate problems"
+    },
+    "solution_space_decomposition": {
+      "identity": "T_EM^std=T_rad^(ell>=2) direct_sum T_phys^(ell=1) direct_sum T_hom^(ell=0) direct_sum T_twist^(axial ell=1,omega=0)",
+      "scope": "fixed magnetic bundle, smooth periodic identity-component gauge transformations, generalized polynomial global solutions retained",
+      "source_completeness_receipts": [
+        "COMPACT_EM_RADIATIVE_SYMPLECTIC_MATCHING",
+        "COMPACT_EM_EXCEPTIONAL_GLOBAL_SYMPLECTIC"
+      ]
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion --verify bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_global_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_twist_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell1_physical_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_radiative_symplectic_restriction"
+  ]
+}

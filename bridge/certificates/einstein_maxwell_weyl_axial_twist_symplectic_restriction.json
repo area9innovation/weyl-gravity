@@ -1,0 +1,109 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE theorem covers only the generalized axial ell=1 twist pairs. It does not classify homogeneous or radiative modes, extra fourth-order solutions, the final residual quotient, a one-particle norm, causal scattering, or quantum unitarity.",
+  "classification": {
+    "all_three_real_m_by_SO3": true,
+    "axial_twist_restriction_computed": true,
+    "complete_standard_harmonic_restriction": false,
+    "final_residual_quotient_computed": false,
+    "full_linear_time_conservation_verified": true,
+    "homogeneous_restriction_computed": false,
+    "lorentzian_causal_or_scattering_theorem": false,
+    "one_particle_or_quantum_theorem": false,
+    "pullback_equals_minus_two_times_einstein": true,
+    "radiative_mu_zero_continuation_used": false,
+    "restricted_target_form_nondegenerate": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "the generalized zero-frequency axial ell=1 twist Einstein-Maxwell block for all three real harmonics on R_t x S1_L x S2, before the final residual SO(4,2) quotient",
+  "generality_level": "G3_AXIAL_ELL1_TWIST_ALL_REAL_M",
+  "interpretation": "Every global axial twist and its time-linear partner survive as a nondegenerate Weyl-Maxwell Darboux pair. The pullback is exactly minus twice the Einstein-Maxwell form, so the identity inclusion reverses the relative symplectic orientation on this block but does not remove it. The result is exceptional and comes from the direct generalized current, not a zero-frequency limit of a radiative formula.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "combine the twist, homogeneous, physical ell=1, and standard ell>=2 results into a complete fixed-bundle standard-harmonic restriction theorem",
+  "provenance": {
+    "direct_implementation": {
+      "current_engine": {
+        "path": "bridge/einstein_sector/weyl_maxwell_lee_wald_current.py",
+        "sha256": "5270dcbfb26c7a31d303214462799d41aaa575c2a8ad3fa804675282721fee6a"
+      },
+      "fixture_generator": {
+        "path": "bridge/einstein_sector/weyl_maxwell_axial_twist_lee_wald_fixture.py",
+        "sha256": "4f96eebc5ea53e155af0fd1ab455288d3dd463d59fa3388c2c641954012d990b"
+      }
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_twist_symplectic_restriction.py",
+    "generator_sha256": "1e8d5714f5da7d5a3d23faac24a407263c6ea59ce0d338bf4ae3a057cdccc671",
+    "inputs": {
+      "direct_fixture": {
+        "path": "bridge/certificates/weyl_maxwell_axial_twist_lee_wald_fixture.json",
+        "sha256": "5516f69519a3b345501228c2c3a2362e07ceaae239001979fb6b332a5166e6a8"
+      },
+      "einstein_global_form": {
+        "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+        "sha256": "ee677574b8295169ebb89360fe4ac03ab58f0d7a8273ab395e0087ee0d50ef18"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_TWIST_SYMPLECTIC_RESTRICTION",
+  "result_state": "AXIAL_TWIST_ALL_M_GENERALIZED_PULLBACK_NONDEGENERATE_FACTOR_MINUS_TWO",
+  "schema": "einstein-maxwell-weyl-axial-twist-symplectic-restriction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_twist_symplectic_restriction.schema.json",
+  "schema_sha256": "cec4f8e10fd6ec0cb1934a536d85cb5ce85bd20d9a6db8f4454577a46ed17cc2",
+  "theorem": {
+    "all_m_extension": "SO(3) equivariance gives the same coefficient times N_1m for all three real harmonics",
+    "cauchy_forms_after_common_factor_L_N_1m": {
+      "einstein_maxwell": [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "-2",
+          "0"
+        ]
+      ],
+      "identity": "Omega_WM|twist=-2*Omega_EM|twist",
+      "orientation_relative_to_source": "reversed",
+      "source_determinant": "4",
+      "source_rank": 2,
+      "target_determinant": "16",
+      "target_rank": 2,
+      "weyl_maxwell": [
+        [
+          "0",
+          "-4"
+        ],
+        [
+          "4",
+          "0"
+        ]
+      ]
+    },
+    "exceptional_status": {
+      "mu_to_zero_radiative_limit_used": false,
+      "periodic_gauge_audit_inherited": "the would-be generator is proportional to x*(A+B*t) and is not periodic on S1",
+      "reason": "the twist is a zero-frequency generalized Jordan block with A+B*t; substituting mu=0 in an oscillatory radiative formula would incorrectly erase its conserved pairing"
+    },
+    "full_time_conservation": {
+      "coefficientwise_time_derivative": "0",
+      "integrated_coordinate_current_per_unit_x": "16*pi*(A1*B2 - A2*B1)/3",
+      "verified_on_A_plus_Bt_not_only_t0": true
+    },
+    "harmonic_normalization": "direct fixture uses Y_10=cos(theta), N_10=4*pi/3",
+    "mode_counting": {
+      "cross_m_pairing": "0 in an orthogonal real ell=1 harmonic basis by SO(3) invariance",
+      "darboux_pairs": 3,
+      "real_harmonic_multiplicity": 3,
+      "real_phase_space_dimension": 6
+    },
+    "representative": "h_(x,a)=(A+B*t)X_a, a_x=-(A+B*t)Y_1m"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.weyl_maxwell_axial_twist_lee_wald_fixture --verify bridge/certificates/weyl_maxwell_axial_twist_lee_wald_fixture.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_twist_symplectic_restriction --verify bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_twist_symplectic_restriction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_twist_symplectic_restriction"
+  ]
+}

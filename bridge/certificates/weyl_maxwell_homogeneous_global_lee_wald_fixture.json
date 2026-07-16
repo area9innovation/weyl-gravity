@@ -1,0 +1,80 @@
+{
+  "current_convention": "omega^t=delta1 theta^t(delta2)-delta2 theta^t(delta1); Omega_Sigma=-L*int_S2 omega^t",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_current": {
+    "coordinate_current_matrix": [
+      [
+        "0",
+        "-4*pi",
+        "0",
+        "2*pi",
+        "0",
+        "0"
+      ],
+      [
+        "4*pi",
+        "0",
+        "-2*pi",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2*pi",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-2*pi",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "4*pi"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-4*pi",
+        "0"
+      ]
+    ],
+    "fixed_bundle_scope": "uniform magnetic variation is excluded; W_x is the flat S1 holonomy coordinate",
+    "integrated_coordinate_current_per_unit_x": "-2*pi*(2*a1*b2 - a1*d2 - 2*a2*b1 + a2*d1 + b1*c2 - b2*c1 - 2*e1*w2 + 2*e2*w1)",
+    "matrix_determinant": "256*pi**6",
+    "matrix_rank": 6,
+    "parameter_order": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "Q_e",
+      "W_x"
+    ],
+    "representative": [
+      "K=a+b*t",
+      "C=a*t^2+(b/3)*t^3+c+d*t",
+      "A_x=W_x+Q_e*t"
+    ],
+    "time_derivative": "0"
+  },
+  "domain": "six-dimensional generalized homogeneous Einstein-Maxwell solution block on R_t x S1_L x S2 at fixed magnetic bundle, before final residual quotient",
+  "result_id": "WEYL_MAXWELL_HOMOGENEOUS_GLOBAL_LEE_WALD_FIXTURE",
+  "schema": "weyl-maxwell-homogeneous-global-lee-wald-fixture-v1"
+}

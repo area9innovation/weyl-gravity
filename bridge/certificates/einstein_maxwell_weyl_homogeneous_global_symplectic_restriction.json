@@ -1,0 +1,309 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE theorem covers only the declared homogeneous generalized block at fixed bundle and retains W_x. It does not impose bounded-in-time data, cover the twist or radiative blocks, classify extra fourth-order solutions, compute the final residual quotient, or establish causal scattering or quantum unitarity.",
+  "classification": {
+    "axial_twist_restriction_computed": false,
+    "complete_standard_harmonic_restriction": false,
+    "final_residual_quotient_computed": false,
+    "flat_holonomy_retained": true,
+    "full_polynomial_time_conservation_verified": true,
+    "homogeneous_restriction_computed": true,
+    "identity_inclusion_symplectic": false,
+    "linear_symplectomorphism_exhibited": true,
+    "lorentzian_causal_or_scattering_theorem": false,
+    "one_particle_or_quantum_theorem": false,
+    "restricted_target_form_nondegenerate": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "the six-dimensional homogeneous generalized Einstein-Maxwell solution block on R_t x S1_L x S2 at fixed magnetic bundle, before the final residual SO(4,2) quotient",
+  "generality_level": "G3_FIXED_BUNDLE_HOMOGENEOUS_GENERALIZED_BLOCK",
+  "interpretation": "The entire homogeneous Einstein-Maxwell generalized block survives with a nondegenerate Weyl-Maxwell pullback. The identity map is not symplectic: the gravitational global coordinates acquire a rank-two nilpotent shear, while the electric-charge/flat-holonomy pair is unchanged. Nevertheless an explicit determinant-one unipotent change of variables identifies the two symplectic vector spaces. This is a global reduced-mode statement, not a particle or scattering theorem.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the separate axial ell=1 twist pullback and then assemble the complete fixed-bundle standard-harmonic restriction theorem",
+  "provenance": {
+    "direct_implementation": {
+      "current_engine": {
+        "path": "bridge/einstein_sector/weyl_maxwell_lee_wald_current.py",
+        "sha256": "5270dcbfb26c7a31d303214462799d41aaa575c2a8ad3fa804675282721fee6a"
+      },
+      "fixture_generator": {
+        "path": "bridge/einstein_sector/weyl_maxwell_homogeneous_global_lee_wald_fixture.py",
+        "sha256": "d07186667beea7cfd5f9f9c6fd6387b4d36b4373535f84226f1e9014c3641520"
+      }
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.py",
+    "generator_sha256": "3ea1e4de2b903a829801f97dc41c08545db9be2f80c9cb723459b37c9776af9c",
+    "inputs": {
+      "direct_fixture": {
+        "path": "bridge/certificates/weyl_maxwell_homogeneous_global_lee_wald_fixture.json",
+        "sha256": "acc70c584f9fdb469c7331ccb63eb89cba63d7fb5aa3f02f809223ea088b60e4"
+      },
+      "einstein_global_form": {
+        "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+        "sha256": "ee677574b8295169ebb89360fe4ac03ab58f0d7a8273ab395e0087ee0d50ef18"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_GLOBAL_SYMPLECTIC_RESTRICTION",
+  "result_state": "HOMOGENEOUS_GLOBAL_PULLBACK_NONDEGENERATE_UNIPOTENT_SHEAR",
+  "schema": "einstein-maxwell-weyl-homogeneous-global-symplectic-restriction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.schema.json",
+  "schema_sha256": "3ccc52a33e0b13c5d2d1d39915e6e3f5b4843b027ebb42e167e1d2edd82cb3a6",
+  "theorem": {
+    "cauchy_forms_after_common_factor_2piL": {
+      "both_determinant": "4",
+      "both_pfaffian": "2",
+      "both_rank": 6,
+      "einstein_maxwell": [
+        [
+          "0",
+          "-1",
+          "0",
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-2"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "2",
+          "0"
+        ]
+      ],
+      "identity_inclusion_symplectic": false,
+      "weyl_maxwell": [
+        [
+          "0",
+          "2",
+          "0",
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "-2",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-2"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "2",
+          "0"
+        ]
+      ]
+    },
+    "current_convention": "omega^t=delta1 theta^t(delta2)-delta2 theta^t(delta1); Omega_Sigma=-L*int_S2 omega^t",
+    "explicit_linear_symplectomorphism": {
+      "S_equals_I_plus_N_over_2": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-3/2",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-3/2",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "determinant_S": "1",
+      "identity": "S^T*Omega_EM*S=Omega_WM",
+      "meaning": "the identity inclusion changes the form, but a declared unipotent shear gives a linear symplectomorphism of the two six-dimensional blocks"
+    },
+    "full_time_conservation": {
+      "coefficientwise_time_derivative": "0",
+      "integrated_coordinate_current_per_unit_x": "-2*pi*(2*a1*b2 - a1*d2 - 2*a2*b1 + a2*d1 + b1*c2 - b2*c1 - 2*e1*w2 + 2*e2*w1)",
+      "verified_on_full_polynomial_representatives_not_only_t0": true
+    },
+    "parameter_order": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "Q_e",
+      "W_x"
+    ],
+    "relative_endomorphism": {
+      "N_squared": "0",
+      "R_equals_I_plus_N": true,
+      "R_is_Omega_EM_self_adjoint": true,
+      "characteristic_polynomial": "(x-1)^6",
+      "definition": "R=Omega_EM^(-1)*Omega_WM",
+      "jordan_blocks": "two size-2 blocks and two size-1 blocks",
+      "matrix": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-3",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-3",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "minimal_polynomial": "(x-1)^2",
+      "rank_N": 2
+    },
+    "representative": [
+      "K=a+b*t",
+      "C=a*t^2+(b/3)*t^3+c+d*t",
+      "A_x=W_x+Q_e*t"
+    ],
+    "topology_and_function_space": {
+      "bounded_in_time_restriction_imposed": false,
+      "fixed_magnetic_bundle": true,
+      "flat_holonomy_W_x_retained": true,
+      "reason": "the certified generalized solution block contains polynomial Jordan partners; deleting them would make a different, generally degenerate phase space",
+      "uniform_magnetic_variation_included": false
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.weyl_maxwell_homogeneous_global_lee_wald_fixture --verify bridge/certificates/weyl_maxwell_homogeneous_global_lee_wald_fixture.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_global_symplectic_restriction --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_global_symplectic_restriction"
+  ]
+}
