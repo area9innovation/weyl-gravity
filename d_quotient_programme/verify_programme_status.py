@@ -214,7 +214,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
     nonlinear = data["nonlinear"]
     if not (
         nonlinear.get("result_state")
-        == "CONDITIONAL_CAUSAL_D_CARTAN_AND_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_PENDING"
+        == "CONDITIONAL_CAUSAL_D_CARTAN_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING"
         and nonlinear.get("classical_freeze_gate") == "FAIL_CLOSED"
         and nonlinear["programme_stages"][1]["status"]
         == "COMPLETE_54_ROW_UNARY_CONTRACTION_LOCAL_D_AND_SUPPORT_LOCAL_Q2_IMPORTED_REPLAYED_AND_TRANSFERRED_TO_RETAINED_Q2_26_MINIMAL_RESIDUAL_ELL2_PENDING"
@@ -1120,10 +1120,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "nonlinear",
-                "result_state": "CONDITIONAL_CAUSAL_D_CARTAN_AND_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_PENDING",
-                "verdict": "CONDITIONAL_CAUSAL_EXTENSION_IMPORTED_GREEN_OPERATORS_PENDING",
-                "established": "The complete classical 54-row support-local q2 is replayed and transferred exactly to retained q2_26. The bare local unary D-Cartan equation remains obstructed. A conditional causal unary/raw arity-two transfer theorem and a principal-compatible rank-one wave extension are now imported by hash; these do not yet provide the required cyclic completion or endpoint Green homotopy.",
-                "next_gate": "construct the raw endpoint Green operators and cyclic Green realization, then separate any residual/BFV promotion from the still fail-closed quantum gate",
+                "result_state": "CONDITIONAL_CAUSAL_D_CARTAN_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING",
+                "verdict": "CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING",
+                "established": "The complete classical 54-row support-local q2 is replayed and transferred exactly to retained q2_26. The bare local unary D-Cartan equation remains obstructed. A conditional causal unary/raw arity-two transfer theorem, principal-compatible rank-one wave extension, and cyclic 36-row analytic realization with nondegenerate pairing are imported by hash. No advanced/retarded Green operators or causal support theorem are supplied.",
+                "next_gate": "construct advanced and retarded Green operators with causal support for the cyclic 36-row analytic realization, then transport them to the retained endpoint without promoting the fail-closed residual/BFV or quantum gates",
             },
             {
                 "team_id": "quantum",
@@ -1462,10 +1462,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "setting_id": "compact_interacting",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_interacting",
-                "boundary_conditions": "closed S3; retained q2 complete; residual/BFV or causal Cartan extension not constructed",
+                "boundary_conditions": "closed S3; retained q2 and cyclic 36-row analytic realization complete; endpoint Green operators and residual/BFV extension absent",
                 "lifecycle_layer": "INTERACTING",
                 "status": "BLOCKED",
-                "verdict": "BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_REQUIRED",
+                "verdict": "CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING",
             },
             {
                 "setting_id": "compact_quantum",
@@ -1519,7 +1519,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "the charge vanishes on the exact sector proposed for quotienting",
             "the zero-charge transformations close as a Lie algebra or declared algebroid",
             "the classical Cartan and causal homotopies exist in the declared support category",
-            "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, support-local cyclic gauge-fixed 54-to-26 contraction, complete q2, local D action, and exact retained q2_26 transfer are complete; the bare local unary Cartan equation is obstructed, while a conditional causal transfer and principal-compatible rank-one wave extension are imported and their cyclic endpoint Green realization remains open",
+            "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, support-local cyclic gauge-fixed 54-to-26 contraction, complete q2, local D action, and exact retained q2_26 transfer are complete; the bare local unary Cartan equation is obstructed, while a conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported; advanced/retarded Green operators and causal support remain open",
             "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
             "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open",
             "the compact radion, duality, l=1 photon, and l=2 gravitational-plus fixtures assemble into a certified constant-lapse obstruction bilinear on their declared span, with exact charge-fibre cokernel behavior and relative Taub interpretation; the full harmonic domain and full cokernel remain open",
@@ -1541,9 +1541,9 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
         },
         "next_shared_gate": {
-            "gate_id": "BERGER_RAW_ENDPOINT_GREEN_OPERATORS_AND_CYCLIC_REALIZATION",
+            "gate_id": "BERGER_CYCLIC_36_ROW_ADVANCED_RETARDED_GREEN_OPERATORS",
             "owner_order": ["classical", "nonlinear", "quantum", "einstein_boundary"],
-            "rule": "The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and conditional causal unary/raw arity-two plus rank-one wave-extension data are imported. Construct the raw endpoint Green operators and cyclic realization without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates.",
+            "rule": "The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and the conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported. Construct advanced/retarded Green operators with causal support and transport them to the retained endpoint without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates.",
         },
         "claim_boundary": (
             "The dossier consolidates sector-indexed results. It does not promote a "
@@ -1674,9 +1674,9 @@ def validate(data: dict[str, Any]) -> list[str]:
     if ledger.get("compact_quantum", {}).get("verdict") != "ANALYTIC_FRAMEWORK_MISSING":
         errors.append("quantum verdict promoted before QME")
     if ledger.get("compact_interacting", {}).get("verdict") != (
-        "BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_REQUIRED"
+        "CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING"
     ):
-        errors.append("bare local interacting obstruction was erased or overpromoted")
+        errors.append("cyclic analytic realization was erased or promoted to a Green theorem")
     if ledger.get("compact_positive_berger_clock_retained_q2_26", {}).get(
         "status"
     ) != "CERTIFIED":
@@ -1795,9 +1795,11 @@ retained 26-row operation with 54,236 canonical nonzero coefficients; its
 arity-two and odd-Darboux cyclicity defects vanish. This retained operation is
 not yet the minimal residual/cohomology `ell2`. The bare local unary D-Cartan
 equation is independently obstructed by an exact characteristic-rank mismatch,
-so the remaining routes are characteristic cohomology, residual/BFV extension,
-and retained causal Green extension. The Einstein-incidence audit separately
-classifies this background as a non-Einstein Weyl--matter branch.
+but the conditional causal transfer, rank-one wave prolongation, and cyclic
+36-row analytic realization are now imported. Advanced/retarded Green
+operators, causal support, retained endpoint transport, and any residual/BFV
+promotion remain open. The Einstein-incidence audit separately classifies this
+background as a non-Einstein Weyl--matter branch.
 
 ## Four-team ledger
 

@@ -27,9 +27,11 @@ retained 26-row operation with 54,236 canonical nonzero coefficients; its
 arity-two and odd-Darboux cyclicity defects vanish. This retained operation is
 not yet the minimal residual/cohomology `ell2`. The bare local unary D-Cartan
 equation is independently obstructed by an exact characteristic-rank mismatch,
-so the remaining routes are characteristic cohomology, residual/BFV extension,
-and retained causal Green extension. The Einstein-incidence audit separately
-classifies this background as a non-Einstein Weyl--matter branch.
+but the conditional causal transfer, rank-one wave prolongation, and cyclic
+36-row analytic realization are now imported. Advanced/retarded Green
+operators, causal support, retained endpoint transport, and any residual/BFV
+promotion remain open. The Einstein-incidence audit separately classifies this
+background as a non-Einstein Weyl--matter branch.
 
 ## Four-team ledger
 
@@ -37,7 +39,7 @@ classifies this background as a non-Einstein Weyl--matter branch.
 |---|---|---|---|
 | classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 and portable 34-row minimal contraction extend to an exact cyclic support-local gauge-fixed 54-to-26 contraction. The complete support-local q2 and local D action are exported; the specialized characteristic symbol audit proves that the bare local unary Cartan equation has no solution. | compute the full characteristic symbol-cohomology carrier module and construct a retained causal Green extension without retrying the ruled-out bare local unary ansatz |
 | einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient, and the induced linear tangent quotient map into Weyl--Maxwell is injective. Exact arbitrary-harmonic Weyl--Maxwell restrictions are nondegenerate and relatively indefinite on every standard axial and polar ell>=2 block. Both parities have the same on-shell factors 1+/-(3/2)*sqrt(2lambda), although their off-shell matrices differ; neither inclusion is a symplectic embedding of the Einstein--Maxwell form. | combine the axial and polar results into one standard radiative restriction theorem, then compute physical ell=1, homogeneous, and twist blocks before solving extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit |
-| nonlinear | `CONDITIONAL_CAUSAL_EXTENSION_IMPORTED_GREEN_OPERATORS_PENDING` | The complete classical 54-row support-local q2 is replayed and transferred exactly to retained q2_26. The bare local unary D-Cartan equation remains obstructed. A conditional causal unary/raw arity-two transfer theorem and a principal-compatible rank-one wave extension are now imported by hash; these do not yet provide the required cyclic completion or endpoint Green homotopy. | construct the raw endpoint Green operators and cyclic Green realization, then separate any residual/BFV promotion from the still fail-closed quantum gate |
+| nonlinear | `CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING` | The complete classical 54-row support-local q2 is replayed and transferred exactly to retained q2_26. The bare local unary D-Cartan equation remains obstructed. A conditional causal unary/raw arity-two transfer theorem, principal-compatible rank-one wave extension, and cyclic 36-row analytic realization with nondegenerate pairing are imported by hash. No advanced/retarded Green operators or causal support theorem are supplied. | construct advanced and retarded Green operators with causal support for the cyclic 36-row analytic realization, then transport them to the retained endpoint without promoting the fail-closed residual/BFV or quantum gates |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered | complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion |
 
 ## Setting ledger
@@ -80,7 +82,7 @@ classifies this background as a non-Einstein Weyl--matter branch.
 | compact_einstein_maxwell_weyl_polar_all_ell_restriction | `H_product` | `einstein_maxwell_product_compact_weyl_polar_all_ell_restriction` | CLASSICAL_BV | `CERTIFIED` | `G2_POLAR_ALL_ELL_GE2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_positive_berger_clock_retained_q2_26 | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | INTERACTING | `CERTIFIED` | `RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED` |
-| compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_REQUIRED` |
+| compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
 | asymptotic_real_cylinder_time | `H_ESU` | `asymptotically_flat_full_Bach` | LORENTZIAN_CAUSAL | `OPEN` | `PHASE_SPACE_NOT_CLOSED` |
 | asymptotic_dilation | `D_M` | `asymptotically_flat_full_Bach` | LORENTZIAN_CAUSAL | `OPEN` | `OPEN` |
@@ -94,7 +96,7 @@ classifies this background as a non-Einstein Weyl--matter branch.
 3. the charge vanishes on the exact sector proposed for quotienting
 4. the zero-charge transformations close as a Lie algebra or declared algebroid
 5. the classical Cartan and causal homotopies exist in the declared support category
-6. Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, support-local cyclic gauge-fixed 54-to-26 contraction, complete q2, local D action, and exact retained q2_26 transfer are complete; the bare local unary Cartan equation is obstructed, while a conditional causal transfer and principal-compatible rank-one wave extension are imported and their cyclic endpoint Green realization remains open
+6. Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, support-local cyclic gauge-fixed 54-to-26 contraction, complete q2, local D action, and exact retained q2_26 transfer are complete; the bare local unary Cartan equation is obstructed, while a conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported; advanced/retarded Green operators and causal support remain open
 7. the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open
 8. the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open
 9. the compact radion, duality, l=1 photon, and l=2 gravitational-plus fixtures assemble into a certified constant-lapse obstruction bilinear on their declared span, with exact charge-fibre cokernel behavior and relative Taub interpretation; the full harmonic domain and full cokernel remain open
@@ -149,13 +151,13 @@ Paper X remains reserved for interaction/quantum stability after its separate
 classical-export and QME gates.
 
 The immediate shared calculation is
-`BERGER_RAW_ENDPOINT_GREEN_OPERATORS_AND_CYCLIC_REALIZATION`: The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and conditional causal unary/raw arity-two plus rank-one wave-extension data are imported. Construct the raw endpoint Green operators and cyclic realization without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates.
+`BERGER_CYCLIC_36_ROW_ADVANCED_RETARDED_GREEN_OPERATORS`: The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and the conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported. Construct advanced/retarded Green operators with causal support and transport them to the retained endpoint without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates.
 
 ## Imported evidence
 
 - `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d`, SHA-256 `35d75f22d9cb6703b2cd4283c5e1ccde296045dc42fcc3bf177308c9ce76f5b3`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `7e87281c416f4c4f98edfe61ae05829f4b48593a`, SHA-256 `ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685`
-- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `49056dc67430054f0022731f4cca97d4087a8628`, SHA-256 `530a3929aa50ad4cb983af3332a208cfbfd7a561c931dca3ea1c238786005e8f`
+- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `f8573978cc65ae5fd4419761b6aa3209258dc46c`, SHA-256 `192c584e3d075c5bcb9b2678ebdd423e4146c146acabac440ee5c1cf7788134d`
 - `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6`, SHA-256 `9f450477532a24edbd02282f29593876a13ea886808a6c9ba06b41004653f8da`
 
 ## Claim boundary

@@ -138,9 +138,12 @@ transferred exactly to a retained 26-row operation with 54,236 canonical
 coefficients; the retained arity-two and odd-Darboux cyclicity defects vanish.
 This retained operation is not yet the minimal residual/cohomology `ell2`.
 An independent exact characteristic-symbol calculation rules out the bare
-finite-order support-local unary `D`-Cartan homotopy.  The next gate is therefore
-the full characteristic symbol-cohomology carrier module, followed by separate
-residual/BFV and retained causal Green extensions.
+finite-order support-local unary `D`-Cartan homotopy.  The conditional causal
+transfer theorem, rank-one scalar-wave prolongation, and cyclic 36-row analytic
+realization with nondegenerate pairing are now imported independently.  They
+do not yet supply Green operators.  The next gate is to construct advanced and
+retarded inverses with causal support and transport them to the retained
+endpoint; residual/BFV and quantum promotion remain separate fail-closed gates.
 
 The Einstein team has separately proved that this Berger background is a
 genuine non-Einstein Weyl--matter branch.  It is neither Einstein,
