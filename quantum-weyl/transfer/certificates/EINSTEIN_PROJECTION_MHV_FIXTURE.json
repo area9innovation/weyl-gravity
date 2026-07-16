@@ -1,0 +1,176 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC G5 prerequisite imports the exact Einstein solution-locus inclusion and computes one exact complex spinor-helicity reference value for the stripped Einstein (--+) three-graviton amplitude. It does not project a conformal-gravity vertex: the complete support-local q2, a nonlinear Einstein tangent projector or tangency theorem, an asymptotic scattering-state map, and causal normalization are absent.",
+  "claim_flags": {
+    "AMPLITUDE_MATCH_TO_CONFORMAL_GRAVITY_VERTEX": false,
+    "EINSTEIN_SOLUTION_INCLUSION_IMPORTED": true,
+    "G5_PROMOTED": false,
+    "LORENTZIAN_SCATTERING_CERTIFIED": false,
+    "NONLINEAR_EINSTEIN_TANGENCY_TESTED": false,
+    "PHYSICAL_TRANSFERRED_Q2_PROJECTED": false,
+    "REFERENCE_MHV_FIXTURE_COMPUTED": true
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/einstein-projection-amplitude-fixture.md": "d678c4f244dc08714cfec61f5e108152ea4f9475750cb538839b2f7f5c3f65fa",
+      "einstein_projection_amplitude_fixture.py": "843b4cc8525e4b215c9ceb4437f5ee4616f52fe80e1a7788360d60ed0e0c4de0",
+      "einstein_projection_amplitude_fixture_certificate.py": "f2872d36183700d0184e5e0ad3025da3f3583059c2a4046bdf41b7b2948d1290",
+      "schema/einstein-projection-amplitude-fixture-v1.schema.json": "6f39c81256d80523bb16342836d32e5b0ce9850bf97cbf5b4a05c1a118d9fa16",
+      "tests/test_einstein_projection_amplitude_fixture.py": "7988c4c28e67aab2d21fa1a507f420b94c07b0d68a5e66a1432570cf02c49e5e"
+    },
+    "source_manifest_sha256": "ebec9097b60fd095acdfe22c0fbc0cbc9e1ac0bd7ddffda888881cc2a4c26c9e"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "einstein_input": {
+    "exact_solution_inclusion_available": true,
+    "helicity_weights": [
+      2,
+      -2
+    ],
+    "local_helicity_module": "W+ direct-sum W-",
+    "nonlinear_support_local_projection_available": false,
+    "observable_or_scattering_state_embedding_available": false
+  },
+  "generality_assessment": {
+    "achieved": "G5_PREREQUISITE_REFERENCE_FIXTURE_AND_INPUT_CONTRACT",
+    "promotion_to_G5_authorized": false,
+    "target": "G5_EINSTEIN_PROJECTION_AND_ONE_AMPLITUDE_FIXTURE"
+  },
+  "lifecycle_layer": "INTERACTING",
+  "literature_reference": {
+    "arxiv": "1307.5043v2",
+    "authors": "Tim Adamo and Lionel Mason",
+    "doi": "10.1088/0264-9381/31/4/045014",
+    "equation": "Eq. (6.2), flat-space Lambda->0 stripped three-point factor",
+    "title": "Conformal and Einstein gravity from twistor actions",
+    "url": "https://arxiv.org/abs/1307.5043"
+  },
+  "next_gate": "IMPORT_SUPPORT_LOCAL_Q2_THEN_CONSTRUCT_NONLINEAR_EINSTEIN_PROJECTION",
+  "projection_contract": {
+    "blocked_by": "complete support-local q2 and nonlinear Einstein projection",
+    "branch_leakage_test": "project the nonlinear source onto every certified extra-Weyl complement and require zero for tangency",
+    "evaluation": "compare the projected (--+) coefficient with the stripped reference after applying the declared normalization",
+    "execution_authorized": false,
+    "future_input": "physical support-local transferred cubic tensor ell2",
+    "required_objects": [
+      "complete support-local BV q2",
+      "verified physical contraction pi_cl/iota_cl/S_cl",
+      "nonlinear Einstein tangent projection or exact tangency proof",
+      "helicity normalization and coupling dictionary"
+    ]
+  },
+  "provenance": {
+    "einstein_commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
+    "einstein_sources": {
+      "einstein_certificate": {
+        "commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
+        "path": "bridge/certificates/einstein_sector_theorem.json",
+        "sha256": "c4ed958ad7db67296039a573afbec5e5338d496bbbf1eecc43111a2d105b0896"
+      },
+      "einstein_producer": {
+        "commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
+        "path": "bridge/einstein_sector/certificate.py",
+        "sha256": "b772968483020e28c1a7b2abae6a8ed86e0c85666bc5fa76531279ac601401fb"
+      },
+      "einstein_report": {
+        "commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
+        "path": "reports/einstein-sector-theorem.md",
+        "sha256": "715af2a1220230e328942be442f8c3c52e626df47b7a794895814e56def83019"
+      },
+      "einstein_tests": {
+        "commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
+        "path": "bridge/einstein_sector/tests/test_certificate.py",
+        "sha256": "9d4da7977550457ad2875cf04b9681d242e2901978d3ac8d96d37d26c17af22c"
+      }
+    },
+    "einstein_sources_sha256": "d18ad8f1dfd4f1b9686c2b3993c755e03d705417e301a29b451db792c599b4d3"
+  },
+  "reference_fixture": {
+    "all_momenta_null": true,
+    "angle_brackets_12_23_31": [
+      "1",
+      "1",
+      "1"
+    ],
+    "branch": "holomorphic_complex_three_point_kinematics",
+    "helicities": [
+      -2,
+      -2,
+      2
+    ],
+    "lambda_spinors": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ],
+      [
+        "-1",
+        "-1"
+      ]
+    ],
+    "little_group_factor": "t1^4*t2^4*t3^-4",
+    "momenta_bispinors": [
+      [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "-1",
+          "0"
+        ]
+      ]
+    ],
+    "momentum_sum_zero": true,
+    "negative_leg_exchange_symmetric": true,
+    "square_brackets_12_23_31": [
+      "0",
+      "0",
+      "0"
+    ],
+    "stripped_formula": "<12>^6/(<23>^2<31>^2)",
+    "stripped_value": "1",
+    "tilde_lambda_spinors": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ]
+  },
+  "result_id": "EINSTEIN_PROJECTION_MHV_REFERENCE_FIXTURE",
+  "result_state": "REFERENCE_MHV_FIXTURE_EXACT_NONLINEAR_EINSTEIN_PROJECTION_INPUT_BLOCKED",
+  "schema": "quantum-weyl-einstein-projection-amplitude-fixture-v1"
+}

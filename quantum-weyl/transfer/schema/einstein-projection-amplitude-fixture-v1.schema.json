@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-einstein-projection-amplitude-fixture-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "generality_assessment", "einstein_input", "projection_contract", "reference_fixture", "literature_reference", "claim_flags", "provenance", "consumer_provenance", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-einstein-projection-amplitude-fixture-v1"},
+    "result_id": {"const": "EINSTEIN_PROJECTION_MHV_REFERENCE_FIXTURE"},
+    "result_state": {"const": "REFERENCE_MHV_FIXTURE_EXACT_NONLINEAR_EINSTEIN_PROJECTION_INPUT_BLOCKED"},
+    "lifecycle_layer": {"const": "INTERACTING"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "generality_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target", "achieved", "promotion_to_G5_authorized"],
+      "properties": {
+        "target": {"const": "G5_EINSTEIN_PROJECTION_AND_ONE_AMPLITUDE_FIXTURE"},
+        "achieved": {"const": "G5_PREREQUISITE_REFERENCE_FIXTURE_AND_INPUT_CONTRACT"},
+        "promotion_to_G5_authorized": {"const": false}
+      }
+    },
+    "einstein_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exact_solution_inclusion_available", "local_helicity_module", "helicity_weights", "nonlinear_support_local_projection_available", "observable_or_scattering_state_embedding_available"],
+      "properties": {
+        "exact_solution_inclusion_available": {"const": true},
+        "local_helicity_module": {"const": "W+ direct-sum W-"},
+        "helicity_weights": {"const": [2, -2]},
+        "nonlinear_support_local_projection_available": {"const": false},
+        "observable_or_scattering_state_embedding_available": {"const": false}
+      }
+    },
+    "projection_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["future_input", "required_objects", "evaluation", "branch_leakage_test", "execution_authorized", "blocked_by"],
+      "properties": {
+        "future_input": {"const": "physical support-local transferred cubic tensor ell2"},
+        "required_objects": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}},
+        "evaluation": {"type": "string", "minLength": 1},
+        "branch_leakage_test": {"type": "string", "minLength": 1},
+        "execution_authorized": {"const": false},
+        "blocked_by": {"const": "complete support-local q2 and nonlinear Einstein projection"}
+      }
+    },
+    "reference_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["helicities", "branch", "lambda_spinors", "tilde_lambda_spinors", "momenta_bispinors", "momentum_sum_zero", "all_momenta_null", "angle_brackets_12_23_31", "square_brackets_12_23_31", "stripped_formula", "stripped_value", "little_group_factor", "negative_leg_exchange_symmetric"],
+      "properties": {
+        "helicities": {"const": [-2, -2, 2]},
+        "branch": {"const": "holomorphic_complex_three_point_kinematics"},
+        "lambda_spinors": {"type": "array", "minItems": 3, "maxItems": 3},
+        "tilde_lambda_spinors": {"type": "array", "minItems": 3, "maxItems": 3},
+        "momenta_bispinors": {"type": "array", "minItems": 3, "maxItems": 3},
+        "momentum_sum_zero": {"const": true},
+        "all_momenta_null": {"const": true},
+        "angle_brackets_12_23_31": {"const": ["1", "1", "1"]},
+        "square_brackets_12_23_31": {"const": ["0", "0", "0"]},
+        "stripped_formula": {"const": "<12>^6/(<23>^2<31>^2)"},
+        "stripped_value": {"const": "1"},
+        "little_group_factor": {"const": "t1^4*t2^4*t3^-4"},
+        "negative_leg_exchange_symmetric": {"const": true}
+      }
+    },
+    "literature_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authors", "title", "arxiv", "doi", "equation", "url"],
+      "properties": {
+        "authors": {"const": "Tim Adamo and Lionel Mason"},
+        "title": {"const": "Conformal and Einstein gravity from twistor actions"},
+        "arxiv": {"const": "1307.5043v2"},
+        "doi": {"const": "10.1088/0264-9381/31/4/045014"},
+        "equation": {"const": "Eq. (6.2), flat-space Lambda->0 stripped three-point factor"},
+        "url": {"const": "https://arxiv.org/abs/1307.5043"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["REFERENCE_MHV_FIXTURE_COMPUTED", "EINSTEIN_SOLUTION_INCLUSION_IMPORTED", "PHYSICAL_TRANSFERRED_Q2_PROJECTED", "NONLINEAR_EINSTEIN_TANGENCY_TESTED", "AMPLITUDE_MATCH_TO_CONFORMAL_GRAVITY_VERTEX", "LORENTZIAN_SCATTERING_CERTIFIED", "G5_PROMOTED"],
+      "properties": {
+        "REFERENCE_MHV_FIXTURE_COMPUTED": {"const": true},
+        "EINSTEIN_SOLUTION_INCLUSION_IMPORTED": {"const": true},
+        "PHYSICAL_TRANSFERRED_Q2_PROJECTED": {"const": false},
+        "NONLINEAR_EINSTEIN_TANGENCY_TESTED": {"const": false},
+        "AMPLITUDE_MATCH_TO_CONFORMAL_GRAVITY_VERTEX": {"const": false},
+        "LORENTZIAN_SCATTERING_CERTIFIED": {"const": false},
+        "G5_PROMOTED": {"const": false}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["einstein_commit", "einstein_sources", "einstein_sources_sha256"],
+      "properties": {
+        "einstein_commit": {"const": "7e87281c416f4c4f98edfe61ae05829f4b48593a"},
+        "einstein_sources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["einstein_certificate", "einstein_producer", "einstein_tests", "einstein_report"],
+          "properties": {
+            "einstein_certificate": {"$ref": "#/$defs/artifact"},
+            "einstein_producer": {"$ref": "#/$defs/artifact"},
+            "einstein_tests": {"$ref": "#/$defs/artifact"},
+            "einstein_report": {"$ref": "#/$defs/artifact"}
+          }
+        },
+        "einstein_sources_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "consumer_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["einstein_projection_amplitude_fixture.py", "einstein_projection_amplitude_fixture_certificate.py", "schema/einstein-projection-amplitude-fixture-v1.schema.json", "tests/test_einstein_projection_amplitude_fixture.py", "../reports/einstein-projection-amplitude-fixture.md"],
+          "properties": {
+            "einstein_projection_amplitude_fixture.py": {"$ref": "#/$defs/hash"},
+            "einstein_projection_amplitude_fixture_certificate.py": {"$ref": "#/$defs/hash"},
+            "schema/einstein-projection-amplitude-fixture-v1.schema.json": {"$ref": "#/$defs/hash"},
+            "tests/test_einstein_projection_amplitude_fixture.py": {"$ref": "#/$defs/hash"},
+            "../reports/einstein-projection-amplitude-fixture.md": {"$ref": "#/$defs/hash"}
+          }
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "next_gate": {"const": "IMPORT_SUPPORT_LOCAL_Q2_THEN_CONSTRUCT_NONLINEAR_EINSTEIN_PROJECTION"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "commit": {"const": "7e87281c416f4c4f98edfe61ae05829f4b48593a"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

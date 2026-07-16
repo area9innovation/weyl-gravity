@@ -229,6 +229,25 @@ python3 quantum-weyl/transfer/ppwave_branch_transfer_import_certificate.py --che
 python3 -m unittest quantum-weyl/transfer/tests/test_ppwave_branch_transfer_import.py
 ```
 
+N-G5 now has a fail-closed Einstein-projection adapter and one exact reference
+fixture.  The pinned Einstein theorem supplies the solution-locus inclusion
+and local helicity-$\pm2$ module.  On exact complex three-point kinematics the
+stripped Einstein $(--+)$ factor
+
+```text
+<12>^6/(<23>^2 <31>^2)
+```
+
+evaluates to one and has little-group weights `(4,4,-4)`.  This reproduces the
+reference side of the future comparison only.  No conformal-gravity vertex is
+projected until the complete support-local `q2`, nonlinear Einstein tangency
+map, and normalization dictionary are available.
+
+```bash
+python3 quantum-weyl/transfer/einstein_projection_amplitude_fixture_certificate.py --check
+python3 -m unittest quantum-weyl/transfer/tests/test_einstein_projection_amplitude_fixture.py
+```
+
 The arity-two solve also has a block-sparse exact rail.  Declared additive
 labels such as `D` weight, momentum, or jet filtration must be preserved by
 `q1`; the differential then splits by
@@ -289,6 +308,7 @@ python3 quantum-weyl/transfer/berger_gauge_fixed_nonminimal_import_certificate.p
 python3 quantum-weyl/transfer/berger_54_row_local_d_import_certificate.py --check
 python3 quantum-weyl/transfer/arity_three_cartan_certificate.py --check
 python3 quantum-weyl/transfer/ppwave_branch_transfer_import_certificate.py --check
+python3 quantum-weyl/transfer/einstein_projection_amplitude_fixture_certificate.py --check
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v

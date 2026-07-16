@@ -89,7 +89,7 @@ schema/             machine-readable result contracts
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
 | F | one-loop Slavnov breaking and QME status | `NOT_COMPUTED` |
 | G | residual quantum transfer and pairing correction | `NOT_COMPUTED` |
-| N | nonlinear classical transfer prerequisite | `54_ROW_LOCAL_D_AND_UNARY_COMPLETE_Q2_BLOCKED`; the full gauge-fixed unary contraction and support-local helical `D` action now pass exact checks on all 54 rows; an aligned pp-wave block has genuine Einstein/extra-Weyl representatives and exactly zero mixed transferred `ell2`; the all-weight homogeneous Berger complex has an explicit nonzero Cartan primitive; the full four-dimensional support-local `q2`, nonaligned/Weyl-square mixing, and complete 54-row arity-two Cartan verdict remain absent |
+| N | nonlinear classical transfer prerequisite | `54_ROW_LOCAL_D_AND_UNARY_COMPLETE_Q2_BLOCKED`; the full gauge-fixed unary contraction and support-local helical `D` action pass exact checks on all 54 rows; an aligned pp-wave block has zero mixed transferred `ell2`; the exact Einstein $(--+)$ MHV reference fixture and fail-closed projection contract are ready; the full four-dimensional support-local `q2`, actual Einstein projection, nonaligned/Weyl-square mixing, and complete 54-row arity-two Cartan verdict remain absent |
 
 The precursor audits
 [`verify_conformal_descent_anomaly.py`](../symbolic/verify_conformal_descent_anomaly.py)

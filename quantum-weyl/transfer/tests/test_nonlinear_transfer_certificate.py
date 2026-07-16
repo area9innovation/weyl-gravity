@@ -59,6 +59,13 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn("ALIGNED_PPWAVE_ELL2_ZERO", branch_question["status"])
         self.assertIn("NONALIGNED_FULL_BV_PENDING", branch_question["status"])
+        amplitude_question = next(
+            item
+            for item in certificate["question_ledger"]
+            if item["question_id"] == "einstein_projection_amplitude_fixture"
+        )
+        self.assertIn("REFERENCE_MHV_FIXTURE_EXACT", amplitude_question["status"])
+        self.assertIn("PROJECTION_AND_Q2_INPUT_BLOCKED", amplitude_question["status"])
         d_question = next(
             item
             for item in certificate["question_ledger"]
@@ -114,6 +121,10 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn(
             "ppwave_branch_transfer_import_sha256",
+            certificate["provenance"],
+        )
+        self.assertIn(
+            "einstein_projection_MHV_fixture_sha256",
             certificate["provenance"],
         )
         self.assertIn("berger_total_D_disposition_sha256", certificate["provenance"])
