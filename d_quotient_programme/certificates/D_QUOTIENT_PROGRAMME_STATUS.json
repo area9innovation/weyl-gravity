@@ -29,7 +29,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "054b6ed7ac99628dc006e8a54c9bb27aee9b19eb",
+  "programme_base_commit": "9fb785bc60f7bdfd3e92f161e80fac6bde7de5d6",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -1520,15 +1520,16 @@
         "established": [
           "the exact arbitrary-harmonic Einstein-Maxwell second variation fixes the axial transverse-coefficient and polar master kinetic Hessians",
           "pullback through the axial curl potentials gives G_A=diag(lambda,2)M_A, while G_P=[[1,-2],[-2,2lambda]]",
-          "both action-normalized forms are positive on every ell>=2 radiative block",
-          "at ell=1 both forms have exactly the declared gauge branch as kernel and are positive on the physical quotient",
+          "both action-normalized kinetic forms are positive on every ell>=2 radiative block",
+          "at ell=1 both forms have exactly the declared gauge branch as kernel and induce positive kinetic forms on the physical quotient",
+          "a direct full Lee-Wald calculation at ell=2 retains arbitrary symbolic k and matches both axial and polar master Wronskians without a global cylinder boost",
           "the integrated reduced Wronskians equal the Einstein-Maxwell Lee-Wald form on closed S1 x S2",
           "fixed-bundle Maxwell variations are global one-forms and produce no Cech corner term"
         ],
         "evidence": {
-          "commit": "054b6ed7ac99628dc006e8a54c9bb27aee9b19eb",
+          "commit": "9fb785bc60f7bdfd3e92f161e80fac6bde7de5d6",
           "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
-          "sha256": "b111de279f808033bbd5bc8decec194c8f5d27e9abc38793abf35e07a14c2acb"
+          "sha256": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
         },
         "generator_id": "H_product",
         "lifecycle_layer": "CLASSICAL_BV",
@@ -1537,6 +1538,7 @@
           "the homogeneous ell=0 radion/circumference/electric-charge pairing",
           "the axial ell=1 global twist pairing",
           "the Weyl-Maxwell pullback or a symplectic embedding of the Einstein sector",
+          "a positive-frequency complex structure or one-particle Hilbert norm",
           "the complete fourth-order Weyl-Maxwell adjoint cokernel",
           "a Lorentzian-causal, scattering, or quantum theorem"
         ],
@@ -1547,12 +1549,13 @@
         "verdict": "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHING",
         "verification_commands": [
           "python3 -m bridge.einstein_sector.einstein_maxwell_radiative_symplectic_action_check --verify",
+          "python3 -m bridge.einstein_sector.einstein_maxwell_radiative_lee_wald_fixture --verify",
           "python3 -m bridge.einstein_sector.einstein_maxwell_radiative_symplectic_matching --verify bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
           "python3 bridge/einstein_sector/verify_einstein_maxwell_radiative_symplectic_matching.py",
           "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_radiative_symplectic_matching"
         ]
       },
-      "sha256": "cd6d6ce6d964f7ac384b74bd05b6e79e9fba590f1dd2f377a3a1769c565a7600"
+      "sha256": "54db506c95d592fe1c4178319353e643af7cca8f7c8fd1c124ddfd1396d20a39"
     },
     {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
@@ -1684,7 +1687,7 @@
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "The fixed compact U(1) domain, complete standard axial/polar harmonic quotients, and action-normalized Einstein--Maxwell covariant symplectic form are certified on every radiative block. Both ell=1 gauge branches are exact presymplectic kernels and the physical quotients are positive.",
+      "established": "The fixed compact U(1) domain, complete standard axial/polar harmonic quotients, and action-normalized Einstein--Maxwell covariant symplectic form are certified on every radiative block. A direct symbolic-momentum Lee--Wald fixture matches both parities. Both ell=1 gauge branches are exact presymplectic kernels and the quotient kinetic forms are positive; no one-particle Hilbert norm is claimed.",
       "next_gate": "compute the homogeneous ell=0 and axial ell=1 twist global presymplectic pairs, then compare the Weyl--Maxwell pullback and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
       "result_state": "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHED_GLOBAL_AND_WEYL_PULLBACK_OPEN",
       "team_id": "einstein_boundary",

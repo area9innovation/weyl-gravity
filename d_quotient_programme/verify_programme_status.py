@@ -1009,7 +1009,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "team_id": "einstein_boundary",
                 "result_state": "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHED_GLOBAL_AND_WEYL_PULLBACK_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "The fixed compact U(1) domain, complete standard axial/polar harmonic quotients, and action-normalized Einstein--Maxwell covariant symplectic form are certified on every radiative block. Both ell=1 gauge branches are exact presymplectic kernels and the physical quotients are positive.",
+                "established": "The fixed compact U(1) domain, complete standard axial/polar harmonic quotients, and action-normalized Einstein--Maxwell covariant symplectic form are certified on every radiative block. A direct symbolic-momentum Lee--Wald fixture matches both parities. Both ell=1 gauge branches are exact presymplectic kernels and the quotient kinetic forms are positive; no one-particle Hilbert norm is claimed.",
                 "next_gate": "compute the homogeneous ell=0 and axial ell=1 twist global presymplectic pairs, then compare the Weyl--Maxwell pullback and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
             },
             {

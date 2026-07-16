@@ -605,11 +605,16 @@ G_A=(N_lm/2)W_A M_A
 
 Both forms are positive for every `ell>=2`.  At `ell=1` they become rank one
 with exactly the respective residual gauge branch as kernel, leaving a
-positive physical quotient.  On the closed Cauchy surface their Wronskians
+positive quotient kinetic form.  A direct full Lee--Wald calculation retains
+arbitrary symbolic `k` and matches both parities without a global cylinder
+boost.  On the closed Cauchy surface their Wronskians
 equal the integrated Einstein--Maxwell Lee--Wald form; fixed-bundle Maxwell
 variations are global one-forms, so no Cech corner term occurs.  This also
 corrects the provisional polar `Psi` weight to bracket weight `4`, or
 `2N_1m` after the common factor.
+
+This is kinetic positivity, not yet a one-particle Hilbert norm; the latter
+requires a declared positive-frequency complex structure.
 
 Do not infer a Weyl--Maxwell symplectic embedding from this result.  The next
 compact gates are the homogeneous `ell=0` and axial `ell=1` twist global
