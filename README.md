@@ -102,8 +102,8 @@ Paper IX still waits for at least one complete
 boundary or interaction theorem.
 
 General-audience article:
-[`How to Build a Universe—and Find Out Whether Its Ghosts Are Real`](paper/before-worrying-about-a-gravitational-ghost.md)
-([PDF](paper/before-worrying-about-a-gravitational-ghost.pdf)) explains the
+[`How to Build a Universe—and Find Out Whether Its Ghosts Are Real`](paper/how-to-build-a-universe.md)
+([PDF](paper/how-to-build-a-universe.pdf)) explains the
 universe-building programme through spacetime, light, gravitational waves,
 clocks, redshift, interactions, and its symbolic reproducibility system
 without assuming advanced mathematics or physics.

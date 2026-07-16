@@ -144,6 +144,98 @@ the causal future and the constraints propagate with it.
 These are classical causality results. A global quantum state with the
 required short-distance and causality properties is a separate rung.
 
+## What each rung has to prove
+
+Words such as *light*, *particle* and *black hole* carry a great deal of
+physics. We do not count a phenomenon merely because something in an equation
+has a familiar shape. Each rung has a recognized acceptance test.
+
+### Spacetime and curvature
+
+The geometry must solve the gravitational field equations. Small disturbances
+must obey compatible equations and constraints. This is what gives defined
+meaning to distances, durations, curvature and light cones.
+
+### Causality
+
+Sources must produce responses only where the light cones permit them. In
+particular, a future source must not alter the past. For gravity this must hold
+for the entire constrained gauge system, not just one selected component.
+
+### Light
+
+Classical light requires electromagnetic equations, nontrivial wave solutions
+and propagation along the spacetime light cones. Observable light also
+requires sources, detectors and energy flux. A photon requires the additional
+quantum-particle tests below.
+
+### Electrons and charged matter
+
+An electron-like field must have the correct spin, electric charge and
+fermionic behavior. It needs causal propagation, stable coupling to
+electromagnetism and gravity, and a physical mechanism that supplies a mass
+scale in a conformal theory. A classical spinor field is still not a quantum
+electron until the particle tests pass.
+
+### Gravitational waves
+
+A gravitational wave must solve the linearized gravitational equations,
+survive all redundant coordinate and scale descriptions, carry a nonzero
+physical comparison rule, and propagate causally. An observable waveform also
+needs energy flux, boundary conditions and a response in a detector.
+
+### Clocks, time dilation and redshift
+
+A clock must change steadily, have healthy energy and couple consistently to
+gravity. Time dilation requires comparing two such physical clocks.
+Gravitational redshift requires an emitter, a light signal and a receiver; the
+observable is the ratio of the frequencies measured by the two clocks, stated
+without relying on arbitrary coordinate labels.
+
+### Gravitational lensing
+
+Lensing requires a physical source of curvature, causal light paths around
+that source and observable comparisons of angles, brightness or arrival
+times. Drawing a bent line in a coordinate system is not enough—the result
+must be independent of how the spacetime map was drawn.
+
+### Interactions
+
+The nonlinear equations must say how waves and matter exchange energy. The
+interactions must preserve all constraints and must not regenerate a forbidden
+or unstable physical mode. Passing quadratic order does not automatically
+grant cubic order, higher orders or global evolution.
+
+### Quantum particles
+
+A particle requires a global quantum state, a positive probability rule and a
+controlled separation into physical and redundant states. Scattering
+particles additionally require meaningful incoming and outgoing regions. A
+classical wave is therefore evidence for a field mode, not yet for a photon,
+electron or graviton.
+
+### Black holes
+
+A black-hole candidate must possess a genuine horizon rather than a coordinate
+artifact. Its boundary conditions, conserved charges, causal perturbations,
+thermodynamic quantities and stability must all be controlled. A metric with a
+zero in one coefficient is not by itself a physical black hole.
+
+### Quantum gravity
+
+The quantum gauge identities must remain consistent after regularization and
+renormalization. Quantum anomalies must either cancel or have an allowed
+repair. The theory also needs suitable short-distance states, causal quantum
+products and a physical state space. Classical causal propagation is an
+essential input, not the completed quantum theory.
+
+### Cosmology, dark matter and dark energy
+
+The theory must supply stable evolving universes and galaxy-scale solutions,
+derive observables such as expansion, lensing and rotation curves, and compare
+them with data. Fitting a curve is meaningful only after the underlying modes,
+clocks, causality and stability have passed their own tests.
+
 ## The universe-building map
 
 The table below is both a status summary and a public TODO list. A scoped pass

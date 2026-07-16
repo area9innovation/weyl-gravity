@@ -277,7 +277,7 @@ precise obstruction, not to protect a preferred interpretation.
 - [Clean publication-release audit](../conformal-publication-release-audit.json)
 - [Live \(D\)-quotient status ledger](../d_quotient_programme/reports/consolidated-status.md)
 - [Long-term programme and publication gates](universe-building-roadmap.md)
-- [General-audience introduction](../paper/before-worrying-about-a-gravitational-ghost.md)
+- [General-audience introduction](../paper/how-to-build-a-universe.md)
 
 Papers 7--8 are `ARTIFACT_READY`: the manuscripts, supplements, hashes, and
 clean reproduction audit pass. They are not `SUBMISSION_READY` until human
