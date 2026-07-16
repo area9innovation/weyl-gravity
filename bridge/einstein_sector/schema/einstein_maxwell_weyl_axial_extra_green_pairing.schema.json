@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-axial-extra-green-pairing-v1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "provenance", "domain", "pairing", "classification", "interpretation", "next_gate", "claim_boundary", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-axial-extra-green-pairing-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_extra_green_pairing.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING"},
+    "result_state": {"const": "GENERIC_AXIAL_EXTRA_MODULE_NONRADICAL_POSITIVE_IN_REDUCED_HESSIAN_GREEN_CONVENTION"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"const": "G2_GENERIC_AXIAL_EXTRA_REDUCED_GREEN_PAIRING"},
+    "provenance": {"type": "object"}, "domain": {"type": "string"}, "pairing": {"type": "object"},
+    "classification": {"type": "object"}, "interpretation": {"type": "string"}, "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"}, "verification_commands": {"type": "array", "minItems": 2}
+  }
+}

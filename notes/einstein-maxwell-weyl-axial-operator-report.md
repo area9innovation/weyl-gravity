@@ -115,10 +115,23 @@ has 54.  No equation of motion, dispersion relation, inverse frequency, or
 inverse momentum enters the proof.
 
 This closes the local Green-identity rail, not the Green-function rail.  The
-next load-bearing gate is the direct four-dimensional action-Hessian match and
-the complete Einstein/extra Lee--Wald matrix.  Those must decide whether
-either extra cyclic summand is nonradical on the compact phase space before
-signs, norms, or particle language are attached.
+`EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING` certificate then evaluates
+that current on the two explicit extra representatives.  In the convention
+`N_extra=J^t/(-i omega)` its exact determinant is
+
+```text
+det N_extra=lambda^4*(lambda-2)*(9lambda-2)/3.
+```
+
+The first principal minor and determinant are positive for every physical
+`lambda=ell(ell+1)>=6`, so the extra module is nonradical with signature
+`(2,0)` for the reduced-Hessian Green current.  This rules out disappearance
+as a radical at that declared layer.
+
+The next load-bearing gate is the direct four-dimensional action-Hessian match
+and complete Einstein/extra Lee--Wald matrix.  Until that normalization and
+all improvement terms agree, the reduced signature is not a physical norm,
+ghost, or particle statement.
 
 ## Receipts
 
@@ -143,11 +156,13 @@ python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_operator \
   --verify bridge/certificates/einstein_maxwell_weyl_axial_operator.json
 python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_green_current \
   --verify bridge/certificates/einstein_maxwell_weyl_axial_green_current.json
+python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_extra_green_pairing \
+  --verify bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json
 ```
 
 The scoped operator seven-test rail passed in about 16 seconds; its generator
-and independent verifier passed.  The Green-current three-test rail passed in
-under one second.
+and independent verifier passed.  The Green-current and extra-pairing
+three-test rails each passed in under one second.
 
 Tier 2:
 

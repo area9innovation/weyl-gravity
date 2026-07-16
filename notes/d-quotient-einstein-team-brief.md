@@ -862,6 +862,20 @@ propagator theorem.  The direct four-dimensional action-Hessian match and the
 complete Einstein/extra Lee--Wald matrix are now the remaining local pairing
 gates.
 
+`EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING` evaluates the certified
+local current on the two extra representatives.  With
+`N_extra=J^t/(-i*omega)`, its determinant reduces on the extra shell to
+
+```text
+lambda^4*(lambda-2)*(9lambda-2)/3.
+```
+
+The first principal minor and determinant are positive for every physical
+`lambda>=6`.  Hence the generic extra module is nonradical, with signature
+`(2,0)`, in the reduced-Hessian Green convention.  This is not yet the direct
+four-dimensional Lee--Wald norm: the action-Hessian/current match remains the
+last barrier before any physical sign or ghost interpretation.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally

@@ -1,0 +1,97 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE result concerns the exact local reduced-Hessian Green pairing. It does not certify the covariant Lee-Wald phase space, a positive-frequency Hilbert space, causal boundary admissibility, scattering, or quantum unitarity.",
+  "classification": {
+    "Lorentzian_causal_claim": false,
+    "direct_four_dimensional_Lee_Wald_match": false,
+    "extra_module_nonradical_for_reduced_Green_current": true,
+    "particle_claim": false,
+    "physical_norm_or_ghost_claim": false,
+    "reduced_Green_signature_positive_two": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "the two-summand generic axial extra solution module at lambda=ell(ell+1)>=6 and real compact momentum k, paired by the certified reduced-Hessian local Green current",
+  "generality_level": "G2_GENERIC_AXIAL_EXTRA_REDUCED_GREEN_PAIRING",
+  "interpretation": "The two generic axial extra solution summands survive the reduced-Hessian Green pairing: their Gram matrix is nondegenerate and positive in the declared positive-frequency convention for every physical ell>=2. This rules out a reduced-current radical explanation of the extra module. Until the current is matched to the direct four-dimensional Lee-Wald normalization, it is not a physical positive-norm, negative-norm, ghost, or particle theorem.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "evaluate the direct four-dimensional Weyl-Maxwell Lee-Wald current on the same two representatives and prove its relation to the reduced Green current, including all harmonic norms and improvement terms",
+  "pairing": {
+    "coefficient_order": [
+      "H_t",
+      "H_x",
+      "Q_t",
+      "Q_x"
+    ],
+    "coordinate_Jt_Gram": [
+      [
+        "-I*lambda*omega*(9*k**2*lambda**2 - 12*k**2*lambda + 4*k**2 + 9*lambda**3 - 18*lambda**2)/6",
+        "-I*k*lambda*(3*lambda - 2)**2*(3*k**2 + 3*lambda - 2)/18"
+      ],
+      [
+        "-I*k*lambda*(3*lambda - 2)**2*(3*k**2 + 3*lambda - 2)/18",
+        "-I*lambda*omega*(27*k**2*lambda**2 - 36*k**2*lambda + 12*k**2 + 36*lambda - 8)/18"
+      ]
+    ],
+    "determinant": "lambda**4*(lambda - 2)*(9*lambda - 2)/3",
+    "extra_representative_order": [
+      "e_1",
+      "e_2"
+    ],
+    "first_principal_minor": "lambda*(9*k**2*lambda**2 - 12*k**2*lambda + 4*k**2 + 9*lambda**3 - 18*lambda**2)/6",
+    "nondegenerate_for_all_physical_ell_ge_2": true,
+    "normalization": "N_extra=Jt_extra/(-I*omega) for positive omega, before the positive spherical harmonic norm and circle volume",
+    "normalized_Gram": [
+      [
+        "lambda*(9*k**2*lambda**2 - 12*k**2*lambda + 4*k**2 + 9*lambda**3 - 18*lambda**2)/6",
+        "k*lambda*omega*(3*lambda - 2)**2/6"
+      ],
+      [
+        "k*lambda*omega*(3*lambda - 2)**2/6",
+        "lambda*(27*k**2*lambda**2 - 36*k**2*lambda + 12*k**2 + 36*lambda - 8)/18"
+      ]
+    ],
+    "physical_sign_check": {
+      "determinant_positive": true,
+      "domain": "lambda=ell(ell+1)>=6, real k, positive omega",
+      "first_principal_minor_positive": true,
+      "signature": [
+        2,
+        0
+      ]
+    },
+    "representatives": [
+      [
+        "-k**2 - lambda",
+        "k*omega",
+        "lambda",
+        "0"
+      ],
+      [
+        "-k*omega",
+        "k**2 - 2/3",
+        "0",
+        "lambda"
+      ]
+    ],
+    "shell": "omega^2=k^2+lambda-2/3"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_extra_green_pairing.py",
+    "generator_sha256": "f2a7d82aa7ddb795e41a480b6e7dd6487a42546664b0e4e5cf38306311a1278e",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_weyl_axial_green_current.json": "1422d98625646d2e2de94db66fe6f30038ac5508b7aec5fb8a422c9bc302698d",
+      "bridge/certificates/einstein_maxwell_weyl_axial_operator.json": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING",
+  "result_state": "GENERIC_AXIAL_EXTRA_MODULE_NONRADICAL_POSITIVE_IN_REDUCED_HESSIAN_GREEN_CONVENTION",
+  "schema": "einstein-maxwell-weyl-axial-extra-green-pairing-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_extra_green_pairing.schema.json",
+  "schema_sha256": "4819e7c85c19317d6557464733918203feb87ea8c3431359b92e2f577559d3ba",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_extra_green_pairing --verify bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_extra_green_pairing"
+  ]
+}
