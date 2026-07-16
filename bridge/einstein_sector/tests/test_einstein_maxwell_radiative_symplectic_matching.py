@@ -45,6 +45,20 @@ class RadiativeSymplecticMatchingTests(unittest.TestCase):
             self.payload["covariant_and_bundle_statement"]["closed_cauchy_surface"],
         )
 
+    def test_direct_nonzero_momentum_fixture(self) -> None:
+        fixture = self.payload["direct_lee_wald_fixtures"]
+        self.assertEqual(fixture["remainders"], {"axial": "0", "polar": "0"})
+        self.assertIn("nonzero periodic", fixture["momentum_scope"])
+        self.assertFalse(fixture["global_boost_used"])
+
+    def test_frozen_current_convention(self) -> None:
+        statement = self.payload["covariant_and_bundle_statement"]
+        self.assertIn("n_mu=(-1,0,0,0)", statement["orientation_and_cauchy_normal"])
+        self.assertIn(
+            "delta1 theta^mu(delta2)",
+            statement["lee_wald_potential"]["symplectic_current"],
+        )
+
     def test_fixed_bundle(self) -> None:
         statement = self.payload["covariant_and_bundle_statement"][
             "fixed_bundle_argument"
@@ -61,9 +75,19 @@ class RadiativeSymplecticMatchingTests(unittest.TestCase):
 
     def test_fail_closed_global_and_weyl_gates(self) -> None:
         classification = self.payload["classification"]
+        self.assertTrue(classification["kinetic_branch_weights_positive"])
+        self.assertFalse(classification["one_particle_norm_certified"])
         self.assertFalse(classification["homogeneous_ell0_global_pairing"])
         self.assertFalse(classification["axial_ell1_global_twist_pairing"])
         self.assertFalse(classification["Weyl_Maxwell_pullback_matching"])
+
+    def test_machine_readable_supersession(self) -> None:
+        supersession = self.payload["supersedes"][0]
+        self.assertEqual(
+            supersession["json_pointer"],
+            "/ell1_complex/reduced_current_weight",
+        )
+        self.assertIn("normalization only", supersession["scope"])
 
     def test_committed_certificate(self) -> None:
         self.assertEqual(

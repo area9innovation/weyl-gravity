@@ -17,6 +17,8 @@
     "master_matching",
     "ell1_quotient",
     "covariant_and_bundle_statement",
+    "direct_lee_wald_fixtures",
+    "supersedes",
     "classification",
     "interpretation",
     "next_gate",
@@ -24,7 +26,7 @@
     "verification_commands"
   ],
   "properties": {
-    "schema": {"const": "einstein-maxwell-radiative-symplectic-matching-v1"},
+    "schema": {"const": "einstein-maxwell-radiative-symplectic-matching-v2"},
     "schema_path": {"type": "string"},
     "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "result_id": {"const": "COMPACT_EM_RADIATIVE_SYMPLECTIC_MATCHING"},
@@ -38,6 +40,8 @@
     "master_matching": {"type": "object"},
     "ell1_quotient": {"type": "object"},
     "covariant_and_bundle_statement": {"type": "object"},
+    "direct_lee_wald_fixtures": {"type": "object"},
+    "supersedes": {"type": "array", "minItems": 1},
     "classification": {"type": "object"},
     "interpretation": {"type": "string"},
     "next_gate": {"type": "string"},

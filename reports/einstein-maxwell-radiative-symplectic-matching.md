@@ -85,6 +85,36 @@ Before the common factor, `G_A` has leading minor `lambda^2` and determinant
 `2lambda^2(lambda-2)`; `G_P` has leading minor `1` and determinant
 `2(lambda-2)`.  Both are positive definite for every `ell>=2`.
 
+This is positivity of the kinetic branch matrices.  Calling it a
+one-particle Hilbert norm would additionally require a declared
+positive-frequency complex structure, which is not constructed here.
+
+## Direct nonzero-momentum Lee--Wald fixture
+
+An independent slow rail now varies the full Einstein--Maxwell
+presymplectic potential directly.  It uses `ell=2,m=0`, pairs
+`exp(i(kx-omega t))` with its conjugate, and retains `k` as an arbitrary real
+symbol.  Thus nonzero periodic `k_n` are checked directly rather than inferred
+from a rest-frame calculation.
+
+With `N_20=4pi/5`, the exact coordinate-current integrals are
+
+```text
+int_(S2) omega_A^t
+ = -2 i omega (N_20/2) (omega^2-k^2)
+   (H,Q)^T diag(6,2) (H,Q),
+
+int_(S2) omega_P^t
+ = -2 i omega (N_20/2)
+   (K,U)^T [[1,-2],[-2,12]] (K,U).
+```
+
+For axial solutions, `M_A v=(omega^2-k^2)v`, producing
+`G_A=diag(6,2)M_A`.  The future Cauchy normal covector is
+`n_mu=(-1,0,0,0)`, so `Omega_Sigma=-int omega^t`; this converts both displayed
+coordinate currents into the positive-sign master Wronskians.  Both exact
+remainders vanish.  No global boost of the cylinder is used.
+
 ## Covariant-current and bundle statement
 
 The Lee--Wald current is the antisymmetrized field-space variation of the
@@ -94,6 +124,19 @@ by parts only by a spacetime-exact improvement.  Since the Cauchy surface is
 the closed manifold `S1 x S2`, the integrated improvement vanishes.  The
 master Wronskians therefore equal the integrated covariant
 Einstein--Maxwell presymplectic form.
+
+The frozen convention is
+
+```text
+theta_g^mu = sqrt(-g)/(2kappa)
+             (nabla_nu h^mu_nu-nabla^mu h),
+theta_M^mu = -sqrt(-g) F^mu_nu delta A_nu,
+omega^mu(delta1,delta2)
+           = delta1 theta^mu(delta2)-delta2 theta^mu(delta1),
+```
+
+with `h_mu_nu=delta g_mu_nu` and orientation
+`dt wedge dx wedge sin(theta)dtheta wedge dphi`.
 
 The magnetic background connection itself is patchwise, but the difference
 of two connections on the fixed bundle `P_N` is a global one-form.  Hence an
@@ -132,11 +175,17 @@ the provisional phrase "2 for Psi" in the exceptional-complex certificate,
 which inherited a non-action-normalized diagonal current; it does not change
 that certificate's gauge quotient or spectrum.
 
+Certificate schema v2 records this correction in a machine-readable
+`supersedes` ledger pointing to
+`/ell1_complex/reduced_current_weight` in the exceptional certificate.  Its
+scope is normalization only.
+
 ## Interpretation
 
 The usual photon/graviton-like harmonic waves are present before the final
-residual quotient as positive, nondegenerate directions of the covariant
-Einstein--Maxwell phase space.  The polar zero branch at `ell=1` vanishes for
+residual quotient as nondegenerate directions with positive kinetic branch
+weights in the covariant Einstein--Maxwell phase space.  The polar zero branch
+at `ell=1` vanishes for
 the ordinary reason: it is a presymplectic gauge kernel.  A later vanishing of
 one-particle residual cohomology on the closed cylinder is therefore a claim
 about the subsequent global conformal quotient, not about the absence of
@@ -148,6 +197,8 @@ This is a `LOCAL-ALGEBRAIC` / `REDUCED-MODE` result.  It is not a
 `LORENTZIAN-CAUSAL` or scattering theorem.  It does not yet determine the
 global zero-mode phase space or whether the Weyl--Maxwell Lee--Wald form pulls
 back to a nonzero multiple of the Einstein--Maxwell form.
+It also does not construct the positive-frequency complex structure needed
+to promote kinetic positivity to a one-particle Hilbert norm.
 
 The next work should be split in the same way:
 
@@ -158,15 +209,17 @@ The next work should be split in the same way:
 
 ## Verification receipt
 
-The final exhaustive arbitrary-function action check passed in `53.80 s`.  It is a
-separate slow rail because repeating it in every unit test would exceed the
-target fast feedback loop.  The generator verification, independent
-verifier, and eight scoped tests form the fast Tier-1 rail.  Tier 3 was not
+The final exhaustive arbitrary-function action check passed in `53.80 s`, and
+the direct symbolic-`k` Lee--Wald fixture passed in `39.98 s`.  They are
+separate slow rails because repeating either in every unit test would exceed
+the target fast feedback loop.  The generator verification, independent
+verifier, and scoped unit tests form the fast Tier-1 rail.  Tier 3 was not
 run: no freeze, tag, shared core-algebra change, release, or paper-theorem
 promotion is made by this report.
 
 ```text
 python3 -m bridge.einstein_sector.einstein_maxwell_radiative_symplectic_action_check --verify
+python3 -m bridge.einstein_sector.einstein_maxwell_radiative_lee_wald_fixture --verify
 python3 -m bridge.einstein_sector.einstein_maxwell_radiative_symplectic_matching --verify bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json
 python3 bridge/einstein_sector/verify_einstein_maxwell_radiative_symplectic_matching.py
 python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_radiative_symplectic_matching

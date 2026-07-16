@@ -37,6 +37,7 @@ def verify_certificate(path: Path = CERTIFICATE) -> None:
     assert _sha256(ROOT / payload["schema_path"]) == payload["schema_sha256"]
     assert _sha256(ROOT / payload["provenance"]["generator_path"]) == payload["provenance"]["generator_sha256"]
     assert _sha256(ROOT / payload["provenance"]["exhaustive_action_check_path"]) == payload["provenance"]["exhaustive_action_check_sha256"]
+    assert _sha256(ROOT / payload["provenance"]["direct_lee_wald_check_path"]) == payload["provenance"]["direct_lee_wald_check_sha256"]
     for relative, digest in payload["provenance"]["inputs"].items():
         assert _sha256(ROOT / relative) == digest
 
@@ -96,13 +97,26 @@ def verify_certificate(path: Path = CERTIFICATE) -> None:
 
     classification = payload["classification"]
     assert classification["exact_arbitrary_harmonic_second_variation"] is True
+    assert classification["direct_nonzero_momentum_Lee_Wald_fixture"] is True
     assert classification["covariant_Lee_Wald_integrated_matching"] is True
     assert classification["fixed_magnetic_bundle_overlap_safe"] is True
-    assert classification["physical_radiative_norms_positive"] is True
+    assert classification["kinetic_branch_weights_positive"] is True
+    assert classification["one_particle_complex_structure_constructed"] is False
+    assert classification["one_particle_norm_certified"] is False
     assert classification["homogeneous_ell0_global_pairing"] is False
     assert classification["axial_ell1_global_twist_pairing"] is False
     assert classification["Weyl_Maxwell_pullback_matching"] is False
     assert classification["Lorentzian_causal_or_scattering_theorem"] is False
+
+    fixture = payload["direct_lee_wald_fixtures"]
+    assert fixture["remainders"] == {"axial": "0", "polar": "0"}
+    assert fixture["global_boost_used"] is False
+    assert "arbitrary real symbol" in fixture["momentum_scope"]
+    assert "future-normal" in fixture["axial_on_shell_reduction"]
+    supersession = payload["supersedes"]
+    assert len(supersession) == 1
+    assert supersession[0]["json_pointer"] == "/ell1_complex/reduced_current_weight"
+    assert supersession[0]["status"] == "SUPERSEDED_BY_ACTION_NORMALIZED_LEE_WALD_MATCHING"
 
 
 if __name__ == "__main__":

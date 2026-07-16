@@ -16,6 +16,7 @@ AXIAL_CERTIFICATE = ROOT / "bridge/certificates/einstein_maxwell_axial_master_co
 POLAR_CERTIFICATE = ROOT / "bridge/certificates/einstein_maxwell_polar_master_complex.json"
 EXCEPTIONAL_CERTIFICATE = ROOT / "bridge/certificates/einstein_maxwell_polar_exceptional_complex.json"
 ACTION_CHECK = ROOT / "bridge/einstein_sector/einstein_maxwell_radiative_symplectic_action_check.py"
+LEE_WALD_CHECK = ROOT / "bridge/einstein_sector/einstein_maxwell_radiative_lee_wald_fixture.py"
 DEFAULT_OUTPUT = ROOT / "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json"
 SCHEMA_PATH = ROOT / "bridge/einstein_sector/schema/einstein_maxwell_radiative_symplectic_matching.schema.json"
 
@@ -179,15 +180,49 @@ def _covariant_and_bundle_statement() -> dict[str, Any]:
     return {
         "action_convention": "S=int sqrt(-g)[(R-2Lambda)/(2kappa)-F_mu_nu F^mu_nu/4], with kappa=1, Lambda=1/2, unit S2 radius, and background magnetic flux P=1",
         "lee_wald_potential": {
-            "gravity": "theta_g^mu=sqrt(-g)/(2kappa)*(nabla_nu delta g^(mu nu)-nabla^mu delta g), up to the consistently fixed variation-sign convention",
+            "metric_variation": "h_mu_nu=delta g_mu_nu, h^mu_nu=g^mu_alpha g^nu_beta h_alpha_beta, h=g^mu_nu h_mu_nu",
+            "gravity": "theta_g^mu=sqrt(-g)/(2kappa)*(nabla_nu h^mu_nu-nabla^mu h)",
             "Maxwell": "theta_M^mu=-sqrt(-g) F^(mu nu) delta A_nu",
+            "symplectic_current": "omega^mu(delta1,delta2)=delta1 theta^mu(delta2)-delta2 theta^mu(delta1)",
         },
         "variational_identity": "the antisymmetrized field-space variation of theta equals the canonical current of the quadratic action modulo a spacetime-exact improvement; the integration by parts used in the Hessian check produces precisely such an improvement",
         "closed_cauchy_surface": "Sigma=S1 x S2 has no boundary, so the integral of the exact improvement vanishes and the action Hessian Wronskians equal the integrated covariant Lee-Wald presymplectic form",
         "fixed_bundle_argument": "although the magnetic background connection is patchwise, the difference of two connections on the fixed U(1) bundle P_N is a global one-form. Thus every allowed delta A is global, theta_M and omega_M agree on chart overlaps, and no Cech corner term occurs. Uniform magnetic-charge variation is excluded because it changes c1(P_N).",
-        "orientation_and_reality": "orientation dt wedge dx wedge sin(theta)dtheta wedge dphi; real perturbations use real harmonics, while complex coefficients are paired sesquilinearly with the conjugate mode",
+        "orientation_and_cauchy_normal": "orientation dt wedge dx wedge sin(theta)dtheta wedge dphi; the future unit normal covector on t=constant is n_mu=(-1,0,0,0), so Omega_Sigma=int dSigma_mu omega^mu=-int dx dOmega omega^t",
+        "reality": "real perturbations use real harmonics; the direct Fourier fixture pairs exp(i(kx-omega t)) with its conjugate, and real solutions are their real spans",
         "cauchy_form": "Omega_A=(N_lm/2) int_(S1) delta(H,Q)^T G_A wedge partial_t delta(H,Q) dx with G_A=diag(lambda,2)M_A; analogously Omega_P uses G_P directly on (K,U)",
     }
+
+
+def _direct_lee_wald_fixtures() -> dict[str, Any]:
+    return {
+        "harmonic": "ell=2,m=0, Y=P_2(cos(theta)), lambda=6, N_20=4*pi/5",
+        "momentum_scope": "k is retained as an arbitrary real symbol; in particular the identity holds at every nonzero periodic k_n",
+        "variation_pair": [
+            "delta1 proportional to exp(i(k x-omega t))",
+            "delta2 proportional to exp(-i(k x-omega t))",
+        ],
+        "current_convention": "omega^t=delta1 theta^t(delta2)-delta2 theta^t(delta1)",
+        "axial_coordinate_current": "int_S2 omega_A^t=-2*i*omega*(N_20/2)*(omega^2-k^2)*(H,Q)^T diag(6,2)(H,Q)",
+        "axial_on_shell_reduction": "on either branch M_A v=(omega^2-k^2)v, hence the future-normal Cauchy contraction is +2*i*omega*(N_20/2)*v^T[diag(6,2)M_A]v",
+        "polar_coordinate_current": "int_S2 omega_P^t=-2*i*omega*(N_20/2)*(K,U)^T[[1,-2],[-2,12]](K,U)",
+        "polar_cauchy_reduction": "the future-normal contraction changes the sign and gives exactly the action-normalized polar master Wronskian",
+        "remainders": {"axial": "0", "polar": "0"},
+        "global_boost_used": False,
+    }
+
+
+def _supersession_ledger() -> list[dict[str, Any]]:
+    return [
+        {
+            "certificate": "bridge/certificates/einstein_maxwell_polar_exceptional_complex.json",
+            "json_pointer": "/ell1_complex/reduced_current_weight",
+            "old_value": "2 for Psi, inherited from the physical eigenvector before covariant normalization",
+            "replacement": "bracket weight 4 before the universal N_1m/2 factor; normalized quotient weight 2*N_1m",
+            "scope": "normalization only; the gauge quotient, dispersion, and all-m classification remain valid",
+            "status": "SUPERSEDED_BY_ACTION_NORMALIZED_LEE_WALD_MATCHING",
+        }
+    ]
 
 
 def build_certificate() -> dict[str, Any]:
@@ -198,7 +233,7 @@ def build_certificate() -> dict[str, Any]:
     _require(polar["result_id"] == "COMPACT_EM_POLAR_MASTER_COMPLEX", "polar input changed")
     _require(exceptional["result_id"] == "COMPACT_EM_POLAR_EXCEPTIONAL_COMPLEX", "exceptional input changed")
     return {
-        "schema": "einstein-maxwell-radiative-symplectic-matching-v1",
+        "schema": "einstein-maxwell-radiative-symplectic-matching-v2",
         "schema_path": str(SCHEMA_PATH.relative_to(ROOT)),
         "schema_sha256": _sha256(SCHEMA_PATH),
         "result_id": "COMPACT_EM_RADIATIVE_SYMPLECTIC_MATCHING",
@@ -211,6 +246,8 @@ def build_certificate() -> dict[str, Any]:
             "generator_sha256": _sha256(Path(__file__)),
             "exhaustive_action_check_path": str(ACTION_CHECK.relative_to(ROOT)),
             "exhaustive_action_check_sha256": _sha256(ACTION_CHECK),
+            "direct_lee_wald_check_path": str(LEE_WALD_CHECK.relative_to(ROOT)),
+            "direct_lee_wald_check_sha256": _sha256(LEE_WALD_CHECK),
             "inputs": {
                 str(path.relative_to(ROOT)): _sha256(path)
                 for path in (AXIAL_CERTIFICATE, POLAR_CERTIFICATE, EXCEPTIONAL_CERTIFICATE)
@@ -221,23 +258,29 @@ def build_certificate() -> dict[str, Any]:
         "master_matching": _master_matching(),
         "ell1_quotient": _ell1_quotient(),
         "covariant_and_bundle_statement": _covariant_and_bundle_statement(),
+        "direct_lee_wald_fixtures": _direct_lee_wald_fixtures(),
+        "supersedes": _supersession_ledger(),
         "classification": {
             "exact_arbitrary_harmonic_second_variation": True,
+            "direct_nonzero_momentum_Lee_Wald_fixture": True,
             "covariant_Lee_Wald_integrated_matching": True,
             "fixed_magnetic_bundle_overlap_safe": True,
             "all_n_ell_ge_2_m_radiative_pairing": True,
             "polar_ell1_gauge_kernel_and_quotient": True,
-            "physical_radiative_norms_positive": True,
+            "kinetic_branch_weights_positive": True,
+            "one_particle_complex_structure_constructed": False,
+            "one_particle_norm_certified": False,
             "homogeneous_ell0_global_pairing": False,
             "axial_ell1_global_twist_pairing": False,
             "Weyl_Maxwell_pullback_matching": False,
             "Lorentzian_causal_or_scattering_theorem": False,
         },
-        "interpretation": "The ordinary Einstein-Maxwell photon/graviton-like harmonic waves are nondegenerate positive directions of the covariant phase space before the final residual quotient. The polar ell=1 zero branch disappears because it is exactly a presymplectic gauge kernel, not because its physical massive triplet vanishes. Any later disappearance under the global conformal residual quotient is therefore a statement about the closed-cylinder global state space, not the absence of local radiation.",
+        "interpretation": "The ordinary Einstein-Maxwell photon/graviton-like harmonic waves are nondegenerate directions with positive kinetic branch weights in the covariant phase space before the final residual quotient. The polar ell=1 zero branch disappears because it is exactly a presymplectic gauge kernel, not because its physical massive triplet vanishes. A one-particle Hilbert norm still requires a declared positive-frequency complex structure. Any later disappearance under the global conformal residual quotient is therefore a statement about the closed-cylinder global state space, not the absence of local radiation.",
         "next_gate": "separately compute the ell=0 radion/circumference/electric-charge and axial ell=1 twist global presymplectic pairs; then compare the pullback of the Weyl-Maxwell Lee-Wald form to this certified Einstein-Maxwell form, including any corner improvement",
-        "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem matches the action-normalized reduced Wronskians to the integrated Einstein-Maxwell Lee-Wald presymplectic form for every radiative ell>=2 mode and the physical ell=1 quotient on the closed compact Cauchy surface. It does not compute the homogeneous global-mode pairing, the axial ell=1 twist pair, the Weyl-Maxwell pullback, the final residual SO(4,2) cohomology, Lorentzian causal evolution, asymptotic scattering, or quantum theory.",
+        "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem matches the action-normalized reduced Wronskians to the integrated Einstein-Maxwell Lee-Wald presymplectic form for every radiative ell>=2 mode and the physical ell=1 quotient on the closed compact Cauchy surface. Positivity here means positivity of the kinetic branch matrices, not a separately constructed one-particle Hilbert norm. It does not compute the homogeneous global-mode pairing, the axial ell=1 twist pair, the Weyl-Maxwell pullback, the final residual SO(4,2) cohomology, Lorentzian causal evolution, asymptotic scattering, or quantum theory.",
         "verification_commands": [
             "python3 -m bridge.einstein_sector.einstein_maxwell_radiative_symplectic_action_check --verify",
+            "python3 -m bridge.einstein_sector.einstein_maxwell_radiative_lee_wald_fixture --verify",
             "python3 -m bridge.einstein_sector.einstein_maxwell_radiative_symplectic_matching --verify bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
             "python3 bridge/einstein_sector/verify_einstein_maxwell_radiative_symplectic_matching.py",
             "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_radiative_symplectic_matching",
