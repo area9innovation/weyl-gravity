@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-causal-D-Cartan-transfer-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "endpoint_assumptions", "unary_transfer",
+    "arity_two_transfer", "route_split", "exact_checks", "flags",
+    "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-causal-D-Cartan-transfer-v1"},
+    "result_id": {"const": "BERGER_CAUSAL_D_CARTAN_TRANSFER"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "CERTIFIED_CONDITIONAL_TRANSFER_ENDPOINT_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "causal_54_to_26_reduction", "local_D_action",
+        "classical_binary_q2", "bare_unary_obstruction"
+      ],
+      "properties": {
+        "causal_54_to_26_reduction": {"$ref": "#/$defs/dependency"},
+        "local_D_action": {"$ref": "#/$defs/dependency"},
+        "classical_binary_q2": {"$ref": "#/$defs/dependency"},
+        "bare_unary_obstruction": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "endpoint_assumptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chain_homotopy", "D_chain_map", "D_equivariant_homotopy",
+        "causal_support", "paired_adjointness", "status"
+      ],
+      "properties": {
+        "chain_homotopy": {"type": "string", "minLength": 1},
+        "D_chain_map": {"type": "string", "minLength": 1},
+        "D_equivariant_homotopy": {"type": "string", "minLength": 1},
+        "causal_support": {"type": "string", "minLength": 1},
+        "paired_adjointness": {"type": "string", "minLength": 1},
+        "status": {"type": "string", "minLength": 1}
+      }
+    },
+    "unary_transfer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["definition", "identity", "derivation", "support", "lift_54", "adjoint_scope"],
+      "properties": {
+        "definition": {"const": "iota_D,s^(1)=Lambda_s D"},
+        "identity": {"type": "string", "minLength": 1},
+        "derivation": {"type": "string", "minLength": 1},
+        "support": {"type": "string", "minLength": 1},
+        "lift_54": {"type": "string", "minLength": 1},
+        "adjoint_scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "arity_two_transfer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cochain_differential", "source", "source_degree", "closure",
+        "raw_primitive", "raw_identity", "raw_derivation", "symmetry",
+        "support_scope", "cyclicity_gate"
+      ],
+      "properties": {
+        "cochain_differential": {"type": "string", "minLength": 1},
+        "source": {"type": "string", "minLength": 1},
+        "source_degree": {"const": 0},
+        "closure": {"const": "delta A_D,s^(2)=-[q2,D]=[D,q2]=0"},
+        "raw_primitive": {"const": "iota_D,s,raw^(2)=-Lambda_s A_D,s^(2)"},
+        "raw_identity": {"type": "string", "minLength": 1},
+        "raw_derivation": {"type": "string", "minLength": 1},
+        "symmetry": {"type": "string", "minLength": 1},
+        "support_scope": {"type": "string", "minLength": 1},
+        "cyclicity_gate": {"type": "string", "minLength": 1}
+      }
+    },
+    "route_split": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected_first", "alternative_open", "reason", "Hadamard_or_QME_required_for_classical_gate"],
+      "properties": {
+        "selected_first": {"const": "BERGER_CAUSAL_D_CARTAN_EXTENSION"},
+        "alternative_open": {"const": "BERGER_RESIDUAL_BFV_D_CARTAN_EXTENSION"},
+        "reason": {"type": "string", "minLength": 1},
+        "Hadamard_or_QME_required_for_classical_gate": {"const": false}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {"const": true}
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM",
+        "BERGER_CAUSAL_UNARY_D_CARTAN_CONDITIONAL",
+        "BERGER_CAUSAL_ARITY_TWO_SOURCE_CLOSED_CONDITIONAL",
+        "BERGER_CAUSAL_ARITY_TWO_RAW_PRIMITIVE_CONDITIONAL",
+        "BERGER_CAUSAL_ARITY_TWO_CYCLIC_COMPLETION",
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY",
+        "BERGER_CAUSAL_D_CARTAN_EXTENSION",
+        "BERGER_RESIDUAL_BFV_D_CARTAN_EXTENSION"
+      ],
+      "properties": {
+        "BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM": {"const": true},
+        "BERGER_CAUSAL_UNARY_D_CARTAN_CONDITIONAL": {"const": true},
+        "BERGER_CAUSAL_ARITY_TWO_SOURCE_CLOSED_CONDITIONAL": {"const": true},
+        "BERGER_CAUSAL_ARITY_TWO_RAW_PRIMITIVE_CONDITIONAL": {"const": true},
+        "BERGER_CAUSAL_ARITY_TWO_CYCLIC_COMPLETION": {"const": false},
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": {"const": false},
+        "BERGER_CAUSAL_D_CARTAN_EXTENSION": {"const": false},
+        "BERGER_RESIDUAL_BFV_D_CARTAN_EXTENSION": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

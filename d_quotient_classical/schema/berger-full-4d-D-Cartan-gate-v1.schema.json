@@ -16,12 +16,13 @@
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
     "dependency_refs": {
       "type": "object", "additionalProperties": false,
-      "required": ["classical_unary_q1", "local_D_action", "classical_binary_q2", "unary_microlocal_obstruction"],
+      "required": ["classical_unary_q1", "local_D_action", "classical_binary_q2", "unary_microlocal_obstruction", "conditional_causal_transfer"],
       "properties": {
         "classical_unary_q1": {"$ref": "#/$defs/dependency"},
         "local_D_action": {"$ref": "#/$defs/dependency"},
         "classical_binary_q2": {"$ref": "#/$defs/dependency"},
-        "unary_microlocal_obstruction": {"$ref": "#/$defs/dependency"}
+        "unary_microlocal_obstruction": {"$ref": "#/$defs/dependency"},
+        "conditional_causal_transfer": {"$ref": "#/$defs/dependency"}
       }
     },
     "gate_order": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}},
@@ -32,6 +33,9 @@
       "required": [
         "BERGER_FULL_4D_D_CARTAN_INPUTS_COMPLETE",
         "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO",
+        "BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM",
+        "BERGER_CAUSAL_D_CARTAN_EXTENSION",
+        "BERGER_RESIDUAL_BFV_D_CARTAN_EXTENSION",
         "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D",
         "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D",
         "BERGER_ARITY_TWO_D_CARTAN_FULL_4D"
@@ -39,12 +43,15 @@
       "properties": {
         "BERGER_FULL_4D_D_CARTAN_INPUTS_COMPLETE": {"const": true},
         "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO": {"const": true},
+        "BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM": {"const": true},
+        "BERGER_CAUSAL_D_CARTAN_EXTENSION": {"const": false},
+        "BERGER_RESIDUAL_BFV_D_CARTAN_EXTENSION": {"const": false},
         "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D": {"const": false},
         "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D": {"const": false},
         "BERGER_ARITY_TWO_D_CARTAN_FULL_4D": {"const": false}
       }
     },
-    "next_gate": {"const": "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION"},
+    "next_gate": {"const": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY"},
     "claim_boundary": {"type": "string", "minLength": 1}
   },
   "$defs": {

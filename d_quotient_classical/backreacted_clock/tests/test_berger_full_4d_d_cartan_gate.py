@@ -11,8 +11,10 @@ class BergerFull4DDCartanGateTests(unittest.TestCase):
         payload = BergerFull4DDCartanGate.build().payload
         self.assertTrue(payload["flags"]["BERGER_FULL_4D_D_CARTAN_INPUTS_COMPLETE"])
         self.assertTrue(payload["flags"]["BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO"])
+        self.assertTrue(payload["flags"]["BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM"])
         self.assertFalse(payload["flags"]["BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D"])
-        self.assertEqual(payload["next_gate"], "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION")
+        self.assertFalse(payload["flags"]["BERGER_CAUSAL_D_CARTAN_EXTENSION"])
+        self.assertEqual(payload["next_gate"], "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY")
 
     def test_arity_two_cannot_bypass_unary(self) -> None:
         payload = deepcopy(BergerFull4DDCartanGate.build().payload)

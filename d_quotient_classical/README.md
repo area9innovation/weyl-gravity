@@ -126,6 +126,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION.json`](certificates/BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION.json)
 - Unary obstruction report:
   [`reports/berger-unary-D-Cartan-microlocal-obstruction.md`](reports/berger-unary-D-Cartan-microlocal-obstruction.md)
+- Conditional causal D-Cartan transfer:
+  [`certificates/BERGER_CAUSAL_D_CARTAN_TRANSFER.json`](certificates/BERGER_CAUSAL_D_CARTAN_TRANSFER.json)
+- Causal transfer report:
+  [`reports/berger-causal-D-Cartan-transfer.md`](reports/berger-causal-D-Cartan-transfer.md)
 - Exact 54-to-26 causal-homotopy reduction:
   [`certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json`](certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json)
 - Causal-reduction report:
@@ -345,8 +349,13 @@ local \(D\)-derivation identity is exact. A support-local unary Cartan
 homotopy on the bare complex is now ruled out microlocally: at an exact null
 covector where \(\sigma(D)=1\), the retained Douglis symbol complex has
 cohomology dimensions \((0,6,6,0)\). The D-equivariant SDR transfers the
-obstruction to all 54 bare rows. The next nonlinear gate is therefore a
-residual/BFV or causal Cartan extension, not a larger bare-complex ansatz.
+obstruction to all 54 bare rows. The extension routes are now separated. The
+causal route is selected first: a (D)-equivariant retained homotopy gives
+(iota^{(1)}_{D,\pm}=\Lambda_{26,\pm}D_{26}), and the resulting arity-two
+source is automatically (q_1)-closed. The raw causal primitive is exact;
+its cyclic completion remains a separate gate. Thus the immediate nonlinear
+and analytic target is the retained 26-row Green homotopy, while residual/BFV
+extension remains an alternative.
 
 The minimal causal handoff now also freezes one authoritative
 \((W_{34},P_{34},\operatorname{pairing}_{34})\) candidate, with

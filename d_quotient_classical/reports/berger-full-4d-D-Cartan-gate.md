@@ -30,6 +30,14 @@ would be
 [q_1,\iota_D^{(2)}]=-[q_2,\iota_D^{(1)}].
 \]
 
-All three downstream bare-complex flags remain false. The next construction
-must adjoin the residual/BFV rows or use the causal extension; those
-possibilities are not ruled out.
+All three downstream bare-complex flags remain false. The two extension
+routes are now separated. The causal route is selected first because any
+(D)-equivariant retained homotopy gives
+
+\[
+\iota^{(1)}_{D,\pm}=\Lambda_{26,\pm}D_{26}
+\]
+
+and conditionally contracts the arity-two source. The next constructive gate
+is therefore the retained 26-row Green homotopy. The residual/BFV route
+remains an open alternative.

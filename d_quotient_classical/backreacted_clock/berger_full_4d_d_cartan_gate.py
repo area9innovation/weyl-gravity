@@ -17,6 +17,7 @@ Q1_PATH = ROOT / "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMA
 D_PATH = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json"
 Q2_PATH = ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json"
 OBSTRUCTION_PATH = ROOT / "d_quotient_classical/certificates/BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION.json"
+CAUSAL_TRANSFER_PATH = ROOT / "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_TRANSFER.json"
 CERTIFICATE_PATH = ROOT / "d_quotient_classical/certificates/BERGER_FULL_4D_D_CARTAN_GATE.json"
 REPORT_PATH = ROOT / "d_quotient_classical/reports/berger-full-4d-D-Cartan-gate.md"
 SCHEMA_PATH = ROOT / "d_quotient_classical/schema/berger-full-4d-D-Cartan-gate-v1.schema.json"
@@ -41,6 +42,7 @@ class BergerFull4DDCartanGate:
         d_action = json.loads(D_PATH.read_text())
         q2 = json.loads(Q2_PATH.read_text())
         obstruction = json.loads(OBSTRUCTION_PATH.read_text())
+        causal_transfer = json.loads(CAUSAL_TRANSFER_PATH.read_text())
         if q1["flags"]["BERGER_NONMINIMAL_COMPLETION"] is not True:
             raise AssertionError("complete 54-row q1 prerequisite dropped")
         if d_action["flags"]["BERGER_LOCAL_D_ACTION_EQUIVARIANT"] is not True:
@@ -49,6 +51,8 @@ class BergerFull4DDCartanGate:
             raise AssertionError("support-local q2 prerequisite dropped")
         if obstruction["flags"]["BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO"] is not True:
             raise AssertionError("unary microlocal obstruction dependency dropped")
+        if causal_transfer["flags"]["BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM"] is not True:
+            raise AssertionError("conditional causal transfer dependency dropped")
         payload: dict[str, object] = {
             "schema": "pure-weyl-berger-full-4d-D-Cartan-gate-v1",
             "result_id": "BERGER_FULL_4D_D_CARTAN_GATE",
@@ -60,6 +64,7 @@ class BergerFull4DDCartanGate:
                 "local_D_action": _dependency(D_PATH),
                 "classical_binary_q2": _dependency(Q2_PATH),
                 "unary_microlocal_obstruction": _dependency(OBSTRUCTION_PATH),
+                "conditional_causal_transfer": _dependency(CAUSAL_TRANSFER_PATH),
             },
             "gate_order": [
                 {
@@ -109,6 +114,9 @@ class BergerFull4DDCartanGate:
                 "complete_54_row_D_input": True,
                 "complete_54_row_q2_input": True,
                 "unary_bare_complex_obstruction_certified": True,
+                "conditional_causal_transfer_certified": True,
+                "causal_and_residual_routes_split": True,
+                "causal_route_selected_first": True,
                 "unary_gate_precedes_source_gate": True,
                 "source_gate_precedes_arity_two_gate": True,
                 "arity_two_promotion_requires_unary_promotion": True,
@@ -117,16 +125,21 @@ class BergerFull4DDCartanGate:
             "flags": {
                 "BERGER_FULL_4D_D_CARTAN_INPUTS_COMPLETE": True,
                 "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO": True,
+                "BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM": True,
+                "BERGER_CAUSAL_D_CARTAN_EXTENSION": False,
+                "BERGER_RESIDUAL_BFV_D_CARTAN_EXTENSION": False,
                 "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D": False,
                 "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D": False,
                 "BERGER_ARITY_TWO_D_CARTAN_FULL_4D": False,
             },
-            "next_gate": "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION",
+            "next_gate": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY",
             "claim_boundary": (
                 "This dependency certificate records complete q1, D, and q2 inputs and the exact "
                 "microlocal obstruction to a unary homotopy on the bare 26/54-row complex. It "
                 "therefore blocks the bare arity-two solve. It does not rule out a Cartan "
-                "homotopy on a residual/BFV or causal extension."
+                "homotopy on a residual/BFV or causal extension. The conditional causal transfer "
+                "is certified, but the retained 26-row Green homotopy and cyclic binary completion "
+                "remain open."
             ),
         }
         result = cls(payload)
@@ -135,8 +148,8 @@ class BergerFull4DDCartanGate:
 
     def verify(self) -> None:
         p = self.payload
-        if p["next_gate"] != "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION":
-            raise AssertionError("Cartan extension gate drifted")
+        if p["next_gate"] != "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY":
+            raise AssertionError("causal endpoint gate drifted")
         if not all(p["exact_checks"].values()):
             raise AssertionError("Cartan dependency check dropped")
         flags = p["flags"]
@@ -144,6 +157,12 @@ class BergerFull4DDCartanGate:
             raise AssertionError("complete Cartan inputs not recorded")
         if flags["BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO"] is not True:
             raise AssertionError("bare unary obstruction not recorded")
+        if flags["BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM"] is not True:
+            raise AssertionError("conditional causal transfer not recorded")
+        if flags["BERGER_CAUSAL_D_CARTAN_EXTENSION"] is not False:
+            raise AssertionError("causal Cartan extension promoted before endpoint")
+        if flags["BERGER_RESIDUAL_BFV_D_CARTAN_EXTENSION"] is not False:
+            raise AssertionError("residual/BFV Cartan extension promoted")
         if flags["BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D"] and not flags[
             "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D"
         ]:
@@ -190,9 +209,17 @@ would be
 [q_1,\iota_D^{(2)}]=-[q_2,\iota_D^{(1)}].
 \]
 
-All three downstream bare-complex flags remain false. The next construction
-must adjoin the residual/BFV rows or use the causal extension; those
-possibilities are not ruled out.
+All three downstream bare-complex flags remain false. The two extension
+routes are now separated. The causal route is selected first because any
+(D)-equivariant retained homotopy gives
+
+\[
+\iota^{(1)}_{D,\pm}=\Lambda_{26,\pm}D_{26}
+\]
+
+and conditionally contracts the arity-two source. The next constructive gate
+is therefore the retained 26-row Green homotopy. The residual/BFV route
+remains an open alternative.
 """
 
 
@@ -223,7 +250,7 @@ def _guards(result: BergerFull4DDCartanGate) -> None:
             ),
         ),
         (
-            "skip extension next gate",
+            "skip causal endpoint gate",
             lambda p: p.update({"next_gate": "BERGER_ARITY_TWO_D_CARTAN_FULL_4D"}),
         ),
     ):
@@ -250,7 +277,8 @@ def main() -> int:
         _guards(result)
     print("full 4D D-Cartan inputs: COMPLETE")
     print("bare unary D-Cartan existence: OBSTRUCTED")
-    print("arity-two D-Cartan: BLOCKED; EXTENSION REQUIRED")
+    print("conditional causal Cartan transfer: CERTIFIED")
+    print("retained 26-row Green homotopy: OPEN")
     return 0
 
 

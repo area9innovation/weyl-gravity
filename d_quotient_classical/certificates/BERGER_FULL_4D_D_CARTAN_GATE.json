@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "This dependency certificate records complete q1, D, and q2 inputs and the exact microlocal obstruction to a unary homotopy on the bare 26/54-row complex. It therefore blocks the bare arity-two solve. It does not rule out a Cartan homotopy on a residual/BFV or causal extension.",
+  "claim_boundary": "This dependency certificate records complete q1, D, and q2 inputs and the exact microlocal obstruction to a unary homotopy on the bare 26/54-row complex. It therefore blocks the bare arity-two solve. It does not rule out a Cartan homotopy on a residual/BFV or causal extension. The conditional causal transfer is certified, but the retained 26-row Green homotopy and cyclic binary completion remain open.",
   "claim_status": "BARE_UNARY_OBSTRUCTED_EXTENSION_REQUIRED",
   "dependency_refs": {
     "classical_binary_q2": {
@@ -9,6 +9,10 @@
     "classical_unary_q1": {
       "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
       "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "conditional_causal_transfer": {
+      "result_id": "BERGER_CAUSAL_D_CARTAN_TRANSFER",
+      "sha256": "850ca7e14c27ed32601bfd51c6d4623dc64ca54b667a17b37946d107ee81eb80"
     },
     "local_D_action": {
       "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
@@ -24,9 +28,12 @@
   ],
   "exact_checks": {
     "arity_two_promotion_requires_unary_promotion": true,
+    "causal_and_residual_routes_split": true,
+    "causal_route_selected_first": true,
     "complete_54_row_D_input": true,
     "complete_54_row_q1_input": true,
     "complete_54_row_q2_input": true,
+    "conditional_causal_transfer_certified": true,
     "failed_candidate_scope_is_not_global_nonexistence": true,
     "source_gate_precedes_arity_two_gate": true,
     "unary_bare_complex_obstruction_certified": true,
@@ -35,7 +42,10 @@
   "flags": {
     "BERGER_ARITY_TWO_D_CARTAN_FULL_4D": false,
     "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D": false,
+    "BERGER_CAUSAL_D_CARTAN_EXTENSION": false,
+    "BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM": true,
     "BERGER_FULL_4D_D_CARTAN_INPUTS_COMPLETE": true,
+    "BERGER_RESIDUAL_BFV_D_CARTAN_EXTENSION": false,
     "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D": false,
     "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO": true
   },
@@ -82,7 +92,7 @@
       ]
     }
   ],
-  "next_gate": "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION",
+  "next_gate": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY",
   "result_id": "BERGER_FULL_4D_D_CARTAN_GATE",
   "schema": "pure-weyl-berger-full-4d-D-Cartan-gate-v1",
   "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"

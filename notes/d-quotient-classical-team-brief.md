@@ -344,8 +344,14 @@ is exactly obstructed on the bare 26-row complex: at
 \((0,6,6,0)\), while \(\sigma(D)=1\). The D-equivariant SDR carries this
 obstruction to the bare 54-row complex. Therefore the arity-two source and
 homotopy remain machine-blocked there. The next gate is a residual/BFV or
-causal Cartan extension; the retained causal Green theorem and Hadamard data
-remain independent analytic gates.
+causal Cartan extension. These routes are now explicitly split, with the
+causal route selected first. The conditional transfer theorem proves that a
+(D)-equivariant retained causal homotopy supplies
+(iota^{(1)}_{D,\pm}=\Lambda_{26,\pm}D_{26}), makes the arity-two source
+(q_1)-closed, and gives a raw causal primitive. The retained 26-row Green
+homotopy is therefore the next gate. Cyclic completion of the binary
+primitive, Hadamard data, and the residual/BFV alternative remain separate
+and false.
 
 ### Reduced-mode arity-two fixture
 

@@ -1,0 +1,87 @@
+{
+  "arity_two_transfer": {
+    "closure": "delta A_D,s^(2)=-[q2,D]=[D,q2]=0",
+    "cochain_differential": "delta=[q1,-]",
+    "cyclicity_gate": "construct and verify the convention-correct cyclic advanced/retarded primitive on every row",
+    "raw_derivation": "for delta A=0, delta(Lambda_s A)=(q Lambda_s+Lambda_s q)A=A",
+    "raw_identity": "delta iota_D,s,raw^(2)=-A_D,s^(2)",
+    "raw_primitive": "iota_D,s,raw^(2)=-Lambda_s A_D,s^(2)",
+    "source": "A_D,s^(2)=[q2,iota_D,s^(1)]",
+    "source_degree": 0,
+    "support_scope": "causal in the output relative to the union of the two compact input supports",
+    "symmetry": "output postcomposition preserves graded symmetry in the two inputs"
+  },
+  "claim_boundary": "This exact theorem proves the conditional algebraic transfer from a D-equivariant retained causal chain contraction to unary and raw arity-two D-Cartan primitives. It does not construct the 26-row Green homotopy, a cyclic arity-two primitive, Hadamard data, residual/BFV rows, a QME solution, or a quantum result.",
+  "claim_status": "CERTIFIED_CONDITIONAL_TRANSFER_ENDPOINT_OPEN",
+  "dependency_refs": {
+    "bare_unary_obstruction": {
+      "result_id": "BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION",
+      "sha256": "7b367fd5e04c44dd4ac6d69b3e8dfd87aaabfc132f3b615fc3049bd18a82df7d"
+    },
+    "causal_54_to_26_reduction": {
+      "result_id": "BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION",
+      "sha256": "8893fa0457e513913e0a71c5e0f1923ff06cb8c32f7a662808c5c9ee37f7e521"
+    },
+    "classical_binary_q2": {
+      "result_id": "BERGER_SUPPORT_LOCAL_Q2",
+      "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
+    },
+    "local_D_action": {
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "endpoint_assumptions": {
+    "D_chain_map": "q D-D q=0",
+    "D_equivariant_homotopy": "Lambda_s D-D Lambda_s=0",
+    "causal_support": "supp(Lambda_s f) subset J^s(supp f)",
+    "chain_homotopy": "q Lambda_s+Lambda_s q=1 for s in {+,-}",
+    "paired_adjointness": "Lambda_+^sharp is the convention-fixed signed Lambda_-",
+    "status": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY remains false"
+  },
+  "exact_checks": {
+    "Hadamard_and_QME_not_required": true,
+    "advanced_retarded_adjoint_scope_recorded": true,
+    "arity_two_noncommutative_rewrite_zero": true,
+    "arity_two_source_closed_from_Jacobi_and_D_derivation": true,
+    "bare_local_no_go_not_overstated": true,
+    "conditional_54_row_formula_proved": true,
+    "conditional_unary_formula_proved": true,
+    "cyclic_binary_completion_not_inferred": true,
+    "raw_arity_two_primitive_exact_conditionally": true,
+    "same_sided_causal_support_preserved": true,
+    "unary_noncommutative_rewrite_zero": true
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_CAUSAL_ARITY_TWO_CYCLIC_COMPLETION": false,
+    "BERGER_CAUSAL_ARITY_TWO_RAW_PRIMITIVE_CONDITIONAL": true,
+    "BERGER_CAUSAL_ARITY_TWO_SOURCE_CLOSED_CONDITIONAL": true,
+    "BERGER_CAUSAL_D_CARTAN_EXTENSION": false,
+    "BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM": true,
+    "BERGER_CAUSAL_UNARY_D_CARTAN_CONDITIONAL": true,
+    "BERGER_RESIDUAL_BFV_D_CARTAN_EXTENSION": false
+  },
+  "next_gate": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY",
+  "result_id": "BERGER_CAUSAL_D_CARTAN_TRANSFER",
+  "route_split": {
+    "Hadamard_or_QME_required_for_classical_gate": false,
+    "alternative_open": "BERGER_RESIDUAL_BFV_D_CARTAN_EXTENSION",
+    "reason": "the retained 26-row Green homotopy is already required independently and supplies the unary Cartan homotopy without another local ansatz",
+    "selected_first": "BERGER_CAUSAL_D_CARTAN_EXTENSION"
+  },
+  "schema": "pure-weyl-berger-causal-D-Cartan-transfer-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "unary_transfer": {
+    "adjoint_scope": "the advanced/retarded pair inherits the convention-fixed adjoint relation; no same-sided self-adjointness is asserted",
+    "definition": "iota_D,s^(1)=Lambda_s D",
+    "derivation": "q Lambda_s D+Lambda_s D q=(q Lambda_s+Lambda_s q)D=D",
+    "identity": "q iota_D,s^(1)+iota_D,s^(1) q=D",
+    "lift_54": "iota_D,54,s^(1)=Lambda_54,s D_54=S_cl D_54+iota_cl Lambda_26,s D_26 pi_cl",
+    "support": "D is local and Lambda_s is same-sided causal, hence iota_D,s^(1) is same-sided causal"
+  }
+}
