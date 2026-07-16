@@ -1,0 +1,172 @@
+{
+  "bilinear": {
+    "definition": "O_H(v,w)=<zeta_H,(1/2)D^2E_WM[v,w]>",
+    "matrix": [
+      [
+        "-2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-16/3",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-12*(6 + 5*sqrt(3))/5"
+      ]
+    ],
+    "matrix_basis_order": [
+      "R",
+      "D",
+      "P",
+      "G"
+    ],
+    "polarization_convention": "O_H(v,w)=(Q(v+w)-Q(v)-Q(w))/2 with Q(v)=O_H(v,v)",
+    "quadratic_form": "-(15*a_D**2 + 432*a_G**2 + 360*sqrt(3)*a_G**2 + 160*a_P**2 + 60*a_R**2)/30",
+    "radion_duality_direct_tensor_check": {
+      "combined_quadratic_source_tt": "-(a_D**2 + 4*a_R**2)/2",
+      "polarized_entry": "0",
+      "twice_polarized_entry": "0"
+    },
+    "symmetric": true
+  },
+  "charge_fibres": {
+    "fixed_electric_fixed_magnetic": {
+      "condition": "delta^2 Q_E=delta^2 P_M=0",
+      "constant_lapse_cokernel": "C_H survives",
+      "extension_condition": "Q(v)=0 is necessary on H_fixture"
+    },
+    "variable_electric_fixed_magnetic": {
+      "condition": "delta^2 Q_E allowed, delta^2 P_M=0 at the purely magnetic background",
+      "constant_lapse_cokernel": "C_H survives because an averaged electric correction has zero linear tt stress pairing with Fbar"
+    },
+    "variable_magnetic": {
+      "augmented_linear_pairing": "<zeta_H,L(Phi2,p)> = -p",
+      "condition": "the second-order magnetic coefficient p is admitted",
+      "constant_lapse_cokernel": "C_H is removed from the augmented cokernel",
+      "required_lift": "p=Q(v) cancels this component of the extension equation",
+      "warning": "Removing C_H is not a full extension theorem when other source components or cokernel directions remain."
+    }
+  },
+  "claim_boundary": "This G1 LOCAL-ALGEBRAIC/REDUCED-MODE theorem constructs the constant-lapse component of the second-order obstruction bilinear on the declared four-dimensional compact fixture span and proves its charge-fibre behavior and symmetry selection rules. It does not classify the complete linear cohomology, every harmonic coefficient, the full cokernel, charge-relaxed photon/graviton extensions, covariant symplectic moment-map equality, causal evolution, scattering, or quantum theory.",
+  "classification": {
+    "complete_H0_linear_domain_classified": false,
+    "complete_adjoint_cokernel_classified": false,
+    "constant_lapse_selection_rules_certified": true,
+    "fixed_vs_variable_charge_cokernel_change_certified": true,
+    "full_harmonic_obstruction_theorem": false,
+    "general_nonlinear_closure_certified": false,
+    "relative_taub_component_identified": true,
+    "reusable_symmetric_obstruction_bilinear_on_fixture_span": true
+  },
+  "codomain": {
+    "definition": "the one-dimensional constant-lapse/time-translation component span{zeta_H} of coker(L_WM) on the compact fixed-charge domain",
+    "evaluation": "R,D,P entries are time-independent; G is certified on the t=0 Cauchy slice",
+    "name": "C_H",
+    "not_complete_cokernel": "No claim is made that C_H exhausts the full adjoint cokernel.",
+    "pairing": "normalized spatial average of the tt quadratic source on S1 x S2"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": {
+    "basis_order": [
+      "R_constant_radion",
+      "D_maxwell_duality",
+      "P_l1_photon",
+      "G_l2_gravitational_plus"
+    ],
+    "basis_quantum_numbers": {
+      "D_maxwell_duality": {
+        "ell": 0,
+        "k": 0,
+        "m": 0,
+        "time": "constant",
+        "type": "global Maxwell duality"
+      },
+      "G_l2_gravitational_plus": {
+        "ell": 2,
+        "k": 0,
+        "m": 0,
+        "omega_squared": "6+2*sqrt(3)",
+        "type": "odd-parity gravitational mode with Maxwell dressing"
+      },
+      "P_l1_photon": {
+        "ell": 1,
+        "k": 0,
+        "m": 0,
+        "omega_squared": "4",
+        "type": "photon--metric normal mode"
+      },
+      "R_constant_radion": {
+        "ell": 0,
+        "k": 0,
+        "m": 0,
+        "time": "polynomial zero-mode representative",
+        "type": "scalar/radion"
+      }
+    },
+    "definition": "span_R{R,D,P,G} inside the complete on-shell linear Einstein--Maxwell tangent space before residual quotient",
+    "name": "H_fixture",
+    "not_the_complete_domain": "The other m values, nonzero S1 momenta, polarizations, the l2 minus branch, and all higher harmonics remain outside this certificate."
+  },
+  "fixture_regression": {
+    "duality": "Q(D)=-1/2; magnetic lift p=-1/2 matches the exact duality rotation",
+    "gravitational_plus": "Q(G)=-12*sqrt(3)-72/5 at t=0; fixed-charge obstruction certified, but a charge-relaxed full correction is open",
+    "null_universal_cover": "outside H_fixture and outside the compact constant-lapse domain; its nonzero local Chevreton source is explicitly removable and is not a counterexample to O_H",
+    "photon": "Q(P)=-16/3; fixed-charge obstruction certified, but p=Q(P) has not been shown to solve the other rows",
+    "radion": "Q(R)=-2; magnetic lift p=-2 matches the explicit charge-relaxed extension"
+  },
+  "generality_level": "G1_DECLARED_FIXTURE_SPAN",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "promote from H_fixture to the complete periodic harmonic domain by computing every surviving equal-(k,ell) polarization block and the full adjoint cokernel",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_obstruction_bilinear.py",
+    "generator_sha256": "c8de0718ec63e827f61d7276963de5208325700eb78d7c99e0681605aadc0a14",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_periodic_graviton_second_order.json": "9376a4d4d2d1a0b9e77ee78ece90cd74e82b574b02a84030ed93e1f5946caef4",
+      "bridge/certificates/einstein_maxwell_periodic_photon_second_order.json": "3f3ac8f10c9fadc36180f98c48404e4e733fc420f97bb529c5b1316f550def93",
+      "bridge/certificates/einstein_maxwell_second_order_inclusion.json": "493059b1bf77c2a94e68d69fe23593dcb4d8be41e93ff22ae8ee18f674f79c8b"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_OBSTRUCTION_BILINEAR_G1",
+  "result_state": "CONSTANT_LAPSE_BILINEAR_CERTIFIED_ON_COMPACT_FIXTURE_SPAN",
+  "schema": "einstein-maxwell-obstruction-bilinear-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_obstruction_bilinear.schema.json",
+  "schema_sha256": "dfafb99a230fd2b5074081490eaa747a618555fd6aa6d8111061878a183e1c67",
+  "selection_rules": {
+    "fixture_consequence": "All pairs with distinct ell vanish. The only same-ell off-diagonal pair R,D is zero by the direct full-tensor polarization check.",
+    "full_harmonic_coefficients_certified": false,
+    "necessary_rules_for_general_harmonics": [
+      "S1 momenta must sum to zero: k1+k2=0",
+      "an SO(3) scalar occurs only for ell1=ell2 with conjugate m pairing m1+m2=0",
+      "the product parity must be even for the scalar constant-lapse projection",
+      "within a surviving (k,ell,polarization) block the coefficient still requires tensor calculation"
+    ],
+    "source": "SO(3) x S1 equivariance of the bilinear differential operator followed by projection to the invariant constant-lapse row"
+  },
+  "taub_relation": {
+    "classification": "RELATIVE_TAUB_MOMENT_MAP_COMPONENT",
+    "covariant_symplectic_moment_map_identification_certified": false,
+    "distinction": "This is a relative embedding obstruction, not a proof that the same tangent fails to integrate in Einstein--Maxwell itself.",
+    "reason": "zeta_H is the adjoint constraint zero-mode associated with the product time-translation Killing field; pairing the quadratic source with it is the standard Taub/linearization-stability construction, restricted here to the Einstein--Maxwell tangent subspace inside Weyl--Maxwell and to a declared charge fibre."
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_obstruction_bilinear --verify bridge/certificates/einstein_maxwell_obstruction_bilinear.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_obstruction_bilinear.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_obstruction_bilinear"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Einstein-Maxwell constant-lapse obstruction bilinear certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "codomain", "bilinear", "selection_rules", "charge_fibres",
+    "taub_relation", "fixture_regression", "classification", "next_gate",
+    "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-obstruction-bilinear-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_OBSTRUCTION_BILINEAR_G1"},
+    "result_state": {"const": "CONSTANT_LAPSE_BILINEAR_CERTIFIED_ON_COMPACT_FIXTURE_SPAN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"const": "G1_DECLARED_FIXTURE_SPAN"},
+    "provenance": {"type": "object"},
+    "domain": {"type": "object"},
+    "codomain": {"type": "object"},
+    "bilinear": {"type": "object"},
+    "selection_rules": {"type": "object"},
+    "charge_fibres": {"type": "object"},
+    "taub_relation": {"type": "object"},
+    "fixture_regression": {"type": "object"},
+    "classification": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}}
+  }
+}
