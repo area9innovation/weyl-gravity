@@ -616,10 +616,10 @@ corrects the provisional polar `Psi` weight to bracket weight `4`, or
 This is kinetic positivity, not yet a one-particle Hilbert norm; the latter
 requires a declared positive-frequency complex structure.
 
-Do not infer a Weyl--Maxwell symplectic embedding from this result.  The next
-compact gates are the homogeneous `ell=0` and axial `ell=1` twist global
-pairs, followed independently by the Weyl--Maxwell Lee--Wald pullback and the
-extra fourth-order adjoint blocks.
+Do not infer a Weyl--Maxwell symplectic embedding from this result alone.  The
+homogeneous `ell=0` and axial `ell=1` twist pullbacks have now closed in the
+complete standard-harmonic theorem below.  The remaining compact target gate
+is the complementary fourth-order adjoint block.
 
 `COMPACT_EM_EXCEPTIONAL_GLOBAL_SYMPLECTIC` now closes the remaining global
 pairing gate on the generalized zero-frequency space.  For
@@ -735,8 +735,8 @@ each harmonic block and relative signature `(1,1)`.  The result is not a
 finite-`ell` interpolation and the old `ell=2` fixture is reproduced exactly.
 At `ell=1`, the formal minus row has `mu_-=0`, matching the certified nonzero
 momentum gauge degeneration; this does not compute the separate physical
-`ell=1` or global `n=0` twist representatives. The polar block is completed
-below; physical `ell=1`, homogeneous, and global restrictions remain open.
+`ell=1` or global `n=0` twist representatives. Those exceptional blocks are
+computed directly below rather than by continuation.
 
 The complete regular polar restriction is now exact as well. With
 `mu=omega^2-k^2`, the arbitrary-harmonic direct current and solved quadratic
@@ -761,8 +761,32 @@ signature `(1,1)`, and axial--polar isospectrality extends to the on-shell
 relative weights. The off-shell matrices remain different. The apparent
 `mu=0` reconstruction hole is closed by the independent full-rank minor
 `lambda^3(lambda-2)/8`, so it contains only the zero gauge-fixed field for
-`lambda>=6`. Physical `ell=1`, homogeneous, twist, and extra fourth-order
-restriction blocks remain open.
+`lambda>=6`. Physical `ell=1`, homogeneous, and twist blocks are closed by
+separate direct currents below; extra fourth-order target blocks remain open.
+
+`EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION` now assembles
+the full fixed-bundle standard tangent.  The direct homogeneous current is
+conserved coefficientwise on the complete polynomial representatives and has
+rank six.  Relative to the Einstein--Maxwell form its endomorphism is
+
+```text
+R=I+N,  rank(N)=2,  N^2=0,
+```
+
+with the explicit determinant-one shear `S=I+N/2` satisfying
+`S^T Omega_EM S=Omega_WM`.  The flat `S1` holonomy `W_x` is retained.  Each
+real axial twist pair is also nondegenerate and obeys
+
+```text
+Omega_WM|twist=-2 Omega_EM|twist.
+```
+
+This twist identity comes from the direct `A+B t` current, not a formal
+`mu->0` radiative limit.  Combining these global blocks with standard
+`ell>=2` radiation and physical `ell=1` gives zero target-pullback kernel on
+the complete certified standard Einstein--Maxwell tangent before the final
+residual quotient.  It does not make the identity inclusion symplectic or
+classify the complementary fourth-order Weyl--Maxwell solutions.
 
 ### Work package E-G4: open background classes and scattering
 
@@ -823,27 +847,25 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Positive Berger clock | `D_GAUGE` on fixed-coupling linearized phase space | minimal clock SDR and retained `q1` complete; arity two open | principal endpoint factors only; curved/Green gates open | open | minimal cyclic pairing exact | `NOT_APPLICABLE` at this base point: certified non-Einstein Weyl--matter branch |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | stability open |
-| Compact Einstein--Maxwell product | sector-indexed; not a universal D verdict | `OPEN` | `NOT TESTED` | no positive-frequency Hilbert space constructed | standard `ell>=2` pullback is nondegenerate with relative signature `(2,2)`; physical `ell=1` quotient obeys `Omega_WM=4 Omega_EM` | all standard `ell>=2` and physical `ell=1` radiative tangents survive target Weyl gauge before final residual quotient |
+| Compact Einstein--Maxwell product | sector-indexed; not a universal D verdict | `OPEN` | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: radiative signature `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before final residual quotient; identity inclusion is not symplectic |
 | Lorentzian dS/AdS | boundary-dependent; compute | open | open | open | open | selected sector to certify |
 | Asymptotically flat | `PHASE_SPACE_NOT_CLOSED`; `H_ESU` crosses fixed \(\mathscr I\), `D_M` charge open | `NOT APPLICABLE` until a boundary-preserving generator and phase space are chosen | formal triangular seed only; causal complex open | `OPEN` | `OPEN` | `EINSTEIN_OPEN`; reduced `chi=0` seed only |
 
 ## Priority and stop/go decisions
 
-1. Compute the Weyl--Maxwell pullbacks on the homogeneous `ell=0` and axial
-   twist generalized global solutions by separate direct Lee--Wald currents.
-2. Classify the extra fourth-order adjoint/radiative directions and separate
+1. Classify the extra fourth-order adjoint/radiative directions and separate
    them from the standard Einstein wave directions.
-3. Run the quadratic Taub/extension test on the remaining compact wave
+2. Run the quadratic Taub/extension test on the remaining compact wave
    directions and construct a relational detector or geodesic-deviation
    observable.
-4. Complete the asymptotically flat linear causal complex and boundary phase
+3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
-5. Choose a real boundary-preserving image, then compute its charge separately
+4. Choose a real boundary-preserving image, then compute its charge separately
    from the ADM/Bondi time-translation charge and radiative pairing.
-6. Prove or refute linear causal preservation of the Einstein branch, classify
+5. Prove or refute linear causal preservation of the Einstein branch, classify
    the extra asymptotic branch, and only then compare Bondi observables, black
    holes, and tree amplitudes.
-7. Seek a different common scalar background for an Einstein--matter tangent
+6. Seek a different common scalar background for an Einstein--matter tangent
    comparison; retain the Berger clock as the certified non-Einstein control
    branch.  Add Yang--Mills only after that distinction is stable.
 
@@ -855,9 +877,12 @@ Weyl--Maxwell pullback is closed on the complete standard axial-plus-polar
 branch-coefficient signature is `(2,2)` and the identity inclusion is not
 symplectic.  The physical `ell=1` quotient is also closed by a separate direct
 exceptional current: both gauge rows vanish and the normalized pullback is
-exactly four times the Einstein--Maxwell form.  This is not a one-particle or
-quantum theorem.  The homogeneous, twist, and extra fourth-order target
-restrictions are the nearest remaining compact gates; black holes and
+exactly four times the Einstein--Maxwell form.  The homogeneous pullback is a
+nondegenerate rank-two unipotent shear and each axial twist pair has factor
+`-2`.  Thus the complete standard fixed-bundle harmonic pullback is
+nondegenerate before final residual quotient, although the identity inclusion
+is not symplectic.  This is not a one-particle or quantum theorem.  Extra
+fourth-order target branches are the nearest compact gate; black holes and
 scattering require their own boundary phase space.  The handoff criteria are
 recorded in
 [`universe-building-roadmap.md`](universe-building-roadmap.md).

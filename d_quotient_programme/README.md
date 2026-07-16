@@ -87,6 +87,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-radiative-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-radiative-restriction-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-ell1-physical-restriction.json`](contributions/einstein-maxwell-weyl-ell1-physical-restriction.json)
 - [`reports/einstein-maxwell-weyl-ell1-physical-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-ell1-physical-restriction-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-standard-harmonic-inclusion.json`](contributions/einstein-maxwell-weyl-standard-harmonic-inclusion.json)
+- [`reports/einstein-maxwell-weyl-standard-harmonic-inclusion-registration-receipt.md`](reports/einstein-maxwell-weyl-standard-harmonic-inclusion-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -266,8 +268,9 @@ harmonic.  Branch, parity, harmonic, and Fourier orthogonality and the
 real/complex multiplicities are explicit.  Thus all ordinary radiative
 directions remain nonnull before the final residual quotient, but the identity
 inclusion is not symplectic.  This classical relative signature is not a
-one-particle negative-norm or quantum ghost theorem.  The homogeneous
-`ell=0`, axial twist, and extra fourth-order restriction blocks remain open.
+one-particle negative-norm or quantum ghost theorem.  The homogeneous and
+twist blocks are closed by the complete assembly below; extra fourth-order
+target branches remain open.
 
 The physical `ell=1` target restriction is now closed independently on its
 exceptional quotient.  A direct current calculation annihilates the complete
@@ -277,5 +280,16 @@ quotient coordinates, every massive axial and polar triplet obeys
 all-`ell` matrix cannot be specialized to `lambda=2`, because it is nonzero on
 the residual diffeomorphism; the agreement with factor four comes only after
 the exceptional current descends correctly.  These modes are radiative and
-are not the separate zero-frequency axial twist.  Homogeneous, twist, and
-extra fourth-order target restrictions remain open.
+are not the separate zero-frequency axial twist.
+
+The complete fixed-bundle standard-harmonic restriction is now closed.  A
+direct all-time calculation makes the six-dimensional homogeneous pullback
+nondegenerate, with relative operator `I+N`, `rank(N)=2`, `N^2=0`; the explicit
+shear `S=I+N/2` satisfies `S^T Omega_EM S=Omega_WM`.  Each of the three axial
+twist pairs obeys `Omega_WM=-2 Omega_EM`, obtained directly on `A+B t` rather
+than by a zero-frequency radiative limit.  Together with the radiative and
+physical `ell=1` certificates, this proves zero pullback kernel on the complete
+certified standard Einstein--Maxwell tangent before the final residual
+quotient.  The identity inclusion remains nonsymplectic, and extra
+fourth-order branches, nonlinear closure, observable extension, final descent,
+causal scattering, and quantum claims remain open.

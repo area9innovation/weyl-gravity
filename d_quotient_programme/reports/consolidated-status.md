@@ -82,6 +82,7 @@ background as a non-Einstein Weyl--matter branch.
 | compact_einstein_maxwell_weyl_polar_all_ell_restriction | `H_product` | `einstein_maxwell_product_compact_weyl_polar_all_ell_restriction` | CLASSICAL_BV | `CERTIFIED` | `G2_POLAR_ALL_ELL_GE2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION` |
 | compact_einstein_maxwell_weyl_radiative_restriction | `H_product` | `einstein_maxwell_product_compact_weyl_standard_radiative_restriction` | CLASSICAL_BV | `CERTIFIED` | `G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION` |
 | compact_einstein_maxwell_weyl_ell1_physical_restriction | `H_product` | `einstein_maxwell_product_compact_weyl_ell1_physical_quotient` | CLASSICAL_BV | `CERTIFIED` | `G3_PHYSICAL_ELL1_ALL_N_M_FACTOR_FOUR_QUOTIENT_RESTRICTION` |
+| compact_einstein_maxwell_weyl_standard_harmonic_inclusion | `H_product` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | CLASSICAL_BV | `CERTIFIED` | `G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_positive_berger_clock_retained_q2_26 | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | INTERACTING | `CERTIFIED` | `RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED` |
 | compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING` |
@@ -143,6 +144,7 @@ background as a non-Einstein Weyl--matter branch.
 | einstein_boundary | `compact_einstein_maxwell_weyl_polar_all_ell_restriction` | `H_product` | `einstein_maxwell_product_compact_weyl_polar_all_ell_restriction` | `CERTIFIED` | `G2_POLAR_ALL_ELL_GE2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION` |
 | einstein_boundary | `compact_einstein_maxwell_weyl_radiative_restriction` | `H_product` | `einstein_maxwell_product_compact_weyl_standard_radiative_restriction` | `CERTIFIED` | `G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION` |
 | einstein_boundary | `compact_einstein_maxwell_weyl_ell1_physical_restriction` | `H_product` | `einstein_maxwell_product_compact_weyl_ell1_physical_quotient` | `CERTIFIED` | `G3_PHYSICAL_ELL1_ALL_N_M_FACTOR_FOUR_QUOTIENT_RESTRICTION` |
+| einstein_boundary | `compact_einstein_maxwell_weyl_standard_harmonic_inclusion` | `H_product` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | `CERTIFIED` | `G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | nonlinear | `compact_positive_berger_clock_retained_q2_26` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED` |
 | quantum | `vacuum_cylinder` | `D_compact` | `compact_quantum` | `BLOCKED` | `NO_VERDICT` |
@@ -161,7 +163,7 @@ The immediate shared calculation is
 
 - `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d`, SHA-256 `35d75f22d9cb6703b2cd4283c5e1ccde296045dc42fcc3bf177308c9ce76f5b3`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `7e87281c416f4c4f98edfe61ae05829f4b48593a`, SHA-256 `ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685`
-- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `f8573978cc65ae5fd4419761b6aa3209258dc46c`, SHA-256 `192c584e3d075c5bcb9b2678ebdd423e4146c146acabac440ee5c1cf7788134d`
+- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `b25f11e0365514d2990617be2d37e9bafe4de22e`, SHA-256 `ebd79d8174810d74dd7d43294146d33792ebfd9666a12ccd7fa3da7591e9d3cd`
 - `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6`, SHA-256 `9f450477532a24edbd02282f29593876a13ea886808a6c9ba06b41004653f8da`
 
 ## Claim boundary

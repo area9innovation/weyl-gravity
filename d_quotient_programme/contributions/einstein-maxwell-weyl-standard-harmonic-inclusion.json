@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle P_N with N=2; complete certified standard Einstein-Maxwell harmonic tangent including generalized global solutions; before final residual SO(4,2) quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the Weyl-Maxwell pullback is nondegenerate on every certified standard Einstein-Maxwell harmonic tangent block and hence on their orthogonal direct sum",
+    "the complete standard block decomposition includes axial and polar ell>=2 radiation, physical axial and polar ell=1 quotients, the six-dimensional homogeneous generalized block, and all three axial ell=1 twist pairs",
+    "the identity tangent inclusion is injective and has zero pullback kernel before the final residual quotient, but is not symplectic because the blocks are reweighted or sheared",
+    "the homogeneous relative operator is I+N with rank N=2 and N^2=0, while an explicit determinant-one shear S=I+N/2 identifies the two homogeneous symplectic vector spaces",
+    "the axial twist pullback is exactly -2 Omega_EM and cannot be obtained by a mu-to-zero radiative continuation",
+    "ordinary radiative Einstein-Maxwell tangent modes have nonzero target pairings before the final quotient, so the later vanishing residual one-particle statement is not their absence"
+  ],
+  "evidence": {
+    "commit": "de8e23d477831b67386a7e5699b18f03e3efe4d4",
+    "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+    "sha256": "fb7ef6a4f4cc41aaf80552388d7cd8a46df566f33a49770a804612c27149160d"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "classify the complementary fourth-order Weyl-Maxwell branches and test whether declared Lorentzian boundary conditions select a dynamically closed Einstein scattering sector; compute final residual descent separately",
+  "not_established": [
+    "classification or removal of the complementary fourth-order Weyl-Maxwell solution branches",
+    "nonlinear closure of the Einstein-Maxwell sector or equality of the two theories",
+    "extension of every Einstein observable to the full target observable algebra or descent through the final SO(4,2) quotient",
+    "asymptotically flat boundary conditions, causal branch preservation, scattering, a one-particle Hilbert space, or quantum unitarity"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_standard_harmonic_inclusion",
+  "team_id": "einstein_boundary",
+  "verdict": "G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion --verify bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}
