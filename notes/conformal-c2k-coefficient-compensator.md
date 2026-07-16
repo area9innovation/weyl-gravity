@@ -125,6 +125,38 @@ $-1/15$ from his Riegert sector.  The exact arithmetic
 
 does not erase the normalization map above.
 
+The quantum repository now reconstructs these two background-anomaly numbers
+from the factorized determinant rather than retaining them only as literature
+inputs.  On a Ricci-flat background it obtains
+
+\[
+\beta_1=c-a
+=2\beta_1[\Delta_2]-3\beta_1[\Delta_1]
+={137\over60},
+\]
+
+while the four constant-curvature transverse determinant factors sum to
+
+\[
+a={31\over72}+{269\over360}+{181\over72}+{79\over120}
+={87\over20}.
+\]
+
+Thus $c=a+\beta_1=199/30$.  The associated machine certificate also computes
+the one-generator local-anomaly pullback: it vanishes for cylinder
+$D=\partial_t$ because its Weyl compensator is zero, while real Minkowski
+dilation has compensator $-1$ and pulls the cocycle back to
+
+\[
+c_D\left(-{199\over30}C^2+{87\over20}E_4\right).
+\]
+
+This is a `EUCLIDEAN-SPECTRAL` background coefficient plus a
+`LOCAL-ALGEBRAIC` cocycle restriction.  It remains distinct from the
+repository BV coefficient and from the degree-zero quantum $D$-Cartan defect;
+see
+[`quantum-weyl/reports/weyl-graviton-anomaly-coefficients-d-descent.md`](../quantum-weyl/reports/weyl-graviton-anomaly-coefficients-d-descent.md).
+
 ## What is not yet a BV theorem
 
 Local BRST cohomology classifies

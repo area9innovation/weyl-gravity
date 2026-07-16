@@ -3,8 +3,23 @@
 Dependency tag for every future result in this directory:
 `EUCLIDEAN-SPECTRAL`.
 
-No Euclidean coefficient has been computed by the Branch C bootstrap. The
-schema in this directory is a promotion gate: a coefficient record is valid
+The Branch C reduced-mode bootstrap still does not evaluate a determinant.
+Separately, the exact standard conformal-spin-two determinant reconstruction
+in [`coefficient_reconstruction.py`](coefficient_reconstruction.py) now gives
+
+\[
+a_2={87\over20},\qquad c_2={199\over30}
+\]
+
+from constant-curvature and Ricci-flat heat-kernel data, with an independent
+conical-sphere check of \(c_2\).  Its combined coefficient and local
+one-generator \(D\)-descent receipt is
+[`WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json`](certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json).
+This is a standard background-anomaly result, not a computation of the
+repository BV Slavnov breaking; its certificate keeps that distinction
+fail-closed.
+
+The generic schema in this directory remains a promotion gate: a coefficient record is valid
 only when it supplies an exact coefficient together with the action
 normalization, signature, gauge, regularization, zero-mode policy, contour
 policy, frozen classical commit, and proof certificate.

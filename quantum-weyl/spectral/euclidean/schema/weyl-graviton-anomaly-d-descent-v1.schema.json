@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-weyl-graviton-anomaly-d-descent-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "result_stage",
+    "dependency_tags",
+    "coefficient_scope",
+    "coefficient_calculation",
+    "D_descent",
+    "analytic_inputs",
+    "source_provenance",
+    "claim_flags",
+    "claim_boundary",
+    "next_gate",
+    "certificate_hash"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-weyl-graviton-anomaly-d-descent-v1"},
+    "result_id": {"const": "WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT"},
+    "result_state": {"const": "STANDARD_SPIN2_BACKGROUND_COEFFICIENTS_COMPUTED_D_PULLBACK_CERTIFIED"},
+    "result_stage": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL", "LOCAL-ALGEBRAIC"]},
+    "coefficient_scope": {"type": "string", "minLength": 1},
+    "coefficient_calculation": {
+      "type": "object",
+      "required": ["constant_curvature_sum_a", "ricci_flat_sum_beta1_equals_c_minus_a", "derived_c_equals_a_plus_beta1", "anomaly_coordinates", "cross_checks"],
+      "properties": {
+        "constant_curvature_sum_a": {"const": "87/20"},
+        "ricci_flat_sum_beta1_equals_c_minus_a": {"const": "137/60"},
+        "derived_c_equals_a_plus_beta1": {"const": "199/30"},
+        "independent_conical_sphere_c": {"const": "199/30"},
+        "derived_beta2_equals_2c": {"const": "199/15"},
+        "anomaly_coordinates": {
+          "type": "object",
+          "required": ["C2", "E4"],
+          "properties": {"C2": {"const": "199/30"}, "E4": {"const": "-87/20"}}
+        },
+        "cross_checks": {
+          "type": "object",
+          "additionalProperties": {"const": true}
+        }
+      },
+      "additionalProperties": true
+    },
+    "D_descent": {
+      "type": "object",
+      "required": ["result_kind", "cylinder", "minkowski", "cartan_defect_map_status", "cartan_defect_status"],
+      "properties": {
+        "result_kind": {"const": "ONE_GENERATOR_PULLBACK_OF_LOCAL_GHOST_NUMBER_ONE_ANOMALY_COCYCLE"},
+        "cylinder": {
+          "type": "object",
+          "required": ["weyl_compensator_sigma_D", "top_anomaly_coordinates", "top_anomaly_status"],
+          "properties": {
+            "weyl_compensator_sigma_D": {"const": "0"},
+            "top_anomaly_coordinates": {
+              "type": "object",
+              "properties": {"C2": {"const": "0"}, "E4": {"const": "0"}},
+              "required": ["C2", "E4"]
+            },
+            "top_anomaly_status": {"const": "ZERO"}
+          },
+          "additionalProperties": true
+        },
+        "minkowski": {
+          "type": "object",
+          "required": ["weyl_compensator_sigma_D", "top_anomaly_coordinates", "top_anomaly_status"],
+          "properties": {
+            "weyl_compensator_sigma_D": {"const": "-1"},
+            "top_anomaly_coordinates": {
+              "type": "object",
+              "properties": {"C2": {"const": "-199/30"}, "E4": {"const": "87/20"}},
+              "required": ["C2", "E4"]
+            },
+            "top_anomaly_status": {"const": "NONZERO_LOCAL_COCYCLE_PULLBACK"}
+          },
+          "additionalProperties": true
+        },
+        "cartan_defect_map_status": {"const": "NOT_CONSTRUCTED"},
+        "cartan_defect_status": {"const": "UNDEFINED_ANALYTICALLY"}
+      },
+      "additionalProperties": false
+    },
+    "analytic_inputs": {"type": "object"},
+    "source_provenance": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "STANDARD_BACKGROUND_A_AND_C_COMPUTED",
+        "CYLINDER_D_LOCAL_ANOMALY_PULLBACK_ZERO",
+        "MINKOWSKI_D_LOCAL_ANOMALY_PULLBACK_COMPUTED",
+        "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED",
+        "D_CARTAN_ANOMALY_CLASSIFIED",
+        "QME_RESTORED",
+        "RESIDUAL_TRANSFERRED",
+        "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "STANDARD_BACKGROUND_A_AND_C_COMPUTED": {"const": true},
+        "CYLINDER_D_LOCAL_ANOMALY_PULLBACK_ZERO": {"const": true},
+        "MINKOWSKI_D_LOCAL_ANOMALY_PULLBACK_COMPUTED": {"const": true},
+        "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": {"const": false},
+        "D_CARTAN_ANOMALY_CLASSIFIED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_TRANSFERRED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "next_gate": {"type": "string", "minLength": 1},
+    "certificate_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
