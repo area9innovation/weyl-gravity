@@ -19,13 +19,13 @@ OUTPUT_PATH = PACKAGE_ROOT / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 SCHEMA_PATH = PROGRAMME_ROOT / "schema" / "team-contribution-v1.schema.json"
 GENERATOR_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "generators.json"
 PHASE_SPACE_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "phase_spaces.json"
-EVIDENCE_COMMIT = "04833ba9d0a213b5bd5b6780ea5bf13a1d3e476e"
+EVIDENCE_COMMIT = "db533d49e7644fc2482f472a8ed2f41e06469314"
 EVIDENCE_PATH = (
     "quantum-weyl/cartan/certificates/"
-    "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json"
+    "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json"
 )
 WORKING_EVIDENCE_PATH = (
-    PACKAGE_ROOT / "certificates" / "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json"
+    PACKAGE_ROOT / "certificates" / "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json"
 )
 
 
@@ -57,12 +57,15 @@ def _registry_entry(path: Path, key: str, value: str) -> dict[str, Any]:
 def build_contribution() -> dict[str, Any]:
     evidence_bytes = _evidence_bytes()
     evidence = json.loads(evidence_bytes)
-    if evidence.get("result_id") != "CARTAN_DEFECT_COMPLEX_PRECERTIFICATE":
-        raise ValueError("pinned evidence is not the Cartan defect precertificate")
-    if evidence.get("result_state") != "ALGEBRAIC_ENGINE_READY_PHYSICAL_CANDIDATES_INPUT_BLOCKED":
-        raise ValueError("pinned Cartan evidence has an unexpected result state")
-    if evidence["lifecycle_gates"]["QME_RESTORED"] != "NOT_REACHED":
-        raise ValueError("blocked contribution cannot cite a restored QME")
+    if evidence.get("result_id") != "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON":
+        raise ValueError("pinned evidence is not the local/D-Cartan comparison")
+    if evidence.get("result_state") != "LOCAL_D_PULLBACK_COMPUTED_TARGET_CHAIN_MAP_UNDEFINED":
+        raise ValueError("pinned comparison evidence has an unexpected result state")
+    comparison = evidence.get("cartan_defect_comparison", {})
+    if comparison.get("classification_status") != "NO_VERDICT":
+        raise ValueError("blocked contribution cannot cite a Cartan verdict")
+    if comparison.get("zero_local_pullback_implies_zero_cartan_defect") is not False:
+        raise ValueError("local zero was incorrectly promoted to a Cartan result")
     if WORKING_EVIDENCE_PATH.read_bytes() != evidence_bytes:
         raise ValueError("working Cartan certificate differs from the pinned evidence commit")
     _registry_entry(GENERATOR_REGISTRY_PATH, "generator_id", "D_compact")
@@ -88,9 +91,13 @@ def build_contribution() -> dict[str, Any]:
             "complete intrinsic Euler descent included in the truncated AFN0 even-anomaly closure slice",
             "hash-bound AFN0 closure witnesses with semantic agreement checks against the descent database",
             "complete even Weyl-ghost AFN0 candidate quotient with normalized dual witnesses for omega C2 and omega E4",
+            "complete odd Weyl-ghost AFN0 candidate quotient with a normalized dual witness for omega C dual C",
+            "zero direct local bulk D_compact anomaly pullback on the closed vacuum cylinder because sigma_D=0",
+            "source/target degree audit and minimal missing-carrier theorem for the renormalized local Ward-insertion map",
         ],
         "not_established": [
-            "a complete bulk pure-Weyl Cartan-obstruction candidate basis",
+            "a complete Diff and antifield-dependent pure-Weyl anomaly basis",
+            "a local-anomaly to admissible D-Cartan chain map",
             "a renormalized observable algebra or actual Q_1",
             "a restored local quantum master equation",
             "a residual quantum transfer, coefficient, or pairing correction",
@@ -102,11 +109,11 @@ def build_contribution() -> dict[str, Any]:
             "sha256": _sha256(evidence_bytes),
         },
         "verification_commands": [
-            "PYTHONPATH=quantum-weyl python3 -m cartan.certificate --check",
+            "PYTHONPATH=quantum-weyl python3 -m cartan.local_anomaly_comparison_certificate --check",
             "PYTHONPATH=quantum-weyl python3 -m cartan.contribution --check",
             "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -v",
         ],
-        "next_gate": "extend the completed even AFN0 candidate quotient to the odd, Diff, and antifield sectors, then instantiate the admissible bulk Cartan-obstruction basis; consume separately gated clock inputs only after their total-D and shared classical BV exports land",
+        "next_gate": "import the full classical antifield/Koszul-Tate and D-action export, compute the regulated Slavnov breaking, and construct the renormalized local Ward-insertion map into the admissible D-Cartan complex; consume separately gated clock inputs only after their total-D and shared classical BV exports land",
     }
 
 
