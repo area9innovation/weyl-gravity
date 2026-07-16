@@ -29,7 +29,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "191594d83209c462aeb5db3d03e79f3bbef86550",
+  "programme_base_commit": "a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -1295,16 +1295,18 @@
           "zero direct local bulk D_compact anomaly pullback on the closed vacuum cylinder because sigma_D=0",
           "source/target degree audit and minimal missing-carrier theorem for the renormalized local Ward-insertion map",
           "setting-specific import of the complete 54-row Berger helical D action with exact unary, contraction, and cyclic equivariance",
-          "conditional support-local and cyclic reduction of the Berger 54-row causal homotopy problem to the retained 26-row endpoint"
+          "conditional support-local and cyclic reduction of the Berger 54-row causal homotopy problem to the retained 26-row endpoint",
+          "strict content-addressed input contract for the retained 26-row Green/Hadamard endpoint with causal support and zero-mode gates",
+          "strict sourced/restored renormalized D-Ward insertion contract forbidding Cartan classification before QME restoration"
         ],
         "evidence": {
-          "commit": "faceb39e5427443320395f961107ba74b4800890",
+          "commit": "a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6",
           "path": "quantum-weyl/cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
-          "sha256": "6f5d5408ee5cdd484761098261bed4f828534c49d7eb9746f9dcaf600f72e648"
+          "sha256": "9c7fe6bc23eb0105e9fc7b365c5fa9d8291fba49bd834715216bd4f068a3cc3a"
         },
         "generator_id": "D_compact",
         "lifecycle_layer": "QUANTUM",
-        "next_gate": "import the full classical antifield/Koszul-Tate and support-local q2 exports, construct the retained 26-row Berger Green/Hadamard endpoint, compute the regulated Slavnov breaking, and construct the renormalized local Ward-insertion map into the admissible D-Cartan complex",
+        "next_gate": "populate the prepared contracts with the full classical antifield/Koszul-Tate and support-local q2 exports, the retained 26-row Berger Green/Hadamard endpoint, and the regulated Slavnov/Ward operators; then classify the resulting admissible D-Cartan defect only after QME restoration",
         "not_established": [
           "a complete Diff and antifield-dependent pure-Weyl anomaly basis",
           "a local-anomaly to admissible D-Cartan chain map",
@@ -1326,7 +1328,7 @@
           "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -v"
         ]
       },
-      "sha256": "5c18277da04d223cde21eafe0697da06243ac64585e47d81c3f3c4206e281061"
+      "sha256": "726414ca83667f2e54d84663c1ab7ba6d9fdeb60db2b421e5df251884f1bdc29"
     }
   ],
   "team_inputs": {
@@ -1341,14 +1343,14 @@
       "sha256": "ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685"
     },
     "nonlinear": {
-      "commit": "284788fb93c74ee4731f08b93d4f223ed229d95e",
+      "commit": "98d827633edaa21ee90028312c8cfdf6053c3963",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "0dbea613bb297a942e9f279486679f3e84dd7f9c3ed3106ab103455e8d8bf533"
+      "sha256": "dff8227b07924b554c2227a61a64ceba78ef05515f89dd930ea69310de780a16"
     },
     "quantum": {
-      "commit": "04833ba9d0a213b5bd5b6780ea5bf13a1d3e476e",
+      "commit": "a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6",
       "path": "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json",
-      "sha256": "9c04d552a0ab243aff0403a51622f6d892ca77f4b0fbd04efdcf3d8ccc31c8bf"
+      "sha256": "9f450477532a24edbd02282f29593876a13ea886808a6c9ba06b41004653f8da"
     }
   },
   "team_status": [

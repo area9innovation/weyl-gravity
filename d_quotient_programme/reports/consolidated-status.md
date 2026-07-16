@@ -126,8 +126,8 @@ The immediate shared calculation is
 
 - `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `46208d7c1c845da2b1959bf0799abcc92d856499`, SHA-256 `89da9c898736fdcd6d21d68b6e53c523f036911702547baa6341a5bee6bd45c5`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `7e87281c416f4c4f98edfe61ae05829f4b48593a`, SHA-256 `ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685`
-- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `284788fb93c74ee4731f08b93d4f223ed229d95e`, SHA-256 `0dbea613bb297a942e9f279486679f3e84dd7f9c3ed3106ab103455e8d8bf533`
-- `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `04833ba9d0a213b5bd5b6780ea5bf13a1d3e476e`, SHA-256 `9c04d552a0ab243aff0403a51622f6d892ca77f4b0fbd04efdcf3d8ccc31c8bf`
+- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `98d827633edaa21ee90028312c8cfdf6053c3963`, SHA-256 `dff8227b07924b554c2227a61a64ceba78ef05515f89dd930ea69310de780a16`
+- `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6`, SHA-256 `9f450477532a24edbd02282f29593876a13ea886808a6c9ba06b41004653f8da`
 
 ## Claim boundary
 

@@ -35,6 +35,12 @@ class QuantumDContributionTests(unittest.TestCase):
             contribution["dependency_tags"],
             ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"],
         )
+        self.assertTrue(
+            any("Green/Hadamard endpoint" in row for row in contribution["established"])
+        )
+        self.assertTrue(
+            any("Ward insertion contract" in row for row in contribution["established"])
+        )
 
     def test_evidence_commit_and_hash_are_content_addressed(self) -> None:
         contribution = build_contribution()

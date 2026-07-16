@@ -19,7 +19,7 @@ OUTPUT_PATH = PACKAGE_ROOT / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 SCHEMA_PATH = PROGRAMME_ROOT / "schema" / "team-contribution-v1.schema.json"
 GENERATOR_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "generators.json"
 PHASE_SPACE_REGISTRY_PATH = PROGRAMME_ROOT / "registry" / "phase_spaces.json"
-EVIDENCE_COMMIT = "faceb39e5427443320395f961107ba74b4800890"
+EVIDENCE_COMMIT = "a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6"
 EVIDENCE_PATH = (
     "quantum-weyl/cartan/certificates/"
     "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json"
@@ -100,6 +100,8 @@ def build_contribution() -> dict[str, Any]:
             "source/target degree audit and minimal missing-carrier theorem for the renormalized local Ward-insertion map",
             "setting-specific import of the complete 54-row Berger helical D action with exact unary, contraction, and cyclic equivariance",
             "conditional support-local and cyclic reduction of the Berger 54-row causal homotopy problem to the retained 26-row endpoint",
+            "strict content-addressed input contract for the retained 26-row Green/Hadamard endpoint with causal support and zero-mode gates",
+            "strict sourced/restored renormalized D-Ward insertion contract forbidding Cartan classification before QME restoration",
         ],
         "not_established": [
             "a complete Diff and antifield-dependent pure-Weyl anomaly basis",
@@ -121,7 +123,7 @@ def build_contribution() -> dict[str, Any]:
             "PYTHONPATH=quantum-weyl python3 -m cartan.contribution --check",
             "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -v",
         ],
-        "next_gate": "import the full classical antifield/Koszul-Tate and support-local q2 exports, construct the retained 26-row Berger Green/Hadamard endpoint, compute the regulated Slavnov breaking, and construct the renormalized local Ward-insertion map into the admissible D-Cartan complex",
+        "next_gate": "populate the prepared contracts with the full classical antifield/Koszul-Tate and support-local q2 exports, the retained 26-row Berger Green/Hadamard endpoint, and the regulated Slavnov/Ward operators; then classify the resulting admissible D-Cartan defect only after QME restoration",
     }
 
 

@@ -9,7 +9,7 @@ the exact claim key
 
 The current contribution is `BLOCKED` and has `verdict: null`.  Its evidence
 is the Cartan comparison certificate at commit
-`faceb39e5427443320395f961107ba74b4800890`; the generator verifies that the
+`a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6`; the generator verifies that the
 certificate bytes at that commit reproduce the stored SHA-256 digest and are
 identical to the working certificate.
 
@@ -18,6 +18,11 @@ The receipt now includes the setting-specific 54-row Berger classical
 carries `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and `LORENTZIAN-CAUSAL`
 dependency tags.  The retained Green/Hadamard endpoint and the quantum Ward
 map remain open, so this does not change the null verdict.
+
+The evidence also includes strict physical-input contracts for both missing
+analytic carriers.  Contract readiness means future payloads have a stable
+consumer; it is not Green/Hadamard existence, QME restoration, or a Ward-map
+construction.
 
 The shared programme dossier consumes this record directly.  Its evidence
 path is relative to the `symplectic-reconstruction` project root, matching the
