@@ -1,4 +1,4 @@
-# Before Worrying About a Gravitational Ghost, Ask Whether It Is Really There
+# How to Build a Universe—and Find Out Whether Its Ghosts Are Real
 
 Einstein's theory of relativity turns gravity into the geometry of spacetime.
 Matter and energy curve spacetime; that geometry tells matter, light and
@@ -45,15 +45,30 @@ have no defined background on which to live.
 
 ### Cause and effect
 
-A disturbance introduced in one region should affect only places inside its
-causal future. Mathematically, this is established using retarded and advanced
-Green operators: one propagates effects forward and the other backward while
-respecting the spacetime light cones.
+A causal theory does not allow an event in the future to change what already
+happened in the past. If a source is switched on tomorrow, a detector must not
+respond today. A disturbance introduced at one event may influence only the
+events inside its future light cone.
+
+The mathematical test uses Green operators. The **retarded** operator gives
+the physical response after a source acts and vanishes outside the source's
+causal future. The **advanced** operator is the corresponding mathematical
+partner with support toward the past. Constructing it does not authorize
+backward-in-time signalling; physicists need both operators to test the field
+equations, build the causal commutator and compare the theory's pairings. The
+physical source-response rule is retarded.
 
 For a gauge theory such as gravity, it is not enough to find a Green operator
 for one convenient field component. The propagation must be compatible with
 the full system of fields, gauge transformations, equations, constraints and
 identities.
+
+The free pure-Weyl spherical universe passes this test on all 386 rows of its
+classical gauge complex. The clock-coupled Berger universe has a separate
+causal chain on all 54 gauge-fixed rows. In both cases the retarded response is
+confined to the causal future and the gauge constraints propagate with it.
+These are classical causality results; a global causal quantum state remains
+a separate requirement.
 
 ### Light
 
@@ -132,12 +147,38 @@ That last point matters. A transformation can be gauge in one physical sector
 and carry a measurable charge in another. The words "time is gauge" are not a
 principle we assume; they are a statement that must be calculated.
 
-## Why gauge symmetry changes the ghost question
+## What "gauge" means—and why it changes the ghost question
 
-The same place on Earth can be described using many maps. Coordinates change,
-but the place does not. Gravity has the same feature: different coordinate
-descriptions can represent the same spacetime geometry. Conformal gravity has
-an additional freedom to change the local scale.
+Gauge is the physicists' word for redundancy in a description. It means that
+two different-looking sets of mathematical variables represent the same
+physical situation.
+
+The same place on Earth can be described using latitude and longitude, a
+street map or a rotated grid. The numbers change, but the place does not.
+Gravity has the same feature: stretching or relabeling the coordinate grid can
+change every component of the metric without changing the underlying
+spacetime. Conformal gravity has an additional gauge freedom that changes the
+local scale—the choice of ruler—while preserving the conformal geometry and
+its light cones.
+
+A gauge transformation is therefore not a new force, event or wave. Counting
+it as physical would count the same universe more than once. Removing gauge
+means identifying all descriptions that differ only by this redundancy.
+
+There is an important distinction between a gauge transformation and a
+physical symmetry. They can look similar in the equations. A physical
+symmetry has a measurable generator or charge, such as energy or angular
+momentum. A proper gauge direction has zero generator on the declared
+physical phase space and changes no observable. The covariant phase-space
+calculation decides which case applies; the label is not chosen by taste.
+
+This also explains what it means to ask whether time translation is gauge. It
+does **not** mean that clocks stop, change is unreal or one event is identical
+to every other event. It asks whether shifting the coordinate label of the
+entire closed universe creates a new physical state, or only a new description
+of the same constrained history. Relational statements—what one field does
+when a physical clock reads a particular value—can remain nontrivial even when
+the total shift is gauge.
 
 A raw list of solutions therefore overcounts physical possibilities.
 
@@ -167,6 +208,11 @@ equations, identities, curvature variables and auxiliary variables. Retarded
 and advanced chain homotopies exist on every row with causal support. Their
 pairing agrees with the covariant current pairing and with the pairing of the
 reduced state model.
+
+Put plainly, if a classical source is introduced at some time, the retarded
+solution is zero before that source can causally reach it. The gravitational
+constraints do not create a hidden route by which the future changes the
+past.
 
 This means that the residual calculation is not detached algebra. It is
 connected to the actual metric field, its equations and its causal
@@ -217,6 +263,11 @@ couplings and linear order, the full constraint equations force the variation
 of the total time-translation charge to vanish. Thus nontrivial internal clock
 motion can coexist with total time translation acting as gauge in this
 declared sector.
+
+The complete 54-row gauge-fixed clock system also has retarded and advanced
+classical Green homotopies with the correct causal support. The clock and
+gauge bookkeeping therefore propagate consistently without permitting a
+retarded response before its source.
 
 This is the mathematical ingredient needed for relational time, but it is not
 yet a redshift calculation. A certified redshift requires an explicit
@@ -329,6 +380,9 @@ The certified construction contains:
 - exact curved spacetime backgrounds without spatial boundaries;
 - a complete free causal gauge complex for pure-Weyl gravity on the spherical
   universe;
+- retarded classical propagation in which a future source cannot alter the
+  past, both for the 386-row pure-Weyl complex and the 54-row Berger clock
+  complex;
 - an exact distinction between charged time translation and the zero-charge
   sector where it is gauge;
 - two positive-paired residual curvature-square deformation classes;
@@ -347,6 +401,7 @@ The certified construction does not yet contain:
   fourth-order radiative branch;
 - black-hole horizons and their physical boundary conditions;
 - full nonlinear gravitational evolution;
+- a global Hadamard quantum state or a theorem of quantum microcausality;
 - a restored quantum master equation and anomaly-free quantum theory;
 - a positive graviton or photon Fock space;
 - a scattering matrix, dark-matter prediction or dark-energy cosmology.
