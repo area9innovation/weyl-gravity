@@ -3,7 +3,8 @@
 This directory turns the repository's certificate provenance into two
 reproducible Graphviz views.
 
-- `certificate-dag.*` is the full technical dependency/import graph.
+- `certificate-dag.*` is the full technical dependency/import graph, laid
+  out on a landscape canvas with prerequisite arrows running top to bottom.
 - `universe-building-dag.*` is the public milestone view used by Papers 98
   and 99.
 - `certificate-graph-receipt.json` records input and output hashes, counts,
