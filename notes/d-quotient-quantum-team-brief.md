@@ -176,6 +176,87 @@ seek a contracting homotopy that would erase its charged action; instead test
 the quantum representation and possible central extension of the physical
 symmetry.
 
+## Generalization programme
+
+Begin this rail after the current paper-improvement investigation and its
+immediate certificate repairs are frozen.
+
+Use this promotion ladder for quantum claims:
+
+```text
+G0  truncated candidate or coefficient fixture
+G1  complete local quotient in one antifield sector
+G2  complete local BRST/BV anomaly cohomology
+G3  locally covariant result over a background class
+G4  restored QME and quantum Cartan theorem
+G5  Lorentzian causal and boundary-certified quantum theory
+```
+
+The even AFN0 dimension-four quotient is `G1`: structural, but not a complete
+anomaly or (D)-anomaly theorem.
+
+### Work package Q-G1: complete the local anomaly complex
+
+Extend beyond even AFN0 to antifield/Koszul--Tate sectors, odd parity,
+pure-Diff and mixed rows, generalized connections, and all required
+lower-form carriers.  Quotient exact tensor graphs by Bianchi, Grassmann,
+integration-by-parts, and four-dimensional identities.  Construct the map
+from local anomaly densities to admissible degree-zero Cartan defects.
+
+Keep relative forms, integrated local functionals, and residual-state
+cohomology as distinct result kinds.  Return an explicit primitive or dual
+witness for every surviving class.
+
+### Work package Q-G2: coefficient universality
+
+Compute coefficients in a locally covariant renormalization framework and
+compare the cylinder, a conformally flat globally hyperbolic background, one
+conformally Einstein background, and the Berger clock where applicable.
+Separate universal local coefficients from spectral normalization, zero
+modes, boundaries, and measure terms.  Agreement of selected Euclidean
+determinants does not by itself prove local covariance.
+
+### Work package Q-G3: isolate the actual (D)-anomaly
+
+Construct the explicit coefficient-bearing map to
+
+\[
+\mathcal A_D=[Q_\hbar,\iota_{D,\hbar}]-\mathcal L_D.
+\]
+
+Separate local Weyl anomaly, residual-generator anomaly, clock/measure
+effects, boundary extensions, and cases where (D) is classically charged.
+Do not infer the (D)-verdict directly from nonzero coefficients of
+`omega C2` or `omega E4`.
+
+### Work package Q-G4: background and matter stability
+
+After QME restoration, prove or disprove uniformity of the corrected Cartan
+identity over an open class of backgrounds and matter spectra.  If a
+Riegert/Wess--Zumino or matter completion cancels the obstruction, compare
+the original and extended BV cohomologies and verify that no new negative
+physical direction is introduced.
+
+### External bridge Q-X: convert the certificates into literature consequences
+
+Prioritize Fradkin--Tseytlin coefficient calculations, Riegert/Mottola
+Wess--Zumino anomaly actions, and Mannheim's antilinear quantum framework.
+For each bridge:
+
+1. reproduce one standard coefficient or Wess--Zumino identity in matched
+   conventions;
+2. identify its exact class in the generated BV quotient;
+3. state whether it contributes to the QME defect, the (D)-Cartan defect,
+   both, or neither;
+4. explain the consequence in the adjacent language of anomaly
+   cancellation, compensator trivialization, or positive metric.
+
+The desired output is a result adjacent researchers can use: for example,
+which matter spectra cancel the coefficient-bearing classes, whether the WZ
+field trivializes the actual obstruction, or whether an antilinear metric is
+BRST-compatible.  Do not demand adoption of the residual quotient as a
+premise, and do not overstate what the source paper originally proved.
+
 ## Common background matrix
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
@@ -209,6 +290,9 @@ obstruction is a successful result.
 
 Deliver one human-readable report and machine-readable certificates containing:
 
+- the `G0`--`G5` generality level and exact evidence for every promotion;
+- the adjacent-work convention dictionary, reproduced coefficient/identity,
+  and consequence for that framework's anomaly or inner-product question;
 - the renormalized observable algebra and analytic framework;
 - the cohomology group containing \(\mathcal A_D\), generated candidates, and
   trivialization witnesses;

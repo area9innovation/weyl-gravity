@@ -368,6 +368,78 @@ deformation parameter \(\epsilon\).  Determine:
 The output must be a quantitative stability/no-go radius in a declared norm or
 filtered category.  “Generic backgrounds are harder” is not a result.
 
+## Generalization programme
+
+Begin this rail after the current paper-improvement investigation and its
+immediate certificate repairs are frozen.
+
+Promote results one level at a time and record the level in every new
+certificate:
+
+```text
+G0  exact fixture or finite reduced-mode block
+G1  complete invariant/harmonic sector on one background
+G2  full linearized complex on one background
+G3  open background class with uniform hypotheses
+G4  nonlinear stability on that class
+G5  boundary/quantum completion
+```
+
+A covariant formula is not automatically a `G3` theorem.  Promotion requires
+uniform operator domains, support conditions, charges, and verification
+hypotheses.
+
+### Work package C-G1: extract the causal-transfer theorem
+
+Separate the cylinder construction into an abstract theorem whose declared
+inputs are a cyclic local gauge/detour complex, Green-hyperbolic endpoints or
+companions, a support-preserving SDR, and finite-order cyclic shears.  Prove
+the transport formulas for retarded/advanced homotopies, support, and cyclic
+adjoints.  Re-run the cylinder as a consumer of this theorem.
+
+Return either `ABSTRACT_CAUSAL_TRANSFER_CERTIFIED` or the minimal exact list
+of cylinder-specific identities preventing abstraction.
+
+### Work package C-G2: conformally flat background class
+
+Test the theorem on all globally hyperbolic conformally flat spacetimes
+satisfying explicit conformal-factor, topology, and boundary hypotheses.
+Determine conformal transport of the BV complex and pairing, global Green
+support, patching, and which residual-cohomology statements disappear while
+the causal complex survives.
+
+Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
+first curvature obstruction and give a controlled norm/filtration and
+nonzero stability radius, or an exact no-go witness.
+
+### Work package C-G3: clock-family stability
+
+Replace the single Berger fixture by an audit of the full squashing interval,
+nearby fixed couplings and scalar potentials, first inhomogeneous clock
+perturbations, and nearby coupled backgrounds.  Use an exact
+implicit-function, bifurcation, or obstruction calculation to decide whether
+clock monotonicity, energy positivity, (delta Q_R=0), and the BV contraction
+hold on an open family or only on an isolated branch.
+
+### External bridge C-X: meet adjacent work in its own observables
+
+For each promoted theorem, choose one primary adjacent result and provide:
+
+1. a convention dictionary for fields, couplings, charges, boundaries, and
+   inner products;
+2. an exact reproduction of one published benchmark in its original regime;
+3. the new consequence of the present BV/Taub analysis stated in that
+   literature's language;
+4. a sentence identifying what the adjacent result does **not** claim.
+
+Prioritize Fischer--Marsden--Moncrief/Taub linearization stability,
+Lü--Pope critical gravity, and the detour/BGG literature.  Useful bridge
+questions include whether critical/log modes satisfy the Taub constraints,
+whether zero energy means gauge or merely null pairing, and whether the
+abstract causal-transfer theorem supplies a missing Green-complex result.
+Do not ask adjacent authors to adopt the (D)-quotient vocabulary before the
+translation has been made.
+
 ## Common background matrix
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
@@ -399,6 +471,9 @@ a failed task.
 
 Deliver one human-readable report and machine-readable certificates containing:
 
+- the `G0`--`G5` generality level and exact evidence for every promotion;
+- the adjacent-work convention dictionary, reproduced benchmark, and new
+  consequence stated in the adjacent literature's variables;
 - precise phase spaces, gauge groups, boundary conditions, and assumptions;
 - the strongest attempted counterexample in each setting;
 - charge densities, surface terms, integrability and flux checks;

@@ -163,6 +163,86 @@ norm controlling the homological perturbation series and compute the first mixed
 background-interaction obstruction.  Distinguish exact Killing/conformal
 Killing identities from identities valid for a generic causal complex.
 
+## Generalization programme
+
+Begin this rail after the current paper-improvement investigation and its
+immediate certificate repairs are frozen.
+
+Classify every result by this promotion ladder:
+
+```text
+G0  exact fixture or finite reduced-mode block
+G1  complete invariant/harmonic sector on one background
+G2  full support-local low-arity complex on one background
+G3  uniform family of backgrounds/couplings
+G4  nonlinear Cartan and stability theorem on that family
+G5  causal/quantum interacting completion
+```
+
+The acyclic zero-weight Berger result is `G0`.  It validates the pipeline but
+is not evidence for radiative stability.
+
+### Work package N-G1: resonant nonzero-weight channel
+
+Compute the action-derived channel
+
+\[
+\mathcal C_\lambda\otimes\mathcal C_{-\lambda}
+\longrightarrow\mathcal C_0
+\]
+
+with every field, ghost, antifield, and pairing row required by cyclicity.
+The inputs must survive unary cohomology and carry nonzero (D)-weight.  Test
+whether the neutral output is Taub-forbidden, (q_1)-exact with an admissible
+primitive, negative in the physical pairing, or a nontrivial source for
+(iota_D^{(2)}).
+
+The finite nonzero-weight closure no-go forbids a finite cyclic truncation as
+a substitute.  Use the infinite all-weight completion or the full
+support-local polydifferential complex.
+
+### Work package N-G2: complete support-local Berger arity two
+
+Export and consume the complete gauge-fixed 54-row `q2/D` package.  Require
+all output rows, derivative orders, cyclicity, local (D)-equivariance, the
+arity-two (Q^2=0) identity, support-local admissibility, and an ND2 primitive
+or normalized obstruction.  This is the first result allowed to support a
+full interacting Berger Cartan verdict.
+
+### Work package N-G3: uniform background-interaction obstruction
+
+Let the background and interaction vary together.  Compute the first mixed
+background/arity-two obstruction on conformally flat deformations, the
+Berger family, and one conformally Einstein or Bach-flat family.  Identify
+the obstruction bundle or cohomology over parameter space and determine
+where the primitive ceases to exist.
+
+### Work package N-G4: particle and branch stability
+
+Use particle-number and branch filtrations to test higher-bracket mixing of
+Einstein and extra-Weyl modes, positive and negative pairing sectors,
+radiative and centered classes, and clock/gravity excitations.  Compute the
+first transferred vertex or certify its exact vanishing; do not reuse the
+free absence of one-particle cohomology as the conclusion.
+
+### External bridge N-X: test adjacent proposals on the gauge complex
+
+For Bender--Mannheim/PT quantization and critical/log gravity, deliver:
+
+1. an exact import and convention dictionary for the proposed metric,
+   Hamiltonian, mode basis, and real form;
+2. reproduction of one published oscillator or critical-gravity benchmark;
+3. unary BRST/Taub descent and interacting cyclicity tests;
+4. an explicit consequence stated as positivity, pseudo-Hermiticity,
+   branch closure, or failure thereof in the adjacent vocabulary.
+
+The key bridge question is not whether the Pais--Uhlenbeck oscillator admits
+a positive metric, but whether that metric descends to physical gravitational
+BRST/Taub cohomology and remains compatible with (q_2).  Report a positive
+descent theorem or the first normalized incompatibility witness.  Treat the
+authors' original scope accurately and do not present an oscillator theorem
+as a claim about the full interacting gauge theory.
+
 ## Common background matrix
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
@@ -194,6 +274,9 @@ successful result.
 
 Deliver one human-readable report and machine-readable certificates containing:
 
+- the `G0`--`G5` generality level and exact evidence for every promotion;
+- the adjacent-work convention dictionary, reproduced benchmark, and the
+  BRST/(q_2) consequence in the adjacent proposal's own observables;
 - hashes and independent verification of all classical imported tensors;
 - complete low-arity tensors, degrees, \(D\)-weights, signs, and provenance;
 - \(L_\infty\), derivation, cyclicity, and strong-deformation-retract checks;

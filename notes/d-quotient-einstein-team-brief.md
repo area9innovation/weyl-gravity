@@ -367,6 +367,79 @@ neutral two-field sector, with internal signature `(+,-)` and scoped verdict
 `FULL_NEUTRAL_CLOCK_PAIR_BV_COMPLETION`; any later total `D` calculation must
 continue to import the classical action and BV data by hash.
 
+## Generalization programme
+
+Begin this rail after the current paper-improvement investigation and its
+immediate certificate repairs are frozen.
+
+Promote Einstein-sector results through these levels:
+
+```text
+G0  explicit tangent or obstruction fixture
+G1  complete harmonic/invariant sector on one background
+G2  full linearized on-shell/BV comparison on one background
+G3  geometric background and charge-sector theorem
+G4  nonlinear causal preservation of the Einstein sector
+G5  asymptotic observables and scattering equivalence
+```
+
+The radion, duality, null, and periodic-mode calculations are exact `G0/G1`
+results.  They establish sector dependence, not a general Einstein--Maxwell
+classification.
+
+### Work package E-G1: harmonic obstruction theorem
+
+On the compact product background, classify every periodic graviton and
+photon harmonic in every allowed electric/magnetic charge sector.  Compute
+
+\[
+L\Phi_2=-\frac12D^2E[\Phi_1,\Phi_1]
+\]
+
+and return an explicit correction or adjoint-cokernel witness.  Derive exact
+selection rules in frequency, angular momentum, polarization, and charge.
+
+### Work package E-G2: geometric Chevreton inclusion theorem
+
+Generalize the linear inclusion from the product fixture to a declared class
+of Einstein--Maxwell backgrounds.  Determine whether parallel flux, product
+geometry, algebraic curvature type, and the coupling relation are necessary
+or sufficient for the Chevreton defect and its first variation to vanish.
+Give a theorem for the maximal class reached and a counterexample immediately
+outside it.
+
+### Work package E-G3: charge-sector nonlinear stability
+
+Promote the fixed/variable flux examples to a theorem over charge fibres.
+Identify whether each obstruction is a Taub moment map, a boundary/flux
+constraint, or another adjoint cokernel.  Then compute the first third-order
+or mixed-harmonic obstruction needed to distinguish a second-order pass from
+formal nonlinear closure.
+
+### Work package E-G4: open background classes and scattering
+
+Repeat the comparison on conformally Einstein and Bach-flat globally
+hyperbolic backgrounds, Lorentzian dS/AdS, and the asymptotically flat full
+Bach phase space.  Only after causal and boundary closure compare Bondi news,
+ADM/Bondi energy, soft charges, and tree amplitudes.
+
+### External bridge E-X: make the result legible to adjacent programmes
+
+Build explicit bridges to Maldacena boundary selection, Lü--Pope critical
+gravity, and Einstein--Maxwell/Chevreton work.  Each bridge must include:
+
+1. matched action, coupling, boundary, flux, and symplectic conventions;
+2. exact reproduction of one benchmark solution, mode, or charge;
+3. the present inclusion/obstruction result translated into their variables;
+4. one new consequence they can test without accepting the (D)-quotient.
+
+Examples include whether a Maldacena-type boundary condition is Lagrangian
+and causally preserved in Lorentzian signature, whether critical log modes
+survive Taub and flux constraints, and whether the Chevreton second-order
+obstruction classifies a broader family of parallel-flux backgrounds.  State
+clearly that Euclidean branch selection is not Lorentzian causal closure and
+that boundary exclusion is not gauge quotienting.
+
 ## Common background matrix
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
@@ -404,6 +477,9 @@ successful counterexample results.
 
 Deliver one human-readable report and machine-readable certificates containing:
 
+- the `G0`--`G5` generality level and exact evidence for every promotion;
+- the adjacent-work convention dictionary, reproduced boundary/mode/charge
+  benchmark, and the new consequence stated in that programme's variables;
 - exact field/ghost spaces, falloffs, boundary and corner conditions;
 - operator domains, support properties, and retarded/advanced Green checks;
 - covariant phase-space charge, flux, integrability, and charge-algebra data;
