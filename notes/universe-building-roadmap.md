@@ -155,6 +155,13 @@ matched pairing.  To complete their physical interpretation:
 5. construct a relational detector or geodesic-deviation observable;
 6. compute boundary flux only after an asymptotic phase space exists.
 
+The generic axial part of step 3 is now complete before residual quotient.
+Step 4 has its first full extra-sector result: the fixed-charge `ell=2,k=0`
+two-dimensional Taub form is negative definite. Step 5 now has an exact
+linear symplectic coefficient detector that vanishes on the Einstein image;
+its final residual, relational, and causal realization remains open. Polar
+extra branches and generic momentum/harmonic Taub blocks are still required.
+
 Compact normal modes are a wave laboratory.  They are not yet an astrophysical
 waveform or an asymptotic graviton state.
 

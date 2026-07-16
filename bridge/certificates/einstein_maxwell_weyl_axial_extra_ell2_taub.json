@@ -1,0 +1,137 @@
+{
+  "adjoint_cokernel_witness": {
+    "averaging_group": "S1 x SO(3)",
+    "class": "constant spatial lapse / background time translation",
+    "fixed_bundle_condition": "p=0 by exact second variation of the Chern number",
+    "linear_row": "<L_WM Phi2>_tt=-p after compact spatial total derivatives vanish",
+    "witness_imported_by_hash": true
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE result is a compact fixed-charge quadratic extension test for the declared two-dimensional extra ell=2,k=0 span only. It is not a general nonlinear, causal, asymptotic, particle, or quantum theorem.",
+  "classification": {
+    "EE_and_EX_quadratic_blocks_computed": false,
+    "all_nonzero_amplitude_combinations_obstructed": true,
+    "explicit_second_order_correction_constructed": false,
+    "final_residual_or_causal_claim": false,
+    "generic_ell_or_nonzero_k_classified": false,
+    "quadratic_Taub_matrix_computed": true,
+    "quantum_claim": false,
+    "some_nonzero_amplitude_combination_obstructed": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": {
+    "charges": "fixed electric and magnetic charges through second order on P_N with N=2",
+    "mode": "real axisymmetric ell=2,k=0 extra-primary mode at omega^2=16/3",
+    "quotient": "after local Diff x U1 reduction and before final residual SO(4,2) quotient",
+    "spacetime": "R_t x S1_L x S2 on the unit magnetic product background"
+  },
+  "first_order_extra_basis": {
+    "coefficient_order": [
+      "H_t",
+      "H_x",
+      "Q_t",
+      "Q_x"
+    ],
+    "e_1": [
+      "-6",
+      "0",
+      "6",
+      "0"
+    ],
+    "e_2": [
+      "0",
+      "-2/3",
+      "0",
+      "6"
+    ],
+    "linear_electric_charge_variation": "0 because integral_S2 Y_20 dOmega=0",
+    "linear_magnetic_charge_variation": "0",
+    "linear_operator_check": {
+      "both_basis_vectors_on_shell": true,
+      "operator_image_of_e1_e2": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "shell": "lambda=6, k=0, omega=4/sqrt(3)"
+    },
+    "real_mode_rule": "Phi1=(a_1 e_1+a_2 e_2) cos(4 t/sqrt(3)); equivalently the Hermitian e_omega plus conjugate(e_omega) polarization"
+  },
+  "generality_level": "G1_AXIAL_EXTRA_ELL2_K0_QUADRATIC_TAUB",
+  "interpretation": "This is the first self-extension test of the classified extra target module. The exact constant-lapse matrix decides the fixed-charge compact ell=2,k=0 combinations recorded above. It does not classify other ell or k, the Einstein-to-extra source block, residual survival, causal boundaries, or particles.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the EE normal-source projection and the mixed EX block against the certified extra detector, then extend the XX Taub matrix to symbolic k and generic lambda or exhibit the first unobstructed correction",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_extra_ell2_taub.py",
+    "generator_sha256": "56d52845f39aa511a390eab36dcf71c1bbad3c7875f7f779e944d1cbd60e0e9b",
+    "inputs": {
+      "constant_lapse_witness": {
+        "path": "bridge/certificates/einstein_maxwell_periodic_graviton_second_order.json",
+        "sha256": "9376a4d4d2d1a0b9e77ee78ece90cd74e82b574b02a84030ed93e1f5946caef4"
+      },
+      "detector": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_extra_detector.json",
+        "sha256": "cded7c650c5c75775402673dabb6b0a22ad6fdf8c4dad3a6f6a6deda8c51034a"
+      },
+      "fixed_bundle_taub_domain": {
+        "path": "bridge/certificates/compact_harmonic_domain_taub_descent.json",
+        "sha256": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09"
+      },
+      "operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+        "sha256": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+      }
+    },
+    "tensor_helper_path": "bridge/einstein_sector/einstein_maxwell_periodic_photon_second_order.py",
+    "tensor_helper_sha256": "801bd2ea66675d8b8db075c3499f28ef83909749efc4f2b3240da681f3fea8d9"
+  },
+  "quadratic_source": {
+    "constant_lapse_Taub_matrix": [
+      [
+        "-1728/5",
+        "0"
+      ],
+      [
+        "0",
+        "-832/45"
+      ]
+    ],
+    "equation": "S2_tt=[epsilon^2](3*B_tt-T_tt)",
+    "first_principal_minor": "-1728/5",
+    "matrix_determinant": "159744/25",
+    "matrix_rank": 2,
+    "negative_definite": true,
+    "normalized_sphere_average_at_t_zero": "-64*(243*a_1**2 + 13*a_2**2)/45",
+    "real_conjugate_zero_mode_included": true,
+    "signature_positive_negative": [
+      0,
+      2
+    ],
+    "tt_projection_at_t_zero": "-2*(73872*a_1**2*sin(theta)**4 - 88209*a_1**2*sin(theta)**2 + 19926*a_1**2 + 192*a_2**2*sin(theta)**4 - 223*a_2**2*sin(theta)**2 + 74*a_2**2)/3"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_ELL2_TAUB",
+  "result_state": "AXIAL_EXTRA_ELL2_K0_ALL_NONZERO_REAL_COMBINATIONS_FIXED_CHARGE_OBSTRUCTED",
+  "schema": "einstein-maxwell-weyl-axial-extra-ell2-taub-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_extra_ell2_taub.schema.json",
+  "schema_sha256": "63a0015c90ba96518d9dbda03461b32c01ed0987ddfa915c19bfd6dd2d2d5636",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_extra_ell2_taub --verify bridge/certificates/einstein_maxwell_weyl_axial_extra_ell2_taub.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_extra_ell2_taub --verify-exhaustive bridge/certificates/einstein_maxwell_weyl_axial_extra_ell2_taub.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_extra_ell2_taub"
+  ]
+}

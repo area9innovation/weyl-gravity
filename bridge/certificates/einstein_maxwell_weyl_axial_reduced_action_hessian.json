@@ -1,0 +1,92 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE reconstruction does not replace a direct four-dimensional action-density expansion and proves no nonlinear extension, residual, causal, particle, or quantum statement.",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "generic axial ell>=2 Weyl-Maxwell reduced coefficient block at symbolic lambda and compact momentum k, before final residual quotient",
+  "generality_level": "G2_GENERIC_AXIAL_REDUCED_ACTION_HESSIAN",
+  "interpretation": "The exact formally self-adjoint axial operator is the mixed Hessian of a unique reduced quadratic Fourier action in the declared row normalization, and its Green current already matches the direct integrated four-dimensional Lee-Wald current. This closes the reduced normalization triangle but is not a literal second expansion of the four-dimensional action density.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "construct the extra-mode symplectic detector and compute the Hermitian-polarized quadratic Weyl-Maxwell sources; retain the literal four-dimensional density expansion as an independent normalization audit",
+  "normalization_triangle": {
+    "Green_current_equals_direct_integrated_four_dimensional_Lee_Wald_current": true,
+    "equation_operator_equals_reduced_action_Hessian": true,
+    "literal_direct_four_dimensional_action_density_second_expansion": false,
+    "same_operator_generates_certified_local_Green_identity": true
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_reduced_action_hessian.py",
+    "generator_sha256": "a1e1cad2f3addb1fe0dec73702982712a963d8cb4ba0d6c0399ed125b38e0adf",
+    "inputs": {
+      "green_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_green_current.json",
+        "sha256": "1422d98625646d2e2de94db66fe6f30038ac5508b7aec5fb8a422c9bc302698d"
+      },
+      "lee_wald": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+        "sha256": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+      }
+    }
+  },
+  "reconstruction": {
+    "Fourier_convention": "partial_t -> -I*omega; partial_x -> I*k",
+    "coefficient_order": [
+      "H_t",
+      "H_x",
+      "Q_t",
+      "Q_x"
+    ],
+    "formal_adjoint_involution": "K(omega,k)^dagger=K(-omega,-k)^T",
+    "formal_self_adjoint": true,
+    "mixed_variation_equals_K": true,
+    "no_frequency_or_momentum_inverse": true,
+    "polarized_density": "B2_red(u,v)=u(-omega,-k)^T K(omega,k) v(omega,k)",
+    "quadratic_action_kernel": [
+      [
+        "-lambda*(3*k**4 + 6*k**2*lambda - 3*k**2*omega**2 - 2*k**2 + 3*lambda**2 - 3*lambda*omega**2 - 8*lambda + 6*omega**2)/4",
+        "-k*lambda*omega*(3*k**2 + 3*lambda - 3*omega**2 + 4)/4",
+        "lambda",
+        "0"
+      ],
+      [
+        "-k*lambda*omega*(3*k**2 + 3*lambda - 3*omega**2 + 4)/4",
+        "lambda*(3*k**2*lambda - 3*k**2*omega**2 - 6*k**2 + 3*lambda**2 - 6*lambda*omega**2 - 8*lambda + 3*omega**4 + 2*omega**2)/4",
+        "0",
+        "-lambda"
+      ],
+      [
+        "lambda",
+        "0",
+        "k**2 + lambda",
+        "k*omega"
+      ],
+      [
+        "0",
+        "-lambda",
+        "k*omega",
+        "-lambda + omega**2"
+      ]
+    ],
+    "real_field_action": "S2_red=(1/2) integral Phi(-omega,-k)^T K(omega,k) Phi(omega,k)",
+    "row_normalization": [
+      "lambda*metric_t",
+      "-lambda*metric_x",
+      "maxwell_t",
+      "maxwell_x"
+    ]
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_REDUCED_ACTION_HESSIAN",
+  "result_state": "REDUCED_QUADRATIC_ACTION_HESSIAN_RECONSTRUCTED_DIRECT_4D_DENSITY_EXPANSION_OPEN",
+  "schema": "einstein-maxwell-weyl-axial-reduced-action-hessian-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_reduced_action_hessian.schema.json",
+  "schema_sha256": "ec6575433a183dd94fe9c037acde318f86cdbaa931c726194b7152ff9fcb6c0f",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_reduced_action_hessian --verify bridge/certificates/einstein_maxwell_weyl_axial_reduced_action_hessian.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_reduced_action_hessian"
+  ]
+}

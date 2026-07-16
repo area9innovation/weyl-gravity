@@ -909,6 +909,43 @@ signature `(3,1)`.  The negative sign is therefore a classical target-current
 sign, not an automatic negative norm in the independent Einstein--Maxwell
 theory and not a quantum ghost certificate.
 
+`EINSTEIN_MAXWELL_WEYL_AXIAL_REDUCED_ACTION_HESSIAN` now reconstructs the
+exact reduced quadratic Fourier action from the certified self-adjoint
+operator. Its mixed Hessian equals the operator, which generates the local
+Green current already matched to the direct four-dimensional Lee--Wald
+current. This closes the reduced normalization triangle. It does not replace
+the still-open literal second expansion of the four-dimensional action
+density.
+
+`EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_DETECTOR` uses the inverse extra Lee--Wald
+Gram matrix to define two conserved reduced-mode coefficient observables.
+They return the two extra coordinates exactly and annihilate the complete
+certified generic axial Einstein image. Final `SO(4,2)`, relational, causal,
+and asymptotic descent remain open.
+
+The first quadratic self-extension test is now exact on the full real
+`ell=2,k=0` extra span. With
+
+```text
+e_1=(-6,0,6,0), e_2=(0,-2/3,0,6), omega^2=16/3,
+```
+
+the Hermitian mode-plus-conjugate source has constant-lapse Taub matrix
+
+```text
+T_X=diag(-1728/5,-832/45).
+```
+
+It is negative definite. Fixed bundle topology forces the second-order
+magnetic coefficient to vanish, so every nonzero real combination has a
+nonzero adjoint-cokernel pairing and admits no smooth periodic second-order
+correction at fixed electric and magnetic charges. The extra block therefore
+exists and is measurable at the linear level but is linearization-unstable on
+this declared compact fixture. This does not classify generic `ell`, nonzero
+`k`, varying charge fibre, or causal/asymptotic extra branches. Quadratic
+source projection must also respect parity: the present axial-by-axial `XX`
+source is even and is detected by the scalar constant-lapse class.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally
@@ -974,11 +1011,12 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Classify the extra fourth-order adjoint/radiative directions and separate
-   them from the standard Einstein wave directions.
-2. Run the quadratic Taub/extension test on the remaining compact wave
-   directions and construct a relational detector or geodesic-deviation
-   observable.
+1. Extend the completed generic axial extra classification to the polar target
+   block and perform final residual descent.
+2. Extend the certified axial detector and negative-definite `ell=2,k=0`
+   extra Taub test to nonzero momentum, higher harmonics, and parity-compatible
+   `EE`, `EX`, and `XX` source channels; then construct a relational or
+   geodesic-deviation realization of the reduced detector.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

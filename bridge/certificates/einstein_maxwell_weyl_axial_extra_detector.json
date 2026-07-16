@@ -1,0 +1,134 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE detector is defined only on the compact generic axial linear solution block. Its descent under SO(4,2), nonlinear completion, boundary realization, and observer interpretation remain open.",
+  "classification": {
+    "causal_or_asymptotic_observable_constructed": false,
+    "exact_linear_extra_branch_detector": true,
+    "final_residual_invariance_computed": false,
+    "normalizes_both_extra_coordinates_to_one": true,
+    "particle_or_quantum_observable_constructed": false,
+    "relational_local_observer_constructed": false,
+    "vanishes_on_certified_Einstein_image": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "detector": {
+    "Einstein_image_pairing_remainders": [
+      "0",
+      "0"
+    ],
+    "annihilates_Einstein_image": true,
+    "coefficient_order": [
+      "H_t",
+      "H_x",
+      "Q_t",
+      "Q_x"
+    ],
+    "conserved_by_local_Green_identity_on_linear_solutions": true,
+    "definition": "O_X(Phi)=G_X^(-1) Omega_WM(conjugate(e),Phi)/(-I*omega*N_(ell,m))",
+    "detector_rows": [
+      [
+        "-(15*k**2*lambda - 6*k**2 + 18*lambda**2 - 40*lambda + 8)/(2*lambda*(lambda - 2)*(9*lambda - 2))",
+        "-3*k*omega*(15*k**2*lambda - 6*k**2 + 24*lambda**2 - 34*lambda + 4)/(2*lambda*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))",
+        "-k**2*(3*lambda - 2)**2/(2*lambda**2*(lambda - 2)*(9*lambda - 2))",
+        "-k*omega*(27*k**2*lambda**2 - 36*k**2*lambda + 12*k**2 + 54*lambda**3 - 108*lambda**2 + 36*lambda - 8)/(2*lambda**2*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))"
+      ],
+      [
+        "3*k*omega*(15*k**2*lambda - 6*k**2 + 15*lambda**2 - 34*lambda + 8)/(2*lambda*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))",
+        "3*(5*k**2*lambda - 2*k**2 + 2*lambda**2 - 4*lambda)/(2*lambda*(lambda - 2)*(9*lambda - 2))",
+        "3*k*omega*(9*k**2*lambda**2 - 12*k**2*lambda + 4*k**2 + 9*lambda**3 - 18*lambda**2)/(2*lambda**2*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))",
+        "(9*k**2*lambda**2 - 12*k**2*lambda + 4*k**2 + 18*lambda**3 - 36*lambda**2)/(2*lambda**2*(lambda - 2)*(9*lambda - 2))"
+      ]
+    ],
+    "extra_Gram": [
+      [
+        "lambda*(9*k**2*lambda**2 - 12*k**2*lambda + 4*k**2 + 9*lambda**3 - 18*lambda**2)/6",
+        "k*lambda*(3*lambda - 2)**2*(3*k**2 + 3*lambda - 2)/(18*omega)"
+      ],
+      [
+        "k*lambda*(3*lambda - 2)**2*(3*k**2 + 3*lambda - 2)/(18*omega)",
+        "lambda*(27*k**2*lambda**2 - 36*k**2*lambda + 12*k**2 + 36*lambda - 8)/18"
+      ]
+    ],
+    "extra_Gram_determinant": "lambda**4*(lambda - 2)*(9*lambda - 2)/3",
+    "extra_coordinate_order": [
+      "a_1",
+      "a_2"
+    ],
+    "extra_coordinate_reconstruction": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "extra_representative_columns": [
+      [
+        "-k**2 - lambda",
+        "-k*omega"
+      ],
+      [
+        "k*omega",
+        "(3*k**2 - 2)/3"
+      ],
+      [
+        "lambda",
+        "0"
+      ],
+      [
+        "0",
+        "lambda"
+      ]
+    ],
+    "extra_shell": "omega^2=k^2+lambda-2/3",
+    "gauge_invariant_on_declared_reduced_Diff_x_U1_block": true,
+    "identity_on_extra_module": true,
+    "no_frequency_difference_inverted": true,
+    "normalized_pairing_rows": [
+      [
+        "-lambda*(3*k**2*lambda - k**2 + 3*lambda**2 - 6*lambda)/2",
+        "-k*lambda*(9*k**2*lambda - 3*k**2 + 9*lambda**2 - 9*lambda - 4)/(6*omega)",
+        "0",
+        "k*lambda/omega"
+      ],
+      [
+        "-k*lambda*(9*k**2*lambda - 3*k**2 + 9*lambda**2 - 18*lambda + 2)/(6*omega)",
+        "-lambda*(9*k**2*lambda - 3*k**2 - 4)/6",
+        "k*lambda/omega",
+        "2*lambda"
+      ]
+    ]
+  },
+  "domain": "generic axial ell>=2 Weyl-Maxwell linear solution module at real compact momentum k, after local Diff x U(1) reduction and before final residual SO(4,2) quotient",
+  "generality_level": "G2_GENERIC_AXIAL_EXTRA_SYMPLECTIC_DETECTOR",
+  "interpretation": "The inverse nondegenerate extra Lee-Wald Gram matrix converts symplectic pairing with the two certified extra representatives into exact coefficient observables. They vanish on every certified generic axial Einstein-image mode and return the two extra coordinates. They are conserved reduced-mode observables before the final residual quotient, not yet relational, causal, asymptotic, or quantum observables.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "use the detector dual basis to project the Hermitian-polarized EE, EX, and XX quadratic Weyl-Maxwell sources, then prove removability by an explicit correction or non-removability by a complete adjoint-cokernel witness",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_extra_detector.py",
+    "generator_sha256": "4bae966d32868ade7c43279a0ed6982e657476c5a11c995c36527e9e3361bc91",
+    "inputs": {
+      "lee_wald": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "reduced_action_hessian": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_reduced_action_hessian.json",
+        "sha256": "62e49ec4e690c91de973acac50862d8f39ce934bb1030b41ca1e474db94b85f7"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_DETECTOR",
+  "result_state": "GENERIC_AXIAL_EXTRA_SYMPLECTIC_COEFFICIENT_DETECTOR_CERTIFIED_BEFORE_RESIDUAL_QUOTIENT",
+  "schema": "einstein-maxwell-weyl-axial-extra-detector-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_extra_detector.schema.json",
+  "schema_sha256": "aa3a30ce6123db659b19015d4092d6e12cb2942eade74c48da99b39fcf675198",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_extra_detector --verify bridge/certificates/einstein_maxwell_weyl_axial_extra_detector.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_extra_detector"
+  ]
+}

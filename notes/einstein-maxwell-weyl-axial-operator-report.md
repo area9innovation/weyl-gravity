@@ -177,6 +177,44 @@ solution inclusion is not symplectic for the two independently normalized
 actions.  A ghost claim additionally requires residual and boundary descent,
 a physical positive-frequency space, and its quantization.
 
+## Reduced Hessian, detector, and first quadratic extension test
+
+`EINSTEIN_MAXWELL_WEYL_AXIAL_REDUCED_ACTION_HESSIAN` reconstructs the exact
+reduced quadratic Fourier action with kernel equal to the certified formally
+self-adjoint operator. Together with the Green identity and direct Lee--Wald
+match, this closes the reduced normalization triangle. The literal second
+expansion of the four-dimensional action density remains an independent open
+audit and is not silently identified with the reconstruction.
+
+Because the extra Gram block is invertible, its inverse defines exact
+symplectic coefficient detectors `O_X^1,O_X^2`. They return the two extra
+coordinates and vanish on the complete certified generic axial Einstein
+image. This is a `REDUCED-MODE` observable before final residual descent, not
+yet a relational or asymptotic detector.
+
+The first nonlinear test is decisive on the complete real `ell=2,k=0` extra
+span. For the basis
+
+```text
+e_1=(-6,0,6,0),  e_2=(0,-2/3,0,6),
+omega^2=16/3,
+```
+
+the Hermitian mode-plus-conjugate quadratic source has constant-lapse matrix
+
+```text
+T_X=diag(-1728/5,-832/45).
+```
+
+It is negative definite. Since fixed `P_N` forces the second-order magnetic
+coefficient to vanish, the certified constant-lapse adjoint pairing excludes
+every smooth periodic second-order correction for every nonzero real
+combination of `e_1,e_2`. Thus these modes are genuine nonradical linear
+solutions but are linearization-unstable at this compact fixed-charge
+`ell=2,k=0` point. Generic `ell`, nonzero `k`, varying charge fibre, `EE/EX`
+channels, residual descent, and causal boundaries remain open. See
+`notes/einstein-maxwell-weyl-axial-extra-taub-report.md`.
+
 ## Receipts
 
 Tier 0:
