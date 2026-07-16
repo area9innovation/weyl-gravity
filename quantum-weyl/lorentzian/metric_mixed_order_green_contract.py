@@ -64,6 +64,7 @@ RAW_PROOF_CHECKS = (
 ROOT = Path(__file__).resolve().parents[2]
 RAW_ROUTE_IMPORT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json"
 RAW_EXTENSION_IMPORT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json"
+CYCLIC_REALIZATION_IMPORT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json"
 
 
 def _sha256(path: Path) -> str:
@@ -202,18 +203,18 @@ def validate_metric_green_export(
             != "RESOLVED_IN_RAW_BV_COORDINATES_FILTERED_EXTENSION"
             or principal["scalar_characteristic_set"] != "zeta^2=0"
         ):
-            raise ValueError("clock-reattached principal route is incomplete")
+            raise ValueError("raw endpoint extension principal route is incomplete")
         principal_path = (repository_root / principal_artifact["path"]).resolve()
         try:
             principal_payload = json.loads(principal_path.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, UnicodeDecodeError) as exc:
-            raise ValueError("clock principal import is not portable JSON") from exc
+            raise ValueError("raw endpoint import is not portable JSON") from exc
         if (
             not isinstance(principal_payload, dict)
-            or principal_payload.get("result_id") != "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT"
+            or principal_payload.get("result_id") != "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT"
             or principal_payload.get("result_state")
-            != "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN"
-            or principal_payload.get("claim_flags", {}).get("BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION") is not True
+            != "CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_OPEN"
+            or principal_payload.get("claim_flags", {}).get("BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION") is not True
             or principal_payload.get("claim_flags", {}).get("BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS") is not False
             or principal_payload.get("claim_flags", {}).get("QUANTUM_CLAIM") is not False
         ):
@@ -276,6 +277,7 @@ def validate_metric_green_export(
 def build_contract_receipt() -> dict[str, Any]:
     raw_import = json.loads(RAW_ROUTE_IMPORT.read_text(encoding="utf-8"))
     extension_import = json.loads(RAW_EXTENSION_IMPORT.read_text(encoding="utf-8"))
+    cyclic_import = json.loads(CYCLIC_REALIZATION_IMPORT.read_text(encoding="utf-8"))
     if (
         not isinstance(raw_import, dict)
         or raw_import.get("result_id") != "BERGER_RAW_ENDPOINT_INPUT_IMPORT"
@@ -305,11 +307,27 @@ def build_contract_receipt() -> dict[str, Any]:
         != "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"
     ):
         raise ValueError("checked rank-one wave extension import identity or boundary drifted")
+    if (
+        not isinstance(cyclic_import, dict)
+        or cyclic_import.get("result_id")
+        != "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT"
+        or cyclic_import.get("result_state")
+        != "CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_OPEN"
+        or cyclic_import.get("claim_flags", {}).get(
+            "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION"
+        ) is not True
+        or cyclic_import.get("claim_flags", {}).get(
+            "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"
+        ) is not False
+        or cyclic_import.get("next_gate")
+        != "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"
+    ):
+        raise ValueError("checked cyclic analytic realization import identity or boundary drifted")
     return deepcopy(
         {
             "schema": "quantum-weyl-berger-metric-mixed-order-green-contract-v1",
             "result_id": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION_CONTRACT",
-            "result_state": "INTERFACE_READY_RAW_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_OPEN",
+            "result_state": "INTERFACE_READY_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_OPEN",
             "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
             "setting_id": SETTING_ID,
             "accepted_export_schema": SCHEMA_ID,
@@ -344,13 +362,16 @@ def build_contract_receipt() -> dict[str, Any]:
                 ],
             },
             "current_extension_boundary": {
-                "status": "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN",
-                "rows": 13,
-                "path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json",
-                "sha256": _sha256(RAW_EXTENSION_IMPORT),
+                "status": "CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_OPEN",
+                "authoritative_BV_rows": 34,
+                "analytic_rows": 36,
+                "wave_extension_path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json",
+                "wave_extension_sha256": _sha256(RAW_EXTENSION_IMPORT),
+                "cyclic_realization_path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json",
+                "cyclic_realization_sha256": _sha256(CYCLIC_REALIZATION_IMPORT),
                 "triangular_reduction": "E13 L13 U13^{-1}=L12 direct sum I1",
             },
-            "physical_input_status": "RAW_PRINCIPAL_COMPATIBLE_CYCLIC_ENDPOINT_AND_WAVE_EXTENSION_IMPORTED_GREEN_OPEN",
+            "physical_input_status": "RAW_ENDPOINT_WAVE_EXTENSION_AND_CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPEN",
             "metric_green_status": "NOT_CONSTRUCTED",
             "metric_antifield_green_status": "NOT_CONSTRUCTED",
             "full_26_row_green_status": "NOT_CONSTRUCTED",
@@ -358,8 +379,8 @@ def build_contract_receipt() -> dict[str, Any]:
             "next_gate": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS",
             "claim_boundary": (
                 "Rejects the dressed cyclic witness as a Green endpoint, imports the "
-                "principal-compatible raw cyclic 34-row route and the exact rank-one "
-                "scalar-wave prolongation. It "
+                "principal-compatible raw cyclic 34-row route, the rank-one scalar-wave "
+                "prolongation, and its cyclic 36-row analytic realization. It "
                 "constructs no advanced or retarded Green operator, causal support "
                 "theorem, full 26-row homotopy, Hadamard state, QME restoration, or "
                 "Lorentzian quantum theory."

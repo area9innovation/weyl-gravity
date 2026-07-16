@@ -46,6 +46,13 @@ class RawEndpointImportTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "weakened"):
             _validate_scientific_payload(replay, IMPORT.fast_receipt())
 
+    def test_stored_schur_gcd_mutation_fails_fast(self) -> None:
+        certificate = json.loads(OUTPUT.read_text())
+        replay = deepcopy(certificate["scientific_replay"])
+        replay["filtered_endpoint_preflight"]["order_six_polynomial_gcd"] = "1"
+        with self.assertRaisesRegex(ValueError, "filtered preflight drifted"):
+            _validate_scientific_payload(replay, IMPORT.fast_receipt())
+
     def test_internal_sparse_record_hash_mutation_fails_closed(self) -> None:
         transport, _ = IMPORT._validate_source_payloads()
         reference = transport["operators"]["q34_raw"]

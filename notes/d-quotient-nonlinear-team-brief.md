@@ -303,8 +303,10 @@ metric principal rank is eight rather than the required ten.  The corrected
 raw BV-canonical endpoint is independently replayed and principal-compatible.
 Its exact 10+2 preflight exposes a rank-one, wave-divisible order-six
 Schur term. The 13-row support-local scalar-wave prolongation of that term is
-now imported and exactly replayed; advanced/retarded Green operators remain
-the active PDE gate.
+now imported and exactly replayed. Its paired 36-row cyclic analytic
+realization, source/solution graph SDRs, and formal adjoint are also imported;
+the added `y,y*` pair does not alter the authoritative 34-row BV cohomology.
+Advanced/retarded Green operators remain the active PDE gate.
 
 1. Choose and certify a residual/BFV, derived zero-charge, or causal Green
    extension of the complex.  The extension must state its rows, support

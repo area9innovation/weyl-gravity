@@ -13,12 +13,18 @@ The preferred fourth architecture is therefore
 differential-algebraic, and auxiliary-field routes. A direct retained solver
 must classify its characteristic-rank strata. The raw route pins both the
 scalar-biwave principal blocks and the exact cyclic `QW+WQ` identity. Its
-exact (10+2) Schur preflight exposes a nonzero rank-one, wave-divisible
+exact 10+2 Schur preflight exposes a nonzero rank-one, wave-divisible
 order-six term. The imported 13-row scalar-wave prolongation now realizes
 that term as an order-four support-local extension with exact triangular
-reduction to (L_{12}\oplus I_1). The remaining analytic work is to construct
+reduction to `L12 direct sum I1`. The remaining analytic work is to construct
 advanced/retarded inverses, causal support, cyclic adjointness, and
 support-local Green transport.
+
+The extension is now also paired and cyclic on the 36-row analytic
+realization `[5,13,13,5]`. Exact source/solution graph SDRs identify its
+relation to the authoritative 34-row BV complex, and the required future
+adjoint identity is `G13_plus^sharp=G13_minus`. The analytic `y,y*` pair does
+not add BV cohomology.
 
 All routes require exact proofs of both left and right inverse identities,
 advanced/retarded support, propagation of constraints, formal-adjoint and
@@ -49,4 +55,6 @@ The raw endpoint fast receipt and metric-contract tests are the smoke rails.
 The independent endpoint PBW replay completed in 84.59 seconds with
 `SCIENTIFIC REPLAY PASS`; it is a separate exhaustive rail, not a per-edit
 smoke test. The rank-one extension importer independently replays the exact
-13-row triangular reduction and fixed-incidence obstruction.
+13-row triangular reduction and fixed-incidence obstruction; the cyclic
+realization importer independently replays the 36-row pairing, cyclicity,
+formal adjoint, and graph SDRs.

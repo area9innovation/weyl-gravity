@@ -66,6 +66,9 @@ BERGER_RAW_ENDPOINT_ROUTE_PATH = (
 BERGER_RAW_ENDPOINT_EXTENSION_PATH = (
     QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json"
 )
+BERGER_RAW_ENDPOINT_CYCLIC_PATH = (
+    QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json"
+)
 BERGER_REDUCED_CARTAN_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json"
 )
@@ -167,6 +170,10 @@ def _source_manifest() -> dict[str, str]:
         "../lorentzian/rank_one_wave_extension_import_certificate.py",
         "../lorentzian/tests/test_rank_one_wave_extension_import.py",
         "../reports/berger-rank-one-wave-extension-import.md",
+        "../lorentzian/cyclic_green_realization_import.py",
+        "../lorentzian/cyclic_green_realization_import_certificate.py",
+        "../lorentzian/tests/test_cyclic_green_realization_import.py",
+        "../reports/berger-cyclic-green-realization-import.md",
         "berger_reduced_mode_cartan.py",
         "berger_reduced_mode_cartan_certificate.py",
         "berger_nonzero_weight_no_go_import.py",
@@ -212,6 +219,7 @@ def _source_manifest() -> dict[str, str]:
         "schema/berger-causal-d-cartan-transfer-import-v1.schema.json",
         "../lorentzian/schema/berger-raw-endpoint-import-v1.schema.json",
         "../lorentzian/schema/berger-rank-one-wave-extension-import-v1.schema.json",
+        "../lorentzian/schema/berger-cyclic-green-realization-import-v1.schema.json",
         "schema/berger-first-arity-two-cartan-verdict-v1.schema.json",
         "schema/berger-nonzero-weight-closure-no-go-import-v1.schema.json",
         "schema/berger-all-weight-arity-two-cartan-import-v1.schema.json",
@@ -311,6 +319,9 @@ def build_certificate() -> dict[str, Any]:
     )
     berger_raw_endpoint_extension = json.loads(
         BERGER_RAW_ENDPOINT_EXTENSION_PATH.read_text(encoding="utf-8")
+    )
+    berger_raw_endpoint_cyclic = json.loads(
+        BERGER_RAW_ENDPOINT_CYCLIC_PATH.read_text(encoding="utf-8")
     )
     berger_reduced_cartan = json.loads(
         BERGER_REDUCED_CARTAN_PATH.read_text(encoding="utf-8")
@@ -640,6 +651,20 @@ def build_certificate() -> dict[str, Any]:
     ):
         raise ValueError("Berger raw endpoint rank-one extension import drifted")
     if (
+        berger_raw_endpoint_cyclic.get("result_state")
+        != "CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_OPEN"
+        or berger_raw_endpoint_cyclic.get("row_layout", {}).get("authoritative_BV_total_rows") != 34
+        or berger_raw_endpoint_cyclic.get("row_layout", {}).get("analytic_total_rows") != 36
+        or berger_raw_endpoint_cyclic.get("claim_flags", {}).get(
+            "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION"
+        ) is not True
+        or berger_raw_endpoint_cyclic.get("claim_flags", {}).get(
+            "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"
+        ) is not False
+        or berger_raw_endpoint_cyclic.get("claim_flags", {}).get("QUANTUM_CLAIM") is not False
+    ):
+        raise ValueError("Berger cyclic analytic Green realization import drifted")
+    if (
         berger_retained_26_q2_transfer.get("schema")
         != "quantum-weyl-berger-retained-26-q2-transfer-v1"
         or berger_retained_26_q2_transfer.get("result_state")
@@ -804,7 +829,7 @@ def build_certificate() -> dict[str, Any]:
     source_manifest = _source_manifest()
     return {
         "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-        "result_state": "CONDITIONAL_CAUSAL_D_CARTAN_AND_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_PENDING",
+        "result_state": "CONDITIONAL_CAUSAL_D_CARTAN_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "classical_snapshot_commit": snapshot["classical_commit"],
         "classical_freeze_gate": snapshot["gate_a_status"],
@@ -840,6 +865,7 @@ def build_certificate() -> dict[str, Any]:
                 "conditionally transferred the Berger unary and raw arity-two D-Cartan primitives through a hypothetical D-equivariant retained causal contraction",
                 "independently imported the principal-compatible raw cyclic endpoint and its rank-one wave-divisible Green preflight",
                 "independently imported the 13-row support-local scalar-wave prolongation with exact triangular direct-sum reduction and fixed-incidence obstruction",
+                "independently imported the cyclic 36-row analytic Green realization with exact source/solution graph SDRs and unchanged 34-row BV cohomology",
                 "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
                 "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
                 "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
@@ -888,7 +914,7 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED_CONDITIONAL_CAUSAL_UNARY_AND_RAW_ARITY_TWO_TRANSFER_THEOREM_IMPORTED_CYCLIC_COMPLETION_AND_ENDPOINT_GREEN_HOMOTOPY_OPEN_RAW_PRINCIPAL_COMPATIBLE_RANK_ONE_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_REQUIRED",
+                "status": "BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED_CONDITIONAL_CAUSAL_UNARY_AND_RAW_ARITY_TWO_TRANSFER_THEOREM_IMPORTED_BINARY_CYCLIC_COMPLETION_AND_ENDPOINT_GREEN_HOMOTOPY_OPEN_RAW_PRINCIPAL_COMPATIBLE_RANK_ONE_WAVE_EXTENSION_IMPORTED_CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_REQUIRED",
                 "next_certificate": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS",
             },
             {
@@ -1026,6 +1052,10 @@ def build_certificate() -> dict[str, Any]:
             "berger_raw_endpoint_rank_one_wave_extension_import_sha256": _sha256(
                 BERGER_RAW_ENDPOINT_EXTENSION_PATH
             ),
+            "berger_raw_endpoint_cyclic_green_realization_import_certificate": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json",
+            "berger_raw_endpoint_cyclic_green_realization_import_sha256": _sha256(
+                BERGER_RAW_ENDPOINT_CYCLIC_PATH
+            ),
             "berger_first_arity_two_cartan_verdict_certificate": "quantum-weyl/transfer/certificates/BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json",
             "berger_first_arity_two_cartan_verdict_sha256": _sha256(
                 BERGER_REDUCED_CARTAN_PATH
@@ -1072,7 +1102,7 @@ def build_certificate() -> dict[str, Any]:
             "The complete 54-row local D action is independently imported and unary/contraction/cyclic equivariance is exact. The later scientific q2 replay now also proves the arity-two D-derivation identity; it does not solve the unary or interacting Cartan equations.",
             "The Berger 54-row q2 arrival adapter fixes and mutation-tests the portable bilinear PBW structure and binds it to the authoritative unary, D, contraction, and pairing hashes. The complete classical tensor is now independently imported, and the specialized exact Q(sqrt(10)) backend replays q1/q2, D/q2, and odd-Darboux cyclicity coefficientwise. Full ell2 transfer and Cartan execution remain absent.",
             "The bare full-dimensional unary Cartan problem is exactly obstructed on the 26/54-row complex. A conditional causal transfer theorem is now imported, but its retained Green-homotopy hypothesis and cyclic arity-two completion remain unconstructed.",
-            "The first dressed cyclic witness is not principal-compatible with the Green contract. The raw BV-canonical endpoint and its 13-row scalar-wave prolongation are independently replayed; advanced/retarded Green operators remain open.",
+            "The first dressed cyclic witness is not principal-compatible with the Green contract. The raw BV-canonical endpoint, its 13-row scalar-wave prolongation, and the paired 36-row cyclic analytic realization are independently replayed; advanced/retarded Green operators remain open.",
             "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
             "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
             "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
@@ -1104,7 +1134,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: WAVE EXTENSION IMPORTED; GREEN OPERATORS OPEN")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: CYCLIC ANALYTIC REALIZATION IMPORTED; GREEN OPERATORS OPEN")
     return 0
 
 

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-cyclic-green-realization-import-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "row_layout", "graph_SDR", "cyclic_green_target", "independent_exact_checks", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-cyclic-green-realization-import-v1"},
+    "result_id": {"const": "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT"},
+    "result_state": {"const": "CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_CAUSAL_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "row_layout": {"const": {"authoritative_BV_degree_ranks": [5, 12, 12, 5], "analytic_realization_degree_ranks": [5, 13, 13, 5], "authoritative_BV_total_rows": 34, "analytic_total_rows": 36, "added_rows": ["degree_0:y", "degree_1:y_star"], "added_rows_are_analytic_not_new_cohomology": true}},
+    "graph_SDR": {"type": "object", "additionalProperties": false, "required": ["solution_identity", "source_identity", "field_homotopy", "source_homotopy", "intertwining", "support_local", "maximum_map_order"], "properties": {"solution_identity": {"const": "p_sol i_sol=I12"}, "source_identity": {"const": "p_src i_src=I12"}, "field_homotopy": {"const": "I13-i_sol p_sol=H13 L13"}, "source_homotopy": {"const": "I13-i_src p_src=L13 H13"}, "intertwining": {"const": ["L13 i_sol=i_src L12", "p_src L13=L12 p_sol"]}, "support_local": {"const": true}, "maximum_map_order": {"const": 2}}},
+    "cyclic_green_target": {"type": "object", "additionalProperties": false, "required": ["pairing", "adjoint_identity", "spatial_zero_mode_projector"], "properties": {"pairing": {"type": "string", "minLength": 1}, "adjoint_identity": {"const": "G13_plus^sharp=G13_minus"}, "spatial_zero_mode_projector": {"const": false}}},
+    "independent_exact_checks": {"type": "object", "minProperties": 11, "additionalProperties": {"const": true}},
+    "claim_flags": {"const": {"BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false, "BERGER_ARITY_TWO_CAUSAL_D_CARTAN": false, "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION": true, "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": false, "QUANTUM_CLAIM": false}},
+    "next_gate": {"const": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"},
+    "provenance": {"type": "object", "minProperties": 6},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

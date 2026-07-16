@@ -68,9 +68,9 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
                 root,
                 "proofs/clock_principal_import.json",
                 {
-                    "result_id": "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT",
-                    "result_state": "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN",
-                    "claim_flags": {"BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION": True, "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": False, "QUANTUM_CLAIM": False},
+                    "result_id": "BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT",
+                    "result_state": "CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_OPEN",
+                    "claim_flags": {"BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION": True, "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": False, "QUANTUM_CLAIM": False},
                 },
             )
             characteristic_status = "RESOLVED_IN_RAW_BV_COORDINATES_FILTERED_EXTENSION"
@@ -161,7 +161,7 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "not classified"):
                 validate_metric_green_export(payload, repository_root=root)
 
-    def test_clock_reattached_route_bypasses_direct_rank_stratification(self) -> None:
+    def test_raw_endpoint_route_bypasses_direct_rank_stratification(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             result = validate_metric_green_export(
@@ -175,7 +175,7 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
         self.assertIn("clock_sdr_green_transport", result["required_proof_checks"])
         self.assertNotIn("characteristic_rank_stratification", result["required_proof_checks"])
 
-    def test_clock_route_requires_curved_QW_plus_WQ_proof(self) -> None:
+    def test_raw_endpoint_route_requires_QW_plus_WQ_proof(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             payload = self._payload(root, kind=RAW_REALIZATION_KIND)
@@ -183,7 +183,7 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "proof checks fields drifted"):
                 validate_metric_green_export(payload, repository_root=root)
 
-    def test_clock_route_rejects_promoted_principal_import(self) -> None:
+    def test_raw_endpoint_route_rejects_promoted_import(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             payload = self._payload(root, kind=RAW_REALIZATION_KIND)

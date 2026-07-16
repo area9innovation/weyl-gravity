@@ -23,7 +23,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(
             certificate["result_state"],
-            "CONDITIONAL_CAUSAL_D_CARTAN_AND_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_PENDING",
+            "CONDITIONAL_CAUSAL_D_CARTAN_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING",
         )
         self.assertEqual(
             certificate["dependency_tags"],
@@ -81,6 +81,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED", d_question["status"])
         self.assertIn("CONDITIONAL_CAUSAL_UNARY_AND_RAW_ARITY_TWO_TRANSFER_THEOREM_IMPORTED", d_question["status"])
         self.assertIn("RANK_ONE_WAVE_EXTENSION_IMPORTED", d_question["status"])
+        self.assertIn("CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED", d_question["status"])
         self.assertIn("GREEN_OPERATORS_REQUIRED", d_question["status"])
         self.assertEqual(
             d_question["next_certificate"],

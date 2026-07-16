@@ -331,6 +331,9 @@ def fast_receipt() -> dict[str, Any]:
         },
         "source_claim_status": transport["claim_status"],
         "preflight_claim_status": preflight["claim_status"],
+        "order_six_polynomial_gcd": preflight["schur_audit"][
+            "order_six_polynomial_gcd"
+        ],
     }
 
 

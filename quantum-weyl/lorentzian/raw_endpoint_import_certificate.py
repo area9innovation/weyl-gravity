@@ -125,6 +125,8 @@ def _validate_scientific_payload(payload: object, receipt: dict[str, Any]) -> di
         }
         or filtered.get("rank_fixtures")
         != {"timelike": 1, "spacelike": 1, "null": 0, "generic": 1}
+        or filtered.get("order_six_polynomial_gcd")
+        != receipt["order_six_polynomial_gcd"]
         or filtered.get("interpretation")
         != "rank-one wave-divisible gauge/clock extension"
     ):
