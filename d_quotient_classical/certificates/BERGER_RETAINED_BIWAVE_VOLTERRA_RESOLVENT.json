@@ -1,0 +1,179 @@
+{
+  "claim_boundary": "This theorem constructs the advanced and retarded Green operators of the exact retained ten-row metric block by a convergent causal Volterra resolvent and graph pullback. It does not yet assemble the ghost, metric, antifield and identity blocks into the 26-row BV chain homotopy, lift to 54 rows, construct Hadamard data, or promote D-Cartan or quantum claims.",
+  "claim_status": "CERTIFIED_RETAINED_METRIC_CAUSAL_GREEN_OPERATORS_26_ROW_ASSEMBLY_OPEN",
+  "companion_graph_sdr": {
+    "exact_checks": {
+      "C_i_sol": true,
+      "p_sol_i_sol": true,
+      "p_src_C": true,
+      "p_src_i_src": true,
+      "solution_retract": true,
+      "source_retract": true
+    },
+    "homotopy": "H(f1,f2)=(0,-f1)",
+    "identities": [
+      "p_sol i_sol=I",
+      "p_src i_src=I",
+      "C20 i_sol=i_src A10",
+      "p_src C20=A10 p_sol",
+      "I-i_sol p_sol=H C20",
+      "I-i_src p_src=C20 H"
+    ],
+    "operator": "C20=[[Box_2,-I10],[V_2,Box_2]]",
+    "solution_inclusion": "i_sol(h)=(h,Box_2 h)",
+    "solution_projection": "p_sol(h,y)=h",
+    "source_inclusion": "i_src(f)=(0,f)",
+    "source_projection": "p_src(f1,f2)=Box_2 f1+f2"
+  },
+  "construction_dags": {
+    "advanced": {
+      "nodes": [
+        {
+          "id": "G_Box2_+",
+          "kind": "unique_causal_green_operator",
+          "operator": "Box_2",
+          "support": "J^+"
+        },
+        {
+          "formula": "[[G_Box2_+,0],[-G_Box2_+ V_2 G_Box2_+,G_Box2_+]]",
+          "id": "G_C0_+",
+          "kind": "finite_triangular_green_operator"
+        },
+        {
+          "formula": "[[0,-I10],[0,0]]",
+          "id": "N",
+          "kind": "local_order_zero"
+        },
+        {
+          "equivalent_formula": "sum_(n>=0)(-N G_C0_+)^n",
+          "formula": "sum_(n>=0)(-G_C0_+ N)^n",
+          "id": "R_+",
+          "kind": "volterra_resolvent"
+        },
+        {
+          "formula": "R_+ G_C0_+=G_C0_+ (I+N G_C0_+)^-1",
+          "id": "G_C20_+",
+          "kind": "causal_green_operator"
+        },
+        {
+          "formula": "p_sol G_C20_+ i_src",
+          "id": "G_A10_+",
+          "kind": "graph_pullback_green_operator"
+        }
+      ],
+      "sign": "+"
+    },
+    "retarded": {
+      "nodes": [
+        {
+          "id": "G_Box2_-",
+          "kind": "unique_causal_green_operator",
+          "operator": "Box_2",
+          "support": "J^-"
+        },
+        {
+          "formula": "[[G_Box2_-,0],[-G_Box2_- V_2 G_Box2_-,G_Box2_-]]",
+          "id": "G_C0_-",
+          "kind": "finite_triangular_green_operator"
+        },
+        {
+          "formula": "[[0,-I10],[0,0]]",
+          "id": "N",
+          "kind": "local_order_zero"
+        },
+        {
+          "equivalent_formula": "sum_(n>=0)(-N G_C0_-)^n",
+          "formula": "sum_(n>=0)(-G_C0_- N)^n",
+          "id": "R_-",
+          "kind": "volterra_resolvent"
+        },
+        {
+          "formula": "R_- G_C0_-=G_C0_- (I+N G_C0_-)^-1",
+          "id": "G_C20_-",
+          "kind": "causal_green_operator"
+        },
+        {
+          "formula": "p_sol G_C20_- i_src",
+          "id": "G_A10_-",
+          "kind": "graph_pullback_green_operator"
+        }
+      ],
+      "sign": "-"
+    }
+  },
+  "dependency_refs": {
+    "metric_normal_form": {
+      "result_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE",
+      "sha256": "0add3e518b7384cd653161b1f9db44d13c71f5c8349cd013027057e0d2ff7c8b"
+    },
+    "minimal_clock_contraction": {
+      "result_id": "BERGER_MINIMAL_34_PORTABLE_CONTRACTION",
+      "sha256": "f69d8664fb139860fb3bcb89bdf82ee1659e158f6f925535b17e2de364060db4"
+    },
+    "raw_witness_transport": {
+      "result_id": "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT",
+      "sha256": "cb69a3eba6d3e81eec519adca51aa35f15d7250a2fc2be496230e55852c4950c"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL",
+    "FUNCTIONAL-ANALYTIC"
+  ],
+  "exact_checks": {
+    "advanced_resolvent_converges": true,
+    "both_same_sided_inverse_identities": true,
+    "companion_graph_SDR_exact": true,
+    "formal_adjoint_reversal": true,
+    "metric_causal_support": true,
+    "metric_graph_pullback_both_inverses": true,
+    "no_spatial_projector": true,
+    "retained_metric_projection_exact": true,
+    "retarded_resolvent_converges": true,
+    "triangular_base_green_formula_exact": true,
+    "volterra_factorial_bound_closes_in_graded_energy": true
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_CAUSAL_D_CARTAN": false,
+    "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT": true,
+    "BERGER_RETAINED_BIWAVE_COMPANION_EXACT": true,
+    "BERGER_RETAINED_METRIC_GREEN_OPERATORS": true
+  },
+  "next_gate": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY",
+  "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
+  "retained_identification": {
+    "exact": true,
+    "identity": "(pi_cl P34_raw iota_cl)_metric=A10=Box_2^2+V_2",
+    "maximum_order_V2": 2,
+    "metric_rows": 10
+  },
+  "schema": "pure-weyl-berger-retained-biwave-volterra-resolvent-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "volterra_theorem": {
+    "adjoint_identity": "G_A10,+^sharp=G_A10^sharp,-",
+    "base_green": "G_C0,pm=[[G_Box,pm,0],[-G_Box,pm V_2 G_Box,pm,G_Box,pm]]",
+    "both_inverse_identities": [
+      "C20 G_C20,pm=I",
+      "G_C20,pm C20=I"
+    ],
+    "convergence": "absolute in every graded Sobolev energy norm; hence in C-infinity by intersection over s",
+    "finite_slab_bound": "norm((G_C0,pm N)^n)<=C_T^n/n! on every compact causal slab",
+    "globalization": "compatible finite-slab resolvents glue by causal uniqueness",
+    "graded_energy_spaces": "sources H^s direct_sum H^(s-1); solutions carry one additional derivative in the first component",
+    "metric_inverse_identities": [
+      "A10 G_A10,pm=I",
+      "G_A10,pm A10=I"
+    ],
+    "metric_pullback": "G_A10,pm=p_sol G_C20,pm i_src",
+    "order_zero_perturbation": "N=[[0,-I10],[0,0]]",
+    "support": "every partial sum is supported in J^pm(supp f), and the closed support condition passes to the limit",
+    "triangular_base": "C0=[[Box_2,0],[V_2,Box_2]]"
+  },
+  "zero_mode_policy": {
+    "inverse_spatial_laplacian": false,
+    "massless_zero_modes": "included in the causal Cauchy evolution of Box_2",
+    "spatial_mode_projector": false
+  }
+}

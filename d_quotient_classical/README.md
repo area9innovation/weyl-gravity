@@ -116,6 +116,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION.json`](certificates/BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION.json)
 - Extra-cone localization report:
   [`reports/berger-extra-cone-microlocal-localization.md`](reports/berger-extra-cone-microlocal-localization.md)
+- Retained metric causal Volterra resolvent:
+  [`certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT.json`](certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT.json)
+- Volterra construction and graph-pullback proof:
+  [`reports/berger-retained-biwave-volterra-resolvent.md`](reports/berger-retained-biwave-volterra-resolvent.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:
