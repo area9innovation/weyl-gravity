@@ -2,11 +2,11 @@
   "accepted_export_schema": "quantum-weyl-berger-metric-mixed-order-green-export-v1",
   "accepted_realization_kinds": [
     "AUXILIARY_FIELD_REDUCTION",
-    "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR",
     "FILTERED_MIXED_ORDER",
-    "FIRST_ORDER_DIFFERENTIAL_ALGEBRAIC"
+    "FIRST_ORDER_DIFFERENTIAL_ALGEBRAIC",
+    "RAW_CLOCK_RANK_ONE_WAVE_EXTENSION"
   ],
-  "claim_boundary": "Imports the preferred clock-reattached scalar-biwave principal route and the exact cyclic curved 34-row witness, then defines conditional acceptance for direct retained or support-local SDR realizations. It constructs no advanced or retarded Green operator, causal support theorem, full 26-row homotopy, Hadamard state, QME restoration, or Lorentzian quantum theory.",
+  "claim_boundary": "Rejects the dressed cyclic witness as a Green endpoint, imports the principal-compatible raw cyclic 34-row route and the exact rank-one scalar-wave prolongation. It constructs no advanced or retarded Green operator, causal support theorem, full 26-row homotopy, Hadamard state, QME restoration, or Lorentzian quantum theory.",
   "common_proof_checks": [
     "D_equivariance",
     "advanced_left_inverse",
@@ -30,19 +30,26 @@
       "q34_W34+W34_q34=P34",
       "W34_cyclic"
     ],
-    "path": "quantum-weyl/lorentzian/certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT.json",
-    "sha256": "fc86660f1a7dfef50f8a800dfc32602877194b32f3deb8ebca3a84d132e2dbd9",
-    "status": "IMPORTED_AND_EXACTLY_REPLAYED"
+    "path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json",
+    "sha256": "4d9637d32d7c3feb30ae5f4e6687943c03166380d34f71c183ac922a9e8b2569",
+    "status": "DRESSED_REJECTED_FOR_GREEN_RAW_IMPORTED_AND_EXACTLY_REPLAYED"
+  },
+  "current_extension_boundary": {
+    "path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json",
+    "rows": 13,
+    "sha256": "bb8c813922bd2e74f7e24369e756a09d8543cfb66a9580131ad8e6ad0e5d34c5",
+    "status": "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN",
+    "triangular_reduction": "E13 L13 U13^{-1}=L12 direct sum I1"
   },
   "current_principal_boundary": {
-    "generic_fourth_order_rank": 8,
-    "polynomial_kernel_dimension": 2,
+    "generic_fourth_order_rank": 10,
+    "polynomial_kernel_dimension": 0,
     "preferred_principal_import": {
-      "path": "quantum-weyl/lorentzian/certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT.json",
-      "sha256": "0f1a6eb3cfa0de9624381c40bdddd023d3ecf70047875526500ac6c2879fcec0"
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json",
+      "sha256": "4d9637d32d7c3feb30ae5f4e6687943c03166380d34f71c183ac922a9e8b2569"
     },
     "preferred_scalar_characteristic_set": "zeta^2=0",
-    "retained_characteristic_status": "PRESENTATION_EFFECT"
+    "retained_characteristic_status": "RESOLVED_IN_RAW_BV_COORDINATES_FILTERED_EXTENSION_OPEN"
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -57,19 +64,20 @@
   "full_26_row_green_status": "NOT_CONSTRUCTED",
   "metric_antifield_green_status": "NOT_CONSTRUCTED",
   "metric_green_status": "NOT_CONSTRUCTED",
-  "next_gate": "CONSTRUCT_ADVANCED_RETARDED_GREEN_OPERATORS_FOR_P34_WITH_CAUSAL_SUPPORT_AND_CYCLIC_ADJOINTNESS",
-  "physical_input_status": "CLOCK_REATTACHED_PRINCIPAL_AND_CURVED_WITNESS_IMPORTED_GREEN_OPEN",
+  "next_gate": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS",
+  "physical_input_status": "RAW_PRINCIPAL_COMPATIBLE_CYCLIC_ENDPOINT_AND_WAVE_EXTENSION_IMPORTED_GREEN_OPEN",
   "provenance": {
     "source_manifest": {
-      "../reports/berger-metric-mixed-order-green-contract.md": "f451118c5cadd4d625c2972d8325b0677abe55631c0c65ec29b460d08dcb470d",
-      "certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT.json": "fc86660f1a7dfef50f8a800dfc32602877194b32f3deb8ebca3a84d132e2dbd9",
-      "metric_mixed_order_green_contract.py": "57ab914be3abbaf09b4cc63e81fe8fb81cfc94355f3b35df7e9f3a8f11ea57e4",
-      "metric_mixed_order_green_contract_certificate.py": "5be35fbebbac1376c58fa389d5b2d76be2a3e00c194fc816b4de39b0825a7fd6",
-      "schema/berger-metric-mixed-order-green-contract-v1.schema.json": "39000ed2344134db0de9a3b36e613e0aab81fc3040630e6d5f4eafcf84bfcde7",
+      "../reports/berger-metric-mixed-order-green-contract.md": "b1d5ac6a6d73e708241869d9ecf614f16d5a8e7cbf7ddaa97a8a04e7b716f1c7",
+      "certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json": "4d9637d32d7c3feb30ae5f4e6687943c03166380d34f71c183ac922a9e8b2569",
+      "certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json": "bb8c813922bd2e74f7e24369e756a09d8543cfb66a9580131ad8e6ad0e5d34c5",
+      "metric_mixed_order_green_contract.py": "d62c05bb5b08efca25d02cd6fcbedbf13836150f20b3a30bd1f9244900c9609f",
+      "metric_mixed_order_green_contract_certificate.py": "bccf8075ac19b17681234d1c23453a7b199f4d9facd67964b72dd9c58e4efe13",
+      "schema/berger-metric-mixed-order-green-contract-v1.schema.json": "7da2b439ebeb7dba74968f7b3187ba1bbbc9a90b85a429cc8caacacdc309aef0",
       "schema/berger-metric-mixed-order-green-export-v1.schema.json": "4aafad99f5ccbc84d19d2bb0d61e6b07c6209535e656857f79f7b8b23c84062a",
-      "tests/test_metric_mixed_order_green_contract.py": "7c6f1551f2e541ca97d3367e3d8d1d829b8b1bd55b639a664d72a2d18cf52e1c"
+      "tests/test_metric_mixed_order_green_contract.py": "a0772350f18403ab376bdc9b97c32be7d8ce7f7e16883165e47bedd9d5b0333e"
     },
-    "source_manifest_sha256": "eef8ded5a2e77246a521c8a96210939d9855ee11acc41bf584fa9f4de131aa02"
+    "source_manifest_sha256": "01ddba6402f9d5141127c9a5aa816e67f87e952ede36ce72b3ba62ee9e051262"
   },
   "quantum_execution_authorized": false,
   "required_operator_ids": [
@@ -83,18 +91,19 @@
     "realization_forward"
   ],
   "result_id": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION_CONTRACT",
-  "result_state": "INTERFACE_READY_CLOCK_CURVED_WITNESS_IMPORTED_GREEN_REALIZATION_OPEN",
+  "result_state": "INTERFACE_READY_RAW_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_OPEN",
   "route_specific_proof_checks": {
-    "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR": [
-      "clock_reattached_principal_import",
-      "clock_sdr_green_transport",
-      "clock_sdr_support_local",
-      "curved_clock_reattached_QW_plus_WQ",
-      "scalar_biwave_characteristic_set"
-    ],
     "DIRECT_RETAINED": [
       "characteristic_rank_stratification",
       "generic_rank_and_kernel"
+    ],
+    "RAW_CLOCK_RANK_ONE_WAVE_EXTENSION": [
+      "raw_endpoint_input_import",
+      "rank_one_wave_extension",
+      "clock_sdr_green_transport",
+      "clock_sdr_support_local",
+      "raw_clock_reattached_QW_plus_WQ",
+      "scalar_biwave_characteristic_set"
     ]
   },
   "schema": "quantum-weyl-berger-metric-mixed-order-green-contract-v1",

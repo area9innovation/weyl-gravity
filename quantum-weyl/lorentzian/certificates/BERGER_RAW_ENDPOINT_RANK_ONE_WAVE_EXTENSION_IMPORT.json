@@ -1,0 +1,123 @@
+{
+  "claim_boundary": "Pins and independently replays the support-local 13-row scalar-wave prolongation, its exact triangular direct-sum reduction, and the fixed-incidence obstruction. It constructs no advanced/retarded operators, Green-hyperbolicity theorem, retained 26-row causal homotopy, causal D-Cartan realization, Hadamard state, QME, or quantum result.",
+  "claim_flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": false,
+    "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION": true,
+    "QUANTUM_CLAIM": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "extension": {
+    "defining_equation": "y-F2(h)=0",
+    "maximum_operator_order": 4,
+    "modulus_equation": "R-Box_0 y=source_R",
+    "new_field": "y",
+    "rows": 13,
+    "triangular_reduction": "E13 L13 U13^{-1}=L12 direct_sum I1"
+  },
+  "fixed_incidence_no_go": {
+    "conclusion": "middle-block or triangular-shear tuning cannot erase the modulus incidence in this fixed architecture",
+    "defect_nonzero_entries": 8,
+    "forbidden_simplification": "erase the complete metric-to-clock block C while retaining those data",
+    "identity_used": "Pfield K12=K12 Pghost",
+    "normalized_defect": "Kclock(Pghost-I5)",
+    "scope": "fixed K12, fixed Pghost, fixed clock diagonal I2, chain-commuting cyclic witness"
+  },
+  "independent_exact_checks": {
+    "F2_order_two": true,
+    "endpoint_chain_commutation": true,
+    "field_shear_support_local_inverse": true,
+    "fixed_incidence_defect_count_eight": true,
+    "fixed_incidence_defect_nonzero": true,
+    "prolonged_direct_sum_equivalence": true,
+    "prolonged_operator_order_four": true
+  },
+  "lifecycle_layer": "CLASSICAL_BV_CAUSAL_PREFLIGHT",
+  "next_gate": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS",
+  "provenance": {
+    "classical_commit": "34c184591956aafe97b0728f065b7d044b729f46",
+    "classical_sources": {
+      "d_quotient_classical/backreacted_clock/berger_raw_endpoint_rank_one_wave_extension.py": {
+        "commit": "34c184591956aafe97b0728f065b7d044b729f46",
+        "path": "d_quotient_classical/backreacted_clock/berger_raw_endpoint_rank_one_wave_extension.py",
+        "sha256": "9d78071709d3754b672b000daca964f80df39d17a51e87e3eb5f268d28c9b6ad"
+      },
+      "d_quotient_classical/backreacted_clock/tests/test_berger_raw_endpoint_rank_one_wave_extension.py": {
+        "commit": "34c184591956aafe97b0728f065b7d044b729f46",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_raw_endpoint_rank_one_wave_extension.py",
+        "sha256": "799a8c45c870f9de82b32113dc8947364c62189234c90087bd3602f80d3470e7"
+      },
+      "d_quotient_classical/backreacted_clock/verify_berger_raw_endpoint_rank_one_wave_extension.py": {
+        "commit": "34c184591956aafe97b0728f065b7d044b729f46",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_raw_endpoint_rank_one_wave_extension.py",
+        "sha256": "01989c355cdbb0e388f3bbd3c37296bda6bb78622a4927d189caca4c44239d7e"
+      },
+      "d_quotient_classical/certificates/BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT.json": {
+        "commit": "34c184591956aafe97b0728f065b7d044b729f46",
+        "path": "d_quotient_classical/certificates/BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT.json",
+        "sha256": "cb69a3eba6d3e81eec519adca51aa35f15d7250a2fc2be496230e55852c4950c"
+      },
+      "d_quotient_classical/certificates/BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT.json": {
+        "commit": "34c184591956aafe97b0728f065b7d044b729f46",
+        "path": "d_quotient_classical/certificates/BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT.json",
+        "sha256": "2006cfc9927590f2109a4f1112d8b1da494f661e317cb5c5dda741591b9d1b29"
+      },
+      "d_quotient_classical/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION.json": {
+        "commit": "34c184591956aafe97b0728f065b7d044b729f46",
+        "path": "d_quotient_classical/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION.json",
+        "sha256": "ec469c9f114c4663e0bd8f5c5de28529974c09d63d90e4cae8f34428fe37f815"
+      },
+      "d_quotient_classical/reports/berger-raw-endpoint-rank-one-wave-extension.md": {
+        "commit": "34c184591956aafe97b0728f065b7d044b729f46",
+        "path": "d_quotient_classical/reports/berger-raw-endpoint-rank-one-wave-extension.md",
+        "sha256": "cdd7e0fafcc6556906167ec3059b37cab0a298fe5970d28f45bd63799c35ac5f"
+      },
+      "d_quotient_classical/schema/berger-raw-endpoint-rank-one-wave-extension-v1.schema.json": {
+        "commit": "34c184591956aafe97b0728f065b7d044b729f46",
+        "path": "d_quotient_classical/schema/berger-raw-endpoint-rank-one-wave-extension-v1.schema.json",
+        "sha256": "c8d475aa8e60dbab5e79a800ba3ec349a230055f162be5425dcfcc34d84a21a3"
+      }
+    },
+    "operator_artifacts": {
+      "equation_shear_E13": {
+        "format": "JSON_EXACT_SPARSE_OPERATOR",
+        "path": "d_quotient_classical/generated/berger_raw_endpoint_rank_one_wave_extension/equation_shear_E13.json",
+        "sha256": "b6d1266820481f7fc293802216187fc099c235e0d534f99229d9b41823e83f4e"
+      },
+      "field_shear_U13": {
+        "format": "JSON_EXACT_SPARSE_OPERATOR",
+        "path": "d_quotient_classical/generated/berger_raw_endpoint_rank_one_wave_extension/field_shear_U13.json",
+        "sha256": "d7d54d4175e10c4a77d0e2cbab6a341f51ae7caf91786a9686aaadf30cbdccae"
+      },
+      "modulus_seed_F2": {
+        "format": "JSON_EXACT_SPARSE_OPERATOR",
+        "path": "d_quotient_classical/generated/berger_raw_endpoint_rank_one_wave_extension/modulus_seed_F2.json",
+        "sha256": "1c0e1d3812437cb2acb64c17d7c2c692b39643d598b3d5f80ce7c8b9217bc6df"
+      },
+      "prolonged_L13": {
+        "format": "JSON_EXACT_SPARSE_OPERATOR",
+        "path": "d_quotient_classical/generated/berger_raw_endpoint_rank_one_wave_extension/prolonged_L13.json",
+        "sha256": "de369f52a733ad80e61ed0522ac1c4c0bb2c39911642c1e5212893a828a818a4"
+      }
+    },
+    "raw_endpoint_import": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json",
+      "sha256": "4d9637d32d7c3feb30ae5f4e6687943c03166380d34f71c183ac922a9e8b2569"
+    },
+    "source_manifest": {
+      "../reports/berger-rank-one-wave-extension-import.md": "02c281d2eecf87dfbb9043b17d9b7dd7b964888fd46792e5facf861dbd431498",
+      "rank_one_wave_extension_import.py": "ccc10bd831f5a8cbab894aaab75619c2e75d42159ee5301c8c5f0bcd298125ef",
+      "rank_one_wave_extension_import_certificate.py": "d862c50f5f1f1ff0f454dcd2b1f459c4f5923ff798efdd22dd1591bc4d370364",
+      "schema/berger-rank-one-wave-extension-import-v1.schema.json": "042d01d0886e284ce2d43ed190dff678d650e5dd9b9050d26711fcffec57bc26",
+      "tests/test_rank_one_wave_extension_import.py": "49d10b4f7f445d7827746bc3c41f3df84d01cea50aaf4438b8417adc379780d2"
+    },
+    "source_manifest_sha256": "8ecdb072d3f105e435b00b63a7a48160891e5e1cbdebc2ed7e16bd1c1cd2347c"
+  },
+  "result_id": "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT",
+  "result_state": "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN",
+  "schema": "quantum-weyl-berger-rank-one-wave-extension-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

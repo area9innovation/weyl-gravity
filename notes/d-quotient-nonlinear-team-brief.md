@@ -291,17 +291,28 @@ support-local `iota_D^(1)` exists on the bare 26-row complex, and the
 `D`-equivariant SDR transfers that no-go to the bare 54-row extension.  Do not
 form the bare arity-two source `[q2,iota_D^(1)]`.
 
-The classical conditional causal-transfer theorem landed after this no-go.
-It is the preferred next input, but remains outside the quantum claim ledger
-until separately pinned and independently replayed; it does not itself supply
-the retained advanced/retarded Green homotopy.
+The classical conditional causal-transfer theorem is now pinned and its
+universal-algebra identities are independently replayed. Conditional on a
+`D`-equivariant retained causal contraction it supplies
+`iota_D,s^(1)=Lambda_s D` and the noncyclic raw binary primitive
+`iota_D,s,raw^(2)=-Lambda_s[q2,iota_D,s^(1)]`.  It does not itself supply the
+retained advanced/retarded Green homotopy or cyclic binary completion.
+
+The first dressed cyclic `P34` is no longer an admissible Green endpoint: its
+metric principal rank is eight rather than the required ten.  The corrected
+raw BV-canonical endpoint is independently replayed and principal-compatible.
+Its exact 10+2 preflight exposes a rank-one, wave-divisible order-six
+Schur term. The 13-row support-local scalar-wave prolongation of that term is
+now imported and exactly replayed; advanced/retarded Green operators remain
+the active PDE gate.
 
 1. Choose and certify a residual/BFV, derived zero-charge, or causal Green
    extension of the complex.  The extension must state its rows, support
    category, pairing, and replacement unary Cartan identity explicitly.
-2. On the causal route, construct the retained 26-row advanced/retarded Green
-   homotopy for the certified curved `P34`, prove causal support and cyclic
-   adjointness, and lift it through the certified 54-to-26 contraction.
+2. On the causal route, construct
+   `BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS` for the imported 13-row
+   extension, prove causal support and cyclic adjointness, and lift the
+   resulting retained homotopy through the certified 54-to-26 contraction.
 3. Transfer the full `ell2` on the chosen extension and only then form the
    corrected arity-two Cartan source.
 4. Solve for `iota_D^(2)` on that extension or retain its normalized

@@ -57,6 +57,15 @@ BERGER_UNARY_D_CARTAN_OBSTRUCTION_PATH = (
 BERGER_RETAINED_26_Q2_TRANSFER_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_RETAINED_26_Q2_TRANSFER.json"
 )
+BERGER_CAUSAL_D_CARTAN_TRANSFER_PATH = (
+    TRANSFER_ROOT / "certificates" / "BERGER_CAUSAL_D_CARTAN_TRANSFER_IMPORT.json"
+)
+BERGER_RAW_ENDPOINT_ROUTE_PATH = (
+    QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_RAW_ENDPOINT_INPUT_IMPORT.json"
+)
+BERGER_RAW_ENDPOINT_EXTENSION_PATH = (
+    QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json"
+)
 BERGER_REDUCED_CARTAN_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json"
 )
@@ -147,6 +156,17 @@ def _source_manifest() -> dict[str, str]:
         "berger_retained_26_q2_transfer.py",
         "berger_retained_26_q2_transfer_certificate.py",
         "../reports/berger-retained-26-q2-transfer.md",
+        "berger_causal_d_cartan_transfer_import.py",
+        "berger_causal_d_cartan_transfer_import_certificate.py",
+        "../reports/berger-causal-d-cartan-transfer-import.md",
+        "../lorentzian/raw_endpoint_import.py",
+        "../lorentzian/raw_endpoint_import_certificate.py",
+        "../lorentzian/tests/test_raw_endpoint_import.py",
+        "../reports/berger-raw-endpoint-import.md",
+        "../lorentzian/rank_one_wave_extension_import.py",
+        "../lorentzian/rank_one_wave_extension_import_certificate.py",
+        "../lorentzian/tests/test_rank_one_wave_extension_import.py",
+        "../reports/berger-rank-one-wave-extension-import.md",
         "berger_reduced_mode_cartan.py",
         "berger_reduced_mode_cartan_certificate.py",
         "berger_nonzero_weight_no_go_import.py",
@@ -189,6 +209,9 @@ def _source_manifest() -> dict[str, str]:
         "schema/berger-unary-d-cartan-obstruction-import-v1.schema.json",
         "schema/berger-retained-26-q2-transfer-v1.schema.json",
         "schema/berger-retained-26-q2-payload-v1.schema.json",
+        "schema/berger-causal-d-cartan-transfer-import-v1.schema.json",
+        "../lorentzian/schema/berger-raw-endpoint-import-v1.schema.json",
+        "../lorentzian/schema/berger-rank-one-wave-extension-import-v1.schema.json",
         "schema/berger-first-arity-two-cartan-verdict-v1.schema.json",
         "schema/berger-nonzero-weight-closure-no-go-import-v1.schema.json",
         "schema/berger-all-weight-arity-two-cartan-import-v1.schema.json",
@@ -218,6 +241,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_berger_54_row_q2_arrival.py",
         "tests/test_berger_54_row_q2_replay.py",
         "tests/test_berger_support_local_q2_import.py",
+        "tests/test_berger_causal_d_cartan_transfer_import.py",
         "tests/test_berger_support_local_q2_scientific_replay.py",
         "tests/test_berger_unary_d_cartan_obstruction_import.py",
         "tests/test_berger_retained_26_q2_transfer.py",
@@ -278,6 +302,15 @@ def build_certificate() -> dict[str, Any]:
     )
     berger_retained_26_q2_transfer = json.loads(
         BERGER_RETAINED_26_Q2_TRANSFER_PATH.read_text(encoding="utf-8")
+    )
+    berger_causal_d_cartan_transfer = json.loads(
+        BERGER_CAUSAL_D_CARTAN_TRANSFER_PATH.read_text(encoding="utf-8")
+    )
+    berger_raw_endpoint_route = json.loads(
+        BERGER_RAW_ENDPOINT_ROUTE_PATH.read_text(encoding="utf-8")
+    )
+    berger_raw_endpoint_extension = json.loads(
+        BERGER_RAW_ENDPOINT_EXTENSION_PATH.read_text(encoding="utf-8")
     )
     berger_reduced_cartan = json.loads(
         BERGER_REDUCED_CARTAN_PATH.read_text(encoding="utf-8")
@@ -565,6 +598,48 @@ def build_certificate() -> dict[str, Any]:
     ):
         raise ValueError("Berger unary D-Cartan obstruction import drifted")
     if (
+        berger_causal_d_cartan_transfer.get("result_state")
+        != "CONDITIONAL_CAUSAL_UNARY_AND_RAW_ARITY_TWO_TRANSFER_IMPORTED_ENDPOINT_OPEN"
+        or berger_causal_d_cartan_transfer.get("claim_flags", {}).get(
+            "BERGER_CAUSAL_D_CARTAN_TRANSFER_THEOREM"
+        ) is not True
+        or berger_causal_d_cartan_transfer.get("claim_flags", {}).get(
+            "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY"
+        ) is not False
+        or berger_causal_d_cartan_transfer.get("claim_flags", {}).get(
+            "BERGER_CAUSAL_ARITY_TWO_CYCLIC_COMPLETION"
+        ) is not False
+        or berger_causal_d_cartan_transfer.get("claim_flags", {}).get("QUANTUM_CLAIM") is not False
+        or berger_causal_d_cartan_transfer.get("active_endpoint_gate")
+        != "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"
+    ):
+        raise ValueError("Berger conditional causal D-Cartan transfer import drifted")
+    if (
+        berger_raw_endpoint_route.get("result_state")
+        != "RAW_ENDPOINT_IMPORTED_EXACT_REPLAY_FILTERED_GREEN_EXTENSION_OPEN"
+        or berger_raw_endpoint_route.get("principal_compatibility_certified") is not True
+        or berger_raw_endpoint_route.get("filtered_extension_preflight_certified") is not True
+        or berger_raw_endpoint_route.get("green_execution_authorized") is not False
+        or berger_raw_endpoint_route.get("quantum_execution_authorized") is not False
+        or berger_raw_endpoint_route.get("next_gate")
+        != "CONSTRUCT_RANK_ONE_WAVE_FILTERED_GREEN_EXTENSION_FOR_RAW_ENDPOINT"
+    ):
+        raise ValueError("Berger raw endpoint route import drifted")
+    if (
+        berger_raw_endpoint_extension.get("result_state")
+        != "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN"
+        or berger_raw_endpoint_extension.get("claim_flags", {}).get(
+            "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION"
+        ) is not True
+        or berger_raw_endpoint_extension.get("claim_flags", {}).get(
+            "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"
+        ) is not False
+        or berger_raw_endpoint_extension.get("claim_flags", {}).get("QUANTUM_CLAIM") is not False
+        or berger_raw_endpoint_extension.get("next_gate")
+        != "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"
+    ):
+        raise ValueError("Berger raw endpoint rank-one extension import drifted")
+    if (
         berger_retained_26_q2_transfer.get("schema")
         != "quantum-weyl-berger-retained-26-q2-transfer-v1"
         or berger_retained_26_q2_transfer.get("result_state")
@@ -729,8 +804,8 @@ def build_certificate() -> dict[str, Any]:
     source_manifest = _source_manifest()
     return {
         "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-        "result_state": "RETAINED_26_ROW_CLASSICAL_Q2_TRANSFERRED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_PENDING",
-        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "result_state": "CONDITIONAL_CAUSAL_D_CARTAN_AND_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_PENDING",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "classical_snapshot_commit": snapshot["classical_commit"],
         "classical_freeze_gate": snapshot["gate_a_status"],
         "convention": "suspended-graded-symmetric-factorial-v1",
@@ -762,6 +837,9 @@ def build_certificate() -> dict[str, Any]:
                 "independently imported the complete 54-row support-local Berger q2 and replayed q1/q2 nilpotency, D/q2 derivation, and odd-Darboux BV cyclicity exactly over Q(sqrt(10))",
                 "independently replayed the exact null-symbol cohomology witness obstructing every finite-order support-local unary D-Cartan homotopy on the bare 26/54-row Berger complex",
                 "exactly transferred the complete 54-row Berger q2 through the cyclic SDR to a 54,236-coefficient retained q2_26 with retained q1/q2 and odd-Darboux cyclic identities",
+                "conditionally transferred the Berger unary and raw arity-two D-Cartan primitives through a hypothetical D-equivariant retained causal contraction",
+                "independently imported the principal-compatible raw cyclic endpoint and its rank-one wave-divisible Green preflight",
+                "independently imported the 13-row support-local scalar-wave prolongation with exact triangular direct-sum reduction and fixed-incidence obstruction",
                 "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
                 "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
                 "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
@@ -782,11 +860,12 @@ def build_certificate() -> dict[str, Any]:
                 "absence of higher-bracket sector re-entry",
                 "the further minimal residual/cohomology ell2 beyond the retained 26-row q2_26 operation",
                 "an arity-two nonlinear D-Cartan contraction outside the all-weight homogeneous six-row-per-weight block",
-                "a residual/BFV or causal extension on which the obstructed bare unary D-Cartan equation is replaced by a well-defined extended problem",
+                "the retained 26-row causal Green homotopy needed to realize the conditional D-Cartan theorem",
+                "the cyclic completion of the conditional raw arity-two D-Cartan primitive",
                 "the complete 54-row arity-two Cartan contraction on any admissible extension",
                 "an interacting particle or deformation-theory theorem",
                 "a quantum correction or residual quantum transfer",
-                "any LORENTZIAN-CAUSAL claim",
+                "a completed LORENTZIAN-CAUSAL construction",
             ],
         },
         "required_classical_exports": list(REQUIRED_EXPORTS),
@@ -809,8 +888,8 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "ALL_INTEGER_WEIGHT_HOMOGENEOUS_NONZERO_SOURCE_CARTAN_EXACT_NONZERO_PRIMITIVE_COMPLETE_FINITE_TRUNCATIONS_OBSTRUCTED_54_ROW_LOCAL_D_IMPORTED_AND_SUPPORT_LOCAL_Q2_IMPORTED_ALL_IDENTITIES_REPLAYED_BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED_RESIDUAL_OR_CAUSAL_EXTENSION_REQUIRED",
-                "next_certificate": "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION",
+                "status": "BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED_CONDITIONAL_CAUSAL_UNARY_AND_RAW_ARITY_TWO_TRANSFER_THEOREM_IMPORTED_CYCLIC_COMPLETION_AND_ENDPOINT_GREEN_HOMOTOPY_OPEN_RAW_PRINCIPAL_COMPATIBLE_RANK_ONE_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_REQUIRED",
+                "next_certificate": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS",
             },
             {
                 "question_id": "positive_dynamical_direction_closure",
@@ -935,6 +1014,18 @@ def build_certificate() -> dict[str, Any]:
             "berger_retained_26_q2_transfer_sha256": _sha256(
                 BERGER_RETAINED_26_Q2_TRANSFER_PATH
             ),
+            "berger_causal_D_Cartan_transfer_import_certificate": "quantum-weyl/transfer/certificates/BERGER_CAUSAL_D_CARTAN_TRANSFER_IMPORT.json",
+            "berger_causal_D_Cartan_transfer_import_sha256": _sha256(
+                BERGER_CAUSAL_D_CARTAN_TRANSFER_PATH
+            ),
+            "berger_raw_endpoint_route_import_certificate": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json",
+            "berger_raw_endpoint_route_import_sha256": _sha256(
+                BERGER_RAW_ENDPOINT_ROUTE_PATH
+            ),
+            "berger_raw_endpoint_rank_one_wave_extension_import_certificate": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json",
+            "berger_raw_endpoint_rank_one_wave_extension_import_sha256": _sha256(
+                BERGER_RAW_ENDPOINT_EXTENSION_PATH
+            ),
             "berger_first_arity_two_cartan_verdict_certificate": "quantum-weyl/transfer/certificates/BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json",
             "berger_first_arity_two_cartan_verdict_sha256": _sha256(
                 BERGER_REDUCED_CARTAN_PATH
@@ -976,11 +1067,12 @@ def build_certificate() -> dict[str, Any]:
             "The Berger D_GAUGE theorem is scoped to the smooth fixed-coupling linearized phase space; it does not construct the support-local all-row BV contraction required by ND2.",
             "The earlier Berger clock-SDR receipt contracts exactly 8 of 34 minimal rows and, by itself, carries formulas and fingerprints rather than a portable map payload; D-equivariance remains uncomputed.",
             "The retained Berger minimal-q1 receipt is complete on 26 rows and independently reconstructed from exact PBW entries; by itself it supplies neither the separate clock maps nor nonminimal rows, q2, D action, or a contraction.",
-            "The registered Berger backend validates arity-one PBW-operator data only; the Fraction-valued ND2 engine cannot consume it without either a declared PBW-module extension or an exact REDUCED-MODE specialization.",
+            "The registered Berger backend began as an arity-one validator; the complete q2 has since been replayed and transferred to the retained 26-row complex, while the minimal residual transfer remains open.",
             "The complete gauge-fixed 54-row unary complex, cyclic pairing, and contraction are independently imported. That unary artifact does not itself supply q2 or D, while the separate complete local-D import now closes unary, contraction, and cyclic D-equivariance.",
             "The complete 54-row local D action is independently imported and unary/contraction/cyclic equivariance is exact. The later scientific q2 replay now also proves the arity-two D-derivation identity; it does not solve the unary or interacting Cartan equations.",
             "The Berger 54-row q2 arrival adapter fixes and mutation-tests the portable bilinear PBW structure and binds it to the authoritative unary, D, contraction, and pairing hashes. The complete classical tensor is now independently imported, and the specialized exact Q(sqrt(10)) backend replays q1/q2, D/q2, and odd-Darboux cyclicity coefficientwise. Full ell2 transfer and Cartan execution remain absent.",
-            "The bare full-dimensional unary Cartan problem is no longer pending: the exact null-symbol class obstructs every finite-order support-local solution on the bare 26/54-row complex. This does not decide a residual/BFV, derived zero-charge, causal Green, or nonlocal extension.",
+            "The bare full-dimensional unary Cartan problem is exactly obstructed on the 26/54-row complex. A conditional causal transfer theorem is now imported, but its retained Green-homotopy hypothesis and cyclic arity-two completion remain unconstructed.",
+            "The first dressed cyclic witness is not principal-compatible with the Green contract. The raw BV-canonical endpoint and its 13-row scalar-wave prolongation are independently replayed; advanced/retarded Green operators remain open.",
             "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
             "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
             "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
@@ -1012,7 +1104,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: BARE UNARY D-CARTAN OBSTRUCTED; RESIDUAL OR CAUSAL EXTENSION REQUIRED")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: WAVE EXTENSION IMPORTED; GREEN OPERATORS OPEN")
     return 0
 
 

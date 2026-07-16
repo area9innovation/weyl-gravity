@@ -37,7 +37,8 @@ def build_certificate() -> dict[str, object]:
         "schema/berger-metric-mixed-order-green-export-v1.schema.json",
         "tests/test_metric_mixed_order_green_contract.py",
         "../reports/berger-metric-mixed-order-green-contract.md",
-        "certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT.json",
+        "certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json",
+        "certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json",
     )
     manifest = {path: _hash(ROOT / path) for path in paths}
     return {
@@ -62,7 +63,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("BERGER METRIC GREEN CONTRACT: CURVED WITNESS IMPORTED; GREEN REALIZATION OPEN")
+        print("BERGER METRIC GREEN CONTRACT: WAVE EXTENSION IMPORTED; GREEN OPERATORS OPEN")
     return 0
 
 

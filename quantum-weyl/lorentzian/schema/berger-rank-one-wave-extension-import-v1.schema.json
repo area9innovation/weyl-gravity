@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-rank-one-wave-extension-import-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "extension", "independent_exact_checks", "fixed_incidence_no_go", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-rank-one-wave-extension-import-v1"},
+    "result_id": {"const": "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT"},
+    "result_state": {"const": "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_CAUSAL_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "extension": {"const": {"rows": 13, "new_field": "y", "defining_equation": "y-F2(h)=0", "modulus_equation": "R-Box_0 y=source_R", "maximum_operator_order": 4, "triangular_reduction": "E13 L13 U13^{-1}=L12 direct_sum I1"}},
+    "independent_exact_checks": {"type": "object", "minProperties": 7, "additionalProperties": {"const": true}},
+    "fixed_incidence_no_go": {"type": "object", "additionalProperties": false, "required": ["scope", "forbidden_simplification", "identity_used", "normalized_defect", "defect_nonzero_entries", "conclusion"], "properties": {"scope": {"type": "string"}, "forbidden_simplification": {"type": "string"}, "identity_used": {"const": "Pfield K12=K12 Pghost"}, "normalized_defect": {"const": "Kclock(Pghost-I5)"}, "defect_nonzero_entries": {"const": 8}, "conclusion": {"type": "string"}}},
+    "claim_flags": {"const": {"BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false, "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": false, "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION": true, "QUANTUM_CLAIM": false}},
+    "next_gate": {"const": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"},
+    "provenance": {"type": "object", "minProperties": 6},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

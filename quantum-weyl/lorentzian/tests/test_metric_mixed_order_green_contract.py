@@ -9,8 +9,8 @@ import unittest
 
 from local_bv.schema_validation import validate_instance
 from lorentzian.metric_mixed_order_green_contract import (
-    CLOCK_PROOF_CHECKS,
-    CLOCK_REALIZATION_KIND,
+    RAW_PROOF_CHECKS,
+    RAW_REALIZATION_KIND,
     COMMON_PROOF_CHECKS,
     DIRECT_PROOF_CHECKS,
     OPERATOR_IDS,
@@ -53,7 +53,7 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
             name: self._artifact(root, f"operators/{name}.json", "JSON_EXACT_SPARSE_OPERATOR")
             for name in OPERATOR_IDS
         }
-        route_checks = CLOCK_PROOF_CHECKS if kind == CLOCK_REALIZATION_KIND else DIRECT_PROOF_CHECKS
+        route_checks = RAW_PROOF_CHECKS if kind == RAW_REALIZATION_KIND else DIRECT_PROOF_CHECKS
         proofs = {
             name: {
                 "status": "VERIFIED",
@@ -63,21 +63,22 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
             }
             for name in COMMON_PROOF_CHECKS + route_checks
         }
-        if kind == CLOCK_REALIZATION_KIND:
+        if kind == RAW_REALIZATION_KIND:
             principal_proof = self._json_artifact(
                 root,
                 "proofs/clock_principal_import.json",
                 {
-                    "result_id": "BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT",
-                    "result_state": "PRINCIPAL_WITNESS_IMPORTED_CURVED_LOWER_ORDERS_OPEN",
-                    "preferred_realization": {"kind": CLOCK_REALIZATION_KIND},
-                    "quantum_execution_authorized": False,
+                    "result_id": "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT",
+                    "result_state": "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN",
+                    "claim_flags": {"BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION": True, "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": False, "QUANTUM_CLAIM": False},
                 },
             )
-            characteristic_status = "RESOLVED_BY_SUPPORT_LOCAL_CLOCK_REATTACHMENT"
+            characteristic_status = "RESOLVED_IN_RAW_BV_COORDINATES_FILTERED_EXTENSION"
             characteristic_set = "zeta^2=0"
             auxiliary_rows = 8
             working_degree_ranks = [5, 12, 12, 5]
+            generic_rank = 10
+            kernel_dimension = 0
         else:
             principal_proof = self._artifact(
                 root, "proofs/direct_principal_rank.json", "JSON_PROOF_CERTIFICATE"
@@ -86,6 +87,8 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
             characteristic_set = "directly_classified_characteristic_set"
             auxiliary_rows = 12
             working_degree_ranks = [3, 10, 10, 3]
+            generic_rank = 8
+            kernel_dimension = 2
         return {
             "schema": "quantum-weyl-berger-metric-mixed-order-green-export-v1",
             "result_id": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION",
@@ -99,8 +102,8 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
                 "metric_antifield_row_ids": [f"metric_antifield_{index}" for index in range(10)],
             },
             "principal_boundary": {
-                "generic_fourth_order_rank": 8,
-                "polynomial_kernel_dimension": 2,
+                "generic_fourth_order_rank": generic_rank,
+                "polynomial_kernel_dimension": kernel_dimension,
                 "retained_characteristic_status": characteristic_status,
                 "scalar_characteristic_set": characteristic_set,
                 "principal_proof": principal_proof,
@@ -133,7 +136,7 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
         self.assertFalse(certificate["quantum_execution_authorized"])
         self.assertEqual(
             certificate["current_curved_boundary"]["status"],
-            "IMPORTED_AND_EXACTLY_REPLAYED",
+            "DRESSED_REJECTED_FOR_GREEN_RAW_IMPORTED_AND_EXACTLY_REPLAYED",
         )
         self.assertEqual(certificate["metric_green_status"], "NOT_CONSTRUCTED")
         forged = deepcopy(certificate)
@@ -162,12 +165,12 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             result = validate_metric_green_export(
-                self._payload(root, kind=CLOCK_REALIZATION_KIND), repository_root=root
+                self._payload(root, kind=RAW_REALIZATION_KIND), repository_root=root
             )
-        self.assertEqual(result["realization_kind"], CLOCK_REALIZATION_KIND)
+        self.assertEqual(result["realization_kind"], RAW_REALIZATION_KIND)
         self.assertEqual(
             result["principal_resolution"],
-            "RESOLVED_BY_SUPPORT_LOCAL_CLOCK_REATTACHMENT",
+            "RESOLVED_IN_RAW_BV_COORDINATES_FILTERED_EXTENSION",
         )
         self.assertIn("clock_sdr_green_transport", result["required_proof_checks"])
         self.assertNotIn("characteristic_rank_stratification", result["required_proof_checks"])
@@ -175,15 +178,15 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
     def test_clock_route_requires_curved_QW_plus_WQ_proof(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            payload = self._payload(root, kind=CLOCK_REALIZATION_KIND)
-            del payload["proof_checks"]["curved_clock_reattached_QW_plus_WQ"]
+            payload = self._payload(root, kind=RAW_REALIZATION_KIND)
+            del payload["proof_checks"]["raw_clock_reattached_QW_plus_WQ"]
             with self.assertRaisesRegex(ValueError, "proof checks fields drifted"):
                 validate_metric_green_export(payload, repository_root=root)
 
     def test_clock_route_rejects_promoted_principal_import(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            payload = self._payload(root, kind=CLOCK_REALIZATION_KIND)
+            payload = self._payload(root, kind=RAW_REALIZATION_KIND)
             artifact = payload["principal_boundary"]["principal_proof"]
             path = root / artifact["path"]
             forged = json.loads(path.read_text())
@@ -203,7 +206,7 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
 
     def test_next_gate_is_green_realization_not_curved_algebra(self) -> None:
         certificate = build_certificate()
-        self.assertIn("GREEN_OPERATORS_FOR_P34", certificate["next_gate"])
+        self.assertEqual(certificate["next_gate"], "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS")
         self.assertFalse(certificate["quantum_execution_authorized"])
 
     def test_unverified_constraint_proof_fails_closed(self) -> None:

@@ -6,7 +6,7 @@
   "required": [
     "schema", "result_id", "result_state", "dependency_tags", "setting_id",
     "accepted_export_schema", "accepted_realization_kinds", "required_operator_ids",
-    "downstream_endpoint_factor_record_ids", "common_proof_checks", "route_specific_proof_checks", "current_principal_boundary", "current_curved_boundary",
+    "downstream_endpoint_factor_record_ids", "common_proof_checks", "route_specific_proof_checks", "current_principal_boundary", "current_curved_boundary", "current_extension_boundary",
     "physical_input_status", "metric_green_status", "metric_antifield_green_status",
     "full_26_row_green_status", "quantum_execution_authorized", "next_gate",
     "claim_boundary", "provenance"
@@ -14,33 +14,33 @@
   "properties": {
     "schema": {"const": "quantum-weyl-berger-metric-mixed-order-green-contract-v1"},
     "result_id": {"const": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION_CONTRACT"},
-    "result_state": {"const": "INTERFACE_READY_CLOCK_CURVED_WITNESS_IMPORTED_GREEN_REALIZATION_OPEN"},
+    "result_state": {"const": "INTERFACE_READY_RAW_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_OPEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
     "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
     "accepted_export_schema": {"const": "quantum-weyl-berger-metric-mixed-order-green-export-v1"},
-    "accepted_realization_kinds": {"const": ["AUXILIARY_FIELD_REDUCTION", "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR", "FILTERED_MIXED_ORDER", "FIRST_ORDER_DIFFERENTIAL_ALGEBRAIC"]},
+    "accepted_realization_kinds": {"const": ["AUXILIARY_FIELD_REDUCTION", "FILTERED_MIXED_ORDER", "FIRST_ORDER_DIFFERENTIAL_ALGEBRAIC", "RAW_CLOCK_RANK_ONE_WAVE_EXTENSION"]},
     "required_operator_ids": {"const": ["P_metric", "P_metric_antifield", "Lambda_metric_minus", "Lambda_metric_plus", "Lambda_metric_antifield_minus", "Lambda_metric_antifield_plus", "realization_backward", "realization_forward"]},
     "downstream_endpoint_factor_record_ids": {"const": ["Box_1_spatial_covector", "Box_1_spatial_covector_formal_adjoint", "F_spatial_K_spatial", "F_spatial_K_spatial_formal_adjoint"]},
     "common_proof_checks": {"const": ["D_equivariance", "advanced_left_inverse", "advanced_right_inverse", "advanced_support", "constraint_compatibility", "cyclic_advanced_retarded_adjointness", "metric_antifield_formal_adjoint", "realization_equivalence", "retarded_left_inverse", "retarded_right_inverse", "retarded_support", "row_completeness", "zero_mode_policy_applied"]},
     "route_specific_proof_checks": {
       "const": {
         "DIRECT_RETAINED": ["characteristic_rank_stratification", "generic_rank_and_kernel"],
-        "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR": ["clock_reattached_principal_import", "clock_sdr_green_transport", "clock_sdr_support_local", "curved_clock_reattached_QW_plus_WQ", "scalar_biwave_characteristic_set"]
+        "RAW_CLOCK_RANK_ONE_WAVE_EXTENSION": ["raw_endpoint_input_import", "rank_one_wave_extension", "clock_sdr_green_transport", "clock_sdr_support_local", "raw_clock_reattached_QW_plus_WQ", "scalar_biwave_characteristic_set"]
       }
     },
     "current_principal_boundary": {
       "type": "object", "additionalProperties": false,
       "required": ["generic_fourth_order_rank", "polynomial_kernel_dimension", "retained_characteristic_status", "preferred_scalar_characteristic_set", "preferred_principal_import"],
       "properties": {
-        "generic_fourth_order_rank": {"const": 8},
-        "polynomial_kernel_dimension": {"const": 2},
-        "retained_characteristic_status": {"const": "PRESENTATION_EFFECT"},
+        "generic_fourth_order_rank": {"const": 10},
+        "polynomial_kernel_dimension": {"const": 0},
+        "retained_characteristic_status": {"const": "RESOLVED_IN_RAW_BV_COORDINATES_FILTERED_EXTENSION_OPEN"},
         "preferred_scalar_characteristic_set": {"const": "zeta^2=0"},
         "preferred_principal_import": {
           "type": "object", "additionalProperties": false,
           "required": ["path", "sha256"],
           "properties": {
-            "path": {"const": "quantum-weyl/lorentzian/certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT.json"},
+            "path": {"const": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json"},
             "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
           }
         }
@@ -50,18 +50,29 @@
       "type": "object", "additionalProperties": false,
       "required": ["status", "path", "sha256", "certified_identities"],
       "properties": {
-        "status": {"const": "IMPORTED_AND_EXACTLY_REPLAYED"},
-        "path": {"const": "quantum-weyl/lorentzian/certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT.json"},
+        "status": {"const": "DRESSED_REJECTED_FOR_GREEN_RAW_IMPORTED_AND_EXACTLY_REPLAYED"},
+        "path": {"const": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json"},
         "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "certified_identities": {"const": ["q34^2=0", "pairing34_nondegenerate", "q34_cyclic", "q34_W34+W34_q34=P34", "W34_cyclic"]}
       }
     },
-    "physical_input_status": {"const": "CLOCK_REATTACHED_PRINCIPAL_AND_CURVED_WITNESS_IMPORTED_GREEN_OPEN"},
+    "current_extension_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "rows", "path", "sha256", "triangular_reduction"],
+      "properties": {
+        "status": {"const": "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN"},
+        "rows": {"const": 13},
+        "path": {"const": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "triangular_reduction": {"const": "E13 L13 U13^{-1}=L12 direct sum I1"}
+      }
+    },
+    "physical_input_status": {"const": "RAW_PRINCIPAL_COMPATIBLE_CYCLIC_ENDPOINT_AND_WAVE_EXTENSION_IMPORTED_GREEN_OPEN"},
     "metric_green_status": {"const": "NOT_CONSTRUCTED"},
     "metric_antifield_green_status": {"const": "NOT_CONSTRUCTED"},
     "full_26_row_green_status": {"const": "NOT_CONSTRUCTED"},
     "quantum_execution_authorized": {"const": false},
-    "next_gate": {"const": "CONSTRUCT_ADVANCED_RETARDED_GREEN_OPERATORS_FOR_P34_WITH_CAUSAL_SUPPORT_AND_CYCLIC_ADJOINTNESS"},
+    "next_gate": {"const": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"},
     "claim_boundary": {"type": "string", "minLength": 1},
     "provenance": {"type": "object"}
   }

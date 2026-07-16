@@ -16,8 +16,8 @@ DIRECT_REALIZATION_KINDS = {
     "FIRST_ORDER_DIFFERENTIAL_ALGEBRAIC",
     "AUXILIARY_FIELD_REDUCTION",
 }
-CLOCK_REALIZATION_KIND = "CLOCK_REATTACHED_SUPPORT_LOCAL_SDR"
-REALIZATION_KINDS = DIRECT_REALIZATION_KINDS | {CLOCK_REALIZATION_KIND}
+RAW_REALIZATION_KIND = "RAW_CLOCK_RANK_ONE_WAVE_EXTENSION"
+REALIZATION_KINDS = DIRECT_REALIZATION_KINDS | {RAW_REALIZATION_KIND}
 OPERATOR_IDS = (
     "P_metric",
     "P_metric_antifield",
@@ -53,22 +53,17 @@ DIRECT_PROOF_CHECKS = (
     "characteristic_rank_stratification",
     "generic_rank_and_kernel",
 )
-CLOCK_PROOF_CHECKS = (
-    "clock_reattached_principal_import",
+RAW_PROOF_CHECKS = (
+    "raw_endpoint_input_import",
+    "rank_one_wave_extension",
     "clock_sdr_green_transport",
     "clock_sdr_support_local",
-    "curved_clock_reattached_QW_plus_WQ",
+    "raw_clock_reattached_QW_plus_WQ",
     "scalar_biwave_characteristic_set",
 )
 ROOT = Path(__file__).resolve().parents[2]
-CLOCK_PRINCIPAL_IMPORT = (
-    ROOT / "quantum-weyl/lorentzian/certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT.json"
-)
-CURVED_WITNESS_IMPORT = (
-    ROOT
-    / "quantum-weyl/lorentzian/certificates/"
-    "BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT.json"
-)
+RAW_ROUTE_IMPORT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json"
+RAW_EXTENSION_IMPORT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json"
 
 
 def _sha256(path: Path) -> str:
@@ -186,8 +181,8 @@ def validate_metric_green_export(
         "principal boundary",
     )
     if (
-        principal["generic_fourth_order_rank"] != 8
-        or principal["polynomial_kernel_dimension"] != 2
+        not isinstance(principal["generic_fourth_order_rank"], int)
+        or not isinstance(principal["polynomial_kernel_dimension"], int)
         or not isinstance(principal["scalar_characteristic_set"], str)
         or not principal["scalar_characteristic_set"]
     ):
@@ -197,12 +192,14 @@ def validate_metric_green_export(
         label="principal boundary.principal_proof",
     )
 
-    if realization["kind"] == CLOCK_REALIZATION_KIND:
+    if realization["kind"] == RAW_REALIZATION_KIND:
         if (
             realization["auxiliary_rows"] != 8
             or realization["working_degree_ranks"] != [5, 12, 12, 5]
+            or principal["generic_fourth_order_rank"] != 10
+            or principal["polynomial_kernel_dimension"] != 0
             or principal["retained_characteristic_status"]
-            != "RESOLVED_BY_SUPPORT_LOCAL_CLOCK_REATTACHMENT"
+            != "RESOLVED_IN_RAW_BV_COORDINATES_FILTERED_EXTENSION"
             or principal["scalar_characteristic_set"] != "zeta^2=0"
         ):
             raise ValueError("clock-reattached principal route is incomplete")
@@ -213,18 +210,21 @@ def validate_metric_green_export(
             raise ValueError("clock principal import is not portable JSON") from exc
         if (
             not isinstance(principal_payload, dict)
-            or principal_payload.get("result_id")
-            != "BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT"
+            or principal_payload.get("result_id") != "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT"
             or principal_payload.get("result_state")
-            != "PRINCIPAL_WITNESS_IMPORTED_CURVED_LOWER_ORDERS_OPEN"
-            or principal_payload.get("preferred_realization", {}).get("kind")
-            != CLOCK_REALIZATION_KIND
-            or principal_payload.get("quantum_execution_authorized") is not False
+            != "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN"
+            or principal_payload.get("claim_flags", {}).get("BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION") is not True
+            or principal_payload.get("claim_flags", {}).get("BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS") is not False
+            or principal_payload.get("claim_flags", {}).get("QUANTUM_CLAIM") is not False
         ):
-            raise ValueError("clock principal import identity or boundary drifted")
-        route_checks = CLOCK_PROOF_CHECKS
+            raise ValueError("raw endpoint import identity or boundary drifted")
+        route_checks = RAW_PROOF_CHECKS
     else:
-        if principal["retained_characteristic_status"] != "CLASSIFIED_DIRECTLY":
+        if (
+            principal["generic_fourth_order_rank"] != 8
+            or principal["polynomial_kernel_dimension"] != 2
+            or principal["retained_characteristic_status"] != "CLASSIFIED_DIRECTLY"
+        ):
             raise ValueError("direct retained characteristic rank is not classified")
         route_checks = DIRECT_PROOF_CHECKS
 
@@ -261,8 +261,8 @@ def validate_metric_green_export(
 
     return {
         "classical_commit": commit,
-        "generic_fourth_order_rank": 8,
-        "polynomial_kernel_dimension": 2,
+        "generic_fourth_order_rank": principal["generic_fourth_order_rank"],
+        "polynomial_kernel_dimension": principal["polynomial_kernel_dimension"],
         "realization_kind": realization["kind"],
         "principal_resolution": principal["retained_characteristic_status"],
         "required_proof_checks": list(required_checks),
@@ -274,47 +274,42 @@ def validate_metric_green_export(
 
 
 def build_contract_receipt() -> dict[str, Any]:
-    principal_import = json.loads(CLOCK_PRINCIPAL_IMPORT.read_text(encoding="utf-8"))
+    raw_import = json.loads(RAW_ROUTE_IMPORT.read_text(encoding="utf-8"))
+    extension_import = json.loads(RAW_EXTENSION_IMPORT.read_text(encoding="utf-8"))
     if (
-        not isinstance(principal_import, dict)
-        or principal_import.get("result_id")
-        != "BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT"
-        or principal_import.get("result_state")
-        != "PRINCIPAL_WITNESS_IMPORTED_CURVED_LOWER_ORDERS_OPEN"
-        or principal_import.get("preferred_realization", {}).get("kind")
-        != CLOCK_REALIZATION_KIND
-        or principal_import.get("next_gate") != "BERGER_CURVED_CLOCK_REATTACHED_WITNESS"
+        not isinstance(raw_import, dict)
+        or raw_import.get("result_id") != "BERGER_RAW_ENDPOINT_INPUT_IMPORT"
+        or raw_import.get("result_state")
+        != "RAW_ENDPOINT_IMPORTED_EXACT_REPLAY_FILTERED_GREEN_EXTENSION_OPEN"
+        or raw_import.get("principal_compatibility_certified") is not True
+        or raw_import.get("filtered_extension_preflight_certified") is not True
+        or raw_import.get("green_execution_authorized") is not False
+        or raw_import.get("quantum_execution_authorized") is not False
+        or raw_import.get("next_gate")
+        != "CONSTRUCT_RANK_ONE_WAVE_FILTERED_GREEN_EXTENSION_FOR_RAW_ENDPOINT"
     ):
-        raise ValueError("checked clock principal import identity or boundary drifted")
-    curved_import = json.loads(CURVED_WITNESS_IMPORT.read_text(encoding="utf-8"))
-    curved_checks = curved_import.get("independent_exact_checks", {})
-    expected_curved_checks = {
-        "export_schema_valid",
-        "coordinate_transport_hashes_match",
-        "q34_nilpotent",
-        "pairing34_nondegenerate",
-        "q34_cyclic",
-        "q34_W34_plus_W34_q34_equals_P34",
-        "W34_cyclic",
-    }
+        raise ValueError("checked raw endpoint import identity or boundary drifted")
     if (
-        not isinstance(curved_import, dict)
-        or curved_import.get("result_id")
-        != "BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT"
-        or curved_import.get("result_state")
-        != "CURVED_34_ROW_WITNESS_IMPORTED_AND_EXACTLY_REPLAYED_GREEN_OPEN"
-        or curved_import.get("curved_witness_certified") is not True
-        or curved_import.get("green_execution_authorized") is not False
-        or not isinstance(curved_checks, dict)
-        or set(curved_checks) != expected_curved_checks
-        or not all(value is True for value in curved_checks.values())
+        not isinstance(extension_import, dict)
+        or extension_import.get("result_id")
+        != "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT"
+        or extension_import.get("result_state")
+        != "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN"
+        or extension_import.get("claim_flags", {}).get(
+            "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION"
+        ) is not True
+        or extension_import.get("claim_flags", {}).get(
+            "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"
+        ) is not False
+        or extension_import.get("next_gate")
+        != "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"
     ):
-        raise ValueError("checked curved-witness import identity or boundary drifted")
+        raise ValueError("checked rank-one wave extension import identity or boundary drifted")
     return deepcopy(
         {
             "schema": "quantum-weyl-berger-metric-mixed-order-green-contract-v1",
             "result_id": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION_CONTRACT",
-            "result_state": "INTERFACE_READY_CLOCK_CURVED_WITNESS_IMPORTED_GREEN_REALIZATION_OPEN",
+            "result_state": "INTERFACE_READY_RAW_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_OPEN",
             "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
             "setting_id": SETTING_ID,
             "accepted_export_schema": SCHEMA_ID,
@@ -324,22 +319,22 @@ def build_contract_receipt() -> dict[str, Any]:
             "common_proof_checks": list(COMMON_PROOF_CHECKS),
             "route_specific_proof_checks": {
                 "DIRECT_RETAINED": list(DIRECT_PROOF_CHECKS),
-                CLOCK_REALIZATION_KIND: list(CLOCK_PROOF_CHECKS),
+                RAW_REALIZATION_KIND: list(RAW_PROOF_CHECKS),
             },
             "current_principal_boundary": {
-                "generic_fourth_order_rank": 8,
-                "polynomial_kernel_dimension": 2,
-                "retained_characteristic_status": "PRESENTATION_EFFECT",
+                "generic_fourth_order_rank": 10,
+                "polynomial_kernel_dimension": 0,
+                "retained_characteristic_status": "RESOLVED_IN_RAW_BV_COORDINATES_FILTERED_EXTENSION_OPEN",
                 "preferred_scalar_characteristic_set": "zeta^2=0",
                 "preferred_principal_import": {
-                    "path": "quantum-weyl/lorentzian/certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_INPUT_IMPORT.json",
-                    "sha256": _sha256(CLOCK_PRINCIPAL_IMPORT),
+                    "path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json",
+                    "sha256": _sha256(RAW_ROUTE_IMPORT),
                 },
             },
             "current_curved_boundary": {
-                "status": "IMPORTED_AND_EXACTLY_REPLAYED",
-                "path": "quantum-weyl/lorentzian/certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS_IMPORT.json",
-                "sha256": _sha256(CURVED_WITNESS_IMPORT),
+                "status": "DRESSED_REJECTED_FOR_GREEN_RAW_IMPORTED_AND_EXACTLY_REPLAYED",
+                "path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json",
+                "sha256": _sha256(RAW_ROUTE_IMPORT),
                 "certified_identities": [
                     "q34^2=0",
                     "pairing34_nondegenerate",
@@ -348,16 +343,23 @@ def build_contract_receipt() -> dict[str, Any]:
                     "W34_cyclic",
                 ],
             },
-            "physical_input_status": "CLOCK_REATTACHED_PRINCIPAL_AND_CURVED_WITNESS_IMPORTED_GREEN_OPEN",
+            "current_extension_boundary": {
+                "status": "LOCAL_SCALAR_WAVE_PROLONGATION_IMPORTED_GREEN_OPERATORS_OPEN",
+                "rows": 13,
+                "path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json",
+                "sha256": _sha256(RAW_EXTENSION_IMPORT),
+                "triangular_reduction": "E13 L13 U13^{-1}=L12 direct sum I1",
+            },
+            "physical_input_status": "RAW_PRINCIPAL_COMPATIBLE_CYCLIC_ENDPOINT_AND_WAVE_EXTENSION_IMPORTED_GREEN_OPEN",
             "metric_green_status": "NOT_CONSTRUCTED",
             "metric_antifield_green_status": "NOT_CONSTRUCTED",
             "full_26_row_green_status": "NOT_CONSTRUCTED",
             "quantum_execution_authorized": False,
-            "next_gate": "CONSTRUCT_ADVANCED_RETARDED_GREEN_OPERATORS_FOR_P34_WITH_CAUSAL_SUPPORT_AND_CYCLIC_ADJOINTNESS",
+            "next_gate": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS",
             "claim_boundary": (
-                "Imports the preferred clock-reattached scalar-biwave principal route and "
-                "the exact cyclic curved 34-row witness, then defines conditional "
-                "acceptance for direct retained or support-local SDR realizations. It "
+                "Rejects the dressed cyclic witness as a Green endpoint, imports the "
+                "principal-compatible raw cyclic 34-row route and the exact rank-one "
+                "scalar-wave prolongation. It "
                 "constructs no advanced or retarded Green operator, causal support "
                 "theorem, full 26-row homotopy, Hadamard state, QME restoration, or "
                 "Lorentzian quantum theory."

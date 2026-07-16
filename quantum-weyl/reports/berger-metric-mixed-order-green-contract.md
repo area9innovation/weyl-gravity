@@ -2,28 +2,31 @@
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `LORENTZIAN-CAUSAL`.
 
-The retained presentation has a generic rank-eight fourth-order symbol with
-two clock/constraint carriers. The imported clock-reattached theorem now
-shows this is a presentation effect: reversing the support-local clock SDR
-restores a scalar biwave on all ten metric and five gauge directions.
+The first dressed cyclic witness has a generic rank-eight metric symbol. An
+exact normalized coefficient witness shows that it is not the independently
+required scalar-biwave block, so it is algebraically valid but not an
+admissible Green endpoint. The BV-canonical raw transport restores the scalar
+biwave on all ten metric and five gauge directions.
 
 The preferred fourth architecture is therefore
-`CLOCK_REATTACHED_SUPPORT_LOCAL_SDR`, alongside the direct filtered,
+`RAW_CLOCK_RANK_ONE_WAVE_EXTENSION`, alongside the direct filtered,
 differential-algebraic, and auxiliary-field routes. A direct retained solver
-must classify its characteristic-rank strata. The clock-reattached route does
-not: it now pins both the imported scalar-biwave witness and the certified
-curved lower-order `QW+WQ` identity upstairs. The remaining analytic work is
-to construct advanced and retarded Green operators for `P34`, establish their
-causal support and cyclic adjointness, and prove support-local Green transport
-back through the SDR.
+must classify its characteristic-rank strata. The raw route pins both the
+scalar-biwave principal blocks and the exact cyclic `QW+WQ` identity. Its
+exact (10+2) Schur preflight exposes a nonzero rank-one, wave-divisible
+order-six term. The imported 13-row scalar-wave prolongation now realizes
+that term as an order-four support-local extension with exact triangular
+reduction to (L_{12}\oplus I_1). The remaining analytic work is to construct
+advanced/retarded inverses, causal support, cyclic adjointness, and
+support-local Green transport.
 
 All routes require exact proofs of both left and right inverse identities,
 advanced/retarded support, propagation of constraints, formal-adjoint and
 cyclic compatibility, `D`-equivariance, row completeness, and a zero-mode
-policy. The clock route additionally requires the curved 34-row witness,
-scalar null-cone control, and SDR transport. The curved witness is now
-imported and exactly replayed; Green realization and transport remain open. A
-principal-symbol factorization alone cannot pass.
+policy. The raw route additionally requires the pinned endpoint and rank-one
+wave-extension imports, scalar null-cone control, and SDR transport. Green
+realization and transport remain open. A principal-symbol factorization alone
+cannot pass.
 
 Even a successful metric export does not implicitly promote the full 26-row
 Green homotopy. Assembly with the already certified ghost and identity blocks
@@ -37,10 +40,13 @@ PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_mixed_order_green_contract_
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_mixed_order_green_contract.py -v
 ```
 
-The affected landed-curved-witness and metric-contract rails pass 19 tests
-(9 exact adapter/import tests in 61.55 seconds and 10 contract/schema/mutation
-tests in 0.58 seconds). The import and contract certificates reproduce from
-their content-addressed sources. Tier 0 and the affected Lorentzian Tier 1/2
-rails were run. The full classical chain and Tier 3 were not required because
-the pinned classical input is content-addressed and no causal or quantum
-lifecycle theorem is promoted.
+The certificate records the exact commands and elapsed time of the current
+scoped verification run. The full classical chain and Tier 3 are unnecessary
+unless the content-addressed classical input or a causal lifecycle theorem is
+promoted.
+
+The raw endpoint fast receipt and metric-contract tests are the smoke rails.
+The independent endpoint PBW replay completed in 84.59 seconds with
+`SCIENTIFIC REPLAY PASS`; it is a separate exhaustive rail, not a per-edit
+smoke test. The rank-one extension importer independently replays the exact
+13-row triangular reduction and fixed-incidence obstruction.

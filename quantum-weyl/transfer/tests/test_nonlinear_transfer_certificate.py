@@ -23,11 +23,11 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(
             certificate["result_state"],
-            "RETAINED_26_ROW_CLASSICAL_Q2_TRANSFERRED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_PENDING",
+            "CONDITIONAL_CAUSAL_D_CARTAN_AND_WAVE_EXTENSION_IMPORTED_GREEN_OPERATORS_PENDING",
         )
         self.assertEqual(
             certificate["dependency_tags"],
-            ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+            ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         )
         self.assertTrue(certificate["input_blockers"])
         self.assertTrue(
@@ -78,17 +78,13 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             for item in certificate["question_ledger"]
             if item["question_id"] == "D_quotient_interaction_stability"
         )
-        self.assertIn("ALL_INTEGER_WEIGHT_HOMOGENEOUS_NONZERO_SOURCE_CARTAN", d_question["status"])
-        self.assertIn("EXACT_NONZERO_PRIMITIVE", d_question["status"])
-        self.assertIn("FINITE_TRUNCATIONS_OBSTRUCTED", d_question["status"])
-        self.assertIn("54_ROW_LOCAL_D_IMPORTED", d_question["status"])
-        self.assertIn("SUPPORT_LOCAL_Q2_IMPORTED", d_question["status"])
-        self.assertIn("ALL_IDENTITIES_REPLAYED", d_question["status"])
         self.assertIn("BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED", d_question["status"])
-        self.assertIn("RESIDUAL_OR_CAUSAL_EXTENSION_REQUIRED", d_question["status"])
+        self.assertIn("CONDITIONAL_CAUSAL_UNARY_AND_RAW_ARITY_TWO_TRANSFER_THEOREM_IMPORTED", d_question["status"])
+        self.assertIn("RANK_ONE_WAVE_EXTENSION_IMPORTED", d_question["status"])
+        self.assertIn("GREEN_OPERATORS_REQUIRED", d_question["status"])
         self.assertEqual(
             d_question["next_certificate"],
-            "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION",
+            "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS",
         )
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
