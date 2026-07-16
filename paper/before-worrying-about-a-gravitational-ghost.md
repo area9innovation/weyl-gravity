@@ -6,150 +6,86 @@ Einstein's theory of relativity turns gravity into the geometry of spacetime.
 Matter and energy curve spacetime; that geometry tells matter, light and
 clocks how to move.
 
-This picture explains phenomena that are part of everyday science: clocks run
-at different rates in different gravitational fields, light bends and changes
-color, gravitational waves cross the universe, black holes form, and the
-universe expands.
+This picture explains familiar phenomena. Clocks run at different rates in
+different gravitational fields. Light bends and changes color. Gravitational
+waves cross the universe. Black holes form. The universe expands.
 
 Our project asks whether a different mathematical theory of spacetime—called
-conformal or pure-Weyl gravity—can support a physically coherent universe.
-The theory uses equations with four derivatives instead of Einstein's two.
-That makes it attractive in some approaches to quantum gravity, but it also
-produces extra solutions whose signs look wrong. These are commonly called
-gravitational ghosts.
+conformal or pure-Weyl gravity—can support a physically coherent universe. Its
+equations contain four derivatives instead of Einstein's two. That makes the
+theory interesting for quantum gravity, but it also produces extra solutions
+whose signs look wrong. These are commonly called gravitational ghosts.
 
-We do not begin by declaring those extra solutions physical or unphysical.
-We build the mathematical universe in layers and make each layer pass the
-standard tests physicists use for spacetime, causality, waves, clocks,
-interactions and quantum particles.
+We do not assume in advance that the extra solutions are physical, harmless
+or fatal. We build the mathematical universe in layers and make each layer
+pass the standard tests physicists use for spacetime, causality, waves,
+clocks, interactions and quantum particles.
 
-The basic principle is:
+The basic rule is:
 
 > A pattern in an equation is not yet a physical object. It must survive the
-> constraints, carry the appropriate physical pairing or charge, propagate
-> causally, and remain consistent when interactions and quantization are
-> included.
+> constraints, carry a measurable physical effect, propagate causally, and
+> remain consistent when interactions and quantum physics are included.
 
-## What does it mean to build a universe mathematically?
+## The universe in ordinary language
 
-A candidate theory of gravity needs much more than an elegant equation.
-Different familiar phenomena have different mathematical acceptance tests.
+The project has a mathematically complete classical starting universe for
+small disturbances before their full interactions are switched on.
 
-### Spacetime and curvature
+Space is finite but has no edge. At each moment it is a three-dimensional
+sphere, and that whole sphere evolves through time. This is a model of an
+entire universe, not a box cut out of a larger space.
 
-First, there must be an exact spacetime geometry that satisfies the field
-equations. Small disturbances around it must also satisfy a consistent set of
-linearized equations and constraints.
+The closest everyday analogy is the two-dimensional surface of the Earth. It
+has a finite area, but a traveler can keep moving without reaching an edge. A
+three-dimensional sphere is the same closed idea one dimension higher.
 
-This is the layer that gives meaning to distances, durations, light cones and
-curvature. Without it, phrases such as "light ray" or "gravitational wave"
-have no defined background on which to live.
+Stacking the successive spherical spaces through time produces what
+mathematicians call the conformal cylinder. The word *cylinder* describes the
+history of a closed universe. It does not mean that space is shaped like a
+pipe or that the universe sits inside one.
 
-### Cause and effect
+### The short version of what we have
 
-A causal theory does not allow an event in the future to change what already
-happened in the past. If a source is switched on tomorrow, a detector must not
-respond today. A disturbance introduced at one event may influence only the
-events inside its future light cone.
+- **Cause runs from past to future.** If a source is switched on tomorrow,
+  the tested classical equations do not let it change a detector today. This
+  has been checked for the complete gravitational system and for the version
+  containing the matter clock—not merely for one convenient equation.
+- **There are physical clocks.** Healthy matter fields provide an internal
+  reading that changes steadily. In a particular zero-total-charge version of
+  the closed universe, shifting the time label of the entire history can be a
+  redundant description even while the internal clock keeps changing. In the
+  unrestricted version, the same time shift carries a real charge and is a
+  physical symmetry.
+- **There are classical light and gravitational-wave directions.** In a
+  coupled gravity-and-electromagnetism universe, familiar electromagnetic and
+  gravitational wave patterns solve the linear equations and carry a nonzero
+  physical comparison rule. This establishes classical waves, not quantum
+  photons, quantum gravitons or a detector prediction.
+- **The apparent ghost is not automatically a particle.** In the selected
+  boundary-free, zero-charge universe, no isolated one-particle conformal
+  graviton survives after redundant descriptions are removed. Two collective
+  curvature patterns remain with a positive comparison rule. They describe
+  possible interactions or changes to the theory, not particles flying
+  through space.
+- **The first interaction test works in the clock universe.** The quadratic
+  interaction satisfies the required gauge and consistency identities. This
+  is the first nonlinear rung, not a proof that every higher interaction is
+  stable.
+- **Every statement has a computational receipt.** Exact symbolic programs
+  derive and check the large identities. Separate verifiers, broken-input
+  tests, content hashes and clean rebuilds record what was proved and prevent
+  a local calculation from being advertised as a quantum or cosmological
+  result.
 
-The mathematical test uses Green operators. The **retarded** operator gives
-the physical response after a source acts and vanishes outside the source's
-causal future. The **advanced** operator is the corresponding mathematical
-partner with support toward the past. Constructing it does not authorize
-backward-in-time signalling; physicists need both operators to test the field
-equations, build the causal commutator and compare the theory's pairings. The
-physical source-response rule is retarded.
+This is a real but incomplete mathematical universe. It has spacetime,
+classical causal propagation, clocks, classical electromagnetic and
+gravitational wave directions, and a first controlled interaction layer. It
+does not yet have a certified relational redshift, electrons, quantum
+particles, gravitational lensing, black-hole boundaries, a scattering
+experiment, or a dark-matter or dark-energy prediction.
 
-For a gauge theory such as gravity, it is not enough to find a Green operator
-for one convenient field component. The propagation must be compatible with
-the full system of fields, gauge transformations, equations, constraints and
-identities.
-
-The free pure-Weyl spherical universe passes this test on all 386 rows of its
-classical gauge complex. The clock-coupled Berger universe has a separate
-causal chain on all 54 gauge-fixed rows. In both cases the retarded response is
-confined to the causal future and the gauge constraints propagate with it.
-These are classical causality results; a global causal quantum state remains
-a separate requirement.
-
-### Light
-
-Classical light requires Maxwell's electromagnetic equations, a causal light
-cone and nontrivial electromagnetic wave solutions. Quantum particles of
-light require more: a quantum state space, a positive probability rule and a
-controlled definition of incoming and outgoing photons.
-
-The existence of a classical electromagnetic wave therefore does not by
-itself prove the existence of a healthy photon.
-
-### Gravitational waves
-
-A genuine gravitational wave must solve the linearized gravitational
-equations, survive coordinate and scale redundancies, carry a nondegenerate
-symplectic pairing, and propagate causally. To describe observations such as
-LIGO signals, the theory must eventually supply boundary conditions,
-waveforms, energy flux and interactions with detectors.
-
-### Clocks, time dilation and redshift
-
-Relativity compares physical clocks, not an abstract coordinate called
-"time." A clock field must evolve monotonically, have healthy kinetic energy
-and couple consistently to gravity.
-
-Gravitational redshift requires two such clocks, an emitted light signal and a
-received light signal. The prediction is the ratio of the measured
-frequencies. A curved metric and a clock field provide the ingredients, but a
-redshift theorem requires the complete relational observable connecting
-emitter, light ray and receiver.
-
-### Interactions and stability
-
-Free waves are only the beginning. The nonlinear equations must say how waves
-scatter and exchange energy. A sector that looks healthy at linear order may
-fail because interactions generate a forbidden mode, violate a constraint or
-create an obstruction at the next order.
-
-### Quantum particles
-
-Particles require the quantum theory. For gravity this includes a consistent
-quantum gauge identity, control of anomalies, suitable short-distance states,
-a physical inner product and, for scattering, a meaningful asymptotic region.
-
-These tests form our universe-building ladder. Passing one rung does not
-silently grant the rungs above it.
-
-## The boundary-free universe we study
-
-The cleanest complete setting models an entire closed universe at once rather
-than cutting out a region and giving it an artificial outer edge.
-
-At each moment, space is a three-dimensional sphere. It is finite but has no
-boundary. The closest everyday analogy is the two-dimensional surface of the
-Earth: it has a finite area, yet a traveler can keep moving without reaching
-an edge. A three-dimensional sphere is the same closed idea one dimension
-higher.
-
-Let that whole spherical universe evolve through time. Stacking its successive
-spatial spheres produces the spacetime mathematicians call the conformal
-cylinder. The word *cylinder* describes the history of a closed universe; it
-does not mean that the universe sits inside a pipe or has a cylindrical
-spatial shape.
-
-This gives an exact model of a complete universe without spatial boundary
-conditions. The gravitational field separates into a discrete collection of
-modes, and all fifteen conformal transformations fit into one geometric
-structure.
-
-Whether the observed universe has this global shape is an empirical question.
-For this project, the spherical universe is valuable because it exposes the
-complete constraint system without adding an exterior region where boundary
-charges can enter.
-
-That last point matters. A transformation can be gauge in one physical sector
-and carry a measurable charge in another. The words "time is gauge" are not a
-principle we assume; they are a statement that must be calculated.
-
-## What "gauge" means—and why it changes the ghost question
+## What "gauge" means
 
 Gauge is the physicists' word for redundancy in a description. It means that
 two different-looking sets of mathematical variables represent the same
@@ -159,272 +95,177 @@ The same place on Earth can be described using latitude and longitude, a
 street map or a rotated grid. The numbers change, but the place does not.
 Gravity has the same feature: stretching or relabeling the coordinate grid can
 change every component of the metric without changing the underlying
-spacetime. Conformal gravity has an additional gauge freedom that changes the
-local scale—the choice of ruler—while preserving the conformal geometry and
-its light cones.
+spacetime. Conformal gravity has an additional freedom that changes the local
+scale—the choice of ruler—while preserving the light cones.
 
-A gauge transformation is therefore not a new force, event or wave. Counting
-it as physical would count the same universe more than once. Removing gauge
-means identifying all descriptions that differ only by this redundancy.
+A gauge transformation is not a new force, event or wave. Counting it as
+physical would count the same universe more than once. Removing gauge means
+identifying all descriptions that differ only by this redundancy.
 
-There is an important distinction between a gauge transformation and a
+There is an important difference between a gauge transformation and a
 physical symmetry. They can look similar in the equations. A physical
 symmetry has a measurable generator or charge, such as energy or angular
-momentum. A proper gauge direction has zero generator on the declared
-physical phase space and changes no observable. The covariant phase-space
-calculation decides which case applies; the label is not chosen by taste.
+momentum. A proper gauge direction has zero generator in the declared
+physical setting and changes no observable. The calculation decides which
+case applies; the label is not chosen by taste.
 
-This also explains what it means to ask whether time translation is gauge. It
-does **not** mean that clocks stop, change is unreal or one event is identical
-to every other event. It asks whether shifting the coordinate label of the
-entire closed universe creates a new physical state, or only a new description
-of the same constrained history. Relational statements—what one field does
-when a physical clock reads a particular value—can remain nontrivial even when
-the total shift is gauge.
+Asking whether time translation is gauge does **not** mean that clocks stop,
+change is unreal or every moment is identical. It asks whether shifting the
+coordinate label of the entire closed universe creates a new physical state,
+or only a new description of the same constrained history. Relational
+statements—what one field does when a physical clock reads a particular
+value—can remain nontrivial even when the total shift is gauge.
 
-A raw list of solutions therefore overcounts physical possibilities.
+This distinction changes the ghost question. A raw extra solution can be a
+genuine physical direction, a redundant description, a mode removed by a
+constraint, or a boundary excitation. Its sign matters physically only after
+that classification is complete.
 
-BRST and BV theory provide a systematic accounting system. They place fields,
-gauge transformations, equations, constraints, identities and their dual
-partners into one mathematical complex. The calculation asks:
+## What causality means here
 
-- Does an object satisfy all gauge constraints?
-- Is it merely a gauge transformation of another object?
-- Does it carry a charge that prevents us from treating it as gauge?
-- Does it have a nonzero physical pairing after reduction?
+A causal theory does not allow an event in the future to change what already
+happened in the past. If a source is switched on tomorrow, a detector must not
+respond today. A disturbance may influence only events inside its future
+light cone.
 
-What survives is called cohomology. In ordinary language, it is the part of
-the theory that remains after every declared redundancy has been removed.
+The physical response used for this test is the **retarded** response: it
+starts at the source and propagates toward the future. Physicists also
+construct an **advanced** mathematical partner pointing toward the past. That
+partner is needed to test the equations and build physical comparison rules;
+it does not authorize backward-in-time signalling. The physical
+source-response rule is retarded.
 
-The bookkeeping variables used by BRST are also called ghosts. They are not
-the negative-energy particles associated with higher derivatives. One is a
-tool for tracking gauge symmetry; the other is a possible physical pathology.
+The complete free pure-Weyl calculation passes this classical causality test
+across all 386 linked parts of its gravitational bookkeeping system. The
+clock-coupled Berger universe has a separate causal result across all 54 parts
+of its gauge-fixed system. In both cases the retarded response is confined to
+the causal future and the constraints propagate with it.
 
-## The current closed-universe result
+These are classical causality results. A global quantum state with the
+required short-distance and causality properties is a separate rung.
 
-Free pure-Weyl gravity on the spherical universe has a complete classical
-causal BV--BFV description in the selected closed, zero-charge sector.
+## The universe-building map
 
-The full prolonged system contains 386 linked rows of fields, gauge data,
-equations, identities, curvature variables and auxiliary variables. Retarded
-and advanced chain homotopies exist on every row with causal support. Their
-pairing agrees with the covariant current pairing and with the pairing of the
-reduced state model.
+The table below is both a status summary and a public TODO list. A scoped pass
+means that the stated phenomenon exists in a precisely declared mathematical
+setting. It does not automatically extend to every background, interaction or
+quantum theory.
 
-Put plainly, if a classical source is introduced at some time, the retarded
-solution is zero before that source can causally reach it. The gravitational
-constraints do not create a hidden route by which the future changes the
-past.
+| Familiar feature | Where the project stands | Decisive next test |
+|---|---|---|
+| **Spacetime and curvature** | **Scoped pass.** Exact boundary-free spherical and Berger backgrounds solve their declared classical equations. | Extend causal control to broader globally hyperbolic backgrounds. |
+| **Causality** | **Scoped pass.** Retarded responses in the complete 386-part gravity system and 54-part clock system do not let future sources alter the past. | Construct the corresponding global quantum state and quantum causality theorem. |
+| **Clocks and time dilation** | **Partial.** A healthy matter clock changes internally while total time shift can remain gauge in the fixed-coupling, linear, zero-charge sector. | Compare two physical clocks and calculate an observable time-dilation law. |
+| **Gravitational redshift** | **Open, with ingredients present.** The model has curvature, causal propagation, light-like paths and a matter clock. | Connect emitter, light signal and receiver into one gauge-invariant frequency ratio. |
+| **Classical light** | **Partial.** Standard electromagnetic wave directions occur in the compact Einstein--Maxwell inclusion. | Build physical sources, detectors, energy flux and boundary conditions. |
+| **Electrons and charged matter** | **Open.** No certified charged spin-one-half matter sector exists in the current universe. | Add a Dirac field, a physical mass/scale mechanism, causal propagation and stable interactions. |
+| **Gravitational waves** | **Partial.** Standard linear gravitational wave directions occur with a nonzero physical pairing, and the pure-gravity complex propagates causally. | Produce asymptotically measurable waveforms, energy flux and detector response while controlling the extra branch. |
+| **Gravitational lensing** | **Open, with geometric ingredients present.** Curved spacetime and light cones exist, but no certified lensing observable does. | Add a localized lens, propagate light around it and compare observable angles and arrival times. |
+| **Quantum particles** | **Open.** Classical waves are not yet photons, gravitons or electrons; the surviving curvature classes are not particles. | Construct a global quantum state, physical positive pairing and incoming/outgoing particle interpretation. |
+| **Interactions** | **Partial.** The complete quadratic clock-coupled interaction passes its declared cyclic and gauge tests. | Pass cubic and higher identities, resonant channels and global nonlinear evolution. |
+| **Black holes** | **Open in this certified pipeline.** No horizon phase space, boundary charge or stability theorem has been imported into the universe. | Select a black-hole background and certify its horizons, causal perturbations, charges, entropy and stability. |
+| **Quantum gravity** | **Early groundwork only.** Candidate anomaly types and local short-distance wave structure are partly classified; there is no restored quantum master equation. | Compute anomaly coefficients, restore or obstruct the quantum gauge identity, and construct the global quantum theory. |
+| **Cosmology, dark matter and dark energy** | **Open.** The current work establishes consistency machinery, not a fitted cosmological model. | Build stable cosmological and galaxy backgrounds, derive observables, then compare them with data. |
 
-This means that the residual calculation is not detached algebra. It is
-connected to the actual metric field, its equations and its causal
-propagation.
+## If the universe differs from standard physics
 
-The time-translation question has a sector-dependent answer:
+Agreement with Einstein gravity and ordinary quantum field theory is one
+possible result. It would show that the new mathematical framework can recover
+known physics while organizing its gauge and causal structure differently.
 
-- On the unrestricted compact phase space, translation along the universe's
-  time direction carries a nonzero charge. It is a physical symmetry there.
-- On the full Taub or moment-map zero sector used by the closed-universe
-  quotient, that charge vanishes and time translation acts as gauge.
+A controlled difference could be new physics. An extra wave, charge,
+interaction or cosmological effect would be interesting only if it passes the
+same causality, stability, gauge and quantum tests as the familiar phenomena.
 
-When all fifteen residual conformal transformations are imposed as
-constraints in that zero-charge sector, no individual one-particle
-conformal-graviton class survives. The calculation does not turn a
-negative-sign graviton into a positive-sign graviton. The entire one-particle
-sector is absent from this particular residual cohomology.
+A difference can also be a no-go result. The calculation may show that a
+clock cannot remain healthy, a mode has an unavoidable negative physical
+direction, an interaction cannot preserve the constraints, a black-hole
+boundary condition is inconsistent, or a quantum anomaly cannot be removed.
 
-The first surviving objects are two composites made from pairs of Weyl
-curvatures, one for each chirality or handedness. Their combinations correspond
-to the square of the Weyl curvature and the Pontryagin density. Their
-normalized pairing is the two-dimensional identity matrix.
+Sector dependence is another possible outcome. The theory may work on a
+closed zero-charge universe but fail when time translation carries energy at
+an outer boundary. That is not a contradiction; it is a statement that the
+physical theory requires a selection rule and does not describe every
+possible universe in the same way.
 
-These are positive-paired deformation or vertex classes. They are possible
-directions in the space of actions, interactions or observables. They are not
-two graviton particles flying through space.
+The project can therefore stop at any rung. If it stops because an exact
+obstruction is found, that obstruction is still valuable physics. It tells us
+which attractive idea cannot describe nature, under which assumptions, and
+what a successful theory would have to change. If it continues, every passed
+rung narrows the space of viable alternatives and makes a possible new
+prediction more credible.
 
-The result is therefore precise but sector-specific:
+Success and failure are both scientific outcomes:
 
-> In the selected boundary-free, zero-charge universe, the physical object
-> produced by the complete free residual reduction is not a one-graviton
-> state space. It is a two-dimensional space of curvature-square deformation
-> classes.
-
-It does not follow that time translation is gauge in a universe with an
-external boundary, an asymptotic region or a retained Hamiltonian charge.
-
-## Clocks and the meaning of time
-
-A useful universe must contain physical reference systems. The clock model
-uses a Berger version of the spherical universe, in which the spatial
-three-sphere is smoothly squashed rather than perfectly round. Two
-standard-sign rotating scalar fields support the geometry and provide a
-monotone internal phase.
-
-The clock has genuine matter momentum and healthy classical signs. At fixed
-couplings and linear order, the full constraint equations force the variation
-of the total time-translation charge to vanish. Thus nontrivial internal clock
-motion can coexist with total time translation acting as gauge in this
-declared sector.
-
-The complete 54-row gauge-fixed clock system also has retarded and advanced
-classical Green homotopies with the correct causal support. The clock and
-gauge bookkeeping therefore propagate consistently without permitting a
-retarded response before its source.
-
-This is the mathematical ingredient needed for relational time, but it is not
-yet a redshift calculation. A certified redshift requires an explicit
-observable of the form "the received light frequency when the receiver's
-clock reads this value," together with the emitter, the light path and both
-clock responses.
-
-## Light and gravitational waves
-
-The programme contains two related but distinct wave results.
-
-On the pure-Weyl spherical universe, the full free gravitational gauge complex
-has causal propagation. This establishes a consistent classical response
-problem for the complete constrained field theory.
-
-On a compact Einstein--Maxwell product universe, the familiar standard
-electromagnetic and gravitational harmonic modes occur inside the larger
-Weyl--Maxwell solution space. The complete standard Einstein--Maxwell linear
-tangent injects into the Weyl--Maxwell theory before the final global
-quotient, and its induced symplectic pairing is nondegenerate.
-
-This is a real classical light-and-gravitational-wave result. It says that the
-larger theory contains the conventional linear wave directions rather than
-discarding ordinary gravitational physics altogether.
-
-It is not yet a particle or detector theorem. The Weyl--Maxwell pairing is not
-simply identical to the Einstein--Maxwell pairing; its radiative blocks are
-relatively indefinite. The additional fourth-order wave branch is being
-classified, and asymptotically flat radiation, Bondi energy and scattering
-remain separate tests.
-
-There is no contradiction between the presence of these classical wave modes
-and the absence of one-particle classes in the selected pure-Weyl residual
-cohomology. They are different backgrounds, matter contents, charge sectors
-and quotients. The project records those choices explicitly so that results
-from one setting are not silently promoted to another.
-
-## Interactions: does the construction remain a universe?
-
-The clock-coupled Berger calculation includes the complete quadratic
-interaction operation. After exact transfer it contains 54,236 canonical
-nonzero coefficients. Its cyclicity identities pass, and the corresponding
-time-translation Cartan contraction exists through arity two on the complete
-54-row classical complex.
-
-In ordinary language, the gauge interpretation of total time translation
-survives the first nonlinear consistency test in this sector.
-
-That is not full nonlinear stability. Cubic and higher identities, the first
-physical resonant channels, global evolution and the quantum theory remain
-independent gates. Other higher-derivative models in the programme exhibit
-explicit interaction obstructions, so no free positive structure is assumed
-to survive merely because it works at linear order.
-
-The Einstein--Maxwell sector supplies the complementary warning. Standard
-linear photon and gravitational directions exist, but explicit compact
-fixed-charge modes can encounter second-order Taub obstructions. Linear
-inclusion does not automatically imply nonlinear closure.
+- **recovery** shows that known physics is contained;
+- **new physics** is a difference that survives all required tests;
+- **sector selection** identifies the conditions under which the theory
+  works;
+- **a scoped no-go** rules out a complete family of proposed constructions;
+- **a decisive obstruction** marks the rung where this candidate universe
+  ends.
 
 ## The code is a symbolic physics laboratory
 
-The calculations are too large and too sign-sensitive to manage reliably as
-hand algebra alone. We use code to perform exact symbolic derivations while
-keeping the mathematical and physical assumptions visible.
+The calculations are too large and too sensitive to signs and conventions to
+manage reliably as hand algebra alone. We use code to perform exact symbolic
+derivations while keeping the physical assumptions visible.
 
-The code does not replace the theory with a numerical simulation. It derives
-and checks algebraic consequences of the equations:
+This is not a numerical simulation of a universe. The programs derive and
+check algebraic consequences of the equations. They generate differential
+operators from the action, expand large interactions coefficient by
+coefficient, and compute ranks, constraints, pairings, signs and obstructions
+using exact rational or algebraic arithmetic.
 
-- differential operators are generated from the action and frozen
-  conventions;
-- tensor, BRST, BV and homological identities are reduced using exact rational
-  or algebraic arithmetic;
-- large transferred interactions are expanded coefficient by coefficient;
-- ranks, kernels, pairings, cyclic signs and obstruction classes are computed
-  exactly rather than estimated with floating-point tolerances;
-- causal and support claims are separated from purely local or mode-based
-  identities.
+The scale is substantial. The free causal gravity model links 386 rows of
+fields, equations and gauge data. The clock-coupled interaction uses a
+54-part system and contains 54,236 canonical nonzero coefficients after exact
+simplification.
 
-Every material claim carries a reproducibility and accountability trail:
+Every material claim carries an accountability trail:
 
-1. **Declared scope.** The theory, background, generator, phase space,
-   boundary conditions and lifecycle level are named.
-2. **Machine-readable certificate.** Inputs, assumptions, hashes, outputs and
-   unresolved fields are recorded.
-3. **Independent verifier.** A separate program replays the decisive identity
-   instead of trusting the generating script.
-4. **Failure guards.** Deliberately broken inputs must fail, preventing a
-   verifier from passing vacuously.
-5. **Dependency tags.** A local algebra calculation cannot be presented as a
-   Lorentzian causal or quantum theorem.
-6. **Clean reproduction audit.** Publication artifacts are rebuilt from a
-   clean archived commit and compared with their recorded hashes.
-7. **Negative-result ledger.** Failed ansatzes and scoped no-go theorems remain
-   visible instead of disappearing when a different route succeeds.
+1. The theory, background, charge sector, boundary conditions and claim level
+   are declared.
+2. A machine-readable certificate records inputs, assumptions, hashes,
+   outputs and unresolved fields.
+3. An independent verifier replays the decisive identity instead of trusting
+   the program that generated it.
+4. Deliberately broken inputs must fail, preventing a verifier from passing
+   without actually checking the mathematics.
+5. Local algebra, causal physics and quantum claims receive different labels
+   and cannot be silently exchanged.
+6. Publication files are rebuilt from a clean archived commit and compared
+   with recorded hashes.
+7. Failed approaches and no-go results remain in the ledger instead of
+   disappearing when another route succeeds.
 
-This makes the repository closer to a symbolic experimental laboratory than
-to a conventional collection of informal calculations. A result can be
-inspected at three levels: the physical statement, the mathematical identity
-and the exact computational receipt.
+The repository therefore functions like a symbolic experimental laboratory.
+A result can be inspected at three levels: the physical statement, the
+mathematical identity and the exact computational receipt.
 
-The code still does not prove assumptions that were never encoded. Analytic
+The code cannot prove assumptions that were never encoded. Analytic
 existence, global boundary conditions and quantum interpretation must each
-receive their own certificates. The system is designed to fail closed when a
-required layer is missing.
+pass their own tests. The system is designed to fail closed when a required
+layer is missing.
 
-## A current map of the universe
+## Where the technical continuation lives
 
-The certified construction contains:
+This article is the general-audience front door. The specialist continuation
+is maintained separately so that this explanation does not gradually turn
+into a technical paper.
 
-- exact curved spacetime backgrounds without spatial boundaries;
-- a complete free causal gauge complex for pure-Weyl gravity on the spherical
-  universe;
-- retarded classical propagation in which a future source cannot alter the
-  past, both for the 386-row pure-Weyl complex and the 54-row Berger clock
-  complex;
-- an exact distinction between charged time translation and the zero-charge
-  sector where it is gauge;
-- two positive-paired residual curvature-square deformation classes;
-- a healthy classical matter clock in a fixed-coupling linear Berger sector;
-- conventional linear electromagnetic and gravitational wave directions in
-  the compact Einstein--Maxwell inclusion;
-- a quadratic clock-coupled interaction operation satisfying the declared
-  cyclic and Cartan identities.
+The [physicist executive summary](../notes/physicist-executive-summary.md)
+gives the claim-by-claim result spine, audience-specific connections,
+lifecycle labels and direct links to the papers and certificates. A
+[PDF version](../notes/physicist-executive-summary.pdf) is available as a
+short technical briefing.
 
-The certified construction does not yet contain:
-
-- an explicit relational gravitational-redshift observable;
-- a general theorem on arbitrary globally hyperbolic spacetimes;
-- an asymptotically flat Bach phase space with Bondi or ADM charges;
-- a complete classification and positive interpretation of the extra
-  fourth-order radiative branch;
-- black-hole horizons and their physical boundary conditions;
-- full nonlinear gravitational evolution;
-- a global Hadamard quantum state or a theorem of quantum microcausality;
-- a restored quantum master equation and anomaly-free quantum theory;
-- a positive graviton or photon Fock space;
-- a scattering matrix, dark-matter prediction or dark-energy cosmology.
-
-Those are not decorations to be asserted at the end. Each is a rung with a
-recognized mathematical test.
-
-## The question the project is designed to answer
-
-The higher-derivative ghost problem is not one yes-or-no calculation. Its
-answer can change when the background, boundary conditions, charge sector,
-interactions or quantum theory change.
-
-The central question is:
+The central research question is:
 
 > Is the apparent extra gravitational branch a physical instability, a gauge
 > direction, a constrained sector, a boundary excitation or a quantum
 > anomaly—and which answer applies in each mathematically complete universe?
 
 The project builds enough of each universe to make that question testable.
-Success means a coherent ladder from spacetime to causal waves, clocks,
-interactions and particles. Failure means an exact obstruction with a stated
-scope and a reproducible certificate. Either result teaches us where a
-candidate theory of gravity can, or cannot, describe the universe we know.
+Passing a rung expands the universe. Failing a rung produces an exact,
+reproducible boundary on what the theory can describe.
