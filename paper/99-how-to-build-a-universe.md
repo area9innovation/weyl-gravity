@@ -96,9 +96,10 @@ classical causal propagation, clocks, classical electromagnetic and
 gravitational wave directions, two classified extra fourth-order directions
 in a separate compact gravity-and-electromagnetism setting, and a first
 controlled interaction layer. It does not yet have a certified relational
-redshift with localized endpoints, electrons, quantum particles,
-gravitational lensing, black-hole boundaries, a scattering experiment, or a
-dark-matter or dark-energy prediction.
+redshift with localized endpoints, a physical mass-generation mechanism,
+electrons, non-Abelian gauge fields, quantum particles, a unified
+gauge--matter sector, gravitational lensing, black-hole boundaries, a
+scattering experiment, or a dark-matter or dark-energy prediction.
 
 The map below shows how these pieces depend on one another. Green boxes are
 foundations that have passed their stated mathematical tests, amber boxes are
@@ -210,6 +211,34 @@ electromagnetism and gravity, and a physical mechanism that supplies a mass
 scale in a conformal theory. A classical spinor field is still not a quantum
 electron until the particle tests pass.
 
+### Physical mass and rest energy
+
+Pure conformal gravity has no built-in mass scale. The open task is therefore
+not to invent \(E=mc^2\), which already follows from relativistic symmetry.
+It is to construct a physical mass-generation mechanism and stable massive
+excitations. Once such an excitation has a Lorentz-invariant relation
+
+\[
+E^2=p^2c^2+m^2c^4,
+\]
+
+the rest-energy formula \(E=mc^2\) follows at \(p=0\). In the present closed
+universe this must eventually be stated through local inertial observables or
+an asymptotically flat sector with physical energy and momentum.
+
+### A unified gauge--matter sector
+
+A Grand Unified Theory, or GUT, normally combines the strong, weak and
+electromagnetic interactions in one gauge structure. It does not by itself
+include gravity. For this project the honest long-range target is therefore
+pure-Weyl gravity coupled to a unified gauge--matter candidate.
+
+That requires non-Abelian Yang--Mills fields, chiral fermions with the right
+charges, cancellation of gauge and mixed anomalies, a symmetry-breaking and
+mass-generation mechanism, quantum particle states, and recovery of the
+known low-energy interactions. Choosing a large gauge group alone would be a
+candidate ansatz, not a completed GUT.
+
 ### Gravitational waves
 
 A gravitational wave must solve the linearized gravitational equations,
@@ -286,7 +315,10 @@ quantum theory.
 | **Clocks and time dilation** | **Partial.** A healthy matter clock changes internally while total time shift can remain gauge in the fixed-coupling, linear, zero-charge sector. | Compare two physical clocks and calculate an observable time-dilation law. |
 | **Gravitational redshift** | **Scoped partial pass.** A positive-energy dynamical Maxwell mode and invariant compact spatially averaged relational frequency ratio are certified; one exact fixture gives \(1+z=2\). | Localize emitter and receiver, construct a compact retarded pulse, include gravity--Maxwell interaction dressing and backreaction, then test phenomenology. |
 | **Classical light** | **Partial.** Standard electromagnetic wave directions occur in the compact Einstein--Maxwell inclusion. | Build physical sources, detectors, energy flux and boundary conditions. |
+| **Physical mass scale and massive matter** | **Open.** The conformal theory has no certified mass-generation mechanism or stable massive excitation. \(E=mc^2\) is a later relativistic consistency check, not the missing mechanism. | Generate a physical scale, construct a stable massive mode, and verify its causal dynamics and relativistic mass shell. |
 | **Electrons and charged matter** | **Open.** No certified charged spin-one-half matter sector exists in the current universe. | Add a Dirac field, a physical mass/scale mechanism, causal propagation and stable interactions. |
+| **Non-Abelian gauge fields and chiral matter** | **Open.** The certified matter content does not yet contain a Yang--Mills gauge group or chiral fermion spectrum resembling the strong and weak interactions. | Build the causal BV complex, physical pairing and stable interactions for a non-Abelian gauge group and chiral representations. |
+| **Unified gauge--matter sector (GUT candidate)** | **Open, long-range target.** No unified group, anomaly-free matter representation, breaking mechanism or low-energy recovery theorem has been selected. This would initially be a GUT coupled to Weyl gravity, not a theory unifying gravity itself. | Find a viable group and chiral matter sector, cancel all relevant anomalies, generate and break the physical scale, and recover Standard Model particles and interactions. |
 | **Gravitational waves** | **Partial.** Standard linear gravitational wave directions occur with a nonzero physical pairing, and the pure-gravity complex propagates causally. In a separate compact axial family, two extra fourth-order directions survive the reduced equation and local-pairing tests. | Match the extra directions to the direct four-dimensional physical current, impose causal boundary conditions, and produce measurable waveforms, flux and detector response. |
 | **Gravitational lensing** | **Open, with geometric ingredients present.** Curved spacetime and light cones exist, but no certified lensing observable does. | Add a localized lens, propagate light around it and compare observable angles and arrival times. |
 | **Quantum particles** | **Open.** Classical waves are not yet photons, gravitons or electrons; the surviving curvature classes are not particles. | Construct a global quantum state, physical positive pairing and incoming/outgoing particle interpretation. |

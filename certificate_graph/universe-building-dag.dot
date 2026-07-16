@@ -17,15 +17,17 @@ digraph UniverseBuilding {
   "hadamard" [shape=box, label="Hadamard quantum state\nlocal singularity\ncontrolled; global state\nopen", fillcolor="#fff0bf", color="#9a6a00", tooltip="Hadamard quantum state\nlocal singularity\ncontrolled; global state\nopen"];
   "anomalies" [shape=box, label="Quantum anomaly and QME\ncandidate classes known;\nrestoration open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Quantum anomaly and QME\ncandidate classes known;\nrestoration open"];
   "lensing" [shape=box, label="Gravitational lensing\nlocalized observable not yet\nbuilt", fillcolor="#eceff3", color="#667085", tooltip="Gravitational lensing\nlocalized observable not yet\nbuilt"];
-  "mass" [shape=box, label="Massive matter and\nE=mc^2\nphysical mass scale not yet\nbuilt", fillcolor="#eceff3", color="#667085", tooltip="Massive matter and\nE=mc^2\nphysical mass scale not yet\nbuilt"];
+  "mass" [shape=box, label="Physical mass scale and\nmassive matter\nmass generation and stable\nmassive excitations open", fillcolor="#eceff3", color="#667085", tooltip="Physical mass scale and\nmassive matter\nmass generation and stable\nmassive excitations open"];
+  "nonabelian_matter" [shape=box, label="Non-Abelian gauge fields\nand chiral matter\nYang--Mills groups and\nfermion spectrum open", fillcolor="#eceff3", color="#667085", tooltip="Non-Abelian gauge fields\nand chiral matter\nYang--Mills groups and\nfermion spectrum open"];
   "particles" [shape=box, label="Quantum particles\nphysical state and\nscattering interpretation\nopen", fillcolor="#eceff3", color="#667085", tooltip="Quantum particles\nphysical state and\nscattering interpretation\nopen"];
   "black_holes" [shape=box, label="Black holes\nhorizon phase space and\nstability open", fillcolor="#eceff3", color="#667085", tooltip="Black holes\nhorizon phase space and\nstability open"];
+  "gut" [shape=box, label="Unified gauge--matter\nsector\nGUT candidate: group,\nanomalies, breaking and\nrecovery open", fillcolor="#eceff3", color="#667085", tooltip="Unified gauge--matter\nsector\nGUT candidate: group,\nanomalies, breaking and\nrecovery open"];
   "cosmology" [shape=box, label="Cosmology and dark\nsector\nstable observable model not\nyet built", fillcolor="#eceff3", color="#667085", tooltip="Cosmology and dark\nsector\nstable observable model not\nyet built"];
   { rank=same; "causality"; "residual"; "clock"; }
   { rank=same; "interactions"; "light"; "gravity_waves"; }
   { rank=same; "redshift"; "detector"; "lensing"; }
   { rank=same; "hadamard"; "anomalies"; }
-  { rank=same; "mass"; "particles"; "black_holes"; }
+  { rank=same; "mass"; "nonabelian_matter"; "particles"; "black_holes"; }
   "gauge_complex" -> "causality" [tooltip="constrains propagation"];
   "gauge_complex" -> "residual" [tooltip="identifies redundancy"];
   "gauge_complex" -> "clock" [tooltip="couples matter"];
@@ -48,10 +50,18 @@ digraph UniverseBuilding {
   "clock" -> "mass" [tooltip="can supply a scale"];
   "interactions" -> "mass" [tooltip="stabilizes matter"];
   "mass" -> "particles" [tooltip="creates rest excitations"];
+  "gauge_complex" -> "nonabelian_matter" [tooltip="defines gauge structure"];
+  "interactions" -> "nonabelian_matter" [tooltip="couples gauge and matter fields"];
+  "nonabelian_matter" -> "particles" [tooltip="supplies charged species"];
+  "nonabelian_matter" -> "gut" [tooltip="supplies group and representations"];
+  "mass" -> "gut" [tooltip="supplies symmetry-breaking scale"];
+  "anomalies" -> "gut" [tooltip="tests quantum consistency"];
+  "particles" -> "gut" [tooltip="tests physical spectrum"];
   "gravity_waves" -> "black_holes" [tooltip="tests perturbations"];
   "causality" -> "black_holes" [tooltip="defines horizons"];
   "redshift" -> "cosmology" [tooltip="builds observations"];
   "lensing" -> "cosmology" [tooltip="maps matter"];
   "mass" -> "cosmology" [tooltip="supplies matter"];
+  "gut" -> "cosmology" [tooltip="supplies unified matter model"];
   "black_holes" -> "cosmology" [tooltip="tests strong gravity"];
 }

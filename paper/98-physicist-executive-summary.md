@@ -147,6 +147,24 @@ compute the actual type-A and type-B coefficients by two independent methods,
 restore or obstruct the QME, and only then ask whether the \(D\)-Cartan
 identity transfers quantum mechanically.
 
+### Matter content, scale generation, and unification
+
+The programme does not yet contain a Grand Unified Theory. A GUT would unify
+the strong, weak, and electromagnetic gauge sectors; it would not by itself
+quantize or unify gravity. The relevant long-range target here is an
+anomaly-free unified gauge--matter sector consistently coupled to pure-Weyl
+gravity.
+
+The first credible bridge result would be smaller: construct a non-Abelian
+Yang--Mills/chiral-fermion BV complex, classify gauge, mixed gauge--gravity,
+and Weyl anomalies, and determine whether their cancellation selects matter
+representations. A GUT candidate additionally requires a conformal
+mass-generation and symmetry-breaking mechanism, a physical particle
+spectrum, running couplings, and low-energy recovery. Likewise, \(E=mc^2\)
+is not an independent construction target; it follows at rest from a
+Lorentz-invariant mass shell once a stable physical mass scale and massive
+excitation exist.
+
 ### Lorentzian PDE and Green-hyperbolic complexes
 
 The free pure-Weyl metric Hessian does not become a scalar normally
@@ -169,6 +187,15 @@ obstruction: convergence in finite-slab Sobolev energy norms does not imply
 that the kernel compositions are defined in the Hörmander sense or that their
 wavefront cones are uniformly controlled. Thus the formal transported kernel
 is fixed, while the companion Hadamard claim remains fail-closed.
+
+The newest contraction theorem sharpens the remaining work: a valid
+covariance on the retained 26-row complex would lift canonically to all 54
+rows without new wavefront directions or an independent state on the 28
+contractible rows. The stationary-pencil preflight has now converted the
+retained equations into an exact rank-52 second-order hybrid companion and a
+rank-104 first-order Cauchy target. The next gate is a closed realization of
+that generator with an isolated zero spectral sector; no Riesz projector,
+covariance, or Hadamard state has yet been constructed.
 
 ### Conformal geometry, tractors, BGG, and detour complexes
 

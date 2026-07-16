@@ -131,8 +131,16 @@
     {
       "id": "mass",
       "tier": "future_physics",
-      "label": "Massive matter and E=mc^2",
-      "detail": "physical mass scale not yet built",
+      "label": "Physical mass scale and massive matter",
+      "detail": "mass generation and stable massive excitations open",
+      "status": "open",
+      "evidence": []
+    },
+    {
+      "id": "nonabelian_matter",
+      "tier": "future_physics",
+      "label": "Non-Abelian gauge fields and chiral matter",
+      "detail": "Yang--Mills groups and fermion spectrum open",
       "status": "open",
       "evidence": []
     },
@@ -149,6 +157,14 @@
       "tier": "future_physics",
       "label": "Black holes",
       "detail": "horizon phase space and stability open",
+      "status": "open",
+      "evidence": []
+    },
+    {
+      "id": "gut",
+      "tier": "unification",
+      "label": "Unified gauge--matter sector",
+      "detail": "GUT candidate: group, anomalies, breaking and recovery open",
       "status": "open",
       "evidence": []
     },
@@ -184,11 +200,19 @@
     {"from": "clock", "to": "mass", "label": "can supply a scale"},
     {"from": "interactions", "to": "mass", "label": "stabilizes matter"},
     {"from": "mass", "to": "particles", "label": "creates rest excitations"},
+    {"from": "gauge_complex", "to": "nonabelian_matter", "label": "defines gauge structure"},
+    {"from": "interactions", "to": "nonabelian_matter", "label": "couples gauge and matter fields"},
+    {"from": "nonabelian_matter", "to": "particles", "label": "supplies charged species"},
+    {"from": "nonabelian_matter", "to": "gut", "label": "supplies group and representations"},
+    {"from": "mass", "to": "gut", "label": "supplies symmetry-breaking scale"},
+    {"from": "anomalies", "to": "gut", "label": "tests quantum consistency"},
+    {"from": "particles", "to": "gut", "label": "tests physical spectrum"},
     {"from": "gravity_waves", "to": "black_holes", "label": "tests perturbations"},
     {"from": "causality", "to": "black_holes", "label": "defines horizons"},
     {"from": "redshift", "to": "cosmology", "label": "builds observations"},
     {"from": "lensing", "to": "cosmology", "label": "maps matter"},
     {"from": "mass", "to": "cosmology", "label": "supplies matter"},
+    {"from": "gut", "to": "cosmology", "label": "supplies unified matter model"},
     {"from": "black_holes", "to": "cosmology", "label": "tests strong gravity"}
   ]
 }
