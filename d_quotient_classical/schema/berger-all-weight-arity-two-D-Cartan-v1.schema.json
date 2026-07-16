@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-all-weight-arity-two-D-Cartan-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "all_weight_complex", "coefficients", "linear_Cartan_homotopy", "arity_two_Cartan_source", "arity_two_Cartan_homotopy", "exact_checks", "flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-all-weight-arity-two-D-Cartan-v1"},
+    "result_id": {"const": "BERGER_ALL_WEIGHT_ARITY_TWO_D_CARTAN"},
+    "setting_id": {"const": "compact_positive_berger_clock_rational_fixture_all_homogeneous_D_weights"},
+    "claim_status": {"const": "CERTIFIED_REDUCED_MODE_NONZERO_WEIGHT_CARTAN_CONTRACTION"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object"},
+    "all_weight_complex": {"type": "object"},
+    "coefficients": {"type": "object"},
+    "linear_Cartan_homotopy": {
+      "type": "object",
+      "required": ["formula", "differential_order_in_time", "support_local_in_time"],
+      "properties": {
+        "formula": {"type": "string", "minLength": 1},
+        "differential_order_in_time": {"const": 1},
+        "support_local_in_time": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "arity_two_Cartan_source": {
+      "type": "object",
+      "required": ["formula_on_fields", "nonzero_for_generic_nonzero_weights"],
+      "properties": {
+        "formula_on_fields": {"type": "string", "minLength": 1},
+        "nonzero_for_generic_nonzero_weights": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "arity_two_Cartan_homotopy": {"type": "object"},
+    "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["BERGER_ALL_WEIGHT_HOMOGENEOUS_Q2_D_CLOSED", "BERGER_ALL_WEIGHT_ARITY_TWO_D_CARTAN", "NONZERO_WEIGHT_D_CARTAN_TESTED", "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION", "FULL_4D_SUPPORT_LOCAL_Q2", "COMPLETE_54_ROW_ARITY_TWO_D_CARTAN", "ND2_PHYSICAL_EXECUTION_AUTHORIZED"],
+      "properties": {
+        "BERGER_ALL_WEIGHT_HOMOGENEOUS_Q2_D_CLOSED": {"const": true},
+        "BERGER_ALL_WEIGHT_ARITY_TWO_D_CARTAN": {"const": true},
+        "NONZERO_WEIGHT_D_CARTAN_TESTED": {"const": true},
+        "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION": {"const": false},
+        "FULL_4D_SUPPORT_LOCAL_Q2": {"const": false},
+        "COMPLETE_54_ROW_ARITY_TWO_D_CARTAN": {"const": false},
+        "ND2_PHYSICAL_EXECUTION_AUTHORIZED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "FULL_4D_SUPPORT_LOCAL_Q2_AND_COMPLETE_54_ROW_CARTAN"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

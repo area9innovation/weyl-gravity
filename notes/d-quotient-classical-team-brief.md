@@ -317,6 +317,16 @@ witness \((80/27,0,0)\). This rules out finite nonzero-weight truncations; it
 does not rule out the infinite all-weight complex and is not a Cartan
 cohomology obstruction.
 
+The infinite all-weight homogeneous complex now closes the corresponding
+positive gate. Retaining every \(k\in\mathbb Z\) makes q2 a weight-convolution
+operation. The linear homotopy \(\iota_D^{(1)}E_k=kH^{-1}E_k\) has a
+generically nonzero arity-two Cartan source, and an explicit first-order,
+graded-cyclic \(\iota_D^{(2)}\) contracts it exactly. Thus nonzero weights have
+now genuinely been tested: finite cyclic truncations fail, while the infinite
+homogeneous lattice admits the arity-two contraction. This remains
+`REDUCED-MODE`; extending the formulas to the full four-dimensional 54-row
+complex is the next gate.
+
 Begin with a conformally coupled scalar \(T\).  Define a domain on which it is a
 valid clock and construct complete observables
 

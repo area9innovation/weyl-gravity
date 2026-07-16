@@ -100,6 +100,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_NONZERO_D_WEIGHT_FINITE_BLOCK_NO_GO.json`](certificates/BERGER_NONZERO_D_WEIGHT_FINITE_BLOCK_NO_GO.json)
 - Nonzero-weight no-go report:
   [`reports/berger-nonzero-D-weight-finite-block-no-go.md`](reports/berger-nonzero-D-weight-finite-block-no-go.md)
+- All-weight homogeneous arity-two D-Cartan contraction:
+  [`certificates/BERGER_ALL_WEIGHT_ARITY_TWO_D_CARTAN.json`](certificates/BERGER_ALL_WEIGHT_ARITY_TWO_D_CARTAN.json)
+- All-weight Cartan report:
+  [`reports/berger-all-weight-arity-two-D-Cartan.md`](reports/berger-all-weight-arity-two-D-Cartan.md)
 
 The only scientific verdicts are:
 
@@ -166,6 +170,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_rat
 python3 d_quotient_classical/backreacted_clock/berger_nonzero_weight_finite_block_no_go.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_nonzero_weight_finite_block_no_go.py
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_nonzero_weight_finite_block_no_go
+python3 d_quotient_classical/backreacted_clock/berger_all_weight_arity_two_d_cartan.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_all_weight_arity_two_d_cartan.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_all_weight_arity_two_d_cartan
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -271,6 +278,23 @@ nondegeneracy and q2 closure force the unbounded weight sequence
 \((80/27,0,0)\). This is a finite-mode closure obstruction, not a Cartan
 cohomology obstruction. The next honest target is the infinite all-weight
 completion or the full support-local complex.
+
+The infinite homogeneous weight lattice supplies the positive counterpart.
+With all \(k\in\mathbb Z\) retained, q2 closes by convolution and the local
+linear homotopy \(\iota_D^{(1)}E_k=kH^{-1}E_k\) produces a generically
+nonzero arity-two Cartan source. The explicit first-order correction
+
+\[
+\iota_D^{(2)}(E_k,x_l)
+=-\frac{2k+l}{3}H^{-1}C(H^{-1}E,x)_{k+l},
+\]
+
+together with its equation--equation component, kills that source exactly.
+Coefficientwise checks prove graded symmetry, graded cyclicity, D derivation,
+q-nilpotency, and the Cartan identity on every weight. This is the first
+genuine nonzero-weight nonlinear result, but it remains spatially homogeneous
+and `REDUCED-MODE`; the full four-dimensional and complete 54-row gates stay
+open.
 
 ## Promotion rule
 
