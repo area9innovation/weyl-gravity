@@ -1,0 +1,121 @@
+{
+  "claim_boundary": "This exact microlocal theorem rules out a finite-order support-local unary D-Cartan homotopy on the declared bare retained 26-row complex and, by the D-equivariant SDR, on its bare 54-row extension. It does not rule out a Cartan homotopy after adjoining residual BFV rows, imposing the derived zero-charge quotient, or using the causal Green extension.",
+  "claim_status": "CERTIFIED_NO_LOCAL_UNARY_CARTAN_ON_BARE_COMPLEX",
+  "dependency_refs": {
+    "local_D_action": {
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    },
+    "retained_q1": {
+      "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "MICROLOCAL-SYMBOL"
+  ],
+  "douglis_symbol_fixture": {
+    "D_symbol": 1,
+    "cohomology_dimensions": [
+      0,
+      6,
+      6,
+      0
+    ],
+    "covector": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "degree_ranks": [
+      3,
+      10,
+      10,
+      3
+    ],
+    "differential_orders": [
+      1,
+      4,
+      1
+    ],
+    "metric_square": 0,
+    "symbol_ranks": {
+      "H4": 1,
+      "K1": 3,
+      "L1": 3
+    }
+  },
+  "exact_checks": {
+    "D_symbol_invertible": true,
+    "Douglis_symbol_is_complex": true,
+    "dual_annihilates_gauge_image": true,
+    "dual_witness_normalized": true,
+    "field_representative_closed": true,
+    "null_covector_nonzero": true,
+    "obstruction_descends_from_54_to_26": true,
+    "symbol_cohomology_nonzero": true
+  },
+  "flags": {
+    "BERGER_ARITY_TWO_D_CARTAN_FULL_4D": false,
+    "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D": false,
+    "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION": false,
+    "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D": false,
+    "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO": true
+  },
+  "next_gate": "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION",
+  "normalized_field_class": {
+    "D_on_class": "identity",
+    "H4_on_representative": "0",
+    "dual_on_im_K1": "0",
+    "dual_on_representative": "1",
+    "dual_witness": [
+      "0",
+      "0",
+      "1",
+      "0",
+      "0",
+      "-1",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "dual_witness_name": "coefficient(h_hat_02)-coefficient(h_hat_12)",
+    "field_order": [
+      "h_hat_00",
+      "h_hat_01",
+      "h_hat_02",
+      "h_hat_03",
+      "h_hat_11",
+      "h_hat_12",
+      "h_hat_13",
+      "h_hat_22",
+      "h_hat_23",
+      "h_hat_33"
+    ],
+    "representative": [
+      "0",
+      "0",
+      "1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "representative_name": "h_hat_02"
+  },
+  "obstruction_argument": {
+    "assumption": "a finite-order support-local differential iota_D^(1) with [q1,iota_D^(1)]=D on the bare 26-row complex",
+    "contradiction": "the exact Douglis symbol complex has the displayed normalized nonzero class",
+    "lift_to_54_rows": "any 54-row homotopy would descend as pi_cl iota_D,54^(1) iota_cl to a 26-row homotopy because the SDR is D-equivariant",
+    "localization": "sigma(D)=zeta_0=1 is invertible near the chosen covector, so D^(-1)iota_D^(1) would microlocally contract q1"
+  },
+  "result_id": "BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION",
+  "schema": "pure-weyl-berger-unary-D-Cartan-microlocal-obstruction-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

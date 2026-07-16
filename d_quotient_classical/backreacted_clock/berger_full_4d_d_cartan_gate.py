@@ -16,6 +16,7 @@ from d_quotient_classical.backreacted_clock.berger_linearized_bach_pbw import RO
 Q1_PATH = ROOT / "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json"
 D_PATH = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json"
 Q2_PATH = ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json"
+OBSTRUCTION_PATH = ROOT / "d_quotient_classical/certificates/BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION.json"
 CERTIFICATE_PATH = ROOT / "d_quotient_classical/certificates/BERGER_FULL_4D_D_CARTAN_GATE.json"
 REPORT_PATH = ROOT / "d_quotient_classical/reports/berger-full-4d-D-Cartan-gate.md"
 SCHEMA_PATH = ROOT / "d_quotient_classical/schema/berger-full-4d-D-Cartan-gate-v1.schema.json"
@@ -39,22 +40,26 @@ class BergerFull4DDCartanGate:
         q1 = json.loads(Q1_PATH.read_text())
         d_action = json.loads(D_PATH.read_text())
         q2 = json.loads(Q2_PATH.read_text())
+        obstruction = json.loads(OBSTRUCTION_PATH.read_text())
         if q1["flags"]["BERGER_NONMINIMAL_COMPLETION"] is not True:
             raise AssertionError("complete 54-row q1 prerequisite dropped")
         if d_action["flags"]["BERGER_LOCAL_D_ACTION_EQUIVARIANT"] is not True:
             raise AssertionError("local D prerequisite dropped")
         if q2["flags"]["CLASSICAL_SUPPORT_LOCAL_Q2"] is not True:
             raise AssertionError("support-local q2 prerequisite dropped")
+        if obstruction["flags"]["BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO"] is not True:
+            raise AssertionError("unary microlocal obstruction dependency dropped")
         payload: dict[str, object] = {
             "schema": "pure-weyl-berger-full-4d-D-Cartan-gate-v1",
             "result_id": "BERGER_FULL_4D_D_CARTAN_GATE",
             "setting_id": q1["setting_id"],
-            "claim_status": "INPUTS_COMPLETE_UNARY_EXISTENCE_OPEN",
+            "claim_status": "BARE_UNARY_OBSTRUCTED_EXTENSION_REQUIRED",
             "dependency_tags": ["LOCAL-ALGEBRAIC"],
             "dependency_refs": {
                 "classical_unary_q1": _dependency(Q1_PATH),
                 "local_D_action": _dependency(D_PATH),
                 "classical_binary_q2": _dependency(Q2_PATH),
+                "unary_microlocal_obstruction": _dependency(OBSTRUCTION_PATH),
             },
             "gate_order": [
                 {
@@ -68,6 +73,7 @@ class BergerFull4DDCartanGate:
                     ],
                     "retained_reduction": "iota_D,54^(1)=S_cl D_54+iota_cl iota_D,26^(1) pi_cl",
                     "failure_output": "normalized retained-core obstruction; scoped to the declared finite-order local class",
+                    "outcome": "OBSTRUCTED_ON_BARE_26_AND_54_ROW_COMPLEX",
                 },
                 {
                     "gate": "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D",
@@ -102,6 +108,7 @@ class BergerFull4DDCartanGate:
                 "complete_54_row_q1_input": True,
                 "complete_54_row_D_input": True,
                 "complete_54_row_q2_input": True,
+                "unary_bare_complex_obstruction_certified": True,
                 "unary_gate_precedes_source_gate": True,
                 "source_gate_precedes_arity_two_gate": True,
                 "arity_two_promotion_requires_unary_promotion": True,
@@ -109,16 +116,17 @@ class BergerFull4DDCartanGate:
             },
             "flags": {
                 "BERGER_FULL_4D_D_CARTAN_INPUTS_COMPLETE": True,
+                "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO": True,
                 "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D": False,
                 "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D": False,
                 "BERGER_ARITY_TWO_D_CARTAN_FULL_4D": False,
             },
-            "next_gate": "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D",
+            "next_gate": "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION",
             "claim_boundary": (
-                "This dependency certificate proves only that q1, D, and q2 inputs are complete "
-                "and enforces the unary-before-binary Cartan order. It does not construct "
-                "iota_D^(1) or iota_D^(2). Failure in a declared candidate class is not global "
-                "nonexistence of every Cartan homotopy."
+                "This dependency certificate records complete q1, D, and q2 inputs and the exact "
+                "microlocal obstruction to a unary homotopy on the bare 26/54-row complex. It "
+                "therefore blocks the bare arity-two solve. It does not rule out a Cartan "
+                "homotopy on a residual/BFV or causal extension."
             ),
         }
         result = cls(payload)
@@ -127,13 +135,15 @@ class BergerFull4DDCartanGate:
 
     def verify(self) -> None:
         p = self.payload
-        if p["next_gate"] != "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D":
-            raise AssertionError("unary Cartan gate was bypassed")
+        if p["next_gate"] != "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION":
+            raise AssertionError("Cartan extension gate drifted")
         if not all(p["exact_checks"].values()):
             raise AssertionError("Cartan dependency check dropped")
         flags = p["flags"]
         if flags["BERGER_FULL_4D_D_CARTAN_INPUTS_COMPLETE"] is not True:
             raise AssertionError("complete Cartan inputs not recorded")
+        if flags["BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO"] is not True:
+            raise AssertionError("bare unary obstruction not recorded")
         if flags["BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D"] and not flags[
             "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D"
         ]:
@@ -151,14 +161,15 @@ class BergerFull4DDCartanGate:
         return r"""# Full four-dimensional Berger D-Cartan dependency gate
 
 The complete 54-row (q_1), local (D)-action, and support-local (q_2) are
-available.  They do not by themselves supply a Cartan homotopy.  The first
-required theorem is the unary identity
+available. The unary identity
 
 \[
-q_1\iota_D^{(1)}+\iota_D^{(1)}q_1=D.
+q_1\iota_D^{(1)}+\iota_D^{(1)}q_1=D
 \]
 
-Using the certified 54-to-26 contraction, the efficient lift is
+is exactly obstructed on the bare complex by nonzero null-symbol cohomology
+where \(\sigma(D)\) is invertible. Had a retained homotopy existed, its efficient
+54-row lift would have been
 
 \[
 \iota_{D,54}^{(1)}
@@ -166,21 +177,22 @@ Using the certified 54-to-26 contraction, the efficient lift is
 +\iota_{\rm cl}\iota_{D,26}^{(1)}\pi_{\rm cl}.
 \]
 
-Only after that gate passes may the binary source
+Consequently the binary source
 
 \[
 A_D^{(2)}=[q_2,\iota_D^{(1)}]
 \]
 
-be formed and tested for (q_1)-closure, cyclicity and (D)-equivariance.
-The final solve is
+cannot yet be used in a bare-complex Cartan solve. The formal final equation
+would be
 
 \[
 [q_1,\iota_D^{(2)}]=-[q_2,\iota_D^{(1)}].
 \]
 
-All three downstream flags remain false. A failure in one finite-order local
-ansatz is scoped to that ansatz and is not a global nonexistence theorem.
+All three downstream bare-complex flags remain false. The next construction
+must adjoin the residual/BFV rows or use the causal extension; those
+possibilities are not ruled out.
 """
 
 
@@ -211,7 +223,7 @@ def _guards(result: BergerFull4DDCartanGate) -> None:
             ),
         ),
         (
-            "skip unary next gate",
+            "skip extension next gate",
             lambda p: p.update({"next_gate": "BERGER_ARITY_TWO_D_CARTAN_FULL_4D"}),
         ),
     ):
@@ -237,8 +249,8 @@ def main() -> int:
     if args.guards:
         _guards(result)
     print("full 4D D-Cartan inputs: COMPLETE")
-    print("unary D-Cartan existence: OPEN")
-    print("arity-two D-Cartan: BLOCKED BY UNARY GATE")
+    print("bare unary D-Cartan existence: OBSTRUCTED")
+    print("arity-two D-Cartan: BLOCKED; EXTENSION REQUIRED")
     return 0
 
 

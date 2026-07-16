@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-unary-D-Cartan-microlocal-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "douglis_symbol_fixture", "normalized_field_class",
+    "obstruction_argument", "exact_checks", "flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-unary-D-Cartan-microlocal-obstruction-v1"},
+    "result_id": {"const": "BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "CERTIFIED_NO_LOCAL_UNARY_CARTAN_ON_BARE_COMPLEX"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "MICROLOCAL-SYMBOL"]},
+    "dependency_refs": {"type": "object", "minProperties": 2},
+    "douglis_symbol_fixture": {"type": "object", "minProperties": 7},
+    "normalized_field_class": {"type": "object", "minProperties": 8},
+    "obstruction_argument": {"type": "object", "minProperties": 4},
+    "exact_checks": {"type": "object", "minProperties": 8, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO",
+        "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D",
+        "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D",
+        "BERGER_ARITY_TWO_D_CARTAN_FULL_4D",
+        "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION"
+      ],
+      "properties": {
+        "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO": {"const": true},
+        "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D": {"const": false},
+        "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D": {"const": false},
+        "BERGER_ARITY_TWO_D_CARTAN_FULL_4D": {"const": false},
+        "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

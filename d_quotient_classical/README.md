@@ -122,6 +122,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_FULL_4D_D_CARTAN_GATE.json`](certificates/BERGER_FULL_4D_D_CARTAN_GATE.json)
 - D-Cartan gate report:
   [`reports/berger-full-4d-D-Cartan-gate.md`](reports/berger-full-4d-D-Cartan-gate.md)
+- Unary D-Cartan microlocal obstruction:
+  [`certificates/BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION.json`](certificates/BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION.json)
+- Unary obstruction report:
+  [`reports/berger-unary-D-Cartan-microlocal-obstruction.md`](reports/berger-unary-D-Cartan-microlocal-obstruction.md)
 - Exact 54-to-26 causal-homotopy reduction:
   [`certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json`](certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json)
 - Causal-reduction report:
@@ -337,10 +341,12 @@ field, ghost, antifield, and nonminimal rows. Coefficientwise PBW composition
 proves ([q_1,D]=0), equivariance of (iota_{m cl},pi_{m cl},S_{m cl}),
 formal skew-adjointness, and preservation of the cyclic pairing. The complete
 four-dimensional support-local \(q_2\) is now exported on all 54 rows and its
-local \(D\)-derivation identity is exact. The remaining local nonlinear gate
-starts with unary Cartan existence. The arity-two source and homotopy are
-machine-blocked until a support-local, cyclic \(\iota_D^{(1)}\) satisfies
-\(q_1\iota_D^{(1)}+\iota_D^{(1)}q_1=D\) on all 54 rows.
+local \(D\)-derivation identity is exact. A support-local unary Cartan
+homotopy on the bare complex is now ruled out microlocally: at an exact null
+covector where \(\sigma(D)=1\), the retained Douglis symbol complex has
+cohomology dimensions \((0,6,6,0)\). The D-equivariant SDR transfers the
+obstruction to all 54 bare rows. The next nonlinear gate is therefore a
+residual/BFV or causal Cartan extension, not a larger bare-complex ansatz.
 
 The minimal causal handoff now also freezes one authoritative
 \((W_{34},P_{34},\operatorname{pairing}_{34})\) candidate, with

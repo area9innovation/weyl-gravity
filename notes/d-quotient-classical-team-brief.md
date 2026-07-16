@@ -333,18 +333,19 @@ rows. The canonical Euler densities include both the \(\sqrt{-g}\) factor and
 nonlinear index raising; omitting those terms gives the right Hessian but
 fails the antifield identity. The final payload also passes an independent
 frozen-coefficient and Draft-2020-12 schema audit. The Cartan dependency is
-now explicitly split. The next gate is the full four-dimensional unary
-existence problem
+now explicitly split. The full four-dimensional unary equation
 
 \[
 q_1\iota_D^{(1)}+\iota_D^{(1)}q_1=D.
 \]
 
-Only after a support-local, cyclic all-row \(\iota_D^{(1)}\) exists may the
-arity-two source \([q_2,\iota_D^{(1)}]\) be formed and contracted. The
-machine gate forbids promotion of the source or arity-two result while unary
-existence is false. The retained causal Green theorem and Hadamard data remain
-independent analytic gates.
+is exactly obstructed on the bare 26-row complex: at
+\(\zeta=(1,1,0,0)\), its Douglis symbol cohomology has dimensions
+\((0,6,6,0)\), while \(\sigma(D)=1\). The D-equivariant SDR carries this
+obstruction to the bare 54-row complex. Therefore the arity-two source and
+homotopy remain machine-blocked there. The next gate is a residual/BFV or
+causal Cartan extension; the retained causal Green theorem and Hadamard data
+remain independent analytic gates.
 
 ### Reduced-mode arity-two fixture
 
