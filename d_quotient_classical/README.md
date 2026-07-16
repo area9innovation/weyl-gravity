@@ -124,6 +124,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY.json`](certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY.json)
 - Degreewise assembly, support, cyclicity and D-equivariance proof:
   [`reports/berger-26-row-causal-green-homotopy.md`](reports/berger-26-row-causal-green-homotopy.md)
+- Complete 54-row causal lift:
+  [`certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY.json`](certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY.json)
+- Full gauge-fixed causal-homotopy proof:
+  [`reports/berger-54-row-causal-green-homotopy.md`](reports/berger-54-row-causal-green-homotopy.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:
