@@ -99,6 +99,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)
 - [`reports/einstein-maxwell-weyl-axial-lee-wald-completion-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-lee-wald-completion-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-axial-extra-detector-taub.json`](contributions/einstein-maxwell-weyl-axial-extra-detector-taub.json)
+- [`reports/einstein-maxwell-weyl-axial-extra-detector-taub-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-detector-taub-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -351,3 +353,12 @@ target form, and the full Weyl--Maxwell target form remain distinct objects.
 The final residual quotient, action-density cross-check, causal boundary
 admissibility, positive-frequency Hilbert space, and quantum ghost/unitarity
 questions remain open.
+
+The inverse generic extra Lee--Wald Gram matrix now supplies two exact
+reduced-mode coefficient detectors: they recover the extra coordinates and
+annihilate the certified axial Einstein image. On the complete real
+`ell=2,k=0` extra span, the fixed-charge constant-lapse Taub matrix is
+`diag(-1728/5,-832/45)`. It is negative definite, so no nonzero real
+combination admits a smooth periodic second-order correction on the fixed
+bundle. Generic momentum and harmonic blocks, final residual descent, and
+causal or asymptotic observables remain open.

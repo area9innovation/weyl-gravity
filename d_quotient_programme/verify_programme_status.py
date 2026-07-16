@@ -64,6 +64,7 @@ EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT_CONTRIBUTION = PACKAGE / "
 EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-operator.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-extra-green-pairing.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-lee-wald-completion.json"
+EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_DETECTOR_TAUB_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-extra-detector-taub.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -963,6 +964,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "einstein_maxwell_product_compact_weyl_generic_axial_direct_lee_wald_block",
         "G2_GENERIC_AXIAL_DIRECT_LEE_WALD_BLOCK_SIGNATURE_THREE_ONE",
     )
+    maxwell_weyl_axial_extra_detector_taub_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_DETECTOR_TAUB_CONTRIBUTION,
+        "compact_einstein_maxwell_weyl_axial_extra_detector_taub",
+        "einstein_maxwell_product_compact_weyl_axial_extra_ell2_k0_fixed_charge_taub",
+        "G2_AXIAL_EXTRA_DETECTOR_AND_ELL2_K0_NEGATIVE_DEFINITE_TAUB_OBSTRUCTION",
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     berger_retained_q2_contribution = _nonlinear_berger_retained_q2_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
@@ -1182,6 +1189,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "path": str(EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION_CONTRIBUTION),
                 "payload": maxwell_weyl_axial_lee_wald_completion_contribution,
+            },
+            {
+                "path": str(EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_DETECTOR_TAUB_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_DETECTOR_TAUB_CONTRIBUTION),
+                "payload": maxwell_weyl_axial_extra_detector_taub_contribution,
             },
             {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
@@ -1609,6 +1621,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G2_GENERIC_AXIAL_DIRECT_LEE_WALD_BLOCK_SIGNATURE_THREE_ONE",
             },
             {
+                "setting_id": "compact_einstein_maxwell_weyl_axial_extra_detector_taub",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_axial_extra_ell2_k0_fixed_charge_taub",
+                "boundary_conditions": "generic axial reduced detector; quadratic Taub verdict restricted to real ell=2,k=0 at fixed electric and magnetic charges; before final residual quotient",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G2_AXIAL_EXTRA_DETECTOR_AND_ELL2_K0_NEGATIVE_DEFINITE_TAUB_OBSTRUCTION",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1798,6 +1819,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_axial_operator",
         "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
         "compact_einstein_maxwell_weyl_axial_lee_wald_completion",
+        "compact_einstein_maxwell_weyl_axial_extra_detector_taub",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1844,6 +1866,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_axial_operator": "G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_SOLUTION_MODULE",
         "compact_einstein_maxwell_weyl_axial_extra_green_pairing": "G2_GENERIC_AXIAL_EXTRA_NONRADICAL_REDUCED_GREEN_SIGNATURE_POSITIVE_TWO",
         "compact_einstein_maxwell_weyl_axial_lee_wald_completion": "G2_GENERIC_AXIAL_DIRECT_LEE_WALD_BLOCK_SIGNATURE_THREE_ONE",
+        "compact_einstein_maxwell_weyl_axial_extra_detector_taub": "G2_AXIAL_EXTRA_DETECTOR_AND_ELL2_K0_NEGATIVE_DEFINITE_TAUB_OBSTRUCTION",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "compact_positive_berger_clock_retained_q2_26": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
@@ -1933,6 +1956,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Weyl--Maxwell axial extra reduced-Green pairing was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_axial_lee_wald_completion", {}).get("status") != "CERTIFIED":
         errors.append("Weyl--Maxwell generic axial direct Lee-Wald completion was dropped")
+    if ledger.get("compact_einstein_maxwell_weyl_axial_extra_detector_taub", {}).get("status") != "CERTIFIED":
+        errors.append("Weyl--Maxwell axial extra detector/Taub theorem was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -2319,6 +2344,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_weyl_axial_lee_wald_completion",
             "drop_Einstein_Maxwell_Weyl_axial_lee_wald_completion_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_weyl_axial_extra_detector_taub",
+            "drop_Einstein_Maxwell_Weyl_axial_extra_detector_taub_contribution",
         ),
     ):
         mutant = deepcopy(data)
