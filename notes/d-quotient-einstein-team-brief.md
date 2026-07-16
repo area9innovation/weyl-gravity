@@ -680,6 +680,39 @@ background-flux metric/potential mixing, reproduce the flat zero-gravitational
 restriction control, and evaluate the radiative, physical `ell=1`, rank-six
 homogeneous, and axial-twist blocks separately.
 
+The first restriction kill test is now exact.  For the axial
+`ell=2,m=0` representative at arbitrary periodic momentum `k`, the literal
+Weyl--Maxwell curvature-momentum current gives
+
+```text
+omega_WM^t
+ =-8 i pi omega (k^2-omega^2)
+   [9 H^2 k^2-9 H^2 omega^2+51 H^2-Q^2]/5.
+```
+
+The independent Einstein--Maxwell current is
+
+```text
+omega_EM^t=8 i pi omega(3H^2+Q^2)(k^2-omega^2)/5.
+```
+
+On the two physical `lambda=6` branches, their exact ratios are
+
+```text
+r_+=1+3 sqrt(3),
+r_-=1-3 sqrt(3).
+```
+
+Both are nonzero, so the axial `ell=2` restriction is nondegenerate; but the
+factors differ and have opposite signs.  Therefore the identity tangent
+inclusion is already not a single action-normalized symplectic copy of
+Einstein--Maxwell on this scoped block.  This is a pairing statement, not a
+solution or gauge-removal statement.  The current engine reproduces the
+Einstein--Maxwell Lee--Wald current pointwise, the certified Bach convention,
+the flat TT zero restriction, a pure-Weyl gauge kernel, and exact current
+conservation.  Arbitrary `ell`, polar, physical `ell=1`, and global blocks
+remain open.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally

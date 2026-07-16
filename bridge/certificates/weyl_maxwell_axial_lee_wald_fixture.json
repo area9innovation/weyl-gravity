@@ -1,0 +1,59 @@
+{
+  "axial_ell2": {
+    "einstein_curvature_momentum_pointwise_remainder": "0",
+    "einstein_integrated_coordinate_current": "8*I*pi*omega*(3*H**2 + Q**2)*(k - omega)*(k + omega)/5",
+    "harmonic": "Y_20=P_2(cos(theta))",
+    "harmonic_norm": "4*pi/5",
+    "representative": "h_(t,ax)=k*H*e^{i(kx-omega t)}X_a; h_(x,ax)=-omega*H*e^{i(kx-omega t)}X_a; a_t=k*Q*e^{i(kx-omega t)}Y; a_x=-omega*Q*e^{i(kx-omega t)}Y",
+    "space_derivative": "0",
+    "time_derivative": "0",
+    "weyl_maxwell_integrated_coordinate_current": "-8*I*pi*omega*(k - omega)*(k + omega)*(9*H**2*k**2 - 9*H**2*omega**2 + 51*H**2 - Q**2)/5"
+  },
+  "background_bach_orthonormal": [
+    [
+      "1/6",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "-1/6",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "1/6",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "1/6"
+    ]
+  ],
+  "current_formula": {
+    "critical_rule": "delta[nabla P] is retained although nabla Cbar=0",
+    "curvature_momentum": "P^abcd=(alpha_B/4)C^abcd",
+    "maxwell": "Theta_M^mu=-sqrt(-g)F^(mu nu)delta A_nu with full metric/flux variation in omega",
+    "potential": "Theta_C2^mu=2*sqrt(-g)[P^(mu a b nu)nabla_nu(delta g_ab)-nabla_nu(P^(mu a b nu))delta g_ab]"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flat_tt_control": {
+    "current": "I*A**2*alpha_B*omega*(k - omega)*(k + omega)",
+    "einstein_shell": "omega^2=k^2",
+    "restricted_value": "0"
+  },
+  "pure_weyl_gauge_control": {
+    "integrated_current": "0",
+    "pointwise_current": "0"
+  },
+  "result_id": "WEYL_MAXWELL_AXIAL_LEE_WALD_FIXTURE",
+  "schema": "weyl-maxwell-axial-lee-wald-fixture-v1"
+}

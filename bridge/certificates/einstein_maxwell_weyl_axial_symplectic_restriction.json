@@ -1,0 +1,126 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem is exact for the axial ell=2,m=0 symbolic-k fixture and both of its physical branches. It refutes universal proportionality on that declared subspace and proves its restricted branch form is nondegenerate but relatively indefinite. It does not yet classify all axial ell, polar or global blocks, the complete fourth-order Weyl-Maxwell phase space, nonlinear closure, final SO(4,2) reduction, causal scattering, or quantum theory.",
+  "classification": {
+    "all_axial_ell_ge2_restriction_computed": false,
+    "axial_ell2_both_physical_branches_nonnull": true,
+    "axial_ell2_restriction_nondegenerate": true,
+    "final_residual_quotient_computed": false,
+    "global_restriction_computed": false,
+    "lorentzian_causal_or_scattering_theorem": false,
+    "nonlinear_solution_embedding_certified": false,
+    "polar_restriction_computed": false,
+    "relative_branch_form_indefinite": true,
+    "single_universal_proportionality_to_einstein_form": false,
+    "target_weyl_gauge_removes_einstein_class": false
+  },
+  "controls": {
+    "background_bach_matches_incidence": true,
+    "einstein_curvature_momentum_matches_independent_lee_wald_pointwise": true,
+    "flat_tt_einstein_restriction_zero": true,
+    "paired_fixture_current_conserved": true,
+    "pure_weyl_direction_pointwise_kernel": true
+  },
+  "current_derivation": {
+    "critical_term": "the first variation of nabla_d P^(m a b d) is retained even though nabla Cbar=0",
+    "curvature_momentum": "P^abcd=(alpha_B/4)C^abcd",
+    "euler_density_rule": "the literal C^2 action is used; no Ricci-squared replacement drops the Euler improvement",
+    "maxwell_rule": "the full metric variation of sqrt(-g)F^(mu nu) is retained at nonzero background flux",
+    "weyl_action": "S_WM=int sqrt(-g)[(alpha_B/8)C^2-F^2/4] with alpha_B=3"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "axial ell=2,m=0 Einstein-Maxwell radiative tangent at arbitrary periodic S1 momentum k on the fixed-P_N product background; both physical master branches; before final residual SO(4,2) quotient",
+  "generality_level": "G1_AXIAL_ELL2_SYMBOLIC_K_KILL_TEST",
+  "interpretation": "The first curved/flux Weyl-Maxwell kill test is nonzero, so the flat zero-pairing theorem does not persist unchanged on the product background. However, the two ordinary axial Einstein-Maxwell branches acquire different restriction factors, 1+3*sqrt(3) and 1-3*sqrt(3); the latter is negative. Thus the identity tangent inclusion is not a single action-normalized symplectic copy of Einstein-Maxwell even inside ell=2. The modes remain solutions and survive target Weyl gauge; the distinction lies in their Weyl-Maxwell symplectic weights.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "derive the arbitrary-lambda axial restriction matrix and then compute the polar, physical ell=1, homogeneous ell=0, and axial-twist blocks under the frozen preflight contract",
+  "provenance": {
+    "direct_implementation": {
+      "current_engine": {
+        "path": "bridge/einstein_sector/weyl_maxwell_lee_wald_current.py",
+        "sha256": "5270dcbfb26c7a31d303214462799d41aaa575c2a8ad3fa804675282721fee6a"
+      },
+      "fixture_generator": {
+        "path": "bridge/einstein_sector/weyl_maxwell_axial_lee_wald_fixture.py",
+        "sha256": "75977351c101bce3618c499683d4fa601193ab9cba2457112b2e88828ffe284d"
+      }
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_symplectic_restriction.py",
+    "generator_sha256": "14167d9732f43ae8abe0e4740f7958555b1bf4c06ec11f9eb98a2e1fdcaf03b6",
+    "inputs": {
+      "axial_complex": {
+        "path": "bridge/certificates/einstein_maxwell_axial_master_complex.json",
+        "sha256": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02"
+      },
+      "direct_fixture": {
+        "path": "bridge/certificates/weyl_maxwell_axial_lee_wald_fixture.json",
+        "sha256": "23d25b02045a695fc34313e84345f05699e2e65fed2a28a5ab50d594ea31d46b"
+      },
+      "einstein_form": {
+        "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+        "sha256": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
+      },
+      "preflight": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symplectic_preflight.json",
+        "sha256": "22a948d0ef54efd0c4f2b9b8dd4c57a47a731f1511f40d6a6afbba780dd00591"
+      }
+    }
+  },
+  "restriction": {
+    "branch_orthogonality": "the Lee-Wald current is conserved for any pair of linearized solutions; at fixed k the distinct positive frequencies omega_+!=omega_- force the cross-branch pairing to vanish by time-translation covariance",
+    "branch_weight_matrix_relative_to_einstein": [
+      [
+        "1 + 3*sqrt(3)",
+        "0"
+      ],
+      [
+        "0",
+        "1 - 3*sqrt(3)"
+      ]
+    ],
+    "off_shell_integrated_coordinate_currents": {
+      "einstein_maxwell": "8*I*pi*omega*(3*H**2 + Q**2)*(k - omega)*(k + omega)/5",
+      "weyl_maxwell": "-8*I*pi*omega*(k - omega)*(k + omega)*(9*H**2*k**2 - 9*H**2*omega**2 + 51*H**2 - Q**2)/5"
+    },
+    "on_shell_branches": [
+      {
+        "Q_over_H": "sqrt(3)",
+        "branch": "plus",
+        "einstein_coordinate_current": "-96*I*pi*H**2*omega*(sqrt(3) + 3)/5",
+        "mass_squared": "2*sqrt(3) + 6",
+        "relative_sign": "POSITIVE",
+        "restriction_over_einstein": "1 + 3*sqrt(3)",
+        "weyl_maxwell_coordinate_current": "-192*I*pi*H**2*omega*(6 + 5*sqrt(3))/5"
+      },
+      {
+        "Q_over_H": "-sqrt(3)",
+        "branch": "minus",
+        "einstein_coordinate_current": "96*I*pi*H**2*omega*(-3 + sqrt(3))/5",
+        "mass_squared": "6 - 2*sqrt(3)",
+        "relative_sign": "NEGATIVE",
+        "restriction_over_einstein": "1 - 3*sqrt(3)",
+        "weyl_maxwell_coordinate_current": "192*I*pi*H**2*omega*(-6 + 5*sqrt(3))/5"
+      }
+    ],
+    "rank": 2,
+    "signature_relative_to_positive_einstein_branch_form": {
+      "negative": 1,
+      "positive": 1,
+      "zero": 0
+    },
+    "universal_scalar_multiple_exists": false
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_SYMPLECTIC_RESTRICTION",
+  "result_state": "AXIAL_ELL2_SYMBOLIC_K_NONDEGENERATE_BRANCH_DEPENDENT_RESTRICTION",
+  "schema": "einstein-maxwell-weyl-axial-symplectic-restriction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_symplectic_restriction.schema.json",
+  "schema_sha256": "39f7f3c0c9e4d58968c53098150bfeec8f7b629d37a5c1485f8206eb7a13ac9d",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_symplectic_restriction --verify bridge/certificates/einstein_maxwell_weyl_axial_symplectic_restriction.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_symplectic_restriction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_symplectic_restriction",
+    "python3 -m bridge.einstein_sector.weyl_maxwell_axial_lee_wald_fixture --verify bridge/certificates/weyl_maxwell_axial_lee_wald_fixture.json"
+  ]
+}
