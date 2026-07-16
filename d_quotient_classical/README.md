@@ -104,6 +104,14 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_ALL_WEIGHT_ARITY_TWO_D_CARTAN.json`](certificates/BERGER_ALL_WEIGHT_ARITY_TWO_D_CARTAN.json)
 - All-weight Cartan report:
   [`reports/berger-all-weight-arity-two-D-Cartan.md`](reports/berger-all-weight-arity-two-D-Cartan.md)
+- Complete 54-row local helical D action:
+  [`certificates/BERGER_54_ROW_LOCAL_D_ACTION.json`](certificates/BERGER_54_ROW_LOCAL_D_ACTION.json)
+- Local D-action report:
+  [`reports/berger-54-row-local-D-action.md`](reports/berger-54-row-local-D-action.md)
+- Exact 54-to-26 causal-homotopy reduction:
+  [`certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json`](certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json)
+- Causal-reduction report:
+  [`reports/berger-54-row-causal-homotopy-reduction.md`](reports/berger-54-row-causal-homotopy-reduction.md)
 
 The only scientific verdicts are:
 
@@ -173,6 +181,12 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_non
 python3 d_quotient_classical/backreacted_clock/berger_all_weight_arity_two_d_cartan.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_all_weight_arity_two_d_cartan.py
 python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_all_weight_arity_two_d_cartan
+python3 d_quotient_classical/backreacted_clock/berger_54_row_local_d_action.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_54_row_local_d_action.py
+python3 -m pytest -q d_quotient_classical/backreacted_clock/tests/test_berger_54_row_local_d_action.py
+python3 d_quotient_classical/backreacted_clock/berger_54_row_causal_homotopy_reduction.py --check --guards
+python3 d_quotient_classical/backreacted_clock/verify_berger_54_row_causal_homotopy_reduction.py
+python3 -m pytest -q d_quotient_classical/backreacted_clock/tests/test_berger_54_row_causal_homotopy_reduction.py
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and
@@ -295,6 +309,25 @@ q-nilpotency, and the Cartan identity on every weight. This is the first
 genuine nonzero-weight nonlinear result, but it remains spatially homogeneous
 and `REDUCED-MODE`; the full four-dimensional and complete 54-row gates stay
 open.
+
+The helical (D)-action is no longer part of that open gate. In the dressed
+stationary invariant frame it is exactly (e_0) on every one of the 54
+field, ghost, antifield, and nonminimal rows. Coefficientwise PBW composition
+proves ([q_1,D]=0), equivariance of (iota_{m cl},pi_{m cl},S_{m cl}),
+formal skew-adjointness, and preservation of the cyclic pairing. The sole
+missing local nonlinear operator is now the complete four-dimensional
+(q_2), after which the arity-two Cartan equation can be tested on all rows.
+
+The full causal problem has also been reduced exactly. The same 54-to-26 SDR
+proves that a retained causal homotopy lifts by
+
+\[
+\Lambda_{54,\pm}=S_{\rm cl}+\iota_{\rm cl}\Lambda_{26,\pm}\pi_{\rm cl}.
+\]
+
+Twenty-eight rows therefore contribute no independent analytic obstruction.
+The total causal flag remains false because the retained 26-row mixed-order
+metric endpoint still needs its advanced/retarded Green realization.
 
 ## Promotion rule
 

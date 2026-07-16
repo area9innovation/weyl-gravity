@@ -1,0 +1,73 @@
+{
+  "causal_reduction": {
+    "chain_identities": [
+      "q_54 i=i q_26",
+      "p q_54=q_26 p",
+      "p i=1_26",
+      "q_54 S+S q_54=1_54-i p",
+      "S^2=0",
+      "p S=0",
+      "S i=0"
+    ],
+    "conditional_endpoint_identity": "q_26 Lambda_26,+/-+Lambda_26,+/- q_26=1_26",
+    "cyclic_argument": "the imported contraction is cyclic; endpoint advanced/retarded adjointness transfers through the cyclic inclusion/projection",
+    "inverse_laplacian_or_curl": false,
+    "lifted_derivation": "q_54 Lambda_54,+/-+Lambda_54,+/- q_54=(1-i p)+i(p i)p=1_54",
+    "lifted_formula": "Lambda_54,+/-=S+i Lambda_26,+/- p",
+    "maps": "the pinned iota_cl, pi_cl and S_cl of BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+    "mode_projector": false,
+    "support_argument": "S,i,p are finite-order differential operators; composing them with a retarded/advanced Lambda_26 preserves J^+/- support"
+  },
+  "claim_boundary": "This theorem removes all 28 clock/nonminimal/gauge-fixing rows from the analytic risk and proves that any retained 26-row advanced/retarded chain contraction lifts support-locally and cyclically to the complete gauge-fixed 54-row complex. It does not construct the retained metric mixed-order Green realization or promote BERGER_CAUSAL_GREEN_HOMOTOPY.",
+  "claim_status": "CERTIFIED_CAUSAL_REDUCTION_ENDPOINT_OPEN",
+  "dependency_refs": {
+    "gauge_fixed_54_row_unary": {
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "dimension_ledger": {
+    "complete_gauge_fixed_rows": 54,
+    "degree_ranks_26": [
+      3,
+      10,
+      10,
+      3
+    ],
+    "degree_ranks_54": [
+      5,
+      22,
+      22,
+      5
+    ],
+    "identity": "54=28+26",
+    "retained_endpoint_rows": 26,
+    "support_locally_contracted_rows": 28
+  },
+  "exact_checks": {
+    "algebraic_complement_contracted": true,
+    "all_54_rows_included": true,
+    "coefficientwise_p_q54_equals_q26_p": true,
+    "coefficientwise_q54_i_equals_i_q26": true,
+    "conditional_causal_support": true,
+    "conditional_lifted_homotopy_identity": true,
+    "contraction_side_conditions": true,
+    "cyclic_contraction_imported": true,
+    "pi_iota_identity": true,
+    "support_local_finite_order": true
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_54_ROW_CAUSAL_REDUCTION": true,
+    "BERGER_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION": false
+  },
+  "next_gate": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY",
+  "result_id": "BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION",
+  "schema": "pure-weyl-berger-54-row-causal-homotopy-reduction-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

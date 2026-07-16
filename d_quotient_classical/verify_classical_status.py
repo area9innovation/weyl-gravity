@@ -399,6 +399,8 @@ def validate_record(record: object) -> list[str]:
                 "berger_rational_fixture_q2_d_block",
                 "berger_nonzero_d_weight_finite_block_no_go",
                 "berger_all_weight_arity_two_d_cartan",
+                "berger_54_row_local_d_action",
+                "berger_54_row_causal_homotopy_reduction",
             ]:
                 errors.append("$.work_packages.relational_clock: partial replacement requires the one-scalar, neutral-pair, health, stealth, and positive Berger-background certificates")
             if not isinstance(scalar_setting, dict):
@@ -640,6 +642,22 @@ def _mutation_guards(record: dict[str, Any]) -> list[str]:
         if ref != "berger_all_weight_arity_two_d_cartan"
     ]
     rejected("berger_all_weight_arity_two_d_cartan_erased", mutant)
+
+    mutant = deepcopy(record)
+    mutant["work_packages"]["relational_clock"]["evidence_refs"] = [
+        ref
+        for ref in mutant["work_packages"]["relational_clock"]["evidence_refs"]
+        if ref != "berger_54_row_local_d_action"
+    ]
+    rejected("berger_54_row_local_d_action_erased", mutant)
+
+    mutant = deepcopy(record)
+    mutant["work_packages"]["relational_clock"]["evidence_refs"] = [
+        ref
+        for ref in mutant["work_packages"]["relational_clock"]["evidence_refs"]
+        if ref != "berger_54_row_causal_homotopy_reduction"
+    ]
+    rejected("berger_54_row_causal_homotopy_reduction_erased", mutant)
     return failures
 
 
@@ -667,7 +685,7 @@ def main() -> int:
             for failure in failures:
                 print(f"mutation guard failed: {failure}", file=sys.stderr)
             return 1
-        print("mutation guards: 25/25 PASS")
+        print("mutation guards: 27/27 PASS")
     print(f"{args.certificate}: PASS")
     return 0
 

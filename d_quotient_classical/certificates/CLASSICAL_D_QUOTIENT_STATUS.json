@@ -255,6 +255,25 @@
       "evidence_id": "berger_all_weight_arity_two_d_cartan",
       "path": "d_quotient_classical/certificates/BERGER_ALL_WEIGHT_ARITY_TWO_D_CARTAN.json",
       "sha256": "7b516a547015eea41434d25eb296c92136cfdb623e977865afa30503f56b437b"
+    },
+    {
+      "claim_scope": "Complete support-local helical D action on all 54 gauge-fixed Berger BV rows. Exact PBW composition proves unary equivariance, equivariance of the 54-to-26 contraction, formal skew-adjointness, and cyclicity. Full four-dimensional q2 and arity-two D-Cartan remain open.",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "evidence_id": "berger_54_row_local_d_action",
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    },
+    {
+      "claim_scope": "Exact support-local cyclic reduction of the complete 54-row causal problem to the retained 26-row endpoint, with conditional lift Lambda_54=S+i Lambda_26 p. The retained mixed-order metric Green realization remains open.",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "evidence_id": "berger_54_row_causal_homotopy_reduction",
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json",
+      "sha256": "243b28352bba36bdf8e8f91e94ef6bea4efb492d2fa9dc2ee0f6ff742ba292bc"
     }
   ],
   "open_fields": [
@@ -1009,7 +1028,8 @@
     "relational_clock": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
-        "REDUCED-MODE"
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
       ],
       "evidence_refs": [
         "scalar_clock_vertical_slice",
@@ -1031,10 +1051,12 @@
         "berger_gauge_fixed_nonminimal_completion",
         "berger_rational_fixture_q2_d_block",
         "berger_nonzero_d_weight_finite_block_no_go",
-        "berger_all_weight_arity_two_d_cartan"
+        "berger_all_weight_arity_two_d_cartan",
+        "berger_54_row_local_d_action",
+        "berger_54_row_causal_homotopy_reduction"
       ],
-      "next_gate": "Export the complete four-dimensional support-local classical_binary_q2 and local D_action_cl on the same 54-row complex, then extend the certified all-weight Cartan formulas to every BV row.",
-      "result": "The exact Berger-cylinder family supplies healthy standard-sign clock matter and the fixed-coupling tangent theorem gives D_GAUGE on the declared smooth linearized phase space. The retained 26-row classical unary operator and all-34 minimal contraction are exact. Five nonminimal quartets extend this to 54 rows, and the selected gauge fermion gives a portable gauge-fixed classical_unary_q1 and 54-to-26 contraction. An action-derived rational six-row stationary homogeneous fixture supplies exact q1, q2, cyclic pairing, and centered D action. Its cubic square map is anisotropic, ruling out finite pairing-nondegenerate nonzero-weight truncations. The correct infinite integer-weight homogeneous complex is now constructed: q2 closes by weight convolution, its generic nonzero arity-two D-Cartan source is killed by explicit first-order time-local graded-cyclic homotopies, and every identity is exact. These REDUCED-MODE results do not promote the full four-dimensional support-local q2, complete 54-row D-Cartan contraction, general nonlinear Koszul-Tate export, causal/Hadamard data, or physical ND2 execution.",
+      "next_gate": "Export the complete four-dimensional support-local classical_binary_q2 on the same 54-row complex and construct the retained 26-row mixed-order causal Green homotopy; then lift both results through the certified contractions.",
+      "result": "The exact Berger-cylinder family supplies healthy standard-sign clock matter and the fixed-coupling tangent theorem gives D_GAUGE on the declared smooth linearized phase space. The retained 26-row classical unary operator and all-34 minimal contraction are exact. Five nonminimal quartets extend this to 54 rows, and the selected gauge fermion gives a portable gauge-fixed classical_unary_q1 and 54-to-26 contraction. An action-derived rational six-row stationary homogeneous fixture supplies exact q1, q2, cyclic pairing, and centered D action. Its cubic square map is anisotropic, ruling out finite pairing-nondegenerate nonzero-weight truncations. The correct infinite integer-weight homogeneous complex is now constructed: q2 closes by weight convolution and explicit first-order time-local graded-cyclic homotopies kill its arity-two D-Cartan source. Independently, the helical D action is exact and equivariant on all 54 rows, so the full local nonlinear gate lacks only q2. The complete 54-row causal problem also reduces exactly to the retained 26-row endpoint by Lambda_54=S+i Lambda_26 p. The retained mixed-order metric Green realization, full four-dimensional q2, complete 54-row arity-two Cartan contraction, general nonlinear Koszul-Tate export, Hadamard data, and physical ND2 execution remain open.",
       "status": "PARTIAL"
     }
   }

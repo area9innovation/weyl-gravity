@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-54-row-causal-homotopy-reduction-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "dimension_ledger", "causal_reduction", "exact_checks",
+    "flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-54-row-causal-homotopy-reduction-v1"},
+    "result_id": {"const": "BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "CERTIFIED_CAUSAL_REDUCTION_ENDPOINT_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 1},
+    "dimension_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["complete_gauge_fixed_rows", "retained_endpoint_rows", "support_locally_contracted_rows", "identity", "degree_ranks_54", "degree_ranks_26"],
+      "properties": {
+        "complete_gauge_fixed_rows": {"const": 54},
+        "retained_endpoint_rows": {"const": 26},
+        "support_locally_contracted_rows": {"const": 28},
+        "identity": {"const": "54=28+26"},
+        "degree_ranks_54": {"const": [5, 22, 22, 5]},
+        "degree_ranks_26": {"const": [3, 10, 10, 3]}
+      }
+    },
+    "causal_reduction": {"type": "object", "minProperties": 8},
+    "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["BERGER_54_ROW_CAUSAL_REDUCTION", "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY", "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION", "BERGER_CAUSAL_GREEN_HOMOTOPY"],
+      "properties": {
+        "BERGER_54_ROW_CAUSAL_REDUCTION": {"const": true},
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": {"const": false},
+        "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION": {"const": false},
+        "BERGER_CAUSAL_GREEN_HOMOTOPY": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
