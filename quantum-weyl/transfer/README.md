@@ -201,6 +201,24 @@ acyclic, so the primitive introduces no negative physical direction.  This
 is still `REDUCED-MODE`: the full four-dimensional support-local q2 and
 complete 54-row Cartan contraction remain open.
 
+The first branch-labelled support-local block is also complete on an aligned
+Brinkmann pp-wave sector.  The pinned classical theorem admits arbitrary
+smooth profiles, with a harmonic Ricci-flat Einstein representative and a
+biharmonic non-harmonic extra-Weyl representative.  The exact Bach operator
+is linear on this sector, so all Einstein--Einstein, Einstein--extra-Weyl,
+and extra-Weyl--extra-Weyl entries of the restricted `q2` vanish before
+projection.  Consequently the transferred `ell2` is exactly zero and
+independent of the homotopy.  This is a `LOCAL-ALGEBRAIC` aligned-sector
+theorem; it does not determine nonaligned vertices, the centered Weyl-square
+deformation brackets, the complete BV `q2`, or a quantum correction.
+
+Reproduce the pinned import with
+
+```bash
+python3 quantum-weyl/transfer/ppwave_branch_transfer_import_certificate.py --check
+python3 -m unittest quantum-weyl/transfer/tests/test_ppwave_branch_transfer_import.py
+```
+
 The arity-two solve also has a block-sparse exact rail.  Declared additive
 labels such as `D` weight, momentum, or jet filtration must be preserved by
 `q1`; the differential then splits by
@@ -259,6 +277,7 @@ python3 quantum-weyl/transfer/berger_pbw_backend_certificate.py --check
 python3 quantum-weyl/transfer/berger_minimal_contraction_import_certificate.py --check
 python3 quantum-weyl/transfer/berger_gauge_fixed_nonminimal_import_certificate.py --check
 python3 quantum-weyl/transfer/arity_three_cartan_certificate.py --check
+python3 quantum-weyl/transfer/ppwave_branch_transfer_import_certificate.py --check
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v

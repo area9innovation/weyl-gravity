@@ -1,0 +1,122 @@
+{
+  "branch_content": {
+    "Einstein": {
+      "Bach_flat": true,
+      "Delta_perp_H": "0",
+      "Ricci_flat": true,
+      "profile": "f(u)*(x^2-y^2)"
+    },
+    "extra_Weyl": {
+      "Bach_flat": true,
+      "Delta_perp_H": "6*x*g(u)",
+      "Ricci_flat": false,
+      "profile": "g(u)*x^3"
+    },
+    "sum_is_exact_Bach_solution": true
+  },
+  "bridge_source": {
+    "artifacts": {
+      "certificate": {
+        "commit": "1c4eb856a191f5795e44c0ff1bc1afce644a9e88",
+        "path": "bridge/certificates/ppwave_bach_branch_closure.json",
+        "sha256": "6934bd0aeae5ef54bc80f46b558e30e8ddd85fa044347433bf5b88b8f102b339"
+      },
+      "independent_verifier": {
+        "commit": "1c4eb856a191f5795e44c0ff1bc1afce644a9e88",
+        "path": "bridge/einstein_sector/verify_ppwave_bach_branch_closure.py",
+        "sha256": "35eac42126bc6b424027e0d16c9a26d9454b74e279583860a17d462faf252971"
+      },
+      "producer": {
+        "commit": "1c4eb856a191f5795e44c0ff1bc1afce644a9e88",
+        "path": "bridge/einstein_sector/ppwave_bach_branch_closure.py",
+        "sha256": "5b9bcbd8176239af2d967d29d96461e62311c46824ac03073ce81822eca7e6a9"
+      },
+      "report": {
+        "commit": "1c4eb856a191f5795e44c0ff1bc1afce644a9e88",
+        "path": "reports/ppwave-bach-branch-closure.md",
+        "sha256": "9b49412cf321f3e766320007b7595326e5cec4e64735a53d1a1695e86c424ccf"
+      },
+      "schema": {
+        "commit": "1c4eb856a191f5795e44c0ff1bc1afce644a9e88",
+        "path": "bridge/einstein_sector/schema/ppwave_bach_branch_closure.schema.json",
+        "sha256": "ac013dcfe7b119f578ea6ec75cc3f0ef4daf484a1ab5550bd1e152387d225d39"
+      },
+      "tests": {
+        "commit": "1c4eb856a191f5795e44c0ff1bc1afce644a9e88",
+        "path": "bridge/einstein_sector/tests/test_ppwave_bach_branch_closure.py",
+        "sha256": "a17e2fff39a6294f6c3228bad13a4d9713edc05c239dbe367bb1dc9446391ca7"
+      }
+    },
+    "commit": "1c4eb856a191f5795e44c0ff1bc1afce644a9e88"
+  },
+  "claim_boundary": "This pinned LOCAL-ALGEBRAIC import computes the transferred ell2 on an arbitrary-profile, aligned Brinkmann pp-wave metric sector carrying genuine Einstein and non-Einstein biharmonic Weyl representatives. Exact Bach linearity makes every restricted branch-mixing entry zero before projection. It is not the complete support-local BV q2 or 54-row transfer and does not classify nonaligned vertices, centered Weyl-square deformation classes, pairing positivity, causal propagation, or quantum corrections.",
+  "claim_flags": {
+    "ACTUAL_EINSTEIN_EXTRA_WEYL_MIXING_TESTED": true,
+    "ALIGNED_PPWAVE_BRANCHES_CLOSE": true,
+    "COMPLETE_54_ROW_TRANSFER": false,
+    "FULL_SUPPORT_LOCAL_BV_Q2": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "NONALIGNED_BRANCH_MIXING_CLASSIFIED": false,
+    "QME_RESTORED": false,
+    "RESTRICTED_SUPPORT_LOCAL_BRANCH_ELL2_COMPUTED": true,
+    "WEYL_SQUARE_DEFORMATION_CENTRALITY_TESTED": false
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/ppwave-branch-transfer.md": "a537ab0514e13988e06959c460763c08d56fdf82634aa12651009ba751267226",
+      "ppwave_branch_transfer_import.py": "162c2b11273104e633f1a215ef944b75ce49ce32ad30b4eef4ec8116787ed6f8",
+      "ppwave_branch_transfer_import_certificate.py": "aa89fd4028cb9ae711b4df9fcc71cbe6467c976d6857cb54317cb159f8989080",
+      "schema/ppwave-branch-transfer-import-v1.schema.json": "6eeb8da1ce78cdfa92faf7488c08a33a960d5f59e7eecb23a99c9f560a5f2943",
+      "tests/test_ppwave_branch_transfer_import.py": "079c4660496b4de8069b4cbbf4540f01d6ce1727aa4542fe805d5523295a8c88"
+    },
+    "source_manifest_sha256": "2029cc8e45fbc9cc1c0142975bc75cb5ba69c93aceccfcfec429ac7f42d2e804"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_import_checks": {
+    "Einstein_branch_recomputed": true,
+    "branch_mixing_table_zero": true,
+    "claim_boundary_fail_closed": true,
+    "extra_Weyl_branch_recomputed": true,
+    "homotopy_independence_exact": true,
+    "mixed_exact_solution_recomputed": true,
+    "pinned_artifact_hashes_available": true,
+    "restricted_ell2_zero_before_projection": true,
+    "restricted_q2_recomputed": true,
+    "strict_schema_identity": true
+  },
+  "lifecycle_layer": "INTERACTING",
+  "next_gate": "NONALIGNED_SUPPORT_LOCAL_BRANCH_BLOCK_OR_COMPLETE_54_ROW_Q2",
+  "physical_interpretation": {
+    "Einstein_and_extra_Weyl_close_on_declared_sector": true,
+    "centered_Weyl_square_deformation_classes_tested": false,
+    "extra_Weyl_pairing_sign_classified": false,
+    "negative_direction_reintroduced_by_ell2": false,
+    "one_particle_cohomology_statement": "NOT_ADDRESSED"
+  },
+  "result_id": "PPWAVE_EINSTEIN_EXTRA_WEYL_TRANSFERRED_ELL2",
+  "result_state": "RESTRICTED_SUPPORT_LOCAL_BRANCH_MIXING_ELL2_EXACTLY_ZERO",
+  "schema": "quantum-weyl-ppwave-branch-transfer-import-v1",
+  "support_local_block": {
+    "arbitrary_profile_not_mode_truncated": true,
+    "full_BV_block": false,
+    "geometry": "ds^2=2 du dv+dx^2+dy^2+H(u,x,y)du^2",
+    "profile_scope": "arbitrary smooth H(u,x,y), independent of v",
+    "q1": "q1(H)=-Delta_perp^2 H/4 in the uu equation row",
+    "q2": {
+      "Einstein_Einstein": "0",
+      "Einstein_extraWeyl": "0",
+      "extraWeyl_extraWeyl": "0"
+    }
+  },
+  "transferred_bracket": {
+    "Einstein_Einstein": "0",
+    "Einstein_extraWeyl": "0",
+    "extraWeyl_extraWeyl": "0",
+    "formula": "ell2=pi_cl q2(iota_cl tensor iota_cl)",
+    "higher_restricted_brackets_from_classical_Bach_Taylor_tensors": "0",
+    "homotopy_independent": true,
+    "reason": "the restricted q2 vanishes before projection"
+  }
+}

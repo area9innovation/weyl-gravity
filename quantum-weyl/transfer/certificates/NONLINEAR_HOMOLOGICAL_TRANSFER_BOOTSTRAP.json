@@ -16,6 +16,7 @@
     "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
     "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
     "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
+    "The pp-wave branch block uses arbitrary smooth aligned Brinkmann profiles and genuine Einstein/non-Einstein metric representatives, but exact linearity on that sector does not determine nonaligned support-local vertices, the centered Weyl-square deformation classes, or the complete BV q2.",
     "D_CHARGED is the canonical classical verdict; EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT is a route label, not a fifth scientific disposition.",
     "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics only; physical q3 and any support-local or nonzero-weight iota_D^(2) remain absent.",
     "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme."
@@ -63,7 +64,7 @@
     {
       "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2",
       "stage": "HT1",
-      "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_AND_ALL_WEIGHT_HOMOGENEOUS_NONZERO_CARTAN_PRIMITIVE_FULL_4D_SUPPORT_LOCAL_Q2_AND_54_ROW_CARTAN_PENDING"
+      "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_ALL_WEIGHT_HOMOGENEOUS_NONZERO_CARTAN_PRIMITIVE_AND_RESTRICTED_PPWAVE_BRANCH_ELL2_ZERO_FULL_4D_SUPPORT_LOCAL_Q2_AND_54_ROW_CARTAN_PENDING"
     },
     {
       "deliverable": "compute ell3 and dynamical/topological mixing table",
@@ -125,7 +126,10 @@
     "nd2_physical_run_contract_sha256": "9a3cae3134891c079ef3329dcf8739ece02a555fddbb7baf72be4d8e47b802cd",
     "nd3_arity_three_cartan_engine_certificate": "quantum-weyl/transfer/certificates/ND3_ARITY_THREE_CARTAN_ENGINE.json",
     "nd3_arity_three_cartan_engine_sha256": "70913975df95566860eb4e7cbf33dde36271f468bd28a133cdc48b2e5a062a01",
+    "ppwave_branch_transfer_import_certificate": "quantum-weyl/transfer/certificates/PPWAVE_BRANCH_TRANSFERRED_ELL2.json",
+    "ppwave_branch_transfer_import_sha256": "fa9cb7cf6c869614a259bc33fdada85398f956794a3e061ab939b43e39ba7d7e",
     "source_manifest": {
+      "../reports/ppwave-branch-transfer.md": "a537ab0514e13988e06959c460763c08d56fdf82634aa12651009ba751267226",
       "__init__.py": "ac2a06d6d4e5f9b24a1bee6bfd138a2866bd9783b2e4fd62d9e67d0cb3683050",
       "arity_three_cartan.py": "eeec6a358380be25d39f62958b80968150ec806fe99712dda29c425100435fcb",
       "arity_three_cartan_certificate.py": "cee1825abfa90bad27f0560b88f4a2cae58ec8e72e289a8723502d896fc55b90",
@@ -160,8 +164,10 @@
       "nd2_arity_two_certificate.py": "4ce680bbb5d1aeea2eb765a33c1ddfaf88bb68ef83edbdea06dce6f54365e238",
       "nd2_physical_run.py": "9fe6d7988932b3543c8347ef3f83c7b80ab93d18ca0d6306c45b5875d3152d50",
       "nd2_physical_run_certificate.py": "138418bbdfd75139887df4e81d74a1cf561c548c5e3a5ef8ddb4132c83903a6d",
-      "nonlinear_transfer_certificate.py": "b69f78f2f41696136d4176cdf749dc81b586c5b437e3d498e9a5a6e5b601d4a2",
+      "nonlinear_transfer_certificate.py": "d5ef4f6a42b63241db8eda5782e66059504e73d4fb6abb97f445751d2e6b25bb",
       "operator_backend_registry.py": "8c5e74f36656488e7060b47426b501c5582f13969522a53a090bf822288c8845",
+      "ppwave_branch_transfer_import.py": "162c2b11273104e633f1a215ef944b75ce49ce32ad30b4eef4ec8116787ed6f8",
+      "ppwave_branch_transfer_import_certificate.py": "aa89fd4028cb9ae711b4df9fcc71cbe6467c976d6857cb54317cb159f8989080",
       "residual_cubic_block.py": "d8e5a5100ea81b85a3a9b70ff8a683707ba358cc757308e705dd56c127bf3aa2",
       "residual_cubic_certificate.py": "597a47905f5bddef720459672c5b10504fc66826b8b4b3ab332b16c4063ec5b9",
       "schema/arity-three-cartan-engine-v1.schema.json": "d05594899045ce7e235e01d82c6bc2c9e3ca3ae2c934e3d272cecf27614de182",
@@ -181,6 +187,7 @@
       "schema/nd2-physical-run-certificate-v1.schema.json": "48c308b906b94ab16d4a1feed6dabed30fe817dd22c0ec1d9d620682900580bd",
       "schema/nd2-physical-run-input-v1.schema.json": "0b9e773dc7fcfc634ddf6ddbb52ad7c505df823d691ab22900029120590c9b58",
       "schema/nonlinear_classical_export.schema.json": "c476d0e1b3f4c30937100a58622c87b611afdb0224b9ffedea35ae376398ac79",
+      "schema/ppwave-branch-transfer-import-v1.schema.json": "6eeb8da1ce78cdfa92faf7488c08a33a960d5f59e7eecb23a99c9f560a5f2943",
       "schema/selected-residual-d-derivation-v1.schema.json": "7a385f4d81c46c38c6eece5ba7f133ed77d85230875a722b97229e4e67cf2aad",
       "schema/total-d-disposition-v1.schema.json": "b4be4fe52c2f2345ff8c28758565724b5a6901190411cc884f63ea45f8ed8807",
       "support_local_q2_consumer.py": "8b27f10caabdef0595cda3a02fd47f3dd8bd0fd4e0caf19f0e532ef1c17e91be",
@@ -205,14 +212,15 @@
       "tests/test_local_expression_ast.py": "52b883e235387a41b96f2443d23117b078d68970ee59915f86a190b0d7416c9b",
       "tests/test_nd2_arity_two_certificate.py": "1ca5a2eaa28a6f53043096caff26cf18f7651817d73f49b0237290c63daffb98",
       "tests/test_nd2_physical_run.py": "982ebe10d64434363624f131bc8188547f51da636a6605a7819ab2f33e7b1ab0",
-      "tests/test_nonlinear_transfer_certificate.py": "85483d535edaee98b47bd7c0fb78b09083f0e595d41fc933e01e8a604577fb8b",
+      "tests/test_nonlinear_transfer_certificate.py": "0edaa2e4352b6ac52a3d589c9388c3afad8fc7c99c0542b91d8112efd2acf2dc",
+      "tests/test_ppwave_branch_transfer_import.py": "079c4660496b4de8069b4cbbf4540f01d6ce1727aa4542fe805d5523295a8c88",
       "tests/test_residual_cubic_block.py": "d279660e15cd7e0c12b7da2c514a6ba566db0505dd03c9c44e3a696454d618cb",
       "tests/test_support_local_q2_consumer.py": "f859bf3c440aacdddb19033c5ab2e0240c1b7c991e0dfcff2ae3d6fc0551e411",
       "tests/test_total_d_disposition.py": "def20c048991bff2c206f99e31bad07fec27877f36aad320d3a7acc9f180e0e7",
       "total_d_disposition.py": "e81da4b928c7d69c7581bce68a7103972123e7e114b06d31bb38c8f648aad6f2",
       "total_d_disposition_certificate.py": "4aa33b5b6343bf7c107db120b1e610ca6a436fc60b656e45080b405e4fa47eb7"
     },
-    "source_manifest_sha256": "26df12c908c101889cbc5ae758784e64a0f084e7a0c88ef49b30e021c623ca20",
+    "source_manifest_sha256": "9ef73b5348e81ef7c5249e3213c4fc383011d0d82c26ff604138d1770ec647db",
     "support_local_q2_contract": "quantum-weyl/classical_import/certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json",
     "support_local_q2_contract_sha256": "c9fcc9a537856b0418897741782ad07edbb88a2bea71ff559002d7e67f57fd6b"
   },
@@ -220,7 +228,12 @@
     {
       "next_certificate": "HT1B_COMPLETE_SUPPORT_LOCAL_Q2",
       "question_id": "transferred_cubic_bracket",
-      "status": "COMPUTED_SELECTED_RESIDUAL_MODEL_TWO_DIRECT_LOCAL_SEEDS_FULL_FIELD_DOMAIN_PENDING"
+      "status": "COMPUTED_SELECTED_RESIDUAL_MODEL_TWO_DIRECT_LOCAL_SEEDS_AND_RESTRICTED_PPWAVE_BRANCH_BLOCK_FULL_FIELD_DOMAIN_PENDING"
+    },
+    {
+      "next_certificate": "HT2_NONALIGNED_BRANCH_MIXING",
+      "question_id": "einstein_extra_weyl_branch_mixing",
+      "status": "COMPUTED_RESTRICTED_SUPPORT_LOCAL_ALIGNED_PPWAVE_ELL2_ZERO_NONALIGNED_FULL_BV_PENDING"
     },
     {
       "next_certificate": "ND1_COMPLETE_SUPPORT_LOCAL_D_DERIVATION_AND_IOTA_D2",
@@ -266,7 +279,7 @@
     "normalized_weyl_square_representatives"
   ],
   "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-  "result_state": "ENGINE_READY_HT1_RESIDUAL_AND_LOCAL_SEEDS_COMPUTED_INPUT_BLOCKED",
+  "result_state": "ENGINE_READY_HT1_SELECTED_AND_PPWAVE_BLOCKS_COMPUTED_INPUT_BLOCKED",
   "scope": {
     "established": [
       "exact strong-deformation-retract verification",
@@ -292,6 +305,7 @@
       "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
       "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
       "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
+      "arbitrary-profile aligned Brinkmann pp-wave branch block with genuine Einstein and extra-Weyl representatives, vanishing restricted q2, and homotopy-independent transferred ell2=0",
       "total-D disposition router that permits Cartan contraction only for a certified D_GAUGE result",
       "strict total-D presymplectic audit schema with canonical D_CHARGED vocabulary, sector ledger, and exact verdict signatures",
       "phase-space, boundary-condition, classical-commit, dependency-scope, and source-hash binding before physical execution",
@@ -302,6 +316,7 @@
       "the complete conformal-gravity q2 or q3 Taylor tensors",
       "the complete support-local conformal-gravity q2 lift before endpoint projection",
       "closure or centrality of either Weyl-square direction",
+      "nonaligned Einstein/extra-Weyl branch mixing outside the Brinkmann pp-wave sector",
       "absence of higher-bracket sector re-entry",
       "the support-local Berger q2 and nonlinear D-equivariant contraction outside the all-weight homogeneous six-row-per-weight block",
       "the full four-dimensional support-local Berger q2 and complete 54-row arity-two Cartan contraction",

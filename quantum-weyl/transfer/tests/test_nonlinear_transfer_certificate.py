@@ -23,7 +23,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(
             certificate["result_state"],
-            "ENGINE_READY_HT1_RESIDUAL_AND_LOCAL_SEEDS_COMPUTED_INPUT_BLOCKED",
+            "ENGINE_READY_HT1_SELECTED_AND_PPWAVE_BLOCKS_COMPUTED_INPUT_BLOCKED",
         )
         self.assertEqual(
             certificate["dependency_tags"],
@@ -48,6 +48,17 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             "TWO_DIRECT_LOCAL_SEEDS",
             certificate["question_ledger"][0]["status"],
         )
+        self.assertIn(
+            "RESTRICTED_PPWAVE_BRANCH_BLOCK",
+            certificate["question_ledger"][0]["status"],
+        )
+        branch_question = next(
+            item
+            for item in certificate["question_ledger"]
+            if item["question_id"] == "einstein_extra_weyl_branch_mixing"
+        )
+        self.assertIn("ALIGNED_PPWAVE_ELL2_ZERO", branch_question["status"])
+        self.assertIn("NONALIGNED_FULL_BV_PENDING", branch_question["status"])
         d_question = next(
             item
             for item in certificate["question_ledger"]
@@ -94,6 +105,10 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn(
             "berger_all_weight_arity_two_cartan_import_sha256",
+            certificate["provenance"],
+        )
+        self.assertIn(
+            "ppwave_branch_transfer_import_sha256",
             certificate["provenance"],
         )
         self.assertIn("berger_total_D_disposition_sha256", certificate["provenance"])

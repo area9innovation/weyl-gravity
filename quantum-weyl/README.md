@@ -89,7 +89,7 @@ schema/             machine-readable result contracts
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `NOT_COMPUTED` |
 | F | one-loop Slavnov breaking and QME status | `NOT_COMPUTED` |
 | G | residual quantum transfer and pairing correction | `NOT_COMPUTED` |
-| N | nonlinear classical transfer prerequisite | `ALL_WEIGHT_REDUCED_MODE_CARTAN_COMPLETE`; finite nonzero-weight truncations are obstructed, but the all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero first-order exact primitive; full four-dimensional support-local `q2` and the complete 54-row Cartan contraction remain absent |
+| N | nonlinear classical transfer prerequisite | `RESTRICTED_BRANCH_ELL2_AND_ALL_WEIGHT_REDUCED_MODE_CARTAN_COMPLETE`; an arbitrary-profile aligned pp-wave block has genuine Einstein/extra-Weyl representatives and exactly zero mixed transferred `ell2`; finite nonzero-weight Berger truncations are obstructed, while the all-integer-weight homogeneous complex has an explicit nonzero exact Cartan primitive; nonaligned/full-BV `q2`, Weyl-square centrality, and the complete 54-row Cartan contraction remain absent |
 
 The precursor audits
 [`verify_conformal_descent_anomaly.py`](../symbolic/verify_conformal_descent_anomaly.py)

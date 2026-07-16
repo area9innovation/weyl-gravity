@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-ppwave-branch-transfer-import-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "bridge_source", "exact_import_checks", "support_local_block", "branch_content", "transferred_bracket", "physical_interpretation", "claim_flags", "claim_boundary", "next_gate", "consumer_provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-ppwave-branch-transfer-import-v1"},
+    "result_id": {"const": "PPWAVE_EINSTEIN_EXTRA_WEYL_TRANSFERRED_ELL2"},
+    "result_state": {"const": "RESTRICTED_SUPPORT_LOCAL_BRANCH_MIXING_ELL2_EXACTLY_ZERO"},
+    "lifecycle_layer": {"const": "INTERACTING"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "bridge_source": {"type": "object"},
+    "exact_import_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "support_local_block": {"type": "object"},
+    "branch_content": {"type": "object"},
+    "transferred_bracket": {
+      "type": "object",
+      "required": ["formula", "Einstein_Einstein", "Einstein_extraWeyl", "extraWeyl_extraWeyl", "homotopy_independent", "reason", "higher_restricted_brackets_from_classical_Bach_Taylor_tensors"],
+      "properties": {
+        "formula": {"const": "ell2=pi_cl q2(iota_cl tensor iota_cl)"},
+        "Einstein_Einstein": {"const": "0"},
+        "Einstein_extraWeyl": {"const": "0"},
+        "extraWeyl_extraWeyl": {"const": "0"},
+        "homotopy_independent": {"const": true},
+        "reason": {"type": "string"},
+        "higher_restricted_brackets_from_classical_Bach_Taylor_tensors": {"const": "0"}
+      },
+      "additionalProperties": false
+    },
+    "physical_interpretation": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["RESTRICTED_SUPPORT_LOCAL_BRANCH_ELL2_COMPUTED", "ACTUAL_EINSTEIN_EXTRA_WEYL_MIXING_TESTED", "ALIGNED_PPWAVE_BRANCHES_CLOSE", "NONALIGNED_BRANCH_MIXING_CLASSIFIED", "FULL_SUPPORT_LOCAL_BV_Q2", "COMPLETE_54_ROW_TRANSFER", "WEYL_SQUARE_DEFORMATION_CENTRALITY_TESTED", "LORENTZIAN_CERTIFIED", "QME_RESTORED"],
+      "properties": {
+        "RESTRICTED_SUPPORT_LOCAL_BRANCH_ELL2_COMPUTED": {"const": true},
+        "ACTUAL_EINSTEIN_EXTRA_WEYL_MIXING_TESTED": {"const": true},
+        "ALIGNED_PPWAVE_BRANCHES_CLOSE": {"const": true},
+        "NONALIGNED_BRANCH_MIXING_CLASSIFIED": {"const": false},
+        "FULL_SUPPORT_LOCAL_BV_Q2": {"const": false},
+        "COMPLETE_54_ROW_TRANSFER": {"const": false},
+        "WEYL_SQUARE_DEFORMATION_CENTRALITY_TESTED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "next_gate": {"const": "NONALIGNED_SUPPORT_LOCAL_BRANCH_BLOCK_OR_COMPLETE_54_ROW_Q2"},
+    "consumer_provenance": {"type": "object"}
+  }
+}

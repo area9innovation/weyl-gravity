@@ -43,6 +43,9 @@ BERGER_NONZERO_WEIGHT_NO_GO_PATH = (
 BERGER_ALL_WEIGHT_CARTAN_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_ALL_WEIGHT_ARITY_TWO_CARTAN_IMPORT.json"
 )
+PPWAVE_BRANCH_TRANSFER_PATH = (
+    TRANSFER_ROOT / "certificates" / "PPWAVE_BRANCH_TRANSFERRED_ELL2.json"
+)
 
 
 REQUIRED_EXPORTS = (
@@ -101,6 +104,9 @@ def _source_manifest() -> dict[str, str]:
         "berger_nonzero_weight_no_go_import_certificate.py",
         "berger_all_weight_cartan_import.py",
         "berger_all_weight_cartan_import_certificate.py",
+        "ppwave_branch_transfer_import.py",
+        "ppwave_branch_transfer_import_certificate.py",
+        "../reports/ppwave-branch-transfer.md",
         "total_d_disposition.py",
         "total_d_disposition_certificate.py",
         "arity_three_cartan.py",
@@ -125,6 +131,7 @@ def _source_manifest() -> dict[str, str]:
         "schema/berger-first-arity-two-cartan-verdict-v1.schema.json",
         "schema/berger-nonzero-weight-closure-no-go-import-v1.schema.json",
         "schema/berger-all-weight-arity-two-cartan-import-v1.schema.json",
+        "schema/ppwave-branch-transfer-import-v1.schema.json",
         "schema/total-d-disposition-v1.schema.json",
         "schema/arity-three-cartan-engine-v1.schema.json",
         "schema/nonlinear_classical_export.schema.json",
@@ -148,6 +155,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_berger_reduced_mode_cartan.py",
         "tests/test_berger_nonzero_weight_no_go_import.py",
         "tests/test_berger_all_weight_cartan_import.py",
+        "tests/test_ppwave_branch_transfer_import.py",
         "tests/test_total_d_disposition.py",
         "tests/test_arity_three_cartan.py",
         "tests/test_arity_three_cartan_certificate.py",
@@ -188,6 +196,9 @@ def build_certificate() -> dict[str, Any]:
     )
     berger_all_weight_cartan = json.loads(
         BERGER_ALL_WEIGHT_CARTAN_PATH.read_text(encoding="utf-8")
+    )
+    ppwave_branch_transfer = json.loads(
+        PPWAVE_BRANCH_TRANSFER_PATH.read_text(encoding="utf-8")
     )
     if (
         berger_import.get("result_state")
@@ -354,6 +365,29 @@ def build_certificate() -> dict[str, Any]:
         is not False
     ):
         raise ValueError("Berger all-weight Cartan verdict was promoted or removed")
+    if (
+        ppwave_branch_transfer.get("schema")
+        != "quantum-weyl-ppwave-branch-transfer-import-v1"
+        or ppwave_branch_transfer.get("result_state")
+        != "RESTRICTED_SUPPORT_LOCAL_BRANCH_MIXING_ELL2_EXACTLY_ZERO"
+        or any(
+            ppwave_branch_transfer.get("transferred_bracket", {}).get(entry) != "0"
+            for entry in (
+                "Einstein_Einstein",
+                "Einstein_extraWeyl",
+                "extraWeyl_extraWeyl",
+            )
+        )
+        or ppwave_branch_transfer.get("claim_flags", {}).get(
+            "ACTUAL_EINSTEIN_EXTRA_WEYL_MIXING_TESTED"
+        )
+        is not True
+        or ppwave_branch_transfer.get("claim_flags", {}).get(
+            "FULL_SUPPORT_LOCAL_BV_Q2"
+        )
+        is not False
+    ):
+        raise ValueError("pp-wave branch-transfer verdict was promoted or removed")
     exports = {item["export_id"]: item for item in snapshot["required_exports"]}
     blockers = []
     for export_id in REQUIRED_EXPORTS:
@@ -379,7 +413,7 @@ def build_certificate() -> dict[str, Any]:
     source_manifest = _source_manifest()
     return {
         "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-        "result_state": "ENGINE_READY_HT1_RESIDUAL_AND_LOCAL_SEEDS_COMPUTED_INPUT_BLOCKED",
+        "result_state": "ENGINE_READY_HT1_SELECTED_AND_PPWAVE_BLOCKS_COMPUTED_INPUT_BLOCKED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "classical_snapshot_commit": snapshot["classical_commit"],
         "classical_freeze_gate": snapshot["gate_a_status"],
@@ -409,6 +443,7 @@ def build_certificate() -> dict[str, Any]:
                 "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
                 "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
                 "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
+                "arbitrary-profile aligned Brinkmann pp-wave branch block with genuine Einstein and extra-Weyl representatives, vanishing restricted q2, and homotopy-independent transferred ell2=0",
                 "total-D disposition router that permits Cartan contraction only for a certified D_GAUGE result",
                 "strict total-D presymplectic audit schema with canonical D_CHARGED vocabulary, sector ledger, and exact verdict signatures",
                 "phase-space, boundary-condition, classical-commit, dependency-scope, and source-hash binding before physical execution",
@@ -419,6 +454,7 @@ def build_certificate() -> dict[str, Any]:
                 "the complete conformal-gravity q2 or q3 Taylor tensors",
                 "the complete support-local conformal-gravity q2 lift before endpoint projection",
                 "closure or centrality of either Weyl-square direction",
+                "nonaligned Einstein/extra-Weyl branch mixing outside the Brinkmann pp-wave sector",
                 "absence of higher-bracket sector re-entry",
                 "the support-local Berger q2 and nonlinear D-equivariant contraction outside the all-weight homogeneous six-row-per-weight block",
                 "the full four-dimensional support-local Berger q2 and complete 54-row arity-two Cartan contraction",
@@ -432,8 +468,13 @@ def build_certificate() -> dict[str, Any]:
         "question_ledger": [
             {
                 "question_id": "transferred_cubic_bracket",
-                "status": "COMPUTED_SELECTED_RESIDUAL_MODEL_TWO_DIRECT_LOCAL_SEEDS_FULL_FIELD_DOMAIN_PENDING",
+                "status": "COMPUTED_SELECTED_RESIDUAL_MODEL_TWO_DIRECT_LOCAL_SEEDS_AND_RESTRICTED_PPWAVE_BRANCH_BLOCK_FULL_FIELD_DOMAIN_PENDING",
                 "next_certificate": "HT1B_COMPLETE_SUPPORT_LOCAL_Q2",
+            },
+            {
+                "question_id": "einstein_extra_weyl_branch_mixing",
+                "status": "COMPUTED_RESTRICTED_SUPPORT_LOCAL_ALIGNED_PPWAVE_ELL2_ZERO_NONALIGNED_FULL_BV_PENDING",
+                "next_certificate": "HT2_NONALIGNED_BRANCH_MIXING",
             },
             {
                 "question_id": "D_quotient_interaction_stability",
@@ -468,7 +509,7 @@ def build_certificate() -> dict[str, Any]:
         ],
         "programme_stages": [
             {"stage": "HT0", "deliverable": "exact transfer engine and input contract", "status": "READY"},
-            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_AND_ALL_WEIGHT_HOMOGENEOUS_NONZERO_CARTAN_PRIMITIVE_FULL_4D_SUPPORT_LOCAL_Q2_AND_54_ROW_CARTAN_PENDING"},
+            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_ALL_WEIGHT_HOMOGENEOUS_NONZERO_CARTAN_PRIMITIVE_AND_RESTRICTED_PPWAVE_BRANCH_ELL2_ZERO_FULL_4D_SUPPORT_LOCAL_Q2_AND_54_ROW_CARTAN_PENDING"},
             {"stage": "HT2", "deliverable": "compute ell3 and dynamical/topological mixing table", "status": "ARITY_THREE_CARTAN_RECURRENCE_ENGINE_READY_PHYSICAL_Q3_INPUT_BLOCKED"},
             {"stage": "HT3", "deliverable": "higher-arity and particle-filtration obstruction ledger", "status": "NOT_COMPUTED"},
             {"stage": "HT4", "deliverable": "cyclic minimal action and formal moduli interpretation", "status": "NOT_COMPUTED"},
@@ -546,6 +587,10 @@ def build_certificate() -> dict[str, Any]:
             "berger_all_weight_arity_two_cartan_import_sha256": _sha256(
                 BERGER_ALL_WEIGHT_CARTAN_PATH
             ),
+            "ppwave_branch_transfer_import_certificate": "quantum-weyl/transfer/certificates/PPWAVE_BRANCH_TRANSFERRED_ELL2.json",
+            "ppwave_branch_transfer_import_sha256": _sha256(
+                PPWAVE_BRANCH_TRANSFER_PATH
+            ),
             "berger_total_D_disposition_certificate": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json",
             "berger_total_D_disposition_sha256": _sha256(
                 TOTAL_D_DISPOSITION_PATH
@@ -572,6 +617,7 @@ def build_certificate() -> dict[str, Any]:
             "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
             "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
             "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
+            "The pp-wave branch block uses arbitrary smooth aligned Brinkmann profiles and genuine Einstein/non-Einstein metric representatives, but exact linearity on that sector does not determine nonaligned support-local vertices, the centered Weyl-square deformation classes, or the complete BV q2.",
             "D_CHARGED is the canonical classical verdict; EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT is a route label, not a fifth scientific disposition.",
             "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics only; physical q3 and any support-local or nonzero-weight iota_D^(2) remain absent.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",
@@ -598,7 +644,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: HT1/ND1 RESULTS, ND2 PHYSICAL CONTRACT, AND ND3 CARTAN SOLVER READY; INPUT BLOCKED")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: HT1 SELECTED/PP-WAVE AND ND1 RESULTS, ND2 PHYSICAL CONTRACT, AND ND3 CARTAN SOLVER READY; INPUT BLOCKED")
     return 0
 
 
