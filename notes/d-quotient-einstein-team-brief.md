@@ -621,6 +621,42 @@ compact gates are the homogeneous `ell=0` and axial `ell=1` twist global
 pairs, followed independently by the Weyl--Maxwell Lee--Wald pullback and the
 extra fourth-order adjoint blocks.
 
+`COMPACT_EM_EXCEPTIONAL_GLOBAL_SYMPLECTIC` now closes the remaining global
+pairing gate on the generalized zero-frequency space.  For
+
+```text
+K=a+b t,
+C=a t^2+(b/3)t^3+c+d t,
+A_x=W_x+Q_e t,
+```
+
+the exact form is
+
+```text
+Omega_ell0
+ = -2 pi L[da wedge db+da wedge dd-db wedge dc
+            +2 dQ_e wedge dW_x].
+```
+
+It has rank six.  The named radion and circumference labels mix: with
+`beta=b+d`, the gravitational block is
+`-2piL da wedge d beta+2piL db wedge dc`.  The field-strength-invisible flat
+holonomy `W_x` is the canonical partner of electric charge and does not alter
+`c1(P_N)`.
+
+For every real axial `ell=1` harmonic, the constant twist `A_m` and its
+time-linear generalized solution `B_m t` form the block
+
+```text
+Omega_twist=2L N_1m dA_m wedge dB_m.
+```
+
+Thus the standard fixed-bundle Einstein--Maxwell harmonic symplectic phase
+space is now complete before final residual quotient.  This statement permits
+polynomial-in-time Jordan solutions; a bounded-in-time phase space would be a
+different theorem.  The next compact gate is the Weyl--Maxwell Lee--Wald
+pullback on radiative and global blocks separately.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally

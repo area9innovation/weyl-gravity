@@ -46,6 +46,7 @@ EINSTEIN_MAXWELL_POLAR_MASTER_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions"
 EINSTEIN_MAXWELL_POLAR_MASTER_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-polar-master-complex.json"
 EINSTEIN_MAXWELL_POLAR_EXCEPTIONAL_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-polar-exceptional-complex.json"
 EINSTEIN_MAXWELL_RADIATIVE_SYMPLECTIC_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-radiative-symplectic-matching.json"
+EINSTEIN_MAXWELL_EXCEPTIONAL_GLOBAL_SYMPLECTIC_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-exceptional-global-symplectic.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -832,6 +833,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "einstein_maxwell_product_compact_radiative_symplectic",
         "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHING",
     )
+    maxwell_exceptional_global_symplectic_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_EXCEPTIONAL_GLOBAL_SYMPLECTIC_CONTRIBUTION,
+        "compact_einstein_maxwell_exceptional_global_symplectic",
+        "einstein_maxwell_product_compact_exceptional_global_symplectic",
+        "G2_EXCEPTIONAL_GLOBAL_SYMPLECTIC_COMPLETION",
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
@@ -987,6 +994,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": maxwell_radiative_symplectic_contribution,
             },
             {
+                "path": str(EINSTEIN_MAXWELL_EXCEPTIONAL_GLOBAL_SYMPLECTIC_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_EXCEPTIONAL_GLOBAL_SYMPLECTIC_CONTRIBUTION),
+                "payload": maxwell_exceptional_global_symplectic_contribution,
+            },
+            {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
@@ -1007,10 +1019,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "einstein_boundary",
-                "result_state": "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHED_GLOBAL_AND_WEYL_PULLBACK_OPEN",
+                "result_state": "G2_COMPLETE_STANDARD_EM_HARMONIC_SYMPLECTIC_PHASE_SPACE_WEYL_PULLBACK_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "The fixed compact U(1) domain, complete standard axial/polar harmonic quotients, and action-normalized Einstein--Maxwell covariant symplectic form are certified on every radiative block. A direct symbolic-momentum Lee--Wald fixture matches both parities. Both ell=1 gauge branches are exact presymplectic kernels and the quotient kinetic forms are positive; no one-particle Hilbert norm is claimed.",
-                "next_gate": "compute the homogeneous ell=0 and axial ell=1 twist global presymplectic pairs, then compare the Weyl--Maxwell pullback and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
+                "established": "The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient. Radiative blocks have positive kinetic forms; the homogeneous global block has rank six; electric charge pairs with S1 holonomy; and each real axial ell=1 twist has a generalized canonical partner. No one-particle Hilbert norm is claimed.",
+                "next_gate": "compare the Weyl--Maxwell Lee--Wald pullback on the complete radiative and global blocks, then solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
             },
             {
                 "team_id": "nonlinear",
@@ -1290,6 +1302,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHING",
             },
             {
+                "setting_id": "compact_einstein_maxwell_exceptional_global_symplectic",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_exceptional_global_symplectic",
+                "boundary_conditions": "fixed-P_N compact product; generalized zero-frequency ell=0 and axial ell=1 sectors; smooth periodic identity-component gauge; before final residual quotient",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G2_EXCEPTIONAL_GLOBAL_SYMPLECTIC_COMPLETION",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1447,6 +1468,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_polar_master_complex",
         "compact_einstein_maxwell_polar_exceptional_complex",
         "compact_einstein_maxwell_radiative_symplectic_matching",
+        "compact_einstein_maxwell_exceptional_global_symplectic",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1480,6 +1502,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_polar_master_complex": "G2_POLAR_ELL_GE2_ARBITRARY_LAMBDA_TENSOR_IDENTITY",
         "compact_einstein_maxwell_polar_exceptional_complex": "G2_POLAR_ALL_ELL_LINEAR_COMPLEX",
         "compact_einstein_maxwell_radiative_symplectic_matching": "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHING",
+        "compact_einstein_maxwell_exceptional_global_symplectic": "G2_EXCEPTIONAL_GLOBAL_SYMPLECTIC_COMPLETION",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -1536,6 +1559,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Einstein--Maxwell polar exceptional complex was dropped")
     if ledger.get("compact_einstein_maxwell_radiative_symplectic_matching", {}).get("status") != "CERTIFIED":
         errors.append("Einstein--Maxwell radiative symplectic theorem was dropped")
+    if ledger.get("compact_einstein_maxwell_exceptional_global_symplectic", {}).get("status") != "CERTIFIED":
+        errors.append("Einstein--Maxwell exceptional global symplectic theorem was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -1844,6 +1869,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_radiative_symplectic_matching",
             "drop_Einstein_Maxwell_radiative_symplectic_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_exceptional_global_symplectic",
+            "drop_Einstein_Maxwell_exceptional_global_symplectic_contribution",
         ),
     ):
         mutant = deepcopy(data)

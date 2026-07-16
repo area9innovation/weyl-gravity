@@ -216,6 +216,18 @@ declared residual gauge branches, with positive quotient kinetic forms.  On the
 closed `S1 x S2` Cauchy surface these reduced Wronskians equal the integrated
 Einstein--Maxwell Lee--Wald form.  The direct current check retains symbolic
 nonzero momentum; a one-particle Hilbert norm remains open until a
-positive-frequency complex structure is declared.  The remaining compact gates are the
+positive-frequency complex structure is declared.  The remaining compact
+gates are the
 homogeneous `ell=0` and axial-twist global pairs, the independent
 Weyl--Maxwell pullback, and the extra fourth-order adjoint classes.
+
+The exceptional global pairing is now complete on the generalized
+zero-frequency solution space.  The homogeneous metric/electric block has
+rank six: radion and circumference Jordan labels reorganize into two
+gravitational Darboux pairs, while electric charge pairs with the flat `S1`
+holonomy.  Each of the three real axial `ell=1` twists is paired with its
+time-linear generalized solution.  Together with the radiative theorem this
+completes the standard fixed-bundle Einstein--Maxwell harmonic symplectic
+phase space before final residual quotient.  The next compact gate is the
+independent Weyl--Maxwell Lee--Wald pullback, followed by the extra
+fourth-order adjoint blocks.
