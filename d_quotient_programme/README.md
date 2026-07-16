@@ -62,6 +62,8 @@ because the existing results concern different objects:
 - [`reports/einstein-maxwell-obstruction-bilinear-registration-receipt.md`](reports/einstein-maxwell-obstruction-bilinear-registration-receipt.md)
 - [`contributions/einstein-maxwell-compact-domain-taub-descent.json`](contributions/einstein-maxwell-compact-domain-taub-descent.json)
 - [`reports/einstein-maxwell-compact-domain-taub-registration-receipt.md`](reports/einstein-maxwell-compact-domain-taub-registration-receipt.md)
+- [`contributions/einstein-maxwell-harmonic-adjoint-block-preflight.json`](contributions/einstein-maxwell-harmonic-adjoint-block-preflight.json)
+- [`reports/einstein-maxwell-harmonic-adjoint-block-registration-receipt.md`](reports/einstein-maxwell-harmonic-adjoint-block-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -172,3 +174,14 @@ constant-lapse form gauge-descended and slice independent, so it is registered
 as a relative Taub bilinear on the fixed-bundle domain.  The complete harmonic
 cohomology, other adjoint classes, and surviving block coefficients remain
 open.
+
+The harmonic calculation now has its first exact infinite block.  On the
+declared homogeneous axial `H_x/a_x` tower,
+`K_ell=[[lambda,2],[lambda,lambda]]` with
+`omega^2=lambda+/-sqrt(2 lambda)` for every `(ell,m)`.  The missing `ell=1`
+zero branch is locally gauge but globally retained because its generator is
+not periodic around `S1`.  The reduced Wronskian and universal energy,
+momentum, rotation, and electric-flux projection interface are frozen.  This
+is a block preflight: axial gauge-quotient completeness, nonzero momentum,
+polar sectors, covariant symplectic matching, and extra fourth-order adjoint
+classes remain open.

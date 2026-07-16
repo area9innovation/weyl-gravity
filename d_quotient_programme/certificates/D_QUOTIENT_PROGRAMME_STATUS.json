@@ -29,7 +29,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6",
+  "programme_base_commit": "9a2952d5f03598b2c73a69f69d0648342da8b570",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -46,7 +46,7 @@
   },
   "registry_hashes": {
     "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-    "phase_space_registry": "3a5101be8eb1216afa77668024ed0876b320883895f3a769b0ef4a85a61786f9"
+    "phase_space_registry": "dc0c6a2c965450fc2a2cfa8df13c559a6a2314eccafe8f72e621bd5233d32176"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -258,6 +258,15 @@
       "setting_id": "compact_einstein_maxwell_domain_taub_descent",
       "status": "CERTIFIED",
       "verdict": "G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT"
+    },
+    {
+      "boundary_conditions": "compact fixed-P_N product; declared n=0 axial H_x/a_x tower; smooth periodic identity-component gauge group; before residual quotient",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_harmonic_block_preflight",
+      "setting_id": "compact_einstein_maxwell_harmonic_adjoint_block_preflight",
+      "status": "CERTIFIED",
+      "verdict": "G1_AXIAL_N0_TOWER_AND_ADJOINT_PREFLIGHT"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -1233,6 +1242,51 @@
       "sha256": "5fe1d5df975b0fb20dc1829f3b7daee74cb9e61d05d07f5529ec25f3a4e8e233"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-harmonic-adjoint-block-preflight.json",
+      "payload": {
+        "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle P_N with N=2; smooth periodic identity-component gauge group; homogeneous n=0 axial H_x/a_x tower before residual quotient",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the declared n=0 axial H_x/a_x tower is solved exactly for every ell>=1 and every m",
+          "its exact frequency branches are omega_squared=lambda+/-sqrt(2 lambda), with lambda=ell(ell+1)",
+          "new full-tensor ell=3 and ell=4 checks plus an arbitrary-eigenvalue harmonic-identity proof certify the tower formula",
+          "the ell=1 minus zero branch is locally gauge but retained globally because its infinitesimal generator is not periodic on S1",
+          "the reduced tower has an exact conserved Wronskian with symmetrizer diag(lambda,2)",
+          "the five universal metric stabilizer projectors and separate electric harmonic-flux target are inventoried with fail-closed source-projection rules"
+        ],
+        "evidence": {
+          "commit": "9a2952d5f03598b2c73a69f69d0648342da8b570",
+          "path": "bridge/certificates/einstein_maxwell_harmonic_adjoint_blocks.json",
+          "sha256": "af2e8ec8924d9b27afe4b4e9d1e63b995064741475dfc09eedb389f019aeaf2b"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "derive the nonzero-S1-momentum axial and all polar master complexes, match the reduced Wronskians to the covariant symplectic form, and solve for extra fourth-order adjoint classes",
+        "not_established": [
+          "completeness of the declared axial representative modulo periodic gauge",
+          "nonzero S1 momentum or polar harmonic blocks",
+          "covariant symplectic normalization",
+          "the complete fourth-order Weyl--Maxwell adjoint cokernel",
+          "the full quadratic obstruction coefficient table, causal evolution, scattering, or quantum theory"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_harmonic_block_preflight",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_harmonic_adjoint_block_preflight",
+        "team_id": "einstein_boundary",
+        "verdict": "G1_AXIAL_N0_TOWER_AND_ADJOINT_PREFLIGHT",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_harmonic_adjoint_blocks --verify bridge/certificates/einstein_maxwell_harmonic_adjoint_blocks.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_harmonic_adjoint_blocks.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_harmonic_adjoint_blocks"
+        ]
+      },
+      "sha256": "159130190aee56f60c79444387d74aa7217d75dcacb7e4e4358e8e01cfcce88e"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -1362,9 +1416,9 @@
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. The fixture obstruction bilinear now lives on a fixed compact U(1) domain: flux quantization forbids its magnetic lift, and coupled Noether identities give gauge descent and slice-independent relative Taub interpretation. The universal-cover null tangent remains an explicit removable control in a different phase space.",
-      "next_gate": "compute every surviving equal-(abs(n),ell,polarization,branch) block and the other constraint-adjoint classes on the fixed P_N domain; independently complete the asymptotic Bach phase space and charge audit",
-      "result_state": "G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT_CERTIFIED_FULL_HARMONIC_THEOREM_OPEN",
+      "established": "The fixed compact U(1) domain and relative Taub descent are certified. Its declared homogeneous axial H_x/a_x tower is now solved for every (ell,m), including the globally retained ell=1 zero branch, exact reduced Wronskian, and universal stabilizer projectors. The remaining harmonic and fourth-order adjoint blocks are fail-closed.",
+      "next_gate": "derive nonzero-S1-momentum axial and all polar master complexes, covariant symplectic matching, and extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
+      "result_state": "G1_AXIAL_N0_TOWER_AND_ADJOINT_PREFLIGHT_CERTIFIED_FULL_HARMONIC_THEOREM_OPEN",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },

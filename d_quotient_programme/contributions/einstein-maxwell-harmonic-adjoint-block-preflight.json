@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle P_N with N=2; smooth periodic identity-component gauge group; homogeneous n=0 axial H_x/a_x tower before residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the declared n=0 axial H_x/a_x tower is solved exactly for every ell>=1 and every m",
+    "its exact frequency branches are omega_squared=lambda+/-sqrt(2 lambda), with lambda=ell(ell+1)",
+    "new full-tensor ell=3 and ell=4 checks plus an arbitrary-eigenvalue harmonic-identity proof certify the tower formula",
+    "the ell=1 minus zero branch is locally gauge but retained globally because its infinitesimal generator is not periodic on S1",
+    "the reduced tower has an exact conserved Wronskian with symmetrizer diag(lambda,2)",
+    "the five universal metric stabilizer projectors and separate electric harmonic-flux target are inventoried with fail-closed source-projection rules"
+  ],
+  "evidence": {
+    "commit": "9a2952d5f03598b2c73a69f69d0648342da8b570",
+    "path": "bridge/certificates/einstein_maxwell_harmonic_adjoint_blocks.json",
+    "sha256": "af2e8ec8924d9b27afe4b4e9d1e63b995064741475dfc09eedb389f019aeaf2b"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "derive the nonzero-S1-momentum axial and all polar master complexes, match the reduced Wronskians to the covariant symplectic form, and solve for extra fourth-order adjoint classes",
+  "not_established": [
+    "completeness of the declared axial representative modulo periodic gauge",
+    "nonzero S1 momentum or polar harmonic blocks",
+    "covariant symplectic normalization",
+    "the complete fourth-order Weyl--Maxwell adjoint cokernel",
+    "the full quadratic obstruction coefficient table, causal evolution, scattering, or quantum theory"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_harmonic_block_preflight",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_harmonic_adjoint_block_preflight",
+  "team_id": "einstein_boundary",
+  "verdict": "G1_AXIAL_N0_TOWER_AND_ADJOINT_PREFLIGHT",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_harmonic_adjoint_blocks --verify bridge/certificates/einstein_maxwell_harmonic_adjoint_blocks.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_harmonic_adjoint_blocks.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_harmonic_adjoint_blocks"
+  ]
+}
