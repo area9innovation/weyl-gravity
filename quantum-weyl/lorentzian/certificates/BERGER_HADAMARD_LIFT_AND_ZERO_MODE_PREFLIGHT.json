@@ -1,0 +1,925 @@
+{
+  "D_and_interaction_compatibility": {
+    "causal_cyclic_arity_two_D_Cartan": "CERTIFIED",
+    "causal_unary_D_Cartan": "CERTIFIED",
+    "q2_D_derivation": "CERTIFIED",
+    "scope": "classical compatibility through arity two; no anomaly coefficient or QME statement",
+    "state_stationarity_status": "NOT_COMPUTED",
+    "state_stationarity_target": "(D54_x+D54_xprime) omega2_plus_54=0",
+    "support_local_q2": "CERTIFIED_ON_ALL_54_ROWS"
+  },
+  "claim_boundary": "Certifies the actual 54-row Koszul/pairing ledger, imports the complete causal D-Cartan result through arity two, and proves that a retained 26-row BRST covariance lifts canonically to all 54 rows without new wavefront singularities or an independent contractible-sector state. It identifies the retained global stationary generalized zero eigenspace as the minimal missing carrier. No covariance, Hadamard state, physical positivity, anomaly cancellation, QME restoration or quantum theorem is claimed.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_CAUSAL_D_CARTAN_V2_IMPORTED": true,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_COVARIANCE_LIFT_26_TO_54": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER": false,
+    "BERGER_ROWWISE_KOSZUL_AUDIT": true,
+    "LORENTZIAN_QME_RESTORED": false,
+    "QUANTUM_CLAIM": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false
+  },
+  "classical_commit": "eb56d5aff7d622de423d4994051b0e048c4fb4bf",
+  "construction_order": [
+    "construct the exact retained 26-row positive-frequency covariance away from zero frequency",
+    "compute the retained stationary generalized zero eigenspace",
+    "solve its finite-dimensional graded CCR, BRST, reality and D-invariance equations",
+    "lift omega2_plus_26 canonically by iota_cl and pi_cl",
+    "test positivity only on the ghost-number-zero BRST observable quotient"
+  ],
+  "covariance_lift_26_to_54": {
+    "BRST_derivation": "q54 iota_cl=iota_cl q26 and pi_cl q54=q26 pi_cl transfer both left and right Ward identities",
+    "antisymmetric_part_derivation": "if omega2_plus_26-omega2_plus_26^sharp_gr=sqrt(-1) Delta26, then omega2_plus_54-omega2_plus_54^sharp_gr=sqrt(-1) Delta54",
+    "candidate_covariance_lift": "omega2_plus_54=iota_cl omega2_plus_26 pi_cl",
+    "causal_difference": "Delta54=iota_cl Delta26 pi_cl",
+    "causal_homotopies": "Lambda54,+/-=S_cl+iota_cl Lambda26,+/- pi_cl",
+    "checks": {
+      "Delta54_is_iota_Delta26_pi": true,
+      "algebraic_homotopy_cancels_from_causal_difference": true,
+      "contractible_28_rows_add_no_independent_singular_covariance": true,
+      "lifted_BRST_Ward_identity_follows_from_chain_maps": true,
+      "lifted_antisymmetric_part_is_exact": true,
+      "local_iota_pi_do_not_enlarge_wavefront_set": true,
+      "same_S_occurs_in_both_support_choices": true
+    },
+    "contractible_sector": "the common S_cl cancels from Delta54; the canonical lifted covariance vanishes on ker(pi_cl) and has image in im(iota_cl)",
+    "microlocal_derivation": "iota_cl and pi_cl are finite-order support-local differential maps, so the lift does not enlarge the wavefront relation",
+    "replay_coefficients": {
+      "Delta54": [
+        0,
+        1,
+        -1
+      ],
+      "Lambda54_advanced": [
+        1,
+        0,
+        1
+      ],
+      "Lambda54_retarded": [
+        1,
+        1,
+        0
+      ],
+      "basis": [
+        "S_cl",
+        "iota Lambda26,ret pi",
+        "iota Lambda26,adv pi"
+      ]
+    }
+  },
+  "dependency_refs": {
+    "base_wave_parametrix": {
+      "artifact_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "1af08343534e72b828ed151e6c8432d31a830bf894e8ab8d06c471fe0f1b2f73"
+    },
+    "causal_26": {
+      "artifact_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "61c0ce89045434676d99e723f7618da749f7208e5f49716b0ea9fc86bbaf7abb"
+    },
+    "causal_54": {
+      "artifact_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b"
+    },
+    "causal_54_to_26_reduction": {
+      "artifact_id": "BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION",
+      "sha256": "8893fa0457e513913e0a71c5e0f1923ff06cb8c32f7a662808c5c9ee37f7e521"
+    },
+    "causal_D_Cartan_v2": {
+      "artifact_id": "BERGER_CAUSAL_D_CARTAN_V2",
+      "sha256": "87c1b4d897d56bcfea51f79c71f6f0b387157fc8a76fb83eb909c8ef00d3f444"
+    },
+    "gauge_fixed_54_contraction": {
+      "artifact_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "graded_state_space_contract": {
+      "artifact_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+      "sha256": "93b322ad2c4ec286625f54ed4840a8b11d51bc14f4249f5556fc4801b5b22e5a"
+    },
+    "support_local_q2": {
+      "artifact_id": "BERGER_SUPPORT_LOCAL_Q2",
+      "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
+    },
+    "typed_companion_preflight": {
+      "artifact_id": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT",
+      "sha256": "6def32ae87575c3b8997b487d9011824d0cb61f245d5000e56780941713b6c1f"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT",
+  "next_gate": "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
+  "provenance": {
+    "D_Cartan_result_id": "BERGER_CAUSAL_D_CARTAN_V2",
+    "causal_26_result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+    "causal_54_result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+    "graded_contract_result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+    "q2_result_id": "BERGER_SUPPORT_LOCAL_Q2",
+    "reduction_result_id": "BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION",
+    "source_manifest": {
+      "../reports/berger-hadamard-lift-zero-mode-preflight.md": "401822129c7115cad327babdcdfcaffb7f30347e70d043b5b1f7aa103118376c",
+      "berger_hadamard_lift_zero_mode_preflight.py": "1872be0b26d90e2b4b7f201bbef3aeb8ce1aea4c60995d573806358327c52831",
+      "berger_hadamard_lift_zero_mode_preflight_certificate.py": "f59f313f3bc856631fe3d4c42bafddd6e644c16ebfe721330d5805731998ff0f",
+      "schema/berger-hadamard-lift-zero-mode-preflight-v1.schema.json": "d494f85b8ba518fa4204eedd83d87a184b738203ee4af72b896f562ebc6ac81d",
+      "tests/test_berger_hadamard_lift_zero_mode_preflight.py": "5655b26843bde5c07819e819763c5e981efb8dbd9308b9d7bd45fc933bc7c898",
+      "verify_berger_hadamard_lift_zero_mode_preflight.py": "2379fbb4bd795005ec914e2d3824e9f163a2cee06789852f28bc10699c3b7aa3"
+    },
+    "source_manifest_sha256": "497c3016a5b65de572463bf60fd66b2be01b1950c64d083063cf57b812e6707f"
+  },
+  "result_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
+  "result_state": "COVARIANCE_LIFT_CERTIFIED_ZERO_FREQUENCY_SPECTRAL_CARRIER_OPEN",
+  "retained_26_construction_boundary": {
+    "conclusion": "all remaining distributional state construction is confined to the retained 26 rows",
+    "exact_global_omega2_plus_26": "NOT_CONSTRUCTED",
+    "global_causal_maps": "CERTIFIED",
+    "local_base_Hadamard_singularities": "CERTIFIED",
+    "row_decomposition": {
+      "metric_antifield_companion": 10,
+      "metric_companion": 10,
+      "spatial_diff_ghost": 3,
+      "spatial_diff_identity": 3
+    },
+    "typed_20_row_companion_transport": "FORMAL_MICROLOCAL_COMPOSITION_OPEN"
+  },
+  "rowwise_Koszul_audit": {
+    "Darboux_pairs": [
+      {
+        "left": 0,
+        "left_degree": -1,
+        "omega_left_right": 1,
+        "right": 49,
+        "right_degree": 2
+      },
+      {
+        "left": 1,
+        "left_degree": -1,
+        "omega_left_right": 1,
+        "right": 50,
+        "right_degree": 2
+      },
+      {
+        "left": 2,
+        "left_degree": -1,
+        "omega_left_right": 1,
+        "right": 51,
+        "right_degree": 2
+      },
+      {
+        "left": 3,
+        "left_degree": -1,
+        "omega_left_right": 1,
+        "right": 52,
+        "right_degree": 2
+      },
+      {
+        "left": 4,
+        "left_degree": -1,
+        "omega_left_right": 1,
+        "right": 53,
+        "right_degree": 2
+      },
+      {
+        "left": 5,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 27,
+        "right_degree": 1
+      },
+      {
+        "left": 6,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 28,
+        "right_degree": 1
+      },
+      {
+        "left": 7,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 29,
+        "right_degree": 1
+      },
+      {
+        "left": 8,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 30,
+        "right_degree": 1
+      },
+      {
+        "left": 9,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 31,
+        "right_degree": 1
+      },
+      {
+        "left": 10,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 32,
+        "right_degree": 1
+      },
+      {
+        "left": 11,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 33,
+        "right_degree": 1
+      },
+      {
+        "left": 12,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 34,
+        "right_degree": 1
+      },
+      {
+        "left": 13,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 35,
+        "right_degree": 1
+      },
+      {
+        "left": 14,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 36,
+        "right_degree": 1
+      },
+      {
+        "left": 15,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 37,
+        "right_degree": 1
+      },
+      {
+        "left": 16,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 38,
+        "right_degree": 1
+      },
+      {
+        "left": 17,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 39,
+        "right_degree": 1
+      },
+      {
+        "left": 18,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 40,
+        "right_degree": 1
+      },
+      {
+        "left": 19,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 41,
+        "right_degree": 1
+      },
+      {
+        "left": 20,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 42,
+        "right_degree": 1
+      },
+      {
+        "left": 21,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 43,
+        "right_degree": 1
+      },
+      {
+        "left": 22,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 44,
+        "right_degree": 1
+      },
+      {
+        "left": 23,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 45,
+        "right_degree": 1
+      },
+      {
+        "left": 24,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 46,
+        "right_degree": 1
+      },
+      {
+        "left": 25,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 47,
+        "right_degree": 1
+      },
+      {
+        "left": 26,
+        "left_degree": 0,
+        "omega_left_right": 1,
+        "right": 48,
+        "right_degree": 1
+      }
+    ],
+    "checks": {
+      "actual_Darboux_pairs_27": true,
+      "actual_pairing_antisymmetric": true,
+      "actual_pairing_rank_54": true,
+      "all_2916_exchange_signs_enumerated": true,
+      "each_parity_sector_has_729_ordered_pairs": true,
+      "even_rows_27": true,
+      "every_pair_has_total_degree_one": true,
+      "odd_rows_27": true,
+      "ordered_rows_54": true
+    },
+    "coordinate_Ward_identity": "q54^sharp B54-B54 q54=0 for B54=Omega54 Delta54",
+    "exchange_sign_matrix_sha256": "627660f3945fbbbfc64fabda3e0fa844386df1b3175fe87092a9ba2bc6383a31",
+    "graded_exchange": "[Phi_i,Phi_j]_gr=Phi_i Phi_j-(-1)^(parity_i parity_j) Phi_j Phi_i",
+    "ordered_parity_sector_counts": {
+      "even_even": 729,
+      "even_odd": 729,
+      "odd_even": 729,
+      "odd_odd": 729
+    },
+    "reverse_term_coefficient": "-(-1)^(parity_i parity_j)",
+    "row_ledger": [
+      {
+        "degree": -1,
+        "dual_index": 49,
+        "dual_row_id": "c_spatial_star_1",
+        "index": 0,
+        "pairing_coefficient": 1,
+        "parity": 1,
+        "row_id": "c_spatial_1",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": -1,
+        "dual_index": 50,
+        "dual_row_id": "c_spatial_star_2",
+        "index": 1,
+        "pairing_coefficient": 1,
+        "parity": 1,
+        "row_id": "c_spatial_2",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": -1,
+        "dual_index": 51,
+        "dual_row_id": "c_spatial_star_3",
+        "index": 2,
+        "pairing_coefficient": 1,
+        "parity": 1,
+        "row_id": "c_spatial_3",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": -1,
+        "dual_index": 52,
+        "dual_row_id": "tau_star",
+        "index": 3,
+        "pairing_coefficient": 1,
+        "parity": 1,
+        "row_id": "tau",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": -1,
+        "dual_index": 53,
+        "dual_row_id": "sigma_star",
+        "index": 4,
+        "pairing_coefficient": 1,
+        "parity": 1,
+        "row_id": "sigma",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 27,
+        "dual_row_id": "h_hat_star_00",
+        "index": 5,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "h_hat_00",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 28,
+        "dual_row_id": "h_hat_star_01",
+        "index": 6,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "h_hat_01",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 29,
+        "dual_row_id": "h_hat_star_02",
+        "index": 7,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "h_hat_02",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 30,
+        "dual_row_id": "h_hat_star_03",
+        "index": 8,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "h_hat_03",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 31,
+        "dual_row_id": "h_hat_star_11",
+        "index": 9,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "h_hat_11",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 32,
+        "dual_row_id": "h_hat_star_12",
+        "index": 10,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "h_hat_12",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 33,
+        "dual_row_id": "h_hat_star_13",
+        "index": 11,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "h_hat_13",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 34,
+        "dual_row_id": "h_hat_star_22",
+        "index": 12,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "h_hat_22",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 35,
+        "dual_row_id": "h_hat_star_23",
+        "index": 13,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "h_hat_23",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 36,
+        "dual_row_id": "h_hat_star_33",
+        "index": 14,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "h_hat_33",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 37,
+        "dual_row_id": "R_star",
+        "index": 15,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "R",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 38,
+        "dual_row_id": "Theta_star",
+        "index": 16,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "Theta",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 39,
+        "dual_row_id": "b_star_diff_1",
+        "index": 17,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "b_diff_1",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 40,
+        "dual_row_id": "b_star_diff_2",
+        "index": 18,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "b_diff_2",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 41,
+        "dual_row_id": "b_star_diff_3",
+        "index": 19,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "b_diff_3",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 42,
+        "dual_row_id": "b_star_tau",
+        "index": 20,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "b_tau",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 43,
+        "dual_row_id": "b_star_sigma",
+        "index": 21,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "b_sigma",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 44,
+        "dual_row_id": "bar_c_diff_1",
+        "index": 22,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "bar_c_star_diff_1",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 45,
+        "dual_row_id": "bar_c_diff_2",
+        "index": 23,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "bar_c_star_diff_2",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 46,
+        "dual_row_id": "bar_c_diff_3",
+        "index": 24,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "bar_c_star_diff_3",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 47,
+        "dual_row_id": "bar_c_tau",
+        "index": 25,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "bar_c_star_tau",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 0,
+        "dual_index": 48,
+        "dual_row_id": "bar_c_sigma",
+        "index": 26,
+        "pairing_coefficient": 1,
+        "parity": 0,
+        "row_id": "bar_c_star_sigma",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 5,
+        "dual_row_id": "h_hat_00",
+        "index": 27,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "h_hat_star_00",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 6,
+        "dual_row_id": "h_hat_01",
+        "index": 28,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "h_hat_star_01",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 7,
+        "dual_row_id": "h_hat_02",
+        "index": 29,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "h_hat_star_02",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 8,
+        "dual_row_id": "h_hat_03",
+        "index": 30,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "h_hat_star_03",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 9,
+        "dual_row_id": "h_hat_11",
+        "index": 31,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "h_hat_star_11",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 10,
+        "dual_row_id": "h_hat_12",
+        "index": 32,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "h_hat_star_12",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 11,
+        "dual_row_id": "h_hat_13",
+        "index": 33,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "h_hat_star_13",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 12,
+        "dual_row_id": "h_hat_22",
+        "index": 34,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "h_hat_star_22",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 13,
+        "dual_row_id": "h_hat_23",
+        "index": 35,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "h_hat_star_23",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 14,
+        "dual_row_id": "h_hat_33",
+        "index": 36,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "h_hat_star_33",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 15,
+        "dual_row_id": "R",
+        "index": 37,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "R_star",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 16,
+        "dual_row_id": "Theta",
+        "index": 38,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "Theta_star",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 17,
+        "dual_row_id": "b_diff_1",
+        "index": 39,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "b_star_diff_1",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 18,
+        "dual_row_id": "b_diff_2",
+        "index": 40,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "b_star_diff_2",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 19,
+        "dual_row_id": "b_diff_3",
+        "index": 41,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "b_star_diff_3",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 20,
+        "dual_row_id": "b_tau",
+        "index": 42,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "b_star_tau",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 21,
+        "dual_row_id": "b_sigma",
+        "index": 43,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "b_star_sigma",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 22,
+        "dual_row_id": "bar_c_star_diff_1",
+        "index": 44,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "bar_c_diff_1",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 23,
+        "dual_row_id": "bar_c_star_diff_2",
+        "index": 45,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "bar_c_diff_2",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 24,
+        "dual_row_id": "bar_c_star_diff_3",
+        "index": 46,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "bar_c_diff_3",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 25,
+        "dual_row_id": "bar_c_star_tau",
+        "index": 47,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "bar_c_tau",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 1,
+        "dual_index": 26,
+        "dual_row_id": "bar_c_star_sigma",
+        "index": 48,
+        "pairing_coefficient": -1,
+        "parity": 1,
+        "row_id": "bar_c_sigma",
+        "self_exchange_relation": "ANTICOMMUTATOR"
+      },
+      {
+        "degree": 2,
+        "dual_index": 0,
+        "dual_row_id": "c_spatial_1",
+        "index": 49,
+        "pairing_coefficient": -1,
+        "parity": 0,
+        "row_id": "c_spatial_star_1",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 2,
+        "dual_index": 1,
+        "dual_row_id": "c_spatial_2",
+        "index": 50,
+        "pairing_coefficient": -1,
+        "parity": 0,
+        "row_id": "c_spatial_star_2",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 2,
+        "dual_index": 2,
+        "dual_row_id": "c_spatial_3",
+        "index": 51,
+        "pairing_coefficient": -1,
+        "parity": 0,
+        "row_id": "c_spatial_star_3",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 2,
+        "dual_index": 3,
+        "dual_row_id": "tau",
+        "index": 52,
+        "pairing_coefficient": -1,
+        "parity": 0,
+        "row_id": "tau_star",
+        "self_exchange_relation": "COMMUTATOR"
+      },
+      {
+        "degree": 2,
+        "dual_index": 4,
+        "dual_row_id": "sigma",
+        "index": 53,
+        "pairing_coefficient": -1,
+        "parity": 0,
+        "row_id": "sigma_star",
+        "self_exchange_relation": "COMMUTATOR"
+      }
+    ]
+  },
+  "schema": "quantum-weyl-berger-hadamard-lift-zero-mode-preflight-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "zero_frequency_carrier_theorem": {
+    "algebraic_complement_policy": "no independent singular or smooth covariance in the canonical lift",
+    "algebraic_complement_rows": 28,
+    "known_microlocal_fact": "any zero-frequency correction is smooth and cannot alter the Hadamard wavefront set",
+    "known_policy": "global causal evolution retains spatial zero modes and forbids elliptic deletion",
+    "missing_carrier": "complete generalized zero eigenspace of the stationary generator on the global retained 26-row solution complex",
+    "missing_data": [
+      "finite-dimensionality and basis or a proof of absence",
+      "Jordan structure at temporal frequency zero",
+      "restrictions of q26, Delta26, the cyclic pairing and real involution",
+      "D-invariant symmetric covariance solving graded CCR and Ward identities",
+      "positivity on ghost-number-zero BRST observables or an explicit Krein substitute"
+    ],
+    "retained_candidate_rows": 26,
+    "status": "MINIMAL_MISSING_CARRIER",
+    "why_current_exports_do_not_decide_it": "the causal theorems evolve zero modes without projecting them, while the local Hadamard parametrix fixes only the singular equivalence class"
+  }
+}

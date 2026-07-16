@@ -160,6 +160,21 @@ kept in separate ledgers.  A 54-row distributional covariance, weak
 nondegeneracy of the completed BRST quotient, and physical positivity remain
 open; the contract does not promote any Hadamard or quantum flag.
 
+The subsequent lift/zero-mode preflight removes the 54-row size as an
+analytic obstacle.  The exact contraction formula has the same algebraic
+homotopy in its advanced and retarded branches, so it cancels from the causal
+difference: `Delta54=iota_cl Delta26 pi_cl`.  A retained covariance therefore
+lifts canonically by the same inclusion and projection, with no new
+wavefront directions and no independent singular covariance on the 28
+contractible rows.  The actual odd pairing and all 2,916 ordered Koszul
+exchange signs are replayed rowwise.  The complete support-local `q2` and
+causal cyclic `D`-Cartan contraction through arity two are now pinned as
+classical compatibility data.  The minimal missing carrier is the global
+generalized zero eigenspace of the stationary generator on the retained
+26-row solution complex; its basis/Jordan structure and restricted BRST,
+causal, pairing, reality and positivity data must be computed before a smooth
+zero-frequency covariance can be selected.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -204,4 +219,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_b
 PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_graded_causal_state_space_contract_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_graded_causal_state_space_contract
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_graded_causal_state_space_contract.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_hadamard_lift_zero_mode_preflight_certificate --check
+PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_hadamard_lift_zero_mode_preflight
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_hadamard_lift_zero_mode_preflight.py -v
 ```

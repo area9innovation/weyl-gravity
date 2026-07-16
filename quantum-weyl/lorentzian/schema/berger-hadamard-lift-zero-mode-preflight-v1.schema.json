@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-hadamard-lift-zero-mode-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "rowwise_Koszul_audit", "covariance_lift_26_to_54", "retained_26_construction_boundary", "D_and_interaction_compatibility", "zero_frequency_carrier_theorem", "construction_order", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-hadamard-lift-zero-mode-preflight-v1"},
+    "result_id": {"const": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT"},
+    "result_state": {"const": "COVARIANCE_LIFT_CERTIFIED_ZERO_FREQUENCY_SPECTRAL_CARRIER_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "minLength": 40},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["graded_state_space_contract", "base_wave_parametrix", "typed_companion_preflight", "gauge_fixed_54_contraction", "causal_54_to_26_reduction", "causal_26", "causal_54", "causal_D_Cartan_v2", "support_local_q2"],
+      "properties": {
+        "graded_state_space_contract": {"$ref": "#/$defs/dependency"},
+        "base_wave_parametrix": {"$ref": "#/$defs/dependency"},
+        "typed_companion_preflight": {"$ref": "#/$defs/dependency"},
+        "gauge_fixed_54_contraction": {"$ref": "#/$defs/dependency"},
+        "causal_54_to_26_reduction": {"$ref": "#/$defs/dependency"},
+        "causal_26": {"$ref": "#/$defs/dependency"},
+        "causal_54": {"$ref": "#/$defs/dependency"},
+        "causal_D_Cartan_v2": {"$ref": "#/$defs/dependency"},
+        "support_local_q2": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "rowwise_Koszul_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["graded_exchange", "reverse_term_coefficient", "coordinate_Ward_identity", "row_ledger", "Darboux_pairs", "ordered_parity_sector_counts", "exchange_sign_matrix_sha256", "checks"],
+      "properties": {
+        "graded_exchange": {"type": "string", "minLength": 1},
+        "reverse_term_coefficient": {"type": "string", "minLength": 1},
+        "coordinate_Ward_identity": {"type": "string", "minLength": 1},
+        "row_ledger": {"type": "array", "minItems": 54, "maxItems": 54, "items": {"$ref": "#/$defs/row_ledger_entry"}},
+        "Darboux_pairs": {"type": "array", "minItems": 27, "maxItems": 27, "items": {"$ref": "#/$defs/Darboux_pair"}},
+        "ordered_parity_sector_counts": {"const": {"even_even": 729, "even_odd": 729, "odd_even": 729, "odd_odd": 729}},
+        "exchange_sign_matrix_sha256": {"$ref": "#/$defs/hash"},
+        "checks": {"$ref": "#/$defs/all_true_checks"}
+      }
+    },
+    "covariance_lift_26_to_54": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["causal_homotopies", "causal_difference", "candidate_covariance_lift", "antisymmetric_part_derivation", "BRST_derivation", "microlocal_derivation", "contractible_sector", "replay_coefficients", "checks"],
+      "properties": {
+        "causal_homotopies": {"type": "string", "minLength": 1},
+        "causal_difference": {"const": "Delta54=iota_cl Delta26 pi_cl"},
+        "candidate_covariance_lift": {"const": "omega2_plus_54=iota_cl omega2_plus_26 pi_cl"},
+        "antisymmetric_part_derivation": {"type": "string", "minLength": 1},
+        "BRST_derivation": {"type": "string", "minLength": 1},
+        "microlocal_derivation": {"type": "string", "minLength": 1},
+        "contractible_sector": {"type": "string", "minLength": 1},
+        "replay_coefficients": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["basis", "Lambda54_retarded", "Lambda54_advanced", "Delta54"],
+          "properties": {
+            "basis": {"const": ["S_cl", "iota Lambda26,ret pi", "iota Lambda26,adv pi"]},
+            "Lambda54_retarded": {"const": [1, 1, 0]},
+            "Lambda54_advanced": {"const": [1, 0, 1]},
+            "Delta54": {"const": [0, 1, -1]}
+          }
+        },
+        "checks": {"$ref": "#/$defs/all_true_checks"}
+      }
+    },
+    "retained_26_construction_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_decomposition", "global_causal_maps", "local_base_Hadamard_singularities", "typed_20_row_companion_transport", "exact_global_omega2_plus_26", "conclusion"],
+      "properties": {
+        "row_decomposition": {"const": {"spatial_diff_ghost": 3, "metric_companion": 10, "metric_antifield_companion": 10, "spatial_diff_identity": 3}},
+        "global_causal_maps": {"const": "CERTIFIED"},
+        "local_base_Hadamard_singularities": {"const": "CERTIFIED"},
+        "typed_20_row_companion_transport": {"const": "FORMAL_MICROLOCAL_COMPOSITION_OPEN"},
+        "exact_global_omega2_plus_26": {"const": "NOT_CONSTRUCTED"},
+        "conclusion": {"type": "string", "minLength": 1}
+      }
+    },
+    "D_and_interaction_compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["support_local_q2", "q2_D_derivation", "causal_unary_D_Cartan", "causal_cyclic_arity_two_D_Cartan", "state_stationarity_target", "state_stationarity_status", "scope"],
+      "properties": {
+        "support_local_q2": {"const": "CERTIFIED_ON_ALL_54_ROWS"},
+        "q2_D_derivation": {"const": "CERTIFIED"},
+        "causal_unary_D_Cartan": {"const": "CERTIFIED"},
+        "causal_cyclic_arity_two_D_Cartan": {"const": "CERTIFIED"},
+        "state_stationarity_target": {"type": "string", "minLength": 1},
+        "state_stationarity_status": {"const": "NOT_COMPUTED"},
+        "scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "zero_frequency_carrier_theorem": {
+      "type": "object",
+      "required": ["algebraic_complement_rows", "algebraic_complement_policy", "retained_candidate_rows", "known_policy", "known_microlocal_fact", "missing_carrier", "missing_data", "why_current_exports_do_not_decide_it", "status"],
+      "properties": {
+        "algebraic_complement_rows": {"const": 28},
+        "retained_candidate_rows": {"const": 26},
+        "missing_carrier": {"type": "string", "minLength": 1},
+        "algebraic_complement_policy": {"type": "string", "minLength": 1},
+        "known_policy": {"type": "string", "minLength": 1},
+        "known_microlocal_fact": {"type": "string", "minLength": 1},
+        "missing_data": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 1}},
+        "why_current_exports_do_not_decide_it": {"type": "string", "minLength": 1},
+        "status": {"const": "MINIMAL_MISSING_CARRIER"}
+      },
+      "additionalProperties": false
+    },
+    "construction_order": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 1}},
+    "claim_flags": {
+      "const": {
+        "BERGER_ROWWISE_KOSZUL_AUDIT": true,
+        "BERGER_COVARIANCE_LIFT_26_TO_54": true,
+        "BERGER_CAUSAL_D_CARTAN_V2_IMPORTED": true,
+        "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER": false,
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+        "BERGER_HADAMARD_DATA": false,
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": false,
+        "LORENTZIAN_QME_RESTORED": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["graded_contract_result_id", "reduction_result_id", "causal_26_result_id", "causal_54_result_id", "D_Cartan_result_id", "q2_result_id", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "graded_contract_result_id": {"type": "string", "minLength": 1},
+        "reduction_result_id": {"type": "string", "minLength": 1},
+        "causal_26_result_id": {"type": "string", "minLength": 1},
+        "causal_54_result_id": {"type": "string", "minLength": 1},
+        "D_Cartan_result_id": {"type": "string", "minLength": 1},
+        "q2_result_id": {"type": "string", "minLength": 1},
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "all_true_checks": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}},
+    "row_ledger_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "row_id", "degree", "parity", "dual_index", "dual_row_id", "pairing_coefficient", "self_exchange_relation"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 53},
+        "row_id": {"type": "string", "minLength": 1},
+        "degree": {"enum": [-1, 0, 1, 2]},
+        "parity": {"enum": [0, 1]},
+        "dual_index": {"type": "integer", "minimum": 0, "maximum": 53},
+        "dual_row_id": {"type": "string", "minLength": 1},
+        "pairing_coefficient": {"enum": [-1, 1]},
+        "self_exchange_relation": {"enum": ["COMMUTATOR", "ANTICOMMUTATOR"]}
+      }
+    },
+    "Darboux_pair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["left", "right", "left_degree", "right_degree", "omega_left_right"],
+      "properties": {
+        "left": {"type": "integer", "minimum": 0, "maximum": 53},
+        "right": {"type": "integer", "minimum": 0, "maximum": 53},
+        "left_degree": {"enum": [-1, 0, 1, 2]},
+        "right_degree": {"enum": [-1, 0, 1, 2]},
+        "omega_left_right": {"enum": [-1, 1]}
+      }
+    }
+  }
+}
