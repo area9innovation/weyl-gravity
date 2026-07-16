@@ -163,6 +163,93 @@ def _family(path: str) -> str:
     return "Foundations and other"
 
 
+LAYOUT_TOPICS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
+    "Classical / clocks": (
+        ("Nonlinear brackets and D--Cartan", ("q2", "cartan", "arity", "nonlinear")),
+        ("Clocks, light, and redshift", ("clock", "redshift", "maxwell", "observer")),
+        ("Charges, Taub fibres, and quotients", ("charge", "quotient", "taub", "moment_map")),
+        ("Causal and microlocal propagation", ("green", "causal", "volterra", "biwave", "cone", "microlocal", "hadamard")),
+        ("BV operators and contractions", ("bv", "minimal", "nonminimal", "operator", "layout", "witness", "reattached", "shear")),
+        ("Scoped obstruction tests", ("no_go", "no-go", "obstruction", "incompatible")),
+    ),
+    "Covariant causal complex": (
+        ("Tractor, BGG, and detour transfer", ("tractor", "bgg", "kostant", "pbw", "detour")),
+        ("Green homotopies and support", ("green", "causal", "hyperbolic", "retarded", "advanced", "support")),
+        ("Symbols, cones, and factorization tests", ("symbol", "rank", "factor", "no_go", "no-go", "obstruction", "feasibility", "cone", "characteristic", "principal")),
+        ("Metric, curvature, and endpoint bridge", ("metric", "curvature", "weyl", "cotton", "bach", "endpoint")),
+        ("Cyclicity, currents, and pairings", ("cyclic", "current", "pairing", "adjoint", "hessian", "symplectic")),
+        ("Auxiliary systems and deformation retracts", ("auxiliary", "witness", "retract", "projector", "contraction", "saddle", "shift_split")),
+        ("Residual endpoint recovery", ("residual", "bfv", "h4", "gram", "ckv", "no_duplication", "quasi_isomorphism")),
+        ("Mode and spectrum checks", ("spectrum", "spectra", "multiplicity", "helicity", "frequency", "energy_mode", "sobolev", "residue")),
+        ("Operator identities and normal forms", ("operator", "derivative", "curl", "biwave", "intertwiner", "composition", "normal_form")),
+        ("Foundations and globalization", ("convention", "gauge_invariance", "jet_basis", "globalization", "status", "final_claim", "closure")),
+        ("Complex assembly and chain identities", ("complex", "chain", "nilpot", "homotopy", "differential", "assembly")),
+    ),
+    "Einstein / boundaries": (
+        ("Radiation and Lee--Wald pairings", ("axial", "polar", "radiative", "wave", "lee_wald", "symplectic", "green_pairing", "energy_pairing")),
+        ("Taub and nonlinear obstruction tests", ("taub", "obstruction", "linearization", "second_order", "cokernel", "nonlinear")),
+        ("Einstein inclusion and branch comparison", ("einstein", "embedding", "inclusion", "chain_map", "branch")),
+        ("Maxwell, flux, and charge sectors", ("maxwell", "charge", "flux")),
+        ("Boundaries and asymptotic structure", ("asymptotic", "bondi", "adm", "bms", "boundary", "ads", "desitter", "de_sitter")),
+        ("Curvature and action identities", ("curvature", "hessian", "generator", "action")),
+        ("BV and residual bridge", ("bv", "hpl", "retract", "residual", "metric_to_residual", "bgg", "preimage")),
+        ("Linear Bach operators", ("bach_operator", "free_bv_complex", "quadratic")),
+    ),
+    "Nonlinear transfer": (
+        ("Certified classical imports", ("_import", "nonlinear_import")),
+        ("Interacting brackets", ("q2", "cubic", "arity", "bracket", "l_infinity", "linfinity")),
+        ("Residual D--Cartan structure", ("cartan", "d_derivation", "residual", "d_disposition")),
+        ("Causal Green transfer", ("green", "causal", "support", "homotopy")),
+        ("Cyclicity and imported pairings", ("cyclic", "pairing", "darboux", "polarization")),
+        ("Einstein-sector interaction tests", ("einstein", "taub", "branch", "amplitude", "curvature", "bach_seed")),
+        ("Transfer infrastructure", ("pbw", "backend", "bootstrap", "physical_run_contract", "q1")),
+    ),
+    "Quantum / microlocal": (
+        ("Local BV, anomalies, and QME", ("local_bv", "anomaly", "qme", "brst", "counterterm", "cohomology", "descent")),
+        ("Local tensor-algebra foundations", ("foundation", "canonicalization", "schouten", "hodge", "specialization")),
+        ("Lorentzian Hadamard and microlocal analysis", ("lorentzian", "hadamard", "microlocal", "wavefront", "pauli", "jordan", "moller", "causal")),
+        ("Euclidean and reduced spectral tests", ("spectral", "euclidean", "determinant", "heat_kernel", "eigen", "mode")),
+        ("Quantum residual transfer", ("residual", "transfer", "cartan", "pairing")),
+        ("Classical imports and freeze gates", ("classical", "import", "snapshot", "freeze")),
+        ("Measure and coefficient calculations", ("measure", "coefficient", "regularization", "zero_mode", "one_loop")),
+    ),
+    "Analytic completion": (
+        ("Closed operators and domains", ("closed", "operator", "domain", "bound", "finite_total")),
+        ("Krein and Hilbert representations", ("krein", "hilbert", "fundamental_symmetry")),
+        ("Completed cohomology and pairing", ("h4", "gram", "cohomology", "pairing")),
+    ),
+    "Residual BV--BFV": (
+        ("Residual state complex", ("state", "residual", "bfv", "chain")),
+        ("Cohomology and pairing", ("cohomology", "pairing", "gram", "polarized")),
+        ("Field-to-residual bridge", ("field", "metric", "bridge", "transfer")),
+    ),
+}
+
+
+def _layout_topic(certificate: Certificate) -> str:
+    """Return an evidence-neutral navigation box for the technical graph."""
+
+    path_parts = PurePosixPath(certificate.path).parts
+    scoped_path = "/".join(path_parts[1:]) if len(path_parts) > 1 else certificate.path
+    haystack = (scoped_path + " " + certificate.label).lower()
+    if any(
+        token in haystack
+        for token in (
+            "source_manifest",
+            "input_manifest",
+            "verification_receipt",
+            "programme_status",
+            "registry",
+            "ledger",
+        )
+    ):
+        return "Receipts and provenance"
+    for topic, tokens in LAYOUT_TOPICS.get(certificate.family, ()):
+        if any(token in haystack for token in tokens):
+            return topic
+    return "Cross-cutting certificates"
+
+
 def _status_text(data: dict[str, Any]) -> str:
     for key in (
         "claim_status",
@@ -554,7 +641,7 @@ COLORS = {
 def full_dot(certificates: list[Certificate], edges: list[Edge]) -> str:
     lines = [
         "digraph CertificateDAG {",
-        "  graph [rankdir=TB, bgcolor=\"white\", pad=0.25, nodesep=0.18, ranksep=0.55, concentrate=true, fontname=\"Helvetica\"];",
+        "  graph [rankdir=TB, bgcolor=\"white\", pad=0.25, nodesep=0.18, ranksep=0.55, concentrate=true, compound=true, newrank=true, remincross=true, fontname=\"Helvetica\"];",
         "  node [shape=box, style=\"rounded,filled\", fontname=\"Helvetica\", fontsize=8, penwidth=1.0, margin=\"0.07,0.04\"];",
         "  edge [fontname=\"Helvetica\", fontsize=6, color=\"#98a2b3\", arrowsize=0.55];",
         "  label=\"Certified construction graph — generated from repository artifacts\";",
@@ -563,19 +650,54 @@ def full_dot(certificates: list[Certificate], edges: list[Edge]) -> str:
     grouped: dict[str, list[Certificate]] = defaultdict(list)
     for certificate in certificates:
         grouped[certificate.family].append(certificate)
+
+    def emit_node(certificate: Certificate, indent: str) -> None:
+        fill, border = COLORS[certificate.color_state]
+        status = _wrap(certificate.status, 24)
+        label = _wrap(certificate.label)
+        tooltip = f"{certificate.path} | {certificate.status}"
+        lines.append(
+            f"{indent}{_dot_quote(certificate.key)} "
+            f"[label={_dot_quote(label + chr(10) + status)}, "
+            f"fillcolor=\"{fill}\", color=\"{border}\", "
+            f"tooltip={_dot_quote(tooltip)}, "
+            f"URL={_dot_quote('../' + certificate.path)}];"
+        )
+
     for cluster_index, family in enumerate(sorted(grouped)):
+        family_certificates = sorted(grouped[family], key=lambda row: row.path)
         lines.append(f"  subgraph cluster_{cluster_index} {{")
-        lines.append(f"    label={_dot_quote(family)}; color=\"#d0d5dd\"; style=\"rounded\";")
-        for certificate in sorted(grouped[family], key=lambda row: row.path):
-            fill, border = COLORS[certificate.color_state]
-            status = _wrap(certificate.status, 24)
-            label = _wrap(certificate.label)
-            tooltip = f"{certificate.path} | {certificate.status}"
-            lines.append(
-                f"    {_dot_quote(certificate.key)} [label={_dot_quote(label + chr(10) + status)}, "
-                f"fillcolor=\"{fill}\", color=\"{border}\", tooltip={_dot_quote(tooltip)}, "
-                f"URL={_dot_quote('../' + certificate.path)}];"
-            )
+        lines.append(
+            f"    label={_dot_quote(family)}; color=\"#98a2b3\"; "
+            "style=\"rounded\"; penwidth=1.2;"
+        )
+        if len(family_certificates) < 12:
+            for certificate in family_certificates:
+                emit_node(certificate, "    ")
+        else:
+            topics: dict[str, list[Certificate]] = defaultdict(list)
+            for certificate in family_certificates:
+                topics[_layout_topic(certificate)].append(certificate)
+            singletons = [
+                topic
+                for topic, topic_certificates in topics.items()
+                if len(topic_certificates) == 1 and topic != "Cross-cutting certificates"
+            ]
+            for topic in singletons:
+                topics["Cross-cutting certificates"].extend(topics.pop(topic))
+            for topic_index, topic in enumerate(sorted(topics)):
+                topic_certificates = topics[topic]
+                lines.append(
+                    f"    subgraph cluster_{cluster_index}_{topic_index} {{"
+                )
+                lines.append(
+                    f"      label={_dot_quote(topic)}; color=\"#d0d5dd\"; "
+                    "bgcolor=\"#f8fafc\"; style=\"rounded,dashed\"; "
+                    "penwidth=0.8; fontsize=10;"
+                )
+                for certificate in topic_certificates:
+                    emit_node(certificate, "      ")
+                lines.append("    }")
         lines.append("  }")
     relation_style = {
         "DEPENDS_ON": ("#667085", "solid"),
@@ -713,6 +835,7 @@ def build(treeish: str) -> dict[Path, str]:
                 "result_id": certificate.result_id,
                 "label": certificate.label,
                 "family": certificate.family,
+                "layout_group": _layout_topic(certificate),
                 "status": certificate.status,
                 "color_state": certificate.color_state,
                 "dependency_tags": list(certificate.dependency_tags),
@@ -745,6 +868,9 @@ def build(treeish: str) -> dict[Path, str]:
         "modern_result_id_count": sum(certificate.result_id is not None for certificate in certificates),
         "legacy_path_id_count": sum(certificate.result_id is None for certificate in certificates),
         "dependency_edge_count": len(edges),
+        "navigation_group_count": len(
+            {(certificate.family, _layout_topic(certificate)) for certificate in certificates}
+        ),
         "status_counts": {
             state: sum(certificate.color_state == state for certificate in certificates)
             for state in COLORS

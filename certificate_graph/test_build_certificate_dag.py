@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+from dataclasses import replace
 import unittest
 
 from certificate_graph.build_certificate_dag import (
     Certificate,
     Edge,
     _cycles,
+    _layout_topic,
     derive_edges,
 )
 
@@ -85,6 +87,15 @@ class CertificateDagTests(unittest.TestCase):
             issues["nonordering_provenance_cross_links"][0]["relation"],
             "MUTUALLY_AUDITS",
         )
+
+    def test_layout_topic_ignores_programme_root_name(self) -> None:
+        q2 = certificate(
+            "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
+            "BERGER_SUPPORT_LOCAL_Q2",
+            {},
+        )
+        q2 = replace(q2, family="Classical / clocks")
+        self.assertEqual(_layout_topic(q2), "Nonlinear brackets and D--Cartan")
 
 
 if __name__ == "__main__":

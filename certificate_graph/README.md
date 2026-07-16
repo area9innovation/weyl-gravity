@@ -5,6 +5,9 @@ reproducible Graphviz views.
 
 - `certificate-dag.*` is the full technical dependency/import graph, laid
   out on a landscape canvas with prerequisite arrows running top to bottom.
+  Outer boxes identify programme families; nested boxes organize dense
+  families into topics such as causal propagation, nonlinear Cartan
+  structure, anomaly/QME work, and Einstein-sector tests.
 - `universe-building-dag.*` is the public milestone view used by Papers 98
   and 99.
 - `certificate-graph-receipt.json` records input and output hashes, counts,
@@ -20,6 +23,11 @@ public graph is curated in `universe_milestones.json`, but the generator fails
 if any declared evidence certificate is missing. Neither graph changes a
 certificate's lifecycle or promotes local/reduced evidence to a causal or
 quantum claim.
+
+The nested topic is stored as `layout_group` in every generated node. It is
+inferred only from the certificate path and identifier and is
+presentation-only: it creates no dependency, changes no status color, and
+does not alter the DAG's edge set.
 
 Generate and verify:
 
