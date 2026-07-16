@@ -72,16 +72,17 @@ resolvent with global support control. No advanced or retarded operator,
 cyclic companion pairing, or causal adjointness theorem has yet been
 constructed.
 
-The classical retained Volterra package has now landed and is pinned at
-`512545b7`, but the quantum import remains fail-closed. Exact replay confirms
+The hardened classical retained Volterra package has now landed and is pinned
+at `5f29a2f0`, but the quantum import remains fail-closed. Exact replay confirms
 the companion graph, formal-adjoint bundle and `D=e0` equivariance. The
 analytic source is not accepted because it adds an undeclared dependency tag,
 has no strict source schema or verification receipt, conflates the distinct
 source and solution resolvents, records a malformed adjoint identity, and
-stores the energy/support conclusions as unreferenced booleans. The source-
-and solution-side factorial bounds and graded mapping spaces also require
-precise statements. Consequently the downstream claimed 26- and 54-row
-causal homotopies are not yet quantum inputs.
+stores the energy/support conclusions as unreferenced booleans. The hardened
+report now declares useful graded spaces, but that proof is not bound into the
+certificate; the source- and solution-side resolvents and factorial bounds
+must also be stated separately. Consequently the downstream claimed 26- and
+54-row causal homotopies are not yet quantum inputs.
 
 Reproduce the current contract receipt with:
 
