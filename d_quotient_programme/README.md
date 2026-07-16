@@ -56,6 +56,8 @@ because the existing results concern different objects:
 - [`reports/einstein-maxwell-second-order-registration-receipt.md`](reports/einstein-maxwell-second-order-registration-receipt.md)
 - [`contributions/einstein-maxwell-periodic-photon-second-order.json`](contributions/einstein-maxwell-periodic-photon-second-order.json)
 - [`reports/einstein-maxwell-periodic-photon-registration-receipt.md`](reports/einstein-maxwell-periodic-photon-registration-receipt.md)
+- [`contributions/einstein-maxwell-periodic-graviton-second-order.json`](contributions/einstein-maxwell-periodic-graviton-second-order.json)
+- [`reports/einstein-maxwell-periodic-graviton-registration-receipt.md`](reports/einstein-maxwell-periodic-graviton-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -139,3 +141,12 @@ Weyl--Maxwell `tt` source has normalized constant-lapse pairing `-16/3`.
 Consequently it has no smooth periodic second-order correction at fixed
 charges. This is not a no-go for every photon harmonic; the next compact gate
 is one periodic helicity-two harmonic.
+
+That gravitational-mode gate is now closed for one declared branch. The
+smooth odd-parity `l=2` metric harmonic mixes with a Maxwell harmonic through
+the background magnetic flux and has exact frequencies
+`omega^2=6+/-2sqrt(3)`. For the certified plus branch, the normalized `t=0`
+quadratic source pairing is `-(12/5)(6+5sqrt(3))`, so no smooth periodic
+second-order correction exists at fixed electric and magnetic charges. The
+minus branch and other harmonics remain open; the next deliverable is the
+focused paper theorem.

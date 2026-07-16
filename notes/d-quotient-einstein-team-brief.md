@@ -290,6 +290,23 @@ periodic second-order correction at fixed charges. This proves a physical
 nonzero-frequency obstruction, not a general photon no-go. E-D2 should next
 test one periodic helicity-two harmonic.
 
+That remaining compact mode gate is now closed for one declared branch by
+`EINSTEIN_MAXWELL_PERIODIC_GRAVITON_SECOND_ORDER`. The smooth odd-parity
+`l=2` metric harmonic and its flux-forced Maxwell dressing obey
+
+```text
+H''+6H+2q=0,
+q''+6q+6H=0,
+```
+
+with `omega^2=6+/-2sqrt(3)`. The certified plus branch is non-gauge, has zero
+first-order electric and magnetic charge variations, and has normalized
+quadratic `tt` source pairing `-(12/5)(6+5sqrt(3))` at `t=0`. The constant
+lapse therefore excludes every smooth periodic second-order correction for
+that branch at fixed charges. This is a compact `l=2` representative of the
+local metric/helicity-two sector, not an asymptotic helicity theorem and not a
+classification of the minus branch. The next gate is paper assembly.
+
 ## Work package E-D3: observables, charges, and scattering
 
 Compare the selected sector with Einstein gravity by constructing explicit

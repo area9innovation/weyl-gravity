@@ -31,7 +31,7 @@ this background as a non-Einstein Weyl--matter branch.
 | Team | Current verdict | Established | Next gate |
 |---|---|---|---|
 | classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 is exact and cyclic; its 34-row minimal contraction is portable. Five nonminimal antighost--multiplier quartets extend it to 54 rows, and the selected gauge fermion acts by an exact finite BV-canonical shear, producing a complete support-local cyclic gauge-fixed 54-to-26 contraction. | construct the total causal homotopy for the gauge-fixed 54-row complex, then export q2 and test local D-equivariance |
-| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. At second order, compact fixed-flux zero/charge modes and one smooth nonzero-frequency l=1 photon mode have adjoint obstructions, while a universal-cover null tangent with nonzero Chevreton defect has an explicit correction. | test one periodic helicity-two harmonic at fixed electric and magnetic charges; independently complete the asymptotic Bach phase space and charge audit |
+| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. At second order, compact fixed-flux zero/charge modes, one l=1 photon mode, and the plus branch of one l=2 gravitational mode have adjoint obstructions, while a universal-cover null tangent with nonzero Chevreton defect has an explicit correction. | assemble the focused second-order Einstein--Maxwell inclusion paper theorem; independently complete the asymptotic Bach phase space and charge audit |
 | nonlinear | `INPUT_GATE_BLOCKED` | selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked | complete support-local q2 export and solve for iota_D^(2) or retain its obstruction |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered | complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion |
 
@@ -59,6 +59,7 @@ this background as a non-Einstein Weyl--matter branch.
 | compact_einstein_maxwell_second_order_fixed_flux | `H_product` | `einstein_maxwell_product_compact_fixed_flux_second_order` | CLASSICAL_BV | `CERTIFIED` | `SECOND_ORDER_FIXED_FLUX_OBSTRUCTION_FOR_RADION_AND_DUALITY` |
 | universal_cover_einstein_maxwell_second_order_null_extension | `H_product` | `einstein_maxwell_product_universal_cover_null_second_order` | CLASSICAL_BV | `CERTIFIED` | `NONZERO_CHEVRETON_NULL_TANGENT_EXTENDS_AT_SECOND_ORDER` |
 | compact_einstein_maxwell_periodic_photon_second_order | `H_product` | `einstein_maxwell_product_compact_fixed_charge_periodic_photon_second_order` | CLASSICAL_BV | `CERTIFIED` | `PERIODIC_PHOTON_SECOND_ORDER_FIXED_CHARGE_OBSTRUCTION` |
+| compact_einstein_maxwell_periodic_graviton_second_order | `H_product` | `einstein_maxwell_product_compact_fixed_charge_periodic_graviton_second_order` | CLASSICAL_BV | `CERTIFIED` | `PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `INPUT_GATE_BLOCKED` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
@@ -77,7 +78,7 @@ this background as a non-Einstein Weyl--matter branch.
 6. Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and the support-local cyclic gauge-fixed 54-to-26 contraction are complete; total causal homotopy, q2, local D-equivariance, and arity-two stability remain open
 7. the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open
 8. the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open
-9. second-order product inclusion is charge- and tangent-dependent: compact fixed-flux radion and duality directions and one periodic nonzero-frequency photon mode are obstructed, while one nonperiodic null tangent with nonzero Chevreton defect extends explicitly; periodic helicity-two modes remain open
+9. second-order product inclusion is charge- and tangent-dependent: compact fixed-flux radion and duality directions, one periodic photon mode, and one l=2 gravitational branch are obstructed, while one nonperiodic null tangent with nonzero Chevreton defect extends explicitly; other branches and boundary conditions remain open
 10. interacting promotion requires a corrected Cartan homotopy
 11. quantum promotion requires a restored QME and renormalized Ward identity
 
@@ -103,6 +104,7 @@ this background as a non-Einstein Weyl--matter branch.
 | einstein_boundary | `compact_einstein_maxwell_second_order_fixed_flux` | `H_product` | `einstein_maxwell_product_compact_fixed_flux_second_order` | `CERTIFIED` | `SECOND_ORDER_FIXED_FLUX_OBSTRUCTION_FOR_RADION_AND_DUALITY` |
 | einstein_boundary | `universal_cover_einstein_maxwell_second_order_null_extension` | `H_product` | `einstein_maxwell_product_universal_cover_null_second_order` | `CERTIFIED` | `NONZERO_CHEVRETON_NULL_TANGENT_EXTENDS_AT_SECOND_ORDER` |
 | einstein_boundary | `compact_einstein_maxwell_periodic_photon_second_order` | `H_product` | `einstein_maxwell_product_compact_fixed_charge_periodic_photon_second_order` | `CERTIFIED` | `PERIODIC_PHOTON_SECOND_ORDER_FIXED_CHARGE_OBSTRUCTION` |
+| einstein_boundary | `compact_einstein_maxwell_periodic_graviton_second_order` | `H_product` | `einstein_maxwell_product_compact_fixed_charge_periodic_graviton_second_order` | `CERTIFIED` | `PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | quantum | `vacuum_cylinder` | `D_compact` | `compact_quantum` | `BLOCKED` | `NO_VERDICT` |
 
@@ -120,7 +122,7 @@ The immediate shared calculation is
 
 - `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `60c84aa55c50651fdfae1f6274249e2179a56d2d`, SHA-256 `7374e8ed51f968642c73db1e9a6b22b0dd39a295801c669e8ac0bfac686eed42`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `7e87281c416f4c4f98edfe61ae05829f4b48593a`, SHA-256 `ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685`
-- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `4a6a4f9b802b7626767d2bd9b5770dff0dbe7479`, SHA-256 `4d5b2dbd96d63d6284a7c14430b10cd76a755a75b826d9943ea8ce15dc200126`
+- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `1e54e0ae7b90a1a8b1308df6a6f9a4a85f274e18`, SHA-256 `bf5f46f33f246d9df3d091f439440dc4938a476282ea88b65c09a0cae0cb1a66`
 - `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `04833ba9d0a213b5bd5b6780ea5bf13a1d3e476e`, SHA-256 `9c04d552a0ab243aff0403a51622f6d892ca77f4b0fbd04efdcf3d8ccc31c8bf`
 
 ## Claim boundary

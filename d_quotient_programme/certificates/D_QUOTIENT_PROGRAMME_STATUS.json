@@ -15,7 +15,7 @@
     "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and the support-local cyclic gauge-fixed 54-to-26 contraction are complete; total causal homotopy, q2, local D-equivariance, and arity-two stability remain open",
     "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
     "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open",
-    "second-order product inclusion is charge- and tangent-dependent: compact fixed-flux radion and duality directions and one periodic nonzero-frequency photon mode are obstructed, while one nonperiodic null tangent with nonzero Chevreton defect extends explicitly; periodic helicity-two modes remain open",
+    "second-order product inclusion is charge- and tangent-dependent: compact fixed-flux radion and duality directions, one periodic photon mode, and one l=2 gravitational branch are obstructed, while one nonperiodic null tangent with nonzero Chevreton defect extends explicitly; other branches and boundary conditions remain open",
     "interacting promotion requires a corrected Cartan homotopy",
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
@@ -29,7 +29,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "60c84aa55c50651fdfae1f6274249e2179a56d2d",
+  "programme_base_commit": "1c4eb856a191f5795e44c0ff1bc1afce644a9e88",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -46,7 +46,7 @@
   },
   "registry_hashes": {
     "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-    "phase_space_registry": "76f1d341a4e3c0571c4cb0543a9c5b6077ae8512f81a93cbc1dadc4927d4b086"
+    "phase_space_registry": "46f6754f83d2516c5652ea67c8474a0dcfc014d5fe180c98f552d931923516bb"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -231,6 +231,15 @@
       "setting_id": "compact_einstein_maxwell_periodic_photon_second_order",
       "status": "CERTIFIED",
       "verdict": "PERIODIC_PHOTON_SECOND_ORDER_FIXED_CHARGE_OBSTRUCTION"
+    },
+    {
+      "boundary_conditions": "compact periodic product; electric and magnetic charges fixed through epsilon squared; plus branch of one smooth odd-parity l=2 gravitational mode with flux-forced Maxwell dressing",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_fixed_charge_periodic_graviton_second_order",
+      "setting_id": "compact_einstein_maxwell_periodic_graviton_second_order",
+      "status": "CERTIFIED",
+      "verdict": "PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -1071,6 +1080,51 @@
       "sha256": "c4f802f270e9ac699e9bd86a2734a29b8d96fab3105bd791b62267d3b2dded91"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-periodic-graviton-second-order.json",
+      "payload": {
+        "boundary_conditions": "compact R_t x S1_L x S2 product; smooth periodic corrections; electric and magnetic Maxwell charges fixed through epsilon squared; plus branch of one odd-parity l=2 gravitational harmonic with flux-forced Maxwell dressing",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the complete coupled l=2 mode equations have exact normal frequencies 6 plus or minus 2 sqrt(3)",
+          "the certified plus branch is a non-gauge gravitational harmonic with its background-flux-forced Maxwell dressing",
+          "both first-order Maxwell charge variations vanish",
+          "the convention-adjusted Chevreton tt coefficient has normalized t=0 sphere average -(36/5)(1+sqrt(3))",
+          "the quadratic Weyl--Maxwell tt source has normalized t=0 sphere average -(12/5)(6+5sqrt(3))",
+          "the constant-lapse adjoint pairing excludes every smooth periodic second-order correction for this branch at fixed electric and magnetic charges"
+        ],
+        "evidence": {
+          "commit": "04bc143ce297f49548dabac98af59e9f9c63f248",
+          "path": "bridge/certificates/einstein_maxwell_periodic_graviton_second_order.json",
+          "sha256": "9376a4d4d2d1a0b9e77ee78ece90cd74e82b574b02a84030ed93e1f5946caef4"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "assemble the focused second-order Einstein--Maxwell inclusion paper theorem and conventions appendix",
+        "not_established": [
+          "a second-order classification of the minus normal branch",
+          "an obstruction for every helicity-two harmonic or boundary condition",
+          "general nonlinear Einstein-sector failure",
+          "a causal, asymptotically flat, observable, scattering, or quantum verdict"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_fixed_charge_periodic_graviton_second_order",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_periodic_graviton_second_order",
+        "team_id": "einstein_boundary",
+        "verdict": "PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_periodic_graviton_second_order --verify bridge/certificates/einstein_maxwell_periodic_graviton_second_order.json",
+          "python3 -m bridge.einstein_sector.einstein_maxwell_periodic_graviton_second_order --verify-exhaustive bridge/certificates/einstein_maxwell_periodic_graviton_second_order.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_periodic_graviton_second_order.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_periodic_graviton_second_order"
+        ]
+      },
+      "sha256": "a7138c8bc2d7e756d9a8910b33eb34a7e0180818f80e31b2184f1342049d4838"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -1169,9 +1223,9 @@
       "sha256": "ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685"
     },
     "nonlinear": {
-      "commit": "4a6a4f9b802b7626767d2bd9b5770dff0dbe7479",
+      "commit": "1e54e0ae7b90a1a8b1308df6a6f9a4a85f274e18",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "4d5b2dbd96d63d6284a7c14430b10cd76a755a75b826d9943ea8ce15dc200126"
+      "sha256": "bf5f46f33f246d9df3d091f439440dc4938a476282ea88b65c09a0cae0cb1a66"
     },
     "quantum": {
       "commit": "04833ba9d0a213b5bd5b6780ea5bf13a1d3e476e",
@@ -1188,9 +1242,9 @@
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. At second order, compact fixed-flux zero/charge modes and one smooth nonzero-frequency l=1 photon mode have adjoint obstructions, while a universal-cover null tangent with nonzero Chevreton defect has an explicit correction.",
-      "next_gate": "test one periodic helicity-two harmonic at fixed electric and magnetic charges; independently complete the asymptotic Bach phase space and charge audit",
-      "result_state": "PERIODIC_PHOTON_SECOND_ORDER_OBSTRUCTION_CERTIFIED_HELICITY_TWO_OPEN",
+      "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. At second order, compact fixed-flux zero/charge modes, one l=1 photon mode, and the plus branch of one l=2 gravitational mode have adjoint obstructions, while a universal-cover null tangent with nonzero Chevreton defect has an explicit correction.",
+      "next_gate": "assemble the focused second-order Einstein--Maxwell inclusion paper theorem; independently complete the asymptotic Bach phase space and charge audit",
+      "result_state": "PERIODIC_PHOTON_AND_L2_GRAVITATIONAL_OBSTRUCTIONS_CERTIFIED_PAPER_ASSEMBLY_READY",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },

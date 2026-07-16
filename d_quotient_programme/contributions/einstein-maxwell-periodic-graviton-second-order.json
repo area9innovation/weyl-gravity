@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "compact R_t x S1_L x S2 product; smooth periodic corrections; electric and magnetic Maxwell charges fixed through epsilon squared; plus branch of one odd-parity l=2 gravitational harmonic with flux-forced Maxwell dressing",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the complete coupled l=2 mode equations have exact normal frequencies 6 plus or minus 2 sqrt(3)",
+    "the certified plus branch is a non-gauge gravitational harmonic with its background-flux-forced Maxwell dressing",
+    "both first-order Maxwell charge variations vanish",
+    "the convention-adjusted Chevreton tt coefficient has normalized t=0 sphere average -(36/5)(1+sqrt(3))",
+    "the quadratic Weyl--Maxwell tt source has normalized t=0 sphere average -(12/5)(6+5sqrt(3))",
+    "the constant-lapse adjoint pairing excludes every smooth periodic second-order correction for this branch at fixed electric and magnetic charges"
+  ],
+  "evidence": {
+    "commit": "04bc143ce297f49548dabac98af59e9f9c63f248",
+    "path": "bridge/certificates/einstein_maxwell_periodic_graviton_second_order.json",
+    "sha256": "9376a4d4d2d1a0b9e77ee78ece90cd74e82b574b02a84030ed93e1f5946caef4"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "assemble the focused second-order Einstein--Maxwell inclusion paper theorem and conventions appendix",
+  "not_established": [
+    "a second-order classification of the minus normal branch",
+    "an obstruction for every helicity-two harmonic or boundary condition",
+    "general nonlinear Einstein-sector failure",
+    "a causal, asymptotically flat, observable, scattering, or quantum verdict"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_fixed_charge_periodic_graviton_second_order",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_periodic_graviton_second_order",
+  "team_id": "einstein_boundary",
+  "verdict": "PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_periodic_graviton_second_order --verify bridge/certificates/einstein_maxwell_periodic_graviton_second_order.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_periodic_graviton_second_order --verify-exhaustive bridge/certificates/einstein_maxwell_periodic_graviton_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_periodic_graviton_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_periodic_graviton_second_order"
+  ]
+}
