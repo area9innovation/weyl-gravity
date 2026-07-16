@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Compact harmonic domain and relative Taub descent certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "background", "fixed_bundle_harmonic_domain", "topology_and_charge_fibres",
+    "harmonic_conventions_and_selection", "noether_gauge_descent",
+    "slice_conservation", "adjoint_domain", "taub_theorem", "classification",
+    "next_gate", "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "compact-harmonic-domain-taub-descent-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "COMPACT_HARMONIC_DOMAIN_AND_TAUB_DESCENT"},
+    "result_state": {"const": "DOMAIN_TOPOLOGY_AND_RELATIVE_TAUB_DESCENT_CERTIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"const": "G1_DOMAIN_AND_DESCENT_FREEZE"},
+    "provenance": {"type": "object"},
+    "background": {"type": "object"},
+    "fixed_bundle_harmonic_domain": {"type": "object"},
+    "topology_and_charge_fibres": {"type": "object"},
+    "harmonic_conventions_and_selection": {"type": "object"},
+    "noether_gauge_descent": {"type": "object"},
+    "slice_conservation": {"type": "object"},
+    "adjoint_domain": {"type": "object"},
+    "taub_theorem": {"type": "object"},
+    "classification": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "adjoint_domain": {
+    "class": "zeta_H is the time-translation reducibility/constant-lapse class in the constraint adjoint cokernel on fixed P_N",
+    "nontriviality_witness": "the imported p=0 rows obey <zeta_H,L Phi^(2)>=0 while their exact quadratic pairings are nonzero",
+    "pairing": "the compact Cauchy-slice constraint/Noether pairing, with smooth periodic fields and no spatial boundary term",
+    "qualification": "This certifies C_H and its domain, not the complete spacetime formal-adjoint cokernel of the full Weyl-Maxwell operator."
+  },
+  "background": {
+    "before_residual_quotient": true,
+    "compact_cauchy_slice": "Sigma=S1_L x S2, partial Sigma=empty",
+    "spacetime": "R_t x S1_L x S2 with the rational product fixture k_2=P=q_min=1",
+    "stationary_reducibility_parameter": "(K=partial_t, sigma=0, lambda_K=-i_K Abar=0) on the purely magnetic background"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE G1 theorem freezes the compact fixed-bundle harmonic domain, proves the exact flux-topology split, and derives gauge descent and slice conservation of the constant-lapse Taub component from the coupled action Noether identities. It does not compute complete H^0_lin representatives, the full adjoint cokernel, all harmonic coefficients, an off-shell BV map, causal propagation, scattering, or quantum theory.",
+  "classification": {
+    "cauchy_slice_independence": true,
+    "complete_adjoint_cokernel_computed": false,
+    "complete_linear_cohomology_computed": false,
+    "constant_lapse_adjoint_domain_frozen": true,
+    "continuous_flux_enlargement_separated": true,
+    "fixed_compact_u1_domain_frozen": true,
+    "fixture_bilinear_promoted_to_relative_taub_form": true,
+    "full_harmonic_coefficients_computed": false,
+    "gauge_descent_from_noether_identity": true,
+    "lorentzian_causal_theorem": false,
+    "off_shell_bv_chain_map_computed": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "fixed_bundle_harmonic_domain": {
+    "bundle": "a fixed principal compact U(1) bundle P_N over Sigma with N=2",
+    "cohomology_definition": "H^0_lin=(ker L_Einstein-Maxwell)/(linearized Diff x U(1)) on fixed P_N, before the final residual quotient",
+    "fields": "smooth periodic metric perturbations h and global connection differences a in Omega^1(M;ad P_N), with f=da",
+    "fixed_cohomology_class": "[q_min*F(epsilon)/(2*pi)]=c_1(P_N) at every perturbative order; integral_(S2) f^(j)=0",
+    "gauge_quotient": "Diff x U(1) at the Einstein-Maxwell tangent level; Diff x Weyl x U(1) in the Weyl-Maxwell target",
+    "harmonic_completion": "the Frechet space of smooth fields represented by rapidly decreasing S1 Fourier and scalar/vector/tensor S2 harmonic coefficients, restricted by the linear equations and reality conditions",
+    "linear_shell": "ker L_Einstein-Maxwell on the declared smooth periodic field space",
+    "not_claimed": "No explicit master-variable basis, completeness proof for gauge representatives, or coefficient table for all harmonics is supplied."
+  },
+  "generality_level": "G1_DOMAIN_AND_DESCENT_FREEZE",
+  "harmonic_conventions_and_selection": {
+    "complex_basis": "exp(2*pi*i*n*x/L) Y_(ell,m), n in Z, ell>=0, -ell<=m<=ell",
+    "constant_lapse_spatial_rules": [
+      "n_1+n_2=0",
+      "ell_1=ell_2",
+      "m_1+m_2=0",
+      "the total scalar parity is even"
+    ],
+    "real_mode_interpretation": "the Taub form pairs opposite-frequency/conjugate components of a real solution; evaluating a real mode at t=0 is a choice of Cauchy representative, not a time-dependent obstruction",
+    "reality": "the coefficient at (-n,ell,-m,-omega) is the conjugate coefficient up to the standard (-1)^m spherical-harmonic phase",
+    "remaining_calculation": "each surviving equal-(|n|,ell,polarization,branch) block still needs an exact tensor coefficient",
+    "stationary_time_rule": "for separated complex normal modes, slice conservation forces omega_1+omega_2=0 for a nonzero constant-lapse pairing"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the surviving equal-quantum-number polarization blocks and the other constraint-adjoint classes on this now-fixed compact U(1) harmonic domain",
+  "noether_gauge_descent": {
+    "adjoint_consequence": "<zeta_H,D^2E_bar[v,Rbar(epsilon)]>=0 when L^* zeta_H=0",
+    "bundle_covariant_diffeomorphism": "delta_(xi,lambda) A=d(lambda+i_xi A)+i_xi F; choose the gauge-covariant lift when comparing patches",
+    "identity": "DE_Phi[R_Phi(epsilon)]=C_epsilon E(Phi)",
+    "linear_consequence": "L Rbar(epsilon)=0 at E(Phi_bar)=0",
+    "polarized_consequence": "D^2E_bar[v,Rbar(epsilon)]=-L((D R)_bar[v] epsilon) when Lv=0",
+    "quadratic_consequence": "Q_H descends to H^0_lin; changing either input by a linearized gauge tangent changes the source by an L-exact term",
+    "scope": "This is the general differentiated Noether theorem for the action-derived coupled operator. It is not an explicit curved off-shell BV chain-map construction.",
+    "status": "FORMAL_ACTION_NOETHER_DESCENT_CERTIFIED"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/compact_harmonic_domain_taub_descent.py",
+    "generator_sha256": "b4993201189c02be7d8ff5f00f2dffadd9562a904a939308aa3fdcb04e061b8e",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_chevreton_tangent.json": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead",
+      "bridge/certificates/einstein_maxwell_obstruction_bilinear.json": "35f11f43b7d4ea80c2a39cbc40ba24bff58da1e56cf9fe74b27f59317b58654d",
+      "bridge/certificates/einstein_maxwell_product_incidence.json": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+    }
+  },
+  "result_id": "COMPACT_HARMONIC_DOMAIN_AND_TAUB_DESCENT",
+  "result_state": "DOMAIN_TOPOLOGY_AND_RELATIVE_TAUB_DESCENT_CERTIFIED",
+  "schema": "compact-harmonic-domain-taub-descent-v1",
+  "schema_path": "bridge/einstein_sector/schema/compact_harmonic_domain_taub_descent.schema.json",
+  "schema_sha256": "f758acf39f6d8ff195e8c1a120c9a848eaa1dbd5cfde95313575b0742517464b",
+  "slice_conservation": {
+    "checked_dimension": 4,
+    "closed_slice_consequence": "integral_(Sigma_t) J_K is independent of t because partial Sigma is empty",
+    "coupled_ward_input": "the polarized second variation of the Diff x Weyl x U(1) Noether identity vanishes on linearized-shell pairs",
+    "current": "J^a_K(v,w)=the complete coupled quadratic Noether current for reducibility parameter (K,0,lambda_K)",
+    "divergence_on_linear_shell": "nabla_a J^a_K(v,w)=0",
+    "exact_symbolic_contraction": "0",
+    "identity": "S^(ab) nabla_a K_b=S^(ab) nabla_(a K_b)=0 for Killing K"
+  },
+  "taub_theorem": {
+    "fixed_bundle_fixture_verdict": "R, D, P, and G all have nonzero self-pairing and therefore fail the necessary second-order Weyl-Maxwell extension condition within the fixed P_N phase space.",
+    "fixture_matrix": [
+      [
+        "-2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-16/3",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-12*(6 + 5*sqrt(3))/5"
+      ]
+    ],
+    "full_covariant_symplectic_moment_map_equality": false,
+    "relative_meaning": "The obstruction tests extension of Einstein-Maxwell tangents inside Weyl-Maxwell at the shared background; it is not an Einstein-Maxwell self-integrability theorem.",
+    "statement": "On the fixed compact U(1) bundle and declared smooth periodic domain, the imported O_H is a gauge-descended, Cauchy-slice-independent relative Taub/linearization-stability bilinear on H^0_lin before residual quotient."
+  },
+  "topology_and_charge_fibres": {
+    "electric_only_variation_on_fixed_bundle": {
+      "allowed": true,
+      "constant_lapse_consequence": "it does not remove C_H at the purely magnetic background because the energy density is quadratic in E"
+    },
+    "enlarged_continuous_flux_theory": {
+      "allowed_magnetic_lift": true,
+      "constant_lapse_consequence": "p=Q(v) removes only the constant-lapse component, as in the earlier augmented-row calculation",
+      "definition": "Maxwell fields are closed real two-forms whose harmonic S2 cohomology coefficient may vary continuously, or the bundle/topological sector is formally varied",
+      "not_the_same_phase_space": true
+    },
+    "exact_flux_check": {
+      "chern_number_family": "2*q_min*(P + epsilon**2*p)/k_2",
+      "epsilon_squared_chern_coefficient": "2*p*q_min/k_2",
+      "field_convention": "F=(P+epsilon^2*p) vol_(S2), integral_(S2) vol_(S2)=4*pi/k_2",
+      "fixture": {
+        "chern_family": "2*epsilon**2*p + 2",
+        "fixed_bundle_consequence": "p=0",
+        "flux_family": "4*pi*(epsilon**2*p + 1)",
+        "parameters": "q_min=k_2=P=1, N=2"
+      },
+      "flux": "4*pi*(P + epsilon**2*p)/k_2",
+      "north_south_patch_difference": "A_N-A_S=2*(P+epsilon^2*p)/k_2 dphi",
+      "transition_winding": "2*q_min*(P + epsilon**2*p)/k_2"
+    },
+    "fixed_compact_u1_bundle": {
+      "allowed_magnetic_lift": false,
+      "constant_lapse_consequence": "the certified fixed-charge obstruction cannot be removed by the p row within this phase space",
+      "reason": "the transition winding N is integer and locally constant in every smooth family on fixed P_N; the exact epsilon^2 coefficient forces p=0"
+    },
+    "interpretive_correction": "The earlier charge-relaxed radion and duality fixtures are exact extensions in the enlarged continuous-flux family, not deformations through connections on the same fixed compact U(1) bundle.",
+    "linear_stress_check": {
+      "at_E_zero_P_one": "dP",
+      "electric_only_consequence": "zero linear constant-lapse stress pairing",
+      "energy_density": "(E^2+P^2)/2",
+      "linear_variation": "E*dE + P*dP",
+      "magnetic_consequence": "the homogeneous magnetic charge row, unlike the electric row, has nonzero linear pairing with this component"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.compact_harmonic_domain_taub_descent --verify bridge/certificates/compact_harmonic_domain_taub_descent.json",
+    "python3 bridge/einstein_sector/verify_compact_harmonic_domain_taub_descent.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_compact_harmonic_domain_taub_descent"
+  ]
+}

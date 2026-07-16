@@ -463,6 +463,24 @@ magnetic coefficient removes it from the augmented cokernel. This is
 complete `H^0_lin`, full cokernel, and every surviving equal-quantum-number
 polarization block remain open.
 
+The follow-up `COMPACT_HARMONIC_DOMAIN_AND_TAUB_DESCENT` certificate now fixes
+the global domain and sharpens that charge statement.  On the rational
+fixture, compact `U(1)` quantization gives
+
+```text
+N(epsilon)=2+2 epsilon^2 p.
+```
+
+Therefore a smooth family of connections on the same `N=2` bundle has `p=0`.
+The augmented magnetic row belongs to an enlarged continuous de Rham-flux
+family, not the same fixed-bundle phase space.  On fixed `P_N`, the obstruction
+survives; electric-only variation still does not remove it at the purely
+magnetic background.  The same certificate derives gauge descent and
+Cauchy-slice conservation from the coupled action Noether identities, so the
+fixture bilinear is now a well-defined relative Taub form on its declared
+subspace of `H^0_lin` before residual quotient.  This still does not compute
+the full harmonic coefficient table or full adjoint cokernel.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally
