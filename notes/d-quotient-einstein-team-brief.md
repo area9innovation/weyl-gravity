@@ -446,6 +446,23 @@ and the phase space allowing the corresponding charge variations. Treat the
 existing radion, duality, photon, graviton, and null calculations as fixtures
 for this classification rather than as the theorem itself.
 
+The first restricted object is now certified by
+`EINSTEIN_MAXWELL_OBSTRUCTION_BILINEAR_G1`. On the declared compact span of
+the radion, duality, `l=1` photon, and plus-branch `l=2` gravitational
+fixtures, the constant-lapse component is the symmetric diagonal form
+
+```text
+diag(-2,-1/2,-16/3,-12sqrt(3)-72/5).
+```
+
+The `R,D` mixed entry is zero by direct full-tensor polarization; all
+distinct-`ell` fixture entries vanish by `SO(3)` equivariance. Fixed magnetic
+charge retains this relative Taub component, while admitting the second-order
+magnetic coefficient removes it from the augmented cokernel. This is
+`G1_DECLARED_FIXTURE_SPAN`, not the commissioned full harmonic theorem: the
+complete `H^0_lin`, full cokernel, and every surviving equal-quantum-number
+polarization block remain open.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally

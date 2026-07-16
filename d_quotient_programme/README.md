@@ -58,6 +58,8 @@ because the existing results concern different objects:
 - [`reports/einstein-maxwell-periodic-photon-registration-receipt.md`](reports/einstein-maxwell-periodic-photon-registration-receipt.md)
 - [`contributions/einstein-maxwell-periodic-graviton-second-order.json`](contributions/einstein-maxwell-periodic-graviton-second-order.json)
 - [`reports/einstein-maxwell-periodic-graviton-registration-receipt.md`](reports/einstein-maxwell-periodic-graviton-registration-receipt.md)
+- [`contributions/einstein-maxwell-obstruction-bilinear-g1.json`](contributions/einstein-maxwell-obstruction-bilinear-g1.json)
+- [`reports/einstein-maxwell-obstruction-bilinear-registration-receipt.md`](reports/einstein-maxwell-obstruction-bilinear-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -150,3 +152,11 @@ quadratic source pairing is `-(12/5)(6+5sqrt(3))`, so no smooth periodic
 second-order correction exists at fixed electric and magnetic charges. The
 minus branch and other harmonics remain open; the next deliverable is the
 focused paper theorem.
+
+The adjacency programme's first reusable obstruction object is now registered
+at `G1` on the declared four-dimensional fixture span. Its constant-lapse
+bilinear is diagonal on `(radion,duality,photon,gravitational-plus)` with exact
+entries `(-2,-1/2,-16/3,-12sqrt(3)-72/5)`. The fixed magnetic-charge fibre
+retains this relative Taub component; admitting the second-order magnetic
+coefficient removes it from the augmented cokernel. The full harmonic domain
+and complete adjoint cokernel remain the next promotion gate.

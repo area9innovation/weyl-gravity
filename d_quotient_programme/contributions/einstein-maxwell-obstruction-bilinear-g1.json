@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "compact R_t x S1_L x S2 product; normalized constant-lapse tt pairing; fixed and variable electric/magnetic charge fibres treated separately; declared four-dimensional fixture span only",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "a symmetric constant-lapse obstruction bilinear is certified on the span of the radion, duality, l=1 photon, and plus-branch l=2 gravitational fixtures",
+    "its exact matrix is diagonal with entries -2, -1/2, -16/3, and -12sqrt(3)-72/5",
+    "the only symmetry-allowed mixed fixture entry, radion with duality, vanishes by a direct full-tensor polarization calculation",
+    "SO(3) x S1 equivariance gives necessary momentum, angular-momentum, m, and parity selection rules",
+    "the constant-lapse cokernel survives fixed magnetic charge and electric-only variation but is removed when the second-order magnetic coefficient is admitted",
+    "the obstruction is identified as a relative Taub moment-map component for the Einstein--Maxwell tangent inclusion"
+  ],
+  "evidence": {
+    "commit": "61b0bff20d5dc551831e85a73119903254c3edb9",
+    "path": "bridge/certificates/einstein_maxwell_obstruction_bilinear.json",
+    "sha256": "35f11f43b7d4ea80c2a39cbc40ba24bff58da1e56cf9fe74b27f59317b58654d"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute every surviving equal-(k,ell) polarization block on the complete periodic harmonic domain and classify the full adjoint cokernel",
+  "not_established": [
+    "the complete infinite-dimensional linear cohomology domain",
+    "the full adjoint cokernel",
+    "all equal-harmonic polarization coefficients",
+    "charge-relaxed extensions for the photon or gravitational fixtures",
+    "a covariant symplectic moment-map equality, causal theorem, scattering result, or nonlinear closure"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_fixture_span_obstruction_bilinear",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_obstruction_bilinear_g1",
+  "team_id": "einstein_boundary",
+  "verdict": "G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_obstruction_bilinear --verify bridge/certificates/einstein_maxwell_obstruction_bilinear.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_obstruction_bilinear.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_obstruction_bilinear"
+  ]
+}

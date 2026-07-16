@@ -15,7 +15,7 @@
     "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and the support-local cyclic gauge-fixed 54-to-26 contraction are complete; total causal homotopy, q2, local D-equivariance, and arity-two stability remain open",
     "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
     "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open",
-    "second-order product inclusion is charge- and tangent-dependent: compact fixed-flux radion and duality directions, one periodic photon mode, and one l=2 gravitational branch are obstructed, while one nonperiodic null tangent with nonzero Chevreton defect extends explicitly; other branches and boundary conditions remain open",
+    "the compact radion, duality, l=1 photon, and l=2 gravitational-plus fixtures assemble into a certified constant-lapse obstruction bilinear on their declared span, with exact charge-fibre cokernel behavior and relative Taub interpretation; the full harmonic domain and full cokernel remain open",
     "interacting promotion requires a corrected Cartan homotopy",
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
@@ -29,7 +29,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "1c4eb856a191f5795e44c0ff1bc1afce644a9e88",
+  "programme_base_commit": "de875cece76c20acc4480c71182f7f40a2426a19",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -46,7 +46,7 @@
   },
   "registry_hashes": {
     "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-    "phase_space_registry": "46f6754f83d2516c5652ea67c8474a0dcfc014d5fe180c98f552d931923516bb"
+    "phase_space_registry": "186b71f96098f729ad77021fea745eb58afbb522bc78e4b27397835f421c4185"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -240,6 +240,15 @@
       "setting_id": "compact_einstein_maxwell_periodic_graviton_second_order",
       "status": "CERTIFIED",
       "verdict": "PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION"
+    },
+    {
+      "boundary_conditions": "compact product; declared radion, duality, l=1 photon, and l=2 gravitational-plus span; constant-lapse pairing; fixed and augmented charge fibres",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_fixture_span_obstruction_bilinear",
+      "setting_id": "compact_einstein_maxwell_obstruction_bilinear_g1",
+      "status": "CERTIFIED",
+      "verdict": "G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -1125,6 +1134,51 @@
       "sha256": "a7138c8bc2d7e756d9a8910b33eb34a7e0180818f80e31b2184f1342049d4838"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-obstruction-bilinear-g1.json",
+      "payload": {
+        "boundary_conditions": "compact R_t x S1_L x S2 product; normalized constant-lapse tt pairing; fixed and variable electric/magnetic charge fibres treated separately; declared four-dimensional fixture span only",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "a symmetric constant-lapse obstruction bilinear is certified on the span of the radion, duality, l=1 photon, and plus-branch l=2 gravitational fixtures",
+          "its exact matrix is diagonal with entries -2, -1/2, -16/3, and -12sqrt(3)-72/5",
+          "the only symmetry-allowed mixed fixture entry, radion with duality, vanishes by a direct full-tensor polarization calculation",
+          "SO(3) x S1 equivariance gives necessary momentum, angular-momentum, m, and parity selection rules",
+          "the constant-lapse cokernel survives fixed magnetic charge and electric-only variation but is removed when the second-order magnetic coefficient is admitted",
+          "the obstruction is identified as a relative Taub moment-map component for the Einstein--Maxwell tangent inclusion"
+        ],
+        "evidence": {
+          "commit": "61b0bff20d5dc551831e85a73119903254c3edb9",
+          "path": "bridge/certificates/einstein_maxwell_obstruction_bilinear.json",
+          "sha256": "35f11f43b7d4ea80c2a39cbc40ba24bff58da1e56cf9fe74b27f59317b58654d"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "compute every surviving equal-(k,ell) polarization block on the complete periodic harmonic domain and classify the full adjoint cokernel",
+        "not_established": [
+          "the complete infinite-dimensional linear cohomology domain",
+          "the full adjoint cokernel",
+          "all equal-harmonic polarization coefficients",
+          "charge-relaxed extensions for the photon or gravitational fixtures",
+          "a covariant symplectic moment-map equality, causal theorem, scattering result, or nonlinear closure"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_fixture_span_obstruction_bilinear",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_obstruction_bilinear_g1",
+        "team_id": "einstein_boundary",
+        "verdict": "G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_obstruction_bilinear --verify bridge/certificates/einstein_maxwell_obstruction_bilinear.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_obstruction_bilinear.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_obstruction_bilinear"
+        ]
+      },
+      "sha256": "7b54cc8739edc97bbdcafdac239336f2f1ec89bd2a226d0e00cdc8dc8042026a"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -1180,18 +1234,22 @@
           "semantic import of the classical compact-cylinder sector split without quantum promotion",
           "complete intrinsic Euler descent included in the truncated AFN0 even-anomaly closure slice",
           "hash-bound AFN0 closure witnesses with semantic agreement checks against the descent database",
-          "complete even Weyl-ghost AFN0 candidate quotient with normalized dual witnesses for omega C2 and omega E4"
+          "complete even Weyl-ghost AFN0 candidate quotient with normalized dual witnesses for omega C2 and omega E4",
+          "complete odd Weyl-ghost AFN0 candidate quotient with a normalized dual witness for omega C dual C",
+          "zero direct local bulk D_compact anomaly pullback on the closed vacuum cylinder because sigma_D=0",
+          "source/target degree audit and minimal missing-carrier theorem for the renormalized local Ward-insertion map"
         ],
         "evidence": {
-          "commit": "04833ba9d0a213b5bd5b6780ea5bf13a1d3e476e",
-          "path": "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json",
-          "sha256": "9c04d552a0ab243aff0403a51622f6d892ca77f4b0fbd04efdcf3d8ccc31c8bf"
+          "commit": "db533d49e7644fc2482f472a8ed2f41e06469314",
+          "path": "quantum-weyl/cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
+          "sha256": "80c4a76355c306e8fbcecacd297108bcb58a1c20361aa154e60ec85d5ba99e93"
         },
         "generator_id": "D_compact",
         "lifecycle_layer": "QUANTUM",
-        "next_gate": "extend the completed even AFN0 candidate quotient to the odd, Diff, and antifield sectors, then instantiate the admissible bulk Cartan-obstruction basis; consume separately gated clock inputs only after their total-D and shared classical BV exports land",
+        "next_gate": "import the full classical antifield/Koszul-Tate and D-action export, compute the regulated Slavnov breaking, and construct the renormalized local Ward-insertion map into the admissible D-Cartan complex; consume separately gated clock inputs only after their total-D and shared classical BV exports land",
         "not_established": [
-          "a complete bulk pure-Weyl Cartan-obstruction candidate basis",
+          "a complete Diff and antifield-dependent pure-Weyl anomaly basis",
+          "a local-anomaly to admissible D-Cartan chain map",
           "a renormalized observable algebra or actual Q_1",
           "a restored local quantum master equation",
           "a residual quantum transfer, coefficient, or pairing correction",
@@ -1203,19 +1261,19 @@
         "team_id": "quantum",
         "verdict": null,
         "verification_commands": [
-          "PYTHONPATH=quantum-weyl python3 -m cartan.certificate --check",
+          "PYTHONPATH=quantum-weyl python3 -m cartan.local_anomaly_comparison_certificate --check",
           "PYTHONPATH=quantum-weyl python3 -m cartan.contribution --check",
           "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/cartan/tests -v"
         ]
       },
-      "sha256": "fa8037db92d25a566b659fd5a3cb1f45c576290c47faa834360cec8c5cc76c92"
+      "sha256": "598f550c92fa1bd8bb19889c0ef310a3b95360d90c6756642421902a1688d471"
     }
   ],
   "team_inputs": {
     "classical": {
-      "commit": "60c84aa55c50651fdfae1f6274249e2179a56d2d",
+      "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
       "path": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
-      "sha256": "7374e8ed51f968642c73db1e9a6b22b0dd39a295801c669e8ac0bfac686eed42"
+      "sha256": "89da9c898736fdcd6d21d68b6e53c523f036911702547baa6341a5bee6bd45c5"
     },
     "einstein_boundary": {
       "commit": "7e87281c416f4c4f98edfe61ae05829f4b48593a",
@@ -1223,9 +1281,9 @@
       "sha256": "ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685"
     },
     "nonlinear": {
-      "commit": "1e54e0ae7b90a1a8b1308df6a6f9a4a85f274e18",
+      "commit": "dea315df6a8002af54f6587a67ac6c4b4677f2b6",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "bf5f46f33f246d9df3d091f439440dc4938a476282ea88b65c09a0cae0cb1a66"
+      "sha256": "3902cfc00a1e09fb65a0a809e25f6203c38d574d3539e6af47d5e9665a182cdd"
     },
     "quantum": {
       "commit": "04833ba9d0a213b5bd5b6780ea5bf13a1d3e476e",
@@ -1242,9 +1300,9 @@
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. At second order, compact fixed-flux zero/charge modes, one l=1 photon mode, and the plus branch of one l=2 gravitational mode have adjoint obstructions, while a universal-cover null tangent with nonzero Chevreton defect has an explicit correction.",
-      "next_gate": "assemble the focused second-order Einstein--Maxwell inclusion paper theorem; independently complete the asymptotic Bach phase space and charge audit",
-      "result_state": "PERIODIC_PHOTON_AND_L2_GRAVITATIONAL_OBSTRUCTIONS_CERTIFIED_PAPER_ASSEMBLY_READY",
+      "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. The radion, duality, l=1 photon, and l=2 gravitational fixtures now assemble into an exact constant-lapse obstruction bilinear on their declared span, with charge-fibre cokernel behavior and a relative Taub interpretation. The universal-cover null tangent remains an explicit removable control.",
+      "next_gate": "compute every surviving equal-(k,ell) polarization block and the full adjoint cokernel on the complete periodic harmonic domain; independently complete the asymptotic Bach phase space and charge audit",
+      "result_state": "G1_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN_CERTIFIED_FULL_HARMONIC_THEOREM_OPEN",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },

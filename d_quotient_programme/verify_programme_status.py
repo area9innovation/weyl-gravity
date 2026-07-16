@@ -38,6 +38,7 @@ EINSTEIN_MAXWELL_SECOND_ORDER_FIXED_FLUX_CONTRIBUTION = PACKAGE / "contributions
 EINSTEIN_MAXWELL_SECOND_ORDER_NULL_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-second-order-null-extension.json"
 EINSTEIN_MAXWELL_PERIODIC_PHOTON_SECOND_ORDER_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-periodic-photon-second-order.json"
 EINSTEIN_MAXWELL_PERIODIC_GRAVITON_SECOND_ORDER_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-periodic-graviton-second-order.json"
+EINSTEIN_MAXWELL_OBSTRUCTION_BILINEAR_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-obstruction-bilinear-g1.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -144,6 +145,8 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
             "berger_rational_fixture_q2_d_block",
             "berger_nonzero_d_weight_finite_block_no_go",
             "berger_all_weight_arity_two_d_cartan",
+            "berger_54_row_local_d_action",
+            "berger_54_row_causal_homotopy_reduction",
         ]
     ):
         raise AssertionError("classical scalar-clock obstruction scope drifted")
@@ -190,7 +193,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
     nonlinear = data["nonlinear"]
     if not (
         nonlinear.get("result_state")
-        == "ENGINE_READY_HT1_RESIDUAL_AND_LOCAL_SEEDS_COMPUTED_INPUT_BLOCKED"
+        == "ENGINE_READY_HT1_SELECTED_AND_PPWAVE_BLOCKS_COMPUTED_INPUT_BLOCKED"
         and nonlinear.get("classical_freeze_gate") == "FAIL_CLOSED"
     ):
         raise AssertionError("nonlinear transfer gate drifted")
@@ -765,6 +768,14 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION",
         )
     )
+    maxwell_obstruction_bilinear_contribution = (
+        _einstein_maxwell_second_order_contribution(
+            EINSTEIN_MAXWELL_OBSTRUCTION_BILINEAR_CONTRIBUTION,
+            "compact_einstein_maxwell_obstruction_bilinear_g1",
+            "einstein_maxwell_product_compact_fixture_span_obstruction_bilinear",
+            "G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN",
+        )
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
@@ -880,6 +891,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": maxwell_periodic_graviton_contribution,
             },
             {
+                "path": str(EINSTEIN_MAXWELL_OBSTRUCTION_BILINEAR_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_OBSTRUCTION_BILINEAR_CONTRIBUTION),
+                "payload": maxwell_obstruction_bilinear_contribution,
+            },
+            {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
@@ -900,10 +916,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "einstein_boundary",
-                "result_state": "PERIODIC_PHOTON_AND_L2_GRAVITATIONAL_OBSTRUCTIONS_CERTIFIED_PAPER_ASSEMBLY_READY",
+                "result_state": "G1_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN_CERTIFIED_FULL_HARMONIC_THEOREM_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. At second order, compact fixed-flux zero/charge modes, one l=1 photon mode, and the plus branch of one l=2 gravitational mode have adjoint obstructions, while a universal-cover null tangent with nonzero Chevreton defect has an explicit correction.",
-                "next_gate": "assemble the focused second-order Einstein--Maxwell inclusion paper theorem; independently complete the asymptotic Bach phase space and charge audit",
+                "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. The radion, duality, l=1 photon, and l=2 gravitational fixtures now assemble into an exact constant-lapse obstruction bilinear on their declared span, with charge-fibre cokernel behavior and a relative Taub interpretation. The universal-cover null tangent remains an explicit removable control.",
+                "next_gate": "compute every surviving equal-(k,ell) polarization block and the full adjoint cokernel on the complete periodic harmonic domain; independently complete the asymptotic Bach phase space and charge audit",
             },
             {
                 "team_id": "nonlinear",
@@ -1111,6 +1127,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION",
             },
             {
+                "setting_id": "compact_einstein_maxwell_obstruction_bilinear_g1",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_fixture_span_obstruction_bilinear",
+                "boundary_conditions": "compact product; declared radion, duality, l=1 photon, and l=2 gravitational-plus span; constant-lapse pairing; fixed and augmented charge fibres",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1183,7 +1208,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and the support-local cyclic gauge-fixed 54-to-26 contraction are complete; total causal homotopy, q2, local D-equivariance, and arity-two stability remain open",
             "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
             "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open",
-            "second-order product inclusion is charge- and tangent-dependent: compact fixed-flux radion and duality directions, one periodic photon mode, and one l=2 gravitational branch are obstructed, while one nonperiodic null tangent with nonzero Chevreton defect extends explicitly; other branches and boundary conditions remain open",
+            "the compact radion, duality, l=1 photon, and l=2 gravitational-plus fixtures assemble into a certified constant-lapse obstruction bilinear on their declared span, with exact charge-fibre cokernel behavior and relative Taub interpretation; the full harmonic domain and full cokernel remain open",
             "interacting promotion requires a corrected Cartan homotopy",
             "quantum promotion requires a restored QME and renormalized Ward identity",
         ],
@@ -1260,6 +1285,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "universal_cover_einstein_maxwell_second_order_null_extension",
         "compact_einstein_maxwell_periodic_photon_second_order",
         "compact_einstein_maxwell_periodic_graviton_second_order",
+        "compact_einstein_maxwell_obstruction_bilinear_g1",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1285,6 +1311,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "universal_cover_einstein_maxwell_second_order_null_extension": "NONZERO_CHEVRETON_NULL_TANGENT_EXTENDS_AT_SECOND_ORDER",
         "compact_einstein_maxwell_periodic_photon_second_order": "PERIODIC_PHOTON_SECOND_ORDER_FIXED_CHARGE_OBSTRUCTION",
         "compact_einstein_maxwell_periodic_graviton_second_order": "PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION",
+        "compact_einstein_maxwell_obstruction_bilinear_g1": "G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -1325,6 +1352,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Einstein--Maxwell periodic photon second-order obstruction was dropped")
     if ledger.get("compact_einstein_maxwell_periodic_graviton_second_order", {}).get("status") != "CERTIFIED":
         errors.append("Einstein--Maxwell periodic gravitational-mode second-order obstruction was dropped")
+    if ledger.get("compact_einstein_maxwell_obstruction_bilinear_g1", {}).get("status") != "CERTIFIED":
+        errors.append("Einstein--Maxwell G1 obstruction bilinear was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -1601,6 +1630,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_periodic_graviton_second_order",
             "drop_Einstein_Maxwell_periodic_graviton_second_order_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_obstruction_bilinear_g1",
+            "drop_Einstein_Maxwell_obstruction_bilinear_contribution",
         ),
     ):
         mutant = deepcopy(data)
