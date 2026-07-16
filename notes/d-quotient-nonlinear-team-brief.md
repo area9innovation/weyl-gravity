@@ -225,6 +225,17 @@ radiative and centered classes, and clock/gravity excitations.  Compute the
 first transferred vertex or certify its exact vanishing; do not reuse the
 free absence of one-particle cohomology as the conclusion.
 
+### Work package N-G5: Einstein projection and one amplitude fixture
+
+Once a physical support-local transferred cubic tensor exists, restrict it to
+the certified Einstein-sector inclusion and test whether the nonlinear source
+remains tangent to that sector. Translate the projection into helicity or
+twistor variables and reproduce one standard three-point or MHV fixture.
+Determine whether the compact charge-sector obstruction becomes a forbidden
+external state, a vanishing projected vertex, a boundary selection rule, or
+has no amplitude interpretation in the tested regime. This is one bridge
+calculation, not a twistor reformulation of the complex.
+
 ### External bridge N-X: test adjacent proposals on the gauge complex
 
 For Bender--Mannheim/PT quantization and critical/log gravity, deliver:
@@ -242,6 +253,13 @@ BRST/Taub cohomology and remains compatible with (q_2).  Report a positive
 descent theorem or the first normalized incompatibility witness.  Treat the
 authors' original scope accurately and do not present an oscillator theorem
 as a claim about the full interacting gauge theory.
+
+The direct Mannheim/PT versus Fock-BRST versus causal-BV comparison remains
+deferred until a Lorentzian asymptotic state space and quantum QME disposition
+exist. Follow the gate and common-fixture requirements in
+[`adjacency-programme.md`](adjacency-programme.md); use
+[`adjacency-bridge-note-template.md`](adjacency-bridge-note-template.md) for
+the eventual external note.
 
 ## Common background matrix
 

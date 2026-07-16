@@ -433,12 +433,40 @@ constraint, or another adjoint cokernel.  Then compute the first third-order
 or mixed-harmonic obstruction needed to distinguish a second-order pass from
 formal nonlinear closure.
 
+Construct the reusable obstruction bilinear
+
+\[
+\mathfrak O:
+H^0_{\rm lin}\times H^0_{\rm lin}\longrightarrow\operatorname{coker}L
+\]
+
+and identify its relation to the Taub moment map. The theorem must state how
+the domain and cokernel change between fixed electric/magnetic charge fibres
+and the phase space allowing the corresponding charge variations. Treat the
+existing radion, duality, photon, graviton, and null calculations as fixtures
+for this classification rather than as the theorem itself.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally
 hyperbolic backgrounds, Lorentzian dS/AdS, and the asymptotically flat full
 Bach phase space.  Only after causal and boundary closure compare Bondi news,
 ADM/Bondi energy, soft charges, and tree amplitudes.
+
+### Work package E-G5: asymptotic Bach/BMS phase space
+
+Construct a closed asymptotic phase space for the Bach equation from a finite
+action principle, symplectic form, and flux. Determine radiative, Coulombic,
+soft, memory, corner, and extra-branch data; differentiable charges and their
+algebra; and the sign of the radiative pairing. Keep \(H_{\rm ESU}\), \(D_M\),
+\(D_{\rm rad}\), and \(P_0\) in separate rows. If a restricted
+polyhomogeneous sector is used first, prove that evolution and the declared
+asymptotic symmetries preserve it.
+
+Report whether the extra Bach branch reaches \(\mathscr I^\pm\), whether a
+causal boundary condition removes it, and whether the selected Einstein sector
+reproduces Bondi news and flux. A boundary condition imposed at both temporal
+ends is not causal closure without an independent well-posedness theorem.
 
 ### External bridge E-X: make the result legible to adjacent programmes
 
@@ -456,6 +484,13 @@ survive Taub and flux constraints, and whether the Chevreton second-order
 obstruction classifies a broader family of parallel-flux backgrounds.  State
 clearly that Euclidean branch selection is not Lorentzian causal closure and
 that boundary exclusion is not gauge quotienting.
+
+Frame the resulting paper as a Lorentzian and nonlinear complement to
+Einstein-from-conformal boundary selection, not as a refutation of the
+Euclidean or on-shell result. Use
+[`adjacency-programme.md`](adjacency-programme.md) for the staged portfolio
+and [`adjacency-bridge-note-template.md`](adjacency-bridge-note-template.md)
+for each external comparison.
 
 ## Common background matrix
 

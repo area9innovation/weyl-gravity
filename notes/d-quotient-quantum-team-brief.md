@@ -216,6 +216,14 @@ Separate universal local coefficients from spectral normalization, zero
 modes, boundaries, and measure terms.  Agreement of selected Euclidean
 determinants does not by itself prove local covariance.
 
+Compute the pure-Weyl \(a,c\) coefficients by two genuinely independent
+presentations: the generated BV/descent calculation and a heat-kernel,
+determinant, or index calculation with matched zero-mode and measure ledgers.
+Reproduce one standard literature coefficient before interpreting a
+disagreement. The acceptance target is presentation-independent coefficients
+and an exact account of every normalization or scheme transformation, not
+numerical agreement on a single background.
+
 ### Work package Q-G3: isolate the actual (D)-anomaly
 
 Construct the explicit coefficient-bearing map to
@@ -256,6 +264,14 @@ which matter spectra cancel the coefficient-bearing classes, whether the WZ
 field trivializes the actual obstruction, or whether an antilinear metric is
 BRST-compatible.  Do not demand adoption of the residual quotient as a
 premise, and do not overstate what the source paper originally proved.
+
+Defer the three-way Mannheim/PT, Fock-BRST, and causal-BV comparison until the
+QME and Lorentzian asymptotic-state gates are closed. Its eventual common
+benchmark must compare the phase space, residual quotient, state definition,
+Jordan/log modes, inner products, BRST descent, and first physical vertex.
+Use [`adjacency-programme.md`](adjacency-programme.md) for sequencing and
+[`adjacency-bridge-note-template.md`](adjacency-bridge-note-template.md) for
+the outward-facing note.
 
 ## Common background matrix
 

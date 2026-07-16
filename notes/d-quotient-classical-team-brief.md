@@ -421,6 +421,30 @@ implicit-function, bifurcation, or obstruction calculation to decide whether
 clock monotonicity, energy positivity, (delta Q_R=0), and the BV contraction
 hold on an open family or only on an isolated branch.
 
+### Work package C-G4: complete Berger relational observables
+
+After the 54-row causal clock data freeze, construct one complete observable
+
+\[
+\mathcal O_A(\tau)=A\text{ evaluated when the Berger phase equals }\tau.
+\]
+
+Prove its gauge invariance, causal dependence, clock-chart domain, treatment
+of repeated phase crossings, reduced Poisson brackets, nontrivial
+\(\tau\)-evolution, and compatibility with the induced pairing. Reconcile the
+evolution explicitly with the fixed-coupling identity
+\(\Omega(\delta,\mathcal L_D)=0\); do not treat the name “clock” as a
+relational-observable construction.
+
+### Work package C-G5: one nearby detour-system pilot
+
+After C-G1 is certified, apply the abstract transfer theorem to one conformal
+spin-three, conformal gravitino, or finite mixed-field detour system on a
+declared Bach-flat Lorentzian background. Choose the smallest system with an
+explicit tractor parent and formal pairing. Return transferred Green
+homotopies or the first normalized curvature/support obstruction. Do not
+begin a higher-spin tower.
+
 ### External bridge C-X: meet adjacent work in its own observables
 
 For each promoted theorem, choose one primary adjacent result and provide:
@@ -439,6 +463,10 @@ whether zero energy means gauge or merely null pairing, and whether the
 abstract causal-transfer theorem supplies a missing Green-complex result.
 Do not ask adjacent authors to adopt the (D)-quotient vocabulary before the
 translation has been made.
+
+Use the portfolio and outward-facing acceptance criteria in
+[`adjacency-programme.md`](adjacency-programme.md), and prepare any external
+contact with [`adjacency-bridge-note-template.md`](adjacency-bridge-note-template.md).
 
 ## Common background matrix
 
