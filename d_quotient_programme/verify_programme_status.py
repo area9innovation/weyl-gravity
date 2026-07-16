@@ -29,6 +29,11 @@ CLASSICAL_BERGER_FIXED_COUPLING_DELTA_CHARGE_CONTRIBUTION = PACKAGE / "contribut
 CLASSICAL_BERGER_MINIMAL_BV_CLOCK_SDR_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-minimal-bv-clock-sdr.json"
 CLASSICAL_BERGER_RETAINED_MINIMAL_LAYOUT_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-retained-minimal-layout.json"
 NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
+NONLINEAR_BERGER_RETAINED_Q2_CONTRIBUTION = (
+    PACKAGE
+    / "contributions"
+    / "nonlinear-berger-retained-q2-and-unary-no-go.json"
+)
 EINSTEIN_ED1A_CONTRIBUTION = PACKAGE / "contributions" / "einstein-ed1a-asymptotic-generator-gate.json"
 EINSTEIN_BERGER_INCIDENCE_CONTRIBUTION = PACKAGE / "contributions" / "einstein-berger-incidence.json"
 EINSTEIN_MAXWELL_PRODUCT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-product-incidence.json"
@@ -207,10 +212,10 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
     nonlinear = data["nonlinear"]
     if not (
         nonlinear.get("result_state")
-        == "COMPLETE_54_ROW_CLASSICAL_Q2_IMPORTED_AND_REPLAYED_TRANSFER_AND_D_CARTAN_PENDING"
+        == "RETAINED_26_ROW_CLASSICAL_Q2_TRANSFERRED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_PENDING"
         and nonlinear.get("classical_freeze_gate") == "FAIL_CLOSED"
         and nonlinear["programme_stages"][1]["status"]
-        == "COMPLETE_54_ROW_UNARY_CONTRACTION_LOCAL_D_AND_SUPPORT_LOCAL_Q2_IMPORTED_ALL_Q2_IDENTITIES_REPLAYED_FULL_TRANSFERRED_ELL2_PENDING"
+        == "COMPLETE_54_ROW_UNARY_CONTRACTION_LOCAL_D_AND_SUPPORT_LOCAL_Q2_IMPORTED_REPLAYED_AND_TRANSFERRED_TO_RETAINED_Q2_26_MINIMAL_RESIDUAL_ELL2_PENDING"
     ):
         raise AssertionError("nonlinear transfer gate drifted")
 
@@ -268,6 +273,34 @@ def _nonlinear_nd1_contribution() -> dict[str, Any]:
         raise AssertionError("nonlinear ND1 contribution evidence is incomplete")
     if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
         raise AssertionError("nonlinear ND1 contribution evidence hash drifted")
+    return contribution
+
+
+def _nonlinear_berger_retained_q2_contribution() -> dict[str, Any]:
+    contribution = _load(NONLINEAR_BERGER_RETAINED_Q2_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "nonlinear"
+        and contribution.get("setting_id")
+        == "compact_positive_berger_clock_retained_q2_26"
+        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("phase_space_id")
+        == "positive_berger_fixed_coupling_linearized_solutions"
+        and contribution.get("lifecycle_layer") == "INTERACTING"
+        and contribution.get("claim_status") == "CERTIFIED"
+        and contribution.get("verdict")
+        == "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED"
+        and contribution.get("dependency_tags") == ["LOCAL-ALGEBRAIC"]
+    ):
+        raise AssertionError("nonlinear retained-q2 contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path, commit = evidence.get("path"), evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("nonlinear retained-q2 evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("nonlinear retained-q2 evidence hash drifted")
+    if not any("54236" in statement for statement in contribution["established"]):
+        raise AssertionError("nonlinear retained-q2 exact count dropped")
     return contribution
 
 
@@ -861,6 +894,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "G1_AXIAL_ELL2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
     )
     nd1_contribution = _nonlinear_nd1_contribution()
+    berger_retained_q2_contribution = _nonlinear_berger_retained_q2_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
         "schema": "pure-weyl-d-quotient-programme-status-v1",
@@ -1035,6 +1069,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": nd1_contribution,
             },
             {
+                "path": str(NONLINEAR_BERGER_RETAINED_Q2_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(NONLINEAR_BERGER_RETAINED_Q2_CONTRIBUTION),
+                "payload": berger_retained_q2_contribution,
+            },
+            {
                 "path": str(QUANTUM_CARTAN_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(QUANTUM_CARTAN_CONTRIBUTION),
                 "payload": quantum_cartan_contribution,
@@ -1043,10 +1082,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "team_status": [
             {
                 "team_id": "classical",
-                "result_state": "BERGER_GAUGE_FIXED_54_TO_26_CONTRACTION_CLOSED_CAUSAL_AND_Q2_OPEN",
+                "result_state": "BERGER_GAUGE_FIXED_54_TO_26_CONTRACTION_Q2_AND_LOCAL_D_COMPLETE_CAUSAL_OPEN",
                 "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE",
-                "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 is exact and cyclic; its 34-row minimal contraction is portable. Five nonminimal antighost--multiplier quartets extend it to 54 rows, and the selected gauge fermion acts by an exact finite BV-canonical shear, producing a complete support-local cyclic gauge-fixed 54-to-26 contraction.",
-                "next_gate": "construct the total causal homotopy for the gauge-fixed 54-row complex, then export q2 and test local D-equivariance",
+                "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 and portable 34-row minimal contraction extend to an exact cyclic support-local gauge-fixed 54-to-26 contraction. The complete support-local q2 and local D action are exported; the specialized characteristic symbol audit proves that the bare local unary Cartan equation has no solution.",
+                "next_gate": "compute the full characteristic symbol-cohomology carrier module and construct a retained causal Green extension without retrying the ruled-out bare local unary ansatz",
             },
             {
                 "team_id": "einstein_boundary",
@@ -1057,10 +1096,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "nonlinear",
-                "result_state": "COMPLETE_54_ROW_Q2_REPLAY_TRANSFER_AND_CARTAN_PENDING",
-                "verdict": "INPUT_GATE_BLOCKED",
-                "established": "The complete classical 54-row support-local q2 tensor is independently imported and replayed over Q(sqrt(10)); q1/q2, D/q2, and odd-Darboux cyclicity identities pass coefficientwise. Full transferred ell2 and the interacting Cartan solve remain pending.",
-                "next_gate": "compute the full transferred ell2 on the imported 54-row q2 data, then execute the interacting Cartan equation without promoting the still fail-closed quantum gate",
+                "result_state": "RETAINED_26_Q2_COMPLETE_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_PENDING",
+                "verdict": "BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_REQUIRED",
+                "established": "The complete classical 54-row support-local q2 tensor is independently imported and replayed over Q(sqrt(10)), then transferred exactly to a 26-row retained q2 with 54,236 canonical nonzero PBW coefficients. Its retained q1/q2 arity-two and odd-Darboux cyclicity defects vanish coefficientwise. This is not the minimal residual/cohomology ell2. Independently, the bare local unary D-Cartan equation is obstructed by an exact characteristic-rank mismatch.",
+                "next_gate": "compute the characteristic symbol-cohomology carrier module, then test residual/BFV and retained causal Green extensions as separate scoped constructions",
             },
             {
                 "team_id": "quantum",
@@ -1369,13 +1408,22 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
             },
             {
+                "setting_id": "compact_positive_berger_clock_retained_q2_26",
+                "generator_id": "D_compact",
+                "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+                "boundary_conditions": "closed Berger cylinder; exact support-local 54-to-26 contraction; bare local unary D-Cartan ansatz",
+                "lifecycle_layer": "INTERACTING",
+                "status": "CERTIFIED",
+                "verdict": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED",
+            },
+            {
                 "setting_id": "compact_interacting",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_interacting",
-                "boundary_conditions": "closed S3; support-local nonlinear export incomplete",
+                "boundary_conditions": "closed S3; retained q2 complete; residual/BFV or causal Cartan extension not constructed",
                 "lifecycle_layer": "INTERACTING",
                 "status": "BLOCKED",
-                "verdict": "INPUT_GATE_BLOCKED",
+                "verdict": "BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_REQUIRED",
             },
             {
                 "setting_id": "compact_quantum",
@@ -1429,11 +1477,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "the charge vanishes on the exact sector proposed for quotienting",
             "the zero-charge transformations close as a Lie algebra or declared algebroid",
             "the classical Cartan and causal homotopies exist in the declared support category",
-            "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and the support-local cyclic gauge-fixed 54-to-26 contraction are complete; total causal homotopy, q2, local D-equivariance, and arity-two stability remain open",
+            "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, support-local cyclic gauge-fixed 54-to-26 contraction, complete q2, local D action, and exact retained q2_26 transfer are complete; the bare local unary Cartan equation is obstructed, while characteristic cohomology, residual/BFV extension, and retained causal Green extension remain open",
             "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
             "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open",
             "the compact radion, duality, l=1 photon, and l=2 gravitational-plus fixtures assemble into a certified constant-lapse obstruction bilinear on their declared span, with exact charge-fibre cokernel behavior and relative Taub interpretation; the full harmonic domain and full cokernel remain open",
-            "interacting promotion requires a corrected Cartan homotopy",
+            "interacting promotion requires a scoped Cartan extension beyond the certified bare local unary no-go",
             "quantum promotion requires a restored QME and renormalized Ward identity",
         ],
         "publication_plan": {
@@ -1451,9 +1499,9 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
         },
         "next_shared_gate": {
-            "gate_id": "BERGER_GAUGE_FIXED_TOTAL_CAUSAL_HOMOTOPY",
+            "gate_id": "BERGER_CHARACTERISTIC_COHOMOLOGY_AND_RETAINED_CAUSAL_EXTENSION",
             "owner_order": ["classical", "nonlinear", "quantum", "einstein_boundary"],
-            "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates.",
+            "rule": "The exact retained q2_26 transfer is complete and the bare local unary D-Cartan ansatz is ruled out. Compute the full characteristic symbol-cohomology carrier module, then pursue residual/BFV and retained causal Green extensions independently without weakening the separate QME, Einstein-incidence, or Einstein--Maxwell tangent gates.",
         },
         "claim_boundary": (
             "The dossier consolidates sector-indexed results. It does not promote a "
@@ -1494,6 +1542,16 @@ def validate(data: dict[str, Any]) -> list[str]:
         and quantum_contributions[0].get("verdict") is None
     ):
         errors.append("quantum blocked contribution inventory drifted")
+    nonlinear_contributions = {
+        record.get("payload", {}).get("setting_id")
+        for record in data.get("team_contributions", [])
+        if record.get("payload", {}).get("team_id") == "nonlinear"
+    }
+    if nonlinear_contributions != {
+        "compact_selected_residual_HT1_q2",
+        "compact_positive_berger_clock_retained_q2_26",
+    }:
+        errors.append("nonlinear contribution inventory drifted")
     einstein_contributions = {
         record.get("payload", {}).get("setting_id")
         for record in data.get("team_contributions", [])
@@ -1557,6 +1615,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_symplectic_preflight": "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE",
         "compact_einstein_maxwell_weyl_axial_ell2_restriction": "G1_AXIAL_ELL2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
+        "compact_positive_berger_clock_retained_q2_26": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
     for setting, verdict in required.items():
@@ -1568,8 +1627,14 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("neutral-clock verdict escaped its homogeneous phase space")
     if ledger.get("compact_quantum", {}).get("verdict") != "ANALYTIC_FRAMEWORK_MISSING":
         errors.append("quantum verdict promoted before QME")
-    if ledger.get("compact_interacting", {}).get("verdict") != "INPUT_GATE_BLOCKED":
-        errors.append("full interacting verdict promoted before local export")
+    if ledger.get("compact_interacting", {}).get("verdict") != (
+        "BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_REQUIRED"
+    ):
+        errors.append("bare local interacting obstruction was erased or overpromoted")
+    if ledger.get("compact_positive_berger_clock_retained_q2_26", {}).get(
+        "status"
+    ) != "CERTIFIED":
+        errors.append("retained Berger q2_26 theorem was dropped")
     if ledger.get("compact_positive_berger_clock", {}).get("status") != "PARTIAL":
         errors.append("positive Berger background promoted before charge/BV audit")
     if ledger.get("compact_positive_berger_clock_reduced_charge", {}).get("status") != "PARTIAL":
@@ -1675,9 +1740,14 @@ constraint fixes \(\delta Q_R=0\), compact averaging excludes an inhomogeneous
 escape, and the scoped verdict is `D_GAUGE`. The clock rows contract
 support-locally and cyclically, the retained minimal `q1` is complete, and the
 selected gauge fermion gives an exact support-local cyclic gauge-fixed
-54-to-26 contraction. The total causal homotopy, `q2`, local D-equivariance,
-and stability remain open. The Einstein-incidence audit separately classifies
-this background as a non-Einstein Weyl--matter branch.
+54-to-26 contraction. The complete `q2` has now been transferred exactly to a
+retained 26-row operation with 54,236 canonical nonzero coefficients; its
+arity-two and odd-Darboux cyclicity defects vanish. This retained operation is
+not yet the minimal residual/cohomology `ell2`. The bare local unary D-Cartan
+equation is independently obstructed by an exact characteristic-rank mismatch,
+so the remaining routes are characteristic cohomology, residual/BFV extension,
+and retained causal Green extension. The Einstein-incidence audit separately
+classifies this background as a non-Einstein Weyl--matter branch.
 
 ## Four-team ledger
 
@@ -1828,6 +1898,25 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
     mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_selected_residual_HT1_q2")["verdict"] = "INTERACTING_CARTAN_EXISTS"
     reject("promote_selected_residual_to_full_cartan", mutant)
+
+    mutant = deepcopy(data)
+    retained_q2 = next(
+        row
+        for row in mutant["setting_ledger"]
+        if row["setting_id"]
+        == "compact_positive_berger_clock_retained_q2_26"
+    )
+    retained_q2["verdict"] = "INTERACTING_CARTAN_EXISTS"
+    reject("promote_retained_q2_to_interacting_cartan", mutant)
+
+    mutant = deepcopy(data)
+    mutant["team_contributions"] = [
+        record
+        for record in mutant["team_contributions"]
+        if record["payload"]["setting_id"]
+        != "compact_positive_berger_clock_retained_q2_26"
+    ]
+    reject("drop_retained_q2_and_unary_no_go_contribution", mutant)
 
     mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "asymptotic_real_cylinder_time")["verdict"] = "D_GAUGE"

@@ -1,0 +1,38 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "nonlinear",
+  "setting_id": "compact_positive_berger_clock_retained_q2_26",
+  "generator_id": "D_compact",
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "boundary_conditions": "closed Berger cylinder; complete bare gauge-fixed 54-row BV complex transferred to the retained 26-row complex; no residual/BFV or causal extension imposed",
+  "lifecycle_layer": "INTERACTING",
+  "claim_status": "CERTIFIED",
+  "verdict": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "established": [
+    "the complete 150305-coefficient support-local q2 is independently replayed and transferred through the exact cyclic 54-to-26 SDR",
+    "the retained q2_26 has 54236 canonical Q(sqrt(10)) PBW coefficients on all 26 output rows through total jet order four",
+    "the retained q1/q2 arity-two nilpotency and odd-Darboux BV-cyclicity defects vanish coefficientwise",
+    "an exact normalized null-symbol class obstructs every finite-order support-local unary D-Cartan homotopy on the bare retained 26-row complex and its bare 54-row extension"
+  ],
+  "not_established": [
+    "the minimal residual/cohomology ell2 beyond the retained q2_26 operation",
+    "a residual/BFV or Lorentzian-causal Cartan extension",
+    "an interacting arity-two D-Cartan primitive on an admissible extension",
+    "QME restoration, a quantum anomaly coefficient, or any Lorentzian-causal theorem"
+  ],
+  "evidence": {
+    "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
+    "commit": "29fb5db6a70932ca68810cfcdc3c1187441de3fb",
+    "sha256": "a544aceaea2618ba5a2a7d5b03e7f69b87c6ef3df156da3b7b0a16c04a37ae8d"
+  },
+  "verification_commands": [
+    "PYTHONPATH=quantum-weyl python3 -m transfer.berger_unary_d_cartan_obstruction_import_certificate --check",
+    "PYTHONPATH=quantum-weyl python3 -m transfer.berger_retained_26_q2_transfer_certificate --check",
+    "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_unary_d_cartan_obstruction_import.py quantum-weyl/transfer/tests/test_berger_retained_26_q2_transfer.py -v",
+    "python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check"
+  ],
+  "next_gate": "compute the characteristic symbol-cohomology carrier module, then construct residual/BFV and Lorentzian-causal Cartan extensions independently"
+}

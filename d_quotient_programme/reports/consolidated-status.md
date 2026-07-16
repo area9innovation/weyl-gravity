@@ -22,17 +22,22 @@ constraint fixes \(\delta Q_R=0\), compact averaging excludes an inhomogeneous
 escape, and the scoped verdict is `D_GAUGE`. The clock rows contract
 support-locally and cyclically, the retained minimal `q1` is complete, and the
 selected gauge fermion gives an exact support-local cyclic gauge-fixed
-54-to-26 contraction. The total causal homotopy, `q2`, local D-equivariance,
-and stability remain open. The Einstein-incidence audit separately classifies
-this background as a non-Einstein Weyl--matter branch.
+54-to-26 contraction. The complete `q2` has now been transferred exactly to a
+retained 26-row operation with 54,236 canonical nonzero coefficients; its
+arity-two and odd-Darboux cyclicity defects vanish. This retained operation is
+not yet the minimal residual/cohomology `ell2`. The bare local unary D-Cartan
+equation is independently obstructed by an exact characteristic-rank mismatch,
+so the remaining routes are characteristic cohomology, residual/BFV extension,
+and retained causal Green extension. The Einstein-incidence audit separately
+classifies this background as a non-Einstein Weyl--matter branch.
 
 ## Four-team ledger
 
 | Team | Current verdict | Established | Next gate |
 |---|---|---|---|
-| classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 is exact and cyclic; its 34-row minimal contraction is portable. Five nonminimal antighost--multiplier quartets extend it to 54 rows, and the selected gauge fermion acts by an exact finite BV-canonical shear, producing a complete support-local cyclic gauge-fixed 54-to-26 contraction. | construct the total causal homotopy for the gauge-fixed 54-row complex, then export q2 and test local D-equivariance |
+| classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 and portable 34-row minimal contraction extend to an exact cyclic support-local gauge-fixed 54-to-26 contraction. The complete support-local q2 and local D action are exported; the specialized characteristic symbol audit proves that the bare local unary Cartan equation has no solution. | compute the full characteristic symbol-cohomology carrier module and construct a retained causal Green extension without retrying the ruled-out bare local unary ansatz |
 | einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient, and the induced linear tangent quotient map into Weyl--Maxwell is injective. The first exact Weyl--Maxwell restriction is nondegenerate on both axial ell=2 branches but has opposite-sign relative factors 1+3*sqrt(3) and 1-3*sqrt(3), refuting a universal proportional restriction on this scoped block. | derive the arbitrary-lambda axial restriction and compute polar, physical ell=1, homogeneous, and twist blocks, then solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit |
-| nonlinear | `INPUT_GATE_BLOCKED` | The complete classical 54-row support-local q2 tensor is independently imported and replayed over Q(sqrt(10)); q1/q2, D/q2, and odd-Darboux cyclicity identities pass coefficientwise. Full transferred ell2 and the interacting Cartan solve remain pending. | compute the full transferred ell2 on the imported 54-row q2 data, then execute the interacting Cartan equation without promoting the still fail-closed quantum gate |
+| nonlinear | `BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_REQUIRED` | The complete classical 54-row support-local q2 tensor is independently imported and replayed over Q(sqrt(10)), then transferred exactly to a 26-row retained q2 with 54,236 canonical nonzero PBW coefficients. Its retained q1/q2 arity-two and odd-Darboux cyclicity defects vanish coefficientwise. This is not the minimal residual/cohomology ell2. Independently, the bare local unary D-Cartan equation is obstructed by an exact characteristic-rank mismatch. | compute the characteristic symbol-cohomology carrier module, then test residual/BFV and retained causal Green extensions as separate scoped constructions |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered | complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion |
 
 ## Setting ledger
@@ -72,7 +77,8 @@ this background as a non-Einstein Weyl--matter branch.
 | compact_einstein_maxwell_weyl_symplectic_preflight | `H_product` | `einstein_maxwell_product_compact_weyl_symplectic_preflight` | CLASSICAL_BV | `CERTIFIED` | `G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE` |
 | compact_einstein_maxwell_weyl_axial_ell2_restriction | `H_product` | `einstein_maxwell_product_compact_weyl_axial_ell2_restriction` | CLASSICAL_BV | `CERTIFIED` | `G1_AXIAL_ELL2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
-| compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `INPUT_GATE_BLOCKED` |
+| compact_positive_berger_clock_retained_q2_26 | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | INTERACTING | `CERTIFIED` | `RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED` |
+| compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_REQUIRED` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
 | asymptotic_real_cylinder_time | `H_ESU` | `asymptotically_flat_full_Bach` | LORENTZIAN_CAUSAL | `OPEN` | `PHASE_SPACE_NOT_CLOSED` |
 | asymptotic_dilation | `D_M` | `asymptotically_flat_full_Bach` | LORENTZIAN_CAUSAL | `OPEN` | `OPEN` |
@@ -86,11 +92,11 @@ this background as a non-Einstein Weyl--matter branch.
 3. the charge vanishes on the exact sector proposed for quotienting
 4. the zero-charge transformations close as a Lie algebra or declared algebroid
 5. the classical Cartan and causal homotopies exist in the declared support category
-6. Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, and the support-local cyclic gauge-fixed 54-to-26 contraction are complete; total causal homotopy, q2, local D-equivariance, and arity-two stability remain open
+6. Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, support-local cyclic gauge-fixed 54-to-26 contraction, complete q2, local D action, and exact retained q2_26 transfer are complete; the bare local unary Cartan equation is obstructed, while characteristic cohomology, residual/BFV extension, and retained causal Green extension remain open
 7. the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open
 8. the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open
 9. the compact radion, duality, l=1 photon, and l=2 gravitational-plus fixtures assemble into a certified constant-lapse obstruction bilinear on their declared span, with exact charge-fibre cokernel behavior and relative Taub interpretation; the full harmonic domain and full cokernel remain open
-10. interacting promotion requires a corrected Cartan homotopy
+10. interacting promotion requires a scoped Cartan extension beyond the certified bare local unary no-go
 11. quantum promotion requires a restored QME and renormalized Ward identity
 
 ## Registered scoped contributions
@@ -128,6 +134,7 @@ this background as a non-Einstein Weyl--matter branch.
 | einstein_boundary | `compact_einstein_maxwell_weyl_symplectic_preflight` | `H_product` | `einstein_maxwell_product_compact_weyl_symplectic_preflight` | `CERTIFIED` | `G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE` |
 | einstein_boundary | `compact_einstein_maxwell_weyl_axial_ell2_restriction` | `H_product` | `einstein_maxwell_product_compact_weyl_axial_ell2_restriction` | `CERTIFIED` | `G1_AXIAL_ELL2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
+| nonlinear | `compact_positive_berger_clock_retained_q2_26` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED` |
 | quantum | `vacuum_cylinder` | `D_compact` | `compact_quantum` | `BLOCKED` | `NO_VERDICT` |
 
 ## Publication decision
@@ -138,13 +145,13 @@ Paper X remains reserved for interaction/quantum stability after its separate
 classical-export and QME gates.
 
 The immediate shared calculation is
-`BERGER_GAUGE_FIXED_TOTAL_CAUSAL_HOMOTOPY`: The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates.
+`BERGER_CHARACTERISTIC_COHOMOLOGY_AND_RETAINED_CAUSAL_EXTENSION`: The exact retained q2_26 transfer is complete and the bare local unary D-Cartan ansatz is ruled out. Compute the full characteristic symbol-cohomology carrier module, then pursue residual/BFV and retained causal Green extensions independently without weakening the separate QME, Einstein-incidence, or Einstein--Maxwell tangent gates.
 
 ## Imported evidence
 
 - `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `7b352307eb2adb0dfb8e76b7d24f0bb94a37cc8d`, SHA-256 `35d75f22d9cb6703b2cd4283c5e1ccde296045dc42fcc3bf177308c9ce76f5b3`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `7e87281c416f4c4f98edfe61ae05829f4b48593a`, SHA-256 `ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685`
-- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `d1fbbbf66c036c0f2c4f89396f455721b26db638`, SHA-256 `73dd0f61b2fdc4fedbd02ba1f613b51328346b28d536ceb0b6d8bf687e1d2cc7`
+- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `29fb5db6a70932ca68810cfcdc3c1187441de3fb`, SHA-256 `a544aceaea2618ba5a2a7d5b03e7f69b87c6ef3df156da3b7b0a16c04a37ae8d`
 - `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6`, SHA-256 `9f450477532a24edbd02282f29593876a13ea886808a6c9ba06b41004653f8da`
 
 ## Claim boundary

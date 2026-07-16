@@ -130,8 +130,14 @@ The temporal/Weyl clock doublets and all minimal dual rows admit an exact
 first-order support-local cyclic SDR.  The retained 26-row minimal `q1` is now
 coefficientwise exact and cyclic, its endpoint factors are Green-hyperbolic,
 and reattaching the clock rows gives a scalar-biwave principal witness on all
-metric and ghost directions.  The next classical gate is the curved
-clock-reattached witness and total causal homotopy.
+metric and ghost directions.  The complete support-local `q2` has also been
+transferred exactly to a retained 26-row operation with 54,236 canonical
+coefficients; the retained arity-two and odd-Darboux cyclicity defects vanish.
+This retained operation is not yet the minimal residual/cohomology `ell2`.
+An independent exact characteristic-symbol calculation rules out the bare
+finite-order support-local unary `D`-Cartan homotopy.  The next gate is therefore
+the full characteristic symbol-cohomology carrier module, followed by separate
+residual/BFV and retained causal Green extensions.
 
 The Einstein team has separately proved that this Berger background is a
 genuine non-Einstein Weyl--matter branch.  It is neither Einstein,
