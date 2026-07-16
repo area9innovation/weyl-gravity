@@ -1,0 +1,212 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE theorem covers every physical ell=1 axial and polar quotient oscillator at symbolic periodic momentum and all m. It proves direct target gauge descent and factor-four matching. It excludes the zero-frequency axial twist, homogeneous generalized modes, extra fourth-order Weyl-Maxwell solutions, nonlinear closure, final SO(4,2) reduction, positive-frequency Hilbert space, causal scattering, and quantum theory.",
+  "classification": {
+    "all_n_m_by_symbolic_k_and_SO3": true,
+    "axial_twist_restriction_computed": false,
+    "complete_fourth_order_weyl_maxwell_phase_space_classified": false,
+    "final_residual_quotient_computed": false,
+    "generic_polar_lambda_to_2_continuation_valid": false,
+    "homogeneous_restriction_computed": false,
+    "lorentzian_causal_or_scattering_theorem": false,
+    "nonlinear_solution_embedding_certified": false,
+    "one_particle_norm_certified": false,
+    "ordinary_physical_ell1_modes_removed_by_target_weyl_gauge": false,
+    "physical_ell1_axial_restriction_computed": true,
+    "physical_ell1_polar_restriction_computed": true,
+    "physical_ell1_pullback_equals_four_times_einstein": true,
+    "physical_ell1_restriction_nondegenerate": true,
+    "positive_frequency_complex_structure_constructed": false,
+    "quantum_ghost_or_unitarity_theorem": false,
+    "target_current_descends_to_exceptional_quotient": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "all physical axial and polar ell=1 Einstein-Maxwell quotient modes, every m and periodic S1 momentum, on R_t x S1_L x S2 at fixed magnetic bundle, before the final residual SO(4,2) quotient",
+  "generality_level": "G3_PHYSICAL_ELL1_ALL_N_M_QUOTIENT",
+  "interpretation": "The complete physical ell=1 axial-plus-polar Einstein-Maxwell quotient survives as a nondegenerate target subspace before the final residual quotient. After fixing source-normalized quotient coordinates, the literal Weyl-Maxwell pullback is exactly four times the Einstein-Maxwell form in both parities. This equality required a direct exceptional calculation: the generic polar ell>=2 matrix fails gauge descent at lambda=2. These massive ell=1 triplets are radiative modes, not the separate zero-frequency axial twist. The positive relative factor is classical and does not construct a one-particle norm or quantum theorem.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the Weyl-Maxwell restriction on the six-dimensional homogeneous generalized block and on each axial-twist Darboux pair by direct Lee-Wald currents, keeping the two global result kinds separate",
+  "provenance": {
+    "direct_implementation": {
+      "current_engine": {
+        "path": "bridge/einstein_sector/weyl_maxwell_lee_wald_current.py",
+        "sha256": "5270dcbfb26c7a31d303214462799d41aaa575c2a8ad3fa804675282721fee6a"
+      },
+      "fixture_generator": {
+        "path": "bridge/einstein_sector/weyl_maxwell_ell1_exceptional_lee_wald_fixture.py",
+        "sha256": "5781b140a076cecf9aa8b6d3f4f429aa5591cafcd8ef723f033f31e36768b493"
+      }
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.py",
+    "generator_sha256": "df8c1c94a8e6bd207fd39af2fb797f7c00ceddcd37088e1dd6c9813c8c29f693",
+    "inputs": {
+      "axial_master_complex": {
+        "path": "bridge/certificates/einstein_maxwell_axial_master_complex.json",
+        "sha256": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02"
+      },
+      "direct_fixture": {
+        "path": "bridge/certificates/weyl_maxwell_ell1_exceptional_lee_wald_fixture.json",
+        "sha256": "9ff4005e852e12e2cea8eedf35c85b155efe3c1570ab10665b4c74cb511e891c"
+      },
+      "einstein_radiative_form": {
+        "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+        "sha256": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
+      },
+      "polar_all_ell_restriction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_all_ell_symplectic_restriction.json",
+        "sha256": "828089c487a834b7c2718a00177ff68633e930d178e898563531b70d5917cb02"
+      },
+      "polar_exceptional_complex": {
+        "path": "bridge/certificates/einstein_maxwell_polar_exceptional_complex.json",
+        "sha256": "e725a87ea6ab22699a5d25e4ba6ff145e0f2bf7eeefbcd737cfdde0ffc334da3"
+      },
+      "standard_radiative_restriction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
+        "sha256": "25a798211bea52cbf9d8becae64672ac327be7a09adb50e30e45fa8287a608b7"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL1_PHYSICAL_SYMPLECTIC_RESTRICTION",
+  "result_state": "PHYSICAL_ELL1_ALL_N_M_QUOTIENT_DESCENDED_NONDEGENERATE_FACTOR_FOUR_RESTRICTION",
+  "schema": "einstein-maxwell-weyl-ell1-physical-symplectic-restriction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.schema.json",
+  "schema_sha256": "95f1d7401291b55713c31e7a18a0a782b5293714698d0955d9cb4cae993e1a12",
+  "theorem": {
+    "direct_gauge_descent": {
+      "amplitude_order": [
+        "physical",
+        "residual_gauge"
+      ],
+      "axial_on_shell_target_matrix_raw": [
+        [
+          "-256*I*pi*omega/3",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "both_gauge_rows_and_columns_zero": true,
+      "interpretation": "the literal target current descends to both certified exceptional quotients; this is stronger than a vanishing gauge norm",
+      "polar_on_shell_target_matrix_raw": [
+        [
+          "-64*I*pi*omega/3",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "dispersion": "omega^2=k_n^2+4",
+    "generic_polar_lambda_to_2_failure": {
+      "continued_matrix_at_mu_4": [
+        [
+          "8",
+          "-6"
+        ],
+        [
+          "-6",
+          "8"
+        ]
+      ],
+      "einstein_gauge_norm": "0",
+      "physical_vector_ratio": "4",
+      "quotient_representative_naive_ratio": "2",
+      "target_gauge_norm": "16",
+      "target_gauge_physical_cross": "-24",
+      "verdict": "the generic ell>=2 polar matrix does not descend to the exceptional ell=1 quotient; the direct exceptional fixture is essential even though its physical quotient ratio independently returns 4"
+    },
+    "global_separation": {
+      "axial_n0_zero_frequency_twist_included": false,
+      "physical_ell1_is_radiative": true,
+      "reason": "the twist is the separate zero-eigenvalue generalized global block; the present modes have omega^2=k_n^2+4"
+    },
+    "harmonic_norm": "N_1m=integral_(S2)Y_1m^2 dOmega; direct fixture uses N_10=4*pi/3",
+    "mode_counting": {
+      "complex_reality_rule": "(n,m) is paired with (-n,-m) and is not counted twice",
+      "oscillator_blocks": "2*q, one axial and one polar physical oscillator per real spatial harmonic",
+      "real_phase_space_dimension": "4*q",
+      "real_spatial_multiplicity_q": "q=3 for n=0 and q=6 for each n>0 cosine/sine Fourier pair",
+      "relative_coefficient_signature": "positive=2*q, negative=0, zero=0"
+    },
+    "normalized_direct_sum_theorem": {
+      "cross_parity_pairing": "0 by parity invariance: axial and polar ell=1 representatives have opposite spatial parity",
+      "einstein_matrix": [
+        [
+          "-16*I*pi*omega/3",
+          "0"
+        ],
+        [
+          "0",
+          "-16*I*pi*omega/3"
+        ]
+      ],
+      "identity": "Omega_WM|Sol_ell1_phys=4*Omega_EM|Sol_ell1_phys",
+      "rank_per_real_spatial_harmonic": 2,
+      "relative_coefficient_signature_per_real_spatial_harmonic": {
+        "negative": 0,
+        "positive": 2,
+        "zero": 0
+      },
+      "relative_operator": [
+        [
+          "4",
+          "0"
+        ],
+        [
+          "0",
+          "4"
+        ]
+      ],
+      "weyl_maxwell_matrix": [
+        [
+          "-64*I*pi*omega/3",
+          "0"
+        ],
+        [
+          "0",
+          "-64*I*pi*omega/3"
+        ]
+      ]
+    },
+    "parity_rows": {
+      "axial": {
+        "normalized_einstein_coordinate_current": "-16*I*pi*omega/3",
+        "normalized_weyl_maxwell_coordinate_current": "-64*I*pi*omega/3",
+        "raw_einstein_coordinate_current": "-64*I*pi*omega/3",
+        "raw_weyl_maxwell_coordinate_current": "-256*I*pi*omega/3",
+        "restriction_over_einstein": "4"
+      },
+      "polar": {
+        "normalized_einstein_coordinate_current": "-16*I*pi*omega/3",
+        "normalized_weyl_maxwell_coordinate_current": "-64*I*pi*omega/3",
+        "raw_einstein_coordinate_current": "-16*I*pi*omega/3",
+        "raw_weyl_maxwell_coordinate_current": "-64*I*pi*omega/3",
+        "restriction_over_einstein": "4"
+      }
+    },
+    "quantum_norm_boundary": {
+      "ghost_or_unitarity_theorem": false,
+      "one_particle_norm_certified": false,
+      "positive_frequency_complex_structure_constructed": false,
+      "positive_relative_classical_coefficient": true
+    },
+    "quotient_coordinates": {
+      "axial_normalized": "Psi_A=2*p_A",
+      "axial_raw": "(H,Q)=(p_A,p_A)",
+      "normalization_reason": "both normalized Einstein quotient coordinate currents equal -16*I*pi*omega/3 for Y_10",
+      "polar": "Psi_P=U-K/2 with K=0"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell1_physical_symplectic_restriction --verify bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell1_physical_symplectic_restriction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell1_physical_symplectic_restriction",
+    "python3 -m bridge.einstein_sector.weyl_maxwell_ell1_exceptional_lee_wald_fixture --verify bridge/certificates/weyl_maxwell_ell1_exceptional_lee_wald_fixture.json"
+  ]
+}
