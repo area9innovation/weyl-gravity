@@ -64,19 +64,26 @@ Split-publication editorial guards and the isolated tracked-snapshot release
 audit prevent a cosmetic split that silently breaks cross-references or
 certificate scope.
 
+## Completed artifact gate
+
+The clean `git archive` publication audit now passes for all four publication
+entrypoints.  Its machine-readable receipt is archived as
+`conformal-publication-release-audit.json`; the receipt records the exact
+audited commit, focused checks, recursively active TeX inputs, and
+reference-stable PDF builds.  Papers 7--8 are therefore `ARTIFACT_READY` in
+the programme lifecycle, but not yet `SUBMISSION_READY`.
+
 ## Still required before submission
 
-1. Run the clean `git archive` publication audit on the final committed tree
-   and archive its machine-readable receipt.
-2. Freeze a public repository release and archival identifier containing all
+1. Freeze a public repository release and archival identifier containing all
    generated inputs, manifests, certificates, and minimal checkers.
-3. Obtain independent reviews from conformal/BGG geometry, BV--BFV,
+2. Obtain independent reviews from conformal/BGG geometry, BV--BFV,
    Lorentzian PDE, and BRST representation theory.  Repository hashes and
    internal mutation tests are not substitutes for those reviews.
-4. Independently rederive the large one-particle absolute ranks and the
+3. Independently rederive the large one-particle absolute ranks and the
    central covariant all-row identities.  The new rank-53 checker addresses
    only the smallest two-particle calculation.
-5. Decide and state the target journal's policy for computer-assisted proofs,
+4. Decide and state the target journal's policy for computer-assisted proofs,
    artifact review, anonymous code, and supplementary data.
 
 ## Evidence commands

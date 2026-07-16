@@ -1,0 +1,255 @@
+{
+  "active_generated_input": "paper/generated/endpoint_factorization_nullstellensatz.tex",
+  "active_tex_inputs": [
+    "paper/generated/endpoint_factorization_nullstellensatz.tex"
+  ],
+  "commit": "7688770efae451e86299b10e53421016fcf5d956",
+  "focused_checks": [
+    {
+      "command": [
+        "/home/alstrup/.local/share/mise/installs/python/latest/bin/python3",
+        "symbolic/generate_endpoint_factorization_nullstellensatz_tex.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.545,
+      "output_tail": "[PASS] endpoint factorization TeX receipt is exact and current\n"
+    },
+    {
+      "command": [
+        "/home/alstrup/.local/share/mise/installs/python/latest/bin/python3",
+        "symbolic/verify_conformal_residual_rank53_independent.py"
+      ],
+      "elapsed_seconds": 0.018,
+      "output_tail": "independent decomposition: 55 = 15 + 25 + 15\nindependent block ranks: 53 = 14 + 25 + 14\nexact kernel generators: chiral binary-quartic singlets\nINDEPENDENT RESIDUAL RANK CHECK: rank=53 kernel=2 PASS\n"
+    },
+    {
+      "command": [
+        "/home/alstrup/.local/share/mise/installs/python/latest/bin/python3",
+        "symbolic/verify_conformal_split_publications.py"
+      ],
+      "elapsed_seconds": 0.031,
+      "output_tail": "[PASS] all four publication entrypoints exist\n[PASS] source contains \\label{thm:derived-residual-reduction}\n[PASS] source contains \\begin{remark}[Fixed cylinder and relative alternatives] after \\label{thm:derived-residual-reduction}\n[PASS] derived-reduction theorem now has an explicit proof\n[PASS] derived proof cites prop:Taub-constraint\n[PASS] derived proof cites eq:moment-Taub-target\n[PASS] derived proof cites prop:dual-endpoint\n[PASS] derived proof cites eq:zero-mode-transgression\n[PASS] derived proof cites eq:tau-equals-theta\n[PASS] derived proof cites eq:residual-BFV-charge\n[PASS] derived proof cites eq:CE-differential\n[PASS] Paper A is a compact standalone entrypoint\n[PASS] Paper B is a compact standalone entrypoint\n[PASS] Paper A contains its focused ledger\n[PASS] Paper B contains its focused ledger\n[PASS] source contains \\begin{theorem}[Derived residual reduction]\n[PASS] source contains \\begin{remark}[Fixed-cylinder alternative] after \\begin{theorem}[Derived residual reduction]\n[PASS] Paper A proves rather than declares derived reduction\n[PASS] Paper A does not claim a causal propagator\n[PASS] Paper B imports rather than recomputes residual CE\n[PASS] Paper B states the sourced constraint identity\n[PASS] Paper B states the all-row causal identity\n[PASS] article prose no longer overuses exact\n[PASS] supplement is versioned rather than a scaffold\n[PASS] supplement has separate A/B ledgers\n[PASS] supplement documents isolated release audit\n[PASS] 07-08-conformal-residual-cohomology-archive.tex records programme authorship\n[PASS] 07-conformal-residual-cohomology-krein.tex records programme authorship\n[PASS] 08-conformal-covariant-causal-transport.tex records programme authorship\n[PASS] 07-08-conformal-residual-cohomology-computational-supplement.tex records programme authorship\nCONFORMAL SPLIT-PUBLICATION EDITORIAL GUARDS: ALL PASS\n"
+    },
+    {
+      "command": [
+        "/home/alstrup/.local/share/mise/installs/python/latest/bin/python3",
+        "symbolic/verify_conformal_certificate_provenance.py"
+      ],
+      "elapsed_seconds": 0.369,
+      "output_tail": "CERTIFICATE PROVENANCE GUARDS: 11/11 PASS\n"
+    },
+    {
+      "command": [
+        "/home/alstrup/.local/share/mise/installs/python/latest/bin/python3",
+        "symbolic/verify_conformal_covariant_H4_proof_ledger.py",
+        "--check",
+        "--guards"
+      ],
+      "elapsed_seconds": 0.477,
+      "output_tail": "COVARIANT H4 PROOF LEDGER GUARDS: 9/9 PASS\nCOVARIANT H4 PROOF LEDGER: ALL CHECKS PASS\n"
+    },
+    {
+      "command": [
+        "/home/alstrup/.local/share/mise/installs/python/latest/bin/python3",
+        "-m",
+        "unittest",
+        "covariant_completion.final_transport.tests.test_proof_ledger"
+      ],
+      "elapsed_seconds": 0.549,
+      "output_tail": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.126s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/home/alstrup/.local/share/mise/installs/python/latest/bin/python3",
+        "symbolic/update_conformal_paper_snapshot.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.101,
+      "output_tail": "CONFORMAL PAPER DEPENDENCY SNAPSHOT: ALL PASS\n"
+    }
+  ],
+  "isolated_git_archive": true,
+  "publication_entrypoints": [
+    "paper/07-conformal-residual-cohomology-krein.tex",
+    "paper/08-conformal-covariant-causal-transport.tex",
+    "paper/07-08-conformal-residual-cohomology-computational-supplement.tex",
+    "paper/07-08-conformal-residual-cohomology-archive.tex"
+  ],
+  "recursively_visited_tex": [
+    "paper/07-08-conformal-residual-cohomology-archive.tex",
+    "paper/07-08-conformal-residual-cohomology-computational-supplement.tex",
+    "paper/07-conformal-residual-cohomology-krein.tex",
+    "paper/08-conformal-covariant-causal-transport.tex",
+    "paper/generated/endpoint_factorization_nullstellensatz.tex"
+  ],
+  "reference_stable_builds": [
+    {
+      "passes": [
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "07-conformal-residual-cohomology-krein.tex"
+          ],
+          "elapsed_seconds": 0.423,
+          "output_tail": "/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar\ne/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli\nve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex\nmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis\nt/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts\n/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/\npublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/\namsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont\ns/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm\nr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><\n/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sha\nre/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texli\nve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex\nmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist\n/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/\ntype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p\nublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/\namsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/eule\nr/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols\n/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><\n/usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fon\nts/type1/public/cm-super/sfrm0800.pfb>\nOutput written on 07-conformal-residual-cohomology-krein.pdf (9 pages, 323831 b\nytes).\nTranscript written on 07-conformal-residual-cohomology-krein.log.\n"
+        },
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "07-conformal-residual-cohomology-krein.tex"
+          ],
+          "elapsed_seconds": 0.426,
+          "output_tail": "\nfonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/\ntype1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/\npublic/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/\namsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/\ncmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p\nfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share\n/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texliv\ne/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-\ndist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fon\nts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1\n/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/\namsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c\nmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf\nb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/shar\ne/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texli\nve/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/\ntexmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/t\nexmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/publ\nic/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800\n.pfb>\nOutput written on 07-conformal-residual-cohomology-krein.pdf (9 pages, 326186 b\nytes).\nTranscript written on 07-conformal-residual-cohomology-krein.log.\n"
+        },
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "07-conformal-residual-cohomology-krein.tex"
+          ],
+          "elapsed_seconds": 0.511,
+          "output_tail": "\nfonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/\ntype1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/\npublic/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/\namsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/\ncmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p\nfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share\n/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texliv\ne/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-\ndist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fon\nts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1\n/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/\namsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c\nmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf\nb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/shar\ne/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texli\nve/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/\ntexmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/t\nexmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/publ\nic/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800\n.pfb>\nOutput written on 07-conformal-residual-cohomology-krein.pdf (9 pages, 326186 b\nytes).\nTranscript written on 07-conformal-residual-cohomology-krein.log.\n"
+        }
+      ],
+      "pdf": "paper/07-conformal-residual-cohomology-krein.pdf",
+      "pdf_bytes": 326186,
+      "pdf_sha256": "bccf844ca30dd0c3687b1ec10be6a7de2221cd2f739abb1dc63f86f381f22ffb",
+      "source": "paper/07-conformal-residual-cohomology-krein.tex"
+    },
+    {
+      "passes": [
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "08-conformal-covariant-causal-transport.tex"
+          ],
+          "elapsed_seconds": 0.59,
+          "output_tail": "  or use package `bookmark'.\n\n )</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar\ne/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli\nve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex\nmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis\nt/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts\n/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/\npublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/\namsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont\ns/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm\nr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><\n/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sha\nre/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texli\nve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex\nmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist\n/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/\ntype1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/\npublic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public\n/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb\nols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo\nls/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/\nshare/texmf/fonts/type1/public/cm-super/sfrm0800.pfb>\nOutput written on 08-conformal-covariant-causal-transport.pdf (10 pages, 338155\n bytes).\nTranscript written on 08-conformal-covariant-causal-transport.log.\n"
+        },
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "08-conformal-covariant-causal-transport.tex"
+          ],
+          "elapsed_seconds": 0.725,
+          "output_tail": "causal-transport.aux)\n\nLaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.\n\n )</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar\ne/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl\nive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te\nxmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dis\nt/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts\n/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/\npublic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/\namsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont\ns/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr\n7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></\nusr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/shar\ne/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl\nive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/tex\nmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist\n/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts\n/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1\n/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public\n/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont\ns/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb\n></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb>\nOutput written on 08-conformal-covariant-causal-transport.pdf (11 pages, 338501\n bytes).\nTranscript written on 08-conformal-covariant-causal-transport.log.\n"
+        },
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "08-conformal-covariant-causal-transport.tex"
+          ],
+          "elapsed_seconds": 0.581,
+          "output_tail": "ansport.toc) [2]\n[3] [4] [5] [6] [7] [8] [9] [10] [11]\n(./08-conformal-covariant-causal-transport.aux) )</usr/share/texlive/texmf-dist\n/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts\n/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1\n/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi\nc/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf\nonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm\n/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.\npfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u\nsr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/shar\ne/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texliv\ne/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-\ndist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fon\nts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1\n/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi\nc/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo\nnts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/\ncmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10\n.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></\nusr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/sha\nre/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/shar\ne/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share\n/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/p\nublic/cm-super/sfrm0800.pfb>\nOutput written on 08-conformal-covariant-causal-transport.pdf (11 pages, 338507\n bytes).\nTranscript written on 08-conformal-covariant-causal-transport.log.\n"
+        }
+      ],
+      "pdf": "paper/08-conformal-covariant-causal-transport.pdf",
+      "pdf_bytes": 338507,
+      "pdf_sha256": "418c946233daa8cc6d8cb25be2c18ac36805bbd0bcc92c18e417bf3108654b0d",
+      "source": "paper/08-conformal-covariant-causal-transport.tex"
+    },
+    {
+      "passes": [
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "07-08-conformal-residual-cohomology-computational-supplement.tex"
+          ],
+          "elapsed_seconds": 0.353,
+          "output_tail": "nes right\n(rerunfilecheck)                or use package `bookmark'.\n\n )</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar\ne/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl\nive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texliv\ne/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm\nf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/\nfonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/t\nype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu\nblic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am\nsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/\ncm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.\npfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar\ne/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli\nve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm\nf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist\n/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts\n/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/\npublic/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/s\nfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/sh\nare/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>\nOutput written on 07-08-conformal-residual-cohomology-computational-supplement.\npdf (6 pages, 257965 bytes).\nTranscript written on 07-08-conformal-residual-cohomology-computational-supplem\nent.log.\n"
+        },
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "07-08-conformal-residual-cohomology-computational-supplement.tex"
+          ],
+          "elapsed_seconds": 0.347,
+          "output_tail": "\n(./07-08-conformal-residual-cohomology-computational-supplement.aux) )</usr/sha\nre/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/tex\nlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/t\nexmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dis\nt/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font\ns/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1\n/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public\n/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c\nmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb\n></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s\nhare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/tex\nlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t\nexmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-di\nst/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/font\ns/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type\n1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ\nic/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf\nonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont\ns/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb\n></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/f\nonts/type1/public/cm-super/sfrm1095.pfb>\nOutput written on 07-08-conformal-residual-cohomology-computational-supplement.\npdf (6 pages, 258644 bytes).\nTranscript written on 07-08-conformal-residual-cohomology-computational-supplem\nent.log.\n"
+        },
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "07-08-conformal-residual-cohomology-computational-supplement.tex"
+          ],
+          "elapsed_seconds": 0.357,
+          "output_tail": "\n(./07-08-conformal-residual-cohomology-computational-supplement.aux) )</usr/sha\nre/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/tex\nlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/t\nexmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d\nist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dis\nt/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font\ns/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1\n/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public\n/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c\nmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb\n></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s\nhare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/tex\nlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t\nexmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-di\nst/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/font\ns/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type\n1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ\nic/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf\nonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont\ns/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb\n></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/f\nonts/type1/public/cm-super/sfrm1095.pfb>\nOutput written on 07-08-conformal-residual-cohomology-computational-supplement.\npdf (6 pages, 258644 bytes).\nTranscript written on 07-08-conformal-residual-cohomology-computational-supplem\nent.log.\n"
+        }
+      ],
+      "pdf": "paper/07-08-conformal-residual-cohomology-computational-supplement.pdf",
+      "pdf_bytes": 258644,
+      "pdf_sha256": "abd5514457e0da238ef6d3d3e336ccd378939815d5d6a91c94a3b07976566444",
+      "source": "paper/07-08-conformal-residual-cohomology-computational-supplement.tex"
+    },
+    {
+      "passes": [
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "07-08-conformal-residual-cohomology-archive.tex"
+          ],
+          "elapsed_seconds": 0.632,
+          "output_tail": "ic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1\n/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public\n/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c\nmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf\nb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr\n/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/t\nexlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/t\nexmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis\nt/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/\ntype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/\npublic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/\namsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont\ns/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm\nti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p\nfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share\n/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/te\nxlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texliv\ne/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive\n/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/\ntexmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/pub\nlic/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm080\n0.pfb>\nOutput written on 07-08-conformal-residual-cohomology-archive.pdf (62 pages, 63\n7761 bytes).\nTranscript written on 07-08-conformal-residual-cohomology-archive.log.\n"
+        },
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "07-08-conformal-residual-cohomology-archive.tex"
+          ],
+          "elapsed_seconds": 0.706,
+          "output_tail": "ic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1\n/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public\n/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon\nts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c\nmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf\nb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr\n/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/t\nexlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/t\nexmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis\nt/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/\ntype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/\npublic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/\namsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont\ns/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm\nti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p\nfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></us\nr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share\n/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/te\nxlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texliv\ne/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive\n/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/\ntexmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/pub\nlic/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm080\n0.pfb>\nOutput written on 07-08-conformal-residual-cohomology-archive.pdf (64 pages, 65\n7475 bytes).\nTranscript written on 07-08-conformal-residual-cohomology-archive.log.\n"
+        },
+        {
+          "command": [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "07-08-conformal-residual-cohomology-archive.tex"
+          ],
+          "elapsed_seconds": 0.66,
+          "output_tail": "ic/amsfonts/cm/cm\nmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pf\nb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr\n/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/\ntexlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive\n/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-\ndist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fo\nnts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type\n1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public\n/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont\ns/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms\ny10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb\n></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/\nshare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t\nexlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive\n/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf\n-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/f\nonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/ty\npe1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1\n/public/amsfonts/euler/eufm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub\nlic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ\nic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi\nc/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></\nusr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb>\nOutput written on 07-08-conformal-residual-cohomology-archive.pdf (64 pages, 65\n7461 bytes).\nTranscript written on 07-08-conformal-residual-cohomology-archive.log.\n"
+        }
+      ],
+      "pdf": "paper/07-08-conformal-residual-cohomology-archive.pdf",
+      "pdf_bytes": 657461,
+      "pdf_sha256": "14288869b56833513c84d73ed76fb2269a33163ff1108f6ab600372e799594bb",
+      "source": "paper/07-08-conformal-residual-cohomology-archive.tex"
+    }
+  ],
+  "schema": "conformal-publication-clean-release-audit-v1",
+  "status": "PASS",
+  "treeish": "HEAD",
+  "working_tree_used_for_build": false
+}

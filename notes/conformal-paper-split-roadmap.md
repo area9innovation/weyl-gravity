@@ -86,7 +86,7 @@ subsection and in `Raw polynomial instantiation and measured noncompact
 defects` is supplement material.  It remains in the archival monolith during
 the split so equation labels and cross-references do not silently change.
 
-## Implemented extraction and remaining release gates
+## Implemented extraction and artifact release
 
 1. **Implemented:** freeze and retain the monolith, PDF, dependency manifest,
    and proof ledger as the archival cross-reference.
@@ -100,11 +100,16 @@ the split so equation labels and cross-references do not silently change.
 5. **Implemented:** add split-publication editorial guards and an isolated
    `git archive` release audit which builds all four documents to reference
    stability.
-6. **Release gate:** run the isolated audit on the final committed tree and
-   archive its JSON/log artifacts with the public release identifier.
+6. **Implemented:** run the isolated audit on the committed release tree and
+   archive its machine-readable JSON receipt as
+   `conformal-publication-release-audit.json`.
+7. **Submission gate:** attach that receipt to a public repository release and
+   archival identifier after the human authorship, literature, venue, and
+   prose review.
 
 The copy-first sequence preserved the current paper while producing compact
-standalone submissions.
+standalone artifacts.  Papers 7--8 are `ARTIFACT_READY`; the remaining gates
+are human and archival submission gates rather than theorem or build gates.
 
 ## Current source-to-destination map
 

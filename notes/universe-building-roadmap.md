@@ -377,8 +377,8 @@ SUBMISSION_READY    human authorship, literature, venue, and prose review pass
 |---|---|---|
 | Papers 1--5 | frozen existing papers | no universe-building dependency |
 | Paper 6, Einstein--Weyl interaction obstructions | major-review draft | finish its declared capstone/review ledger; do not wait for Berger or quantum work |
-| Paper 7, residual cohomology and pairing | `THEOREM_FROZEN`, near artifact release | refresh the tracked dependency manifest and pass the isolated clean-snapshot audit |
-| Paper 8, covariant causal transport | `THEOREM_FROZEN`, near artifact release | same release gate as Paper 7, then human submission review |
+| Paper 7, residual cohomology and pairing | `ARTIFACT_READY` | human authorship, literature, venue, and prose review; then public archival release |
+| Paper 8, covariant causal transport | `ARTIFACT_READY` | same human submission review and public archival release as Paper 7 |
 | Compact Einstein--Maxwell radiative phase space | `DRAFT_ALLOWED` | close global `ell=0`/twist pairs for a complete compact phase-space claim; a narrower radiative paper may freeze earlier |
 | Linearization stability with charge fibres | `DRAFT_ALLOWED` | promote the fixture-span obstruction to the full harmonic obstruction bilinear and selection rules |
 | Berger clock and the `D` quotient | `DRAFT_ALLOWED` for the classical charge/no-go spine | `q2`, Green, and arity-two Cartan disposition; on a pass add relational redshift, on a failure publish the exact obstruction |
