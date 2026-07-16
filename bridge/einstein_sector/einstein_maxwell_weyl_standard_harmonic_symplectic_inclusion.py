@@ -117,7 +117,7 @@ def _theorem(records: dict[str, dict[str, Any]]) -> dict[str, Any]:
             "kernel_of_pullback_on_standard_tangent": "0",
             "ordinary_Einstein_Maxwell_tangent_removed_before_final_residual_quotient": False,
             "identity_inclusion_is_symplectic": False,
-            "identity_inclusion_is_a_presymplectic_immersion": True,
+            "identity_inclusion_has_nondegenerate_target_pullback": True,
             "meaning": "the linear solution inclusion retains all certified standard Einstein-Maxwell tangent directions and equips them with another nondegenerate form; it does not identify the two Hamiltonian structures under the identity map",
         },
         "observable_consequence_and_limit": {
