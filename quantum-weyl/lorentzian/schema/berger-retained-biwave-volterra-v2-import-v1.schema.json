@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-biwave-volterra-v2-import-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "source_import", "repair_closure", "compatibility_import", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-biwave-volterra-v2-import-v1"},
+    "result_id": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT"},
+    "result_state": {"const": "REPAIRED_V2_IMPORTED_D_ADJOINT_COMPATIBLE_26_ROW_V2_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_CAUSAL_IMPORT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "source_import": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "commit", "result_id", "schema", "claim_status", "proof_checks", "provenance_checks"],
+      "properties": {
+        "status": {"const": "IMPORTED"},
+        "commit": {"const": "eb56d5aff7d622de423d4994051b0e048c4fb4bf"},
+        "result_id": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2"},
+        "schema": {"const": "pure-weyl-berger-retained-biwave-volterra-resolvent-v2"},
+        "claim_status": {"const": "CERTIFIED_TYPED_RETAINED_METRIC_CAUSAL_GREEN_OPERATORS"},
+        "proof_checks": {"type": "object", "minProperties": 7, "additionalProperties": {"const": true}},
+        "provenance_checks": {"type": "object", "minProperties": 3, "additionalProperties": {"const": true}}
+      }
+    },
+    "repair_closure": {
+      "type": "object", "minProperties": 8, "maxProperties": 8,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "compatibility_import": {
+      "type": "object", "additionalProperties": false,
+      "required": ["historical_certificate", "historical_sha256", "D_equivariance", "formal_adjoint_bundle", "companion_graph_SDR"],
+      "properties": {
+        "historical_certificate": {"const": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_IMPORT_READINESS.json"},
+        "historical_sha256": {"$ref": "#/$defs/hash"},
+        "D_equivariance": {"const": "IMPORTED_FROM_EXACT_HISTORICAL_PBW_REPLAY"},
+        "formal_adjoint_bundle": {"const": "IMPORTED_FROM_EXACT_HISTORICAL_PBW_REPLAY"},
+        "companion_graph_SDR": {"const": "IMPORTED_AND_RECHECKED_BY_V2_SOURCE"}
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_RETAINED_BIWAVE_D_EQUIVARIANT": true,
+        "BERGER_RETAINED_BIWAVE_FORMAL_ADJOINT_BUNDLE_READY": true,
+        "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT_IMPORTED": true,
+        "BERGER_RETAINED_METRIC_GREEN_OPERATORS_IMPORTED": true,
+        "BERGER_RETAINED_BIWAVE_COMPANION_CYCLIC_PAIRING": false,
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2": false,
+        "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2": false,
+        "BERGER_CAUSAL_D_CARTAN_V2": false,
+        "BERGER_HADAMARD_DATA": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["classical_artifacts", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "classical_artifacts": {"type": "object", "minProperties": 8},
+        "source_manifest": {"type": "object", "minProperties": 5},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
