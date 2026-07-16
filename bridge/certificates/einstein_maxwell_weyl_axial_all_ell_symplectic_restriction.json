@@ -1,0 +1,169 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE theorem covers the complete standard axial ell>=2 Einstein-Maxwell tangent block at symbolic periodic momentum and all spherical m by symmetry. The ell=1 calculation is only a common curl/gauge degeneration check. It does not compute the physical ell=1 or global twist pairing, polar or homogeneous blocks, extra fourth-order Weyl-Maxwell modes, nonlinear closure, final SO(4,2) reduction, causal scattering, or quantum theory.",
+  "classification": {
+    "all_axial_ell_ge2_both_branches_nonnull": true,
+    "all_axial_ell_ge2_relative_branch_form_indefinite": true,
+    "all_axial_ell_ge2_restriction_computed": true,
+    "all_axial_ell_ge2_restriction_nondegenerate": true,
+    "complete_fourth_order_weyl_maxwell_phase_space_classified": false,
+    "final_residual_quotient_computed": false,
+    "homogeneous_restriction_computed": false,
+    "lorentzian_causal_or_scattering_theorem": false,
+    "nonlinear_solution_embedding_certified": false,
+    "physical_ell1_and_global_twist_restriction_computed": false,
+    "polar_restriction_computed": false,
+    "single_universal_proportionality_to_einstein_form": false,
+    "target_weyl_gauge_removes_einstein_class": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "derivation": {
+    "harmonic_method": "direct arbitrary Y(theta), exact reduction by Y''+cot(theta)Y'+lambda Y=0, and a certified total-derivative primitive",
+    "interpolation_used": false,
+    "literal_action": "S_WM=int sqrt(-g)[(3/8)C^2-F^2/4]",
+    "pole_rule": "regular spherical harmonics make the displayed primitive vanish at theta=0,pi",
+    "representative": "(h_A,q_A)=epsilon_A^B partial_B(H,Q) in Regge-Wheeler/Maxwell-angular gauge"
+  },
+  "domain": "all standard axial Einstein-Maxwell radiative harmonics lambda=ell(ell+1), ell>=2, all m by spherical symmetry, arbitrary periodic S1 momentum k, both physical master branches, before final residual SO(4,2) quotient",
+  "generality_level": "G1_AXIAL_ALL_ELL_GE2_SYMBOLIC_K",
+  "interpretation": "Every ordinary axial Einstein-Maxwell wave with ell>=2 remains nonnull in the literal Weyl-Maxwell presymplectic restriction, but the plus and minus master branches carry exact relative weights 1+(3/2)*sqrt(2*lambda) and 1-(3/2)*sqrt(2*lambda). Their opposite signs persist for every ell>=2. Thus the axial Einstein tangent sector embeds linearly and symplectically as a nondegenerate subspace, but not as a positive or universally rescaled copy of the Einstein-Maxwell phase space.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the polar all-ell restriction, then treat the physical ell=1, homogeneous ell=0, and axial-twist global blocks with their certified quotient representatives",
+  "provenance": {
+    "direct_implementation": {
+      "current_engine": {
+        "path": "bridge/einstein_sector/weyl_maxwell_lee_wald_current.py",
+        "sha256": "5270dcbfb26c7a31d303214462799d41aaa575c2a8ad3fa804675282721fee6a"
+      },
+      "fixture_generator": {
+        "path": "bridge/einstein_sector/weyl_maxwell_axial_arbitrary_lambda_fixture.py",
+        "sha256": "6f7c80d033d3508c38b97ec2ca0e7be2e275aa34f13a0e72886b93b29329aa49"
+      }
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_all_ell_symplectic_restriction.py",
+    "generator_sha256": "7394d7b5b751f94d6cb9e31148ffccdde659ec807265ecb1635991ff16427feb",
+    "inputs": {
+      "arbitrary_lambda_fixture": {
+        "path": "bridge/certificates/weyl_maxwell_axial_arbitrary_lambda_fixture.json",
+        "sha256": "458aaec60c56ed363777fbfc3baa69e17238bd43084519719f0f362101e47dce"
+      },
+      "axial_complex": {
+        "path": "bridge/certificates/einstein_maxwell_axial_master_complex.json",
+        "sha256": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02"
+      },
+      "einstein_form": {
+        "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+        "sha256": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
+      },
+      "ell2_restriction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_symplectic_restriction.json",
+        "sha256": "504799a4b3600b134da21058761a3d9189b27b7c70e3373644ece579403a8b6c"
+      },
+      "preflight": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symplectic_preflight.json",
+        "sha256": "22a948d0ef54efd0c4f2b9b8dd4c57a47a731f1511f40d6a6afbba780dd00591"
+      }
+    }
+  },
+  "restriction": {
+    "branch_orthogonality": "for ell>=2 the Lee-Wald current is conserved for any pair of linearized solutions; at fixed k the distinct positive frequencies force the cross-branch pairing to vanish by time-translation covariance",
+    "branch_weight_matrix_relative_to_einstein": [
+      [
+        "3*sqrt(2)*sqrt(lambda)/2 + 1",
+        "0"
+      ],
+      [
+        "0",
+        "-3*sqrt(2)*sqrt(lambda)/2 + 1"
+      ]
+    ],
+    "einstein_maxwell_off_shell_coefficient_matrix": [
+      [
+        "lambda",
+        "0"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "ell1_consistency_control": {
+      "formal_branch_masses": [
+        "4",
+        "0"
+      ],
+      "lambda": 2,
+      "minus_curl_current": "0 because the common prefactor mu_minus vanishes",
+      "not_an_all_ell_physical_claim": true,
+      "quotient_scope": "for nonzero periodic momentum the mu=0 row is the certified axial ell=1 gauge branch; the n=0 global twist uses a different representative and is not computed by this curl fixture"
+    },
+    "ell_ge_2_proof": {
+      "lambda_range": "lambda=ell*(ell+1)>=6",
+      "minus_weight_sign": "1-(3/2)*sqrt(2*lambda)<=1-3*sqrt(3)<0",
+      "mu_minus_positive": "lambda-sqrt(2*lambda)>0 because lambda>2",
+      "plus_weight_sign": "1+(3/2)*sqrt(2*lambda)>0",
+      "rank": 2,
+      "signature_relative_to_positive_einstein_branch_form": {
+        "negative": 1,
+        "positive": 1,
+        "zero": 0
+      },
+      "single_universal_proportionality": false
+    },
+    "matrix_difference": [
+      [
+        "3*lambda*(mu-lambda)",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "off_shell_weyl_determinant": "-2*lambda*(3*lambda - 3*mu - 1)",
+    "on_shell_branches": [
+      {
+        "Q_over_H": "sqrt(2)*sqrt(lambda)/2",
+        "branch": "plus",
+        "einstein_coefficient_weight": "2*lambda",
+        "ell_ge_2_relative_sign": "POSITIVE",
+        "mu": "sqrt(2)*sqrt(lambda) + lambda",
+        "restriction_over_einstein": "3*sqrt(2)*sqrt(lambda)/2 + 1",
+        "weyl_maxwell_coefficient_weight": "lambda*(3*sqrt(2)*sqrt(lambda) + 2)"
+      },
+      {
+        "Q_over_H": "-sqrt(2)*sqrt(lambda)/2",
+        "branch": "minus",
+        "einstein_coefficient_weight": "2*lambda",
+        "ell_ge_2_relative_sign": "NEGATIVE",
+        "mu": "-sqrt(2)*sqrt(lambda) + lambda",
+        "restriction_over_einstein": "-3*sqrt(2)*sqrt(lambda)/2 + 1",
+        "weyl_maxwell_coefficient_weight": "lambda*(-3*sqrt(2)*sqrt(lambda) + 2)"
+      }
+    ],
+    "pairing_convention": "omega^t=-i*omega*mu*N_lambda*v_1^T G(lambda,mu) v_2, with N_lambda=integral_(S2)Y^2 dOmega>0",
+    "weyl_maxwell_off_shell_coefficient_matrix": [
+      [
+        "lambda*(3*mu-3*lambda+1)",
+        "0"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ]
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_ALL_ELL_SYMPLECTIC_RESTRICTION",
+  "result_state": "AXIAL_ALL_ELL_GE2_NONDEGENERATE_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
+  "schema": "einstein-maxwell-weyl-axial-all-ell-symplectic-restriction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_all_ell_symplectic_restriction.schema.json",
+  "schema_sha256": "1bf518511c66d9b18f464643a2e5da1f6436199ca66e06cfaafaf0227dd3af0e",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_all_ell_symplectic_restriction --verify bridge/certificates/einstein_maxwell_weyl_axial_all_ell_symplectic_restriction.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_all_ell_symplectic_restriction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_all_ell_symplectic_restriction",
+    "python3 -m bridge.einstein_sector.weyl_maxwell_axial_arbitrary_lambda_fixture --verify bridge/certificates/weyl_maxwell_axial_arbitrary_lambda_fixture.json"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "current": {
+    "boundary_primitive": "-H1*H2*((3*mu + 1)*Y(theta)*sin(theta)*Derivative(Y(theta), theta) + 3*cos(theta)*Derivative(Y(theta), theta)**2/2)",
+    "coefficient_matrix_in_minus_i_omega_mu_N_convention": [
+      [
+        "lambda*(3*mu-3*lambda+1)",
+        "0"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "derivation_rule": "arbitrary Y(theta), followed by the harmonic ODE and an explicit total derivative; no finite-ell interpolation",
+    "direct_bilinear_coordinate_current": "-I*omega*(k - omega)*(k + omega)*(6*H1*H2*k**2*sin(theta)*tan(theta)*Derivative(Y(theta), theta)**2 - 6*H1*H2*omega**2*sin(theta)*tan(theta)*Derivative(Y(theta), theta)**2 + H1*H2*sin(theta)*tan(theta)*Derivative(Y(theta), theta)**2 + 6*H1*H2*sin(theta)*tan(theta)*Derivative(Y(theta), (theta, 2))**2 + 3*H1*H2*sin(theta)*Derivative(Y(theta), theta)*Derivative(Y(theta), (theta, 2)) + 3*H1*H2*cos(theta)*tan(theta)*Derivative(Y(theta), theta)*Derivative(Y(theta), (theta, 2)) + 6*H1*H2*cos(theta)*Derivative(Y(theta), theta)**2 - 4*Q1*Q2*Y(theta)**2*sin(theta)*tan(theta))/(2*tan(theta))",
+    "ell2_normalization_remainder": "0",
+    "harmonic_identity": "Y''+cot(theta)*Y'+lambda*Y=0",
+    "harmonic_norm": "N_lambda=integral_(S2) Y^2 dOmega>0",
+    "integrated_bilinear_coordinate_current": "I*N_lambda*mu*omega*(3*H1*H2*lambda**2 - 3*H1*H2*lambda*mu - H1*H2*lambda - 2*Q1*Q2)",
+    "ode_plus_total_derivative_remainder": "0",
+    "raw_density_after_mu_substitution": "H1*H2*(-3*mu*sin(theta)*Derivative(Y(theta), theta)**2 + sin(theta)*Derivative(Y(theta), theta)**2/2 + 3*sin(theta)*Derivative(Y(theta), (theta, 2))**2 + 3*cos(theta)*Derivative(Y(theta), theta)*Derivative(Y(theta), (theta, 2)) + 3*cos(theta)**2*Derivative(Y(theta), theta)**2/sin(theta)) - 2*Q1*Q2*Y(theta)**2*sin(theta)",
+    "regular_pole_boundary_value": "0"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "arbitrary axisymmetric scalar harmonic eigenvalue lambda, symbolic Fourier momentum k and frequency omega, bilinear axial Einstein-Maxwell curl representatives",
+  "result_id": "WEYL_MAXWELL_AXIAL_ARBITRARY_LAMBDA_FIXTURE",
+  "schema": "weyl-maxwell-axial-arbitrary-lambda-fixture-v1"
+}

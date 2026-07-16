@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-axial-all-ell-symplectic-restriction-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "derivation", "restriction", "classification", "interpretation",
+    "next_gate", "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-axial-all-ell-symplectic-restriction-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_all_ell_symplectic_restriction.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_AXIAL_ALL_ELL_SYMPLECTIC_RESTRICTION"},
+    "result_state": {"const": "AXIAL_ALL_ELL_GE2_NONDEGENERATE_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"const": "G1_AXIAL_ALL_ELL_GE2_SYMBOLIC_K"},
+    "provenance": {"type": "object"},
+    "domain": {"type": "string"},
+    "derivation": {"type": "object"},
+    "restriction": {"type": "object"},
+    "classification": {"type": "object"},
+    "interpretation": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 4}
+  }
+}

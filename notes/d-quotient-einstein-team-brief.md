@@ -710,8 +710,33 @@ Einstein--Maxwell on this scoped block.  This is a pairing statement, not a
 solution or gauge-removal statement.  The current engine reproduces the
 Einstein--Maxwell Lee--Wald current pointwise, the certified Bach convention,
 the flat TT zero restriction, a pure-Weyl gauge kernel, and exact current
-conservation.  Arbitrary `ell`, polar, physical `ell=1`, and global blocks
-remain open.
+conservation.
+
+The arbitrary-`ell` axial restriction is now also exact.  A direct current
+with arbitrary `Y(theta)`, reduced only by the harmonic ODE and a certified
+pole-vanishing total derivative, gives
+
+```text
+G_EM,A(lambda,mu)=diag(lambda,2),
+G_WM,A(lambda,mu)=diag(lambda(3mu-3lambda+1),2),
+mu=omega^2-k^2.
+```
+
+On the two physical branches this yields
+
+```text
+r_+=1+(3/2)sqrt(2lambda),
+r_-=1-(3/2)sqrt(2lambda).
+```
+
+For every `lambda=ell(ell+1)>=6`, both factors are nonzero and have opposite
+signs.  Thus the complete regular axial `ell>=2` restriction has rank two in
+each harmonic block and relative signature `(1,1)`.  The result is not a
+finite-`ell` interpolation and the old `ell=2` fixture is reproduced exactly.
+At `ell=1`, the formal minus row has `mu_-=0`, matching the certified nonzero
+momentum gauge degeneration; this does not compute the separate physical
+`ell=1` or global `n=0` twist representatives.  Polar, physical `ell=1`,
+homogeneous, and global restriction blocks remain open.
 
 ### Work package E-G4: open background classes and scattering
 
