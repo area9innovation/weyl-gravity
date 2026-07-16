@@ -54,6 +54,8 @@ because the existing results concern different objects:
 - [`contributions/einstein-maxwell-second-order-fixed-flux.json`](contributions/einstein-maxwell-second-order-fixed-flux.json)
 - [`contributions/einstein-maxwell-second-order-null-extension.json`](contributions/einstein-maxwell-second-order-null-extension.json)
 - [`reports/einstein-maxwell-second-order-registration-receipt.md`](reports/einstein-maxwell-second-order-registration-receipt.md)
+- [`contributions/einstein-maxwell-periodic-photon-second-order.json`](contributions/einstein-maxwell-periodic-photon-second-order.json)
+- [`reports/einstein-maxwell-periodic-photon-registration-receipt.md`](reports/einstein-maxwell-periodic-photon-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -129,3 +131,11 @@ universal cover, a polynomial null tangent with nonzero Chevreton defect has
 an explicit correction. Neither result is a general nonlinear verdict; the
 next Einstein-sector gate is the fixed-charge test for periodic
 nonzero-frequency graviton and photon harmonics.
+
+The first physical-mode gate is now closed for one declared photon harmonic.
+The smooth axisymmetric `l=1`, `omega=2` photon--metric mode has zero
+first-order electric and magnetic charge variations, but its quadratic
+Weyl--Maxwell `tt` source has normalized constant-lapse pairing `-16/3`.
+Consequently it has no smooth periodic second-order correction at fixed
+charges. This is not a no-go for every photon harmonic; the next compact gate
+is one periodic helicity-two harmonic.

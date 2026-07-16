@@ -1,0 +1,36 @@
+{
+  "boundary_conditions": "compact R_t x S1_L x S2 product; smooth periodic corrections; electric and magnetic Maxwell charges fixed through epsilon squared; axisymmetric l=1 photon--metric normal mode",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the smooth coupled l=1 photon--metric tangent has omega squared equal to 4 and solves the complete linearized Einstein--Maxwell equations",
+    "both first-order Maxwell charge variations vanish",
+    "the convention-adjusted Chevreton coefficient is nonzero and has normalized sphere-averaged tt component -8/3",
+    "the quadratic Weyl--Maxwell tt source has normalized sphere average -16/3",
+    "the constant-lapse adjoint pairing excludes every smooth periodic second-order correction at fixed electric and magnetic charges"
+  ],
+  "evidence": {
+    "commit": "bf6efe476336c23520dd70f0ffccbae4dfae975d",
+    "path": "bridge/certificates/einstein_maxwell_periodic_photon_second_order.json",
+    "sha256": "3f3ac8f10c9fadc36180f98c48404e4e733fc420f97bb529c5b1316f550def93"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "test one periodic helicity-two harmonic at fixed electric and magnetic charges",
+  "not_established": [
+    "a second-order obstruction for every photon harmonic",
+    "a periodic helicity-two result",
+    "general nonlinear Einstein-sector failure",
+    "a causal, observable, asymptotically flat, scattering, or quantum verdict"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_fixed_charge_periodic_photon_second_order",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_periodic_photon_second_order",
+  "team_id": "einstein_boundary",
+  "verdict": "PERIODIC_PHOTON_SECOND_ORDER_FIXED_CHARGE_OBSTRUCTION",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_periodic_photon_second_order --verify bridge/certificates/einstein_maxwell_periodic_photon_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_periodic_photon_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_periodic_photon_second_order"
+  ]
+}

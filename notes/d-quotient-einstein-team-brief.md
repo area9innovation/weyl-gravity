@@ -272,6 +272,24 @@ neither general nonlinear closure nor a general no-go. E-D2 should next test
 periodic nonzero-frequency graviton and photon harmonics at fixed electric and
 magnetic charges.
 
+The photon half of that gate is now closed for one explicit physical mode by
+`EINSTEIN_MAXWELL_PERIODIC_PHOTON_SECOND_ORDER`. The smooth axisymmetric
+`l=1` mode
+
+```text
+a1=cos(2t)cos(theta)dx,
+h1=2cos(2t)sin(theta)^2 dx dphi
+```
+
+solves the complete coupled linearized Einstein--Maxwell equations and has
+zero first-order electric and magnetic charge variations. Its nonzero
+Chevreton coefficient has normalized sphere-averaged `tt` component `-8/3`,
+while the quadratic Weyl--Maxwell `tt` projection has normalized average
+`-16/3`. The constant-lapse adjoint witness therefore excludes every smooth
+periodic second-order correction at fixed charges. This proves a physical
+nonzero-frequency obstruction, not a general photon no-go. E-D2 should next
+test one periodic helicity-two harmonic.
+
 ## Work package E-D3: observables, charges, and scattering
 
 Compare the selected sector with Einstein gravity by constructing explicit
