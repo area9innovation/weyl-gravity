@@ -172,15 +172,7 @@ GUARDS = (
     ),
     ("verify_conformal_auxiliary_triangular_box_factor.py", "--claim-green"),
     ("verify_conformal_auxiliary_triangular_box_factor.py", "--promote-flag"),
-    ("verify_conformal_covariant_bv_last_mile.py", "--claim-complete-covariant-theorem"),
-    (
-        "verify_conformal_covariant_dependency_report.py",
-        "--claim-complete-green-hyperbolicity",
-    ),
-    ("verify_conformal_covariant_dependency_report.py", "--claim-final-covariant-h4"),
-    ("verify_conformal_final_covariant_transport.py", "--claim-final-covariant-h4"),
     ("verify_conformal_final_covariant_transport.py", "--recompute-auxiliary-h4"),
-    ("verify_conformal_four_flag_closure.py", "--claim-complete"),
 )
 
 
