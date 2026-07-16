@@ -256,6 +256,26 @@ homotopies for the retained mixed-order metric core. The formula above then
 lifts them support-locally and cyclically to all 54 rows. The total causal
 flag remains false until that endpoint theorem passes.
 
+The endpoint consumer now receives the complete minimal records
+
+\[
+W_{34},\qquad P_{34},\qquad \operatorname{pairing}_{34},
+\]
+
+in the authoritative 34-row coordinate layout.  The export states and
+verifies coefficientwise
+
+\[
+P_{34}=q_{34}W_{34}+W_{34}q_{34},
+\]
+
+together with cyclicity and nondegeneracy of the pairing.  The independent
+quantum-side adapter returns `ADMISSIBLE_EXACT_CURVED_WITNESS` for this
+candidate while correctly leaving Green execution unauthorized. A nonzero
+defect from any later candidate test rejects the submitted candidate only.
+It is not a global nonexistence theorem for all local curved witnesses,
+mixed-order witnesses, or Green realizations.
+
 ### Active nonlinear support-local export
 
 The nonlinear team additionally requires one authoritative classical export
@@ -269,6 +289,12 @@ and current disposition are:
    \((\pi_{\rm cl},\iota_{\rm cl},s_{\rm cl})\) (**complete on all 54 rows**);
 4. the cyclic pairing, with conventions and formal adjoints pinned (**complete through arity two**);
 5. a typed row layout, support/order metadata, hashes, and fail-closed guards.
+
+The separate authoritative
+\((W_{34},P_{34},\operatorname{pairing}_{34})\) causal handoff described
+above is now complete. The 54-row nonlinear export remains logically
+distinct and does not silently substitute for those minimal curved-witness
+records.
 
 The handoff gate `CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT` is now passed by
 `BERGER_SUPPORT_LOCAL_Q2`. This is not a reduced harmonic matrix: it is the

@@ -80,6 +80,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS.json`](certificates/BERGER_CLOCK_REATTACHED_PRINCIPAL_WITNESS.json)
 - Clock-reattached principal-witness report:
   [`reports/berger-clock-reattached-principal-witness.md`](reports/berger-clock-reattached-principal-witness.md)
+- Authoritative 34-row curved-witness candidate export:
+  [`certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS.json`](certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS.json)
+- Curved-witness candidate report:
+  [`reports/berger-curved-clock-reattached-witness.md`](reports/berger-curved-clock-reattached-witness.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:
@@ -327,9 +331,17 @@ The helical (D)-action is no longer part of that open gate. In the dressed
 stationary invariant frame it is exactly (e_0) on every one of the 54
 field, ghost, antifield, and nonminimal rows. Coefficientwise PBW composition
 proves ([q_1,D]=0), equivariance of (iota_{m cl},pi_{m cl},S_{m cl}),
-formal skew-adjointness, and preservation of the cyclic pairing. The sole
-missing local nonlinear operator is now the complete four-dimensional
-(q_2), after which the arity-two Cartan equation can be tested on all rows.
+formal skew-adjointness, and preservation of the cyclic pairing. The complete
+four-dimensional support-local \(q_2\) is now exported on all 54 rows and its
+local \(D\)-derivation identity is exact. The remaining local nonlinear gate
+is the arity-two Cartan homotopy itself.
+
+The minimal causal handoff now also freezes one authoritative
+\((W_{34},P_{34},\operatorname{pairing}_{34})\) candidate, with
+\(P_{34}=q_{34}W_{34}+W_{34}q_{34}\) and exact cyclicity. This supplies the
+previously missing consumer input; it does not prove causal invertibility. A
+failed downstream test rejects this candidate only and is not a global
+nonexistence theorem for all curved witnesses.
 
 The full causal problem has also been reduced exactly. The same 54-to-26 SDR
 proves that a retained causal homotopy lifts by
