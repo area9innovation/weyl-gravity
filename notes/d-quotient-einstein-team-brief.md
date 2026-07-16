@@ -842,10 +842,25 @@ Q_extra_ax=(F[omega]/(p))^2.
 
 This proves two additional algebraic target solution polarizations before the
 final residual quotient; it does not certify two particles or ghosts.  The
-direct four-dimensional action Hessian, off-shell local Green current, and
-complete Einstein/extra Lee--Wald matrix remain open.  Those rails must decide
+direct four-dimensional action Hessian and complete Einstein/extra Lee--Wald
+matrix remain open.  Those rails must decide
 whether either extra summand is nonradical and with which sign before any
 one-particle interpretation.
+
+`EINSTEIN_MAXWELL_WEYL_AXIAL_GREEN_CURRENT` now closes the off-shell local
+Green-identity rail on both the four invariant coefficients and the six-field
+ungauged lift.  A coefficientwise multivariate Lagrange construction gives
+explicit `J^t,J^x` satisfying
+
+```text
+partial_t J^t+partial_x J^x=u^T L v-(L u)^T v
+```
+
+for arbitrary off-shell jets, without using a dispersion relation or
+inverting `D`, `k`, or `omega`.  This is not a Green-function or causal
+propagator theorem.  The direct four-dimensional action-Hessian match and the
+complete Einstein/extra Lee--Wald matrix are now the remaining local pairing
+gates.
 
 ### Work package E-G4: open background classes and scattering
 

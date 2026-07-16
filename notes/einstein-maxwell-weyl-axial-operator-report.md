@@ -91,20 +91,34 @@ Einstein--Maxwell axial solution module
 Weyl--Maxwell axial solution module.
 ```
 
-The two extra summands are not yet certified particles or ghosts.  No local
-off-shell Green current, full Einstein/extra Lee--Wald matrix, presymplectic
-radical test, positive-frequency Hilbert space, causal boundary condition, or
-scattering construction has been supplied.  In particular, the result does
-not say that an observer sees two additional gravitons.  It says that the
-unreduced fourth-order classical equations possess two additional generic
-axial solution polarizations which cannot be identified with the Einstein
-image by the declared gauge quotient.
+The two extra summands are not yet certified particles or ghosts.  No direct
+four-dimensional action-Hessian match, full Einstein/extra Lee--Wald matrix,
+presymplectic radical test, positive-frequency Hilbert space, causal boundary
+condition, or scattering construction has been supplied.  In particular, the
+result does not say that an observer sees two additional gravitons.  It says
+that the unreduced fourth-order classical equations possess two additional
+generic axial solution polarizations which cannot be identified with the
+Einstein image by the declared gauge quotient.
 
-The next load-bearing gate is to derive the local Green current and direct
-four-dimensional action Hessian, compute the complete Einstein/extra
-Lee--Wald matrix, and decide whether either extra cyclic summand is nonradical
-on the compact phase space.  Only after that may signs, norms, or particle
-language be attached.
+The subsequent `EINSTEIN_MAXWELL_WEYL_AXIAL_GREEN_CURRENT` certificate now
+constructs the off-shell local concomitant directly from the polynomial
+differential operator.  For arbitrary coefficient jets it proves
+
+```text
+partial_t J^t(u,v)+partial_x J^x(u,v)
+  =u^T L v-(L u)^T v
+```
+
+both on the four invariant fields and on the six-field ungauged lift.  The
+reduced current has 26 nonzero terms in each component; the ungauged current
+has 54.  No equation of motion, dispersion relation, inverse frequency, or
+inverse momentum enters the proof.
+
+This closes the local Green-identity rail, not the Green-function rail.  The
+next load-bearing gate is the direct four-dimensional action-Hessian match and
+the complete Einstein/extra Lee--Wald matrix.  Those must decide whether
+either extra cyclic summand is nonradical on the compact phase space before
+signs, norms, or particle language are attached.
 
 ## Receipts
 
@@ -127,10 +141,13 @@ python3 -m unittest \
 python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_operator.py
 python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_operator \
   --verify bridge/certificates/einstein_maxwell_weyl_axial_operator.json
+python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_green_current \
+  --verify bridge/certificates/einstein_maxwell_weyl_axial_green_current.json
 ```
 
-The scoped seven-test rail passed in about 16 seconds; the generator and
-independent verifier passed.
+The scoped operator seven-test rail passed in about 16 seconds; its generator
+and independent verifier passed.  The Green-current three-test rail passed in
+under one second.
 
 Tier 2:
 

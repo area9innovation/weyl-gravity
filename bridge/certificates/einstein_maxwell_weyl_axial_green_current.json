@@ -1,0 +1,1529 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE certificate proves a local off-shell Green identity for the exact harmonic coefficient operator. It does not construct Green functions, causal propagators, a Hadamard state, a covariant phase-space norm, or a particle spectrum.",
+  "classification": {
+    "Lee_Wald_pairing_or_particle_claim": false,
+    "Lorentzian_causal_claim": false,
+    "arbitrary_off_shell_jets": true,
+    "direct_four_dimensional_action_Hessian": false,
+    "dispersion_or_equations_of_motion_used": false,
+    "reduced_off_shell_local_Green_identity": true,
+    "ungauged_off_shell_local_Green_identity": true
+  },
+  "convention": {
+    "Fourier_to_differential": "omega=i*partial_t and k=-i*partial_x for exp(i(kx-omega t))",
+    "construction": "coefficientwise multivariate Lagrange identity, telescoped first in t and then in x",
+    "identity": "partial_t J^t(u,v)+partial_x J^x(u,v)=u^T L v-(L u)^T v",
+    "jet_term_order": [
+      "u_component",
+      "u_t_order",
+      "u_x_order",
+      "v_component",
+      "v_t_order",
+      "v_x_order"
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "generic axial ell>=2 harmonic coefficient jets on the local (t,x) base, symbolic lambda, before final residual quotient",
+  "generality_level": "G2_GENERIC_AXIAL_LOCAL_GREEN_CURRENT",
+  "interpretation": "The generic axial operator now has an explicit local bilinear Green current on the two-dimensional harmonic base, both after gauge contraction and on the six-field ungauged lift. This closes the off-shell integration-by-parts rail but does not yet identify the current with the directly varied four-dimensional Lee-Wald current or assign a norm to the extra module.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "match this local concomitant to the direct four-dimensional action Hessian and Lee-Wald current, then evaluate the complete Einstein/extra pairing matrix",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_green_current.py",
+    "generator_sha256": "0cde51fa34370c64b2ddbf2d21263ef6d9b26bfc8d0e278b617a06acb5ad394f",
+    "input": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+      "sha256": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+    }
+  },
+  "reduced_current": {
+    "field_order": [
+      "H_t",
+      "H_x",
+      "Q_t",
+      "Q_x"
+    ],
+    "jet_identity_remainder": [],
+    "nonzero_operator_monomials": 9,
+    "off_shell_identity_verified": true,
+    "operator_order": 4,
+    "space_current_term_count": 26,
+    "space_current_terms": [
+      {
+        "coefficient": "lambda*(3*lambda - 1)/2",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 3
+      },
+      {
+        "coefficient": "-lambda*(3*lambda - 1)/2",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 2,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 3,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "lambda*(3*lambda + 4)/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 1,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 2,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 2,
+        "u_x_order": 1,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 3,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "lambda*(3*lambda + 4)/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 1,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 2,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 2,
+        "u_x_order": 1,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 3,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-1",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "1",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-1",
+        "u_component": 2,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 3,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-1",
+        "u_component": 3,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      }
+    ],
+    "time_current_term_count": 26,
+    "time_current_terms": [
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 1,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "-lambda*(3*lambda + 4)/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 3
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 2,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 1,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-lambda*(3*lambda + 4)/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 3
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 2,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "lambda*(3*lambda - 1)/2",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 1,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 3,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 1,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-lambda*(3*lambda - 1)/2",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 2,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 3,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "1",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 3,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "1",
+        "u_component": 3,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-1",
+        "u_component": 3,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 3,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "1",
+        "u_component": 3,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 3,
+        "v_t_order": 0,
+        "v_x_order": 0
+      }
+    ]
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_GREEN_CURRENT",
+  "result_state": "GENERIC_AXIAL_REDUCED_AND_UNGAUGED_OFF_SHELL_LOCAL_GREEN_IDENTITIES_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-axial-green-current-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_green_current.schema.json",
+  "schema_sha256": "65b98fdf91f1788dcb98e038eb97b34e6b2644b7a0d3ae19ddcd1b2ab49006f9",
+  "ungauged_current": {
+    "field_order": [
+      "h_t",
+      "h_x",
+      "h_2",
+      "q_t",
+      "q_x",
+      "b"
+    ],
+    "jet_identity_remainder": [],
+    "nonzero_operator_monomials": 15,
+    "off_shell_identity_verified": true,
+    "operator_order": 4,
+    "space_current_term_count": 54,
+    "space_current_terms": [
+      {
+        "coefficient": "lambda*(3*lambda - 1)/2",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 3
+      },
+      {
+        "coefficient": "-lambda*(3*lambda - 1)/2",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 2,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 3,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "lambda*(3*lambda + 4)/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 1,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 1,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 2,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 2,
+        "u_x_order": 1,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 3,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-lambda*(lambda - 2)*(3*lambda - 2)/8",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "lambda",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 5,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 2,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "lambda*(3*lambda + 4)/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 1,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 2,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 1,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 2,
+        "u_x_order": 1,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 3,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "lambda*(lambda - 2)*(3*lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "-lambda*(lambda - 2)*(3*lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 3
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "lambda*(lambda - 2)*(3*lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 2,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 2,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 3,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 1,
+        "u_x_order": 1,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 2,
+        "u_x_order": 1,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-1",
+        "u_component": 3,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 3,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "1",
+        "u_component": 3,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 3,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-1",
+        "u_component": 3,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 4,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "lambda",
+        "u_component": 4,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 5,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-1",
+        "u_component": 4,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 3,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-lambda",
+        "u_component": 5,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-lambda",
+        "u_component": 5,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 4,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "lambda",
+        "u_component": 5,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 5,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-lambda",
+        "u_component": 5,
+        "u_t_order": 0,
+        "u_x_order": 1,
+        "v_component": 5,
+        "v_t_order": 0,
+        "v_x_order": 0
+      }
+    ],
+    "time_current_term_count": 54,
+    "time_current_terms": [
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 1,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "-lambda*(3*lambda + 4)/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 3
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 2,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "lambda*(lambda - 2)*(3*lambda - 2)/8",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 2,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-lambda",
+        "u_component": 0,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 5,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 1,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 0,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 0,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 0,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-lambda*(3*lambda + 4)/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 3
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 2,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "lambda*(3*lambda - 1)/2",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 1,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 3,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 1,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 1,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 1,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-lambda*(3*lambda - 1)/2",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 2,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 1,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda/4",
+        "u_component": 1,
+        "u_t_order": 3,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-lambda*(lambda - 2)*(3*lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 2,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 1,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "lambda*(lambda - 2)*(3*lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 1,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 3,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 1,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-lambda*(lambda - 2)*(3*lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 2
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 2,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/8",
+        "u_component": 2,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "3*lambda*(lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 2,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-3*lambda*(lambda - 2)/16",
+        "u_component": 2,
+        "u_t_order": 3,
+        "u_x_order": 0,
+        "v_component": 2,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "1",
+        "u_component": 3,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 4,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-lambda",
+        "u_component": 3,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 5,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "1",
+        "u_component": 4,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 3,
+        "v_t_order": 0,
+        "v_x_order": 1
+      },
+      {
+        "coefficient": "-1",
+        "u_component": 4,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 4,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "1",
+        "u_component": 4,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 4,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "lambda",
+        "u_component": 5,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 0,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "lambda",
+        "u_component": 5,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 3,
+        "v_t_order": 0,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "-lambda",
+        "u_component": 5,
+        "u_t_order": 0,
+        "u_x_order": 0,
+        "v_component": 5,
+        "v_t_order": 1,
+        "v_x_order": 0
+      },
+      {
+        "coefficient": "lambda",
+        "u_component": 5,
+        "u_t_order": 1,
+        "u_x_order": 0,
+        "v_component": 5,
+        "v_t_order": 0,
+        "v_x_order": 0
+      }
+    ]
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_green_current --verify bridge/certificates/einstein_maxwell_weyl_axial_green_current.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_green_current"
+  ]
+}
