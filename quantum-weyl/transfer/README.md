@@ -183,9 +183,9 @@ computes the arity-two `q1/q2` nilpotency defect, the `D/q2` derivation defect,
 and graded BV cyclicity modulo integration by parts. A nonzero implementation
 fixture passes all three identities; valid-degree output and `D`-axis
 mutations produce localized exact defects, showing that the checks are
-sensitive. This advances the executable consumer, not the scientific claim:
-the in-progress classical producer is not imported, and the committed
-support-local q2, transfer, Cartan, causal, and quantum flags remain false.
+sensitive. That readiness receipt advanced the executable consumer rather
+than the scientific claim; the landed tensor and its independent replay are
+recorded separately below.
 
 ```bash
 python3 quantum-weyl/transfer/berger_54_row_q2_replay_certificate.py --check
@@ -201,18 +201,30 @@ graded Koszul symmetry, and records the exact specialization from the older
 symbolic Berger ring. That import gate is now followed by the independent
 scientific replay below.
 
+The subsequent full-dimensional bare unary Cartan gate is now decided
+negatively.  A pinned independent microlocal replay at the exact null covector
+`zeta=(1,1,0,0)` finds symbol ranks `(3,1,3)`, cohomology dimensions
+`(0,6,6,0)`, and the normalized class/dual pair `h_hat_02` and
+`coefficient(h_hat_02)-coefficient(h_hat_12)`.  Since the symbol of `D` is one
+there, no finite-order support-local `iota_D^(1)` exists on the bare 26-row
+complex; the imported `D`-equivariant SDR transfers the no-go to the bare
+54-row extension.  The next construction must use residual/BFV or causal
+extension data rather than forming the bare arity-two Cartan source.
+
 That scientific replay is now complete. A dedicated exact `Q(sqrt(10))`
 backend evaluates all 150,305 landed coefficients without generic symbolic
 simplification. The `q1/q2`, `D/q2`, and odd-Darboux BV-cyclicity defects all
-vanish. This authorizes transfer of the classical `ell2` and the full
-four-dimensional Cartan programme; it does not itself compute either result
-or promote a quantum claim. The classical gate requires the unary equation
-`q1 iota_D^(1)+iota_D^(1) q1=D` to be solved before forming the arity-two
-source.
+vanish. This authorizes transfer of the classical `ell2`; it does not itself
+compute that transfer or promote a quantum claim. The bare unary equation
+`q1 iota_D^(1)+iota_D^(1) q1=D` is now exactly obstructed as stated above, so
+the arity-two Cartan source may only be formed after a residual/BFV or causal
+extension supplies a valid replacement unary homotopy.
 
 ```bash
 PYTHONPATH=quantum-weyl python3 -m transfer.berger_support_local_q2_replay_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_support_local_q2_scientific_replay.py -v
+PYTHONPATH=quantum-weyl python3 -m transfer.berger_unary_d_cartan_obstruction_import_certificate --check
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_unary_d_cartan_obstruction_import.py -v
 ```
 
 The two commands above validate the checked receipt and run fast mutation

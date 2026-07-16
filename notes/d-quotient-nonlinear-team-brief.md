@@ -284,14 +284,28 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. While the classical \(q_2\) producer is active, import the certified ghost
-   endpoint factorization, solve the metric/metric-antifield mixed-order Green
-   realization, complete the retained 26-row advanced/retarded homotopy, and
-   lift it through the certified 54-to-26 contraction.
-2. On `BERGER_Q2_EXPORTED`, import the support-local cubic BV tensor by content
-   hash and verify it independently.
-3. Compute the full \(\ell_2\) and the arity-two Cartan defect.
-4. Solve for \(\iota_D^{(2)}\) or certify its obstruction.
+The complete support-local `q2` is imported and its `q1/q2`, `D/q2`, and
+cyclic identities replay exactly.  The bare unary equation is not merely
+pending: the pinned null-symbol class proves that no finite-order
+support-local `iota_D^(1)` exists on the bare 26-row complex, and the
+`D`-equivariant SDR transfers that no-go to the bare 54-row extension.  Do not
+form the bare arity-two source `[q2,iota_D^(1)]`.
+
+The classical conditional causal-transfer theorem landed after this no-go.
+It is the preferred next input, but remains outside the quantum claim ledger
+until separately pinned and independently replayed; it does not itself supply
+the retained advanced/retarded Green homotopy.
+
+1. Choose and certify a residual/BFV, derived zero-charge, or causal Green
+   extension of the complex.  The extension must state its rows, support
+   category, pairing, and replacement unary Cartan identity explicitly.
+2. On the causal route, construct the retained 26-row advanced/retarded Green
+   homotopy for the certified curved `P34`, prove causal support and cyclic
+   adjointness, and lift it through the certified 54-to-26 contraction.
+3. Transfer the full `ell2` on the chosen extension and only then form the
+   corrected arity-two Cartan source.
+4. Solve for `iota_D^(2)` on that extension or retain its normalized
+   obstruction witness.
 5. Compute \(\ell_3\), the quartic identity, and the first resonant
    \(+\lambda,-\lambda\to0\) instability channel.
 6. Add Yang--Mills only after the scalar-clock rail is understood.

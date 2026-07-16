@@ -23,7 +23,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(
             certificate["result_state"],
-            "COMPLETE_54_ROW_CLASSICAL_Q2_IMPORTED_AND_REPLAYED_TRANSFER_AND_D_CARTAN_PENDING",
+            "COMPLETE_54_ROW_CLASSICAL_Q2_REPLAYED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_AND_TRANSFER_PENDING",
         )
         self.assertEqual(
             certificate["dependency_tags"],
@@ -80,7 +80,12 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("54_ROW_LOCAL_D_IMPORTED", d_question["status"])
         self.assertIn("SUPPORT_LOCAL_Q2_IMPORTED", d_question["status"])
         self.assertIn("ALL_IDENTITIES_REPLAYED", d_question["status"])
-        self.assertIn("UNARY_D_CARTAN_AND_TRANSFER_PENDING", d_question["status"])
+        self.assertIn("BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED", d_question["status"])
+        self.assertIn("RESIDUAL_OR_CAUSAL_EXTENSION_REQUIRED", d_question["status"])
+        self.assertEqual(
+            d_question["next_certificate"],
+            "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION",
+        )
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
         certificate = CERTIFICATE.build_certificate()
@@ -126,6 +131,10 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn(
             "berger_support_local_q2_scientific_replay_sha256",
+            certificate["provenance"],
+        )
+        self.assertIn(
+            "berger_unary_D_Cartan_obstruction_import_sha256",
             certificate["provenance"],
         )
         self.assertIn(

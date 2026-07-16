@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-unary-d-cartan-obstruction-import-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags",
+    "source_dependency_tags", "source_method_tags", "setting_id", "obstructed_operator_class",
+    "exact_symbol_replay", "normalized_obstruction_witness",
+    "independent_exact_checks", "descent_to_54_rows", "claim_flags",
+    "next_gate", "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-unary-d-cartan-obstruction-import-v1"},
+    "result_id": {"const": "BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION_IMPORT"},
+    "result_state": {"const": "BARE_26_AND_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED_EXTENSION_REQUIRED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "source_dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "source_method_tags": {"const": ["MICROLOCAL-SYMBOL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "obstructed_operator_class": {
+      "const": {
+        "arity": 1,
+        "degree": -1,
+        "finite_differential_order": true,
+        "support_local": true,
+        "bare_rows": [26, 54],
+        "identity": "q1 iota_D^(1)+iota_D^(1) q1=D"
+      }
+    },
+    "exact_symbol_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["covector", "metric_square", "D_symbol", "symbol_ranks", "cohomology_dimensions", "K1", "H4", "L1", "D1"],
+      "properties": {
+        "covector": {"const": [1, 1, 0, 0]},
+        "metric_square": {"const": 0},
+        "D_symbol": {"const": 1},
+        "symbol_ranks": {"const": {"K1": 3, "H4": 1, "L1": 3}},
+        "cohomology_dimensions": {"const": [0, 6, 6, 0]},
+        "K1": {"$ref": "#/$defs/matrixRecord"},
+        "H4": {"$ref": "#/$defs/matrixRecord"},
+        "L1": {"$ref": "#/$defs/matrixRecord"},
+        "D1": {"$ref": "#/$defs/matrixRecord"}
+      }
+    },
+    "normalized_obstruction_witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["representative_name", "representative", "dual_witness_name", "dual_witness", "H4_on_representative", "dual_on_im_K1", "dual_on_representative", "D_symbol_on_class"],
+      "properties": {
+        "representative_name": {"const": "h_hat_02"},
+        "representative": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "string"}},
+        "dual_witness_name": {"const": "coefficient(h_hat_02)-coefficient(h_hat_12)"},
+        "dual_witness": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "string"}},
+        "H4_on_representative": {"const": "0"},
+        "dual_on_im_K1": {"const": "0"},
+        "dual_on_representative": {"const": "1"},
+        "D_symbol_on_class": {"const": "identity"}
+      }
+    },
+    "independent_exact_checks": {
+      "type": "object",
+      "minProperties": 10,
+      "additionalProperties": {"const": true}
+    },
+    "descent_to_54_rows": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "formula", "gauge_fixed_import_sha256", "local_D_import_sha256"],
+      "properties": {
+        "status": {"const": "VERIFIED_FROM_IMPORTED_D_EQUIVARIANT_SDR"},
+        "formula": {"const": "pi_cl iota_D,54^(1) iota_cl"},
+        "gauge_fixed_import_sha256": {"$ref": "#/$defs/hash"},
+        "local_D_import_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO": true,
+        "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D": false,
+        "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D": false,
+        "BERGER_ARITY_TWO_D_CARTAN_FULL_4D": false,
+        "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION"},
+    "provenance": {"type": "object", "minProperties": 5},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "matrixRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "entries": {"type": "array"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

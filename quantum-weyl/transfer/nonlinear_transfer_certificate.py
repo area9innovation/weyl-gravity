@@ -49,6 +49,11 @@ BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY_PATH = (
     / "certificates"
     / "BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY.json"
 )
+BERGER_UNARY_D_CARTAN_OBSTRUCTION_PATH = (
+    TRANSFER_ROOT
+    / "certificates"
+    / "BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION_IMPORT.json"
+)
 BERGER_REDUCED_CARTAN_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json"
 )
@@ -133,6 +138,9 @@ def _source_manifest() -> dict[str, str]:
         "berger_support_local_q2_replay_certificate.py",
         "../reports/berger-support-local-q2-import.md",
         "../reports/berger-support-local-q2-scientific-replay.md",
+        "berger_unary_d_cartan_obstruction_import.py",
+        "berger_unary_d_cartan_obstruction_import_certificate.py",
+        "../reports/berger-unary-d-cartan-obstruction-import.md",
         "berger_reduced_mode_cartan.py",
         "berger_reduced_mode_cartan_certificate.py",
         "berger_nonzero_weight_no_go_import.py",
@@ -172,6 +180,7 @@ def _source_manifest() -> dict[str, str]:
         "schema/berger-54-row-q2-replay-engine-v1.schema.json",
         "schema/berger-support-local-q2-import-v1.schema.json",
         "schema/berger-support-local-q2-scientific-replay-v1.schema.json",
+        "schema/berger-unary-d-cartan-obstruction-import-v1.schema.json",
         "schema/berger-first-arity-two-cartan-verdict-v1.schema.json",
         "schema/berger-nonzero-weight-closure-no-go-import-v1.schema.json",
         "schema/berger-all-weight-arity-two-cartan-import-v1.schema.json",
@@ -202,6 +211,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_berger_54_row_q2_replay.py",
         "tests/test_berger_support_local_q2_import.py",
         "tests/test_berger_support_local_q2_scientific_replay.py",
+        "tests/test_berger_unary_d_cartan_obstruction_import.py",
         "tests/test_berger_reduced_mode_cartan.py",
         "tests/test_berger_nonzero_weight_no_go_import.py",
         "tests/test_berger_all_weight_cartan_import.py",
@@ -253,6 +263,9 @@ def build_certificate() -> dict[str, Any]:
     )
     berger_support_local_q2_scientific_replay = json.loads(
         BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY_PATH.read_text(encoding="utf-8")
+    )
+    berger_unary_d_cartan_obstruction = json.loads(
+        BERGER_UNARY_D_CARTAN_OBSTRUCTION_PATH.read_text(encoding="utf-8")
     )
     berger_reduced_cartan = json.loads(
         BERGER_REDUCED_CARTAN_PATH.read_text(encoding="utf-8")
@@ -511,6 +524,35 @@ def build_certificate() -> dict[str, Any]:
     ):
         raise ValueError("Berger support-local q2 scientific replay drifted")
     if (
+        berger_unary_d_cartan_obstruction.get("schema")
+        != "quantum-weyl-berger-unary-d-cartan-obstruction-import-v1"
+        or berger_unary_d_cartan_obstruction.get("result_state")
+        != "BARE_26_AND_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED_EXTENSION_REQUIRED"
+        or berger_unary_d_cartan_obstruction.get("claim_flags", {}).get(
+            "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO"
+        )
+        is not True
+        or berger_unary_d_cartan_obstruction.get("claim_flags", {}).get(
+            "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION"
+        )
+        is not False
+        or berger_unary_d_cartan_obstruction.get("claim_flags", {}).get(
+            "QUANTUM_CLAIM"
+        )
+        is not False
+        or len(
+            berger_unary_d_cartan_obstruction.get("independent_exact_checks", {})
+        )
+        != 12
+        or not all(
+            value is True
+            for value in berger_unary_d_cartan_obstruction.get(
+                "independent_exact_checks", {}
+            ).values()
+        )
+    ):
+        raise ValueError("Berger unary D-Cartan obstruction import drifted")
+    if (
         berger_nonzero_weight_no_go.get("schema")
         != "quantum-weyl-berger-nonzero-weight-closure-no-go-import-v1"
         or berger_nonzero_weight_no_go.get("result_state")
@@ -647,7 +689,7 @@ def build_certificate() -> dict[str, Any]:
     source_manifest = _source_manifest()
     return {
         "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-        "result_state": "COMPLETE_54_ROW_CLASSICAL_Q2_IMPORTED_AND_REPLAYED_TRANSFER_AND_D_CARTAN_PENDING",
+        "result_state": "COMPLETE_54_ROW_CLASSICAL_Q2_REPLAYED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_AND_TRANSFER_PENDING",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "classical_snapshot_commit": snapshot["classical_commit"],
         "classical_freeze_gate": snapshot["gate_a_status"],
@@ -678,6 +720,7 @@ def build_certificate() -> dict[str, Any]:
                 "strict portable Berger 54-row bilinear PBW q2 arrival contract with authoritative unary/D/contraction binding, exact structural checks, and mutation-tested fail-closed input routing",
                 "independent exact Berger PBW replay engine for q1/q2 nilpotency, D/q2 derivation, and BV cyclicity with localized mutation-sensitive defect ledgers",
                 "independently imported the complete 54-row support-local Berger q2 and replayed q1/q2 nilpotency, D/q2 derivation, and odd-Darboux BV cyclicity exactly over Q(sqrt(10))",
+                "independently replayed the exact null-symbol cohomology witness obstructing every finite-order support-local unary D-Cartan homotopy on the bare 26/54-row Berger complex",
                 "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
                 "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
                 "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
@@ -697,7 +740,8 @@ def build_certificate() -> dict[str, Any]:
                 "setting-matched projection of the physical conformal-gravity cubic tensor onto the Einstein helicity sector or matching its normalized coefficient to the parity-pair reference",
                 "absence of higher-bracket sector re-entry",
                 "the transferred full four-dimensional Berger ell2 and arity-two nonlinear D-Cartan contraction outside the all-weight homogeneous six-row-per-weight block",
-                "the prerequisite full four-dimensional unary D-Cartan solution and complete 54-row arity-two Cartan contraction",
+                "a residual/BFV or causal extension on which the obstructed bare unary D-Cartan equation is replaced by a well-defined extended problem",
+                "the complete 54-row arity-two Cartan contraction on any admissible extension",
                 "an interacting particle or deformation-theory theorem",
                 "a quantum correction or residual quantum transfer",
                 "any LORENTZIAN-CAUSAL claim",
@@ -723,8 +767,8 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "ALL_INTEGER_WEIGHT_HOMOGENEOUS_NONZERO_SOURCE_CARTAN_EXACT_NONZERO_PRIMITIVE_COMPLETE_FINITE_TRUNCATIONS_OBSTRUCTED_54_ROW_LOCAL_D_IMPORTED_AND_SUPPORT_LOCAL_Q2_IMPORTED_ALL_IDENTITIES_REPLAYED_UNARY_D_CARTAN_AND_TRANSFER_PENDING",
-                "next_certificate": "BERGER_FULL_4D_UNARY_D_CARTAN_AND_TRANSFERRED_ELL2",
+                "status": "ALL_INTEGER_WEIGHT_HOMOGENEOUS_NONZERO_SOURCE_CARTAN_EXACT_NONZERO_PRIMITIVE_COMPLETE_FINITE_TRUNCATIONS_OBSTRUCTED_54_ROW_LOCAL_D_IMPORTED_AND_SUPPORT_LOCAL_Q2_IMPORTED_ALL_IDENTITIES_REPLAYED_BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED_RESIDUAL_OR_CAUSAL_EXTENSION_REQUIRED",
+                "next_certificate": "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION",
             },
             {
                 "question_id": "positive_dynamical_direction_closure",
@@ -841,6 +885,10 @@ def build_certificate() -> dict[str, Any]:
             "berger_support_local_q2_scientific_replay_sha256": _sha256(
                 BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY_PATH
             ),
+            "berger_unary_D_Cartan_obstruction_import_certificate": "quantum-weyl/transfer/certificates/BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION_IMPORT.json",
+            "berger_unary_D_Cartan_obstruction_import_sha256": _sha256(
+                BERGER_UNARY_D_CARTAN_OBSTRUCTION_PATH
+            ),
             "berger_first_arity_two_cartan_verdict_certificate": "quantum-weyl/transfer/certificates/BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json",
             "berger_first_arity_two_cartan_verdict_sha256": _sha256(
                 BERGER_REDUCED_CARTAN_PATH
@@ -886,6 +934,7 @@ def build_certificate() -> dict[str, Any]:
             "The complete gauge-fixed 54-row unary complex, cyclic pairing, and contraction are independently imported. That unary artifact does not itself supply q2 or D, while the separate complete local-D import now closes unary, contraction, and cyclic D-equivariance.",
             "The complete 54-row local D action is independently imported and unary/contraction/cyclic equivariance is exact. The later scientific q2 replay now also proves the arity-two D-derivation identity; it does not solve the unary or interacting Cartan equations.",
             "The Berger 54-row q2 arrival adapter fixes and mutation-tests the portable bilinear PBW structure and binds it to the authoritative unary, D, contraction, and pairing hashes. The complete classical tensor is now independently imported, and the specialized exact Q(sqrt(10)) backend replays q1/q2, D/q2, and odd-Darboux cyclicity coefficientwise. Full ell2 transfer and Cartan execution remain absent.",
+            "The bare full-dimensional unary Cartan problem is no longer pending: the exact null-symbol class obstructs every finite-order support-local solution on the bare 26/54-row complex. This does not decide a residual/BFV, derived zero-charge, causal Green, or nonlocal extension.",
             "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
             "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
             "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
@@ -917,7 +966,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: COMPLETE 54-ROW CLASSICAL Q2 IMPORTED AND REPLAYED; TRANSFER AND D-CARTAN PENDING")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: BARE UNARY D-CARTAN OBSTRUCTED; RESIDUAL OR CAUSAL EXTENSION REQUIRED")
     return 0
 
 
