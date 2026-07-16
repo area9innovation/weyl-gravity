@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-companion-pauli-jordan-characteristic-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "kernel_continuity_derivation", "bisolution_derivation", "one_sided_wavefront_exclusion", "elliptic_regularization", "orientation_sector_ledger", "minimal_missing_carrier", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-companion-pauli-jordan-characteristic-preflight-v1"},
+    "result_id": {"const": "BERGER_COMPANION_PAULI_JORDAN_CHARACTERISTIC_PREFLIGHT"},
+    "result_state": {"const": "PAULI_JORDAN_KERNEL_AND_FACTORWISE_NULL_WF_CERTIFIED_ORIENTATION_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_MICROLOCAL_PREFLIGHT"},
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "minLength": 40},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decomposability_preflight", "companion_principal_symbol", "typed_volterra_resolvent"],
+      "properties": {
+        "decomposability_preflight": {"$ref": "#/$defs/dependency"},
+        "companion_principal_symbol": {"$ref": "#/$defs/dependency"},
+        "typed_volterra_resolvent": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "kernel_continuity_derivation": {"$ref": "#/$defs/nonempty_object"},
+    "bisolution_derivation": {"$ref": "#/$defs/nonempty_object"},
+    "one_sided_wavefront_exclusion": {"$ref": "#/$defs/nonempty_object"},
+    "elliptic_regularization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["left", "right", "characteristic_identity", "certified_inclusion", "status"],
+      "properties": {
+        "left": {"type": "string", "minLength": 1},
+        "right": {"type": "string", "minLength": 1},
+        "characteristic_identity": {"const": "Char(C)=Char(Csharp)={q=0}=N_plus union N_minus"},
+        "certified_inclusion": {"const": "WF(E_C) subset (N_plus union N_minus) x (N_plus union N_minus)"},
+        "status": {"const": "FACTORWISE_NULL_WAVEFRONT_BOUND_CERTIFIED"}
+      }
+    },
+    "orientation_sector_ledger": {
+      "const": {
+        "factorwise_characteristic_sectors": ["N+ x N+", "N+ x N-", "N- x N+", "N- x N-"],
+        "fewster_decomposable_sectors": ["N+ x N-", "N- x N+"],
+        "unresolved_same_orientation_sectors": ["N+ x N+", "N- x N-"],
+        "checks": {
+          "factorwise_null_bound_has_four_orientation_sectors": true,
+          "fewster_target_has_two_opposite_orientation_sectors": true,
+          "remaining_same_orientation_sectors_are_exactly_two": true
+        }
+      }
+    },
+    "minimal_missing_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "statement", "equivalent_promotion", "accepted_routes"],
+      "properties": {
+        "result_id": {"const": "BERGER_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION"},
+        "statement": {"type": "string", "minLength": 1},
+        "equivalent_promotion": {"type": "string", "minLength": 1},
+        "accepted_routes": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_COMPANION_PAULI_JORDAN_SCHWARTZ_KERNEL": true,
+        "BERGER_COMPANION_PAULI_JORDAN_BISOLUTION": true,
+        "BERGER_COMPANION_FACTORWISE_NULL_WAVEFRONT_BOUND": true,
+        "BERGER_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION": false,
+        "BERGER_COMPANION_NULL_CONE_DECOMPOSABLE": false,
+        "BERGER_TYPED_COMPANION_HADAMARD_PARAMETRIX": false,
+        "BERGER_TYPED_COMPANION_GLOBAL_HADAMARD": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_HADAMARD_DATA": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decomposability_result_id", "companion_result_id", "volterra_result_id", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "decomposability_result_id": {"const": "BERGER_COMPANION_DECOMPOSABILITY_PREFLIGHT"},
+        "companion_result_id": {"const": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT"},
+        "volterra_result_id": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT"},
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "nonempty_object": {
+      "type": "object",
+      "minProperties": 3,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    }
+  }
+}

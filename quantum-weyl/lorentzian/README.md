@@ -125,6 +125,17 @@ shown to obey the future/past null wavefront decomposition.  The named next
 gate is `BERGER_COMPANION_PAULI_JORDAN_WAVEFRONT_THEOREM`; no Hadamard or
 quantum flag is promoted by this preflight.
 
+The first part of that theorem is now discharged.  The all-Sobolev Volterra
+estimates imply continuous test-to-smooth causal Green maps, hence Schwartz
+kernels.  Their advanced-minus-retarded difference is a two-sided
+bisolution, has no one-sided kernel wavefront components, and elliptic
+regularity confines both nonzero covectors to the metric null cone.  Of the
+four possible future/past products, only the two same-orientation sectors
+remain unexcluded.  The sharpened next gate is therefore
+`BERGER_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION`; proving it is exactly
+what promotes the companion to null-cone decomposable.  Hadamard and quantum
+flags still remain false.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -160,4 +171,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_b
 PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_companion_decomposability_preflight_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_companion_decomposability_preflight
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_companion_decomposability_preflight.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_companion_pauli_jordan_characteristic_preflight_certificate --check
+PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_companion_pauli_jordan_characteristic_preflight
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_companion_pauli_jordan_characteristic_preflight.py -v
 ```

@@ -1,0 +1,113 @@
+{
+  "bisolution_derivation": {
+    "formal_adjoint_input": "(G_C^retarded)^sharp=G_Csharp^advanced",
+    "left_equation": "C E_C=I-I=0",
+    "pauli_jordan_operator": "E_C=G_C^advanced-G_C^retarded",
+    "right_equation": "E_C C=I-I=0, equivalently Csharp_xprime E_C^kernel=0",
+    "status": "TWO_SIDED_BISOLUTION_CERTIFIED"
+  },
+  "claim_boundary": "Certifies continuity and Schwartz kernels for the typed companion Green operators, the two-sided Pauli--Jordan bisolution identities, absence of one-sided kernel wavefront components, and factorwise confinement to the metric null characteristic set. It does not exclude the two same-time-orientation sectors and therefore does not certify Fewster decomposability, a Hadamard parametrix or state, BRST Hadamard data, a QME, or any quantum result.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_FACTORWISE_NULL_WAVEFRONT_BOUND": true,
+    "BERGER_COMPANION_NULL_CONE_DECOMPOSABLE": false,
+    "BERGER_COMPANION_PAULI_JORDAN_BISOLUTION": true,
+    "BERGER_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION": false,
+    "BERGER_COMPANION_PAULI_JORDAN_SCHWARTZ_KERNEL": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_TYPED_COMPANION_GLOBAL_HADAMARD": false,
+    "BERGER_TYPED_COMPANION_HADAMARD_PARAMETRIX": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "dependency_refs": {
+    "companion_principal_symbol": {
+      "result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+      "sha256": "b32360a37bd020e357e95821ace94273b9c25a127b8379e7e436e15c6e521e47"
+    },
+    "decomposability_preflight": {
+      "result_id": "BERGER_COMPANION_DECOMPOSABILITY_PREFLIGHT",
+      "sha256": "97951365f37a3eccaf1d636f5e6259ff2321aa38d9b54305f8320ea7d022de8e"
+    },
+    "typed_volterra_resolvent": {
+      "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT",
+      "sha256": "f943ba218772f003c0c0ed87d699a87418f94dc9f978fb08e1cc0e63519ddbaa"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "elliptic_regularization": {
+    "certified_inclusion": "WF(E_C) subset (N_plus union N_minus) x (N_plus union N_minus)",
+    "characteristic_identity": "Char(C)=Char(Csharp)={q=0}=N_plus union N_minus",
+    "left": "C_x E_C=0 implies every nonzero left kernel covector lies in Char(C)",
+    "right": "Csharp_xprime E_C=0 implies every nonzero right kernel covector lies in Char(Csharp)",
+    "status": "FACTORWISE_NULL_WAVEFRONT_BOUND_CERTIFIED"
+  },
+  "kernel_continuity_derivation": {
+    "conclusion": "G_C^advanced and G_C^retarded are continuous C_c^infinity-to-C^infinity maps and therefore possess Schwartz kernels",
+    "globalization": "support-local slab solutions agree on overlaps and glue uniquely",
+    "input": "advanced and retarded solution operators converge in operator norm on every finite-slab Sobolev level",
+    "source_embedding": "compactly supported smooth sources embed continuously into every Y_s(I)",
+    "status": "CERTIFIED_BY_IMPORTED_ALL_SOBOLEV_ESTIMATES_AND_SCHWARTZ_KERNEL_THEOREM",
+    "target_embedding": "the compatible all-s solution lies in smooth companion sections on each finite slab"
+  },
+  "lifecycle_layer": "LORENTZIAN_MICROLOCAL_PREFLIGHT",
+  "minimal_missing_carrier": {
+    "accepted_routes": [
+      "uniform same-sided Volterra kernel estimates in a fixed H\u00f6rmander topology",
+      "propagation of the causal kernel polarization from its diagonal conormal normalization",
+      "regular GreenHyp transport from the base wave kernel with an explicit wavefront relation"
+    ],
+    "equivalent_promotion": "Together with the certified factorwise null bound, this is exactly Fewster N_plus/minus decomposability.",
+    "result_id": "BERGER_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION",
+    "statement": "Prove WF(E_C) has empty intersection with (N_plus x N_plus) union (N_minus x N_minus)."
+  },
+  "next_gate": "BERGER_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION",
+  "one_sided_wavefront_exclusion": {
+    "conclusion": "WF(E_C) contains no covector pair with exactly one zero cotangent component",
+    "solution_map": "E_C maps compactly supported smooth sources to smooth solutions",
+    "status": "CERTIFIED_BY_KERNEL_MAPPING_CRITERION",
+    "transpose_map": "the formal-transpose causal operator maps compactly supported smooth dual sources to smooth dual solutions"
+  },
+  "orientation_sector_ledger": {
+    "checks": {
+      "factorwise_null_bound_has_four_orientation_sectors": true,
+      "fewster_target_has_two_opposite_orientation_sectors": true,
+      "remaining_same_orientation_sectors_are_exactly_two": true
+    },
+    "factorwise_characteristic_sectors": [
+      "N+ x N+",
+      "N+ x N-",
+      "N- x N+",
+      "N- x N-"
+    ],
+    "fewster_decomposable_sectors": [
+      "N+ x N-",
+      "N- x N+"
+    ],
+    "unresolved_same_orientation_sectors": [
+      "N+ x N+",
+      "N- x N-"
+    ]
+  },
+  "provenance": {
+    "companion_result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+    "decomposability_result_id": "BERGER_COMPANION_DECOMPOSABILITY_PREFLIGHT",
+    "source_manifest": {
+      "../reports/berger-companion-pauli-jordan-characteristic-preflight.md": "3aa019aacb0488f94802df82edfc06c2c6d5bd506ace675c8df8b46fed52653b",
+      "berger_companion_pauli_jordan_characteristic_preflight.py": "7352e84db7d629b53b59c574a21a5417fa041e881f94ba0d9c3ad222b9b6a44d",
+      "berger_companion_pauli_jordan_characteristic_preflight_certificate.py": "288a40a99a3ab548efabbbfaa6b20221b9ef501fbeab3a4a351ef9909d47952b",
+      "schema/berger-companion-pauli-jordan-characteristic-preflight-v1.schema.json": "b07d919f7989ea5ee2b7cdf4549f39413fe2e53f1a1ee014f57e272467e6c2d9",
+      "tests/test_berger_companion_pauli_jordan_characteristic_preflight.py": "be72e5f957a6d2d2ac273766037ef2dba55b3c39b376ac84d01e6b3d0c871959",
+      "verify_berger_companion_pauli_jordan_characteristic_preflight.py": "1ef393e0596c98f82d55832b572ef9977574f0a67dce407f7726fd82e7003879"
+    },
+    "source_manifest_sha256": "06f3ebb2ec8c43be8d44edde3cd9367229ae98c01aa7db384a3c78d2d417f3ce",
+    "volterra_result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT"
+  },
+  "result_id": "BERGER_COMPANION_PAULI_JORDAN_CHARACTERISTIC_PREFLIGHT",
+  "result_state": "PAULI_JORDAN_KERNEL_AND_FACTORWISE_NULL_WF_CERTIFIED_ORIENTATION_OPEN",
+  "schema": "quantum-weyl-berger-companion-pauli-jordan-characteristic-preflight-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}
