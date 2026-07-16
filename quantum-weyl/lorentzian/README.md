@@ -72,6 +72,17 @@ resolvent with global support control. No advanced or retarded operator,
 cyclic companion pairing, or causal adjointness theorem has yet been
 constructed.
 
+The classical retained Volterra package has now landed and is pinned at
+`512545b7`, but the quantum import remains fail-closed. Exact replay confirms
+the companion graph, formal-adjoint bundle and `D=e0` equivariance. The
+analytic source is not accepted because it adds an undeclared dependency tag,
+has no strict source schema or verification receipt, conflates the distinct
+source and solution resolvents, records a malformed adjoint identity, and
+stores the energy/support conclusions as unreferenced booleans. The source-
+and solution-side factorial bounds and graded mapping spaces also require
+precise statements. Consequently the downstream claimed 26- and 54-row
+causal homotopies are not yet quantum inputs.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -91,6 +102,8 @@ PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_equal_connection_factor_scr
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_equal_connection_factor_screen.py -v
 PYTHONPATH=quantum-weyl python3 -m lorentzian.retained_biwave_companion_preflight_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_retained_biwave_companion_preflight.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.retained_biwave_volterra_import_readiness_certificate --check
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_retained_biwave_volterra_import_readiness.py -v
 PYTHONPATH=quantum-weyl python3 -m lorentzian.raw_endpoint_import_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.raw_endpoint_import_certificate --replay-check
 PYTHONPATH=quantum-weyl python3 -m unittest lorentzian.tests.test_raw_endpoint_import -v
