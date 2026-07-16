@@ -508,6 +508,25 @@ bulk source enumeration until the nonzero-momentum axial and polar master
 complexes, covariant symplectic matching, and blockwise extra-adjoint problem
 are closed.
 
+`COMPACT_EM_AXIAL_MASTER_COMPLEX` now closes the nonzero-`S1`-momentum part of
+that gate for the complete standard axial harmonic decomposition.  After
+Regge--Wheeler and Maxwell-angular gauge fixing, the `ell>=2` block has two
+transverse masters with
+
+```text
+omega^2=k_n^2+lambda_ell+/-sqrt(2 lambda_ell).
+```
+
+The arbitrary-`lambda`, arbitrary-`k`, arbitrary-`omega` tensor calculation
+certifies every equation and constraint.  At `ell=1`, the determinant's
+`lambda-2` factor is the residual gauge vector: it is removed by periodic
+gauge for nonzero Fourier modes, while the constant zero-block twist remains
+because its required generator is proportional to `x`.  The master system
+has a local conserved reduced current with `W=diag(lambda,2)`, but covariant
+symplectic normalization is still open.  The next block is the polar/even
+master complex, followed by symplectic matching and the extra fourth-order
+adjoint problem.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally

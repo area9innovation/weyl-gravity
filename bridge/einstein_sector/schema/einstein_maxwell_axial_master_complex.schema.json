@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Compact Einstein-Maxwell axial master complex",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "gauge_fixing_and_reconstruction", "exact_fourier_equations",
+    "master_reduction", "ell_ge_2_theorem", "ell1_quotient",
+    "reduced_pairing", "adjoint_and_source_interface", "classification",
+    "next_gate", "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-axial-master-complex-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "COMPACT_EM_AXIAL_MASTER_COMPLEX"},
+    "result_state": {"const": "ALL_S1_MOMENTA_AXIAL_MASTER_COMPLEX_CERTIFIED_POLAR_AND_EXTRA_ADJOINT_OPEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"const": "G1_AXIAL_ALL_N_ELL_M"},
+    "provenance": {"type": "object"},
+    "domain": {"type": "object"},
+    "gauge_fixing_and_reconstruction": {"type": "object"},
+    "exact_fourier_equations": {"type": "object"},
+    "master_reduction": {"type": "object"},
+    "ell_ge_2_theorem": {"type": "object"},
+    "ell1_quotient": {"type": "object"},
+    "reduced_pairing": {"type": "object"},
+    "adjoint_and_source_interface": {"type": "object"},
+    "classification": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}}
+  }
+}
