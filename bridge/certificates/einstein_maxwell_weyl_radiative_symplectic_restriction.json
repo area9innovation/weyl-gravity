@@ -1,0 +1,243 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE theorem combines the already certified direct-current axial and polar ell>=2 restrictions and proves their common spectral-operator, orthogonality, and real-mode multiplicity structure. It does not cover exceptional ell=1, homogeneous ell=0, axial twist, extra fourth-order Weyl-Maxwell solutions, nonlinear closure, the final SO(4,2) quotient, a positive-frequency Hilbert space, causal scattering, or quantum theory.",
+  "classification": {
+    "common_parity_independent_spectral_polynomial": true,
+    "complete_fourth_order_weyl_maxwell_phase_space_classified": false,
+    "complete_standard_axial_polar_ell_ge2_restriction": true,
+    "cross_branch_orthogonality_certified": true,
+    "cross_parity_orthogonality_certified": true,
+    "final_residual_quotient_computed": false,
+    "homogeneous_and_twist_restriction_computed": false,
+    "identity_inclusion_symplectic": false,
+    "lorentzian_causal_or_scattering_theorem": false,
+    "nonlinear_solution_embedding_certified": false,
+    "one_particle_norm_certified": false,
+    "ordinary_radiative_modes_removed_by_target_weyl_gauge": false,
+    "physical_ell1_restriction_computed": false,
+    "positive_frequency_complex_structure_constructed": false,
+    "quantum_ghost_or_unitarity_theorem": false,
+    "relative_branch_coefficient_form_indefinite": true,
+    "restricted_target_form_nondegenerate": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "the direct sum of all standard axial and polar Einstein-Maxwell radiative harmonics on R_t x S1_L x S2 with lambda=ell(ell+1), ell>=2, all real harmonic multiplicities, every periodic S1 momentum, and both master branches, before the final residual SO(4,2) quotient",
+  "generality_level": "G3_STANDARD_RADIATIVE_ALL_ELL_GE2_SYMBOLIC_K",
+  "interpretation": "Every standard ell>=2 Einstein-Maxwell radiative direction survives as a nonnull direction of the Weyl-Maxwell restriction before the final residual quotient. On the full axial-plus-polar radiative solution space the pullback is Omega_EM composed with the single spectral polynomial p_lambda(M)=1+(3/2)(M-lambda). Each real spatial harmonic has two relative-positive and two relative-negative branch blocks. Thus the identity tangent inclusion is injective and target-nondegenerate but is not symplectic. This is a classical relative coefficient statement, not a one-particle negative-norm, ghost, unitarity, causal, or scattering theorem.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the physical ell=1 Weyl-Maxwell restriction using the certified quotient representatives, then the homogeneous ell=0 and axial-twist generalized global restrictions by direct Lee-Wald currents",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_radiative_symplectic_restriction.py",
+    "generator_sha256": "56568d45eb16e10a6d24f867e6d28a60af95c62312b370dc71dfe67eccb4893d",
+    "inputs": {
+      "axial_restriction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_all_ell_symplectic_restriction.json",
+        "sha256": "b0854ac65f2a9c525492eef33fd543611ea78c24623769c7e02eeeee8b0eb22a"
+      },
+      "einstein_radiative_form": {
+        "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+        "sha256": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
+      },
+      "polar_restriction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_all_ell_symplectic_restriction.json",
+        "sha256": "828089c487a834b7c2718a00177ff68633e930d178e898563531b70d5917cb02"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_RADIATIVE_SYMPLECTIC_RESTRICTION",
+  "result_state": "STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_RELATIVE_OPERATOR_NONDEGENERATE_INDEFINITE",
+  "schema": "einstein-maxwell-weyl-radiative-symplectic-restriction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_radiative_symplectic_restriction.schema.json",
+  "schema_sha256": "23d8d9d7cf06b29761ee7de0275d9bc88edbb6564b047515c92b720cfbe35032",
+  "theorem": {
+    "all_ell_ge_2_classification": {
+      "branch_coefficient_rank_per_real_spatial_harmonic": 4,
+      "branch_coefficient_relative_signature_per_real_spatial_harmonic": {
+        "negative": 2,
+        "positive": 2,
+        "zero": 0
+      },
+      "common_relative_weights": [
+        "3*sqrt(2)*sqrt(lambda)/2 + 1",
+        "-3*sqrt(2)*sqrt(lambda)/2 + 1"
+      ],
+      "identity_inclusion_preserves_Einstein_symplectic_form": false,
+      "lambda_range": "lambda=ell*(ell+1)>=6",
+      "minus_weight_sign": "negative",
+      "plus_weight_sign": "positive",
+      "restricted_target_form_nondegenerate": true
+    },
+    "common_spectral_polynomial": "p_lambda(x)=1+(3/2)*(x-lambda)",
+    "direct_sum_master_operator": "M_rad=M_axial direct_sum M_polar",
+    "direct_sum_relative_operator": "R_rad=p_lambda(M_rad)=p_lambda(M_axial) direct_sum p_lambda(M_polar)",
+    "mode_counting_convention": {
+      "complex_basis": "a coefficient labelled (n,ell,m) is paired with the reality-conjugate coefficient (-n,ell,-m); it is not counted as an independent real oscillator",
+      "darboux_blocks_per_q": "4*q: two relative-positive and two relative-negative",
+      "oscillators_per_real_spatial_harmonic": 4,
+      "real_basis": "use 2ell+1 real spherical harmonics and one constant S1 harmonic for n=0 or the cosine/sine pair for each n>0",
+      "real_phase_space_dimension_per_q": "8*q",
+      "real_spatial_multiplicity_q_n_ell": "q=(2*ell+1) for n=0 and q=2*(2*ell+1) for n>0",
+      "relative_operator_eigenspace_dimensions_on_real_Cauchy_data": "positive=4*q, negative=4*q, zero=0"
+    },
+    "orthogonality_proof": {
+      "axial_vs_polar": "spatial parity acts by (-1)^(ell+1) on axial and (-1)^ell on polar representatives; invariance of both Lee-Wald forms therefore makes their cross-pairing equal to its negative",
+      "different_ell_or_m": "SO(3) invariance and harmonic orthogonality (equivalently Schur orthogonality) kill inequivalent harmonic labels; complex m pairs with -m under the reality convention",
+      "different_periodic_momentum": "S1 Fourier orthogonality pairs n with -n and kills nonconjugate momenta",
+      "frequency_noncollision": "omega_plus^2-omega_minus^2=2*sqrt(2*lambda)>0 for ell>=2",
+      "plus_vs_minus_same_parity": "at fixed (n,ell,m), conservation and time-translation covariance kill pairings with unequal frequency phase; algebraically M is E-self-adjoint, so its distinct eigenspaces are E-orthogonal and remain orthogonal for E*p_lambda(M)"
+    },
+    "parity_blocks": {
+      "axial": {
+        "branches": [
+          {
+            "branch": "plus",
+            "ell_ge_2_sign": "POSITIVE",
+            "master_eigenvalue_mu": "sqrt(2)*sqrt(lambda) + lambda",
+            "relative_eigenvalue": "3*sqrt(2)*sqrt(lambda)/2 + 1"
+          },
+          {
+            "branch": "minus",
+            "ell_ge_2_sign": "NEGATIVE",
+            "master_eigenvalue_mu": "-sqrt(2)*sqrt(lambda) + lambda",
+            "relative_eigenvalue": "-3*sqrt(2)*sqrt(lambda)/2 + 1"
+          }
+        ],
+        "cross_branch_E_pairing": "0",
+        "cross_branch_target_pairing": "0",
+        "einstein_coefficient_form": [
+          [
+            "lambda",
+            "0"
+          ],
+          [
+            "0",
+            "2"
+          ]
+        ],
+        "master_operator": [
+          [
+            "lambda",
+            "2"
+          ],
+          [
+            "lambda",
+            "lambda"
+          ]
+        ],
+        "relative_operator_p_of_M": [
+          [
+            "1",
+            "3"
+          ],
+          [
+            "3*lambda/2",
+            "1"
+          ]
+        ],
+        "self_adjointness_remainder": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "spectral_target_form_E_times_p_of_M": [
+          [
+            "lambda",
+            "3*lambda"
+          ],
+          [
+            "3*lambda",
+            "2"
+          ]
+        ]
+      },
+      "polar": {
+        "branches": [
+          {
+            "branch": "plus",
+            "ell_ge_2_sign": "POSITIVE",
+            "master_eigenvalue_mu": "sqrt(2)*sqrt(lambda) + lambda",
+            "relative_eigenvalue": "3*sqrt(2)*sqrt(lambda)/2 + 1"
+          },
+          {
+            "branch": "minus",
+            "ell_ge_2_sign": "NEGATIVE",
+            "master_eigenvalue_mu": "-sqrt(2)*sqrt(lambda) + lambda",
+            "relative_eigenvalue": "-3*sqrt(2)*sqrt(lambda)/2 + 1"
+          }
+        ],
+        "cross_branch_E_pairing": "0",
+        "cross_branch_target_pairing": "0",
+        "einstein_coefficient_form": [
+          [
+            "1",
+            "-2"
+          ],
+          [
+            "-2",
+            "2*lambda"
+          ]
+        ],
+        "master_operator": [
+          [
+            "lambda",
+            "-2*lambda"
+          ],
+          [
+            "-1",
+            "lambda"
+          ]
+        ],
+        "relative_operator_p_of_M": [
+          [
+            "1",
+            "-3*lambda"
+          ],
+          [
+            "-3/2",
+            "1"
+          ]
+        ],
+        "self_adjointness_remainder": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "spectral_target_form_E_times_p_of_M": [
+          [
+            "4",
+            "-3*lambda - 2"
+          ],
+          [
+            "-3*lambda - 2",
+            "8*lambda"
+          ]
+        ]
+      }
+    },
+    "quantum_norm_boundary": {
+      "classical_relative_symmetric_coefficient_signature_only": true,
+      "ghost_or_unitarity_theorem": false,
+      "one_particle_norm_certified": false,
+      "positive_frequency_complex_structure_constructed": false,
+      "warning": "the negative relative branch coefficient is not, by itself, a certified negative-norm particle or quantum ghost"
+    },
+    "solution_space_identity": "Omega_WM|Sol_rad(u,v)=Omega_EM(u,p_lambda(M_rad)v)"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_radiative_symplectic_restriction --verify bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_radiative_symplectic_restriction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_radiative_symplectic_restriction"
+  ]
+}
