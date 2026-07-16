@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Einstein-Maxwell compact harmonic and adjoint block preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "axial_n0_tower", "block_ledger", "universal_adjoint_targets",
+    "selection_and_projection_interface", "decision_protocol", "classification",
+    "next_gate", "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-harmonic-adjoint-blocks-v1"},
+    "schema_path": {"type": "string"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "COMPACT_EM_HARMONIC_AND_ADJOINT_BLOCK_PREFLIGHT"},
+    "result_state": {"const": "AXIAL_N0_TOWER_AND_UNIVERSAL_ADJOINT_TARGETS_CERTIFIED_OTHER_BLOCKS_OPEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"const": "G1_BLOCK_PREFLIGHT_AXIAL_N0_TOWER"},
+    "provenance": {"type": "object"},
+    "domain": {"type": "object"},
+    "axial_n0_tower": {"type": "object"},
+    "block_ledger": {"type": "array"},
+    "universal_adjoint_targets": {"type": "object"},
+    "selection_and_projection_interface": {"type": "object"},
+    "decision_protocol": {"type": "object"},
+    "classification": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}}
+  }
+}

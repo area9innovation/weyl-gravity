@@ -1,0 +1,206 @@
+{
+  "axial_n0_tower": {
+    "SO3_completion": "the m=0 tensor checks extend to every m by SO(3) equivariance of the background and operator",
+    "all_ell_identity_proof": {
+      "Einstein_angular_remainder_reduces_to": "0",
+      "Maxwell_angular_remainder_reduces_to": "0",
+      "differentiated_identity": "Y'''+cot(theta)Y''+(lambda-csc(theta)^2)Y'=0",
+      "input_identity": "Y''+cot(theta)Y'+lambda*Y=0",
+      "scope": "arbitrary scalar harmonic eigenvalue lambda; SO(3) equivariance supplies all m"
+    },
+    "imported_regressions": {
+      "ell_1": "K_1=[[2,2],[2,2]], plus omega^2=4, minus omega^2=0",
+      "ell_2": "K_2=[[6,2],[6,6]], omega^2=6+/-2*sqrt(3)"
+    },
+    "new_direct_tensor_regressions": [
+      {
+        "all_other_linear_rows_zero": true,
+        "einstein_nonzero_row": "E_(x,axial)=X_(ell,m)*(H''+lambda*H+2*q)/2",
+        "ell": 3,
+        "lambda": 12,
+        "maxwell_nonzero_row": "M_x=-Y_(ell,m)*(q''+lambda*q+lambda*H)"
+      },
+      {
+        "all_other_linear_rows_zero": true,
+        "einstein_nonzero_row": "E_(x,axial)=X_(ell,m)*(H''+lambda*H+2*q)/2",
+        "ell": 4,
+        "lambda": 20,
+        "maxwell_nonzero_row": "M_x=-Y_(ell,m)*(q''+lambda*q+lambda*H)"
+      }
+    ],
+    "physical_branch_classification": {
+      "ell_1_minus": {
+        "S1_monodromy": {
+          "Delta_lambda": "-H_0*L*cos(theta)",
+          "Delta_xi_phi": "H_0*L"
+        },
+        "branch": "ell=1 minus, omega^2=0, q/H=-1",
+        "global_classification": "LOCALLY_GAUGE_BUT_NOT_GENERATED_BY_A_SMOOTH_PERIODIC_INFINITESIMAL_GAUGE_PARAMETER_FOR_H_0_NONZERO",
+        "interpretation": "a global zero-mode/twist tangent in the fixed product-periodicity domain; its nonlinear integrability and possible discrete large-gauge identification remain open",
+        "local_field_check": "L_xi g gives h_(x,phi)=H_0*sin(theta)^2 and i_xi F+d lambda=-H_0*cos(theta) dx",
+        "local_generator": "xi^phi=H_0*x, lambda=-H_0*x*cos(theta)"
+      },
+      "ell_1_plus": "the certified omega^2=4 photon-metric branch",
+      "ell_ge_2": "both branches have positive omega^2 and nonzero reduced Wronskian norm"
+    },
+    "reduced_equations": [
+      "H''+lambda_ell*H+2*q=0",
+      "q''+lambda_ell*q+lambda_ell*H=0"
+    ],
+    "representative": "h_(x,a)=H(t) X_a^(ell,m), a_x=q(t)Y_(ell,m), ell>=1",
+    "spectral_data": {
+      "branch_wronskian_norm": "2*lambda",
+      "branches": {
+        "minus": {
+          "omega_squared": "lambda-sqrt(2*lambda)",
+          "q_over_H": "-sqrt(lambda/2)"
+        },
+        "plus": {
+          "omega_squared": "lambda+sqrt(2*lambda)",
+          "q_over_H": "sqrt(lambda/2)"
+        }
+      },
+      "characteristic_polynomial": "lambda**2 - 2*lambda*mu - 2*lambda + mu**2",
+      "conserved_wronskian": "Omega_red(u,v)=u^T W v'-u'^T W v",
+      "coupling_matrix": [
+        [
+          "lambda",
+          "2"
+        ],
+        [
+          "lambda",
+          "lambda"
+        ]
+      ],
+      "covariant_symplectic_normalization_matched": false,
+      "lambda_ell": "ell*(ell+1)",
+      "reduced_action_symmetrizer": [
+        [
+          "lambda",
+          "0"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ]
+    },
+    "status": "EXACT_ALL_ELL_M_TOWER_WITHIN_THE_DECLARED_HX_AX_REPRESENTATIVE"
+  },
+  "block_ledger": [
+    {
+      "block": "n=0 axial H_x/a_x tower, ell>=1, all m",
+      "missing": "proof that this representative exhausts the full axial gauge quotient, covariant symplectic normalization, and quadratic coefficients",
+      "status": "CERTIFIED_TOWER"
+    },
+    {
+      "block": "n!=0 axial",
+      "missing": "base-vector constraints, gauge-invariant master reconstruction, exact dispersion",
+      "status": "OPEN"
+    },
+    {
+      "block": "polar/even metric-Maxwell, all n",
+      "missing": "gauge-invariant masters, constraints, reconstruction, exact dispersion",
+      "status": "OPEN"
+    },
+    {
+      "block": "ell=0 homogeneous scalar/radion/duality",
+      "missing": "complete zero-mode and Jordan-chain classification",
+      "status": "FIXTURES_ONLY"
+    },
+    {
+      "block": "ell=1 exceptional polar and global modes",
+      "missing": "complete periodic gauge and global-modulus classification",
+      "status": "OPEN_EXCEPT_AXIAL_ZERO_MODE"
+    }
+  ],
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE preflight certifies an exact all-(ell,m) n=0 axial H_x/a_x tower, its branches and reduced Wronskian, the global status of the ell=1 zero branch, and the universal compact stabilizer projectors. It does not prove that this representative exhausts the axial gauge quotient, or certify nonzero S1 momentum, polar blocks, covariant symplectic normalization, the complete fourth-order adjoint cokernel, quadratic coefficients, causal evolution, scattering, or quantum theory.",
+  "classification": {
+    "complete_all_parity_momentum_blocks": false,
+    "complete_axial_n0_gauge_quotient": false,
+    "complete_full_adjoint_cokernel": false,
+    "covariant_symplectic_normalization": false,
+    "declared_axial_n0_tower_all_ell_m": true,
+    "ell1_zero_branch_global_scope_classified": true,
+    "full_harmonic_obstruction_theorem": false,
+    "lorentzian_causal_theorem": false,
+    "reduced_conserved_wronskian": true,
+    "universal_background_stabilizer_targets": true
+  },
+  "decision_protocol": {
+    "extension_certificate": "requires a complete adjoint target for the block and an explicit Phi^(2), not merely vanishing pairings",
+    "nonzero_any_adjoint_pairing": "NO_SECOND_ORDER_CORRECTION_IN_THE_DECLARED_FIXED_BUNDLE_BLOCK",
+    "zero_all_certified_pairings_without_cokernel_completeness": "INCONCLUSIVE",
+    "zero_constant_lapse_only": "INCONCLUSIVE"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": {
+    "gauge_group": "smooth periodic identity-component Diff x U(1) on the Einstein-Maxwell domain",
+    "harmonic_labels": "n in Z, ell>=0, -ell<=m<=ell, parity, polarization, normal branch, frequency sign",
+    "residual_stage": "before the final residual quotient",
+    "spacetime": "R_t x S1_L x S2 on fixed compact U(1) bundle P_N, N=2"
+  },
+  "generality_level": "G1_BLOCK_PREFLIGHT_AXIAL_N0_TOWER",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "derive the n!=0 axial and all polar gauge-invariant master complexes, match their reduced Wronskians to the covariant symplectic form, and solve for any extra fourth-order adjoint classes before quadratic source enumeration",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_harmonic_adjoint_blocks.py",
+    "generator_sha256": "5f7d1ed4fbe36665c5309bdbe3fc8e68c09ad16b2e6a5d645bef69218217d28c",
+    "inputs": {
+      "bridge/certificates/compact_harmonic_domain_taub_descent.json": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09",
+      "bridge/certificates/einstein_maxwell_periodic_graviton_second_order.json": "9376a4d4d2d1a0b9e77ee78ece90cd74e82b574b02a84030ed93e1f5946caef4",
+      "bridge/certificates/einstein_maxwell_periodic_photon_second_order.json": "3f3ac8f10c9fadc36180f98c48404e4e733fc420f97bb529c5b1316f550def93"
+    }
+  },
+  "result_id": "COMPACT_EM_HARMONIC_AND_ADJOINT_BLOCK_PREFLIGHT",
+  "result_state": "AXIAL_N0_TOWER_AND_UNIVERSAL_ADJOINT_TARGETS_CERTIFIED_OTHER_BLOCKS_OPEN",
+  "schema": "einstein-maxwell-harmonic-adjoint-blocks-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_harmonic_adjoint_blocks.schema.json",
+  "schema_sha256": "1934061370fedf04f12c34a2931f1ac768df1e8825560f9b2a771ac3bd0afb66",
+  "selection_and_projection_interface": {
+    "required_block_output": [
+      "gauge-invariant master variables and reconstruction map",
+      "exact linear operator and branch eigenvectors",
+      "reduced Wronskian plus covariant-symplectic matching status",
+      "all universal and extra adjoint projectors",
+      "quadratic source pairing with each projector",
+      "explicit second-order correction whenever every pairing vanishes"
+    ],
+    "rotation_targets_J": "n1+n2=0 and the Clebsch-Gordan product must contain L=1 with m1+m2=M; unlike the scalar target this can mix adjacent ell sectors subject to parity",
+    "scalar_targets_H_Px_QE": "n1+n2=0, ell1=ell2, m1+m2=0, opposite frequency signs for a conserved pairing"
+  },
+  "universal_adjoint_targets": {
+    "complete_full_weyl_maxwell_adjoint_cokernel": false,
+    "conformal_stabilizer_argument": [
+      "the nonzero product Weyl tensor has distinct factor-plane eigendistributions, so a connected conformal stabilizer preserves the product splitting",
+      "the common conformal factor on the two factors is constant; integrating the S2 divergence forces it to zero",
+      "periodicity removes the flat-cylinder boost, leaving partial_t, partial_x, and the three SO(3) rotations",
+      "there is no nonzero Weyl compensator in a background stabilizer"
+    ],
+    "constant_u1_reducibility": "its integrated Gauss identity on closed Sigma is a boundary-zero identity, not an additional independent Taub charge",
+    "magnetic_target": "excluded from the tangent/correction space because c_1(P_N) is fixed",
+    "maxwell_harmonic_target": "the electric harmonic-flux row dual to the H^1(S1) generator dx; it is separate from the constant U(1) Noether identity",
+    "metric_KID_basis": [
+      "H=partial_t",
+      "P_x=partial_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ],
+    "metric_KID_dimension": 5,
+    "open_extra_targets": "fourth-order constraint-adjoint classes not generated by background stabilizers must still be solved blockwise",
+    "source_projectors": {
+      "H": "integral_Sigma n^a S_ab (partial_t)^b",
+      "J_i": "integral_Sigma n^a S_ab (J_i)^b with the patchwise Maxwell compensation",
+      "P_x": "integral_Sigma n^a S_ab (partial_x)^b"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_harmonic_adjoint_blocks --verify bridge/certificates/einstein_maxwell_harmonic_adjoint_blocks.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_harmonic_adjoint_blocks.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_harmonic_adjoint_blocks"
+  ]
+}

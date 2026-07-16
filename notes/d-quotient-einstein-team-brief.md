@@ -481,6 +481,33 @@ fixture bilinear is now a well-defined relative Taub form on its declared
 subspace of `H^0_lin` before residual quotient.  This still does not compute
 the full harmonic coefficient table or full adjoint cokernel.
 
+The next block preflight is now certified by
+`COMPACT_EM_HARMONIC_AND_ADJOINT_BLOCK_PREFLIGHT`.  For the declared
+homogeneous axial representative
+
+```text
+h_(x,a)=H(t)X_a^(ell,m),  a_x=q(t)Y_(ell,m),
+```
+
+the exact all-`(ell,m)` tower has
+
+```text
+K_ell=[[lambda_ell,2],[lambda_ell,lambda_ell]],
+omega_+^2=lambda_ell+sqrt(2 lambda_ell),
+omega_-^2=lambda_ell-sqrt(2 lambda_ell).
+```
+
+New full-tensor `ell=3,4` checks and an arbitrary-eigenvalue harmonic-identity
+reduction certify the formula.  The `ell=1` minus branch is locally gauge but
+its generator is nonperiodic around `S1`, so it is a retained global twist
+tangent rather than a removable periodic gauge direction.  The universal
+compact stabilizer projectors are time translation, `S1` translation, and
+three rotations, with the electric harmonic-flux row tracked separately.
+Possible additional fourth-order adjoint classes remain open.  Do not begin
+bulk source enumeration until the nonzero-momentum axial and polar master
+complexes, covariant symplectic matching, and blockwise extra-adjoint problem
+are closed.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally
