@@ -1,0 +1,102 @@
+{
+  "accepted_export_schema": "quantum-weyl-berger-curved-witness-export-v1",
+  "available_exact_input": {
+    "coordinate_transport_identity": "T_raw o raw_from_dressed = A_dressed",
+    "curved_companion_5x10": "IMPORTED",
+    "minimal_34_unary_complex": "RECONSTRUCTED_AND_NILPOTENT",
+    "operator_hashes": {
+      "curved_companion_sha256": "78f449c1819f69afd3f5c793f55dd41a79194c1790fc85e9f1621e0f6fe2cb70",
+      "q34_sha256": "07cab32210f287bf3e17da490ac051753e03b66921388e57a0795b31410f320b",
+      "raw_metric_from_dressed_sha256": "2639c2c0f524262388637d0928bc5d29ced59faba3435139813cdd3b674395a0",
+      "row_layout_sha256": "70cf0c94221614b4f45a0f453985281ef70184ce2ec779ea5de2b3fe9b084b50",
+      "transported_gauge_condition_sha256": "93b0d994f259932b56137cfcb6f9359d56c9aa18073191ca0d2d29d231172a2d"
+    },
+    "raw_to_dressed_map_10x12": "IMPORTED",
+    "transported_gauge_condition_5x12": "IMPORTED"
+  },
+  "claim_boundary": "The exact companion transport and 34-row unary consumer are ready. The authoritative source has not exported W34, its target P34, or a portable pairing34 record, so no physical curved-witness verdict or causal Green claim is made.",
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-curved-witness-adapter.md": "e05bd2c2b8d65fdbe53cdc4d8e5f9174c5db0462dbfcfbefa2a88d1c107e73fb",
+      "curved_witness_adapter.py": "778c37ded774edff7492ff2113ef68f4033327193aba8bcd37666f223eb7bfa5",
+      "curved_witness_adapter_certificate.py": "925b32ec4dfef3ea3db5c9aee9d2e8670dab7c36938d47d3fea2ab4ca1b9b12a",
+      "schema/berger-curved-witness-adapter-v1.schema.json": "15f68e460253ef27bc1ddceb1302b26d9df2e7587cb669b0b4e2dd64efed774b",
+      "schema/berger-curved-witness-export-v1.schema.json": "1c8cabe50fd4ae38967288dfbad1047fdb272315c24bea51d2ca2d5ab55a8572",
+      "tests/test_curved_witness_adapter.py": "6b984eb802ada3782e767fad82881250b9475f36c2dd7fbf5598af401f31d402"
+    },
+    "source_manifest_sha256": "39e61806dd2cdf0a743be6588d579f9c97c08bdf9ef4d3f5b6ec2aef535a963f"
+  },
+  "curved_witness_certified": false,
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "green_execution_authorized": false,
+  "missing_object_ledger": {
+    "P34": "NOT_EXPORTED",
+    "W34": "NOT_EXPORTED",
+    "pairing34": "NOT_EXPORTED_AS_PORTABLE_OPERATOR_RECORD"
+  },
+  "next_gate": "IMPORT_AUTHORITATIVE_W34_P34_PAIRING34",
+  "provenance": {
+    "artifacts": [
+      {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json",
+        "sha256": "f69d8664fb139860fb3bcb89bdf82ee1659e158f6f925535b17e2de364060db4"
+      },
+      {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+        "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+      },
+      {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/certificates/BERGER_NONMINIMAL_ALGEBRAIC_COMPLETION.json",
+        "sha256": "9be6ebfafb81f29f5d0974bbe57c4c1124e25a940f86c71244cd71fbfaa31c3c"
+      },
+      {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+        "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+      },
+      {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/schema/berger-minimal-34-portable-contraction-v1.schema.json",
+        "sha256": "423e82b5e5a08d07295be94ed4340af1f39800571fbc38d79925e63d9275f5aa"
+      },
+      {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/schema/berger-nonminimal-algebraic-completion-v1.schema.json",
+        "sha256": "b50e2c978c89a37dfa81c3f3f1236169fa12a7510db4d5561699c238703d52fc"
+      },
+      {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/schema/berger-gauge-fixed-nonminimal-completion-v1.schema.json",
+        "sha256": "635bb82caf7d98df152d24612dbd216196a74f20bb82657f9551f681843873e4"
+      },
+      {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/backreacted_clock/berger_minimal_34_portable_contraction.py",
+        "sha256": "5df5a41c293caa5d18db660d58dbda3d9c204f9e630437926e82a634fc2fc84c"
+      },
+      {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/backreacted_clock/berger_nonminimal_algebraic_completion.py",
+        "sha256": "b6d09ea348d6a34d32a8a498bd050a5b5b244a54ffb8b699f0e628c9cccedada"
+      },
+      {
+        "commit": "445e26663d06764bc858ff0a004ba6178acce75f",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_nonminimal_algebraic_completion.py",
+        "sha256": "3c4ac5516467f30f88537717e818fbfbe1373a8025be5a9525780212bb6af932"
+      }
+    ],
+    "classical_commit": "445e26663d06764bc858ff0a004ba6178acce75f"
+  },
+  "result_id": "BERGER_CURVED_CLOCK_REATTACHED_WITNESS_ADAPTER",
+  "result_state": "CONSUMER_READY_AUTHORITATIVE_W34_INPUT_BLOCKED",
+  "schema": "quantum-weyl-berger-curved-witness-adapter-v1",
+  "scientific_fixture_policy": "MECHANICS_FIXTURES_DO_NOT_SUBSTITUTE_FOR_PHYSICAL_EXPORT",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "verdict": "INPUT_BLOCKED"
+}

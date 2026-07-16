@@ -24,6 +24,13 @@ lower-order `QW+WQ` witness there and transport Green operators back through
 the support-local clock SDR. Direct retained routes remain allowed, but only
 with characteristic-rank stratification.
 
+The curved-witness adapter additionally verifies the already-exported
+coefficientwise companion transport from raw to dressed metric coordinates.
+It can decide an authoritative `W34`/`P34` export exactly and return a
+normalized PBW coefficient obstruction. The scientific verdict remains
+`INPUT_BLOCKED` because `W34`, `P34`, and a portable `pairing34` have not yet
+been exported.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -33,6 +40,8 @@ PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_endpoint_factor_import_cert
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_endpoint_factor_import.py -v
 PYTHONPATH=quantum-weyl python3 -m lorentzian.clock_reattached_principal_import_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_clock_reattached_principal_import.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.curved_witness_adapter_certificate --check
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_curved_witness_adapter.py -v
 PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_mixed_order_green_contract_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_mixed_order_green_contract.py -v
 ```
