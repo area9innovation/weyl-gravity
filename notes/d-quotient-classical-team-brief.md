@@ -263,17 +263,19 @@ before its actual theorem or obstruction can be promoted. This is a separate
 work package from any homogeneous clock certificate. Its required contents
 and current disposition are:
 
-1. the complete support-local \(q_1\) (**complete**) and \(q_2\) (**open**);
+1. the complete support-local \(q_1\) (**complete**) and \(q_2\) (**complete on the rational Berger fixture**);
 2. the local \(D\)-action on the same declared complex (**complete on all 54 rows**);
 3. the contraction data
    \((\pi_{\rm cl},\iota_{\rm cl},s_{\rm cl})\) (**complete on all 54 rows**);
-4. the cyclic pairing, with conventions and formal adjoints pinned (**complete at unary order**);
+4. the cyclic pairing, with conventions and formal adjoints pinned (**complete through arity two**);
 5. a typed row layout, support/order metadata, hashes, and fail-closed guards.
 
-The handoff gate is named `CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT`. Reduced
-harmonic matrices, endpoint projections, or the homogeneous clock sector do
-not satisfy it. They may be imported only as regressions after the complete
-local export exists.
+The handoff gate `CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT` is now passed by
+`BERGER_SUPPORT_LOCAL_Q2`. This is not a reduced harmonic matrix: it is the
+arbitrary-input four-dimensional local operation on the complete 54-row
+gauge-fixed complex at the exact rational Berger background. Its separate PBW
+payload contains 150305 terms over \(\mathbb Q(\sqrt{10})\), on 39 nonzero
+output rows, through maximum total jet order six.
 
 For cross-team use, the unary operator must be exported under the semantic
 name `classical_unary_q1` (equivalently \(\ell^{\rm cl}_1\)). The existing
@@ -296,12 +298,17 @@ unfixed direct sum. They give an exact pointwise cyclic 54-to-26 contraction,
 and the exact curved five-direction companion is derived coefficientwise from
 one source. The gauge-fermion canonical transform is now applied
 coefficientwise: the full 54-row gauge-fixed `classical_unary_q1`, cyclic
-pairing, and transformed contraction are portable and exact. The decisive
-nonlinear gate is now only the complete support-local four-dimensional
-\(\ell^{\rm cl}_2\), including its antifield/Koszul--Tate rows. Once it
-lands, the already-certified local \(D\)-action can be used for the all-row
-arity-two derivation and Cartan tests. The retained causal Green theorem and
-Hadamard data remain independent analytic gates.
+pairing, and transformed contraction are portable and exact. The complete
+support-local four-dimensional \(\ell^{\rm cl}_2\), including its
+antifield/Koszul--Tate and ghost-antifield rows, is now exact. The raw 34-row
+presentation satisfies the coefficientwise arity-two \(L_\infty\) identity;
+the clock dressing and gauge-fermion shear transport it canonically to all 54
+rows. The canonical Euler densities include both the \(\sqrt{-g}\) factor and
+nonlinear index raising; omitting those terms gives the right Hessian but
+fails the antifield identity. The final payload also passes an independent
+frozen-coefficient and Draft-2020-12 schema audit. The next nonlinear gate is
+the full four-dimensional arity-two \(D\)-Cartan contraction. The retained
+causal Green theorem and Hadamard data remain independent analytic gates.
 
 ### Reduced-mode arity-two fixture
 
@@ -318,9 +325,9 @@ cyclicity. Every row has homogeneous \(D\)-weight zero, so the exported local
 The certificate proves \([q_1,D]=0\), the arity-two \(q^2\) identity,
 cyclicity, and closure exactly. It is immediately ingestible by ND2, but its
 scope is only `REDUCED-MODE`. It neither satisfies
-`CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT` nor tests a nonzero-weight
-\(D\)-obstruction. The full 54-row support-local nonlinear export therefore
-remains an independent gate.
+the full four-dimensional nonlinear theorem nor tests a nonzero-weight
+\(D\)-obstruction. It remains a regression fixture downstream of the new
+54-row support-local export.
 
 The first nonzero-weight extension has now been decided as a scoped no-go.
 For the rational Berger cubic tensor the square map
@@ -346,9 +353,10 @@ complex is the next gate.
 The all-row unary ingredients needed by that extension are already frozen in
 `BERGER_54_ROW_LOCAL_D_ACTION`: the invariant time derivative acts locally on
 all 54 rows, commutes coefficientwise with `classical_unary_q1`, intertwines
-the contraction, and preserves the cyclic pairing. Thus the missing nonlinear
-datum is precisely the full support-local \(q_2\), not another unary
-\(D\)-construction. Independently,
+the contraction, and preserves the cyclic pairing. Together with the new
+support-local \(q_2\), this proves the arity-two \(D\)-derivation identity
+termwise because \([e_0,e_i]=0\). What remains is the nonlinear Cartan
+homotopy itself, not another unary \(D\)-construction. Independently,
 `BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION` reduces the complete causal theorem
 exactly to the retained 26-row mixed-order metric endpoint.
 

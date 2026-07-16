@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-support-local-q2-payload-v1.json",
+  "title": "Sparse exact PBW payload for the 54-row Berger q2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "coefficient_field", "pbw_basis", "shape",
+    "factorial_convention", "rows"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-support-local-q2-payload-v1"},
+    "coefficient_field": {"const": "Q(sqrt(10))"},
+    "pbw_basis": {"type": "string", "minLength": 1},
+    "shape": {"const": [54, 54, 54]},
+    "factorial_convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "rows": {
+      "type": "array", "minItems": 54, "maxItems": 54,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["output", "terms"],
+        "properties": {
+          "output": {"type": "integer", "minimum": 0, "maximum": 53},
+          "terms": {"type": "array", "items": {"$ref": "#/$defs/term"}}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "exactRational": {
+      "oneOf": [
+        {"type": "integer"},
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["numerator", "denominator"],
+          "properties": {
+            "numerator": {"type": "integer"},
+            "denominator": {"type": "integer", "not": {"const": 0}}
+          }
+        }
+      ]
+    },
+    "quadraticNumber": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rational", "sqrt10"],
+      "properties": {
+        "rational": {"$ref": "#/$defs/exactRational"},
+        "sqrt10": {"$ref": "#/$defs/exactRational"}
+      }
+    },
+    "multiindex": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {"type": "integer", "minimum": 0}
+    },
+    "term": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "prefixItems": [
+        {"type": "integer", "minimum": 0, "maximum": 53},
+        {"$ref": "#/$defs/multiindex"},
+        {"type": "integer", "minimum": 0, "maximum": 53},
+        {"$ref": "#/$defs/multiindex"},
+        {"$ref": "#/$defs/quadraticNumber"}
+      ]
+    }
+  }
+}

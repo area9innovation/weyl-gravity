@@ -196,7 +196,7 @@ generators are not a Lie subalgebra. The exact obstruction is
 | Vacuum cylinder | `SECTOR_DEPENDENT` on the declared sectors | certified baseline | certified baseline | zero only in selected absolute residual \(H^4\) | \(I_2\) on centered degree-four classes | open in this challenge record |
 | Cylinder + scalar clock | one-real-scalar exact-cylinder candidate `OBSTRUCTED` | `OPEN` | `OPEN` | `OPEN` | `OPEN` | `OPEN` |
 | Cylinder + neutral clock pair | `D_GAUGE` on `compact_neutral_clock_pair_homogeneous` | `OPEN` | `OPEN` | `OPEN` | unrestricted reference pairing is indefinite | `OPEN` |
-| Positive Berger clock | `D_GAUGE` on the smooth fixed-coupling linearized phase space | portable 34-row classical unary operator and all-row contraction onto the exact 26-row retained complex certified | full 10-metric/5-ghost scalar-biwave principal completion; curved witness and total homotopy `OPEN` | `OPEN` | helical current and complete minimal cyclic pairing exact; full transport open | `OPEN` |
+| Positive Berger clock | `D_GAUGE` on the smooth fixed-coupling linearized phase space | complete 54-row unary complex and arbitrary-input support-local \(q_2\); full arity-two \(D\)-Cartan homotopy `OPEN` | exact 54-to-26 causal reduction; retained mixed-order Green homotopy `OPEN` | `OPEN` | helical current and complete cyclic unary/binary pairing exact; full causal transport open | `OPEN` |
 | Cylinder + Yang--Mills | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Weakly deformed background | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
 | Lorentzian dS/AdS | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` | `NOT_TESTED` |
@@ -207,18 +207,14 @@ status promotion.
 
 ## Next gates
 
-1. Complete `BERGER_CURVED_CLOCK_REATTACHED_WITNESS`. The retained nonzero-Weyl
-   Bach PBW expansion, full minimal coefficients, spatial Noether identities,
-   formal adjointness, cyclicity, and \(q_1^2=0\) are complete. Reattaching the
-   certified clock doublets supplies the two missing gauge directions, and an
-   exact full companion gives scalar-biwave principal symbols on all ten
-   metric and five ghost directions. Lift that companion through the lower
-   curved PBW orders, build the 34-row causal homotopy, transport it through
-   the clock SDR, and only then add nonminimal direct summands. Nonlinear
-   \(q_2\) and the arity-two \(D\)-Cartan contraction remain downstream.
-   The combined contraction on all 34 minimal rows is no longer open; it is
-   exported portably as `classical_unary_q1` with
-   \((\iota_{\rm cl},\pi_{\rm cl},S_{\rm cl})\).
+1. Construct the retained 26-row mixed-order causal Green homotopy and lift it
+   through the certified formula
+   \(\Lambda_{54}=S_{\rm cl}+\iota_{\rm cl}\Lambda_{26}\pi_{\rm cl}\).
+   Independently, use the now-complete arbitrary-input 54-row \(q_2\) and
+   local \(D\)-action to construct the full four-dimensional arity-two
+   \(D\)-Cartan homotopy. The unary contraction and binary operation are no
+   longer open; general-background nonlinear Koszul--Tate and Hadamard data
+   remain separate gates.
 2. Decide closure of the zero-charge transformations on the chosen sector,
    allowing a field-dependent algebroid if necessary.
 3. Compute the first background-deformation obstruction and a quantitative

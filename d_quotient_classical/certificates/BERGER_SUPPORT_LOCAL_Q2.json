@@ -1,0 +1,449 @@
+{
+  "claim_boundary": "This theorem exports the complete arbitrary-input four-dimensional classical q2 on the frozen 54-row gauge-fixed Berger BV complex, including ghost, field, antifield and nonminimal canonical-transform rows. It proves the arity-two L-infinity identity, Koszul symmetry, cyclicity, and local D derivation exactly. It does not prove the nonlinear D-Cartan contraction, causal Green/Hadamard data, or a background-independent general antifield package.",
+  "claim_status": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_CLASSICAL_Q2",
+  "classical_binary_q2": {
+    "Taylor_convention": "suspended-graded-symmetric-factorial-v1",
+    "maximum_total_jet_order": 6,
+    "nonzero_rows": 39,
+    "payload_canonical_sha256": "172c73cfee1161b54298a7d3b521e377627a762b2ee3b56db05ff73c5f7e2b3f",
+    "payload_file_sha256": "c6c4891d384add5e1afbf6e0cfe3ec920fff0496e02d5514833f3e0adeab07cf",
+    "payload_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json",
+    "support_local": true,
+    "term_count": 150305,
+    "total_rows": 54
+  },
+  "dependency_refs": {
+    "gauge_fixed_classical_unary_q1": {
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "local_D_action": {
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "derivation": {
+    "background_fixture": "q=9/40, alpha_B=5, rho_bar=1, omega=3/4, lambda=119/480",
+    "coefficient_field": "Q(sqrt(10))",
+    "gauge_fixed_rows": 54,
+    "method": "mixed second variation on two arbitrary four-dimensional jets",
+    "not_fitted_to_residual_data": true,
+    "raw_minimal_rows": 34,
+    "source": "covariant Weyl-plus-positive-clock action and nonlinear Diff semidirect Weyl BV action"
+  },
+  "exact_checks": {
+    "BV_cyclicity_q2_coefficientwise_and_by_canonical_transport": true,
+    "D_q2_derivation_termwise": true,
+    "all_54_output_rows_ledgered": true,
+    "canonical_clock_transport_preserves_L_infinity_identity": true,
+    "canonical_gauge_fermion_transport_preserves_L_infinity_identity": true,
+    "q1_q2_arity_two_nilpotency_raw_coefficientwise": true,
+    "q2_koszul_symmetry_gauge_fixed_54_rows": true,
+    "q2_koszul_symmetry_raw_34_rows": true
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_ARITY_TWO_D_CARTAN_FULL_4D": false,
+    "BERGER_LOCAL_D_ACTION_EQUIVARIANT_AT_ARITY_TWO": true,
+    "CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT": true,
+    "CLASSICAL_SUPPORT_LOCAL_Q2": true,
+    "GENERAL_LOCAL_ANTIFIELD_KOSZUL_TATE_EXPORT": false
+  },
+  "next_gates": [
+    "BERGER_ARITY_TWO_D_CARTAN_FULL_4D",
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY",
+    "GENERAL_LOCAL_ANTIFIELD_KOSZUL_TATE_EXPORT"
+  ],
+  "result_id": "BERGER_SUPPORT_LOCAL_Q2",
+  "row_layout": {
+    "all_rows_ledgered": true,
+    "component_rows": [
+      {
+        "degree": -1,
+        "index": 0,
+        "row_id": "c_spatial_1",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 1,
+        "row_id": "c_spatial_2",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 2,
+        "row_id": "c_spatial_3",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 3,
+        "row_id": "tau",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 4,
+        "row_id": "sigma",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 5,
+        "row_id": "h_hat_00",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 6,
+        "row_id": "h_hat_01",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 7,
+        "row_id": "h_hat_02",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 8,
+        "row_id": "h_hat_03",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 9,
+        "row_id": "h_hat_11",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 10,
+        "row_id": "h_hat_12",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 11,
+        "row_id": "h_hat_13",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 12,
+        "row_id": "h_hat_22",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 13,
+        "row_id": "h_hat_23",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 14,
+        "row_id": "h_hat_33",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 15,
+        "row_id": "R",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 16,
+        "row_id": "Theta",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 17,
+        "row_id": "b_diff_1",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 18,
+        "row_id": "b_diff_2",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 19,
+        "row_id": "b_diff_3",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 20,
+        "row_id": "b_tau",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 21,
+        "row_id": "b_sigma",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 22,
+        "row_id": "bar_c_star_diff_1",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 23,
+        "row_id": "bar_c_star_diff_2",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 24,
+        "row_id": "bar_c_star_diff_3",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 25,
+        "row_id": "bar_c_star_tau",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 26,
+        "row_id": "bar_c_star_sigma",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 1,
+        "index": 27,
+        "row_id": "h_hat_star_00",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 28,
+        "row_id": "h_hat_star_01",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 29,
+        "row_id": "h_hat_star_02",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 30,
+        "row_id": "h_hat_star_03",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 31,
+        "row_id": "h_hat_star_11",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 32,
+        "row_id": "h_hat_star_12",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 33,
+        "row_id": "h_hat_star_13",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 34,
+        "row_id": "h_hat_star_22",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 35,
+        "row_id": "h_hat_star_23",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 36,
+        "row_id": "h_hat_star_33",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 37,
+        "row_id": "R_star",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 38,
+        "row_id": "Theta_star",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 39,
+        "row_id": "b_star_diff_1",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 40,
+        "row_id": "b_star_diff_2",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 41,
+        "row_id": "b_star_diff_3",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 42,
+        "row_id": "b_star_tau",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 43,
+        "row_id": "b_star_sigma",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 44,
+        "row_id": "bar_c_diff_1",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 45,
+        "row_id": "bar_c_diff_2",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 46,
+        "row_id": "bar_c_diff_3",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 47,
+        "row_id": "bar_c_tau",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 48,
+        "row_id": "bar_c_sigma",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 2,
+        "index": 49,
+        "row_id": "c_spatial_star_1",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 50,
+        "row_id": "c_spatial_star_2",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 51,
+        "row_id": "c_spatial_star_3",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 52,
+        "row_id": "tau_star",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 53,
+        "row_id": "sigma_star",
+        "sector": "minimal"
+      }
+    ],
+    "parities": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "total_rows": 54
+  },
+  "schema": "pure-weyl-berger-support-local-q2-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

@@ -108,6 +108,12 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_54_ROW_LOCAL_D_ACTION.json`](certificates/BERGER_54_ROW_LOCAL_D_ACTION.json)
 - Local D-action report:
   [`reports/berger-54-row-local-D-action.md`](reports/berger-54-row-local-D-action.md)
+- Complete arbitrary-input 54-row support-local classical q2:
+  [`certificates/BERGER_SUPPORT_LOCAL_Q2.json`](certificates/BERGER_SUPPORT_LOCAL_Q2.json)
+- Content-addressed exact PBW q2 payload:
+  [`certificates/BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json`](certificates/BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json)
+- Support-local q2 report:
+  [`reports/berger-support-local-q2.md`](reports/berger-support-local-q2.md)
 - Exact 54-to-26 causal-homotopy reduction:
   [`certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json`](certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json)
 - Causal-reduction report:
@@ -184,6 +190,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_all
 python3 d_quotient_classical/backreacted_clock/berger_54_row_local_d_action.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_54_row_local_d_action.py
 python3 -m pytest -q d_quotient_classical/backreacted_clock/tests/test_berger_54_row_local_d_action.py
+python3 d_quotient_classical/backreacted_clock/berger_support_local_q2_export.py --check
+python3 d_quotient_classical/backreacted_clock/verify_berger_support_local_q2_independent.py
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_support_local_q2
 python3 d_quotient_classical/backreacted_clock/berger_54_row_causal_homotopy_reduction.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_54_row_causal_homotopy_reduction.py
 python3 -m pytest -q d_quotient_classical/backreacted_clock/tests/test_berger_54_row_causal_homotopy_reduction.py
@@ -221,8 +230,12 @@ background; no round-cylinder lower-order term is reused. Exact composition
 proves the spatial Noether identities, formal self-adjointness, cyclicity, and
 the full 26-row relation (q_1^2=0). The immediate gate is now the separate
 `BERGER_NONMINIMAL_COMPLETION`, followed by the causal Green contraction.
-Nonlinear (q_2), arity-two (D)-Cartan stability, and the combined classical
-support-local export remain open.
+The arbitrary-input four-dimensional classical (q_2) is now complete on all
+54 gauge-fixed rows.  It is derived from the common action and nonlinear gauge
+action, contains every antifield and ghost-antifield mate, and satisfies the
+arity-two (L_infinity) identity, Koszul symmetry, local-functional cyclicity,
+and the local (D)-derivation identity exactly.  The separate nonlinear
+(D)-Cartan contraction and retained causal Green theorem remain open.
 
 The retained causal witness is fixed as `T=alpha_B Box_1 F_spatial`. Its ghost
 and dual identity blocks factor exactly into two normally hyperbolic vector

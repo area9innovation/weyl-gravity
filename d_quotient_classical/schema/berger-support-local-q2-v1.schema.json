@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-support-local-q2-v1.json",
+  "title": "Complete support-local Berger classical q2 certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status",
+    "dependency_tags", "dependency_refs", "derivation", "row_layout",
+    "classical_binary_q2", "exact_checks", "flags", "next_gates",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-support-local-q2-v1"},
+    "result_id": {"const": "BERGER_SUPPORT_LOCAL_Q2"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_CLASSICAL_Q2"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/dependency"},
+      "required": ["gauge_fixed_classical_unary_q1", "local_D_action"]
+    },
+    "derivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source", "method", "not_fitted_to_residual_data",
+        "background_fixture", "coefficient_field", "raw_minimal_rows",
+        "gauge_fixed_rows"
+      ],
+      "properties": {
+        "source": {"type": "string", "minLength": 1},
+        "method": {"type": "string", "minLength": 1},
+        "not_fitted_to_residual_data": {"const": true},
+        "background_fixture": {"type": "string", "minLength": 1},
+        "coefficient_field": {"const": "Q(sqrt(10))"},
+        "raw_minimal_rows": {"const": 34},
+        "gauge_fixed_rows": {"const": 54}
+      }
+    },
+    "row_layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_rows", "component_rows", "parities", "all_rows_ledgered"],
+      "properties": {
+        "total_rows": {"const": 54},
+        "component_rows": {
+          "type": "array", "minItems": 54, "maxItems": 54,
+          "items": {"$ref": "#/$defs/row"}
+        },
+        "parities": {
+          "type": "array", "minItems": 54, "maxItems": 54,
+          "items": {"enum": [0, 1]}
+        },
+        "all_rows_ledgered": {"const": true}
+      }
+    },
+    "classical_binary_q2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "payload_path", "payload_file_sha256", "total_rows", "nonzero_rows",
+        "term_count", "maximum_total_jet_order", "payload_canonical_sha256",
+        "support_local", "Taylor_convention"
+      ],
+      "properties": {
+        "payload_path": {"type": "string", "minLength": 1},
+        "payload_file_sha256": {"$ref": "#/$defs/sha256"},
+        "total_rows": {"const": 54},
+        "nonzero_rows": {"type": "integer", "minimum": 1, "maximum": 54},
+        "term_count": {"type": "integer", "minimum": 1},
+        "maximum_total_jet_order": {"type": "integer", "minimum": 0},
+        "payload_canonical_sha256": {"$ref": "#/$defs/sha256"},
+        "support_local": {"const": true},
+        "Taylor_convention": {"const": "suspended-graded-symmetric-factorial-v1"}
+      }
+    },
+    "exact_checks": {
+      "type": "object", "minProperties": 8,
+      "additionalProperties": {"const": true}
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "CLASSICAL_SUPPORT_LOCAL_Q2",
+        "BERGER_LOCAL_D_ACTION_EQUIVARIANT_AT_ARITY_TWO",
+        "CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT",
+        "BERGER_ARITY_TWO_D_CARTAN_FULL_4D",
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY",
+        "GENERAL_LOCAL_ANTIFIELD_KOSZUL_TATE_EXPORT"
+      ],
+      "properties": {
+        "CLASSICAL_SUPPORT_LOCAL_Q2": {"const": true},
+        "BERGER_LOCAL_D_ACTION_EQUIVARIANT_AT_ARITY_TWO": {"const": true},
+        "CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT": {"const": true},
+        "BERGER_ARITY_TWO_D_CARTAN_FULL_4D": {"const": false},
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": {"const": false},
+        "GENERAL_LOCAL_ANTIFIELD_KOSZUL_TATE_EXPORT": {"const": false}
+      }
+    },
+    "next_gates": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["index", "row_id", "degree", "sector"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 53},
+        "row_id": {"type": "string", "minLength": 1},
+        "degree": {"type": "integer"},
+        "sector": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

@@ -400,6 +400,7 @@ def validate_record(record: object) -> list[str]:
                 "berger_nonzero_d_weight_finite_block_no_go",
                 "berger_all_weight_arity_two_d_cartan",
                 "berger_54_row_local_d_action",
+                "berger_support_local_q2",
                 "berger_54_row_causal_homotopy_reduction",
             ]:
                 errors.append("$.work_packages.relational_clock: partial replacement requires the one-scalar, neutral-pair, health, stealth, and positive Berger-background certificates")
@@ -650,6 +651,14 @@ def _mutation_guards(record: dict[str, Any]) -> list[str]:
         if ref != "berger_54_row_local_d_action"
     ]
     rejected("berger_54_row_local_d_action_erased", mutant)
+
+    mutant = deepcopy(record)
+    mutant["work_packages"]["relational_clock"]["evidence_refs"] = [
+        ref
+        for ref in mutant["work_packages"]["relational_clock"]["evidence_refs"]
+        if ref != "berger_support_local_q2"
+    ]
+    rejected("berger_support_local_q2_erased", mutant)
 
     mutant = deepcopy(record)
     mutant["work_packages"]["relational_clock"]["evidence_refs"] = [
