@@ -576,6 +576,16 @@ polar and axial towers are therefore exactly isospectral for every
 matching, and extra fourth-order adjoint classes remain open; these are now
 the only compact linear gates before full harmonic source enumeration.
 
+`COMPACT_EM_POLAR_EXCEPTIONAL_COMPLEX` now closes the remaining polar
+`ell=0,1` gate on fixed `P_N`. Every nonzero `ell=0` Fourier block is pure
+gauge, while the generalized homogeneous block contains the radion and `S1`
+circumference Jordan pairs plus constant electric charge; uniform magnetic
+variation is excluded by the fixed Chern class. At `ell=1`, the invariant
+master `Psi=U-K/2` has `omega^2=k_n^2+4`, while the apparent zero branch is
+exactly the smooth residual diffeomorphism. The standard polar linear complex
+is therefore complete for all `ell`; symplectic matching and extra adjoint
+blocks are the remaining compact linear gates.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally
