@@ -7,6 +7,7 @@ import argparse
 from copy import deepcopy
 from dataclasses import dataclass
 import hashlib
+from itertools import combinations
 import json
 
 import sympy as sp
@@ -29,6 +30,29 @@ def _sha256(path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _canonical_hash(value: object) -> str:
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+
+
+def _matrix_record(matrix: sp.Matrix) -> list[list[str]]:
+    return [[str(matrix[row, column]) for column in range(matrix.cols)] for row in range(matrix.rows)]
+
+
+def _rank_witness(matrix: sp.Matrix, rank: int) -> dict[str, object]:
+    for rows in combinations(range(matrix.rows), rank):
+        for columns in combinations(range(matrix.cols), rank):
+            determinant = sp.factor(matrix.extract(rows, columns).det())
+            if determinant != 0:
+                return {
+                    "rows": list(rows),
+                    "columns": list(columns),
+                    "determinant": str(determinant),
+                }
+    raise AssertionError(f"no nonzero {rank}-minor found")
+
+
 @dataclass(frozen=True)
 class BergerUnaryDCartanObstruction:
     payload: dict[str, object]
@@ -46,7 +70,11 @@ class BergerUnaryDCartanObstruction:
         p0, p1, p2, p3 = sp.symbols("p0:4")
         covector = {p0: 1, p1: 1, p2: 0, p3: 0}
         k1 = sp.Matrix(_symbol(k, 1).subs(covector))
-        h4 = sp.Matrix(_symbol(h, 4).subs(covector).subs({sp.Symbol("alpha_B"): 5}))
+        h4_unspecialized = sp.Matrix(_symbol(h, 4).subs(covector))
+        alpha_B = next(
+            symbol for symbol in h4_unspecialized.free_symbols if symbol.name == "alpha_B"
+        )
+        h4 = h4_unspecialized.subs({alpha_B: 5})
         l1 = sp.Matrix(_symbol(identity, 1).subs(covector))
         d1 = sp.Matrix(_symbol(d26, 1).subs(covector))
         if h4 * k1 != sp.zeros(10, 3) or l1 * h4 != sp.zeros(3, 10):
@@ -78,13 +106,24 @@ class BergerUnaryDCartanObstruction:
         ]
         if cohomology != [0, 6, 6, 0]:
             raise AssertionError("null symbol cohomology dimensions drifted")
+        symbol_matrices = {"K1": k1, "H4": h4, "L1": l1, "D1": d1}
+        symbol_hashes = {
+            name: _canonical_hash(_matrix_record(matrix))
+            for name, matrix in symbol_matrices.items()
+        }
+        rank_witnesses = {
+            "K1": _rank_witness(k1, ranks["K1"]),
+            "H4": _rank_witness(h4, ranks["H4"]),
+            "L1": _rank_witness(l1, ranks["L1"]),
+        }
 
         payload: dict[str, object] = {
             "schema": "pure-weyl-berger-unary-D-Cartan-microlocal-obstruction-v1",
             "result_id": "BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION",
             "setting_id": q1["setting_id"],
             "claim_status": "CERTIFIED_NO_LOCAL_UNARY_CARTAN_ON_BARE_COMPLEX",
-            "dependency_tags": ["LOCAL-ALGEBRAIC", "MICROLOCAL-SYMBOL"],
+            "dependency_tags": ["LOCAL-ALGEBRAIC"],
+            "method_tags": ["MICROLOCAL-SYMBOL"],
             "dependency_refs": {
                 "retained_q1": {"result_id": q1["result_id"], "sha256": _sha256(Q1_PATH)},
                 "local_D_action": {"result_id": d_action["result_id"], "sha256": _sha256(D_PATH)},
@@ -97,6 +136,8 @@ class BergerUnaryDCartanObstruction:
                 "differential_orders": [1, 4, 1],
                 "symbol_ranks": ranks,
                 "cohomology_dimensions": cohomology,
+                "specialized_symbol_sha256": symbol_hashes,
+                "rank_witness_minors": rank_witnesses,
             },
             "normalized_field_class": {
                 "field_order": [
@@ -110,7 +151,7 @@ class BergerUnaryDCartanObstruction:
                 "H4_on_representative": "0",
                 "dual_on_im_K1": "0",
                 "dual_on_representative": "1",
-                "D_on_class": "identity",
+                "D_symbol_on_class": "identity",
             },
             "obstruction_argument": {
                 "assumption": "a finite-order support-local differential iota_D^(1) with [q1,iota_D^(1)]=D on the bare 26-row complex",
@@ -127,6 +168,8 @@ class BergerUnaryDCartanObstruction:
                 "dual_annihilates_gauge_image": True,
                 "dual_witness_normalized": True,
                 "obstruction_descends_from_54_to_26": True,
+                "specialized_symbol_hashes_recorded": True,
+                "rank_minor_witnesses_nonzero": True,
             },
             "flags": {
                 "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO": True,
@@ -145,6 +188,10 @@ class BergerUnaryDCartanObstruction:
         return result
 
     def verify(self) -> None:
+        if self.payload["dependency_tags"] != ["LOCAL-ALGEBRAIC"]:
+            raise AssertionError("dependency-tag claim boundary drifted")
+        if self.payload["method_tags"] != ["MICROLOCAL-SYMBOL"]:
+            raise AssertionError("microlocal proof-method tag drifted")
         if not all(self.payload["exact_checks"].values()):
             raise AssertionError("microlocal obstruction check dropped")
         flags = self.payload["flags"]
@@ -156,6 +203,16 @@ class BergerUnaryDCartanObstruction:
         witness = self.payload["normalized_field_class"]
         if witness["dual_on_representative"] != "1":
             raise AssertionError("normalized dual witness drifted")
+        fixture = self.payload["douglis_symbol_fixture"]
+        if set(fixture["specialized_symbol_sha256"]) != {"K1", "H4", "L1", "D1"}:
+            raise AssertionError("specialized symbol hashes drifted")
+        if any(
+            len(value) != 64 or any(character not in "0123456789abcdef" for character in value)
+            for value in fixture["specialized_symbol_sha256"].values()
+        ):
+            raise AssertionError("specialized symbol hash malformed")
+        if any(sp.Rational(record["determinant"]) == 0 for record in fixture["rank_witness_minors"].values()):
+            raise AssertionError("rank-minor witness vanished")
 
     def certificate_text(self) -> str:
         return json.dumps(self.payload, indent=2, sort_keys=True) + "\n"
@@ -192,6 +249,14 @@ The D-equivariant 54-to-26 SDR transfers the same obstruction to the bare
 This does not obstruct a residual/BFV or causal Cartan extension. It proves
 that the next construction must enlarge or derive-reduce the complex rather
 than attempting the arity-two equation on the bare local rows.
+
+Reproduce from `physics/symplectic-reconstruction/` with:
+
+```bash
+python3 -m d_quotient_classical.backreacted_clock.berger_unary_d_cartan_obstruction --check --guards
+python3 -m d_quotient_classical.backreacted_clock.verify_berger_unary_d_cartan_obstruction
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_unary_d_cartan_obstruction -v
+```
 """
 
 
@@ -212,6 +277,8 @@ def _guards(result: BergerUnaryDCartanObstruction) -> None:
         ("drop obstruction", ("flags", "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO"), False),
         ("promote unary", ("flags", "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D"), True),
         ("erase witness", ("normalized_field_class", "dual_on_representative"), "0"),
+        ("promote method to dependency", ("dependency_tags", 0), "MICROLOCAL-SYMBOL"),
+        ("erase symbol hash", ("douglis_symbol_fixture", "specialized_symbol_sha256"), {}),
     ):
         mutant = deepcopy(result.payload)
         mutant[path[0]][path[1]] = value

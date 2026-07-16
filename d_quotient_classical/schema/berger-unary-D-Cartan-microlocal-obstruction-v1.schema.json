@@ -4,7 +4,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags", "method_tags",
     "dependency_refs", "douglis_symbol_fixture", "normalized_field_class",
     "obstruction_argument", "exact_checks", "flags", "next_gate", "claim_boundary"
   ],
@@ -13,7 +13,8 @@
     "result_id": {"const": "BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION"},
     "setting_id": {"type": "string", "minLength": 1},
     "claim_status": {"const": "CERTIFIED_NO_LOCAL_UNARY_CARTAN_ON_BARE_COMPLEX"},
-    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "MICROLOCAL-SYMBOL"]},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "method_tags": {"const": ["MICROLOCAL-SYMBOL"]},
     "dependency_refs": {"type": "object", "minProperties": 2},
     "douglis_symbol_fixture": {"type": "object", "minProperties": 7},
     "normalized_field_class": {"type": "object", "minProperties": 8},

@@ -12,8 +12,7 @@
     }
   },
   "dependency_tags": [
-    "LOCAL-ALGEBRAIC",
-    "MICROLOCAL-SYMBOL"
+    "LOCAL-ALGEBRAIC"
   ],
   "douglis_symbol_fixture": {
     "D_symbol": 1,
@@ -41,6 +40,49 @@
       1
     ],
     "metric_square": 0,
+    "rank_witness_minors": {
+      "H4": {
+        "columns": [
+          0
+        ],
+        "determinant": "5/6",
+        "rows": [
+          0
+        ]
+      },
+      "K1": {
+        "columns": [
+          0,
+          1,
+          2
+        ],
+        "determinant": "1",
+        "rows": [
+          1,
+          2,
+          3
+        ]
+      },
+      "L1": {
+        "columns": [
+          1,
+          2,
+          3
+        ],
+        "determinant": "1",
+        "rows": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "specialized_symbol_sha256": {
+      "D1": "664ccb0cde66a02eb9d8b3c783ca3991cb90ffdbb6314c6ef2e56c497731d41d",
+      "H4": "9c968b734955cc9664ebf77bf23466ce15f1d42c9c53abaf639c8b71440cc959",
+      "K1": "9a2403f2630e3d2b2de3eda5ea0c2b36e3514bc9caf99339a1c2ee9d3ed83a65",
+      "L1": "890f331e1811dfeb09e23a07b51cdfade2fababee284e8a3dad0a79b072fed59"
+    },
     "symbol_ranks": {
       "H4": 1,
       "K1": 3,
@@ -55,6 +97,8 @@
     "field_representative_closed": true,
     "null_covector_nonzero": true,
     "obstruction_descends_from_54_to_26": true,
+    "rank_minor_witnesses_nonzero": true,
+    "specialized_symbol_hashes_recorded": true,
     "symbol_cohomology_nonzero": true
   },
   "flags": {
@@ -64,9 +108,12 @@
     "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D": false,
     "BERGER_UNARY_D_CARTAN_LOCAL_BARE_COMPLEX_NO_GO": true
   },
+  "method_tags": [
+    "MICROLOCAL-SYMBOL"
+  ],
   "next_gate": "BERGER_RESIDUAL_OR_CAUSAL_CARTAN_EXTENSION",
   "normalized_field_class": {
-    "D_on_class": "identity",
+    "D_symbol_on_class": "identity",
     "H4_on_representative": "0",
     "dual_on_im_K1": "0",
     "dual_on_representative": "1",

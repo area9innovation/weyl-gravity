@@ -29,3 +29,11 @@ The D-equivariant 54-to-26 SDR transfers the same obstruction to the bare
 This does not obstruct a residual/BFV or causal Cartan extension. It proves
 that the next construction must enlarge or derive-reduce the complex rather
 than attempting the arity-two equation on the bare local rows.
+
+Reproduce from `physics/symplectic-reconstruction/` with:
+
+```bash
+python3 -m d_quotient_classical.backreacted_clock.berger_unary_d_cartan_obstruction --check --guards
+python3 -m d_quotient_classical.backreacted_clock.verify_berger_unary_d_cartan_obstruction
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_unary_d_cartan_obstruction -v
+```
