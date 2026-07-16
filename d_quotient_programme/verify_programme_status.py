@@ -61,6 +61,8 @@ EINSTEIN_MAXWELL_WEYL_ELL1_PHYSICAL_RESTRICTION_CONTRIBUTION = PACKAGE / "contri
 EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_INCLUSION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-standard-harmonic-inclusion.json"
 EINSTEIN_MAXWELL_WEYL_EXTRA_BRANCH_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-extra-branch-preflight.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-operator-module-preflight.json"
+EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-operator.json"
+EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-extra-green-pairing.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -219,7 +221,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
     nonlinear = data["nonlinear"]
     if not (
         nonlinear.get("result_state")
-        == "CONDITIONAL_CAUSAL_D_CARTAN_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING"
+        == "CAUSAL_CHAIN_D_CARTAN_ARITY_TWO_AND_BASE_HADAMARD_PARAMETRIX_IMPORTED_Q3_AND_GLOBAL_HADAMARD_OPEN"
         and nonlinear.get("classical_freeze_gate") == "FAIL_CLOSED"
         and nonlinear["programme_stages"][1]["status"]
         == "COMPLETE_54_ROW_UNARY_CONTRACTION_LOCAL_D_AND_SUPPORT_LOCAL_Q2_IMPORTED_REPLAYED_AND_TRANSFERRED_TO_RETAINED_Q2_26_MINIMAL_RESIDUAL_ELL2_PENDING"
@@ -942,6 +944,18 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "einstein_maxwell_product_compact_weyl_axial_operator_module_preflight",
         "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS",
     )
+    maxwell_weyl_axial_operator_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_CONTRIBUTION,
+        "compact_einstein_maxwell_weyl_axial_operator",
+        "einstein_maxwell_product_compact_weyl_generic_axial_target_solution_module",
+        "G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_SOLUTION_MODULE",
+    )
+    maxwell_weyl_axial_extra_green_pairing_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION,
+        "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
+        "einstein_maxwell_product_compact_weyl_generic_axial_extra_reduced_green_pairing",
+        "G2_GENERIC_AXIAL_EXTRA_NONRADICAL_REDUCED_GREEN_SIGNATURE_POSITIVE_TWO",
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     berger_retained_q2_contribution = _nonlinear_berger_retained_q2_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
@@ -1146,6 +1160,16 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "path": str(EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT_CONTRIBUTION),
                 "payload": maxwell_weyl_axial_operator_module_preflight_contribution,
+            },
+            {
+                "path": str(EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_CONTRIBUTION),
+                "payload": maxwell_weyl_axial_operator_contribution,
+            },
+            {
+                "path": str(EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION),
+                "payload": maxwell_weyl_axial_extra_green_pairing_contribution,
             },
             {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
@@ -1546,6 +1570,24 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS",
             },
             {
+                "setting_id": "compact_einstein_maxwell_weyl_axial_operator",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_target_solution_module",
+                "boundary_conditions": "generic axial ell>=2 exact target solution module; fixed P_N; symbolic k and lambda; before Green/Lee-Wald completion and final residual quotient",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_SOLUTION_MODULE",
+            },
+            {
+                "setting_id": "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_extra_reduced_green_pairing",
+                "boundary_conditions": "generic axial extra module with exact reduced-Hessian local Green current; physical ell>=2; before direct Lee-Wald match and final residual quotient",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G2_GENERIC_AXIAL_EXTRA_NONRADICAL_REDUCED_GREEN_SIGNATURE_POSITIVE_TWO",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1732,6 +1774,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_standard_harmonic_inclusion",
         "compact_einstein_maxwell_weyl_extra_branch_preflight",
         "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
+        "compact_einstein_maxwell_weyl_axial_operator",
+        "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1775,6 +1819,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_standard_harmonic_inclusion": "G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT",
         "compact_einstein_maxwell_weyl_extra_branch_preflight": "G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT",
         "compact_einstein_maxwell_weyl_axial_operator_module_preflight": "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS",
+        "compact_einstein_maxwell_weyl_axial_operator": "G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_SOLUTION_MODULE",
+        "compact_einstein_maxwell_weyl_axial_extra_green_pairing": "G2_GENERIC_AXIAL_EXTRA_NONRADICAL_REDUCED_GREEN_SIGNATURE_POSITIVE_TWO",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "compact_positive_berger_clock_retained_q2_26": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
@@ -1858,6 +1904,10 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Weyl--Maxwell extra-branch preflight was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_axial_operator_module_preflight", {}).get("status") != "CERTIFIED":
         errors.append("Weyl--Maxwell axial operator-module preflight was dropped")
+    if ledger.get("compact_einstein_maxwell_weyl_axial_operator", {}).get("status") != "CERTIFIED":
+        errors.append("Weyl--Maxwell generic axial operator theorem was dropped")
+    if ledger.get("compact_einstein_maxwell_weyl_axial_extra_green_pairing", {}).get("status") != "CERTIFIED":
+        errors.append("Weyl--Maxwell axial extra reduced-Green pairing was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -2232,6 +2282,14 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
             "drop_Einstein_Maxwell_Weyl_axial_operator_module_preflight_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_weyl_axial_operator",
+            "drop_Einstein_Maxwell_Weyl_axial_operator_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
+            "drop_Einstein_Maxwell_Weyl_axial_extra_green_pairing_contribution",
         ),
     ):
         mutant = deepcopy(data)

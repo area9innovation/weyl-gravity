@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "generic axial ell>=2 extra solution module on R_t x S1_L x S2 at fixed P_N, paired by the exact reduced-Hessian local Green current; before direct Lee-Wald matching and final residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "explicit local t- and x-Green currents satisfy the off-shell Lagrange identity for arbitrary jets on both the four-field invariant operator and six-field ungauged lift",
+    "the two explicit generic axial extra representatives have an exact two-by-two reduced-current Gram matrix",
+    "after positive-frequency normalization by -i*omega, the Gram determinant is lambda^4*(lambda-2)*(9lambda-2)/3",
+    "the first principal minor and determinant are positive for every physical lambda=ell(ell+1)>=6 and real compact momentum k",
+    "the generic extra module is nonradical with reduced-Green signature (2,0) in the declared convention"
+  ],
+  "evidence": {
+    "commit": "9f078dac3ceba7dcb9e07a91cc350683c48e5ba2",
+    "path": "bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json",
+    "sha256": "9a99c658f34334386d56d6a569e81d73c31251bcd4592324553b7417b74d8f20"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "match the reduced Green current to the direct four-dimensional Weyl-Maxwell action Hessian and Lee-Wald current, including harmonic norms and improvement terms",
+  "not_established": [
+    "the direct four-dimensional action-Hessian or Lee-Wald current match",
+    "a physical positive norm, negative norm, or ghost classification",
+    "a positive-frequency Hilbert space or particle interpretation",
+    "boundary selection, final residual descent, causal scattering, or quantum unitarity"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_extra_reduced_green_pairing",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_GENERIC_AXIAL_EXTRA_NONRADICAL_REDUCED_GREEN_SIGNATURE_POSITIVE_TWO",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_green_current --verify bridge/certificates/einstein_maxwell_weyl_axial_green_current.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_extra_green_pairing --verify bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_green_current bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_extra_green_pairing",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}

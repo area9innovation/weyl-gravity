@@ -103,6 +103,16 @@ selection, zero-frequency covariance, off-shell Krein policy, and positivity
 on BRST observables remain open. The next gate transports only this local
 singular structure through the typed companion/Volterra system.
 
+The typed companion Møller preflight now fixes that transport algebra
+exactly. A finite lower-triangular reduction removes the order-two `V_2`
+incidence before the separately typed Volterra source/solution resolvents are
+applied, and formal adjunction reverses retarded to advanced support in the
+second kernel variable. The resulting kernel formula remains formal: the
+current energy-norm convergence theorem does not yet prove the six required
+Hörmander composition and wavefront statements. Accordingly the companion
+Hadamard-parametrix flag remains false and the next gate is microlocal
+composition, not global state selection.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -132,4 +142,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_b
 PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_base_wave_hadamard_parametrix_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_base_wave_hadamard_parametrix
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_base_wave_hadamard_parametrix.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_typed_companion_moller_preflight_certificate --check
+PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_typed_companion_moller_preflight
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_typed_companion_moller_preflight.py -v
 ```

@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "generic axial ell>=2 coefficient complex on R_t x S1_L x S2 at fixed P_N; symbolic k and lambda; complete exponential and generalized temporal solution functor; before final residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the complete generic axial Weyl-Maxwell coefficient operator is reconstructed exactly from independent full-tensor ell=2,3,4 samples and the fourth-order SO(3)-equivariant spectral degree bound",
+    "the reduced harmonic-density operator is formally self-adjoint and its exact ungauged six-field lift satisfies both Noether identities without inverting D, k, or omega",
+    "the complete Einstein-Maxwell axial source image is annihilated through the polynomial identity P_W=(3lambda-2-3s)E_EM-6M_EM",
+    "the exact Smith invariant factors over Frac(Q(lambda,k))[omega] are 1, 1, p, p*q, with q the Einstein master factor and p=omega^2-k^2-lambda+2/3",
+    "away from the recorded p-q collision lambda=2/9, the canonical quotient by the Einstein image is two copies of F[omega]/(p)",
+    "the physical ell>=2 locus is disjoint from the p-q collision and two explicit extra algebraic solution representatives are retained"
+  ],
+  "evidence": {
+    "commit": "b31cc2616d4dd187a25bd2e8e030aa98c1f806c2",
+    "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+    "sha256": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "derive the off-shell local Green current and direct four-dimensional action Hessian, compute the complete Einstein/extra Lee-Wald matrix, and decide whether either extra cyclic summand is nonradical",
+  "not_established": [
+    "the direct second variation of the complete four-dimensional Weyl-Maxwell action or an off-shell local Green-current identity",
+    "the Einstein/extra Lee-Wald pairing matrix, presymplectic radical, sign, norm, or positive-frequency Hilbert space",
+    "an extra particle or ghost interpretation",
+    "boundary selection, final residual descent, causal scattering, or quantum unitarity"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_target_solution_module",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_axial_operator",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_SOLUTION_MODULE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_operator --verify bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_operator.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_operator bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_ell2_full_tensor",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}

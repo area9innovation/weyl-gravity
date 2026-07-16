@@ -93,6 +93,10 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-extra-branch-preflight-registration-receipt.md`](reports/einstein-maxwell-weyl-extra-branch-preflight-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-operator-module-preflight.json`](contributions/einstein-maxwell-weyl-axial-operator-module-preflight.json)
 - [`reports/einstein-maxwell-weyl-axial-operator-module-preflight-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-operator-module-preflight-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-axial-operator.json`](contributions/einstein-maxwell-weyl-axial-operator.json)
+- [`reports/einstein-maxwell-weyl-axial-operator-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-operator-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
+- [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -313,3 +317,23 @@ the constant pivot `2`, with `KG=0`, `KJ=I`, `I-JK=GH`, and `HG=I`; neither
 `D` nor `k` is inverted. The target operator must still pass the independent
 Hessian/equation, Noether, Green, source-image, pivot-stratification, and full
 tensor `ell=2` rails before any root or extra mode is reported.
+
+The generic axial operator theorem now closes the operator, Noether,
+formal-adjoint, source-image, Smith-module, and independent full-tensor rails.
+Its invariant factors are `1,1,p,p*q`, where `q` is the certified
+Einstein--Maxwell master factor and
+`p=omega^2-k^2-lambda+2/3`.  Away from the recorded nonphysical collision
+`lambda=2/9`, the canonical quotient by the Einstein image is
+`(F[omega]/(p))^2`.  This certifies two extra algebraic classical solution
+polarizations before final residual quotient.  The direct action Hessian,
+local Green current, Einstein/extra Lee--Wald matrix, presymplectic radical,
+norm, particle, causal-boundary, and quantum questions remain open.
+
+The reduced and ungauged local Green identities are now explicit for arbitrary
+off-shell jets.  On the two extra representatives the normalized reduced
+Gram determinant is `lambda^4*(lambda-2)*(9lambda-2)/3`; its first principal
+minor is also positive for every physical `lambda>=6`.  Thus the generic
+extra module is nonradical with reduced-Green signature `(2,0)`.  This does
+not settle the physical sign: the direct four-dimensional action/Lee--Wald
+match, improvement terms, causal phase space, and particle interpretation
+remain open.

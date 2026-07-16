@@ -29,7 +29,7 @@
     ],
     "rule": "The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and the conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported. Construct advanced/retarded Green operators with causal support and transport them to the retained endpoint without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "9c5478a235272c884df2cd44201852c57a5a9e7d",
+  "programme_base_commit": "2d33257bab38f40693d63133fd6f4677fd6a7bd6",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -46,7 +46,7 @@
   },
   "registry_hashes": {
     "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-    "phase_space_registry": "8582c9cd26257c615bb022f246cf9e0213afd1a112a45ac5530f0802407d648e"
+    "phase_space_registry": "18b49ffee98f4794af6bb406b17966307c9c5103a6e2b10ba66f9b65053e8c64"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -402,6 +402,24 @@
       "setting_id": "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
       "status": "CERTIFIED",
       "verdict": "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS"
+    },
+    {
+      "boundary_conditions": "generic axial ell>=2 exact target solution module; fixed P_N; symbolic k and lambda; before Green/Lee-Wald completion and final residual quotient",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_target_solution_module",
+      "setting_id": "compact_einstein_maxwell_weyl_axial_operator",
+      "status": "CERTIFIED",
+      "verdict": "G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_SOLUTION_MODULE"
+    },
+    {
+      "boundary_conditions": "generic axial extra module with exact reduced-Hessian local Green current; physical ell>=2; before direct Lee-Wald match and final residual quotient",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_extra_reduced_green_pairing",
+      "setting_id": "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
+      "status": "CERTIFIED",
+      "verdict": "G2_GENERIC_AXIAL_EXTRA_NONRADICAL_REDUCED_GREEN_SIGNATURE_POSITIVE_TWO"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -2103,6 +2121,95 @@
       "sha256": "e9ae271a355d2a5556fafe7311159a9f895b8e565f4d9ce2875819e6717c3adf"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-axial-operator.json",
+      "payload": {
+        "boundary_conditions": "generic axial ell>=2 coefficient complex on R_t x S1_L x S2 at fixed P_N; symbolic k and lambda; complete exponential and generalized temporal solution functor; before final residual quotient",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the complete generic axial Weyl-Maxwell coefficient operator is reconstructed exactly from independent full-tensor ell=2,3,4 samples and the fourth-order SO(3)-equivariant spectral degree bound",
+          "the reduced harmonic-density operator is formally self-adjoint and its exact ungauged six-field lift satisfies both Noether identities without inverting D, k, or omega",
+          "the complete Einstein-Maxwell axial source image is annihilated through the polynomial identity P_W=(3lambda-2-3s)E_EM-6M_EM",
+          "the exact Smith invariant factors over Frac(Q(lambda,k))[omega] are 1, 1, p, p*q, with q the Einstein master factor and p=omega^2-k^2-lambda+2/3",
+          "away from the recorded p-q collision lambda=2/9, the canonical quotient by the Einstein image is two copies of F[omega]/(p)",
+          "the physical ell>=2 locus is disjoint from the p-q collision and two explicit extra algebraic solution representatives are retained"
+        ],
+        "evidence": {
+          "commit": "b31cc2616d4dd187a25bd2e8e030aa98c1f806c2",
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+          "sha256": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "derive the off-shell local Green current and direct four-dimensional action Hessian, compute the complete Einstein/extra Lee-Wald matrix, and decide whether either extra cyclic summand is nonradical",
+        "not_established": [
+          "the direct second variation of the complete four-dimensional Weyl-Maxwell action or an off-shell local Green-current identity",
+          "the Einstein/extra Lee-Wald pairing matrix, presymplectic radical, sign, norm, or positive-frequency Hilbert space",
+          "an extra particle or ghost interpretation",
+          "boundary selection, final residual descent, causal scattering, or quantum unitarity"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_target_solution_module",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_axial_operator",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_SOLUTION_MODULE",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_operator --verify bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_operator.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_operator bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_ell2_full_tensor",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "c9db60facfc0bff69b2f11cf93353cf26896e284cb6fce0981f837d620910c4c"
+    },
+    {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json",
+      "payload": {
+        "boundary_conditions": "generic axial ell>=2 extra solution module on R_t x S1_L x S2 at fixed P_N, paired by the exact reduced-Hessian local Green current; before direct Lee-Wald matching and final residual quotient",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "explicit local t- and x-Green currents satisfy the off-shell Lagrange identity for arbitrary jets on both the four-field invariant operator and six-field ungauged lift",
+          "the two explicit generic axial extra representatives have an exact two-by-two reduced-current Gram matrix",
+          "after positive-frequency normalization by -i*omega, the Gram determinant is lambda^4*(lambda-2)*(9lambda-2)/3",
+          "the first principal minor and determinant are positive for every physical lambda=ell(ell+1)>=6 and real compact momentum k",
+          "the generic extra module is nonradical with reduced-Green signature (2,0) in the declared convention"
+        ],
+        "evidence": {
+          "commit": "9f078dac3ceba7dcb9e07a91cc350683c48e5ba2",
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json",
+          "sha256": "9a99c658f34334386d56d6a569e81d73c31251bcd4592324553b7417b74d8f20"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "match the reduced Green current to the direct four-dimensional Weyl-Maxwell action Hessian and Lee-Wald current, including harmonic norms and improvement terms",
+        "not_established": [
+          "the direct four-dimensional action-Hessian or Lee-Wald current match",
+          "a physical positive norm, negative norm, or ghost classification",
+          "a positive-frequency Hilbert space or particle interpretation",
+          "boundary selection, final residual descent, causal scattering, or quantum unitarity"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_extra_reduced_green_pairing",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_GENERIC_AXIAL_EXTRA_NONRADICAL_REDUCED_GREEN_SIGNATURE_POSITIVE_TWO",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_green_current --verify bridge/certificates/einstein_maxwell_weyl_axial_green_current.json",
+          "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_extra_green_pairing --verify bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_green_current bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_extra_green_pairing",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "12f92fea229d71fe4848079294ceced334878cdb7aee2bec7da9a19037b75e69"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -2255,9 +2362,9 @@
       "sha256": "ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685"
     },
     "nonlinear": {
-      "commit": "b25f11e0365514d2990617be2d37e9bafe4de22e",
+      "commit": "0c9914e1fc79b97de6fccc17c25d211f4a952407",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "ebd79d8174810d74dd7d43294146d33792ebfd9666a12ccd7fa3da7591e9d3cd"
+      "sha256": "cc1736ee6cfa30f0b9e6b46804a4bba548912c8c2d41deccc36bdd9f4401e8e5"
     },
     "quantum": {
       "commit": "a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6",
