@@ -1,7 +1,9 @@
 {
   "causal_policy": {
+    "advanced_retarded_cyclic_adjointness": "NOT_CONSTRUCTED",
     "advanced_retarded_operators": "NOT_CONSTRUCTED",
     "candidate_route": "CAUSAL_VOLTERRA_RESOLVENT_FOR_LOWER_BY_TWO_BIWAVE_COMPANION",
+    "companion_cyclic_pairing": "NOT_CONSTRUCTED",
     "diagonal_blocks": "normally hyperbolic tensor rough waves Box_2",
     "inverse_spatial_laplacian": false,
     "off_diagonal_local_orders": {
@@ -11,12 +13,15 @@
     "spatial_mode_projector": false,
     "volterra_convergence_and_global_support_proof": "NOT_CONSTRUCTED"
   },
-  "claim_boundary": "Independently proves that the exact A10 lower-by-two tensor biwave is the metric block induced on the retained 26-row endpoint and constructs its exact 20-row local companion presentation. The companion principal determinant has only the metric characteristic cone. This does not prove Volterra convergence, construct advanced/retarded operators, complete the 26- or 54-row causal chain homotopy, establish Hadamard data, restore a QME, or make a quantum claim.",
+  "claim_boundary": "Independently proves that the exact A10 lower-by-two tensor biwave is the metric block induced on the retained 26-row endpoint and constructs its exact 20-row local companion presentation and a two-sided graph contraction for arbitrary companion sources. The companion principal determinant has only the metric characteristic cone. The imported microlocal theorem corrects the raw interpretation: its extra polarization mixes retained metric and clock components, so one must apply the BV SDR and construct the retained witness rather than project L13 solutions. This does not prove Volterra convergence, construct advanced/retarded operators, complete the cyclic companion pairing, prove causal adjointness, complete the 26- or 54-row causal chain homotopy, establish Hadamard data, restore a QME, or make a quantum claim.",
   "claim_flags": {
     "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
     "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION_IMPORTED": true,
+    "BERGER_RAW_EXTRA_MODE_PURE_CLOCK": false,
     "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT": false,
     "BERGER_RETAINED_BIWAVE_COMPANION_EXACT": true,
+    "BERGER_RETAINED_BIWAVE_COMPANION_GRAPH_SDR": true,
     "BERGER_RETAINED_METRIC_EQUALS_RAW_A10": true,
     "QUANTUM_CLAIM": false
   },
@@ -26,20 +31,42 @@
       "h_10",
       "y_10=Box_2 h_10"
     ],
+    "graph_homotopy": "H(f1,f2)=(0,-f1)",
     "graph_identity": "C20 J20x10(h)=(0,A10 h)",
     "graph_inclusion": "J20x10(h)=(h,Box_2 h)",
     "operator": "C20=[[Box_2,-I10],[V_2,Box_2]]",
     "principal_determinant": "q^20",
     "principal_ranks": {
       "metric_null_fixture": 7,
-      "off_metric_cone_fixture": 20
+      "off_metric_cone_fixture": 20,
+      "raw_extra_cone_fixture": 20
     },
     "principal_symbol": "[[q I10,0],[sigma_2(V_2),q I10]]",
     "rational_fixture": {
       "u": "2",
       "v": "3"
     },
-    "rows": 20
+    "raw_extra_cone_interpretation": {
+      "correct_operation": "APPLY_BV_SDR_AND_CONSTRUCT_RETAINED_WITNESS_DO_NOT_PROJECT_L13_SOLUTIONS",
+      "polarization": "MIXED_RETAINED_METRIC_AND_CLOCK",
+      "pure_clock_mode": false,
+      "selector_projection_kills_polarization": false
+    },
+    "rows": 20,
+    "solution_projection": "p_sol(h,y)=h",
+    "source_inclusion": "i_src(f)=(0,f)",
+    "source_projection": "p_src(f1,f2)=Box_2 f1+f2",
+    "two_sided_graph_sdr_identities": [
+      "p_sol i_sol=I10",
+      "p_src i_src=I10",
+      "C20 i_sol=i_src A10",
+      "p_src C20=A10 p_sol",
+      "I20-i_sol p_sol=H C20",
+      "I20-i_src p_src=C20 H",
+      "H^2=0",
+      "p_sol H=0",
+      "H i_src=0"
+    ]
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -47,11 +74,22 @@
   ],
   "exact_checks": {
     "companion_graph_identity_exact": true,
+    "companion_graph_sdr_graph_homotopy_annihilates_source_inclusion": true,
+    "companion_graph_sdr_graph_homotopy_squared_zero": true,
+    "companion_graph_sdr_operator_intertwines_inclusions": true,
+    "companion_graph_sdr_operator_intertwines_projections": true,
+    "companion_graph_sdr_solution_graph_retract_identity": true,
+    "companion_graph_sdr_solution_projection_annihilates_graph_homotopy": true,
+    "companion_graph_sdr_solution_projection_inclusion_is_identity": true,
+    "companion_graph_sdr_source_graph_retract_identity": true,
+    "companion_graph_sdr_source_projection_inclusion_is_identity": true,
     "companion_principal_block_lower_triangular": true,
     "companion_principal_determinant_is_q_power_20": true,
     "companion_principal_null_rank_seven": true,
     "companion_principal_off_cone_rank_twenty": true,
+    "companion_principal_raw_extra_cone_rank_twenty": true,
     "ghost_and_identity_endpoint_factors_imported": true,
+    "microlocal_mixed_polarization_boundary_pinned": true,
     "portable_projection_and_inclusion_loaded": true,
     "retained_P26_is_degree_block_diagonal": true,
     "retained_metric_A10_equals_Box2_squared_plus_V2": true,
@@ -69,6 +107,11 @@
         "path": "quantum-weyl/lorentzian/certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT.json",
         "sha256": "9a01f82939b9a51adb1b348fffde5df6c71201dafc92e1967cc0556f5eed111d"
       },
+      "microlocal_localization_classical": {
+        "commit": "e21aa7844cf976a1e0a60d86f4f33c18dea37826",
+        "path": "d_quotient_classical/certificates/BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION.json",
+        "sha256": "8ae8f9193c8670ce37fc654674034d2b0852bf9ab2eb5c349e6516ed60ae4371"
+      },
       "minimal_contraction_import": {
         "path": "quantum-weyl/transfer/certificates/BERGER_MINIMAL_34_CONTRACTION_IMPORT.json",
         "sha256": "7c7fddb9ce9fba1be41904bc041b1c1a51a11e9d78557be55858d88018c7c15b"
@@ -82,16 +125,17 @@
       "contraction": "BERGER_MINIMAL_34_CONTRACTION_IMPORT",
       "endpoint": "BERGER_ENDPOINT_FACTOR_INPUT_IMPORT",
       "lower": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT",
+      "microlocal": "BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION",
       "raw": "BERGER_RAW_ENDPOINT_INPUT_IMPORT"
     },
     "source_manifest": {
-      "../reports/berger-retained-biwave-companion-preflight.md": "85a9e0c5489940e43919954b984adfb8e25d3b43fefd296a164d4e2b8a9bb5b8",
-      "retained_biwave_companion_preflight.py": "bbef5a3dd9ba80ec587fbc92b2b8617d9abaeb8b3f70763302ba0b0cb75e426f",
+      "../reports/berger-retained-biwave-companion-preflight.md": "90b626b6a623bf29aee2a08e71824660c68408ce4e78869c54a96dc6a3f8a845",
+      "retained_biwave_companion_preflight.py": "5d4fe8b6f914026853401fc18e3d5d2291bcf00758d64423f0d4edc0c970aade",
       "retained_biwave_companion_preflight_certificate.py": "c1aace1fd1a95f037430ad5367271d906a86a5bf63b16458158b8fe20afb53c7",
-      "schema/berger-retained-biwave-companion-preflight-v1.schema.json": "b78203c8b0f9911453b1fdc692a168ccd033168f1bb3cebe75a14e89a6d936a6",
-      "tests/test_retained_biwave_companion_preflight.py": "8a7857fd99c29da27b34281df18d8fff283152352c0af9fef269742fbf9d7793"
+      "schema/berger-retained-biwave-companion-preflight-v1.schema.json": "f8d89c86eebc7fb56f4727cdcb52e4924a2c050b658d354db47e83a928889474",
+      "tests/test_retained_biwave_companion_preflight.py": "1fce84bd070b52a2690baabf176c64a62be05d3eefb11e10e485bb9cd12f8201"
     },
-    "source_manifest_sha256": "817546ca9d2706d40b0416ed917d9327297d383dc358ebf2098b7d0aa355cd7f"
+    "source_manifest_sha256": "fb65d7d438d0c46881951b805a32956582cd31c215e2a968bca9ed1b003ec827"
   },
   "result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
   "result_state": "RETAINED_METRIC_IDENTIFIED_COMPANION_EXACT_CAUSAL_RESOLVENT_OPEN",

@@ -26,25 +26,31 @@
     "companion_system": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["rows", "fields", "operator", "graph_inclusion", "graph_identity", "principal_symbol", "principal_determinant", "extra_characteristic_cone", "rational_fixture", "principal_ranks"],
+      "required": ["rows", "fields", "operator", "graph_inclusion", "graph_identity", "solution_projection", "source_inclusion", "source_projection", "graph_homotopy", "two_sided_graph_sdr_identities", "principal_symbol", "principal_determinant", "extra_characteristic_cone", "rational_fixture", "principal_ranks", "raw_extra_cone_interpretation"],
       "properties": {
         "rows": {"const": 20},
         "fields": {"const": ["h_10", "y_10=Box_2 h_10"]},
         "operator": {"const": "C20=[[Box_2,-I10],[V_2,Box_2]]"},
         "graph_inclusion": {"const": "J20x10(h)=(h,Box_2 h)"},
         "graph_identity": {"const": "C20 J20x10(h)=(0,A10 h)"},
+        "solution_projection": {"const": "p_sol(h,y)=h"},
+        "source_inclusion": {"const": "i_src(f)=(0,f)"},
+        "source_projection": {"const": "p_src(f1,f2)=Box_2 f1+f2"},
+        "graph_homotopy": {"const": "H(f1,f2)=(0,-f1)"},
+        "two_sided_graph_sdr_identities": {"const": ["p_sol i_sol=I10", "p_src i_src=I10", "C20 i_sol=i_src A10", "p_src C20=A10 p_sol", "I20-i_sol p_sol=H C20", "I20-i_src p_src=C20 H", "H^2=0", "p_sol H=0", "H i_src=0"]},
         "principal_symbol": {"const": "[[q I10,0],[sigma_2(V_2),q I10]]"},
         "principal_determinant": {"const": "q^20"},
         "extra_characteristic_cone": {"const": false},
         "rational_fixture": {"const": {"u": "2", "v": "3"}},
-        "principal_ranks": {"const": {"metric_null_fixture": 7, "off_metric_cone_fixture": 20}}
+        "principal_ranks": {"const": {"metric_null_fixture": 7, "off_metric_cone_fixture": 20, "raw_extra_cone_fixture": 20}},
+        "raw_extra_cone_interpretation": {"const": {"polarization": "MIXED_RETAINED_METRIC_AND_CLOCK", "pure_clock_mode": false, "selector_projection_kills_polarization": false, "correct_operation": "APPLY_BV_SDR_AND_CONSTRUCT_RETAINED_WITNESS_DO_NOT_PROJECT_L13_SOLUTIONS"}}
       }
     },
-    "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "exact_checks": {"type": "object", "minProperties": 21, "additionalProperties": {"const": true}},
     "causal_policy": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["candidate_route", "diagonal_blocks", "off_diagonal_local_orders", "inverse_spatial_laplacian", "spatial_mode_projector", "volterra_convergence_and_global_support_proof", "advanced_retarded_operators"],
+      "required": ["candidate_route", "diagonal_blocks", "off_diagonal_local_orders", "inverse_spatial_laplacian", "spatial_mode_projector", "volterra_convergence_and_global_support_proof", "advanced_retarded_operators", "companion_cyclic_pairing", "advanced_retarded_cyclic_adjointness"],
       "properties": {
         "candidate_route": {"const": "CAUSAL_VOLTERRA_RESOLVENT_FOR_LOWER_BY_TWO_BIWAVE_COMPANION"},
         "diagonal_blocks": {"const": "normally hyperbolic tensor rough waves Box_2"},
@@ -52,10 +58,12 @@
         "inverse_spatial_laplacian": {"const": false},
         "spatial_mode_projector": {"const": false},
         "volterra_convergence_and_global_support_proof": {"const": "NOT_CONSTRUCTED"},
-        "advanced_retarded_operators": {"const": "NOT_CONSTRUCTED"}
+        "advanced_retarded_operators": {"const": "NOT_CONSTRUCTED"},
+        "companion_cyclic_pairing": {"const": "NOT_CONSTRUCTED"},
+        "advanced_retarded_cyclic_adjointness": {"const": "NOT_CONSTRUCTED"}
       }
     },
-    "claim_flags": {"const": {"BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false, "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY": false, "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT": false, "BERGER_RETAINED_BIWAVE_COMPANION_EXACT": true, "BERGER_RETAINED_METRIC_EQUALS_RAW_A10": true, "QUANTUM_CLAIM": false}},
+    "claim_flags": {"const": {"BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false, "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY": false, "BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION_IMPORTED": true, "BERGER_RAW_EXTRA_MODE_PURE_CLOCK": false, "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT": false, "BERGER_RETAINED_BIWAVE_COMPANION_EXACT": true, "BERGER_RETAINED_BIWAVE_COMPANION_GRAPH_SDR": true, "BERGER_RETAINED_METRIC_EQUALS_RAW_A10": true, "QUANTUM_CLAIM": false}},
     "next_gate": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT"},
     "provenance": {
       "type": "object",

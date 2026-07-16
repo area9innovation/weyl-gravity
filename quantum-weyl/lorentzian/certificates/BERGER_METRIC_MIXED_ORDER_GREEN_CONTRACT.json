@@ -6,7 +6,7 @@
     "FIRST_ORDER_DIFFERENTIAL_ALGEBRAIC",
     "RAW_CLOCK_RANK_ONE_WAVE_EXTENSION"
   ],
-  "claim_boundary": "Rejects the dressed cyclic witness as a Green endpoint, imports the principal-compatible raw cyclic 34-row route, the rank-one scalar-wave prolongation, and its cyclic 36-row analytic realization. The normalized classical lower-by-two tensor-biwave normal form is independently replayed. The normalized quadratic-symbol witness rules out the shared-connection Laplace-type two-factor ansatz but leaves unequal subprincipal and auxiliary/first-order architectures open. The full 13-row endpoint additionally has a genuine sqrt(2) characteristic outside the metric cone, so a metric-causal inverse on arbitrary 13-row sources is ruled out and the hybrid retained chain route is required. Exact projection identifies its metric block with A10, and the local 20-row companion has principal determinant q^20 with no extra cone. The causal Volterra resolvent remains open. It constructs no advanced or retarded Green operator, causal support theorem, full 26-row homotopy, Hadamard state, QME restoration, or Lorentzian quantum theory.",
+  "claim_boundary": "Rejects the dressed cyclic witness as a Green endpoint, imports the principal-compatible raw cyclic 34-row route, the rank-one scalar-wave prolongation, and its cyclic 36-row analytic realization. The normalized classical lower-by-two tensor-biwave normal form is independently replayed. The normalized quadratic-symbol witness rules out the shared-connection Laplace-type two-factor ansatz but leaves unequal subprincipal and auxiliary/first-order architectures open. The full 13-row endpoint additionally has a genuine sqrt(2) characteristic outside the metric cone, so a metric-causal inverse on arbitrary 13-row sources is ruled out and the hybrid retained chain route is required. Its polarization mixes retained metric and clock components; the BV SDR must construct a new retained witness rather than project L13 solutions. Exact projection identifies its metric block with A10, and the local 20-row companion has a two-sided graph SDR and principal determinant q^20 with no extra cone. The causal Volterra resolvent remains open. It constructs no advanced or retarded Green operator, causal support theorem, full 26-row homotopy, Hadamard state, QME restoration, or Lorentzian quantum theory.",
   "common_proof_checks": [
     "D_equivariance",
     "advanced_left_inverse",
@@ -37,19 +37,24 @@
   "current_extension_boundary": {
     "analytic_rows": 36,
     "authoritative_BV_rows": 34,
+    "correct_homological_operation": "APPLY_BV_SDR_AND_CONSTRUCT_RETAINED_WITNESS_DO_NOT_PROJECT_L13_SOLUTIONS",
     "cyclic_realization_path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json",
     "cyclic_realization_sha256": "6a6b21eace2ada1805b1e3e2259c2a36709fe4d618993381c55954139a038575",
     "extra_characteristic": "p0^2=2|p_spatial|^2",
+    "extra_characteristic_polarization": "MIXED_RETAINED_METRIC_AND_CLOCK",
     "factor_screen_path": "quantum-weyl/lorentzian/certificates/BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json",
     "factor_screen_sha256": "7b7b53c7d46cd3a1d6348560eb19b420a0abfcd41ac53c415908ed700b2714a1",
     "factor_screen_verdict": "EQUAL_CONNECTION_LAPLACE_FACTOR_ANSATZ_OBSTRUCTED",
     "full_L13_metric_cone_verdict": "EXACT_NO_GO_EXTRA_SPEED_SQRT2",
     "lower_by_two_next_gate": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT",
     "lower_by_two_normal_form": "A10=Box_2^2+V_2",
+    "raw_extra_mode_pure_clock": false,
+    "retained_companion_graph_sdr": true,
     "retained_companion_path": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT.json",
     "retained_companion_principal_determinant": "q^20",
-    "retained_companion_sha256": "413e43ed6bc92d89f9c0b5b391cb74d38fc2ee9df3249e98b849f742a835f3cb",
+    "retained_companion_sha256": "b32360a37bd020e357e95821ace94273b9c25a127b8379e7e436e15c6e521e47",
     "retained_metric_identity": "P26_metric=A10=Box_2^2+V_2",
+    "selector_projection_kills_raw_polarization": false,
     "status": "FULL_L13_METRIC_CONE_INVERSE_OBSTRUCTED_RETAINED_BIWAVE_COMPANION_EXACT_VOLTERRA_RESOLVENT_OPEN",
     "triangular_reduction": "E13 L13 U13^{-1}=L12 direct sum I1",
     "viable_next_architectures": [
@@ -86,19 +91,19 @@
   "physical_input_status": "FULL_L13_METRIC_CONE_NO_GO_IMPORTED_RETAINED_COMPANION_EXACT_VOLTERRA_OPEN",
   "provenance": {
     "source_manifest": {
-      "../reports/berger-metric-mixed-order-green-contract.md": "ec5f49dc0883368fa97db3ed6945cb333b98c1b072366fa67819622309e3289d",
+      "../reports/berger-metric-mixed-order-green-contract.md": "b16ae8851befb165f31195f7bbe04f785902add0ca08ccef792e388ad9c79fa7",
       "certificates/BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json": "7b7b53c7d46cd3a1d6348560eb19b420a0abfcd41ac53c415908ed700b2714a1",
       "certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json": "6a6b21eace2ada1805b1e3e2259c2a36709fe4d618993381c55954139a038575",
       "certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json": "5ea1bf6f2449cc5077b8602f0870ea163c65c48f776f2354f25d0d7a19ca745c",
       "certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json": "bb8c813922bd2e74f7e24369e756a09d8543cfb66a9580131ad8e6ad0e5d34c5",
-      "certificates/BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT.json": "413e43ed6bc92d89f9c0b5b391cb74d38fc2ee9df3249e98b849f742a835f3cb",
-      "metric_mixed_order_green_contract.py": "fbb28fb7620825a4362f194dcf43b44a98ce3314f5f920e920c47516aa4ab73e",
+      "certificates/BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT.json": "b32360a37bd020e357e95821ace94273b9c25a127b8379e7e436e15c6e521e47",
+      "metric_mixed_order_green_contract.py": "e1df25b7cb303a9710bb1ce301bbe1af9548c54607aa5f8c8b0b535fd78d141f",
       "metric_mixed_order_green_contract_certificate.py": "96ed8b6813d9b73039e56d8218fc19e8b579fc6ea0b93b25f12910ebcaccadb4",
-      "schema/berger-metric-mixed-order-green-contract-v1.schema.json": "d33236e3a3c756ed3ee525e3e4cad4177978c619139b74c23ee15d65809d266c",
+      "schema/berger-metric-mixed-order-green-contract-v1.schema.json": "6f2dcd48d3ee0fc57ae26276bb4f0b323e28ebbed2dc2ade8f4d3d66e5c9ccc4",
       "schema/berger-metric-mixed-order-green-export-v1.schema.json": "4aafad99f5ccbc84d19d2bb0d61e6b07c6209535e656857f79f7b8b23c84062a",
       "tests/test_metric_mixed_order_green_contract.py": "7af4dba406581e524540feff57e5a6325860f37b5bbfef0a3449021f9d04be3b"
     },
-    "source_manifest_sha256": "26aa590921c483db6988bbec016f4dfb60e7f569dc2135b3ab37d3695111cb73"
+    "source_manifest_sha256": "1b0bda79ecb807f8866d39db6bbe7cc1b0a258745f1be91255c5dcc7af4fa686"
   },
   "quantum_execution_authorized": false,
   "required_operator_ids": [

@@ -730,6 +730,18 @@ def build_certificate() -> dict[str, Any]:
         )
         is not True
         or berger_retained_companion.get("claim_flags", {}).get(
+            "BERGER_RETAINED_BIWAVE_COMPANION_GRAPH_SDR"
+        )
+        is not True
+        or berger_retained_companion.get("claim_flags", {}).get(
+            "BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION_IMPORTED"
+        )
+        is not True
+        or berger_retained_companion.get("claim_flags", {}).get(
+            "BERGER_RAW_EXTRA_MODE_PURE_CLOCK"
+        )
+        is not False
+        or berger_retained_companion.get("claim_flags", {}).get(
             "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT"
         )
         is not False
@@ -943,7 +955,7 @@ def build_certificate() -> dict[str, Any]:
                 "independently imported the cyclic 36-row analytic Green realization with exact source/solution graph SDRs and unchanged 34-row BV cohomology",
                 "pinned independent replay of the exact Berger lower-by-two tensor-biwave normal form and canonical rough-wave factor no-go, followed by a normalized obstruction to the equal-connection scalar-principal ansatz",
                 "pinned independent replay of the full 13-row Douglis metric-cone inverse no-go and its hybrid retained-chain architectural consequence",
-                "exact projection P26=pi_cl P34_raw iota_cl identifies P26_metric=A10 and gives a 20-row local companion with principal determinant q^20 and no extra characteristic cone",
+                "exact projection P26=pi_cl P34_raw iota_cl identifies P26_metric=A10 and gives a 20-row local companion with a two-sided graph SDR, principal determinant q^20, no extra characteristic cone, and the corrected mixed raw-polarization interpretation",
                 "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
                 "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
                 "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
@@ -1188,7 +1200,7 @@ def build_certificate() -> dict[str, Any]:
             "The complete 54-row local D action is independently imported and unary/contraction/cyclic equivariance is exact. The later scientific q2 replay now also proves the arity-two D-derivation identity; it does not solve the unary or interacting Cartan equations.",
             "The Berger 54-row q2 arrival adapter fixes and mutation-tests the portable bilinear PBW structure and binds it to the authoritative unary, D, contraction, and pairing hashes. The complete classical tensor is now independently imported, and the specialized exact Q(sqrt(10)) backend replays q1/q2, D/q2, and odd-Darboux cyclicity coefficientwise. Full ell2 transfer and Cartan execution remain absent.",
             "The bare full-dimensional unary Cartan problem is exactly obstructed on the 26/54-row complex. A conditional causal transfer theorem is now imported, but its retained Green-homotopy hypothesis and cyclic arity-two completion remain unconstructed.",
-            "The first dressed cyclic witness is not principal-compatible with the Green contract. The raw BV-canonical endpoint, its 13-row scalar-wave prolongation, and the paired 36-row cyclic analytic realization are independently replayed. The exact lower-by-two tensor-biwave normal form and canonical rough-wave factor no-go are imported, and the equal-connection scalar-principal two-factor ansatz is also exactly obstructed. The full L13 endpoint has a genuine sqrt(2) characteristic outside the metric cone, so a background-metric-causal inverse on arbitrary 13-row sources is ruled out. Exact projection identifies P26_metric=A10, and its local 20-row companion has determinant q^20 with no extra cone; the causal Volterra resolvent and retained chain homotopy remain open.",
+            "The first dressed cyclic witness is not principal-compatible with the Green contract. The raw BV-canonical endpoint, its 13-row scalar-wave prolongation, and the paired 36-row cyclic analytic realization are independently replayed. The exact lower-by-two tensor-biwave normal form and canonical rough-wave factor no-go are imported, and the equal-connection scalar-principal two-factor ansatz is also exactly obstructed. The full L13 endpoint has a genuine sqrt(2) characteristic outside the metric cone, so a background-metric-causal inverse on arbitrary 13-row sources is ruled out. Its polarization mixes retained metric and clock components; the BV SDR must construct a different retained witness rather than project L13 solutions. Exact projection identifies P26_metric=A10, and its local 20-row companion has a two-sided graph SDR, determinant q^20, and no extra cone; the causal Volterra resolvent, cyclic adjointness, and retained chain homotopy remain open.",
             "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
             "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
             "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",

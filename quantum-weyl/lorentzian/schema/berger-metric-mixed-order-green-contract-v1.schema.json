@@ -58,7 +58,7 @@
     },
     "current_extension_boundary": {
       "type": "object", "additionalProperties": false,
-      "required": ["status", "authoritative_BV_rows", "analytic_rows", "wave_extension_path", "wave_extension_sha256", "cyclic_realization_path", "cyclic_realization_sha256", "factor_screen_path", "factor_screen_sha256", "factor_screen_verdict", "retained_companion_path", "retained_companion_sha256", "retained_metric_identity", "retained_companion_principal_determinant", "lower_by_two_normal_form", "lower_by_two_next_gate", "full_L13_metric_cone_verdict", "extra_characteristic", "viable_next_architectures", "triangular_reduction"],
+      "required": ["status", "authoritative_BV_rows", "analytic_rows", "wave_extension_path", "wave_extension_sha256", "cyclic_realization_path", "cyclic_realization_sha256", "factor_screen_path", "factor_screen_sha256", "factor_screen_verdict", "retained_companion_path", "retained_companion_sha256", "retained_metric_identity", "retained_companion_principal_determinant", "retained_companion_graph_sdr", "lower_by_two_normal_form", "lower_by_two_next_gate", "full_L13_metric_cone_verdict", "extra_characteristic", "extra_characteristic_polarization", "raw_extra_mode_pure_clock", "selector_projection_kills_raw_polarization", "correct_homological_operation", "viable_next_architectures", "triangular_reduction"],
       "properties": {
         "status": {"const": "FULL_L13_METRIC_CONE_INVERSE_OBSTRUCTED_RETAINED_BIWAVE_COMPANION_EXACT_VOLTERRA_RESOLVENT_OPEN"},
         "authoritative_BV_rows": {"const": 34},
@@ -78,6 +78,11 @@
         "lower_by_two_next_gate": {"const": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT"},
         "full_L13_metric_cone_verdict": {"const": "EXACT_NO_GO_EXTRA_SPEED_SQRT2"},
         "extra_characteristic": {"const": "p0^2=2|p_spatial|^2"},
+        "extra_characteristic_polarization": {"const": "MIXED_RETAINED_METRIC_AND_CLOCK"},
+        "raw_extra_mode_pure_clock": {"const": false},
+        "selector_projection_kills_raw_polarization": {"const": false},
+        "correct_homological_operation": {"const": "APPLY_BV_SDR_AND_CONSTRUCT_RETAINED_WITNESS_DO_NOT_PROJECT_L13_SOLUTIONS"},
+        "retained_companion_graph_sdr": {"const": true},
         "viable_next_architectures": {"const": ["RETAINED_BIWAVE_VOLTERRA_RESOLVENT", "WIDER_CHARACTERISTIC_CONE_GREEN_INVERSE_NONPHYSICAL_OPTION"]},
         "triangular_reduction": {"const": "E13 L13 U13^{-1}=L12 direct sum I1"}
       }

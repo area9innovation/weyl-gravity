@@ -53,17 +53,24 @@ Volterra/Levi resolvent remain open; no Green or quantum flag is promoted.
 The full 13-row route is now more sharply classified. Its exact Douglis
 determinant contains a genuine `p0^2=2|p_spatial|^2` factor. Consequently no
 inverse on arbitrary 13-row sources can have support confined to the
-background metric cone. The extra cone belongs to the acyclic clock/graph
-incidence, so this is not a physical superluminality claim. The active route
-is hybrid: contract that incidence support-locally, then construct the causal
-chain homotopy on the retained complex.
+background metric cone. The earlier statement that the extra cone belongs to
+the acyclic clock/graph incidence was too strong: the exact raw polarization
+mixes retained metric and clock components, and selector projection does not
+kill it. What remains
+contractible is the clock/graph BV subcomplex, not this polarization of the
+chosen witness. The active route is therefore to apply the BV SDR and build a
+new retained witness, not to project raw `L13` solutions. This remains a
+witness artifact, not a physical superluminality claim.
 
 The first hybrid step is now exact. Projection by the certified classical
 contraction gives `P26_metric=A10=Box_2^2+V_2`. The associated local 20-row
 companion has principal determinant `q^20` and no extra characteristic cone.
-This identifies the correct retained PDE and reduces the live analytic gate
-to a causal Volterra resolvent with global support control. No advanced or
-retarded operator has yet been constructed.
+It is related to `A10` by a two-sided graph contraction on arbitrary sources,
+not only by an identity after imposing `y=Box_2 h`. This identifies the
+correct retained PDE and reduces the live analytic gate to a causal Volterra
+resolvent with global support control. No advanced or retarded operator,
+cyclic companion pairing, or causal adjointness theorem has yet been
+constructed.
 
 Reproduce the current contract receipt with:
 

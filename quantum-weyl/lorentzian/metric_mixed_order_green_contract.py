@@ -375,6 +375,18 @@ def build_contract_receipt() -> dict[str, Any]:
         )
         is not True
         or retained_companion.get("claim_flags", {}).get(
+            "BERGER_RETAINED_BIWAVE_COMPANION_GRAPH_SDR"
+        )
+        is not True
+        or retained_companion.get("claim_flags", {}).get(
+            "BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION_IMPORTED"
+        )
+        is not True
+        or retained_companion.get("claim_flags", {}).get(
+            "BERGER_RAW_EXTRA_MODE_PURE_CLOCK"
+        )
+        is not False
+        or retained_companion.get("claim_flags", {}).get(
             "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT"
         )
         is not False
@@ -441,6 +453,11 @@ def build_contract_receipt() -> dict[str, Any]:
                 "lower_by_two_next_gate": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT",
                 "full_L13_metric_cone_verdict": "EXACT_NO_GO_EXTRA_SPEED_SQRT2",
                 "extra_characteristic": "p0^2=2|p_spatial|^2",
+                "extra_characteristic_polarization": "MIXED_RETAINED_METRIC_AND_CLOCK",
+                "raw_extra_mode_pure_clock": False,
+                "selector_projection_kills_raw_polarization": False,
+                "correct_homological_operation": "APPLY_BV_SDR_AND_CONSTRUCT_RETAINED_WITNESS_DO_NOT_PROJECT_L13_SOLUTIONS",
+                "retained_companion_graph_sdr": True,
                 "viable_next_architectures": [
                     "RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
                     "WIDER_CHARACTERISTIC_CONE_GREEN_INVERSE_NONPHYSICAL_OPTION",
@@ -463,8 +480,11 @@ def build_contract_receipt() -> dict[str, Any]:
                 "architectures open. The full 13-row endpoint additionally has a genuine "
                 "sqrt(2) characteristic outside the metric cone, so a metric-causal inverse "
                 "on arbitrary 13-row sources is ruled out and the hybrid retained chain route "
-                "is required. Exact projection identifies its metric block with A10, and the "
-                "local 20-row companion has principal determinant q^20 with no extra cone. "
+                "is required. Its polarization mixes retained metric and clock components; "
+                "the BV SDR must construct a new retained witness rather than project L13 "
+                "solutions. Exact projection identifies its metric block with A10, and the "
+                "local 20-row companion has a two-sided graph SDR and principal determinant "
+                "q^20 with no extra cone. "
                 "The causal Volterra resolvent remains open. It "
                 "constructs no advanced or retarded Green operator, causal support "
                 "theorem, full 26-row homotopy, Hadamard state, QME restoration, or "

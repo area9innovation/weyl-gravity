@@ -42,19 +42,22 @@ also live.
 The complete analytic endpoint nevertheless cannot be the metric-causal
 Green theorem. Its exact Douglis determinant contains the extra factor
 `p0^2-2|p_spatial|^2`, with rank twelve on that cone and rank thirteen off it.
-The contractible clock/graph incidence carries this characteristic. The
-physical next gate is therefore a hybrid chain construction: apply its
-support-local contraction first and build causal propagation only on retained
-sources.
+Its exact polarization is mixed: it has nonzero retained metric and clock
+components, and selector projection does not kill it. What is contractible is
+the clock/graph subcomplex of the BV differential, not this polarization of
+the chosen witness. The physical next gate is therefore a hybrid chain
+construction: apply the certified BV SDR and construct a new retained witness;
+do not project solutions of `L13`.
 
 That projection has now been executed exactly. The retained endpoint is
 block diagonal with degree ranks `3|10|10|3`, and its ten-row metric block is
 precisely `A10`. The exact local companion
 `C20=[[Box_2,-I10],[V_2,Box_2]]` has graph identity
 `C20(h,Box_2 h)=(0,A10 h)` and principal determinant `q^20`; it introduces no
-extra characteristic cone. The remaining analytic gate is now the causal
-Volterra resolvent and its global support proof, not identification of the
-retained PDE.
+extra characteristic cone. An exact two-sided graph SDR now handles arbitrary
+companion sources and verifies both retract identities with side conditions.
+The remaining analytic gate is the causal Volterra resolvent, global support,
+and cyclic adjointness, not identification of the retained PDE.
 
 All routes require exact proofs of both left and right inverse identities,
 advanced/retarded support, propagation of constraints, formal-adjoint and

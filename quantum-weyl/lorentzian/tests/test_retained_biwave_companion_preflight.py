@@ -42,6 +42,46 @@ class RetainedBiwaveCompanionPreflightTests(unittest.TestCase):
             self.certificate["companion_system"]["extra_characteristic_cone"]
         )
 
+    def test_companion_is_a_two_sided_graph_sdr(self) -> None:
+        expected = [
+            "p_sol i_sol=I10",
+            "p_src i_src=I10",
+            "C20 i_sol=i_src A10",
+            "p_src C20=A10 p_sol",
+            "I20-i_sol p_sol=H C20",
+            "I20-i_src p_src=C20 H",
+            "H^2=0",
+            "p_sol H=0",
+            "H i_src=0",
+        ]
+        self.assertEqual(
+            self.certificate["companion_system"][
+                "two_sided_graph_sdr_identities"
+            ],
+            expected,
+        )
+        self.assertTrue(
+            self.certificate["claim_flags"][
+                "BERGER_RETAINED_BIWAVE_COMPANION_GRAPH_SDR"
+            ]
+        )
+
+    def test_raw_extra_polarization_is_not_mislabeled_clock(self) -> None:
+        interpretation = self.certificate["companion_system"][
+            "raw_extra_cone_interpretation"
+        ]
+        self.assertEqual(
+            interpretation["polarization"], "MIXED_RETAINED_METRIC_AND_CLOCK"
+        )
+        self.assertFalse(interpretation["pure_clock_mode"])
+        self.assertFalse(interpretation["selector_projection_kills_polarization"])
+        self.assertEqual(
+            self.certificate["companion_system"]["principal_ranks"][
+                "raw_extra_cone_fixture"
+            ],
+            20,
+        )
+
     def test_green_and_quantum_promotions_fail_closed(self) -> None:
         for flag in (
             "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT",
@@ -58,6 +98,12 @@ class RetainedBiwaveCompanionPreflightTests(unittest.TestCase):
         mutant["causal_policy"][
             "volterra_convergence_and_global_support_proof"
         ] = "PROVED"
+        with self.assertRaisesRegex(ValueError, "causal policy"):
+            validate_preflight_result(mutant)
+
+    def test_unproved_cyclic_pairing_cannot_be_promoted(self) -> None:
+        mutant = deepcopy(self.certificate)
+        mutant["causal_policy"]["companion_cyclic_pairing"] = "CONSTRUCTED"
         with self.assertRaisesRegex(ValueError, "causal policy"):
             validate_preflight_result(mutant)
 
