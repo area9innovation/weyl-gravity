@@ -47,6 +47,9 @@ def _build(
     transport_recognition_override: dict[str, object] | None = None,
     include_SO42_recognition: bool = True,
     SO42_recognition_override: dict[str, object] | None = None,
+    include_direct_tractor: bool = True,
+    direct_tractor_override: dict[str, object] | None = None,
+    curved_bgg_override: dict[str, object] | None = None,
     quotient: CurvedNullSymbolQuotient | None = None,
 ) -> CurvatureProlongationStatus:
     return CurvatureProlongationStatus.build(
@@ -90,6 +93,20 @@ def _build(
             else None
         ),
         mixed_order_factorization_certificate=factorization_certificate,
+        direct_tractor_causal_homotopy_certificate=(
+            direct_tractor_override
+            if direct_tractor_override is not None
+            else _load("curved_full_prolonged_green_homotopy_assembly.json")
+            if include_direct_tractor
+            else None
+        ),
+        curved_bgg_pbw_certificate=(
+            curved_bgg_override
+            if curved_bgg_override is not None
+            else _load("adjoint_tractor_bgg_curved_pbw.json")
+            if include_direct_tractor
+            else None
+        ),
         causal_transport_recognition_certificate=(
             transport_recognition_override
             if transport_recognition_override is not None
@@ -280,18 +297,26 @@ def main() -> int:
     checks["causal_operators_remain_false"] = not (
         status.curvature_causal_green_operators
     )
-    checks["causal_homotopy_remains_false"] = not status.causal_green_homotopy
+    checks["direct_tractor_causal_homotopy_promoted"] = (
+        status.direct_tractor_causal_homotopy
+    )
+    checks["direct_tractor_recognition_wired"] = (
+        status.direct_tractor_causal_recognition_exact
+    )
+    checks["causal_homotopy_promoted_by_direct_tractor"] = (
+        status.causal_green_homotopy
+    )
     checks["transport_recognition_wired"] = (
         status.causal_transport_recognition_exact
     )
-    checks["causal_quasi_remains_false_without_Green"] = not (
+    checks["causal_quasi_promoted_by_direct_tractor"] = (
         status.causal_quasi_isomorphism
     )
-    checks["endpoint_recovery_remains_false_without_Green"] = not (
+    checks["endpoint_recovery_promoted_by_direct_tractor"] = (
         status.residual_endpoint_recovery
     )
     checks["SO42_recognition_wired"] = status.SO42_transport_recognition_exact
-    checks["SO42_remains_false_without_causal_quasi"] = not (
+    checks["SO42_promoted_by_direct_tractor"] = (
         status.SO42_equivariant_transport
     )
     if args.guards:
@@ -333,6 +358,7 @@ def main() -> int:
             rejected = _build(
                 include_mapping_cylinder=True,
                 promotion_override=broken,
+                include_direct_tractor=False,
                 quotient=status.quotient,
             )
             checks[f"broken_{key}_blocks_promotion"] = not (
@@ -356,6 +382,7 @@ def main() -> int:
             rejected = _build(
                 include_mapping_cylinder=True,
                 factorization_certificate=malformed,
+                include_direct_tractor=False,
                 quotient=status.quotient,
             )
             checks[f"malformed_factorization_{index}_blocks_promotion"] = not (
@@ -372,6 +399,40 @@ def main() -> int:
             checks["factorization_without_theorem_rejected"] = True
         else:
             checks["factorization_without_theorem_rejected"] = False
+        without_direct_tractor = _build(
+            include_mapping_cylinder=True,
+            include_direct_tractor=False,
+            quotient=status.quotient,
+        )
+        checks["direct_tractor_certificate_required"] = not any(
+            (
+                without_direct_tractor.direct_tractor_causal_homotopy,
+                without_direct_tractor.causal_green_homotopy,
+                without_direct_tractor.causal_quasi_isomorphism,
+                without_direct_tractor.residual_endpoint_recovery,
+                without_direct_tractor.SO42_equivariant_transport,
+            )
+        )
+        broken_direct = _load(
+            "curved_full_prolonged_green_homotopy_assembly.json"
+        )
+        broken_direct["full_hybrid_assembly"][
+            "algebraic_identity_exact_conditionally"
+        ] = False
+        rejected_direct = _build(
+            include_mapping_cylinder=True,
+            direct_tractor_override=broken_direct,
+            quotient=status.quotient,
+        )
+        checks["broken_direct_tractor_certificate_blocks_transport"] = not any(
+            (
+                rejected_direct.direct_tractor_causal_homotopy,
+                rejected_direct.causal_green_homotopy,
+                rejected_direct.causal_quasi_isomorphism,
+                rejected_direct.residual_endpoint_recovery,
+                rejected_direct.SO42_equivariant_transport,
+            )
+        )
         without_transport_recognition = _build(
             include_mapping_cylinder=True,
             include_transport_recognition=False,
@@ -456,7 +517,8 @@ def main() -> int:
         )
     print(
         "CURVATURE PROLONGATION STATUS: PDE AND LOCAL PROLONGATION FLAGS TRUE; "
-        "GREEN/CURRENT/TRANSPORT FLAGS FALSE"
+        "DIRECT-TRACTOR GREEN/CURRENT/TRANSPORT FLAGS TRUE; "
+        "CANONICAL ENDPOINT FLAGS FALSE"
     )
     return 0
 

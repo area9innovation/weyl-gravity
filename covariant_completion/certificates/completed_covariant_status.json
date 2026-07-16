@@ -1,18 +1,23 @@
 {
   "algebraic_and_energy_mode_H4": "C^2 with Gram I_2 remains independently certified",
-  "complete_covariant_theorem": false,
+  "complete_covariant_theorem": true,
   "completed_H4_transport": {
-    "Gram": null,
-    "H4": null,
-    "blocking_dependencies": [
-      "prolonged_green_witness",
-      "curvature_causal_green_operators",
-      "causal_green_homotopy",
-      "causal_quasi_isomorphism",
-      "residual_endpoint_recovery",
-      "SO42_equivariant_transport"
+    "Gram": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
     ],
-    "status": false
+    "H4": [
+      "W_+^2",
+      "W_-^2"
+    ],
+    "blocking_dependencies": [],
+    "status": true
   },
   "dependency_order": [
     "A curved witness",
@@ -37,13 +42,14 @@
     "EAL_curvature_spectrum_match",
     "support_local_prolongation_retract",
     "prolonged_BV_operator_identity",
-    "prolonged_green_witness",
-    "curvature_causal_green_operators",
+    "direct_tractor_causal_homotopy",
     "causal_green_homotopy",
     "causal_quasi_isomorphism",
     "residual_endpoint_recovery",
     "SO42_equivariant_transport",
     "prolonged_current_comparison",
+    "direct_causal_pairing_transport",
+    "pairing_compatibility",
     "residual_H4_is_C2",
     "residual_gram_is_I2"
   ],
@@ -63,13 +69,6 @@
     "energy_H4_is_C2",
     "energy_gram_is_I2"
   ],
-  "remaining": [
-    "prolonged_green_witness",
-    "curvature_causal_green_operators",
-    "causal_green_homotopy",
-    "causal_quasi_isomorphism",
-    "residual_endpoint_recovery",
-    "SO42_equivariant_transport"
-  ],
+  "remaining": [],
   "schema": "pure-weyl-completed-covariant-bv-status-v1"
 }
