@@ -101,8 +101,8 @@ def build_certificate() -> dict[str, object]:
             "degree-zero quantum D-Cartan defect, boundary anomaly, measure anomaly, or Lorentzian theorem."
         ),
         "next_gate": (
-            "complete the parity-odd AFN0 quotient, freeze the full classical BV import, and construct the regulated "
-            "Slavnov breaking plus the explicit map from local anomaly cocycles to the admissible D-Cartan defect complex"
+            "freeze the full classical BV import and construct the regulated Slavnov breaking plus the renormalized "
+            "local Ward-insertion map from anomaly cocycles to the admissible D-Cartan defect complex"
         ),
     }
     return {**payload, "certificate_hash": _canonical_hash(payload)}

@@ -7,7 +7,7 @@
   "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope_label", "resolution_vocabulary", "slices", "diff_top_form_ledgers", "graph_artifact_bundle", "lower_form_carrier_inventory", "ambient_lower_form_signature_inventory", "total_complex_gates", "claim_boundary", "report_hash", "canonical_hashes", "certificate_hash"],
   "properties": {
     "result_id": {"const": "BASIS_GAP_REPORT_AFN0"},
-    "result_state": {"const": "BASIS_GAPS_PARTIALLY_RESOLVED"},
+    "result_state": {"const": "TOP_FORM_BASIS_GAPS_RESOLVED_TOTAL_COMPLEX_OPEN"},
     "classical_commit": {"const": "UNFROZEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
     "scope_label": {"const": "AFN0_ONLY"},
@@ -66,8 +66,8 @@
                 "grading_status": {"const": "GRADING_ADMISSIBLE"},
                 "refined_grading_status": {"enum": ["REFINED_ADMISSIBLE", "REJECTED_BY_REFINED_GRADING"]},
                 "raw_contraction_status": {"enum": ["RAW_CONTRACTION_EXISTS", "NOT_APPLICABLE"]},
-                "tensor_realizability": {"enum": ["TENSOR_REALIZABLE_BY_GENERATED_REPRESENTATIVE", "UNDECIDED_PENDING_BIANCHI_AND_DIMENSION_IDENTITIES", "NOT_REALIZABLE_AFTER_REFINED_GRADING"]},
-                "canonical_status": {"enum": ["CANONICALLY_NONZERO", "UNDECIDED", "NOT_APPLICABLE"]},
+                "tensor_realizability": {"enum": ["TENSOR_REALIZABLE_BY_GENERATED_REPRESENTATIVE", "TENSOR_REALIZABLE_CANONICALLY_ZERO", "UNDECIDED_PENDING_BIANCHI_AND_DIMENSION_IDENTITIES", "NOT_REALIZABLE_AFTER_REFINED_GRADING"]},
+                "canonical_status": {"enum": ["CANONICALLY_NONZERO", "CANONICALLY_ZERO", "UNDECIDED", "NOT_APPLICABLE"]},
                 "generated_raw_count": {"type": "integer", "minimum": 0},
                 "symmetry_canonical_orbit_count": {"type": "integer", "minimum": 0},
                 "canonical_nonzero_count": {"type": "integer", "minimum": 0},
@@ -143,7 +143,7 @@
       "additionalProperties": false,
       "required": ["TOP_FORM_BASIS_EXHAUSTIVE", "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE", "LOWER_FORM_BOUNDARY_BASIS_EXHAUSTIVE", "TOTAL_COMPLEX_EXHAUSTIVE", "FORWARD_REVERSE_SPAN_AGREEMENT"],
       "properties": {
-        "TOP_FORM_BASIS_EXHAUSTIVE": {"const": "IN_PROGRESS"},
+        "TOP_FORM_BASIS_EXHAUSTIVE": {"const": "VERIFIED_AFN0_WEYL_SECTORS"},
         "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE": {"const": "IN_PROGRESS_GRADING_EXHAUSTIVE_CANDIDATE_CARRIERS_COMPLETE"},
         "LOWER_FORM_BOUNDARY_BASIS_EXHAUSTIVE": {"const": "IN_PROGRESS_GRADING_EXHAUSTIVE_EXACT_BOUNDARY_CARRIERS_COMPLETE"},
         "TOTAL_COMPLEX_EXHAUSTIVE": {"const": "NOT_COMPUTED"},

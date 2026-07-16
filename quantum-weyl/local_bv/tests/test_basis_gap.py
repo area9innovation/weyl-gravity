@@ -60,6 +60,14 @@ class BasisGapTests(unittest.TestCase):
             by_slice["H04_AFN0_ODD"]["top_form_signature_resolution_status"],
             "COMPLETE",
         )
+        self.assertEqual(
+            by_slice["H14_AFN0_ODD"]["top_form_signature_resolution_status"],
+            "COMPLETE",
+        )
+        self.assertEqual(
+            by_slice["H14_AFN0_ODD"]["forward_reverse_span_agreement"],
+            "VERIFIED",
+        )
 
     def test_terminal_and_pending_proofs_fail_closed(self) -> None:
         records = [
@@ -130,7 +138,9 @@ class BasisGapTests(unittest.TestCase):
             record for record in records
             if not record["candidate_ids"]
             and record["refined_grading_status"] == "REFINED_ADMISSIBLE"
-            and record["resolution"] != "GENERATED_NONZERO"
+            and record["resolution"] not in {
+                "GENERATED_NONZERO", "IDENTICALLY_ZERO_BY_SYMMETRY"
+            }
         ]
         self.assertTrue(unresolved)
         self.assertTrue(

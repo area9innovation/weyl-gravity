@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-afn0-h14-odd-canonical-quotient-v1.json",
+  "title": "Odd AFN0 H14 canonical candidate quotient",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id", "result_state", "classical_commit", "dependency_tags",
+    "scope_label", "bounds", "enumeration_policy", "mixed_sectors",
+    "quadratic_weyl_sector", "top_basis", "smallest_relative_sector",
+    "classes", "basis_exhaustiveness_proof", "checks", "claim_boundary",
+    "analysis_sha256", "provenance", "certificate_hash"
+  ],
+  "properties": {
+    "result_id": {"const": "AFN0_H14_ODD_CANONICAL_QUOTIENT"},
+    "result_state": {"const": "COMPLETE_AFN0_ODD_CANDIDATE_QUOTIENT"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope_label": {"const": "AFN0_ONLY"},
+    "bounds": {
+      "type": "object", "additionalProperties": false,
+      "required": ["spacetime_dimension", "ghost_number", "form_degree", "antifield_number", "engineering_dimension", "parity", "ghost_species"],
+      "properties": {
+        "spacetime_dimension": {"const": 4}, "ghost_number": {"const": 1},
+        "form_degree": {"const": 4}, "antifield_number": {"const": 0},
+        "engineering_dimension": {"const": 4}, "parity": {"const": "odd"},
+        "ghost_species": {"const": "WEYL"}
+      }
+    },
+    "enumeration_policy": {"type": "object"},
+    "mixed_sectors": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["signature", "raw_graph_count", "signed_symmetry_orbit_count", "bianchi_relation_rank", "canonical_quotient_dimension", "resolution", "orbit_witnesses", "graph_artifact_hash"],
+        "properties": {
+          "signature": {"type": "object"}, "raw_graph_count": {"const": 15},
+          "signed_symmetry_orbit_count": {"const": 3}, "bianchi_relation_rank": {"const": 3},
+          "canonical_quotient_dimension": {"const": 0},
+          "resolution": {"const": "IDENTICALLY_ZERO_BY_SYMMETRY"},
+          "orbit_witnesses": {"type": "array", "minItems": 3, "maxItems": 3},
+          "graph_artifact_hash": {"$ref": "#/$defs/hash"}
+        }
+      }
+    },
+    "quadratic_weyl_sector": {"type": "object"},
+    "top_basis": {"const": ["ANOM_OMEGA_C_DUAL_C"]},
+    "smallest_relative_sector": {
+      "type": "object", "additionalProperties": false,
+      "required": ["incoming_q_basis", "incoming_dh_basis", "Q_matrix", "d_h_matrix", "combined_boundary_matrix", "closure_obstruction_matrix", "boundary_rank", "closure_rank", "quotient_dimension"],
+      "properties": {
+        "incoming_q_basis": {"const": ["CT_C_DUAL_C"]},
+        "incoming_dh_basis": {"const": ["CURRENT_C_DUAL_C_DIFF_COMPLETION"]},
+        "Q_matrix": {"type": "object"}, "d_h_matrix": {"type": "object"},
+        "combined_boundary_matrix": {"type": "object"}, "closure_obstruction_matrix": {"type": "object"},
+        "boundary_rank": {"const": 0}, "closure_rank": {"const": 1}, "quotient_dimension": {"const": 1}
+      }
+    },
+    "classes": {
+      "type": "array", "minItems": 1, "maxItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["representative_id", "relative_cohomology_status", "representative_coordinates", "dual_witness_type", "dual_witness_coordinates", "dual_pairing"],
+        "properties": {
+          "representative_id": {"const": "ANOM_OMEGA_C_DUAL_C"},
+          "relative_cohomology_status": {"const": "NONTRIVIAL"},
+          "representative_coordinates": {"type": "array", "minItems": 1, "maxItems": 1},
+          "dual_witness_type": {"const": "COMPLETE_NONTRIVIALITY_WITNESS"},
+          "dual_witness_coordinates": {"type": "array", "minItems": 1, "maxItems": 1},
+          "dual_pairing": {"const": {"numerator": 1, "denominator": 1}}
+        }
+      }
+    },
+    "basis_exhaustiveness_proof": {"type": "object"}, "checks": {"type": "object"},
+    "claim_boundary": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "analysis_sha256": {"$ref": "#/$defs/hash"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_sha256", "source_manifest_sha256", "implementation", "schema"],
+      "properties": {
+        "source_sha256": {"type": "object", "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "implementation": {"type": "string"}, "schema": {"type": "string"}
+      }
+    },
+    "certificate_hash": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

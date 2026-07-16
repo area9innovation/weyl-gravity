@@ -116,6 +116,11 @@ complex has not been constructed; boundary, measure, zero-mode, and central
 terms remain analytically undefined.  No QME, residual-transfer, or
 Lorentzian claim is made.
 
+The missing-arrow ledger is now explicit in
+`quantum-weyl/cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json`.
+The odd AFN0 source quotient is also complete with representative
+`omega C dual C`, while its numerical coefficient remains `NOT_COMPUTED`.
+
 ## Provenance
 
 The determinant and heat-kernel formulae are reconstructed from A. A.

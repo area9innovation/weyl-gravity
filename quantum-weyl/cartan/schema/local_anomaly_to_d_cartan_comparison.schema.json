@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/local-anomaly-to-d-cartan-comparison-v1.json",
+  "title": "Local anomaly to D-Cartan comparison",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_id", "result_state", "dependency_tags", "setting_id",
+    "generator_id", "phase_space_id", "source_local_cohomology",
+    "one_generator_pullback_maps", "source_target_degree_audit",
+    "minimal_missing_carrier_theorem", "cartan_defect_comparison", "checks",
+    "claim_boundary", "analysis_sha256", "provenance", "certificate_hash"
+  ],
+  "properties": {
+    "result_id": {"const": "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON"},
+    "result_state": {"const": "LOCAL_D_PULLBACK_COMPUTED_TARGET_CHAIN_MAP_UNDEFINED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "setting_id": {"const": "vacuum_cylinder"},
+    "generator_id": {"const": "D_compact"},
+    "phase_space_id": {"const": "compact_quantum"},
+    "source_local_cohomology": {
+      "type": "object", "additionalProperties": false,
+      "required": ["even_basis", "odd_basis", "even_standard_background_coefficient_coordinates", "odd_coefficient_status", "full_BV_lift_status"],
+      "properties": {
+        "even_basis": {"const": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4"]},
+        "odd_basis": {"const": ["ANOM_OMEGA_C_DUAL_C"]},
+        "even_standard_background_coefficient_coordinates": {"type": "array", "minItems": 2, "maxItems": 2},
+        "odd_coefficient_status": {"const": "NOT_COMPUTED"},
+        "full_BV_lift_status": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "one_generator_pullback_maps": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_basis", "vacuum_cylinder", "minkowski_dilation_cross_check"],
+      "properties": {
+        "target_basis": {"const": ["c_D_C2", "c_D_E4"]},
+        "vacuum_cylinder": {"type": "object"},
+        "minkowski_dilation_cross_check": {"type": "object"}
+      }
+    },
+    "source_target_degree_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_complex", "source_degree", "intermediate_complex", "intermediate_degree", "target_complex", "target_degree", "canonical_map_from_grading_alone", "missing_arrow"],
+      "properties": {
+        "source_complex": {"const": "H^{1,4}_AFN0(s|d)"}, "source_degree": {"type": "object"},
+        "intermediate_complex": {"type": "string"}, "intermediate_degree": {"type": "object"},
+        "target_complex": {"const": "H^0(Der_adm(C),[Q,-])"}, "target_degree": {"type": "object"},
+        "canonical_map_from_grading_alone": {"const": false},
+        "missing_arrow": {"const": "RENORMALIZED_LOCAL_WARD_INSERTION"}
+      }
+    },
+    "minimal_missing_carrier_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "carriers", "conclusion"],
+      "properties": {
+        "status": {"const": "COMPLETE_NAMED_MISSING_ARROW"},
+        "carriers": {"type": "array", "minItems": 6, "maxItems": 6},
+        "conclusion": {"type": "string", "minLength": 1}
+      }
+    },
+    "cartan_defect_comparison": {
+      "type": "object", "additionalProperties": false,
+      "required": ["map_status", "classification_status", "zero_local_pullback_implies_zero_cartan_defect"],
+      "properties": {
+        "map_status": {"const": "UNDEFINED_MISSING_RENORMALIZED_LOCAL_WARD_INSERTION"},
+        "classification_status": {"const": "NO_VERDICT"},
+        "zero_local_pullback_implies_zero_cartan_defect": {"const": false}
+      }
+    },
+    "checks": {"type": "object"},
+    "claim_boundary": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "analysis_sha256": {"$ref": "#/$defs/hash"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_sha256", "source_manifest_sha256", "registry_commit", "implementation", "schema"],
+      "properties": {
+        "source_sha256": {"type": "object", "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "registry_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "implementation": {"type": "string"}, "schema": {"type": "string"}
+      }
+    },
+    "certificate_hash": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

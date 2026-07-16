@@ -16,12 +16,12 @@
     }
   },
   "canonical_hashes": {
-    "report_payload_sha256": "9dfe77baaf7f8e83e71c9a0f50006c6a79af0f0a3608254a30874f262c0ddf10",
-    "source_manifest_sha256": "dbe1e5d01d93704a41543e647ee8e9db018e30e36b9e6177342e82fec3c20dbe"
+    "report_payload_sha256": "1621b1f70e0a201b6f3411c1947b53f26fcca1270179df7e740b1c871b7c127c",
+    "source_manifest_sha256": "8f82d23e0eb9fd2863372a7969bb8cc71ee36202395452796b8f015dbba1274b"
   },
-  "certificate_hash": "979dddd2b7c431653493ee31df2e66b476cc2302a15f626e5a041ce23c595b36",
+  "certificate_hash": "2f9baac81e1750e73048eeda04b2257bd07b74e2768074c937555e97610bd497",
   "claim_boundary": [
-    "the two even Weyl-ghost mixed signatures are complete; Bianchi identities, derivative-distribution permutations, general integration by parts, and dimension-specific antisymmetrization remain open in the other slices and the ambient total complex",
+    "all four AFN0 Weyl top-form signature ledgers are complete; the separate Diff top-form ledgers and the canonical ambient lower-form total-complex quotient remain open",
     "PENDING is not a terminal signature resolution",
     "the universal Diff and intrinsic Euler candidate carriers and factored ambient tensor-graph realizations are complete, but the separate Diff top-form ledger and canonical ambient quotient remain open",
     "this report cannot promote a complete nontriviality witness"
@@ -619,7 +619,7 @@
     "coverage": "FORWARD_AND_REVERSE_COMPLETE_FOR_DECLARED_CARRIER_ALGEBRA",
     "result_id": "AFN0_LOWER_FORM_CARRIER_PRECERTIFICATE"
   },
-  "report_hash": "9dfe77baaf7f8e83e71c9a0f50006c6a79af0f0a3608254a30874f262c0ddf10",
+  "report_hash": "1621b1f70e0a201b6f3411c1947b53f26fcca1270179df7e740b1c871b7c127c",
   "resolution_vocabulary": [
     "GENERATED_NONZERO",
     "IDENTICALLY_ZERO_BY_SYMMETRY",
@@ -629,7 +629,7 @@
     "GENERATOR_BUG"
   ],
   "result_id": "BASIS_GAP_REPORT_AFN0",
-  "result_state": "BASIS_GAPS_PARTIALLY_RESOLVED",
+  "result_state": "TOP_FORM_BASIS_GAPS_RESOLVED_TOTAL_COMPLEX_OPEN",
   "scope_label": "AFN0_ONLY",
   "slices": [
     {
@@ -1383,10 +1383,10 @@
       "canonical_nonzero_signature_count": 1,
       "coarse_grading_signature_count": 9,
       "form_degree": 4,
-      "forward_reverse_span_agreement": "NOT_COMPUTED",
+      "forward_reverse_span_agreement": "VERIFIED",
       "ghost_number": 1,
       "parity": "odd",
-      "pending_resolution_count": 3,
+      "pending_resolution_count": 0,
       "raw_contraction_signature_count": 5,
       "records": [
         {
@@ -1613,7 +1613,7 @@
         {
           "candidate_ids": [],
           "canonical_nonzero_count": 0,
-          "canonical_status": "UNDECIDED",
+          "canonical_status": "CANONICALLY_ZERO",
           "expected_index_balance": {
             "epsilon_absorbed_slots": 4,
             "lorentz_scalar_condition": "ALL_INDEX_SLOTS_CONTRACTED",
@@ -1623,15 +1623,15 @@
           "generated_raw_count": 15,
           "grading_status": "GRADING_ADMISSIBLE",
           "graph_artifact_hash": "c526f43e87e815016fd91a4072d15565e811242e41cf1edc1ae574edeb8e2621",
-          "graph_enumeration_status": "SYMMETRY_CANONICALIZED_BIANCHI_PENDING",
+          "graph_enumeration_status": "CANONICAL_QUOTIENT_COMPLETE",
           "graphwise_current_manifest_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
           "graphwise_divergence_status": "NOT_APPLICABLE",
-          "proof_hash": null,
+          "proof_hash": "5891556e735b0a55313481b3ad544cbb6d9a7ca7a4495c0a9cf087ecf5dc65c2",
           "raw_contraction_status": "RAW_CONTRACTION_EXISTS",
           "raw_graph_manifest_hash": "9de4a910612f55c13d00254489e23c5d5ff1ca8771c90b6128223cb2050abf8c",
           "refined_grading_status": "REFINED_ADMISSIBLE",
-          "resolution": "PENDING",
-          "resolution_reason": "passes tensor-seed, scalar-index, and epsilon-availability constraints",
+          "resolution": "IDENTICALLY_ZERO_BY_SYMMETRY",
+          "resolution_reason": "all signed symmetry orbits contain an algebraic Riemann Bianchi contraction, possibly with covariant derivatives applied without commuting them",
           "signature": {
             "curvature_count": 1,
             "epsilon_count": 1,
@@ -1647,13 +1647,22 @@
           },
           "slice": "H14_AFN0_ODD",
           "symmetry_canonical_orbit_count": 3,
-          "tensor_realizability": "UNDECIDED_PENDING_BIANCHI_AND_DIMENSION_IDENTITIES",
-          "terminal_witness": null
+          "tensor_realizability": "TENSOR_REALIZABLE_CANONICALLY_ZERO",
+          "terminal_witness": {
+            "analysis_sha256": "c9c0fdbce5bcd3adc21828eebcef055d9985708ce0f051a343809a9c46c4ed15",
+            "basis_exhaustiveness_proof_hash": "1be0bf32bdba1163c371f379a04cbd14a885df0d42979e39cb587f27134387e7",
+            "bianchi_relation_rank": 3,
+            "canonical_orbit_count": 3,
+            "canonical_quotient_dimension": 0,
+            "orbit_witness_hash": "03608fc749769ecc3cd8381b9a2ca13c956d1331178e7c8023e9d95c57f992c0",
+            "sector_id": "odd_mixed_2_0",
+            "witness_type": "ORBIT_FIRST_BIANCHI_ZERO_QUOTIENT"
+          }
         },
         {
           "candidate_ids": [],
           "canonical_nonzero_count": 0,
-          "canonical_status": "UNDECIDED",
+          "canonical_status": "CANONICALLY_ZERO",
           "expected_index_balance": {
             "epsilon_absorbed_slots": 4,
             "lorentz_scalar_condition": "ALL_INDEX_SLOTS_CONTRACTED",
@@ -1663,15 +1672,15 @@
           "generated_raw_count": 15,
           "grading_status": "GRADING_ADMISSIBLE",
           "graph_artifact_hash": "efc20c01538df6c0cacac5dea3a01d70daf3dafa5d34dfae9c6962daa29f10d0",
-          "graph_enumeration_status": "SYMMETRY_CANONICALIZED_BIANCHI_PENDING",
+          "graph_enumeration_status": "CANONICAL_QUOTIENT_COMPLETE",
           "graphwise_current_manifest_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
           "graphwise_divergence_status": "NOT_APPLICABLE",
-          "proof_hash": null,
+          "proof_hash": "bebf79b42def2a6f27019af69a0b4a8ff61355c93b168c5ba5350eff820fff89",
           "raw_contraction_status": "RAW_CONTRACTION_EXISTS",
           "raw_graph_manifest_hash": "45c512508c920cfd6e541b4f5556c6685acfa609379f626e038268003d2ce3b5",
           "refined_grading_status": "REFINED_ADMISSIBLE",
-          "resolution": "PENDING",
-          "resolution_reason": "passes tensor-seed, scalar-index, and epsilon-availability constraints",
+          "resolution": "IDENTICALLY_ZERO_BY_SYMMETRY",
+          "resolution_reason": "all signed symmetry orbits contain an algebraic Riemann Bianchi contraction, possibly with covariant derivatives applied without commuting them",
           "signature": {
             "curvature_count": 1,
             "epsilon_count": 1,
@@ -1687,13 +1696,22 @@
           },
           "slice": "H14_AFN0_ODD",
           "symmetry_canonical_orbit_count": 3,
-          "tensor_realizability": "UNDECIDED_PENDING_BIANCHI_AND_DIMENSION_IDENTITIES",
-          "terminal_witness": null
+          "tensor_realizability": "TENSOR_REALIZABLE_CANONICALLY_ZERO",
+          "terminal_witness": {
+            "analysis_sha256": "c9c0fdbce5bcd3adc21828eebcef055d9985708ce0f051a343809a9c46c4ed15",
+            "basis_exhaustiveness_proof_hash": "1be0bf32bdba1163c371f379a04cbd14a885df0d42979e39cb587f27134387e7",
+            "bianchi_relation_rank": 3,
+            "canonical_orbit_count": 3,
+            "canonical_quotient_dimension": 0,
+            "orbit_witness_hash": "64e8996a98b97927d09356ff932b008d88cba5d01d7fe54f36f12e8d96fa62b6",
+            "sector_id": "odd_mixed_1_1",
+            "witness_type": "ORBIT_FIRST_BIANCHI_ZERO_QUOTIENT"
+          }
         },
         {
           "candidate_ids": [],
           "canonical_nonzero_count": 0,
-          "canonical_status": "UNDECIDED",
+          "canonical_status": "CANONICALLY_ZERO",
           "expected_index_balance": {
             "epsilon_absorbed_slots": 4,
             "lorentz_scalar_condition": "ALL_INDEX_SLOTS_CONTRACTED",
@@ -1703,15 +1721,15 @@
           "generated_raw_count": 15,
           "grading_status": "GRADING_ADMISSIBLE",
           "graph_artifact_hash": "073c2f07f3247f26236ea8f8b3c89a08581aae0ac6492fb6c11a71f0e3269af5",
-          "graph_enumeration_status": "SYMMETRY_CANONICALIZED_BIANCHI_PENDING",
+          "graph_enumeration_status": "CANONICAL_QUOTIENT_COMPLETE",
           "graphwise_current_manifest_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
           "graphwise_divergence_status": "NOT_APPLICABLE",
-          "proof_hash": null,
+          "proof_hash": "39d2fe05bee950524d07dc40b8400b22d8172f38034874a33f81f983fcaff5ac",
           "raw_contraction_status": "RAW_CONTRACTION_EXISTS",
           "raw_graph_manifest_hash": "9f1a297d4992f3a3119a61f74b17d10487d58458f723437d1d6db0ffde3ff619",
           "refined_grading_status": "REFINED_ADMISSIBLE",
-          "resolution": "PENDING",
-          "resolution_reason": "passes tensor-seed, scalar-index, and epsilon-availability constraints",
+          "resolution": "IDENTICALLY_ZERO_BY_SYMMETRY",
+          "resolution_reason": "all signed symmetry orbits contain an algebraic Riemann Bianchi contraction, possibly with covariant derivatives applied without commuting them",
           "signature": {
             "curvature_count": 1,
             "epsilon_count": 1,
@@ -1727,8 +1745,17 @@
           },
           "slice": "H14_AFN0_ODD",
           "symmetry_canonical_orbit_count": 3,
-          "tensor_realizability": "UNDECIDED_PENDING_BIANCHI_AND_DIMENSION_IDENTITIES",
-          "terminal_witness": null
+          "tensor_realizability": "TENSOR_REALIZABLE_CANONICALLY_ZERO",
+          "terminal_witness": {
+            "analysis_sha256": "c9c0fdbce5bcd3adc21828eebcef055d9985708ce0f051a343809a9c46c4ed15",
+            "basis_exhaustiveness_proof_hash": "1be0bf32bdba1163c371f379a04cbd14a885df0d42979e39cb587f27134387e7",
+            "bianchi_relation_rank": 3,
+            "canonical_orbit_count": 3,
+            "canonical_quotient_dimension": 0,
+            "orbit_witness_hash": "043efd4b8cfdec96a5536bbd57d377c9a59be79ef83583f65e0a5a31daf1a846",
+            "sector_id": "odd_mixed_0_2",
+            "witness_type": "ORBIT_FIRST_BIANCHI_ZERO_QUOTIENT"
+          }
         },
         {
           "candidate_ids": [
@@ -1781,15 +1808,15 @@
       "refined_grading_signature_count": 5,
       "slice": "H14_AFN0_ODD",
       "tensor_realizable_signature_count": 1,
-      "terminal_resolution_count": 6,
-      "top_form_signature_resolution_status": "IN_PROGRESS"
+      "terminal_resolution_count": 9,
+      "top_form_signature_resolution_status": "COMPLETE"
     }
   ],
   "total_complex_gates": {
     "FORWARD_REVERSE_SPAN_AGREEMENT": "NOT_COMPUTED",
     "LOWER_FORM_BOUNDARY_BASIS_EXHAUSTIVE": "IN_PROGRESS_GRADING_EXHAUSTIVE_EXACT_BOUNDARY_CARRIERS_COMPLETE",
     "LOWER_FORM_COCYCLE_BASIS_EXHAUSTIVE": "IN_PROGRESS_GRADING_EXHAUSTIVE_CANDIDATE_CARRIERS_COMPLETE",
-    "TOP_FORM_BASIS_EXHAUSTIVE": "IN_PROGRESS",
+    "TOP_FORM_BASIS_EXHAUSTIVE": "VERIFIED_AFN0_WEYL_SECTORS",
     "TOTAL_COMPLEX_EXHAUSTIVE": "NOT_COMPUTED"
   }
 }
