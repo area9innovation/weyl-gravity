@@ -1,0 +1,170 @@
+{
+  "activation_gate": {
+    "authoritative_q2": "PASS",
+    "full_gate": "OPEN",
+    "interacting_Cartan_on_domain": "PASS_THROUGH_ARITY_TWO",
+    "null_signal_frequency_ratio": "G0_EXACT_FIXTURE",
+    "physical_metric_clock_observable": "PREFLIGHT_CONSTRUCTED",
+    "retained_causal_Green_homotopy": "PASS"
+  },
+  "claim_boundary": "This G0 exact reduced-mode preflight constructs a Weyl-invariant clock metric, a local complete-observable chart, and a nonzero operational null-signal frequency ratio after all q2/Green/arity-two-Cartan activation prerequisites pass. It is a kinematic characteristic-probe fixture, not the complete spatially dressed nonlinear observable, an interacting signal solution, phenomenology, or a quantum result.",
+  "claim_status": "CERTIFIED_G0_OPERATIONAL_PREFLIGHT_FULL_RELATIONAL_OBSERVABLE_OPEN",
+  "dependency_refs": {
+    "arity_two_Cartan": {
+      "path": "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_V2.json",
+      "result_id": "BERGER_CAUSAL_D_CARTAN_V2",
+      "sha256": "87c1b4d897d56bcfea51f79c71f6f0b387157fc8a76fb83eb909c8ef00d3f444"
+    },
+    "causal_green_domain": {
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+      "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b"
+    },
+    "clock_background": {
+      "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"
+    },
+    "support_local_q2": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_Q2",
+      "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
+    },
+    "total_D_disposition": {
+      "path": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json",
+      "result_id": "BERGER_TOTAL_D_DISPOSITION_D_GAUGE",
+      "sha256": "27c91dee3b0293c66b73a0ba2e21c3e7579de3c70d080685043729da3d6b62e4"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "Berger_vertical_eigenline_distinguished": true,
+    "all_activation_dependencies_content_addressed": true,
+    "clock_gradient_timelike": true,
+    "frequency_contraction_scalar": true,
+    "no_floating_point_in_fixture": true,
+    "nonzero_exact_redshift": true,
+    "observers_unit_timelike": true,
+    "signal_null": true,
+    "single_clock_chart": true,
+    "weyl_invariant_metric_and_phase": true
+  },
+  "flags": {
+    "BERGER_COMPLETE_RELATIONAL_OBSERVABLE": false,
+    "BERGER_G0_OPERATIONAL_REDSHIFT_FIXTURE": true,
+    "BERGER_INTERACTING_SIGNAL_SOLUTION": false,
+    "BERGER_REDSHIFT_PHENOMENOLOGY": false,
+    "BERGER_RELATIONAL_REDSHIFT_PREFLIGHT": true,
+    "BERGER_SPATIALLY_DRESSED_ENDPOINT_ALGEBRA": false,
+    "QUANTUM_CLAIM": false
+  },
+  "generality_level": "G0",
+  "higher_tiers_not_run": {
+    "tier_2": "The five authoritative dependencies are unchanged content-addressed inputs; the independent verifier replays their hashes and result identifiers.",
+    "tier_3": "No freeze, lifecycle promotion, or shared core algebra changed."
+  },
+  "next_gate": "BERGER_COMPLETE_RELATIONAL_OBSERVABLE_AND_DYNAMICAL_REDSHIFT",
+  "not_established": [
+    "a spatially dressed emitter/receiver algebra on the full nonlinear Diff x Weyl quotient",
+    "a Maxwell, scalar, or gravitational signal solved with backreaction and transferred higher brackets",
+    "gauge-invariant reduced Poisson brackets for the endpoint observables",
+    "global treatment of all phase windings, caustics, and multiple null paths on compact S3",
+    "a gravitational or cosmological redshift rather than this exact local kinematic fixture",
+    "phenomenology, a quantum observable, or a Lorentzian quantum-master-equation theorem"
+  ],
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/backreacted_clock/berger_relational_redshift_preflight.py": "96209abafbabe98fe5e7b6ec2b8e94c019f108eeeb9422a84f24de365b19b7db",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_relational_redshift_preflight.py": "e34f87bcb0b2370bfb9b43d1fbe72c9fa126aa6984e51ad6c08e90416e57654f",
+      "d_quotient_classical/backreacted_clock/verify_berger_relational_redshift_preflight.py": "f88482023fed04e3e00b81e94a9c6606ec75d6e28301f5a59d11d2760b9b01f2",
+      "d_quotient_classical/schema/berger-relational-redshift-preflight-v1.schema.json": "4d2599b561a2683887e9eebba4b1e9ce4ea3fd088b0e63acffe5af0f39fe289a"
+    }
+  },
+  "rational_fixture": {
+    "background": {
+      "a": "1",
+      "alpha_B": "5",
+      "omega": "3/4",
+      "q": "9/40",
+      "rho": "1"
+    },
+    "chart_check": "0 < theta_receive=3/8 < pi, hence no repeated phase crossing occurs",
+    "interpretation": "the receiver measures half the emitter frequency, so 1+z=2 and z=1",
+    "results": {
+      "emit_phase_slope": "-1",
+      "gamma_emit": "1",
+      "gamma_receive": "5/4",
+      "nu_emit": "3/4",
+      "nu_receive": "3/8",
+      "one_plus_z": "2",
+      "receive_phase_slope": "-2/5",
+      "theta_emit": "0",
+      "theta_receive": "3/8",
+      "travel_time": "1/2",
+      "z": "1"
+    },
+    "signal": {
+      "E": "3/4",
+      "initial_physical_separation": "1/5",
+      "v_emit": "0",
+      "v_receive": "3/5"
+    }
+  },
+  "relational_geometry": {
+    "D_invariance_identity": "delta_D O_A=(L_D A)_shift+delta_D[(tau-theta)/omega](L_D A)_shift=0 because D theta=omega",
+    "anisotropy_direction": "s is the unit simple eigendirection of the clock-orthogonal Ricci endomorphism of g_hat; on Berger it is the Hopf/vertical direction",
+    "anisotropy_eigenline_unique": "q != 1 throughout (5-sqrt(21))/2 < q < 1/4",
+    "chart_domain": "choose a lift with -pi < tau-theta < pi; attach an integer winding label beyond one chart",
+    "clock_modulus": "rho=sqrt(T_1^2+T_2^2)",
+    "clock_normal": "n^a=-g_hat^{ab} partial_b theta/sqrt(-g_hat^{cd} partial_c theta partial_d theta)",
+    "clock_phase": "theta=atan2(T_2,T_1) mod 2pi",
+    "clock_phase_weyl_invariant": true,
+    "complete_observable": "O_A(tau)=[exp(((tau-theta)/omega) L_D) A] on one lifted phase chart",
+    "physical_metric": "g_hat=rho^2 g",
+    "physical_metric_weyl_invariant": true,
+    "weyl_weights": "g -> exp(2 sigma) g and rho -> exp(-sigma) rho"
+  },
+  "result_id": "BERGER_RELATIONAL_REDSHIFT_PREFLIGHT",
+  "schema": "pure-weyl-berger-relational-redshift-preflight-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "signal_model": {
+    "causal_endpoint_rule": "a co-propagating ray emitted at physical separation L meets a receiver with constant v at Delta t_hat=L/(1-v)",
+    "covariance_scope": "theta, g_hat, n, the simple anisotropy eigenline, k.u, and their endpoint ratio are tensorially defined; homogeneity removes base-event dependence in this G0 fixture",
+    "measured_frequency": "nu(v)=-g_hat(k,u(v))=E gamma(v)(1-v)",
+    "null_direction": "k^a=E(n^a+s^a), g_hat(k,k)=0",
+    "observer": "u^a(v)=gamma(v)(n^a+v s^a), gamma(v)=1/sqrt(1-v^2), |v|<1",
+    "redshift": "1+z=nu_emit/nu_receive=gamma_emit(1-v_emit)/[gamma_receive(1-v_receive)]",
+    "relational_signal_slope": "dS/dtheta=-E rho(1-v)/omega along an observer",
+    "status": "EXACT_CHARACTERISTIC_PROBE_NOT_BACKREACTED_SIGNAL_THEORY"
+  },
+  "verification_receipts": [
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/berger_relational_redshift_preflight.py --check --guards",
+      "elapsed_seconds": 0.27,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_relational_redshift_preflight.py",
+      "elapsed_seconds": 0.09,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_relational_redshift_preflight",
+      "elapsed_seconds": 0.41,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-relational-redshift-preflight-v1.schema.json -d d_quotient_classical/certificates/BERGER_RELATIONAL_REDSHIFT_PREFLIGHT.json",
+      "elapsed_seconds": 1.19,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}

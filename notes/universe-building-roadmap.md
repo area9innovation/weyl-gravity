@@ -134,6 +134,14 @@ A passed redshift fixture would show that quotienting total (D) does not
 erase operational evolution.  It would not yet establish Solar-System
 phenomenology.
 
+The first fail-closed `G0` preparation is now recorded by
+`BERGER_RELATIONAL_REDSHIFT_PREFLIGHT`.  It constructs the Weyl-invariant
+clock metric, a one-chart complete-observable formula, and an exact
+characteristic-probe fixture with `1+z=2`.  This is a local kinematic
+frequency comparison.  The full rail remains open on spatial endpoint
+dressing, an actual dynamical signal solution, reduced brackets/pairing,
+global winding and multiple-path control, and higher-bracket compatibility.
+
 ### 2. Gravitational waves
 
 The compact Einstein--Maxwell harmonic quotient supplies exact linear wave

@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schema/berger-relational-redshift-preflight-v1.schema.json",
+  "title": "Berger relational redshift G0 preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "generality_level",
+    "dependency_tags",
+    "dependency_refs",
+    "activation_gate",
+    "relational_geometry",
+    "signal_model",
+    "rational_fixture",
+    "exact_checks",
+    "flags",
+    "not_established",
+    "verification_receipts",
+    "higher_tiers_not_run",
+    "provenance",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-relational-redshift-preflight-v1"},
+    "result_id": {"const": "BERGER_RELATIONAL_REDSHIFT_PREFLIGHT"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "claim_status": {"const": "CERTIFIED_G0_OPERATIONAL_PREFLIGHT_FULL_RELATIONAL_OBSERVABLE_OPEN"},
+    "generality_level": {"const": "G0"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clock_background", "total_D_disposition", "support_local_q2", "causal_green_domain", "arity_two_Cartan"],
+      "properties": {
+        "clock_background": {"$ref": "#/$defs/dependency"},
+        "total_D_disposition": {"$ref": "#/$defs/dependency"},
+        "support_local_q2": {"$ref": "#/$defs/dependency"},
+        "causal_green_domain": {"$ref": "#/$defs/dependency"},
+        "arity_two_Cartan": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "activation_gate": {
+      "type": "object",
+      "required": ["authoritative_q2", "retained_causal_Green_homotopy", "interacting_Cartan_on_domain", "physical_metric_clock_observable", "null_signal_frequency_ratio", "full_gate"],
+      "properties": {
+        "authoritative_q2": {"const": "PASS"},
+        "retained_causal_Green_homotopy": {"const": "PASS"},
+        "interacting_Cartan_on_domain": {"const": "PASS_THROUGH_ARITY_TWO"},
+        "physical_metric_clock_observable": {"const": "PREFLIGHT_CONSTRUCTED"},
+        "null_signal_frequency_ratio": {"const": "G0_EXACT_FIXTURE"},
+        "full_gate": {"const": "OPEN"}
+      },
+      "additionalProperties": false
+    },
+    "relational_geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clock_modulus", "clock_phase", "weyl_weights", "physical_metric", "physical_metric_weyl_invariant", "clock_phase_weyl_invariant", "clock_normal", "anisotropy_direction", "anisotropy_eigenline_unique", "complete_observable", "D_invariance_identity", "chart_domain"],
+      "properties": {
+        "clock_modulus": {"type": "string"},
+        "clock_phase": {"type": "string"},
+        "weyl_weights": {"type": "string"},
+        "physical_metric": {"const": "g_hat=rho^2 g"},
+        "physical_metric_weyl_invariant": {"const": true},
+        "clock_phase_weyl_invariant": {"const": true},
+        "clock_normal": {"type": "string"},
+        "anisotropy_direction": {"type": "string"},
+        "anisotropy_eigenline_unique": {"type": "string"},
+        "complete_observable": {"type": "string"},
+        "D_invariance_identity": {"type": "string"},
+        "chart_domain": {"type": "string"}
+      }
+    },
+    "signal_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "null_direction", "observer", "measured_frequency", "redshift", "relational_signal_slope", "causal_endpoint_rule", "covariance_scope"],
+      "properties": {
+        "status": {"const": "EXACT_CHARACTERISTIC_PROBE_NOT_BACKREACTED_SIGNAL_THEORY"},
+        "null_direction": {"type": "string"},
+        "observer": {"type": "string"},
+        "measured_frequency": {"type": "string"},
+        "redshift": {"type": "string"},
+        "relational_signal_slope": {"type": "string"},
+        "causal_endpoint_rule": {"type": "string"},
+        "covariance_scope": {"type": "string"}
+      }
+    },
+    "rational_fixture": {
+      "type": "object",
+      "required": ["background", "signal", "results", "interpretation", "chart_check"],
+      "properties": {
+        "background": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["a", "q", "alpha_B", "rho", "omega"],
+          "properties": {
+            "a": {"const": "1"},
+            "q": {"const": "9/40"},
+            "alpha_B": {"const": "5"},
+            "rho": {"const": "1"},
+            "omega": {"const": "3/4"}
+          }
+        },
+        "signal": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["E", "v_emit", "v_receive", "initial_physical_separation"],
+          "properties": {
+            "E": {"const": "3/4"},
+            "v_emit": {"const": "0"},
+            "v_receive": {"const": "3/5"},
+            "initial_physical_separation": {"const": "1/5"}
+          }
+        },
+        "results": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["gamma_emit", "gamma_receive", "nu_emit", "nu_receive", "one_plus_z", "z", "travel_time", "theta_emit", "theta_receive", "emit_phase_slope", "receive_phase_slope"],
+          "properties": {
+            "gamma_emit": {"const": "1"},
+            "gamma_receive": {"const": "5/4"},
+            "nu_emit": {"const": "3/4"},
+            "nu_receive": {"const": "3/8"},
+            "one_plus_z": {"const": "2"},
+            "z": {"const": "1"},
+            "travel_time": {"const": "1/2"},
+            "theta_emit": {"const": "0"},
+            "theta_receive": {"const": "3/8"},
+            "emit_phase_slope": {"const": "-1"},
+            "receive_phase_slope": {"const": "-2/5"}
+          }
+        },
+        "interpretation": {"type": "string"},
+        "chart_check": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {"const": true}
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["BERGER_RELATIONAL_REDSHIFT_PREFLIGHT", "BERGER_G0_OPERATIONAL_REDSHIFT_FIXTURE", "BERGER_COMPLETE_RELATIONAL_OBSERVABLE", "BERGER_INTERACTING_SIGNAL_SOLUTION", "BERGER_SPATIALLY_DRESSED_ENDPOINT_ALGEBRA", "BERGER_REDSHIFT_PHENOMENOLOGY", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_RELATIONAL_REDSHIFT_PREFLIGHT": {"const": true},
+        "BERGER_G0_OPERATIONAL_REDSHIFT_FIXTURE": {"const": true},
+        "BERGER_COMPLETE_RELATIONAL_OBSERVABLE": {"const": false},
+        "BERGER_INTERACTING_SIGNAL_SOLUTION": {"const": false},
+        "BERGER_SPATIALLY_DRESSED_ENDPOINT_ALGEBRA": {"const": false},
+        "BERGER_REDSHIFT_PHENOMENOLOGY": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "not_established": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "verification_receipts": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["test_tier", "command", "elapsed_seconds", "status"],
+        "properties": {
+          "test_tier": {"const": 1},
+          "command": {"type": "string", "minLength": 10},
+          "elapsed_seconds": {"type": "number", "minimum": 0},
+          "status": {"const": "PASS"}
+        }
+      }
+    },
+    "higher_tiers_not_run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_2", "tier_3"],
+      "properties": {
+        "tier_2": {"type": "string", "minLength": 20},
+        "tier_3": {"type": "string", "minLength": 20}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "next_gate": {"const": "BERGER_COMPLETE_RELATIONAL_OBSERVABLE_AND_DYNAMICAL_REDSHIFT"},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
