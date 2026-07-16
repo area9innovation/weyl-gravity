@@ -61,7 +61,10 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("EINSTEIN MHV REFERENCE: EXACT; NONLINEAR PROJECTION INPUT BLOCKED")
+        print(
+            "EINSTEIN HELICITY PARITY PAIR: EXACT; "
+            "SETTING/DEFECT/NORMALIZATION GATES READY; Q2 BLOCKED"
+        )
     return 0
 
 

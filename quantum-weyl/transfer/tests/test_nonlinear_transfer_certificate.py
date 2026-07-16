@@ -64,7 +64,10 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             for item in certificate["question_ledger"]
             if item["question_id"] == "einstein_projection_amplitude_fixture"
         )
-        self.assertIn("REFERENCE_MHV_FIXTURE_EXACT", amplitude_question["status"])
+        self.assertIn("REFERENCE_PARITY_PAIR_EXACT", amplitude_question["status"])
+        self.assertIn(
+            "SETTING_DEFECT_NORMALIZATION_GATES_READY", amplitude_question["status"]
+        )
         self.assertIn("PROJECTION_AND_Q2_INPUT_BLOCKED", amplitude_question["status"])
         d_question = next(
             item

@@ -3,11 +3,11 @@
   "$id": "https://area9.dk/schemas/quantum-weyl-einstein-projection-amplitude-fixture-v1.schema.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "generality_assessment", "einstein_input", "projection_contract", "reference_fixture", "literature_reference", "claim_flags", "provenance", "consumer_provenance", "next_gate", "claim_boundary"],
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "generality_assessment", "einstein_input", "projection_contract", "setting_compatibility_contract", "einstein_defect_tangency_contract", "normalization_contract", "reference_fixture", "parity_conjugate_fixture", "literature_reference", "claim_flags", "provenance", "consumer_provenance", "next_gate", "claim_boundary"],
   "properties": {
     "schema": {"const": "quantum-weyl-einstein-projection-amplitude-fixture-v1"},
     "result_id": {"const": "EINSTEIN_PROJECTION_MHV_REFERENCE_FIXTURE"},
-    "result_state": {"const": "REFERENCE_MHV_FIXTURE_EXACT_NONLINEAR_EINSTEIN_PROJECTION_INPUT_BLOCKED"},
+    "result_state": {"const": "PARITY_PAIR_EXACT_SETTING_DEFECT_NORMALIZATION_GATES_READY_Q2_BLOCKED"},
     "lifecycle_layer": {"const": "INTERACTING"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
     "generality_assessment": {
@@ -16,7 +16,7 @@
       "required": ["target", "achieved", "promotion_to_G5_authorized"],
       "properties": {
         "target": {"const": "G5_EINSTEIN_PROJECTION_AND_ONE_AMPLITUDE_FIXTURE"},
-        "achieved": {"const": "G5_PREREQUISITE_REFERENCE_FIXTURE_AND_INPUT_CONTRACT"},
+        "achieved": {"const": "G5_PREREQUISITE_PARITY_PAIR_AND_FAIL_CLOSED_INPUT_GATES"},
         "promotion_to_G5_authorized": {"const": false}
       }
     },
@@ -42,7 +42,50 @@
         "evaluation": {"type": "string", "minLength": 1},
         "branch_leakage_test": {"type": "string", "minLength": 1},
         "execution_authorized": {"const": false},
-        "blocked_by": {"const": "complete support-local q2 and nonlinear Einstein projection"}
+        "blocked_by": {"const": "complete support-local q2 and full-BV nonlinear Einstein-defect chain map"}
+      }
+    },
+    "setting_compatibility_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference_setting", "required_exact_fields", "known_berger_setting_ids", "known_berger_route", "strict_exact_match_before_tangency_gate", "berger_input_compatible_with_flat_einstein_fixture", "execution_authorized"],
+      "properties": {
+        "reference_setting": {"$ref": "#/$defs/reference_setting"},
+        "required_exact_fields": {"const": ["setting_id", "background_id", "phase_space_id", "source_theory_id", "target_sector_id", "normalization_id"]},
+        "known_berger_setting_ids": {"const": ["compact_positive_berger_clock_fixed_coupling_linearized", "compact_positive_berger_clock_rational_fixture_stationary_homogeneous"]},
+        "known_berger_route": {"const": "BERGER_REDUCED_MODE_CARTAN_RAIL"},
+        "strict_exact_match_before_tangency_gate": {"const": true},
+        "berger_input_compatible_with_flat_einstein_fixture": {"const": false},
+        "execution_authorized": {"const": false}
+      }
+    },
+    "einstein_defect_tangency_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["imported_linearized_defect", "imported_same_source_condition", "future_test", "reduced_TT_projector_available_for_nonzero_M2", "reduced_TT_projector_used_for_full_BV_projection", "reduced_TT_projector_valid_in_pure_weyl_limit", "full_BV_defect_chain_map_available", "nonlinear_tangency_proved", "execution_authorized"],
+      "properties": {
+        "imported_linearized_defect": {"const": "Delta_mn=G1_mn(h_hat)-T_mn/c1"},
+        "imported_same_source_condition": {"const": "Q(T)=0"},
+        "future_test": {"type": "string", "minLength": 1},
+        "reduced_TT_projector_available_for_nonzero_M2": {"const": true},
+        "reduced_TT_projector_used_for_full_BV_projection": {"const": false},
+        "reduced_TT_projector_valid_in_pure_weyl_limit": {"const": false},
+        "full_BV_defect_chain_map_available": {"const": false},
+        "nonlinear_tangency_proved": {"const": false},
+        "execution_authorized": {"const": false}
+      }
+    },
+    "normalization_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["normalization_id", "reference_quantity", "included", "excluded", "comparison_rule", "overall_coefficient_match_authorized"],
+      "properties": {
+        "normalization_id": {"const": "stripped_einstein_shape_v1"},
+        "reference_quantity": {"const": "dimensionless stripped helicity factor"},
+        "included": {"const": ["spinor-bracket shape", "helicity assignment", "little-group weights"]},
+        "excluded": {"const": ["overall gravitational coupling", "phase convention", "delta function", "conformal-gravity action normalization"]},
+        "comparison_rule": {"type": "string", "minLength": 1},
+        "overall_coefficient_match_authorized": {"const": false}
       }
     },
     "reference_fixture": {
@@ -65,6 +108,27 @@
         "negative_leg_exchange_symmetric": {"const": true}
       }
     },
+    "parity_conjugate_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["helicities", "branch", "lambda_spinors", "tilde_lambda_spinors", "momenta_bispinors", "momentum_sum_zero", "all_momenta_null", "angle_brackets_12_23_31", "square_brackets_12_23_31", "stripped_formula", "stripped_value", "little_group_factor", "positive_leg_exchange_symmetric", "parity_conjugate_of_reference_fixture"],
+      "properties": {
+        "helicities": {"const": [2, 2, -2]},
+        "branch": {"const": "anti_holomorphic_complex_three_point_kinematics"},
+        "lambda_spinors": {"type": "array", "minItems": 3, "maxItems": 3},
+        "tilde_lambda_spinors": {"type": "array", "minItems": 3, "maxItems": 3},
+        "momenta_bispinors": {"type": "array", "minItems": 3, "maxItems": 3},
+        "momentum_sum_zero": {"const": true},
+        "all_momenta_null": {"const": true},
+        "angle_brackets_12_23_31": {"const": ["0", "0", "0"]},
+        "square_brackets_12_23_31": {"const": ["1", "1", "1"]},
+        "stripped_formula": {"const": "[12]^6/([23]^2[31]^2)"},
+        "stripped_value": {"const": "1"},
+        "little_group_factor": {"const": "t1^-4*t2^-4*t3^4"},
+        "positive_leg_exchange_symmetric": {"const": true},
+        "parity_conjugate_of_reference_fixture": {"const": true}
+      }
+    },
     "literature_reference": {
       "type": "object",
       "additionalProperties": false,
@@ -81,9 +145,13 @@
     "claim_flags": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["REFERENCE_MHV_FIXTURE_COMPUTED", "EINSTEIN_SOLUTION_INCLUSION_IMPORTED", "PHYSICAL_TRANSFERRED_Q2_PROJECTED", "NONLINEAR_EINSTEIN_TANGENCY_TESTED", "AMPLITUDE_MATCH_TO_CONFORMAL_GRAVITY_VERTEX", "LORENTZIAN_SCATTERING_CERTIFIED", "G5_PROMOTED"],
+      "required": ["REFERENCE_MHV_FIXTURE_COMPUTED", "REFERENCE_ANTI_MHV_FIXTURE_COMPUTED", "SETTING_COMPATIBILITY_GATE_IMPLEMENTED", "EINSTEIN_DEFECT_PREFLIGHT_IMPORTED", "NORMALIZATION_CONTRACT_LOCKED", "EINSTEIN_SOLUTION_INCLUSION_IMPORTED", "PHYSICAL_TRANSFERRED_Q2_PROJECTED", "NONLINEAR_EINSTEIN_TANGENCY_TESTED", "AMPLITUDE_MATCH_TO_CONFORMAL_GRAVITY_VERTEX", "LORENTZIAN_SCATTERING_CERTIFIED", "G5_PROMOTED"],
       "properties": {
         "REFERENCE_MHV_FIXTURE_COMPUTED": {"const": true},
+        "REFERENCE_ANTI_MHV_FIXTURE_COMPUTED": {"const": true},
+        "SETTING_COMPATIBILITY_GATE_IMPLEMENTED": {"const": true},
+        "EINSTEIN_DEFECT_PREFLIGHT_IMPORTED": {"const": true},
+        "NORMALIZATION_CONTRACT_LOCKED": {"const": true},
         "EINSTEIN_SOLUTION_INCLUSION_IMPORTED": {"const": true},
         "PHYSICAL_TRANSFERRED_Q2_PROJECTED": {"const": false},
         "NONLINEAR_EINSTEIN_TANGENCY_TESTED": {"const": false},
@@ -95,7 +163,7 @@
     "provenance": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["einstein_commit", "einstein_sources", "einstein_sources_sha256"],
+      "required": ["einstein_commit", "einstein_sources", "einstein_sources_sha256", "defect_commit", "defect_sources", "defect_sources_sha256", "projector_commit", "projector_sources", "projector_sources_sha256"],
       "properties": {
         "einstein_commit": {"const": "7e87281c416f4c4f98edfe61ae05829f4b48593a"},
         "einstein_sources": {
@@ -110,6 +178,32 @@
           }
         },
         "einstein_sources_sha256": {"$ref": "#/$defs/hash"}
+        ,"defect_commit": {"const": "7963aa0cc4dcd23154dcef8ea431c98816f96fb2"},
+        "defect_sources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["defect_certificate", "defect_producer", "defect_tests", "defect_report"],
+          "properties": {
+            "defect_certificate": {"$ref": "#/$defs/artifact"},
+            "defect_producer": {"$ref": "#/$defs/artifact"},
+            "defect_tests": {"$ref": "#/$defs/artifact"},
+            "defect_report": {"$ref": "#/$defs/artifact"}
+          }
+        },
+        "defect_sources_sha256": {"$ref": "#/$defs/hash"},
+        "projector_commit": {"const": "0d4c744313d17fb357954e3ac456adacb6ff5a17"},
+        "projector_sources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["projector_certificate", "projector_producer", "projector_tests", "projector_report"],
+          "properties": {
+            "projector_certificate": {"$ref": "#/$defs/artifact"},
+            "projector_producer": {"$ref": "#/$defs/artifact"},
+            "projector_tests": {"$ref": "#/$defs/artifact"},
+            "projector_report": {"$ref": "#/$defs/artifact"}
+          }
+        },
+        "projector_sources_sha256": {"$ref": "#/$defs/hash"}
       }
     },
     "consumer_provenance": {
@@ -132,18 +226,31 @@
         "source_manifest_sha256": {"$ref": "#/$defs/hash"}
       }
     },
-    "next_gate": {"const": "IMPORT_SUPPORT_LOCAL_Q2_THEN_CONSTRUCT_NONLINEAR_EINSTEIN_PROJECTION"},
+    "next_gate": {"const": "IMPORT_SETTING_MATCHED_SUPPORT_LOCAL_Q2_AND_FULL_BV_EINSTEIN_DEFECT_MAP"},
     "claim_boundary": {"type": "string", "minLength": 1}
   },
   "$defs": {
     "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "reference_setting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["setting_id", "background_id", "phase_space_id", "source_theory_id", "target_sector_id", "normalization_id"],
+      "properties": {
+        "setting_id": {"const": "complexified_flat_pure_weyl_to_einstein_three_point"},
+        "background_id": {"const": "four_dimensional_minkowski"},
+        "phase_space_id": {"const": "complex_on_shell_massless_three_point"},
+        "source_theory_id": {"const": "pure_weyl_conformal_gravity"},
+        "target_sector_id": {"const": "einstein_helicity_sector"},
+        "normalization_id": {"const": "stripped_einstein_shape_v1"}
+      }
+    },
     "artifact": {
       "type": "object",
       "additionalProperties": false,
       "required": ["path", "commit", "sha256"],
       "properties": {
         "path": {"type": "string", "minLength": 1},
-        "commit": {"const": "7e87281c416f4c4f98edfe61ae05829f4b48593a"},
+        "commit": {"enum": ["7e87281c416f4c4f98edfe61ae05829f4b48593a", "7963aa0cc4dcd23154dcef8ea431c98816f96fb2", "0d4c744313d17fb357954e3ac456adacb6ff5a17"]},
         "sha256": {"$ref": "#/$defs/hash"}
       }
     }

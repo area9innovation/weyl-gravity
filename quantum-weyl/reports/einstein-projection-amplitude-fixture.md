@@ -1,4 +1,4 @@
-# Einstein-projection and MHV reference fixture
+# Einstein-projection and helicity parity-pair reference fixture
 
 This N-G5 preparatory rail pins the certified local inclusion of Einstein
 solutions into the Bach-flat solution locus.  That theorem supplies the local
@@ -34,11 +34,57 @@ negative-helicity legs leaves it invariant.  This is the flat-space stripped
 factor in Eq. (6.2) of Adamo and Mason,
 [*Conformal and Einstein gravity from twistor actions*](https://arxiv.org/abs/1307.5043).
 
-The future comparison is deliberately not executed.  It requires the complete
-support-local BV $q_2$, the verified physical contraction, a nonlinear
-Einstein tangency projector or theorem, and a normalization dictionary.  The
-adapter must also project the source onto every extra-Weyl complement: a
-nonzero component is branch leakage, not an Einstein amplitude.
+The certificate also evaluates the parity-conjugate anti-holomorphic branch.
+With common holomorphic spinors and
+$[12]=[23]=[31]=1$, the $(++-)$ factor is
+
+\[
+M_3^{++-}=\frac{[12]^6}{[23]^2[31]^2}=1,
+\]
+
+with little-group factor $t_1^{-4}t_2^{-4}t_3^4$.  The two exact fixtures
+therefore test both helicity orientations without importing a physical
+conformal-gravity coefficient.
+
+## Fail-closed input gates
+
+The fixture now requires exact equality of six setting fields: setting,
+background, phase space, source theory, target sector, and normalization
+identifiers.  Both known
+Berger-clock identifiers route to `BERGER_REDUCED_MODE_CARTAN_RAIL`; they are
+not admissible inputs to the complexified flat Einstein amplitude rail.  This
+prevents a homogeneous compact reduced-mode $q_2$ from being interpreted as a
+flat radiative vertex.
+
+The gauge-covariant linearized compensated defect
+
+\[
+\Delta_{mn}=G^{(1)}_{mn}(\widehat h)-T_{mn}/c_1
+\]
+
+and its same-source condition $Q(T)=0$ are imported from the pinned classical
+preflight.  That certificate explicitly does not construct a full BV defect
+chain map or prove nonlinear tangency.  The separately pinned projectors
+$\Pi_E=1+\Box/M_2$ and $\Pi_M=-\Box/M_2$ are exact only on already-TT fields
+for nonzero $M_2$.  They are not used here: no projector on the unreduced
+Diff $\times$ Weyl BV complex exists, and their pure-Weyl limit is singular.
+
+The future physical test must instead apply an exported full-BV nonlinear
+Einstein-defect chain map to $q_2(\iota_E x,\iota_E y)$ and obtain zero or a
+certified $q_1$-exact trivialization.  Until that map lands, tangency remains
+uncomputed.
+
+The normalization dictionary is locked at `stripped_einstein_shape_v1`.
+Bracket shape, helicities, and little-group weights are included.  Overall
+gravitational coupling, phase, momentum delta function, and conformal-gravity
+action normalization are excluded.  Shape comparisons are allowed, but an
+overall coefficient match is forbidden until every excluded factor is
+declared.
+
+The future comparison is deliberately not executed.  It requires a
+setting-matched complete support-local BV $q_2$, the verified physical
+contraction, the full-BV nonlinear defect map, and the missing normalization
+factors.  A nonzero defect is branch leakage, not an Einstein amplitude.
 
 Reproduce with:
 
@@ -49,11 +95,9 @@ python3 -m unittest quantum-weyl/transfer/tests/test_einstein_projection_amplitu
 
 ## Verification receipt
 
-On 2026-07-16 the pinned Einstein-sector theorem reproduced in 0.04 s, the
-fixture certificate passed in 0.45 s, the fixture and nonlinear-ledger modules
-ran eight tests in 0.74 s, and strict AJV Draft 2020-12 validation passed in
-1.27 s.  Tier 0 additionally covers Python compilation, JSON parsing, source
-hashes, and scoped diff checks.  Tier 3 was not run because this adds a
-reference fixture and a fail-closed interface without changing shared algebra,
+The current verification receipt is recorded by the deterministic commands
+above, strict Draft 2020-12 schema validation, Python compilation, JSON
+parsing, content hashes, and scoped diff checks.  Tier 3 is not required
+because this hardens a reference interface without changing shared algebra,
 executing the nonlinear projection, promoting G5, or claiming a release
 theorem.

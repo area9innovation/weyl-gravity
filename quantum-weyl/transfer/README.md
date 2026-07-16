@@ -229,19 +229,24 @@ python3 quantum-weyl/transfer/ppwave_branch_transfer_import_certificate.py --che
 python3 -m unittest quantum-weyl/transfer/tests/test_ppwave_branch_transfer_import.py
 ```
 
-N-G5 now has a fail-closed Einstein-projection adapter and one exact reference
-fixture.  The pinned Einstein theorem supplies the solution-locus inclusion
-and local helicity-$\pm2$ module.  On exact complex three-point kinematics the
-stripped Einstein $(--+)$ factor
+N-G5 now has a fail-closed Einstein-projection adapter and an exact helicity
+parity pair.  The pinned Einstein theorem supplies the solution-locus inclusion
+and local helicity-$\pm2$ module.  On the holomorphic and anti-holomorphic
+complex three-point branches, respectively, the stripped Einstein factors
 
 ```text
 <12>^6/(<23>^2 <31>^2)
+[12]^6/([23]^2 [31]^2)
 ```
 
-evaluates to one and has little-group weights `(4,4,-4)`.  This reproduces the
-reference side of the future comparison only.  No conformal-gravity vertex is
-projected until the complete support-local `q2`, nonlinear Einstein tangency
-map, and normalization dictionary are available.
+both evaluate to one and have parity-conjugate little-group weights
+`(4,4,-4)` and `(-4,-4,4)`.  Exact setting metadata routes Berger reduced-mode
+inputs away from this flat scattering rail.  The imported linearized defect
+preflight and reduced-TT nonzero-mass projectors are boundaries, not a
+full-BV pure-Weyl projector.  Shape comparison is allowed under the locked
+stripped normalization, but no conformal-gravity vertex or overall coefficient
+is matched until a setting-compatible complete support-local `q2`, full-BV
+nonlinear Einstein-defect map, and all normalization factors are available.
 
 ```bash
 python3 quantum-weyl/transfer/einstein_projection_amplitude_fixture_certificate.py --check

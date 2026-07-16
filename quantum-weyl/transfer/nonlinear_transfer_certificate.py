@@ -442,11 +442,35 @@ def build_certificate() -> dict[str, Any]:
         einstein_mhv_fixture.get("schema")
         != "quantum-weyl-einstein-projection-amplitude-fixture-v1"
         or einstein_mhv_fixture.get("result_state")
-        != "REFERENCE_MHV_FIXTURE_EXACT_NONLINEAR_EINSTEIN_PROJECTION_INPUT_BLOCKED"
+        != "PARITY_PAIR_EXACT_SETTING_DEFECT_NORMALIZATION_GATES_READY_Q2_BLOCKED"
         or einstein_mhv_fixture.get("reference_fixture", {}).get("stripped_value")
         != "1"
         or einstein_mhv_fixture.get("reference_fixture", {}).get("helicities")
         != [-2, -2, 2]
+        or einstein_mhv_fixture.get("parity_conjugate_fixture", {}).get(
+            "stripped_value"
+        )
+        != "1"
+        or einstein_mhv_fixture.get("parity_conjugate_fixture", {}).get(
+            "helicities"
+        )
+        != [2, 2, -2]
+        or einstein_mhv_fixture.get("setting_compatibility_contract", {}).get(
+            "berger_input_compatible_with_flat_einstein_fixture"
+        )
+        is not False
+        or einstein_mhv_fixture.get("einstein_defect_tangency_contract", {}).get(
+            "full_BV_defect_chain_map_available"
+        )
+        is not False
+        or einstein_mhv_fixture.get("einstein_defect_tangency_contract", {}).get(
+            "reduced_TT_projector_used_for_full_BV_projection"
+        )
+        is not False
+        or einstein_mhv_fixture.get("normalization_contract", {}).get(
+            "overall_coefficient_match_authorized"
+        )
+        is not False
         or einstein_mhv_fixture.get("projection_contract", {}).get(
             "execution_authorized"
         )
@@ -520,7 +544,7 @@ def build_certificate() -> dict[str, Any]:
                 "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
                 "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
                 "arbitrary-profile aligned Brinkmann pp-wave branch block with genuine Einstein and extra-Weyl representatives, vanishing restricted q2, and homotopy-independent transferred ell2=0",
-                "exact complex (--+) Einstein three-graviton MHV reference fixture with pinned solution-locus inclusion and a fail-closed future projection contract",
+                "exact complex Einstein three-graviton (--+)/(++-) parity-pair reference fixture with strict setting, defect-tangency, and normalization gates",
                 "total-D disposition router that permits Cartan contraction only for a certified D_GAUGE result",
                 "strict total-D presymplectic audit schema with canonical D_CHARGED vocabulary, sector ledger, and exact verdict signatures",
                 "phase-space, boundary-condition, classical-commit, dependency-scope, and source-hash binding before physical execution",
@@ -532,7 +556,7 @@ def build_certificate() -> dict[str, Any]:
                 "the complete support-local conformal-gravity q2 lift before endpoint projection",
                 "closure or centrality of either Weyl-square direction",
                 "nonaligned Einstein/extra-Weyl branch mixing outside the Brinkmann pp-wave sector",
-                "projection of the physical conformal-gravity cubic tensor onto the Einstein helicity sector or matching to the MHV reference",
+                "setting-matched projection of the physical conformal-gravity cubic tensor onto the Einstein helicity sector or matching its normalized coefficient to the parity-pair reference",
                 "absence of higher-bracket sector re-entry",
                 "the support-local Berger q2 and arity-two nonlinear D-Cartan contraction outside the all-weight homogeneous six-row-per-weight block",
                 "the full four-dimensional support-local Berger q2 and complete 54-row arity-two Cartan contraction",
@@ -556,7 +580,7 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "einstein_projection_amplitude_fixture",
-                "status": "REFERENCE_MHV_FIXTURE_EXACT_NONLINEAR_PROJECTION_AND_Q2_INPUT_BLOCKED",
+                "status": "REFERENCE_PARITY_PAIR_EXACT_SETTING_DEFECT_NORMALIZATION_GATES_READY_PROJECTION_AND_Q2_INPUT_BLOCKED",
                 "next_certificate": "N_G5_PROJECT_TRANSFERRED_ELL2_AND_COMPARE_MHV",
             },
             {
@@ -596,7 +620,7 @@ def build_certificate() -> dict[str, Any]:
             {"stage": "HT2", "deliverable": "compute ell3 and dynamical/topological mixing table", "status": "ARITY_THREE_CARTAN_RECURRENCE_ENGINE_READY_PHYSICAL_Q3_INPUT_BLOCKED"},
             {"stage": "HT3", "deliverable": "higher-arity and particle-filtration obstruction ledger", "status": "NOT_COMPUTED"},
             {"stage": "HT4", "deliverable": "cyclic minimal action and formal moduli interpretation", "status": "NOT_COMPUTED"},
-            {"stage": "N-G5", "deliverable": "Einstein projection and one helicity/twistor amplitude fixture", "status": "REFERENCE_MHV_FIXTURE_AND_PROJECTION_CONTRACT_READY_PHYSICAL_Q2_PROJECTION_BLOCKED"},
+            {"stage": "N-G5", "deliverable": "Einstein projection and one helicity/twistor amplitude fixture", "status": "REFERENCE_PARITY_PAIR_AND_SETTING_DEFECT_NORMALIZATION_GATES_READY_PHYSICAL_Q2_PROJECTION_BLOCKED"},
             {"stage": "HTQ", "deliverable": "transfer restored quantum Q corrections", "status": "BLOCKED_PENDING_QME_RESTORED"},
         ],
         "provenance": {
@@ -711,7 +735,7 @@ def build_certificate() -> dict[str, Any]:
             "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
             "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
             "The pp-wave branch block uses arbitrary smooth aligned Brinkmann profiles and genuine Einstein/non-Einstein metric representatives, but exact linearity on that sector does not determine nonaligned support-local vertices, the centered Weyl-square deformation classes, or the complete BV q2.",
-            "The exact (--+) MHV value is a reference fixture, not a conformal-gravity calculation. The pinned Einstein theorem supplies a solution-locus inclusion but no nonlinear tangent projector, observable embedding, or scattering-state map, so G5 remains unpromoted until the complete physical q2 is projected and normalized.",
+            "The exact (--+)/(++-) parity pair is a stripped reference fixture, not a conformal-gravity calculation. Berger reduced-mode data are setting-incompatible with this flat scattering rail. The imported compensated defect is linearized preflight, and the available nonzero-M2 projectors act only after TT reduction and are singular in the pure-Weyl limit; no full-BV nonlinear defect map, observable embedding, or scattering-state map exists. G5 remains unpromoted until a setting-matched complete physical q2 passes the defect gate and receives a complete normalization dictionary.",
             "D_CHARGED is the canonical classical verdict; EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT is a route label, not a fifth scientific disposition.",
             "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics only; physical q3 and any support-local or nonzero-weight iota_D^(2) remain absent.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",
