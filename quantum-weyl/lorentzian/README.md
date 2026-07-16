@@ -87,6 +87,18 @@ transport, two-sided BRST Ward identities, the 54-row lift, and explicit
 zero-mode and Krein policies. Hadamard, renormalized-product, QME and quantum
 flags remain false.
 
+The base-wave step is now complete at the local-parametrix level. The
+rank-ten tensor rough wave and both rank-three ghost factors carry the
+standard four-dimensional bundle-valued Hadamard singularity with typed
+formal-adjoint right equations, the positive-frequency null wavefront
+relation, and a jointly stationary singular part. The antisymmetric part
+matches the causal propagator only modulo a smooth local kernel; that kernel
+is not called a bisolution while smooth equation defects remain. Global exact
+bisolution correction, exact graded CCR normalization, stationary state
+selection, zero-frequency covariance, off-shell Krein policy, and positivity
+on BRST observables remain open. The next gate transports only this local
+singular structure through the typed companion/Volterra system.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -113,4 +125,7 @@ PYTHONPATH=quantum-weyl python3 -m lorentzian.raw_endpoint_import_certificate --
 PYTHONPATH=quantum-weyl python3 -m unittest lorentzian.tests.test_raw_endpoint_import -v
 PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_hadamard_construction_gate_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_hadamard_construction_gate.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_base_wave_hadamard_parametrix_certificate --check
+PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_base_wave_hadamard_parametrix
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_base_wave_hadamard_parametrix.py -v
 ```

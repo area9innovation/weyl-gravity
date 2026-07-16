@@ -10,6 +10,7 @@
     "BERGER_TYPED_COMPANION_HADAMARD": false,
     "QUANTUM_CLAIM": false
   },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
   "dependency_refs": {
     "causal_chain_v2": {
       "result_id": "BERGER_CAUSAL_CHAIN_V2_IMPORT",
@@ -42,6 +43,14 @@
     "typed_adjoint_reversal_modulo_smooth": true,
     "zero_modes_not_inverted": true
   },
+  "global_completion_obligations": {
+    "BRST_observable_positivity": "OPEN",
+    "exact_graded_CCR_normalization": "OPEN",
+    "off_shell_Krein_policy": "OPEN",
+    "smooth_exact_bisolution_correction": "OPEN",
+    "stationary_spectral_or_deformation_construction": "OPEN",
+    "zero_frequency_covariance": "OPEN"
+  },
   "lifecycle_layer": "LORENTZIAN_MICROLOCAL_FREE_FIELD",
   "next_gate": "BERGER_TYPED_COMPANION_MOLLER_TRANSPORT",
   "operator_family": {
@@ -60,7 +69,7 @@
   },
   "parametrix_theorem": {
     "D_stationarity": "jointly stationary modulo smooth local terms",
-    "commutator": "H_P^+-(H_P^+)^(sharp,swap)=i E_P modulo smooth",
+    "commutator": "H_P^+-(H_P^+)^(sharp,swap)=i E_P modulo a smooth local kernel",
     "kernel": "H_P^+=(8 pi^2)^-1(U_P/sigma_epsilon+V_P log(sigma_epsilon/ell^2))",
     "left_equation": "P_x H_P^+ is smooth",
     "right_equation": "P_(x')^sharp H_P^+ is smooth",
@@ -75,7 +84,7 @@
     "microlocal_spectrum": {
       "artifact_type": "JSON_ANALYTIC_PROOF",
       "path": "quantum-weyl/lorentzian/generated/berger_base_wave_hadamard_parametrix/microlocal_spectrum.json",
-      "sha256": "cfc52a0b74d49bdcc0ee428d77dc2dfa7198cc5f65e1f52d689c87fa1d85f6a7"
+      "sha256": "52ccddf96d9a7d22821ec2573e48b905dd145e3cb646f81418b9b13f9a7f8480"
     },
     "operator_inventory": {
       "artifact_type": "JSON_ANALYTIC_PROOF",
@@ -94,14 +103,14 @@
     "gate_result_id": "BERGER_HADAMARD_CONSTRUCTION_GATE",
     "lower_by_two_result_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT",
     "source_manifest": {
-      "../reports/berger-base-wave-hadamard-parametrix.md": "848965f6bdcb12d683b7e84eb0b49001efb92bc920f284623328b5c99e5182b5",
-      "berger_base_wave_hadamard_parametrix.py": "e46a292f7f297593aff83d08743d72ae2b551916772d7127b8cb8b7a20ea02e3",
+      "../reports/berger-base-wave-hadamard-parametrix.md": "6e1bdc3fbc0258a317b8b82683d5c2e10c22b14706d0c8392da08016d80aa41d",
+      "berger_base_wave_hadamard_parametrix.py": "3ae6a7e2fb2fe80eef3d73183e74d9f418b84af49885c74aa7dd5c8885328575",
       "berger_base_wave_hadamard_parametrix_certificate.py": "e549cb6ea0cbe242718cd77db43e3c83a667892520d8df228b6f72f503b9e3a6",
-      "schema/berger-base-wave-hadamard-parametrix-v1.schema.json": "10c120f5de3352afe33138d323a699c5040526397db139e53f969d4657187d0c",
-      "tests/test_berger_base_wave_hadamard_parametrix.py": "af3b4cb603fb18bba7b8c721f2d8969926392b6e40785aaad71876b0f939074a",
-      "verify_berger_base_wave_hadamard_parametrix.py": "66318206ffd1d99e9302042914ff9df452f4b2f9cee1fd9b48f62bbde0b52d39"
+      "schema/berger-base-wave-hadamard-parametrix-v1.schema.json": "ed59c17729f2309e65d5f0018609837e326f7e13e9f6bec5de3c84207e578772",
+      "tests/test_berger_base_wave_hadamard_parametrix.py": "587a1679702577620a360f99cb6cc7215ca8121dcb514ba01e8b931a89a20afe",
+      "verify_berger_base_wave_hadamard_parametrix.py": "7de7bf39157a2c6a504799f15e645a4c6f80f6ef86e4cbcd57062d3420f8f0a8"
     },
-    "source_manifest_sha256": "84d15cd2e3c3ec4abe1a3e73a77e503fc811493987f5493595e0ef86ffb6b421"
+    "source_manifest_sha256": "987e128e7f271114b232ad76335be28cac20711ca90f4322cbff9b5da9897295"
   },
   "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
   "result_state": "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN",

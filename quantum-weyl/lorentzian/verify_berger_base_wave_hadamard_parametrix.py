@@ -60,6 +60,8 @@ def verify_certificate() -> dict:
     if (
         "k future-directed null" not in micro.get("wavefront_set", "")
         or "P^sharp" not in micro.get("adjoint_reversal", "")
+        or "smooth local kernel" not in micro.get("commutator", "")
+        or "smooth local bisolution" in micro.get("commutator", "")
     ):
         raise ValueError("microlocal or adjoint theorem drifted")
     zero = proofs["stationarity_zero_modes"]
@@ -77,6 +79,12 @@ def mutation_guards(certificate: dict) -> None:
         ("state", "scope_boundary", "quasifree_state", True),
         ("26 rows", "claim_flags", "BERGER_26_ROW_BRST_HADAMARD", True),
         ("quantum", "claim_flags", "QUANTUM_CLAIM", True),
+        (
+            "global completion",
+            "global_completion_obligations",
+            "smooth_exact_bisolution_correction",
+            "COMPLETE",
+        ),
     )
     for name, group, key, value in mutations:
         mutant = deepcopy(certificate)

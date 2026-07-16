@@ -5,8 +5,8 @@
   "additionalProperties": false,
   "required": [
     "schema", "result_id", "result_state", "lifecycle_layer",
-    "dependency_tags", "setting_id", "dependency_refs", "operator_family",
-    "parametrix_theorem", "scope_boundary", "proof_artifacts", "exact_checks",
+    "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "operator_family",
+    "parametrix_theorem", "global_completion_obligations", "scope_boundary", "proof_artifacts", "exact_checks",
     "claim_flags", "next_gate", "provenance", "claim_boundary"
   ],
   "properties": {
@@ -15,6 +15,7 @@
     "result_state": {"const": "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN"},
     "lifecycle_layer": {"const": "LORENTZIAN_MICROLOCAL_FREE_FIELD"},
     "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"const": "743183594a7a33dbb869154dafd7eb2c3482bac0"},
     "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
     "dependency_refs": {
       "type": "object", "additionalProperties": false,
@@ -39,9 +40,19 @@
         "kernel": "H_P^+=(8 pi^2)^-1(U_P/sigma_epsilon+V_P log(sigma_epsilon/ell^2))",
         "left_equation": "P_x H_P^+ is smooth",
         "right_equation": "P_(x')^sharp H_P^+ is smooth",
-        "commutator": "H_P^+-(H_P^+)^(sharp,swap)=i E_P modulo smooth",
+        "commutator": "H_P^+-(H_P^+)^(sharp,swap)=i E_P modulo a smooth local kernel",
         "wavefront_set": "positive-frequency Hadamard relation C^+ with bundle polarizations",
         "D_stationarity": "jointly stationary modulo smooth local terms"
+      }
+    },
+    "global_completion_obligations": {
+      "const": {
+        "smooth_exact_bisolution_correction": "OPEN",
+        "exact_graded_CCR_normalization": "OPEN",
+        "stationary_spectral_or_deformation_construction": "OPEN",
+        "zero_frequency_covariance": "OPEN",
+        "off_shell_Krein_policy": "OPEN",
+        "BRST_observable_positivity": "OPEN"
       }
     },
     "scope_boundary": {
