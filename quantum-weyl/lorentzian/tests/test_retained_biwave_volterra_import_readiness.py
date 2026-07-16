@@ -45,7 +45,7 @@ class RetainedBiwaveVolterraImportReadinessTests(unittest.TestCase):
         self.assertEqual(receipt["status"], "REJECTED_FAIL_CLOSED")
         self.assertEqual(
             receipt["source_commit"],
-            "512545b781d4b0aff474bc5dc224890b246b070c",
+            "5f29a2f00253af3b13d5e291504dadf70b19589d",
         )
         self.assertTrue(all(receipt["structural_checks"].values()))
         self.assertEqual(len(receipt["defects"]), 8)
@@ -69,7 +69,7 @@ class RetainedBiwaveVolterraImportReadinessTests(unittest.TestCase):
                 "UNREFERENCED_ANALYTIC_BOOLEAN_ASSERTIONS",
                 "MISSING_SOURCE_PROVENANCE_AND_VERIFICATION_RECEIPT",
                 "SOURCE_SIDE_FACTORIAL_BOUND_NOT_STATED",
-                "GRADED_ENERGY_MAPPING_UNDERSPECIFIED",
+                "GRADED_ENERGY_PROOF_NOT_BOUND_TO_CERTIFICATE",
             },
         )
 

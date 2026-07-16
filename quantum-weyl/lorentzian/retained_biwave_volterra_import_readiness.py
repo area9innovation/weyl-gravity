@@ -38,7 +38,7 @@ CLASSICAL_SCHEMA_PATH = (
     "d_quotient_classical/schema/"
     "berger-retained-biwave-volterra-resolvent-v1.schema.json"
 )
-CLASSICAL_COMMIT = "512545b781d4b0aff474bc5dc224890b246b070c"
+CLASSICAL_COMMIT = "5f29a2f00253af3b13d5e291504dadf70b19589d"
 CLASSICAL_CERTIFICATE = (
     "d_quotient_classical/certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT.json"
 )
@@ -364,10 +364,10 @@ def _audit_volterra_source(source: dict[str, Any]) -> dict[str, Any]:
             "repair": "state domain/codomain-correct two-sided Volterra estimates",
         },
         {
-            "defect_id": "GRADED_ENERGY_MAPPING_UNDERSPECIFIED",
-            "observed": theorem.get("graded_energy_spaces"),
-            "required": "precise slab spaces, time regularity, source/solution norms, coefficient bounds, and derivative mapping orders",
-            "repair": "supply the energy proposition and hypotheses rather than a one-line description",
+            "defect_id": "GRADED_ENERGY_PROOF_NOT_BOUND_TO_CERTIFICATE",
+            "observed": "the hardened producer/report names X_s and Y_s, but the certificate contains only an unreferenced summary string",
+            "required": "a content-addressed analytic proof artifact bound from the certificate",
+            "repair": "bind the hardened energy proposition, hypotheses, and source/solution mapping estimates into the strict certificate",
         },
     ]
     if set(source.get("dependency_tags", [])) <= allowed_tags:

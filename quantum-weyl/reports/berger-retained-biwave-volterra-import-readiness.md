@@ -23,11 +23,12 @@ This removes two avoidable ambiguities from the incoming causal theorem. It
 does not construct a cyclic companion pairing, and formal adjoints alone do
 not prove advanced/retarded cyclic adjointness.
 
-The classical Volterra package is pinned at commit `512545b7`. This is the
-first commit where its producer reproduces the committed certificate; the
-initial `c2f4bf65` certificate carried a dependency absent from that commit's
-producer. Pinning and structural reproduction pass, but analytic import is
-rejected fail-closed.
+The hardened classical Volterra package is pinned at commit `5f29a2f0`.
+Pinning and structural reproduction pass, and the hardened report now gives
+the useful graded spaces `Y_s=H^s+H^(s-1)` and `X_s=H^(s+1)+H^s`. Analytic
+import is nevertheless rejected fail-closed because that argument is not yet
+bound into a strict proof certificate and the remaining contract defects are
+unchanged.
 
 Eight defects prevent promotion:
 
@@ -41,8 +42,8 @@ Eight defects prevent promotion:
 6. The source has no content-addressed manifest or verification-time receipt.
 7. The factorial bound is stated only for `(G0 N)^n`, not for both typed
    resolvents.
-8. The graded energy spaces and derivative mapping properties are
-   underspecified.
+8. The hardened graded-energy proof is present only in producer/report prose
+   and is not bound to the machine certificate as a proof artifact.
 
 Consequently no advanced or retarded metric Green operator is imported, and
 the downstream 26- and 54-row causal homotopy claims remain unavailable to the

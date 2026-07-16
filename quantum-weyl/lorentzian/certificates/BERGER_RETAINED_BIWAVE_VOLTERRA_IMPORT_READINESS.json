@@ -64,34 +64,34 @@
         "sha256": "0add3e518b7384cd653161b1f9db44d13c71f5c8349cd013027057e0d2ff7c8b"
       },
       "volterra_certificate_classical": {
-        "commit": "512545b781d4b0aff474bc5dc224890b246b070c",
+        "commit": "5f29a2f00253af3b13d5e291504dadf70b19589d",
         "path": "d_quotient_classical/certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT.json",
         "sha256": "7423ad5c52eac94a2420f4096621a895466cd764136b01406eec6102620ffc9f"
       },
       "volterra_producer_classical": {
-        "commit": "512545b781d4b0aff474bc5dc224890b246b070c",
+        "commit": "5f29a2f00253af3b13d5e291504dadf70b19589d",
         "path": "d_quotient_classical/backreacted_clock/berger_retained_biwave_volterra_resolvent.py",
-        "sha256": "dc9d06057d1bba656b028da565bae052eded663533f90497f45a3ac6ad6e69bd"
+        "sha256": "25e26c6e7a2fe4bb29b10eb198df5c3b7d8b48afae92ccb504bc097674ada806"
       },
       "volterra_report_classical": {
-        "commit": "512545b781d4b0aff474bc5dc224890b246b070c",
+        "commit": "5f29a2f00253af3b13d5e291504dadf70b19589d",
         "path": "d_quotient_classical/reports/berger-retained-biwave-volterra-resolvent.md",
-        "sha256": "2c57bfba958d96231763b03ee071bbf866173397705075da93633bc2c8f79600"
+        "sha256": "0ace224ee3e6da84aedd2f1a92ee8fc1b9b8d665a79e77c33b4a97f8f8b8e8be"
       },
       "volterra_test_classical": {
-        "commit": "512545b781d4b0aff474bc5dc224890b246b070c",
+        "commit": "5f29a2f00253af3b13d5e291504dadf70b19589d",
         "path": "d_quotient_classical/backreacted_clock/tests/test_berger_retained_biwave_volterra_resolvent.py",
         "sha256": "df38d5704e1a7af633eb483e3bf36df1935d03922ba64fdf5e174a0c98f4f313"
       }
     },
     "source_manifest": {
-      "../reports/berger-retained-biwave-volterra-import-readiness.md": "4b9abd8bfd72309144c8ae9d6168257a480907df1efecc3c6c742505995cfc06",
-      "retained_biwave_volterra_import_readiness.py": "720e37ec106f918c9a07bce9ba106e9767546b4bb918d76e030171bb6559459c",
+      "../reports/berger-retained-biwave-volterra-import-readiness.md": "033c7759b3c86b83f2eba0aa87648cd470070f233c2d929dd9ea516ed64d44d3",
+      "retained_biwave_volterra_import_readiness.py": "b6b5738e25e04c5a6df3e6d3c321e4f21daf5ca48411d85aef6803ee1d685a7d",
       "retained_biwave_volterra_import_readiness_certificate.py": "bb06ae2377686afdf6b905650f400e249be7d96c6fb268cdd214ce5f00c86f8c",
-      "schema/berger-retained-biwave-volterra-import-readiness-v1.schema.json": "941ae62b3bd376cc12019f116a03aaf205856d3db0e3d0e82f33d77502ed5bd8",
-      "tests/test_retained_biwave_volterra_import_readiness.py": "f0285f26f048b8b6174f87727582b7773bfaf72bf5f46ba4f0b25725a7d9cbc0"
+      "schema/berger-retained-biwave-volterra-import-readiness-v1.schema.json": "38b577fd05a78ec1a3227e7e88f1b2086907bce0cc4d67df12e3693857a0ab30",
+      "tests/test_retained_biwave_volterra_import_readiness.py": "ef436705d6377689f946774a247202ea73b7467b75b65bc4ea6e43faf3cd8f10"
     },
-    "source_manifest_sha256": "e141aae043d1cbea5c57d8075d3547408885aa9ff3aaa6b6ac0fef9449528161"
+    "source_manifest_sha256": "a553db843f8b6fed22d5b087b3f9c70ff42fce5f99bb63e8a105eeac77ea4233"
   },
   "realization_policy": {
     "accepted_when_repaired": "RETAINED_BIWAVE_COMPANION_VOLTERRA_GRAPH_PULLBACK",
@@ -179,13 +179,13 @@
         "required": "bounds for both (G0 N)^n and (N G0)^n on their respective spaces"
       },
       {
-        "defect_id": "GRADED_ENERGY_MAPPING_UNDERSPECIFIED",
-        "observed": "sources H^s direct_sum H^(s-1); solutions carry one additional derivative in the first component",
-        "repair": "supply the energy proposition and hypotheses rather than a one-line description",
-        "required": "precise slab spaces, time regularity, source/solution norms, coefficient bounds, and derivative mapping orders"
+        "defect_id": "GRADED_ENERGY_PROOF_NOT_BOUND_TO_CERTIFICATE",
+        "observed": "the hardened producer/report names X_s and Y_s, but the certificate contains only an unreferenced summary string",
+        "repair": "bind the hardened energy proposition, hypotheses, and source/solution mapping estimates into the strict certificate",
+        "required": "a content-addressed analytic proof artifact bound from the certificate"
       }
     ],
-    "source_commit": "512545b781d4b0aff474bc5dc224890b246b070c",
+    "source_commit": "5f29a2f00253af3b13d5e291504dadf70b19589d",
     "source_dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "LORENTZIAN-CAUSAL",
