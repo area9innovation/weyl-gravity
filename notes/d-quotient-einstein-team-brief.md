@@ -735,8 +735,34 @@ each harmonic block and relative signature `(1,1)`.  The result is not a
 finite-`ell` interpolation and the old `ell=2` fixture is reproduced exactly.
 At `ell=1`, the formal minus row has `mu_-=0`, matching the certified nonzero
 momentum gauge degeneration; this does not compute the separate physical
-`ell=1` or global `n=0` twist representatives.  Polar, physical `ell=1`,
-homogeneous, and global restriction blocks remain open.
+`ell=1` or global `n=0` twist representatives. The polar block is completed
+below; physical `ell=1`, homogeneous, and global restrictions remain open.
+
+The complete regular polar restriction is now exact as well. With
+`mu=omega^2-k^2`, the arbitrary-harmonic direct current and solved quadratic
+normal form give
+
+```text
+G_EM,P=[[1,-2],[-2,2lambda]],
+G_WM,P=[[4(mu-lambda),5lambda-4mu],
+        [5lambda-4mu,4(mu-lambda)]].
+```
+
+On the two physical polar branches, the exact relative factors reduce to the
+same values as in the axial parity:
+
+```text
+r_+=1+(3/2)sqrt(2lambda),
+r_-=1-(3/2)sqrt(2lambda).
+```
+
+Hence every standard polar `ell>=2` block is nondegenerate with relative
+signature `(1,1)`, and axial--polar isospectrality extends to the on-shell
+relative weights. The off-shell matrices remain different. The apparent
+`mu=0` reconstruction hole is closed by the independent full-rank minor
+`lambda^3(lambda-2)/8`, so it contains only the zero gauge-fixed field for
+`lambda>=6`. Physical `ell=1`, homogeneous, twist, and extra fourth-order
+restriction blocks remain open.
 
 ### Work package E-G4: open background classes and scattering
 

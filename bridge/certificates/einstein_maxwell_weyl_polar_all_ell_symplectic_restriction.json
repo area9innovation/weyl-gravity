@@ -1,0 +1,173 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE theorem covers the complete standard polar ell>=2 Einstein-Maxwell tangent block at symbolic periodic momentum and all m by symmetry, including closure of the mu=0 locus. It does not compute physical ell=1 or global pairings, extra fourth-order Weyl-Maxwell modes, nonlinear closure, final SO(4,2) reduction, causal scattering, or quantum theory.",
+  "classification": {
+    "all_polar_ell_ge2_both_branches_nonnull": true,
+    "all_polar_ell_ge2_relative_branch_form_indefinite": true,
+    "all_polar_ell_ge2_restriction_computed": true,
+    "all_polar_ell_ge2_restriction_nondegenerate": true,
+    "axial_polar_on_shell_relative_weights_equal": true,
+    "complete_fourth_order_weyl_maxwell_phase_space_classified": false,
+    "final_residual_quotient_computed": false,
+    "homogeneous_restriction_computed": false,
+    "lorentzian_causal_or_scattering_theorem": false,
+    "nonlinear_solution_embedding_certified": false,
+    "physical_ell1_and_global_restriction_computed": false,
+    "single_universal_proportionality_to_einstein_form": false,
+    "target_weyl_gauge_removes_einstein_class": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "derivation": {
+    "bilinear_amplitudes": "independent (K1,U1) and (K2,U2), retaining the full off-diagonal entry",
+    "harmonic_method": "direct arbitrary Y(theta), harmonic ODE, and a coefficientwise solved pole-vanishing quadratic primitive in z=cos(theta)",
+    "interpolation_used": false,
+    "literal_action": "S_WM=int sqrt(-g)[(3/8)C^2-F^2/4]",
+    "mu_zero_rule": "the 1/mu reconstruction is used only for mu!=0; the independent full-rank mu=0 audit closes the omitted locus"
+  },
+  "domain": "all standard polar Einstein-Maxwell radiative harmonics lambda=ell(ell+1), ell>=2, all m by spherical symmetry, arbitrary periodic S1 momentum k, both physical branches, before final residual SO(4,2) quotient",
+  "generality_level": "G2_POLAR_ALL_ELL_GE2_SYMBOLIC_K",
+  "interpretation": "Every ordinary polar Einstein-Maxwell wave with ell>=2 remains nonnull in the literal Weyl-Maxwell restriction. The target form restricted along the linear inclusion is nondegenerate but indefinite, with the same two relative branch factors as the axial parity. This is not a symplectic embedding of the Einstein-Maxwell form: the off-shell matrices differ and the on-shell factors are branch dependent.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "combine axial and polar radiative blocks into one standard-wave restriction theorem, then compute the physical ell=1, homogeneous ell=0, and axial-twist global restrictions",
+  "provenance": {
+    "direct_implementation": {
+      "current_engine": {
+        "path": "bridge/einstein_sector/weyl_maxwell_lee_wald_current.py",
+        "sha256": "5270dcbfb26c7a31d303214462799d41aaa575c2a8ad3fa804675282721fee6a"
+      },
+      "fixture_generator": {
+        "path": "bridge/einstein_sector/weyl_maxwell_polar_arbitrary_lambda_fixture.py",
+        "sha256": "0b4eb4bc0c5105b4a58161bbb64ae5dec2d1a5c5ac25c1f61d3b3476a4661cfd"
+      },
+      "normal_form_engine": {
+        "path": "bridge/einstein_sector/quadratic_harmonic_density.py",
+        "sha256": "9cd2518747cbc126b09cde8ea80587805e8c0c736ee19d0460034f9df4ab4750"
+      }
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_all_ell_symplectic_restriction.py",
+    "generator_sha256": "6734b0e21e562c21118c68409591e51f292b486268251790ad03a2869b85753e",
+    "inputs": {
+      "arbitrary_lambda_fixture": {
+        "path": "bridge/certificates/weyl_maxwell_polar_arbitrary_lambda_fixture.json",
+        "sha256": "1e4eadf36ac504c6cb4a997ff90b4e6d1963cc20c8a810a7fa84fde0cd0a3bae"
+      },
+      "axial_all_ell": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_all_ell_symplectic_restriction.json",
+        "sha256": "b0854ac65f2a9c525492eef33fd543611ea78c24623769c7e02eeeee8b0eb22a"
+      },
+      "einstein_form": {
+        "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+        "sha256": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
+      },
+      "polar_complex": {
+        "path": "bridge/certificates/einstein_maxwell_polar_master_complex.json",
+        "sha256": "473d9c826b69220d2398cf4eb44b75e7c40bc23fd4d378a9eb2069a2d3f61ae5"
+      },
+      "preflight": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_symplectic_preflight.json",
+        "sha256": "22a948d0ef54efd0c4f2b9b8dd4c57a47a731f1511f40d6a6afbba780dd00591"
+      }
+    }
+  },
+  "restriction": {
+    "branch_orthogonality": "for ell>=2 the conserved Lee-Wald current and distinct positive branch frequencies force the cross-branch pairing to vanish at fixed k",
+    "branch_weight_matrix_relative_to_einstein": [
+      [
+        "3*sqrt(2)*sqrt(lambda)/2 + 1",
+        "0"
+      ],
+      [
+        "0",
+        "-3*sqrt(2)*sqrt(lambda)/2 + 1"
+      ]
+    ],
+    "einstein_maxwell_off_shell_matrix": [
+      [
+        "1",
+        "-2"
+      ],
+      [
+        "-2",
+        "2*lambda"
+      ]
+    ],
+    "ell_ge_2_proof": {
+      "einstein_minus_weight": "2*(a-2)/a>0",
+      "einstein_plus_weight": "2*(a+2)/a>0",
+      "rank": 2,
+      "root_variable": "a=sqrt(2*lambda)>2 because lambda>=6",
+      "signature_relative_to_positive_einstein_branch_form": {
+        "negative": 1,
+        "positive": 1,
+        "zero": 0
+      },
+      "weyl_minus_weight": "-(a-2)*(3*a-2)/a<0",
+      "weyl_plus_weight": "(a+2)*(3*a+2)/a>0"
+    },
+    "mu_zero_closure": {
+      "imported_rank_witness": "lambda**3*(lambda - 2)/8",
+      "reconstructed_fixture_domain": "mu!=0",
+      "verdict": "for lambda>=6 the gauge-fixed mu=0 coefficient matrix has full column rank, so only the zero field exists and no nonzero polar solution is omitted"
+    },
+    "off_shell_weyl_determinant": "-lambda*(9*lambda - 8*mu)",
+    "on_shell_branches": [
+      {
+        "branch": "plus",
+        "einstein_weight": "sqrt(2)*(sqrt(2)*sqrt(lambda) + 2)/sqrt(lambda)",
+        "ell_ge_2_relative_sign": "POSITIVE",
+        "mu": "sqrt(2)*sqrt(lambda) + lambda",
+        "normalized_vector_K_U": [
+          "1",
+          "-sqrt(2)/(2*sqrt(lambda))"
+        ],
+        "restriction_over_einstein": "3*sqrt(2)*sqrt(lambda)/2 + 1",
+        "weyl_maxwell_weight": "sqrt(2)*(sqrt(2)*sqrt(lambda) + 2)*(3*sqrt(2)*sqrt(lambda) + 2)/(2*sqrt(lambda))"
+      },
+      {
+        "branch": "minus",
+        "einstein_weight": "sqrt(2)*(sqrt(2)*sqrt(lambda) - 2)/sqrt(lambda)",
+        "ell_ge_2_relative_sign": "NEGATIVE",
+        "mu": "-sqrt(2)*sqrt(lambda) + lambda",
+        "normalized_vector_K_U": [
+          "1",
+          "sqrt(2)/(2*sqrt(lambda))"
+        ],
+        "restriction_over_einstein": "-3*sqrt(2)*sqrt(lambda)/2 + 1",
+        "weyl_maxwell_weight": "-sqrt(2)*(sqrt(2)*sqrt(lambda) - 2)*(3*sqrt(2)*sqrt(lambda) - 2)/(2*sqrt(lambda))"
+      }
+    ],
+    "pairing_convention": "omega_P^t=-i*omega*N_lambda*v_1^T G_P(lambda,mu) v_2",
+    "parity_comparison": {
+      "axial_and_polar_on_shell_relative_factors_equal": true,
+      "common_factors": [
+        "3*sqrt(2)*sqrt(lambda)/2 + 1",
+        "-3*sqrt(2)*sqrt(lambda)/2 + 1"
+      ],
+      "interpretation": "axial-polar isospectrality extends to the two on-shell Weyl-Maxwell/Einstein-Maxwell relative weights, although the off-shell coefficient matrices and reconstruction maps differ",
+      "off_shell_matrices_equal": false
+    },
+    "weyl_maxwell_off_shell_matrix": [
+      [
+        "4*(mu-lambda)",
+        "5*lambda-4*mu"
+      ],
+      [
+        "5*lambda-4*mu",
+        "4*(mu-lambda)"
+      ]
+    ]
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_ALL_ELL_SYMPLECTIC_RESTRICTION",
+  "result_state": "POLAR_ALL_ELL_GE2_NONDEGENERATE_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
+  "schema": "einstein-maxwell-weyl-polar-all-ell-symplectic-restriction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_all_ell_symplectic_restriction.schema.json",
+  "schema_sha256": "5ef38addb5890805200a688d6379c965a8bdd1a43d30335bda96ffd27854ebb1",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_all_ell_symplectic_restriction --verify bridge/certificates/einstein_maxwell_weyl_polar_all_ell_symplectic_restriction.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_all_ell_symplectic_restriction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_all_ell_symplectic_restriction bridge.einstein_sector.tests.test_quadratic_harmonic_density",
+    "python3 -m bridge.einstein_sector.weyl_maxwell_polar_arbitrary_lambda_fixture --verify bridge/certificates/weyl_maxwell_polar_arbitrary_lambda_fixture.json"
+  ]
+}
