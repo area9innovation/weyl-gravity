@@ -62,6 +62,13 @@ pipe or that the universe sits inside one.
   gravitational wave patterns solve the linear equations and carry a nonzero
   physical comparison rule. This establishes classical waves, not quantum
   photons, quantum gravitons or a detector prediction.
+- **The larger theory also has two extra classical wave directions in one
+  tested family.** They are not disguised Einstein waves, and an exact local
+  comparison between them is nonzero and positive at the current reduced
+  equation level. This means they do not vanish as mere algebraic
+  bookkeeping there. It does **not** yet mean that nature contains two new
+  particles: the full spacetime energy rule, causal boundary conditions and
+  final physical quotient still have to be checked.
 - **The apparent ghost is not automatically a particle.** In the selected
   boundary-free, zero-charge universe, no isolated one-particle conformal
   graviton survives after redundant descriptions are removed. Two collective
@@ -80,10 +87,12 @@ pipe or that the universe sits inside one.
 
 This is a real but incomplete mathematical universe. It has spacetime,
 classical causal propagation, clocks, classical electromagnetic and
-gravitational wave directions, and a first controlled interaction layer. It
-does not yet have a certified relational redshift, electrons, quantum
-particles, gravitational lensing, black-hole boundaries, a scattering
-experiment, or a dark-matter or dark-energy prediction.
+gravitational wave directions, two classified extra fourth-order directions
+in a separate compact gravity-and-electromagnetism setting, and a first
+controlled interaction layer. It does not yet have a certified relational
+redshift, electrons, quantum particles, gravitational lensing, black-hole
+boundaries, a scattering experiment, or a dark-matter or dark-energy
+prediction.
 
 ## What "gauge" means
 
@@ -143,6 +152,13 @@ the causal future and the constraints propagate with it.
 
 These are classical causality results. A global quantum state with the
 required short-distance and causality properties is a separate rung.
+
+Work toward that quantum rung has identified the standard local
+short-distance wave pattern for the basic clock-universe fields and derived
+an exact formal recipe for transporting it through the coupled equations.
+The recipe is not yet a quantum state. The current mathematical estimates do
+not prove that all singular directions of the transported distributions fit
+together safely. The certification therefore stops at that precise boundary.
 
 ## What each rung has to prove
 
@@ -251,12 +267,12 @@ quantum theory.
 | **Gravitational redshift** | **Open, with ingredients present.** The model has curvature, causal propagation, light-like paths and a matter clock. | Connect emitter, light signal and receiver into one gauge-invariant frequency ratio. |
 | **Classical light** | **Partial.** Standard electromagnetic wave directions occur in the compact Einstein--Maxwell inclusion. | Build physical sources, detectors, energy flux and boundary conditions. |
 | **Electrons and charged matter** | **Open.** No certified charged spin-one-half matter sector exists in the current universe. | Add a Dirac field, a physical mass/scale mechanism, causal propagation and stable interactions. |
-| **Gravitational waves** | **Partial.** Standard linear gravitational wave directions occur with a nonzero physical pairing, and the pure-gravity complex propagates causally. | Produce asymptotically measurable waveforms, energy flux and detector response while controlling the extra branch. |
+| **Gravitational waves** | **Partial.** Standard linear gravitational wave directions occur with a nonzero physical pairing, and the pure-gravity complex propagates causally. In a separate compact axial family, two extra fourth-order directions survive the reduced equation and local-pairing tests. | Match the extra directions to the direct four-dimensional physical current, impose causal boundary conditions, and produce measurable waveforms, flux and detector response. |
 | **Gravitational lensing** | **Open, with geometric ingredients present.** Curved spacetime and light cones exist, but no certified lensing observable does. | Add a localized lens, propagate light around it and compare observable angles and arrival times. |
 | **Quantum particles** | **Open.** Classical waves are not yet photons, gravitons or electrons; the surviving curvature classes are not particles. | Construct a global quantum state, physical positive pairing and incoming/outgoing particle interpretation. |
 | **Interactions** | **Partial.** The complete quadratic clock-coupled interaction passes its declared cyclic and gauge tests. | Pass cubic and higher identities, resonant channels and global nonlinear evolution. |
 | **Black holes** | **Open in this certified pipeline.** No horizon phase space, boundary charge or stability theorem has been imported into the universe. | Select a black-hole background and certify its horizons, causal perturbations, charges, entropy and stability. |
-| **Quantum gravity** | **Early groundwork only.** Candidate anomaly types and local short-distance wave structure are partly classified; there is no restored quantum master equation. | Compute anomaly coefficients, restore or obstruct the quantum gauge identity, and construct the global quantum theory. |
+| **Quantum gravity** | **Early groundwork only.** Candidate anomaly types and the basic local short-distance wave structure are partly classified. Exact formal transport through the clock system is known, but its distributional wavefront safety is not; there is no coupled Hadamard state or restored quantum master equation. | Prove or obstruct the microlocal transport, then compute anomaly coefficients, restore the quantum gauge identity and construct the global quantum theory. |
 | **Cosmology, dark matter and dark energy** | **Open.** The current work establishes consistency machinery, not a fitted cosmological model. | Build stable cosmological and galaxy backgrounds, derive observables, then compare them with data. |
 
 ## If the universe differs from standard physics
@@ -268,6 +284,12 @@ known physics while organizing its gauge and causal structure differently.
 A controlled difference could be new physics. An extra wave, charge,
 interaction or cosmological effect would be interesting only if it passes the
 same causality, stability, gauge and quantum tests as the familiar phenomena.
+
+The two newly isolated extra wave directions are now at exactly this fork.
+They have survived enough exact tests that they cannot be dismissed as a
+repeated factor in an equation, but not enough to call them observable new
+physics. The next physical comparison may show that they are healthy, ghostly,
+removed by admissible boundaries, or confined to this compact sector.
 
 A difference can also be a no-go result. The calculation may show that a
 clock cannot remain healthy, a mode has an unavoidable negative physical

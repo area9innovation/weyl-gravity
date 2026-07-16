@@ -53,6 +53,15 @@ The honest present verdict is therefore:
 > ghost is absent would be false; interactions, quantum anomalies, extra
 > fourth-order branches, and asymptotic scattering remain decisive.
 
+The newest compact Einstein--Maxwell calculation makes the extra-branch
+qualification concrete. In the generic axial \(\ell\geq2\) block, the
+Weyl--Maxwell solution module is strictly larger than the Einstein--Maxwell
+image by two exact polarizations. Their reduced-Hessian Green pairing is
+nonradical with signature \((2,0)\) in the declared positive-frequency
+convention. This is not yet a physical norm or particle theorem: the direct
+four-dimensional action Hessian, complete Lee--Wald matrix, causal boundary
+conditions, and final quotient are still required.
+
 ## How claims are typed
 
 Every physical conclusion is indexed by
@@ -84,9 +93,11 @@ In particular, `LOCAL-ALGEBRAIC` and `REDUCED-MODE` results are not reported as
 | Is that residual calculation connected to the covariant field theory? | The complete free metric BV--BFV complex has causal retarded/advanced chain homotopies, compact-to-spacelike-compact transport, residual endpoint recovery, and matching Green/current/residual pairings. | **Certified; Paper 8 artifact-ready** | Conformal cylinder, free classical theory, selected polarization; no Hadamard or quantum construction. |
 | Must \(D\) be gauge? | No. It is charged on the unrestricted compact phase space and gauge on the Taub-zero derived sector. | **Certified** | The answer is sector- and boundary-dependent. |
 | Can a healthy clock coexist with total \(D\)-gauge? | On one positive Berger-cylinder background, fixed-coupling linearized constraints force \(\delta Q_D=0\) although the matter clock has nonzero internal momentum. | **Certified in the stated linear sector** | Relational observables, nearby backgrounds, nonlinear closure, and quantum stability are not all complete. |
-| Does the Berger nonlinear Cartan mechanism survive first contact with interactions? | The complete retained \(q_2\) is exact and cyclic; a causal cyclic \(D\)-Cartan contraction has been constructed through arity two on all 54 rows. | **Certified algebraically and at the stated classical causal level** | Arity three, Hadamard data, QME restoration, and quantum claims are open. A downstream Volterra import remains fail-closed until its analytic estimates and source/solution maps are certified. |
-| Is ordinary Einstein--Maxwell radiation present inside the Weyl--Maxwell system? | The complete standard fixed-bundle harmonic Einstein--Maxwell tangent injects on shell before the final residual quotient, and its Weyl--Maxwell pullback is nondegenerate. | **Certified, reduced-mode/local-algebraic** | The pullback is not generally the Einstein symplectic form; radiative blocks are relatively indefinite, and the complementary fourth-order branch is not yet solved. |
+| Does the Berger nonlinear Cartan mechanism survive first contact with interactions? | The complete retained \(q_2\) is exact and cyclic; a causal cyclic \(D\)-Cartan contraction has been constructed through arity two on all 54 rows. | **Certified algebraically and at the stated classical causal level** | Arity three, QME restoration, and quantum claims are open. The formal source/solution transport algebra is certified, but its distributional microlocal realization remains fail-closed. |
+| Is ordinary Einstein--Maxwell radiation present inside the Weyl--Maxwell system? | The complete standard fixed-bundle harmonic Einstein--Maxwell tangent injects on shell before the final residual quotient, and its Weyl--Maxwell pullback is nondegenerate. | **Certified, reduced-mode/local-algebraic** | The pullback is not generally the Einstein symplectic form; radiative blocks are relatively indefinite, and the complementary branch has only been classified in the generic axial block. |
+| Is the complementary fourth-order axial branch real at the reduced equation level? | For generic compact axial \(\ell\geq2\), the quotient by the Einstein--Maxwell image consists of two exact extra polarizations. Their reduced-Hessian Green pairing is nonradical with signature \((2,0)\). | **Classified, local-algebraic/reduced-mode** | Direct four-dimensional action-Hessian and Lee--Wald matching, causal boundary admissibility, the final quotient, and particle interpretation are open. The signature is not yet a physical norm. |
 | Is the Einstein sector nonlinearly closed? | Explicit compact fixed-charge photon and gravitational tangents have second-order Taub obstructions; a nonzero null tangent on the universal cover extends in the tested channel. | **Certified examples / classification in progress** | No universal nonlinear Einstein-sector closure theorem. |
+| Can the Berger system support the short-distance structure needed for quantum fields? | The base tensor and ghost wave factors have a certified local Hadamard parametrix, and exact typed Møller intertwiners give the unique formal companion-kernel candidate. | **Partial; microlocal promotion fail-closed** | The order-two transport has no certified Hörmander composition or uniform wavefront control. No companion Hadamard parametrix, global state, QME, or quantum theory is claimed. |
 | Is the quantum theory anomaly-free and unitary? | The even antifield-zero, local dimension-four anomaly candidates reduce to \([\omega C^2]\) and \([\omega E_4]\), with \(\omega\Box R\) exact. | **Partial, local-algebraic** | Coefficients, antifield-dependent sectors, QME restoration, Lorentzian time-ordered products, Hadamard state, and asymptotic unitarity are open. |
 
 ## Highlights by audience
@@ -138,6 +149,15 @@ abstracted into a cyclic transfer theorem for Green-hyperbolic complexes:
 when a hyperbolic parent complex contracts onto a detour complex, under what
 hypotheses do causal homotopies and current pairings descend?
 
+On the Berger quantum route, the normally hyperbolic tensor and ghost factors
+now carry the standard local Hadamard singularity, and the typed source and
+solution Møller maps satisfy their exact formal intertwining and adjoint
+identities. The attempted promotion usefully found the remaining analytic
+obstruction: convergence in finite-slab Sobolev energy norms does not imply
+that the kernel compositions are defined in the Hörmander sense or that their
+wavefront cones are uniformly controlled. Thus the formal transported kernel
+is fixed, while the companion Hadamard claim remains fail-closed.
+
 ### Conformal geometry, tractors, BGG, and detour complexes
 
 The geometric bridge uses the adjoint-tractor Yang--Mills detour complex and
@@ -166,6 +186,14 @@ before the final quotient. The third does not follow: the Weyl--Maxwell
 pullback is nondegenerate but differs blockwise from the Einstein--Maxwell
 form, and fixed-charge second-order Taub obstructions occur for explicit
 photon and gravitational modes.
+
+The complementary axial block is now explicit rather than inferred from a
+determinant. For every physical \(\ell\geq2\) in the generic compact domain,
+the quotient contains two extra solution polarizations. An exact local Green
+current pairs them nondegenerately and positively at the reduced-Hessian
+level. That removes a simple radical explanation, but it does not decide the
+physical sign: the direct action-derived four-dimensional Lee--Wald current
+and the full Einstein/extra matrix are the next load-bearing comparison.
 
 This connects most directly to linearization stability, charge-fibre
 obstructions, and the Lorentzian complement to boundary-selected
@@ -227,6 +255,10 @@ The criticism is correct in three important senses:
   freedom in an asymptotically flat universe.
 - The Einstein image is not automatically a nonlinear, symplectic, or
   exclusive sector of the fourth-order theory.
+- In the generic compact axial block, the extra fourth-order module survives
+  the reduced Green-pairing radical test. It can no longer be dismissed there
+  as determinant multiplicity, although its physical norm and admissibility
+  remain undecided.
 
 The selected construction nevertheless survives the criticism where it
 actually claims to apply:
@@ -252,6 +284,8 @@ A strong positive change would be any of:
   total \(D\) remains gauge;
 - arity-three and first resonant-channel survival of the interacting Cartan
   contraction;
+- a direct four-dimensional Lee--Wald match that controls the two extra axial
+  polarizations under causal physical boundary conditions;
 - vanishing or removable quantum \(D\)-anomaly after QME restoration;
 - an asymptotically flat, positive reduced Einstein scattering sector with
   the extra Weyl branch excluded or controlled.
@@ -260,6 +294,8 @@ A strong negative change would be any of:
 
 - failure of the Berger contraction in the next physical interaction
   channel;
+- a direct Lee--Wald calculation that makes the extra axial branch a negative
+  physical direction under admissible boundary conditions;
 - an unavoidable nontrivial quantum Cartan anomaly;
 - a negative physical extra branch in the asymptotic Bach phase space;
 - failure of causal nonlinear closure for every physically admissible
@@ -276,8 +312,10 @@ precise obstruction, not to protect a preferred interpretation.
 - [Papers 7--8 computational supplement](../paper/07-08-conformal-residual-cohomology-computational-supplement.pdf)
 - [Clean publication-release audit](../conformal-publication-release-audit.json)
 - [Live \(D\)-quotient status ledger](../d_quotient_programme/reports/consolidated-status.md)
+- [Generic axial extra-branch and pairing report](einstein-maxwell-weyl-axial-operator-report.md)
+- [Berger typed Møller and microlocal-gate report](../quantum-weyl/reports/berger-typed-companion-moller-preflight.md)
 - [Long-term programme and publication gates](universe-building-roadmap.md)
-- [General-audience introduction](../paper/how-to-build-a-universe.md)
+- [General-audience introduction](../paper/99-how-to-build-a-universe.md)
 
 Papers 7--8 are `ARTIFACT_READY`: the manuscripts, supplements, hashes, and
 clean reproduction audit pass. They are not `SUBMISSION_READY` until human
@@ -301,6 +339,10 @@ the strongest limitation immediately beside the headline result.
 
 ## Changelog
 
+- **16 July 2026:** added the generic axial strict-inclusion theorem and its
+  nonradical reduced Green signature \((2,0)\); recorded the exact typed
+  Møller transport algebra and the fail-closed Hörmander/wavefront gate that
+  prevents promotion to a companion Hadamard parametrix or quantum state.
 - **16 July 2026:** created the physicist-facing summary; recorded Papers
   7--8 as artifact-ready, the completed cylinder causal bridge, the
   sector-dependent \(D\) verdict, Berger arity-two status with the separate
