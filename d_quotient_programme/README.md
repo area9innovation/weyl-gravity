@@ -85,6 +85,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-polar-all-ell-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-polar-all-ell-restriction-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-radiative-restriction.json`](contributions/einstein-maxwell-weyl-radiative-restriction.json)
 - [`reports/einstein-maxwell-weyl-radiative-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-radiative-restriction-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-ell1-physical-restriction.json`](contributions/einstein-maxwell-weyl-ell1-physical-restriction.json)
+- [`reports/einstein-maxwell-weyl-ell1-physical-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-ell1-physical-restriction-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -264,6 +266,16 @@ harmonic.  Branch, parity, harmonic, and Fourier orthogonality and the
 real/complex multiplicities are explicit.  Thus all ordinary radiative
 directions remain nonnull before the final residual quotient, but the identity
 inclusion is not symplectic.  This classical relative signature is not a
-one-particle negative-norm or quantum ghost theorem.  Physical `ell=1`,
-homogeneous `ell=0`, axial twist, and extra fourth-order restriction blocks
-remain open.
+one-particle negative-norm or quantum ghost theorem.  The homogeneous
+`ell=0`, axial twist, and extra fourth-order restriction blocks remain open.
+
+The physical `ell=1` target restriction is now closed independently on its
+exceptional quotient.  A direct current calculation annihilates the complete
+residual-gauge row and column in both parities.  After source-normalizing the
+quotient coordinates, every massive axial and polar triplet obeys
+`Omega_WM=4*Omega_EM` at arbitrary periodic momentum.  The generic polar
+all-`ell` matrix cannot be specialized to `lambda=2`, because it is nonzero on
+the residual diffeomorphism; the agreement with factor four comes only after
+the exceptional current descends correctly.  These modes are radiative and
+are not the separate zero-frequency axial twist.  Homogeneous, twist, and
+extra fourth-order target restrictions remain open.

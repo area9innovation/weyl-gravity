@@ -823,15 +823,14 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Positive Berger clock | `D_GAUGE` on fixed-coupling linearized phase space | minimal clock SDR and retained `q1` complete; arity two open | principal endpoint factors only; curved/Green gates open | open | minimal cyclic pairing exact | `NOT_APPLICABLE` at this base point: certified non-Einstein Weyl--matter branch |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | stability open |
-| Compact Einstein--Maxwell product | sector-indexed; not a universal D verdict | `OPEN` | `NOT TESTED` | no positive-frequency Hilbert space constructed | standard `ell>=2` Weyl--Maxwell pullback is nondegenerate with relative branch-coefficient signature `(2,2)` per real spatial harmonic | all standard radiative tangents survive target Weyl gauge before final residual quotient; identity inclusion is not symplectic |
+| Compact Einstein--Maxwell product | sector-indexed; not a universal D verdict | `OPEN` | `NOT TESTED` | no positive-frequency Hilbert space constructed | standard `ell>=2` pullback is nondegenerate with relative signature `(2,2)`; physical `ell=1` quotient obeys `Omega_WM=4 Omega_EM` | all standard `ell>=2` and physical `ell=1` radiative tangents survive target Weyl gauge before final residual quotient |
 | Lorentzian dS/AdS | boundary-dependent; compute | open | open | open | open | selected sector to certify |
 | Asymptotically flat | `PHASE_SPACE_NOT_CLOSED`; `H_ESU` crosses fixed \(\mathscr I\), `D_M` charge open | `NOT APPLICABLE` until a boundary-preserving generator and phase space are chosen | formal triangular seed only; causal complex open | `OPEN` | `OPEN` | `EINSTEIN_OPEN`; reduced `chi=0` seed only |
 
 ## Priority and stop/go decisions
 
-1. Compute the Weyl--Maxwell pullback on the physical `ell=1` quotient using
-   its certified representatives, then on the homogeneous `ell=0` and axial
-   twist generalized global solutions by direct Lee--Wald currents.
+1. Compute the Weyl--Maxwell pullbacks on the homogeneous `ell=0` and axial
+   twist generalized global solutions by separate direct Lee--Wald currents.
 2. Classify the extra fourth-order adjoint/radiative directions and separate
    them from the standard Einstein wave directions.
 3. Run the quadratic Taub/extension test on the remaining compact wave
@@ -850,14 +849,17 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 The regular compact radiative modes, physical `ell=1` quotient, and generalized
 global modes have a certified Einstein--Maxwell covariant pairing.  The
-Weyl--Maxwell pullback is now closed on the complete standard axial-plus-polar
+Weyl--Maxwell pullback is closed on the complete standard axial-plus-polar
 `ell>=2` block by the common spectral operator
 `1+(3/2)(M-lambda)`: all such modes remain nonnull, but the relative
 branch-coefficient signature is `(2,2)` and the identity inclusion is not
-symplectic.  This is not a quantum negative-norm theorem.  The physical
-`ell=1`, homogeneous, twist, and extra fourth-order target restrictions are
-the nearest remaining compact gates; black holes and scattering require their
-own boundary phase space.  The handoff criteria are recorded in
+symplectic.  The physical `ell=1` quotient is also closed by a separate direct
+exceptional current: both gauge rows vanish and the normalized pullback is
+exactly four times the Einstein--Maxwell form.  This is not a one-particle or
+quantum theorem.  The homogeneous, twist, and extra fourth-order target
+restrictions are the nearest remaining compact gates; black holes and
+scattering require their own boundary phase space.  The handoff criteria are
+recorded in
 [`universe-building-roadmap.md`](universe-building-roadmap.md).
 
 Escalate immediately if the Einstein selection is nonlocal or future-dependent,
