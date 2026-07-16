@@ -1,0 +1,129 @@
+{
+  "cartan_disposition": {
+    "cartan_equation_reached": false,
+    "cartan_obstruction_witness": null,
+    "closure_leakage_witness": [
+      "80/27",
+      "0",
+      "0"
+    ],
+    "finite_nonzero_weight_cyclic_q2_closed_block_available": false,
+    "reason": "the proposed finite mode complex leaks under q2 before the Cartan complex is defined"
+  },
+  "claim_boundary": "This pinned import proves an exact REDUCED-MODE closure obstruction for every finite pairing-nondegenerate nonzero-D-weight block built from the rational Berger q2. It is not a Cartan-cohomology obstruction, does not address the infinite all-weight completion, and supplies no support-local, Lorentzian, or quantum result.",
+  "claim_flags": {
+    "BERGER_SUPPORT_LOCAL_Q2_EXISTS": false,
+    "FINITE_NONZERO_WEIGHT_CLOSURE_OBSTRUCTED": true,
+    "FINITE_NONZERO_WEIGHT_ROUTE_DECIDED": true,
+    "INFINITE_ALL_WEIGHT_COMPLETION_ESTABLISHED_BY_THIS_IMPORT": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "ND2_PHYSICAL_EXECUTION_AUTHORIZED": false,
+    "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION": false,
+    "QME_RESTORED": false
+  },
+  "classical_source": {
+    "artifacts": {
+      "certificate": {
+        "commit": "74125e016a1967c5745c4e6e04cd8fb5a7fa4007",
+        "path": "d_quotient_classical/certificates/BERGER_NONZERO_D_WEIGHT_FINITE_BLOCK_NO_GO.json",
+        "sha256": "40b036eebb91e86a178d1f887d544d400f83f654275a4498dfaa488abd26a7fc"
+      },
+      "independent_verifier": {
+        "commit": "74125e016a1967c5745c4e6e04cd8fb5a7fa4007",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_nonzero_weight_finite_block_no_go.py",
+        "sha256": "805efc00ae09c5e42ae1ea2e8bb116a3236668ff5da355de4eddf7af28bd2e1a"
+      },
+      "producer": {
+        "commit": "74125e016a1967c5745c4e6e04cd8fb5a7fa4007",
+        "path": "d_quotient_classical/backreacted_clock/berger_nonzero_weight_finite_block_no_go.py",
+        "sha256": "05183e8c33eae89bfadc9555f17c98c36f748073929aa16360dd88d0aef01953"
+      },
+      "q2_dependency": {
+        "commit": "74125e016a1967c5745c4e6e04cd8fb5a7fa4007",
+        "path": "d_quotient_classical/certificates/BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK.json",
+        "sha256": "5beef963f45d73b4100e175acd057c41a5a7c0bd7ae9c4d356a4eaceeef42cbe"
+      },
+      "report": {
+        "commit": "74125e016a1967c5745c4e6e04cd8fb5a7fa4007",
+        "path": "d_quotient_classical/reports/berger-nonzero-D-weight-finite-block-no-go.md",
+        "sha256": "882997b74339913e1f556e66ce952f8344059c6f8e677ae1ce76930e65cb36c1"
+      },
+      "schema": {
+        "commit": "74125e016a1967c5745c4e6e04cd8fb5a7fa4007",
+        "path": "d_quotient_classical/schema/berger-nonzero-D-weight-finite-block-no-go-v1.schema.json",
+        "sha256": "bbde24b21ca562dd643905f1951fe2a7f4281f89843fd66c19cfe7809819f964"
+      },
+      "tests": {
+        "commit": "74125e016a1967c5745c4e6e04cd8fb5a7fa4007",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_nonzero_weight_finite_block_no_go.py",
+        "sha256": "06bb84cf34c2c1c5000790edc72bfa09a938237425bece1471e811c6ad4f2d0f"
+      }
+    },
+    "commit": "74125e016a1967c5745c4e6e04cd8fb5a7fa4007"
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-nonzero-weight-closure-no-go-import.md": "96febaed3fe8796e6eb88f7ff32533c7db7e697b56d71cfbcd509a36f48718fe",
+      "berger_nonzero_weight_no_go_import.py": "cdaf9d24d6d04a13b3ffe30aa6e0f4fb2b2836e7d5151346754f3264d79096d2",
+      "berger_nonzero_weight_no_go_import_certificate.py": "3d1ae199b1c596595331c5894083f22de9d2309b06ca2c5c081fa60e909c773f",
+      "schema/berger-nonzero-weight-closure-no-go-import-v1.schema.json": "5088da44f29663cab11602d325cafa953d6d9908da15a70344228c6e098f5a51",
+      "tests/test_berger_nonzero_weight_no_go_import.py": "1f79ce9bc5034648469ccde1413a2d825edee8ca5515164b08411d557436e4c2"
+    },
+    "source_manifest_sha256": "2ab9e9cec2b5f984a86a819ae5f7743456c383f7e41217bd6ed73750c6fa2e3c"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_import_checks": {
+    "claim_boundary_fail_closed": true,
+    "complex_ideal_memberships": true,
+    "complex_triangular_anisotropy": true,
+    "dual_leakage_witness_normalized": true,
+    "first_leakage_recomputed": true,
+    "forced_weight_recurrence_unbounded": true,
+    "q2_dependency_hash_bound": true,
+    "real_positive_form_identity": true,
+    "real_sylvester_positivity": true,
+    "square_map_exact": true,
+    "strict_schema_identity": true
+  },
+  "imported_theorem": {
+    "anisotropic_over": [
+      "R",
+      "C"
+    ],
+    "conclusion": "no such finite nonzero-weight cyclic q2-closed block exists",
+    "first_failed_weights": [
+      -1,
+      0,
+      1
+    ],
+    "forced_weight_recurrence": "w_(n+1)=-2 w_n",
+    "leakage_vector": [
+      "27/80",
+      "-27/20",
+      "9/80"
+    ],
+    "missing_output_weight": 2,
+    "normalized_dual_leakage_witness": [
+      "80/27",
+      "0",
+      "0"
+    ],
+    "square_map_input": [
+      "u",
+      "N",
+      "rho"
+    ],
+    "square_map_output": [
+      "E_u",
+      "E_N",
+      "E_rho"
+    ]
+  },
+  "next_gate": "INFINITE_ALL_WEIGHT_COMPLETION_OR_FULL_SUPPORT_LOCAL_Q2_D_ACTION",
+  "result_id": "ND2_BERGER_NONZERO_WEIGHT_CLOSURE_NO_GO_IMPORT",
+  "result_state": "FINITE_NONZERO_WEIGHT_CYCLIC_Q2_BLOCK_EXACTLY_OBSTRUCTED",
+  "schema": "quantum-weyl-berger-nonzero-weight-closure-no-go-import-v1"
+}

@@ -174,7 +174,32 @@ python3 quantum-weyl/transfer/berger_rational_fixture_q2_d_import_certificate.py
 python3 -m unittest quantum-weyl/transfer/tests/test_berger_rational_fixture_q2_d_import.py
 python3 quantum-weyl/transfer/berger_reduced_mode_cartan_certificate.py --check
 python3 -m unittest quantum-weyl/transfer/tests/test_berger_reduced_mode_cartan.py
+python3 quantum-weyl/transfer/berger_nonzero_weight_no_go_import_certificate.py --check
+python3 -m unittest quantum-weyl/transfer/tests/test_berger_nonzero_weight_no_go_import.py
+python3 quantum-weyl/transfer/berger_all_weight_cartan_import_certificate.py --check
+python3 -m unittest quantum-weyl/transfer/tests/test_berger_all_weight_cartan_import.py
 ```
+
+The finite nonzero-weight continuation is obstructed before the Cartan
+equation.  The action-derived Berger square map $Q(x)=q_2(x,x)$ is
+anisotropic over both the reals and complexes.  A nonzero mode at weight
+$w$, cyclic nondegeneracy, and q2 closure therefore force the unbounded
+sequence $w,-2w,4w,-8w,\ldots$.  The first $(-1,0,+1)$ candidate leaks
+into the missing $E_{u,+2}$ row with normalized dual leakage witness
+$(80/27,0,0)$.  The pinned consumer independently verifies the real
+positive-form and complex ideal-membership certificates.  This is a closure
+no-go, not a Cartan-cohomology obstruction; the infinite all-weight and full
+support-local routes were the two continuations.
+
+The all-weight continuation is now complete on the same spatially homogeneous
+Berger block.  Retaining every integer weight closes q2 by convolution.  The
+Cartan source is generically nonzero, and an explicit nonzero first-order,
+time-local, graded-cyclic primitive solves the arity-two identity for symbolic
+input weights $k,l$.  The operator has $D$-weight zero and acts on the
+$u/N/\rho$ field/equation pairs at every weight.  The weightwise complex is
+acyclic, so the primitive introduces no negative physical direction.  This
+is still `REDUCED-MODE`: the full four-dimensional support-local q2 and
+complete 54-row Cartan contraction remain open.
 
 The arity-two solve also has a block-sparse exact rail.  Declared additive
 labels such as `D` weight, momentum, or jet filtration must be preserved by

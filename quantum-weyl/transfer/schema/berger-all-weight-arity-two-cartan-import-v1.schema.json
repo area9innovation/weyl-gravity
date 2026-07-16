@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-all-weight-arity-two-cartan-import-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_source", "exact_import_checks", "cartan_verdict", "field_and_weight_content", "physical_interpretation", "claim_flags", "reduced_mode_limitation", "next_gate", "consumer_provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-all-weight-arity-two-cartan-import-v1"},
+    "result_id": {"const": "BERGER_ALL_WEIGHT_ARITY_TWO_CARTAN_IMPORT"},
+    "result_state": {"const": "NONZERO_WEIGHT_CARTAN_SOURCE_HAS_EXPLICIT_NONZERO_EXACT_PRIMITIVE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "classical_source": {"type": "object"},
+    "exact_import_checks": {"type": "object", "minProperties": 11, "additionalProperties": {"const": true}},
+    "cartan_verdict": {
+      "type": "object",
+      "required": ["source_definition", "source_nonzero_for_generic_nonzero_weights", "equation", "binary_verdict", "primitive_nonzero", "primitive_operator_D_weight", "input_weight_lattice", "output_weight", "mixed_formula", "equation_formula", "mixed_nonzero_tensor_count", "equation_nonzero_tensor_count", "differential_order_in_time", "support_local_in_time", "graded_cyclic", "obstruction_witness"],
+      "properties": {
+        "source_definition": {"const": "A_D^(2)=[q2,iota_D^(1)]"},
+        "source_nonzero_for_generic_nonzero_weights": {"const": true},
+        "equation": {"const": "[q1,iota_D^(2)]=-A_D^(2)"},
+        "binary_verdict": {"const": "ADMISSIBLE_EXACT_PRIMITIVE"},
+        "primitive_nonzero": {"const": true},
+        "primitive_operator_D_weight": {"const": 0},
+        "input_weight_lattice": {"const": "Z x Z"},
+        "output_weight": {"const": "k+l"},
+        "mixed_formula": {"type": "string", "minLength": 1},
+        "equation_formula": {"type": "string", "minLength": 1},
+        "mixed_nonzero_tensor_count": {"const": 27},
+        "equation_nonzero_tensor_count": {"const": 27},
+        "differential_order_in_time": {"const": 1},
+        "support_local_in_time": {"const": true},
+        "graded_cyclic": {"const": true},
+        "obstruction_witness": {"type": "null"}
+      },
+      "additionalProperties": false
+    },
+    "field_and_weight_content": {"type": "object"},
+    "physical_interpretation": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["NONZERO_WEIGHT_D_CARTAN_TESTED", "NONZERO_WEIGHT_D_CARTAN_EXACT_PRIMITIVE_EXISTS", "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION", "FULL_4D_SUPPORT_LOCAL_Q2", "COMPLETE_54_ROW_ARITY_TWO_D_CARTAN", "ND2_PHYSICAL_EXECUTION_AUTHORIZED", "QME_RESTORED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "NONZERO_WEIGHT_D_CARTAN_TESTED": {"const": true},
+        "NONZERO_WEIGHT_D_CARTAN_EXACT_PRIMITIVE_EXISTS": {"const": true},
+        "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION": {"const": false},
+        "FULL_4D_SUPPORT_LOCAL_Q2": {"const": false},
+        "COMPLETE_54_ROW_ARITY_TWO_D_CARTAN": {"const": false},
+        "ND2_PHYSICAL_EXECUTION_AUTHORIZED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "reduced_mode_limitation": {"type": "string", "minLength": 1},
+    "next_gate": {"const": "FULL_4D_SUPPORT_LOCAL_Q2_AND_COMPLETE_54_ROW_CARTAN"},
+    "consumer_provenance": {"type": "object"}
+  }
+}

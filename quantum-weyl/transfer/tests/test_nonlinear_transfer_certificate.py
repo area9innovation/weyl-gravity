@@ -53,9 +53,10 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             for item in certificate["question_ledger"]
             if item["question_id"] == "D_quotient_interaction_stability"
         )
-        self.assertIn("FIRST_ACTION_DERIVED_REDUCED_MODE_CARTAN_EXACT_PRIMITIVE", d_question["status"])
-        self.assertIn("D_WEIGHT_ZERO_ONLY", d_question["status"])
-        self.assertIn("FULL_SUPPORT_LOCAL_Q2_D_INPUT_BLOCKED", d_question["status"])
+        self.assertIn("ALL_INTEGER_WEIGHT_HOMOGENEOUS_NONZERO_SOURCE_CARTAN", d_question["status"])
+        self.assertIn("EXACT_NONZERO_PRIMITIVE", d_question["status"])
+        self.assertIn("FINITE_TRUNCATIONS_OBSTRUCTED", d_question["status"])
+        self.assertIn("FULL_4D_SUPPORT_LOCAL_54_ROW_INPUT_BLOCKED", d_question["status"])
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
         certificate = CERTIFICATE.build_certificate()
@@ -87,6 +88,14 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             "berger_first_arity_two_cartan_verdict_sha256",
             certificate["provenance"],
         )
+        self.assertIn(
+            "berger_nonzero_weight_closure_no_go_import_sha256",
+            certificate["provenance"],
+        )
+        self.assertIn(
+            "berger_all_weight_arity_two_cartan_import_sha256",
+            certificate["provenance"],
+        )
         self.assertIn("berger_total_D_disposition_sha256", certificate["provenance"])
         self.assertIn("nd3_arity_three_cartan_engine_sha256", certificate["provenance"])
         self.assertTrue(
@@ -97,7 +106,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertTrue(
             any(
-                "PBW-module-valued Cartan solver" in claim
+                "complete 54-row arity-two Cartan" in claim
                 for claim in certificate["scope"]["not_established"]
             )
         )

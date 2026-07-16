@@ -35,6 +35,14 @@ BERGER_GAUGE_FIXED_PATH = (
 BERGER_REDUCED_CARTAN_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json"
 )
+BERGER_NONZERO_WEIGHT_NO_GO_PATH = (
+    TRANSFER_ROOT
+    / "certificates"
+    / "BERGER_NONZERO_WEIGHT_CLOSURE_NO_GO_IMPORT.json"
+)
+BERGER_ALL_WEIGHT_CARTAN_PATH = (
+    TRANSFER_ROOT / "certificates" / "BERGER_ALL_WEIGHT_ARITY_TWO_CARTAN_IMPORT.json"
+)
 
 
 REQUIRED_EXPORTS = (
@@ -89,6 +97,10 @@ def _source_manifest() -> dict[str, str]:
         "berger_gauge_fixed_nonminimal_import_certificate.py",
         "berger_reduced_mode_cartan.py",
         "berger_reduced_mode_cartan_certificate.py",
+        "berger_nonzero_weight_no_go_import.py",
+        "berger_nonzero_weight_no_go_import_certificate.py",
+        "berger_all_weight_cartan_import.py",
+        "berger_all_weight_cartan_import_certificate.py",
         "total_d_disposition.py",
         "total_d_disposition_certificate.py",
         "arity_three_cartan.py",
@@ -111,6 +123,8 @@ def _source_manifest() -> dict[str, str]:
         "schema/berger-minimal-34-contraction-import-v1.schema.json",
         "schema/berger-gauge-fixed-nonminimal-import-v1.schema.json",
         "schema/berger-first-arity-two-cartan-verdict-v1.schema.json",
+        "schema/berger-nonzero-weight-closure-no-go-import-v1.schema.json",
+        "schema/berger-all-weight-arity-two-cartan-import-v1.schema.json",
         "schema/total-d-disposition-v1.schema.json",
         "schema/arity-three-cartan-engine-v1.schema.json",
         "schema/nonlinear_classical_export.schema.json",
@@ -132,6 +146,8 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_berger_minimal_contraction_import.py",
         "tests/test_berger_gauge_fixed_nonminimal_import.py",
         "tests/test_berger_reduced_mode_cartan.py",
+        "tests/test_berger_nonzero_weight_no_go_import.py",
+        "tests/test_berger_all_weight_cartan_import.py",
         "tests/test_total_d_disposition.py",
         "tests/test_arity_three_cartan.py",
         "tests/test_arity_three_cartan_certificate.py",
@@ -166,6 +182,12 @@ def build_certificate() -> dict[str, Any]:
     )
     berger_reduced_cartan = json.loads(
         BERGER_REDUCED_CARTAN_PATH.read_text(encoding="utf-8")
+    )
+    berger_nonzero_weight_no_go = json.loads(
+        BERGER_NONZERO_WEIGHT_NO_GO_PATH.read_text(encoding="utf-8")
+    )
+    berger_all_weight_cartan = json.loads(
+        BERGER_ALL_WEIGHT_CARTAN_PATH.read_text(encoding="utf-8")
     )
     if (
         berger_import.get("result_state")
@@ -294,6 +316,44 @@ def build_certificate() -> dict[str, Any]:
         is not False
     ):
         raise ValueError("Berger reduced-mode Cartan verdict was promoted or removed")
+    if (
+        berger_nonzero_weight_no_go.get("schema")
+        != "quantum-weyl-berger-nonzero-weight-closure-no-go-import-v1"
+        or berger_nonzero_weight_no_go.get("result_state")
+        != "FINITE_NONZERO_WEIGHT_CYCLIC_Q2_BLOCK_EXACTLY_OBSTRUCTED"
+        or berger_nonzero_weight_no_go.get("claim_flags", {}).get(
+            "FINITE_NONZERO_WEIGHT_CLOSURE_OBSTRUCTED"
+        )
+        is not True
+        or berger_nonzero_weight_no_go.get("cartan_disposition", {}).get(
+            "cartan_equation_reached"
+        )
+        is not False
+        or berger_nonzero_weight_no_go.get("claim_flags", {}).get(
+            "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION"
+        )
+        is not False
+    ):
+        raise ValueError("Berger finite-weight closure no-go was promoted or removed")
+    if (
+        berger_all_weight_cartan.get("schema")
+        != "quantum-weyl-berger-all-weight-arity-two-cartan-import-v1"
+        or berger_all_weight_cartan.get("result_state")
+        != "NONZERO_WEIGHT_CARTAN_SOURCE_HAS_EXPLICIT_NONZERO_EXACT_PRIMITIVE"
+        or berger_all_weight_cartan.get("cartan_verdict", {}).get("binary_verdict")
+        != "ADMISSIBLE_EXACT_PRIMITIVE"
+        or berger_all_weight_cartan.get("cartan_verdict", {}).get(
+            "source_nonzero_for_generic_nonzero_weights"
+        )
+        is not True
+        or berger_all_weight_cartan.get("cartan_verdict", {}).get("primitive_nonzero")
+        is not True
+        or berger_all_weight_cartan.get("claim_flags", {}).get(
+            "FULL_4D_SUPPORT_LOCAL_Q2"
+        )
+        is not False
+    ):
+        raise ValueError("Berger all-weight Cartan verdict was promoted or removed")
     exports = {item["export_id"]: item for item in snapshot["required_exports"]}
     blockers = []
     for export_id in REQUIRED_EXPORTS:
@@ -347,6 +407,8 @@ def build_certificate() -> dict[str, Any]:
                 "independently verified exact support-local cyclic contraction of the complete 34-row minimal Berger unary complex onto 26 retained rows",
                 "independently imported complete gauge-fixed 54-row Berger unary BV complex, cyclic pairing, and contraction onto 26 retained rows",
                 "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
+                "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
+                "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
                 "total-D disposition router that permits Cartan contraction only for a certified D_GAUGE result",
                 "strict total-D presymplectic audit schema with canonical D_CHARGED vocabulary, sector ledger, and exact verdict signatures",
                 "phase-space, boundary-condition, classical-commit, dependency-scope, and source-hash binding before physical execution",
@@ -358,8 +420,8 @@ def build_certificate() -> dict[str, Any]:
                 "the complete support-local conformal-gravity q2 lift before endpoint projection",
                 "closure or centrality of either Weyl-square direction",
                 "absence of higher-bracket sector re-entry",
-                "the support-local Berger q2 and nonlinear D-equivariant contraction outside the centered six-row block",
-                "a PBW-module-valued Cartan solver or a nonzero-D-weight Berger specialization",
+                "the support-local Berger q2 and nonlinear D-equivariant contraction outside the all-weight homogeneous six-row-per-weight block",
+                "the full four-dimensional support-local Berger q2 and complete 54-row arity-two Cartan contraction",
                 "an interacting particle or deformation-theory theorem",
                 "a quantum correction or residual quantum transfer",
                 "any LORENTZIAN-CAUSAL claim",
@@ -375,7 +437,7 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "FIRST_ACTION_DERIVED_REDUCED_MODE_CARTAN_EXACT_PRIMITIVE_COMPLETE_D_WEIGHT_ZERO_ONLY_FULL_SUPPORT_LOCAL_Q2_D_INPUT_BLOCKED",
+                "status": "ALL_INTEGER_WEIGHT_HOMOGENEOUS_NONZERO_SOURCE_CARTAN_EXACT_NONZERO_PRIMITIVE_COMPLETE_FINITE_TRUNCATIONS_OBSTRUCTED_FULL_4D_SUPPORT_LOCAL_54_ROW_INPUT_BLOCKED",
                 "next_certificate": "ND1_COMPLETE_SUPPORT_LOCAL_D_DERIVATION_AND_IOTA_D2",
             },
             {
@@ -406,7 +468,7 @@ def build_certificate() -> dict[str, Any]:
         ],
         "programme_stages": [
             {"stage": "HT0", "deliverable": "exact transfer engine and input contract", "status": "READY"},
-            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_AND_FIRST_ACTION_DERIVED_REDUCED_MODE_Q2_D_CARTAN_PRIMITIVE_FULL_SUPPORT_LOCAL_Q2_PENDING"},
+            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_AND_ALL_WEIGHT_HOMOGENEOUS_NONZERO_CARTAN_PRIMITIVE_FULL_4D_SUPPORT_LOCAL_Q2_AND_54_ROW_CARTAN_PENDING"},
             {"stage": "HT2", "deliverable": "compute ell3 and dynamical/topological mixing table", "status": "ARITY_THREE_CARTAN_RECURRENCE_ENGINE_READY_PHYSICAL_Q3_INPUT_BLOCKED"},
             {"stage": "HT3", "deliverable": "higher-arity and particle-filtration obstruction ledger", "status": "NOT_COMPUTED"},
             {"stage": "HT4", "deliverable": "cyclic minimal action and formal moduli interpretation", "status": "NOT_COMPUTED"},
@@ -476,6 +538,14 @@ def build_certificate() -> dict[str, Any]:
             "berger_first_arity_two_cartan_verdict_sha256": _sha256(
                 BERGER_REDUCED_CARTAN_PATH
             ),
+            "berger_nonzero_weight_closure_no_go_import_certificate": "quantum-weyl/transfer/certificates/BERGER_NONZERO_WEIGHT_CLOSURE_NO_GO_IMPORT.json",
+            "berger_nonzero_weight_closure_no_go_import_sha256": _sha256(
+                BERGER_NONZERO_WEIGHT_NO_GO_PATH
+            ),
+            "berger_all_weight_arity_two_cartan_import_certificate": "quantum-weyl/transfer/certificates/BERGER_ALL_WEIGHT_ARITY_TWO_CARTAN_IMPORT.json",
+            "berger_all_weight_arity_two_cartan_import_sha256": _sha256(
+                BERGER_ALL_WEIGHT_CARTAN_PATH
+            ),
             "berger_total_D_disposition_certificate": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json",
             "berger_total_D_disposition_sha256": _sha256(
                 TOTAL_D_DISPOSITION_PATH
@@ -500,6 +570,8 @@ def build_certificate() -> dict[str, Any]:
             "The registered Berger backend validates arity-one PBW-operator data only; the Fraction-valued ND2 engine cannot consume it without either a declared PBW-module extension or an exact REDUCED-MODE specialization.",
             "The complete gauge-fixed 54-row unary complex, cyclic pairing, and contraction are independently imported; they do not supply the omitted support-local q2 or nonzero-weight D-equivariance blocks.",
             "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
+            "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
+            "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
             "D_CHARGED is the canonical classical verdict; EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT is a route label, not a fifth scientific disposition.",
             "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics only; physical q3 and any support-local or nonzero-weight iota_D^(2) remain absent.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",

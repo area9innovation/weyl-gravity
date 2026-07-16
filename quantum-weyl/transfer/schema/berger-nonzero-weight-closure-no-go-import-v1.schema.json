@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-nonzero-weight-closure-no-go-import-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_source", "imported_theorem", "exact_import_checks", "cartan_disposition", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-nonzero-weight-closure-no-go-import-v1"},
+    "result_id": {"const": "ND2_BERGER_NONZERO_WEIGHT_CLOSURE_NO_GO_IMPORT"},
+    "result_state": {"const": "FINITE_NONZERO_WEIGHT_CYCLIC_Q2_BLOCK_EXACTLY_OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "classical_source": {"type": "object"},
+    "imported_theorem": {
+      "type": "object",
+      "required": ["square_map_input", "square_map_output", "anisotropic_over", "first_failed_weights", "missing_output_weight", "leakage_vector", "normalized_dual_leakage_witness", "forced_weight_recurrence", "conclusion"],
+      "properties": {
+        "square_map_input": {"const": ["u", "N", "rho"]},
+        "square_map_output": {"const": ["E_u", "E_N", "E_rho"]},
+        "anisotropic_over": {"const": ["R", "C"]},
+        "first_failed_weights": {"const": [-1, 0, 1]},
+        "missing_output_weight": {"const": 2},
+        "leakage_vector": {"const": ["27/80", "-27/20", "9/80"]},
+        "normalized_dual_leakage_witness": {"const": ["80/27", "0", "0"]},
+        "forced_weight_recurrence": {"const": "w_(n+1)=-2 w_n"},
+        "conclusion": {"const": "no such finite nonzero-weight cyclic q2-closed block exists"}
+      },
+      "additionalProperties": false
+    },
+    "exact_import_checks": {"type": "object", "minProperties": 11, "additionalProperties": {"const": true}},
+    "cartan_disposition": {
+      "type": "object",
+      "required": ["finite_nonzero_weight_cyclic_q2_closed_block_available", "cartan_equation_reached", "cartan_obstruction_witness", "closure_leakage_witness", "reason"],
+      "properties": {
+        "finite_nonzero_weight_cyclic_q2_closed_block_available": {"const": false},
+        "cartan_equation_reached": {"const": false},
+        "cartan_obstruction_witness": {"type": "null"},
+        "closure_leakage_witness": {"const": ["80/27", "0", "0"]},
+        "reason": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["FINITE_NONZERO_WEIGHT_ROUTE_DECIDED", "FINITE_NONZERO_WEIGHT_CLOSURE_OBSTRUCTED", "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION", "INFINITE_ALL_WEIGHT_COMPLETION_ESTABLISHED_BY_THIS_IMPORT", "BERGER_SUPPORT_LOCAL_Q2_EXISTS", "ND2_PHYSICAL_EXECUTION_AUTHORIZED", "QME_RESTORED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "FINITE_NONZERO_WEIGHT_ROUTE_DECIDED": {"const": true},
+        "FINITE_NONZERO_WEIGHT_CLOSURE_OBSTRUCTED": {"const": true},
+        "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION": {"const": false},
+        "INFINITE_ALL_WEIGHT_COMPLETION_ESTABLISHED_BY_THIS_IMPORT": {"const": false},
+        "BERGER_SUPPORT_LOCAL_Q2_EXISTS": {"const": false},
+        "ND2_PHYSICAL_EXECUTION_AUTHORIZED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "INFINITE_ALL_WEIGHT_COMPLETION_OR_FULL_SUPPORT_LOCAL_Q2_D_ACTION"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "consumer_provenance": {"type": "object"}
+  }
+}

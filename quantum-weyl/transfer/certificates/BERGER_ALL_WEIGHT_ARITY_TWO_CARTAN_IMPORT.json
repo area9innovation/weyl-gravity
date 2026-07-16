@@ -1,0 +1,132 @@
+{
+  "cartan_verdict": {
+    "binary_verdict": "ADMISSIBLE_EXACT_PRIMITIVE",
+    "differential_order_in_time": 1,
+    "equation": "[q1,iota_D^(2)]=-A_D^(2)",
+    "equation_formula": "iota_D^(2)(E_k,F_l)=(k-l)/3 C(H^(-1)E,H^(-1)F)_(k+l)",
+    "equation_nonzero_tensor_count": 27,
+    "graded_cyclic": true,
+    "input_weight_lattice": "Z x Z",
+    "mixed_formula": "iota_D^(2)(E_k,x_l)=-(2k+l)/3 H^(-1) C(H^(-1)E,x)_(k+l)",
+    "mixed_nonzero_tensor_count": 27,
+    "obstruction_witness": null,
+    "output_weight": "k+l",
+    "primitive_nonzero": true,
+    "primitive_operator_D_weight": 0,
+    "source_definition": "A_D^(2)=[q2,iota_D^(1)]",
+    "source_nonzero_for_generic_nonzero_weights": true,
+    "support_local_in_time": true
+  },
+  "claim_flags": {
+    "COMPLETE_54_ROW_ARITY_TWO_D_CARTAN": false,
+    "FULL_4D_SUPPORT_LOCAL_Q2": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "ND2_PHYSICAL_EXECUTION_AUTHORIZED": false,
+    "NONZERO_WEIGHT_D_CARTAN_EXACT_PRIMITIVE_EXISTS": true,
+    "NONZERO_WEIGHT_D_CARTAN_OBSTRUCTION": false,
+    "NONZERO_WEIGHT_D_CARTAN_TESTED": true,
+    "QME_RESTORED": false
+  },
+  "classical_source": {
+    "artifacts": {
+      "certificate": {
+        "commit": "60c84aa55c50651fdfae1f6274249e2179a56d2d",
+        "path": "d_quotient_classical/certificates/BERGER_ALL_WEIGHT_ARITY_TWO_D_CARTAN.json",
+        "sha256": "7b516a547015eea41434d25eb296c92136cfdb623e977865afa30503f56b437b"
+      },
+      "finite_no_go_dependency": {
+        "commit": "60c84aa55c50651fdfae1f6274249e2179a56d2d",
+        "path": "d_quotient_classical/certificates/BERGER_NONZERO_D_WEIGHT_FINITE_BLOCK_NO_GO.json",
+        "sha256": "40b036eebb91e86a178d1f887d544d400f83f654275a4498dfaa488abd26a7fc"
+      },
+      "independent_verifier": {
+        "commit": "60c84aa55c50651fdfae1f6274249e2179a56d2d",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_all_weight_arity_two_d_cartan.py",
+        "sha256": "e314911d611275a0aaf6d187952ee51edc5d9266cc5f5ab62c236f1417979b29"
+      },
+      "producer": {
+        "commit": "60c84aa55c50651fdfae1f6274249e2179a56d2d",
+        "path": "d_quotient_classical/backreacted_clock/berger_all_weight_arity_two_d_cartan.py",
+        "sha256": "e182bb1207e0db462da1ddc5dfd68d780b866c76ce67bb3573c063878100035e"
+      },
+      "q2_dependency": {
+        "commit": "60c84aa55c50651fdfae1f6274249e2179a56d2d",
+        "path": "d_quotient_classical/certificates/BERGER_RATIONAL_FIXTURE_Q2_D_BLOCK.json",
+        "sha256": "5beef963f45d73b4100e175acd057c41a5a7c0bd7ae9c4d356a4eaceeef42cbe"
+      },
+      "report": {
+        "commit": "60c84aa55c50651fdfae1f6274249e2179a56d2d",
+        "path": "d_quotient_classical/reports/berger-all-weight-arity-two-D-Cartan.md",
+        "sha256": "8be5d20e1e6c513a071096e36ef6915e1b6a55e3151219db439733afcc1dfcaa"
+      },
+      "schema": {
+        "commit": "60c84aa55c50651fdfae1f6274249e2179a56d2d",
+        "path": "d_quotient_classical/schema/berger-all-weight-arity-two-D-Cartan-v1.schema.json",
+        "sha256": "ad2ca3a1f456ee7c21781689a3caf3346d1124a50040cad84f7b7d0384bc4f6c"
+      },
+      "tests": {
+        "commit": "60c84aa55c50651fdfae1f6274249e2179a56d2d",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_all_weight_arity_two_d_cartan.py",
+        "sha256": "145ec00f38f8e2e02389bb54f78d07d6e982808cc1a71179c13002c4f6a6565e"
+      }
+    },
+    "commit": "60c84aa55c50651fdfae1f6274249e2179a56d2d"
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-all-weight-arity-two-cartan-import.md": "a33e38bd3525639851b9842209293fef04b6f6d22c9946834408fb73e823f493",
+      "berger_all_weight_cartan_import.py": "2c4bd62fb2bc9fb639fcbeacd9828847db201a04e378bc2efbcc9ac46fec4fe9",
+      "berger_all_weight_cartan_import_certificate.py": "8fdd96d521072de8dc5fb1f5dbec757423dde2e732b8a5902854fe6e072b08f2",
+      "schema/berger-all-weight-arity-two-cartan-import-v1.schema.json": "08d8a805e895bf4aee13a292b6c857cb4cac47cd415a38d764ac7ce2bc412e9c",
+      "tests/test_berger_all_weight_cartan_import.py": "8b0e8f4161ba694ce931c9c5c4472acac11b9bb6ae4e6de16a37394601642876"
+    },
+    "source_manifest_sha256": "65991ca68bc43aee95e108d958d80b8db97dc15592ff0e7644f440da6236a5f7"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_import_checks": {
+    "all_input_type_Cartan_identities_symbolic": true,
+    "claim_boundary_fail_closed": true,
+    "dependency_hashes_bound": true,
+    "equation_primitive_coefficients_recomputed": true,
+    "first_order_time_locality_imported": true,
+    "graded_cyclicity_symbolic": true,
+    "hessian_inverse_exact": true,
+    "integer_weight_convolution_closed": true,
+    "mixed_primitive_coefficients_recomputed": true,
+    "sparse_counts_exact": true,
+    "strict_schema_identity": true
+  },
+  "field_and_weight_content": {
+    "all_integer_D_weights_retained": true,
+    "equations_at_each_weight": [
+      "E_u,k",
+      "E_N,k",
+      "E_rho,k"
+    ],
+    "fields_at_each_weight": [
+      "u_k",
+      "N_k",
+      "rho_k"
+    ],
+    "finite_support_per_input": true
+  },
+  "next_gate": "FULL_4D_SUPPORT_LOCAL_Q2_AND_COMPLETE_54_ROW_CARTAN",
+  "physical_interpretation": {
+    "degree_one_cohomology_dimension_per_weight": 0,
+    "degree_zero_cohomology_dimension_per_weight": 0,
+    "einstein_extra_weyl_coupling": {
+      "coupling_established": false,
+      "reason": "the retained u/N/rho rows have no radiative Einstein-versus-extra-Weyl branch decomposition",
+      "status": "NOT_APPLICABLE_AT_NON_EINSTEIN_HOMOGENEOUS_BERGER_BASE_POINT"
+    },
+    "introduces_negative_physical_direction": false,
+    "negative_direction_reason": "the Hessian is invertible at every weight and the algebraic direct-sum Koszul--Tate complex is weightwise acyclic"
+  },
+  "reduced_mode_limitation": "The theorem retains every temporal D weight but only the three spatially homogeneous Berger field/equation pairs. It is time-local and exact on the algebraic direct sum, not the full four-dimensional support-local q2 or the complete 54-row BV Cartan contraction. It contains no radiative branch labels, causal/Hadamard data, residual transfer, or quantum correction.",
+  "result_id": "BERGER_ALL_WEIGHT_ARITY_TWO_CARTAN_IMPORT",
+  "result_state": "NONZERO_WEIGHT_CARTAN_SOURCE_HAS_EXPLICIT_NONZERO_EXACT_PRIMITIVE",
+  "schema": "quantum-weyl-berger-all-weight-arity-two-cartan-import-v1"
+}
