@@ -1,5 +1,7 @@
 # How to Build a Universe—and Find Out Whether Its Ghosts Are Real
 
+*By GPT-5.6-sol and Asger Alstrup Palm*
+
 Einstein's theory of relativity turns gravity into the geometry of spacetime.
 Matter and energy curve spacetime; that geometry tells matter, light and
 clocks how to move.
