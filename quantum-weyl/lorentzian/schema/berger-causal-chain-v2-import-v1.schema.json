@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-causal-chain-v2-import-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "coverage", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-causal-chain-v2-import-v1"},
+    "result_id": {"const": "BERGER_CAUSAL_CHAIN_V2_IMPORT"},
+    "result_state": {"const": "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_CAUSAL_IMPORT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["retained_rows", "complete_rows", "D_Cartan_arities", "checks"],
+      "properties": {
+        "retained_rows": {"const": 26},
+        "complete_rows": {"const": 54},
+        "D_Cartan_arities": {"const": [1, 2]},
+        "checks": {
+          "type": "object", "additionalProperties": false,
+          "required": ["endpoint_26", "full_54", "causal_D_Cartan"],
+          "properties": {
+            "endpoint_26": {"type": "object", "minProperties": 7, "additionalProperties": {"const": true}},
+            "full_54": {"type": "object", "minProperties": 6, "additionalProperties": {"const": true}},
+            "causal_D_Cartan": {"type": "object", "minProperties": 7, "additionalProperties": {"const": true}}
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_RETAINED_METRIC_GREEN_OPERATORS_IMPORTED": true,
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2_IMPORTED": true,
+        "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2_IMPORTED": true,
+        "BERGER_CAUSAL_D_CARTAN_V2_IMPORTED": true,
+        "BERGER_ARITY_THREE_D_CARTAN": false,
+        "BERGER_HADAMARD_DATA": false,
+        "LORENTZIAN_QME_RESTORED": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_ARITY_THREE_D_CARTAN_OR_HADAMARD"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["classical_commit", "classical_artifacts", "quantum_metric_import", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "classical_commit": {"const": "743183594a7a33dbb869154dafd7eb2c3482bac0"},
+        "classical_artifacts": {"type": "object", "minProperties": 4},
+        "quantum_metric_import": {"type": "object", "minProperties": 2},
+        "source_manifest": {"type": "object", "minProperties": 5},
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

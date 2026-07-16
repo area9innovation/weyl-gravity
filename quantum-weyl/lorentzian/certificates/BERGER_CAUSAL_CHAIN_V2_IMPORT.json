@@ -1,0 +1,92 @@
+{
+  "claim_boundary": "Independently imports the repaired classical causal v2 chain: advanced and retarded homotopies on all 26 retained and all 54 gauge-fixed rows, plus the cyclic two-sided-causal D-Cartan contraction through arity two with the concrete 54-row Koszul audit. It does not construct arity-three D-Cartan, Hadamard data, renormalized Lorentzian products, restore a Lorentzian QME or make a quantum claim.",
+  "claim_flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2_IMPORTED": true,
+    "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2_IMPORTED": true,
+    "BERGER_ARITY_THREE_D_CARTAN": false,
+    "BERGER_CAUSAL_D_CARTAN_V2_IMPORTED": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_RETAINED_METRIC_GREEN_OPERATORS_IMPORTED": true,
+    "LORENTZIAN_QME_RESTORED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "coverage": {
+    "D_Cartan_arities": [
+      1,
+      2
+    ],
+    "checks": {
+      "causal_D_Cartan": {
+        "Hadamard_open": true,
+        "actual_54_row_C3_group_law": true,
+        "arity_three_open": true,
+        "arity_two_cyclic_primitive": true,
+        "arity_two_source_closed": true,
+        "two_sided_causal_hull_support": true,
+        "unary_Cartan": true
+      },
+      "endpoint_26": {
+        "D_equivariance": true,
+        "Hadamard_open": true,
+        "advanced_retarded_chain_homotopies": true,
+        "causal_support": true,
+        "cyclic_adjointness": true,
+        "row_completeness": true,
+        "zero_modes_retained": true
+      },
+      "full_54": {
+        "D_equivariance": true,
+        "advanced_retarded_chain_identity": true,
+        "all_54_rows": true,
+        "cyclic_adjointness": true,
+        "support_local_SDR_lift": true,
+        "zero_modes_retained": true
+      }
+    },
+    "complete_rows": 54,
+    "retained_rows": 26
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle_layer": "CLASSICAL_BV_CAUSAL_IMPORT",
+  "next_gate": "BERGER_ARITY_THREE_D_CARTAN_OR_HADAMARD",
+  "provenance": {
+    "classical_artifacts": {
+      "causal_D_Cartan": {
+        "path": "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_V2.json",
+        "sha256": "87c1b4d897d56bcfea51f79c71f6f0b387157fc8a76fb83eb909c8ef00d3f444"
+      },
+      "endpoint_26": {
+        "path": "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+        "sha256": "61c0ce89045434676d99e723f7618da749f7208e5f49716b0ea9fc86bbaf7abb"
+      },
+      "endpoint_proof": {
+        "path": "d_quotient_classical/generated/berger_26_row_causal_green_homotopy_v2/causal_proof.json",
+        "sha256": "3b762e6f364605301befdc34b1b6bb4d23c943a64b9d68baa974c168dfb4ae7d"
+      },
+      "full_54": {
+        "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+        "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b"
+      }
+    },
+    "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+    "quantum_metric_import": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT.json",
+      "sha256": "f943ba218772f003c0c0ed87d699a87418f94dc9f978fb08e1cc0e63519ddbaa"
+    },
+    "source_manifest": {
+      "../reports/berger-causal-chain-v2-import.md": "be135d6a24a8d575309fc3dc4718f647bbd54bc55d540bb76c14bd252fe86026",
+      "berger_causal_chain_v2_import.py": "6f91cb4f445f91ed39d0246d1fb86ba294ae6339edb2f2d39f6d76667a45a0a8",
+      "berger_causal_chain_v2_import_certificate.py": "d8a7521abf23495edeb2ef732695fb98f53177d78bd240851e8e3c6c5e402dad",
+      "schema/berger-causal-chain-v2-import-v1.schema.json": "7b7e496a5231380f31598c3ec5c057b4ad25cf790bec0bbfcaacc1c6a4d17f42",
+      "tests/test_berger_causal_chain_v2_import.py": "00befb00d2c4547c5128544833e66be577cefa0f04de7d18447ce39152e0245c"
+    },
+    "source_manifest_sha256": "852fe06d84a494dc63727a4f861ae03b2a6585bbdc913bd8c6a6c6c506b3ab8f"
+  },
+  "result_id": "BERGER_CAUSAL_CHAIN_V2_IMPORT",
+  "result_state": "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN",
+  "schema": "quantum-weyl-berger-causal-chain-v2-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}
