@@ -1,0 +1,162 @@
+{
+  "adjoint_cokernel_witness": {
+    "averaged_linear_tt_row": "<L_WM Phi2>_tt=-p after spatial total derivatives integrate to zero",
+    "averaging_group": "S1 x SO(3)",
+    "conclusion": "NO_SMOOTH_PERIODIC_SECOND_ORDER_CORRECTION_FOR_CERTIFIED_L2_BRANCH_AT_FIXED_CHARGES",
+    "fixed_charge_condition": "p=0; the averaged electric correction has zero linear stress pairing with the magnetic background",
+    "normalized_source_pairing_at_t_zero": "-12*sqrt(3) - 72/5",
+    "unnormalized_spatial_pairing_at_t_zero": "-48*pi*L*(6+5*sqrt(3))/5"
+  },
+  "chevreton_second_order_time_zero": {
+    "convention": "C_Ch^(2)=2*H^(2)",
+    "nonzero": true,
+    "normalized_sphere_average_tt": "-36*sqrt(3)/5 - 36/5",
+    "tensor_matrix": [
+      [
+        "-9*(18*sqrt(3)*sin(theta)**4 + 33*sin(theta)**4 - 48*sin(theta)**2 - 24*sqrt(3)*sin(theta)**2 + 8*sqrt(3) + 16)/2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "27*(18*sqrt(3)*cos(theta)**4 + 37*cos(theta)**4 - 26*cos(theta)**2 - 12*sqrt(3)*cos(theta)**2 + 2*sqrt(3) + 5)/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-9*(3*cos(theta)**2 - 1)*(5*sqrt(3)*cos(theta)**2 + 9*cos(theta)**2 - sqrt(3) - 1)",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-9*(3*sin(theta)**2 - 2)*(7*sqrt(3)*sin(theta)**2 + 15*sin(theta)**2 - 8 - 4*sqrt(3))*sin(theta)**2"
+      ]
+    ],
+    "tt_projection": "-9*(-57*sin(theta)**4 - 24*sqrt(3)*sin(theta)**4 + 28*sqrt(3)*sin(theta)**2 + 60*sin(theta)**2 + 60*sqrt(3)*cos(theta)**4 + 123*cos(theta)**4 - 90*cos(theta)**2 - 44*sqrt(3)*cos(theta)**2 - 1)/4"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC and REDUCED-MODE certificate proves a second-order fixed-charge obstruction for the plus branch of one smooth periodic odd-parity l=2 Einstein--Maxwell gravitational harmonic with its required Maxwell dressing. It is a compact gravitational-mode theorem before residual quotient, not a classification of both branches or every helicity-two harmonic, and makes no causal, asymptotically flat, observable, scattering, or quantum claim.",
+  "classification": {
+    "adjoint_cokernel_obstruction_certified": true,
+    "all_helicity_two_harmonics_obstructed": false,
+    "both_normal_branches_classified_at_second_order": false,
+    "fixed_charge_second_order_extension_exists": false,
+    "flux_forced_maxwell_dressing_included": true,
+    "general_nonlinear_closure_certified": false,
+    "periodic_l2_gravitational_tangent_certified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": {
+    "charges": "electric and magnetic Maxwell charges fixed through second order",
+    "mode_scope": "one smooth axisymmetric odd-parity l=2 gravitational harmonic with its flux-forced Maxwell dressing",
+    "quotient": "before the final residual SO(4,2) quotient",
+    "spacetime": "R_t x S1_L x S2 on the certified unit-radius magnetic product background"
+  },
+  "first_order_mode": {
+    "axial_one_form": "X_phi=-sin(theta)*partial_theta(Y_20)=3*sin(theta)^2*cos(theta)",
+    "certified_branch": "plus",
+    "certified_frequency": "omega^2=6+2*sqrt(3)",
+    "electric_charge_variation": "integral_S2 Y_20 dOmega=0",
+    "frequency_squared_matrix": [
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        6
+      ]
+    ],
+    "helicity_interpretation": "compact odd-parity l=2 representative of the local metric/helicity-two sector, Maxwell-dressed by the nonzero background flux; not an asymptotic scattering-helicity state",
+    "linearized_einstein_residual": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "linearized_maxwell_residual": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "magnetic_charge_variation": "f1_theta_phi=0",
+    "maxwell_potential": "a1=sqrt(3)*cos(omega*t)*Y_20*dx",
+    "metric": "h1=2*cos(omega*t)*X_phi*dx*dphi",
+    "normal_branches": {
+      "minus": {
+        "omega_squared": "6-2*sqrt(3)",
+        "q_over_H": "-sqrt(3)"
+      },
+      "plus": {
+        "omega_squared": "6+2*sqrt(3)",
+        "q_over_H": "sqrt(3)"
+      }
+    },
+    "not_pure_gauge": "For l=2, Regge--Wheeler gauge h_ij=0 fixes the axial angular diffeomorphism; the gauge-invariant base curl is proportional to H'(t)*X_phi and is not identically zero.",
+    "reduced_equations": [
+      "H''+6*H+2*q=0",
+      "q''+6*q+6*H=0"
+    ],
+    "scalar_harmonic": "Y_20=(3*cos(theta)^2-1)/2"
+  },
+  "interpretation": "The compact fixed-charge second-order obstruction now reaches a genuine l=2 gravitational harmonic, not only radion, duality, or photon directions. The linear graviton representative remains present; what fails is its second-order integrability inside the declared compact fixed-charge Weyl--Maxwell solution locus.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "write the focused paper theorem combining the exact linear inclusion, removable universal-cover null source, and compact fixed-charge radion, duality, photon, and l=2 gravitational obstructions",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_periodic_graviton_second_order.py",
+    "generator_sha256": "6b81bc5a93a61c2e1951d98d1f9b34f1ec39299fda8d560523dc7203026883b0",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_chevreton_tangent.json": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead",
+      "bridge/certificates/einstein_maxwell_periodic_photon_second_order.json": "3f3ac8f10c9fadc36180f98c48404e4e733fc420f97bb529c5b1316f550def93",
+      "bridge/certificates/einstein_maxwell_product_incidence.json": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+    },
+    "tensor_helper_path": "bridge/einstein_sector/einstein_maxwell_periodic_photon_second_order.py",
+    "tensor_helper_sha256": "801bd2ea66675d8b8db075c3499f28ef83909749efc4f2b3240da681f3fea8d9"
+  },
+  "quadratic_weyl_maxwell_source_time_zero": {
+    "equation": "S2_tt|t=0=[epsilon^2](3*B_tt-T_tt)|t=0",
+    "full_source_needed_for_no_go": false,
+    "normalized_sphere_average_tt": "-12*sqrt(3) - 72/5",
+    "time_slice_suffices": "a correction would have to satisfy the averaged constraint on every Cauchy slice; failure at t=0 excludes it",
+    "tt_projection": "9*(-101 + 45*sqrt(3))*sin(theta)**4/2 + 9*(109 - 52*sqrt(3))*sin(theta)**2/2 - 99 + 36*sqrt(3)"
+  },
+  "result_id": "EINSTEIN_MAXWELL_PERIODIC_GRAVITON_SECOND_ORDER",
+  "result_state": "PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTED",
+  "schema": "einstein-maxwell-periodic-graviton-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_periodic_graviton_second_order.schema.json",
+  "schema_sha256": "e30fbe066d23802fb5c051e688e30e176cf0357a79a64c5b22357e87aa0a7cd7",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_periodic_graviton_second_order --verify bridge/certificates/einstein_maxwell_periodic_graviton_second_order.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_periodic_graviton_second_order --verify-exhaustive bridge/certificates/einstein_maxwell_periodic_graviton_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_periodic_graviton_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_periodic_graviton_second_order"
+  ]
+}
