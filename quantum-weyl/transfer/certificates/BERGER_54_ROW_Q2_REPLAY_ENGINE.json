@@ -1,0 +1,308 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC certificate validates the independent exact PBW replay implementation on a nonzero implementation fixture and three mutation-sensitive identity branches. It does not import the in-progress classical q2, does not certify the scientific 54-row arity-two identities, and makes no transfer, Cartan, causal, anomaly, QME, or quantum claim.",
+  "claim_flags": {
+    "CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED": false,
+    "INTERACTING_CARTAN_VERDICT": false,
+    "QUANTUM_CLAIM": false,
+    "REPLAY_ENGINE_READY": true,
+    "SCIENTIFIC_ARITY_TWO_IDENTITIES_REPLAYED": false,
+    "TRANSFERRED_ELL2_COMPUTED": false
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-54-row-q2-replay-engine.md": "e0d552fb0f05343847f6b8af8137cb40df90fe435816e2405569ce00ebfb7dc5",
+      "README.md": "94bde378bc766829c6f9860841f95174ec7755cfdd1b7b245fb7ce5d550351e5",
+      "berger_54_row_q2_replay.py": "d1c84d97d4712a5725d27ced72e0647f00f2d44f5e6e90de86ffd7f26098e28e",
+      "berger_54_row_q2_replay_certificate.py": "b4b99a93099d6dcdb56b2fdbc55b33a775c42b469b3a3b31fccf8183b32c7814",
+      "schema/berger-54-row-q2-replay-engine-v1.schema.json": "9a0250c55e6c864e50425dba51070da9e66e0ac55f4f6d7a778a21a5703b1ac3",
+      "tests/test_berger_54_row_q2_replay.py": "5125c252ca17f71402712bf6d7939df99a87c1e27b9e6e947e8d289f86865e48"
+    },
+    "source_manifest_sha256": "f200866da81c083727c8aeca282760601e8d62397b255ddc6f2e5e9eecc3d58a"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "engine_capabilities": {
+    "exact_integration_by_parts": true,
+    "fixture_and_mutation_suite_pass": true,
+    "independent_BV_cyclicity_execution": true,
+    "independent_D_q2_derivation_execution": true,
+    "independent_q1_q2_identity_execution": true,
+    "localized_defect_records": true,
+    "noncommutative_PBW_reduction": true
+  },
+  "implementation_fixture": {
+    "all_identities_pass": true,
+    "coefficient_ring": "Q(alpha_B,u,v)[e0,e1,e2,e3]_PBW with u=c/a^2, v=1/c",
+    "identity_conventions": {
+      "D_derivation": "D*q2 - q2(D,-) - q2(-,D)",
+      "arity_two": "q1*q2 + q2(q1,-) + (-1)^degree(left)*q2(-,q1)",
+      "cyclicity": "T(a,b,c)=(-1)^(degree(a)*(degree(b)+degree(c)))*T(b,c,a), T=<q2(a,b),c>",
+      "integration_by_parts": "all derivatives on the third pairing slot are formally adjointed onto the first two slots"
+    },
+    "input": {
+      "maximum_total_jet_order": 0,
+      "q2_sha256": "f3c4a0cfc135ca54a3a3ac9becf59d5e94e522e0e264f6f6d9a3186d2c8db8c5",
+      "q2_term_count": 1
+    },
+    "operator_counts": {
+      "D_PBW_coefficients": 54,
+      "pairing_PBW_coefficients": 54,
+      "q1_PBW_coefficients": 1807,
+      "q2_PBW_coefficients": 1
+    },
+    "ordered_pbw_basis": "e0^n0 e1^n1 e2^n2 e3^n3",
+    "results": {
+      "BV_cyclicity_q2": {
+        "defect_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "localized_sample": [],
+        "nonzero_coefficient_count": 0,
+        "sample_truncated": false,
+        "status": "PASS"
+      },
+      "D_q2_derivation": {
+        "defect_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "localized_sample": [],
+        "nonzero_coefficient_count": 0,
+        "sample_truncated": false,
+        "status": "PASS"
+      },
+      "q1_q2_arity_two_nilpotency": {
+        "defect_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "localized_sample": [],
+        "nonzero_coefficient_count": 0,
+        "sample_truncated": false,
+        "status": "PASS"
+      }
+    }
+  },
+  "input_gate": {
+    "arrival_action": "parse the committed portable q2 with berger_54_row_q2_arrival.parse_portable_q2, then pass the parsed tensor to replay_parsed_q2",
+    "classical_q2_export_available": false,
+    "scientific_fixture_substitution_allowed": false,
+    "status": "INPUT_BLOCKED"
+  },
+  "lifecycle_layer": "CLASSICAL_BV_IMPORT",
+  "mutation_sensitivity": {
+    "D_axis_mutation": {
+      "D_derivation_detected": true,
+      "localized_result": {
+        "defect_sha256": "2c2afd037304f052bb5822090cd33e68db3983a3aa36046822fdeda34ef31390",
+        "localized_sample": [
+          {
+            "coefficient": "alpha_B*u/2",
+            "left": 5,
+            "left_exponents": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "output": 27,
+            "right": 5,
+            "right_exponents": [
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "-alpha_B*u/2",
+            "left": 5,
+            "left_exponents": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "output": 27,
+            "right": 5,
+            "right_exponents": [
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "alpha_B*u/2",
+            "left": 5,
+            "left_exponents": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "output": 27,
+            "right": 5,
+            "right_exponents": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "-alpha_B*u/2",
+            "left": 5,
+            "left_exponents": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "output": 27,
+            "right": 5,
+            "right_exponents": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "nonzero_coefficient_count": 4,
+        "sample_truncated": false,
+        "status": "FAIL"
+      },
+      "mutation": "D row 5 derivative e0 -> e1"
+    },
+    "output_row_mutation": {
+      "cyclicity_detected": true,
+      "localized_results": {
+        "BV_cyclicity_q2": {
+          "defect_sha256": "150016bb53890e10ef777d460e367ee14b3ed18c63c612b55f460e011f0b9832",
+          "localized_sample": [
+            {
+              "coefficient": "-alpha_B*u/2",
+              "first": 5,
+              "first_exponents": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "second": 5,
+              "second_exponents": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "third": 6,
+              "third_exponents": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": "alpha_B*u/2",
+              "first": 6,
+              "first_exponents": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "second": 5,
+              "second_exponents": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "third": 5,
+              "third_exponents": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "nonzero_coefficient_count": 2,
+          "sample_truncated": false,
+          "status": "FAIL"
+        },
+        "D_q2_derivation": {
+          "defect_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "localized_sample": [],
+          "nonzero_coefficient_count": 0,
+          "sample_truncated": false,
+          "status": "PASS"
+        },
+        "q1_q2_arity_two_nilpotency": {
+          "defect_sha256": "ec5ec947465236a68a7c508339c7776d8956e338351ba70d14c997b6b79f0d13",
+          "localized_sample": [
+            {
+              "coefficient": "alpha_B*u/2",
+              "left": 5,
+              "left_exponents": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "output": 49,
+              "right": 5,
+              "right_exponents": [
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": "alpha_B*u/2",
+              "left": 5,
+              "left_exponents": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "output": 49,
+              "right": 5,
+              "right_exponents": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "nonzero_coefficient_count": 2,
+          "sample_truncated": false,
+          "status": "FAIL"
+        }
+      },
+      "mutation": "q2 output row 27 -> 28",
+      "q1_q2_detected": true
+    }
+  },
+  "prerequisite_binding": {
+    "gauge_fixed_54_row": {
+      "certificate_sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION"
+    },
+    "local_D_54_row": {
+      "certificate_sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49",
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION"
+    },
+    "operator_hashes": {
+      "D54_sha256": "5e96986dd482c18d539ffc80c32f4a5285ae9d26c830d0c2beb26d5d8316b677",
+      "S_sha256": "cbc91d3d1c3a91b531740aa8c1d8f607cf9b5eecb9974bcc2293745da780a818",
+      "iota_sha256": "1fe5497885baff3d525796736786138735f3f6b53dc7eb7e2cc7b9659d1d3f99",
+      "pairing_sha256": "29ec141213a9a2ffcffb48072468c0bd58bc10c0a3069cc49065be3196d3dd0b",
+      "pi_sha256": "9f65d2e92484079985862e04ece6da1c8b1d30f92e063034c4e69941081d91c5",
+      "q1_sha256": "286a53b9082398baeb4e033cec48c0eee520b044523d716cb57a52baa272ef51"
+    }
+  },
+  "result_id": "BERGER_54_ROW_Q2_REPLAY_ENGINE",
+  "result_state": "EXACT_PBW_REPLAY_ENGINE_READY_SCIENTIFIC_Q2_INPUT_BLOCKED",
+  "schema": "quantum-weyl-berger-54-row-q2-replay-engine-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

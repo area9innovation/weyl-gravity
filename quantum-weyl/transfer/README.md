@@ -177,6 +177,21 @@ python3 quantum-weyl/transfer/berger_54_row_q2_arrival_certificate.py --check
 python3 -m unittest quantum-weyl/transfer/tests/test_berger_54_row_q2_arrival.py
 ```
 
+The exact operator-valued replay layer is also ready ahead of the scientific
+input. It independently re-encodes the noncommutative Berger PBW algebra and
+computes the arity-two `q1/q2` nilpotency defect, the `D/q2` derivation defect,
+and graded BV cyclicity modulo integration by parts. A nonzero implementation
+fixture passes all three identities; valid-degree output and `D`-axis
+mutations produce localized exact defects, showing that the checks are
+sensitive. This advances the executable consumer, not the scientific claim:
+the in-progress classical producer is not imported, and the committed
+support-local q2, transfer, Cartan, causal, and quantum flags remain false.
+
+```bash
+python3 quantum-weyl/transfer/berger_54_row_q2_replay_certificate.py --check
+python3 -m unittest quantum-weyl/transfer/tests/test_berger_54_row_q2_replay.py
+```
+
 A separate pinned consumer now imports the first action-derived nonlinear
 Berger block without crossing that boundary.  The six stationary homogeneous
 rows use the rational coordinate \(c=c_0(1+u)\) and normalized action density

@@ -14,7 +14,7 @@
     "The registered Berger backend validates arity-one PBW-operator data only; the Fraction-valued ND2 engine cannot consume it without either a declared PBW-module extension or an exact REDUCED-MODE specialization.",
     "The complete gauge-fixed 54-row unary complex, cyclic pairing, and contraction are independently imported. That unary artifact does not itself supply q2 or D, while the separate complete local-D import now closes unary, contraction, and cyclic D-equivariance.",
     "The complete 54-row local D action is independently imported and unary/contraction/cyclic equivariance is exact. It does not supply q2, so the arity-two D-derivation defect and Cartan source remain input-blocked.",
-    "The Berger 54-row q2 arrival adapter fixes and mutation-tests the portable bilinear PBW structure and binds it to the authoritative unary, D, contraction, and pairing hashes. Its nonzero fixture is implementation-only; the complete classical q2 and independent operator-valued q1/q2, D/q2, cyclicity, transfer, and Cartan executions remain absent.",
+    "The Berger 54-row q2 arrival adapter fixes and mutation-tests the portable bilinear PBW structure and binds it to the authoritative unary, D, contraction, and pairing hashes. The separate exact replay engine now executes q1/q2, D/q2, and cyclicity on a nonzero implementation fixture and localizes deliberate defects. The complete classical q2 and scientific arity-two replay, transfer, and Cartan executions remain absent.",
     "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
     "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
     "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
@@ -62,7 +62,7 @@
     {
       "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2",
       "stage": "HT1",
-      "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_AND_LOCAL_D_ACTION_Q2_ARRIVAL_ADAPTER_READY_ALL_WEIGHT_HOMOGENEOUS_NONZERO_CARTAN_PRIMITIVE_AND_RESTRICTED_PPWAVE_BRANCH_ELL2_ZERO_FULL_4D_SUPPORT_LOCAL_Q2_AND_54_ROW_CARTAN_PENDING"
+      "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_AND_LOCAL_D_ACTION_Q2_ARRIVAL_ADAPTER_READY_EXACT_REPLAY_ENGINE_READY_ALL_WEIGHT_HOMOGENEOUS_NONZERO_CARTAN_PRIMITIVE_AND_RESTRICTED_PPWAVE_BRANCH_ELL2_ZERO_FULL_4D_SUPPORT_LOCAL_Q2_AND_54_ROW_CARTAN_PENDING"
     },
     {
       "deliverable": "compute ell3 and dynamical/topological mixing table",
@@ -94,7 +94,9 @@
     "berger_54_row_local_D_import_certificate": "quantum-weyl/transfer/certificates/BERGER_54_ROW_LOCAL_D_IMPORT.json",
     "berger_54_row_local_D_import_sha256": "f443fd5f9a44de7b5e9402b4c12773a3a43adbe5676f25c94da5bf6f27fc1657",
     "berger_54_row_q2_arrival_readiness_certificate": "quantum-weyl/transfer/certificates/BERGER_54_ROW_Q2_ARRIVAL_READINESS.json",
-    "berger_54_row_q2_arrival_readiness_sha256": "68ecefc0f3e269b44fede6e9c3b6dc8068f283c2886eade0cd017a081a690c49",
+    "berger_54_row_q2_arrival_readiness_sha256": "7327318d4471f22b92f80467ed1cf55afc5381c3af64954fc528585544704c8c",
+    "berger_54_row_q2_replay_engine_certificate": "quantum-weyl/transfer/certificates/BERGER_54_ROW_Q2_REPLAY_ENGINE.json",
+    "berger_54_row_q2_replay_engine_sha256": "dcf12542f0e9a7605cc7dcaf9f7795a0e26692d56c46312aa90eda441fe2bc8d",
     "berger_all_weight_arity_two_cartan_import_certificate": "quantum-weyl/transfer/certificates/BERGER_ALL_WEIGHT_ARITY_TWO_CARTAN_IMPORT.json",
     "berger_all_weight_arity_two_cartan_import_sha256": "3044fd91f7fdcfd3418966f1c493806122ffc8278dd33bbfcea148d7ee9e052a",
     "berger_clock_nonlinear_import_certificate": "quantum-weyl/transfer/certificates/BERGER_CLOCK_NONLINEAR_IMPORT.json",
@@ -140,6 +142,7 @@
     "source_manifest": {
       "../reports/berger-54-row-local-d-import.md": "67f1673f03b26653f3ed603807b403ac99a9f6c04309b22004b38b2b7d950943",
       "../reports/berger-54-row-q2-arrival-readiness.md": "56a68e81635f51405efd39fc1a1781663f777f2e25b636a677ec4b2f2c3d2aad",
+      "../reports/berger-54-row-q2-replay-engine.md": "e0d552fb0f05343847f6b8af8137cb40df90fe435816e2405569ce00ebfb7dc5",
       "../reports/einstein-projection-amplitude-fixture.md": "8f97d394eaa9bf6705c8e9c6971fcee14aed22e8dc2ee8cc2691c80c03f4cef0",
       "../reports/ppwave-branch-transfer.md": "a537ab0514e13988e06959c460763c08d56fdf82634aa12651009ba751267226",
       "__init__.py": "ac2a06d6d4e5f9b24a1bee6bfd138a2866bd9783b2e4fd62d9e67d0cb3683050",
@@ -150,6 +153,8 @@
       "berger_54_row_local_d_import_certificate.py": "0ec3401a2888a3c8d030791e4739605a8c36b02feca5cc22a29f8c9146eb6c7f",
       "berger_54_row_q2_arrival.py": "cb8d0661ccd927887b3b60271eff810e67163ec4a181c2accb9a1791b34ba359",
       "berger_54_row_q2_arrival_certificate.py": "484c84b7db6be4ce44a814b69a8019e5e2b1655cde245d4c8da26696051c7837",
+      "berger_54_row_q2_replay.py": "d1c84d97d4712a5725d27ced72e0647f00f2d44f5e6e90de86ffd7f26098e28e",
+      "berger_54_row_q2_replay_certificate.py": "b4b99a93099d6dcdb56b2fdbc55b33a775c42b469b3a3b31fccf8183b32c7814",
       "berger_all_weight_cartan_import.py": "2c4bd62fb2bc9fb639fcbeacd9828847db201a04e378bc2efbcc9ac46fec4fe9",
       "berger_all_weight_cartan_import_certificate.py": "8fdd96d521072de8dc5fb1f5dbec757423dde2e732b8a5902854fe6e072b08f2",
       "berger_clock_import.py": "d74cc66dabd5dc80dc4d07dd71946b25e89c89438d8c8604d689c08e38940a19",
@@ -182,7 +187,7 @@
       "nd2_arity_two_certificate.py": "4ce680bbb5d1aeea2eb765a33c1ddfaf88bb68ef83edbdea06dce6f54365e238",
       "nd2_physical_run.py": "9fe6d7988932b3543c8347ef3f83c7b80ab93d18ca0d6306c45b5875d3152d50",
       "nd2_physical_run_certificate.py": "138418bbdfd75139887df4e81d74a1cf561c548c5e3a5ef8ddb4132c83903a6d",
-      "nonlinear_transfer_certificate.py": "9fa16da78d28b6c3a8380ef3ea55ef506ec7a74e95d750a46b772fb0ddfad644",
+      "nonlinear_transfer_certificate.py": "61b041809d22502bb1cc8557eb22ac09a032768301fbd383bbecc837a4a9f2dc",
       "operator_backend_registry.py": "8c5e74f36656488e7060b47426b501c5582f13969522a53a090bf822288c8845",
       "ppwave_branch_transfer_import.py": "162c2b11273104e633f1a215ef944b75ce49ce32ad30b4eef4ec8116787ed6f8",
       "ppwave_branch_transfer_import_certificate.py": "aa89fd4028cb9ae711b4df9fcc71cbe6467c976d6857cb54317cb159f8989080",
@@ -191,6 +196,7 @@
       "schema/arity-three-cartan-engine-v1.schema.json": "d05594899045ce7e235e01d82c6bc2c9e3ca3ae2c934e3d272cecf27614de182",
       "schema/berger-54-row-local-d-import-v1.schema.json": "1f41617ab76c6c9e5b9fcb74d19022d7ec917a79451f28bb00158d130188674c",
       "schema/berger-54-row-q2-arrival-readiness-v1.schema.json": "d18f5df64ff171c9b86cf4c6df04e7fb002978118b0bd8a396874d7193a19d8e",
+      "schema/berger-54-row-q2-replay-engine-v1.schema.json": "9a0250c55e6c864e50425dba51070da9e66e0ac55f4f6d7a778a21a5703b1ac3",
       "schema/berger-54-row-support-local-q2-portable-v1.schema.json": "2899fc871e5d786dfccdf21b03a3ee5dbd9128cefb064a1a14d5f4df1a57d5c2",
       "schema/berger-all-weight-arity-two-cartan-import-v1.schema.json": "08d8a805e895bf4aee13a292b6c857cb4cac47cd415a38d764ac7ce2bc412e9c",
       "schema/berger-clock-nonlinear-import-v1.schema.json": "28614723c9983974261e9dfdd4cd783ef190b765daa39da06948501b6e66d91d",
@@ -218,6 +224,7 @@
       "tests/test_arity_two_cartan.py": "253e6a68c465c1f839fe670cf8124b92b6ce70d546c2d43f9a891691aebf2cf2",
       "tests/test_berger_54_row_local_d_import.py": "c0fa96bbc6d2016cf979eb240ba314f6a1d26c8bcf78b3e641d0540354395a16",
       "tests/test_berger_54_row_q2_arrival.py": "3de9bce0c7698eb49f2dfb9602dc6d519a8161e0be3ca7a922bf7ea7bc249e90",
+      "tests/test_berger_54_row_q2_replay.py": "5125c252ca17f71402712bf6d7939df99a87c1e27b9e6e947e8d289f86865e48",
       "tests/test_berger_all_weight_cartan_import.py": "8b0e8f4161ba694ce931c9c5c4472acac11b9bb6ae4e6de16a37394601642876",
       "tests/test_berger_clock_import.py": "9d80c022c28a15ce6dd336a6e2a70250b12c4452482c1c03e0502dac2e2aa052",
       "tests/test_berger_clock_sdr_import.py": "960a16b54ddc3e15406cdf3d5072e482156cc44d077c1a1ada3500b350908d9e",
@@ -237,7 +244,7 @@
       "tests/test_local_expression_ast.py": "52b883e235387a41b96f2443d23117b078d68970ee59915f86a190b0d7416c9b",
       "tests/test_nd2_arity_two_certificate.py": "1ca5a2eaa28a6f53043096caff26cf18f7651817d73f49b0237290c63daffb98",
       "tests/test_nd2_physical_run.py": "982ebe10d64434363624f131bc8188547f51da636a6605a7819ab2f33e7b1ab0",
-      "tests/test_nonlinear_transfer_certificate.py": "51d3fe95950478f84f4243c8892d115cb91dc15c94a20f85947490094af3abf3",
+      "tests/test_nonlinear_transfer_certificate.py": "dfbec7667f5024aead55edb4d4e3b38ac54b24abb579a24b26d79534b899f49f",
       "tests/test_ppwave_branch_transfer_import.py": "079c4660496b4de8069b4cbbf4540f01d6ce1727aa4542fe805d5523295a8c88",
       "tests/test_residual_cubic_block.py": "d279660e15cd7e0c12b7da2c514a6ba566db0505dd03c9c44e3a696454d618cb",
       "tests/test_support_local_q2_consumer.py": "f859bf3c440aacdddb19033c5ab2e0240c1b7c991e0dfcff2ae3d6fc0551e411",
@@ -245,7 +252,7 @@
       "total_d_disposition.py": "e81da4b928c7d69c7581bce68a7103972123e7e114b06d31bb38c8f648aad6f2",
       "total_d_disposition_certificate.py": "4aa33b5b6343bf7c107db120b1e610ca6a436fc60b656e45080b405e4fa47eb7"
     },
-    "source_manifest_sha256": "7d6673ba1ed5082b1e0e1b1789c36fd434554723797ef0acc093778393cf1f7e",
+    "source_manifest_sha256": "a39718d4e759adc224b31ceac5af7e557b4fd4671143b013588a457567b32fe7",
     "support_local_q2_contract": "quantum-weyl/classical_import/certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json",
     "support_local_q2_contract_sha256": "c9fcc9a537856b0418897741782ad07edbb88a2bea71ff559002d7e67f57fd6b"
   },
@@ -268,7 +275,7 @@
     {
       "next_certificate": "ND1_COMPLETE_SUPPORT_LOCAL_D_DERIVATION_AND_IOTA_D2",
       "question_id": "D_quotient_interaction_stability",
-      "status": "ALL_INTEGER_WEIGHT_HOMOGENEOUS_NONZERO_SOURCE_CARTAN_EXACT_NONZERO_PRIMITIVE_COMPLETE_FINITE_TRUNCATIONS_OBSTRUCTED_54_ROW_LOCAL_D_IMPORTED_Q2_ARRIVAL_ADAPTER_READY_FULL_4D_SUPPORT_LOCAL_Q2_BLOCKED"
+      "status": "ALL_INTEGER_WEIGHT_HOMOGENEOUS_NONZERO_SOURCE_CARTAN_EXACT_NONZERO_PRIMITIVE_COMPLETE_FINITE_TRUNCATIONS_OBSTRUCTED_54_ROW_LOCAL_D_IMPORTED_Q2_ARRIVAL_ADAPTER_READY_EXACT_REPLAY_ENGINE_READY_FULL_4D_SUPPORT_LOCAL_Q2_BLOCKED"
     },
     {
       "next_certificate": "HT2_DYNAMICAL_CLOSURE",
@@ -334,6 +341,7 @@
       "independently imported complete gauge-fixed 54-row Berger unary BV complex, cyclic pairing, and contraction onto 26 retained rows",
       "independently imported complete support-local order-one helical D action on all 54 gauge-fixed Berger rows with unary, contraction, and cyclic equivariance",
       "strict portable Berger 54-row bilinear PBW q2 arrival contract with authoritative unary/D/contraction binding, exact structural checks, and mutation-tested fail-closed input routing",
+      "independent exact Berger PBW replay engine for q1/q2 nilpotency, D/q2 derivation, and BV cyclicity with localized mutation-sensitive defect ledgers",
       "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
       "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
       "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",

@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-54-row-q2-replay-engine-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_layer",
+    "dependency_tags",
+    "setting_id",
+    "prerequisite_binding",
+    "implementation_fixture",
+    "mutation_sensitivity",
+    "engine_capabilities",
+    "input_gate",
+    "claim_flags",
+    "claim_boundary",
+    "consumer_provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-54-row-q2-replay-engine-v1"},
+    "result_id": {"const": "BERGER_54_ROW_Q2_REPLAY_ENGINE"},
+    "result_state": {"const": "EXACT_PBW_REPLAY_ENGINE_READY_SCIENTIFIC_Q2_INPUT_BLOCKED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_IMPORT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "prerequisite_binding": {
+      "type": "object",
+      "required": ["gauge_fixed_54_row", "local_D_54_row", "operator_hashes"],
+      "properties": {
+        "gauge_fixed_54_row": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["result_id", "certificate_sha256"],
+          "properties": {
+            "result_id": {"type": "string", "minLength": 1},
+            "certificate_sha256": {"$ref": "#/$defs/hash"}
+          }
+        },
+        "local_D_54_row": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["result_id", "certificate_sha256"],
+          "properties": {
+            "result_id": {"type": "string", "minLength": 1},
+            "certificate_sha256": {"$ref": "#/$defs/hash"}
+          }
+        },
+        "operator_hashes": {
+          "type": "object",
+          "additionalProperties": {"$ref": "#/$defs/hash"},
+          "minProperties": 6
+        }
+      },
+      "additionalProperties": false
+    },
+    "implementation_fixture": {"$ref": "#/$defs/replay"},
+    "mutation_sensitivity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["output_row_mutation", "D_axis_mutation"],
+      "properties": {
+        "output_row_mutation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mutation", "q1_q2_detected", "cyclicity_detected", "localized_results"],
+          "properties": {
+            "mutation": {"const": "q2 output row 27 -> 28"},
+            "q1_q2_detected": {"const": true},
+            "cyclicity_detected": {"const": true},
+            "localized_results": {"$ref": "#/$defs/results"}
+          }
+        },
+        "D_axis_mutation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mutation", "D_derivation_detected", "localized_result"],
+          "properties": {
+            "mutation": {"const": "D row 5 derivative e0 -> e1"},
+            "D_derivation_detected": {"const": true},
+            "localized_result": {"$ref": "#/$defs/defect"}
+          }
+        }
+      }
+    },
+    "engine_capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "independent_q1_q2_identity_execution",
+        "independent_D_q2_derivation_execution",
+        "independent_BV_cyclicity_execution",
+        "noncommutative_PBW_reduction",
+        "exact_integration_by_parts",
+        "localized_defect_records",
+        "fixture_and_mutation_suite_pass"
+      ],
+      "properties": {
+        "independent_q1_q2_identity_execution": {"const": true},
+        "independent_D_q2_derivation_execution": {"const": true},
+        "independent_BV_cyclicity_execution": {"const": true},
+        "noncommutative_PBW_reduction": {"const": true},
+        "exact_integration_by_parts": {"const": true},
+        "localized_defect_records": {"const": true},
+        "fixture_and_mutation_suite_pass": {"const": true}
+      }
+    },
+    "input_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classical_q2_export_available", "scientific_fixture_substitution_allowed", "status", "arrival_action"],
+      "properties": {
+        "classical_q2_export_available": {"const": false},
+        "scientific_fixture_substitution_allowed": {"const": false},
+        "status": {"const": "INPUT_BLOCKED"},
+        "arrival_action": {"type": "string", "minLength": 1}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["REPLAY_ENGINE_READY", "CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED", "SCIENTIFIC_ARITY_TWO_IDENTITIES_REPLAYED", "TRANSFERRED_ELL2_COMPUTED", "INTERACTING_CARTAN_VERDICT", "QUANTUM_CLAIM"],
+      "properties": {
+        "REPLAY_ENGINE_READY": {"const": true},
+        "CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED": {"const": false},
+        "SCIENTIFIC_ARITY_TWO_IDENTITIES_REPLAYED": {"const": false},
+        "TRANSFERRED_ELL2_COMPUTED": {"const": false},
+        "INTERACTING_CARTAN_VERDICT": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "consumer_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "defect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "nonzero_coefficient_count", "defect_sha256", "localized_sample", "sample_truncated"],
+      "properties": {
+        "status": {"enum": ["PASS", "FAIL"]},
+        "nonzero_coefficient_count": {"type": "integer", "minimum": 0},
+        "defect_sha256": {"$ref": "#/$defs/hash"},
+        "localized_sample": {
+          "type": "array",
+          "items": {"type": "object", "minProperties": 6}
+        },
+        "sample_truncated": {"type": "boolean"}
+      }
+    },
+    "results": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["q1_q2_arity_two_nilpotency", "D_q2_derivation", "BV_cyclicity_q2"],
+      "properties": {
+        "q1_q2_arity_two_nilpotency": {"$ref": "#/$defs/defect"},
+        "D_q2_derivation": {"$ref": "#/$defs/defect"},
+        "BV_cyclicity_q2": {"$ref": "#/$defs/defect"}
+      }
+    },
+    "replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient_ring", "ordered_pbw_basis", "identity_conventions", "input", "operator_counts", "results", "all_identities_pass"],
+      "properties": {
+        "coefficient_ring": {"type": "string", "minLength": 1},
+        "ordered_pbw_basis": {"const": "e0^n0 e1^n1 e2^n2 e3^n3"},
+        "identity_conventions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["arity_two", "D_derivation", "cyclicity", "integration_by_parts"],
+          "properties": {
+            "arity_two": {"type": "string", "minLength": 1},
+            "D_derivation": {"type": "string", "minLength": 1},
+            "cyclicity": {"type": "string", "minLength": 1},
+            "integration_by_parts": {"type": "string", "minLength": 1}
+          }
+        },
+        "input": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["q2_sha256", "q2_term_count", "maximum_total_jet_order"],
+          "properties": {
+            "q2_sha256": {"$ref": "#/$defs/hash"},
+            "q2_term_count": {"type": "integer", "minimum": 1},
+            "maximum_total_jet_order": {"type": "integer", "minimum": 0}
+          }
+        },
+        "operator_counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["q1_PBW_coefficients", "D_PBW_coefficients", "q2_PBW_coefficients", "pairing_PBW_coefficients"],
+          "properties": {
+            "q1_PBW_coefficients": {"type": "integer", "minimum": 1},
+            "D_PBW_coefficients": {"type": "integer", "minimum": 1},
+            "q2_PBW_coefficients": {"type": "integer", "minimum": 1},
+            "pairing_PBW_coefficients": {"type": "integer", "minimum": 1}
+          }
+        },
+        "results": {"$ref": "#/$defs/results"},
+        "all_identities_pass": {"const": true}
+      }
+    }
+  }
+}

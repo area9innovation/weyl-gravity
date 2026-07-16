@@ -38,6 +38,9 @@ BERGER_54_ROW_LOCAL_D_PATH = (
 BERGER_54_ROW_Q2_ARRIVAL_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_54_ROW_Q2_ARRIVAL_READINESS.json"
 )
+BERGER_54_ROW_Q2_REPLAY_PATH = (
+    TRANSFER_ROOT / "certificates" / "BERGER_54_ROW_Q2_REPLAY_ENGINE.json"
+)
 BERGER_REDUCED_CARTAN_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json"
 )
@@ -113,6 +116,9 @@ def _source_manifest() -> dict[str, str]:
         "berger_54_row_q2_arrival.py",
         "berger_54_row_q2_arrival_certificate.py",
         "../reports/berger-54-row-q2-arrival-readiness.md",
+        "berger_54_row_q2_replay.py",
+        "berger_54_row_q2_replay_certificate.py",
+        "../reports/berger-54-row-q2-replay-engine.md",
         "berger_reduced_mode_cartan.py",
         "berger_reduced_mode_cartan_certificate.py",
         "berger_nonzero_weight_no_go_import.py",
@@ -149,6 +155,7 @@ def _source_manifest() -> dict[str, str]:
         "schema/berger-54-row-local-d-import-v1.schema.json",
         "schema/berger-54-row-support-local-q2-portable-v1.schema.json",
         "schema/berger-54-row-q2-arrival-readiness-v1.schema.json",
+        "schema/berger-54-row-q2-replay-engine-v1.schema.json",
         "schema/berger-first-arity-two-cartan-verdict-v1.schema.json",
         "schema/berger-nonzero-weight-closure-no-go-import-v1.schema.json",
         "schema/berger-all-weight-arity-two-cartan-import-v1.schema.json",
@@ -176,6 +183,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_berger_gauge_fixed_nonminimal_import.py",
         "tests/test_berger_54_row_local_d_import.py",
         "tests/test_berger_54_row_q2_arrival.py",
+        "tests/test_berger_54_row_q2_replay.py",
         "tests/test_berger_reduced_mode_cartan.py",
         "tests/test_berger_nonzero_weight_no_go_import.py",
         "tests/test_berger_all_weight_cartan_import.py",
@@ -218,6 +226,9 @@ def build_certificate() -> dict[str, Any]:
     )
     berger_54_row_q2_arrival = json.loads(
         BERGER_54_ROW_Q2_ARRIVAL_PATH.read_text(encoding="utf-8")
+    )
+    berger_54_row_q2_replay = json.loads(
+        BERGER_54_ROW_Q2_REPLAY_PATH.read_text(encoding="utf-8")
     )
     berger_reduced_cartan = json.loads(
         BERGER_REDUCED_CARTAN_PATH.read_text(encoding="utf-8")
@@ -415,6 +426,29 @@ def build_certificate() -> dict[str, Any]:
     ):
         raise ValueError("Berger 54-row q2 arrival rail was promoted or removed")
     if (
+        berger_54_row_q2_replay.get("schema")
+        != "quantum-weyl-berger-54-row-q2-replay-engine-v1"
+        or berger_54_row_q2_replay.get("result_state")
+        != "EXACT_PBW_REPLAY_ENGINE_READY_SCIENTIFIC_Q2_INPUT_BLOCKED"
+        or berger_54_row_q2_replay.get("engine_capabilities", {}).get(
+            "fixture_and_mutation_suite_pass"
+        )
+        is not True
+        or berger_54_row_q2_replay.get("input_gate", {}).get("status")
+        != "INPUT_BLOCKED"
+        or berger_54_row_q2_replay.get("claim_flags", {}).get(
+            "REPLAY_ENGINE_READY"
+        )
+        is not True
+        or berger_54_row_q2_replay.get("claim_flags", {}).get(
+            "SCIENTIFIC_ARITY_TWO_IDENTITIES_REPLAYED"
+        )
+        is not False
+        or berger_54_row_q2_replay.get("claim_flags", {}).get("QUANTUM_CLAIM")
+        is not False
+    ):
+        raise ValueError("Berger 54-row q2 replay engine was promoted or removed")
+    if (
         berger_nonzero_weight_no_go.get("schema")
         != "quantum-weyl-berger-nonzero-weight-closure-no-go-import-v1"
         or berger_nonzero_weight_no_go.get("result_state")
@@ -578,6 +612,7 @@ def build_certificate() -> dict[str, Any]:
                 "independently imported complete gauge-fixed 54-row Berger unary BV complex, cyclic pairing, and contraction onto 26 retained rows",
                 "independently imported complete support-local order-one helical D action on all 54 gauge-fixed Berger rows with unary, contraction, and cyclic equivariance",
                 "strict portable Berger 54-row bilinear PBW q2 arrival contract with authoritative unary/D/contraction binding, exact structural checks, and mutation-tested fail-closed input routing",
+                "independent exact Berger PBW replay engine for q1/q2 nilpotency, D/q2 derivation, and BV cyclicity with localized mutation-sensitive defect ledgers",
                 "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
                 "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
                 "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
@@ -623,7 +658,7 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "ALL_INTEGER_WEIGHT_HOMOGENEOUS_NONZERO_SOURCE_CARTAN_EXACT_NONZERO_PRIMITIVE_COMPLETE_FINITE_TRUNCATIONS_OBSTRUCTED_54_ROW_LOCAL_D_IMPORTED_Q2_ARRIVAL_ADAPTER_READY_FULL_4D_SUPPORT_LOCAL_Q2_BLOCKED",
+                "status": "ALL_INTEGER_WEIGHT_HOMOGENEOUS_NONZERO_SOURCE_CARTAN_EXACT_NONZERO_PRIMITIVE_COMPLETE_FINITE_TRUNCATIONS_OBSTRUCTED_54_ROW_LOCAL_D_IMPORTED_Q2_ARRIVAL_ADAPTER_READY_EXACT_REPLAY_ENGINE_READY_FULL_4D_SUPPORT_LOCAL_Q2_BLOCKED",
                 "next_certificate": "ND1_COMPLETE_SUPPORT_LOCAL_D_DERIVATION_AND_IOTA_D2",
             },
             {
@@ -654,7 +689,7 @@ def build_certificate() -> dict[str, Any]:
         ],
         "programme_stages": [
             {"stage": "HT0", "deliverable": "exact transfer engine and input contract", "status": "READY"},
-            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_AND_LOCAL_D_ACTION_Q2_ARRIVAL_ADAPTER_READY_ALL_WEIGHT_HOMOGENEOUS_NONZERO_CARTAN_PRIMITIVE_AND_RESTRICTED_PPWAVE_BRANCH_ELL2_ZERO_FULL_4D_SUPPORT_LOCAL_Q2_AND_54_ROW_CARTAN_PENDING"},
+            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_AND_LOCAL_D_ACTION_Q2_ARRIVAL_ADAPTER_READY_EXACT_REPLAY_ENGINE_READY_ALL_WEIGHT_HOMOGENEOUS_NONZERO_CARTAN_PRIMITIVE_AND_RESTRICTED_PPWAVE_BRANCH_ELL2_ZERO_FULL_4D_SUPPORT_LOCAL_Q2_AND_54_ROW_CARTAN_PENDING"},
             {"stage": "HT2", "deliverable": "compute ell3 and dynamical/topological mixing table", "status": "ARITY_THREE_CARTAN_RECURRENCE_ENGINE_READY_PHYSICAL_Q3_INPUT_BLOCKED"},
             {"stage": "HT3", "deliverable": "higher-arity and particle-filtration obstruction ledger", "status": "NOT_COMPUTED"},
             {"stage": "HT4", "deliverable": "cyclic minimal action and formal moduli interpretation", "status": "NOT_COMPUTED"},
@@ -729,6 +764,10 @@ def build_certificate() -> dict[str, Any]:
             "berger_54_row_q2_arrival_readiness_sha256": _sha256(
                 BERGER_54_ROW_Q2_ARRIVAL_PATH
             ),
+            "berger_54_row_q2_replay_engine_certificate": "quantum-weyl/transfer/certificates/BERGER_54_ROW_Q2_REPLAY_ENGINE.json",
+            "berger_54_row_q2_replay_engine_sha256": _sha256(
+                BERGER_54_ROW_Q2_REPLAY_PATH
+            ),
             "berger_first_arity_two_cartan_verdict_certificate": "quantum-weyl/transfer/certificates/BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json",
             "berger_first_arity_two_cartan_verdict_sha256": _sha256(
                 BERGER_REDUCED_CARTAN_PATH
@@ -773,7 +812,7 @@ def build_certificate() -> dict[str, Any]:
             "The registered Berger backend validates arity-one PBW-operator data only; the Fraction-valued ND2 engine cannot consume it without either a declared PBW-module extension or an exact REDUCED-MODE specialization.",
             "The complete gauge-fixed 54-row unary complex, cyclic pairing, and contraction are independently imported. That unary artifact does not itself supply q2 or D, while the separate complete local-D import now closes unary, contraction, and cyclic D-equivariance.",
             "The complete 54-row local D action is independently imported and unary/contraction/cyclic equivariance is exact. It does not supply q2, so the arity-two D-derivation defect and Cartan source remain input-blocked.",
-            "The Berger 54-row q2 arrival adapter fixes and mutation-tests the portable bilinear PBW structure and binds it to the authoritative unary, D, contraction, and pairing hashes. Its nonzero fixture is implementation-only; the complete classical q2 and independent operator-valued q1/q2, D/q2, cyclicity, transfer, and Cartan executions remain absent.",
+            "The Berger 54-row q2 arrival adapter fixes and mutation-tests the portable bilinear PBW structure and binds it to the authoritative unary, D, contraction, and pairing hashes. The separate exact replay engine now executes q1/q2, D/q2, and cyclicity on a nonzero implementation fixture and localizes deliberate defects. The complete classical q2 and scientific arity-two replay, transfer, and Cartan executions remain absent.",
             "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
             "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
             "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
