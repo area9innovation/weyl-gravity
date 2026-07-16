@@ -6,8 +6,10 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from local_bv.schema_validation import validate_instance
+from lorentzian import green_endpoint_contract as CONTRACT
 from lorentzian.green_endpoint_contract import (
     GREEN_CHECKS,
     HADAMARD_CHECKS,
@@ -78,6 +80,30 @@ class GreenEndpointContractTests(unittest.TestCase):
             (ROOT / "schema" / "berger-26-row-green-endpoint-contract-v1.schema.json").read_text()
         )
         self.assertFalse(validate_instance(certificate, schema))
+        self.assertEqual(
+            certificate["physical_input_status"],
+            "PARTIAL_ENDPOINT_FACTORS_RECEIVED_METRIC_OPEN",
+        )
+        self.assertEqual(certificate["partial_input"]["certified_blocks"], ["ghost", "identity"])
+        factor_path = ROOT.parents[1] / certificate["partial_input"]["certificate"]["path"]
+        self.assertEqual(
+            hashlib.sha256(factor_path.read_bytes()).hexdigest(),
+            certificate["partial_input"]["certificate"]["sha256"],
+        )
+        self.assertFalse(certificate["quantum_execution_authorized"])
+        forged = deepcopy(certificate)
+        forged["required_green_checks"][0] = "invented_check"
+        self.assertTrue(validate_instance(forged, schema))
+
+    def test_partial_input_cannot_promote_full_endpoint(self) -> None:
+        payload = json.loads(CONTRACT.PARTIAL_INPUT_CERTIFICATE.read_text())
+        payload["causal_endpoint_status"]["retained_26_row_chain_homotopy"] = "CERTIFIED"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "forged-partial-input.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            with patch.object(CONTRACT, "PARTIAL_INPUT_CERTIFICATE", path):
+                with self.assertRaisesRegex(ValueError, "input identity or boundary"):
+                    CONTRACT.build_contract_receipt()
 
     def test_complete_green_open_hadamard_payload_validates(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

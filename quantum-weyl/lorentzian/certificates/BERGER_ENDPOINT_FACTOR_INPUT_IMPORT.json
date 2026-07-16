@@ -4,21 +4,21 @@
     "ghost_endpoint": "GREEN_HYPERBOLIC_BY_TWO_NORMALLY_HYPERBOLIC_FACTORS",
     "hadamard_data": "NOT_CONSTRUCTED",
     "identity_endpoint": "GREEN_HYPERBOLIC_BY_FORMAL_ADJOINT_FACTORIZATION",
-    "metric_antifield_endpoint": "NOT_CONSTRUCTED_RANK_EIGHT_PLUS_TWO_MIXED_ORDER",
-    "metric_endpoint": "NOT_CONSTRUCTED_RANK_EIGHT_PLUS_TWO_MIXED_ORDER",
+    "metric_antifield_endpoint": "NOT_CONSTRUCTED_GENERIC_RANK_EIGHT_PLUS_TWO_MIXED_ORDER",
+    "metric_endpoint": "NOT_CONSTRUCTED_GENERIC_RANK_EIGHT_PLUS_TWO_MIXED_ORDER",
     "retained_26_row_chain_homotopy": "NOT_CONSTRUCTED"
   },
   "claim_boundary": "Imports and independently replays the certified ghost and identity endpoint factor theorem in the compact positive Berger reduced mode. It does not construct the metric or metric-antifield Green operators, the retained 26-row or lifted 54-row causal chain homotopy, Hadamard data, renormalized time-ordered products, or a full Lorentzian quantum theory.",
   "consumer_provenance": {
     "source_manifest": {
-      "../reports/berger-endpoint-factor-import.md": "5f0e168852da96a57dad88360e0dbff6a73cd0adee58ac0679fb32fd68146bdf",
-      "README.md": "c7befd4223c9ce35f2780d23d20cebc0d839fe23e6f14b1366c67ffd866a941c",
-      "berger_endpoint_factor_import.py": "c60fee9d5efbf731786276e10319a0df7c19f7375fc6ad349c04e3c2ef072c64",
+      "../reports/berger-endpoint-factor-import.md": "7d1ad8b46af72bbaa82d74f27093725b54ab628d2df7e027c1514c467a52b0f8",
+      "README.md": "ebc86afb31ddde254a258b79c04dcb9a21c835c69879e6ceb7133fa4eb89fed1",
+      "berger_endpoint_factor_import.py": "537f608ee215556b9532de18c3a0dec3a77bd7e8681ced267a10fc7a58d5e5e4",
       "berger_endpoint_factor_import_certificate.py": "55c6491558284fcd5a241223ce609bb6cac8941c3479a942584d23fd618c938d",
-      "schema/berger-endpoint-factor-import-v1.schema.json": "1c8a72080a3a7071513517bbcd455fe7d99a9894388f58091a95f582f962acb0",
-      "tests/test_berger_endpoint_factor_import.py": "16f4792b2c8fe163fa7cbc86ef355499a12caf65857a94b943de51f0235b33d9"
+      "schema/berger-endpoint-factor-import-v1.schema.json": "dc64dfc65de423b8995c7ae52ba468c0f60d9b62a15f476bea34dffd27813ead",
+      "tests/test_berger_endpoint_factor_import.py": "a192440ad8dce3e78323bcf5d3c60550e16b2d67e916a7a50ba10615ac4345a5"
     },
-    "source_manifest_sha256": "6b5c7e557eb4b4743c9769d9473346a327b9ed38baf0f2e3f4f65c47df4d879c"
+    "source_manifest_sha256": "db0ea5b088e301fd8da87cff2c2024a79e740640c7ad436408ea0fc67a4034bc"
   },
   "coverage": {
     "ghost_rows": 3,
@@ -33,6 +33,7 @@
   ],
   "green_endpoint_contract_update": "PARTIAL_INPUT_ONLY_FULL_26_ROW_EXPORT_STILL_BLOCKED",
   "independent_exact_checks": {
+    "generic_metric_rank_eight": true,
     "ghost_biwave_principal_symbol": true,
     "ghost_block_reconstructed": true,
     "identity_block_reconstructed": true,
@@ -45,14 +46,17 @@
   },
   "lifecycle_layer": "CLASSICAL_BV",
   "metric_boundary": {
-    "fourth_order_rank": 8,
+    "characteristic_rank_stratification": "NOT_CLASSIFIED",
+    "generic_fourth_order_rank": 8,
     "interpretation": "principal clock/constraint carriers, not residual particle states",
     "kernel_field_content": [
       "temporal_diffeomorphism_clock",
       "weyl_constraint"
     ],
     "negative_physical_direction_introduced": false,
-    "polynomial_kernel_dimension": 2
+    "polynomial_kernel_dimension": 2,
+    "rank_certificate": "two exact polynomial null carriers give rank at most eight; an exact nonzero rank-eight fixture gives generic rank at least eight",
+    "rank_drop_on_characteristic_covectors_excluded": false
   },
   "next_gate": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION",
   "provenance": {

@@ -34,8 +34,15 @@ class BergerEndpointFactorImportTests(unittest.TestCase):
     def test_exact_endpoint_and_metric_boundary_replay(self) -> None:
         result = IMPORTER.validate_import(self.payload, self.schema, self.q1)
         self.assertTrue(all(result["independent_exact_checks"].values()))
-        self.assertEqual(result["metric_boundary"]["fourth_order_rank"], 8)
+        self.assertEqual(result["metric_boundary"]["generic_fourth_order_rank"], 8)
         self.assertEqual(result["metric_boundary"]["polynomial_kernel_dimension"], 2)
+        self.assertEqual(
+            result["metric_boundary"]["characteristic_rank_stratification"],
+            "NOT_CLASSIFIED",
+        )
+        self.assertFalse(
+            result["metric_boundary"]["rank_drop_on_characteristic_covectors_excluded"]
+        )
         self.assertFalse(result["metric_boundary"]["negative_physical_direction_introduced"])
 
     def test_partial_causal_result_does_not_open_quantum_execution(self) -> None:

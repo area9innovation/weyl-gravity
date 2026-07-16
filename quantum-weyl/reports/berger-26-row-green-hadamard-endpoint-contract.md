@@ -16,6 +16,14 @@ declared zero-mode policy.  A Green certificate may leave Hadamard data open;
 promotion to a Green-plus-Hadamard result additionally requires the wavefront,
 bisolution, CCR, BRST, and positivity/Krein checks.
 
-The checked-in receipt is `INTERFACE_READY_PHYSICAL_INPUT_BLOCKED`.  Its
-two-row exact fixture tests only the algebraic chain, adjoint, and equivariance
-mechanics.  It has no causal geometry and supplies no physical propagator.
+The checked-in receipt is
+`INTERFACE_READY_PARTIAL_ENDPOINT_FACTORS_RECEIVED`. The ghost and identity
+endpoint factors have landed, while the metric and metric-antifield blocks
+remain open. The receipt pins the partial-input certificate and records the
+still-missing explicit PBW records for both normally hyperbolic factors and
+their formal adjoints.
+
+The two-row exact fixture tests only the algebraic chain, adjoint, and
+equivariance mechanics. It has no causal geometry and supplies no complete
+physical propagator. The full 26-row Green homotopy and Hadamard stage remain
+blocked.

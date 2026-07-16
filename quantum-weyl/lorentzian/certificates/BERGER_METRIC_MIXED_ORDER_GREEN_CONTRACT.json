@@ -1,0 +1,73 @@
+{
+  "accepted_export_schema": "quantum-weyl-berger-metric-mixed-order-green-export-v1",
+  "accepted_realization_kinds": [
+    "AUXILIARY_FIELD_REDUCTION",
+    "FILTERED_MIXED_ORDER",
+    "FIRST_ORDER_DIFFERENTIAL_ALGEBRAIC"
+  ],
+  "claim_boundary": "Defines the exact portable acceptance boundary for the rank-eight-plus-two metric and metric-antifield Green problem. It constructs no physical Green operator, full 26-row homotopy, Hadamard state, causal product, QME restoration, or Lorentzian quantum theory.",
+  "current_principal_boundary": {
+    "characteristic_rank_stratification": "NOT_CLASSIFIED",
+    "generic_fourth_order_rank": 8,
+    "polynomial_kernel_dimension": 2,
+    "rank_drop_on_characteristic_covectors_excluded": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "downstream_endpoint_factor_record_ids": [
+    "Box_1_spatial_covector",
+    "Box_1_spatial_covector_formal_adjoint",
+    "F_spatial_K_spatial",
+    "F_spatial_K_spatial_formal_adjoint"
+  ],
+  "full_26_row_green_status": "NOT_CONSTRUCTED",
+  "metric_antifield_green_status": "NOT_CONSTRUCTED",
+  "metric_green_status": "NOT_CONSTRUCTED",
+  "next_gate": "IMPORT_CERTIFIED_BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION",
+  "physical_input_status": "NOT_RECEIVED",
+  "provenance": {
+    "source_manifest": {
+      "../reports/berger-metric-mixed-order-green-contract.md": "41442e7054220b52e1e993dc55f970148a2462cbd5d1038adaf0c89fec91dd6e",
+      "metric_mixed_order_green_contract.py": "f38a62d061f95ab402133da0ca23009d034a0f0ddd2d6db7cfac2bfd60edd922",
+      "metric_mixed_order_green_contract_certificate.py": "b86fe9681206e2dfc504f6669a739c3f4e41adc87e9eb46499afc46ead4053f2",
+      "schema/berger-metric-mixed-order-green-contract-v1.schema.json": "eca71e44e0b307ddd306a93a5c0c1b1e72b939a66763d61bdde25d691e45931d",
+      "schema/berger-metric-mixed-order-green-export-v1.schema.json": "4aafad99f5ccbc84d19d2bb0d61e6b07c6209535e656857f79f7b8b23c84062a",
+      "tests/test_metric_mixed_order_green_contract.py": "2eca2ec3ae87bf831e4e9c6cb02e876c0751f35ae6e75e7399233d4d85f28448"
+    },
+    "source_manifest_sha256": "dbe2ea8c39c65bbb7e8d5b295cb1e8855a929b43fee415f37de40569a42f307d"
+  },
+  "quantum_execution_authorized": false,
+  "required_operator_ids": [
+    "P_metric",
+    "P_metric_antifield",
+    "Lambda_metric_minus",
+    "Lambda_metric_plus",
+    "Lambda_metric_antifield_minus",
+    "Lambda_metric_antifield_plus",
+    "realization_backward",
+    "realization_forward"
+  ],
+  "required_proof_checks": [
+    "D_equivariance",
+    "advanced_left_inverse",
+    "advanced_right_inverse",
+    "advanced_support",
+    "characteristic_rank_stratification",
+    "constraint_compatibility",
+    "cyclic_advanced_retarded_adjointness",
+    "generic_rank_and_kernel",
+    "metric_antifield_formal_adjoint",
+    "realization_equivalence",
+    "retarded_left_inverse",
+    "retarded_right_inverse",
+    "retarded_support",
+    "row_completeness",
+    "zero_mode_policy_applied"
+  ],
+  "result_id": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION_CONTRACT",
+  "result_state": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED",
+  "schema": "quantum-weyl-berger-metric-mixed-order-green-contract-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-metric-mixed-order-green-contract-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "dependency_tags", "setting_id",
+    "accepted_export_schema", "accepted_realization_kinds", "required_operator_ids",
+    "downstream_endpoint_factor_record_ids", "required_proof_checks", "current_principal_boundary",
+    "physical_input_status", "metric_green_status", "metric_antifield_green_status",
+    "full_26_row_green_status", "quantum_execution_authorized", "next_gate",
+    "claim_boundary", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-metric-mixed-order-green-contract-v1"},
+    "result_id": {"const": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION_CONTRACT"},
+    "result_state": {"const": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "accepted_export_schema": {"const": "quantum-weyl-berger-metric-mixed-order-green-export-v1"},
+    "accepted_realization_kinds": {"const": ["AUXILIARY_FIELD_REDUCTION", "FILTERED_MIXED_ORDER", "FIRST_ORDER_DIFFERENTIAL_ALGEBRAIC"]},
+    "required_operator_ids": {"const": ["P_metric", "P_metric_antifield", "Lambda_metric_minus", "Lambda_metric_plus", "Lambda_metric_antifield_minus", "Lambda_metric_antifield_plus", "realization_backward", "realization_forward"]},
+    "downstream_endpoint_factor_record_ids": {"const": ["Box_1_spatial_covector", "Box_1_spatial_covector_formal_adjoint", "F_spatial_K_spatial", "F_spatial_K_spatial_formal_adjoint"]},
+    "required_proof_checks": {"const": ["D_equivariance", "advanced_left_inverse", "advanced_right_inverse", "advanced_support", "characteristic_rank_stratification", "constraint_compatibility", "cyclic_advanced_retarded_adjointness", "generic_rank_and_kernel", "metric_antifield_formal_adjoint", "realization_equivalence", "retarded_left_inverse", "retarded_right_inverse", "retarded_support", "row_completeness", "zero_mode_policy_applied"]},
+    "current_principal_boundary": {
+      "const": {
+        "generic_fourth_order_rank": 8,
+        "polynomial_kernel_dimension": 2,
+        "characteristic_rank_stratification": "NOT_CLASSIFIED",
+        "rank_drop_on_characteristic_covectors_excluded": false
+      }
+    },
+    "physical_input_status": {"const": "NOT_RECEIVED"},
+    "metric_green_status": {"const": "NOT_CONSTRUCTED"},
+    "metric_antifield_green_status": {"const": "NOT_CONSTRUCTED"},
+    "full_26_row_green_status": {"const": "NOT_CONSTRUCTED"},
+    "quantum_execution_authorized": {"const": false},
+    "next_gate": {"const": "IMPORT_CERTIFIED_BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

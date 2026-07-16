@@ -222,6 +222,11 @@ def _replay(payload: dict[str, Any], q1: dict[str, Any]) -> dict[str, bool]:
         "metric_rank_eight_at_exact_fixture": metric4.subs(fixture).rank() == 8,
         "metric_kernel_rank_two_at_exact_fixture": carriers.subs(fixture).rank() == 2,
     }
+    checks["generic_metric_rank_eight"] = (
+        checks["metric_kernel_carriers_exact"]
+        and checks["metric_rank_eight_at_exact_fixture"]
+        and checks["metric_kernel_rank_two_at_exact_fixture"]
+    )
     if not all(checks.values()):
         failures = [name for name, passed in checks.items() if not passed]
         raise ValueError(f"independent endpoint replay failed: {failures}")
@@ -251,15 +256,21 @@ def validate_import(
         "causal_endpoint_status": {
             "ghost_endpoint": "GREEN_HYPERBOLIC_BY_TWO_NORMALLY_HYPERBOLIC_FACTORS",
             "identity_endpoint": "GREEN_HYPERBOLIC_BY_FORMAL_ADJOINT_FACTORIZATION",
-            "metric_endpoint": "NOT_CONSTRUCTED_RANK_EIGHT_PLUS_TWO_MIXED_ORDER",
-            "metric_antifield_endpoint": "NOT_CONSTRUCTED_RANK_EIGHT_PLUS_TWO_MIXED_ORDER",
+            "metric_endpoint": "NOT_CONSTRUCTED_GENERIC_RANK_EIGHT_PLUS_TWO_MIXED_ORDER",
+            "metric_antifield_endpoint": "NOT_CONSTRUCTED_GENERIC_RANK_EIGHT_PLUS_TWO_MIXED_ORDER",
             "retained_26_row_chain_homotopy": "NOT_CONSTRUCTED",
             "gauge_fixed_54_row_chain_homotopy": "NOT_CONSTRUCTED",
             "hadamard_data": "NOT_CONSTRUCTED",
         },
         "metric_boundary": {
-            "fourth_order_rank": 8,
+            "generic_fourth_order_rank": 8,
             "polynomial_kernel_dimension": 2,
+            "rank_certificate": (
+                "two exact polynomial null carriers give rank at most eight; "
+                "an exact nonzero rank-eight fixture gives generic rank at least eight"
+            ),
+            "characteristic_rank_stratification": "NOT_CLASSIFIED",
+            "rank_drop_on_characteristic_covectors_excluded": False,
             "kernel_field_content": ["temporal_diffeomorphism_clock", "weyl_constraint"],
             "negative_physical_direction_introduced": False,
             "interpretation": "principal clock/constraint carriers, not residual particle states",

@@ -19,10 +19,13 @@ ghost biwave principal symbol exactly, and replays the metric principal
 kernel.
 
 The metric and metric-antifield endpoints remain open. Their fourth-order
-principal block has rank eight and an exact two-dimensional polynomial
-kernel carried by the temporal-diffeomorphism clock and Weyl-constraint
-directions. These are constraint carriers, not new residual particle states,
-and this import introduces no negative physical direction.
+principal block has **generic** rank eight: two exact polynomial null carriers
+give the upper bound, while an exact rank-eight specialization gives the
+generic lower bound. Its two generic kernel directions are carried by the
+temporal-diffeomorphism clock and Weyl constraint. Rank stratification on the
+characteristic set has not been classified and further rank drops have not
+been excluded. These are constraint carriers, not new residual particle
+states, and this import introduces no negative physical direction.
 
 Consequently neither the retained 26-row nor the lifted 54-row causal chain
 homotopy is constructed. Hadamard data, renormalized time-ordered products,

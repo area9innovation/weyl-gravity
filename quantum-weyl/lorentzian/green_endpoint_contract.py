@@ -11,6 +11,7 @@ from __future__ import annotations
 from copy import deepcopy
 from fractions import Fraction
 import hashlib
+import json
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -35,6 +36,10 @@ HADAMARD_CHECKS = (
     "positivity_or_Krein_policy",
 )
 OPERATOR_IDS = ("D26", "Lambda_minus", "Lambda_plus", "pairing26", "q26")
+ROOT = Path(__file__).resolve().parents[2]
+PARTIAL_INPUT_CERTIFICATE = (
+    ROOT / "quantum-weyl/lorentzian/certificates/BERGER_ENDPOINT_FACTOR_INPUT_IMPORT.json"
+)
 
 
 def _sha256(path: Path) -> str:
@@ -272,27 +277,61 @@ def green_mechanics_fixture() -> dict[str, Any]:
 
 
 def build_contract_receipt() -> dict[str, Any]:
+    partial_payload = json.loads(PARTIAL_INPUT_CERTIFICATE.read_text(encoding="utf-8"))
+    if (
+        not isinstance(partial_payload, dict)
+        or partial_payload.get("result_id") != "BERGER_ENDPOINT_FACTOR_INPUT_IMPORT"
+        or partial_payload.get("result_state")
+        != "PARTIAL_LORENTZIAN_ENDPOINT_FACTORS_IMPORTED_METRIC_OPEN"
+        or partial_payload.get("quantum_execution_authorized") is not False
+        or partial_payload.get("causal_endpoint_status", {}).get(
+            "retained_26_row_chain_homotopy"
+        ) != "NOT_CONSTRUCTED"
+        or partial_payload.get("metric_boundary", {}).get("generic_fourth_order_rank") != 8
+        or partial_payload.get("metric_boundary", {}).get(
+            "characteristic_rank_stratification"
+        ) != "NOT_CLASSIFIED"
+    ):
+        raise ValueError("partial endpoint-factor input identity or boundary drifted")
+    partial_input_hash = _sha256(PARTIAL_INPUT_CERTIFICATE)
     return deepcopy(
         {
             "schema": "quantum-weyl-berger-26-row-green-endpoint-contract-v1",
             "result_id": "BERGER_26_ROW_GREEN_HADAMARD_ENDPOINT_CONTRACT",
-            "result_state": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED",
+            "result_state": "INTERFACE_READY_PARTIAL_ENDPOINT_FACTORS_RECEIVED",
             "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
             "setting_id": SETTING_ID,
             "accepted_export_schema": SCHEMA_ID,
             "required_green_checks": list(GREEN_CHECKS),
             "conditional_hadamard_checks": list(HADAMARD_CHECKS),
             "mechanics_fixture": green_mechanics_fixture(),
-            "physical_input_status": "NOT_RECEIVED",
+            "physical_input_status": "PARTIAL_ENDPOINT_FACTORS_RECEIVED_METRIC_OPEN",
+            "partial_input": {
+                "result_id": "BERGER_ENDPOINT_FACTOR_INPUT_IMPORT",
+                "certificate": {
+                    "path": "quantum-weyl/lorentzian/certificates/BERGER_ENDPOINT_FACTOR_INPUT_IMPORT.json",
+                    "sha256": partial_input_hash,
+                },
+                "certified_blocks": ["ghost", "identity"],
+                "open_blocks": ["metric", "metric_antifield"],
+                "explicit_factor_records": "REQUESTED_FROM_CLASSICAL_SOURCE_NOT_YET_EXPORTED",
+                "required_factor_record_ids": [
+                    "F_spatial_K_spatial",
+                    "Box_1_spatial_covector",
+                    "F_spatial_K_spatial_formal_adjoint",
+                    "Box_1_spatial_covector_formal_adjoint",
+                ],
+            },
             "green_endpoint_status": "NOT_CONSTRUCTED",
             "hadamard_status": "NOT_CONSTRUCTED",
             "quantum_execution_authorized": False,
-            "next_gate": "IMPORT_CERTIFIED_BERGER_26_ROW_GREEN_ENDPOINT",
+            "next_gate": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION",
             "claim_boundary": (
-                "The portable endpoint schema, content-hash validator, conditional "
-                "Hadamard gate, and finite exact chain-homotopy mechanics are ready. "
-                "No physical retained Green operator, support theorem, Hadamard state, "
-                "causal product, QME, or quantum Cartan verdict is constructed."
+                "The ghost and identity endpoint factor theorem is imported, while "
+                "the metric and metric-antifield Green operators remain open. The "
+                "portable full-endpoint validator is ready, but no complete retained "
+                "Green homotopy, Hadamard state, causal product, QME, or quantum "
+                "Cartan verdict is constructed."
             ),
         }
     )

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-metric-mixed-order-green-export-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "classical_commit", "dependency_tags",
+    "setting_id", "row_layout", "principal_boundary", "realization",
+    "support_category", "operators", "proof_checks", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-metric-mixed-order-green-export-v1"},
+    "result_id": {"const": "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION"},
+    "result_state": {"const": "METRIC_AND_ANTIFIELD_GREEN_CERTIFIED"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "row_layout": {"type": "object"},
+    "principal_boundary": {"type": "object"},
+    "realization": {"type": "object"},
+    "support_category": {"type": "object"},
+    "operators": {"type": "object"},
+    "proof_checks": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
