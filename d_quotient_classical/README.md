@@ -128,6 +128,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY.json`](certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY.json)
 - Full gauge-fixed causal-homotopy proof:
   [`reports/berger-54-row-causal-green-homotopy.md`](reports/berger-54-row-causal-green-homotopy.md)
+- Cyclic causal D-Cartan contraction through arity two:
+  [`certificates/BERGER_CAUSAL_D_CARTAN_EXTENSION.json`](certificates/BERGER_CAUSAL_D_CARTAN_EXTENSION.json)
+- Causal-hull and cyclic-Reynolds proof:
+  [`reports/berger-causal-D-Cartan-extension.md`](reports/berger-causal-D-Cartan-extension.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:
