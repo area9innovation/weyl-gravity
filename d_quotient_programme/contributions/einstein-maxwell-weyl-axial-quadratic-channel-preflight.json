@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "compact R_t x S1_L x S2 fixed-P_N product; generic axial ell>=2 reduced mode domain before final residual quotient; finite resonance window 2<=ell_A,ell_P,ell_X<=8 and |k_A|,|k_P|<=4; first removable fixture ell_A=ell_P=ell_X=2, m_A=m_P=m_X=0, k_A=k_P=0 on the minus-branch sum channel",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the fixed-bundle constant-lapse constraint-adjoint class is extracted as a standalone Weyl-Maxwell target correction witness independent of a named source fixture",
+    "the generic axial extra detector and reconstruction maps define a basis-independent rank-two idempotent projector on the extra normal-mode shell",
+    "parity-compatible axial target data from two Einstein inputs require an axial-by-polar EE channel",
+    "an exact squarefree-radical enumeration of 97848 branch and temporal-sign cases finds no axial-extra resonance in the declared finite window",
+    "the selected lowest ell=2,k=0 EE sum-frequency target Hessian is invertible and its exact inverse gives a unique second-order correction for every source vector in that harmonic-frequency block"
+  ],
+  "evidence": {
+    "commit": "bd2c0f9a70219cc936fc2c7a581aa93bb20b3712",
+    "path": "bridge/certificates/einstein_maxwell_weyl_axial_quadratic_channel_preflight.json",
+    "sha256": "04f024d751ec907bf399a7e0edd8bb6596b31d2123a00d386a2b805ba09bbe4f"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute the explicit mixed axial-polar D^2E_WM tensor coefficient for the selected ell=2 block and insert it into the certified inverse, then enlarge the exact resonance window or attack constant-lapse difference-frequency channels",
+  "not_established": [
+    "the explicit mixed axial-polar quadratic source tensor coefficient",
+    "absence of axial-extra resonances outside the finite window",
+    "general nonlinear closure of the Einstein sector",
+    "an off-shell, nonlinear, final-residual, relational, causal, or asymptotic extra projector",
+    "a scattering, particle, ghost, unitarity, or quantum theorem"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_axial_ee_finite_window_and_ell2_removable_block",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_axial_quadratic_channel_preflight",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_AXIAL_EE_FINITE_RESONANCE_WINDOW_AND_FIRST_REMOVABLE_BLOCK",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_target_adjoint_witness --verify bridge/certificates/einstein_maxwell_weyl_target_adjoint_witness.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_extra_projector --verify bridge/certificates/einstein_maxwell_weyl_axial_extra_projector.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_quadratic_channel_preflight --verify bridge/certificates/einstein_maxwell_weyl_axial_quadratic_channel_preflight.json",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}
