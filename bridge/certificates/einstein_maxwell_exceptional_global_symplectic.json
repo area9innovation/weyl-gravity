@@ -1,0 +1,150 @@
+{
+  "axial_ell1_twist_theorem": {
+    "Cauchy_form": "Omega_twist=2*L*sum_m N_1m*dA_m^dB_m; for Y_10=cos(theta), N_10=4*pi/3 and the coefficient is 8*pi*L/3",
+    "SO3_statement": "SO(3) equivariance makes three identical real Darboux blocks; cross-m pairings vanish in an orthogonal real harmonic basis",
+    "all_m_representative": "for each real ell=1 harmonic Y_(1m), h_(x,a)=(A_m+B_m*t)X_a and a_x=-(A_m+B_m*t)Y_(1m)",
+    "equation": "the ell=1 minus eigenvector (H,Q)=(1,-1) has zero master eigenvalue, so ddot(A_m+B_m*t)=0",
+    "interpretation": "the constant twist is not an isolated presymplectic null direction once the generalized time-linear solution is included; A_m and B_m form a global canonical pair",
+    "periodic_gauge_audit": "generating either A_m or B_m*t requires the axial gauge parameter s=x*(A_m+B_m*t), which is not periodic on S1 unless A_m=B_m=0",
+    "rank_per_real_harmonic": 2
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem completes the integrated Einstein-Maxwell symplectic pairing on the declared generalized zero-frequency standard harmonic sector. It permits polynomial-in-time Jordan solutions; a bounded-in-time restriction would define a different, generally degenerate subspace. It does not compute a one-particle norm, the Weyl-Maxwell pullback, the final residual quotient, causal boundary conditions, scattering, or quantum theory.",
+  "classification": {
+    "Lorentzian_causal_or_scattering_theorem": false,
+    "Weyl_Maxwell_pullback_matching": false,
+    "all_three_real_ell1_harmonics": true,
+    "axial_ell1_twist_generalized_pair_complete": true,
+    "bounded_in_time_subspace_theorem": false,
+    "electric_charge_holonomy_pair_complete": true,
+    "ell0_metric_global_form_nondegenerate": true,
+    "final_residual_quotient_computed": false,
+    "fixed_bundle_standard_harmonic_symplectic_completion": true,
+    "one_particle_complex_structure_constructed": false
+  },
+  "completes": [
+    {
+      "addition": "the potential-level phase space includes the flat S1 holonomy W_x conjugate to the already classified electric coefficient Q_e",
+      "certificate": "bridge/certificates/einstein_maxwell_polar_exceptional_complex.json",
+      "json_pointer": "/ell0_complex/global_moduli",
+      "scope": "completion, not contradiction: W_x has zero field strength and was invisible in the prior field-strength complex"
+    },
+    {
+      "addition": "the constant axial twist A_m has the generalized solution B_m*t as its nondegenerate symplectic partner",
+      "certificate": "bridge/certificates/einstein_maxwell_axial_master_complex.json",
+      "json_pointer": "/ell1_quotient/global_zero_mode",
+      "scope": "generalized zero-frequency completion; the prior constant-twist classification remains valid"
+    }
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_lee_wald_fixture": {
+    "current_convention": "omega^t=delta1 theta^t(delta2)-delta2 theta^t(delta1); Omega_Sigma=-L*int_S2 omega^t",
+    "ell0_coordinate_current_per_unit_x": "2*pi*(a1*b2 + a1*d2 - a2*b1 - a2*d1 - b1*c2 + b2*c1 + 2*e1*w2 - 2*e2*w1)",
+    "ell0_time_dependence_after_equations": "0",
+    "remainders": {
+      "ell0": "0",
+      "twist": "0"
+    },
+    "twist_coordinate_current_per_unit_x": "-8*pi*(A1*B2 - A2*B1)/3",
+    "twist_time_dependence_after_equations": "0"
+  },
+  "domain": "generalized zero-frequency Einstein-Maxwell solutions on R_t x S1_L x S2 at fixed magnetic bundle P_N; smooth periodic identity-component Diff x U(1); before final residual quotient",
+  "ell0_global_theorem": {
+    "Cauchy_form": "Omega_ell0=-2*pi*L[da^db+da^dd-db^dc+2*dQ_e^dW_x]",
+    "Darboux_reorganization": "with beta=b+d, Omega_grav=-2*pi*L*da^d beta+2*pi*L*db^dc; the named radion pair (a,b) and circumference pair (c,d) mix symplectically",
+    "Maxwell_Darboux_pair": "mathcal W=L*W_x and mathcal Q_e=4*pi*Q_e obey Omega_Maxwell=d mathcal W^d mathcal Q_e",
+    "dimensionless_matrix_after_factor_2piL": [
+      [
+        "0",
+        "-1",
+        "0",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-2"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "2",
+        "0"
+      ]
+    ],
+    "fixed_bundle_scope": "uniform magnetic variation remains excluded; W_x changes flat holonomy, not c1(P_N)",
+    "large_gauge_statement": "including winding U(1) transformations makes the holonomy L*W_x periodic; the tangent symplectic form is unchanged",
+    "matrix_determinant": 4,
+    "matrix_rank": 6,
+    "new_potential_level_mode": "W_x is the flat S1 connection coefficient. It is absent from a field-strength-only classification but is not generated by a smooth periodic identity-component U(1) parameter.",
+    "parameter_order": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "Q_e",
+      "W_x"
+    ],
+    "representative": [
+      "K=a+b*t",
+      "C=a*t^2+(b/3)*t^3+c+d*t",
+      "A_x=W_x+Q_e*t"
+    ]
+  },
+  "generality_level": "G2_FIXED_BUNDLE_STANDARD_HARMONIC_GLOBAL_COMPLETION",
+  "interpretation": "The compact Einstein-Maxwell tangent has a nondegenerate global zero-frequency phase space before the final residual quotient. Radion and circumference solution labels mix in the symplectic form, electric charge is paired with S1 holonomy, and each axial ell=1 constant twist is paired with its time-linear generalized solution. These global canonical pairs are distinct from local radiative modes and from final SO(4,2)-reduced states.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the pullback of the Weyl-Maxwell Lee-Wald form to the now-complete fixed-bundle standard Einstein-Maxwell harmonic phase space, keeping radiative and generalized global blocks separate",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_exceptional_global_symplectic.py",
+    "generator_sha256": "f756a78661569800a183dc8315dde25145fc3c8dbd9776af00549e7dee8f4cf4",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_axial_master_complex.json": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02",
+      "bridge/certificates/einstein_maxwell_polar_exceptional_complex.json": "e725a87ea6ab22699a5d25e4ba6ff145e0f2bf7eeefbcd737cfdde0ffc334da3",
+      "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
+    }
+  },
+  "result_id": "COMPACT_EM_EXCEPTIONAL_GLOBAL_SYMPLECTIC",
+  "result_state": "ELL0_AND_AXIAL_ELL1_GLOBAL_PAIRINGS_CERTIFIED_WEYL_PULLBACK_OPEN",
+  "schema": "einstein-maxwell-exceptional-global-symplectic-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_exceptional_global_symplectic.schema.json",
+  "schema_sha256": "e75d117db53016e815fa350685284415eeb4241494dc17ff4f709c83aca94bab",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_exceptional_global_symplectic --verify bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_exceptional_global_symplectic.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_exceptional_global_symplectic"
+  ]
+}
