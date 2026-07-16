@@ -1,0 +1,33 @@
+{
+  "artifact_role": "CONVENTION_NORMALIZATION_WITNESS",
+  "epsilon_prescription": "sigma_epsilon=sigma+2 i epsilon Delta_t+epsilon^2, epsilon downarrow 0",
+  "exact_sign_checks": {
+    "i0_shift_damps_positive_energy_fourier_modes": true,
+    "operator_and_causal_propagator_signs_match": true,
+    "positive_frequency_covector_is_null": true,
+    "positive_frequency_covector_sharp_is_future": true,
+    "retarded_minus_advanced_matches_Wightman_antisymmetry": true
+  },
+  "flat_causal_kernel": "E=-sgn(Delta_t) delta(Delta_t^2-|Delta_x|^2)/(2 pi) for P=-partial_t^2+Delta_spatial",
+  "graded_CCR": "W_0^+(x,x')-W_0^+(x',x)=i E(x,x')",
+  "green_convention": "G_ret has future support; G_adv has past support; E=G_ret-G_adv",
+  "normalized_sign_data": {
+    "E_ret_minus_adv_relative_to_standard_wave_E": -1,
+    "P_relative_to_standard_wave": -1,
+    "Wightman_antisymmetry_relative_to_standard_wave_E": -1,
+    "epsilon_time_coefficient": 1,
+    "metric_inverse_time": -1,
+    "positive_frequency_covector_time": -1,
+    "spatial_covector_norm_squared": 1
+  },
+  "operator": "P=Box_eta=-partial_t^2+Delta_spatial",
+  "positive_frequency_covector": "k=(-|p|,p), so k^sharp=(|p|,p) is future-directed",
+  "positive_frequency_kernel": "W_0^+=integral d^3p/((2 pi)^3 2|p|) exp(-i|p|Delta_t+i p.Delta_x)",
+  "regulator_comparison": "the displayed regulator is homotopic through positive i0 regulators to 1/2[-(Delta_t-2 i epsilon)^2+|Delta_x|^2] and has the same boundary value and wavefront orientation",
+  "result_id": "BERGER_FLAT_HADAMARD_NORMALIZATION",
+  "schema": "quantum-weyl-berger-flat-hadamard-normalization-v1",
+  "scope": "flat scalar normalization tensored with the fibre identity; fixes conventions but does not construct the curved smooth completion",
+  "signature": "(-,+,+,+)",
+  "time_orientation": "partial_t is future-directed",
+  "world_function": "sigma=(-Delta_t^2+|Delta_x|^2)/2"
+}

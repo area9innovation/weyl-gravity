@@ -23,7 +23,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(
             certificate["result_state"],
-            "CAUSAL_CHAIN_AND_D_CARTAN_IMPORTED_THROUGH_ARITY_TWO_Q3_AND_HADAMARD_OPEN",
+            "CAUSAL_CHAIN_D_CARTAN_ARITY_TWO_AND_BASE_HADAMARD_PARAMETRIX_IMPORTED_Q3_AND_GLOBAL_HADAMARD_OPEN",
         )
         self.assertEqual(
             certificate["dependency_tags"],
@@ -165,12 +165,13 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("nd3_arity_three_cartan_engine_sha256", certificate["provenance"])
         self.assertIn("berger_causal_chain_v2_import_sha256", certificate["provenance"])
         self.assertIn("berger_hadamard_construction_gate_sha256", certificate["provenance"])
+        self.assertIn("berger_base_hadamard_parametrix_sha256", certificate["provenance"])
         hadamard_stage = next(
             item for item in certificate["programme_stages"] if item["stage"] == "HTH"
         )
         self.assertEqual(
             hadamard_stage["status"],
-            "CAUSAL_COMMUTATOR_READY_BASE_WAVE_HADAMARD_PARAMETRIX_NEXT",
+            "BASE_WAVE_HADAMARD_PARAMETRIX_CERTIFIED_TYPED_COMPANION_MOLLER_TRANSPORT_NEXT",
         )
         self.assertTrue(
             any(

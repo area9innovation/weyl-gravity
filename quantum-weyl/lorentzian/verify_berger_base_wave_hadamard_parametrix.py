@@ -21,6 +21,31 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _independent_flat_sign_checks(signs: dict[str, int]) -> dict[str, bool]:
+    covector_time = signs["positive_frequency_covector_time"]
+    return {
+        "positive_frequency_covector_sharp_is_future": (
+            signs["metric_inverse_time"] * covector_time > 0
+        ),
+        "positive_frequency_covector_is_null": (
+            signs["metric_inverse_time"] * covector_time**2
+            + signs["spatial_covector_norm_squared"]
+            == 0
+        ),
+        "i0_shift_damps_positive_energy_fourier_modes": (
+            signs["epsilon_time_coefficient"] > 0 and covector_time < 0
+        ),
+        "retarded_minus_advanced_matches_Wightman_antisymmetry": (
+            signs["Wightman_antisymmetry_relative_to_standard_wave_E"]
+            == signs["E_ret_minus_adv_relative_to_standard_wave_E"]
+        ),
+        "operator_and_causal_propagator_signs_match": (
+            signs["P_relative_to_standard_wave"]
+            == signs["E_ret_minus_adv_relative_to_standard_wave_E"]
+        ),
+    }
+
+
 def verify_certificate() -> dict:
     certificate = json.loads(OUTPUT.read_text())
     schema = json.loads(SCHEMA.read_text())
@@ -39,14 +64,28 @@ def verify_certificate() -> dict:
         if not matches:
             raise ValueError(f"unresolved dependency: {record['result_id']}")
 
-    proofs = {}
-    for name, record in certificate["proof_artifacts"].items():
+    artifacts = {}
+    for name, record in certificate["theorem_instantiation_artifacts"].items():
         path = ROOT / record["path"]
-        if record["artifact_type"] != "JSON_ANALYTIC_PROOF" or _sha256(path) != record["sha256"]:
-            raise ValueError(f"proof artifact mismatch: {name}")
-        proofs[name] = json.loads(path.read_text())
+        expected_type = (
+            "JSON_FLAT_NORMALIZATION_WITNESS"
+            if name == "flat_space_normalization"
+            else "JSON_THEOREM_INSTANTIATION_LEDGER"
+        )
+        if record["artifact_type"] != expected_type or _sha256(path) != record["sha256"]:
+            raise ValueError(f"theorem-instantiation artifact mismatch: {name}")
+        artifacts[name] = json.loads(path.read_text())
 
-    recursion = proofs["local_hadamard_recursion"]
+    for name in (
+        "operator_inventory",
+        "local_hadamard_recursion",
+        "microlocal_spectrum",
+        "stationarity_zero_modes",
+    ):
+        if artifacts[name].get("artifact_role") != "THEOREM_INSTANTIATION_LEDGER":
+            raise ValueError(f"analytic theorem ledger role drifted: {name}")
+
+    recursion = artifacts["local_hadamard_recursion"]
     if (
         "V_(P,0)(x,x)=I_E" not in recursion.get("hadamard_coefficients", "")
         or "0.5 Box Gamma-4+2k" not in recursion.get("invariant_transport", "")
@@ -56,7 +95,7 @@ def verify_certificate() -> dict:
         )
     ):
         raise ValueError("Hadamard transport ledger drifted")
-    micro = proofs["microlocal_spectrum"]
+    micro = artifacts["microlocal_spectrum"]
     if (
         "k future-directed null" not in micro.get("wavefront_set", "")
         or "P^sharp" not in micro.get("adjoint_reversal", "")
@@ -64,12 +103,25 @@ def verify_certificate() -> dict:
         or "smooth local bisolution" in micro.get("commutator", "")
     ):
         raise ValueError("microlocal or adjoint theorem drifted")
-    zero = proofs["stationarity_zero_modes"]
+    zero = artifacts["stationarity_zero_modes"]
     if (
         "no inverse spatial operator" not in zero.get("zero_mode_policy", "")
         or zero.get("positivity_policy") != "not decided by a local parametrix"
     ):
         raise ValueError("zero-mode or positivity boundary drifted")
+    flat = artifacts["flat_space_normalization"]
+    independent_checks = _independent_flat_sign_checks(
+        flat.get("normalized_sign_data", {})
+    )
+    if (
+        flat.get("artifact_role") != "CONVENTION_NORMALIZATION_WITNESS"
+        or flat.get("signature") != "(-,+,+,+)"
+        or "E=G_ret-G_adv" not in flat.get("green_convention", "")
+        or "k=(-|p|,p)" not in flat.get("positive_frequency_covector", "")
+        or flat.get("exact_sign_checks") != independent_checks
+        or not all(independent_checks.values())
+    ):
+        raise ValueError("flat Hadamard normalization witness drifted")
     return certificate
 
 
@@ -84,6 +136,12 @@ def mutation_guards(certificate: dict) -> None:
             "global_completion_obligations",
             "smooth_exact_bisolution_correction",
             "COMPLETE",
+        ),
+        (
+            "flat orientation",
+            "verified_checks",
+            "flat_space_i0_C_plus_and_CCR_normalization",
+            False,
         ),
     )
     for name, group, key, value in mutations:

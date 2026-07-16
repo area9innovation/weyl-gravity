@@ -93,7 +93,11 @@ standard four-dimensional bundle-valued Hadamard singularity with typed
 formal-adjoint right equations, the positive-frequency null wavefront
 relation, and a jointly stationary singular part. The antisymmetric part
 matches the causal propagator only modulo a smooth local kernel; that kernel
-is not called a bisolution while smooth equation defects remain. Global exact
+is not called a bisolution while smooth equation defects remain. The
+`(-,+,+,+)` signature, `E=G_ret-G_adv`, `+i0 Delta_t` orientation, and
+graded-CCR sign are fixed by an exact flat-space normalization witness. The
+analytic JSON artifacts are theorem-instantiation ledgers, not self-declared
+independent proofs. Global exact
 bisolution correction, exact graded CCR normalization, stationary state
 selection, zero-frequency covariance, off-shell Krein policy, and positivity
 on BRST observables remain open. The next gate transports only this local

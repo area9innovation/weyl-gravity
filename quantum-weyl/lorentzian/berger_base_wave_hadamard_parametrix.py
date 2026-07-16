@@ -20,12 +20,13 @@ GATE = HERE / "certificates/BERGER_HADAMARD_CONSTRUCTION_GATE.json"
 CAUSAL = HERE / "certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json"
 LOWER = HERE / "certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT.json"
 COMPANION = HERE / "certificates/BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT.json"
-PROOF_DIR = HERE / "generated/berger_base_wave_hadamard_parametrix"
-PROOF_PATHS = {
-    "operator_inventory": PROOF_DIR / "operator_inventory.json",
-    "local_hadamard_recursion": PROOF_DIR / "local_hadamard_recursion.json",
-    "microlocal_spectrum": PROOF_DIR / "microlocal_spectrum.json",
-    "stationarity_zero_modes": PROOF_DIR / "stationarity_zero_modes.json",
+ARTIFACT_DIR = HERE / "generated/berger_base_wave_hadamard_parametrix"
+ARTIFACT_PATHS = {
+    "operator_inventory": ARTIFACT_DIR / "operator_inventory.json",
+    "local_hadamard_recursion": ARTIFACT_DIR / "local_hadamard_recursion.json",
+    "microlocal_spectrum": ARTIFACT_DIR / "microlocal_spectrum.json",
+    "stationarity_zero_modes": ARTIFACT_DIR / "stationarity_zero_modes.json",
+    "flat_space_normalization": ARTIFACT_DIR / "flat_space_normalization.json",
 }
 
 
@@ -41,7 +42,11 @@ def _dependency(path: Path) -> dict[str, str]:
 def _artifact(path: Path, payload: dict[str, Any]) -> dict[str, str]:
     body = (json.dumps(payload, indent=2, sort_keys=True) + "\n").encode()
     return {
-        "artifact_type": "JSON_ANALYTIC_PROOF",
+        "artifact_type": (
+            "JSON_FLAT_NORMALIZATION_WITNESS"
+            if payload.get("artifact_role") == "CONVENTION_NORMALIZATION_WITNESS"
+            else "JSON_THEOREM_INSTANTIATION_LEDGER"
+        ),
         "path": str(path.relative_to(ROOT)),
         "sha256": hashlib.sha256(body).hexdigest(),
     }
@@ -81,15 +86,42 @@ def _load_inputs() -> tuple[dict[str, Any], ...]:
     return gate, causal, lower, companion
 
 
-def proof_payloads() -> dict[str, dict[str, Any]]:
+def _flat_sign_checks(signs: dict[str, int]) -> dict[str, bool]:
+    """Exact normalized sign checks; no distributional theorem is simulated."""
+
+    covector_time = signs["positive_frequency_covector_time"]
+    vector_time = signs["metric_inverse_time"] * covector_time
+    characteristic = (
+        signs["metric_inverse_time"] * covector_time * covector_time
+        + signs["spatial_covector_norm_squared"]
+    )
+    return {
+        "positive_frequency_covector_sharp_is_future": vector_time > 0,
+        "positive_frequency_covector_is_null": characteristic == 0,
+        "i0_shift_damps_positive_energy_fourier_modes": (
+            signs["epsilon_time_coefficient"] > 0 and covector_time < 0
+        ),
+        "retarded_minus_advanced_matches_Wightman_antisymmetry": (
+            signs["Wightman_antisymmetry_relative_to_standard_wave_E"]
+            == signs["E_ret_minus_adv_relative_to_standard_wave_E"]
+        ),
+        "operator_and_causal_propagator_signs_match": (
+            signs["P_relative_to_standard_wave"]
+            == signs["E_ret_minus_adv_relative_to_standard_wave_E"]
+        ),
+    }
+
+
+def theorem_instantiation_payloads() -> dict[str, dict[str, Any]]:
     common = {
         "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
         "spacetime": "M=R x Berger(S3), dimension 4, stationary and globally hyperbolic",
     }
-    return {
+    payloads = {
         "operator_inventory": {
             "schema": "quantum-weyl-berger-base-wave-operator-inventory-v1",
             "result_id": "BERGER_BASE_WAVE_OPERATOR_INVENTORY",
+            "artifact_role": "THEOREM_INSTANTIATION_LEDGER",
             **common,
             "operators": [
                 {
@@ -123,6 +155,7 @@ def proof_payloads() -> dict[str, dict[str, Any]]:
         "local_hadamard_recursion": {
             "schema": "quantum-weyl-berger-local-hadamard-recursion-v1",
             "result_id": "BERGER_LOCAL_HADAMARD_RECURSION",
+            "artifact_role": "THEOREM_INSTANTIATION_LEDGER",
             **common,
             "world_function_convention": "Gamma is the signed squared geodesic distance and sigma=Gamma/2",
             "epsilon_prescription": "sigma_epsilon=sigma+2 i epsilon (t(x)-t(x'))+epsilon^2, epsilon downarrow 0",
@@ -139,6 +172,7 @@ def proof_payloads() -> dict[str, dict[str, Any]]:
         "microlocal_spectrum": {
             "schema": "quantum-weyl-berger-base-wave-microlocal-spectrum-v1",
             "result_id": "BERGER_BASE_WAVE_MICROLOCAL_SPECTRUM",
+            "artifact_role": "THEOREM_INSTANTIATION_LEDGER",
             **common,
             "wavefront_set": "WF(H_P^+)={(x,k;x',-k'): (x,k)~(x',k'), k future-directed null}",
             "subset_argument": "boundary values of sigma_epsilon^-1 and log(sigma_epsilon) have only positive-frequency null covectors; multiplication by smooth bundle coefficients does not enlarge WF",
@@ -154,6 +188,7 @@ def proof_payloads() -> dict[str, dict[str, Any]]:
         "stationarity_zero_modes": {
             "schema": "quantum-weyl-berger-base-wave-stationarity-zero-modes-v1",
             "result_id": "BERGER_BASE_WAVE_STATIONARITY_ZERO_MODES",
+            "artifact_role": "THEOREM_INSTANTIATION_LEDGER",
             **common,
             "generator": "D=e0=partial_t",
             "stationarity": "(L_D tensor 1+1 tensor L_D)H_P^+=0 modulo smooth local terms",
@@ -162,13 +197,44 @@ def proof_payloads() -> dict[str, dict[str, Any]]:
             "positivity_policy": "not decided by a local parametrix",
             "globalization_boundary": "no global exact bisolution, quasifree state, complex structure or covariance operator is constructed at this stage",
         },
+        "flat_space_normalization": {
+            "schema": "quantum-weyl-berger-flat-hadamard-normalization-v1",
+            "result_id": "BERGER_FLAT_HADAMARD_NORMALIZATION",
+            "artifact_role": "CONVENTION_NORMALIZATION_WITNESS",
+            "signature": "(-,+,+,+)",
+            "time_orientation": "partial_t is future-directed",
+            "operator": "P=Box_eta=-partial_t^2+Delta_spatial",
+            "world_function": "sigma=(-Delta_t^2+|Delta_x|^2)/2",
+            "epsilon_prescription": "sigma_epsilon=sigma+2 i epsilon Delta_t+epsilon^2, epsilon downarrow 0",
+            "regulator_comparison": "the displayed regulator is homotopic through positive i0 regulators to 1/2[-(Delta_t-2 i epsilon)^2+|Delta_x|^2] and has the same boundary value and wavefront orientation",
+            "positive_frequency_kernel": "W_0^+=integral d^3p/((2 pi)^3 2|p|) exp(-i|p|Delta_t+i p.Delta_x)",
+            "positive_frequency_covector": "k=(-|p|,p), so k^sharp=(|p|,p) is future-directed",
+            "green_convention": "G_ret has future support; G_adv has past support; E=G_ret-G_adv",
+            "flat_causal_kernel": "E=-sgn(Delta_t) delta(Delta_t^2-|Delta_x|^2)/(2 pi) for P=-partial_t^2+Delta_spatial",
+            "graded_CCR": "W_0^+(x,x')-W_0^+(x',x)=i E(x,x')",
+            "normalized_sign_data": {
+                "metric_inverse_time": -1,
+                "positive_frequency_covector_time": -1,
+                "spatial_covector_norm_squared": 1,
+                "epsilon_time_coefficient": 1,
+                "P_relative_to_standard_wave": -1,
+                "Wightman_antisymmetry_relative_to_standard_wave_E": -1,
+                "E_ret_minus_adv_relative_to_standard_wave_E": -1,
+            },
+            "exact_sign_checks": {},
+            "scope": "flat scalar normalization tensored with the fibre identity; fixes conventions but does not construct the curved smooth completion",
+        },
     }
+    flat = payloads["flat_space_normalization"]
+    flat["exact_sign_checks"] = _flat_sign_checks(flat["normalized_sign_data"])
+    return payloads
 
 
 @lru_cache(maxsize=1)
 def evaluate() -> dict[str, Any]:
     gate, causal, lower, companion = _load_inputs()
-    proofs = proof_payloads()
+    artifacts = theorem_instantiation_payloads()
+    flat = artifacts["flat_space_normalization"]
     result = {
         "schema": "quantum-weyl-berger-base-wave-hadamard-parametrix-v1",
         "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
@@ -214,16 +280,19 @@ def evaluate() -> dict[str, Any]:
             "inverse_spatial_laplacian": False,
             "mode_projector": False,
         },
-        "proof_artifacts": {
-            name: _artifact(PROOF_PATHS[name], payload)
-            for name, payload in proofs.items()
+        "theorem_instantiation_artifacts": {
+            name: _artifact(ARTIFACT_PATHS[name], payload)
+            for name, payload in artifacts.items()
         },
-        "exact_checks": {
+        "verified_checks": {
             "normally_hyperbolic_operator_inventory": True,
             "four_dimensional_Hadamard_transport_recursion": True,
             "left_parametrix_modulo_smooth": True,
             "right_parametrix_modulo_smooth": True,
             "positive_frequency_wavefront_set": True,
+            "flat_space_i0_C_plus_and_CCR_normalization": all(
+                flat["exact_sign_checks"].values()
+            ),
             "typed_adjoint_reversal_modulo_smooth": True,
             "D_stationary_singular_part": True,
             "zero_modes_not_inverted": True,
@@ -246,7 +315,7 @@ def evaluate() -> dict[str, Any]:
             "lower_by_two_result_id": lower["result_id"],
             "companion_result_id": companion["result_id"],
         },
-        "claim_boundary": "Certifies the universal local stationary Hadamard parametrices and their positive-frequency wavefront relation for the tensor rough wave and both ghost-wave factors. The equation defects and adjoint/CCR identities are smooth, as appropriate for a parametrix. No smooth global completion, exact bisolution, zero-mode choice, positivity/Krein policy, 26- or 54-row BRST covariance, renormalized product, QME or quantum state is claimed.",
+        "claim_boundary": "Instantiates the standard local vector-bundle Hadamard-parametrix theorem for the tensor rough wave and both ghost-wave factors, and fixes the repository i0/C-plus/CCR orientation with an exact flat-space sign witness. The equation defects and adjoint/CCR remainders are smooth, as appropriate for a parametrix. No smooth global completion, exact bisolution, zero-mode choice, positivity/Krein policy, 26- or 54-row BRST covariance, renormalized product, QME or quantum state is claimed.",
     }
     validate(result)
     return result
@@ -263,7 +332,7 @@ def validate(result: dict[str, Any]) -> None:
         or result.get("next_gate") != "BERGER_TYPED_COMPANION_MOLLER_TRANSPORT"
     ):
         raise ValueError("base-wave Hadamard parametrix identity drifted")
-    if not all(result.get("exact_checks", {}).values()):
+    if not all(result.get("verified_checks", {}).values()):
         raise ValueError("base-wave analytic check dropped")
     if set(result.get("global_completion_obligations", {}).values()) != {"OPEN"}:
         raise ValueError("global Hadamard completion was over-promoted")

@@ -81,6 +81,9 @@ BERGER_CAUSAL_CHAIN_V2_PATH = (
 BERGER_HADAMARD_GATE_PATH = (
     QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_HADAMARD_CONSTRUCTION_GATE.json"
 )
+BERGER_BASE_HADAMARD_PARAMETRIX_PATH = (
+    QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX.json"
+)
 BERGER_REDUCED_CARTAN_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json"
 )
@@ -355,6 +358,9 @@ def build_certificate() -> dict[str, Any]:
     )
     berger_hadamard_gate = json.loads(
         BERGER_HADAMARD_GATE_PATH.read_text(encoding="utf-8")
+    )
+    berger_base_hadamard_parametrix = json.loads(
+        BERGER_BASE_HADAMARD_PARAMETRIX_PATH.read_text(encoding="utf-8")
     )
     berger_reduced_cartan = json.loads(
         BERGER_REDUCED_CARTAN_PATH.read_text(encoding="utf-8")
@@ -815,6 +821,33 @@ def build_certificate() -> dict[str, Any]:
     ):
         raise ValueError("Berger Hadamard construction gate drifted or was over-promoted")
     if (
+        berger_base_hadamard_parametrix.get("result_id")
+        != "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX"
+        or berger_base_hadamard_parametrix.get("result_state")
+        != "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN"
+        or berger_base_hadamard_parametrix.get("dependency_refs", {})
+        .get("construction_gate", {})
+        .get("sha256")
+        != _sha256(BERGER_HADAMARD_GATE_PATH)
+        or berger_base_hadamard_parametrix.get("verified_checks", {}).get(
+            "flat_space_i0_C_plus_and_CCR_normalization"
+        )
+        is not True
+        or berger_base_hadamard_parametrix.get("claim_flags", {}).get(
+            "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX"
+        )
+        is not True
+        or berger_base_hadamard_parametrix.get("claim_flags", {}).get(
+            "BERGER_HADAMARD_DATA"
+        )
+        is not False
+        or berger_base_hadamard_parametrix.get("claim_flags", {}).get("QUANTUM_CLAIM")
+        is not False
+        or berger_base_hadamard_parametrix.get("next_gate")
+        != "BERGER_TYPED_COMPANION_MOLLER_TRANSPORT"
+    ):
+        raise ValueError("Berger base Hadamard parametrix drifted or was over-promoted")
+    if (
         berger_retained_26_q2_transfer.get("schema")
         != "quantum-weyl-berger-retained-26-q2-transfer-v1"
         or berger_retained_26_q2_transfer.get("result_state")
@@ -979,7 +1012,7 @@ def build_certificate() -> dict[str, Any]:
     source_manifest = _source_manifest()
     return {
         "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-        "result_state": "CAUSAL_CHAIN_AND_D_CARTAN_IMPORTED_THROUGH_ARITY_TWO_Q3_AND_HADAMARD_OPEN",
+        "result_state": "CAUSAL_CHAIN_D_CARTAN_ARITY_TWO_AND_BASE_HADAMARD_PARAMETRIX_IMPORTED_Q3_AND_GLOBAL_HADAMARD_OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "classical_snapshot_commit": snapshot["classical_commit"],
         "classical_freeze_gate": snapshot["gate_a_status"],
@@ -1100,7 +1133,7 @@ def build_certificate() -> dict[str, Any]:
             {"stage": "HT3", "deliverable": "higher-arity and particle-filtration obstruction ledger", "status": "NOT_COMPUTED"},
             {"stage": "HT4", "deliverable": "cyclic minimal action and formal moduli interpretation", "status": "NOT_COMPUTED"},
             {"stage": "N-G5", "deliverable": "Einstein projection and one helicity/twistor amplitude fixture", "status": "REFERENCE_PARITY_PAIR_AND_SETTING_DEFECT_NORMALIZATION_GATES_READY_PHYSICAL_Q2_PROJECTION_BLOCKED"},
-            {"stage": "HTH", "deliverable": "construct BRST-compatible distributional Hadamard two-point function", "status": "CAUSAL_COMMUTATOR_READY_BASE_WAVE_HADAMARD_PARAMETRIX_NEXT"},
+            {"stage": "HTH", "deliverable": "construct BRST-compatible distributional Hadamard two-point function", "status": "BASE_WAVE_HADAMARD_PARAMETRIX_CERTIFIED_TYPED_COMPANION_MOLLER_TRANSPORT_NEXT"},
             {"stage": "HTQ", "deliverable": "transfer restored quantum Q corrections", "status": "BLOCKED_PENDING_QME_RESTORED"},
         ],
         "provenance": {
@@ -1223,6 +1256,10 @@ def build_certificate() -> dict[str, Any]:
             "berger_hadamard_construction_gate_sha256": _sha256(
                 BERGER_HADAMARD_GATE_PATH
             ),
+            "berger_base_hadamard_parametrix_certificate": "quantum-weyl/lorentzian/certificates/BERGER_BASE_WAVE_HADAMARD_PARAMETRIX.json",
+            "berger_base_hadamard_parametrix_sha256": _sha256(
+                BERGER_BASE_HADAMARD_PARAMETRIX_PATH
+            ),
             "berger_first_arity_two_cartan_verdict_certificate": "quantum-weyl/transfer/certificates/BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json",
             "berger_first_arity_two_cartan_verdict_sha256": _sha256(
                 BERGER_REDUCED_CARTAN_PATH
@@ -1270,7 +1307,8 @@ def build_certificate() -> dict[str, Any]:
             "The Berger 54-row q2 arrival adapter fixes and mutation-tests the portable bilinear PBW structure and binds it to the authoritative unary, D, contraction, and pairing hashes. The complete classical tensor is now independently imported, and the specialized exact Q(sqrt(10)) backend replays q1/q2, D/q2, and odd-Darboux cyclicity coefficientwise. Full ell2 transfer and Cartan execution remain absent.",
             "The bare full-dimensional unary Cartan problem is exactly obstructed on the local 26/54-row complex. The repaired causal extension now supplies advanced and retarded Green homotopies on all 26 and 54 rows and a cyclic two-sided-causal D-Cartan contraction through arity two; arity three remains open.",
             "The principal-compatible raw endpoint, companion construction, repaired Volterra theorem, 26/54-row causal chain, and cyclic D-Cartan completion are imported in the v2 chain. These classical causal results do not supply Hadamard data, renormalized products, QME restoration, or a quantum claim.",
-            "The Hadamard construction gate consumes the v2 causal commutator but keeps reduced positive-frequency/Krein ledgers separate from a distributional 54-row covariance; the base rough-wave parametrix is next.",
+            "The Hadamard construction gate consumes the v2 causal commutator and keeps reduced positive-frequency/Krein ledgers separate from a distributional 54-row covariance; its original base-parametrix next gate is superseded by the landed input recorded next.",
+            "The base tensor/ghost Hadamard singularity is now instantiated with a flat-space i0/C-plus/CCR normalization witness. It remains a local parametrix modulo smooth kernels; typed companion transport, global completion, BRST covariance, zero modes, and positivity remain open.",
             "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
             "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
             "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
@@ -1302,7 +1340,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: CAUSAL CHAIN READY THROUGH ARITY TWO; Q3/HADAMARD OPEN")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: BASE HADAMARD PARAMETRIX IMPORTED; Q3/GLOBAL HADAMARD OPEN")
     return 0
 
 

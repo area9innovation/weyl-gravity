@@ -2,7 +2,7 @@
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`, `LORENTZIAN-CAUSAL`
 
-Result state: `CAUSAL_CHAIN_AND_D_CARTAN_IMPORTED_THROUGH_ARITY_TWO_Q3_AND_HADAMARD_OPEN`
+Result state: `CAUSAL_CHAIN_D_CARTAN_ARITY_TWO_AND_BASE_HADAMARD_PARAMETRIX_IMPORTED_Q3_AND_GLOBAL_HADAMARD_OPEN`
 
 ## Established
 
@@ -93,6 +93,13 @@ gauge-fixed rows; and the cyclic two-sided-causal D-Cartan contraction is
 certified through arity two. Hadamard data, arity three, renormalized products,
 and QME restoration remain separate open gates.
 
+The base tensor/ghost Hadamard parametrix is now certified locally. Its
+theorem-instantiation ledgers are paired with an exact flat-space witness for
+the `(-,+,+,+)`, `E=G_ret-G_adv`, `C^+`, and graded-CCR sign conventions.
+Typed companion/Møller transport is next; global exact completion, BRST
+covariance, zero-frequency covariance, Krein policy, and positivity remain
+open.
+
 ND3 additionally implements the next Cartan recurrence.  It retains the
 direct `[q3,iota_D]` and exchange `[q2,iota_D^(2)]` tensors separately, checks
 the arity-three `Q^2`, Cartan, and `D` identities, and returns either an exact
@@ -136,7 +143,7 @@ transferred before `QME_RESTORED`.
 | HT2 | Compute `ell_3`; dynamical/topological mixing and centrality ledgers | Arity-three Cartan recurrence engine ready; physical `q3` and mixing input blocked |
 | HT3 | Higher arities and particle-filtration spectral sequence | Not computed |
 | HT4 | Cyclic minimal action and formal moduli/deformation interpretation | Not computed |
-| HTH | BRST-compatible distributional Hadamard two-point function | Causal commutator ready; base rough-wave Hadamard parametrix next |
+| HTH | BRST-compatible distributional Hadamard two-point function | Base tensor/ghost parametrix certified with flat normalization witness; typed companion/Møller transport next |
 | HTQ | Transfer renormalized corrections | Blocked pending `QME_RESTORED` |
 
 ## Verification receipt

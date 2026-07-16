@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 
 from .berger_base_wave_hadamard_parametrix import (
-    HERE, PROOF_PATHS, evaluate, proof_payloads,
+    ARTIFACT_PATHS, HERE, evaluate, theorem_instantiation_payloads,
 )
 
 
@@ -26,8 +26,9 @@ def _text(payload: object) -> str:
 
 def build_certificate() -> tuple[dict, dict[str, dict]]:
     result = evaluate().copy()
-    proofs = proof_payloads()
+    artifacts = theorem_instantiation_payloads()
     sources = (
+        "README.md",
         "berger_base_wave_hadamard_parametrix.py",
         "berger_base_wave_hadamard_parametrix_certificate.py",
         "verify_berger_base_wave_hadamard_parametrix.py",
@@ -43,7 +44,7 @@ def build_certificate() -> tuple[dict, dict[str, dict]]:
             json.dumps(manifest, sort_keys=True, separators=(",", ":")).encode()
         ).hexdigest(),
     }
-    return result, proofs
+    return result, artifacts
 
 
 def main() -> int:
@@ -51,19 +52,19 @@ def main() -> int:
     parser.add_argument("--emit", action="store_true")
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    result, proofs = build_certificate()
+    result, artifacts = build_certificate()
     if args.emit:
-        for name, payload in proofs.items():
-            path = PROOF_PATHS[name]
+        for name, payload in artifacts.items():
+            path = ARTIFACT_PATHS[name]
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(_text(payload))
         OUTPUT.write_text(_text(result))
     if args.check:
         if not OUTPUT.exists() or OUTPUT.read_text() != _text(result):
             raise SystemExit(f"stale base-wave certificate: {OUTPUT}")
-        for name, payload in proofs.items():
-            if PROOF_PATHS[name].read_text() != _text(payload):
-                raise SystemExit(f"stale analytic proof: {name}")
+        for name, payload in artifacts.items():
+            if ARTIFACT_PATHS[name].read_text() != _text(payload):
+                raise SystemExit(f"stale theorem-instantiation artifact: {name}")
     print("BERGER BASE-WAVE HADAMARD PARAMETRIX: PASS")
     return 0
 

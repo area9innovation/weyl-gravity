@@ -6,7 +6,7 @@
   "required": [
     "schema", "result_id", "result_state", "lifecycle_layer",
     "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "operator_family",
-    "parametrix_theorem", "global_completion_obligations", "scope_boundary", "proof_artifacts", "exact_checks",
+    "parametrix_theorem", "global_completion_obligations", "scope_boundary", "theorem_instantiation_artifacts", "verified_checks",
     "claim_flags", "next_gate", "provenance", "claim_boundary"
   ],
   "properties": {
@@ -66,23 +66,25 @@
         "mode_projector": false
       }
     },
-    "proof_artifacts": {
+    "theorem_instantiation_artifacts": {
       "type": "object", "additionalProperties": false,
-      "required": ["operator_inventory", "local_hadamard_recursion", "microlocal_spectrum", "stationarity_zero_modes"],
+      "required": ["operator_inventory", "local_hadamard_recursion", "microlocal_spectrum", "stationarity_zero_modes", "flat_space_normalization"],
       "properties": {
-        "operator_inventory": {"$ref": "#/$defs/artifact"},
-        "local_hadamard_recursion": {"$ref": "#/$defs/artifact"},
-        "microlocal_spectrum": {"$ref": "#/$defs/artifact"},
-        "stationarity_zero_modes": {"$ref": "#/$defs/artifact"}
+        "operator_inventory": {"$ref": "#/$defs/theoremLedger"},
+        "local_hadamard_recursion": {"$ref": "#/$defs/theoremLedger"},
+        "microlocal_spectrum": {"$ref": "#/$defs/theoremLedger"},
+        "stationarity_zero_modes": {"$ref": "#/$defs/theoremLedger"},
+        "flat_space_normalization": {"$ref": "#/$defs/flatWitness"}
       }
     },
-    "exact_checks": {
+    "verified_checks": {
       "const": {
         "normally_hyperbolic_operator_inventory": true,
         "four_dimensional_Hadamard_transport_recursion": true,
         "left_parametrix_modulo_smooth": true,
         "right_parametrix_modulo_smooth": true,
         "positive_frequency_wavefront_set": true,
+        "flat_space_i0_C_plus_and_CCR_normalization": true,
         "typed_adjoint_reversal_modulo_smooth": true,
         "D_stationary_singular_part": true,
         "zero_modes_not_inverted": true,
@@ -130,10 +132,22 @@
       "type": "object", "additionalProperties": false,
       "required": ["artifact_type", "path", "sha256"],
       "properties": {
-        "artifact_type": {"const": "JSON_ANALYTIC_PROOF"},
+        "artifact_type": {"type": "string"},
         "path": {"type": "string", "minLength": 1},
         "sha256": {"$ref": "#/$defs/hash"}
       }
+    },
+    "theoremLedger": {
+      "allOf": [
+        {"$ref": "#/$defs/artifact"},
+        {"type": "object", "properties": {"artifact_type": {"const": "JSON_THEOREM_INSTANTIATION_LEDGER"}}}
+      ]
+    },
+    "flatWitness": {
+      "allOf": [
+        {"$ref": "#/$defs/artifact"},
+        {"type": "object", "properties": {"artifact_type": {"const": "JSON_FLAT_NORMALIZATION_WITNESS"}}}
+      ]
     }
   }
 }

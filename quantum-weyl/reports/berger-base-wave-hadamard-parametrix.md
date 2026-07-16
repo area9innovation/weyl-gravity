@@ -39,6 +39,27 @@ stationary under the helical generator \(D=e_0\), because the background,
 connections, world function, transport recursion and \(i0\) prescription are
 all invariant under simultaneous time translation.
 
+The sign and time-orientation dictionary is fixed by a separate flat
+normalization witness. It uses signature `(-,+,+,+)`, future vector
+`partial_t`, operator `P=-partial_t^2+Delta_spatial`, future null covector
+`k=(-|p|,p)`, and `E=G_ret-G_adv`. The positive-frequency Fourier kernel
+then has the chosen `+i0 Delta_t` boundary orientation and satisfies
+
+\[
+W_0^+(x,x')-W_0^+(x',x)=iE(x,x').
+\]
+
+Exact integer sign checks reproduce nullness, future orientation, Fourier
+damping, the operator/causal-propagator sign reversal, and the graded-CCR
+sign. This witness fixes conventions; it does not replace the curved
+vector-bundle microlocal theorem.
+
+The generated analytic JSON objects are therefore identified as
+theorem-instantiation ledgers rather than independent proofs. They bind the
+standard theorem hypotheses, formulas, references, and repository operator
+inventory. The flat convention artifact is separately typed as a
+normalization witness.
+
 This is not yet a global Hadamard state.  The smooth bisolution completing the
 parametrix remains undetermined, and that smooth part is exactly where the
 zero-frequency choice, positivity/Krein policy and global BRST Ward identities
@@ -53,3 +74,15 @@ silently promote a parametrix into an exact state.  The later global-completion
 gate must separately construct the exact smooth correction, impose the graded
 CCR, choose the zero-frequency covariance, state the off-shell Krein policy,
 and test positivity on BRST observables.
+
+## Verification receipt
+
+| Tier | Command | Elapsed | Result |
+|---:|---|---:|---|
+| 0 | Python compilation, JSON parsing, and scoped `git diff --check` | 0.1 s | PASS |
+| 0 | Strict AJV Draft 2020-12 validation of the base-parametrix certificate | 1.52 s | PASS |
+| 2 | Causal-v2, Hadamard-gate, base-parametrix, ND3, and nonlinear aggregate checks plus 19 focused tests | 2.34 s | PASS |
+
+Tier 3 was not run: this hardens convention normalization and certificate
+routing without changing a classical operator, shared core algebra, theorem
+lifecycle, freeze tag, or release boundary.

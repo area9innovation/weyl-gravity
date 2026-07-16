@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "Certifies the universal local stationary Hadamard parametrices and their positive-frequency wavefront relation for the tensor rough wave and both ghost-wave factors. The equation defects and adjoint/CCR identities are smooth, as appropriate for a parametrix. No smooth global completion, exact bisolution, zero-mode choice, positivity/Krein policy, 26- or 54-row BRST covariance, renormalized product, QME or quantum state is claimed.",
+  "claim_boundary": "Instantiates the standard local vector-bundle Hadamard-parametrix theorem for the tensor rough wave and both ghost-wave factors, and fixes the repository i0/C-plus/CCR orientation with an exact flat-space sign witness. The equation defects and adjoint/CCR remainders are smooth, as appropriate for a parametrix. No smooth global completion, exact bisolution, zero-mode choice, positivity/Krein policy, 26- or 54-row BRST covariance, renormalized product, QME or quantum state is claimed.",
   "claim_flags": {
     "BERGER_26_ROW_BRST_HADAMARD": false,
     "BERGER_54_ROW_BRST_HADAMARD": false,
@@ -32,17 +32,6 @@
   "dependency_tags": [
     "LORENTZIAN-CAUSAL"
   ],
-  "exact_checks": {
-    "D_stationary_singular_part": true,
-    "four_dimensional_Hadamard_transport_recursion": true,
-    "global_state_not_overpromoted": true,
-    "left_parametrix_modulo_smooth": true,
-    "normally_hyperbolic_operator_inventory": true,
-    "positive_frequency_wavefront_set": true,
-    "right_parametrix_modulo_smooth": true,
-    "typed_adjoint_reversal_modulo_smooth": true,
-    "zero_modes_not_inverted": true
-  },
   "global_completion_obligations": {
     "BRST_observable_positivity": "OPEN",
     "exact_graded_CCR_normalization": "OPEN",
@@ -75,42 +64,21 @@
     "right_equation": "P_(x')^sharp H_P^+ is smooth",
     "wavefront_set": "positive-frequency Hadamard relation C^+ with bundle polarizations"
   },
-  "proof_artifacts": {
-    "local_hadamard_recursion": {
-      "artifact_type": "JSON_ANALYTIC_PROOF",
-      "path": "quantum-weyl/lorentzian/generated/berger_base_wave_hadamard_parametrix/local_hadamard_recursion.json",
-      "sha256": "088a1087533d938c02aef3538da2798a83be8380c7022912ac92e79a1bc96d41"
-    },
-    "microlocal_spectrum": {
-      "artifact_type": "JSON_ANALYTIC_PROOF",
-      "path": "quantum-weyl/lorentzian/generated/berger_base_wave_hadamard_parametrix/microlocal_spectrum.json",
-      "sha256": "52ccddf96d9a7d22821ec2573e48b905dd145e3cb646f81418b9b13f9a7f8480"
-    },
-    "operator_inventory": {
-      "artifact_type": "JSON_ANALYTIC_PROOF",
-      "path": "quantum-weyl/lorentzian/generated/berger_base_wave_hadamard_parametrix/operator_inventory.json",
-      "sha256": "659b7f98b9bfbcb8739c87ede863828674d8dd0630d0f183527a5e2962ffcc59"
-    },
-    "stationarity_zero_modes": {
-      "artifact_type": "JSON_ANALYTIC_PROOF",
-      "path": "quantum-weyl/lorentzian/generated/berger_base_wave_hadamard_parametrix/stationarity_zero_modes.json",
-      "sha256": "4650a47ea7f9e1227a49502f24f3955ed6bb51f6c783301df77972cf082eede9"
-    }
-  },
   "provenance": {
     "causal_result_id": "BERGER_CAUSAL_CHAIN_V2_IMPORT",
     "companion_result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
     "gate_result_id": "BERGER_HADAMARD_CONSTRUCTION_GATE",
     "lower_by_two_result_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT",
     "source_manifest": {
-      "../reports/berger-base-wave-hadamard-parametrix.md": "6e1bdc3fbc0258a317b8b82683d5c2e10c22b14706d0c8392da08016d80aa41d",
-      "berger_base_wave_hadamard_parametrix.py": "3ae6a7e2fb2fe80eef3d73183e74d9f418b84af49885c74aa7dd5c8885328575",
-      "berger_base_wave_hadamard_parametrix_certificate.py": "e549cb6ea0cbe242718cd77db43e3c83a667892520d8df228b6f72f503b9e3a6",
-      "schema/berger-base-wave-hadamard-parametrix-v1.schema.json": "ed59c17729f2309e65d5f0018609837e326f7e13e9f6bec5de3c84207e578772",
-      "tests/test_berger_base_wave_hadamard_parametrix.py": "587a1679702577620a360f99cb6cc7215ca8121dcb514ba01e8b931a89a20afe",
-      "verify_berger_base_wave_hadamard_parametrix.py": "7de7bf39157a2c6a504799f15e645a4c6f80f6ef86e4cbcd57062d3420f8f0a8"
+      "../reports/berger-base-wave-hadamard-parametrix.md": "46de803784cfdd4afce5ffc47d1b23e4254c0cff6f2e872731758e0bf8b60962",
+      "README.md": "cf31d2d3ffac74172dce6c229d8e7e6557926c6b3adaa6bf04b94edb0e5bfce1",
+      "berger_base_wave_hadamard_parametrix.py": "e92ce20b41b2510bcf0efd1fc6d3cf0970b9d55363d89c6c4720576877b29085",
+      "berger_base_wave_hadamard_parametrix_certificate.py": "65966028598c8a1ac25a90810bbb85de6d8b37fce0be68e452c7e20186917a9e",
+      "schema/berger-base-wave-hadamard-parametrix-v1.schema.json": "06f4f9259f34473067539cc07eafddeccab978fd7f2a68d770e009f457c83be2",
+      "tests/test_berger_base_wave_hadamard_parametrix.py": "2cde42ef255c7df5c6c74b0cb7881bafd84bafb0220865bff92a1081a548d25f",
+      "verify_berger_base_wave_hadamard_parametrix.py": "5ff12a1f6cd2e8795007a93ad1941b4d08188f8741e7f0132f77809b7ff1f220"
     },
-    "source_manifest_sha256": "987e128e7f271114b232ad76335be28cac20711ca90f4322cbff9b5da9897295"
+    "source_manifest_sha256": "ad902eac3c677e140f32d8d1358fddf1b60d8f2d211bd31b9971f9b2c3750be0"
   },
   "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
   "result_state": "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN",
@@ -124,5 +92,44 @@
     "quasifree_state": false,
     "zero_mode_completion": false
   },
-  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "theorem_instantiation_artifacts": {
+    "flat_space_normalization": {
+      "artifact_type": "JSON_FLAT_NORMALIZATION_WITNESS",
+      "path": "quantum-weyl/lorentzian/generated/berger_base_wave_hadamard_parametrix/flat_space_normalization.json",
+      "sha256": "7b8e22d21a5975585da9c1f57d147f83a2319824e6e3aa7fc89cd74338cbc7a1"
+    },
+    "local_hadamard_recursion": {
+      "artifact_type": "JSON_THEOREM_INSTANTIATION_LEDGER",
+      "path": "quantum-weyl/lorentzian/generated/berger_base_wave_hadamard_parametrix/local_hadamard_recursion.json",
+      "sha256": "71b419a236c0f80325b42564ea41bd9f4cc1f4ee90c652073e0b8fd758e152ef"
+    },
+    "microlocal_spectrum": {
+      "artifact_type": "JSON_THEOREM_INSTANTIATION_LEDGER",
+      "path": "quantum-weyl/lorentzian/generated/berger_base_wave_hadamard_parametrix/microlocal_spectrum.json",
+      "sha256": "5bfe535b485b36141d4fe84556a49340aa8db19ad62f24d5455da802b5b84b42"
+    },
+    "operator_inventory": {
+      "artifact_type": "JSON_THEOREM_INSTANTIATION_LEDGER",
+      "path": "quantum-weyl/lorentzian/generated/berger_base_wave_hadamard_parametrix/operator_inventory.json",
+      "sha256": "a8bca9e3cbbc7b2a8f627ed46508c8c358f757d89a77a66b8b58161b6dbe0530"
+    },
+    "stationarity_zero_modes": {
+      "artifact_type": "JSON_THEOREM_INSTANTIATION_LEDGER",
+      "path": "quantum-weyl/lorentzian/generated/berger_base_wave_hadamard_parametrix/stationarity_zero_modes.json",
+      "sha256": "49f662b3da02bd9882634e7868927bc92bf252b22b325b124da530d03992ed09"
+    }
+  },
+  "verified_checks": {
+    "D_stationary_singular_part": true,
+    "flat_space_i0_C_plus_and_CCR_normalization": true,
+    "four_dimensional_Hadamard_transport_recursion": true,
+    "global_state_not_overpromoted": true,
+    "left_parametrix_modulo_smooth": true,
+    "normally_hyperbolic_operator_inventory": true,
+    "positive_frequency_wavefront_set": true,
+    "right_parametrix_modulo_smooth": true,
+    "typed_adjoint_reversal_modulo_smooth": true,
+    "zero_modes_not_inverted": true
+  }
 }
