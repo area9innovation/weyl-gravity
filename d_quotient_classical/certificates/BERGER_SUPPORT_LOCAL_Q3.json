@@ -1,0 +1,473 @@
+{
+  "claim_boundary": "This theorem exports the complete arbitrary-input four-dimensional classical q3 and explicit L_D3=0 declaration on the frozen 54-row gauge-fixed Berger BV complex. It proves the arity-three L-infinity identity, graded symmetry, action cyclicity, and local D derivation exactly. It does not by itself solve the arity-three D-Cartan recurrence, provide a background-independent antifield package, or establish a quantum or Hadamard theorem.",
+  "claim_status": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_CLASSICAL_Q3",
+  "classical_ternary_q3": {
+    "Taylor_convention": "suspended-graded-symmetric-factorial-v1",
+    "chunk_count": 54,
+    "maximum_total_jet_order": 8,
+    "nonzero_rows": 12,
+    "payload_canonical_sha256": "199bba8c07073b9df85c77dcc88c403bff8be467a7dd8d988cb7427232725506",
+    "payload_file_sha256": "a0ae9ba202b1f6b35c48c3506417c2251df012324cadbdbea3aa389a4c2d8bfb",
+    "payload_format": "strict-json-manifest-plus-deterministic-gzip-strict-json-row-chunks",
+    "payload_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3_PAYLOAD.json",
+    "support_local": true,
+    "term_count": 5812130,
+    "total_rows": 54
+  },
+  "dependency_refs": {
+    "gauge_fixed_classical_unary_q1": {
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "local_D_action": {
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    },
+    "support_local_classical_q2": {
+      "result_id": "BERGER_SUPPORT_LOCAL_Q2",
+      "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "derivation": {
+    "background_fixture": "q=9/40, alpha_B=5, rho_bar=1, omega=3/4, lambda=119/480",
+    "coefficient_field": "Q(sqrt(10))",
+    "gauge_fixed_rows": 54,
+    "method": "mixed third variation on three arbitrary four-dimensional jets",
+    "not_fitted_to_residual_data": true,
+    "raw_minimal_rows": 34,
+    "raw_support_theorem": "only the twelve Euler-density rows have q3 because the nonlinear gauge action is field-linear and the ghost bracket is field-independent",
+    "source": "covariant Weyl-plus-positive-clock action and nonlinear Diff semidirect Weyl BV master action"
+  },
+  "exact_checks": {
+    "D_q3_derivation_termwise": true,
+    "L_D3_explicitly_zero_generator_action_is_linear": true,
+    "all_54_output_rows_ledgered": true,
+    "canonical_clock_transport_preserves_arity_three_identity": true,
+    "canonical_gauge_fermion_transport_preserves_arity_three_identity": true,
+    "q1_q3_plus_q2_q2_arity_three_nilpotency_raw_coefficientwise": true,
+    "q3_koszul_symmetry_gauge_fixed_54_rows": true,
+    "q3_koszul_symmetry_raw_34_rows": true,
+    "quartic_action_cyclicity_raw_coefficientwise": true
+  },
+  "flags": {
+    "BERGER_ARITY_THREE_D_CARTAN_FULL_4D": false,
+    "BERGER_LOCAL_D_ACTION_EQUIVARIANT_AT_ARITY_THREE": true,
+    "CLASSICAL_SUPPORT_LOCAL_Q1_Q2_Q3_EXPORT": true,
+    "CLASSICAL_SUPPORT_LOCAL_Q3": true,
+    "GENERAL_LOCAL_ANTIFIELD_KOSZUL_TATE_EXPORT": false
+  },
+  "local_D_arity_three": {
+    "D_q3_derivation": true,
+    "L_D3": "ZERO",
+    "reason": "the helical generator acts linearly as the central invariant derivative e0 on dressed component coefficients"
+  },
+  "next_gates": [
+    "BERGER_ARITY_THREE_D_CARTAN_FULL_4D",
+    "GENERAL_LOCAL_ANTIFIELD_KOSZUL_TATE_EXPORT"
+  ],
+  "result_id": "BERGER_SUPPORT_LOCAL_Q3",
+  "row_layout": {
+    "all_rows_ledgered": true,
+    "component_rows": [
+      {
+        "degree": -1,
+        "index": 0,
+        "row_id": "c_spatial_1",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 1,
+        "row_id": "c_spatial_2",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 2,
+        "row_id": "c_spatial_3",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 3,
+        "row_id": "tau",
+        "sector": "minimal"
+      },
+      {
+        "degree": -1,
+        "index": 4,
+        "row_id": "sigma",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 5,
+        "row_id": "h_hat_00",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 6,
+        "row_id": "h_hat_01",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 7,
+        "row_id": "h_hat_02",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 8,
+        "row_id": "h_hat_03",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 9,
+        "row_id": "h_hat_11",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 10,
+        "row_id": "h_hat_12",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 11,
+        "row_id": "h_hat_13",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 12,
+        "row_id": "h_hat_22",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 13,
+        "row_id": "h_hat_23",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 14,
+        "row_id": "h_hat_33",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 15,
+        "row_id": "R",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 16,
+        "row_id": "Theta",
+        "sector": "minimal"
+      },
+      {
+        "degree": 0,
+        "index": 17,
+        "row_id": "b_diff_1",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 18,
+        "row_id": "b_diff_2",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 19,
+        "row_id": "b_diff_3",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 20,
+        "row_id": "b_tau",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 21,
+        "row_id": "b_sigma",
+        "sector": "nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 22,
+        "row_id": "bar_c_star_diff_1",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 23,
+        "row_id": "bar_c_star_diff_2",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 24,
+        "row_id": "bar_c_star_diff_3",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 25,
+        "row_id": "bar_c_star_tau",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 26,
+        "row_id": "bar_c_star_sigma",
+        "sector": "nonminimal_antighost_dual"
+      },
+      {
+        "degree": 1,
+        "index": 27,
+        "row_id": "h_hat_star_00",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 28,
+        "row_id": "h_hat_star_01",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 29,
+        "row_id": "h_hat_star_02",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 30,
+        "row_id": "h_hat_star_03",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 31,
+        "row_id": "h_hat_star_11",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 32,
+        "row_id": "h_hat_star_12",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 33,
+        "row_id": "h_hat_star_13",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 34,
+        "row_id": "h_hat_star_22",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 35,
+        "row_id": "h_hat_star_23",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 36,
+        "row_id": "h_hat_star_33",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 37,
+        "row_id": "R_star",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 38,
+        "row_id": "Theta_star",
+        "sector": "minimal"
+      },
+      {
+        "degree": 1,
+        "index": 39,
+        "row_id": "b_star_diff_1",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 40,
+        "row_id": "b_star_diff_2",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 41,
+        "row_id": "b_star_diff_3",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 42,
+        "row_id": "b_star_tau",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 43,
+        "row_id": "b_star_sigma",
+        "sector": "nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 44,
+        "row_id": "bar_c_diff_1",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 45,
+        "row_id": "bar_c_diff_2",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 46,
+        "row_id": "bar_c_diff_3",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 47,
+        "row_id": "bar_c_tau",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 48,
+        "row_id": "bar_c_sigma",
+        "sector": "nonminimal_antighost"
+      },
+      {
+        "degree": 2,
+        "index": 49,
+        "row_id": "c_spatial_star_1",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 50,
+        "row_id": "c_spatial_star_2",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 51,
+        "row_id": "c_spatial_star_3",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 52,
+        "row_id": "tau_star",
+        "sector": "minimal"
+      },
+      {
+        "degree": 2,
+        "index": 53,
+        "row_id": "sigma_star",
+        "sector": "minimal"
+      }
+    ],
+    "parities": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "total_rows": 54
+  },
+  "schema": "pure-weyl-berger-support-local-q3-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "tier_receipts": {
+    "cache_key": "b2a38e045826780f36b649d4acd3452924f89b21919cd197c06a66be0e75029e",
+    "publication_receipt_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3_TIER2_RECEIPT.json",
+    "publication_receipt_sha256": "194673b3bef5b6c4a4125ac5e8e8ad44b12d3279c125aba565f52189cff06a1d",
+    "raw_elapsed_seconds": 4225.175262,
+    "raw_receipt_sha256": "50b46da4ffcb49dc196c4872df67cc52db1816a5b1eb823062701910e26ecc3a",
+    "test_tier": 2,
+    "tier_3_not_run": "not a freeze, release, or paper-theorem promotion",
+    "transport_elapsed_seconds": 2627.243012,
+    "transport_receipt_sha256": "d957c2b0a0041e13f718c9ca8b01987b6118c16d633c3e2e172b28885a5c4a56",
+    "verify_elapsed_seconds": 7930.014515,
+    "verify_receipt_sha256": "3645cf075d9f9ac72f659642c15e30d4b505a7136fb1e925b128fadef966fbca"
+  }
+}

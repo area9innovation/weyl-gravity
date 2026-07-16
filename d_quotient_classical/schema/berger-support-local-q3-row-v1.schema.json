@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-support-local-q3-row-v1.json",
+  "title": "One exact sparse PBW output row of the 54-row Berger q3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "output", "terms"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-support-local-q3-row-v1"},
+    "output": {"type": "integer", "minimum": 0, "maximum": 53},
+    "terms": {"type": "array", "items": {"$ref": "#/$defs/term"}}
+  },
+  "$defs": {
+    "exactRational": {
+      "oneOf": [
+        {"type": "integer"},
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["numerator", "denominator"],
+          "properties": {
+            "numerator": {"type": "integer"},
+            "denominator": {"type": "integer", "not": {"const": 0}}
+          }
+        }
+      ]
+    },
+    "quadraticNumber": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rational", "sqrt10"],
+      "properties": {
+        "rational": {"$ref": "#/$defs/exactRational"},
+        "sqrt10": {"$ref": "#/$defs/exactRational"}
+      }
+    },
+    "multiindex": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {"type": "integer", "minimum": 0}
+    },
+    "term": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "prefixItems": [
+        {"type": "integer", "minimum": 0, "maximum": 53},
+        {"$ref": "#/$defs/multiindex"},
+        {"type": "integer", "minimum": 0, "maximum": 53},
+        {"$ref": "#/$defs/multiindex"},
+        {"type": "integer", "minimum": 0, "maximum": 53},
+        {"$ref": "#/$defs/multiindex"},
+        {"$ref": "#/$defs/quadraticNumber"}
+      ]
+    }
+  }
+}

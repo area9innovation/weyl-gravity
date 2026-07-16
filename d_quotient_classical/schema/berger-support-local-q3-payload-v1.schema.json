@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-support-local-q3-payload-v1.json",
+  "title": "Content-addressed row-chunk manifest for the 54-row Berger q3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "coefficient_field", "pbw_basis", "shape", "factorial_convention", "storage", "chunks"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-support-local-q3-payload-v1"},
+    "coefficient_field": {"const": "Q(sqrt(10))"},
+    "pbw_basis": {"type": "string", "minLength": 1},
+    "shape": {"const": [54, 54, 54, 54]},
+    "factorial_convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "storage": {"const": "deterministic-gzip-strict-json-row-chunks"},
+    "chunks": {
+      "type": "array", "minItems": 54, "maxItems": 54,
+      "items": {"$ref": "#/$defs/chunk"}
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "chunk": {
+      "type": "object", "additionalProperties": false,
+      "required": ["output", "path", "file_sha256", "canonical_sha256", "term_count", "maximum_total_jet_order"],
+      "properties": {
+        "output": {"type": "integer", "minimum": 0, "maximum": 53},
+        "path": {"type": "string", "minLength": 1},
+        "file_sha256": {"$ref": "#/$defs/sha256"},
+        "canonical_sha256": {"$ref": "#/$defs/sha256"},
+        "term_count": {"type": "integer", "minimum": 0},
+        "maximum_total_jet_order": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

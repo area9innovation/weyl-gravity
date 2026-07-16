@@ -19,7 +19,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from functools import lru_cache
-from itertools import product
+from itertools import permutations, product
+import os
 from pathlib import Path
 import sys
 from typing import Iterable
@@ -61,6 +62,9 @@ RHO_BAR, CLOCK_OMEGA, CLOCK_LAMBDA = sp.symbols(
     "rho_bar clock_omega clock_lambda", nonzero=True, real=True
 )
 FIELD_RANK = 12
+TAYLOR_ORDER = int(os.environ.get("BERGER_TAYLOR_ORDER", "2"))
+if TAYLOR_ORDER not in (2, 3):
+    raise ValueError("BERGER_TAYLOR_ORDER must be 2 or 3")
 
 
 @lru_cache(maxsize=None)
@@ -182,6 +186,152 @@ class BilinearOperator:
 BZERO = BilinearOperator()
 
 
+@dataclass(frozen=True)
+class TrilinearOperator:
+    """Scalar trilinear PBW operator on three twelve-field inputs.
+
+    The slots are kept ordered.  Graded symmetry is checked explicitly after
+    the raw BV operation has been assembled and after each canonical
+    transport; it is not silently imposed by the storage type.
+    """
+
+    terms: tuple[
+        tuple[
+            int,
+            tuple[int, ...],
+            int,
+            tuple[int, ...],
+            int,
+            tuple[int, ...],
+            sp.Expr,
+        ],
+        ...,
+    ] = ()
+
+    @staticmethod
+    def from_terms(terms: Iterable[tuple]) -> "TrilinearOperator":
+        combined: dict[tuple, sp.Expr] = {}
+        for first, first_word, second, second_word, third, third_word, coefficient in terms:
+            if coefficient == 0:
+                continue
+            for reduced_first, first_coefficient in _pbw_word(tuple(first_word)):
+                for reduced_second, second_coefficient in _pbw_word(tuple(second_word)):
+                    for reduced_third, third_coefficient in _pbw_word(tuple(third_word)):
+                        key = (
+                            first,
+                            reduced_first,
+                            second,
+                            reduced_second,
+                            third,
+                            reduced_third,
+                        )
+                        combined[key] = combined.get(key, sp.S.Zero) + (
+                            coefficient
+                            * first_coefficient
+                            * second_coefficient
+                            * third_coefficient
+                        )
+        normalized = []
+        for key, coefficient in sorted(combined.items()):
+            value = _simp(coefficient)
+            if value != 0:
+                normalized.append((*key, value))
+        return TrilinearOperator(tuple(normalized))
+
+    def __add__(self, other: "TrilinearOperator") -> "TrilinearOperator":
+        return TrilinearOperator.from_terms((*self.terms, *other.terms))
+
+    def __neg__(self) -> "TrilinearOperator":
+        return self.scale(-1)
+
+    def __sub__(self, other: "TrilinearOperator") -> "TrilinearOperator":
+        return self + (-other)
+
+    def scale(self, coefficient: sp.Expr) -> "TrilinearOperator":
+        return TrilinearOperator.from_terms(
+            (
+                first,
+                first_word,
+                second,
+                second_word,
+                third,
+                third_word,
+                coefficient * value,
+            )
+            for first, first_word, second, second_word, third, third_word, value in self.terms
+        )
+
+    def derivative(self, axis: int) -> "TrilinearOperator":
+        return TrilinearOperator.from_terms(
+            term
+            for first, first_word, second, second_word, third, third_word, coefficient in self.terms
+            for term in (
+                (first, (axis, *first_word), second, second_word, third, third_word, coefficient),
+                (first, first_word, second, (axis, *second_word), third, third_word, coefficient),
+                (first, first_word, second, second_word, third, (axis, *third_word), coefficient),
+            )
+        )
+
+    def permuted(self, order: tuple[int, int, int]) -> "TrilinearOperator":
+        return TrilinearOperator.from_terms(
+            (
+                (slots := (
+                    (first, first_word),
+                    (second, second_word),
+                    (third, third_word),
+                ))[order[0]][0],
+                slots[order[0]][1],
+                slots[order[1]][0],
+                slots[order[1]][1],
+                slots[order[2]][0],
+                slots[order[2]][1],
+                coefficient,
+            )
+            for first, first_word, second, second_word, third, third_word, coefficient in self.terms
+        )
+
+    def koszul_permuted(
+        self, order: tuple[int, int, int], parities: tuple[int, ...]
+    ) -> "TrilinearOperator":
+        terms = []
+        for first, first_word, second, second_word, third, third_word, coefficient in self.terms:
+            slots = (
+                (first, first_word),
+                (second, second_word),
+                (third, third_word),
+            )
+            exponent = 0
+            for left in range(3):
+                for right in range(left + 1, 3):
+                    if order[left] > order[right]:
+                        exponent += parities[slots[order[left]][0]] * parities[slots[order[right]][0]]
+            terms.append(
+                (
+                    slots[order[0]][0],
+                    slots[order[0]][1],
+                    slots[order[1]][0],
+                    slots[order[1]][1],
+                    slots[order[2]][0],
+                    slots[order[2]][1],
+                    (-1 if exponent % 2 else 1) * coefficient,
+                )
+            )
+        return TrilinearOperator.from_terms(terms)
+
+    @property
+    def maximum_total_order(self) -> int:
+        return max(
+            (
+                len(first_word) + len(second_word) + len(third_word)
+                for first, first_word, second, second_word, third, third_word, _ in self.terms
+            ),
+            default=-1,
+        )
+
+
+TZERO = TrilinearOperator()
+
+
 def _sum_linear(values: Iterable[LinearOperator]) -> LinearOperator:
     output = LinearOperator()
     for value in values:
@@ -190,10 +340,17 @@ def _sum_linear(values: Iterable[LinearOperator]) -> LinearOperator:
 
 
 def _sum_bilinear(values: Iterable[BilinearOperator]) -> BilinearOperator:
-    output = BZERO
-    for value in values:
-        output = output + value
-    return output
+    return BilinearOperator.from_terms(
+        term for value in values for term in value.terms
+    )
+
+
+def _sum_trilinear(values: Iterable[TrilinearOperator]) -> TrilinearOperator:
+    # Normalize once.  Repeated ``output = output + value`` is quadratic in
+    # the number of sparse terms and dominates the third metric variation.
+    return TrilinearOperator.from_terms(
+        term for value in values for term in value.terms
+    )
 
 
 FIXTURE_SUBSTITUTION = {
@@ -226,6 +383,21 @@ def _fixture_bilinear(operator: BilinearOperator) -> BilinearOperator:
     )
 
 
+def _fixture_trilinear(operator: TrilinearOperator) -> TrilinearOperator:
+    return TrilinearOperator.from_terms(
+        (
+            first,
+            first_word,
+            second,
+            second_word,
+            third,
+            third_word,
+            coefficient.subs(FIXTURE_SUBSTITUTION),
+        )
+        for first, first_word, second, second_word, third, third_word, coefficient in operator.terms
+    )
+
+
 def _outer(left: LinearOperator, right: LinearOperator) -> BilinearOperator:
     return BilinearOperator.from_terms(
         (left_component, left_word, right_component, right_word, left_value * right_value)
@@ -234,10 +406,73 @@ def _outer(left: LinearOperator, right: LinearOperator) -> BilinearOperator:
     )
 
 
+def _outer3(
+    first: LinearOperator, second: LinearOperator, third: LinearOperator
+) -> TrilinearOperator:
+    return TrilinearOperator.from_terms(
+        (
+            first_component,
+            first_word,
+            second_component,
+            second_word,
+            third_component,
+            third_word,
+            first_value * second_value * third_value,
+        )
+        for first_component, first_word, first_value in first.terms
+        for second_component, second_word, second_value in second.terms
+        for third_component, third_word, third_value in third.terms
+    )
+
+
+def _sym_outer3(
+    first: LinearOperator, second: LinearOperator, third: LinearOperator
+) -> TrilinearOperator:
+    values = (first, second, third)
+    return _sum_trilinear(
+        _outer3(values[order[0]], values[order[1]], values[order[2]])
+        for order in permutations(range(3))
+    )
+
+
+def _sym_outer_linear_bilinear(
+    linear: LinearOperator, bilinear: BilinearOperator
+) -> TrilinearOperator:
+    terms = []
+    for linear_component, linear_word, linear_value in linear.terms:
+        for left, left_word, right, right_word, coefficient in bilinear.terms:
+            value = linear_value * coefficient
+            terms.extend(
+                (
+                    (linear_component, linear_word, left, left_word, right, right_word, value),
+                    (left, left_word, linear_component, linear_word, right, right_word, value),
+                    (left, left_word, right, right_word, linear_component, linear_word, value),
+                )
+            )
+    return TrilinearOperator.from_terms(terms)
+
+
 def _shift_inputs(operator: BilinearOperator, offset: int) -> BilinearOperator:
     return BilinearOperator.from_terms(
         (left + offset, left_word, right + offset, right_word, coefficient)
         for left, left_word, right, right_word, coefficient in operator.terms
+    )
+
+
+def _shift_inputs_trilinear(
+    operator: TrilinearOperator, offset: int
+) -> TrilinearOperator:
+    return TrilinearOperator.from_terms(
+        (
+            first + offset,
+            first_word,
+            second + offset,
+            second_word,
+            third + offset,
+            third_word,
+            coefficient,
+        )
+        for first, first_word, second, second_word, third, third_word, coefficient in operator.terms
     )
 
 
@@ -286,6 +521,35 @@ def _leibniz_output_terms(
                 updated[key] = updated.get(key, 0) + multiplicity
         states = updated
     return tuple((left, right, multiplicity) for (left, right), multiplicity in states.items())
+
+
+def _leibniz_output_terms3(
+    word: tuple[int, ...],
+    first_word: tuple[int, ...],
+    second_word: tuple[int, ...],
+    third_word: tuple[int, ...],
+) -> tuple[tuple[tuple[int, ...], tuple[int, ...], tuple[int, ...], int], ...]:
+    """Expand an output derivative on a trilinear product."""
+
+    states: dict[
+        tuple[tuple[int, ...], tuple[int, ...], tuple[int, ...]], int
+    ] = {(first_word, second_word, third_word): 1}
+    for axis in reversed(word):
+        updated: dict[
+            tuple[tuple[int, ...], tuple[int, ...], tuple[int, ...]], int
+        ] = {}
+        for (first, second, third), multiplicity in states.items():
+            for key in (
+                ((axis, *first), second, third),
+                (first, (axis, *second), third),
+                (first, second, (axis, *third)),
+            ):
+                updated[key] = updated.get(key, 0) + multiplicity
+        states = updated
+    return tuple(
+        (first, second, third, multiplicity)
+        for (first, second, third), multiplicity in states.items()
+    )
 
 
 def _negative_transpose_right(
@@ -362,11 +626,17 @@ def _graded_complete_ordered(operator: BilinearOperator) -> BilinearOperator:
 
 @dataclass(frozen=True)
 class Jet2:
-    """Background, first variation, and mixed second variation of a scalar."""
+    """Background through mixed third variation of a scalar.
+
+    The historical name is retained so the certified q2 producer remains a
+    byte-stable API.  The new ``trilinear`` component is invisible to all q2
+    consumers and supplies the action-derived q3 Taylor coefficient.
+    """
 
     background: sp.Expr = sp.S.Zero
     linear: LinearOperator = LinearOperator()
     bilinear: BilinearOperator = BZERO
+    trilinear: TrilinearOperator = TZERO
 
     @staticmethod
     def constant(value: sp.Expr) -> "Jet2":
@@ -374,13 +644,14 @@ class Jet2:
 
     @staticmethod
     def field(component: int, background: sp.Expr = sp.S.Zero) -> "Jet2":
-        return Jet2(_simp(background), LinearOperator.basis(component), BZERO)
+        return Jet2(_simp(background), LinearOperator.basis(component), BZERO, TZERO)
 
     def __add__(self, other: "Jet2") -> "Jet2":
         return Jet2(
             _simp(self.background + other.background),
             self.linear + other.linear,
             self.bilinear + other.bilinear,
+            self.trilinear + other.trilinear,
         )
 
     def __neg__(self) -> "Jet2":
@@ -394,9 +665,18 @@ class Jet2:
             _simp(coefficient * self.background),
             self.linear.scale(coefficient),
             self.bilinear.scale(coefficient),
+            self.trilinear.scale(coefficient),
         )
 
     def __mul__(self, other: "Jet2") -> "Jet2":
+        trilinear = TZERO
+        if TAYLOR_ORDER >= 3:
+            trilinear = (
+                self.trilinear.scale(other.background)
+                + other.trilinear.scale(self.background)
+                + _sym_outer_linear_bilinear(self.linear, other.bilinear)
+                + _sym_outer_linear_bilinear(other.linear, self.bilinear)
+            )
         return Jet2(
             _simp(self.background * other.background),
             self.linear.scale(other.background) + other.linear.scale(self.background),
@@ -404,24 +684,38 @@ class Jet2:
             + other.bilinear.scale(self.background)
             + _outer(self.linear, other.linear)
             + _outer(other.linear, self.linear),
+            trilinear,
         )
 
     def reciprocal(self) -> "Jet2":
         if self.background == 0:
             raise ZeroDivisionError("Jet2 reciprocal needs a nonzero background")
         inverse = _simp(1 / self.background)
+        trilinear = TZERO
+        if TAYLOR_ORDER >= 3:
+            trilinear = (
+                self.trilinear.scale(-inverse**2)
+                + _sym_outer_linear_bilinear(self.linear, self.bilinear).scale(2 * inverse**3)
+                + _outer3(self.linear, self.linear, self.linear).scale(-6 * inverse**4)
+            )
         return Jet2(
             inverse,
             self.linear.scale(-inverse**2),
             self.bilinear.scale(-inverse**2)
             + _outer(self.linear, self.linear).scale(2 * inverse**3),
+            trilinear,
         )
 
     def __truediv__(self, other: "Jet2") -> "Jet2":
         return self * other.reciprocal()
 
     def derivative(self, axis: int) -> "Jet2":
-        return Jet2(sp.S.Zero, self.linear.derivative(axis), self.bilinear.derivative(axis))
+        return Jet2(
+            sp.S.Zero,
+            self.linear.derivative(axis),
+            self.bilinear.derivative(axis),
+            self.trilinear.derivative(axis),
+        )
 
     def power(self, exponent: int) -> "Jet2":
         if exponent < 0:
@@ -436,10 +730,15 @@ JZERO = Jet2()
 
 
 def _sum_jets(values: Iterable[Jet2]) -> Jet2:
-    output = JZERO
-    for value in values:
-        output = output + value
-    return output
+    materialized = tuple(values)
+    if not materialized:
+        return JZERO
+    return Jet2(
+        _simp(sum((value.background for value in materialized), sp.S.Zero)),
+        _sum_linear(value.linear for value in materialized),
+        _sum_bilinear(value.bilinear for value in materialized),
+        _sum_trilinear(value.trilinear for value in materialized),
+    )
 
 
 def _metric() -> dict[tuple[int, int], Jet2]:
@@ -454,7 +753,8 @@ def _metric() -> dict[tuple[int, int], Jet2]:
 def _inverse_metric(metric: dict[tuple[int, int], Jet2]) -> dict[tuple[int, int], Jet2]:
     # Matrix inverse through mixed perturbative order, evaluated by the
     # convergent formal identity G^{-1}=eta^{-1}-eta^{-1}h eta^{-1}
-    # +eta^{-1}h eta^{-1}h eta^{-1}+O(h^3).
+    # +eta^{-1}h eta^{-1}h eta^{-1}
+    # -eta^{-1}h eta^{-1}h eta^{-1}h eta^{-1}+O(h^4).
     output: dict[tuple[int, int], Jet2] = {}
     for first, second in product(range(4), repeat=2):
         linear = _sum_linear(
@@ -468,7 +768,24 @@ def _inverse_metric(metric: dict[tuple[int, int], Jet2]) -> dict[tuple[int, int]
             ).scale(ETA[first, left] * ETA[middle, right] * ETA[other, second])
             for left, middle, right, other in product(range(4), repeat=4)
         )
-        output[(first, second)] = Jet2(ETA[first, second], linear, bilinear)
+        trilinear = TZERO
+        if TAYLOR_ORDER >= 3:
+            trilinear = _sum_trilinear(
+                _sym_outer3(
+                    metric[(left, middle)].linear,
+                    metric[(right, other)].linear,
+                    metric[(tail, end)].linear,
+                ).scale(
+                    -ETA[first, left]
+                    * ETA[middle, right]
+                    * ETA[other, tail]
+                    * ETA[end, second]
+                )
+                for left, middle, right, other, tail, end in product(range(4), repeat=6)
+            )
+        output[(first, second)] = Jet2(
+            ETA[first, second], linear, bilinear, trilinear
+        )
     return output
 
 
@@ -728,7 +1045,7 @@ def build_clock_equations() -> dict[str, object]:
 
 @lru_cache(maxsize=1)
 def _volume_density_ratio() -> Jet2:
-    """Return ``sqrt(-g)/sqrt(-g_bar)`` through mixed second order.
+    """Return ``sqrt(-g)/sqrt(-g_bar)`` through mixed third order.
 
     Canonical BV antifields pair with Euler *densities*.  The distinction
     from the undensitized tensor equations is invisible in the Hessian on an
@@ -747,11 +1064,33 @@ def _volume_density_ratio() -> Jet2:
         ).scale(ETA[first, third] * ETA[second, fourth])
         for first, second, third, fourth in product(range(4), repeat=4)
     )
+    cubic_contraction = TZERO
+    if TAYLOR_ORDER >= 3:
+        cubic_contraction = _sum_trilinear(
+            _sym_outer3(
+                metric[(first, second)].linear,
+                metric[(third, fourth)].linear,
+                metric[(fifth, sixth)].linear,
+            ).scale(
+                ETA[first, third]
+                * ETA[second, fifth]
+                * ETA[fourth, sixth]
+            )
+            for first, second, third, fourth, fifth, sixth in product(range(4), repeat=6)
+        )
+    volume_trilinear = TZERO
+    if TAYLOR_ORDER >= 3:
+        volume_trilinear = (
+            _outer3(trace, trace, trace).scale(sp.Rational(1, 8))
+            - _sym_outer_linear_bilinear(trace, contraction).scale(sp.Rational(1, 4))
+            + cubic_contraction.scale(sp.Rational(1, 6))
+        )
     return Jet2(
         sp.S.One,
         trace.scale(sp.Rational(1, 2)),
         _outer(trace, trace).scale(sp.Rational(1, 4))
         - contraction.scale(sp.Rational(1, 2)),
+        volume_trilinear,
     )
 
 
@@ -912,6 +1251,27 @@ def build_raw_minimal_q2() -> tuple[BilinearOperator, ...]:
     return tuple(outputs)
 
 
+@lru_cache(maxsize=1)
+def build_raw_minimal_q3() -> tuple[TrilinearOperator, ...]:
+    """Complete raw 34-row minimal q3 before canonical transports.
+
+    The Diff-semidirect-Weyl gauge action is linear in the fields and the
+    ghost bracket is field independent.  Consequently the only arity-three
+    rows are the third Taylor coefficients of the twelve action-derived Euler
+    densities.  This sparse support statement is derived from the master
+    action, not imposed as a mode or sector truncation.
+    """
+
+    if TAYLOR_ORDER < 3:
+        raise RuntimeError("set BERGER_TAYLOR_ORDER=3 before importing the q3 producer")
+    outputs: list[TrilinearOperator] = [TZERO for _ in range(34)]
+    for local_output, equation in enumerate(build_raw_euler_rows()):
+        outputs[17 + local_output] = _shift_inputs_trilinear(
+            equation.trilinear, 5
+        )
+    return tuple(outputs)
+
+
 def _zero_linear_matrix(rows: int, columns: int) -> list[list[LinearOperator]]:
     return [[LinearOperator() for _ in range(columns)] for _ in range(rows)]
 
@@ -963,6 +1323,31 @@ def _apply_output_linear(
     return BilinearOperator.from_terms(terms)
 
 
+def _apply_output_linear_trilinear(
+    outer: LinearOperator, inner: TrilinearOperator
+) -> TrilinearOperator:
+    terms = []
+    for outer_component, outer_word, outer_coefficient in outer.terms:
+        if outer_component != 0:
+            raise ValueError("matrix entry must be a scalar one-input operator")
+        for first, first_word, second, second_word, third, third_word, coefficient in inner.terms:
+            for new_first, new_second, new_third, multiplicity in _leibniz_output_terms3(
+                outer_word, first_word, second_word, third_word
+            ):
+                terms.append(
+                    (
+                        first,
+                        new_first,
+                        second,
+                        new_second,
+                        third,
+                        new_third,
+                        outer_coefficient * coefficient * multiplicity,
+                    )
+                )
+    return TrilinearOperator.from_terms(terms)
+
+
 def _precompose_bilinear(
     operator: BilinearOperator,
     input_map: list[list[LinearOperator]],
@@ -993,6 +1378,47 @@ def _precompose_bilinear(
                             )
                         )
     return BilinearOperator.from_terms(terms)
+
+
+def _precompose_trilinear(
+    operator: TrilinearOperator,
+    input_map: list[list[LinearOperator]],
+) -> TrilinearOperator:
+    """Substitute ``old=input_map*new`` in all three ternary inputs."""
+
+    terms = []
+    supports = {
+        old: [(new, entry) for new, entry in enumerate(row) if entry.terms]
+        for old, row in enumerate(input_map)
+    }
+    for first, first_word, second, second_word, third, third_word, coefficient in operator.terms:
+        for new_first, first_entry in supports[first]:
+            for first_component, first_inner_word, first_value in first_entry.terms:
+                if first_component != 0:
+                    raise ValueError("input map entry must be scalar")
+                for new_second, second_entry in supports[second]:
+                    for second_component, second_inner_word, second_value in second_entry.terms:
+                        if second_component != 0:
+                            raise ValueError("input map entry must be scalar")
+                        for new_third, third_entry in supports[third]:
+                            for third_component, third_inner_word, third_value in third_entry.terms:
+                                if third_component != 0:
+                                    raise ValueError("input map entry must be scalar")
+                                terms.append(
+                                    (
+                                        new_first,
+                                        first_word + first_inner_word,
+                                        new_second,
+                                        second_word + second_inner_word,
+                                        new_third,
+                                        third_word + third_inner_word,
+                                        coefficient
+                                        * first_value
+                                        * second_value
+                                        * third_value,
+                                    )
+                                )
+    return TrilinearOperator.from_terms(terms)
 
 
 def _precompose_bilinear_slot(
@@ -1050,6 +1476,87 @@ def _precompose_bilinear_slot(
     return BilinearOperator.from_terms(terms)
 
 
+def _precompose_trilinear_slot(
+    operator: TrilinearOperator,
+    input_map: list[list[LinearOperator]] | tuple[tuple[LinearOperator, ...], ...],
+    *,
+    slot: int,
+    parities: tuple[int, ...],
+) -> TrilinearOperator:
+    """Insert an odd unary differential in one ternary input slot."""
+
+    if slot not in (0, 1, 2):
+        raise ValueError("trilinear input slot must be zero, one, or two")
+    supports = {
+        old: [(new, entry) for new, entry in enumerate(row) if entry.terms]
+        for old, row in enumerate(input_map)
+    }
+    terms = []
+    for first, first_word, second, second_word, third, third_word, coefficient in operator.terms:
+        components = (first, second, third)
+        words = (first_word, second_word, third_word)
+        sign = -1 if sum(parities[components[index]] for index in range(slot)) % 2 else 1
+        for new_component, entry in supports[components[slot]]:
+            for scalar_component, inner_word, value in entry.terms:
+                if scalar_component != 0:
+                    raise ValueError("unary matrix entry must be scalar")
+                new_components = list(components)
+                new_words = list(words)
+                new_components[slot] = new_component
+                new_words[slot] = words[slot] + inner_word
+                terms.append(
+                    (
+                        new_components[0],
+                        new_words[0],
+                        new_components[1],
+                        new_words[1],
+                        new_components[2],
+                        new_words[2],
+                        sign * coefficient * value,
+                    )
+                )
+    return TrilinearOperator.from_terms(terms)
+
+
+def _q2_composed_with_q2_row(
+    outer: BilinearOperator,
+    q2: tuple[BilinearOperator, ...] | list[BilinearOperator],
+    parities: tuple[int, ...],
+) -> TrilinearOperator:
+    """One row of the graded (2,1)-unshuffle composition ``q2(q2,.)``."""
+
+    terms = []
+    for middle, outer_word, last, last_word, outer_coefficient in outer.terms:
+        inner = q2[middle]
+        for first, first_word, second, second_word, inner_coefficient in inner.terms:
+            for new_first, new_second, multiplicity in _leibniz_output_terms(
+                outer_word, first_word, second_word
+            ):
+                coefficient = outer_coefficient * inner_coefficient * multiplicity
+                # (12|3), (13|2), and (23|1) unshuffles.
+                terms.append(
+                    (first, new_first, second, new_second, last, last_word, coefficient)
+                )
+                swap_sign = -1 if parities[second] * parities[last] else 1
+                terms.append(
+                    (first, new_first, last, last_word, second, new_second, swap_sign * coefficient)
+                )
+                rotate_sign = -1 if parities[last] * (parities[first] + parities[second]) % 2 else 1
+                terms.append(
+                    (last, last_word, first, new_first, second, new_second, rotate_sign * coefficient)
+                )
+    return TrilinearOperator.from_terms(terms)
+
+
+def _q2_composed_with_q2(
+    q2: tuple[BilinearOperator, ...] | list[BilinearOperator],
+    parities: tuple[int, ...],
+) -> tuple[TrilinearOperator, ...]:
+    return tuple(
+        _q2_composed_with_q2_row(outer, q2, parities) for outer in q2
+    )
+
+
 def arity_two_nilpotency_defect(
     q1: list[list[LinearOperator]] | tuple[tuple[LinearOperator, ...], ...],
     q2: tuple[BilinearOperator, ...] | list[BilinearOperator],
@@ -1085,6 +1592,88 @@ def arity_two_nilpotency_defect(
         # operation.
         output.append(_fixture_bilinear(defect) if fixture_normal_form else defect)
     return tuple(output)
+
+
+def arity_three_nilpotency_defect(
+    q1: list[list[LinearOperator]] | tuple[tuple[LinearOperator, ...], ...],
+    q2: tuple[BilinearOperator, ...] | list[BilinearOperator],
+    q3: tuple[TrilinearOperator, ...] | list[TrilinearOperator],
+    parities: tuple[int, ...],
+    *,
+    fixture_normal_form: bool = False,
+) -> tuple[TrilinearOperator, ...]:
+    """Return the complete arity-three coefficient of ``Q^2``."""
+
+    if len(q1) != len(q2) or len(q2) != len(q3) or len(parities) != len(q3):
+        raise ValueError("q1/q2/q3/parity dimensions disagree")
+    quadratic = _q2_composed_with_q2(q2, parities)
+    output = []
+    for target, q3_row in enumerate(q3):
+        defect = quadratic[target]
+        for middle, outer in enumerate(q1[target]):
+            if outer.terms and q3[middle].terms:
+                defect = defect + _apply_output_linear_trilinear(outer, q3[middle])
+        if q3_row.terms:
+            for slot in range(3):
+                defect = defect + _precompose_trilinear_slot(
+                    q3_row, q1, slot=slot, parities=parities
+                )
+        output.append(
+            _fixture_trilinear(defect) if fixture_normal_form else defect
+        )
+    return tuple(output)
+
+
+def arity_three_nilpotency_defect_row(
+    target: int,
+    q1: list[list[LinearOperator]] | tuple[tuple[LinearOperator, ...], ...],
+    q2: tuple[BilinearOperator, ...] | list[BilinearOperator],
+    q3: tuple[TrilinearOperator, ...] | list[TrilinearOperator],
+    parities: tuple[int, ...],
+    *,
+    fixture_normal_form: bool = False,
+) -> TrilinearOperator:
+    """Memory-bounded one-row arity-three ``Q^2`` replay."""
+
+    q3_row = q3[target]
+    defect = _q2_composed_with_q2_row(q2[target], q2, parities)
+    for middle, outer in enumerate(q1[target]):
+        if outer.terms and q3[middle].terms:
+            defect = defect + _apply_output_linear_trilinear(outer, q3[middle])
+    if q3_row.terms:
+        for slot in range(3):
+            defect = defect + _precompose_trilinear_slot(
+                q3_row, q1, slot=slot, parities=parities
+            )
+    return _fixture_trilinear(defect) if fixture_normal_form else defect
+
+
+def _leibniz_adjoint_terms3(
+    word: tuple[int, ...],
+    first_word: tuple[int, ...],
+    second_word: tuple[int, ...],
+    third_word: tuple[int, ...],
+) -> tuple[tuple[tuple[int, ...], tuple[int, ...], tuple[int, ...], int], ...]:
+    states: dict[
+        tuple[tuple[int, ...], tuple[int, ...], tuple[int, ...]], int
+    ] = {(first_word, second_word, third_word): 1}
+    for axis in word:
+        updated: dict[
+            tuple[tuple[int, ...], tuple[int, ...], tuple[int, ...]], int
+        ] = {}
+        for (first, second, third), multiplicity in states.items():
+            for key in (
+                ((axis, *first), second, third),
+                (first, (axis, *second), third),
+                (first, second, (axis, *third)),
+            ):
+                updated[key] = updated.get(key, 0) + multiplicity
+        states = updated
+    sign = -1 if len(word) % 2 else 1
+    return tuple(
+        (first, second, third, sign * multiplicity)
+        for (first, second, third), multiplicity in states.items()
+    )
 
 
 def raw_physical_cyclicity_defect(
@@ -1134,6 +1723,47 @@ def raw_physical_cyclicity_defect(
     return tuple(defects)
 
 
+def raw_physical_q3_cyclicity_defect(
+    q3: tuple[TrilinearOperator, ...] | list[TrilinearOperator],
+    *,
+    fixture_normal_form: bool = False,
+) -> tuple[TrilinearOperator, ...]:
+    """Check total symmetry of the fourth action derivative."""
+
+    predicted: list[list[tuple]] = [[] for _ in range(FIELD_RANK)]
+    actual: list[TrilinearOperator] = []
+    for equation in range(FIELD_RANK):
+        physical = TrilinearOperator.from_terms(
+            term
+            for term in q3[17 + equation].terms
+            if 5 <= term[0] < 17 and 5 <= term[2] < 17 and 5 <= term[4] < 17
+        )
+        actual.append(physical)
+        for first, first_word, second, second_word, third, third_word, coefficient in physical.terms:
+            transposed_equation = first - 5
+            for new_second, new_third, dual_word, multiplicity in _leibniz_adjoint_terms3(
+                first_word, second_word, third_word, ()
+            ):
+                predicted[transposed_equation].append(
+                    (
+                        5 + equation,
+                        dual_word,
+                        second,
+                        new_second,
+                        third,
+                        new_third,
+                        coefficient * multiplicity,
+                    )
+                )
+    defects = []
+    for equation in range(FIELD_RANK):
+        defect = TrilinearOperator.from_terms(predicted[equation]) - actual[equation]
+        defects.append(
+            _fixture_trilinear(defect) if fixture_normal_form else defect
+        )
+    return tuple(defects)
+
+
 def _transform_bilinear_vector(
     operators: tuple[BilinearOperator, ...] | list[BilinearOperator],
     output_map: list[list[LinearOperator]],
@@ -1151,6 +1781,29 @@ def _transform_bilinear_vector(
         for old_output, outer in enumerate(row):
             if outer.terms and precomposed[old_output].terms:
                 value = value + _apply_output_linear(outer, precomposed[old_output])
+        output.append(value)
+    return tuple(output)
+
+
+def _transform_trilinear_vector(
+    operators: tuple[TrilinearOperator, ...] | list[TrilinearOperator],
+    output_map: list[list[LinearOperator]],
+    input_map: list[list[LinearOperator]],
+) -> tuple[TrilinearOperator, ...]:
+    """Apply one linear canonical change of variables to a q3 vector."""
+
+    precomposed = [
+        _precompose_trilinear(operator, input_map) if operator.terms else TZERO
+        for operator in operators
+    ]
+    output = []
+    for row in output_map:
+        value = TZERO
+        for old_output, outer in enumerate(row):
+            if outer.terms and precomposed[old_output].terms:
+                value = value + _apply_output_linear_trilinear(
+                    outer, precomposed[old_output]
+                )
         output.append(value)
     return tuple(output)
 
@@ -1219,6 +1872,16 @@ def build_dressed_minimal_q2_fixture() -> tuple[BilinearOperator, ...]:
     return tuple(_fixture_bilinear(operator) for operator in transformed)
 
 
+@lru_cache(maxsize=1)
+def build_dressed_minimal_q3_fixture() -> tuple[TrilinearOperator, ...]:
+    """Transport the action-derived raw minimal q3 through clock dressing."""
+
+    canonical, inverse = _clock_canonical_maps_fixture()
+    raw = tuple(_fixture_trilinear(operator) for operator in build_raw_minimal_q3())
+    transformed = _transform_trilinear_vector(raw, canonical, inverse)
+    return tuple(_fixture_trilinear(operator) for operator in transformed)
+
+
 def _reindex_bilinear(
     operator: BilinearOperator, index_map: dict[int, int]
 ) -> BilinearOperator:
@@ -1231,6 +1894,23 @@ def _reindex_bilinear(
             coefficient,
         )
         for left, left_word, right, right_word, coefficient in operator.terms
+    )
+
+
+def _reindex_trilinear(
+    operator: TrilinearOperator, index_map: dict[int, int]
+) -> TrilinearOperator:
+    return TrilinearOperator.from_terms(
+        (
+            index_map[first],
+            first_word,
+            index_map[second],
+            second_word,
+            index_map[third],
+            third_word,
+            coefficient,
+        )
+        for first, first_word, second, second_word, third, third_word, coefficient in operator.terms
     )
 
 
@@ -1253,6 +1933,27 @@ def build_gauge_fixed_54_q2_fixture() -> tuple[BilinearOperator, ...]:
     _raw_map, _condition, _nilpotent, shear, inverse = _gauge_fermion_shear()
     transformed = _transform_bilinear_vector(extended, shear, inverse)
     return tuple(_fixture_bilinear(operator) for operator in transformed)
+
+
+@lru_cache(maxsize=1)
+def build_gauge_fixed_54_q3_fixture() -> tuple[TrilinearOperator, ...]:
+    """Apply the certified nonminimal extension and gauge-fermion shear to q3."""
+
+    from d_quotient_classical.backreacted_clock.berger_gauge_fixed_nonminimal_completion import (
+        _gauge_fermion_shear,
+    )
+    from d_quotient_classical.backreacted_clock.berger_nonminimal_algebraic_completion import (
+        MINIMAL_TO_EXTENDED,
+    )
+
+    minimal = build_dressed_minimal_q3_fixture()
+    index_map = {old: new for old, new in enumerate(MINIMAL_TO_EXTENDED)}
+    extended = [TZERO for _ in range(54)]
+    for old_output, new_output in enumerate(MINIMAL_TO_EXTENDED):
+        extended[new_output] = _reindex_trilinear(minimal[old_output], index_map)
+    _raw_map, _condition, _nilpotent, shear, inverse = _gauge_fermion_shear()
+    transformed = _transform_trilinear_vector(extended, shear, inverse)
+    return tuple(_fixture_trilinear(operator) for operator in transformed)
 
 
 @lru_cache(maxsize=1)

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-support-local-q3-tier2-receipt-v1.json",
+  "title": "Tier-2 execution receipt for the complete Berger q3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "dependency_tags", "cache_key", "artifact_hashes", "stages", "test_tier", "higher_tiers_not_run", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-support-local-q3-tier2-receipt-v1"},
+    "result_id": {"const": "BERGER_SUPPORT_LOCAL_Q3_TIER2_RECEIPT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "cache_key": {"$ref": "#/$defs/sha256"},
+    "artifact_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["raw_q3_pickle_sha256", "gauge_fixed_q3_pickle_sha256", "portable_manifest_canonical_sha256", "portable_manifest_file_sha256"],
+      "properties": {
+        "raw_q3_pickle_sha256": {"$ref": "#/$defs/sha256"},
+        "gauge_fixed_q3_pickle_sha256": {"$ref": "#/$defs/sha256"},
+        "portable_manifest_canonical_sha256": {"$ref": "#/$defs/sha256"},
+        "portable_manifest_file_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "stages": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/stage"}},
+    "test_tier": {"const": 2},
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_3"],
+      "properties": {"tier_3": {"type": "string", "minLength": 1}}
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "stage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "command", "elapsed_seconds", "status", "result"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "command": {"type": "string", "minLength": 1},
+        "elapsed_seconds": {"type": "number", "minimum": 0},
+        "peak_rss_mb": {"type": "number", "exclusiveMinimum": 0},
+        "status": {"const": "PASS"},
+        "result": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

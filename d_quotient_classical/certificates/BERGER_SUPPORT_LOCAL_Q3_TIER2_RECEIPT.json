@@ -1,0 +1,68 @@
+{
+  "schema": "pure-weyl-berger-support-local-q3-tier2-receipt-v1",
+  "result_id": "BERGER_SUPPORT_LOCAL_Q3_TIER2_RECEIPT",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "cache_key": "b2a38e045826780f36b649d4acd3452924f89b21919cd197c06a66be0e75029e",
+  "artifact_hashes": {
+    "raw_q3_pickle_sha256": "e597248374e7297058d76f2efab3f1a6498804d49392789ee02cbd089237a4b8",
+    "gauge_fixed_q3_pickle_sha256": "a0a43004d04e452185c043ec8fa3e940c98376ecd82bcdda77a7c65d5c302974",
+    "portable_manifest_canonical_sha256": "199bba8c07073b9df85c77dcc88c403bff8be467a7dd8d988cb7427232725506",
+    "portable_manifest_file_sha256": "a0ae9ba202b1f6b35c48c3506417c2251df012324cadbdbea3aa389a4c2d8bfb"
+  },
+  "stages": [
+    {
+      "name": "tier0_and_tier1",
+      "command": "PYTHONPATH=. pytest -q d_quotient_classical/backreacted_clock/tests/test_berger_support_local_q2.py d_quotient_classical/backreacted_clock/tests/test_berger_support_local_q3_engine.py",
+      "elapsed_seconds": 25.58,
+      "status": "PASS",
+      "result": "5 passed"
+    },
+    {
+      "name": "raw_action_q3",
+      "command": "env BERGER_TAYLOR_ORDER=3 PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_support_local_q3_cache.py raw",
+      "elapsed_seconds": 4225.175262,
+      "peak_rss_mb": 3172.105,
+      "status": "PASS",
+      "result": "34 rows; 12 nonzero; 1915572 terms; maximum total jet order 4"
+    },
+    {
+      "name": "gauge_fixed_canonical_transport",
+      "command": "env BERGER_TAYLOR_ORDER=3 PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_support_local_q3_cache.py transport",
+      "elapsed_seconds": 2627.243012,
+      "peak_rss_mb": 2664.078,
+      "status": "PASS",
+      "result": "54 rows; 12 nonzero; 5812130 terms; maximum total jet order 8"
+    },
+    {
+      "name": "row_bounded_exact_verification",
+      "command": "env BERGER_TAYLOR_ORDER=3 PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_support_local_q3_cache.py verify",
+      "elapsed_seconds": 7930.014515,
+      "peak_rss_mb": 3399.957,
+      "status": "PASS",
+      "result": "arity-three Q-squared, raw and transported graded symmetry, quartic cyclicity, and D derivation all exact"
+    },
+    {
+      "name": "portable_row_chunk_finalization",
+      "command": "env BERGER_TAYLOR_ORDER=3 PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_support_local_q3_export.py",
+      "elapsed_seconds": 390.0,
+      "peak_rss_mb": 1857.164,
+      "status": "PASS",
+      "result": "54 deterministic gzip strict-JSON row chunks and strict-JSON manifest"
+    },
+    {
+      "name": "independent_portable_consumer",
+      "command": "env PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_support_local_q3_independent.py",
+      "elapsed_seconds": 1058.93,
+      "peak_rss_mb": 1157.852,
+      "status": "PASS",
+      "result": "all hashes, schemas, PBW keys, exact coefficients, summary statistics, and adjacent Koszul symmetries verified"
+    }
+  ],
+  "test_tier": 2,
+  "higher_tiers_not_run": {
+    "tier_3": "not a freeze, release, or paper-theorem promotion"
+  },
+  "claim_boundary": "This receipt records the affected classical q3 certificate chain. The private pickle artifacts are regenerable content-addressed caches; the tracked portable row chunks are the consumer interface. The independent consumer audits the frozen operation but does not rederive the action variation."
+}

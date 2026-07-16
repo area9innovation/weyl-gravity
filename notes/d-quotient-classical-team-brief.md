@@ -24,6 +24,31 @@ presymplectic degeneracy and the renormalized covariant phase-space charge.
 The centered classes \([W_+^2]\) and \([W_-^2]\) are deformation/vertex
 classes.  They are not one-particle graviton states.
 
+## Live Berger nonlinear handoff (2026-07-16)
+
+The authoritative 54-row support-local classical Taylor data are now complete
+through arity three at the frozen rational Berger fixture.  The certificate
+`BERGER_SUPPORT_LOCAL_Q3` contains 5,812,130 exact
+\(\mathbb Q(\sqrt{10})\)-valued PBW terms on twelve nonzero rows and proves,
+coefficientwise,
+
+\[
+q_1q_3+q_2(q_2,\cdot)+\text{graded unshuffles}=0,
+\]
+
+together with graded symmetry, quartic action cyclicity, and the local
+\(D\)-derivation identity with \(L_D^{(3)}=0\).  The portable export is a
+strict-JSON manifest plus deterministic gzip-compressed strict-JSON row
+chunks; it is a full four-dimensional `LOCAL-ALGEBRAIC` result, not a
+reduced-mode fit.
+
+The next nonlinear gate is therefore
+`BERGER_ARITY_THREE_D_CARTAN_FULL_4D`.  It must consume the frozen
+\((q_1,q_2,q_3,D)\) hashes and either construct the cyclic support-local/causal
+arity-three Cartan primitive or emit the first normalized obstruction.  This
+new gate does not reopen the already certified unary, binary, or causal
+26/54-row work, and it does not promote a quantum or Hadamard claim.
+
 ## Binary charge test
 
 For every setting, specify the field space, equations, allowed variations,
