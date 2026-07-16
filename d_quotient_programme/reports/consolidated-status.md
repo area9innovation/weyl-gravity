@@ -83,6 +83,7 @@ background as a non-Einstein Weyl--matter branch.
 | compact_einstein_maxwell_weyl_radiative_restriction | `H_product` | `einstein_maxwell_product_compact_weyl_standard_radiative_restriction` | CLASSICAL_BV | `CERTIFIED` | `G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION` |
 | compact_einstein_maxwell_weyl_ell1_physical_restriction | `H_product` | `einstein_maxwell_product_compact_weyl_ell1_physical_quotient` | CLASSICAL_BV | `CERTIFIED` | `G3_PHYSICAL_ELL1_ALL_N_M_FACTOR_FOUR_QUOTIENT_RESTRICTION` |
 | compact_einstein_maxwell_weyl_standard_harmonic_inclusion | `H_product` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | CLASSICAL_BV | `CERTIFIED` | `G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT` |
+| compact_einstein_maxwell_weyl_extra_branch_preflight | `H_product` | `einstein_maxwell_product_compact_weyl_extra_branch_preflight` | CLASSICAL_BV | `CERTIFIED` | `G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_positive_berger_clock_retained_q2_26 | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | INTERACTING | `CERTIFIED` | `RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED` |
 | compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING` |
@@ -145,6 +146,7 @@ background as a non-Einstein Weyl--matter branch.
 | einstein_boundary | `compact_einstein_maxwell_weyl_radiative_restriction` | `H_product` | `einstein_maxwell_product_compact_weyl_standard_radiative_restriction` | `CERTIFIED` | `G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION` |
 | einstein_boundary | `compact_einstein_maxwell_weyl_ell1_physical_restriction` | `H_product` | `einstein_maxwell_product_compact_weyl_ell1_physical_quotient` | `CERTIFIED` | `G3_PHYSICAL_ELL1_ALL_N_M_FACTOR_FOUR_QUOTIENT_RESTRICTION` |
 | einstein_boundary | `compact_einstein_maxwell_weyl_standard_harmonic_inclusion` | `H_product` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | `CERTIFIED` | `G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT` |
+| einstein_boundary | `compact_einstein_maxwell_weyl_extra_branch_preflight` | `H_product` | `einstein_maxwell_product_compact_weyl_extra_branch_preflight` | `CERTIFIED` | `G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | nonlinear | `compact_positive_berger_clock_retained_q2_26` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED` |
 | quantum | `vacuum_cylinder` | `D_compact` | `compact_quantum` | `BLOCKED` | `NO_VERDICT` |

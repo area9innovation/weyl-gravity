@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "candidate full smooth periodic fixed-P_N Weyl-Maxwell harmonic solution complex on R_t x S1_L x S2; no bounded-time or final residual quotient imposed",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the invariant extra object is frozen as the canonical quotient Q_extra=H^0(C_WM^full)/i_*H^0(C_EM^std), not a chosen vector-space or symplectic complement",
+    "extra solution classes, adjoint-cokernel classes, presymplectic radicals, and target gauge classes are separate result kinds requiring explicit maps and witnesses",
+    "the complete generic axial, generic polar, exceptional ell=1, and homogeneous ell=0 target block output ledger is frozen",
+    "each block must include exact quotient dimensions, representatives, gauge witnesses, characteristic and Jordan data, and complete Einstein-extra and extra-extra Lee-Wald matrices",
+    "zeros of relative symplectic weights on Einstein modes are explicitly forbidden as evidence for target characteristic roots or extra dispersions",
+    "the generic axial ell>=2 target complex at symbolic lambda and k is the first declared solve"
+  ],
+  "evidence": {
+    "commit": "987cba7a478e76b3f7a060e76faf9945e7f372bf",
+    "path": "bridge/certificates/einstein_maxwell_weyl_extra_branch_preflight.json",
+    "sha256": "28924d27b8bcd11cde9d4aabef84709744a85d8604e6dc8a507b2e014869bd8a"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "derive the complete generic axial Weyl-Maxwell harmonic operator, quotient its exact kernel by target gauge and the certified Einstein image, and compute the full Einstein-extra Lee-Wald matrix",
+  "not_established": [
+    "construction of the full target harmonic complex or certification of any nonzero extra solution class",
+    "an extra-branch dispersion, multiplicity, Jordan chain, symplectic complement, norm, or particle interpretation",
+    "boundary removal or causal preservation of an Einstein sector",
+    "final residual descent, asymptotically flat scattering, or quantum unitarity"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_extra_branch_preflight",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_extra_branch_preflight",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_extra_branch_preflight --verify bridge/certificates/einstein_maxwell_weyl_extra_branch_preflight.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_extra_branch_preflight.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_extra_branch_preflight",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}

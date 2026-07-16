@@ -89,6 +89,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-ell1-physical-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-ell1-physical-restriction-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-standard-harmonic-inclusion.json`](contributions/einstein-maxwell-weyl-standard-harmonic-inclusion.json)
 - [`reports/einstein-maxwell-weyl-standard-harmonic-inclusion-registration-receipt.md`](reports/einstein-maxwell-weyl-standard-harmonic-inclusion-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-extra-branch-preflight.json`](contributions/einstein-maxwell-weyl-extra-branch-preflight.json)
+- [`reports/einstein-maxwell-weyl-extra-branch-preflight-registration-receipt.md`](reports/einstein-maxwell-weyl-extra-branch-preflight-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -293,3 +295,12 @@ certified standard Einstein--Maxwell tangent before the final residual
 quotient.  The identity inclusion remains nonsymplectic, and extra
 fourth-order branches, nonlinear closure, observable extension, final descent,
 causal scattering, and quantum claims remain open.
+
+The standard direct-sum statement now includes a literal mixed-current check
+at its only shared-label collision: axial `ell=1,n=0` twist versus physical
+radiation is proportional to `omega^2-4` for arbitrary `A+B*t` and vanishes on
+shell. The next target object is frozen fail-closed as the canonical solution
+quotient `Q_extra=H^0(C_WM^full)/i_*H^0(C_EM^std)`, not a chosen complement.
+Solution classes, adjoint cokernels, presymplectic radicals, and gauge classes
+remain distinct. The generic axial target block is first; no extra dispersion,
+mode, particle, boundary, causal, or quantum result has yet been registered.

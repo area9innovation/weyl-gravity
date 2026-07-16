@@ -2,14 +2,19 @@
 
 The aggregate programme ledger imports
 `bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json`
-at source commit `fdbfc0c169441fcc02ff2ed5100ff2b11b321448`, SHA-256
-`f2d061870314baf8e09726d7d054ad67985a0bb31be0a4bb0230c7c6590ae221`.
+at source commit `987cba7a478e76b3f7a060e76faf9945e7f372bf`, SHA-256
+`f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d`.
 
 The registered G4 verdict is that the Weyl–Maxwell pullback is nondegenerate on
 the complete certified fixed-bundle standard Einstein–Maxwell harmonic tangent
 before the final residual quotient. It assembles standard `ell>=2` radiation,
 physical `ell=1`, the homogeneous generalized block, and the axial twist pairs.
 The identity inclusion is injective but not symplectic.
+
+The strengthened certificate also computes the only standard shared-label
+mixed current directly: twist versus physical axial `ell=1,n=0` is
+proportional to `omega^2-4`, including the full `A+B*t` Jordan representative,
+and therefore vanishes on the physical shell.
 
 This does not classify the extra fourth-order target branches, prove nonlinear
 closure, embed the full observable algebra, compute the final quotient, or
