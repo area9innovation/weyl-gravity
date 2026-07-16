@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-companion-stationary-decomposability-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "stationary_input", "green_equivariance_derivation", "kernel_stationarity", "orientation_exclusion", "fewster_decomposability", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-companion-stationary-decomposability-v1"},
+    "result_id": {"const": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY"},
+    "result_state": {"const": "PAULI_JORDAN_OPPOSITE_NULL_ORIENTATION_CERTIFIED_HADAMARD_STATE_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_MICROLOCAL_CERTIFICATE"},
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "minLength": 40},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pauli_jordan_characteristic_preflight", "typed_volterra_import", "pinned_classical_volterra"],
+      "properties": {
+        "pauli_jordan_characteristic_preflight": {"$ref": "#/$defs/dependency"},
+        "typed_volterra_import": {"$ref": "#/$defs/dependency"},
+        "pinned_classical_volterra": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "stationary_input": {"$ref": "#/$defs/nonempty_object"},
+    "green_equivariance_derivation": {"$ref": "#/$defs/nonempty_object"},
+    "kernel_stationarity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pauli_jordan_kernel", "finite_translation_identity", "infinitesimal_identity", "principal_symbol", "elliptic_regularization_conclusion", "status"],
+      "properties": {
+        "pauli_jordan_kernel": {"const": "E_C=G_C^advanced-G_C^retarded"},
+        "finite_translation_identity": {"const": "(U_s boxtimes U_s) E_C=E_C"},
+        "infinitesimal_identity": {"const": "(Lie_e0,x+Lie_e0,xprime) E_C=0"},
+        "principal_symbol": {"const": "tau+tau_prime"},
+        "elliptic_regularization_conclusion": {"const": "WF(E_C) subset {tau+tau_prime=0}"},
+        "status": {"const": "CERTIFIED"}
+      }
+    },
+    "orientation_exclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_bound", "null_time_component", "stationary_constraint", "conclusion", "sector_replay", "status"],
+      "properties": {
+        "input_bound": {"const": "WF(E_C) subset (N_plus union N_minus) x (N_plus union N_minus)"},
+        "null_time_component": {"type": "string", "minLength": 1},
+        "stationary_constraint": {"const": "tau_prime=-tau"},
+        "conclusion": {"const": "WF(E_C) subset (N_plus x N_minus) union (N_minus x N_plus)"},
+        "sector_replay": {
+          "const": {
+            "orientation_time_signs": {
+              "N+ x N+": [1, 1],
+              "N+ x N-": [1, -1],
+              "N- x N+": [-1, 1],
+              "N- x N-": [-1, -1]
+            },
+            "stationarity_compatible_sectors": ["N+ x N-", "N- x N+"],
+            "stationarity_excluded_sectors": ["N+ x N+", "N- x N-"],
+            "checks": {
+              "diagonal_stationarity_symbol_is_tau_plus_tau_prime": true,
+              "nonzero_null_covectors_have_nonzero_time_component": true,
+              "stationarity_keeps_exactly_opposite_orientation_sectors": true,
+              "stationarity_excludes_exactly_same_orientation_sectors": true
+            }
+          }
+        },
+        "status": {"const": "CERTIFIED"}
+      }
+    },
+    "fewster_decomposability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "source_url", "cone", "cone_separation", "kernel_inclusion", "status"],
+      "properties": {
+        "source": {"type": "string", "minLength": 1},
+        "source_url": {"const": "https://arxiv.org/abs/2503.12537"},
+        "cone": {"const": "N_plus=future-directed nonzero metric-null covectors"},
+        "cone_separation": {"const": "N_plus intersection N_minus is empty"},
+        "kernel_inclusion": {"const": "WF(E_C) subset (N_plus x N_minus) union (N_minus x N_plus)"},
+        "status": {"const": "N_PLUS_MINUS_DECOMPOSABLE"}
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_COMPANION_PAULI_JORDAN_ORIENTATION_EXCLUSION": true,
+        "BERGER_COMPANION_NULL_CONE_DECOMPOSABLE": true,
+        "BERGER_TYPED_COMPANION_HADAMARD_PARAMETRIX": false,
+        "BERGER_TYPED_COMPANION_GLOBAL_HADAMARD": false,
+        "BERGER_COMPANION_HADAMARD_STATE": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_HADAMARD_DATA": false,
+        "LORENTZIAN_QME_RESTORED": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["characteristic_result_id", "volterra_import_result_id", "classical_volterra_result_id", "classical_volterra_sha256", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "characteristic_result_id": {"const": "BERGER_COMPANION_PAULI_JORDAN_CHARACTERISTIC_PREFLIGHT"},
+        "volterra_import_result_id": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT"},
+        "classical_volterra_result_id": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2"},
+        "classical_volterra_sha256": {"$ref": "#/$defs/hash"},
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "nonempty_object": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    }
+  }
+}

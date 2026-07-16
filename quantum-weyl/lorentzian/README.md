@@ -136,6 +136,18 @@ remain unexcluded.  The sharpened next gate is therefore
 what promotes the companion to null-cone decomposable.  Hadamard and quantum
 flags still remain false.
 
+The orientation exclusion is now certified.  Stationarity of the Berger
+operator and uniqueness of the advanced/retarded Green maps imply their
+equivariance under global time translations.  The Pauli--Jordan kernel is
+therefore invariant under simultaneous translation of both variables, whose
+infinitesimal symbol is `tau+tau_prime`.  Combining
+`tau+tau_prime=0` with the factorwise nonzero null bound removes exactly the
+two same-orientation sectors.  Hence the retained twenty-row companion is
+null-cone decomposable in Fewster's sense.  This is a property of its causal
+propagator, not a state: the next gate is
+`BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION`, and all Hadamard-state, BRST,
+QME and quantum flags remain false.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -174,4 +186,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_b
 PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_companion_pauli_jordan_characteristic_preflight_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_companion_pauli_jordan_characteristic_preflight
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_companion_pauli_jordan_characteristic_preflight.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_companion_stationary_decomposability_certificate --check
+PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_companion_stationary_decomposability
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_companion_stationary_decomposability.py -v
 ```
