@@ -550,6 +550,32 @@ arbitrary-`lambda` full-tensor identity, exceptional polar `ell=0,1` blocks,
 and covariant symplectic matching are open. Do not promote it to the full
 polar theorem or begin unrestricted source enumeration yet.
 
+The promotion `COMPACT_EM_POLAR_MASTER_COMPLEX` now replaces that preflight
+for the full `ell>=2` polar tower. A column-by-column full-tensor derivation
+uses only the abstract harmonic identity
+
+```text
+Y''+cot(theta)Y'+lambda Y=0
+```
+
+and proves the declared matrix for arbitrary `lambda`, `k`, and `omega`. By
+`SO(3)` equivariance this is the same multiplicity-space matrix for every
+`m`. The polar Regge--Wheeler gauge is complete because the tracefree tensor
+harmonic has norm factor `lambda(lambda-2)/2`; the polar diffeomorphism also
+shifts the axial Maxwell coefficient by `delta U=-xi` through the background
+magnetic flux. Finally, the reconstruction locus `s=omega^2-k^2=0` has the
+nonzero five-row minor
+
+```text
+lambda^3(lambda-2)/8,
+```
+
+so no lightlike or zero-block solution was divided away for `ell>=2`. The
+polar and axial towers are therefore exactly isospectral for every
+`(n,ell,m)` with `ell>=2`. Exceptional polar `ell=0,1`, covariant symplectic
+matching, and extra fourth-order adjoint classes remain open; these are now
+the only compact linear gates before full harmonic source enumeration.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally

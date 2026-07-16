@@ -1,0 +1,213 @@
+{
+  "algebraic_and_singular_audit": {
+    "characteristic": "lambda**2 - 2*lambda*s - 2*lambda + s**2",
+    "coefficient_matrix": [
+      [
+        "0",
+        "0",
+        "lambda/2",
+        "(2*k**2 + lambda)/2",
+        "-lambda"
+      ],
+      [
+        "0",
+        "lambda/2",
+        "0",
+        "-k*omega",
+        "0"
+      ],
+      [
+        "lambda/2",
+        "0",
+        "0",
+        "-(lambda - 2*omega**2)/2",
+        "lambda"
+      ],
+      [
+        "0",
+        "I*k/2",
+        "I*omega/2",
+        "I*omega/2",
+        "-I*omega"
+      ],
+      [
+        "I*k/2",
+        "I*omega/2",
+        "0",
+        "-I*k/2",
+        "I*k"
+      ],
+      [
+        "(2*k**2 + lambda)/4",
+        "k*omega",
+        "-(lambda - 2*omega**2)/4",
+        "-(k**2 - omega**2 - 2)/2",
+        "-lambda"
+      ],
+      [
+        "1/2",
+        "0",
+        "-1/2",
+        "0",
+        "0"
+      ],
+      [
+        "1/2",
+        "0",
+        "-1/2",
+        "1",
+        "-k**2 - lambda + omega**2"
+      ]
+    ],
+    "dispersion": "omega^2=k_n^2+lambda+/-sqrt(2*lambda)",
+    "master_matrix": [
+      [
+        "lambda",
+        "-2*lambda"
+      ],
+      [
+        "-1",
+        "lambda"
+      ]
+    ],
+    "physical_branch_s_positive": "lambda>=6 implies lambda-sqrt(2lambda)>0",
+    "s_nonzero_reconstruction": [
+      "R=K-2U",
+      "A=C=-(omega^2+k^2)R/(omega^2-k^2)",
+      "B=2k omega R/(omega^2-k^2)"
+    ],
+    "s_zero_minor": "lambda**3*(lambda - 2)/8",
+    "s_zero_minor_rows": [
+      "E00",
+      "E01",
+      "E11",
+      "sphere_tracefree",
+      "Maxwell_axial_density"
+    ],
+    "s_zero_verdict": "full column rank for lambda>=6; only the zero gauge-fixed field",
+    "symmetrizer": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "2*lambda"
+      ]
+    ]
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem certifies the arbitrary-lambda full tensor identity, complete smooth polar gauge fixing, all Fourier momenta and m, the s=0 rank audit, two-master dispersion, isospectrality, and reduced symmetrizer for ell>=2 on the fixed compact product. It does not classify ell=0,1, match the covariant symplectic form, compute the complete fourth-order adjoint cokernel or quadratic obstruction table, or establish causal evolution, scattering, or quantum theory.",
+  "classification": {
+    "all_n_ell_ge2_m_polar_master_complex": true,
+    "arbitrary_lambda_full_tensor_identity": true,
+    "axial_polar_isospectrality": true,
+    "complete_fourth_order_adjoint": false,
+    "covariant_symplectic_matching": false,
+    "ell0_ell1_complete": false,
+    "ell_ge2_gauge_complete": true,
+    "full_polar_including_exceptions": false,
+    "s_zero_locus_complete": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "fixed-P_N compact product; every S1 Fourier momentum and every polar spherical harmonic with ell>=2; smooth periodic identity-component gauge; before residual quotient",
+  "exact_tensor_identity": {
+    "all_unlisted_tensor_components": "0",
+    "column_checks": [
+      {
+        "Einstein_component_remainders": "0",
+        "Maxwell_density_remainders": "0",
+        "column": "A"
+      },
+      {
+        "Einstein_component_remainders": "0",
+        "Maxwell_density_remainders": "0",
+        "column": "B"
+      },
+      {
+        "Einstein_component_remainders": "0",
+        "Maxwell_density_remainders": "0",
+        "column": "C"
+      },
+      {
+        "Einstein_component_remainders": "0",
+        "Maxwell_density_remainders": "0",
+        "column": "K"
+      },
+      {
+        "Einstein_component_remainders": "0",
+        "Maxwell_density_remainders": "0",
+        "column": "U"
+      }
+    ],
+    "derived_identity": "Y'''=(csc(theta)^2+cot(theta)^2-lambda)Y'+lambda cot(theta)Y",
+    "harmonic_identity": "Y''+cot(theta)Y'+lambda Y=0",
+    "row_order": [
+      "E00",
+      "E01",
+      "E11",
+      "E0a",
+      "E1a",
+      "sphere_trace",
+      "sphere_tracefree",
+      "Maxwell_axial_density"
+    ],
+    "volume_density": "perturbed sqrt(-g) retained; 0<theta<pi oriented chart, axes by smooth continuation"
+  },
+  "exceptional_ledger": {
+    "ell0": "OPEN homogeneous scalar/radion/charge block",
+    "ell1": "OPEN because the tracefree polar tensor harmonic vanishes and Regge--Wheeler gauge changes rank"
+  },
+  "gauge_theorem": {
+    "all_m_argument": "The product metric and magnetic sphere volume form are SO(3)-invariant, and the natural linearized equations are equivariant. Each ell eigenspace is irreducible and each declared harmonic type is a multiplicity copy, so the axisymmetric coefficient matrix acts tensor identity on all m.",
+    "ell_ge_2_rank": "lambda>=6 makes the tracefree tensor harmonic nonzero; G=0 fixes xi uniquely and h_A=0 then fixes xi_A uniquely",
+    "gauge_parameters": [
+      "xi_A Y",
+      "xi D_aY"
+    ],
+    "residual_gauge": "none for smooth ell>=2 polar harmonics",
+    "tensor_harmonic_norm_factor": "lambda*(lambda - 2)/2",
+    "transformations": [
+      "delta G=2xi",
+      "delta h_A=xi_A+partial_A xi",
+      "delta K=-lambda xi",
+      "delta U=-xi from i_xi F_background"
+    ],
+    "ungauged_coefficients": [
+      "h_AB Y",
+      "h_A D_aY",
+      "K g_abY",
+      "G (D_aD_bY+lambda g_abY/2)",
+      "a_a=U X_a"
+    ]
+  },
+  "generality_level": "G2_POLAR_ALL_N_ELL_M_ELL_GE2",
+  "isospectral_theorem": "For every n, ell>=2, and m, the polar eigenvalues equal the certified axial eigenvalues lambda+/-sqrt(2lambda); the parity sectors have distinct reconstruction maps.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify the exceptional polar ell=0,1 complexes, then match axial and polar reduced currents to the covariant Einstein--Maxwell symplectic form before solving the extra fourth-order adjoint blocks",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_polar_master_complex.py",
+    "generator_sha256": "e119d60d77ec76f3f5706d232aa6935fb9196d269a92c57327bc482b2472a9e8",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_axial_master_complex.json": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02",
+      "bridge/certificates/einstein_maxwell_polar_master_preflight.json": "bf7eefe8033e14bc13c055bc8c2210c68748f0707d1614d51ddd162a5f101705"
+    }
+  },
+  "reduced_pairing": {
+    "covariant_symplectic_matching": false,
+    "current": "j^A=u^T W partial^A v-(partial^A u)^T W v",
+    "symmetrizer": "diag(1,2lambda)"
+  },
+  "result_id": "COMPACT_EM_POLAR_MASTER_COMPLEX",
+  "result_state": "G2_POLAR_ELL_GE2_ALL_MOMENTA_TENSOR_IDENTITY_CERTIFIED_EXCEPTIONS_AND_SYMPLECTIC_OPEN",
+  "schema": "einstein-maxwell-polar-master-complex-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_polar_master_complex.schema.json",
+  "schema_sha256": "10df321fbc4cdc99e28aab2f21abdf53daf014adf6c06ef97c9bae3e02caad4d",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_polar_master_complex --verify bridge/certificates/einstein_maxwell_polar_master_complex.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_polar_master_complex.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_polar_master_complex"
+  ]
+}
