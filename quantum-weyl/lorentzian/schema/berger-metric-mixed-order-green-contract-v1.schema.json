@@ -58,24 +58,32 @@
     },
     "current_extension_boundary": {
       "type": "object", "additionalProperties": false,
-      "required": ["status", "authoritative_BV_rows", "analytic_rows", "wave_extension_path", "wave_extension_sha256", "cyclic_realization_path", "cyclic_realization_sha256", "triangular_reduction"],
+      "required": ["status", "authoritative_BV_rows", "analytic_rows", "wave_extension_path", "wave_extension_sha256", "cyclic_realization_path", "cyclic_realization_sha256", "factor_screen_path", "factor_screen_sha256", "factor_screen_verdict", "lower_by_two_normal_form", "lower_by_two_next_gate", "full_L13_metric_cone_verdict", "extra_characteristic", "viable_next_architectures", "triangular_reduction"],
       "properties": {
-        "status": {"const": "CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_OPEN"},
+        "status": {"const": "FULL_L13_METRIC_CONE_INVERSE_OBSTRUCTED_HYBRID_RETAINED_CHAIN_ROUTE_REQUIRED"},
         "authoritative_BV_rows": {"const": 34},
         "analytic_rows": {"const": 36},
         "wave_extension_path": {"const": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json"},
         "wave_extension_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "cyclic_realization_path": {"const": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json"},
         "cyclic_realization_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "factor_screen_path": {"const": "quantum-weyl/lorentzian/certificates/BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json"},
+        "factor_screen_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "factor_screen_verdict": {"const": "EQUAL_CONNECTION_LAPLACE_FACTOR_ANSATZ_OBSTRUCTED"},
+        "lower_by_two_normal_form": {"const": "A10=Box_2^2+V_2"},
+        "lower_by_two_next_gate": {"const": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT"},
+        "full_L13_metric_cone_verdict": {"const": "EXACT_NO_GO_EXTRA_SPEED_SQRT2"},
+        "extra_characteristic": {"const": "p0^2=2|p_spatial|^2"},
+        "viable_next_architectures": {"const": ["HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY", "WIDER_CHARACTERISTIC_CONE_GREEN_INVERSE_NONPHYSICAL_OPTION"]},
         "triangular_reduction": {"const": "E13 L13 U13^{-1}=L12 direct sum I1"}
       }
     },
-    "physical_input_status": {"const": "RAW_ENDPOINT_WAVE_EXTENSION_AND_CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPEN"},
+    "physical_input_status": {"const": "RAW_ENDPOINT_FULL_L13_METRIC_CONE_INVERSE_NO_GO_IMPORTED_HYBRID_ROUTE_OPEN"},
     "metric_green_status": {"const": "NOT_CONSTRUCTED"},
     "metric_antifield_green_status": {"const": "NOT_CONSTRUCTED"},
     "full_26_row_green_status": {"const": "NOT_CONSTRUCTED"},
     "quantum_execution_authorized": {"const": false},
-    "next_gate": {"const": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"},
+    "next_gate": {"const": "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY"},
     "claim_boundary": {"type": "string", "minLength": 1},
     "provenance": {"type": "object"}
   }

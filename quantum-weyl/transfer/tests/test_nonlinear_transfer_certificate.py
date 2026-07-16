@@ -82,10 +82,12 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         self.assertIn("CONDITIONAL_CAUSAL_UNARY_AND_RAW_ARITY_TWO_TRANSFER_THEOREM_IMPORTED", d_question["status"])
         self.assertIn("RANK_ONE_WAVE_EXTENSION_IMPORTED", d_question["status"])
         self.assertIn("CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED", d_question["status"])
-        self.assertIn("GREEN_OPERATORS_REQUIRED", d_question["status"])
+        self.assertIn("LOWER_BY_TWO_BIWAVE_IMPORTED", d_question["status"])
+        self.assertIn("FULL_L13_METRIC_CONE_INVERSE_EXACTLY_OBSTRUCTED", d_question["status"])
+        self.assertIn("HYBRID_RETAINED_CHAIN_HOMOTOPY_REQUIRED", d_question["status"])
         self.assertEqual(
             d_question["next_certificate"],
-            "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS",
+            "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
         )
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:

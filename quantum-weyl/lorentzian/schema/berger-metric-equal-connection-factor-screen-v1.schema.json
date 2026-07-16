@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-metric-equal-connection-factor-screen-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "ansatz", "screen", "claim_flags", "next_architectures", "upstream_next_gate", "next_gate", "manifest", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-metric-equal-connection-factor-screen-v1"},
+    "result_id": {"const": "BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN"},
+    "result_state": {"const": "LOWER_BY_TWO_AND_METRIC_CONE_NO_GO_IMPORTED_HYBRID_RETAINED_ROUTE_REQUIRED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_CAUSAL_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "ansatz": {
+      "const": {
+        "coefficient_class": "invariant coefficients in Q(alpha_B,u,v)",
+        "factor_form": "(Box_0 I10 + Gamma^a e_a + E)(Box_0 I10 + Gamma^a e_a + F)",
+        "shared_first_order_connection": true,
+        "potentials": "arbitrary order-zero 10x10 matrices"
+      }
+    },
+    "screen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient_domain", "scalar_wave", "metric_rows", "equal_connection_nonzero_entries", "quadratic_remainder_nondivisible_entry_count", "normalized_dual_witness", "exact_checks", "provenance"],
+      "properties": {
+        "coefficient_domain": {"const": "Q(alpha_B,u,v)_PBW"},
+        "scalar_wave": {"const": "Box_0=-e0^2+e1^2+e2^2+e3^2"},
+        "metric_rows": {"const": ["h00", "h01", "h02", "h03", "h11", "h12", "h13", "h22", "h23", "h33"]},
+        "equal_connection_nonzero_entries": {"const": 24},
+        "quadratic_remainder_nondivisible_entry_count": {"type": "integer", "minimum": 1},
+        "normalized_dual_witness": {
+          "const": {
+            "functional": "-u^-2 coefficient_of(p0*p3) in row h00, column h03",
+            "target_space": "quadratic_symbols modulo (zeta^2)*Mat10",
+            "representative": "-p0*p3*u**2",
+            "value": "1",
+            "field_content": {"equation_row": "h00", "input_field": "h03"},
+            "derivative_content": "one temporal and one e3 derivative"
+          }
+        },
+        "exact_checks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["classical_export_identity_and_boundary_pinned", "dedicated_lower_by_two_quantum_import_bound", "classical_artifact_hashes_match", "A10_equals_Box2_squared_plus_V2", "source_degree_two_rank_ledger_replayed", "all_92_source_degree_two_entries_nondivisible", "metric_cone_export_identity_and_boundary_pinned", "metric_cone_bordered_determinant_replayed", "metric_cone_rank_12_off_metric_cone_replayed", "pinned_scalar_wave_exact", "metric_principal_equals_scalar_biwave_I10", "cubic_symbol_has_unique_equal_split", "equal_connection_square_leaves_order_two", "quadratic_remainder_not_wave_divisible", "dual_witness_normalized"],
+          "properties": {
+            "classical_export_identity_and_boundary_pinned": {"const": true},
+            "dedicated_lower_by_two_quantum_import_bound": {"const": true},
+            "classical_artifact_hashes_match": {"const": true},
+            "A10_equals_Box2_squared_plus_V2": {"const": true},
+            "source_degree_two_rank_ledger_replayed": {"const": true},
+            "all_92_source_degree_two_entries_nondivisible": {"const": true},
+            "metric_cone_export_identity_and_boundary_pinned": {"const": true},
+            "metric_cone_bordered_determinant_replayed": {"const": true},
+            "metric_cone_rank_12_off_metric_cone_replayed": {"const": true},
+            "pinned_scalar_wave_exact": {"const": true},
+            "metric_principal_equals_scalar_biwave_I10": {"const": true},
+            "cubic_symbol_has_unique_equal_split": {"const": true},
+            "equal_connection_square_leaves_order_two": {"const": true},
+            "quadratic_remainder_not_wave_divisible": {"const": true},
+            "dual_witness_normalized": {"const": true}
+          }
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["lower_by_two_classical_commit", "lower_by_two_quantum_import_path", "lower_by_two_quantum_import_sha256", "lower_by_two_classical_sources", "metric_cone_classical_commit", "metric_cone_classical_sources", "raw_classical_commit", "extension_classical_commit", "raw_operator_sha256", "extension_operator_sha256", "raw_import_sha256", "extension_import_sha256"],
+          "properties": {
+            "lower_by_two_classical_commit": {"const": "db099319b79b7fa9e107347fe24fc534a104c09c"},
+            "lower_by_two_quantum_import_path": {"const": "quantum-weyl/lorentzian/certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT.json"},
+            "lower_by_two_quantum_import_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "lower_by_two_classical_sources": {"type": "object", "minProperties": 4},
+            "metric_cone_classical_commit": {"const": "d6c64253442811dcb57df979a6bc3cb4f77e940c"},
+            "metric_cone_classical_sources": {"type": "object", "minProperties": 4},
+            "raw_classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+            "extension_classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+            "raw_operator_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "extension_operator_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "raw_import_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "extension_import_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORTED": true,
+        "BERGER_CANONICAL_ROUGH_WAVE_FACTOR_NO_GO_IMPORTED": true,
+        "BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO_IMPORTED": true,
+        "EQUAL_CONNECTION_LAPLACE_FACTOR_ANSATZ": false,
+        "UNEQUAL_SUBPRINCIPAL_FACTOR_ANSATZ": "OPEN",
+        "AUXILIARY_OR_FIRST_ORDER_REALIZATION": "OPEN",
+        "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_architectures": {"const": ["HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY", "WIDER_CHARACTERISTIC_CONE_GREEN_INVERSE_NONPHYSICAL_OPTION"]},
+    "upstream_next_gate": {"const": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT"},
+    "next_gate": {"const": "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY"},
+    "manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

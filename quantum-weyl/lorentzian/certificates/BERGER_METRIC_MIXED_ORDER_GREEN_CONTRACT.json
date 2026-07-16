@@ -6,7 +6,7 @@
     "FIRST_ORDER_DIFFERENTIAL_ALGEBRAIC",
     "RAW_CLOCK_RANK_ONE_WAVE_EXTENSION"
   ],
-  "claim_boundary": "Rejects the dressed cyclic witness as a Green endpoint, imports the principal-compatible raw cyclic 34-row route, the rank-one scalar-wave prolongation, and its cyclic 36-row analytic realization. It constructs no advanced or retarded Green operator, causal support theorem, full 26-row homotopy, Hadamard state, QME restoration, or Lorentzian quantum theory.",
+  "claim_boundary": "Rejects the dressed cyclic witness as a Green endpoint, imports the principal-compatible raw cyclic 34-row route, the rank-one scalar-wave prolongation, and its cyclic 36-row analytic realization. The normalized classical lower-by-two tensor-biwave normal form is independently replayed. The normalized quadratic-symbol witness rules out the shared-connection Laplace-type two-factor ansatz but leaves unequal subprincipal and auxiliary/first-order architectures open. The full 13-row endpoint additionally has a genuine sqrt(2) characteristic outside the metric cone, so a metric-causal inverse on arbitrary 13-row sources is ruled out and the hybrid retained chain route is required. It constructs no advanced or retarded Green operator, causal support theorem, full 26-row homotopy, Hadamard state, QME restoration, or Lorentzian quantum theory.",
   "common_proof_checks": [
     "D_equivariance",
     "advanced_left_inverse",
@@ -39,8 +39,19 @@
     "authoritative_BV_rows": 34,
     "cyclic_realization_path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json",
     "cyclic_realization_sha256": "6a6b21eace2ada1805b1e3e2259c2a36709fe4d618993381c55954139a038575",
-    "status": "CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_OPEN",
+    "extra_characteristic": "p0^2=2|p_spatial|^2",
+    "factor_screen_path": "quantum-weyl/lorentzian/certificates/BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json",
+    "factor_screen_sha256": "7b7b53c7d46cd3a1d6348560eb19b420a0abfcd41ac53c415908ed700b2714a1",
+    "factor_screen_verdict": "EQUAL_CONNECTION_LAPLACE_FACTOR_ANSATZ_OBSTRUCTED",
+    "full_L13_metric_cone_verdict": "EXACT_NO_GO_EXTRA_SPEED_SQRT2",
+    "lower_by_two_next_gate": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT",
+    "lower_by_two_normal_form": "A10=Box_2^2+V_2",
+    "status": "FULL_L13_METRIC_CONE_INVERSE_OBSTRUCTED_HYBRID_RETAINED_CHAIN_ROUTE_REQUIRED",
     "triangular_reduction": "E13 L13 U13^{-1}=L12 direct sum I1",
+    "viable_next_architectures": [
+      "HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+      "WIDER_CHARACTERISTIC_CONE_GREEN_INVERSE_NONPHYSICAL_OPTION"
+    ],
     "wave_extension_path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json",
     "wave_extension_sha256": "bb8c813922bd2e74f7e24369e756a09d8543cfb66a9580131ad8e6ad0e5d34c5"
   },
@@ -67,21 +78,22 @@
   "full_26_row_green_status": "NOT_CONSTRUCTED",
   "metric_antifield_green_status": "NOT_CONSTRUCTED",
   "metric_green_status": "NOT_CONSTRUCTED",
-  "next_gate": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS",
-  "physical_input_status": "RAW_ENDPOINT_WAVE_EXTENSION_AND_CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPEN",
+  "next_gate": "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+  "physical_input_status": "RAW_ENDPOINT_FULL_L13_METRIC_CONE_INVERSE_NO_GO_IMPORTED_HYBRID_ROUTE_OPEN",
   "provenance": {
     "source_manifest": {
-      "../reports/berger-metric-mixed-order-green-contract.md": "91d0ccf9ae56d81e36aed682b8130d06824b1b0d63d6eed38e1d58267e9b7a13",
+      "../reports/berger-metric-mixed-order-green-contract.md": "bcbd67ad65c4214b9bc38608605cc2eec9ebdf60732ddf58b9e1c72e021b9483",
+      "certificates/BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json": "7b7b53c7d46cd3a1d6348560eb19b420a0abfcd41ac53c415908ed700b2714a1",
       "certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json": "6a6b21eace2ada1805b1e3e2259c2a36709fe4d618993381c55954139a038575",
       "certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json": "5ea1bf6f2449cc5077b8602f0870ea163c65c48f776f2354f25d0d7a19ca745c",
       "certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json": "bb8c813922bd2e74f7e24369e756a09d8543cfb66a9580131ad8e6ad0e5d34c5",
-      "metric_mixed_order_green_contract.py": "3cea8954f867c68d3de3515ec8db1ec2b2a37bbc828d6a21ed40afeeff769942",
-      "metric_mixed_order_green_contract_certificate.py": "ed44d42b49602a606982b6b518cfecbb195569658c77b7d1a234317539a8564c",
-      "schema/berger-metric-mixed-order-green-contract-v1.schema.json": "00c09aedc4a17b76cc869e2c67e48ab515b2f989cdfc013526c52e97636d510b",
+      "metric_mixed_order_green_contract.py": "e65e31bb3e7c49a6591c4d16c19ff5471e8052186c8e8a6bfa9d7eb3ca2dc3bc",
+      "metric_mixed_order_green_contract_certificate.py": "a02e5970242b3432914d961e685586b0b42f5c28e643063c4475edfd2d463651",
+      "schema/berger-metric-mixed-order-green-contract-v1.schema.json": "052ddafffb13655fef887882e084f2bc76b0452af05683a97218bc9fe313b81f",
       "schema/berger-metric-mixed-order-green-export-v1.schema.json": "4aafad99f5ccbc84d19d2bb0d61e6b07c6209535e656857f79f7b8b23c84062a",
-      "tests/test_metric_mixed_order_green_contract.py": "0abe428fd4baca0f9c52cfc7dd3b69a0f056c763478b55fbb0aa11c1a6f346d3"
+      "tests/test_metric_mixed_order_green_contract.py": "5ced8ab9059ac347784fd59178f0bb4cba2fd1f153fb28d3b39f020a2b9c3e89"
     },
-    "source_manifest_sha256": "3cd2c99a956905f039e49c2d673974a0d3f49c477f5f75c82bab647307522886"
+    "source_manifest_sha256": "4aac7d69603f9a0285c6544592c06c37efdd20cccafd3b498c7d50076fd8e173"
   },
   "quantum_execution_authorized": false,
   "required_operator_ids": [

@@ -65,6 +65,7 @@ ROOT = Path(__file__).resolve().parents[2]
 RAW_ROUTE_IMPORT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json"
 RAW_EXTENSION_IMPORT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json"
 CYCLIC_REALIZATION_IMPORT = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json"
+EQUAL_CONNECTION_SCREEN = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json"
 
 
 def _sha256(path: Path) -> str:
@@ -278,6 +279,7 @@ def build_contract_receipt() -> dict[str, Any]:
     raw_import = json.loads(RAW_ROUTE_IMPORT.read_text(encoding="utf-8"))
     extension_import = json.loads(RAW_EXTENSION_IMPORT.read_text(encoding="utf-8"))
     cyclic_import = json.loads(CYCLIC_REALIZATION_IMPORT.read_text(encoding="utf-8"))
+    factor_screen = json.loads(EQUAL_CONNECTION_SCREEN.read_text(encoding="utf-8"))
     if (
         not isinstance(raw_import, dict)
         or raw_import.get("result_id") != "BERGER_RAW_ENDPOINT_INPUT_IMPORT"
@@ -323,6 +325,31 @@ def build_contract_receipt() -> dict[str, Any]:
         != "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"
     ):
         raise ValueError("checked cyclic analytic realization import identity or boundary drifted")
+    if (
+        not isinstance(factor_screen, dict)
+        or factor_screen.get("result_id")
+        != "BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN"
+        or factor_screen.get("result_state")
+        != "LOWER_BY_TWO_AND_METRIC_CONE_NO_GO_IMPORTED_HYBRID_RETAINED_ROUTE_REQUIRED"
+        or factor_screen.get("claim_flags", {}).get(
+            "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORTED"
+        ) is not True
+        or factor_screen.get("claim_flags", {}).get(
+            "BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO_IMPORTED"
+        ) is not True
+        or factor_screen.get("claim_flags", {}).get(
+            "EQUAL_CONNECTION_LAPLACE_FACTOR_ANSATZ"
+        ) is not False
+        or factor_screen.get("claim_flags", {}).get(
+            "UNEQUAL_SUBPRINCIPAL_FACTOR_ANSATZ"
+        ) != "OPEN"
+        or factor_screen.get("claim_flags", {}).get(
+            "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"
+        ) is not False
+        or factor_screen.get("screen", {}).get("normalized_dual_witness", {}).get("value")
+        != "1"
+    ):
+        raise ValueError("equal-connection factor screen identity or boundary drifted")
     return deepcopy(
         {
             "schema": "quantum-weyl-berger-metric-mixed-order-green-contract-v1",
@@ -362,25 +389,43 @@ def build_contract_receipt() -> dict[str, Any]:
                 ],
             },
             "current_extension_boundary": {
-                "status": "CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_OPEN",
+                "status": "FULL_L13_METRIC_CONE_INVERSE_OBSTRUCTED_HYBRID_RETAINED_CHAIN_ROUTE_REQUIRED",
                 "authoritative_BV_rows": 34,
                 "analytic_rows": 36,
                 "wave_extension_path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json",
                 "wave_extension_sha256": _sha256(RAW_EXTENSION_IMPORT),
                 "cyclic_realization_path": "quantum-weyl/lorentzian/certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json",
                 "cyclic_realization_sha256": _sha256(CYCLIC_REALIZATION_IMPORT),
+                "factor_screen_path": "quantum-weyl/lorentzian/certificates/BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json",
+                "factor_screen_sha256": _sha256(EQUAL_CONNECTION_SCREEN),
+                "factor_screen_verdict": "EQUAL_CONNECTION_LAPLACE_FACTOR_ANSATZ_OBSTRUCTED",
+                "lower_by_two_normal_form": "A10=Box_2^2+V_2",
+                "lower_by_two_next_gate": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT",
+                "full_L13_metric_cone_verdict": "EXACT_NO_GO_EXTRA_SPEED_SQRT2",
+                "extra_characteristic": "p0^2=2|p_spatial|^2",
+                "viable_next_architectures": [
+                    "HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+                    "WIDER_CHARACTERISTIC_CONE_GREEN_INVERSE_NONPHYSICAL_OPTION",
+                ],
                 "triangular_reduction": "E13 L13 U13^{-1}=L12 direct sum I1",
             },
-            "physical_input_status": "RAW_ENDPOINT_WAVE_EXTENSION_AND_CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPEN",
+            "physical_input_status": "RAW_ENDPOINT_FULL_L13_METRIC_CONE_INVERSE_NO_GO_IMPORTED_HYBRID_ROUTE_OPEN",
             "metric_green_status": "NOT_CONSTRUCTED",
             "metric_antifield_green_status": "NOT_CONSTRUCTED",
             "full_26_row_green_status": "NOT_CONSTRUCTED",
             "quantum_execution_authorized": False,
-            "next_gate": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS",
+            "next_gate": "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
             "claim_boundary": (
                 "Rejects the dressed cyclic witness as a Green endpoint, imports the "
                 "principal-compatible raw cyclic 34-row route, the rank-one scalar-wave "
-                "prolongation, and its cyclic 36-row analytic realization. It "
+                "prolongation, and its cyclic 36-row analytic realization. The normalized "
+                "classical lower-by-two tensor-biwave normal form is independently replayed. "
+                "The normalized quadratic-symbol witness rules out the shared-connection Laplace-type "
+                "two-factor ansatz but leaves unequal subprincipal and auxiliary/first-order "
+                "architectures open. The full 13-row endpoint additionally has a genuine "
+                "sqrt(2) characteristic outside the metric cone, so a metric-causal inverse "
+                "on arbitrary 13-row sources is ruled out and the hybrid retained chain route "
+                "is required. It "
                 "constructs no advanced or retarded Green operator, causal support "
                 "theorem, full 26-row homotopy, Hadamard state, QME restoration, or "
                 "Lorentzian quantum theory."

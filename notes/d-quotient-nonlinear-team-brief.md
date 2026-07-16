@@ -306,15 +306,35 @@ Schur term. The 13-row support-local scalar-wave prolongation of that term is
 now imported and exactly replayed. Its paired 36-row cyclic analytic
 realization, source/solution graph SDRs, and formal adjoint are also imported;
 the added `y,y*` pair does not alter the authoritative 34-row BV cohomology.
-Advanced/retarded Green operators remain the active PDE gate.
+The authoritative lower-by-two theorem from classical commit `db099319` is
+now pinned and independently replayed: `A10=Box_2^2+V_2` with
+`ord(V_2)<=2`, and all 92 nonzero quadratic-symbol entries obstruct a
+factorization fixing one canonical rough-wave factor. The downstream exact
+lower-order screen further rules out a factorization into two
+scalar-principal second-order factors sharing the same invariant connection:
+the quadratic remainder has normalized dual witness
+`-u^-2 [p0 p3] R2[h00,h03]=1`.  This is not a general Green no-go. Unequal
+subprincipal factors, auxiliary/first-order reductions, and a causal
+Volterra/Levi resolvent remain live.
+The subsequent exact Douglis audit changes the endpoint gate more sharply:
+the full `L13` determinant contains the genuine extra characteristic
+`p0^2=2|p_spatial|^2`, of speed `sqrt(2)`. Thus a background-metric-causal
+inverse on arbitrary 13-row sources is impossible. This is not physical
+superluminality: the extra cone lies in the acyclic clock/graph incidence.
+The active PDE gate is now `BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY`:
+contract that incidence support-locally first, then construct the retained
+causal chain homotopy.
 
 1. Choose and certify a residual/BFV, derived zero-charge, or causal Green
    extension of the complex.  The extension must state its rows, support
    category, pairing, and replacement unary Cartan identity explicitly.
 2. On the causal route, construct
-   `BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS` for the imported 13-row
-   extension, prove causal support and cyclic adjointness, and lift the
-   resulting retained homotopy through the certified 54-to-26 contraction.
+   `BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY`. Do not require a
+   metric-causal inverse of the complete `L13` on arbitrary sources; that
+   architecture is exactly obstructed. Apply the certified support-local
+   clock/graph contraction first, construct the causal homotopy on retained
+   sources, prove cyclic adjointness, and lift it through the certified
+   54-to-26 contraction.
 3. Transfer the full `ell2` on the chosen extension and only then form the
    corrected arity-two Cartan source.
 4. Solve for `iota_D^(2)` on that extension or retain its normalized

@@ -41,6 +41,23 @@ wave-divisible order-six Schur term under naive clock elimination.  This is a
 filtered-extension target, not a Green theorem; all causal and Hadamard flags
 remain false.
 
+Classical commit `db099319` is now the authoritative lower-by-two input:
+`A10=Box_2^2+V_2` with `ord(V_2)<=2`. The quantum replay verifies its exact
+operator identity, rank ledger, and canonical rough-wave factor no-go. The
+downstream lower-order factor screen rules out the smallest remaining ansatz:
+two scalar-principal second-order factors sharing the same invariant
+first-order connection.  Its normalized quadratic-symbol witness is one.
+Unequal subprincipal factors, auxiliary/first-order realizations, and a causal
+Volterra/Levi resolvent remain open; no Green or quantum flag is promoted.
+
+The full 13-row route is now more sharply classified. Its exact Douglis
+determinant contains a genuine `p0^2=2|p_spatial|^2` factor. Consequently no
+inverse on arbitrary 13-row sources can have support confined to the
+background metric cone. The extra cone belongs to the acyclic clock/graph
+incidence, so this is not a physical superluminality claim. The active route
+is hybrid: contract that incidence support-locally, then construct the causal
+chain homotopy on the retained complex.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -56,6 +73,8 @@ PYTHONPATH=quantum-weyl python3 -m lorentzian.curved_witness_import_certificate 
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_curved_witness_import.py -v
 PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_mixed_order_green_contract_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_mixed_order_green_contract.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_equal_connection_factor_screen_certificate --check
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_equal_connection_factor_screen.py -v
 PYTHONPATH=quantum-weyl python3 -m lorentzian.raw_endpoint_import_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.raw_endpoint_import_certificate --replay-check
 PYTHONPATH=quantum-weyl python3 -m unittest lorentzian.tests.test_raw_endpoint_import -v

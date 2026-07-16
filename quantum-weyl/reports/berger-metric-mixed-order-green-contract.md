@@ -26,6 +26,27 @@ relation to the authoritative 34-row BV complex, and the required future
 adjoint identity is `G13_plus^sharp=G13_minus`. The analytic `y,y*` pair does
 not add BV cohomology.
 
+The authoritative classical lower-by-two theorem is now pinned and replayed:
+`A10=Box_2^2+V_2`, with `ord(V_2)<=2`. Its 92 nonzero quadratic-symbol
+entries are all nondivisible by the scalar wave, so a factorization fixing
+one canonical rough-wave factor is impossible. The downstream exact
+lower-order factor screen is also complete. After removing
+the exact scalar biwave and the uniquely determined shared first-order
+connection, the quadratic remainder has the normalized witness
+`-u^-2 [p0 p3] R2[h00,h03]=1`. Consequently two scalar-principal factors with
+the same invariant connection and arbitrary order-zero potentials cannot
+produce the endpoint. This does not obstruct unequal subprincipal factors or
+an auxiliary/first-order realization; a causal Volterra/Levi construction is
+also live.
+
+The complete analytic endpoint nevertheless cannot be the metric-causal
+Green theorem. Its exact Douglis determinant contains the extra factor
+`p0^2-2|p_spatial|^2`, with rank twelve on that cone and rank thirteen off it.
+The contractible clock/graph incidence carries this characteristic. The
+physical next gate is therefore a hybrid chain construction: apply its
+support-local contraction first and build causal propagation only on retained
+sources.
+
 All routes require exact proofs of both left and right inverse identities,
 advanced/retarded support, propagation of constraints, formal-adjoint and
 cyclic compatibility, `D`-equivariance, row completeness, and a zero-mode
@@ -44,6 +65,8 @@ Reproduce the interface receipt with:
 ```bash
 PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_mixed_order_green_contract_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_mixed_order_green_contract.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.metric_equal_connection_factor_screen_certificate --check
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_metric_equal_connection_factor_screen.py -v
 ```
 
 The certificate records the exact commands and elapsed time of the current

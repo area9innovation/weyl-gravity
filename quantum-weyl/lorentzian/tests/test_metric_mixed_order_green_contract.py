@@ -206,7 +206,26 @@ class MetricMixedOrderGreenContractTests(unittest.TestCase):
 
     def test_next_gate_is_green_realization_not_curved_algebra(self) -> None:
         certificate = build_certificate()
-        self.assertEqual(certificate["next_gate"], "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS")
+        self.assertEqual(
+            certificate["next_gate"],
+            "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+        )
+        self.assertEqual(
+            certificate["current_extension_boundary"]["factor_screen_verdict"],
+            "EQUAL_CONNECTION_LAPLACE_FACTOR_ANSATZ_OBSTRUCTED",
+        )
+        self.assertIn(
+            "HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+            certificate["current_extension_boundary"]["viable_next_architectures"],
+        )
+        self.assertEqual(
+            certificate["current_extension_boundary"]["lower_by_two_normal_form"],
+            "A10=Box_2^2+V_2",
+        )
+        self.assertEqual(
+            certificate["current_extension_boundary"]["full_L13_metric_cone_verdict"],
+            "EXACT_NO_GO_EXTRA_SPEED_SQRT2",
+        )
         self.assertFalse(certificate["quantum_execution_authorized"])
 
     def test_unverified_constraint_proof_fails_closed(self) -> None:

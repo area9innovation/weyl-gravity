@@ -1,0 +1,143 @@
+{
+  "ansatz": {
+    "coefficient_class": "invariant coefficients in Q(alpha_B,u,v)",
+    "factor_form": "(Box_0 I10 + Gamma^a e_a + E)(Box_0 I10 + Gamma^a e_a + F)",
+    "potentials": "arbitrary order-zero 10x10 matrices",
+    "shared_first_order_connection": true
+  },
+  "claim_boundary": "Pins and independently replays the classical lower-by-two tensor-biwave normal form and its canonical rough-wave factor no-go, then independently replays the full-endpoint metric-cone obstruction. The normalized quadratic-symbol witness additionally rules out only the invariant-coefficient two-factor scalar-principal ansatz in which both factors share the uniquely determined first-order connection. It does not obstruct unequal subprincipal factors or wider-cone Green inverses. A background-metric-causal inverse on arbitrary 13-row sources is ruled out; the hybrid retained chain route remains open. No Green hyperbolicity or causal support theorem, the retained 26-row homotopy, Hadamard data, D-Cartan transfer, QME restoration, or a Lorentzian quantum theory.",
+  "claim_flags": {
+    "AUXILIARY_OR_FIRST_ORDER_REALIZATION": "OPEN",
+    "BERGER_CANONICAL_ROUGH_WAVE_FACTOR_NO_GO_IMPORTED": true,
+    "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORTED": true,
+    "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": false,
+    "BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO_IMPORTED": true,
+    "EQUAL_CONNECTION_LAPLACE_FACTOR_ANSATZ": false,
+    "QUANTUM_CLAIM": false,
+    "UNEQUAL_SUBPRINCIPAL_FACTOR_ANSATZ": "OPEN"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle_layer": "CLASSICAL_BV_CAUSAL_PREFLIGHT",
+  "manifest": {
+    "../reports/berger-metric-equal-connection-factor-screen.md": "f7bedc48019d90a35cad256826f615a5b178dc33522105e03b9f482db944f9a3",
+    "metric_equal_connection_factor_screen.py": "9c9c6fcd4157429ab2c0fdadac2ca195fa107f7e95c7b3ea1887a57738f15a77",
+    "metric_equal_connection_factor_screen_certificate.py": "636c0d4a1624ecc125cb9f5c37fa60fe09e97b12fbcddc8dff0ee7ae9b6eaa68",
+    "schema/berger-metric-equal-connection-factor-screen-v1.schema.json": "4cd5997ab07d22ab0801e18bb8cd324b6918a68f0e523b4422631d7285a477d2",
+    "tests/test_metric_equal_connection_factor_screen.py": "9e83706bee7c74e569726e8af1468c3323eb6529786be5804007a635510808fa"
+  },
+  "next_architectures": [
+    "HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+    "WIDER_CHARACTERISTIC_CONE_GREEN_INVERSE_NONPHYSICAL_OPTION"
+  ],
+  "next_gate": "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+  "result_id": "BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN",
+  "result_state": "LOWER_BY_TWO_AND_METRIC_CONE_NO_GO_IMPORTED_HYBRID_RETAINED_ROUTE_REQUIRED",
+  "schema": "quantum-weyl-berger-metric-equal-connection-factor-screen-v1",
+  "screen": {
+    "coefficient_domain": "Q(alpha_B,u,v)_PBW",
+    "equal_connection_nonzero_entries": 24,
+    "exact_checks": {
+      "A10_equals_Box2_squared_plus_V2": true,
+      "all_92_source_degree_two_entries_nondivisible": true,
+      "classical_artifact_hashes_match": true,
+      "classical_export_identity_and_boundary_pinned": true,
+      "cubic_symbol_has_unique_equal_split": true,
+      "dedicated_lower_by_two_quantum_import_bound": true,
+      "dual_witness_normalized": true,
+      "equal_connection_square_leaves_order_two": true,
+      "metric_cone_bordered_determinant_replayed": true,
+      "metric_cone_export_identity_and_boundary_pinned": true,
+      "metric_cone_rank_12_off_metric_cone_replayed": true,
+      "metric_principal_equals_scalar_biwave_I10": true,
+      "pinned_scalar_wave_exact": true,
+      "quadratic_remainder_not_wave_divisible": true,
+      "source_degree_two_rank_ledger_replayed": true
+    },
+    "metric_rows": [
+      "h00",
+      "h01",
+      "h02",
+      "h03",
+      "h11",
+      "h12",
+      "h13",
+      "h22",
+      "h23",
+      "h33"
+    ],
+    "normalized_dual_witness": {
+      "derivative_content": "one temporal and one e3 derivative",
+      "field_content": {
+        "equation_row": "h00",
+        "input_field": "h03"
+      },
+      "functional": "-u^-2 coefficient_of(p0*p3) in row h00, column h03",
+      "representative": "-p0*p3*u**2",
+      "target_space": "quadratic_symbols modulo (zeta^2)*Mat10",
+      "value": "1"
+    },
+    "provenance": {
+      "extension_classical_commit": "34c184591956aafe97b0728f065b7d044b729f46",
+      "extension_import_sha256": "bb8c813922bd2e74f7e24369e756a09d8543cfb66a9580131ad8e6ad0e5d34c5",
+      "extension_operator_sha256": "de369f52a733ad80e61ed0522ac1c4c0bb2c39911642c1e5212893a828a818a4",
+      "lower_by_two_classical_commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+      "lower_by_two_classical_sources": {
+        "d_quotient_classical/backreacted_clock/berger_metric_lower_by_two_biwave.py": {
+          "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+          "path": "d_quotient_classical/backreacted_clock/berger_metric_lower_by_two_biwave.py",
+          "sha256": "7d5fd32ba292dde9ead710dc9142f671322142678da036b7b823779c9b30c6f0"
+        },
+        "d_quotient_classical/backreacted_clock/tests/test_berger_metric_lower_by_two_biwave.py": {
+          "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+          "path": "d_quotient_classical/backreacted_clock/tests/test_berger_metric_lower_by_two_biwave.py",
+          "sha256": "6b1d1bcf6c15ae0bee74d5735b7bbadd68893d4989200905860029d66363e05f"
+        },
+        "d_quotient_classical/certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE.json": {
+          "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+          "path": "d_quotient_classical/certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE.json",
+          "sha256": "0add3e518b7384cd653161b1f9db44d13c71f5c8349cd013027057e0d2ff7c8b"
+        },
+        "d_quotient_classical/reports/berger-metric-lower-by-two-biwave.md": {
+          "commit": "db099319b79b7fa9e107347fe24fc534a104c09c",
+          "path": "d_quotient_classical/reports/berger-metric-lower-by-two-biwave.md",
+          "sha256": "5a7e8c4b735a2755f3c02764fc8297758ad634af7b788b239be966822bd8229c"
+        }
+      },
+      "lower_by_two_quantum_import_path": "quantum-weyl/lorentzian/certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT.json",
+      "lower_by_two_quantum_import_sha256": "9a01f82939b9a51adb1b348fffde5df6c71201dafc92e1967cc0556f5eed111d",
+      "metric_cone_classical_commit": "d6c64253442811dcb57df979a6bc3cb4f77e940c",
+      "metric_cone_classical_sources": {
+        "d_quotient_classical/backreacted_clock/berger_raw_endpoint_metric_cone_no_go.py": {
+          "commit": "d6c64253442811dcb57df979a6bc3cb4f77e940c",
+          "path": "d_quotient_classical/backreacted_clock/berger_raw_endpoint_metric_cone_no_go.py",
+          "sha256": "fb12dbdd4c316202a90d189ba229203814ef377cac80c5273bc2ca29c28e10c9"
+        },
+        "d_quotient_classical/backreacted_clock/tests/test_berger_raw_endpoint_metric_cone_no_go.py": {
+          "commit": "d6c64253442811dcb57df979a6bc3cb4f77e940c",
+          "path": "d_quotient_classical/backreacted_clock/tests/test_berger_raw_endpoint_metric_cone_no_go.py",
+          "sha256": "23be6859009be87c5cffc159d267d5fdd1e1e8c769546ce2684d642d01e7221b"
+        },
+        "d_quotient_classical/certificates/BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO.json": {
+          "commit": "d6c64253442811dcb57df979a6bc3cb4f77e940c",
+          "path": "d_quotient_classical/certificates/BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO.json",
+          "sha256": "2dd31ae1fb2b68b8c0830c354c679b26df13558172f994f5e29d930882352aa6"
+        },
+        "d_quotient_classical/reports/berger-raw-endpoint-metric-cone-no-go.md": {
+          "commit": "d6c64253442811dcb57df979a6bc3cb4f77e940c",
+          "path": "d_quotient_classical/reports/berger-raw-endpoint-metric-cone-no-go.md",
+          "sha256": "0f4e644761e8a69a92d787c75013698ef774562410492b2f779306eea316d3ee"
+        }
+      },
+      "raw_classical_commit": "3147774e10fe6b01e4f482783014ddc39f3de0ff",
+      "raw_import_sha256": "5ea1bf6f2449cc5077b8602f0870ea163c65c48f776f2354f25d0d7a19ca745c",
+      "raw_operator_sha256": "272abd3d4fb3f01fc622feec8be425ff82a89183c493ac82aa7916d928c19119"
+    },
+    "quadratic_remainder_nondivisible_entry_count": 92,
+    "scalar_wave": "Box_0=-e0^2+e1^2+e2^2+e3^2"
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "upstream_next_gate": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT"
+}

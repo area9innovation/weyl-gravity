@@ -40,6 +40,7 @@ def build_certificate() -> dict[str, object]:
         "certificates/BERGER_RAW_ENDPOINT_INPUT_IMPORT.json",
         "certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION_IMPORT.json",
         "certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION_IMPORT.json",
+        "certificates/BERGER_METRIC_EQUAL_CONNECTION_FACTOR_SCREEN.json",
     )
     manifest = {path: _hash(ROOT / path) for path in paths}
     return {
