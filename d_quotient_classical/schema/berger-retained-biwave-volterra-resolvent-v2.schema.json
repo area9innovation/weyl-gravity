@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-retained-biwave-volterra-resolvent-v2.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "result_id", "setting_id", "claim_status",
+    "dependency_tags", "dependency_refs", "supersedes", "retained_identification",
+    "companion_graph_sdr", "typed_spaces", "coefficient_hypotheses",
+    "typed_resolvents", "factorial_estimates", "inverse_theorem", "adjoint_theorem",
+    "analytic_proof_artifacts", "zero_mode_policy", "exact_checks", "flags",
+    "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-biwave-volterra-resolvent-v2"},
+    "schema_version": {"const": "2.0.0"},
+    "result_id": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "claim_status": {"const": "CERTIFIED_TYPED_RETAINED_METRIC_CAUSAL_GREEN_OPERATORS"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metric_normal_form", "minimal_clock_contraction", "raw_witness_transport"],
+      "properties": {
+        "metric_normal_form": {"$ref": "#/$defs/dependency"},
+        "minimal_clock_contraction": {"$ref": "#/$defs/dependency"},
+        "raw_witness_transport": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "supersedes": {
+      "const": {
+        "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
+        "reason": "V1 conflated solution- and source-space resolvents and overstated the adjoint theorem; V2 repairs both defects."
+      }
+    },
+    "retained_identification": {
+      "const": {
+        "identity": "(pi_cl P34_raw iota_cl)_metric=A10=Box_2^2+V_2",
+        "metric_rows": 10,
+        "maximum_order_V2": 2
+      }
+    },
+    "companion_graph_sdr": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operator", "status", "exact_checks"],
+      "properties": {
+        "operator": {"const": "C20=[[Box_2,-I10],[V_2,Box_2]]"},
+        "status": {"const": "IMPORTED_AND_FREE_ALGEBRA_RECHECKED"},
+        "exact_checks": {
+          "const": {
+            "p_sol_i_sol": true,
+            "p_src_i_src": true,
+            "C_i_sol": true,
+            "p_src_C": true,
+            "solution_retract": true,
+            "source_retract": true
+          }
+        }
+      }
+    },
+    "typed_spaces": {
+      "const": {
+        "X_s(I)": "(C0(I;H^(s+1)) intersect C1(I;H^s)) direct_sum (C0(I;H^s) intersect C1(I;H^(s-1)))",
+        "Y_s(I)": "L1(I;H^s) direct_sum L1(I;H^(s-1))",
+        "spatial_bundle": "H^r means H^r(S3;Sym2)",
+        "G0_mapping": "G0,advanced/retarded:Y_s(I)->X_s(I)",
+        "N_mapping": "N:X_s(I)->Y_s(I)"
+      }
+    },
+    "coefficient_hypotheses": {
+      "const": {
+        "spatial_surface": "compact S3",
+        "background": "smooth stationary globally hyperbolic Berger cylinder",
+        "wave_block": "normally hyperbolic rough tensor wave with finite-slab Sobolev energy estimates",
+        "V2": "stationary smooth coefficients and differential order at most two",
+        "N": "stationary order-zero bundle map"
+      }
+    },
+    "typed_resolvents": {
+      "const": {
+        "R_sol_advanced": "(I_X+G0,advanced N)^-1:X_s(I)->X_s(I)",
+        "R_sol_retarded": "(I_X+G0,retarded N)^-1:X_s(I)->X_s(I)",
+        "R_src_advanced": "(I_Y+N G0,advanced)^-1:Y_s(I)->Y_s(I)",
+        "R_src_retarded": "(I_Y+N G0,retarded)^-1:Y_s(I)->Y_s(I)",
+        "G_C_advanced": "R_sol,advanced G0,advanced=G0,advanced R_src,advanced:Y_s(I)->X_s(I)",
+        "G_C_retarded": "R_sol,retarded G0,retarded=G0,retarded R_src,retarded:Y_s(I)->X_s(I)",
+        "support_convention": {"advanced": "J^-(source)", "retarded": "J^+(source)"}
+      }
+    },
+    "factorial_estimates": {
+      "const": {
+        "constant": "C_(s,T)=M_(s,T)||N||, finite for every integer s and finite slab",
+        "solution_series": "||(G0,advanced/retarded N)^n||_(X_s(I)->X_s(I))<=C_(s,T)^n/n!",
+        "source_series": "||(N G0,advanced/retarded)^n||_(Y_s(I)->Y_s(I))<=C_(s,T)^n/n!",
+        "conclusion": "both series converge absolutely in operator norm on every finite slab and at every Sobolev order"
+      }
+    },
+    "inverse_theorem": {
+      "const": {
+        "companion": ["C G_C,advanced/retarded=I_Y", "G_C,advanced/retarded C=I_X"],
+        "metric_green": "G_A,advanced/retarded=p_sol G_C,advanced/retarded i_src",
+        "metric": ["A G_A,advanced/retarded=I", "G_A,advanced/retarded A=I"]
+      }
+    },
+    "adjoint_theorem": {
+      "const": {
+        "pairing": "frozen nondegenerate metric-antifield BV fibre pairing",
+        "identity": "(G_A,advanced)^sharp=G_(A^sharp),retarded",
+        "reverse_identity": "(G_A,retarded)^sharp=G_(A^sharp),advanced",
+        "A_self_adjoint_used": false
+      }
+    },
+    "analytic_proof_artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["finite_slab_estimate", "causal_support_passage", "globalization_uniqueness", "inverse_identities", "adjoint_reversal"],
+      "properties": {
+        "finite_slab_estimate": {"$ref": "#/$defs/artifact"},
+        "causal_support_passage": {"$ref": "#/$defs/artifact"},
+        "globalization_uniqueness": {"$ref": "#/$defs/artifact"},
+        "inverse_identities": {"$ref": "#/$defs/artifact"},
+        "adjoint_reversal": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "zero_mode_policy": {
+      "const": {
+        "inverse_spatial_laplacian": false,
+        "spatial_mode_projector": false,
+        "massless_zero_modes": "included in causal Cauchy evolution"
+      }
+    },
+    "exact_checks": {
+      "const": {
+        "retained_metric_projection_exact": true,
+        "companion_graph_SDR_exact": true,
+        "typed_solution_resolvent": true,
+        "typed_source_resolvent": true,
+        "solution_factorial_estimate": true,
+        "source_factorial_estimate": true,
+        "causal_support_passage": true,
+        "globalization_by_uniqueness": true,
+        "both_companion_inverse_identities": true,
+        "both_metric_inverse_identities": true,
+        "typed_metric_antifield_adjoint_reversal": true,
+        "no_spatial_projector": true
+      }
+    },
+    "flags": {
+      "const": {
+        "BERGER_RETAINED_BIWAVE_COMPANION_EXACT": true,
+        "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT": true,
+        "BERGER_RETAINED_METRIC_GREEN_OPERATORS": true,
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2": false,
+        "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2": false,
+        "BERGER_CAUSAL_D_CARTAN_V2": false
+      }
+    },
+    "next_gate": {"const": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {
+        "format": {"const": "JSON_PROOF_CERTIFICATE"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

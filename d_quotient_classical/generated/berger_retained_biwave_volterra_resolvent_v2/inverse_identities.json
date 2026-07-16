@@ -1,0 +1,25 @@
+{
+  "factorizations": [
+    "C=C0(I_X+G0 N) on the solution domain",
+    "C=(I_Y+N G0)C0 on compactly supported solution-domain sections"
+  ],
+  "inverse_identities": [
+    "C G_C,advanced/retarded=I_Y",
+    "G_C,advanced/retarded C=I_X"
+  ],
+  "metric_inverse_identities": [
+    "A G_A=I",
+    "G_A A=I"
+  ],
+  "metric_pullback": "G_A,advanced/retarded=p_sol G_C,advanced/retarded i_src",
+  "operator": "C20=C0+N, C0=[[Box_2,0],[V_2,Box_2]], N=[[0,-I10],[0,0]]",
+  "push_through_identity": "(I_X+G0 N)^-1 G0=G0 (I_Y+N G0)^-1",
+  "result_id": "BERGER_VOLTERRA_BOTH_INVERSE_IDENTITIES",
+  "schema": "pure-weyl-berger-volterra-inverse-identities-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "typed_resolvents": {
+    "G_C_advanced_retarded": "R_sol G0=G0 R_src:Y_s(I)->X_s(I)",
+    "R_sol_advanced_retarded": "(I_X+G0,advanced/retarded N)^-1:X_s(I)->X_s(I)",
+    "R_src_advanced_retarded": "(I_Y+N G0,advanced/retarded)^-1:Y_s(I)->Y_s(I)"
+  }
+}

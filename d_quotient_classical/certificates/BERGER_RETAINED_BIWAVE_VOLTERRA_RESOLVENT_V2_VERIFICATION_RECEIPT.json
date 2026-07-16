@@ -1,0 +1,53 @@
+{
+  "analytic_proof_hashes": {
+    "adjoint_reversal": "7bbeb4b3974514ab59565e5046475c37316f103878d75d874bac8c78605ed7cb",
+    "causal_support_passage": "06da58f7ae5d887fd6c442a4705590b9f56b17807118826d602ad6b0a724da9c",
+    "finite_slab_estimate": "f042779fd30e853b04a537215ebb8ab7baea7f47d5ea6d05e8088e5b595ab38d",
+    "globalization_uniqueness": "1761ef9da4a2b679a73ea887921095e95809da67871f71badfbdc77441987500",
+    "inverse_identities": "619c11fc77b6396ea251e5b0c54d93d4584389ef124a24188ef35317ca302325"
+  },
+  "certificate_sha256": "61d0489f7b52b0bc64869bd24b2cd6f1badf8a85609eed5006fb3fe184e713b5",
+  "commands": [
+    {
+      "command": "python3 -m d_quotient_classical.backreacted_clock.berger_retained_biwave_volterra_resolvent --check --guards",
+      "elapsed_seconds": 0.317281,
+      "return_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_retained_biwave_volterra_resolvent.py --verify-only",
+      "elapsed_seconds": 0.378873,
+      "return_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_biwave_volterra_resolvent",
+      "elapsed_seconds": 0.406489,
+      "return_code": 0,
+      "status": "PASS"
+    }
+  ],
+  "covered_roles": [
+    "analytic_proof:adjoint_reversal",
+    "analytic_proof:causal_support_passage",
+    "analytic_proof:finite_slab_estimate",
+    "analytic_proof:globalization_uniqueness",
+    "analytic_proof:inverse_identities",
+    "certificate",
+    "producer",
+    "report",
+    "schema",
+    "tests",
+    "verifier"
+  ],
+  "generated_utc": "2026-07-16T12:14:38.020159+00:00",
+  "overall_status": "PASS",
+  "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2_VERIFICATION_RECEIPT",
+  "schema": "pure-weyl-berger-volterra-verification-receipt-v1",
+  "schema_sha256": "a402c78d1b039009b63d91c9f84ee53b5dfa8d351542a347a87fd36aa65a1625",
+  "source_manifest": {
+    "path": "d_quotient_classical/manifests/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2_SOURCE_MANIFEST.json",
+    "sha256": "b842f6585c86ae7ffc489461d586a76eaf7682a5ef0e62714806652d08d32feb"
+  },
+  "target_result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2"
+}
