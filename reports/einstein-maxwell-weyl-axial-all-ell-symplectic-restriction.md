@@ -66,10 +66,11 @@ r_- = 1-(3/2)sqrt(2 lambda).
 
 For every `ell>=2`, `lambda>=6`; hence `r_+>0` and
 `r_-<=1-3sqrt(3)<0`.  Neither factor vanishes, so each axial block has rank two
-and relative signature `(1,1)`.  The identity tangent inclusion is therefore
-symplectically nondegenerate on the complete regular axial wave sector, but it
-is neither positive nor a universal scalar rescaling of the Einstein--Maxwell
-form.
+and relative signature `(1,1)`. The target form restricted along the identity
+tangent inclusion is therefore nondegenerate on the complete regular axial
+wave sector, but the inclusion is not a symplectic embedding of the
+Einstein--Maxwell form: the pullback is neither equal to it nor one universal
+scalar rescaling of it.
 
 This sharpens the interpretation.  The ordinary axial graviton/photon-like
 modes have not disappeared: they remain nonnull tangent directions, and the
