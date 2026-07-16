@@ -32,6 +32,7 @@ def _parse_matrix(rows: list[list[str]], eigenvalue: sp.Symbol, norm: sp.Symbol 
 def verify_certificate(path: Path = CERTIFICATE) -> None:
     payload = json.loads(path.read_text(encoding="utf-8"))
     assert payload["result_id"] == "COMPACT_EM_RADIATIVE_SYMPLECTIC_MATCHING"
+    assert payload["generality_level"] == "G2_RADIATIVE_ALL_N_ELL_M_WITH_ELL1_QUOTIENT"
     assert payload["dependency_tags"] == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
     assert _sha256(ROOT / payload["schema_path"]) == payload["schema_sha256"]
     assert _sha256(ROOT / payload["provenance"]["generator_path"]) == payload["provenance"]["generator_sha256"]

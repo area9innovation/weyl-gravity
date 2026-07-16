@@ -205,7 +205,7 @@ def build_certificate() -> dict[str, Any]:
         "result_state": "COVARIANT_ACTION_NORMALIZED_RADIATIVE_PAIRING_MATCHED_GLOBAL_ZERO_MODES_AND_WEYL_PULLBACK_OPEN",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
-        "generality_level": "G3_RADIATIVE_ALL_N_ELL_M_WITH_ELL1_QUOTIENT",
+        "generality_level": "G2_RADIATIVE_ALL_N_ELL_M_WITH_ELL1_QUOTIENT",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": _sha256(Path(__file__)),

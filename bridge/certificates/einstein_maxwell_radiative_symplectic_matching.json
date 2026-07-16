@@ -59,7 +59,7 @@
     "polar_quotient_weight_without_N_over_2": "4",
     "supersession": "This replaces the provisional '2 for Psi' inherited from a non-action-normalized diagonal conserved current in COMPACT_EM_POLAR_EXCEPTIONAL_COMPLEX. The correct bracket weight is 4, or 2*N_1m after the universal N_lm/2 factor."
   },
-  "generality_level": "G3_RADIATIVE_ALL_N_ELL_M_WITH_ELL1_QUOTIENT",
+  "generality_level": "G2_RADIATIVE_ALL_N_ELL_M_WITH_ELL1_QUOTIENT",
   "harmonic_reduction": {
     "all_m_extension": "SO(3) equivariance and Schur's lemma make the multiplicity-space matrices identical for every m; complex modes pair m with -m, while a real harmonic basis gives the displayed real form",
     "axial_rest_frame_coefficient_hessian": [
@@ -204,7 +204,7 @@
     "exhaustive_action_check_path": "bridge/einstein_sector/einstein_maxwell_radiative_symplectic_action_check.py",
     "exhaustive_action_check_sha256": "24bf8075e6cb3ff7f9ebb73802e1d8894f160feb27f15d2325dc8c3fe8a6e230",
     "generator_path": "bridge/einstein_sector/einstein_maxwell_radiative_symplectic_matching.py",
-    "generator_sha256": "a8bec8a8006328f5bc1a56415fbdfc538f0098dd57c0b183aae11943def63049",
+    "generator_sha256": "a5706877824c759ff3ef0e6eb533c752c07602d50b8cee1b4d7255fc23506f5b",
     "inputs": {
       "bridge/certificates/einstein_maxwell_axial_master_complex.json": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02",
       "bridge/certificates/einstein_maxwell_polar_exceptional_complex.json": "e725a87ea6ab22699a5d25e4ba6ff145e0f2bf7eeefbcd737cfdde0ffc334da3",
@@ -215,7 +215,7 @@
   "result_state": "COVARIANT_ACTION_NORMALIZED_RADIATIVE_PAIRING_MATCHED_GLOBAL_ZERO_MODES_AND_WEYL_PULLBACK_OPEN",
   "schema": "einstein-maxwell-radiative-symplectic-matching-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_radiative_symplectic_matching.schema.json",
-  "schema_sha256": "47df8521c99666e2e9d24a42b709a44aa128d08cacc3e487fdc6003aeb6910df",
+  "schema_sha256": "34a53311f5d91ef67227c237971b26ac0a3691537e0c2982e118100c30ffd562",
   "verification_commands": [
     "python3 -m bridge.einstein_sector.einstein_maxwell_radiative_symplectic_action_check --verify",
     "python3 -m bridge.einstein_sector.einstein_maxwell_radiative_symplectic_matching --verify bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
