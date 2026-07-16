@@ -1,0 +1,122 @@
+{
+  "claim_boundary": "Certifies that the twenty-row companion has exactly the metric null characteristic set and typed causally supported Green operators. It also certifies the nonzero square-zero null principal-symbol obstruction. It does not certify the wavefront decomposition of the Pauli--Jordan kernel, a companion Hadamard parametrix or state, BRST Hadamard data, a Lorentzian QME, or any quantum result.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_METRIC_NULL_CHARACTERISTIC_SET": true,
+    "BERGER_COMPANION_NULL_CONE_DECOMPOSABLE": false,
+    "BERGER_COMPANION_PAULI_JORDAN_WAVEFRONT_THEOREM": false,
+    "BERGER_COMPANION_TYPED_CAUSAL_GREEN_OPERATORS": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_TYPED_COMPANION_GLOBAL_HADAMARD": false,
+    "BERGER_TYPED_COMPANION_HADAMARD_PARAMETRIX": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "decomposability_target": {
+    "causal_sign_convention_note": "Changing advanced-minus-retarded to retarded-minus-advanced multiplies E_C by -1 and does not change its wavefront set.",
+    "cone_properties": {
+      "N_plus_intersection_N_minus_empty": "CERTIFIED_BY_TIME_ORIENTATION",
+      "conic": "CERTIFIED_GEOMETRIC_DEFINITION",
+      "relatively_closed_in_punctured_cotangent_bundle": "CERTIFIED_GEOMETRIC_DEFINITION"
+    },
+    "negative_cone": "N_minus=-N_plus",
+    "positive_cone": "N_plus=future-directed nonzero metric-null covectors",
+    "required_kernel_inclusion": "WF(E_C) subset (N_plus x N_minus) union (N_minus x N_plus)",
+    "source": "Fewster, Hadamard states for decomposable Green-hyperbolic operators, Definition 5.2",
+    "source_url": "https://arxiv.org/abs/2503.12537"
+  },
+  "dependency_refs": {
+    "base_hadamard_parametrix": {
+      "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "3895ce5cb601a99a02160cbe5c3a693d40777733db3b722df6ff692a7c16fed7"
+    },
+    "companion_principal_symbol": {
+      "result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+      "sha256": "b32360a37bd020e357e95821ace94273b9c25a127b8379e7e436e15c6e521e47"
+    },
+    "typed_moller_algebra": {
+      "result_id": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT",
+      "sha256": "e7b7fb01f296f99a56c93c7563536d7715dec0b39898a4862af71a4f39f26cf6"
+    },
+    "typed_volterra_resolvent": {
+      "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT",
+      "sha256": "f943ba218772f003c0c0ed87d699a87418f94dc9f978fb08e1cc0e63519ddbaa"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle_layer": "LORENTZIAN_MICROLOCAL_PREFLIGHT",
+  "minimal_missing_carrier": {
+    "acceptable_routes": [
+      "a direct kernel wavefront estimate for the Volterra series in a fixed H\u00f6rmander topology",
+      "a propagation-of-singularities and polarization theorem adapted to the nilpotent companion symbol",
+      "a regular GreenHyp morphism whose kernel wavefront action transports the base decomposition"
+    ],
+    "result_id": "BERGER_COMPANION_PAULI_JORDAN_WAVEFRONT_THEOREM",
+    "statement": "Construct the Schwartz kernel of E_C and prove WF(E_C) subset (N_plus x N_minus) union (N_minus x N_plus).",
+    "why_not_automatic": [
+      "sigma_2(C20) is nonzero and square-zero on the metric null cone",
+      "the exact null fixture has rank seven, hence the null symbol is not diagonalizable",
+      "support causality and Sobolev Volterra convergence do not determine wavefront orientation",
+      "V_2 has differential order two, outside the direct smooth order-zero potential Moller theorem"
+    ]
+  },
+  "next_gate": "BERGER_COMPANION_PAULI_JORDAN_WAVEFRONT_THEOREM",
+  "obligation_ledger": {
+    "WF_EC_has_only_opposite_null_orientations": "OPEN",
+    "characteristic_set_is_metric_null_cone": "CERTIFIED",
+    "future_past_cone_separation": "CERTIFIED",
+    "null_bicharacteristic_and_polarization_propagation": "OPEN",
+    "pauli_jordan_kernel_exists_as_distribution": "OPEN",
+    "regular_GreenHyp_transport_for_Hadamard_states": "OPEN",
+    "typed_advanced_retarded_support": "CERTIFIED"
+  },
+  "pauli_jordan_input": {
+    "fewster_decomposability_status": "NOT_CERTIFIED",
+    "kernel_wavefront_set": "NOT_COMPUTED",
+    "named_causal_support": "CERTIFIED",
+    "pauli_jordan_operator": "E_C=G_C^advanced-G_C^retarded",
+    "typed_advanced_retarded_green_operators": "IMPORTED"
+  },
+  "principal_symbol_analysis": {
+    "characteristic_set": "Char(C20)={q=0}=metric null cone",
+    "extra_characteristic_cone": false,
+    "inference_boundary": "The determinant locates characteristic covectors but does not determine the wavefront relation or propagation of polarizations for the nonzero nilpotent null symbol.",
+    "null_symbol_replay": {
+      "canonical_representative_rank": 7,
+      "checks": {
+        "nonzero_square_zero_symbol_is_not_diagonalizable": true,
+        "null_symbol_nonzero": true,
+        "null_symbol_rank_matches_imported_fixture": true,
+        "null_symbol_square_zero_by_block_incidence": true,
+        "off_cone_symbol_invertible_from_q_power_20": true
+      },
+      "imported_null_fixture_rank": 7,
+      "minimal_polynomial_on_null_fixture": "lambda^2"
+    },
+    "operator": "C20=[[Box_2,-I10],[V_2,Box_2]]",
+    "principal_determinant": "q^20",
+    "principal_symbol": "sigma_2(C20)=[[q I10,0],[sigma_2(V_2),q I10]]"
+  },
+  "provenance": {
+    "base_result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+    "companion_result_id": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT",
+    "moller_result_id": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT",
+    "source_manifest": {
+      "../reports/berger-companion-decomposability-preflight.md": "4dea8e1338b0752c3119c457367683398749760a19a9b7cdc53624412f6d42de",
+      "berger_companion_decomposability_preflight.py": "54680284e3602ed95d8ea15be1298fb24dd052aa5c8139c57325299340753ea7",
+      "berger_companion_decomposability_preflight_certificate.py": "3623933d37da9bf10a0811eebe24954a1ba13e2561a1b3ee74e93232dc4166a5",
+      "schema/berger-companion-decomposability-preflight-v1.schema.json": "1dbcf9dceee18b1b8be5137b8662b7e7cfc71db5b1423fc689b8ca30a659cd25",
+      "tests/test_berger_companion_decomposability_preflight.py": "07abd835d676c82bb0cc38f399fcd3d4f91c977a83a9558798f3ac8fd5dcb51a",
+      "verify_berger_companion_decomposability_preflight.py": "c85252161a78f44533bbec4bb770bc5f1dfc3de7f53a5c25d532d701a43250f4"
+    },
+    "source_manifest_sha256": "17046c2dae55e87b71e7f6ee0e31e4e400b634cfe858ef16a4bbaf8441344f1c",
+    "volterra_result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT"
+  },
+  "result_id": "BERGER_COMPANION_DECOMPOSABILITY_PREFLIGHT",
+  "result_state": "NULL_CHARACTERISTIC_CONE_CERTIFIED_PAULI_JORDAN_DECOMPOSITION_OPEN",
+  "schema": "quantum-weyl-berger-companion-decomposability-preflight-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

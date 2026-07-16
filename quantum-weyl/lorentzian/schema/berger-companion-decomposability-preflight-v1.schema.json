@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-companion-decomposability-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "decomposability_target", "principal_symbol_analysis", "pauli_jordan_input", "obligation_ledger", "minimal_missing_carrier", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-companion-decomposability-preflight-v1"},
+    "result_id": {"const": "BERGER_COMPANION_DECOMPOSABILITY_PREFLIGHT"},
+    "result_state": {"const": "NULL_CHARACTERISTIC_CONE_CERTIFIED_PAULI_JORDAN_DECOMPOSITION_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_MICROLOCAL_PREFLIGHT"},
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "minLength": 40},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base_hadamard_parametrix", "companion_principal_symbol", "typed_volterra_resolvent", "typed_moller_algebra"],
+      "properties": {
+        "base_hadamard_parametrix": {"$ref": "#/$defs/dependency"},
+        "companion_principal_symbol": {"$ref": "#/$defs/dependency"},
+        "typed_volterra_resolvent": {"$ref": "#/$defs/dependency"},
+        "typed_moller_algebra": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "decomposability_target": {
+      "const": {
+        "source": "Fewster, Hadamard states for decomposable Green-hyperbolic operators, Definition 5.2",
+        "source_url": "https://arxiv.org/abs/2503.12537",
+        "positive_cone": "N_plus=future-directed nonzero metric-null covectors",
+        "negative_cone": "N_minus=-N_plus",
+        "cone_properties": {
+          "conic": "CERTIFIED_GEOMETRIC_DEFINITION",
+          "relatively_closed_in_punctured_cotangent_bundle": "CERTIFIED_GEOMETRIC_DEFINITION",
+          "N_plus_intersection_N_minus_empty": "CERTIFIED_BY_TIME_ORIENTATION"
+        },
+        "required_kernel_inclusion": "WF(E_C) subset (N_plus x N_minus) union (N_minus x N_plus)",
+        "causal_sign_convention_note": "Changing advanced-minus-retarded to retarded-minus-advanced multiplies E_C by -1 and does not change its wavefront set."
+      }
+    },
+    "principal_symbol_analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operator", "principal_symbol", "principal_determinant", "characteristic_set", "extra_characteristic_cone", "null_symbol_replay", "inference_boundary"],
+      "properties": {
+        "operator": {"const": "C20=[[Box_2,-I10],[V_2,Box_2]]"},
+        "principal_symbol": {"const": "sigma_2(C20)=[[q I10,0],[sigma_2(V_2),q I10]]"},
+        "principal_determinant": {"const": "q^20"},
+        "characteristic_set": {"const": "Char(C20)={q=0}=metric null cone"},
+        "extra_characteristic_cone": {"const": false},
+        "null_symbol_replay": {
+          "const": {
+            "imported_null_fixture_rank": 7,
+            "canonical_representative_rank": 7,
+            "minimal_polynomial_on_null_fixture": "lambda^2",
+            "checks": {
+              "null_symbol_square_zero_by_block_incidence": true,
+              "null_symbol_rank_matches_imported_fixture": true,
+              "null_symbol_nonzero": true,
+              "nonzero_square_zero_symbol_is_not_diagonalizable": true,
+              "off_cone_symbol_invertible_from_q_power_20": true
+            }
+          }
+        },
+        "inference_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "pauli_jordan_input": {
+      "const": {
+        "typed_advanced_retarded_green_operators": "IMPORTED",
+        "named_causal_support": "CERTIFIED",
+        "pauli_jordan_operator": "E_C=G_C^advanced-G_C^retarded",
+        "kernel_wavefront_set": "NOT_COMPUTED",
+        "fewster_decomposability_status": "NOT_CERTIFIED"
+      }
+    },
+    "obligation_ledger": {
+      "const": {
+        "future_past_cone_separation": "CERTIFIED",
+        "characteristic_set_is_metric_null_cone": "CERTIFIED",
+        "typed_advanced_retarded_support": "CERTIFIED",
+        "pauli_jordan_kernel_exists_as_distribution": "OPEN",
+        "WF_EC_has_only_opposite_null_orientations": "OPEN",
+        "null_bicharacteristic_and_polarization_propagation": "OPEN",
+        "regular_GreenHyp_transport_for_Hadamard_states": "OPEN"
+      }
+    },
+    "minimal_missing_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "statement", "why_not_automatic", "acceptable_routes"],
+      "properties": {
+        "result_id": {"const": "BERGER_COMPANION_PAULI_JORDAN_WAVEFRONT_THEOREM"},
+        "statement": {"type": "string", "minLength": 1},
+        "why_not_automatic": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 1}},
+        "acceptable_routes": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_COMPANION_METRIC_NULL_CHARACTERISTIC_SET": true,
+        "BERGER_COMPANION_TYPED_CAUSAL_GREEN_OPERATORS": true,
+        "BERGER_COMPANION_PAULI_JORDAN_WAVEFRONT_THEOREM": false,
+        "BERGER_COMPANION_NULL_CONE_DECOMPOSABLE": false,
+        "BERGER_TYPED_COMPANION_HADAMARD_PARAMETRIX": false,
+        "BERGER_TYPED_COMPANION_GLOBAL_HADAMARD": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_HADAMARD_DATA": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_COMPANION_PAULI_JORDAN_WAVEFRONT_THEOREM"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base_result_id", "companion_result_id", "volterra_result_id", "moller_result_id", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "base_result_id": {"const": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX"},
+        "companion_result_id": {"const": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT"},
+        "volterra_result_id": {"const": "BERGER_RETAINED_BIWAVE_VOLTERRA_V2_IMPORT"},
+        "moller_result_id": {"const": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT"},
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}
