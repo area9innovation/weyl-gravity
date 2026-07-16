@@ -1,0 +1,34 @@
+{
+  "adjoint_policy": "the complementary-degree blocks use the parametrices of the formal-adjoint operators; self-adjointness is not assumed",
+  "conclusion": "all base diagonal factors are normally hyperbolic finite-rank bundle operators",
+  "operators": [
+    {
+      "bundle": "Sym2(T*M)",
+      "connection": "Levi-Civita induced symmetric-tensor connection",
+      "operator_id": "Box_2",
+      "principal_symbol": "g^{-1}(xi,xi) I_10",
+      "rank": 10,
+      "role": "metric companion diagonal"
+    },
+    {
+      "bundle": "spatial covectors in the retained ghost presentation",
+      "connection": "induced covector connection",
+      "operator_id": "Box_1",
+      "principal_symbol": "g^{-1}(xi,xi) I_3",
+      "rank": 3,
+      "role": "ghost rough-wave factor"
+    },
+    {
+      "bundle": "retained spatial gauge parameters",
+      "connection": "unique normally-hyperbolic connection after absorbing first-order terms",
+      "operator_id": "F_spatial K_spatial",
+      "principal_symbol": "g^{-1}(xi,xi) I_3",
+      "rank": 3,
+      "role": "ghost Faddeev-Popov factor"
+    }
+  ],
+  "result_id": "BERGER_BASE_WAVE_OPERATOR_INVENTORY",
+  "schema": "quantum-weyl-berger-base-wave-operator-inventory-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "spacetime": "M=R x Berger(S3), dimension 4, stationary and globally hyperbolic"
+}

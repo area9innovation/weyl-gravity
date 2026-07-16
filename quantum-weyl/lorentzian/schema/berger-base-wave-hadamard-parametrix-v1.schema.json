@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-base-wave-hadamard-parametrix-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer",
+    "dependency_tags", "setting_id", "dependency_refs", "operator_family",
+    "parametrix_theorem", "scope_boundary", "proof_artifacts", "exact_checks",
+    "claim_flags", "next_gate", "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-base-wave-hadamard-parametrix-v1"},
+    "result_id": {"const": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX"},
+    "result_state": {"const": "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_MICROLOCAL_FREE_FIELD"},
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["construction_gate", "causal_chain_v2", "tensor_rough_wave", "ghost_factor_preflight"],
+      "properties": {
+        "construction_gate": {"$ref": "#/$defs/dependency"},
+        "causal_chain_v2": {"$ref": "#/$defs/dependency"},
+        "tensor_rough_wave": {"$ref": "#/$defs/dependency"},
+        "ghost_factor_preflight": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "operator_family": {
+      "const": {
+        "operator_ids": ["Box_2", "Box_1", "F_spatial K_spatial"],
+        "bundle_ranks": [10, 3, 3],
+        "principal_symbol": "g^{-1}(xi,xi) times the fibre identity",
+        "formal_adjoint_policy": "construct H_(P^sharp)^- separately and relate it by adjoint reversal"
+      }
+    },
+    "parametrix_theorem": {
+      "const": {
+        "kernel": "H_P^+=(8 pi^2)^-1(U_P/sigma_epsilon+V_P log(sigma_epsilon/ell^2))",
+        "left_equation": "P_x H_P^+ is smooth",
+        "right_equation": "P_(x')^sharp H_P^+ is smooth",
+        "commutator": "H_P^+-(H_P^+)^(sharp,swap)=i E_P modulo smooth",
+        "wavefront_set": "positive-frequency Hadamard relation C^+ with bundle polarizations",
+        "D_stationarity": "jointly stationary modulo smooth local terms"
+      }
+    },
+    "scope_boundary": {
+      "const": {
+        "local_parametrix": true,
+        "global_exact_bisolution": false,
+        "quasifree_state": false,
+        "positivity_or_Krein_completion": false,
+        "zero_mode_completion": false,
+        "inverse_spatial_laplacian": false,
+        "mode_projector": false
+      }
+    },
+    "proof_artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operator_inventory", "local_hadamard_recursion", "microlocal_spectrum", "stationarity_zero_modes"],
+      "properties": {
+        "operator_inventory": {"$ref": "#/$defs/artifact"},
+        "local_hadamard_recursion": {"$ref": "#/$defs/artifact"},
+        "microlocal_spectrum": {"$ref": "#/$defs/artifact"},
+        "stationarity_zero_modes": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "exact_checks": {
+      "const": {
+        "normally_hyperbolic_operator_inventory": true,
+        "four_dimensional_Hadamard_transport_recursion": true,
+        "left_parametrix_modulo_smooth": true,
+        "right_parametrix_modulo_smooth": true,
+        "positive_frequency_wavefront_set": true,
+        "typed_adjoint_reversal_modulo_smooth": true,
+        "D_stationary_singular_part": true,
+        "zero_modes_not_inverted": true,
+        "global_state_not_overpromoted": true
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_CAUSAL_COMMUTATOR_AVAILABLE": true,
+        "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX": true,
+        "BERGER_BASE_WAVE_GLOBAL_HADAMARD_BISOLUTION": false,
+        "BERGER_TYPED_COMPANION_HADAMARD": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_HADAMARD_DATA": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_TYPED_COMPANION_MOLLER_TRANSPORT"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["gate_result_id", "causal_result_id", "lower_by_two_result_id", "companion_result_id", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "gate_result_id": {"const": "BERGER_HADAMARD_CONSTRUCTION_GATE"},
+        "causal_result_id": {"const": "BERGER_CAUSAL_CHAIN_V2_IMPORT"},
+        "lower_by_two_result_id": {"const": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT"},
+        "companion_result_id": {"const": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT"},
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_type", "path", "sha256"],
+      "properties": {
+        "artifact_type": {"const": "JSON_ANALYTIC_PROOF"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}
