@@ -1,0 +1,166 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem solves the four independent gauge-fixed rows of one axial ell=2 sum-frequency output block. The dependent angular rows are controlled by the imported Noether identities but are not directly replayed here. It does not give the even outputs, the complete Phi^(2) for a real tangent, all harmonic outputs, general nonlinear closure, final residual descent, causal evolution, scattering, or quantum theory.",
+  "classification": {
+    "Lorentzian_causal_claim": false,
+    "actual_mixed_quadratic_source_tensor_projection_computed": true,
+    "complete_second_order_correction_for_combined_tangent": false,
+    "conjugate_and_difference_frequency_blocks_computed": false,
+    "dependent_angular_rows_directly_replayed": false,
+    "even_AA_and_PP_output_blocks_computed": false,
+    "gauge_fixed_four_independent_row_block_complete": true,
+    "general_nonlinear_Einstein_sector_closed": false,
+    "metric_t_and_maxwell_t_rows_computed": true,
+    "selected_axial_sum_frequency_block_nonzero": true,
+    "selected_axial_sum_frequency_block_removable": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": {
+    "frequency": "omega=sqrt(6-2sqrt(3)); output frequency 2omega",
+    "input": "complex positive-frequency sum of the axisymmetric ell=2,k=0 axial and polar Einstein-Maxwell minus-branch representatives",
+    "output": "the axial ell=2,m=0,k=0 sum-frequency projection of the quadratic Weyl-Maxwell source",
+    "quotient": "after local Diff x U(1) reduction and before final residual quotient",
+    "spacetime": "R_t x S1_L x S2 on the unit magnetic fixed-P_N product background"
+  },
+  "generality_level": "G1_ONE_MIXED_EE_AXIAL_OUTPUT_BLOCK",
+  "interpretation": "The first parity-correct Einstein-to-axial-extra channel genuinely has a nonzero quadratic Weyl-Maxwell source, but it is off both target normal shells and the exact Hessian inverse removes the complete four-independent-row gauge-fixed axial ell=2 sum-frequency block. Thus this block is an explicit removable defect, not an obstruction and not evidence that an extra homogeneous graviton was produced.",
+  "lifecycle_state": "CLASSIFIED",
+  "linear_inputs": {
+    "axial_operator_remainder": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "axial_representative_Ht_Hx_Qt_Qx": [
+      "0",
+      "-2",
+      "0",
+      "2*sqrt(3)"
+    ],
+    "both_inputs_on_certified_minus_branch": true,
+    "frequency_squared": "6 - 2*sqrt(3)",
+    "polar_operator_remainder": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "polar_representative_A_B_C_K_U": [
+      "2 - 2*sqrt(3)",
+      "0",
+      "2 - 2*sqrt(3)",
+      "2*sqrt(3)",
+      "1"
+    ]
+  },
+  "next_gate": "compute the even axial-axial and polar-polar outputs and conjugate/difference-frequency blocks for the same real tangent; only their combined correction or a target-adjoint pairing can decide full second-order extension",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_ee_ell2_source.py",
+    "generator_sha256": "0803156c1715c7856aca1b4032174faa5ce544a8e6a676f1b220dfbbcd7ce4be",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_axial_master_complex.json": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02",
+      "bridge/certificates/einstein_maxwell_polar_master_complex.json": "473d9c826b69220d2398cf4eb44b75e7c40bc23fd4d378a9eb2069a2d3f61ae5",
+      "bridge/certificates/einstein_maxwell_weyl_axial_operator.json": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6",
+      "bridge/certificates/einstein_maxwell_weyl_axial_quadratic_channel_preflight.json": "04f024d751ec907bf399a7e0edd8bb6596b31d2123a00d386a2b805ba09bbe4f"
+    },
+    "tensor_helper_path": "bridge/einstein_sector/einstein_maxwell_periodic_photon_second_order.py",
+    "tensor_helper_sha256": "801bd2ea66675d8b8db075c3499f28ef83909749efc4f2b3240da681f3fea8d9"
+  },
+  "quadratic_source": {
+    "definition": "S_AP=D^2E_WM[Phi_A^(1),Phi_P^(1)], equal to the axial-polar component of (1/2)D^2E_WM[Phi_A^(1)+Phi_P^(1),Phi_A^(1)+Phi_P^(1)]",
+    "density_weighted_source_Ht_Hx_Qt_Qx_rows": [
+      "0",
+      "-72*(-187 + 111*sqrt(3))/7",
+      "0",
+      "-24*(-17 + 5*sqrt(3))/7"
+    ],
+    "direct_method": "second coordinate expansion of 3B_ab-T_ab and div(F)^b with the explicit P_2(cos theta) fields; project tphi and xphi against X_phi and Maxwell t and x against P_2",
+    "maxwell_t_coordinate_source": "0",
+    "maxwell_t_projection": "0",
+    "maxwell_x_coordinate_source": "6*(3*sin(theta)**4 + 9*sqrt(3)*sin(theta)**4 - 18*sin(theta)**2 - 6*sqrt(3)*sin(theta)**2 - 4*sqrt(3) + 20)",
+    "maxwell_x_projection": "-24*(-17 + 5*sqrt(3))/7",
+    "metric_t_coordinate_source": "0",
+    "metric_t_projection": "0",
+    "metric_x_coordinate_source": "36*(cos(theta) - 1)*(cos(theta) + 1)*(25*cos(theta)**2 + 26*sqrt(3)*cos(theta)**2 - 27*sqrt(3) + 16)*cos(theta)",
+    "metric_x_projection": "12*(-187 + 111*sqrt(3))/7",
+    "parity_statement": "axial-by-polar is odd and can project to the axial target; the displayed ell=2 projection is one component of the full quadratic source",
+    "source_nonzero": true
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_EE_ELL2_SOURCE_AND_CORRECTION",
+  "result_state": "MIXED_AXIAL_POLAR_EE_ELL2_SUM_FREQUENCY_SOURCE_NONZERO_AND_EXPLICITLY_REMOVABLE",
+  "schema": "einstein-maxwell-weyl-axial-ee-ell2-source-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_ee_ell2_source.schema.json",
+  "schema_sha256": "87dba91c936d7788a073a75aabd71903750d24c8f4edb1f6835707e11143bc8a",
+  "second_order_correction": {
+    "coefficient_subblock_order": [
+      "H_t",
+      "H_x",
+      "Q_t",
+      "Q_x"
+    ],
+    "correction_subblock": [
+      "0",
+      "-4*(-1 + 2*sqrt(3))/21",
+      "0",
+      "4*(5*sqrt(3) + 24)/21"
+    ],
+    "equation": "L_WM(Phi^(2))=S_AP with S_AP=D^2E_WM[Phi_A^(1),Phi_P^(1)]",
+    "explicit_selected_block_correction": true,
+    "operator_remainder": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "source_subblock": [
+      "0",
+      "-72*(-187 + 111*sqrt(3))/7",
+      "0",
+      "-24*(-17 + 5*sqrt(3))/7"
+    ],
+    "target_subblock": [
+      [
+        "342 - 144*sqrt(3)",
+        "0",
+        "6",
+        "0"
+      ],
+      [
+        "0",
+        "2322 - 1320*sqrt(3)",
+        "0",
+        "-6"
+      ],
+      [
+        "6",
+        "0",
+        "6",
+        "0"
+      ],
+      [
+        "0",
+        "-6",
+        "0",
+        "18 - 8*sqrt(3)"
+      ]
+    ],
+    "target_subblock_order": [
+      "lambda*metric_t",
+      "-lambda*metric_x",
+      "maxwell_t",
+      "maxwell_x"
+    ]
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ee_ell2_source --verify bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ee_ell2_source --verify-exhaustive bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_ee_ell2_source"
+  ]
+}

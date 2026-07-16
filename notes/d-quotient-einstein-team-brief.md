@@ -971,8 +971,28 @@ channel, both target factors are nonzero and the full four-by-four target
 Hessian has an exact displayed inverse. Hence every source vector in this one
 output block has a unique algebraic second-order correction. A nonzero defect
 in this block would therefore be removable, not a Taub obstruction. The mixed
-full-tensor value of `D^2E_WM` is still open and must next be inserted into
-that inverse; the finite scan is not an all-mode nonlinear-closure theorem.
+full-tensor replay has now evaluated all four independent gauge-fixed axial
+rows. In the density-weighted
+`(lambda metric_t,-lambda metric_x,Maxwell_t,Maxwell_x)` order its
+source is
+
+```text
+(0,-72(-187+111 sqrt(3))/7,0,-24(-17+5 sqrt(3))/7),
+```
+
+and the exact correction is
+
+```text
+(H_t^(2),H_x^(2),Q_t^(2),Q_x^(2))
+=(0,-4(-1+2 sqrt(3))/21,0,4(5 sqrt(3)+24)/21).
+```
+
+The target remainder is exactly zero. Thus the first explicit parity-correct
+`EE` component is nonzero but removable; it does not create an extra
+homogeneous normal mode. The even `AA` and `PP` outputs and conjugate/
+difference-frequency blocks remain open, so this is not yet a complete
+second-order correction for a real tangent or an all-mode nonlinear-closure
+theorem.
 
 ### Work package E-G4: open background classes and scattering
 
