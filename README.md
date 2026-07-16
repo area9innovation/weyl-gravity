@@ -106,6 +106,11 @@ General-audience article:
 explains the completed classical pure-Weyl BV–BFV result without assuming
 advanced mathematics or physics.
 
+Physicist-facing live summary:
+[`Pure-Weyl gravity programme: executive summary for physicists`](notes/physicist-executive-summary.md)
+gives the ten-minute claim map, audience-specific highlights, strongest
+limitations, decisive next tests, and links to the papers and certificates.
+
 Video orientation:
 [`Conformal ghosts, fourth-order gravity, and quantum completion`](paper/video-background-guide.md)
 is a guided viewing and reading route through the main competing approaches
