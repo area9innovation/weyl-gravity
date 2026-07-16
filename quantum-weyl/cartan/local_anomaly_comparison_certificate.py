@@ -33,24 +33,35 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _committed_bytes(path: str) -> bytes:
+def _registry_commit() -> str:
     return subprocess.check_output(
-        ["git", "-C", str(REPOSITORY_ROOT), "show", f"HEAD:./{path}"]
+        [
+            "git", "-C", str(REPOSITORY_ROOT), "log", "-1", "--format=%H", "--",
+            *REGISTRY_DEPENDENCIES,
+        ],
+        text=True,
+    ).strip()
+
+
+def _committed_bytes(path: str, commit: str) -> bytes:
+    return subprocess.check_output(
+        ["git", "-C", str(REPOSITORY_ROOT), "show", f"{commit}:./{path}"]
     )
 
 
-def _load(path: str, *, committed: bool = False) -> dict[str, object]:
-    payload = _committed_bytes(path) if committed else (REPOSITORY_ROOT / path).read_bytes()
+def _load(path: str, *, commit: str | None = None) -> dict[str, object]:
+    payload = _committed_bytes(path, commit) if commit else (REPOSITORY_ROOT / path).read_bytes()
     return json.loads(payload)
 
 
-def _semantic_input_checks() -> dict[str, str]:
+def _semantic_input_checks() -> tuple[dict[str, str], str]:
+    registry_commit = _registry_commit()
     even = _load(DEPENDENCIES[0])
     odd = _load(DEPENDENCIES[1])
     coefficients = _load(DEPENDENCIES[2])
     cartan = _load(DEPENDENCIES[3])
-    generators = _load(DEPENDENCIES[4], committed=True)["generators"]
-    phase_spaces = _load(DEPENDENCIES[5], committed=True)["phase_spaces"]
+    generators = _load(DEPENDENCIES[4], commit=registry_commit)["generators"]
+    phase_spaces = _load(DEPENDENCIES[5], commit=registry_commit)["phase_spaces"]
     if even["result_state"] != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT":
         raise ValueError("even AFN0 quotient input is not complete")
     if odd["result_state"] != "COMPLETE_AFN0_ODD_CANDIDATE_QUOTIENT":
@@ -63,21 +74,19 @@ def _semantic_input_checks() -> dict[str, str]:
         raise ValueError("D_compact registry entry is not unique")
     if sum(row["phase_space_id"] == "compact_quantum" for row in phase_spaces) != 1:
         raise ValueError("compact_quantum registry entry is not unique")
-    return {
+    sources = {
         path: (
-            hashlib.sha256(_committed_bytes(path)).hexdigest()
+            hashlib.sha256(_committed_bytes(path, registry_commit)).hexdigest()
             if path in REGISTRY_DEPENDENCIES
             else _sha256(REPOSITORY_ROOT / path)
         )
         for path in DEPENDENCIES
     }
+    return sources, registry_commit
 
 
 def build_certificate() -> dict[str, object]:
-    sources = _semantic_input_checks()
-    registry_commit = subprocess.check_output(
-        ["git", "-C", str(REPOSITORY_ROOT), "rev-parse", "HEAD"], text=True
-    ).strip()
+    sources, registry_commit = _semantic_input_checks()
     payload = {
         **comparison_payload(),
         "provenance": {
