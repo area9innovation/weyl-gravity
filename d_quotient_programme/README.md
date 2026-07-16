@@ -235,3 +235,11 @@ tangent quotient map is injective: a putative pure-Weyl kernel has harmonic
 coefficient `3 ell(ell+1)+2` and therefore vanishes.  The remaining issue is
 the Weyl--Maxwell pairing itself, not loss of the Einstein modes to target
 Weyl gauge.  The actual restriction matrices remain open.
+
+The first restriction matrix is now closed on the axial `ell=2,m=0`
+symbolic-momentum kill test.  Both physical branches are nonnull, but their
+exact factors relative to the positive Einstein--Maxwell form are
+`1+3*sqrt(3)` and `1-3*sqrt(3)`.  The second is negative.  Hence the scoped
+restriction is nondegenerate but relatively indefinite and cannot equal one
+universal nonzero multiple of the Einstein--Maxwell form.  Arbitrary axial
+`ell`, polar, physical `ell=1`, and global restriction blocks remain open.

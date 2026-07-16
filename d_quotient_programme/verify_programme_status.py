@@ -48,6 +48,7 @@ EINSTEIN_MAXWELL_POLAR_EXCEPTIONAL_CONTRIBUTION = PACKAGE / "contributions" / "e
 EINSTEIN_MAXWELL_RADIATIVE_SYMPLECTIC_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-radiative-symplectic-matching.json"
 EINSTEIN_MAXWELL_EXCEPTIONAL_GLOBAL_SYMPLECTIC_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-exceptional-global-symplectic.json"
 EINSTEIN_MAXWELL_WEYL_SYMPLECTIC_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-symplectic-preflight.json"
+EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_RESTRICTION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-ell2-restriction.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -851,6 +852,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "einstein_maxwell_product_compact_weyl_symplectic_preflight",
         "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE",
     )
+    maxwell_weyl_axial_ell2_restriction_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_RESTRICTION_CONTRIBUTION,
+        "compact_einstein_maxwell_weyl_axial_ell2_restriction",
+        "einstein_maxwell_product_compact_weyl_axial_ell2_restriction",
+        "G1_AXIAL_ELL2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
@@ -1016,6 +1023,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": maxwell_weyl_symplectic_preflight_contribution,
             },
             {
+                "path": str(EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_RESTRICTION_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_RESTRICTION_CONTRIBUTION),
+                "payload": maxwell_weyl_axial_ell2_restriction_contribution,
+            },
+            {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
@@ -1036,10 +1048,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "einstein_boundary",
-                "result_state": "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE_CURRENT_OPEN",
+                "result_state": "G1_AXIAL_ELL2_WEYL_RESTRICTION_BRANCH_DEPENDENT_INDEFINITE_REMAINING_BLOCKS_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient. The induced linear tangent quotient map into Weyl--Maxwell is injective: target Weyl gauge removes no declared Einstein class. The action, flat-control, ambiguity, and complete block contract for the symplectic restriction are frozen. No restriction matrix or one-particle Hilbert norm is yet claimed.",
-                "next_gate": "derive the full Weyl--Maxwell Lee--Wald current and compute its exact restriction on the complete radiative and generalized-global Einstein blocks, then solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
+                "established": "The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient, and the induced linear tangent quotient map into Weyl--Maxwell is injective. The first exact Weyl--Maxwell restriction is nondegenerate on both axial ell=2 branches but has opposite-sign relative factors 1+3*sqrt(3) and 1-3*sqrt(3), refuting a universal proportional restriction on this scoped block.",
+                "next_gate": "derive the arbitrary-lambda axial restriction and compute polar, physical ell=1, homogeneous, and twist blocks, then solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
             },
             {
                 "team_id": "nonlinear",
@@ -1337,6 +1349,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE",
             },
             {
+                "setting_id": "compact_einstein_maxwell_weyl_axial_ell2_restriction",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_axial_ell2_restriction",
+                "boundary_conditions": "fixed-P_N compact product; axial ell=2,m=0 Einstein-Maxwell tangent at arbitrary periodic momentum k; both physical branches; before final residual SO(4,2) quotient",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G1_AXIAL_ELL2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1496,6 +1517,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_radiative_symplectic_matching",
         "compact_einstein_maxwell_exceptional_global_symplectic",
         "compact_einstein_maxwell_weyl_symplectic_preflight",
+        "compact_einstein_maxwell_weyl_axial_ell2_restriction",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1531,6 +1553,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_radiative_symplectic_matching": "G2_RADIATIVE_COVARIANT_SYMPLECTIC_MATCHING",
         "compact_einstein_maxwell_exceptional_global_symplectic": "G2_EXCEPTIONAL_GLOBAL_SYMPLECTIC_COMPLETION",
         "compact_einstein_maxwell_weyl_symplectic_preflight": "G2_WEYL_SYMPLECTIC_PREFLIGHT_QUOTIENT_INJECTIVE",
+        "compact_einstein_maxwell_weyl_axial_ell2_restriction": "G1_AXIAL_ELL2_BRANCH_DEPENDENT_INDEFINITE_RESTRICTION",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -1591,6 +1614,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Einstein--Maxwell exceptional global symplectic theorem was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_symplectic_preflight", {}).get("status") != "CERTIFIED":
         errors.append("Einstein--Maxwell/Weyl--Maxwell symplectic preflight was dropped")
+    if ledger.get("compact_einstein_maxwell_weyl_axial_ell2_restriction", {}).get("status") != "CERTIFIED":
+        errors.append("axial ell=2 Weyl--Maxwell restriction theorem was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -1907,6 +1932,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_weyl_symplectic_preflight",
             "drop_Einstein_Maxwell_Weyl_symplectic_preflight_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_weyl_axial_ell2_restriction",
+            "drop_Einstein_Maxwell_Weyl_axial_ell2_restriction_contribution",
         ),
     ):
         mutant = deepcopy(data)
