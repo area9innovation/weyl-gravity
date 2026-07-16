@@ -120,6 +120,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT.json`](certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT.json)
 - Volterra construction and graph-pullback proof:
   [`reports/berger-retained-biwave-volterra-resolvent.md`](reports/berger-retained-biwave-volterra-resolvent.md)
+- Complete retained 26-row causal Green homotopy:
+  [`certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY.json`](certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY.json)
+- Degreewise assembly, support, cyclicity and D-equivariance proof:
+  [`reports/berger-26-row-causal-green-homotopy.md`](reports/berger-26-row-causal-green-homotopy.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:

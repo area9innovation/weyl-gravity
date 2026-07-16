@@ -1,0 +1,84 @@
+{
+  "D_equivariance": {
+    "action": "D26=e0 I26",
+    "conclusion": "D26 Lambda26,+/-=Lambda26,+/- D26",
+    "stationarity": "all PBW coefficients, factors, W26 and the Volterra perturbation are e0-stationary",
+    "uniqueness": "D26 G26,+/-=G26,+/- D26 by uniqueness with the same advanced/retarded support"
+  },
+  "chain_construction": {
+    "commutation": "q26 P26=P26 q26 and causal uniqueness imply q26 G26,+/-=G26,+/- q26",
+    "degreewise_green": "G26,+/-=diag(G_gh,+/-,G_A10,+/-,G_A10sharp,+/-,G_identity,+/-)",
+    "homotopy": "Lambda26,+/-=W26 G26,+/-",
+    "identity": "q26 Lambda26,+/-+Lambda26,+/- q26=(q26 W26+W26 q26)G26,+/-=P26 G26,+/-=I26",
+    "witness": "the certified cyclic backward witness W26 of BERGER_CAUSAL_WITNESS_PREFLIGHT"
+  },
+  "claim_boundary": "This proof constructs the advanced and retarded chain homotopies of the complete retained 26-row classical unary BV complex. It does not construct Hadamard two-point functions, renormalized composites, the cyclic arity-two D-Cartan primitive, a QME solution, or a quantum theorem.",
+  "cyclicity": {
+    "identity": "Lambda26,+^sharp equals the convention-fixed signed Lambda26,- in complementary degree",
+    "inputs": "cyclic W26, formal-adjoint endpoint blocks, and advanced/retarded Green duality"
+  },
+  "degreewise_green_operators": {
+    "degree_-1_ghost": {
+      "green": "G_gh,+/-=(F_spatial K_spatial)^-1_+/- Box_1^-1_+/- alpha_B^-1",
+      "operator": "P_gh=alpha_B Box_1 (F_spatial K_spatial)",
+      "reason": "finite reverse composition of two normally hyperbolic same-sided Green operators"
+    },
+    "degree_0_metric": {
+      "green": "G_A10,+/-=p_sol G_C20,+/- i_src",
+      "operator": "A10=Box_2^2+V_2",
+      "reason": "certified graded-energy Volterra resolvent and exact graph SDR"
+    },
+    "degree_1_metric_antifield": {
+      "green": "G_A10sharp,+/-=(G_A10,-/+)^sharp",
+      "operator": "A10^sharp",
+      "reason": "formal-adjoint Green duality in complementary degree"
+    },
+    "degree_2_identity": {
+      "green": "G_identity,+/-=(G_gh,-/+)^sharp",
+      "operator": "P_gh^sharp",
+      "reason": "formal-adjoint Green duality in complementary degree"
+    }
+  },
+  "dependency_refs": {
+    "causal_54_to_26_reduction": {
+      "result_id": "BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION",
+      "sha256": "8893fa0457e513913e0a71c5e0f1923ff06cb8c32f7a662808c5c9ee37f7e521"
+    },
+    "causal_witness_preflight": {
+      "result_id": "BERGER_CAUSAL_WITNESS_PREFLIGHT",
+      "sha256": "da24c9734e1950fab9a730ea69bc46b35dcc5f95a4af7e1d9aa3aa57404d1ea4"
+    },
+    "local_D_action": {
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    },
+    "retained_metric_volterra": {
+      "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
+      "sha256": "7423ad5c52eac94a2420f4096621a895466cd764136b01406eec6102620ffc9f"
+    },
+    "retained_unary_complex": {
+      "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    }
+  },
+  "exact_checks": {
+    "D_equivariance": true,
+    "advanced_chain_homotopy_identity": true,
+    "advanced_support": true,
+    "cyclic_advanced_retarded_adjointness": true,
+    "degreewise_P26_green_operators": true,
+    "retarded_chain_homotopy_identity": true,
+    "retarded_support": true,
+    "row_completeness": true,
+    "zero_mode_policy_applied": true
+  },
+  "result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_PROOF",
+  "schema": "pure-weyl-berger-26-row-causal-green-proof-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "support_proof": {
+    "ghost_and_identity": "finite compositions of same-sided causal Green maps and local differential factors",
+    "homotopy": "postcomposition by the finite-order local W26 does not enlarge support",
+    "metric_and_antifield": "same-sided Volterra limits on closed causal supports and formal-adjoint reversal",
+    "zero_modes": "included in global Cauchy evolution; no inverse spatial Laplacian, curl or mode projector"
+  }
+}

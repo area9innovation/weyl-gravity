@@ -15,6 +15,9 @@ from d_quotient_classical.backreacted_clock.berger_metric_lower_by_two_biwave im
 from d_quotient_classical.backreacted_clock.berger_minimal_34_portable_contraction import (
     CERTIFICATE_PATH as CONTRACTION_CERTIFICATE,
 )
+from d_quotient_classical.backreacted_clock.berger_raw_clock_reattached_witness_transport import (
+    CERTIFICATE_PATH as TRANSPORT_CERTIFICATE,
+)
 
 
 CERTIFICATE_PATH = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT.json"
@@ -164,6 +167,7 @@ def build():
         "dependency_refs": {
             "metric_normal_form": _dependency(NORMAL_FORM_CERTIFICATE),
             "minimal_clock_contraction": _dependency(CONTRACTION_CERTIFICATE),
+            "raw_witness_transport": _dependency(TRANSPORT_CERTIFICATE),
         },
         "retained_identification": {
             "identity": "(pi_cl P34_raw iota_cl)_metric=A10=Box_2^2+V_2",
