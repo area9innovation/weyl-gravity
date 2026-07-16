@@ -332,9 +332,19 @@ the clock dressing and gauge-fermion shear transport it canonically to all 54
 rows. The canonical Euler densities include both the \(\sqrt{-g}\) factor and
 nonlinear index raising; omitting those terms gives the right Hessian but
 fails the antifield identity. The final payload also passes an independent
-frozen-coefficient and Draft-2020-12 schema audit. The next nonlinear gate is
-the full four-dimensional arity-two \(D\)-Cartan contraction. The retained
-causal Green theorem and Hadamard data remain independent analytic gates.
+frozen-coefficient and Draft-2020-12 schema audit. The Cartan dependency is
+now explicitly split. The next gate is the full four-dimensional unary
+existence problem
+
+\[
+q_1\iota_D^{(1)}+\iota_D^{(1)}q_1=D.
+\]
+
+Only after a support-local, cyclic all-row \(\iota_D^{(1)}\) exists may the
+arity-two source \([q_2,\iota_D^{(1)}]\) be formed and contracted. The
+machine gate forbids promotion of the source or arity-two result while unary
+existence is false. The retained causal Green theorem and Hadamard data remain
+independent analytic gates.
 
 ### Reduced-mode arity-two fixture
 

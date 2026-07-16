@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-full-4d-D-Cartan-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "gate_order", "forbidden_shortcuts", "exact_checks",
+    "flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-full-4d-D-Cartan-gate-v1"},
+    "result_id": {"const": "BERGER_FULL_4D_D_CARTAN_GATE"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "INPUTS_COMPLETE_UNARY_EXISTENCE_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["classical_unary_q1", "local_D_action", "classical_binary_q2"],
+      "properties": {
+        "classical_unary_q1": {"$ref": "#/$defs/dependency"},
+        "local_D_action": {"$ref": "#/$defs/dependency"},
+        "classical_binary_q2": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "gate_order": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}},
+    "forbidden_shortcuts": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "exact_checks": {"type": "object", "minProperties": 7, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "BERGER_FULL_4D_D_CARTAN_INPUTS_COMPLETE",
+        "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D",
+        "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D",
+        "BERGER_ARITY_TWO_D_CARTAN_FULL_4D"
+      ],
+      "properties": {
+        "BERGER_FULL_4D_D_CARTAN_INPUTS_COMPLETE": {"const": true},
+        "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D": {"const": false},
+        "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D": {"const": false},
+        "BERGER_ARITY_TWO_D_CARTAN_FULL_4D": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

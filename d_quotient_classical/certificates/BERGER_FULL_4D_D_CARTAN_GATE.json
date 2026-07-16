@@ -1,0 +1,82 @@
+{
+  "claim_boundary": "This dependency certificate proves only that q1, D, and q2 inputs are complete and enforces the unary-before-binary Cartan order. It does not construct iota_D^(1) or iota_D^(2). Failure in a declared candidate class is not global nonexistence of every Cartan homotopy.",
+  "claim_status": "INPUTS_COMPLETE_UNARY_EXISTENCE_OPEN",
+  "dependency_refs": {
+    "classical_binary_q2": {
+      "result_id": "BERGER_SUPPORT_LOCAL_Q2",
+      "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
+    },
+    "classical_unary_q1": {
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "local_D_action": {
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "arity_two_promotion_requires_unary_promotion": true,
+    "complete_54_row_D_input": true,
+    "complete_54_row_q1_input": true,
+    "complete_54_row_q2_input": true,
+    "failed_candidate_scope_is_not_global_nonexistence": true,
+    "source_gate_precedes_arity_two_gate": true,
+    "unary_gate_precedes_source_gate": true
+  },
+  "flags": {
+    "BERGER_ARITY_TWO_D_CARTAN_FULL_4D": false,
+    "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D": false,
+    "BERGER_FULL_4D_D_CARTAN_INPUTS_COMPLETE": true,
+    "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D": false
+  },
+  "forbidden_shortcuts": [
+    "D_inverse",
+    "Fourier_or_harmonic_projector",
+    "inverse_Laplacian_or_inverse_curl",
+    "promotion_from_the_reduced_mode_fixture",
+    "global_nonexistence_claim_from_one_failed_candidate"
+  ],
+  "gate_order": [
+    {
+      "failure_output": "normalized retained-core obstruction; scoped to the declared finite-order local class",
+      "gate": "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D",
+      "identity": "q1 iota_D^(1)+iota_D^(1) q1=D",
+      "required_properties": [
+        "degree_minus_one",
+        "finite_order_support_local",
+        "graded_cyclic",
+        "all_54_rows"
+      ],
+      "retained_reduction": "iota_D,54^(1)=S_cl D_54+iota_cl iota_D,26^(1) pi_cl"
+    },
+    {
+      "gate": "BERGER_ARITY_TWO_D_CARTAN_SOURCE_FULL_4D",
+      "identity": "A_D^(2)=[q2,iota_D^(1)]",
+      "required_properties": [
+        "q1_closed",
+        "graded_cyclic",
+        "D_equivariant",
+        "all_54_rows"
+      ]
+    },
+    {
+      "gate": "BERGER_ARITY_TWO_D_CARTAN_FULL_4D",
+      "identity": "[q1,iota_D^(2)]=-[q2,iota_D^(1)]",
+      "required_properties": [
+        "degree_minus_one_bilinear",
+        "finite_order_support_local",
+        "graded_symmetric",
+        "graded_cyclic",
+        "all_54_rows"
+      ]
+    }
+  ],
+  "next_gate": "BERGER_UNARY_D_CARTAN_EXISTENCE_FULL_4D",
+  "result_id": "BERGER_FULL_4D_D_CARTAN_GATE",
+  "schema": "pure-weyl-berger-full-4d-D-Cartan-gate-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

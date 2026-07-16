@@ -118,6 +118,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json`](certificates/BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json)
 - Support-local q2 report:
   [`reports/berger-support-local-q2.md`](reports/berger-support-local-q2.md)
+- Full four-dimensional D-Cartan dependency gate:
+  [`certificates/BERGER_FULL_4D_D_CARTAN_GATE.json`](certificates/BERGER_FULL_4D_D_CARTAN_GATE.json)
+- D-Cartan gate report:
+  [`reports/berger-full-4d-D-Cartan-gate.md`](reports/berger-full-4d-D-Cartan-gate.md)
 - Exact 54-to-26 causal-homotopy reduction:
   [`certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json`](certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json)
 - Causal-reduction report:
@@ -334,7 +338,9 @@ proves ([q_1,D]=0), equivariance of (iota_{m cl},pi_{m cl},S_{m cl}),
 formal skew-adjointness, and preservation of the cyclic pairing. The complete
 four-dimensional support-local \(q_2\) is now exported on all 54 rows and its
 local \(D\)-derivation identity is exact. The remaining local nonlinear gate
-is the arity-two Cartan homotopy itself.
+starts with unary Cartan existence. The arity-two source and homotopy are
+machine-blocked until a support-local, cyclic \(\iota_D^{(1)}\) satisfies
+\(q_1\iota_D^{(1)}+\iota_D^{(1)}q_1=D\) on all 54 rows.
 
 The minimal causal handoff now also freezes one authoritative
 \((W_{34},P_{34},\operatorname{pairing}_{34})\) candidate, with
