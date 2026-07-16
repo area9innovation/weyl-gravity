@@ -14,7 +14,11 @@ from typing import Any
 TRANSFER_ROOT = Path(__file__).resolve().parent
 ROOT = TRANSFER_ROOT.parents[1]
 OUTPUT_PATH = TRANSFER_ROOT / "certificates" / "ND3_ARITY_THREE_CARTAN_ENGINE.json"
-SNAPSHOT_PATH = ROOT / "quantum-weyl" / "classical_import" / "snapshots" / "bootstrap-v1.json"
+Q2_REPLAY_PATH = TRANSFER_ROOT / "certificates" / "BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY.json"
+RETAINED_Q2_PATH = TRANSFER_ROOT / "certificates" / "BERGER_RETAINED_26_Q2_TRANSFER.json"
+CAUSAL_CHAIN_PATH = (
+    ROOT / "quantum-weyl" / "lorentzian" / "certificates" / "BERGER_CAUSAL_CHAIN_V2_IMPORT.json"
+)
 
 try:
     from .arity_three_cartan import (
@@ -71,8 +75,70 @@ def _source_manifest() -> dict[str, str]:
         "schema/arity-three-cartan-engine-v1.schema.json",
         "tests/test_arity_three_cartan.py",
         "tests/test_arity_three_cartan_certificate.py",
+        "../reports/nd3-current-input-consolidation.md",
     )
     return {path: _sha256(TRANSFER_ROOT / path) for path in paths}
+
+
+def _load_current_inputs() -> dict[str, dict[str, Any]]:
+    return {
+        "support_local_q2_replay": json.loads(Q2_REPLAY_PATH.read_text(encoding="utf-8")),
+        "retained_q2_transfer": json.loads(RETAINED_Q2_PATH.read_text(encoding="utf-8")),
+        "causal_chain_v2": json.loads(CAUSAL_CHAIN_PATH.read_text(encoding="utf-8")),
+    }
+
+
+def _validate_current_inputs(inputs: dict[str, dict[str, Any]]) -> None:
+    if set(inputs) != {
+        "support_local_q2_replay",
+        "retained_q2_transfer",
+        "causal_chain_v2",
+    }:
+        raise ValueError("ND3 current-input set drifted")
+    q2 = inputs["support_local_q2_replay"]
+    retained = inputs["retained_q2_transfer"]
+    causal = inputs["causal_chain_v2"]
+    if (
+        q2.get("result_id") != "BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY"
+        or q2.get("result_state")
+        != "COMPLETE_SUPPORT_LOCAL_Q2_IMPORTED_IDENTITIES_INDEPENDENTLY_REPLAYED_TRANSFER_PENDING"
+        or q2.get("claim_flags", {}).get("CLASSICAL_SUPPORT_LOCAL_Q2_IMPORTED") is not True
+        or q2.get("claim_flags", {}).get(
+            "SCIENTIFIC_ARITY_TWO_IDENTITIES_INDEPENDENTLY_REPLAYED"
+        )
+        is not True
+        or q2.get("claim_flags", {}).get("QUANTUM_CLAIM") is not False
+    ):
+        raise ValueError("ND3 support-local q2 prerequisite drifted")
+    if (
+        retained.get("result_id") != "BERGER_RETAINED_26_Q2_TRANSFER"
+        or retained.get("result_state")
+        != "RETAINED_26_ROW_Q2_TRANSFERRED_IDENTITIES_VERIFIED_FURTHER_RESIDUAL_TRANSFER_PENDING"
+        or retained.get("claim_flags", {}).get("CLASSICAL_RETAINED_26_Q2_TRANSFERRED")
+        is not True
+        or retained.get("claim_flags", {}).get("RETAINED_Q1_Q2_IDENTITIES_VERIFIED")
+        is not True
+        or retained.get("claim_flags", {}).get("QUANTUM_CLAIM") is not False
+    ):
+        raise ValueError("ND3 retained q2/SDR prerequisite drifted")
+    causal_checks = causal.get("coverage", {}).get("checks", {})
+    if (
+        causal.get("result_id") != "BERGER_CAUSAL_CHAIN_V2_IMPORT"
+        or causal.get("result_state")
+        != "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN"
+        or causal.get("coverage", {}).get("D_Cartan_arities") != [1, 2]
+        or causal_checks.get("causal_D_Cartan", {}).get("arity_two_cyclic_primitive")
+        is not True
+        or causal_checks.get("causal_D_Cartan", {}).get("arity_two_source_closed")
+        is not True
+        or causal_checks.get("full_54", {}).get("support_local_SDR_lift") is not True
+        or causal.get("claim_flags", {}).get("BERGER_CAUSAL_D_CARTAN_V2_IMPORTED")
+        is not True
+        or causal.get("claim_flags", {}).get("BERGER_ARITY_THREE_D_CARTAN")
+        is not False
+        or causal.get("claim_flags", {}).get("QUANTUM_CLAIM") is not False
+    ):
+        raise ValueError("ND3 causal arity-two prerequisite drifted")
 
 
 def build_certificate() -> dict[str, Any]:
@@ -106,14 +172,14 @@ def build_certificate() -> dict[str, Any]:
     )
     mutation_checks = mutation.checks()
 
-    snapshot = json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
-    exports = {row["export_id"]: row["status"] for row in snapshot["required_exports"]}
+    current_inputs = _load_current_inputs()
+    _validate_current_inputs(current_inputs)
     source_manifest = _source_manifest()
     return {
         "result_id": "ND3_ARITY_THREE_CARTAN_ENGINE",
-        "result_state": "ENGINE_READY_AWAITING_Q3_AND_LOWER_PHYSICAL_DATA",
+        "result_state": "ENGINE_READY_LOWER_PHYSICAL_CHAIN_CERTIFIED_Q3_INPUT_BLOCKED",
         "lifecycle_layer": "INTERACTING",
-        "dependency_tags": ["LOCAL-ALGEBRAIC"],
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "setting_verdict": "INPUT_GATE_BLOCKED",
         "convention": "suspended-graded-symmetric-factorial-v1",
         "recurrence": "[q1,iota_D^(3)]=-[q3,iota_D]-[q2,iota_D^(2)]+L_D^(3)",
@@ -147,12 +213,29 @@ def build_certificate() -> dict[str, Any]:
             "solver_gate": "REJECTED_BEFORE_CORRECTION_CLASSIFICATION",
         },
         "input_gate": {
-            "support_local_classical_bv_q2": exports["support_local_classical_bv_q2"],
-            "classical_inclusion_iota_cl": exports["classical_inclusion_iota_cl"],
-            "classical_projection_pi_cl": exports["classical_projection_pi_cl"],
-            "classical_homotopy_s_cl": exports["classical_homotopy_s_cl"],
+            "status": "LOWER_ARITY_CHAIN_READY_Q3_AND_L_D3_EXPORT_BLOCKED",
+            "support_local_classical_bv_q2": "IMPORTED_AND_INDEPENDENTLY_REPLAYED_54_ROWS",
+            "retained_q2_26": "TRANSFERRED_WITH_Q1_Q2_AND_CYCLIC_IDENTITIES_VERIFIED",
+            "classical_inclusion_iota_cl": "IMPORTED_EXACT_IN_RETAINED_Q2_TRANSFER",
+            "classical_projection_pi_cl": "IMPORTED_EXACT_IN_RETAINED_Q2_TRANSFER",
+            "classical_homotopy_s_cl": "IMPORTED_IN_CAUSAL_54_TO_26_SDR_LIFT",
+            "physical_iota_D2": "CERTIFIED_CAUSAL_CYCLIC_TWO_SIDED_54_ROWS",
             "support_local_classical_bv_q3": "NOT_AVAILABLE_NO_VERSIONED_EXPORT",
-            "physical_iota_D2": "NOT_COMPUTED_PENDING_ARITY_TWO_PHYSICAL_RUN",
+            "L_D3": "NOT_DECLARED_BY_VERSIONED_Q3_EXPORT",
+            "physical_arity_three_execution_authorized": False,
+        },
+        "required_q3_export": {
+            "support_category": "SUPPORT_LOCAL_POLYDIFFERENTIAL",
+            "required_objects": ["q3", "L_D3"],
+            "required_checks": [
+                "complete_54_row_field_ghost_antifield_coverage",
+                "arity_three_Q_squared_identity",
+                "D_equivariance_arity_three",
+                "odd_Darboux_cyclicity",
+                "exact_coefficient_domain",
+                "content_hashes_and_classical_provenance",
+            ],
+            "zero_L_D3_is_allowed_only_if_explicitly_certified": True,
         },
         "established": [
             "exact graded-symmetric ternary-map complex and rational boundary solver",
@@ -166,10 +249,19 @@ def build_certificate() -> dict[str, Any]:
             "quartic dynamical/topological mixing or an instability amplitude",
             "a quantum correction or Lorentzian causal theorem",
         ],
-        "next_gate": "after the physical arity-two run, import q3 and L_D^(3), recompute the direct and exchange sources, and classify the admissible arity-three obstruction",
+        "next_gate": "import a versioned support-local q3 and explicit L_D^(3) declaration, assemble them with the certified q2 and causal iota_D^(2), then classify the admissible arity-three obstruction",
         "provenance": {
-            "classical_snapshot": str(SNAPSHOT_PATH.relative_to(ROOT)),
-            "classical_snapshot_sha256": _sha256(SNAPSHOT_PATH),
+            "current_inputs": {
+                name: {
+                    "path": str(path.relative_to(ROOT)),
+                    "sha256": _sha256(path),
+                }
+                for name, path in {
+                    "support_local_q2_replay": Q2_REPLAY_PATH,
+                    "retained_q2_transfer": RETAINED_Q2_PATH,
+                    "causal_chain_v2": CAUSAL_CHAIN_PATH,
+                }.items()
+            },
             "source_manifest": source_manifest,
             "source_manifest_sha256": _canonical_hash(source_manifest),
             "schema": "quantum-weyl/transfer/schema/arity-three-cartan-engine-v1.schema.json",
@@ -194,7 +286,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("ND3 ARITY-THREE CARTAN: DIRECT/EXCHANGE ENGINE READY, PHYSICAL INPUT BLOCKED")
+        print("ND3 ARITY-THREE CARTAN: LOWER CHAIN READY, Q3/L_D3 INPUT BLOCKED")
     return 0
 
 

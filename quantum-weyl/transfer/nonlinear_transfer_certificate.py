@@ -75,6 +75,12 @@ BERGER_METRIC_FACTOR_SCREEN_PATH = (
 BERGER_RETAINED_COMPANION_PATH = (
     QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT.json"
 )
+BERGER_CAUSAL_CHAIN_V2_PATH = (
+    QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_CAUSAL_CHAIN_V2_IMPORT.json"
+)
+BERGER_HADAMARD_GATE_PATH = (
+    QUANTUM_ROOT / "lorentzian" / "certificates" / "BERGER_HADAMARD_CONSTRUCTION_GATE.json"
+)
 BERGER_REDUCED_CARTAN_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json"
 )
@@ -204,6 +210,7 @@ def _source_manifest() -> dict[str, str]:
         "total_d_disposition_certificate.py",
         "arity_three_cartan.py",
         "arity_three_cartan_certificate.py",
+        "../reports/nd3-current-input-consolidation.md",
         "local_bach_seed_lift.py",
         "local_bach_seed_certificate.py",
         "local_bach_seed_direct_audit.py",
@@ -342,6 +349,12 @@ def build_certificate() -> dict[str, Any]:
     )
     berger_retained_companion = json.loads(
         BERGER_RETAINED_COMPANION_PATH.read_text(encoding="utf-8")
+    )
+    berger_causal_chain_v2 = json.loads(
+        BERGER_CAUSAL_CHAIN_V2_PATH.read_text(encoding="utf-8")
+    )
+    berger_hadamard_gate = json.loads(
+        BERGER_HADAMARD_GATE_PATH.read_text(encoding="utf-8")
     )
     berger_reduced_cartan = json.loads(
         BERGER_REDUCED_CARTAN_PATH.read_text(encoding="utf-8")
@@ -752,6 +765,56 @@ def build_certificate() -> dict[str, Any]:
     ):
         raise ValueError("Berger retained biwave companion drifted or was over-promoted")
     if (
+        berger_causal_chain_v2.get("result_id") != "BERGER_CAUSAL_CHAIN_V2_IMPORT"
+        or berger_causal_chain_v2.get("result_state")
+        != "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN"
+        or berger_causal_chain_v2.get("coverage", {}).get("D_Cartan_arities")
+        != [1, 2]
+        or berger_causal_chain_v2.get("claim_flags", {}).get(
+            "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2_IMPORTED"
+        )
+        is not True
+        or berger_causal_chain_v2.get("claim_flags", {}).get(
+            "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2_IMPORTED"
+        )
+        is not True
+        or berger_causal_chain_v2.get("claim_flags", {}).get(
+            "BERGER_CAUSAL_D_CARTAN_V2_IMPORTED"
+        )
+        is not True
+        or berger_causal_chain_v2.get("claim_flags", {}).get(
+            "BERGER_ARITY_THREE_D_CARTAN"
+        )
+        is not False
+        or berger_causal_chain_v2.get("claim_flags", {}).get("BERGER_HADAMARD_DATA")
+        is not False
+        or berger_causal_chain_v2.get("claim_flags", {}).get("QUANTUM_CLAIM")
+        is not False
+    ):
+        raise ValueError("Berger causal chain v2 drifted or was over-promoted")
+    if (
+        berger_hadamard_gate.get("result_id") != "BERGER_HADAMARD_CONSTRUCTION_GATE"
+        or berger_hadamard_gate.get("result_state")
+        != "CAUSAL_COMMUTATOR_READY_REDUCED_POLARIZATION_ONLY_HADAMARD_KERNEL_OPEN"
+        or berger_hadamard_gate.get("available_inputs", {})
+        .get("causal_chain", {})
+        .get("sha256")
+        != _sha256(BERGER_CAUSAL_CHAIN_V2_PATH)
+        or berger_hadamard_gate.get("claim_flags", {}).get("BERGER_HADAMARD_DATA")
+        is not False
+        or berger_hadamard_gate.get("claim_flags", {}).get(
+            "RENORMALIZED_LORENTZIAN_PRODUCTS"
+        )
+        is not False
+        or berger_hadamard_gate.get("claim_flags", {}).get("LORENTZIAN_QME_RESTORED")
+        is not False
+        or berger_hadamard_gate.get("claim_flags", {}).get("QUANTUM_CLAIM")
+        is not False
+        or berger_hadamard_gate.get("next_gate")
+        != "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX"
+    ):
+        raise ValueError("Berger Hadamard construction gate drifted or was over-promoted")
+    if (
         berger_retained_26_q2_transfer.get("schema")
         != "quantum-weyl-berger-retained-26-q2-transfer-v1"
         or berger_retained_26_q2_transfer.get("result_state")
@@ -916,7 +979,7 @@ def build_certificate() -> dict[str, Any]:
     source_manifest = _source_manifest()
     return {
         "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-        "result_state": "CONDITIONAL_CAUSAL_D_CARTAN_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING",
+        "result_state": "CAUSAL_CHAIN_AND_D_CARTAN_IMPORTED_THROUGH_ARITY_TWO_Q3_AND_HADAMARD_OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "classical_snapshot_commit": snapshot["classical_commit"],
         "classical_freeze_gate": snapshot["gate_a_status"],
@@ -956,6 +1019,7 @@ def build_certificate() -> dict[str, Any]:
                 "pinned independent replay of the exact Berger lower-by-two tensor-biwave normal form and canonical rough-wave factor no-go, followed by a normalized obstruction to the equal-connection scalar-principal ansatz",
                 "pinned independent replay of the full 13-row Douglis metric-cone inverse no-go and its hybrid retained-chain architectural consequence",
                 "exact projection P26=pi_cl P34_raw iota_cl identifies P26_metric=A10 and gives a 20-row local companion with a two-sided graph SDR, principal determinant q^20, no extra characteristic cone, and the corrected mixed raw-polarization interpretation",
+                "repaired advanced and retarded Green homotopies imported on all 26 retained and all 54 gauge-fixed rows, with cyclic two-sided-causal D-Cartan contraction through arity two",
                 "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
                 "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
                 "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
@@ -968,20 +1032,16 @@ def build_certificate() -> dict[str, Any]:
                 "ND3 exact arity-three Cartan recurrence engine with separate direct q3 and exchange sources",
             ],
             "not_established": [
-                "the complete conformal-gravity q2 or q3 Taylor tensors",
-                "the complete support-local conformal-gravity q2 lift before endpoint projection",
+                "the complete conformal-gravity q3 Taylor tensor and explicit L_D^(3) declaration",
                 "closure or centrality of either Weyl-square direction",
                 "nonaligned Einstein/extra-Weyl branch mixing outside the Brinkmann pp-wave sector",
                 "setting-matched projection of the physical conformal-gravity cubic tensor onto the Einstein helicity sector or matching its normalized coefficient to the parity-pair reference",
                 "absence of higher-bracket sector re-entry",
                 "the further minimal residual/cohomology ell2 beyond the retained 26-row q2_26 operation",
-                "an arity-two nonlinear D-Cartan contraction outside the all-weight homogeneous six-row-per-weight block",
-                "the retained 26-row causal Green homotopy needed to realize the conditional D-Cartan theorem",
-                "the cyclic completion of the conditional raw arity-two D-Cartan primitive",
-                "the complete 54-row arity-two Cartan contraction on any admissible extension",
+                "the arity-three D-Cartan contraction or its obstruction witness",
                 "an interacting particle or deformation-theory theorem",
                 "a quantum correction or residual quantum transfer",
-                "a completed LORENTZIAN-CAUSAL construction",
+                "Hadamard data, renormalized Lorentzian products, or a Lorentzian QME",
             ],
         },
         "required_classical_exports": list(REQUIRED_EXPORTS),
@@ -1004,8 +1064,8 @@ def build_certificate() -> dict[str, Any]:
             },
             {
                 "question_id": "D_quotient_interaction_stability",
-                "status": "BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED_CONDITIONAL_CAUSAL_UNARY_AND_RAW_ARITY_TWO_TRANSFER_THEOREM_IMPORTED_BINARY_CYCLIC_COMPLETION_AND_ENDPOINT_GREEN_HOMOTOPY_OPEN_RAW_PRINCIPAL_COMPATIBLE_RANK_ONE_WAVE_EXTENSION_IMPORTED_CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED_LOWER_BY_TWO_BIWAVE_IMPORTED_FULL_L13_METRIC_CONE_INVERSE_EXACTLY_OBSTRUCTED_RETAINED_METRIC_PROJECTION_AND_20_ROW_COMPANION_EXACT_VOLTERRA_RESOLVENT_REQUIRED",
-                "next_certificate": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
+                "status": "BARE_LOCAL_UNARY_OBSTRUCTION_BYPASSED_BY_CERTIFIED_CAUSAL_EXTENSION_26_AND_54_ROW_GREEN_HOMOTOPIES_AND_CYCLIC_D_CARTAN_THROUGH_ARITY_TWO_IMPORTED_ARITY_THREE_OPEN",
+                "next_certificate": "BERGER_ARITY_THREE_D_CARTAN_OR_HADAMARD",
             },
             {
                 "question_id": "positive_dynamical_direction_closure",
@@ -1040,6 +1100,7 @@ def build_certificate() -> dict[str, Any]:
             {"stage": "HT3", "deliverable": "higher-arity and particle-filtration obstruction ledger", "status": "NOT_COMPUTED"},
             {"stage": "HT4", "deliverable": "cyclic minimal action and formal moduli interpretation", "status": "NOT_COMPUTED"},
             {"stage": "N-G5", "deliverable": "Einstein projection and one helicity/twistor amplitude fixture", "status": "REFERENCE_PARITY_PAIR_AND_SETTING_DEFECT_NORMALIZATION_GATES_READY_PHYSICAL_Q2_PROJECTION_BLOCKED"},
+            {"stage": "HTH", "deliverable": "construct BRST-compatible distributional Hadamard two-point function", "status": "CAUSAL_COMMUTATOR_READY_BASE_WAVE_HADAMARD_PARAMETRIX_NEXT"},
             {"stage": "HTQ", "deliverable": "transfer restored quantum Q corrections", "status": "BLOCKED_PENDING_QME_RESTORED"},
         ],
         "provenance": {
@@ -1154,6 +1215,14 @@ def build_certificate() -> dict[str, Any]:
             "berger_retained_biwave_companion_preflight_sha256": _sha256(
                 BERGER_RETAINED_COMPANION_PATH
             ),
+            "berger_causal_chain_v2_import_certificate": "quantum-weyl/lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
+            "berger_causal_chain_v2_import_sha256": _sha256(
+                BERGER_CAUSAL_CHAIN_V2_PATH
+            ),
+            "berger_hadamard_construction_gate_certificate": "quantum-weyl/lorentzian/certificates/BERGER_HADAMARD_CONSTRUCTION_GATE.json",
+            "berger_hadamard_construction_gate_sha256": _sha256(
+                BERGER_HADAMARD_GATE_PATH
+            ),
             "berger_first_arity_two_cartan_verdict_certificate": "quantum-weyl/transfer/certificates/BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json",
             "berger_first_arity_two_cartan_verdict_sha256": _sha256(
                 BERGER_REDUCED_CARTAN_PATH
@@ -1199,15 +1268,16 @@ def build_certificate() -> dict[str, Any]:
             "The complete gauge-fixed 54-row unary complex, cyclic pairing, and contraction are independently imported. That unary artifact does not itself supply q2 or D, while the separate complete local-D import now closes unary, contraction, and cyclic D-equivariance.",
             "The complete 54-row local D action is independently imported and unary/contraction/cyclic equivariance is exact. The later scientific q2 replay now also proves the arity-two D-derivation identity; it does not solve the unary or interacting Cartan equations.",
             "The Berger 54-row q2 arrival adapter fixes and mutation-tests the portable bilinear PBW structure and binds it to the authoritative unary, D, contraction, and pairing hashes. The complete classical tensor is now independently imported, and the specialized exact Q(sqrt(10)) backend replays q1/q2, D/q2, and odd-Darboux cyclicity coefficientwise. Full ell2 transfer and Cartan execution remain absent.",
-            "The bare full-dimensional unary Cartan problem is exactly obstructed on the 26/54-row complex. A conditional causal transfer theorem is now imported, but its retained Green-homotopy hypothesis and cyclic arity-two completion remain unconstructed.",
-            "The first dressed cyclic witness is not principal-compatible with the Green contract. The raw BV-canonical endpoint, its 13-row scalar-wave prolongation, and the paired 36-row cyclic analytic realization are independently replayed. The exact lower-by-two tensor-biwave normal form and canonical rough-wave factor no-go are imported, and the equal-connection scalar-principal two-factor ansatz is also exactly obstructed. The full L13 endpoint has a genuine sqrt(2) characteristic outside the metric cone, so a background-metric-causal inverse on arbitrary 13-row sources is ruled out. Its polarization mixes retained metric and clock components; the BV SDR must construct a different retained witness rather than project L13 solutions. Exact projection identifies P26_metric=A10, and its local 20-row companion has a two-sided graph SDR, determinant q^20, and no extra cone; the causal Volterra resolvent, cyclic adjointness, and retained chain homotopy remain open.",
+            "The bare full-dimensional unary Cartan problem is exactly obstructed on the local 26/54-row complex. The repaired causal extension now supplies advanced and retarded Green homotopies on all 26 and 54 rows and a cyclic two-sided-causal D-Cartan contraction through arity two; arity three remains open.",
+            "The principal-compatible raw endpoint, companion construction, repaired Volterra theorem, 26/54-row causal chain, and cyclic D-Cartan completion are imported in the v2 chain. These classical causal results do not supply Hadamard data, renormalized products, QME restoration, or a quantum claim.",
+            "The Hadamard construction gate consumes the v2 causal commutator but keeps reduced positive-frequency/Krein ledgers separate from a distributional 54-row covariance; the base rough-wave parametrix is next.",
             "The first action-derived reduced-mode q2/D block has a certified exact zero Cartan source and zero primitive because all six rows have D-weight zero; it cannot rule out an obstruction in omitted nonzero-weight or support-local sectors.",
             "The finite nonzero-weight extension is exactly ruled out at q2 closure, before the Cartan equation: anisotropy and cyclicity force an infinite weight tower. This is not a Cartan-cohomology obstruction and says nothing about the infinite or support-local complexes.",
             "The resulting all-integer-weight homogeneous complex has a generically nonzero Cartan source and an explicit nonzero exact primitive. It remains a three-field REDUCED-MODE theorem and does not promote the full four-dimensional support-local q2 or complete 54-row Cartan contraction.",
             "The pp-wave branch block uses arbitrary smooth aligned Brinkmann profiles and genuine Einstein/non-Einstein metric representatives, but exact linearity on that sector does not determine nonaligned support-local vertices, the centered Weyl-square deformation classes, or the complete BV q2.",
             "The exact (--+)/(++-) parity pair is a stripped reference fixture, not a conformal-gravity calculation. Berger reduced-mode data are setting-incompatible with this flat scattering rail. The imported compensated defect is linearized preflight, and the available nonzero-M2 projectors act only after TT reduction and are singular in the pure-Weyl limit; no full-BV nonlinear defect map, observable embedding, or scattering-state map exists. G5 remains unpromoted until a setting-matched complete physical q2 passes the defect gate and receives a complete normalization dictionary.",
             "D_CHARGED is the canonical classical verdict; EQUIVARIANCE_ONLY_D_CHARGED_NO_QUOTIENT is a route label, not a fifth scientific disposition.",
-            "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics only; physical q3 and any support-local or nonzero-weight iota_D^(2) remain absent.",
+            "ND3 direct and exchange fixtures certify the arity-three recurrence mechanics. The complete support-local q2, retained transfer, causal SDR, and cyclic two-sided-causal iota_D^(2) are now pinned as the lower physical chain; a versioned support-local q3 and explicit L_D^(3) declaration remain absent.",
             "Quantum transfer remains downstream of QME_RESTORED and is not implied by this classical programme.",
         ],
     }
@@ -1232,7 +1302,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("NONLINEAR HOMOLOGICAL TRANSFER: RETAINED COMPANION EXACT; VOLTERRA RESOLVENT OPEN")
+        print("NONLINEAR HOMOLOGICAL TRANSFER: CAUSAL CHAIN READY THROUGH ARITY TWO; Q3/HADAMARD OPEN")
     return 0
 
 

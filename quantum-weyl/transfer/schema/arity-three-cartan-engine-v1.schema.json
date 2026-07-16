@@ -8,38 +8,45 @@
     "result_id", "result_state", "lifecycle_layer", "dependency_tags",
     "setting_verdict", "convention", "recurrence", "direct_q3_fixture",
     "exchange_fixture", "obstruction_fixture", "mutation_fixture", "input_gate",
+    "required_q3_export",
     "established", "not_established", "next_gate", "provenance"
   ],
   "properties": {
     "result_id": {"const": "ND3_ARITY_THREE_CARTAN_ENGINE"},
-    "result_state": {"const": "ENGINE_READY_AWAITING_Q3_AND_LOWER_PHYSICAL_DATA"},
+    "result_state": {"const": "ENGINE_READY_LOWER_PHYSICAL_CHAIN_CERTIFIED_Q3_INPUT_BLOCKED"},
     "lifecycle_layer": {"const": "INTERACTING"},
-    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
     "setting_verdict": {"const": "INPUT_GATE_BLOCKED"},
     "convention": {"const": "suspended-graded-symmetric-factorial-v1"},
     "recurrence": {"type": "string", "minLength": 1},
     "direct_q3_fixture": {
       "type": "object",
+      "additionalProperties": false,
       "required": ["checks", "q3_nonzero", "source", "classification", "correction", "correction_identity"],
       "properties": {
         "checks": {"type": "object", "minProperties": 8, "additionalProperties": {"const": true}},
         "q3_nonzero": {"const": true},
+        "source": {"type": "object"},
         "classification": {"const": "EXACT_CORRECTION"},
+        "correction": {"type": "object"},
         "correction_identity": {"const": true}
       }
     },
     "exchange_fixture": {
       "type": "object",
+      "additionalProperties": false,
       "required": ["q2_nonzero", "iota_D2_nonzero", "exchange_source", "exchange_nonzero", "graded_commutator_symmetry"],
       "properties": {
         "q2_nonzero": {"const": true},
         "iota_D2_nonzero": {"const": true},
+        "exchange_source": {"type": "object"},
         "exchange_nonzero": {"const": true},
         "graded_commutator_symmetry": {"const": true}
       }
     },
     "obstruction_fixture": {
       "type": "object",
+      "additionalProperties": false,
       "required": ["classification", "dual_witness", "dual_witness_normalization"],
       "properties": {
         "classification": {"const": "NONTRIVIAL_OBSTRUCTION"},
@@ -49,26 +56,99 @@
     },
     "mutation_fixture": {
       "type": "object",
+      "additionalProperties": false,
       "required": ["mutation", "Cartan_identity_arity_one", "D_equivariance_arity_three", "solver_gate"],
       "properties": {
+        "mutation": {"type": "string", "minLength": 1},
         "Cartan_identity_arity_one": {"const": false},
         "D_equivariance_arity_three": {"const": false},
         "solver_gate": {"const": "REJECTED_BEFORE_CORRECTION_CLASSIFICATION"}
       }
     },
-    "input_gate": {"type": "object"},
+    "input_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status", "support_local_classical_bv_q2", "retained_q2_26",
+        "classical_inclusion_iota_cl", "classical_projection_pi_cl",
+        "classical_homotopy_s_cl", "physical_iota_D2",
+        "support_local_classical_bv_q3", "L_D3",
+        "physical_arity_three_execution_authorized"
+      ],
+      "properties": {
+        "status": {"const": "LOWER_ARITY_CHAIN_READY_Q3_AND_L_D3_EXPORT_BLOCKED"},
+        "support_local_classical_bv_q2": {"const": "IMPORTED_AND_INDEPENDENTLY_REPLAYED_54_ROWS"},
+        "retained_q2_26": {"const": "TRANSFERRED_WITH_Q1_Q2_AND_CYCLIC_IDENTITIES_VERIFIED"},
+        "classical_inclusion_iota_cl": {"const": "IMPORTED_EXACT_IN_RETAINED_Q2_TRANSFER"},
+        "classical_projection_pi_cl": {"const": "IMPORTED_EXACT_IN_RETAINED_Q2_TRANSFER"},
+        "classical_homotopy_s_cl": {"const": "IMPORTED_IN_CAUSAL_54_TO_26_SDR_LIFT"},
+        "physical_iota_D2": {"const": "CERTIFIED_CAUSAL_CYCLIC_TWO_SIDED_54_ROWS"},
+        "support_local_classical_bv_q3": {"const": "NOT_AVAILABLE_NO_VERSIONED_EXPORT"},
+        "L_D3": {"const": "NOT_DECLARED_BY_VERSIONED_Q3_EXPORT"},
+        "physical_arity_three_execution_authorized": {"const": false}
+      }
+    },
+    "required_q3_export": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "support_category", "required_objects", "required_checks",
+        "zero_L_D3_is_allowed_only_if_explicitly_certified"
+      ],
+      "properties": {
+        "support_category": {"const": "SUPPORT_LOCAL_POLYDIFFERENTIAL"},
+        "required_objects": {"const": ["q3", "L_D3"]},
+        "required_checks": {
+          "const": [
+            "complete_54_row_field_ghost_antifield_coverage",
+            "arity_three_Q_squared_identity",
+            "D_equivariance_arity_three",
+            "odd_Darboux_cyclicity",
+            "exact_coefficient_domain",
+            "content_hashes_and_classical_provenance"
+          ]
+        },
+        "zero_L_D3_is_allowed_only_if_explicitly_certified": {"const": true}
+      }
+    },
     "established": {"type": "array", "minItems": 4, "items": {"type": "string"}},
     "not_established": {"type": "array", "minItems": 4, "items": {"type": "string"}},
     "next_gate": {"type": "string", "minLength": 1},
     "provenance": {
       "type": "object",
-      "required": ["classical_snapshot", "classical_snapshot_sha256", "source_manifest", "source_manifest_sha256", "schema"],
+      "additionalProperties": false,
+      "required": ["current_inputs", "source_manifest", "source_manifest_sha256", "schema"],
       "properties": {
-        "classical_snapshot_sha256": {"$ref": "#/$defs/hash"},
+        "current_inputs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["support_local_q2_replay", "retained_q2_transfer", "causal_chain_v2"],
+          "properties": {
+            "support_local_q2_replay": {"$ref": "#/$defs/artifact"},
+            "retained_q2_transfer": {"$ref": "#/$defs/artifact"},
+            "causal_chain_v2": {"$ref": "#/$defs/artifact"}
+          }
+        },
         "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "source_manifest": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
         "schema": {"const": "quantum-weyl/transfer/schema/arity-three-cartan-engine-v1.schema.json"}
       }
     }
   },
-  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
 }

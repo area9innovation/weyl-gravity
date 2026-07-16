@@ -1,8 +1,8 @@
 # Nonlinear homological-transfer bootstrap
 
-Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`
+Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`, `LORENTZIAN-CAUSAL`
 
-Result state: `ENGINE_READY_HT1_RESIDUAL_AND_LOCAL_SEEDS_COMPUTED_INPUT_BLOCKED`
+Result state: `CAUSAL_CHAIN_AND_D_CARTAN_IMPORTED_THROUGH_ARITY_TWO_Q3_AND_HADAMARD_OPEN`
 
 ## Established
 
@@ -86,21 +86,22 @@ nondegeneracy, and projection/pairing compatibility.  This satisfies ND2's
 standalone `classical_contraction` artifact.  It does not supply `q2/D`, local
 `D`-equivariance, admissibility, or a compatible physical assembly adapter.
 
-The Lorentzian causal branch has also been narrowed without promoting a Green
-theorem. The complete 13-row clock/graph endpoint has an exact extra
-characteristic outside the metric cone, so arbitrary-source metric-causal
-inversion there is ruled out. Projection through the support-local
-contraction now proves `P26_metric=A10=Box_2^2+V_2`, and the exact local 20-row
-companion has principal determinant `q^20` with no extra cone. The remaining
-gate is its causal Volterra resolvent and global support proof; the retained
-and full chain homotopies remain open.
+The Lorentzian causal branch has now passed the repaired v2 chain. The
+retained Volterra theorem supplies the metric resolvents; advanced and
+retarded Green homotopies are imported on all 26 retained and all 54
+gauge-fixed rows; and the cyclic two-sided-causal D-Cartan contraction is
+certified through arity two. Hadamard data, arity three, renormalized products,
+and QME restoration remain separate open gates.
 
 ND3 additionally implements the next Cartan recurrence.  It retains the
 direct `[q3,iota_D]` and exchange `[q2,iota_D^(2)]` tensors separately, checks
 the arity-three `Q^2`, Cartan, and `D` identities, and returns either an exact
-`iota_D^(3)` or normalized obstruction witness.  This is an engine result;
-physical `q3`, the physical arity-two correction, and quartic mixing remain
-behind the input gate.
+`iota_D^(3)` or normalized obstruction witness.  Its current input ledger now
+pins the complete support-local 54-row `q2`, the retained 26-row transfer, the
+causal SDR lift, and the cyclic two-sided-causal `iota_D^(2)`.  The lower
+physical chain is ready; a versioned support-local `q3` and explicit
+`L_D^(3)` declaration, the physical arity-three solve, and quartic mixing
+remain behind the input gate.
 
 The support-local `q2` handoff is now executable rather than implicit.  Its
 preflight requires a declared local-polydifferential support category, all
@@ -113,10 +114,10 @@ the normalized Weyl-square representatives for the later transfer gate.
 
 ## Not established
 
-No complete conformal-gravity nonlinear tensor has yet passed the portable
-input gate.  The selected residual bracket is certified through the endpoint
-projection but the complete support-local nonlinear Bach/BV tensor has not
-been serialized.  The result does not prove closure of the dynamical direction, prove that the
+The complete support-local conformal-gravity `q2` has passed the portable
+input gate and its retained 26-row transfer is certified. A versioned
+support-local `q3`, explicit `L_D^(3)` declaration, and further minimal
+residual/cohomology transfer remain open. The result does not prove closure of the dynamical direction, prove that the
 topological direction is central or inert, exclude sector re-entry by higher
 brackets, or establish a complete interacting particle/deformation
 interpretation.
@@ -135,6 +136,7 @@ transferred before `QME_RESTORED`.
 | HT2 | Compute `ell_3`; dynamical/topological mixing and centrality ledgers | Arity-three Cartan recurrence engine ready; physical `q3` and mixing input blocked |
 | HT3 | Higher arities and particle-filtration spectral sequence | Not computed |
 | HT4 | Cyclic minimal action and formal moduli/deformation interpretation | Not computed |
+| HTH | BRST-compatible distributional Hadamard two-point function | Causal commutator ready; base rough-wave Hadamard parametrix next |
 | HTQ | Transfer renormalized corrections | Blocked pending `QME_RESTORED` |
 
 ## Verification receipt

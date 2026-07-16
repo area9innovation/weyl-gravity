@@ -23,7 +23,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(
             certificate["result_state"],
-            "CONDITIONAL_CAUSAL_D_CARTAN_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING",
+            "CAUSAL_CHAIN_AND_D_CARTAN_IMPORTED_THROUGH_ARITY_TWO_Q3_AND_HADAMARD_OPEN",
         )
         self.assertEqual(
             certificate["dependency_tags"],
@@ -78,17 +78,13 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
             for item in certificate["question_ledger"]
             if item["question_id"] == "D_quotient_interaction_stability"
         )
-        self.assertIn("BARE_26_54_ROW_LOCAL_UNARY_D_CARTAN_EXACTLY_OBSTRUCTED", d_question["status"])
-        self.assertIn("CONDITIONAL_CAUSAL_UNARY_AND_RAW_ARITY_TWO_TRANSFER_THEOREM_IMPORTED", d_question["status"])
-        self.assertIn("RANK_ONE_WAVE_EXTENSION_IMPORTED", d_question["status"])
-        self.assertIn("CYCLIC_36_ROW_ANALYTIC_REALIZATION_IMPORTED", d_question["status"])
-        self.assertIn("LOWER_BY_TWO_BIWAVE_IMPORTED", d_question["status"])
-        self.assertIn("FULL_L13_METRIC_CONE_INVERSE_EXACTLY_OBSTRUCTED", d_question["status"])
-        self.assertIn("RETAINED_METRIC_PROJECTION_AND_20_ROW_COMPANION_EXACT", d_question["status"])
-        self.assertIn("VOLTERRA_RESOLVENT_REQUIRED", d_question["status"])
+        self.assertIn("BARE_LOCAL_UNARY_OBSTRUCTION_BYPASSED", d_question["status"])
+        self.assertIn("26_AND_54_ROW_GREEN_HOMOTOPIES", d_question["status"])
+        self.assertIn("CYCLIC_D_CARTAN_THROUGH_ARITY_TWO_IMPORTED", d_question["status"])
+        self.assertIn("ARITY_THREE_OPEN", d_question["status"])
         self.assertEqual(
             d_question["next_certificate"],
-            "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
+            "BERGER_ARITY_THREE_D_CARTAN_OR_HADAMARD",
         )
 
     def test_nd2_engine_is_registered_without_promoting_the_physical_claim(self) -> None:
@@ -167,16 +163,25 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn("berger_total_D_disposition_sha256", certificate["provenance"])
         self.assertIn("nd3_arity_three_cartan_engine_sha256", certificate["provenance"])
+        self.assertIn("berger_causal_chain_v2_import_sha256", certificate["provenance"])
+        self.assertIn("berger_hadamard_construction_gate_sha256", certificate["provenance"])
+        hadamard_stage = next(
+            item for item in certificate["programme_stages"] if item["stage"] == "HTH"
+        )
+        self.assertEqual(
+            hadamard_stage["status"],
+            "CAUSAL_COMMUTATOR_READY_BASE_WAVE_HADAMARD_PARAMETRIX_NEXT",
+        )
         self.assertTrue(
             any(
-                "complete conformal-gravity q2" in claim
+                "complete conformal-gravity q3" in claim
                 for claim in certificate["scope"]["not_established"]
             )
         )
         self.assertTrue(
             any(
-                "complete 54-row arity-two Cartan" in claim
-                for claim in certificate["scope"]["not_established"]
+                "26 retained and all 54 gauge-fixed rows" in claim
+                for claim in certificate["scope"]["established"]
             )
         )
 

@@ -1,7 +1,8 @@
 {
   "convention": "suspended-graded-symmetric-factorial-v1",
   "dependency_tags": [
-    "LOCAL-ALGEBRAIC"
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
   ],
   "direct_q3_fixture": {
     "checks": {
@@ -84,11 +85,15 @@
     "q2_nonzero": true
   },
   "input_gate": {
-    "classical_homotopy_s_cl": "NOT_AVAILABLE",
-    "classical_inclusion_iota_cl": "NOT_AVAILABLE",
-    "classical_projection_pi_cl": "NOT_AVAILABLE",
-    "physical_iota_D2": "NOT_COMPUTED_PENDING_ARITY_TWO_PHYSICAL_RUN",
-    "support_local_classical_bv_q2": "NOT_AVAILABLE",
+    "L_D3": "NOT_DECLARED_BY_VERSIONED_Q3_EXPORT",
+    "classical_homotopy_s_cl": "IMPORTED_IN_CAUSAL_54_TO_26_SDR_LIFT",
+    "classical_inclusion_iota_cl": "IMPORTED_EXACT_IN_RETAINED_Q2_TRANSFER",
+    "classical_projection_pi_cl": "IMPORTED_EXACT_IN_RETAINED_Q2_TRANSFER",
+    "physical_arity_three_execution_authorized": false,
+    "physical_iota_D2": "CERTIFIED_CAUSAL_CYCLIC_TWO_SIDED_54_ROWS",
+    "retained_q2_26": "TRANSFERRED_WITH_Q1_Q2_AND_CYCLIC_IDENTITIES_VERIFIED",
+    "status": "LOWER_ARITY_CHAIN_READY_Q3_AND_L_D3_EXPORT_BLOCKED",
+    "support_local_classical_bv_q2": "IMPORTED_AND_INDEPENDENTLY_REPLAYED_54_ROWS",
     "support_local_classical_bv_q3": "NOT_AVAILABLE_NO_VERSIONED_EXPORT"
   },
   "lifecycle_layer": "INTERACTING",
@@ -98,7 +103,7 @@
     "mutation": "change the weight-three q3 output D eigenvalue from 3 to 4",
     "solver_gate": "REJECTED_BEFORE_CORRECTION_CLASSIFICATION"
   },
-  "next_gate": "after the physical arity-two run, import q3 and L_D^(3), recompute the direct and exchange sources, and classify the admissible arity-three obstruction",
+  "next_gate": "import a versioned support-local q3 and explicit L_D^(3) declaration, assemble them with the certified q2 and causal iota_D^(2), then classify the admissible arity-three obstruction",
   "not_established": [
     "a conformal-gravity q3 Taylor coefficient",
     "the physical arity-three Cartan source or correction",
@@ -113,21 +118,50 @@
     "dual_witness_normalization": "1"
   },
   "provenance": {
-    "classical_snapshot": "quantum-weyl/classical_import/snapshots/bootstrap-v1.json",
-    "classical_snapshot_sha256": "459f46e3a8d233754ceec2593c858b1996ead38ec52622678bf5a7c7ec3a61e9",
+    "current_inputs": {
+      "causal_chain_v2": {
+        "path": "quantum-weyl/lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
+        "sha256": "2afa06f34d29f9103164d22c9865d4899d5b28d53c6a5a3ce002c89f71c8f1da"
+      },
+      "retained_q2_transfer": {
+        "path": "quantum-weyl/transfer/certificates/BERGER_RETAINED_26_Q2_TRANSFER.json",
+        "sha256": "6708f9ee149054c653634da16122e4b63256df5ced64e2cc30922dc24f39d3d0"
+      },
+      "support_local_q2_replay": {
+        "path": "quantum-weyl/transfer/certificates/BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY.json",
+        "sha256": "56779266feaa58bb1d522d289b56071eebb8b2f2ea8bf5944fa34fe8d52fc33f"
+      }
+    },
     "schema": "quantum-weyl/transfer/schema/arity-three-cartan-engine-v1.schema.json",
     "source_manifest": {
+      "../reports/nd3-current-input-consolidation.md": "b3c9e5c96c686ab12ecc483a309286825ec18738e49ac664d7e13639a4ba32a1",
       "arity_three_cartan.py": "eeec6a358380be25d39f62958b80968150ec806fe99712dda29c425100435fcb",
-      "arity_three_cartan_certificate.py": "cee1825abfa90bad27f0560b88f4a2cae58ec8e72e289a8723502d896fc55b90",
+      "arity_three_cartan_certificate.py": "7b04dc015e56bfb30cf772acc69dd271465f26bbde875ae9dc1d15d552a93905",
       "arity_two_cartan.py": "656ad3fc3e94846ab06ab9da6bcce0b79510eda5388d48d034492cb64c9440bf",
-      "schema/arity-three-cartan-engine-v1.schema.json": "d05594899045ce7e235e01d82c6bc2c9e3ca3ae2c934e3d272cecf27614de182",
+      "schema/arity-three-cartan-engine-v1.schema.json": "463688b2f975a4ea1aaecc7563234a25237ca78e1f9345e298c33d31014246d6",
       "tests/test_arity_three_cartan.py": "8c576a5f727e9588fcef750998f2b389e2680cde3e810af99be6a587e30bc95f",
-      "tests/test_arity_three_cartan_certificate.py": "f6edb6d39b362717f37f0bebcba266d83f98ae6ad0127e5e7a7028a6d5a4c371"
+      "tests/test_arity_three_cartan_certificate.py": "3b65d18f0f4def3616a137da5d40a4418ea993b96e26319e3821512dca574bc1"
     },
-    "source_manifest_sha256": "dd4e766a980e52f421ba607ce954d059be71989f5e2dc9c3c8f7e9911c953494"
+    "source_manifest_sha256": "f170c0e129d26e98ace7855b1188e9b175e7b439b9e16b9c49597aa31a49ac04"
   },
   "recurrence": "[q1,iota_D^(3)]=-[q3,iota_D]-[q2,iota_D^(2)]+L_D^(3)",
+  "required_q3_export": {
+    "required_checks": [
+      "complete_54_row_field_ghost_antifield_coverage",
+      "arity_three_Q_squared_identity",
+      "D_equivariance_arity_three",
+      "odd_Darboux_cyclicity",
+      "exact_coefficient_domain",
+      "content_hashes_and_classical_provenance"
+    ],
+    "required_objects": [
+      "q3",
+      "L_D3"
+    ],
+    "support_category": "SUPPORT_LOCAL_POLYDIFFERENTIAL",
+    "zero_L_D3_is_allowed_only_if_explicitly_certified": true
+  },
   "result_id": "ND3_ARITY_THREE_CARTAN_ENGINE",
-  "result_state": "ENGINE_READY_AWAITING_Q3_AND_LOWER_PHYSICAL_DATA",
+  "result_state": "ENGINE_READY_LOWER_PHYSICAL_CHAIN_CERTIFIED_Q3_INPUT_BLOCKED",
   "setting_verdict": "INPUT_GATE_BLOCKED"
 }
