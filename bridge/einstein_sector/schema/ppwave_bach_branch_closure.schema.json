@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/ppwave-bach-branch-closure-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "provenance", "geometry", "exact_field_equations", "branch_representatives", "restricted_nonlinear_tensor", "branch_mixing_verdict", "transfer_disposition", "physical_interpretation", "exact_checks", "flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "ppwave-bach-branch-closure-v1"},
+    "result_id": {"const": "PPWAVE_BACH_BRANCH_CLOSURE"},
+    "result_state": {"const": "RESTRICTED_SUPPORT_LOCAL_EINSTEIN_EXTRA_WEYL_Q2_ZERO"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "provenance": {"type": "object"},
+    "geometry": {"type": "object"},
+    "exact_field_equations": {
+      "type": "object",
+      "required": ["ricci_nonzero_components", "scalar_curvature", "bach_nonzero_components", "einstein_equation", "bach_equation", "bach_is_exactly_linear_in_H"],
+      "properties": {
+        "ricci_nonzero_components": {"type": "object"},
+        "scalar_curvature": {"const": "0"},
+        "bach_nonzero_components": {"type": "object"},
+        "einstein_equation": {"const": "Delta_perp H=0"},
+        "bach_equation": {"const": "Delta_perp^2 H=0"},
+        "bach_is_exactly_linear_in_H": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "branch_representatives": {"type": "object"},
+    "restricted_nonlinear_tensor": {
+      "type": "object",
+      "required": ["Taylor_convention", "q1", "q2_entries", "q2_identically_zero_for_arbitrary_ppwave_profiles", "all_higher_Taylor_coefficients_zero", "cyclicity_on_declared_sector"],
+      "properties": {
+        "Taylor_convention": {"type": "string"},
+        "q1": {"type": "string"},
+        "q2_entries": {"const": {"Einstein_Einstein": "0", "Einstein_extraWeyl": "0", "extraWeyl_extraWeyl": "0"}},
+        "q2_identically_zero_for_arbitrary_ppwave_profiles": {"const": true},
+        "all_higher_Taylor_coefficients_zero": {"const": true},
+        "cyclicity_on_declared_sector": {"const": "AUTOMATIC_ZERO_TENSOR"}
+      },
+      "additionalProperties": false
+    },
+    "branch_mixing_verdict": {"type": "object"},
+    "transfer_disposition": {
+      "type": "object",
+      "required": ["restricted_ell2", "homotopy_choice_affects_result", "reason", "higher_brackets_on_sector"],
+      "properties": {
+        "restricted_ell2": {"const": "pi_cl q2(iota_cl tensor iota_cl)=0"},
+        "homotopy_choice_affects_result": {"const": false},
+        "reason": {"type": "string"},
+        "higher_brackets_on_sector": {"const": "ZERO_FROM_EXACT_LINEARITY_OF_BACH_ON_THE_SLICE"}
+      },
+      "additionalProperties": false
+    },
+    "physical_interpretation": {"type": "object"},
+    "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["RESTRICTED_SUPPORT_LOCAL_Q2_BLOCK", "ACTUAL_EINSTEIN_EXTRA_WEYL_BRANCH_LABELS", "RESTRICTED_TRANSFERRED_ELL2_COMPUTED", "FULL_SUPPORT_LOCAL_BV_Q2", "COMPLETE_54_ROW_TRANSFER", "WEYL_SQUARE_DEFORMATION_CENTRALITY_TESTED", "LORENTZIAN_CAUSAL_CERTIFIED", "QME_RESTORED"],
+      "properties": {
+        "RESTRICTED_SUPPORT_LOCAL_Q2_BLOCK": {"const": true},
+        "ACTUAL_EINSTEIN_EXTRA_WEYL_BRANCH_LABELS": {"const": true},
+        "RESTRICTED_TRANSFERRED_ELL2_COMPUTED": {"const": true},
+        "FULL_SUPPORT_LOCAL_BV_Q2": {"const": false},
+        "COMPLETE_54_ROW_TRANSFER": {"const": false},
+        "WEYL_SQUARE_DEFORMATION_CENTRALITY_TESTED": {"const": false},
+        "LORENTZIAN_CAUSAL_CERTIFIED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "NONALIGNED_SUPPORT_LOCAL_BRANCH_BLOCK_OR_COMPLETE_54_ROW_Q2"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

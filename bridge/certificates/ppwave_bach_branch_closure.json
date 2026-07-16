@@ -1,0 +1,141 @@
+{
+  "branch_mixing_verdict": {
+    "Einstein_Einstein_to_extraWeyl": "ZERO",
+    "Einstein_extraWeyl_to_Einstein": "ZERO",
+    "Einstein_extraWeyl_to_extraWeyl": "ZERO",
+    "extraWeyl_extraWeyl_to_Einstein": "ZERO",
+    "extraWeyl_extraWeyl_to_extraWeyl": "ZERO",
+    "restricted_branches_close_together": true
+  },
+  "branch_representatives": {
+    "Einstein": {
+      "Bach_flat": true,
+      "Delta_perp_H": "0",
+      "Ricci_flat": true,
+      "profile": "f(u)*(x^2-y^2)"
+    },
+    "extra_Weyl": {
+      "Bach_flat": true,
+      "Delta_perp_H": "6*x*g(u)",
+      "Ricci_flat": false,
+      "profile": "g(u)*x^3"
+    },
+    "sum_is_exact_Bach_solution": true
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC theorem proves that the Bach tensor is linear on the arbitrary-profile Brinkmann pp-wave slice, so the restricted support-local q2 and every transferred branch-mixing ell2 entry vanish for the declared Einstein and non-Einstein biharmonic representatives. It is not the complete support-local BV q2, does not classify nonaligned interactions or the Weyl-square deformation classes, and supplies no causal, scattering, pairing-positivity, or quantum theorem.",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "Einstein_representative_exact": true,
+    "bach_linearity_exact": true,
+    "bach_tensor_exact": true,
+    "extra_Weyl_representative_exact": true,
+    "metric_inverse_exact": true,
+    "mixed_exact_solution": true,
+    "restricted_ell2_zero": true,
+    "restricted_q2_zero": true,
+    "ricci_tensor_exact": true,
+    "scalar_zero": true
+  },
+  "exact_field_equations": {
+    "bach_equation": "Delta_perp^2 H=0",
+    "bach_is_exactly_linear_in_H": true,
+    "bach_nonzero_components": {
+      "00": "-(Derivative(H(u, x, y), (x, 4)) + Derivative(H(u, x, y), (y, 4)) + 2*Derivative(H(u, x, y), (x, 2), (y, 2)))/4"
+    },
+    "einstein_equation": "Delta_perp H=0",
+    "ricci_nonzero_components": {
+      "00": "-(Derivative(H(u, x, y), (x, 2)) + Derivative(H(u, x, y), (y, 2)))/2"
+    },
+    "scalar_curvature": "0"
+  },
+  "flags": {
+    "ACTUAL_EINSTEIN_EXTRA_WEYL_BRANCH_LABELS": true,
+    "COMPLETE_54_ROW_TRANSFER": false,
+    "FULL_SUPPORT_LOCAL_BV_Q2": false,
+    "LORENTZIAN_CAUSAL_CERTIFIED": false,
+    "QME_RESTORED": false,
+    "RESTRICTED_SUPPORT_LOCAL_Q2_BLOCK": true,
+    "RESTRICTED_TRANSFERRED_ELL2_COMPUTED": true,
+    "WEYL_SQUARE_DEFORMATION_CENTRALITY_TESTED": false
+  },
+  "geometry": {
+    "coordinates": [
+      "u",
+      "v",
+      "x",
+      "y"
+    ],
+    "inverse_metric": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "-H(u, x, y)",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "metric": "ds^2=2 du dv+dx^2+dy^2+H(u,x,y)du^2",
+    "profile_dependence": "arbitrary smooth H(u,x,y), independent of v",
+    "support_scope": "restricted support-local Brinkmann/Kerr-Schild field sector; no mode truncation"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "NONALIGNED_SUPPORT_LOCAL_BRANCH_BLOCK_OR_COMPLETE_54_ROW_Q2",
+  "physical_interpretation": {
+    "negative_direction_reintroduced_by_ell2": false,
+    "one_particle_statement": "NOT_ADDRESSED",
+    "pairing_sign_of_extra_Weyl_branch_classified": false,
+    "topological_Weyl_square_direction_tested": false
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/ppwave_bach_branch_closure.py",
+    "generator_sha256": "5b9bcbd8176239af2d967d29d96461e62311c46824ac03073ce81822eca7e6a9",
+    "independent_verifier_path": "bridge/einstein_sector/verify_ppwave_bach_branch_closure.py",
+    "independent_verifier_sha256": "35eac42126bc6b424027e0d16c9a26d9454b74e279583860a17d462faf252971",
+    "report_path": "reports/ppwave-bach-branch-closure.md",
+    "report_sha256": "9b49412cf321f3e766320007b7595326e5cec4e64735a53d1a1695e86c424ccf",
+    "schema_path": "bridge/einstein_sector/schema/ppwave_bach_branch_closure.schema.json",
+    "schema_sha256": "ac013dcfe7b119f578ea6ec75cc3f0ef4daf484a1ab5550bd1e152387d225d39",
+    "test_path": "bridge/einstein_sector/tests/test_ppwave_bach_branch_closure.py",
+    "test_sha256": "a17e2fff39a6294f6c3228bad13a4d9713edc05c239dbe367bb1dc9446391ca7"
+  },
+  "restricted_nonlinear_tensor": {
+    "Taylor_convention": "q2(F,G)=d_a d_b B[Hbar+aF+bG]|a=b=0",
+    "all_higher_Taylor_coefficients_zero": true,
+    "cyclicity_on_declared_sector": "AUTOMATIC_ZERO_TENSOR",
+    "q1": "q1(H)=-Delta_perp^2 H/4 in the uu equation row",
+    "q2_entries": {
+      "Einstein_Einstein": "0",
+      "Einstein_extraWeyl": "0",
+      "extraWeyl_extraWeyl": "0"
+    },
+    "q2_identically_zero_for_arbitrary_ppwave_profiles": true
+  },
+  "result_id": "PPWAVE_BACH_BRANCH_CLOSURE",
+  "result_state": "RESTRICTED_SUPPORT_LOCAL_EINSTEIN_EXTRA_WEYL_Q2_ZERO",
+  "schema": "ppwave-bach-branch-closure-v1",
+  "transfer_disposition": {
+    "higher_brackets_on_sector": "ZERO_FROM_EXACT_LINEARITY_OF_BACH_ON_THE_SLICE",
+    "homotopy_choice_affects_result": false,
+    "reason": "q2 vanishes before projection on the declared support-local branch sector",
+    "restricted_ell2": "pi_cl q2(iota_cl tensor iota_cl)=0"
+  }
+}
