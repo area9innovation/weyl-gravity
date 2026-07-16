@@ -3,7 +3,7 @@
   "$id": "https://area9.dk/schemas/quantum-weyl-berger-typed-companion-moller-preflight-v1.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "operator_filtration", "typed_transport", "formal_kernel_candidate", "microlocal_obligations", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "operator_filtration", "typed_transport", "formal_kernel_candidate", "microlocal_obligations", "microlocal_diagnosis", "claim_flags", "next_gate", "provenance", "claim_boundary"],
   "properties": {
     "schema": {"const": "quantum-weyl-berger-typed-companion-moller-preflight-v1"},
     "result_id": {"const": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT"},
@@ -70,6 +70,18 @@
         "smooth_left_and_right_defects_remain_smooth": "OPEN",
         "ghost_biwave_factor_transport_included": "OPEN",
         "A10_graph_pullback_wavefront_safe": "OPEN"
+      }
+    },
+    "microlocal_diagnosis": {
+      "const": {
+        "maximum_order_V2": 2,
+        "all_Sobolev_Volterra_convergence_is_wavefront_control": false,
+        "smooth_potential_Moller_theorem_applies_directly": false,
+        "normalized_obstruction": "DISTRIBUTIONAL_COMPOSITION_AND_UNIFORM_WAVEFRONT_CONTROL_NOT_CERTIFIED_FOR_THE_ORDER_TWO_TRIANGULAR_TRANSPORT",
+        "accepted_routes": [
+          "prove the six listed Hörmander composition obligations",
+          "prove null-cone decomposability and a regular GreenHyp transport directly"
+        ]
       }
     },
     "claim_flags": {

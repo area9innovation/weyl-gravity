@@ -278,6 +278,16 @@ def evaluate() -> dict[str, Any]:
             "ghost_biwave_factor_transport_included": "OPEN",
             "A10_graph_pullback_wavefront_safe": "OPEN",
         },
+        "microlocal_diagnosis": {
+            "maximum_order_V2": 2,
+            "all_Sobolev_Volterra_convergence_is_wavefront_control": False,
+            "smooth_potential_Moller_theorem_applies_directly": False,
+            "normalized_obstruction": "DISTRIBUTIONAL_COMPOSITION_AND_UNIFORM_WAVEFRONT_CONTROL_NOT_CERTIFIED_FOR_THE_ORDER_TWO_TRIANGULAR_TRANSPORT",
+            "accepted_routes": [
+                "prove the six listed Hörmander composition obligations",
+                "prove null-cone decomposability and a regular GreenHyp transport directly",
+            ],
+        },
         "claim_flags": {
             "BERGER_TYPED_COMPANION_MOLLER_ALGEBRA": True,
             "BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT": False,
@@ -322,6 +332,15 @@ def validate(result: dict[str, Any]) -> None:
         raise ValueError("typed Møller identity dropped")
     if set(result.get("microlocal_obligations", {}).values()) != {"OPEN"}:
         raise ValueError("microlocal transport was over-promoted")
+    diagnosis = result.get("microlocal_diagnosis", {})
+    if (
+        diagnosis.get("maximum_order_V2") != 2
+        or diagnosis.get("all_Sobolev_Volterra_convergence_is_wavefront_control")
+        is not False
+        or diagnosis.get("smooth_potential_Moller_theorem_applies_directly")
+        is not False
+    ):
+        raise ValueError("order-two microlocal diagnosis drifted")
     true_flags = {
         name for name, value in result.get("claim_flags", {}).items() if value is True
     }

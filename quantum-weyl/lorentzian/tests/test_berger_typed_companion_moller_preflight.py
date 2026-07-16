@@ -54,6 +54,14 @@ class BergerTypedCompanionMollerPreflightTests(unittest.TestCase):
         )
         self.assertEqual(set(self.certificate["microlocal_obligations"].values()), {"OPEN"})
 
+    def test_order_two_transport_does_not_inherit_smooth_potential_theorem(self) -> None:
+        diagnosis = self.certificate["microlocal_diagnosis"]
+        self.assertEqual(diagnosis["maximum_order_V2"], 2)
+        self.assertFalse(
+            diagnosis["all_Sobolev_Volterra_convergence_is_wavefront_control"]
+        )
+        self.assertFalse(diagnosis["smooth_potential_Moller_theorem_applies_directly"])
+
     def test_distributional_promotion_fails_closed(self) -> None:
         mutant = deepcopy(self.certificate)
         mutant["claim_flags"]["BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT"] = True

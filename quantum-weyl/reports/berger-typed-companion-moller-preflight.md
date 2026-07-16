@@ -59,6 +59,19 @@ preserve smooth equation defects, include the factored ghost biwave, and show
 that the (A_{10}) graph pullback is wavefront-safe. Until then no companion
 Hadamard parametrix or global state is claimed.
 
+The obstruction is precise rather than generic. The imported factorial bounds
+give convergence in every declared finite-slab Sobolev energy norm, but this
+does not by itself give a common wavefront cone for the partial sums or
+convergence in a Hörmander topology. Moreover, \(V_2\) has order two, so the
+extended Møller theorem for normally hyperbolic operators differing by a
+smooth order-zero potential cannot simply be cited. The next proof may instead
+establish null-cone decomposability and regular Green-hyperbolic transport.
+
+Relevant primary scope checks are
+[Dappiaggi--Drago](https://arxiv.org/abs/1506.09122),
+[Moretti--Murro--Volpe](https://arxiv.org/abs/2210.09278), and
+[Fewster](https://arxiv.org/abs/2503.12537).
+
 ```text
 PYTHONPATH=quantum-weyl python -m lorentzian.berger_typed_companion_moller_preflight_certificate --check
 PYTHONPATH=quantum-weyl python -m lorentzian.verify_berger_typed_companion_moller_preflight

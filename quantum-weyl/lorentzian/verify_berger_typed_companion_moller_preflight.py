@@ -23,6 +23,15 @@ def verify() -> dict:
     validate(certificate)
     if certificate["typed_transport"]["checks"] != triangular_replay()["checks"]:
         raise ValueError("independent noncommutative replay mismatch")
+    diagnosis = certificate["microlocal_diagnosis"]
+    if (
+        diagnosis["maximum_order_V2"] != 2
+        or diagnosis["all_Sobolev_Volterra_convergence_is_wavefront_control"]
+        is not False
+        or diagnosis["smooth_potential_Moller_theorem_applies_directly"]
+        is not False
+    ):
+        raise ValueError("order-two microlocal diagnosis mismatch")
 
     mutant = deepcopy(certificate)
     mutant["claim_flags"]["BERGER_TYPED_COMPANION_DISTRIBUTIONAL_TRANSPORT"] = True
