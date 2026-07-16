@@ -489,8 +489,8 @@ abstract causal-transfer theorem supplies a missing Green-complex result.
 Do not ask adjacent authors to adopt the (D)-quotient vocabulary before the
 translation has been made.
 
-Use the portfolio and outward-facing acceptance criteria in
-[`adjacency-programme.md`](adjacency-programme.md), and prepare any external
+Use the adjacent-work portfolio and outward-facing acceptance criteria in
+[`universe-building-roadmap.md`](universe-building-roadmap.md), and prepare any external
 contact with [`adjacency-bridge-note-template.md`](adjacency-bridge-note-template.md).
 
 ## Common background matrix

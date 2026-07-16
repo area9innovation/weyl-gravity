@@ -17,6 +17,25 @@ The shared scientific question remains:
 The universe-building language is a map of consequences of that question, not
 a replacement for its charge, Cartan, causal, and pairing tests.
 
+## Planning authority and document roles
+
+This file is the single authority for forward-looking programme sequencing.
+New physical rails, adjacent-work bridges, prospective papers, team moves, and
+start/stop gates belong here.  Other documents have narrower roles:
+
+| Document kind | Authority retained there | Forward planning allowed there |
+|---|---|---|
+| `d_quotient_programme` certificate and consolidated report | machine-derived current status and evidence hashes | no |
+| four `d-quotient-*-team-brief.md` files | work-package definitions, acceptance tests, claim boundaries, current handoff | only a short mirror of the assignment here |
+| publication reproduction guide and Paper 7/8 split record | commands, source map, release and referee checklist | no programme sequencing |
+| frozen snapshots, receipts, and reports | historical or certified state | no |
+| bridge-note template | outward-facing comparison format | no portfolio priority |
+
+When a priority differs, this roadmap controls.  A certificate controls what
+is true; this roadmap controls what is attempted next.  The roadmap must link
+to certificates rather than restating volatile hashes or silently upgrading
+their lifecycle state.
+
 ## Current certified starting points
 
 The backgrounds must remain separate until an explicit bridge is certified.
@@ -211,6 +230,181 @@ Activation gates:
 6. compare jointly with supernova, CMB, BAO, and structure growth data.
 
 An accelerating solution is not by itself a theory of observed dark energy.
+
+## Adjacent-work bridge portfolio
+
+Adjacent work is part of the universe sequence, not a separate programme.  A
+bridge is activated only when its internal gate has passed and must add one
+missing causal, BV, charge, nonlinear, or quantum layer to an object another
+community already recognizes.
+
+Every bridge must:
+
+1. reproduce one external theorem, coefficient, or fixture in matched
+   conventions;
+2. provide a dictionary of fields, gauge groups, couplings, generators,
+   charges, boundaries, and pairings;
+3. state one new theorem or obstruction in both vocabularies;
+4. expose a minimal independent verifier and content-addressed certificate;
+5. state its generality level, lifecycle, dependency tags, and exclusions;
+6. pose one precise question an adjacent expert could usefully challenge.
+
+Use [`adjacency-bridge-note-template.md`](adjacency-bridge-note-template.md)
+for the outward-facing two-page note.
+
+| Tier | Bridge and owner | First independently useful result | Start gate |
+|---|---|---|---|
+| A1 | Green-hyperbolic/BGG transfer — classical with the current nonlinear causal specialist | abstract cyclic Green-homotopy transfer theorem, toy example, `15/60/60/15 -> 4/9/9/4`, and Weyl application | extract now from the completed cylinder theorem; add Berger only after its 26-row Green gate |
+| A2 | Linearization stability and charge fibres — Einstein | obstruction bilinear with harmonic selection rules, fixed-charge no-go, and explicit variable-charge extension | current compact harmonic domain; full paper waits for the complete bilinear |
+| A3 | Weyl anomaly coefficients and the `D` defect — quantum | independently reproduced `a,c` coefficients and the coefficient-bearing map to the actual Cartan defect | after the local anomaly complex closes |
+| A4 | Lorentzian Einstein-from-conformal comparison — Einstein | causal and symplectic complement to boundary branch selection | after compact Weyl--Maxwell pullback; boundary theorem requires its own phase space |
+| B1 | Berger relational observables — classical | one evolving gauge-invariant observable and redshift fixture | `q2`, retained Green domain, and arity-two Cartan disposition |
+| B2 | Asymptotic Bach/BMS — Einstein | falloffs, radiative data, differentiable charges, flux, and extra-branch sign | Lorentzian boundary phase space closed |
+| B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
+| B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |
+| C1 | Mannheim/PT, Fock-BRST, and causal-BV benchmark — quantum with nonlinear | common-fixture comparison of state, metric, Jordan modes, BRST descent, and first vertex | QME and a common Lorentzian/asymptotic state space |
+
+The bridges touch, but do not adopt wholesale, the frameworks of Green
+hyperbolic complexes, tractor/BGG detours, linearization stability,
+Einstein-from-conformal boundary selection, Weyl-anomaly descent,
+relational observables, BMS scattering, twistor amplitudes, and competing
+conformal-gravity quantizations.
+
+Primary external anchors are:
+
+- [Green hyperbolic complexes on Lorentzian manifolds](https://arxiv.org/abs/2207.04069);
+- [Yang--Mills detour complexes and conformal geometry](https://arxiv.org/abs/math/0606401);
+- [conformal gauge models on Bach-flat backgrounds](https://arxiv.org/abs/2005.08657);
+- [Einstein Gravity from Conformal Gravity](https://arxiv.org/abs/1105.5632);
+- [Conformal and Einstein gravity from twistor actions](https://arxiv.org/abs/1307.5043);
+- [linearization stability of the Einstein equations](https://arxiv.org/abs/1609.07703);
+- [Mannheim's higher-derivative ghost proposal](https://arxiv.org/abs/2109.12743);
+- [Kubo--Kuntz conformal-gravity unitarity analysis](https://arxiv.org/abs/2202.08298);
+- [Weyl geometry and quantum anomalies](https://arxiv.org/abs/2407.02695);
+- [an asymptotic framework for gravitational scattering](https://arxiv.org/abs/2303.17124);
+- [relational observables in gravity](https://arxiv.org/abs/1109.0740).
+
+## Deferred theory-adapter queue
+
+These four adapters preserve the useful Mannheim, critical-gravity,
+Maldacena-type, and Riegert/Wess--Zumino questions without interrupting the
+current junction.  They are activated by gates, not by calendar date.
+
+### T1. Critical-gravity Taub and pairing atlas — classical
+
+Start after the Berger `q2` handoff and the first observer fixture.  On one
+certified Einstein background, compare generic Einstein--Weyl, critical, and
+pure-Weyl coupling loci as distinct theories.  Export a reusable adapter with
+`q1`, action-derived `q2`, pairing, generator, charge, background, boundary,
+and hashes.  Compute exact roots, generalized/log modes, norms, cross-pairings,
+and Taub maps without taking a floating-point critical limit.
+
+Done means one nontrivial critical/log-mode Taub component is direct, pairing
+and Taub kernels share a normalization, and every coupling locus receives one
+of:
+
+```text
+LINEARIZATION_STABLE_WITH_DECLARED_BOUNDARY_DATA
+TAUB_ZERO_RESTRICTION_REQUIRED
+NONINTEGRABLE_MODE_WITH_DUAL_WITNESS
+INPUT_OR_ANALYTIC_GATE_BLOCKED
+```
+
+### T2. Lorentzian boundary selection — Einstein
+
+Start after the compact Weyl--Maxwell pullback and extra-branch classification.
+In one declared Lorentzian dS or AdS problem, define the full boundary phase
+space and translate the Einstein-selection condition into initial-boundary
+data.  Test locality in time, symplectic type, gauge stability, retarded and
+advanced compatibility, charge, flux, pairing, and causal closure.  Then
+compare generic, critical, and pure-Weyl points using T1.
+
+Done means a closed phase space, exact generator and charges, branch-by-branch
+flux and pairing, and either a causal-closure theorem or a first leakage
+witness.  Euclidean selection is motivation, not Lorentzian evidence.
+
+### T3. Mannheim metric BRST/interaction audit — nonlinear
+
+Start after the support-local Berger arity-two Cartan disposition and an
+immutable T1 adapter.  Import the modewise positive metric with its real form,
+domain, equal-frequency behavior, locality, adjoint convention, and hashes.
+Test descent through `q1`, contraction, Taub zero fibre, residual action, and
+the action-derived `q2` cyclicity.
+
+Return exactly one of:
+
+```text
+METRIC_DESCENDS_AND_Q2_IS_CYCLIC_ON_DECLARED_SECTOR
+UNARY_BRST_DESCENT_OBSTRUCTED
+INTERACTING_CYCLICITY_OBSTRUCTED
+INFINITE_OR_SUPPORT_LOCAL_COMPLETION_REQUIRED
+```
+
+An oscillator Hilbert metric is never identified automatically with physical
+BRST cohomology.
+
+### T4. Riegert/Wess--Zumino QME and `D` audit — quantum
+
+Start only after coefficient-bearing `omega C2` and `omega E4` anomalies have
+been computed and independently reproduced.  Import an authoritative
+classical compensator extension, compare original and extended local
+cohomology, construct an explicit WZ primitive or obstruction witness, and
+restore the QME before testing the quantum Cartan identity.  Matter-selection
+equations must distinguish coefficient cancellation from compensator
+trivialization.
+
+Done means an exact coefficient-bearing representative, original-versus-
+extended comparison, explicit counterterm/primitive or obstruction, honest
+lifecycle state, and no Lorentzian claim without causal time-ordered products,
+state, and Ward identities.
+
+## Publication portfolio and readiness gates
+
+The project does not wait for the whole universe before publishing.  A paper
+is cut when one scoped theorem or no-go closes and the neighboring open rails
+can be excluded cleanly.
+
+Use these states:
+
+```text
+DRAFT_ALLOWED       theorem spine and scope are stable enough to write
+THEOREM_FROZEN      authoritative certificate and independent verifier pass
+ARTIFACT_READY      manuscript, supplement, hashes, and clean release audit pass
+SUBMISSION_READY    human authorship, literature, venue, and prose review pass
+```
+
+| Publication unit | Current planning status | Gate to advance |
+|---|---|---|
+| Papers 1--5 | frozen existing papers | no universe-building dependency |
+| Paper 6, Einstein--Weyl interaction obstructions | major-review draft | finish its declared capstone/review ledger; do not wait for Berger or quantum work |
+| Paper 7, residual cohomology and pairing | `THEOREM_FROZEN`, near artifact release | refresh the tracked dependency manifest and pass the isolated clean-snapshot audit |
+| Paper 8, covariant causal transport | `THEOREM_FROZEN`, near artifact release | same release gate as Paper 7, then human submission review |
+| Compact Einstein--Maxwell radiative phase space | `DRAFT_ALLOWED` | close global `ell=0`/twist pairs for a complete compact phase-space claim; a narrower radiative paper may freeze earlier |
+| Linearization stability with charge fibres | `DRAFT_ALLOWED` | promote the fixture-span obstruction to the full harmonic obstruction bilinear and selection rules |
+| Berger clock and the `D` quotient | `DRAFT_ALLOWED` for the classical charge/no-go spine | `q2`, Green, and arity-two Cartan disposition; on a pass add relational redshift, on a failure publish the exact obstruction |
+| Abstract Green/BGG transfer | outline allowed | abstract hypotheses, toy example, complete detour example, and independent verifier; avoid duplicating Paper 8 without a new abstraction or application |
+| Nonlinear quotient stability | not yet draftable as a positive theorem | authoritative `q2`, arity-two Cartan decision, and first resonant physical channel |
+| Quantum anomaly/QME | local technical note only after the total complex closes | coefficient computation by two paths and QME/`D`-defect disposition for the physical headline |
+| Asymptotic radiation and black holes | programme stage | boundary phase space, charges, flux, and extra-branch classification |
+| Galaxy/dark-matter and cosmology/dark-energy phenomenology | later programme stage | physical weak-field/cosmological observables and stability before data comparison |
+
+For Papers 7--8 the release procedure remains in
+[`conformal-publication-reproduction.md`](conformal-publication-reproduction.md),
+and the implemented source extraction and referee-release record remains in
+[`conformal-paper-split-roadmap.md`](conformal-paper-split-roadmap.md).  Those
+are technical publication records, not competing programme plans.
+
+The clean audit command is:
+
+```bash
+python3 symbolic/audit_conformal_publication_release.py \
+  --tree-ish HEAD --timeout 1800 \
+  --receipt conformal-publication-release-audit.json
+```
+
+Writing begins at `DRAFT_ALLOWED`; it proceeds in parallel with the last
+certificate gates.  Submission never waits merely for a broader result that
+the paper explicitly does not claim.
 
 ## Reshuffle policy
 

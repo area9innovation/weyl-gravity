@@ -264,7 +264,7 @@ as a claim about the full interacting gauge theory.
 The direct Mannheim/PT versus Fock-BRST versus causal-BV comparison remains
 deferred until a Lorentzian asymptotic state space and quantum QME disposition
 exist. Follow the gate and common-fixture requirements in
-[`adjacency-programme.md`](adjacency-programme.md); use
+[`universe-building-roadmap.md`](universe-building-roadmap.md); use
 [`adjacency-bridge-note-template.md`](adjacency-bridge-note-template.md) for
 the eventual external note.
 

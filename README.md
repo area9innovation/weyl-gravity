@@ -56,7 +56,10 @@ Publication and reproduction instructions for Papers 7--8 are collected in
 [`notes/conformal-publication-reproduction.md`](notes/conformal-publication-reproduction.md),
 including the fast required rail, exhaustive scheduled rail, scoped legacy
 flags, and publication artifact procedure.
-The implemented referee major-revision split and extraction map are
+The single forward-looking programme, team sequencing, physical rails,
+adjacent-work bridges, and publication portfolio are maintained in
+[`notes/universe-building-roadmap.md`](notes/universe-building-roadmap.md).
+The implemented referee major-revision split and technical extraction record are
 [`notes/conformal-paper-split-roadmap.md`](notes/conformal-paper-split-roadmap.md).
 The itemized response, including what remains genuinely open before
 submission, is

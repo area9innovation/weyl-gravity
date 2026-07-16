@@ -658,7 +658,8 @@ that boundary exclusion is not gauge quotienting.
 Frame the resulting paper as a Lorentzian and nonlinear complement to
 Einstein-from-conformal boundary selection, not as a refutation of the
 Euclidean or on-shell result. Use
-[`adjacency-programme.md`](adjacency-programme.md) for the staged portfolio
+the adjacent-work portfolio in
+[`universe-building-roadmap.md`](universe-building-roadmap.md) for the staged portfolio
 and [`adjacency-bridge-note-template.md`](adjacency-bridge-note-template.md)
 for each external comparison.
 

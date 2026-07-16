@@ -269,7 +269,8 @@ Defer the three-way Mannheim/PT, Fock-BRST, and causal-BV comparison until the
 QME and Lorentzian asymptotic-state gates are closed. Its eventual common
 benchmark must compare the phase space, residual quotient, state definition,
 Jordan/log modes, inner products, BRST descent, and first physical vertex.
-Use [`adjacency-programme.md`](adjacency-programme.md) for sequencing and
+Use the adjacent-work portfolio in
+[`universe-building-roadmap.md`](universe-building-roadmap.md) for sequencing and
 [`adjacency-bridge-note-template.md`](adjacency-bridge-note-template.md) for
 the outward-facing note.
 
