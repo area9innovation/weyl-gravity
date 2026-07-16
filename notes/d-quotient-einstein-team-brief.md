@@ -946,6 +946,34 @@ this declared compact fixture. This does not classify generic `ell`, nonzero
 source projection must also respect parity: the present axial-by-axial `XX`
 source is even and is detected by the scalar constant-lapse class.
 
+The nonlinear-projection preflight now separates three objects that must not
+be conflated. `EINSTEIN_MAXWELL_WEYL_TARGET_CONSTANT_LAPSE_ADJOINT_WITNESS`
+extracts the fixed-bundle constant-lapse target cokernel class independently
+of any named Einstein fixture and records that its constraint pairing is
+unchanged by allowing secular time dependence. The separate
+`EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_PROJECTOR` is the exact rank-two shell map
+
+```text
+Pi_X=E_X D_X,   Pi_X^2=Pi_X,
+```
+
+which is invariant under `E_X -> E_X S`, `D_X -> S^(-1)D_X`, fixes the extra
+image, and kills the certified Einstein image. It is only a normal-mode shell
+projector, not an off-shell or nonlinear projection.
+
+`EINSTEIN_MAXWELL_WEYL_AXIAL_QUADRATIC_CHANNEL_PREFLIGHT` then imposes the
+correct parity channel: axial target data from two Einstein modes require an
+axial-by-polar `EE` input, not axial-by-axial. An exact squarefree-radical scan
+of 97,848 branch/sign cases with `2<=ell_A,ell_P,ell_X<=8` and
+`|k_A|,|k_P|<=4` finds no exact axial-extra temporal resonance. For the lowest
+allowed `ell_A=ell_P=ell_X=2`, `m_A=m_P=m_X=0`, `k_A=k_P=0` minus-branch sum
+channel, both target factors are nonzero and the full four-by-four target
+Hessian has an exact displayed inverse. Hence every source vector in this one
+output block has a unique algebraic second-order correction. A nonzero defect
+in this block would therefore be removable, not a Taub obstruction. The mixed
+full-tensor value of `D^2E_WM` is still open and must next be inserted into
+that inverse; the finite scan is not an all-mode nonlinear-closure theorem.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally

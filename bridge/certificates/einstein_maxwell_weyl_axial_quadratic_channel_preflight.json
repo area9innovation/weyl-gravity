@@ -1,0 +1,196 @@
+{
+  "claim_boundary": "The resonance result is a finite exact REDUCED-MODE scan, and the inverse is one algebraic harmonic block. Neither establishes all-mode nonlinear closure, a spacetime-local correction, causal well-posedness, boundary selection, scattering, or quantum theory.",
+  "classification": {
+    "Lorentzian_causal_claim": false,
+    "actual_quadratic_source_tensor_computed": false,
+    "all_harmonics_resonance_free": false,
+    "finite_exact_resonance_window_classified": true,
+    "first_selected_EE_output_block_removable_for_arbitrary_source": true,
+    "general_nonlinear_Einstein_sector_closed": false,
+    "parity_error_in_axial_by_axial_projection_avoided": true
+  },
+  "correction_space_contract": {
+    "bounded_normal_mode": "forbids secular temporal corrections",
+    "shared_fixed_bundle_condition": "second-order magnetic Chern-class lift is zero",
+    "smooth_global": "allows generalized/secular temporal corrections",
+    "use_rule": "a nonzero quadratic coefficient is an obstruction only after pairing with a target adjoint cokernel class; off-shell finite blocks are solved by the target inverse"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "first_EE_block": {
+    "Einstein_shell_defect_q": "-72*(-7 + 4*sqrt(3))",
+    "determinant": "248832*(-85 + 49*sqrt(3))*(-7 + 3*sqrt(3))",
+    "extra_shell_defect_p": "-8*(-7 + 3*sqrt(3))/3",
+    "extra_shell_frequency_squared": "16/3",
+    "input_modes": {
+      "angular_allowed_witness": "-sqrt(70)/35",
+      "axial_Einstein": "ell=2,m=0,k=0, minus master branch",
+      "output": "axial ell=2,m=0,k=0 coefficient block",
+      "polar_Einstein": "ell=2,m=0,k=0, minus master branch",
+      "temporal_channel": "positive-frequency sum"
+    },
+    "inverse": [
+      [
+        "(3*sqrt(3) + 7)/1056",
+        "0",
+        "-(3*sqrt(3) + 7)/1056",
+        "0"
+      ],
+      [
+        "0",
+        "(101*sqrt(3) + 177)/9504",
+        "0",
+        "(49*sqrt(3) + 85)/3168"
+      ],
+      [
+        "-(3*sqrt(3) + 7)/1056",
+        "0",
+        "(sqrt(3) + 61)/352",
+        "0"
+      ],
+      [
+        "0",
+        "(49*sqrt(3) + 85)/3168",
+        "0",
+        "(263*sqrt(3) + 555)/3168"
+      ]
+    ],
+    "inverse_identity_verified": true,
+    "normal_extra_shell_projection": "NOT_APPLICABLE: the source frequency is off the extra shell, so the shell projector Pi_X must not be applied",
+    "quadratic_source_convention": "S=D^2E_WM[Phi_A^(1),Phi_P^(1)], the mixed axial-polar component of (1/2)D^2E_WM[Phi_A^(1)+Phi_P^(1),Phi_A^(1)+Phi_P^(1)], in the density-weighted target row order",
+    "source_frequency_squared": "24 - 8*sqrt(3)",
+    "source_tensor_coefficient_computed": false,
+    "target_Hessian": [
+      [
+        "342 - 144*sqrt(3)",
+        "0",
+        "6",
+        "0"
+      ],
+      [
+        "0",
+        "2322 - 1320*sqrt(3)",
+        "0",
+        "-6"
+      ],
+      [
+        "6",
+        "0",
+        "6",
+        "0"
+      ],
+      [
+        "0",
+        "-6",
+        "0",
+        "18 - 8*sqrt(3)"
+      ]
+    ],
+    "target_Hessian_coefficient_order": [
+      "H_t",
+      "H_x",
+      "Q_t",
+      "Q_x"
+    ],
+    "target_Hessian_row_order": [
+      "lambda*metric_t",
+      "-lambda*metric_x",
+      "maxwell_t",
+      "maxwell_x"
+    ],
+    "universal_second_order_correction": [
+      "(3*sqrt(3) + 7)*(S_1 - S_3)/1056",
+      "(101*sqrt(3)*S_2 + 177*S_2 + 147*sqrt(3)*S_4 + 255*S_4)/9504",
+      "-(3*sqrt(3)*S_1 + 7*S_1 - 183*S_3 - 3*sqrt(3)*S_3)/1056",
+      "(49*sqrt(3)*S_2 + 85*S_2 + 263*sqrt(3)*S_4 + 555*S_4)/3168"
+    ],
+    "verdict": "every quadratic source vector in this selected harmonic-frequency block is removable by the displayed unique algebraic Phi^(2)=L_WM^(-1)S"
+  },
+  "generality_level": "G2_FINITE_CHANNEL_LEDGER_AND_ONE_REMOVABLE_EE_BLOCK",
+  "interpretation": "Axial output from two Einstein inputs must use an axial-polar pair. No such pair in the declared finite window lands exactly on an axial extra normal-mode shell. The lowest allowed EE sum-frequency block is fully invertible, so even a nonzero quadratic defect there is removable and cannot be a Taub no-go. This is one blockwise extension result, not nonlinear closure of the Einstein sector.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the explicit mixed axial-polar D^2E_WM tensor coefficient for the selected ell=2 block and insert it into the displayed inverse; then expand the exact resonance ledger or attack constant-lapse difference-frequency channels",
+  "parity_and_resonance_ledger": {
+    "exact_method": "expand ((C-A-B)^2-4AB) in a canonical squarefree-radical basis over Q; zero requires every rational coefficient to vanish",
+    "exact_resonances": [],
+    "input_channel": "axial Einstein x polar Einstein -> axial Weyl-Maxwell",
+    "nearest_nonresonant_case": {
+      "exact_nonzero": true,
+      "exact_squared_resonance_polynomial": "8*(-1027 - 9*sqrt(30) + 249*sqrt(3) + 204*sqrt(10))/9",
+      "label_order": [
+        "ell_A",
+        "ell_P",
+        "ell_X",
+        "k_A",
+        "k_P",
+        "branch_A",
+        "branch_P",
+        "temporal_sign"
+      ],
+      "labels": [
+        2,
+        4,
+        6,
+        -3,
+        0,
+        -1,
+        -1,
+        1
+      ],
+      "numerical_absolute_shell_defect": "0.0015969444667476296"
+    },
+    "no_exact_resonance_in_window": true,
+    "selection_rules": {
+      "axial_parity": "ell_A+ell_P-ell_X is even",
+      "circle_momentum": "k_X=k_A+k_P",
+      "magnetic_number": "m_X=m_A+m_P",
+      "sphere_triangle": "|ell_A-ell_P|<=ell_X<=ell_A+ell_P",
+      "temporal_frequency": "omega_X=|omega_A +/- omega_P|"
+    },
+    "temporal_sign_and_branch_cases_scanned": 97848,
+    "window": {
+      "ell_A": [
+        2,
+        8
+      ],
+      "ell_P": [
+        2,
+        8
+      ],
+      "ell_X": [
+        2,
+        8
+      ],
+      "k_A": [
+        -4,
+        4
+      ],
+      "k_P": [
+        -4,
+        4
+      ]
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_quadratic_channel_preflight.py",
+    "generator_sha256": "419555013546abdf63dc7d6aabcb357d76457483c1f772164543fcee9a210037",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_axial_master_complex.json": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02",
+      "bridge/certificates/einstein_maxwell_polar_master_complex.json": "473d9c826b69220d2398cf4eb44b75e7c40bc23fd4d378a9eb2069a2d3f61ae5",
+      "bridge/certificates/einstein_maxwell_weyl_axial_extra_projector.json": "748ea9b6168b56aee820211b59ac73356ab8274a306dce261393896b2e901a08",
+      "bridge/certificates/einstein_maxwell_weyl_axial_operator.json": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6",
+      "bridge/certificates/einstein_maxwell_weyl_target_adjoint_witness.json": "1a02ce40d4e0c53f609626a93a7d00ef12542696c9924b126752e385cbdadb6f"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_QUADRATIC_CHANNEL_PREFLIGHT",
+  "result_state": "EXACT_EE_TO_AXIAL_EXTRA_RESONANCE_LEDGER_AND_FIRST_UNIVERSALLY_REMOVABLE_BLOCK_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-axial-quadratic-channel-preflight-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_quadratic_channel_preflight.schema.json",
+  "schema_sha256": "a1076815323160868bc75ac79fcb7532deaebc91fa3c37c3b21fadb0cc1e23b5",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_quadratic_channel_preflight --verify bridge/certificates/einstein_maxwell_weyl_axial_quadratic_channel_preflight.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_quadratic_channel_preflight"
+  ]
+}

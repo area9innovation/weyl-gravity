@@ -1,0 +1,160 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE projector exists only on the generic axial extra shell. It does not define a spacetime-local, causal, asymptotic, residual-invariant, or nonlinear projector.",
+  "classification": {
+    "basis_independent": true,
+    "canonical_after_certified_symplectic_splitting": true,
+    "final_residual_descent": false,
+    "nonlinear_projector": false,
+    "off_shell_projector": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "generic axial ell>=2 Weyl-Maxwell solution coefficients on the extra shell, after local Diff x U(1) reduction and before residual quotient",
+  "generality_level": "G2_GENERIC_AXIAL_EXTRA_SHELL_PROJECTOR",
+  "interpretation": "The detector and reconstruction map define an idempotent rank-two shell projector independent of the chosen extra basis. It separates the certified axial extra normal-mode component from the Einstein image, but it is not an off-shell or nonlinear projection.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "apply Pi_X only to shell-supported normal-source data; for nonresonant quadratic sources first invert the target Hessian and keep the induced correction distinct from a homogeneous extra normal mode",
+  "projector": {
+    "annihilates_certified_Einstein_image": true,
+    "basis_change_remainder": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "basis_independent": true,
+    "coefficient_order": [
+      "H_t",
+      "H_x",
+      "Q_t",
+      "Q_x"
+    ],
+    "definition": "Pi_X=E_X D_X, where D_X E_X=I_2 on p=omega^2-k^2-lambda+2/3=0",
+    "detector_descent_remainder": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "generic_basis_change": "E_X -> E_X S, D_X -> S^(-1)D_X for det(S)!=0",
+    "idempotence_remainder": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "identity_on_extra_module": true,
+    "image_remainder": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "matrix": [
+      [
+        "(9*k**2*lambda - 6*k**2 + 9*lambda**2 - 20*lambda + 4)/((lambda - 2)*(9*lambda - 2))",
+        "3*k*omega*(9*k**2*lambda - 6*k**2 + 9*lambda**2 - 9*lambda - 2)/((lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))",
+        "k**2*(3*lambda + 2)/(lambda*(lambda - 2)*(9*lambda - 2))",
+        "k*omega*(9*k**2*lambda + 6*k**2 + 18*lambda**2 - 18*lambda - 4)/(lambda*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))"
+      ],
+      [
+        "-9*k*omega*(3*k**2*lambda - 2*k**2 + 3*lambda**2 - 7*lambda + 2)/((lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))",
+        "-(9*k**2*lambda - 6*k**2 + 2*lambda - 4)/((lambda - 2)*(9*lambda - 2))",
+        "-3*k*omega*(3*k**2*lambda + 2*k**2 + 3*lambda**2 - 6*lambda)/(lambda*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))",
+        "-(3*k**2*lambda + 2*k**2 + 6*lambda**2 - 12*lambda)/(lambda*(lambda - 2)*(9*lambda - 2))"
+      ],
+      [
+        "-(15*k**2*lambda - 6*k**2 + 18*lambda**2 - 40*lambda + 8)/(2*(lambda - 2)*(9*lambda - 2))",
+        "-3*k*omega*(15*k**2*lambda - 6*k**2 + 24*lambda**2 - 34*lambda + 4)/(2*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))",
+        "-k**2*(3*lambda - 2)**2/(2*lambda*(lambda - 2)*(9*lambda - 2))",
+        "-k*omega*(27*k**2*lambda**2 - 36*k**2*lambda + 12*k**2 + 54*lambda**3 - 108*lambda**2 + 36*lambda - 8)/(2*lambda*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))"
+      ],
+      [
+        "3*k*omega*(15*k**2*lambda - 6*k**2 + 15*lambda**2 - 34*lambda + 8)/(2*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))",
+        "3*(5*k**2*lambda - 2*k**2 + 2*lambda**2 - 4*lambda)/(2*(lambda - 2)*(9*lambda - 2))",
+        "3*k*omega*(9*k**2*lambda**2 - 12*k**2*lambda + 4*k**2 + 9*lambda**3 - 18*lambda**2)/(2*lambda*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2))",
+        "(9*k**2*lambda**2 - 12*k**2*lambda + 4*k**2 + 18*lambda**3 - 36*lambda**2)/(2*lambda*(lambda - 2)*(9*lambda - 2))"
+      ]
+    ],
+    "rank": 2,
+    "shell": "omega^2=k^2+lambda-2/3"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_extra_projector.py",
+    "generator_sha256": "b57c37bb5798aefbfb1aaf0456061f9b98f593b28c6e804cfe45b30294e9e075",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_weyl_axial_extra_detector.json": "cded7c650c5c75775402673dabb6b0a22ad6fdf8c4dad3a6f6a6deda8c51034a"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_PROJECTOR",
+  "result_state": "BASIS_INDEPENDENT_GENERIC_AXIAL_EXTRA_SHELL_PROJECTOR_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-axial-extra-projector-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_extra_projector.schema.json",
+  "schema_sha256": "c4a690959d458a59c25de3429ab041074cc813488990a6f0f7b7ab49f558c887",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_extra_projector --verify bridge/certificates/einstein_maxwell_weyl_axial_extra_projector.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_extra_projector"
+  ]
+}

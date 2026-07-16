@@ -1,0 +1,50 @@
+{
+  "claim_boundary": "This certifies C_H and its domain, not the complete spacetime formal-adjoint cokernel of the full Weyl-Maxwell operator. No causal, asymptotic, scattering, or quantum conclusion follows.",
+  "classification": {
+    "Lorentzian_causal_claim": false,
+    "complete_spacetime_formal_adjoint_cokernel": false,
+    "complete_target_correction_space_classification": false,
+    "fixed_bundle_constraint_cokernel_class": true,
+    "independent_of_named_Einstein_fixture": true,
+    "standalone_target_domain_witness": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G1_COMPACT_TARGET_ADJOINT_WITNESS",
+  "interpretation": "The constant-lapse class is a property of the Weyl-Maxwell target correction problem on the fixed compact bundle, not of a chosen Einstein fixture. Any quadratic source with nonzero pairing against it is non-removable by every declared second-order target correction, whether or not secular time dependence is admitted.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "pair each classified quadratic source channel with zeta_H and with the remaining harmonic target-adjoint classes; use temporal resonance only after declaring the bounded or generalized correction space",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_target_adjoint_witness.py",
+    "generator_sha256": "df8cc128b5af0f0bbc9aa824624bcf6b61e1563b0054f234e6712cf6aafb10a1",
+    "inputs": {
+      "bridge/certificates/compact_harmonic_domain_taub_descent.json": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_TARGET_CONSTANT_LAPSE_ADJOINT_WITNESS",
+  "result_state": "STANDALONE_FIXED_BUNDLE_TARGET_CONSTRAINT_ADJOINT_WITNESS_EXTRACTED",
+  "schema": "einstein-maxwell-weyl-target-adjoint-witness-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_target_adjoint_witness.schema.json",
+  "schema_sha256": "37d08139ec2b3a2b09908c20c110a09ca6d7e30bddcac6b6bb4d910cb1e3392f",
+  "target_correction_domain": {
+    "annihilation": "<zeta_H,L_WM Phi^(2)>=0 for every correction in the declared target domain",
+    "cauchy_slice_independent": true,
+    "fields": "smooth periodic second-order metric and fixed-P_N compact-U(1) connection corrections on R_t x S1 x S2",
+    "fixed_bundle_magnetic_lift_allowed": false,
+    "nontriviality_witness": "the imported p=0 rows obey <zeta_H,L Phi^(2)>=0 while their exact quadratic pairings are nonzero",
+    "operator": "the action-derived coupled Weyl-Maxwell linearization L_WM at the compact product background",
+    "pairing": "the compact Cauchy-slice constraint/Noether pairing, with smooth periodic fields and no spatial boundary term",
+    "witness": "zeta_H=(K=partial_t,sigma=0,lambda_K=0), the constant-lapse/time-translation reducibility class"
+  },
+  "temporal_correction_spaces": {
+    "bounded_normal_mode": "bounded separated normal-mode corrections; secular time dependence is excluded",
+    "constant_lapse_verdict": "the compact constraint-adjoint annihilation holds on both spaces; temporal resonance only distinguishes other dynamical adjoint tests",
+    "smooth_global": "smooth all-time periodic-in-space corrections; generalized/secular time dependence is not excluded"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_target_adjoint_witness --verify bridge/certificates/einstein_maxwell_weyl_target_adjoint_witness.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_target_adjoint_witness"
+  ]
+}
