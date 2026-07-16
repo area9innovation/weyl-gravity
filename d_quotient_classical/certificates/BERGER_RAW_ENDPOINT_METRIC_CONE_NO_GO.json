@@ -1,0 +1,99 @@
+{
+  "claim_boundary": "This is a principal causal-support obstruction for an inverse of the complete L13 endpoint on arbitrary sources. It does not claim that the contractible clock mode is physical, and it does not obstruct the support-local hybrid BV contraction that removes that mode before causal propagation.",
+  "claim_status": "CERTIFIED_FULL_ENDPOINT_METRIC_CAUSAL_INVERSE_NO_GO_HYBRID_CHAIN_ROUTE_OPEN",
+  "dependency_refs": {
+    "metric_normal_form": {
+      "result_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE",
+      "sha256": "0add3e518b7384cd653161b1f9db44d13c71f5c8349cd013027057e0d2ff7c8b"
+    },
+    "rank_one_extension": {
+      "result_id": "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION",
+      "sha256": "ec469c9f114c4663e0bd8f5c5de28529974c09d63d90e4cae8f34428fe37f815"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "douglis_symbol": {
+    "bordered_bracket": "-3*(p0**2 - 2*p1**2 - 2*p2**2 - 2*p3**2)*(p0**2 - p1**2 - p2**2 - p3**2)**3/100",
+    "column_order": [
+      "h_10",
+      "R",
+      "Theta",
+      "y"
+    ],
+    "column_weights": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      1,
+      2
+    ],
+    "determinant": "-(3/100)(-p0^2+|p|^2)^20(p0^2-2|p|^2)",
+    "extra_characteristic": "p0^2=2|p|^2",
+    "extra_characteristic_speed": "sqrt(2)",
+    "metric_characteristic_multiplicity": 20,
+    "nonzero_entries": 50,
+    "rank_off_characteristic": 13,
+    "rank_on_generic_extra_characteristic": 12,
+    "row_order": [
+      "metric_10",
+      "modulus",
+      "phase",
+      "graph"
+    ],
+    "row_weights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2
+    ],
+    "scalar_contractions": {
+      "c_b": "11*(p0**2 - p1**2 - p2**2 - p3**2)**2/20",
+      "c_d": "-2*p0*(p0**2 - p1**2 - p2**2 - p3**2)**2/15",
+      "f_b": "-9*p0*(p0**2 - p1**2 - p2**2 - p3**2)/40",
+      "f_d": "-2*(p0**2 - p1**2 - p2**2 - p3**2)**2/15"
+    }
+  },
+  "exact_checks": {
+    "bordered_determinant_reduction_exact": true,
+    "complete_L13_imported": true,
+    "douglis_weights_typed": true,
+    "extra_cone_is_simple_off_metric_cone": true,
+    "extra_speed_exceeds_metric_light_speed": true,
+    "full_determinant_factorization_exact": true
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": false,
+    "BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO": true
+  },
+  "next_gate": "BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY",
+  "no_go": {
+    "architectural_consequence": "do not require G13_pm as the causal theorem; contract the acyclic clock/graph incidence first and construct Lambda on the retained complex",
+    "reason": "the simple extra characteristic p0^2=2|p|^2 carries a genuine rank-one symbol kernel and propagates at speed sqrt(2)>1",
+    "ruled_out": "advanced/retarded inverse of the complete analytic L13 endpoint on arbitrary thirteen-row sources with support contained in the background metric causal cone",
+    "scope_guard": "this does not obstruct a BV chain homotopy after algebraically contracting the clock/graph sector, nor a Green inverse relative to the wider characteristic cone"
+  },
+  "result_id": "BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO",
+  "schema": "pure-weyl-berger-raw-endpoint-metric-cone-no-go-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

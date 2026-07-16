@@ -108,6 +108,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE.json`](certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE.json)
 - Lower-by-two metric report:
   [`reports/berger-metric-lower-by-two-biwave.md`](reports/berger-metric-lower-by-two-biwave.md)
+- Exact metric-cone obstruction for a Green inverse of the complete 13-row endpoint:
+  [`certificates/BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO.json`](certificates/BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO.json)
+- Metric-cone no-go and hybrid-chain interpretation:
+  [`reports/berger-raw-endpoint-metric-cone-no-go.md`](reports/berger-raw-endpoint-metric-cone-no-go.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:
