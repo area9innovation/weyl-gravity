@@ -96,6 +96,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT.json`](certificates/BERGER_RAW_ENDPOINT_GREEN_PREFLIGHT.json)
 - Raw endpoint Green-preflight report:
   [`reports/berger-raw-endpoint-green-preflight.md`](reports/berger-raw-endpoint-green-preflight.md)
+- Rank-one scalar-wave endpoint extension:
+  [`certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION.json`](certificates/BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION.json)
+- Rank-one wave-extension report:
+  [`reports/berger-raw-endpoint-rank-one-wave-extension.md`](reports/berger-raw-endpoint-rank-one-wave-extension.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:
@@ -397,9 +401,14 @@ The exact \(10+2\) block preflight further shows that the clock diagonal is
 \(I_2\). Naive clock elimination is not the answer: its Schur correction is
 nonzero and raises the metric operator from order four to order six. The
 order-six symbol is nevertheless rank one off characteristic and divisible
-by the metric wave symbol, hence vanishes on the null stratum. The next gate
-is therefore `BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION`, not a generic
-sixth-order inversion.
+by the metric wave symbol, hence vanishes on the null stratum. That extension
+is now explicit: \(C_R=-\Box_0F_2\), with
+\(F_2=(\Box_0\operatorname{tr}-\operatorname{div}\operatorname{div})/6\).
+Adding one scalar \(y=F_2h\) replaces the order-six Schur presentation by a
+13-row support-local operator of maximum order four. Exact triangular maps
+give \(E_{13}L_{13}U_{13}^{-1}=L_{12}\oplus I_1\). The remaining gate is
+`BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS`, not a generic sixth-order
+inversion.
 
 The full causal problem has also been reduced exactly. The same 54-to-26 SDR
 proves that a retained causal homotopy lifts by

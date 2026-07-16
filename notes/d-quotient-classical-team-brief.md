@@ -268,6 +268,27 @@ rank one and has an exact \(\zeta^2\) factor; it vanishes on the null cone.
 Thus the narrowed analytic object is a rank-one wave-divisible extension of
 the fourth-order metric block, not a new physical characteristic sector.
 
+The extension is now constructed coefficientwise. The exact curved identity
+
+\[
+C_R=-\Box_0F_2,
+\qquad
+F_2=\frac16(\Box_0\operatorname{tr}-\operatorname{div}\operatorname{div})
+\]
+
+allows one scalar prolongation variable \(y=F_2h\). The prolonged 13-row
+operator has maximum order four and support-local triangular maps satisfy
+
+\[
+E_{13}L_{13}U_{13}^{-1}=L_{12}\oplus I_1.
+\]
+
+Within the fixed \(K_{12}\), ghost operator and \(I_2\) clock diagonal, the
+metric-to-clock incidence cannot be erased: chain commutation leaves the
+nonzero invariant defect \(K_{\rm clock}(P_{\rm ghost}-I_5)\). Thus further
+middle-block tuning is closed in that architecture; the causal inverse must
+use the exposed scalar-wave extension.
+
 The all-row analytic bookkeeping is now finished. Exact chain maps prove
 
 \[
@@ -277,10 +298,9 @@ The all-row analytic bookkeeping is now finished. Exact chain maps prove
 
 so 28 clock/nonminimal/gauge-fixing rows introduce no independent causal
 obstruction. The immediate gate is therefore
-`BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION`: classify the complete
-lower-order raw endpoint operator as an exact Green-hyperbolic factor,
-triangular extension, or finite filtered extension and construct its
-advanced/retarded operators. Transport through the certified clock SDR then
+`BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS`: construct advanced/retarded
+operators for the exact 13-row scalar-wave/metric extension. Transport
+through the certified clock SDR then
 gives `BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY`, and the formula above lifts it
 support-locally and cyclically to all 54 rows. The total causal flag remains
 false until that endpoint theorem passes.

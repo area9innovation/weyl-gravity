@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-raw-endpoint-rank-one-wave-extension-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "exact_factorization", "prolongation", "fixed_incidence_no_go", "exact_checks", "flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-raw-endpoint-rank-one-wave-extension-v1"},
+    "result_id": {"const": "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "CERTIFIED_LOCAL_WAVE_PROLONGATION_GREEN_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["raw_witness_transport", "raw_endpoint_preflight"],
+      "properties": {"raw_witness_transport": {"$ref": "#/$defs/dependency"}, "raw_endpoint_preflight": {"$ref": "#/$defs/dependency"}}
+    },
+    "exact_factorization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["modulus_row", "F2", "F2_order", "scalar_wave_order", "C_R_order", "order_six_outer_product", "outer_product_rank", "wave_factor_carried_by_C_R"],
+      "properties": {
+        "modulus_row": {"const": "C_R=-Box_0 F2"},
+        "F2": {"const": "(Box_0 tr-double_divergence)/6"},
+        "F2_order": {"const": 2}, "scalar_wave_order": {"const": 2}, "C_R_order": {"const": 4},
+        "order_six_outer_product": {"const": "(BC)_6=B_R^(2) C_R^(4)"},
+        "outer_product_rank": {"const": 1}, "wave_factor_carried_by_C_R": {"const": true}
+      }
+    },
+    "prolongation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_order", "defining_equation", "modulus_equation", "maximum_operator_order", "support_local", "triangular_reduction", "artifacts"],
+      "properties": {
+        "input_order": {"const": ["h_10", "R", "Theta", "y"]},
+        "defining_equation": {"const": "y-F2(h)=0"},
+        "modulus_equation": {"const": "R-Box_0 y=source_R"},
+        "maximum_operator_order": {"const": 4}, "support_local": {"const": true},
+        "triangular_reduction": {"const": "E13 L13 U13^{-1}=L12 direct_sum I1"},
+        "artifacts": {
+          "type": "object", "additionalProperties": false,
+          "required": ["modulus_seed_F2", "prolonged_L13", "field_shear_U13", "equation_shear_E13"],
+          "properties": {
+            "modulus_seed_F2": {"$ref": "#/$defs/artifact"}, "prolonged_L13": {"$ref": "#/$defs/artifact"},
+            "field_shear_U13": {"$ref": "#/$defs/artifact"}, "equation_shear_E13": {"$ref": "#/$defs/artifact"}
+          }
+        }
+      }
+    },
+    "fixed_incidence_no_go": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "forbidden_simplification", "identity_used", "normalized_defect", "defect_nonzero_entries", "conclusion"],
+      "properties": {
+        "scope": {"type": "string", "minLength": 1}, "forbidden_simplification": {"type": "string", "minLength": 1},
+        "identity_used": {"const": "Pfield K12=K12 Pghost"}, "normalized_defect": {"const": "Kclock(Pghost-I5)"},
+        "defect_nonzero_entries": {"const": 8}, "conclusion": {"type": "string", "minLength": 1}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 6, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION", "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS", "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY"],
+      "properties": {
+        "BERGER_RAW_ENDPOINT_RANK_ONE_WAVE_EXTENSION": {"const": true},
+        "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": {"const": false},
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["result_id", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["format", "path", "sha256"], "properties": {"format": {"const": "JSON_EXACT_SPARSE_OPERATOR"}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}
