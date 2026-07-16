@@ -1,0 +1,124 @@
+{
+  "characteristic_polarization": {
+    "clock_projection_nonzero": true,
+    "graph_y_component_zero": true,
+    "left_null_covector_nonzero_entries": [
+      [
+        1,
+        "sqrt(2)/2"
+      ],
+      [
+        4,
+        "-1/2"
+      ],
+      [
+        10,
+        "-1"
+      ],
+      [
+        11,
+        "-sqrt(2)/2"
+      ],
+      [
+        12,
+        "1"
+      ]
+    ],
+    "retained_A10_principal_image_nonzero": true,
+    "retained_metric_projection_nonzero": true,
+    "right_null_vector_nonzero_entries": [
+      [
+        0,
+        "-2*sqrt(2)"
+      ],
+      [
+        1,
+        "-29/20"
+      ],
+      [
+        4,
+        "-9*sqrt(2)/20"
+      ],
+      [
+        10,
+        "-27*sqrt(2)/16"
+      ],
+      [
+        11,
+        "1"
+      ]
+    ],
+    "row_order": [
+      "h00",
+      "h01",
+      "h02",
+      "h03",
+      "h11",
+      "h12",
+      "h13",
+      "h22",
+      "h23",
+      "h33",
+      "R",
+      "Theta",
+      "y"
+    ]
+  },
+  "claim_boundary": "This theorem closes the microlocal implication and corrects the localization language. The raw extra polarization is a mixed artifact of the chosen clock-coupled witness, not a pure clock vector. The BV clock rows remain contractible and the retained companion removes the extra cone, but convergence, causal Green operators and the retained chain homotopy remain open.",
+  "claim_status": "CERTIFIED_SIMPLE_REAL_CHARACTERISTIC_MIXED_WITNESS_ARTIFACT_RETAINED_ROUTE_EXACT",
+  "dependency_refs": {
+    "metric_cone_no_go": {
+      "result_id": "BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO",
+      "sha256": "2dd31ae1fb2b68b8c0830c354c679b26df13558172f994f5e29d930882352aa6"
+    },
+    "metric_normal_form": {
+      "result_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE",
+      "sha256": "0add3e518b7384cd653161b1f9db44d13c71f5c8349cd013027057e0d2ff7c8b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "hamilton_speed_sqrt_two_exact": true,
+    "left_null_covector_exact": true,
+    "raw_polarization_mixes_retained_and_clock_rows": true,
+    "raw_polarization_not_characteristic_for_retained_A10": true,
+    "retained_companion_has_no_raw_extra_cone": true,
+    "right_null_vector_exact": true,
+    "selector_does_not_kill_raw_polarization": true,
+    "simple_rank_one_characteristic_exact": true
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION": true,
+    "BERGER_RAW_EXTRA_MODE_PURE_CLOCK": false,
+    "BERGER_RETAINED_BIWAVE_CAUSAL_RESOLVENT": false,
+    "BERGER_RETAINED_BIWAVE_COMPANION_EXACT": true
+  },
+  "homological_interpretation": {
+    "correct_operation": "apply the certified BV SDR and construct a different witness/chain homotopy on the retained complex; do not project L13 solutions",
+    "important_correction": "the bad L13 polarization is mixed; the selector projection does not kill it and it must not be called a pure clock mode",
+    "raw_extra_cone_survives_retained_companion": false,
+    "retained_companion": "C20=[[Box_2,-I10],[V_2,Box_2]]",
+    "retained_companion_principal_determinant": "q^20",
+    "retained_companion_rank_on_raw_extra_cone": 20,
+    "what_is_contractible": "the clock/graph rows in the BV differential, not the characteristic polarization of this particular witness operator"
+  },
+  "microlocal_necessity": {
+    "conclusion": "no arbitrary-source L13 Green inverse supported in the background metric cone",
+    "hamilton_speed_squared": "2",
+    "hypotheses_checked": [
+      "real homogeneous extra factor F=p0^2-2|p|^2",
+      "rank drop exactly one",
+      "nonzero left and right characteristic polarizations",
+      "dF nonzero at (sqrt(2),1,0,0)"
+    ],
+    "theorem_used": "a Green inverse on arbitrary sources supported in a prescribed cone cannot have a simple real principal characteristic whose Hamilton bicharacteristic exits that cone"
+  },
+  "next_gate": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT",
+  "result_id": "BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION",
+  "schema": "pure-weyl-berger-extra-cone-microlocal-localization-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

@@ -112,6 +112,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO.json`](certificates/BERGER_RAW_ENDPOINT_METRIC_CONE_NO_GO.json)
 - Metric-cone no-go and hybrid-chain interpretation:
   [`reports/berger-raw-endpoint-metric-cone-no-go.md`](reports/berger-raw-endpoint-metric-cone-no-go.md)
+- Microlocal support proof and exact mixed-polarization correction:
+  [`certificates/BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION.json`](certificates/BERGER_EXTRA_CONE_MICROLOCAL_LOCALIZATION.json)
+- Extra-cone localization report:
+  [`reports/berger-extra-cone-microlocal-localization.md`](reports/berger-extra-cone-microlocal-localization.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:
