@@ -5,8 +5,9 @@
     "map_status": "UNDEFINED_MISSING_RENORMALIZED_LOCAL_WARD_INSERTION",
     "zero_local_pullback_implies_zero_cartan_defect": false
   },
-  "certificate_hash": "349fc52ea9528b0eece89f8dfa8ff745cde9248aec3db59069514658d808c543",
+  "certificate_hash": "26cd3cc95155bb5b33962926132679f0ddd265ebcc65069f2845d318265ab40f",
   "checks": {
+    "berger_classical_D_input_setting_specific": "VERIFIED",
     "cylinder_pullback_matrix_zero": "VERIFIED",
     "cylinder_sigma_D_zero": "VERIFIED",
     "local_even_source_basis_complete_at_AFN0": "VERIFIED",
@@ -123,21 +124,36 @@
   "phase_space_id": "compact_quantum",
   "provenance": {
     "implementation": "quantum-weyl/cartan/local_anomaly_comparison.py",
-    "registry_commit": "df82b985b09ec4f4597e7882fb1a7efa993a3f1a",
+    "registry_commit": "137c6dc301c0665873b77d45338368987fa9f76c",
     "schema": "quantum-weyl/cartan/schema/local_anomaly_to_d_cartan_comparison.schema.json",
-    "source_manifest_sha256": "df455944e517ee361f31349361e5f8d502af70e1dfbcd44edbed824cfbd5707f",
+    "source_manifest_sha256": "acb82c7cc6ab120f135aa0f19e8ecf043b36afde9dd592a5ed5483949ad8a9fa",
     "source_sha256": {
       "d_quotient_programme/registry/generators.json": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-      "d_quotient_programme/registry/phase_spaces.json": "46f6754f83d2516c5652ea67c8474a0dcfc014d5fe180c98f552d931923516bb",
+      "d_quotient_programme/registry/phase_spaces.json": "186b71f96098f729ad77021fea745eb58afbb522bc78e4b27397835f421c4185",
       "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json": "9c04d552a0ab243aff0403a51622f6d892ca77f4b0fbd04efdcf3d8ccc31c8bf",
       "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json": "6bf8b7ef099ce40bef3e65bd78ba06d8ec138c8228b3991bf49a00fd5eef8d67",
       "quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json": "0134e28cf3fd0bf425c30e368a24dab5c7b8375dcc03a8ff517b34eb56da0681",
-      "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json": "6bb95e61932400728577d0109480a4861857aaa49a036220904080fb680399d7"
+      "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json": "6bb95e61932400728577d0109480a4861857aaa49a036220904080fb680399d7",
+      "quantum-weyl/transfer/certificates/BERGER_54_ROW_D_CAUSAL_INPUT_IMPORT.json": "df24dbe40780f37d5548f4bdc8ad74146be678e5f20716982e99ca574a14ed1f"
     }
   },
   "result_id": "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON",
   "result_state": "LOCAL_D_PULLBACK_COMPUTED_TARGET_CHAIN_MAP_UNDEFINED",
   "setting_id": "vacuum_cylinder",
+  "setting_specific_classical_inputs": [
+    {
+      "cartan_classification_status": "NO_VERDICT",
+      "causal_54_to_26_reduction": "VERIFIED_CONDITIONAL",
+      "classical_D_action": "AVAILABLE_SETTING_SPECIFIC_BERGER_54_ROWS",
+      "contraction_D_equivariance": "VERIFIED",
+      "cyclic_D_action": "VERIFIED",
+      "generator": "D_helical represented by D_compact in the dressed frame",
+      "renormalized_local_Ward_insertion": "NOT_CONSTRUCTED",
+      "retained_26_row_green_homotopy": "NOT_CONSTRUCTED",
+      "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+      "unary_D_equivariance": "VERIFIED"
+    }
+  ],
   "source_local_cohomology": {
     "even_basis": [
       "ANOM_OMEGA_C2",

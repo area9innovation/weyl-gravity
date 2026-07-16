@@ -65,6 +65,20 @@ cylinder. A nonzero quantum D-Cartan defect, if one exists, must enter through
 the still-unconstructed operator/Ward map or through measure,
 boundary/corner, zero-mode, or antifield-completion data.
 
+## Berger setting-specific classical input
+
+The positive fixed-coupling Berger setting now has a stronger classical
+input than the vacuum comparison originally consumed. The complete 54-row
+helical `D=e_0` action, unary and contraction equivariance, and cyclicity are
+independently imported. A separate conditional theorem reduces any 54-row
+retarded/advanced homotopy to a retained 26-row endpoint. The endpoint Green
+homotopy itself is not constructed.
+
+Accordingly the Berger row closes the setting-specific classical D-action
+carrier, but not the renormalized Ward-insertion carrier. Its quantum Cartan
+status remains `NO_VERDICT`; this does not alter the vacuum-cylinder local
+pullback calculation.
+
 ## Receipts
 
 - `local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json`

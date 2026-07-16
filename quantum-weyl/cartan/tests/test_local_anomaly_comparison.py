@@ -35,6 +35,17 @@ class LocalAnomalyComparisonTests(unittest.TestCase):
             },
         )
 
+    def test_berger_classical_input_is_setting_specific(self) -> None:
+        payload = comparison_payload()
+        berger = payload["setting_specific_classical_inputs"][0]
+        self.assertEqual(
+            berger["classical_D_action"],
+            "AVAILABLE_SETTING_SPECIFIC_BERGER_54_ROWS",
+        )
+        self.assertEqual(berger["causal_54_to_26_reduction"], "VERIFIED_CONDITIONAL")
+        self.assertEqual(berger["retained_26_row_green_homotopy"], "NOT_CONSTRUCTED")
+        self.assertEqual(berger["cartan_classification_status"], "NO_VERDICT")
+
     def test_schema_and_checked_in_certificate_reproduce(self) -> None:
         certificate = build_certificate()
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))

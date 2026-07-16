@@ -1,0 +1,147 @@
+{
+  "claim_boundary": "The complete classical helical D action and its unary/contraction/cyclic equivariance are independently imported on the fixed-coupling Berger setting. The 54-row causal theorem is only a conditional reduction to the retained 26-row endpoint. No retained Green operator, Hadamard state, support-local q2, renormalized Ward insertion, QME, or quantum D verdict is supplied.",
+  "conditional_causal_lift": {
+    "cyclic_adjoint_transfer": "VERIFIED_CONDITIONAL_ON_ENDPOINT_ADJOINTNESS",
+    "endpoint_hypothesis": "q_26 Lambda_26,+/-+Lambda_26,+/- q_26=1_26",
+    "endpoint_status": "NOT_CONSTRUCTED",
+    "expanded_coefficients": {
+      "contractible_complement": {
+        "IOTA_PI": -1,
+        "ONE_54": 1
+      },
+      "retained_endpoint": {
+        "IOTA_PI": 1
+      },
+      "sum": {
+        "ONE_54": 1
+      }
+    },
+    "formula": "Lambda_54,+/-=S+i Lambda_26,+/- p",
+    "support_transfer": "VERIFIED_FROM_FINITE_ORDER_S_IOTA_PI"
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-54-row-D-causal-import.md": "ccb31adf68d676ced16a7a4ebbea71ceb3160ccd52c52d45c2d90c864f0674db",
+      "berger_54_d_causal_import.py": "9ed4da521b61c5cb862c58c08d7c0973812346d2b21fb0eb4f5c180ee027b34e",
+      "berger_54_d_causal_import_certificate.py": "2cda30f89ce6baaebda085b9461ed661b5386e4c8de0799ba2490655741636f5",
+      "schema/berger-54-row-D-causal-import-v1.schema.json": "9ef2c68dbf2c750efb6f914f93f8de2d1591d466264b8c192ccd60b1de036962",
+      "tests/test_berger_54_d_causal_import.py": "1734ff9ac929e3fb2ca843dd5dc05036b3df837435a87d4933eef824b74dc7de"
+    },
+    "source_manifest_sha256": "9385070e050a929bb98c4b5916e31f20e95aaea3f2ae06bf091fd0b5a08ce5e9"
+  },
+  "coverage": {
+    "classical_D_action_complete": true,
+    "complete_gauge_fixed_rows": 54,
+    "contraction_D_equivariance_complete": true,
+    "cyclic_D_action_complete": true,
+    "retained_rows": 26,
+    "support_locally_contracted_rows": 28,
+    "unary_D_equivariance_complete": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "generator": {
+    "dressed_frame_action": "D=e_0",
+    "geometric_representative": "D_helical=partial_t plus compensating internal clock rotation",
+    "registry_id": "D_compact"
+  },
+  "independent_operator_checks": {
+    "D_cyclic_skew_adjoint": true,
+    "D_homotopy_equivariant": true,
+    "D_iota_equivariant": true,
+    "D_projection_equivariant": true,
+    "D_support_local_order_one": true,
+    "all_54_rows_have_D_action": true,
+    "q1_D_commutator_zero": true
+  },
+  "input_gate_update": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": "NOT_CONSTRUCTED",
+    "BERGER_54_ROW_CAUSAL_REDUCTION": "VERIFIED",
+    "BERGER_HADAMARD_DATA": "NOT_CONSTRUCTED",
+    "CLASSICAL_SUPPORT_LOCAL_Q2": "NOT_AVAILABLE",
+    "FROZEN_CLASSICAL_D_ACTION": "AVAILABLE_SETTING_SPECIFIC_BERGER_54_ROWS",
+    "GENERAL_ANTIFIELD_KOSZUL_TATE_EXPORT": "NOT_AVAILABLE",
+    "RENORMALIZED_LOCAL_WARD_INSERTION": "NOT_CONSTRUCTED",
+    "RENORMALIZED_Q1": "UNDEFINED_ANALYTICALLY"
+  },
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_AND_RENORMALIZED_WARD_INSERTION",
+  "provenance": {
+    "classical_commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+    "classical_sources": {
+      "D_certificate": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+        "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+      },
+      "D_independent_verifier": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_54_row_local_d_action.py",
+        "sha256": "2cf447dbe5f7c2d6a75e28c75ab4850f566f4ba7c0e41f94140053cee910173e"
+      },
+      "D_producer": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/backreacted_clock/berger_54_row_local_d_action.py",
+        "sha256": "3b5f7efd5858bd93a5c83e67fa1638fc6554b472a99f3b2bb51a8118e144856a"
+      },
+      "D_report": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/reports/berger-54-row-local-D-action.md",
+        "sha256": "a19fa8364e9365025135fc5deb3ffef2d1e9d8ea60904f8ee9be47d0ed6998f9"
+      },
+      "D_schema": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/schema/berger-54-row-local-D-action-v1.schema.json",
+        "sha256": "d1adcbb836a8aeaaa093c17857a9bdda4143da50c92bfa7d24d02af02abaa49a"
+      },
+      "D_test": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_54_row_local_d_action.py",
+        "sha256": "f009ccf361a3484920bdba292be8646ba5a8470da55cd5058362e2437075e500"
+      },
+      "causal_certificate": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json",
+        "sha256": "8893fa0457e513913e0a71c5e0f1923ff06cb8c32f7a662808c5c9ee37f7e521"
+      },
+      "causal_independent_verifier": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_54_row_causal_homotopy_reduction.py",
+        "sha256": "5a87e185f0ba9fe41898b30eaa634c37944cca2efd07f694995f3caac0ce75cc"
+      },
+      "causal_producer": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/backreacted_clock/berger_54_row_causal_homotopy_reduction.py",
+        "sha256": "d36786ee39fe48862b2ae480796e4743e89c80893e28ccfb700e5f721d07a371"
+      },
+      "causal_report": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/reports/berger-54-row-causal-homotopy-reduction.md",
+        "sha256": "75742a8ba99542fe9ae5b6658947ce60ecd42eb8be71f6dc55fa75cb84025f84"
+      },
+      "causal_schema": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/schema/berger-54-row-causal-homotopy-reduction-v1.schema.json",
+        "sha256": "cc76b0b083c437761865e9a3770fdd22b861facb12e5c1213a6bd96f74400b41"
+      },
+      "causal_test": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_54_row_causal_homotopy_reduction.py",
+        "sha256": "655e94ada76c28d681b5eab3ed91a9c357b7a41bbb85e69ce1535c553ddb54c7"
+      },
+      "gauge_fixed_unary_certificate": {
+        "commit": "46208d7c1c845da2b1959bf0799abcc92d856499",
+        "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+        "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+      }
+    },
+    "classical_sources_sha256": "48d89306c3accfff931e96fbb6220d64aebf3d6eb758db3a1160f2c913055297"
+  },
+  "quantum_execution_authorized": false,
+  "result_id": "BERGER_54_ROW_D_CAUSAL_INPUT_IMPORT",
+  "result_state": "CLASSICAL_D_ACTION_IMPORTED_CAUSAL_ENDPOINT_REDUCED",
+  "schema": "quantum-weyl-berger-54-row-D-causal-import-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

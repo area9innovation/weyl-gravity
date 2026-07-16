@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-54-row-D-causal-import-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer",
+    "dependency_tags", "setting_id", "generator", "coverage",
+    "independent_operator_checks", "conditional_causal_lift",
+    "input_gate_update", "quantum_execution_authorized", "next_gate",
+    "provenance", "claim_boundary", "consumer_provenance"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-54-row-D-causal-import-v1"},
+    "result_id": {"const": "BERGER_54_ROW_D_CAUSAL_INPUT_IMPORT"},
+    "result_state": {"const": "CLASSICAL_D_ACTION_IMPORTED_CAUSAL_ENDPOINT_REDUCED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "generator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["registry_id", "geometric_representative", "dressed_frame_action"],
+      "properties": {
+        "registry_id": {"const": "D_compact"},
+        "geometric_representative": {"type": "string", "minLength": 1},
+        "dressed_frame_action": {"const": "D=e_0"}
+      }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["complete_gauge_fixed_rows", "retained_rows", "support_locally_contracted_rows", "classical_D_action_complete", "unary_D_equivariance_complete", "contraction_D_equivariance_complete", "cyclic_D_action_complete"],
+      "properties": {
+        "complete_gauge_fixed_rows": {"const": 54},
+        "retained_rows": {"const": 26},
+        "support_locally_contracted_rows": {"const": 28},
+        "classical_D_action_complete": {"const": true},
+        "unary_D_equivariance_complete": {"const": true},
+        "contraction_D_equivariance_complete": {"const": true},
+        "cyclic_D_action_complete": {"const": true}
+      }
+    },
+    "independent_operator_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q1_D_commutator_zero", "D_iota_equivariant", "D_projection_equivariant", "D_homotopy_equivariant", "D_cyclic_skew_adjoint", "D_support_local_order_one", "all_54_rows_have_D_action"],
+      "properties": {
+        "q1_D_commutator_zero": {"const": true},
+        "D_iota_equivariant": {"const": true},
+        "D_projection_equivariant": {"const": true},
+        "D_homotopy_equivariant": {"const": true},
+        "D_cyclic_skew_adjoint": {"const": true},
+        "D_support_local_order_one": {"const": true},
+        "all_54_rows_have_D_action": {"const": true}
+      }
+    },
+    "conditional_causal_lift": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "endpoint_hypothesis", "expanded_coefficients", "support_transfer", "cyclic_adjoint_transfer", "endpoint_status"],
+      "properties": {
+        "formula": {"const": "Lambda_54,+/-=S+i Lambda_26,+/- p"},
+        "endpoint_hypothesis": {"const": "q_26 Lambda_26,+/-+Lambda_26,+/- q_26=1_26"},
+        "expanded_coefficients": {
+          "type": "object", "additionalProperties": false,
+          "required": ["contractible_complement", "retained_endpoint", "sum"],
+          "properties": {
+            "contractible_complement": {"const": {"ONE_54": 1, "IOTA_PI": -1}},
+            "retained_endpoint": {"const": {"IOTA_PI": 1}},
+            "sum": {"const": {"ONE_54": 1}}
+          }
+        },
+        "support_transfer": {"const": "VERIFIED_FROM_FINITE_ORDER_S_IOTA_PI"},
+        "cyclic_adjoint_transfer": {"const": "VERIFIED_CONDITIONAL_ON_ENDPOINT_ADJOINTNESS"},
+        "endpoint_status": {"const": "NOT_CONSTRUCTED"}
+      }
+    },
+    "input_gate_update": {
+      "type": "object", "additionalProperties": false,
+      "required": ["FROZEN_CLASSICAL_D_ACTION", "BERGER_54_ROW_CAUSAL_REDUCTION", "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY", "BERGER_HADAMARD_DATA", "CLASSICAL_SUPPORT_LOCAL_Q2", "GENERAL_ANTIFIELD_KOSZUL_TATE_EXPORT", "RENORMALIZED_Q1", "RENORMALIZED_LOCAL_WARD_INSERTION"],
+      "properties": {
+        "FROZEN_CLASSICAL_D_ACTION": {"const": "AVAILABLE_SETTING_SPECIFIC_BERGER_54_ROWS"},
+        "BERGER_54_ROW_CAUSAL_REDUCTION": {"const": "VERIFIED"},
+        "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": {"const": "NOT_CONSTRUCTED"},
+        "BERGER_HADAMARD_DATA": {"const": "NOT_CONSTRUCTED"},
+        "CLASSICAL_SUPPORT_LOCAL_Q2": {"const": "NOT_AVAILABLE"},
+        "GENERAL_ANTIFIELD_KOSZUL_TATE_EXPORT": {"const": "NOT_AVAILABLE"},
+        "RENORMALIZED_Q1": {"const": "UNDEFINED_ANALYTICALLY"},
+        "RENORMALIZED_LOCAL_WARD_INSERTION": {"const": "NOT_CONSTRUCTED"}
+      }
+    },
+    "quantum_execution_authorized": {"const": false},
+    "next_gate": {"const": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_AND_RENORMALIZED_WARD_INSERTION"},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "consumer_provenance": {"type": "object"}
+  }
+}

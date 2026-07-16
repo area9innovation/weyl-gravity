@@ -137,6 +137,20 @@ def comparison_payload() -> dict[str, object]:
             "odd_coefficient_status": "NOT_COMPUTED",
             "full_BV_lift_status": "NOT_COMPUTED",
         },
+        "setting_specific_classical_inputs": [
+            {
+                "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+                "generator": "D_helical represented by D_compact in the dressed frame",
+                "classical_D_action": "AVAILABLE_SETTING_SPECIFIC_BERGER_54_ROWS",
+                "unary_D_equivariance": "VERIFIED",
+                "contraction_D_equivariance": "VERIFIED",
+                "cyclic_D_action": "VERIFIED",
+                "causal_54_to_26_reduction": "VERIFIED_CONDITIONAL",
+                "retained_26_row_green_homotopy": "NOT_CONSTRUCTED",
+                "renormalized_local_Ward_insertion": "NOT_CONSTRUCTED",
+                "cartan_classification_status": "NO_VERDICT",
+            }
+        ],
         "one_generator_pullback_maps": {
             "target_basis": list(D_LOCAL_TARGET_BASIS),
             "vacuum_cylinder": {
@@ -180,6 +194,7 @@ def comparison_payload() -> dict[str, object]:
             "minkowski_sigma_D_minus_one": "VERIFIED",
             "source_target_degree_mismatch_recorded": "VERIFIED",
             "missing_arrow_fail_closed": "VERIFIED",
+            "berger_classical_D_input_setting_specific": "VERIFIED",
         },
         "claim_boundary": [
             "The coefficient vector is the standard Euclidean background conformal-spin-two trace anomaly, not a computed repository BV Slavnov breaking.",
