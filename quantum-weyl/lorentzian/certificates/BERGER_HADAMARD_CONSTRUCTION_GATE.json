@@ -1,0 +1,138 @@
+{
+  "available_inputs": {
+    "causal_chain": {
+      "advanced_retarded_homotopies": true,
+      "causal_D_Cartan_arities": [
+        1,
+        2
+      ],
+      "certificate": "quantum-weyl/lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
+      "rows": 54,
+      "sha256": "2afa06f34d29f9103164d22c9865d4899d5b28d53c6a5a3ce002c89f71c8f1da",
+      "status": "IMPORTED"
+    },
+    "one_particle_Krein_ledger": {
+      "certificate": "analytic_completion/certificates/one_particle_krein.json",
+      "classification": "infinite-index Krein space",
+      "fundamental_symmetry": "+1 on E and -1 on A,L in both chiralities",
+      "sha256": "c52f8b2fcee6573e55e72402008779fd706311b77e2463a774b9eb16ce12b374",
+      "status": "REDUCED_MODE_EVIDENCE_ONLY_NOT_DISTRIBUTIONAL"
+    },
+    "positive_frequency_ledger": {
+      "category": "D-finite SO(4)-finite selected positive-frequency polarization",
+      "certificate": "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
+      "sha256": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1",
+      "state_complex": "Sym(W_+ direct-sum W_-) tensor Lambda^bullet so(4,2)^*",
+      "status": "REDUCED_MODE_EVIDENCE_ONLY"
+    }
+  },
+  "blockers": [
+    "no 54-row distributional two-point kernel",
+    "no full-field complex structure or covariance operator",
+    "no microlocal wavefront-set proof",
+    "no BRST Ward proof for a two-point kernel",
+    "no smooth treatment of retained zero-frequency modes",
+    "no covariant positivity/Krein policy tied to the BV pairing"
+  ],
+  "claim_boundary": "The repaired causal v2 chain supplies the full classical commutator infrastructure, while the existing positive-frequency and Krein ledgers remain reduced-mode state-side evidence. No distributional 54-row two-point kernel, Hadamard wavefront theorem, BRST-compatible covariance, renormalized product, QME restoration or quantum result is claimed.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX": false,
+    "BERGER_CAUSAL_COMMUTATOR_AVAILABLE": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_REDUCED_POSITIVE_FREQUENCY_LEDGER_AVAILABLE": true,
+    "LORENTZIAN_QME_RESTORED": false,
+    "QUANTUM_CLAIM": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "construction_route": [
+    {
+      "output": "omega_Box2_plus and ghost-wave analogues with WF proof",
+      "stage": "BASE_ROUGH_WAVE_HADAMARD_PARAMETRIX",
+      "status": "NEXT"
+    },
+    {
+      "output": "omega_C20_plus respecting X_s/Y_s and A10 graph pullback",
+      "stage": "TYPED_COMPANION_MOLLER_TRANSPORT",
+      "status": "BLOCKED_PREVIOUS_STAGE"
+    },
+    {
+      "output": "omega26_plus with CCR, bisolution and q26 Ward identities",
+      "stage": "ASSEMBLE_26_ROW_BRST_COVARIANCE",
+      "status": "BLOCKED_PREVIOUS_STAGE"
+    },
+    {
+      "output": "omega54_plus through the support-local cyclic SDR",
+      "stage": "LIFT_TO_54_ROWS",
+      "status": "BLOCKED_PREVIOUS_STAGE"
+    },
+    {
+      "output": "smooth zero-mode completion and declared physical/Krein positivity",
+      "stage": "ZERO_MODE_AND_KREIN_POLICY",
+      "status": "BLOCKED_PREVIOUS_STAGE"
+    },
+    {
+      "output": "all eleven distributional proof checks",
+      "stage": "HADAMARD_CERTIFICATION",
+      "status": "BLOCKED_PREVIOUS_STAGE"
+    }
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT",
+  "logical_separation": {
+    "causal_propagator": "AVAILABLE_FROM_ADVANCED_MINUS_RETARDED_V2_GREEN_DATA",
+    "complex_structure_or_covariance": "NOT_CONSTRUCTED_ON_54_ROW_DISTRIBUTIONAL_COMPLEX",
+    "reduced_Krein_completion_is_covariant_distributional_completion": false,
+    "reduced_positive_frequency_is_full_Hadamard_evidence": false
+  },
+  "next_gate": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+  "provenance": {
+    "Krein_schema": "pure-weyl-one-particle-krein-v1",
+    "causal_result_id": "BERGER_CAUSAL_CHAIN_V2_IMPORT",
+    "polarized_schema": "pure-weyl-polarized-state-complex-v1",
+    "source_manifest": {
+      "../reports/berger-hadamard-construction-gate.md": "ff156dda7fcc0d96e249a98543110f8f00ee45c1353251fa3f5c50739f2914f4",
+      "berger_hadamard_construction_gate.py": "bc70480ed6ae8717b364088f66554c8668eabee891405e63997fd2f3f85ec9a4",
+      "berger_hadamard_construction_gate_certificate.py": "16087ae84b2a92f440deb2c9500dd2f7e65d8893a7c34784ff8c69a6d189e34f",
+      "schema/berger-hadamard-construction-gate-v1.schema.json": "8915d087ccd1b1dea07805bebf669870fa0ea2799e10afbe2c968b80248a9820",
+      "tests/test_berger_hadamard_construction_gate.py": "6af3ea318cbcc3664b817e9ac66210e6012f5ec7840a54091716c2ea3c8bf5ba"
+    },
+    "source_manifest_sha256": "ad6cc589a594c779c92464f634a06aa3acf4efb1d72a77f2c9d32544f88d2c6d"
+  },
+  "required_kernel_export": {
+    "kernels": [
+      "omega2_plus_54",
+      "omega2_minus_54",
+      "Delta_54"
+    ],
+    "proof_policy": "CONTENT_ADDRESSED_DISTRIBUTIONAL_AND_MICROLOCAL_ARTIFACTS",
+    "required_checks": [
+      "left_bisolution",
+      "right_bisolution",
+      "graded_CCR_antisymmetric_part",
+      "Hadamard_wavefront_set",
+      "BRST_compatibility_left",
+      "BRST_compatibility_right",
+      "graded_hermiticity_and_reality",
+      "D_stationarity",
+      "zero_mode_policy",
+      "positivity_or_Krein_policy",
+      "complete_54_row_coverage"
+    ],
+    "required_dependency_tags": [
+      "LORENTZIAN-CAUSAL"
+    ],
+    "required_row_count": 54,
+    "result_id": "BERGER_54_ROW_BRST_HADAMARD_TWO_POINT"
+  },
+  "result_id": "BERGER_HADAMARD_CONSTRUCTION_GATE",
+  "result_state": "CAUSAL_COMMUTATOR_READY_REDUCED_POLARIZATION_ONLY_HADAMARD_KERNEL_OPEN",
+  "schema": "quantum-weyl-berger-hadamard-construction-gate-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

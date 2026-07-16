@@ -72,17 +72,20 @@ resolvent with global support control. No advanced or retarded operator,
 cyclic companion pairing, or causal adjointness theorem has yet been
 constructed.
 
-The hardened classical retained Volterra package has now landed and is pinned
-at `5f29a2f0`, but the quantum import remains fail-closed. Exact replay confirms
-the companion graph, formal-adjoint bundle and `D=e0` equivariance. The
-analytic source is not accepted because it adds an undeclared dependency tag,
-has no strict source schema or verification receipt, conflates the distinct
-source and solution resolvents, records a malformed adjoint identity, and
-stores the energy/support conclusions as unreferenced booleans. The hardened
-report now declares useful graded spaces, but that proof is not bound into the
-certificate; the source- and solution-side resolvents and factorial bounds
-must also be stated separately. Consequently the downstream claimed 26- and
-54-row causal homotopies are not yet quantum inputs.
+The repaired Volterra v2 package and its complete 26- and 54-row causal chain
+are now accepted. The import separates the source- and solution-side
+resolvents, checks both factorial estimates, binds the analytic proof
+artifacts, and uses the correct advanced/retarded adjoint identity without a
+self-adjointness assumption. This supplies causal-commutator infrastructure,
+not a quantum state.
+
+The Hadamard construction gate separately imports the existing
+positive-frequency and Krein ledgers as reduced-mode evidence and refuses to
+promote them to a distributional covariance. Its next step is a base
+rough-wave/ghost-wave Hadamard parametrix, followed by typed companion
+transport, two-sided BRST Ward identities, the 54-row lift, and explicit
+zero-mode and Krein policies. Hadamard, renormalized-product, QME and quantum
+flags remain false.
 
 Reproduce the current contract receipt with:
 
@@ -108,4 +111,6 @@ PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_r
 PYTHONPATH=quantum-weyl python3 -m lorentzian.raw_endpoint_import_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.raw_endpoint_import_certificate --replay-check
 PYTHONPATH=quantum-weyl python3 -m unittest lorentzian.tests.test_raw_endpoint_import -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_hadamard_construction_gate_certificate --check
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_hadamard_construction_gate.py -v
 ```

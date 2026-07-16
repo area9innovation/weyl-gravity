@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-hadamard-construction-gate-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "available_inputs", "logical_separation", "construction_route", "required_kernel_export", "blockers", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-hadamard-construction-gate-v1"},
+    "result_id": {"const": "BERGER_HADAMARD_CONSTRUCTION_GATE"},
+    "result_state": {"const": "CAUSAL_COMMUTATOR_READY_REDUCED_POLARIZATION_ONLY_HADAMARD_KERNEL_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"const": "743183594a7a33dbb869154dafd7eb2c3482bac0"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "available_inputs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["causal_chain", "positive_frequency_ledger", "one_particle_Krein_ledger"],
+      "properties": {
+        "causal_chain": {
+          "type": "object", "additionalProperties": false,
+          "required": ["status", "rows", "advanced_retarded_homotopies", "causal_D_Cartan_arities", "certificate", "sha256"],
+          "properties": {
+            "status": {"const": "IMPORTED"}, "rows": {"const": 54},
+            "advanced_retarded_homotopies": {"const": true}, "causal_D_Cartan_arities": {"const": [1, 2]},
+            "certificate": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "positive_frequency_ledger": {
+          "type": "object", "additionalProperties": false,
+          "required": ["status", "category", "state_complex", "certificate", "sha256"],
+          "properties": {
+            "status": {"const": "REDUCED_MODE_EVIDENCE_ONLY"},
+            "category": {"const": "D-finite SO(4)-finite selected positive-frequency polarization"},
+            "state_complex": {}, "certificate": {"type": "string", "minLength": 1},
+            "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "one_particle_Krein_ledger": {
+          "type": "object", "additionalProperties": false,
+          "required": ["status", "classification", "fundamental_symmetry", "certificate", "sha256"],
+          "properties": {
+            "status": {"const": "REDUCED_MODE_EVIDENCE_ONLY_NOT_DISTRIBUTIONAL"},
+            "classification": {"const": "infinite-index Krein space"},
+            "fundamental_symmetry": {"const": "+1 on E and -1 on A,L in both chiralities"},
+            "certificate": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        }
+      }
+    },
+    "logical_separation": {
+      "const": {
+        "causal_propagator": "AVAILABLE_FROM_ADVANCED_MINUS_RETARDED_V2_GREEN_DATA",
+        "complex_structure_or_covariance": "NOT_CONSTRUCTED_ON_54_ROW_DISTRIBUTIONAL_COMPLEX",
+        "reduced_positive_frequency_is_full_Hadamard_evidence": false,
+        "reduced_Krein_completion_is_covariant_distributional_completion": false
+      }
+    },
+    "construction_route": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "prefixItems": [
+        {"$ref": "#/$defs/nextStage"}, {"$ref": "#/$defs/blockedStage"},
+        {"$ref": "#/$defs/blockedStage"}, {"$ref": "#/$defs/blockedStage"},
+        {"$ref": "#/$defs/blockedStage"}, {"$ref": "#/$defs/blockedStage"}
+      ],
+      "items": false
+    },
+    "required_kernel_export": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "kernels", "required_checks", "required_row_count", "required_dependency_tags", "proof_policy"],
+      "properties": {
+        "result_id": {"const": "BERGER_54_ROW_BRST_HADAMARD_TWO_POINT"},
+        "kernels": {"const": ["omega2_plus_54", "omega2_minus_54", "Delta_54"]},
+        "required_checks": {"const": ["left_bisolution", "right_bisolution", "graded_CCR_antisymmetric_part", "Hadamard_wavefront_set", "BRST_compatibility_left", "BRST_compatibility_right", "graded_hermiticity_and_reality", "D_stationarity", "zero_mode_policy", "positivity_or_Krein_policy", "complete_54_row_coverage"]},
+        "required_row_count": {"const": 54}, "required_dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+        "proof_policy": {"const": "CONTENT_ADDRESSED_DISTRIBUTIONAL_AND_MICROLOCAL_ARTIFACTS"}
+      }
+    },
+    "blockers": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "claim_flags": {
+      "const": {
+        "BERGER_CAUSAL_COMMUTATOR_AVAILABLE": true,
+        "BERGER_REDUCED_POSITIVE_FREQUENCY_LEDGER_AVAILABLE": true,
+        "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_HADAMARD_DATA": false,
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": false,
+        "LORENTZIAN_QME_RESTORED": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["causal_result_id", "polarized_schema", "Krein_schema", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "causal_result_id": {"const": "BERGER_CAUSAL_CHAIN_V2_IMPORT"},
+        "polarized_schema": {"const": "pure-weyl-polarized-state-complex-v1"},
+        "Krein_schema": {"const": "pure-weyl-one-particle-krein-v1"},
+        "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "nextStage": {
+      "type": "object", "additionalProperties": false, "required": ["stage", "status", "output"],
+      "properties": {"stage": {"type": "string", "minLength": 1}, "status": {"const": "NEXT"}, "output": {"type": "string", "minLength": 1}}
+    },
+    "blockedStage": {
+      "type": "object", "additionalProperties": false, "required": ["stage", "status", "output"],
+      "properties": {"stage": {"type": "string", "minLength": 1}, "status": {"const": "BLOCKED_PREVIOUS_STAGE"}, "output": {"type": "string", "minLength": 1}}
+    }
+  }
+}
