@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle P_N with N=2; every S1 Fourier momentum and axial spherical harmonic; smooth periodic identity-component gauge; before residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the complete standard axial harmonic gauge quotient is reduced to two masters for every n, ell>=2, and m",
+    "the exact dispersion is omega_squared=k_n_squared+lambda+/-sqrt(2 lambda)",
+    "an arbitrary-lambda, arbitrary-momentum, arbitrary-frequency full tensor calculation certifies all field equations and constraints",
+    "the ell=1 residual gauge vector is removed for periodic nonzero Fourier modes while the nonperiodic zero-block twist remains",
+    "the reduced master system has a local conserved current with symmetrizer diag(lambda,2)"
+  ],
+  "evidence": {
+    "commit": "476c390d9008cbfee5993348cb0f0e046c8c9f48",
+    "path": "bridge/certificates/einstein_maxwell_axial_master_complex.json",
+    "sha256": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "derive the polar/even master complex, then match axial and polar reduced currents to the covariant symplectic form and solve extra fourth-order adjoint classes",
+  "not_established": [
+    "the polar/even master complex",
+    "covariant Einstein--Maxwell symplectic normalization",
+    "the complete fourth-order Weyl--Maxwell adjoint cokernel",
+    "quadratic obstruction coefficients for the full tower",
+    "a Lorentzian-causal, scattering, or quantum theorem"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_axial_master_complex",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_axial_master_complex",
+  "team_id": "einstein_boundary",
+  "verdict": "G1_AXIAL_ALL_MOMENTA_MASTER_COMPLEX",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_axial_master_complex --verify bridge/certificates/einstein_maxwell_axial_master_complex.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_axial_master_complex.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_axial_master_complex"
+  ]
+}

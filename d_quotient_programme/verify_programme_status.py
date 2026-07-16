@@ -41,6 +41,7 @@ EINSTEIN_MAXWELL_PERIODIC_GRAVITON_SECOND_ORDER_CONTRIBUTION = PACKAGE / "contri
 EINSTEIN_MAXWELL_OBSTRUCTION_BILINEAR_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-obstruction-bilinear-g1.json"
 EINSTEIN_MAXWELL_COMPACT_DOMAIN_TAUB_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-compact-domain-taub-descent.json"
 EINSTEIN_MAXWELL_HARMONIC_ADJOINT_BLOCK_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-harmonic-adjoint-block-preflight.json"
+EINSTEIN_MAXWELL_AXIAL_MASTER_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-axial-master-complex.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -795,6 +796,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "G1_AXIAL_N0_TOWER_AND_ADJOINT_PREFLIGHT",
         )
     )
+    maxwell_axial_master_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_AXIAL_MASTER_CONTRIBUTION,
+        "compact_einstein_maxwell_axial_master_complex",
+        "einstein_maxwell_product_compact_axial_master_complex",
+        "G1_AXIAL_ALL_MOMENTA_MASTER_COMPLEX",
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
@@ -925,6 +932,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": maxwell_harmonic_adjoint_block_contribution,
             },
             {
+                "path": str(EINSTEIN_MAXWELL_AXIAL_MASTER_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_AXIAL_MASTER_CONTRIBUTION),
+                "payload": maxwell_axial_master_contribution,
+            },
+            {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
@@ -945,10 +957,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "einstein_boundary",
-                "result_state": "G1_AXIAL_N0_TOWER_AND_ADJOINT_PREFLIGHT_CERTIFIED_FULL_HARMONIC_THEOREM_OPEN",
+                "result_state": "G1_AXIAL_ALL_MOMENTA_MASTER_COMPLEX_CERTIFIED_POLAR_AND_ADJOINT_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "The fixed compact U(1) domain and relative Taub descent are certified. Its declared homogeneous axial H_x/a_x tower is now solved for every (ell,m), including the globally retained ell=1 zero branch, exact reduced Wronskian, and universal stabilizer projectors. The remaining harmonic and fourth-order adjoint blocks are fail-closed.",
-                "next_gate": "derive nonzero-S1-momentum axial and all polar master complexes, covariant symplectic matching, and extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
+                "established": "The fixed compact U(1) domain and relative Taub descent are certified. The complete standard axial harmonic gauge quotient is reduced to two masters for every S1 momentum and ell>=2, with exact dispersion, ell=1 residual quotient, global zero twist, and local reduced current.",
+                "next_gate": "derive the polar/even master complex, match both reduced currents to the covariant symplectic form, and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit",
             },
             {
                 "team_id": "nonlinear",
@@ -1183,6 +1195,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G1_AXIAL_N0_TOWER_AND_ADJOINT_PREFLIGHT",
             },
             {
+                "setting_id": "compact_einstein_maxwell_axial_master_complex",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_axial_master_complex",
+                "boundary_conditions": "fixed-P_N compact product; all periodic S1 momenta; standard axial harmonic gauge quotient; before residual quotient",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G1_AXIAL_ALL_MOMENTA_MASTER_COMPLEX",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1335,6 +1356,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_obstruction_bilinear_g1",
         "compact_einstein_maxwell_domain_taub_descent",
         "compact_einstein_maxwell_harmonic_adjoint_block_preflight",
+        "compact_einstein_maxwell_axial_master_complex",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1363,6 +1385,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_obstruction_bilinear_g1": "G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN",
         "compact_einstein_maxwell_domain_taub_descent": "G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT",
         "compact_einstein_maxwell_harmonic_adjoint_block_preflight": "G1_AXIAL_N0_TOWER_AND_ADJOINT_PREFLIGHT",
+        "compact_einstein_maxwell_axial_master_complex": "G1_AXIAL_ALL_MOMENTA_MASTER_COMPLEX",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -1409,6 +1432,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Einstein--Maxwell fixed-U1 domain/Taub descent was dropped")
     if ledger.get("compact_einstein_maxwell_harmonic_adjoint_block_preflight", {}).get("status") != "CERTIFIED":
         errors.append("Einstein--Maxwell harmonic/adjoint block preflight was dropped")
+    if ledger.get("compact_einstein_maxwell_axial_master_complex", {}).get("status") != "CERTIFIED":
+        errors.append("Einstein--Maxwell axial master complex was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -1697,6 +1722,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_harmonic_adjoint_block_preflight",
             "drop_Einstein_Maxwell_harmonic_adjoint_block_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_axial_master_complex",
+            "drop_Einstein_Maxwell_axial_master_contribution",
         ),
     ):
         mutant = deepcopy(data)

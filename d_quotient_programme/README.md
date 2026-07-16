@@ -64,6 +64,8 @@ because the existing results concern different objects:
 - [`reports/einstein-maxwell-compact-domain-taub-registration-receipt.md`](reports/einstein-maxwell-compact-domain-taub-registration-receipt.md)
 - [`contributions/einstein-maxwell-harmonic-adjoint-block-preflight.json`](contributions/einstein-maxwell-harmonic-adjoint-block-preflight.json)
 - [`reports/einstein-maxwell-harmonic-adjoint-block-registration-receipt.md`](reports/einstein-maxwell-harmonic-adjoint-block-registration-receipt.md)
+- [`contributions/einstein-maxwell-axial-master-complex.json`](contributions/einstein-maxwell-axial-master-complex.json)
+- [`reports/einstein-maxwell-axial-master-registration-receipt.md`](reports/einstein-maxwell-axial-master-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -185,3 +187,11 @@ momentum, rotation, and electric-flux projection interface are frozen.  This
 is a block preflight: axial gauge-quotient completeness, nonzero momentum,
 polar sectors, covariant symplectic matching, and extra fourth-order adjoint
 classes remain open.
+
+The axial preflight is now promoted to every periodic `S1` momentum.  After
+complete standard axial gauge fixing, two transverse masters obey
+`omega^2=k_n^2+lambda+/-sqrt(2lambda)` for every `ell>=2,m`.  At `ell=1`, the
+null vector is periodic gauge for nonzero Fourier modes, while the constant
+twist remains globally.  A local reduced current is exact; polar modes,
+covariant symplectic matching, extra fourth-order adjoint classes, and the
+quadratic coefficient theorem remain open.

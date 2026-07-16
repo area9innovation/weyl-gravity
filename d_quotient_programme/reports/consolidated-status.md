@@ -31,7 +31,7 @@ this background as a non-Einstein Weyl--matter branch.
 | Team | Current verdict | Established | Next gate |
 |---|---|---|---|
 | classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 is exact and cyclic; its 34-row minimal contraction is portable. Five nonminimal antighost--multiplier quartets extend it to 54 rows, and the selected gauge fermion acts by an exact finite BV-canonical shear, producing a complete support-local cyclic gauge-fixed 54-to-26 contraction. | construct the total causal homotopy for the gauge-fixed 54-row complex, then export q2 and test local D-equivariance |
-| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | The fixed compact U(1) domain and relative Taub descent are certified. Its declared homogeneous axial H_x/a_x tower is now solved for every (ell,m), including the globally retained ell=1 zero branch, exact reduced Wronskian, and universal stabilizer projectors. The remaining harmonic and fourth-order adjoint blocks are fail-closed. | derive nonzero-S1-momentum axial and all polar master complexes, covariant symplectic matching, and extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit |
+| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | The fixed compact U(1) domain and relative Taub descent are certified. The complete standard axial harmonic gauge quotient is reduced to two masters for every S1 momentum and ell>=2, with exact dispersion, ell=1 residual quotient, global zero twist, and local reduced current. | derive the polar/even master complex, match both reduced currents to the covariant symplectic form, and solve extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit |
 | nonlinear | `INPUT_GATE_BLOCKED` | selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked | complete support-local q2 export and solve for iota_D^(2) or retain its obstruction |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered | complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion |
 
@@ -63,6 +63,7 @@ this background as a non-Einstein Weyl--matter branch.
 | compact_einstein_maxwell_obstruction_bilinear_g1 | `H_product` | `einstein_maxwell_product_compact_fixture_span_obstruction_bilinear` | CLASSICAL_BV | `CERTIFIED` | `G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN` |
 | compact_einstein_maxwell_domain_taub_descent | `H_product` | `einstein_maxwell_product_compact_fixed_u1_harmonic_taub` | CLASSICAL_BV | `CERTIFIED` | `G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT` |
 | compact_einstein_maxwell_harmonic_adjoint_block_preflight | `H_product` | `einstein_maxwell_product_compact_harmonic_block_preflight` | CLASSICAL_BV | `CERTIFIED` | `G1_AXIAL_N0_TOWER_AND_ADJOINT_PREFLIGHT` |
+| compact_einstein_maxwell_axial_master_complex | `H_product` | `einstein_maxwell_product_compact_axial_master_complex` | CLASSICAL_BV | `CERTIFIED` | `G1_AXIAL_ALL_MOMENTA_MASTER_COMPLEX` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `INPUT_GATE_BLOCKED` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
@@ -111,6 +112,7 @@ this background as a non-Einstein Weyl--matter branch.
 | einstein_boundary | `compact_einstein_maxwell_obstruction_bilinear_g1` | `H_product` | `einstein_maxwell_product_compact_fixture_span_obstruction_bilinear` | `CERTIFIED` | `G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN` |
 | einstein_boundary | `compact_einstein_maxwell_domain_taub_descent` | `H_product` | `einstein_maxwell_product_compact_fixed_u1_harmonic_taub` | `CERTIFIED` | `G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT` |
 | einstein_boundary | `compact_einstein_maxwell_harmonic_adjoint_block_preflight` | `H_product` | `einstein_maxwell_product_compact_harmonic_block_preflight` | `CERTIFIED` | `G1_AXIAL_N0_TOWER_AND_ADJOINT_PREFLIGHT` |
+| einstein_boundary | `compact_einstein_maxwell_axial_master_complex` | `H_product` | `einstein_maxwell_product_compact_axial_master_complex` | `CERTIFIED` | `G1_AXIAL_ALL_MOMENTA_MASTER_COMPLEX` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | quantum | `vacuum_cylinder` | `D_compact` | `compact_quantum` | `BLOCKED` | `NO_VERDICT` |
 
@@ -128,7 +130,7 @@ The immediate shared calculation is
 
 - `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `46208d7c1c845da2b1959bf0799abcc92d856499`, SHA-256 `89da9c898736fdcd6d21d68b6e53c523f036911702547baa6341a5bee6bd45c5`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `7e87281c416f4c4f98edfe61ae05829f4b48593a`, SHA-256 `ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685`
-- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `98d827633edaa21ee90028312c8cfdf6053c3963`, SHA-256 `dff8227b07924b554c2227a61a64ceba78ef05515f89dd930ea69310de780a16`
+- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `959a400112b8b25834bd3f13a306651cb930c6a5`, SHA-256 `84cd5e5ac7d0089b490aa036d2fc7378499307e3dc962f5472e8dcb5a4934d19`
 - `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `a7cdaad7d34fad49ee284f6b7dbb3d67408a31d6`, SHA-256 `9f450477532a24edbd02282f29593876a13ea886808a6c9ba06b41004653f8da`
 
 ## Claim boundary
