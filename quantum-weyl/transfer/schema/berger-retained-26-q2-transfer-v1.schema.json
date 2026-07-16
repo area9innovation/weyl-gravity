@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-26-q2-transfer-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "input_certificates", "payload", "transfer", "claim_flags", "next_gates", "consumer_provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-26-q2-transfer-v1"},
+    "result_id": {"const": "BERGER_RETAINED_26_Q2_TRANSFER"},
+    "result_state": {"const": "RETAINED_26_ROW_Q2_TRANSFERRED_IDENTITIES_VERIFIED_FURTHER_RESIDUAL_TRANSFER_PENDING"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_TRANSFER"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "input_certificates": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "payload": {"type": "object", "additionalProperties": false, "required": ["path", "file_sha256", "canonical_sha256"], "properties": {"path": {"const": "quantum-weyl/transfer/certificates/BERGER_RETAINED_26_Q2_PAYLOAD.json"}, "file_sha256": {"$ref": "#/$defs/hash"}, "canonical_sha256": {"$ref": "#/$defs/hash"}}},
+    "transfer": {"type": "object", "required": ["input", "operation", "work_ledger", "exact_checks", "defects"], "additionalProperties": false, "properties": {"input": {"type": "object"}, "operation": {"type": "object"}, "work_ledger": {"type": "object"}, "exact_checks": {"type": "object", "minProperties": 5, "additionalProperties": {"const": true}}, "defects": {"type": "object"}}},
+    "claim_flags": {"const": {"CLASSICAL_RETAINED_26_Q2_TRANSFERRED": true, "RETAINED_Q1_Q2_IDENTITIES_VERIFIED": true, "MINIMAL_RESIDUAL_ELL2_COMPUTED": false, "BARE_D_CARTAN_RESTORED": false, "RESIDUAL_BFV_EXTENSION_COMPUTED": false, "LORENTZIAN_CAUSAL_EXTENSION_COMPUTED": false, "QUANTUM_CLAIM": false}},
+    "next_gates": {"const": ["CHARACTERISTIC_SYMBOL_COHOMOLOGY_MODULE", "RESIDUAL_BFV_OR_LORENTZIAN_CAUSAL_EXTENSION"]},
+    "consumer_provenance": {"type": "object", "required": ["source_manifest", "source_manifest_sha256"], "additionalProperties": false, "properties": {"source_manifest": {"type": "object", "minProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}}, "source_manifest_sha256": {"$ref": "#/$defs/hash"}}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

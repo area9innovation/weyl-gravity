@@ -54,6 +54,9 @@ BERGER_UNARY_D_CARTAN_OBSTRUCTION_PATH = (
     / "certificates"
     / "BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION_IMPORT.json"
 )
+BERGER_RETAINED_26_Q2_TRANSFER_PATH = (
+    TRANSFER_ROOT / "certificates" / "BERGER_RETAINED_26_Q2_TRANSFER.json"
+)
 BERGER_REDUCED_CARTAN_PATH = (
     TRANSFER_ROOT / "certificates" / "BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json"
 )
@@ -141,6 +144,9 @@ def _source_manifest() -> dict[str, str]:
         "berger_unary_d_cartan_obstruction_import.py",
         "berger_unary_d_cartan_obstruction_import_certificate.py",
         "../reports/berger-unary-d-cartan-obstruction-import.md",
+        "berger_retained_26_q2_transfer.py",
+        "berger_retained_26_q2_transfer_certificate.py",
+        "../reports/berger-retained-26-q2-transfer.md",
         "berger_reduced_mode_cartan.py",
         "berger_reduced_mode_cartan_certificate.py",
         "berger_nonzero_weight_no_go_import.py",
@@ -181,6 +187,8 @@ def _source_manifest() -> dict[str, str]:
         "schema/berger-support-local-q2-import-v1.schema.json",
         "schema/berger-support-local-q2-scientific-replay-v1.schema.json",
         "schema/berger-unary-d-cartan-obstruction-import-v1.schema.json",
+        "schema/berger-retained-26-q2-transfer-v1.schema.json",
+        "schema/berger-retained-26-q2-payload-v1.schema.json",
         "schema/berger-first-arity-two-cartan-verdict-v1.schema.json",
         "schema/berger-nonzero-weight-closure-no-go-import-v1.schema.json",
         "schema/berger-all-weight-arity-two-cartan-import-v1.schema.json",
@@ -212,6 +220,7 @@ def _source_manifest() -> dict[str, str]:
         "tests/test_berger_support_local_q2_import.py",
         "tests/test_berger_support_local_q2_scientific_replay.py",
         "tests/test_berger_unary_d_cartan_obstruction_import.py",
+        "tests/test_berger_retained_26_q2_transfer.py",
         "tests/test_berger_reduced_mode_cartan.py",
         "tests/test_berger_nonzero_weight_no_go_import.py",
         "tests/test_berger_all_weight_cartan_import.py",
@@ -266,6 +275,9 @@ def build_certificate() -> dict[str, Any]:
     )
     berger_unary_d_cartan_obstruction = json.loads(
         BERGER_UNARY_D_CARTAN_OBSTRUCTION_PATH.read_text(encoding="utf-8")
+    )
+    berger_retained_26_q2_transfer = json.loads(
+        BERGER_RETAINED_26_Q2_TRANSFER_PATH.read_text(encoding="utf-8")
     )
     berger_reduced_cartan = json.loads(
         BERGER_REDUCED_CARTAN_PATH.read_text(encoding="utf-8")
@@ -553,6 +565,34 @@ def build_certificate() -> dict[str, Any]:
     ):
         raise ValueError("Berger unary D-Cartan obstruction import drifted")
     if (
+        berger_retained_26_q2_transfer.get("schema")
+        != "quantum-weyl-berger-retained-26-q2-transfer-v1"
+        or berger_retained_26_q2_transfer.get("result_state")
+        != "RETAINED_26_ROW_Q2_TRANSFERRED_IDENTITIES_VERIFIED_FURTHER_RESIDUAL_TRANSFER_PENDING"
+        or berger_retained_26_q2_transfer.get("transfer", {}).get(
+            "operation", {}
+        ).get("nonzero_coefficient_count")
+        != 54236
+        or not all(
+            berger_retained_26_q2_transfer.get("transfer", {})
+            .get("exact_checks", {})
+            .values()
+        )
+        or berger_retained_26_q2_transfer.get("claim_flags", {}).get(
+            "CLASSICAL_RETAINED_26_Q2_TRANSFERRED"
+        )
+        is not True
+        or berger_retained_26_q2_transfer.get("claim_flags", {}).get(
+            "MINIMAL_RESIDUAL_ELL2_COMPUTED"
+        )
+        is not False
+        or berger_retained_26_q2_transfer.get("claim_flags", {}).get(
+            "QUANTUM_CLAIM"
+        )
+        is not False
+    ):
+        raise ValueError("Berger retained q2_26 transfer drifted")
+    if (
         berger_nonzero_weight_no_go.get("schema")
         != "quantum-weyl-berger-nonzero-weight-closure-no-go-import-v1"
         or berger_nonzero_weight_no_go.get("result_state")
@@ -689,7 +729,7 @@ def build_certificate() -> dict[str, Any]:
     source_manifest = _source_manifest()
     return {
         "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-        "result_state": "COMPLETE_54_ROW_CLASSICAL_Q2_REPLAYED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_AND_TRANSFER_PENDING",
+        "result_state": "RETAINED_26_ROW_CLASSICAL_Q2_TRANSFERRED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_PENDING",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "classical_snapshot_commit": snapshot["classical_commit"],
         "classical_freeze_gate": snapshot["gate_a_status"],
@@ -721,6 +761,7 @@ def build_certificate() -> dict[str, Any]:
                 "independent exact Berger PBW replay engine for q1/q2 nilpotency, D/q2 derivation, and BV cyclicity with localized mutation-sensitive defect ledgers",
                 "independently imported the complete 54-row support-local Berger q2 and replayed q1/q2 nilpotency, D/q2 derivation, and odd-Darboux BV cyclicity exactly over Q(sqrt(10))",
                 "independently replayed the exact null-symbol cohomology witness obstructing every finite-order support-local unary D-Cartan homotopy on the bare 26/54-row Berger complex",
+                "exactly transferred the complete 54-row Berger q2 through the cyclic SDR to a 54,236-coefficient retained q2_26 with retained q1/q2 and odd-Darboux cyclic identities",
                 "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
                 "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
                 "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
@@ -739,7 +780,8 @@ def build_certificate() -> dict[str, Any]:
                 "nonaligned Einstein/extra-Weyl branch mixing outside the Brinkmann pp-wave sector",
                 "setting-matched projection of the physical conformal-gravity cubic tensor onto the Einstein helicity sector or matching its normalized coefficient to the parity-pair reference",
                 "absence of higher-bracket sector re-entry",
-                "the transferred full four-dimensional Berger ell2 and arity-two nonlinear D-Cartan contraction outside the all-weight homogeneous six-row-per-weight block",
+                "the further minimal residual/cohomology ell2 beyond the retained 26-row q2_26 operation",
+                "an arity-two nonlinear D-Cartan contraction outside the all-weight homogeneous six-row-per-weight block",
                 "a residual/BFV or causal extension on which the obstructed bare unary D-Cartan equation is replaced by a well-defined extended problem",
                 "the complete 54-row arity-two Cartan contraction on any admissible extension",
                 "an interacting particle or deformation-theory theorem",
@@ -752,8 +794,8 @@ def build_certificate() -> dict[str, Any]:
         "question_ledger": [
             {
                 "question_id": "transferred_cubic_bracket",
-                "status": "COMPLETE_54_ROW_SUPPORT_LOCAL_CLASSICAL_Q2_IMPORTED_AND_REPLAYED_TWO_DIRECT_LOCAL_SEEDS_AND_RESTRICTED_PPWAVE_BRANCH_BLOCK_COMPUTED_FULL_TRANSFER_PENDING",
-                "next_certificate": "HT1_COMPLETE_54_ROW_TRANSFERRED_ELL2",
+                "status": "COMPLETE_54_ROW_SUPPORT_LOCAL_CLASSICAL_Q2_IMPORTED_REPLAYED_AND_TRANSFERRED_TO_RETAINED_26_ROW_Q2_26_TWO_DIRECT_LOCAL_SEEDS_AND_RESTRICTED_PPWAVE_BRANCH_BLOCK_COMPUTED_MINIMAL_RESIDUAL_TRANSFER_PENDING",
+                "next_certificate": "HT1_MINIMAL_RESIDUAL_COHOMOLOGY_ELL2",
             },
             {
                 "question_id": "einstein_extra_weyl_branch_mixing",
@@ -798,7 +840,7 @@ def build_certificate() -> dict[str, Any]:
         ],
         "programme_stages": [
             {"stage": "HT0", "deliverable": "exact transfer engine and input contract", "status": "READY"},
-            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_LOCAL_D_AND_SUPPORT_LOCAL_Q2_IMPORTED_ALL_Q2_IDENTITIES_REPLAYED_FULL_TRANSFERRED_ELL2_PENDING"},
+            {"stage": "HT1", "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2", "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_LOCAL_D_AND_SUPPORT_LOCAL_Q2_IMPORTED_REPLAYED_AND_TRANSFERRED_TO_RETAINED_Q2_26_MINIMAL_RESIDUAL_ELL2_PENDING"},
             {"stage": "HT2", "deliverable": "compute ell3 and dynamical/topological mixing table", "status": "ARITY_THREE_CARTAN_RECURRENCE_ENGINE_READY_PHYSICAL_Q3_INPUT_BLOCKED"},
             {"stage": "HT3", "deliverable": "higher-arity and particle-filtration obstruction ledger", "status": "NOT_COMPUTED"},
             {"stage": "HT4", "deliverable": "cyclic minimal action and formal moduli interpretation", "status": "NOT_COMPUTED"},
@@ -888,6 +930,10 @@ def build_certificate() -> dict[str, Any]:
             "berger_unary_D_Cartan_obstruction_import_certificate": "quantum-weyl/transfer/certificates/BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION_IMPORT.json",
             "berger_unary_D_Cartan_obstruction_import_sha256": _sha256(
                 BERGER_UNARY_D_CARTAN_OBSTRUCTION_PATH
+            ),
+            "berger_retained_26_q2_transfer_certificate": "quantum-weyl/transfer/certificates/BERGER_RETAINED_26_Q2_TRANSFER.json",
+            "berger_retained_26_q2_transfer_sha256": _sha256(
+                BERGER_RETAINED_26_Q2_TRANSFER_PATH
             ),
             "berger_first_arity_two_cartan_verdict_certificate": "quantum-weyl/transfer/certificates/BERGER_FIRST_ARITY_TWO_CARTAN_VERDICT.json",
             "berger_first_arity_two_cartan_verdict_sha256": _sha256(

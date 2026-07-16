@@ -58,7 +58,7 @@
     {
       "deliverable": "import q1/q2/q3 and pi_cl/iota_cl/s_cl; compute ell2",
       "stage": "HT1",
-      "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_LOCAL_D_AND_SUPPORT_LOCAL_Q2_IMPORTED_ALL_Q2_IDENTITIES_REPLAYED_FULL_TRANSFERRED_ELL2_PENDING"
+      "status": "COMPLETE_54_ROW_UNARY_CONTRACTION_LOCAL_D_AND_SUPPORT_LOCAL_Q2_IMPORTED_REPLAYED_AND_TRANSFERRED_TO_RETAINED_Q2_26_MINIMAL_RESIDUAL_ELL2_PENDING"
     },
     {
       "deliverable": "compute ell3 and dynamical/topological mixing table",
@@ -109,6 +109,8 @@
     "berger_nonzero_weight_closure_no_go_import_sha256": "4b05c12a383f270bb85b5d6a5ae11f09c6cf63555d13fbc85139b020aadeff7f",
     "berger_pbw_operator_backend_certificate": "quantum-weyl/transfer/certificates/BERGER_PBW_OPERATOR_BACKEND.json",
     "berger_pbw_operator_backend_sha256": "7a63bd4b5b2add53b98e177d1ddbd2b269c91c956f828589d1aef35118b825fb",
+    "berger_retained_26_q2_transfer_certificate": "quantum-weyl/transfer/certificates/BERGER_RETAINED_26_Q2_TRANSFER.json",
+    "berger_retained_26_q2_transfer_sha256": "0eb1127b8c064934a8cb1db792da009b4dd12aaeebb63298a6b57fd4be10c6d9",
     "berger_retained_minimal_q1_import_certificate": "quantum-weyl/transfer/certificates/BERGER_RETAINED_MINIMAL_Q1_IMPORT.json",
     "berger_retained_minimal_q1_import_sha256": "f07124e84ac76347e7a24dbd2cb3977693eb299a5bf1607fd626b02bee7df6b5",
     "berger_support_local_q2_import_certificate": "quantum-weyl/transfer/certificates/BERGER_SUPPORT_LOCAL_Q2_IMPORT.json",
@@ -118,7 +120,7 @@
     "berger_total_D_disposition_certificate": "quantum-weyl/transfer/certificates/BERGER_TOTAL_D_DISPOSITION.json",
     "berger_total_D_disposition_sha256": "27c91dee3b0293c66b73a0ba2e21c3e7579de3c70d080685043729da3d6b62e4",
     "berger_unary_D_Cartan_obstruction_import_certificate": "quantum-weyl/transfer/certificates/BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION_IMPORT.json",
-    "berger_unary_D_Cartan_obstruction_import_sha256": "dbd202aeb115f9776c4232345a1bd52eae43a1afee7d5c3f1e84e088d4cc610b",
+    "berger_unary_D_Cartan_obstruction_import_sha256": "d2661c2350ff353d14c7d8a043a8180d5ad6ad21d139408668bc0ae38745697d",
     "classical_snapshot": "quantum-weyl/classical_import/snapshots/bootstrap-v1.json",
     "classical_snapshot_sha256": "459f46e3a8d233754ceec2593c858b1996ead38ec52622678bf5a7c7ec3a61e9",
     "einstein_projection_MHV_fixture_certificate": "quantum-weyl/transfer/certificates/EINSTEIN_PROJECTION_MHV_FIXTURE.json",
@@ -145,6 +147,7 @@
       "../reports/berger-54-row-local-d-import.md": "67f1673f03b26653f3ed603807b403ac99a9f6c04309b22004b38b2b7d950943",
       "../reports/berger-54-row-q2-arrival-readiness.md": "56a68e81635f51405efd39fc1a1781663f777f2e25b636a677ec4b2f2c3d2aad",
       "../reports/berger-54-row-q2-replay-engine.md": "e0d552fb0f05343847f6b8af8137cb40df90fe435816e2405569ce00ebfb7dc5",
+      "../reports/berger-retained-26-q2-transfer.md": "0eae8e9ca420c83230cb50304b19e849e619fa0285e7d25ff3960ffdebe4d93b",
       "../reports/berger-support-local-q2-import.md": "ef4cc70143f37069b91d0b29ec1331f18105b25f3d7718c9d68d27f35a3c8ec8",
       "../reports/berger-support-local-q2-scientific-replay.md": "12864d1ac0c6c6f538a5ffdcaa09b2033f7148a4b15773fa847da3c1ef67b884",
       "../reports/berger-unary-d-cartan-obstruction-import.md": "ff3f8f3dc47d78d22a350cf36a0aa3f72f232c3ae27bec013033551cfb107ba5",
@@ -177,6 +180,8 @@
       "berger_qsqrt10_replay.py": "a9da38f0ced97d921b3c93f41f9da7969b76dd7774877e41303b26ee7ca26036",
       "berger_reduced_mode_cartan.py": "699c9d934e439edbb497dcbf3e011f2e2c5a5268ead3a66afd92a45420d73210",
       "berger_reduced_mode_cartan_certificate.py": "f3500fd5c4526e4c13c7a0cd0f20534e6fcb736b471a2aa7c00691ff245809a3",
+      "berger_retained_26_q2_transfer.py": "1f5c00d1264ca99a70f9e7b49e08517ae2616814d874fcb3f892d4ca2c7af4e5",
+      "berger_retained_26_q2_transfer_certificate.py": "f1cf6d3b85351e2c42857a3da6de19e56949a26a3fb75b3ce44252a477a4b9b7",
       "berger_retained_q1_import.py": "4f08026476c9bf102b6dcf58a060b3356109e825484d6966e89b9265ebb1aea7",
       "berger_retained_q1_import_certificate.py": "a5ec24b430f90fcc21636d4efae51d2b094918c42c23d22530c016987755808d",
       "berger_support_local_q2_import.py": "defcc9a33d48a15aeccfe188e75cf11c448c3f6b706738f480e89b9dd96f2f74",
@@ -198,7 +203,7 @@
       "nd2_arity_two_certificate.py": "4ce680bbb5d1aeea2eb765a33c1ddfaf88bb68ef83edbdea06dce6f54365e238",
       "nd2_physical_run.py": "9fe6d7988932b3543c8347ef3f83c7b80ab93d18ca0d6306c45b5875d3152d50",
       "nd2_physical_run_certificate.py": "138418bbdfd75139887df4e81d74a1cf561c548c5e3a5ef8ddb4132c83903a6d",
-      "nonlinear_transfer_certificate.py": "49765f5a6a15d76ab58b1dfc3afa6e8ebac9fc2516473383db97371ec1e61682",
+      "nonlinear_transfer_certificate.py": "8e25829445c4b7e7218670691fa3b48760cc4f584f11c48bb798c4f45b4d96fc",
       "operator_backend_registry.py": "8c5e74f36656488e7060b47426b501c5582f13969522a53a090bf822288c8845",
       "ppwave_branch_transfer_import.py": "162c2b11273104e633f1a215ef944b75ce49ce32ad30b4eef4ec8116787ed6f8",
       "ppwave_branch_transfer_import_certificate.py": "aa89fd4028cb9ae711b4df9fcc71cbe6467c976d6857cb54317cb159f8989080",
@@ -218,6 +223,8 @@
       "schema/berger-minimal-34-contraction-import-v1.schema.json": "e91a759befc6d201722664ea56fc13fb29b187a2acf715168ac11ff873d90d06",
       "schema/berger-nonzero-weight-closure-no-go-import-v1.schema.json": "5088da44f29663cab11602d325cafa953d6d9908da15a70344228c6e098f5a51",
       "schema/berger-pbw-operator-backend-v1.schema.json": "c76aa161f68d5ffb060a03304b0dadf8424926b8795f2f71709d698b7ec8937f",
+      "schema/berger-retained-26-q2-payload-v1.schema.json": "e58465b744e31a260dc6e5b9da3a439d58aee46ec0e9b38b26dc26bb76c4f32a",
+      "schema/berger-retained-26-q2-transfer-v1.schema.json": "d0ab4c90d4d1aac0b478a53f35187356372ebe415c1f4f534d4873366e985394",
       "schema/berger-retained-minimal-q1-import-v1.schema.json": "73387a13b44f7cf603b32ba2bb32420d38ed4c0e1f81651e93166e53d0904916",
       "schema/berger-support-local-q2-import-v1.schema.json": "bc344cd235ac62706c099ba97e43b0e4a58ccb79169484950ed98d20cb390be5",
       "schema/berger-support-local-q2-scientific-replay-v1.schema.json": "b2090cd6b6a62a05dde204b760dc29d8505896c742aa467ea6afaf4c066155c8",
@@ -247,6 +254,7 @@
       "tests/test_berger_nonzero_weight_no_go_import.py": "1f79ce9bc5034648469ccde1413a2d825edee8ca5515164b08411d557436e4c2",
       "tests/test_berger_pbw_backend.py": "8b434f65e12a4512a094b7864470a41f4cc5e41052226dd6045723cf9d552145",
       "tests/test_berger_reduced_mode_cartan.py": "f5bdf7480a6072bfb6832a8bacffc70d140ba524c987f0021f850026885b0ca8",
+      "tests/test_berger_retained_26_q2_transfer.py": "f90db88ce740073c2ffc23db6817be0a5ec02e9d802e23047d18f43a2fc6e914",
       "tests/test_berger_retained_q1_import.py": "9f87bcd9ee45346e27ca3c95ce035ec198617cbad005b6a23b0063bffc641988",
       "tests/test_berger_support_local_q2_import.py": "67ad1cb8ff7d65cb2f47011740689ca9352e42ab90f1339f13559f4bae72f548",
       "tests/test_berger_support_local_q2_scientific_replay.py": "12d8cda31ab6bdd7eb184dd6ef5a7903a5a472ae8047f709e8d4a8d827179471",
@@ -261,7 +269,7 @@
       "tests/test_local_expression_ast.py": "52b883e235387a41b96f2443d23117b078d68970ee59915f86a190b0d7416c9b",
       "tests/test_nd2_arity_two_certificate.py": "1ca5a2eaa28a6f53043096caff26cf18f7651817d73f49b0237290c63daffb98",
       "tests/test_nd2_physical_run.py": "982ebe10d64434363624f131bc8188547f51da636a6605a7819ab2f33e7b1ab0",
-      "tests/test_nonlinear_transfer_certificate.py": "5e78676dd3c6b13419491881a2e24e9a432b7fa67a30069a793802c0e084ec6d",
+      "tests/test_nonlinear_transfer_certificate.py": "153267aaa3f32fb3b09a52a416a02dd8cb4d3d07625b5f2e5264817fe4fc0cef",
       "tests/test_ppwave_branch_transfer_import.py": "079c4660496b4de8069b4cbbf4540f01d6ce1727aa4542fe805d5523295a8c88",
       "tests/test_residual_cubic_block.py": "d279660e15cd7e0c12b7da2c514a6ba566db0505dd03c9c44e3a696454d618cb",
       "tests/test_support_local_q2_consumer.py": "f859bf3c440aacdddb19033c5ab2e0240c1b7c991e0dfcff2ae3d6fc0551e411",
@@ -269,15 +277,15 @@
       "total_d_disposition.py": "e81da4b928c7d69c7581bce68a7103972123e7e114b06d31bb38c8f648aad6f2",
       "total_d_disposition_certificate.py": "4aa33b5b6343bf7c107db120b1e610ca6a436fc60b656e45080b405e4fa47eb7"
     },
-    "source_manifest_sha256": "a0b2c9214282b7858a938f71f0dd2bcf8c2f759eb7abf2df365c3423327bfb79",
+    "source_manifest_sha256": "174987a7aeed4ac18e59058ad449ed620babe886628f9a338cbf67f38e57f3b2",
     "support_local_q2_contract": "quantum-weyl/classical_import/certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json",
     "support_local_q2_contract_sha256": "c9fcc9a537856b0418897741782ad07edbb88a2bea71ff559002d7e67f57fd6b"
   },
   "question_ledger": [
     {
-      "next_certificate": "HT1_COMPLETE_54_ROW_TRANSFERRED_ELL2",
+      "next_certificate": "HT1_MINIMAL_RESIDUAL_COHOMOLOGY_ELL2",
       "question_id": "transferred_cubic_bracket",
-      "status": "COMPLETE_54_ROW_SUPPORT_LOCAL_CLASSICAL_Q2_IMPORTED_AND_REPLAYED_TWO_DIRECT_LOCAL_SEEDS_AND_RESTRICTED_PPWAVE_BRANCH_BLOCK_COMPUTED_FULL_TRANSFER_PENDING"
+      "status": "COMPLETE_54_ROW_SUPPORT_LOCAL_CLASSICAL_Q2_IMPORTED_REPLAYED_AND_TRANSFERRED_TO_RETAINED_26_ROW_Q2_26_TWO_DIRECT_LOCAL_SEEDS_AND_RESTRICTED_PPWAVE_BRANCH_BLOCK_COMPUTED_MINIMAL_RESIDUAL_TRANSFER_PENDING"
     },
     {
       "next_certificate": "HT2_NONALIGNED_BRANCH_MIXING",
@@ -333,7 +341,7 @@
     "normalized_weyl_square_representatives"
   ],
   "result_id": "NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP",
-  "result_state": "COMPLETE_54_ROW_CLASSICAL_Q2_REPLAYED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_AND_TRANSFER_PENDING",
+  "result_state": "RETAINED_26_ROW_CLASSICAL_Q2_TRANSFERRED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_PENDING",
   "scope": {
     "established": [
       "exact strong-deformation-retract verification",
@@ -361,6 +369,7 @@
       "independent exact Berger PBW replay engine for q1/q2 nilpotency, D/q2 derivation, and BV cyclicity with localized mutation-sensitive defect ledgers",
       "independently imported the complete 54-row support-local Berger q2 and replayed q1/q2 nilpotency, D/q2 derivation, and odd-Darboux BV cyclicity exactly over Q(sqrt(10))",
       "independently replayed the exact null-symbol cohomology witness obstructing every finite-order support-local unary D-Cartan homotopy on the bare 26/54-row Berger complex",
+      "exactly transferred the complete 54-row Berger q2 through the cyclic SDR to a 54,236-coefficient retained q2_26 with retained q1/q2 and odd-Darboux cyclic identities",
       "first action-derived Berger REDUCED-MODE arity-two Cartan verdict with the admissible exact primitive iota_D^(2)=0 on the centered six-row block",
       "exact Berger REDUCED-MODE no-go for every finite pairing-nondegenerate nonzero-D-weight q2-closed block, with normalized first-leakage witness",
       "exact all-integer-weight homogeneous Berger arity-two Cartan contraction with a generically nonzero source and explicit nonzero first-order graded-cyclic primitive",
@@ -379,7 +388,8 @@
       "nonaligned Einstein/extra-Weyl branch mixing outside the Brinkmann pp-wave sector",
       "setting-matched projection of the physical conformal-gravity cubic tensor onto the Einstein helicity sector or matching its normalized coefficient to the parity-pair reference",
       "absence of higher-bracket sector re-entry",
-      "the transferred full four-dimensional Berger ell2 and arity-two nonlinear D-Cartan contraction outside the all-weight homogeneous six-row-per-weight block",
+      "the further minimal residual/cohomology ell2 beyond the retained 26-row q2_26 operation",
+      "an arity-two nonlinear D-Cartan contraction outside the all-weight homogeneous six-row-per-weight block",
       "a residual/BFV or causal extension on which the obstructed bare unary D-Cartan equation is replaced by a well-defined extended problem",
       "the complete 54-row arity-two Cartan contraction on any admissible extension",
       "an interacting particle or deformation-theory theorem",

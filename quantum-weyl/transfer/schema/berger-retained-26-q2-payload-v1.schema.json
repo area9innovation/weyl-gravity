@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-26-q2-payload-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "setting_id", "classical_q2_commit", "shape", "coefficient_field", "operation_name", "factorial_convention", "row_ids", "degrees", "rows", "canonical_sha256"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-26-q2-payload-v1"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "classical_q2_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "shape": {"const": [26, 26, 26]},
+    "coefficient_field": {"const": "Q(sqrt(10))"},
+    "operation_name": {"const": "q2_26"},
+    "factorial_convention": {"type": "string", "minLength": 1},
+    "row_ids": {"type": "array", "minItems": 26, "maxItems": 26, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "degrees": {"const": [-1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2]},
+    "rows": {
+      "type": "array", "minItems": 26, "maxItems": 26,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["output", "terms"],
+        "properties": {
+          "output": {"type": "integer", "minimum": 0, "maximum": 25},
+          "terms": {"type": "array", "items": {"$ref": "#/$defs/term"}}
+        }
+      }
+    },
+    "canonical_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "fraction": {
+      "oneOf": [
+        {"type": "integer"},
+        {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "not": {"const": 0}}}}
+      ]
+    },
+    "coefficient": {"type": "object", "additionalProperties": false, "required": ["rational", "sqrt10"], "properties": {"rational": {"$ref": "#/$defs/fraction"}, "sqrt10": {"$ref": "#/$defs/fraction"}}},
+    "word": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}},
+    "term": {
+      "type": "array", "minItems": 5, "maxItems": 5, "prefixItems": [
+        {"type": "integer", "minimum": 0, "maximum": 25}, {"$ref": "#/$defs/word"},
+        {"type": "integer", "minimum": 0, "maximum": 25}, {"$ref": "#/$defs/word"},
+        {"$ref": "#/$defs/coefficient"}
+      ], "items": false
+    }
+  }
+}

@@ -23,7 +23,7 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         certificate = CERTIFICATE.build_certificate()
         self.assertEqual(
             certificate["result_state"],
-            "COMPLETE_54_ROW_CLASSICAL_Q2_REPLAYED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_AND_TRANSFER_PENDING",
+            "RETAINED_26_ROW_CLASSICAL_Q2_TRANSFERRED_BARE_UNARY_D_CARTAN_OBSTRUCTED_EXTENSION_PENDING",
         )
         self.assertEqual(
             certificate["dependency_tags"],
@@ -50,6 +50,10 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn(
             "RESTRICTED_PPWAVE_BRANCH_BLOCK",
+            certificate["question_ledger"][0]["status"],
+        )
+        self.assertIn(
+            "TRANSFERRED_TO_RETAINED_26_ROW_Q2_26",
             certificate["question_ledger"][0]["status"],
         )
         branch_question = next(
@@ -135,6 +139,10 @@ class NonlinearTransferCertificateTests(unittest.TestCase):
         )
         self.assertIn(
             "berger_unary_D_Cartan_obstruction_import_sha256",
+            certificate["provenance"],
+        )
+        self.assertIn(
+            "berger_retained_26_q2_transfer_sha256",
             certificate["provenance"],
         )
         self.assertIn(

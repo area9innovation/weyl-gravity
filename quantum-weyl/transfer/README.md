@@ -220,18 +220,34 @@ compute that transfer or promote a quantum claim. The bare unary equation
 the arity-two Cartan source may only be formed after a residual/BFV or causal
 extension supplies a valid replacement unary homotopy.
 
+The complete binary operation has nevertheless been transferred through the
+independent 54-to-26 SDR. The exact retained operation
+
+```text
+q2_26 = pi_26 q2_54(iota_26 tensor iota_26)
+```
+
+has 54,236 canonical `Q(sqrt(10))` PBW coefficients on all 26 output rows,
+through total jet order four. Its retained `q1/q2` and odd-Darboux cyclicity
+defects vanish coefficientwise. This is a retained-complex operation, not yet
+the minimal residual/cohomology `ell2`, and it does not bypass the bare unary
+Cartan obstruction.
+
 ```bash
 PYTHONPATH=quantum-weyl python3 -m transfer.berger_support_local_q2_replay_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_support_local_q2_scientific_replay.py -v
 PYTHONPATH=quantum-weyl python3 -m transfer.berger_unary_d_cartan_obstruction_import_certificate --check
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_unary_d_cartan_obstruction_import.py -v
+PYTHONPATH=quantum-weyl python3 -m transfer.berger_retained_26_q2_transfer_certificate --check
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_retained_26_q2_transfer.py -v
 ```
 
-The two commands above validate the checked receipt and run fast mutation
+The commands above validate checked receipts and run fast mutation
 fixtures. Recompute the entire 150,305-term exact replay explicitly with
 
 ```bash
 PYTHONPATH=quantum-weyl python3 -m transfer.berger_support_local_q2_replay_certificate --replay-check
+PYTHONPATH=quantum-weyl python3 -m transfer.berger_retained_26_q2_transfer_certificate --replay-check
 ```
 
 ```bash

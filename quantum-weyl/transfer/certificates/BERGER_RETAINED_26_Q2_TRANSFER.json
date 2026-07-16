@@ -1,0 +1,95 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC result transfers the complete classical 54-row Berger q2 through the exact 54-to-26 SDR and verifies the retained q1/q2 and odd-Darboux cyclic identities over Q(sqrt(10)). The output q2_26 is an operation on the retained complex, not yet a minimal residual/cohomology ell2. It does not bypass the bare unary D-Cartan obstruction, construct a BFV or causal extension, restore a QME, or make a quantum claim.",
+  "claim_flags": {
+    "BARE_D_CARTAN_RESTORED": false,
+    "CLASSICAL_RETAINED_26_Q2_TRANSFERRED": true,
+    "LORENTZIAN_CAUSAL_EXTENSION_COMPUTED": false,
+    "MINIMAL_RESIDUAL_ELL2_COMPUTED": false,
+    "QUANTUM_CLAIM": false,
+    "RESIDUAL_BFV_EXTENSION_COMPUTED": false,
+    "RETAINED_Q1_Q2_IDENTITIES_VERIFIED": true
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-retained-26-q2-transfer.md": "0eae8e9ca420c83230cb50304b19e849e619fa0285e7d25ff3960ffdebe4d93b",
+      "README.md": "0367e507dfa89c6a2954325713d2e83a95c827cab337c9abdc34c4819427f5f6",
+      "berger_retained_26_q2_transfer.py": "1f5c00d1264ca99a70f9e7b49e08517ae2616814d874fcb3f892d4ca2c7af4e5",
+      "berger_retained_26_q2_transfer_certificate.py": "f1cf6d3b85351e2c42857a3da6de19e56949a26a3fb75b3ce44252a477a4b9b7",
+      "schema/berger-retained-26-q2-payload-v1.schema.json": "e58465b744e31a260dc6e5b9da3a439d58aee46ec0e9b38b26dc26bb76c4f32a",
+      "schema/berger-retained-26-q2-transfer-v1.schema.json": "d0ab4c90d4d1aac0b478a53f35187356372ebe415c1f4f534d4873366e985394",
+      "tests/test_berger_retained_26_q2_transfer.py": "f90db88ce740073c2ffc23db6817be0a5ec02e9d802e23047d18f43a2fc6e914"
+    },
+    "source_manifest_sha256": "32f4044e82e3bc0a03657d6a255f893c38c9a40e71a12e707c4add6f70dd8b17"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "input_certificates": {
+    "quantum-weyl/transfer/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_IMPORT.json": "37e41a6bed5d9490bc0287b9da0331b1b0e150d224c4ecbdcd41571ddc0f21eb",
+    "quantum-weyl/transfer/certificates/BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY.json": "56779266feaa58bb1d522d289b56071eebb8b2f2ea8bf5944fa34fe8d52fc33f",
+    "quantum-weyl/transfer/certificates/BERGER_UNARY_D_CARTAN_MICROLOCAL_OBSTRUCTION_IMPORT.json": "d2661c2350ff353d14c7d8a043a8180d5ad6ad21d139408668bc0ae38745697d"
+  },
+  "lifecycle_layer": "CLASSICAL_BV_TRANSFER",
+  "next_gates": [
+    "CHARACTERISTIC_SYMBOL_COHOMOLOGY_MODULE",
+    "RESIDUAL_BFV_OR_LORENTZIAN_CAUSAL_EXTENSION"
+  ],
+  "payload": {
+    "canonical_sha256": "7cd9751b254a8d86f72a3bd77482979d3bfbaaae15f1b4e81979edbcf062bec7",
+    "file_sha256": "5f4ad52214db8d1460c8e0d9f33894800960069e06ac1a26c6da65b20a2be38e",
+    "path": "quantum-weyl/transfer/certificates/BERGER_RETAINED_26_Q2_PAYLOAD.json"
+  },
+  "result_id": "BERGER_RETAINED_26_Q2_TRANSFER",
+  "result_state": "RETAINED_26_ROW_Q2_TRANSFERRED_IDENTITIES_VERIFIED_FURTHER_RESIDUAL_TRANSFER_PENDING",
+  "schema": "quantum-weyl-berger-retained-26-q2-transfer-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "transfer": {
+    "defects": {
+      "BV_cyclicity": {
+        "defect_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "localized_sample": [],
+        "nonzero_coefficient_count": 0,
+        "sample_truncated": false,
+        "status": "PASS"
+      },
+      "q1_q2": {
+        "defect_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "localized_sample": [],
+        "nonzero_coefficient_count": 0,
+        "sample_truncated": false,
+        "status": "PASS"
+      }
+    },
+    "exact_checks": {
+      "cohomological_degree_one": true,
+      "exact_quadratic_field": true,
+      "no_floating_point": true,
+      "odd_Darboux_BV_cyclicity": true,
+      "q1_q2_arity_two_nilpotency": true
+    },
+    "input": {
+      "iota_cl_sha256": "1fe5497885baff3d525796736786138735f3f6b53dc7eb7e2cc7b9659d1d3f99",
+      "pi_cl_sha256": "9f65d2e92484079985862e04ece6da1c8b1d30f92e063034c4e69941081d91c5",
+      "q2_54_canonical_sha256": "172c73cfee1161b54298a7d3b521e377627a762b2ee3b56db05ff73c5f7e2b3f",
+      "q2_54_term_count": 150305
+    },
+    "operation": {
+      "formula": "q2_26=pi_26 q2_54(iota_26 tensor iota_26)",
+      "maximum_total_jet_order": 4,
+      "name": "q2_26",
+      "nonzero_coefficient_count": 54236,
+      "nonzero_output_rows": 26,
+      "not_yet": "minimal_residual_or_cohomology_ell2",
+      "payload_canonical_sha256": "7cd9751b254a8d86f72a3bd77482979d3bfbaaae15f1b4e81979edbcf062bec7",
+      "target": "retained_26_row_complex"
+    },
+    "work_ledger": {
+      "after_inner_canonical_coefficients": 78627,
+      "inner_raw_contributions": 78627,
+      "iota_PBW_coefficients": 310,
+      "outer_Leibniz_contributions": 54236,
+      "pi_PBW_coefficients": 301,
+      "q2_54_PBW_coefficients": 150305
+    }
+  }
+}
