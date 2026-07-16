@@ -263,7 +263,7 @@ The completed energy-mode cohomological Gram matrix is I_2.
 - `covariant_completion/certificates/curved_current_comparison.json` — SHA-256 `c98211f74ae81b5b2d8acaadbd61d20e3cfa58bf0b24ef4077e29677457812bc`; schema `pure-weyl-curved-current-comparison-status-v1`
 - `covariant_completion/certificates/curved_current_improvement.json` — SHA-256 `b0f50c1aa5faaa3ea19d81127223d9b6bc67862169ac746cf4ca293d0e4d5688`; schema `pure-weyl-curved-current-improvement-status-v1`
 - `covariant_completion/certificates/curved_curvature_mapping_cylinder_substitution.json` — SHA-256 `04512974e9b85fde17a184c9840b4b049a3c97c40c0cde57985079f9341968e7`; schema `pure-weyl-curvature-mapping-cylinder-substitution-v1`
-- `covariant_completion/certificates/curved_curvature_prolongation_status.json` — SHA-256 `1e9a08536e8b6938d14b7acc2a6c618e8a6459282e165c8139c0af34cf168ec7`; schema `pure-weyl-curvature-prolongation-status-v3`
+- `covariant_completion/certificates/curved_curvature_prolongation_status.json` — SHA-256 `bdb2de44f75696fe523c315611295b2dd117ce88485f6dfe4eb1cbf9e3e4af00`; schema `pure-weyl-curvature-prolongation-status-v3`
 - `covariant_completion/certificates/curved_deformation_retract_status.json` — SHA-256 `4e09bec901e2863d430e0a158a893c95442e3ef387b6235f10cad34b1fa8c15d`; schema `pure-weyl-curved-deformation-retract-status-v1`
 - `covariant_completion/certificates/curved_direct_causal_pairing_transport.json` — SHA-256 `5de7aa9abc9c5c276092cc9c8e61c1046c870fca3a528464410986535a14704b`; schema `pure-weyl-direct-causal-pairing-transport-v1`
 - `covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json` — SHA-256 `1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee`; schema `pure-weyl-full-prolonged-green-homotopy-assembly-v1`
@@ -289,8 +289,8 @@ The completed energy-mode cohomological Gram matrix is I_2.
 
 - `covariant_completion/certificates/final_claim_dependencies.json` — SHA-256 `7ebb80ebc44ef2f07151e26c15e29d15e456a75235b8a9dd8eba3917183b59da`
 - `covariant_completion/certificates/four_flag_closure_status.json` — SHA-256 `612844d456f7d9dc44028976fc7502389ff6259ca612454b38e577eb37b82b3b`
-- `covariant_completion/certificates/covariant_H4_transport.json` — SHA-256 `3a32cfd2e5e0865eaa9bb25728ac9ab475f72089e2332dd2cca6a6c58f45d520`
-- `covariant_completion/certificates/covariant_gram_transport.json` — SHA-256 `7dd49107452033979bbe2d7632eb289b33a05f163ef7f3c5a33e9eb57676bed5`
+- `covariant_completion/certificates/covariant_H4_transport.json` — SHA-256 `d06c2e92d539b94b44d680959fc3821cf357db50785fc373c18602734a4205f6`
+- `covariant_completion/certificates/covariant_gram_transport.json` — SHA-256 `9fa9ebf4fd8137c871801f37bb4d2e238b9740367b57291f81ecf900b3af82bd`
 
 ## Skeptical external-review checklist
 
