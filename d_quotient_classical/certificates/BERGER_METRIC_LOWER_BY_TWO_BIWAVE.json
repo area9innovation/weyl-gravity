@@ -1,0 +1,82 @@
+{
+  "canonical_factor_obstruction": {
+    "left_factorization_ruled_out": "A10=Box_2 V",
+    "nondivisible_degree_two_entries": 92,
+    "nonzero_degree_two_entries": 92,
+    "not_ruled_out": [
+      "mixed-bundle factorization",
+      "first-order-corrected factors not fixing Box_2",
+      "higher-rank local prolongation",
+      "causal Volterra or Levi construction"
+    ],
+    "reason": "absence of order-three defect forces V-Box_2 to be order zero, but every nonzero entry of sigma_2(V_2) is nondivisible by the scalar wave polynomial",
+    "right_factorization_ruled_out": "A10=V Box_2",
+    "scope": "same 10-component symmetric-tensor bundle with one factor fixed to the certified covariant rough wave Box_2 and the other having scalar wave-leading symbol"
+  },
+  "claim_boundary": "This exact coefficient theorem identifies the ten-row metric endpoint as a lower-by-two perturbation of the covariant tensor biwave and rules out only factorizations fixing a canonical rough-wave factor. It does not construct the causal resolvent of that perturbation, invert the coupled clock endpoint, or promote any Green or Cartan flag.",
+  "claim_status": "CERTIFIED_EXACT_NORMAL_FORM_CANONICAL_FACTOR_NO_GO_GREEN_OPEN",
+  "dependency_refs": {
+    "raw_witness_transport": {
+      "result_id": "BERGER_RAW_CLOCK_REATTACHED_WITNESS_TRANSPORT",
+      "sha256": "cb69a3eba6d3e81eec519adca51aa35f15d7250a2fc2be496230e55852c4950c"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "canonical_left_factor_obstructed": true,
+    "canonical_right_factor_obstructed": true,
+    "complete_PBW_metric_block_imported": true,
+    "lower_by_two_remainder_exact": true,
+    "null_remainder_rank_seven": true,
+    "order_four_coefficients_cancel": true,
+    "order_three_coefficients_cancel": true,
+    "rough_tensor_wave_constructed_covariantly": true
+  },
+  "flags": {
+    "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY": false,
+    "BERGER_CANONICAL_ROUGH_WAVE_FACTOR_NO_GO": true,
+    "BERGER_METRIC_LOWER_BY_TWO_BIWAVE": true,
+    "BERGER_RAW_ENDPOINT_EXTENSION_GREEN_OPERATORS": false
+  },
+  "next_gate": "BERGER_LOWER_BY_TWO_CAUSAL_RESOLVENT",
+  "normal_form": {
+    "Box_2": "covariant rough wave on the full symmetric-two-tensor bundle",
+    "artifacts": {
+      "lower_by_two_remainder": {
+        "format": "JSON_EXACT_SPARSE_OPERATOR",
+        "path": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/lower_by_two_remainder.json",
+        "sha256": "2286d276d86d432d6329cbe125bd3e1303183aaeb2bebb11a159cdedfdd2120a"
+      },
+      "rough_tensor_wave": {
+        "format": "JSON_EXACT_SPARSE_OPERATOR",
+        "path": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/rough_tensor_wave.json",
+        "sha256": "f8596762cf8c555bd715b9b80cf3580ce47d8f9a495418159b587ed15fe7a410"
+      }
+    },
+    "degree_two_symbol_ranks": {
+      "generic": 10,
+      "null": 7,
+      "spacelike": 10,
+      "timelike": 9
+    },
+    "identity": "A10=Box_2^2+V_2",
+    "maximum_order_A10": 4,
+    "maximum_order_V2": 2,
+    "order_four_defect": 0,
+    "order_three_defect": 0,
+    "remainder_entries_by_order": {
+      "0": 22,
+      "1": 40,
+      "2": 92,
+      "3": 0,
+      "4": 0
+    },
+    "remainder_nonzero_matrix_entries": 98
+  },
+  "result_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE",
+  "schema": "pure-weyl-berger-metric-lower-by-two-biwave-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

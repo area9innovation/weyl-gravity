@@ -104,6 +104,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION.json`](certificates/BERGER_RAW_ENDPOINT_CYCLIC_GREEN_REALIZATION.json)
 - Cyclic Green-realization report:
   [`reports/berger-raw-endpoint-cyclic-green-realization.md`](reports/berger-raw-endpoint-cyclic-green-realization.md)
+- Exact lower-by-two metric biwave normal form and scoped canonical-factor no-go:
+  [`certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE.json`](certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE.json)
+- Lower-by-two metric report:
+  [`reports/berger-metric-lower-by-two-biwave.md`](reports/berger-metric-lower-by-two-biwave.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:
