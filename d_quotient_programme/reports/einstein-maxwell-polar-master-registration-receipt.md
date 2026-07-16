@@ -21,3 +21,8 @@ The command passed in `0.25 s`, including exact regeneration, evidence hashes,
 and mutation guards. This is the affected Tier-2 programme chain. Tier 3
 criteria are not met because the exceptional, symplectic, and adjoint gates
 remain open.
+
+After registration, the nonlinear team published commit `9c9e78d1` on the
+shared master. The programme snapshot was regenerated against its updated
+content-addressed nonlinear input; the same check and mutation guards passed
+in `0.37 s`. This synchronization changes no Einstein-sector claim.
