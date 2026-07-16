@@ -27,6 +27,12 @@ theories. Extra fourth-order Weyl–Maxwell branches, nonlinear closure, extensi
 of observables off the Einstein subspace, the final residual quotient, and
 asymptotically flat scattering remain separate gates.
 
+The only mixed block sharing spherical label, parity, and Fourier momentum is
+the axial `ell=1,n=0` twist versus physical oscillator. Its direct current is
+proportional to `omega^2-4` for arbitrary `A+B*t`, so it vanishes exactly on
+the physical shell. The remaining cross blocks vanish by harmonic, Fourier,
+parity, or distinct-master-eigenvalue orthogonality.
+
 The graviton interpretation is correspondingly precise: the conventional
 radiative oscillator blocks are present and nondegenerately paired before the
 final global quotient. A vanishing one-particle residual cohomology after that
@@ -47,3 +53,7 @@ direct current took 12.34 s, the twist direct current took 9.62 s, and the
 26-test restriction suite took 1.50 s. The three independent verifiers passed.
 Tier 3 was not run because no shared core algebra, freeze, release, or theorem
 lifecycle promotion changed; the unchanged current engine is imported by hash.
+
+Supplemental mixed-block receipt (2026-07-16): the direct twist/physical
+current replay passed in 16.92 s. The 35-test affected restriction/preflight
+suite passed in 1.31 s, followed by all three independent verifiers.

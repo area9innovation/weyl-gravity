@@ -20,6 +20,7 @@ INPUTS = {
     "physical_ell1_restriction": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
     "homogeneous_restriction": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
     "twist_restriction": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
+    "mixed_orthogonality": ROOT / "bridge/certificates/einstein_maxwell_weyl_mixed_block_orthogonality.json",
     "preflight": ROOT / "bridge/certificates/einstein_maxwell_weyl_symplectic_preflight.json",
 }
 
@@ -46,10 +47,12 @@ def _theorem(records: dict[str, dict[str, Any]]) -> dict[str, Any]:
     ell1 = records["physical_ell1_restriction"]
     homogeneous = records["homogeneous_restriction"]
     twist = records["twist_restriction"]
+    mixed = records["mixed_orthogonality"]
     _require(radiative["classification"]["restricted_target_form_nondegenerate"] is True, "radiative block changed")
     _require(ell1["classification"]["physical_ell1_restriction_nondegenerate"] is True, "physical ell1 block changed")
     _require(homogeneous["classification"]["restricted_target_form_nondegenerate"] is True, "homogeneous block changed")
     _require(twist["classification"]["restricted_target_form_nondegenerate"] is True, "twist block changed")
+    _require(mixed["classification"]["all_standard_mixed_blocks_zero"] is True, "mixed-block theorem changed")
 
     lam = sp.symbols("lam", real=True)
     weight_text = radiative["theorem"]["all_ell_ge_2_classification"]["common_relative_weights"]
@@ -107,8 +110,9 @@ def _theorem(records: dict[str, dict[str, Any]]) -> dict[str, Any]:
             "different_periodic_momentum": "S1 Fourier orthogonality",
             "axial_vs_polar": "spatial parity invariance",
             "radiative_branches": "the master operator is Omega_EM-self-adjoint and has distinct eigenvalues",
-            "twist_vs_physical_axial_ell1": "time-translation invariance of the conserved bilinear form pairs neither the generalized zero-eigenspace nor its Jordan partner with the nonzero-frequency eigenspaces",
+            "twist_vs_physical_axial_ell1": "direct literal current at the only shared label (ell=1,n=0,same m) has exact factor omega^2-4 and vanishes on the physical shell for arbitrary twist A+B*t; all m follow by SO(3)",
             "homogeneous_vs_nonzero_ell": "SO(3) harmonic orthogonality",
+            "certificate": "EINSTEIN_MAXWELL_WEYL_MIXED_BLOCK_ORTHOGONALITY",
             "conclusion": "the target pullback is the displayed block-diagonal direct sum",
         },
         "inclusion_theorem": {
@@ -142,6 +146,7 @@ def build_certificate() -> dict[str, Any]:
         "physical_ell1_restriction": "EINSTEIN_MAXWELL_WEYL_ELL1_PHYSICAL_SYMPLECTIC_RESTRICTION",
         "homogeneous_restriction": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_GLOBAL_SYMPLECTIC_RESTRICTION",
         "twist_restriction": "EINSTEIN_MAXWELL_WEYL_AXIAL_TWIST_SYMPLECTIC_RESTRICTION",
+        "mixed_orthogonality": "EINSTEIN_MAXWELL_WEYL_MIXED_BLOCK_ORTHOGONALITY",
         "preflight": "EINSTEIN_MAXWELL_WEYL_SYMPLECTIC_PREFLIGHT",
     }
     for name, result_id in expected_ids.items():
@@ -172,6 +177,7 @@ def build_certificate() -> dict[str, Any]:
             "restricted_target_form_nondegenerate": True,
             "identity_inclusion_symplectic": False,
             "all_standard_tangent_directions_survive_before_final_residual_quotient": True,
+            "complete_standard_mixed_block_orthogonality_directly_certified": True,
             "extra_fourth_order_target_solutions_classified": False,
             "nonlinear_inclusion_or_closure_certified": False,
             "full_target_observable_embedding_certified": False,
@@ -188,6 +194,7 @@ def build_certificate() -> dict[str, Any]:
             "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.py",
             "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion",
             "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_global_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_twist_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell1_physical_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_radiative_symplectic_restriction",
+            "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_mixed_block_orthogonality.py",
         ],
     }
 

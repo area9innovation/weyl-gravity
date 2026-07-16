@@ -1,0 +1,87 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem certifies only mixed orthogonality inside the standard Einstein-Maxwell image. It does not compute extra fourth-order target representatives or their mixed pairings, final residual descent, causal scattering, or quantum theory.",
+  "classification": {
+    "all_standard_mixed_blocks_zero": true,
+    "complete_standard_block_diagonal_pullback_certified": true,
+    "direct_twist_physical_same_label_current_computed": true,
+    "extra_fourth_order_target_mixed_pairing_computed": false,
+    "final_residual_quotient_computed": false,
+    "lorentzian_causal_or_quantum_theorem": false,
+    "twist_Jordan_partner_included": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "mixed Weyl-Maxwell Lee-Wald pullback blocks among standard ell>=2 radiation, physical ell=1, homogeneous ell=0, and generalized axial ell=1 twist Einstein-Maxwell tangents on the fixed compact bundle, before final residual quotient",
+  "generality_level": "G4_COMPLETE_STANDARD_HARMONIC_MIXED_BLOCKS",
+  "interpretation": "The block diagonal structure used by the complete standard-harmonic inclusion is now explicit. The only collision not settled by harmonic, Fourier, parity, or distinct-branch orthogonality is the axial ell=1 twist versus physical n=0 oscillator. Its literal mixed current contains the exact physical equation factor omega^2-4, including both the constant twist and its time-linear Jordan partner, and therefore vanishes on shell.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "freeze and solve the canonical quotient of the full Weyl-Maxwell harmonic solution complex by the certified standard Einstein-Maxwell image",
+  "provenance": {
+    "direct_fixture_generator": {
+      "path": "bridge/einstein_sector/weyl_maxwell_twist_physical_mixed_lee_wald_fixture.py",
+      "sha256": "710eeec504936af2b66cf125a64bc0ed841db2b5bef5e2555beeaa4cd033e004"
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_mixed_block_orthogonality.py",
+    "generator_sha256": "45d831ff4aa407ca6293246e4a35869eda427ceb57f0772c8db8fbeebd2c4abe",
+    "inputs": {
+      "direct_fixture": {
+        "path": "bridge/certificates/weyl_maxwell_twist_physical_mixed_lee_wald_fixture.json",
+        "sha256": "6e1b612290199b3cf5863f124e481e3092b5895d9005b83731aa2e463eac1f23"
+      },
+      "homogeneous": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
+        "sha256": "c18f747bb27757f72249f998626fc0f5a02c6a612cb91aa02d49c190b8f49556"
+      },
+      "physical_ell1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
+        "sha256": "2596e01ea18030ffeced787629b3d5eba3f6a3d14c3e881e1a4dffd82405e674"
+      },
+      "radiative": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
+        "sha256": "25a798211bea52cbf9d8becae64672ac327be7a09adb50e30e45fa8287a608b7"
+      },
+      "twist": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
+        "sha256": "c230db105f4282820ec731418771e95f1fe489fa35ee8add2a7311691de5b7cd"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_MIXED_BLOCK_ORTHOGONALITY",
+  "result_state": "COMPLETE_STANDARD_BLOCK_MIXED_PULLBACK_ZERO_DIRECT_SHARED_LABEL_COLLISION",
+  "schema": "einstein-maxwell-weyl-mixed-block-orthogonality-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_mixed_block_orthogonality.schema.json",
+  "schema_sha256": "dfbf36c5e535004ccce0481e32c6c95bb791eba01f4a24359d5d9ba261976483",
+  "theorem": {
+    "conclusion": {
+      "basis_independence": "orthogonality is a property of the invariant subspaces; the direct collision calculation is zero for arbitrary A,B,p",
+      "complete_standard_block_diagonal_pullback": true,
+      "mixed_matrix_between_four_declared_block_families": "0"
+    },
+    "direct_shared_label_collision": {
+      "all_real_m": true,
+      "both_twist_Jordan_coordinates_included": true,
+      "exact_off_shell_factor": "omega^2-4",
+      "full_time_identity": true,
+      "integrated_coordinate_current_per_unit_x": "-2*I*pi*omega*p*(omega - 2)*(omega + 2)*(A*omega + B*omega*t - I*B)*exp(-I*omega*t)",
+      "on_shell_value": "0",
+      "physical_shell": "omega^2=4",
+      "sectors": "axial ell=1 twist versus physical axial ell=1 at n=0 and the same real m"
+    },
+    "remaining_mixed_blocks": {
+      "axial_vs_polar": "zero by spatial parity invariance",
+      "different_ell_or_m": "zero by SO(3) invariance and orthogonality in a real harmonic basis",
+      "different_periodic_momentum": "zero by S1 Fourier orthogonality; the twist exists only at n=0",
+      "distinct_radiative_master_branches": "zero because the master operator is Omega_EM-self-adjoint, the target relative operator is its polynomial, and the branch eigenvalues are distinct",
+      "homogeneous_vs_nonzero_ell": "zero by SO(3) harmonic orthogonality",
+      "only_shared_label_case_not_settled_by_these_rules": "the twist/physical axial ell=1,n=0 collision, closed by the direct fixture above"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.weyl_maxwell_twist_physical_mixed_lee_wald_fixture --verify bridge/certificates/weyl_maxwell_twist_physical_mixed_lee_wald_fixture.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_mixed_block_orthogonality --verify bridge/certificates/einstein_maxwell_weyl_mixed_block_orthogonality.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_mixed_block_orthogonality.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_mixed_block_orthogonality"
+  ]
+}

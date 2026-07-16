@@ -5,6 +5,7 @@
     "asymptotically_flat_boundary_conditions_constructed": false,
     "axial_twist_included": true,
     "complete_standard_harmonic_linear_restriction": true,
+    "complete_standard_mixed_block_orthogonality_directly_certified": true,
     "extra_fourth_order_target_solutions_classified": false,
     "final_residual_quotient_computed": false,
     "full_target_observable_embedding_certified": false,
@@ -28,7 +29,7 @@
   "next_gate": "classify the complementary fourth-order Weyl-Maxwell solution branches and then test whether Lorentzian boundary conditions select a dynamically closed Einstein scattering sector; separately compute descent through the final residual quotient",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.py",
-    "generator_sha256": "d349a6dffeae459c9b1363026b15260cb1c788749cf4e6893d386ac032cef0c9",
+    "generator_sha256": "363401ea7156d7dca8adb5af16dd918a85abb258398b6fe12fd2e7e45a03c947",
     "inputs": {
       "einstein_global": {
         "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
@@ -41,6 +42,10 @@
       "homogeneous_restriction": {
         "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
         "sha256": "c18f747bb27757f72249f998626fc0f5a02c6a612cb91aa02d49c190b8f49556"
+      },
+      "mixed_orthogonality": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_mixed_block_orthogonality.json",
+        "sha256": "3a90071b297e5358d027f4bd05e626b8aa8fa1859d9f43758fd1d44c9184b1c5"
       },
       "physical_ell1_restriction": {
         "path": "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
@@ -102,12 +107,13 @@
     ],
     "cross_block_orthogonality": {
       "axial_vs_polar": "spatial parity invariance",
+      "certificate": "EINSTEIN_MAXWELL_WEYL_MIXED_BLOCK_ORTHOGONALITY",
       "conclusion": "the target pullback is the displayed block-diagonal direct sum",
       "different_ell_or_m": "SO(3) invariance and real-harmonic orthogonality",
       "different_periodic_momentum": "S1 Fourier orthogonality",
       "homogeneous_vs_nonzero_ell": "SO(3) harmonic orthogonality",
       "radiative_branches": "the master operator is Omega_EM-self-adjoint and has distinct eigenvalues",
-      "twist_vs_physical_axial_ell1": "time-translation invariance of the conserved bilinear form pairs neither the generalized zero-eigenspace nor its Jordan partner with the nonzero-frequency eigenspaces"
+      "twist_vs_physical_axial_ell1": "direct literal current at the only shared label (ell=1,n=0,same m) has exact factor omega^2-4 and vanishes on the physical shell for arbitrary twist A+B*t; all m follow by SO(3)"
     },
     "graviton_interpretation": {
       "before_final_residual_quotient": "the usual helicity-like axial and polar radiative modes occur in the physical ell=1 and ell>=2 oscillator blocks and have nonzero target pullback pairings",
@@ -141,6 +147,7 @@
     "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion --verify bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
     "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.py",
     "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion",
-    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_global_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_twist_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell1_physical_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_radiative_symplectic_restriction"
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_global_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_twist_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell1_physical_symplectic_restriction bridge.einstein_sector.tests.test_einstein_maxwell_weyl_radiative_symplectic_restriction",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_mixed_block_orthogonality.py"
   ]
 }

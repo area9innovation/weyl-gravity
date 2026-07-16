@@ -26,6 +26,7 @@ class StandardHarmonicInclusionTests(unittest.TestCase):
         inclusion = self.payload["theorem"]["inclusion_theorem"]
         self.assertEqual(inclusion["kernel_of_pullback_on_standard_tangent"], "0")
         self.assertFalse(inclusion["identity_inclusion_is_symplectic"])
+        self.assertTrue(self.payload["classification"]["complete_standard_mixed_block_orthogonality_directly_certified"])
 
     def test_interpretive_boundary(self) -> None:
         classification = self.payload["classification"]

@@ -788,6 +788,26 @@ the complete certified standard Einstein--Maxwell tangent before the final
 residual quotient.  It does not make the identity inclusion symplectic or
 classify the complementary fourth-order Weyl--Maxwell solutions.
 
+The mixed-block audit is now direct at the sole shared-label collision.  For
+the axial twist against the physical axial `ell=1,n=0` oscillator,
+
+```text
+int_S2 omega_WM^t
+ = -2 i pi omega p (omega^2-4)
+   [omega(A+B t)-iB] exp(-i omega t),
+```
+
+so both the constant twist and its Jordan partner are orthogonal on the
+physical shell.  All other standard cross blocks vanish by harmonic, Fourier,
+parity, or distinct-master-eigenvalue orthogonality.
+
+`EINSTEIN_MAXWELL_WEYL_EXTRA_BRANCH_PREFLIGHT` freezes the next object as the
+canonical quotient `Q_extra=H^0(C_WM^full)/i_*H^0(C_EM^std)`.  It forbids
+defining the extra sector by an arbitrary complement and keeps solution
+classes, adjoint cokernels, presymplectic radicals, and gauge classes separate.
+The first solve is the complete generic axial target block at symbolic
+`lambda,k`, including its full Einstein/extra Lee--Wald matrix.
+
 ### Work package E-G4: open background classes and scattering
 
 Repeat the comparison on conformally Einstein and Bach-flat globally
