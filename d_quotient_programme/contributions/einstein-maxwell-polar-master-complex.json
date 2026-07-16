@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle P_N with N=2; every periodic S1 momentum and every polar harmonic ell>=2,m; complete polar Regge--Wheeler gauge; before residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "an arbitrary-lambda full-tensor calculation certifies every polar Einstein and Maxwell density equation column by column",
+    "the smooth polar Regge--Wheeler gauge is complete for ell>=2, including the background-flux-induced transformation delta U=-xi",
+    "SO(3) equivariance promotes the abstract axisymmetric harmonic identity to every m",
+    "the s=0 five-row minor lambda^3(lambda-2)/8 is nonzero for ell>=2, so no lightlike or zero-block solution is lost",
+    "the exact all-momentum polar dispersion equals the certified axial dispersion omega_squared=k_n_squared+lambda+/-sqrt(2 lambda)",
+    "the reduced polar master system has local symmetrizer diag(1,2 lambda)"
+  ],
+  "evidence": {
+    "commit": "087a6ef8a400bc331421c91a940f0a0b22d88bd1",
+    "path": "bridge/certificates/einstein_maxwell_polar_master_complex.json",
+    "sha256": "473d9c826b69220d2398cf4eb44b75e7c40bc23fd4d378a9eb2069a2d3f61ae5"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "classify exceptional polar ell=0,1, then match axial and polar reduced currents to the covariant symplectic form and solve extra fourth-order adjoint classes",
+  "not_established": [
+    "the exceptional polar ell=0 and ell=1 complexes",
+    "covariant Einstein--Maxwell symplectic normalization or physical norm signs",
+    "the complete fourth-order Weyl--Maxwell adjoint cokernel",
+    "quadratic obstruction coefficients for the full harmonic tower",
+    "a Lorentzian-causal, scattering, or quantum theorem"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_polar_master_complex",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_polar_master_complex",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_POLAR_ELL_GE2_ARBITRARY_LAMBDA_TENSOR_IDENTITY",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_polar_master_complex --verify bridge/certificates/einstein_maxwell_polar_master_complex.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_polar_master_complex.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_polar_master_complex"
+  ]
+}
