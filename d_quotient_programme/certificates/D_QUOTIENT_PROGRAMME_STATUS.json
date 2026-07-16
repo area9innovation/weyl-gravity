@@ -29,7 +29,7 @@
     ],
     "rule": "The fixed-coupling D_GAUGE gate, complete retained minimal q1, nonminimal quartets, and gauge-fermion canonical shear now give a cyclic support-local 54-to-26 contraction. Construct its total causal homotopy without weakening the separate q2, arity-two, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "faceb39e5427443320395f961107ba74b4800890",
+  "programme_base_commit": "191594d83209c462aeb5db3d03e79f3bbef86550",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -46,7 +46,7 @@
   },
   "registry_hashes": {
     "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-    "phase_space_registry": "186b71f96098f729ad77021fea745eb58afbb522bc78e4b27397835f421c4185"
+    "phase_space_registry": "3a5101be8eb1216afa77668024ed0876b320883895f3a769b0ef4a85a61786f9"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -249,6 +249,15 @@
       "setting_id": "compact_einstein_maxwell_obstruction_bilinear_g1",
       "status": "CERTIFIED",
       "verdict": "G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN"
+    },
+    {
+      "boundary_conditions": "compact product; smooth periodic fields on fixed compact U(1) bundle P_N with N=2; closed Cauchy slice; before final residual quotient",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_fixed_u1_harmonic_taub",
+      "setting_id": "compact_einstein_maxwell_domain_taub_descent",
+      "status": "CERTIFIED",
+      "verdict": "G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT"
     },
     {
       "boundary_conditions": "closed cylinder; selected endpoint-projected HT1 BFV q2 domain",
@@ -1179,6 +1188,51 @@
       "sha256": "7b54cc8739edc97bbdcafdac239336f2f1ec89bd2a226d0e00cdc8dc8042026a"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-compact-domain-taub-descent.json",
+      "payload": {
+        "boundary_conditions": "R_t x S1_L x S2; smooth periodic fields; fixed compact U(1) bundle P_N with N=2; closed Cauchy slice; before final residual quotient",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the compact harmonic domain is fixed as smooth Einstein--Maxwell solution tangents modulo linearized Diff x U(1) on one principal compact U(1) bundle P_N",
+          "exact Chern-number variation proves that the second-order magnetic coefficient p vanishes in every smooth deformation on the fixed N=2 bundle",
+          "the earlier variable-magnetic-row repair belongs to an enlarged continuous de Rham-flux family and not to the same fixed-bundle phase space",
+          "differentiated coupled action Noether identities prove gauge descent of the constant-lapse obstruction pairing",
+          "the coupled quadratic time-translation current is conserved on the closed slice, making the relative Taub pairing Cauchy-slice independent",
+          "opposite Fourier, spherical, and temporal quantum-number selection rules are frozen for the remaining harmonic calculation"
+        ],
+        "evidence": {
+          "commit": "191594d83209c462aeb5db3d03e79f3bbef86550",
+          "path": "bridge/certificates/compact_harmonic_domain_taub_descent.json",
+          "sha256": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "compute every surviving equal-(abs(n),ell,polarization,branch) obstruction block and classify the other constraint-adjoint classes on the fixed P_N domain",
+        "not_established": [
+          "an explicit complete master-variable basis for H^0_lin",
+          "the full adjoint cokernel",
+          "all harmonic obstruction coefficients",
+          "the curved off-shell BV chain map",
+          "a Lorentzian-causal propagation, scattering, or quantum theorem"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_fixed_u1_harmonic_taub",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_domain_taub_descent",
+        "team_id": "einstein_boundary",
+        "verdict": "G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.compact_harmonic_domain_taub_descent --verify bridge/certificates/compact_harmonic_domain_taub_descent.json",
+          "python3 bridge/einstein_sector/verify_compact_harmonic_domain_taub_descent.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_compact_harmonic_domain_taub_descent"
+        ]
+      },
+      "sha256": "5fe1d5df975b0fb20dc1829f3b7daee74cb9e61d05d07f5529ec25f3a4e8e233"
+    },
+    {
       "path": "d_quotient_programme/contributions/nonlinear-nd1-selected-residual-d-derivation.json",
       "payload": {
         "boundary_conditions": "closed cylinder; selected finite endpoint-projected HT1 BFV q2 field domain through energy four; no support-local completion",
@@ -1287,9 +1341,9 @@
       "sha256": "ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685"
     },
     "nonlinear": {
-      "commit": "dea315df6a8002af54f6587a67ac6c4b4677f2b6",
+      "commit": "284788fb93c74ee4731f08b93d4f223ed229d95e",
       "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
-      "sha256": "3902cfc00a1e09fb65a0a809e25f6203c38d574d3539e6af47d5e9665a182cdd"
+      "sha256": "0dbea613bb297a942e9f279486679f3e84dd7f9c3ed3106ab103455e8d8bf533"
     },
     "quantum": {
       "commit": "04833ba9d0a213b5bd5b6780ea5bf13a1d3e476e",
@@ -1306,9 +1360,9 @@
       "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
     },
     {
-      "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. The radion, duality, l=1 photon, and l=2 gravitational fixtures now assemble into an exact constant-lapse obstruction bilinear on their declared span, with charge-fibre cokernel behavior and a relative Taub interpretation. The universal-cover null tangent remains an explicit removable control.",
-      "next_gate": "compute every surviving equal-(k,ell) polarization block and the full adjoint cokernel on the complete periodic harmonic domain; independently complete the asymptotic Bach phase space and charge audit",
-      "result_state": "G1_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN_CERTIFIED_FULL_HARMONIC_THEOREM_OPEN",
+      "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. The fixture obstruction bilinear now lives on a fixed compact U(1) domain: flux quantization forbids its magnetic lift, and coupled Noether identities give gauge descent and slice-independent relative Taub interpretation. The universal-cover null tangent remains an explicit removable control in a different phase space.",
+      "next_gate": "compute every surviving equal-(abs(n),ell,polarization,branch) block and the other constraint-adjoint classes on the fixed P_N domain; independently complete the asymptotic Bach phase space and charge audit",
+      "result_state": "G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT_CERTIFIED_FULL_HARMONIC_THEOREM_OPEN",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },

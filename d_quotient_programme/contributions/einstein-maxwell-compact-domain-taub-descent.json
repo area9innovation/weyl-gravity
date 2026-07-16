@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2; smooth periodic fields; fixed compact U(1) bundle P_N with N=2; closed Cauchy slice; before final residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the compact harmonic domain is fixed as smooth Einstein--Maxwell solution tangents modulo linearized Diff x U(1) on one principal compact U(1) bundle P_N",
+    "exact Chern-number variation proves that the second-order magnetic coefficient p vanishes in every smooth deformation on the fixed N=2 bundle",
+    "the earlier variable-magnetic-row repair belongs to an enlarged continuous de Rham-flux family and not to the same fixed-bundle phase space",
+    "differentiated coupled action Noether identities prove gauge descent of the constant-lapse obstruction pairing",
+    "the coupled quadratic time-translation current is conserved on the closed slice, making the relative Taub pairing Cauchy-slice independent",
+    "opposite Fourier, spherical, and temporal quantum-number selection rules are frozen for the remaining harmonic calculation"
+  ],
+  "evidence": {
+    "commit": "191594d83209c462aeb5db3d03e79f3bbef86550",
+    "path": "bridge/certificates/compact_harmonic_domain_taub_descent.json",
+    "sha256": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute every surviving equal-(abs(n),ell,polarization,branch) obstruction block and classify the other constraint-adjoint classes on the fixed P_N domain",
+  "not_established": [
+    "an explicit complete master-variable basis for H^0_lin",
+    "the full adjoint cokernel",
+    "all harmonic obstruction coefficients",
+    "the curved off-shell BV chain map",
+    "a Lorentzian-causal propagation, scattering, or quantum theorem"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_fixed_u1_harmonic_taub",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_domain_taub_descent",
+  "team_id": "einstein_boundary",
+  "verdict": "G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.compact_harmonic_domain_taub_descent --verify bridge/certificates/compact_harmonic_domain_taub_descent.json",
+    "python3 bridge/einstein_sector/verify_compact_harmonic_domain_taub_descent.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_compact_harmonic_domain_taub_descent"
+  ]
+}

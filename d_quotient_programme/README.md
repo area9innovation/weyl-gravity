@@ -60,6 +60,8 @@ because the existing results concern different objects:
 - [`reports/einstein-maxwell-periodic-graviton-registration-receipt.md`](reports/einstein-maxwell-periodic-graviton-registration-receipt.md)
 - [`contributions/einstein-maxwell-obstruction-bilinear-g1.json`](contributions/einstein-maxwell-obstruction-bilinear-g1.json)
 - [`reports/einstein-maxwell-obstruction-bilinear-registration-receipt.md`](reports/einstein-maxwell-obstruction-bilinear-registration-receipt.md)
+- [`contributions/einstein-maxwell-compact-domain-taub-descent.json`](contributions/einstein-maxwell-compact-domain-taub-descent.json)
+- [`reports/einstein-maxwell-compact-domain-taub-registration-receipt.md`](reports/einstein-maxwell-compact-domain-taub-registration-receipt.md)
 - [`reports/nonlinear-nd1-registration-receipt.md`](reports/nonlinear-nd1-registration-receipt.md)
 - [`reports/quantum-cartan-registration-receipt.md`](reports/quantum-cartan-registration-receipt.md)
 - [`verify_programme_status.py`](verify_programme_status.py)
@@ -160,3 +162,13 @@ entries `(-2,-1/2,-16/3,-12sqrt(3)-72/5)`. The fixed magnetic-charge fibre
 retains this relative Taub component; admitting the second-order magnetic
 coefficient removes it from the augmented cokernel. The full harmonic domain
 and complete adjoint cokernel remain the next promotion gate.
+
+The compact domain has now been sharpened globally.  For the rational fixture,
+compact `U(1)` quantization gives `N(epsilon)=2+2 epsilon^2 p`; a smooth family
+on the same `N=2` bundle therefore has `p=0`.  The variable-magnetic-row repair
+belongs to an enlarged continuous de Rham-flux theory, not the fixed-bundle
+phase space.  Differentiated coupled Noether identities make the imported
+constant-lapse form gauge-descended and slice independent, so it is registered
+as a relative Taub bilinear on the fixed-bundle domain.  The complete harmonic
+cohomology, other adjoint classes, and surviving block coefficients remain
+open.

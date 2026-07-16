@@ -31,7 +31,7 @@ this background as a non-Einstein Weyl--matter branch.
 | Team | Current verdict | Established | Next gate |
 |---|---|---|---|
 | classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 is exact and cyclic; its 34-row minimal contraction is portable. Five nonminimal antighost--multiplier quartets extend it to 54 rows, and the selected gauge fermion acts by an exact finite BV-canonical shear, producing a complete support-local cyclic gauge-fixed 54-to-26 contraction. | construct the total causal homotopy for the gauge-fixed 54-row complex, then export q2 and test local D-equivariance |
-| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. The radion, duality, l=1 photon, and l=2 gravitational fixtures now assemble into an exact constant-lapse obstruction bilinear on their declared span, with charge-fibre cokernel behavior and a relative Taub interpretation. The universal-cover null tangent remains an explicit removable control. | compute every surviving equal-(k,ell) polarization block and the full adjoint cokernel on the complete periodic harmonic domain; independently complete the asymptotic Bach phase space and charge audit |
+| einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. The fixture obstruction bilinear now lives on a fixed compact U(1) domain: flux quantization forbids its magnetic lift, and coupled Noether identities give gauge descent and slice-independent relative Taub interpretation. The universal-cover null tangent remains an explicit removable control in a different phase space. | compute every surviving equal-(abs(n),ell,polarization,branch) block and the other constraint-adjoint classes on the fixed P_N domain; independently complete the asymptotic Bach phase space and charge audit |
 | nonlinear | `INPUT_GATE_BLOCKED` | selected residual q2 D-derivation defect vanishes exactly; full support-local verdict remains blocked | complete support-local q2 export and solve for iota_D^(2) or retain its obstruction |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered | complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion |
 
@@ -61,6 +61,7 @@ this background as a non-Einstein Weyl--matter branch.
 | compact_einstein_maxwell_periodic_photon_second_order | `H_product` | `einstein_maxwell_product_compact_fixed_charge_periodic_photon_second_order` | CLASSICAL_BV | `CERTIFIED` | `PERIODIC_PHOTON_SECOND_ORDER_FIXED_CHARGE_OBSTRUCTION` |
 | compact_einstein_maxwell_periodic_graviton_second_order | `H_product` | `einstein_maxwell_product_compact_fixed_charge_periodic_graviton_second_order` | CLASSICAL_BV | `CERTIFIED` | `PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION` |
 | compact_einstein_maxwell_obstruction_bilinear_g1 | `H_product` | `einstein_maxwell_product_compact_fixture_span_obstruction_bilinear` | CLASSICAL_BV | `CERTIFIED` | `G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN` |
+| compact_einstein_maxwell_domain_taub_descent | `H_product` | `einstein_maxwell_product_compact_fixed_u1_harmonic_taub` | CLASSICAL_BV | `CERTIFIED` | `G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `INPUT_GATE_BLOCKED` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
@@ -107,6 +108,7 @@ this background as a non-Einstein Weyl--matter branch.
 | einstein_boundary | `compact_einstein_maxwell_periodic_photon_second_order` | `H_product` | `einstein_maxwell_product_compact_fixed_charge_periodic_photon_second_order` | `CERTIFIED` | `PERIODIC_PHOTON_SECOND_ORDER_FIXED_CHARGE_OBSTRUCTION` |
 | einstein_boundary | `compact_einstein_maxwell_periodic_graviton_second_order` | `H_product` | `einstein_maxwell_product_compact_fixed_charge_periodic_graviton_second_order` | `CERTIFIED` | `PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION` |
 | einstein_boundary | `compact_einstein_maxwell_obstruction_bilinear_g1` | `H_product` | `einstein_maxwell_product_compact_fixture_span_obstruction_bilinear` | `CERTIFIED` | `G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN` |
+| einstein_boundary | `compact_einstein_maxwell_domain_taub_descent` | `H_product` | `einstein_maxwell_product_compact_fixed_u1_harmonic_taub` | `CERTIFIED` | `G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
 | quantum | `vacuum_cylinder` | `D_compact` | `compact_quantum` | `BLOCKED` | `NO_VERDICT` |
 
@@ -124,7 +126,7 @@ The immediate shared calculation is
 
 - `classical`: `d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json` at `46208d7c1c845da2b1959bf0799abcc92d856499`, SHA-256 `89da9c898736fdcd6d21d68b6e53c523f036911702547baa6341a5bee6bd45c5`
 - `einstein_boundary`: `bridge/certificates/d_quotient_asymptotic_seed.json` at `7e87281c416f4c4f98edfe61ae05829f4b48593a`, SHA-256 `ce1a6d0ac020eea9ddc95261f6f5003dbce03d8f007e44258b398f05febb2685`
-- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `dea315df6a8002af54f6587a67ac6c4b4677f2b6`, SHA-256 `3902cfc00a1e09fb65a0a809e25f6203c38d574d3539e6af47d5e9665a182cdd`
+- `nonlinear`: `quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json` at `284788fb93c74ee4731f08b93d4f223ed229d95e`, SHA-256 `0dbea613bb297a942e9f279486679f3e84dd7f9c3ed3106ab103455e8d8bf533`
 - `quantum`: `quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json` at `04833ba9d0a213b5bd5b6780ea5bf13a1d3e476e`, SHA-256 `9c04d552a0ab243aff0403a51622f6d892ca77f4b0fbd04efdcf3d8ccc31c8bf`
 
 ## Claim boundary

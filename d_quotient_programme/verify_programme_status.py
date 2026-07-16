@@ -39,6 +39,7 @@ EINSTEIN_MAXWELL_SECOND_ORDER_NULL_CONTRIBUTION = PACKAGE / "contributions" / "e
 EINSTEIN_MAXWELL_PERIODIC_PHOTON_SECOND_ORDER_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-periodic-photon-second-order.json"
 EINSTEIN_MAXWELL_PERIODIC_GRAVITON_SECOND_ORDER_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-periodic-graviton-second-order.json"
 EINSTEIN_MAXWELL_OBSTRUCTION_BILINEAR_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-obstruction-bilinear-g1.json"
+EINSTEIN_MAXWELL_COMPACT_DOMAIN_TAUB_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-compact-domain-taub-descent.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 
 TEAM_PATHS = {
@@ -193,7 +194,7 @@ def _assert_team_inputs(data: dict[str, dict[str, Any]]) -> None:
     nonlinear = data["nonlinear"]
     if not (
         nonlinear.get("result_state")
-        == "ENGINE_READY_HT1_SELECTED_AND_PPWAVE_BLOCKS_COMPUTED_INPUT_BLOCKED"
+        == "ENGINE_READY_HT1_SELECTED_PPWAVE_AND_54_ROW_D_IMPORTED_Q2_BLOCKED"
         and nonlinear.get("classical_freeze_gate") == "FAIL_CLOSED"
     ):
         raise AssertionError("nonlinear transfer gate drifted")
@@ -777,6 +778,14 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN",
         )
     )
+    maxwell_compact_domain_taub_contribution = (
+        _einstein_maxwell_second_order_contribution(
+            EINSTEIN_MAXWELL_COMPACT_DOMAIN_TAUB_CONTRIBUTION,
+            "compact_einstein_maxwell_domain_taub_descent",
+            "einstein_maxwell_product_compact_fixed_u1_harmonic_taub",
+            "G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT",
+        )
+    )
     nd1_contribution = _nonlinear_nd1_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     return {
@@ -897,6 +906,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": maxwell_obstruction_bilinear_contribution,
             },
             {
+                "path": str(EINSTEIN_MAXWELL_COMPACT_DOMAIN_TAUB_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_COMPACT_DOMAIN_TAUB_CONTRIBUTION),
+                "payload": maxwell_compact_domain_taub_contribution,
+            },
+            {
                 "path": str(NONLINEAR_ND1_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(NONLINEAR_ND1_CONTRIBUTION),
                 "payload": nd1_contribution,
@@ -917,10 +931,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "einstein_boundary",
-                "result_state": "G1_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN_CERTIFIED_FULL_HARMONIC_THEOREM_OPEN",
+                "result_state": "G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT_CERTIFIED_FULL_HARMONIC_THEOREM_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. The radion, duality, l=1 photon, and l=2 gravitational fixtures now assemble into an exact constant-lapse obstruction bilinear on their declared span, with charge-fibre cokernel behavior and a relative Taub interpretation. The universal-cover null tangent remains an explicit removable control.",
-                "next_gate": "compute every surviving equal-(k,ell) polarization block and the full adjoint cokernel on the complete periodic harmonic domain; independently complete the asymptotic Bach phase space and charge audit",
+                "established": "The exact product background, principal chain map, and complete on-shell linear tangent inclusion are certified. The fixture obstruction bilinear now lives on a fixed compact U(1) domain: flux quantization forbids its magnetic lift, and coupled Noether identities give gauge descent and slice-independent relative Taub interpretation. The universal-cover null tangent remains an explicit removable control in a different phase space.",
+                "next_gate": "compute every surviving equal-(abs(n),ell,polarization,branch) block and the other constraint-adjoint classes on the fixed P_N domain; independently complete the asymptotic Bach phase space and charge audit",
             },
             {
                 "team_id": "nonlinear",
@@ -1137,6 +1151,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN",
             },
             {
+                "setting_id": "compact_einstein_maxwell_domain_taub_descent",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_fixed_u1_harmonic_taub",
+                "boundary_conditions": "compact product; smooth periodic fields on fixed compact U(1) bundle P_N with N=2; closed Cauchy slice; before final residual quotient",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT",
+            },
+            {
                 "setting_id": "compact_selected_residual_HT1_q2",
                 "generator_id": "D_compact",
                 "phase_space_id": "compact_selected_residual_HT1",
@@ -1287,6 +1310,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_periodic_photon_second_order",
         "compact_einstein_maxwell_periodic_graviton_second_order",
         "compact_einstein_maxwell_obstruction_bilinear_g1",
+        "compact_einstein_maxwell_domain_taub_descent",
     }:
         errors.append("Einstein contribution inventory drifted")
     ledger = {row.get("setting_id"): row for row in data.get("setting_ledger", [])}
@@ -1313,6 +1337,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_periodic_photon_second_order": "PERIODIC_PHOTON_SECOND_ORDER_FIXED_CHARGE_OBSTRUCTION",
         "compact_einstein_maxwell_periodic_graviton_second_order": "PERIODIC_L2_GRAVITATIONAL_MODE_FIXED_CHARGE_OBSTRUCTION",
         "compact_einstein_maxwell_obstruction_bilinear_g1": "G1_CONSTANT_LAPSE_OBSTRUCTION_BILINEAR_ON_FIXTURE_SPAN",
+        "compact_einstein_maxwell_domain_taub_descent": "G1_FIXED_U1_DOMAIN_AND_RELATIVE_TAUB_DESCENT",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
@@ -1355,6 +1380,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Einstein--Maxwell periodic gravitational-mode second-order obstruction was dropped")
     if ledger.get("compact_einstein_maxwell_obstruction_bilinear_g1", {}).get("status") != "CERTIFIED":
         errors.append("Einstein--Maxwell G1 obstruction bilinear was dropped")
+    if ledger.get("compact_einstein_maxwell_domain_taub_descent", {}).get("status") != "CERTIFIED":
+        errors.append("Einstein--Maxwell fixed-U1 domain/Taub descent was dropped")
     if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
         errors.append("Paper IX promoted before its gate")
     return errors
@@ -1635,6 +1662,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_obstruction_bilinear_g1",
             "drop_Einstein_Maxwell_obstruction_bilinear_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_domain_taub_descent",
+            "drop_Einstein_Maxwell_compact_domain_taub_contribution",
         ),
     ):
         mutant = deepcopy(data)
