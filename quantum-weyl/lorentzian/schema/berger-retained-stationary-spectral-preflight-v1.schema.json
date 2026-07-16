@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-stationary-spectral-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "stationary_pencil_inventory", "stationary_action_replay", "two_slot_covariance_lift", "closed_generator_contract", "spectral_isolation_contract", "generalized_zero_and_Riesz_policy", "nonzero_frequency_contract", "minimal_missing_carrier", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-stationary-spectral-preflight-v1"},
+    "result_id": {"const": "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT"},
+    "result_state": {"const": "HYBRID_STATIONARY_PENCIL_CERTIFIED_CLOSED_SPECTRAL_REALIZATION_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "minLength": 40},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Hadamard_lift_preflight", "retained_companion", "stationary_decomposability", "causal_witness", "typed_Volterra", "causal_26", "local_D_action", "gauge_fixed_contraction", "reduced_Krein"],
+      "properties": {
+        "Hadamard_lift_preflight": {"$ref": "#/$defs/dependency"},
+        "retained_companion": {"$ref": "#/$defs/dependency"},
+        "stationary_decomposability": {"$ref": "#/$defs/dependency"},
+        "causal_witness": {"$ref": "#/$defs/dependency"},
+        "typed_Volterra": {"$ref": "#/$defs/dependency"},
+        "causal_26": {"$ref": "#/$defs/dependency"},
+        "local_D_action": {"$ref": "#/$defs/dependency"},
+        "gauge_fixed_contraction": {"$ref": "#/$defs/dependency"},
+        "reduced_Krein": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "stationary_pencil_inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["retained_P26_temporal_audit", "why_P26_is_not_the_spectral_generator", "hybrid_second_order_companion", "first_order_Cauchy_target", "checks"],
+      "properties": {
+        "retained_P26_temporal_audit": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ghost", "metric", "metric_antifield", "identity"],
+          "properties": {
+            "ghost": {"$ref": "#/$defs/temporalBlock"},
+            "metric": {"$ref": "#/$defs/temporalBlock"},
+            "metric_antifield": {"$ref": "#/$defs/temporalBlock"},
+            "identity": {"$ref": "#/$defs/temporalBlock"}
+          }
+        },
+        "why_P26_is_not_the_spectral_generator": {"type": "string", "minLength": 1},
+        "hybrid_second_order_companion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["block_ranks", "total_bundle_rank", "metric_block", "metric_principal_determinant", "ghost_and_identity_blocks", "temporal_pencil_degree", "temporal_leading_rank"],
+          "properties": {
+            "block_ranks": {"const": {"ghost_two_wave_companion": 6, "metric_biwave_companion": 20, "metric_antifield_adjoint_companion": 20, "identity_two_wave_companion": 6}},
+            "total_bundle_rank": {"const": 52},
+            "metric_block": {"const": "C20=[[Box_2,-I10],[V_2,Box_2]]"},
+            "metric_principal_determinant": {"const": "q^20"},
+            "ghost_and_identity_blocks": {"type": "string", "minLength": 1},
+            "temporal_pencil_degree": {"const": 2},
+            "temporal_leading_rank": {"const": 52}
+          }
+        },
+        "first_order_Cauchy_target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["symbol", "Cauchy_fibre_rank", "formal_evolution", "status"],
+          "properties": {
+            "symbol": {"const": "A104"},
+            "Cauchy_fibre_rank": {"const": 104},
+            "formal_evolution": {"const": "partial_t Psi=A104 Psi"},
+            "status": {"const": "ALGEBRAIC_SIZE_AND_BLOCK_FORM_CERTIFIED_CLOSED_REALIZATION_OPEN"}
+          }
+        },
+        "checks": {"$ref": "#/$defs/allTrue"}
+      }
+    },
+    "stationary_action_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["geometric_generator", "complete_action", "retained_action", "hybrid_companion_action", "Cauchy_generator_relation", "checks"],
+      "properties": {
+        "geometric_generator": {"const": "D=e0=partial_t"},
+        "complete_action": {"const": "D54=e0 I54"},
+        "retained_action": {"const": "D26=e0 I26"},
+        "hybrid_companion_action": {"const": "D52=e0 I52"},
+        "Cauchy_generator_relation": {"type": "string", "minLength": 1},
+        "checks": {"$ref": "#/$defs/allTrue"}
+      }
+    },
+    "two_slot_covariance_lift": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_bilinear_formula", "cyclic_adjoint_identification", "operator_formula", "adjoint_formula", "warning", "checks"],
+      "properties": {
+        "primary_bilinear_formula": {"const": "omega54(f,h)=omega26(pi_cl f,pi_cl h)"},
+        "cyclic_adjoint_identification": {"const": "pi_cl=iota_cl^sharp in the frozen BV pairings"},
+        "operator_formula": {"const": "W54=iota_cl W26 pi_cl"},
+        "adjoint_formula": {"const": "W54^sharp=iota_cl W26^sharp pi_cl"},
+        "warning": {"type": "string", "minLength": 1},
+        "checks": {"$ref": "#/$defs/allTrue"}
+      }
+    },
+    "closed_generator_contract": {
+      "type": "object",
+      "required": ["algebraic_target", "metric_energy_space_input", "required_common_space", "required_domain", "required_adjoint", "required_intertwiners", "closed_realization_status"],
+      "properties": {
+        "closed_realization_status": {"const": "NOT_CONSTRUCTED"},
+        "required_intertwiners": {"type": "array", "minItems": 3, "maxItems": 3}
+      },
+      "additionalProperties": true
+    },
+    "spectral_isolation_contract": {
+      "type": "object",
+      "required": ["acceptable_routes", "current_compact_spatial_input", "not_implied", "zero_isolated", "compact_resolvent_or_Fredholm", "nonzero_spectrum_real_or_definitizable"],
+      "properties": {
+        "acceptable_routes": {"type": "array", "minItems": 3, "maxItems": 3},
+        "zero_isolated": {"const": "NOT_COMPUTED"},
+        "compact_resolvent_or_Fredholm": {"const": "NOT_COMPUTED"},
+        "nonzero_spectrum_real_or_definitizable": {"const": "NOT_COMPUTED"}
+      },
+      "additionalProperties": true
+    },
+    "generalized_zero_and_Riesz_policy": {
+      "type": "object",
+      "required": ["conditional_Riesz_projector", "conditional_generalized_zero_space", "Jordan_requirement", "BRST_requirement", "finite_dimensional_CCR_problem", "causal_projector_policy", "state_projector_policy", "Riesz_projector_status", "generalized_zero_space_status"],
+      "properties": {
+        "Riesz_projector_status": {"const": "NOT_DEFINED"},
+        "generalized_zero_space_status": {"const": "NOT_COMPUTED"}
+      },
+      "additionalProperties": true
+    },
+    "nonzero_frequency_contract": {
+      "type": "object",
+      "required": ["required_decomposition", "required_stability", "required_Hadamard_link", "reduced_Krein_evidence", "full_nonzero_frequency_split"],
+      "properties": {
+        "reduced_Krein_evidence": {"const": "REDUCED-MODE_ONLY"},
+        "full_nonzero_frequency_split": {"const": "NOT_COMPUTED"}
+      },
+      "additionalProperties": true
+    },
+    "minimal_missing_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["carrier", "why_minimal", "unblocks", "status"],
+      "properties": {
+        "carrier": {"type": "string", "minLength": 1},
+        "why_minimal": {"type": "string", "minLength": 1},
+        "unblocks": {"type": "array", "minItems": 4, "maxItems": 4},
+        "status": {"const": "MINIMAL_MISSING_ANALYTIC_CARRIER"}
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_RETAINED_HYBRID_STATIONARY_PENCIL": true,
+        "BERGER_RETAINED_FIRST_ORDER_CAUCHY_TARGET_A104": true,
+        "BERGER_TWO_SLOT_COVARIANCE_LIFT": true,
+        "BERGER_RETAINED_CLOSED_STATIONARY_GENERATOR": false,
+        "BERGER_RETAINED_COMPACT_RESOLVENT_OR_FREDHOLM": false,
+        "BERGER_RETAINED_ZERO_ISOLATED": false,
+        "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER": false,
+        "BERGER_RETAINED_NONZERO_FREQUENCY_SPLIT": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+        "BERGER_HADAMARD_DATA": false,
+        "LORENTZIAN_QME_RESTORED": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_A104_CLOSED_GENERATOR_AND_ISOLATED_ZERO_THEOREM"},
+    "provenance": {"type": "object", "minProperties": 8},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "allTrue": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}},
+    "temporalBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bundle_rank", "maximum_temporal_order", "e0_four_leading_rank", "e0_four_leading_matrix_sha256", "uniform_fourth_order_Cauchy_reduction"],
+      "properties": {
+        "bundle_rank": {"type": "integer", "minimum": 3, "maximum": 10},
+        "maximum_temporal_order": {"const": 4},
+        "e0_four_leading_rank": {"enum": [3, 8]},
+        "e0_four_leading_matrix_sha256": {"$ref": "#/$defs/hash"},
+        "uniform_fourth_order_Cauchy_reduction": {"enum": ["AVAILABLE", "INVALID_MIXED_ORDER"]}
+      }
+    }
+  }
+}

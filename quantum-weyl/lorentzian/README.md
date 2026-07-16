@@ -175,6 +175,20 @@ generalized zero eigenspace of the stationary generator on the retained
 causal, pairing, reality and positivity data must be computed before a smooth
 zero-frequency covariance can be selected.
 
+The stationary spectral preflight now identifies the correct generator
+before that computation.  The pure `e0^4` ranks of the four retained witness
+blocks are `3,8,8,3` on bundle ranks `3,10,10,3`; hence the metric leading
+coefficient is singular and a uniform fourth-order 26-row Cauchy reduction
+is invalid.  The exact replacement is a rank-52 second-order hybrid
+companion—rank six for each ghost/identity product and rank twenty for each
+metric/metric-adjoint biwave—whose first-order Cauchy target has rank 104.
+The differential pencil, stationary `D=e0`, and two-slot covariance lift are
+certified.  A common closed graded/Krein realization of `A104`, together with
+a compact-resolvent/Fredholm or equivalent isolated-zero theorem, remains
+open.  Only after that theorem may a finite-rank smooth Riesz projector be
+used for state selection; no spectral projector is introduced into causal
+propagation.
+
 Reproduce the current contract receipt with:
 
 ```bash
@@ -222,4 +236,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_b
 PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_hadamard_lift_zero_mode_preflight_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_hadamard_lift_zero_mode_preflight
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_hadamard_lift_zero_mode_preflight.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_retained_stationary_spectral_preflight_certificate --check
+PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_retained_stationary_spectral_preflight
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_retained_stationary_spectral_preflight.py -v
 ```
