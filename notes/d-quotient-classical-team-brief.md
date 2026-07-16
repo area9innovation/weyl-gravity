@@ -167,8 +167,12 @@ complex. The complete retained operator is now certified coefficientwise.
 The nonzero-Weyl Berger Bach variation has been expanded at every differential
 order in the invariant-frame PBW algebra; together with the matter Hessian it
 obeys the exact spatial Noether identities, formal self-adjointness, cyclicity,
-and (q_1^2=0) on all 26 rows. Nonminimal rows, causal Green homotopies, and
-nonlinear stability remain separate.
+and \(q_1^2=0\) on all 26 rows. The twenty nonminimal rows, the selected
+gauge-fermion shear, the complete gauge-fixed 54-row unary differential, and
+its cyclic 54-to-26 contraction are also exact. The helical \(D\)-action is
+the invariant time derivative on every row and commutes coefficientwise with
+\(q_1\) and every contraction map. Causal Green homotopies, the full
+four-dimensional \(q_2\), and nonlinear stability remain separate.
 Generalized non-Noetherian or higher-derivative scalar actions remain
 separate theories with independent health and BV gates.
 
@@ -238,22 +242,32 @@ JH_4+K_1T=(\zeta^2)^2I_{10},\qquad
 TK_1=(\zeta^2)^2I_5.
 \]
 
-Thus the immediate gate is `BERGER_CURVED_CLOCK_REATTACHED_WITNESS`: derive
-the lower-order PBW completion, construct the causal 34-row homotopy, and
-transport it back through the clock SDR. Nonminimal reattachment and the
-stability part of `FULL_BERGER_CLOCK_BV_AND_STABILITY_AUDIT` remain downstream.
+The all-row analytic bookkeeping is now finished. Exact chain maps prove
 
-### Parked nonlinear support-local export
+\[
+\Lambda_{54,\pm}
+=S_{\rm cl}+\iota_{\rm cl}\Lambda_{26,\pm}\pi_{\rm cl},
+\]
+
+so 28 clock/nonminimal/gauge-fixing rows introduce no independent causal
+obstruction. The immediate gate is therefore
+`BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY`: construct the advanced and retarded
+homotopies for the retained mixed-order metric core. The formula above then
+lifts them support-locally and cyclically to all 54 rows. The total causal
+flag remains false until that endpoint theorem passes.
+
+### Active nonlinear support-local export
 
 The nonlinear team additionally requires one authoritative classical export
 before its actual theorem or obstruction can be promoted. This is a separate
-work package from any homogeneous clock certificate. It must contain:
+work package from any homogeneous clock certificate. Its required contents
+and current disposition are:
 
-1. the complete support-local Taylor operations \(q_1\) and \(q_2\);
-2. the local \(D\)-action on the same declared complex;
+1. the complete support-local \(q_1\) (**complete**) and \(q_2\) (**open**);
+2. the local \(D\)-action on the same declared complex (**complete on all 54 rows**);
 3. the contraction data
-   \((\pi_{\rm cl},\iota_{\rm cl},s_{\rm cl})\);
-4. the cyclic pairing, with conventions and formal adjoints pinned;
+   \((\pi_{\rm cl},\iota_{\rm cl},s_{\rm cl})\) (**complete on all 54 rows**);
+4. the cyclic pairing, with conventions and formal adjoints pinned (**complete at unary order**);
 5. a typed row layout, support/order metadata, hashes, and fail-closed guards.
 
 The handoff gate is named `CLASSICAL_SUPPORT_LOCAL_Q1_Q2_EXPORT`. Reduced
@@ -283,9 +297,11 @@ and the exact curved five-direction companion is derived coefficientwise from
 one source. The gauge-fermion canonical transform is now applied
 coefficientwise: the full 54-row gauge-fixed `classical_unary_q1`, cyclic
 pairing, and transformed contraction are portable and exact. The decisive
-next gate is the combined support-local \(\ell^{\rm cl}_2\) and local
-\(D\)-action/equivariance export, followed by the general nonlinear
-Koszul--Tate export, causal Green operators, and Hadamard data.
+nonlinear gate is now only the complete support-local four-dimensional
+\(\ell^{\rm cl}_2\), including its antifield/Koszul--Tate rows. Once it
+lands, the already-certified local \(D\)-action can be used for the all-row
+arity-two derivation and Cartan tests. The retained causal Green theorem and
+Hadamard data remain independent analytic gates.
 
 ### Reduced-mode arity-two fixture
 
@@ -326,6 +342,15 @@ now genuinely been tested: finite cyclic truncations fail, while the infinite
 homogeneous lattice admits the arity-two contraction. This remains
 `REDUCED-MODE`; extending the formulas to the full four-dimensional 54-row
 complex is the next gate.
+
+The all-row unary ingredients needed by that extension are already frozen in
+`BERGER_54_ROW_LOCAL_D_ACTION`: the invariant time derivative acts locally on
+all 54 rows, commutes coefficientwise with `classical_unary_q1`, intertwines
+the contraction, and preserves the cyclic pairing. Thus the missing nonlinear
+datum is precisely the full support-local \(q_2\), not another unary
+\(D\)-construction. Independently,
+`BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION` reduces the complete causal theorem
+exactly to the retained 26-row mixed-order metric endpoint.
 
 Begin with a conformally coupled scalar \(T\).  Define a domain on which it is a
 valid clock and construct complete observables
@@ -476,6 +501,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | known target; re-audit charge | known target | proved baseline | zero in stated absolute residual complex | \(I_2\) on centered degree-four classes | proper solution sector |
+| Positive Berger clock | zero on the declared smooth fixed-coupling linearized phase space | exact on the infinite homogeneous lattice; full 4D arity two open | exact 54-to-26 reduction; retained endpoint open | not computed | unary cyclic pairing exact; nonlinear/causal transport open | not classified |
 | Cylinder + scalar clock | open | open | open | open | open | open |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | open |
@@ -484,11 +510,16 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Compute the compact-cylinder \(D\) charge independently.
-2. Recompute cohomology with \(D\) retained as a global symmetry.
-3. Add the scalar clock and recompute the total charge.
-4. Establish the first-order background-deformation obstruction.
-5. Only then add Yang--Mills and the remaining boundaries.
+1. Export the complete support-local four-dimensional Berger \(q_2\), including
+   antifield/Koszul--Tate rows and exact cyclicity.
+2. Construct the retained 26-row mixed-order causal Green homotopy and lift it
+   through the certified 54-to-26 contraction.
+3. Combine the completed \(q_2\) with the frozen local \(D\)-action to run the
+   support-local all-row arity-two Cartan test.
+4. Construct a complete Berger relational observable only after the nonlinear
+   and causal gates above have frozen its admissible clock domain.
+5. Continue the deformation, Yang--Mills, and boundary-condition rails as
+   independent generality tests rather than prerequisites for the Berger gate.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
