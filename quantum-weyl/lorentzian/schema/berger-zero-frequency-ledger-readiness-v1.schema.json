@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-zero-frequency-ledger-readiness-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "dependency_refs", "Cauchy_contract", "known_entry_audit", "nonidentifiability_witness", "minimal_stationary_carrier_contract", "current_disposition", "claim_flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-zero-frequency-ledger-readiness-v1"},
+    "result_id": {"const": "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS"},
+    "result_state": {"const": "EXACT_MASK_NONIDENTIFIABILITY_CERTIFIED_FULL_STATIONARY_CARRIER_REQUIRED"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "Cauchy_contract": {"type": "object", "required": ["configuration_rank", "Cauchy_rank", "ordering", "configuration_blocks", "velocity_offset"], "additionalProperties": false, "properties": {"configuration_rank": {"const": 52}, "Cauchy_rank": {"const": 104}, "ordering": {"const": "Psi104=(Phi52,partial_t Phi52)"}, "configuration_blocks": {"type": "array", "minItems": 8}, "velocity_offset": {"const": 52}}},
+    "known_entry_audit": {"type": "object", "required": ["total_coordinates", "known_coordinates", "unknown_coordinates", "unknown_fraction", "unknown_blocks", "all_unknown_coordinates_are_confined_to_two_degree_diagonal_blocks"], "additionalProperties": false, "properties": {"total_coordinates": {"const": 10816}, "known_coordinates": {"const": 10528}, "unknown_coordinates": {"const": 288}, "unknown_fraction": {"const": "9/338"}, "unknown_blocks": {"type": "array", "minItems": 2, "maxItems": 2}, "all_unknown_coordinates_are_confined_to_two_degree_diagonal_blocks": {"const": true}}},
+    "nonidentifiability_witness": {"type": "object", "required": ["scope", "completion_A", "completion_B", "agreement_on_all_exported_coordinates", "completion_A_endpoint_zero_eigenspace_dimension", "completion_B_endpoint_zero_eigenspace_dimension", "zero_eigenspace_dimension_difference", "conclusion"], "additionalProperties": false, "properties": {"scope": {"type": "string"}, "completion_A": {"type": "string"}, "completion_B": {"type": "string"}, "agreement_on_all_exported_coordinates": {"const": true}, "completion_A_endpoint_zero_eigenspace_dimension": {"const": 24}, "completion_B_endpoint_zero_eigenspace_dimension": {"const": 0}, "zero_eigenspace_dimension_difference": {"const": 24}, "conclusion": {"type": "string"}}},
+    "minimal_stationary_carrier_contract": {"type": "object", "required": ["required_result_id", "required_artifacts", "required_exact_checks", "analytic_followup"], "additionalProperties": false, "properties": {"required_result_id": {"const": "BERGER_RETAINED_26_STATIONARY_GENERATOR_V1"}, "required_artifacts": {"type": "array", "minItems": 4, "maxItems": 4}, "required_exact_checks": {"type": "array", "minItems": 7}, "analytic_followup": {"type": "array", "minItems": 5}}},
+    "current_disposition": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string"}},
+    "claim_flags": {"type": "object", "additionalProperties": false, "required": ["ZERO_FREQUENCY_INPUT_NONIDENTIFIABILITY_CERTIFIED", "STATIONARY_GENERATOR_RECEIVING_CONTRACT_FROZEN", "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER", "BERGER_26_ROW_BRST_HADAMARD", "BERGER_54_ROW_BRST_HADAMARD", "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY", "RENORMALIZED_LORENTZIAN_PRODUCTS", "LORENTZIAN_QME_RESTORED", "QUANTUM_CLAIM"], "properties": {"ZERO_FREQUENCY_INPUT_NONIDENTIFIABILITY_CERTIFIED": {"const": true}, "STATIONARY_GENERATOR_RECEIVING_CONTRACT_FROZEN": {"const": true}, "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER": {"const": false}, "BERGER_26_ROW_BRST_HADAMARD": {"const": false}, "BERGER_54_ROW_BRST_HADAMARD": {"const": false}, "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": {"const": false}, "RENORMALIZED_LORENTZIAN_PRODUCTS": {"const": false}, "LORENTZIAN_QME_RESTORED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"const": "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1"},
+    "claim_boundary": {"type": "string", "minLength": 300},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_manifest", "source_manifest_sha256"], "properties": {"source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}}, "source_manifest_sha256": {"$ref": "#/$defs/hash"}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}

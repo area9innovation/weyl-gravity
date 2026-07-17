@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-active-frontier-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "promotion_ladder", "active_rows", "supersession_ledger", "claim_flags", "ordered_next_gates", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-active-frontier-v1"},
+    "result_id": {"const": "QUANTUM_WEYL_ACTIVE_FRONTIER"},
+    "result_state": {"const": "G1_LOCAL_AFN0_AND_CLASSICAL_CAUSAL_CHAIN_READY_GLOBAL_HADAMARD_FULL_BV_QME_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 17, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "promotion_ladder": {
+      "type": "object", "additionalProperties": false,
+      "required": ["G0", "G1", "G2", "G3", "G4", "G5"],
+      "properties": {
+        "G0": {"const": "PASSED"}, "G1": {"const": "PASSED_AFN0_LOCAL_QUOTIENT"},
+        "G2": {"const": "BLOCKED_FULL_ANTIFIELD_BV_COHOMOLOGY"},
+        "G3": {"const": "PARTIAL_LOCAL_PARAMETRIX_AND_BACKGROUND_COEFFICIENTS_ONLY"},
+        "G4": {"const": "BLOCKED_QME_NOT_RESTORED"},
+        "G5": {"const": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS"}
+      }
+    },
+    "active_rows": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/row"}},
+    "supersession_ledger": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["historical_result_id", "active_result_id", "disposition"],
+        "properties": {
+          "historical_result_id": {"type": "string", "minLength": 1},
+          "active_result_id": {"type": "string", "minLength": 1},
+          "disposition": {"type": "string", "pattern": "HISTORY_RETAINED"}
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ACTIVE_FRONTIER_LEDGER", "AFN0_G1_COMPLETE", "CLASSICAL_MAXWELL_TRANSFER_LANDED", "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM", "FULL_BV_G2_COMPLETE", "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED", "GLOBAL_BRST_HADAMARD_STATE", "RENORMALIZED_LORENTZIAN_PRODUCTS", "QME_RESTORED", "RESIDUAL_QUANTUM_TRANSFERRED", "LORENTZIAN_QUANTUM_THEORY"],
+      "properties": {
+        "ACTIVE_FRONTIER_LEDGER": {"const": true}, "AFN0_G1_COMPLETE": {"const": true},
+        "CLASSICAL_MAXWELL_TRANSFER_LANDED": {"const": true}, "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM": {"const": false},
+        "FULL_BV_G2_COMPLETE": {"const": false}, "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": {"const": false},
+        "GLOBAL_BRST_HADAMARD_STATE": {"const": false}, "RENORMALIZED_LORENTZIAN_PRODUCTS": {"const": false},
+        "QME_RESTORED": {"const": false}, "RESIDUAL_QUANTUM_TRANSFERRED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      }
+    },
+    "ordered_next_gates": {"type": "array", "minItems": 8, "items": {"type": "string", "minLength": 1}},
+    "claim_boundary": {"type": "string", "minLength": 250},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "next_gate"],
+      "properties": {"status": {"type": "string", "minLength": 1}, "next_gate": {"type": "string", "minLength": 1}}
+    }
+  }
+}

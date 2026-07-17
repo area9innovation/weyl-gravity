@@ -1,0 +1,217 @@
+{
+  "Cauchy_contract": {
+    "Cauchy_rank": 104,
+    "configuration_blocks": [
+      {
+        "name": "ghost_primary",
+        "rank": 3,
+        "start": 0,
+        "stop": 3
+      },
+      {
+        "name": "ghost_auxiliary",
+        "rank": 3,
+        "start": 3,
+        "stop": 6
+      },
+      {
+        "name": "metric_primary",
+        "rank": 10,
+        "start": 6,
+        "stop": 16
+      },
+      {
+        "name": "metric_auxiliary",
+        "rank": 10,
+        "start": 16,
+        "stop": 26
+      },
+      {
+        "name": "metric_antifield_primary",
+        "rank": 10,
+        "start": 26,
+        "stop": 36
+      },
+      {
+        "name": "metric_antifield_auxiliary",
+        "rank": 10,
+        "start": 36,
+        "stop": 46
+      },
+      {
+        "name": "identity_primary",
+        "rank": 3,
+        "start": 46,
+        "stop": 49
+      },
+      {
+        "name": "identity_auxiliary",
+        "rank": 3,
+        "start": 49,
+        "stop": 52
+      }
+    ],
+    "configuration_rank": 52,
+    "ordering": "Psi104=(Phi52,partial_t Phi52)",
+    "velocity_offset": 52
+  },
+  "claim_boundary": "This exact readiness theorem proves that the current 104-row known-entry mask does not determine the zero-frequency spectral carrier: two mask-compatible exact completions differ by 24 endpoint zero modes. It freezes the minimal full A104, q_Cauchy, Cauchy/Krein form and real-structure receiving contract. It does not claim either formal completion is physical, compute the generalized zero space, construct a BRST Hadamard covariance, prove positivity, define renormalized products, restore a QME or make a quantum claim.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "QUANTUM_CLAIM": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false,
+    "STATIONARY_GENERATOR_RECEIVING_CONTRACT_FROZEN": true,
+    "ZERO_FREQUENCY_INPUT_NONIDENTIFIABILITY_CERTIFIED": true
+  },
+  "current_disposition": {
+    "classical_causal_chain": "CERTIFIED",
+    "covariance_lift_26_to_54": "CERTIFIED_CONDITIONAL_ON_RETAINED_COVARIANCE",
+    "global_BRST_Hadamard_covariance": "NOT_CONSTRUCTED",
+    "local_Hadamard_singularities": "CERTIFIED",
+    "retained_generalized_zero_space": "NOT_COMPUTABLE_FROM_CURRENT_EXPORTS"
+  },
+  "dependency_refs": {
+    "Hadamard_lift": {
+      "artifact_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT.json",
+      "sha256": "06a2356a207e4e8b0ca4821a25c5355c38f6540db25c416693d19f1e2cb58633"
+    },
+    "causal_chain": {
+      "artifact_id": "BERGER_CAUSAL_CHAIN_V2_IMPORT",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
+      "sha256": "2afa06f34d29f9103164d22c9865d4899d5b28d53c6a5a3ce002c89f71c8f1da"
+    },
+    "global_A104_partial": {
+      "artifact_id": "BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json",
+      "sha256": "79e51612a2627c2182f6c774b4966cdcd715a9372ace9ecde59fd01ecd79a5f3"
+    },
+    "known_entry_mask": {
+      "artifact_id": "global_A104_known_entry_mask.json",
+      "path": "quantum-weyl/lorentzian/generated/berger_a104_global_partial_assembly/global_A104_known_entry_mask.json",
+      "sha256": "6b20b0915c804665e0cd10cedb2175576f042503b26b40f675ca11e5dcd96991"
+    },
+    "partial_A104_payload": {
+      "artifact_id": "global_A104_partial.json",
+      "path": "quantum-weyl/lorentzian/generated/berger_a104_global_partial_assembly/global_A104_partial.json",
+      "sha256": "3eb64ec1e37236f230904e3b6c9a2a82a6bd579b6b0b0618351a5341441a0039"
+    },
+    "stationary_spectral_preflight": {
+      "artifact_id": "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT.json",
+      "sha256": "fa7a78005af750cc487107099ec0b9e7e50bad6898a3d49b70fd80153f35d2a9"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "known_entry_audit": {
+    "all_unknown_coordinates_are_confined_to_two_degree_diagonal_blocks": true,
+    "known_coordinates": 10528,
+    "total_coordinates": 10816,
+    "unknown_blocks": [
+      {
+        "block_id": "ghost_A12",
+        "coordinates": 144,
+        "shape": [
+          12,
+          12
+        ]
+      },
+      {
+        "block_id": "identity_A12",
+        "coordinates": 144,
+        "shape": [
+          12,
+          12
+        ]
+      }
+    ],
+    "unknown_coordinates": 288,
+    "unknown_fraction": "9/338"
+  },
+  "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT",
+  "minimal_stationary_carrier_contract": {
+    "analytic_followup": [
+      "choose a closed graded/Krein realization",
+      "compute the Riesz generalized zero space when zero is isolated",
+      "restrict q_Cauchy, causal form, pairing and real structure",
+      "solve finite-dimensional graded CCR/Ward/reality/K_Berger equations",
+      "test positivity only on ghost-number-zero BRST observables or state the Krein substitute"
+    ],
+    "required_artifacts": [
+      {
+        "artifact_id": "A104",
+        "content": "complete exact stationary Cauchy generator",
+        "shape": [
+          104,
+          104
+        ]
+      },
+      {
+        "artifact_id": "q_Cauchy_104",
+        "content": "degree-plus-one nilpotent BRST prolongation",
+        "shape": [
+          104,
+          104
+        ]
+      },
+      {
+        "artifact_id": "G_Cauchy_104",
+        "content": "nondegenerate graded Cauchy/Krein form",
+        "shape": [
+          104,
+          104
+        ]
+      },
+      {
+        "artifact_id": "real_structure_104",
+        "content": "antilinear involution in the frozen ordering",
+        "shape": [
+          104,
+          104
+        ]
+      }
+    ],
+    "required_exact_checks": [
+      "all_104_rows_and_columns_ledgered",
+      "A104_has_no_unknown_coordinates",
+      "q_Cauchy_squared_zero",
+      "A104_supercommutes_with_q_Cauchy",
+      "G_Cauchy_is_nondegenerate_and_BRST_compatible",
+      "real_structure_is_an_involution_and_intertwines_A104_q_Cauchy_G_Cauchy",
+      "zero_is_isolated_or_a_precise_nonisolated_verdict_is_proved"
+    ],
+    "required_result_id": "BERGER_RETAINED_26_STATIONARY_GENERATOR_V1"
+  },
+  "next_gate": "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
+  "nonidentifiability_witness": {
+    "agreement_on_all_exported_coordinates": true,
+    "completion_A": "set both unknown A12 blocks to the zero matrix",
+    "completion_A_endpoint_zero_eigenspace_dimension": 24,
+    "completion_B": "set both unknown A12 blocks to the identity matrix",
+    "completion_B_endpoint_zero_eigenspace_dimension": 0,
+    "conclusion": "the exported mask and partial operator do not determine ker(A104), hence cannot determine the generalized zero eigenspace or its Jordan structure",
+    "scope": "formal exact completions of the exported known-entry mask; not physical endpoint claims",
+    "zero_eigenspace_dimension_difference": 24
+  },
+  "provenance": {
+    "source_manifest": {
+      "../reports/berger-zero-frequency-ledger-readiness.md": "2ee4768c5f56cfb182c59f0f5ae716752e0757c570a6d72e1631fed8117b7595",
+      "berger_zero_frequency_ledger_readiness.py": "386f2efc2c9be5801004802f0cf6013a68dcca6224ecfc87d45c616d5dd99ecc",
+      "berger_zero_frequency_ledger_readiness_certificate.py": "6f80f7fb6c1d9f3d26c585be3d5161b54a5a671ed5cca26454d8e80d92c364d8",
+      "schema/berger-zero-frequency-ledger-readiness-v1.schema.json": "84e42cf9a334d20832e46fa5a2207956f575c7cfec60b9bbe92757765363ef2d",
+      "tests/test_berger_zero_frequency_ledger_readiness.py": "41094648804cfc0da29f11e99b0a65a551be1c48e0478ffe10aff00fec71193b",
+      "verify_berger_zero_frequency_ledger_readiness.py": "670705c5b5df0ce24802ec6d7447fff8543dea1212be5ddfcbc42a6aad678517"
+    },
+    "source_manifest_sha256": "73a2a1fe1cc70760ea34b17d0ac187fab015b079e8493e499de698649f271aeb"
+  },
+  "result_id": "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS",
+  "result_state": "EXACT_MASK_NONIDENTIFIABILITY_CERTIFIED_FULL_STATIONARY_CARRIER_REQUIRED",
+  "schema": "quantum-weyl-berger-zero-frequency-ledger-readiness-v1"
+}
