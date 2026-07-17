@@ -69,8 +69,15 @@ authoritative 84-row forward handoff fixes the complete row order and pairing,
 bulk clock-transported memory category, detector-channel locality, independent
 rod/readout gradings, exact profile two-jet through \(q_3\), external-emitter
 boundary, and physical two-detector \(\Phi_2\) synthesis.  An all-orders
-backreacted branch, emitter recoil, the 84-row interacting/causal complex, and
-a quantum observer state remain open.
+backreacted branch, emitter recoil, the full 84-row interacting/causal
+complex, and a quantum observer state remain open.  The subsequent
+`BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE` closes the exact two-channel
+memory--Maxwell unary and finite advanced/retarded inverse, giving a certified
+72-row causal subcomplex on the non-rod indices.  It also closes the shifted
+Euler equations on the separate \((0,0)\), \((\epsilon_R^2,0)\), and
+\((0,\kappa)\) axes.  Full 84-row promotion is correctly blocked on the
+nonzero rod diffeomorphism action and the missing gravity--rod Hessian,
+cotangent-adjoint, shifted-metric-Hessian, and causal-witness payloads.
 
 ### The adjacent closed-universe programme
 

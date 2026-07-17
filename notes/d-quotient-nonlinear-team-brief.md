@@ -165,6 +165,18 @@ two-jet (`q1,q2,q3`).  The emitter currents remain external.  The next
 apparatus gate is therefore the shifted-background 84-row unary, pairing, and
 advanced/retarded Green complex; do not reconstruct a 78-row extension.
 
+The observer-owned `BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE` has now discharged
+the part of that gate which does not require new gravity--rod coefficients.
+It proves the exact two-detector memory--Maxwell `q1` blocks, unary cyclicity,
+and the finite two-channel advanced/retarded inverse, including the two
+`kappa^2` cross-detector Green terms.  This yields a certified 72-row causal
+subcomplex on rows `0..63,70..73,80..83`.  Do not append six diagonal scalar
+waves and call the result the 84-row BV complex: the global rods are
+nonconstant, so `Gamma_R(xi)=Lie_xi Rbar` is nonzero.  The nonlinear handoff
+now requested is content-addressed `Gamma_R`, its odd-pairing adjoint,
+`K_Rh`, `K_hR`, the shifted metric Hessian `Delta_K_hh`, and a coupled causal
+witness `W_rod`, with coefficientwise nilpotency and cyclicity receipts.
+
 The healthy Berger-clock branch now carries a certified scoped classical
 verdict: the fixed-coupling lapse equation and compact averaging prove
 `D_GAUGE` on `positive_berger_fixed_coupling_linearized_solutions`.  This

@@ -1,0 +1,511 @@
+{
+  "base_memory_72_row_subcomplex": {
+    "advanced_and_retarded_chain_homotopies": true,
+    "chain_homotopy_construction": {
+      "advanced_defect_count": 0,
+      "formula": "Lambda72,+/-=Lambda0,+/-(I+V_kappa Lambda0,+/-)^-1=(I+Lambda0,+/- V_kappa)^-1 Lambda0,+/-",
+      "identity": "q72 Lambda72,+/-+Lambda72,+/- q72=I72",
+      "perturbation": "V_kappa consists exactly of A->p_a_plus and p_a->A_plus",
+      "retarded_defect_count": 0,
+      "termination": "the Neumann correction terminates after two V_kappa insertions",
+      "unperturbed_complex": "q0=q64 direct_sum q_(m0,p0) direct_sum q_(m1,p1)",
+      "unperturbed_identity": "q0 Lambda0,+/-+Lambda0,+/- q0=I72"
+    },
+    "claim_scope": "This is an exact causal BV subcomplex only after the rod rows are omitted. It is a reusable block for the 84-row completion, not the full apparatus complex.",
+    "excluded_rod_indices": [
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79
+    ],
+    "included_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      70,
+      71,
+      72,
+      73,
+      80,
+      81,
+      82,
+      83
+    ],
+    "memory_transport_green": {
+      "H_adv": "(H_adv f)(Theta,x)=-integral_{Theta}^{infinity} f(s,x) ds",
+      "H_ret": "(H_ret f)(Theta,x)=integral_{-infinity}^{Theta} f(s,x) ds",
+      "J_adv": "J_adv=-H_adv",
+      "J_ret": "J_ret=-H_ret",
+      "background_operator": "T=(4/3)e0=d/dTheta along each complete clock line",
+      "divergence": "div_gHat(n_Theta)=0 because n_Theta=(4/3)e0 and dvol_gHat is stationary",
+      "flow_coordinate": "Theta with T(Theta)=1",
+      "formal_adjoint": "T*=-T",
+      "identities": [
+        "T H_ret=H_ret T=1",
+        "T H_adv=H_adv T=1",
+        "T* J_ret=J_ret T*=1",
+        "T* J_adv=J_adv T*=1"
+      ],
+      "identity_defect_count": 0,
+      "support": "H_ret,J_ret have future support and H_adv,J_adv have past support along the timelike clock flow",
+      "test_domain": "C_c^infinity(R_Theta x S3) and the corresponding same-sided images"
+    },
+    "row_count": 72,
+    "two_channel_hessian_green": {
+      "advanced_retarded_inverse": [
+        [
+          "G",
+          "kappa G B0* J0",
+          "kappa G B1* J1",
+          "0",
+          "0"
+        ],
+        [
+          "kappa H0 B0 G",
+          "kappa^2 H0 B0 G B0* J0",
+          "kappa^2 H0 B0 G B1* J1",
+          "H0",
+          "0"
+        ],
+        [
+          "kappa H1 B1 G",
+          "kappa^2 H1 B1 G B0* J0",
+          "kappa^2 H1 B1 G B1* J1",
+          "0",
+          "H1"
+        ],
+        [
+          "0",
+          "J0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "J1",
+          "0",
+          "0"
+        ]
+      ],
+      "cross_detector_terms": [
+        "kappa^2 H0 B0 G B1* J1",
+        "kappa^2 H1 B1 G B0* J0"
+      ],
+      "field_order": [
+        "A",
+        "m0",
+        "m1",
+        "p0",
+        "p1"
+      ],
+      "finite_in_kappa": true,
+      "hessian": [
+        [
+          "M",
+          "0",
+          "0",
+          "-kappa B0*",
+          "-kappa B1*"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "T0*",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "T1*"
+        ],
+        [
+          "-kappa B0",
+          "T0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-kappa B1",
+          "0",
+          "T1",
+          "0",
+          "0"
+        ]
+      ],
+      "inverse_relations": [
+        "M G_+/-=G_+/- M=1",
+        "T_a H_a,+/-=H_a,+/- T_a=1",
+        "T_a* J_a,+/-=J_a,+/- T_a*=1"
+      ],
+      "left_inverse_defect_count": 0,
+      "maximum_kappa_degree": 2,
+      "right_inverse_defect_count": 0,
+      "support": "For either common sign +/-: G_+/-, H_a,+/-, and J_a,+/- are same-sided causal, while B_a and B_a* are support-local; every displayed finite composition has that same causal side."
+    },
+    "unary_path_audit": {
+      "affected_q1_blocks": [
+        "q1(p_a_plus,A)=-kappa B_a",
+        "q1(A_plus,p_a)=+kappa B_a*",
+        "q1(p_a_plus,m_a)=T_a",
+        "q1(m_a_plus,p_a)=T_a*"
+      ],
+      "cyclicity_defect_count": 0,
+      "detector_block_local": true,
+      "maxwell_gauge_relations": [
+        "B_a d=0 because d^2=0",
+        "delta B_a*=0 by formal adjunction"
+      ],
+      "new_cyclicity_pairs": [
+        {
+          "inputs": [
+            "A",
+            "p0"
+          ],
+          "sum": "0",
+          "terms": [
+            "-kappa B0*",
+            "+kappa B0*"
+          ]
+        },
+        {
+          "inputs": [
+            "A",
+            "p1"
+          ],
+          "sum": "0",
+          "terms": [
+            "-kappa B1*",
+            "+kappa B1*"
+          ]
+        },
+        {
+          "inputs": [
+            "m0",
+            "p0"
+          ],
+          "sum": "0",
+          "terms": [
+            "T0*",
+            "-T0*"
+          ]
+        },
+        {
+          "inputs": [
+            "m1",
+            "p1"
+          ],
+          "sum": "0",
+          "terms": [
+            "T1*",
+            "-T1*"
+          ]
+        }
+      ],
+      "new_length_two_paths": [
+        {
+          "path": "c_M -> A -> p0_plus",
+          "reduction": "0 by d^2=0",
+          "word": "-kappa B0 d"
+        },
+        {
+          "path": "c_M -> A -> p1_plus",
+          "reduction": "0 by d^2=0",
+          "word": "-kappa B1 d"
+        },
+        {
+          "path": "p0 -> A_plus -> c_M_plus",
+          "reduction": "0 by adjoint of B0 d=0",
+          "word": "kappa delta B0*"
+        },
+        {
+          "path": "p1 -> A_plus -> c_M_plus",
+          "reduction": "0 by adjoint of B1 d=0",
+          "word": "kappa delta B1*"
+        }
+      ],
+      "nilpotency_defect_count": 0,
+      "profile_formula": "B_a A=chi_a(Theta,R_a)<dA,dTheta wedge dR_aI(a)>_gHat"
+    }
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL certificate closes the two-detector memory--Maxwell unary extension of the certified base complex. It proves q1 nilpotency and unary cyclicity for the new blocks, and proves a finite exact two-channel advanced/retarded inverse including the kappa-squared cross-detector terms. Together with the base 64 rows this is a certified 72-row causal subcomplex on the displayed non-rod indices. It also certifies the shifted background Euler equations only on bidegrees (0,0), (epsilon_R^2,0), and (0,kappa). It does not promote the full 84-row q1: the nonconstant rod backgrounds require explicit diffeomorphism, gravity--rod Hessian, BV-adjoint, shifted metric Hessian, and causal-witness blocks. Mixed epsilon_R^2*kappa terms, q2/q3, K_Berger apparatus equivariance, the observer morphism, deformed rank two, emitter recoil, Lorentzian quantum theory, and every quantum claim remain open.",
+  "claim_status": "MEMORY_CAUSAL_SUBCOMPLEX_CERTIFIED_FULL_84_ROW_ROD_COMPLETION_BLOCKED",
+  "dependency_refs": {
+    "authoritative_84_row_handoff": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json",
+      "result_id": "BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF",
+      "sha256": "4e3202b7397b9b9fa0a5ce2ccfc243d3e9bda5f69d6339d329caaa3bfe9324ab"
+    },
+    "base_64_carrier": {
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
+      "result_id": "BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR",
+      "sha256": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4"
+    },
+    "base_64_causal": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+      "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+      "sha256": "3403f12bb56f3e1fdf0e4aeef4c8f29859205085d4044311fa64ee0e763be63a"
+    },
+    "global_rods": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_DETECTOR_INDEXED_RODS.json",
+      "result_id": "BERGER_GLOBAL_DETECTOR_INDEXED_RODS",
+      "sha256": "03c70e99a606ce53ec0ddd97f4e3f1913700c889d554c88986e63ccb476d9b83"
+    },
+    "historical_unary_gate": {
+      "path": "d_quotient_classical/certificates/BERGER_EXTENDED_ROD_MEMORY_MAXWELL_UNARY_GATE.json",
+      "result_id": "BERGER_EXTENDED_ROD_MEMORY_MAXWELL_UNARY_GATE",
+      "sha256": "8bf0bb63d123f9f91c62b939582db06db2e4647e4048c958da72a4767a3bb195"
+    },
+    "rod_q1_solvability": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_ROD_Q1_SOURCE_SECTOR_SOLVABILITY.json",
+      "result_id": "BERGER_GLOBAL_ROD_Q1_SOURCE_SECTOR_SOLVABILITY",
+      "sha256": "36153ad6c0cdcdcc9ab18c3feb0ea22915e4ec7215889e3d3de9687c6c7971f9"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED": false,
+    "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": false,
+    "84_ROW_ODD_PAIRING_NONDEGENERATE": true,
+    "84_ROW_Q1_CERTIFIED": false,
+    "84_ROW_UNARY_CYCLICITY_CERTIFIED": false,
+    "BASE_MEMORY_72_ROW_CAUSAL_SUBCOMPLEX_CERTIFIED": true,
+    "QUANTUM_CLAIM": false,
+    "ROD_DIAGONAL_WAVE_CANDIDATE_EXPORTED": true,
+    "ROD_GRAVITY_BV_BLOCKS_EXPORTED": false,
+    "SHIFTED_BACKGROUND_EULER_AXES_CERTIFIED": true,
+    "SHIFTED_BACKGROUND_MIXED_AND_ALL_ORDERS_CERTIFIED": false,
+    "TWO_CHANNEL_MEMORY_MAXWELL_ADVANCED_RETARDED_GREEN": true,
+    "TWO_CHANNEL_MEMORY_MAXWELL_UNARY_NILPOTENT_CYCLIC": true
+  },
+  "mutation_results": [
+    {
+      "defect_detected": true,
+      "expected_defect": "c_M -> A -> p0_plus",
+      "name": "drop_Bd_zero"
+    },
+    {
+      "defect_detected": true,
+      "expected_defect": "A,p0 unary cyclicity",
+      "name": "flip_Aplus_p_sign"
+    },
+    {
+      "defect_detected": true,
+      "expected_defect": "right inverse at m0,m1",
+      "name": "delete_cross_detector_green_term"
+    },
+    {
+      "defect_detected": true,
+      "expected_defect": "missing nonzero Gamma_R",
+      "name": "promote_diagonal_rods_to_full_BV"
+    }
+  ],
+  "next_gate": "EXPORT_COUPLED_ROD_GRAVITY_BV_UNARY_BLOCKS_AND_CAUSAL_WITNESS",
+  "pairing": {
+    "base_64_pairing_nondegenerate": true,
+    "degree_ranks_minus1_0_1_2": [
+      6,
+      36,
+      36,
+      6
+    ],
+    "full_84_pairing_nondegenerate": true,
+    "new_20_by_20_pairing_rank": 20,
+    "new_pairing_rule": "Omega(field,field_plus)=+1 and Omega(field_plus,field)=-1",
+    "total_rows": 84
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_84_row_unary_pairing_green_gate.py",
+        "sha256": "48cdacf734daa1368725abd47982b819f600a5a4f6a6b3127d57de2a9de347fa"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_84_row_unary_pairing_green_gate.py",
+        "sha256": "e91b3f7592746c5cdaf9ef49946f659e139e5da477a64779980cbcc0de7231ae"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_84_row_unary_pairing_green_gate.py",
+        "sha256": "e40c94d464779253d4ca2bac2a604796d45083bd411c37ee0ee224392c240913"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-84-row-unary-pairing-green-gate.md",
+        "sha256": "43dceee894c6bb9a4475fdf8a81a2aaef3fcf1173684e73d00910b5c1291640c"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-84-row-unary-pairing-green-gate-v1.schema.json",
+        "sha256": "1d0b6979a79772dabf809cb92433e0280b26f952721d7f6ed83d358ccf710155"
+      }
+    ]
+  },
+  "result_id": "BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE",
+  "rod_completion_ledger": {
+    "required_identities": [
+      "q84^2=0 coefficientwise on every ghost, field, antifield, and ghost-antifield row",
+      "q84^sharp Omega84+Omega84 q84=0",
+      "q84 Lambda84,+/-+Lambda84,+/- q84=I84",
+      "same-sided causal support for Lambda84,+/-"
+    ],
+    "required_missing_blocks": [
+      {
+        "formula": "Gamma_R(xi)_aI=Lie_xi Rbar_aI",
+        "id": "Gamma_R",
+        "type": "ghost_to_rod"
+      },
+      {
+        "formula": "odd-pairing adjoint of Gamma_R",
+        "id": "Gamma_R_sharp",
+        "type": "rod_plus_to_gravity_ghost_plus"
+      },
+      {
+        "formula": "epsilon_R^2 delta_(g,Theta)(Box_g Rbar)",
+        "id": "K_Rh",
+        "type": "metric_clock_to_rod_plus"
+      },
+      {
+        "formula": "epsilon_R^2 delta_R T_rod with the certified row-density convention",
+        "id": "K_hR",
+        "type": "rod_to_metric_clock_plus"
+      },
+      {
+        "formula": "D^3 S_base[Phi2]+epsilon_R^2 D_g^2 S_rod",
+        "id": "Delta_K_hh",
+        "type": "shifted_base_and_rod_metric_hessian"
+      },
+      {
+        "formula": "a gauge-compatible witness making the coupled wave operator Green hyperbolic",
+        "id": "W_rod",
+        "type": "causal_witness_completion"
+      }
+    ],
+    "standalone_kinetic_candidate": {
+      "blocks": "q1(R_aI_plus,R_aI)=epsilon_R^2 Box_g_epsilon",
+      "candidate_inverse": "epsilon_R^-2 G_Box,+/- on nonzero-coupling Laurent coefficients",
+      "not_a_bv_subcomplex": true,
+      "principal_symbol": "epsilon_R^2 g_epsilon^{mu nu} zeta_mu zeta_nu I6",
+      "reason": "the nonconstant Rbar_aI transform under the existing diffeomorphism ghosts"
+    },
+    "typed_obstruction": "The six diagonal scalar wave blocks do not close under q1 because Gamma_R is nonzero. Promoting them without the five coupled rod/gravity payloads would violate the declared BV quotient."
+  },
+  "schema": "closed-universe-berger-84-row-unary-pairing-green-gate-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "shifted_background_euler_jet": {
+    "all_84_background_rows_vanish_on_certified_axes": true,
+    "base_rows": "the Berger gravity--clock--Maxwell background is on shell",
+    "certified_bidegrees": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "coefficient_variables": [
+      "r=epsilon_R^2",
+      "kappa"
+    ],
+    "excluded_bidegrees": [
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "maxwell_memory_rows_at_kappa": "Abar=mbar=pbar=0, hence every readout Euler component vanishes",
+    "metric_rows_at_r": "H_retained Phi2+q0_rod=0 by the exact physical two-detector synthesis",
+    "mixed_r_kappa_background_and_all_orders": "OPEN",
+    "rod_rows_at_r": "Box_gHat Rbar_aI=0 for all six global rods"
+  }
+}

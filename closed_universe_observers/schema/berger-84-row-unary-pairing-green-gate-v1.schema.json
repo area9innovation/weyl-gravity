@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-84-row-unary-pairing-green-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "shifted_background_euler_jet", "pairing",
+    "base_memory_72_row_subcomplex", "rod_completion_ledger", "mutation_results",
+    "flags", "next_gate", "claim_boundary", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-84-row-unary-pairing-green-gate-v1"},
+    "result_id": {"const": "BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "MEMORY_CAUSAL_SUBCOMPLEX_CERTIFIED_FULL_84_ROW_ROD_COMPLETION_BLOCKED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authoritative_84_row_handoff", "historical_unary_gate", "base_64_carrier",
+        "base_64_causal", "global_rods", "rod_q1_solvability"
+      ],
+      "properties": {
+        "authoritative_84_row_handoff": {"$ref": "#/$defs/dependency"},
+        "historical_unary_gate": {"$ref": "#/$defs/dependency"},
+        "base_64_carrier": {"$ref": "#/$defs/dependency"},
+        "base_64_causal": {"$ref": "#/$defs/dependency"},
+        "global_rods": {"$ref": "#/$defs/dependency"},
+        "rod_q1_solvability": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "shifted_background_euler_jet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coefficient_variables", "certified_bidegrees", "excluded_bidegrees", "base_rows",
+        "metric_rows_at_r", "rod_rows_at_r", "maxwell_memory_rows_at_kappa",
+        "all_84_background_rows_vanish_on_certified_axes",
+        "mixed_r_kappa_background_and_all_orders"
+      ],
+      "properties": {
+        "coefficient_variables": {"const": ["r=epsilon_R^2", "kappa"]},
+        "certified_bidegrees": {"const": [[0, 0], [1, 0], [0, 1]]},
+        "excluded_bidegrees": {"const": [[2, 0], [1, 1], [0, 2]]},
+        "base_rows": {"$ref": "#/$defs/text"},
+        "metric_rows_at_r": {"$ref": "#/$defs/text"},
+        "rod_rows_at_r": {"$ref": "#/$defs/text"},
+        "maxwell_memory_rows_at_kappa": {"$ref": "#/$defs/text"},
+        "all_84_background_rows_vanish_on_certified_axes": {"const": true},
+        "mixed_r_kappa_background_and_all_orders": {"const": "OPEN"}
+      }
+    },
+    "pairing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_rows", "degree_ranks_minus1_0_1_2", "base_64_pairing_nondegenerate",
+        "new_20_by_20_pairing_rank", "new_pairing_rule", "full_84_pairing_nondegenerate"
+      ],
+      "properties": {
+        "total_rows": {"const": 84},
+        "degree_ranks_minus1_0_1_2": {"const": [6, 36, 36, 6]},
+        "base_64_pairing_nondegenerate": {"const": true},
+        "new_20_by_20_pairing_rank": {"const": 20},
+        "new_pairing_rule": {"$ref": "#/$defs/text"},
+        "full_84_pairing_nondegenerate": {"const": true}
+      }
+    },
+    "base_memory_72_row_subcomplex": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "included_indices", "excluded_rod_indices", "row_count", "unary_path_audit", "memory_transport_green",
+        "two_channel_hessian_green", "chain_homotopy_construction",
+        "advanced_and_retarded_chain_homotopies", "claim_scope"
+      ],
+      "properties": {
+        "included_indices": {
+          "type": "array", "minItems": 72, "maxItems": 72,
+          "items": {"type": "integer", "minimum": 0, "maximum": 83},
+          "uniqueItems": true
+        },
+        "excluded_rod_indices": {"const": [64, 65, 66, 67, 68, 69, 74, 75, 76, 77, 78, 79]},
+        "row_count": {"const": 72},
+        "unary_path_audit": {"type": "object"},
+        "memory_transport_green": {"type": "object"},
+        "two_channel_hessian_green": {"type": "object"},
+        "chain_homotopy_construction": {"type": "object"},
+        "advanced_and_retarded_chain_homotopies": {"const": true},
+        "claim_scope": {"$ref": "#/$defs/text"}
+      }
+    },
+    "rod_completion_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["standalone_kinetic_candidate", "required_missing_blocks", "required_identities", "typed_obstruction"],
+      "properties": {
+        "standalone_kinetic_candidate": {"type": "object"},
+        "required_missing_blocks": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["id", "type", "formula"],
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "type": {"type": "string", "minLength": 1},
+              "formula": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "required_identities": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}},
+        "typed_obstruction": {"$ref": "#/$defs/text"}
+      }
+    },
+    "mutation_results": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "expected_defect", "defect_detected"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "expected_defect": {"type": "string", "minLength": 1},
+          "defect_detected": {"const": true}
+        }
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "SHIFTED_BACKGROUND_EULER_AXES_CERTIFIED",
+        "SHIFTED_BACKGROUND_MIXED_AND_ALL_ORDERS_CERTIFIED",
+        "84_ROW_ODD_PAIRING_NONDEGENERATE",
+        "TWO_CHANNEL_MEMORY_MAXWELL_UNARY_NILPOTENT_CYCLIC",
+        "TWO_CHANNEL_MEMORY_MAXWELL_ADVANCED_RETARDED_GREEN",
+        "BASE_MEMORY_72_ROW_CAUSAL_SUBCOMPLEX_CERTIFIED",
+        "ROD_DIAGONAL_WAVE_CANDIDATE_EXPORTED", "ROD_GRAVITY_BV_BLOCKS_EXPORTED",
+        "84_ROW_Q1_CERTIFIED", "84_ROW_UNARY_CYCLICITY_CERTIFIED",
+        "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED", "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "SHIFTED_BACKGROUND_EULER_AXES_CERTIFIED": {"const": true},
+        "SHIFTED_BACKGROUND_MIXED_AND_ALL_ORDERS_CERTIFIED": {"const": false},
+        "84_ROW_ODD_PAIRING_NONDEGENERATE": {"const": true},
+        "TWO_CHANNEL_MEMORY_MAXWELL_UNARY_NILPOTENT_CYCLIC": {"const": true},
+        "TWO_CHANNEL_MEMORY_MAXWELL_ADVANCED_RETARDED_GREEN": {"const": true},
+        "BASE_MEMORY_72_ROW_CAUSAL_SUBCOMPLEX_CERTIFIED": {"const": true},
+        "ROD_DIAGONAL_WAVE_CANDIDATE_EXPORTED": {"const": true},
+        "ROD_GRAVITY_BV_BLOCKS_EXPORTED": {"const": false},
+        "84_ROW_Q1_CERTIFIED": {"const": false},
+        "84_ROW_UNARY_CYCLICITY_CERTIFIED": {"const": false},
+        "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED": {"const": false},
+        "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "EXPORT_COUPLED_ROD_GRAVITY_BV_UNARY_BLOCKS_AND_CAUSAL_WITNESS"},
+    "claim_boundary": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "source_manifest"],
+      "properties": {
+        "source_commit": {"const": "WORKTREE"},
+        "source_manifest": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {"$ref": "#/$defs/source"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "result_id"],
+      "properties": {
+        "path": {"$ref": "#/$defs/text"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "result_id": {"$ref": "#/$defs/text"}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/text"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

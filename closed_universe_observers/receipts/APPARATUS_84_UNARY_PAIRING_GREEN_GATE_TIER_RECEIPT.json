@@ -1,0 +1,80 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "APPARATUS_84_UNARY_PAIRING_GREEN_GATE_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The two-channel memory--Maxwell unary, cyclicity, and advanced/retarded Green block are certified as a 72-row causal subcomplex. The full 84-row q1 and Green homotopy remain blocked on the coupled rod--gravity BV payload and are not promoted.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_84_row_unary_pairing_green_gate.py closed_universe_observers/verify_berger_84_row_unary_pairing_green_gate.py closed_universe_observers/tests/test_berger_84_row_unary_pairing_green_gate.py && python3 -m json.tool on the new schema, certificate, receipt, and comparison ledger && git diff --check on the scoped paths",
+      "elapsed_seconds": "0.19",
+      "status": "PASS",
+      "scope": "Python syntax, strict structured data, reports, briefs, and whitespace"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_84_row_unary_pairing_green_gate --check",
+      "elapsed_seconds": "0.10",
+      "status": "PASS",
+      "scope": "dependency compatibility, exact universal two-channel inverse, path audit, schema, and freshness"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_84_row_unary_pairing_green_gate",
+      "elapsed_seconds": "0.11",
+      "status": "PASS",
+      "scope": "independent rational matrix specialization, dependency/source hashes, semantic boundary, and overclaim mutations"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_84_row_unary_pairing_green_gate.py",
+      "elapsed_seconds": "0.41",
+      "status": "PASS",
+      "scope": "all 8 focused completion-gate tests"
+    },
+    {
+      "command": "python3 closed_universe_observers/verify_comparison_ledger.py",
+      "elapsed_seconds": "0.13",
+      "status": "PASS",
+      "scope": "historical snapshot replay plus live 72-row bridge import"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-84-row-unary-pairing-green-gate-v1.schema.json -d closed_universe_observers/certificates/BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE.json",
+      "elapsed_seconds": "2.43",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 validation"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "TMPDIR=/var/tmp/codex-observer-unary-volterra python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "87.93",
+      "status": "PASS",
+      "scope": "all 46 closed-universe observer tests; the exact temporary directory was removed after the run"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No classical freeze, full 84-row differential, full 84-row causal homotopy, theorem lifecycle promotion, shared algebra-engine change, QME result, release, or explicit full-repository request occurred."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE.json", "sha256": "1c51f49ae867c5792bf4ece12f58d03e55079a9baa1c8a0209adeb74913e093f"},
+    {"path": "closed_universe_observers/schema/berger-84-row-unary-pairing-green-gate-v1.schema.json", "sha256": "1d0b6979a79772dabf809cb92433e0280b26f952721d7f6ed83d358ccf710155"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "cb24504546c90729c78cbfbe262268cd792dc0b62b9a072144c708bbf55a4f5a"},
+    {"path": "closed_universe_observers/reports/berger-84-row-unary-pairing-green-gate.md", "sha256": "43dceee894c6bb9a4475fdf8a81a2aaef3fcf1173684e73d00910b5c1291640c"}
+  ],
+  "claim_flags": {
+    "SHIFTED_BACKGROUND_EULER_AXES_CERTIFIED": true,
+    "84_ROW_ODD_PAIRING_NONDEGENERATE": true,
+    "BASE_MEMORY_72_ROW_CAUSAL_SUBCOMPLEX_CERTIFIED": true,
+    "TWO_CHANNEL_MEMORY_MAXWELL_ADVANCED_RETARDED_GREEN": true,
+    "ROD_GRAVITY_BV_BLOCKS_EXPORTED": false,
+    "84_ROW_Q1_CERTIFIED": false,
+    "84_ROW_UNARY_CYCLICITY_CERTIFIED": false,
+    "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED": false,
+    "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
