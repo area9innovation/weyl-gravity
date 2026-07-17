@@ -28,6 +28,8 @@ CLASSICAL_BERGER_CLOCK_CHARGE_SEED_CONTRIBUTION = PACKAGE / "contributions" / "c
 CLASSICAL_BERGER_FIXED_COUPLING_DELTA_CHARGE_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-fixed-coupling-delta-charge.json"
 CLASSICAL_BERGER_MINIMAL_BV_CLOCK_SDR_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-minimal-bv-clock-sdr.json"
 CLASSICAL_BERGER_RETAINED_MINIMAL_LAYOUT_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-retained-minimal-layout.json"
+CLASSICAL_BERGER_GENERATOR_CONJUGATION_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-generator-conjugation.json"
+CLASSICAL_RELATIVE_FUNCTOR_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "classical-relative-residual-observable-functor-preflight.json"
 NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
 NONLINEAR_BERGER_RETAINED_Q2_CONTRIBUTION = (
     PACKAGE
@@ -367,6 +369,46 @@ def _quantum_relative_contribution() -> dict[str, Any]:
         raise AssertionError("relative quantum contribution evidence is incomplete")
     if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
         raise AssertionError("relative quantum contribution evidence hash drifted")
+    return contribution
+
+
+def _classical_berger_generator_conjugation_contribution() -> dict[str, Any]:
+    contribution = _load(CLASSICAL_BERGER_GENERATOR_CONJUGATION_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "classical"
+        and contribution.get("setting_id") == "compact_positive_berger_clock_generator_conjugation"
+        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("phase_space_id") == "positive_berger_fixed_coupling_linearized_solutions"
+        and contribution.get("lifecycle_layer") == "CLASSICAL_CARTAN"
+        and contribution.get("claim_status") == "CERTIFIED"
+        and contribution.get("verdict") == "FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE"
+        and contribution.get("dependency_tags") == ["LOCAL-ALGEBRAIC"]
+    ):
+        raise AssertionError("classical Berger generator correction scope drifted")
+    evidence = contribution.get("evidence", {})
+    if _sha256_bytes(_committed_bytes(evidence["commit"], evidence["path"])) != evidence.get("sha256"):
+        raise AssertionError("classical Berger generator correction evidence hash drifted")
+    return contribution
+
+
+def _classical_relative_functor_preflight_contribution() -> dict[str, Any]:
+    contribution = _load(CLASSICAL_RELATIVE_FUNCTOR_PREFLIGHT_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "classical"
+        and contribution.get("setting_id") == "compact_einstein_maxwell_weyl_relative_functor_preflight"
+        and contribution.get("generator_id") == "H_product"
+        and contribution.get("phase_space_id") == "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent"
+        and contribution.get("lifecycle_layer") == "CLASSICAL_BV"
+        and contribution.get("claim_status") == "BLOCKED"
+        and contribution.get("verdict") == "BLOCKED_ON_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"
+        and contribution.get("dependency_tags") == ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    ):
+        raise AssertionError("classical relative functor preflight scope drifted")
+    evidence = contribution.get("evidence", {})
+    if _sha256_bytes(_committed_bytes(evidence["commit"], evidence["path"])) != evidence.get("sha256"):
+        raise AssertionError("classical relative functor preflight evidence hash drifted")
     return contribution
 
 
@@ -821,6 +863,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     berger_retained_minimal_layout_contribution = (
         _classical_berger_retained_minimal_layout_contribution()
     )
+    berger_generator_conjugation_contribution = (
+        _classical_berger_generator_conjugation_contribution()
+    )
+    relative_functor_preflight_contribution = (
+        _classical_relative_functor_preflight_contribution()
+    )
     ed1a_contribution = _einstein_ed1a_contribution()
     berger_incidence_contribution = _einstein_berger_incidence_contribution()
     maxwell_product_contribution = _einstein_maxwell_product_contribution()
@@ -1088,6 +1136,16 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "path": str(CLASSICAL_BERGER_RETAINED_MINIMAL_LAYOUT_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(CLASSICAL_BERGER_RETAINED_MINIMAL_LAYOUT_CONTRIBUTION),
                 "payload": berger_retained_minimal_layout_contribution,
+            },
+            {
+                "path": str(CLASSICAL_BERGER_GENERATOR_CONJUGATION_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(CLASSICAL_BERGER_GENERATOR_CONJUGATION_CONTRIBUTION),
+                "payload": berger_generator_conjugation_contribution,
+            },
+            {
+                "path": str(CLASSICAL_RELATIVE_FUNCTOR_PREFLIGHT_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(CLASSICAL_RELATIVE_FUNCTOR_PREFLIGHT_CONTRIBUTION),
+                "payload": relative_functor_preflight_contribution,
             },
             {
                 "path": str(EINSTEIN_ED1A_CONTRIBUTION.relative_to(ROOT)),
@@ -1429,6 +1487,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "RETAINED_MINIMAL_LAYOUT_FROZEN",
             },
             {
+                "setting_id": "compact_positive_berger_clock_generator_conjugation",
+                "generator_id": "D_compact",
+                "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+                "boundary_conditions": "closed Berger cylinder; co-rotating scalar dressing; raw D compared with K=D-omega R",
+                "lifecycle_layer": "CLASSICAL_CARTAN",
+                "status": "CERTIFIED",
+                "verdict": "FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE",
+            },
+            {
                 "setting_id": "compact_positive_berger_clock_einstein_incidence",
                 "generator_id": "D_compact",
                 "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
@@ -1643,6 +1710,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "lifecycle_layer": "CLASSICAL_BV",
                 "status": "CERTIFIED",
                 "verdict": "G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT",
+            },
+            {
+                "setting_id": "compact_einstein_maxwell_weyl_relative_functor_preflight",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent",
+                "boundary_conditions": "fixed-P_N compact product; on-shell standard harmonic inclusion imported; off-shell BV triangle and observable pullback absent",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "BLOCKED",
+                "verdict": "BLOCKED_ON_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             {
                 "setting_id": "compact_einstein_maxwell_weyl_extra_branch_preflight",
@@ -1899,6 +1975,16 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_positive_berger_clock_retained_q2_26",
     }:
         errors.append("nonlinear contribution inventory drifted")
+    contribution_ids = {
+        record.get("payload", {}).get("setting_id")
+        for record in data.get("team_contributions", [])
+    }
+    for setting_id in (
+        "compact_positive_berger_clock_generator_conjugation",
+        "compact_einstein_maxwell_weyl_relative_functor_preflight",
+    ):
+        if setting_id not in contribution_ids:
+            errors.append(f"required classical contribution dropped: {setting_id}")
     einstein_contributions = {
         record.get("payload", {}).get("setting_id")
         for record in data.get("team_contributions", [])
@@ -1956,6 +2042,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_positive_berger_clock_fixed_coupling_linearized": "D_GAUGE",
         "compact_positive_berger_clock_minimal_bv_sdr": "MINIMAL_CLOCK_SECTOR_SDR",
         "compact_positive_berger_clock_retained_minimal_layout": "RETAINED_MINIMAL_LAYOUT_FROZEN",
+        "compact_positive_berger_clock_generator_conjugation": "FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE",
         "compact_positive_berger_clock_einstein_incidence": "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND",
         "compact_einstein_maxwell_product_background": "COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND",
         "compact_einstein_maxwell_product_tangent_preflight": "PRINCIPAL_TANGENT_CHAIN_MAP_WITH_EXTRA_WEYL_CLASSES",
@@ -1980,6 +2067,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_radiative_restriction": "G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION",
         "compact_einstein_maxwell_weyl_ell1_physical_restriction": "G3_PHYSICAL_ELL1_ALL_N_M_FACTOR_FOUR_QUOTIENT_RESTRICTION",
         "compact_einstein_maxwell_weyl_standard_harmonic_inclusion": "G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT",
+        "compact_einstein_maxwell_weyl_relative_functor_preflight": "BLOCKED_ON_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
         "compact_einstein_maxwell_weyl_extra_branch_preflight": "G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT",
         "compact_einstein_maxwell_weyl_axial_operator_module_preflight": "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS",
         "compact_einstein_maxwell_weyl_axial_operator": "G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_SOLUTION_MODULE",
@@ -2028,6 +2116,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("fixed-coupling Berger D_GAUGE theorem was dropped")
     if ledger.get("compact_positive_berger_clock_retained_minimal_layout", {}).get("status") != "CERTIFIED":
         errors.append("Berger retained minimal layout was dropped")
+    if ledger.get("compact_positive_berger_clock_generator_conjugation", {}).get("status") != "CERTIFIED":
+        errors.append("Berger D/K generator correction was dropped")
     if ledger.get("compact_positive_berger_clock_minimal_bv_sdr", {}).get("status") != "CERTIFIED":
         errors.append("minimal Berger clock BV SDR was dropped")
     if ledger.get("compact_positive_berger_clock_einstein_incidence", {}).get("status") != "CERTIFIED":
@@ -2078,6 +2168,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("physical ell=1 Weyl--Maxwell quotient restriction theorem was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_standard_harmonic_inclusion", {}).get("status") != "CERTIFIED":
         errors.append("complete standard-harmonic Weyl--Maxwell inclusion theorem was dropped")
+    if ledger.get("compact_einstein_maxwell_weyl_relative_functor_preflight", {}).get("status") != "BLOCKED":
+        errors.append("relative functor preflight promoted before the off-shell triangle")
     if ledger.get("compact_einstein_maxwell_weyl_extra_branch_preflight", {}).get("status") != "CERTIFIED":
         errors.append("Weyl--Maxwell extra-branch preflight was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_axial_operator_module_preflight", {}).get("status") != "CERTIFIED":
@@ -2297,6 +2389,35 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
     )
     retained_layout["verdict"] = "RETAINED_MINIMAL_OPERATOR_COMPLETE"
     reject("promote_Berger_layout_to_operator", mutant)
+
+    for setting_id, guard_name in (
+        (
+            "compact_positive_berger_clock_generator_conjugation",
+            "drop_Berger_generator_conjugation_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_weyl_relative_functor_preflight",
+            "drop_classical_relative_functor_preflight_contribution",
+        ),
+    ):
+        mutant = deepcopy(data)
+        mutant["team_contributions"] = [
+            record
+            for record in mutant["team_contributions"]
+            if record["payload"]["setting_id"] != setting_id
+        ]
+        reject(guard_name, mutant)
+
+    mutant = deepcopy(data)
+    relative_preflight = next(
+        row
+        for row in mutant["setting_ledger"]
+        if row["setting_id"]
+        == "compact_einstein_maxwell_weyl_relative_functor_preflight"
+    )
+    relative_preflight["status"] = "CERTIFIED"
+    relative_preflight["verdict"] = "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1"
+    reject("promote_relative_functor_before_offshell_triangle", mutant)
 
     mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_quantum")["verdict"] = "CARTAN_QUANTUM_EXACT"

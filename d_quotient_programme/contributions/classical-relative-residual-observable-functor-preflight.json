@@ -1,0 +1,36 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_einstein_maxwell_weyl_relative_functor_preflight",
+  "generator_id": "H_product",
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent",
+  "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle; complete standard harmonic tangent before final residual quotient; off-shell triangle absent",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "claim_status": "BLOCKED",
+  "verdict": "BLOCKED_ON_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the classical relative-functor dependency contract is explicit and independently verified",
+    "the exact on-shell standard-harmonic inclusion and reduced-mode pairing are imported by content hash",
+    "the Berger clock is excluded as a same-base fallback by the certified Einstein-incidence result",
+    "all off-shell relative and observable promotions remain fail-closed"
+  ],
+  "not_established": [
+    "the off-shell BV chain map on every field, ghost, antifield, equation and identity row",
+    "the mapping cofiber or relative triangle",
+    "H_product residual equivariance",
+    "the observable pullback or detector functor",
+    "the relative quantum lift"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json",
+    "commit": "0f2393240f53a09fb99d496f2d56faeb219d48b8",
+    "sha256": "6eeea993d96dc352c9b08364d87518a9a1f19224a8df0a87bbf0ae81573f4e32"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.relative.relative_residual_observable_functor_preflight --check --guards",
+    "python3 d_quotient_classical/relative/verify_relative_residual_observable_functor_preflight.py",
+    "python3 -m unittest d_quotient_classical.relative.tests.test_relative_residual_observable_functor_preflight"
+  ],
+  "next_gate": "IMPORT_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_BY_HASH"
+}

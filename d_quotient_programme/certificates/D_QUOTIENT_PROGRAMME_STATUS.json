@@ -29,7 +29,7 @@
     ],
     "rule": "The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and the conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported. Construct advanced/retarded Green operators with causal support and transport them to the retained endpoint without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "41ae4e41c74f4c8aa4b4bf07589943a01e4c5250",
+  "programme_base_commit": "0f2393240f53a09fb99d496f2d56faeb219d48b8",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -168,6 +168,15 @@
       "setting_id": "compact_positive_berger_clock_retained_minimal_layout",
       "status": "CERTIFIED",
       "verdict": "RETAINED_MINIMAL_LAYOUT_FROZEN"
+    },
+    {
+      "boundary_conditions": "closed Berger cylinder; co-rotating scalar dressing; raw D compared with K=D-omega R",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "CLASSICAL_CARTAN",
+      "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+      "setting_id": "compact_positive_berger_clock_generator_conjugation",
+      "status": "CERTIFIED",
+      "verdict": "FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE"
     },
     {
       "boundary_conditions": "closed Berger S3; certified positive-clock background; same clock stress in the tested Einstein equation",
@@ -384,6 +393,15 @@
       "setting_id": "compact_einstein_maxwell_weyl_standard_harmonic_inclusion",
       "status": "CERTIFIED",
       "verdict": "G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT"
+    },
+    {
+      "boundary_conditions": "fixed-P_N compact product; on-shell standard harmonic inclusion imported; off-shell BV triangle and observable pullback absent",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent",
+      "setting_id": "compact_einstein_maxwell_weyl_relative_functor_preflight",
+      "status": "BLOCKED",
+      "verdict": "BLOCKED_ON_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"
     },
     {
       "boundary_conditions": "candidate full smooth periodic fixed-P_N Weyl-Maxwell harmonic solution complex; no bounded-time selection or final residual SO(4,2) quotient",
@@ -987,6 +1005,88 @@
         ]
       },
       "sha256": "219c6960f2861aaa04ac5e71aa62789bccab01978b60cb8313235fe8278f501d"
+    },
+    {
+      "path": "d_quotient_programme/contributions/classical-berger-generator-conjugation.json",
+      "payload": {
+        "boundary_conditions": "closed Berger cylinder; co-rotating scalar dressing; comparison of raw D with the background-fixing helical generator K=D-omega R",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC"
+        ],
+        "established": [
+          "the rotating clock background is fixed by K=D-omega R and is not fixed by raw cylinder translation D",
+          "the frozen all-row e_0 action represents the unary K action",
+          "raw D has a nonzero zero-arity component in dressed coordinates",
+          "the certified unary-through-ternary Cartan identities therefore constitute a K-Cartan theorem"
+        ],
+        "evidence": {
+          "commit": "d4e6645f94afe95e4821912d20e0b14656e360ea",
+          "path": "d_quotient_classical/certificates/BERGER_GENERATOR_CONJUGATION_AUDIT.json",
+          "sha256": "afc14ea90b10a9a59f0e7d240fcb2231eada9097d1d0e051f8f058d86de3d149"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "CLASSICAL_CARTAN",
+        "next_gate": "CONSTRUCT_AFFINE_D_CARTAN_OR_RETAIN_THE_SCOPED_K_ONLY_THEOREM",
+        "not_established": [
+          "an affine or curved D-Cartan primitive",
+          "an all-orders K-Cartan theorem",
+          "a nonlinear finite D quotient"
+        ],
+        "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_positive_berger_clock_generator_conjugation",
+        "team_id": "classical",
+        "verdict": "FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE",
+        "verification_commands": [
+          "python3 -m d_quotient_classical.backreacted_clock.berger_generator_conjugation_audit --check --guards",
+          "python3 d_quotient_classical/backreacted_clock/verify_berger_generator_conjugation_audit.py"
+        ]
+      },
+      "sha256": "340fb255c31e867e83b3d521c8c37ceabe5bf046255d363d98f9b64c070499c9"
+    },
+    {
+      "path": "d_quotient_programme/contributions/classical-relative-residual-observable-functor-preflight.json",
+      "payload": {
+        "boundary_conditions": "R_t x S1_L x S2; fixed compact U(1) bundle; complete standard harmonic tangent before final residual quotient; off-shell triangle absent",
+        "claim_status": "BLOCKED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the classical relative-functor dependency contract is explicit and independently verified",
+          "the exact on-shell standard-harmonic inclusion and reduced-mode pairing are imported by content hash",
+          "the Berger clock is excluded as a same-base fallback by the certified Einstein-incidence result",
+          "all off-shell relative and observable promotions remain fail-closed"
+        ],
+        "evidence": {
+          "commit": "0f2393240f53a09fb99d496f2d56faeb219d48b8",
+          "path": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json",
+          "sha256": "6eeea993d96dc352c9b08364d87518a9a1f19224a8df0a87bbf0ae81573f4e32"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "IMPORT_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_BY_HASH",
+        "not_established": [
+          "the off-shell BV chain map on every field, ghost, antifield, equation and identity row",
+          "the mapping cofiber or relative triangle",
+          "H_product residual equivariance",
+          "the observable pullback or detector functor",
+          "the relative quantum lift"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_relative_functor_preflight",
+        "team_id": "classical",
+        "verdict": "BLOCKED_ON_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+        "verification_commands": [
+          "python3 -m d_quotient_classical.relative.relative_residual_observable_functor_preflight --check --guards",
+          "python3 d_quotient_classical/relative/verify_relative_residual_observable_functor_preflight.py",
+          "python3 -m unittest d_quotient_classical.relative.tests.test_relative_residual_observable_functor_preflight"
+        ]
+      },
+      "sha256": "2a7a3b983ff3dba2d6ba01a04c0721aa63f06e49019b8d057f858efdac10af79"
     },
     {
       "path": "d_quotient_programme/contributions/einstein-ed1a-asymptotic-generator-gate.json",

@@ -59,6 +59,7 @@ background as a non-Einstein Weyl--matter branch.
 | compact_positive_berger_clock_fixed_coupling_linearized | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_CHARGE | `CERTIFIED` | `D_GAUGE` |
 | compact_positive_berger_clock_minimal_bv_sdr | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_BV | `CERTIFIED` | `MINIMAL_CLOCK_SECTOR_SDR` |
 | compact_positive_berger_clock_retained_minimal_layout | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_BV | `CERTIFIED` | `RETAINED_MINIMAL_LAYOUT_FROZEN` |
+| compact_positive_berger_clock_generator_conjugation | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_CARTAN | `CERTIFIED` | `FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE` |
 | compact_positive_berger_clock_einstein_incidence | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_BV | `CERTIFIED` | `EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND` |
 | compact_einstein_maxwell_product_background | `H_product` | `einstein_maxwell_product_background` | CLASSICAL_BV | `CERTIFIED` | `COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND` |
 | compact_einstein_maxwell_product_tangent_preflight | `H_product` | `einstein_maxwell_product_principal_tangent_complex` | CLASSICAL_BV | `PARTIAL` | `PRINCIPAL_TANGENT_CHAIN_MAP_WITH_EXTRA_WEYL_CLASSES` |
@@ -83,6 +84,7 @@ background as a non-Einstein Weyl--matter branch.
 | compact_einstein_maxwell_weyl_radiative_restriction | `H_product` | `einstein_maxwell_product_compact_weyl_standard_radiative_restriction` | CLASSICAL_BV | `CERTIFIED` | `G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION` |
 | compact_einstein_maxwell_weyl_ell1_physical_restriction | `H_product` | `einstein_maxwell_product_compact_weyl_ell1_physical_quotient` | CLASSICAL_BV | `CERTIFIED` | `G3_PHYSICAL_ELL1_ALL_N_M_FACTOR_FOUR_QUOTIENT_RESTRICTION` |
 | compact_einstein_maxwell_weyl_standard_harmonic_inclusion | `H_product` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | CLASSICAL_BV | `CERTIFIED` | `G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT` |
+| compact_einstein_maxwell_weyl_relative_functor_preflight | `H_product` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | CLASSICAL_BV | `BLOCKED` | `BLOCKED_ON_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` |
 | compact_einstein_maxwell_weyl_extra_branch_preflight | `H_product` | `einstein_maxwell_product_compact_weyl_extra_branch_preflight` | CLASSICAL_BV | `CERTIFIED` | `G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT` |
 | compact_einstein_maxwell_weyl_axial_operator_module_preflight | `H_product` | `einstein_maxwell_product_compact_weyl_axial_operator_module_preflight` | CLASSICAL_BV | `CERTIFIED` | `G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS` |
 | compact_einstein_maxwell_weyl_axial_operator | `H_product` | `einstein_maxwell_product_compact_weyl_generic_axial_target_solution_module` | CLASSICAL_BV | `CERTIFIED` | `G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_SOLUTION_MODULE` |
@@ -130,6 +132,8 @@ background as a non-Einstein Weyl--matter branch.
 | classical | `compact_positive_berger_clock_fixed_coupling_linearized` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `D_GAUGE` |
 | classical | `compact_positive_berger_clock_minimal_bv_sdr` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `MINIMAL_CLOCK_SECTOR_SDR` |
 | classical | `compact_positive_berger_clock_retained_minimal_layout` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `RETAINED_MINIMAL_LAYOUT_FROZEN` |
+| classical | `compact_positive_berger_clock_generator_conjugation` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE` |
+| classical | `compact_einstein_maxwell_weyl_relative_functor_preflight` | `H_product` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | `BLOCKED` | `BLOCKED_ON_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` |
 | einstein_boundary | `asymptotic_real_cylinder_time` | `H_ESU` | `asymptotically_flat_full_Bach` | `PARTIAL` | `PHASE_SPACE_NOT_CLOSED` |
 | einstein_boundary | `compact_positive_berger_clock_einstein_incidence` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND` |
 | einstein_boundary | `compact_einstein_maxwell_product_background` | `H_product` | `einstein_maxwell_product_background` | `CERTIFIED` | `COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND` |
