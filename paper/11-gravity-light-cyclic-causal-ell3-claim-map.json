@@ -1,0 +1,91 @@
+{
+  "schema": "paper-11-gravity-light-cyclic-causal-ell3-claim-map-v1",
+  "result_id": "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_DRAFT",
+  "result_state": "WRITING_STARTED_ALGEBRAIC_THEOREM_CERTIFIED_RESIDUAL_MIXING_INPUT_BLOCKED",
+  "lifecycle_state": "WRITING_STARTED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "headline": "The gravity-light interaction survives cyclic causal reduction through ell3.",
+  "manuscript": "paper/11-gravity-light-cyclic-causal-ell3.tex",
+  "manuscript_sha256": "0b545925c8aee37f2615aa393a7106c706c4f76070e5307d1dafbcc0e899795a",
+  "paper_scope": {
+    "background": "frozen positive rational Berger-clock gravity-clock-Maxwell fixture",
+    "full_carrier_rows": 64,
+    "retained_carrier_rows": 36,
+    "maximum_Taylor_arity": 3,
+    "coefficient_field": "Q(sqrt(10))",
+    "factorial_convention": "suspended-graded-symmetric-factorial-v1",
+    "causal_scope": "same-sided unary Green homotopies and two-sided-causal-hull cyclic K_Berger Cartan primitives through arity three",
+    "residual_scope": "retained carrier before Einstein-like/extra-Weyl/Maxwell branch projection"
+  },
+  "certified_claims": {
+    "typed_cyclic_64_to_36_contraction": true,
+    "retained_mixed_ell2_nonzero": true,
+    "retained_mixed_ell2_coefficient_count": 1474,
+    "retained_mixed_ell3_nonzero": true,
+    "retained_mixed_ell3_coefficient_count": 25950,
+    "retained_exchange_zero_after_exact_projection": true,
+    "retained_exchange_full_row_38_coefficient_count": 342,
+    "projection_mutation_exposes_all_exchange_coefficients": true,
+    "retained_arity_three_identity_all_36_rows": true,
+    "gravity_output_two_Maxwell_input_count": 7614,
+    "Maxwell_output_one_Maxwell_input_count": 18336,
+    "physical_quartic_cyclicity_independently_replayed": true,
+    "physical_quartic_coefficient_count": 25662,
+    "physical_quartic_cyclicity_defect_count": 0,
+    "pairing_weight_mutation_rejected": true,
+    "pairing_weight_mutation_defect_count": 17108,
+    "unreplayed_ghost_antifield_coefficient_count": 288,
+    "coupled_K_Berger_cyclic_causal_Cartan_through_arity_three": true
+  },
+  "explicit_nonclaims": {
+    "residual_branch_basis_input_available": false,
+    "Einstein_like_extra_Weyl_mixing_table_computed": false,
+    "topological_deformation_direction_classified": false,
+    "full_retained_BV_ell3_cyclicity_independently_replayed": false,
+    "negative_kinetic_direction_inferred_from_ell3": false,
+    "particle_scattering_amplitude_constructed": false,
+    "Hadamard_state_constructed": false,
+    "renormalized_Lorentzian_products_constructed": false,
+    "QME_restored": false,
+    "quantum_claim": false,
+    "arity_four_or_all_orders_theorem": false,
+    "theorem_frozen": false
+  },
+  "next_gate": {
+    "status": "INPUT_BLOCKED",
+    "required_input": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1",
+    "required_output": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE",
+    "dynamical_branch_ids": [
+      "Einstein_like",
+      "extra_Weyl",
+      "Maxwell_physical"
+    ],
+    "separate_deformation_vertex_basis_ids": [
+      "e_C2_dynamical",
+      "o_C_dual_C_topological"
+    ],
+    "category_boundary": "the topological odd direction is a deformation/vertex class, not a third dynamical particle branch"
+  },
+  "inputs": {
+    "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e",
+    "d_quotient_classical/certificates/PAPER_09_NONLINEAR_FROZEN_K_GENERATOR_SIGNOFF.json": "c4d89da3e3b68ae73b41eefc39132d124ae526cd3238b4c0a31636894a92b02a",
+    "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json": "2c4592665084dd47958aa2c63f10a7f54d3bd9ff8d52f661d1a2fa78da877027",
+    "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY.json": "4f9479466ddfcce957ba6b15f0c33f74b470d74e2424d0e04bc60dbacbd9a2e1",
+    "quantum-weyl/transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS.json": "61137d21a6ca27accb31a25cc49a340f566a987f2601c98a4e399854fd8c0ca3",
+    "paper/verify_11_gravity_light_claim_map.py": "e91e7a92a412beec87fc06c0d9ed9d96d2e8704a0fa2ee109b753be86f5cf9b8"
+  },
+  "verification_commands": [
+    "python3 paper/verify_11_gravity_light_claim_map.py",
+    "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/11-gravity-light-cyclic-causal-ell3.tex"
+  ],
+  "test_tier_receipt": {
+    "tier_0": "JSON and Python parse, TeX compilation, scoped diff check and exact dependency hashes",
+    "tier_1": "fail-closed independent claim-map verifier",
+    "tier_2": "not rerun because the manuscript imports unchanged content-addressed exact certificates and changes no mathematical input",
+    "tier_3": "not run because this is WRITING_STARTED, not a theorem freeze or lifecycle promotion"
+  },
+  "claim_boundary": "This working draft assembles exact LOCAL-ALGEBRAIC retained ell2/ell3 transfer and physical quartic cyclicity with the separately certified LORENTZIAN-CAUSAL unary Green and K_Berger Cartan support theorem through arity three. It proves a nonzero retained gravity-light bracket on the 36-row carrier. It does not yet project onto Einstein-like, extra-Weyl and Maxwell dynamical branches; it keeps the topological odd deformation class outside the particle branch list. The 288 ghost/antifield coefficients lack an independent transpose replay. No Hadamard, renormalized-product, QME, particle, unitarity, all-orders or quantum theorem is promoted, and the paper remains WRITING_STARTED rather than THEOREM_FROZEN."
+}

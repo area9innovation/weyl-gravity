@@ -1,0 +1,555 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,tabularx}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Cyc}{\operatorname{Cyc}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\ellb}{\boldsymbol\ell}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+
+\title{The Gravity--Light Interaction Survives Cyclic Causal Reduction\\
+through $\ell_3$}
+\author{Asger Alstrup Palm\thanks{Corresponding author:
+\texttt{asger@area9.dk}.}}
+\date{Working draft, July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We transfer the classical gravity--Maxwell BV interaction on a compact
+positive Berger-clock background from a complete $64$-row presentation to a
+typed cyclic $36$-row retained complex.  The contraction carries the exact
+odd pairing and the unary causal Green data.  In the repository's suspended
+graded-symmetric convention the transferred binary operation has $1{,}474$
+coefficients and the mixed ternary operation has $25{,}950$ coefficients.
+The latter is not killed by reduction: it contains $7{,}614$ gravity-output
+terms with two Maxwell inputs and $18{,}336$ Maxwell-output terms with one
+Maxwell input.
+
+The homological exchange channel is computed rather than omitted.  It
+contains $342$ canonical full-complex coefficients in the only nonempty
+channel, all supported on full row $38$, and the certified retained
+projection annihilates that row.  A one-entry projection mutation exposes all
+$342$ terms.  Thus the retained exchange contribution vanishes for a
+structural reason while the direct $q_3$ contact survives.  All $36$
+arity-three $L_\infty$ rows close.  Lowering $\ell_3$ with the retained typed
+pairing independently reproduces all $25{,}662$ physical quartic
+coefficients with zero cyclicity defects; changing the Maxwell pairing weight
+from two to one produces $17{,}108$ exact defects on $14$ rows.
+
+Together with the cyclic causal Cartan contraction for the
+background-fixing helical generator $K_{\rm Berger}$, these calculations
+establish
+\[
+ \boxed{\text{The gravity--light interaction survives cyclic causal
+ reduction through }\ell_3.}
+\]
+The statement is classical and carries separate \textsc{local-algebraic}
+and \textsc{lorentzian-causal} dependencies.  The causal claim concerns the
+unary Green contractions and the two-sided-causal-hull Cartan primitives;
+the Taylor operations themselves are support-local.  The retained complex is
+not yet the Einstein-like/extra-Weyl residual model.  Its mixing table, the
+$288$-coefficient ghost/antifield cyclicity replay, Hadamard products, QME
+restoration, and every quantum or particle interpretation remain open.
+\end{abstract}
+
+\section*{AI-use disclosure and computational accountability}
+OpenAI GPT-5 was used substantively for mathematical synthesis, verification
+code, claim auditing, and manuscript drafting.  The human author directed the
+programme and remains responsible for the claims, citations, and final text.
+Every numerical count in the theorem is an exact sparse-coefficient count over
+$\Q(\sqrt{10})$ and is tied to a deterministic certificate.  No floating
+point calculation enters an identity, rank, cyclicity test, or mutation
+witness.  Submission remains conditional on final human review.
+
+\tableofcontents
+
+\section{Question and answer}\label{sec:intro}
+
+The free BV complex identifies which classes survive gauge reduction, but it
+does not determine whether nonlinear gravity--matter vertices survive the
+same reduction.  A transferred interaction can disappear in three distinct
+ways: its direct contact term can project to zero; homological exchange terms
+can cancel it; or cyclicity and the $L_\infty$ identities can fail after
+compression.  Conversely, a nonzero tensor on a gauge-fixed carrier need not
+descend to any physical branch until its residual projection is computed.
+
+This paper answers the algebraic question through ternary order for the
+gravity--Maxwell extension of the positive Berger-clock complex.  Write
+\begin{equation}\label{eq:headline}
+ \boxed{\text{The gravity--light interaction survives cyclic causal
+ reduction through }\ell_3.}
+\end{equation}
+Here ``survives'' means that the explicitly transferred mixed ternary bracket
+is nonzero and obeys the retained arity-three identity.  ``Cyclic'' means both
+that the contraction is typed cyclic and that the complete physical quartic
+form obtained by lowering $\ell_3$ is independently invariant under cyclic
+transposition.  ``Causal reduction'' means that the unary contraction imports
+the advanced/retarded Green homotopies and that the compatible
+$K_{\rm Berger}$ Cartan primitives through arity three have support in the
+two-sided causal hull.  It does \emph{not} mean that a time-ordered interacting
+quantum theory has been constructed.
+
+The theorem stops one rung before physical branch interpretation.  The
+dynamical residual carrier must still be split into Einstein-like,
+extra-Weyl, and Maxwell branches.  Separately, the even Weyl-square and odd
+Pontryagin directions form a deformation/vertex basis; the odd topological
+class is not a third particle branch.  This category separation is built into
+the receiving contract for the next calculation.
+
+\section{Complexes, conventions, and claim boundary}\label{sec:setup}
+
+Let $(\cC_{64},q_1,\omega_{64})$ be the complete typed classical
+gravity--clock--Maxwell BV complex at the frozen rational Berger fixture.
+Its degree multiplicities are
+\begin{equation}
+ 6,26,26,6\qquad\text{in degrees }-1,0,1,2.
+\end{equation}
+Let $(\cR_{36},\ell_1,\omega_{36})$ denote the retained typed carrier, with
+degree multiplicities
+\begin{equation}
+ 4,14,14,4.
+\end{equation}
+The exact contraction is
+\begin{equation}\label{eq:sdr}
+ \left(\cC_{64},q_1\right)
+ \underset{\iota}{\overset{\pi}{\rightleftarrows}}
+ \left(\cR_{36},\ell_1\right),
+ \qquad
+ \pi\iota=\id,
+ \qquad
+ q_1S+Sq_1=\id-\iota\pi,
+\end{equation}
+with side conditions and typed cyclic adjoint relations fixed by the carrier
+certificate.  The coefficients lie in $\Q(\sqrt{10})$.  The Maxwell
+field--equation pairing has absolute weight two, while the gravity weight is
+one.  The signed odd-pairing ledger contains ten gravity entries of sign
+$-1$ and four Maxwell entries of sign $+2$ on the physical
+field--equation pairs.
+
+The based classical BV vector field is known through cubic Taylor order,
+\begin{equation}
+ q=q_1+q_2+q_3+O(4),
+\end{equation}
+in the repository's suspended graded-symmetric factorial convention.  The
+full tensors are action-derived, support-local, typed cyclic, and equivariant
+under the background-fixing helical generator
+\begin{equation}
+ K_{\rm Berger}=D-\omega R.
+\end{equation}
+Raw cylinder translation $D$ is affine at the rotating background and is not
+substituted for $K_{\rm Berger}$.
+
+The result combines two dependency layers:
+\begin{center}
+\begin{tabularx}{0.96\textwidth}{>{\small}p{0.20\textwidth}XX}
+\toprule
+Layer & Certified content & Explicit limitation\\
+\midrule
+\textsc{local-algebraic}
+ & exact $q_2,q_3,\ell_2,\ell_3$, identities and cyclicity
+ & no residual branch interpretation\\
+\textsc{lorentzian-causal}
+ & unary Green homotopies and $K$-Cartan support through arity three
+ & no Hadamard products or QME\\
+\bottomrule
+\end{tabularx}
+\end{center}
+Neither layer is silently promoted to \textsc{residual-transferred} or
+\textsc{lorentzian-certified} quantum status.
+
+\section{Ternary homological transfer}\label{sec:transfer}
+
+The first two transferred Taylor operations are
+\begin{align}
+ \ell_1&=\pi q_1\iota,\label{eq:ell1}\\
+ \ell_2&=\pi q_2(\iota,\iota).\label{eq:ell2}
+\end{align}
+Define the second Taylor component of the inclusion by
+\begin{equation}\label{eq:I2}
+ I_2=-S q_2(\iota,\iota).
+\end{equation}
+Then the ternary transfer formula is
+\begin{equation}\label{eq:ell3}
+ \ell_3
+ =\pi q_3(\iota,\iota,\iota)
+ +\sum_{\sigma\in\operatorname{Sh}(2,1)}
+   \epsilon(\sigma)\,
+   \pi q_2\bigl(I_2(\iota_{\sigma(1)},\iota_{\sigma(2)}),
+                     \iota_{\sigma(3)}\bigr).
+\end{equation}
+The first term is the contact contribution.  The second line is the exchange
+contribution $q_2Sq_2$.
+
+\begin{lemma}[Exact exchange support]\label{lem:exchange}
+For the mixed gravity--Maxwell ternary operation, the
+gravity-outer/mixed-inner exchange channel contains $144$ outer/inner
+coefficient pairs.  The three graded unshuffles produce $324$ signed
+contributions and $342$ canonical full-complex PBW coefficients.  Every one
+has full output row $38$.  The retained projection has no support on that row,
+so this channel vanishes after projection.  The mixed-outer/gravity-inner and
+mixed-outer/mixed-inner channels have no outer/inner pairs.
+\end{lemma}
+
+\begin{proof}
+The exact consumer reconstructs the $96$ gravity and $12$ mixed coefficients
+of $I_2$, including their full-row supports, before composing them with
+$q_2$.  PBW normalization gives the stated counts.  Direct application of
+$\pi$ annihilates the $342$ row-$38$ coefficients.  As a negative control,
+adding the single mutant entry
+\begin{equation}
+ \pi_{\rm mut}(\text{retained row }0,\text{full row }38)=1
+\end{equation}
+exposes all $342$ coefficients.  Thus the zero is caused by the certified
+projection and is not an empty table hard-coded by the consumer.
+\end{proof}
+
+\begin{corollary}[Contact form of the retained mixed bracket]
+\label{cor:contact}
+The retained mixed exchange contribution is zero and
+\begin{equation}
+ \ell_3^{\rm mixed}=\pi q_3^{\rm mixed}(\iota,\iota,\iota).
+\end{equation}
+This equality is a computed property of the declared contraction, not a
+general truncation of the homotopy-transfer formula.
+\end{corollary}
+
+\section{The algebraic survival theorem}\label{sec:theorem}
+
+\begin{theorem}[Gravity--light survival through $\ell_3$]
+\label{thm:survival}
+On the frozen positive Berger-clock gravity--Maxwell BV complex, the typed
+cyclic contraction \eqref{eq:sdr} transfers the action-derived Taylor data
+through ternary order with the following exact properties.
+\begin{enumerate}
+\item The retained mixed binary operation $\ell_2$ contains $1{,}474$
+canonical coefficients.
+\item The retained mixed ternary operation $\ell_3$ contains $25{,}950$
+canonical coefficients on $18$ nonzero output rows.
+\item All retained exchange sectors vanish for the support reason in
+Lemma~\ref{lem:exchange}; the nonzero ternary operation is the transferred
+contact term.
+\item The retained arity-three identity closes on all $36$ rows:
+\begin{equation}\label{eq:linf3}
+ [\ell_1,\ell_3]+\frac12[\ell_2,\ell_2]=0.
+\end{equation}
+\item The mixed bracket has $7{,}614$ gravity-output coefficients with two
+Maxwell inputs and $18{,}336$ Maxwell-output coefficients with one Maxwell
+input.  Hence it is nonzero in both gravity--light directions.
+\end{enumerate}
+A localized one-coefficient mutation of $\ell_3$ creates two exact
+arity-three defects.
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{eq:ell2}--\eqref{eq:ell3} are evaluated in exact sparse PBW
+normal form over $\Q(\sqrt{10})$.  The independent consumer parses all
+$59{,}598$ coefficients of the full mixed $q_3$ payload and reproduces all
+$25{,}950$ retained contact coefficients with no missing, extra, or changed
+terms.  Lemma~\ref{lem:exchange} evaluates every possible mixed exchange
+channel.  Direct coefficient comparison of
+\eqref{eq:linf3} gives zero defects on all rows.  The input-sector and
+output-sector ledgers give the two nonzero counts in item 5.  Finally, the
+mutation changes one retained coefficient and produces two normalized
+defects, preventing acceptance by a consumer that merely assumes the expected
+answer.
+\end{proof}
+
+The theorem is stronger than the statement that Maxwell fields occur in the
+full action.  It says that their ternary coupling remains present after the
+explicit gauge-fixed-to-retained homological reduction and after every
+arity-three identity is imposed.  It is weaker than a residual particle
+vertex: $\cR_{36}$ is retained, not yet minimal or decomposed into its
+dynamical branches.
+
+\section{Physical quartic cyclicity}\label{sec:cyclicity}
+
+Lowering the output of $\ell_3$ with the odd pairing gives a four-linear
+functional.  For physical degree-zero inputs, cyclic transposition of the
+first input requires formal adjunction of every PBW derivative through the
+invariant volume form.  If $w$ is a derivative word, the exact formal adjoint
+distributes its letters over the other three slots with sign $(-1)^{|w|}$ and
+the corresponding multinomial multiplicities.
+
+\begin{proposition}[Independent physical quartic cyclicity]
+\label{prop:cyclicity}
+Every degree-zero physical coefficient of the lowered retained
+$\ell_3$ satisfies exact cyclic transposition.  There are
+\begin{equation}
+ 25{,}662=7{,}506_{\rm gravity\ output}
+             +18{,}156_{\rm Maxwell\ output}
+\end{equation}
+such coefficients, and the defect count is zero on every row.  Replacing the
+Maxwell field--equation weight two by weight one produces $17{,}108$ defects
+on $14$ rows.
+\end{proposition}
+
+\begin{proof}
+The verifier constructs both sides independently from the retained tensor,
+the typed pairing, and exact PBW integration by parts.  The signed pairing
+orientations are retained as a separate convention ledger; only their
+absolute component multiplicities enter the physical field--equation
+transpose.  Equality holds coefficientwise.  The weight mutation changes no
+coefficient of $\ell_3$ itself and therefore tests the lowering convention
+rather than the imported interaction.
+\end{proof}
+
+The remaining
+\begin{equation}
+ 25{,}950-25{,}662=288
+\end{equation}
+coefficients are the ghost/antifield completion.  Their cyclicity is part of
+the classical typed-transfer theorem but has not yet received the same
+independent transpose replay.  Proposition~\ref{prop:cyclicity} is therefore
+a complete physical-quartic statement and explicitly not an independently
+replayed full-BV cyclicity theorem.
+
+\section{Causal compatibility through ternary order}\label{sec:causal}
+
+The causal part of the headline is not inferred from finite PBW tables.  It
+is supplied by the independently certified unary Green chain contractions
+and the coupled cyclic Cartan theorem.  Let $\Lambda_{64,\pm}$ denote the
+same-sided advanced and retarded unary homotopies.  Their chain identities,
+causal supports, and formal-adjoint reversal are imported on the complete
+carrier.  The local Taylor operations and the contraction intertwine
+$K_{\rm Berger}$.
+
+Let $\iota_K^{(1)}$ be the unary Cartan primitive.  The higher sources are
+\begin{align}
+ A_K^{(2)}&=[q_2,\iota_K^{(1)}]-L_K^{(2)},\label{eq:A2}\\
+ A_K^{(3)}&=[q_3,\iota_K^{(1)}]+[q_2,\iota_K^{(2)}]-L_K^{(3)}.
+ \label{eq:A3}
+\end{align}
+At the frozen background $L_K^{(2)}=L_K^{(3)}=0$.  The $L_\infty$ identities,
+graded Jacobi identity, and $K$-equivariance give
+\begin{equation}
+ [q_1,A_K^{(2)}]=[q_1,A_K^{(3)}]=0.
+\end{equation}
+Raw causal primitives are cyclicized with the exact Reynolds projectors
+\begin{equation}
+ \Cyc_3=\frac{1+\tau+\tau^2}{3},
+ \qquad
+ \Cyc_4=\frac{1+\tau+\tau^2+\tau^3}{4}.
+\end{equation}
+
+\begin{theorem}[Cyclic causal Cartan compatibility]
+\label{thm:cartan}
+The coupled $64$-row complex and its typed $36$-row retained contraction obey
+the $K_{\rm Berger}$ Cartan identities through arity three.  The higher cyclic
+primitives satisfy
+\begin{equation}\label{eq:support}
+ \supp\bigl(\iota_K^{(n)}(f_1,\ldots,f_n)\bigr)
+ \subseteq J\!\left(\bigcup_i\supp f_i\right),
+ \qquad n\leq3.
+\end{equation}
+The Taylor operations are support-local and no spatial inverse or mode
+projector enters the construction.
+\end{theorem}
+
+The higher cyclic primitives use the two-sided causal hull.  They are not
+claimed to be separately retarded or advanced; the unary homotopies retain
+that stronger one-sided property.  Theorem~\ref{thm:cartan} establishes
+compatibility of the surviving interaction with the causal reduction.  It
+does not construct interacting retarded products, a Hadamard state, or a
+Lorentzian quantum master equation.
+
+\section{The residual mixing table}\label{sec:mixing}
+
+The next calculation determines what the surviving tensor means physically.
+It requires a committed, content-addressed residual branch manifest rather
+than an inferred basis.  The dynamical carrier must contain
+\begin{equation}
+ \cR_{\rm dyn}
+ =\cR_{\rm Einstein}\oplus\cR_{\rm extra\ Weyl}
+  \oplus\cR_{\rm Maxwell},
+\end{equation}
+together with exact inclusion, projection, pairing, parity, real structure,
+and $K_{\rm Berger}$ weights.  The mixing entries are then
+\begin{equation}\label{eq:mixing}
+ M^{a}{}_{bcd}
+ =\pi^{a}_{\rm dyn}\,
+   \ell_3\bigl(\iota^{\rm dyn}_{b},
+               \iota^{\rm dyn}_{c},
+               \iota^{\rm dyn}_{d}\bigr).
+\end{equation}
+Every claimed zero must carry an exact support or cancellation witness, and
+graded symmetry and cyclicity must be replayed in branch coordinates.
+
+The deformation/vertex basis is separate:
+\begin{equation}\label{eq:eo}
+ e_{C^2}=\frac{[W_+^2]+[W_-^2]}{\sqrt2},
+ \qquad
+ o_{C\widetilde C}=\frac{[W_+^2]-[W_-^2]}{\sqrt2}.
+\end{equation}
+Its Euler--Lagrange map has the required rank pattern
+\begin{equation}
+ \rank E(e_{C^2})=1,
+ \qquad
+ E(o_{C\widetilde C})=0,
+\end{equation}
+with a separate Pontryagin transgression witness.  The odd topological
+direction can be central or inert as a deformation class without becoming a
+third dynamical particle branch.
+
+At the time of this draft the strict projection consumer is ready, but the
+authoritative branch-basis manifest has not been supplied.  Accordingly this
+section freezes the question and the formula, not its answer.  The algebraic
+survival theorem does not depend on that input.
+
+\section{Interpretation and nonclaims}\label{sec:interpretation}
+
+The result provides a precise first meaning of ``additional physics beyond
+Einstein'' at nonlinear order: the retained classical interaction contains
+both a gravitational response to two Maxwell inputs and a Maxwell response
+to a gravity--Maxwell pair.  These channels survive exact cyclic transfer and
+the ternary homotopy identity.  Once the branch manifest lands,
+Equation~\eqref{eq:mixing} will decide whether the interaction closes on the
+Einstein-like branch, couples it to the extra-Weyl branch, or acts only through
+the deformation directions.
+
+Several stronger conclusions do not follow.
+\begin{enumerate}
+\item The bracket changes no unary kinetic operator.  It therefore introduces
+no new negative kinetic direction at this order, but this is not a unitarity
+or positive-Hilbert-space theorem.
+\item A nonzero retained bracket is not yet a photon or graviton scattering
+amplitude.  Residual projection, causal state selection, and asymptotic or
+relational observables are still required.
+\item The odd Pontryagin direction is a topological deformation class, not a
+one-particle state.
+\item The vanishing one-particle cohomology of the separate free conformal
+cylinder problem is not converted here into an interacting vacuum theorem.
+\item No loop coefficient, anomaly cancellation, QME restoration, Hadamard
+state, renormalized product, or quantum interaction has been constructed.
+\item No arity-four or convergent all-orders $L_\infty$ or Cartan theorem is
+claimed.
+\end{enumerate}
+
+The natural provisional interpretation is therefore a deformation/vertex
+theory rather than a particle theory.  The mixing table is precisely the
+next test of how much of that statement remains true after residual descent.
+
+\section{Reproducibility and certificate map}\label{sec:repro}
+
+The algebraic theorem is pinned to the classical hardening commit
+\cert{e99d0c1d39490de5261fc6ca1dc2aeaa0d149655}.  Its principal artifacts are
+\begin{center}
+\begin{tabularx}{\textwidth}{>{\small}p{0.43\textwidth}X}
+\toprule
+Artifact & Role\\
+\midrule
+\cert{BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE}
+ & full/retained cyclic causal $K$-Cartan theorem\\
+\cert{BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE}
+ & exact independent $64\to36$ transfer and mutation witnesses\\
+\cert{BERGER_RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY}
+ & independent physical quartic cyclicity and pairing-weight mutation\\
+\cert{BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS}
+ & fail-closed input contract for the mixing table\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The scoped reproduction commands are
+\begin{verbatim}
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  berger_coupled_k_cartan_through_arity_three.py --check --guards
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_coupled_k_cartan_through_arity_three.py
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.berger_retained_mixed_ell3_acceptance_certificate --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_berger_retained_mixed_ell3_acceptance
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.berger_retained_mixed_ell3_physical_cyclicity_certificate --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_berger_retained_mixed_ell3_physical_cyclicity
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_berger_residual_ell3_branch_projection_readiness
+\end{verbatim}
+
+The companion machine-readable claim map records the dependency hashes,
+positive claims, explicit nonclaims, and the fact that this manuscript is a
+working draft rather than a theorem freeze.
+
+\section{Outlook}\label{sec:outlook}
+
+Paper~11 can now develop on two rails.  The first is editorial: sharpen the
+abstract transfer theorem, extract compact coefficient tables to a
+supplement, and obtain specialist review of the cyclic-sign and causal-support
+conventions.  The second is mathematical: import the residual branch basis
+and compute Equation~\eqref{eq:mixing}.  A nonzero
+Einstein/extra-Weyl entry would turn the additional Weyl physics into an
+explicit interaction channel; a block-diagonal table would establish
+nonlinear closure of the Einstein-like direction through this order; and a
+central topological action would isolate the vertex theory from the
+dynamical carrier.
+
+The algebraic theorem does not need to wait for that verdict.  What the
+mixing table changes is its physical interpretation, not the existence of the
+surviving cyclic gravity--light bracket.
+
+\begin{thebibliography}{99}
+
+\bibitem{BV}
+I.~A. Batalin and G.~A. Vilkovisky,
+\emph{Gauge algebra and quantization},
+Phys. Lett. B \textbf{102} (1981), 27--31.
+
+\bibitem{HT}
+M.~Henneaux and C.~Teitelboim,
+\emph{Quantization of Gauge Systems},
+Princeton University Press, 1992.
+
+\bibitem{Kajiura}
+H.~Kajiura,
+\emph{Noncommutative homotopy algebras associated with open strings},
+Rev. Math. Phys. \textbf{19} (2007), 1--99.
+
+\bibitem{HomotopyTransfer}
+A.~S. Arvanitakis, O.~Hohm, C.~Hull, and V.~Lekeu,
+\emph{Homotopy transfer and effective field theory I: tree level},
+arXiv:2007.07942.
+
+\bibitem{FiorenzaManetti}
+D.~Fiorenza and M.~Manetti,
+\emph{$L_\infty$ algebras, Cartan homotopies and period maps},
+arXiv:math/0605297.
+
+\bibitem{LInfinityIntro}
+A.~Kraft and J.~Schnitzer,
+\emph{An introduction to $L_\infty$-algebras and their homotopy theory},
+arXiv:2207.01861.
+
+\bibitem{GreenComplexes}
+M.~Benini, G.~Musante, and A.~Schenkel,
+\emph{Green hyperbolic complexes on Lorentzian manifolds},
+Commun. Math. Phys. (2023),
+\href{https://doi.org/10.1007/s00220-023-04807-5}
+{doi:10.1007/s00220-023-04807-5}.
+
+\end{thebibliography}
+
+\end{document}
