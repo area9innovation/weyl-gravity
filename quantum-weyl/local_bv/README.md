@@ -283,8 +283,17 @@ quotient remain `NOT_COMPUTED`.
 
 Next admissible local steps are tensor-graph realization of the 720 refined
 ambient signatures, their canonical quotient, assembly of exact `Q` and
-`d_h` matrices, and the higher-derivative Weyl--Cotton jet quotient. Only the
-antifield/Koszul--Tate extension waits for the frozen classical schema.
+`d_h` matrices, and the higher-derivative Weyl--Cotton jet quotient.
+
+The classical minimal antifield schema has now landed. The exact receipt
+[`MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json`](certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json)
+constructs six covariant adapted-coordinate pairs and verifies
+`delta sigma + sigma delta = N` on every atom and 9,016 canonical
+supermonomial regressions. On the imported regular Bach-locus chart the
+positive-antifield columns are acyclic, all positive-antifield atoms saturate
+form degree four, and the H04 plus even/odd Weyl-ghost H14 AFN0 classes lift
+unchanged. Pure-Diff and mixed Diff--Weyl AFN0 ambient top/lower-form
+quotients remain open, so this is not the full minimal-BV H14 theorem.
 
 The tensor-graph realization layer is now certified by
 [`certificates/AFN0_AMBIENT_TENSOR_GRAPH_REALIZATION_CERTIFICATE.json`](certificates/AFN0_AMBIENT_TENSOR_GRAPH_REALIZATION_CERTIFICATE.json).

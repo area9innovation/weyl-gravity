@@ -83,7 +83,7 @@ schema/             machine-readable result contracts
 | Gate | Deliverable | Bootstrap status |
 |---|---|---|
 | A | `CLASSICAL_IMPORT_CERTIFICATE` | `FAIL_CLOSED`; artifact integrity verified, but 15 of 18 export categories remain incomplete or unavailable |
-| B | counterterm/anomaly bases and descent database | `AFN0_CANDIDATE_QUOTIENTS_COMPLETE`; the covariant ghost-zero quotient has even/odd dimensions `2/1`, the Weyl-ghost quotient has even/odd dimensions `2/1`, and all carry exact normalized witnesses; minimal-BV antifield completion remains open |
+| B | counterterm/anomaly bases and descent database | `MINIMAL_KT_COLLAPSE_COMPLETE_DIFF_MIXED_OPEN`; the covariant ghost-zero quotient has even/odd dimensions `2/1`, the Weyl-ghost quotient has even/odd dimensions `2/1`, and the positive-antifield Koszul--Tate sector contracts on the regular Bach locus; pure-Diff/mixed AFN0 total-complex completion remains open |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `STRUCTURAL_PREFLIGHT_VERIFIED_PROJECTION_BLOCKED`; conformal-flat order counting and even/odd support are exact, but normalized `pi_cl` projection and adjacent H3/H5 bases remain unavailable |
 | D | reduced and Euclidean coefficient ledgers | `IN_PROGRESS` bookkeeping only; no BV coefficient claimed |
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `RAW_ENDPOINT_IMPORTED_FILTERED_EXTENSION_OPEN`; the corrected raw 34-row endpoint, cyclic witness identities, BV-canonical coordinate transport, principal identity blocks, and rank-one wave-divisible Schur preflight are independently replayed; no Green inverse or Hadamard certificate exists |

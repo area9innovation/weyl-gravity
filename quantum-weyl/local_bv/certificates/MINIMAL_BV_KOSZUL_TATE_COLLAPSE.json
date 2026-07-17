@@ -1,0 +1,253 @@
+{
+  "checks": {
+    "AFN0_class_lift_ledger": "VERIFIED",
+    "all_nonzero_delta_rows_are_adapted_pairs": "VERIFIED",
+    "all_positive_antifield_atoms_covered": "VERIFIED",
+    "antifield_spectral_sequence_collapse": "VERIFIED",
+    "contracting_homotopy_regression": "VERIFIED",
+    "covariant_pair_tensor_types_match": "VERIFIED",
+    "delta_sigma_plus_sigma_delta_equals_pair_Euler": "VERIFIED",
+    "positive_antifield_lower_forms_absent": "VERIFIED",
+    "pure_Diff_and_mixed_total_complex": "NOT_COMPUTED"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC certificate proves the Koszul--Tate part of the minimal-BV extension. The six imported adapted-coordinate pairs admit an exact covariant contracting homotopy on the imported regular Bach-locus coordinate chart; every positive-antifield atom is covered, all such atoms already saturate horizontal form degree four, and the bounded antifield spectral sequence has no positive-antifield cohomology. Consequently the certified AFN0 covariant H04 candidate classes and the certified even/odd Weyl-ghost H14 candidate classes lift unchanged through the minimal Koszul--Tate sector, while explicit AFN0 trivializations remain exact. This does not complete the pure-diffeomorphism or mixed Diff--Weyl top/lower-form ambient quotient, so it does not promote the full minimal-BV H14 theorem or G2. It computes no anomaly coefficient, Slavnov breaking, QME restoration, residual quantum transfer, Hadamard state, Lorentzian products, particle interpretation, or quantum theory.",
+  "claim_flags": {
+    "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": true,
+    "FULL_BV_G2_COMPLETE": false,
+    "H04_AFN0_CLASSES_LIFT_THROUGH_MINIMAL_KT": true,
+    "H14_WEYL_AFN0_CLASSES_LIFT_THROUGH_MINIMAL_KT": true,
+    "MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC": true,
+    "MIXED_DIFF_WEYL_H14_COMPUTED": false,
+    "PURE_DIFF_H14_COMPUTED": false,
+    "QME_RESTORED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "contraction": {
+    "base_atom_count": 6,
+    "contractible_pairs": [
+      {
+        "delta_coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "source": "g_star",
+        "source_antifield_number": 1,
+        "target": "E_g",
+        "target_antifield_number": 0,
+        "tensor_signature": {
+          "contravariant_rank": 2,
+          "covariant_rank": 0,
+          "spacetime_parity": "even",
+          "symmetry": "symmetric_contravariant_density"
+        }
+      },
+      {
+        "delta_coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "source": "xi_star",
+        "source_antifield_number": 2,
+        "target": "N_xi",
+        "target_antifield_number": 1,
+        "tensor_signature": {
+          "contravariant_rank": 0,
+          "covariant_rank": 1,
+          "spacetime_parity": "even",
+          "symmetry": "covector_density"
+        }
+      },
+      {
+        "delta_coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "source": "omega_star",
+        "source_antifield_number": 2,
+        "target": "N_omega",
+        "target_antifield_number": 1,
+        "tensor_signature": {
+          "contravariant_rank": 0,
+          "covariant_rank": 0,
+          "spacetime_parity": "even",
+          "symmetry": "scalar_density"
+        }
+      },
+      {
+        "delta_coefficient": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "source": "Lie_g_star",
+        "source_antifield_number": 1,
+        "target": "Lie_E_g",
+        "target_antifield_number": 0,
+        "tensor_signature": {
+          "contravariant_rank": 2,
+          "covariant_rank": 0,
+          "spacetime_parity": "even",
+          "symmetry": "symmetric_contravariant_density"
+        }
+      },
+      {
+        "delta_coefficient": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "source": "Lie_xi_star",
+        "source_antifield_number": 2,
+        "target": "Lie_N_xi",
+        "target_antifield_number": 1,
+        "tensor_signature": {
+          "contravariant_rank": 0,
+          "covariant_rank": 1,
+          "spacetime_parity": "even",
+          "symmetry": "covector_density"
+        }
+      },
+      {
+        "delta_coefficient": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "source": "Lie_omega_star",
+        "source_antifield_number": 2,
+        "target": "Lie_N_omega",
+        "target_antifield_number": 1,
+        "tensor_signature": {
+          "contravariant_rank": 0,
+          "covariant_rank": 0,
+          "spacetime_parity": "even",
+          "symmetry": "scalar_density"
+        }
+      }
+    ],
+    "generator_euler_identity": {
+      "E_g": "PAIR_EULER",
+      "Lie_E_g": "PAIR_EULER",
+      "Lie_N_omega": "PAIR_EULER",
+      "Lie_N_xi": "PAIR_EULER",
+      "Lie_g": "BASE_ZERO",
+      "Lie_g_star": "PAIR_EULER",
+      "Lie_omega": "BASE_ZERO",
+      "Lie_omega_star": "PAIR_EULER",
+      "Lie_xi_star": "PAIR_EULER",
+      "N_omega": "PAIR_EULER",
+      "N_xi": "PAIR_EULER",
+      "bracket_xi": "BASE_ZERO",
+      "g": "BASE_ZERO",
+      "g_star": "PAIR_EULER",
+      "omega": "BASE_ZERO",
+      "omega_star": "PAIR_EULER",
+      "xi": "BASE_ZERO",
+      "xi_star": "PAIR_EULER"
+    },
+    "pair_atom_count": 12,
+    "positive_antifield_atom_count": 10,
+    "proof_sha256": "0c0fb09479a3f5af3248c0a87147e1e7291b169cd145e3d4daed38acc4c8e862",
+    "regression_manifest_sha256": "3e6578222c85415a46630a35861b4bc3525b9d406f1c92c20b1d7742e848dbd8",
+    "regression_monomial_count": 9016
+  },
+  "dependency_hashes": {
+    "AFN0_H04": "ea7f96cc7c382c00ad34dec9f217571b4c906d220d483c3e4c5b2aa58556c6fb",
+    "AFN0_H14_even": "6bf8b7ef099ce40bef3e65bd78ba06d8ec138c8228b3991bf49a00fd5eef8d67",
+    "AFN0_H14_odd": "0134e28cf3fd0bf425c30e368a24dab5c7b8375dcc03a8ff517b34eb56da0681",
+    "classical_export": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc",
+    "euler_lagrange_adapted_coordinates": "1918098b88914a3bd884eb4472a19216dbc4ba3c2950803f51f6b1aecb9d61e7",
+    "quantum_import": "43adca2070ac9f63d9c70a1439de136521b61fd2c9f8ca69e7f90c0b904d69f8"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "lift_ledger": {
+    "H04_covariant_candidate_classes": [
+      {
+        "AFN0_status": "NONTRIVIAL",
+        "minimal_KT_lift_status": "LIFTS_UNCHANGED_ON_REGULAR_BACH_LOCUS",
+        "representative_id": "CT_C2"
+      },
+      {
+        "AFN0_status": "NONTRIVIAL",
+        "minimal_KT_lift_status": "LIFTS_UNCHANGED_ON_REGULAR_BACH_LOCUS",
+        "representative_id": "CT_E4"
+      },
+      {
+        "AFN0_status": "NONTRIVIAL",
+        "minimal_KT_lift_status": "LIFTS_UNCHANGED_ON_REGULAR_BACH_LOCUS",
+        "representative_id": "CT_C_DUAL_C"
+      }
+    ],
+    "H14_Weyl_ghost_candidate_classes": [
+      {
+        "AFN0_status": "NONTRIVIAL",
+        "minimal_KT_lift_status": "LIFTS_UNCHANGED_ON_REGULAR_BACH_LOCUS",
+        "representative_id": "ANOM_OMEGA_C2"
+      },
+      {
+        "AFN0_status": "NONTRIVIAL",
+        "minimal_KT_lift_status": "LIFTS_UNCHANGED_ON_REGULAR_BACH_LOCUS",
+        "representative_id": "ANOM_OMEGA_E4"
+      },
+      {
+        "AFN0_status": "NONTRIVIAL",
+        "minimal_KT_lift_status": "LIFTS_UNCHANGED_ON_REGULAR_BACH_LOCUS",
+        "representative_id": "ANOM_OMEGA_C_DUAL_C"
+      }
+    ],
+    "exact_rows": [
+      {
+        "AFN0_status": "EXACT",
+        "minimal_KT_lift_status": "REMAINS_D_H_EXACT",
+        "representative_id": "CT_BOX_R"
+      },
+      {
+        "AFN0_status": "EXACT",
+        "minimal_KT_lift_status": "REMAINS_Q_EXACT_MOD_D_H",
+        "representative_id": "ANOM_OMEGA_BOX_R"
+      }
+    ]
+  },
+  "next_gate": "AFN0_DIFF_MIXED_TOTAL_COMPLEX_AND_MINIMAL_BV_H14",
+  "open_sectors": {
+    "H04": "KT_COMPLETE_COVARIANT_AFN0_CANDIDATE_QUOTIENT_LIFTS",
+    "H14_Weyl": "KT_COMPLETE_AFN0_WEYL_GHOST_CANDIDATE_QUOTIENT_LIFTS",
+    "H14_mixed_Diff_Weyl": "AFN0_AMBIENT_TOTAL_COMPLEX_OPEN",
+    "H14_pure_Diff": "AFN0_AMBIENT_TOP_AND_TOTAL_COMPLEX_OPEN",
+    "full_minimal_BV_H14": "NOT_COMPUTED"
+  },
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/local_bv/minimal_bv_koszul_tate_collapse.py": "0cab5e63c7a36ba6290a12e2e11626ba36f55a74eefb834a4eacf11301d421b8",
+      "quantum-weyl/local_bv/minimal_bv_koszul_tate_collapse_certificate.py": "3b460957380d1a55aaac766621920200c2bd84a467819d4c41cbd2c52b3996cb",
+      "quantum-weyl/local_bv/schema/minimal_bv_koszul_tate_collapse.schema.json": "7e5741ea6a2cb2a94fb3378e72a93fc307a7c30318c8ac4d21a7c5cfd844720b",
+      "quantum-weyl/local_bv/tests/test_minimal_bv_koszul_tate_collapse.py": "0b316bfd9e269e10028f6f88c6f35fd068684a0668343a4c556ddb465deff115",
+      "quantum-weyl/local_bv/verify_minimal_bv_koszul_tate_collapse.py": "f3ecd328901642b538e35fb259bc92f31e8420169f374759d12c0f59fa85928c"
+    }
+  },
+  "result_id": "MINIMAL_BV_KOSZUL_TATE_COLLAPSE",
+  "result_state": "MINIMAL_KT_COLLAPSE_PROVED_AFN0_WEYL_QUOTIENTS_LIFT_DIFF_MIXED_TOTAL_COMPLEX_OPEN",
+  "schema": "quantum-weyl-minimal-bv-koszul-tate-collapse-v1",
+  "scope": {
+    "antifield_number_range": [
+      0,
+      2
+    ],
+    "coefficient_field": "Q",
+    "engineering_dimension": 4,
+    "form_degree": 4,
+    "locality": "SUPPORT_LOCAL_COVARIANT_POLYNOMIAL_JETS",
+    "spacetime_dimension": 4
+  },
+  "spectral_sequence": {
+    "AFN0_basis_separation": "CURVATURE_TENSOR_CANDIDATE_BASES_ARE_INDEPENDENT_OF_THE_E_G_PAIR_COORDINATES_ON_THE_REGULAR_BACH_LOCUS",
+    "E0_differential": "delta",
+    "E1_antifield_zero": "AFN0_MOD_EULER_NOETHER_IDEAL",
+    "E1_positive_antifield_columns": "ZERO_BY_EXPLICIT_CONTRACTION",
+    "collapse_page": "E2",
+    "filtration": "ANTIFIELD_NUMBER_0_TO_2",
+    "positive_Q_components": "ABSENT",
+    "regular_coordinate_input": "E_g and its differential consequences replace the transverse-tracefree highest metric jets on the regular Bach locus",
+    "relative_form_argument": "ALL_POSITIVE_ANTIFIELD_ATOMS_HAVE_FORM_DEGREE_4_SO_NO_POSITIVE_AFN_LOWER_FORM_CARRIER_EXISTS"
+  }
+}

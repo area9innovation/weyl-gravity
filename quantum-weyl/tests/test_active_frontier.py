@@ -27,6 +27,7 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertEqual(ladder["G1"], "PASSED_AFN0_LOCAL_QUOTIENT")
         self.assertTrue(self.payload["claim_flags"]["ANTIFIELD_EXPORT_V2_RECEIVER_READY"])
         self.assertTrue(self.payload["claim_flags"]["CLASSICAL_ANTIFIELD_EXPORT_IMPORTED"])
+        self.assertTrue(self.payload["claim_flags"]["MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC"])
         self.assertTrue(ladder["G2"].startswith("BLOCKED"))
         self.assertTrue(ladder["G5"].startswith("BLOCKED"))
 
@@ -63,7 +64,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS",
+            "AFN0_DIFF_MIXED_TOTAL_COMPLEX_AND_MINIMAL_BV_H14",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

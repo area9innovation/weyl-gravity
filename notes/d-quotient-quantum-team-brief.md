@@ -330,6 +330,13 @@ Quotient exact tensor graphs by Bianchi, Grassmann, integration-by-parts, and
 four-dimensional identities. Construct the map from local anomaly densities
 to admissible degree-zero Cartan defects.
 
+The positive-antifield Koszul--Tate contribution is now closed on the imported
+regular Bach-locus chart: six covariant pairs give an explicit contraction,
+the H04 and Weyl-ghost H14 AFN0 classes lift unchanged, and no positive-AFN
+lower-form carrier exists in the exported convention. The remaining Q-G1
+work is specifically the AFN0 pure-Diff/mixed ambient top and lower-form total
+complex; only after that can the full minimal-BV H14 result be promoted.
+
 Keep relative forms, integrated local functionals, and residual-state
 cohomology as distinct result kinds.  Return an explicit primitive or dual
 witness for every surviving class.

@@ -11,7 +11,10 @@ parametrices, and canonical 26-to-54 covariance lift are also certified.
 The executable v2 antifield receiver is scope-aware and the actual covariant
 classical export is independently accepted. Its six minimal generators,
 eighteen atoms, exact filtration identities, pinned proof artifacts, and
-bounded filtered-complex replay pass. The minimal-BV quotient is still open.
+bounded filtered-complex replay pass. The six Koszul--Tate pairs now also
+contract exactly on the regular Bach locus, so the H04 and Weyl-ghost H14
+classes lift through positive antifield number. Pure-Diff/mixed AFN0 and the
+full minimal-BV H14 quotient remain open.
 These analytic inputs do not promote the lifecycle because the global BRST
 Hadamard covariance, full antifield BV quotient, repository Slavnov breaking,
 renormalized products, and QME remain open.
@@ -106,7 +109,7 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. compute minimal BV cohomology with Koszul--Tate rows;
+1. complete the AFN0 pure-Diff/mixed total complex and then the full minimal-BV H14 quotient;
 2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;

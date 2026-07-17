@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-minimal-bv-koszul-tate-collapse-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "classical_commit", "dependency_tags", "dependency_hashes", "scope", "contraction", "spectral_sequence", "lift_ledger", "open_sectors", "checks", "claim_flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-minimal-bv-koszul-tate-collapse-v1"},
+    "result_id": {"const": "MINIMAL_BV_KOSZUL_TATE_COLLAPSE"},
+    "result_state": {"const": "MINIMAL_KT_COLLAPSE_PROVED_AFN0_WEYL_QUOTIENTS_LIFT_DIFF_MIXED_TOTAL_COMPLEX_OPEN"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_hashes": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["spacetime_dimension", "engineering_dimension", "form_degree", "antifield_number_range", "coefficient_field", "locality"],
+      "properties": {
+        "spacetime_dimension": {"const": 4},
+        "engineering_dimension": {"const": 4},
+        "form_degree": {"const": 4},
+        "antifield_number_range": {"const": [0, 2]},
+        "coefficient_field": {"const": "Q"},
+        "locality": {"const": "SUPPORT_LOCAL_COVARIANT_POLYNOMIAL_JETS"}
+      }
+    },
+    "contraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contractible_pairs", "pair_atom_count", "base_atom_count", "positive_antifield_atom_count", "generator_euler_identity", "regression_monomial_count", "regression_manifest_sha256", "proof_sha256"],
+      "properties": {
+        "contractible_pairs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/pair"}},
+        "pair_atom_count": {"const": 12},
+        "base_atom_count": {"const": 6},
+        "positive_antifield_atom_count": {"const": 10},
+        "generator_euler_identity": {"type": "object", "minProperties": 18},
+        "regression_monomial_count": {"type": "integer", "minimum": 1000},
+        "regression_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "proof_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "spectral_sequence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["filtration", "E0_differential", "E1_positive_antifield_columns", "E1_antifield_zero", "positive_Q_components", "collapse_page", "relative_form_argument", "regular_coordinate_input", "AFN0_basis_separation"],
+      "properties": {
+        "filtration": {"const": "ANTIFIELD_NUMBER_0_TO_2"},
+        "E0_differential": {"const": "delta"},
+        "E1_positive_antifield_columns": {"const": "ZERO_BY_EXPLICIT_CONTRACTION"},
+        "E1_antifield_zero": {"type": "string"},
+        "positive_Q_components": {"const": "ABSENT"},
+        "collapse_page": {"const": "E2"},
+        "relative_form_argument": {"type": "string", "minLength": 40},
+        "regular_coordinate_input": {"type": "string", "pattern": "regular Bach locus"},
+        "AFN0_basis_separation": {"type": "string", "minLength": 40}
+      }
+    },
+    "lift_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["H04_covariant_candidate_classes", "H14_Weyl_ghost_candidate_classes", "exact_rows"],
+      "properties": {
+        "H04_covariant_candidate_classes": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {"$ref": "#/$defs/liftedClass"}
+        },
+        "H14_Weyl_ghost_candidate_classes": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {"$ref": "#/$defs/liftedClass"}
+        },
+        "exact_rows": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {"$ref": "#/$defs/exactRow"}
+        }
+      }
+    },
+    "open_sectors": {
+      "type": "object", "additionalProperties": false,
+      "required": ["H04", "H14_Weyl", "H14_pure_Diff", "H14_mixed_Diff_Weyl", "full_minimal_BV_H14"],
+      "properties": {
+        "H04": {"const": "KT_COMPLETE_COVARIANT_AFN0_CANDIDATE_QUOTIENT_LIFTS"},
+        "H14_Weyl": {"const": "KT_COMPLETE_AFN0_WEYL_GHOST_CANDIDATE_QUOTIENT_LIFTS"},
+        "H14_pure_Diff": {"const": "AFN0_AMBIENT_TOP_AND_TOTAL_COMPLEX_OPEN"},
+        "H14_mixed_Diff_Weyl": {"const": "AFN0_AMBIENT_TOTAL_COMPLEX_OPEN"},
+        "full_minimal_BV_H14": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["all_nonzero_delta_rows_are_adapted_pairs", "all_positive_antifield_atoms_covered", "covariant_pair_tensor_types_match", "delta_sigma_plus_sigma_delta_equals_pair_Euler", "contracting_homotopy_regression", "positive_antifield_lower_forms_absent", "antifield_spectral_sequence_collapse", "AFN0_class_lift_ledger", "pure_Diff_and_mixed_total_complex"],
+      "properties": {
+        "all_nonzero_delta_rows_are_adapted_pairs": {"const": "VERIFIED"},
+        "all_positive_antifield_atoms_covered": {"const": "VERIFIED"},
+        "covariant_pair_tensor_types_match": {"const": "VERIFIED"},
+        "delta_sigma_plus_sigma_delta_equals_pair_Euler": {"const": "VERIFIED"},
+        "contracting_homotopy_regression": {"const": "VERIFIED"},
+        "positive_antifield_lower_forms_absent": {"const": "VERIFIED"},
+        "antifield_spectral_sequence_collapse": {"const": "VERIFIED"},
+        "AFN0_class_lift_ledger": {"const": "VERIFIED"},
+        "pure_Diff_and_mixed_total_complex": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["CLASSICAL_ANTIFIELD_EXPORT_IMPORTED", "MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC", "H04_AFN0_CLASSES_LIFT_THROUGH_MINIMAL_KT", "H14_WEYL_AFN0_CLASSES_LIFT_THROUGH_MINIMAL_KT", "PURE_DIFF_H14_COMPUTED", "MIXED_DIFF_WEYL_H14_COMPUTED", "FULL_BV_G2_COMPLETE", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": {"const": true},
+        "MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC": {"const": true},
+        "H04_AFN0_CLASSES_LIFT_THROUGH_MINIMAL_KT": {"const": true},
+        "H14_WEYL_AFN0_CLASSES_LIFT_THROUGH_MINIMAL_KT": {"const": true},
+        "PURE_DIFF_H14_COMPUTED": {"const": false},
+        "MIXED_DIFF_WEYL_H14_COMPUTED": {"const": false},
+        "FULL_BV_G2_COMPLETE": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "AFN0_DIFF_MIXED_TOTAL_COMPLEX_AND_MINIMAL_BV_H14"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_sha256"],
+      "properties": {
+        "source_sha256": {
+          "type": "object", "minProperties": 5,
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "pair": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "target", "delta_coefficient", "source_antifield_number", "target_antifield_number", "tensor_signature"],
+      "properties": {
+        "source": {"type": "string", "minLength": 1},
+        "target": {"type": "string", "minLength": 1},
+        "delta_coefficient": {"$ref": "#/$defs/rational"},
+        "source_antifield_number": {"type": "integer", "minimum": 1, "maximum": 2},
+        "target_antifield_number": {"type": "integer", "minimum": 0, "maximum": 1},
+        "tensor_signature": {"type": "object"}
+      }
+    },
+    "liftedClass": {
+      "type": "object", "additionalProperties": false,
+      "required": ["representative_id", "AFN0_status", "minimal_KT_lift_status"],
+      "properties": {
+        "representative_id": {"type": "string", "minLength": 1},
+        "AFN0_status": {"const": "NONTRIVIAL"},
+        "minimal_KT_lift_status": {"const": "LIFTS_UNCHANGED_ON_REGULAR_BACH_LOCUS"}
+      }
+    },
+    "exactRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["representative_id", "AFN0_status", "minimal_KT_lift_status"],
+      "properties": {
+        "representative_id": {"enum": ["CT_BOX_R", "ANOM_OMEGA_BOX_R"]},
+        "AFN0_status": {"const": "EXACT"},
+        "minimal_KT_lift_status": {"enum": ["REMAINS_D_H_EXACT", "REMAINS_Q_EXACT_MOD_D_H"]}
+      }
+    }
+  }
+}
