@@ -15,14 +15,23 @@ renormalized products, and QME remain open.
 The portable 64/36 carrier is now committed, and the quantum-side consumer
 matches all 1,522 transferred mixed coefficients plus the full and retained
 `q1/q2` identities.  Cyclicity does not replay: the exact defect has 1,234
-coefficients before transfer and 953 after transfer.  The classical mixed
-vertex is therefore fail-closed pending a tensor or sign-convention repair.
+coefficients before transfer and 953 after transfer.  The defect atlas shows
+that a uniform factor two on Maxwell-output terms preserves `q1/q2` and
+removes 938 retained defects.  The remaining 15 ghost-density defects keep
+the classical mixed vertex fail-closed.
+
+The companion is certified null-cone decomposable, but the Hadamard existence
+audit proves that this does not supply a state.  The twenty-row bosonic
+companion already fails the normally-hyperbolic hypothesis through its
+nonzero nilpotent order-two principal block.  Separately, any full graded BV
+lift must satisfy BRST/Krein compatibility and positivity on physical
+cohomology.  These analytic and graded-physical gates are not conflated.
 
 The zero-frequency readiness audit proves that the partial `A104` does not
 determine the zero eigenspace and freezes a complete stationary-carrier
 receiving contract. The ordered critical path is:
 
-1. repair the coupled `q2`/pairing seam until cyclicity replays;
+1. repair the remaining 15 ghost-density cyclicity defects while preserving `q1/q2`;
 2. complete `A104`, Cauchy BRST, pairing, and real-structure export;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;
@@ -35,7 +44,7 @@ The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 `LORENTZIAN-CAUSAL` bookkeeping. It is not a quantum theorem.
 
 Tier-1 rerun on 2026-07-17: certificate reproduction, independent
-verification, six mutation-sensitive frontier tests, and strict Draft
+verification, seven focused frontier tests, and strict Draft
 2020-12 validation all `PASS`.  The coupled replay certificate carries its
 own timed receipts. Tier 2 was unnecessary because the full affected
 coefficient chain is replayed in Tier 1. Tier 3 was not run because no

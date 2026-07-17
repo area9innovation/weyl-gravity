@@ -37,7 +37,21 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(flags["MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM"])
         self.assertFalse(flags["MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM"])
         row = self.payload["active_rows"]["classical_interacting_input"]
-        self.assertIn("953_TERM_RETAINED_OBSTRUCTION", row["status"])
+        self.assertIn("15_GHOST_DENSITY_DEFECTS_REMAIN", row["status"])
+
+    def test_hadamard_existence_boundary_is_authoritative(self) -> None:
+        flags = self.payload["claim_flags"]
+        self.assertTrue(flags["COMPANION_DECOMPOSABILITY_CERTIFIED"])
+        self.assertFalse(flags["HADAMARD_EXISTENCE_THEOREM_APPLIES"])
+        row = self.payload["active_rows"]["free_Lorentzian_state"]
+        self.assertIn(
+            "BOSONIC_ANALYTIC_AND_FULL_BV_POSITIVITY_GATES_SEPARATED",
+            row["status"],
+        )
+        self.assertEqual(
+            row["next_gate"],
+            "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
+        )
 
     def test_quantum_overclaim_is_rejected(self) -> None:
         mutant = json.loads(json.dumps(self.payload))

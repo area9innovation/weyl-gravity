@@ -30,6 +30,8 @@ class BergerCompanionHadamardExistenceAuditTests(unittest.TestCase):
         criterion = self.certificate["literature_criterion"]
         self.assertFalse(criterion["general_existence_from_decomposability_alone"])
         self.assertFalse(criterion["theorem_5_3_applies_to_companion"])
+        self.assertIn("twenty-row bosonic companion", criterion["companion_analytic_obstruction"])
+        self.assertIn("physical cohomology", criterion["full_BV_lift_obstruction"])
         self.assertTrue(
             self.certificate["claim_flags"][
                 "BERGER_COMPANION_NULL_CONE_DECOMPOSABLE"

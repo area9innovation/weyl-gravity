@@ -15,8 +15,10 @@ sigma_2(C20)=[[q I10,0],[sigma_2(V2),q I10]],
 ```
 
 with a nonzero square-zero lower-left null block, rather than the scalar
-normally hyperbolic symbol. The complete BV state space carries an odd/Krein
-pairing, not the positive-definite fibre metric in Theorem 5.3.
+normally hyperbolic symbol. This is the analytic obstruction already on the
+twenty-row bosonic companion. Separately, after a companion covariance is
+constructed, the graded 26-to-54 BV lift must satisfy BRST/Krein compatibility
+and positivity on physical cohomology. These are distinct gates.
 
 The local base-wave singular parametrix, companion decomposability, graded
 causal commutator and 26-to-54 covariance lift are ready. A state still

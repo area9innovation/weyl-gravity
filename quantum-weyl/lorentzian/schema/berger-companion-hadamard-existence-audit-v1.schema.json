@@ -29,7 +29,7 @@
     "literature_criterion": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["source", "doi", "arxiv", "definition_5_2", "general_existence_from_decomposability_alone", "theorem_5_3_scope", "theorem_5_3_applies_to_companion", "reason"],
+      "required": ["source", "doi", "arxiv", "definition_5_2", "general_existence_from_decomposability_alone", "theorem_5_3_scope", "theorem_5_3_applies_to_companion", "companion_analytic_obstruction", "full_BV_lift_obstruction"],
       "properties": {
         "source": {"type": "string", "minLength": 30},
         "doi": {"const": "10.1007/s00220-025-05512-1"},
@@ -38,7 +38,8 @@
         "general_existence_from_decomposability_alone": {"const": false},
         "theorem_5_3_scope": {"type": "string", "minLength": 40},
         "theorem_5_3_applies_to_companion": {"const": false},
-        "reason": {"type": "string", "minLength": 80}
+        "companion_analytic_obstruction": {"type": "string", "minLength": 100},
+        "full_BV_lift_obstruction": {"type": "string", "minLength": 100}
       }
     },
     "exact_input_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},

@@ -122,7 +122,8 @@ def evaluate() -> dict[str, Any]:
             "general_existence_from_decomposability_alone": False,
             "theorem_5_3_scope": "normally hyperbolic real formally hermitian Green-hyperbolic operator with positive-definite hermitian fibre metric",
             "theorem_5_3_applies_to_companion": False,
-            "reason": "C20 has a nonzero square-zero lower-left order-two principal symbol and the BV state-space carrier is an odd/Krein pairing, not the positive-definite fibre metric required by the theorem",
+            "companion_analytic_obstruction": "C20 has a nonzero square-zero lower-left order-two principal symbol, so the normally-hyperbolic hypothesis fails already on the twenty-row bosonic companion",
+            "full_BV_lift_obstruction": "after a companion covariance is constructed, the graded 26-to-54 lift separately requires BRST/Krein compatibility and positivity on physical cohomology",
         },
         "exact_input_checks": source_checks,
         "existence_disposition": {
@@ -161,8 +162,10 @@ def evaluate() -> dict[str, Any]:
             "decomposability of the Berger companion does not by itself supply a Hadamard "
             "state. Fewster's general existence theorem for bosonic fields applies to normally "
             "hyperbolic operators with positive-definite hermitian fibre metric; the companion "
-            "has a nonzero nilpotent order-two principal block and the BV carrier has an odd/Krein "
-            "pairing. A local base-factor parametrix and a 26-to-54 covariance lift are ready, but "
+            "already fails the normally-hyperbolic hypothesis through its nonzero nilpotent "
+            "order-two principal block. Separately, the full graded BV lift requires BRST/Krein "
+            "compatibility and positivity on physical cohomology. A local base-factor parametrix "
+            "and a 26-to-54 covariance lift are ready, but "
             "the full stationary Cauchy/BRST/pairing/reality carrier, zero-frequency ledger, "
             "positive or declared Krein covariance and BRST Ward identity are not constructed. "
             "No Hadamard state, positivity, renormalized product, QME or quantum theorem is claimed."

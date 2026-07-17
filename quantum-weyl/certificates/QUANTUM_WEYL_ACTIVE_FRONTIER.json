@@ -1,8 +1,8 @@
 {
   "active_rows": {
     "classical_interacting_input": {
-      "next_gate": "REPAIR_CLASSICAL_COUPLED_Q2_OR_PAIRING_UNTIL_CYCLICITY_REPLAYS",
-      "status": "TRANSFER_FORMULA_AND_Q1Q2_REPLAY_PASS_CYCLICITY_HAS_953_TERM_RETAINED_OBSTRUCTION"
+      "next_gate": "REPAIR_REMAINING_15_GHOST_DENSITY_DEFECTS_WITH_Q1Q2_PRESERVED",
+      "status": "TRANSFER_AND_Q1Q2_PASS_FACTOR_TWO_REMOVES_938_DEFECTS_15_GHOST_DENSITY_DEFECTS_REMAIN"
     },
     "coefficient_and_QME": {
       "next_gate": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
@@ -10,7 +10,7 @@
     },
     "free_Lorentzian_state": {
       "next_gate": "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
-      "status": "CAUSAL_CHAIN_AND_LOCAL_PARAMETRIX_READY_ZERO_SPECTRUM_NONIDENTIFIABLE_FROM_PARTIAL_A104"
+      "status": "COMPANION_DECOMPOSABLE_EXISTENCE_NOT_IMPLIED_BOSONIC_ANALYTIC_AND_FULL_BV_POSITIVITY_GATES_SEPARATED"
     },
     "local_obstruction_space": {
       "next_gate": "IMPORT_KOSZUL_TATE_ROWS_AND_COMPUTE_MINIMAL_BV_H04_H14",
@@ -25,13 +25,15 @@
       "status": "PRINCIPAL_AND_GENERIC_AXIAL_PREFLIGHT_GLOBAL_V1_OPEN"
     }
   },
-  "claim_boundary": "This machine-generated frontier selects current status artifacts without invalidating historical receipts. It establishes G1 AFN0 local quotients, a complete classical causal chain, local Hadamard parametrices and a covariance lift. The first Maxwell transfer formula and q1/q2 identities replay, but the exported cyclicity claim has an exact 953-coefficient retained defect. The mixed interaction is therefore blocked pending a classical tensor or convention repair. It does not establish full antifield BV cohomology, repository Slavnov coefficients, a global BRST Hadamard state, renormalized products, QME restoration, residual quantum transfer or a Lorentzian quantum theory.",
+  "claim_boundary": "This machine-generated frontier selects current status artifacts without invalidating historical receipts. It establishes G1 AFN0 local quotients, a complete classical causal chain, local Hadamard parametrices and a covariance lift. The first Maxwell transfer formula and q1/q2 identities replay, but the exported cyclicity claim has an exact 953-coefficient retained defect. A factor-two Maxwell-output correction preserves q1/q2 and removes 938 terms; the remaining 15 ghost-density defects still block the mixed interaction. The companion is null-cone decomposable, but this does not imply existence of a Hadamard state: the bosonic analytic hypothesis failure and the later full-BV BRST/Krein and physical-positivity gate are recorded separately. It does not establish full antifield BV cohomology, repository Slavnov coefficients, a global BRST Hadamard state, renormalized products, QME restoration, residual quantum transfer or a Lorentzian quantum theory.",
   "claim_flags": {
     "ACTIVE_FRONTIER_LEDGER": true,
     "AFN0_G1_COMPLETE": true,
     "CLASSICAL_MAXWELL_TRANSFER_LANDED": true,
+    "COMPANION_DECOMPOSABILITY_CERTIFIED": true,
     "FULL_BV_G2_COMPLETE": false,
     "GLOBAL_BRST_HADAMARD_STATE": false,
+    "HADAMARD_EXISTENCE_THEOREM_APPLIES": false,
     "LORENTZIAN_QUANTUM_THEORY": false,
     "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM": true,
     "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM": false,
@@ -66,6 +68,11 @@
       "path": "quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
       "sha256": "0134e28cf3fd0bf425c30e368a24dab5c7b8375dcc03a8ff517b34eb56da0681"
     },
+    "Hadamard_existence_audit": {
+      "artifact_id": "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT.json",
+      "sha256": "0d7f2ebf62e1c848f844ffef34850e761d2dd19781a1b528a8d13ebfbcdd0747"
+    },
     "Hadamard_lift": {
       "artifact_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
       "path": "quantum-weyl/lorentzian/certificates/BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT.json",
@@ -96,11 +103,6 @@
       "path": "quantum-weyl/lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
       "sha256": "2afa06f34d29f9103164d22c9865d4899d5b28d53c6a5a3ce002c89f71c8f1da"
     },
-    "classical_Maxwell_transfer": {
-      "artifact_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
-      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
-      "sha256": "4363bc0365012173b793e6d09f4154eaa41712f5f5ba736c8255b3294cdf67b7"
-    },
     "classical_transferred_mixed_q2": {
       "artifact_id": "BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD",
       "path": "d_quotient_classical/certificates/BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD.json",
@@ -110,6 +112,11 @@
       "artifact_id": "BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY",
       "path": "quantum-weyl/transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
       "sha256": "a9ce3aea922acc27d69e0ea9d72c42212b32acb6f47f693b8286fb9dafcd7227"
+    },
+    "coupled_cyclicity_atlas": {
+      "artifact_id": "BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS",
+      "path": "quantum-weyl/transfer/certificates/BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS.json",
+      "sha256": "5d9f4f46dee0be6545567d347b93056e325e3331705fe8ebdaed73b680bfc265"
     },
     "coupled_q2": {
       "artifact_id": "BERGER_COUPLED_64_Q2_IMPORT_REPLAY",
@@ -138,7 +145,7 @@
     "LORENTZIAN-CAUSAL"
   ],
   "ordered_next_gates": [
-    "REPAIR_CLASSICAL_COUPLED_Q2_OR_PAIRING_UNTIL_CYCLICITY_REPLAYS",
+    "REPAIR_REMAINING_15_GHOST_DENSITY_DEFECTS_WITH_Q1Q2_PRESERVED",
     "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
     "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
     "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -157,14 +164,14 @@
   },
   "provenance": {
     "source_manifest": {
-      "active_frontier.py": "7f3c0af66f03dd05652a62a09c9868363096ce8f1c303df452675e4df4b7b401",
+      "active_frontier.py": "fda58771f1fc613ddb72746023a62467d8fe8c76443f76ac401a0816d61032c7",
       "active_frontier_certificate.py": "e4768b0242b8db49bb70a897a1f4b1c313c5e78deaca8a4c4cb387829b721004",
-      "reports/active-quantum-frontier.md": "95822c554987d0aff0c3fcc90ddbbe5443d14407d681edcac88ebe9bae127933",
-      "schema/active-frontier-v1.schema.json": "2bdaf411d0b6fbe5ec6d6dca264776e2bfd83ce9586e33019360e86618b4d77f",
-      "tests/test_active_frontier.py": "2ae7474113d67c78e0dc2f62be37682a7ad24eebf9dd0f929f9cc76b59745957",
-      "verify_active_frontier.py": "19dcb7dc801ad5d424214971e47cf8de30ee8caea7bc1f02edf3ec9aaa4de514"
+      "reports/active-quantum-frontier.md": "a2935b116a635d90a2095bca9e0e82e66b92331d9e1d9ea1d8fe6bc62895483e",
+      "schema/active-frontier-v1.schema.json": "c1b3d17cd2ae0d5cadaca9440ce5e322877e9ed7d0af5212efcb3ce727360f03",
+      "tests/test_active_frontier.py": "f52438cf7cb68a2124549ff38c061e81b9ab3dfcfb007df238c9976ee63f7d38",
+      "verify_active_frontier.py": "8245a2aeecdeb80e00ac0912f6873874102708724cece9f079e1afb0511df3c0"
     },
-    "source_manifest_sha256": "45e357993a5bcf72cbbc9500874305f3336ecaeba42e3e04d7491b4c6e2002af"
+    "source_manifest_sha256": "e953712ef3a4640a3942a09a2ce1e053f4088f61effc1b6013ae69a3dc18ffce"
   },
   "result_id": "QUANTUM_WEYL_ACTIVE_FRONTIER",
   "result_state": "G1_LOCAL_AFN0_AND_CLASSICAL_CAUSAL_CHAIN_READY_GLOBAL_HADAMARD_FULL_BV_QME_OPEN",
@@ -191,9 +198,19 @@
       "historical_result_id": "BERGER_ENDPOINT_FACTOR_INPUT_IMPORT"
     },
     {
-      "active_result_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
+      "active_result_id": "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT",
       "disposition": "SUPERSEDED_AS_STATUS_SOURCE_HISTORY_RETAINED",
       "historical_result_id": "BERGER_HADAMARD_CONSTRUCTION_GATE"
+    },
+    {
+      "active_result_id": "BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS",
+      "disposition": "SUPERSEDED_AS_INTERACTION_STATUS_SOURCE_HISTORY_RETAINED_CAUSAL_UNARY_RECEIPT_VALID",
+      "historical_result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX"
+    },
+    {
+      "active_result_id": "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT",
+      "disposition": "SUPERSEDED_AS_HADAMARD_STATUS_SOURCE_HISTORY_RETAINED_VALID_DECOMPOSABILITY_INPUT",
+      "historical_result_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY"
     }
   ]
 }

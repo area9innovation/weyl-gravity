@@ -26,7 +26,7 @@ DEPENDENCIES = {
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
     "coupled_36_transfer_replay": HERE / "transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
-    "classical_Maxwell_transfer": ROOT / "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+    "coupled_cyclicity_atlas": HERE / "transfer/certificates/BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS.json",
     "classical_transferred_mixed_q2": ROOT / "d_quotient_classical/certificates/BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD.json",
     "causal_chain": HERE / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "base_Hadamard_parametrix": HERE / "lorentzian/certificates/BERGER_BASE_WAVE_HADAMARD_PARAMETRIX.json",
@@ -34,6 +34,7 @@ DEPENDENCIES = {
     "Hadamard_lift": HERE / "lorentzian/certificates/BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT.json",
     "zero_frequency_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS.json",
     "A104_partial": HERE / "lorentzian/certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json",
+    "Hadamard_existence_audit": HERE / "lorentzian/certificates/BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT.json",
     "relative_readiness": HERE / "relative/certificates/QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS.json",
     "Paper09_boundary": HERE / "cartan/certificates/PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF.json",
 }
@@ -52,12 +53,14 @@ def _load() -> dict[str, dict[str, Any]]:
         "antifield_contract": "CONTRACT_READY_AWAITING_CLASSICAL_EXPORT",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
+        "coupled_cyclicity_atlas": "EXACT_DEFECT_LOCALIZED_FACTOR_TWO_PARTIAL_REPAIR_IDENTIFIED",
         "causal_chain": "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN",
         "base_Hadamard_parametrix": "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN",
         "typed_companion": "TYPED_MOLLER_ALGEBRA_CERTIFIED_MICROLOCAL_KERNEL_ACTION_OPEN",
         "Hadamard_lift": "COVARIANCE_LIFT_CERTIFIED_ZERO_FREQUENCY_SPECTRAL_CARRIER_OPEN",
         "zero_frequency_readiness": "EXACT_MASK_NONIDENTIFIABILITY_CERTIFIED_FULL_STATIONARY_CARRIER_REQUIRED",
         "A104_partial": "GLOBAL_A104_104_BY_104_KNOWN_MASK_EXACT_TWO_A12_SLOTS_OPEN",
+        "Hadamard_existence_audit": "DECOMPOSABILITY_CERTIFIED_EXISTENCE_NOT_IMPLIED_STATIONARY_POSITIVITY_CARRIER_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
     for name, state in states.items():
@@ -93,18 +96,19 @@ def _load() -> dict[str, dict[str, Any]]:
         or values["coupled_36_transfer_replay"]["cyclicity_obstruction"]["retained_36_defect_coefficient_count"] != 953
     ):
         raise ValueError("coupled 36-row transfer replay frontier drifted")
-    transfer_flags = values["classical_Maxwell_transfer"].get("flags", {})
+    atlas_flags = values["coupled_cyclicity_atlas"].get("claim_flags", {})
     if (
-        values["classical_Maxwell_transfer"].get("claim_status")
-        != "CERTIFIED_MAXWELL_CAUSAL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_Q2"
-        or transfer_flags.get("BERGER_MAXWELL_UNARY_CONTRACTION") is not True
-        or transfer_flags.get("BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING")
-        is not True
-        or transfer_flags.get("BERGER_HADAMARD_DATA") is not False
-        or transfer_flags.get("QUANTUM_CLAIM") is not False
+        atlas_flags.get("EXACT_RETAINED_CYCLICITY_DEFECT_ATLAS") is not True
+        or atlas_flags.get("PHYSICAL_HAA_FACTOR_TWO_SEAM") is not True
+        or atlas_flags.get("UNIFORM_MAXWELL_OUTPUT_X2_PRESERVES_Q1Q2") is not True
+        or atlas_flags.get("COMPLETE_ADMISSIBLE_CYCLIC_REPAIR_FOUND") is not False
+        or values["coupled_cyclicity_atlas"]["retained_atlas"][
+            "total_defect_coefficients"
+        ]
+        != 953
         or values["classical_transferred_mixed_q2"].get("shape") != [36, 36, 36]
     ):
-        raise ValueError("classical Maxwell transfer frontier drifted")
+        raise ValueError("coupled cyclicity atlas frontier drifted")
     hadamard_flags = values["Hadamard_lift"].get("claim_flags", {})
     if (
         hadamard_flags.get("BERGER_COVARIANCE_LIFT_26_TO_54") is not True
@@ -112,6 +116,18 @@ def _load() -> dict[str, dict[str, Any]]:
         or hadamard_flags.get("LORENTZIAN_QME_RESTORED") is not False
     ):
         raise ValueError("Hadamard frontier drifted")
+    existence = values["Hadamard_existence_audit"]
+    existence_flags = existence.get("claim_flags", {})
+    if (
+        existence_flags.get("BERGER_COMPANION_NULL_CONE_DECOMPOSABLE") is not True
+        or existence_flags.get("FEWSTER_GENERAL_EXISTENCE_THEOREM_APPLIES")
+        is not False
+        or existence_flags.get("BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION")
+        is not False
+        or existence.get("next_gate")
+        != "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1"
+    ):
+        raise ValueError("Hadamard existence criterion frontier drifted")
     return values
 
 
@@ -147,8 +163,8 @@ def build() -> dict[str, Any]:
         },
         "active_rows": {
             "classical_interacting_input": {
-                "status": "TRANSFER_FORMULA_AND_Q1Q2_REPLAY_PASS_CYCLICITY_HAS_953_TERM_RETAINED_OBSTRUCTION",
-                "next_gate": "REPAIR_CLASSICAL_COUPLED_Q2_OR_PAIRING_UNTIL_CYCLICITY_REPLAYS",
+                "status": "TRANSFER_AND_Q1Q2_PASS_FACTOR_TWO_REMOVES_938_DEFECTS_15_GHOST_DENSITY_DEFECTS_REMAIN",
+                "next_gate": "REPAIR_REMAINING_15_GHOST_DENSITY_DEFECTS_WITH_Q1Q2_PRESERVED",
             },
             "local_obstruction_space": {
                 "status": "AFN0_H04_H14_EVEN_ODD_COMPLETE_FULL_BV_OPEN",
@@ -159,7 +175,7 @@ def build() -> dict[str, Any]:
                 "next_gate": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
             },
             "free_Lorentzian_state": {
-                "status": "CAUSAL_CHAIN_AND_LOCAL_PARAMETRIX_READY_ZERO_SPECTRUM_NONIDENTIFIABLE_FROM_PARTIAL_A104",
+                "status": "COMPANION_DECOMPOSABLE_EXISTENCE_NOT_IMPLIED_BOSONIC_ANALYTIC_AND_FULL_BV_POSITIVITY_GATES_SEPARATED",
                 "next_gate": "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
             },
             "relative_Einstein_Weyl": {
@@ -194,8 +210,18 @@ def build() -> dict[str, Any]:
             },
             {
                 "historical_result_id": "BERGER_HADAMARD_CONSTRUCTION_GATE",
-                "active_result_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
+                "active_result_id": "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT",
                 "disposition": "SUPERSEDED_AS_STATUS_SOURCE_HISTORY_RETAINED",
+            },
+            {
+                "historical_result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+                "active_result_id": "BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS",
+                "disposition": "SUPERSEDED_AS_INTERACTION_STATUS_SOURCE_HISTORY_RETAINED_CAUSAL_UNARY_RECEIPT_VALID",
+            },
+            {
+                "historical_result_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY",
+                "active_result_id": "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT",
+                "disposition": "SUPERSEDED_AS_HADAMARD_STATUS_SOURCE_HISTORY_RETAINED_VALID_DECOMPOSABILITY_INPUT",
             },
         ],
         "claim_flags": {
@@ -204,6 +230,8 @@ def build() -> dict[str, Any]:
             "CLASSICAL_MAXWELL_TRANSFER_LANDED": True,
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM": True,
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM": False,
+            "COMPANION_DECOMPOSABILITY_CERTIFIED": True,
+            "HADAMARD_EXISTENCE_THEOREM_APPLIES": False,
             "FULL_BV_G2_COMPLETE": False,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
@@ -213,7 +241,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "REPAIR_CLASSICAL_COUPLED_Q2_OR_PAIRING_UNTIL_CYCLICITY_REPLAYS",
+            "REPAIR_REMAINING_15_GHOST_DENSITY_DEFECTS_WITH_Q1Q2_PRESERVED",
             "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -228,7 +256,11 @@ def build() -> dict[str, Any]:
             "a complete classical causal chain, local Hadamard parametrices and a covariance "
             "lift. The first Maxwell transfer formula and q1/q2 identities replay, "
             "but the exported cyclicity claim has an exact 953-coefficient retained defect. "
-            "The mixed interaction is therefore blocked pending a classical tensor or convention repair. "
+            "A factor-two Maxwell-output correction preserves q1/q2 and removes 938 terms; "
+            "the remaining 15 ghost-density defects still block the mixed interaction. "
+            "The companion is null-cone decomposable, but this does not imply existence of a "
+            "Hadamard state: the bosonic analytic hypothesis failure and the later full-BV "
+            "BRST/Krein and physical-positivity gate are recorded separately. "
             "It does not establish full antifield BV cohomology, repository Slavnov coefficients, "
             "a global BRST Hadamard state, renormalized products, QME restoration, "
             "residual quantum transfer or a Lorentzian quantum theory."
@@ -257,6 +289,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("AFN0_G1_COMPLETE") is not True
         or flags.get("CLASSICAL_MAXWELL_TRANSFER_LANDED") is not True
         or flags.get("MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
+        or flags.get("COMPANION_DECOMPOSABILITY_CERTIFIED") is not True
     ):
         raise ValueError("active frontier positive flags dropped")
     if any(
@@ -268,8 +301,9 @@ def validate(result: dict[str, Any]) -> None:
             "AFN0_G1_COMPLETE",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
+            "COMPANION_DECOMPOSABILITY_CERTIFIED",
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")
-    if len(result.get("supersession_ledger", [])) != 5:
+    if len(result.get("supersession_ledger", [])) != 7:
         raise ValueError("active frontier supersession ledger drifted")

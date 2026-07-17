@@ -153,11 +153,12 @@ decomposability condition defines the admissible wavefront class but does not
 give a general existence theorem for every decomposable operator.  The
 available bosonic existence theorem assumes a normally hyperbolic operator
 and positive-definite hermitian fibre metric; the companion instead has a
-nonzero nilpotent order-two principal block and the BV carrier has an
-odd/Krein pairing.  Consequently the next constructive route runs through
-the complete stationary `A104`, Cauchy BRST/pairing/reality carrier,
-zero-frequency ledger and a positive or declared Krein covariance.  The
-machine receipt is
+nonzero nilpotent order-two principal block.  This analytic obstruction on
+the bosonic companion is separate from the later full-BV requirement of a
+BRST/Krein-compatible lift and positivity on physical cohomology.
+Consequently the next constructive route runs through the complete stationary
+`A104`, Cauchy BRST/pairing/reality carrier, zero-frequency ledger and a
+positive or declared Krein covariance.  The machine receipt is
 `BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT`.
 
 Before constructing that two-point function, the graded state-space contract
