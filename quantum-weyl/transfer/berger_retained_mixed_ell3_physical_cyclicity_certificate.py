@@ -62,6 +62,19 @@ def build(*, run_scientific: bool) -> dict:
             "nonphysical_ghost_antifield_completion_coefficient_count"
         )
         != 288
+        or diagnostics.get("physical_pairing_weight_ledger")
+        != {
+            "gravity": {
+                "signed_odd_pairing_entries": ["-1"],
+                "absolute_field_equation_weights": ["1"],
+                "row_count": 10,
+            },
+            "Maxwell": {
+                "signed_odd_pairing_entries": ["2"],
+                "absolute_field_equation_weights": ["2"],
+                "row_count": 4,
+            },
+        }
     ):
         raise ValueError("retained physical-quartic cyclicity acceptance failed")
     manifest = {path: _sha256(ROOT / path) for path in SOURCE_PATHS}
@@ -78,6 +91,7 @@ def build(*, run_scientific: bool) -> dict:
             "formula": "transpose the first input with the positive typed-pairing weight ratio and exact PBW formal adjoint",
             "Maxwell_pairing_weight": 2,
             "gravity_pairing_weight": 1,
+            "pairing_sign_convention": "signed odd-pairing orientations are retained in the ledger; the physical field-equation transpose uses their absolute component multiplicities",
             "unreplayed_completion_coefficient_count": 288,
             "unreplayed_completion": "ghost and ghost-antifield BV completion",
         },
@@ -92,7 +106,7 @@ def build(*, run_scientific: bool) -> dict:
         },
         "next_gate": "BERGER_RETAINED_MIXED_ELL3_GHOST_ANTIFIELD_CYCLICITY_REPLAY",
         "claim_boundary": (
-            "This LOCAL-ALGEBRAIC classical-input acceptance independently lowers the retained mixed ell3 with the exact typed 36-row pairing and replays cyclic transposition of every degree-zero physical quartic coefficient modulo exact PBW integration by parts. All 25,662 physical coefficients reproduce with zero defects: 7,506 have gravity output and 18,156 have Maxwell output. Mutating the Maxwell pairing weight from two to one creates 17,108 exact defects on 14 rows. The remaining 288 coefficients belong to the ghost/antifield BV completion and are explicitly not promoted to an independently replayed full-BV cyclicity theorem. The result does not construct an Einstein-like or extra-Weyl residual branch projector, does not identify a topological deformation class with a particle mode, does not restore a QME, and makes no quantum, Lorentzian or unitarity claim."
+            "This LOCAL-ALGEBRAIC classical-input acceptance independently lowers the retained mixed ell3 with the exact typed 36-row pairing and replays cyclic transposition of every degree-zero physical quartic coefficient modulo exact PBW integration by parts. The convention receipt records signed odd-pairing entries -1 on ten gravity rows and +2 on four Maxwell rows; the physical field-equation transpose uses their absolute component multiplicities one and two without silently discarding the signed ledger. All 25,662 physical coefficients reproduce with zero defects: 7,506 have gravity output and 18,156 have Maxwell output. Mutating the Maxwell pairing weight from two to one creates 17,108 exact defects on 14 rows. The remaining 288 coefficients belong to the ghost/antifield BV completion and are explicitly not promoted to an independently replayed full-BV cyclicity theorem. The result does not construct an Einstein-like or extra-Weyl residual branch projector, does not identify a topological deformation class with a particle mode, does not restore a QME, and makes no quantum, Lorentzian or unitarity claim."
         ),
         "provenance": {
             "source_manifest": manifest,

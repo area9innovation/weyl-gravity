@@ -27,6 +27,21 @@ class BergerRetainedMixedEll3PhysicalCyclicityTests(unittest.TestCase):
             diagnostics["nonphysical_ghost_antifield_completion_coefficient_count"],
             288,
         )
+        self.assertEqual(
+            diagnostics["physical_pairing_weight_ledger"],
+            {
+                "gravity": {
+                    "signed_odd_pairing_entries": ["-1"],
+                    "absolute_field_equation_weights": ["1"],
+                    "row_count": 10,
+                },
+                "Maxwell": {
+                    "signed_odd_pairing_entries": ["2"],
+                    "absolute_field_equation_weights": ["2"],
+                    "row_count": 4,
+                },
+            },
+        )
 
     def test_persisted_certificate_reproduces(self) -> None:
         value = json.loads(OUTPUT.read_text())

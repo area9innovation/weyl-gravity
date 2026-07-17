@@ -20,7 +20,7 @@
         "input_hashes": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/hash"}},
         "diagnostics": {
           "type": "object", "additionalProperties": false,
-          "required": ["retained_ell3_coefficient_count", "physical_quartic_coefficient_count", "physical_gravity_output_coefficient_count", "physical_Maxwell_output_coefficient_count", "physical_quartic_cyclicity_defect_count", "physical_quartic_cyclicity_defect_rows", "Maxwell_pairing_weight_mutation_defect_count", "Maxwell_pairing_weight_mutation_defect_rows", "nonphysical_ghost_antifield_completion_coefficient_count"],
+          "required": ["retained_ell3_coefficient_count", "physical_quartic_coefficient_count", "physical_gravity_output_coefficient_count", "physical_Maxwell_output_coefficient_count", "physical_quartic_cyclicity_defect_count", "physical_quartic_cyclicity_defect_rows", "Maxwell_pairing_weight_mutation_defect_count", "Maxwell_pairing_weight_mutation_defect_rows", "nonphysical_ghost_antifield_completion_coefficient_count", "physical_pairing_weight_ledger"],
           "properties": {
             "retained_ell3_coefficient_count": {"const": 25950},
             "physical_quartic_coefficient_count": {"const": 25662},
@@ -30,7 +30,8 @@
             "physical_quartic_cyclicity_defect_rows": {"const": 0},
             "Maxwell_pairing_weight_mutation_defect_count": {"const": 17108},
             "Maxwell_pairing_weight_mutation_defect_rows": {"const": 14},
-            "nonphysical_ghost_antifield_completion_coefficient_count": {"const": 288}
+            "nonphysical_ghost_antifield_completion_coefficient_count": {"const": 288},
+            "physical_pairing_weight_ledger": {"const": {"gravity": {"signed_odd_pairing_entries": ["-1"], "absolute_field_equation_weights": ["1"], "row_count": 10}, "Maxwell": {"signed_odd_pairing_entries": ["2"], "absolute_field_equation_weights": ["2"], "row_count": 4}}}
           }
         },
         "verdict": {"const": "ACCEPTED_RETAINED_MIXED_ELL3_PHYSICAL_QUARTIC_CYCLICITY_LOCAL_ALGEBRAIC"},
@@ -39,12 +40,13 @@
     },
     "cyclicity_scope": {
       "type": "object", "additionalProperties": false,
-      "required": ["checked", "formula", "Maxwell_pairing_weight", "gravity_pairing_weight", "unreplayed_completion_coefficient_count", "unreplayed_completion"],
+      "required": ["checked", "formula", "Maxwell_pairing_weight", "gravity_pairing_weight", "pairing_sign_convention", "unreplayed_completion_coefficient_count", "unreplayed_completion"],
       "properties": {
         "checked": {"type": "string", "minLength": 20},
         "formula": {"type": "string", "minLength": 30},
         "Maxwell_pairing_weight": {"const": 2},
         "gravity_pairing_weight": {"const": 1},
+        "pairing_sign_convention": {"type": "string", "minLength": 100},
         "unreplayed_completion_coefficient_count": {"const": 288},
         "unreplayed_completion": {"const": "ghost and ghost-antifield BV completion"}
       }

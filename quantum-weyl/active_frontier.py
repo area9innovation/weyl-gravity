@@ -211,6 +211,19 @@ def _load() -> dict[str, dict[str, Any]]:
             "nonphysical_ghost_antifield_completion_coefficient_count"
         )
         != 288
+        or physical_cyclicity_diagnostics.get("physical_pairing_weight_ledger")
+        != {
+            "gravity": {
+                "signed_odd_pairing_entries": ["-1"],
+                "absolute_field_equation_weights": ["1"],
+                "row_count": 10,
+            },
+            "Maxwell": {
+                "signed_odd_pairing_entries": ["2"],
+                "absolute_field_equation_weights": ["2"],
+                "row_count": 4,
+            },
+        }
     ):
         raise ValueError("retained mixed ell3 physical cyclicity frontier drifted")
     projection_readiness = values["residual_ell3_projection_readiness"]
@@ -449,7 +462,9 @@ def build() -> dict[str, Any]:
             "exchange sectors have no outer/inner pairs. All three retained exchange sectors therefore "
             "vanish, all 36 retained arity-three rows close, and a mutation is rejected. Exact "
             "cyclic transposition independently reproduces all 25,662 physical quartic coefficients "
-            "with zero defects; changing the Maxwell pairing weight produces 17,108 defects. The "
+            "with zero defects. The signed odd-pairing orientations are -1 in gravity and +2 in "
+            "Maxwell, while the physical field-equation transpose uses their absolute weights 1 and "
+            "2; changing the Maxwell weight to one produces 17,108 defects. The "
             "remaining 288 ghost/antifield completion coefficients are not independently replayed, "
             "so full retained BV cyclicity remains open. Residual "
             "Einstein-like/extra-Weyl dynamical branch projection and separate e/o deformation-vertex "

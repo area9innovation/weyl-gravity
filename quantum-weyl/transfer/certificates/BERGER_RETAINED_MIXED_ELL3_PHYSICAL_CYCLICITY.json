@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "This LOCAL-ALGEBRAIC classical-input acceptance independently lowers the retained mixed ell3 with the exact typed 36-row pairing and replays cyclic transposition of every degree-zero physical quartic coefficient modulo exact PBW integration by parts. All 25,662 physical coefficients reproduce with zero defects: 7,506 have gravity output and 18,156 have Maxwell output. Mutating the Maxwell pairing weight from two to one creates 17,108 exact defects on 14 rows. The remaining 288 coefficients belong to the ghost/antifield BV completion and are explicitly not promoted to an independently replayed full-BV cyclicity theorem. The result does not construct an Einstein-like or extra-Weyl residual branch projector, does not identify a topological deformation class with a particle mode, does not restore a QME, and makes no quantum, Lorentzian or unitarity claim.",
+  "claim_boundary": "This LOCAL-ALGEBRAIC classical-input acceptance independently lowers the retained mixed ell3 with the exact typed 36-row pairing and replays cyclic transposition of every degree-zero physical quartic coefficient modulo exact PBW integration by parts. The convention receipt records signed odd-pairing entries -1 on ten gravity rows and +2 on four Maxwell rows; the physical field-equation transpose uses their absolute component multiplicities one and two without silently discarding the signed ledger. All 25,662 physical coefficients reproduce with zero defects: 7,506 have gravity output and 18,156 have Maxwell output. Mutating the Maxwell pairing weight from two to one creates 17,108 exact defects on 14 rows. The remaining 288 coefficients belong to the ghost/antifield BV completion and are explicitly not promoted to an independently replayed full-BV cyclicity theorem. The result does not construct an Einstein-like or extra-Weyl residual branch projector, does not identify a topological deformation class with a particle mode, does not restore a QME, and makes no quantum, Lorentzian or unitarity claim.",
   "claim_flags": {
     "FULL_RETAINED_BV_ELL3_CYCLICITY_INDEPENDENTLY_REPLAYED": false,
     "MAXWELL_PAIRING_WEIGHT_MUTATION_REJECTED": true,
@@ -15,6 +15,7 @@
     "checked": "degree-zero physical inputs paired against degree-one Euler/antifield outputs",
     "formula": "transpose the first input with the positive typed-pairing weight ratio and exact PBW formal adjoint",
     "gravity_pairing_weight": 1,
+    "pairing_sign_convention": "signed odd-pairing orientations are retained in the ledger; the physical field-equation transpose uses their absolute component multiplicities",
     "unreplayed_completion": "ghost and ghost-antifield BV completion",
     "unreplayed_completion_coefficient_count": 288
   },
@@ -30,12 +31,32 @@
       "nonphysical_ghost_antifield_completion_coefficient_count": 288,
       "physical_Maxwell_output_coefficient_count": 18156,
       "physical_gravity_output_coefficient_count": 7506,
+      "physical_pairing_weight_ledger": {
+        "Maxwell": {
+          "absolute_field_equation_weights": [
+            "2"
+          ],
+          "row_count": 4,
+          "signed_odd_pairing_entries": [
+            "2"
+          ]
+        },
+        "gravity": {
+          "absolute_field_equation_weights": [
+            "1"
+          ],
+          "row_count": 10,
+          "signed_odd_pairing_entries": [
+            "-1"
+          ]
+        }
+      },
       "physical_quartic_coefficient_count": 25662,
       "physical_quartic_cyclicity_defect_count": 0,
       "physical_quartic_cyclicity_defect_rows": 0,
       "retained_ell3_coefficient_count": 25950
     },
-    "elapsed_seconds": 8.869534,
+    "elapsed_seconds": 10.842514,
     "input_hashes": {
       "legacy_layout_carrier": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4",
       "retained_mixed_ell3_manifest": "c3dc93cbbfed36fbd800aba4bfee197d9b04fcb64420c03883fea5b1d360c948",
@@ -50,14 +71,14 @@
   "next_gate": "BERGER_RETAINED_MIXED_ELL3_GHOST_ANTIFIELD_CYCLICITY_REPLAY",
   "provenance": {
     "source_manifest": {
-      "quantum-weyl/reports/berger-retained-mixed-ell3-physical-cyclicity.md": "255e9ada339c275cce7d484e7bb5d820a504a7a19cbdadf97143c28c0c6274d6",
-      "quantum-weyl/transfer/berger_retained_mixed_ell3_physical_cyclicity.py": "48b87a2dfb72d598e29f71b82fe954d587e865878e36dccea5156db66270231c",
-      "quantum-weyl/transfer/berger_retained_mixed_ell3_physical_cyclicity_certificate.py": "b44a95025b9b7524a9491da26aeb77715af3d132d22f9bcd43532fcd02ce8bdb",
-      "quantum-weyl/transfer/schema/berger-retained-mixed-ell3-physical-cyclicity-v1.schema.json": "ef5921b24ffa68a60b9bd27d141ea9977f3f27bfd9c150ae605b12e39b1c89a3",
-      "quantum-weyl/transfer/tests/test_berger_retained_mixed_ell3_physical_cyclicity.py": "08f1a34a110ad0ec567c9bd7c54e490cc04d1edd7678afe87fc1c3126d02d66e",
+      "quantum-weyl/reports/berger-retained-mixed-ell3-physical-cyclicity.md": "c752a718dd7c1c7d18ac4294e7b553296c81ab8aed4ec1cb72b48db5d5cc675a",
+      "quantum-weyl/transfer/berger_retained_mixed_ell3_physical_cyclicity.py": "0bc133f9b5d48139523842ae8f46c29d62c723bbfebf8859b45e42c52af3de76",
+      "quantum-weyl/transfer/berger_retained_mixed_ell3_physical_cyclicity_certificate.py": "8a75447bd75259b4c67c951ab3dc630119a82ac6e400742de26d8c3961cc4ec9",
+      "quantum-weyl/transfer/schema/berger-retained-mixed-ell3-physical-cyclicity-v1.schema.json": "73fd06a8dc48692033a155025a8727e8e1a812d44ebefb330de7e5e81efc95e5",
+      "quantum-weyl/transfer/tests/test_berger_retained_mixed_ell3_physical_cyclicity.py": "7c16bc9a420650adf7eef7c51b5888c41a956e46b4778aa94c8eb32f9da13fb7",
       "quantum-weyl/transfer/verify_berger_retained_mixed_ell3_physical_cyclicity.py": "6e8f065369ea939441bb5c4caded0173c7f6f12f874acd0b7f43133df7ef5164"
     },
-    "source_manifest_sha256": "dc23d7e184a30903794f82a33872f9382d42ebe5249fc68d9fb6f4811d149704"
+    "source_manifest_sha256": "8961686725beb02e60b3c6cc2e4da3ff38b35daf3defee0038692eff87afa71a"
   },
   "result_id": "BERGER_RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY",
   "result_state": "PHYSICAL_QUARTIC_CYCLICITY_INDEPENDENTLY_ACCEPTED_FULL_BV_CYCLICITY_OPEN",
@@ -65,7 +86,7 @@
   "verification_receipts": [
     {
       "command": "PYTHONPATH=quantum-weyl python3 -m transfer.berger_retained_mixed_ell3_physical_cyclicity_certificate --scientific",
-      "elapsed_seconds": 8.869534,
+      "elapsed_seconds": 10.842514,
       "status": "PASS",
       "test_tier": 2
     },

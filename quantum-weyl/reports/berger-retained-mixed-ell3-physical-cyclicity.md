@@ -12,6 +12,12 @@ Changing the Maxwell pairing weight from two to one produces 17,108 defects
 on 14 rows, so the successful equality is sensitive to the typed pairing
 normalization.
 
+The convention ledger retains the signed odd-pairing orientations: ten
+gravity equation/field pairs carry `-1`, while four Maxwell pairs carry `+2`.
+The physical field-equation transpose uses their absolute component
+multiplicities one and two. Recording both prevents the physical check from
+silently converting the odd BV pairing into a positive pairing theorem.
+
 The theorem is intentionally narrower than full retained BV cyclicity. The
 remaining 288 `ell3` coefficients form the ghost/antifield completion and
 have not yet received an independent cyclic transpose replay. Their

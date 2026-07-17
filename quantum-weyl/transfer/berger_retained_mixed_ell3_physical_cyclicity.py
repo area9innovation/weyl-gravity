@@ -42,6 +42,32 @@ def _positive_weight(value: q10.Q10) -> q10.Q10:
     return abs(value[0]), Fraction(0)
 
 
+def _physical_pairing_weight_ledger(
+    pairing: Mapping[q10.LinearKey, q10.Q10], degrees: tuple[int, ...]
+) -> dict[str, object]:
+    sectors = {
+        "gravity": {"signed": set(), "absolute": set(), "row_count": 0},
+        "Maxwell": {"signed": set(), "absolute": set(), "row_count": 0},
+    }
+    for (left, right, word), coefficient in pairing.items():
+        if word or degrees[left] != 1 or degrees[right] != 0:
+            continue
+        if coefficient[1] or not coefficient[0]:
+            raise ValueError("physical typed-pairing entry is not a nonzero rational")
+        sector = "gravity" if left < 26 else "Maxwell"
+        sectors[sector]["signed"].add(str(coefficient[0]))
+        sectors[sector]["absolute"].add(str(abs(coefficient[0])))
+        sectors[sector]["row_count"] += 1
+    return {
+        name: {
+            "signed_odd_pairing_entries": sorted(value["signed"]),
+            "absolute_field_equation_weights": sorted(value["absolute"]),
+            "row_count": value["row_count"],
+        }
+        for name, value in sectors.items()
+    }
+
+
 def _formal_adjoint_distributions(
     word: q10.Word,
     first_word: q10.Word,
@@ -157,6 +183,21 @@ def scientific_replay() -> dict[str, Any]:
     )
     if len(degrees) != 36:
         raise ValueError("retained degree ledger drifted")
+    pairing_weight_ledger = _physical_pairing_weight_ledger(pairing, degrees)
+    expected_pairing_weight_ledger = {
+        "gravity": {
+            "signed_odd_pairing_entries": ["-1"],
+            "absolute_field_equation_weights": ["1"],
+            "row_count": 10,
+        },
+        "Maxwell": {
+            "signed_odd_pairing_entries": ["2"],
+            "absolute_field_equation_weights": ["2"],
+            "row_count": 4,
+        },
+    }
+    if pairing_weight_ledger != expected_pairing_weight_ledger:
+        raise ValueError("physical typed-pairing sign or weight ledger drifted")
 
     actual, predicted = _physical_transpose(ell3, pairing, degrees)
     defect_count, defect_rows = _defect_count(actual, predicted)
@@ -182,6 +223,7 @@ def scientific_replay() -> dict[str, Any]:
         and mutation_defect_count > 0
         and mutation_defect_rows > 0
         and nonphysical == 288
+        and pairing_weight_ledger == expected_pairing_weight_ledger
     )
     return {
         "backend": "independent-Q(sqrt(10))-PBW-physical-quartic-cyclicity-v1",
@@ -205,6 +247,7 @@ def scientific_replay() -> dict[str, Any]:
             "Maxwell_pairing_weight_mutation_defect_count": mutation_defect_count,
             "Maxwell_pairing_weight_mutation_defect_rows": mutation_defect_rows,
             "nonphysical_ghost_antifield_completion_coefficient_count": nonphysical,
+            "physical_pairing_weight_ledger": pairing_weight_ledger,
         },
         "verdict": (
             "ACCEPTED_RETAINED_MIXED_ELL3_PHYSICAL_QUARTIC_CYCLICITY_LOCAL_ALGEBRAIC"

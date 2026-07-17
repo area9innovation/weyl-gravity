@@ -30,7 +30,9 @@ output projection; the other two exchange sectors have no outer/inner pairs. Thu
 three retained exchange sectors vanish exactly. The physical quartic
 cyclicity is also independently replayed: all 25,662 physical coefficients
 reproduce under exact PBW transposition, while a Maxwell pairing-weight
-mutation creates 17,108 defects. The 288 ghost/antifield completion
+mutation creates 17,108 defects. The signed odd-pairing entries are -1 in
+gravity and +2 in Maxwell; the physical field-equation transpose uses their
+absolute component weights 1 and 2. The 288 ghost/antifield completion
 coefficients remain outside this replay, so full retained BV cyclicity is
 still open. Projection onto the
 Einstein-like and extra-Weyl dynamical residual branches remains open, as does

@@ -90,8 +90,10 @@ The physical quartic cyclicity of this retained bracket is now independently
 replayed rather than inherited only from the producer. Exact PBW formal
 adjunction over \(\mathbb Q(\sqrt{10})\) reproduces all 25,662 physical
 coefficients with zero defects (7,506 gravity-output and 18,156
-Maxwell-output coefficients). Changing the Maxwell pairing weight from two to
-one creates 17,108 defects on 14 rows. The remaining 288 coefficients are the
+Maxwell-output coefficients). The signed odd-pairing entries are -1 in gravity
+and +2 in Maxwell, while the physical field-equation transpose uses their
+absolute component weights 1 and 2. Changing the Maxwell pairing weight from
+two to one creates 17,108 defects on 14 rows. The remaining 288 coefficients are the
 ghost/antifield BV completion and have not yet received an independent cyclic
 transpose replay, so full retained BV cyclicity remains open.
 
