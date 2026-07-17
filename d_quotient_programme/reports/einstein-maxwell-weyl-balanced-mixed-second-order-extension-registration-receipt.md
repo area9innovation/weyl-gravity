@@ -2,15 +2,19 @@
 
 The programme imports
 `bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json`
-at commit `6e271cd3d8ebdaaa64bc761d22439dcb52743ab1`, SHA-256
-`bd036062558db94db7f352215e35d07606c40e82e9368fdf98492b80506d15d8`.
+at commit `74eaf0893a5c9c9659b14b7190870b0c57034eec`, SHA-256
+`236c308cec85b4edde24f0acd4fe4c2133c58516426041eab2d9ffb01be28d59`.
 
 The registered G1 theorem supplies the first complete mixed Einstein--extra
 second-order extension in the compact programme.  The declared `k=0,m=0`
 tangent balances the positive Einstein-minus and negative extra Taub charges.
 All five stabilizer moment maps vanish.  Its homogeneous zero-frequency source
 cancels exactly, and every remaining `ell=0,2,4` frequency channel has an exact
-correction with zero operator remainder.
+correction with zero operator remainder.  The four solved action equations
+stacked with the four target Noether identities have determinant `-4` in the
+eight ungauged polar equations at `k=0`, so dependent-row completion survives
+every frequency and angular specialization.  The exact real-channel factors
+and fixed-charge/reality audit also pass.
 
 The companion cone theorem also proves that a single fixed nonzero-momentum
 travelling block cannot balance both `H` and `P_x` nontrivially.  Neither result
@@ -31,7 +35,7 @@ python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_mixe
 python3 d_quotient_programme/verify_programme_status.py --check --guards
 ```
 
-The final exhaustive unreduced tensor replay passed in `478.87` seconds.  The
-scoped fast verification and seven-test rail passed in under ten seconds.
-Deterministic programme regeneration completed in `0.68` seconds and the
-status-plus-mutation-guard check completed in `1.05` seconds, both `PASS`.
+The final exhaustive source-and-channel replay passed in `468.66` seconds.
+The scoped fast verification and test rail passed in under ten seconds.
+Deterministic programme regeneration completed in `0.59` seconds and the
+status-plus-mutation-guard check completed in `0.81` seconds, both `PASS`.

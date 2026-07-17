@@ -29,7 +29,7 @@
     ],
     "rule": "The Einstein team must export the complete off-shell all-sector relative triangle with the declared acceptance flags. The classical team then imports it by commit and hash before constructing residual equivariance, cofiber compatibility, and observable pullback. A generic-axial preflight or on-shell inclusion cannot promote this gate."
   },
-  "programme_base_commit": "6e271cd3d8ebdaaa64bc761d22439dcb52743ab1",
+  "programme_base_commit": "74eaf0893a5c9c9659b14b7190870b0c57034eec",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -2779,12 +2779,14 @@
           "the balanced tangent has quadratic polar outputs only at ell=0,2,4 and the five exact frequency channels declared by the certificate",
           "the two homogeneous zero-frequency sources cancel in every independent row",
           "every nonzero homogeneous channel and every ell=2,4 channel has an explicit exact correction with zero operator remainder",
+          "the four solved action equations together with the target Noether identities span all eight ungauged polar equations at k=0 with constant determinant -4, including at zero frequency",
+          "the real-channel factors are certified exactly and the correction introduces no magnetic, stationary electric-charge, or Wilson-line zero-mode shift",
           "the finite channel sum and its conjugate therefore define a complete second-order correction for the declared tangent"
         ],
         "evidence": {
-          "commit": "6e271cd3d8ebdaaa64bc761d22439dcb52743ab1",
+          "commit": "74eaf0893a5c9c9659b14b7190870b0c57034eec",
           "path": "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
-          "sha256": "bd036062558db94db7f352215e35d07606c40e82e9368fdf98492b80506d15d8"
+          "sha256": "236c308cec85b4edde24f0acd4fe4c2133c58516426041eab2d9ffb01be28d59"
         },
         "generator_id": "H_product",
         "lifecycle_layer": "CLASSICAL_BV",
@@ -2810,7 +2812,7 @@
           "python3 d_quotient_programme/verify_programme_status.py --check --guards"
         ]
       },
-      "sha256": "01163dc07a137eaf5d730214fab108e0bc92b5380b7762cb1b740da9a1482b49"
+      "sha256": "0565e3b77d4c18c434c98aaa04674630a047ca144256504f0d6a037cec1e1212"
     },
     {
       "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json",
