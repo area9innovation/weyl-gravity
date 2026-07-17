@@ -85,8 +85,10 @@ deformation class, invariance under changing the cyclic retract, or
 nonremovability by a cyclic $L_\infty$ field redefinition.  Residual mixing,
 Hadamard products, QME restoration, and every quantum or particle
 interpretation remain open.  A separate exact audit obstructs the canonical
-local same-bundle branch projector on the $36$-row carrier; the smallest
-natural support-local next candidate has rank $46$.
+local same-bundle branch projector on the $36$-row carrier.  The resulting
+rank-$46$ spatial-STF2 graph prolongation and its cyclic dual are now
+constructed as an exact local cyclic carrier, but no branch projector or
+nonlinear lift has yet been certified on it.
 \end{abstract}
 
 \section*{AI-use disclosure and computational accountability}
@@ -141,8 +143,10 @@ the present theorem.
 The theorem stops one rung before physical branch interpretation.  A
 subsequent exact audit now obstructs the canonical support-local same-bundle
 Einstein-like/extra-Weyl projector on the $36$-row carrier.  Residual descent
-therefore requires an enlarged or differently organized carrier before a
-branch mixing table is authorized.  Deformation/vertex classes belong to a
+therefore requires an enlarged or differently organized carrier.  The
+natural rank-$46$ STF2 graph carrier has now passed its exact unary cyclic-SDR
+gate, but its branch projector and nonlinear lift remain open, so a branch
+mixing table is still unauthorized.  Deformation/vertex classes belong to a
 separate complex and are not used in the theorem below.
 
 \section{Complexes, conventions, and claim boundary}\label{sec:setup}
@@ -644,9 +648,53 @@ cylinders, filtered carriers, higher-rank local carriers, and explicitly
 \textsc{reduced-mode} nonlocal splittings remain open.  Exact symbol counting
 requires at least four additional BV rows; the smallest natural support-local
 candidate adds a spatial STF2 prolongation and its cyclic dual, giving rank
-$46$.  That carrier has not yet been constructed, so
-Equation~\eqref{eq:mixing} is a target formula rather than an authorized
-$36$-row calculation.
+$46$.
+
+That candidate has now been constructed.  Let $T_{\rm STF}$ extract
+\begin{equation}
+ h_{12},\quad h_{13},\quad h_{23},\quad h_{11}-h_{22},\quad
+ h_{11}+h_{22}-2h_{33},
+\end{equation}
+and set $F=T_{\rm STF}\Box_2$.  Introducing $Y=Fh$ and its five cyclic-dual
+rows gives degree ranks $(4,19,19,4)$.  The metric Hessian block is
+\begin{equation}\label{eq:rank46-hessian}
+ \begin{pmatrix}
+ A_{10}+F^\dagger F&-F^\dagger\\
+ -F&I_5
+ \end{pmatrix},
+\end{equation}
+whose Schur complement is exactly $A_{10}$.
+
+\begin{proposition}[Exact rank-$46$ STF2 graph carrier]
+The finite-order cotangent shear defining Equation~\eqref{eq:rank46-hessian}
+and its inverse produce a cyclic strong deformation retract
+\begin{equation}
+ (\cR_{46},q_1^{46},\omega_{46})
+ \underset{\iota_{36}^{46}}{\overset{\pi_{46}^{36}}{\rightleftarrows}}
+ (\cR_{36},\ell_1,\omega_{36}),\qquad S_{46},
+\end{equation}
+with
+\[
+\begin{gathered}
+ (q_1^{46})^2=0,\qquad
+ \pi_{46}^{36}\iota_{36}^{46}=I_{36},\qquad
+ q_1^{46}S_{46}+S_{46}q_1^{46}
+   =I_{46}-\iota_{36}^{46}\pi_{46}^{36},\\
+ S_{46}^2=0,\qquad S_{46}\iota_{36}^{46}=0,\qquad
+ \pi_{46}^{36}S_{46}=0.
+\end{gathered}
+\]
+Both chain maps, the induced pairing, unary cyclicity, and homotopy cyclicity
+hold exactly over $\Q(\sqrt{10})$.  The added STF2 complement is contractible,
+so this construction changes neither the retained cohomology nor, by itself,
+the physical branch content.
+\end{proposition}
+
+This is the honest enlarged carrier, not yet the branch theorem.  It does not
+supply an Einstein-like/extra-Weyl projector, a $q_2,q_3$ lift,
+$K_{\rm Berger}$ equivariance, or causal support on $\cR_{46}$.
+Equation~\eqref{eq:mixing} therefore remains a target formula rather than an
+authorized rank-$46$ calculation.
 
 The receiving contract also reserves a separate deformation/vertex payload.
 That deformation complex, its normalized basis, and its Euler--Lagrange map
@@ -656,9 +704,10 @@ introduced as a second theorem here.  In particular, no deformation class is
 relabelled as a third dynamical particle branch.
 
 The obstruction neither invalidates Theorem~\ref{thm:survival} nor computes a
-branch mixing table.  It sharpens the next gate: construct the rank-$46$ STF2
-prolongation carrier, or provide another admissible carrier with equally
-explicit locality and dependency tags.
+branch mixing table.  Together with the graph-carrier construction it
+sharpens the next gate to a binary rank-$46$ projector verdict: construct the
+exact branch projector or return a normalized obstruction, before lifting the
+nonlinear brackets.
 
 \section{Interpretation and nonclaims}\label{sec:interpretation}
 
@@ -667,7 +716,8 @@ gravity-equation response to one gravity and two Maxwell inputs and a
 Maxwell-equation response to two gravity and one Maxwell input.  After
 lowering, both are $g,g,A,A$ quartic coefficients.  They remain visible under
 the frozen exact cyclic transfer and satisfy the ternary homotopy identity.
-Once an admissible enlarged or alternative branch carrier lands,
+Once the rank-$46$ graph carrier receives an admissible branch projector and
+nonlinear lift---or another branch carrier supplies them---
 Equation~\eqref{eq:mixing} will decide whether this representative closes on
 the Einstein-like branch, couples it to the extra-Weyl branch, or vanishes on
 residual cohomology.
@@ -720,6 +770,8 @@ Artifact & Role\\
  & historical fail-closed input contract for the mixing table\\
 \cert{BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1}
  & normalized obstruction to the canonical local $36$-row projector\\
+\cert{BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1}
+ & exact local cyclic graph carrier; rank-$46$ branch projector still open\\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -752,6 +804,12 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=. python3 \
   d_quotient_classical/backreacted_clock/\
   verify_berger_retained_36_residual_branch_local_projector_obstruction.py
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  berger_retained_46_stf2_prolongation_branch_carrier.py --check --guards
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_retained_46_stf2_prolongation_branch_carrier.py
 \end{verbatim}
 \endgroup
 
@@ -761,9 +819,10 @@ working draft rather than a theorem freeze.
 
 \section{Outlook}\label{sec:outlook}
 
-Paper~11 now has two mathematical continuations.  The first is to construct
-the rank-$46$ STF2 prolongation carrier (or another admissible alternative)
-and compute Equation~\eqref{eq:mixing}.  A nonzero
+Paper~11 now has two mathematical continuations.  The first is to decide the
+rank-$46$ STF2 branch-projector-or-obstruction gate, materialize the cyclic
+$q_2,q_3$ lift if that gate is positive, and compute
+Equation~\eqref{eq:mixing}.  A nonzero
 Einstein/extra-Weyl entry would turn the additional Weyl physics into an
 explicit interaction channel; a block-diagonal table would establish
 nonlinear closure of the Einstein-like direction through this order; and a

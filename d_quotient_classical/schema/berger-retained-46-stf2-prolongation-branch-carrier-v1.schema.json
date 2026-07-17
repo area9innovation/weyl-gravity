@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-retained-46-stf2-prolongation-branch-carrier-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "setting_id",
+    "dependency_tags",
+    "dependency_refs",
+    "carrier",
+    "graph_construction",
+    "artifacts",
+    "exact_checks",
+    "diagnostics",
+    "flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-46-stf2-prolongation-branch-carrier-v1"},
+    "result_id": {"const": "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1"},
+    "result_state": {"const": "CERTIFIED_CYCLIC_GRAPH_CARRIER_PROJECTOR_OPEN"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object"},
+    "carrier": {
+      "type": "object",
+      "required": ["total_rows", "degree_ranks", "component_rows", "added_bundle", "added_configuration_rows", "added_cyclic_dual_rows", "coefficient_field"],
+      "properties": {
+        "total_rows": {"const": 46},
+        "degree_ranks": {"const": {"-1": 4, "0": 19, "1": 19, "2": 4}},
+        "component_rows": {"type": "array", "minItems": 46, "maxItems": 46},
+        "added_bundle": {"type": "string"},
+        "added_configuration_rows": {"const": 5},
+        "added_cyclic_dual_rows": {"const": 5},
+        "coefficient_field": {"const": "Q(sqrt(10))"}
+      },
+      "additionalProperties": false
+    },
+    "graph_construction": {"type": "object"},
+    "artifacts": {
+      "type": "object",
+      "required": ["q1_46", "omega_46", "iota_36_to_46", "pi_46_to_36", "S_46", "stf2_extractor_T", "stf2_right_inverse_J", "stf2_wave_F"],
+      "properties": {
+        "q1_46": {"$ref": "#/$defs/artifact"},
+        "omega_46": {"$ref": "#/$defs/artifact"},
+        "iota_36_to_46": {"$ref": "#/$defs/artifact"},
+        "pi_46_to_36": {"$ref": "#/$defs/artifact"},
+        "S_46": {"$ref": "#/$defs/artifact"},
+        "stf2_extractor_T": {"$ref": "#/$defs/artifact"},
+        "stf2_right_inverse_J": {"$ref": "#/$defs/artifact"},
+        "stf2_wave_F": {"$ref": "#/$defs/artifact"}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 14,
+      "additionalProperties": {"const": true}
+    },
+    "diagnostics": {"type": "object"},
+    "flags": {
+      "type": "object",
+      "required": ["BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1", "CYCLIC_GRAPH_SDR_46_TO_36", "CANONICAL_BRANCH_PROJECTOR_CERTIFIED", "ELL3_BRANCH_MIXING_AUTHORIZED", "Q2_Q3_LIFT_MATERIALIZED", "K_BERGER_EQUIVARIANCE_CERTIFIED", "LORENTZIAN_CAUSAL", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1": {"const": true},
+        "CYCLIC_GRAPH_SDR_46_TO_36": {"const": true},
+        "CANONICAL_BRANCH_PROJECTOR_CERTIFIED": {"const": false},
+        "ELL3_BRANCH_MIXING_AUTHORIZED": {"const": false},
+        "Q2_Q3_LIFT_MATERIALIZED": {"const": false},
+        "K_BERGER_EQUIVARIANCE_CERTIFIED": {"const": false},
+        "LORENTZIAN_CAUSAL": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1"},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "required": ["path", "sha256", "shape", "nonzero_row_pair_blocks", "maximum_differential_order"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "shape": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+        "nonzero_row_pair_blocks": {"type": "integer", "minimum": 1},
+        "maximum_differential_order": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    }
+  }
+}

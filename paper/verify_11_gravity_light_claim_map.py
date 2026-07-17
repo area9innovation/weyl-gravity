@@ -25,7 +25,7 @@ def main() -> None:
     assert payload["result_id"] == "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_DRAFT"
     assert (
         payload["result_state"]
-        == "WRITING_STARTED_REVIEW_BOUNDARY_REPAIRED_RESIDUAL_36_PROJECTOR_OBSTRUCTED"
+        == "WRITING_STARTED_RANK46_GRAPH_CARRIER_CERTIFIED_PROJECTOR_OPEN"
     )
     assert payload["lifecycle_state"] == "WRITING_STARTED"
     assert payload["dependency_tags"] == ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
@@ -56,6 +56,10 @@ def main() -> None:
         "coupled_K_Berger_cyclic_causal_Cartan_through_arity_three",
         "causal_complete_to_retained_bridge_displayed",
         "canonical_same_bundle_retained_36_branch_projector_obstructed",
+        "retained_46_STF2_graph_carrier_constructed",
+        "retained_46_cyclic_SDR_to_36",
+        "retained_46_contractible_complement",
+        "retained_46_Schur_complement_equals_A10",
     }
     assert all(claims[name] is True for name in required_true)
     assert claims["retained_mixed_ell2_coefficient_count"] == 1_474
@@ -74,6 +78,8 @@ def main() -> None:
     assert claims["projector_obstruction_nondivisible_remainder_count"] == 92
     assert claims["projector_obstruction_minimum_additional_BV_rows"] == 4
     assert claims["smallest_natural_support_local_candidate_rank"] == 46
+    assert claims["retained_46_total_rows"] == 46
+    assert claims["retained_46_degree_ranks"] == [4, 19, 19, 4]
 
     witnesses = payload["explicit_nonzero_witnesses"]
     assert witnesses["gravity_equation_output"] == {
@@ -98,10 +104,17 @@ def main() -> None:
     nonclaims = payload["explicit_nonclaims"]
     assert nonclaims
     assert all(value is False for value in nonclaims.values())
-    assert payload["next_gate"]["status"] == "OBSTRUCTION_BRANCH_ACCEPTED"
+    assert (
+        payload["next_gate"]["status"]
+        == "RANK46_GRAPH_CARRIER_ACCEPTED_PROJECTOR_OPEN"
+    )
+    assert (
+        payload["next_gate"]["carrier"]
+        == "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1"
+    )
     assert (
         payload["next_gate"]["required_input"]
-        == "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1"
+        == "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1"
     )
 
     for relative, expected in payload["inputs"].items():
@@ -219,6 +232,37 @@ def main() -> None:
         == 46
     )
 
+    rank46 = json.loads(
+        (
+            ROOT
+            / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert rank46["result_state"] == "CERTIFIED_CYCLIC_GRAPH_CARRIER_PROJECTOR_OPEN"
+    assert rank46["dependency_tags"] == ["LOCAL-ALGEBRAIC"]
+    assert rank46["carrier"]["total_rows"] == 46
+    assert rank46["carrier"]["degree_ranks"] == {
+        "-1": 4,
+        "0": 19,
+        "1": 19,
+        "2": 4,
+    }
+    assert all(rank46["exact_checks"].values())
+    assert rank46["flags"]["CYCLIC_GRAPH_SDR_46_TO_36"] is True
+    for flag in (
+        "CANONICAL_BRANCH_PROJECTOR_CERTIFIED",
+        "ELL3_BRANCH_MIXING_AUTHORIZED",
+        "Q2_Q3_LIFT_MATERIALIZED",
+        "K_BERGER_EQUIVARIANCE_CERTIFIED",
+        "LORENTZIAN_CAUSAL",
+        "QUANTUM_CLAIM",
+    ):
+        assert rank46["flags"][flag] is False
+    assert (
+        rank46["next_gate"]
+        == "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1"
+    )
+
     from generate_11_witness_inclusion_columns import (
         OUTPUT as WITNESS_COLUMNS,
         build as build_witness_columns,
@@ -275,6 +319,11 @@ def main() -> None:
         r"\input{paper/11-gravity-light-ell3-witness-inclusion-columns.tex}",
         r"\frac{71p_1^2+71p_2^2+9p_3^2}{80}",
         r"the smallest natural support-local candidate adds a spatial STF2 prolongation",
+        r"\begin{proposition}[Exact rank-$46$ STF2 graph carrier]",
+        r"A_{10}+F^\dagger F&-F^\dagger",
+        r"q_1^{46}S_{46}+S_{46}q_1^{46} =I_{46}-\iota_{36}^{46}\pi_{46}^{36}",
+        r"BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
+        r"binary rank-$46$ projector verdict",
     ]
     for marker in required_markers:
         assert marker in normalized, marker
@@ -290,6 +339,8 @@ def main() -> None:
         r"\rank E(e_{C^2})=1",
         "nonvanishing does not rest on a basis-dependent coefficient count",
         "the canonical local Einstein/extra-Weyl split is available on the 36-row carrier",
+        "That carrier has not yet been constructed",
+        "Equation~\\eqref{eq:mixing} is now authorized",
     ]
     for marker in forbidden_markers:
         assert marker not in text, marker
