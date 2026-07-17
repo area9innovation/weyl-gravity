@@ -1,0 +1,347 @@
+{
+  "balanced_Maxwell_fixture": {
+    "D_weight_of_stress": "0",
+    "exact_data": {
+      "Hopf_flux_forward": "40/9",
+      "Hopf_flux_reverse": "-40/9",
+      "Hopf_flux_standing": "0",
+      "augmented_rank": 7,
+      "beta": "2*sqrt(10)/3",
+      "coherent_cross_stress_covariant": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-40/9",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "40/9",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "constant_hessian_rank": 7,
+      "direct_four_form_checks": {
+        "forward_dF_zero": true,
+        "forward_dstarF_zero": true,
+        "reverse_dF_zero": true,
+        "reverse_dstarF_zero": true,
+        "standing_dF_zero": true,
+        "standing_dstarF_zero": true
+      },
+      "exact_primitive": [
+        "-10240/567",
+        "0",
+        "0",
+        "0",
+        "4933120/147819",
+        "0",
+        "0",
+        "153410560/4582389",
+        "0",
+        "28160/1953"
+      ],
+      "forward_direct_action_cubic": [
+        "40/9",
+        "0",
+        "0",
+        "-80/9",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "40/9"
+      ],
+      "forward_repository_q2": [
+        "80/9",
+        "0",
+        "0",
+        "-160/9",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "80/9"
+      ],
+      "normalization_residual": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "normalized_single_beam_witness_pairing": "0",
+      "positive_energy_coefficient": "64*sqrt(10)*pi**2/3",
+      "primitive_residual": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "q1_closure_residual": [
+        "0",
+        "0",
+        "0"
+      ],
+      "reverse_direct_action_cubic": [
+        "40/9",
+        "0",
+        "0",
+        "80/9",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "40/9"
+      ],
+      "reverse_repository_q2": [
+        "80/9",
+        "0",
+        "0",
+        "160/9",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "80/9"
+      ],
+      "second_order_Maurer_Cartan_correction": [
+        "5120/567",
+        "0",
+        "0",
+        "0",
+        "-2466560/147819",
+        "0",
+        "0",
+        "-76705280/4582389",
+        "0",
+        "-14080/1953"
+      ],
+      "second_order_Maurer_Cartan_residual": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "standing_direct_action_cubic": [
+        "80/9",
+        "0",
+        "0",
+        "0",
+        "-80/9",
+        "0",
+        "0",
+        "80/9",
+        "0",
+        "80/9"
+      ],
+      "standing_repository_q2": [
+        "160/9",
+        "0",
+        "0",
+        "0",
+        "-160/9",
+        "0",
+        "0",
+        "160/9",
+        "0",
+        "160/9"
+      ],
+      "standing_stress_covariant": [
+        [
+          "80/9",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-80/9",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "80/9",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "80/9"
+        ]
+      ],
+      "standing_stress_trace": "0",
+      "symplectic_pairing": "-64*pi**2"
+    },
+    "field_content": [
+      "h_hat_star_00",
+      "h_hat_star_11",
+      "h_hat_star_22",
+      "h_hat_star_33"
+    ],
+    "field_ownership": "one coherent Maxwell field; cross-stress is included exactly",
+    "forward_potential": "A_f=cos(beta t)e1+sin(beta t)e2",
+    "phase_partner": "A_st,s=-2 sin(beta t)e1",
+    "reverse_potential": "A_b=cos(beta t)e1-sin(beta t)e2",
+    "standing_potential": "A_st=A_f+A_b=2 cos(beta t)e1"
+  },
+  "branch_and_health": {
+    "energy_signature": [
+      2,
+      0,
+      0
+    ],
+    "global_Einstein_extra_Weyl_noncoupling_claim": false,
+    "health_statement": "the correlated two-phase standing-wave plane has nondegenerate symplectic form and positive Maxwell energy; the displayed gravity term is a sourced correction, not a new kinetic mode",
+    "negative_physical_direction_introduced": false,
+    "radiative_branch_scope": "NOT_ACCESSED_BY_STATIONARY_HOMOGENEOUS_BLOCK"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE result independently derives the Maxwell mixed q2 normalization by direct third variation, constructs a coherent counter-propagating standing solution in one Maxwell field with its interference stress included, cancels the single-beam Hopf-flux obstruction, and gives an explicit second-order homogeneous gravity correction solving q1 h2 plus one-half q2(A,A)=0. It does not construct localized apparatus recoil, decide a full support-local primitive for a lone traveling beam, export the complete coupled Maxwell BV operation, classify radiative Einstein/extra-Weyl branch mixing, produce an all-orders backreacted spacetime, introduce a negative kinetic direction, certify Lorentzian causal perturbation theory, or make a quantum claim.",
+  "claim_status": "CERTIFIED_REDUCED_MODE_COHERENT_STANDING_MAXWELL_SOURCE_EXACT_AT_SECOND_ORDER",
+  "dependency_refs": {
+    "gravity_contraction": {
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "maxwell_mode": {
+      "path": "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
+      "result_id": "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
+      "sha256": "95c4c3a4359db4ec5b03f77a9d86191df97c4cfbbd00ae043dd5ccfc720df996"
+    },
+    "retained_unary": {
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+      "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    },
+    "single_beam_obstruction": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_STRESS_RESIDUAL_PROJECTION.json",
+      "result_id": "BERGER_MAXWELL_STRESS_RESIDUAL_PROJECTION",
+      "sha256": "666a4e8d81e1d0591fba99b6fae015e2caeb2d4c8a3be668bccd12c4676a594f"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flags": {
+    "BERGER_BALANCED_SOURCE_Q1_EXACT": true,
+    "BERGER_COHERENT_COUNTERPROPAGATING_MAXWELL_SOLUTION": true,
+    "BERGER_FULL_BACKREACTED_SOLUTION": false,
+    "BERGER_FULL_SUPPORT_LOCAL_MAXWELL_Q2": false,
+    "BERGER_HOPF_MOMENTUM_BALANCED": true,
+    "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": false,
+    "BERGER_MAXWELL_Q2_DIRECT_ACTION_NORMALIZATION": true,
+    "BERGER_RADIATIVE_BRANCH_COUPLING_CLASSIFIED": false,
+    "BERGER_SECOND_ORDER_HOMOGENEOUS_GRAVITY_CORRECTION": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "higher_tiers_not_run": {
+    "tier_2": "The imported unary and contraction operators are unchanged and content-addressed; only a new exact physical-shape Maxwell block is added.",
+    "tier_3": "This REDUCED-MODE second-order correction is not a shared-core freeze, full support-local theorem, release, or Lorentzian certification."
+  },
+  "next_gate": "BERGER_LOCALIZED_APPARATUS_RECOIL_OR_SUPPORT_LOCAL_SINGLE_BEAM_PRIMITIVE",
+  "normalization_hardening": {
+    "direct_object": "d_h d_epsilon^2[-1/4 sqrt(-g(h)) F(epsilon)^2] at h=epsilon=0",
+    "exact_residual": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "identity": "q2_repository=2*direct_action_cubic",
+    "metric_BV_row_convention": "the repository metric Euler row is twice the covariant-metric variational derivative",
+    "off_diagonal_coordinate": "g_03=g_30=h_03 is varied as one symmetric component"
+  },
+  "projection_and_solution": {
+    "Maurer_Cartan_equation": "q1 h^(2)+1/2 q2(A_st,A_st)=0",
+    "binary_verdict": "EXACT_PRIMITIVE",
+    "correction_status": "EXPLICIT_SECOND_ORDER_HOMOGENEOUS_GRAVITY_CORRECTION",
+    "interpretation": "opposite Hopf flux cancels; the remaining coherent standing-wave energy and anisotropic pressure source lies in the retained Hessian image",
+    "pi_cl_projection": "identity on the ten retained metric-antifield rows",
+    "single_beam_obstruction_witness_pairing_after_balance": "0"
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/backreacted_clock/berger_maxwell_momentum_balanced_fixture.py": "36345865f215a7409bdb3c5755d52fbb8adee72bdeee3044249e2f1a4b741f0e",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_maxwell_momentum_balanced_fixture.py": "98f186457eb8338b0e0ff44a3d85131c3a752573862c0548698b9a145a662dda",
+      "d_quotient_classical/backreacted_clock/verify_berger_maxwell_momentum_balanced_fixture.py": "d87cdff3505d9802c18cb444e8d7058da928b6e41ba1fc2f472146145cdd2768",
+      "d_quotient_classical/schema/berger-maxwell-momentum-balanced-fixture-v1.schema.json": "9cb3e45a3bf2c60b161fcd446512e4ba62d2b284073b50f2f39ceafcd14a98e9"
+    }
+  },
+  "reduced_mode_limitation": "This exact solution is the coherent standing-wave subspace of the stationary SU(2)_L x U(1)_R homogeneous constant-component, D-weight-zero retained metric block at the rational Berger fixture. It includes the single-field interference stress, but it is not a localized emitter/receiver signal, does not decide whether a lone traveling beam has a nonhomogeneous support-local primitive, does not export q2(h,A)->A_plus or all Maxwell antifield rows, and does not classify radiative Einstein/extra-Weyl scattering branches.",
+  "result_id": "BERGER_MAXWELL_MOMENTUM_BALANCED_FIXTURE",
+  "schema": "pure-weyl-berger-maxwell-momentum-balanced-fixture-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling",
+  "verification_receipts": [
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/berger_maxwell_momentum_balanced_fixture.py --check --guards",
+      "elapsed_seconds": 10.87,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_maxwell_momentum_balanced_fixture.py",
+      "elapsed_seconds": 1.09,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_maxwell_momentum_balanced_fixture",
+      "elapsed_seconds": 15.95,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-maxwell-momentum-balanced-fixture-v1.schema.json -d d_quotient_classical/certificates/BERGER_MAXWELL_MOMENTUM_BALANCED_FIXTURE.json",
+      "elapsed_seconds": 1.26,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}

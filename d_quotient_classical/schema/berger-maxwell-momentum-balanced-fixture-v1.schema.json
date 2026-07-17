@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schema/berger-maxwell-momentum-balanced-fixture-v1.schema.json",
+  "title": "Berger momentum-balanced Maxwell fixture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "normalization_hardening", "balanced_Maxwell_fixture", "projection_and_solution", "branch_and_health", "flags", "reduced_mode_limitation", "next_gate", "provenance", "verification_receipts", "higher_tiers_not_run", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-maxwell-momentum-balanced-fixture-v1"},
+    "result_id": {"const": "BERGER_MAXWELL_MOMENTUM_BALANCED_FIXTURE"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "claim_status": {"const": "CERTIFIED_REDUCED_MODE_COHERENT_STANDING_MAXWELL_SOURCE_EXACT_AT_SECOND_ORDER"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["single_beam_obstruction", "maxwell_mode", "gravity_contraction", "retained_unary"],
+      "properties": {
+        "single_beam_obstruction": {"$ref": "#/$defs/dependency"},
+        "maxwell_mode": {"$ref": "#/$defs/dependency"},
+        "gravity_contraction": {"$ref": "#/$defs/dependency"},
+        "retained_unary": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "normalization_hardening": {
+      "type": "object", "additionalProperties": false,
+      "required": ["direct_object", "metric_BV_row_convention", "identity", "off_diagonal_coordinate", "exact_residual"],
+      "properties": {
+        "direct_object": {"type": "string", "minLength": 60},
+        "metric_BV_row_convention": {"const": "the repository metric Euler row is twice the covariant-metric variational derivative"},
+        "identity": {"const": "q2_repository=2*direct_action_cubic"},
+        "off_diagonal_coordinate": {"const": "g_03=g_30=h_03 is varied as one symmetric component"},
+        "exact_residual": {"$ref": "#/$defs/zero10"}
+      }
+    },
+    "balanced_Maxwell_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["forward_potential", "reverse_potential", "standing_potential", "phase_partner", "field_ownership", "D_weight_of_stress", "field_content", "exact_data"],
+      "properties": {
+        "forward_potential": {"const": "A_f=cos(beta t)e1+sin(beta t)e2"},
+        "reverse_potential": {"const": "A_b=cos(beta t)e1-sin(beta t)e2"},
+        "standing_potential": {"const": "A_st=A_f+A_b=2 cos(beta t)e1"},
+        "phase_partner": {"const": "A_st,s=-2 sin(beta t)e1"},
+        "field_ownership": {"const": "one coherent Maxwell field; cross-stress is included exactly"},
+        "D_weight_of_stress": {"const": "0"},
+        "field_content": {"const": ["h_hat_star_00", "h_hat_star_11", "h_hat_star_22", "h_hat_star_33"]},
+        "exact_data": {
+          "type": "object", "additionalProperties": false,
+          "required": ["beta", "direct_four_form_checks", "forward_direct_action_cubic", "forward_repository_q2", "reverse_direct_action_cubic", "reverse_repository_q2", "standing_direct_action_cubic", "standing_repository_q2", "normalization_residual", "standing_stress_covariant", "coherent_cross_stress_covariant", "Hopf_flux_forward", "Hopf_flux_reverse", "Hopf_flux_standing", "standing_stress_trace", "q1_closure_residual", "constant_hessian_rank", "augmented_rank", "exact_primitive", "primitive_residual", "normalized_single_beam_witness_pairing", "second_order_Maurer_Cartan_correction", "second_order_Maurer_Cartan_residual", "symplectic_pairing", "positive_energy_coefficient"],
+          "properties": {
+            "beta": {"const": "2*sqrt(10)/3"},
+            "direct_four_form_checks": {
+              "type": "object", "additionalProperties": false,
+              "required": ["forward_dF_zero", "forward_dstarF_zero", "reverse_dF_zero", "reverse_dstarF_zero", "standing_dF_zero", "standing_dstarF_zero"],
+              "properties": {
+                "forward_dF_zero": {"const": true}, "forward_dstarF_zero": {"const": true},
+                "reverse_dF_zero": {"const": true}, "reverse_dstarF_zero": {"const": true},
+                "standing_dF_zero": {"const": true}, "standing_dstarF_zero": {"const": true}
+              }
+            },
+            "forward_direct_action_cubic": {"const": ["40/9", "0", "0", "-80/9", "0", "0", "0", "0", "0", "40/9"]},
+            "forward_repository_q2": {"const": ["80/9", "0", "0", "-160/9", "0", "0", "0", "0", "0", "80/9"]},
+            "reverse_direct_action_cubic": {"const": ["40/9", "0", "0", "80/9", "0", "0", "0", "0", "0", "40/9"]},
+            "reverse_repository_q2": {"const": ["80/9", "0", "0", "160/9", "0", "0", "0", "0", "0", "80/9"]},
+            "standing_direct_action_cubic": {"const": ["80/9", "0", "0", "0", "-80/9", "0", "0", "80/9", "0", "80/9"]},
+            "standing_repository_q2": {"const": ["160/9", "0", "0", "0", "-160/9", "0", "0", "160/9", "0", "160/9"]},
+            "normalization_residual": {"$ref": "#/$defs/zero10"},
+            "standing_stress_covariant": {"$ref": "#/$defs/matrix4"},
+            "coherent_cross_stress_covariant": {"$ref": "#/$defs/matrix4"},
+            "Hopf_flux_forward": {"const": "40/9"},
+            "Hopf_flux_reverse": {"const": "-40/9"},
+            "Hopf_flux_standing": {"const": "0"},
+            "standing_stress_trace": {"const": "0"},
+            "q1_closure_residual": {"const": ["0", "0", "0"]},
+            "constant_hessian_rank": {"const": 7},
+            "augmented_rank": {"const": 7},
+            "exact_primitive": {"const": ["-10240/567", "0", "0", "0", "4933120/147819", "0", "0", "153410560/4582389", "0", "28160/1953"]},
+            "primitive_residual": {"$ref": "#/$defs/zero10"},
+            "normalized_single_beam_witness_pairing": {"const": "0"},
+            "second_order_Maurer_Cartan_correction": {"const": ["5120/567", "0", "0", "0", "-2466560/147819", "0", "0", "-76705280/4582389", "0", "-14080/1953"]},
+            "second_order_Maurer_Cartan_residual": {"$ref": "#/$defs/zero10"},
+            "symplectic_pairing": {"const": "-64*pi**2"},
+            "positive_energy_coefficient": {"const": "64*sqrt(10)*pi**2/3"}
+          }
+        }
+      }
+    },
+    "projection_and_solution": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pi_cl_projection", "single_beam_obstruction_witness_pairing_after_balance", "binary_verdict", "Maurer_Cartan_equation", "correction_status", "interpretation"],
+      "properties": {
+        "pi_cl_projection": {"type": "string", "minLength": 40},
+        "single_beam_obstruction_witness_pairing_after_balance": {"const": "0"},
+        "binary_verdict": {"const": "EXACT_PRIMITIVE"},
+        "Maurer_Cartan_equation": {"const": "q1 h^(2)+1/2 q2(A_st,A_st)=0"},
+        "correction_status": {"const": "EXPLICIT_SECOND_ORDER_HOMOGENEOUS_GRAVITY_CORRECTION"},
+        "interpretation": {"type": "string", "minLength": 100}
+      }
+    },
+    "branch_and_health": {
+      "type": "object", "additionalProperties": false,
+      "required": ["radiative_branch_scope", "global_Einstein_extra_Weyl_noncoupling_claim", "energy_signature", "negative_physical_direction_introduced", "health_statement"],
+      "properties": {
+        "radiative_branch_scope": {"const": "NOT_ACCESSED_BY_STATIONARY_HOMOGENEOUS_BLOCK"},
+        "global_Einstein_extra_Weyl_noncoupling_claim": {"const": false},
+        "energy_signature": {"const": [2, 0, 0]},
+        "negative_physical_direction_introduced": {"const": false},
+        "health_statement": {"type": "string", "minLength": 120}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_MAXWELL_Q2_DIRECT_ACTION_NORMALIZATION", "BERGER_COHERENT_COUNTERPROPAGATING_MAXWELL_SOLUTION", "BERGER_HOPF_MOMENTUM_BALANCED", "BERGER_BALANCED_SOURCE_Q1_EXACT", "BERGER_SECOND_ORDER_HOMOGENEOUS_GRAVITY_CORRECTION", "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE", "BERGER_FULL_SUPPORT_LOCAL_MAXWELL_Q2", "BERGER_RADIATIVE_BRANCH_COUPLING_CLASSIFIED", "BERGER_FULL_BACKREACTED_SOLUTION", "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED", "LORENTZIAN_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_MAXWELL_Q2_DIRECT_ACTION_NORMALIZATION": {"const": true},
+        "BERGER_COHERENT_COUNTERPROPAGATING_MAXWELL_SOLUTION": {"const": true},
+        "BERGER_HOPF_MOMENTUM_BALANCED": {"const": true},
+        "BERGER_BALANCED_SOURCE_Q1_EXACT": {"const": true},
+        "BERGER_SECOND_ORDER_HOMOGENEOUS_GRAVITY_CORRECTION": {"const": true},
+        "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": {"const": false},
+        "BERGER_FULL_SUPPORT_LOCAL_MAXWELL_Q2": {"const": false},
+        "BERGER_RADIATIVE_BRANCH_COUPLING_CLASSIFIED": {"const": false},
+        "BERGER_FULL_BACKREACTED_SOLUTION": {"const": false},
+        "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "reduced_mode_limitation": {"type": "string", "minLength": 350},
+    "next_gate": {"const": "BERGER_LOCALIZED_APPARATUS_RECOIL_OR_SUPPORT_LOCAL_SINGLE_BEAM_PRIMITIVE"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_manifest"], "properties": {"source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}},
+    "verification_receipts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {"type": "object", "additionalProperties": false, "required": ["tier_2", "tier_3"], "properties": {"tier_2": {"type": "string", "minLength": 60}, "tier_3": {"type": "string", "minLength": 60}}},
+    "claim_boundary": {"type": "string", "minLength": 500}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string", "minLength": 5}, "result_id": {"type": "string", "minLength": 5}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "zero10": {"const": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]},
+    "matrix4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}}},
+    "receipt": {"type": "object", "additionalProperties": false, "required": ["test_tier", "command", "elapsed_seconds", "status"], "properties": {"test_tier": {"const": 1}, "command": {"type": "string", "minLength": 20}, "elapsed_seconds": {"type": "number", "minimum": 0}, "status": {"const": "PASS"}}}
+  }
+}

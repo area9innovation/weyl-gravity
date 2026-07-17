@@ -64,9 +64,11 @@ backreacted configuration therefore needs either a counter-propagating or
 otherwise momentum-balancing sector, or a genuinely nonhomogeneous gravity
 response.
 
-This block couples neither certified radiative Einstein-like nor extra-Weyl
-branch: its only nontrivial class is a weight-zero constraint/flux channel,
-while the diagonal metric response is exact.  The positive Maxwell
+Radiative Einstein-like and extra-Weyl branches are not accessed by this
+stationary homogeneous block.  Thus the branch flags are false only at this
+scope, not as a global noncoupling theorem.  Its only nontrivial class is a
+weight-zero constraint/flux channel, while the diagonal metric response is
+exact.  The positive Maxwell
 two-plane remains signature `[2,0,0]`; an obstruction source is not a new
 kinetic direction, so no negative physical direction has been introduced.
 

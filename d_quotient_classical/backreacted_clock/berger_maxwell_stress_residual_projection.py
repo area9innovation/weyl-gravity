@@ -332,7 +332,7 @@ def build() -> dict[str, Any]:
         "branch_and_health": {
             "Einstein_like_radiative_branch_coupled": False,
             "extra_Weyl_radiative_branch_coupled": False,
-            "reason": "the only nontrivial class in this weight-zero block is the homogeneous time-Hopf momentum/shift source, not a transverse radiative tensor; the diagonal metric response is q1 exact",
+            "reason": "radiative Einstein-like and extra-Weyl branches are not accessed by this stationary homogeneous block; its only nontrivial class is the time-Hopf momentum/shift source and the diagonal metric response is q1 exact, so the false flags are block-scoped rather than a global noncoupling theorem",
             "Maxwell_energy_signature": [2, 0, 0],
             "negative_physical_direction_introduced": False,
             "health_boundary": "an obstruction source is not a new propagating kinetic direction; no backreacted solution or response energy has been constructed",
@@ -485,9 +485,11 @@ backreacted configuration therefore needs either a counter-propagating or
 otherwise momentum-balancing sector, or a genuinely nonhomogeneous gravity
 response.
 
-This block couples neither certified radiative Einstein-like nor extra-Weyl
-branch: its only nontrivial class is a weight-zero constraint/flux channel,
-while the diagonal metric response is exact.  The positive Maxwell
+Radiative Einstein-like and extra-Weyl branches are not accessed by this
+stationary homogeneous block.  Thus the branch flags are false only at this
+scope, not as a global noncoupling theorem.  Its only nontrivial class is a
+weight-zero constraint/flux channel, while the diagonal metric response is
+exact.  The positive Maxwell
 two-plane remains signature `[2,0,0]`; an obstruction source is not a new
 kinetic direction, so no negative physical direction has been introduced.
 
