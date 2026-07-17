@@ -10,38 +10,44 @@ def _data() -> dict:
     return json.loads(producer.INPUT.read_text())
 
 
-def test_repaired_q2_import_preserves_only_the_linear_rank_two_coefficient() -> None:
-    result = producer.evaluate(_data())
-    assert all(result["requirements"].values())
-    assert result["exported_block_count"] == 0
-    assert result["missing_block_count"] == 14
-    assert result["minimum_required_maximum_arity"] == 3
+def test_action_degree_to_q_arity_is_not_off_by_one() -> None:
+    data = _data()
+    assert [(row["action_degree"], row["induced_operation"]) for row in data["action_arity_ledger"]] == [
+        (2, "q1"), (3, "q2"), (4, "q3")
+    ]
+    assert all(row["action_degree"] == row["input_arity"] + 1 for row in data["action_arity_ledger"])
 
 
-def test_each_interaction_gate_mutation_fails_closed() -> None:
+def test_probe_rank_two_is_not_promoted_without_extended_q1_and_green_operator() -> None:
+    certificate = producer.build()
+    assert certificate["probe_baseline"]["rank"] == 2
+    assert certificate["flags"]["PROBE_LIMIT_RANK_TWO_BASELINE_IMPORTED"] is True
+    assert certificate["flags"]["EXTENDED_APPARATUS_Q1_CERTIFIED"] is False
+    assert certificate["flags"]["EXTENDED_RETARDED_GREEN_CERTIFIED"] is False
+    assert certificate["flags"]["EXTENDED_LINEAR_RANK_TWO_TRANSFER_CERTIFIED"] is False
+
+
+def test_apparatus_model_uses_composite_polarization_and_external_source_boundary() -> None:
+    model = producer.build()["apparatus_interface_contract"]["model"]
+    assert model["polarization"].startswith("COMPOSITE_P_A_EQUALS_DTHETA_WEDGE_DRA")
+    assert model["source_role"] == "EXTERNAL_Q_CLOSED_CONSERVED_SOURCE_AT_THIS_GATE"
+    assert model["dynamical_emitter_deferred"] is True
+
+
+def test_team_handoff_and_conditional_formal_rank_lemma_are_explicit() -> None:
+    certificate = producer.build()
+    assert certificate["formal_rank_stability_lemma"]["determinant_constant_term"] == "C_00*C_11>0"
+    assert certificate["formal_rank_stability_lemma"]["actual_interacting_deformation_constructed"] is False
+    assert "nonlinear team" in certificate["gauge_and_team_boundary"]["nonlinear_team_supplies"]
+    assert certificate["gauge_and_team_boundary"]["observer_evaluation_chain_morphism"] is False
+
+
+def test_each_corrected_interaction_gate_mutation_fails_closed() -> None:
     data = _data()
     for mutation in data["mutations"]:
         result = producer.evaluate(data, mutation["patch"])
         assert result["requirements"][mutation["expected_failed_requirement"]] is False
 
 
-def test_missing_apparatus_rows_prevent_cyclicity_and_quotient_promotion() -> None:
-    certificate = producer.build()
-    flags = certificate["flags"]
-    assert flags["REPAIRED_64_ROW_Q2_IMPORTED_EXACTLY"] is True
-    assert flags["LINEAR_RANK_TWO_RECORD_TRANSFER_PRESERVED"] is True
-    assert flags["MAXWELL_STRESS_BACKREACTION_VERTEX_AVAILABLE"] is True
-    assert flags["OBSERVER_APPARATUS_ROWS_ADJOINED_TO_REPAIRED_COMPLEX"] is False
-    assert flags["EXTENDED_CYCLICITY_CERTIFIED"] is False
-    assert flags["BACKREACTED_RANK_TWO_RECORDS_CERTIFIED"] is False
-    assert flags["CLASSICAL_OBSERVER_MAP_CERTIFIED"] is False
-
-
-def test_rod_dependent_memory_readout_requires_q3() -> None:
-    certificate = producer.build()
-    assert certificate["arity_analysis"]["minimum_required_maximum_arity"] == 3
-    assert certificate["arity_analysis"]["q2_only_extension_sufficient"] is False
-
-
-def test_independent_interaction_gate_replay() -> None:
+def test_independent_corrected_interaction_gate_replay() -> None:
     assert verifier.main() == 0

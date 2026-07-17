@@ -1,0 +1,81 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "OBSERVER_INTERACTION_IMPORT_GATE_V2_CORRECTION_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "supersedes_scientific_claims_in": "OBSERVER_INTERACTION_IMPORT_GATE_TIER_RECEIPT",
+  "corrections": [
+    "p*A is a quadratic action term inducing q1, not q2",
+    "p*A*deltaR is a cubic action term inducing q2, not q3",
+    "q3 begins with quartic action terms such as p*A*deltaR*deltaR",
+    "rank two is an imported probe-limit baseline until the extended q1 and retarded Green homotopy are certified",
+    "detector polarization is composite and the present J_b remain external q-closed conserved sources",
+    "the nonlinear team supplies interaction tensors and backreaction; the closed-universe team imports them and tests the observer morphism"
+  ],
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_observer_interaction_import_gate.py closed_universe_observers/verify_berger_observer_interaction_import_gate.py closed_universe_observers/tests/test_berger_observer_interaction_import_gate.py && parse changed JSON with python3 -m json.tool && git diff --check",
+      "elapsed_seconds": "0.12",
+      "status": "PASS",
+      "scope": "changed Python, structured data, schemas, and whitespace"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 closed_universe_observers/generate_berger_observer_interaction_import_gate.py --check",
+      "elapsed_seconds": "0.15",
+      "status": "PASS",
+      "scope": "strict v2 schema validation, freshness, dependency compatibility, and seven corrected mutations"
+    },
+    {
+      "command": "python3 closed_universe_observers/verify_berger_observer_interaction_import_gate.py",
+      "elapsed_seconds": "0.15",
+      "status": "PASS",
+      "scope": "independent action-arity, apparatus-model, dependency, and fail-closed replay"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_observer_interaction_import_gate.py closed_universe_observers/tests/test_comparison_ledger.py",
+      "elapsed_seconds": "0.53",
+      "status": "PASS",
+      "scope": "seven direct corrected-gate and ledger consumer tests"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "1.60",
+      "status": "PASS",
+      "scope": "all 22 closed-universe observer tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "criterion": "No authoritative q1/q2/q3 operator or payload changed; this correction narrows an import claim and its interface while replaying all direct observer consumers."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No freeze, theorem promotion, shared core algebra change, release, or full-suite request occurred."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/fixtures/berger_observer_interaction_import_gate_input.json", "sha256": "e9515a93115673c17e336080bb0c0136dba6fbe67724cc0f069abcfed35d7036"},
+    {"path": "closed_universe_observers/schema/berger-observer-interaction-import-gate-input-v2.schema.json", "sha256": "d79d249a6050c5525f82fc31176ae72e17356b9d2a3c8905936e6fca74a064ff"},
+    {"path": "closed_universe_observers/schema/berger-observer-interaction-import-gate-v2.schema.json", "sha256": "5ef56f794286bac6cbe2fc5d431db3e75c3c2dbda2ef408707c1f31755a2f9eb"},
+    {"path": "closed_universe_observers/certificates/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE.json", "sha256": "17cc190abb57658382da790118343bc85549d6ee889e1d10a55c5046b3252028"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "8fe4cef6f40c3c48b2762fd527e50faefced15958120d2b865ff8def3ea3c630"}
+  ],
+  "claim_flags": {
+    "REPAIRED_64_ROW_Q2_IMPORTED_EXACTLY": true,
+    "PROBE_LIMIT_RANK_TWO_BASELINE_IMPORTED": true,
+    "FORMAL_RANK_TWO_STABILITY_CONDITIONAL_LEMMA": true,
+    "COMPOSITE_DETECTOR_POLARIZATION_DECLARED": true,
+    "EXTERNAL_Q_CLOSED_SOURCE_BOUNDARY_DECLARED": true,
+    "EXTENDED_APPARATUS_Q1_CERTIFIED": false,
+    "EXTENDED_RETARDED_GREEN_CERTIFIED": false,
+    "EXTENDED_LINEAR_RANK_TWO_TRANSFER_CERTIFIED": false,
+    "INTERACTING_OBSERVER_DEFORMATION_CONSTRUCTED": false,
+    "CLASSICAL_OBSERVER_MAP_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

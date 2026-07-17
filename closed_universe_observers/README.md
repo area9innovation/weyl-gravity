@@ -34,10 +34,11 @@ currents then give the physical matrix `diag(C_00,C_11)` with both entries
 positive, hence two distinguishable causal records.  Those currents are
 homogeneous over the compact `S3`; spatially localized emitters and the
 source-rod-memory quotient descent remain open.  The interaction import gate
-then imports the repaired cyclic 64-row gravity-clock-Maxwell `q2`, preserves
-the linear rank-two coefficient, and records the exact obstruction to a
-nonlinear promotion: the rod, polarization, memory, and emitter BV rows are
-absent, and relational smearing generates a required `q3` apparatus block. The
+then imports the repaired cyclic 64-row gravity-clock-Maxwell `q2` and retains
+rank two only as a probe-limit baseline.  Its corrected apparatus interface
+uses composite polarization, keeps the present currents external, and records
+`p*A`, `p*A*deltaR`, and `p*A*deltaR^2` as `q1`, `q2`, and `q3` contributions,
+respectively.  An extended unary/Green complex is still absent. The
 comparison ledger replays its historical imports exactly, checks current
 compatibility separately, and remains fail-closed on the classical-map and
 quantum gates.

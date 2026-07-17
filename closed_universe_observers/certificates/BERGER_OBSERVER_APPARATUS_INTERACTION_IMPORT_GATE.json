@@ -1,123 +1,138 @@
 {
-  "apparatus_extension_ledger": {
-    "exported_verified_block_count": 0,
-    "families": [
+  "action_arity_analysis": {
+    "convention": "q_n has n inputs and is paired with the (n+1)-st action derivative",
+    "generic_smooth_profile_scope": "UNBOUNDED_FOR_GENERIC_SMOOTH_RHO_UNLESS_A_POLYNOMIAL_TRUNCATION_OR_AUXILIARY_PROFILE_MODEL_IS_DECLARED",
+    "ledger": [
       {
-        "id": "rod_scalars_RI_and_antifields",
-        "status": "DECLARED_PROBE_ACTION_ONLY"
+        "action_degree": 2,
+        "action_monomial": "p*A",
+        "id": "fixed_probe_readout",
+        "induced_operation": "q1",
+        "input_arity": 1
       },
       {
-        "id": "detector_polarization_transport_and_conjugates",
-        "status": "NO_DYNAMICAL_ACTION_EXPORTED"
+        "action_degree": 3,
+        "action_monomial": "p*A*deltaR",
+        "id": "linear_relational_readout",
+        "induced_operation": "q2",
+        "input_arity": 2
       },
       {
-        "id": "memory_pairs_ma_pa_and_antifields",
-        "status": "DECLARED_PROBE_ACTION_ONLY"
-      },
-      {
-        "id": "emitter_current_apparatus_and_conjugates",
-        "status": "NO_DYNAMICAL_ACTION_EXPORTED"
+        "action_degree": 4,
+        "action_monomial": "p*A*deltaR*deltaR",
+        "id": "quadratic_relational_readout",
+        "induced_operation": "q3",
+        "input_arity": 3
       }
     ],
-    "first_typed_obstruction": "the 64-row pairing and q1/q2 coefficient ledgers contain no rod, polarization, memory, or emitter rows, so extended cyclicity is not yet a well-typed calculation",
-    "missing_or_unverified_block_count": 14,
-    "missing_or_unverified_block_ids": [
-      "rod_q1_and_bv_adjoint",
-      "diff_rod_lie_action_and_cotangent_lift",
-      "rod_stress_to_metric_antifield",
-      "metric_clock_to_rod_antifield",
-      "memory_q1_and_bv_adjoint",
-      "memory_maxwell_readout_and_cotangent_lift",
-      "rod_dependent_smearing_memory_vertex",
-      "polarization_transport_and_cotangent_lift",
-      "emitter_current_dynamics_and_cotangent_lift",
-      "apparatus_k_berger_action",
-      "extended_q1_square",
-      "extended_q1_q2_identity",
-      "extended_cyclicity",
-      "backreacted_rank_two_record_transfer"
-    ],
-    "required_operation_blocks": [
+    "q2_only_extension_sufficient_for_generic_smooth_profile": false,
+    "q3_trigger": "quadratic dependence of rho_a, P_a, or the metric volume/pairing on apparatus fluctuations produces quartic action terms and q3; the cubic p*A*deltaR term produces q2"
+  },
+  "apparatus_interface_contract": {
+    "first_typed_obstruction": "the memory readout p*A is a unary cross-block, but no common rod-memory-Maxwell q1, cyclic pairing, or retarded Green homotopy has been exported",
+    "missing_or_unverified_block_count": 15,
+    "model": {
+      "dynamical_emitter_deferred": true,
+      "memory_fields": "DYNAMICAL_PAIRS_MA_PA_WITH_BV_PARTNERS_REQUIRED",
+      "polarization": "COMPOSITE_P_A_EQUALS_DTHETA_WEDGE_DRA_NO_INDEPENDENT_POLARIZATION_ROWS",
+      "rod_fields": "THREE_DYNAMICAL_RELATIONAL_SCALARS_WITH_BV_PARTNERS_REQUIRED",
+      "source_role": "EXTERNAL_Q_CLOSED_CONSERVED_SOURCE_AT_THIS_GATE"
+    },
+    "required_blocks": [
       {
+        "arity": 1,
         "id": "rod_q1_and_bv_adjoint",
-        "minimum_arity": 1,
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
         "status": "NOT_EXPORTED"
       },
       {
+        "arity": 1,
+        "id": "memory_readout_extended_q1_and_bv_adjoint",
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
+        "status": "NOT_EXPORTED"
+      },
+      {
+        "arity": 1,
+        "id": "extended_q1_square_and_unary_cyclicity",
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
+        "status": "NOT_VERIFIED"
+      },
+      {
+        "arity": 1,
+        "id": "extended_retarded_green_homotopy",
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
+        "status": "NOT_EXPORTED"
+      },
+      {
+        "arity": 2,
         "id": "diff_rod_lie_action_and_cotangent_lift",
-        "minimum_arity": 2,
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
         "status": "NOT_EXPORTED"
       },
       {
+        "arity": 2,
         "id": "rod_stress_to_metric_antifield",
-        "minimum_arity": 2,
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
         "status": "NOT_EXPORTED"
       },
       {
+        "arity": 2,
         "id": "metric_clock_to_rod_antifield",
-        "minimum_arity": 2,
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
         "status": "NOT_EXPORTED"
       },
       {
-        "id": "memory_q1_and_bv_adjoint",
-        "minimum_arity": 1,
+        "arity": 2,
+        "id": "linear_composite_polarization_and_smearing_readout_q2",
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
         "status": "NOT_EXPORTED"
       },
       {
-        "id": "memory_maxwell_readout_and_cotangent_lift",
-        "minimum_arity": 2,
-        "status": "NOT_EXPORTED"
-      },
-      {
-        "id": "rod_dependent_smearing_memory_vertex",
-        "minimum_arity": 3,
-        "status": "NOT_EXPORTED"
-      },
-      {
-        "id": "polarization_transport_and_cotangent_lift",
-        "minimum_arity": 2,
-        "status": "NOT_EXPORTED"
-      },
-      {
-        "id": "emitter_current_dynamics_and_cotangent_lift",
-        "minimum_arity": 1,
-        "status": "NOT_EXPORTED"
-      },
-      {
-        "id": "apparatus_k_berger_action",
-        "minimum_arity": 1,
-        "status": "NOT_EXPORTED"
-      },
-      {
-        "id": "extended_q1_square",
-        "minimum_arity": 1,
+        "arity": 2,
+        "id": "extended_q1_q2_identity_and_cyclicity",
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
         "status": "NOT_VERIFIED"
       },
       {
-        "id": "extended_q1_q2_identity",
-        "minimum_arity": 2,
+        "arity": 2,
+        "id": "apparatus_k_berger_action_through_arity_two",
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
+        "status": "NOT_EXPORTED"
+      },
+      {
+        "arity": 3,
+        "id": "quadratic_profile_metric_polarization_readout_q3_if_nonzero",
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
+        "status": "NOT_EXPORTED"
+      },
+      {
+        "arity": 3,
+        "id": "extended_arity_three_l_infinity_cyclicity_and_k_berger",
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
         "status": "NOT_VERIFIED"
       },
       {
-        "id": "extended_cyclicity",
-        "minimum_arity": 2,
+        "arity": 3,
+        "id": "observer_evaluation_morphism_on_imported_operations",
+        "owner": "CLOSED_UNIVERSE_TEAM",
         "status": "NOT_VERIFIED"
       },
       {
-        "id": "backreacted_rank_two_record_transfer",
-        "minimum_arity": 2,
+        "arity": 3,
+        "id": "backreacted_observer_record_deformation_exists",
+        "owner": "NONLINEAR_CLASSICAL_TEAM",
         "status": "NOT_COMPUTED"
+      },
+      {
+        "arity": 0,
+        "id": "formal_determinant_unit_import",
+        "owner": "CLOSED_UNIVERSE_TEAM",
+        "status": "CONDITIONAL_LEMMA_ONLY"
       }
     ]
   },
-  "arity_analysis": {
-    "dynamical_rod_term": "rho_a(Theta,R) p_a <dA,P_a> produces a p-A-R Taylor block and therefore requires q3 (and potentially higher Taylor terms for a nonlinear bump)",
-    "fixed_probe_term": "p_a q_a[F] is bilinear in p_a and A only when rho_a and P_a are fixed external apparatus data",
-    "minimum_required_maximum_arity": 3,
-    "q2_only_extension_sufficient": false
-  },
-  "claim_boundary": "This classical gate imports the repaired cyclic q2 and exact K_Berger arity-two action on the existing 64 gravity-clock-Maxwell BV rows, and proves that the previously certified first-order rank-two detector transfer remains a valid linear coefficient. It also certifies the first obstruction to nonlinear promotion: rod, polarization, memory, and emitter BV rows and their q1/q2/q3 cotangent blocks are absent, so extended cyclicity and observer-map descent cannot yet be formed. The Maxwell stress vertex is available, but no backreacted solution or backreacted rank-two transfer is claimed. Raw D is not identified with K_Berger, and no quantum claim is made.",
-  "claim_status": "CERTIFIED_REPAIRED_Q2_IMPORT_LINEAR_SURVIVAL_EXTENDED_OBSERVER_COMPLEX_OPEN",
+  "claim_boundary": "This corrected classical gate imports the repaired cyclic q2 on the existing 64 gravity-clock-Maxwell BV rows and the previously certified rank-two detector matrix only as a probe-limit baseline. It fixes the action-arity convention: p*A is a q1 cross-block, p*A*deltaR produces q2, and quadratic apparatus dependence first produces q3. Detector polarization is the composite dTheta wedge dR^a, while J_b remains an external q-closed conserved source at this gate. No extended apparatus q1 or retarded Green operator exists yet, so linear survival in the adjoined theory is not claimed. Conditional on a gauge-compatible formal interacting deformation, the nonzero determinant constant term proves formal rank-two stability. The nonlinear team owns the interaction tensors, cyclicity, K_Berger identities, and backreaction; this team owns their import and the observer-morphism test. Raw D is not identified with K_Berger, and no quantum claim is made.",
+  "claim_status": "CERTIFIED_Q2_IMPORT_AND_APPARATUS_INTERFACE_PROBE_BASELINE_ONLY",
   "dependency_refs": {
     "causal_q2_repair": {
       "claim_boundary": "This theorem extends the certified 54-row gravity-clock causal complex by the standard ten-row Maxwell BV Green contraction, obtaining a 64-row causal chain contraction. It exports the repaired exact 1,474-coefficient retained q2. The repair is the common factor-two Maxwell-output normalization plus the q1-coboundary of the local BV-canonical cotangent lift of c_M -> c_M-2 i_c A; it is not a fitted residual-mode patch. The complete 64-row and retained arity-two ledgers vanish, and the classical cyclic construction has zero full and retained defect counts. External quantum-side acceptance must still pin the committed artifacts before any quantum consumer uses the promotion. This does not establish mixed q3, localized emitter/receiver interaction, nonlinear backreaction, Hadamard data, a QME result, or a quantum claim.",
@@ -192,23 +207,34 @@
     "LORENTZIAN-CAUSAL"
   ],
   "flags": {
-    "BACKREACTED_RANK_TWO_RECORDS_CERTIFIED": false,
     "CLASSICAL_OBSERVER_MAP_CERTIFIED": false,
+    "COMPOSITE_DETECTOR_POLARIZATION_DECLARED": true,
+    "EXTENDED_APPARATUS_Q1_CERTIFIED": false,
     "EXTENDED_CYCLICITY_CERTIFIED": false,
+    "EXTENDED_LINEAR_RANK_TWO_TRANSFER_CERTIFIED": false,
     "EXTENDED_Q1_Q2_IDENTITY_CERTIFIED": false,
+    "EXTENDED_RETARDED_GREEN_CERTIFIED": false,
+    "EXTERNAL_Q_CLOSED_SOURCE_BOUNDARY_DECLARED": true,
+    "FORMAL_RANK_TWO_STABILITY_CONDITIONAL_LEMMA": true,
+    "INTERACTING_OBSERVER_DEFORMATION_CONSTRUCTED": false,
     "K_BERGER_EQUIVARIANCE_WITH_APPARATUS_CERTIFIED": false,
-    "LINEAR_RANK_TWO_RECORD_TRANSFER_PRESERVED": true,
-    "MAXWELL_STRESS_BACKREACTION_VERTEX_AVAILABLE": true,
-    "OBSERVER_APPARATUS_ROWS_ADJOINED_TO_REPAIRED_COMPLEX": false,
+    "PROBE_LIMIT_RANK_TWO_BASELINE_IMPORTED": true,
     "QUANTUM_CLAIM": false,
     "RAW_D_DESCENT_WITH_APPARATUS_CERTIFIED": false,
     "REPAIRED_64_ROW_Q2_IMPORTED_EXACTLY": true
   },
-  "gauge_quotient_boundary": {
-    "k_berger": "certified through arity three only on the existing gravity-clock complex and at arity two on the 64-row gravity-clock-Maxwell complex; no apparatus action is exported",
+  "formal_rank_stability_lemma": {
+    "actual_interacting_deformation_constructed": false,
+    "conclusion": "det M(kappa) is a unit because its constant term is nonzero, so the two-record map remains rank two as a formal deformation",
+    "determinant_constant_term": "C_00*C_11>0",
+    "hypothesis": "if a gauge-compatible interacting observer deformation M(kappa)=M0+kappa M1+... exists over a formal power-series coefficient ring"
+  },
+  "gauge_and_team_boundary": {
+    "closed_universe_team_supplies": "the closed-universe team supplies this interface, dependency import, observer-evaluation morphism test, causal record interpretation, and the conditional formal determinant lemma",
+    "k_berger": "certified through arity three on the existing gravity-clock complex and at arity two on the 64-row gravity-clock-Maxwell complex only",
+    "nonlinear_team_supplies": "the nonlinear team supplies the action-derived apparatus q1/q2/q3 and any higher operations, cyclicity, K_Berger identities, backreaction, and the extended retarded Green homotopy",
     "observer_evaluation_chain_morphism": false,
-    "raw_d": "presymplectic null only on the declared fixed-coupling linearized tangent sector and not action-equivariant on the 64-row q2 complex",
-    "raw_d_may_not_be_substituted_for_k_berger": true
+    "raw_d": "fixed-coupling linearized presymplectic nullity is not a substitute for K_Berger equivariance on the apparatus extension"
   },
   "imported_interaction_complex": {
     "cyclicity_defect_count": 0,
@@ -284,22 +310,6 @@
     "rows": 64,
     "scope": "gravity, positive clock, and Maxwell BV rows only"
   },
-  "linear_survival": {
-    "backreacted_transfer_recomputed": false,
-    "persistent_records_distinguishable": true,
-    "rank": 2,
-    "reason": "adjoining interactions does not alter the already certified first-order coefficient of the source-to-record map",
-    "transfer_matrix": [
-      [
-        "C_00",
-        "0"
-      ],
-      [
-        "0",
-        "C_11"
-      ]
-    ]
-  },
   "mutation_results": [
     {
       "expected_failed_requirement": "repaired_q2_import_exact",
@@ -308,21 +318,27 @@
       "observed_requirement_value": false
     },
     {
-      "expected_failed_requirement": "repaired_q2_import_exact",
+      "expected_failed_requirement": "action_arity_convention_exact",
       "expected_failure_passed": true,
-      "name": "reintroduce_cyclicity_defect",
+      "name": "mislabel_cubic_action_as_q3",
       "observed_requirement_value": false
     },
     {
-      "expected_failed_requirement": "linear_rank_two_records_survive",
+      "expected_failed_requirement": "extended_linear_survival_fail_closed",
       "expected_failure_passed": true,
-      "name": "collapse_linear_transfer",
+      "name": "promote_rank_without_extended_q1",
       "observed_requirement_value": false
     },
     {
-      "expected_failed_requirement": "higher_arity_observer_terms_identified",
+      "expected_failed_requirement": "apparatus_model_boundary_explicit",
       "expected_failure_passed": true,
-      "name": "erase_required_q3",
+      "name": "make_composite_polarization_independent",
+      "observed_requirement_value": false
+    },
+    {
+      "expected_failed_requirement": "team_handoff_preserved",
+      "expected_failure_passed": true,
+      "name": "construct_nonlinear_q3_in_observer_team",
       "observed_requirement_value": false
     },
     {
@@ -334,60 +350,78 @@
     {
       "expected_failed_requirement": "nonlinear_promotion_fail_closed",
       "expected_failure_passed": true,
-      "name": "promote_incomplete_extension",
+      "name": "promote_incomplete_interaction",
       "observed_requirement_value": false
     }
   ],
   "not_established": [
-    "a BV pairing and q1/q2 row layout containing rod, polarization, memory, and emitter variables and antifields",
-    "the extended q1 square, q1-q2 identity, or cyclicity identities",
-    "the rod-dependent q3 memory vertex and its cyclic cotangent partners",
+    "a common BV pairing and q1 row layout containing the rod and memory variables and antifields",
+    "the block-triangular extended q1 square, unary cyclicity, or retarded Green homotopy",
+    "rank two for the extended linear rod-memory-Maxwell complex rather than the imported probe baseline",
+    "the action-derived apparatus q2, conditional q3, higher smooth-profile operations, or their cyclic cotangent partners",
     "K_Berger equivariance or raw-D descent for the extended apparatus complex",
-    "a second-order metric solution sourced by Maxwell and apparatus stress",
-    "rank two after gravitational backreaction, recoil, and detector self-interaction",
+    "a dynamical emitter sector or spatially localized emitter worldtubes",
+    "an actual backreacted observer deformation to which the conditional determinant lemma applies",
     "a nonlinear classical observer algebra or any quantum observer state"
   ],
+  "probe_baseline": {
+    "extended_q1_exported": false,
+    "extended_retarded_green_exported": false,
+    "persistent_records_distinguishable": true,
+    "rank": 2,
+    "status": "IMPORTED_PROBE_LIMIT_BASELINE_NOT_AN_EXTENDED_LINEAR_THEOREM",
+    "transfer_matrix": [
+      [
+        "C_00",
+        "0"
+      ],
+      [
+        "0",
+        "C_11"
+      ]
+    ]
+  },
   "provenance": {
-    "declared_input_sha256": "aa6c46bb239acf3e686193a4be19ac0306d96534d516fca8adc1436381b7d637",
+    "declared_input_sha256": "e9515a93115673c17e336080bb0c0136dba6fbe67724cc0f069abcfed35d7036",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_observer_interaction_import_gate.py",
         "role": "producer",
-        "sha256": "ec3a605a2cf912c0d3f100b999574929fd402e8569b0b57453680e10a80499bb"
+        "sha256": "0642faf1ee6dcfa6fff7b31f75cc45020cf3e2960be82c0a086c3557aafe1ea3"
       },
       {
         "path": "closed_universe_observers/verify_berger_observer_interaction_import_gate.py",
         "role": "independent_verifier",
-        "sha256": "0376c2a10b3320bd9f214e6e40d15ccea7477a4e2b713e428d018a6c3a0bf3a6"
+        "sha256": "82a209c1e505809486111a8bc9bc56b7dc91e1f6dbb42178fa260f34db5c27ce"
       },
       {
         "path": "closed_universe_observers/tests/test_berger_observer_interaction_import_gate.py",
         "role": "tests",
-        "sha256": "95227608b8b0460cf5b2d0c939a0c4d5543f89e2f7520bad8faa3a8242698ee6"
+        "sha256": "929d9e6a4cfb0794fe00d5907b18f97f50662179b3976033ae854adb212ef86c"
       },
       {
         "path": "closed_universe_observers/reports/berger-observer-interaction-import-gate.md",
         "role": "report",
-        "sha256": "61ac4634cf082c8187d59bc3d75c403988afba1e99f763d4dcc71fced97e96b1"
+        "sha256": "32af9dd717db59624be59dfc12e002631a6c23a5160e98438b13e5c2e1bc9f6b"
       },
       {
         "path": "closed_universe_observers/fixtures/berger_observer_interaction_import_gate_input.json",
         "role": "input",
-        "sha256": "aa6c46bb239acf3e686193a4be19ac0306d96534d516fca8adc1436381b7d637"
+        "sha256": "e9515a93115673c17e336080bb0c0136dba6fbe67724cc0f069abcfed35d7036"
       },
       {
-        "path": "closed_universe_observers/schema/berger-observer-interaction-import-gate-input-v1.schema.json",
+        "path": "closed_universe_observers/schema/berger-observer-interaction-import-gate-input-v2.schema.json",
         "role": "input_schema",
-        "sha256": "2f88bba23ba44a9a534142389cdaa6b39d1ce11d66f362a66508b55c0b05c567"
+        "sha256": "d79d249a6050c5525f82fc31176ae72e17356b9d2a3c8905936e6fca74a064ff"
       },
       {
-        "path": "closed_universe_observers/schema/berger-observer-interaction-import-gate-v1.schema.json",
+        "path": "closed_universe_observers/schema/berger-observer-interaction-import-gate-v2.schema.json",
         "role": "certificate_schema",
-        "sha256": "42a85d772911c009fda4ad66cda4ec6d57be394122e224e0002c74c7005a7e79"
+        "sha256": "5ef56f794286bac6cbe2fc5d431db3e75c3c2dbda2ef408707c1f31755a2f9eb"
       }
     ]
   },
   "result_id": "BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE",
-  "schema": "closed-universe-berger-observer-interaction-import-gate-v1",
+  "schema": "closed-universe-berger-observer-interaction-import-gate-v2",
   "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
 }

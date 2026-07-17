@@ -1,62 +1,91 @@
-# Berger observer-apparatus interaction import gate
+# Corrected Berger observer-apparatus interaction import gate
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`, `LORENTZIAN-CAUSAL`.
 
 ## Result
 
-The repaired cyclic $q_2$ can be imported without invalidating the already
-certified first-order detector coefficient.  Thus
+The repaired cyclic $q_2$ imports exactly on the existing 64
+gravity-clock-Maxwell rows.  It includes the Maxwell stress vertex
+$q_2(A,A)\to\widehat h^+$.  The previously certified detector matrix
 
 \[
-M_{ab}=Q_a[dG_{\mathrm{ret}}J_b]
-=\begin{pmatrix}C_{00}&0\\0&C_{11}\end{pmatrix},
+M_0=\begin{pmatrix}C_{00}&0\\0&C_{11}\end{pmatrix},
 \qquad C_{00},C_{11}>0,
 \]
 
-remains the linear source-to-memory response, of rank two.
+is retained only as an imported **probe-limit baseline**.  It is not yet the
+linear transfer theorem of an adjoined rod-memory-Maxwell complex: no extended
+unary differential or retarded Green homotopy has been exported.
 
-This does **not** yet incorporate the detector apparatus into the interacting
-gauge quotient.  The repaired support-local coefficient ledger has exactly 64
-gravity-clock-Maxwell rows.  It contains the exact Maxwell stress vertex
-$q_2(A,A)\to\widehat h^+$, but it has no rod, detector-polarization, memory,
-or emitter rows and hence no BV partners for those variables.  Extended
-cyclicity is therefore not a well-typed identity on the currently exported
-complex, rather than a tested identity with a nonzero residual.
+## Correct action arity
 
-## First obstruction and required extension
-
-Four apparatus families must be adjoined with their antifields: the three rod
-scalars, detector polarization/transport data, each memory pair $(m_a,p_a)$,
-and a dynamical emitter-current sector.  Their action-derived unary operators,
-Diff cotangent lifts, stress vertices, readout vertices, and $K_{\mathrm{Berger}}$
-action must then be exported into one common cyclic ledger.
-
-There is also an arity obstruction.  With fixed external smearing data,
-$p_a q_a[F]$ is bilinear in $p_a$ and $A$.  Once localization is genuinely
-relational, however,
+The repository uses
 
 \[
-q_a[F]=\int \rho_a(\Theta,R)\,\langle dA,P_a\rangle_{\widehat g}
-\,\mathrm{dvol}_{\widehat g},
+Q(\phi)=q_1(\phi)+\frac1{2!}q_2(\phi,\phi)
++\frac1{3!}q_3(\phi,\phi,\phi)+\cdots,
 \]
 
-so its Taylor expansion includes a $p_a A R$ block.  A $q_2$-only repair is
-therefore insufficient; the apparatus extension must include $q_3$ and all
-cyclic cotangent partners (and may require higher Taylor terms for a nonlinear
-bump profile).
+so $q_n$ has $n$ inputs and is paired with the $(n+1)$-st action derivative.
+For the memory readout this gives
 
-## Gauge boundary
+| action monomial | action degree | induced operation |
+|---|---:|---:|
+| $pA$ | 2 | $q_1$ |
+| $pA\,\delta R$ | 3 | $q_2$ |
+| $pA(\delta R)^2$ | 4 | $q_3$ |
 
-The present $K_{\mathrm{Berger}}=D-\omega R$ results apply through arity three
-on the existing gravity-clock sector and through arity two on the 64-row
-gravity-clock-Maxwell sector.  Raw $D$ remains a distinct affine generator:
-its fixed-coupling linearized presymplectic-null result cannot replace an
-action-equivariant $K_{\mathrm{Berger}}$ calculation on the added apparatus.
+Thus the cubic $pA\delta R$ term does **not** require $q_3$.  The first $q_3$
+readout terms come from quadratic dependence of the smearing, composite
+polarization, metric pairing, or volume density on fluctuations.  A generic
+smooth $\rho(\Theta,R)$ has an unbounded Taylor tower unless a polynomial
+truncation or an auxiliary detector-profile model is declared.
 
-Accordingly, gravitational backreaction is now *vertex-ready* but not solved:
-the Maxwell stress source exists, while no second-order metric/apparatus
-solution or backreacted rank-two response has been computed.  The classical
-observer algebra remains fail-closed.
+## Apparatus interface choice
+
+The interface fixes the ambiguous modeling choices as follows.
+
+- The rods are three dynamical relational scalars and require BV partners.
+- Detector polarization is composite,
+  $P_a=d\Theta\wedge dR^a$; it is not a separate field family.
+- Each memory uses a dynamical pair $(m_a,p_a)$ with BV partners.
+- The currents $J_b$ remain external $q$-closed conserved sources at this
+  gate.  A dynamical emitter and its recoil are a later interaction input.
+
+The bilinear $pA$ readout is part of the extended $q_1$.  The next nonlinear
+certificate must therefore begin with a common rod-memory-Maxwell unary
+complex, its cyclic pairing, and an advanced/retarded Green homotopy.  Only
+then can this team recompute the source-to-memory transfer in the extended
+complex.
+
+## Team and gauge boundary
+
+The nonlinear classical team supplies the action-derived apparatus
+$q_1,q_2,q_3$ (and higher operations when the profile requires them), their
+cyclicity and $K_{\mathrm{Berger}}$ identities, gravitational backreaction,
+and the extended Green homotopy.  The closed-universe team imports those
+results and tests whether observer evaluation is a chain-compatible cyclic
+morphism.  This follows work package O4 and avoids duplicating the nonlinear
+programme.
+
+Raw $D$ remains distinct from $K_{\mathrm{Berger}}=D-\omega R$.  Its scoped
+linearized presymplectic nullity cannot replace $K_{\mathrm{Berger}}$
+equivariance on the extended apparatus complex.
+
+## Conditional formal rank stability
+
+There is one useful theorem available before the deformation is constructed.
+If a gauge-compatible formal observer deformation
+
+\[
+M(\kappa)=M_0+\kappa M_1+\kappa^2M_2+\cdots
+\]
+
+exists, then the constant term of its determinant is
+$C_{00}C_{11}>0$.  Hence $\det M(\kappa)$ is a unit in the formal power-series
+ring and the record map remains rank two formally.  This is a conditional
+algebraic lemma, not evidence that the interacting deformation exists or
+descends through the gauge quotient.
 
 ## Verification
 
@@ -66,7 +95,8 @@ python3 closed_universe_observers/verify_berger_observer_interaction_import_gate
 python3 -m pytest -q closed_universe_observers/tests/test_berger_observer_interaction_import_gate.py
 ```
 
-The mutation rail removes the cyclic repair, injects a cyclicity defect,
-collapses the transfer rank, erases the required $q_3$, identifies raw $D$
-with $K_{\mathrm{Berger}}$, and attempts an illegal nonlinear promotion.  All
-six mutations fail closed.
+Seven mutations remove the cyclic repair, reintroduce the arity error, promote
+rank two without the extended unary/Green data, turn composite polarization
+into an undeclared independent field, violate the nonlinear-team handoff,
+identify raw $D$ with $K_{\mathrm{Berger}}$, or promote the incomplete
+interaction.  All fail closed.

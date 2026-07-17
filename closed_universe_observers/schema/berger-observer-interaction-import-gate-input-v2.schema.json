@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-observer-interaction-import-gate-input-v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["setting_id", "dependency_snapshot_commit", "imported_complex", "probe_record_baseline", "apparatus_model", "action_arity_ledger", "profile_taylor_scope", "required_interface_blocks", "construct_interaction_tensors_locally", "request_extended_linear_survival_promotion", "request_nonlinear_promotion", "treat_raw_d_as_k_berger", "mutations"],
+  "properties": {
+    "setting_id": {"const": "compact_positive_berger_clock_observer_apparatus_extension"},
+    "dependency_snapshot_commit": {"$ref": "#/$defs/commit"},
+    "imported_complex": {
+      "type": "object", "additionalProperties": false,
+      "required": ["row_count", "q2_repair_applied", "q1_q2_defect_count", "cyclicity_defect_count", "k_berger_arity_two_equivariant", "raw_d_arity_two_equivariant", "maxwell_stress_vertex_exported"],
+      "properties": {
+        "row_count": {"const": 64}, "q2_repair_applied": {"const": true},
+        "q1_q2_defect_count": {"const": 0}, "cyclicity_defect_count": {"const": 0},
+        "k_berger_arity_two_equivariant": {"const": true}, "raw_d_arity_two_equivariant": {"const": false},
+        "maxwell_stress_vertex_exported": {"const": true}
+      }
+    },
+    "probe_record_baseline": {
+      "type": "object", "additionalProperties": false,
+      "required": ["transfer_rank", "persistent_records_distinguishable", "extended_q1_exported", "extended_retarded_green_exported"],
+      "properties": {
+        "transfer_rank": {"const": 2}, "persistent_records_distinguishable": {"const": true},
+        "extended_q1_exported": {"const": false}, "extended_retarded_green_exported": {"const": false}
+      }
+    },
+    "apparatus_model": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rod_fields", "polarization", "memory_fields", "source_role", "dynamical_emitter_deferred"],
+      "properties": {
+        "rod_fields": {"const": "THREE_DYNAMICAL_RELATIONAL_SCALARS_WITH_BV_PARTNERS_REQUIRED"},
+        "polarization": {"const": "COMPOSITE_P_A_EQUALS_DTHETA_WEDGE_DRA_NO_INDEPENDENT_POLARIZATION_ROWS"},
+        "memory_fields": {"const": "DYNAMICAL_PAIRS_MA_PA_WITH_BV_PARTNERS_REQUIRED"},
+        "source_role": {"const": "EXTERNAL_Q_CLOSED_CONSERVED_SOURCE_AT_THIS_GATE"},
+        "dynamical_emitter_deferred": {"const": true}
+      }
+    },
+    "action_arity_ledger": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "prefixItems": [
+        {"$ref": "#/$defs/q1_action_row"}, {"$ref": "#/$defs/q2_action_row"}, {"$ref": "#/$defs/q3_action_row"}
+      ], "items": false
+    },
+    "profile_taylor_scope": {"const": "UNBOUNDED_FOR_GENERIC_SMOOTH_RHO_UNLESS_A_POLYNOMIAL_TRUNCATION_OR_AUXILIARY_PROFILE_MODEL_IS_DECLARED"},
+    "required_interface_blocks": {"type": "array", "minItems": 15, "maxItems": 15, "uniqueItems": true, "items": {"$ref": "#/$defs/block"}},
+    "construct_interaction_tensors_locally": {"const": false},
+    "request_extended_linear_survival_promotion": {"const": false},
+    "request_nonlinear_promotion": {"const": false},
+    "treat_raw_d_as_k_berger": {"const": false},
+    "mutations": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/mutation"}}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "q1_action_row": {"type": "object", "additionalProperties": false, "required": ["id", "action_monomial", "action_degree", "induced_operation", "input_arity"], "properties": {"id": {"const": "fixed_probe_readout"}, "action_monomial": {"const": "p*A"}, "action_degree": {"const": 2}, "induced_operation": {"const": "q1"}, "input_arity": {"const": 1}}},
+    "q2_action_row": {"type": "object", "additionalProperties": false, "required": ["id", "action_monomial", "action_degree", "induced_operation", "input_arity"], "properties": {"id": {"const": "linear_relational_readout"}, "action_monomial": {"const": "p*A*deltaR"}, "action_degree": {"const": 3}, "induced_operation": {"const": "q2"}, "input_arity": {"const": 2}}},
+    "q3_action_row": {"type": "object", "additionalProperties": false, "required": ["id", "action_monomial", "action_degree", "induced_operation", "input_arity"], "properties": {"id": {"const": "quadratic_relational_readout"}, "action_monomial": {"const": "p*A*deltaR*deltaR"}, "action_degree": {"const": 4}, "induced_operation": {"const": "q3"}, "input_arity": {"const": 3}}},
+    "block": {"type": "object", "additionalProperties": false, "required": ["id", "arity", "owner", "status"], "properties": {"id": {"$ref": "#/$defs/text"}, "arity": {"type": "integer", "minimum": 0, "maximum": 3}, "owner": {"enum": ["NONLINEAR_CLASSICAL_TEAM", "CLOSED_UNIVERSE_TEAM"]}, "status": {"enum": ["NOT_EXPORTED", "NOT_VERIFIED", "NOT_COMPUTED", "CONDITIONAL_LEMMA_ONLY"]}}},
+    "mutation": {"type": "object", "additionalProperties": false, "required": ["name", "patch", "expected_failed_requirement"], "properties": {"name": {"$ref": "#/$defs/text"}, "patch": {"type": "object", "minProperties": 1, "maxProperties": 1}, "expected_failed_requirement": {"enum": ["repaired_q2_import_exact", "action_arity_convention_exact", "extended_linear_survival_fail_closed", "apparatus_model_boundary_explicit", "team_handoff_preserved", "generator_boundary_preserved", "nonlinear_promotion_fail_closed"]}}}
+  }
+}

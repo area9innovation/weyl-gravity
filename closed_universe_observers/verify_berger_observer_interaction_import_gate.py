@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent verification of the Berger observer interaction import gate."""
+"""Independent verification of the corrected observer interaction import gate."""
 
 from __future__ import annotations
 
@@ -14,8 +14,8 @@ import jsonschema
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = ROOT / "closed_universe_observers"
 INPUT = PACKAGE / "fixtures/berger_observer_interaction_import_gate_input.json"
-INPUT_SCHEMA = PACKAGE / "schema/berger-observer-interaction-import-gate-input-v1.schema.json"
-SCHEMA = PACKAGE / "schema/berger-observer-interaction-import-gate-v1.schema.json"
+INPUT_SCHEMA = PACKAGE / "schema/berger-observer-interaction-import-gate-input-v2.schema.json"
+SCHEMA = PACKAGE / "schema/berger-observer-interaction-import-gate-v2.schema.json"
 CERTIFICATE = PACKAGE / "certificates/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE.json"
 
 
@@ -33,22 +33,28 @@ def _prefix() -> str:
 
 def _requirements(data: dict, patch: dict | None = None) -> dict[str, bool]:
     clone = json.loads(json.dumps(data))
-    override = patch or {}
     imported = clone["imported_complex"]
-    linear = clone["linear_record_sector"]
-    for key, value in override.items():
+    baseline = clone["probe_record_baseline"]
+    model = clone["apparatus_model"]
+    for key, value in (patch or {}).items():
         if key in imported:
             imported[key] = value
-        elif key in linear:
-            linear[key] = value
+        elif key in baseline:
+            baseline[key] = value
+        elif key == "linear_relational_operation":
+            clone["action_arity_ledger"][1]["induced_operation"] = value
+        elif key == "polarization_model":
+            model["polarization"] = value
         else:
             clone[key] = value
-    missing = [row for row in clone["required_operation_blocks"] if row["status"] != "EXPORTED_VERIFIED"]
+    missing = [row for row in clone["required_interface_blocks"] if row["status"] != "EXPORTED_VERIFIED"]
     return {
         "repaired_q2_import_exact": imported["row_count"] == 64 and imported["q2_repair_applied"] and imported["q1_q2_defect_count"] == 0 and imported["cyclicity_defect_count"] == 0 and imported["k_berger_arity_two_equivariant"] and imported["maxwell_stress_vertex_exported"],
-        "linear_rank_two_records_survive": linear["transfer_rank"] == 2 and linear["persistent_records_distinguishable"],
-        "apparatus_extension_incomplete": bool(missing),
-        "higher_arity_observer_terms_identified": clone["relational_smearing_depends_on_rods"] and clone["memory_couples_to_maxwell_readout"],
+        "probe_rank_two_baseline_exact": baseline["transfer_rank"] == 2 and baseline["persistent_records_distinguishable"],
+        "action_arity_convention_exact": all(row["action_degree"] == row["input_arity"] + 1 and row["induced_operation"] == f"q{row['input_arity']}" for row in clone["action_arity_ledger"]),
+        "apparatus_model_boundary_explicit": model["polarization"] == "COMPOSITE_P_A_EQUALS_DTHETA_WEDGE_DRA_NO_INDEPENDENT_POLARIZATION_ROWS" and model["source_role"] == "EXTERNAL_Q_CLOSED_CONSERVED_SOURCE_AT_THIS_GATE" and model["dynamical_emitter_deferred"],
+        "extended_linear_survival_fail_closed": not clone["request_extended_linear_survival_promotion"] and not baseline["extended_q1_exported"] and not baseline["extended_retarded_green_exported"],
+        "team_handoff_preserved": not clone["construct_interaction_tensors_locally"],
         "generator_boundary_preserved": not clone["treat_raw_d_as_k_berger"] and not imported["raw_d_arity_two_equivariant"],
         "nonlinear_promotion_fail_closed": not clone["request_nonlinear_promotion"] and bool(missing),
     }
@@ -77,18 +83,13 @@ def main() -> int:
         if any(live.get("flags", {}).get(flag) is not True for flag in dependency["live_required_flags"]):
             raise AssertionError(f"live dependency compatibility dropped: {name}")
     support = pinned_payloads["support_local_q2"]
-    if support["row_layout"]["total_rows"] != 64:
-        raise AssertionError("support-local complex is no longer 64 rows")
-    if support["exact_diagnostics"]["arity_two_defect_term_counts"] != [0] * 64:
-        raise AssertionError("support-local q1-q2 defect reappeared")
-    if not support["exact_checks"]["BV_cyclicity_from_common_Maxwell_master_action"]:
-        raise AssertionError("support-local cyclicity dropped")
+    if support["row_layout"]["total_rows"] != 64 or support["exact_diagnostics"]["arity_two_defect_term_counts"] != [0] * 64:
+        raise AssertionError("support-local 64-row q2 identity drifted")
     row_ids = {row["row_id"] for row in support["row_layout"]["component_rows"]}
-    forbidden_prefixes = ("rod_", "memory_", "detector_", "emitter_", "m_", "p_")
-    if any(row.startswith(forbidden_prefixes) for row in row_ids):
+    if any(row.startswith(("rod_", "memory_", "detector_", "emitter_", "m_", "p_")) for row in row_ids):
         raise AssertionError("apparatus row unexpectedly entered the pinned 64-row ledger")
     if not all(_requirements(data).values()):
-        raise AssertionError("base interaction import gate failed")
+        raise AssertionError("base corrected import gate failed")
     persisted = {row["name"]: row for row in certificate["mutation_results"]}
     for mutation in data["mutations"]:
         required = mutation["expected_failed_requirement"]
@@ -96,13 +97,16 @@ def main() -> int:
             raise AssertionError(f"mutation did not fail: {mutation['name']}")
         if persisted[mutation["name"]]["observed_requirement_value"] is not False:
             raise AssertionError(f"persisted mutation mismatch: {mutation['name']}")
+    ledger = certificate["action_arity_analysis"]["ledger"]
+    if [(row["action_degree"], row["induced_operation"]) for row in ledger] != [(2, "q1"), (3, "q2"), (4, "q3")]:
+        raise AssertionError("action-to-operation arity is off by one")
     flags = certificate["flags"]
-    if flags["LINEAR_RANK_TWO_RECORD_TRANSFER_PRESERVED"] is not True:
-        raise AssertionError("linear survival flag dropped")
-    for forbidden in ["OBSERVER_APPARATUS_ROWS_ADJOINED_TO_REPAIRED_COMPLEX", "EXTENDED_CYCLICITY_CERTIFIED", "RAW_D_DESCENT_WITH_APPARATUS_CERTIFIED", "BACKREACTED_RANK_TWO_RECORDS_CERTIFIED", "CLASSICAL_OBSERVER_MAP_CERTIFIED"]:
+    if not flags["PROBE_LIMIT_RANK_TWO_BASELINE_IMPORTED"] or not flags["FORMAL_RANK_TWO_STABILITY_CONDITIONAL_LEMMA"]:
+        raise AssertionError("probe baseline or conditional determinant lemma dropped")
+    for forbidden in ["EXTENDED_APPARATUS_Q1_CERTIFIED", "EXTENDED_RETARDED_GREEN_CERTIFIED", "EXTENDED_LINEAR_RANK_TWO_TRANSFER_CERTIFIED", "EXTENDED_CYCLICITY_CERTIFIED", "INTERACTING_OBSERVER_DEFORMATION_CONSTRUCTED", "CLASSICAL_OBSERVER_MAP_CERTIFIED"]:
         if flags[forbidden] is not False:
             raise AssertionError(f"illegal promotion: {forbidden}")
-    print("BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE independent replay: PASS")
+    print("BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE v2 independent replay: PASS")
     return 0
 
 
