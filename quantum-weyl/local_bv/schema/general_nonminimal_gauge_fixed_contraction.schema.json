@@ -1,0 +1,240 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-general-nonminimal-gauge-fixed-contraction-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "classical_commit", "dependency_tags", "dependency_hashes", "scope", "field_dictionary", "direct_sum_contraction", "canonical_gauge_fixing_transport", "classical_specialization_replay", "gauge_fixed_cohomology", "checks", "claim_flags", "proof_sha256", "result_artifacts", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-general-nonminimal-gauge-fixed-contraction-v1"},
+    "result_id": {"const": "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION"},
+    "result_state": {"const": "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN"},
+    "classical_commit": {"$ref": "#/$defs/commit"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimal_BV_H14", "H04", "Berger_unfixed_nonminimal_specialization", "Berger_gauge_fixed_specialization"],
+      "properties": {
+        "minimal_BV_H14": {"$ref": "#/$defs/hash"},
+        "H04": {"$ref": "#/$defs/hash"},
+        "Berger_unfixed_nonminimal_specialization": {"$ref": "#/$defs/hash"},
+        "Berger_gauge_fixed_specialization": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gauge_symmetry", "gauge_direction_count", "locality", "gauge_fixing", "regularity"],
+      "properties": {
+        "gauge_symmetry": {"const": "Diff_x_Weyl"},
+        "gauge_direction_count": {"const": 5},
+        "locality": {"const": "POINTWISE_DOUBLET_ROWS_WITH_COVARIANT_JET_PROLONGATION"},
+        "gauge_fixing": {"const": "ARBITRARY_INVERTIBLE_LOCAL_BV_CANONICAL_TRANSFORMATION"},
+        "regularity": {"const": "REGULAR_BACH_LOCUS_FOR_MINIMAL_KOSZUL_TATE_INPUT"}
+      }
+    },
+    "field_dictionary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gauge_directions", "atom_count", "atoms", "jet_prolongation_rule"],
+      "properties": {
+        "gauge_directions": {"const": ["diff_0", "diff_1", "diff_2", "diff_3", "weyl"]},
+        "atom_count": {"const": 20},
+        "atoms": {
+          "type": "array",
+          "minItems": 20,
+          "maxItems": 20,
+          "items": {"$ref": "#/$defs/atom"}
+        },
+        "jet_prolongation_rule": {"const": "Q nabla_I = nabla_I Q AND S nabla_I = nabla_I S"}
+      }
+    },
+    "direct_sum_contraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pair_count", "pairs", "identity", "side_conditions", "regression_monomial_count", "regression_manifest_sha256", "support_local", "differential_order", "horizontal_differential_compatibility"],
+      "properties": {
+        "pair_count": {"const": 10},
+        "pairs": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/pair"}},
+        "identity": {"const": "Q h + h Q = 1 - inclusion projection ON_POSITIVE_NONMINIMAL_DEGREE"},
+        "side_conditions": {"const": ["h^2=0", "projection h=0", "h inclusion=0"]},
+        "regression_monomial_count": {"const": 25080},
+        "regression_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "support_local": {"const": true},
+        "differential_order": {"const": 0},
+        "horizontal_differential_compatibility": {"const": "FOLLOWS_FROM_POINTWISE_ROWS_AND_JET_PROLONGATION"}
+      }
+    },
+    "canonical_gauge_fixing_transport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relations", "normal_forms", "proof_sha256"],
+      "properties": {
+        "relations": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["inverse", "unfixed_contraction", "side_conditions", "transport"],
+          "properties": {
+            "inverse": {"const": ["UV=1", "VU=1"]},
+            "unfixed_contraction": {"const": ["Q^2=0", "S^2=0", "QS+SQ=1-JR"]},
+            "side_conditions": {"const": ["RJ=1", "RS=0", "SJ=0"]},
+            "transport": {"const": ["Q'=UQV", "S'=USV", "J'=UJ", "R'=RV"]}
+          }
+        },
+        "normal_forms": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["Q_prime_squared", "S_prime_squared", "pi_prime_iota_prime_minus_one", "pi_prime_S_prime", "S_prime_iota_prime", "contracting_identity"],
+          "properties": {
+            "Q_prime_squared": {"const": {}},
+            "S_prime_squared": {"const": {}},
+            "pi_prime_iota_prime_minus_one": {"const": {}},
+            "pi_prime_S_prime": {"const": {}},
+            "S_prime_iota_prime": {"const": {}},
+            "contracting_identity": {"const": {}}
+          }
+        },
+        "proof_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "classical_specialization_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["setting", "unfixed_Q_support", "unfixed_S_support", "gauge_fixed_BV_canonical", "gauge_fixed_contraction", "use_as_scope"],
+      "properties": {
+        "setting": {"type": "string", "minLength": 1},
+        "unfixed_Q_support": {"$ref": "#/$defs/support"},
+        "unfixed_S_support": {"$ref": "#/$defs/support"},
+        "gauge_fixed_BV_canonical": {"const": true},
+        "gauge_fixed_contraction": {"const": "VERIFIED_BY_CLASSICAL_PRODUCER_AND_FORMAL_TRANSPORT"},
+        "use_as_scope": {"const": "SPECIALIZATION_REGRESSION_NOT_GENERAL_LOCAL_AUTHORITY"}
+      }
+    },
+    "gauge_fixed_cohomology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["H04_classes", "H04_even_dimension", "H04_odd_dimension", "H14_classes", "H14_even_dimension", "H14_odd_dimension", "H14_exact_rows", "comparison", "regularity_scope"],
+      "properties": {
+        "H04_classes": {"const": ["CT_C2", "CT_E4", "CT_C_DUAL_C"]},
+        "H04_even_dimension": {"const": 2},
+        "H04_odd_dimension": {"const": 1},
+        "H14_classes": {"const": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C"]},
+        "H14_even_dimension": {"const": 2},
+        "H14_odd_dimension": {"const": 1},
+        "H14_exact_rows": {"const": ["ANOM_OMEGA_BOX_R"]},
+        "comparison": {"const": "MINIMAL_TO_NONMINIMAL_TO_GAUGE_FIXED_CHAIN_ISOMORPHISMS_EXPLICIT"},
+        "regularity_scope": {"const": "REGULAR_BACH_LOCUS"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ten_nonminimal_pairs_enumerated", "Q_squared_zero_on_every_nonminimal_atom", "graded_contraction_regressions", "covariant_jet_prolongation", "horizontal_differential_compatibility", "formal_canonical_transport_normal_forms", "Berger_unfixed_specialization", "Berger_gauge_fixed_specialization", "H04_minimal_nonminimal_gauge_fixed_comparison", "H14_minimal_nonminimal_gauge_fixed_comparison", "full_local_BV_G2"],
+      "properties": {
+        "ten_nonminimal_pairs_enumerated": {"const": "VERIFIED"},
+        "Q_squared_zero_on_every_nonminimal_atom": {"const": "VERIFIED"},
+        "graded_contraction_regressions": {"const": "VERIFIED_25080"},
+        "covariant_jet_prolongation": {"const": "VERIFIED_PARAMETRIC"},
+        "horizontal_differential_compatibility": {"const": "VERIFIED"},
+        "formal_canonical_transport_normal_forms": {"const": "ALL_ZERO"},
+        "Berger_unfixed_specialization": {"const": "INDEPENDENT_SUPPORT_REPLAYED"},
+        "Berger_gauge_fixed_specialization": {"const": "BOUND_AS_REGRESSION_ONLY"},
+        "H04_minimal_nonminimal_gauge_fixed_comparison": {"const": "CHAIN_ISOMORPHISM"},
+        "H14_minimal_nonminimal_gauge_fixed_comparison": {"const": "CHAIN_ISOMORPHISM"},
+        "full_local_BV_G2": {"const": "COMPLETE_ON_REGULAR_BACH_LOCUS"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["GENERAL_NONMINIMAL_DOUBLETS_CONTRACTED", "LOCAL_CANONICAL_GAUGE_FIXING_INVARIANCE_PROVED", "H04_GAUGE_FIXED_BV_COMPLETE", "H14_GAUGE_FIXED_BV_COMPLETE", "FULL_BV_G2_COMPLETE", "ANOMALY_COEFFICIENTS_COMPUTED_HERE", "REGULATED_SLAVNOV_BREAKING_COMPUTED", "QME_RESTORED", "LORENTZIAN_QUANTUM_THEORY"],
+      "properties": {
+        "GENERAL_NONMINIMAL_DOUBLETS_CONTRACTED": {"const": true},
+        "LOCAL_CANONICAL_GAUGE_FIXING_INVARIANCE_PROVED": {"const": true},
+        "H04_GAUGE_FIXED_BV_COMPLETE": {"const": true},
+        "H14_GAUGE_FIXED_BV_COMPLETE": {"const": true},
+        "FULL_BV_G2_COMPLETE": {"const": true},
+        "ANOMALY_COEFFICIENTS_COMPUTED_HERE": {"const": false},
+        "REGULATED_SLAVNOV_BREAKING_COMPUTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "result_artifacts": {
+      "const": {
+        "H04": "quantum-weyl/local_bv/cohomology/H04_GAUGE_FIXED_BV_RESULT.json",
+        "H14": "quantum-weyl/local_bv/cohomology/H14_GAUGE_FIXED_BV_RESULT.json"
+      }
+    },
+    "next_gate": {"const": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING"},
+    "claim_boundary": {"type": "string", "minLength": 1100},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_sha256"],
+      "properties": {
+        "source_sha256": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "quantum-weyl/local_bv/nonminimal_gauge_fixed_contraction.py",
+            "quantum-weyl/local_bv/nonminimal_gauge_fixed_contraction_certificate.py",
+            "quantum-weyl/local_bv/verify_nonminimal_gauge_fixed_contraction.py",
+            "quantum-weyl/local_bv/schema/general_nonminimal_gauge_fixed_contraction.schema.json",
+            "quantum-weyl/local_bv/schema/gauge_fixed_bv_cohomology_result.schema.json",
+            "quantum-weyl/local_bv/tests/test_nonminimal_gauge_fixed_contraction.py",
+            "quantum-weyl/reports/general-nonminimal-gauge-fixed-contraction.md"
+          ],
+          "properties": {
+            "quantum-weyl/local_bv/nonminimal_gauge_fixed_contraction.py": {"$ref": "#/$defs/hash"},
+            "quantum-weyl/local_bv/nonminimal_gauge_fixed_contraction_certificate.py": {"$ref": "#/$defs/hash"},
+            "quantum-weyl/local_bv/verify_nonminimal_gauge_fixed_contraction.py": {"$ref": "#/$defs/hash"},
+            "quantum-weyl/local_bv/schema/general_nonminimal_gauge_fixed_contraction.schema.json": {"$ref": "#/$defs/hash"},
+            "quantum-weyl/local_bv/schema/gauge_fixed_bv_cohomology_result.schema.json": {"$ref": "#/$defs/hash"},
+            "quantum-weyl/local_bv/tests/test_nonminimal_gauge_fixed_contraction.py": {"$ref": "#/$defs/hash"},
+            "quantum-weyl/reports/general-nonminimal-gauge-fixed-contraction.md": {"$ref": "#/$defs/hash"}
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "atom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["atom_id", "canonical_order", "Grassmann_parity", "ghost_number_in_suspended_complex", "direction", "role"],
+      "properties": {
+        "atom_id": {"type": "string", "minLength": 3},
+        "canonical_order": {"type": "integer", "minimum": 0, "maximum": 19},
+        "Grassmann_parity": {"type": "integer", "enum": [0, 1]},
+        "ghost_number_in_suspended_complex": {"type": "integer", "enum": [0, 1]},
+        "direction": {"enum": ["diff_0", "diff_1", "diff_2", "diff_3", "weyl"]},
+        "role": {"enum": ["b", "bar_c", "bar_c_star", "b_star"]}
+      }
+    },
+    "pair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "target", "direction"],
+      "properties": {
+        "source": {"type": "string", "minLength": 3},
+        "target": {"type": "string", "minLength": 3},
+        "direction": {"enum": ["diff_0", "diff_1", "diff_2", "diff_3", "weyl"]}
+      }
+    },
+    "support": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

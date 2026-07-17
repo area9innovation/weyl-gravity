@@ -22,7 +22,7 @@ class ActiveFrontierTests(unittest.TestCase):
         Draft202012Validator.check_schema(schema)
         Draft202012Validator(schema).validate(certificate)
 
-    def test_g1_is_the_only_completed_quantum_promotion_level(self) -> None:
+    def test_g2_local_bv_cohomology_is_complete(self) -> None:
         ladder = self.payload["promotion_ladder"]
         self.assertEqual(ladder["G1"], "PASSED_AFN0_LOCAL_QUOTIENT")
         self.assertTrue(self.payload["claim_flags"]["ANTIFIELD_EXPORT_V2_RECEIVER_READY"])
@@ -31,7 +31,11 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(
             self.payload["claim_flags"]["MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS"]
         )
-        self.assertTrue(ladder["G2"].startswith("BLOCKED"))
+        self.assertEqual(ladder["G2"], "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS")
+        self.assertTrue(
+            self.payload["claim_flags"]["GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE"]
+        )
+        self.assertTrue(self.payload["claim_flags"]["FULL_BV_G2_COMPLETE"])
         self.assertTrue(ladder["G5"].startswith("BLOCKED"))
 
     def test_supersession_does_not_delete_history(self) -> None:
@@ -67,7 +71,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "GENERAL_LOCAL_NONMINIMAL_DOUBLETS_AND_GAUGE_FIXED_CONTRACTION",
+            "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

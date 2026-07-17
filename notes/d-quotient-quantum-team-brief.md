@@ -344,15 +344,17 @@ pure-gravity sector is controlled by degree-three invariant polynomials of the
 metric structure algebra; an exact rational rank calculation gives dimension
 zero in degree three, with nonzero degree-two and degree-four controls. Thus
 the minimal-BV H14 quotient on the regular Bach locus has even/odd dimensions
-`2/1`, with no extra pure-Diff or independent mixed class. The remaining G2
-input is the explicit general local nonminimal/gauge-fixed doublet
-contraction, not another expansion of the 2.86-billion ambient raw graphs.
+`2/1`, with no extra pure-Diff or independent mixed class. Ten general local
+nonminimal pairs now contract pointwise, their covariant jet prolongations are
+compatible with the bicomplex, and exact BV-canonical transport proves the
+gauge-fixed H04 and H14 groups equal the minimal groups. G2 is complete in
+this scope; no expansion of the 2.86-billion ambient raw graphs is needed.
 
 Keep relative forms, integrated local functionals, and residual-state
 cohomology as distinct result kinds.  Return an explicit primitive or dual
 witness for every surviving class.
 
-### Work package Q-G2: coefficient universality
+### Work package Q-G3: coefficient universality
 
 Compute coefficients in a locally covariant renormalization framework and
 compare the cylinder, a conformally flat globally hyperbolic background, one
@@ -445,10 +447,10 @@ follow-up is:
 BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1
 ```
 
-It is not the first quantum gate. The minimal-BV H14 quotient is now complete
-on the regular Bach locus; the algebraic critical path continues through the
-general local nonminimal/gauge-fixed contraction, followed by the regulated
-repository Slavnov breaking and QME disposition. The
+It is not the first quantum gate. Full local BV H04 and H14 are now complete
+on the regular Bach locus through the canonically gauge-fixed complex; the
+algebraic critical path starts at the regulated repository Slavnov breaking
+and QME disposition. The
 stationary/Hadamard construction remains a parallel analytic rail.
 
 The architecture preflight now accepts the certified rank-46 STF2 graph
@@ -475,12 +477,13 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Complete the general local nonminimal/gauge-fixed doublet contraction and
-   verify that it leaves the now-complete minimal-BV `2/1` H14 quotient
-   unchanged. The minimal antifield, pure-Diff, mixed, and descent sectors are
-   regression inputs, not pending work.
-2. Compute the pure-Weyl anomaly coefficients by the two declared independent
-   presentations and record counterterm, zero-mode, and measure dependence.
+1. Construct the regulated repository Slavnov breaking and reduce it against
+   the completed gauge-fixed `2/1` H14 quotient. The minimal, nonminimal,
+   pure-Diff, mixed, descent, and gauge-fixing sectors are regression inputs,
+   not pending work.
+2. Reconcile the existing pure-Weyl background coefficients with a second
+   presentation and record counterterm, zero-mode, measure, and regulator
+   dependence before treating them as repository BV coefficients.
 3. Construct the coefficient-bearing map to \(\mathcal A_D^{(1)}\) and
    establish QME restoration or a normalized obstruction without conflating
    local Weyl, residual-generator, boundary, and clock anomalies.
@@ -514,12 +517,11 @@ obstruction is a successful result.
 
 ### Current eight-hour assignment (2026-07-17)
 
-The scope-correct V2 classical antifield import and **Q-G1 beyond AFN0** are
-now closed on the regular Bach locus, including minimal Koszul--Tate,
-pure-Diff, mixed, and descent sectors. The next local task is the explicit
-general nonminimal/gauge-fixed doublet contraction, followed by the regulated
-repository Slavnov breaking. Do not alter the classical producer to force
-acceptance. See
+The scope-correct V2 classical antifield import and **G2 local BV cohomology**
+are now closed on the regular Bach locus, including minimal Koszul--Tate,
+pure-Diff, mixed, descent, nonminimal, and canonically gauge-fixed sectors.
+The next local task is the regulated repository Slavnov breaking. Do not alter
+the classical producer to force acceptance. See
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
 Deliver one human-readable report and machine-readable certificates containing:

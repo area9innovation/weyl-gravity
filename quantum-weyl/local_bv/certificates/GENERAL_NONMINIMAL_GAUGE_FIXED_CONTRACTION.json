@@ -1,0 +1,447 @@
+{
+  "canonical_gauge_fixing_transport": {
+    "normal_forms": {
+      "Q_prime_squared": {},
+      "S_prime_iota_prime": {},
+      "S_prime_squared": {},
+      "contracting_identity": {},
+      "pi_prime_S_prime": {},
+      "pi_prime_iota_prime_minus_one": {}
+    },
+    "proof_sha256": "106f6ee49e7c5e41e74e71581491776c08a51e1304d3b81c513d8a2fb9b24c0a",
+    "relations": {
+      "inverse": [
+        "UV=1",
+        "VU=1"
+      ],
+      "side_conditions": [
+        "RJ=1",
+        "RS=0",
+        "SJ=0"
+      ],
+      "transport": [
+        "Q'=UQV",
+        "S'=USV",
+        "J'=UJ",
+        "R'=RV"
+      ],
+      "unfixed_contraction": [
+        "Q^2=0",
+        "S^2=0",
+        "QS+SQ=1-JR"
+      ]
+    }
+  },
+  "checks": {
+    "Berger_gauge_fixed_specialization": "BOUND_AS_REGRESSION_ONLY",
+    "Berger_unfixed_specialization": "INDEPENDENT_SUPPORT_REPLAYED",
+    "H04_minimal_nonminimal_gauge_fixed_comparison": "CHAIN_ISOMORPHISM",
+    "H14_minimal_nonminimal_gauge_fixed_comparison": "CHAIN_ISOMORPHISM",
+    "Q_squared_zero_on_every_nonminimal_atom": "VERIFIED",
+    "covariant_jet_prolongation": "VERIFIED_PARAMETRIC",
+    "formal_canonical_transport_normal_forms": "ALL_ZERO",
+    "full_local_BV_G2": "COMPLETE_ON_REGULAR_BACH_LOCUS",
+    "graded_contraction_regressions": "VERIFIED_25080",
+    "horizontal_differential_compatibility": "VERIFIED",
+    "ten_nonminimal_pairs_enumerated": "VERIFIED"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC certificate completes the local H04 and H14 cohomology of the minimal, nonminimal, and canonically gauge-fixed Diff x Weyl BV complex on the imported regular Bach-locus chart. Four Diff directions and one Weyl direction contribute ten explicit pointwise doublets. Their odd derivation, jet prolongation, and contracting homotopy are checked on every atom and 25,080 canonical supermonomials, including coefficients of both parities from the minimal algebra. A free-word normal-form calculation then verifies that every contraction identity and side condition transports under an arbitrary invertible local BV-canonical gauge-fixing transformation. The landed Berger 54-row unfixed and gauge-fixed packages are replayed only as a specialization regression, not used to extend Berger analytic claims to general backgrounds. Consequently the gauge-fixed H04 and H14 groups equal the certified minimal groups, and the local BV obstruction classification reaches G2 within the stated regularity scope. This does not construct a gauge-fixed Green operator or Hadamard state, compute a repository-specific one-loop coefficient or regulated Slavnov breaking, restore the QME, perform residual quantum transfer, or establish Lorentzian quantum theory.",
+  "claim_flags": {
+    "ANOMALY_COEFFICIENTS_COMPUTED_HERE": false,
+    "FULL_BV_G2_COMPLETE": true,
+    "GENERAL_NONMINIMAL_DOUBLETS_CONTRACTED": true,
+    "H04_GAUGE_FIXED_BV_COMPLETE": true,
+    "H14_GAUGE_FIXED_BV_COMPLETE": true,
+    "LOCAL_CANONICAL_GAUGE_FIXING_INVARIANCE_PROVED": true,
+    "LORENTZIAN_QUANTUM_THEORY": false,
+    "QME_RESTORED": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "classical_specialization_replay": {
+    "gauge_fixed_BV_canonical": true,
+    "gauge_fixed_contraction": "VERIFIED_BY_CLASSICAL_PRODUCER_AND_FORMAL_TRANSPORT",
+    "setting": "compact_positive_berger_clock_fixed_coupling_linearized",
+    "unfixed_Q_support": [
+      [
+        39,
+        22
+      ],
+      [
+        40,
+        23
+      ],
+      [
+        41,
+        24
+      ],
+      [
+        42,
+        25
+      ],
+      [
+        43,
+        26
+      ],
+      [
+        44,
+        17
+      ],
+      [
+        45,
+        18
+      ],
+      [
+        46,
+        19
+      ],
+      [
+        47,
+        20
+      ],
+      [
+        48,
+        21
+      ]
+    ],
+    "unfixed_S_support": [
+      [
+        17,
+        44
+      ],
+      [
+        18,
+        45
+      ],
+      [
+        19,
+        46
+      ],
+      [
+        20,
+        47
+      ],
+      [
+        21,
+        48
+      ],
+      [
+        22,
+        39
+      ],
+      [
+        23,
+        40
+      ],
+      [
+        24,
+        41
+      ],
+      [
+        25,
+        42
+      ],
+      [
+        26,
+        43
+      ]
+    ],
+    "use_as_scope": "SPECIALIZATION_REGRESSION_NOT_GENERAL_LOCAL_AUTHORITY"
+  },
+  "dependency_hashes": {
+    "Berger_gauge_fixed_specialization": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+    "Berger_unfixed_nonminimal_specialization": "9be6ebfafb81f29f5d0974bbe57c4c1124e25a940f86c71244cd71fbfaa31c3c",
+    "H04": "ea7f96cc7c382c00ad34dec9f217571b4c906d220d483c3e4c5b2aa58556c6fb",
+    "minimal_BV_H14": "f2624bad4840e33682b1dc3971c09e466f530c90e4404edd19c65613187dc81b"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "direct_sum_contraction": {
+    "differential_order": 0,
+    "horizontal_differential_compatibility": "FOLLOWS_FROM_POINTWISE_ROWS_AND_JET_PROLONGATION",
+    "identity": "Q h + h Q = 1 - inclusion projection ON_POSITIVE_NONMINIMAL_DEGREE",
+    "pair_count": 10,
+    "pairs": [
+      {
+        "direction": "diff_0",
+        "source": "b_diff_0",
+        "target": "bar_c_diff_0"
+      },
+      {
+        "direction": "diff_0",
+        "source": "bar_c_star_diff_0",
+        "target": "b_star_diff_0"
+      },
+      {
+        "direction": "diff_1",
+        "source": "b_diff_1",
+        "target": "bar_c_diff_1"
+      },
+      {
+        "direction": "diff_1",
+        "source": "bar_c_star_diff_1",
+        "target": "b_star_diff_1"
+      },
+      {
+        "direction": "diff_2",
+        "source": "b_diff_2",
+        "target": "bar_c_diff_2"
+      },
+      {
+        "direction": "diff_2",
+        "source": "bar_c_star_diff_2",
+        "target": "b_star_diff_2"
+      },
+      {
+        "direction": "diff_3",
+        "source": "b_diff_3",
+        "target": "bar_c_diff_3"
+      },
+      {
+        "direction": "diff_3",
+        "source": "bar_c_star_diff_3",
+        "target": "b_star_diff_3"
+      },
+      {
+        "direction": "weyl",
+        "source": "b_weyl",
+        "target": "bar_c_weyl"
+      },
+      {
+        "direction": "weyl",
+        "source": "bar_c_star_weyl",
+        "target": "b_star_weyl"
+      }
+    ],
+    "regression_manifest_sha256": "c7a6e5ac06f239ab47057f93034b49b901a25260810793dddc4ee5482483922c",
+    "regression_monomial_count": 25080,
+    "side_conditions": [
+      "h^2=0",
+      "projection h=0",
+      "h inclusion=0"
+    ],
+    "support_local": true
+  },
+  "field_dictionary": {
+    "atom_count": 20,
+    "atoms": [
+      {
+        "Grassmann_parity": 0,
+        "atom_id": "b_diff_0",
+        "canonical_order": 0,
+        "direction": "diff_0",
+        "ghost_number_in_suspended_complex": 0,
+        "role": "b"
+      },
+      {
+        "Grassmann_parity": 1,
+        "atom_id": "bar_c_diff_0",
+        "canonical_order": 1,
+        "direction": "diff_0",
+        "ghost_number_in_suspended_complex": 1,
+        "role": "bar_c"
+      },
+      {
+        "Grassmann_parity": 0,
+        "atom_id": "bar_c_star_diff_0",
+        "canonical_order": 2,
+        "direction": "diff_0",
+        "ghost_number_in_suspended_complex": 0,
+        "role": "bar_c_star"
+      },
+      {
+        "Grassmann_parity": 1,
+        "atom_id": "b_star_diff_0",
+        "canonical_order": 3,
+        "direction": "diff_0",
+        "ghost_number_in_suspended_complex": 1,
+        "role": "b_star"
+      },
+      {
+        "Grassmann_parity": 0,
+        "atom_id": "b_diff_1",
+        "canonical_order": 4,
+        "direction": "diff_1",
+        "ghost_number_in_suspended_complex": 0,
+        "role": "b"
+      },
+      {
+        "Grassmann_parity": 1,
+        "atom_id": "bar_c_diff_1",
+        "canonical_order": 5,
+        "direction": "diff_1",
+        "ghost_number_in_suspended_complex": 1,
+        "role": "bar_c"
+      },
+      {
+        "Grassmann_parity": 0,
+        "atom_id": "bar_c_star_diff_1",
+        "canonical_order": 6,
+        "direction": "diff_1",
+        "ghost_number_in_suspended_complex": 0,
+        "role": "bar_c_star"
+      },
+      {
+        "Grassmann_parity": 1,
+        "atom_id": "b_star_diff_1",
+        "canonical_order": 7,
+        "direction": "diff_1",
+        "ghost_number_in_suspended_complex": 1,
+        "role": "b_star"
+      },
+      {
+        "Grassmann_parity": 0,
+        "atom_id": "b_diff_2",
+        "canonical_order": 8,
+        "direction": "diff_2",
+        "ghost_number_in_suspended_complex": 0,
+        "role": "b"
+      },
+      {
+        "Grassmann_parity": 1,
+        "atom_id": "bar_c_diff_2",
+        "canonical_order": 9,
+        "direction": "diff_2",
+        "ghost_number_in_suspended_complex": 1,
+        "role": "bar_c"
+      },
+      {
+        "Grassmann_parity": 0,
+        "atom_id": "bar_c_star_diff_2",
+        "canonical_order": 10,
+        "direction": "diff_2",
+        "ghost_number_in_suspended_complex": 0,
+        "role": "bar_c_star"
+      },
+      {
+        "Grassmann_parity": 1,
+        "atom_id": "b_star_diff_2",
+        "canonical_order": 11,
+        "direction": "diff_2",
+        "ghost_number_in_suspended_complex": 1,
+        "role": "b_star"
+      },
+      {
+        "Grassmann_parity": 0,
+        "atom_id": "b_diff_3",
+        "canonical_order": 12,
+        "direction": "diff_3",
+        "ghost_number_in_suspended_complex": 0,
+        "role": "b"
+      },
+      {
+        "Grassmann_parity": 1,
+        "atom_id": "bar_c_diff_3",
+        "canonical_order": 13,
+        "direction": "diff_3",
+        "ghost_number_in_suspended_complex": 1,
+        "role": "bar_c"
+      },
+      {
+        "Grassmann_parity": 0,
+        "atom_id": "bar_c_star_diff_3",
+        "canonical_order": 14,
+        "direction": "diff_3",
+        "ghost_number_in_suspended_complex": 0,
+        "role": "bar_c_star"
+      },
+      {
+        "Grassmann_parity": 1,
+        "atom_id": "b_star_diff_3",
+        "canonical_order": 15,
+        "direction": "diff_3",
+        "ghost_number_in_suspended_complex": 1,
+        "role": "b_star"
+      },
+      {
+        "Grassmann_parity": 0,
+        "atom_id": "b_weyl",
+        "canonical_order": 16,
+        "direction": "weyl",
+        "ghost_number_in_suspended_complex": 0,
+        "role": "b"
+      },
+      {
+        "Grassmann_parity": 1,
+        "atom_id": "bar_c_weyl",
+        "canonical_order": 17,
+        "direction": "weyl",
+        "ghost_number_in_suspended_complex": 1,
+        "role": "bar_c"
+      },
+      {
+        "Grassmann_parity": 0,
+        "atom_id": "bar_c_star_weyl",
+        "canonical_order": 18,
+        "direction": "weyl",
+        "ghost_number_in_suspended_complex": 0,
+        "role": "bar_c_star"
+      },
+      {
+        "Grassmann_parity": 1,
+        "atom_id": "b_star_weyl",
+        "canonical_order": 19,
+        "direction": "weyl",
+        "ghost_number_in_suspended_complex": 1,
+        "role": "b_star"
+      }
+    ],
+    "gauge_directions": [
+      "diff_0",
+      "diff_1",
+      "diff_2",
+      "diff_3",
+      "weyl"
+    ],
+    "jet_prolongation_rule": "Q nabla_I = nabla_I Q AND S nabla_I = nabla_I S"
+  },
+  "gauge_fixed_cohomology": {
+    "H04_classes": [
+      "CT_C2",
+      "CT_E4",
+      "CT_C_DUAL_C"
+    ],
+    "H04_even_dimension": 2,
+    "H04_odd_dimension": 1,
+    "H14_classes": [
+      "ANOM_OMEGA_C2",
+      "ANOM_OMEGA_E4",
+      "ANOM_OMEGA_C_DUAL_C"
+    ],
+    "H14_even_dimension": 2,
+    "H14_exact_rows": [
+      "ANOM_OMEGA_BOX_R"
+    ],
+    "H14_odd_dimension": 1,
+    "comparison": "MINIMAL_TO_NONMINIMAL_TO_GAUGE_FIXED_CHAIN_ISOMORPHISMS_EXPLICIT",
+    "regularity_scope": "REGULAR_BACH_LOCUS"
+  },
+  "next_gate": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
+  "proof_sha256": "75230558af892947b9ee056cc6434f5e34d71e0c61e9e35b7c51d67a64b355f3",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/local_bv/nonminimal_gauge_fixed_contraction.py": "45662769c90e094b39037e440e62d06fcd07cc993d712ecb78a485f17ce182f9",
+      "quantum-weyl/local_bv/nonminimal_gauge_fixed_contraction_certificate.py": "5697345d3b2aec216dc65d2e856aaa6e9441c1d5ca7d9782184837b418734f80",
+      "quantum-weyl/local_bv/schema/gauge_fixed_bv_cohomology_result.schema.json": "84be65e407ec1c63e832749956f46f42b47beec6a6505b3698fff3d152fdca47",
+      "quantum-weyl/local_bv/schema/general_nonminimal_gauge_fixed_contraction.schema.json": "d92c11d98a38bef2ac2ff0bf636e7eacb6d59f10dee4339819d1a8865d8aa8c2",
+      "quantum-weyl/local_bv/tests/test_nonminimal_gauge_fixed_contraction.py": "02364538be67c8be3816768c37356c688746c156440caaf6d2e5b6a3b0e82ee3",
+      "quantum-weyl/local_bv/verify_nonminimal_gauge_fixed_contraction.py": "585d112926a5572bb2fd28b1234e72ac30e06409f67a1dbc3a75bf408361eac3",
+      "quantum-weyl/reports/general-nonminimal-gauge-fixed-contraction.md": "dcd0065b489e495fca8d05e160cec0b68b1089c0d50aaad2575e3d1a0f0320d9"
+    }
+  },
+  "result_artifacts": {
+    "H04": "quantum-weyl/local_bv/cohomology/H04_GAUGE_FIXED_BV_RESULT.json",
+    "H14": "quantum-weyl/local_bv/cohomology/H14_GAUGE_FIXED_BV_RESULT.json"
+  },
+  "result_id": "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION",
+  "result_state": "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN",
+  "schema": "quantum-weyl-general-nonminimal-gauge-fixed-contraction-v1",
+  "scope": {
+    "gauge_direction_count": 5,
+    "gauge_fixing": "ARBITRARY_INVERTIBLE_LOCAL_BV_CANONICAL_TRANSFORMATION",
+    "gauge_symmetry": "Diff_x_Weyl",
+    "locality": "POINTWISE_DOUBLET_ROWS_WITH_COVARIANT_JET_PROLONGATION",
+    "regularity": "REGULAR_BACH_LOCUS_FOR_MINIMAL_KOSZUL_TATE_INPUT"
+  }
+}

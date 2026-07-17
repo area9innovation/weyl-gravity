@@ -29,7 +29,6 @@ def verify() -> dict:
         if reference["sha256"] != hashlib.sha256(path.read_bytes()).hexdigest():
             raise ValueError(f"active frontier dependency drifted: {name}")
     for key in (
-        "FULL_BV_G2_COMPLETE",
         "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED",
         "GLOBAL_BRST_HADAMARD_STATE",
         "HADAMARD_EXISTENCE_THEOREM_APPLIES",

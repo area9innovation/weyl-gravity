@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-gauge-fixed-bv-cohomology-result-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "classical_commit", "dependency_tags", "ghost_number", "form_degree", "regularity_scope", "parity_dimensions", "classes", "exact_rows", "comparison", "proof_certificate", "claim_flags"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-gauge-fixed-bv-cohomology-result-v1"},
+    "result_id": {"enum": ["H04_GAUGE_FIXED_BV_RESULT", "H14_GAUGE_FIXED_BV_RESULT"]},
+    "result_state": {"const": "GAUGE_FIXED_BV_LOCAL_COHOMOLOGY_COMPLETE"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "ghost_number": {"type": "integer", "enum": [0, 1]},
+    "form_degree": {"const": 4},
+    "regularity_scope": {"const": "REGULAR_BACH_LOCUS"},
+    "parity_dimensions": {"const": {"even": 2, "odd": 1}},
+    "classes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["representative_id", "parity", "status"],
+        "properties": {
+          "representative_id": {"enum": ["CT_C2", "CT_E4", "CT_C_DUAL_C", "ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C"]},
+          "parity": {"enum": ["even", "odd"]},
+          "status": {"const": "NONTRIVIAL"}
+        }
+      }
+    },
+    "exact_rows": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {"enum": ["CT_BOX_R", "ANOM_OMEGA_BOX_R"]}
+    },
+    "comparison": {"const": "MINIMAL_TO_NONMINIMAL_TO_GAUGE_FIXED_CHAIN_ISOMORPHISMS_EXPLICIT"},
+    "proof_certificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "proof_sha256"],
+      "properties": {
+        "path": {"const": "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json"},
+        "proof_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "COHOMOLOGY_COMPLETE": true,
+        "COEFFICIENTS_COMPUTED": false,
+        "QME_RESTORED": false,
+        "LORENTZIAN_CERTIFIED": false
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"ghost_number": {"const": 0}}},
+      "then": {
+        "properties": {
+          "result_id": {"const": "H04_GAUGE_FIXED_BV_RESULT"},
+          "classes": {
+            "const": [
+              {"representative_id": "CT_C2", "parity": "even", "status": "NONTRIVIAL"},
+              {"representative_id": "CT_E4", "parity": "even", "status": "NONTRIVIAL"},
+              {"representative_id": "CT_C_DUAL_C", "parity": "odd", "status": "NONTRIVIAL"}
+            ]
+          },
+          "exact_rows": {"const": ["CT_BOX_R"]}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"ghost_number": {"const": 1}}},
+      "then": {
+        "properties": {
+          "result_id": {"const": "H14_GAUGE_FIXED_BV_RESULT"},
+          "classes": {
+            "const": [
+              {"representative_id": "ANOM_OMEGA_C2", "parity": "even", "status": "NONTRIVIAL"},
+              {"representative_id": "ANOM_OMEGA_E4", "parity": "even", "status": "NONTRIVIAL"},
+              {"representative_id": "ANOM_OMEGA_C_DUAL_C", "parity": "odd", "status": "NONTRIVIAL"}
+            ]
+          },
+          "exact_rows": {"const": ["ANOM_OMEGA_BOX_R"]}
+        }
+      }
+    }
+  ]
+}

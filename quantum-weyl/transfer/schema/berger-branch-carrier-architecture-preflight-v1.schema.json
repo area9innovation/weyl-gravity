@@ -35,7 +35,28 @@
       "additionalProperties": false
     },
     "acceptance_contract": {"type": "object"},
-    "quantum_critical_path": {"type": "object"},
+    "quantum_critical_path": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordered_gates", "parallel_analytic_gates", "optional_classical_interpretation_gate"],
+      "properties": {
+        "ordered_gates": {
+          "const": [
+            "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
+            "QME_RESTORATION_OR_OBSTRUCTION",
+            "QUANTUM_RESIDUAL_TRANSFER"
+          ]
+        },
+        "parallel_analytic_gates": {
+          "const": [
+            "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
+            "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
+            "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE"
+          ]
+        },
+        "optional_classical_interpretation_gate": {"const": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1"}
+      }
+    },
     "claim_flags": {
       "type": "object",
       "additionalProperties": false,

@@ -34,7 +34,7 @@ class BergerBranchCarrierArchitecturePreflightTests(unittest.TestCase):
         self.assertFalse(value["claim_flags"]["BRANCH_PROJECTOR_ACCEPTED"])
         self.assertEqual(
             value["quantum_critical_path"]["ordered_gates"][0],
-            "GENERAL_LOCAL_NONMINIMAL_DOUBLETS_AND_GAUGE_FIXED_CONTRACTION",
+            "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
         )
 
     def test_mapping_cylinder_is_reuse_library_not_adapter(self) -> None:

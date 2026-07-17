@@ -24,6 +24,7 @@ DEPENDENCIES = {
     "antifield_import": HERE / "classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json",
     "minimal_KT_collapse": HERE / "local_bv/certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json",
     "minimal_BV_H14": HERE / "local_bv/certificates/AFN0_DIFF_MIXED_MINIMAL_BV_H14.json",
+    "general_nonminimal_gauge_fixed": HERE / "local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
     "background_coefficients": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
@@ -64,6 +65,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "antifield_import": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2_IMPORTED_INDEPENDENTLY_REPLAYED",
         "minimal_KT_collapse": "MINIMAL_KT_COLLAPSE_PROVED_AFN0_WEYL_QUOTIENTS_LIFT_DIFF_MIXED_TOTAL_COMPLEX_OPEN",
         "minimal_BV_H14": "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS_NONMINIMAL_OPEN",
+        "general_nonminimal_gauge_fixed": "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
         "coupled_cyclicity_atlas": "EXACT_DEFECT_LOCALIZED_FACTOR_TWO_PARTIAL_REPAIR_IDENTIFIED",
@@ -127,6 +129,19 @@ def _load() -> dict[str, dict[str, Any]]:
         != "GENERAL_LOCAL_NONMINIMAL_DOUBLETS_AND_GAUGE_FIXED_CONTRACTION"
     ):
         raise ValueError("minimal-BV H14 frontier drifted")
+    g2 = values["general_nonminimal_gauge_fixed"]
+    g2_flags = g2.get("claim_flags", {})
+    if (
+        g2_flags.get("GENERAL_NONMINIMAL_DOUBLETS_CONTRACTED") is not True
+        or g2_flags.get("LOCAL_CANONICAL_GAUGE_FIXING_INVARIANCE_PROVED") is not True
+        or g2_flags.get("H04_GAUGE_FIXED_BV_COMPLETE") is not True
+        or g2_flags.get("H14_GAUGE_FIXED_BV_COMPLETE") is not True
+        or g2_flags.get("FULL_BV_G2_COMPLETE") is not True
+        or g2_flags.get("REGULATED_SLAVNOV_BREAKING_COMPUTED") is not False
+        or g2_flags.get("QME_RESTORED") is not False
+        or g2.get("next_gate") != "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING"
+    ):
+        raise ValueError("general nonminimal/gauge-fixed G2 frontier drifted")
     coefficient_flags = values["background_coefficients"].get("claim_flags", {})
     if (
         values["background_coefficients"].get("result_stage") != "COEFFICIENT_COMPUTED"
@@ -390,7 +405,7 @@ def _load() -> dict[str, dict[str, Any]]:
         or architecture_selection.get("rank_46_is_quantum_prerequisite")
         is not False
         or architecture_quantum_path.get("ordered_gates", [None])[0]
-        != "GENERAL_LOCAL_NONMINIMAL_DOUBLETS_AND_GAUGE_FIXED_CONTRACTION"
+        != "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING"
         or architecture.get("next_gate")
         != "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1"
     ):
@@ -471,7 +486,7 @@ def build() -> dict[str, Any]:
     result = {
         "schema": "quantum-weyl-active-frontier-v1",
         "result_id": "QUANTUM_WEYL_ACTIVE_FRONTIER",
-        "result_state": "G1_MINIMAL_BV_H14_AND_CLASSICAL_CAUSAL_CHAIN_READY_GLOBAL_HADAMARD_NONMINIMAL_QME_OPEN",
+        "result_state": "G2_LOCAL_BV_COHOMOLOGY_AND_CLASSICAL_CAUSAL_CHAIN_READY_GLOBAL_HADAMARD_QME_OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
             name: _dependency(DEPENDENCIES[name], payload)
@@ -480,7 +495,7 @@ def build() -> dict[str, Any]:
         "promotion_ladder": {
             "G0": "PASSED",
             "G1": "PASSED_AFN0_LOCAL_QUOTIENT",
-            "G2": "BLOCKED_GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION",
+            "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
             "G3": "PARTIAL_LOCAL_PARAMETRIX_AND_BACKGROUND_COEFFICIENTS_ONLY",
             "G4": "BLOCKED_QME_NOT_RESTORED",
             "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS",
@@ -491,8 +506,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
             },
             "local_obstruction_space": {
-                "status": "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS_NONMINIMAL_OPEN",
-                "next_gate": "GENERAL_LOCAL_NONMINIMAL_DOUBLETS_AND_GAUGE_FIXED_CONTRACTION",
+                "status": "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN",
+                "next_gate": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
             },
             "coefficient_and_QME": {
                 "status": "STANDARD_BACKGROUND_A_C_ONLY_REPOSITORY_SLAVNOV_BREAKING_OPEN",
@@ -590,6 +605,7 @@ def build() -> dict[str, Any]:
             "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": True,
             "MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC": True,
             "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS": True,
+            "GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE": True,
             "CLASSICAL_MAXWELL_TRANSFER_LANDED": True,
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM": True,
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM": True,
@@ -611,7 +627,7 @@ def build() -> dict[str, Any]:
             "RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED": False,
             "RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED": True,
             "RANK_46_IS_QUANTUM_PREREQUISITE": False,
-            "FULL_BV_G2_COMPLETE": False,
+            "FULL_BV_G2_COMPLETE": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
             "RENORMALIZED_LORENTZIAN_PRODUCTS": False,
@@ -620,11 +636,10 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "GENERAL_LOCAL_NONMINIMAL_DOUBLETS_AND_GAUGE_FIXED_CONTRACTION",
+            "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
-            "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
             "QME_RESTORATION_OR_OBSTRUCTION",
             "QUANTUM_RESIDUAL_TRANSFER",
             "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
@@ -638,7 +653,9 @@ def build() -> dict[str, Any]:
             "the pure-Diff and independent mixed H14 sectors vanish by the total-form "
             "comparison and exact degree-three invariant-polynomial calculation, leaving "
             "the minimal-BV H14 quotient complete with even/odd dimensions 2/1 while the "
-            "general nonminimal/gauge-fixed contraction remains open, "
+            "general nonminimal doublets contract pointwise and the contraction transports "
+            "under arbitrary invertible local BV-canonical gauge fixing, so the gauge-fixed "
+            "H04 and H14 quotients are complete with the same 2/1 dimensions on that locus, "
             "a complete classical causal chain, local Hadamard parametrices and a covariance "
             "lift. The repaired Maxwell transfer now replays coefficientwise with 1,890 full "
             "and 1,474 retained coefficients, zero full and retained q1/q2 defects, zero full "
@@ -675,8 +692,8 @@ def build() -> dict[str, Any]:
             "386=356+30 covariant curvature mapping cylinder only as a certified reuse library and "
             "fallback. Neither route currently supplies a Berger branch projector or authorizes "
             "mixing. Rank-46 resolution is an optional Paper 11 interpretation follow-up, not a "
-            "quantum prerequisite: minimal antifield BV cohomology and regulated repository Slavnov "
-            "breaking remain the algebraic critical path, while stationary/Hadamard construction is "
+            "quantum prerequisite: full local BV cohomology has reached G2 and regulated repository "
+            "Slavnov breaking is now the algebraic critical path, while stationary/Hadamard construction is "
             "parallel. This is a classical LOCAL-ALGEBRAIC acceptance, not a quantum result. "
             "The companion is null-cone decomposable, but this does not imply existence of a "
             "Hadamard state: the bosonic analytic hypothesis failure and the later full-BV "
@@ -687,8 +704,8 @@ def build() -> dict[str, Any]:
             "ungauged off-shell preflights plus the correct five-generator stabilizer "
             "authority, but polar cyclic/stabilizer descent and exceptional/global rows "
             "still block the all-sector classical triangle. "
-            "It does not establish full antifield BV cohomology, repository Slavnov coefficients, "
-            "a global BRST Hadamard state, renormalized products, QME restoration, "
+            "It does not establish repository Slavnov coefficients, a global BRST Hadamard state, "
+            "renormalized products, QME restoration, "
             "residual quantum transfer or a Lorentzian quantum theory."
         ),
     }
@@ -700,13 +717,17 @@ def validate(result: dict[str, Any]) -> None:
     if (
         result.get("result_id") != "QUANTUM_WEYL_ACTIVE_FRONTIER"
         or result.get("result_state")
-        != "G1_MINIMAL_BV_H14_AND_CLASSICAL_CAUSAL_CHAIN_READY_GLOBAL_HADAMARD_NONMINIMAL_QME_OPEN"
+        != "G2_LOCAL_BV_COHOMOLOGY_AND_CLASSICAL_CAUSAL_CHAIN_READY_GLOBAL_HADAMARD_QME_OPEN"
     ):
         raise ValueError("active frontier identity drifted")
     ladder = result.get("promotion_ladder", {})
-    if ladder.get("G1") != "PASSED_AFN0_LOCAL_QUOTIENT" or any(
-        not str(ladder.get(level, "")).startswith(("BLOCKED", "PARTIAL"))
-        for level in ("G2", "G3", "G4", "G5")
+    if (
+        ladder.get("G1") != "PASSED_AFN0_LOCAL_QUOTIENT"
+        or ladder.get("G2") != "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS"
+        or any(
+            not str(ladder.get(level, "")).startswith(("BLOCKED", "PARTIAL"))
+            for level in ("G3", "G4", "G5")
+        )
     ):
         raise ValueError("quantum promotion ladder was over-promoted")
     flags = result.get("claim_flags", {})
@@ -717,6 +738,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("CLASSICAL_ANTIFIELD_EXPORT_IMPORTED") is not True
         or flags.get("MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC") is not True
         or flags.get("MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS") is not True
+        or flags.get("GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE") is not True
+        or flags.get("FULL_BV_G2_COMPLETE") is not True
         or flags.get("CLASSICAL_MAXWELL_TRANSFER_LANDED") is not True
         or flags.get("MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
         or flags.get("MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
@@ -749,6 +772,8 @@ def validate(result: dict[str, Any]) -> None:
             "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED",
             "MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC",
             "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS",
+            "GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE",
+            "FULL_BV_G2_COMPLETE",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM",

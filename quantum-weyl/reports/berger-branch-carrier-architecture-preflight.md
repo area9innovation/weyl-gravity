@@ -37,11 +37,12 @@ list.
 ## Programme ordering
 
 The executable covariant antifield export v2 is accepted, its positive-AFN
-Koszul--Tate sector contracts on the regular Bach locus, and the minimal-BV
-H14 quotient is complete with even/odd dimensions `2/1`. The quantum
-algebraic critical path is now the general local nonminimal/gauge-fixed
-contraction, regulated repository Slavnov breaking, QME disposition and only
-then residual quantum transfer. Stationary/Hadamard work
+Koszul--Tate sector contracts on the regular Bach locus, and the general
+nonminimal doublets contract pointwise. Exact canonical transport proves that
+the gauge-fixed H04 and H14 quotients equal the minimal quotients, with
+even/odd dimensions `2/1`. The quantum algebraic critical path now starts at
+the regulated repository Slavnov breaking, followed by QME disposition and
+only then residual quantum transfer. Stationary/Hadamard work
 remains a parallel analytic rail. Rank-46 branch resolution is an optional
 classical interpretation follow-up.
 

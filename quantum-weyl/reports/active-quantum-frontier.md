@@ -5,8 +5,9 @@ certificates remain immutable receipts, but they are no longer all valid
 status sources. The frontier records explicit supersession edges and selects
 the strongest current artifact for each gate.
 
-The programme is at G1: the AFN0 counterterm and even/odd anomaly candidate
-quotients are complete. The classical causal chain, local Hadamard
+The programme is at G2 on the regular Bach locus: the counterterm and
+even/odd anomaly quotients are complete through the minimal, nonminimal and
+canonically gauge-fixed local BV complexes. The classical causal chain, local Hadamard
 parametrices, and canonical 26-to-54 covariance lift are also certified.
 The executable v2 antifield receiver is scope-aware and the actual covariant
 classical export is independently accepted. Its six minimal generators,
@@ -16,10 +17,14 @@ exactly on the regular Bach locus. The pure-Diff/mixed AFN0 total complex is
 now complete as well: the total-form comparison reduces its covariant sector
 to the certified Weyl representatives, and an exact rational small-algebra
 solve finds no degree-three metric invariant polynomial. The minimal-BV H14
-quotient therefore has even/odd dimensions `2/1`; the general
-nonminimal/gauge-fixed contraction is still required for G2.
+quotient therefore has even/odd dimensions `2/1`. The ten general nonminimal
+pairs now contract exactly on 25,080 graded regression monomials, their
+covariant jet prolongations commute with the horizontal differential, and a
+free-word normal-form calculation transports every SDR identity through
+arbitrary invertible local BV-canonical gauge fixing. The gauge-fixed H04 and
+H14 quotients consequently have the same `2/1` dimensions.
 These analytic inputs do not promote the lifecycle because the global BRST
-Hadamard covariance, full antifield BV quotient, repository Slavnov breaking,
+Hadamard covariance, repository Slavnov breaking,
 renormalized products, and QME remain open.
 
 The portable 64/36 carrier and the repaired coupled (q_2) are committed.
@@ -112,14 +117,13 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. import and explicitly contract the general local nonminimal/gauge-fixed doublets;
+1. compute the regulated repository Slavnov breaking against the completed H14 basis;
 2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;
-5. regulated repository Slavnov breaking;
-6. QME restoration or obstruction;
-7. residual quantum transfer;
-8. optionally, construct a rank-46 branch projector or a normalized obstruction for Paper 11 branch interpretation.
+5. QME restoration or obstruction;
+6. residual quantum transfer;
+7. optionally, construct a rank-46 branch projector or a normalized obstruction for Paper 11 branch interpretation.
 
 The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 `LORENTZIAN-CAUSAL` bookkeeping. It is not a quantum theorem.
