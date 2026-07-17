@@ -62,7 +62,7 @@ def build() -> dict[str, Any]:
     return {
         "schema": "quantum-weyl-antifield-contract-v2-certificate",
         "result_id": "ANTIFIELD_EXPORT_V2_EXECUTABLE_CONTRACT",
-        "result_state": "EXECUTABLE_V2_CONTRACT_READY_AWAITING_CLASSICAL_EXPORT",
+        "result_state": "EXECUTABLE_V2_CONTRACT_READY_SCOPE_AWARE",
         "classical_commit": "UNFROZEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "dependency_refs": dependencies,
@@ -90,9 +90,10 @@ def build() -> dict[str, Any]:
             "producer_booleans_not_used_as_authority": "VERIFIED",
             "filtered_local_complex_dry_run": "VERIFIED",
             "AFN0_view_dry_run": "VERIFIED",
+            "declared_graded_scope_projection": "VERIFIED",
             "content_hash_rerun_key": "VERIFIED",
             "mutation_suite": "VERIFIED",
-            "classical_export_imported": "NOT_AVAILABLE",
+            "classical_export_imported": "OUT_OF_SCOPE_USE_SEPARATE_IMPORT_RECEIPT",
             "minimal_BV_H04_H14": "NOT_COMPUTED",
         },
         "resource_policy": {
@@ -119,25 +120,27 @@ def build() -> dict[str, Any]:
         },
         "claim_flags": {
             "ANTIFIELD_EXPORT_V2_RECEIVER_READY": True,
+            "DECLARED_GRADED_SCOPE_ENFORCED": True,
             "INDEPENDENT_FILTRATION_REPLAY_READY": True,
             "FILTERED_COMPLEX_ADAPTER_READY": True,
-            "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": False,
+            "IMPORT_STATUS_DELEGATED_TO_SEPARATE_RECEIPT": True,
             "FULL_BV_G2_COMPLETE": False,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
             "QME_RESTORED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+        "next_gate": "USE_CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2_RECEIPT",
         "claim_boundary": (
             "This LOCAL-ALGEBRAIC certificate promotes only an executable receiving contract. "
             "The quantum consumer accepts exact rational canonical superpolynomials over a finite "
             "grading-bounded atom dictionary, reconstructs Q from delta, gamma and positive "
             "filtration components, independently evaluates delta^2, the delta-gamma "
             "anticommutator and Q^2, and dry-runs the resulting blocks through the existing "
-            "FilteredLocalComplex and AFN0-view APIs. Producer proof artifacts remain pinned "
+            "FilteredLocalComplex and AFN0-view APIs. The adapter enforces the declared graded "
+            "window and records projected monomials. Producer proof artifacts remain pinned "
             "provenance and are not used as mathematical authority. The synthetic fixture is a "
-            "contract regression, not classical Weyl-gravity data. No classical covariant "
-            "antifield export has arrived, no minimal-BV H^{0,4} or H^{1,4} quotient has been "
+            "contract regression, not classical Weyl-gravity data; export availability is "
+            "reported only by the separate import receipt. No minimal-BV H^{0,4} or H^{1,4} quotient has been "
             "computed, no anomaly coefficient or Slavnov breaking has been derived, and no QME, "
             "Lorentzian, residual-transfer, particle, or quantum claim is authorized."
         ),
@@ -177,19 +180,20 @@ def validate(value: dict[str, Any]) -> None:
     flags = value.get("claim_flags", {})
     if (
         flags.get("ANTIFIELD_EXPORT_V2_RECEIVER_READY") is not True
+        or flags.get("DECLARED_GRADED_SCOPE_ENFORCED") is not True
         or flags.get("INDEPENDENT_FILTRATION_REPLAY_READY") is not True
         or flags.get("FILTERED_COMPLEX_ADAPTER_READY") is not True
+        or flags.get("IMPORT_STATUS_DELEGATED_TO_SEPARATE_RECEIPT") is not True
         or any(
             flags.get(name) is not False
             for name in (
-                "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED",
                 "FULL_BV_G2_COMPLETE",
                 "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED",
                 "QME_RESTORED",
                 "QUANTUM_CLAIM",
             )
         )
-        or value.get("next_gate") != "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2"
+        or value.get("next_gate") != "USE_CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2_RECEIPT"
     ):
         raise ValueError("antifield v2 receiving contract crossed its claim boundary")
 
@@ -213,7 +217,7 @@ def main() -> int:
         OUTPUT.write_text(content)
     if args.check and OUTPUT.read_text() != content:
         raise SystemExit(f"stale antifield v2 contract: {OUTPUT}")
-    print("ANTIFIELD EXPORT V2 CONTRACT: EXECUTABLE RECEIVER READY; EXPORT PENDING")
+    print("ANTIFIELD EXPORT V2 CONTRACT: SCOPE-AWARE RECEIVER READY")
     return 0
 
 

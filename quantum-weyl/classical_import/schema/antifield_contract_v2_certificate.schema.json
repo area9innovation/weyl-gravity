@@ -7,7 +7,7 @@
   "properties": {
     "schema": {"const": "quantum-weyl-antifield-contract-v2-certificate"},
     "result_id": {"const": "ANTIFIELD_EXPORT_V2_EXECUTABLE_CONTRACT"},
-    "result_state": {"const": "EXECUTABLE_V2_CONTRACT_READY_AWAITING_CLASSICAL_EXPORT"},
+    "result_state": {"const": "EXECUTABLE_V2_CONTRACT_READY_SCOPE_AWARE"},
     "classical_commit": {"const": "UNFROZEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
     "dependency_refs": {"type": "object", "minProperties": 1},
@@ -30,19 +30,20 @@
     "claim_flags": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["ANTIFIELD_EXPORT_V2_RECEIVER_READY", "INDEPENDENT_FILTRATION_REPLAY_READY", "FILTERED_COMPLEX_ADAPTER_READY", "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED", "FULL_BV_G2_COMPLETE", "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "required": ["ANTIFIELD_EXPORT_V2_RECEIVER_READY", "DECLARED_GRADED_SCOPE_ENFORCED", "INDEPENDENT_FILTRATION_REPLAY_READY", "FILTERED_COMPLEX_ADAPTER_READY", "IMPORT_STATUS_DELEGATED_TO_SEPARATE_RECEIPT", "FULL_BV_G2_COMPLETE", "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED", "QME_RESTORED", "QUANTUM_CLAIM"],
       "properties": {
         "ANTIFIELD_EXPORT_V2_RECEIVER_READY": {"const": true},
+        "DECLARED_GRADED_SCOPE_ENFORCED": {"const": true},
         "INDEPENDENT_FILTRATION_REPLAY_READY": {"const": true},
         "FILTERED_COMPLEX_ADAPTER_READY": {"const": true},
-        "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": {"const": false},
+        "IMPORT_STATUS_DELEGATED_TO_SEPARATE_RECEIPT": {"const": true},
         "FULL_BV_G2_COMPLETE": {"const": false},
         "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": {"const": false},
         "QME_RESTORED": {"const": false},
         "QUANTUM_CLAIM": {"const": false}
       }
     },
-    "next_gate": {"const": "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2"},
+    "next_gate": {"const": "USE_CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2_RECEIPT"},
     "claim_boundary": {"type": "string", "minLength": 700},
     "provenance": {"type": "object"},
     "verification_receipts": {"type": "array", "minItems": 3},

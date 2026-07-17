@@ -381,17 +381,41 @@ def _dry_run_adapter(
     atoms: Mapping[str, dict[str, Any]],
     atom_gradings: Mapping[str, Grading],
     components: Mapping[int, Mapping[str, Polynomial]],
+    scope: Mapping[str, Any],
 ) -> dict[str, Any]:
+    ghost_min, ghost_max = scope["ghost_number_range"]
+    dimension_bound = _fraction(
+        scope["engineering_dimension_bound"], "engineering_dimension_bound"
+    )
+
+    def admitted(monomial: Monomial) -> bool:
+        grading = _monomial_grading(monomial, atom_gradings)
+        derivative_order = sum(
+            atoms[factor]["covariant_derivative_order"] for factor in monomial
+        )
+        return (
+            ghost_min <= grading.ghost <= ghost_max
+            and 0 <= grading.antifield <= scope["antifield_number_maximum"]
+            and 0 <= grading.form <= scope["maximum_form_degree"]
+            and grading.dimension <= dimension_bound
+            and derivative_order <= scope["derivative_order_bound"]
+        )
+
     monomials: set[Monomial] = {(atom,) for atom in atoms}
     for rows in components.values():
         for image in rows.values():
-            monomials.update(image)
+            monomials.update(monomial for monomial in image if admitted(monomial))
+    projected: set[Monomial] = set()
     for _ in range(16):
         added: set[Monomial] = set()
         for monomial in monomials:
             polynomial = {monomial: Fraction(1)}
             for rows in components.values():
-                added.update(_apply_component(polynomial, rows, atoms))
+                for target in _apply_component(polynomial, rows, atoms):
+                    if admitted(target):
+                        added.add(target)
+                    else:
+                        projected.add(target)
         if added <= monomials:
             break
         monomials.update(added)
@@ -426,6 +450,9 @@ def _dry_run_adapter(
             for column, monomial in enumerate(source_basis):
                 image = _apply_component({monomial: Fraction(1)}, rows, atoms)
                 for target, coefficient in image.items():
+                    if not admitted(target):
+                        projected.add(target)
+                        continue
                     if target not in target_index:
                         raise AntifieldExportV2Error("filtered adapter target escaped closure")
                     entries[(target_index[target], column)] = coefficient
@@ -443,6 +470,23 @@ def _dry_run_adapter(
         "afn0_space_count": sum(
             bool(labels) for degree, labels in spaces.items() if degree.antifield_number == 0
         ),
+        "scope_projection": {
+            "status": "DECLARED_GRADED_WINDOW_ENFORCED",
+            "ghost_number_range": list(scope["ghost_number_range"]),
+            "antifield_number_maximum": scope["antifield_number_maximum"],
+            "maximum_form_degree": scope["maximum_form_degree"],
+            "engineering_dimension_bound": scope["engineering_dimension_bound"],
+            "derivative_order_bound": scope["derivative_order_bound"],
+            "projected_monomial_count": len(projected),
+            "projected_manifest_sha256": _digest(
+                sorted(
+                    (list(monomial) for monomial in projected),
+                    key=lambda factors: tuple(
+                        atoms[factor]["canonical_order"] for factor in factors
+                    ),
+                )
+            ),
+        },
         "checks": {**checks, **afn0},
         "block_manifest_sha256": _digest(manifest),
     }
@@ -722,7 +766,7 @@ def validate_export_v2(
         for check in checks:
             _verify_pinned(repository_root, commit, check["proof_artifact"])
 
-    adapter = _dry_run_adapter(atoms, atom_gradings, all_components)
+    adapter = _dry_run_adapter(atoms, atom_gradings, all_components, scope)
     return {
         "status": "EXECUTABLE_V2_EXPORT_INDEPENDENTLY_REPLAYED",
         "classical_commit": commit,

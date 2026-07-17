@@ -23,7 +23,7 @@
     },
     "active_rows": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/row"}},
     "supersession_ledger": {
-      "type": "array", "minItems": 13, "maxItems": 13,
+      "type": "array", "minItems": 14, "maxItems": 14,
       "items": {
         "type": "object", "additionalProperties": false,
         "required": ["historical_result_id", "active_result_id", "disposition"],
@@ -40,6 +40,7 @@
       "properties": {
         "ACTIVE_FRONTIER_LEDGER": {"const": true}, "AFN0_G1_COMPLETE": {"const": true},
         "ANTIFIELD_EXPORT_V2_RECEIVER_READY": {"const": true},
+        "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": {"const": true},
         "CLASSICAL_MAXWELL_TRANSFER_LANDED": {"const": true}, "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM": {"const": true},
         "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM": {"const": true},
         "COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED": {"const": true},

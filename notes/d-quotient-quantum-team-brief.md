@@ -317,14 +317,14 @@ anomaly or (D)-anomaly theorem.
 
 ### Work package Q-G1: complete the local anomaly complex
 
-The even and odd AFN0 quotients are complete. The active receiving gate is now
-`ANTIFIELD_EXPORT_V2_EXECUTABLE_CONTRACT`: it accepts a strict exact
-superpolynomial atom algebra, independently replays `delta`, `gamma`, and
-`Q`, and dry-runs the result through the filtered-complex and AFN0 APIs. The
-actual covariant classical export remains absent.
+The even and odd AFN0 quotients are complete. The scope-aware executable V2
+receiver now independently accepts `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2`:
+six minimal generators, eighteen covariant atoms, exact `delta`, `gamma`, and
+`Q` rows, pinned proof artifacts, and bounded filtered-complex/AFN0 replay all
+pass. The previous `g (Lie_omega)^n` closure failure is retained as a resolved
+regression receipt.
 
-After `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` lands, extend the AFN0 result
-to the minimal antifield/Koszul--Tate sectors in both parities, pure-Diff and
+Extend the AFN0 result to the minimal antifield/Koszul--Tate sectors in both parities, pure-Diff and
 mixed rows, generalized connections, and all required lower-form carriers.
 Quotient exact tensor graphs by Bianchi, Grassmann, integration-by-parts, and
 four-dimensional identities. Construct the map from local anomaly densities

@@ -1,8 +1,8 @@
 # Minimal-BV antifield V2 receiver obstruction
 
 The classical adapted-coordinate filtration passes `delta^2=0`,
-`delta gamma+gamma delta=0`, `Q=delta+gamma`, and `Q^2=0`.  The current
-quantum V2 receiver then stops with:
+`delta gamma+gamma delta=0`, `Q=delta+gamma`, and `Q^2=0`. The
+pre-scope-aware quantum V2 receiver stopped with:
 
 ```text
 filtered adapter closure did not stabilize
@@ -16,10 +16,11 @@ The exact witness is not a classical defect.  With
 g, g Lie_omega, g Lie_omega^2, ...
 ```
 
-The receiver declares a finite ghost-number and engineering-dimension scope,
-but `_dry_run_adapter` does not use either bound.  The safe repair is to
-project generated monomials to the declared filtered window, or to add
-generalized-connection/quotient relations to the schema.  Collapsing a full
-BRST variation into one opaque atom is explicitly rejected.
+That receiver declared a finite ghost-number and engineering-dimension scope,
+but `_dry_run_adapter` did not use either bound. The quantum team subsequently
+projected generated monomials to the declared filtered window without
+collapsing a full BRST variation into an opaque atom. This report preserves
+the historical regression witness; the separate import receipt records the
+current acceptance state.
 
-No official V2 export or minimal-BV cohomology promotion is made here.
+No minimal-BV cohomology promotion is made here.

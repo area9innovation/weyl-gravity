@@ -8,9 +8,10 @@ the strongest current artifact for each gate.
 The programme is at G1: the AFN0 counterterm and even/odd anomaly candidate
 quotients are complete. The classical causal chain, local Hadamard
 parametrices, and canonical 26-to-54 covariance lift are also certified.
-The executable v2 antifield receiver is ready: it independently evaluates
-the filtered differential and dry-runs the exact blocks through the local-BV
-filtered-complex API. The actual covariant classical export is still absent.
+The executable v2 antifield receiver is scope-aware and the actual covariant
+classical export is independently accepted. Its six minimal generators,
+eighteen atoms, exact filtration identities, pinned proof artifacts, and
+bounded filtered-complex replay pass. The minimal-BV quotient is still open.
 These analytic inputs do not promote the lifecycle because the global BRST
 Hadamard covariance, full antifield BV quotient, repository Slavnov breaking,
 renormalized products, and QME remain open.
@@ -105,15 +106,14 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. supply and accept the executable classical minimal-BV antifield export v2;
-2. compute minimal BV cohomology with Koszul--Tate rows;
-3. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
-4. retained 26-row zero-frequency spectral carrier;
-5. typed companion microlocal transport and global covariance;
-6. regulated repository Slavnov breaking;
-7. QME restoration or obstruction;
-8. residual quantum transfer;
-9. optionally, construct a rank-46 branch projector or a normalized obstruction for Paper 11 branch interpretation.
+1. compute minimal BV cohomology with Koszul--Tate rows;
+2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
+3. retained 26-row zero-frequency spectral carrier;
+4. typed companion microlocal transport and global covariance;
+5. regulated repository Slavnov breaking;
+6. QME restoration or obstruction;
+7. residual quantum transfer;
+8. optionally, construct a rank-46 branch projector or a normalized obstruction for Paper 11 branch interpretation.
 
 The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 `LORENTZIAN-CAUSAL` bookkeeping. It is not a quantum theorem.

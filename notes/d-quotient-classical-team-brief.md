@@ -1060,17 +1060,18 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    regression inputs.  The remaining causal generality gate is C-G2: state
    and verify uniform hypotheses on an open background class.  The connected
    branch-projector request is now separately closed by item 6's obstruction.
-9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` foundation is now
-   exact: all six minimal roles, the Bach Euler coordinate, both Noether rows,
-   Lie/Weyl covariance, and the four filtration identities replay.  The
-   official export remains false because the quantum V2 adapter demands
-   literal finite free-superalgebra closure while ignoring its declared
-   grading window; the even `Lie_omega=L_xi omega` atom generates the exact
-   tower `g (Lie_omega)^n`.  The normalized receiver obstruction is the
-   authoritative handoff.  Quantum must either make `_dry_run_adapter`
-   scope-aware or admit generalized-connection/quotient relations, then rerun
-   the unchanged classical foundation before computing minimal-BV
-   `H^{0,4}` and `H^{1,4}`.
+   C-G2 has reached G3 on the global conformal orbit of the cylinder with a
+   transported gauge fermion.  Its next gate is local patching/new topology or
+   a conformally Einstein/Bach-flat curvature-obstruction calculation.
+9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
+   all six minimal roles, the Bach Euler coordinate, both Noether rows,
+   Lie/Weyl covariance, and the four filtration identities replay. Quantum
+   repaired `_dry_run_adapter` by enforcing the declared graded window and
+   independently accepted the unchanged export. The former
+   `g (Lie_omega)^n` finite-closure obstruction remains a historical
+   regression receipt. The next quantum gate is the minimal-BV `H^{0,4}` and
+   `H^{1,4}` quotient; neither that quotient nor a QME claim follows from
+   import alone.
 10. Continue the deformation, Yang--Mills and boundary rails as independent
    generality tests, not prerequisites for the Berger relational-observable
    or causal-transfer gates.

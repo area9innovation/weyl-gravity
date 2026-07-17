@@ -27,8 +27,9 @@ class AntifieldContractV2CertificateTests(unittest.TestCase):
         value = build()
         flags = value["claim_flags"]
         self.assertTrue(flags["ANTIFIELD_EXPORT_V2_RECEIVER_READY"])
+        self.assertTrue(flags["DECLARED_GRADED_SCOPE_ENFORCED"])
         self.assertTrue(flags["INDEPENDENT_FILTRATION_REPLAY_READY"])
-        self.assertFalse(flags["CLASSICAL_ANTIFIELD_EXPORT_IMPORTED"])
+        self.assertTrue(flags["IMPORT_STATUS_DELEGATED_TO_SEPARATE_RECEIPT"])
         self.assertFalse(flags["FULL_BV_G2_COMPLETE"])
         self.assertFalse(flags["QME_RESTORED"])
         validate(value)

@@ -35,14 +35,29 @@ hashes, and working-tree/commit divergence.
 
 ## Slow-run policy
 
-The inexpensive arrival gate always runs. The production minimal-BV quotient
+The inexpensive arrival gate always runs. Generated monomials are projected
+to the declared ghost, antifield, form, engineering-dimension, and derivative
+window before finite block assembly, while the generator identities are
+checked on the untruncated exact rows. The production minimal-BV quotient
 runs only when a scope, generator, atom, differential, dependency, or AFN0
 basis-manifest hash changes. The full repository suite is reserved for shared
 canonical-algebra or cohomology-engine changes and theorem promotion.
 
 ## Boundary
 
-This is a receiving contract with a synthetic regression fixture. The actual
-covariant classical antifield export remains absent. No minimal-BV quotient,
-anomaly coefficient, Slavnov breaking, QME, Lorentzian, or quantum statement
-has been computed.
+This file describes a receiving contract with a synthetic regression fixture;
+the separate import receipt is authoritative for export availability. The
+contract itself computes no minimal-BV quotient, anomaly coefficient, Slavnov
+breaking, QME, Lorentzian, or quantum statement.
+
+## Accepted classical export
+
+The separate receipt
+[`CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json`](certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json)
+accepts the unchanged classical foundation at commit
+`3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca`. It independently replays six
+minimal generators, eighteen covariant atoms, the exact filtration identities,
+and the pinned dependency/proof artifacts. The finite scope contains 28
+monomials in twelve filtered spaces; seven generated monomials outside the
+declared window are recorded and projected. The next gate is the actual
+minimal-BV relative-cohomology quotient.

@@ -34,10 +34,6 @@ class BergerBranchCarrierArchitecturePreflightTests(unittest.TestCase):
         self.assertFalse(value["claim_flags"]["BRANCH_PROJECTOR_ACCEPTED"])
         self.assertEqual(
             value["quantum_critical_path"]["ordered_gates"][0],
-            "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
-        )
-        self.assertEqual(
-            value["quantum_critical_path"]["ordered_gates"][1],
             "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS",
         )
 

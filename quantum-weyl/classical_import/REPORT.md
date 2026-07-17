@@ -140,8 +140,11 @@ The consumer reconstructs `Q` from `delta`, `gamma`, and all positive
 filtration components, independently evaluates the filtration identities on
 every atom, closes the admitted monomials, and dry-runs exact sparse blocks
 through `FilteredLocalComplex` and its AFN0 view. Producer proof booleans are
-retained only as pinned provenance. The real classical v2 export remains the
-next gate; the passing synthetic fixture is not Weyl-gravity data.
+retained only as pinned provenance. The receiver now enforces the declared
+graded scope, and the real classical export has passed it independently in
+[`CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json`](certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json).
+That import closes the handoff gate but does not compute the minimal-BV
+relative cohomology.
 
 ## Cylinder branch
 

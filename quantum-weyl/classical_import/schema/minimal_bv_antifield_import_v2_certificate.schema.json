@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-minimal-bv-antifield-import-v2-certificate.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "classical_commit", "dependency_tags", "dependency_refs", "imported_export", "independent_replay", "receiver_obstruction_resolution", "claim_flags", "next_gate", "claim_boundary", "resource_policy", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-minimal-bv-antifield-import-v2-certificate"},
+    "result_id": {"const": "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2"},
+    "result_state": {"const": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2_IMPORTED_INDEPENDENTLY_REPLAYED"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["classical_export", "executable_receiving_contract", "historical_receiver_obstruction"],
+      "properties": {
+        "classical_export": {"$ref": "#/$defs/reference"},
+        "executable_receiving_contract": {"$ref": "#/$defs/reference"},
+        "historical_receiver_obstruction": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "imported_export": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "result_state", "generator_count", "atom_count", "component_shifts", "canonical_hashes"],
+      "properties": {
+        "result_id": {"const": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2"},
+        "result_state": {"const": "EXPORTED_EXECUTABLE_MINIMAL_BV_FILTRATION"},
+        "generator_count": {"const": 6},
+        "atom_count": {"type": "integer", "minimum": 6},
+        "component_shifts": {"type": "array", "items": {"type": "integer"}},
+        "canonical_hashes": {"type": "object", "minProperties": 5}
+      }
+    },
+    "independent_replay": {
+      "type": "object",
+      "required": ["status", "producer_proofs_used_as_authority", "proof_artifact_integrity", "filtered_complex_adapter"],
+      "properties": {
+        "status": {"const": "EXECUTABLE_V2_EXPORT_INDEPENDENTLY_REPLAYED"},
+        "producer_proofs_used_as_authority": {"const": false},
+        "proof_artifact_integrity": {"const": "VERIFIED"},
+        "filtered_complex_adapter": {
+          "type": "object", "required": ["status", "scope_projection", "checks"],
+          "properties": {
+            "status": {"const": "FILTERED_LOCAL_COMPLEX_DRY_RUN_VERIFIED"},
+            "scope_projection": {
+              "type": "object", "required": ["status"],
+              "properties": {"status": {"const": "DECLARED_GRADED_WINDOW_ENFORCED"}}
+            },
+            "checks": {"type": "object"}
+          }
+        }
+      }
+    },
+    "receiver_obstruction_resolution": {
+      "type": "object", "additionalProperties": false,
+      "required": ["historical_failure", "repair", "scope_projection_status", "projected_monomial_count", "untruncated_generator_identities_retained", "bounded_filtered_identities_replayed"],
+      "properties": {
+        "historical_failure": {"const": "filtered adapter closure did not stabilize"},
+        "repair": {"type": "string", "minLength": 40},
+        "scope_projection_status": {"const": "DECLARED_GRADED_WINDOW_ENFORCED"},
+        "projected_monomial_count": {"type": "integer", "minimum": 1},
+        "untruncated_generator_identities_retained": {"const": true},
+        "bounded_filtered_identities_replayed": {"const": true}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ANTIFIELD_EXPORT_V2_RECEIVER_READY", "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED", "CLASSICAL_MINIMAL_BV_FILTRATION_IDENTITIES_EXACT", "FILTERED_COMPLEX_ADAPTER_REPLAYED", "MINIMAL_BV_H04_H14_COMPUTED", "FULL_BV_G2_COMPLETE", "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "ANTIFIELD_EXPORT_V2_RECEIVER_READY": {"const": true},
+        "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": {"const": true},
+        "CLASSICAL_MINIMAL_BV_FILTRATION_IDENTITIES_EXACT": {"const": true},
+        "FILTERED_COMPLEX_ADAPTER_REPLAYED": {"const": true},
+        "MINIMAL_BV_H04_H14_COMPUTED": {"const": false},
+        "FULL_BV_G2_COMPLETE": {"const": false},
+        "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "resource_policy": {"type": "object"},
+    "provenance": {"type": "object"}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

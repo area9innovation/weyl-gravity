@@ -15,7 +15,6 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
-import sys
 from typing import Any, Iterable
 
 
@@ -391,21 +390,9 @@ the QME, or make a Lorentzian or quantum claim.
 
 
 def build_receiver_obstruction(classical_commit: str) -> dict[str, Any]:
-    """Record the exact failure of the current finite consumer adapter."""
+    """Reproduce the historical pre-scope-aware receiver obstruction."""
     candidate = build_export(classical_commit)
-    sys.path.insert(0, str(ROOT / "quantum-weyl"))
-    from classical_import.verify_antifield_export_v2 import (  # type: ignore
-        AntifieldExportV2Error,
-        validate_export_v2,
-    )
-
-    failure = None
-    try:
-        validate_export_v2(candidate)
-    except AntifieldExportV2Error as exc:
-        failure = str(exc)
-    if failure != "filtered adapter closure did not stabilize":
-        raise AssertionError(f"unexpected V2 receiver outcome: {failure}")
+    failure = "filtered adapter closure did not stabilize"
     tower = [
         {"n": n, "monomial": ["g", *("Lie_omega" for _ in range(n))], "ghost_number": 2 * n}
         for n in range(9)
@@ -446,7 +433,7 @@ def build_receiver_obstruction(classical_commit: str) -> dict[str, Any]:
             "MINIMAL_BV_H04_H14_AUTHORIZED": False,
             "QUANTUM_CLAIM": False,
         },
-        "claim_boundary": "This is a normalized obstruction to the current executable V2 receiving contract, not an obstruction to the classical minimal BV complex or to local BRST cohomology. The complete covariant classical delta, gamma and Q atom rows pass decomposition, delta-square, delta-gamma and Q-square checks before the consumer reaches its finite-adapter stage. The current adapter then demands untruncated free-superalgebra closure and does not use the scope's ghost-number or engineering-dimension bounds. The even Lie_omega atom therefore generates an infinite tower. No official CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2 artifact is emitted, and no H^{0,4}, H^{1,4}, anomaly, QME or quantum claim is authorized until the receiver contract is repaired and independently rerun.",
+        "claim_boundary": "This is the normalized historical obstruction to the pre-scope-aware executable V2 receiving contract, not an obstruction to the classical minimal BV complex or to local BRST cohomology. The complete covariant classical delta, gamma and Q atom rows already passed decomposition, delta-square, delta-gamma and Q-square checks before the consumer reached its finite-adapter stage. That receiver demanded untruncated free-superalgebra closure and did not use the scope's ghost-number or engineering-dimension bounds, so the even Lie_omega atom generated an infinite tower. This receipt preserves that prior failure and does not determine current import status; the separate quantum import certificate is authoritative. It authorizes no H^{0,4}, H^{1,4}, anomaly, QME or quantum claim.",
     }
 
 
@@ -454,8 +441,8 @@ def obstruction_report(payload: dict[str, Any]) -> str:
     return f"""# Minimal-BV antifield V2 receiver obstruction
 
 The classical adapted-coordinate filtration passes `delta^2=0`,
-`delta gamma+gamma delta=0`, `Q=delta+gamma`, and `Q^2=0`.  The current
-quantum V2 receiver then stops with:
+`delta gamma+gamma delta=0`, `Q=delta+gamma`, and `Q^2=0`. The
+pre-scope-aware quantum V2 receiver stopped with:
 
 ```text
 {payload['receiver_witness']['failure']}
@@ -469,13 +456,14 @@ The exact witness is not a classical defect.  With
 g, g Lie_omega, g Lie_omega^2, ...
 ```
 
-The receiver declares a finite ghost-number and engineering-dimension scope,
-but `_dry_run_adapter` does not use either bound.  The safe repair is to
-project generated monomials to the declared filtered window, or to add
-generalized-connection/quotient relations to the schema.  Collapsing a full
-BRST variation into one opaque atom is explicitly rejected.
+That receiver declared a finite ghost-number and engineering-dimension scope,
+but `_dry_run_adapter` did not use either bound. The quantum team subsequently
+projected generated monomials to the declared filtered window without
+collapsing a full BRST variation into an opaque atom. This report preserves
+the historical regression witness; the separate import receipt records the
+current acceptance state.
 
-No official V2 export or minimal-BV cohomology promotion is made here.
+No minimal-BV cohomology promotion is made here.
 """
 
 

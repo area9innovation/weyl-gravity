@@ -157,6 +157,19 @@ class AntifieldExportV2Tests(unittest.TestCase):
             with self.assertRaisesRegex(AntifieldExportV2Error, "working-tree"):
                 validate_export_v2(payload, repository_root=root)
 
+    def test_declared_scope_closes_the_classical_even_lie_tower(self) -> None:
+        from d_quotient_classical.minimal_bv_antifield.classical_minimal_bv_antifield_export_v2 import (
+            build_export,
+        )
+
+        result = validate_export_v2(build_export("0" * 40))
+        adapter = result["filtered_complex_adapter"]
+        projection = adapter["scope_projection"]
+        self.assertEqual(projection["status"], "DECLARED_GRADED_WINDOW_ENFORCED")
+        self.assertEqual(projection["ghost_number_range"], [-2, 2])
+        self.assertGreater(projection["projected_monomial_count"], 0)
+        self.assertEqual(adapter["checks"]["filtered_Q_squared_zero"], "VERIFIED")
+
 
 if __name__ == "__main__":
     unittest.main()

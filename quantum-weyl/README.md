@@ -63,7 +63,7 @@ Lorentzian QME theorem.
 ## Layout
 
 ```text
-classical_import/   schemas, content-addressed snapshots, freeze certificates
+classical_import/   schemas, content-addressed snapshots, freeze/import certificates
 local_bv/           fields, jets, differential, invariants, descent, cohomology
 counterterms/       ghost-number-zero classes and operator mixing
 anomalies/          ghost-number-one, antifield, Diff/Weyl, and parity sectors

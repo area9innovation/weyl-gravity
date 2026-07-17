@@ -20,15 +20,17 @@ class ClassicalMinimalBVAntifieldV2Tests(unittest.TestCase):
         self.assertIn("B^{mu nu}", action["Euler_coordinate"])
         self.assertIn("nabla_nu g_star", noether["Koszul_Tate_rows"]["delta xi_star_mu"])
 
-    def test_quantum_receiver_reaches_only_finite_adapter_failure(self) -> None:
+    def test_quantum_receiver_accepts_the_declared_graded_window(self) -> None:
         sys.path.insert(0, str(producer.ROOT / "quantum-weyl"))
-        from classical_import.verify_antifield_export_v2 import AntifieldExportV2Error, validate_export_v2
+        from classical_import.verify_antifield_export_v2 import validate_export_v2
 
-        with self.assertRaisesRegex(AntifieldExportV2Error, "filtered adapter closure did not stabilize"):
-            validate_export_v2(producer.build_export("0" * 40))
+        replay = validate_export_v2(producer.build_export("0" * 40))
+        projection = replay["filtered_complex_adapter"]["scope_projection"]
+        self.assertEqual(projection["status"], "DECLARED_GRADED_WINDOW_ENFORCED")
+        self.assertGreater(projection["projected_monomial_count"], 0)
 
-    def test_no_official_export_is_written(self) -> None:
-        self.assertFalse(producer.OUTPUT.exists())
+    def test_official_export_is_written(self) -> None:
+        self.assertTrue(producer.OUTPUT.exists())
 
 
 if __name__ == "__main__":

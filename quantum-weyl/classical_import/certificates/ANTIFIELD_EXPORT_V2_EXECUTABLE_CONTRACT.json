@@ -4,9 +4,10 @@
     "Q_reconstructed_from_filtration_components": "VERIFIED",
     "Q_squared_independently_replayed": "VERIFIED",
     "canonical_Grassmann_order_and_odd_nilpotence": "VERIFIED",
-    "classical_export_imported": "NOT_AVAILABLE",
+    "classical_export_imported": "OUT_OF_SCOPE_USE_SEPARATE_IMPORT_RECEIPT",
     "complete_minimal_field_ghost_antifield_dictionary": "VERIFIED",
     "content_hash_rerun_key": "VERIFIED",
+    "declared_graded_scope_projection": "VERIFIED",
     "delta_gamma_anticommutator_independently_replayed": "VERIFIED",
     "delta_squared_independently_replayed": "VERIFIED",
     "exact_rational_superpolynomial_AST": "VERIFIED",
@@ -17,12 +18,13 @@
     "producer_booleans_not_used_as_authority": "VERIFIED",
     "strict_Draft_2020_12_export_schema": "VERIFIED"
   },
-  "claim_boundary": "This LOCAL-ALGEBRAIC certificate promotes only an executable receiving contract. The quantum consumer accepts exact rational canonical superpolynomials over a finite grading-bounded atom dictionary, reconstructs Q from delta, gamma and positive filtration components, independently evaluates delta^2, the delta-gamma anticommutator and Q^2, and dry-runs the resulting blocks through the existing FilteredLocalComplex and AFN0-view APIs. Producer proof artifacts remain pinned provenance and are not used as mathematical authority. The synthetic fixture is a contract regression, not classical Weyl-gravity data. No classical covariant antifield export has arrived, no minimal-BV H^{0,4} or H^{1,4} quotient has been computed, no anomaly coefficient or Slavnov breaking has been derived, and no QME, Lorentzian, residual-transfer, particle, or quantum claim is authorized.",
+  "claim_boundary": "This LOCAL-ALGEBRAIC certificate promotes only an executable receiving contract. The quantum consumer accepts exact rational canonical superpolynomials over a finite grading-bounded atom dictionary, reconstructs Q from delta, gamma and positive filtration components, independently evaluates delta^2, the delta-gamma anticommutator and Q^2, and dry-runs the resulting blocks through the existing FilteredLocalComplex and AFN0-view APIs. The adapter enforces the declared graded window and records projected monomials. Producer proof artifacts remain pinned provenance and are not used as mathematical authority. The synthetic fixture is a contract regression, not classical Weyl-gravity data; export availability is reported only by the separate import receipt. No minimal-BV H^{0,4} or H^{1,4} quotient has been computed, no anomaly coefficient or Slavnov breaking has been derived, and no QME, Lorentzian, residual-transfer, particle, or quantum claim is authorized.",
   "claim_flags": {
     "ANTIFIELD_EXPORT_V2_RECEIVER_READY": true,
-    "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": false,
+    "DECLARED_GRADED_SCOPE_ENFORCED": true,
     "FILTERED_COMPLEX_ADAPTER_READY": true,
     "FULL_BV_G2_COMPLETE": false,
+    "IMPORT_STATUS_DELEGATED_TO_SEPARATE_RECEIPT": true,
     "INDEPENDENT_FILTRATION_REPLAY_READY": true,
     "QME_RESTORED": false,
     "QUANTUM_CLAIM": false,
@@ -42,20 +44,20 @@
     "tier_2": "No real classical export or production quotient is present; exact fixture, mutation, pinning, and adapter tests cover this receiving-contract change.",
     "tier_3": "No shared algebra, quotient theorem, coefficient, QME lifecycle, Lorentzian construction, paper freeze, or release boundary is promoted."
   },
-  "next_gate": "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+  "next_gate": "USE_CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2_RECEIPT",
   "provenance": {
     "dependency_manifest_sha256": "4574a382f71cf8697e0dbdf49856196fc40064c4caad58181aae9978e39b15ef",
     "source_manifest": {
-      "quantum-weyl/classical_import/REPORT_V2.md": "f313c9c45608884988b92f5b1d35905e05f0b79376a19be75e27feb1d83e0703",
-      "quantum-weyl/classical_import/antifield_contract_v2_certificate.py": "aae10a323b22bb93fd3293ec0f37807321846488e8698e711fbf7f6276cacae3",
-      "quantum-weyl/classical_import/schema/antifield_contract_v2_certificate.schema.json": "4d7768c7b25f50dcc46c99009a258c918f43af14e10dbe9a263e36c089e2cdae",
+      "quantum-weyl/classical_import/REPORT_V2.md": "14c80eeaa46e8f184c53e0db8d136acfdd36efa1278f0dde45936327bff95f54",
+      "quantum-weyl/classical_import/antifield_contract_v2_certificate.py": "5064e18979ed40fc2a0c952763d41cc931775013ea75549fefda8c964320ae7f",
+      "quantum-weyl/classical_import/schema/antifield_contract_v2_certificate.schema.json": "d698660fbc62be80e9c7130c9954a7591ac65c8f4133007a51d6bb56ab5e20c7",
       "quantum-weyl/classical_import/schema/antifield_export_v2.schema.json": "6d2d9a838d18fe23f04f365f8e964bd739c3bcb65c942e90bbfd84c4198ffeb9",
-      "quantum-weyl/classical_import/tests/test_antifield_contract_v2_certificate.py": "04ed38879ebca56376b41ca5fa924ec0dcd49319d3fabf20fd57f0d49a54263f",
-      "quantum-weyl/classical_import/tests/test_verify_antifield_export_v2.py": "85094a166ed744eeed3f8b45f0ff418f6e7b12095136f0867fa6197a7d7dfa26",
-      "quantum-weyl/classical_import/verify_antifield_contract_v2.py": "4459582d593b7a93128b1315509d4997cd7f7f40da92515f862912e6f4c767f4",
-      "quantum-weyl/classical_import/verify_antifield_export_v2.py": "04695b07cb1a4fc3c10334f132b8fa3bc260779b2bd8568788d6801bbc0ba80f"
+      "quantum-weyl/classical_import/tests/test_antifield_contract_v2_certificate.py": "3782cca7b16b45787bbbc749fbe097310237c1cc72ca155b2cd34ef999400294",
+      "quantum-weyl/classical_import/tests/test_verify_antifield_export_v2.py": "6e0472e1b02d5113870df03d392be2869a07dc75684334055315ee8102d45f09",
+      "quantum-weyl/classical_import/verify_antifield_contract_v2.py": "e1c9fa6aadfb06854b2ed231b77c0676b5e371893b94d0f934735fff93115573",
+      "quantum-weyl/classical_import/verify_antifield_export_v2.py": "5a8e1be1a69d3e8e9e742fb7720dc473b6632dfceb33e49e9841f74f2ecca3a8"
     },
-    "source_manifest_sha256": "9fba8beaae79eb386a306804475821c4ab677e4313d3a3a74fd57232ee406f25"
+    "source_manifest_sha256": "86da7d5439c204b35ab449f228a9846dc8d26f7399209501c7445b31b2da6297"
   },
   "receiving_contract": {
     "coefficient_field": "Q",
@@ -104,7 +106,7 @@
     ]
   },
   "result_id": "ANTIFIELD_EXPORT_V2_EXECUTABLE_CONTRACT",
-  "result_state": "EXECUTABLE_V2_CONTRACT_READY_AWAITING_CLASSICAL_EXPORT",
+  "result_state": "EXECUTABLE_V2_CONTRACT_READY_SCOPE_AWARE",
   "schema": "quantum-weyl-antifield-contract-v2-certificate",
   "synthetic_exact_replay": {
     "atom_count": 9,
@@ -134,6 +136,19 @@
       },
       "filtered_space_count": 8,
       "monomial_count": 16,
+      "scope_projection": {
+        "antifield_number_maximum": 2,
+        "derivative_order_bound": 4,
+        "engineering_dimension_bound": 4,
+        "ghost_number_range": [
+          -2,
+          1
+        ],
+        "maximum_form_degree": 4,
+        "projected_manifest_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "projected_monomial_count": 0,
+        "status": "DECLARED_GRADED_WINDOW_ENFORCED"
+      },
       "status": "FILTERED_LOCAL_COMPLEX_DRY_RUN_VERIFIED"
     },
     "generator_count": 6,
