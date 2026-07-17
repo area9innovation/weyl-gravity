@@ -1769,6 +1769,15 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    `k=0` misses every generic target shell `L>=2`.  The only remaining
    spectral gate is adjacent-input coupling to exceptional `L=1`; after
    that, the cross-`ell` source/cokernel projection is load-bearing.
+
+   The exceptional spectral gate is also closed.  `L=1` requires adjacent
+   inputs `(ell,ell+1)` and has root set `omega^2 in {0,4/3,4}`.  Cross-branch
+   intervals exclude all six mixed branch pairs.  The extra-extra candidate
+   has squared-resonance polynomial `-4(ell-1)(ell+3)/3`; the two same-q
+   candidates are excluded exactly in the squarefree radical basis,
+   including equal and rational inner-root cases.  Therefore the complete
+   unbounded distinct-`ell`, `k=0` nonzero-output resonance gate is closed.
+   The next load-bearing object is now the mixed quadratic source itself.
 2. Test the homogeneous quadric and twist-velocity mixed balances against the
    complete quadratic source, and classify exceptional fourth-order target
    modes.  Only after these gates should any null-subalgebra quotient be

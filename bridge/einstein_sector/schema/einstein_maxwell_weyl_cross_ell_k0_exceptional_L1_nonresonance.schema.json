@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Adjacent-input exceptional L1 nonresonance",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "domain", "provenance", "angular_reduction", "target_root_set", "cross_branch_interval_exclusions", "same_branch_witnesses", "classification", "interpretation", "next_gate", "claim_boundary", "verification_receipt", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-cross-ell-k0-exceptional-L1-nonresonance-v1"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "classification": {"type": "object"},
+    "verification_receipt": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}
