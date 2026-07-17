@@ -1,0 +1,51 @@
+{
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "dependency_snapshot_commit": "89900eb71cfddccde67a1cf3e7df16bf99a3cb5b",
+  "imported_complex": {
+    "row_count": 64,
+    "q2_repair_applied": true,
+    "q1_q2_defect_count": 0,
+    "cyclicity_defect_count": 0,
+    "k_berger_arity_two_equivariant": true,
+    "raw_d_arity_two_equivariant": false,
+    "maxwell_stress_vertex_exported": true
+  },
+  "linear_record_sector": {
+    "transfer_rank": 2,
+    "persistent_records_distinguishable": true
+  },
+  "apparatus_families": [
+    {"id": "rod_scalars_RI_and_antifields", "status": "DECLARED_PROBE_ACTION_ONLY"},
+    {"id": "detector_polarization_transport_and_conjugates", "status": "NO_DYNAMICAL_ACTION_EXPORTED"},
+    {"id": "memory_pairs_ma_pa_and_antifields", "status": "DECLARED_PROBE_ACTION_ONLY"},
+    {"id": "emitter_current_apparatus_and_conjugates", "status": "NO_DYNAMICAL_ACTION_EXPORTED"}
+  ],
+  "required_operation_blocks": [
+    {"id": "rod_q1_and_bv_adjoint", "minimum_arity": 1, "status": "NOT_EXPORTED"},
+    {"id": "diff_rod_lie_action_and_cotangent_lift", "minimum_arity": 2, "status": "NOT_EXPORTED"},
+    {"id": "rod_stress_to_metric_antifield", "minimum_arity": 2, "status": "NOT_EXPORTED"},
+    {"id": "metric_clock_to_rod_antifield", "minimum_arity": 2, "status": "NOT_EXPORTED"},
+    {"id": "memory_q1_and_bv_adjoint", "minimum_arity": 1, "status": "NOT_EXPORTED"},
+    {"id": "memory_maxwell_readout_and_cotangent_lift", "minimum_arity": 2, "status": "NOT_EXPORTED"},
+    {"id": "rod_dependent_smearing_memory_vertex", "minimum_arity": 3, "status": "NOT_EXPORTED"},
+    {"id": "polarization_transport_and_cotangent_lift", "minimum_arity": 2, "status": "NOT_EXPORTED"},
+    {"id": "emitter_current_dynamics_and_cotangent_lift", "minimum_arity": 1, "status": "NOT_EXPORTED"},
+    {"id": "apparatus_k_berger_action", "minimum_arity": 1, "status": "NOT_EXPORTED"},
+    {"id": "extended_q1_square", "minimum_arity": 1, "status": "NOT_VERIFIED"},
+    {"id": "extended_q1_q2_identity", "minimum_arity": 2, "status": "NOT_VERIFIED"},
+    {"id": "extended_cyclicity", "minimum_arity": 2, "status": "NOT_VERIFIED"},
+    {"id": "backreacted_rank_two_record_transfer", "minimum_arity": 2, "status": "NOT_COMPUTED"}
+  ],
+  "relational_smearing_depends_on_rods": true,
+  "memory_couples_to_maxwell_readout": true,
+  "request_nonlinear_promotion": false,
+  "treat_raw_d_as_k_berger": false,
+  "mutations": [
+    {"name": "drop_q2_repair", "patch": {"q2_repair_applied": false}, "expected_failed_requirement": "repaired_q2_import_exact"},
+    {"name": "reintroduce_cyclicity_defect", "patch": {"cyclicity_defect_count": 1}, "expected_failed_requirement": "repaired_q2_import_exact"},
+    {"name": "collapse_linear_transfer", "patch": {"transfer_rank": 1}, "expected_failed_requirement": "linear_rank_two_records_survive"},
+    {"name": "erase_required_q3", "patch": {"relational_smearing_depends_on_rods": false}, "expected_failed_requirement": "higher_arity_observer_terms_identified"},
+    {"name": "identify_raw_d_with_k", "patch": {"treat_raw_d_as_k_berger": true}, "expected_failed_requirement": "generator_boundary_preserved"},
+    {"name": "promote_incomplete_extension", "patch": {"request_nonlinear_promotion": true}, "expected_failed_requirement": "nonlinear_promotion_fail_closed"}
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "OBSERVER_INTERACTION_IMPORT_GATE_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_observer_interaction_import_gate.py closed_universe_observers/verify_berger_observer_interaction_import_gate.py closed_universe_observers/tests/test_berger_observer_interaction_import_gate.py && git diff --check",
+      "elapsed_seconds": "0.10",
+      "status": "PASS",
+      "scope": "changed Python parsing and repository-scoped whitespace checks"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 closed_universe_observers/generate_berger_observer_interaction_import_gate.py --check",
+      "elapsed_seconds": "0.32",
+      "status": "PASS",
+      "scope": "certificate freshness, six fail-closed mutations, and pinned/live dependency compatibility"
+    },
+    {
+      "command": "python3 closed_universe_observers/verify_berger_observer_interaction_import_gate.py",
+      "elapsed_seconds": "0.24",
+      "status": "PASS",
+      "scope": "independent dependency, 64-row exclusion, cyclicity, mutation, and promotion replay"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_observer_interaction_import_gate.py closed_universe_observers/tests/test_comparison_ledger.py",
+      "elapsed_seconds": "1.18",
+      "status": "PASS",
+      "scope": "six direct certificate and comparison-ledger consumer tests"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "2.27",
+      "status": "PASS",
+      "scope": "all 21 closed-universe observer tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "criterion": "No authoritative operator, q2 payload, schema consumed outside the observer package, or generated classical artifact changed; the gate imports content-addressed dependencies and the full observer suite passed."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No freeze, theorem lifecycle promotion, shared core algebra change, release, or full-suite request occurred."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/fixtures/berger_observer_interaction_import_gate_input.json", "sha256": "aa6c46bb239acf3e686193a4be19ac0306d96534d516fca8adc1436381b7d637"},
+    {"path": "closed_universe_observers/schema/berger-observer-interaction-import-gate-input-v1.schema.json", "sha256": "2f88bba23ba44a9a534142389cdaa6b39d1ce11d66f362a66508b55c0b05c567"},
+    {"path": "closed_universe_observers/schema/berger-observer-interaction-import-gate-v1.schema.json", "sha256": "42a85d772911c009fda4ad66cda4ec6d57be394122e224e0002c74c7005a7e79"},
+    {"path": "closed_universe_observers/certificates/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE.json", "sha256": "9df5e1d697af3366198c40ae73477bd39899b164a4e671bdafb7d33385305523"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "fe0ecb01dd499f8d09ffe776432ec730bad3e63585c5264239ea1e2896c883fb"}
+  ],
+  "claim_flags": {
+    "REPAIRED_64_ROW_Q2_IMPORTED_EXACTLY": true,
+    "LINEAR_RANK_TWO_RECORD_TRANSFER_PRESERVED": true,
+    "MAXWELL_STRESS_BACKREACTION_VERTEX_AVAILABLE": true,
+    "OBSERVER_APPARATUS_ROWS_ADJOINED_TO_REPAIRED_COMPLEX": false,
+    "EXTENDED_CYCLICITY_CERTIFIED": false,
+    "K_BERGER_EQUIVARIANCE_WITH_APPARATUS_CERTIFIED": false,
+    "RAW_D_DESCENT_WITH_APPARATUS_CERTIFIED": false,
+    "BACKREACTED_RANK_TWO_RECORDS_CERTIFIED": false,
+    "CLASSICAL_OBSERVER_MAP_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

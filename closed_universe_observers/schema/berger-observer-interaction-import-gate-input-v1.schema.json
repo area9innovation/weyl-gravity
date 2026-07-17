@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-observer-interaction-import-gate-input-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["setting_id", "dependency_snapshot_commit", "imported_complex", "linear_record_sector", "apparatus_families", "required_operation_blocks", "relational_smearing_depends_on_rods", "memory_couples_to_maxwell_readout", "request_nonlinear_promotion", "treat_raw_d_as_k_berger", "mutations"],
+  "properties": {
+    "setting_id": {"const": "compact_positive_berger_clock_observer_apparatus_extension"},
+    "dependency_snapshot_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "imported_complex": {"type": "object"},
+    "linear_record_sector": {"type": "object"},
+    "apparatus_families": {"type": "array", "minItems": 4, "items": {"type": "object"}},
+    "required_operation_blocks": {"type": "array", "minItems": 14, "items": {"type": "object"}},
+    "relational_smearing_depends_on_rods": {"type": "boolean"},
+    "memory_couples_to_maxwell_readout": {"type": "boolean"},
+    "request_nonlinear_promotion": {"type": "boolean"},
+    "treat_raw_d_as_k_berger": {"type": "boolean"},
+    "mutations": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object"}}
+  }
+}

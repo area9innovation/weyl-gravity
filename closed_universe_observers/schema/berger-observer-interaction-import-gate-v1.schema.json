@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-observer-interaction-import-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "imported_interaction_complex", "linear_survival", "apparatus_extension_ledger", "arity_analysis", "gauge_quotient_boundary", "mutation_results", "flags", "not_established", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-observer-interaction-import-gate-v1"},
+    "result_id": {"const": "BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE"},
+    "setting_id": {"const": "compact_positive_berger_clock_observer_apparatus_extension"},
+    "claim_status": {"const": "CERTIFIED_REPAIRED_Q2_IMPORT_LINEAR_SURVIVAL_EXTENDED_OBSERVER_COMPLEX_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 6},
+    "imported_interaction_complex": {"type": "object"},
+    "linear_survival": {"type": "object"},
+    "apparatus_extension_ledger": {"type": "object"},
+    "arity_analysis": {"type": "object"},
+    "gauge_quotient_boundary": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 6, "maxItems": 6},
+    "flags": {"type": "object"},
+    "not_established": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

@@ -16,6 +16,8 @@ python3 closed_universe_observers/generate_berger_detector_records.py --check
 python3 closed_universe_observers/verify_berger_detector_records.py
 python3 closed_universe_observers/generate_berger_smeared_retarded_transfer.py --check
 python3 closed_universe_observers/verify_berger_smeared_retarded_transfer.py
+python3 closed_universe_observers/generate_berger_observer_interaction_import_gate.py --check
+python3 closed_universe_observers/verify_berger_observer_interaction_import_gate.py
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -31,7 +33,11 @@ rays, and persistent probe memories.  Two predeclared conserved polarization
 currents then give the physical matrix `diag(C_00,C_11)` with both entries
 positive, hence two distinguishable causal records.  Those currents are
 homogeneous over the compact `S3`; spatially localized emitters and the
-source-rod-memory quotient descent remain open.  The
+source-rod-memory quotient descent remain open.  The interaction import gate
+then imports the repaired cyclic 64-row gravity-clock-Maxwell `q2`, preserves
+the linear rank-two coefficient, and records the exact obstruction to a
+nonlinear promotion: the rod, polarization, memory, and emitter BV rows are
+absent, and relational smearing generates a required `q3` apparatus block. The
 comparison ledger replays its historical imports exactly, checks current
 compatibility separately, and remains fail-closed on the classical-map and
 quantum gates.
