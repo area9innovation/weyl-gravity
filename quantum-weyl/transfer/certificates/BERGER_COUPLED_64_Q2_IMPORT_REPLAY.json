@@ -1,0 +1,83 @@
+{
+  "claim_boundary": "This pinned LOCAL-ALGEBRAIC quantum consumer imports the complete classical 64-row gravity-clock-Maxwell q2 overlay and independently verifies exact hashes, composition, row support, PBW order, grading, Koszul symmetry and the coefficientwise frozen K_Berger=e0 derivation. A later pinned generator audit corrects the legacy payload vocabulary: raw cylinder D is affine and is not certified equivariant or Cartan. The classical producer's q1-q2 and cyclicity booleans are not promoted: portable 64-row q1 and pairing operators are absent. The Maxwell unary contraction is also absent, so no mixed transfer, Cartan, QME, causal, anomaly or quantum theorem is claimed.",
+  "claim_flags": {
+    "BV_CYCLICITY_INDEPENDENTLY_REPLAYED": false,
+    "CLASSICAL_COUPLED_64_Q2_IMPORTED": true,
+    "K_BERGER_EQUIVARIANCE_INDEPENDENTLY_REPLAYED": true,
+    "MAXWELL_UNARY_CONTRACTION_IMPORTED": false,
+    "MIXED_VERTEX_TRANSFERRED": false,
+    "Q1_Q2_IDENTITY_INDEPENDENTLY_REPLAYED": false,
+    "QME_RESTORED": false,
+    "QUANTUM_CLAIM": false,
+    "RAW_D_CARTAN_CERTIFIED": false,
+    "RAW_D_EQUIVARIANCE_INDEPENDENTLY_REPLAYED": false,
+    "STRUCTURAL_AND_K_IDENTITIES_INDEPENDENTLY_REPLAYED": true
+  },
+  "classical_result": {
+    "certificate_sha256": "2dea4cfe045cec84fc8cfb560d2d4e40af0283c0bafb77594eff04f0fb7377bf",
+    "commit": "456092fea92fe9507bb5de8776795a8abd748870",
+    "payload_canonical_sha256": "566945f137c0e94b1a460084b4b09af227616dfa44948ac61db361ab52b4e65e",
+    "payload_file_sha256": "e9bc32b4bdc59f11292164b0754950b17e4f6f5cdaff196a8a29fdd65bf995f5",
+    "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2"
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-coupled-64-q2-import-replay.md": "6e3b2a8380c6191568beb5468bbc079dbc8c350c440fe456a66e69ef2dd040f1",
+      "README.md": "6f24f6f6359fe6cb8cc28355edf4e0738b1ef490895834b894884d1bb6f72434",
+      "berger_coupled_64_q2_import.py": "29e83e1703c266da2ef762cab1cbf2fec5681b99d874be42f451a7334ec189bc",
+      "berger_coupled_64_q2_import_certificate.py": "c80c92ad706ec24f251c29a210b6ac467be8e94fe7c32d793088b36e434aa2f4",
+      "schema/berger-coupled-64-q2-import-v1.schema.json": "c078e0712b5555561360da0d1725d30a48c61cac544c19e2e9c3301fe0e539ff",
+      "tests/test_berger_coupled_64_q2_import.py": "5cf0fd6dbb507d85d5671750ec3c632ad13b6b124bbf9d1b379ca8af5bf287f7",
+      "verify_berger_coupled_64_q2_import.py": "23cbd912fed18ab195b70b27b2ae23e97db28e26c455538b1b744d3c17ec5d06"
+    },
+    "source_manifest_sha256": "d420b5bcecedd1fe62ad8781f8ccd632d914fd40139ea21a8dc01dc73f98a000"
+  },
+  "coverage": {
+    "coefficient_field": "Q(sqrt(10))",
+    "combined_terms": 152259,
+    "gravity_base_terms": 150305,
+    "overlay_maximum_total_jet_order": 3,
+    "overlay_nonzero_rows": 25,
+    "overlay_terms": 1954,
+    "row_hash_manifest_sha256": "aabd855324d9085af24daeebd5a32fe84f6db52383793b620620865d475826f5",
+    "total_rows": 64
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "generator_semantics": {
+    "PBW_representation_on_Maxwell_rows": "e0",
+    "frozen_generator": "K_Berger=D-omega R",
+    "generator_audit_commit": "d4e6645f94afe95e4821912d20e0b14656e360ea",
+    "generator_audit_sha256": "afc14ea90b10a9a59f0e7d240fcb2231eada9097d1d0e051f8f058d86de3d149",
+    "nonlinear_K_signoff_commit": "78b0d7c2e47a9817a9098b617369df2685cf2c30",
+    "nonlinear_K_signoff_sha256": "1065c80d6c73ca63c49d7c55368fe9aa7e6284903639ae0a87f4d589d819e3e8",
+    "raw_D_status": "AFFINE_WITH_NONZERO_ZERO_ARITY_COMPONENT"
+  },
+  "independent_replay": {
+    "K_derivation_overlay_terms_replayed": 1954,
+    "Maxwell_K_Berger_derivation_coefficientwise": "VERIFIED",
+    "PBW_order_and_exact_quadratic_field": "VERIFIED",
+    "all_64_rows_and_row_hashes": "VERIFIED",
+    "cohomological_degree_one": "VERIFIED",
+    "graded_Koszul_symmetry": "VERIFIED",
+    "gravity_base_matches_replayed_54_row_import": "VERIFIED",
+    "pinned_artifact_and_dependency_hashes": "VERIFIED",
+    "strict_schema_identities": "VERIFIED"
+  },
+  "lifecycle_layer": "CLASSICAL_BV_IMPORT",
+  "missing_carrier_theorem": {
+    "BV_cyclicity_replay": "BLOCKED_PORTABLE_64_ROW_PAIRING_NOT_EXPORTED",
+    "minimal_requested_exports": [
+      "BERGER_PORTABLE_64_ROW_UNARY_Q1",
+      "BERGER_PORTABLE_64_ROW_CYCLIC_PAIRING",
+      "BERGER_MAXWELL_UNARY_CONTRACTION"
+    ],
+    "mixed_vertex_transfer": "BLOCKED_MAXWELL_UNARY_CONTRACTION_NOT_EXPORTED",
+    "q1_q2_replay": "BLOCKED_PORTABLE_64_ROW_Q1_OPERATOR_NOT_EXPORTED"
+  },
+  "next_gate": "IMPORT_PORTABLE_64_ROW_Q1_PAIRING_AND_MAXWELL_CONTRACTION",
+  "result_id": "BERGER_COUPLED_64_Q2_IMPORT_REPLAY",
+  "result_state": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
+  "schema": "quantum-weyl-berger-coupled-64-q2-import-v1"
+}

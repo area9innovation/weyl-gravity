@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-coupled-64-q2-import-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_result", "generator_semantics", "coverage", "independent_replay", "missing_carrier_theorem", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-coupled-64-q2-import-v1"},
+    "result_id": {"const": "BERGER_COUPLED_64_Q2_IMPORT_REPLAY"},
+    "result_state": {"const": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_IMPORT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "classical_result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "commit", "certificate_sha256", "payload_file_sha256", "payload_canonical_sha256"],
+      "properties": {
+        "result_id": {"const": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2"},
+        "commit": {"const": "456092fea92fe9507bb5de8776795a8abd748870"},
+        "certificate_sha256": {"$ref": "#/$defs/hash"},
+        "payload_file_sha256": {"$ref": "#/$defs/hash"},
+        "payload_canonical_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "generator_semantics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["frozen_generator", "PBW_representation_on_Maxwell_rows", "raw_D_status", "generator_audit_commit", "generator_audit_sha256", "nonlinear_K_signoff_commit", "nonlinear_K_signoff_sha256"],
+      "properties": {
+        "frozen_generator": {"const": "K_Berger=D-omega R"},
+        "PBW_representation_on_Maxwell_rows": {"const": "e0"},
+        "raw_D_status": {"const": "AFFINE_WITH_NONZERO_ZERO_ARITY_COMPONENT"},
+        "generator_audit_commit": {"const": "d4e6645f94afe95e4821912d20e0b14656e360ea"},
+        "generator_audit_sha256": {"$ref": "#/$defs/hash"},
+        "nonlinear_K_signoff_commit": {"const": "78b0d7c2e47a9817a9098b617369df2685cf2c30"},
+        "nonlinear_K_signoff_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_rows", "gravity_base_terms", "overlay_terms", "combined_terms", "overlay_nonzero_rows", "overlay_maximum_total_jet_order", "coefficient_field", "row_hash_manifest_sha256"],
+      "properties": {
+        "total_rows": {"const": 64}, "gravity_base_terms": {"const": 150305},
+        "overlay_terms": {"const": 1954}, "combined_terms": {"const": 152259},
+        "overlay_nonzero_rows": {"const": 25}, "overlay_maximum_total_jet_order": {"const": 3},
+        "coefficient_field": {"const": "Q(sqrt(10))"}, "row_hash_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "independent_replay": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pinned_artifact_and_dependency_hashes", "strict_schema_identities", "gravity_base_matches_replayed_54_row_import", "all_64_rows_and_row_hashes", "cohomological_degree_one", "PBW_order_and_exact_quadratic_field", "graded_Koszul_symmetry", "Maxwell_K_Berger_derivation_coefficientwise", "K_derivation_overlay_terms_replayed"],
+      "properties": {
+        "pinned_artifact_and_dependency_hashes": {"const": "VERIFIED"},
+        "strict_schema_identities": {"const": "VERIFIED"},
+        "gravity_base_matches_replayed_54_row_import": {"const": "VERIFIED"},
+        "all_64_rows_and_row_hashes": {"const": "VERIFIED"},
+        "cohomological_degree_one": {"const": "VERIFIED"},
+        "PBW_order_and_exact_quadratic_field": {"const": "VERIFIED"},
+        "graded_Koszul_symmetry": {"const": "VERIFIED"},
+        "Maxwell_K_Berger_derivation_coefficientwise": {"const": "VERIFIED"},
+        "K_derivation_overlay_terms_replayed": {"const": 1954}
+      }
+    },
+    "missing_carrier_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q1_q2_replay", "BV_cyclicity_replay", "mixed_vertex_transfer", "minimal_requested_exports"],
+      "properties": {
+        "q1_q2_replay": {"const": "BLOCKED_PORTABLE_64_ROW_Q1_OPERATOR_NOT_EXPORTED"},
+        "BV_cyclicity_replay": {"const": "BLOCKED_PORTABLE_64_ROW_PAIRING_NOT_EXPORTED"},
+        "mixed_vertex_transfer": {"const": "BLOCKED_MAXWELL_UNARY_CONTRACTION_NOT_EXPORTED"},
+        "minimal_requested_exports": {"const": ["BERGER_PORTABLE_64_ROW_UNARY_Q1", "BERGER_PORTABLE_64_ROW_CYCLIC_PAIRING", "BERGER_MAXWELL_UNARY_CONTRACTION"]}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["CLASSICAL_COUPLED_64_Q2_IMPORTED", "STRUCTURAL_AND_K_IDENTITIES_INDEPENDENTLY_REPLAYED", "K_BERGER_EQUIVARIANCE_INDEPENDENTLY_REPLAYED", "RAW_D_EQUIVARIANCE_INDEPENDENTLY_REPLAYED", "RAW_D_CARTAN_CERTIFIED", "Q1_Q2_IDENTITY_INDEPENDENTLY_REPLAYED", "BV_CYCLICITY_INDEPENDENTLY_REPLAYED", "MAXWELL_UNARY_CONTRACTION_IMPORTED", "MIXED_VERTEX_TRANSFERRED", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "CLASSICAL_COUPLED_64_Q2_IMPORTED": {"const": true},
+        "STRUCTURAL_AND_K_IDENTITIES_INDEPENDENTLY_REPLAYED": {"const": true},
+        "K_BERGER_EQUIVARIANCE_INDEPENDENTLY_REPLAYED": {"const": true},
+        "RAW_D_EQUIVARIANCE_INDEPENDENTLY_REPLAYED": {"const": false},
+        "RAW_D_CARTAN_CERTIFIED": {"const": false},
+        "Q1_Q2_IDENTITY_INDEPENDENTLY_REPLAYED": {"const": false},
+        "BV_CYCLICITY_INDEPENDENTLY_REPLAYED": {"const": false},
+        "MAXWELL_UNARY_CONTRACTION_IMPORTED": {"const": false},
+        "MIXED_VERTEX_TRANSFERRED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "IMPORT_PORTABLE_64_ROW_Q1_PAIRING_AND_MAXWELL_CONTRACTION"},
+    "claim_boundary": {"type": "string", "minLength": 200},
+    "consumer_provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

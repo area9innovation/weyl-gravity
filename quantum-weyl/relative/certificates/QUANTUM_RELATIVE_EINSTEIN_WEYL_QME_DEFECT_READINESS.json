@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "Registers a G0 quantum dependency ledger for the compact standard-harmonic Einstein-Maxwell to Weyl-Maxwell relative problem. It imports exact on-shell inclusion, classical reduced-mode pairing and partial quadratic evidence by content hash. It does not construct the off-shell BV triangle, mapping cofiber, relative anomaly, QME restoration, renormalized pairing, state restriction, D-Cartan verdict, particle interpretation or Lorentzian quantum theory.",
+  "claim_boundary": "Registers a G0 quantum dependency ledger for the compact standard-harmonic Einstein-Maxwell to Weyl-Maxwell relative problem. It imports exact on-shell inclusion, classical reduced-mode pairing, partial quadratic evidence, and the principal/generic-axial off-shell triangle preflight by content hash. The partial triangle is explicitly rejected as EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1: polar, exceptional and global all-sector rows remain open. It does not construct the full off-shell BV triangle, global mapping cofiber, relative anomaly, QME restoration, renormalized pairing, state restriction, D-Cartan verdict, particle interpretation or Lorentzian quantum theory.",
   "claim_flags": {
     "CLASSICAL_RELATIVE_TRIANGLE_IMPORTED": false,
     "QUANTUM_RELATIVE_DEPENDENCY_LEDGER": true,
@@ -11,7 +11,7 @@
     "RELATIVE_QME_RESTORED": false
   },
   "classical_import_gate": {
-    "current_map_disposition": "ONSHELL_MAP_ONLY",
+    "current_map_disposition": "PARTIAL_GENERIC_AXIAL_OFFSHELL_PREFLIGHT",
     "forbidden_fallback": "do not reconstruct the classical triangle or its maps inside quantum-weyl",
     "required_result_ids": [
       "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
@@ -39,7 +39,17 @@
     "quantum_team_brief": {
       "artifact_id": "d-quotient-quantum-team-brief.md",
       "path": "notes/d-quotient-quantum-team-brief.md",
-      "sha256": "c2efaed0b954cb9e4d3806b6e0b08a4b6c2cad98fd632aa6cd5d0a5bc26804c2"
+      "sha256": "50b88fc756675a41ed65de5e3c3131318e718f952b0cbcec5050285e04ac5ca2"
+    },
+    "relative_functor_preflight": {
+      "artifact_id": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1",
+      "path": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json",
+      "sha256": "e6ccda10b40fe2dc3365787df0ffc44fe71d8cd26341edf3d6c443ec36608cd9"
+    },
+    "relative_linear_triangle_preflight": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT",
+      "path": "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+      "sha256": "c420c68f24d46c51b3f41ac3c64227a06e510d3ec4d3365ec9871b169d3bc295"
     },
     "standard_harmonic_inclusion_contribution": {
       "artifact_id": "compact_einstein_maxwell_weyl_standard_harmonic_inclusion",
@@ -49,7 +59,7 @@
     "universe_building_roadmap": {
       "artifact_id": "universe-building-roadmap.md",
       "path": "notes/universe-building-roadmap.md",
-      "sha256": "bda8bfc9170e1b4316ae73d8051169cada36063a931cd5144c26340ccc1db03f"
+      "sha256": "7df14ebae0fddd8e7edc7ca570cc4401f3c2d7d0d17776deaeb20642e0abae3a"
     }
   },
   "dependency_tags": [
@@ -63,7 +73,7 @@
       "status": "NOT_COMPUTED_RELATIVELY"
     },
     "LOCAL_ALGEBRAIC": {
-      "evidence": "Weyl AFN0 candidate quotient and local D pullback exist; relative BV chain map and restored QME do not",
+      "evidence": "principal and generic-axial off-shell chain maps exist; polar, exceptional and global all-sector BV triangle and restored QME do not",
       "status": "PARTIAL_INPUT_ONLY"
     },
     "LORENTZIAN_CAUSAL": {
@@ -84,6 +94,16 @@
       "path": "bridge/certificates/einstein_maxwell_weyl_axial_quadratic_channel_preflight.json",
       "sha256": "04f024d751ec907bf399a7e0edd8bb6596b31d2123a00d386a2b805ba09bbe4f"
     },
+    "relative_functor_preflight": {
+      "commit": "1cd9f8e68774e68821b130ee01353075a42eae07",
+      "path": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json",
+      "sha256": "e6ccda10b40fe2dc3365787df0ffc44fe71d8cd26341edf3d6c443ec36608cd9"
+    },
+    "relative_linear_triangle_preflight": {
+      "commit": "9570f03c2a880dfbf600567a4d06ca9009b2cb8e",
+      "path": "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+      "sha256": "c420c68f24d46c51b3f41ac3c64227a06e510d3ec4d3365ec9871b169d3bc295"
+    },
     "standard_harmonic_inclusion": {
       "commit": "987cba7a478e76b3f7a060e76faf9945e7f372bf",
       "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
@@ -92,16 +112,18 @@
   },
   "provenance": {
     "quadratic_preflight_setting_id": "compact_einstein_maxwell_weyl_axial_quadratic_channel_preflight",
+    "relative_functor_preflight_result_id": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1",
     "source_manifest": {
-      "../reports/quantum-relative-einstein-weyl-qme-readiness.md": "198836c34e5f8f1c8a3133389194b58b9c15d25efdbb1cef857d72685798fe54",
-      "einstein_weyl_qme_readiness.py": "4b1b1bbfce8a97e8acdb3b6334a9851cb2998acaf413ad4e1e0ff9b81f81a0e2",
+      "../reports/quantum-relative-einstein-weyl-qme-readiness.md": "5f45d3ab1d552bb57ade742b8b42c01ed37caa14de57082825630e4db3e22cec",
+      "einstein_weyl_qme_readiness.py": "cc682cbea84226505ffa9adab7cbce04d76c8ee369d701a521beec28247a6773",
       "einstein_weyl_qme_readiness_certificate.py": "8af060b1aae4d956a8001419cfc404eec2f2417af2d7713b2750dce47d17d8a9",
-      "schema/einstein-weyl-qme-readiness-v1.schema.json": "ea4f01c0a840a5fcf970b8c1704f8ca89405823fe75d10cba1818971f0f6f097",
-      "tests/test_einstein_weyl_qme_readiness.py": "ac15b00c07f395a39c56629a031e8d9fee7ff69118870af067373502dcdae1c8",
-      "verify_einstein_weyl_qme_readiness.py": "d6cdc0272358a8c3a80490df5491e8efc1ec522c9b5f0e97c42de5f7e87da6e8"
+      "schema/einstein-weyl-qme-readiness-v1.schema.json": "542f581d6e76ac57e29de40930891884030c52a096ced2da5a20aca196918221",
+      "tests/test_einstein_weyl_qme_readiness.py": "cef3b8d4c14c6da6a41c1ce36b37123e5e908009452e26eed190e0cd81f32c56",
+      "verify_einstein_weyl_qme_readiness.py": "679bd8375382ee452decf6c4cb161a772134748b062f0d2eafac6ccb0d4099bd"
     },
-    "source_manifest_sha256": "956adbe942557afcbcf67f12aa8efca93abbafaf12cbc8fe9c54128974f9fb94",
-    "standard_inclusion_setting_id": "compact_einstein_maxwell_weyl_standard_harmonic_inclusion"
+    "source_manifest_sha256": "91c9df90c2cef69b043a630908d45bd172e51dd24c8ebaf9ce1e2682a06e11e9",
+    "standard_inclusion_setting_id": "compact_einstein_maxwell_weyl_standard_harmonic_inclusion",
+    "triangle_preflight_result_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT"
   },
   "qme_and_transfer_gate": {
     "Einstein_QME": "NOT_COMPUTED",
@@ -143,8 +165,8 @@
   },
   "shared_relative_row": {
     "O2": "PARTIAL_QUADRATIC_FIXTURES_ONLY_ARITY_THREE_DISPOSITION_OPEN",
-    "cofiber": "OPEN_OFFSHELL_MAPPING_COFIBER_NOT_EXPORTED",
-    "map_iota": "ONSHELL_MAP_ONLY_IMPORTED_BY_HASH",
+    "cofiber": "GENERIC_AXIAL_SOLUTION_COFIBER_CERTIFIED_GLOBAL_COFIBER_OPEN",
+    "map_iota": "PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_PREFLIGHT_IMPORTED_GLOBAL_V1_OPEN",
     "observable_map": "OPEN_RELATIVE_OBSERVABLE_PULLBACK_NOT_EXPORTED",
     "quantum_lift": "ANALYTIC_FRAMEWORK_MISSING",
     "relative_pairing": "REDUCED_MODE_CLASSICAL_PULLBACK_NONDEGENERATE_NOT_RENORMALIZED",

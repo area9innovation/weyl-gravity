@@ -15,8 +15,10 @@ from .einstein_weyl_qme_readiness import (
     LOCAL_CARTAN,
     PLANNING_BRIEF,
     QUADRATIC_PREFLIGHT,
+    RELATIVE_FUNCTOR_PREFLIGHT,
     ROADMAP,
     STANDARD_INCLUSION,
+    TRIANGLE_PREFLIGHT,
     validate,
 )
 from .einstein_weyl_qme_readiness_certificate import HERE, OUTPUT
@@ -40,6 +42,8 @@ def verify() -> dict:
         "Berger_global_A104_partial": GLOBAL_A104,
         "quantum_team_brief": PLANNING_BRIEF,
         "universe_building_roadmap": ROADMAP,
+        "relative_linear_triangle_preflight": TRIANGLE_PREFLIGHT,
+        "relative_functor_preflight": RELATIVE_FUNCTOR_PREFLIGHT,
     }
     for name, path in dependencies.items():
         reference = certificate["dependency_refs"][name]
@@ -51,6 +55,38 @@ def verify() -> dict:
         )
         if hashlib.sha256(content).hexdigest() != evidence["sha256"]:
             raise ValueError(f"pinned classical evidence mismatch: {name}")
+        working = HERE.parents[1] / evidence["path"]
+        if not working.is_file() or working.read_bytes() != content:
+            raise ValueError(f"working/pinned classical evidence mismatch: {name}")
+    evidence_dependencies = {
+        "relative_linear_triangle_preflight": "relative_linear_triangle_preflight",
+        "relative_functor_preflight": "relative_functor_preflight",
+    }
+    for evidence_name, dependency_name in evidence_dependencies.items():
+        evidence = certificate["pinned_classical_evidence"][evidence_name]
+        dependency = certificate["dependency_refs"][dependency_name]
+        if (
+            evidence["path"] != dependency["path"]
+            or evidence["sha256"] != dependency["sha256"]
+        ):
+            raise ValueError(f"working/pinned seam mismatch: {evidence_name}")
+    triangle = json.loads(TRIANGLE_PREFLIGHT.read_text())
+    classification = triangle.get("classification", {})
+    if (
+        classification.get("principal_BV_chain_map_and_cone_certified") is not True
+        or classification.get("generic_axial_offshell_chain_map_certified") is not True
+        or classification.get("relative_linear_triangle_V1_certified") is not False
+        or classification.get("quantum_import_gate_satisfied") is not False
+    ):
+        raise ValueError("partial triangle was over-promoted or weakened")
+    functor = json.loads(RELATIVE_FUNCTOR_PREFLIGHT.read_text())
+    if (
+        functor.get("flags", {}).get("RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1")
+        is not False
+        or functor.get("flags", {}).get("EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED")
+        is not False
+    ):
+        raise ValueError("relative functor preflight was over-promoted")
     mutations = (
         ("classical_import_gate", "status", "SATISFIED"),
         ("shared_relative_row", "quantum_lift", "QME_RESTORED"),

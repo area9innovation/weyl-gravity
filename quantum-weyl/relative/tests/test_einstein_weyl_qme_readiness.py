@@ -26,8 +26,29 @@ class EinsteinWeylQMEReadinessTests(unittest.TestCase):
             set(row),
             {"setting", "map_iota", "cofiber", "relative_pairing", "O2", "residual_action", "observable_map", "quantum_lift"},
         )
-        self.assertEqual(row["map_iota"], "ONSHELL_MAP_ONLY_IMPORTED_BY_HASH")
+        self.assertEqual(
+            row["map_iota"],
+            "PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_PREFLIGHT_IMPORTED_GLOBAL_V1_OPEN",
+        )
+        self.assertEqual(
+            row["cofiber"],
+            "GENERIC_AXIAL_SOLUTION_COFIBER_CERTIFIED_GLOBAL_COFIBER_OPEN",
+        )
         self.assertEqual(row["quantum_lift"], "ANALYTIC_FRAMEWORK_MISSING")
+
+    def test_partial_triangle_is_imported_but_rejected_as_v1(self) -> None:
+        gate = self.certificate["classical_import_gate"]
+        self.assertEqual(
+            gate["current_map_disposition"],
+            "PARTIAL_GENERIC_AXIAL_OFFSHELL_PREFLIGHT",
+        )
+        self.assertEqual(
+            self.certificate["dependency_refs"]["relative_linear_triangle_preflight"]["artifact_id"],
+            "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT",
+        )
+        self.assertFalse(
+            self.certificate["claim_flags"]["CLASSICAL_RELATIVE_TRIANGLE_IMPORTED"]
+        )
 
     def test_three_classical_spine_inputs_are_explicitly_missing(self) -> None:
         gate = self.certificate["classical_import_gate"]

@@ -1,8 +1,9 @@
 """Quantum readiness ledger for the relative Einstein--Weyl QME defect.
 
-This module imports the strongest currently registered on-shell inclusion and
-relative pairing evidence.  It does not synthesize the missing off-shell BV
-triangle.  The relative anomaly and state maps therefore remain undefined.
+This module imports the strongest registered inclusion, partial off-shell
+triangle, and relative pairing evidence.  It does not synthesize the missing
+all-sector off-shell BV triangle.  The relative anomaly and state maps
+therefore remain undefined.
 """
 
 from __future__ import annotations
@@ -23,6 +24,15 @@ LOCAL_CARTAN = ROOT / "quantum-weyl/cartan/certificates/LOCAL_ANOMALY_TO_D_CARTA
 GLOBAL_A104 = ROOT / "quantum-weyl/lorentzian/certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json"
 PLANNING_BRIEF = ROOT / "notes/d-quotient-quantum-team-brief.md"
 ROADMAP = ROOT / "notes/universe-building-roadmap.md"
+TRIANGLE_PREFLIGHT = (
+    ROOT / "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json"
+)
+RELATIVE_FUNCTOR_PREFLIGHT = (
+    ROOT
+    / "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json"
+)
+TRIANGLE_PREFLIGHT_COMMIT = "9570f03c2a880dfbf600567a4d06ca9009b2cb8e"
+RELATIVE_FUNCTOR_PREFLIGHT_COMMIT = "1cd9f8e68774e68821b130ee01353075a42eae07"
 
 
 def _sha256(path: Path) -> str:
@@ -60,11 +70,30 @@ def _committed_evidence(contribution: dict[str, Any]) -> dict[str, str]:
     return deepcopy(evidence)
 
 
+def _pinned_path(path: Path, commit: str) -> dict[str, str]:
+    relative = str(path.relative_to(ROOT))
+    prefix = subprocess.check_output(
+        ["git", "-C", str(ROOT), "rev-parse", "--show-prefix"], text=True
+    ).strip()
+    content = subprocess.check_output(
+        ["git", "-C", str(ROOT), "show", f"{commit}:{prefix}{relative}"]
+    )
+    if not path.is_file() or path.read_bytes() != content:
+        raise ValueError(f"working evidence differs from pinned commit: {relative}")
+    return {
+        "commit": commit,
+        "path": relative,
+        "sha256": hashlib.sha256(content).hexdigest(),
+    }
+
+
 def _semantic_inputs() -> dict[str, Any]:
     inclusion = json.loads(STANDARD_INCLUSION.read_text())
     quadratic = json.loads(QUADRATIC_PREFLIGHT.read_text())
     cartan = json.loads(LOCAL_CARTAN.read_text())
     a104 = json.loads(GLOBAL_A104.read_text())
+    triangle = json.loads(TRIANGLE_PREFLIGHT.read_text())
+    functor = json.loads(RELATIVE_FUNCTOR_PREFLIGHT.read_text())
     if (
         inclusion.get("team_id") != "einstein_boundary"
         or inclusion.get("claim_status") != "CERTIFIED"
@@ -96,13 +125,45 @@ def _semantic_inputs() -> dict[str, Any]:
         or a104.get("claim_flags", {}).get("BERGER_HADAMARD_DATA") is not False
     ):
         raise ValueError("Lorentzian A104/Hadamard boundary drifted")
+    classification = triangle.get("classification", {})
+    if (
+        triangle.get("result_id") != "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT"
+        or triangle.get("result_state")
+        != "PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_CHAIN_MAPS_CERTIFIED_FULL_CURVED_ALL_SECTOR_TRIANGLE_OPEN"
+        or classification.get("principal_BV_chain_map_and_cone_certified") is not True
+        or classification.get("generic_axial_offshell_chain_map_certified") is not True
+        or classification.get("generic_axial_solution_cofiber_and_pairing_certified") is not True
+        or classification.get("full_curved_all_sector_chain_map_certified") is not False
+        or classification.get("global_mapping_cofiber_complex_certified") is not False
+        or classification.get("relative_linear_triangle_V1_certified") is not False
+        or classification.get("quantum_import_gate_satisfied") is not False
+    ):
+        raise ValueError("partial relative triangle boundary drifted")
+    flags = functor.get("flags", {})
+    if (
+        functor.get("result_id") != "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1"
+        or functor.get("result_state")
+        != "PARTIAL_OFFSHELL_PREFLIGHT_IMPORTED_FULL_TRIANGLE_MISSING"
+        or flags.get("RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1") is not True
+        or flags.get("EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED") is not False
+        or flags.get("RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1") is not False
+    ):
+        raise ValueError("relative functor preflight boundary drifted")
     return {
         "inclusion": inclusion,
         "quadratic": quadratic,
         "cartan": cartan,
         "a104": a104,
+        "triangle": triangle,
+        "functor": functor,
         "inclusion_evidence": _committed_evidence(inclusion),
         "quadratic_evidence": _committed_evidence(quadratic),
+        "triangle_evidence": _pinned_path(
+            TRIANGLE_PREFLIGHT, TRIANGLE_PREFLIGHT_COMMIT
+        ),
+        "functor_evidence": _pinned_path(
+            RELATIVE_FUNCTOR_PREFLIGHT, RELATIVE_FUNCTOR_PREFLIGHT_COMMIT
+        ),
     }
 
 
@@ -133,14 +194,18 @@ def build() -> dict[str, Any]:
             "Berger_global_A104_partial": _dependency(GLOBAL_A104),
             "quantum_team_brief": _dependency(PLANNING_BRIEF),
             "universe_building_roadmap": _dependency(ROADMAP),
+            "relative_linear_triangle_preflight": _dependency(TRIANGLE_PREFLIGHT),
+            "relative_functor_preflight": _dependency(RELATIVE_FUNCTOR_PREFLIGHT),
         },
         "pinned_classical_evidence": {
             "standard_harmonic_inclusion": inputs["inclusion_evidence"],
             "quadratic_channel_preflight": inputs["quadratic_evidence"],
+            "relative_linear_triangle_preflight": inputs["triangle_evidence"],
+            "relative_functor_preflight": inputs["functor_evidence"],
         },
         "classical_import_gate": {
             "status": "NOT_SATISFIED",
-            "current_map_disposition": "ONSHELL_MAP_ONLY",
+            "current_map_disposition": "PARTIAL_GENERIC_AXIAL_OFFSHELL_PREFLIGHT",
             "required_result_ids": [
                 "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
                 "EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE",
@@ -150,8 +215,8 @@ def build() -> dict[str, Any]:
         },
         "shared_relative_row": {
             "setting": "compact Einstein-Maxwell product; complete standard harmonic tangent; fixed compact bundle; before final residual quotient",
-            "map_iota": "ONSHELL_MAP_ONLY_IMPORTED_BY_HASH",
-            "cofiber": "OPEN_OFFSHELL_MAPPING_COFIBER_NOT_EXPORTED",
+            "map_iota": "PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_PREFLIGHT_IMPORTED_GLOBAL_V1_OPEN",
+            "cofiber": "GENERIC_AXIAL_SOLUTION_COFIBER_CERTIFIED_GLOBAL_COFIBER_OPEN",
             "relative_pairing": "REDUCED_MODE_CLASSICAL_PULLBACK_NONDEGENERATE_NOT_RENORMALIZED",
             "O2": "PARTIAL_QUADRATIC_FIXTURES_ONLY_ARITY_THREE_DISPOSITION_OPEN",
             "residual_action": "OPEN_RELATIVE_EQUIVARIANCE_NOT_EXPORTED",
@@ -176,7 +241,7 @@ def build() -> dict[str, Any]:
         "framework_ledger": {
             "LOCAL_ALGEBRAIC": {
                 "status": "PARTIAL_INPUT_ONLY",
-                "evidence": "Weyl AFN0 candidate quotient and local D pullback exist; relative BV chain map and restored QME do not",
+                "evidence": "principal and generic-axial off-shell chain maps exist; polar, exceptional and global all-sector BV triangle and restored QME do not",
             },
             "EUCLIDEAN_SPECTRAL": {
                 "status": "NOT_COMPUTED_RELATIVELY",
@@ -214,12 +279,17 @@ def build() -> dict[str, Any]:
         "provenance": {
             "standard_inclusion_setting_id": inputs["inclusion"]["setting_id"],
             "quadratic_preflight_setting_id": inputs["quadratic"]["setting_id"],
+            "triangle_preflight_result_id": inputs["triangle"]["result_id"],
+            "relative_functor_preflight_result_id": inputs["functor"]["result_id"],
         },
         "claim_boundary": (
             "Registers a G0 quantum dependency ledger for the compact standard-harmonic "
             "Einstein-Maxwell to Weyl-Maxwell relative problem. It imports exact on-shell "
-            "inclusion, classical reduced-mode pairing and partial quadratic evidence by "
-            "content hash. It does not construct the off-shell BV triangle, mapping cofiber, "
+            "inclusion, classical reduced-mode pairing, partial quadratic evidence, and the "
+            "principal/generic-axial off-shell triangle preflight by content hash. The partial "
+            "triangle is explicitly rejected as EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1: "
+            "polar, exceptional and global all-sector rows remain open. It does not construct "
+            "the full off-shell BV triangle, global mapping cofiber, "
             "relative anomaly, QME restoration, renormalized pairing, state restriction, "
             "D-Cartan verdict, particle interpretation or Lorentzian quantum theory."
         ),
@@ -239,7 +309,11 @@ def validate(result: dict[str, Any]) -> None:
     ):
         raise ValueError("relative quantum readiness identity drifted")
     gate = result.get("classical_import_gate", {})
-    if gate.get("status") != "NOT_SATISFIED" or gate.get("current_map_disposition") != "ONSHELL_MAP_ONLY":
+    if (
+        gate.get("status") != "NOT_SATISFIED"
+        or gate.get("current_map_disposition")
+        != "PARTIAL_GENERIC_AXIAL_OFFSHELL_PREFLIGHT"
+    ):
         raise ValueError("classical relative import gate was over-promoted")
     row = result.get("shared_relative_row", {})
     if row.get("quantum_lift") != "ANALYTIC_FRAMEWORK_MISSING":

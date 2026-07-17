@@ -11,8 +11,15 @@ complete standard-harmonic tangent inclusion before final residual quotient.
 It is exact on-shell and its classical pullback form is nondegenerate, but it
 is not an off-shell BV chain map and is not symplectic block by block.  A
 separate quadratic-channel preflight supplies partial relative obstruction
-fixtures.  Both source certificates are imported from their pinned commits
-and checked by content hash.
+fixtures.
+
+The new relative linear-triangle preflight is also imported from its pinned
+commit. It certifies the principal BV chain map and cone and a strict
+polynomial off-shell chain map, solution cofiber, and direct pairing in the
+generic axial block. The polar, exceptional, and global all-sector rows and
+global mapping cofiber remain open. The classical functor preflight confirms
+that this evidence does not satisfy `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`.
+All four source certificates are checked against pinned commits and hashes.
 
 The quantum side imports the current local anomaly-to-(D) comparison and the
 partial global Berger `A104` ledger.  The former has no Cartan verdict; the
@@ -22,7 +29,7 @@ latter has no full Cauchy BRST operator, pairing, or Hadamard state.
 
 | Setting | Map \(\iota\) | Cofiber | Relative pairing | \(\mathfrak O_2\) | Residual action | Observable map | Quantum lift |
 |---|---|---|---|---|---|---|---|
-| Compact Einstein--Maxwell product; complete standard harmonic tangent; fixed compact bundle; before final residual quotient | `ONSHELL_MAP_ONLY`, imported by hash | off-shell mapping cofiber not exported | classical reduced-mode pullback only; not renormalized | partial quadratic fixtures; arity-three disposition open | relative equivariance open | relative pullback open | `ANALYTIC_FRAMEWORK_MISSING` |
+| Compact Einstein--Maxwell product; complete standard harmonic tangent; fixed compact bundle; before final residual quotient | principal and generic-axial off-shell preflight imported; global V1 open | generic-axial solution cofiber certified; global cofiber open | classical reduced-mode pullback only; not renormalized | partial quadratic fixtures; arity-three disposition open | relative equivariance open | relative pullback open | `ANALYTIC_FRAMEWORK_MISSING` |
 
 The missing classical import gate consists of exactly:
 
@@ -53,7 +60,9 @@ separate.
 
 ## Verdict and claim boundary
 
-The sole verdict is `ANALYTIC_FRAMEWORK_MISSING`.  No relative anomaly,
+The classical import gate remains `NOT_SATISFIED`; the partial triangle is
+positive local evidence, not the required all-sector V1 result. The sole
+quantum verdict is `ANALYTIC_FRAMEWORK_MISSING`. No relative anomaly,
 restored QME, renormalized pairing, state restriction, (D)-Cartan verdict,
 particle interpretation, or Lorentzian quantum theorem is claimed.  Residual
 quantum transfer remains unauthorized.
@@ -63,3 +72,11 @@ quantum transfer remains unauthorized.
 The certificate has a strict Draft 2020-12 schema, hash-bound source manifest,
 independent pinned-commit replay, semantic input checks, fail-closed mutations,
 and focused unit tests.
+
+Tier-1 receipts on 2026-07-17: certificate check `PASS` in 0.06 s,
+independent verifier `PASS` in 0.38 s, and eight focused tests `PASS` in 0.44 s.
+The shared Draft 2020-12 validation rail passed for this and the coupled-q2
+certificate in 0.12 s. Tier 2 was unnecessary because this change imports
+unchanged content-addressed classical evidence and changes only the readiness
+consumer. Tier 3 was not run because the full triangle gate remains unsatisfied
+and no theorem, freeze, release, or lifecycle promotion occurred.

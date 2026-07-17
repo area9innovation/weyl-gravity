@@ -250,6 +250,24 @@ PYTHONPATH=quantum-weyl python3 -m transfer.berger_support_local_q2_replay_certi
 PYTHONPATH=quantum-weyl python3 -m transfer.berger_retained_26_q2_transfer_certificate --replay-check
 ```
 
+The classical gravity--clock--Maxwell extension has now landed as a sparse
+64-row overlay. A pinned quantum consumer independently verifies the exact
+artifact and row hashes, gravity composition seam, 1,954 overlay terms,
+grading, PBW order, Koszul symmetry, and coefficientwise frozen
+`K_Berger=e0` derivation. A later pinned audit establishes that the legacy
+`D=e0` label denotes `K_Berger=D-omega R`; raw cylinder `D` is affine and no
+raw-`D` equivariance or Cartan theorem is promoted. The consumer also does
+not promote the producer's
+`q1/q2` or cyclicity booleans: portable 64-row unary and pairing carriers are
+not exported. The Maxwell unary contraction is likewise absent, so mixed
+vertex transfer remains blocked.
+
+```bash
+PYTHONPATH=quantum-weyl python3 -m transfer.berger_coupled_64_q2_import_certificate --check
+PYTHONPATH=quantum-weyl python3 -m transfer.verify_berger_coupled_64_q2_import
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_coupled_64_q2_import.py -v
+```
+
 ```bash
 python3 quantum-weyl/transfer/berger_support_local_q2_import_certificate.py --check
 python3 -m unittest quantum-weyl/transfer/tests/test_berger_support_local_q2_import.py

@@ -24,22 +24,26 @@
     },
     "dependency_refs": {
       "type": "object", "additionalProperties": false,
-      "required": ["standard_harmonic_inclusion_contribution", "quadratic_channel_preflight_contribution", "local_D_Cartan_comparison", "Berger_global_A104_partial", "quantum_team_brief", "universe_building_roadmap"],
+      "required": ["standard_harmonic_inclusion_contribution", "quadratic_channel_preflight_contribution", "local_D_Cartan_comparison", "Berger_global_A104_partial", "quantum_team_brief", "universe_building_roadmap", "relative_linear_triangle_preflight", "relative_functor_preflight"],
       "properties": {
         "standard_harmonic_inclusion_contribution": {"$ref": "#/$defs/dependency"},
         "quadratic_channel_preflight_contribution": {"$ref": "#/$defs/dependency"},
         "local_D_Cartan_comparison": {"$ref": "#/$defs/dependency"},
         "Berger_global_A104_partial": {"$ref": "#/$defs/dependency"},
         "quantum_team_brief": {"$ref": "#/$defs/dependency"},
-        "universe_building_roadmap": {"$ref": "#/$defs/dependency"}
+        "universe_building_roadmap": {"$ref": "#/$defs/dependency"},
+        "relative_linear_triangle_preflight": {"$ref": "#/$defs/dependency"},
+        "relative_functor_preflight": {"$ref": "#/$defs/dependency"}
       }
     },
     "pinned_classical_evidence": {
       "type": "object", "additionalProperties": false,
-      "required": ["standard_harmonic_inclusion", "quadratic_channel_preflight"],
+      "required": ["standard_harmonic_inclusion", "quadratic_channel_preflight", "relative_linear_triangle_preflight", "relative_functor_preflight"],
       "properties": {
         "standard_harmonic_inclusion": {"$ref": "#/$defs/evidence"},
-        "quadratic_channel_preflight": {"$ref": "#/$defs/evidence"}
+        "quadratic_channel_preflight": {"$ref": "#/$defs/evidence"},
+        "relative_linear_triangle_preflight": {"$ref": "#/$defs/evidence"},
+        "relative_functor_preflight": {"$ref": "#/$defs/evidence"}
       }
     },
     "classical_import_gate": {
@@ -47,7 +51,7 @@
       "required": ["status", "current_map_disposition", "required_result_ids", "forbidden_fallback"],
       "properties": {
         "status": {"const": "NOT_SATISFIED"},
-        "current_map_disposition": {"const": "ONSHELL_MAP_ONLY"},
+        "current_map_disposition": {"const": "PARTIAL_GENERIC_AXIAL_OFFSHELL_PREFLIGHT"},
         "required_result_ids": {"const": ["EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1", "EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE", "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1"]},
         "forbidden_fallback": {"const": "do not reconstruct the classical triangle or its maps inside quantum-weyl"}
       }
@@ -57,8 +61,8 @@
       "required": ["setting", "map_iota", "cofiber", "relative_pairing", "O2", "residual_action", "observable_map", "quantum_lift"],
       "properties": {
         "setting": {"const": "compact Einstein-Maxwell product; complete standard harmonic tangent; fixed compact bundle; before final residual quotient"},
-        "map_iota": {"const": "ONSHELL_MAP_ONLY_IMPORTED_BY_HASH"},
-        "cofiber": {"const": "OPEN_OFFSHELL_MAPPING_COFIBER_NOT_EXPORTED"},
+        "map_iota": {"const": "PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_PREFLIGHT_IMPORTED_GLOBAL_V1_OPEN"},
+        "cofiber": {"const": "GENERIC_AXIAL_SOLUTION_COFIBER_CERTIFIED_GLOBAL_COFIBER_OPEN"},
         "relative_pairing": {"const": "REDUCED_MODE_CLASSICAL_PULLBACK_NONDEGENERATE_NOT_RENORMALIZED"},
         "O2": {"const": "PARTIAL_QUADRATIC_FIXTURES_ONLY_ARITY_THREE_DISPOSITION_OPEN"},
         "residual_action": {"const": "OPEN_RELATIVE_EQUIVARIANCE_NOT_EXPORTED"},
@@ -116,10 +120,12 @@
     "next_gate": {"const": "IMPORT_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_BY_HASH"},
     "provenance": {
       "type": "object", "additionalProperties": false,
-      "required": ["standard_inclusion_setting_id", "quadratic_preflight_setting_id", "source_manifest", "source_manifest_sha256"],
+      "required": ["standard_inclusion_setting_id", "quadratic_preflight_setting_id", "triangle_preflight_result_id", "relative_functor_preflight_result_id", "source_manifest", "source_manifest_sha256"],
       "properties": {
         "standard_inclusion_setting_id": {"const": "compact_einstein_maxwell_weyl_standard_harmonic_inclusion"},
         "quadratic_preflight_setting_id": {"const": "compact_einstein_maxwell_weyl_axial_quadratic_channel_preflight"},
+        "triangle_preflight_result_id": {"const": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT"},
+        "relative_functor_preflight_result_id": {"const": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1"},
         "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
         "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
       }
