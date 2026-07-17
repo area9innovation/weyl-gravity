@@ -1,47 +1,82 @@
 {
-  "schema": "closed-universe-berger-localized-detector-records-input-v1",
+  "schema": "closed-universe-berger-localized-detector-records-input-v2",
   "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus",
+  "dependency_snapshot_commit": "fc7a680d32d23d516a1c29c54ae1e0734d532a75",
   "relational_coordinates": ["Theta", "R1", "R2", "R3"],
-  "relational_jacobian": [["1", "0", "0", "0"], ["0", "1", "0", "0"], ["0", "0", "1", "0"], ["0", "0", "0", "1"]],
-  "emitter_clock_support": ["-1", "-1/2"],
+  "clock_rate": "3/4",
+  "emitter": {
+    "clock_label": "0",
+    "hopf_arclength": "0",
+    "source_polarizations": ["horizontal_1", "horizontal_2"]
+  },
+  "hopf_geometry": {
+    "half_fibre_length": "3*sqrt(10)*pi/10",
+    "certified_lower_bound": "9/4"
+  },
+  "rod_charts": [
+    {
+      "detector_id": "D0",
+      "cauchy_clock": "3/16",
+      "relational_jacobian": [["1", "0", "0", "0"], ["0", "1", "0", "0"], ["0", "0", "1", "0"], ["0", "0", "0", "1"]],
+      "normal_derivatives": ["0", "0", "0"]
+    },
+    {
+      "detector_id": "D1",
+      "cauchy_clock": "3/8",
+      "relational_jacobian": [["1", "0", "0", "0"], ["0", "1", "0", "0"], ["0", "0", "1", "0"], ["0", "0", "0", "1"]],
+      "normal_derivatives": ["0", "0", "0"]
+    }
+  ],
   "detectors": [
     {
       "id": "D0",
-      "clock_label": "1",
-      "clock_window": ["3/4", "5/4"],
+      "clock_label": "3/16",
+      "hopf_arclength": "1/4",
       "rod_center": ["1/4", "0", "0"],
-      "rod_half_width": "1/16",
+      "rod_radius": "1/64",
       "polarization": "dTheta_wedge_dR1"
     },
     {
       "id": "D1",
-      "clock_label": "2",
-      "clock_window": ["7/4", "9/4"],
+      "clock_label": "3/8",
+      "hopf_arclength": "1/2",
       "rod_center": ["1/2", "0", "0"],
-      "rod_half_width": "1/16",
-      "polarization": "dTheta_wedge_dR1"
+      "rod_radius": "1/64",
+      "polarization": "dTheta_wedge_dR2"
     }
   ],
-  "probe_supports": ["D0", "D1"],
+  "memory_model": {
+    "action": "sum_a integral p_a (d_Theta m_a - q_a(Theta;F)) dTheta",
+    "probe_branch": "p_a=0",
+    "initial_memory": ["0", "0"]
+  },
   "mutations": [
     {
       "name": "singular_rod_chart",
-      "patch": {"relational_jacobian": [["1", "0", "0", "0"], ["0", "1", "0", "0"], ["0", "0", "1", "0"], ["0", "0", "0", "0"]]},
-      "expected_failed_requirement": "relational_chart_nondegenerate"
+      "patch": {"rod_jacobians": [[["1", "0", "0", "0"], ["0", "1", "0", "0"], ["0", "0", "1", "0"], ["0", "0", "0", "0"]], [["1", "0", "0", "0"], ["0", "1", "0", "0"], ["0", "0", "1", "0"], ["0", "0", "0", "1"]]]},
+      "expected_failed_requirement": "rod_solutions_nondegenerate"
     },
     {
       "name": "merge_clock_labels",
-      "patch": {"detector_clock_labels": ["1", "1"]},
+      "patch": {"detector_clock_labels": ["3/16", "3/16"]},
       "expected_failed_requirement": "clock_labels_distinct"
     },
     {
-      "name": "overlap_detector_windows",
-      "patch": {"detector_rod_centers": [["1/4", "0", "0"], ["1/4", "0", "0"]], "detector_clock_windows": [["3/4", "5/4"], ["3/4", "5/4"]]},
-      "expected_failed_requirement": "detector_supports_disjoint"
+      "name": "break_hopf_causal_incidence",
+      "patch": {"detector_clock_labels": ["3/16", "1/2"]},
+      "expected_failed_requirement": "central_null_incidence_exact"
     },
     {
-      "name": "collapse_record_probe_support",
-      "patch": {"probe_supports": ["D0", "D0"]},
+      "name": "cross_half_fibre_cut_locus",
+      "patch": {"detector_hopf_arclengths": ["1/4", "5/2"]},
+      "expected_failed_requirement": "central_rays_unique_no_wrap"
+    },
+    {
+      "name": "collapse_detector_functionals",
+      "patch": {
+        "detector_clock_labels": ["3/16", "3/16"],
+        "detector_rod_centers": [["1/4", "0", "0"], ["1/4", "0", "0"]]
+      },
       "expected_failed_requirement": "record_functionals_independent"
     }
   ]

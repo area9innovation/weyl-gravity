@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-localized-detector-records-input-v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "setting_id", "dependency_snapshot_commit", "relational_coordinates", "clock_rate", "emitter", "hopf_geometry", "rod_charts", "detectors", "memory_model", "mutations"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-localized-detector-records-input-v2"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"},
+    "dependency_snapshot_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "relational_coordinates": {"const": ["Theta", "R1", "R2", "R3"]},
+    "clock_rate": {"$ref": "#/$defs/scalar"},
+    "emitter": {
+      "type": "object", "additionalProperties": false,
+      "required": ["clock_label", "hopf_arclength", "source_polarizations"],
+      "properties": {
+        "clock_label": {"$ref": "#/$defs/scalar"}, "hopf_arclength": {"$ref": "#/$defs/scalar"},
+        "source_polarizations": {"const": ["horizontal_1", "horizontal_2"]}
+      }
+    },
+    "hopf_geometry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["half_fibre_length", "certified_lower_bound"],
+      "properties": {"half_fibre_length": {"const": "3*sqrt(10)*pi/10"}, "certified_lower_bound": {"$ref": "#/$defs/scalar"}}
+    },
+    "rod_charts": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/rod_chart"}},
+    "detectors": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/detector"}},
+    "memory_model": {
+      "type": "object", "additionalProperties": false,
+      "required": ["action", "probe_branch", "initial_memory"],
+      "properties": {
+        "action": {"$ref": "#/$defs/text"}, "probe_branch": {"const": "p_a=0"},
+        "initial_memory": {"const": ["0", "0"]}
+      }
+    },
+    "mutations": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "patch", "expected_failed_requirement"],
+        "properties": {
+          "name": {"$ref": "#/$defs/text"}, "patch": {"type": "object", "minProperties": 1},
+          "expected_failed_requirement": {"enum": ["rod_solutions_nondegenerate", "clock_labels_distinct", "central_null_incidence_exact", "central_rays_unique_no_wrap", "record_functionals_independent"]}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "scalar": {"type": ["string", "integer"], "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"},
+    "vector3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/scalar"}},
+    "matrix4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/scalar"}}},
+    "rod_chart": {
+      "type": "object", "additionalProperties": false,
+      "required": ["detector_id", "cauchy_clock", "relational_jacobian", "normal_derivatives"],
+      "properties": {
+        "detector_id": {"enum": ["D0", "D1"]}, "cauchy_clock": {"$ref": "#/$defs/scalar"},
+        "relational_jacobian": {"$ref": "#/$defs/matrix4"}, "normal_derivatives": {"const": ["0", "0", "0"]}
+      }
+    },
+    "detector": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "clock_label", "hopf_arclength", "rod_center", "rod_radius", "polarization"],
+      "properties": {
+        "id": {"enum": ["D0", "D1"]}, "clock_label": {"$ref": "#/$defs/scalar"},
+        "hopf_arclength": {"$ref": "#/$defs/scalar"}, "rod_center": {"$ref": "#/$defs/vector3"},
+        "rod_radius": {"$ref": "#/$defs/scalar"},
+        "polarization": {"enum": ["dTheta_wedge_dR1", "dTheta_wedge_dR2"]}
+      }
+    }
+  }
+}

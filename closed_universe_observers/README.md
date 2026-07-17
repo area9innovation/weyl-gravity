@@ -23,9 +23,10 @@ The fixture is generated from
 hard-code rank: it derives the global and observer matrices, retains all 36
 global two-by-two minor witnesses, and stores a nonzero observer determinant.
 The verifier independently reconstructs these matrices and replays every
-mutation.  The detector fixture constructs two independent, localized,
-clock-labelled field-strength record functionals, while keeping the imported
-pulse's two-window nonvanishing and the rod-sector quotient descent open.  The
+mutation.  The detector preflight constructs local standard-sign rods, two
+independent clock-labelled spacetime field-strength smearings, exact central no-wrap Hopf
+rays, and persistent probe memories.  The physical smeared retarded transfer
+matrix and the rod-memory quotient descent remain open.  The
 comparison ledger replays its historical imports exactly, checks current
 compatibility separately, and remains fail-closed on the classical-map and
 quantum gates.

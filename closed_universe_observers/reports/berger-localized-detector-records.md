@@ -1,96 +1,123 @@
-# Two localized clock-labelled Berger detector records
+# Hardened Berger detector-record preflight
 
 ## Result
 
-The first localized detector layer now exists as a bridge-only classical
-consumer of the authoritative Berger certificates.  In a local apparatus
-chart, use the clock and three probe rods
+The detector layer now certifies the objects needed before computing a
+retarded response.  It does not call an unevaluated Green function a click.
+
+First, each detector carries three standard-sign probe rod scalars with
 
 \[
-(\Theta,R^1,R^2,R^3),\qquad
+S_R=-\frac12\sum_{I=1}^3\int
+\sqrt{-\widehat g}\,\widehat g^{ab}\partial_aR^I\partial_bR^I.
+\]
+
+On the detector clock slice their Cauchy data are `R^I=x^I` and
+`n(R^I)=0`.  The normally hyperbolic scalar Cauchy theorem supplies local
+solutions.  Both relational Jacobians are exactly `I_4`, so continuity gives
+open neighborhoods on which
+
+\[
 d\Theta\wedge dR^1\wedge dR^2\wedge dR^3\ne0.
 \]
 
-The declared fixture has exact relational Jacobian `I_4`.  It places two
-compact, disjoint detector windows at
+Each compact smearing support is selected inside the intersection of such a
+neighborhood and its nominal detector ball.  Continuity certifies some
+nonzero support there, not nondegeneracy throughout the full declared
+numerical-radius ball.  This is a local probe-rod theorem, not a backreacting
+global material coordinate system.
+
+## Smearings and independence
+
+The detector centers lie on one no-wrap Hopf chart:
 
 \[
-(\tau_0,r_0)=(1,(1/4,0,0)),\qquad
-(\tau_1,r_1)=(2,(1/2,0,0)),
+(\tau_0,L_0)=(3/16,1/4),\qquad
+(\tau_1,L_1)=(3/8,1/2),\qquad \Theta=(3/4)t.
 \]
 
-after the imported emitter clock support `[-1,-1/2]`.  Their field-strength
-records are
+For an emitter center at `(Theta,L)=(0,0)`, both exact null-incidence
+residuals `tau_a-(3/4)L_a` vanish.  Moreover
+
+\[
+0<L_a<\frac94<2\pi c=\frac{3\sqrt{10}\pi}{10},
+\]
+
+so the central Hopf rays are below the half-fibre cut locus.  This proves
+central no-wrap incidence only; full compact-support incidence remains part
+of the response calculation.
+
+At each center define a smooth compact spacetime smearing inside the local
+rod neighborhood,
 
 \[
 Q_a[F]=\int \rho_a(\Theta,R)
-  \langle F,d\Theta\wedge dR^1\rangle_{\widehat g}
-  \operatorname{vol}_{\widehat g},\qquad a=0,1.
+ \langle F,P_a\rangle_{\widehat g}\,d\operatorname{vol}_{\widehat g},
 \]
 
-Because the relational supports are disjoint, compact probe variations can
-be supported independently in the two windows.  Their exact evaluation
-matrix is `I_2`.  Thus `Q_0` and `Q_1` are linearly independent and generate
-the real classical record algebra
+with `P_0=dTheta wedge dR1` and `P_1=dTheta wedge dR2`.  Compact Maxwell test
+fields `H_a` are chosen inside the detector windows and normalized by
+`Q_a[H_a]=1`.  Cross pairings vanish because the spacetime supports are
+disjoint.  The derived matrix is
 
 \[
-\mathcal A_{\rm record}=\mathbb R[Q_0,Q_1].
+(Q_a[H_b])=I_2.
 \]
 
-The construction is Diff-covariant at probe order, Weyl invariant through
-the clock metric `gHat`, and Maxwell-gauge invariant because it uses
-`F=dA`.  Four mutation rails independently destroy the rod Jacobian, clock
-label separation, support separation, and rank-two record conclusion.
+The earlier label-based `probe_supports` input has been removed.  Five
+mutations now destroy, separately, rod nondegeneracy, clock-label separation,
+null incidence, no-wrap geometry, and smearing independence.
 
-## Source-to-record map and exact obstruction
+## Persistent probe records
 
-Importing the compact current and retarded Green theorem defines the map
+Each smearing drives a first-order memory register with response action
 
 \[
-j=d\kappa\longmapsto F_{\rm ret}=dG_{\rm ret}J
-\longmapsto (Q_0[F_{\rm ret}],Q_1[F_{\rm ret}]).
+S_{\rm mem}=\sum_a\int p_a
+  \bigl(\partial_\Theta m_a-q_a(\Theta;F)\bigr)d\Theta.
 \]
 
-This map is well-defined, but the current imports prove only global
-nonvanishing and retarded support.  They do not provide a pointwise Green
-kernel or wave-front witness showing that `F_ret` is nonzero in both detector
-windows chosen independently of the solution.  Consequently two localized
-record functionals are certified, while two nonzero detector clicks are not.
+Here `q_a(Theta;F)` is the clock-time drive whose integral is `Q_a[F]`.
+Thus `partial_Theta m_a=q_a(Theta;F)` and `partial_Theta p_a=0`.  On the
+probe branch `p_a=0`, the Maxwell field receives no detector force.  Starting
+from zero memory, `m_a=Q_a[F]` after the detector window and remains constant.
+These are persistent probe records; apparatus recoil and backreaction remain
+open.
 
-This is the first exact obstruction to promoting the partial Berger observer
-map: causal support is weaker than a nonzero, unique, no-wrap source-to-window
-incidence theorem.
+## Correct next gate
 
-## Gauge and lifecycle boundary
+The next object is not a pointwise Green-kernel value and not two nonzero
+numbers from one pulse.  Predeclare two compact conserved emitter currents
+and compute the smeared transfer matrix
 
-The rods are healthy standard-sign probe scalar Cauchy data.  Their stress,
-backreaction, and apparatus recoil are deliberately excluded, as required by
-the staged classical gate.  Because that probe rod sector is not part of the
-imported fixed-coupling phase space or interacting `K_Berger` complex, neither
-raw-`D` nor `K_Berger` descent is promoted.
+\[
+M_{ab}=Q_a[dG_{\rm ret}J_b].
+\]
 
-Therefore:
+Promotion requires a nonzero exact determinant or rank-two minor, full
+source-support-to-window causal/no-wrap witnesses, and the same matrix in the
+memory registers.  Detector locations, polarizations, sources, and
+normalizations may not be selected after seeing the responses.
 
-- `TWO_LOCALIZED_CLOCK_LABELLED_RECORD_FUNCTIONALS = true`;
-- `SOURCE_TO_RETARDED_FIELD_TO_RECORD_MAP_DEFINED = true`;
-- `TWO_NONZERO_RETARDED_RECORD_VALUES = false`;
-- `D_DESCENT_WITH_RODS_CERTIFIED = false`; and
-- `CLASSICAL_OBSERVER_MAP_CERTIFIED = false`.
+The new gate is
+`BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER`.
 
-The next exact gate is
-`BERGER_POINTWISE_RETARDED_GREEN_KERNEL_TWO_WINDOW_WITNESS`.
+## Dependency and claim boundary
 
-Machine-readable certificate:
-`closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json`.
+Every classical dependency is replayed from snapshot
+`fc7a680d32d23d516a1c29c54ae1e0734d532a75`; current files are checked
+separately through required compatibility flags.  A later compatible claim
+boundary update therefore does not make this certificate stale.
 
-## Verification
+The probe smearings are Diff-covariant, Weyl invariant through `gHat`, and
+Maxwell-gauge invariant because they depend on `F`.  Raw-`D` and
+`K_Berger` descent remain open because the rod-memory sector is not in the
+imported phase space or interacting complex.  No quantum claim is made.
+
+Verification:
 
 ```bash
 python3 closed_universe_observers/generate_berger_detector_records.py --check
 python3 closed_universe_observers/verify_berger_detector_records.py
 python3 -m pytest -q closed_universe_observers/tests/test_berger_detector_records.py
 ```
-
-This is a `LOCAL-ALGEBRAIC` and `LORENTZIAN-CAUSAL` bridge consumer.  It is
-not a backreacting apparatus theorem, a complete `D`-quotient observer
-algebra, a quantum state construction, or a QME result.

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Generate two localized clock-labelled Berger detector record functionals.
+"""Generate the hardened localized Berger detector-record preflight.
 
-This is a consumer of the authoritative classical clock, apparatus contract,
-and retarded Maxwell signal.  It constructs the localized record algebra but
-does not invent a pointwise nonvanishing theorem for the imported pulse.
+The producer derives rod, support, polarization, causal-center, no-wrap, and
+memory witnesses.  It deliberately leaves the smeared retarded transfer
+matrix to the next certificate.
 """
 
 from __future__ import annotations
@@ -14,6 +14,7 @@ from fractions import Fraction
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 from typing import Any
 
 import jsonschema
@@ -23,15 +24,23 @@ import sympy as sp
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = ROOT / "closed_universe_observers"
 INPUT = PACKAGE / "fixtures/berger_localized_detector_records_input.json"
-INPUT_SCHEMA = PACKAGE / "schema/berger-localized-detector-records-input-v1.schema.json"
-SCHEMA = PACKAGE / "schema/berger-localized-detector-records-v1.schema.json"
+INPUT_SCHEMA = PACKAGE / "schema/berger-localized-detector-records-input-v2.schema.json"
+SCHEMA = PACKAGE / "schema/berger-localized-detector-records-v2.schema.json"
 CERTIFICATE = PACKAGE / "certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json"
 
 DEPENDENCIES = {
     "clock": ROOT / "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
     "apparatus_contract": ROOT / "d_quotient_classical/certificates/BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT.json",
     "retarded_signal": ROOT / "d_quotient_classical/certificates/BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL.json",
+    "redshift_geometry": ROOT / "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
     "raw_D_nullity": ROOT / "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
+}
+REQUIRED_FLAGS = {
+    "clock": ["exact_backreacted_background_exists", "everywhere_timelike_phase_clock"],
+    "apparatus_contract": ["BERGER_RELATIONAL_APPARATUS_CONTRACT", "BERGER_MAXWELL_SEMIDIRECT_GAUGE_Q2"],
+    "retarded_signal": ["BERGER_COMPACT_CONSERVED_MAXWELL_SOURCE", "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL"],
+    "redshift_geometry": ["BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE"],
+    "raw_D_nullity": ["scoped_D_verdict_promoted", "total_helical_presymplectic_contraction_zero"],
 }
 SOURCE_FILES = {
     "producer": Path(__file__),
@@ -44,8 +53,12 @@ SOURCE_FILES = {
 }
 
 
+def _sha256_bytes(value: bytes) -> str:
+    return hashlib.sha256(value).hexdigest()
+
+
 def _sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return _sha256_bytes(path.read_bytes())
 
 
 def _q(value: str | int) -> sp.Rational:
@@ -63,64 +76,94 @@ def _patched(data: dict[str, Any], patch: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
-def _intervals_disjoint(left: list[sp.Rational], right: list[sp.Rational]) -> bool:
-    return left[1] <= right[0] or right[1] <= left[0]
+def _detector_values(data: dict[str, Any]) -> tuple[list[sp.Rational], list[sp.Rational], list[list[sp.Rational]], list[str]]:
+    detectors = data["detectors"]
+    labels = [_q(value) for value in data.get("detector_clock_labels", [item["clock_label"] for item in detectors])]
+    arclengths = [_q(value) for value in data.get("detector_hopf_arclengths", [item["hopf_arclength"] for item in detectors])]
+    centers = [[_q(value) for value in row] for row in data.get("detector_rod_centers", [item["rod_center"] for item in detectors])]
+    polarizations = list(data.get("detector_polarizations", [item["polarization"] for item in detectors]))
+    return labels, arclengths, centers, polarizations
 
 
 def evaluate(data: dict[str, Any]) -> dict[str, Any]:
-    jacobian = sp.Matrix([[_q(value) for value in row] for row in data["relational_jacobian"]])
+    labels, arclengths, centers, polarizations = _detector_values(data)
     detectors = data["detectors"]
-    clock_labels = [_q(value) for value in data.get("detector_clock_labels", [item["clock_label"] for item in detectors])]
-    clock_windows = [
-        [_q(value) for value in interval]
-        for interval in data.get("detector_clock_windows", [item["clock_window"] for item in detectors])
-    ]
-    rod_centers = [
-        [_q(value) for value in center]
-        for center in data.get("detector_rod_centers", [item["rod_center"] for item in detectors])
-    ]
-    half_widths = [_q(item["rod_half_width"]) for item in detectors]
+    radii = [_q(item["rod_radius"]) for item in detectors]
+    raw_jacobians = data.get("rod_jacobians", [item["relational_jacobian"] for item in data["rod_charts"]])
+    jacobians = [sp.Matrix([[_q(value) for value in row] for row in matrix]) for matrix in raw_jacobians]
+    rod_cauchy_clocks = [_q(item["cauchy_clock"]) for item in data["rod_charts"]]
+
     spatially_disjoint = any(
-        abs(rod_centers[0][axis] - rod_centers[1][axis]) >= half_widths[0] + half_widths[1]
+        abs(centers[0][axis] - centers[1][axis]) >= radii[0] + radii[1]
         for axis in range(3)
     )
-    supports_disjoint = _intervals_disjoint(clock_windows[0], clock_windows[1]) or spatially_disjoint
-    detector_ids = [item["id"] for item in detectors]
-    record_matrix = sp.Matrix(
-        [[int(probe_support == detector_id) for probe_support in data["probe_supports"]] for detector_id in detector_ids]
-    )
-    emitter_end = _q(data["emitter_clock_support"][1])
-    clock_ordered_after_emitter = all(emitter_end < interval[0] for interval in clock_windows)
+    supports_disjoint = labels[0] != labels[1] or spatially_disjoint
+    record_matrix = sp.eye(2) if supports_disjoint else sp.ones(2)
+
+    emitter_clock = _q(data["emitter"]["clock_label"])
+    emitter_arclength = _q(data["emitter"]["hopf_arclength"])
+    clock_rate = _q(data["clock_rate"])
+    travel_distances = [abs(value - emitter_arclength) for value in arclengths]
+    incidence_residuals = [sp.simplify(labels[index] - emitter_clock - clock_rate * travel_distances[index]) for index in range(2)]
+    half_fibre_lower_bound = _q(data["hopf_geometry"]["certified_lower_bound"])
+    half_fibre_length = 3 * sp.sqrt(10) * sp.pi / 10
+
     requirements = {
-        "relational_chart_nondegenerate": jacobian.det() != 0,
-        "clock_labels_distinct": len(set(clock_labels)) == 2,
+        "rod_solutions_nondegenerate": all(matrix.det() != 0 for matrix in jacobians) and rod_cauchy_clocks == labels,
+        "clock_labels_distinct": len(set(labels)) == 2,
         "detector_supports_disjoint": supports_disjoint,
+        "central_null_incidence_exact": incidence_residuals == [0, 0],
+        "central_rays_unique_no_wrap": (
+            half_fibre_lower_bound < half_fibre_length
+            and all(0 < distance < half_fibre_lower_bound for distance in travel_distances)
+        ),
         "record_functionals_independent": record_matrix.rank() == 2,
+        "probe_memory_persistent": data["memory_model"]["probe_branch"] == "p_a=0" and data["memory_model"]["initial_memory"] == ["0", "0"],
     }
     return {
-        "jacobian": jacobian,
-        "clock_labels": clock_labels,
-        "clock_windows": clock_windows,
-        "rod_centers": rod_centers,
+        "labels": labels,
+        "arclengths": arclengths,
+        "centers": centers,
+        "polarizations": polarizations,
+        "jacobians": jacobians,
         "record_matrix": record_matrix,
-        "clock_ordered_after_emitter": clock_ordered_after_emitter,
+        "travel_distances": travel_distances,
+        "incidence_residuals": incidence_residuals,
+        "half_fibre_lower_bound": half_fibre_lower_bound,
+        "half_fibre_length": half_fibre_length,
         "requirements": requirements,
     }
 
 
-def _load_dependencies() -> dict[str, dict[str, Any]]:
-    loaded = {name: json.loads(path.read_text()) for name, path in DEPENDENCIES.items()}
-    required = {
-        "clock": ["exact_backreacted_background_exists", "everywhere_timelike_phase_clock"],
-        "apparatus_contract": ["BERGER_RELATIONAL_APPARATUS_CONTRACT", "BERGER_MAXWELL_SEMIDIRECT_GAUGE_Q2"],
-        "retarded_signal": ["BERGER_COMPACT_CONSERVED_MAXWELL_SOURCE", "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL"],
-        "raw_D_nullity": ["scoped_D_verdict_promoted", "total_helical_presymplectic_contraction_zero"],
-    }
-    for name, flags in required.items():
-        for flag in flags:
-            if loaded[name].get("flags", {}).get(flag) is not True:
-                raise AssertionError(f"required dependency flag dropped: {name}.{flag}")
-    return loaded
+def _git_prefix() -> str:
+    return subprocess.check_output(["git", "rev-parse", "--show-prefix"], cwd=ROOT, text=True).strip()
+
+
+def _snapshot_bytes(commit: str, path: Path) -> bytes:
+    relative = path.relative_to(ROOT)
+    return subprocess.check_output(["git", "show", f"{commit}:{_git_prefix()}{relative}"], cwd=ROOT)
+
+
+def _dependency_refs(snapshot: str) -> dict[str, dict[str, Any]]:
+    refs: dict[str, dict[str, Any]] = {}
+    for name, path in DEPENDENCIES.items():
+        pinned_bytes = _snapshot_bytes(snapshot, path)
+        pinned = json.loads(pinned_bytes)
+        live = json.loads(path.read_text())
+        if live["result_id"] != pinned["result_id"]:
+            raise AssertionError(f"live dependency result changed: {name}")
+        for flag in REQUIRED_FLAGS[name]:
+            if live.get("flags", {}).get(flag) is not True:
+                raise AssertionError(f"live compatibility flag dropped: {name}.{flag}")
+        refs[name] = {
+            "path": str(path.relative_to(ROOT)),
+            "result_id": pinned["result_id"],
+            "snapshot_commit": snapshot,
+            "sha256": _sha256_bytes(pinned_bytes),
+            "claim_boundary": pinned["claim_boundary"],
+            "live_required_flags": REQUIRED_FLAGS[name],
+        }
+    return refs
 
 
 def build() -> dict[str, Any]:
@@ -128,7 +171,6 @@ def build() -> dict[str, Any]:
     input_schema = json.loads(INPUT_SCHEMA.read_text())
     jsonschema.Draft202012Validator.check_schema(input_schema)
     jsonschema.Draft202012Validator(input_schema).validate(data)
-    dependencies = _load_dependencies()
     result = evaluate(data)
     if not all(result["requirements"].values()):
         raise AssertionError(f"base detector record fixture failed: {result['requirements']}")
@@ -145,90 +187,106 @@ def build() -> dict[str, Any]:
         })
     if not all(item["expected_failure_passed"] for item in mutations):
         raise AssertionError("detector record mutation rail did not fail closed")
-    dependency_refs = {
-        name: {
-            "path": str(path.relative_to(ROOT)),
-            "result_id": dependencies[name]["result_id"],
-            "sha256": _sha256(path),
-            "claim_boundary": dependencies[name]["claim_boundary"],
-        }
-        for name, path in DEPENDENCIES.items()
-    }
+
     detector_rows = []
     for index, detector in enumerate(data["detectors"]):
         detector_rows.append({
             "id": detector["id"],
-            "clock_label": sp.sstr(result["clock_labels"][index]),
-            "clock_window": [sp.sstr(value) for value in result["clock_windows"][index]],
-            "rod_center": [sp.sstr(value) for value in result["rod_centers"][index]],
-            "rod_half_width": detector["rod_half_width"],
-            "record_functional": (
-                f"Q_{index}[F]=integral rho_{index}(Theta,R) "
-                "<F,dTheta wedge dR1>_gHat vol_gHat"
-            ),
+            "clock_label": sp.sstr(result["labels"][index]),
+            "hopf_arclength": sp.sstr(result["arclengths"][index]),
+            "rod_center": [sp.sstr(value) for value in result["centers"][index]],
+            "rod_radius": detector["rod_radius"],
+            "polarization": result["polarizations"][index],
+            "smearing": f"Q_{index}[F]=integral rho_{index}(Theta,R) <F,P_{index}>_gHat dvol_gHat over compact spacetime support",
+            "normalized_dual_probe": f"H_{index} compact Maxwell test field normalized by Q_{index}[H_{index}]=1",
         })
+
     return {
-        "schema": "closed-universe-berger-localized-detector-records-v1",
+        "schema": "closed-universe-berger-localized-detector-records-v2",
         "result_id": "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
         "setting_id": data["setting_id"],
-        "claim_status": "CERTIFIED_TWO_LOCALIZED_RECORD_FUNCTIONALS_POINTWISE_RETARDED_RESPONSE_OPEN",
+        "claim_status": "CERTIFIED_LOCAL_ROD_SMEARING_AND_MEMORY_PREFLIGHT_RETARDED_TRANSFER_OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
-        "dependency_refs": dependency_refs,
-        "relational_probe_apparatus": {
-            "coordinates": data["relational_coordinates"],
-            "jacobian": _strings(result["jacobian"]),
-            "jacobian_determinant": sp.sstr(result["jacobian"].det()),
-            "rod_health": "three standard-sign probe scalar wave equations with independent local Cauchy gradients; stress and recoil are excluded at probe order",
-            "gauge_scope": "Diff-covariant relational localization; Weyl-invariant gHat and four-dimensional Maxwell F; Maxwell-gauge invariant because records depend on F=dA",
+        "dependency_refs": _dependency_refs(data["dependency_snapshot_commit"]),
+        "rod_solution_contract": {
+            "action": "S_R=-1/2 sum_I integral sqrt(-gHat) gHat^ab partial_a R^I partial_b R^I",
+            "cauchy_data": "R^I=x^I and n(R^I)=0 in each detector chart",
+            "local_existence": "standard normally hyperbolic scalar Cauchy theorem",
+            "jacobians": [_strings(matrix) for matrix in result["jacobians"]],
+            "jacobian_determinants": [sp.sstr(matrix.det()) for matrix in result["jacobians"]],
+            "compact_window_rule": "choose each compact spacetime smearing support inside the intersection of its nominal detector ball and an open neighborhood where the evolved Jacobian remains nonzero",
+            "probe_limit": "rod stress is order epsilon_R^2 and is excluded from the fixed background",
         },
-        "detector_records": detector_rows,
-        "record_algebra": {
-            "definition": "A_record=R[Q_0,Q_1] with pointwise product and real involution",
-            "probe_evaluation_matrix": _strings(result["record_matrix"]),
+        "causal_geometry": {
+            "emitter_clock_label": data["emitter"]["clock_label"],
+            "emitter_hopf_arclength": data["emitter"]["hopf_arclength"],
+            "clock_rate": data["clock_rate"],
+            "detector_travel_distances": [sp.sstr(value) for value in result["travel_distances"]],
+            "central_null_incidence_residuals": [sp.sstr(value) for value in result["incidence_residuals"]],
+            "half_fibre_length": data["hopf_geometry"]["half_fibre_length"],
+            "certified_half_fibre_lower_bound": data["hopf_geometry"]["certified_lower_bound"],
+            "unique_no_wrap_centers": result["requirements"]["central_rays_unique_no_wrap"],
+            "boundary": "central Hopf null rays only; full source/window causal incidence belongs to the transfer gate",
+        },
+        "detector_smearings": detector_rows,
+        "smearing_independence": {
+            "construction": "normalized dual Maxwell probes supported in disjoint compact detector spacetime windows; cross terms vanish by support disjointness",
+            "evaluation_matrix": _strings(result["record_matrix"]),
             "rank": int(result["record_matrix"].rank()),
-            "support_separation": "the two compact relational windows are disjoint",
-            "clock_ordered_after_emitter": result["clock_ordered_after_emitter"],
+            "not_input_labels": True,
         },
-        "source_to_record_chain": {
-            "source": "the imported compact neutral q-closed Maxwell current j=d kappa",
-            "retarded_field": "the imported unique Lorenz representative F_ret=d G_ret J",
-            "record_map": "j maps to (Q_0[F_ret],Q_1[F_ret])",
-            "well_defined": True,
-            "strict_future_nonzero_values_certified": False,
-            "obstruction": "the imported theorem gives causal support and global nonvanishing but no pointwise Green-kernel witness placing nonzero F_ret in both predeclared detector windows",
+        "probe_memory_registers": {
+            "action": data["memory_model"]["action"],
+            "equations": ["d_Theta m_a=q_a(Theta;F)", "d_Theta p_a=0"],
+            "probe_branch": data["memory_model"]["probe_branch"],
+            "final_record": "M_a=m_a(after detector support)=Q_a[F]=integral q_a(Theta;F)dTheta for zero initial memory",
+            "persistence": "d_Theta m_a=0 after the detector smearing support",
+            "backreaction": "open; p_a=0 removes the detector force on the Maxwell field at probe order",
+        },
+        "next_transfer_gate": {
+            "name": "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER",
+            "matrix": "M_ab=Q_a[d G_ret J_b]",
+            "required_witnesses": [
+                "two declared compact conserved emitter currents J_0,J_1 chosen before evaluation",
+                "full source-support to detector-window causal incidence and no-wrap margins",
+                "exact nonzero determinant or rank-two minor of M_ab",
+                "memory response matrix equal to M_ab",
+                "no adaptive detector placement or normalization using the computed response",
+            ],
+            "status": "OPEN",
         },
         "gauge_and_quotient_tests": {
-            "Diff": "PASS_FOR_PROBE_RELATIONAL_FUNCTIONALS",
-            "Weyl": "PASS_FOR_PROBE_RELATIONAL_FUNCTIONALS",
+            "Diff": "PASS_FOR_LOCAL_RELATIONAL_PROBE_FUNCTIONALS",
+            "Weyl": "PASS_FOR_LOCAL_RELATIONAL_PROBE_FUNCTIONALS",
             "Maxwell_gauge": "PASS",
-            "raw_D": "OPEN_WITH_ROD_SECTOR_NOT_IN_IMPORTED_PHASE_SPACE",
-            "K_Berger": "OPEN_WITH_ROD_SECTOR_NOT_IN_IMPORTED_INTERACTING_COMPLEX",
+            "raw_D": "OPEN_WITH_ROD_MEMORY_SECTOR_NOT_IN_IMPORTED_PHASE_SPACE",
+            "K_Berger": "OPEN_WITH_ROD_MEMORY_SECTOR_NOT_IN_IMPORTED_INTERACTING_COMPLEX",
         },
         "mutation_results": mutations,
         "flags": {
-            "TWO_LOCALIZED_CLOCK_LABELLED_RECORD_FUNCTIONALS": True,
-            "LOCAL_ROD_PROBE_CHART_NONDEGENERATE": True,
-            "RECORD_ALGEBRA_TWO_GENERATORS": True,
-            "SOURCE_TO_RETARDED_FIELD_TO_RECORD_MAP_DEFINED": True,
-            "TWO_NONZERO_RETARDED_RECORD_VALUES": False,
-            "STRICT_FUTURE_DETECTOR_INTERSECTION_CERTIFIED": False,
+            "LOCAL_STANDARD_SIGN_ROD_SOLUTIONS": True,
+            "ROD_JACOBIANS_NONDEGENERATE_ON_SOME_LOCAL_WINDOWS": True,
+            "TWO_LOCALIZED_CLOCK_LABELLED_DETECTOR_SMEARINGS": True,
+            "DETECTOR_SMEARING_FUNCTIONALS_INDEPENDENT": True,
+            "CENTRAL_HOPF_NULL_INTERSECTIONS_NO_WRAP": True,
+            "PERSISTENT_PROBE_MEMORY_REGISTERS": True,
+            "SMEARED_RETARDED_TRANSFER_MATRIX_RANK_TWO": False,
+            "TWO_NONZERO_RETARDED_MEMORY_RECORDS": False,
             "ROD_BACKREACTION_AND_APPARATUS_RECOIL_INCLUDED": False,
             "D_DESCENT_WITH_RODS_CERTIFIED": False,
             "CLASSICAL_OBSERVER_MAP_CERTIFIED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "BERGER_POINTWISE_RETARDED_GREEN_KERNEL_TWO_WINDOW_WITNESS",
         "assumptions": [
-            "the standard-sign probe scalar Cauchy solutions retain the declared nonzero relational Jacobian on both compact detector windows",
-            "the probe-apparatus limit consistently omits rod stress, detector recoil, and gravitational backreaction",
-            "smooth compact nonnegative detector windows subordinate to the declared relational boxes are available",
-            "the imported distributional retarded field admits pairing with the smooth detector test two-forms",
+            "the probe-rod limit consistently omits order-epsilon_R^2 stress and detector recoil",
+            "the declared rod radii are nominal upper bounds; continuity certifies some nonzero compact support inside each ball, not the full numerical-radius ball",
+            "the next transfer certificate will predeclare both currents and may not normalize using its computed responses",
         ],
         "not_established": [
-            "nonzero response of the imported pulse in both predeclared detector windows",
-            "a unique no-wrap null intersection from the imported compact source to each receiver",
-            "rod-field backreaction or apparatus recoil",
-            "raw-D or K_Berger descent after adjoining the rod sector",
+            "the rank or nonvanishing of Q_a[d G_ret J_b]",
+            "full compact-support causal incidence from two emitter currents to both detector windows",
+            "rod or memory backreaction and apparatus recoil",
+            "raw-D or K_Berger descent after adjoining rods and memory registers",
             "a quantum observer state or positive quantum inner product",
         ],
         "provenance": {
@@ -238,7 +296,7 @@ def build() -> dict[str, Any]:
                 for role, path in SOURCE_FILES.items()
             ],
         },
-        "claim_boundary": "This bridge-only classical consumer constructs two linearly independent, spatially localized, clock-labelled Maxwell field-strength record functionals in a nondegenerate local probe-rod chart and defines the source-to-retarded-field-to-record map. It does not prove that the imported compact pulse is nonzero in both predeclared windows, so it does not promote the partial Berger map to a certified observer algebra on the D quotient. Rod backreaction, apparatus recoil, K_Berger compatibility, quantum states, and QME claims remain open.",
+        "claim_boundary": "This bridge-only classical preflight constructs local standard-sign probe rod solutions, two independent clock-labelled spacetime Maxwell detector smearings, exact central Hopf null/no-wrap incidences, and persistent probe memory registers. It does not compute the smeared retarded transfer matrix M_ab=Q_a[d G_ret J_b], include rod or detector backreaction, or prove raw-D/K_Berger descent. The partial Berger observer map therefore remains uncertified.",
     }
 
 

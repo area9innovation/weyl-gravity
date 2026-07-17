@@ -1,96 +1,142 @@
 {
   "assumptions": [
-    "the standard-sign probe scalar Cauchy solutions retain the declared nonzero relational Jacobian on both compact detector windows",
-    "the probe-apparatus limit consistently omits rod stress, detector recoil, and gravitational backreaction",
-    "smooth compact nonnegative detector windows subordinate to the declared relational boxes are available",
-    "the imported distributional retarded field admits pairing with the smooth detector test two-forms"
+    "the probe-rod limit consistently omits order-epsilon_R^2 stress and detector recoil",
+    "the declared rod radii are nominal upper bounds; continuity certifies some nonzero compact support inside each ball, not the full numerical-radius ball",
+    "the next transfer certificate will predeclare both currents and may not normalize using its computed responses"
   ],
-  "claim_boundary": "This bridge-only classical consumer constructs two linearly independent, spatially localized, clock-labelled Maxwell field-strength record functionals in a nondegenerate local probe-rod chart and defines the source-to-retarded-field-to-record map. It does not prove that the imported compact pulse is nonzero in both predeclared windows, so it does not promote the partial Berger map to a certified observer algebra on the D quotient. Rod backreaction, apparatus recoil, K_Berger compatibility, quantum states, and QME claims remain open.",
-  "claim_status": "CERTIFIED_TWO_LOCALIZED_RECORD_FUNCTIONALS_POINTWISE_RETARDED_RESPONSE_OPEN",
+  "causal_geometry": {
+    "boundary": "central Hopf null rays only; full source/window causal incidence belongs to the transfer gate",
+    "central_null_incidence_residuals": [
+      "0",
+      "0"
+    ],
+    "certified_half_fibre_lower_bound": "9/4",
+    "clock_rate": "3/4",
+    "detector_travel_distances": [
+      "1/4",
+      "1/2"
+    ],
+    "emitter_clock_label": "0",
+    "emitter_hopf_arclength": "0",
+    "half_fibre_length": "3*sqrt(10)*pi/10",
+    "unique_no_wrap_centers": true
+  },
+  "claim_boundary": "This bridge-only classical preflight constructs local standard-sign probe rod solutions, two independent clock-labelled spacetime Maxwell detector smearings, exact central Hopf null/no-wrap incidences, and persistent probe memory registers. It does not compute the smeared retarded transfer matrix M_ab=Q_a[d G_ret J_b], include rod or detector backreaction, or prove raw-D/K_Berger descent. The partial Berger observer map therefore remains uncertified.",
+  "claim_status": "CERTIFIED_LOCAL_ROD_SMEARING_AND_MEMORY_PREFLIGHT_RETARDED_TRANSFER_OPEN",
   "dependency_refs": {
     "apparatus_contract": {
       "claim_boundary": "This LOCAL-ALGEBRAIC preflight fixes the ten-row minimal Maxwell BV layout, proves the arbitrary-function Diff-semidirect-U(1) gauge identities and four-dimensional Weyl inertness, binds the resulting 64-row consumer layout to the authoritative 54-row gravity-clock q2, and specifies the relational apparatus contract. It does not export the h-A-to-A-plus or A-A-to-h-plus dynamical q2 blocks, transfer a gravity-Maxwell interaction, construct rods, a compact source, a retarded Green operator, localized endpoints, backreaction, a Lorentzian quantum theory, or a quantum claim.",
+      "live_required_flags": [
+        "BERGER_RELATIONAL_APPARATUS_CONTRACT",
+        "BERGER_MAXWELL_SEMIDIRECT_GAUGE_Q2"
+      ],
       "path": "d_quotient_classical/certificates/BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT.json",
       "result_id": "BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT",
-      "sha256": "899fcd28329389c68c452921ed8cf7c447486ceb588ba13ac747627e30191ca8"
+      "sha256": "899fcd28329389c68c452921ed8cf7c447486ceb588ba13ac747627e30191ca8",
+      "snapshot_commit": "fc7a680d32d23d516a1c29c54ae1e0734d532a75"
     },
     "clock": {
       "claim_boundary": "This certificate proves an exact open family of smooth non-conformally-flat Bach-sourced backgrounds with a positive-energy rotating conformal-scalar phase clock and a positive quartic potential. It does not yet prove that D is gauge on the full perturbative covariant phase space; that requires the separate charge and all-row BV audit.",
+      "live_required_flags": [
+        "exact_backreacted_background_exists",
+        "everywhere_timelike_phase_clock"
+      ],
       "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
       "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
-      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"
+      "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "snapshot_commit": "fc7a680d32d23d516a1c29c54ae1e0734d532a75"
     },
     "raw_D_nullity": {
       "claim_boundary": "At fixed alpha_B and lambda, the exact lapse constraint and compact spatial averaging prove delta Q_R=0 for every smooth linearized solution about the positive Berger clock background. Together with the certified helical current identity this gives D_GAUGE on that declared linearized phase space. The theorem does not supply the all-row BV retract, causal propagation, nonlinear stability, or any boundary or quantum result.",
+      "live_required_flags": [
+        "scoped_D_verdict_promoted",
+        "total_helical_presymplectic_contraction_zero"
+      ],
       "path": "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
       "result_id": "BERGER_FIXED_COUPLING_DELTA_CHARGE",
-      "sha256": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786"
+      "sha256": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786",
+      "snapshot_commit": "fc7a680d32d23d516a1c29c54ae1e0734d532a75"
+    },
+    "redshift_geometry": {
+      "claim_boundary": "This hardened exact G0 theorem verifies the positive-energy source-free Maxwell mode directly in four-dimensional exterior algebra, matches the gauge-invariant field-strength Lie frequency to the stress-energy ratio, derives the primitive Hopf period and exact no-wrap margins, and retains the Diff-, Weyl-, Maxwell-gauge-, and total-D-invariant compact spatially averaged redshift fixture. It does not construct localized endpoints, a retarded compact source, the Maxwell BV/q2 semidirect extension, backreaction, a complete G1 signal sector, phenomenology, or a quantum result.",
+      "live_required_flags": [
+        "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE"
+      ],
+      "path": "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
+      "result_id": "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
+      "sha256": "95c4c3a4359db4ec5b03f77a9d86191df97c4cfbbd00ae043dd5ccfc720df996",
+      "snapshot_commit": "fc7a680d32d23d516a1c29c54ae1e0734d532a75"
     },
     "retarded_signal": {
-      "claim_boundary": "This classical theorem constructs a nonzero compact neutral Maxwell source as the exact current three-form j=d kappa, injects it as a q-closed source in the certified Maxwell BV equation row, and uses the certified retarded chain homotopy to obtain a unique Lorenz representative with nonzero field strength supported in the causal future of the source. It proves a retarded signal, not a spatially localized emitter/receiver measurement. It does not provide rod fields, detector response, unique endpoint intersection, apparatus recoil, gravitational backreaction, mixed q3, Hadamard data, a QME result, or a quantum claim.",
+      "claim_boundary": "This classical theorem constructs a nonzero compact neutral Maxwell source as the exact current three-form j=d kappa, injects it as a q-closed source in the certified Maxwell BV equation row, and uses only the certified unary retarded chain homotopy to obtain a unique Lorenz representative with nonzero field strength supported in the causal future of the source. The later mixed-q2 cyclicity obstruction is explicitly imported as false and is not used here. This proves a retarded signal, not a cyclic interacting dressing or a spatially localized emitter/receiver measurement. It does not provide rod fields, detector response, unique endpoint intersection, apparatus recoil, gravitational backreaction, mixed q3, Hadamard data, a QME result, or a quantum claim.",
+      "live_required_flags": [
+        "BERGER_COMPACT_CONSERVED_MAXWELL_SOURCE",
+        "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL"
+      ],
       "path": "d_quotient_classical/certificates/BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL.json",
       "result_id": "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL",
-      "sha256": "c2e3a44bd5be9cbbacc1a9bd5a2db810bd3f0eed8bf74b1030c58ffa9608bb19"
+      "sha256": "e038bf6132b103489064cca44c26e2ff3a30897b8bdbb2b0c7fe8c6c9f93eebf",
+      "snapshot_commit": "fc7a680d32d23d516a1c29c54ae1e0734d532a75"
     }
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "LORENTZIAN-CAUSAL"
   ],
-  "detector_records": [
+  "detector_smearings": [
     {
-      "clock_label": "1",
-      "clock_window": [
-        "3/4",
-        "5/4"
-      ],
+      "clock_label": "3/16",
+      "hopf_arclength": "1/4",
       "id": "D0",
-      "record_functional": "Q_0[F]=integral rho_0(Theta,R) <F,dTheta wedge dR1>_gHat vol_gHat",
+      "normalized_dual_probe": "H_0 compact Maxwell test field normalized by Q_0[H_0]=1",
+      "polarization": "dTheta_wedge_dR1",
       "rod_center": [
         "1/4",
         "0",
         "0"
       ],
-      "rod_half_width": "1/16"
+      "rod_radius": "1/64",
+      "smearing": "Q_0[F]=integral rho_0(Theta,R) <F,P_0>_gHat dvol_gHat over compact spacetime support"
     },
     {
-      "clock_label": "2",
-      "clock_window": [
-        "7/4",
-        "9/4"
-      ],
+      "clock_label": "3/8",
+      "hopf_arclength": "1/2",
       "id": "D1",
-      "record_functional": "Q_1[F]=integral rho_1(Theta,R) <F,dTheta wedge dR1>_gHat vol_gHat",
+      "normalized_dual_probe": "H_1 compact Maxwell test field normalized by Q_1[H_1]=1",
+      "polarization": "dTheta_wedge_dR2",
       "rod_center": [
         "1/2",
         "0",
         "0"
       ],
-      "rod_half_width": "1/16"
+      "rod_radius": "1/64",
+      "smearing": "Q_1[F]=integral rho_1(Theta,R) <F,P_1>_gHat dvol_gHat over compact spacetime support"
     }
   ],
   "flags": {
+    "CENTRAL_HOPF_NULL_INTERSECTIONS_NO_WRAP": true,
     "CLASSICAL_OBSERVER_MAP_CERTIFIED": false,
+    "DETECTOR_SMEARING_FUNCTIONALS_INDEPENDENT": true,
     "D_DESCENT_WITH_RODS_CERTIFIED": false,
-    "LOCAL_ROD_PROBE_CHART_NONDEGENERATE": true,
+    "LOCAL_STANDARD_SIGN_ROD_SOLUTIONS": true,
+    "PERSISTENT_PROBE_MEMORY_REGISTERS": true,
     "QUANTUM_CLAIM": false,
-    "RECORD_ALGEBRA_TWO_GENERATORS": true,
     "ROD_BACKREACTION_AND_APPARATUS_RECOIL_INCLUDED": false,
-    "SOURCE_TO_RETARDED_FIELD_TO_RECORD_MAP_DEFINED": true,
-    "STRICT_FUTURE_DETECTOR_INTERSECTION_CERTIFIED": false,
-    "TWO_LOCALIZED_CLOCK_LABELLED_RECORD_FUNCTIONALS": true,
-    "TWO_NONZERO_RETARDED_RECORD_VALUES": false
+    "ROD_JACOBIANS_NONDEGENERATE_ON_SOME_LOCAL_WINDOWS": true,
+    "SMEARED_RETARDED_TRANSFER_MATRIX_RANK_TWO": false,
+    "TWO_LOCALIZED_CLOCK_LABELLED_DETECTOR_SMEARINGS": true,
+    "TWO_NONZERO_RETARDED_MEMORY_RECORDS": false
   },
   "gauge_and_quotient_tests": {
-    "Diff": "PASS_FOR_PROBE_RELATIONAL_FUNCTIONALS",
-    "K_Berger": "OPEN_WITH_ROD_SECTOR_NOT_IN_IMPORTED_INTERACTING_COMPLEX",
+    "Diff": "PASS_FOR_LOCAL_RELATIONAL_PROBE_FUNCTIONALS",
+    "K_Berger": "OPEN_WITH_ROD_MEMORY_SECTOR_NOT_IN_IMPORTED_INTERACTING_COMPLEX",
     "Maxwell_gauge": "PASS",
-    "Weyl": "PASS_FOR_PROBE_RELATIONAL_FUNCTIONALS",
-    "raw_D": "OPEN_WITH_ROD_SECTOR_NOT_IN_IMPORTED_PHASE_SPACE"
+    "Weyl": "PASS_FOR_LOCAL_RELATIONAL_PROBE_FUNCTIONALS",
+    "raw_D": "OPEN_WITH_ROD_MEMORY_SECTOR_NOT_IN_IMPORTED_PHASE_SPACE"
   },
   "mutation_results": [
     {
-      "expected_failed_requirement": "relational_chart_nondegenerate",
+      "expected_failed_requirement": "rod_solutions_nondegenerate",
       "expected_failure_passed": true,
       "name": "singular_rod_chart",
       "observed_record_rank": 2,
@@ -104,130 +150,178 @@
       "observed_requirement_value": false
     },
     {
-      "expected_failed_requirement": "detector_supports_disjoint",
+      "expected_failed_requirement": "central_null_incidence_exact",
       "expected_failure_passed": true,
-      "name": "overlap_detector_windows",
+      "name": "break_hopf_causal_incidence",
+      "observed_record_rank": 2,
+      "observed_requirement_value": false
+    },
+    {
+      "expected_failed_requirement": "central_rays_unique_no_wrap",
+      "expected_failure_passed": true,
+      "name": "cross_half_fibre_cut_locus",
       "observed_record_rank": 2,
       "observed_requirement_value": false
     },
     {
       "expected_failed_requirement": "record_functionals_independent",
       "expected_failure_passed": true,
-      "name": "collapse_record_probe_support",
+      "name": "collapse_detector_functionals",
       "observed_record_rank": 1,
       "observed_requirement_value": false
     }
   ],
-  "next_gate": "BERGER_POINTWISE_RETARDED_GREEN_KERNEL_TWO_WINDOW_WITNESS",
+  "next_transfer_gate": {
+    "matrix": "M_ab=Q_a[d G_ret J_b]",
+    "name": "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER",
+    "required_witnesses": [
+      "two declared compact conserved emitter currents J_0,J_1 chosen before evaluation",
+      "full source-support to detector-window causal incidence and no-wrap margins",
+      "exact nonzero determinant or rank-two minor of M_ab",
+      "memory response matrix equal to M_ab",
+      "no adaptive detector placement or normalization using the computed response"
+    ],
+    "status": "OPEN"
+  },
   "not_established": [
-    "nonzero response of the imported pulse in both predeclared detector windows",
-    "a unique no-wrap null intersection from the imported compact source to each receiver",
-    "rod-field backreaction or apparatus recoil",
-    "raw-D or K_Berger descent after adjoining the rod sector",
+    "the rank or nonvanishing of Q_a[d G_ret J_b]",
+    "full compact-support causal incidence from two emitter currents to both detector windows",
+    "rod or memory backreaction and apparatus recoil",
+    "raw-D or K_Berger descent after adjoining rods and memory registers",
     "a quantum observer state or positive quantum inner product"
   ],
+  "probe_memory_registers": {
+    "action": "sum_a integral p_a (d_Theta m_a - q_a(Theta;F)) dTheta",
+    "backreaction": "open; p_a=0 removes the detector force on the Maxwell field at probe order",
+    "equations": [
+      "d_Theta m_a=q_a(Theta;F)",
+      "d_Theta p_a=0"
+    ],
+    "final_record": "M_a=m_a(after detector support)=Q_a[F]=integral q_a(Theta;F)dTheta for zero initial memory",
+    "persistence": "d_Theta m_a=0 after the detector smearing support",
+    "probe_branch": "p_a=0"
+  },
   "provenance": {
-    "declared_input_sha256": "e3bf4f2c5b4073e356dc0eb66915276f300db7c7c8b92e8944d5d8eb3552c10c",
+    "declared_input_sha256": "0290db56fef702ab77eb7154d85b850618e94d68caa3006aa48ac1ead2c88fbf",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_detector_records.py",
         "role": "producer",
-        "sha256": "a8688d0d28202d47f1df6c63b3e5c9b031a27dc603fa2b107218e70f8637da27"
+        "sha256": "5a0c2f5b71c378a6a4a26df9af4e1321e944e476ea85cf047c20c32fa03a399b"
       },
       {
         "path": "closed_universe_observers/verify_berger_detector_records.py",
         "role": "independent_verifier",
-        "sha256": "10356e6f2e074e7df1a34ab6889a0d6bc7de37bd4ebefe869660ef93f763217a"
+        "sha256": "4e983f3eaeeeac018ba4204d0664898b963a3c47dc920c92170610d5e75fe21b"
       },
       {
         "path": "closed_universe_observers/tests/test_berger_detector_records.py",
         "role": "tests",
-        "sha256": "1e05a274155ea438b6362ad7a7ba03f1fffff23325af94169649f4bf3ed77ac2"
+        "sha256": "c911a2132d3b86c426029cbdce0cfd2e5e4fe0567894c7e5006afe549b51e392"
       },
       {
         "path": "closed_universe_observers/reports/berger-localized-detector-records.md",
         "role": "report",
-        "sha256": "e658d64851056e1c5e6d017f0f67d474113ae345c9362b2087b4415ef675cfc1"
+        "sha256": "597690da674b1e7b6309318020116a23499f6600445cfaf025f1df80503a7e43"
       },
       {
         "path": "closed_universe_observers/fixtures/berger_localized_detector_records_input.json",
         "role": "input",
-        "sha256": "e3bf4f2c5b4073e356dc0eb66915276f300db7c7c8b92e8944d5d8eb3552c10c"
+        "sha256": "0290db56fef702ab77eb7154d85b850618e94d68caa3006aa48ac1ead2c88fbf"
       },
       {
-        "path": "closed_universe_observers/schema/berger-localized-detector-records-input-v1.schema.json",
+        "path": "closed_universe_observers/schema/berger-localized-detector-records-input-v2.schema.json",
         "role": "input_schema",
-        "sha256": "82b4bca186e112d2d41fabdb238d760ece18491687f5c7f73caa7e6aa405b0d9"
+        "sha256": "58217ac223fc5d8398076ef977c79603edf129e01dc89f2af423182cdf99298a"
       },
       {
-        "path": "closed_universe_observers/schema/berger-localized-detector-records-v1.schema.json",
+        "path": "closed_universe_observers/schema/berger-localized-detector-records-v2.schema.json",
         "role": "certificate_schema",
-        "sha256": "c8120f2bd62f3a89e98b6f342edee235a113f459c021fc30e357f77e8e0656b2"
+        "sha256": "f213e778b28b6f4b92ce6e80f0b4e0a3c7808eb50ad4457d3fcd112191323120"
       }
     ]
   },
-  "record_algebra": {
-    "clock_ordered_after_emitter": true,
-    "definition": "A_record=R[Q_0,Q_1] with pointwise product and real involution",
-    "probe_evaluation_matrix": [
-      [
-        "1",
-        "0"
-      ],
-      [
-        "0",
-        "1"
-      ]
-    ],
-    "rank": 2,
-    "support_separation": "the two compact relational windows are disjoint"
-  },
-  "relational_probe_apparatus": {
-    "coordinates": [
-      "Theta",
-      "R1",
-      "R2",
-      "R3"
-    ],
-    "gauge_scope": "Diff-covariant relational localization; Weyl-invariant gHat and four-dimensional Maxwell F; Maxwell-gauge invariant because records depend on F=dA",
-    "jacobian": [
-      [
-        "1",
-        "0",
-        "0",
-        "0"
-      ],
-      [
-        "0",
-        "1",
-        "0",
-        "0"
-      ],
-      [
-        "0",
-        "0",
-        "1",
-        "0"
-      ],
-      [
-        "0",
-        "0",
-        "0",
-        "1"
-      ]
-    ],
-    "jacobian_determinant": "1",
-    "rod_health": "three standard-sign probe scalar wave equations with independent local Cauchy gradients; stress and recoil are excluded at probe order"
-  },
   "result_id": "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
-  "schema": "closed-universe-berger-localized-detector-records-v1",
+  "rod_solution_contract": {
+    "action": "S_R=-1/2 sum_I integral sqrt(-gHat) gHat^ab partial_a R^I partial_b R^I",
+    "cauchy_data": "R^I=x^I and n(R^I)=0 in each detector chart",
+    "compact_window_rule": "choose each compact spacetime smearing support inside the intersection of its nominal detector ball and an open neighborhood where the evolved Jacobian remains nonzero",
+    "jacobian_determinants": [
+      "1",
+      "1"
+    ],
+    "jacobians": [
+      [
+        [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      [
+        [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ]
+    ],
+    "local_existence": "standard normally hyperbolic scalar Cauchy theorem",
+    "probe_limit": "rod stress is order epsilon_R^2 and is excluded from the fixed background"
+  },
+  "schema": "closed-universe-berger-localized-detector-records-v2",
   "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus",
-  "source_to_record_chain": {
-    "obstruction": "the imported theorem gives causal support and global nonvanishing but no pointwise Green-kernel witness placing nonzero F_ret in both predeclared detector windows",
-    "record_map": "j maps to (Q_0[F_ret],Q_1[F_ret])",
-    "retarded_field": "the imported unique Lorenz representative F_ret=d G_ret J",
-    "source": "the imported compact neutral q-closed Maxwell current j=d kappa",
-    "strict_future_nonzero_values_certified": false,
-    "well_defined": true
+  "smearing_independence": {
+    "construction": "normalized dual Maxwell probes supported in disjoint compact detector spacetime windows; cross terms vanish by support disjointness",
+    "evaluation_matrix": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "not_input_labels": true,
+    "rank": 2
   }
 }

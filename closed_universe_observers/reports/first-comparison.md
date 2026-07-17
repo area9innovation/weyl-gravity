@@ -227,18 +227,21 @@ relational evaluation
 For a compact conserved Maxwell source \(j\), the causal component sends it to
 \(F_{\rm ret}=dG_{\rm ret}J\).  These components are imported, not rebuilt.
 The clock phase, averaged redshift, compact retarded response, and the scoped
-synthesis with raw-\(D\) nullity pass.  A subsequent bridge consumer constructs
-two independent localized functionals
+synthesis with raw-\(D\) nullity pass.  A hardened bridge preflight now
+constructs local standard-sign rod solutions and two independent
+clock-labelled spacetime smearings
 
 \[
 Q_a[F]=\int\rho_a(\Theta,R)
-\langle F,d\Theta\wedge dR^1\rangle_{\widehat g}
-\operatorname{vol}_{\widehat g},\qquad a=0,1,
+\langle F,P_a\rangle_{\widehat g}
+d\operatorname{vol}_{\widehat g},\qquad a=0,1,
 \]
 
-in disjoint clock/rod windows.  Their probe evaluation matrix is exactly
-`I_2`.  What remains open is the stronger statement that the imported compact
-retarded pulse is nonzero in both windows chosen independently of the answer.
+with declared polarizations in disjoint spacetime rod supports.  Their normalized
+dual-probe matrix is exactly `I_2`, and first-order probe memory registers retain
+the readings.  Exact central Hopf rays reach both detector centers before the
+half-fibre cut locus.  What remains open is the physical two-source/two-detector
+matrix `M_ab=Q_a[d G_ret J_b]` with fully smeared causal-support margins.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.
@@ -248,7 +251,7 @@ relationally \(D\)-invariant, but raw \(D\) changes the clock field.
 \(K_{\rm Berger}=D-\omega R\) is the background-preserving nonlinear generator;
 its Cartan identity is separately certified through arity three, while the
 observer map is not certified as a raw-\(D\)-descended or
-\(K_{\rm Berger}\)-morphism after adjoining rods and detector records.
+\(K_{\rm Berger}\)-morphism after adjoining rods and memory registers.
 
 The precise seven-field claim index, component verdicts, and gauge defects are
 machine-readable in the comparison ledger.
@@ -258,7 +261,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | two localized probe-record generators; two-click and quotient descent open | nonzero retarded signal without a two-window pointwise witness | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | local rods, two independent smearings, persistent probe memories; transfer and quotient descent open | nonzero retarded signal and central no-wrap rays; smeared transfer matrix open | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -271,8 +274,8 @@ pins the clock, redshift, Maxwell causal, retarded-signal, fixed-coupling
 raw-\(D\), and nonlinear \(K_{\rm Berger}\) certificates by path, result
 identifier, SHA-256 hash, and declared claim boundary.
 
-The primary missing objects are two nonzero pointwise responses of the imported
-pulse in the predeclared windows, a unique no-wrap source-to-window witness,
+The primary missing objects are a rank-two smeared retarded response matrix for
+two predeclared compact currents, full support-to-window no-wrap witnesses,
 apparatus recoil, rod and gravity backreaction, observer-map compatibility
 with raw \(D\), \(K_{\rm Berger}\), mixed \(q_3\), and higher brackets, a quantum
 BRST state space, a positive observer state with induced inner product, and a
@@ -280,8 +283,8 @@ QME-restored Lorentzian observer theory.
 
 The first exact defect is consequently not “internal observers are
 impossible.”  It is: **the external and internal constructions currently live
-on different carriers, and the internal side lacks a two-window pointwise
-response and quotient-descended rod sector needed to type a common functor.**
+on different carriers, and the internal side lacks a rank-two physical transfer
+matrix and quotient-descended rod-memory sector needed to type a common functor.**
 
 ## Verification receipt
 

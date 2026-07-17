@@ -90,7 +90,7 @@
     },
     "component": {
       "type": "object", "additionalProperties": false, "required": ["requirement", "status", "evidence"],
-      "properties": {"requirement": {"$ref": "#/$defs/text"}, "status": {"enum": ["CERTIFIED", "OPEN", "CERTIFIED_SCOPED_SYNTHESIS", "CERTIFIED_FUNCTIONALS_RESPONSE_OPEN"]}, "evidence": {"$ref": "#/$defs/text"}}
+      "properties": {"requirement": {"$ref": "#/$defs/text"}, "status": {"enum": ["CERTIFIED", "OPEN", "CERTIFIED_SCOPED_SYNTHESIS", "CERTIFIED_SMEARINGS_MEMORY_TRANSFER_OPEN"]}, "evidence": {"$ref": "#/$defs/text"}}
     },
     "gauge_test": {
       "type": "object", "additionalProperties": false, "required": ["symmetry", "status", "preserved_structure", "open_defect"],
