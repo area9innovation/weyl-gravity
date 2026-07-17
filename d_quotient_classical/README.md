@@ -60,6 +60,11 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json`](certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json)
 - Minimal Berger-clock BV contraction report:
   [`reports/berger-minimal-bv-clock-sdr.md`](reports/berger-minimal-bv-clock-sdr.md)
+- Covariant minimal-BV antifield/Koszul--Tate V2 foundation and normalized
+  finite-receiver obstruction:
+  [`minimal_bv_antifield/foundation/atom_basis_manifest.json`](minimal_bv_antifield/foundation/atom_basis_manifest.json),
+  [`certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2_RECEIVER_OBSTRUCTION.json`](certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2_RECEIVER_OBSTRUCTION.json),
+  [`reports/classical-minimal-bv-antifield-export-v2-receiver-obstruction.md`](reports/classical-minimal-bv-antifield-export-v2-receiver-obstruction.md)
 - Authoritative 26-component retained minimal-BV layout:
   [`certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json`](certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json)
 - Retained minimal-BV layout report:

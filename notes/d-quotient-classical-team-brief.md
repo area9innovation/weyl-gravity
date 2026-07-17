@@ -1033,12 +1033,17 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    regression inputs.  The remaining causal generality gate is C-G2: state
    and verify uniform hypotheses on an open background class.  This does not
    displace the branch projector required for the connected physical story.
-9. Queue `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` as the next classical-to-
-   quantum handoff.  It must be an authoritative, support-local minimal-BV
-   antifield/Koszul--Tate export with typed rows, pairings, signs, provenance,
-   and exact unary identities.  The quantum team owns independent validation
-   and the subsequent minimal-BV `H^{0,4}` and `H^{1,4}` quotient.  Until the
-   export lands, both quotient promotions remain fail closed.
+9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` foundation is now
+   exact: all six minimal roles, the Bach Euler coordinate, both Noether rows,
+   Lie/Weyl covariance, and the four filtration identities replay.  The
+   official export remains false because the quantum V2 adapter demands
+   literal finite free-superalgebra closure while ignoring its declared
+   grading window; the even `Lie_omega=L_xi omega` atom generates the exact
+   tower `g (Lie_omega)^n`.  The normalized receiver obstruction is the
+   authoritative handoff.  Quantum must either make `_dry_run_adapter`
+   scope-aware or admit generalized-connection/quotient relations, then rerun
+   the unchanged classical foundation before computing minimal-BV
+   `H^{0,4}` and `H^{1,4}`.
 10. Continue the deformation, Yang--Mills and boundary rails as independent
    generality tests, not prerequisites for the Berger relational-observable
    or causal-transfer gates.

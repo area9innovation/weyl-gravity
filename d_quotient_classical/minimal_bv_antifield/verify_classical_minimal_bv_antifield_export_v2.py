@@ -14,6 +14,9 @@ ROOT = Path(__file__).resolve().parents[2]
 CERT = ROOT / "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2_RECEIVER_OBSTRUCTION.json"
 SCHEMA = ROOT / "d_quotient_classical/schema/classical-minimal-bv-antifield-export-v2-receiver-obstruction-v1.schema.json"
 
+# Keep direct-file and ``python -m`` execution equivalent.
+sys.path.insert(0, str(ROOT))
+
 
 def verify() -> None:
     payload = json.loads(CERT.read_text())
@@ -27,7 +30,7 @@ def verify() -> None:
 
     candidate = build_export(payload["classical_commit"])
     try:
-        validate_export_v2(candidate)
+        validate_export_v2(candidate, repository_root=ROOT)
     except AntifieldExportV2Error as exc:
         if str(exc) != payload["receiver_witness"]["failure"]:
             raise AssertionError("receiver failure drifted") from exc
