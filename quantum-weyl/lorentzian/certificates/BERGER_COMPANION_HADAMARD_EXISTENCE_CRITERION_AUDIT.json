@@ -1,0 +1,114 @@
+{
+  "claim_boundary": "This LORENTZIAN-CAUSAL criterion audit proves that the certified null-cone decomposability of the Berger companion does not by itself supply a Hadamard state. Fewster's general existence theorem for bosonic fields applies to normally hyperbolic operators with positive-definite hermitian fibre metric; the companion has a nonzero nilpotent order-two principal block and the BV carrier has an odd/Krein pairing. A local base-factor parametrix and a 26-to-54 covariance lift are ready, but the full stationary Cauchy/BRST/pairing/reality carrier, zero-frequency ledger, positive or declared Krein covariance and BRST Ward identity are not constructed. No Hadamard state, positivity, renormalized product, QME or quantum theorem is claimed.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+    "BERGER_COMPANION_NULL_CONE_DECOMPOSABLE": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "FEWSTER_GENERAL_EXISTENCE_THEOREM_APPLIES": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "dependency_refs": {
+    "base_parametrix": {
+      "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "6c346f4947d65f81c1de380099c868b61554580c2d4ebccf7234e091bb569ed3"
+    },
+    "companion_decomposability": {
+      "result_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY",
+      "sha256": "fd154b541bbb67f8ac877011bd9d1aa12f96b40a4f408bdeab5157679c1c51b1"
+    },
+    "companion_principal": {
+      "result_id": "BERGER_COMPANION_DECOMPOSABILITY_PREFLIGHT",
+      "sha256": "025ea3ef135d77d344bedd41e2b82debd4e6d9d3fa5eae8a2d609f14e51a6c97"
+    },
+    "graded_state_space": {
+      "result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+      "sha256": "4fe4357fcaae4ef668d1a619e928da8faf7cca19841ea0ec9737dd66509ec823"
+    },
+    "hadamard_lift": {
+      "result_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
+      "sha256": "06a2356a207e4e8b0ca4821a25c5355c38f6540db25c416693d19f1e2cb58633"
+    },
+    "partial_A104": {
+      "result_id": "BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY",
+      "sha256": "79e51612a2627c2182f6c774b4966cdcd715a9372ace9ecde59fd01ecd79a5f3"
+    },
+    "typed_moller": {
+      "result_id": "BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT",
+      "sha256": "510e5bba0f328074c31b7a5f7a6e976a3175ec1cec834377068d2dd1dc3113bc"
+    },
+    "zero_frequency_readiness": {
+      "result_id": "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS",
+      "sha256": "ee72bf8e1e952d0541aee02d2ea7b8c31a034db1ce769f0793acfd29fa90d970"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "Cauchy_Krein_form_absent": true,
+    "base_local_parametrix_certified": true,
+    "companion_decomposable": true,
+    "companion_principal_symbol_not_scalar_normal_wave": true,
+    "covariance_lift_ready_but_source_covariance_absent": true,
+    "distributional_two_point_kernel_open": true,
+    "full_A104_absent": true,
+    "physical_positivity_policy_open": true,
+    "q_Cauchy_absent": true,
+    "smooth_zero_mode_completion_open": true,
+    "typed_moller_kernel_action_still_formal": true,
+    "zero_frequency_carrier_nonidentifiable": true
+  },
+  "existence_disposition": {
+    "BRST_covariance_status": "NOT_CONSTRUCTED",
+    "companion_distributional_transport_status": "OPEN",
+    "decomposability_status": "CERTIFIED",
+    "global_Hadamard_state_status": "NOT_CONSTRUCTED",
+    "inference": "DECOMPOSABILITY_DOES_NOT_IMPLY_EXISTENCE_FOR_THIS_OPERATOR",
+    "local_singular_parametrix_status": "CERTIFIED_ON_BASE_FACTORS",
+    "positive_two_point_bisolution_status": "NOT_CONSTRUCTED"
+  },
+  "lifecycle_layer": "LORENTZIAN_HADAMARD_EXISTENCE_AUDIT",
+  "literature_criterion": {
+    "arxiv": "2503.12537v3",
+    "definition_5_2": "decomposability constrains the Pauli-Jordan wavefront set",
+    "doi": "10.1007/s00220-025-05512-1",
+    "general_existence_from_decomposability_alone": false,
+    "reason": "C20 has a nonzero square-zero lower-left order-two principal symbol and the BV state-space carrier is an odd/Krein pairing, not the positive-definite fibre metric required by the theorem",
+    "source": "Christopher J. Fewster, Hadamard States for Decomposable Green-Hyperbolic Operators, Communications in Mathematical Physics 407:14 (2026)",
+    "theorem_5_3_applies_to_companion": false,
+    "theorem_5_3_scope": "normally hyperbolic real formally hermitian Green-hyperbolic operator with positive-definite hermitian fibre metric"
+  },
+  "minimal_missing_carrier": {
+    "BRST_Ward_identity_for_two_point_kernel": "REQUIRED",
+    "Cauchy_Lagrange_Krein_form": "REQUIRED",
+    "common_closed_realization": "REQUIRED",
+    "complete_A104": "REQUIRED",
+    "positive_or_declared_Krein_covariance": "REQUIRED",
+    "q_Cauchy_104": "REQUIRED",
+    "real_structure_104": "REQUIRED",
+    "zero_frequency_Riesz_Jordan_ledger": "REQUIRED"
+  },
+  "next_gate": "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
+  "provenance": {
+    "source_manifest": {
+      "../reports/berger-companion-hadamard-existence-audit.md": "8accb9a1a8aa4f74e2771f315f9652b3f95985c1efdfb4a5ae9d8acf4f0cf7a1",
+      "README.md": "cdccd50b114dc529d5547802f244ea2cfa33fb1e168cfa5572b9477091acbcca",
+      "berger_companion_hadamard_existence_audit.py": "7c78cd211908324e5014c5c1ac8762803a5032617ca2060b9fe563816df2b902",
+      "berger_companion_hadamard_existence_audit_certificate.py": "782be12163654286ca9cf8ccb111c3f5fcbcb5221c841383905c5d4da64d4c7f",
+      "schema/berger-companion-hadamard-existence-audit-v1.schema.json": "db8e3e5b4a5ed7c8a5c7cf0eca5c790f9587080f0613c5d10990c24f3b315d30",
+      "tests/test_berger_companion_hadamard_existence_audit.py": "3ae92bb51a38f17899fadee84b1c6d3120208b523ac381f1dff16dff896c130b",
+      "verify_berger_companion_hadamard_existence_audit.py": "60b97bc683349b829f550c9ac8c3be799455e6a2d6607afac7c5ac9ae495c39c"
+    },
+    "source_manifest_sha256": "dbfc324e354b367a3ba42da25c13c8a30ccd140408233f6504a81be83d2c8dcc"
+  },
+  "result_id": "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT",
+  "result_state": "DECOMPOSABILITY_CERTIFIED_EXISTENCE_NOT_IMPLIED_STATIONARY_POSITIVITY_CARRIER_OPEN",
+  "schema": "quantum-weyl-berger-companion-hadamard-existence-audit-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

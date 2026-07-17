@@ -148,6 +148,18 @@ propagator, not a state: the next gate is
 `BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION`, and all Hadamard-state, BRST,
 QME and quantum flags remain false.
 
+The Hadamard existence-criterion audit sharpens that boundary.  Fewster's
+decomposability condition defines the admissible wavefront class but does not
+give a general existence theorem for every decomposable operator.  The
+available bosonic existence theorem assumes a normally hyperbolic operator
+and positive-definite hermitian fibre metric; the companion instead has a
+nonzero nilpotent order-two principal block and the BV carrier has an
+odd/Krein pairing.  Consequently the next constructive route runs through
+the complete stationary `A104`, Cauchy BRST/pairing/reality carrier,
+zero-frequency ledger and a positive or declared Krein covariance.  The
+machine receipt is
+`BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT`.
+
 Before constructing that two-point function, the graded state-space contract
 is now frozen on the complete 54-row BV complex.  An exact replay gives
 degree ranks `5,22,22,5`, 27 even and 27 odd rows, 27 odd Darboux pairs, and

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-companion-hadamard-existence-audit-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "setting_id", "dependency_refs", "literature_criterion", "exact_input_checks", "existence_disposition", "minimal_missing_carrier", "claim_flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-companion-hadamard-existence-audit-v1"},
+    "result_id": {"const": "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT"},
+    "result_state": {"const": "DECOMPOSABILITY_CERTIFIED_EXISTENCE_NOT_IMPLIED_STATIONARY_POSITIVITY_CARRIER_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_HADAMARD_EXISTENCE_AUDIT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base_parametrix", "typed_moller", "companion_principal", "companion_decomposability", "graded_state_space", "hadamard_lift", "partial_A104", "zero_frequency_readiness"],
+      "properties": {
+        "base_parametrix": {"$ref": "#/$defs/dependency"},
+        "typed_moller": {"$ref": "#/$defs/dependency"},
+        "companion_principal": {"$ref": "#/$defs/dependency"},
+        "companion_decomposability": {"$ref": "#/$defs/dependency"},
+        "graded_state_space": {"$ref": "#/$defs/dependency"},
+        "hadamard_lift": {"$ref": "#/$defs/dependency"},
+        "partial_A104": {"$ref": "#/$defs/dependency"},
+        "zero_frequency_readiness": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "literature_criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "doi", "arxiv", "definition_5_2", "general_existence_from_decomposability_alone", "theorem_5_3_scope", "theorem_5_3_applies_to_companion", "reason"],
+      "properties": {
+        "source": {"type": "string", "minLength": 30},
+        "doi": {"const": "10.1007/s00220-025-05512-1"},
+        "arxiv": {"const": "2503.12537v3"},
+        "definition_5_2": {"type": "string", "minLength": 20},
+        "general_existence_from_decomposability_alone": {"const": false},
+        "theorem_5_3_scope": {"type": "string", "minLength": 40},
+        "theorem_5_3_applies_to_companion": {"const": false},
+        "reason": {"type": "string", "minLength": 80}
+      }
+    },
+    "exact_input_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "existence_disposition": {"type": "object", "minProperties": 6, "additionalProperties": {"type": "string", "minLength": 3}},
+    "minimal_missing_carrier": {"type": "object", "minProperties": 8, "additionalProperties": {"const": "REQUIRED"}},
+    "claim_flags": {
+      "const": {
+        "BERGER_COMPANION_NULL_CONE_DECOMPOSABLE": true,
+        "FEWSTER_GENERAL_EXISTENCE_THEOREM_APPLIES": false,
+        "BERGER_COMPANION_HADAMARD_TWO_POINT_FUNCTION": false,
+        "BERGER_26_ROW_BRST_HADAMARD": false,
+        "BERGER_54_ROW_BRST_HADAMARD": false,
+        "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+        "BERGER_HADAMARD_DATA": false,
+        "LORENTZIAN_QME_RESTORED": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1"},
+    "claim_boundary": {"type": "string", "minLength": 300},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}
