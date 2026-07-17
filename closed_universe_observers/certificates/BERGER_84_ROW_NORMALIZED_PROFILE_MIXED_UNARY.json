@@ -1,0 +1,302 @@
+{
+  "assembled_bidegree_scope": {
+    "Q10_sources": [
+      "rod--gravity first jet",
+      "Phi2 memory transport and frozen-pairing adjoint"
+    ],
+    "Q11_source": "metric variation of the normalized detector profile and its frozen-pairing adjoint",
+    "certified_coefficients": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "coefficientwise_nilpotency_cyclicity": true,
+    "finite_parameter_statement": false,
+    "mixed_background_euler": "zero because Abar=mbar=pbar=0; the readout action is bilinear in p and A",
+    "unary_expansion": "Q=Q00+r Q10+kappa Q01+r*kappa Q11+O(r^2,kappa^2)"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL certificate supplies the missing metric-dependent detector normalization: each transverse bump is normalized with the induced clock-slice volume and the three assigned rods. It derives sigma_a=1/2 tr(G_a^-1 delta G_a), whose event value is minus one half of the spatial Phi2 trace, and computes the two channel blocks and their two cotangent adjoints. The all-84-row mixed nilpotency and odd-cyclicity identities have zero defect, and the bivariate same-sided formal Green coefficient is verified exactly. The result is a coefficientwise first-jet theorem, not finite-r Green hyperbolicity. It does not construct apparatus q2/q3, K_Berger equivariance, the observer morphism, deformed rank two, emitter recoil, a Lorentzian quantum theory, or any quantum claim.",
+  "claim_status": "NORMALIZED_PROFILE_AND_MIXED_Q11_COEFFICIENTWISE_CERTIFIED",
+  "dependency_refs": {
+    "authoritative_handoff": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json",
+      "result_id": "BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF",
+      "sha256": "4e3202b7397b9b9fa0a5ce2ccfc243d3e9bda5f69d6339d329caaa3bfe9324ab"
+    },
+    "global_rods": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_DETECTOR_INDEXED_RODS.json",
+      "result_id": "BERGER_GLOBAL_DETECTOR_INDEXED_RODS",
+      "sha256": "03c70e99a606ce53ec0ddd97f4e3f1913700c889d554c88986e63ccb476d9b83"
+    },
+    "mixed_preflight": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE.json",
+      "result_id": "BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE",
+      "sha256": "b355e03d72560526997829c6fe381ea7695a19e15a0b3adb4131bf03b96caf60"
+    },
+    "rod_gravity_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_ROD_GRAVITY_UNARY.json",
+      "result_id": "BERGER_84_ROW_ROD_GRAVITY_UNARY",
+      "sha256": "a1ed18041d015779d9f5347a63016000fdd8648e507eee391628071edcd75394"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "84_ROW_COEFFICIENTWISE_BIDEGREE_FIRST_JET_CERTIFIED": true,
+    "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": false,
+    "84_ROW_Q2_Q3_CERTIFIED": false,
+    "BIVARIATE_FORMAL_GREEN_COEFFICIENT_CERTIFIED": true,
+    "DEFORMED_RANK_TWO_CERTIFIED": false,
+    "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": true,
+    "MIXED_Q11_NILPOTENCY_CYCLICITY_CERTIFIED": true,
+    "MIXED_Q11_PROFILE_BLOCKS_EXACT": true,
+    "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": false,
+    "PROFILE_NORMALIZATION_EXACT": true,
+    "QUANTUM_CLAIM": false,
+    "TRANSVERSE_PROFILE_METRIC_NORMALIZATION_EXPORTED": true
+  },
+  "mixed_Q11_profile": {
+    "Q11_blocks": [
+      "Q11(p_a_plus,A)=-delta Btilde_a",
+      "Q11(A_plus,p_a)=+(delta Btilde_a)^sharp in the frozen odd pairing"
+    ],
+    "all_84_row_mixed_cyclicity_defect_count": 0,
+    "all_84_row_mixed_nilpotency_defect_count": 0,
+    "all_other_Q11_carrier_blocks_zero": true,
+    "bidegree": [
+      1,
+      1
+    ],
+    "carrier_block_support": [
+      {
+        "input_rows": [
+          55,
+          56,
+          57,
+          58
+        ],
+        "operator": "-delta Btilde_0",
+        "output_row": 82
+      },
+      {
+        "input_rows": [
+          55,
+          56,
+          57,
+          58
+        ],
+        "operator": "-delta Btilde_1",
+        "output_row": 83
+      },
+      {
+        "input_row": 72,
+        "operator": "+(delta Btilde_0)^sharp",
+        "output_rows": [
+          59,
+          60,
+          61,
+          62
+        ]
+      },
+      {
+        "input_row": 73,
+        "operator": "+(delta Btilde_1)^sharp",
+        "output_rows": [
+          59,
+          60,
+          61,
+          62
+        ]
+      }
+    ],
+    "cross_channel_profile_terms": 0,
+    "cyclicity_defect_count": 0,
+    "detector_block_local": true,
+    "event_formula": "delta Btilde_a A=chi_a[delta C(F,P_a)-(Phi2_00/2)C_gHat(F,P_a)]",
+    "frozen_pairing_action_variation": "delta Btilde_a A=chi_a[delta C(F,P_a)+(d1+sigma_a)C_gHat(F,P_a)]",
+    "metric_pairing_variation": "delta C=-1/2 F_mn P_ab(Phi2^{ma}gHat^{nb}+gHat^{ma}Phi2^{nb})",
+    "mixed_cyclicity_pairs": [
+      {
+        "inputs": [
+          "A",
+          "p0"
+        ],
+        "sum": "0",
+        "terms": [
+          "-delta Btilde_0^sharp",
+          "+delta Btilde_0^sharp"
+        ]
+      },
+      {
+        "inputs": [
+          "A",
+          "p1"
+        ],
+        "sum": "0",
+        "terms": [
+          "-delta Btilde_1^sharp",
+          "+delta Btilde_1^sharp"
+        ]
+      }
+    ],
+    "mixed_nilpotency_paths": [
+      {
+        "channel_count": 2,
+        "identity": "delta Btilde_a d=0 because d^2=0",
+        "path": "c_M -> A -> p_a_plus"
+      },
+      {
+        "channel_count": 2,
+        "identity": "delta(delta Btilde_a^sharp)=0 by formal adjunction",
+        "path": "p_a -> A_plus -> c_M_plus"
+      }
+    ],
+    "nilpotency_defect_count": 0,
+    "nonzero_Q11_operator_block_count": 4,
+    "polarizations": {
+      "D0": "P_0=dTheta wedge dR0_1",
+      "D1": "P_1=dTheta wedge dR1_2"
+    },
+    "profile_variation": "delta B_a A=chi_a[delta C(F,P_a)+sigma_a C_gHat(F,P_a)]",
+    "raw_pairing": "C_g(F,P)=1/2 F_mn P_ab g^{ma}g^{nb}"
+  },
+  "mixed_formal_green_coefficient": {
+    "coefficient_formula": "E11=E00 K10 E00 K01 E00+E00 K01 E00 K10 E00-E00 K11 E00",
+    "direct_Q11_contribution_nonzero_count": 12,
+    "equivalent_recursive_formula": "E11=-E00(K10 E01+K01 E10+K11 E00)",
+    "fixture_count": 3,
+    "formal_support": "each term is a finite composition of same-sided coefficient Green operators with local K10,K01,K11 insertions, so the chosen causal side is preserved coefficientwise",
+    "laurent_scope": "the formula is algebraic over the rod Schur-Laurent coefficient field; it does not assert existence of a finite-r inverse",
+    "left_inverse_defect_count_at_r_kappa": 0,
+    "right_inverse_defect_count_at_r_kappa": 0,
+    "specialized_field_order": [
+      "A",
+      "m0",
+      "m1",
+      "p0",
+      "p1"
+    ]
+  },
+  "mutation_results": [
+    {
+      "defect": "h11/2 + h22/2 + h33/2",
+      "defect_count": 2,
+      "detected": true,
+      "name": "omit_transverse_Jacobian_J_a"
+    },
+    {
+      "defect": "deletes -1/2(Phi2_11+Phi2_22+Phi2_33) independently in both detector channels",
+      "defect_count": 2,
+      "detected": true,
+      "name": "set_sigma_a_zero"
+    },
+    {
+      "defect": "one mixed cyclicity pair per detector",
+      "defect_count": 2,
+      "detected": true,
+      "name": "delete_Q11_cotangent_adjoint"
+    },
+    {
+      "defect": "mixed left/right inverse coefficient",
+      "defect_count": 24,
+      "detected": true,
+      "name": "delete_direct_Q11_term_from_E11"
+    }
+  ],
+  "next_gate": "CONSTRUCT_APPARATUS_Q2_Q3_THEN_TEST_K_BERGER_EQUIVARIANCE_AND_OBSERVER_MORPHISM",
+  "normalization_rule": {
+    "canonical_sha256": "b63acd46f8e8344ec9b1f5592411e015d26ab4e3d64ec578afd005648d24608e",
+    "clock_slice": "Sigma_tau={Theta=tau}, U=-g^{-1}(dTheta,dTheta)>0",
+    "coarea_identity": "chi_a dvol_g=f_a(Theta) rho_a(R_a) dTheta d^3R_a/sqrt(U)",
+    "event_specialization": {
+      "G_a_at_event": [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "coarea_variation": "delta_r log(U^{-1/2})=-Phi2_00/2",
+      "d1": "1/2(-Phi2_00+Phi2_11+Phi2_22+Phi2_33)",
+      "d1_plus_sigma_a": "-Phi2_00/2",
+      "detector_ids": [
+        "D0",
+        "D1"
+      ],
+      "event_rod_order": [
+        "e3",
+        "e1",
+        "e2"
+      ],
+      "sigma_a": "-1/2(Phi2_11+Phi2_22+Phi2_33)"
+    },
+    "induced_inverse_projector": "Pi_g^{mu nu}=g^{mu nu}-(g^{mu a}Theta_a)(g^{nu b}Theta_b)/g^{-1}(dTheta,dTheta)",
+    "jacobian_deletion_mutation": {
+      "detected_for_both_channels": true,
+      "normalized_defect": "h11/2 + h22/2 + h33/2",
+      "wrong_action_density_variation": "-h00/2 + h11/2 + h22/2 + h33/2",
+      "wrong_sigma_a": "0"
+    },
+    "metric_normalization_measure": "dSigma_g on Sigma_tau; J_a dSigma_g=dR_a1 dR_a2 dR_a3 in the oriented rod chart, hence integral_Sigma chi_a dSigma_g=f_a(Theta)",
+    "metric_variation_of_log_density": "sigma_a=delta_r log chi_a=1/2 tr(G_a^{-1} delta_r G_a)",
+    "normalization_defect_count": 0,
+    "normalized_density_definition": "chi_a(g,Theta,R_a)=f_a(Theta) rho_a(R_a) J_a(g,Theta,R_a), J_a=sqrt(det G_a)",
+    "profile_functions": "f_a and rho_a are fixed nonnegative smooth compactly supported bumps in the certified detector chart; integral rho_a(R)d^3R=1 and f_a is centered at the certified clock label",
+    "rod_gram_matrix": "G_a^{IJ}=Pi_g^{mu nu}(dR_aI)_mu(dR_aJ)_nu"
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_84_row_normalized_profile_mixed_unary.py",
+        "sha256": "29908fa6ff7d4638efe94b7d3fbbc0ad5924216f3df40724ffc6abeba644eecc"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_84_row_normalized_profile_mixed_unary.py",
+        "sha256": "811b1e82f944ef3e8258753ad005686ccd976e7b10c5d894e206cc430431b934"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_84_row_normalized_profile_mixed_unary.py",
+        "sha256": "17c46010f692c2d11f1385d4e4a7b5fdc51a59b4112cc7addd4f0ea6ab7eb730"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-84-row-normalized-profile-mixed-unary.md",
+        "sha256": "edc5f80a902a5cd5108c6416ffc36eac16f0b00bf9451ab5667c67c698aee170"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-84-row-normalized-profile-mixed-unary-v1.schema.json",
+        "sha256": "101890c07855aaf12ae0c0c214fc8f14839f6a278aefe7d9acb8e821aae68bf2"
+      }
+    ]
+  },
+  "result_id": "BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY",
+  "schema": "closed-universe-berger-84-row-normalized-profile-mixed-unary-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

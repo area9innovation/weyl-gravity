@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-84-row-normalized-profile-mixed-unary-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "normalization_rule", "mixed_Q11_profile", "mixed_formal_green_coefficient", "assembled_bidegree_scope", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-84-row-normalized-profile-mixed-unary-v1"},
+    "result_id": {"const": "BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY"},
+    "setting_id": {"$ref": "#/$defs/text"},
+    "claim_status": {"const": "NORMALIZED_PROFILE_AND_MIXED_Q11_COEFFICIENTWISE_CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "normalization_rule": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["clock_slice", "induced_inverse_projector", "rod_gram_matrix", "normalized_density_definition", "profile_functions", "metric_normalization_measure", "metric_variation_of_log_density", "coarea_identity", "event_specialization", "normalization_defect_count", "jacobian_deletion_mutation", "canonical_sha256"],
+      "properties": {
+        "clock_slice": {"$ref": "#/$defs/text"},
+        "induced_inverse_projector": {"$ref": "#/$defs/text"},
+        "rod_gram_matrix": {"$ref": "#/$defs/text"},
+        "normalized_density_definition": {"$ref": "#/$defs/text"},
+        "profile_functions": {"$ref": "#/$defs/text"},
+        "metric_normalization_measure": {"$ref": "#/$defs/text"},
+        "metric_variation_of_log_density": {"$ref": "#/$defs/text"},
+        "coarea_identity": {"$ref": "#/$defs/text"},
+        "event_specialization": {"type": "object"},
+        "normalization_defect_count": {"const": 0},
+        "jacobian_deletion_mutation": {"type": "object"},
+        "canonical_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "mixed_Q11_profile": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["bidegree", "profile_variation", "frozen_pairing_action_variation", "event_formula", "Q11_blocks", "carrier_block_support", "nonzero_Q11_operator_block_count", "all_other_Q11_carrier_blocks_zero", "mixed_nilpotency_paths", "mixed_cyclicity_pairs", "nilpotency_defect_count", "cyclicity_defect_count", "all_84_row_mixed_nilpotency_defect_count", "all_84_row_mixed_cyclicity_defect_count", "detector_block_local", "cross_channel_profile_terms"],
+      "properties": {
+        "bidegree": {"const": [1, 1]},
+        "profile_variation": {"$ref": "#/$defs/text"},
+        "frozen_pairing_action_variation": {"$ref": "#/$defs/text"},
+        "event_formula": {"$ref": "#/$defs/text"},
+        "Q11_blocks": {"type": "array", "minItems": 2},
+        "carrier_block_support": {"type": "array", "minItems": 4, "maxItems": 4},
+        "nilpotency_defect_count": {"const": 0},
+        "cyclicity_defect_count": {"const": 0},
+        "nonzero_Q11_operator_block_count": {"const": 4},
+        "all_other_Q11_carrier_blocks_zero": {"const": true},
+        "mixed_nilpotency_paths": {"type": "array", "minItems": 2},
+        "mixed_cyclicity_pairs": {"type": "array", "minItems": 2},
+        "all_84_row_mixed_nilpotency_defect_count": {"const": 0},
+        "all_84_row_mixed_cyclicity_defect_count": {"const": 0},
+        "detector_block_local": {"const": true},
+        "cross_channel_profile_terms": {"const": 0}
+      }
+    },
+    "mixed_formal_green_coefficient": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["coefficient_formula", "fixture_count", "left_inverse_defect_count_at_r_kappa", "right_inverse_defect_count_at_r_kappa", "direct_Q11_contribution_nonzero_count", "formal_support", "laurent_scope"],
+      "properties": {
+        "coefficient_formula": {"$ref": "#/$defs/text"},
+        "fixture_count": {"const": 3},
+        "left_inverse_defect_count_at_r_kappa": {"const": 0},
+        "right_inverse_defect_count_at_r_kappa": {"const": 0},
+        "direct_Q11_contribution_nonzero_count": {"type": "integer", "minimum": 1},
+        "formal_support": {"$ref": "#/$defs/text"},
+        "laurent_scope": {"$ref": "#/$defs/text"}
+      }
+    },
+    "assembled_bidegree_scope": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["certified_coefficients", "coefficientwise_nilpotency_cyclicity", "finite_parameter_statement"],
+      "properties": {
+        "certified_coefficients": {"const": [[0, 0], [1, 0], [0, 1], [1, 1]]},
+        "coefficientwise_nilpotency_cyclicity": {"const": true},
+        "finite_parameter_statement": {"const": false}
+      }
+    },
+    "mutation_results": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "defect", "defect_count", "detected"],
+        "properties": {
+          "name": {"$ref": "#/$defs/text"}, "defect": {"$ref": "#/$defs/text"},
+          "defect_count": {"type": "integer", "minimum": 1}, "detected": {"const": true}
+        }
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["TRANSVERSE_PROFILE_METRIC_NORMALIZATION_EXPORTED", "PROFILE_NORMALIZATION_EXACT", "MIXED_Q11_PROFILE_BLOCKS_EXACT", "MIXED_Q11_NILPOTENCY_CYCLICITY_CERTIFIED", "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED", "BIVARIATE_FORMAL_GREEN_COEFFICIENT_CERTIFIED", "84_ROW_COEFFICIENTWISE_BIDEGREE_FIRST_JET_CERTIFIED", "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "84_ROW_Q2_Q3_CERTIFIED", "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED", "OBSERVER_EVALUATION_MORPHISM_CERTIFIED", "DEFORMED_RANK_TWO_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "TRANSVERSE_PROFILE_METRIC_NORMALIZATION_EXPORTED": {"const": true},
+        "PROFILE_NORMALIZATION_EXACT": {"const": true},
+        "MIXED_Q11_PROFILE_BLOCKS_EXACT": {"const": true},
+        "MIXED_Q11_NILPOTENCY_CYCLICITY_CERTIFIED": {"const": true},
+        "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": {"const": true},
+        "BIVARIATE_FORMAL_GREEN_COEFFICIENT_CERTIFIED": {"const": true},
+        "84_ROW_COEFFICIENTWISE_BIDEGREE_FIRST_JET_CERTIFIED": {"const": true},
+        "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false},
+        "84_ROW_Q2_Q3_CERTIFIED": {"const": false},
+        "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": {"const": false},
+        "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": {"const": false},
+        "DEFORMED_RANK_TWO_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "CONSTRUCT_APPARATUS_Q2_Q3_THEN_TEST_K_BERGER_EQUIVARIANCE_AND_OBSERVER_MORPHISM"},
+    "claim_boundary": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "result_id"],
+      "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}, "result_id": {"$ref": "#/$defs/text"}}
+    }
+  }
+}

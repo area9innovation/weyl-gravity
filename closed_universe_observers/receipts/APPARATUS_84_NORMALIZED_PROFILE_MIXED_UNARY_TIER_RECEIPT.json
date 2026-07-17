@@ -1,0 +1,90 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "APPARATUS_84_NORMALIZED_PROFILE_MIXED_UNARY_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The missing metric dependence of both detector densities is fixed covariantly by normalizing each smooth transverse bump with the induced clock-slice volume in its three assigned rod coordinates. Exact first variation gives sigma_a=1/2 tr(G_a^-1 delta G_a) and d1+sigma_a=-Phi2_00/2 at both certified identity charts. The four nonzero Q11 operator blocks, all-84-row mixed nilpotency/cyclicity, and the bivariate same-sided formal Green coefficient are certified. This is a coefficientwise first-jet result; finite-r Green hyperbolicity, apparatus q2/q3, K_Berger equivariance, observer morphism, backreacted rank two, emitter recoil, and every quantum claim remain open.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile on the producer, independent verifier, and focused tests; python3 -m json.tool on the certificate, schema, ledger, and receipt; git diff --check on scoped observer and planning paths",
+      "elapsed_seconds": "0.03 plus final diff checks",
+      "status": "PASS",
+      "scope": "Python syntax, structured data, reports, briefs, roadmap, and whitespace"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_84_row_normalized_profile_mixed_unary --check",
+      "elapsed_seconds": "0.46",
+      "status": "PASS",
+      "scope": "covariant transverse normalization, exact event specialization, four Q11 blocks, all-row mixed identities, Green coefficient, schema, and freshness"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_84_row_normalized_profile_mixed_unary",
+      "elapsed_seconds": "1.72",
+      "status": "PASS",
+      "scope": "independent finite-metric determinant variation, unrelated dense rational Green fixtures, dependency/source hashes, and overclaim mutations"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_84_row_normalized_profile_mixed_unary.py",
+      "elapsed_seconds": "0.77",
+      "status": "PASS",
+      "scope": "all 4 normalized-profile, mixed-unary, Green, mutation, and claim-boundary tests"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-84-row-normalized-profile-mixed-unary-v1.schema.json -d closed_universe_observers/certificates/BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY.json",
+      "elapsed_seconds": "25.309",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 validation"
+    },
+    {
+      "command": "python3 closed_universe_observers/verify_comparison_ledger.py",
+      "elapsed_seconds": "0.13",
+      "status": "PASS",
+      "scope": "historical snapshot replay plus current normalized mixed-unary artifact hash and boundary"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "200.10",
+      "status": "PASS",
+      "scope": "all 66 closed-universe observer tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "This closes a scoped coefficientwise first-jet gate but does not freeze or release a finite-parameter/all-orders 84-row theorem, change shared core algebra, promote a QME lifecycle, or satisfy another Tier-3 trigger."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY.json", "sha256": "1dc8720b2e8a208094a40ab736d3e6459c8c5afb5308baca6c1e82c8b9e2f6f2"},
+    {"path": "closed_universe_observers/schema/berger-84-row-normalized-profile-mixed-unary-v1.schema.json", "sha256": "101890c07855aaf12ae0c0c214fc8f14839f6a278aefe7d9acb8e821aae68bf2"},
+    {"path": "closed_universe_observers/generate_berger_84_row_normalized_profile_mixed_unary.py", "sha256": "29908fa6ff7d4638efe94b7d3fbbc0ad5924216f3df40724ffc6abeba644eecc"},
+    {"path": "closed_universe_observers/verify_berger_84_row_normalized_profile_mixed_unary.py", "sha256": "811b1e82f944ef3e8258753ad005686ccd976e7b10c5d894e206cc430431b934"},
+    {"path": "closed_universe_observers/tests/test_berger_84_row_normalized_profile_mixed_unary.py", "sha256": "17c46010f692c2d11f1385d4e4a7b5fdc51a59b4112cc7addd4f0ea6ab7eb730"},
+    {"path": "closed_universe_observers/reports/berger-84-row-normalized-profile-mixed-unary.md", "sha256": "edc5f80a902a5cd5108c6416ffc36eac16f0b00bf9451ab5667c67c698aee170"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "fc0fea54130a2649479790ce140d6cdf090fb815a43396569af392bfd0c1946f"},
+    {"path": "closed_universe_observers/README.md", "sha256": "2ad51e01179ba4aa774ff8fb86153a4bfd39e69a4f314a024795499c7b95e7d4"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "a1cf2ebe3bdfc1f84929929e403e087346d5698cd28d030322ee0e5e90a75846"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "d73393ee609a6efd0e5f168aa01e130091d23ab535c314d933cba61613ac8e51"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "6556ada063fc6cc703ff5a0a40d9265efee34973d621ac983431729485eb1df7"}
+  ],
+  "claim_flags": {
+    "TRANSVERSE_PROFILE_METRIC_NORMALIZATION_EXPORTED": true,
+    "PROFILE_NORMALIZATION_EXACT": true,
+    "MIXED_Q11_PROFILE_BLOCKS_EXACT": true,
+    "MIXED_Q11_NILPOTENCY_CYCLICITY_CERTIFIED": true,
+    "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": true,
+    "BIVARIATE_FORMAL_GREEN_COEFFICIENT_CERTIFIED": true,
+    "84_ROW_COEFFICIENTWISE_BIDEGREE_FIRST_JET_CERTIFIED": true,
+    "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "84_ROW_Q2_Q3_CERTIFIED": false,
+    "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": false,
+    "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": false,
+    "DEFORMED_RANK_TWO_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

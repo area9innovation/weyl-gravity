@@ -91,31 +91,37 @@ not `Q11`.  `BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE` computes this transport,
 its frozen-pairing adjoint, and the first formal Green correction exactly.  It
 then returns the first normalized mixed obstruction: the handoff never defines
 the metric dependence of the normalized detector densities `chi_0,chi_1`, so
-`delta_r B_a` and hence `Q11` are underdetermined.  The result is deliberately
-not promoted to an unqualified 84-row theorem: the normalized profile metric
-variation, apparatus interactions,
-`K_Berger` equivariance, and observer morphism remain open.
+`delta_r B_a` and hence `Q11` are underdetermined.  At that preflight stage the
+result was deliberately not promoted to an unqualified 84-row theorem.
 
-### Immediate priority after the axial unary certificate
+`BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY` now supplies the missing
+covariant normalization.  On each clock slice it uses the three assigned rods
+as oriented transverse coordinates and defines
+`chi_a=f_a(Theta) rho_a(R_a) sqrt(det G_a)`, where
+`G_a^{IJ}=Pi_g(dR_aI,dR_aJ)`.  Thus
+`sigma_a=delta_r log chi_a=1/2 tr(G_a^{-1} delta_r G_a)`; at both certified
+event charts `d1+sigma_a=-Phi2_00/2`.  Exactly four `Q11` operator blocks are
+nonzero, their frozen-pairing adjoints are included, and the all-84-row mixed
+nilpotency/cyclicity defects vanish.  The bivariate Green coefficient is exact
+over the formal Schur--Laurent coefficient field.  This closes the
+coefficientwise mixed unary first jet, not finite-`r` Green hyperbolicity or an
+all-orders apparatus theorem.
 
-1. Export an explicit metric-dependent normalization rule for both detector
-   densities `chi_0,chi_1` (normalization measure and
-   `sigma_a=delta_r log chi_a`).  Then substitute it into the certified
-   universal `delta Btilde_a` formula and replay mixed nilpotency, cyclicity,
-   and the bivariate formal Green coefficient.
-2. Only after that unary gate, construct the apparatus \(q_2,q_3\) rows and
+### Immediate priority after the normalized mixed unary certificate
+
+1. Construct the apparatus \(q_2,q_3\) rows from the frozen two-jet profile,
+   including the new normalization's clock, rod, and metric variations, and
    test \(K_{\rm Berger}\)-equivariance and cyclicity.  Import the nonlinear
    team's certified tensors; do not fork them.
-3. Construct the first observer morphism on the certified apparatus complex
+2. Construct the first observer morphism on the certified apparatus complex
    and test whether the rank-two detector record survives backreaction.
-4. Import the classical team's C-G4 relational redshift observable as the
+3. Import the classical team's C-G4 relational redshift observable as the
    clock/signal object.  The observer team owns its detector realization and
    record map, not a competing redshift definition.
 
-The repaired separate-axis coefficient and formal causal correction are
+The repaired bivariate first-jet coefficient and formal causal correction are
 sufficient input for scoped first-jet tests, but they must not be advertised
-as a finite-parameter Green theorem, mixed-axis theorem, or fully interacting
-apparatus theorem.
+as a finite-parameter Green theorem or fully interacting apparatus theorem.
 
 ### The adjacent closed-universe programme
 

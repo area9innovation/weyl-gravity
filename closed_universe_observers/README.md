@@ -30,6 +30,8 @@ python3 -m closed_universe_observers.generate_berger_84_row_rod_gravity_unary --
 python3 -m closed_universe_observers.verify_berger_84_row_rod_gravity_unary
 python3 -m closed_universe_observers.generate_berger_84_row_mixed_r_kappa_unary_gate --check
 python3 -m closed_universe_observers.verify_berger_84_row_mixed_r_kappa_unary_gate
+python3 -m closed_universe_observers.generate_berger_84_row_normalized_profile_mixed_unary --check
+python3 -m closed_universe_observers.verify_berger_84_row_normalized_profile_mixed_unary
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -64,9 +66,15 @@ exhibits the nonzero contracted principal coefficient `623/81`; it explicitly
 does not claim finite-parameter Green hyperbolicity.  The physical `Phi2` is
 now exported in one canonical tensor/harmonic/frequency order, and the mixed
 coefficient ring and varied-adjoint requirements are frozen.  The actual
-`epsilon_R^2*kappa` profile block remains input-blocked because the handoff
-does not export the metric variation of its normalized detector density.  The
-unqualified full-84 theorem therefore remains open.  The
+old `epsilon_R^2*kappa` profile obstruction is now closed by normalizing each
+transverse bump against the induced clock-slice volume in its three assigned
+rod coordinates.  This fixes
+`sigma_a=1/2 tr(G_a^-1 delta G_a)` and gives
+`d1+sigma_a=-Phi2_00/2` at both certified detector events.  The four nonzero
+`Q11` blocks, their adjoints, all-84-row mixed nilpotency/cyclicity, and the
+bivariate formal Green coefficient are exact.  This is still only a
+coefficientwise first-jet theorem; finite-parameter Green hyperbolicity and
+the interacting full-84 theorem remain open.  The
 observer team now also exports six exact global detector-indexed rod fields
 on the compact Berger cylinder.  They reproduce both detector-event identity
 charts and determine a conserved global rod source in the finite spatial
@@ -84,8 +92,9 @@ independent `epsilon_R`/`kappa` grading, the exact profile two-jet through
 The historical 78-row gate remains scoped history and is not a forward
 construction input.  The shifted Euler equations and unary complex close on
 the separate `(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)` axes, with a formal
-coefficientwise causal contraction; the mixed axis, finite-parameter Green
-theorem, apparatus interactions, and observer morphism remain open.
+coefficientwise causal contraction.  The mixed first jet is now also closed;
+finite-parameter Green theory, apparatus interactions, and the observer
+morphism remain open.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.
