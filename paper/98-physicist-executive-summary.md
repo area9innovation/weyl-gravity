@@ -411,8 +411,7 @@ in the comparison protocol and run it through the relevant certificate chain.
 
 ## Bridge-project status
 
-Readiness is reported by lifecycle and missing gate, not by subjective
-percentages.
+Readiness is reported by lifecycle and missing gate.
 
 | Bridge project | Current readiness | Exact next gate |
 |---|---|---|
