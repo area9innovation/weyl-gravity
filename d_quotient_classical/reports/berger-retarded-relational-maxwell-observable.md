@@ -29,6 +29,17 @@ Weyl-invariant clock metric.  Hence it is Maxwell-gauge and Weyl invariant;
 the level-set integral makes its diffeomorphism covariance explicit.  The
 retarded Green formula proves causal dependence.
 
+The preparation is spatially global on compact `S3`, although its source is
+compact in spacetime.  Its clock-dressed schedule is covariant as a labelled
+family:
+
+```text
+(L_D + omega partial_tau_source)
+  chi((theta-tau_source)/omega) = 0.
+```
+
+It is not invariant under raw `D` with `tau_source` artificially held fixed.
+
 ## Periodic clock and reduced dynamics
 
 The phase clock is `S1`-valued.  The honest label is
@@ -43,7 +54,7 @@ give the same reading in general.  The observable is single-valued on the
 lifted clock with winding label, and multivalued if that record is discarded.
 The specific signal stays within one chart and does not wrap the Hopf fibre.
 
-On the exact two-phase reduced block,
+On the exact two-phase reduced probe block,
 
 ```text
 Omega=-32*pi**2 dx wedge dy
@@ -62,6 +73,9 @@ Thus every fixed-`tau_tilde` complete observable is invariant under raw `D`,
 while the family varies nontrivially with the physical clock reading.  Gauge
 invariance removes the arbitrary orbit parameter; it does not make relational
 change vanish.
+
+This is a reduced probe-mode Poisson bracket, not the Dirac bracket of the
+open 84-row localized apparatus.
 
 ## Exact stopping point
 

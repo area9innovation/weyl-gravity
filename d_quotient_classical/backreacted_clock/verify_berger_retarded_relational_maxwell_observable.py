@@ -62,6 +62,19 @@ def verify(path: Path) -> None:
         raise AssertionError("actual redshift is not two")
     if data["retarded_mode_preparation"]["post_source_signal"].find("t>=t_plus") < 0:
         raise AssertionError("post-source mode identity missing")
+    if data["retarded_mode_preparation"]["support_category"] != "SPATIALLY_GLOBAL_SPACETIME_COMPACT":
+        raise AssertionError("source support category failed")
+    switch = data["retarded_mode_preparation"]["clock_dressed_switch_equivariance"]
+    theta, tau_source, omega_symbol = sp.symbols("theta tau_source omega", nonzero=True, real=True)
+    clock_switch = sp.Function("chi")((theta - tau_source) / omega_symbol)
+    equivariance_defect = sp.simplify(
+        omega_symbol * sp.diff(clock_switch, theta)
+        + omega_symbol * sp.diff(clock_switch, tau_source)
+    )
+    if equivariance_defect != 0 or switch["equivariance_defect"] != "0":
+        raise AssertionError("clock-dressed switch equivariance failed")
+    if switch["fixed_label_invariance"] is not False:
+        raise AssertionError("fixed-label cutoff was promoted to raw-D invariance")
     cutoff = data["retarded_mode_preparation"]["exact_exterior_form_audit"]
     expected_determinant = str(-4 * sp.sqrt(10) / 3)
     if cutoff["Lorenz_three_form_components"] != {} or cutoff["current_closure_components"] != {}:
@@ -79,6 +92,7 @@ def verify(path: Path) -> None:
     if witness["claim_flag"] != "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED" or witness["value"] is not False:
         raise AssertionError("normalized mixed obstruction witness failed")
     for forbidden in (
+        "BERGER_FULL_APPARATUS_DIRAC_BRACKET",
         "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE",
         "BERGER_MIXED_EPSILON_R2_KAPPA_APPARATUS",
         "BERGER_COMPLETE_GLOBAL_S1_CLOCK_OBSERVABLE_WITHOUT_WINDING",
@@ -87,6 +101,8 @@ def verify(path: Path) -> None:
     ):
         if data["flags"][forbidden] is not False:
             raise AssertionError(f"forbidden promotion: {forbidden}")
+    if data["D_gauge_relational_evolution"]["bracket_scope"] != "REDUCED_PROBE_MODE_POISSON_NOT_FULL_APPARATUS_DIRAC":
+        raise AssertionError("probe bracket scope failed")
     print("BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE independent verification: PASS")
 
 

@@ -21,13 +21,22 @@
     "dependency_refs": {"type": "object", "minProperties": 4},
     "retarded_mode_preparation": {
       "type": "object", "additionalProperties": false,
-      "required": ["mode", "switch", "prepared_potential", "Lorenz_identity", "compact_source", "source_conservation", "retarded_identity", "nonzero_source", "post_source_signal", "causal_support", "actual_retarded_signal", "exact_exterior_form_audit"],
+      "required": ["mode", "switch", "prepared_potential", "Lorenz_identity", "compact_source", "support_category", "source_conservation", "retarded_identity", "nonzero_source", "post_source_signal", "causal_support", "actual_retarded_signal", "exact_exterior_form_audit", "clock_dressed_switch_equivariance"],
       "properties": {
         "mode": {"type": "string"}, "switch": {"type": "string"}, "prepared_potential": {"type": "string"},
-        "Lorenz_identity": {"type": "string"}, "compact_source": {"type": "string"}, "source_conservation": {"type": "string"},
+        "Lorenz_identity": {"type": "string"}, "compact_source": {"type": "string"}, "support_category": {"const": "SPATIALLY_GLOBAL_SPACETIME_COMPACT"}, "source_conservation": {"type": "string"},
         "retarded_identity": {"type": "string"}, "nonzero_source": {"type": "string"}, "post_source_signal": {"type": "string"},
         "causal_support": {"type": "string"}, "actual_retarded_signal": {"const": true},
-        "exact_exterior_form_audit": {"type": "object"}
+        "exact_exterior_form_audit": {"type": "object"},
+        "clock_dressed_switch_equivariance": {
+          "type": "object", "additionalProperties": false,
+          "required": ["clock_dressed_switch", "raw_D_action", "source_label_action", "equivariance_identity", "fixed_label_invariance", "equivariance_defect"],
+          "properties": {
+            "clock_dressed_switch": {"type": "string"}, "raw_D_action": {"type": "string"},
+            "source_label_action": {"type": "string"}, "equivariance_identity": {"type": "string"},
+            "fixed_label_invariance": {"const": false}, "equivariance_defect": {"const": "0"}
+          }
+        }
       }
     },
     "relational_redshift": {"type": "object"},
@@ -53,12 +62,15 @@
     "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
     "flags": {
       "type": "object", "additionalProperties": false,
-      "required": ["BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE", "BERGER_ACTUAL_RETARDED_REDSHIFT_TWO", "BERGER_CLOCK_LIFTED_REDUCED_BRACKET", "BERGER_NONTRIVIAL_RELATIONAL_TAU_EVOLUTION", "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE", "BERGER_MIXED_EPSILON_R2_KAPPA_APPARATUS", "BERGER_COMPLETE_GLOBAL_S1_CLOCK_OBSERVABLE_WITHOUT_WINDING", "BERGER_FULLY_BACKREACTED_MAXWELL_SIGNAL", "QUANTUM_CLAIM"],
+      "required": ["BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE", "BERGER_ACTUAL_RETARDED_REDSHIFT_TWO", "BERGER_CLOCK_LIFTED_REDUCED_BRACKET", "BERGER_NONTRIVIAL_RELATIONAL_TAU_EVOLUTION", "BERGER_SPATIALLY_GLOBAL_SPACETIME_COMPACT_PREPARATION_SOURCE", "BERGER_CLOCK_DRESSED_SWITCH_FAMILY_RAW_D_EQUIVARIANT", "BERGER_FULL_APPARATUS_DIRAC_BRACKET", "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE", "BERGER_MIXED_EPSILON_R2_KAPPA_APPARATUS", "BERGER_COMPLETE_GLOBAL_S1_CLOCK_OBSERVABLE_WITHOUT_WINDING", "BERGER_FULLY_BACKREACTED_MAXWELL_SIGNAL", "QUANTUM_CLAIM"],
       "properties": {
         "BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE": {"const": true},
         "BERGER_ACTUAL_RETARDED_REDSHIFT_TWO": {"const": true},
         "BERGER_CLOCK_LIFTED_REDUCED_BRACKET": {"const": true},
         "BERGER_NONTRIVIAL_RELATIONAL_TAU_EVOLUTION": {"const": true},
+        "BERGER_SPATIALLY_GLOBAL_SPACETIME_COMPACT_PREPARATION_SOURCE": {"const": true},
+        "BERGER_CLOCK_DRESSED_SWITCH_FAMILY_RAW_D_EQUIVARIANT": {"const": true},
+        "BERGER_FULL_APPARATUS_DIRAC_BRACKET": {"const": false},
         "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": {"const": false},
         "BERGER_MIXED_EPSILON_R2_KAPPA_APPARATUS": {"const": false},
         "BERGER_COMPLETE_GLOBAL_S1_CLOCK_OBSERVABLE_WITHOUT_WINDING": {"const": false},

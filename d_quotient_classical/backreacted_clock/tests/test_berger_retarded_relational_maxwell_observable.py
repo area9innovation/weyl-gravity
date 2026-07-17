@@ -20,10 +20,22 @@ class RetardedRelationalObservableTests(unittest.TestCase):
         self.assertEqual(audit["coefficient_matrix_determinant"], "-4*sqrt(10)/3")
         self.assertTrue(audit["nonzero_for_nonconstant_switch"])
 
+    def test_preparation_support_and_D_equivariance_are_scoped(self):
+        preparation = self.payload["retarded_mode_preparation"]
+        self.assertEqual(preparation["support_category"], "SPATIALLY_GLOBAL_SPACETIME_COMPACT")
+        switch = preparation["clock_dressed_switch_equivariance"]
+        self.assertEqual(switch["equivariance_defect"], "0")
+        self.assertFalse(switch["fixed_label_invariance"])
+
     def test_reduced_dynamics(self):
         block = self.payload["reduced_symplectic_dynamics"]
         self.assertEqual(block["poisson_bracket"], "{x,y}=-1/(32*pi**2)")
         self.assertTrue(block["nontrivial_tau_evolution"])
+        self.assertEqual(
+            self.payload["D_gauge_relational_evolution"]["bracket_scope"],
+            "REDUCED_PROBE_MODE_POISSON_NOT_FULL_APPARATUS_DIRAC",
+        )
+        self.assertFalse(self.payload["flags"]["BERGER_FULL_APPARATUS_DIRAC_BRACKET"])
 
     def test_periodic_clock_is_lifted(self):
         clock = self.payload["periodic_clock_and_crossings"]
