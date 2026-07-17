@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "generic polar ell>=2 Fourier-polynomial Einstein-Maxwell and Weyl-Maxwell equation/Noether complexes on R_t x S1_L x S2 at fixed P_N, all allowed compact momenta including k=0, before cyclic enhancement, final residual quotient, or causal boundary selection",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "explicit source Diff and target Diff x Weyl contractions on eight ungauged polar coefficients use only constant denominators 2 and 4",
+    "the source raw tensor Euler operator has three exact polynomial Bianchi identities and the target action Hessian has four exact Noether identities",
+    "the gauge-fixed Einstein-to-Weyl equation square lifts to an exact polynomial ghost-field-equation-identity chain map without inverting k, omega, p, or q",
+    "the ungauged target Hessian is formally self-adjoint and has an exact off-shell local Green identity with 184 temporal and 184 spatial terms",
+    "restriction to the canonical target section reproduces the certified reduced Green and direct Lee-Wald current",
+    "the solution tangent inclusion remains injective although the equation/identity chain map is not degreewise injective"
+  ],
+  "evidence": {
+    "commit": "427e479db7b3d7bd15a01ca8e0940c27bb21ed4f",
+    "path": "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+    "sha256": "1247963ba92efc60b7d6744140c6412e3667bb03010c2251db752d23d7707d34"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute final residual survival on the Einstein q-primary and extra p-primary coefficients and separately prove or obstruct a cyclic BV enhancement",
+  "not_established": [
+    "a degreewise-injective or cyclic BV chain map and strict short exact sequence",
+    "the final residual SO(4,2) quotient or a residual/Peierls observable",
+    "the complete curved all-sector classical import gate required by the quantum programme",
+    "causal propagation, asymptotic scattering, particles, nonlinear closure, quantum ghosts, or unitarity"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_polar_ungauged_noether_complex",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_polar_ungauged_noether_lift",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_GENERIC_POLAR_UNGAUGED_EQUATION_NOETHER_CHAIN_MAP",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_ungauged_noether_lift --verify bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_polar_ungauged_noether_lift",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_ungauged_noether_lift",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}

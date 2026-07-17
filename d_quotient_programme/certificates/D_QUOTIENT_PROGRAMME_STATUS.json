@@ -29,7 +29,7 @@
     ],
     "rule": "The Einstein team must export the complete off-shell all-sector relative triangle with the declared acceptance flags. The classical team then imports it by commit and hash before constructing residual equivariance, cofiber compatibility, and observable pullback. A generic-axial preflight or on-shell inclusion cannot promote this gate."
   },
-  "programme_base_commit": "cb7295275a2ff3eeb0729dcc9d6246a93bfb6e71",
+  "programme_base_commit": "f0ab7b833168c21349cfefe54f838ffe65571d99",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -52,7 +52,7 @@
   },
   "registry_hashes": {
     "generator_registry": "bd46ba02eaa31d9b63ada4e6d592b123ebd41dfdef1b642a1bf47daf105d24fa",
-    "phase_space_registry": "1f04196cc5df9b560e4212e605568265efb38a70224fbe2f739a0b54f023bd10"
+    "phase_space_registry": "2685d1fc680a983a96301df52186c4cc084c5afbf21e16295b4523daaf9a9ba8"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -480,6 +480,15 @@
       "setting_id": "compact_einstein_maxwell_weyl_polar_lee_wald_completion",
       "status": "CERTIFIED",
       "verdict": "G2_GENERIC_POLAR_DIRECT_LEE_WALD_BLOCK_INERTIA_THREE_ONE"
+    },
+    {
+      "boundary_conditions": "generic polar ell>=2 Fourier-polynomial ungauged Einstein-Maxwell and Weyl-Maxwell equation/Noether complexes at every allowed compact momentum including k=0; fixed P_N; before cyclic enhancement, final residual quotient, and causal boundary selection",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_polar_ungauged_noether_complex",
+      "setting_id": "compact_einstein_maxwell_weyl_polar_ungauged_noether_lift",
+      "status": "CERTIFIED",
+      "verdict": "G2_GENERIC_POLAR_UNGAUGED_EQUATION_NOETHER_CHAIN_MAP"
     },
     {
       "boundary_conditions": "generic axial extra module with exact reduced-Hessian local Green current; physical ell>=2; before direct Lee-Wald match and final residual quotient",
@@ -2590,6 +2599,51 @@
         ]
       },
       "sha256": "345413d1e4c51c3741ad89814d133f9fc973231a87f1f995daf8d11053c50714"
+    },
+    {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-polar-ungauged-noether-lift.json",
+      "payload": {
+        "boundary_conditions": "generic polar ell>=2 Fourier-polynomial Einstein-Maxwell and Weyl-Maxwell equation/Noether complexes on R_t x S1_L x S2 at fixed P_N, all allowed compact momenta including k=0, before cyclic enhancement, final residual quotient, or causal boundary selection",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "explicit source Diff and target Diff x Weyl contractions on eight ungauged polar coefficients use only constant denominators 2 and 4",
+          "the source raw tensor Euler operator has three exact polynomial Bianchi identities and the target action Hessian has four exact Noether identities",
+          "the gauge-fixed Einstein-to-Weyl equation square lifts to an exact polynomial ghost-field-equation-identity chain map without inverting k, omega, p, or q",
+          "the ungauged target Hessian is formally self-adjoint and has an exact off-shell local Green identity with 184 temporal and 184 spatial terms",
+          "restriction to the canonical target section reproduces the certified reduced Green and direct Lee-Wald current",
+          "the solution tangent inclusion remains injective although the equation/identity chain map is not degreewise injective"
+        ],
+        "evidence": {
+          "commit": "427e479db7b3d7bd15a01ca8e0940c27bb21ed4f",
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+          "sha256": "1247963ba92efc60b7d6744140c6412e3667bb03010c2251db752d23d7707d34"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "compute final residual survival on the Einstein q-primary and extra p-primary coefficients and separately prove or obstruct a cyclic BV enhancement",
+        "not_established": [
+          "a degreewise-injective or cyclic BV chain map and strict short exact sequence",
+          "the final residual SO(4,2) quotient or a residual/Peierls observable",
+          "the complete curved all-sector classical import gate required by the quantum programme",
+          "causal propagation, asymptotic scattering, particles, nonlinear closure, quantum ghosts, or unitarity"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_polar_ungauged_noether_complex",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_polar_ungauged_noether_lift",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_GENERIC_POLAR_UNGAUGED_EQUATION_NOETHER_CHAIN_MAP",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_ungauged_noether_lift --verify bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+          "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_polar_ungauged_noether_lift",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_ungauged_noether_lift",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "fa8deb606c7d8393c0143d5f02f6d0ec527e2fa14ff5a5b196051b1da1fff774"
     },
     {
       "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json",
