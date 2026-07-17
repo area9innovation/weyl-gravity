@@ -1,0 +1,36 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_positive_berger_clock_probe_detector_records",
+  "generator_id": "D_compact",
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "boundary_conditions": "R x Berger S3 with no spatial boundary; fixed-coupling linearized background plus nonbackreacting local probe rods and two compact relational detector windows",
+  "lifecycle_layer": "LORENTZIAN_CAUSAL",
+  "claim_status": "PARTIAL",
+  "verdict": "LOCALIZED_RECORD_FUNCTIONALS_CERTIFIED_POINTWISE_RESPONSE_AND_D_DESCENT_OPEN",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "established": [
+    "two compact clock-labelled Maxwell field-strength record functionals are localized by a nondegenerate probe clock-and-rod chart",
+    "the two record generators are linearly independent, with exact probe evaluation matrix I_2",
+    "the imported compact current, retarded field, and record functionals compose to a well-defined source-to-record map",
+    "Diff, Weyl, and Maxwell-gauge covariance hold for the declared probe functionals"
+  ],
+  "not_established": [
+    "nonzero response of the imported retarded pulse in both predeclared detector windows",
+    "a unique no-wrap causal intersection from the compact source to both receivers",
+    "raw-D descent after adjoining the probe rod and detector sector",
+    "K_Berger compatibility in the interacting complex",
+    "rod backreaction, detector recoil, gravity backreaction, or a quantum observer algebra"
+  ],
+  "evidence": {
+    "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json",
+    "commit": "99e12bbb41f3dd83096c03889a6dfcaa653a237b",
+    "sha256": "f18427cb14a8e377484a5b1e39d4481a1107a29a42923a5b78fc95ece9f8a429"
+  },
+  "verification_commands": [
+    "python3 closed_universe_observers/generate_berger_detector_records.py --check",
+    "python3 closed_universe_observers/verify_berger_detector_records.py",
+    "python3 -m pytest -q closed_universe_observers/tests/test_berger_detector_records.py"
+  ],
+  "next_gate": "BERGER_POINTWISE_RETARDED_GREEN_KERNEL_TWO_WINDOW_WITNESS_THEN_D_AND_K_BERGER_DESCENT"
+}
