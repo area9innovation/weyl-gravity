@@ -335,12 +335,16 @@ formal Green coefficient, and apparatus `q2,q3` action jets with cyclic
 cotangent partners, the Ward-determined `q4(K0,-,-,-)` contraction, and the
 scoped C-G4 record Poisson algebra are no longer missing.  Two receiver-adjacent
 localized conserved emitters and their rank-two transfer are also exact.  The
-primary missing object is now a typed dynamical-emitter theory.  An exact
-input gate shows that two cyclic local completions reproduce the same frozen
-current but give recoil coefficients `1/2` and `1/5`; the coefficient is
-therefore not inferable.  The localized determinant remains a nonzero formal
-constant term, so rank two survives any compatible recoil deformation.
-Emitter recoil/backreaction becomes computable only after that handoff;
+the primary missing object was a typed dynamical-emitter theory.  An exact
+input gate showed that two cyclic local completions reproduce the same frozen
+current but give recoil coefficients `1/2` and `1/5`; the coefficient was not
+inferable before a model choice.  The localized determinant remains a nonzero
+formal constant term, so rank two survives any compatible recoil deformation.
+The handoff is now supplied by a standard massive polarization-two-form model
+with compact relational switching.  It fixes an off-shell conserved current,
+reciprocal recoil equation, and nondegenerately paired 108-row carrier.
+Emitter recoil/backreaction becomes computable after the complete 108-row
+unary causal complex and actual localized Cauchy preparations are constructed;
 placing both preparations at the original common Hopf event is a separate
 stronger localization target.
 Full apparatus/harmonic brackets, full `q4`, higher brackets, and
@@ -413,3 +417,7 @@ The recoil input successor independently exhibits two compatible emitter
 completions with unequal resolvents and proves formal rank-two stability.  Its
 receipt is
 `closed_universe_observers/receipts/DYNAMICAL_EMITTER_RECOIL_INPUT_GATE_TIER_RECEIPT.json`.
+The model-selection successor freezes the standard massive two-form action,
+its constraint-reduced common causal cone, conserved current, reciprocal
+recoil block, and 108-row carrier.  Its receipt is
+`closed_universe_observers/receipts/POLARIZATION_TWO_FORM_EMITTER_HANDOFF_TIER_RECEIPT.json`.

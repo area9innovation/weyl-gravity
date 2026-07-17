@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-polarization-two-form-emitter-handoff-v1.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "model_selection", "euler_and_recoil_blocks", "carrier_108", "symmetry_contract", "causal_principal_contract", "next_construction_gate", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-polarization-two-form-emitter-handoff-v1"},
+    "result_id": {"const": "BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "POLARIZATION_TWO_FORM_EMITTER_MODEL_SELECTED_108_ROW_HANDOFF_FROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4},
+    "model_selection": {"type": "object"},
+    "euler_and_recoil_blocks": {"type": "object"},
+    "carrier_108": {"type": "object", "required": ["degree_ranks_minus1_0_1_2", "total_rows", "new_pairing_rank", "full_pairing_nondegenerate"], "properties": {"degree_ranks_minus1_0_1_2": {"const": [6,48,48,6]}, "total_rows": {"const": 108}, "new_pairing_rank": {"const": 24}, "full_pairing_nondegenerate": {"const": true}}},
+    "symmetry_contract": {"type": "object"},
+    "causal_principal_contract": {"type": "object", "required": ["off_diagonal_order", "chain_homotopy_status"], "properties": {"off_diagonal_order": {"const": 1}, "chain_homotopy_status": {"const": "OPEN_UNTIL_THE_108_ROW_Q1_AND_WITNESS_ARE_EXPORTED"}}},
+    "next_construction_gate": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 2},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["SPECIFIC_DYNAMICAL_EMITTER_MODEL_SELECTED", "RELATIONAL_DIFF_WEYL_MAXWELL_COMPATIBLE_ACTION_FIXED", "OFF_SHELL_CONSERVED_LOCALIZED_EMITTER_CURRENT_FIXED", "RECIPROCAL_EMITTER_RECOIL_BLOCK_FIXED", "AUTHORITATIVE_108_ROW_EMITTER_INTERFACE", "108_ROW_Q1_CERTIFIED", "108_ROW_CAUSAL_CHAIN_CONTRACTION_CERTIFIED", "DYNAMICAL_EMITTER_RECORD_RANK_TWO_CERTIFIED", "RECOIL_COEFFICIENT_COMPUTED", "EMITTER_STRESS_BACKREACTION_INCLUDED", "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED", "QUANTUM_CLAIM"], "properties": {"SPECIFIC_DYNAMICAL_EMITTER_MODEL_SELECTED": {"const": true}, "RELATIONAL_DIFF_WEYL_MAXWELL_COMPATIBLE_ACTION_FIXED": {"const": true}, "OFF_SHELL_CONSERVED_LOCALIZED_EMITTER_CURRENT_FIXED": {"const": true}, "RECIPROCAL_EMITTER_RECOIL_BLOCK_FIXED": {"const": true}, "AUTHORITATIVE_108_ROW_EMITTER_INTERFACE": {"const": true}, "108_ROW_Q1_CERTIFIED": {"const": false}, "108_ROW_CAUSAL_CHAIN_CONTRACTION_CERTIFIED": {"const": false}, "DYNAMICAL_EMITTER_RECORD_RANK_TWO_CERTIFIED": {"const": false}, "RECOIL_COEFFICIENT_COMPUTED": {"const": false}, "EMITTER_STRESS_BACKREACTION_INCLUDED": {"const": false}, "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"type": "string"}, "claim_boundary": {"type": "string"}, "provenance": {"type": "object"}
+  }
+}

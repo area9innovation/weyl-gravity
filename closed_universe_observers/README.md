@@ -42,6 +42,8 @@ python3 -m closed_universe_observers.generate_berger_localized_emitter_rank_two_
 python3 -m closed_universe_observers.verify_berger_localized_emitter_rank_two_transfer
 python3 -m closed_universe_observers.generate_berger_dynamical_emitter_recoil_gate --check
 python3 -m closed_universe_observers.verify_berger_dynamical_emitter_recoil_gate
+python3 -m closed_universe_observers.generate_berger_polarization_emitter_handoff --check
+python3 -m closed_universe_observers.verify_berger_polarization_emitter_handoff
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -136,6 +138,13 @@ external current but give exact recoil coefficients `1/2` and `1/5` on a
 shared mode.  The emitter carrier and action are therefore new physical
 input.  Rank two nevertheless survives every compatible formal completion
 because `-40 S0 C1/9` is the determinant's nonzero constant term.
+The selected successor is a standard massive polarization two-form model on
+`gHat`, with compact relational switches `h_b(Theta)`.  Its current
+`J_b=g_b delta(h_b K_b)` is conserved off shell and its reciprocal equation
+contains the Maxwell recoil.  Two six-component fields plus cotangent partners
+extend the apparatus from 84 to 108 rows.  The complete 108-row differential,
+causal contraction, actual Cauchy-preparation rank, and stress backreaction are
+the next construction.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

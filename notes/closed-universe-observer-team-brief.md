@@ -158,10 +158,19 @@ action, preparation, pairing, causal Green operator, and symmetry action are
 therefore mandatory new inputs.  The nonzero localized determinant still
 proves formal rank-two stability for every compatible completion.
 
-### Immediate priority after the recoil input gate
+`BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF` now makes the required theory
+choice.  It selects two standard massive two-forms on `gHat`, switched by
+compact functions of the dynamical clock.  The current
+`J_b=g_b delta(h_b K_b)` is conserved off shell, while
+`(delta d+m_b^2)K_b=g_b h_b dA` supplies reciprocal recoil.  The massive
+constraint reduction is normally hyperbolic and the carrier grows from 84 to
+108 rows with degree ranks `(6,48,48,6)`.
 
-1. Obtain a dynamical-emitter handoff or explicitly select and justify a
-   physical emitter matter model before computing recoil/backreaction.
+### Immediate priority after the polarization-emitter handoff
+
+1. Construct the complete 108-row unary BV differential and causal chain
+   contraction, then choose localized emitter Cauchy preparations and replay
+   the leading record rank and first recoil correction.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,

@@ -1,0 +1,159 @@
+{
+  "carrier_108": {
+    "base_rows": 84,
+    "degree_ranks_minus1_0_1_2": [
+      6,
+      48,
+      48,
+      6
+    ],
+    "emitter_cotangent_rows": 12,
+    "emitter_field_rows": 12,
+    "full_pairing_nondegenerate": true,
+    "new_ghost_rows": 0,
+    "new_pairing_rank": 24,
+    "new_pairing_rule": "Omega(K_b,K_b_plus)=+I_6 and Omega(K_b_plus,K_b)=-I_6",
+    "total_rows": 108
+  },
+  "causal_principal_contract": {
+    "chain_homotopy_status": "OPEN_UNTIL_THE_108_ROW_Q1_AND_WITNESS_ARE_EXPORTED",
+    "consequence": "the Maxwell gauge-fixed and massive-emitter constraint-reduced Euler system is normally hyperbolic once the complete lower-order coupled operator is assembled",
+    "coupled_fields": [
+      "A",
+      "K_0",
+      "K_1"
+    ],
+    "diagonal_wave_blocks_after_emitter_constraint_reduction": [
+      "P_1,gHat",
+      "P_2,gHat+m_0^2",
+      "P_2,gHat+m_1^2"
+    ],
+    "fixture_determinant": "zeta_sq**3",
+    "fixture_rank": 3,
+    "off_diagonal_order": 1,
+    "principal_symbol": "gHat^{mu nu} zeta_mu zeta_nu I_(4+6+6)"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL handoff selects a specific autonomous effective emitter theory: two real standard massive polarization two-forms K_0,K_1 on the Weyl-invariant clock metric gHat, with Euler operator delta d+m_b^2, positive m_b^2, and compact relational switching h_b(Theta)<K_b,dA>. The divergence constraint converts the emitter equations to a normally hyperbolic P_2,gHat+m_b^2 reduction without inserting a gauge-fixing term into the physical action. The exact Maxwell currents J_b=g_b delta_gHat(h_b K_b) are conserved, Maxwell-gauge invariant, compact in clock time, and spatially localized for localized Cauchy data. The emitter equations contain g_b h_b dA, so recoil is dynamical. Adding twelve two-form components and twelve cotangent partners enlarges the 84-row carrier to a nondegenerately paired 108-row carrier with degree ranks (6,48,48,6). The reduced coupled principal symbol remains the common gHat wave cone because the cross blocks are first order. This freezes a model and interface; it does not construct the full 108-row q1/q2/q3, prove its causal chain contraction, produce rank-two records from actual emitter Cauchy data, compute a recoil coefficient, include the emitter stress backreaction, certify a full apparatus Dirac bracket, or make a quantum claim.",
+  "claim_status": "POLARIZATION_TWO_FORM_EMITTER_MODEL_SELECTED_108_ROW_HANDOFF_FROZEN",
+  "dependency_refs": {
+    "apparatus": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json",
+      "result_id": "BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF",
+      "sha256": "4e3202b7397b9b9fa0a5ce2ccfc243d3e9bda5f69d6339d329caaa3bfe9324ab"
+    },
+    "causal_green": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+      "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+      "sha256": "3403f12bb56f3e1fdf0e4aeef4c8f29859205085d4044311fa64ee0e763be63a"
+    },
+    "localized_transfer": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER.json",
+      "result_id": "BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER",
+      "sha256": "2dc293d4edad9d7e687b5080b05ec9a40b16a83a55ecc2dd655e935295cb6148"
+    },
+    "recoil_gate": {
+      "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_INPUT_GATE.json",
+      "result_id": "BERGER_DYNAMICAL_EMITTER_RECOIL_INPUT_GATE",
+      "sha256": "6fb1e2a55945fb70d48649dde21d5334ac82bdedbde2397ea0188203a2fa9cf8"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "euler_and_recoil_blocks": {
+    "Maxwell": "delta_gHat dA-sum_b g_b delta_gHat(h_b K_b)=0",
+    "Maxwell_gauge": "A->A+d lambda leaves dA and both emitter equations invariant",
+    "conservation": "delta_gHat J_b=g_b delta_gHat^2(h_b K_b)=0",
+    "current_b": "J_b=g_b delta_gHat(h_b K_b)",
+    "cyclic_cross_block": "-g_b delta_gHat h_b and -g_b h_b d are formal adjoints from one Hessian",
+    "emitter_b": "(delta_gHat d+m_b^2)K_b-g_b h_b dA=0",
+    "emitter_constraint": "m_b^2 delta_gHat K_b=g_b delta_gHat(h_b dA)",
+    "formal_recoil_self_energy": "Sigma_ret=sum_b g_b^2 delta_gHat h_b G_b,ret h_b d, where G_b,ret is the constraint-compatible massive-two-form retarded solution operator"
+  },
+  "flags": {
+    "108_ROW_CAUSAL_CHAIN_CONTRACTION_CERTIFIED": false,
+    "108_ROW_Q1_CERTIFIED": false,
+    "AUTHORITATIVE_108_ROW_EMITTER_INTERFACE": true,
+    "DYNAMICAL_EMITTER_RECORD_RANK_TWO_CERTIFIED": false,
+    "EMITTER_STRESS_BACKREACTION_INCLUDED": false,
+    "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": false,
+    "OFF_SHELL_CONSERVED_LOCALIZED_EMITTER_CURRENT_FIXED": true,
+    "QUANTUM_CLAIM": false,
+    "RECIPROCAL_EMITTER_RECOIL_BLOCK_FIXED": true,
+    "RECOIL_COEFFICIENT_COMPUTED": false,
+    "RELATIONAL_DIFF_WEYL_MAXWELL_COMPATIBLE_ACTION_FIXED": true,
+    "SPECIFIC_DYNAMICAL_EMITTER_MODEL_SELECTED": true
+  },
+  "model_selection": {
+    "clock_metric": "gHat=|T|^2 g, invariant under Weyl gauge transformations",
+    "constraint_reduced_wave_operator": "applying delta_gHat gives m_b^2 delta_gHat K_b=g_b delta_gHat(h_b dA); adjoining d of this constraint converts E_b to P_2,gHat+m_b^2",
+    "fields": "two real bosonic two-forms K_0,K_1 with Weyl weight zero",
+    "local_action": "S_emit=-1/2 sum_b <dK_b,dK_b>_gHat-m_b^2/2 <K_b,K_b>_gHat-g_b <h_b(Theta)K_b,dA>_gHat, with the conventional Lorentzian overall signs fixed by the shared action convention",
+    "physical_euler_operators": "E_b=delta_gHat d+m_b^2 with declared m_b^2>0",
+    "preparation": "compact localized Cauchy data for K_b before supp h_b; no external spacetime drive",
+    "switches": "fixed smooth nonnegative compactly supported functions h_b of the dynamical clock Theta",
+    "why_this_model": "it is the standard massive two-form theory, realizes conservation off shell through a coexact current, has a normally hyperbolic constraint reduction, is Diff/Weyl/Maxwell compatible through gHat and dA, and supplies an explicit reciprocal recoil block"
+  },
+  "mutation_results": [
+    {
+      "conservation_defect": "dh_K",
+      "detected": true,
+      "name": "replace_delta_of_hK_by_h_delta_K"
+    },
+    {
+      "detected": true,
+      "expected_less_than": 24,
+      "name": "delete_emitter_cotangent_rows",
+      "new_pairing_rank": 0
+    }
+  ],
+  "next_construction_gate": {
+    "name": "BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_AND_FIRST_RECOIL",
+    "required_outputs": [
+      "complete q1 including Diff and cotangent blocks",
+      "q1 squared and odd-cyclicity ledgers",
+      "advanced/retarded chain homotopy",
+      "localized emitter Cauchy preparations",
+      "leading two-by-two emitted record matrix",
+      "first formal recoil correction",
+      "emitter stress and clock-switch source ledger"
+    ]
+  },
+  "next_gate": "CONSTRUCT_108_ROW_POLARIZATION_EMITTER_UNARY_CAUSAL_COMPLEX_AND_REPLAY_LOCALIZED_RECORD_RANK",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_polarization_emitter_handoff.py",
+        "sha256": "c82ba0018a84228bfc72aeb3fcbc67d25d394db6aefc3eeb0892af6edb5cadab"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_polarization_emitter_handoff.py",
+        "sha256": "405097abe2cd63e864353998b87135af80b106f8635d1c4345b04a04e9ed0528"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_polarization_emitter_handoff.py",
+        "sha256": "e4148efc9b6673ed92c8a2149e1db611e35f85d11556bc7ddb27899bd2ccc488"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-polarization-two-form-emitter-handoff-v1.schema.json",
+        "sha256": "3493ac89b6322307881043ecbce83d0befb505d5a78d8849074fc118657a9b2f"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-polarization-two-form-emitter-handoff.md",
+        "sha256": "5ed998934a1c35568af1bc2a09b4f02c1fec2ee962b542bbb0c2158672b501ca"
+      }
+    ]
+  },
+  "result_id": "BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF",
+  "schema": "closed-universe-berger-polarization-two-form-emitter-handoff-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "symmetry_contract": {
+    "Diff": "K_b and h_b(Theta) transform tensorially; add integral <K_b_plus,L_c K_b> to the BV action",
+    "K_Berger": "simultaneous-family action is the Lie derivative along e0 combined with the imported clock rotation; fixed-background linear descent remains open",
+    "Maxwell": "the action depends on A only through dA",
+    "Weyl": "K_b and A are inert and every emitter contraction uses invariant gHat",
+    "drive_or_external_current": "none in the selected model; preparations are Cauchy data and h_b is a relational coupling function"
+  }
+}

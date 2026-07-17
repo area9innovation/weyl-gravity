@@ -1,0 +1,43 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "POLARIZATION_TWO_FORM_EMITTER_HANDOFF_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "A specific autonomous effective emitter model is selected: two standard massive polarization two-forms on the Weyl-invariant clock metric, compactly switched by h_b(Theta). Their coexact currents are conserved off shell and their equations contain reciprocal Maxwell recoil. The massive divergence constraint yields a normally hyperbolic P2+m^2 reduction. Twelve field and twelve cotangent components extend the apparatus to a nondegenerately paired 108-row carrier with ranks (6,48,48,6). The full 108-row differential, causal contraction, actual emitter-preparation rank, recoil coefficient, emitter stress, Dirac algebra, and quantum claims remain open.",
+  "tier_0": [{"command": "py_compile, json.tool, git diff --check, and explicit SHA-256 replay on emitter-handoff and observer planning paths", "elapsed_seconds": "under 1 plus final checks", "status": "PASS", "scope": "producer, verifier, tests, schema, certificate, report, receipt, comparison ledger, README, brief, roadmap, and comparison report"}],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_polarization_emitter_handoff --check", "elapsed_seconds": "under 1", "status": "PASS", "scope": "model action, conservation, carrier/pairing, principal cone, mutations, schema, and freshness"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_polarization_emitter_handoff", "elapsed_seconds": "under 1", "status": "PASS", "scope": "independent carrier, principal-symbol and conservation replay, dependency/source hashes, and overclaim boundary"},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_polarization_emitter_handoff.py", "elapsed_seconds": "0.25", "status": "PASS", "scope": "all 3 carrier, current, principal-cone, mutation, and fail-closed tests"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-polarization-two-form-emitter-handoff-v1.schema.json -d closed_universe_observers/certificates/BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF.json", "elapsed_seconds": "included in focused checks", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "historical imports, bridge hashes, selected emitter status, and fail-closed next gate"}
+  ],
+  "tier_2": [{"command": "pytest -q closed_universe_observers/tests", "elapsed_seconds": "194.82", "status": "PASS", "scope": "all 85 closed-universe observer tests"}],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "This freezes a new observer-owned model interface but does not yet change shared core algebra, certify the full 108-row complex, freeze a complete finite-parameter/all-orders theorem, or make a release or quantum claim."}],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF.json", "sha256": "2b39749d375ab50966bf286c0a8d6771418c93160457e8f16a65821e8c9d6258"},
+    {"path": "closed_universe_observers/schema/berger-polarization-two-form-emitter-handoff-v1.schema.json", "sha256": "3493ac89b6322307881043ecbce83d0befb505d5a78d8849074fc118657a9b2f"},
+    {"path": "closed_universe_observers/generate_berger_polarization_emitter_handoff.py", "sha256": "c82ba0018a84228bfc72aeb3fcbc67d25d394db6aefc3eeb0892af6edb5cadab"},
+    {"path": "closed_universe_observers/verify_berger_polarization_emitter_handoff.py", "sha256": "405097abe2cd63e864353998b87135af80b106f8635d1c4345b04a04e9ed0528"},
+    {"path": "closed_universe_observers/tests/test_berger_polarization_emitter_handoff.py", "sha256": "e4148efc9b6673ed92c8a2149e1db611e35f85d11556bc7ddb27899bd2ccc488"},
+    {"path": "closed_universe_observers/reports/berger-polarization-two-form-emitter-handoff.md", "sha256": "5ed998934a1c35568af1bc2a09b4f02c1fec2ee962b542bbb0c2158672b501ca"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "aa80a2daab2c327d3db61c8bd8ecbcc38ab3a855b68ab8c55e50b68b862e29d4"},
+    {"path": "closed_universe_observers/README.md", "sha256": "53b0c45e26c578237eea35c5eddc5e2f44a5f933efea6f7dcc00386f53afc78e"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "e024eb142617450ee1e3c66353d46d2fc59765461cb55d27b3a943c24cbec8da"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "d257dafa19dfd3e6877ebf684aecb0f6e5653758f9b4a39c77aeb7e0d2270ce3"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "78ad9800e8c0179418f96d4f8afb10e2af5845ae2e2dc7a131e44991fc1a17fe"}
+  ],
+  "claim_flags": {
+    "SPECIFIC_DYNAMICAL_EMITTER_MODEL_SELECTED": true,
+    "RELATIONAL_DIFF_WEYL_MAXWELL_COMPATIBLE_ACTION_FIXED": true,
+    "OFF_SHELL_CONSERVED_LOCALIZED_EMITTER_CURRENT_FIXED": true,
+    "RECIPROCAL_EMITTER_RECOIL_BLOCK_FIXED": true,
+    "AUTHORITATIVE_108_ROW_EMITTER_INTERFACE": true,
+    "108_ROW_Q1_CERTIFIED": false,
+    "108_ROW_CAUSAL_CHAIN_CONTRACTION_CERTIFIED": false,
+    "DYNAMICAL_EMITTER_RECORD_RANK_TWO_CERTIFIED": false,
+    "RECOIL_COEFFICIENT_COMPUTED": false,
+    "EMITTER_STRESS_BACKREACTION_INCLUDED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
