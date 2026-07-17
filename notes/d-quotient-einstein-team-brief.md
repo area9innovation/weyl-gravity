@@ -989,10 +989,36 @@ and the exact correction is
 
 The target remainder is exactly zero. Thus the first explicit parity-correct
 `EE` component is nonzero but removable; it does not create an extra
-homogeneous normal mode. The even `AA` and `PP` outputs and conjugate/
-difference-frequency blocks remain open, so this is not yet a complete
-second-order correction for a real tangent or an all-mode nonlinear-closure
-theorem.
+homogeneous normal mode.
+
+The Hermitian completion now decides the fixed-bundle real-tangent question
+without computing every remaining output block. For
+
+```text
+Phi^(1)=Re[(z_A Phi_A+z_P Phi_P) exp(-i omega t)],
+omega^2=6-2 sqrt(3),
+```
+
+the exact averaged Chevreton and full Weyl--Maxwell cosine-amplitude matrices
+are respectively
+
+```text
+C_Ch^(2)=diag(144(-1+sqrt(3))/5, 48(-3+2sqrt(3))/5),
+T_H=diag(48(-6+5sqrt(3))/5, 24(-11+7sqrt(3))/5).
+```
+
+Both mixed entries vanish directly, as required by axial--polar parity. Slice
+conservation and time-translation invariance lift `T_H` to the four real
+cosine/sine quadratures by repeating each diagonal entry. Since
+`5 sqrt(3)>6` and `7 sqrt(3)>11`, this real Taub form is positive definite.
+The fixed compact bundle forbids the magnetic second-order lift, so every
+nonzero real combination of this degenerate axial--polar minus pair is
+obstructed. The removable `AP` sum-frequency block and this real-tangent
+no-go are therefore consistent: the obstruction comes from the conjugate
+self-products in the zero-frequency scalar channel. The even `AA` and `PP`
+outputs and other frequency blocks are no longer needed for this fixed-bundle
+no-go, but remain necessary for a charge-relaxed extension theorem. This is
+still not an all-harmonic or causal nonlinear Einstein-sector theorem.
 
 ### Work package E-G4: open background classes and scattering
 

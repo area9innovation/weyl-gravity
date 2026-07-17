@@ -1,0 +1,164 @@
+{
+  "adjoint_cokernel_witness": {
+    "annihilation": "<zeta_H,L_WM Phi^(2)>=0 for every declared smooth periodic fixed-bundle correction",
+    "class": "zeta_H, the constant-lapse/time-translation constraint-adjoint class",
+    "fixed_bundle_condition": "the second-order magnetic Chern-class lift p is zero",
+    "verdict": "the positive-definite Taub pairing is nonzero for every nonzero real tangent, so no declared second-order correction exists"
+  },
+  "channel_ledger": {
+    "axisymmetric_ell_outputs": {
+      "AA_even": [
+        0,
+        2,
+        4
+      ],
+      "AP_axial": [
+        2,
+        4
+      ],
+      "PP_even": [
+        0,
+        2,
+        4
+      ]
+    },
+    "constant_lapse_selection": "only the zero-frequency scalar ell=0 projection survives",
+    "cross_term": "A-P is odd under sphere parity and has zero constant-lapse projection",
+    "frequency_channels": {
+      "two_omega": [
+        "AA",
+        "PP",
+        "AP"
+      ],
+      "zero": [
+        "A conjugate(A)",
+        "P conjugate(P)",
+        "A conjugate(P) and conjugate(A) P"
+      ]
+    },
+    "phase_completion": "slice conservation and time-translation invariance turn each cosine self-coefficient into the same coefficient on cosine and sine quadratures with zero cos-sin entry",
+    "real_coordinates": "z_A=A_cos+i A_sin, z_P=P_cos+i P_sin",
+    "real_tangent": "Phi^(1)=Re[(z_A Phi_A+z_P Phi_P) exp(-i omega t)], omega^2=6-2sqrt(3)"
+  },
+  "chevreton_second_order": {
+    "cosine_amplitude_matrix_A_P": [
+      [
+        "144*(-1 + sqrt(3))/5",
+        "0"
+      ],
+      [
+        "0",
+        "48*(-3 + 2*sqrt(3))/5"
+      ]
+    ],
+    "cross_parity_zero": true,
+    "definition": "C_Ch^(2) from the bilinear tensor in the first Maxwell covariant jet, evaluated on the declared Hermitian tangent",
+    "nonzero": true,
+    "normalized_average": "48*(-3*a_A**2 + 3*sqrt(3)*a_A**2 - 3*a_P**2 + 2*sqrt(3)*a_P**2)/5",
+    "obstruction_by_itself": false,
+    "tt_time_zero": "18*(-33*a_A**2*sin(theta)**4 + 18*sqrt(3)*a_A**2*sin(theta)**4 - 24*sqrt(3)*a_A**2*sin(theta)**2 + 48*a_A**2*sin(theta)**2 - 16*a_A**2 + 8*sqrt(3)*a_A**2 - 8*sqrt(3)*a_P**2*sin(theta)**4 + 12*a_P**2*sin(theta)**4 - 12*a_P**2*sin(theta)**2 + 8*sqrt(3)*a_P**2*sin(theta)**2)"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem is restricted to the real axisymmetric ell=2,k=0 axial-polar minus-frequency pair on the compact fixed bundle. It is not a general Einstein-sector nonlinear no-go, does not classify charge-relaxed extension, final residual descent, causal boundaries, scattering, or quantum theory.",
+  "classification": {
+    "C_Ch_second_order_matrix_computed": true,
+    "Hermitian_phase_space_completed": true,
+    "Lorentzian_causal_claim": false,
+    "charge_relaxed_extension_constructed": false,
+    "every_nonzero_real_combination_fixed_bundle_obstructed": true,
+    "full_Weyl_Maxwell_constant_lapse_matrix_computed": true,
+    "general_ell_or_nonzero_k_classified": false,
+    "general_nonlinear_Einstein_sector_closed": false,
+    "remaining_harmonic_blocks_needed_for_fixed_bundle_no_go": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": {
+    "charges": "fixed electric and magnetic charges through second order; fixed compact U(1) bundle P_N",
+    "frequency_squared": "6-2*sqrt(3)",
+    "linear_space": "the four-real-dimensional cosine/sine quadrature space of the axisymmetric axial and polar ell=2,k=0 Einstein-Maxwell minus modes",
+    "quotient": "after local Diff x U(1) reduction and before final residual quotient",
+    "spacetime": "R_t x S1_L x S2 on the unit magnetic fixed-P_N product background"
+  },
+  "generality_level": "G1_HERMITIAN_ELL2_K0_MINUS_PAIR_TAUB",
+  "interpretation": "The previously certified AP sum-frequency axial source is nonzero but removable. For a real tangent, however, the conjugate self-products also generate a zero-frequency scalar source. Its fixed-bundle constant-lapse Taub form is positive definite on both axial and polar quadratures. Therefore no nonzero real combination of this degenerate minus-frequency pair extends to second order in the declared fixed-charge Weyl-Maxwell phase space.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "test whether an admitted magnetic-charge lift removes only this Taub component and solve the remaining blocks in that enlarged charge fibre; independently extend the Hermitian Taub classification to the plus pair, higher ell, and nonzero momentum",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.py",
+    "generator_sha256": "df147698eb2450443c873c857454fab2dd722ae4796d006d8521f3cb3a69ae13",
+    "inputs": {
+      "bridge/certificates/compact_harmonic_domain_taub_descent.json": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09",
+      "bridge/certificates/einstein_maxwell_chevreton_tangent.json": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead",
+      "bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json": "1355b39e523ba4385c8871a4a02772ed32920bede920b6242d4c5068ce44fbcc",
+      "bridge/certificates/einstein_maxwell_weyl_target_adjoint_witness.json": "1a02ce40d4e0c53f609626a93a7d00ef12542696c9924b126752e385cbdadb6f"
+    },
+    "tensor_helper_path": "bridge/einstein_sector/einstein_maxwell_periodic_photon_second_order.py",
+    "tensor_helper_sha256": "801bd2ea66675d8b8db075c3499f28ef83909749efc4f2b3240da681f3fea8d9"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_HERMITIAN_AXIAL_POLAR_ELL2_TAUB",
+  "result_state": "EVERY_NONZERO_REAL_AXIAL_POLAR_MINUS_BRANCH_COMBINATION_FIXED_BUNDLE_OBSTRUCTED",
+  "schema": "einstein-maxwell-weyl-hermitian-axial-polar-ell2-taub-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.schema.json",
+  "schema_sha256": "ef868cc56c26b551a8f7794e8ce166ac64756847bf979d99efae9ba802afeada",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub --verify bridge/certificates/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub --verify-exhaustive bridge/certificates/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub"
+  ],
+  "weyl_maxwell_taub": {
+    "cosine_amplitude_matrix_A_P": [
+      [
+        "48*(-6 + 5*sqrt(3))/5",
+        "0"
+      ],
+      [
+        "0",
+        "24*(-11 + 7*sqrt(3))/5"
+      ]
+    ],
+    "cosine_matrix_determinant": "-1152*(-171 + 97*sqrt(3))/25",
+    "cross_parity_zero": true,
+    "exact_positivity_witnesses": [
+      "5*sqrt(3)-6>0 because 75>36",
+      "7*sqrt(3)-11>0 because 147>121"
+    ],
+    "normalized_average": "24*(-12*a_A**2 + 10*sqrt(3)*a_A**2 - 11*a_P**2 + 7*sqrt(3)*a_P**2)/5",
+    "positive_definite": true,
+    "real_quadrature_matrix": [
+      [
+        "48*(-6 + 5*sqrt(3))/5",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "48*(-6 + 5*sqrt(3))/5",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "24*(-11 + 7*sqrt(3))/5",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "24*(-11 + 7*sqrt(3))/5"
+      ]
+    ],
+    "real_quadrature_order": [
+      "A_cos",
+      "A_sin",
+      "P_cos",
+      "P_sin"
+    ],
+    "source": "[epsilon^2](3B_tt-T_tt)=(1/2)D^2E_WM[Phi^(1),Phi^(1)]_tt",
+    "tt_time_zero": "-9*(90*sqrt(3)*a_A**2*sin(theta)**4 + 202*a_A**2*sin(theta)**4 - 218*a_A**2*sin(theta)**2 - 104*sqrt(3)*a_A**2*sin(theta)**2 + 16*sqrt(3)*a_A**2 + 44*a_A**2 - 149*a_P**2*sin(theta)**4 + 13*sqrt(3)*a_P**2*sin(theta)**4 - 16*sqrt(3)*a_P**2*sin(theta)**2 + 176*a_P**2*sin(theta)**2 - 32*a_P**2)"
+  }
+}
