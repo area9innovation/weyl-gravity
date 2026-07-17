@@ -1,4 +1,4 @@
-# Taub obstruction and balanced extension in compact Weyl--Maxwell gravity
+# Pure-extra Taub obstruction and a balanced second-order extension in compact Weyl--Maxwell gravity
 
 ## Pure extra modes versus Einstein--extra mixtures
 
@@ -37,8 +37,9 @@ remaining homogeneous channel has an explicit correction; and every
 $\ell=2,4$ output is removed by an exact off-shell polar inverse. The four
 solved action equations and four target Noether identities span all eight
 ungauged polar equations with determinant (-4), including at zero
-frequency. Hence this balanced real tangent has an explicit second-order
-correction on the same charge fibre.
+frequency. Hence this balanced real tangent has an explicit spatially
+periodic, finite quasiperiodic second-order correction on the same magnetic
+bundle component.
 
 The result exhibits a sharp nonlinear distinction:
 
@@ -61,8 +62,8 @@ compact Cauchy surface, background symmetries can produce quadratic Taub
 constraints which are invisible in the linear equations. This phenomenon is
 classical in Einstein gravity and is naturally expressed through the
 constraint-adjoint kernel or, equivalently on a closed slice, through the
-moment map for the background symmetry group [1,2]. Higher-derivative gravity
-has analogous linearization-instability questions [3].
+moment map for the background symmetry group [2,10,11]. Higher-derivative
+gravity has analogous linearization-instability questions [3].
 
 The present problem is unusually clean because the linear phase space is
 already known exactly. The background
@@ -89,11 +90,15 @@ The next question is nonlinear:
 
 We answer both parts at a sharp, publishable scope.
 
+To our knowledge, no previous Weyl--Maxwell calculation combines a definite
+all-harmonic obstruction on the new fourth-order primary with an exact
+Einstein--extra cancellation and a complete second-order correction.
+
 1. **General pure-extra no-go.** Every nonzero real pure-extra generic
    tangent is obstructed at second order on the fixed magnetic bundle. This
    holds for both parities, every physical $\ell\geq2$, every allowed
-   compact momentum, and finite or rapidly decreasing finite-energy
-   superpositions.
+   compact momentum, and the completion of finite harmonic sums in the
+   time-translation charge norm defined below.
 
 2. **Explicit balanced extension.** One nonzero real Einstein--extra tangent
    at $\ell=2,m=0,k=0$ annihilates all five stabilizer moment maps and has a
@@ -111,36 +116,34 @@ $\left(\mu_H,\mu_{P_x},\mu_{J_1},\mu_{J_2},\mu_{J_3}\right)$, including
 opposite-momentum standing waves and exceptional/global blocks, is the next
 theorem.
 
-### Main theorem
+### Main theorems
 
 Let $\mathcal T_X^{\mathrm{gen}}$ be the real, locally gauge-reduced,
 generic extra Weyl--Maxwell tangent on the fixed magnetic bundle, and let
 $u_-$ and $u_e$ be the axisymmetric axial modes defined in Section 7.
 
-> **Theorem A (obstruction versus balanced extension).**
->
-> 1. For every nonzero $u\in\mathcal T_X^{\mathrm{gen}}$, the
->    constant-lapse Taub pairing is nonzero. Therefore the equation
->    \[
->    L_{\mathrm{WM}}\Phi^{(2)}
->    =-\frac12D^2E_{\mathrm{WM}}[u,u]
->    \]
->    has no fixed-bundle periodic solution.
-> 2. The real tangent
->    \[
->    \Phi^{(1)}=\operatorname{Re}(u_-)+a_e\operatorname{Re}(u_e),
->    \qquad
->    |a_e|^2=\frac{27}{52}(5\sqrt3-6),
->    \]
->    annihilates all five background-stabilizer moment maps and admits an
->    explicit real second-order correction $\Phi^{(2)}$ on the same fixed
->    bundle.
+> **Theorem A (definite pure-extra obstruction).** For every nonzero
+> $u\in\mathcal T_X^{\mathrm{gen}}$,
+> \[
+> \mu_H(u)=-\frac L4\lVert u\rVert_H^2<0.
+> \]
+> Therefore the second-order Weyl--Maxwell equation has no solution on the
+> fixed magnetic-bundle component $P_N$.
 
-Part 1 is a theorem on the complete pure-extra generic sector. Part 2 is an
-existence theorem for one declared mixed tangent. It is not a claim that
-every common-zero tangent extends.
+> **Theorem B (one balanced second-order jet).** Let
+> \[
+> a_e=\sqrt{\frac{27}{52}(5\sqrt3-6)}>0.
+> \]
+> The explicitly defined real $\ell=2,m=0,k=0$ Einstein--extra tangent
+> annihilates all five background-stabilizer moment maps and admits a smooth,
+> real, $S^1_L$-periodic in space and finite quasiperiodic in time
+> second-order correction on the same bundle component.
 
-## 2. The common background and the fixed charge fibre
+Theorem A concerns the complete axial and polar pure-extra generic sector.
+Theorem B is an existence theorem for one declared mixed tangent. It is not a
+claim that every common-zero tangent extends.
+
+## 2. The common background and the fixed magnetic-bundle component
 
 We use signature $(-+++)$ and the actions
 
@@ -245,7 +248,12 @@ k=\frac{2\pi n}{L},\quad n\in\mathbb Z.
 
 For every $\ell\geq2$, the generic axial and polar Weyl--Maxwell solution
 modules split into the Einstein $q$-primary image and two additional
-$p$-primary summands. The extra shell is
+$p$-primary summands. The axial statement is imported from the companion
+linear paper [5]. Because the polar statement is load-bearing for Theorem A,
+we record its complete algebraic and current certificate here rather than
+importing it by name alone.
+
+The extra shell is
 
 \[
 p(\omega,k,\lambda)
@@ -267,11 +275,136 @@ q(\omega,k,\lambda)
 \]
 
 Its two positive-frequency branches will be denoted $\omega_-$ and
-$\omega_+$. The Einstein and extra primary modules are orthogonal under the
-direct four-dimensional Lee--Wald current. Each axial and polar extra Gram
-matrix $G_X^{\mathrm{par}}$ is positive definite. Thus the extra modes are
-genuine nonnull linear solutions, even though Section 5 proves that they are
-not fixed-bundle nonlinear tangent directions.
+$\omega_+$.
+
+### 3.1 Polar module and current theorem
+
+In the polar gauge slice and coefficient order $(A_t,B,C_t,U)$, the
+action-normalized reduced Hessian is
+
+\[
+H_P=
+\begin{pmatrix}
+\frac{2k^4+4k^2\lambda+2\lambda^2-3\lambda}{4}
+&k\omega(k^2+\lambda)
+&\frac{k^2\lambda+2k^2\omega^2+\lambda^2-\lambda\omega^2+\lambda}{4}
+&\lambda\\
+k\omega(k^2+\lambda)
+&-\frac{3k^2\lambda-4k^2\omega^2+3\lambda^2-3\lambda\omega^2-2\lambda}{2}
+&-k\omega(\lambda-\omega^2)&0\\
+\frac{k^2\lambda+2k^2\omega^2+\lambda^2-\lambda\omega^2+\lambda}{4}
+&-k\omega(\lambda-\omega^2)
+&\frac{2\lambda^2-4\lambda\omega^2-3\lambda+2\omega^4}{4}
+&-\lambda\\
+\lambda&0&-\lambda&-2\lambda(k^2+\lambda-\omega^2)
+\end{pmatrix}.
+\tag{3.1}
+\]
+
+The normalization follows from the four-dimensional first variation, with
+row weights $(-1,2,-1,2\lambda)$ for the metric $00$, metric $01$, metric
+$11$, and axial Maxwell-density equations. It is therefore not inferred from
+formal self-adjointness alone.
+
+Let $I_j(H_P)$ denote the ideal generated by the $j\times j$ minors. Over
+
+\[
+R_{\mathrm{phys}}^P=
+\mathbb Q[\lambda,k,\lambda^{-1},(\lambda-2)^{-1},
+(3\lambda-2)^{-1},(3\lambda-4)^{-1},(5\lambda+6)^{-1},
+(9\lambda+2)^{-1},(9\lambda-2)^{-1}],
+\]
+
+where neither $k$, $\omega$, $p$, nor $q$ is inverted, exact Bézout
+witnesses give
+
+\[
+I_1=(1),\qquad I_2=(1),\qquad I_3=(p),\qquad I_4=(p^2q).
+\tag{3.2}
+\]
+
+The resultant
+
+\[
+\operatorname{Res}_{\omega}(p,q)=\frac4{81}(9\lambda-2)^2
+\tag{3.3}
+\]
+
+is a unit on every physical fibre. Hence the invariant factors are
+$1,1,p,pq$, including at $k=0$, and primary decomposition gives
+
+\[
+\mathcal T_{\mathrm{WM}}^{\mathrm{pol}}
+\cong K_{\ell,n}[\omega]/(q)
+\oplus\bigl(K_{\ell,n}[\omega]/(p)\bigr)^2.
+\tag{3.4}
+\]
+
+Here $K_{\ell,n}$ is any characteristic-zero field containing the
+specialized coefficients $\lambda=\ell(\ell+1)$ and $k=2\pi n/L$. The
+Einstein solution map is injective, is annihilated by $q$, and has
+$K_{\ell,n}$-dimension four. Since $q$ is a unit on the two $p$-primary
+summands, its image equals the complete $q$-primary summand.
+
+On the positive extra shell, define
+
+\[
+D=3k^2+3\lambda-2,qquad \widetilde D=6k^2+3\lambda-2.
+\]
+
+Two explicit extra representatives are
+
+\[
+e_1=
+\begin{pmatrix}4(3k^2-2)\\0\\-12(k^2+\lambda)\\3\widetilde D\end{pmatrix},
+\qquad
+e_2=
+\begin{pmatrix}-2kD\\\omega_e\widetilde D\\-2kD\\0\end{pmatrix}.
+\tag{3.5}
+\]
+
+Their direct four-dimensional Lee--Wald Hermitian current Gram matrix is
+
+\[
+G_X^{\mathrm{pol}}=
+\begin{pmatrix}
+18\lambda(4k^2+\lambda-2)(12k^2+9\lambda-2)
+&-6k\lambda(3\lambda+2)D\\
+-6k\lambda(3\lambda+2)D
+&\frac12\lambda(3\lambda-2)^2D
+\end{pmatrix}.
+\tag{3.6}
+\]
+
+Its first principal minor is positive and
+
+\[
+\det G_X^{\mathrm{pol}}
+=9\lambda^2(\lambda-2)(9\lambda-2)D\widetilde D^2>0
+\tag{3.7}
+\]
+
+for every physical $\lambda\geq6$ and allowed $k$. Direct reduction of the
+mixed current gives zero modulo $(p,q)$, so this block is orthogonal to the
+Einstein primary.
+
+> **Theorem 3.1 (generic polar linear input).** On every physical
+> $\ell\geq2$ compact-momentum fibre, including $k=0$, the locally
+> gauge-reduced polar target has the decomposition (3.4). Its two extra
+> positive-frequency directions are nonradical, orthogonal to the Einstein
+> primary, and have current inertia $(2,0)$.
+
+Equations (3.1)--(3.7), together with the exact Bézout witnesses in the
+machine-readable supplement, constitute the polar theorem used below. This
+is an off-shell module and classical current result before the final
+background-stabilizer quotient; it is not a causal, particle, or quantum
+claim.
+
+The Einstein and extra primary modules are therefore orthogonal under the
+direct four-dimensional Lee--Wald current in both parities. Each axial and
+polar extra Gram matrix $G_X^{\mathrm{par}}$ is positive definite. Thus the
+extra modes are genuine nonnull linear solutions, even though Section 5
+proves that they are not fixed-bundle nonlinear tangent directions.
 
 For a positive-frequency coefficient vector $c$ in one branch, parity and
 spin-$\ell$ multiplicity block, let $W_\ell$ be the positive invariant
@@ -287,43 +420,91 @@ as the real-mode convention.
 ## 4. Taub pairings as covariant moment maps
 
 Let $E(\Phi)=0$ denote the Weyl--Maxwell Euler--Lagrange equations and
-$L=DE|_{\bar\Phi}$. A first-order tangent $u$ extends through second order
-only if there is a $\Phi^{(2)}$ satisfying
+$L=DE|_{\bar\Phi}$. We fix the perturbative convention
+
+\[
+\Phi(\epsilon)=\bar\Phi+\epsilon u+\epsilon^2\Phi^{(2)}+O(\epsilon^3).
+\tag{4.1}
+\]
+
+Thus a first-order tangent $Lu=0$ extends through second order only if
 
 \[
 L\Phi^{(2)}
 =-\frac12D^2E|_{\bar\Phi}[u,u].
-\tag{4.1}
-\]
-
-Every adjoint zero mode $\zeta_X$ therefore gives the necessary Taub
-condition
-
-\[
-\left\langle\zeta_X,
-\frac12D^2E[u,u]\right\rangle=0.
 \tag{4.2}
 \]
 
-For an infinitesimal bundle-covariant automorphism $X$ of the background,
-the closed-slice covariant Hamiltonian identity gives
+Let $C_A$ be the complete spatial constraint density on the closed slice
+$\Sigma=S^1_L\times S^2$. For a background stabilizer $\widehat X$, let
+$\zeta_{\widehat X}^A$ be its element of the constraint-adjoint kernel and
+define
 
 \[
-\boxed{
-\left\langle\zeta_X,
-\frac12D^2E_{\mathrm{WM}}[u,u]\right\rangle
-=\mu_X(u)
-=\frac12\Omega_{\mathrm{WM}}
-(u,\mathcal L_Xu).}
+\langle\zeta_{\widehat X},S\rangle_\Sigma
+:=\int_\Sigma \zeta_{\widehat X}^A S_A.
 \tag{4.3}
 \]
 
-To prove (4.3), differentiate the action Noether-current identity twice,
-use $E(\bar\Phi)=0$, $Lu=0$, and
-$\mathcal L_X\bar\Phi=0$, then integrate over the closed Cauchy surface.
-Every exact Lee--Wald improvement and bundle-patching corner term integrates
-to zero. This is the boundaryless specialization of the covariant phase-space
-construction [8,9].
+The contraction includes the metric and Maxwell constraint densities in the
+four-dimensional action convention of Section 2. Every adjoint zero mode
+therefore gives the necessary Taub condition
+
+\[
+\left\langle\zeta_{\widehat X},
+\frac12D^2E[u,u]\right\rangle=0.
+\tag{4.4}
+\]
+
+The stabilizers are automorphisms of the magnetic bundle, not merely vector
+fields on the base. Time and circle translations lift with zero vertical
+part. A sphere rotation is lifted as
+
+\[
+\widehat J_a=(J_a,\chi_a),
+\qquad
+\iota_{J_a}\bar F+d\chi_a=0.
+\tag{4.5}
+\]
+
+Such a global lift exists because $\mathcal L_{J_a}\bar F=0$ and
+$H^1(S^2)=0$. It preserves the background connection even though a chosen
+local monopole potential need not be invariant. Write
+$\widehat{\mathcal L}_{\widehat X}$ for the resulting combined
+diffeomorphism--$U(1)$ action.
+
+Let $\mathcal T_{\mathrm{WM}}$ be the smooth harmonic solution space after
+local $\mathrm{Diff}\ltimes\mathcal G_{\mathrm{Weyl}}\ltimes
+\mathcal G_{U(1)}$ reduction and before the five stabilizers are quotiented.
+On every declared generic primary block, the Lee--Wald form
+$\Omega_{\mathrm{WM}}$ is nondegenerate. The closed-slice Hamiltonian
+identity is the following proposition.
+
+> **Proposition 4.1 (Taub pairing equals the stabilizer moment map).** For
+> every smooth finite-harmonic Jacobi field $u$ and every lifted background
+> stabilizer $\widehat X$,
+
+\[
+\boxed{
+\left\langle\zeta_{\widehat X},
+\frac12D^2E_{\mathrm{WM}}[u,u]\right\rangle
+=\mu_{\widehat X}(u)
+=\frac12\Omega_{\mathrm{WM}}
+(u,\widehat{\mathcal L}_{\widehat X}u).}
+\tag{4.6}
+\]
+
+To prove (4.6), differentiate the action Noether-current identity twice, use
+$E(\bar\Phi)=0$, $Lu=0$, and
+$\widehat{\mathcal L}_{\widehat X}\bar\Phi=0$, and then integrate over
+$\Sigma$. The second variation of the constraint Hamiltonian gives the left
+side of (4.6), while the variation of the Hamiltonian generator gives the
+right side. The chosen expansion (4.1) supplies the factor $1/2$. Every exact
+Lee--Wald improvement and bundle-patching corner term integrates to zero on
+the closed slice. This proves the identity first for smooth finite harmonic
+sums. Section 5 extends it by continuity in the charge norm. It is the
+boundaryless specialization of the covariant phase-space construction
+[8,9].
 
 The exact real-mode moment maps are
 
@@ -331,45 +512,71 @@ The exact real-mode moment maps are
 \mu_H
 =-\frac{L}{4}\sum
 \omega^2 c^\dagger(G_{\mathrm{branch}}\otimes W_\ell)c,
-\tag{4.4}
+\tag{4.7}
 \]
 
 \[
 \mu_{P_x}
 =\frac{L}{4}\sum
 k\omega c^\dagger(G_{\mathrm{branch}}\otimes W_\ell)c,
-\tag{4.5}
+\tag{4.8}
 \]
 
 \[
 \mu_{J_a}
 =\frac{L}{4}\sum
 \omega c^\dagger(G_{\mathrm{branch}}\otimes W_\ell T_a)c.
-\tag{4.6}
+\tag{4.9}
 \]
 
 The sums are block diagonal in $k,\ell$, parity, and frequency shell.
-Rotations preserve $\ell$; $J_3$ is diagonal in $m$, while
-$J_1,J_2$ connect only $m$ to $m\pm1$. Axial--polar and
-Einstein--extra cross terms vanish. The sign and the factor $1/4$ in (4.4)
+Here
+
+\[
+T_a=-i\mathcal L_{J_a}\big|_{\mathcal H_\ell}
+\tag{4.10}
+\]
+
+is the Hermitian angular-momentum matrix on the spin-$\ell$ harmonic space,
+with Hermiticity taken relative to $W_\ell$. Thus
+$T_3Y_{\ell m}=mY_{\ell m}$ and (4.9) is manifestly real. Rotations preserve
+$\ell$; $T_3$ is diagonal in $m$, while $T_1,T_2$ connect only $m$ to
+$m\pm1$. Axial--polar and
+Einstein--extra cross terms vanish. The sign and the factor $1/4$ in (4.7)
 are fixed by exact agreement with three independent direct tensor
 calculations: one axial extra block and the axial and polar Einstein-minus
 fixtures at $\ell=2,k=0$.
 
 ## 5. The complete pure-extra obstruction
 
-> **Theorem 5.1 (pure-extra fixed-bundle no-go).** Let $u$ be a real
-> pure-extra generic Weyl--Maxwell tangent, axial or polar, with finite or
-> rapidly decreasing finite-energy harmonic coefficients. If $u\neq0$,
-> then $u$ admits no periodic second-order correction on the fixed magnetic
-> bundle $P_N$.
+For a finite real pure-extra harmonic sum, define the time-translation charge
+norm
+
+\[
+\lVert u\rVert_H^2
+:=\sum_{\ell,m,n,\mathrm{par}}
+\omega_e^2\,
+c_{\ell mn}^{\dagger}
+(G_X^{\mathrm{par}}\otimes W_\ell)c_{\ell mn}.
+\tag{5.1}
+\]
+
+Let $\mathscr H_X$ be the Hilbert completion of finite harmonic sums in this
+norm. This is the precise infinite-superposition domain used here; no claim
+about a larger PDE energy space is made.
+
+> **Theorem 5.1 (pure-extra fixed-bundle no-go).** Let
+> $u\in\mathscr H_X$ be a real pure-extra generic Weyl--Maxwell tangent,
+> axial or polar. If $u\neq0$, then $u$ admits no second-order correction on
+> the fixed magnetic bundle $P_N$ in any regularity class for which the Taub
+> pairing (4.3) is defined and continuous.
 
 ### Proof
 
 On the extra shell, $\omega_e^2>0$ for every physical
 $\lambda\geq6$. Both extra Gram matrices and the angular form $W_\ell$
 are positive definite. Hence every nonzero block contributes strictly
-negatively to (4.4):
+negatively to (4.7):
 
 \[
 \mu_H(u)
@@ -377,13 +584,14 @@ negatively to (4.4):
 \omega_e^2 c^\dagger(G_X^{\mathrm{par}}\otimes W_\ell)c<0.
 \]
 
-Orthogonality makes the same conclusion valid for finite and convergent
-rapidly decreasing superpositions. Equation (4.2) is therefore violated for
-the constant-lapse adjoint class.
+Thus $\mu_H(u)=-(L/4)\lVert u\rVert_H^2$. Proposition 4.1 and the moment map
+extend continuously from finite sums to $\mathscr H_X$, and strict
+negativity holds for every nonzero vector in the completion. Equation (4.4)
+is therefore violated for the constant-lapse adjoint class.
 
 The obstruction cannot be absorbed inside the declared domain. Continuous
 magnetic variation changes $c_1(P_N)$, while electric variation has zero
-linear pairing with $H$ at the purely magnetic background. Thus (4.1) has
+linear pairing with $H$ at the purely magnetic background. Thus (4.2) has
 no fixed-bundle solution. $\square$
 
 ### What the theorem does not say
@@ -466,12 +674,12 @@ For unit real cosine amplitude, their constant-lapse Taub coefficients are
 \tag{7.3}
 \]
 
-Set
+Fix the positive real balancing amplitude
 
 \[
-|a_e|^2
-=\frac{\tau_-}{-\tau_e}
-=\frac{27}{52}(5\sqrt3-6).
+a_e
+:=\sqrt{\frac{\tau_-}{-\tau_e}}
+=\sqrt{\frac{27}{52}(5\sqrt3-6)}>0.
 \tag{7.4}
 \]
 
@@ -496,6 +704,17 @@ and the rotational expectations vanish for the separate axisymmetric
 $m=0$ states. Because the Einstein and extra primaries are symplectically
 orthogonal, (7.6) is not produced by an interference term.
 
+The declared theorem concerns this positive-real relative phase. Moreover,
+
+\[
+\left(\frac{\omega_e}{\omega_-}\right)^2
+=\frac43+\frac{4\sqrt3}{9}\notin\mathbb Q,
+\tag{7.7}
+\]
+
+so the mixed tangent is not periodic in time. It is smooth and periodic in
+$x\in S^1_L$, and its time dependence is a finite quasiperiodic sum.
+
 Vanishing Taub charges is necessary but not sufficient for extension. A
 nonzero quadratic source can still have a component in another adjoint
 cokernel or lie on a resonant output shell. We therefore solve the complete
@@ -504,8 +723,10 @@ second-order equation directly.
 ## 8. Complete second-order extension of the balanced tangent
 
 > **Theorem 8.1 (balanced Einstein--extra second-order extension).** The real
-> tangent (7.5) admits a real, periodic, fixed-bundle correction
-> $\Phi^{(2)}$ satisfying
+> tangent (7.5), with the positive real amplitude (7.4), admits a smooth,
+> real correction $\Phi^{(2)}$ which is $S^1_L$-periodic in space and a
+> finite quasiperiodic sum in time on the same fixed magnetic-bundle
+> component. It satisfies
 > \[
 > L_{\mathrm{WM}}\Phi^{(2)}
 > =-\frac12D^2E_{\mathrm{WM}}
@@ -598,6 +819,27 @@ It is removed explicitly by
 \tag{8.5}
 \]
 
+Set
+
+\[
+C_E=-\frac{3(-36+17\sqrt3)}{20(-3+\sqrt3)^2},
+\qquad C_X=\frac{9(-6+5\sqrt3)}{1280}.
+\]
+
+With the common certificate prefix `homogeneous_channels.`, the homogeneous
+channel ledger is
+
+| pair | $\Omega$ | correction $(C,K,U)$ | key suffix | $R$ |
+|---|---:|---|---|:---:|
+| balanced zero | $0$ | $(0,0,0)$ | `combined_zero` | $0^4$ |
+| Einstein self | $2\omega_-$ | $(C_E,0,0)$ | `Einstein_self_sum` | $0^4$ |
+| extra self | $2\omega_e$ | $(C_X,0,0)$ | `extra_self_sum` | $0^4$ |
+| cross sum | $\omega_e+\omega_-$ | $(2S_{11}/\Omega^4,0,0)$ | `cross_sum` | $0^4$ |
+| cross difference | $\omega_e-\omega_-$ | $(2S_{11}/\Omega^4,0,0)$ | `cross_difference` | $0^4$ |
+
+The separate zero-frequency Einstein and extra rows are the two nonzero
+vectors in (8.3); only their balanced sum belongs to the solvable ledger.
+
 Hence no electric-charge or Wilson-line correction is hidden in the
 homogeneous solution.
 
@@ -629,10 +871,56 @@ Thus each polar source $S_{\ell,\Omega}$ has the explicit correction
 \tag{8.7}
 \]
 
-and every stored four-row remainder is identically zero. The certificate
-retains the exact radical expressions for all corrections; writing the
-largest cross-channel radicals in the main text would obscure rather than
-strengthen the argument.
+and every stored four-row remainder is identically zero. The complete finite
+channel ledger is:
+
+With the common certificate prefix `generic_polar_channels.` and
+$E=$ Einstein, $X=$ extra, the ledger is below. Every listed four-row
+remainder is $0^4$.
+
+| $\ell$ | pair | $\Omega$ | $\operatorname{sgn}(p,q)$ | key suffix |
+|---:|---|---:|:---:|---|
+| 2 | balanced zero | $0$ | $(-,+)$ | `2.combined_zero` |
+| 2 | $EE$ | $2\omega_-$ | $(+,+)$ | `2.Einstein_self_sum` |
+| 2 | $XX$ | $2\omega_e$ | $(+,+)$ | `2.extra_self_sum` |
+| 2 | $EX$ | $\omega_e+\omega_-$ | $(+,+)$ | `2.cross_sum` |
+| 2 | $E\bar X$ | $\omega_e-\omega_-$ | $(-,+)$ | `2.cross_difference` |
+| 4 | balanced zero | $0$ | $(-,+)$ | `4.combined_zero` |
+| 4 | $EE$ | $2\omega_-$ | $(-,+)$ | `4.Einstein_self_sum` |
+| 4 | $XX$ | $2\omega_e$ | $(+,-)$ | `4.extra_self_sum` |
+| 4 | $EX$ | $\omega_e+\omega_-$ | $(-,-)$ | `4.cross_sum` |
+| 4 | $E\bar X$ | $\omega_e-\omega_-$ | $(-,+)$ | `4.cross_difference` |
+
+The signs are exact ordered-algebraic-field results, not floating-point
+tests. In particular, every listed $p$ and $q$ is nonzero. The separate
+Einstein and extra zero-frequency sources are intentionally absent from the
+ledger: neither is solvable alone; their weighted sum is the `combined_zero`
+row.
+
+For visibility, two nontrivial corrections in the order $(A_t,B,C_t,U)$ are
+
+\[
+\Phi^{(2)}_{2,2\omega_e}
+=(-6+5\sqrt3)
+\begin{pmatrix}
+45723/91364\\0\\9873/91364\\-2097/22841
+\end{pmatrix},
+\tag{8.8}
+\]
+
+\[
+\Phi^{(2)}_{4,2\omega_e}
+=(-6+5\sqrt3)
+\begin{pmatrix}
+2097/19565\\0\\6183/19565\\-351/1505
+\end{pmatrix}.
+\tag{8.9}
+\]
+
+Direct multiplication by $H_P$ returns minus the stored source in all four
+rows for each vector. The larger cross-channel radicals remain in the
+machine-readable supplement, where their source, correction, and zero
+remainder appear under the keys displayed in the ledger.
 
 ### 8.4 Completion of the dependent tensor equations
 
@@ -653,14 +941,14 @@ N_0=
 0&0&0&i\Omega&0&-\lambda&2&-1\\
 -2&0&2&0&0&2&0&0
 \end{pmatrix}.
-\tag{8.8}
+\tag{8.10}
 \]
 
 Let $S_{A,B,C,U}$ select equations $A,B,C,U$. Exact calculation gives
 
 \[
 \det\begin{pmatrix}S_{A,B,C,U}\\N_0\end{pmatrix}=-4.
-\tag{8.9}
+\tag{8.11}
 \]
 
 The determinant is a nonzero constant, independent of $\Omega$ and
@@ -676,25 +964,27 @@ with an on-shell first-order tangent gives
 N^{(0)}E^{(2)}+N^{(1)}E^{(1)}+N^{(2)}E^{(0)}=0
 \quad\Longrightarrow\quad
 N^{(0)}E^{(2)}=0.
-\tag{8.10}
+\tag{8.12}
 \]
 
 Thus the dependent quadratic rows obey precisely the background identities
-used in (8.9).
+used in (8.11).
 
-### 8.5 Reality and fixed-charge completion
+### 8.5 Reality and fixed-magnetic-bundle completion
 
 Define $\Phi^{(2)}$ as the finite sum of (8.5), (8.7), their complex
-conjugates, and the real zero-frequency corrections. Then
-$\Phi^{(2)}$ is real and periodic. No independent homogeneous solution is
-added. The correction preserves the declared charge fibre:
+conjugates, and the real zero-frequency corrections. Then $\Phi^{(2)}$ is
+real, $S^1_L$-periodic in space, and finite quasiperiodic in time. No
+independent homogeneous solution is added. The general problem fixes only
+the magnetic-bundle component $P_N$; the constructed correction additionally
+leaves the homogeneous electric and Wilson-line coordinates unchanged:
 
 - the magnetic Chern-class shift is zero;
 - every $\ell=2,4$ Maxwell correction integrates to zero on $S^2$;
 - the homogeneous Maxwell coefficient $U$ is zero in every channel;
 - there is no stationary electric-charge or Wilson-line zero-mode shift.
 
-Equations (8.2)--(8.10) prove (8.1). $\square$
+Equations (8.2)--(8.12) prove (8.1). $\square$
 
 ## 9. Interpretation: a singular nonlinear solution cone
 
@@ -708,6 +998,21 @@ The two theorems fit together without tension.
 \text{balanced }u_-+a_eu_e&
 \mu_H=\mu_{P_x}=\mu_{J_i}=0&\text{explicitly extendible}
 \end{array}
+\]
+
+Schematically, the geometry is
+
+\[
+\begin{array}{ccccc}
+\mathcal T_X\setminus\{0\}
+&\subset&\mathcal T_{\mathrm{lin}}=\mathcal T_E\oplus\mathcal T_X
+&\supset&\mathbb R_{>0}(u_-+a_eu_e)\\
+\mu_H<0&&\mu_H\ \text{indefinite}&&\mu_H=\mu_{P_x}=\mu_{J_i}=0\\
+\Downarrow&&&&\Downarrow\\
+\text{outside the second-order cone}&&&&
+\text{certified ray inside the second-order cone}.
+\end{array}
+\tag{9.1}
 \]
 
 This is not a contradiction between the linear and nonlinear analyses. The
@@ -798,6 +1103,7 @@ algebraic arithmetic. The principal certificates are:
 |---|---|
 | fixed-bundle domain and Taub descent | `bridge/certificates/compact_harmonic_domain_taub_descent.json` |
 | direct generic axial extra current | `bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json` |
+| physical-ring generic polar module | `bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json` |
 | direct generic polar extra current | `bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json` |
 | direct axial/polar fixture Taub matrices | `bridge/certificates/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.json` |
 | generic moment-map bridge and pure-extra no-go | `bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json` |
@@ -808,6 +1114,8 @@ Fast verification:
 
 ```bash
 python3 bridge/einstein_sector/verify_charge_fibre_paper_claim_map.py
+python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_physical_completion.py
+python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_lee_wald_gate.py
 python3 -m bridge.einstein_sector.einstein_maxwell_weyl_moment_map_taub_bridge \
   --verify bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json
 python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_moment_map_taub_bridge
@@ -818,6 +1126,8 @@ python3 -m bridge.einstein_sector.einstein_maxwell_weyl_balanced_ell0_second_ord
   --verify bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json
 python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_balanced_ell0_second_order
 python3 -m unittest \
+  bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_physical_completion \
+  bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_lee_wald_gate \
   bridge.einstein_sector.tests.test_einstein_maxwell_weyl_moment_map_taub_bridge \
   bridge.einstein_sector.tests.test_einstein_maxwell_weyl_mixed_moment_map_zero_locus \
   bridge.einstein_sector.tests.test_einstein_maxwell_weyl_balanced_ell0_second_order
@@ -834,8 +1144,9 @@ python3 -m bridge.einstein_sector.einstein_maxwell_weyl_balanced_ell0_second_ord
 
 The committed-certificate verifier separately reconstructs the Noether
 completion determinant, checks all imported content hashes, replays the
-real-channel factors, and verifies the fixed-charge/reality flags. The largest
-nested-radical cross-channel equations are replayed by the exhaustive rail.
+real-channel factors, and verifies the fixed-magnetic-bundle and homogeneous
+charge-coordinate flags. The largest nested-radical cross-channel equations
+are replayed by the exhaustive rail.
 
 ### Model authorship and human accountability
 
@@ -877,6 +1188,13 @@ proof boundaries, source citations, and final text.
 9. V. Iyer and R. M. Wald, “Some properties of Noether charge and a proposal
    for dynamical black hole entropy,” *Phys. Rev. D* **50** (1994) 846--864,
    <https://arxiv.org/abs/gr-qc/9403028>.
+10. J. M. Arms, J. E. Marsden, and V. Moncrief, “The structure of the space
+    of solutions of Einstein's equations. II. Several Killing fields and the
+    Einstein--Yang--Mills equations,” *Ann. Phys.* **144** (1982) 81--106,
+    <https://doi.org/10.1016/0003-4916(82)90105-1>.
+11. A. Carlotto, “The general relativistic constraint equations,” *Living
+    Rev. Relativ.* **24** (2021) 2,
+    <https://doi.org/10.1007/s41114-020-00030-z>.
 
 ---
 

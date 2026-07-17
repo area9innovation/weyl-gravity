@@ -1,5 +1,5 @@
 {
-  "schema": "charge-fibre-taub-paper-claim-map-v1",
+  "schema": "charge-fibre-taub-paper-claim-map-v2",
   "result_id": "COMPACT_WEYL_MAXWELL_PURE_EXTRA_OBSTRUCTION_AND_BALANCED_EXTENSION_PAPER",
   "result_state": "SCOPED_MATHEMATICAL_CLAIMS_THEOREM_FROZEN",
   "lifecycle_state": "THEOREM_FROZEN",
@@ -22,7 +22,18 @@
     "pure_extra_generic": "EVERY_NONZERO_REAL_TANGENT_SECOND_ORDER_OBSTRUCTED_ON_FIXED_BUNDLE",
     "balanced_Einstein_extra_fixture": "EXPLICIT_COMPLETE_SECOND_ORDER_CORRECTION_CONSTRUCTED"
   },
+  "specialist_review_repairs": {
+    "polar_module_and_current_theorem_human_readable": true,
+    "balanced_amplitude_fixed_positive_real": true,
+    "temporal_behavior_finite_quasiperiodic_not_periodic": true,
+    "lifted_magnetic_bundle_rotations_defined": true,
+    "infinite_superposition_charge_norm_defined": true,
+    "complete_finite_channel_ledger_exposed": true,
+    "explicit_ell2_and_ell4_corrections_printed": true
+  },
   "certified_claims": {
+    "generic_polar_module_two_p_summands_plus_complete_Einstein_q_primary": true,
+    "generic_polar_extra_current_positive_and_Einstein_orthogonal": true,
     "covariant_moment_map_equals_Taub_pairing": true,
     "pure_extra_generic_H_Taub_negative_definite": true,
     "pure_extra_generic_fixed_bundle_second_order_no_go": true,
@@ -46,6 +57,7 @@
   "inputs": {
     "bridge/certificates/compact_harmonic_domain_taub_descent.json": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09",
     "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567",
+    "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d",
     "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6",
     "bridge/certificates/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.json": "9e91cd4b9b501fdfe0fe4f09b52c9b059e16380e49564875d83487ed77f57d02",
     "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26",
@@ -54,10 +66,28 @@
   },
   "verification_commands": [
     "python3 bridge/einstein_sector/verify_charge_fibre_paper_claim_map.py",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_physical_completion.py",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_lee_wald_gate.py",
     "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_moment_map_taub_bridge",
     "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_mixed_moment_map_zero_locus",
     "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_balanced_ell0_second_order"
   ],
+  "verification_receipt": {
+    "date": "2026-07-17",
+    "tier_0": {
+      "status": "PASSED",
+      "checks": ["JSON parse", "Python compile", "git diff --check", "PDF build and text/metadata audit"]
+    },
+    "tiers_1_and_2": {
+      "status": "PASSED",
+      "elapsed_seconds": 23.6,
+      "scope": "Paper claim-map verifier, both polar theorem verifiers, moment-map bridge, mixed-zero-locus fixture, balanced second-order verifier, and their direct unit tests"
+    },
+    "tier_3_full_repository": {
+      "status": "NOT_RUN",
+      "criterion": "No mathematical operator, certificate, schema, or content-addressed theorem input changed; this revision exposes and audits already-certified inputs without promoting a new lifecycle state. The prior exhaustive balanced regeneration remains recorded in the manuscript."
+    }
+  },
   "next_theorem": "classify the full k=0 common H,P_x,J_i zero cone, then opposite-momentum and exceptional/global strata",
   "claim_boundary": "This theorem-frozen LOCAL-ALGEBRAIC/REDUCED-MODE paper proves a complete fixed-bundle pure-extra generic second-order no-go and one explicit balanced Einstein-extra second-order extension. It does not classify the full mixed cone, prove all-orders integrability, perform final stabilizer reduction, establish causal scattering, or make a quantum claim."
 }
