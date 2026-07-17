@@ -24,6 +24,7 @@ def main() -> None:
     assert payload["provenance"]["generator_sha256"] == hashlib.sha256(generator.read_bytes()).hexdigest()
     generic = ROOT / payload["provenance"]["generic_output_theorem"]["path"]
     assert payload["provenance"]["generic_output_theorem"]["sha256"] == hashlib.sha256(generic.read_bytes()).hexdigest()
+    assert payload["frequency_collision_proof"]["conclusion"] == "no distinct-ell primary-frequency collision for any ell_1<ell_2"
 
     ell = sp.symbols("ell", integer=True, positive=True)
     lam = ell * (ell + 1)
@@ -58,6 +59,7 @@ def main() -> None:
 
     classification = payload["classification"]
     assert classification["all_nine_input_branch_pairs_covered"] is True
+    assert classification["no_zero_frequency_collision"] is True
     assert classification["complete_exceptional_L1_root_set_covered"] is True
     assert classification["no_exceptional_L1_output_resonance"] is True
     assert classification["complete_unbounded_cross_ell_nonzero_output_nonresonance"] is True

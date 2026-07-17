@@ -10,6 +10,11 @@ set is
 omega^2 in {0,4/3,4}.
 ```
 
+The same offset bounds also close zero-frequency collisions.  An angular
+gap of at least two leaves a strict frequency gap greater than `1/4`;
+for adjacent degrees, the three same-branch and six cross-branch signed
+intervals all avoid zero.
+
 Exact branch-offset intervals exclude all six cross-branch pairs.  For the
 three same-branch pairs, the only interval-compatible candidate is
 `omega=2/sqrt(3)`.  The extra-extra squared-resonance polynomial is

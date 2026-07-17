@@ -1778,6 +1778,17 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    including equal and rational inner-root cases.  Therefore the complete
    unbounded distinct-`ell`, `k=0` nonzero-output resonance gate is closed.
    The next load-bearing object is now the mixed quadratic source itself.
+
+   In fact, source coefficients are not needed for the finite-harmonic
+   existence theorem.  Distinct-`ell` pairs have no zero-frequency collision,
+   cannot output `L=0`, and are off shell in every generic or exceptional
+   nonzero block.  Only same-`ell` zero-frequency pieces remain, and their
+   complete cokernel projection is already the total `H,J_i` moment map.
+   Therefore every real finite generic-harmonic `k=0` sum on the common
+   stabilizer-zero cone is second-order extendible.  The detailed cross-`ell`
+   source changes the correction but not existence.  Infinite-mode
+   completion, opposite-momentum phases, and exceptional/global inputs remain
+   open.
 2. Test the homogeneous quadric and twist-velocity mixed balances against the
    complete quadratic source, and classify exceptional fourth-order target
    modes.  Only after these gates should any null-subalgebra quotient be

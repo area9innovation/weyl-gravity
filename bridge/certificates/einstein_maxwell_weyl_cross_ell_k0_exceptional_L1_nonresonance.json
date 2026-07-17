@@ -1,7 +1,7 @@
 {
   "schema": "einstein-maxwell-weyl-cross-ell-k0-exceptional-L1-nonresonance-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_cross_ell_k0_exceptional_L1_nonresonance.schema.json",
-  "schema_sha256": "50fdcdd3eb09ab900348a745e1eded5a45e79fa0ff0249d9c28aff7eb5e3fb8e",
+  "schema_sha256": "abcfb45a29a7bb519a2c9d0ba170223aad53baf9aa7945d8963514e9262932e2",
   "result_id": "EINSTEIN_MAXWELL_WEYL_CROSS_ELL_K0_EXCEPTIONAL_L1_NONRESONANCE",
   "result_state": "ALL_ADJACENT_INPUT_EXCEPTIONAL_L1_OUTPUTS_NONRESONANT",
   "lifecycle_state": "CLASSIFIED",
@@ -13,13 +13,23 @@
   "domain": "every adjacent generic input pair (ell,ell+1), ell>=2, at k=0, all three primary branches on both inputs, and the complete exceptional L=1 target root set",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_cross_ell_k0_exceptional_L1_nonresonance.py",
-    "generator_sha256": "8b03a65ae33e22cc924d2c80dc597414eb612ab3a9adbb5b691cfb1860ebd52c",
+    "generator_sha256": "3515448ff239eee2d7f9ba711387cd67b15138e31bca358e361b065e0e5844a3",
     "generic_output_theorem": {
       "path": "bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance.json",
       "sha256": "836facf35b339b59a668040857515967ef9a03f3acfb5199db1f47bc045c7bc9"
     }
   },
   "angular_reduction": "a distinct generic input pair can couple to L=1 only when ell_2=ell_1+1",
+  "frequency_collision_proof": {
+    "ell_gap_at_least_2": "omega(ell_2)-omega(ell_1)>2-1/2-5/4=1/4",
+    "adjacent_same_branch_signed_intervals": [
+      "7/10<Delta_minus<13/10",
+      "4/5<Delta_extra<6/5",
+      "3/4<Delta_plus<5/4"
+    ],
+    "adjacent_cross_branch_intervals": "the six intervals listed below are all open and avoid zero",
+    "conclusion": "no distinct-ell primary-frequency collision for any ell_1<ell_2"
+  },
   "target_root_set": {
     "omega_squared": [
       "0",

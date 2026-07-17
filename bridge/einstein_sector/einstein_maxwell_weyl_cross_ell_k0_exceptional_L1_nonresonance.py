@@ -87,6 +87,12 @@ def build_certificate() -> dict[str, Any]:
             "generic_output_theorem": {"path": str(GENERIC_INPUT.relative_to(ROOT)), "sha256": _sha256(GENERIC_INPUT)},
         },
         "angular_reduction": "a distinct generic input pair can couple to L=1 only when ell_2=ell_1+1",
+        "frequency_collision_proof": {
+            "ell_gap_at_least_2": "omega(ell_2)-omega(ell_1)>2-1/2-5/4=1/4",
+            "adjacent_same_branch_signed_intervals": ["7/10<Delta_minus<13/10", "4/5<Delta_extra<6/5", "3/4<Delta_plus<5/4"],
+            "adjacent_cross_branch_intervals": "the six intervals listed below are all open and avoid zero",
+            "conclusion": "no distinct-ell primary-frequency collision for any ell_1<ell_2",
+        },
         "target_root_set": {"omega_squared": ["0", "4/3", "4"], "omega_positive": ["0", "2/sqrt(3)", "2"]},
         "cross_branch_interval_exclusions": {
             "minus_to_extra": "3/2<Delta omega<2",
