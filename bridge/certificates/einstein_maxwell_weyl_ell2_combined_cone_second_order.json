@@ -1,0 +1,84 @@
+{
+  "claim_boundary": "This theorem is restricted to the generic ell=2,k=0 local-gauge-reduced block. It does not include exceptional/global tangents, general ell, opposite momentum, all-orders integration, final residual states, causal propagation, particles, or quantum theory.",
+  "classification": {
+    "Lorentzian_causal_or_quantum_claim": false,
+    "all_m_both_parities_and_both_extra_polarizations_included": true,
+    "all_orders_integrability": false,
+    "cancellations_between_axial_and_polar_moment_maps_included": true,
+    "complete_combined_ell2_k0_common_zero_cone_second_order_extendible": true,
+    "cross_parity_sources_solved_without_coefficient_table": true,
+    "final_residual_descent_certified": false,
+    "general_ell_classified": false,
+    "opposite_momentum_phase_source_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "finite real generic ell=2,k=0 Weyl-Maxwell tangents with all m, both axial and polar parities, Einstein-plus/minus and both extra polarizations, satisfying total H=J_1=J_2=J_3=0",
+  "generality_level": "G4_ELL2_K0_ALL_M_BOTH_PARITIES_ALL_GENERIC_PRIMARIES",
+  "interpretation": "At ell=2,k=0 the nonlinear tangent cone is exactly as large as the stabilizer moment-map test permits at second order. Pure axial and pure polar sources contribute the known H and J_i obstructions, including cancellations between parities, while every axial-polar cross source lands in an invertible quotient block. No additional quadratic condition survives.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "test whether the source-rank and resonance argument persists for symbolic ell, then retain opposite-momentum relative phases",
+  "nonzero_frequency_descent": {
+    "cross_parity_blocks": "all nine types are off every polar L1,L3 and axial L2,L4 shell",
+    "pure_same_parity_blocks": "all nine types are off shell by the shared same-parity ledger used in both pure cone theorems",
+    "relative_phases": "arbitrary constant phases are retained; invertibility is coefficient-independent"
+  },
+  "obstruction_descent": {
+    "axial_L1": "the pure-sector physical adjoint pairings add to total mu_Ji and cancel when total J_i=0",
+    "complete_static_condition": "total H=J_1=J_2=J_3=0; P_x vanishes identically at k=0",
+    "cross_terms": "no physical adjoint cokernel in any zero-frequency cross-output block",
+    "moment_map_cross_terms": "zero by orientation-preserving parity and the direct-current harmonic decomposition",
+    "scalar_L0": "the axial and polar rank-one source columns share (1,0,1/2,0); their coefficients add to the total mu_H and cancel when total H=0"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ell2_combined_cone_second_order.py",
+    "generator_sha256": "b4d31333fd3d735637a3b2f730a1ae07f128a3b9fdba61b22bb56a0e8aef62c6",
+    "inputs": {
+      "axial_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_second_order.json",
+        "sha256": "8d269ae894b110e984e809b29dc7aa4a3f86fd1de3efb9060679445cffc5f9c4"
+      },
+      "cross_output": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_cross_parity_output_resonance.json",
+        "sha256": "74303795afc84525ef81e12a0c32d9014b04c6c32928deb27ff7aa87795f84cd"
+      },
+      "k0_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
+      },
+      "moment_map_bridge": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "polar_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_all_m_second_order.json",
+        "sha256": "84ea73bd896cdb17be5cbb45d4ce71f3e244caf9c9392cce8363d69ba02bc56c"
+      }
+    }
+  },
+  "quadratic_decomposition": {
+    "axial_polar_cross_output": "odd total parity: polar odd-L and axial even-L; axial L0 absent",
+    "axial_self_output": "even total parity: polar even-L and axial odd-L",
+    "formula": "D2E[u_A+u_P,u_A+u_P]/2 = D2E[u_A,u_A]/2 + D2E[u_P,u_P]/2 + D2E[u_A,u_P]",
+    "polar_self_output": "even total parity: polar even-L and axial odd-L"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_COMBINED_CONE_SECOND_ORDER",
+  "result_state": "COMPLETE_AXIAL_POLAR_ELL2_K0_COMMON_ZERO_CONE_SECOND_ORDER_EXTENDIBLE",
+  "schema": "einstein-maxwell-weyl-ell2-combined-cone-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_combined_cone_second_order.schema.json",
+  "schema_sha256": "490ccac1cb9915024544e9332bcdd98926f5c1644558238717fe8b7c85a4de4a",
+  "second_order_solution": {
+    "complete_for_declared_combined_cone": true,
+    "construction": "project the total exact source by output L, parity, and frequency; use total H,J cancellation in the only physical zero cokernels and invert every remaining quotient block; lift through the target Noether identities",
+    "finite_for_finite_first_order_data": true,
+    "real_spatially_periodic": true,
+    "temporal_class": "finite quasiperiodic plus any zero-frequency polynomial/Jordan correction selected by the axial L1 solve"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_combined_cone_second_order --verify bridge/certificates/einstein_maxwell_weyl_ell2_combined_cone_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_combined_cone_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_combined_cone_second_order"
+  ]
+}

@@ -52,26 +52,23 @@
     "scope": "same-parity axial-axial or polar-polar ell=2 input",
     "tensor_product": "V_2 tensor V_2 = V_0+V_1+V_2+V_3+V_4"
   },
-  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem covers all m only for axial ell=2,k=0. It does not classify polar inputs, general ell, opposite momenta, all-orders integration, causal propagation, particles, or quantum theory.",
+  "claim_boundary": "This certificate does not contain an input-sector homogeneous source cancellation and does not cover axial-polar cross terms, general ell, opposite momentum, all-orders integration, causal propagation, or quantum theory.",
   "classification": {
-    "Lorentzian_causal_or_quantum_claim": false,
-    "all_m_axial_ell2_common_zero_cone_second_order_extendible": true,
-    "all_orders_integrability": false,
-    "both_extra_polarizations_included": true,
-    "general_ell_classified": false,
-    "odd_L1_and_L3_channels_closed": true,
-    "opposite_momentum_phase_source_classified": false,
-    "polar_input_parity_classified": false
+    "all_nine_nonzero_frequency_types_off_target_shells": true,
+    "axial_and_polar_input_theorems_may_share_this_ledger": true,
+    "axial_polar_cross_parity_covered": false,
+    "general_ell_covered": false,
+    "same_parity_output_selection_certified": true
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
   ],
-  "domain": "finite real axial ell=2,k=0 Weyl-Maxwell tangents with all m, Einstein-plus/minus and both extra polarizations, satisfying the complete H,J_i common-zero equations",
-  "generality_level": "G3_AXIAL_ELL2_ALL_M_BOTH_EXTRA_POLARIZATIONS",
-  "interpretation": "Non-axisymmetric data do introduce the odd angular channels absent from Paper 91, but they do not cut the axial ell=2 cone. The L=1 zero obstruction is exactly the already imposed rotation moment map; the newly discovered omega^2=4/3 exceptional shell is missed by every nonzero quadratic frequency. L=3 and all even generic outputs are off shell. Thus H=J_i=0 is sufficient for a complete second-order correction on the full axial ell=2 block.",
+  "domain": "all angular and sum/difference-frequency output blocks common to pure axial and pure polar ell=2,k=0 quadratic inputs",
+  "generality_level": "G2_ELL2_K0_SAME_PARITY_OUTPUT_LEDGER",
+  "interpretation": "The angular and resonance part of the ell=2 proof depends only on the common branch frequencies and the even parity of a same-parity quadratic product. It is therefore shared by axial-axial and polar-polar inputs; only their homogeneous source matrices differ.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "repeat the source-rank and exceptional-output analysis for polar ell=2 input parity, then lift the angular/resonance proof to symbolic ell",
+  "next_gate": "construct the odd-total-parity axial-polar output ledger, beginning with the exceptional polar L=1 operator",
   "nonzero_frequency_resonance_ledger": {
     "axial_L1_nonzero_channels_off_twist_extra_and_standard_shells": true,
     "axial_L3_nonzero_channels_off_p_and_q_shells": true,
@@ -418,59 +415,37 @@
     "polar_L2_L4": "exact p/q nonresonance and zero-frequency inverses imported from the full-extra face"
   },
   "provenance": {
-    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_ell2_all_m_second_order.py",
-    "generator_sha256": "4746bc8acea5756ab56081bd478f8c0588bda00fa2a3eb13bcd7d79fab30aaa2",
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ell2_same_parity_output_resonance.py",
+    "generator_sha256": "f8638cc1dfb467b3b0a1b23c5cbf63e2dd66a3973102ded5dd6ac3bef7de7032",
     "inputs": {
+      "axial_ell1_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
       "full_extra_face": {
         "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_full_extra_face_second_order.json",
         "sha256": "7c31d95e46adf65815d7647b57a4459bc5969993c563fd46b2b00582293a54a5"
-      },
-      "k0_cone": {
-        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
-        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
-      },
-      "moment_map_bridge": {
-        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
-        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
-      },
-      "same_parity_output": {
-        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_same_parity_output_resonance.json",
-        "sha256": "b1270dbf5d677edd9125f6f6119dbae22b8b701b37dab62c1ff6f06f8f23c928"
       }
     }
   },
-  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_ALL_M_SECOND_ORDER",
-  "result_state": "COMPLETE_AXIAL_ELL2_ALL_M_COMMON_ZERO_CONE_SECOND_ORDER_EXTENDIBLE",
-  "schema": "einstein-maxwell-weyl-axial-ell2-all-m-second-order-v1",
-  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_ell2_all_m_second_order.schema.json",
-  "schema_sha256": "11514c7d95bf218cf21505378b9238cbef4e74a7ee9f7a2fdb1a487b2c95b653",
-  "second_order_solution": {
-    "blockwise_construction": "project the exact quadratic source to L=0,...,4 and each sum/difference frequency; solve every invertible block, solve L=0 nonzero sources in the homogeneous Noether image, and solve the zero L=1 block after H,J descent",
-    "complete_for_declared_cone": true,
-    "finite_for_finite_first_order_data": true,
-    "real_spatially_periodic": true,
-    "temporal_class": "finite quasiperiodic plus any exceptional zero-frequency polynomial/Jordan correction selected by the L1 solve"
-  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_SAME_PARITY_OUTPUT_RESONANCE",
+  "result_state": "PARITY_NEUTRAL_SAME_PARITY_ELL2_OUTPUT_AND_RESONANCE_LEDGER_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-ell2-same-parity-output-resonance-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_same_parity_output_resonance.schema.json",
+  "schema_sha256": "e3331ba954f236f23e410f5c2cc07f8693f29c10a6c4a4293993644ca858d862",
   "verification_commands": [
-    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ell2_all_m_second_order --verify bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_second_order.json",
-    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_ell2_all_m_second_order.py",
-    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_ell2_all_m_second_order"
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_same_parity_output_resonance --verify bridge/certificates/einstein_maxwell_weyl_ell2_same_parity_output_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_same_parity_output_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_same_parity_output_resonance"
   ],
-  "zero_frequency_descent": {
-    "P_x": "identically zero at k=0",
+  "zero_output_blocks": {
     "axial_L1": {
-      "moment_map_identification": "the three physical adjoint pairings are exactly mu_J1,mu_J2,mu_J3 by the certified Taub--Lee--Wald bridge",
-      "raw_left_cokernel": "one universal Noether row plus one physical twist-adjoint row for each real M=-1,0,1",
-      "solvability_condition": "mu_J1=mu_J2=mu_J3=0",
-      "source_then_lies_in_operator_image": true
+      "physical_cokernel_per_real_M": 1,
+      "physical_pairing": "rotation moment map mu_JM",
+      "universal_Noether_rows": 1
     },
-    "axial_L3": "invertible at Omega=0 because p=-34/3 and q=120",
-    "polar_L0": {
-      "Schur_lemma": "the rotationally invariant L=0 projection on V_2 is the identity in m; the m=0 direct coefficient therefore fixes the all-m scalar source matrix",
-      "all_four_homogeneous_rows_zero_after_balance": true,
-      "solvability_condition": "mu_H=0",
-      "source": "the single spacetime row direction is the H moment-map matrix on Einstein-plus, both extra polarizations, and Einstein-minus"
-    },
-    "polar_L2_L4": "invertible at Omega=0"
+    "axial_L3": "invertible because p=-34/3 and q=120",
+    "polar_L0": "constant-lapse pairing; source-specific H cancellation remains in each input theorem",
+    "polar_L2_L4": "invertible"
   }
 }

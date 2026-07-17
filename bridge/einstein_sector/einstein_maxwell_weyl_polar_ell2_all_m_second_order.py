@@ -9,15 +9,13 @@ from pathlib import Path
 from typing import Any
 
 import sympy as sp
-from sympy.physics.wigner import wigner_3j
 
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_OUTPUT = ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_ell2_all_m_second_order.json"
 SCHEMA_PATH = ROOT / "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_ell2_all_m_second_order.schema.json"
 INPUTS = {
-    "axial_all_m_output_audit": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_second_order.json",
-    "ell1_operator": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+    "same_parity_output": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_same_parity_output_resonance.json",
     "moment_map_bridge": ROOT / "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
     "polar_linear_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
     "polar_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
@@ -42,34 +40,9 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _angular_selection() -> dict[str, Any]:
-    blocks: dict[str, Any] = {}
-    for output_ell in range(5):
-        witnesses = []
-        for m1 in range(-2, 3):
-            for m2 in range(-2, 3):
-                total_m = m1 + m2
-                if abs(total_m) > output_ell:
-                    continue
-                value = wigner_3j(2, 2, output_ell, m1, m2, -total_m)
-                if value != 0:
-                    witnesses.append([m1, m2, total_m, str(value)])
-        _require(bool(witnesses), f"L={output_ell} coupling disappeared")
-        blocks[str(output_ell)] = {
-            "target_parity": "polar" if output_ell % 2 == 0 else "axial",
-            "nonzero_witness": witnesses[0],
-        }
-    return {
-        "tensor_product": "V_2 tensor V_2 = V_0+V_1+V_2+V_3+V_4",
-        "parity_rule": "polar ell=2 has even spatial parity; its quadratic product is even, hence polar even-L and axial odd-L outputs",
-        "output_blocks": blocks,
-        "axisymmetric_specialization": "m1=m2=0 kills odd L but the all-m theorem retains L=1,3",
-    }
-
-
 def _zero_channel_descent(records: dict[str, Any]) -> dict[str, Any]:
-    ell1 = records["ell1_operator"]["operator_theorem"]["zero_frequency_fibre"]
-    _require(ell1["left_cokernel_dimension"] == 2, "L1 cokernel changed")
+    ell1 = records["same_parity_output"]["zero_output_blocks"]["axial_L1"]
+    _require(ell1["physical_cokernel_per_real_M"] == 1, "L1 physical cokernel changed")
     fixture_names = ("polar_plus_fixture", "polar_minus_fixture", "polar_extra_e1_fixture", "polar_extra_e2_fixture")
     sources = {
         name: [sp.sympify(value) for value in records[name]["homogeneous_source_rows_E00_E11_E22_Maxwell1"]]
@@ -117,12 +90,12 @@ def build_certificate() -> dict[str, Any]:
         records["polar_current"]["classification"]["direct_four_dimensional_Lee_Wald_match"],
         "polar current gate changed",
     )
-    axial_output = records["axial_all_m_output_audit"]
+    shared_output = records["same_parity_output"]
     _require(
-        axial_output["classification"]["all_m_axial_ell2_common_zero_cone_second_order_extendible"],
+        shared_output["classification"]["same_parity_output_selection_certified"],
         "shared output audit changed",
     )
-    resonance = axial_output["nonzero_frequency_resonance_ledger"]
+    resonance = shared_output["nonzero_frequency_resonance_ledger"]
     _require(len(resonance["nine_nonzero_frequency_types"]) == 9, "frequency ledger changed")
     return {
         "schema": "einstein-maxwell-weyl-polar-ell2-all-m-second-order-v1",
@@ -147,7 +120,7 @@ def build_certificate() -> dict[str, Any]:
             "two_extra_polarizations": True,
             "extra_current_positive_nondegenerate_before_residual_descent": True,
         },
-        "angular_selection": _angular_selection(),
+        "angular_selection": shared_output["angular_selection"],
         "zero_frequency_descent": _zero_channel_descent(records),
         "nonzero_frequency_resonance_ledger": resonance,
         "second_order_solution": {

@@ -1,6 +1,6 @@
 {
   "angular_selection": {
-    "axisymmetric_specialization": "m1=m2=0 kills odd L but the all-m theorem retains L=1,3",
+    "axisymmetric_specialization": "m1=m2=0 kills odd L",
     "output_blocks": {
       "0": {
         "nonzero_witness": [
@@ -48,7 +48,8 @@
         "target_parity": "polar"
       }
     },
-    "parity_rule": "polar ell=2 has even spatial parity; its quadratic product is even, hence polar even-L and axial odd-L outputs",
+    "parity_rule": "the quadratic product has even spatial parity, hence polar even-L and axial odd-L outputs",
+    "scope": "same-parity axial-axial or polar-polar ell=2 input",
     "tensor_product": "V_2 tensor V_2 = V_0+V_1+V_2+V_3+V_4"
   },
   "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem covers all m only for pure polar ell=2,k=0 input. It does not include axial--polar cross terms, general ell, opposite momenta, all-orders integration, causal propagation, particles, or quantum theory.",
@@ -423,16 +424,8 @@
   },
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_ell2_all_m_second_order.py",
-    "generator_sha256": "3c74c228263b2bf5d05c9bcbe1adea8859b43308b67166393f0b6e7ba4eaf3f3",
+    "generator_sha256": "39eb6cd50e5ff559608cfeaa8d244d33b146b6d7ebfe4c43fcf8d033f6c94a75",
     "inputs": {
-      "axial_all_m_output_audit": {
-        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_second_order.json",
-        "sha256": "968228f35342e018e63b22ee4d43a00eda541ce2e20e409e480e3d6fdcbd8be2"
-      },
-      "ell1_operator": {
-        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
-        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
-      },
       "moment_map_bridge": {
         "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
         "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
@@ -464,6 +457,10 @@
       "polar_plus_fixture": {
         "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_plus_zero_source_fixture.json",
         "sha256": "5e7d3ef17c58fcaacc95287f66523aed104b77cf070209a2ce8ae92ef49a418e"
+      },
+      "same_parity_output": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_same_parity_output_resonance.json",
+        "sha256": "b1270dbf5d677edd9125f6f6119dbae22b8b701b37dab62c1ff6f06f8f23c928"
       }
     }
   },

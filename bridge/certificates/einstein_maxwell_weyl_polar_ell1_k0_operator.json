@@ -1,0 +1,137 @@
+{
+  "claim_boundary": "This is a local-gauge-reduced exceptional operator theorem. It does not compute the polar ell1 current, final residual states, nonlinear sources, causal propagation, particles, or quantum theory.",
+  "classification": {
+    "Lee_Wald_current_classified": false,
+    "all_m_by_SO3_equivariance": true,
+    "causal_or_quantum_claim": false,
+    "final_residual_descent_certified": false,
+    "polar_ell1_extra_fourth_order_shell_certified": true,
+    "polar_ell1_standard_shell_certified": true,
+    "polar_ell1_zero_frequency_physical_cokernel_absent": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "polar ell=1,k=0 Weyl-Maxwell target after h_A=0 and Weyl K=0, before final residual quotient",
+  "exceptional_harmonic_geometry": {
+    "complete_slice": "U=0 because delta U=-xi",
+    "field_order": [
+      "A_t",
+      "B",
+      "C_t",
+      "U"
+    ],
+    "gauge_column": [
+      "2*omega**2 - 2",
+      "0",
+      "2",
+      "-1"
+    ],
+    "residual_scalar_parameter": "xi Y with xi_A=-partial_A xi and sigma=xi",
+    "tracefree_tensor_harmonic": "D_aD_bY+lambda*g_ab*Y/2 vanishes at lambda=2"
+  },
+  "generality_level": "G2_POLAR_ELL1_K0_ALL_M",
+  "interpretation": "The odd-parity-output gate has no new zero-frequency polar ell=1 obstruction. The exceptional quotient contains only the omega^2=4/3 fourth-order and omega^2=4 standard shells, so cross-frequency solvability reduces to missing these two values.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "certify that every axial-polar ell=2 cross frequency misses 4/3 and 4, then compute the remaining zero and resonant source projections",
+  "operator_theorem": {
+    "Noether_row": [
+      "2*omega**2 - 2",
+      "0",
+      "2",
+      "-1"
+    ],
+    "physical_shells": {
+      "fourth_order": {
+        "omega_squared": "4/3",
+        "representative": [
+          "0",
+          "1",
+          "0"
+        ]
+      },
+      "standard": {
+        "omega_squared": "4",
+        "representative": [
+          "1",
+          "0",
+          "1"
+        ]
+      }
+    },
+    "raw_action_Hessian": [
+      [
+        "1/2",
+        "0",
+        "-(omega**2 - 3)/2",
+        "2"
+      ],
+      [
+        "0",
+        "3*omega**2 - 4",
+        "0",
+        "0"
+      ],
+      [
+        "-(omega**2 - 3)/2",
+        "0",
+        "(omega**4 - 4*omega**2 + 1)/2",
+        "-2"
+      ],
+      [
+        "2",
+        "0",
+        "-2",
+        "4*(omega**2 - 2)"
+      ]
+    ],
+    "raw_rank_over_Q_omega": 3,
+    "reduced_Hessian": [
+      [
+        "1/2",
+        "0",
+        "-(omega**2 - 3)/2"
+      ],
+      [
+        "0",
+        "3*omega**2 - 4",
+        "0"
+      ],
+      [
+        "-(omega**2 - 3)/2",
+        "0",
+        "(omega**4 - 4*omega**2 + 1)/2"
+      ]
+    ],
+    "reduced_determinant": "(omega - 2)*(omega + 2)*(3*omega**2 - 4)/2",
+    "reduced_field_order": [
+      "A_t",
+      "B",
+      "C_t"
+    ],
+    "zero_frequency_fibre": {
+      "left_cokernel_dimension": 0,
+      "physical_adjoint_obstruction": "none",
+      "rank": 3
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_ell1_k0_operator.py",
+    "generator_sha256": "d30cb929a61d5349de61a1d6563611d2908134a1c69066376e6606c4c7b0b1ea",
+    "input": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+      "sha256": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_ELL1_K0_OPERATOR",
+  "result_state": "EXCEPTIONAL_POLAR_ELL1_QUOTIENT_AND_COKERNEL_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-polar-ell1-k0-operator-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_ell1_k0_operator.schema.json",
+  "schema_sha256": "59f0d7dc6ec70cd9e2691679762aae39f9741452bb079e270a06c2d0e7cea845",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_ell1_k0_operator --verify bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_ell1_k0_operator.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_ell1_k0_operator"
+  ]
+}

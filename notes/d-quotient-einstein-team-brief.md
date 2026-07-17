@@ -1590,10 +1590,54 @@ ledger as in the axial theorem.  Hence every finite real pure-polar
 `ell=2,k=0` tangent with all `m`, both extra polarizations, and
 `H=J_1=J_2=J_3=0` also has a complete second-order correction.
 
-Axial and polar cone theorems must still not be added blindly.  Their cross
-terms have odd total parity and therefore populate polar odd `L` and axial
-even `L` blocks.  The exceptional polar `L=1` target and these cross sources
-are the next load-bearing gate.
+The proof dependency has now been normalized: the common even-total-parity
+angular and nine-frequency resonance calculation lives in the parity-neutral
+certificate
+`EINSTEIN_MAXWELL_WEYL_ELL2_SAME_PARITY_OUTPUT_RESONANCE`, consumed directly
+by both pure-sector theorems.
+
+The axial--polar gate also closes.  At polar `L=1,k=0`, the vanishing
+tracefree tensor harmonic leaves one residual scalar gauge column on
+`(A_t,B,C_t,U)`,
+
+```text
+(2(omega^2-1),0,2,-1).
+```
+
+The unit `U` entry makes `U=0` a complete slice.  Its reduced determinant is
+
+```text
+(omega^2-4)(3 omega^2-4)/2.
+```
+
+Thus polar `L=1` has the standard and fourth-order shells at `omega^2=4` and
+`4/3`, but no physical zero-frequency cokernel.  An axial `ell=2` mode times a
+polar `ell=2` mode has odd total parity, so its only outputs are polar
+`L=1,3` and axial `L=2,4`; axial `L=0` is absent.  Every zero-frequency block
+is invertible, and exact algebraic witnesses show that all nine nonzero
+frequency types miss both target shells in every block.  Cross-source
+coefficients therefore cannot impose a new quadratic constraint.
+
+Consequently the complete finite generic `ell=2,k=0`, all-`m`, both-parity
+cone satisfying total
+
+```text
+H=J_1=J_2=J_3=0
+```
+
+is second-order extendible.  This includes cancellation of moment maps
+between axial and polar components, because their cross moment maps vanish by
+parity.  The pure source obstructions add to the total `H,J_i`, while every
+cross source lies in an invertible quotient block.  At this fixture the
+second-order tangent cone is exactly as large as the stabilizer moment-map
+test permits.  General `ell`, opposite momentum, exceptional/global tangents,
+and all-orders integration remain open.
+
+Verification receipt (2026-07-17): scoped compilation passed in `0.03 s`;
+six deterministic certificate replays passed in `2.32 s`; six independent
+verifiers and 18 scoped tests passed in `2.17 s`; and the complete
+Einstein-sector Tier-3 rail passed all 446 tests in `304.151 s` (`305.24 s`
+wall time).
 
 Verification receipt (2026-07-17): scoped compilation passed in `0.04 s`;
 four deterministic certificate replays passed in `2.69 s`; five independent
@@ -1646,19 +1690,17 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Positive Berger clock | `D_GAUGE` on fixed-coupling linearized phase space | minimal clock SDR and retained `q1` complete; arity two open | principal endpoint factors only; curved/Green gates open | open | minimal cyclic pairing exact | `NOT_APPLICABLE` at this base point: certified non-Einstein Weyl--matter branch |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | stability open |
-| Compact Einstein--Maxwell product | sector-indexed; generic `k=0`, fixed `(ell,|k|)` opposite-momentum, and standard exceptional/global common-zero cones classified; no absolute quotient authorized | five-generator stabilizer action preserves generic axial/polar `q` and `p` primaries; the complete pure-axial and pure-polar `ell=2,k=0`, all-`m` common-zero cones are separately second-order extendible, while axial--polar cross terms and the complete combined cone remain open | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: relative radiative inertia `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before any optional stabilizer reduction; identity inclusion is not symplectic |
+| Compact Einstein--Maxwell product | sector-indexed; generic `k=0`, fixed `(ell,|k|)` opposite-momentum, and standard exceptional/global common-zero cones classified; no absolute quotient authorized | five-generator stabilizer action preserves generic axial/polar `q` and `p` primaries; the complete generic `ell=2,k=0`, all-`m`, both-parity common-zero cone is second-order extendible, including axial--polar cancellation; general `ell` and exceptional/global source cones remain open | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: relative radiative inertia `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before any optional stabilizer reduction; identity inclusion is not symplectic |
 | Lorentzian dS/AdS | boundary-dependent; compute | open | open | open | open | selected sector to certify |
 | Asymptotically flat | `PHASE_SPACE_NOT_CLOSED`; `H_ESU` crosses fixed \(\mathscr I\), `D_M` charge open | `NOT APPLICABLE` until a boundary-preserving generator and phase space are chosen | formal triangular seed only; causal complex open | `OPEN` | `OPEN` | `EINSTEIN_OPEN`; reduced `chi=0` seed only |
 
 ## Priority and stop/go decisions
 
-1. Compute the axial--polar `ell=2` cross source and classify the exceptional
-   polar `L=1` output.  Only this gate permits combining the separately
-   certified all-`m` axial and polar second-order cones.  Then lift the
-   source-rank/resonance theorem to general `ell`; separately retain relative
-   phases in opposite-momentum standing waves.  A rank increase, resonance,
-   or new adjoint component is the expected mechanism cutting the full
-   Taub-zero density cone.
+1. Lift the now complete axial-plus-polar `ell=2` source-rank and resonance
+   theorem to symbolic `ell`; separately retain relative phases in
+   opposite-momentum standing waves.  A rank increase, resonance, or new
+   adjoint component is the expected mechanism cutting the full Taub-zero
+   density cone beyond the certified `ell=2,k=0` fixture.
 2. Test the homogeneous quadric and twist-velocity mixed balances against the
    complete quadratic source, and classify exceptional fourth-order target
    modes.  Only after these gates should any null-subalgebra quotient be

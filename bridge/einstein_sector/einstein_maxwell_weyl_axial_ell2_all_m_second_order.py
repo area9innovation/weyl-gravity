@@ -8,16 +8,13 @@ import json
 from pathlib import Path
 from typing import Any
 
-import sympy as sp
-from sympy.physics.wigner import wigner_3j
-
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_OUTPUT = ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_second_order.json"
 SCHEMA_PATH = ROOT / "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_ell2_all_m_second_order.schema.json"
 INPUTS = {
     "full_extra_face": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ell2_full_extra_face_second_order.json",
-    "ell1_operator": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+    "same_parity_output": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_same_parity_output_resonance.json",
     "k0_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
     "moment_map_bridge": ROOT / "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
 }
@@ -36,88 +33,11 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _parse(value: str) -> sp.Expr:
-    return sp.sympify(value, locals={"sqrt": sp.sqrt})
-
-
-def _nonzero(value: sp.Expr) -> dict[str, Any]:
-    z = sp.symbols("z")
-    polynomial = sp.Poly(sp.minpoly(value, z), z)
-    _require(polynomial.TC() != 0, f"algebraic value vanished: {value}")
-    return {
-        "value": str(sp.factor(value)),
-        "minimal_polynomial": str(polynomial.as_expr()),
-        "nonzero_constant_term": str(polynomial.TC()),
-        "certified_nonzero": True,
-    }
-
-
-def _angular_selection() -> dict[str, Any]:
-    couplings: dict[str, Any] = {}
-    for output_ell in range(5):
-        witnesses = []
-        for m1 in range(-2, 3):
-            for m2 in range(-2, 3):
-                M = m1 + m2
-                if abs(M) > output_ell:
-                    continue
-                value = wigner_3j(2, 2, output_ell, m1, m2, -M)
-                if value != 0:
-                    witnesses.append([m1, m2, M, str(value)])
-        _require(bool(witnesses), f"L={output_ell} coupling disappeared")
-        couplings[str(output_ell)] = {
-            "target_parity": "polar" if output_ell % 2 == 0 else "axial",
-            "nonzero_witness": witnesses[0],
-        }
-    return {
-        "tensor_product": "V_2 tensor V_2 = V_0+V_1+V_2+V_3+V_4",
-        "parity_rule": "axial ell=2 has odd spatial parity; its quadratic product is even, hence polar even-L and axial odd-L outputs",
-        "output_blocks": couplings,
-        "axisymmetric_specialization": "m1=m2=0 kills odd L; this is why the earlier theorem saw only polar L=0,2,4",
-    }
-
-
-def _resonance_ledger(records: dict[str, Any]) -> dict[str, Any]:
-    channels = records["full_extra_face"]["provenance"]["inputs"]["three_branch_face"]
-    three_branch = json.loads((ROOT / channels["path"]).read_text(encoding="utf-8"))
-    frequencies = {
-        name: _parse(channel["output_frequency"])
-        for name, channel in three_branch["nonzero_frequency_channel_ledger"].items()
-    }
-    output: dict[str, Any] = {}
-    for name, frequency in frequencies.items():
-        squared = sp.factor(frequency**2)
-        # Exceptional axial L=1 quotient shells: 0, 4/3, and 4.
-        ell1 = {
-            "Omega": _nonzero(frequency),
-            "Omega_squared_minus_4_over_3": _nonzero(squared - sp.Rational(4, 3)),
-            "Omega_squared_minus_4": _nonzero(squared - 4),
-        }
-        # Generic axial L=3 shells at lambda=12.
-        p3 = sp.factor(squared - (12 - sp.Rational(2, 3)))
-        q3 = sp.factor((squared - 12) ** 2 - 24)
-        output[name] = {
-            "frequency": str(frequency),
-            "axial_L1": ell1,
-            "axial_L3": {"p": _nonzero(p3), "q": _nonzero(q3)},
-        }
-    zero_p3 = -(12 - sp.Rational(2, 3))
-    zero_q3 = 12**2 - 24
-    _require(zero_p3 != 0 and zero_q3 != 0, "zero-frequency L3 resonance entered")
-    return {
-        "nine_nonzero_frequency_types": output,
-        "axial_L1_nonzero_channels_off_twist_extra_and_standard_shells": True,
-        "axial_L3_nonzero_channels_off_p_and_q_shells": True,
-        "axial_L3_zero_channel": {"p": str(zero_p3), "q": str(zero_q3), "invertible": True},
-        "polar_L2_L4": "exact p/q nonresonance and zero-frequency inverses imported from the full-extra face",
-    }
-
-
 def _zero_channel_descent(records: dict[str, Any]) -> dict[str, Any]:
     rank = records["full_extra_face"]["zero_frequency_source_rank"]
     _require(rank["spacetime_row_rank"] == 1, "scalar source rank changed")
-    ell1 = records["ell1_operator"]["operator_theorem"]["zero_frequency_fibre"]
-    _require(ell1["left_cokernel_dimension"] == 2, "L1 cokernel changed")
+    ell1 = records["same_parity_output"]["zero_output_blocks"]["axial_L1"]
+    _require(ell1["physical_cokernel_per_real_M"] == 1, "L1 physical cokernel changed")
     return {
         "polar_L0": {
             "Schur_lemma": "the rotationally invariant L=0 projection on V_2 is the identity in m; the m=0 direct coefficient therefore fixes the all-m scalar source matrix",
@@ -140,10 +60,11 @@ def _zero_channel_descent(records: dict[str, Any]) -> dict[str, Any]:
 def build_certificate() -> dict[str, Any]:
     records = {name: json.loads(path.read_text(encoding="utf-8")) for name, path in INPUTS.items()}
     _require(records["full_extra_face"]["classification"]["three_parameter_positive_cone_second_order_extendible"], "axisymmetric input changed")
-    _require(records["ell1_operator"]["classification"]["extra_fourth_order_ell1_shell_discovered"], "ell1 exceptional input changed")
+    shared = records["same_parity_output"]
+    _require(shared["classification"]["same_parity_output_selection_certified"], "shared output ledger changed")
     _require(records["moment_map_bridge"]["classification"]["generic_H_Px_J_selection_rules_certified"], "moment-map bridge changed")
-    angular = _angular_selection()
-    resonance = _resonance_ledger(records)
+    angular = shared["angular_selection"]
+    resonance = shared["nonzero_frequency_resonance_ledger"]
     zero = _zero_channel_descent(records)
     return {
         "schema": "einstein-maxwell-weyl-axial-ell2-all-m-second-order-v1",

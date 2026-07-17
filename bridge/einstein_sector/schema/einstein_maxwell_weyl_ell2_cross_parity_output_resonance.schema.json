@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Axial-polar ell=2 cross-parity output ledger",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "angular_selection", "zero_frequency_blocks",
+    "nonzero_frequency_ledger", "generic_isospectral_transfer", "Noether_completion", "classification",
+    "interpretation", "next_gate", "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-cross-parity-output-resonance-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_CROSS_PARITY_OUTPUT_RESONANCE"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "classification": {
+      "type": "object",
+      "required": [
+        "cross_parity_angular_selection_certified",
+        "cross_zero_frequency_physical_cokernel_absent",
+        "all_nine_cross_frequency_types_off_all_target_shells",
+        "cross_source_coefficients_required_for_solvability",
+        "complete_axial_polar_combined_cone_yet_claimed", "general_ell_covered"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
