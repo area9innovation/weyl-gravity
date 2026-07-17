@@ -66,8 +66,23 @@ def main() -> int:
         for dotted in entry["required_false"]:
             if _lookup(certificate, dotted) is not False:
                 raise AssertionError(f"required false field failed: {entry['claim_id']} {dotted}")
+    for entry in table["independent_cross_checks"]:
+        certificate_path = ROOT / entry["certificate_path"]
+        if _sha256(certificate_path) != entry["certificate_sha256"]:
+            raise AssertionError("independent cross-check digest mismatch")
+        certificate = json.loads(certificate_path.read_text())
+        if certificate["result_id"] != entry["certificate_result_id"]:
+            raise AssertionError("independent cross-check result id mismatch")
+        if certificate["claim_boundary"] != entry["certificate_claim_boundary"]:
+            raise AssertionError("independent cross-check boundary mismatch")
+        for dotted in entry["required_true"]:
+            if _lookup(certificate, dotted) is not True:
+                raise AssertionError(f"cross-check required true field failed: {dotted}")
+        for dotted in entry["required_false"]:
+            if _lookup(certificate, dotted) is not False:
+                raise AssertionError(f"cross-check required false field failed: {dotted}")
     print("PAPER_09_BERGER_CLAIM_TABLE independent audit: PASS")
-    print("claims=10 theorem_frozen=false hashes_and_boundaries=exact")
+    print("claims=10 cross_checks=1 theorem_frozen=false hashes_and_boundaries=exact")
     return 0
 
 

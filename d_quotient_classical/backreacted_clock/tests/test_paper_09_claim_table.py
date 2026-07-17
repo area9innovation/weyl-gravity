@@ -14,6 +14,7 @@ def test_paper_09_claim_table_is_complete_and_fail_closed() -> None:
     assert payload["claim_ids_complete"] == [f"P09-C{index}" for index in range(1, 11)]
     assert payload["theorem_frozen"] is False
     assert payload["required_signoffs"]["nonlinear_team"].startswith("PENDING")
+    assert payload["independent_cross_checks"][0]["supports_claim"] == "P09-C8"
 
 
 def test_paper_09_claim_table_schema_and_persisted_output() -> None:

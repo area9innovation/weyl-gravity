@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": [
     "schema", "result_id", "paper_state", "theorem_frozen", "paper_sources",
-    "setting", "claims", "claim_ids_complete", "required_signoffs",
+    "setting", "claims", "claim_ids_complete", "independent_cross_checks", "required_signoffs",
     "forbidden_promotions", "next_gate", "claim_boundary"
   ],
   "properties": {
@@ -42,6 +42,37 @@
         "P09-C1", "P09-C2", "P09-C3", "P09-C4", "P09-C5",
         "P09-C6", "P09-C7", "P09-C8", "P09-C9", "P09-C10"
       ]
+    },
+    "independent_cross_checks": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "supports_claim", "certificate_path", "certificate_result_id",
+          "certificate_sha256", "certificate_claim_boundary",
+          "required_true", "required_false"
+        ],
+        "properties": {
+          "supports_claim": {"const": "P09-C8"},
+          "certificate_path": {
+            "const": "d_quotient_classical/certificates/BERGER_Q3_ACTION_SECTOR_CROSSCHECK.json"
+          },
+          "certificate_result_id": {"const": "BERGER_Q3_ACTION_SECTOR_CROSSCHECK"},
+          "certificate_sha256": {"$ref": "#/$defs/sha256"},
+          "certificate_claim_boundary": {"type": "string", "minLength": 1},
+          "required_true": {
+            "type": "array", "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "required_false": {
+            "type": "array", "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          }
+        }
+      }
     },
     "required_signoffs": {
       "type": "object",

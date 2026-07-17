@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,tabularx}
 \usepackage{microtype,xurl}
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,
@@ -38,7 +38,8 @@ claims no technical contribution.}}
 \maketitle
 
 \begin{abstract}
-We study whether cylinder-time translation can remain gauge after a healthy
+We study whether cylinder-time translation can remain presymplectically null
+after a healthy
 matter clock and the first nonlinear vertices are included in pure-Weyl
 gravity.  On $\R\times S^3$ with a Berger spatial metric we exhibit an open
 family of exact, smooth, non-conformally-flat solutions sourced by two
@@ -48,10 +49,12 @@ momentum is nonzero.  Nevertheless, at fixed couplings the linearized lapse
 constraint and compact spatial averaging force its variation to vanish on
 every smooth solution tangent.  The covariant identity
 $\Omega_{\rm total}(\delta,\cL_D)=\omega\,\delta Q_R$ therefore makes the
-helical generator $D$ a presymplectic degeneracy on this declared phase
-space.
+cylinder generator $D$ a presymplectic degeneracy on this declared linearized
+phase space.  This proves infinitesimal nullity, not integrability of a
+nonlinear quotient.
 
-We then formulate the same conclusion homologically.  The complete
+At one exact rational member we then formulate the same conclusion
+homologically.  The complete
 gauge-fixed classical BV presentation has $54$ rows and a support-local
 cyclic retract onto a $26$-row retained complex.  Advanced and retarded chain
 contractions lift to all rows.  Differentiating the covariant master action
@@ -60,12 +63,17 @@ with the required $L_\infty$ identities, cyclicity and local $D$-equivariance.
 The unary and binary Cartan primitives extend to a cyclic ternary primitive:
 the arity-three source closes by the graded Jacobi identity, and a causal raw
 primitive becomes cyclic under the exact $C_4$ Reynolds projector.  Thus the
-$D$ action is causally null-homotopic through arity three.
+$D$ action is causally null-homotopic through arity three.  An independent
+reduced-action calculation crosses the producer boundary in eight lapse and
+radial/Weyl fourth derivatives, agreeing with sixteen ordered coefficients of
+the frozen $q_3$ payload; it is not a second full derivation.
 
-The result is classical and scoped to one compact fixed-coupling Berger
-sector.  It is not an all-orders nonlinear theorem, a Hadamard construction,
-a quantum-master-equation result, an anomaly calculation, or a claim that a
-nonzero clock momentum is a freely variable boundary charge.
+The result is classical: its linear nullity statement holds on the displayed
+open fixed-coupling Berger branch, while its all-row BV Taylor statement is
+proved at one exact rational representative.  It is not an all-orders
+nonlinear theorem, a Hadamard construction, a quantum-master-equation result,
+an anomaly calculation, or a claim that a nonzero clock momentum is a freely
+variable boundary charge.
 \end{abstract}
 
 \section*{Authorship and computational inputs}
@@ -76,6 +84,9 @@ non-technical orchestrator and corresponding human contact; he claims no
 technical contribution.  Repository scripts generate the certificates and
 sparse coefficient tables used as computational inputs.  They are not
 additional authors.  This article has no generated \TeX{} input.
+This attribution describes the research archive.  Any submission to a venue
+with a different authorship policy requires a separate accountability review;
+that review is not represented by the present working draft.
 
 \tableofcontents
 
@@ -97,21 +108,46 @@ We work on
 \begin{equation}\label{eq:manifold}
  M=\R\times S^3
 \end{equation}
-with no spatial boundary.  Couplings are fixed.  The phase space used for the
-charge theorem is the space of smooth linearized solutions about the exact
-Berger clock background, modulo the declared local diffeomorphism and Weyl
-gauge transformations.  The nonlinear statement is a formal Taylor statement
-about the classical BV vector field through arity three at that same
-background.  These are related statements, but they are not identical.
+with no spatial boundary.  Couplings are fixed.  Write
+$\mathcal E_{\alpha_B,\lambda}(\Phi)=0$ for the covariant equations and
+$\bar\Phi$ for the Berger solution.  The charge theorem is evaluated on the
+pre-reduced smooth tangent space
+\begin{equation}\label{eq:tangent-space}
+ \mathcal Z_{\bar\Phi}^{\alpha_B,\lambda}
+ :=\ker D\mathcal E_{\alpha_B,\lambda}\big|_{\bar\Phi}
+ \subset\Gamma^\infty(M,F),
+ \qquad \delta\alpha_B=\delta\lambda=0,
+\end{equation}
+including the linearized constraints.  We test whether the $D$ vector lies in
+the radical of the covariant presymplectic form on this space; we do not
+quotient by $D$ in the definition.  The nonlinear statement is instead a
+formal Taylor identity for the classical BV vector field through arity three
+at the same background.  These are related statements, but they are not
+identical.
 
-\begin{theorem}[Scoped Berger clock and Cartan theorem]\label{thm:main}
-Fix $\alpha_B>0$ and a point of the positive Berger branch described in
-Section~\ref{sec:background}.  Then:
+Let $D:=\partial_t$ denote cylinder-time diffeomorphism and let $R$ generate
+the global, ungauged internal $O(2)$ rotation of the scalar doublet.  On the
+background,
+\begin{equation}\label{eq:D-R-definition}
+ \cL_D\bar g=0,\qquad \cL_D\bar T=\omega R\bar T,
+ \qquad K:=D-\omega R,qquad \cL_K\bar\Phi=0.
+\end{equation}
+Thus the solution is stationary in stress energy but not pointwise fixed by
+$D$ on the scalar fields.  The orbit of $D$ is helical in spacetime times the
+internal target.  The paper tests the diffeomorphism generator $D$, not the
+stabilizer $K$ and not the global rotation $R$.
+
+\begin{theorem}[Invariant scoped Berger theorem]\label{thm:main}
+Fix $\alpha_B>0$.  For every point of the positive Berger branch described in
+Section~\ref{sec:background}, assertions (i)--(ii) below hold.  At the exact
+rational representative \eqref{eq:rational-fixture}, assertions (iii)--(iv)
+also hold:
 \begin{enumerate}
 \item the background carries a smooth standard-sign conformal-scalar phase
 clock with positive quartic potential, timelike phase gradient and nonzero
 internal momentum;
-\item on the smooth fixed-coupling linearized covariant phase space,
+\item on the smooth fixed-coupling linearized solution tangent
+$\mathcal Z_{\bar\Phi}^{\alpha_B,\lambda}$,
 \begin{equation}\label{eq:main-degeneracy}
  \Omega_{\rm total}(\delta,\cL_D)=0
 \end{equation}
@@ -121,20 +157,66 @@ advanced and retarded chain contractions with causal support;
 \item if $q_1,q_2,q_3$ are the first three action-derived Taylor operations,
 then there are cyclic causal Cartan components
 $\iota_D^{(1)},\iota_D^{(2)},\iota_D^{(3)}$ satisfying the Cartan equation
-through arity three.
+through arity three; equivalently,
+\begin{equation}\label{eq:invariant-cartan}
+ \bigl([Q,\iota_D]-L_D\bigr)^{(n)}=0,
+ \qquad n=1,2,3,
+\end{equation}
+with an uncomputed arity-four-and-higher remainder.
 \end{enumerate}
-Consequently $D$ is proper gauge at the linearized covariant level and is
-causally null-homotopic through the first ternary BV interaction test.
+Consequently $D$ is presymplectically null at the linearized covariant level
+and is causally null-homotopic through the first ternary BV interaction test.
+No constant-rank neighbourhood, integrated null foliation, finite nonlinear
+quotient or all-orders moment-map theorem is asserted.
 \end{theorem}
 
-The four assertions are certified respectively by claims
-\claimid{P09-C1}--\claimid{P09-C10} in the companion computational
+The four assertions are certified respectively by
+\claimid{P09-C1}--\claimid{P09-C2},
+\claimid{P09-C3}--\claimid{P09-C4},
+\claimid{P09-C5}--\claimid{P09-C6}, and
+\claimid{P09-C7}--\claimid{P09-C10} in the companion computational
 supplement.  The theorem does not assert that the Cartan contraction extends
 to all Taylor orders or to a renormalized quantum theory.
 
+\paragraph{Proof architecture.}
+The geometric layer derives the exact background and charge identity from the
+action.  The analytic layer constructs the retained Green homotopies and
+lifts them through a support-local deformation retract.  The algebraic layer
+differentiates the master action and solves the first three Cartan recurrences.
+Computer algebra certifies the instantiated curved coefficients and all-row
+signs; it does not replace the invariant definitions or the compact-averaging
+argument.
+
+\paragraph{Novelty and relation to established machinery.}
+Relational and complete observables, covariant phase-space charges,
+linearization stability, BV--BFV theory, cyclic homotopy algebras, homotopy
+transfer, Cartan homotopies and Green homotopies are established frameworks
+\cite{Rovelli,Dittrich,DynamicalFrames,Khavkine,AMM,CMR,Kajiura,
+HomotopyTransfer,FiorenzaManetti,GreenComplexes}.  The contribution claimed
+here is their explicit conjunction in one action-derived example: a positive
+fully backreacting Berger clock, a fixed-coupling presymplectic-nullity
+theorem, a complete gauge-fixed classical BV presentation, and a cyclic
+causally supported Cartan primitive through $q_3$.  To our knowledge the
+specific Berger/Weyl/scalar construction is new; no priority claim is made
+for any of the general frameworks.
+
 \section{A positive clock on an exact Berger background}\label{sec:background}
 
-Let $\sigma_i$ be a left-invariant coframe on $S^3$ and set
+Let $\sigma_i$ be a left-invariant coframe on $S^3$ normalized by
+\begin{equation}\label{eq:MC}
+ d\sigma_1=-\sigma_2\wedge\sigma_3,qquad
+ d\sigma_2=-\sigma_3\wedge\sigma_1,qquad
+ d\sigma_3=-\sigma_1\wedge\sigma_2,qquad
+ \int_{S^3}\sigma_1\wedge\sigma_2\wedge\sigma_3=16\pi^2.
+\end{equation}
+We use metric signature $(-,+,+,+)$.  The curvature convention is fixed
+operationally by
+\begin{equation}\label{eq:curvature-convention}
+ \delta\!\int\sqrt{-g}\,C^2
+ =4\int\sqrt{-g}\,B_{\mu\nu}\,\delta g^{\mu\nu},
+\end{equation}
+which, with the matter stress convention below, gives
+$\alpha_BB_{\mu\nu}=T_{\mu\nu}$.  Set
 \begin{equation}\label{eq:berger}
  g=-dt^2+a^2(\sigma_1^2+\sigma_2^2)+c^2\sigma_3^2,
  \qquad q=\frac{c^2}{a^2}.
@@ -145,9 +227,9 @@ written in polar form as
  T_1=\rho\cos(\omega t),\qquad
  T_2=\rho\sin(\omega t).
 \end{equation}
-Their phase $\theta=\omega t$ obeys
+Their phase $\theta=\omega t\pmod{2\pi}$ obeys
 $g^{-1}(d\theta,d\theta)=-\omega^2<0$ and is therefore an everywhere
-timelike local clock.  The temporal-diffeomorphism/Weyl incidence determinant
+timelike $S^1$-valued clock candidate.  The temporal-diffeomorphism/Weyl incidence determinant
 is $\rho^2\omega$, so the clock slice is regular on the branch below.
 
 Our action convention is
@@ -176,7 +258,8 @@ there is an exact solution of the scalar and metric equations with
  \lambda=-\frac{q^2-5q+1}{6\alpha_B(1-4q)^2}>0.
 \end{equation}
 The scalar kinetic metric is positive, the quartic potential is bounded
-below, and the energy density dominates both principal pressures.
+below, and the exact stress obeys the pointwise dominant-energy inequalities
+$0\leq p_h,p_v\leq\varepsilon$ in the orthonormal frame.
 \end{proposition}
 
 \begin{proof}
@@ -195,10 +278,28 @@ $\omega^2$ and $\lambda$ positive.  Direct substitution gives
  p_h&=\frac{\rho^2(1-q)(1-3q)}{12a^2(1-4q)},\qquad
  p_v=\frac{\rho^2(1-q)(5q-1)}{12a^2(1-4q)},
 \end{align}
-from which positivity and $\varepsilon\ge p_h,p_v$ follow on the stated
+ from which $0\le p_h,p_v\le\varepsilon$ follows on the stated
 interval.  The coefficientwise verification also checks the lapse,
 horizontal-scale and vertical-scale variations of the Weyl-square action.
 \end{proof}
+
+These properties define the word ``healthy'' in this paper: standard-sign
+target kinetic form, nonzero amplitude, timelike phase gradient, positive
+bounded-below potential on the solution, and the displayed pointwise
+dominant-energy inequalities.  They are properties of this exact solution,
+not a claim that the improved conformal-scalar stress satisfies an energy
+condition on arbitrary configurations \cite{CCJ}.  The inequalities are
+pointwise and on shell in the displayed Weyl representative; they are not
+asserted to be invariant under changing that representative.
+
+\begin{remark}[$S^1$ clock and local real lifts]\label{rem:S1-clock}
+Because $\rho>0$, the map $(T_1,T_2)/\rho$ is globally $S^1$-valued and has
+period $2\pi/\omega$ along the $D$ orbit.  A real clock coordinate exists only
+after choosing a local lift of $\theta$ on an interval shorter than one
+period.  The slice $\theta=\theta_0$ therefore meets a complete orbit
+periodically.  We prove transversality of this local clock slice, not a global
+one-intersection deparametrization and not absence of Gribov repetitions.
+\end{remark}
 
 The rational point
 \begin{equation}\label{eq:rational-fixture}
@@ -228,8 +329,9 @@ charge is
 This is the canonical momentum conjugate to the phase $\theta$.  Thus the
 clock evolves and carries a genuine momentum.
 
-The helical generator $D$ acts trivially on the stationary metric and rotates
-the scalar pair:
+The cylinder generator $D=\partial_t$ acts trivially on the stationary metric
+and rotates the scalar pair, as already distinguished from $R$ and $K$ in
+\eqref{eq:D-R-definition}:
 \begin{equation}\label{eq:helical}
  \cL_Dg=0,\qquad \cL_DT=\omega RT.
 \end{equation}
@@ -242,6 +344,58 @@ variation of the Noether charge \eqref{eq:QR}.  This establishes
 \claimid{P09-C3}, but by itself it does not decide whether $D$ is gauge.  The
 decision depends on the allowed tangent space.
 
+\subsection{The fixed-coupling slice and the lapse normalization}
+
+To define that tangent space without gauge-fixing away its constraint, retain
+the homogeneous lapse and use the common Weyl scale to set $a(t)=1$ only
+after variation:
+\begin{equation}\label{eq:reduced-metric}
+ ds^2=-N(t)^2dt^2+\sigma_1^2+\sigma_2^2+c(t)^2\sigma_3^2,
+ \qquad T=\rho(t)(\cos\theta(t),\sin\theta(t)).
+\end{equation}
+With $V_0=16\pi^2$, the reduced action is
+\begin{equation}\label{eq:reduced-action}
+ \frac{S_{\rm red}}{V_0}=\int dt\,Nc\left[
+ \frac{\alpha_B}{8}C^2
++\frac{\dot\rho^2+\rho^2\dot\theta^2}{2N^2}
+-\frac{R\rho^2}{12}-\frac{\lambda\rho^4}{4}\right].
+\end{equation}
+For auditability, the curvature scalars before the static specialization are
+\begin{align}
+ R={}&-\frac{c^3N^3-4cN^3+4\dot c\dot N-4N\ddot c}
+ {2cN^3},\label{eq:reduced-R}\\
+ C^2={}&\frac{4A_-A_+}{3c^2N^6},\qquad
+ A_\pm=c^3N^3-cN^3+\dot c\dot N-N\ddot c
+ \pm3c\dot cN^2.\label{eq:reduced-C2}
+\end{align}
+Define the normalized lapse equation
+\begin{equation}\label{eq:EN-definition}
+ E_N:=\frac1{V_0}\frac{\delta S_{\rm red}}{\delta N}.
+\end{equation}
+Equations \eqref{eq:reduced-action}--\eqref{eq:EN-definition} fix the
+normalization in the linear identity below.
+
+The open background family is a family across theories, not a modulus of one
+fixed theory.  Eliminating the background variables gives
+\begin{equation}\label{eq:coupling-polynomial}
+ F(q;\alpha_B\lambda)
+ =q^2-5q+1+6\alpha_B\lambda(1-4q)^2=0,
+\end{equation}
+and $\partial_qF$ after substituting the branch value of
+$\alpha_B\lambda$ is
+$3(6q-1)/(4q-1)$, which never vanishes on \eqref{eq:q-range}.  Schematically,
+\begin{equation}\label{eq:fixed-slice-diagram}
+ \left\{\bar\Phi(q),\alpha_B,\lambda(q)\right\}_{q\in I}
+ \longrightarrow \{(\alpha_B,\lambda)\},
+ \qquad
+ T_{\bar\Phi}\mathcal S_{\alpha_B,\lambda}
+ =\ker D\mathcal E_{\bar\Phi}\cap
+ \ker d\alpha_B\cap\ker d\lambda .
+\end{equation}
+Thus $\delta N,\delta c,\delta\rho,\delta\theta$ are varied in deriving the
+equations, but an allowed tangent has $\delta\alpha_B=\delta\lambda=0$ and
+must satisfy every linearized equation, including $\delta E_N=0$.
+
 \begin{proposition}[Fixed-coupling charge theorem;
 \claimid{P09-C4}]\label{prop:charge}
 On the smooth fixed-$\alpha_B$, fixed-$\lambda$ linearized solution space
@@ -249,20 +403,34 @@ about the positive Berger clock background,
 \begin{equation}\label{eq:deltaQzero}
  \delta Q_R=0.
 \end{equation}
-Hence \eqref{eq:main-degeneracy} holds and $D$ is a proper-gauge direction on
-this phase space.
+Hence \eqref{eq:main-degeneracy} holds and $D$ is presymplectically null on
+this linearized phase space.
 \end{proposition}
 
 \begin{proof}
-Retain the lapse before varying the homogeneous reduced action and fix only
-the common Weyl scale.  The exact linearized lapse equation on the branch is
+Direct variation of \eqref{eq:reduced-action}, followed by restriction to the
+background branch, gives
 \begin{equation}\label{eq:lapse}
  \delta E_N=-\frac{\alpha_Bq^{3/2}}2\frac{\delta Q_R}{Q_R}.
 \end{equation}
-Its coefficient is nonzero throughout \eqref{eq:q-range}, so every
-homogeneous allowed tangent has $\delta Q_R=0$.
+Here
+\begin{equation}\label{eq:relative-Q}
+ \frac{\delta Q_R}{Q_R}
+ =\frac{\delta c}{\sqrt q}+2\frac{\delta\rho}{\rho}
+ +\frac{\delta\dot\theta}{\omega}-\delta N
+\end{equation}
+at $a=N=1$.  The coefficient in \eqref{eq:lapse} is nonzero throughout
+\eqref{eq:q-range}, so every homogeneous allowed tangent has
+$\delta Q_R=0$.  At the rational fixture the same row is
+\begin{equation}
+ \delta E_N=\frac{27\sqrt{10}}{320}\delta N
+ -\frac9{16}\delta c-\frac{9\sqrt{10}}{80}\delta\dot\theta
+ -\frac{27\sqrt{10}}{160}\delta\rho
+ =-\frac{27\sqrt{10}}{320}\frac{\delta Q_R}{Q_R}.
+\end{equation}
 
-The compact spatial isometry group preserves the background and the
+By Lemma~\ref{lem:averaging}, the compact spatial isometry group preserves the
+background and the
 linearized equations, while $\delta Q_R$ is an invariant linear functional.
 If a smooth inhomogeneous solution tangent had nonzero $\delta Q_R$, averaging
 it over the compact group would produce a homogeneous solution tangent with
@@ -271,9 +439,32 @@ the same nonzero value, contradicting \eqref{eq:lapse}.  Thus
 Equation \eqref{eq:omega-charge} gives the result.
 \end{proof}
 
+\begin{lemma}[Compact averaging]\label{lem:averaging}
+Let $G=SU(2)_L\times U(1)_R$ be the compact spatial isometry group of the
+Berger background and let
+$\operatorname{Av}_G\delta\Phi=\int_Gg\cdot\delta\Phi\,d\mu_G(g)$.
+Then $\operatorname{Av}_G$ is a continuous map in the smooth Fr\'echet
+topology, commutes with the fixed-coupling linearized equations, and obeys
+\begin{equation}
+ \delta Q_R(\operatorname{Av}_G\delta\Phi)
+ =\delta Q_R(\delta\Phi).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Naturality of the equations and $G$-invariance of $\bar\Phi$ give
+$D\mathcal E_{\bar\Phi}(g\cdot\delta\Phi)
+=g\cdot D\mathcal E_{\bar\Phi}(\delta\Phi)$; Haar integration therefore
+preserves the kernel and all linearized constraints.  The internal charge is
+the integral over the closed spatial slice of a $G$-invariant scalar density,
+so its differential is a $G$-invariant continuous linear functional.  Haar
+normalization then gives the displayed equality.  Residual-isometry zero
+modes are retained by the average; none is removed by a spectral projector.
+\end{proof}
+
 The compact averaging step is the matter-clock analogue of the familiar
 linearization-stability constraints on compact Cauchy surfaces
-\cite{LinearizationInstability}; here the exact lapse identity
+\cite{LinearizationInstability,AMM}; here the exact lapse identity
 \eqref{eq:lapse} supplies the decisive coefficient.
 
 \begin{remark}[What is fixed]
@@ -293,7 +484,18 @@ $D X\ne0$, then locally one may evaluate $X$ on the slice
 $\theta=\theta_0$ or form combinations invariant under the simultaneous
 shift of $X$ and $\theta$.  The background momentum \eqref{eq:QR} makes this
 clock slice nondegenerate, while Proposition~\ref{prop:charge} says that the
-total helical motion is a gauge orbit of the compact constrained system.
+infinitesimal cylinder motion is presymplectically null in the compact
+fixed-coupling tangent space.
+
+This paper proves that $\theta$ is a regular, backreacting clock candidate and
+that $D$ is null in the specified linearized and truncated homological senses.
+It does \emph{not} construct a complete observable in the sense of
+Rovelli--Dittrich \cite{Rovelli,Dittrich}: no global gauge-invariant map
+$X\mapsto X|_{\theta=\theta_0}$, uniqueness domain, or complete-observable
+Poisson algebra is asserted.  The periodicity in Remark~\ref{rem:S1-clock}
+is one reason to keep that distinction explicit.  Relational Maxwell
+redshift fixtures in the repository are follow-up applications and are not
+dependencies of Theorem~\ref{thm:main}.
 
 This result is sector dependent.  A boundary Hamiltonian, nonzero flux, or a
 phase space allowing $\delta Q_R\ne0$ would change the classification of
@@ -309,19 +511,64 @@ multiplicities
  5\text{ in degree }-1,\qquad 22\text{ in degree }0,\qquad
  22\text{ in degree }1,\qquad 5\text{ in degree }2.
 \end{equation}
-The rows include the metric and clock variables, diffeomorphism and Weyl
-ghosts, antifields, antighosts and multipliers.  A gauge-fermion canonical
-shear preserves the frozen odd Darboux pairing and gives a support-local
-cyclic contraction
+Table~\ref{tab:rows} summarizes the component implementation.  Here $\tau$
+is the clock-adapted time ghost, $\sigma$ the Weyl row, and $(R,\Theta)$ the
+dressed amplitude and phase rows.
+\begin{table}[ht]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{cXrr}
+\toprule
+Degree & Bundle rows & Minimal & Nonminimal\\
+\midrule
+$-1$ & spatial diffeomorphism ghosts $c_i$, temporal ghost $\tau$, Weyl ghost
+$\sigma$ & $5$ & $0$\\
+$0$ & dressed metric $\widehat h_{\mu\nu}$, $R,\Theta$; multipliers $b_a$;
+antighost duals $\bar c_a^*$ & $12$ & $10$\\
+$1$ & $\widehat h^*_{\mu\nu},R^*,\Theta^*$; multiplier duals $b_a^*$;
+antighosts $\bar c_a$ & $12$ & $10$\\
+$2$ & ghost/identity antifields $c_i^*,\tau^*,\sigma^*$ & $5$ & $0$\\
+\midrule
+& Total & $34$ & $20$\\
+\bottomrule
+\end{tabularx}
+\caption{The complete $54$-component gauge-fixed presentation.  The five
+nonminimal labels $a$ comprise three spatial-diffeomorphism, one temporal and
+one Weyl row.}
+\label{tab:rows}
+\end{table}
+
+The invariant retained complex has four bundle rows
+\begin{equation}\label{eq:retained-bundles}
+ \Gamma(T^*S^3)[-1]\longrightarrow
+ \Gamma(S^2T^*M)\longrightarrow
+ \Gamma(S^2T^*M)[1]\longrightarrow
+ \Gamma(T^*S^3)[2],
+\end{equation}
+of component ranks $3,10,10,3$.  Its unary blocks are the spatial gauge
+generator, the retained action Hessian and the negative formal-adjoint gauge
+identity.  The remaining eight minimal clock/temporal/Weyl rows and twenty
+nonminimal rows form the $28$-component contractible extension.  Thus the
+number $54$ is an all-row completeness audit, whereas the statement
+$\cC_{54}\simeq\cC_{26}$ is independent of the chosen component ordering.
+
+A gauge-fermion canonical shear preserves the frozen odd Darboux pairing and
+gives a support-local cyclic contraction
 \begin{equation}\label{eq:SDR}
  \pi_{\rm cl}\iota_{\rm cl}=\id,\qquad
  \id-\iota_{\rm cl}\pi_{\rm cl}
  =q_1S_{\rm cl}+S_{\rm cl}q_1
 \end{equation}
-onto a retained $26$-row complex.  This is claim \claimid{P09-C5}.
+onto the retained complex \eqref{eq:retained-bundles}.  This is claim
+\claimid{P09-C5}.
 
-The retained complex has advanced and retarded chain contractions
-$\Lambda_{26,\pm}$.  Lifting them through \eqref{eq:SDR} gives
+For compactly supported sources, the retained complex has advanced and
+retarded degree-$(-1)$ chain contractions
+\begin{equation}
+ \Lambda_{26,\pm}:\Gamma_c(\cC_{26})
+ \longrightarrow\Gamma_{J^\pm}(\cC_{26})[-1].
+\end{equation}
+Lifting them through \eqref{eq:SDR} gives
 \begin{equation}\label{eq:lambda54}
  \Lambda_{54,\pm}
  =S_{\rm cl}+\iota_{\rm cl}\Lambda_{26,\pm}\pi_{\rm cl},
@@ -332,17 +579,55 @@ and therefore
  \qquad
  \supp(\Lambda_{54,\pm}f)\subseteq J^\pm(\supp f).
 \end{equation}
+Indeed,
+\begin{align}
+ [q_1,\Lambda_{54,\pm}]
+ &=[q_1,S_{\rm cl}]
+ +\iota_{\rm cl}[q_{1,26},\Lambda_{26,\pm}]\pi_{\rm cl}\nonumber\\
+ &=(1-\iota_{\rm cl}\pi_{\rm cl})
+ +\iota_{\rm cl}\pi_{\rm cl}=1.
+\end{align}
 All maps in the retract are differential or pointwise algebraic.  No inverse
 Laplacian, inverse curl, transverse--traceless projector, or mode projector
 is used.  The complementary-degree adjoint relation and $D$-equivariance
 also lift.  These statements comprise \claimid{P09-C6}.
 
+The cyclic higher primitives below instead map compactly supported inputs to
+sections supported in the two-sided causal hull $J=J^+\cup J^-$.  They are
+neither the causal difference $\Lambda_+-\Lambda_-$ nor separate
+advanced/retarded higher operations.
+
 \section{Action-derived interaction tensors}\label{sec:interactions}
 
-Expand the classical BV vector field in the suspended graded-symmetric
-factorial convention,
+For a fluctuation $\phi$ about $\bar\Phi$, expand the classical BV vector
+field in the suspended graded-symmetric factorial convention,
 \begin{equation}\label{eq:Qexpansion}
- Q=q_1+q_2+q_3+O(\Phi^4).
+ Q_{\bar\Phi}(\phi)
+ =q_1(\phi)+\frac1{2!}q_2(\phi,\phi)
+ +\frac1{3!}q_3(\phi,\phi,\phi)+O(\phi^4).
+\end{equation}
+Thus $q_n$ has $n$ inputs, and $q_3$ is the fourth action derivative paired
+with one output.  If $\langle-,-\rangle_{\rm BV}$ denotes the degree-one odd
+Darboux pairing, the operations are defined invariantly by the polarized
+identity
+\begin{equation}\label{eq:variational-qn}
+ \left\langle x_0,q_n(x_1,\ldots,x_n)\right\rangle_{\rm BV}
+ =\left.
+ \frac{\partial^{n+1}}
+ {\partial t_0\cdots\partial t_n}
+ S_{\rm BV}\!\left[\bar\Phi+\sum_{j=0}^nt_jx_j\right]
+ \right|_{t=0},
+\end{equation}
+with the displayed ordering interpreted in the frozen suspended Koszul
+convention.  The local clock dressing and gauge-fermion shear are then applied
+as BV-canonical transformations to every input, output and dual row.
+
+The proof pipeline is therefore
+\begin{equation}\label{eq:proof-pipeline}
+ S_{\rm BV}\xrightarrow{\text{mixed variations}}(q_1,q_2,q_3)
+ \xrightarrow{\text{Cartan sources}} A_D^{(1)},A_D^{(2)},A_D^{(3)}
+ \xrightarrow{\text{Green/Hom contraction}}\iota_D^{(1)},
+ \iota_D^{(2)},\iota_D^{(3)}.
 \end{equation}
 The operations $q_2$ and $q_3$ are obtained by differentiating the covariant
 Weyl--clock master action on arbitrary four-dimensional jets and transporting
@@ -367,6 +652,22 @@ and exact coefficientwise verification gives
 Claims \claimid{P09-C7} and \claimid{P09-C8} bind these statements to the
 portable all-row coefficient exports.
 
+The abstract $L_\infty$ relations follow from the classical master equation;
+the large PBW calculation verifies that the concrete curved coefficients,
+canonical transports and signs instantiate those relations without a dropped
+row.  As a cross-producer check, an independently written homogeneous reduced
+action gives eight fourth derivatives in the
+$(\widehat h_{00},R)$ sector.  They agree exactly with all sixteen ordered
+zero-jet coefficients in the published $\widehat h^*_{00}$ and $R^*$ rows.
+This probes both the lapse and dressed radial/Weyl directions without
+importing the $q_3$ producer.  It is deliberately not described as a complete
+second derivation of the payload.
+
+Arity three is the first test involving both $q_3$ and the composite
+$[q_2,q_2]$ channel.  It is not the end of the classical expansion: inverse
+metrics, curvature and canonical field redefinitions generally generate
+nonzero $q_n$ for $n\ge4$ even though the bare scalar potential is quartic.
+
 \section{Causal Cartan contraction through arity three}\label{sec:Cartan}
 
 Write
@@ -380,6 +681,20 @@ for a degree-$(-1)$ Cartan homotopy.  At unary order,
 A one-sided raw solution follows from \eqref{eq:causal-contraction}; averaging
 it with its convention-correct cyclic adjoint yields a cyclic unary
 primitive with support in the two-sided causal hull.
+
+For clarity, the chain contraction is used on the multilinear Hom complex,
+not as an inverse of a coefficient matrix.  If
+$\delta=[q_1,-]$ and $A$ is a homogeneous multilinear operator, set
+\begin{equation}\label{eq:Hom-contraction}
+ \mathfrak H_\pm(A):=\Lambda_{54,\pm}\circ A.
+\end{equation}
+The graded derivation rule and $[q_1,\Lambda_{54,\pm}]=1$ give
+\begin{equation}
+ \delta\mathfrak H_\pm(A)+\mathfrak H_\pm\delta(A)=A.
+\end{equation}
+This identity includes the $q_1$ action on every input slot; no input term is
+discarded.  It is the step that turns a $q_1$-closed Cartan source into a raw
+causal primitive.
 
 At binary order define
 \begin{equation}\label{eq:A2}
@@ -426,7 +741,8 @@ Because cyclic coderivations are closed under their graded bracket,
 $A_D^{(3)}$ is cyclic.  The causal chain contraction supplies a raw
 primitive
 \begin{equation}\label{eq:raw3}
- R^{(3)}=-\Lambda_{54,+}A_D^{(3)},
+ R^{(3)}=-\mathfrak H_+(A_D^{(3)})
+ =-\Lambda_{54,+}\circ A_D^{(3)},
  \qquad \delta R^{(3)}=-A_D^{(3)}.
 \end{equation}
 Pair the output with the odd Darboux form before cyclicizing.  The resulting
@@ -467,7 +783,8 @@ stronger property; cyclic averaging generally does not.
 \section{Interpretation, failures and open directions}\label{sec:limits}
 
 The result resolves one narrow version of the clock question.  A healthy
-matter clock can have $Q_R>0$ while the total helical generator remains gauge,
+matter clock can have $Q_R>0$ while the cylinder generator remains
+presymplectically null,
 because the constraint fixes $Q_R$ within one theory and annihilates its
 pullback differential.  The all-row BV calculation shows that this is not
 only a homogeneous minisuperspace coincidence: the linearized covariant
@@ -478,21 +795,25 @@ The following conclusions are not drawn.
 \begin{enumerate}
 \item No all-orders nonlinear Cartan contraction is claimed.  Arity four and
 higher remain separate gates if the complete master action requires them.
+\item No constant-rank nonlinear null foliation, integrated gauge quotient,
+global deparametrization or complete relational observable is constructed.
 \item No Hadamard two-point function, microlocal spectrum condition,
 renormalized composite, anomaly cancellation or quantum master equation is
 constructed.
 \item No positive graviton Hilbert space or interacting probability theorem
 follows from the positive clock matter.
 \item No noncompact or bounded phase space is covered.  There $D$ may acquire
-a boundary charge or flux and cease to be proper gauge.
+a boundary charge or flux and cease to be presymplectically null.
 \item Relational-redshift fixtures are applications, not part of the main
 theorem unless their independent propagation and backreaction gates close.
 \end{enumerate}
 
 The correct continuation is therefore not to advertise an unrestricted
 solution of the problem of time.  It is to test whether the same Cartan
-structure survives higher Taylor order, renormalized Ward identities and
-phase spaces with physical boundaries.
+structure survives higher Taylor order, whether the $S^1$ clock supports
+well-defined complete observables on controlled domains, and whether the
+conclusion persists under renormalized Ward identities and physical
+boundaries.
 
 \section{Reproducibility and claim map}\label{sec:repro}
 
@@ -513,7 +834,7 @@ Fast paper checks import that frozen artifact by hash.  A paper release may be
 marked \texttt{THEOREM\_FROZEN} only after clean-tree replay and nonlinear-team
 sign-off; this working draft is not yet so marked.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 
 \bibitem{Bach}
 R.~Bach,
@@ -531,16 +852,68 @@ M.~Henneaux and C.~Teitelboim,
 \emph{Quantization of Gauge Systems},
 Princeton University Press, 1992.
 
+\bibitem{Rovelli}
+C.~Rovelli,
+\emph{Partial observables},
+Phys. Rev. D \textbf{65} (2002), 124013.
+
+\bibitem{Dittrich}
+B.~Dittrich,
+\emph{Partial and complete observables for Hamiltonian constrained systems},
+Gen. Relativ. Gravit. \textbf{39} (2007), 1891--1927.
+
+\bibitem{DynamicalFrames}
+C.~Goeller, P.~A. H\"ohn, and J.~Kirklin,
+\emph{Diffeomorphism-invariant observables and dynamical frames in gravity:
+reconciling bulk locality with general covariance},
+arXiv:2206.01193.
+
 \bibitem{CovariantPhaseSpace}
 C.~Crnkowic and E.~Witten,
 \emph{Covariant description of canonical formalism in geometrical theories},
 in \emph{Three Hundred Years of Gravitation}, Cambridge University Press,
 1987.
 
+\bibitem{Khavkine}
+I.~Khavkine,
+\emph{Covariant phase space, constraints, gauge and the Peierls formula},
+Int. J. Mod. Phys. A \textbf{29} (2014), 1430009.
+
 \bibitem{LinearizationInstability}
 A.~E. Fischer and J.~E. Marsden,
 \emph{Linearization stability of the Einstein equations},
 Bull. Amer. Math. Soc. \textbf{79} (1973), 997--1003.
+
+\bibitem{AMM}
+J.~M. Arms, J.~E. Marsden, and V.~Moncrief,
+\emph{The structure of the space of solutions of Einstein's equations II:
+several Killing fields and the Einstein--Yang--Mills equations},
+Ann. Phys. \textbf{144} (1982), 81--106.
+
+\bibitem{CMR}
+A.~S. Cattaneo, P.~Mnev, and N.~Reshetikhin,
+\emph{Classical and quantum Lagrangian field theories with boundary},
+PoS CORFU2011 (2012), 044.
+
+\bibitem{Kajiura}
+H.~Kajiura,
+\emph{Noncommutative homotopy algebras associated with open strings},
+Rev. Math. Phys. \textbf{19} (2007), 1--99.
+
+\bibitem{HomotopyTransfer}
+A.~S. Arvanitakis, O.~Hohm, C.~Hull, and V.~Lekeu,
+\emph{Homotopy transfer and effective field theory I: tree level},
+arXiv:2007.07942.
+
+\bibitem{FiorenzaManetti}
+D.~Fiorenza and M.~Manetti,
+\emph{$L_\infty$ algebras, Cartan homotopies and period maps},
+arXiv:math/0605297.
+
+\bibitem{CCJ}
+C.~G. Callan, S.~Coleman, and R.~Jackiw,
+\emph{A new improved energy--momentum tensor},
+Ann. Phys. \textbf{59} (1970), 42--73.
 
 \bibitem{GreenComplexes}
 M.~Benini, G.~Musante, and A.~Schenkel,

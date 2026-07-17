@@ -1,0 +1,144 @@
+{
+  "claim_boundary": "This independent exact calculation crosses the action-to-frozen-q3 boundary in the homogeneous lapse and dressed radial/Weyl sector: eight fourth action derivatives agree with sixteen ordered coefficients in two published q3 rows. It is not a second derivation of the complete 5,812,130-term q3 operation and does not freeze Paper IX.",
+  "claim_status": "CERTIFIED_STRATEGIC_INDEPENDENT_CROSSCHECK",
+  "coefficients": [
+    {
+      "expected_from_direct_action": "-27",
+      "input_R_count": 3,
+      "input_h_count": 0,
+      "observed_in_frozen_payload": "-27",
+      "ordered_permutations_checked": 1,
+      "output": 27,
+      "output_row": "h_hat_star_00"
+    },
+    {
+      "expected_from_direct_action": "27/8",
+      "input_R_count": 2,
+      "input_h_count": 1,
+      "observed_in_frozen_payload": "27/8",
+      "ordered_permutations_checked": 3,
+      "output": 27,
+      "output_row": "h_hat_star_00"
+    },
+    {
+      "expected_from_direct_action": "81/16",
+      "input_R_count": 1,
+      "input_h_count": 2,
+      "observed_in_frozen_payload": "81/16",
+      "ordered_permutations_checked": 3,
+      "output": 27,
+      "output_row": "h_hat_star_00"
+    },
+    {
+      "expected_from_direct_action": "405/128",
+      "input_R_count": 0,
+      "input_h_count": 3,
+      "observed_in_frozen_payload": "405/128",
+      "ordered_permutations_checked": 1,
+      "output": 27,
+      "output_row": "h_hat_star_00"
+    },
+    {
+      "expected_from_direct_action": "-1071/40",
+      "input_R_count": 3,
+      "input_h_count": 0,
+      "observed_in_frozen_payload": "-1071/40",
+      "ordered_permutations_checked": 1,
+      "output": 37,
+      "output_row": "R_star"
+    },
+    {
+      "expected_from_direct_action": "-27",
+      "input_R_count": 2,
+      "input_h_count": 1,
+      "observed_in_frozen_payload": "-27",
+      "ordered_permutations_checked": 3,
+      "output": 37,
+      "output_row": "R_star"
+    },
+    {
+      "expected_from_direct_action": "27/8",
+      "input_R_count": 1,
+      "input_h_count": 2,
+      "observed_in_frozen_payload": "27/8",
+      "ordered_permutations_checked": 3,
+      "output": 37,
+      "output_row": "R_star"
+    },
+    {
+      "expected_from_direct_action": "81/16",
+      "input_R_count": 0,
+      "input_h_count": 3,
+      "observed_in_frozen_payload": "81/16",
+      "ordered_permutations_checked": 1,
+      "output": 37,
+      "output_row": "R_star"
+    }
+  ],
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_checks": {
+    "all_eight_action_derivatives_match": true,
+    "all_sixteen_ordered_payload_coefficients_match": true,
+    "direct_background_density_stationary": true,
+    "dressed_radial_weyl_sector_checked": true,
+    "lapse_sector_checked": true,
+    "q3_producer_not_imported": true
+  },
+  "flags": {
+    "BERGER_Q3_ACTION_SECTOR_CROSSCHECK": true,
+    "FULL_INDEPENDENT_Q3_REDERIVATION": false,
+    "THEOREM_FROZEN": false
+  },
+  "independent_method": {
+    "factorial_normalization": "twice-Euler-density q3 coefficient equals two times the fourth action derivative",
+    "independent_derivative_values": 8,
+    "method": "direct SymPy fourth derivatives of an independently written homogeneous reduced action density",
+    "ordered_payload_coefficients_checked": 16,
+    "outputs": [
+      "h_hat_star_00",
+      "R_star"
+    ],
+    "producer_imported": false,
+    "variables": [
+      "h_hat_00",
+      "R"
+    ]
+  },
+  "result_id": "BERGER_Q3_ACTION_SECTOR_CROSSCHECK",
+  "schema": "pure-weyl-berger-q3-action-sector-crosscheck-v1",
+  "setting_id": "rational_positive_berger_clock_homogeneous_lapse_radial_sector",
+  "source_manifest": {
+    "crosscheck_source": {
+      "path": "d_quotient_classical/backreacted_clock/berger_q3_action_sector_crosscheck.py",
+      "sha256": "54dcec8b1fdf7279490a4caa188c5d58e498eea66082090d70e8dc5e85177c21"
+    },
+    "q3_certificate": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3.json",
+      "sha256": "f55c145700cd30273e0f16d585bfd0815e5a8451606b0998bc706a8b61798cad"
+    },
+    "q3_payload_manifest": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3_PAYLOAD.json",
+      "sha256": "a0ae9ba202b1f6b35c48c3506417c2251df012324cadbdbea3aa389a4c2d8bfb"
+    },
+    "q3_producer_under_test": {
+      "path": "d_quotient_classical/backreacted_clock/berger_support_local_q2.py",
+      "sha256": "fe93dd559f632f2459cbb2445a6ccfd4073a7446def0121b0e8bfd5d3effc213"
+    },
+    "q3_row_27": {
+      "path": "d_quotient_classical/generated/berger_support_local_q3/row_27.json.gz",
+      "sha256": "48997788bdd3273268ad77b732d67878a4e83f763b62f2d02095285adff68589"
+    },
+    "q3_row_37": {
+      "path": "d_quotient_classical/generated/berger_support_local_q3/row_37.json.gz",
+      "sha256": "d78667bca28d429833dc0732b22a86cc1976877050f6fa93ea043606dada2f63"
+    }
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_q3_action_sector_crosscheck.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_q3_action_sector_crosscheck.py",
+    "PYTHONPATH=. pytest -q d_quotient_classical/backreacted_clock/tests/test_berger_q3_action_sector_crosscheck.py"
+  ]
+}

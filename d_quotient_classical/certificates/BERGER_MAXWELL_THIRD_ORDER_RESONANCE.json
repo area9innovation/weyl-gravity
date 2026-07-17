@@ -1,0 +1,341 @@
+{
+  "binary_verdict": {
+    "fixed_frequency_periodic_primitive": "OBSTRUCTION",
+    "frequency_renormalized_formal_continuation": "EXACT_PRIMITIVE",
+    "interpretation": "The order-three source changes the nonlinear standing-wave frequency. It is not removable inside the fixed-beta periodic block, but it is removed exactly by the displayed Poincare--Lindstedt shift and secular representative.",
+    "normalized_witness_available": true
+  },
+  "branch_and_health": {
+    "Einstein_extra_Weyl_branch_coupling": "NOT_ACCESSED_BY_THIS_STATIONARY_HOMOGENEOUS_BLOCK",
+    "interpretation": "The obstruction is a resonant frequency correction in the already positive Maxwell phase plane, not a new kinetic mode or negative-norm state.",
+    "negative_physical_direction_introduced": false
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE certificate lifts the exact balanced standing-wave order-two gravity correction through the authoritative 54-row contraction and verifies the full unary Maurer--Cartan equation on all rows. It then derives one physical metric--Maxwell Taylor block q2(h^(2),A_st) to A-plus directly from d star_g d and independently from the reduced Maxwell action. At the original Berger frequency the order-three source has a normalized dual witness and no periodic primitive. The same source is removed exactly by a Poincare--Lindstedt frequency correction, giving a formal third-order continuation with an explicit secular representative. This does not export the complete coupled gravity--Maxwell BV bracket or its canonical antifield partners, classify radiative Einstein/extra-Weyl mixing, construct localized endpoints or retarded propagation, establish an all-orders solution, introduce a negative physical direction, certify Lorentzian causal perturbation theory, or make a quantum claim.",
+  "claim_status": "CERTIFIED_REDUCED_MODE_FULL_UNARY_SECOND_ORDER_LIFT_AND_THIRD_ORDER_FREQUENCY_RESONANCE",
+  "dependency_refs": {
+    "balanced_second_order": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_MOMENTUM_BALANCED_FIXTURE.json",
+      "result_id": "BERGER_MAXWELL_MOMENTUM_BALANCED_FIXTURE",
+      "sha256": "9008c87d83da3ca71a23bbf8d49635fd9ac4ff79dc1a22ab2e0c4f6326964759"
+    },
+    "gravity_contraction": {
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "maxwell_bv_preflight": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT.json",
+      "result_id": "BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT",
+      "sha256": "899fcd28329389c68c452921ed8cf7c447486ceb588ba13ac747627e30191ca8"
+    },
+    "maxwell_mode": {
+      "path": "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
+      "result_id": "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
+      "sha256": "95c4c3a4359db4ec5b03f77a9d86191df97c4cfbbd00ae043dd5ccfc720df996"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flags": {
+    "BERGER_ALL_ORDERS_BACKREACTED_SOLUTION": false,
+    "BERGER_FIXED_FREQUENCY_THIRD_ORDER_OBSTRUCTION": true,
+    "BERGER_FREQUENCY_RENORMALIZED_THIRD_ORDER_CONTINUATION": true,
+    "BERGER_FULL_54_ROW_SECOND_ORDER_LIFT": true,
+    "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2": false,
+    "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": false,
+    "BERGER_PHYSICAL_METRIC_MAXWELL_Q2_BLOCK": true,
+    "BERGER_RADIATIVE_BRANCH_COUPLING_CLASSIFIED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "full_54_row_lift": {
+    "correction_nonzero_rows": [
+      {
+        "coefficient": "5120/567",
+        "index": 5,
+        "row_id": "h_hat_00"
+      },
+      {
+        "coefficient": "-2466560/147819",
+        "index": 9,
+        "row_id": "h_hat_11"
+      },
+      {
+        "coefficient": "-76705280/4582389",
+        "index": 12,
+        "row_id": "h_hat_22"
+      },
+      {
+        "coefficient": "-14080/1953",
+        "index": 14,
+        "row_id": "h_hat_33"
+      }
+    ],
+    "full_Maurer_Cartan_residual": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "full_field_content": [
+      "h_hat_00",
+      "h_hat_11",
+      "h_hat_22",
+      "h_hat_33"
+    ],
+    "homotopy_source_nonzero_rows": [],
+    "lift_formula": "h54^(2)=iota_cl h26^(2)-1/2 S_cl q2(A_st,A_st)",
+    "nonminimal_components_induced": false,
+    "projection_residual": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "source_nonzero_rows": [
+      {
+        "coefficient": "160/9",
+        "index": 27,
+        "row_id": "h_hat_star_00"
+      },
+      {
+        "coefficient": "-160/9",
+        "index": 31,
+        "row_id": "h_hat_star_11"
+      },
+      {
+        "coefficient": "160/9",
+        "index": 34,
+        "row_id": "h_hat_star_22"
+      },
+      {
+        "coefficient": "160/9",
+        "index": 36,
+        "row_id": "h_hat_star_33"
+      }
+    ],
+    "source_q1_closure_residual": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "higher_tiers_not_run": {
+    "tier_2": "All imported classical matrices and physical-mode inputs are unchanged and content-addressed; their exact hashes and the directly affected unary identities are replayed.",
+    "tier_3": "This is a new REDUCED-MODE physical-shape block, not a shared-core algebra change, freeze, release, all-orders theorem, or Lorentzian certification."
+  },
+  "next_gate": "BERGER_COMPLETE_COUPLED_MAXWELL_BV_Q2_OR_FOURTH_ORDER_REDUCED_MODE",
+  "physical_mixed_q2_block": {
+    "D_weight": "0",
+    "direct_four_form_q2": {
+      "e023": "564428800*cos(2*sqrt(10)*t/3)/35920017",
+      "other_components_zero": true
+    },
+    "dual_witness_source_pairing": "1",
+    "field_content": [
+      "h_hat_00",
+      "h_hat_11",
+      "h_hat_22",
+      "h_hat_33",
+      "A_1",
+      "A_plus_1"
+    ],
+    "fixed_frequency_unary_matrix": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "fixed_frequency_verdict": "OBSTRUCTION",
+    "frequency_renormalized_residual": "0",
+    "frequency_shift_delta_beta": "-7055360*sqrt(10)/11973339",
+    "half_trace_variation": "-14080/567",
+    "kinetic_coefficient_variation": "3527680/3991113",
+    "magnetic_coefficient_variation": "-3527680/3991113",
+    "metric_correction_diagonal": [
+      "5120/567",
+      "-2466560/147819",
+      "-76705280/4582389",
+      "-14080/1953"
+    ],
+    "normalized_dual_witness": [
+      "35920017/564428800",
+      "0"
+    ],
+    "relative_dispersion_variation": "-7055360/3991113",
+    "renormalized_verdict": "EXACT_CONTINUATION_AFTER_FREQUENCY_RENORMALIZATION",
+    "resonant_harmonic_source": [
+      "564428800/35920017",
+      "0"
+    ],
+    "secular_primitive": "14110720*sqrt(10)*t*sin(2*sqrt(10)*t/3)/11973339"
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/backreacted_clock/berger_maxwell_third_order_resonance.py": "5f3e6daad489d76ffff52de13c8dd8131bd155e66ca663a7c557943d894fe713",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_maxwell_third_order_resonance.py": "45cfbfd6fd55e57f4d2058ac74366821cdb78e882066d1f97569a3719e7ffb0e",
+      "d_quotient_classical/backreacted_clock/verify_berger_maxwell_third_order_resonance.py": "618b5c61e92e7d77227d8281ab29753f7acfaa297d3109f77256aa5da9587e23",
+      "d_quotient_classical/schema/berger-maxwell-third-order-resonance-v1.schema.json": "8739bd165764c4b7480c159672fd567b2e5e3df576068910df100d2a9cf52937"
+    }
+  },
+  "reduced_mode_limitation": "The calculation is restricted to the D-weight-zero, stationary homogeneous diagonal metric correction sourced by the coherent left-invariant standing Maxwell mode at the rational Berger fixture. The full 54-row statement concerns the gravity unary contraction only. The mixed q2 export is one physical h-diagonal/A1-to-A-plus1 block; it does not include arbitrary support-local coefficients, Maxwell gauge and antifield partners required for a complete coupled BV bracket, radiative Einstein/extra-Weyl modes, localized apparatus, retarded propagation, or a convergence/all-orders theorem. The exact continuation permits a Poincare--Lindstedt frequency shift (equivalently a secular representative on the universal time cover), so it is not a periodic primitive at the original beta and is not a Lorentzian causal construction.",
+  "result_id": "BERGER_MAXWELL_THIRD_ORDER_RESONANCE",
+  "schema": "pure-weyl-berger-maxwell-third-order-resonance-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling",
+  "verification_receipts": [
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/berger_maxwell_third_order_resonance.py --check --guards",
+      "elapsed_seconds": 1.75,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_maxwell_third_order_resonance.py",
+      "elapsed_seconds": 0.51,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_maxwell_third_order_resonance",
+      "elapsed_seconds": 3.21,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-maxwell-third-order-resonance-v1.schema.json -d d_quotient_classical/certificates/BERGER_MAXWELL_THIRD_ORDER_RESONANCE.json",
+      "elapsed_seconds": 2.38,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates. It does not freeze the theorem or promote any quantum, all-orders, Hadamard, boundary, scattering, or unitarity claim.",
+  "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates and one strategic independent action-to-q3 sector cross-check. It proves linear presymplectic nullity and a classical Cartan identity through arity three; it does not freeze the theorem or promote an integrated nonlinear quotient, global complete observable, full second q3 derivation, quantum, all-orders, Hadamard, boundary, scattering, or unitarity claim.",
   "claim_ids_complete": [
     "P09-C1",
     "P09-C2",
@@ -75,7 +75,7 @@
       "certificate_path": "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
       "certificate_result_id": "BERGER_FIXED_COUPLING_DELTA_CHARGE",
       "certificate_sha256": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786",
-      "claim": "At fixed couplings delta Q_R vanishes on every smooth allowed linearized tangent, so D is gauge in the declared compact phase space.",
+      "claim": "At fixed couplings delta Q_R vanishes on every smooth allowed linearized tangent, so D is presymplectically null in the declared compact phase space.",
       "claim_id": "P09-C4",
       "paper_sections": [
         "3"
@@ -226,12 +226,33 @@
     "quantum master equation",
     "anomaly cancellation",
     "positive graviton Hilbert space",
-    "boundary or asymptotic charge theorem"
+    "boundary or asymptotic charge theorem",
+    "integrated nonlinear D quotient",
+    "global complete relational observable"
+  ],
+  "independent_cross_checks": [
+    {
+      "certificate_claim_boundary": "This independent exact calculation crosses the action-to-frozen-q3 boundary in the homogeneous lapse and dressed radial/Weyl sector: eight fourth action derivatives agree with sixteen ordered coefficients in two published q3 rows. It is not a second derivation of the complete 5,812,130-term q3 operation and does not freeze Paper IX.",
+      "certificate_path": "d_quotient_classical/certificates/BERGER_Q3_ACTION_SECTOR_CROSSCHECK.json",
+      "certificate_result_id": "BERGER_Q3_ACTION_SECTOR_CROSSCHECK",
+      "certificate_sha256": "b30297f5829bb58adf7acdeaa59df8a0f173a90cbe6c3568ecdb505349147a51",
+      "required_false": [
+        "flags.FULL_INDEPENDENT_Q3_REDERIVATION",
+        "flags.THEOREM_FROZEN"
+      ],
+      "required_true": [
+        "flags.BERGER_Q3_ACTION_SECTOR_CROSSCHECK",
+        "exact_checks.all_eight_action_derivatives_match",
+        "exact_checks.all_sixteen_ordered_payload_coefficients_match",
+        "exact_checks.q3_producer_not_imported"
+      ],
+      "supports_claim": "P09-C8"
+    }
   ],
   "next_gate": "PAPER_09_NONLINEAR_SIGNOFF_AND_CLEAN_TREE_REPLAY",
   "paper_sources": {
-    "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex": "8e27bbabdad0f78ac7794268a0fa8f35e0929838b1a73039c91665208c64c385",
-    "paper/09-relational-clocks-berger-d-cartan.tex": "a8cc9eff28e8b232216f4067249701f3172b60a0b57d1d94cb4da9d6dff085e3"
+    "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex": "bc9645c7bd75b347a3b1acc2b7dd41e303b685a14da3f11a6c52482217683892",
+    "paper/09-relational-clocks-berger-d-cartan.tex": "bf7d0db4c5e6bcc2b7cc342a24dfa0bb5021152fc498349a8372f9af2e59193c"
   },
   "paper_state": "WRITING_STARTED",
   "required_signoffs": {
@@ -242,6 +263,6 @@
   },
   "result_id": "PAPER_09_BERGER_CLAIM_TABLE",
   "schema": "pure-weyl-paper-09-berger-claim-table-v1",
-  "setting": "compact positive Berger clock; fixed couplings; smooth classical phase space; BV Taylor order through arity three",
+  "setting": "open compact positive Berger S1 clock family for the background and fixed-coupling linear nullity; exact rational q=9/40 representative for the 54-row classical BV Taylor and Cartan results through arity three",
   "theorem_frozen": false
 }

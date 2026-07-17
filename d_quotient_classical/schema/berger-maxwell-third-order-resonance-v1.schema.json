@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-maxwell-third-order-resonance-v1.schema.json",
+  "title": "Berger Maxwell third-order resonance certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "full_54_row_lift", "physical_mixed_q2_block", "binary_verdict", "branch_and_health", "flags", "reduced_mode_limitation", "next_gate", "provenance", "verification_receipts", "higher_tiers_not_run", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-maxwell-third-order-resonance-v1"},
+    "result_id": {"const": "BERGER_MAXWELL_THIRD_ORDER_RESONANCE"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "claim_status": {"const": "CERTIFIED_REDUCED_MODE_FULL_UNARY_SECOND_ORDER_LIFT_AND_THIRD_ORDER_FREQUENCY_RESONANCE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["balanced_second_order", "gravity_contraction", "maxwell_mode", "maxwell_bv_preflight"],
+      "properties": {
+        "balanced_second_order": {"$ref": "#/$defs/dependency"},
+        "gravity_contraction": {"$ref": "#/$defs/dependency"},
+        "maxwell_mode": {"$ref": "#/$defs/dependency"},
+        "maxwell_bv_preflight": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "full_54_row_lift": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lift_formula", "source_nonzero_rows", "homotopy_source_nonzero_rows", "correction_nonzero_rows", "source_q1_closure_residual", "full_Maurer_Cartan_residual", "projection_residual", "full_field_content", "nonminimal_components_induced"],
+      "properties": {
+        "lift_formula": {"const": "h54^(2)=iota_cl h26^(2)-1/2 S_cl q2(A_st,A_st)"},
+        "source_nonzero_rows": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/nonzero_row"}},
+        "homotopy_source_nonzero_rows": {"const": []},
+        "correction_nonzero_rows": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/nonzero_row"}},
+        "source_q1_closure_residual": {"$ref": "#/$defs/zero54"},
+        "full_Maurer_Cartan_residual": {"$ref": "#/$defs/zero54"},
+        "projection_residual": {"$ref": "#/$defs/zero26"},
+        "full_field_content": {"const": ["h_hat_00", "h_hat_11", "h_hat_22", "h_hat_33"]},
+        "nonminimal_components_induced": {"const": false}
+      }
+    },
+    "physical_mixed_q2_block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metric_correction_diagonal", "D_weight", "field_content", "half_trace_variation", "kinetic_coefficient_variation", "magnetic_coefficient_variation", "relative_dispersion_variation", "direct_four_form_q2", "resonant_harmonic_source", "fixed_frequency_unary_matrix", "normalized_dual_witness", "dual_witness_source_pairing", "fixed_frequency_verdict", "frequency_shift_delta_beta", "secular_primitive", "frequency_renormalized_residual", "renormalized_verdict"],
+      "properties": {
+        "metric_correction_diagonal": {"const": ["5120/567", "-2466560/147819", "-76705280/4582389", "-14080/1953"]},
+        "D_weight": {"const": "0"},
+        "field_content": {"const": ["h_hat_00", "h_hat_11", "h_hat_22", "h_hat_33", "A_1", "A_plus_1"]},
+        "half_trace_variation": {"const": "-14080/567"},
+        "kinetic_coefficient_variation": {"const": "3527680/3991113"},
+        "magnetic_coefficient_variation": {"const": "-3527680/3991113"},
+        "relative_dispersion_variation": {"const": "-7055360/3991113"},
+        "direct_four_form_q2": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["e023", "other_components_zero"],
+          "properties": {
+            "e023": {"const": "564428800*cos(2*sqrt(10)*t/3)/35920017"},
+            "other_components_zero": {"const": true}
+          }
+        },
+        "resonant_harmonic_source": {"const": ["564428800/35920017", "0"]},
+        "fixed_frequency_unary_matrix": {"const": [["0", "0"], ["0", "0"]]},
+        "normalized_dual_witness": {"const": ["35920017/564428800", "0"]},
+        "dual_witness_source_pairing": {"const": "1"},
+        "fixed_frequency_verdict": {"const": "OBSTRUCTION"},
+        "frequency_shift_delta_beta": {"const": "-7055360*sqrt(10)/11973339"},
+        "secular_primitive": {"const": "14110720*sqrt(10)*t*sin(2*sqrt(10)*t/3)/11973339"},
+        "frequency_renormalized_residual": {"const": "0"},
+        "renormalized_verdict": {"const": "EXACT_CONTINUATION_AFTER_FREQUENCY_RENORMALIZATION"}
+      }
+    },
+    "binary_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixed_frequency_periodic_primitive", "normalized_witness_available", "frequency_renormalized_formal_continuation", "interpretation"],
+      "properties": {
+        "fixed_frequency_periodic_primitive": {"const": "OBSTRUCTION"},
+        "normalized_witness_available": {"const": true},
+        "frequency_renormalized_formal_continuation": {"const": "EXACT_PRIMITIVE"},
+        "interpretation": {"type": "string", "minLength": 160}
+      }
+    },
+    "branch_and_health": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Einstein_extra_Weyl_branch_coupling", "negative_physical_direction_introduced", "interpretation"],
+      "properties": {
+        "Einstein_extra_Weyl_branch_coupling": {"const": "NOT_ACCESSED_BY_THIS_STATIONARY_HOMOGENEOUS_BLOCK"},
+        "negative_physical_direction_introduced": {"const": false},
+        "interpretation": {"type": "string", "minLength": 100}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["BERGER_FULL_54_ROW_SECOND_ORDER_LIFT", "BERGER_PHYSICAL_METRIC_MAXWELL_Q2_BLOCK", "BERGER_FIXED_FREQUENCY_THIRD_ORDER_OBSTRUCTION", "BERGER_FREQUENCY_RENORMALIZED_THIRD_ORDER_CONTINUATION", "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2", "BERGER_ALL_ORDERS_BACKREACTED_SOLUTION", "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE", "BERGER_RADIATIVE_BRANCH_COUPLING_CLASSIFIED", "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED", "LORENTZIAN_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_FULL_54_ROW_SECOND_ORDER_LIFT": {"const": true},
+        "BERGER_PHYSICAL_METRIC_MAXWELL_Q2_BLOCK": {"const": true},
+        "BERGER_FIXED_FREQUENCY_THIRD_ORDER_OBSTRUCTION": {"const": true},
+        "BERGER_FREQUENCY_RENORMALIZED_THIRD_ORDER_CONTINUATION": {"const": true},
+        "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2": {"const": false},
+        "BERGER_ALL_ORDERS_BACKREACTED_SOLUTION": {"const": false},
+        "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": {"const": false},
+        "BERGER_RADIATIVE_BRANCH_COUPLING_CLASSIFIED": {"const": false},
+        "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "reduced_mode_limitation": {"type": "string", "minLength": 600},
+    "next_gate": {"const": "BERGER_COMPLETE_COUPLED_MAXWELL_BV_Q2_OR_FOURTH_ORDER_REDUCED_MODE"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "maxProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+      }
+    },
+    "verification_receipts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_2", "tier_3"],
+      "properties": {
+        "tier_2": {"type": "string", "minLength": 100},
+        "tier_3": {"type": "string", "minLength": 100}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 750}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 10},
+        "result_id": {"type": "string", "minLength": 10},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "nonzero_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "row_id", "coefficient"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 53},
+        "row_id": {"type": "string", "minLength": 5},
+        "coefficient": {"type": "string", "minLength": 1}
+      }
+    },
+    "zero54": {"type": "array", "minItems": 54, "maxItems": 54, "items": {"const": "0"}},
+    "zero26": {"type": "array", "minItems": 26, "maxItems": 26, "items": {"const": "0"}},
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["test_tier", "command", "elapsed_seconds", "status"],
+      "properties": {
+        "test_tier": {"const": 1},
+        "command": {"type": "string", "minLength": 30},
+        "elapsed_seconds": {"type": "number", "minimum": 0},
+        "status": {"const": "PASS"}
+      }
+    }
+  }
+}

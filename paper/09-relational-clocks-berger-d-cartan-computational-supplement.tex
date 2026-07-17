@@ -28,6 +28,10 @@ supports only the claim inside its declared phase space and boundary.  The
 working draft is not yet marked \texttt{THEOREM\_FROZEN}.
 \end{abstract}
 
+The authorship line describes the research archive.  Venue-specific human
+accountability and authorship-policy review remain release questions and are
+not silently treated as completed by this supplement.
+
 \section{Focused claim ledger}
 
 The authoritative machine-readable ledger is
@@ -35,7 +39,7 @@ The authoritative machine-readable ledger is
 The table below is its human-readable projection.
 
 \begin{center}
-\small
+\footnotesize
 \begin{tabularx}{\textwidth}{
   >{\raggedright\arraybackslash}p{0.09\textwidth}
   >{\raggedright\arraybackslash}p{0.34\textwidth}
@@ -50,8 +54,8 @@ energy inequalities & \path{POSITIVE_BERGER_CLOCK_BACKGROUND.json} \\
 \texttt{P09-C3} & Internal current, nonzero $Q_R$ and
 $\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\delta Q_R$ &
 \path{BERGER_CLOCK_REDUCED_CHARGE_SEED.json} \\
-\texttt{P09-C4} & Fixed-coupling lapse constraint, compact averaging and
-$\delta Q_R=0$ on every smooth allowed tangent &
+\texttt{P09-C4} & Fixed-coupling lapse constraint, compact averaging,
+$\delta Q_R=0$ and linear presymplectic nullity &
 \path{BERGER_FIXED_COUPLING_DELTA_CHARGE.json} \\
 \texttt{P09-C5} & Complete cyclic gauge-fixed $54$-row unary complex and
 support-local $54\to26$ contraction &
@@ -80,6 +84,33 @@ verifier rejects missing files, digest drift, a false required flag, a true
 forbidden downstream flag, or a manuscript claim identifier absent from both
 paper sources.
 
+An additional strategic cross-check is pinned separately by
+\path{BERGER_Q3_ACTION_SECTOR_CROSSCHECK.json}.  It supports the
+action-to-payload provenance of \texttt{P09-C8} in two exact sectors but does
+not replace the complete \path{BERGER_SUPPORT_LOCAL_Q3.json} certificate.
+
+\section{Invariant complex and component realization}
+
+The invariant retained complex consists of spatial diffeomorphism ghosts,
+the dressed symmetric metric, its antifield, and the spatial identity row,
+with component ranks
+\[
+ 3\longrightarrow10\longrightarrow10\longrightarrow3.
+\]
+The $54$-component gauge-fixed realization adds eight minimal clock,
+temporal-diffeomorphism and Weyl components and twenty nonminimal components:
+\[
+ 54=26+8+20=26+28.
+\]
+The exact degree decomposition is
+\[
+ 5z^{-1}+22+22z+5z^2.
+\]
+The retained $26$ components are the propagating/constraint endpoint of the
+support-local contraction; the complementary $28$ components form explicit
+contractible pairs.  This separation keeps the theorem invariant under a
+different ordering of the same gauge-fixed rows.
+
 \section{Exact operation inventory}
 
 \begin{center}
@@ -99,6 +130,20 @@ manifest plus $54$ deterministic gzip-compressed strict-JSON row chunks.
 Compression is storage only; the operation acts on arbitrary four-dimensional
 jets and is not a reduced-mode artifact.
 
+The Taylor normalization is
+\[
+ Q(\phi)=q_1(\phi)+\frac12q_2(\phi,\phi)
+ +\frac16q_3(\phi,\phi,\phi)+O(\phi^4),
+\]
+and the invariant producer contract is
+\[
+ \langle x_0,q_n(x_1,\ldots,x_n)\rangle_{\rm BV}
+ =\partial_{t_0}\cdots\partial_{t_n}
+ S_{\rm BV}[\bar\Phi+\textstyle\sum t_ix_i]\big|_{t=0}.
+\]
+The PBW payload is therefore an implementation of a variationally defined
+operation, not its definition.
+
 The recorded $q_3$ Tier-2 stages are:
 \begin{enumerate}
 \item action differentiation on the raw minimal complex;
@@ -111,6 +156,52 @@ and $D$ derivation;
 The independent consumer audits the frozen operation but does not independently
 rederive the Bach--clock expansion from the action.  The paper states this
 distinction explicitly.
+
+\section{Independent action-to-q3 sector check}
+
+The targeted second route writes the homogeneous reduced density independently
+in
+\[
+ h=\widehat h_{00},\qquad r=R,qquad
+ N=\sqrt{1-h-2r},\qquad k=1-2r,qquad\rho=1+r,
+\]
+as
+\[
+ \mathcal L(h,r)=Nk^{3/2}\left[
+ \frac{\alpha_B\bar C^2}{8k^2}
+ +\frac{\rho^2\omega^2}{2N^2}
+ -\frac{\bar R\rho^2}{12k}-\frac{\lambda\rho^4}{4}
+ \right].
+\]
+It imports neither the jet classes nor the $q_3$ producer.  In the frozen
+twice-Euler-density convention, the direct fourth derivatives give
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Output & $h^0r^3$ & $h^1r^2$ & $h^2r^1$ & $h^3r^0$\\
+\midrule
+$\widehat h^*_{00}$ & $-27$ & $27/8$ & $81/16$ & $405/128$\\
+$R^*$ & $-1071/40$ & $-27$ & $27/8$ & $81/16$\\
+\bottomrule
+\end{tabular}
+\end{center}
+All sixteen ordered permutations agree with the published row chunks.  This
+is a genuine action-to-payload cross-check in the lapse and dressed
+radial/Weyl directions.  It does not independently regenerate the remaining
+millions of coefficients, and the certificate forbids that broader reading.
+
+\section{Causal domains}
+
+The unary maps have the typed domains
+\[
+ \Lambda_{54,\pm}:\Gamma_c(\mathcal C_{54})
+ \longrightarrow\Gamma_{J^\pm}(\mathcal C_{54})[-1].
+\]
+The local Taylor operations preserve intersections of input supports.  The
+cyclic higher primitives use both time orientations and land in the
+two-sided causal hull.  They are not the causal difference
+$\Lambda_+-\Lambda_-$ and are not claimed to be separately retarded or
+advanced.
 
 \section{Cartan sign and support audit}
 
@@ -165,6 +256,14 @@ PYTHONPATH=. pytest -q \
   test_berger_causal_d_cartan_arity_three.py \
   d_quotient_classical/backreacted_clock/tests/\
   test_paper_09_claim_table.py
+
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  berger_q3_action_sector_crosscheck.py --check --guards
+
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_q3_action_sector_crosscheck.py
 \end{verbatim}
 
 The complete $q_3$ derivation is not part of this fast rail.  Its recorded
@@ -181,6 +280,7 @@ not promote any of the following:
 \begin{itemize}
 \item all-orders nonlinear $D$-Cartan contraction;
 \item arity-four closure;
+\item an integrated nonlinear gauge quotient or global complete observable;
 \item a general-background nonlinear Koszul--Tate export;
 \item Hadamard or Feynman two-point functions;
 \item renormalized composites, anomaly cancellation or the quantum master
@@ -198,10 +298,15 @@ This draft may be promoted to \texttt{THEOREM\_FROZEN} only when:
 \begin{enumerate}
 \item every pinned certificate and independent verifier passes from a clean
 committed tree;
+\item the release manifest records the source commit, operating system,
+Python, SymPy, JSON Schema and pytest versions, and distinguishes the fast and
+heavy rails;
 \item the JSON claim ledger, this table and the manuscript theorem have no
 missing or broadened dependency;
 \item the nonlinear team independently imports the frozen $q_2$, $q_3$ and
 arity-three Cartan hashes and signs off Sections 6--7;
+\item the action-to-$q_3$ strategic cross-check remains exact and is described
+as partial rather than a full second producer;
 \item the abstract, theorem and conclusion retain the classical,
 fixed-coupling, compact-Berger and arity-three limitations;
 \item the compiled main paper and supplement are reproduced from a clean

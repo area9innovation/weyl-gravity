@@ -16,6 +16,7 @@ OUTPUT = CERTIFICATE_DIR / "PAPER_09_BERGER_CLAIM_TABLE.json"
 SCHEMA = ROOT / "d_quotient_classical/schema/paper-09-berger-claim-table-v1.schema.json"
 MAIN_PAPER = ROOT / "paper/09-relational-clocks-berger-d-cartan.tex"
 SUPPLEMENT = ROOT / "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex"
+Q3_CROSSCHECK = CERTIFICATE_DIR / "BERGER_Q3_ACTION_SECTOR_CROSSCHECK.json"
 
 
 CLAIMS = (
@@ -54,7 +55,7 @@ CLAIMS = (
     {
         "claim_id": "P09-C4",
         "paper_sections": ["3"],
-        "claim": "At fixed couplings delta Q_R vanishes on every smooth allowed linearized tangent, so D is gauge in the declared compact phase space.",
+        "claim": "At fixed couplings delta Q_R vanishes on every smooth allowed linearized tangent, so D is presymplectically null in the declared compact phase space.",
         "certificate": "BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
         "required_true": [
             "flags.homogeneous_lapse_constraint_exact",
@@ -187,6 +188,23 @@ def build() -> dict[str, object]:
                 "certificate_claim_boundary": payload["claim_boundary"],
             }
         )
+    crosscheck = _read(Q3_CROSSCHECK)
+    crosscheck_required_true = [
+        "flags.BERGER_Q3_ACTION_SECTOR_CROSSCHECK",
+        "exact_checks.all_eight_action_derivatives_match",
+        "exact_checks.all_sixteen_ordered_payload_coefficients_match",
+        "exact_checks.q3_producer_not_imported",
+    ]
+    crosscheck_required_false = [
+        "flags.FULL_INDEPENDENT_Q3_REDERIVATION",
+        "flags.THEOREM_FROZEN",
+    ]
+    for dotted in crosscheck_required_true:
+        if _lookup(crosscheck, dotted) is not True:
+            raise AssertionError(f"q3 cross-check required true field failed: {dotted}")
+    for dotted in crosscheck_required_false:
+        if _lookup(crosscheck, dotted) is not False:
+            raise AssertionError(f"q3 cross-check required false field failed: {dotted}")
     return {
         "schema": "pure-weyl-paper-09-berger-claim-table-v1",
         "result_id": "PAPER_09_BERGER_CLAIM_TABLE",
@@ -196,9 +214,20 @@ def build() -> dict[str, object]:
             str(MAIN_PAPER.relative_to(ROOT)): _sha256(MAIN_PAPER),
             str(SUPPLEMENT.relative_to(ROOT)): _sha256(SUPPLEMENT),
         },
-        "setting": "compact positive Berger clock; fixed couplings; smooth classical phase space; BV Taylor order through arity three",
+        "setting": "open compact positive Berger S1 clock family for the background and fixed-coupling linear nullity; exact rational q=9/40 representative for the 54-row classical BV Taylor and Cartan results through arity three",
         "claims": claims,
         "claim_ids_complete": [spec["claim_id"] for spec in CLAIMS],
+        "independent_cross_checks": [
+            {
+                "supports_claim": "P09-C8",
+                "certificate_path": str(Q3_CROSSCHECK.relative_to(ROOT)),
+                "certificate_result_id": crosscheck["result_id"],
+                "certificate_sha256": _sha256(Q3_CROSSCHECK),
+                "certificate_claim_boundary": crosscheck["claim_boundary"],
+                "required_true": crosscheck_required_true,
+                "required_false": crosscheck_required_false,
+            }
+        ],
         "required_signoffs": {
             "classical_team": "DRAFTED",
             "nonlinear_team": "PENDING_ARITY_THREE_INTERPRETATION_REVIEW",
@@ -212,9 +241,11 @@ def build() -> dict[str, object]:
             "anomaly cancellation",
             "positive graviton Hilbert space",
             "boundary or asymptotic charge theorem",
+            "integrated nonlinear D quotient",
+            "global complete relational observable",
         ],
         "next_gate": "PAPER_09_NONLINEAR_SIGNOFF_AND_CLEAN_TREE_REPLAY",
-        "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates. It does not freeze the theorem or promote any quantum, all-orders, Hadamard, boundary, scattering, or unitarity claim.",
+        "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates and one strategic independent action-to-q3 sector cross-check. It proves linear presymplectic nullity and a classical Cartan identity through arity three; it does not freeze the theorem or promote an integrated nonlinear quotient, global complete observable, full second q3 derivation, quantum, all-orders, Hadamard, boundary, scattering, or unitarity claim.",
     }
 
 
@@ -244,6 +275,17 @@ def verify(payload: dict[str, object]) -> None:
         for dotted in entry["required_false"]:
             if _lookup(certificate, dotted) is not False:
                 raise AssertionError(f"{entry['claim_id']}: forbidden promotion detected")
+    for entry in payload["independent_cross_checks"]:
+        path = ROOT / entry["certificate_path"]
+        if _sha256(path) != entry["certificate_sha256"]:
+            raise AssertionError("independent cross-check hash drifted")
+        certificate = _read(path)
+        for dotted in entry["required_true"]:
+            if _lookup(certificate, dotted) is not True:
+                raise AssertionError(f"cross-check required true flag drifted: {dotted}")
+        for dotted in entry["required_false"]:
+            if _lookup(certificate, dotted) is not False:
+                raise AssertionError(f"cross-check scope promotion detected: {dotted}")
 
 
 def _text(value: object) -> str:
