@@ -415,7 +415,7 @@ for the outward-facing two-page note.
 | B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
 | B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |
 | C1 | Mannheim/PT, Fock-BRST, and causal-BV benchmark — quantum with nonlinear | common-fixture comparison of state, metric, Jordan modes, BRST descent, and first vertex | QME and a common Lorentzian/asymptotic state space |
-| C2 | Closed-universe state collapse and observer-relative physics — quantum with classical-clock support | a typed comparison of the global quotient, observer algebra, and relational observables, followed by one common closed-universe fixture | literature/dictionary audit now; theorem comparison only after a BRST-compatible quantum state and QME disposition |
+| C2 | [Closed-universe state collapse and observer-relative physics](closed-universe-observer-team-brief.md) — quantum with classical-clock support | a typed comparison of the global quotient, observer algebra, and relational observables, followed by one common closed-universe fixture | literature/dictionary audit now; theorem comparison only after a BRST-compatible quantum state and QME disposition |
 
 The C2 comparison is promising precisely because it must not begin by
 identifying unlike objects.  Our current collapse is a classical/free BV
