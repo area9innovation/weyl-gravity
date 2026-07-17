@@ -108,7 +108,7 @@
       }
     ]
   },
-  "claim_boundary": "Certifies the exact temporal-order audit of the retained 26-row witness, rejects its singular uniform fourth-order reduction, and constructs the algebraic rank-52 second-order hybrid companion and rank-104 first-order Cauchy target. It distinguishes the real evolution generator A104 from the frequency operator H104=sqrt(-1) A104, freezes the Cauchy ordering, candidate mixed Sobolev scale, two-slot covariance lift and the conditional Riesz/Jordan and projector policies. It does not construct a closed A104 realization, prove spectral isolation, define a Riesz projector, split nonzero frequencies, construct a covariance or Hadamard state, prove positivity, restore a QME or make a quantum claim.",
+  "claim_boundary": "Certifies the exact temporal-order audit of the retained 26-row witness, rejects its singular uniform fourth-order reduction, and constructs the algebraic rank-52 second-order hybrid companion and rank-104 first-order Cauchy target. It distinguishes the real evolution generator A104 from the frequency operator H104=sqrt(-1) A104, freezes the Cauchy ordering, candidate mixed Sobolev scale, two-slot covariance lift and the conditional Riesz/Jordan and projector policies. It does not construct the full coefficientwise A104 matrix or its Cauchy BRST and pairing carriers, construct a closed realization, prove spectral isolation, define a Riesz projector, split nonzero frequencies, construct a covariance or Hadamard state, prove positivity, restore a QME or make a quantum claim.",
   "claim_flags": {
     "BERGER_26_ROW_BRST_HADAMARD": false,
     "BERGER_54_ROW_BRST_HADAMARD": false,
@@ -156,7 +156,7 @@
   "dependency_refs": {
     "Hadamard_lift_preflight": {
       "artifact_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
-      "sha256": "9b6cc3ace4f0cfb1432499b698df21ef2a505a35913aecb65945c513060f8876"
+      "sha256": "06a2356a207e4e8b0ca4821a25c5355c38f6540db25c416693d19f1e2cb58633"
     },
     "causal_26": {
       "artifact_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
@@ -188,7 +188,7 @@
     },
     "stationary_decomposability": {
       "artifact_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY",
-      "sha256": "8dc611b5abbe6c5d5b2fe44d92715625cda08ff7c4b377872ebda8d3b0287809"
+      "sha256": "fd154b541bbb67f8ac877011bd9d1aa12f96b40a4f408bdeab5157679c1c51b1"
     },
     "typed_Volterra": {
       "artifact_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2",
@@ -236,17 +236,17 @@
   },
   "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT",
   "minimal_missing_carrier": {
-    "carrier": "closed graded/Krein realization of A104 with a proved isolated-zero spectral calculus",
-    "status": "MINIMAL_MISSING_ANALYTIC_CARRIER",
+    "carrier": "coefficientwise hybrid C52/A104 operator, q_Cauchy prolongation and Cauchy Lagrange form, followed by a closed graded/Krein realization",
+    "status": "MISSING_ALGEBRAIC_THEN_ANALYTIC_CARRIERS",
     "unblocks": [
       "generalized zero/Jordan ledger",
       "finite-rank smooth zero-mode covariance",
       "nonzero positive/negative-frequency splitting",
       "BRST physical positivity or explicit Krein classification"
     ],
-    "why_minimal": "the differential pencil, companion ranks, time action, causal maps and 26-to-54 covariance lift are already certified"
+    "why_minimal": "the differential pencil fixes ranks and temporal order but does not export the full spatial coefficient matrix or its Cauchy BRST/pairing carriers"
   },
-  "next_gate": "BERGER_A104_CLOSED_GENERATOR_AND_ISOLATED_ZERO_THEOREM",
+  "next_gate": "BERGER_A104_CAUCHY_OPERATOR_PREFLIGHT",
   "nonzero_frequency_contract": {
     "full_nonzero_frequency_split": "NOT_COMPUTED",
     "reduced_Krein_evidence": "REDUCED-MODE_ONLY",
@@ -263,18 +263,18 @@
     "decomposability_result_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY",
     "lift_preflight_result_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
     "source_manifest": {
-      "../reports/berger-retained-stationary-spectral-preflight.md": "81dc3adf9270bc470afdd1d9dfe5ab6d663bf0ecbb00ed92b1097e4f2d36d28a",
-      "berger_retained_stationary_spectral_preflight.py": "3a6c2e4abc06422fb0c5f1daad20a2d86d1b293004039d65ed709ba19aeb9087",
-      "berger_retained_stationary_spectral_preflight_certificate.py": "166c014b6949319a66f61bf815e63019248a4a1d15272f517d7916091cf8aa69",
-      "schema/berger-retained-stationary-spectral-preflight-v2.schema.json": "7e4cc81059058c81b255d1ae59b0492a8e82c1e6ade721558ef353ce8d1cd719",
-      "tests/test_berger_retained_stationary_spectral_preflight.py": "5c3a42b0cabf5abc0d7a96021b1b58eedbc1c0f48ed2e5cc95bb24359f64137d",
-      "verify_berger_retained_stationary_spectral_preflight.py": "3197e18e78d14ca8ac69b88b351e8667b4663e2f53a8450f9333ab2bb3932576"
+      "../reports/berger-retained-stationary-spectral-preflight.md": "52b939a2e1cd622ac1570f49046bd5dcb12b0c1133ec6d912e2cce660ed93a7f",
+      "berger_retained_stationary_spectral_preflight.py": "bbd86f8d612306b3e8b2cf5cd512e5aaca159e1c4d54c8e714a1da8a65150485",
+      "berger_retained_stationary_spectral_preflight_certificate.py": "40ae1b1246d26e14187ca582d7c4742cfdaa0240a1877ce433d600d209c6daad",
+      "schema/berger-retained-stationary-spectral-preflight-v3.schema.json": "da68384ddfda70868c053beb533bee670b887d9eaa9ffa201e1ba84b7ee4cffc",
+      "tests/test_berger_retained_stationary_spectral_preflight.py": "91406df4116df668a9ad3bacebf69c7edefc487b5502d2d40428487cce26fb2a",
+      "verify_berger_retained_stationary_spectral_preflight.py": "21f01e5e358cdbf75fe01909c236ba28aab4a95fdcf7afd79ccd8c77a4283ad0"
     },
-    "source_manifest_sha256": "2bf7751ac061c0118b6336b41bb2b6b50e9511eb62105a03d99545ddbd433c64"
+    "source_manifest_sha256": "b24bd5dccd8bf24868bdcdcc927d902bc79afa9985505f554b644612b27a9d70"
   },
   "result_id": "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT",
-  "result_state": "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_CLOSED_REALIZATION_OPEN",
-  "schema": "quantum-weyl-berger-retained-stationary-spectral-preflight-v2",
+  "result_state": "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_COEFFICIENTWISE_A104_OPEN",
+  "schema": "quantum-weyl-berger-retained-stationary-spectral-preflight-v3",
   "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
   "spectral_isolation_contract": {
     "A104_spectrum_on_imaginary_axis": "NOT_COMPUTED",
@@ -316,11 +316,12 @@
     },
     "first_order_Cauchy_target": {
       "Cauchy_fibre_rank": 104,
+      "coefficientwise_spatial_matrix": "NOT_CONSTRUCTED",
       "formal_evolution": "partial_t Psi=A104 Psi",
       "frequency_operator": "H104=sqrt(-1) A104",
       "spectral_relation": "A104 Psi_omega=-sqrt(-1) omega Psi_omega iff H104 Psi_omega=omega Psi_omega",
       "stationary_mode": "Psi(t)=exp(-sqrt(-1) omega t) Psi_omega",
-      "status": "ALGEBRAIC_SIZE_AND_BLOCK_FORM_CERTIFIED_CLOSED_REALIZATION_OPEN",
+      "status": "ALGEBRAIC_SIZE_ORDERING_AND_FREQUENCY_CERTIFIED_COEFFICIENT_MATRIX_OPEN",
       "symbol": "A104"
     },
     "hybrid_second_order_companion": {

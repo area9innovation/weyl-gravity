@@ -62,9 +62,9 @@ H_{104}=iA_{104},
 H_{104}\Psi_\omega=\omega\Psi_\omega.
 \]
 
-Positive frequency means the positive spectral part of (H_{104}), not of
-(A_{104}). Complex conjugation commutes with the real generator
-(A_{104}), anticommutes with (H_{104}), and exchanges frequencies
+Positive frequency means the positive spectral part of \(H_{104}\), not of
+\(A_{104}\). Complex conjugation commutes with the real generator
+\(A_{104}\), anticommutes with \(H_{104}\), and exchanges frequencies
 (\omega\leftrightarrow-\omega). This agrees with the independently frozen
 flat kernel (e^{-i|p|\Delta t+i p\cdot\Delta x}).
 
@@ -101,8 +101,8 @@ E_0=\operatorname{ran}P_0
 \]
 
 Multiplication by (i) leaves the generalized zero space and its algebraic
-multiplicity unchanged; the (A_{104}) and (H_{104}) Riesz contours are
-rotations of one another. The nilpotent Jordan restriction on (E_0) must
+multiplicity unchanged; the \(A_{104}\) and \(H_{104}\) Riesz contours are
+rotations of one another. The nilpotent Jordan restriction on \(E_0\) must
 be computed, not only the ordinary kernel. A finite-rank smooth Riesz
 projector is permitted for state selection after isolation is proved; it
 remains forbidden in the causal advanced/retarded construction.
@@ -116,12 +116,17 @@ The covariance lift is also frozen in an unambiguous two-slot form,
 Its operator expression uses the separately certified cyclic adjoint
 identification \(\pi_{\rm cl}=\iota_{\rm cl}^{\sharp}\).
 
-The minimal missing carrier is therefore the closed graded/Krein realization
-of \(A_{104}\) together with an isolated-zero spectral calculus. Spectral
-reality is correctly phrased as imaginary-axis spectrum for (A_{104}), or
-real/definitizable spectrum for (H_{104}=iA_{104}); neither is proved. No
-Riesz projector, frequency splitting, covariance, Hadamard state,
-positivity, QME or quantum theorem is claimed.
+This receipt fixes the size, ordering and frequency convention, but not the
+coefficientwise spatial matrix of \(A_{104}\). The next gate must first
+extract the stationary \(K_2,K_1,K_0\) blocks, assemble the first-order
+operator, prolong the BRST differential to Cauchy data, and derive the
+Cauchy Lagrange form. Only after those algebraic carriers exist does the
+minimal missing problem become the closed graded/Krein realization and
+isolated-zero spectral calculus. Spectral reality is correctly phrased as
+imaginary-axis spectrum for \(A_{104}\), or real/definitizable spectrum for
+\(H_{104}=iA_{104}\); neither is proved. No Riesz projector, frequency
+splitting, covariance, Hadamard state, positivity, QME or quantum theorem is
+claimed.
 
 ```text
 PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_retained_stationary_spectral_preflight_certificate --check
@@ -136,11 +141,11 @@ Recorded 2026-07-17:
 - Tier 0: Python compilation, strict JSON-schema parsing, and
   `git diff --check` passed (under one second).
 - Tier 1: the independent verifier and 11 focused stationary-spectral tests
-  passed (0.7 seconds on the receipt host).
-- Tier 2: the affected eight-certificate Hadamard/companion chain was
-  regenerated (1.0 second), all eight freshness checks and independent
-  verifiers passed (3.9 seconds), and the 61 direct-consumer tests passed
-  (1.0 second).
+  passed as part of the combined Cauchy preflight run.
+- Tier 2: the affected nine-certificate Hadamard/companion/Cauchy chain was
+  regenerated in 9.9 seconds; all nine freshness checks passed in 11.559
+  seconds, all nine independent verifiers passed in 11.844 seconds, and the
+  68 direct-consumer tests passed in 21.247 seconds.
 - Tier 3 was not run: this is a convention/schema correction with fail-closed
   analytic claims, not a freeze, release, shared-core algebra change, or
   paper-theorem promotion.

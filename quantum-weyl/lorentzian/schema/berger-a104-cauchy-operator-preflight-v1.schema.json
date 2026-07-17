@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-a104-cauchy-operator-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "Cauchy_row_ledger", "metric_Cauchy_operators", "partial_A104_assembly", "minimal_missing_endpoint_carrier", "BRST_and_pairing_gate", "analytic_gate", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-a104-cauchy-operator-preflight-v1"},
+    "result_id": {"const": "BERGER_A104_CAUCHY_OPERATOR_PREFLIGHT"},
+    "result_state": {"const": "METRIC_A80_EXACT_ENDPOINT_A24_AND_CAUCHY_BRST_PAIRING_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stationary_spectral_preflight", "metric_lower_by_two_import", "endpoint_factor_import", "endpoint_contract", "retained_layout"],
+      "properties": {
+        "stationary_spectral_preflight": {"$ref": "#/$defs/dependency"},
+        "metric_lower_by_two_import": {"$ref": "#/$defs/dependency"},
+        "endpoint_factor_import": {"$ref": "#/$defs/dependency"},
+        "endpoint_contract": {"$ref": "#/$defs/dependency"},
+        "retained_layout": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "Cauchy_row_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rows", "degree_ranks", "pairing_partner_status", "checks"],
+      "properties": {
+        "rows": {"type": "array", "minItems": 104, "maxItems": 104, "items": {"$ref": "#/$defs/CauchyRow"}},
+        "degree_ranks": {"const": [12, 40, 40, 12]},
+        "pairing_partner_status": {"const": "NOT_DERIVED_REQUIRES_CAUCHY_LAGRANGE_FORM"},
+        "checks": {"$ref": "#/$defs/allTrue"}
+      }
+    },
+    "metric_Cauchy_operators": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metric", "metric_antifield"],
+      "properties": {
+        "metric": {"$ref": "#/$defs/sector"},
+        "metric_antifield": {"$ref": "#/$defs/sector"}
+      }
+    },
+    "partial_A104_assembly": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["certified_Cauchy_components", "certified_sectors", "missing_Cauchy_components", "missing_sectors", "full_A104_status"],
+      "properties": {
+        "certified_Cauchy_components": {"const": 80},
+        "certified_sectors": {"const": ["metric_A40", "metric_antifield_A40"]},
+        "missing_Cauchy_components": {"const": 24},
+        "missing_sectors": {"const": ["ghost_A12", "identity_A12"]},
+        "full_A104_status": {"const": "NOT_ASSEMBLED"}
+      }
+    },
+    "minimal_missing_endpoint_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "required_factor_record_ids", "required_format", "why_required", "forbidden_fallback"],
+      "properties": {
+        "status": {"const": "EXACTLY_IDENTIFIED"},
+        "required_factor_record_ids": {"const": ["F_spatial_K_spatial", "Box_1_spatial_covector", "F_spatial_K_spatial_formal_adjoint", "Box_1_spatial_covector_formal_adjoint"]},
+        "required_format": {"const": "JSON_EXACT_SPARSE_OPERATOR_WITH_SHAPE_ENTRIES_SHA256"},
+        "why_required": {"type": "string", "minLength": 1},
+        "forbidden_fallback": {"type": "string", "minLength": 1}
+      }
+    },
+    "BRST_and_pairing_gate": {
+      "const": {
+        "q26_input": "AVAILABLE",
+        "q52_companion_prolongation": "NOT_EXPORTED",
+        "q_Cauchy_104": "NOT_CONSTRUCTED",
+        "A104_q_Cauchy_commutator": "NOT_COMPUTED",
+        "spacetime_BV_pairing": "AVAILABLE",
+        "Cauchy_Lagrange_form": "NOT_CONSTRUCTED",
+        "Krein_skew_adjointness_A104": "NOT_COMPUTED"
+      }
+    },
+    "analytic_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["closed_generator_theorem_authorized", "reason", "eventual_route"],
+      "properties": {
+        "closed_generator_theorem_authorized": {"const": false},
+        "reason": {"type": "string", "minLength": 1},
+        "eventual_route": {"type": "string", "minLength": 1}
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "BERGER_METRIC_A40_CAUCHY_OPERATOR": true,
+        "BERGER_METRIC_ANTIFIELD_A40_CAUCHY_OPERATOR": true,
+        "BERGER_CAUCHY_ROW_LEDGER_104": true,
+        "BERGER_FULL_A104_CAUCHY_OPERATOR": false,
+        "BERGER_Q_CAUCHY_104": false,
+        "BERGER_CAUCHY_KREIN_FORM": false,
+        "BERGER_A104_CLOSED_GENERATOR": false,
+        "BERGER_A104_ZERO_ISOLATED": false,
+        "BERGER_HADAMARD_DATA": false,
+        "QUANTUM_CLAIM": false
+      }
+    },
+    "next_gate": {"const": "BERGER_ENDPOINT_FACTOR_OPERATOR_EXPORT_AND_CAUCHY_BRST_PROLONGATION"},
+    "provenance": {"type": "object", "minProperties": 5},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "allTrue": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {
+        "format": {"const": "JSON_EXACT_SPARSE_OPERATOR"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "CauchyRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "row_id", "origin_row_id", "block", "role", "degree", "parity", "Sobolev_exponent"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 103},
+        "row_id": {"type": "string", "minLength": 1},
+        "origin_row_id": {"type": "string", "minLength": 1},
+        "block": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "degree": {"enum": [-1, 0, 1, 2]},
+        "parity": {"enum": ["even", "odd"]},
+        "Sobolev_exponent": {"enum": ["s+1", "s", "s-1"]}
+      }
+    },
+    "sector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["second_order_companion_rank", "first_order_Cauchy_rank", "Cauchy_ordering", "endpoint_operator", "graph_companion", "temporal_leading_rank", "maximum_spatial_order_A40", "artifacts", "checks"],
+      "properties": {
+        "second_order_companion_rank": {"const": 20},
+        "first_order_Cauchy_rank": {"const": 40},
+        "Cauchy_ordering": {"const": "(configuration20,partial_t configuration20)"},
+        "endpoint_operator": {"type": "string", "minLength": 1},
+        "graph_companion": {"type": "string", "minLength": 1},
+        "temporal_leading_rank": {"const": 20},
+        "maximum_spatial_order_A40": {"type": "integer", "minimum": 0, "maximum": 2},
+        "artifacts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["K0", "K1", "K2", "K2_inverse", "A40"],
+          "properties": {
+            "K0": {"$ref": "#/$defs/artifact"},
+            "K1": {"$ref": "#/$defs/artifact"},
+            "K2": {"$ref": "#/$defs/artifact"},
+            "K2_inverse": {"$ref": "#/$defs/artifact"},
+            "A40": {"$ref": "#/$defs/artifact"}
+          }
+        },
+        "checks": {"$ref": "#/$defs/allTrue"}
+      }
+    }
+  }
+}

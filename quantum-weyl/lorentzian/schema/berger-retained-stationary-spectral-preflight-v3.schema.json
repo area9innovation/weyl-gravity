@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-stationary-spectral-preflight-v2.json",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-stationary-spectral-preflight-v3.json",
   "type": "object",
   "additionalProperties": false,
   "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "stationary_pencil_inventory", "Cauchy_ordering", "frequency_convention", "stationary_action_replay", "two_slot_covariance_lift", "closed_generator_contract", "spectral_isolation_contract", "generalized_zero_and_Riesz_policy", "nonzero_frequency_contract", "minimal_missing_carrier", "claim_flags", "next_gate", "provenance", "claim_boundary"],
   "properties": {
-    "schema": {"const": "quantum-weyl-berger-retained-stationary-spectral-preflight-v2"},
+    "schema": {"const": "quantum-weyl-berger-retained-stationary-spectral-preflight-v3"},
     "result_id": {"const": "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT"},
-    "result_state": {"const": "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_CLOSED_REALIZATION_OPEN"},
+    "result_state": {"const": "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_COEFFICIENTWISE_A104_OPEN"},
     "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
     "classical_commit": {"type": "string", "minLength": 40},
@@ -63,7 +63,7 @@
         "first_order_Cauchy_target": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["symbol", "frequency_operator", "Cauchy_fibre_rank", "formal_evolution", "stationary_mode", "spectral_relation", "status"],
+          "required": ["symbol", "frequency_operator", "Cauchy_fibre_rank", "formal_evolution", "stationary_mode", "spectral_relation", "coefficientwise_spatial_matrix", "status"],
           "properties": {
             "symbol": {"const": "A104"},
             "frequency_operator": {"const": "H104=sqrt(-1) A104"},
@@ -71,7 +71,8 @@
             "formal_evolution": {"const": "partial_t Psi=A104 Psi"},
             "stationary_mode": {"type": "string", "minLength": 1},
             "spectral_relation": {"type": "string", "minLength": 1},
-            "status": {"const": "ALGEBRAIC_SIZE_AND_BLOCK_FORM_CERTIFIED_CLOSED_REALIZATION_OPEN"}
+            "coefficientwise_spatial_matrix": {"const": "NOT_CONSTRUCTED"},
+            "status": {"const": "ALGEBRAIC_SIZE_ORDERING_AND_FREQUENCY_CERTIFIED_COEFFICIENT_MATRIX_OPEN"}
           }
         },
         "checks": {"$ref": "#/$defs/allTrue"}
@@ -208,7 +209,7 @@
         "carrier": {"type": "string", "minLength": 1},
         "why_minimal": {"type": "string", "minLength": 1},
         "unblocks": {"type": "array", "minItems": 4, "maxItems": 4},
-        "status": {"const": "MINIMAL_MISSING_ANALYTIC_CARRIER"}
+        "status": {"const": "MISSING_ALGEBRAIC_THEN_ANALYTIC_CARRIERS"}
       }
     },
     "claim_flags": {
@@ -231,7 +232,7 @@
         "QUANTUM_CLAIM": false
       }
     },
-    "next_gate": {"const": "BERGER_A104_CLOSED_GENERATOR_AND_ISOLATED_ZERO_THEOREM"},
+    "next_gate": {"const": "BERGER_A104_CAUCHY_OPERATOR_PREFLIGHT"},
     "provenance": {"type": "object", "minProperties": 8},
     "claim_boundary": {"type": "string", "minLength": 1}
   },

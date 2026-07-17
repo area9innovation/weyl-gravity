@@ -1,0 +1,1252 @@
+{
+  "BRST_and_pairing_gate": {
+    "A104_q_Cauchy_commutator": "NOT_COMPUTED",
+    "Cauchy_Lagrange_form": "NOT_CONSTRUCTED",
+    "Krein_skew_adjointness_A104": "NOT_COMPUTED",
+    "q26_input": "AVAILABLE",
+    "q52_companion_prolongation": "NOT_EXPORTED",
+    "q_Cauchy_104": "NOT_CONSTRUCTED",
+    "spacetime_BV_pairing": "AVAILABLE"
+  },
+  "Cauchy_row_ledger": {
+    "checks": {
+      "Cauchy_rows_104": true,
+      "configuration_rows_52": true,
+      "degrees_inherited": true,
+      "indices_contiguous": true,
+      "row_ids_unique": true
+    },
+    "degree_ranks": [
+      12,
+      40,
+      40,
+      12
+    ],
+    "pairing_partner_status": "NOT_DERIVED_REQUIRES_CAUCHY_LAGRANGE_FORM",
+    "rows": [
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "ghost_primary",
+        "degree": -1,
+        "index": 0,
+        "origin_row_id": "c_spatial_1",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "c_spatial_1"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "ghost_primary",
+        "degree": -1,
+        "index": 1,
+        "origin_row_id": "c_spatial_2",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "c_spatial_2"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "ghost_primary",
+        "degree": -1,
+        "index": 2,
+        "origin_row_id": "c_spatial_3",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "c_spatial_3"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "ghost_auxiliary",
+        "degree": -1,
+        "index": 3,
+        "origin_row_id": "c_spatial_1",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[c_spatial_1]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "ghost_auxiliary",
+        "degree": -1,
+        "index": 4,
+        "origin_row_id": "c_spatial_2",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[c_spatial_2]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "ghost_auxiliary",
+        "degree": -1,
+        "index": 5,
+        "origin_row_id": "c_spatial_3",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[c_spatial_3]"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 6,
+        "origin_row_id": "h_hat_00",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "h_hat_00"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 7,
+        "origin_row_id": "h_hat_01",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "h_hat_01"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 8,
+        "origin_row_id": "h_hat_02",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "h_hat_02"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 9,
+        "origin_row_id": "h_hat_03",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "h_hat_03"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 10,
+        "origin_row_id": "h_hat_11",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "h_hat_11"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 11,
+        "origin_row_id": "h_hat_12",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "h_hat_12"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 12,
+        "origin_row_id": "h_hat_13",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "h_hat_13"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 13,
+        "origin_row_id": "h_hat_22",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "h_hat_22"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 14,
+        "origin_row_id": "h_hat_23",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "h_hat_23"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 15,
+        "origin_row_id": "h_hat_33",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "h_hat_33"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 16,
+        "origin_row_id": "h_hat_00",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_00]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 17,
+        "origin_row_id": "h_hat_01",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_01]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 18,
+        "origin_row_id": "h_hat_02",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_02]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 19,
+        "origin_row_id": "h_hat_03",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_03]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 20,
+        "origin_row_id": "h_hat_11",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_11]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 21,
+        "origin_row_id": "h_hat_12",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_12]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 22,
+        "origin_row_id": "h_hat_13",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_13]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 23,
+        "origin_row_id": "h_hat_22",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_22]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 24,
+        "origin_row_id": "h_hat_23",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_23]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 25,
+        "origin_row_id": "h_hat_33",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_33]"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 26,
+        "origin_row_id": "h_hat_star_00",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "h_hat_star_00"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 27,
+        "origin_row_id": "h_hat_star_01",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "h_hat_star_01"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 28,
+        "origin_row_id": "h_hat_star_02",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "h_hat_star_02"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 29,
+        "origin_row_id": "h_hat_star_03",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "h_hat_star_03"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 30,
+        "origin_row_id": "h_hat_star_11",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "h_hat_star_11"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 31,
+        "origin_row_id": "h_hat_star_12",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "h_hat_star_12"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 32,
+        "origin_row_id": "h_hat_star_13",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "h_hat_star_13"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 33,
+        "origin_row_id": "h_hat_star_22",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "h_hat_star_22"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 34,
+        "origin_row_id": "h_hat_star_23",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "h_hat_star_23"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 35,
+        "origin_row_id": "h_hat_star_33",
+        "parity": "odd",
+        "role": "primary",
+        "row_id": "h_hat_star_33"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 36,
+        "origin_row_id": "h_hat_star_00",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_star_00]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 37,
+        "origin_row_id": "h_hat_star_01",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_star_01]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 38,
+        "origin_row_id": "h_hat_star_02",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_star_02]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 39,
+        "origin_row_id": "h_hat_star_03",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_star_03]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 40,
+        "origin_row_id": "h_hat_star_11",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_star_11]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 41,
+        "origin_row_id": "h_hat_star_12",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_star_12]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 42,
+        "origin_row_id": "h_hat_star_13",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_star_13]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 43,
+        "origin_row_id": "h_hat_star_22",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_star_22]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 44,
+        "origin_row_id": "h_hat_star_23",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_star_23]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 45,
+        "origin_row_id": "h_hat_star_33",
+        "parity": "odd",
+        "role": "auxiliary",
+        "row_id": "aux[h_hat_star_33]"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "identity_primary",
+        "degree": 2,
+        "index": 46,
+        "origin_row_id": "c_spatial_star_1",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "c_spatial_star_1"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "identity_primary",
+        "degree": 2,
+        "index": 47,
+        "origin_row_id": "c_spatial_star_2",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "c_spatial_star_2"
+      },
+      {
+        "Sobolev_exponent": "s+1",
+        "block": "identity_primary",
+        "degree": 2,
+        "index": 48,
+        "origin_row_id": "c_spatial_star_3",
+        "parity": "even",
+        "role": "primary",
+        "row_id": "c_spatial_star_3"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "identity_auxiliary",
+        "degree": 2,
+        "index": 49,
+        "origin_row_id": "c_spatial_star_1",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[c_spatial_star_1]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "identity_auxiliary",
+        "degree": 2,
+        "index": 50,
+        "origin_row_id": "c_spatial_star_2",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[c_spatial_star_2]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "identity_auxiliary",
+        "degree": 2,
+        "index": 51,
+        "origin_row_id": "c_spatial_star_3",
+        "parity": "even",
+        "role": "auxiliary",
+        "row_id": "aux[c_spatial_star_3]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "ghost_primary",
+        "degree": -1,
+        "index": 52,
+        "origin_row_id": "c_spatial_1",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[c_spatial_1]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "ghost_primary",
+        "degree": -1,
+        "index": 53,
+        "origin_row_id": "c_spatial_2",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[c_spatial_2]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "ghost_primary",
+        "degree": -1,
+        "index": 54,
+        "origin_row_id": "c_spatial_3",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[c_spatial_3]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "ghost_auxiliary",
+        "degree": -1,
+        "index": 55,
+        "origin_row_id": "c_spatial_1",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[c_spatial_1]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "ghost_auxiliary",
+        "degree": -1,
+        "index": 56,
+        "origin_row_id": "c_spatial_2",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[c_spatial_2]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "ghost_auxiliary",
+        "degree": -1,
+        "index": 57,
+        "origin_row_id": "c_spatial_3",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[c_spatial_3]]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 58,
+        "origin_row_id": "h_hat_00",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_00]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 59,
+        "origin_row_id": "h_hat_01",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_01]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 60,
+        "origin_row_id": "h_hat_02",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_02]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 61,
+        "origin_row_id": "h_hat_03",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_03]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 62,
+        "origin_row_id": "h_hat_11",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_11]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 63,
+        "origin_row_id": "h_hat_12",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_12]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 64,
+        "origin_row_id": "h_hat_13",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_13]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 65,
+        "origin_row_id": "h_hat_22",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_22]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 66,
+        "origin_row_id": "h_hat_23",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_23]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_primary",
+        "degree": 0,
+        "index": 67,
+        "origin_row_id": "h_hat_33",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_33]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 68,
+        "origin_row_id": "h_hat_00",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_00]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 69,
+        "origin_row_id": "h_hat_01",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_01]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 70,
+        "origin_row_id": "h_hat_02",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_02]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 71,
+        "origin_row_id": "h_hat_03",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_03]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 72,
+        "origin_row_id": "h_hat_11",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_11]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 73,
+        "origin_row_id": "h_hat_12",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_12]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 74,
+        "origin_row_id": "h_hat_13",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_13]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 75,
+        "origin_row_id": "h_hat_22",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_22]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 76,
+        "origin_row_id": "h_hat_23",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_23]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_auxiliary",
+        "degree": 0,
+        "index": 77,
+        "origin_row_id": "h_hat_33",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_33]]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 78,
+        "origin_row_id": "h_hat_star_00",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_star_00]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 79,
+        "origin_row_id": "h_hat_star_01",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_star_01]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 80,
+        "origin_row_id": "h_hat_star_02",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_star_02]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 81,
+        "origin_row_id": "h_hat_star_03",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_star_03]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 82,
+        "origin_row_id": "h_hat_star_11",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_star_11]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 83,
+        "origin_row_id": "h_hat_star_12",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_star_12]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 84,
+        "origin_row_id": "h_hat_star_13",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_star_13]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 85,
+        "origin_row_id": "h_hat_star_22",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_star_22]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 86,
+        "origin_row_id": "h_hat_star_23",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_star_23]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "metric_antifield_primary",
+        "degree": 1,
+        "index": 87,
+        "origin_row_id": "h_hat_star_33",
+        "parity": "odd",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[h_hat_star_33]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 88,
+        "origin_row_id": "h_hat_star_00",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_star_00]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 89,
+        "origin_row_id": "h_hat_star_01",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_star_01]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 90,
+        "origin_row_id": "h_hat_star_02",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_star_02]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 91,
+        "origin_row_id": "h_hat_star_03",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_star_03]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 92,
+        "origin_row_id": "h_hat_star_11",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_star_11]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 93,
+        "origin_row_id": "h_hat_star_12",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_star_12]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 94,
+        "origin_row_id": "h_hat_star_13",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_star_13]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 95,
+        "origin_row_id": "h_hat_star_22",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_star_22]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 96,
+        "origin_row_id": "h_hat_star_23",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_star_23]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "metric_antifield_auxiliary",
+        "degree": 1,
+        "index": 97,
+        "origin_row_id": "h_hat_star_33",
+        "parity": "odd",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[h_hat_star_33]]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "identity_primary",
+        "degree": 2,
+        "index": 98,
+        "origin_row_id": "c_spatial_star_1",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[c_spatial_star_1]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "identity_primary",
+        "degree": 2,
+        "index": 99,
+        "origin_row_id": "c_spatial_star_2",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[c_spatial_star_2]"
+      },
+      {
+        "Sobolev_exponent": "s",
+        "block": "identity_primary",
+        "degree": 2,
+        "index": 100,
+        "origin_row_id": "c_spatial_star_3",
+        "parity": "even",
+        "role": "velocity_of_primary",
+        "row_id": "partial_t[c_spatial_star_3]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "identity_auxiliary",
+        "degree": 2,
+        "index": 101,
+        "origin_row_id": "c_spatial_star_1",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[c_spatial_star_1]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "identity_auxiliary",
+        "degree": 2,
+        "index": 102,
+        "origin_row_id": "c_spatial_star_2",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[c_spatial_star_2]]"
+      },
+      {
+        "Sobolev_exponent": "s-1",
+        "block": "identity_auxiliary",
+        "degree": 2,
+        "index": 103,
+        "origin_row_id": "c_spatial_star_3",
+        "parity": "even",
+        "role": "velocity_of_auxiliary",
+        "row_id": "partial_t[aux[c_spatial_star_3]]"
+      }
+    ]
+  },
+  "analytic_gate": {
+    "closed_generator_theorem_authorized": false,
+    "eventual_route": "identify the explicit A104 on a smooth core with the stationary C0 evolution, prove Dom(A104)=E_(s+1), then use a nonempty resolvent and compact embedding",
+    "reason": "the full coefficientwise A104, q_Cauchy and Cauchy boundary form must precede domain equality or Krein spectral claims"
+  },
+  "claim_boundary": "Constructs exact coefficientwise rank-40 Cauchy operators for the metric endpoint and an independent graph companion for its formal-adjoint endpoint, covering 80 of 104 Cauchy components. It freezes the inherited 104-row grading and Sobolev ledger and proves that four unexported endpoint factor matrices are the minimal carrier for the remaining 24 components. It does not assemble full A104, construct q_Cauchy or a Cauchy pairing, prove closedness, isolate zero, split frequencies, construct Hadamard data, restore a QME or make a quantum claim.",
+  "claim_flags": {
+    "BERGER_A104_CLOSED_GENERATOR": false,
+    "BERGER_A104_ZERO_ISOLATED": false,
+    "BERGER_CAUCHY_KREIN_FORM": false,
+    "BERGER_CAUCHY_ROW_LEDGER_104": true,
+    "BERGER_FULL_A104_CAUCHY_OPERATOR": false,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_METRIC_A40_CAUCHY_OPERATOR": true,
+    "BERGER_METRIC_ANTIFIELD_A40_CAUCHY_OPERATOR": true,
+    "BERGER_Q_CAUCHY_104": false,
+    "QUANTUM_CLAIM": false
+  },
+  "classical_commit": "eb56d5aff7d622de423d4994051b0e048c4fb4bf",
+  "dependency_refs": {
+    "endpoint_contract": {
+      "artifact_id": "BERGER_26_ROW_GREEN_HADAMARD_ENDPOINT_CONTRACT",
+      "sha256": "cf18c6a5f64ecc8c12cee9bec651839a8f9920be45ae2190dd8065ffe5621f81"
+    },
+    "endpoint_factor_import": {
+      "artifact_id": "BERGER_ENDPOINT_FACTOR_INPUT_IMPORT",
+      "sha256": "112233087194d90b8b6c775cbe826f64de00556d431bc762190bf8d0e7d5ea66"
+    },
+    "metric_lower_by_two_import": {
+      "artifact_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT",
+      "sha256": "9a01f82939b9a51adb1b348fffde5df6c71201dafc92e1967cc0556f5eed111d"
+    },
+    "retained_layout": {
+      "artifact_id": "BERGER_RETAINED_MINIMAL_LAYOUT",
+      "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
+    },
+    "stationary_spectral_preflight": {
+      "artifact_id": "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT",
+      "sha256": "fa7a78005af750cc487107099ec0b9e7e50bad6898a3d49b70fd80153f35d2a9"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT",
+  "metric_Cauchy_operators": {
+    "metric": {
+      "Cauchy_ordering": "(configuration20,partial_t configuration20)",
+      "artifacts": {
+        "A40": {
+          "format": "JSON_EXACT_SPARSE_OPERATOR",
+          "path": "quantum-weyl/lorentzian/generated/berger_a104_cauchy_operator_preflight/metric_A40.json",
+          "sha256": "f006cd7e48715d0edc9a4ea3cc24d4cf0acfd6d29b9f02a502d0611cd7ace46a"
+        },
+        "K0": {
+          "format": "JSON_EXACT_SPARSE_OPERATOR",
+          "path": "quantum-weyl/lorentzian/generated/berger_a104_cauchy_operator_preflight/metric_K0.json",
+          "sha256": "97cac0da6a656b635cf2971736716d7a4736922f49e2d141bd31dc9e965b85d6"
+        },
+        "K1": {
+          "format": "JSON_EXACT_SPARSE_OPERATOR",
+          "path": "quantum-weyl/lorentzian/generated/berger_a104_cauchy_operator_preflight/metric_K1.json",
+          "sha256": "c9ca71c1cf2dffaee9365c4c04e43d2120c917f4d41a914cee809d366aeb7134"
+        },
+        "K2": {
+          "format": "JSON_EXACT_SPARSE_OPERATOR",
+          "path": "quantum-weyl/lorentzian/generated/berger_a104_cauchy_operator_preflight/metric_K2.json",
+          "sha256": "e4b8b24fcb8c1617f3615c6bf13389aa4c4f60cddb5d4ec6e98f52e4813d4d07"
+        },
+        "K2_inverse": {
+          "format": "JSON_EXACT_SPARSE_OPERATOR",
+          "path": "quantum-weyl/lorentzian/generated/berger_a104_cauchy_operator_preflight/metric_K2_inverse.json",
+          "sha256": "24c99cba0d7a87e7b75c81829d57a8b5ff30a60e64e46acb5e2c9584df6eaee9"
+        }
+      },
+      "checks": {
+        "A40_spatial_order_at_most_two": true,
+        "K2_inverse_left": true,
+        "K2_inverse_right": true,
+        "K2_rank_20": true,
+        "first_order_equation_reconstructs_second_order": true,
+        "temporal_split_reconstructs_companion": true
+      },
+      "endpoint_operator": "A10=Box_2^2+V_2",
+      "first_order_Cauchy_rank": 40,
+      "graph_companion": "[[Box_2,-I10],[V_2,Box_2]]",
+      "maximum_spatial_order_A40": 2,
+      "second_order_companion_rank": 20,
+      "temporal_leading_rank": 20
+    },
+    "metric_antifield": {
+      "Cauchy_ordering": "(configuration20,partial_t configuration20)",
+      "artifacts": {
+        "A40": {
+          "format": "JSON_EXACT_SPARSE_OPERATOR",
+          "path": "quantum-weyl/lorentzian/generated/berger_a104_cauchy_operator_preflight/metric_antifield_A40.json",
+          "sha256": "b3faad7ba2155f16b003672a09659c7f3a7da9628a53e86f9b3c7d5585f21727"
+        },
+        "K0": {
+          "format": "JSON_EXACT_SPARSE_OPERATOR",
+          "path": "quantum-weyl/lorentzian/generated/berger_a104_cauchy_operator_preflight/metric_antifield_K0.json",
+          "sha256": "49f871cd280068c96acd3feb4580682f68c6a5dbda1e5a32846f0a92f17e6a0c"
+        },
+        "K1": {
+          "format": "JSON_EXACT_SPARSE_OPERATOR",
+          "path": "quantum-weyl/lorentzian/generated/berger_a104_cauchy_operator_preflight/metric_antifield_K1.json",
+          "sha256": "3215a3f013b5fc394d782299f07b16e505e8fc41e10552b60fdc6f2942963297"
+        },
+        "K2": {
+          "format": "JSON_EXACT_SPARSE_OPERATOR",
+          "path": "quantum-weyl/lorentzian/generated/berger_a104_cauchy_operator_preflight/metric_antifield_K2.json",
+          "sha256": "e4b8b24fcb8c1617f3615c6bf13389aa4c4f60cddb5d4ec6e98f52e4813d4d07"
+        },
+        "K2_inverse": {
+          "format": "JSON_EXACT_SPARSE_OPERATOR",
+          "path": "quantum-weyl/lorentzian/generated/berger_a104_cauchy_operator_preflight/metric_antifield_K2_inverse.json",
+          "sha256": "24c99cba0d7a87e7b75c81829d57a8b5ff30a60e64e46acb5e2c9584df6eaee9"
+        }
+      },
+      "checks": {
+        "A40_spatial_order_at_most_two": true,
+        "K2_inverse_left": true,
+        "K2_inverse_right": true,
+        "K2_rank_20": true,
+        "first_order_equation_reconstructs_second_order": true,
+        "temporal_split_reconstructs_companion": true
+      },
+      "endpoint_operator": "A10^sharp=(Box_2^sharp)^2+V_2^sharp",
+      "first_order_Cauchy_rank": 40,
+      "graph_companion": "[[Box_2^sharp,-I10],[V_2^sharp,Box_2^sharp]]",
+      "maximum_spatial_order_A40": 2,
+      "second_order_companion_rank": 20,
+      "temporal_leading_rank": 20
+    }
+  },
+  "minimal_missing_endpoint_carrier": {
+    "forbidden_fallback": "do not reconstruct the four factors independently from classical geometry inside quantum-weyl",
+    "required_factor_record_ids": [
+      "F_spatial_K_spatial",
+      "Box_1_spatial_covector",
+      "F_spatial_K_spatial_formal_adjoint",
+      "Box_1_spatial_covector_formal_adjoint"
+    ],
+    "required_format": "JSON_EXACT_SPARSE_OPERATOR_WITH_SHAPE_ENTRIES_SHA256",
+    "status": "EXACTLY_IDENTIFIED",
+    "why_required": "the factorization theorem fixes names and principal symbols but does not export the lower-order coefficient matrices needed for ghost_A12 and identity_A12"
+  },
+  "next_gate": "BERGER_ENDPOINT_FACTOR_OPERATOR_EXPORT_AND_CAUCHY_BRST_PROLONGATION",
+  "partial_A104_assembly": {
+    "certified_Cauchy_components": 80,
+    "certified_sectors": [
+      "metric_A40",
+      "metric_antifield_A40"
+    ],
+    "full_A104_status": "NOT_ASSEMBLED",
+    "missing_Cauchy_components": 24,
+    "missing_sectors": [
+      "ghost_A12",
+      "identity_A12"
+    ]
+  },
+  "provenance": {
+    "endpoint_result_id": "BERGER_ENDPOINT_FACTOR_INPUT_IMPORT",
+    "lower_result_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE_IMPORT",
+    "source_manifest": {
+      "../reports/berger-a104-cauchy-operator-preflight.md": "c9237d9b09db198fe85f1c1c7e2df8a6c7ecaf9dfeb206113b370f36ee4f8a52",
+      "../transfer/berger_gauge_fixed_nonminimal_import.py": "04fadba982dde6a55bb595e7d058dab8197373c76f042723ce08494cae793127",
+      "../transfer/berger_retained_q1_import.py": "42bd0f87efadced1a41b9f692c778202952273762ce50012ab380ca459a10fca",
+      "berger_a104_cauchy_operator_preflight.py": "220327c9a3438003e304cb5f54899d57c2e62500cf25c27a2f159338256e6cd8",
+      "berger_a104_cauchy_operator_preflight_certificate.py": "bde0447a85c4a26e5cf11d9c0d2605e9a4d2d4bb168edf6e5e45529600d210d3",
+      "metric_lower_by_two_biwave_import.py": "cb7c5a1b97c2b347ca427d4d937545c03a97a5526d42bba86bdfd70a6aeffff0",
+      "schema/berger-a104-cauchy-operator-preflight-v1.schema.json": "c20dacbd9d14f8a59ea7150ff676aa47d36c559f3d4983e86bc976e0c3e7b590",
+      "tests/test_berger_a104_cauchy_operator_preflight.py": "5e09fc863358bcd3b56a07bfd9cd60e6042c410908fddaccc6f87c3ca1bebbc0",
+      "verify_berger_a104_cauchy_operator_preflight.py": "a42efad0e2d04bad53e3db492ef02bc917802ea99dd5cebab74f6560ad4b0eeb"
+    },
+    "source_manifest_sha256": "9cfa0ab79fa51be4e673f04797e89b01e56bee59061dc9d4507aa9e3d70695a5",
+    "stationary_result_id": "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT"
+  },
+  "result_id": "BERGER_A104_CAUCHY_OPERATOR_PREFLIGHT",
+  "result_state": "METRIC_A80_EXACT_ENDPOINT_A24_AND_CAUCHY_BRST_PAIRING_OPEN",
+  "schema": "quantum-weyl-berger-a104-cauchy-operator-preflight-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+}

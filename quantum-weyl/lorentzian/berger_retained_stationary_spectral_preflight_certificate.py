@@ -25,7 +25,7 @@ def build_certificate() -> dict[str, object]:
         "berger_retained_stationary_spectral_preflight.py",
         "berger_retained_stationary_spectral_preflight_certificate.py",
         "verify_berger_retained_stationary_spectral_preflight.py",
-        "schema/berger-retained-stationary-spectral-preflight-v2.schema.json",
+        "schema/berger-retained-stationary-spectral-preflight-v3.schema.json",
         "tests/test_berger_retained_stationary_spectral_preflight.py",
         "../reports/berger-retained-stationary-spectral-preflight.md",
     )
@@ -53,7 +53,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("BERGER STATIONARY PENCIL: PASS, A104/H104 CONVENTION FROZEN, CLOSED REALIZATION OPEN")
+        print("BERGER STATIONARY PENCIL: PASS, A104/H104 FROZEN, COEFFICIENTWISE A104 OPEN")
     return 0
 
 

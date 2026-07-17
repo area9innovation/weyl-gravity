@@ -150,7 +150,8 @@ def stationary_pencil_replay(witness: dict[str, Any]) -> dict[str, Any]:
             "formal_evolution": "partial_t Psi=A104 Psi",
             "stationary_mode": "Psi(t)=exp(-sqrt(-1) omega t) Psi_omega",
             "spectral_relation": "A104 Psi_omega=-sqrt(-1) omega Psi_omega iff H104 Psi_omega=omega Psi_omega",
-            "status": "ALGEBRAIC_SIZE_AND_BLOCK_FORM_CERTIFIED_CLOSED_REALIZATION_OPEN",
+            "coefficientwise_spatial_matrix": "NOT_CONSTRUCTED",
+            "status": "ALGEBRAIC_SIZE_ORDERING_AND_FREQUENCY_CERTIFIED_COEFFICIENT_MATRIX_OPEN",
         },
         "checks": checks,
     }
@@ -373,9 +374,9 @@ def evaluate() -> dict[str, Any]:
         "flat_normalization": FLAT_NORMALIZATION,
     }
     result = {
-        "schema": "quantum-weyl-berger-retained-stationary-spectral-preflight-v2",
+        "schema": "quantum-weyl-berger-retained-stationary-spectral-preflight-v3",
         "result_id": "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT",
-        "result_state": "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_CLOSED_REALIZATION_OPEN",
+        "result_state": "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_COEFFICIENTWISE_A104_OPEN",
         "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT",
         "dependency_tags": [
             "LOCAL-ALGEBRAIC",
@@ -443,15 +444,15 @@ def evaluate() -> dict[str, Any]:
             "full_nonzero_frequency_split": "NOT_COMPUTED",
         },
         "minimal_missing_carrier": {
-            "carrier": "closed graded/Krein realization of A104 with a proved isolated-zero spectral calculus",
-            "why_minimal": "the differential pencil, companion ranks, time action, causal maps and 26-to-54 covariance lift are already certified",
+            "carrier": "coefficientwise hybrid C52/A104 operator, q_Cauchy prolongation and Cauchy Lagrange form, followed by a closed graded/Krein realization",
+            "why_minimal": "the differential pencil fixes ranks and temporal order but does not export the full spatial coefficient matrix or its Cauchy BRST/pairing carriers",
             "unblocks": [
                 "generalized zero/Jordan ledger",
                 "finite-rank smooth zero-mode covariance",
                 "nonzero positive/negative-frequency splitting",
                 "BRST physical positivity or explicit Krein classification",
             ],
-            "status": "MINIMAL_MISSING_ANALYTIC_CARRIER",
+            "status": "MISSING_ALGEBRAIC_THEN_ANALYTIC_CARRIERS",
         },
         "claim_flags": {
             "BERGER_RETAINED_HYBRID_STATIONARY_PENCIL": True,
@@ -471,7 +472,7 @@ def evaluate() -> dict[str, Any]:
             "LORENTZIAN_QME_RESTORED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "BERGER_A104_CLOSED_GENERATOR_AND_ISOLATED_ZERO_THEOREM",
+        "next_gate": "BERGER_A104_CAUCHY_OPERATOR_PREFLIGHT",
         "provenance": {
             "lift_preflight_result_id": inputs["lift_preflight"]["result_id"],
             "companion_result_id": inputs["companion"]["result_id"],
@@ -488,7 +489,8 @@ def evaluate() -> dict[str, Any]:
             "generator A104 from the frequency operator H104=sqrt(-1) A104, freezes "
             "the Cauchy ordering, candidate mixed Sobolev scale, two-slot covariance "
             "lift and the conditional Riesz/Jordan and projector policies. It does "
-            "not construct a closed A104 realization, prove spectral isolation, "
+            "not construct the full coefficientwise A104 matrix or its Cauchy BRST "
+            "and pairing carriers, construct a closed realization, prove spectral isolation, "
             "define a Riesz projector, split nonzero frequencies, construct a "
             "covariance or Hadamard state, prove positivity, restore a QME or make "
             "a quantum claim."
@@ -503,9 +505,9 @@ def validate(result: dict[str, Any]) -> None:
         result.get("result_id")
         != "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT"
         or result.get("result_state")
-        != "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_CLOSED_REALIZATION_OPEN"
+        != "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_COEFFICIENTWISE_A104_OPEN"
         or result.get("next_gate")
-        != "BERGER_A104_CLOSED_GENERATOR_AND_ISOLATED_ZERO_THEOREM"
+        != "BERGER_A104_CAUCHY_OPERATOR_PREFLIGHT"
     ):
         raise ValueError("stationary spectral preflight identity drifted")
     if not all(
@@ -546,7 +548,7 @@ def validate(result: dict[str, Any]) -> None:
         )
         != "NOT_COMPUTED"
         or result.get("minimal_missing_carrier", {}).get("status")
-        != "MINIMAL_MISSING_ANALYTIC_CARRIER"
+        != "MISSING_ALGEBRAIC_THEN_ANALYTIC_CARRIERS"
     ):
         raise ValueError("closed generator or spectral theorem was over-promoted")
     true_flags = {

@@ -188,11 +188,26 @@ therefore carried by `H104=i A104`, whose eigenvalue is `omega`.  Positive
 frequency refers to the positive spectral part of `H104`, and conjugation
 exchanges its positive and negative parts.  The differential pencil,
 stationary `D=e0`, candidate mixed Sobolev scale, and two-slot covariance
-lift are certified.  A common closed graded/Krein realization of `A104`,
-together with a parameter-elliptic/compact-resolvent/Fredholm or equivalent
-isolated-zero theorem, remains open.  Only after that theorem may a
+lift are certified.  The coefficientwise spatial matrix of `A104`, its
+Cauchy BRST prolongation, and its Cauchy Lagrange form must be constructed
+before a closed-generator theorem is attempted.  After those algebraic
+carriers land, a common closed graded/Krein realization, together with a
+parameter-elliptic/compact-resolvent/Fredholm or equivalent isolated-zero
+theorem, remains open.  Only after that theorem may a
 finite-rank smooth Riesz projector be used for state selection; no spectral
 projector is introduced into causal propagation.
+
+The coefficientwise Cauchy-operator preflight now closes the portable part
+of that algebraic gate.  Exact temporal splitting of the metric graph
+companion and the independent graph companion of its formal-adjoint endpoint
+produces two verified rank-40 first-order operators, covering 80 of the 104
+Cauchy components.  Ten exact sparse artifacts store their
+`K0,K1,K2,K2_inverse,A40` matrices.  The inherited 104-row degree, parity and
+Sobolev ledger is complete.  The remaining 24 ghost/identity Cauchy
+components are blocked precisely on four classical factor coefficient
+records that the existing endpoint contract marks requested but not
+exported.  `q_Cauchy_104` and the Cauchy Lagrange/Krein form are also open, so
+full `A104`, closedness, spectral isolation and Hadamard flags remain false.
 
 Reproduce the current contract receipt with:
 
@@ -244,4 +259,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_b
 PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_retained_stationary_spectral_preflight_certificate --check
 PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_retained_stationary_spectral_preflight
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_retained_stationary_spectral_preflight.py -v
+PYTHONPATH=quantum-weyl python3 -m lorentzian.berger_a104_cauchy_operator_preflight_certificate --check
+PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_berger_a104_cauchy_operator_preflight
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/lorentzian/tests/test_berger_a104_cauchy_operator_preflight.py -v
 ```

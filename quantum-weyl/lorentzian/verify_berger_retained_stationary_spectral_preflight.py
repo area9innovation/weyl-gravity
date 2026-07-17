@@ -33,7 +33,7 @@ from .berger_retained_stationary_spectral_preflight_certificate import HERE, OUT
 def verify() -> dict:
     certificate = json.loads(OUTPUT.read_text())
     schema = json.loads(
-        (HERE / "schema/berger-retained-stationary-spectral-preflight-v2.schema.json").read_text()
+        (HERE / "schema/berger-retained-stationary-spectral-preflight-v3.schema.json").read_text()
     )
     errors = validate_instance(certificate, schema)
     if errors:

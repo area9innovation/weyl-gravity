@@ -22,7 +22,7 @@ class BergerRetainedStationarySpectralPreflightTests(unittest.TestCase):
     def test_reproduces_and_validates_strict_schema(self) -> None:
         self.assertEqual(json.loads(OUTPUT.read_text()), self.certificate)
         schema = json.loads(
-            (HERE / "schema/berger-retained-stationary-spectral-preflight-v2.schema.json").read_text()
+            (HERE / "schema/berger-retained-stationary-spectral-preflight-v3.schema.json").read_text()
         )
         self.assertFalse(validate_instance(self.certificate, schema))
 
@@ -100,13 +100,21 @@ class BergerRetainedStationarySpectralPreflightTests(unittest.TestCase):
         self.assertIn("no spectral projector", policy["causal_projector_policy"])
         self.assertIn("isolation is proved", policy["state_projector_policy"])
 
-    def test_minimal_missing_carrier_is_closed_A104(self) -> None:
+    def test_next_gate_is_coefficientwise_A104_before_closedness(self) -> None:
         missing = self.certificate["minimal_missing_carrier"]
-        self.assertEqual(missing["status"], "MINIMAL_MISSING_ANALYTIC_CARRIER")
+        self.assertEqual(
+            missing["status"], "MISSING_ALGEBRAIC_THEN_ANALYTIC_CARRIERS"
+        )
         self.assertIn("A104", missing["carrier"])
         self.assertEqual(
             self.certificate["next_gate"],
-            "BERGER_A104_CLOSED_GENERATOR_AND_ISOLATED_ZERO_THEOREM",
+            "BERGER_A104_CAUCHY_OPERATOR_PREFLIGHT",
+        )
+        self.assertEqual(
+            self.certificate["stationary_pencil_inventory"][
+                "first_order_Cauchy_target"
+            ]["coefficientwise_spatial_matrix"],
+            "NOT_CONSTRUCTED",
         )
 
     def test_spectral_and_Hadamard_overclaims_fail_closed(self) -> None:
