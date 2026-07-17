@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-stationary-spectral-preflight-v1.json",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-stationary-spectral-preflight-v2.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "stationary_pencil_inventory", "stationary_action_replay", "two_slot_covariance_lift", "closed_generator_contract", "spectral_isolation_contract", "generalized_zero_and_Riesz_policy", "nonzero_frequency_contract", "minimal_missing_carrier", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "stationary_pencil_inventory", "Cauchy_ordering", "frequency_convention", "stationary_action_replay", "two_slot_covariance_lift", "closed_generator_contract", "spectral_isolation_contract", "generalized_zero_and_Riesz_policy", "nonzero_frequency_contract", "minimal_missing_carrier", "claim_flags", "next_gate", "provenance", "claim_boundary"],
   "properties": {
-    "schema": {"const": "quantum-weyl-berger-retained-stationary-spectral-preflight-v1"},
+    "schema": {"const": "quantum-weyl-berger-retained-stationary-spectral-preflight-v2"},
     "result_id": {"const": "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT"},
-    "result_state": {"const": "HYBRID_STATIONARY_PENCIL_CERTIFIED_CLOSED_SPECTRAL_REALIZATION_OPEN"},
+    "result_state": {"const": "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_CLOSED_REALIZATION_OPEN"},
     "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
     "classical_commit": {"type": "string", "minLength": 40},
@@ -15,7 +15,7 @@
     "dependency_refs": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["Hadamard_lift_preflight", "retained_companion", "stationary_decomposability", "causal_witness", "typed_Volterra", "causal_26", "local_D_action", "gauge_fixed_contraction", "reduced_Krein"],
+      "required": ["Hadamard_lift_preflight", "retained_companion", "stationary_decomposability", "causal_witness", "typed_Volterra", "causal_26", "local_D_action", "gauge_fixed_contraction", "reduced_Krein", "flat_normalization"],
       "properties": {
         "Hadamard_lift_preflight": {"$ref": "#/$defs/dependency"},
         "retained_companion": {"$ref": "#/$defs/dependency"},
@@ -25,7 +25,8 @@
         "causal_26": {"$ref": "#/$defs/dependency"},
         "local_D_action": {"$ref": "#/$defs/dependency"},
         "gauge_fixed_contraction": {"$ref": "#/$defs/dependency"},
-        "reduced_Krein": {"$ref": "#/$defs/dependency"}
+        "reduced_Krein": {"$ref": "#/$defs/dependency"},
+        "flat_normalization": {"$ref": "#/$defs/dependency"}
       }
     },
     "stationary_pencil_inventory": {
@@ -62,14 +63,45 @@
         "first_order_Cauchy_target": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["symbol", "Cauchy_fibre_rank", "formal_evolution", "status"],
+          "required": ["symbol", "frequency_operator", "Cauchy_fibre_rank", "formal_evolution", "stationary_mode", "spectral_relation", "status"],
           "properties": {
             "symbol": {"const": "A104"},
+            "frequency_operator": {"const": "H104=sqrt(-1) A104"},
             "Cauchy_fibre_rank": {"const": 104},
             "formal_evolution": {"const": "partial_t Psi=A104 Psi"},
+            "stationary_mode": {"type": "string", "minLength": 1},
+            "spectral_relation": {"type": "string", "minLength": 1},
             "status": {"const": "ALGEBRAIC_SIZE_AND_BLOCK_FORM_CERTIFIED_CLOSED_REALIZATION_OPEN"}
           }
         },
+        "checks": {"$ref": "#/$defs/allTrue"}
+      }
+    },
+    "Cauchy_ordering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordering", "configuration_blocks", "velocity_blocks", "checks"],
+      "properties": {
+        "ordering": {"const": "Psi104=(Phi52,partial_t Phi52)"},
+        "configuration_blocks": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/CauchyBlock"}},
+        "velocity_blocks": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/CauchyBlock"}},
+        "checks": {"$ref": "#/$defs/allTrue"}
+      }
+    },
+    "frequency_convention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evolution_generator", "frequency_operator", "mode_convention", "eigenvalue_dictionary", "positive_frequency_policy", "conjugation_policy", "zero_frequency_policy", "Krein_adjoint_target", "flat_normalization_result_id", "checks"],
+      "properties": {
+        "evolution_generator": {"const": "A104 in partial_t Psi=A104 Psi"},
+        "frequency_operator": {"const": "H104=sqrt(-1) A104"},
+        "mode_convention": {"type": "string", "minLength": 1},
+        "eigenvalue_dictionary": {"const": {"A104": "-sqrt(-1) omega", "H104": "omega"}},
+        "positive_frequency_policy": {"type": "string", "minLength": 1},
+        "conjugation_policy": {"type": "string", "minLength": 1},
+        "zero_frequency_policy": {"type": "string", "minLength": 1},
+        "Krein_adjoint_target": {"type": "string", "minLength": 1},
+        "flat_normalization_result_id": {"const": "BERGER_FLAT_HADAMARD_NORMALIZATION"},
         "checks": {"$ref": "#/$defs/allTrue"}
       }
     },
@@ -101,41 +133,72 @@
     },
     "closed_generator_contract": {
       "type": "object",
-      "required": ["algebraic_target", "metric_energy_space_input", "required_common_space", "required_domain", "required_adjoint", "required_intertwiners", "closed_realization_status"],
+      "additionalProperties": false,
+      "required": ["algebraic_target", "metric_energy_space_input", "candidate_energy_scale", "required_common_space", "required_domain", "required_adjoint", "required_intertwiners", "closed_realization_status"],
       "properties": {
+        "algebraic_target": {"type": "string", "minLength": 1},
+        "metric_energy_space_input": {"type": "object"},
+        "candidate_energy_scale": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["E_s", "candidate_graph_domain", "configuration_ordering_reference", "status"],
+          "properties": {
+            "E_s": {"type": "string", "minLength": 1},
+            "candidate_graph_domain": {"const": "Dom(A104)=E_(s+1) densely embedded in E_s"},
+            "configuration_ordering_reference": {"const": "Cauchy_ordering"},
+            "status": {"const": "CANDIDATE_NOT_CLOSED_REALIZATION"}
+          }
+        },
+        "required_common_space": {"type": "string", "minLength": 1},
+        "required_domain": {"type": "string", "minLength": 1},
+        "required_adjoint": {"type": "string", "minLength": 1},
         "closed_realization_status": {"const": "NOT_CONSTRUCTED"},
         "required_intertwiners": {"type": "array", "minItems": 3, "maxItems": 3}
-      },
-      "additionalProperties": true
+      }
     },
     "spectral_isolation_contract": {
       "type": "object",
-      "required": ["acceptable_routes", "current_compact_spatial_input", "not_implied", "zero_isolated", "compact_resolvent_or_Fredholm", "nonzero_spectrum_real_or_definitizable"],
+      "additionalProperties": false,
+      "required": ["acceptable_routes", "parameter_elliptic_route", "current_compact_spatial_input", "not_implied", "zero_isolated", "compact_resolvent_or_Fredholm", "A104_spectrum_on_imaginary_axis", "H104_spectrum_real_or_definitizable"],
       "properties": {
         "acceptable_routes": {"type": "array", "minItems": 3, "maxItems": 3},
+        "parameter_elliptic_route": {"type": "string", "minLength": 1},
+        "current_compact_spatial_input": {"type": "string", "minLength": 1},
+        "not_implied": {"type": "string", "minLength": 1},
         "zero_isolated": {"const": "NOT_COMPUTED"},
         "compact_resolvent_or_Fredholm": {"const": "NOT_COMPUTED"},
-        "nonzero_spectrum_real_or_definitizable": {"const": "NOT_COMPUTED"}
-      },
-      "additionalProperties": true
+        "A104_spectrum_on_imaginary_axis": {"const": "NOT_COMPUTED"},
+        "H104_spectrum_real_or_definitizable": {"const": "NOT_COMPUTED"}
+      }
     },
     "generalized_zero_and_Riesz_policy": {
       "type": "object",
+      "additionalProperties": false,
       "required": ["conditional_Riesz_projector", "conditional_generalized_zero_space", "Jordan_requirement", "BRST_requirement", "finite_dimensional_CCR_problem", "causal_projector_policy", "state_projector_policy", "Riesz_projector_status", "generalized_zero_space_status"],
       "properties": {
+        "conditional_Riesz_projector": {"type": "string", "minLength": 1},
+        "conditional_generalized_zero_space": {"type": "string", "minLength": 1},
+        "Jordan_requirement": {"type": "string", "minLength": 1},
+        "BRST_requirement": {"type": "string", "minLength": 1},
+        "finite_dimensional_CCR_problem": {"type": "string", "minLength": 1},
+        "causal_projector_policy": {"type": "string", "minLength": 1},
+        "state_projector_policy": {"type": "string", "minLength": 1},
         "Riesz_projector_status": {"const": "NOT_DEFINED"},
         "generalized_zero_space_status": {"const": "NOT_COMPUTED"}
-      },
-      "additionalProperties": true
+      }
     },
     "nonzero_frequency_contract": {
       "type": "object",
-      "required": ["required_decomposition", "required_stability", "required_Hadamard_link", "reduced_Krein_evidence", "full_nonzero_frequency_split"],
+      "additionalProperties": false,
+      "required": ["spectral_operator", "required_decomposition", "required_stability", "required_Hadamard_link", "reduced_Krein_evidence", "full_nonzero_frequency_split"],
       "properties": {
+        "spectral_operator": {"const": "H104=sqrt(-1) A104"},
+        "required_decomposition": {"type": "string", "minLength": 1},
+        "required_stability": {"type": "string", "minLength": 1},
+        "required_Hadamard_link": {"type": "string", "minLength": 1},
         "reduced_Krein_evidence": {"const": "REDUCED-MODE_ONLY"},
         "full_nonzero_frequency_split": {"const": "NOT_COMPUTED"}
-      },
-      "additionalProperties": true
+      }
     },
     "minimal_missing_carrier": {
       "type": "object",
@@ -152,6 +215,8 @@
       "const": {
         "BERGER_RETAINED_HYBRID_STATIONARY_PENCIL": true,
         "BERGER_RETAINED_FIRST_ORDER_CAUCHY_TARGET_A104": true,
+        "BERGER_A104_H104_FREQUENCY_CONVENTION": true,
+        "BERGER_RETAINED_CAUCHY_ORDERING_104": true,
         "BERGER_TWO_SLOT_COVARIANCE_LIFT": true,
         "BERGER_RETAINED_CLOSED_STATIONARY_GENERATOR": false,
         "BERGER_RETAINED_COMPACT_RESOLVENT_OR_FREDHOLM": false,
@@ -182,6 +247,17 @@
       }
     },
     "allTrue": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}},
+    "CauchyBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "rank", "start", "stop"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "rank": {"type": "integer", "enum": [3, 10]},
+        "start": {"type": "integer", "minimum": 0, "maximum": 103},
+        "stop": {"type": "integer", "minimum": 1, "maximum": 104}
+      }
+    },
     "temporalBlock": {
       "type": "object",
       "additionalProperties": false,

@@ -31,6 +31,10 @@ CAUSAL_26 = ROOT / "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN
 D_ACTION = ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json"
 GAUGE_FIXED = ROOT / "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json"
 REDUCED_KREIN = ROOT / "analytic_completion/certificates/one_particle_krein.json"
+FLAT_NORMALIZATION = (
+    HERE
+    / "generated/berger_base_wave_hadamard_parametrix/flat_space_normalization.json"
+)
 
 
 def _sha256(path: Path) -> str:
@@ -141,10 +145,119 @@ def stationary_pencil_replay(witness: dict[str, Any]) -> dict[str, Any]:
         },
         "first_order_Cauchy_target": {
             "symbol": "A104",
+            "frequency_operator": "H104=sqrt(-1) A104",
             "Cauchy_fibre_rank": first_order_rank,
             "formal_evolution": "partial_t Psi=A104 Psi",
+            "stationary_mode": "Psi(t)=exp(-sqrt(-1) omega t) Psi_omega",
+            "spectral_relation": "A104 Psi_omega=-sqrt(-1) omega Psi_omega iff H104 Psi_omega=omega Psi_omega",
             "status": "ALGEBRAIC_SIZE_AND_BLOCK_FORM_CERTIFIED_CLOSED_REALIZATION_OPEN",
         },
+        "checks": checks,
+    }
+
+
+def cauchy_ordering_replay() -> dict[str, Any]:
+    """Freeze the rank-52 configuration and rank-104 Cauchy coordinates."""
+
+    specifications = (
+        ("ghost_primary", 3),
+        ("ghost_auxiliary", 3),
+        ("metric_primary", 10),
+        ("metric_auxiliary", 10),
+        ("metric_antifield_primary", 10),
+        ("metric_antifield_auxiliary", 10),
+        ("identity_primary", 3),
+        ("identity_auxiliary", 3),
+    )
+    configuration_blocks = []
+    offset = 0
+    for name, rank in specifications:
+        configuration_blocks.append(
+            {"name": name, "rank": rank, "start": offset, "stop": offset + rank}
+        )
+        offset += rank
+    velocity_blocks = [
+        {
+            "name": f"partial_t_{block['name']}",
+            "rank": block["rank"],
+            "start": block["start"] + offset,
+            "stop": block["stop"] + offset,
+        }
+        for block in configuration_blocks
+    ]
+    checks = {
+        "configuration_blocks_contiguous": all(
+            block["start"]
+            == (0 if index == 0 else configuration_blocks[index - 1]["stop"])
+            for index, block in enumerate(configuration_blocks)
+        ),
+        "configuration_rank_52": offset == 52,
+        "velocity_is_exact_offset_52_copy": all(
+            velocity["start"] == configuration["start"] + 52
+            and velocity["stop"] == configuration["stop"] + 52
+            for configuration, velocity in zip(
+                configuration_blocks, velocity_blocks
+            )
+        ),
+        "Cauchy_rank_104": velocity_blocks[-1]["stop"] == 104,
+    }
+    if not all(checks.values()):
+        raise ValueError("rank-104 Cauchy ordering audit failed")
+    return {
+        "ordering": "Psi104=(Phi52,partial_t Phi52)",
+        "configuration_blocks": configuration_blocks,
+        "velocity_blocks": velocity_blocks,
+        "checks": checks,
+    }
+
+
+def frequency_convention_replay(flat: dict[str, Any]) -> dict[str, Any]:
+    """Separate the real evolution generator from physical frequency."""
+
+    omega = sp.Symbol("omega", real=True)
+    power = sp.Symbol("k", integer=True, nonnegative=True)
+    A_eigenvalue = -sp.I * omega
+    H_eigenvalue = sp.I * A_eigenvalue
+    conjugate_A_eigenvalue = sp.conjugate(A_eigenvalue)
+    conjugate_H_eigenvalue = sp.I * conjugate_A_eigenvalue
+    flat_checks = flat.get("exact_sign_checks", {})
+    checks = {
+        "mode_derivative_is_minus_i_omega": sp.simplify(
+            A_eigenvalue + sp.I * omega
+        )
+        == 0,
+        "H104_eigenvalue_is_physical_omega": sp.simplify(H_eigenvalue - omega)
+        == 0,
+        "conjugation_reverses_H104_frequency": sp.simplify(
+            conjugate_H_eigenvalue + omega
+        )
+        == 0,
+        "H104_is_i_times_A104": sp.simplify(H_eigenvalue - sp.I * A_eigenvalue)
+        == 0,
+        "zero_generalized_eigenspaces_are_unchanged": (sp.I**power).is_zero
+        is False
+        and sp.simplify(sp.I**power * sp.I ** (-power)) == 1,
+        "flat_positive_kernel_uses_exp_minus_i_abs_p_Delta_t": (
+            "exp(-i|p|Delta_t" in flat.get("positive_frequency_kernel", "")
+        ),
+        "flat_normalization_exact_signs_hold": bool(flat_checks)
+        and all(flat_checks.values()),
+    }
+    if not all(checks.values()):
+        raise ValueError("A104/H104 frequency convention replay failed")
+    return {
+        "evolution_generator": "A104 in partial_t Psi=A104 Psi",
+        "frequency_operator": "H104=sqrt(-1) A104",
+        "mode_convention": "Psi_omega(t)=exp(-sqrt(-1) omega t) Psi_omega(0)",
+        "eigenvalue_dictionary": {
+            "A104": "-sqrt(-1) omega",
+            "H104": "omega",
+        },
+        "positive_frequency_policy": "positive frequency means positive spectrum of H104, not positive spectrum of A104",
+        "conjugation_policy": "complex conjugation commutes with A104, anticommutes with H104, and maps omega to -omega",
+        "zero_frequency_policy": "ker(H104^k)=ker(A104^k) for every k, so the zero/Jordan ledger is convention-invariant",
+        "Krein_adjoint_target": "if A104 is Krein-skew-adjoint then H104 is Krein-self-adjoint on the complexified Cauchy space",
+        "flat_normalization_result_id": flat["result_id"],
         "checks": checks,
     }
 
@@ -210,6 +323,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         "D_action": D_ACTION,
         "gauge_fixed": GAUGE_FIXED,
         "reduced_Krein": REDUCED_KREIN,
+        "flat_normalization": FLAT_NORMALIZATION,
     }
     values = {name: json.loads(path.read_text()) for name, path in paths.items()}
     if values["lift_preflight"].get("claim_flags", {}).get(
@@ -230,6 +344,11 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         raise ValueError("retained Hadamard boundary drifted")
     if values["reduced_Krein"].get("classification") != "infinite-index Krein space":
         raise ValueError("reduced Krein boundary drifted")
+    if (
+        values["flat_normalization"].get("result_id")
+        != "BERGER_FLAT_HADAMARD_NORMALIZATION"
+    ):
+        raise ValueError("flat positive-frequency normalization drifted")
     return values
 
 
@@ -237,6 +356,8 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
 def evaluate() -> dict[str, Any]:
     inputs = _load_inputs()
     pencil = stationary_pencil_replay(inputs["causal_witness"])
+    Cauchy_ordering = cauchy_ordering_replay()
+    frequency = frequency_convention_replay(inputs["flat_normalization"])
     D_replay = D_action_replay(inputs["D_action"])
     lift = two_slot_lift_replay(inputs["gauge_fixed"])
     paths = {
@@ -249,11 +370,12 @@ def evaluate() -> dict[str, Any]:
         "local_D_action": D_ACTION,
         "gauge_fixed_contraction": GAUGE_FIXED,
         "reduced_Krein": REDUCED_KREIN,
+        "flat_normalization": FLAT_NORMALIZATION,
     }
     result = {
-        "schema": "quantum-weyl-berger-retained-stationary-spectral-preflight-v1",
+        "schema": "quantum-weyl-berger-retained-stationary-spectral-preflight-v2",
         "result_id": "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT",
-        "result_state": "HYBRID_STATIONARY_PENCIL_CERTIFIED_CLOSED_SPECTRAL_REALIZATION_OPEN",
+        "result_state": "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_CLOSED_REALIZATION_OPEN",
         "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT",
         "dependency_tags": [
             "LOCAL-ALGEBRAIC",
@@ -264,13 +386,21 @@ def evaluate() -> dict[str, Any]:
         "setting_id": inputs["causal_26"]["setting_id"],
         "dependency_refs": {name: _dependency(path) for name, path in paths.items()},
         "stationary_pencil_inventory": pencil,
+        "Cauchy_ordering": Cauchy_ordering,
+        "frequency_convention": frequency,
         "stationary_action_replay": D_replay,
         "two_slot_covariance_lift": lift,
         "closed_generator_contract": {
             "algebraic_target": "A104 on the Cauchy data of the rank-52 second-order hybrid companion",
             "metric_energy_space_input": inputs["volterra"]["typed_spaces"],
-            "required_common_space": "a declared graded Hilbert or Krein Cauchy space for all four companion blocks",
-            "required_domain": "dense graph domain on which A104 is closed and generates the certified time-translation group",
+            "candidate_energy_scale": {
+                "E_s": "for every companion pair (u,z): (u,partial_t u) in H^(s+1) direct_sum H^s and (z,partial_t z) in H^s direct_sum H^(s-1), tensor the declared sector rank",
+                "candidate_graph_domain": "Dom(A104)=E_(s+1) densely embedded in E_s",
+                "configuration_ordering_reference": "Cauchy_ordering",
+                "status": "CANDIDATE_NOT_CLOSED_REALIZATION",
+            },
+            "required_common_space": "prove that the declared mixed Sobolev E_s is a graded Hilbert or Krein Cauchy space for all four companion blocks",
+            "required_domain": "prove that E_(s+1) is the dense graph domain on which A104 is closed and generates time translation",
             "required_adjoint": "Krein/BV adjoint compatible with the real involution and causal form",
             "required_intertwiners": [
                 "A104 q_Cauchy=q_Cauchy A104",
@@ -281,20 +411,22 @@ def evaluate() -> dict[str, Any]:
         },
         "spectral_isolation_contract": {
             "acceptable_routes": [
-                "compact resolvent of A104",
+                "compact resolvent of A104, equivalently of H104=sqrt(-1) A104",
                 "analytic Fredholm pencil with zero isolated",
                 "direct mode theorem proving an isolated finite-algebraic-multiplicity zero",
             ],
-            "current_compact_spatial_input": "S3 is compact and the Volterra theorem supplies finite-slab Sobolev estimates",
-            "not_implied": "compact S3 and causal energy estimates do not by themselves prove compact resolvent for this non-self-adjoint mixed-order Krein generator",
+            "parameter_elliptic_route": "prove parameter ellipticity or a nonempty resolvent for z-A104 on Dom(A104)=E_(s+1), then combine with the compact Rellich embedding E_(s+1) into E_s on compact S3",
+            "current_compact_spatial_input": "S3 is compact; the candidate mixed Sobolev embedding E_(s+1) into E_s is Rellich compact; the Volterra theorem supplies finite-slab typed Sobolev estimates",
+            "not_implied": "compact embedding and causal energy estimates do not identify the actual closed domain or prove a nonempty resolvent/parameter ellipticity for this mixed-order Krein generator",
             "zero_isolated": "NOT_COMPUTED",
             "compact_resolvent_or_Fredholm": "NOT_COMPUTED",
-            "nonzero_spectrum_real_or_definitizable": "NOT_COMPUTED",
+            "A104_spectrum_on_imaginary_axis": "NOT_COMPUTED",
+            "H104_spectrum_real_or_definitizable": "NOT_COMPUTED",
         },
         "generalized_zero_and_Riesz_policy": {
-            "conditional_Riesz_projector": "P0=(2 pi sqrt(-1))^-1 contour_integral (z-A104)^-1 dz around zero",
-            "conditional_generalized_zero_space": "E0=ran(P0)=union_k ker(A104^k)",
-            "Jordan_requirement": "compute the nilpotent restriction A104|E0, not only ker(A104)",
+            "conditional_Riesz_projector": "P0=(2 pi sqrt(-1))^-1 contour_integral (z-A104)^-1 dz around zero; the H104 contour is its multiplication-by-sqrt(-1) image",
+            "conditional_generalized_zero_space": "E0=ran(P0)=union_k ker(A104^k)=union_k ker(H104^k)",
+            "Jordan_requirement": "compute the nilpotent restriction A104|E0, equivalently H104|E0, not only the ordinary kernel",
             "BRST_requirement": "restrict q_Cauchy, the causal form, pairing and real involution to E0 and pass to ghost-number-zero BRST cohomology",
             "finite_dimensional_CCR_problem": "choose the smooth symmetric part on E0 subject to graded CCR, Ward, reality and D invariance",
             "causal_projector_policy": "no spectral projector enters advanced/retarded propagation",
@@ -303,7 +435,8 @@ def evaluate() -> dict[str, Any]:
             "generalized_zero_space_status": "NOT_COMPUTED",
         },
         "nonzero_frequency_contract": {
-            "required_decomposition": "the nonzero spectral subspace must admit conjugation-compatible positive/negative frequency parts",
+            "spectral_operator": "H104=sqrt(-1) A104",
+            "required_decomposition": "the nonzero H104 spectral subspace must admit positive/negative frequency parts exchanged by complex conjugation",
             "required_stability": "exclude complex-frequency growth or state the resulting nonstationary/Krein limitation",
             "required_Hadamard_link": "the selected positive part must differ from the local Hadamard singularity by a smooth bisolution",
             "reduced_Krein_evidence": "REDUCED-MODE_ONLY",
@@ -323,6 +456,8 @@ def evaluate() -> dict[str, Any]:
         "claim_flags": {
             "BERGER_RETAINED_HYBRID_STATIONARY_PENCIL": True,
             "BERGER_RETAINED_FIRST_ORDER_CAUCHY_TARGET_A104": True,
+            "BERGER_A104_H104_FREQUENCY_CONVENTION": True,
+            "BERGER_RETAINED_CAUCHY_ORDERING_104": True,
             "BERGER_TWO_SLOT_COVARIANCE_LIFT": True,
             "BERGER_RETAINED_CLOSED_STATIONARY_GENERATOR": False,
             "BERGER_RETAINED_COMPACT_RESOLVENT_OR_FREDHOLM": False,
@@ -349,7 +484,9 @@ def evaluate() -> dict[str, Any]:
             "Certifies the exact temporal-order audit of the retained 26-row "
             "witness, rejects its singular uniform fourth-order reduction, and "
             "constructs the algebraic rank-52 second-order hybrid companion and "
-            "rank-104 first-order Cauchy target. It freezes the two-slot covariance "
+            "rank-104 first-order Cauchy target. It distinguishes the real evolution "
+            "generator A104 from the frequency operator H104=sqrt(-1) A104, freezes "
+            "the Cauchy ordering, candidate mixed Sobolev scale, two-slot covariance "
             "lift and the conditional Riesz/Jordan and projector policies. It does "
             "not construct a closed A104 realization, prove spectral isolation, "
             "define a Riesz projector, split nonzero frequencies, construct a "
@@ -366,7 +503,7 @@ def validate(result: dict[str, Any]) -> None:
         result.get("result_id")
         != "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT"
         or result.get("result_state")
-        != "HYBRID_STATIONARY_PENCIL_CERTIFIED_CLOSED_SPECTRAL_REALIZATION_OPEN"
+        != "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_CLOSED_REALIZATION_OPEN"
         or result.get("next_gate")
         != "BERGER_A104_CLOSED_GENERATOR_AND_ISOLATED_ZERO_THEOREM"
     ):
@@ -379,6 +516,10 @@ def validate(result: dict[str, Any]) -> None:
         result.get("stationary_action_replay", {}).get("checks", {}).values()
     ):
         raise ValueError("stationary action replay dropped")
+    if not all(result.get("Cauchy_ordering", {}).get("checks", {}).values()):
+        raise ValueError("rank-104 Cauchy ordering dropped")
+    if not all(result.get("frequency_convention", {}).get("checks", {}).values()):
+        raise ValueError("A104/H104 frequency convention dropped")
     if not all(
         result.get("two_slot_covariance_lift", {}).get("checks", {}).values()
     ):
@@ -387,6 +528,14 @@ def validate(result: dict[str, Any]) -> None:
         result.get("closed_generator_contract", {}).get("closed_realization_status")
         != "NOT_CONSTRUCTED"
         or result.get("spectral_isolation_contract", {}).get("zero_isolated")
+        != "NOT_COMPUTED"
+        or result.get("spectral_isolation_contract", {}).get(
+            "A104_spectrum_on_imaginary_axis"
+        )
+        != "NOT_COMPUTED"
+        or result.get("spectral_isolation_contract", {}).get(
+            "H104_spectrum_real_or_definitizable"
+        )
         != "NOT_COMPUTED"
         or result.get("generalized_zero_and_Riesz_policy", {}).get(
             "Riesz_projector_status"
@@ -406,6 +555,8 @@ def validate(result: dict[str, Any]) -> None:
     if true_flags != {
         "BERGER_RETAINED_HYBRID_STATIONARY_PENCIL",
         "BERGER_RETAINED_FIRST_ORDER_CAUCHY_TARGET_A104",
+        "BERGER_A104_H104_FREQUENCY_CONVENTION",
+        "BERGER_RETAINED_CAUCHY_ORDERING_104",
         "BERGER_TWO_SLOT_COVARIANCE_LIFT",
     }:
         raise ValueError("spectral, Hadamard, positivity or quantum claim over-promoted")

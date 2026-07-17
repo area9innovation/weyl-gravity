@@ -15,11 +15,14 @@ from .berger_retained_stationary_spectral_preflight import (
     COMPANION,
     D_ACTION,
     DECOMPOSABILITY,
+    FLAT_NORMALIZATION,
     GAUGE_FIXED,
     LIFT_PREFLIGHT,
     REDUCED_KREIN,
     VOLTERRA,
+    cauchy_ordering_replay,
     D_action_replay,
+    frequency_convention_replay,
     stationary_pencil_replay,
     two_slot_lift_replay,
     validate,
@@ -30,7 +33,7 @@ from .berger_retained_stationary_spectral_preflight_certificate import HERE, OUT
 def verify() -> dict:
     certificate = json.loads(OUTPUT.read_text())
     schema = json.loads(
-        (HERE / "schema/berger-retained-stationary-spectral-preflight-v1.schema.json").read_text()
+        (HERE / "schema/berger-retained-stationary-spectral-preflight-v2.schema.json").read_text()
     )
     errors = validate_instance(certificate, schema)
     if errors:
@@ -47,6 +50,7 @@ def verify() -> dict:
         "local_D_action": D_ACTION,
         "gauge_fixed_contraction": GAUGE_FIXED,
         "reduced_Krein": REDUCED_KREIN,
+        "flat_normalization": FLAT_NORMALIZATION,
     }
     for name, path in dependency_paths.items():
         actual = hashlib.sha256(path.read_bytes()).hexdigest()
@@ -56,10 +60,15 @@ def verify() -> dict:
     witness = json.loads(CAUSAL_WITNESS.read_text())
     D_action = json.loads(D_ACTION.read_text())
     gauge_fixed = json.loads(GAUGE_FIXED.read_text())
+    flat = json.loads(FLAT_NORMALIZATION.read_text())
     if stationary_pencil_replay(witness) != certificate["stationary_pencil_inventory"]:
         raise ValueError("independent stationary pencil replay mismatch")
     if D_action_replay(D_action) != certificate["stationary_action_replay"]:
         raise ValueError("independent stationary action replay mismatch")
+    if cauchy_ordering_replay() != certificate["Cauchy_ordering"]:
+        raise ValueError("independent Cauchy ordering replay mismatch")
+    if frequency_convention_replay(flat) != certificate["frequency_convention"]:
+        raise ValueError("independent A104/H104 convention replay mismatch")
     if two_slot_lift_replay(gauge_fixed) != certificate["two_slot_covariance_lift"]:
         raise ValueError("independent two-slot lift replay mismatch")
 
@@ -69,6 +78,7 @@ def verify() -> dict:
         ("claim_flags", "BERGER_26_ROW_BRST_HADAMARD", True),
         ("closed_generator_contract", "closed_realization_status", "CERTIFIED"),
         ("spectral_isolation_contract", "zero_isolated", "CERTIFIED"),
+        ("spectral_isolation_contract", "H104_spectrum_real_or_definitizable", "CERTIFIED"),
         ("generalized_zero_and_Riesz_policy", "Riesz_projector_status", "DEFINED"),
     )
     for section, key, value in mutations:

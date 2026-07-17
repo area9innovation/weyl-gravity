@@ -1,11 +1,122 @@
 {
-  "claim_boundary": "Certifies the exact temporal-order audit of the retained 26-row witness, rejects its singular uniform fourth-order reduction, and constructs the algebraic rank-52 second-order hybrid companion and rank-104 first-order Cauchy target. It freezes the two-slot covariance lift and the conditional Riesz/Jordan and projector policies. It does not construct a closed A104 realization, prove spectral isolation, define a Riesz projector, split nonzero frequencies, construct a covariance or Hadamard state, prove positivity, restore a QME or make a quantum claim.",
+  "Cauchy_ordering": {
+    "checks": {
+      "Cauchy_rank_104": true,
+      "configuration_blocks_contiguous": true,
+      "configuration_rank_52": true,
+      "velocity_is_exact_offset_52_copy": true
+    },
+    "configuration_blocks": [
+      {
+        "name": "ghost_primary",
+        "rank": 3,
+        "start": 0,
+        "stop": 3
+      },
+      {
+        "name": "ghost_auxiliary",
+        "rank": 3,
+        "start": 3,
+        "stop": 6
+      },
+      {
+        "name": "metric_primary",
+        "rank": 10,
+        "start": 6,
+        "stop": 16
+      },
+      {
+        "name": "metric_auxiliary",
+        "rank": 10,
+        "start": 16,
+        "stop": 26
+      },
+      {
+        "name": "metric_antifield_primary",
+        "rank": 10,
+        "start": 26,
+        "stop": 36
+      },
+      {
+        "name": "metric_antifield_auxiliary",
+        "rank": 10,
+        "start": 36,
+        "stop": 46
+      },
+      {
+        "name": "identity_primary",
+        "rank": 3,
+        "start": 46,
+        "stop": 49
+      },
+      {
+        "name": "identity_auxiliary",
+        "rank": 3,
+        "start": 49,
+        "stop": 52
+      }
+    ],
+    "ordering": "Psi104=(Phi52,partial_t Phi52)",
+    "velocity_blocks": [
+      {
+        "name": "partial_t_ghost_primary",
+        "rank": 3,
+        "start": 52,
+        "stop": 55
+      },
+      {
+        "name": "partial_t_ghost_auxiliary",
+        "rank": 3,
+        "start": 55,
+        "stop": 58
+      },
+      {
+        "name": "partial_t_metric_primary",
+        "rank": 10,
+        "start": 58,
+        "stop": 68
+      },
+      {
+        "name": "partial_t_metric_auxiliary",
+        "rank": 10,
+        "start": 68,
+        "stop": 78
+      },
+      {
+        "name": "partial_t_metric_antifield_primary",
+        "rank": 10,
+        "start": 78,
+        "stop": 88
+      },
+      {
+        "name": "partial_t_metric_antifield_auxiliary",
+        "rank": 10,
+        "start": 88,
+        "stop": 98
+      },
+      {
+        "name": "partial_t_identity_primary",
+        "rank": 3,
+        "start": 98,
+        "stop": 101
+      },
+      {
+        "name": "partial_t_identity_auxiliary",
+        "rank": 3,
+        "start": 101,
+        "stop": 104
+      }
+    ]
+  },
+  "claim_boundary": "Certifies the exact temporal-order audit of the retained 26-row witness, rejects its singular uniform fourth-order reduction, and constructs the algebraic rank-52 second-order hybrid companion and rank-104 first-order Cauchy target. It distinguishes the real evolution generator A104 from the frequency operator H104=sqrt(-1) A104, freezes the Cauchy ordering, candidate mixed Sobolev scale, two-slot covariance lift and the conditional Riesz/Jordan and projector policies. It does not construct a closed A104 realization, prove spectral isolation, define a Riesz projector, split nonzero frequencies, construct a covariance or Hadamard state, prove positivity, restore a QME or make a quantum claim.",
   "claim_flags": {
     "BERGER_26_ROW_BRST_HADAMARD": false,
     "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_A104_H104_FREQUENCY_CONVENTION": true,
     "BERGER_HADAMARD_DATA": false,
     "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
     "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER": false,
+    "BERGER_RETAINED_CAUCHY_ORDERING_104": true,
     "BERGER_RETAINED_CLOSED_STATIONARY_GENERATOR": false,
     "BERGER_RETAINED_COMPACT_RESOLVENT_OR_FREDHOLM": false,
     "BERGER_RETAINED_FIRST_ORDER_CAUCHY_TARGET_A104": true,
@@ -19,6 +130,12 @@
   "classical_commit": "eb56d5aff7d622de423d4994051b0e048c4fb4bf",
   "closed_generator_contract": {
     "algebraic_target": "A104 on the Cauchy data of the rank-52 second-order hybrid companion",
+    "candidate_energy_scale": {
+      "E_s": "for every companion pair (u,z): (u,partial_t u) in H^(s+1) direct_sum H^s and (z,partial_t z) in H^s direct_sum H^(s-1), tensor the declared sector rank",
+      "candidate_graph_domain": "Dom(A104)=E_(s+1) densely embedded in E_s",
+      "configuration_ordering_reference": "Cauchy_ordering",
+      "status": "CANDIDATE_NOT_CLOSED_REALIZATION"
+    },
     "closed_realization_status": "NOT_CONSTRUCTED",
     "metric_energy_space_input": {
       "G0_mapping": "G0,advanced/retarded:Y_s(I)->X_s(I)",
@@ -28,8 +145,8 @@
       "spatial_bundle": "H^r means H^r(S3;Sym2)"
     },
     "required_adjoint": "Krein/BV adjoint compatible with the real involution and causal form",
-    "required_common_space": "a declared graded Hilbert or Krein Cauchy space for all four companion blocks",
-    "required_domain": "dense graph domain on which A104 is closed and generates the certified time-translation group",
+    "required_common_space": "prove that the declared mixed Sobolev E_s is a graded Hilbert or Krein Cauchy space for all four companion blocks",
+    "required_domain": "prove that E_(s+1) is the dense graph domain on which A104 is closed and generates time translation",
     "required_intertwiners": [
       "A104 q_Cauchy=q_Cauchy A104",
       "A104 commutes with complex conjugation",
@@ -39,7 +156,7 @@
   "dependency_refs": {
     "Hadamard_lift_preflight": {
       "artifact_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
-      "sha256": "855d895637695b06e52d01994cfb646f07dbd4159d8f181487c73d8d9e60f66c"
+      "sha256": "9b6cc3ace4f0cfb1432499b698df21ef2a505a35913aecb65945c513060f8876"
     },
     "causal_26": {
       "artifact_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
@@ -48,6 +165,10 @@
     "causal_witness": {
       "artifact_id": "BERGER_CAUSAL_WITNESS_PREFLIGHT",
       "sha256": "da24c9734e1950fab9a730ea69bc46b35dcc5f95a4af7e1d9aa3aa57404d1ea4"
+    },
+    "flat_normalization": {
+      "artifact_id": "BERGER_FLAT_HADAMARD_NORMALIZATION",
+      "sha256": "7b8e22d21a5975585da9c1f57d147f83a2319824e6e3aa7fc89cd74338cbc7a1"
     },
     "gauge_fixed_contraction": {
       "artifact_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
@@ -67,7 +188,7 @@
     },
     "stationary_decomposability": {
       "artifact_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY",
-      "sha256": "500db5cefea6c15da5f10419c5369cb2dcb1178daf8e070d19db616dc0cfdf4b"
+      "sha256": "8dc611b5abbe6c5d5b2fe44d92715625cda08ff7c4b377872ebda8d3b0287809"
     },
     "typed_Volterra": {
       "artifact_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2",
@@ -79,13 +200,36 @@
     "REDUCED-MODE",
     "LORENTZIAN-CAUSAL"
   ],
+  "frequency_convention": {
+    "Krein_adjoint_target": "if A104 is Krein-skew-adjoint then H104 is Krein-self-adjoint on the complexified Cauchy space",
+    "checks": {
+      "H104_eigenvalue_is_physical_omega": true,
+      "H104_is_i_times_A104": true,
+      "conjugation_reverses_H104_frequency": true,
+      "flat_normalization_exact_signs_hold": true,
+      "flat_positive_kernel_uses_exp_minus_i_abs_p_Delta_t": true,
+      "mode_derivative_is_minus_i_omega": true,
+      "zero_generalized_eigenspaces_are_unchanged": true
+    },
+    "conjugation_policy": "complex conjugation commutes with A104, anticommutes with H104, and maps omega to -omega",
+    "eigenvalue_dictionary": {
+      "A104": "-sqrt(-1) omega",
+      "H104": "omega"
+    },
+    "evolution_generator": "A104 in partial_t Psi=A104 Psi",
+    "flat_normalization_result_id": "BERGER_FLAT_HADAMARD_NORMALIZATION",
+    "frequency_operator": "H104=sqrt(-1) A104",
+    "mode_convention": "Psi_omega(t)=exp(-sqrt(-1) omega t) Psi_omega(0)",
+    "positive_frequency_policy": "positive frequency means positive spectrum of H104, not positive spectrum of A104",
+    "zero_frequency_policy": "ker(H104^k)=ker(A104^k) for every k, so the zero/Jordan ledger is convention-invariant"
+  },
   "generalized_zero_and_Riesz_policy": {
     "BRST_requirement": "restrict q_Cauchy, the causal form, pairing and real involution to E0 and pass to ghost-number-zero BRST cohomology",
-    "Jordan_requirement": "compute the nilpotent restriction A104|E0, not only ker(A104)",
+    "Jordan_requirement": "compute the nilpotent restriction A104|E0, equivalently H104|E0, not only the ordinary kernel",
     "Riesz_projector_status": "NOT_DEFINED",
     "causal_projector_policy": "no spectral projector enters advanced/retarded propagation",
-    "conditional_Riesz_projector": "P0=(2 pi sqrt(-1))^-1 contour_integral (z-A104)^-1 dz around zero",
-    "conditional_generalized_zero_space": "E0=ran(P0)=union_k ker(A104^k)",
+    "conditional_Riesz_projector": "P0=(2 pi sqrt(-1))^-1 contour_integral (z-A104)^-1 dz around zero; the H104 contour is its multiplication-by-sqrt(-1) image",
+    "conditional_generalized_zero_space": "E0=ran(P0)=union_k ker(A104^k)=union_k ker(H104^k)",
     "finite_dimensional_CCR_problem": "choose the smooth symmetric part on E0 subject to graded CCR, Ward, reality and D invariance",
     "generalized_zero_space_status": "NOT_COMPUTED",
     "state_projector_policy": "a finite-rank smooth Riesz projector is permitted only after isolation is proved and only in covariance selection"
@@ -107,8 +251,9 @@
     "full_nonzero_frequency_split": "NOT_COMPUTED",
     "reduced_Krein_evidence": "REDUCED-MODE_ONLY",
     "required_Hadamard_link": "the selected positive part must differ from the local Hadamard singularity by a smooth bisolution",
-    "required_decomposition": "the nonzero spectral subspace must admit conjugation-compatible positive/negative frequency parts",
-    "required_stability": "exclude complex-frequency growth or state the resulting nonstationary/Krein limitation"
+    "required_decomposition": "the nonzero H104 spectral subspace must admit positive/negative frequency parts exchanged by complex conjugation",
+    "required_stability": "exclude complex-frequency growth or state the resulting nonstationary/Krein limitation",
+    "spectral_operator": "H104=sqrt(-1) A104"
   },
   "provenance": {
     "D_action_result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
@@ -118,29 +263,31 @@
     "decomposability_result_id": "BERGER_COMPANION_STATIONARY_DECOMPOSABILITY",
     "lift_preflight_result_id": "BERGER_HADAMARD_LIFT_AND_ZERO_MODE_PREFLIGHT",
     "source_manifest": {
-      "../reports/berger-retained-stationary-spectral-preflight.md": "a0c6971932a1a2ed0aed9121672ebe8e8696155586c776645c177a047c35e3c2",
-      "berger_retained_stationary_spectral_preflight.py": "28539578a312b1bd1ff164a5854053c29bc6533131fe5b4390d7912ca9b3bfae",
-      "berger_retained_stationary_spectral_preflight_certificate.py": "df7ea7e9da24b51d03af82d6b5933855fa12173f7feb9406a391981b225cde2f",
-      "schema/berger-retained-stationary-spectral-preflight-v1.schema.json": "38c45cdb0dbc917c26416065542f5e0ed739bc5f73059e9513b9bcec3bae25e9",
-      "tests/test_berger_retained_stationary_spectral_preflight.py": "a1411f4c67145fda94a17011800bb0880a51f46a7eafb5d13995f5be4254b36e",
-      "verify_berger_retained_stationary_spectral_preflight.py": "c5dab06885bf9b2647a5dcac64f60e8541eb9aca2f5f823a9cd3bdf5c9653564"
+      "../reports/berger-retained-stationary-spectral-preflight.md": "81dc3adf9270bc470afdd1d9dfe5ab6d663bf0ecbb00ed92b1097e4f2d36d28a",
+      "berger_retained_stationary_spectral_preflight.py": "3a6c2e4abc06422fb0c5f1daad20a2d86d1b293004039d65ed709ba19aeb9087",
+      "berger_retained_stationary_spectral_preflight_certificate.py": "166c014b6949319a66f61bf815e63019248a4a1d15272f517d7916091cf8aa69",
+      "schema/berger-retained-stationary-spectral-preflight-v2.schema.json": "7e4cc81059058c81b255d1ae59b0492a8e82c1e6ade721558ef353ce8d1cd719",
+      "tests/test_berger_retained_stationary_spectral_preflight.py": "5c3a42b0cabf5abc0d7a96021b1b58eedbc1c0f48ed2e5cc95bb24359f64137d",
+      "verify_berger_retained_stationary_spectral_preflight.py": "3197e18e78d14ca8ac69b88b351e8667b4663e2f53a8450f9333ab2bb3932576"
     },
-    "source_manifest_sha256": "a87ea8a3b480f3061af97313f6a33bddf59f1319c9fb0ed770f9960e14e8844c"
+    "source_manifest_sha256": "2bf7751ac061c0118b6336b41bb2b6b50e9511eb62105a03d99545ddbd433c64"
   },
   "result_id": "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT",
-  "result_state": "HYBRID_STATIONARY_PENCIL_CERTIFIED_CLOSED_SPECTRAL_REALIZATION_OPEN",
-  "schema": "quantum-weyl-berger-retained-stationary-spectral-preflight-v1",
+  "result_state": "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_CLOSED_REALIZATION_OPEN",
+  "schema": "quantum-weyl-berger-retained-stationary-spectral-preflight-v2",
   "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
   "spectral_isolation_contract": {
+    "A104_spectrum_on_imaginary_axis": "NOT_COMPUTED",
+    "H104_spectrum_real_or_definitizable": "NOT_COMPUTED",
     "acceptable_routes": [
-      "compact resolvent of A104",
+      "compact resolvent of A104, equivalently of H104=sqrt(-1) A104",
       "analytic Fredholm pencil with zero isolated",
       "direct mode theorem proving an isolated finite-algebraic-multiplicity zero"
     ],
     "compact_resolvent_or_Fredholm": "NOT_COMPUTED",
-    "current_compact_spatial_input": "S3 is compact and the Volterra theorem supplies finite-slab Sobolev estimates",
-    "nonzero_spectrum_real_or_definitizable": "NOT_COMPUTED",
-    "not_implied": "compact S3 and causal energy estimates do not by themselves prove compact resolvent for this non-self-adjoint mixed-order Krein generator",
+    "current_compact_spatial_input": "S3 is compact; the candidate mixed Sobolev embedding E_(s+1) into E_s is Rellich compact; the Volterra theorem supplies finite-slab typed Sobolev estimates",
+    "not_implied": "compact embedding and causal energy estimates do not identify the actual closed domain or prove a nonempty resolvent/parameter ellipticity for this mixed-order Krein generator",
+    "parameter_elliptic_route": "prove parameter ellipticity or a nonempty resolvent for z-A104 on Dom(A104)=E_(s+1), then combine with the compact Rellich embedding E_(s+1) into E_s on compact S3",
     "zero_isolated": "NOT_COMPUTED"
   },
   "stationary_action_replay": {
@@ -170,6 +317,9 @@
     "first_order_Cauchy_target": {
       "Cauchy_fibre_rank": 104,
       "formal_evolution": "partial_t Psi=A104 Psi",
+      "frequency_operator": "H104=sqrt(-1) A104",
+      "spectral_relation": "A104 Psi_omega=-sqrt(-1) omega Psi_omega iff H104 Psi_omega=omega Psi_omega",
+      "stationary_mode": "Psi(t)=exp(-sqrt(-1) omega t) Psi_omega",
       "status": "ALGEBRAIC_SIZE_AND_BLOCK_FORM_CERTIFIED_CLOSED_REALIZATION_OPEN",
       "symbol": "A104"
     },

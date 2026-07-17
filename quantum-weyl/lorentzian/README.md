@@ -182,12 +182,17 @@ coefficient is singular and a uniform fourth-order 26-row Cauchy reduction
 is invalid.  The exact replacement is a rank-52 second-order hybrid
 companion—rank six for each ghost/identity product and rank twenty for each
 metric/metric-adjoint biwave—whose first-order Cauchy target has rank 104.
-The differential pencil, stationary `D=e0`, and two-slot covariance lift are
-certified.  A common closed graded/Krein realization of `A104`, together with
-a compact-resolvent/Fredholm or equivalent isolated-zero theorem, remains
-open.  Only after that theorem may a finite-rank smooth Riesz projector be
-used for state selection; no spectral projector is introduced into causal
-propagation.
+The exact ordering `Psi104=(Phi52,partial_t Phi52)` is frozen.  For a mode
+`exp(-i omega t)`, `A104` has eigenvalue `-i omega`; physical frequency is
+therefore carried by `H104=i A104`, whose eigenvalue is `omega`.  Positive
+frequency refers to the positive spectral part of `H104`, and conjugation
+exchanges its positive and negative parts.  The differential pencil,
+stationary `D=e0`, candidate mixed Sobolev scale, and two-slot covariance
+lift are certified.  A common closed graded/Krein realization of `A104`,
+together with a parameter-elliptic/compact-resolvent/Fredholm or equivalent
+isolated-zero theorem, remains open.  Only after that theorem may a
+finite-rank smooth Riesz projector be used for state selection; no spectral
+projector is introduced into causal propagation.
 
 Reproduce the current contract receipt with:
 

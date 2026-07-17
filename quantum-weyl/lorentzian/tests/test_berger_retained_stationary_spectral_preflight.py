@@ -22,7 +22,7 @@ class BergerRetainedStationarySpectralPreflightTests(unittest.TestCase):
     def test_reproduces_and_validates_strict_schema(self) -> None:
         self.assertEqual(json.loads(OUTPUT.read_text()), self.certificate)
         schema = json.loads(
-            (HERE / "schema/berger-retained-stationary-spectral-preflight-v1.schema.json").read_text()
+            (HERE / "schema/berger-retained-stationary-spectral-preflight-v2.schema.json").read_text()
         )
         self.assertFalse(validate_instance(self.certificate, schema))
 
@@ -48,6 +48,43 @@ class BergerRetainedStationarySpectralPreflightTests(unittest.TestCase):
             inventory["first_order_Cauchy_target"]["Cauchy_fibre_rank"], 104
         )
         self.assertTrue(all(inventory["checks"].values()))
+
+    def test_Cauchy_ordering_is_exact_and_contiguous(self) -> None:
+        ordering = self.certificate["Cauchy_ordering"]
+        self.assertEqual(ordering["ordering"], "Psi104=(Phi52,partial_t Phi52)")
+        self.assertEqual(ordering["configuration_blocks"][0]["start"], 0)
+        self.assertEqual(ordering["configuration_blocks"][-1]["stop"], 52)
+        self.assertEqual(ordering["velocity_blocks"][0]["start"], 52)
+        self.assertEqual(ordering["velocity_blocks"][-1]["stop"], 104)
+        self.assertTrue(all(ordering["checks"].values()))
+
+    def test_A104_is_evolution_and_H104_is_frequency(self) -> None:
+        convention = self.certificate["frequency_convention"]
+        self.assertEqual(convention["frequency_operator"], "H104=sqrt(-1) A104")
+        self.assertEqual(
+            convention["eigenvalue_dictionary"]["A104"], "-sqrt(-1) omega"
+        )
+        self.assertEqual(convention["eigenvalue_dictionary"]["H104"], "omega")
+        self.assertIn(
+            "not positive spectrum of A104",
+            convention["positive_frequency_policy"],
+        )
+        self.assertIn("maps omega to -omega", convention["conjugation_policy"])
+        self.assertTrue(all(convention["checks"].values()))
+
+    def test_candidate_energy_domain_remains_fail_closed(self) -> None:
+        contract = self.certificate["closed_generator_contract"]
+        self.assertEqual(
+            contract["candidate_energy_scale"]["status"],
+            "CANDIDATE_NOT_CLOSED_REALIZATION",
+        )
+        self.assertEqual(contract["closed_realization_status"], "NOT_CONSTRUCTED")
+        self.assertIn(
+            "parameter ellipticity",
+            self.certificate["spectral_isolation_contract"][
+                "parameter_elliptic_route"
+            ],
+        )
 
     def test_two_slot_formula_precedes_operator_formula(self) -> None:
         lift = self.certificate["two_slot_covariance_lift"]
@@ -81,6 +118,12 @@ class BergerRetainedStationarySpectralPreflightTests(unittest.TestCase):
         mutant["closed_generator_contract"]["closed_realization_status"] = (
             "CERTIFIED"
         )
+        with self.assertRaisesRegex(ValueError, "over-promoted"):
+            validate(mutant)
+        mutant = deepcopy(self.certificate)
+        mutant["spectral_isolation_contract"][
+            "H104_spectrum_real_or_definitizable"
+        ] = "CERTIFIED"
         with self.assertRaisesRegex(ValueError, "over-promoted"):
             validate(mutant)
 
