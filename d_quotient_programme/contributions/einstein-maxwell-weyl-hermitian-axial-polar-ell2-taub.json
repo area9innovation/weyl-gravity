@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "compact R_t x S1_L x S2 fixed-P_N product; four-real-dimensional cosine/sine quadrature space of axisymmetric axial and polar Einstein-Maxwell ell=2,k=0 minus modes; fixed electric and magnetic charges through second order; before final residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the Hermitian real tangent and its zero- and two-frequency parity channel ledger are frozen",
+    "the exact quadratic Chevreton cosine-amplitude matrix is diag(144(-1+sqrt(3))/5,48(-3+2sqrt(3))/5) with zero axial-polar cross entry",
+    "the exact full Weyl-Maxwell constant-lapse cosine-amplitude Taub matrix is diag(48(-6+5sqrt(3))/5,24(-11+7sqrt(3))/5) with zero axial-polar cross entry",
+    "slice conservation and time translations lift the Taub form to all four real cosine/sine quadratures by repeating each positive diagonal entry",
+    "the Taub form is positive definite and the fixed compact bundle forbids the magnetic second-order lift, so every nonzero real combination in the declared axial-polar minus pair admits no smooth periodic second-order correction",
+    "the earlier removable AP sum-frequency source and this no-go are compatible because the obstruction lies in the conjugate self-product zero-frequency scalar channel"
+  ],
+  "evidence": {
+    "commit": "0b2600b823a32e5d82c630f72d74636eb464de43",
+    "path": "bridge/certificates/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.json",
+    "sha256": "9e91cd4b9b501fdfe0fe4f09b52c9b059e16380e49564875d83487ed77f57d02"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "test whether an admitted magnetic-charge lift removes only this Taub component and solve the remaining blocks in that enlarged charge fibre; independently extend the Hermitian classification to the plus pair, higher ell, and nonzero momentum",
+  "not_established": [
+    "a charge-relaxed second-order correction",
+    "generic ell, nonzero momentum, or every Einstein-Maxwell tangent",
+    "general nonlinear closure or a general nonlinear no-go for the Einstein sector",
+    "final residual, causal, asymptotic, scattering, particle, ghost, unitarity, or quantum conclusions"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_fixed_bundle_hermitian_axial_polar_ell2_minus_pair",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub",
+  "team_id": "einstein_boundary",
+  "verdict": "G1_HERMITIAN_AXIAL_POLAR_ELL2_MINUS_PAIR_POSITIVE_TAUB_FIXED_BUNDLE_NO_GO",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub --verify bridge/certificates/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub --verify-exhaustive bridge/certificates/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.json",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}
