@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-coupled-36-transfer-replay-v1.json",
+  "title": "Independent coupled Berger 36-row transfer replay",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "pinned_inputs", "coverage", "work_ledger", "independent_replay", "cyclicity_obstruction", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-coupled-36-transfer-replay-v1"},
+    "result_id": {"const": "BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY"},
+    "result_state": {"const": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_IMPORT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "classical_commit": {"const": "744383f2a21a05a1464f3a25b6569e2b001b4f20"},
+    "pinned_inputs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["portable_carrier_sha256", "classical_transfer_certificate_sha256", "classical_transfer_payload_sha256"],
+      "properties": {
+        "portable_carrier_sha256": {"$ref": "#/$defs/hash"},
+        "classical_transfer_certificate_sha256": {"$ref": "#/$defs/hash"},
+        "classical_transfer_payload_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["full_rows", "retained_rows", "q64_canonical_coefficients", "omega64_canonical_coefficients", "transferred_q2_canonical_coefficients", "transferred_nonzero_output_rows", "mixed_gravity_Maxwell_input_coefficients", "pure_Maxwell_input_coefficients", "maximum_total_jet_order"],
+      "properties": {
+        "full_rows": {"const": 64}, "retained_rows": {"const": 36},
+        "q64_canonical_coefficients": {"const": 1848}, "omega64_canonical_coefficients": {"const": 64},
+        "transferred_q2_canonical_coefficients": {"const": 1522}, "transferred_nonzero_output_rows": {"const": 23},
+        "mixed_gravity_Maxwell_input_coefficients": {"const": 1138}, "pure_Maxwell_input_coefficients": {"const": 384},
+        "maximum_total_jet_order": {"const": 2}
+      }
+    },
+    "work_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "inner_raw_contributions", "outer_Leibniz_contributions"],
+      "properties": {
+        "formula": {"const": "ell2_mixed=pi64 q2_Maxwell-overlay(iota36,iota36)"},
+        "inner_raw_contributions": {"const": 1652}, "outer_Leibniz_contributions": {"const": 1522}
+      }
+    },
+    "independent_replay": {
+      "type": "object", "additionalProperties": false,
+      "required": ["strict_schemas_and_content_hashes", "portable_q1_pairing_and_SDR_records", "transfer_formula_all_1522_coefficients", "retained_q1_q2_arity_two_identity", "full_q1_q2_arity_two_identity", "full_odd_pairing_cyclicity", "retained_odd_pairing_cyclicity", "exact_Q_sqrt10_no_floating_point"],
+      "properties": {
+        "strict_schemas_and_content_hashes": {"const": "VERIFIED"}, "portable_q1_pairing_and_SDR_records": {"const": "VERIFIED"},
+        "transfer_formula_all_1522_coefficients": {"const": "VERIFIED"}, "retained_q1_q2_arity_two_identity": {"const": "VERIFIED"},
+        "full_q1_q2_arity_two_identity": {"const": "VERIFIED"}, "full_odd_pairing_cyclicity": {"const": "FAILED_WITH_EXACT_WITNESS"},
+        "retained_odd_pairing_cyclicity": {"const": "FAILED_WITH_EXACT_WITNESS"}, "exact_Q_sqrt10_no_floating_point": {"const": "VERIFIED"}
+      }
+    },
+    "cyclicity_obstruction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["full_64_defect_coefficient_count", "full_64_defect_sha256", "full_64_first_normalized_witness", "retained_36_defect_coefficient_count", "retained_36_defect_sha256", "retained_36_first_normalized_witness", "interpretation"],
+      "properties": {
+        "full_64_defect_coefficient_count": {"const": 1234}, "full_64_defect_sha256": {"const": "840ad5ef755c51690e59207ee603767e3ec95af81d6909cb973b088b1ad439b9"},
+        "full_64_first_normalized_witness": {"$ref": "#/$defs/witness"},
+        "retained_36_defect_coefficient_count": {"const": 953}, "retained_36_defect_sha256": {"const": "62206e9b953406af222038cc4bfac9063fd65f65b51bfee0d6d90339d29d2f1f"},
+        "retained_36_first_normalized_witness": {"$ref": "#/$defs/witness"},
+        "interpretation": {"type": "string", "minLength": 140}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["PORTABLE_64_36_CARRIER_IMPORTED", "CLASSICAL_MIXED_Q2_TRANSFER_INDEPENDENTLY_REPLAYED", "RETAINED_Q1_Q2_IDENTITY_INDEPENDENTLY_REPLAYED", "RETAINED_BV_CYCLICITY_INDEPENDENTLY_REPLAYED", "EXACT_CYCLICITY_OBSTRUCTION_WITNESS", "CLASSICAL_MAXWELL_CAUSAL_CONTRACTION_HASH_PINNED", "CAUSAL_GREEN_IDENTITIES_INDEPENDENTLY_REPLAYED_HERE", "MIXED_Q3_TRANSFERRED", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "PORTABLE_64_36_CARRIER_IMPORTED": {"const": true}, "CLASSICAL_MIXED_Q2_TRANSFER_INDEPENDENTLY_REPLAYED": {"const": true},
+        "RETAINED_Q1_Q2_IDENTITY_INDEPENDENTLY_REPLAYED": {"const": true}, "RETAINED_BV_CYCLICITY_INDEPENDENTLY_REPLAYED": {"const": false},
+        "EXACT_CYCLICITY_OBSTRUCTION_WITNESS": {"const": true},
+        "CLASSICAL_MAXWELL_CAUSAL_CONTRACTION_HASH_PINNED": {"const": true}, "CAUSAL_GREEN_IDENTITIES_INDEPENDENTLY_REPLAYED_HERE": {"const": false},
+        "MIXED_Q3_TRANSFERRED": {"const": false}, "QME_RESTORED": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "REPAIR_CLASSICAL_COUPLED_Q2_OR_PAIRING_UNTIL_CYCLICITY_REPLAYS"},
+    "claim_boundary": {"type": "string", "minLength": 800},
+    "consumer_provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 6, "maxProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "verification_receipts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false, "required": ["tier_2", "tier_3"],
+      "properties": {"tier_2": {"type": "string", "minLength": 150}, "tier_3": {"type": "string", "minLength": 130}}
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "witness": {"type": "array", "minItems": 6, "maxItems": 6},
+    "receipt": {
+      "type": "object", "additionalProperties": false, "required": ["test_tier", "command", "elapsed_seconds", "status"],
+      "properties": {"test_tier": {"const": 1}, "command": {"type": "string", "minLength": 70}, "elapsed_seconds": {"type": "number", "minimum": 0}, "status": {"const": "PASS"}}
+    }
+  }
+}

@@ -25,6 +25,7 @@ DEPENDENCIES = {
     "background_coefficients": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
+    "coupled_36_transfer_replay": HERE / "transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
     "classical_Maxwell_transfer": ROOT / "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
     "classical_transferred_mixed_q2": ROOT / "d_quotient_classical/certificates/BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD.json",
     "causal_chain": HERE / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
@@ -50,6 +51,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "H14_AFN0_odd": "COMPLETE_AFN0_ODD_CANDIDATE_QUOTIENT",
         "antifield_contract": "CONTRACT_READY_AWAITING_CLASSICAL_EXPORT",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
+        "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
         "causal_chain": "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN",
         "base_Hadamard_parametrix": "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN",
         "typed_companion": "TYPED_MOLLER_ALGEBRA_CERTIFIED_MICROLOCAL_KERNEL_ACTION_OPEN",
@@ -82,6 +84,15 @@ def _load() -> dict[str, dict[str, Any]]:
         or q2_flags.get("MAXWELL_UNARY_CONTRACTION_IMPORTED") is not False
     ):
         raise ValueError("coupled q2 frontier drifted")
+    transfer_replay_flags = values["coupled_36_transfer_replay"].get("claim_flags", {})
+    if (
+        transfer_replay_flags.get("CLASSICAL_MIXED_Q2_TRANSFER_INDEPENDENTLY_REPLAYED") is not True
+        or transfer_replay_flags.get("RETAINED_Q1_Q2_IDENTITY_INDEPENDENTLY_REPLAYED") is not True
+        or transfer_replay_flags.get("RETAINED_BV_CYCLICITY_INDEPENDENTLY_REPLAYED") is not False
+        or transfer_replay_flags.get("EXACT_CYCLICITY_OBSTRUCTION_WITNESS") is not True
+        or values["coupled_36_transfer_replay"]["cyclicity_obstruction"]["retained_36_defect_coefficient_count"] != 953
+    ):
+        raise ValueError("coupled 36-row transfer replay frontier drifted")
     transfer_flags = values["classical_Maxwell_transfer"].get("flags", {})
     if (
         values["classical_Maxwell_transfer"].get("claim_status")
@@ -136,8 +147,8 @@ def build() -> dict[str, Any]:
         },
         "active_rows": {
             "classical_interacting_input": {
-                "status": "CLASSICAL_MAXWELL_CONTRACTION_AND_1522_TERM_TRANSFER_LANDED_QUANTUM_REPLAY_AWAITS_PORTABLE_CARRIER",
-                "next_gate": "BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR",
+                "status": "TRANSFER_FORMULA_AND_Q1Q2_REPLAY_PASS_CYCLICITY_HAS_953_TERM_RETAINED_OBSTRUCTION",
+                "next_gate": "REPAIR_CLASSICAL_COUPLED_Q2_OR_PAIRING_UNTIL_CYCLICITY_REPLAYS",
             },
             "local_obstruction_space": {
                 "status": "AFN0_H04_H14_EVEN_ODD_COMPLETE_FULL_BV_OPEN",
@@ -191,6 +202,7 @@ def build() -> dict[str, Any]:
             "ACTIVE_FRONTIER_LEDGER": True,
             "AFN0_G1_COMPLETE": True,
             "CLASSICAL_MAXWELL_TRANSFER_LANDED": True,
+            "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM": True,
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM": False,
             "FULL_BV_G2_COMPLETE": False,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -201,7 +213,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "IMPORT_BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR",
+            "REPAIR_CLASSICAL_COUPLED_Q2_OR_PAIRING_UNTIL_CYCLICITY_REPLAYS",
             "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -214,8 +226,11 @@ def build() -> dict[str, Any]:
             "This machine-generated frontier selects current status artifacts without "
             "invalidating historical receipts. It establishes G1 AFN0 local quotients, "
             "a complete classical causal chain, local Hadamard parametrices and a covariance "
-            "lift. It does not establish full antifield BV cohomology, repository Slavnov "
-            "coefficients, a global BRST Hadamard state, renormalized products, QME restoration, "
+            "lift. The first Maxwell transfer formula and q1/q2 identities replay, "
+            "but the exported cyclicity claim has an exact 953-coefficient retained defect. "
+            "The mixed interaction is therefore blocked pending a classical tensor or convention repair. "
+            "It does not establish full antifield BV cohomology, repository Slavnov coefficients, "
+            "a global BRST Hadamard state, renormalized products, QME restoration, "
             "residual quantum transfer or a Lorentzian quantum theory."
         ),
     }
@@ -241,6 +256,7 @@ def validate(result: dict[str, Any]) -> None:
         flags.get("ACTIVE_FRONTIER_LEDGER") is not True
         or flags.get("AFN0_G1_COMPLETE") is not True
         or flags.get("CLASSICAL_MAXWELL_TRANSFER_LANDED") is not True
+        or flags.get("MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
     ):
         raise ValueError("active frontier positive flags dropped")
     if any(
@@ -251,6 +267,7 @@ def validate(result: dict[str, Any]) -> None:
             "ACTIVE_FRONTIER_LEDGER",
             "AFN0_G1_COMPLETE",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",
+            "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")

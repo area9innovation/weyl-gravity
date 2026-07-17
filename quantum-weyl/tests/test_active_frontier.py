@@ -32,6 +32,13 @@ class ActiveFrontierTests(unittest.TestCase):
         for row in self.payload["supersession_ledger"]:
             self.assertIn("HISTORY_RETAINED", row["disposition"])
 
+    def test_Maxwell_transfer_replay_is_fail_closed_on_cyclicity(self) -> None:
+        flags = self.payload["claim_flags"]
+        self.assertTrue(flags["MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM"])
+        self.assertFalse(flags["MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM"])
+        row = self.payload["active_rows"]["classical_interacting_input"]
+        self.assertIn("953_TERM_RETAINED_OBSTRUCTION", row["status"])
+
     def test_quantum_overclaim_is_rejected(self) -> None:
         mutant = json.loads(json.dumps(self.payload))
         mutant["claim_flags"]["QME_RESTORED"] = True
