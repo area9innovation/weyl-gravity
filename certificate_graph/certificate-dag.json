@@ -55,6 +55,12 @@
       "target": "cert:af62c121c6c3f68c"
     },
     {
+      "evidence": "provenance.inputs.axial_operator.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:0322c921b4554515",
+      "target": "cert:09160ffe2a9c7542"
+    },
+    {
       "evidence": "provenance.inputs.operator.path",
       "relation": "DEPENDS_ON",
       "source": "cert:0322c921b4554515",
@@ -251,6 +257,30 @@
       "relation": "DEPENDS_ON",
       "source": "cert:07fe03c619e32dd0",
       "target": "cert:f9b276ad13d07c11"
+    },
+    {
+      "evidence": "provenance.inputs.stabilizer.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:09160ffe2a9c7542",
+      "target": "cert:2023194204bb6a29"
+    },
+    {
+      "evidence": "dependency_refs.Plebanski_Hacyan_stabilizer_authority.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:09160ffe2a9c7542",
+      "target": "cert:f1d84578c22b5cde"
+    },
+    {
+      "evidence": "dependency_refs.Plebanski_Hacyan_stabilizer_authority.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:09160ffe2a9c7542",
+      "target": "cert:f1d84578c22b5cde"
+    },
+    {
+      "evidence": "pinned_classical_evidence.Plebanski_Hacyan_stabilizer_authority.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:09160ffe2a9c7542",
+      "target": "cert:f1d84578c22b5cde"
     },
     {
       "evidence": "provenance.total_D_disposition.path",
@@ -523,6 +553,18 @@
       "target": "cert:9b67921b012f3b9f"
     },
     {
+      "evidence": "dependency_refs.coupled_cyclicity_repair.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:100afab1272c92d2",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.coupled_cyclicity_repair.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:100afab1272c92d2",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
       "evidence": "provenance.inputs.polar_complex.path",
       "relation": "DEPENDS_ON",
       "source": "cert:110c881c9f98c2b8",
@@ -533,6 +575,12 @@
       "relation": "DEPENDS_ON",
       "source": "cert:110c881c9f98c2b8",
       "target": "cert:a3f4a3f867cf9486"
+    },
+    {
+      "evidence": "provenance.inputs.source_complex.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:110c881c9f98c2b8",
+      "target": "cert:bd56f3a65e5f22ff"
     },
     {
       "evidence": "provenance.inputs.source_polar_operator.path",
@@ -685,10 +733,28 @@
       "target": "cert:749d1d0b5c1c2865"
     },
     {
+      "evidence": "dependency_refs.typed_moller.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1527efdb9c914cf3",
+      "target": "cert:1e39f0aa730c5c76"
+    },
+    {
       "evidence": "dependency_refs.typed_moller_algebra.result_id",
       "relation": "DEPENDS_ON",
       "source": "cert:1527efdb9c914cf3",
       "target": "cert:6b8ab10218a07158"
+    },
+    {
+      "evidence": "dependency_refs.typed_companion.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1527efdb9c914cf3",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.typed_companion.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1527efdb9c914cf3",
+      "target": "cert:7081d73fc0751540"
     },
     {
       "evidence": "provenance.berger_typed_companion_Moller_preflight_certificate",
@@ -733,6 +799,12 @@
       "target": "cert:9b67921b012f3b9f"
     },
     {
+      "evidence": "provenance.inputs.extra_taub_fixture.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:17d5ed1788cad29b",
+      "target": "cert:2023194204bb6a29"
+    },
+    {
       "evidence": "authoritative_registry.promoted_constraints.certificate",
       "relation": "DEPENDS_ON",
       "source": "cert:184a7e2042e73c37",
@@ -743,6 +815,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:184a7e2042e73c37",
       "target": "cert:8988ef5eb76c4ed3"
+    },
+    {
+      "evidence": "defect_payload.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:18744fdaa8e0ab1f",
+      "target": "cert:8ae97d4c72aa25d5"
+    },
+    {
+      "evidence": "verification_receipts.4.command",
+      "relation": "INDEPENDENTLY_VERIFIES",
+      "source": "cert:18744fdaa8e0ab1f",
+      "target": "cert:8ae97d4c72aa25d5"
     },
     {
       "evidence": "claims.curved_retract_identity.evidence.0",
@@ -841,10 +925,58 @@
       "target": "cert:9b67921b012f3b9f"
     },
     {
+      "evidence": "dependency_refs.stationary_generator_import_readiness.artifact_id",
+      "relation": "IMPORTS",
+      "source": "cert:1b2bf35eed592cdc",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.stationary_generator_import_readiness.path",
+      "relation": "IMPORTS",
+      "source": "cert:1b2bf35eed592cdc",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
       "evidence": "provenance.berger_clock_nonlinear_import_certificate",
       "relation": "IMPORTS",
       "source": "cert:1b2d70947b053bd0",
       "target": "cert:9b67921b012f3b9f"
+    },
+    {
+      "evidence": "dependency_refs.coupled_q2.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1d2c92c28c56b1a0",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.coupled_q2.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1d2c92c28c56b1a0",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.coupled_q2.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1d2c92c28c56b1a0",
+      "target": "cert:65b1f9889ca3f2df"
+    },
+    {
+      "evidence": "dependency_refs.coupled_q2.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1d2c92c28c56b1a0",
+      "target": "cert:65b1f9889ca3f2df"
+    },
+    {
+      "evidence": "dependency_refs.support_local_q2.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1d2c92c28c56b1a0",
+      "target": "cert:a9b1406f94257053"
+    },
+    {
+      "evidence": "dependency_refs.support_local_q2.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1d2c92c28c56b1a0",
+      "target": "cert:a9b1406f94257053"
     },
     {
       "evidence": "verification_commands.3",
@@ -857,6 +989,24 @@
       "relation": "DEPENDS_ON",
       "source": "cert:1d4f9d0d8049bba2",
       "target": "cert:9ca5e60f84fb0323"
+    },
+    {
+      "evidence": "dependency_refs.Hadamard_existence_audit.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1e39f0aa730c5c76",
+      "target": "cert:1b2bf35eed592cdc"
+    },
+    {
+      "evidence": "dependency_refs.Hadamard_existence_audit.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1e39f0aa730c5c76",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.Hadamard_existence_audit.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:1e39f0aa730c5c76",
+      "target": "cert:7081d73fc0751540"
     },
     {
       "evidence": "claims.prolonged_green_witness.evidence.0",
@@ -895,6 +1045,48 @@
       "target": "cert:3ed83d8b4342250e"
     },
     {
+      "evidence": "dependency_refs.H04_AFN0.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:20d05d9b501c3bea",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.H04_AFN0.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:20d05d9b501c3bea",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.redshift_fixture.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.redshift_fixture.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.redshift_geometry.live_required_flags.0",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:7180925541c0db28"
+    },
+    {
+      "evidence": "dependency_refs.redshift_geometry.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:7180925541c0db28"
+    },
+    {
+      "evidence": "dependency_refs.redshift_geometry.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:7180925541c0db28"
+    },
+    {
       "evidence": "dependency_refs.maxwell_mode.path",
       "relation": "DEPENDS_ON",
       "source": "cert:2259b19681588d08",
@@ -931,6 +1123,24 @@
       "target": "cert:9627b2ed04a9735b"
     },
     {
+      "evidence": "internal_imports.1.live_required_flags.0",
+      "relation": "IMPORTS",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "internal_imports.1.path",
+      "relation": "IMPORTS",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "internal_imports.1.result_id",
+      "relation": "IMPORTS",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
       "evidence": "dependency_refs.maxwell_mode.path",
       "relation": "DEPENDS_ON",
       "source": "cert:2259b19681588d08",
@@ -941,6 +1151,36 @@
       "relation": "DEPENDS_ON",
       "source": "cert:2259b19681588d08",
       "target": "cert:ab4a82f178315c53"
+    },
+    {
+      "evidence": "dependency_refs.g0_fixture.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:bd1d4e77c6557464"
+    },
+    {
+      "evidence": "dependency_refs.g0_fixture.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:bd1d4e77c6557464"
+    },
+    {
+      "evidence": "dependency_refs.maxwell_mode.live_required_flags.0",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:d377153e330edd7a"
+    },
+    {
+      "evidence": "dependency_refs.maxwell_mode.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:d377153e330edd7a"
+    },
+    {
+      "evidence": "dependency_refs.maxwell_mode.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2259b19681588d08",
+      "target": "cert:d377153e330edd7a"
     },
     {
       "evidence": "claims.prolonged_green_witness.evidence.5",
@@ -1027,10 +1267,34 @@
       "target": "cert:f2efb931aa35f292"
     },
     {
+      "evidence": "dependency_refs.coupled_q2.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2770eeb906a0e91c",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.coupled_q2.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2770eeb906a0e91c",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
       "evidence": "provenance.quantum_inputs.D_and_causal_reduction.path",
       "relation": "DEPENDS_ON",
       "source": "cert:27cdabab2f3c19d1",
       "target": "cert:16e8a1f09d1bdb7a"
+    },
+    {
+      "evidence": "dependency_refs.H14_AFN0_odd.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:282736236aa7df67",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.H14_AFN0_odd.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:282736236aa7df67",
+      "target": "cert:7081d73fc0751540"
     },
     {
       "evidence": "provenance.inputs.direct_fixture.path",
@@ -1043,6 +1307,18 @@
       "relation": "INDEPENDENTLY_VERIFIES",
       "source": "cert:288e6ae4d331326c",
       "target": "cert:856b87cc4d817723"
+    },
+    {
+      "evidence": "dependency_refs.H14_AFN0_even.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2934ce9cfdd0fc12",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.H14_AFN0_even.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:2934ce9cfdd0fc12",
+      "target": "cert:7081d73fc0751540"
     },
     {
       "evidence": "claims.prolonged_green_witness.evidence.28",
@@ -1807,6 +2083,78 @@
       "target": "cert:9b67921b012f3b9f"
     },
     {
+      "evidence": "dependency_refs.classical_Maxwell_transfer.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:65b1f9889ca3f2df"
+    },
+    {
+      "evidence": "dependency_refs.classical_Maxwell_transfer.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:65b1f9889ca3f2df"
+    },
+    {
+      "evidence": "artifacts.transfer_certificate.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:7ae0426c39cfcdd1"
+    },
+    {
+      "evidence": "artifacts.transfer_certificate.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:9476deeb329473a5"
+    },
+    {
+      "evidence": "internal_imports.2.path",
+      "relation": "IMPORTS",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "internal_imports.2.result_id",
+      "relation": "IMPORTS",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "dependency_refs.causal_q2_repair.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:a9b1406f94257053"
+    },
+    {
+      "evidence": "dependency_refs.causal_q2_repair.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:a9b1406f94257053"
+    },
+    {
+      "evidence": "dependency_refs.causal_transfer.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:bd1d4e77c6557464"
+    },
+    {
+      "evidence": "dependency_refs.causal_transfer.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:bd1d4e77c6557464"
+    },
+    {
+      "evidence": "dependency_refs.causal_green.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:d377153e330edd7a"
+    },
+    {
+      "evidence": "dependency_refs.causal_green.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:388a52251cacf7e9",
+      "target": "cert:d377153e330edd7a"
+    },
+    {
       "evidence": "dependency_refs.relational_preflight.path",
       "relation": "DEPENDS_ON",
       "source": "cert:3ad285e89bdf2611",
@@ -1859,6 +2207,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:3b61b7fd9822cfe1",
       "target": "cert:1d2c92c28c56b1a0"
+    },
+    {
+      "evidence": "dependency_refs.generator_audit.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:3b61b7fd9822cfe1",
+      "target": "cert:65b1f9889ca3f2df"
+    },
+    {
+      "evidence": "dependency_refs.generator_audit.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:3b61b7fd9822cfe1",
+      "target": "cert:65b1f9889ca3f2df"
     },
     {
       "evidence": "source_manifest.generator_audit.path",
@@ -2083,6 +2443,12 @@
       "target": "cert:98289395e9b845dc"
     },
     {
+      "evidence": "provenance.inputs.target_operator.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:43d8d544a61b445f",
+      "target": "cert:bd56f3a65e5f22ff"
+    },
+    {
       "evidence": "provenance.quantum_inputs.retained_q2_transfer.path",
       "relation": "DEPENDS_ON",
       "source": "cert:44168b83e151fa74",
@@ -2141,6 +2507,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:464b9a7ca53b844d",
       "target": "cert:0301a21c0e6852fc"
+    },
+    {
+      "evidence": "provenance.inputs.axial_pairing.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:464b9a7ca53b844d",
+      "target": "cert:09160ffe2a9c7542"
+    },
+    {
+      "evidence": "provenance.inputs.axial_pairing.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:464b9a7ca53b844d",
+      "target": "cert:2023194204bb6a29"
     },
     {
       "evidence": "provenance.inputs.generic_axial_pairing.path",
@@ -2431,6 +2809,18 @@
       "target": "cert:af62c121c6c3f68c"
     },
     {
+      "evidence": "dependency_refs.Cartan_comparison.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:57b0b40fbadc3425",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.Cartan_comparison.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:57b0b40fbadc3425",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
       "evidence": "dependency_refs.local_D_Cartan_comparison.artifact_id",
       "relation": "DEPENDS_ON",
       "source": "cert:57b0b40fbadc3425",
@@ -2533,10 +2923,34 @@
       "target": "cert:09a33b02dd32f558"
     },
     {
+      "evidence": "dependency_refs.raw_D_nullity.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:5a1e6b3d96767280",
+      "target": "cert:7180925541c0db28"
+    },
+    {
+      "evidence": "dependency_refs.raw_D_nullity.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:5a1e6b3d96767280",
+      "target": "cert:7180925541c0db28"
+    },
+    {
       "evidence": "evidence_artifacts.13.path",
       "relation": "DEPENDS_ON",
       "source": "cert:5a1e6b3d96767280",
       "target": "cert:a513e2eb91653034"
+    },
+    {
+      "evidence": "internal_imports.4.path",
+      "relation": "IMPORTS",
+      "source": "cert:5a1e6b3d96767280",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "internal_imports.4.result_id",
+      "relation": "IMPORTS",
+      "source": "cert:5a1e6b3d96767280",
+      "target": "cert:a70bf40ec16bcd96"
     },
     {
       "evidence": "claims.3.certificate",
@@ -2555,6 +2969,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:5a1e6b3d96767280",
       "target": "cert:a7300202a1379bb7"
+    },
+    {
+      "evidence": "dependency_refs.raw_d_nullity.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:5a1e6b3d96767280",
+      "target": "cert:a9b1406f94257053"
+    },
+    {
+      "evidence": "dependency_refs.raw_d_nullity.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:5a1e6b3d96767280",
+      "target": "cert:a9b1406f94257053"
     },
     {
       "evidence": "cross_certificates.generic_triangular_Green_theorem",
@@ -2647,6 +3073,12 @@
       "target": "cert:d2df8652868c32c0"
     },
     {
+      "evidence": "provenance.inputs.einstein_taub_fixture.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:60cff625484faca7",
+      "target": "cert:2023194204bb6a29"
+    },
+    {
       "evidence": "analytic_proof_artifacts.causal_support_passage.path",
       "relation": "DEPENDS_ON",
       "source": "cert:60d291a98deae611",
@@ -2671,6 +3103,36 @@
       "target": "cert:7b7c4eda7956bc3f"
     },
     {
+      "evidence": "first_transferred_mixed_vertex.payload_path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:61e33923910a559c",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.classical_transferred_q2_payload.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:61e33923910a559c",
+      "target": "cert:65b1f9889ca3f2df"
+    },
+    {
+      "evidence": "dependency_refs.classical_transferred_q2_payload.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:61e33923910a559c",
+      "target": "cert:65b1f9889ca3f2df"
+    },
+    {
+      "evidence": "artifacts.transferred_q2_payload.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:61e33923910a559c",
+      "target": "cert:7ae0426c39cfcdd1"
+    },
+    {
+      "evidence": "artifacts.transferred_q2_payload.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:61e33923910a559c",
+      "target": "cert:9476deeb329473a5"
+    },
+    {
       "evidence": "provenance.inputs.physical_ell1_restriction.path",
       "relation": "DEPENDS_ON",
       "source": "cert:624637c82f0dac12",
@@ -2687,6 +3149,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:624637c82f0dac12",
       "target": "cert:856b87cc4d817723"
+    },
+    {
+      "evidence": "dependency_refs.retained_causal.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:62553d15db75b833",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.retained_causal.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:62553d15db75b833",
+      "target": "cert:388a52251cacf7e9"
     },
     {
       "evidence": "provenance.classical_artifacts.endpoint_26.path",
@@ -2803,10 +3277,34 @@
       "target": "cert:af62c121c6c3f68c"
     },
     {
+      "evidence": "dependency_refs.retained_layout.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:6504459f0e15a25e",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.retained_layout.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:6504459f0e15a25e",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
       "evidence": "operators.pairing26.path",
       "relation": "DEPENDS_ON",
       "source": "cert:6504459f0e15a25e",
       "target": "cert:62553d15db75b833"
+    },
+    {
+      "evidence": "dependency_refs.retained_gravity_layout.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:6504459f0e15a25e",
+      "target": "cert:65b1f9889ca3f2df"
+    },
+    {
+      "evidence": "dependency_refs.retained_gravity_layout.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:6504459f0e15a25e",
+      "target": "cert:65b1f9889ca3f2df"
     },
     {
       "evidence": "dependency_refs.retained_layout.artifact_id",
@@ -2855,6 +3353,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:6504459f0e15a25e",
       "target": "cert:dccb4389858c2bb3"
+    },
+    {
+      "evidence": "artifacts.carrier.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:65b1f9889ca3f2df",
+      "target": "cert:7ae0426c39cfcdd1"
+    },
+    {
+      "evidence": "artifacts.carrier.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:65b1f9889ca3f2df",
+      "target": "cert:9476deeb329473a5"
     },
     {
       "evidence": "provenance.berger_gauge_fixed_nonminimal_import_certificate",
@@ -2993,6 +3503,12 @@
       "relation": "DEPENDS_ON",
       "source": "cert:6b8ab10218a07158",
       "target": "cert:1267dbf5b1115c33"
+    },
+    {
+      "evidence": "dependency_refs.companion_principal.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:6b8ab10218a07158",
+      "target": "cert:1e39f0aa730c5c76"
     },
     {
       "evidence": "provenance.berger_companion_decomposability_preflight_certificate",
@@ -3247,10 +3763,58 @@
       "target": "cert:edd32cbf91beb12d"
     },
     {
+      "evidence": "dependency_refs.graded_state_space.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:6ecf90a618adaa45",
+      "target": "cert:1e39f0aa730c5c76"
+    },
+    {
       "evidence": "dependency_refs.graded_state_space_contract.artifact_id",
       "relation": "DEPENDS_ON",
       "source": "cert:6ecf90a618adaa45",
       "target": "cert:cf18fac346aaba83"
+    },
+    {
+      "evidence": "first_transferred_mixed_vertex.historical_obstruction_dependency",
+      "relation": "DEPENDS_ON",
+      "source": "cert:6f5f03bf71e8a5fd",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.independent_cyclicity_audit.path",
+      "relation": "INDEPENDENTLY_VERIFIES",
+      "source": "cert:6f5f03bf71e8a5fd",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.independent_cyclicity_audit.result_id",
+      "relation": "INDEPENDENTLY_VERIFIES",
+      "source": "cert:6f5f03bf71e8a5fd",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.coupled_36_transfer_replay.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:6f5f03bf71e8a5fd",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.coupled_36_transfer_replay.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:6f5f03bf71e8a5fd",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_ref.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:6f5f03bf71e8a5fd",
+      "target": "cert:8ae97d4c72aa25d5"
+    },
+    {
+      "evidence": "dependency_ref.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:6f5f03bf71e8a5fd",
+      "target": "cert:8ae97d4c72aa25d5"
     },
     {
       "evidence": "provenance.inputs.arbitrary_lambda_fixture.path",
@@ -3283,6 +3847,42 @@
       "target": "cert:af62c121c6c3f68c"
     },
     {
+      "evidence": "artifact_hashes.6.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:7180925541c0db28",
+      "target": "cert:31c2b92a4dfb2ce5"
+    },
+    {
+      "evidence": "bridge_artifacts.0.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:7180925541c0db28",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "dependency_refs.detector_preflight.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:7180925541c0db28",
+      "target": "cert:a9b1406f94257053"
+    },
+    {
+      "evidence": "dependency_refs.detector_preflight.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:7180925541c0db28",
+      "target": "cert:a9b1406f94257053"
+    },
+    {
+      "evidence": "dependency_refs.detector_preflight.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:7180925541c0db28",
+      "target": "cert:d377153e330edd7a"
+    },
+    {
+      "evidence": "dependency_refs.detector_preflight.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:7180925541c0db28",
+      "target": "cert:d377153e330edd7a"
+    },
+    {
       "evidence": "dependency_refs.stress_physical_block.path",
       "relation": "DEPENDS_ON",
       "source": "cert:748bb14b668e23b0",
@@ -3305,6 +3905,12 @@
       "relation": "DEPENDS_ON",
       "source": "cert:748bb14b668e23b0",
       "target": "cert:ab4a82f178315c53"
+    },
+    {
+      "evidence": "provenance.inputs.stabilizer_preflight.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:74f491c4a967470b",
+      "target": "cert:09160ffe2a9c7542"
     },
     {
       "evidence": "parent_result_id",
@@ -3391,6 +3997,30 @@
       "target": "cert:e64a231e57b94d3f"
     },
     {
+      "evidence": "dependency_refs.zero_frequency_readiness.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:7ac36f1a6278bcaa",
+      "target": "cert:1b2bf35eed592cdc"
+    },
+    {
+      "evidence": "dependency_refs.zero_frequency_readiness.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:7ac36f1a6278bcaa",
+      "target": "cert:1e39f0aa730c5c76"
+    },
+    {
+      "evidence": "dependency_refs.zero_frequency_readiness.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:7ac36f1a6278bcaa",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.zero_frequency_readiness.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:7ac36f1a6278bcaa",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
       "evidence": "adjoint_and_current_conventions.odd_pairing_reference.certificate",
       "relation": "DEPENDS_ON",
       "source": "cert:7adbec107edfa468",
@@ -3449,6 +4079,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:7adbec107edfa468",
       "target": "cert:e64a231e57b94d3f"
+    },
+    {
+      "evidence": "accepted_candidate.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:7ae0426c39cfcdd1",
+      "target": "cert:100afab1272c92d2"
+    },
+    {
+      "evidence": "verification_receipts.4.command",
+      "relation": "INDEPENDENTLY_VERIFIES",
+      "source": "cert:7ae0426c39cfcdd1",
+      "target": "cert:100afab1272c92d2"
     },
     {
       "evidence": "inputs.sourced_defect_preflight.path",
@@ -3709,6 +4351,18 @@
       "target": "cert:f1d84578c22b5cde"
     },
     {
+      "evidence": "dependency_refs.antifield_contract.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:839e2032c1512243",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.antifield_contract.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:839e2032c1512243",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
       "evidence": "authoritative_registry.rank34_filtration.certificate",
       "relation": "DEPENDS_ON",
       "source": "cert:83b007bddb118df7",
@@ -3805,6 +4459,12 @@
       "target": "cert:1527efdb9c914cf3"
     },
     {
+      "evidence": "dependency_refs.base_parametrix.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:857f3cb9d2e06398",
+      "target": "cert:1e39f0aa730c5c76"
+    },
+    {
       "evidence": "dependency_refs.base_hadamard_parametrix.result_id",
       "relation": "DEPENDS_ON",
       "source": "cert:857f3cb9d2e06398",
@@ -3827,6 +4487,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:857f3cb9d2e06398",
       "target": "cert:6ecf90a618adaa45"
+    },
+    {
+      "evidence": "dependency_refs.base_Hadamard_parametrix.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:857f3cb9d2e06398",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.base_Hadamard_parametrix.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:857f3cb9d2e06398",
+      "target": "cert:7081d73fc0751540"
     },
     {
       "evidence": "provenance.berger_base_hadamard_parametrix_certificate",
@@ -3961,6 +4633,30 @@
       "target": "cert:6ecf90a618adaa45"
     },
     {
+      "evidence": "dependency_refs.causal_chain.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:89449b534790db00",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.causal_chain.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:89449b534790db00",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.causal_chain.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:89449b534790db00",
+      "target": "cert:7ac36f1a6278bcaa"
+    },
+    {
+      "evidence": "dependency_refs.causal_chain.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:89449b534790db00",
+      "target": "cert:7ac36f1a6278bcaa"
+    },
+    {
       "evidence": "dependency_refs.causal_chain_v2.result_id",
       "relation": "DEPENDS_ON",
       "source": "cert:89449b534790db00",
@@ -4049,6 +4745,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:8ae29a176bbfbf24",
       "target": "cert:d2f114cb2d6db959"
+    },
+    {
+      "evidence": "dependency_refs.coupled_cyclicity_atlas.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:8ae97d4c72aa25d5",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.coupled_cyclicity_atlas.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:8ae97d4c72aa25d5",
+      "target": "cert:7081d73fc0751540"
     },
     {
       "evidence": "claims.curved_auxiliary_presymplectic_potential.evidence.0",
@@ -4153,6 +4861,12 @@
       "target": "cert:db53bbe67e4e5427"
     },
     {
+      "evidence": "dependency_refs.companion_decomposability.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:92dc5b5e4e989415",
+      "target": "cert:1e39f0aa730c5c76"
+    },
+    {
       "evidence": "dependency_refs.stationary_decomposability.artifact_id",
       "relation": "DEPENDS_ON",
       "source": "cert:92dc5b5e4e989415",
@@ -4183,10 +4897,34 @@
       "target": "cert:af62c121c6c3f68c"
     },
     {
+      "evidence": "obstructed_baseline.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9476deeb329473a5",
+      "target": "cert:100afab1272c92d2"
+    },
+    {
+      "evidence": "verification_receipts.3.command",
+      "relation": "INDEPENDENTLY_VERIFIES",
+      "source": "cert:9476deeb329473a5",
+      "target": "cert:100afab1272c92d2"
+    },
+    {
       "evidence": "authoritative_registry.weyl_cotton_block_witness.certificate",
       "relation": "DEPENDS_ON",
       "source": "cert:9572a0d26ba1cf59",
       "target": "cert:8988ef5eb76c4ed3"
+    },
+    {
+      "evidence": "dependency_refs.apparatus_contract.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9627b2ed04a9735b",
+      "target": "cert:7180925541c0db28"
+    },
+    {
+      "evidence": "dependency_refs.apparatus_contract.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9627b2ed04a9735b",
+      "target": "cert:7180925541c0db28"
     },
     {
       "evidence": "dependency_refs.maxwell_bv_preflight.path",
@@ -4225,6 +4963,18 @@
       "target": "cert:8d5c12a61a91c0a5"
     },
     {
+      "evidence": "dependency_refs.maxwell_layout.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9627b2ed04a9735b",
+      "target": "cert:bd1d4e77c6557464"
+    },
+    {
+      "evidence": "dependency_refs.maxwell_layout.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9627b2ed04a9735b",
+      "target": "cert:bd1d4e77c6557464"
+    },
+    {
       "evidence": "correct_two_operator_architecture.separate_composite_projector_cross_reference",
       "relation": "DEPENDS_ON",
       "source": "cert:97cd7e51169f5cbd",
@@ -4259,6 +5009,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:99013f3980122d3d",
       "target": "cert:9f6c421525fa21b8"
+    },
+    {
+      "evidence": "dependency_refs.Paper09_boundary.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9af12c6e8f82dcf3",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.Paper09_boundary.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9af12c6e8f82dcf3",
+      "target": "cert:7081d73fc0751540"
     },
     {
       "evidence": "claims.curved_cauchy_boundary_current.evidence.0",
@@ -4333,6 +5095,42 @@
       "target": "cert:f432e04acfb43116"
     },
     {
+      "evidence": "dependency_refs.partial_A104.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9f6c421525fa21b8",
+      "target": "cert:1b2bf35eed592cdc"
+    },
+    {
+      "evidence": "dependency_refs.partial_A104.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9f6c421525fa21b8",
+      "target": "cert:1e39f0aa730c5c76"
+    },
+    {
+      "evidence": "dependency_refs.A104_partial.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9f6c421525fa21b8",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.A104_partial.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9f6c421525fa21b8",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.global_A104_partial.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9f6c421525fa21b8",
+      "target": "cert:7ac36f1a6278bcaa"
+    },
+    {
+      "evidence": "dependency_refs.global_A104_partial.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:9f6c421525fa21b8",
+      "target": "cert:7ac36f1a6278bcaa"
+    },
+    {
       "evidence": "dependency_refs.Berger_global_A104_partial.artifact_id",
       "relation": "DEPENDS_ON",
       "source": "cert:9f6c421525fa21b8",
@@ -4393,6 +5191,12 @@
       "target": "cert:e64a231e57b94d3f"
     },
     {
+      "evidence": "provenance.inputs.axial_extra_pairing.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:a49b1112200f6aa4",
+      "target": "cert:2023194204bb6a29"
+    },
+    {
       "evidence": "bridge_source.artifacts.extra_pairing_certificate.path",
       "relation": "DEPENDS_ON",
       "source": "cert:a49b1112200f6aa4",
@@ -4441,6 +5245,30 @@
       "target": "cert:e64a231e57b94d3f"
     },
     {
+      "evidence": "artifact_hashes.7.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:a70bf40ec16bcd96",
+      "target": "cert:31c2b92a4dfb2ce5"
+    },
+    {
+      "evidence": "artifact_hashes.2.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:a70bf40ec16bcd96",
+      "target": "cert:955e001853c509cd"
+    },
+    {
+      "evidence": "artifact_hashes.4.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:a70bf40ec16bcd96",
+      "target": "cert:cbc4925a520a25a8"
+    },
+    {
+      "evidence": "artifact_hashes.4.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:a70bf40ec16bcd96",
+      "target": "cert:e5ae3e38e8dbccbb"
+    },
+    {
       "evidence": "publication_plan.paper_IX.claim_table.path",
       "relation": "DEPENDS_ON",
       "source": "cert:a7300202a1379bb7",
@@ -4475,6 +5303,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:a936632af466d061",
       "target": "cert:e64a231e57b94d3f"
+    },
+    {
+      "evidence": "bridge_artifacts.2.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:a9b1406f94257053",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "artifact_hashes.3.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:a9b1406f94257053",
+      "target": "cert:e5ae3e38e8dbccbb"
     },
     {
       "evidence": "green_proof_checks.D_equivariance.proof_artifact.path",
@@ -4577,6 +5417,54 @@
       "relation": "DEPENDS_ON",
       "source": "cert:ad716bdf01fa4177",
       "target": "cert:1d2c92c28c56b1a0"
+    },
+    {
+      "evidence": "internal_imports.5.live_required_flags.1",
+      "relation": "IMPORTS",
+      "source": "cert:ad716bdf01fa4177",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "internal_imports.5.path",
+      "relation": "IMPORTS",
+      "source": "cert:ad716bdf01fa4177",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "internal_imports.5.result_id",
+      "relation": "IMPORTS",
+      "source": "cert:ad716bdf01fa4177",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "dependency_refs.k_signoff.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:ad716bdf01fa4177",
+      "target": "cert:a9b1406f94257053"
+    },
+    {
+      "evidence": "dependency_refs.k_signoff.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:ad716bdf01fa4177",
+      "target": "cert:a9b1406f94257053"
+    },
+    {
+      "evidence": "provenance.inputs.polar_pairing.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:ad7366175cd3da2b",
+      "target": "cert:09160ffe2a9c7542"
+    },
+    {
+      "evidence": "provenance.inputs.polar_pairing.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:ad7366175cd3da2b",
+      "target": "cert:2023194204bb6a29"
+    },
+    {
+      "evidence": "provenance.inputs.direct_pairing.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:ad7366175cd3da2b",
+      "target": "cert:bd56f3a65e5f22ff"
     },
     {
       "evidence": "dependency_refs.stationary_spectral_preflight.artifact_id",
@@ -4739,6 +5627,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:b3fabbbda8cae1be",
       "target": "cert:af62c121c6c3f68c"
+    },
+    {
+      "evidence": "dependency_refs.gravity_causal.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:b458d57cd07a2e8f",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.gravity_causal.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:b458d57cd07a2e8f",
+      "target": "cert:388a52251cacf7e9"
     },
     {
       "evidence": "dependency_refs.causal_green_domain.path",
@@ -5089,6 +5989,18 @@
       "target": "cert:e64a231e57b94d3f"
     },
     {
+      "evidence": "dependency_refs.background_coefficients.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bc1eab3d61040058",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.background_coefficients.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bc1eab3d61040058",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
       "evidence": "ambient_signature_source.result_id",
       "relation": "DEPENDS_ON",
       "source": "cert:bc2259c893ef9b7c",
@@ -5105,6 +6017,84 @@
       "relation": "DEPENDS_ON",
       "source": "cert:bc2259c893ef9b7c",
       "target": "cert:a28fe83cd702f11e"
+    },
+    {
+      "evidence": "dependency_refs.retarded_signal.live_required_flags.1",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bd1d4e77c6557464",
+      "target": "cert:7180925541c0db28"
+    },
+    {
+      "evidence": "dependency_refs.retarded_signal.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bd1d4e77c6557464",
+      "target": "cert:7180925541c0db28"
+    },
+    {
+      "evidence": "dependency_refs.retarded_signal.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bd1d4e77c6557464",
+      "target": "cert:7180925541c0db28"
+    },
+    {
+      "evidence": "internal_imports.3.live_required_flags.1",
+      "relation": "IMPORTS",
+      "source": "cert:bd1d4e77c6557464",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "internal_imports.3.path",
+      "relation": "IMPORTS",
+      "source": "cert:bd1d4e77c6557464",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "internal_imports.3.result_id",
+      "relation": "IMPORTS",
+      "source": "cert:bd1d4e77c6557464",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "dependency_refs.retarded_signal.live_required_flags.1",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bd1d4e77c6557464",
+      "target": "cert:d377153e330edd7a"
+    },
+    {
+      "evidence": "dependency_refs.retarded_signal.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bd1d4e77c6557464",
+      "target": "cert:d377153e330edd7a"
+    },
+    {
+      "evidence": "dependency_refs.retarded_signal.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bd1d4e77c6557464",
+      "target": "cert:d377153e330edd7a"
+    },
+    {
+      "evidence": "provenance.inputs.polar_ungauged.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bd56f3a65e5f22ff",
+      "target": "cert:09160ffe2a9c7542"
+    },
+    {
+      "evidence": "dependency_refs.polar_ungauged_noether_lift.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bd56f3a65e5f22ff",
+      "target": "cert:f1d84578c22b5cde"
+    },
+    {
+      "evidence": "dependency_refs.polar_ungauged_noether_lift.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bd56f3a65e5f22ff",
+      "target": "cert:f1d84578c22b5cde"
+    },
+    {
+      "evidence": "pinned_classical_evidence.polar_ungauged_noether_lift.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:bd56f3a65e5f22ff",
+      "target": "cert:f1d84578c22b5cde"
     },
     {
       "evidence": "authoritative_registry.weyl_cotton_3plus1.certificate",
@@ -5207,6 +6197,12 @@
       "relation": "DEPENDS_ON",
       "source": "cert:c732535b9b280d82",
       "target": "cert:17d5ed1788cad29b"
+    },
+    {
+      "evidence": "provenance.inputs.domain.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:c732535b9b280d82",
+      "target": "cert:2023194204bb6a29"
     },
     {
       "evidence": "proof_certificate",
@@ -5317,6 +6313,24 @@
       "target": "cert:f67a3637420fa967"
     },
     {
+      "evidence": "dependency_refs.hadamard_lift.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:cf18fac346aaba83",
+      "target": "cert:1e39f0aa730c5c76"
+    },
+    {
+      "evidence": "dependency_refs.Hadamard_lift.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:cf18fac346aaba83",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.Hadamard_lift.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:cf18fac346aaba83",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
       "evidence": "dependency_refs.Hadamard_lift_preflight.artifact_id",
       "relation": "DEPENDS_ON",
       "source": "cert:cf18fac346aaba83",
@@ -5413,6 +6427,30 @@
       "target": "cert:b2db4110e74edb69"
     },
     {
+      "evidence": "bridge_artifacts.1.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:d377153e330edd7a",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "dependency_refs.linear_transfer.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:d377153e330edd7a",
+      "target": "cert:a9b1406f94257053"
+    },
+    {
+      "evidence": "dependency_refs.linear_transfer.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:d377153e330edd7a",
+      "target": "cert:a9b1406f94257053"
+    },
+    {
+      "evidence": "artifact_hashes.3.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:d377153e330edd7a",
+      "target": "cert:cbc4925a520a25a8"
+    },
+    {
       "evidence": "proof_certificate",
       "relation": "DEPENDS_ON",
       "source": "cert:d794c4fdd21cf52c",
@@ -5489,6 +6527,18 @@
       "relation": "DEPENDS_ON",
       "source": "cert:db53bbe67e4e5427",
       "target": "cert:c4a65c4a9cef8519"
+    },
+    {
+      "evidence": "artifact_hashes.2.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:dc1a15e00f2dd9eb",
+      "target": "cert:31c2b92a4dfb2ce5"
+    },
+    {
+      "evidence": "artifact_hashes.1.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:dc1a15e00f2dd9eb",
+      "target": "cert:955e001853c509cd"
     },
     {
       "evidence": "inputs.compensated_sourced_defect_chain_map.path",
@@ -5575,6 +6625,12 @@
       "target": "cert:ad716bdf01fa4177"
     },
     {
+      "evidence": "provenance.inputs.preflight.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:de59dc75a4220bc7",
+      "target": "cert:bd56f3a65e5f22ff"
+    },
+    {
       "evidence": "parent_result_id",
       "relation": "DEPENDS_ON",
       "source": "cert:deda064b7c86eb49",
@@ -5641,10 +6697,34 @@
       "target": "cert:3ad285e89bdf2611"
     },
     {
+      "evidence": "dependency_refs.clock.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:dfc0759fa7a67f97",
+      "target": "cert:7180925541c0db28"
+    },
+    {
+      "evidence": "dependency_refs.clock.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:dfc0759fa7a67f97",
+      "target": "cert:7180925541c0db28"
+    },
+    {
       "evidence": "evidence_artifacts.11.path",
       "relation": "DEPENDS_ON",
       "source": "cert:dfc0759fa7a67f97",
       "target": "cert:a513e2eb91653034"
+    },
+    {
+      "evidence": "internal_imports.0.path",
+      "relation": "IMPORTS",
+      "source": "cert:dfc0759fa7a67f97",
+      "target": "cert:a70bf40ec16bcd96"
+    },
+    {
+      "evidence": "internal_imports.0.result_id",
+      "relation": "IMPORTS",
+      "source": "cert:dfc0759fa7a67f97",
+      "target": "cert:a70bf40ec16bcd96"
     },
     {
       "evidence": "claims.0.certificate",
@@ -5845,6 +6925,18 @@
       "target": "cert:31b5cc5816f941d3"
     },
     {
+      "evidence": "provenance.inputs.polar_module.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:e6fb3458fa621f12",
+      "target": "cert:09160ffe2a9c7542"
+    },
+    {
+      "evidence": "provenance.inputs.physical_completion.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:e6fb3458fa621f12",
+      "target": "cert:bd56f3a65e5f22ff"
+    },
+    {
       "evidence": "curved_BGG_gate.authoritative_future_filename",
       "relation": "DEPENDS_ON",
       "source": "cert:e708f97e73961255",
@@ -6037,6 +7129,18 @@
       "target": "cert:e64a231e57b94d3f"
     },
     {
+      "evidence": "dependency_refs.relative_readiness.artifact_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:f1d84578c22b5cde",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
+      "evidence": "dependency_refs.relative_readiness.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:f1d84578c22b5cde",
+      "target": "cert:7081d73fc0751540"
+    },
+    {
       "evidence": "cross_certificates.open_singleton_ledger",
       "relation": "DEPENDS_ON",
       "source": "cert:f25c500d2e878d1d",
@@ -6227,6 +7331,30 @@
       "relation": "DEPENDS_ON",
       "source": "cert:f5b09de04967e113",
       "target": "cert:2ba0d13d156036b3"
+    },
+    {
+      "evidence": "dependency_refs.gravity_sdr.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:f5b09de04967e113",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.gravity_sdr.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:f5b09de04967e113",
+      "target": "cert:388a52251cacf7e9"
+    },
+    {
+      "evidence": "dependency_refs.gravity_unary_pairing_sdr.path",
+      "relation": "DEPENDS_ON",
+      "source": "cert:f5b09de04967e113",
+      "target": "cert:65b1f9889ca3f2df"
+    },
+    {
+      "evidence": "dependency_refs.gravity_unary_pairing_sdr.result_id",
+      "relation": "DEPENDS_ON",
+      "source": "cert:f5b09de04967e113",
+      "target": "cert:65b1f9889ca3f2df"
     },
     {
       "evidence": "provenance.classical_sources.classical_certificate.path",
@@ -7514,6 +8642,36 @@
       "status": "COMPLETE_STANDARD_BLOCK_MIXED_PULLBACK_ZERO_DIRECT_SHARED_LABEL_COLLISION"
     },
     {
+      "color_state": "obstruction",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "family": "Einstein / boundaries",
+      "key": "cert:2023194204bb6a29",
+      "label": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+      "layout_group": "Taub and nonlinear obstruction tests",
+      "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+      "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+      "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26",
+      "status": "COVARIANT_MOMENT_MAP_TAUB_BRIDGE_AND_GENERIC_EXTRA_FIXED_BUNDLE_NO_GO_CERTIFIED"
+    },
+    {
+      "color_state": "certified",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "family": "Einstein / boundaries",
+      "key": "cert:09160ffe2a9c7542",
+      "label": "EINSTEIN_MAXWELL_WEYL_PLEBANSKI_HACYAN_STABILIZER_DESCENT",
+      "layout_group": "Einstein inclusion and branch comparison",
+      "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+      "result_id": "EINSTEIN_MAXWELL_WEYL_PLEBANSKI_HACYAN_STABILIZER_DESCENT",
+      "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf",
+      "status": "PH_STABILIZER_AUTHORITY_AND_GENERIC_PRIMARY_EQUIVARIANCE_CERTIFIED_GAUGE_QUOTIENT_NOT_AUTHORIZED"
+    },
+    {
       "color_state": "unclassified",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -7550,6 +8708,21 @@
         "REDUCED-MODE"
       ],
       "family": "Einstein / boundaries",
+      "key": "cert:ad7366175cd3da2b",
+      "label": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+      "layout_group": "Radiation and Lee--Wald pairings",
+      "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+      "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+      "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6",
+      "status": "GENERIC_POLAR_DIRECT_LEE_WALD_EXTRA_BLOCK_CERTIFIED"
+    },
+    {
+      "color_state": "certified",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "family": "Einstein / boundaries",
       "key": "cert:e6fb3458fa621f12",
       "label": "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION",
       "layout_group": "Radiation and Lee--Wald pairings",
@@ -7557,6 +8730,21 @@
       "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION",
       "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d",
       "status": "POLAR_PHYSICAL_RING_EINSTEIN_PRIMARY_IMAGE_AND_ACTION_NORMALIZATION_CERTIFIED"
+    },
+    {
+      "color_state": "certified",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "family": "Einstein / boundaries",
+      "key": "cert:bd56f3a65e5f22ff",
+      "label": "EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_NOETHER_LIFT",
+      "layout_group": "Radiation and Lee--Wald pairings",
+      "path": "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+      "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_NOETHER_LIFT",
+      "sha256": "1247963ba92efc60b7d6744140c6412e3667bb03010c2251db752d23d7707d34",
+      "status": "POLAR_UNGAUGED_DIFF_WEYL_EQUATION_NOETHER_COMPLEX_AND_CHAIN_MAP_CERTIFIED"
     },
     {
       "color_state": "unclassified",
@@ -7897,6 +9085,150 @@
       "path": "bridge/certificates/weyl_maxwell_twist_physical_mixed_lee_wald_fixture.json",
       "result_id": "WEYL_MAXWELL_TWIST_PHYSICAL_MIXED_LEE_WALD_FIXTURE",
       "sha256": "6e1b612290199b3cf5863f124e481e3092b5895d9005b83731aa2e463eac1f23",
+      "status": "UNCLASSIFIED"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Foundations and other",
+      "key": "cert:7180925541c0db28",
+      "label": "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
+      "layout_group": "Cross-cutting certificates",
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json",
+      "result_id": "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
+      "sha256": "a77eb1cd8abeee608ee02ce52a0a35f0fdb84531946ef78cc5e36145afc14b6d",
+      "status": "CERTIFIED_LOCAL_ROD_SMEARING_AND_MEMORY_PREFLIGHT_RETARDED_TRANSFER_OPEN"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Foundations and other",
+      "key": "cert:a9b1406f94257053",
+      "label": "BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE",
+      "layout_group": "Cross-cutting certificates",
+      "path": "closed_universe_observers/certificates/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE.json",
+      "result_id": "BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE",
+      "sha256": "9df5e1d697af3366198c40ae73477bd39899b164a4e671bdafb7d33385305523",
+      "status": "CERTIFIED_REPAIRED_Q2_IMPORT_LINEAR_SURVIVAL_EXTENDED_OBSERVER_COMPLEX_OPEN"
+    },
+    {
+      "color_state": "certified",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Foundations and other",
+      "key": "cert:d377153e330edd7a",
+      "label": "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER",
+      "layout_group": "Cross-cutting certificates",
+      "path": "closed_universe_observers/certificates/BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER.json",
+      "result_id": "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER",
+      "sha256": "09f723df60cd4e1bee3efa86f0c9319baee5f539ae2008d9d03230eb42398f23",
+      "status": "CERTIFIED_RANK_TWO_CAUSAL_RECORD_TRANSFER_IN_HOMOGENEOUS_SOURCE_SECTOR"
+    },
+    {
+      "color_state": "unclassified",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "family": "Foundations and other",
+      "key": "cert:dc1a15e00f2dd9eb",
+      "label": "RANK_ONE_CLONED_OBSERVER_FIXTURE",
+      "layout_group": "Cross-cutting certificates",
+      "path": "closed_universe_observers/certificates/RANK_ONE_CLONED_OBSERVER_FIXTURE.json",
+      "result_id": "RANK_ONE_CLONED_OBSERVER_FIXTURE",
+      "sha256": "07d9368cd27db376e9c74208fe9c45fe3e6dd90151f536e9c65002c3d0a42434",
+      "status": "EXTERNAL_FIXTURE_REPRODUCED"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Foundations and other",
+      "key": "cert:a70bf40ec16bcd96",
+      "label": "CLOSED_UNIVERSE_OBSERVER_FIRST_COMPARISON",
+      "layout_group": "Receipts and provenance",
+      "path": "closed_universe_observers/ledgers/comparison_ledger.json",
+      "result_id": "CLOSED_UNIVERSE_OBSERVER_FIRST_COMPARISON",
+      "sha256": "fe0ecb01dd499f8d09ffe776432ec730bad3e63585c5264239ea1e2896c883fb",
+      "status": "UNCLASSIFIED"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Foundations and other",
+      "key": "cert:31c2b92a4dfb2ce5",
+      "label": "DETECTOR_RECORD_HARDENING_TIER_RECEIPT",
+      "layout_group": "Cross-cutting certificates",
+      "path": "closed_universe_observers/receipts/DETECTOR_RECORD_HARDENING_TIER_RECEIPT.json",
+      "result_id": "DETECTOR_RECORD_HARDENING_TIER_RECEIPT",
+      "sha256": "82834046928f34fc9245eb193a54c56c17edc85d7102478d22b291e39aeb6bec",
+      "status": "UNCLASSIFIED"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Foundations and other",
+      "key": "cert:955e001853c509cd",
+      "label": "FIRST_COMPARISON_TIER_RECEIPT",
+      "layout_group": "Cross-cutting certificates",
+      "path": "closed_universe_observers/receipts/FIRST_COMPARISON_TIER_RECEIPT.json",
+      "result_id": "FIRST_COMPARISON_TIER_RECEIPT",
+      "sha256": "fa0d2922f12eebf12f9eec70443da646a46efca09baee4d03c307efe026155e3",
+      "status": "UNCLASSIFIED"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Foundations and other",
+      "key": "cert:e5ae3e38e8dbccbb",
+      "label": "OBSERVER_INTERACTION_IMPORT_GATE_TIER_RECEIPT",
+      "layout_group": "Cross-cutting certificates",
+      "path": "closed_universe_observers/receipts/OBSERVER_INTERACTION_IMPORT_GATE_TIER_RECEIPT.json",
+      "result_id": "OBSERVER_INTERACTION_IMPORT_GATE_TIER_RECEIPT",
+      "sha256": "595979c1b98974f8555aa13eee9c3282165ee6f720b51b23b013d8b55213c3ed",
+      "status": "UNCLASSIFIED"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Foundations and other",
+      "key": "cert:cbc4925a520a25a8",
+      "label": "SMEARED_RETARDED_TRANSFER_TIER_RECEIPT",
+      "layout_group": "Cross-cutting certificates",
+      "path": "closed_universe_observers/receipts/SMEARED_RETARDED_TRANSFER_TIER_RECEIPT.json",
+      "result_id": "SMEARED_RETARDED_TRANSFER_TIER_RECEIPT",
+      "sha256": "53a833ee3d0d92d8a2d52561fd25711634b15b722230c5ffbc5e6a6f63900965",
       "status": "UNCLASSIFIED"
     },
     {
@@ -10408,6 +11740,18 @@
       "status": "CERTIFIED_SIMPLE_REAL_CHARACTERISTIC_MIXED_WITNESS_ARTIFACT_RETAINED_ROUTE_EXACT"
     },
     {
+      "color_state": "partial",
+      "dependency_tags": [],
+      "family": "Classical / clocks",
+      "key": "cert:61e33923910a559c",
+      "label": "BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD",
+      "layout_group": "Nonlinear brackets and D--Cartan",
+      "path": "d_quotient_classical/certificates/BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD.json",
+      "result_id": "BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD",
+      "sha256": "0f6a78c1798300c38fc19fa6b52f46ad5c1294f3e12ae710ac6db5b6a0d34ed2",
+      "status": "UNCLASSIFIED"
+    },
+    {
       "color_state": "certified",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -10524,6 +11868,21 @@
       "status": "CERTIFIED_REDUCED_MODE_FULL_UNARY_SECOND_ORDER_LIFT_AND_THIRD_ORDER_FREQUENCY_RESONANCE"
     },
     {
+      "color_state": "certified",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Classical / clocks",
+      "key": "cert:388a52251cacf7e9",
+      "label": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+      "layout_group": "Clocks, light, and redshift",
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+      "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+      "sha256": "3403f12bb56f3e1fdf0e4aeef4c8f29859205085d4044311fa64ee0e763be63a",
+      "status": "CERTIFIED_MAXWELL_CAUSAL_UNARY_AND_CYCLIC_Q1Q2_TRANSFER"
+    },
+    {
       "color_state": "obstruction",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -10594,6 +11953,20 @@
       "result_id": "BERGER_NONZERO_D_WEIGHT_FINITE_BLOCK_NO_GO",
       "sha256": "40b036eebb91e86a178d1f887d544d400f83f654275a4498dfaa488abd26a7fc",
       "status": "CERTIFIED_REDUCED_MODE_CLOSURE_OBSTRUCTION"
+    },
+    {
+      "color_state": "certified",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "family": "Classical / clocks",
+      "key": "cert:65b1f9889ca3f2df",
+      "label": "BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR",
+      "layout_group": "Cross-cutting certificates",
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
+      "result_id": "BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR",
+      "sha256": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4",
+      "status": "CERTIFIED_PORTABLE_64_ROW_UNARY_PAIRING_AND_ALGEBRAIC_64_TO_36_CYCLIC_SDR"
     },
     {
       "color_state": "certified",
@@ -10804,6 +12177,21 @@
     {
       "color_state": "certified",
       "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Classical / clocks",
+      "key": "cert:bd1d4e77c6557464",
+      "label": "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL",
+      "layout_group": "Clocks, light, and redshift",
+      "path": "d_quotient_classical/certificates/BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL.json",
+      "result_id": "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL",
+      "sha256": "579cb630e238dc4f25ca152c4cd1172529127a38812ec395ca2c0484314ae49b",
+      "status": "CERTIFIED_COMPACT_CONSERVED_SOURCE_AND_NONZERO_RETARDED_MAXWELL_SIGNAL"
+    },
+    {
+      "color_state": "certified",
+      "dependency_tags": [
         "LOCAL-ALGEBRAIC"
       ],
       "family": "Classical / clocks",
@@ -10812,7 +12200,7 @@
       "layout_group": "Nonlinear brackets and D--Cartan",
       "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json",
       "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2",
-      "sha256": "2dea4cfe045cec84fc8cfb560d2d4e40af0283c0bafb77594eff04f0fb7377bf",
+      "sha256": "f518eb8a13ee34021edfd8f1809bf7a0ee139a9a1863d837d83858e34bf461f5",
       "status": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_64_ROW_CLASSICAL_GRAVITY_MAXWELL_Q2_K_EQUIVARIANT"
     },
     {
@@ -11151,7 +12539,7 @@
       "layout_group": "Receipts and provenance",
       "path": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json",
       "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
-      "sha256": "00edd39184288a1185712415b63d72e5485f025f971ec51f6106d1e321c86d37",
+      "sha256": "f19daf86ca70362ed9b3782a4ff6fa638ede209e0495236076e5936f1f8a8698",
       "status": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED"
     },
     {
@@ -11286,7 +12674,7 @@
       "layout_group": "Cross-cutting certificates",
       "path": "paper/10-compact-einstein-maxwell-weyl-phase-space-claim-map.json",
       "result_id": "COMPACT_EINSTEIN_MAXWELL_WEYL_LINEAR_PAPER_A",
-      "sha256": "bfb078fc7b74bf9a091d49ce9d37fb3d81856a0f208495ce9be4237d3d8e1429",
+      "sha256": "a36f084af8829e5fdcd42f314b8d6d2c2a677919dc17870044e455a87d0ddb43",
       "status": "SCOPED_MATHEMATICAL_CLAIMS_THEOREM_FROZEN_EXTERNAL_SPECIALIST_REVIEW_PENDING"
     },
     {
@@ -11515,6 +12903,22 @@
       "result_id": "LOCAL_WEYL_DECOMPOSITION_FOUNDATIONS",
       "sha256": "55a22335b359e087e7269e0c488d5d9eeee6dd0b677072fd7edc5c2ad34c1255",
       "status": "CLASSIFIED"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Quantum / microlocal",
+      "key": "cert:7081d73fc0751540",
+      "label": "QUANTUM_WEYL_ACTIVE_FRONTIER",
+      "layout_group": "Cross-cutting certificates",
+      "path": "quantum-weyl/certificates/QUANTUM_WEYL_ACTIVE_FRONTIER.json",
+      "result_id": "QUANTUM_WEYL_ACTIVE_FRONTIER",
+      "sha256": "8a99772c0c2d0407ce90de10327e9023f23e6ed0a0cc55a81659cff435dabac9",
+      "status": "G1_LOCAL_AFN0_AND_CLASSICAL_CAUSAL_CHAIN_READY_GLOBAL_HADAMARD_FULL_BV_QME_OPEN"
     },
     {
       "color_state": "partial",
@@ -12280,6 +13684,22 @@
     {
       "color_state": "partial",
       "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Quantum / microlocal",
+      "key": "cert:1e39f0aa730c5c76",
+      "label": "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT",
+      "layout_group": "Lorentzian Hadamard and microlocal analysis",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT.json",
+      "result_id": "BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT",
+      "sha256": "0d7f2ebf62e1c848f844ffef34850e761d2dd19781a1b528a8d13ebfbcdd0747",
+      "status": "DECOMPOSABILITY_CERTIFIED_EXISTENCE_NOT_IMPLIED_STATIONARY_POSITIVITY_CARRIER_OPEN"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [
         "LORENTZIAN-CAUSAL"
       ],
       "family": "Quantum / microlocal",
@@ -12491,6 +13911,21 @@
       "color_state": "partial",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Quantum / microlocal",
+      "key": "cert:1b2bf35eed592cdc",
+      "label": "BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS",
+      "layout_group": "Lorentzian Hadamard and microlocal analysis",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS.json",
+      "result_id": "BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS",
+      "sha256": "4c826adde5e7ee42bcf2d06ba1d8f0ac259a2dc0959e389a637641ea51e31d7d",
+      "status": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
         "REDUCED-MODE",
         "LORENTZIAN-CAUSAL"
       ],
@@ -12502,6 +13937,21 @@
       "result_id": "BERGER_RETAINED_26_STATIONARY_SPECTRAL_PREFLIGHT",
       "sha256": "fa7a78005af750cc487107099ec0b9e7e50bad6898a3d49b70fd80153f35d2a9",
       "status": "HYBRID_STATIONARY_PENCIL_AND_FREQUENCY_CONVENTION_CERTIFIED_COEFFICIENTWISE_A104_OPEN"
+    },
+    {
+      "color_state": "certified",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "family": "Quantum / microlocal",
+      "key": "cert:7ac36f1a6278bcaa",
+      "label": "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS",
+      "layout_group": "Receipts and provenance",
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS.json",
+      "result_id": "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS",
+      "sha256": "ee72bf8e1e952d0541aee02d2ea7b8c31a034db1ce769f0793acfd29fa90d970",
+      "status": "EXACT_MASK_NONIDENTIFIABILITY_CERTIFIED_FULL_STATIONARY_CARRIER_REQUIRED"
     },
     {
       "color_state": "partial",
@@ -12636,7 +14086,7 @@
       "layout_group": "Local BV, anomalies, and QME",
       "path": "quantum-weyl/relative/certificates/QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS.json",
       "result_id": "QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS",
-      "sha256": "d7f4773d39eefde9e2044424a5172fa01a452229748282ba581a533024700fb4",
+      "sha256": "bdddf1aa4b4fdb2a05a8b5697ffcf2fcb97afeb09110f9e2a19ecc7679646391",
       "status": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING"
     },
     {
@@ -12790,6 +14240,20 @@
         "LOCAL-ALGEBRAIC"
       ],
       "family": "Nonlinear transfer",
+      "key": "cert:6f5f03bf71e8a5fd",
+      "label": "BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY",
+      "layout_group": "Cross-cutting certificates",
+      "path": "quantum-weyl/transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
+      "result_id": "BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY",
+      "sha256": "a9ce3aea922acc27d69e0ea9d72c42212b32acb6f47f693b8286fb9dafcd7227",
+      "status": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND"
+    },
+    {
+      "color_state": "obstruction",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "family": "Nonlinear transfer",
       "key": "cert:2770eeb906a0e91c",
       "label": "BERGER_COUPLED_64_Q2_IMPORT_REPLAY",
       "layout_group": "Certified classical imports",
@@ -12797,6 +14261,46 @@
       "result_id": "BERGER_COUPLED_64_Q2_IMPORT_REPLAY",
       "sha256": "83bc58f554e79d88af4347779733f0c73778aa0d78080cabea53d316f9993239",
       "status": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "family": "Nonlinear transfer",
+      "key": "cert:8ae97d4c72aa25d5",
+      "label": "BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS",
+      "layout_group": "Cyclicity and imported pairings",
+      "path": "quantum-weyl/transfer/certificates/BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS.json",
+      "result_id": "BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS",
+      "sha256": "5d9f4f46dee0be6545567d347b93056e325e3331705fe8ebdaed73b680bfc265",
+      "status": "EXACT_DEFECT_LOCALIZED_FACTOR_TWO_PARTIAL_REPAIR_IDENTIFIED"
+    },
+    {
+      "color_state": "obstruction",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "family": "Nonlinear transfer",
+      "key": "cert:100afab1272c92d2",
+      "label": "BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS",
+      "layout_group": "Cyclicity and imported pairings",
+      "path": "quantum-weyl/transfer/certificates/BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS.json",
+      "result_id": "BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS",
+      "sha256": "d0e9dad687f05032ce07a68dcd394fcd274d6c97dd3fb4bb67b825223ecc9881",
+      "status": "CORRECTED_CLASSICAL_REPAIR_ACCEPTED_MIXED_Q3_INPUT_UNBLOCKED"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [],
+      "family": "Nonlinear transfer",
+      "key": "cert:18744fdaa8e0ab1f",
+      "label": "BERGER_COUPLED_RETAINED_CYCLICITY_DEFECT_PAYLOAD",
+      "layout_group": "Cyclicity and imported pairings",
+      "path": "quantum-weyl/transfer/certificates/BERGER_COUPLED_RETAINED_CYCLICITY_DEFECT_PAYLOAD.json",
+      "result_id": "BERGER_COUPLED_RETAINED_CYCLICITY_DEFECT_PAYLOAD",
+      "sha256": "f77e3691f0fdd906f4736aa5bfaced8a3e5d9648f924b7df636227677d7c0f88",
+      "status": "UNCLASSIFIED"
     },
     {
       "color_state": "partial",
@@ -13131,6 +14635,30 @@
       "result_id": "PPWAVE_EINSTEIN_EXTRA_WEYL_TRANSFERRED_ELL2",
       "sha256": "fa9cb7cf6c869614a259bc33fdada85398f956794a3e061ab939b43e39ba7d7e",
       "status": "RESTRICTED_SUPPORT_LOCAL_BRANCH_MIXING_ELL2_EXACTLY_ZERO"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [],
+      "family": "Nonlinear transfer",
+      "key": "cert:7ae0426c39cfcdd1",
+      "label": "BERGER_COUPLED_CYCLICITY_REPAIR_INPUT",
+      "layout_group": "Cyclicity and imported pairings",
+      "path": "quantum-weyl/transfer/fixtures/berger-coupled-cyclicity-repair-accepted-input.json",
+      "result_id": "BERGER_COUPLED_CYCLICITY_REPAIR_INPUT",
+      "sha256": "6badec4746dcacbd7355e24ae9fb2351e6ff28aa208485f8a78ca85e90b5ac16",
+      "status": "UNCLASSIFIED"
+    },
+    {
+      "color_state": "partial",
+      "dependency_tags": [],
+      "family": "Nonlinear transfer",
+      "key": "cert:9476deeb329473a5",
+      "label": "BERGER_COUPLED_CYCLICITY_REPAIR_INPUT",
+      "layout_group": "Cyclicity and imported pairings",
+      "path": "quantum-weyl/transfer/fixtures/berger-coupled-cyclicity-repair-obstructed-baseline.json",
+      "result_id": "BERGER_COUPLED_CYCLICITY_REPAIR_INPUT",
+      "sha256": "23734163d6d8d29577f4b33e5551a628051dd68182fac6f53e22c331a20a3f8d",
+      "status": "UNCLASSIFIED"
     }
   ],
   "nonordering_provenance_cross_links": [
@@ -13159,7 +14687,7 @@
       "target": "cert:f1d84578c22b5cde"
     },
     {
-      "evidence": "team_contributions.46.payload.verification_commands.1",
+      "evidence": "team_contributions.50.payload.verification_commands.1",
       "relation": "REGISTERS",
       "source": "cert:0301a21c0e6852fc",
       "target": "cert:cfecf65372e59d7b"
@@ -13180,6 +14708,18 @@
       "evidence": "team_inputs.quantum.path",
       "relation": "REGISTERS",
       "source": "cert:07b11b914e2ce4ae",
+      "target": "cert:cfecf65372e59d7b"
+    },
+    {
+      "evidence": "team_contributions.46.payload.evidence.path",
+      "relation": "REGISTERS",
+      "source": "cert:09160ffe2a9c7542",
+      "target": "cert:cfecf65372e59d7b"
+    },
+    {
+      "evidence": "team_contributions.46.payload.verification_commands.0",
+      "relation": "REGISTERS",
+      "source": "cert:09160ffe2a9c7542",
       "target": "cert:cfecf65372e59d7b"
     },
     {
@@ -13219,19 +14759,19 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.46.payload.evidence.path",
+      "evidence": "team_contributions.50.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:17d5ed1788cad29b",
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.46.payload.verification_commands.2",
+      "evidence": "team_contributions.50.payload.verification_commands.2",
       "relation": "REGISTERS",
       "source": "cert:17d5ed1788cad29b",
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.46.payload.verification_commands.3",
+      "evidence": "team_contributions.50.payload.verification_commands.3",
       "relation": "REGISTERS",
       "source": "cert:17d5ed1788cad29b",
       "target": "cert:cfecf65372e59d7b"
@@ -13249,9 +14789,21 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.44.payload.verification_commands.0",
+      "evidence": "team_contributions.48.payload.verification_commands.0",
       "relation": "REGISTERS",
       "source": "cert:1ad5b99a7dd5a300",
+      "target": "cert:cfecf65372e59d7b"
+    },
+    {
+      "evidence": "team_contributions.47.payload.evidence.path",
+      "relation": "REGISTERS",
+      "source": "cert:2023194204bb6a29",
+      "target": "cert:cfecf65372e59d7b"
+    },
+    {
+      "evidence": "team_contributions.47.payload.verification_commands.0",
+      "relation": "REGISTERS",
+      "source": "cert:2023194204bb6a29",
       "target": "cert:cfecf65372e59d7b"
     },
     {
@@ -13393,19 +14945,19 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.45.payload.evidence.path",
+      "evidence": "team_contributions.49.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:464b9a7ca53b844d",
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.45.payload.verification_commands.0",
+      "evidence": "team_contributions.49.payload.verification_commands.0",
       "relation": "REGISTERS",
       "source": "cert:464b9a7ca53b844d",
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.47.payload.verification_commands.0",
+      "evidence": "team_contributions.51.payload.verification_commands.0",
       "relation": "REGISTERS",
       "source": "cert:4829b9ad67b0bb05",
       "target": "cert:cfecf65372e59d7b"
@@ -13435,7 +14987,7 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.52.payload.evidence.path",
+      "evidence": "team_contributions.56.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:57b0b40fbadc3425",
       "target": "cert:cfecf65372e59d7b"
@@ -13471,19 +15023,19 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.49.payload.evidence.path",
+      "evidence": "team_contributions.53.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:60cff625484faca7",
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.49.payload.verification_commands.0",
+      "evidence": "team_contributions.53.payload.verification_commands.0",
       "relation": "REGISTERS",
       "source": "cert:60cff625484faca7",
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.49.payload.verification_commands.1",
+      "evidence": "team_contributions.53.payload.verification_commands.1",
       "relation": "REGISTERS",
       "source": "cert:60cff625484faca7",
       "target": "cert:cfecf65372e59d7b"
@@ -13519,7 +15071,7 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.46.payload.verification_commands.0",
+      "evidence": "team_contributions.50.payload.verification_commands.0",
       "relation": "REGISTERS",
       "source": "cert:6fb283a1ead38bb2",
       "target": "cert:cfecf65372e59d7b"
@@ -13579,19 +15131,19 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.48.payload.evidence.path",
+      "evidence": "team_contributions.52.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:9768be68859831b6",
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.48.payload.verification_commands.0",
+      "evidence": "team_contributions.52.payload.verification_commands.0",
       "relation": "REGISTERS",
       "source": "cert:9768be68859831b6",
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.48.payload.verification_commands.1",
+      "evidence": "team_contributions.52.payload.verification_commands.1",
       "relation": "REGISTERS",
       "source": "cert:9768be68859831b6",
       "target": "cert:cfecf65372e59d7b"
@@ -13621,7 +15173,7 @@
       "target": "cert:a7300202a1379bb7"
     },
     {
-      "evidence": "team_contributions.51.payload.evidence.path",
+      "evidence": "team_contributions.55.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:9b67921b012f3b9f",
       "target": "cert:cfecf65372e59d7b"
@@ -13669,13 +15221,13 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.44.payload.evidence.path",
+      "evidence": "team_contributions.48.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:a49b1112200f6aa4",
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.44.payload.verification_commands.1",
+      "evidence": "team_contributions.48.payload.verification_commands.1",
       "relation": "REGISTERS",
       "source": "cert:a49b1112200f6aa4",
       "target": "cert:cfecf65372e59d7b"
@@ -13723,6 +15275,30 @@
       "target": "cert:a7300202a1379bb7"
     },
     {
+      "evidence": "team_contributions.44.payload.evidence.path",
+      "relation": "REGISTERS",
+      "source": "cert:ad7366175cd3da2b",
+      "target": "cert:cfecf65372e59d7b"
+    },
+    {
+      "evidence": "team_contributions.44.payload.verification_commands.0",
+      "relation": "REGISTERS",
+      "source": "cert:ad7366175cd3da2b",
+      "target": "cert:cfecf65372e59d7b"
+    },
+    {
+      "evidence": "dependency_refs.stationary_spectral_preflight.artifact_id",
+      "relation": "COORDINATES_READINESS",
+      "source": "cert:ad941c6cf326af97",
+      "target": "cert:7ac36f1a6278bcaa"
+    },
+    {
+      "evidence": "dependency_refs.stationary_spectral_preflight.path",
+      "relation": "COORDINATES_READINESS",
+      "source": "cert:ad941c6cf326af97",
+      "target": "cert:7ac36f1a6278bcaa"
+    },
+    {
       "evidence": "team_contributions.29.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:b5f7364d7637d80d",
@@ -13747,9 +15323,21 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.45.payload.verification_commands.2",
+      "evidence": "team_contributions.49.payload.verification_commands.2",
       "relation": "REGISTERS",
       "source": "cert:b9ae4064e0f71862",
+      "target": "cert:cfecf65372e59d7b"
+    },
+    {
+      "evidence": "team_contributions.45.payload.evidence.path",
+      "relation": "REGISTERS",
+      "source": "cert:bd56f3a65e5f22ff",
+      "target": "cert:cfecf65372e59d7b"
+    },
+    {
+      "evidence": "team_contributions.45.payload.verification_commands.0",
+      "relation": "REGISTERS",
+      "source": "cert:bd56f3a65e5f22ff",
       "target": "cert:cfecf65372e59d7b"
     },
     {
@@ -13789,13 +15377,13 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.47.payload.evidence.path",
+      "evidence": "team_contributions.51.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:c619bd8e4cbb4c50",
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.47.payload.verification_commands.2",
+      "evidence": "team_contributions.51.payload.verification_commands.2",
       "relation": "REGISTERS",
       "source": "cert:c619bd8e4cbb4c50",
       "target": "cert:cfecf65372e59d7b"
@@ -13817,6 +15405,18 @@
       "relation": "REGISTERS",
       "source": "cert:c732535b9b280d82",
       "target": "cert:cfecf65372e59d7b"
+    },
+    {
+      "evidence": "dependency_refs.Hadamard_lift.artifact_id",
+      "relation": "COORDINATES_READINESS",
+      "source": "cert:cf18fac346aaba83",
+      "target": "cert:7ac36f1a6278bcaa"
+    },
+    {
+      "evidence": "dependency_refs.Hadamard_lift.path",
+      "relation": "COORDINATES_READINESS",
+      "source": "cert:cf18fac346aaba83",
+      "target": "cert:7ac36f1a6278bcaa"
     },
     {
       "evidence": "provenance.source_artifacts.2.path",
@@ -13843,7 +15443,7 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.50.payload.evidence.path",
+      "evidence": "team_contributions.54.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:d86ce9f995dd1c9b",
       "target": "cert:cfecf65372e59d7b"
@@ -13921,7 +15521,7 @@
       "target": "cert:017b1c6924d5f573"
     },
     {
-      "evidence": "team_contributions.53.payload.evidence.path",
+      "evidence": "team_contributions.57.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:f1d84578c22b5cde",
       "target": "cert:cfecf65372e59d7b"
@@ -13933,13 +15533,13 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
-      "evidence": "team_contributions.47.payload.verification_commands.1",
+      "evidence": "team_contributions.51.payload.verification_commands.1",
       "relation": "REGISTERS",
       "source": "cert:fd1c709ddc4ee87d",
       "target": "cert:cfecf65372e59d7b"
     }
   ],
   "schema": "pure-weyl-certificate-dependency-dag-v1",
-  "source_commit": "a4f91ab3905fe3cac2b1ce3d71e6e4243a1f9870",
+  "source_commit": "53ac475732a35ef6570ff815c83e90857ee50e6c",
   "source_treeish": "HEAD"
 }

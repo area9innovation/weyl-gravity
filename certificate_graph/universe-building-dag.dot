@@ -11,10 +11,10 @@ digraph UniverseBuilding {
   "clock" [shape=box, label="Healthy matter clock\nrelational change; raw D\nnull in the tested linear\nsector", fillcolor="#d9f2df", color="#287a3d", tooltip="Healthy matter clock\nrelational change; raw D\nnull in the tested linear\nsector"];
   "interactions" [shape=box, label="First interaction layer\ngravity q2/q3; preserving-\ngenerator Cartan through\narity three", fillcolor="#d9f2df", color="#287a3d", tooltip="First interaction layer\ngravity q2/q3; preserving-\ngenerator Cartan through\narity three"];
   "einstein_weyl_relative" [shape=box, label="Einstein gravity inside\nWeyl gravity\naxial triangle and polar\nphysical module; global\ntriangle open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Einstein gravity inside\nWeyl gravity\naxial triangle and polar\nphysical module; global\ntriangle open"];
-  "light" [shape=box, label="Classical light\ncomplete local Maxwell q2;\ncausal transfer open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Classical light\ncomplete local Maxwell q2;\ncausal transfer open"];
+  "light" [shape=box, label="Classical light\ncausal Maxwell contraction,\nrepaired q2 and retarded\nsignals; mixed q3 open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Classical light\ncausal Maxwell contraction,\nrepaired q2 and retarded\nsignals; mixed q3 open"];
   "gravity_waves" [shape=box, label="Gravitational waves\nstandard waves; extra axial\nand polar equation modules", fillcolor="#fff0bf", color="#9a6a00", tooltip="Gravitational waves\nstandard waves; extra axial\nand polar equation modules"];
   "redshift" [shape=box, label="Relational redshift\ndynamical Maxwell frequency\nratio; localization open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Relational redshift\ndynamical Maxwell frequency\nratio; localization open"];
-  "detector" [shape=box, label="Wave detector response\nnext observer-level wave\ntest", fillcolor="#eceff3", color="#667085", tooltip="Wave detector response\nnext observer-level wave\ntest"];
+  "detector" [shape=box, label="Relational detector\nresponse\nrank-two linear retarded\nrecords; apparatus BV\nextension and backreaction\nopen", fillcolor="#fff0bf", color="#9a6a00", tooltip="Relational detector\nresponse\nrank-two linear retarded\nrecords; apparatus BV\nextension and backreaction\nopen"];
   "hadamard" [shape=box, label="Hadamard quantum state\nlocal singularity\ncontrolled; global state\nopen", fillcolor="#fff0bf", color="#9a6a00", tooltip="Hadamard quantum state\nlocal singularity\ncontrolled; global state\nopen"];
   "anomalies" [shape=box, label="Quantum anomaly and QME\ncandidate classes known;\nrestoration open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Quantum anomaly and QME\ncandidate classes known;\nrestoration open"];
   "lensing" [shape=box, label="Gravitational lensing\nlocalized observable not yet\nbuilt", fillcolor="#eceff3", color="#667085", tooltip="Gravitational lensing\nlocalized observable not yet\nbuilt"];
@@ -42,6 +42,8 @@ digraph UniverseBuilding {
   "clock" -> "redshift" [tooltip="supplies readings"];
   "light" -> "redshift" [tooltip="carries frequency"];
   "interactions" -> "redshift" [tooltip="preserves observable"];
+  "clock" -> "detector" [tooltip="labels local records"];
+  "light" -> "detector" [tooltip="drives Maxwell response"];
   "gravity_waves" -> "detector" [tooltip="drives tidal response"];
   "causality" -> "detector" [tooltip="retards response"];
   "light" -> "lensing" [tooltip="traces null paths"];

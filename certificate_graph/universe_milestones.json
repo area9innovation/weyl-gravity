@@ -72,11 +72,13 @@
       "id": "light",
       "tier": "classical_physics",
       "label": "Classical light",
-      "detail": "complete local Maxwell q2; causal transfer open",
+      "detail": "causal Maxwell contraction, repaired q2 and retarded signals; mixed q3 open",
       "status": "partial",
       "evidence": [
         "EINSTEIN_MAXWELL_CHEVRETON_TANGENT",
-        "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2"
+        "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2",
+        "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+        "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL"
       ]
     },
     {
@@ -105,11 +107,14 @@
     {
       "id": "detector",
       "tier": "observers",
-      "label": "Wave detector response",
-      "detail": "next observer-level wave test",
-      "status": "open",
+      "label": "Relational detector response",
+      "detail": "rank-two linear retarded records; apparatus BV extension and backreaction open",
+      "status": "partial",
       "evidence": [
-        "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION"
+        "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+        "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
+        "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER",
+        "BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE"
       ]
     },
     {
@@ -205,6 +210,8 @@
     {"from": "clock", "to": "redshift", "label": "supplies readings"},
     {"from": "light", "to": "redshift", "label": "carries frequency"},
     {"from": "interactions", "to": "redshift", "label": "preserves observable"},
+    {"from": "clock", "to": "detector", "label": "labels local records"},
+    {"from": "light", "to": "detector", "label": "drives Maxwell response"},
     {"from": "gravity_waves", "to": "detector", "label": "drives tidal response"},
     {"from": "causality", "to": "detector", "label": "retards response"},
     {"from": "light", "to": "lensing", "label": "traces null paths"},
