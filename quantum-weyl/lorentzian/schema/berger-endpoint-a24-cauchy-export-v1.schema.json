@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-endpoint-a24-cauchy-export-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "setting_id", "coefficient_ring", "differential_axis_order", "factor_records", "derived_A12_blocks", "exact_checks", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-endpoint-a24-cauchy-export-v1"},
+    "result_id": {"const": "BERGER_ENDPOINT_A24_CAUCHY_EXPORT"},
+    "result_state": {"const": "ENDPOINT_FACTORS_AND_DERIVED_A24_EXACT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "coefficient_ring": {"type": "string", "minLength": 1},
+    "differential_axis_order": {"const": ["t", "berger_frame_1", "berger_frame_2", "berger_frame_3"]},
+    "factor_records": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["F_spatial_K_spatial", "Box_1_spatial_covector", "F_spatial_K_spatial_formal_adjoint", "Box_1_spatial_covector_formal_adjoint"],
+      "properties": {
+        "F_spatial_K_spatial": {"type": "object", "additionalProperties": false, "required": ["factor_record_id", "shape", "row_ids", "column_ids", "entries", "sha256", "source_commit"], "properties": {"factor_record_id": {"const": "F_spatial_K_spatial"}, "shape": {"const": [3, 3]}, "row_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}}, "column_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}}, "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}}},
+        "Box_1_spatial_covector": {"type": "object", "additionalProperties": false, "required": ["factor_record_id", "shape", "row_ids", "column_ids", "entries", "sha256", "source_commit"], "properties": {"factor_record_id": {"const": "Box_1_spatial_covector"}, "shape": {"const": [3, 3]}, "row_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}}, "column_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}}, "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}}},
+        "F_spatial_K_spatial_formal_adjoint": {"type": "object", "additionalProperties": false, "required": ["factor_record_id", "shape", "row_ids", "column_ids", "entries", "sha256", "source_commit"], "properties": {"factor_record_id": {"const": "F_spatial_K_spatial_formal_adjoint"}, "shape": {"const": [3, 3]}, "row_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}}, "column_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}}, "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}}},
+        "Box_1_spatial_covector_formal_adjoint": {"type": "object", "additionalProperties": false, "required": ["factor_record_id", "shape", "row_ids", "column_ids", "entries", "sha256", "source_commit"], "properties": {"factor_record_id": {"const": "Box_1_spatial_covector_formal_adjoint"}, "shape": {"const": [3, 3]}, "row_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}}, "column_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}}, "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}}}
+      }
+    },
+    "derived_A12_blocks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ghost_A12", "identity_A12"],
+      "properties": {
+        "ghost_A12": {"type": "object", "additionalProperties": false, "required": ["block_id", "shape", "local_ordering", "entries", "sha256"], "properties": {"block_id": {"const": "ghost_A12"}, "shape": {"const": [12, 12]}, "local_ordering": {"const": ["c_spatial_1", "c_spatial_2", "c_spatial_3", "aux[c_spatial_1]", "aux[c_spatial_2]", "aux[c_spatial_3]", "partial_t[c_spatial_1]", "partial_t[c_spatial_2]", "partial_t[c_spatial_3]", "partial_t[aux[c_spatial_1]]", "partial_t[aux[c_spatial_2]]", "partial_t[aux[c_spatial_3]]"]}, "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+        "identity_A12": {"type": "object", "additionalProperties": false, "required": ["block_id", "shape", "local_ordering", "entries", "sha256"], "properties": {"block_id": {"const": "identity_A12"}, "shape": {"const": [12, 12]}, "local_ordering": {"const": ["c_spatial_star_1", "c_spatial_star_2", "c_spatial_star_3", "aux[c_spatial_star_1]", "aux[c_spatial_star_2]", "aux[c_spatial_star_3]", "partial_t[c_spatial_star_1]", "partial_t[c_spatial_star_2]", "partial_t[c_spatial_star_3]", "partial_t[aux[c_spatial_star_1]]", "partial_t[aux[c_spatial_star_2]]", "partial_t[aux[c_spatial_star_3]]"]}, "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+      }
+    },
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["factor_record_internal_hashes", "factor_row_and_column_orderings_match_retained_layout", "ghost_factor_composition_reconstructs_retained_endpoint", "identity_factor_composition_reconstructs_retained_endpoint", "formal_adjoint_factor_relations", "second_order_graph_companions_reconstruct_factor_products", "temporal_leading_matrices_are_two_sided_invertible", "derived_A12_blocks_have_spatial_order_at_most_two"],
+      "properties": {
+        "factor_record_internal_hashes": {"const": true},
+        "factor_row_and_column_orderings_match_retained_layout": {"const": true},
+        "ghost_factor_composition_reconstructs_retained_endpoint": {"const": true},
+        "identity_factor_composition_reconstructs_retained_endpoint": {"const": true},
+        "formal_adjoint_factor_relations": {"const": true},
+        "second_order_graph_companions_reconstruct_factor_products": {"const": true},
+        "temporal_leading_matrices_are_two_sided_invertible": {"const": true},
+        "derived_A12_blocks_have_spatial_order_at_most_two": {"const": true}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 80}
+  },
+  "$defs": {
+    "term": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "prefixItems": [
+        {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}},
+        {"type": "string", "minLength": 1}
+      ]
+    },
+    "entry": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "prefixItems": [
+        {"type": "integer", "minimum": 0},
+        {"type": "integer", "minimum": 0},
+        {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/term"}}
+      ]
+    },
+    "factorFK": {
+      "type": "object", "additionalProperties": false,
+      "required": ["factor_record_id", "shape", "row_ids", "column_ids", "entries", "sha256", "source_commit"],
+      "properties": {
+        "factor_record_id": {"const": "F_spatial_K_spatial"},
+        "shape": {"const": [3, 3]},
+        "row_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "column_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "factorBox": {
+      "type": "object", "additionalProperties": false,
+      "required": ["factor_record_id", "shape", "row_ids", "column_ids", "entries", "sha256", "source_commit"],
+      "properties": {
+        "factor_record_id": {"const": "Box_1_spatial_covector"},
+        "shape": {"const": [3, 3]},
+        "row_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "column_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "factorFKAdjoint": {
+      "type": "object", "additionalProperties": false,
+      "required": ["factor_record_id", "shape", "row_ids", "column_ids", "entries", "sha256", "source_commit"],
+      "properties": {
+        "factor_record_id": {"const": "F_spatial_K_spatial_formal_adjoint"},
+        "shape": {"const": [3, 3]},
+        "row_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "column_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "factorBoxAdjoint": {
+      "type": "object", "additionalProperties": false,
+      "required": ["factor_record_id", "shape", "row_ids", "column_ids", "entries", "sha256", "source_commit"],
+      "properties": {
+        "factor_record_id": {"const": "Box_1_spatial_covector_formal_adjoint"},
+        "shape": {"const": [3, 3]},
+        "row_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "column_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "ghostA12": {
+      "type": "object", "additionalProperties": false,
+      "required": ["block_id", "shape", "local_ordering", "entries", "sha256"],
+      "properties": {
+        "block_id": {"const": "ghost_A12"},
+        "shape": {"const": [12, 12]},
+        "local_ordering": {"const": ["c_spatial_1", "c_spatial_2", "c_spatial_3", "aux[c_spatial_1]", "aux[c_spatial_2]", "aux[c_spatial_3]", "partial_t[c_spatial_1]", "partial_t[c_spatial_2]", "partial_t[c_spatial_3]", "partial_t[aux[c_spatial_1]]", "partial_t[aux[c_spatial_2]]", "partial_t[aux[c_spatial_3]]"]},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "identityA12": {
+      "type": "object", "additionalProperties": false,
+      "required": ["block_id", "shape", "local_ordering", "entries", "sha256"],
+      "properties": {
+        "block_id": {"const": "identity_A12"},
+        "shape": {"const": [12, 12]},
+        "local_ordering": {"const": ["c_spatial_star_1", "c_spatial_star_2", "c_spatial_star_3", "aux[c_spatial_star_1]", "aux[c_spatial_star_2]", "aux[c_spatial_star_3]", "partial_t[c_spatial_star_1]", "partial_t[c_spatial_star_2]", "partial_t[c_spatial_star_3]", "partial_t[aux[c_spatial_star_1]]", "partial_t[aux[c_spatial_star_2]]", "partial_t[aux[c_spatial_star_3]]"]},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-a104-global-partial-assembly-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "setting_id", "dependency_refs", "global_ordering", "sector_embeddings", "partial_operator", "known_entry_mask", "coverage", "endpoint_A24_import_contract", "q_Cauchy_import_contract", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-a104-global-partial-assembly-v1"},
+    "result_id": {"const": "BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY"},
+    "result_state": {"const": "GLOBAL_A104_104_BY_104_KNOWN_MASK_EXACT_TWO_A12_SLOTS_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["A104_Cauchy_preflight", "retained_biwave_companion"],
+      "properties": {
+        "A104_Cauchy_preflight": {"$ref": "#/$defs/dependency"},
+        "retained_biwave_companion": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "global_ordering": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "row_ids", "degree_ranks", "degree_block_diagonal"],
+      "properties": {
+        "shape": {"const": [104, 104]},
+        "row_ids": {"type": "array", "minItems": 104, "maxItems": 104, "uniqueItems": true, "items": {"type": "string"}},
+        "degree_ranks": {"const": [12, 40, 40, 12]},
+        "degree_block_diagonal": {"const": true}
+      }
+    },
+    "sector_embeddings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["metric", "metric_antifield"],
+      "properties": {
+        "metric": {"$ref": "#/$defs/embedding"},
+        "metric_antifield": {"$ref": "#/$defs/embedding"}
+      }
+    },
+    "partial_operator": {"$ref": "#/$defs/operatorArtifact"},
+    "known_entry_mask": {"$ref": "#/$defs/maskArtifact"},
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_coordinates", "known_coordinates", "unknown_coordinates", "known_nonzero_sparse_entries", "unresolved_blocks"],
+      "properties": {
+        "total_coordinates": {"const": 10816},
+        "known_coordinates": {"const": 10528},
+        "unknown_coordinates": {"const": 288},
+        "known_nonzero_sparse_entries": {"type": "integer", "minimum": 1},
+        "unresolved_blocks": {"const": ["ghost_A12", "identity_A12"]}
+      }
+    },
+    "endpoint_A24_import_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "accepted_export_schema", "coefficient_ring", "differential_axis_order", "factor_records", "derived_block_slots", "required_exact_checks"],
+      "properties": {
+        "status": {"const": "FROZEN_NOT_POPULATED"},
+        "accepted_export_schema": {"$ref": "#/$defs/schemaRef"},
+        "coefficient_ring": {"const": "EXACT_RATIONAL_OR_DECLARED_EXACT_ALGEBRAIC_EXTENSION"},
+        "differential_axis_order": {"const": ["t", "berger_frame_1", "berger_frame_2", "berger_frame_3"]},
+        "factor_records": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {"$ref": "#/$defs/factorRecordContract"}
+        },
+        "derived_block_slots": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "prefixItems": [
+            {"allOf": [{"$ref": "#/$defs/slot"}, {"properties": {"block_id": {"const": "ghost_A12"}}}]},
+            {"allOf": [{"$ref": "#/$defs/slot"}, {"properties": {"block_id": {"const": "identity_A12"}}}]}
+          ]
+        },
+        "required_exact_checks": {"const": ["factor_record_internal_hashes", "factor_row_and_column_orderings_match_retained_layout", "ghost_factor_composition_reconstructs_retained_endpoint", "identity_factor_composition_reconstructs_retained_endpoint", "formal_adjoint_factor_relations", "second_order_graph_companions_reconstruct_factor_products", "temporal_leading_matrices_are_two_sided_invertible", "derived_A12_blocks_have_spatial_order_at_most_two"]}
+      }
+    },
+    "q_Cauchy_import_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "source_operator", "required_artifacts", "required_exact_checks", "commutator_check_requires"],
+      "properties": {
+        "status": {"const": "FROZEN_NOT_POPULATED"},
+        "source_operator": {"const": "retained classical_unary_q1 on the 26-row complex"},
+        "required_artifacts": {
+          "type": "object", "additionalProperties": false,
+          "required": ["q52_companion", "q_Cauchy_104"],
+          "properties": {
+            "q52_companion": {"allOf": [{"$ref": "#/$defs/qArtifact"}, {"properties": {"shape": {"const": [52, 52]}, "ordering": {"minItems": 52, "maxItems": 52}}}]},
+            "q_Cauchy_104": {"allOf": [{"$ref": "#/$defs/qArtifact"}, {"properties": {"shape": {"const": [104, 104]}, "ordering": {"minItems": 104, "maxItems": 104}}}]}
+          }
+        },
+        "required_exact_checks": {"const": ["q52_has_degree_plus_one", "q52_squared_zero", "q52_intertwines_companion_inclusion_projection_and_homotopy", "q_Cauchy_has_degree_plus_one", "q_Cauchy_squared_zero", "q_Cauchy_is_the_exact_first_jet_prolongation_of_q52", "full_A104_supercommutes_with_q_Cauchy"]},
+        "commutator_check_requires": {"const": "full_A104_after_both_A12_slots_are_populated"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_GLOBAL_PARTIAL_A104", "BERGER_A104_KNOWN_ENTRY_MASK", "BERGER_ENDPOINT_A24_INSERTION_CONTRACT", "BERGER_Q_CAUCHY_IMPORT_CONTRACT", "BERGER_FULL_A104_CAUCHY_OPERATOR", "BERGER_Q_CAUCHY_104", "BERGER_A104_Q_CAUCHY_COMPATIBLE", "BERGER_CAUCHY_KREIN_FORM", "BERGER_HADAMARD_DATA", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_GLOBAL_PARTIAL_A104": {"const": true},
+        "BERGER_A104_KNOWN_ENTRY_MASK": {"const": true},
+        "BERGER_ENDPOINT_A24_INSERTION_CONTRACT": {"const": true},
+        "BERGER_Q_CAUCHY_IMPORT_CONTRACT": {"const": true},
+        "BERGER_FULL_A104_CAUCHY_OPERATOR": {"const": false},
+        "BERGER_Q_CAUCHY_104": {"const": false},
+        "BERGER_A104_Q_CAUCHY_COMPATIBLE": {"const": false},
+        "BERGER_CAUCHY_KREIN_FORM": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_ENDPOINT_A24_EXPORT_AND_GLOBAL_INSERTION"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["preflight_result_id", "degree_block_diagonal_result_id", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "preflight_result_id": {"const": "BERGER_A104_CAUCHY_OPERATOR_PREFLIGHT"},
+        "degree_block_diagonal_result_id": {"const": "BERGER_RETAINED_BIWAVE_COMPANION_PREFLIGHT"},
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "sha256"],
+      "properties": {"artifact_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "fileRef": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "schemaRef": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_id", "path", "sha256"],
+      "properties": {
+        "schema_id": {"const": "quantum-weyl-berger-endpoint-a24-cauchy-export-v1"},
+        "path": {"const": "quantum-weyl/lorentzian/schema/berger-endpoint-a24-cauchy-export-v1.schema.json"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "embedding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["local_artifact", "local_shape", "local_to_global_indices", "ordering_check"],
+      "properties": {
+        "local_artifact": {"$ref": "#/$defs/fileRef"},
+        "local_shape": {"const": [40, 40]},
+        "local_to_global_indices": {"type": "array", "minItems": 40, "maxItems": 40, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 103}},
+        "ordering_check": {"const": "EXACT"}
+      }
+    },
+    "operatorArtifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {"format": {"const": "JSON_EXACT_SPARSE_OPERATOR"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "maskArtifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {"format": {"const": "JSON_EXACT_KNOWN_ENTRY_MASK"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "factorRecordContract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["factor_record_id", "shape", "required_fields"],
+      "properties": {
+        "factor_record_id": {"enum": ["F_spatial_K_spatial", "Box_1_spatial_covector", "F_spatial_K_spatial_formal_adjoint", "Box_1_spatial_covector_formal_adjoint"]},
+        "shape": {"const": [3, 3]},
+        "required_fields": {"const": ["factor_record_id", "shape", "row_ids", "column_ids", "entries", "sha256", "source_commit"]}
+      }
+    },
+    "slot": {
+      "type": "object", "additionalProperties": false,
+      "required": ["block_id", "shape", "global_row_indices", "global_column_indices", "local_ordering", "required_artifact_format", "insertion_rule"],
+      "properties": {
+        "block_id": {"type": "string"},
+        "shape": {"const": [12, 12]},
+        "global_row_indices": {"type": "array", "minItems": 12, "maxItems": 12, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 103}},
+        "global_column_indices": {"type": "array", "minItems": 12, "maxItems": 12, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 103}},
+        "local_ordering": {"type": "array", "minItems": 12, "maxItems": 12, "uniqueItems": true, "items": {"type": "string"}},
+        "required_artifact_format": {"const": "JSON_EXACT_SPARSE_OPERATOR"},
+        "insertion_rule": {"const": "A104[global_row_indices,global_column_indices]=A12[0:12,0:12]"}
+      }
+    },
+    "qArtifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "ordering", "format"],
+      "properties": {
+        "shape": {"type": "array"},
+        "ordering": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "format": {"const": "JSON_EXACT_SPARSE_OPERATOR"}
+      }
+    }
+  }
+}
