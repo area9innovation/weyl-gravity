@@ -1,0 +1,197 @@
+{
+  "claim_flags": {
+    "bach_flat_family_certified": true,
+    "exterior_initial_boundary_problem_certified": false,
+    "gauge_boundary_quotient_certified": false,
+    "general_completeness_certified": false,
+    "horizon_chart_regularity_verified": true,
+    "laurent_class_completeness_certified": true,
+    "lee_wald_flux_or_charge_certified": false,
+    "physical_frame_horizon_regularity_certified": false,
+    "quantum_state_or_hawking_certified": false,
+    "quasinormal_mode_certified": false,
+    "regular_causal_horizon_certified": false
+  },
+  "conformal_instance": {
+    "omega": "1 + r**2",
+    "statement": "the rescaled fixture metric is exactly Bach-flat, an instance of conformal covariance of the Bach tensor; no general transformation theorem is certified here"
+  },
+  "conventions": {
+    "bach": "B_ab = nabla^c nabla^d C_acbd + (1/2) R^cd C_acbd",
+    "linearized_dictionary": {
+      "flat_certificate": "bridge/certificates/flat_tt_bach_operator.json",
+      "flat_certificate_sha256": "a4aa604755c3a6adecdd747e0411d555b82d8bcdfd483c451c7bdb42ee920242",
+      "statement": "on Minkowski TT modes these conventions reduce to B_mn = d^r d^s C_mrns"
+    },
+    "riemann": "R^a_bcd = d_c Gamma^a_db - d_d Gamma^a_cb + Gamma^a_ce Gamma^e_db - Gamma^a_de Gamma^e_cb",
+    "signature": "(-,+,+,+)",
+    "weyl": "C_abcd = R_abcd - (g_ac R_bd - g_ad R_bc + g_bd R_ac - g_bc R_ad)/2 + R (g_ac g_bd - g_ad g_bc)/6"
+  },
+  "declaration": {
+    "background_family": "static spherical Bach vacuum, MK chart of the Laurent constraint variety",
+    "conformal_frame": "unphysical working gauge b = 1/a with areal radius; no physical matter/clock frame declared",
+    "generator": "none; chart vector d_v recorded, horizon generator not yet a certified phase-space object",
+    "horizon_condition": "chart-level only: simple roots of B with finite curvature invariants and EF-smooth metric",
+    "infinity_condition": "none imposed; family is generically not asymptotically flat",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "none constructed at BH-0",
+    "theory": "pure-Weyl gravity S_W = alpha Integral(sqrt(-g) C_abcd C^abcd)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "ef_chart": {
+    "bach_flat": true,
+    "chart_generator": "d_v, smooth across the horizons in this chart",
+    "determinant": "-r**4*sin(theta)**2, nondegenerate at every horizon",
+    "metric": "ds**2 = -B(r)*dv**2 + 2*dv*dr + r**2*dOmega**2 (ingoing)",
+    "null_hypersurface_check": "g^rr = B(r) exactly, so a constant-r hypersurface is null precisely at roots of B"
+  },
+  "einstein_split": {
+    "defect_thth": "-gamma*(-3*beta + r)/2",
+    "einstein_condition_on_family": "gamma = 0",
+    "einstein_subfamily": "Schwarzschild--(A)dS, B = 1 - 2*beta/r - k*r**2",
+    "extra_branch_witness": "E_thth = -gamma*(r - 3*beta)/2 vanishes identically iff gamma = 0"
+  },
+  "horizon_fixture": {
+    "B": "(-r**3 + 12*r**2 - 35*r + 24)/(19*r)",
+    "invariant_J_value": "2822400/47045881",
+    "invariants_finite_at_horizons": true,
+    "non_einstein_witness": "-3*(2*r - 9)/19",
+    "parameters": {
+      "beta": "3/2",
+      "gamma": "12/19",
+      "k": "1/19"
+    },
+    "r_times_B_factorization": "-(1/19)*(r - 1)*(r - 3)*(r - 8)",
+    "roots": [
+      {
+        "B_prime": "-14/19",
+        "chart_surface_gravity": "-7/19",
+        "multiplicity": 1,
+        "r": "1",
+        "type": "inner"
+      },
+      {
+        "B_prime": "10/57",
+        "chart_surface_gravity": "5/57",
+        "multiplicity": 1,
+        "r": "3",
+        "type": "black_hole_event"
+      },
+      {
+        "B_prime": "-35/152",
+        "chart_surface_gravity": "-35/304",
+        "multiplicity": 1,
+        "r": "8",
+        "type": "cosmological"
+      }
+    ],
+    "static_regions": "B > 0 on (0,1) and (3,8); B < 0 on (1,3) and (8,oo)",
+    "surface_gravity_caveat": "chart values kappa = B'(r_h)/2 for the chart vector d_v; the family is not asymptotically flat, so no preferred normalization of the generator is claimed"
+  },
+  "laurent_completeness": {
+    "ansatz": "B = w - u/r + gamma*r - k*r**2 + c2/r**2 + c3*r**3, b = 1/B",
+    "beyond_laurent_class": "open in this repository; Riegert's classification is a literature target",
+    "groebner_basis": [
+      "c2",
+      "c3",
+      "3*gamma*u + w**2 - 1"
+    ],
+    "statement": "within this Laurent class Bach flatness holds iff c2 = c3 = 0 and w**2 + 3*u*gamma = 1"
+  },
+  "missing_objects": [
+    "completeness of the Bach vacuum beyond the Laurent class (Riegert classification)",
+    "declared physical matter/clock conformal frame",
+    "horizon and infinity phase space, boundary terms, differentiable charges",
+    "causal exterior initial-boundary theorem",
+    "linear exterior BV complex and Einstein/extra flux split",
+    "any perturbation, stability, ringdown, thermodynamic, or quantum object"
+  ],
+  "mutation_tests": [
+    {
+      "B": "-2*beta/r + gamma*r + 1",
+      "label": "drop_minus_3_beta_gamma_correlation",
+      "nonzero_bach_components": {
+        "00": "beta*gamma*(2*beta - gamma*r**2 - r)/r**5",
+        "11": "beta*gamma/(r**3*(-2*beta + gamma*r**2 + r))",
+        "22": "-beta*gamma/r**2",
+        "33": "-beta*gamma*sin(theta)**2/r**2"
+      }
+    },
+    {
+      "B": "(7*r*(-r**3 + 12*r**2 - 35*r + 24) + 19)/(133*r**2)",
+      "label": "fixture_plus_r^-2_tail",
+      "nonzero_bach_components": {
+        "00": "2*(98*r**8 - 2940*r**7 + 29743*r**6 - 129360*r**5 + 264082*r**4 - 237384*r**3 + 56742*r**2 + 19152*r + 1083)/(123823*r**10)",
+        "11": "2*(-84*r**3 + 245*r**2 - 168*r - 19)/(7*r**6*(-7*r**4 + 84*r**3 - 245*r**2 + 168*r + 19))",
+        "22": "2*(-7*r**4 + 168*r**3 - 490*r**2 + 336*r + 38)/(931*r**6)",
+        "33": "2*(-7*r**4 + 168*r**3 - 490*r**2 + 336*r + 38)*sin(theta)**2/(931*r**6)"
+      }
+    }
+  ],
+  "provenance": {
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh0_background.py"
+  },
+  "reduced_equations": {
+    "ansatz": "diag(-a(r), b(r), r**2, r**2*sin(theta)**2)",
+    "divergence_identically_zero": true,
+    "independent_row_count_after_trace": 2,
+    "phiphi_row_dependence": "B_phiphi = sin(theta)**2 * B_thetatheta",
+    "rows": {
+      "rr": "-Derivative(a(r), r)*Derivative(a(r), (r, 3))/(12*a(r)**2*b(r)) + Derivative(a(r), (r, 2))**2/(24*a(r)**2*b(r)) + Derivative(a(r), r)**2*Derivative(b(r), (r, 2))/(24*a(r)**2*b(r)**2) + Derivative(a(r), r)*Derivative(a(r), (r, 2))*Derivative(b(r), r)/(12*a(r)**2*b(r)**2) - 7*Derivative(a(r), r)**2*Derivative(b(r), r)**2/(96*a(r)**2*b(r)**3) + Derivative(a(r), r)**2*Derivative(a(r), (r, 2))/(8*a(r)**3*b(r)) - Derivative(a(r), r)**3*Derivative(b(r), r)/(16*a(r)**3*b(r)**2) - 7*Derivative(a(r), r)**4/(96*a(r)**4*b(r)) + Derivative(a(r), (r, 3))/(6*r*a(r)*b(r)) - Derivative(a(r), r)*Derivative(b(r), (r, 2))/(6*r*a(r)*b(r)**2) - Derivative(a(r), (r, 2))*Derivative(b(r), r)/(6*r*a(r)*b(r)**2) + 7*Derivative(a(r), r)*Derivative(b(r), r)**2/(24*r*a(r)*b(r)**3) - Derivative(a(r), r)*Derivative(a(r), (r, 2))/(2*r*a(r)**2*b(r)) + Derivative(a(r), r)**2*Derivative(b(r), r)/(6*r*a(r)**2*b(r)**2) + 5*Derivative(a(r), r)**3/(24*r*a(r)**3*b(r)) + Derivative(b(r), (r, 2))/(6*r**2*b(r)**2) - 7*Derivative(b(r), r)**2/(24*r**2*b(r)**3) + Derivative(a(r), (r, 2))/(3*r**2*a(r)*b(r)) - Derivative(a(r), r)*Derivative(b(r), r)/(12*r**2*a(r)*b(r)**2) + Derivative(a(r), r)**2/(24*r**2*a(r)**2*b(r)) - Derivative(a(r), r)/(3*r**3*a(r)*b(r)) - b(r)/(6*r**4) + 1/(6*r**4*b(r))",
+      "thth": "r**2*Derivative(a(r), (r, 4))/(12*a(r)*b(r)**2) - r**2*Derivative(a(r), r)*Derivative(b(r), (r, 3))/(24*a(r)*b(r)**3) - r**2*Derivative(a(r), (r, 2))*Derivative(b(r), (r, 2))/(6*a(r)*b(r)**3) - r**2*Derivative(a(r), (r, 3))*Derivative(b(r), r)/(4*a(r)*b(r)**3) + 13*r**2*Derivative(a(r), r)*Derivative(b(r), r)*Derivative(b(r), (r, 2))/(48*a(r)*b(r)**4) + 19*r**2*Derivative(a(r), (r, 2))*Derivative(b(r), r)**2/(48*a(r)*b(r)**4) - 7*r**2*Derivative(a(r), r)*Derivative(b(r), r)**3/(24*a(r)*b(r)**5) - 5*r**2*Derivative(a(r), r)*Derivative(a(r), (r, 3))/(24*a(r)**2*b(r)**2) - 5*r**2*Derivative(a(r), (r, 2))**2/(24*a(r)**2*b(r)**2) + 5*r**2*Derivative(a(r), r)**2*Derivative(b(r), (r, 2))/(48*a(r)**2*b(r)**3) + 25*r**2*Derivative(a(r), r)*Derivative(a(r), (r, 2))*Derivative(b(r), r)/(48*a(r)**2*b(r)**3) - 25*r**2*Derivative(a(r), r)**2*Derivative(b(r), r)**2/(96*a(r)**2*b(r)**4) + 13*r**2*Derivative(a(r), r)**2*Derivative(a(r), (r, 2))/(24*a(r)**3*b(r)**2) - 13*r**2*Derivative(a(r), r)**3*Derivative(b(r), r)/(48*a(r)**3*b(r)**3) - 7*r**2*Derivative(a(r), r)**4/(32*a(r)**4*b(r)**2) + r*Derivative(b(r), (r, 3))/(12*b(r)**3) - 13*r*Derivative(b(r), r)*Derivative(b(r), (r, 2))/(24*b(r)**4) + 7*r*Derivative(b(r), r)**3/(12*b(r)**5) + r*Derivative(a(r), (r, 3))/(4*a(r)*b(r)**2) - r*Derivative(a(r), r)*Derivative(b(r), (r, 2))/(24*a(r)*b(r)**3) - 11*r*Derivative(a(r), (r, 2))*Derivative(b(r), r)/(24*a(r)*b(r)**3) + r*Derivative(a(r), r)*Derivative(b(r), r)**2/(8*a(r)*b(r)**4) - 7*r*Derivative(a(r), r)*Derivative(a(r), (r, 2))/(24*a(r)**2*b(r)**2) + r*Derivative(a(r), r)**2*Derivative(b(r), r)/(6*a(r)**2*b(r)**3) + r*Derivative(a(r), r)**3/(8*a(r)**3*b(r)**2) - Derivative(a(r), (r, 2))/(6*a(r)*b(r)**2) + Derivative(a(r), r)*Derivative(b(r), r)/(4*a(r)*b(r)**3) + Derivative(a(r), r)**2/(12*a(r)**2*b(r)**2) - Derivative(b(r), r)/(6*r*b(r)**3) + Derivative(a(r), r)/(6*r*a(r)*b(r)**2) + 1/(6*r**2) - 1/(6*r**2*b(r)**2)",
+      "tt": "Derivative(a(r), (r, 4))/(6*b(r)**2) - Derivative(a(r), r)*Derivative(b(r), (r, 3))/(12*b(r)**3) - Derivative(a(r), (r, 2))*Derivative(b(r), (r, 2))/(3*b(r)**3) - Derivative(a(r), (r, 3))*Derivative(b(r), r)/(2*b(r)**3) + 13*Derivative(a(r), r)*Derivative(b(r), r)*Derivative(b(r), (r, 2))/(24*b(r)**4) + 19*Derivative(a(r), (r, 2))*Derivative(b(r), r)**2/(24*b(r)**4) - 7*Derivative(a(r), r)*Derivative(b(r), r)**3/(12*b(r)**5) - Derivative(a(r), r)*Derivative(a(r), (r, 3))/(2*a(r)*b(r)**2) - 3*Derivative(a(r), (r, 2))**2/(8*a(r)*b(r)**2) + Derivative(a(r), r)**2*Derivative(b(r), (r, 2))/(4*a(r)*b(r)**3) + 9*Derivative(a(r), r)*Derivative(a(r), (r, 2))*Derivative(b(r), r)/(8*a(r)*b(r)**3) - 19*Derivative(a(r), r)**2*Derivative(b(r), r)**2/(32*a(r)*b(r)**4) + 29*Derivative(a(r), r)**2*Derivative(a(r), (r, 2))/(24*a(r)**2*b(r)**2) - 29*Derivative(a(r), r)**3*Derivative(b(r), r)/(48*a(r)**2*b(r)**3) - 49*Derivative(a(r), r)**4/(96*a(r)**3*b(r)**2) + a(r)*Derivative(b(r), (r, 3))/(6*r*b(r)**3) - 13*a(r)*Derivative(b(r), r)*Derivative(b(r), (r, 2))/(12*r*b(r)**4) + 7*a(r)*Derivative(b(r), r)**3/(6*r*b(r)**5) + 2*Derivative(a(r), (r, 3))/(3*r*b(r)**2) - Derivative(a(r), r)*Derivative(b(r), (r, 2))/(4*r*b(r)**3) - 13*Derivative(a(r), (r, 2))*Derivative(b(r), r)/(12*r*b(r)**3) + 13*Derivative(a(r), r)*Derivative(b(r), r)**2/(24*r*b(r)**4) - 13*Derivative(a(r), r)*Derivative(a(r), (r, 2))/(12*r*a(r)*b(r)**2) + Derivative(a(r), r)**2*Derivative(b(r), r)/(2*r*a(r)*b(r)**3) + 11*Derivative(a(r), r)**3/(24*r*a(r)**2*b(r)**2) + a(r)*Derivative(b(r), (r, 2))/(6*r**2*b(r)**3) - 7*a(r)*Derivative(b(r), r)**2/(24*r**2*b(r)**4) + 5*Derivative(a(r), r)*Derivative(b(r), r)/(12*r**2*b(r)**3) + 5*Derivative(a(r), r)**2/(24*r**2*a(r)*b(r)**2) - a(r)*Derivative(b(r), r)/(3*r**3*b(r)**3) + a(r)/(6*r**4) - a(r)/(6*r**4*b(r)**2)"
+    },
+    "trace_identically_zero": true
+  },
+  "residual_gauge": {
+    "c_map": {
+      "beta": "beta/(3*beta*c + 1)",
+      "chart_map": "r = rho/(1 - c*rho), Omega = 1 - c*rho",
+      "gamma": "9*beta**2*c**2*gamma - 6*beta*c**2 + 6*beta*c*gamma - 2*c + gamma",
+      "k": "3*beta**2*c**3*gamma - 2*beta*c**3 + 3*beta*c**2*gamma - c**2 + c*gamma + k"
+    },
+    "continuous_invariant": {
+      "J": "-2187*beta**8*gamma**4*k**2 + 486*beta**7*gamma**5*k + 5832*beta**7*gamma**3*k**2 - 27*beta**6*gamma**6 - 1134*beta**6*gamma**4*k - 5832*beta**6*gamma**2*k**2 + 54*beta**5*gamma**5 + 864*beta**5*gamma**3*k + 2592*beta**5*gamma*k**2 - 27*beta**4*gamma**4 - 180*beta**4*gamma**2*k - 432*beta**4*k**2 - 4*beta**3*gamma**3 - 48*beta**3*gamma*k + 4*beta**2*gamma**2 + 16*beta**2*k",
+      "J_factored": "-beta**2*(3*beta*gamma - 2)**2*(27*beta**2*k - 3*beta*gamma - 1)*(9*beta**2*gamma**2*k - beta*gamma**3 - 12*beta*gamma*k + gamma**2 + 4*k)"
+    },
+    "cubic": "Q(x) = -u*x**3 + w*x**2 + gamma*x - k with x = 1/r",
+    "dilation": "beta -> beta/lambda, gamma -> lambda*gamma, k -> lambda**2*k with t -> lambda*t, r = lambda*rho, Omega = 1/lambda",
+    "invariant_meaning": "disc(Q) = 0 is exactly the degenerate-horizon locus, so the residual-gauge-invariant content of the family is the horizon root structure plus J",
+    "orbit_rank": 2,
+    "singular_rescaling_caveat": "Omega = 1 - c*rho vanishes at rho = 1/c; the c-map is a local gauge equivalence on rho < 1/c only and is not used to identify horizon geometries globally",
+    "translation_property": "the c-map acts on Q exactly as x -> x - c; the dilation as Q(x) -> lambda**2*Q(x/lambda)"
+  },
+  "result_id": "PURE_WEYL_STATIC_SPHERICAL_BACKGROUND",
+  "result_token": "PURE_WEYL_STATIC_SPHERICAL_BACKGROUND_CLASSIFIED",
+  "schema": "pure-weyl-bh0-static-spherical-background-v1",
+  "schema_path": "black_hole_programme/schema/bh0-static-spherical-background-v1.schema.json",
+  "schema_sha256": "729fc0279fede5fc0d727047788ad00c41b9713651fa858f459c140c1392a5c9",
+  "singularities": {
+    "Kretschmann": "4*(27*beta**4*gamma**2 - 18*beta**3*gamma**2*r - 36*beta**3*gamma + 9*beta**2*gamma**2*r**2 + 12*beta**2*gamma*r + 12*beta**2 - 6*beta*gamma**2*r**3 + 6*beta*gamma*k*r**4 + 2*gamma**2*r**4 - 6*gamma*k*r**5 + 6*k**2*r**6)/r**6",
+    "R": "6*beta*gamma/r**2 - 6*gamma/r + 12*k",
+    "RicciSq": "18*beta**2*gamma**2/r**4 - 24*beta*gamma**2/r**3 + 36*beta*gamma*k/r**2 + 10*gamma**2/r**2 - 36*gamma*k/r + 36*k**2",
+    "WeylSq": "12*beta**2*(9*beta**2*gamma**2 - 6*beta*gamma**2*r - 12*beta*gamma + gamma**2*r**2 + 4*gamma*r + 4)/r**6",
+    "classification": "all listed invariants are rational in r with poles only at r = 0; WeylSq ~ 48*beta**2/r**6 gives a curvature singularity iff beta != 0; R ~ 6*beta*gamma/r**2 adds a scalar-curvature singularity iff beta*gamma != 0; every invariant is finite at every horizon",
+    "conformal_frame_note": "statements are for the working gauge; WeylSq has conformal weight -4, so its zero/pole locus is frame-covariant but its value is not"
+  },
+  "vacuum_family": {
+    "B": "-3*beta*gamma - beta*(-3*beta*gamma + 2)/r + gamma*r - k*r**2 + 1",
+    "constraint_form": "w = 1 - 3*beta*gamma, u = beta*(2 - 3*beta*gamma) parametrize the sheet of w**2 + 3*u*gamma = 1 through w = 1",
+    "dictionary": {
+      "mannheim_kazanas_1989": "identical (beta, gamma, k); their u = beta*(2 - 3*beta*gamma)",
+      "schwarzschild_control": "beta = m, gamma = 0, k = 0",
+      "schwarzschild_de_sitter_control": "gamma = 0, k = Lambda/3, verified R_ab = 3*k*g_ab"
+    },
+    "parameters": [
+      "beta",
+      "gamma",
+      "k"
+    ],
+    "unparametrized_sheet": "the complementary sheet (e.g. w = -1, gamma = 0, B = -1 - u/r - k*r**2) has r timelike where B < 0 and is a Kantowski--Sachs-type branch outside the MK chart"
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh0_background.py"
+}

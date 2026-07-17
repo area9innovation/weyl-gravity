@@ -1,0 +1,99 @@
+{
+  "bare_charges": {
+    "F_beta": "16*pi*alpha*(12*beta*gamma*k - gamma**2 - 4*k)",
+    "F_gamma": "16*pi*alpha*beta*(6*beta*k - gamma)",
+    "F_k": "16*pi*alpha*beta*(3*beta*gamma - 2)",
+    "nontriviality_statement": "the delta_gamma Q sphere integral alone depends on r, so constancy of F is a nontrivial on-shell identity",
+    "nontriviality_witness": "32*pi*alpha*beta*(9*beta**3*gamma - 9*beta**2*gamma*r - 6*beta**2 + 3*beta*gamma*r**2 + 3*beta*k*r**3 + 3*beta*r - gamma*r**3)/r**3",
+    "r_independent": true,
+    "static_flux_balance": "each F is one exact constant, so the horizon and infinity surface integrals agree for every static on-shell variation; no dynamical flux statement is made"
+  },
+  "claim_flags": {
+    "bare_form_nonintegrable_certified": true,
+    "bare_static_charges_certified": true,
+    "differentiable_hamiltonian_certified": false,
+    "dynamical_perturbation_flux_certified": false,
+    "entropy_or_first_law_certified": false,
+    "full_horizon_phase_space_certified": false,
+    "normalization_control_certified": true,
+    "obstruction_gauge_degenerate_certified": true,
+    "stability_certified": false,
+    "static_flux_balance_certified": true
+  },
+  "controls": {
+    "gr_schwarzschild_F": "16*pi",
+    "gr_schwarzschild_de_sitter_F": "16*pi",
+    "weyl_schwarzschild_all_zero_except_k_pairing": true
+  },
+  "conventions": {
+    "E_tensor": "E^{abcd} = dL/dR_{abcd}; Weyl case E^{abcd} = 2 alpha C^{abcd}",
+    "Q": "Q^{ab} = -E^{abcd} nabla_c chi_d + 2 chi_d nabla_c E^{abcd}",
+    "normalization_control": "Einstein E-tensor reproduces F = 16 pi delta m on Schwarzschild and Schwarzschild-de Sitter (L = R, 16 pi G = 1, Wald/ADM)",
+    "sphere_forms": "(Q-form)_{thph} = 2 sqrt(-g) Q^{tr}; (i_chi theta)_{thph} = -sqrt(-g) chi^t theta^r; eps_{t r th ph} = +sqrt(-g)",
+    "theta": "theta^a = 2 (E^{abcd} nabla_d dg_{bc} - dg_{bc} nabla_d E^{abcd})"
+  },
+  "declaration": {
+    "background_family": "MK static spherical Bach vacuum (BH-0 certificate)",
+    "conformal_frame": "working gauge b = 1/a; no physical frame declared",
+    "generator": "chart vector d_t (equals d_v on the sphere forms); normalization conventional, family not asymptotically flat",
+    "horizon_condition": "surface integrals evaluated on S_r at every r; constancy makes horizon and infinity values equal",
+    "infinity_condition": "none imposed; no falloff enlargement beyond the static family",
+    "lifecycle": "PREFLIGHT",
+    "phase_space": "static parameter slice only: variations restricted to d_beta, d_gamma, d_k",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "einstein_subfamily_observations": {
+    "extra_branch_variation_charged": "96*pi*alpha*beta**2*k",
+    "k_pairing_at_schwarzschild": "-32*pi*alpha*beta",
+    "note": "at Einstein points with beta*k != 0 the variation into the extra Weyl branch (delta gamma) carries nonzero bare charge",
+    "schwarzschild_mass_charge": "F_beta = 0 at gamma = k = 0: the bare Noether mass of Schwarzschild vanishes in pure-Weyl gravity"
+  },
+  "horizon_fixture_charges": {
+    "F_beta": "-64*pi*alpha/361",
+    "F_gamma": "-72*pi*alpha/19",
+    "F_k": "384*pi*alpha/19",
+    "parameters": {
+      "beta": "3/2",
+      "gamma": "12/19",
+      "k": "1/19"
+    }
+  },
+  "integrability_obstruction": {
+    "dF_beta_gamma": "16*pi*alpha*gamma",
+    "dF_beta_k": "32*pi*alpha*(-3*beta*gamma + 1)",
+    "dF_gamma_k": "-48*pi*alpha*beta**2",
+    "descends_to_quotient": "iota_{gen_c} dF = 0 and F(gen_c) = 0, so F and dF descend to the 2-dimensional residual-gauge quotient, where dF is nondegenerate: the obstruction is physical, not gauge",
+    "euler_identity": "iota_{gen_lambda} dF = F with gen_lambda = (-beta, gamma, 2*k); F(gen_lambda) = 0",
+    "integrable_slices": "exactly the 2-dimensional parameter surfaces ruled by the c-direction (pullback of dF vanishes iff the tangent plane contains ker dF), plus all 1-dimensional subfamilies",
+    "kernel": "ker dF = span(gen_c), gen_c = (-3*beta**2, 6*beta*gamma - 2, gamma) (residual-gauge c-direction)",
+    "minimal_ansatz_for_bh1": "the first differentiability solve must either quotient the c-direction and pair only one physical direction at a time, or enlarge the phase space with non-parameter boundary/falloff data; no parameter-local corner term can work",
+    "no_local_boundary_term": "no function W(beta, gamma, k) of the static parameters satisfies delta W = F, because dF != 0 exactly; this proves the bare form is not differentiable on the full static family",
+    "nonzero": true
+  },
+  "missing_objects": [
+    "action-derived presymplectic form for time-dependent perturbations",
+    "falloff-enlarged phase space and boundary/corner term solve (BH-1 proper)",
+    "Iyer-Wald entropy and first law in a fixed generator normalization",
+    "horizon generator selection beyond the chart vector d_t",
+    "any Lorentzian causal or dynamical statement"
+  ],
+  "provenance": {
+    "bh0_certificate": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
+    "bh0_certificate_sha256": "d08a76dd21b1c32270f6b8082c382e23561e7865c4454139fffc890ac14911e4",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh1_lee_wald_preflight.py",
+    "machinery_path": "black_hole_programme/lee_wald.py",
+    "machinery_sha256": "857f19db3a42ef14d3f1c076fe6b626313c0cee54a86bdf5f40178aca6da9e13"
+  },
+  "result_id": "PURE_WEYL_BH1_LEE_WALD_PREFLIGHT",
+  "result_token": "BH1_PREFLIGHT_COMPLETE_BARE_FORM_NONINTEGRABLE",
+  "schema": "pure-weyl-bh1-lee-wald-preflight-v1",
+  "schema_path": "black_hole_programme/schema/bh1-lee-wald-preflight-v1.schema.json",
+  "schema_sha256": "6e9b3e80a10d290f0191ded7034fe4ff2bb5b0173aca00cf63bd0d6d88e66ee3",
+  "verification_command": "python3 black_hole_programme/verify_bh1_lee_wald_preflight.py"
+}

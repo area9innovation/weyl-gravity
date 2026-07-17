@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh1-lee-wald-preflight-v1",
+  "title": "BH-1 preflight: unrenormalized Lee-Wald surface form on the MK family",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "conventions",
+    "controls",
+    "bare_charges",
+    "integrability_obstruction",
+    "einstein_subfamily_observations",
+    "horizon_fixture_charges",
+    "claim_flags",
+    "missing_objects",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh1-lee-wald-preflight-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh1-lee-wald-preflight-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH1_LEE_WALD_PREFLIGHT" },
+    "result_token": { "const": "BH1_PREFLIGHT_COMPLETE_BARE_FORM_NONINTEGRABLE" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "PREFLIGHT" } }
+    },
+    "conventions": {
+      "type": "object",
+      "required": ["E_tensor", "theta", "Q", "sphere_forms", "normalization_control"],
+      "properties": {
+        "theta": {
+          "const": "theta^a = 2 (E^{abcd} nabla_d dg_{bc} - dg_{bc} nabla_d E^{abcd})"
+        },
+        "Q": {
+          "const": "Q^{ab} = -E^{abcd} nabla_c chi_d + 2 chi_d nabla_c E^{abcd}"
+        }
+      }
+    },
+    "controls": {
+      "type": "object",
+      "required": [
+        "gr_schwarzschild_F",
+        "gr_schwarzschild_de_sitter_F",
+        "weyl_schwarzschild_all_zero_except_k_pairing"
+      ],
+      "properties": {
+        "gr_schwarzschild_F": { "const": "16*pi" },
+        "gr_schwarzschild_de_sitter_F": { "const": "16*pi" },
+        "weyl_schwarzschild_all_zero_except_k_pairing": { "const": true }
+      }
+    },
+    "bare_charges": {
+      "type": "object",
+      "required": [
+        "F_beta",
+        "F_gamma",
+        "F_k",
+        "r_independent",
+        "static_flux_balance",
+        "nontriviality_witness",
+        "nontriviality_statement"
+      ],
+      "properties": {
+        "F_beta": { "const": "16*pi*alpha*(12*beta*gamma*k - gamma**2 - 4*k)" },
+        "F_gamma": { "const": "16*pi*alpha*beta*(6*beta*k - gamma)" },
+        "F_k": { "const": "16*pi*alpha*beta*(3*beta*gamma - 2)" },
+        "r_independent": { "const": true }
+      }
+    },
+    "integrability_obstruction": {
+      "type": "object",
+      "required": [
+        "dF_beta_gamma",
+        "dF_beta_k",
+        "dF_gamma_k",
+        "nonzero",
+        "no_local_boundary_term",
+        "kernel",
+        "descends_to_quotient",
+        "euler_identity",
+        "integrable_slices",
+        "minimal_ansatz_for_bh1"
+      ],
+      "properties": {
+        "dF_beta_gamma": { "const": "16*pi*alpha*gamma" },
+        "dF_beta_k": { "const": "32*pi*alpha*(-3*beta*gamma + 1)" },
+        "dF_gamma_k": { "const": "-48*pi*alpha*beta**2" },
+        "nonzero": { "const": true }
+      }
+    },
+    "einstein_subfamily_observations": {
+      "type": "object",
+      "required": [
+        "schwarzschild_mass_charge",
+        "k_pairing_at_schwarzschild",
+        "extra_branch_variation_charged",
+        "note"
+      ],
+      "properties": {
+        "k_pairing_at_schwarzschild": { "const": "-32*pi*alpha*beta" },
+        "extra_branch_variation_charged": { "const": "96*pi*alpha*beta**2*k" }
+      }
+    },
+    "horizon_fixture_charges": {
+      "type": "object",
+      "required": ["parameters", "F_beta", "F_gamma", "F_k"],
+      "properties": {
+        "parameters": { "const": { "beta": "3/2", "gamma": "12/19", "k": "1/19" } },
+        "F_beta": { "const": "-64*pi*alpha/361" },
+        "F_gamma": { "const": "-72*pi*alpha/19" },
+        "F_k": { "const": "384*pi*alpha/19" }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "normalization_control_certified",
+        "bare_static_charges_certified",
+        "static_flux_balance_certified",
+        "bare_form_nonintegrable_certified",
+        "obstruction_gauge_degenerate_certified",
+        "differentiable_hamiltonian_certified",
+        "entropy_or_first_law_certified",
+        "full_horizon_phase_space_certified",
+        "dynamical_perturbation_flux_certified",
+        "stability_certified"
+      ],
+      "properties": {
+        "normalization_control_certified": { "const": true },
+        "bare_static_charges_certified": { "const": true },
+        "static_flux_balance_certified": { "const": true },
+        "bare_form_nonintegrable_certified": { "const": true },
+        "obstruction_gauge_degenerate_certified": { "const": true },
+        "differentiable_hamiltonian_certified": { "const": false },
+        "entropy_or_first_law_certified": { "const": false },
+        "full_horizon_phase_space_certified": { "const": false },
+        "dynamical_perturbation_flux_certified": { "const": false },
+        "stability_certified": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 5 },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "machinery_path",
+        "machinery_sha256",
+        "engine_path",
+        "engine_sha256",
+        "bh0_certificate",
+        "bh0_certificate_sha256"
+      ],
+      "properties": {
+        "generator_path": { "const": "black_hole_programme/bh1_lee_wald_preflight.py" },
+        "machinery_path": { "const": "black_hole_programme/lee_wald.py" },
+        "machinery_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "engine_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "bh0_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh1_lee_wald_preflight.py"
+    }
+  }
+}

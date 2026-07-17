@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh0-static-spherical-background-v1",
+  "title": "BH-0 static spherical pure-Weyl background classification",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "conventions",
+    "reduced_equations",
+    "laurent_completeness",
+    "vacuum_family",
+    "einstein_split",
+    "residual_gauge",
+    "horizon_fixture",
+    "singularities",
+    "ef_chart",
+    "conformal_instance",
+    "mutation_tests",
+    "claim_flags",
+    "missing_objects",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh0-static-spherical-background-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh0-static-spherical-background-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_STATIC_SPHERICAL_BACKGROUND" },
+    "result_token": {
+      "enum": [
+        "PURE_WEYL_STATIC_SPHERICAL_BACKGROUND_CLASSIFIED",
+        "PURE_WEYL_STATIC_SPHERICAL_COMPLETENESS_OBSTRUCTED"
+      ]
+    },
+    "dependency_tags": {
+      "type": "array",
+      "items": { "const": "LOCAL-ALGEBRAIC" },
+      "minItems": 1
+    },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "conventions": {
+      "type": "object",
+      "required": ["signature", "bach", "weyl", "riemann", "linearized_dictionary"],
+      "properties": {
+        "signature": { "const": "(-,+,+,+)" },
+        "bach": { "const": "B_ab = nabla^c nabla^d C_acbd + (1/2) R^cd C_acbd" },
+        "linearized_dictionary": {
+          "type": "object",
+          "required": ["statement", "flat_certificate", "flat_certificate_sha256"],
+          "properties": {
+            "flat_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          }
+        }
+      }
+    },
+    "reduced_equations": {
+      "type": "object",
+      "required": [
+        "ansatz",
+        "rows",
+        "trace_identically_zero",
+        "divergence_identically_zero",
+        "phiphi_row_dependence",
+        "independent_row_count_after_trace"
+      ],
+      "properties": {
+        "rows": {
+          "type": "object",
+          "required": ["tt", "rr", "thth"],
+          "additionalProperties": { "type": "string" }
+        },
+        "trace_identically_zero": { "const": true },
+        "divergence_identically_zero": { "const": true },
+        "independent_row_count_after_trace": { "const": 2 }
+      }
+    },
+    "laurent_completeness": {
+      "type": "object",
+      "required": ["ansatz", "groebner_basis", "statement", "beyond_laurent_class"],
+      "properties": {
+        "groebner_basis": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "vacuum_family": {
+      "type": "object",
+      "required": ["B", "parameters", "constraint_form", "unparametrized_sheet", "dictionary"],
+      "properties": {
+        "parameters": { "const": ["beta", "gamma", "k"] }
+      }
+    },
+    "einstein_split": {
+      "type": "object",
+      "required": [
+        "defect_thth",
+        "einstein_condition_on_family",
+        "einstein_subfamily",
+        "extra_branch_witness"
+      ],
+      "properties": {
+        "einstein_condition_on_family": { "const": "gamma = 0" }
+      }
+    },
+    "residual_gauge": {
+      "type": "object",
+      "required": [
+        "c_map",
+        "dilation",
+        "cubic",
+        "translation_property",
+        "orbit_rank",
+        "continuous_invariant",
+        "invariant_meaning",
+        "singular_rescaling_caveat"
+      ],
+      "properties": {
+        "orbit_rank": { "const": 2 },
+        "continuous_invariant": {
+          "type": "object",
+          "required": ["J", "J_factored"]
+        }
+      }
+    },
+    "horizon_fixture": {
+      "type": "object",
+      "required": [
+        "parameters",
+        "B",
+        "r_times_B_factorization",
+        "roots",
+        "static_regions",
+        "surface_gravity_caveat",
+        "non_einstein_witness",
+        "invariant_J_value",
+        "invariants_finite_at_horizons"
+      ],
+      "properties": {
+        "parameters": {
+          "const": { "beta": "3/2", "gamma": "12/19", "k": "1/19" }
+        },
+        "r_times_B_factorization": { "const": "-(1/19)*(r - 1)*(r - 3)*(r - 8)" },
+        "roots": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["r", "multiplicity", "type", "B_prime", "chart_surface_gravity"],
+            "properties": { "multiplicity": { "const": 1 } }
+          }
+        },
+        "invariants_finite_at_horizons": { "const": true }
+      }
+    },
+    "singularities": {
+      "type": "object",
+      "required": [
+        "R",
+        "RicciSq",
+        "WeylSq",
+        "Kretschmann",
+        "classification",
+        "conformal_frame_note"
+      ]
+    },
+    "ef_chart": {
+      "type": "object",
+      "required": [
+        "metric",
+        "bach_flat",
+        "determinant",
+        "null_hypersurface_check",
+        "chart_generator"
+      ],
+      "properties": { "bach_flat": { "const": true } }
+    },
+    "conformal_instance": {
+      "type": "object",
+      "required": ["omega", "statement"]
+    },
+    "mutation_tests": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["label", "B", "nonzero_bach_components"],
+        "properties": {
+          "nonzero_bach_components": { "type": "object", "minProperties": 1 }
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "bach_flat_family_certified",
+        "laurent_class_completeness_certified",
+        "general_completeness_certified",
+        "horizon_chart_regularity_verified",
+        "regular_causal_horizon_certified",
+        "physical_frame_horizon_regularity_certified",
+        "exterior_initial_boundary_problem_certified",
+        "lee_wald_flux_or_charge_certified",
+        "gauge_boundary_quotient_certified",
+        "quasinormal_mode_certified",
+        "quantum_state_or_hawking_certified"
+      ],
+      "properties": {
+        "bach_flat_family_certified": { "const": true },
+        "laurent_class_completeness_certified": { "const": true },
+        "general_completeness_certified": { "const": false },
+        "horizon_chart_regularity_verified": { "const": true },
+        "regular_causal_horizon_certified": { "const": false },
+        "physical_frame_horizon_regularity_certified": { "const": false },
+        "exterior_initial_boundary_problem_certified": { "const": false },
+        "lee_wald_flux_or_charge_certified": { "const": false },
+        "gauge_boundary_quotient_certified": { "const": false },
+        "quasinormal_mode_certified": { "const": false },
+        "quantum_state_or_hawking_certified": { "const": false }
+      }
+    },
+    "missing_objects": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 6
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path", "engine_path", "engine_sha256"],
+      "properties": {
+        "generator_path": { "const": "black_hole_programme/bh0_background.py" },
+        "engine_path": { "const": "black_hole_programme/weyl_geometry.py" },
+        "engine_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh0_background.py"
+    }
+  }
+}
