@@ -27,11 +27,12 @@
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
     "dependency_refs": {
       "type": "object",
-      "required": ["rank_36_projector_obstruction", "rank_46_STF2_graph_carrier", "rank_46_projector_solver_contract"],
+      "required": ["rank_36_projector_obstruction", "rank_46_STF2_graph_carrier", "rank_46_projector_solver_contract", "physical_helicity_filtered_quotient"],
       "properties": {
         "rank_36_projector_obstruction": {"$ref": "#/$defs/dependency"},
         "rank_46_STF2_graph_carrier": {"$ref": "#/$defs/dependency"},
-        "rank_46_projector_solver_contract": {"$ref": "#/$defs/dependency"}
+        "rank_46_projector_solver_contract": {"$ref": "#/$defs/dependency"},
+        "physical_helicity_filtered_quotient": {"$ref": "#/$defs/dependency"}
       },
       "additionalProperties": false
     },

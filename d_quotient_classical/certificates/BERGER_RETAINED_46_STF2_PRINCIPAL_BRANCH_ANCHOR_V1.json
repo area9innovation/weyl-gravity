@@ -11,6 +11,11 @@
     "SUBPRINCIPAL_ANCHOR_REQUIRED": true
   },
   "dependency_refs": {
+    "physical_helicity_filtered_quotient": {
+      "artifact_id": "BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json",
+      "sha256": "b9c290a19270f423d98e998699dd68f86523eeb849d5816cca81215a7ba3236f"
+    },
     "rank_36_projector_obstruction": {
       "artifact_id": "BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1",
       "path": "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
@@ -24,14 +29,16 @@
     "rank_46_projector_solver_contract": {
       "artifact_id": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1",
       "path": "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1.json",
-      "sha256": "25f89b9da2a3381315e9f973200483b8981b743545e9352471a2f8bc11b15c7d"
+      "sha256": "1d518d27996135ea0004c3a9119dbad543ba2fb2a47003198eb0fb6a0d3a45d2"
     }
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
   ],
   "exact_import_checks": {
-    "physical_helicity_rank_two_imported": true,
+    "full_null_symbol_cohomology_rank_six_not_collapsed": true,
+    "generalized_wave_rank_four_distinguished": true,
+    "physical_helicity_projective_rank_two_derived": true,
     "rank_36_dual_number_principal_module_imported": true,
     "rank_36_only_trivial_principal_idempotents_imported": true,
     "rank_46_added_complement_contractible": true,
@@ -86,10 +93,10 @@
   },
   "provenance": {
     "source_manifest": {
-      "d_quotient_classical/backreacted_clock/berger_retained_46_stf2_principal_branch_anchor.py": "35bd616030b6042d77ece9c8dc27e1fd18c4b14936e760b87d67bf6ac3200abd",
+      "d_quotient_classical/backreacted_clock/berger_retained_46_stf2_principal_branch_anchor.py": "c83d260f95bfb058e3d53d6dc8a9df3e39ba466c4cf77bd22997a5fbe528a91f",
       "d_quotient_classical/backreacted_clock/tests/test_berger_retained_46_stf2_principal_branch_anchor.py": "825b8c7ba2bf15fb37570a8e480b964521d706d65c3d87f698dda6fa7add6200",
-      "d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_principal_branch_anchor.py": "b58b64a6e2158ec828afa457b0a0b48b3594620a841a9e89a875b195e58fa71d",
-      "d_quotient_classical/schema/berger-retained-46-stf2-principal-branch-anchor-v1.schema.json": "c68f97e3f888397340eded1fc6429ab15b722c2f9e536e4143ea714708ad22f2"
+      "d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_principal_branch_anchor.py": "f2260f9566843e3a1e15ff3278033e4fe592e7fddf9d2b5ff8ca654177b4cece",
+      "d_quotient_classical/schema/berger-retained-46-stf2-principal-branch-anchor-v1.schema.json": "44cf849004f2d6e3eb621a8bd0b0553c85b78e0aa9ee5b90680de97de693e92b"
     },
     "verification_commands": [
       "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_46_stf2_principal_branch_anchor.py --check --guards",

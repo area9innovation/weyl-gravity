@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-retained-46-stf2-physical-helicity-filtered-quotient-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "method_tags",
+    "dependency_refs",
+    "null_cone_chart",
+    "full_Berger_null_symbol_cohomology",
+    "normalized_standard_null_fibre",
+    "filtered_principal_module",
+    "exact_checks",
+    "audit_ledger",
+    "V2_receiving_contract",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-46-stf2-physical-helicity-filtered-quotient-v1"},
+    "result_id": {"const": "BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1"},
+    "result_state": {"const": "PHYSICAL_HELICITY_PROJECTIVE_MODULE_CERTIFIED_V2_FILTERED_DESCENT_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "method_tags": {"const": ["MICROLOCAL-SYMBOL", "PROJECTIVE-NULL-CONE", "EXACT-POLYNOMIAL-QUOTIENT"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "retained_layout",
+        "retained_q1",
+        "universal_null_symbol_quotient",
+        "universal_helicity_channel",
+        "Berger_V2_normal_form",
+        "rank_46_STF2_graph_carrier"
+      ],
+      "properties": {
+        "retained_layout": {"$ref": "#/$defs/dependency"},
+        "retained_q1": {"$ref": "#/$defs/dependency"},
+        "universal_null_symbol_quotient": {"$ref": "#/$defs/dependency"},
+        "universal_helicity_channel": {"$ref": "#/$defs/dependency"},
+        "Berger_V2_normal_form": {"$ref": "#/$defs/dependency"},
+        "rank_46_STF2_graph_carrier": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "null_cone_chart": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "normalization",
+        "coordinate_ring",
+        "projective_coverage",
+        "spatial_symmetric_component_order",
+        "TT_formula",
+        "TT_projector_6x6",
+        "field_projector_10x10",
+        "equation_projector_10x10",
+        "equation_projector_is_canonical_transpose",
+        "projective_rank",
+        "global_two_column_frame_asserted"
+      ],
+      "properties": {
+        "normalization": {"const": "p0=1"},
+        "coordinate_ring": {"const": "Q[n1,n2,n3]/(n1^2+n2^2+n3^2-1)"},
+        "projective_coverage": {"type": "string"},
+        "spatial_symmetric_component_order": {"const": ["11", "12", "13", "22", "23", "33"]},
+        "TT_formula": {"type": "string"},
+        "TT_projector_6x6": {"$ref": "#/$defs/matrix"},
+        "field_projector_10x10": {"$ref": "#/$defs/matrix"},
+        "equation_projector_10x10": {"$ref": "#/$defs/matrix"},
+        "equation_projector_is_canonical_transpose": {"const": true},
+        "projective_rank": {"const": 2},
+        "global_two_column_frame_asserted": {"const": false}
+      }
+    },
+    "full_Berger_null_symbol_cohomology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complex_ranks",
+        "symbol_ranks",
+        "cohomology_dimensions",
+        "physical_degree_zero_rank",
+        "physical_degree_one_rank",
+        "remaining_degree_zero_classes_outside_physical_submodule",
+        "remaining_degree_one_classes_outside_physical_submodule",
+        "interpretation"
+      ],
+      "properties": {
+        "complex_ranks": {"const": [3, 10, 10, 3]},
+        "symbol_ranks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["K1", "H4", "L1"],
+          "properties": {"K1": {"const": 3}, "H4": {"const": 1}, "L1": {"const": 3}}
+        },
+        "cohomology_dimensions": {"const": [0, 6, 6, 0]},
+        "physical_degree_zero_rank": {"const": 2},
+        "physical_degree_one_rank": {"const": 2},
+        "remaining_degree_zero_classes_outside_physical_submodule": {"const": 4},
+        "remaining_degree_one_classes_outside_physical_submodule": {"const": 4},
+        "interpretation": {"type": "string"}
+      }
+    },
+    "normalized_standard_null_fibre": {
+      "type": "object",
+      "required": [
+        "covector",
+        "metric_component_order",
+        "field_basis",
+        "equation_dual_basis",
+        "field_inclusion_entries",
+        "field_projection_entries",
+        "equation_inclusion_entries",
+        "equation_projection_entries",
+        "induced_cyclic_pairing",
+        "little_group_generator",
+        "little_group_generator_square",
+        "complex_helicity_weights",
+        "linearized_Weyl_induced_matrix",
+        "linearized_Weyl_isomorphism"
+      ],
+      "properties": {
+        "covector": {"const": [1, 1, 0, 0]},
+        "metric_component_order": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "string"}},
+        "field_basis": {"const": ["h_hat_22-h_hat_33", "h_hat_23"]},
+        "equation_dual_basis": {"const": ["(h_hat_star_22-h_hat_star_33)/2", "h_hat_star_23"]},
+        "field_inclusion_entries": {"$ref": "#/$defs/sparseEntries"},
+        "field_projection_entries": {"$ref": "#/$defs/sparseEntries"},
+        "equation_inclusion_entries": {"$ref": "#/$defs/sparseEntries"},
+        "equation_projection_entries": {"$ref": "#/$defs/sparseEntries"},
+        "induced_cyclic_pairing": {"const": [["1", "0"], ["0", "1"]]},
+        "little_group_generator": {"const": [[0, 2], [-2, 0]]},
+        "little_group_generator_square": {"const": "-4 I_2"},
+        "complex_helicity_weights": {"const": ["+2i", "-2i"]},
+        "linearized_Weyl_induced_matrix": {"const": [["1/4", "0"], ["0", "1/4"]]},
+        "linearized_Weyl_isomorphism": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "filtered_principal_module": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "polarization_module",
+        "generalized_wave_module",
+        "generalized_wave_rank_over_Q_sqrt10",
+        "Einstein_layer",
+        "extra_Weyl_quotient",
+        "topological_deformation_direction_included"
+      ],
+      "properties": {
+        "polarization_module": {"type": "string"},
+        "generalized_wave_module": {"type": "string"},
+        "generalized_wave_rank_over_Q_sqrt10": {"const": 4},
+        "Einstein_layer": {"type": "string"},
+        "extra_Weyl_quotient": {"type": "string"},
+        "topological_deformation_direction_included": {"const": false}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 13, "additionalProperties": {"const": true}},
+    "audit_ledger": {"type": "object"},
+    "V2_receiving_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact",
+        "required_calculation",
+        "raw_10x10_diagonalization_authorized",
+        "raw_Pi_TT_V2_Pi_TT_compression_is_an_invariant_verdict",
+        "V2_filtered_descent_computed_here",
+        "binary_output"
+      ],
+      "properties": {
+        "artifact": {"type": "object"},
+        "required_calculation": {"type": "string"},
+        "raw_10x10_diagonalization_authorized": {"const": false},
+        "raw_Pi_TT_V2_Pi_TT_compression_is_an_invariant_verdict": {"const": false},
+        "V2_filtered_descent_computed_here": {"const": false},
+        "binary_output": {"type": "string"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PHYSICAL_HELICITY_FILTERED_QUOTIENT_CERTIFIED",
+        "PHYSICAL_POLARIZATION_PROJECTIVE_RANK_TWO",
+        "GENERALIZED_WAVE_MODULE_RANK_FOUR",
+        "GLOBAL_TWO_COLUMN_HELICITY_FRAME_CERTIFIED",
+        "V2_FILTERED_DESCENT_COMPUTED",
+        "SUBPRINCIPAL_BRANCH_ANCHOR_AVAILABLE",
+        "BRANCH_PROJECTOR_ACCEPTED",
+        "ELL3_BRANCH_MIXING_AUTHORIZED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "PHYSICAL_HELICITY_FILTERED_QUOTIENT_CERTIFIED": {"const": true},
+        "PHYSICAL_POLARIZATION_PROJECTIVE_RANK_TWO": {"const": true},
+        "GENERALIZED_WAVE_MODULE_RANK_FOUR": {"const": true},
+        "GLOBAL_TWO_COLUMN_HELICITY_FRAME_CERTIFIED": {"const": false},
+        "V2_FILTERED_DESCENT_COMPUTED": {"const": false},
+        "SUBPRINCIPAL_BRANCH_ANCHOR_AVAILABLE": {"const": false},
+        "BRANCH_PROJECTOR_ACCEPTED": {"const": false},
+        "ELL3_BRANCH_MIXING_AUTHORIZED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1"},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 900}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+    },
+    "sparseEntries": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}],
+        "minItems": 3,
+        "maxItems": 3
+      }
+    }
+  }
+}

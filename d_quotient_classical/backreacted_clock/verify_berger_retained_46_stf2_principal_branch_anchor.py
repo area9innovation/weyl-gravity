@@ -66,6 +66,14 @@ def verify() -> dict:
         raise ValueError("principal audit lost rank-46 graph SDR")
     if carrier["graph_construction"]["interpretation"].find("contractible") < 0:
         raise ValueError("principal audit lost contractible-complement boundary")
+    physical_path = ROOT / value["dependency_refs"]["physical_helicity_filtered_quotient"]["path"]
+    physical = json.loads(physical_path.read_text())
+    if physical["null_cone_chart"]["projective_rank"] != 2:
+        raise ValueError("principal audit lost the derived physical rank-two module")
+    if physical["full_Berger_null_symbol_cohomology"]["cohomology_dimensions"] != [0, 6, 6, 0]:
+        raise ValueError("principal audit collapsed full null cohomology to helicities")
+    if physical["filtered_principal_module"]["generalized_wave_rank_over_Q_sqrt10"] != 4:
+        raise ValueError("principal audit lost the generalized-wave rank distinction")
 
     flags = value["claim_flags"]
     if flags["FULL_RANK_46_PROJECTOR_OBSTRUCTED"]:

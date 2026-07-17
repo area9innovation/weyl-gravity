@@ -18,6 +18,7 @@ HERE = ROOT / "d_quotient_classical/backreacted_clock"
 RANK36 = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json"
 CARRIER = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1.json"
 SOLVER_CONTRACT = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1.json"
+PHYSICAL_QUOTIENT = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json"
 OUTPUT = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1.json"
 REPORT = ROOT / "d_quotient_classical/reports/berger-retained-46-stf2-principal-branch-anchor.md"
 SCHEMA = ROOT / "d_quotient_classical/schema/berger-retained-46-stf2-principal-branch-anchor-v1.schema.json"
@@ -61,7 +62,7 @@ def _dual_multiply(left: tuple[sp.Expr, sp.Expr], right: tuple[sp.Expr, sp.Expr]
     )
 
 
-def _input_checks(rank36: dict, carrier: dict, contract: dict) -> dict[str, bool]:
+def _input_checks(rank36: dict, carrier: dict, contract: dict, physical: dict) -> dict[str, bool]:
     audit = rank36.get("principal_filtered_module_audit", {})
     if (
         audit.get("algebra") != "Q(sqrt(10))[epsilon]/(epsilon^2)"
@@ -81,12 +82,21 @@ def _input_checks(rank36: dict, carrier: dict, contract: dict) -> dict[str, bool
     if (
         contract.get("result_state")
         != "SOLVER_CONTRACT_FROZEN_PROJECTOR_VERDICT_NOT_RUN"
-        or contract.get("principal_symbol_anchor", {}).get("real_physical_helicity_rank_each")
-        != 2
         or contract.get("claim_flags", {}).get("BRANCH_PROJECTOR_ACCEPTED")
         is not False
     ):
         raise ValueError("rank-46 solver-contract boundary drifted")
+    if (
+        physical.get("result_state")
+        != "PHYSICAL_HELICITY_PROJECTIVE_MODULE_CERTIFIED_V2_FILTERED_DESCENT_OPEN"
+        or physical.get("null_cone_chart", {}).get("projective_rank") != 2
+        or physical.get("full_Berger_null_symbol_cohomology", {}).get("cohomology_dimensions")
+        != [0, 6, 6, 0]
+        or physical.get("filtered_principal_module", {}).get("generalized_wave_rank_over_Q_sqrt10")
+        != 4
+        or physical.get("claim_flags", {}).get("V2_FILTERED_DESCENT_COMPUTED") is not False
+    ):
+        raise ValueError("physical-helicity filtered-quotient authority drifted")
     return {
         "rank_36_dual_number_principal_module_imported": True,
         "rank_36_only_trivial_principal_idempotents_imported": True,
@@ -94,7 +104,9 @@ def _input_checks(rank36: dict, carrier: dict, contract: dict) -> dict[str, bool
         "rank_46_added_complement_contractible": True,
         "rank_46_retained_cohomology_unchanged": True,
         "rank_46_solver_contract_imported": True,
-        "physical_helicity_rank_two_imported": True,
+        "physical_helicity_projective_rank_two_derived": True,
+        "full_null_symbol_cohomology_rank_six_not_collapsed": True,
+        "generalized_wave_rank_four_distinguished": True,
     }
 
 
@@ -102,7 +114,8 @@ def build() -> dict:
     rank36 = _load(RANK36)
     carrier = _load(CARRIER)
     contract = _load(SOLVER_CONTRACT)
-    checks = _input_checks(rank36, carrier, contract)
+    physical = _load(PHYSICAL_QUOTIENT)
+    checks = _input_checks(rank36, carrier, contract, physical)
     solutions = _dual_number_idempotents()
     b = sp.symbols("b")
     # epsilon * (1+b epsilon) modulo epsilon^2.
@@ -122,6 +135,7 @@ def build() -> dict:
             "rank_36_projector_obstruction": _dependency(RANK36, rank36),
             "rank_46_STF2_graph_carrier": _dependency(CARRIER, carrier),
             "rank_46_projector_solver_contract": _dependency(SOLVER_CONTRACT, contract),
+            "physical_helicity_filtered_quotient": _dependency(PHYSICAL_QUOTIENT, physical),
         },
         "exact_import_checks": checks,
         "principal_filtered_module": {
@@ -267,6 +281,13 @@ Einstein/extra-Weyl anchor cannot be fixed at principal order, and the current
 projectors.  This is not yet a no-go for the full Berger projector: lower-order
 terms can split coincident leading factors.  The next honest gate is the exact
 subprincipal extension defined by `V2` in `A10=Box_2^2+V2`.
+
+The physical multiplicity is no longer imported from the solver declaration.
+The exact null-cone filtered-quotient certificate derives a rank-two
+transverse-traceless projective polarization module inside the full
+six-dimensional degree-zero symbol cohomology.  Tensoring it with the
+dual-number repeated-wave algebra gives the rank-four generalized-wave module
+used here.
 """
 
 

@@ -1,0 +1,595 @@
+{
+  "V2_receiving_contract": {
+    "V2_filtered_descent_computed_here": false,
+    "artifact": {
+      "path": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/lower_by_two_remainder.json",
+      "sha256": "2286d276d86d432d6329cbe125bd3e1303183aaeb2bebb11a159cdedfdd2120a",
+      "shape": [
+        10,
+        10
+      ]
+    },
+    "binary_output": "exact lower-order Einstein/extra-Weyl anchor or normalized filtered-extension obstruction",
+    "raw_10x10_diagonalization_authorized": false,
+    "raw_Pi_TT_V2_Pi_TT_compression_is_an_invariant_verdict": false,
+    "required_calculation": "solve the filtered symbol-complex descent equations for V2 and lower-symbol corrections on im(Pi_TT)"
+  },
+  "audit_ledger": {
+    "Hessian_2x2_minors_checked": 2025,
+    "SO3_covariance_defect_counts": [
+      0,
+      0,
+      0
+    ],
+    "projector_residual_nonzero_counts": {
+      "Hessian_kills_physical_fields": 0,
+      "Noether_kills_physical_equations": 0,
+      "PTT_idempotence": 0,
+      "equation_projector_idempotence": 0,
+      "field_projector_idempotence": 0,
+      "field_projector_kills_gauge": 0,
+      "physical_equations_kill_Hessian_image": 0
+    }
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC microlocal certificate derives the physical rank-two helicity projective module inside the six-dimensional degree-zero Berger null-symbol cohomology. Over the normalized projective null cone it is the image of the tensorial transverse-traceless idempotent; its canonical transpose gives the paired degree-one module, and the retained BV pairing descends nondegenerately. At zeta=(1,1,0,0) the normalized representatives agree with the independently certified linearized-Weyl helicity quotient and carry weights +2i and -2i. Tensoring this rank-two polarization module with the dual-number repeated-wave algebra gives rank four, not rank two. The result does not choose a global two-column helicity frame, identify the other four symbol classes as particles, diagonalize the raw 10-by-10 V2 matrix, prove that V2 descends without lower-symbol corrections, split the Einstein-like and extra-Weyl layers, authorize ell3 branch mixing, infer a kinetic sign, or make a quantum claim. The next gate must solve the invariant filtered symbol-complex descent equations and return an exact lower-order anchor or a normalized obstruction.",
+  "claim_flags": {
+    "BRANCH_PROJECTOR_ACCEPTED": false,
+    "ELL3_BRANCH_MIXING_AUTHORIZED": false,
+    "GENERALIZED_WAVE_MODULE_RANK_FOUR": true,
+    "GLOBAL_TWO_COLUMN_HELICITY_FRAME_CERTIFIED": false,
+    "PHYSICAL_HELICITY_FILTERED_QUOTIENT_CERTIFIED": true,
+    "PHYSICAL_POLARIZATION_PROJECTIVE_RANK_TWO": true,
+    "QUANTUM_CLAIM": false,
+    "SUBPRINCIPAL_BRANCH_ANCHOR_AVAILABLE": false,
+    "V2_FILTERED_DESCENT_COMPUTED": false
+  },
+  "dependency_refs": {
+    "Berger_V2_normal_form": {
+      "artifact_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE",
+      "path": "d_quotient_classical/certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE.json",
+      "sha256": "0add3e518b7384cd653161b1f9db44d13c71f5c8349cd013027057e0d2ff7c8b"
+    },
+    "rank_46_STF2_graph_carrier": {
+      "artifact_id": "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1.json",
+      "sha256": "13d164e952e35b96b5f755786dc86f069d3451f6e0a33eefe27f845e9866e1c7"
+    },
+    "retained_layout": {
+      "artifact_id": "BERGER_RETAINED_MINIMAL_LAYOUT",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_LAYOUT.json",
+      "sha256": "3eccbcc1076eaf29ab1dc540440f8f2d3ffd5c9aa5be9265443db2997f68b1ba"
+    },
+    "retained_q1": {
+      "artifact_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    },
+    "universal_helicity_channel": {
+      "artifact_id": "curved_helicity_two_channel",
+      "path": "covariant_completion/certificates/curved_helicity_two_channel.json",
+      "sha256": "530636a9dd76db6277fe35f336859353ecd5b7b10d45569519ef5d35006d3917"
+    },
+    "universal_null_symbol_quotient": {
+      "artifact_id": "curved_null_symbol_quotient_exact",
+      "path": "covariant_completion/certificates/curved_null_symbol_quotient.json",
+      "sha256": "4ef32e3c74536df596c1dc2d50132df09a83cc94461dc9dade10f44cbadef53c"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "Berger_null_Hessian_all_2x2_minors_vanish_mod_null_relation": true,
+    "Berger_null_Hessian_rank_one_witness_nonzero": true,
+    "Hessian_kills_physical_fields_mod_null_relation": true,
+    "Noether_kills_physical_equations_mod_null_relation": true,
+    "SO3_equivariance_three_generators": true,
+    "TT_projector_idempotent_mod_null_relation": true,
+    "TT_projector_trace_two_mod_null_relation": true,
+    "canonical_pairing_descends_nondegenerately": true,
+    "exact_V2_payload_content_addressed": true,
+    "field_projector_kills_gauge_mod_null_relation": true,
+    "full_Berger_null_symbol_cohomology_0_6_6_0": true,
+    "physical_equations_annihilate_Hessian_image_mod_null_relation": true,
+    "rank_46_contractible_graph_complement_preserves_physical_module": true,
+    "standard_fibre_agrees_with_Weyl_helicity_quotient": true
+  },
+  "filtered_principal_module": {
+    "Einstein_layer": "H_hel tensor epsilon A",
+    "extra_Weyl_quotient": "(H_hel tensor A)/(H_hel tensor epsilon A)",
+    "generalized_wave_module": "H_hel tensor Q(sqrt(10))[epsilon]/(epsilon^2)",
+    "generalized_wave_rank_over_Q_sqrt10": 4,
+    "polarization_module": "H_hel=im(Pi_TT), a rank-two projective module over the normalized projective null cone",
+    "topological_deformation_direction_included": false
+  },
+  "full_Berger_null_symbol_cohomology": {
+    "cohomology_dimensions": [
+      0,
+      6,
+      6,
+      0
+    ],
+    "complex_ranks": [
+      3,
+      10,
+      10,
+      3
+    ],
+    "interpretation": "the full six-dimensional null-symbol cohomology is not identified with the two physical helicities",
+    "physical_degree_one_rank": 2,
+    "physical_degree_zero_rank": 2,
+    "remaining_degree_one_classes_outside_physical_submodule": 4,
+    "remaining_degree_zero_classes_outside_physical_submodule": 4,
+    "symbol_ranks": {
+      "H4": 1,
+      "K1": 3,
+      "L1": 3
+    }
+  },
+  "method_tags": [
+    "MICROLOCAL-SYMBOL",
+    "PROJECTIVE-NULL-CONE",
+    "EXACT-POLYNOMIAL-QUOTIENT"
+  ],
+  "next_gate": "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1",
+  "normalized_standard_null_fibre": {
+    "complex_helicity_weights": [
+      "+2i",
+      "-2i"
+    ],
+    "covector": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "equation_dual_basis": [
+      "(h_hat_star_22-h_hat_star_33)/2",
+      "h_hat_star_23"
+    ],
+    "equation_inclusion_entries": [
+      [
+        7,
+        0,
+        "1/2"
+      ],
+      [
+        8,
+        1,
+        "1"
+      ],
+      [
+        9,
+        0,
+        "-1/2"
+      ]
+    ],
+    "equation_projection_entries": [
+      [
+        0,
+        7,
+        "1"
+      ],
+      [
+        0,
+        9,
+        "-1"
+      ],
+      [
+        1,
+        8,
+        "1"
+      ]
+    ],
+    "field_basis": [
+      "h_hat_22-h_hat_33",
+      "h_hat_23"
+    ],
+    "field_inclusion_entries": [
+      [
+        7,
+        0,
+        "1"
+      ],
+      [
+        8,
+        1,
+        "1"
+      ],
+      [
+        9,
+        0,
+        "-1"
+      ]
+    ],
+    "field_projection_entries": [
+      [
+        0,
+        7,
+        "1/2"
+      ],
+      [
+        0,
+        9,
+        "-1/2"
+      ],
+      [
+        1,
+        8,
+        "1"
+      ]
+    ],
+    "induced_cyclic_pairing": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "linearized_Weyl_induced_matrix": [
+      [
+        "1/4",
+        "0"
+      ],
+      [
+        "0",
+        "1/4"
+      ]
+    ],
+    "linearized_Weyl_isomorphism": true,
+    "little_group_generator": [
+      [
+        0,
+        2
+      ],
+      [
+        -2,
+        0
+      ]
+    ],
+    "little_group_generator_square": "-4 I_2",
+    "metric_component_order": [
+      "00",
+      "01",
+      "02",
+      "03",
+      "11",
+      "12",
+      "13",
+      "22",
+      "23",
+      "33"
+    ]
+  },
+  "null_cone_chart": {
+    "TT_formula": "P_ij=delta_ij-n_i n_j; Pi_TT(t)_ij=P_i^k P_j^l t_kl-(1/2)P_ij P^kl t_kl",
+    "TT_projector_6x6": [
+      [
+        "(n2**2 + n3**2)**2/2",
+        "-n1*n2*(n2**2 + n3**2)",
+        "-n1*n3*(n2**2 + n3**2)",
+        "-(n2**4 + n2**2*n3**2 - n2**2 + n3**2)/2",
+        "-n2*n3*(n2**2 + n3**2 - 2)",
+        "-(n2**2*n3**2 + n2**2 + n3**4 - n3**2)/2"
+      ],
+      [
+        "-n1*n2*(n2**2 + n3**2)/2",
+        "-(n2 - 1)*(n2 + 1)*(n2**2 + n3**2)",
+        "-n2*n3*(n2**2 + n3**2)",
+        "n1*n2*(n2 - 1)*(n2 + 1)/2",
+        "n1*n3*(n2 - 1)*(n2 + 1)",
+        "n1*n2*(n3**2 + 1)/2"
+      ],
+      [
+        "-n1*n3*(n2**2 + n3**2)/2",
+        "-n2*n3*(n2**2 + n3**2)",
+        "-(n2**2 + n3**2)*(n3 - 1)*(n3 + 1)",
+        "n1*n3*(n2**2 + 1)/2",
+        "n1*n2*(n3 - 1)*(n3 + 1)",
+        "n1*n3*(n3 - 1)*(n3 + 1)/2"
+      ],
+      [
+        "-(n2**4 + n2**2*n3**2 - n2**2 + n3**2)/2",
+        "n1*n2*(n2 - 1)*(n2 + 1)",
+        "n1*n3*(n2**2 + 1)",
+        "(n2 - 1)**2*(n2 + 1)**2/2",
+        "n2*n3*(n2 - 1)*(n2 + 1)",
+        "(n2**2*n3**2 + n2**2 + n3**2 - 1)/2"
+      ],
+      [
+        "-n2*n3*(n2**2 + n3**2 - 2)/2",
+        "n1*n3*(n2 - 1)*(n2 + 1)",
+        "n1*n2*(n3 - 1)*(n3 + 1)",
+        "n2*n3*(n2 - 1)*(n2 + 1)/2",
+        "(n2 - 1)*(n2 + 1)*(n3 - 1)*(n3 + 1)",
+        "n2*n3*(n3 - 1)*(n3 + 1)/2"
+      ],
+      [
+        "-(n2**2*n3**2 + n2**2 + n3**4 - n3**2)/2",
+        "n1*n2*(n3**2 + 1)",
+        "n1*n3*(n3 - 1)*(n3 + 1)",
+        "(n2**2*n3**2 + n2**2 + n3**2 - 1)/2",
+        "n2*n3*(n3 - 1)*(n3 + 1)",
+        "(n3 - 1)**2*(n3 + 1)**2/2"
+      ]
+    ],
+    "coordinate_ring": "Q[n1,n2,n3]/(n1^2+n2^2+n3^2-1)",
+    "equation_projector_10x10": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "(n2**2 + n3**2)**2/2",
+        "-n1*n2*(n2**2 + n3**2)/2",
+        "-n1*n3*(n2**2 + n3**2)/2",
+        "-(n2**4 + n2**2*n3**2 - n2**2 + n3**2)/2",
+        "-n2*n3*(n2**2 + n3**2 - 2)/2",
+        "-(n2**2*n3**2 + n2**2 + n3**4 - n3**2)/2"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-n1*n2*(n2**2 + n3**2)",
+        "-(n2 - 1)*(n2 + 1)*(n2**2 + n3**2)",
+        "-n2*n3*(n2**2 + n3**2)",
+        "n1*n2*(n2 - 1)*(n2 + 1)",
+        "n1*n3*(n2 - 1)*(n2 + 1)",
+        "n1*n2*(n3**2 + 1)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-n1*n3*(n2**2 + n3**2)",
+        "-n2*n3*(n2**2 + n3**2)",
+        "-(n2**2 + n3**2)*(n3 - 1)*(n3 + 1)",
+        "n1*n3*(n2**2 + 1)",
+        "n1*n2*(n3 - 1)*(n3 + 1)",
+        "n1*n3*(n3 - 1)*(n3 + 1)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-(n2**4 + n2**2*n3**2 - n2**2 + n3**2)/2",
+        "n1*n2*(n2 - 1)*(n2 + 1)/2",
+        "n1*n3*(n2**2 + 1)/2",
+        "(n2 - 1)**2*(n2 + 1)**2/2",
+        "n2*n3*(n2 - 1)*(n2 + 1)/2",
+        "(n2**2*n3**2 + n2**2 + n3**2 - 1)/2"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-n2*n3*(n2**2 + n3**2 - 2)",
+        "n1*n3*(n2 - 1)*(n2 + 1)",
+        "n1*n2*(n3 - 1)*(n3 + 1)",
+        "n2*n3*(n2 - 1)*(n2 + 1)",
+        "(n2 - 1)*(n2 + 1)*(n3 - 1)*(n3 + 1)",
+        "n2*n3*(n3 - 1)*(n3 + 1)"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-(n2**2*n3**2 + n2**2 + n3**4 - n3**2)/2",
+        "n1*n2*(n3**2 + 1)/2",
+        "n1*n3*(n3 - 1)*(n3 + 1)/2",
+        "(n2**2*n3**2 + n2**2 + n3**2 - 1)/2",
+        "n2*n3*(n3 - 1)*(n3 + 1)/2",
+        "(n3 - 1)**2*(n3 + 1)**2/2"
+      ]
+    ],
+    "equation_projector_is_canonical_transpose": true,
+    "field_projector_10x10": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "(n2**2 + n3**2)**2/2",
+        "-n1*n2*(n2**2 + n3**2)",
+        "-n1*n3*(n2**2 + n3**2)",
+        "-(n2**4 + n2**2*n3**2 - n2**2 + n3**2)/2",
+        "-n2*n3*(n2**2 + n3**2 - 2)",
+        "-(n2**2*n3**2 + n2**2 + n3**4 - n3**2)/2"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-n1*n2*(n2**2 + n3**2)/2",
+        "-(n2 - 1)*(n2 + 1)*(n2**2 + n3**2)",
+        "-n2*n3*(n2**2 + n3**2)",
+        "n1*n2*(n2 - 1)*(n2 + 1)/2",
+        "n1*n3*(n2 - 1)*(n2 + 1)",
+        "n1*n2*(n3**2 + 1)/2"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-n1*n3*(n2**2 + n3**2)/2",
+        "-n2*n3*(n2**2 + n3**2)",
+        "-(n2**2 + n3**2)*(n3 - 1)*(n3 + 1)",
+        "n1*n3*(n2**2 + 1)/2",
+        "n1*n2*(n3 - 1)*(n3 + 1)",
+        "n1*n3*(n3 - 1)*(n3 + 1)/2"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-(n2**4 + n2**2*n3**2 - n2**2 + n3**2)/2",
+        "n1*n2*(n2 - 1)*(n2 + 1)",
+        "n1*n3*(n2**2 + 1)",
+        "(n2 - 1)**2*(n2 + 1)**2/2",
+        "n2*n3*(n2 - 1)*(n2 + 1)",
+        "(n2**2*n3**2 + n2**2 + n3**2 - 1)/2"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-n2*n3*(n2**2 + n3**2 - 2)/2",
+        "n1*n3*(n2 - 1)*(n2 + 1)",
+        "n1*n2*(n3 - 1)*(n3 + 1)",
+        "n2*n3*(n2 - 1)*(n2 + 1)/2",
+        "(n2 - 1)*(n2 + 1)*(n3 - 1)*(n3 + 1)",
+        "n2*n3*(n3 - 1)*(n3 + 1)/2"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-(n2**2*n3**2 + n2**2 + n3**4 - n3**2)/2",
+        "n1*n2*(n3**2 + 1)",
+        "n1*n3*(n3 - 1)*(n3 + 1)",
+        "(n2**2*n3**2 + n2**2 + n3**2 - 1)/2",
+        "n2*n3*(n3 - 1)*(n3 + 1)",
+        "(n3 - 1)**2*(n3 + 1)**2/2"
+      ]
+    ],
+    "global_two_column_frame_asserted": false,
+    "normalization": "p0=1",
+    "projective_coverage": "every nonzero real null ray has p0 nonzero and therefore a representative with p0=1",
+    "projective_rank": 2,
+    "spatial_symmetric_component_order": [
+      "11",
+      "12",
+      "13",
+      "22",
+      "23",
+      "33"
+    ]
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/backreacted_clock/berger_retained_46_stf2_physical_helicity_filtered_quotient.py": "4970cd086e4a8f31151b174c3ee2cba4cc9cdc2e621ebfe3a2bc9efccade2ee9",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_retained_46_stf2_physical_helicity_filtered_quotient.py": "c76c414498509004852d4d10bdd94f58dc93df98f27c8f6137818509daf01348",
+      "d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_physical_helicity_filtered_quotient.py": "2aa87a6581a0613959f10e295a051505c6f5de12d0fd28a5342eec7e68f170d7",
+      "d_quotient_classical/schema/berger-retained-46-stf2-physical-helicity-filtered-quotient-v1.schema.json": "65cfc1ea78e9eadb5519c5abe5c80f8645e14417fdd9529a84e101625b139f15"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_46_stf2_physical_helicity_filtered_quotient.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_physical_helicity_filtered_quotient.py",
+      "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_46_stf2_physical_helicity_filtered_quotient",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-retained-46-stf2-physical-helicity-filtered-quotient-v1.schema.json -d d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json"
+    ]
+  },
+  "result_id": "BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1",
+  "result_state": "PHYSICAL_HELICITY_PROJECTIVE_MODULE_CERTIFIED_V2_FILTERED_DESCENT_OPEN",
+  "schema": "pure-weyl-berger-retained-46-stf2-physical-helicity-filtered-quotient-v1"
+}

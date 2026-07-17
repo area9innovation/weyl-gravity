@@ -20,3 +20,10 @@ Einstein/extra-Weyl anchor cannot be fixed at principal order, and the current
 projectors.  This is not yet a no-go for the full Berger projector: lower-order
 terms can split coincident leading factors.  The next honest gate is the exact
 subprincipal extension defined by `V2` in `A10=Box_2^2+V2`.
+
+The physical multiplicity is no longer imported from the solver declaration.
+The exact null-cone filtered-quotient certificate derives a rank-two
+transverse-traceless projective polarization module inside the full
+six-dimensional degree-zero symbol cohomology.  Tensoring it with the
+dual-number repeated-wave algebra gives the rank-four generalized-wave module
+used here.
