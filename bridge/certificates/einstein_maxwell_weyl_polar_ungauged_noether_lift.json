@@ -1,0 +1,994 @@
+{
+  "chain_map": {
+    "degreewise_injective": false,
+    "equation_map_source_to_target": [
+      [
+        "k**2 + lambda - 1",
+        "3*k*omega",
+        "(4*k**2 + lambda)/2",
+        "0",
+        "0",
+        "(2*k**2 - lambda)/2",
+        "3*lambda*(lambda - 2)/4",
+        "0"
+      ],
+      [
+        "-k*omega",
+        "-3*k**2 - 3*lambda + 3*omega**2 + 2",
+        "k*omega",
+        "0",
+        "0",
+        "2*k*omega",
+        "0",
+        "0"
+      ],
+      [
+        "(lambda - 4*omega**2)/2",
+        "-3*k*omega",
+        "lambda - omega**2 - 1",
+        "0",
+        "0",
+        "(lambda + 2*omega**2)/2",
+        "-3*lambda*(lambda - 2)/4",
+        "0"
+      ],
+      [
+        "-I*omega*(3*k**2 + 2*lambda - 2)",
+        "-I*k*(3*k**2 + 3*lambda + 3*omega**2 - 2)",
+        "-I*omega*(3*k**2 + lambda)",
+        "0",
+        "0",
+        "I*lambda*omega",
+        "-3*I*lambda*omega*(lambda - 2)/2",
+        "0"
+      ],
+      [
+        "I*k*(lambda - 3*omega**2)",
+        "-I*omega*(3*k**2 - 3*lambda + 3*omega**2 + 2)",
+        "I*k*(2*lambda - 3*omega**2 - 2)",
+        "0",
+        "0",
+        "I*k*lambda",
+        "-3*I*k*lambda*(lambda - 2)/2",
+        "0"
+      ],
+      [
+        "(2*k**2 + lambda + 4*omega**2 - 2)/2",
+        "6*k*omega",
+        "(4*k**2 - lambda + 2*omega**2 + 2)/2",
+        "0",
+        "0",
+        "k**2 - lambda - omega**2",
+        "3*lambda*(lambda - 2)/2",
+        "0"
+      ],
+      [
+        "lambda*(lambda - 2)/4",
+        "0",
+        "-lambda*(lambda - 2)/4",
+        "0",
+        "0",
+        "-lambda*(lambda - 2)/2",
+        "lambda*(lambda - 2)*(3*k**2 + 3*lambda - 3*omega**2 - 2)/4",
+        "0"
+      ],
+      [
+        "-2*omega**2",
+        "-4*k*omega",
+        "-2*k**2",
+        "0",
+        "0",
+        "2*lambda",
+        "-lambda*(lambda - 2)",
+        "0"
+      ]
+    ],
+    "field_map_source_to_target": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "ghost_map_source_to_target": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "identity_map_source_to_target": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "noninjective_degree": "equation/identity rows; the target has the additional Weyl identity",
+    "solution_tangent_inclusion_remains_injective": true,
+    "squares": {
+      "L_target*field_map-equation_map*E_source": "0",
+      "N_target*equation_map-identity_map*N_source": "0",
+      "field_map*G_source-G_target*ghost_map": "0"
+    },
+    "strict_short_exact_sequence_claim": false
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem certifies the generic polar ungauged linear equation/Noether complexes, their polynomial chain map, contractions, and local Green identity. It does not certify a cyclic BV chain map, full curved all-sector BV morphism, final residual cohomology, Peierls observables, causal propagation, particles, nonlinear closure, or quantum theory.",
+  "classification": {
+    "Lorentzian_causal_claim": false,
+    "cyclic_BV_chain_map_certified": false,
+    "direct_reduced_Lee_Wald_section_inherited": true,
+    "final_residual_descent_certified": false,
+    "polynomial_ghost_field_equation_identity_chain_map_certified": true,
+    "quantum_classical_import_gate_satisfied": false,
+    "source_Diff_contraction_certified": true,
+    "target_Diff_Weyl_contraction_certified": true,
+    "ungauged_local_Green_identity_certified": true,
+    "ungauged_source_equation_Noether_complex_certified": true,
+    "ungauged_target_equation_Noether_complex_certified": true
+  },
+  "complexes": {
+    "source_Bianchi_map": [
+      [
+        "-I*omega",
+        "-I*k",
+        "0",
+        "lambda",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-I*omega",
+        "-I*k",
+        "0",
+        "lambda",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "omega**2",
+        "2*k*omega",
+        "k**2",
+        "0",
+        "0",
+        "-lambda",
+        "lambda*(lambda - 2)/2",
+        "lambda"
+      ]
+    ],
+    "source_right_and_left_Noether_identities": true,
+    "source_ungauged_Euler_operator": [
+      [
+        "0",
+        "0",
+        "lambda/2",
+        "0",
+        "-I*k*lambda",
+        "(2*k**2 + lambda)/2",
+        "lambda*(lambda - 2)/4",
+        "-lambda"
+      ],
+      [
+        "0",
+        "lambda/2",
+        "0",
+        "-I*k*lambda/2",
+        "I*lambda*omega/2",
+        "-k*omega",
+        "0",
+        "0"
+      ],
+      [
+        "lambda/2",
+        "0",
+        "0",
+        "I*lambda*omega",
+        "0",
+        "-(lambda - 2*omega**2)/2",
+        "-lambda*(lambda - 2)/4",
+        "lambda"
+      ],
+      [
+        "0",
+        "I*k/2",
+        "I*omega/2",
+        "k**2/2",
+        "k*omega/2",
+        "I*omega/2",
+        "I*omega*(lambda - 2)/4",
+        "-I*omega"
+      ],
+      [
+        "I*k/2",
+        "I*omega/2",
+        "0",
+        "-k*omega/2",
+        "-omega**2/2",
+        "-I*k/2",
+        "-I*k*(lambda - 2)/4",
+        "I*k"
+      ],
+      [
+        "(2*k**2 + lambda)/4",
+        "k*omega",
+        "-(lambda - 2*omega**2)/4",
+        "I*lambda*omega/2",
+        "I*k*lambda/2",
+        "-(k**2 - omega**2 - 2)/2",
+        "0",
+        "-lambda"
+      ],
+      [
+        "1/2",
+        "0",
+        "-1/2",
+        "I*omega",
+        "I*k",
+        "0",
+        "(k - omega)*(k + omega)/2",
+        "0"
+      ],
+      [
+        "1/2",
+        "0",
+        "-1/2",
+        "I*omega",
+        "I*k",
+        "1",
+        "0",
+        "-k**2 - lambda + omega**2"
+      ]
+    ],
+    "target_Noether_map": [
+      [
+        "2*I*omega",
+        "-I*k",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "I*omega",
+        "-2*I*k",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "I*omega",
+        "-I*k",
+        "-lambda",
+        "2",
+        "-1"
+      ],
+      [
+        "-2",
+        "0",
+        "2",
+        "0",
+        "0",
+        "2",
+        "0",
+        "0"
+      ]
+    ],
+    "target_formal_self_adjoint": true,
+    "target_right_and_left_Noether_identities": true,
+    "target_ungauged_Hessian_operator": [
+      [
+        "(2*k**4 + 4*k**2*lambda + 2*lambda**2 - 3*lambda)/4",
+        "k*omega*(k**2 + lambda)",
+        "(k**2*lambda + 2*k**2*omega**2 + lambda**2 - lambda*omega**2 + lambda)/4",
+        "I*lambda*omega*(2*k**2 + 2*lambda - 3)/2",
+        "-I*k*lambda*(k**2 + lambda - 3*omega**2 + 1)/2",
+        "(2*k**4 + 3*k**2*lambda - 2*k**2*omega**2 + lambda**2 + lambda*omega**2 - 4*lambda)/4",
+        "lambda*(lambda - 2)*(k**2 + lambda - 3*omega**2 - 2)/8",
+        "lambda"
+      ],
+      [
+        "k*omega*(k**2 + lambda)",
+        "-(3*k**2*lambda - 4*k**2*omega**2 + 3*lambda**2 - 3*lambda*omega**2 - 2*lambda)/2",
+        "-k*omega*(lambda - omega**2)",
+        "I*k*lambda*(3*k**2 + 3*lambda + omega**2 - 2)/2",
+        "I*lambda*omega*(k**2 - 3*lambda + 3*omega**2 + 2)/2",
+        "k*omega*(k**2 + 2*lambda - omega**2)",
+        "-k*lambda*omega*(lambda - 2)/2",
+        "0"
+      ],
+      [
+        "(k**2*lambda + 2*k**2*omega**2 + lambda**2 - lambda*omega**2 + lambda)/4",
+        "-k*omega*(lambda - omega**2)",
+        "(2*lambda**2 - 4*lambda*omega**2 - 3*lambda + 2*omega**4)/4",
+        "I*lambda*omega*(3*k**2 + lambda - omega**2 + 1)/2",
+        "-I*k*lambda*(2*lambda - 2*omega**2 - 3)/2",
+        "(k**2*lambda + 2*k**2*omega**2 - lambda**2 + 3*lambda*omega**2 + 4*lambda - 2*omega**4)/4",
+        "-lambda*(lambda - 2)*(3*k**2 + lambda - omega**2 - 2)/8",
+        "-lambda"
+      ],
+      [
+        "-I*lambda*omega*(2*k**2 + 2*lambda - 3)/2",
+        "-I*k*lambda*(3*k**2 + 3*lambda + omega**2 - 2)/2",
+        "-I*lambda*omega*(3*k**2 + lambda - omega**2 + 1)/2",
+        "-lambda*(3*k**4 + 3*k**2*lambda - 3*k**2*omega**2 - 2*k**2 - 4*lambda*omega**2 + 6*omega**2)/2",
+        "-k*lambda*omega*(3*k**2 - lambda - 3*omega**2 + 4)/2",
+        "I*lambda*omega*(k**2 - lambda - omega**2 + 4)/2",
+        "-I*lambda*omega*(lambda - 2)*(3*k**2 + lambda - 3*omega**2 - 2)/4",
+        "-2*I*lambda*omega"
+      ],
+      [
+        "I*k*lambda*(k**2 + lambda - 3*omega**2 + 1)/2",
+        "-I*lambda*omega*(k**2 - 3*lambda + 3*omega**2 + 2)/2",
+        "I*k*lambda*(2*lambda - 2*omega**2 - 3)/2",
+        "-k*lambda*omega*(3*k**2 - lambda - 3*omega**2 + 4)/2",
+        "lambda*(4*k**2*lambda - 3*k**2*omega**2 - 6*k**2 - 3*lambda*omega**2 + 3*omega**4 + 2*omega**2)/2",
+        "I*k*lambda*(k**2 - lambda - omega**2 + 4)/2",
+        "-I*k*lambda*(lambda - 2)*(3*k**2 + lambda - 3*omega**2 - 2)/4",
+        "-2*I*k*lambda"
+      ],
+      [
+        "(2*k**4 + 3*k**2*lambda - 2*k**2*omega**2 + lambda**2 + lambda*omega**2 - 4*lambda)/4",
+        "k*omega*(k**2 + 2*lambda - omega**2)",
+        "(k**2*lambda + 2*k**2*omega**2 - lambda**2 + 3*lambda*omega**2 + 4*lambda - 2*omega**4)/4",
+        "-I*lambda*omega*(k**2 - lambda - omega**2 + 4)/2",
+        "-I*k*lambda*(k**2 - lambda - omega**2 + 4)/2",
+        "(k**4 + k**2*lambda - 2*k**2*omega**2 + lambda**2 - lambda*omega**2 - 4*lambda + omega**4)/2",
+        "lambda*(lambda - 2)*(2*k**2 + lambda - 2*omega**2 - 2)/4",
+        "2*lambda"
+      ],
+      [
+        "lambda*(lambda - 2)*(k**2 + lambda - 3*omega**2 - 2)/8",
+        "-k*lambda*omega*(lambda - 2)/2",
+        "-lambda*(lambda - 2)*(3*k**2 + lambda - omega**2 - 2)/8",
+        "I*lambda*omega*(lambda - 2)*(3*k**2 + lambda - 3*omega**2 - 2)/4",
+        "I*k*lambda*(lambda - 2)*(3*k**2 + lambda - 3*omega**2 - 2)/4",
+        "lambda*(lambda - 2)*(2*k**2 + lambda - 2*omega**2 - 2)/4",
+        "lambda*(lambda - 2)*(3*k**4 + 3*k**2*lambda - 6*k**2*omega**2 - 2*k**2 + lambda**2 - 3*lambda*omega**2 - 2*lambda + 3*omega**4 + 2*omega**2)/8",
+        "0"
+      ],
+      [
+        "lambda",
+        "0",
+        "-lambda",
+        "2*I*lambda*omega",
+        "2*I*k*lambda",
+        "2*lambda",
+        "0",
+        "-2*lambda*(k**2 + lambda - omega**2)"
+      ]
+    ]
+  },
+  "contractions": {
+    "identities": {
+      "J_source_P_source-I_8": "G_source*H_source",
+      "J_target_P_target-I_8": "G_target*H_target",
+      "P_source_G_source": "0",
+      "P_source_J_source": "I_5",
+      "P_target": "S_P*P_source",
+      "P_target_G_target": "0",
+      "P_target_J_target": "I_4"
+    },
+    "k_omega_p_q_inverted": false,
+    "only_constant_denominators": [
+      "2",
+      "4"
+    ],
+    "source_gauge_map": [
+      [
+        "-2*I*omega",
+        "0",
+        "0"
+      ],
+      [
+        "I*k",
+        "-I*omega",
+        "0"
+      ],
+      [
+        "0",
+        "2*I*k",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "-I*omega"
+      ],
+      [
+        "0",
+        "1",
+        "I*k"
+      ],
+      [
+        "0",
+        "0",
+        "-lambda"
+      ],
+      [
+        "0",
+        "0",
+        "2"
+      ],
+      [
+        "0",
+        "0",
+        "-1"
+      ]
+    ],
+    "source_homotopy": [
+      [
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "-I*omega/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "I*k/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1/2",
+        "0"
+      ]
+    ],
+    "source_invariant_projection": [
+      [
+        "1",
+        "0",
+        "0",
+        "2*I*omega",
+        "0",
+        "0",
+        "-omega**2",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "-I*k",
+        "I*omega",
+        "0",
+        "k*omega",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "-2*I*k",
+        "0",
+        "-k**2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "lambda/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/2",
+        "1"
+      ]
+    ],
+    "source_section": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "target_gauge_map": [
+      [
+        "-2*I*omega",
+        "0",
+        "0",
+        "-2"
+      ],
+      [
+        "I*k",
+        "-I*omega",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2*I*k",
+        "0",
+        "2"
+      ],
+      [
+        "1",
+        "0",
+        "-I*omega",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "I*k",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-lambda",
+        "2"
+      ],
+      [
+        "0",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1",
+        "0"
+      ]
+    ],
+    "target_homotopy": [
+      [
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "0",
+        "-I*omega/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0",
+        "I*k/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1/2",
+        "-lambda/4",
+        "0"
+      ]
+    ],
+    "target_invariant_projection": [
+      [
+        "1",
+        "0",
+        "0",
+        "2*I*omega",
+        "0",
+        "1",
+        "(lambda - 2*omega**2)/2",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "-I*k",
+        "I*omega",
+        "0",
+        "k*omega",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "-2*I*k",
+        "-1",
+        "-(2*k**2 + lambda)/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/2",
+        "1"
+      ]
+    ],
+    "target_section": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ]
+  },
+  "conventions": {
+    "U1_parity_scope": "U multiplies the coexact sphere one-form X_a. The exact scalar U(1) gauge variation lies in the complementary exact-potential harmonic block, so no U(1) ghost acts inside this closed polar coefficient complex; Diff xi still shifts U through i_xi F_background.",
+    "formal_adjoint": "transpose after (omega,k)->(-omega,-k)",
+    "source_equation_order": [
+      "E00",
+      "E01",
+      "E11",
+      "E0a",
+      "E1a",
+      "sphere_trace",
+      "sphere_tracefree",
+      "Maxwell_axial_density"
+    ],
+    "source_ghost_order": [
+      "xi_t",
+      "xi_x",
+      "xi"
+    ],
+    "target_equation_order": [
+      "A",
+      "B",
+      "C",
+      "h_t",
+      "h_x",
+      "K",
+      "G",
+      "U"
+    ],
+    "target_ghost_order": [
+      "xi_t",
+      "xi_x",
+      "xi",
+      "sigma"
+    ],
+    "ungauged_field_order": [
+      "A",
+      "B",
+      "C",
+      "h_t",
+      "h_x",
+      "K",
+      "G",
+      "U"
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "generic polar ell>=2 Fourier-polynomial Einstein-Maxwell and Weyl-Maxwell equation/Noether complexes on the fixed magnetic bundle, before final residual quotient",
+  "generality_level": "G2_POLAR_ALL_PHYSICAL_ELL_K_UNGAUGED_NOETHER_COMPLEX",
+  "interpretation": "The generic polar Einstein--Maxwell solution inclusion now lifts from the Weyl gauge slice to an exact ungauged Diff-to-Diff x Weyl equation/Noether chain map. Both field contractions and all Noether identities are polynomial and retain zero momentum and zero frequency. The map is not degreewise injective on equations or identities and is not yet a cyclic BV morphism, so it does not establish a strict short exact sequence, residual observable, causal phase space, or quantum import.",
+  "lifecycle_state": "CLASSIFIED",
+  "local_Green_current": {
+    "Fourier_to_differential": "omega=i*partial_t, k=-i*partial_x",
+    "current_terms_sha256": "de353add2f3334df5d2212524b1f8f9c4909af576396f3dc5037a6df4b542456",
+    "direct_Lee_Wald_inheritance": "On the target section (A_t,B,C_t,0,0,0,0,U), the ungauged Green current is exactly the already certified reduced current. The earlier direct four-dimensional Lee--Wald match therefore applies on that section; no new arbitrary-gauge coordinate-current theorem is claimed.",
+    "identity": "partial_t J^t+partial_x J^x=u^T L_target^ung v-(L_target^ung u)^T v",
+    "off_shell_jet_identity_remainder": [],
+    "operator_order": 4,
+    "reduced_section_current_term_counts": {
+      "space": 32,
+      "time": 32
+    },
+    "restriction_to_reduced_section_exact": true,
+    "space_current_term_count": 184,
+    "time_current_term_count": 184
+  },
+  "next_gate": "compute the final residual action on the Einstein q-primary and extra p-primary coefficients; in parallel, decide whether a cyclic enhancement of the non-symplectic equation/Noether chain map exists or is obstructed",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_ungauged_noether_lift.py",
+    "generator_sha256": "a2f0367ad4e04d99d551e2230cb5741aef44f10c5d45e6809cee550a74c757d6",
+    "inputs": {
+      "direct_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "physical_completion": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "preflight": {
+        "path": "bridge/certificates/einstein_weyl_polar_offshell_operator_preflight.json",
+        "sha256": "5496a7e1124ba8ca0526dd439b11336280bcfaf0c7dcb757eddbbb89ee82612f"
+      },
+      "source_complex": {
+        "path": "bridge/certificates/einstein_maxwell_polar_master_complex.json",
+        "sha256": "473d9c826b69220d2398cf4eb44b75e7c40bc23fd4d378a9eb2069a2d3f61ae5"
+      },
+      "target_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+        "sha256": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_NOETHER_LIFT",
+  "result_state": "POLAR_UNGAUGED_DIFF_WEYL_EQUATION_NOETHER_COMPLEX_AND_CHAIN_MAP_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-polar-ungauged-noether-lift-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_ungauged_noether_lift.schema.json",
+  "schema_sha256": "40b0a763578ff6f99e5c1738bb24a14d53b017a8dca17c6ee3164c6e8ed61d7c",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_ungauged_noether_lift --verify bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_polar_ungauged_noether_lift",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_ungauged_noether_lift"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-17",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <producer> <independent-verifier> <scoped-test>"
+      ],
+      "elapsed_seconds": 0.04,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_ungauged_noether_lift --verify bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_polar_ungauged_noether_lift",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_ungauged_noether_lift"
+      ],
+      "elapsed_seconds": 9.54,
+      "status": "PASS"
+    },
+    "tier_2": {
+      "reason": "All upstream operators and direct-current certificates are unchanged content-addressed inputs; the new affected certificate and its independent reconstruction are the complete transitive consumer chain.",
+      "status": "NOT_RUN_NOT_REQUIRED"
+    },
+    "tier_3": {
+      "reason": "No shared core algebra, release, paper theorem freeze, or causal/quantum lifecycle state is promoted.",
+      "status": "NOT_RUN"
+    }
+  }
+}

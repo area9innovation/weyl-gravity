@@ -1317,10 +1317,29 @@ generic axial pattern.  The resulting coefficient extractors are conserved
 spectral functionals on the local-gauge-reduced shell, not yet residual or
 Peierls observables.
 
-The remaining polar gates are the ungauged BV/Noether lift and final residual
-survival.  The theorem-frozen axial Paper A does not depend on those
-extensions, and the new polar result makes no causal, particle, quantum-ghost,
-or nonlinear-closure claim.
+`EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_NOETHER_LIFT` now closes the generic
+polar ungauged equation/Noether and local-Green gate.  On the eight fields
+`(A,B,C,h_t,h_x,K,G,U)`, three source Diff ghosts contract exactly to the five
+Einstein--Maxwell slice variables, while adjoining the Weyl ghost contracts
+to the four target variables.  Explicit sections and homotopies use only the
+constant denominators `2` and `4`; `k`, `omega`, `p`, and `q` remain
+uninverted.  Thus zero momentum and zero frequency are retained.
+
+The source raw tensor Euler map has three polynomial Bianchi rows.  The target
+action Hessian has four Noether rows, including the Weyl identity.  The
+gauge-fixed equation square lifts to an exact
+ghost--field--equation--identity chain map, and the target ungauged Hessian is
+formally self-adjoint.  Its coefficientwise local Green current has 184
+temporal and 184 spatial terms with zero off-shell jet remainder.  Restriction
+to the canonical target section reproduces exactly the 32+32-term reduced
+current already matched to the direct four-dimensional Lee--Wald current.
+
+The chain map is not degreewise injective on equation/identity rows and no
+cyclic BV enhancement is certified.  Hence this is not yet a strict short
+exact sequence and does not satisfy the quantum classical-import gate.  The
+remaining polar gate is final residual survival; cyclic enhancement or an
+obstruction to it is a distinct parallel question.  No causal, particle,
+quantum-ghost, or nonlinear-closure claim is made.
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 `NOT APPLICABLE` rather than extrapolating.
@@ -1338,9 +1357,9 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Compute the direct polar extra Lee--Wald current and coefficient extractors,
-   lift the polar square to the ungauged BV/Noether complex, and perform final
-   residual descent for both extra parities.
+1. Perform final residual descent on the certified axial and polar Einstein
+   and extra primary coefficients; in parallel, prove or obstruct a cyclic BV
+   enhancement of the polar equation/Noether chain map.
 2. Extend the certified axial detector and negative-definite `ell=2,k=0`
    extra Taub test to nonzero momentum, higher harmonics, and parity-compatible
    `EE`, `EX`, and `XX` source channels; then construct a relational or

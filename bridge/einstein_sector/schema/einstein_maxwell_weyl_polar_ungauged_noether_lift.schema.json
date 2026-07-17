@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-polar-ungauged-noether-lift-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "provenance", "domain", "conventions", "contractions", "complexes", "chain_map", "local_Green_current", "verification_receipt", "classification", "interpretation", "next_gate", "claim_boundary", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-polar-ungauged-noether-lift-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_ungauged_noether_lift.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_NOETHER_LIFT"},
+    "result_state": {"const": "POLAR_UNGAUGED_DIFF_WEYL_EQUATION_NOETHER_COMPLEX_AND_CHAIN_MAP_CERTIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"const": "G2_POLAR_ALL_PHYSICAL_ELL_K_UNGAUGED_NOETHER_COMPLEX"},
+    "provenance": {"type": "object"},
+    "domain": {"type": "string"},
+    "conventions": {"type": "object"},
+    "contractions": {
+      "type": "object",
+      "required": ["source_gauge_map", "target_gauge_map", "source_invariant_projection", "target_invariant_projection", "source_section", "target_section", "source_homotopy", "target_homotopy", "identities", "only_constant_denominators", "k_omega_p_q_inverted"],
+      "properties": {"k_omega_p_q_inverted": {"const": false}}
+    },
+    "complexes": {
+      "type": "object",
+      "required": ["source_ungauged_Euler_operator", "source_Bianchi_map", "target_ungauged_Hessian_operator", "target_Noether_map", "source_right_and_left_Noether_identities", "target_right_and_left_Noether_identities", "target_formal_self_adjoint"],
+      "properties": {
+        "source_right_and_left_Noether_identities": {"const": true},
+        "target_right_and_left_Noether_identities": {"const": true},
+        "target_formal_self_adjoint": {"const": true}
+      }
+    },
+    "chain_map": {
+      "type": "object",
+      "required": ["ghost_map_source_to_target", "field_map_source_to_target", "equation_map_source_to_target", "identity_map_source_to_target", "squares", "degreewise_injective", "noninjective_degree", "solution_tangent_inclusion_remains_injective", "strict_short_exact_sequence_claim"],
+      "properties": {
+        "degreewise_injective": {"const": false},
+        "solution_tangent_inclusion_remains_injective": {"const": true},
+        "strict_short_exact_sequence_claim": {"const": false}
+      }
+    },
+    "local_Green_current": {
+      "type": "object",
+      "required": ["Fourier_to_differential", "identity", "operator_order", "time_current_term_count", "space_current_term_count", "current_terms_sha256", "off_shell_jet_identity_remainder", "reduced_section_current_term_counts", "restriction_to_reduced_section_exact", "direct_Lee_Wald_inheritance"],
+      "properties": {
+        "current_terms_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "off_shell_jet_identity_remainder": {"const": []},
+        "restriction_to_reduced_section_exact": {"const": true}
+      }
+    },
+    "verification_receipt": {
+      "type": "object",
+      "required": ["producing_date", "tier_0", "tier_1", "tier_2", "tier_3"],
+      "properties": {
+        "tier_0": {"type": "object", "properties": {"status": {"const": "PASS"}, "elapsed_seconds": {"type": "number", "minimum": 0}}, "required": ["status", "elapsed_seconds", "commands"]},
+        "tier_1": {"type": "object", "properties": {"status": {"const": "PASS"}, "elapsed_seconds": {"type": "number", "minimum": 0}}, "required": ["status", "elapsed_seconds", "commands"]},
+        "tier_2": {"type": "object", "properties": {"status": {"const": "NOT_RUN_NOT_REQUIRED"}}, "required": ["status", "reason"]},
+        "tier_3": {"type": "object", "properties": {"status": {"const": "NOT_RUN"}}, "required": ["status", "reason"]}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": ["source_Diff_contraction_certified", "target_Diff_Weyl_contraction_certified", "ungauged_source_equation_Noether_complex_certified", "ungauged_target_equation_Noether_complex_certified", "polynomial_ghost_field_equation_identity_chain_map_certified", "ungauged_local_Green_identity_certified", "direct_reduced_Lee_Wald_section_inherited", "cyclic_BV_chain_map_certified", "final_residual_descent_certified", "quantum_classical_import_gate_satisfied", "Lorentzian_causal_claim"],
+      "properties": {
+        "source_Diff_contraction_certified": {"const": true},
+        "target_Diff_Weyl_contraction_certified": {"const": true},
+        "ungauged_source_equation_Noether_complex_certified": {"const": true},
+        "ungauged_target_equation_Noether_complex_certified": {"const": true},
+        "polynomial_ghost_field_equation_identity_chain_map_certified": {"const": true},
+        "ungauged_local_Green_identity_certified": {"const": true},
+        "direct_reduced_Lee_Wald_section_inherited": {"const": true},
+        "cyclic_BV_chain_map_certified": {"const": false},
+        "final_residual_descent_certified": {"const": false},
+        "quantum_classical_import_gate_satisfied": {"const": false},
+        "Lorentzian_causal_claim": {"const": false}
+      }
+    },
+    "interpretation": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": false
+}
