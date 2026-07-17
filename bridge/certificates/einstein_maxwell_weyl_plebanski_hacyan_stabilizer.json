@@ -1,0 +1,256 @@
+{
+  "background_stabilizer": {
+    "H_and_Px_central": true,
+    "basis": [
+      "H=partial_t",
+      "P_x=partial_x",
+      "J_1",
+      "J_2",
+      "J_3"
+    ],
+    "connected_lie_algebra": "R*H direct-sum R*P_x direct-sum so(3)",
+    "constant_U1_reducibility": "acts trivially on connection differences and supplies no independent Taub charge on the closed slice",
+    "dimension": 5,
+    "full_SO42_is_background_stabilizer": false,
+    "maxwell_bundle_action": "H and P_x preserve the connection; each J_i has the standard patchwise U(1) compensator and preserves F",
+    "nonzero_brackets": "[J_i,J_j]=epsilon_ijk J_k",
+    "proof": [
+      "the nonzero product Weyl tensor has distinct factor-plane eigendistributions, so a connected conformal stabilizer preserves the product splitting",
+      "the common conformal factor on the two factors is constant; integrating the S2 divergence forces it to zero",
+      "periodicity removes the flat-cylinder boost, leaving partial_t, partial_x, and the three SO(3) rotations",
+      "there is no nonzero Weyl compensator in a background stabilizer"
+    ],
+    "reason_SO42_excluded": "the nonzero product Weyl tensor, S1 periodicity, product topology, and magnetic flux break the vacuum conformal-cylinder algebra; SO(4,2) cannot be imported from R x S3",
+    "weyl_compensator": "zero"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem certifies the connected background stabilizer and its exact action and Lee-Wald invariance on generic axial and polar q/p-primary modules. It refutes universal presymplectic nullity and the unqualified import of the vacuum SO(4,2) quotient. It does not complete exceptional/global stabilizer actions, the common Taub-zero locus, an absolute residual CE quotient, cyclic BV enhancement, causal propagation, scattering, particles, or quantum theory.",
+  "classification": {
+    "Lorentzian_causal_claim": false,
+    "Taub_zero_derived_sector_complete": false,
+    "absolute_residual_gauge_quotient_certified": false,
+    "connected_background_stabilizer_certified": true,
+    "cyclic_BV_enhancement_certified": false,
+    "full_SO42_stabilizer_rejected": true,
+    "generic_axial_polar_Lee_Wald_invariance_certified": true,
+    "generic_axial_polar_primary_equivariance_certified": true,
+    "quantum_claim": false,
+    "universal_stabilizer_nullity_refuted": true
+  },
+  "correction_ledger": {
+    "replacement": "background-stabilizer action followed, only if justified, by a separately declared moment-map/Taub-zero reduction",
+    "superseded_placeholder": "final residual SO(4,2) quotient on the compactified Plebanski-Hacyan fixture",
+    "vacuum_cylinder_result_unchanged": "the absolute SO(4,2) result on the conformally flat vacuum cylinder remains valid in its own phase space"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "generic axial and polar ell>=2 Weyl-Maxwell solution modules on the fixed-flux compactified magnetically supported Plebanski-Hacyan background, all allowed compact momenta, after local gauge reduction and before any optional stabilizer moment-map reduction",
+  "generality_level": "G2_GENERIC_AXIAL_POLAR_ALL_PHYSICAL_ELL_K_STABILIZER_ACTION",
+  "interpretation": "The Einstein q-primary and extra p-primary waves form honest representations of the actual five-generator Plebanski-Hacyan background stabilizer, and their Lee-Wald forms are invariant. The stabilizer generators are not universal null directions: explicit nonzero Hamiltonian/moment-map matrix elements occur already on the positive extra blocks. They therefore remain global symmetries unless a separate moment-map-zero derived sector and quotient are declared. The vacuum-cylinder SO(4,2) one-particle vanishing theorem is not a descent theorem for this flux product background.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "construct the complete H, P_x, and J_i moment maps/Taub forms across generic, exceptional, and global blocks; classify their common zero locus and only then decide whether any stabilizer subalgebra is gauged; independently solve or obstruct the polynomial cyclic chain-homotopy enhancement",
+  "pairing_and_charge_disposition": {
+    "Hermitian_generator_checks": {
+      "H": "rho(H)=-I*omega is anti-Hermitian for real shell frequency",
+      "P_x": "rho(P_x)=I*k is anti-Hermitian for real compact momentum",
+      "SO3": "I*J0, I*(Jplus+Jminus)/2, and (Jplus-Jminus)/2 are anti-Hermitian for the certified angular form"
+    },
+    "axial_inertia": {
+      "Einstein_q_primary": [
+        1,
+        1
+      ],
+      "complete": [
+        3,
+        1
+      ],
+      "extra_p_primary": [
+        2,
+        0
+      ]
+    },
+    "consequence": "H, P_x, and SO3 are not universal presymplectic-radical directions on the complete generic phase space; no quotient by them is authorized without a separately declared moment-map/Taub-zero derived sector",
+    "invariance_mechanism": "the branch Gram is independent of m and the stabilizer acts as a scalar on branch coefficients or through the invariant angular form; tensor-product Lee-Wald invariance follows exactly",
+    "non_null_moment_map_witnesses": {
+      "H": "on every nonzero polar or axial extra p-shell vector e, omega_e^2=k^2+lambda-2/3>0 and h(e,e)>0, so h(e,I*rho(H)e)=omega_e*h(e,e) is nonzero",
+      "J0": "for m nonzero, h(e tensor v_m,I*rho(J0)(e tensor v_m))=-m*h(e,e)*w_m is nonzero",
+      "P_x": "for k nonzero, h(e,I*rho(P_x)e)=-k*h(e,e) is nonzero on every nonzero extra vector"
+    },
+    "polar_inertia": {
+      "Einstein_q_primary": [
+        1,
+        1
+      ],
+      "complete": [
+        3,
+        1
+      ],
+      "extra_p_primary": [
+        2,
+        0
+      ]
+    }
+  },
+  "primary_module_action": {
+    "Einstein_image": "K[omega]/(q) tensor V_ell",
+    "axial_and_polar_target_module": "((K[omega]/(p))^2 direct-sum K[omega]/(q)) tensor V_ell",
+    "characteristics": {
+      "p": "-(3*k**2 + 3*lambda - 3*omega**2 - 2)/3",
+      "q": "k**4 + 2*k**2*lambda - 2*k**2*omega**2 + lambda**2 - 2*lambda*omega**2 - 2*lambda + omega**4",
+      "resultant_omega_p_q": "4*(9*lambda - 2)**2/81"
+    },
+    "extra_quotient": "(K[omega]/(p))^2 tensor V_ell",
+    "generator_action": {
+      "H=partial_t": "multiplication by -I*omega",
+      "P_x=partial_x": "multiplication by I*k",
+      "so3": "identity on primary/polarization coefficients tensor the spin-ell action on V_ell"
+    },
+    "ideal_preservation": {
+      "Einstein_q_primary_preserved": true,
+      "H_commutes_with_p_and_q": true,
+      "P_x_commutes_with_p_and_q": true,
+      "SO3_does_not_change_lambda_or_parity": true,
+      "axial_and_polar_blocks_preserved_separately": true,
+      "extra_p_primary_preserved": true
+    },
+    "no_division_by": [
+      "k",
+      "omega",
+      "p",
+      "q"
+    ],
+    "ring": "K_(ell,n)[omega] with lambda=ell(ell+1), k=2*pi*n/L"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.py",
+    "generator_sha256": "ed2be29e61fb6a9b53035e338e918bbd67977b02ff142c06c70d1a3b00fae83b",
+    "inputs": {
+      "axial_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+        "sha256": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+      },
+      "axial_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "polar_module": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "polar_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "polar_ungauged": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+        "sha256": "1247963ba92efc60b7d6744140c6412e3667bb03010c2251db752d23d7707d34"
+      },
+      "stabilizer_preflight": {
+        "path": "bridge/certificates/einstein_maxwell_harmonic_adjoint_blocks.json",
+        "sha256": "af2e8ec8924d9b27afe4b4e9d1e63b995064741475dfc09eedb389f019aeaf2b"
+      }
+    }
+  },
+  "residual_dispositions": {
+    "Taub_zero_or_moment_map_zero_derived_sector": "OPEN",
+    "local_gauge_quotient": "ALREADY_PERFORMED",
+    "residual_cohomology_after_a_declared_null_quotient": "NOT_COMPUTED",
+    "stabilizer_Lee_Wald_invariance": "CERTIFIED",
+    "stabilizer_action_on_q_and_p_primary_modules": "CERTIFIED",
+    "stabilizers_gauged_in_an_absolute_CE_complex": "NOT_AUTHORIZED",
+    "stabilizers_presymplectically_null_on_full_generic_phase_space": "FALSE_BY_EXPLICIT_WITNESSES",
+    "stabilizers_retained_as_global_symmetries": "CERTIFIED_CONSISTENT"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_PLEBANSKI_HACYAN_STABILIZER_DESCENT",
+  "result_state": "PH_STABILIZER_AUTHORITY_AND_GENERIC_PRIMARY_EQUIVARIANCE_CERTIFIED_GAUGE_QUOTIENT_NOT_AUTHORIZED",
+  "rotation_representation": {
+    "action": {
+      "J0_v_m": "m*v_m",
+      "Jminus_v_m": "(ell+m)*v_(m-1)",
+      "Jplus_v_m": "(ell-m)*v_(m+1)"
+    },
+    "all_ell_proof": {
+      "J0_Jminus": "(m-1-m)*(ell+m)=-(ell+m)",
+      "J0_Jplus": "(m+1-m)*(ell-m)=ell-m",
+      "Jplus_Jminus": "(ell+m)*(ell-m+1)-(ell-m)*(ell+m+1)=2*m",
+      "adjoint_ratio": "w_(m+1)/w_m=(ell+m+1)/(ell-m)",
+      "angular_weight": "w_m=1/binomial(2*ell,ell+m)"
+    },
+    "basis": "v_m, -ell<=m<=ell",
+    "exact_regressions": {
+      "2": {
+        "commutators_exact": true,
+        "dimension": 5,
+        "positive_angular_form_and_adjoint_exact": true
+      },
+      "3": {
+        "commutators_exact": true,
+        "dimension": 7,
+        "positive_angular_form_and_adjoint_exact": true
+      },
+      "4": {
+        "commutators_exact": true,
+        "dimension": 9,
+        "positive_angular_form_and_adjoint_exact": true
+      },
+      "5": {
+        "commutators_exact": true,
+        "dimension": 11,
+        "positive_angular_form_and_adjoint_exact": true
+      },
+      "6": {
+        "commutators_exact": true,
+        "dimension": 13,
+        "positive_angular_form_and_adjoint_exact": true
+      },
+      "7": {
+        "commutators_exact": true,
+        "dimension": 15,
+        "positive_angular_form_and_adjoint_exact": true
+      },
+      "8": {
+        "commutators_exact": true,
+        "dimension": 17,
+        "positive_angular_form_and_adjoint_exact": true
+      }
+    }
+  },
+  "schema": "einstein-maxwell-weyl-plebanski-hacyan-stabilizer-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.schema.json",
+  "schema_sha256": "0147bd273692ed9ff4b03cdfa347b8b78abcacd9abcd2cb2a09ee6c484118337",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_plebanski_hacyan_stabilizer --verify bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_plebanski_hacyan_stabilizer",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_plebanski_hacyan_stabilizer"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-17",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.py bridge/einstein_sector/verify_einstein_maxwell_weyl_plebanski_hacyan_stabilizer.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_plebanski_hacyan_stabilizer.py",
+        "python3 -m json.tool bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 0.07,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_plebanski_hacyan_stabilizer --verify bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_plebanski_hacyan_stabilizer",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_plebanski_hacyan_stabilizer"
+      ],
+      "elapsed_seconds": 1.15,
+      "status": "PASS"
+    },
+    "tier_2": {
+      "reason": "all upstream inputs are unchanged content-addressed certificates; this result consumes rather than modifies their operator or current data",
+      "status": "NOT_RUN_NOT_REQUIRED"
+    },
+    "tier_3": {
+      "reason": "no paper freeze, release, shared core algebra, causal lifecycle, or quantum lifecycle state is promoted",
+      "status": "NOT_RUN"
+    }
+  }
+}

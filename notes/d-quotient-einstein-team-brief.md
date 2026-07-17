@@ -1337,9 +1337,47 @@ current already matched to the direct four-dimensional Lee--Wald current.
 The chain map is not degreewise injective on equation/identity rows and no
 cyclic BV enhancement is certified.  Hence this is not yet a strict short
 exact sequence and does not satisfy the quantum classical-import gate.  The
-remaining polar gate is final residual survival; cyclic enhancement or an
-obstruction to it is a distinct parallel question.  No causal, particle,
-quantum-ghost, or nonlinear-closure claim is made.
+remaining polar gate is background-stabilizer/moment-map descent; cyclic
+enhancement or an obstruction to it is a distinct parallel question.  No
+causal, particle, quantum-ghost, or nonlinear-closure claim is made.
+
+`EINSTEIN_MAXWELL_WEYL_PLEBANSKI_HACYAN_STABILIZER_DESCENT` corrects the
+authority boundary for that next step.  The connected automorphism algebra of
+the fixed-flux compactified Plebański--Hacyan background is
+
+```text
+R H direct-sum R P_x direct-sum so(3),
+```
+
+not the `SO(4,2)` algebra of the conformally flat vacuum cylinder.  The
+nonzero product Weyl tensor fixes the factor splitting, the common conformal
+factor vanishes, `S1` periodicity removes the flat boost, and the magnetic
+field is preserved by the five surviving generators with the standard
+patchwise rotational `U(1)` compensators.  There is no Weyl compensator.
+
+On every generic physical axial and polar fibre, the five-generator action
+preserves both the Einstein `q`-primary summand and the two-copy extra
+`p`-primary quotient.  It also preserves the direct Lee--Wald form.  This is
+an equivariance theorem, not permission to quotient: the nondegenerate extra
+blocks give explicit nonzero `H`, nonzero-`k` `P_x`, and nonzero-`m` rotation
+moment-map matrix elements.  Thus the stabilizers are not universal
+presymplectic-radical directions on the full generic phase space.  They remain
+global symmetries until a common moment-map/Taub-zero derived sector is
+constructed and a null subalgebra is proved.
+
+Accordingly every older phrase ``final residual `SO(4,2)` quotient'' attached
+to this product fixture is superseded by the sequence
+
+```text
+local gauge quotient
+ -> five-generator background-stabilizer representation
+ -> common moment-map/Taub-zero locus
+ -> quotient only by a certified null subalgebra.
+```
+
+The vacuum-cylinder absolute `SO(4,2)` theorem is unchanged in its own phase
+space.  No absolute residual CE cohomology is presently authorized for the
+Plebański--Hacyan wave modules.
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 `NOT APPLICABLE` rather than extrapolating.
@@ -1351,15 +1389,17 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Positive Berger clock | `D_GAUGE` on fixed-coupling linearized phase space | minimal clock SDR and retained `q1` complete; arity two open | principal endpoint factors only; curved/Green gates open | open | minimal cyclic pairing exact | `NOT_APPLICABLE` at this base point: certified non-Einstein Weyl--matter branch |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | stability open |
-| Compact Einstein--Maxwell product | sector-indexed; not a universal D verdict | `OPEN` | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: relative radiative inertia `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before final residual quotient; identity inclusion is not symplectic |
+| Compact Einstein--Maxwell product | sector-indexed; `H`, `P_x`, and `J_i` are nonnull on the full generic phase space, so no absolute quotient is authorized | five-generator stabilizer action preserves generic axial/polar `q` and `p` primaries; common moment-map-zero locus open | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: relative radiative inertia `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before any optional stabilizer reduction; identity inclusion is not symplectic |
 | Lorentzian dS/AdS | boundary-dependent; compute | open | open | open | open | selected sector to certify |
 | Asymptotically flat | `PHASE_SPACE_NOT_CLOSED`; `H_ESU` crosses fixed \(\mathscr I\), `D_M` charge open | `NOT APPLICABLE` until a boundary-preserving generator and phase space are chosen | formal triangular seed only; causal complex open | `OPEN` | `OPEN` | `EINSTEIN_OPEN`; reduced `chi=0` seed only |
 
 ## Priority and stop/go decisions
 
-1. Perform final residual descent on the certified axial and polar Einstein
-   and extra primary coefficients; in parallel, prove or obstruct a cyclic BV
-   enhancement of the polar equation/Noether chain map.
+1. Complete the `H`, `P_x`, and `J_i` moment maps on exceptional/global blocks,
+   classify their common Taub-zero locus, and only then test a quotient by any
+   certified null subalgebra; in parallel, prove or obstruct a polynomial
+   cyclic BV enhancement of the polar equation/Noether chain map without
+   inverting `k`, `omega`, `p`, or `q`.
 2. Extend the certified axial detector and negative-definite `ell=2,k=0`
    extra Taub test to nonzero momentum, higher harmonics, and parity-compatible
    `EE`, `EX`, and `XX` source channels; then construct a relational or

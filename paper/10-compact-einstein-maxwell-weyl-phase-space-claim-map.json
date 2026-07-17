@@ -9,7 +9,7 @@
     "background": "R_t x S1_L x S2, unit magnetic product fixture, fixed compact U(1) bundle P_N with N=2",
     "standard_einstein_maxwell_image": "complete axial and polar harmonic tangent including regular radiation, physical ell=1 quotient, homogeneous generalized block, and axial twist",
     "extra_weyl_maxwell_target": "complete generic axial ell>=2 branch only",
-    "quotient_stage": "after local gauge reduction and before final residual quotient"
+    "quotient_stage": "after local gauge reduction and before any optional background-stabilizer/moment-map reduction"
   },
   "freeze_disposition": {
     "mathematical_claims": "THEOREM_FROZEN",
@@ -27,11 +27,16 @@
     "all_compact_momenta_including_k_zero_certified": true,
     "generic_axial_extra_positive_frequency_current_inertia": [2, 0],
     "complete_generic_axial_positive_frequency_current_inertia": [3, 1],
-    "extra_spectral_coefficient_extractor_before_residual_descent": true
+    "extra_spectral_coefficient_extractor_before_residual_descent": true,
+    "connected_background_stabilizer_dimension": 5,
+    "full_SO42_is_background_stabilizer": false,
+    "generic_primary_modules_and_Lee_Wald_form_stabilizer_invariant": true,
+    "stabilizer_generators_universally_presymplectically_null": false
   },
   "explicit_nonclaims": {
     "polar_extra_branch_classified": false,
     "final_residual_descent_complete": false,
+    "background_stabilizer_moment_map_descent_complete": false,
     "literal_four_dimensional_action_density_second_expansion_complete": false,
     "explicit_off_shell_chevreton_row_factorization_constructed": false,
     "global_multivariate_unimodular_smith_transformations_constructed": false,
@@ -56,7 +61,8 @@
     "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb",
     "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567",
     "bridge/certificates/einstein_maxwell_weyl_axial_reduced_action_hessian.json": "62e49ec4e690c91de973acac50862d8f39ce934bb1030b41ca1e474db94b85f7",
-    "bridge/certificates/einstein_maxwell_weyl_axial_extra_detector.json": "cded7c650c5c75775402673dabb6b0a22ad6fdf8c4dad3a6f6a6deda8c51034a"
+    "bridge/certificates/einstein_maxwell_weyl_axial_extra_detector.json": "cded7c650c5c75775402673dabb6b0a22ad6fdf8c4dad3a6f6a6deda8c51034a",
+    "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
   },
   "verification_commands": [
     "python3 bridge/einstein_sector/verify_compact_linear_paper_claim_map.py",
@@ -64,5 +70,5 @@
     "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/10-compact-einstein-maxwell-weyl-phase-space.tex",
     "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/10-compact-einstein-maxwell-weyl-phase-space.tex"
   ],
-  "claim_boundary": "This manuscript assembles exact LOCAL-ALGEBRAIC/REDUCED-MODE compact linear results. The complete standard Einstein-Maxwell image is parity-complete, while the complementary Weyl-Maxwell classification is generic axial only. No final residual, nonlinear, causal scattering, one-particle Hilbert, or quantum theorem is promoted."
+  "claim_boundary": "This manuscript assembles exact LOCAL-ALGEBRAIC/REDUCED-MODE compact linear results. The complete standard Einstein-Maxwell image is parity-complete, while the complementary Weyl-Maxwell classification is generic axial only. The actual five-generator product-background stabilizer and its generic primary-module action are certified, but no moment-map-zero quotient, nonlinear, causal scattering, one-particle Hilbert, or quantum theorem is promoted."
 }

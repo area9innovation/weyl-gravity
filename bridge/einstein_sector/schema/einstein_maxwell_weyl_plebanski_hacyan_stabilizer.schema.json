@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-plebanski-hacyan-stabilizer-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "provenance", "domain", "background_stabilizer", "rotation_representation", "primary_module_action", "pairing_and_charge_disposition", "residual_dispositions", "correction_ledger", "classification", "interpretation", "next_gate", "claim_boundary", "verification_receipt", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-plebanski-hacyan-stabilizer-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_PLEBANSKI_HACYAN_STABILIZER_DESCENT"},
+    "result_state": {"const": "PH_STABILIZER_AUTHORITY_AND_GENERIC_PRIMARY_EQUIVARIANCE_CERTIFIED_GAUGE_QUOTIENT_NOT_AUTHORIZED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"const": "G2_GENERIC_AXIAL_POLAR_ALL_PHYSICAL_ELL_K_STABILIZER_ACTION"},
+    "provenance": {"type": "object"},
+    "domain": {"type": "string"},
+    "background_stabilizer": {
+      "type": "object",
+      "required": ["connected_lie_algebra", "dimension", "basis", "nonzero_brackets", "H_and_Px_central", "weyl_compensator", "maxwell_bundle_action", "constant_U1_reducibility", "proof", "full_SO42_is_background_stabilizer", "reason_SO42_excluded"],
+      "properties": {"dimension": {"const": 5}, "H_and_Px_central": {"const": true}, "weyl_compensator": {"const": "zero"}, "full_SO42_is_background_stabilizer": {"const": false}}
+    },
+    "rotation_representation": {"type": "object"},
+    "primary_module_action": {"type": "object"},
+    "pairing_and_charge_disposition": {"type": "object"},
+    "residual_dispositions": {
+      "type": "object",
+      "required": ["local_gauge_quotient", "stabilizers_retained_as_global_symmetries", "stabilizer_action_on_q_and_p_primary_modules", "stabilizer_Lee_Wald_invariance", "stabilizers_presymplectically_null_on_full_generic_phase_space", "stabilizers_gauged_in_an_absolute_CE_complex", "Taub_zero_or_moment_map_zero_derived_sector", "residual_cohomology_after_a_declared_null_quotient"],
+      "properties": {
+        "stabilizers_presymplectically_null_on_full_generic_phase_space": {"const": "FALSE_BY_EXPLICIT_WITNESSES"},
+        "stabilizers_gauged_in_an_absolute_CE_complex": {"const": "NOT_AUTHORIZED"},
+        "residual_cohomology_after_a_declared_null_quotient": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "correction_ledger": {"type": "object"},
+    "classification": {
+      "type": "object",
+      "required": ["connected_background_stabilizer_certified", "full_SO42_stabilizer_rejected", "generic_axial_polar_primary_equivariance_certified", "generic_axial_polar_Lee_Wald_invariance_certified", "universal_stabilizer_nullity_refuted", "absolute_residual_gauge_quotient_certified", "Taub_zero_derived_sector_complete", "cyclic_BV_enhancement_certified", "Lorentzian_causal_claim", "quantum_claim"],
+      "properties": {
+        "connected_background_stabilizer_certified": {"const": true},
+        "full_SO42_stabilizer_rejected": {"const": true},
+        "generic_axial_polar_primary_equivariance_certified": {"const": true},
+        "generic_axial_polar_Lee_Wald_invariance_certified": {"const": true},
+        "universal_stabilizer_nullity_refuted": {"const": true},
+        "absolute_residual_gauge_quotient_certified": {"const": false},
+        "Taub_zero_derived_sector_complete": {"const": false},
+        "cyclic_BV_enhancement_certified": {"const": false},
+        "Lorentzian_causal_claim": {"const": false},
+        "quantum_claim": {"const": false}
+      }
+    },
+    "interpretation": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_receipt": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": false
+}

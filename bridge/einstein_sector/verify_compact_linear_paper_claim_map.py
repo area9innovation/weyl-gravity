@@ -32,6 +32,10 @@ def main() -> None:
     assert claims["all_compact_momenta_including_k_zero_certified"] is True
     assert claims["generic_axial_extra_positive_frequency_current_inertia"] == [2, 0]
     assert claims["complete_generic_axial_positive_frequency_current_inertia"] == [3, 1]
+    assert claims["connected_background_stabilizer_dimension"] == 5
+    assert claims["full_SO42_is_background_stabilizer"] is False
+    assert claims["generic_primary_modules_and_Lee_Wald_form_stabilizer_invariant"] is True
+    assert claims["stabilizer_generators_universally_presymplectically_null"] is False
 
     nonclaims = payload["explicit_nonclaims"]
     assert nonclaims
@@ -64,9 +68,11 @@ def main() -> None:
         "Functorial ingredients of the formal bridge",
         r"{-i\omega_eL N_{\ell m}}",
         "so $h_+$ is Hermitian on a common positive-frequency shell",
-        "before the final residual quotient",
+        "before any background-stabilizer/moment-map reduction",
+        "the connected automorphism algebra of this magnetically supported",
+        r"\mathbb R H\oplus\mathbb R P_x\oplus\mathfrak{so}(3)",
         "not, by itself, a quantum ghost or unitarity theorem",
-        "The polar extra branch and the final residual descent remain open",
+        "The polar extra branch and any background-stabilizer/moment-map descent remain open",
     ]
     for marker in required:
         assert marker in normalized, marker
