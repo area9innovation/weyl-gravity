@@ -32,6 +32,32 @@ collapsed into that one statement:
 We have exact answers to substantial parts of the first two questions and
 sharply scoped results on the third. We do not yet have the fourth.
 
+### Starting point: choices, not conclusions
+
+The programme began from a deliberately restricted solvable laboratory. The
+following are inputs to the first calculation, not claims silently promoted to
+all spacetimes or to the completed quantum theory.
+
+\[
+S_{\rm W}=\alpha\int d^4x\,\sqrt{-g}\,
+C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma},
+\qquad M=\mathbb R\times S^3.
+\]
+
+| Starting choice | Why it was chosen | What it does **not** imply |
+|---|---|---|
+| Four-dimensional Lorentzian pure-Weyl action | It is the candidate local, conformally invariant fourth-order gravity theory being stress-tested. | That Weyl gravity is correct, stable, unitary, or ghost-free. |
+| Exact conformal cylinder | It is a closed, causal, highly symmetric universe on which the complete gauge complex can be computed exactly. | That the observed universe has this global topology, or that compact results determine boundary charges or scattering. |
+| Vacuum, free, linearized starting theory | It isolates the gravitational constraint, propagation, and pairing problem before adding further failure modes. | Nonlinear closure, generic matter compatibility, black holes, cosmology, or quantum particles. |
+| Diffeomorphisms and local Weyl transformations treated as gauge | They are the defining local redundancies of pure-Weyl gravity. | That every residual conformal transformation is proper gauge on every phase space. |
+| Residual \(D\) tested as a constraint in a selected zero-charge sector | It gives an exact test of whether apparent fourth-order modes survive the proposed reduction. Its legitimacy is decided by the covariant charge. | That \(D\) is universally gauge. It is charged on the unrestricted compact phase space and must be recomputed with matter or boundaries. |
+| The full BV--BFV complex, rather than an isolated fourth-order operator, is the classical object | Fields, ghosts, equations, constraints, identities, causal homotopies, and pairings must be reduced together. | That a raw mode is a physical state, that a Hilbert/Fock space already exists, or that a propagator pole is a particle. |
+
+Einstein gravity was not assumed to be a consistent subsector. Constructing
+its map into the Weyl complex, the relative cofiber, the induced covariant
+forms, and the mixed nonlinear brackets is now one of the programme's
+principal tests.
+
 The most complete field-theory result is for free pure-Weyl gravity on the
 Lorentzian conformal cylinder, \(\mathbb R\times S^3\), in a selected
 closed-universe, zero-charge BV--BFV sector. There the full covariant causal

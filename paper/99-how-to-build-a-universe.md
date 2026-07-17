@@ -77,6 +77,12 @@ mathematicians call the conformal cylinder. The word *cylinder* describes the
 history of a closed universe. It does not mean that space is shaped like a
 pipe or that the universe sits inside one.
 
+This is the project's first exactly solvable laboratory, not an assumption
+that the real universe must have this shape. Likewise, treating a shift of the
+entire universe's time label as redundant is tested only in a particular
+zero-total-charge sector; outside that sector the same shift can be a physical
+symmetry with a nonzero charge.
+
 ### The short version of what we have
 
 - **Cause runs from past to future.** If a source is switched on tomorrow,
