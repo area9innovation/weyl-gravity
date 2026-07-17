@@ -4,34 +4,37 @@
   "setting_id": "compact_positive_berger_clock_probe_detector_records",
   "generator_id": "D_compact",
   "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
-  "boundary_conditions": "R x Berger S3 with no spatial boundary; fixed-coupling linearized background plus nonbackreacting local probe rods and two compact relational detector windows",
+  "boundary_conditions": "R x Berger S3 with no spatial boundary; fixed-coupling linearized background, homogeneous compact-S3 Maxwell switch-on currents, nonbackreacting local probe rods, and two compact relational detector windows",
   "lifecycle_layer": "LORENTZIAN_CAUSAL",
   "claim_status": "PARTIAL",
-  "verdict": "LOCAL_ROD_SMEARING_MEMORY_PREFLIGHT_CERTIFIED_RETARDED_TRANSFER_AND_D_DESCENT_OPEN",
-  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "verdict": "RANK_TWO_CAUSAL_RECORD_TRANSFER_CERTIFIED_LOCALIZED_EMITTER_AND_D_DESCENT_OPEN",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
   "established": [
     "standard-sign probe-rod Cauchy solutions give nondegenerate relational Jacobians on some local neighborhoods of both detector centers",
     "two compact clock-labelled spacetime Maxwell field-strength smearings are support-distinguished, with exact normalized dual-probe matrix I_2",
     "both central Hopf rays satisfy exact null incidence and lie below the certified half-fibre cut-locus bound",
     "first-order probe memory registers retain the integrated detector readings after their compact supports",
+    "two predeclared smooth conserved e1/e2 switch-on currents have exact full-Maxwell retarded solutions",
+    "the physical matrix M_ab=Q_a[d G_ret J_b] is diag(C_00,C_11) with both diagonal entries positive and therefore has rank two",
+    "the two retarded source basis signals produce distinguishable persistent memory vectors (C_00,0) and (0,C_11)",
     "Diff, Weyl, and Maxwell-gauge covariance hold for the declared probe functionals"
   ],
   "not_established": [
-    "rank two or even entrywise nonvanishing of the physical transfer matrix M_ab=Q_a[d G_ret J_b]",
-    "full compact-source-support to detector-window causal incidence and no-wrap margins",
-    "raw-D descent after adjoining the probe rod and memory sector",
+    "rank two for two spatially localized emitter worldtubes rather than homogeneous compact-S3 currents",
+    "full localized-source-support to detector-window causal incidence and no-wrap margins",
+    "raw-D descent after adjoining the source, probe-rod, and memory sectors",
     "K_Berger compatibility in the interacting complex",
     "rod backreaction, detector recoil, gravity backreaction, or a quantum observer algebra"
   ],
   "evidence": {
-    "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json",
-    "commit": "9118807f69d8cfd8960abd2fece52e1bbd993b5a",
-    "sha256": "a77eb1cd8abeee608ee02ce52a0a35f0fdb84531946ef78cc5e36145afc14b6d"
+    "path": "closed_universe_observers/certificates/BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER.json",
+    "commit": "5b08869dd3fd74c95d63e2189029a6d47f377b79",
+    "sha256": "09f723df60cd4e1bee3efa86f0c9319baee5f539ae2008d9d03230eb42398f23"
   },
   "verification_commands": [
-    "python3 closed_universe_observers/generate_berger_detector_records.py --check",
-    "python3 closed_universe_observers/verify_berger_detector_records.py",
-    "python3 -m pytest -q closed_universe_observers/tests/test_berger_detector_records.py"
+    "python3 closed_universe_observers/generate_berger_smeared_retarded_transfer.py --check",
+    "python3 closed_universe_observers/verify_berger_smeared_retarded_transfer.py",
+    "python3 -m pytest -q closed_universe_observers/tests/test_berger_smeared_retarded_transfer.py"
   ],
-  "next_gate": "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER_THEN_D_AND_K_BERGER_DESCENT"
+  "next_gate": "BERGER_SPATIALLY_LOCALIZED_TWO_SOURCE_TRANSFER_THEN_D_AND_K_BERGER_DESCENT"
 }

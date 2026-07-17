@@ -5,16 +5,19 @@ The closed-universe observer team submits
 `d_quotient_programme/contributions/classical-berger-localized-detector-records-preflight.json`
 
 for integration into the next programme status refresh.  The contribution
-references the immutable evidence commit `9118807f69d8cfd8960abd2fece52e1bbd993b5a`
+references the immutable evidence commit `5b08869dd3fd74c95d63e2189029a6d47f377b79`
 and certificate SHA-256
-`a77eb1cd8abeee608ee02ce52a0a35f0fdb84531946ef78cc5e36145afc14b6d`.
+`09f723df60cd4e1bee3efa86f0c9319baee5f539ae2008d9d03230eb42398f23`.
 
 This is a partial `LORENTZIAN-CAUSAL` contribution.  It registers local
 standard-sign probe rods, two support-distinguished clock-labelled spacetime
 smearings, exact central no-wrap incidences, and persistent probe memories.
-It does not register a rank-two physical retarded transfer matrix, full
-support-to-window incidence, raw-`D` descent with rods and memories,
-`K_Berger` compatibility, backreaction, or a quantum observer algebra.
+It now also registers two predeclared conserved polarization currents and the
+exact physical response `M=diag(C_00,C_11)` with both entries positive.  The
+two causal memory records are therefore distinguishable.  The emitters remain
+homogeneous over the compact `S3`; spatially localized emitter worldtubes,
+raw-`D` descent with sources, rods, and memories, `K_Berger` compatibility,
+backreaction, and a quantum observer algebra remain open.
 
 Verification:
 
