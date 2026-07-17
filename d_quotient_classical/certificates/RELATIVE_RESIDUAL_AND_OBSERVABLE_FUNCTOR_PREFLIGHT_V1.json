@@ -3,13 +3,19 @@
     "berger_clock_background": "NOT_APPLICABLE_NO_SAME_BASE_EINSTEIN_TANGENT",
     "common_product_background": "APPLICABLE"
   },
-  "claim_boundary": "The exact on-shell standard-harmonic inclusion and reduced-mode pairing are imported by content hash. They do not define an off-shell BV chain map, mapping cofiber, residual-equivariant observable pullback, or relative quantum lift. The Berger clock fixture is a separate Weyl-matter rail and is not a common Einstein/Weyl background.",
+  "claim_boundary": "The exact on-shell standard-harmonic inclusion, reduced-mode pairing, and principal/generic-axial off-shell preflight are imported by commit and content hash. The partial preflight does not define the full curved all-sector BV chain map, global mapping cofiber, residual-equivariant observable pullback, or relative quantum lift. The Berger clock fixture is a separate Weyl-matter rail and is not a common Einstein/Weyl background.",
   "dependency_refs": {
     "berger_same_base_no_go": {
       "artifact_id": "compact_positive_berger_clock_einstein_incidence",
       "commit": "f1b6cf2ebd6cc818adf5409c92a36f1b986fa7b2",
       "path": "d_quotient_programme/contributions/einstein-berger-incidence.json",
       "sha256": "18c97ec0f09c2c920f811c9ff954f1c0a705e8471bbb7282deecd7451df60804"
+    },
+    "partial_offshell_triangle_preflight": {
+      "artifact_id": "compact_einstein_maxwell_weyl_relative_linear_triangle_preflight",
+      "commit": "1d3703ccb1f8a1a412408e772116acdc211bf519",
+      "path": "d_quotient_programme/contributions/einstein-weyl-relative-linear-triangle-preflight.json",
+      "sha256": "b1bf021cdcc9b476dd8d07db8df4d58d7fe7b2619f67b2ab105a2e252fa76561"
     },
     "quantum_relative_readiness": {
       "artifact_id": "QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS",
@@ -63,7 +69,7 @@
     "status": "MISSING"
   },
   "result_id": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1",
-  "result_state": "DEPENDENCY_CONTRACT_READY_OFFSHELL_TRIANGLE_MISSING",
+  "result_state": "PARTIAL_OFFSHELL_PREFLIGHT_IMPORTED_FULL_TRIANGLE_MISSING",
   "schema": "pure-weyl-relative-residual-observable-functor-preflight-v1",
   "setting": {
     "background": "compact_Einstein-Maxwell_product",
@@ -73,8 +79,8 @@
   },
   "shared_relative_row": {
     "O2": "PARTIAL_FIXTURES_ONLY",
-    "cofiber": "BLOCKED_OFFSHELL_TRIANGLE_MISSING",
-    "map_iota": "ONSHELL_MAP_ONLY",
+    "cofiber": "PARTIAL_GENERIC_AXIAL_COFIBER_FULL_GLOBAL_BLOCKED",
+    "map_iota": "PARTIAL_OFFSHELL_GENERIC_AXIAL_PREFLIGHT",
     "observable_map": "BLOCKED_OFFSHELL_PULLBACK_MISSING",
     "quantum_lift": "NOT_APPLICABLE_TO_CLASSICAL_PREFLIGHT",
     "relative_pairing": "CLASSICAL_REDUCED_MODE_PULLBACK_ONLY",

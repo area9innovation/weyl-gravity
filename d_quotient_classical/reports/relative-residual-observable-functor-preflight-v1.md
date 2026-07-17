@@ -1,6 +1,6 @@
 # Relative residual and observable functor preflight
 
-Result: `DEPENDENCY_CONTRACT_READY_OFFSHELL_TRIANGLE_MISSING`.
+Result: `PARTIAL_OFFSHELL_PREFLIGHT_IMPORTED_FULL_TRIANGLE_MISSING`.
 
 The compact Einstein-Maxwell product supplies an exact on-shell harmonic
 inclusion and a nondegenerate reduced-mode pullback pairing.  Triangle import

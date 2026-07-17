@@ -30,8 +30,8 @@ def main() -> int:
     imported = certificate["required_import"]["status"] == "IMPORTED"
     expected_row = {
         "O2": "PARTIAL_FIXTURES_ONLY",
-        "cofiber": "IMPORTED_MAPPING_COFIBER" if imported else "BLOCKED_OFFSHELL_TRIANGLE_MISSING",
-        "map_iota": "IMPORTED_OFFSHELL_TRIANGLE" if imported else "ONSHELL_MAP_ONLY",
+        "cofiber": "IMPORTED_MAPPING_COFIBER" if imported else "PARTIAL_GENERIC_AXIAL_COFIBER_FULL_GLOBAL_BLOCKED",
+        "map_iota": "IMPORTED_OFFSHELL_TRIANGLE" if imported else "PARTIAL_OFFSHELL_GENERIC_AXIAL_PREFLIGHT",
         "observable_map": "BLOCKED_OFFSHELL_PULLBACK_MISSING",
         "quantum_lift": "NOT_APPLICABLE_TO_CLASSICAL_PREFLIGHT",
         "relative_pairing": "CLASSICAL_REDUCED_MODE_PULLBACK_ONLY",

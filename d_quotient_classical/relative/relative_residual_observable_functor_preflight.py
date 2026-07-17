@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[2]
 STANDARD = ROOT / "d_quotient_programme/contributions/einstein-maxwell-weyl-standard-harmonic-inclusion.json"
 BERGER = ROOT / "d_quotient_programme/contributions/einstein-berger-incidence.json"
 QUANTUM = ROOT / "quantum-weyl/relative/certificates/QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS.json"
+PARTIAL_TRIANGLE = ROOT / "d_quotient_programme/contributions/einstein-weyl-relative-linear-triangle-preflight.json"
 CERTIFICATE = ROOT / "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json"
 REPORT = ROOT / "d_quotient_classical/reports/relative-residual-observable-functor-preflight-v1.md"
 TRIANGLE_CANDIDATES = (
@@ -97,6 +98,7 @@ def build() -> dict:
     standard = load(STANDARD)
     berger = load(BERGER)
     quantum = load(QUANTUM)
+    partial_triangle = load(PARTIAL_TRIANGLE)
     if standard["verdict"] != "G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT":
         raise AssertionError("standard harmonic inclusion verdict drifted")
     if standard["generator_id"] != "H_product":
@@ -107,6 +109,10 @@ def build() -> dict:
         raise AssertionError("quantum import gate unexpectedly promoted")
     if quantum["shared_relative_row"]["map_iota"] != "ONSHELL_MAP_ONLY_IMPORTED_BY_HASH":
         raise AssertionError("quantum relative map disposition drifted")
+    if partial_triangle["verdict"] != "G2_PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_RELATIVE_TRIANGLE_PREFLIGHT":
+        raise AssertionError("partial relative-triangle preflight verdict drifted")
+    if "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1" not in partial_triangle["not_established"]:
+        raise AssertionError("partial preflight silently claims the full triangle")
     triangle, triangle_path = triangle_import()
     imported = triangle is not None
 
@@ -120,6 +126,10 @@ def build() -> dict:
         "quantum_relative_readiness": dependency(
             QUANTUM, "QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS"
         ),
+        "partial_offshell_triangle_preflight": dependency(
+            PARTIAL_TRIANGLE,
+            "compact_einstein_maxwell_weyl_relative_linear_triangle_preflight",
+        ),
     }
     if imported:
         refs["off_shell_relative_triangle"] = dependency(
@@ -132,7 +142,7 @@ def build() -> dict:
         "result_state": (
             "OFFSHELL_TRIANGLE_IMPORTED_RELATIVE_FUNCTOR_CONSTRUCTION_OPEN"
             if imported
-            else "DEPENDENCY_CONTRACT_READY_OFFSHELL_TRIANGLE_MISSING"
+            else "PARTIAL_OFFSHELL_PREFLIGHT_IMPORTED_FULL_TRIANGLE_MISSING"
         ),
         "setting": {
             "theory_pair": "Einstein-Maxwell_to_Weyl-Maxwell",
@@ -143,8 +153,8 @@ def build() -> dict:
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "dependency_refs": refs,
         "shared_relative_row": {
-            "map_iota": "IMPORTED_OFFSHELL_TRIANGLE" if imported else "ONSHELL_MAP_ONLY",
-            "cofiber": "IMPORTED_MAPPING_COFIBER" if imported else "BLOCKED_OFFSHELL_TRIANGLE_MISSING",
+            "map_iota": "IMPORTED_OFFSHELL_TRIANGLE" if imported else "PARTIAL_OFFSHELL_GENERIC_AXIAL_PREFLIGHT",
+            "cofiber": "IMPORTED_MAPPING_COFIBER" if imported else "PARTIAL_GENERIC_AXIAL_COFIBER_FULL_GLOBAL_BLOCKED",
             "relative_pairing": "CLASSICAL_REDUCED_MODE_PULLBACK_ONLY",
             "O2": "PARTIAL_FIXTURES_ONLY",
             "residual_action": "BLOCKED_OFFSHELL_EQUIVARIANCE_MISSING",
@@ -184,8 +194,8 @@ def build() -> dict:
             else "IMPORT_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_BY_HASH"
         ),
         "claim_boundary": (
-            "The exact on-shell standard-harmonic inclusion and reduced-mode pairing are imported by content hash. "
-            "They do not define an off-shell BV chain map, mapping cofiber, residual-equivariant observable pullback, "
+            "The exact on-shell standard-harmonic inclusion, reduced-mode pairing, and principal/generic-axial off-shell preflight are imported by commit and content hash. "
+            "The partial preflight does not define the full curved all-sector BV chain map, global mapping cofiber, residual-equivariant observable pullback, "
             "or relative quantum lift. The Berger clock fixture is a separate Weyl-matter rail and is not a common "
             "Einstein/Weyl background."
         ),
