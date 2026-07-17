@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-46-stf2-carrier-import-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_source", "carrier", "independent_replay", "operator_diagnostics", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-46-stf2-carrier-import-v1"},
+    "result_id": {"const": "BERGER_RETAINED_46_STF2_CARRIER_IMPORT"},
+    "result_state": {"const": "PINNED_EXACT_CYCLIC_GRAPH_SDR_IMPORTED_PROJECTOR_OPEN"},
+    "lifecycle_layer": {"const": "OPTIONAL_CLASSICAL_BRANCH_INTERPRETATION_INPUT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "classical_source": {"type": "object", "required": ["commit", "result_id", "result_state", "artifacts"]},
+    "carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_rows", "retained_rows", "degree_ranks", "added_configuration_rows", "added_cyclic_dual_rows", "coefficient_field", "support_category", "interpretation"],
+      "properties": {
+        "total_rows": {"const": 46},
+        "retained_rows": {"const": 36},
+        "degree_ranks": {"const": {"-1": 4, "0": 19, "1": 19, "2": 4}},
+        "added_configuration_rows": {"const": 5},
+        "added_cyclic_dual_rows": {"const": 5},
+        "coefficient_field": {"const": "Q(sqrt(10))"},
+        "support_category": {"const": "FINITE_ORDER_SUPPORT_LOCAL"},
+        "interpretation": {"type": "string", "minLength": 20}
+      }
+    },
+    "independent_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["backend", "producer_executed", "checks", "all_checks_pass"],
+      "properties": {
+        "backend": {"type": "string"},
+        "producer_executed": {"const": false},
+        "checks": {"type": "object", "minProperties": 14, "additionalProperties": {"const": true}},
+        "all_checks_pass": {"const": true}
+      }
+    },
+    "operator_diagnostics": {"type": "object", "minProperties": 8},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED", "RANK_46_GRAPH_SDR_INDEPENDENTLY_REPLAYED", "RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED", "ELL3_BRANCH_MIXING_AUTHORIZED", "Q2_Q3_LIFT_MATERIALIZED_ON_RANK_46", "K_BERGER_EQUIVARIANCE_CERTIFIED_ON_RANK_46", "LORENTZIAN_CAUSAL", "RANK_46_IS_QUANTUM_PREREQUISITE", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED": {"const": true},
+        "RANK_46_GRAPH_SDR_INDEPENDENTLY_REPLAYED": {"const": true},
+        "RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED": {"const": false},
+        "ELL3_BRANCH_MIXING_AUTHORIZED": {"const": false},
+        "Q2_Q3_LIFT_MATERIALIZED_ON_RANK_46": {"const": false},
+        "K_BERGER_EQUIVARIANCE_CERTIFIED_ON_RANK_46": {"const": false},
+        "LORENTZIAN_CAUSAL": {"const": false},
+        "RANK_46_IS_QUANTUM_PREREQUISITE": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1"},
+    "claim_boundary": {"type": "string", "minLength": 600},
+    "consumer_provenance": {"type": "object"},
+    "verification_receipts": {"type": "array", "minItems": 4},
+    "higher_tiers_not_run": {"type": "object"}
+  }
+}

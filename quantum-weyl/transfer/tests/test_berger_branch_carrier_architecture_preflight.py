@@ -30,6 +30,8 @@ class BergerBranchCarrierArchitecturePreflightTests(unittest.TestCase):
         self.assertEqual(selection["preferred_first_attempt"], "rank_46_STF2_graph_carrier")
         self.assertFalse(selection["rank_46_is_quantum_prerequisite"])
         self.assertTrue(selection["rank_46_is_Paper_11_interpretation_followup"])
+        self.assertTrue(value["claim_flags"]["RANK_46_CARRIER_IMPORTED"])
+        self.assertFalse(value["claim_flags"]["BRANCH_PROJECTOR_ACCEPTED"])
         self.assertEqual(
             value["quantum_critical_path"]["ordered_gates"][0],
             "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS",
@@ -43,7 +45,6 @@ class BergerBranchCarrierArchitecturePreflightTests(unittest.TestCase):
 
     def test_overclaim_mutations_fail(self) -> None:
         for flag in (
-            "RANK_46_CARRIER_IMPORTED",
             "BRANCH_PROJECTOR_ACCEPTED",
             "ELL3_BRANCH_MIXING_AUTHORIZED",
             "QME_RESTORED",

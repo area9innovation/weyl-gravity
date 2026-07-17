@@ -58,13 +58,15 @@ manifest and a 36-row branch-space `ell3` mixing table are therefore no longer
 authorized. This leaves the retained full-BV `ell3` theorem intact.
 
 The exact symbol argument requires at least four additional BV rows. The
-smallest natural support-local candidate adds a spatial STF2 prolongation and
-its cyclic dual, yielding a retained rank of 46. It is the next construction
-gate, not a certified projector. Filtered or mapping-cylinder carriers remain
-open; nonlocal spectral splitting must remain explicitly `REDUCED-MODE`.
+smallest natural support-local candidate has now landed: a spatial STF2
+prolongation and its cyclic dual yield an exact rank-46 cyclic graph carrier.
+The quantum consumer independently replays its 46-to-36 SDR, pairing, and
+side conditions. It is not a certified branch projector. Filtered or
+mapping-cylinder projectors remain open; nonlocal spectral splitting must
+remain explicitly `REDUCED-MODE`.
 
 The architecture preflight now makes the sequencing precise. The rank-46
-STF2 graph carrier is the preferred minimal Berger-specific first attempt.
+STF2 graph carrier is the accepted minimal Berger-specific carrier.
 The established 16-block curvature mapping cylinder and its `386=356+30`
 causal hybrid are certified reuse infrastructure and the fallback route, but
 they do not yet provide a Berger-to-retained-36 branch adapter or nonlinear
@@ -107,7 +109,7 @@ The ordered critical path is:
 5. regulated repository Slavnov breaking;
 6. QME restoration or obstruction;
 7. residual quantum transfer;
-8. optionally, import the rank-46 STF2 carrier or an admissible filtered/mapping-cylinder alternative for Paper 11 branch interpretation.
+8. optionally, construct a rank-46 branch projector or a normalized obstruction for Paper 11 branch interpretation.
 
 The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 `LORENTZIAN-CAUSAL` bookkeeping. It is not a quantum theorem.

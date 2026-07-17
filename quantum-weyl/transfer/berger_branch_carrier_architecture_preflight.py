@@ -14,6 +14,7 @@ from jsonschema import Draft202012Validator
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 OBSTRUCTION = HERE / "certificates/BERGER_RETAINED_36_BRANCH_PROJECTOR_OBSTRUCTION_IMPORT.json"
+CARRIER = HERE / "certificates/BERGER_RETAINED_46_STF2_CARRIER_IMPORT.json"
 MAPPING_CYLINDER = ROOT / "covariant_completion/certificates/curved_curvature_mapping_cylinder_substitution.json"
 GREEN_ASSEMBLY = ROOT / "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json"
 SCHEMA = HERE / "schema/berger-branch-carrier-architecture-preflight-v1.schema.json"
@@ -57,6 +58,7 @@ def _dependency(path: Path, value: dict[str, Any]) -> dict[str, str]:
 
 def _validate_dependencies(
     obstruction: dict[str, Any],
+    carrier: dict[str, Any],
     mapping: dict[str, Any],
     green: dict[str, Any],
 ) -> dict[str, bool]:
@@ -78,6 +80,20 @@ def _validate_dependencies(
         != 46
     ):
         raise ValueError("rank-36 obstruction or rank-46 candidate boundary drifted")
+
+    carrier_flags = carrier.get("claim_flags", {})
+    if (
+        carrier.get("result_state")
+        != "PINNED_EXACT_CYCLIC_GRAPH_SDR_IMPORTED_PROJECTOR_OPEN"
+        or carrier_flags.get("RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED") is not True
+        or carrier_flags.get("RANK_46_GRAPH_SDR_INDEPENDENTLY_REPLAYED") is not True
+        or carrier_flags.get("RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED") is not False
+        or carrier_flags.get("ELL3_BRANCH_MIXING_AUTHORIZED") is not False
+        or carrier_flags.get("RANK_46_IS_QUANTUM_PREREQUISITE") is not False
+        or carrier.get("carrier", {}).get("total_rows") != 46
+        or carrier.get("independent_replay", {}).get("all_checks_pass") is not True
+    ):
+        raise ValueError("rank-46 carrier import boundary drifted")
 
     kernel = mapping.get("kernel", {})
     warranted = mapping.get("warranted_atomic_flags", [])
@@ -116,6 +132,8 @@ def _validate_dependencies(
     return {
         "retained_36_obstruction_imported": True,
         "rank_46_candidate_authority_imported": True,
+        "rank_46_support_local_carrier_imported": True,
+        "rank_46_graph_SDR_independently_replayed": True,
         "covariant_mapping_cylinder_support_local_SDR_imported": True,
         "covariant_mapping_cylinder_all_16_blocks_checked": True,
         "covariant_mapping_cylinder_BV_pairing_exact": True,
@@ -128,11 +146,13 @@ def _validate_dependencies(
 
 def build() -> dict[str, Any]:
     obstruction = _load(OBSTRUCTION)
+    carrier = _load(CARRIER)
     mapping = _load(MAPPING_CYLINDER)
     green = _load(GREEN_ASSEMBLY)
-    checks = _validate_dependencies(obstruction, mapping, green)
+    checks = _validate_dependencies(obstruction, carrier, mapping, green)
     dependencies = {
         "retained_36_projector_obstruction": _dependency(OBSTRUCTION, obstruction),
+        "retained_46_STF2_carrier_import": _dependency(CARRIER, carrier),
         "covariant_mapping_cylinder": _dependency(MAPPING_CYLINDER, mapping),
         "covariant_full_green_assembly": _dependency(GREEN_ASSEMBLY, green),
     }
@@ -165,10 +185,9 @@ def build() -> dict[str, Any]:
                 "target_result_id": "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
                 "expected_rows": 46,
                 "expected_added_bundle": "spatial STF2 prolongation variable plus its cyclic dual",
-                "current_disposition": "CANDIDATE_IDENTIFIED_NOT_IMPORTED_BY_THIS_PREFLIGHT",
+                "current_disposition": "CYCLIC_GRAPH_CARRIER_IMPORTED_BRANCH_PROJECTOR_OPEN",
                 "strength": "smallest natural Berger-specific cyclic graph extension currently identified",
                 "missing": [
-                    "committed content-addressed carrier manifest",
                     "rank-46 branch projector or normalized obstruction",
                     "nonlinear q2/q3 or ell3 lift",
                     "K_Berger equivariance",
@@ -217,20 +236,20 @@ def build() -> dict[str, Any]:
                 "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
                 "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
             ],
-            "optional_classical_interpretation_gate": "IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE",
+            "optional_classical_interpretation_gate": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
         },
         "claim_flags": {
             "ARCHITECTURE_PREFLIGHT_COMPLETE": True,
             "RANK_46_FIRST_ATTEMPT_SELECTED": True,
             "COVARIANT_MAPPING_CYLINDER_REUSE_AUDITED": True,
-            "RANK_46_CARRIER_IMPORTED": False,
+            "RANK_46_CARRIER_IMPORTED": True,
             "BRANCH_PROJECTOR_ACCEPTED": False,
             "ELL3_BRANCH_MIXING_AUTHORIZED": False,
             "RANK_46_IS_QUANTUM_PREREQUISITE": False,
             "QME_RESTORED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE",
+        "next_gate": "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
         "claim_boundary": (
             "This fail-closed preflight compares two classical carrier architectures without "
             "constructing or accepting a branch projector. The rank-46 STF2-plus-dual graph carrier "
@@ -240,8 +259,9 @@ def build() -> dict[str, Any]:
             "a Berger-to-retained-36 branch adapter, nonlinear ell3 lift, or mixing table. Branch "
             "resolution is optional physical interpretation work for Paper 11 and is not a gate "
             "for antifield BV cohomology, repository Slavnov breaking, QME disposition, or the "
-            "parallel stationary/Hadamard programme. No rank-46 carrier, branch projector, mixing "
-            "coefficient, QME restoration, particle statement, or quantum theorem is asserted."
+            "parallel stationary/Hadamard programme. The rank-46 carrier is imported and its graph "
+            "SDR independently replayed, but no branch projector, mixing coefficient, QME restoration, "
+            "particle statement, or quantum theorem is asserted."
         ),
         "consumer_provenance": {
             "source_manifest": source_manifest,
@@ -275,7 +295,7 @@ def build() -> dict[str, Any]:
             },
         ],
         "higher_tiers_not_run": {
-            "tier_2": "No carrier tensor, shared algebra or upstream covariant certificate changed; content hashes and exact source boundaries are sufficient for this architecture-selection preflight.",
+            "tier_2": "The carrier tensor is consumed through its pinned independently replayed import; no shared algebra or upstream classical/covariant certificate changed in this preflight refresh.",
             "tier_3": "No lifecycle, theorem freeze, release, QME, Hadamard-state or quantum claim is promoted.",
         },
     }
@@ -291,11 +311,11 @@ def validate(value: dict[str, Any]) -> None:
         flags.get("ARCHITECTURE_PREFLIGHT_COMPLETE") is not True
         or flags.get("RANK_46_FIRST_ATTEMPT_SELECTED") is not True
         or flags.get("COVARIANT_MAPPING_CYLINDER_REUSE_AUDITED") is not True
+        or flags.get("RANK_46_CARRIER_IMPORTED") is not True
         or flags.get("RANK_46_IS_QUANTUM_PREREQUISITE") is not False
         or any(
             flags.get(name) is not False
             for name in (
-                "RANK_46_CARRIER_IMPORTED",
                 "BRANCH_PROJECTOR_ACCEPTED",
                 "ELL3_BRANCH_MIXING_AUTHORIZED",
                 "QME_RESTORED",

@@ -6,11 +6,11 @@ quantum critical path from the optional Paper 11 interpretation follow-up.
 
 ## Architecture comparison
 
-The preferred first attempt is the rank-46 STF2-plus-dual graph carrier. It is
-the smallest natural Berger-specific cyclic extension identified by the exact
-symbol lower bound. It may reuse the graph, cotangent-adjoint and mutation
-patterns of the larger mapping-cylinder machinery without importing all 386
-rows.
+The preferred first attempt, the rank-46 STF2-plus-dual graph carrier, has now
+landed and is independently imported by the quantum lane. It is the smallest
+natural Berger-specific cyclic extension identified by the exact symbol lower
+bound. Its exact graph SDR retracts to the retained 36-row complex without
+changing retained cohomology.
 
 The established covariant curvature mapping cylinder is a certified fallback
 and reuse library. Its 16-block support-local BV SDR and `386=356+30` causal
@@ -18,16 +18,16 @@ hybrid homotopy are exact. They do not by themselves provide a Berger
 specialization, map to the retained 36-row carrier, dynamical branch
 projector, nonlinear `ell3` lift or branch mixing table.
 
-Neither architecture currently authorizes residual branch mixing in this
-preflight.
+The imported carrier does not yet include a branch projector. Neither
+architecture currently authorizes residual branch mixing in this preflight.
 
 ## Acceptance contract
 
-Any successful carrier must provide exact row and grading ledgers, nilpotent
-support-local `q1`, nondegenerate cyclic pairing, a complete contraction,
-branch inclusion/projection with chain intertwining and complementary
-idempotence, real and `K_Berger` compatibility, and a materialized nonlinear
-lift before the mixing table. A `LOCAL-ALGEBRAIC` map may not use inverse
+Any successful branch-resolution package must provide exact row and grading
+ledgers, nilpotent support-local `q1`, nondegenerate cyclic pairing, a complete
+carrier contraction, branch inclusion/projection with chain intertwining and
+complementary idempotence, real and `K_Berger` compatibility, and a
+materialized nonlinear lift before the mixing table. A `LOCAL-ALGEBRAIC` map may not use inverse
 Laplacians, inverse curls, TT/helicity projectors, Green operators or mode
 truncation. Spectral substitutes remain separate `REDUCED-MODE` results.
 
@@ -45,8 +45,9 @@ interpretation follow-up.
 ## Claim boundary
 
 This preflight is `LOCAL-ALGEBRAIC` architecture selection with imported
-`LORENTZIAN-CAUSAL` reuse evidence. It constructs no carrier or projector and
-makes no branch-mixing, particle, QME or quantum claim.
+`LORENTZIAN-CAUSAL` reuse evidence. It consumes the independently replayed
+rank-46 carrier but constructs no branch projector and makes no branch-mixing,
+particle, QME or quantum claim.
 
 ## Verification
 

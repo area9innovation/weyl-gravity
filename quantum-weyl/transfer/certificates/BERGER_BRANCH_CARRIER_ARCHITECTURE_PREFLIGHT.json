@@ -35,11 +35,10 @@
     },
     "rank_46_STF2_graph_carrier": {
       "authority": "retained-36 exact symbol lower bound plus natural STF2-plus-dual candidate",
-      "current_disposition": "CANDIDATE_IDENTIFIED_NOT_IMPORTED_BY_THIS_PREFLIGHT",
+      "current_disposition": "CYCLIC_GRAPH_CARRIER_IMPORTED_BRANCH_PROJECTOR_OPEN",
       "expected_added_bundle": "spatial STF2 prolongation variable plus its cyclic dual",
       "expected_rows": 46,
       "missing": [
-        "committed content-addressed carrier manifest",
         "rank-46 branch projector or normalized obstruction",
         "nonlinear q2/q3 or ell3 lift",
         "K_Berger equivariance",
@@ -50,7 +49,7 @@
       "target_result_id": "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1"
     }
   },
-  "claim_boundary": "This fail-closed preflight compares two classical carrier architectures without constructing or accepting a branch projector. The rank-46 STF2-plus-dual graph carrier is selected as the preferred minimal Berger-specific first attempt. The existing covariant curvature mapping cylinder is independently imported only as a certified support-local cyclic and causal reuse library; its 386=356+30 theorem does not supply a Berger-to-retained-36 branch adapter, nonlinear ell3 lift, or mixing table. Branch resolution is optional physical interpretation work for Paper 11 and is not a gate for antifield BV cohomology, repository Slavnov breaking, QME disposition, or the parallel stationary/Hadamard programme. No rank-46 carrier, branch projector, mixing coefficient, QME restoration, particle statement, or quantum theorem is asserted.",
+  "claim_boundary": "This fail-closed preflight compares two classical carrier architectures without constructing or accepting a branch projector. The rank-46 STF2-plus-dual graph carrier is selected as the preferred minimal Berger-specific first attempt. The existing covariant curvature mapping cylinder is independently imported only as a certified support-local cyclic and causal reuse library; its 386=356+30 theorem does not supply a Berger-to-retained-36 branch adapter, nonlinear ell3 lift, or mixing table. Branch resolution is optional physical interpretation work for Paper 11 and is not a gate for antifield BV cohomology, repository Slavnov breaking, QME disposition, or the parallel stationary/Hadamard programme. The rank-46 carrier is imported and its graph SDR independently replayed, but no branch projector, mixing coefficient, QME restoration, particle statement, or quantum theorem is asserted.",
   "claim_flags": {
     "ARCHITECTURE_PREFLIGHT_COMPLETE": true,
     "BRANCH_PROJECTOR_ACCEPTED": false,
@@ -58,20 +57,20 @@
     "ELL3_BRANCH_MIXING_AUTHORIZED": false,
     "QME_RESTORED": false,
     "QUANTUM_CLAIM": false,
-    "RANK_46_CARRIER_IMPORTED": false,
+    "RANK_46_CARRIER_IMPORTED": true,
     "RANK_46_FIRST_ATTEMPT_SELECTED": true,
     "RANK_46_IS_QUANTUM_PREREQUISITE": false
   },
   "consumer_provenance": {
-    "dependency_manifest_sha256": "bd41df8e22f490a3afb0579819aafcffc7c0c79cb18ba1a7f72b1f8bec3bf699",
+    "dependency_manifest_sha256": "f2807f71379b343b17582eb832b055b84c3fd3d411742204ef78a51ea0563184",
     "source_manifest": {
-      "quantum-weyl/reports/berger-branch-carrier-architecture-preflight.md": "789d0952cfd7ad067d30c136689c37585259209e1e4ceac291f9da230950f668",
-      "quantum-weyl/transfer/berger_branch_carrier_architecture_preflight.py": "d8d31ca9b48c3994d59294c94c45d1c7f60bedc9e45788176907545ebea7a42a",
-      "quantum-weyl/transfer/schema/berger-branch-carrier-architecture-preflight-v1.schema.json": "772e74d9d0cbfe1d301b73c85255287b40b4863b20cf7b87975d36c31f3ed13b",
-      "quantum-weyl/transfer/tests/test_berger_branch_carrier_architecture_preflight.py": "3fcdabf6e4e3a99ede7d44efd1e54e76c2440581b998df8a12b7451019a84009",
+      "quantum-weyl/reports/berger-branch-carrier-architecture-preflight.md": "1e0faf748eeda2204a08d83cbfc03274b5132623a5489e93f9ca6ffca3826b0b",
+      "quantum-weyl/transfer/berger_branch_carrier_architecture_preflight.py": "182719307e883e45b39cbc6b4b60f31100325cf88ebc771ab44b116b1e5bb95d",
+      "quantum-weyl/transfer/schema/berger-branch-carrier-architecture-preflight-v1.schema.json": "342836c3466de0244c19ddbfd05e8fc60d354c786bff9730f848e6cc246cf7f1",
+      "quantum-weyl/transfer/tests/test_berger_branch_carrier_architecture_preflight.py": "8598f59c31b97d655c8b1dd3004fd17aeb03e0db47eb260f913f471969f33a08",
       "quantum-weyl/transfer/verify_berger_branch_carrier_architecture_preflight.py": "3310dac44a475425b0be0273f15f1868663cc2d96cc4349d9b92b38c889be06c"
     },
-    "source_manifest_sha256": "5e10ad75a44f7d87e66efaafbef8ae44aa6c6ab6d5c8523143bf1855e0b59fa7"
+    "source_manifest_sha256": "d963d06a118c47620add787d049400c07d60ea573791ec956a79ac5accbee60d"
   },
   "dependency_refs": {
     "covariant_full_green_assembly": {
@@ -88,6 +87,11 @@
       "artifact_id": "BERGER_RETAINED_36_BRANCH_PROJECTOR_OBSTRUCTION_IMPORT",
       "path": "quantum-weyl/transfer/certificates/BERGER_RETAINED_36_BRANCH_PROJECTOR_OBSTRUCTION_IMPORT.json",
       "sha256": "3c6174c7a333e46d6bd16769aabb17787dc51bcb94d98c7af875525cff797628"
+    },
+    "retained_46_STF2_carrier_import": {
+      "artifact_id": "BERGER_RETAINED_46_STF2_CARRIER_IMPORT",
+      "path": "quantum-weyl/transfer/certificates/BERGER_RETAINED_46_STF2_CARRIER_IMPORT.json",
+      "sha256": "b1dce154095f7160e3fc3de2aa5580811c20ee44830adb9f9dedd9b6e0603b5f"
     }
   },
   "dependency_tags": [
@@ -103,16 +107,18 @@
     "nonlinear_branch_lift_not_inferred_from_unary_carrier": true,
     "quantum_critical_path_kept_independent": true,
     "rank_46_candidate_authority_imported": true,
+    "rank_46_graph_SDR_independently_replayed": true,
+    "rank_46_support_local_carrier_imported": true,
     "retained_36_obstruction_imported": true
   },
   "higher_tiers_not_run": {
-    "tier_2": "No carrier tensor, shared algebra or upstream covariant certificate changed; content hashes and exact source boundaries are sufficient for this architecture-selection preflight.",
+    "tier_2": "The carrier tensor is consumed through its pinned independently replayed import; no shared algebra or upstream classical/covariant certificate changed in this preflight refresh.",
     "tier_3": "No lifecycle, theorem freeze, release, QME, Hadamard-state or quantum claim is promoted."
   },
   "lifecycle_layer": "OPTIONAL_CLASSICAL_BRANCH_INTERPRETATION_PREFLIGHT",
-  "next_gate": "OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE",
+  "next_gate": "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
   "quantum_critical_path": {
-    "optional_classical_interpretation_gate": "IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE",
+    "optional_classical_interpretation_gate": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
     "ordered_gates": [
       "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS",
       "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",

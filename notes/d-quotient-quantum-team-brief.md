@@ -406,16 +406,18 @@ but its 36-row success manifest and branch-space `ell3` mixing table are not
 authorized.
 
 The retained full-BV `ell3` cyclicity theorem is unaffected. The exact lower
-bound is four added BV rows; the smallest natural support-local candidate adds
-a spatial STF2 prolongation and its cyclic dual, giving retained rank 46. That
-candidate is not yet a projector certificate. Filtered or mapping-cylinder
-carriers remain allowed, while nonlocal spectral splitting must be tagged
-`REDUCED-MODE`.
+bound is four added BV rows.  The natural support-local rank-46 construction
+has now landed: a spatial STF2 graph prolongation and its cyclic dual form an
+exact cyclic SDR over the retained 36-row complex.  Its complement is
+contractible, so this is an honest carrier theorem but not yet a projector or
+physical branch theorem. Filtered or mapping-cylinder splittings remain
+allowed, while nonlocal spectral splitting must be tagged `REDUCED-MODE`.
 
-The branch-interpretation follow-up is:
+The carrier import is complete. The remaining branch-interpretation
+follow-up is:
 
 ```text
-OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE
+BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1
 ```
 
 It is not the first quantum gate. The algebraic quantum critical path remains
@@ -423,8 +425,8 @@ minimal BV (H^{0,4}) and (H^{1,4}) with the Koszul--Tate rows, followed by
 the regulated repository Slavnov breaking and QME disposition. The
 stationary/Hadamard construction remains a parallel analytic rail.
 
-The architecture preflight selects the rank-46 STF2 graph carrier as the
-preferred minimal Berger-specific attempt. The already certified 16-block
+The architecture preflight now accepts the certified rank-46 STF2 graph
+carrier as the minimal Berger-specific carrier. The already certified 16-block
 curvature mapping cylinder and `386=356+30` causal hybrid are a reuse library
 and fallback, not an existing Berger branch adapter. Both routes must satisfy
 the same exact carrier, cyclicity, intertwining, locality, nonlinear-lift and
@@ -438,7 +440,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | classical target; quantum status to compute | classical target; compute defect | proved only classically | zero classically in stated complex; quantum open | \(I_2\) classically; \(G(\hbar)\) open | proper classical solution sector |
-| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; repaired coupled Maxwell \(q_2\), typed 59,598-term mixed \(q_3\), and 25,950-term retained \(\ell_3\) independently accepted as classical inputs; all retained exchange sectors vanish; the canonical same-bundle 36-row branch projector is obstructed and the support-local rank-46 candidate is open | classical only; no BRST-compatible Hadamard state or renormalized time ordering | no Paper-IX one-particle claim; quantum physical cohomology open | repaired coupled Maxwell classical pairing is cyclic; quantum pairing open | classical non-Einstein Weyl--matter control branch only; no 36-row interaction mixing table is authorized |
+| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; repaired coupled Maxwell \(q_2\), typed 59,598-term mixed \(q_3\), and 25,950-term retained \(\ell_3\) independently accepted as classical inputs; all retained exchange sectors vanish; the canonical same-bundle 36-row branch projector is obstructed; the rank-46 cyclic graph carrier is exact but its projector remains open | classical only; no BRST-compatible Hadamard state or renormalized time ordering | no Paper-IX one-particle claim; quantum physical cohomology open | repaired coupled Maxwell classical pairing is cyclic; quantum pairing open | classical non-Einstein Weyl--matter control branch only; no branch-resolved interaction mixing table is authorized |
 | Cylinder + scalar clock | open | primary quantum test | open | open | open | open |
 | Cylinder + Yang--Mills | open | open after scalar | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | open |
@@ -447,8 +449,10 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Complete Q-G1 beyond even AFN0: antifield/Koszul--Tate, odd, pure-Diff,
-   mixed, and descent carriers, with explicit primitives or dual witnesses.
+1. Complete Q-G1 beyond AFN0: minimal antifield/Koszul--Tate completion in
+   both parities, plus pure-Diff, mixed, and descent carriers, with explicit
+   primitives or dual witnesses. The even and odd AFN0 quotients are already
+   complete and are regression inputs, not pending work.
 2. Compute the pure-Weyl anomaly coefficients by the two declared independent
    presentations and record counterterm, zero-mode, and measure dependence.
 3. Construct the coefficient-bearing map to \(\mathcal A_D^{(1)}\) and
@@ -456,9 +460,10 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    local Weyl, residual-generator, boundary, and clock anomalies.
 4. Add the conformal scalar clock only after the pure-Weyl local disposition
    is stable; then recompute the QME and \(D\)-Cartan defect.
-5. Treat the retained rank-46/filtered/mapping-cylinder carrier as a classical
-   import gate for later residual branch transfer, not as a prerequisite for
-   Q-G1--Q-G3 or the local QME calculation.  The ordered list in the active
+5. Treat the imported retained rank-46 carrier and its still-open
+   rank-46/filtered/mapping-cylinder branch projector as optional classical
+   interpretation infrastructure for later residual branch transfer, not as
+   a prerequisite for Q-G1--Q-G3 or the local QME calculation. The ordered list in the active
    frontier remains a dependency chain for residual quantum transfer, not the
    team's immediate work schedule.
 6. Transfer \(Q_1\), \(G_1\), or the retained mixed interaction only after the

@@ -49,15 +49,15 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(flags["RANK_46_SUPPORT_LOCAL_CANDIDATE_IDENTIFIED"])
         self.assertTrue(flags["BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT_COMPLETE"])
         self.assertFalse(flags["RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED"])
-        self.assertFalse(flags["RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED"])
+        self.assertTrue(flags["RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED"])
         self.assertFalse(flags["RANK_46_IS_QUANTUM_PREREQUISITE"])
         row = self.payload["active_rows"]["classical_interacting_input"]
         self.assertIn("FULL_BV_CYCLICITY_ACCEPTED", row["status"])
-        self.assertIn("RETAINED_36_PROJECTOR_OBSTRUCTED", row["status"])
-        self.assertIn("ARCHITECTURE_PREFLIGHT_COMPLETE", row["status"])
+        self.assertIn("RANK_46_CYCLIC_GRAPH_CARRIER_IMPORTED", row["status"])
+        self.assertIn("PROJECTOR_OPEN", row["status"])
         self.assertEqual(
             row["next_gate"],
-            "OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE",
+            "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
@@ -65,7 +65,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],
-            "OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE",
+            "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
         )
 
     def test_hadamard_existence_boundary_is_authoritative(self) -> None:
