@@ -1,0 +1,131 @@
+{
+  "bv_source_injection": {
+    "compatibility": "q_M s_j=(0,0,0,dj)=0",
+    "degree": "Maxwell equation/antifield-density row",
+    "endpoint_36_rows": [
+      31,
+      32,
+      33,
+      34
+    ],
+    "full_64_rows": [
+      59,
+      60,
+      61,
+      62
+    ],
+    "maxwell_complex": "Omega0 --d--> Omega1 --delta d--> Omega3 --d--> Omega4",
+    "source": "s_j=(0,0,j,0)"
+  },
+  "claim_boundary": "This classical theorem constructs a nonzero compact neutral Maxwell source as the exact current three-form j=d kappa, injects it as a q-closed source in the certified Maxwell BV equation row, and uses the certified retarded chain homotopy to obtain a unique Lorenz representative with nonzero field strength supported in the causal future of the source. It proves a retarded signal, not a spatially localized emitter/receiver measurement. It does not provide rod fields, detector response, unique endpoint intersection, apparatus recoil, gravitational backreaction, mixed q3, Hadamard data, a QME result, or a quantum claim.",
+  "claim_status": "CERTIFIED_COMPACT_CONSERVED_SOURCE_AND_NONZERO_RETARDED_MAXWELL_SIGNAL",
+  "dependency_refs": {
+    "causal_transfer": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+      "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+      "sha256": "4363bc0365012173b793e6d09f4154eaa41712f5f5ba736c8255b3294cdf67b7"
+    },
+    "g0_fixture": {
+      "path": "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
+      "result_id": "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
+      "sha256": "95c4c3a4359db4ec5b03f77a9d86191df97c4cfbbd00ae043dd5ccfc720df996"
+    },
+    "maxwell_layout": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT.json",
+      "result_id": "BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT",
+      "sha256": "899fcd28329389c68c452921ed8cf7c447486ceb588ba13ac747627e30191ca8"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "BV_source_is_q_closed": true,
+    "advanced_signal_not_substituted_for_retarded_signal": true,
+    "compact_source_constructed_without_projector": true,
+    "current_has_zero_total_charge": true,
+    "current_is_closed": true,
+    "current_is_exact_three_form": true,
+    "current_is_nonzero_under_declared_condition": true,
+    "portable_64_row_export_not_used_before_authoritative_commit": true,
+    "retarded_Lorenz_representative_exists": true,
+    "retarded_Maxwell_equation_exact": true,
+    "retarded_causal_support": true,
+    "retarded_field_strength_nonzero": true,
+    "source_injected_in_all_four_Maxwell_equation_components": true
+  },
+  "flags": {
+    "BERGER_COMPACT_CONSERVED_MAXWELL_SOURCE": true,
+    "BERGER_G1_COMPLETE_SIGNAL_SECTOR": false,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": false,
+    "BERGER_MAXWELL_BACKREACTION": false,
+    "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL": true,
+    "QUANTUM_CLAIM": false
+  },
+  "next_gate": "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE",
+  "provenance": {
+    "source_manifest": [
+      {
+        "path": "d_quotient_classical/backreacted_clock/berger_retarded_compact_maxwell_signal.py",
+        "role": "producer",
+        "sha256": "2af33a557e3721d3729161393afdd1e26f779d4459b16dba76d031b32f5fb2ad"
+      },
+      {
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_retarded_compact_maxwell_signal.py",
+        "role": "verifier",
+        "sha256": "d9b28dc5907ced002004f434f446cb196f3f32f51eedfa7c707e1d3bee439762"
+      },
+      {
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_retarded_compact_maxwell_signal.py",
+        "role": "tests",
+        "sha256": "ee3f4b6a5495a05183f726354440993822e9560300735c771fbda5bc212e352e"
+      },
+      {
+        "path": "d_quotient_classical/schema/berger-retarded-compact-source-maxwell-signal-v1.schema.json",
+        "role": "schema",
+        "sha256": "bb76cc7eb30575a656f6996cb121d293a9c480ba2f6bcaf1737018da179ada64"
+      }
+    ]
+  },
+  "result_id": "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL",
+  "retarded_signal": {
+    "field_strength": "F_ret=d A_ret",
+    "lorenz_identity": "delta A_ret=G0_ret delta J=0",
+    "maxwell_equation": "delta d A_ret=J",
+    "nontriviality": "F_ret=0 would imply J=delta F_ret=0, contradicting chi_0 not identically zero",
+    "potential": "A_ret=G1_ret J=Lambda_M,ret(s_j)",
+    "retarded_green": "G1_ret with supp(G1_ret J) subset J_plus(supp J)",
+    "support": "supp(F_ret) subset J_plus(supp j)",
+    "uniqueness": "the retarded Lorenz representative is unique by uniqueness of the de Rham-wave retarded Green operator",
+    "wave_operator": "P1=delta d+d delta on one-forms"
+  },
+  "schema": "pure-weyl-berger-retarded-compact-source-maxwell-signal-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling",
+  "source_class": {
+    "bump": "chi in C_c^infinity(U), for example a product of standard smooth bumps",
+    "chart": "U=(-2,2) x B_2 with compact closure in R x S3",
+    "current_three_form": "j=d kappa",
+    "exact_components": {
+      "closure_components": {},
+      "current_one_form_components": {
+        "0": "-chi_3",
+        "3": "-chi_0"
+      },
+      "current_three_form_components": {
+        "012": "chi_0",
+        "123": "chi_3"
+      },
+      "kappa_components": {
+        "12": "chi"
+      },
+      "nonzero_condition": "chi_0 is not identically zero"
+    },
+    "metric_current_one_form": "J=star^{-1} j",
+    "potential_two_form": "kappa=chi dx1 wedge dx2",
+    "source_kind": "compact neutral dipole pulse; not yet a localized charged emitter",
+    "support_chain": "supp(J)=supp(j) subset supp(kappa) subset supp(chi) compact",
+    "zero_charge": "integral_Sigma pullback(j)=integral_Sigma d_Sigma pullback(kappa)=0"
+  }
+}

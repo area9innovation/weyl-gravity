@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schema/berger-retarded-compact-source-maxwell-signal-v1.json",
+  "title": "Berger compact-source retarded Maxwell signal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "source_class", "bv_source_injection", "retarded_signal",
+    "exact_checks", "flags", "next_gate", "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retarded-compact-source-maxwell-signal-v1"},
+    "result_id": {"const": "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "claim_status": {"const": "CERTIFIED_COMPACT_CONSERVED_SOURCE_AND_NONZERO_RETARDED_MAXWELL_SIGNAL"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["causal_transfer", "maxwell_layout", "g0_fixture"],
+      "properties": {
+        "causal_transfer": {"$ref": "#/$defs/dependency"},
+        "maxwell_layout": {"$ref": "#/$defs/dependency"},
+        "g0_fixture": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "source_class": {
+      "type": "object", "additionalProperties": false,
+      "required": ["chart", "bump", "potential_two_form", "current_three_form", "metric_current_one_form", "support_chain", "zero_charge", "source_kind", "exact_components"],
+      "properties": {
+        "chart": {"type": "string", "minLength": 1},
+        "bump": {"type": "string", "minLength": 1},
+        "potential_two_form": {"const": "kappa=chi dx1 wedge dx2"},
+        "current_three_form": {"const": "j=d kappa"},
+        "metric_current_one_form": {"const": "J=star^{-1} j"},
+        "support_chain": {"type": "string", "minLength": 1},
+        "zero_charge": {"type": "string", "minLength": 1},
+        "source_kind": {"const": "compact neutral dipole pulse; not yet a localized charged emitter"},
+        "exact_components": {"$ref": "#/$defs/exact_components"}
+      }
+    },
+    "bv_source_injection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["maxwell_complex", "source", "full_64_rows", "endpoint_36_rows", "compatibility", "degree"],
+      "properties": {
+        "maxwell_complex": {"const": "Omega0 --d--> Omega1 --delta d--> Omega3 --d--> Omega4"},
+        "source": {"const": "s_j=(0,0,j,0)"},
+        "full_64_rows": {"const": [59, 60, 61, 62]},
+        "endpoint_36_rows": {"const": [31, 32, 33, 34]},
+        "compatibility": {"const": "q_M s_j=(0,0,0,dj)=0"},
+        "degree": {"type": "string", "minLength": 1}
+      }
+    },
+    "retarded_signal": {
+      "type": "object", "additionalProperties": false,
+      "required": ["wave_operator", "retarded_green", "potential", "lorenz_identity", "maxwell_equation", "field_strength", "support", "nontriviality", "uniqueness"],
+      "properties": {
+        "wave_operator": {"const": "P1=delta d+d delta on one-forms"},
+        "retarded_green": {"type": "string", "minLength": 1},
+        "potential": {"const": "A_ret=G1_ret J=Lambda_M,ret(s_j)"},
+        "lorenz_identity": {"const": "delta A_ret=G0_ret delta J=0"},
+        "maxwell_equation": {"const": "delta d A_ret=J"},
+        "field_strength": {"const": "F_ret=d A_ret"},
+        "support": {"const": "supp(F_ret) subset J_plus(supp j)"},
+        "nontriviality": {"type": "string", "minLength": 1},
+        "uniqueness": {"type": "string", "minLength": 1}
+      }
+    },
+    "exact_checks": {"$ref": "#/$defs/exact_checks"},
+    "flags": {"$ref": "#/$defs/flags"},
+    "next_gate": {"const": "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest"],
+      "properties": {"source_manifest": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/source"}}}
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "role", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "role": {"enum": ["producer", "verifier", "tests", "schema"]},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "exact_components": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kappa_components", "current_three_form_components", "current_one_form_components", "closure_components", "nonzero_condition"],
+      "properties": {
+        "kappa_components": {"const": {"12": "chi"}},
+        "current_three_form_components": {"const": {"012": "chi_0", "123": "chi_3"}},
+        "current_one_form_components": {"const": {"0": "-chi_3", "3": "-chi_0"}},
+        "closure_components": {"const": {}},
+        "nonzero_condition": {"const": "chi_0 is not identically zero"}
+      }
+    },
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "compact_source_constructed_without_projector", "current_is_exact_three_form", "current_is_closed",
+        "current_is_nonzero_under_declared_condition", "current_has_zero_total_charge",
+        "source_injected_in_all_four_Maxwell_equation_components", "BV_source_is_q_closed",
+        "retarded_Lorenz_representative_exists", "retarded_Maxwell_equation_exact",
+        "retarded_field_strength_nonzero", "retarded_causal_support",
+        "advanced_signal_not_substituted_for_retarded_signal",
+        "portable_64_row_export_not_used_before_authoritative_commit"
+      ],
+      "properties": {
+        "compact_source_constructed_without_projector": {"const": true},
+        "current_is_exact_three_form": {"const": true},
+        "current_is_closed": {"const": true},
+        "current_is_nonzero_under_declared_condition": {"const": true},
+        "current_has_zero_total_charge": {"const": true},
+        "source_injected_in_all_four_Maxwell_equation_components": {"const": true},
+        "BV_source_is_q_closed": {"const": true},
+        "retarded_Lorenz_representative_exists": {"const": true},
+        "retarded_Maxwell_equation_exact": {"const": true},
+        "retarded_field_strength_nonzero": {"const": true},
+        "retarded_causal_support": {"const": true},
+        "advanced_signal_not_substituted_for_retarded_signal": {"const": true},
+        "portable_64_row_export_not_used_before_authoritative_commit": {"const": true}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "BERGER_COMPACT_CONSERVED_MAXWELL_SOURCE", "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL",
+        "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE", "BERGER_MAXWELL_BACKREACTION",
+        "BERGER_G1_COMPLETE_SIGNAL_SECTOR", "BERGER_HADAMARD_DATA", "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "BERGER_COMPACT_CONSERVED_MAXWELL_SOURCE": {"const": true},
+        "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL": {"const": true},
+        "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": {"const": false},
+        "BERGER_MAXWELL_BACKREACTION": {"const": false},
+        "BERGER_G1_COMPLETE_SIGNAL_SECTOR": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    }
+  }
+}
